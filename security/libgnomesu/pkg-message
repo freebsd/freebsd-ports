@@ -8,7 +8,7 @@ you must perform the following:
 On 4.x:
   cat %%EXAMPLESDIR%%/gnomesu-pam.4.x.sample >> /etc/pam.conf
 
-On 5.x:
+On 5.x/6.x:
   cp %%EXAMPLESDIR%%/gnomesu-pam.5.x.sample \
   	/etc/pam.d/gnomesu-pam
 

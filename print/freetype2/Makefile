@@ -3,11 +3,11 @@
 # Whom:			jseger@FreeBSD.org
 #
 # $FreeBSD$
+#   $MCom: ports/print/freetype2/Makefile,v 1.11 2007/07/06 16:59:40 marcus Exp $
 #
 
 PORTNAME=	freetype2
-PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTVERSION=	2.3.5
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \

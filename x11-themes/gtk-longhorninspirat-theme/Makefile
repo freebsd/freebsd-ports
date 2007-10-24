@@ -7,7 +7,7 @@
 
 PORTNAME=	longhorninspirat
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
 PKGNAMEPREFIX=	${TYPE}-
@@ -30,7 +30,7 @@ THEME_DIR=	${PREFIX}/share/themes/${THEME_NAME}
 PLIST_SUB+=	GTK20="" METACITY="@comment "
 USE_GNOME=	gtk20
 .else	# metacity
-THEME_DIR=	${PREFIX}/share/gnome/themes/${THEME_NAME}
+THEME_DIR=	${PREFIX}/share/themes/${THEME_NAME}
 PLIST_SUB+=	GTK20="@comment " METACITY=""
 USE_GNOME=	gnomehier
 .endif

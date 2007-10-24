@@ -3,12 +3,12 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/glom/Makefile,v 1.9 2006/09/05 03:44:45 mezz Exp $
+#   $MCom: ports/databases/glom/Makefile,v 1.11 2007/07/23 19:45:47 mezz Exp $
 #
 
 PORTNAME=	glom
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -36,7 +36,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 INSTALLS_ICONS=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-update-mime-database|true|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-update-mime-database|true|g' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime

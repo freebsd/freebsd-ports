@@ -7,9 +7,15 @@ include/pygtk-2.0/pygobject.h
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/_gobject.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/_gobject.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/constants.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/constants.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/constants.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/option.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/option.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/option.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/propertyhelper.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/propertyhelper.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gobject/propertyhelper.pyo
 %%PYTHON_SITELIBDIR%%/pygtk.pth
 %%PYTHON_SITELIBDIR%%/pygtk.py
 %%PYTHON_SITELIBDIR%%/pygtk.pyc

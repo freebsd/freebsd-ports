@@ -23,14 +23,14 @@ lib/libdevhelp-1.la
 lib/libdevhelp-1.so
 lib/libdevhelp-1.so.0
 libdata/pkgconfig/libdevhelp-1.0.pc
-share/gnome/applications/devhelp.desktop
-share/gnome/devhelp/default-prefs.js
-share/gnome/devhelp/devhelp.glade
-share/gnome/devhelp/dtd/devhelp-1.dtd
-share/gnome/devhelp/images/book_closed.png
-share/gnome/devhelp/images/book_open.png
-share/gnome/devhelp/images/helpdoc.png
-share/gnome/devhelp/ui/window.ui
+share/applications/devhelp.desktop
+share/devhelp/default-prefs.js
+share/devhelp/devhelp.glade
+share/devhelp/dtd/devhelp-1.dtd
+share/devhelp/images/book_closed.png
+share/devhelp/images/book_open.png
+share/devhelp/images/helpdoc.png
+share/devhelp/ui/window.ui
 share/icons/hicolor/48x48/apps/devhelp.png
 share/icons/hicolor/scalable/apps/devhelp.svg
 share/locale/am/LC_MESSAGES/devhelp.mo
@@ -93,10 +93,10 @@ share/locale/vi/LC_MESSAGES/devhelp.mo
 share/locale/zh_CN/LC_MESSAGES/devhelp.mo
 share/locale/zh_HK/LC_MESSAGES/devhelp.mo
 share/locale/zh_TW/LC_MESSAGES/devhelp.mo
-@dirrm share/gnome/devhelp/ui
-@dirrm share/gnome/devhelp/images
-@dirrm share/gnome/devhelp/dtd
-@dirrm share/gnome/devhelp
+@dirrm share/devhelp/ui
+@dirrm share/devhelp/images
+@dirrm share/devhelp/dtd
+@dirrm share/devhelp
 @dirrm include/devhelp-1.0/devhelp
 @dirrm include/devhelp-1.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -113,3 +113,4 @@ share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/applications

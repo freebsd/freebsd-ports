@@ -3,12 +3,12 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/oaf/Makefile,v 1.2 2006/09/10 00:51:09 mezz Exp $
+#   $MCom: ports/devel/oaf/Makefile,v 1.5 2007/05/19 21:36:06 marcus Exp $
 #
 
 PORTNAME=	oaf
 PORTVERSION=	0.6.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/oaf/0.6

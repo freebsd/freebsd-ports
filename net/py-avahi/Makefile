@@ -3,11 +3,12 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/net/py-avahi/Makefile,v 1.4 2007/07/31 18:24:13 ahze Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python interface to the Avahi mDNS system
@@ -18,30 +19,16 @@ LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
 
-MASTERDIR=	${.CURDIR}/../avahi
+MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-AVAHI_SLAVE=	yes
+AVAHI_SLAVE=	python
 
 USE_GNOME=	gnomehack gnometarget pygtk2
 USE_PYTHON=	yes
-CONFIGURE_ARGS=	--enable-python \
-		--disable-mono \
-		--disable-monodoc \
-		--disable-gtk \
-		--disable-qt3 \
-		--disable-qt4 \
-		--localstatedir=/var \
-		--disable-doxygen-docs \
-		--disable-xml-docs \
-		--disable-doxygen-dot \
-		--localstatedir=/var \
-		--with-dbus-system-address=unix:path=/var/run/dbus/system_bus_socket \
-		--with-distro=freebsd
-
 MAN1=		avahi-bookmarks.1 avahi-discover.1
 
 pre-build:
@@ -57,8 +44,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/service-type-database/service-types.db ${DATADIR}
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHONPREFIX_SITELIBDIR}/avahi
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${PYTHONPREFIX_SITELIBDIR}/avahi
-.for mf in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/${mf} ${MAN1PREFIX}/man/man1
-.endfor
 
 .include "${MASTERDIR}/Makefile"

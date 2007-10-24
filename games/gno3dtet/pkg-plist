@@ -1,22 +1,23 @@
 bin/gno3dtet
-share/gnome/applications/gno3dtet.desktop
-share/gnome/games/gno3dtet.hof
+share/applications/gno3dtet.desktop
+share/games/gno3dtet.hof
 share/gnome/help/gno3dtet/C/gno3dtet.xml
 share/gnome/help/gno3dtet/C/legal.xml
-share/gnome/omf/gno3dtet/gno3dtet-C.omf
-share/gnome/pixmaps/gno3dtet.png
-share/gnome/sounds/gno3dtet/danger.wav
-share/gnome/sounds/gno3dtet/fall.wav
-share/gnome/sounds/gno3dtet/hof.wav
-share/gnome/sounds/gno3dtet/land.wav
-share/gnome/sounds/gno3dtet/layer.wav
-share/gnome/sounds/gno3dtet/level.wav
-share/gnome/sounds/gno3dtet/new.wav
-share/gnome/sounds/gno3dtet/pause.wav
-share/gnome/sounds/gno3dtet/score.wav
-share/gnome/sounds/gno3dtet/screwd.wav
+share/omf/gno3dtet/gno3dtet-C.omf
+share/pixmaps/gno3dtet.png
+share/sounds/gno3dtet/danger.wav
+share/sounds/gno3dtet/fall.wav
+share/sounds/gno3dtet/hof.wav
+share/sounds/gno3dtet/land.wav
+share/sounds/gno3dtet/layer.wav
+share/sounds/gno3dtet/level.wav
+share/sounds/gno3dtet/new.wav
+share/sounds/gno3dtet/pause.wav
+share/sounds/gno3dtet/score.wav
+share/sounds/gno3dtet/screwd.wav
 share/locale/fr/LC_MESSAGES/gno3dtet.mo
-@dirrm share/gnome/sounds/gno3dtet
-@dirrm share/gnome/omf/gno3dtet
+@dirrm share/sounds/gno3dtet
+@dirrm share/omf/gno3dtet
 @dirrm share/gnome/help/gno3dtet/C
 @dirrm share/gnome/help/gno3dtet
+@dirrmtry share/applications

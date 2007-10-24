@@ -11,4 +11,4 @@ $FreeBSD$
 +confexecdir = $(sysconfdir)
  confexec_DATA = oafConf.sh
  
- m4datadir = $(prefix)/share/aclocal
+ m4datadir = $(datadir)/aclocal

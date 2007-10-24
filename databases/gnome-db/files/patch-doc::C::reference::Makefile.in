@@ -7,7 +7,7 @@ $FreeBSD$
  
  
  DOC_MAIN_SGML_FILE = libgnomedb-reference.sgml
--DOC_DIR = $(datadir)/html
+-DOC_DIR = $(datadir)/gnome/html
 +DOC_DIR = $(prefix)/share/doc/gnomedb
  TARGET_DIR = $(DOC_DIR)/libgnomedb-reference
  

@@ -3,11 +3,11 @@
 # Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/pango/Makefile,v 1.94 2007/03/13 00:54:42 mezz Exp $
+#   $MCom: ports/x11-toolkits/pango/Makefile,v 1.111 2007/10/15 21:40:26 mezz Exp $
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.16.5
+PORTVERSION=	1.18.3
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/pango/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
@@ -41,8 +41,8 @@ CONFIGURE_ARGS=	--with-qt=no \
 GLIB2_CFLAGS=	`pkg-config glib-2.0 --cflags`
 PLIST_SUB=	VERSION="1.6.0"
 
-FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
-FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir
+FONTSCALE=	${LOCALBASE}/lib/X11/fonts/TTF/luximb.ttf
+FONTENCOD=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir
 
 MAN1=		pango-querymodules.1
 
@@ -53,12 +53,10 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			LDFLAGS="-L${LOCALBASE}/lib"
 PLIST_SUB+=		X11="@comment "
 .else
-USE_XLIB+=		yes
-LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/libXft
+USE_XORG+=		xft xrender
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
-				${GLIB2_CFLAGS} -I${LOCALBASE}/include \
-				-I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+				${GLIB2_CFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 PLIST_SUB+=		X11=""
 .endif
 

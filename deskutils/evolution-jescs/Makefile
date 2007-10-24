@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/evolution-jescs/Makefile,v 1.17 2007/03/12 04:55:09 marcus Exp $
+#   $MCom: ports/deskutils/evolution-jescs/Makefile,v 1.23 2007/09/17 12:31:53 ahze Exp $
 #
 
 PORTNAME=	jescs
-PORTVERSION=	2.10.0
+PORTVERSION=	2.12.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PKGNAMEPREFIX}${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,8 +17,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sun Java Enterprise System Calendar Server provider for Evolution
 
-BUILD_DEPENDS=	evolution-${EVO_VERSION}:${PORTSDIR}/mail/evolution
-RUN_DEPENDS=	evolution-${EVO_VERSION}:${PORTSDIR}/mail/evolution
+BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
+RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 
 USE_XLIB=	yes
 USE_BZIP2=	yes
@@ -29,8 +29,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-EVO_VERSION=	2.10
-PLIST_SUB=	EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2" VERSION="2.10"
+EVO_VERSION=	2.12
+PLIST_SUB=	EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2" VERSION="2.12"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir/bonobo/servers|prefix/libdata/bonobo/servers|g' \

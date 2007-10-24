@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-tomoe
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tomoe
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	tomoe.1:${PORTSDIR}/japanese/tomoe \
 		tomoe-gtk.1:${PORTSDIR}/japanese/libtomoe-gtk
 
-USE_GNOME=	lthack
+USE_GNOME=	lthack intlhack
 USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes

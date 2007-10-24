@@ -1,7 +1,7 @@
 bin/xmule
 bin/xmule-ed2k-handler
-share/gnome/applications/xmule.desktop
-share/gnome/icons/xmule.xpm
+share/applications/xmule.desktop
+share/icons/xmule.xpm
 share/locale/de/LC_MESSAGES/xmule.mo
 share/locale/ee/LC_MESSAGES/xmule.mo
 share/locale/es/LC_MESSAGES/xmule.mo
@@ -11,4 +11,5 @@ share/locale/it/LC_MESSAGES/xmule.mo
 share/locale/ko/LC_MESSAGES/xmule.mo
 share/locale/pl/LC_MESSAGES/xmule.mo
 share/locale/tr/LC_MESSAGES/xmule.mo
-@dirrmtry share/gnome/locale
+@dirrmtry share/icons
+@dirrmtry share/applications

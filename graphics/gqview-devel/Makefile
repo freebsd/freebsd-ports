@@ -7,7 +7,7 @@
 
 PORTNAME=	gqview
 PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -37,8 +37,8 @@ post-patch:
 post-install:
 	${MKDIR} ${PREFIX}/share/gnome/apps/Graphics
 	${INSTALL_DATA} ${WRKSRC}/gqview.desktop ${PREFIX}/share/gnome/apps/Graphics
-	${MKDIR} ${PREFIX}/share/gnome/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/gqview.png ${PREFIX}/share/gnome/pixmaps
+	${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/gqview.png ${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

@@ -3,10 +3,11 @@
 # Whom:                        Sam Lawrance <boris@brooknet.com.au>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	synce-gnomevfs
 PORTVERSION=	0.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce

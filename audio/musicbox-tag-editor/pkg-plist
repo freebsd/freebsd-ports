@@ -1,6 +1,7 @@
 bin/musicbox-tag-editor
-share/gnome/applications/musicbox.desktop
-share/gnome/musicbox/edit.pl
-share/gnome/musicbox/musicbox.glade
-share/gnome/pixmaps/musicbox.png
-@dirrm share/gnome/musicbox
+share/applications/musicbox.desktop
+share/musicbox/edit.pl
+share/musicbox/musicbox.glade
+share/pixmaps/musicbox.png
+@dirrm share/musicbox
+@dirrmtry share/applications

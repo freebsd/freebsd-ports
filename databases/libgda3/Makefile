@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/libgda3/Makefile,v 1.2 2006/09/10 00:51:06 mezz Exp $
+#   $MCom: ports/databases/libgda3/Makefile,v 1.5 2007/10/21 03:13:52 mezz Exp $
 #
 
 PORTNAME=	libgda3
 PORTVERSION=	1.9.102
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/${PORTVERSION:R}
@@ -58,6 +58,8 @@ WITH_LDAP=yes
 
 .if exists(${LOCALBASE}/lib/libgds.so.1)
 WITH_FIREBIRD=	yes
+.elif exists(${LOCALBASE}/lib/libgds.so.2)
+WITHOUT_FIREBIRD=yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libtds.so.2)
@@ -112,7 +114,7 @@ LIB_DEPENDS+=		gds.1:${PORTSDIR}/databases/firebird-client
 CONFIGURE_ARGS+=	--with-firebird=${LOCALBASE}
 PLIST_SUB+=		FIREBIRD:=""
 .else
-CONFIGURE_ARGS+=	--without-interbase
+CONFIGURE_ARGS+=	--without-firebird
 PLIST_SUB+=		FIREBIRD:="@comment "
 .endif
 

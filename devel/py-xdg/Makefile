@@ -3,12 +3,12 @@
 # Whom:			michael johnson <ahze@ahze.net>
 #
 # $FreeBSD$
-#    $MCom: ports/devel/py-xdg/Makefile,v 1.2 2006/09/02 14:38:55 ahze Exp $
+#   $MCom: ports/devel/py-xdg/Makefile,v 1.4 2007/09/10 05:35:05 mezz Exp $
 #
 
 PORTNAME=	xdg
 PORTVERSION=	0.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.freedesktop.org/~lanius/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,9 +23,7 @@ PYDISTUTILS_PKGNAME=	pyxdg
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|/etc|${LOCALBASE}/etc|g ; \
-		s|%%X11BASE%%|${X11BASE}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' \
+		's|/etc|${LOCALBASE}/etc|g ; s|%%LOCALBASE%%|${LOCALBASE}|g' \
 			${WRKSRC}/xdg/BaseDirectory.py \
 			${WRKSRC}/xdg/IconTheme.py
 

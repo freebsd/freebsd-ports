@@ -41,6 +41,7 @@ share/locale/ms/LC_MESSAGES/evolution-webcal.mo
 share/locale/nb/LC_MESSAGES/evolution-webcal.mo
 share/locale/ne/LC_MESSAGES/evolution-webcal.mo
 share/locale/nl/LC_MESSAGES/evolution-webcal.mo
+share/locale/oc/LC_MESSAGES/evolution-webcal.mo
 share/locale/or/LC_MESSAGES/evolution-webcal.mo
 share/locale/pa/LC_MESSAGES/evolution-webcal.mo
 share/locale/pl/LC_MESSAGES/evolution-webcal.mo
@@ -49,6 +50,7 @@ share/locale/pt_BR/LC_MESSAGES/evolution-webcal.mo
 share/locale/ro/LC_MESSAGES/evolution-webcal.mo
 share/locale/ru/LC_MESSAGES/evolution-webcal.mo
 share/locale/rw/LC_MESSAGES/evolution-webcal.mo
+share/locale/si/LC_MESSAGES/evolution-webcal.mo
 share/locale/sk/LC_MESSAGES/evolution-webcal.mo
 share/locale/sl/LC_MESSAGES/evolution-webcal.mo
 share/locale/sq/LC_MESSAGES/evolution-webcal.mo
@@ -74,8 +76,12 @@ share/locale/zh_TW/LC_MESSAGES/evolution-webcal.mo
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/ky/LC_MESSAGES

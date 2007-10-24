@@ -5,7 +5,7 @@
  
        if (!data_dirs || !data_dirs[0])
 -          data_dirs = "/usr/local/share/:/usr/share/";
-+          data_dirs = "/usr/local/share/gnome/:/usr/local/share/:/usr/share/";
++          data_dirs = "/usr/local/share/";
  
        data_dir_vector = g_strsplit (data_dirs, G_SEARCHPATH_SEPARATOR_S, 0);
  #endif

@@ -8,7 +8,7 @@
 
 PORTNAME=	mcatalog
 PORTVERSION=	0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.mcatalog.net/releases/
 
@@ -35,8 +35,6 @@ GCONF_SCHEMAS=	mcatalog.schemas
 post-patch:
 	@${REINPLACE_CMD} -e 's|/pixmaps/mcatalog|/pixmaps|g' \
 		${WRKSRC}/images/Makefile.in
-	@${REINPLACE_CMD} -e 's|@prefix@/share|${PREFIX}/share/gnome|g' \
-		${WRKSRC}/mcatalog.desktop.in
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${LOCALBASE}/lib/${GECKO}|g' \
 		${WRKSRC}/src/mcatalog.in
 

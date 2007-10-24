@@ -3,12 +3,12 @@ lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.so
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelsunone.urls
 libdata/bonobo/servers/GNOME_Evolution_SunOne_Storage.server
 libexec/evolution/%%EVO_VERSION%%/evolution-jescs
-share/gnome/evolution/%%EVO_VERSION%%/images/sun-connector.png
-share/gnome/evolution/%%EVO_VERSION%%/images/sunone-invitations.png
-share/gnome/evolution/%%EVO_VERSION%%/images/sunone-invitations-mini.png
-share/gnome/evolution-jescs/glade/sunone-add-permission-dialog.glade
-share/gnome/evolution-jescs/glade/sunone-permissions-dialog.glade
-share/gnome/evolution-jescs/glade/sunone-subscription-dialog.glade
+share/evolution/%%EVO_VERSION%%/images/sun-connector.png
+share/evolution/%%EVO_VERSION%%/images/sunone-invitations.png
+share/evolution/%%EVO_VERSION%%/images/sunone-invitations-mini.png
+share/evolution-jescs/glade/sunone-add-permission-dialog.glade
+share/evolution-jescs/glade/sunone-permissions-dialog.glade
+share/evolution-jescs/glade/sunone-subscription-dialog.glade
 share/locale/ar/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
@@ -24,6 +24,7 @@ share/locale/ja/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
+share/locale/oc/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/pl/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/pt/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/pt_BR/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
@@ -37,11 +38,13 @@ share/locale/vi/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
-@dirrm share/gnome/evolution-jescs/glade
-@dirrm share/gnome/evolution-jescs
+@dirrm share/evolution-jescs/glade
+@dirrm share/evolution-jescs
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz

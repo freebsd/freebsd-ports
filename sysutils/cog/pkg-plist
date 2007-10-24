@@ -1,8 +1,9 @@
 bin/cog
-share/gnome/applications/cog.desktop
-share/gnome/cog/%%VERSION%%/glade/cog.glade
-share/gnome/pixmaps/cog-icon-2-48x48.png
+share/applications/cog.desktop
+share/cog/%%VERSION%%/glade/cog.glade
+share/pixmaps/cog-icon-2-48x48.png
 share/locale/fr/LC_MESSAGES/cog.mo
-@dirrm share/gnome/cog/%%VERSION%%/glade
-@dirrm share/gnome/cog/%%VERSION%%
-@dirrm share/gnome/cog
+@dirrm share/cog/%%VERSION%%/glade
+@dirrm share/cog/%%VERSION%%
+@dirrm share/cog
+@dirrmtry share/applications

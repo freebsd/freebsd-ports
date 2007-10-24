@@ -3,11 +3,11 @@
 # Whom:			Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/glade3/Makefile,v 1.29 2007/03/13 17:16:00 mezz Exp $
+#   $MCom: ports/devel/glade3/Makefile,v 1.38 2007/09/17 15:59:36 ahze Exp $
 #
 
 PORTNAME=	glade3
-PORTVERSION=	3.2.2
+PORTVERSION=	3.4.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -21,12 +21,12 @@ USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 libxml2 gnomeprefix gnomehack \
-		gnomedocutils desktopfileutils
+		gnomedocutils desktopfileutils ltverhack
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
@@ -42,15 +42,16 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gnome
 CONFIGURE_ARGS+=--disable-gnome
 .endif
 
-.if ${HAVE_GNOME:Mpygtk2}!=""
-USE_PYTHON=	yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
-USE_GNOME+=	pygtk2
-PLIST_SUB+=	PYTHON:=""
-.else
+#.if ${HAVE_GNOME:Mpygtk2}!=""
+#USE_PYTHON=	yes
+#.include "${PORTSDIR}/Mk/bsd.python.mk"
+#USE_GNOME+=	pygtk2
+#PLIST_SUB+=	PYTHON:=""
+#CONFIGURE_ARGS+=--enable-python
+#.else
 CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON:="@comment "
-.endif
+#.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/glade3/bindings

@@ -24,7 +24,7 @@ lib/mugshot/firefox/components/libhippofirefox.so
 lib/mugshot/firefox/defaults/preferences/prefs.js
 lib/mugshot/firefox/install.rdf
 share/applications/mugshot.desktop
-share/autostart/mugshot.desktop
+share/gnome/autostart/mugshot.desktop
 @unexec %%PREFIX%%/share/mugshot/firefox-update.sh remove
 %%DATADIR%%/firefox-update.sh
 %%DATADIR%%/version
@@ -39,24 +39,7 @@ share/icons/hicolor/24x24/apps/mugshot.png
 share/icons/hicolor/32x32/apps/mugshot.png
 share/icons/hicolor/48x48/apps/mugshot.png
 @dirrm %%DATADIR%%
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/24x24/apps
-@dirrm share/icons/hicolor/24x24
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor/128x128/apps
-@dirrm share/icons/hicolor/128x128
-@dirrm share/icons/hicolor
-@dirrm share/icons
-@dirrm share/dbus-1/services
-@dirrm share/dbus-1
-@dirrm share/autostart
-@dirrm share/applications
+@dirrmtry share/applications
 @dirrm lib/mugshot/firefox/defaults/preferences
 @dirrm lib/mugshot/firefox/defaults
 @dirrm lib/mugshot/firefox/components

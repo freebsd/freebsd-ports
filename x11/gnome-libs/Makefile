@@ -3,12 +3,12 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-libs/Makefile,v 1.2 2006/09/10 00:51:15 mezz Exp $
+#   $MCom: ports/x11/gnome-libs/Makefile,v 1.7 2007/08/04 03:51:32 marcus Exp $
 #
 
 PORTNAME=	gnome-libs
 PORTVERSION=	1.4.2
-PORTREVISION=	7
+PORTREVISION=	10
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-libs/1.4
@@ -17,8 +17,8 @@ DIST_SUBDIR=	gnome
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT=	Libraries for GNOME, a GNU desktop environment
 
-BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
-RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
+RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_BZIP2=	yes
 USE_XLIB=	yes

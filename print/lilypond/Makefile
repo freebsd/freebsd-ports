@@ -9,7 +9,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/:src \
 		http://distfiles.master.finkmirrors.net/:rpm
@@ -21,7 +21,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU music typesetter
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		scrollkeeper-install:${PORTSDIR}/textproc/scrollkeeper
+		rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 

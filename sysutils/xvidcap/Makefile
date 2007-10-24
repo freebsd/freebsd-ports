@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Capture your X display to individual frames or MPEG video
 
-BUILD_DEPENDS=		scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper	\
+BUILD_DEPENDS=		rarian-sk-config:${PORTSDIR}/textproc/rarian	\
 			xml2po:${PORTSDIR}/textproc/gnome-doc-utils	\
 			texi2html:${PORTSDIR}/textproc/texi2html
 # To be reactivated when ffmpeg-devel will install libswscale.

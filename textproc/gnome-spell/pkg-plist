@@ -3,10 +3,11 @@ lib/gnome-spell/libgnome-spell-component.a
 lib/gnome-spell/libgnome-spell-component.la
 lib/gnome-spell/libgnome-spell-component.so
 libdata/bonobo/servers/GNOME_Spell.server
-share/gnome/control-center-2.0/icons/spell-checker.png
-share/gnome/gnome-spell-%%VERSION%%/spell-checker.glade
-share/gnome/idl/Spell-%%VERSION%%.idl
+share/control-center-2.0/icons/spell-checker.png
+share/gnome-spell-%%VERSION%%/spell-checker.glade
+share/idl/Spell-%%VERSION%%.idl
 share/locale/am/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
+share/locale/ar/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/be/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
@@ -14,10 +15,12 @@ share/locale/ca/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
+share/locale/dz/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/el/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/en_CA/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/es/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
+share/locale/et/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/fi/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/ga/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
@@ -34,7 +37,7 @@ share/locale/lv/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/ne/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
-share/locale/no/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
+share/locale/oc/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/pa/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/pl/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/pt/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
@@ -42,6 +45,7 @@ share/locale/pt_BR/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/rw/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/sk/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
+share/locale/sl/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
@@ -53,11 +57,15 @@ share/locale/vi/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/wa/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/xh/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-spell-%%VERSION%%.mo
-@dirrmtry share/gnome/control-center-2.0/icons 2>/dev/null
-@dirrmtry share/gnome/control-center-2.0
-@dirrm share/gnome/gnome-spell-%%VERSION%%
+@dirrm share/gnome-spell-%%VERSION%%
+@dirrmtry share/control-center-2.0/icons
+@dirrmtry share/control-center-2.0
 @dirrm lib/gnome-spell
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz

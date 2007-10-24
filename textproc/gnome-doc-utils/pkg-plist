@@ -5,9 +5,31 @@ libdata/pkgconfig/gnome-doc-utils.pc
 libdata/pkgconfig/xml2po.pc
 share/aclocal/gnome-doc-utils.m4
 %%DATADIR%%/gnome-doc-utils.make
+%%DATADIR%%/icons/hicolor/48x48/admon-bug.png
+%%DATADIR%%/icons/hicolor/48x48/admon-caution.png
+%%DATADIR%%/icons/hicolor/48x48/admon-important.png
+%%DATADIR%%/icons/hicolor/48x48/admon-note.png
+%%DATADIR%%/icons/hicolor/48x48/admon-tip.png
+%%DATADIR%%/icons/hicolor/48x48/admon-warning.png
+%%DATADIR%%/icons/hicolor/scalable/admon-bug.svg
+%%DATADIR%%/icons/hicolor/scalable/admon-caution.svg
+%%DATADIR%%/icons/hicolor/scalable/admon-important.svg
+%%DATADIR%%/icons/hicolor/scalable/admon-note.svg
+%%DATADIR%%/icons/hicolor/scalable/admon-tip.svg
+%%DATADIR%%/icons/hicolor/scalable/admon-warning.svg
 %%DATADIR%%/template-document.xml
 %%DATADIR%%/template.make
 %%DATADIR%%/template.omf.in
+%%DATADIR%%/templates/gnome-app-template.xml
+%%DATADIR%%/templates/gnome-applet-template.xml
+%%DATADIR%%/templates/legal.xml
+%%DATADIR%%/watermarks/watermark-blockquote-00AB.png
+%%DATADIR%%/watermarks/watermark-blockquote-00BB.png
+%%DATADIR%%/watermarks/watermark-blockquote-201C.png
+%%DATADIR%%/watermarks/watermark-blockquote-201D.png
+%%DATADIR%%/watermarks/watermark-blockquote-201E.png
+%%DATADIR%%/watermarks/watermark-code-python.png
+%%DATADIR%%/watermarks/watermark-code.png
 share/gnome/help/gnome-doc-make/C/gnome-doc-make.xml
 share/gnome/help/gnome-doc-make/C/legal.xml
 share/gnome/help/gnome-doc-make/C/make-ref.xml
@@ -16,7 +38,6 @@ share/gnome/help/gnome-doc-xslt/C/db-common.xml
 share/gnome/help/gnome-doc-xslt/C/db-label.xml
 share/gnome/help/gnome-doc-xslt/C/db-title.xml
 share/gnome/help/gnome-doc-xslt/C/db-xref.xml
-share/gnome/help/gnome-doc-xslt/C/db2html-admon.xml
 share/gnome/help/gnome-doc-xslt/C/db2html-autotoc.xml
 share/gnome/help/gnome-doc-xslt/C/db2html-bibliography.xml
 share/gnome/help/gnome-doc-xslt/C/db2html-block.xml
@@ -28,6 +49,7 @@ share/gnome/help/gnome-doc-xslt/C/db2html-division.xml
 share/gnome/help/gnome-doc-xslt/C/db2html-ebnf.xml
 share/gnome/help/gnome-doc-xslt/C/db2html-footnote.xml
 share/gnome/help/gnome-doc-xslt/C/db2html-funcsynopsis.xml
+share/gnome/help/gnome-doc-xslt/C/db2html-index.xml
 share/gnome/help/gnome-doc-xslt/C/db2html-info.xml
 share/gnome/help/gnome-doc-xslt/C/db2html-inline.xml
 share/gnome/help/gnome-doc-xslt/C/db2html-l10n.xml
@@ -40,13 +62,13 @@ share/gnome/help/gnome-doc-xslt/C/db2html-title.xml
 share/gnome/help/gnome-doc-xslt/C/db2html-xref.xml
 share/gnome/help/gnome-doc-xslt/C/db2html.xml
 share/gnome/help/gnome-doc-xslt/C/db2omf.xml
+share/gnome/help/gnome-doc-xslt/C/db2xhtml.xml
 share/gnome/help/gnome-doc-xslt/C/gettext.xml
 share/gnome/help/gnome-doc-xslt/C/gnome-doc-xslt.xml
 share/gnome/help/gnome-doc-xslt/C/l10n-numbers.xml
 share/gnome/help/gnome-doc-xslt/C/legal.xml
+share/gnome/help/gnome-doc-xslt/C/theme.xml
 share/gnome/help/gnome-doc-xslt/C/translating.xml
-share/gnome/omf/gnome-doc-make/gnome-doc-make-C.omf
-share/gnome/omf/gnome-doc-xslt/gnome-doc-xslt-C.omf
 share/locale/ar/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/bg/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/bn/LC_MESSAGES/gnome-doc-utils.mo
@@ -85,6 +107,7 @@ share/locale/mr/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/nb/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ne/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/nl/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/oc/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/or/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/pa/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/pl/LC_MESSAGES/gnome-doc-utils.mo
@@ -109,12 +132,14 @@ share/locale/wa/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-doc-utils.mo
+share/omf/gnome-doc-make/gnome-doc-make-C.omf
+share/omf/gnome-doc-xslt/gnome-doc-xslt-C.omf
+share/xml/gnome/xslt/common/theme.xsl
 share/xml/gnome/xslt/docbook/common/db-chunk.xsl
 share/xml/gnome/xslt/docbook/common/db-common.xsl
 share/xml/gnome/xslt/docbook/common/db-label.xsl
 share/xml/gnome/xslt/docbook/common/db-title.xsl
 share/xml/gnome/xslt/docbook/common/db-xref.xsl
-share/xml/gnome/xslt/docbook/html/db2html-admon.xsl
 share/xml/gnome/xslt/docbook/html/db2html-autotoc.xsl
 share/xml/gnome/xslt/docbook/html/db2html-bibliography.xsl
 share/xml/gnome/xslt/docbook/html/db2html-block.xsl
@@ -126,6 +151,7 @@ share/xml/gnome/xslt/docbook/html/db2html-division.xsl
 share/xml/gnome/xslt/docbook/html/db2html-ebnf.xsl
 share/xml/gnome/xslt/docbook/html/db2html-footnote.xsl
 share/xml/gnome/xslt/docbook/html/db2html-funcsynopsis.xsl
+share/xml/gnome/xslt/docbook/html/db2html-index.xsl
 share/xml/gnome/xslt/docbook/html/db2html-info.xsl
 share/xml/gnome/xslt/docbook/html/db2html-inline.xsl
 share/xml/gnome/xslt/docbook/html/db2html-l10n.xsl
@@ -138,10 +164,12 @@ share/xml/gnome/xslt/docbook/html/db2html-table.xsl
 share/xml/gnome/xslt/docbook/html/db2html-title.xsl
 share/xml/gnome/xslt/docbook/html/db2html-xref.xsl
 share/xml/gnome/xslt/docbook/html/db2html.xsl
+share/xml/gnome/xslt/docbook/html/db2xhtml.xsl
 share/xml/gnome/xslt/docbook/omf/db2omf.xsl
 share/xml/gnome/xslt/docbook/utils/chunks.xsl
 share/xml/gnome/xslt/docbook/utils/credits.xsl
 share/xml/gnome/xslt/docbook/utils/figures.xsl
+share/xml/gnome/xslt/docbook/utils/graphics.xsl
 share/xml/gnome/xslt/docbook/utils/ids.xsl
 share/xml/gnome/xslt/gettext/gettext.xsl
 share/xml/gnome/xslt/gettext/l10n-numbers.xsl
@@ -163,15 +191,21 @@ share/xml2po/xhtml.pyc
 @dirrm share/xml/gnome/xslt/docbook/html
 @dirrm share/xml/gnome/xslt/docbook/common
 @dirrm share/xml/gnome/xslt/docbook
+@dirrm share/xml/gnome/xslt/common
 @dirrm share/xml/gnome/xslt
 @dirrm share/xml/gnome
-@dirrm share/xml
-@dirrm share/gnome/omf/gnome-doc-xslt
-@dirrm share/gnome/omf/gnome-doc-make
+@dirrm share/omf/gnome-doc-xslt
+@dirrm share/omf/gnome-doc-make
 @dirrm share/gnome/help/gnome-doc-xslt/C
 @dirrm share/gnome/help/gnome-doc-xslt
 @dirrm share/gnome/help/gnome-doc-make/C
 @dirrm share/gnome/help/gnome-doc-make
+@dirrm %%DATADIR%%/watermarks
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor/48x48
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
@@ -179,6 +213,8 @@ share/xml2po/xhtml.pyc
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES

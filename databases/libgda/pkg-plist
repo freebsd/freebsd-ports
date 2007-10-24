@@ -74,11 +74,11 @@ lib/libgda-server.so.0
 %%DOCSDIR%%/libgda-common.hierarchy
 %%DOCSDIR%%/libgda-common.signals
 %%DOCSDIR%%/libgda-common.types
-share/gnome/gda/templates/gda-srv-command.c.tmpl
-share/gnome/gda/templates/gda-srv-connection.c.tmpl
-share/gnome/gda/templates/gda-srv-recordset.c.tmpl
-share/gnome/gda/templates/gda-srv.h.tmpl
-share/gnome/gda/templates/main-srv.c.tmpl
+share/gda/templates/gda-srv-command.c.tmpl
+share/gda/templates/gda-srv-connection.c.tmpl
+share/gda/templates/gda-srv-recordset.c.tmpl
+share/gda/templates/gda-srv.h.tmpl
+share/gda/templates/main-srv.c.tmpl
 share/gnome/help/libgda/C/architecture.html
 share/gnome/help/libgda/C/clients-building-corba.html
 share/gnome/help/libgda/C/clients-building.html
@@ -165,18 +165,14 @@ share/gnome/help/libgda/pt_BR/providers-actual-implementation.html
 share/gnome/help/libgda/pt_BR/providers-examples.html
 share/gnome/help/libgda/pt_BR/providers-implementation.html
 share/gnome/help/libgda/pt_BR/topic.dat
-share/gnome/idl/GDA.idl
-share/gnome/idl/GDA_Command.idl
-share/gnome/idl/GDA_Connection.idl
-share/gnome/idl/GDA_Error.idl
-share/gnome/idl/GDA_Field.idl
-share/gnome/idl/GDA_Listener.idl
-share/gnome/idl/GDA_Parameter.idl
-share/gnome/idl/GDA_Recordset.idl
-share/gnome/oaf/GNOME_GDA_Provider_Default.oaf
-share/gnome/omf/libgda/libgda-C.omf
-share/gnome/omf/libgda/libgda-es.omf
-share/gnome/omf/libgda/libgda-pt_BR.omf
+share/idl/GDA.idl
+share/idl/GDA_Command.idl
+share/idl/GDA_Connection.idl
+share/idl/GDA_Error.idl
+share/idl/GDA_Field.idl
+share/idl/GDA_Listener.idl
+share/idl/GDA_Parameter.idl
+share/idl/GDA_Recordset.idl
 share/locale/ca/LC_MESSAGES/libgda.mo
 share/locale/da/LC_MESSAGES/libgda.mo
 share/locale/de/LC_MESSAGES/libgda.mo
@@ -200,7 +196,11 @@ share/locale/sk/LC_MESSAGES/libgda.mo
 share/locale/sl/LC_MESSAGES/libgda.mo
 share/locale/sv/LC_MESSAGES/libgda.mo
 share/locale/uk/LC_MESSAGES/libgda.mo
-@dirrm share/gnome/omf/libgda
+share/oaf/GNOME_GDA_Provider_Default.oaf
+share/omf/libgda/libgda-C.omf
+share/omf/libgda/libgda-es.omf
+share/omf/libgda/libgda-pt_BR.omf
+@dirrm share/omf/libgda
 @dirrm share/gnome/help/libgda/pt_BR/images
 @dirrm share/gnome/help/libgda/pt_BR
 @dirrm share/gnome/help/libgda/es/images
@@ -208,8 +208,8 @@ share/locale/uk/LC_MESSAGES/libgda.mo
 @dirrm share/gnome/help/libgda/C/images
 @dirrm share/gnome/help/libgda/C
 @dirrm share/gnome/help/libgda
-@dirrm share/gnome/gda/templates
-@dirrm share/gnome/gda
+@dirrm share/gda/templates
+@dirrm share/gda
 @dirrm include/libgda-%%VERSION%%/gda++
 @dirrm include/libgda-%%VERSION%%/gda
 @dirrm include/libgda-%%VERSION%%

@@ -5,7 +5,7 @@
  	base_add_books (base, dir);
  	g_free (dir);
 +
-+	dir = g_build_filename (data_dir, "..", "doc", NULL);
++	dir = g_build_filename (data_dir, "doc", NULL);
 +	base_add_books (base, dir);
 +	g_free (dir);
  }

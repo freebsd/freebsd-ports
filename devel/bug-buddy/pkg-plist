@@ -1,22 +1,26 @@
 bin/bug-buddy
-share/gnome/applications/bug-buddy.desktop
-share/gnome/bug-buddy/bug-buddy.glade
-share/gnome/bug-buddy/bug-buddy.menu
-share/gnome/bug-buddy/bug-buddy.png
-share/gnome/bug-buddy/bugzilla/gnome.bugzilla
-share/gnome/bug-buddy/bugzilla/gnome/config
-share/gnome/bug-buddy/bugzilla/gnome/mostfreq
-share/gnome/bug-buddy/bugzilla/gnome/products
-share/gnome/bug-buddy/bugzilla/ximian.bugzilla
-share/gnome/bug-buddy/bugzilla/ximian/config
-share/gnome/bug-buddy/bugzilla/ximian/mostfreq
-share/gnome/bug-buddy/bugzilla/ximian/products
-share/gnome/bug-buddy/gdb-cmd
+lib/gtk-2.0/modules/libgnomebreakpad.la
+lib/gtk-2.0/modules/libgnomebreakpad.so
+share/applications/bug-buddy.desktop
+%%DATADIR%%/bug-buddy.gtkbuilder
+%%DATADIR%%/bug-buddy.menu
+%%DATADIR%%/bug-buddy.png
+%%DATADIR%%/bugzilla/gnome.bugzilla
+%%DATADIR%%/bugzilla/gnome/config
+%%DATADIR%%/bugzilla/gnome/mostfreq
+%%DATADIR%%/bugzilla/gnome/products
+%%DATADIR%%/bugzilla/ximian.bugzilla
+%%DATADIR%%/bugzilla/ximian/config
+%%DATADIR%%/bugzilla/ximian/mostfreq
+%%DATADIR%%/bugzilla/ximian/products
+%%DATADIR%%/gdb-cmd
 share/icons/hicolor/48x48/apps/bug-buddy.png
 share/locale/am/LC_MESSAGES/bug-buddy.mo
 share/locale/ar/LC_MESSAGES/bug-buddy.mo
+share/locale/as/LC_MESSAGES/bug-buddy.mo
 share/locale/az/LC_MESSAGES/bug-buddy.mo
 share/locale/be/LC_MESSAGES/bug-buddy.mo
+share/locale/be@latin/LC_MESSAGES/bug-buddy.mo
 share/locale/bg/LC_MESSAGES/bug-buddy.mo
 share/locale/bn/LC_MESSAGES/bug-buddy.mo
 share/locale/bn_IN/LC_MESSAGES/bug-buddy.mo
@@ -63,6 +67,7 @@ share/locale/nb/LC_MESSAGES/bug-buddy.mo
 share/locale/ne/LC_MESSAGES/bug-buddy.mo
 share/locale/nl/LC_MESSAGES/bug-buddy.mo
 share/locale/nn/LC_MESSAGES/bug-buddy.mo
+share/locale/oc/LC_MESSAGES/bug-buddy.mo
 share/locale/or/LC_MESSAGES/bug-buddy.mo
 share/locale/pa/LC_MESSAGES/bug-buddy.mo
 share/locale/pl/LC_MESSAGES/bug-buddy.mo
@@ -71,6 +76,7 @@ share/locale/pt_BR/LC_MESSAGES/bug-buddy.mo
 share/locale/ro/LC_MESSAGES/bug-buddy.mo
 share/locale/ru/LC_MESSAGES/bug-buddy.mo
 share/locale/rw/LC_MESSAGES/bug-buddy.mo
+share/locale/si/LC_MESSAGES/bug-buddy.mo
 share/locale/sk/LC_MESSAGES/bug-buddy.mo
 share/locale/sl/LC_MESSAGES/bug-buddy.mo
 share/locale/sq/LC_MESSAGES/bug-buddy.mo
@@ -78,28 +84,38 @@ share/locale/sr/LC_MESSAGES/bug-buddy.mo
 share/locale/sr@Latn/LC_MESSAGES/bug-buddy.mo
 share/locale/sv/LC_MESSAGES/bug-buddy.mo
 share/locale/ta/LC_MESSAGES/bug-buddy.mo
+share/locale/te/LC_MESSAGES/bug-buddy.mo
 share/locale/th/LC_MESSAGES/bug-buddy.mo
 share/locale/tr/LC_MESSAGES/bug-buddy.mo
 share/locale/ug/LC_MESSAGES/bug-buddy.mo
 share/locale/uk/LC_MESSAGES/bug-buddy.mo
+share/locale/uz@cyrillic/LC_MESSAGES/bug-buddy.mo
 share/locale/vi/LC_MESSAGES/bug-buddy.mo
 share/locale/wa/LC_MESSAGES/bug-buddy.mo
 share/locale/xh/LC_MESSAGES/bug-buddy.mo
 share/locale/zh_CN/LC_MESSAGES/bug-buddy.mo
 share/locale/zh_HK/LC_MESSAGES/bug-buddy.mo
 share/locale/zh_TW/LC_MESSAGES/bug-buddy.mo
-@dirrm share/gnome/bug-buddy/bugzilla/ximian
-@dirrm share/gnome/bug-buddy/bugzilla/gnome
-@dirrm share/gnome/bug-buddy/bugzilla
-@dirrm share/gnome/bug-buddy
+@dirrm %%DATADIR%%/bugzilla/ximian
+@dirrm %%DATADIR%%/bugzilla/gnome
+@dirrm %%DATADIR%%/bugzilla
+@dirrm %%DATADIR%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
@@ -112,3 +128,8 @@ share/locale/zh_TW/LC_MESSAGES/bug-buddy.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrmtry share/applications

@@ -1,10 +1,10 @@
 bin/gnome-chess
 share/gnome/apps/Games/gnome-chess.desktop
-share/gnome/gnome-chess/glade/level.glade
-share/gnome/gnome-chess/glade/login.glade
-share/gnome/gnome-chess/glade/pgn.glade
-share/gnome/gnome-chess/glade/prefs.glade
-share/gnome/gnome-chess/glade/promotion.glade
+share/gnome-chess/glade/level.glade
+share/gnome-chess/glade/login.glade
+share/gnome-chess/glade/pgn.glade
+share/gnome-chess/glade/prefs.glade
+share/gnome-chess/glade/promotion.glade
 share/gnome/help/gnome-chess-manual/C/docbook.css
 share/gnome/help/gnome-chess-manual/C/fdl-appendix.sgml
 share/gnome/help/gnome-chess-manual/C/figures/main.png
@@ -25,26 +25,26 @@ share/gnome/help/gnome-chess-manual/C/stylesheet-images/toc-plus.gif
 share/gnome/help/gnome-chess-manual/C/stylesheet-images/up.gif
 share/gnome/help/gnome-chess-manual/C/stylesheet-images/warning.gif
 share/gnome/help/gnome-chess-manual/C/usage.html
-share/gnome/mime-info/gnome-chess.keys
-share/gnome/mime-info/gnome-chess.mime
-share/gnome/omf/gnome-chess/gnome-chess-manual-C.omf
-share/gnome/pixmaps/gnome-chess.png
-share/gnome/pixmaps/gnome-chess/B.png
-share/gnome/pixmaps/gnome-chess/K.png
-share/gnome/pixmaps/gnome-chess/N.png
-share/gnome/pixmaps/gnome-chess/P.png
-share/gnome/pixmaps/gnome-chess/Q.png
-share/gnome/pixmaps/gnome-chess/R.png
-share/gnome/pixmaps/gnome-chess/b.png
-share/gnome/pixmaps/gnome-chess/end.png
-share/gnome/pixmaps/gnome-chess/k.png
-share/gnome/pixmaps/gnome-chess/n.png
-share/gnome/pixmaps/gnome-chess/next.png
-share/gnome/pixmaps/gnome-chess/p.png
-share/gnome/pixmaps/gnome-chess/prev.png
-share/gnome/pixmaps/gnome-chess/q.png
-share/gnome/pixmaps/gnome-chess/r.png
-share/gnome/pixmaps/gnome-chess/start.png
+share/mime-info/gnome-chess.keys
+share/mime-info/gnome-chess.mime
+share/omf/gnome-chess/gnome-chess-manual-C.omf
+share/pixmaps/gnome-chess.png
+share/pixmaps/gnome-chess/B.png
+share/pixmaps/gnome-chess/K.png
+share/pixmaps/gnome-chess/N.png
+share/pixmaps/gnome-chess/P.png
+share/pixmaps/gnome-chess/Q.png
+share/pixmaps/gnome-chess/R.png
+share/pixmaps/gnome-chess/b.png
+share/pixmaps/gnome-chess/end.png
+share/pixmaps/gnome-chess/k.png
+share/pixmaps/gnome-chess/n.png
+share/pixmaps/gnome-chess/next.png
+share/pixmaps/gnome-chess/p.png
+share/pixmaps/gnome-chess/prev.png
+share/pixmaps/gnome-chess/q.png
+share/pixmaps/gnome-chess/r.png
+share/pixmaps/gnome-chess/start.png
 share/locale/az/LC_MESSAGES/gnome-chess.mo
 share/locale/ca/LC_MESSAGES/gnome-chess.mo
 share/locale/da/LC_MESSAGES/gnome-chess.mo
@@ -68,11 +68,11 @@ share/locale/sv/LC_MESSAGES/gnome-chess.mo
 share/locale/tr/LC_MESSAGES/gnome-chess.mo
 share/locale/uk/LC_MESSAGES/gnome-chess.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnome-chess.mo
-@dirrm share/gnome/pixmaps/gnome-chess
-@dirrm share/gnome/omf/gnome-chess
+@dirrm share/pixmaps/gnome-chess
+@dirrm share/omf/gnome-chess
 @dirrm share/gnome/help/gnome-chess-manual/C/stylesheet-images
 @dirrm share/gnome/help/gnome-chess-manual/C/figures
 @dirrm share/gnome/help/gnome-chess-manual/C
 @dirrm share/gnome/help/gnome-chess-manual
-@dirrm share/gnome/gnome-chess/glade
-@dirrm share/gnome/gnome-chess
+@dirrm share/gnome-chess/glade
+@dirrm share/gnome-chess

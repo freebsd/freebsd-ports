@@ -823,6 +823,7 @@
     SUBDIR += queequeg
     SUBDIR += rand
     SUBDIR += raptor
+    SUBDIR += rarian
     SUBDIR += rast
     SUBDIR += re_graph
     SUBDIR += redet

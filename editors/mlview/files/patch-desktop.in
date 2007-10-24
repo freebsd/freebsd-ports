@@ -12,7 +12,7 @@
  Comment=A generic simple XML editor for GNOME
 -Icon=mlview-app-icon.xpm
 -TryExec=mlv
-+Icon=/usr/X11R6/share/gnome/pixmaps/mlview-app-icon.xpm
++Icon=mlview-app-icon.xpm
 +TryExec=mlview
  Exec=@MLVIEW_EXE@ %F
  Terminal=false

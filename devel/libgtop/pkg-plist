@@ -1,13 +1,13 @@
 bin/libgtop_daemon2
 bin/libgtop_server2
 include/libgtop-2.0/glibtop.h
+include/libgtop-2.0/glibtop_private.h
 include/libgtop-2.0/glibtop/close.h
 include/libgtop-2.0/glibtop/command.h
 include/libgtop-2.0/glibtop/cpu.h
 include/libgtop-2.0/glibtop/fsusage.h
 include/libgtop-2.0/glibtop/global.h
 include/libgtop-2.0/glibtop/gnuserv.h
-include/libgtop-2.0/glibtop/inodedb.h
 include/libgtop-2.0/glibtop/loadavg.h
 include/libgtop-2.0/glibtop/mem.h
 include/libgtop-2.0/glibtop/mountlist.h
@@ -28,6 +28,7 @@ include/libgtop-2.0/glibtop/procsignal.h
 include/libgtop-2.0/glibtop/procstate.h
 include/libgtop-2.0/glibtop/proctime.h
 include/libgtop-2.0/glibtop/procuid.h
+include/libgtop-2.0/glibtop/procwd.h
 include/libgtop-2.0/glibtop/sem_limits.h
 include/libgtop-2.0/glibtop/shm_limits.h
 include/libgtop-2.0/glibtop/signal.h
@@ -54,7 +55,6 @@ libdata/pkgconfig/libgtop-2.0.pc
 %%DOCSDIR%%/libgtop-Command.html
 %%DOCSDIR%%/libgtop-GlibTop-Server.html
 %%DOCSDIR%%/libgtop-GlibTop.html
-%%DOCSDIR%%/libgtop-Inode-DB.html
 %%DOCSDIR%%/libgtop-Net-List.html
 %%DOCSDIR%%/libgtop-Net-Load.html
 %%DOCSDIR%%/libgtop-PPP.html
@@ -144,6 +144,7 @@ share/locale/nb/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ne/LC_MESSAGES/libgtop-2.0.mo
 share/locale/nl/LC_MESSAGES/libgtop-2.0.mo
 share/locale/nn/LC_MESSAGES/libgtop-2.0.mo
+share/locale/oc/LC_MESSAGES/libgtop-2.0.mo
 share/locale/or/LC_MESSAGES/libgtop-2.0.mo
 share/locale/pa/LC_MESSAGES/libgtop-2.0.mo
 share/locale/pl/LC_MESSAGES/libgtop-2.0.mo
@@ -170,6 +171,7 @@ share/locale/zh_HK/LC_MESSAGES/libgtop-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @dirrm include/libgtop-2.0/glibtop
 @dirrm include/libgtop-2.0
+@dirrm %%DOCSDIR%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -178,6 +180,8 @@ share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @dirrmtry share/locale/te
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mi/LC_MESSAGES
 @dirrmtry share/locale/mi
 @dirrmtry share/locale/mg/LC_MESSAGES
@@ -190,4 +194,3 @@ share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
-@dirrm %%DOCSDIR%%

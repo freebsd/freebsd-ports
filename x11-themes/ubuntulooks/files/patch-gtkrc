@@ -1,5 +1,5 @@
---- themes/Human/gtk-2.0/gtkrc.orig	Fri Jun  8 00:06:54 2007
-+++ themes/Human/gtk-2.0/gtkrc	Fri Jun  8 00:07:19 2007
+--- themes/Human/gtk-2.0/gtkrc.orig
++++ themes/Human/gtk-2.0/gtkrc
 @@ -7,6 +7,7 @@
  #
  # Feel free to modify and share!
@@ -8,3 +8,11 @@
  
  style "clearlooks-default"
  {
+@@ -219,6 +220,7 @@
+ # tooltips stuff
+ widget_class "*.tooltips.*.GtkToggleButton" style "clearlooks-tasklist"
+ widget "gtk-tooltips" style "clearlooks-tooltips"
++widget "gtk-tooltip" style "clearlooks-tooltips"
+ 
+ # treeview stuff
+ widget_class "*.GtkTreeView.GtkButton" style "clearlooks-tree"

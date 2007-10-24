@@ -7,7 +7,7 @@
 
 PORTNAME=	gturing
 PORTVERSION=	0.1.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://ftp.gnome.org/pub/gnome/sources/gturing/0.1/
 

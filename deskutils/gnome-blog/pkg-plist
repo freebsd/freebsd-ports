@@ -50,9 +50,8 @@ bin/gnome-blog-poster
 %%PYTHON_SITELIBDIR%%/gnomeblog/rich_entry.pyo
 libdata/bonobo/servers/GNOME_BlogApplet.server
 libexec/blog_applet.py
-share/gnome/applications/gnome-blog.desktop
-share/gnome/gnome-2.0/ui/GNOME_BlogApplet.xml
-share/gnome/pixmaps/gnome-blog.png
+share/applications/gnome-blog.desktop
+share/gnome-2.0/ui/GNOME_BlogApplet.xml
 share/locale/az/LC_MESSAGES/gnome-blog.mo
 share/locale/bg/LC_MESSAGES/gnome-blog.mo
 share/locale/ca/LC_MESSAGES/gnome-blog.mo
@@ -85,6 +84,8 @@ share/locale/uk/LC_MESSAGES/gnome-blog.mo
 share/locale/vi/LC_MESSAGES/gnome-blog.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-blog.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-blog.mo
+share/pixmaps/gnome-blog.png
+@dirrm %%PYTHON_SITELIBDIR%%/gnomeblog
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrm %%PYTHON_SITELIBDIR%%/gnomeblog
+@dirrmtry share/applications

@@ -6,7 +6,7 @@
 
 PORTNAME=	mboxcheck-applet
 PORTVERSION=	0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	http://perso.orange.fr/seb128/fichiers/
 
@@ -21,14 +21,14 @@ NO_BUILD=	yes
 
 do-patch:
 	@${REINPLACE_CMD} 's|/usr/bin/python|${PYTHON_CMD}|' ${WRKSRC}/*.py
-	@${REINPLACE_CMD} 's|/usr/share/pixmaps/|${LOCALBASE}/share/gnome/pixmaps/|' ${WRKSRC}/mboxcheck.py
+	@${REINPLACE_CMD} 's|/usr/share/pixmaps/|${LOCALBASE}/share/pixmaps/|' ${WRKSRC}/mboxcheck.py
 	@${REINPLACE_CMD} 's|/usr/lib/gnome-panel/mboxcheck|${LOCALBASE}/libexec/mboxcheck.py|' ${WRKSRC}/GNOME_MboxCheck.server
 	@${REINPLACE_CMD} 's|mbox.png|mboxcheck.png|' ${WRKSRC}/GNOME_MboxCheck.server
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mboxcheck.py ${LOCALBASE}/libexec
 	${INSTALL_SCRIPT} ${WRKSRC}/configmbox.py ${LOCALBASE}/libexec
-	${INSTALL_DATA} ${WRKSRC}/mboxcheck.png ${LOCALBASE}/share/gnome/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/mboxcheck.png ${LOCALBASE}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/GNOME_MboxCheck.server ${LOCALBASE}/libdata/bonobo/servers
 
 .include <bsd.port.mk>

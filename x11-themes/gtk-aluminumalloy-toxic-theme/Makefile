@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
+
 FLAVOR=		toxic
 
 MASTERDIR=	${.CURDIR}/../gtk-aluminumalloy-volcanic-theme

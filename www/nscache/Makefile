@@ -3,11 +3,12 @@
 # Whom:			Kris Kennaway <kris@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/www/nscache/Makefile,v 1.1 2006/10/04 11:49:18 ahze Exp $
+#   $MCom: ports/www/nscache/Makefile,v 1.3 2007/08/07 03:35:07 mezz Exp $
+#
 
 PORTNAME=	nscache
 PORTVERSION=	0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.idata.sk/~ondrej/sw/
@@ -34,6 +35,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/nscache.desktop \
 		${PREFIX}/share/gnome/apps/Internet
 	${INSTALL_DATA} ${WRKSRC}/nscache.xpm \
-		${PREFIX}/share/gnome/pixmaps
+		${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

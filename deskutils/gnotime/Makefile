@@ -3,13 +3,12 @@
 # Whom:			Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnotime/Makefile,v 1.18 2007/03/14 17:45:39 marcus Exp $
+#   $MCom: ports/deskutils/gnotime/Makefile,v 1.21 2007/05/19 21:36:03 marcus Exp $
 #
 
 PORTNAME=	gnotime
 PORTVERSION=	2.2.2
-PORTREVISION=	1
-PORTREVISON=	3
+PORTREVISION=	6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gttr
@@ -21,6 +20,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnomeprefix intlhack gtkhtml3 libgnomeui
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes

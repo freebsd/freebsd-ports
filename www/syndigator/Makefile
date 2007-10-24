@@ -4,11 +4,12 @@
 # Whom:				ijliao
 #
 # $FreeBSD$
-#    $MCom: ports/www/syndigator/Makefile,v 1.1 2006/09/30 18:31:24 ahze Exp $
+#   $MCom: ports/www/syndigator/Makefile,v 1.4 2007/09/09 22:45:27 mezz Exp $
+#
 
 PORTNAME=	syndigator
 PORTVERSION=	0.15.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,7 +32,7 @@ USE_GNOME=	gnomehier
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-GNOMEDIR=	${PREFIX}/share/gnome
+GNOMEDIR=	${PREFIX}/share
 
 post-patch:
 	@${PERL} -pi -e 's|./lib|${PREFIX}/${SITE_PERL_REL}/${PORTNAME}|g' \

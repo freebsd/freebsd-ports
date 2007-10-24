@@ -3,11 +3,12 @@
 # Whom:			Michael Johnson <ahze@ahze.net>
 #
 # $FreeBSD$
-#    $MCom: ports/net-p2p/gtorrentviewer/Makefile,v 1.2 2006/09/30 01:22:35 ahze Exp $
+#   $MCom: ports/net-p2p/gtorrentviewer/Makefile,v 1.4 2007/08/06 17:16:29 mezz Exp $
+#
 
 PORTNAME=	gtorrentviewer
 PORTVERSION=	0.2b
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,8 +26,8 @@ GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-pixmapsdir=${PREFIX}/share/gnome/pixmaps \
-		--with-desktopdir=${PREFIX}/share/gnome/applications
+CONFIGURE_ARGS=	--with-pixmapsdir=${PREFIX}/share/pixmaps \
+		--with-desktopdir=${PREFIX}/share/applications
 
 MAN1=		gtorrentviewer.1
 DOCS=		AUTHORS COPYING ChangeLog README

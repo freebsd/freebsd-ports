@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PATH=${PATH}:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
+PATH=${PATH}:/bin:/usr/bin:/usr/local/bin
 export PATH
 
 PREFIX=`xml2-config --prefix`
@@ -12,7 +12,7 @@ if [ "$2" = "POST-INSTALL" ]; then
 
     xmlcatalog --noout --add "public" \
     	"-//OMF//DTD Scrollkeeper OMF Variant V1.0//EN" \
-	"${SKPREFIX}/share/gnome/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd" \
+	"${SKPREFIX}/share/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd" \
 	${ROOTCATALOG}
 
     scrollkeeper-rebuilddb -q -p /var/db/scrollkeeper || /usr/bin/true

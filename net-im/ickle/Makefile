@@ -4,11 +4,11 @@
 # Whom:				ijliao
 #
 # $FreeBSD$
-#    $MCom: ports/net-im/ickle/Makefile,v 1.1 2006/10/04 15:40:14 ahze Exp $
+#
 
 PORTNAME=	ickle
 PORTVERSION=	0.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,11 +38,11 @@ post-patch:
 .if ${HAVE_GNOME:Mlibcapplet}!="" || defined(WITH_GNOME)
 USE_GNOME+=	libcapplet
 PKGNAMESUFFIX=	-gnome
-PLIST_SUB+=	ICKLEDATADIR="share/gnome/" GNOME="" NOGNOME="@comment "
+PLIST_SUB+=	GNOME="" NOGNOME="@comment "
 .else
 CONFIGURE_ARGS+=	--with-gnome=no
 
-PLIST_SUB+=	ICKLEDATADIR="share/" GNOME="@comment " NOGNOME=""
+PLIST_SUB+=	GNOME="@comment " NOGNOME=""
 .endif
 
 .if defined(WITH_ICKLE_CONTROL)

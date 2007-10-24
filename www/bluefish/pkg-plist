@@ -22,10 +22,10 @@ bin/bluefish
 %%DATADIR%%/icon_r.png
 %%DATADIR%%/icon_unknown.png
 %%DATADIR%%/icon_xml.png
-share/gnome/applications/bluefish-project.desktop
-share/gnome/applications/bluefish.desktop
-share/gnome/pixmaps/bluefish-icon.png
-share/gnome/pixmaps/gnome-mime-application-bluefish-project.png
+share/applications/bluefish-project.desktop
+share/applications/bluefish.desktop
+share/pixmaps/bluefish-icon.png
+share/pixmaps/gnome-mime-application-bluefish-project.png
 share/locale/bg/LC_MESSAGES/bluefish.mo
 share/locale/cs/LC_MESSAGES/bluefish.mo
 share/locale/da/LC_MESSAGES/bluefish.mo
@@ -54,3 +54,5 @@ share/mime/packages/bluefish.xml
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/mime
+@dirrmtry share/applications

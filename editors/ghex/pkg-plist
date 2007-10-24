@@ -6,64 +6,47 @@ lib/libgtkhex.la
 lib/libgtkhex.so
 lib/libgtkhex.so.0
 libdata/pkgconfig/gtkhex.pc
-share/gnome/applications/ghex.desktop
-share/gnome/gnome-2.0/ui/ghex-ui.xml
+share/applications/ghex.desktop
+share/gnome-2.0/ui/ghex-ui.xml
 share/gnome/help/ghex2/C/figures/ghex_window_empty.png
 share/gnome/help/ghex2/C/figures/ghex_window_open.png
 share/gnome/help/ghex2/C/ghex2.xml
 share/gnome/help/ghex2/C/legal.xml
-share/gnome/help/ghex2/C/topic.dat
 share/gnome/help/ghex2/de/figures/ghex_window_empty.png
 share/gnome/help/ghex2/de/figures/ghex_window_open.png
 share/gnome/help/ghex2/de/ghex2.xml
-share/gnome/help/ghex2/de/legal.xml
 share/gnome/help/ghex2/es/figures/ghex_window_empty.png
 share/gnome/help/ghex2/es/figures/ghex_window_open.png
 share/gnome/help/ghex2/es/ghex2.xml
-share/gnome/help/ghex2/es/legal.xml
-share/gnome/help/ghex2/es/topic.dat
 share/gnome/help/ghex2/fr/figures/ghex_window_empty.png
 share/gnome/help/ghex2/fr/figures/ghex_window_open.png
 share/gnome/help/ghex2/fr/ghex2.xml
-share/gnome/help/ghex2/fr/legal.xml
 share/gnome/help/ghex2/it/figures/ghex_window_empty.png
 share/gnome/help/ghex2/it/figures/ghex_window_open.png
 share/gnome/help/ghex2/it/ghex2.xml
-share/gnome/help/ghex2/it/legal.xml
 share/gnome/help/ghex2/ja/figures/ghex_window_empty.png
 share/gnome/help/ghex2/ja/figures/ghex_window_open.png
 share/gnome/help/ghex2/ja/ghex2.xml
-share/gnome/help/ghex2/ja/legal.xml
-share/gnome/help/ghex2/ja/topic.dat
 share/gnome/help/ghex2/ko/figures/ghex_window_empty.png
 share/gnome/help/ghex2/ko/figures/ghex_window_open.png
 share/gnome/help/ghex2/ko/ghex2.xml
-share/gnome/help/ghex2/ko/legal.xml
 share/gnome/help/ghex2/sv/figures/ghex_window_empty.png
 share/gnome/help/ghex2/sv/figures/ghex_window_open.png
 share/gnome/help/ghex2/sv/ghex2.xml
-share/gnome/help/ghex2/sv/legal.xml
-share/gnome/help/ghex2/sv/topic.dat
 share/gnome/help/ghex2/zh_CN/figures/ghex_window_empty.png
 share/gnome/help/ghex2/zh_CN/figures/ghex_window_open.png
 share/gnome/help/ghex2/zh_CN/ghex2.xml
-share/gnome/help/ghex2/zh_CN/legal.xml
 share/gnome/help/ghex2/zh_TW/figures/ghex_window_empty.png
 share/gnome/help/ghex2/zh_TW/figures/ghex_window_open.png
 share/gnome/help/ghex2/zh_TW/ghex2.xml
-share/gnome/help/ghex2/zh_TW/legal.xml
-share/gnome/omf/ghex/ghex-C.omf
-share/gnome/omf/ghex/ghex2-de.omf
-share/gnome/omf/ghex/ghex2-es.omf
-share/gnome/omf/ghex/ghex2-fr.omf
-share/gnome/omf/ghex/ghex2-it.omf
-share/gnome/omf/ghex/ghex2-ja.omf
-share/gnome/omf/ghex/ghex2-ko.omf
-share/gnome/omf/ghex/ghex2-sv.omf
-share/gnome/omf/ghex/ghex2-zh_CN.omf
-share/gnome/omf/ghex/ghex2-zh_TW.omf
-share/gnome/pixmaps/gnome-ghex.png
+share/icons/hicolor/16x16/apps/ghex.png
+share/icons/hicolor/22x22/apps/ghex.png
+share/icons/hicolor/24x24/apps/ghex.png
+share/icons/hicolor/32x32/apps/ghex.png
+share/icons/hicolor/48x48/apps/ghex.png
+share/icons/hicolor/scalable/apps/ghex.svg
 share/locale/am/LC_MESSAGES/ghex-2.0.mo
+share/locale/ar/LC_MESSAGES/ghex-2.0.mo
 share/locale/az/LC_MESSAGES/ghex-2.0.mo
 share/locale/be/LC_MESSAGES/ghex-2.0.mo
 share/locale/bg/LC_MESSAGES/ghex-2.0.mo
@@ -71,6 +54,7 @@ share/locale/ca/LC_MESSAGES/ghex-2.0.mo
 share/locale/cs/LC_MESSAGES/ghex-2.0.mo
 share/locale/da/LC_MESSAGES/ghex-2.0.mo
 share/locale/de/LC_MESSAGES/ghex-2.0.mo
+share/locale/dz/LC_MESSAGES/ghex-2.0.mo
 share/locale/el/LC_MESSAGES/ghex-2.0.mo
 share/locale/en_CA/LC_MESSAGES/ghex-2.0.mo
 share/locale/en_GB/LC_MESSAGES/ghex-2.0.mo
@@ -87,13 +71,15 @@ share/locale/id/LC_MESSAGES/ghex-2.0.mo
 share/locale/it/LC_MESSAGES/ghex-2.0.mo
 share/locale/ja/LC_MESSAGES/ghex-2.0.mo
 share/locale/ko/LC_MESSAGES/ghex-2.0.mo
+share/locale/lv/LC_MESSAGES/ghex-2.0.mo
+share/locale/mk/LC_MESSAGES/ghex-2.0.mo
 share/locale/ml/LC_MESSAGES/ghex-2.0.mo
 share/locale/ms/LC_MESSAGES/ghex-2.0.mo
 share/locale/nb/LC_MESSAGES/ghex-2.0.mo
 share/locale/ne/LC_MESSAGES/ghex-2.0.mo
 share/locale/nl/LC_MESSAGES/ghex-2.0.mo
 share/locale/nn/LC_MESSAGES/ghex-2.0.mo
-share/locale/no/LC_MESSAGES/ghex-2.0.mo
+share/locale/oc/LC_MESSAGES/ghex-2.0.mo
 share/locale/pa/LC_MESSAGES/ghex-2.0.mo
 share/locale/pl/LC_MESSAGES/ghex-2.0.mo
 share/locale/pt/LC_MESSAGES/ghex-2.0.mo
@@ -113,7 +99,6 @@ share/locale/vi/LC_MESSAGES/ghex-2.0.mo
 share/locale/wa/LC_MESSAGES/ghex-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/ghex-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/ghex-2.0.mo
-@dirrm share/gnome/omf/ghex
 @dirrm share/gnome/help/ghex2/zh_TW/figures
 @dirrm share/gnome/help/ghex2/zh_TW
 @dirrm share/gnome/help/ghex2/zh_CN/figures
@@ -136,3 +121,10 @@ share/locale/zh_TW/LC_MESSAGES/ghex-2.0.mo
 @dirrm share/gnome/help/ghex2/C
 @dirrm share/gnome/help/ghex2
 @dirrm include/gtkhex
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/applications

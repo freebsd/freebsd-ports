@@ -7,7 +7,7 @@ $FreeBSD$
  CFLAGS = @CFLAGS@ $(EXTRA_GNOME_CFLAGS)
  LDFLAGS = @LDFLAGS@ $(EXTRA_GNOME_LIBS)
  
--HTML_DIR = $(datadir)/html
+-HTML_DIR = $(datadir)/gnome/html
 +HTML_DIR = $(prefix)/share/doc/gtkhtml
  
  TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)

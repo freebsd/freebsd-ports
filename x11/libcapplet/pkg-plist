@@ -3,5 +3,5 @@ include/libcapplet1/capplet-widget.h
 lib/libcapplet.a
 lib/libcapplet.so
 lib/libcapplet.so.5
-share/gnome/idl/control-center.idl
+share/idl/control-center.idl
 @dirrm include/libcapplet1

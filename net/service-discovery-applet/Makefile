@@ -3,12 +3,12 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/service-discovery-applet/Makefile,v 1.3 2006/10/11 05:53:39 marcus Exp $
+#   $MCom: ports/net/service-discovery-applet/Makefile,v 1.5 2007/08/06 16:57:53 mezz Exp $
 #
 
 PORTNAME=	service-discovery-applet
 PORTVERSION=	0.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net dns gnome
 MASTER_SITES=	http://0pointer.de/~sebest/
 
@@ -36,6 +36,6 @@ post-patch:
 
 post-install:
 	@${LOCALBASE}/bin/gtk-update-icon-cache -f -q --ignore-theme-index \
-		${PREFIX}/share/gnome/service-discovery-applet/icons
+		${PREFIX}/share/service-discovery-applet/icons
 
 .include <bsd.port.mk>

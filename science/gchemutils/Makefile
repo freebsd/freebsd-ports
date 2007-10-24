@@ -3,9 +3,11 @@
 # Whom:				Pav Lucistnik <pav@oook.cz>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	gchemutils
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/0.8
@@ -29,7 +31,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/gnome/omf
+CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 GCONF_SCHEMAS=	gcrystal.schemas

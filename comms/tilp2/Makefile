@@ -7,6 +7,7 @@
 
 PORTNAME=	tilp2
 PORTVERSION=	1.07
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
@@ -34,9 +35,15 @@ PLIST_SUB=	NLS="@comment "
 .endif
 
 CONFIGURE_ARGS+=	--without-kde
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -UGTK_DISABLE_DEPRECATED" \
 		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
 
 MAN1=	tilp.1
+
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-D.*_DISABLE_DEPRECATED||g'
+	@${REINPLACE_CMD} -e 's|#define .*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/src/device.c ${WRKSRC}/src/toolbar.c
 
 .include <bsd.port.mk>

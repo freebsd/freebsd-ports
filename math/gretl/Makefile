@@ -8,7 +8,7 @@
 
 PORTNAME=	gretl
 PORTVERSION=	1.6.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -49,7 +49,6 @@ BROKEN=		math/lapack appears to be broken on alpha
 PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomeprefix gtksourceview libgnomeui
 GCONF_SCHEMAS=	gretl.schemas
-DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 .else
 CONFIGURE_ARGS+=	--without-gnome --without-gtksourceview
 .endif

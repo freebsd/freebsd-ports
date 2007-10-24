@@ -186,36 +186,37 @@
 %%GTK20%%@dirrm share/themes/Longhorn Inspirat/gtk-2.0/Tabs
 %%GTK20%%@dirrm share/themes/Longhorn Inspirat/gtk-2.0
 %%GTK20%%@dirrm share/themes/Longhorn Inspirat
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/metacity-theme-1.xml
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/button-close-pressed.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/button-minimize-pressed.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/titlebar-right-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/titlebar-right-unfocused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/titlebar-left-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/button-maximize-unfocused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/button-minimize-unfocused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/titlebar-mid-unfocused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/button-menu-unfocused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/frame-bottom-right-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/frame-left-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/frame-right-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/button-menu-pressed.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/titlebar-mid-shaded-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/button-menu-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/titlebar-mid-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/titlebar-mid-focused-template.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/button-maximize-pressed.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/titlebar-right-shaded-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/button-close-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/titlebar-right-shaded-unfocused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/button-close-unfocused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/frame-bottom-left-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/titlebar-left-shaded-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/titlebar-left-unfocused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/button-minimize-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/button-maximize-focused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/titlebar-left-shaded-unfocused.png
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/metacity-1/frame-bottom-mid-focused.png
-%%METACITY%%@dirrm share/gnome/themes/Longhorn Inspirat/metacity-1
-%%METACITY%%share/gnome/themes/Longhorn Inspirat/index.theme
-%%METACITY%%@dirrm share/gnome/themes/Longhorn Inspirat
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/metacity-theme-1.xml
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-close-pressed.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-minimize-pressed.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-right-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-right-unfocused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-left-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-maximize-unfocused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-minimize-unfocused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-mid-unfocused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-menu-unfocused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/frame-bottom-right-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/frame-left-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/frame-right-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-menu-pressed.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-mid-shaded-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-menu-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-mid-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-mid-focused-template.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-maximize-pressed.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-right-shaded-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-close-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-right-shaded-unfocused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-close-unfocused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/frame-bottom-left-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-left-shaded-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-left-unfocused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-minimize-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/button-maximize-focused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/titlebar-left-shaded-unfocused.png
+%%METACITY%%share/themes/Longhorn Inspirat/metacity-1/frame-bottom-mid-focused.png
+%%METACITY%%@dirrm share/themes/Longhorn Inspirat/metacity-1
+%%METACITY%%share/themes/Longhorn Inspirat/index.theme
+%%METACITY%%@dirrm share/themes/Longhorn Inspirat
+@dirrmtry share/themes

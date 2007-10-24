@@ -1,5 +1,5 @@
---- src/oobs-user.c.orig	Fri Sep 15 19:16:41 2006
-+++ src/oobs-user.c	Tue Oct 31 23:12:29 2006
+--- oobs/oobs-user.c.orig	Fri Sep 15 19:16:41 2006
++++ oobs/oobs-user.c	Tue Oct 31 23:12:29 2006
 @@ -18,6 +18,10 @@
   * Authors: Carlos Garnacho Parro  <carlosg@gnome.org>
   */

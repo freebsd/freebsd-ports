@@ -3,12 +3,12 @@
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/print/gnome-print/Makefile,v 1.2 2006/09/10 00:51:12 mezz Exp $
+#   $MCom: ports/print/gnome-print/Makefile,v 1.6 2007/09/24 19:40:45 mezz Exp $
 #
 
 PORTNAME=	gnome-print
 PORTVERSION=	0.37
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-print/0.37

@@ -33,6 +33,10 @@ DESKTOP_ENTRIES="ochusha" "A GUI BBS browser for 2ch.net" \
 ACLOCAL_ARGS=	-I "${ACLOCAL_DIR}" -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-c -a
 
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.* | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-D.*_DISABLE_DEPRECATED||g'
+
 pre-configure:
 	@echo "===>  Regenerating ${WRKSRC}/libmodifiedgtk2/Makefile.in"
 	@${RM} ${WRKSRC}/libmodifiedgtk2/aclocal.m4

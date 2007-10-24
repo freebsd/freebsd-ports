@@ -1,6 +1,6 @@
---- configure.orig	Tue Apr 10 23:42:25 2007
-+++ configure	Wed Apr 11 00:04:30 2007
-@@ -24550,6 +24550,14 @@ case "$host" in
+--- configure.orig	Mon Jun 18 23:55:48 2007
++++ configure	Mon Jun 18 23:56:20 2007
+@@ -24562,6 +24562,14 @@ case "$host" in
      # AC_CACHE_VAL(have_addrinfo, [have_addrinfo=yes])
      # AC_DEFINE(_WIN32_WINNT, 0x501, [To get getaddrinfo etc declarations])
      ;;
@@ -15,7 +15,7 @@
  *)  os_win32=no
      NO_UNDEFINED=''
      SOCKET_LIBS=''
-@@ -28749,7 +28758,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -28651,7 +28659,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  		#include <sys/socket.h>
  		#include <netinet/in.h>
  		#include <netdb.h>
@@ -24,16 +24,16 @@
  
  int
  main ()
-@@ -29039,7 +29048,7 @@ if test "x${with_krb5}" != "xno"; then
+@@ -28982,7 +28990,7 @@ if test "x${with_krb5}" != "xno"; then
  	LDFLAGS_save="$LDFLAGS"
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
 -	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
 +	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi -lcrypt"
+ 	sunlibs="-lkrb5 -lgss"
  	{ echo "$as_me:$LINENO: checking for Kerberos 5" >&5
  echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6; }
- if test "${ac_cv_lib_kerberos5+set}" = set; then
-@@ -33857,7 +33866,7 @@ idldir='${datadir}'/idl/evolution-data-s
+@@ -33825,7 +33833,7 @@ idldir='${datadir}'/idl/evolution-data-s
  imagesdir='${datadir}'/pixmaps/evolution-data-server
  
  

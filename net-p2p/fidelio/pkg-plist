@@ -1,5 +1,5 @@
 bin/fidelio
-share/gnome/fidelio.default
+share/fidelio.default
 share/locale/de/LC_MESSAGES/fidelio.mo
 share/locale/el/LC_MESSAGES/fidelio.mo
 share/locale/fr/LC_MESSAGES/fidelio.mo

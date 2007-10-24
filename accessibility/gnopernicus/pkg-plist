@@ -45,35 +45,35 @@ lib/gnopernicus-1.0/libsrutil.so
 lib/gnopernicus-1.0/libsrutil.so.%%SHLIB_VERSION%%
 libdata/pkgconfig/gnopernicus-1.0.pc
 libexec/brlmonitor
-share/gnome/applications/gnopernicus.desktop
-share/gnome/gnopernicus/glade/gnopi_files/Braille_Monitor_Settings/braille_monitor_settings.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Braille_Settings/attribute_settings.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Braille_Settings/braille_device.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Braille_Settings/braille_fill_char.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Braille_Settings/braille_mapping.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Braille_Settings/braille_settings.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Braille_Settings/braille_style.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Braille_Settings/cursor_settings.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Braille_Settings/status_cell.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Braille_Settings/translation_table.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Find/find.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Find/text_selected_24.png
-share/gnome/gnopernicus/glade/gnopi_files/General_Settings/general_settings.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Keyboard_Mouse_Settings/keyboard_mouse_settings.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Language/language.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Load_Default/load_default.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Magnifier_Settings/magnifier_settings.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Presentation/presentation.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Screen_Review/screen_review.glade2
-share/gnome/gnopernicus/glade/gnopi_files/Speech_Settings/speech_settings.glade2
-share/gnome/gnopernicus/glade/gnopi_files/User_Properties/user_properties.glade2
-share/gnome/gnopernicus/glade/gnopi_files/braille.xpm
-share/gnome/gnopernicus/glade/gnopi_files/gnopi.glade2
-share/gnome/gnopernicus/glade/gnopi_files/keyboard.xpm
-share/gnome/gnopernicus/glade/gnopi_files/monitor.png
-share/gnome/gnopernicus/glade/gnopi_files/start_up.png
-share/gnome/gnopernicus/presentation/default.xml
-share/gnome/gnopernicus/presentation/verbose.xml
+share/applications/gnopernicus.desktop
+share/gnopernicus/glade/gnopi_files/Braille_Monitor_Settings/braille_monitor_settings.glade2
+share/gnopernicus/glade/gnopi_files/Braille_Settings/attribute_settings.glade2
+share/gnopernicus/glade/gnopi_files/Braille_Settings/braille_device.glade2
+share/gnopernicus/glade/gnopi_files/Braille_Settings/braille_fill_char.glade2
+share/gnopernicus/glade/gnopi_files/Braille_Settings/braille_mapping.glade2
+share/gnopernicus/glade/gnopi_files/Braille_Settings/braille_settings.glade2
+share/gnopernicus/glade/gnopi_files/Braille_Settings/braille_style.glade2
+share/gnopernicus/glade/gnopi_files/Braille_Settings/cursor_settings.glade2
+share/gnopernicus/glade/gnopi_files/Braille_Settings/status_cell.glade2
+share/gnopernicus/glade/gnopi_files/Braille_Settings/translation_table.glade2
+share/gnopernicus/glade/gnopi_files/Find/find.glade2
+share/gnopernicus/glade/gnopi_files/Find/text_selected_24.png
+share/gnopernicus/glade/gnopi_files/General_Settings/general_settings.glade2
+share/gnopernicus/glade/gnopi_files/Keyboard_Mouse_Settings/keyboard_mouse_settings.glade2
+share/gnopernicus/glade/gnopi_files/Language/language.glade2
+share/gnopernicus/glade/gnopi_files/Load_Default/load_default.glade2
+share/gnopernicus/glade/gnopi_files/Magnifier_Settings/magnifier_settings.glade2
+share/gnopernicus/glade/gnopi_files/Presentation/presentation.glade2
+share/gnopernicus/glade/gnopi_files/Screen_Review/screen_review.glade2
+share/gnopernicus/glade/gnopi_files/Speech_Settings/speech_settings.glade2
+share/gnopernicus/glade/gnopi_files/User_Properties/user_properties.glade2
+share/gnopernicus/glade/gnopi_files/braille.xpm
+share/gnopernicus/glade/gnopi_files/gnopi.glade2
+share/gnopernicus/glade/gnopi_files/keyboard.xpm
+share/gnopernicus/glade/gnopi_files/monitor.png
+share/gnopernicus/glade/gnopi_files/start_up.png
+share/gnopernicus/presentation/default.xml
+share/gnopernicus/presentation/verbose.xml
 share/gnome/help/brlmonitor/C/brlmonitor.xml
 share/gnome/help/brlmonitor/C/legal.xml
 share/gnome/help/brlmonitor/es/brlmonitor.xml
@@ -85,10 +85,10 @@ share/gnome/help/gnopernicus/es/legal.xml
 share/gnome/help/gnopernicus/pt_BR/figures/gnopernicus.png
 share/gnome/help/gnopernicus/pt_BR/gnopernicus.xml
 share/gnome/help/gnopernicus/pt_BR/legal.xml
-share/gnome/omf/gnopernicus/brlmonitor-C.omf
-share/gnome/omf/gnopernicus/brlmonitor-es.omf
-share/gnome/omf/gnopernicus/gnopernicus-C.omf
-share/gnome/omf/gnopernicus/gnopernicus-es.omf
+share/omf/gnopernicus/brlmonitor-C.omf
+share/omf/gnopernicus/brlmonitor-es.omf
+share/omf/gnopernicus/gnopernicus-C.omf
+share/omf/gnopernicus/gnopernicus-es.omf
 share/icons/hicolor/48x48/apps/gnopernicus.png
 share/locale/ar/LC_MESSAGES/gnopernicus.mo
 share/locale/az/LC_MESSAGES/gnopernicus.mo
@@ -152,7 +152,7 @@ share/locale/vi/LC_MESSAGES/gnopernicus.mo
 share/locale/zh_CN/LC_MESSAGES/gnopernicus.mo
 share/locale/zh_HK/LC_MESSAGES/gnopernicus.mo
 share/locale/zh_TW/LC_MESSAGES/gnopernicus.mo
-@dirrm share/gnome/omf/gnopernicus
+@dirrm share/omf/gnopernicus
 @dirrm share/gnome/help/gnopernicus/pt_BR/figures
 @dirrm share/gnome/help/gnopernicus/pt_BR
 @dirrm share/gnome/help/gnopernicus/es
@@ -161,22 +161,22 @@ share/locale/zh_TW/LC_MESSAGES/gnopernicus.mo
 @dirrm share/gnome/help/brlmonitor/es
 @dirrm share/gnome/help/brlmonitor/C
 @dirrm share/gnome/help/brlmonitor
-@dirrm share/gnome/gnopernicus/presentation
-@dirrm share/gnome/gnopernicus/glade/gnopi_files/User_Properties
-@dirrm share/gnome/gnopernicus/glade/gnopi_files/Speech_Settings
-@dirrm share/gnome/gnopernicus/glade/gnopi_files/Screen_Review
-@dirrm share/gnome/gnopernicus/glade/gnopi_files/Presentation
-@dirrm share/gnome/gnopernicus/glade/gnopi_files/Magnifier_Settings
-@dirrm share/gnome/gnopernicus/glade/gnopi_files/Load_Default
-@dirrm share/gnome/gnopernicus/glade/gnopi_files/Language
-@dirrm share/gnome/gnopernicus/glade/gnopi_files/Keyboard_Mouse_Settings
-@dirrm share/gnome/gnopernicus/glade/gnopi_files/General_Settings
-@dirrm share/gnome/gnopernicus/glade/gnopi_files/Find
-@dirrm share/gnome/gnopernicus/glade/gnopi_files/Braille_Settings
-@dirrm share/gnome/gnopernicus/glade/gnopi_files/Braille_Monitor_Settings
-@dirrm share/gnome/gnopernicus/glade/gnopi_files
-@dirrm share/gnome/gnopernicus/glade
-@dirrm share/gnome/gnopernicus
+@dirrm share/gnopernicus/presentation
+@dirrm share/gnopernicus/glade/gnopi_files/User_Properties
+@dirrm share/gnopernicus/glade/gnopi_files/Speech_Settings
+@dirrm share/gnopernicus/glade/gnopi_files/Screen_Review
+@dirrm share/gnopernicus/glade/gnopi_files/Presentation
+@dirrm share/gnopernicus/glade/gnopi_files/Magnifier_Settings
+@dirrm share/gnopernicus/glade/gnopi_files/Load_Default
+@dirrm share/gnopernicus/glade/gnopi_files/Language
+@dirrm share/gnopernicus/glade/gnopi_files/Keyboard_Mouse_Settings
+@dirrm share/gnopernicus/glade/gnopi_files/General_Settings
+@dirrm share/gnopernicus/glade/gnopi_files/Find
+@dirrm share/gnopernicus/glade/gnopi_files/Braille_Settings
+@dirrm share/gnopernicus/glade/gnopi_files/Braille_Monitor_Settings
+@dirrm share/gnopernicus/glade/gnopi_files
+@dirrm share/gnopernicus/glade
+@dirrm share/gnopernicus
 @dirrm lib/gnopernicus-1.0
 @dirrm include/gnopernicus-1.0/libsrutil
 @dirrm include/gnopernicus-1.0/libsrs
@@ -200,3 +200,4 @@ share/locale/zh_TW/LC_MESSAGES/gnopernicus.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/applications

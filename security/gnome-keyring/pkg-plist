@@ -1,12 +1,29 @@
 bin/gnome-keyring-daemon
+include/gnome-keyring-1/gnome-keyring-memory.h
+include/gnome-keyring-1/gnome-keyring-result.h
 include/gnome-keyring-1/gnome-keyring.h
+lib/libgnome-keyring.a
 lib/libgnome-keyring.la
 lib/libgnome-keyring.so
 lib/libgnome-keyring.so.0
+lib/security/pam_gnome_keyring.a
+lib/security/pam_gnome_keyring.la
+lib/security/pam_gnome_keyring.so
 libdata/pkgconfig/gnome-keyring-1.pc
 libexec/gnome-keyring-ask
 %%DOCSDIR%%/ch01.html
-%%DOCSDIR%%/gnome-keyring-gnome-keyring.html
+%%DOCSDIR%%/gnome-keyring-gnome-keyring-acl.html
+%%DOCSDIR%%/gnome-keyring-gnome-keyring-attributes.html
+%%DOCSDIR%%/gnome-keyring-gnome-keyring-find.html
+%%DOCSDIR%%/gnome-keyring-gnome-keyring-generic-callbacks.html
+%%DOCSDIR%%/gnome-keyring-gnome-keyring-item-info.html
+%%DOCSDIR%%/gnome-keyring-gnome-keyring-items.html
+%%DOCSDIR%%/gnome-keyring-gnome-keyring-keyring-info.html
+%%DOCSDIR%%/gnome-keyring-gnome-keyring-keyrings.html
+%%DOCSDIR%%/gnome-keyring-gnome-keyring-memory.html
+%%DOCSDIR%%/gnome-keyring-gnome-keyring-misc.html
+%%DOCSDIR%%/gnome-keyring-gnome-keyring-network.html
+%%DOCSDIR%%/gnome-keyring-gnome-keyring-result.html
 %%DOCSDIR%%/gnome-keyring.devhelp
 %%DOCSDIR%%/gnome-keyring.devhelp2
 %%DOCSDIR%%/home.png
@@ -19,6 +36,7 @@ libexec/gnome-keyring-ask
 share/locale/ar/LC_MESSAGES/gnome-keyring.mo
 share/locale/az/LC_MESSAGES/gnome-keyring.mo
 share/locale/be/LC_MESSAGES/gnome-keyring.mo
+share/locale/be@latin/LC_MESSAGES/gnome-keyring.mo
 share/locale/bg/LC_MESSAGES/gnome-keyring.mo
 share/locale/bn/LC_MESSAGES/gnome-keyring.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-keyring.mo
@@ -60,6 +78,7 @@ share/locale/ms/LC_MESSAGES/gnome-keyring.mo
 share/locale/nb/LC_MESSAGES/gnome-keyring.mo
 share/locale/ne/LC_MESSAGES/gnome-keyring.mo
 share/locale/nl/LC_MESSAGES/gnome-keyring.mo
+share/locale/oc/LC_MESSAGES/gnome-keyring.mo
 share/locale/or/LC_MESSAGES/gnome-keyring.mo
 share/locale/pa/LC_MESSAGES/gnome-keyring.mo
 share/locale/pl/LC_MESSAGES/gnome-keyring.mo
@@ -68,6 +87,7 @@ share/locale/pt_BR/LC_MESSAGES/gnome-keyring.mo
 share/locale/ro/LC_MESSAGES/gnome-keyring.mo
 share/locale/ru/LC_MESSAGES/gnome-keyring.mo
 share/locale/rw/LC_MESSAGES/gnome-keyring.mo
+share/locale/si/LC_MESSAGES/gnome-keyring.mo
 share/locale/sk/LC_MESSAGES/gnome-keyring.mo
 share/locale/sl/LC_MESSAGES/gnome-keyring.mo
 share/locale/sq/LC_MESSAGES/gnome-keyring.mo
@@ -75,6 +95,7 @@ share/locale/sr/LC_MESSAGES/gnome-keyring.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-keyring.mo
 share/locale/sv/LC_MESSAGES/gnome-keyring.mo
 share/locale/ta/LC_MESSAGES/gnome-keyring.mo
+share/locale/te/LC_MESSAGES/gnome-keyring.mo
 share/locale/th/LC_MESSAGES/gnome-keyring.mo
 share/locale/tr/LC_MESSAGES/gnome-keyring.mo
 share/locale/uk/LC_MESSAGES/gnome-keyring.mo
@@ -84,13 +105,20 @@ share/locale/zh_CN/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
 @dirrm %%DOCSDIR%%
+@dirrmtry lib/security
 @dirrm include/gnome-keyring-1
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
@@ -99,3 +127,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin

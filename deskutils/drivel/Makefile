@@ -7,7 +7,7 @@
 
 PORTNAME=	drivel
 PORTVERSION=	2.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,8 +51,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|datadir)/icons/gnome|prefix)/share/icons/gnome|g' \
-		${WRKSRC}/pixmaps/Makefile.in
 	@${REINPLACE_CMD} -e 's|;;|;|g' \
 		${WRKSRC}/src/journal.c \
 		${WRKSRC}/src/msg_queue.c

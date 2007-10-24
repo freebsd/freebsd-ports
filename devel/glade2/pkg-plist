@@ -1,6 +1,6 @@
 bin/glade-2
-share/gnome/applications/glade-2.desktop
-share/gnome/glade-2/gtk/autogen.sh
+share/applications/glade-2.desktop
+share/glade-2/gtk/autogen.sh
 share/gnome/help/glade-2/C/figures/edit-menu.png
 share/gnome/help/glade-2/C/figures/file-menu.png
 share/gnome/help/glade-2/C/figures/glade-windows.png
@@ -23,11 +23,11 @@ share/gnome/help/glade-2/C/glade-user-guide.xml
 share/gnome/help/glade-2/C/legal.xml
 share/gnome/help/glade-2/ro/glade-faq.xml
 share/gnome/help/glade-2/ro/legal.xml
-share/gnome/omf/glade-2/glade-faq-C.omf
-share/gnome/omf/glade-2/glade-faq-ro.omf
-share/gnome/omf/glade-2/glade-user-guide-C.omf
-share/gnome/pixmaps/glade-2.png
-share/gnome/pixmaps/glade-2/glade_logo.png
+share/omf/glade-2/glade-faq-C.omf
+share/omf/glade-2/glade-faq-ro.omf
+share/omf/glade-2/glade-user-guide-C.omf
+share/pixmaps/glade-2.png
+share/pixmaps/glade-2/glade_logo.png
 share/locale/am/LC_MESSAGES/glade-2.0.mo
 share/locale/az/LC_MESSAGES/glade-2.0.mo
 share/locale/be/LC_MESSAGES/glade-2.0.mo
@@ -74,14 +74,19 @@ share/locale/vi/LC_MESSAGES/glade-2.0.mo
 share/locale/yi/LC_MESSAGES/glade-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/glade-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/glade-2.0.mo
-@dirrm share/gnome/pixmaps/glade-2
-@dirrm share/gnome/omf/glade-2
+@dirrm share/pixmaps/glade-2
+@dirrm share/omf/glade-2
 @dirrm share/gnome/help/glade-2/C/figures
 @dirrm share/gnome/help/glade-2/C
 @dirrm share/gnome/help/glade-2/ro/figures
 @dirrm share/gnome/help/glade-2/ro
 @dirrm share/gnome/help/glade-2
-@dirrm share/gnome/glade-2/gtk
-@dirrm share/gnome/glade-2
+@dirrm share/glade-2/gtk
+@dirrm share/glade-2
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/yi/LC_MESSAGES
+@dirrmtry share/locale/yi
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/applications

@@ -7,7 +7,7 @@ $FreeBSD$
  LDFLAGS = " 	$(GDA_CLIENT_LIBS) 	$(top_builddir)/lib/gda-common/.libs/libgda-common.a 	"
  
  
--DOC_DIR = $(datadir)/html
+-DOC_DIR = $(datadir)/gnome/html
 +DOC_DIR = $(prefix)/share/doc/libgda
  
  DOC_DIR_INSTALL_FILES =  	 libgda-common.args 	 libgda-common.hierarchy 	 libgda-common.signals		 libgda-common.types 	 libgda-common-decl.txt			 libgda-common-sections.txt

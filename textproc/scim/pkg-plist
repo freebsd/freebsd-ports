@@ -102,9 +102,9 @@ lib/scim-1.0/scim-panel-gtk
 libdata/pkgconfig/scim-gtkutils.pc
 libdata/pkgconfig/scim-x11utils.pc
 libdata/pkgconfig/scim.pc
-share/gnome/applications/scim-setup.desktop
-share/gnome/control-center-2.0/capplets/scim-setup.desktop
-share/gnome/pixmaps/scim-setup.png
+share/applications/scim-setup.desktop
+share/control-center-2.0/capplets/scim-setup.desktop
+share/pixmaps/scim-setup.png
 share/locale/cs/LC_MESSAGES/scim.mo
 share/locale/de/LC_MESSAGES/scim.mo
 share/locale/fi/LC_MESSAGES/scim.mo
@@ -153,3 +153,4 @@ share/locale/zh_TW/LC_MESSAGES/scim.mo
 @dirrm %%DATADIR%%
 @exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 @unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+@dirrmtry share/applications

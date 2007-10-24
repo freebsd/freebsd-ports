@@ -16,7 +16,7 @@ bin/xchat-text
 %%PORTDOCS%%share/doc/xchat/xchat.html
 %%PORTDOCS%%share/doc/xchat/xchat.sgml
 %%GNOME:%%share/gnome/apps/Internet/xchat.desktop
-%%GNOME:%%share/gnome/pixmaps/xchat.png
+%%GNOME:%%share/pixmaps/xchat.png
 %%PORTDOCS%%@dirrm share/doc/xchat
 share/locale/ca/LC_MESSAGES/xchat.mo
 share/locale/cs/LC_MESSAGES/xchat.mo

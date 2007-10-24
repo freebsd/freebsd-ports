@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-power-manager/Makefile,v 1.23 2007/03/13 00:33:21 mezz Exp $
+#   $MCom: ports/sysutils/gnome-power-manager/Makefile,v 1.36 2007/09/17 19:59:06 marcus Exp $
 #
 
 PORTNAME=	gnome-power-manager
-PORTVERSION=	2.18.3
+PORTVERSION=	2.20.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -28,6 +28,7 @@ USE_GMAKE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_GSTREAMER=	good
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libwnck \
 		gnomedocutils gnomepanel
 CONFIGURE_ARGS=	--disable-icon-framing \

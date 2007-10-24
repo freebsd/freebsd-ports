@@ -3,11 +3,12 @@
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/sysutils/gnome-control-center1/Makefile,v 1.3 2007/05/30 05:02:04 mezz Exp $
 #
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	1.4.0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/control-center/1.4
@@ -28,5 +29,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 LATEST_LINK=	gnome-control-center1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/capplets/wm-properties/wm-desktops/WindowMaker.desktop
 
 .include <bsd.port.mk>

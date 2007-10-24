@@ -7,7 +7,7 @@
 
 PORTNAME=	gweled
 PORTVERSION=	0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games gnome
 MASTER_SITES=	http://sebdelestaing.free.fr/gweled/Release/
 
@@ -22,7 +22,7 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui librsvg2
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/var/games|${PREFIX}/share/gnome/games|' \
+	@${REINPLACE_CMD} -e 's|/var/games|${PREFIX}/share/games|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$${MKDIRPROG-mkdir}|mkdir -p|' \
 		${WRKSRC}/install-sh

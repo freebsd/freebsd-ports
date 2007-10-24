@@ -286,246 +286,246 @@ share/doc/libanjuta/writing-plugins-build-setup.html
 share/doc/libanjuta/writing-plugins-simple.html
 share/doc/libanjuta/writing-plugins-sources.html
 share/doc/libanjuta/writing-plugins.html
-share/gnome/anjuta/AUTHORS
-share/gnome/anjuta/anjuta_project.template
-share/gnome/anjuta/build/automake-c.filters
-share/gnome/anjuta/class-templates/cc-header.tpl
-share/gnome/anjuta/class-templates/cc-source.tpl
-share/gnome/anjuta/class-templates/go-header.tpl
-share/gnome/anjuta/class-templates/go-source.tpl
-share/gnome/anjuta/gdb.init
-share/gnome/anjuta/glade/anjuta-build-basic-autotools-plugin.glade
-share/gnome/anjuta/glade/anjuta-class-gen-plugin.glade
-share/gnome/anjuta/glade/anjuta-cvs-plugin.glade
-share/gnome/anjuta/glade/anjuta-debug-manager.glade
-share/gnome/anjuta/glade/anjuta-document-manager.glade
-share/gnome/anjuta/glade/anjuta-file-manager-plugin.glade
-share/gnome/anjuta/glade/anjuta-file-wizard.glade
-share/gnome/anjuta/glade/anjuta-gdb.glade
-share/gnome/anjuta/glade/anjuta-language-cpp-java.glade
-share/gnome/anjuta/glade/anjuta-macro.glade
-share/gnome/anjuta/glade/anjuta-message-manager-plugin.glade
-share/gnome/anjuta/glade/anjuta-project-import.glade
-share/gnome/anjuta/glade/anjuta-project-wizard.glade
-share/gnome/anjuta/glade/anjuta-search.glade
-%%SVN%%share/gnome/anjuta/glade/anjuta-subversion.glade
-share/gnome/anjuta/glade/anjuta-symbol-browser-plugin.glade
-share/gnome/anjuta/glade/anjuta-terminal-plugin.glade
-share/gnome/anjuta/glade/anjuta-tools.glade
-share/gnome/anjuta/glade/anjuta.glade
-share/gnome/anjuta/glade/applogo.png
-share/gnome/anjuta/glade/appwizard.png
-share/gnome/anjuta/glade/editor.glade
-share/gnome/anjuta/glade/layout.glade
-share/gnome/anjuta/glade/patch-plugin.glade
-share/gnome/anjuta/glade/profiler-call-graph.glade
-share/gnome/anjuta/glade/profiler-flat-profile.glade
-share/gnome/anjuta/glade/profiler-function-call-tree.glade
-share/gnome/anjuta/glade/profiler.glade
-share/gnome/anjuta/glade/sourceview.glade
-share/gnome/anjuta/glade/start-with-import.png
-share/gnome/anjuta/glade/start-with-open.png
-share/gnome/anjuta/glade/start-with-wizard.png
-share/gnome/anjuta/gtodo/gtodo.css
-share/gnome/anjuta/gtodo/gtodo.xsl
-share/gnome/anjuta/indent_test.c
-share/gnome/anjuta/layout.xml
-share/gnome/anjuta/macros.xml
-share/gnome/anjuta/profiles/default.profile
-share/gnome/anjuta/project/anjuta-plugin-logo.png
-share/gnome/anjuta/project/anjuta-plugin.wiz
-share/gnome/anjuta/project/anjuta-plugin/configure.ac.tpl
-share/gnome/anjuta/project/anjuta-plugin/po/POTFILES.in
-share/gnome/anjuta/project/anjuta-plugin/src/Makefile.am.tpl
-share/gnome/anjuta/project/anjuta-plugin/src/plugin.c
-share/gnome/anjuta/project/anjuta-plugin/src/plugin.glade
-share/gnome/anjuta/project/anjuta-plugin/src/plugin.h
-share/gnome/anjuta/project/anjuta-plugin/src/plugin.plugin.in
-share/gnome/anjuta/project/anjuta-plugin/src/plugin.ui
-share/gnome/anjuta/project/appwiz_sdl.png
-share/gnome/anjuta/project/cpp-logo.png
-share/gnome/anjuta/project/cpp.wiz
-share/gnome/anjuta/project/cpp/configure.ac.tpl
-share/gnome/anjuta/project/cpp/po/POTFILES.in
-share/gnome/anjuta/project/cpp/src/Makefile.am.tpl
-share/gnome/anjuta/project/cpp/src/cvsignore
-share/gnome/anjuta/project/cpp/src/main.cc
-share/gnome/anjuta/project/django-logo.png
-share/gnome/anjuta/project/django.wiz
-share/gnome/anjuta/project/gcj-logo.png
-share/gnome/anjuta/project/gcj.wiz
-share/gnome/anjuta/project/gcj/configure.ac.tpl
-share/gnome/anjuta/project/gcj/src/Makefile.am.tpl
-share/gnome/anjuta/project/gnome-logo.png
-share/gnome/anjuta/project/gnome.wiz
-share/gnome/anjuta/project/gnome/po/POTFILES.in
-share/gnome/anjuta/project/gnome/src/Makefile.am.tpl
-share/gnome/anjuta/project/gnome/src/callbacks.c
-share/gnome/anjuta/project/gnome/src/callbacks.h
-share/gnome/anjuta/project/gnome/src/main.c
-share/gnome/anjuta/project/gnome/src/project.glade
-share/gnome/anjuta/project/gtk-logo.png
-share/gnome/anjuta/project/gtk.wiz
-share/gnome/anjuta/project/gtk/po/POTFILES.in
-share/gnome/anjuta/project/gtk/src/Makefile.am.tpl
-share/gnome/anjuta/project/gtk/src/callbacks.c
-share/gnome/anjuta/project/gtk/src/callbacks.h
-share/gnome/anjuta/project/gtk/src/main.c
-share/gnome/anjuta/project/gtk/src/project.glade
-share/gnome/anjuta/project/gtkmm-logo.png
-share/gnome/anjuta/project/gtkmm.wiz
-share/gnome/anjuta/project/gtkmm/po/POTFILES.in
-share/gnome/anjuta/project/gtkmm/src/Makefile.am.tpl
-share/gnome/anjuta/project/gtkmm/src/main.cc
-share/gnome/anjuta/project/gtkmm/src/project.glade
-share/gnome/anjuta/project/java-logo.png
-share/gnome/anjuta/project/java.wiz
-share/gnome/anjuta/project/java/configure.ac.tpl
-share/gnome/anjuta/project/java/po/POTFILES.in
-share/gnome/anjuta/project/java/project.anjuta
-share/gnome/anjuta/project/java/src/Makefile.am.tpl
-share/gnome/anjuta/project/java/src/main.java
-share/gnome/anjuta/project/minimal.wiz
-share/gnome/anjuta/project/minimal/Makefile.am.tpl
-share/gnome/anjuta/project/minimal/autogen.sh
-share/gnome/anjuta/project/minimal/configure.ac.tpl
-share/gnome/anjuta/project/minimal/project.anjuta
-share/gnome/anjuta/project/mkfile-logo.png
-share/gnome/anjuta/project/mkfile.wiz
-share/gnome/anjuta/project/mkfile/po/ChangeLog
-share/gnome/anjuta/project/mkfile/po/POTFILES.in
-share/gnome/anjuta/project/mkfile/project.anjuta
-share/gnome/anjuta/project/mkfile/src/Makefile.tpl
-share/gnome/anjuta/project/mkfile/src/main.c
-share/gnome/anjuta/project/python-logo.png
-share/gnome/anjuta/project/python.wiz
-share/gnome/anjuta/project/python/configure.ac.tpl
-share/gnome/anjuta/project/python/po/POTFILES.in
-share/gnome/anjuta/project/python/project.anjuta
-share/gnome/anjuta/project/python/src/Makefile.am.tpl
-share/gnome/anjuta/project/python/src/main.py
-share/gnome/anjuta/project/sdl.wiz
-share/gnome/anjuta/project/sdl/acinclude.m4.tpl
-share/gnome/anjuta/project/sdl/configure.ac.tpl
-share/gnome/anjuta/project/sdl/po/POTFILES.in
-share/gnome/anjuta/project/sdl/src/Makefile.am.tpl
-share/gnome/anjuta/project/sdl/src/main.c
-share/gnome/anjuta/project/terminal-logo.png
-share/gnome/anjuta/project/terminal.wiz
-share/gnome/anjuta/project/terminal/AUTHORS
-share/gnome/anjuta/project/terminal/ChangeLog
-share/gnome/anjuta/project/terminal/Makefile.am.tpl
-share/gnome/anjuta/project/terminal/NEWS
-share/gnome/anjuta/project/terminal/README
-share/gnome/anjuta/project/terminal/autogen.sh
-share/gnome/anjuta/project/terminal/configure.ac.tpl
-share/gnome/anjuta/project/terminal/cvsignore
-share/gnome/anjuta/project/terminal/po/ChangeLog
-share/gnome/anjuta/project/terminal/po/LINGUAS
-share/gnome/anjuta/project/terminal/po/POTFILES.in
-share/gnome/anjuta/project/terminal/po/cvsignore
-share/gnome/anjuta/project/terminal/project.anjuta
-share/gnome/anjuta/project/terminal/src/Makefile.am.tpl
-share/gnome/anjuta/project/terminal/src/cvsignore
-share/gnome/anjuta/project/terminal/src/main.c
-share/gnome/anjuta/project/wxwin-logo.png
-share/gnome/anjuta/project/wxwin.wiz
-share/gnome/anjuta/project/wxwin/configure.ac.tpl
-share/gnome/anjuta/project/wxwin/po/POTFILES.in
-share/gnome/anjuta/project/wxwin/src/Makefile.am.tpl
-share/gnome/anjuta/project/wxwin/src/main.cc
-share/gnome/anjuta/project/xlib-dock.wiz
-share/gnome/anjuta/project/xlib-dock/po/POTFILES.in
-share/gnome/anjuta/project/xlib-dock/src/Makefile.am.tpl
-share/gnome/anjuta/project/xlib-dock/src/main.c
-share/gnome/anjuta/project/xlib-dock/src/pixmaps.h
-share/gnome/anjuta/project/xlib-dock/src/wmgeneral.c
-share/gnome/anjuta/project/xlib-dock/src/wmgeneral.h
-share/gnome/anjuta/project/xlib-logo.png
-share/gnome/anjuta/project/xlib.wiz
-share/gnome/anjuta/project/xlib/configure.ac.tpl
-share/gnome/anjuta/project/xlib/po/POTFILES.in
-share/gnome/anjuta/project/xlib/src/Makefile.am.tpl
-share/gnome/anjuta/project/xlib/src/main.c
-share/gnome/anjuta/properties/Embedded.properties
-share/gnome/anjuta/properties/SciTEGlobal.properties
-share/gnome/anjuta/properties/ada.properties
-share/gnome/anjuta/properties/anjuta.properties
-share/gnome/anjuta/properties/asm.properties
-share/gnome/anjuta/properties/asn1.properties
-share/gnome/anjuta/properties/au3.properties
-share/gnome/anjuta/properties/ave.properties
-share/gnome/anjuta/properties/baan.properties
-share/gnome/anjuta/properties/bullant.properties
-share/gnome/anjuta/properties/conf.properties
-share/gnome/anjuta/properties/cpp.properties
-share/gnome/anjuta/properties/css.properties
-share/gnome/anjuta/properties/eiffel.properties
-share/gnome/anjuta/properties/erlang.properties
-share/gnome/anjuta/properties/escript.properties
-share/gnome/anjuta/properties/forth.properties
-share/gnome/anjuta/properties/fortran.properties
-share/gnome/anjuta/properties/html.properties
-share/gnome/anjuta/properties/kix.properties
-share/gnome/anjuta/properties/latex.properties
-share/gnome/anjuta/properties/lisp.properties
-share/gnome/anjuta/properties/lot.properties
-share/gnome/anjuta/properties/lout.properties
-share/gnome/anjuta/properties/lua.properties
-share/gnome/anjuta/properties/matlab.properties
-share/gnome/anjuta/properties/metapost.properties
-share/gnome/anjuta/properties/mmixal.properties
-share/gnome/anjuta/properties/nncrontab.properties
-share/gnome/anjuta/properties/nsis.properties
-share/gnome/anjuta/properties/others.properties
-share/gnome/anjuta/properties/pascal.properties
-share/gnome/anjuta/properties/perl.properties
-share/gnome/anjuta/properties/pov.properties
-share/gnome/anjuta/properties/ps.properties
-share/gnome/anjuta/properties/python.properties
-share/gnome/anjuta/properties/ruby.properties
-share/gnome/anjuta/properties/scriptol.properties
-share/gnome/anjuta/properties/specman.properties
-share/gnome/anjuta/properties/sql.properties
-share/gnome/anjuta/properties/styles.properties
-share/gnome/anjuta/properties/tcl.properties
-share/gnome/anjuta/properties/tex.properties
-share/gnome/anjuta/properties/user.properties
-share/gnome/anjuta/properties/vb.properties
-share/gnome/anjuta/properties/verilog.properties
-share/gnome/anjuta/properties/vhdl.properties
-share/gnome/anjuta/properties/yaml.properties
-share/gnome/anjuta/scripts/anjuta-tags
-share/gnome/anjuta/scripts/create_global_tags.sh
-share/gnome/anjuta/tools/find-fixmes.pl
-share/gnome/anjuta/tools/prepare-changelog.pl
-share/gnome/anjuta/tools/tools-2.xml
-share/gnome/anjuta/tools/translation-status.pl
-share/gnome/anjuta/ui/anjuta-build-basic-autotools-plugin.ui
-share/gnome/anjuta/ui/anjuta-cvs.ui
-share/gnome/anjuta/ui/anjuta-debug-manager.ui
-share/gnome/anjuta/ui/anjuta-devhelp-simple.ui
-share/gnome/anjuta/ui/anjuta-devhelp.ui
-share/gnome/anjuta/ui/anjuta-document-manager.ui
-share/gnome/anjuta/ui/anjuta-file-manager.ui
-share/gnome/anjuta/ui/anjuta-glade.ui
-share/gnome/anjuta/ui/anjuta-gtodo.ui
-share/gnome/anjuta/ui/anjuta-language-support-cpp-java.ui
-share/gnome/anjuta/ui/anjuta-loader-plugin.ui
-share/gnome/anjuta/ui/anjuta-macro.ui
-share/gnome/anjuta/ui/anjuta-message-manager.ui
-share/gnome/anjuta/ui/anjuta-patch.ui
-share/gnome/anjuta/ui/anjuta-project-manager.ui
-share/gnome/anjuta/ui/anjuta-sample.ui
-share/gnome/anjuta/ui/anjuta-search.ui
-share/gnome/anjuta/ui/anjuta-shell.ui
-%%SVN%%share/gnome/anjuta/ui/anjuta-subversion.ui
-share/gnome/anjuta/ui/anjuta-symbol-browser-plugin.ui
-share/gnome/anjuta/ui/anjuta-tools.ui
-share/gnome/anjuta/ui/anjuta.ui
-share/gnome/anjuta/ui/profiler.ui
-share/gnome/anjuta/welcome.txt
-share/gnome/applications/anjuta.desktop
+share/anjuta/AUTHORS
+share/anjuta/anjuta_project.template
+share/anjuta/build/automake-c.filters
+share/anjuta/class-templates/cc-header.tpl
+share/anjuta/class-templates/cc-source.tpl
+share/anjuta/class-templates/go-header.tpl
+share/anjuta/class-templates/go-source.tpl
+share/anjuta/gdb.init
+share/anjuta/glade/anjuta-build-basic-autotools-plugin.glade
+share/anjuta/glade/anjuta-class-gen-plugin.glade
+share/anjuta/glade/anjuta-cvs-plugin.glade
+share/anjuta/glade/anjuta-debug-manager.glade
+share/anjuta/glade/anjuta-document-manager.glade
+share/anjuta/glade/anjuta-file-manager-plugin.glade
+share/anjuta/glade/anjuta-file-wizard.glade
+share/anjuta/glade/anjuta-gdb.glade
+share/anjuta/glade/anjuta-language-cpp-java.glade
+share/anjuta/glade/anjuta-macro.glade
+share/anjuta/glade/anjuta-message-manager-plugin.glade
+share/anjuta/glade/anjuta-project-import.glade
+share/anjuta/glade/anjuta-project-wizard.glade
+share/anjuta/glade/anjuta-search.glade
+%%SVN%%share/anjuta/glade/anjuta-subversion.glade
+share/anjuta/glade/anjuta-symbol-browser-plugin.glade
+share/anjuta/glade/anjuta-terminal-plugin.glade
+share/anjuta/glade/anjuta-tools.glade
+share/anjuta/glade/anjuta.glade
+share/anjuta/glade/applogo.png
+share/anjuta/glade/appwizard.png
+share/anjuta/glade/editor.glade
+share/anjuta/glade/layout.glade
+share/anjuta/glade/patch-plugin.glade
+share/anjuta/glade/profiler-call-graph.glade
+share/anjuta/glade/profiler-flat-profile.glade
+share/anjuta/glade/profiler-function-call-tree.glade
+share/anjuta/glade/profiler.glade
+share/anjuta/glade/sourceview.glade
+share/anjuta/glade/start-with-import.png
+share/anjuta/glade/start-with-open.png
+share/anjuta/glade/start-with-wizard.png
+share/anjuta/gtodo/gtodo.css
+share/anjuta/gtodo/gtodo.xsl
+share/anjuta/indent_test.c
+share/anjuta/layout.xml
+share/anjuta/macros.xml
+share/anjuta/profiles/default.profile
+share/anjuta/project/anjuta-plugin-logo.png
+share/anjuta/project/anjuta-plugin.wiz
+share/anjuta/project/anjuta-plugin/configure.ac.tpl
+share/anjuta/project/anjuta-plugin/po/POTFILES.in
+share/anjuta/project/anjuta-plugin/src/Makefile.am.tpl
+share/anjuta/project/anjuta-plugin/src/plugin.c
+share/anjuta/project/anjuta-plugin/src/plugin.glade
+share/anjuta/project/anjuta-plugin/src/plugin.h
+share/anjuta/project/anjuta-plugin/src/plugin.plugin.in
+share/anjuta/project/anjuta-plugin/src/plugin.ui
+share/anjuta/project/appwiz_sdl.png
+share/anjuta/project/cpp-logo.png
+share/anjuta/project/cpp.wiz
+share/anjuta/project/cpp/configure.ac.tpl
+share/anjuta/project/cpp/po/POTFILES.in
+share/anjuta/project/cpp/src/Makefile.am.tpl
+share/anjuta/project/cpp/src/cvsignore
+share/anjuta/project/cpp/src/main.cc
+share/anjuta/project/django-logo.png
+share/anjuta/project/django.wiz
+share/anjuta/project/gcj-logo.png
+share/anjuta/project/gcj.wiz
+share/anjuta/project/gcj/configure.ac.tpl
+share/anjuta/project/gcj/src/Makefile.am.tpl
+share/anjuta/project/gnome-logo.png
+share/anjuta/project/gnome.wiz
+share/anjuta/project/gnome/po/POTFILES.in
+share/anjuta/project/gnome/src/Makefile.am.tpl
+share/anjuta/project/gnome/src/callbacks.c
+share/anjuta/project/gnome/src/callbacks.h
+share/anjuta/project/gnome/src/main.c
+share/anjuta/project/gnome/src/project.glade
+share/anjuta/project/gtk-logo.png
+share/anjuta/project/gtk.wiz
+share/anjuta/project/gtk/po/POTFILES.in
+share/anjuta/project/gtk/src/Makefile.am.tpl
+share/anjuta/project/gtk/src/callbacks.c
+share/anjuta/project/gtk/src/callbacks.h
+share/anjuta/project/gtk/src/main.c
+share/anjuta/project/gtk/src/project.glade
+share/anjuta/project/gtkmm-logo.png
+share/anjuta/project/gtkmm.wiz
+share/anjuta/project/gtkmm/po/POTFILES.in
+share/anjuta/project/gtkmm/src/Makefile.am.tpl
+share/anjuta/project/gtkmm/src/main.cc
+share/anjuta/project/gtkmm/src/project.glade
+share/anjuta/project/java-logo.png
+share/anjuta/project/java.wiz
+share/anjuta/project/java/configure.ac.tpl
+share/anjuta/project/java/po/POTFILES.in
+share/anjuta/project/java/project.anjuta
+share/anjuta/project/java/src/Makefile.am.tpl
+share/anjuta/project/java/src/main.java
+share/anjuta/project/minimal.wiz
+share/anjuta/project/minimal/Makefile.am.tpl
+share/anjuta/project/minimal/autogen.sh
+share/anjuta/project/minimal/configure.ac.tpl
+share/anjuta/project/minimal/project.anjuta
+share/anjuta/project/mkfile-logo.png
+share/anjuta/project/mkfile.wiz
+share/anjuta/project/mkfile/po/ChangeLog
+share/anjuta/project/mkfile/po/POTFILES.in
+share/anjuta/project/mkfile/project.anjuta
+share/anjuta/project/mkfile/src/Makefile.tpl
+share/anjuta/project/mkfile/src/main.c
+share/anjuta/project/python-logo.png
+share/anjuta/project/python.wiz
+share/anjuta/project/python/configure.ac.tpl
+share/anjuta/project/python/po/POTFILES.in
+share/anjuta/project/python/project.anjuta
+share/anjuta/project/python/src/Makefile.am.tpl
+share/anjuta/project/python/src/main.py
+share/anjuta/project/sdl.wiz
+share/anjuta/project/sdl/acinclude.m4.tpl
+share/anjuta/project/sdl/configure.ac.tpl
+share/anjuta/project/sdl/po/POTFILES.in
+share/anjuta/project/sdl/src/Makefile.am.tpl
+share/anjuta/project/sdl/src/main.c
+share/anjuta/project/terminal-logo.png
+share/anjuta/project/terminal.wiz
+share/anjuta/project/terminal/AUTHORS
+share/anjuta/project/terminal/ChangeLog
+share/anjuta/project/terminal/Makefile.am.tpl
+share/anjuta/project/terminal/NEWS
+share/anjuta/project/terminal/README
+share/anjuta/project/terminal/autogen.sh
+share/anjuta/project/terminal/configure.ac.tpl
+share/anjuta/project/terminal/cvsignore
+share/anjuta/project/terminal/po/ChangeLog
+share/anjuta/project/terminal/po/LINGUAS
+share/anjuta/project/terminal/po/POTFILES.in
+share/anjuta/project/terminal/po/cvsignore
+share/anjuta/project/terminal/project.anjuta
+share/anjuta/project/terminal/src/Makefile.am.tpl
+share/anjuta/project/terminal/src/cvsignore
+share/anjuta/project/terminal/src/main.c
+share/anjuta/project/wxwin-logo.png
+share/anjuta/project/wxwin.wiz
+share/anjuta/project/wxwin/configure.ac.tpl
+share/anjuta/project/wxwin/po/POTFILES.in
+share/anjuta/project/wxwin/src/Makefile.am.tpl
+share/anjuta/project/wxwin/src/main.cc
+share/anjuta/project/xlib-dock.wiz
+share/anjuta/project/xlib-dock/po/POTFILES.in
+share/anjuta/project/xlib-dock/src/Makefile.am.tpl
+share/anjuta/project/xlib-dock/src/main.c
+share/anjuta/project/xlib-dock/src/pixmaps.h
+share/anjuta/project/xlib-dock/src/wmgeneral.c
+share/anjuta/project/xlib-dock/src/wmgeneral.h
+share/anjuta/project/xlib-logo.png
+share/anjuta/project/xlib.wiz
+share/anjuta/project/xlib/configure.ac.tpl
+share/anjuta/project/xlib/po/POTFILES.in
+share/anjuta/project/xlib/src/Makefile.am.tpl
+share/anjuta/project/xlib/src/main.c
+share/anjuta/properties/Embedded.properties
+share/anjuta/properties/SciTEGlobal.properties
+share/anjuta/properties/ada.properties
+share/anjuta/properties/anjuta.properties
+share/anjuta/properties/asm.properties
+share/anjuta/properties/asn1.properties
+share/anjuta/properties/au3.properties
+share/anjuta/properties/ave.properties
+share/anjuta/properties/baan.properties
+share/anjuta/properties/bullant.properties
+share/anjuta/properties/conf.properties
+share/anjuta/properties/cpp.properties
+share/anjuta/properties/css.properties
+share/anjuta/properties/eiffel.properties
+share/anjuta/properties/erlang.properties
+share/anjuta/properties/escript.properties
+share/anjuta/properties/forth.properties
+share/anjuta/properties/fortran.properties
+share/anjuta/properties/html.properties
+share/anjuta/properties/kix.properties
+share/anjuta/properties/latex.properties
+share/anjuta/properties/lisp.properties
+share/anjuta/properties/lot.properties
+share/anjuta/properties/lout.properties
+share/anjuta/properties/lua.properties
+share/anjuta/properties/matlab.properties
+share/anjuta/properties/metapost.properties
+share/anjuta/properties/mmixal.properties
+share/anjuta/properties/nncrontab.properties
+share/anjuta/properties/nsis.properties
+share/anjuta/properties/others.properties
+share/anjuta/properties/pascal.properties
+share/anjuta/properties/perl.properties
+share/anjuta/properties/pov.properties
+share/anjuta/properties/ps.properties
+share/anjuta/properties/python.properties
+share/anjuta/properties/ruby.properties
+share/anjuta/properties/scriptol.properties
+share/anjuta/properties/specman.properties
+share/anjuta/properties/sql.properties
+share/anjuta/properties/styles.properties
+share/anjuta/properties/tcl.properties
+share/anjuta/properties/tex.properties
+share/anjuta/properties/user.properties
+share/anjuta/properties/vb.properties
+share/anjuta/properties/verilog.properties
+share/anjuta/properties/vhdl.properties
+share/anjuta/properties/yaml.properties
+share/anjuta/scripts/anjuta-tags
+share/anjuta/scripts/create_global_tags.sh
+share/anjuta/tools/find-fixmes.pl
+share/anjuta/tools/prepare-changelog.pl
+share/anjuta/tools/tools-2.xml
+share/anjuta/tools/translation-status.pl
+share/anjuta/ui/anjuta-build-basic-autotools-plugin.ui
+share/anjuta/ui/anjuta-cvs.ui
+share/anjuta/ui/anjuta-debug-manager.ui
+share/anjuta/ui/anjuta-devhelp-simple.ui
+share/anjuta/ui/anjuta-devhelp.ui
+share/anjuta/ui/anjuta-document-manager.ui
+share/anjuta/ui/anjuta-file-manager.ui
+share/anjuta/ui/anjuta-glade.ui
+share/anjuta/ui/anjuta-gtodo.ui
+share/anjuta/ui/anjuta-language-support-cpp-java.ui
+share/anjuta/ui/anjuta-loader-plugin.ui
+share/anjuta/ui/anjuta-macro.ui
+share/anjuta/ui/anjuta-message-manager.ui
+share/anjuta/ui/anjuta-patch.ui
+share/anjuta/ui/anjuta-project-manager.ui
+share/anjuta/ui/anjuta-sample.ui
+share/anjuta/ui/anjuta-search.ui
+share/anjuta/ui/anjuta-shell.ui
+%%SVN%%share/anjuta/ui/anjuta-subversion.ui
+share/anjuta/ui/anjuta-symbol-browser-plugin.ui
+share/anjuta/ui/anjuta-tools.ui
+share/anjuta/ui/anjuta.ui
+share/anjuta/ui/profiler.ui
+share/anjuta/welcome.txt
+share/applications/anjuta.desktop
 share/gnome/help/anjuta-faqs/C/anjuta-faqs.xml
 share/gnome/help/anjuta-faqs/C/legal.xml
 share/gnome/help/anjuta-manual/C/anjuta-manual.xml
@@ -607,135 +607,135 @@ share/gnome/help/anjuta-manual/C/preferences.xml
 share/gnome/help/anjuta-manual/C/projects.xml
 share/gnome/help/anjuta-manual/C/template.xml
 share/gnome/help/anjuta-manual/C/tools.xml
-share/gnome/omf/anjuta-manual/anjuta-manual-C.omf
-share/gnome/pixmaps/anjuta/Icons.16x16.Class
-share/gnome/pixmaps/anjuta/Icons.16x16.Enum
-share/gnome/pixmaps/anjuta/Icons.16x16.Field
-share/gnome/pixmaps/anjuta/Icons.16x16.FormsDesigner.BringToFront
-share/gnome/pixmaps/anjuta/Icons.16x16.FormsDesigner.SendToBack
-share/gnome/pixmaps/anjuta/Icons.16x16.Interface
-share/gnome/pixmaps/anjuta/Icons.16x16.InternalClass
-share/gnome/pixmaps/anjuta/Icons.16x16.InternalDelegate
-share/gnome/pixmaps/anjuta/Icons.16x16.InternalEnum
-share/gnome/pixmaps/anjuta/Icons.16x16.InternalEvent
-share/gnome/pixmaps/anjuta/Icons.16x16.InternalField
-share/gnome/pixmaps/anjuta/Icons.16x16.InternalInterface
-share/gnome/pixmaps/anjuta/Icons.16x16.InternalMethod
-share/gnome/pixmaps/anjuta/Icons.16x16.InternalProperty
-share/gnome/pixmaps/anjuta/Icons.16x16.InternalStruct
-share/gnome/pixmaps/anjuta/Icons.16x16.Literal
-share/gnome/pixmaps/anjuta/Icons.16x16.Method
-share/gnome/pixmaps/anjuta/Icons.16x16.NameSpace
-share/gnome/pixmaps/anjuta/Icons.16x16.PrivateClass
-share/gnome/pixmaps/anjuta/Icons.16x16.PrivateDelegate
-share/gnome/pixmaps/anjuta/Icons.16x16.PrivateEnum
-share/gnome/pixmaps/anjuta/Icons.16x16.PrivateEvent
-share/gnome/pixmaps/anjuta/Icons.16x16.PrivateField
-share/gnome/pixmaps/anjuta/Icons.16x16.PrivateInterface
-share/gnome/pixmaps/anjuta/Icons.16x16.PrivateMethod
-share/gnome/pixmaps/anjuta/Icons.16x16.PrivateProperty
-share/gnome/pixmaps/anjuta/Icons.16x16.PrivateStruct
-share/gnome/pixmaps/anjuta/Icons.16x16.ProtectedClass
-share/gnome/pixmaps/anjuta/Icons.16x16.ProtectedDelegate
-share/gnome/pixmaps/anjuta/Icons.16x16.ProtectedEnum
-share/gnome/pixmaps/anjuta/Icons.16x16.ProtectedEvent
-share/gnome/pixmaps/anjuta/Icons.16x16.ProtectedField
-share/gnome/pixmaps/anjuta/Icons.16x16.ProtectedInterface
-share/gnome/pixmaps/anjuta/Icons.16x16.ProtectedMethod
-share/gnome/pixmaps/anjuta/Icons.16x16.ProtectedProperty
-share/gnome/pixmaps/anjuta/Icons.16x16.ProtectedStruct
-share/gnome/pixmaps/anjuta/Icons.16x16.Reference
-share/gnome/pixmaps/anjuta/anjuta-build-basic-autotools-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-cvs-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-debug-manager.plugin.png
-share/gnome/pixmaps/anjuta/anjuta-devhelp-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-document-manager.png
-share/gnome/pixmaps/anjuta/anjuta-editor.png
-share/gnome/pixmaps/anjuta/anjuta-file-manager-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-file-wizard-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-gdb.plugin.png
-share/gnome/pixmaps/anjuta/anjuta-glade-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-gtodo-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-language-cpp-java-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-loader-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-macro.png
-share/gnome/pixmaps/anjuta/anjuta-message-view.png
-share/gnome/pixmaps/anjuta/anjuta-patch-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-project-import-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-project-manager-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-project-wizard-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-sample-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-search.png
-%%SVN%%share/gnome/pixmaps/anjuta/anjuta-subversion.png
-share/gnome/pixmaps/anjuta/anjuta-symbol-browser-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-terminal-plugin.png
-share/gnome/pixmaps/anjuta/anjuta-tools-plugin.png
-share/gnome/pixmaps/anjuta/anjuta.png
-share/gnome/pixmaps/anjuta/anjuta_logo.png
-share/gnome/pixmaps/anjuta/anjuta_splash.png
-share/gnome/pixmaps/anjuta/autocomplete-16.png
-share/gnome/pixmaps/anjuta/autocomplete.png
-share/gnome/pixmaps/anjuta/block-end-16.png
-share/gnome/pixmaps/anjuta/block-end.png
-share/gnome/pixmaps/anjuta/block-start-16.png
-share/gnome/pixmaps/anjuta/block-start.png
-share/gnome/pixmaps/anjuta/block_select.xpm
-share/gnome/pixmaps/anjuta/bookmark-clear.png
-share/gnome/pixmaps/anjuta/bookmark-first.png
-share/gnome/pixmaps/anjuta/bookmark-last.png
-share/gnome/pixmaps/anjuta/bookmark-next.png
-share/gnome/pixmaps/anjuta/bookmark-prev.png
-share/gnome/pixmaps/anjuta/bookmark-toggle.png
-share/gnome/pixmaps/anjuta/bookmark.png
-share/gnome/pixmaps/anjuta/breakpoint-disabled.png
-share/gnome/pixmaps/anjuta/breakpoint-enabled.png
-share/gnome/pixmaps/anjuta/breakpoint.png
-share/gnome/pixmaps/anjuta/class-inheritance.png
-share/gnome/pixmaps/anjuta/class_logo.xpm
-share/gnome/pixmaps/anjuta/detach-16.png
-share/gnome/pixmaps/anjuta/detach.png
-share/gnome/pixmaps/anjuta/directory-accept.png
-share/gnome/pixmaps/anjuta/directory.png
-share/gnome/pixmaps/anjuta/error-next-16.png
-share/gnome/pixmaps/anjuta/error-next.png
-share/gnome/pixmaps/anjuta/error-prev-16.png
-share/gnome/pixmaps/anjuta/error-prev.png
-share/gnome/pixmaps/anjuta/fold_close.xpm
-share/gnome/pixmaps/anjuta/fold_open.xpm
-share/gnome/pixmaps/anjuta/fold_toggle.xpm
-share/gnome/pixmaps/anjuta/gtodo-about.png
-share/gnome/pixmaps/anjuta/gtodo-edit.png
-share/gnome/pixmaps/anjuta/gtodo.png
-share/gnome/pixmaps/anjuta/gtodo_tray.png
-share/gnome/pixmaps/anjuta/indent.xpm
-share/gnome/pixmaps/anjuta/indent_auto.xpm
-share/gnome/pixmaps/anjuta/indent_dcr.xpm
-share/gnome/pixmaps/anjuta/indent_inc.xpm
-share/gnome/pixmaps/anjuta/indent_set.xpm
-share/gnome/pixmaps/anjuta/linemarker.png
-share/gnome/pixmaps/anjuta/locals.png
-share/gnome/pixmaps/anjuta/messages.xpm
-share/gnome/pixmaps/anjuta/password.png
-share/gnome/pixmaps/anjuta/pointer.png
-share/gnome/pixmaps/anjuta/preferences-editor.png
-share/gnome/pixmaps/anjuta/preferences-general.png
-share/gnome/pixmaps/anjuta/preferences-messages.png
-share/gnome/pixmaps/anjuta/preferences-terminal.png
-share/gnome/pixmaps/anjuta/profiler.png
-share/gnome/pixmaps/anjuta/program-counter.png
-share/gnome/pixmaps/anjuta/run-to-cursor.png
-share/gnome/pixmaps/anjuta/sourceview.png
-share/gnome/pixmaps/anjuta/stack.png
-share/gnome/pixmaps/anjuta/step-into-16.png
-share/gnome/pixmaps/anjuta/step-into.png
-share/gnome/pixmaps/anjuta/step-out-16.png
-share/gnome/pixmaps/anjuta/step-out.png
-share/gnome/pixmaps/anjuta/step-over-16.png
-share/gnome/pixmaps/anjuta/step-over.png
-share/gnome/pixmaps/anjuta/swap.png
-share/gnome/pixmaps/anjuta/watch.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-anjuta.png
 share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-anjuta.svg
+share/omf/anjuta-manual/anjuta-manual-C.omf
+share/pixmaps/anjuta/Icons.16x16.Class
+share/pixmaps/anjuta/Icons.16x16.Enum
+share/pixmaps/anjuta/Icons.16x16.Field
+share/pixmaps/anjuta/Icons.16x16.FormsDesigner.BringToFront
+share/pixmaps/anjuta/Icons.16x16.FormsDesigner.SendToBack
+share/pixmaps/anjuta/Icons.16x16.Interface
+share/pixmaps/anjuta/Icons.16x16.InternalClass
+share/pixmaps/anjuta/Icons.16x16.InternalDelegate
+share/pixmaps/anjuta/Icons.16x16.InternalEnum
+share/pixmaps/anjuta/Icons.16x16.InternalEvent
+share/pixmaps/anjuta/Icons.16x16.InternalField
+share/pixmaps/anjuta/Icons.16x16.InternalInterface
+share/pixmaps/anjuta/Icons.16x16.InternalMethod
+share/pixmaps/anjuta/Icons.16x16.InternalProperty
+share/pixmaps/anjuta/Icons.16x16.InternalStruct
+share/pixmaps/anjuta/Icons.16x16.Literal
+share/pixmaps/anjuta/Icons.16x16.Method
+share/pixmaps/anjuta/Icons.16x16.NameSpace
+share/pixmaps/anjuta/Icons.16x16.PrivateClass
+share/pixmaps/anjuta/Icons.16x16.PrivateDelegate
+share/pixmaps/anjuta/Icons.16x16.PrivateEnum
+share/pixmaps/anjuta/Icons.16x16.PrivateEvent
+share/pixmaps/anjuta/Icons.16x16.PrivateField
+share/pixmaps/anjuta/Icons.16x16.PrivateInterface
+share/pixmaps/anjuta/Icons.16x16.PrivateMethod
+share/pixmaps/anjuta/Icons.16x16.PrivateProperty
+share/pixmaps/anjuta/Icons.16x16.PrivateStruct
+share/pixmaps/anjuta/Icons.16x16.ProtectedClass
+share/pixmaps/anjuta/Icons.16x16.ProtectedDelegate
+share/pixmaps/anjuta/Icons.16x16.ProtectedEnum
+share/pixmaps/anjuta/Icons.16x16.ProtectedEvent
+share/pixmaps/anjuta/Icons.16x16.ProtectedField
+share/pixmaps/anjuta/Icons.16x16.ProtectedInterface
+share/pixmaps/anjuta/Icons.16x16.ProtectedMethod
+share/pixmaps/anjuta/Icons.16x16.ProtectedProperty
+share/pixmaps/anjuta/Icons.16x16.ProtectedStruct
+share/pixmaps/anjuta/Icons.16x16.Reference
+share/pixmaps/anjuta/anjuta-build-basic-autotools-plugin.png
+share/pixmaps/anjuta/anjuta-cvs-plugin.png
+share/pixmaps/anjuta/anjuta-debug-manager.plugin.png
+share/pixmaps/anjuta/anjuta-devhelp-plugin.png
+share/pixmaps/anjuta/anjuta-document-manager.png
+share/pixmaps/anjuta/anjuta-editor.png
+share/pixmaps/anjuta/anjuta-file-manager-plugin.png
+share/pixmaps/anjuta/anjuta-file-wizard-plugin.png
+share/pixmaps/anjuta/anjuta-gdb.plugin.png
+share/pixmaps/anjuta/anjuta-glade-plugin.png
+share/pixmaps/anjuta/anjuta-gtodo-plugin.png
+share/pixmaps/anjuta/anjuta-language-cpp-java-plugin.png
+share/pixmaps/anjuta/anjuta-loader-plugin.png
+share/pixmaps/anjuta/anjuta-macro.png
+share/pixmaps/anjuta/anjuta-message-view.png
+share/pixmaps/anjuta/anjuta-patch-plugin.png
+share/pixmaps/anjuta/anjuta-project-import-plugin.png
+share/pixmaps/anjuta/anjuta-project-manager-plugin.png
+share/pixmaps/anjuta/anjuta-project-wizard-plugin.png
+share/pixmaps/anjuta/anjuta-sample-plugin.png
+share/pixmaps/anjuta/anjuta-search.png
+%%SVN%%share/pixmaps/anjuta/anjuta-subversion.png
+share/pixmaps/anjuta/anjuta-symbol-browser-plugin.png
+share/pixmaps/anjuta/anjuta-terminal-plugin.png
+share/pixmaps/anjuta/anjuta-tools-plugin.png
+share/pixmaps/anjuta/anjuta.png
+share/pixmaps/anjuta/anjuta_logo.png
+share/pixmaps/anjuta/anjuta_splash.png
+share/pixmaps/anjuta/autocomplete-16.png
+share/pixmaps/anjuta/autocomplete.png
+share/pixmaps/anjuta/block-end-16.png
+share/pixmaps/anjuta/block-end.png
+share/pixmaps/anjuta/block-start-16.png
+share/pixmaps/anjuta/block-start.png
+share/pixmaps/anjuta/block_select.xpm
+share/pixmaps/anjuta/bookmark-clear.png
+share/pixmaps/anjuta/bookmark-first.png
+share/pixmaps/anjuta/bookmark-last.png
+share/pixmaps/anjuta/bookmark-next.png
+share/pixmaps/anjuta/bookmark-prev.png
+share/pixmaps/anjuta/bookmark-toggle.png
+share/pixmaps/anjuta/bookmark.png
+share/pixmaps/anjuta/breakpoint-disabled.png
+share/pixmaps/anjuta/breakpoint-enabled.png
+share/pixmaps/anjuta/breakpoint.png
+share/pixmaps/anjuta/class-inheritance.png
+share/pixmaps/anjuta/class_logo.xpm
+share/pixmaps/anjuta/detach-16.png
+share/pixmaps/anjuta/detach.png
+share/pixmaps/anjuta/directory-accept.png
+share/pixmaps/anjuta/directory.png
+share/pixmaps/anjuta/error-next-16.png
+share/pixmaps/anjuta/error-next.png
+share/pixmaps/anjuta/error-prev-16.png
+share/pixmaps/anjuta/error-prev.png
+share/pixmaps/anjuta/fold_close.xpm
+share/pixmaps/anjuta/fold_open.xpm
+share/pixmaps/anjuta/fold_toggle.xpm
+share/pixmaps/anjuta/gtodo-about.png
+share/pixmaps/anjuta/gtodo-edit.png
+share/pixmaps/anjuta/gtodo.png
+share/pixmaps/anjuta/gtodo_tray.png
+share/pixmaps/anjuta/indent.xpm
+share/pixmaps/anjuta/indent_auto.xpm
+share/pixmaps/anjuta/indent_dcr.xpm
+share/pixmaps/anjuta/indent_inc.xpm
+share/pixmaps/anjuta/indent_set.xpm
+share/pixmaps/anjuta/linemarker.png
+share/pixmaps/anjuta/locals.png
+share/pixmaps/anjuta/messages.xpm
+share/pixmaps/anjuta/password.png
+share/pixmaps/anjuta/pointer.png
+share/pixmaps/anjuta/preferences-editor.png
+share/pixmaps/anjuta/preferences-general.png
+share/pixmaps/anjuta/preferences-messages.png
+share/pixmaps/anjuta/preferences-terminal.png
+share/pixmaps/anjuta/profiler.png
+share/pixmaps/anjuta/program-counter.png
+share/pixmaps/anjuta/run-to-cursor.png
+share/pixmaps/anjuta/sourceview.png
+share/pixmaps/anjuta/stack.png
+share/pixmaps/anjuta/step-into-16.png
+share/pixmaps/anjuta/step-into.png
+share/pixmaps/anjuta/step-out-16.png
+share/pixmaps/anjuta/step-out.png
+share/pixmaps/anjuta/step-over-16.png
+share/pixmaps/anjuta/step-over.png
+share/pixmaps/anjuta/swap.png
+share/pixmaps/anjuta/watch.png
 share/icons/hicolor/48x48/apps/anjuta.png
 share/icons/hicolor/scalable/apps/anjuta.svg
 share/locale/ar/LC_MESSAGES/anjuta.mo
@@ -785,73 +785,67 @@ share/locale/zh_CN/LC_MESSAGES/anjuta.mo
 share/locale/zh_TW/LC_MESSAGES/anjuta.mo
 share/mime/application/x-anjuta.xml
 share/mime/packages/anjuta.xml
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrm share/gnome/pixmaps/anjuta
-@dirrm share/gnome/omf/anjuta-manual
+@dirrm share/pixmaps/anjuta
+@dirrm share/omf/anjuta-manual
 @dirrm share/gnome/help/anjuta-manual/C/figures
 @dirrm share/gnome/help/anjuta-manual/C
 @dirrm share/gnome/help/anjuta-manual
 @dirrm share/gnome/help/anjuta-faqs/C
 @dirrm share/gnome/help/anjuta-faqs
-@dirrm share/gnome/anjuta/ui
-@dirrm share/gnome/anjuta/tools
-@dirrm share/gnome/anjuta/scripts
-@dirrm share/gnome/anjuta/properties
-@dirrm share/gnome/anjuta/project/xlib/src
-@dirrm share/gnome/anjuta/project/xlib/po
-@dirrm share/gnome/anjuta/project/xlib-dock/src
-@dirrm share/gnome/anjuta/project/xlib-dock/po
-@dirrm share/gnome/anjuta/project/xlib-dock
-@dirrm share/gnome/anjuta/project/xlib
-@dirrm share/gnome/anjuta/project/wxwin/src
-@dirrm share/gnome/anjuta/project/wxwin/po
-@dirrm share/gnome/anjuta/project/wxwin
-@dirrm share/gnome/anjuta/project/terminal/src
-@dirrm share/gnome/anjuta/project/terminal/po
-@dirrm share/gnome/anjuta/project/terminal
-@dirrm share/gnome/anjuta/project/sdl/src
-@dirrm share/gnome/anjuta/project/sdl/po
-@dirrm share/gnome/anjuta/project/sdl
-@dirrm share/gnome/anjuta/project/python/src
-@dirrm share/gnome/anjuta/project/python/po
-@dirrm share/gnome/anjuta/project/python
-@dirrm share/gnome/anjuta/project/mkfile/src
-@dirrm share/gnome/anjuta/project/mkfile/po
-@dirrm share/gnome/anjuta/project/mkfile
-@dirrm share/gnome/anjuta/project/minimal
-@dirrm share/gnome/anjuta/project/java/src
-@dirrm share/gnome/anjuta/project/java/po
-@dirrm share/gnome/anjuta/project/java
-@dirrm share/gnome/anjuta/project/gtkmm/src
-@dirrm share/gnome/anjuta/project/gtkmm/po
-@dirrm share/gnome/anjuta/project/gtkmm
-@dirrm share/gnome/anjuta/project/gtk/src
-@dirrm share/gnome/anjuta/project/gtk/po
-@dirrm share/gnome/anjuta/project/gtk
-@dirrm share/gnome/anjuta/project/gnome/src
-@dirrm share/gnome/anjuta/project/gnome/po
-@dirrm share/gnome/anjuta/project/gnome
-@dirrm share/gnome/anjuta/project/gcj/src
-@dirrm share/gnome/anjuta/project/gcj
-@dirrm share/gnome/anjuta/project/cpp/src
-@dirrm share/gnome/anjuta/project/cpp/po
-@dirrm share/gnome/anjuta/project/cpp
-@dirrm share/gnome/anjuta/project/anjuta-plugin/src
-@dirrm share/gnome/anjuta/project/anjuta-plugin/po
-@dirrm share/gnome/anjuta/project/anjuta-plugin
-@dirrm share/gnome/anjuta/project
-@dirrm share/gnome/anjuta/profiles
-@dirrm share/gnome/anjuta/gtodo
-@dirrm share/gnome/anjuta/glade
-@dirrm share/gnome/anjuta/class-templates
-@dirrm share/gnome/anjuta/build
-@dirrm share/gnome/anjuta
 @dirrmtry share/icons/gnome/48x48/mimetypes
+@dirrm share/anjuta/ui
+@dirrm share/anjuta/tools
+@dirrm share/anjuta/scripts
+@dirrm share/anjuta/properties
+@dirrm share/anjuta/project/xlib/src
+@dirrm share/anjuta/project/xlib/po
+@dirrm share/anjuta/project/xlib-dock/src
+@dirrm share/anjuta/project/xlib-dock/po
+@dirrm share/anjuta/project/xlib-dock
+@dirrm share/anjuta/project/xlib
+@dirrm share/anjuta/project/wxwin/src
+@dirrm share/anjuta/project/wxwin/po
+@dirrm share/anjuta/project/wxwin
+@dirrm share/anjuta/project/terminal/src
+@dirrm share/anjuta/project/terminal/po
+@dirrm share/anjuta/project/terminal
+@dirrm share/anjuta/project/sdl/src
+@dirrm share/anjuta/project/sdl/po
+@dirrm share/anjuta/project/sdl
+@dirrm share/anjuta/project/python/src
+@dirrm share/anjuta/project/python/po
+@dirrm share/anjuta/project/python
+@dirrm share/anjuta/project/mkfile/src
+@dirrm share/anjuta/project/mkfile/po
+@dirrm share/anjuta/project/mkfile
+@dirrm share/anjuta/project/minimal
+@dirrm share/anjuta/project/java/src
+@dirrm share/anjuta/project/java/po
+@dirrm share/anjuta/project/java
+@dirrm share/anjuta/project/gtkmm/src
+@dirrm share/anjuta/project/gtkmm/po
+@dirrm share/anjuta/project/gtkmm
+@dirrm share/anjuta/project/gtk/src
+@dirrm share/anjuta/project/gtk/po
+@dirrm share/anjuta/project/gtk
+@dirrm share/anjuta/project/gnome/src
+@dirrm share/anjuta/project/gnome/po
+@dirrm share/anjuta/project/gnome
+@dirrm share/anjuta/project/gcj/src
+@dirrm share/anjuta/project/gcj
+@dirrm share/anjuta/project/cpp/src
+@dirrm share/anjuta/project/cpp/po
+@dirrm share/anjuta/project/cpp
+@dirrm share/anjuta/project/anjuta-plugin/src
+@dirrm share/anjuta/project/anjuta-plugin/po
+@dirrm share/anjuta/project/anjuta-plugin
+@dirrm share/anjuta/project
+@dirrm share/anjuta/profiles
+@dirrm share/anjuta/gtodo
+@dirrm share/anjuta/glade
+@dirrm share/anjuta/class-templates
+@dirrm share/anjuta/build
+@dirrm share/anjuta
 @dirrm share/doc/libanjuta
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/anjuta
@@ -860,3 +854,10 @@ share/mime/packages/anjuta.xml
 @dirrm include/libanjuta-1.0
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/applications

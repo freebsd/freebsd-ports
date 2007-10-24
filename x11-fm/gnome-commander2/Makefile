@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-commander
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-commander/1.2
@@ -33,9 +34,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 INSTALLS_OMF=	yes
 
 MAN1=		gnome-commander.1
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|share/pixmaps|share/gnome/pixmaps|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

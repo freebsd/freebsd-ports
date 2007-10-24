@@ -3,15 +3,14 @@
 # Whom:			michael johnson <ahze@ahze.net>
 #
 # $FreeBSD$
-#    $MCom: ports/www/kazehakase/Makefile,v 1.4 2006/03/10 02:09:53 ahze Exp $
+#   $MCom: ports/www/kazehakase/Makefile,v 1.9 2007/10/24 16:17:14 ahze Exp $
 #
 
 PORTNAME=	kazehakase
-PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTVERSION=	0.4.9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/24791
+MASTER_SITE_SUBDIR=	${PORTNAME}/27353
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
@@ -37,13 +36,13 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 .endif
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 # !!! gtk-webcore higly experimental right now and not very stable !!!
 # See https://mail.gna.org/public/kazehakase-devel/2004-10/msg00001.html
 # on how to use gtk-webcore with kazehakase. and yes you still have to
 # have mozilla even if you don't use it in kazehakase.
-.if defined(WITH_GTKWEBCORE)
+.if defined(WITH_GTKWEBCORE) || exists(${LOCALBASE}/libnrcit.a)
 LIB_DEPENDS+=	nrcit.0:${PORTSDIR}/www/osb-nrcit
 CONFIGURE_ARGS+=--enable-gtk-webcore
 .endif
@@ -88,5 +87,9 @@ post-patch:
 .if defined(WITH_THUMBNAIL)
 	@${ECHO_MSG} "create_thumbnail=true" >> ${WRKSRC}/etc/kzrc
 .endif
+
+pre-install:
+	@${REINPLACE_CMD} -e 's|localen|locale|' \
+		${WRKSRC}/po/Makefile
 
 .include <bsd.port.post.mk>

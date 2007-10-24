@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/evince/Makefile,v 1.64 2007/03/13 12:00:09 ahze Exp $
+#   $MCom: ports/graphics/evince/Makefile,v 1.81 2007/10/16 03:16:14 mezz Exp $
 #
 
 PORTNAME=	evince
-PORTVERSION=	0.8.3
-PORTREVISION=	2
+PORTVERSION=	2.20.1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -29,8 +28,8 @@ USE_GHOSTSCRIPT=yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui libgnomeprintui \
 		desktopfileutils gnomedocutils
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	evince.schemas evince-thumbnailer.schemas \
 		evince-thumbnailer-ps.schemas
@@ -79,7 +78,7 @@ CONFIGURE_ARGS+=	--enable-impress
 CONFIGURE_ARGS+=	--disable-impress
 .endif
 
-.if exists(${X11BASE}/bin/djview)
+.if exists(${LOCALBASE}/bin/djview)
 DJVU_DIR?=	# empty
 .else
 DJVU_DIR?=	-nox11
@@ -106,9 +105,8 @@ RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; s|[$$]POPPLER_VERSION|9|g ; \
-		s| poppler-glib <= [$$]POPPLER_MAX_REQUIRED||g' \
-			${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
+		${WRKSRC}/configure
 
 post-install:
 	@-update-desktop-database

@@ -33,6 +33,7 @@ BROKEN=		Does not compile on alpha
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g ; \
 		 s|-nostdinc++||g ; \
-		 s|-nodefaultlibs -lgcc -lc||g' ${WRKSRC}/configure
+		 s|-nodefaultlibs -lgcc -lc||g; \
+		 s|-D.*_DISABLE_DEPRECATED||g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

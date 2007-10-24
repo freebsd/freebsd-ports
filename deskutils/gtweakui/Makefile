@@ -3,11 +3,11 @@
 # Whom:				Sergey Akifyev <asa@gascom.ru>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/deskutils/gtweakui/Makefile,v 1.2 2007/05/19 21:36:03 marcus Exp $
 
 PORTNAME=	gTweakUI
 PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtweakui
@@ -29,7 +29,7 @@ DESKTOP_FILES=	gtweakui-galeon.desktop.in \
 
 post-patch:
 .for FILE in ${DESKTOP_FILES}
-	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share/gnome|g' \
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
 			-e 's|Settings;|&AdvancedSettings;|g' ${WRKSRC}/${FILE}
 .endfor
 	@${REINPLACE_CMD} 's|$$(datadir)/applications|$$(datadir)/control-center-2.0/capplets|g' ${WRKSRC}/Makefile.in

@@ -25,11 +25,8 @@ share/gnome/help/gnomecard/C/x36.html
 share/gnome/help/gnomecard/C/x39.html
 share/gnome/help/gnomecard/C/x81.html
 share/gnome/help/gnomecard/C/x84.html
-share/gnome/idl/GnomeCal.idl
-share/gnome/idl/gnome-pim.idl
-share/gnome/mime-info/gnome-pim.keys
-share/gnome/pixmaps/gnome-calendar-conduit.png
-share/gnome/pixmaps/gnome-gnomecard.png
+share/idl/GnomeCal.idl
+share/idl/gnome-pim.idl
 share/locale/az/LC_MESSAGES/gnome-pim.mo
 share/locale/ca/LC_MESSAGES/gnome-pim.mo
 share/locale/cs/LC_MESSAGES/gnome-pim.mo
@@ -69,15 +66,18 @@ share/locale/vi/LC_MESSAGES/gnome-pim.mo
 share/locale/wa/LC_MESSAGES/gnome-pim.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-pim.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-pim.mo
-@dirrmtry share/locale/gd/LC_MESSAGES
-@dirrmtry share/locale/gd
-@dirrmtry share/locale/gv/LC_MESSAGES
-@dirrmtry share/locale/gv
-@dirrmtry share/locale/kw/LC_MESSAGES
-@dirrmtry share/locale/kw
+share/mime-info/gnome-pim.keys
+share/pixmaps/gnome-calendar-conduit.png
+share/pixmaps/gnome-gnomecard.png
 @dirrm share/gnome/help/gnomecard/eu
 @dirrm share/gnome/help/gnomecard/C
 @dirrm share/gnome/help/gnomecard
 @dirrm share/gnome/help/gnomecal/C/images
 @dirrm share/gnome/help/gnomecal/C
 @dirrm share/gnome/help/gnomecal
+@dirrmtry share/locale/kw/LC_MESSAGES
+@dirrmtry share/locale/kw
+@dirrmtry share/locale/gv/LC_MESSAGES
+@dirrmtry share/locale/gv
+@dirrmtry share/locale/gd/LC_MESSAGES
+@dirrmtry share/locale/gd

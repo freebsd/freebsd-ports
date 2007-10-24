@@ -1,24 +1,28 @@
 bin/gnome-nettool
-share/gnome/applications/gnome-nettool.desktop
-share/gnome/gnome-nettool/dialogs/gnome-nettool.glade
-share/gnome/gnome-nettool/pixmaps/16_ethernet.xpm
-share/gnome/gnome-nettool/pixmaps/16_loopback.xpm
-share/gnome/gnome-nettool/pixmaps/16_plip.xpm
-share/gnome/gnome-nettool/pixmaps/16_ppp.xpm
-share/gnome/gnome-nettool/pixmaps/irda-16.png
-share/gnome/gnome-nettool/pixmaps/network.png
-share/gnome/gnome-nettool/pixmaps/wavelan-16.png
+share/applications/gnome-nettool.desktop
+%%DATADIR%%/dialogs/gnome-nettool.glade
+%%DATADIR%%/pixmaps/16_ethernet.xpm
+%%DATADIR%%/pixmaps/16_loopback.xpm
+%%DATADIR%%/pixmaps/16_plip.xpm
+%%DATADIR%%/pixmaps/16_ppp.xpm
+%%DATADIR%%/pixmaps/gnome-nettool.png
+%%DATADIR%%/pixmaps/irda-16.png
+%%DATADIR%%/pixmaps/network.png
+%%DATADIR%%/pixmaps/wavelan-16.png
 share/gnome/help/gnome-nettool/C/gnome-nettool.xml
 share/gnome/help/gnome-nettool/C/legal.xml
+share/gnome/help/gnome-nettool/ca/gnome-nettool.xml
+share/gnome/help/gnome-nettool/es/gnome-nettool.xml
 share/gnome/help/gnome-nettool/fr/gnome-nettool.xml
+share/gnome/help/gnome-nettool/oc/gnome-nettool.xml
 share/gnome/help/gnome-nettool/pa/gnome-nettool.xml
 share/gnome/help/gnome-nettool/sv/gnome-nettool.xml
-share/gnome/omf/gnome-nettool/gnome-nettool-C.omf
-share/gnome/omf/gnome-nettool/gnome-nettool-fr.omf
-share/gnome/omf/gnome-nettool/gnome-nettool-pa.omf
-share/gnome/omf/gnome-nettool/gnome-nettool-sv.omf
-share/gnome/pixmaps/gnome-nettool.png
-share/icons/hicolor/48x48/apps/gnome-nettool.png
+share/gnome/help/gnome-nettool/uk/gnome-nettool.xml
+share/gnome/help/gnome-nettool/vi/gnome-nettool.xml
+share/icons/hicolor/16x16/apps/gnome-nettool.png
+share/icons/hicolor/22x22/apps/gnome-nettool.png
+share/icons/hicolor/32x32/apps/gnome-nettool.png
+share/icons/hicolor/scalable/apps/gnome-nettool.svg
 share/locale/ar/LC_MESSAGES/gnome-nettool.mo
 share/locale/az/LC_MESSAGES/gnome-nettool.mo
 share/locale/bg/LC_MESSAGES/gnome-nettool.mo
@@ -63,6 +67,7 @@ share/locale/ms/LC_MESSAGES/gnome-nettool.mo
 share/locale/nb/LC_MESSAGES/gnome-nettool.mo
 share/locale/ne/LC_MESSAGES/gnome-nettool.mo
 share/locale/nl/LC_MESSAGES/gnome-nettool.mo
+share/locale/oc/LC_MESSAGES/gnome-nettool.mo
 share/locale/or/LC_MESSAGES/gnome-nettool.mo
 share/locale/pa/LC_MESSAGES/gnome-nettool.mo
 share/locale/pl/LC_MESSAGES/gnome-nettool.mo
@@ -71,6 +76,7 @@ share/locale/pt_BR/LC_MESSAGES/gnome-nettool.mo
 share/locale/ro/LC_MESSAGES/gnome-nettool.mo
 share/locale/ru/LC_MESSAGES/gnome-nettool.mo
 share/locale/rw/LC_MESSAGES/gnome-nettool.mo
+share/locale/si/LC_MESSAGES/gnome-nettool.mo
 share/locale/sk/LC_MESSAGES/gnome-nettool.mo
 share/locale/sl/LC_MESSAGES/gnome-nettool.mo
 share/locale/sq/LC_MESSAGES/gnome-nettool.mo
@@ -78,6 +84,7 @@ share/locale/sr/LC_MESSAGES/gnome-nettool.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-nettool.mo
 share/locale/sv/LC_MESSAGES/gnome-nettool.mo
 share/locale/ta/LC_MESSAGES/gnome-nettool.mo
+share/locale/te/LC_MESSAGES/gnome-nettool.mo
 share/locale/th/LC_MESSAGES/gnome-nettool.mo
 share/locale/tr/LC_MESSAGES/gnome-nettool.mo
 share/locale/uk/LC_MESSAGES/gnome-nettool.mo
@@ -87,12 +94,42 @@ share/locale/xh/LC_MESSAGES/gnome-nettool.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-nettool.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-nettool.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-nettool.mo
+share/omf/gnome-nettool/gnome-nettool-C.omf
+share/omf/gnome-nettool/gnome-nettool-ca.omf
+share/omf/gnome-nettool/gnome-nettool-es.omf
+share/omf/gnome-nettool/gnome-nettool-fr.omf
+share/omf/gnome-nettool/gnome-nettool-oc.omf
+share/omf/gnome-nettool/gnome-nettool-pa.omf
+share/omf/gnome-nettool/gnome-nettool-sv.omf
+share/omf/gnome-nettool/gnome-nettool-uk.omf
+share/omf/gnome-nettool/gnome-nettool-vi.omf
+share/pixmaps/gnome-nettool.png
+@dirrm share/omf/gnome-nettool
+@dirrm share/gnome/help/gnome-nettool/vi
+@dirrm share/gnome/help/gnome-nettool/uk
+@dirrm share/gnome/help/gnome-nettool/sv
+@dirrm share/gnome/help/gnome-nettool/pa
+@dirrm share/gnome/help/gnome-nettool/oc
+@dirrm share/gnome/help/gnome-nettool/fr
+@dirrm share/gnome/help/gnome-nettool/es
+@dirrm share/gnome/help/gnome-nettool/ca
+@dirrm share/gnome/help/gnome-nettool/C
+@dirrm share/gnome/help/gnome-nettool
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/dialogs
+@dirrm %%DATADIR%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES
@@ -101,12 +138,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-nettool.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
-@dirrm share/gnome/omf/gnome-nettool
-@dirrm share/gnome/help/gnome-nettool/sv
-@dirrm share/gnome/help/gnome-nettool/pa
-@dirrm share/gnome/help/gnome-nettool/fr
-@dirrm share/gnome/help/gnome-nettool/C
-@dirrm share/gnome/help/gnome-nettool
-@dirrm share/gnome/gnome-nettool/pixmaps
-@dirrm share/gnome/gnome-nettool/dialogs
-@dirrm share/gnome/gnome-nettool
+@dirrmtry share/applications

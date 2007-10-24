@@ -7,7 +7,7 @@
 
 PORTNAME=		streamtuner
 PORTVERSION=		0.99.99
-PORTREVISION=		7
+PORTREVISION=		9
 CATEGORIES=		audio www
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,14 +15,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A GTK+ stream directory browser
 
-BUILD_DEPENDS=		scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+BUILD_DEPENDS=		rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=		curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_XLIB=		yes
 USE_GNOME=		gtk20 gnomehack gnomeprefix
 USE_GMAKE=		yes
-GNU_CONFIGURE=	yes
+INSTALLS_OMF=		yes
+GNU_CONFIGURE=		yes
 USE_GETOPT_LONG=	yes
 CPPFLAGS=		-I${LOCALBASE}/include
 LDFLAGS=		-L${LOCALBASE}/lib
@@ -85,5 +86,7 @@ USE_GNOME+=		pygtk2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|[(]datadir[)]/help|(datadir)/gnome/help|g' \
+		${WRKSRC}/help/C/Makefile.in
 
 .include <bsd.port.post.mk>

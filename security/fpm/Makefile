@@ -7,7 +7,7 @@
 
 PORTNAME=	fpm
 PORTVERSION=	0.60
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,8 +24,8 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 
 MAN1=		fpm.1
 PORTDOCS=	AUTHORS ChangeLog README TODO
-PLIST_FILES=	bin/fpm share/gnome/pixmaps/fpm/logo.xpm
-PLIST_DIRS=	share/gnome/pixmaps/fpm
+PLIST_FILES=	bin/fpm share/pixmaps/fpm/logo.xpm
+PLIST_DIRS=	share/pixmaps/fpm
 
 pre-build:
 	${REINPLACE_CMD} -E -e "s@encrypt\(@bfishencrypt\(@g" ${WRKSRC}/src/blowfish.c

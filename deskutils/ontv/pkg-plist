@@ -72,9 +72,9 @@
 %%PYTHON_SITELIBDIR%%/ontv/xmltv.pyo
 libdata/bonobo/servers/GNOME_OnTVApplet.server
 libexec/ontv
-share/gnome/gnome-2.0/ui/GNOME_OnTVApplet.xml
-share/gnome/ontv/images/ontv-logo-downloading.png
-share/gnome/ontv/ontv.glade
+share/gnome-2.0/ui/GNOME_OnTVApplet.xml
+share/ontv/images/ontv-logo-downloading.png
+share/ontv/ontv.glade
 share/icons/hicolor/16x16/apps/ontv.png
 share/icons/hicolor/22x22/apps/ontv.png
 share/icons/hicolor/24x24/apps/ontv.png
@@ -103,8 +103,8 @@ share/locale/sv/LC_MESSAGES/ontv.mo
 share/locale/uk/LC_MESSAGES/ontv.mo
 share/locale/vi/LC_MESSAGES/ontv.mo
 share/locale/zh_CN/LC_MESSAGES/ontv.mo
-@dirrm share/gnome/ontv/images
-@dirrm share/gnome/ontv
+@dirrm share/ontv/images
+@dirrm share/ontv
 @dirrm %%PYTHON_SITELIBDIR%%/ontv/keybinder
 @dirrm %%PYTHON_SITELIBDIR%%/ontv
 @dirrmtry share/locale/dz/LC_MESSAGES

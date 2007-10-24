@@ -30,10 +30,13 @@ MAN1=		tiemu.1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-extract: .SILENT
-	${REINPLACE_CMD} -e 's,\*-\*-linux\*,\*-\*-freebsd\*,' \
-		${WRKSRC}/configure
+	${RM} ${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} -e 's,\*-\*-linux\*,\*-\*-freebsd\*, ; \
+		s|-D.*_DISABLE_DEPRECATED||g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -E 's,(install-data-am:).*$$,\1,' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's,defined(__LINUX__),& || defined(__BSD__),' \
 		${WRKSRC}/src/gui/calc/pckeys.h ${WRKSRC}/src/misc/paths.h
+	${REINPLACE_CMD} -e 's|#define .*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/src/gui/comm.c
 
 .include <bsd.port.mk>

@@ -39,6 +39,10 @@
     SUBDIR += astfax
     SUBDIR += atmsupport
     SUBDIR += avahi
+    SUBDIR += avahi-app
+    SUBDIR += avahi-autoipd
+    SUBDIR += avahi-gtk
+    SUBDIR += avahi-libdns
     SUBDIR += avahi-qt3
     SUBDIR += avahi-sharp
     SUBDIR += b2bua
@@ -122,6 +126,7 @@
     SUBDIR += etherboot
     SUBDIR += etrace
     SUBDIR += etunnel
+    SUBDIR += evolution-rss
     SUBDIR += findmtu
     SUBDIR += flowgrep
     SUBDIR += forg

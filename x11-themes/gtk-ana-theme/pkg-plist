@@ -135,6 +135,7 @@
 %%GTK20%%@dirrm share/themes/%%THEME_NAME%%/gtk
 %%GTK20%%@dirrm share/themes/%%THEME_NAME%%/icons
 %%GTK20%%@dirrm share/themes/%%THEME_NAME%%
-%%METACITY%%share/gnome/themes/%%THEME_NAME%%/metacity-1/metacity-theme-1.xml
-%%METACITY%%@dirrm share/gnome/themes/%%THEME_NAME%%/metacity-1
-%%METACITY%%@dirrm share/gnome/themes/%%THEME_NAME%%
+%%METACITY%%share/themes/%%THEME_NAME%%/metacity-1/metacity-theme-1.xml
+%%METACITY%%@dirrm share/themes/%%THEME_NAME%%/metacity-1
+%%METACITY%%@dirrm share/themes/%%THEME_NAME%%
+@dirrmtry share/themes

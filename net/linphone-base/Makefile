@@ -7,7 +7,7 @@
 
 PORTNAME=	linphone
 PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:S/$/:linphone/} \
@@ -39,7 +39,7 @@ MAKE_ENV=	SUBDIRS="${SUBDIRS}"
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-DPACKAGE_LOCALE_DIR='\"${PREFIX}/share/locale\"' \
-		-DPACKAGE_DATA_DIR='\"${PREFIX}/${DATA_PATH}\"' \
+		-DPACKAGE_DATA_DIR='\"${PREFIX}/share\"' \
 		-DPACKAGE_SOUND_DIR='\"${DATADIR}/sounds\"' \
 		-DHAVE_STRUCT_TIMEVAL
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -65,13 +65,11 @@ DESCR=		${PKGDIR}/pkg-descr.gui
 PLIST=		${PKGDIR}/pkg-plist.gui
 USE_GNOME+=	gnomepanel gnomeprefix
 MAN1=		linphone.1
-DATA_PATH=	share/gnome
 SUBDIRS=	pixmaps gtk
 .else
 PKGNAMESUFFIX=	-base
 CONFIGURE_ARGS+=	--enable-gtk_ui=no
 MAN1=		linphonec.1 sipomatic.1
-DATA_PATH=	share
 SUBDIRS=	po gsmlib mediastreamer2 media_api exosip coreapi console
 .endif
 
@@ -91,9 +89,9 @@ post-install:
 .if defined(LINPHONE_GUI)
 	${INSTALL_MAN} ${WRKSRC}/share/C/linphone.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/share/linphone.desktop \
-		${PREFIX}/share/gnome/applications
+		${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/share/linphone_applet.desktop \
-		${PREFIX}/share/gnome/applications
+		${PREFIX}/share/applications
 .else
 	${INSTALL_MAN} ${WRKSRC}/share/C/linphonec.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/share/C/sipomatic.1 ${MANPREFIX}/man/man1

@@ -5,5 +5,6 @@ libexec/gtstarter/gtstarter_lib.py
 libexec/gtstarter/gtstarter_lib.pyc
 libexec/gtstarter/gtstarter
 libdata/bonobo/servers/GTStarterApplet.server
-share/gnome/applications/gtstarter.desktop
+share/applications/gtstarter.desktop
 @dirrm libexec/gtstarter
+@dirrmtry share/applications

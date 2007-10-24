@@ -28,5 +28,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,-O2,${CFLAGS},g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,^CFLAGS =,CFLAGS +=,' -e 's,-O2,,' \
 		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|#define G.*DISABLE_DEPRECATED||g' \
+		${WRKSRC}/src/define.h
 
 .include <bsd.port.mk>

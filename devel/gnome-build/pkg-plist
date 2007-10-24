@@ -22,13 +22,13 @@ lib/libgbf-widgets-1.la
 lib/libgbf-widgets-1.so
 lib/libgbf-widgets-1.so.1
 libdata/pkgconfig/gnome-build-1.0.pc
-share/gnome/gnome-build/GBF/AmFiles.pm
-share/gnome/gnome-build/GBF/General.pm
-share/gnome/gnome-build/GBF/Make.pm
-share/gnome/gnome-build/glade/create_dialogs.glade
-share/gnome/gnome-build/glade/gbf-am-dialogs.glade
-share/gnome/pixmaps/gbf-build.png
-share/gnome/pixmaps/gbf-install.png
+share/gnome-build/GBF/AmFiles.pm
+share/gnome-build/GBF/General.pm
+share/gnome-build/GBF/Make.pm
+share/gnome-build/glade/create_dialogs.glade
+share/gnome-build/glade/gbf-am-dialogs.glade
+share/pixmaps/gbf-build.png
+share/pixmaps/gbf-install.png
 share/locale/am/LC_MESSAGES/gbf-1.mo
 share/locale/ar/LC_MESSAGES/gbf-1.mo
 share/locale/az/LC_MESSAGES/gbf-1.mo
@@ -69,12 +69,14 @@ share/locale/sv/LC_MESSAGES/gbf-1.mo
 share/locale/uk/LC_MESSAGES/gbf-1.mo
 share/locale/vi/LC_MESSAGES/gbf-1.mo
 share/locale/zh_CN/LC_MESSAGES/gbf-1.mo
-@dirrm share/gnome/gnome-build/glade
-@dirrm share/gnome/gnome-build/GBF
-@dirrm share/gnome/gnome-build
+@dirrm share/gnome-build/glade
+@dirrm share/gnome-build/GBF
+@dirrm share/gnome-build
 @dirrm lib/gnome-build-1.0/backends
 @dirrm lib/gnome-build-1.0
 @dirrm include/gnome-build-1.0/gbf
 @dirrm include/gnome-build-1.0
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz

@@ -2,35 +2,35 @@ bin/gossip
 etc/sound/events/gossip.soundlist
 libdata/bonobo/servers/GNOME_Peekaboo_Applet.server
 libexec/peekaboo-applet
-share/gnome/applications/gossip.desktop
-share/gnome/gossip/GNOME_Peekaboo_Applet.xml
-share/gnome/gossip/chat.glade
-share/gnome/gossip/file-transfer.glade
-share/gnome/gossip/gossip-account.dtd
-share/gnome/gossip/gossip-available.png
-share/gnome/gossip/gossip-away.png
-share/gnome/gossip/gossip-busy.png
-share/gnome/gossip/gossip-chatroom.dtd
-share/gnome/gossip/gossip-contact-groups.dtd
-share/gnome/gossip/gossip-contact.dtd
-share/gnome/gossip/gossip-extended-away.png
-share/gnome/gossip/gossip-group-message.png
-share/gnome/gossip/gossip-log.xsl
-share/gnome/gossip/gossip-logo.png
-share/gnome/gossip/gossip-message.png
-share/gnome/gossip/gossip-offline.png
-share/gnome/gossip/gossip-pending.png
-share/gnome/gossip/gossip-status-presets.dtd
-share/gnome/gossip/gossip-typing.png
-share/gnome/gossip/group-chat.glade
-share/gnome/gossip/main.glade
-share/gnome/gossip/vcard_16.png
-share/gnome/gossip/vcard_48.png
-share/gnome/gossip/protocols/aim.protocol
-share/gnome/gossip/protocols/gossip-protocol.dtd
-share/gnome/gossip/protocols/icq.protocol
-share/gnome/gossip/protocols/msn.protocol
-share/gnome/gossip/protocols/yahoo.protocol
+share/applications/gossip.desktop
+share/gossip/GNOME_Peekaboo_Applet.xml
+share/gossip/chat.glade
+share/gossip/file-transfer.glade
+share/gossip/gossip-account.dtd
+share/gossip/gossip-available.png
+share/gossip/gossip-away.png
+share/gossip/gossip-busy.png
+share/gossip/gossip-chatroom.dtd
+share/gossip/gossip-contact-groups.dtd
+share/gossip/gossip-contact.dtd
+share/gossip/gossip-extended-away.png
+share/gossip/gossip-group-message.png
+share/gossip/gossip-log.xsl
+share/gossip/gossip-logo.png
+share/gossip/gossip-message.png
+share/gossip/gossip-offline.png
+share/gossip/gossip-pending.png
+share/gossip/gossip-status-presets.dtd
+share/gossip/gossip-typing.png
+share/gossip/group-chat.glade
+share/gossip/main.glade
+share/gossip/vcard_16.png
+share/gossip/vcard_48.png
+share/gossip/protocols/aim.protocol
+share/gossip/protocols/gossip-protocol.dtd
+share/gossip/protocols/icq.protocol
+share/gossip/protocols/msn.protocol
+share/gossip/protocols/yahoo.protocol
 share/gnome/help/gossip/C/figures/gossip-available.png
 share/gnome/help/gossip/C/figures/gossip-away.png
 share/gnome/help/gossip/C/figures/gossip-busy.png
@@ -64,15 +64,15 @@ share/gnome/help/gossip/sv/figures/gossip-offline.png
 share/gnome/help/gossip/sv/figures/gossip-personal-details.png
 share/gnome/help/gossip/sv/figures/gossip-roster.png
 share/gnome/help/gossip/sv/gossip.xml
-share/gnome/omf/gossip/gossip-C.omf
-share/gnome/omf/gossip/gossip-es.omf
-share/gnome/omf/gossip/gossip-fr.omf
-share/gnome/omf/gossip/gossip-sv.omf
-share/gnome/sounds/gossip/chat1.wav
-share/gnome/sounds/gossip/chat2.wav
-share/gnome/sounds/gossip/offline.wav
-share/gnome/sounds/gossip/online.wav
-share/gnome/sounds/gossip/send.wav
+share/omf/gossip/gossip-C.omf
+share/omf/gossip/gossip-es.omf
+share/omf/gossip/gossip-fr.omf
+share/omf/gossip/gossip-sv.omf
+share/sounds/gossip/chat1.wav
+share/sounds/gossip/chat2.wav
+share/sounds/gossip/offline.wav
+share/sounds/gossip/online.wav
+share/sounds/gossip/send.wav
 share/icons/hicolor/16x16/apps/gossip.png
 share/icons/hicolor/22x22/apps/gossip.png
 share/icons/hicolor/32x32/apps/gossip.png
@@ -119,7 +119,7 @@ share/locale/vi/LC_MESSAGES/gossip.mo
 share/locale/zh_CN/LC_MESSAGES/gossip.mo
 share/locale/zh_HK/LC_MESSAGES/gossip.mo
 share/locale/zh_TW/LC_MESSAGES/gossip.mo
-@dirrm share/gnome/omf/gossip
+@dirrm share/omf/gossip
 @dirrm share/gnome/help/gossip/sv/figures
 @dirrm share/gnome/help/gossip/sv
 @dirrm share/gnome/help/gossip/fr/figures
@@ -129,10 +129,11 @@ share/locale/zh_TW/LC_MESSAGES/gossip.mo
 @dirrm share/gnome/help/gossip/C/figures
 @dirrm share/gnome/help/gossip/C
 @dirrm share/gnome/help/gossip
-@dirrm share/gnome/sounds/gossip
-@dirrm share/gnome/gossip/protocols
-@dirrm share/gnome/gossip
+@dirrm share/sounds/gossip
+@dirrm share/gossip/protocols
+@dirrm share/gossip
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/applications

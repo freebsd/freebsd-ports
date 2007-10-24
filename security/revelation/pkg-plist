@@ -76,17 +76,17 @@ share/locale/fr/LC_MESSAGES/revelation.mo
 share/locale/sv/LC_MESSAGES/revelation.mo
 share/locale/zh/LC_MESSAGES/revelation.mo
 share/locale/cs/LC_MESSAGES/revelation.mo
-share/gnome/applications/revelation.desktop
+share/applications/revelation.desktop
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-share/gnome/revelation/ui/menubar.xml
-share/gnome/revelation/ui/popup-tree.xml
-share/gnome/revelation/ui/toolbar.xml
-@dirrm share/gnome/revelation/ui
-share/gnome/revelation/pwdict.hwm
-share/gnome/revelation/pwdict.pwd
-share/gnome/revelation/pwdict.pwi
-@dirrm share/gnome/revelation
+share/revelation/ui/menubar.xml
+share/revelation/ui/popup-tree.xml
+share/revelation/ui/toolbar.xml
+@dirrm share/revelation/ui
+share/revelation/pwdict.hwm
+share/revelation/pwdict.pwd
+share/revelation/pwdict.pwi
+@dirrm share/revelation
 share/icons/hicolor/16x16/apps/revelation.png
 share/icons/hicolor/24x24/apps/revelation.png
 share/icons/hicolor/24x24/apps/revelation-locked.png
@@ -99,3 +99,4 @@ share/mime/packages/revelation.xml
 share/mime/application/x-revelation.xml
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@dirrmtry share/applications

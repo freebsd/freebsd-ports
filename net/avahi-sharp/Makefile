@@ -17,41 +17,21 @@ LIB_DEPENDS=	avahi-core:${PORTSDIR}/net/avahi
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
-MASTERDIR=	${.CURDIR}/../avahi
+MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-sharp
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-AVAHI_SLAVE=	yes
-
-USE_GNOME=	gnomehack gnometarget
-CONFIGURE_ARGS= --with-distro=freebsd \
-		--with-dbus-system-address=unix:path=/var/run/dbus/system_bus_socket \
-		--disable-gtk \
-		--disable-qt3 \
-		--disable-qt4 \
-		--disable-python \
-		--enable-mono \
-		--disable-monodoc \
-		--disable-doxygen-doc \
-		--disable-doxygen-dot \
-		--localstatedir=/var
+AVAHI_SLAVE=	sharp
+AVAHI_PKGCONFIG=avahi-sharp.pc
 
 post-patch:
 	@${REINPLACE_CMD} 's|@CLIENT_DLNAME@|libavahi-client.so|g; \
 		s|@COMMON_DLNAME@|libavahi-common.so|g; \
 		s|@GLIB_DLNAME@|libavahi-glib.so|g' \
 		${BUILD_WRKSRC}/avahi-sharp.dll.config.in
-	@${REINPLACE_CMD} 's|@prefix@|${PREFIX}|g; \
-		s|@libdir@|$${prefix}/lib|g; \
-		s|@PACKAGE_VERSION@|${PORTVERSION}|g' \
-		${WRKSRC}/avahi-sharp.pc.in
-	@${CP} ${WRKSRC}/avahi-sharp.pc.in ${WRKSRC}/avahi-sharp.pc
 	@${CP} ${WRKSRC}/avahi-sharp/avahi-sharp.dll.config.in ${WRKSRC}/avahi-sharp/avahi-sharp.dll.config
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/avahi-sharp.pc  ${PREFIX}/libdata/pkgconfig/
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include "${MASTERDIR}/Makefile"

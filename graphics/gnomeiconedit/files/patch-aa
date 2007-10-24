@@ -1,5 +1,3 @@
-$NetBSD$
-
 --- src/menus.c.orig	Thu Jun 22 19:31:59 2000
 +++ src/menus.c
 @@ -36,7 +36,6 @@

@@ -240,10 +240,10 @@ share/gnome/help/gnucash/de_DE/figures/up.png
 share/gnome/help/gnucash/de_DE/gnucash-help.xml
 share/gnome/help/gnucash/de_DE/legal.xml
 share/gnome/help/gnucash/de_DE/txf-categories.xml
-share/gnome/omf/gnucash-docs/gnucash-guide-C.omf
-share/gnome/omf/gnucash-docs/gnucash-help-C.omf
-share/gnome/omf/gnucash-docs/gnucash-help-de_DE.omf
-@dirrm share/gnome/omf/gnucash-docs
+share/omf/gnucash-docs/gnucash-guide-C.omf
+share/omf/gnucash-docs/gnucash-help-C.omf
+share/omf/gnucash-docs/gnucash-help-de_DE.omf
+@dirrm share/omf/gnucash-docs
 @dirrm share/gnome/help/gnucash/de_DE/figures
 @dirrm share/gnome/help/gnucash/de_DE
 @dirrm share/gnome/help/gnucash/C/figures

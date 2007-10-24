@@ -3,12 +3,12 @@
 # Whom:				Koop Mast <einekoai@chello.nl>
 #
 # $FreeBSD$
-#   $MCom: ports/www/bluefish/Makefile,v 1.1 2006/09/30 03:21:27 ahze Exp $
+#   $MCom: ports/www/bluefish/Makefile,v 1.6 2007/10/11 03:20:30 mezz Exp $
 #
 
 PORTNAME=	bluefish
 PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	www editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,16 +28,16 @@ RUN_DEPENDS+=	tidy:${PORTSDIR}/www/tidy
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehier gtk20 gnomevfs2
+USE_GNOME=	gnomeprefix gtk20 gnomevfs2 gnomemimedata desktopfileutils
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/gnome/applications \
+CONFIGURE_ARGS=	--with-freedesktop_org-menu=${PREFIX}/share/applications \
 		--with-freedesktop_org-mime=${PREFIX}/share/mime \
 		--without-gnome2_4-mime \
 		--without-gnome2_4-appreg \
-		--with-icon-path=${PREFIX}/share/gnome/pixmaps
+		--with-icon-path=${PREFIX}/share/pixmaps
 
 # Turns debugging output on
 .if defined(WITH_DEBUG)
@@ -61,6 +61,9 @@ pre-everything::
 	@${ECHO_MSG} "For Highlighting to work, please enable UTF-8 support in devel/pcre."
 	@${ECHO_MSG} "This will reduce the number of warning in the console when running bluefish."
 	@${ECHO_MSG} ""
+
+pre-install:
+	@${MKDIR} ${PREIX}/share/mime
 
 .include <bsd.port.pre.mk>
 

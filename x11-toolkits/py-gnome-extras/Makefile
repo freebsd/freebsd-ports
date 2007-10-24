@@ -3,12 +3,12 @@
 # Whom:					Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11-toolkits/py-gnome-extras/Makefile,v 1.36 2006/03/12 23:45:37 marcus Exp $
+#   $MCom: ports/x11-toolkits/py-gnome-extras/Makefile,v 1.41 2007/07/28 18:23:53 marcus Exp $
 #
 
 PORTNAME=	gnome
-PORTVERSION=	2.14.3
-PORTREVISION=	3
+PORTVERSION=	2.19.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
@@ -29,7 +29,7 @@ USE_GECKO=	firefox seamonkey xulrunner mozilla
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack libgtkhtml pygnome2 libgda2
+USE_GNOME=	gnomehack libgtkhtml pygnome2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtkmozembed=${GECKO}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

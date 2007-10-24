@@ -7,7 +7,7 @@
 
 PORTNAME=	gcolor2
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 SUB_FILES=	gcolor2.desktop
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/gcolor2.desktop ${PREFIX}/share/gnome/applications
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIR}/gcolor2.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.mk>

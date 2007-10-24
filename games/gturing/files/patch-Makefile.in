@@ -4,7 +4,7 @@
  
  SUBDIRS = pixmaps tapes po src help
  
--desktopdir = $(datadir)/apps/Applications
+-desktopdir = $(datadir)/gnome/apps/Applications
 +desktopdir = $(datadir)/applications
  desktop_in_files = gturing.desktop.in
  desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)

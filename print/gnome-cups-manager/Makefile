@@ -3,11 +3,12 @@
 # Whom:					Glenn Johnson <glennpj@charter.net>
 #
 # $FreeBSD$
+#   $MCom: ports/print/gnome-cups-manager/Makefile,v 1.8 2007/07/20 01:11:31 mezz Exp $
 #
 
 PORTNAME=	gnome-cups-manager
 PORTVERSION=	0.31
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -43,8 +44,8 @@ post-patch:
 		${WRKSRC}/libgnomecups/gnome-cups-ui-driver.c
 
 post-install:
-	${MKDIR} ${PREFIX}/share/gnome/applications
+	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gnome-cups-manager.desktop \
-		${PREFIX}/share/gnome/applications
+		${PREFIX}/share/applications
 
 .include <bsd.port.mk>

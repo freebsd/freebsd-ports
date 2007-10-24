@@ -39,17 +39,18 @@ libdata/bonobo/servers/GNOME_OSD.server
 libexec/gnome-osd-server
 share/dbus-1/services/pt.inescporto.telecom.GnomeOSD.EventBridge.service
 share/dbus-1/services/pt.inescporto.telecom.GnomeOSD.service
-share/gnome/applications/gnome-osd-properties.desktop
-share/gnome/gnome-osd/xchatosd.py
-share/gnome/pixmaps/gnome-osd.png
+share/applications/gnome-osd-properties.desktop
+share/gnome-osd/xchatosd.py
+share/pixmaps/gnome-osd.png
 share/locale/cs/LC_MESSAGES/gnome-osd.mo
 share/locale/ja/LC_MESSAGES/gnome-osd.mo
 share/locale/pt/LC_MESSAGES/gnome-osd.mo
 @dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
-@dirrm share/gnome/gnome-osd
+@dirrm share/gnome-osd
 @dirrm %%PYTHON_SITELIBDIR%%/gnomeosd
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%
 @comment only remove the dbus directories if dbus is not installed
 @unexec if ! [ -e %%LOCALBASE%%/bin/dbus-daemon ]; then rmdir %D/share/dbus-1/services 2>/dev/null; rmdir %D/share/dbus-1 2>/dev/null; fi
+@dirrmtry share/applications

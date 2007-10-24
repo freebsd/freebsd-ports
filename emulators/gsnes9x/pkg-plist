@@ -26,10 +26,10 @@ share/gnome/help/GSnes9x/es/pop.png
 share/gnome/help/GSnes9x/es/system.png
 share/gnome/help/GSnes9x/es/tooltips.png
 share/gnome/help/GSnes9x/es/topic.dat
-share/gnome/pixmaps/gsnes9x-icon.png
-share/gnome/pixmaps/gsnesdefault.png
 share/locale/es/LC_MESSAGES/GSnes9x.mo
 share/locale/no/LC_MESSAGES/GSnes9x.mo
+share/pixmaps/gsnes9x-icon.png
+share/pixmaps/gsnesdefault.png
 @dirrm share/gnome/help/GSnes9x/es
 @dirrm share/gnome/help/GSnes9x/C
 @dirrm share/gnome/help/GSnes9x

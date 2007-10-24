@@ -1206,7 +1206,7 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-sun.el
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-sun.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.el
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
-%%DESKTOP%%share/gnome/applications/xemacs.desktop
+%%DESKTOP%%share/applications/xemacs.desktop
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/term
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mule
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp
@@ -1229,3 +1229,4 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
 @dirrmtry lib/xemacs/site-lisp
 @dirrmtry lib/xemacs/site-modules
 @dirrmtry lib/xemacs
+@dirrmtry share/applications

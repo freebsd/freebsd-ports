@@ -6012,8 +6012,8 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @dirrmtry man/sv/man6
 @dirrmtry man/sv
 %%GNOME:%%@cwd %%LOCALBASE%%
-%%GNOME:%%share/gnome/applications/wesnoth.desktop
-%%GNOME:%%share/gnome/pixmaps/wesnoth-icon.png
+%%GNOME:%%share/applications/wesnoth.desktop
+%%GNOME:%%share/pixmaps/wesnoth-icon.png
 %%KDE:%%@cwd %%LOCALBASE%%
 %%KDE:%%share/applnk/Games/TacticStrategy/wesnoth.desktop
 %%KDE:%%share/icons/wesnoth-icon.png
@@ -6028,3 +6028,4 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @dirrmtry share/locale/nb_NO
 @dirrmtry share/locale/tl/LC_MESSAGES
 @dirrmtry share/locale/tl
+@dirrmtry share/applications

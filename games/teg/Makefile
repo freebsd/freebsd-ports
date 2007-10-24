@@ -7,6 +7,7 @@
 
 PORTNAME=	teg
 PORTVERSION=	0.11.2
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	SF
 
@@ -27,7 +28,5 @@ post-patch:
 		's| LIST_NEXT| TEG_LIST_NEXT|g'
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|pl||g' \
 		${WRKSRC}/docs/gnome-help/Makefile.in
-	@${REINPLACE_CMD} -e '/^docdir/s|/gnome/help/|/help/|g' \
-		${WRKSRC}/docs/gnome-help/sgmldocs.make
 
 .include <bsd.port.mk>

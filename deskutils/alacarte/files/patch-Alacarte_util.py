@@ -5,7 +5,7 @@
  			if os.path.isfile(file_path):
  				return file_path
 -	file_path = os.path.join('/', 'usr', 'share', 'applications', file_id)
-+	file_path = os.path.join('/', '/usr/local', 'share', 'gnome', 'applications', file_id)
++	file_path = os.path.join('/', '/usr/local', 'share', 'applications', file_id)
  	if os.path.isfile(file_path):
  		return file_path
  	return False
@@ -14,7 +14,7 @@
  			if os.path.isfile(file_path):
  				return file_path
 -	file_path = os.path.join('/', 'usr', 'share', 'desktop-directories', file_id)
-+	file_path = os.path.join('/', '/usr/local', 'share', 'gnome', 'desktop-directories', file_id)
++	file_path = os.path.join('/', '/usr/local', 'share', 'desktop-directories', file_id)
  	if os.path.isfile(file_path):
  		return file_path
  	return False

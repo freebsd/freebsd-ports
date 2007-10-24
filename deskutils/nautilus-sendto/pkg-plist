@@ -3,11 +3,15 @@ lib/nautilus-sendto/plugins/libnstbluetooth.la
 lib/nautilus-sendto/plugins/libnstbluetooth.so
 lib/nautilus-sendto/plugins/libnstevolution.la
 lib/nautilus-sendto/plugins/libnstevolution.so
+%%PIDGIN%%lib/nautilus-sendto/plugins/libnstpidgin.la
+%%PIDGIN%%lib/nautilus-sendto/plugins/libnstpidgin.so
 lib/nautilus-sendto/plugins/libnstsylpheed.la
 lib/nautilus-sendto/plugins/libnstsylpheed.so
 lib/nautilus/extensions-1.0/libnautilus-sendto.la
 lib/nautilus/extensions-1.0/libnautilus-sendto.so
-share/gnome/nautilus-sendto/glade/nautilus-sendto.glade
+%%PIDGIN%%lib/pidgin/nautilus.la
+%%PIDGIN%%lib/pidgin/nautilus.so
+share/nautilus-sendto/glade/nautilus-sendto.glade
 share/locale/ar/LC_MESSAGES/nautilus-sendto.mo
 share/locale/be/LC_MESSAGES/nautilus-sendto.mo
 share/locale/bg/LC_MESSAGES/nautilus-sendto.mo
@@ -29,12 +33,14 @@ share/locale/he/LC_MESSAGES/nautilus-sendto.mo
 share/locale/hu/LC_MESSAGES/nautilus-sendto.mo
 share/locale/it/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ja/LC_MESSAGES/nautilus-sendto.mo
+share/locale/ka/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ko/LC_MESSAGES/nautilus-sendto.mo
 share/locale/lt/LC_MESSAGES/nautilus-sendto.mo
 share/locale/mk/LC_MESSAGES/nautilus-sendto.mo
 share/locale/nb/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ne/LC_MESSAGES/nautilus-sendto.mo
 share/locale/nl/LC_MESSAGES/nautilus-sendto.mo
+share/locale/oc/LC_MESSAGES/nautilus-sendto.mo
 share/locale/or/LC_MESSAGES/nautilus-sendto.mo
 share/locale/pa/LC_MESSAGES/nautilus-sendto.mo
 share/locale/pl/LC_MESSAGES/nautilus-sendto.mo
@@ -51,11 +57,13 @@ share/locale/uk/LC_MESSAGES/nautilus-sendto.mo
 share/locale/vi/LC_MESSAGES/nautilus-sendto.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-sendto.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-sendto.mo
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrm share/gnome/nautilus-sendto/glade
-@dirrm share/gnome/nautilus-sendto
+@dirrm share/nautilus-sendto/glade
+@dirrm share/nautilus-sendto
 @dirrm lib/nautilus-sendto/plugins
 @dirrm lib/nautilus-sendto
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz

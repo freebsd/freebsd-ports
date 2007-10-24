@@ -66,59 +66,59 @@ share/locale/es/LC_MESSAGES/childsplay.mo
 share/locale/fr/LC_MESSAGES/childsplay.mo
 share/locale/it/LC_MESSAGES/childsplay.mo
 share/locale/nl/LC_MESSAGES/childsplay.mo
-share/gnome/assetml/childsplay/childsplay-images/po/Translation.raw
-share/gnome/assetml/childsplay/childsplay-images/bluebold.ttf
-share/gnome/assetml/childsplay/childsplay-images/OK_but.png
-share/gnome/assetml/childsplay/childsplay-images/question1.png
-share/gnome/assetml/childsplay/childsplay-images/bullpen3.ttf
-share/gnome/assetml/childsplay/childsplay-images/firework1.png
-share/gnome/assetml/childsplay/childsplay-images/firework2.png
-share/gnome/assetml/childsplay/childsplay-images/chpl-icon-48-flat.png
-share/gnome/assetml/childsplay/childsplay-images/cowsplash.png
-share/gnome/assetml/childsplay/childsplay-images/blue.jpg
-share/gnome/assetml/childsplay/childsplay-images/tux.png
-share/gnome/assetml/childsplay/childsplay-images/pointer.png
-share/gnome/assetml/childsplay/childsplay-images/arrow.png
-share/gnome/assetml/childsplay/childsplay-images/bluehigh.ttf
-share/gnome/assetml/childsplay/childsplay-images/cowsplash-load.png
-share/gnome/assetml/childsplay/childsplay-images/childsplay-images.assetml
-share/gnome/assetml/childsplay/childsplay-images/land.png
-share/gnome/assetml/childsplay/childsplay-images/MORE_but.png
-share/gnome/assetml/childsplay/childsplay-images/balloonsl.png
-share/gnome/assetml/childsplay/childsplay-images/balloonsr.png
-share/gnome/assetml/childsplay/childsplay-images/stop.png
-share/gnome/assetml/childsplay/childsplay-images/hscore.png
-share/gnome/assetml/childsplay/childsplay-images/chpl-icon-48.png
-share/gnome/assetml/childsplay/childsplay-images/chpl-icon-48.xpm
-share/gnome/assetml/childsplay/memory-136x136/po/es.po
-share/gnome/assetml/childsplay/memory-136x136/po/fr.po
-share/gnome/assetml/childsplay/memory-136x136/po/nl.po
-share/gnome/assetml/childsplay/memory-136x136/po/memory-136x136.pot
-share/gnome/assetml/childsplay/memory-136x136/tree.png
-share/gnome/assetml/childsplay/memory-136x136/plane.png
-share/gnome/assetml/childsplay/memory-136x136/apple.png
-share/gnome/assetml/childsplay/memory-136x136/bread.png
-share/gnome/assetml/childsplay/memory-136x136/dog.png
-share/gnome/assetml/childsplay/memory-136x136/bear.png
-share/gnome/assetml/childsplay/memory-136x136/fish.png
-share/gnome/assetml/childsplay/memory-136x136/monkey.png
-share/gnome/assetml/childsplay/memory-136x136/boat.png
-share/gnome/assetml/childsplay/memory-136x136/memory-136x136.assetml
-share/gnome/assetml/childsplay/memory-136x136/car.png
-share/gnome/assetml/childsplay/memory-136x136/grapes.png
-share/gnome/assetml/childsplay/memory-136x136/lion.png
-share/gnome/assetml/childsplay/childsplay-sounds/po/nl.po
-share/gnome/assetml/childsplay/childsplay-sounds/po/Translation.raw
-share/gnome/assetml/childsplay/childsplay-sounds/bummer.wav
-share/gnome/assetml/childsplay/childsplay-sounds/childsplay-sounds.assetml
-share/gnome/assetml/childsplay/childsplay-sounds/level_clear.wav
-share/gnome/assetml/childsplay/childsplay-sounds/rocket.wav
-share/gnome/assetml/childsplay/childsplay-sounds/wahoo.wav
-share/gnome/assetml/childsplay/childsplay-sounds/cows.ogg
-share/gnome/assetml/childsplay/childsplay-sounds/Winner2.ogg
-share/gnome/assetml/childsplay/childsplay-sounds/music1.ogg
-share/gnome/assetml/childsplay/childsplay-sounds/dealcard1.wav
-share/gnome/assetml/childsplay/childsplay-sounds/boom.wav
+share/assetml/childsplay/childsplay-images/po/Translation.raw
+share/assetml/childsplay/childsplay-images/bluebold.ttf
+share/assetml/childsplay/childsplay-images/OK_but.png
+share/assetml/childsplay/childsplay-images/question1.png
+share/assetml/childsplay/childsplay-images/bullpen3.ttf
+share/assetml/childsplay/childsplay-images/firework1.png
+share/assetml/childsplay/childsplay-images/firework2.png
+share/assetml/childsplay/childsplay-images/chpl-icon-48-flat.png
+share/assetml/childsplay/childsplay-images/cowsplash.png
+share/assetml/childsplay/childsplay-images/blue.jpg
+share/assetml/childsplay/childsplay-images/tux.png
+share/assetml/childsplay/childsplay-images/pointer.png
+share/assetml/childsplay/childsplay-images/arrow.png
+share/assetml/childsplay/childsplay-images/bluehigh.ttf
+share/assetml/childsplay/childsplay-images/cowsplash-load.png
+share/assetml/childsplay/childsplay-images/childsplay-images.assetml
+share/assetml/childsplay/childsplay-images/land.png
+share/assetml/childsplay/childsplay-images/MORE_but.png
+share/assetml/childsplay/childsplay-images/balloonsl.png
+share/assetml/childsplay/childsplay-images/balloonsr.png
+share/assetml/childsplay/childsplay-images/stop.png
+share/assetml/childsplay/childsplay-images/hscore.png
+share/assetml/childsplay/childsplay-images/chpl-icon-48.png
+share/assetml/childsplay/childsplay-images/chpl-icon-48.xpm
+share/assetml/childsplay/memory-136x136/po/es.po
+share/assetml/childsplay/memory-136x136/po/fr.po
+share/assetml/childsplay/memory-136x136/po/nl.po
+share/assetml/childsplay/memory-136x136/po/memory-136x136.pot
+share/assetml/childsplay/memory-136x136/tree.png
+share/assetml/childsplay/memory-136x136/plane.png
+share/assetml/childsplay/memory-136x136/apple.png
+share/assetml/childsplay/memory-136x136/bread.png
+share/assetml/childsplay/memory-136x136/dog.png
+share/assetml/childsplay/memory-136x136/bear.png
+share/assetml/childsplay/memory-136x136/fish.png
+share/assetml/childsplay/memory-136x136/monkey.png
+share/assetml/childsplay/memory-136x136/boat.png
+share/assetml/childsplay/memory-136x136/memory-136x136.assetml
+share/assetml/childsplay/memory-136x136/car.png
+share/assetml/childsplay/memory-136x136/grapes.png
+share/assetml/childsplay/memory-136x136/lion.png
+share/assetml/childsplay/childsplay-sounds/po/nl.po
+share/assetml/childsplay/childsplay-sounds/po/Translation.raw
+share/assetml/childsplay/childsplay-sounds/bummer.wav
+share/assetml/childsplay/childsplay-sounds/childsplay-sounds.assetml
+share/assetml/childsplay/childsplay-sounds/level_clear.wav
+share/assetml/childsplay/childsplay-sounds/rocket.wav
+share/assetml/childsplay/childsplay-sounds/wahoo.wav
+share/assetml/childsplay/childsplay-sounds/cows.ogg
+share/assetml/childsplay/childsplay-sounds/Winner2.ogg
+share/assetml/childsplay/childsplay-sounds/music1.ogg
+share/assetml/childsplay/childsplay-sounds/dealcard1.wav
+share/assetml/childsplay/childsplay-sounds/boom.wav
 share/childsplay/Data/bluebold.ttf
 share/childsplay/Data/bluehigh.ttf
 share/childsplay/Data/boom.wav
@@ -152,13 +152,13 @@ share/childsplay/lib/MemoryData/cardback.png
 @dirrm share/doc/childsplay/po/it
 @dirrm share/doc/childsplay/po
 @dirrm share/doc/childsplay
-@dirrm share/gnome/assetml/childsplay/childsplay-images/po
-@dirrm share/gnome/assetml/childsplay/childsplay-images
-@dirrm share/gnome/assetml/childsplay/memory-136x136/po
-@dirrm share/gnome/assetml/childsplay/memory-136x136
-@dirrm share/gnome/assetml/childsplay/childsplay-sounds/po
-@dirrm share/gnome/assetml/childsplay/childsplay-sounds
-@dirrm share/gnome/assetml/childsplay
+@dirrm share/assetml/childsplay/childsplay-images/po
+@dirrm share/assetml/childsplay/childsplay-images
+@dirrm share/assetml/childsplay/memory-136x136/po
+@dirrm share/assetml/childsplay/memory-136x136
+@dirrm share/assetml/childsplay/childsplay-sounds/po
+@dirrm share/assetml/childsplay/childsplay-sounds
+@dirrm share/assetml/childsplay
 @dirrm share/childsplay/Data/icons
 @dirrm share/childsplay/Data
 @dirrm share/childsplay/lib/ConfigData

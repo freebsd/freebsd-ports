@@ -3,6 +3,7 @@
 # Whom:         Alexey Mikhailov <karma@ez.pereslavl.ru>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	trayer
 PORTVERSION=	1.0
@@ -29,6 +30,10 @@ PORTDOCS=	README CREDITS CHANGELOG
 
 PLIST_FILES=	bin/trayer
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/Makefile.common
+
 post-install:
 	${MKDIR} ${DOCSDIR}
 .if !defined(NOPORTDOCS)
@@ -36,4 +41,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
+
 .include <bsd.port.mk>

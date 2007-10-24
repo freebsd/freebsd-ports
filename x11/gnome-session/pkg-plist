@@ -3,29 +3,8 @@ bin/gnome-session-properties
 bin/gnome-session-remove
 bin/gnome-session-save
 bin/gnome-wm
-share/gnome/applications/session-properties.desktop
+share/applications/session-properties.desktop
 share/gnome/default.session
-share/gnome/pixmaps/splash/MaMBaNgGaoX-2.12.png
-share/gnome/pixmaps/splash/adamw-bat-2.18.jpg
-share/gnome/pixmaps/splash/adamw-conky-2.18.png
-share/gnome/pixmaps/splash/adamw-cow-2.18.png
-share/gnome/pixmaps/splash/adamw-mouth-2.18.png
-share/gnome/pixmaps/splash/adamw-piggy-2.12.png
-share/gnome/pixmaps/splash/adamw-swing-2.18.png
-share/gnome/pixmaps/splash/adamw-trophy-2.12.png
-share/gnome/pixmaps/splash/andreas-slogan-2.12.png
-share/gnome/pixmaps/splash/andreas-splash-2.12.png
-share/gnome/pixmaps/splash/domix-splash-2.12.png
-share/gnome/pixmaps/splash/domix-splash2-2.12.png
-share/gnome/pixmaps/splash/franz-splash_218.png
-share/gnome/pixmaps/splash/gnome-splash.png
-share/gnome/pixmaps/splash/mumija-2.12.png
-share/gnome/pixmaps/splash/mumija2-2.12.png
-share/gnome/pixmaps/splash/mumija3-2.12.png
-share/gnome/pixmaps/splash/original-gnome-splash.png
-share/gnome/pixmaps/splash/tremulant-2.12.png
-share/gnome/pixmaps/splash/tremulant-blood-2.12.png
-share/gnome/pixmaps/splash/tremulant-brushed-metal-2.12.png
 share/icons/hicolor/16x16/apps/session-properties.png
 share/icons/hicolor/22x22/apps/session-properties.png
 share/icons/hicolor/24x24/apps/session-properties.png
@@ -36,6 +15,7 @@ share/locale/am/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/be@latin/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bn/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-session-2.0.mo
@@ -95,6 +75,7 @@ share/locale/pt_BR/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ro/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/rw/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/si/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-session-2.0.mo
@@ -102,6 +83,7 @@ share/locale/sr/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/te/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/tk/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-session-2.0.mo
@@ -113,12 +95,37 @@ share/locale/zh_CN/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-session-2.0.mo
+share/pixmaps/splash/MaMBaNgGaoX-2.12.png
+share/pixmaps/splash/adamw-bat-2.18.jpg
+share/pixmaps/splash/adamw-conky-2.18.png
+share/pixmaps/splash/adamw-cow-2.18.png
+share/pixmaps/splash/adamw-mouth-2.18.png
+share/pixmaps/splash/adamw-piggy-2.12.png
+share/pixmaps/splash/adamw-swing-2.18.png
+share/pixmaps/splash/adamw-trophy-2.12.png
+share/pixmaps/splash/andreas-slogan-2.12.png
+share/pixmaps/splash/andreas-splash-2.12.png
+share/pixmaps/splash/domix-splash-2.12.png
+share/pixmaps/splash/domix-splash2-2.12.png
+share/pixmaps/splash/franz-splash_218.png
+share/pixmaps/splash/gnome-splash.png
+share/pixmaps/splash/mumija-2.12.png
+share/pixmaps/splash/mumija2-2.12.png
+share/pixmaps/splash/mumija3-2.12.png
+share/pixmaps/splash/original-gnome-splash.png
+share/pixmaps/splash/tremulant-2.12.png
+share/pixmaps/splash/tremulant-blood-2.12.png
+share/pixmaps/splash/tremulant-brushed-metal-2.12.png
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
@@ -139,3 +146,6 @@ share/locale/zu/LC_MESSAGES/gnome-session-2.0.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/applications

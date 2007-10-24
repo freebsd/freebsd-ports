@@ -57,37 +57,37 @@ lib/xmps/system/libmpeg3.la
 lib/xmps/system/libmpeg3.so
 share/aclocal/xmps.m4
 share/gnome/apps/Multimedia/XMPS.desktop
-share/gnome/xmps/fast_forward.xpm
-share/gnome/xmps/load.xpm
-share/gnome/xmps/pause.xpm
-share/gnome/xmps/play.xpm
-share/gnome/xmps/rewind.xpm
-share/gnome/xmps/skins/DarkDepth/buttons.xpm
-share/gnome/xmps/skins/DarkDepth/config
-share/gnome/xmps/skins/DarkDepth/controls.xpm
-share/gnome/xmps/skins/DarkDepth/digits.xpm
-share/gnome/xmps/skins/DarkDepth/main.xpm
-share/gnome/xmps/skins/DarkDepth/playlist.xpm
-share/gnome/xmps/skins/DarkDepth/titlebar.xpm
-share/gnome/xmps/skins/default/buttons.xpm
-share/gnome/xmps/skins/default/config
-share/gnome/xmps/skins/default/controls.xpm
-share/gnome/xmps/skins/default/digits.xpm
-share/gnome/xmps/skins/default/main.xpm
-share/gnome/xmps/skins/default/playlist.xpm
-share/gnome/xmps/skins/default/titlebar.xpm
-share/gnome/xmps/stop.xpm
-share/gnome/xmps/xmps-logo.xpm
-share/gnome/xmps/xmps_intro.xpm
 share/locale/de/LC_MESSAGES/xmps.mo
 share/locale/fi/LC_MESSAGES/xmps.mo
 share/locale/fr/LC_MESSAGES/xmps.mo
 share/locale/pl/LC_MESSAGES/xmps.mo
 share/locale/sv/LC_MESSAGES/xmps.mo
-@dirrm share/gnome/xmps/skins/default
-@dirrm share/gnome/xmps/skins/DarkDepth
-@dirrm share/gnome/xmps/skins
-@dirrm share/gnome/xmps
+%%DATADIR%%/fast_forward.xpm
+%%DATADIR%%/load.xpm
+%%DATADIR%%/pause.xpm
+%%DATADIR%%/play.xpm
+%%DATADIR%%/rewind.xpm
+%%DATADIR%%/skins/DarkDepth/buttons.xpm
+%%DATADIR%%/skins/DarkDepth/config
+%%DATADIR%%/skins/DarkDepth/controls.xpm
+%%DATADIR%%/skins/DarkDepth/digits.xpm
+%%DATADIR%%/skins/DarkDepth/main.xpm
+%%DATADIR%%/skins/DarkDepth/playlist.xpm
+%%DATADIR%%/skins/DarkDepth/titlebar.xpm
+%%DATADIR%%/skins/default/buttons.xpm
+%%DATADIR%%/skins/default/config
+%%DATADIR%%/skins/default/controls.xpm
+%%DATADIR%%/skins/default/digits.xpm
+%%DATADIR%%/skins/default/main.xpm
+%%DATADIR%%/skins/default/playlist.xpm
+%%DATADIR%%/skins/default/titlebar.xpm
+%%DATADIR%%/stop.xpm
+%%DATADIR%%/xmps-logo.xpm
+%%DATADIR%%/xmps_intro.xpm
+@dirrm %%DATADIR%%/skins/default
+@dirrm %%DATADIR%%/skins/DarkDepth
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%
 @dirrm lib/xmps/system
 @dirrm lib/xmps/renderers/video
 @dirrm lib/xmps/renderers/audio
@@ -101,3 +101,7 @@ share/locale/sv/LC_MESSAGES/xmps.mo
 @dirrm lib/xmps/addons
 @dirrm lib/xmps
 @dirrm include/libxmps
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi

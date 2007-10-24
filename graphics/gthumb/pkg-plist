@@ -21,91 +21,91 @@ lib/libgthumb.a
 lib/libgthumb.la
 lib/libgthumb.so
 libdata/bonobo/servers/GNOME_GThumb.server
-share/gnome/applications/gthumb.desktop
-share/gnome/gthumb/albumthemes/BestFit/back.png
-share/gnome/gthumb/albumthemes/BestFit/BestFit.css
-share/gnome/gthumb/albumthemes/BestFit/BestFit.js
-share/gnome/gthumb/albumthemes/BestFit/image.gthtml
-share/gnome/gthumb/albumthemes/BestFit/index.gthtml
-share/gnome/gthumb/albumthemes/BestFit/index.js
-share/gnome/gthumb/albumthemes/BestFit/lib.js
-share/gnome/gthumb/albumthemes/BestFit/next.png
-share/gnome/gthumb/albumthemes/BestFit/preview.png
-share/gnome/gthumb/albumthemes/BestFit/prev.png
-share/gnome/gthumb/albumthemes/BestFit/thumbnail.gthtml
-share/gnome/gthumb/albumthemes/Classic/1.gif
-share/gnome/gthumb/albumthemes/Classic/back.png
-share/gnome/gthumb/albumthemes/Classic/background.gif
-share/gnome/gthumb/albumthemes/Classic/bot.png
-share/gnome/gthumb/albumthemes/Classic/image.gthtml
-share/gnome/gthumb/albumthemes/Classic/index.gthtml
-share/gnome/gthumb/albumthemes/Classic/layout.css
-share/gnome/gthumb/albumthemes/Classic/left.png
-share/gnome/gthumb/albumthemes/Classic/next.png
-share/gnome/gthumb/albumthemes/Classic/prev.png
-share/gnome/gthumb/albumthemes/Classic/preview.png
-share/gnome/gthumb/albumthemes/Classic/right.png
-share/gnome/gthumb/albumthemes/Classic/style.css
-share/gnome/gthumb/albumthemes/Classic/thumbnail.gthtml
-share/gnome/gthumb/albumthemes/Classic/top.png
-share/gnome/gthumb/albumthemes/ClassicClips/1.gif
-share/gnome/gthumb/albumthemes/ClassicClips/back.png
-share/gnome/gthumb/albumthemes/ClassicClips/background.gif
-share/gnome/gthumb/albumthemes/ClassicClips/bot.png
-share/gnome/gthumb/albumthemes/ClassicClips/image.gthtml
-share/gnome/gthumb/albumthemes/ClassicClips/index.gthtml
-share/gnome/gthumb/albumthemes/ClassicClips/layout.css
-share/gnome/gthumb/albumthemes/ClassicClips/left.png
-share/gnome/gthumb/albumthemes/ClassicClips/next.png
-share/gnome/gthumb/albumthemes/ClassicClips/prev.png
-share/gnome/gthumb/albumthemes/ClassicClips/preview.png
-share/gnome/gthumb/albumthemes/ClassicClips/right.png
-share/gnome/gthumb/albumthemes/ClassicClips/style.css
-share/gnome/gthumb/albumthemes/ClassicClips/thumbnail.gthtml
-share/gnome/gthumb/albumthemes/ClassicClips/top.png
-share/gnome/gthumb/albumthemes/Flicker/image.gthtml
-share/gnome/gthumb/albumthemes/Flicker/index.gthtml
-share/gnome/gthumb/albumthemes/Flicker/layout.css
-share/gnome/gthumb/albumthemes/Flicker/preview.png
-share/gnome/gthumb/albumthemes/Flicker/style.css
-share/gnome/gthumb/albumthemes/Flicker/thumbnail.gthtml
-share/gnome/gthumb/albumthemes/NeatRound/1.gif
-share/gnome/gthumb/albumthemes/NeatRound/back.png
-share/gnome/gthumb/albumthemes/NeatRound/background.gif
-share/gnome/gthumb/albumthemes/NeatRound/bot.png
-share/gnome/gthumb/albumthemes/NeatRound/image.gthtml
-share/gnome/gthumb/albumthemes/NeatRound/index.gthtml
-share/gnome/gthumb/albumthemes/NeatRound/layout.css
-share/gnome/gthumb/albumthemes/NeatRound/left.png
-share/gnome/gthumb/albumthemes/NeatRound/next.png
-share/gnome/gthumb/albumthemes/NeatRound/prev.png
-share/gnome/gthumb/albumthemes/NeatRound/preview.png
-share/gnome/gthumb/albumthemes/NeatRound/right.png
-share/gnome/gthumb/albumthemes/NeatRound/style.css
-share/gnome/gthumb/albumthemes/NeatRound/thumbnail.gthtml
-share/gnome/gthumb/albumthemes/NeatRound/top.png
-share/gnome/gthumb/albumthemes/Wiki/image.gthtml
-share/gnome/gthumb/albumthemes/Wiki/index.gthtml
-share/gnome/gthumb/albumthemes/Wiki/layout.css
-share/gnome/gthumb/albumthemes/Wiki/preview.png
-share/gnome/gthumb/albumthemes/Wiki/style.css
-share/gnome/gthumb/albumthemes/Wiki/thumbnail.gthtml
-share/gnome/gthumb/glade/ftp-client-48.png
-share/gnome/gthumb/glade/gphoto-48.png
-share/gnome/gthumb/glade/gthumb.glade
-share/gnome/gthumb/glade/gthumb_camera.glade
-share/gnome/gthumb/glade/gthumb_comments.glade
-share/gnome/gthumb/glade/gthumb_convert.glade
-share/gnome/gthumb/glade/gthumb_crop.glade
-share/gnome/gthumb/glade/gthumb_edit.glade
-share/gnome/gthumb/glade/gthumb_png_exporter.glade
-share/gnome/gthumb/glade/gthumb_preferences.glade
-share/gnome/gthumb/glade/gthumb_print.glade
-share/gnome/gthumb/glade/gthumb_redeye.glade
-share/gnome/gthumb/glade/gthumb_search.glade
-share/gnome/gthumb/glade/gthumb_tools.glade
-share/gnome/gthumb/glade/gthumb_web_exporter.glade
-share/gnome/gthumb/glade/volume-mute.png
+share/applications/gthumb.desktop
+share/gthumb/albumthemes/BestFit/back.png
+share/gthumb/albumthemes/BestFit/BestFit.css
+share/gthumb/albumthemes/BestFit/BestFit.js
+share/gthumb/albumthemes/BestFit/image.gthtml
+share/gthumb/albumthemes/BestFit/index.gthtml
+share/gthumb/albumthemes/BestFit/index.js
+share/gthumb/albumthemes/BestFit/lib.js
+share/gthumb/albumthemes/BestFit/next.png
+share/gthumb/albumthemes/BestFit/preview.png
+share/gthumb/albumthemes/BestFit/prev.png
+share/gthumb/albumthemes/BestFit/thumbnail.gthtml
+share/gthumb/albumthemes/Classic/1.gif
+share/gthumb/albumthemes/Classic/back.png
+share/gthumb/albumthemes/Classic/background.gif
+share/gthumb/albumthemes/Classic/bot.png
+share/gthumb/albumthemes/Classic/image.gthtml
+share/gthumb/albumthemes/Classic/index.gthtml
+share/gthumb/albumthemes/Classic/layout.css
+share/gthumb/albumthemes/Classic/left.png
+share/gthumb/albumthemes/Classic/next.png
+share/gthumb/albumthemes/Classic/prev.png
+share/gthumb/albumthemes/Classic/preview.png
+share/gthumb/albumthemes/Classic/right.png
+share/gthumb/albumthemes/Classic/style.css
+share/gthumb/albumthemes/Classic/thumbnail.gthtml
+share/gthumb/albumthemes/Classic/top.png
+share/gthumb/albumthemes/ClassicClips/1.gif
+share/gthumb/albumthemes/ClassicClips/back.png
+share/gthumb/albumthemes/ClassicClips/background.gif
+share/gthumb/albumthemes/ClassicClips/bot.png
+share/gthumb/albumthemes/ClassicClips/image.gthtml
+share/gthumb/albumthemes/ClassicClips/index.gthtml
+share/gthumb/albumthemes/ClassicClips/layout.css
+share/gthumb/albumthemes/ClassicClips/left.png
+share/gthumb/albumthemes/ClassicClips/next.png
+share/gthumb/albumthemes/ClassicClips/prev.png
+share/gthumb/albumthemes/ClassicClips/preview.png
+share/gthumb/albumthemes/ClassicClips/right.png
+share/gthumb/albumthemes/ClassicClips/style.css
+share/gthumb/albumthemes/ClassicClips/thumbnail.gthtml
+share/gthumb/albumthemes/ClassicClips/top.png
+share/gthumb/albumthemes/Flicker/image.gthtml
+share/gthumb/albumthemes/Flicker/index.gthtml
+share/gthumb/albumthemes/Flicker/layout.css
+share/gthumb/albumthemes/Flicker/preview.png
+share/gthumb/albumthemes/Flicker/style.css
+share/gthumb/albumthemes/Flicker/thumbnail.gthtml
+share/gthumb/albumthemes/NeatRound/1.gif
+share/gthumb/albumthemes/NeatRound/back.png
+share/gthumb/albumthemes/NeatRound/background.gif
+share/gthumb/albumthemes/NeatRound/bot.png
+share/gthumb/albumthemes/NeatRound/image.gthtml
+share/gthumb/albumthemes/NeatRound/index.gthtml
+share/gthumb/albumthemes/NeatRound/layout.css
+share/gthumb/albumthemes/NeatRound/left.png
+share/gthumb/albumthemes/NeatRound/next.png
+share/gthumb/albumthemes/NeatRound/prev.png
+share/gthumb/albumthemes/NeatRound/preview.png
+share/gthumb/albumthemes/NeatRound/right.png
+share/gthumb/albumthemes/NeatRound/style.css
+share/gthumb/albumthemes/NeatRound/thumbnail.gthtml
+share/gthumb/albumthemes/NeatRound/top.png
+share/gthumb/albumthemes/Wiki/image.gthtml
+share/gthumb/albumthemes/Wiki/index.gthtml
+share/gthumb/albumthemes/Wiki/layout.css
+share/gthumb/albumthemes/Wiki/preview.png
+share/gthumb/albumthemes/Wiki/style.css
+share/gthumb/albumthemes/Wiki/thumbnail.gthtml
+share/gthumb/glade/ftp-client-48.png
+share/gthumb/glade/gphoto-48.png
+share/gthumb/glade/gthumb.glade
+share/gthumb/glade/gthumb_camera.glade
+share/gthumb/glade/gthumb_comments.glade
+share/gthumb/glade/gthumb_convert.glade
+share/gthumb/glade/gthumb_crop.glade
+share/gthumb/glade/gthumb_edit.glade
+share/gthumb/glade/gthumb_png_exporter.glade
+share/gthumb/glade/gthumb_preferences.glade
+share/gthumb/glade/gthumb_print.glade
+share/gthumb/glade/gthumb_redeye.glade
+share/gthumb/glade/gthumb_search.glade
+share/gthumb/glade/gthumb_tools.glade
+share/gthumb/glade/gthumb_web_exporter.glade
+share/gthumb/glade/volume-mute.png
 share/gnome/help/gthumb/C/figures/comment.png
 share/gnome/help/gthumb/C/figures/main-win.png
 share/gnome/help/gthumb/C/figures/nav-button.png
@@ -122,9 +122,9 @@ share/gnome/help/gthumb/sv/figures/main-win.png
 share/gnome/help/gthumb/sv/figures/nav-button.png
 share/gnome/help/gthumb/sv/figures/preferences.png
 share/gnome/help/gthumb/sv/gthumb.xml
-share/gnome/omf/gthumb/gthumb-C.omf
-share/gnome/omf/gthumb/gthumb-es.omf
-share/gnome/omf/gthumb/gthumb-sv.omf
+share/omf/gthumb/gthumb-C.omf
+share/omf/gthumb/gthumb-es.omf
+share/omf/gthumb/gthumb-sv.omf
 share/icons/hicolor/48x48/apps/gthumb.png
 share/locale/am/LC_MESSAGES/gthumb.mo
 share/locale/ar/LC_MESSAGES/gthumb.mo
@@ -183,7 +183,7 @@ share/locale/xh/LC_MESSAGES/gthumb.mo
 share/locale/zh_CN/LC_MESSAGES/gthumb.mo
 share/locale/zh_HK/LC_MESSAGES/gthumb.mo
 share/locale/zh_TW/LC_MESSAGES/gthumb.mo
-@dirrm share/gnome/omf/gthumb
+@dirrm share/omf/gthumb
 @dirrm share/gnome/help/gthumb/sv/figures
 @dirrm share/gnome/help/gthumb/sv
 @dirrm share/gnome/help/gthumb/es/figures
@@ -191,14 +191,15 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm share/gnome/help/gthumb/C/figures
 @dirrm share/gnome/help/gthumb/C
 @dirrm share/gnome/help/gthumb
-@dirrm share/gnome/gthumb/glade
-@dirrm share/gnome/gthumb/albumthemes/Wiki
-@dirrm share/gnome/gthumb/albumthemes/NeatRound
-@dirrm share/gnome/gthumb/albumthemes/Flicker
-@dirrm share/gnome/gthumb/albumthemes/ClassicClips
-@dirrm share/gnome/gthumb/albumthemes/Classic
-@dirrm share/gnome/gthumb/albumthemes/BestFit
-@dirrm share/gnome/gthumb/albumthemes
-@dirrm share/gnome/gthumb
+@dirrm share/gthumb/glade
+@dirrm share/gthumb/albumthemes/Wiki
+@dirrm share/gthumb/albumthemes/NeatRound
+@dirrm share/gthumb/albumthemes/Flicker
+@dirrm share/gthumb/albumthemes/ClassicClips
+@dirrm share/gthumb/albumthemes/Classic
+@dirrm share/gthumb/albumthemes/BestFit
+@dirrm share/gthumb/albumthemes
+@dirrm share/gthumb
 @dirrm lib/gthumb/modules
 @dirrm lib/gthumb
+@dirrmtry share/applications

@@ -252,108 +252,108 @@ lib/libspreadsheet.la
 lib/libspreadsheet.so
 libdata/pkgconfig/libspreadsheet-1.7.pc
 @exec update-desktop-database > /dev/null || /usr/bin/true
-share/gnome/applications/gnumeric.desktop
-share/gnome/gnumeric/%%VERSION%%/GNOME_Gnumeric-gtk.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D/.category
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D/autoformat.3D.button.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D/autoformat.3D.list.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Classical/.category
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Classical/autoformat.Classical.cool.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Classical/autoformat.Classical.simple.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Classical/autoformat.Classical.trendy.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Colourful/.category
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Colourful/autoformat.Colourful.banana.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Colourful/autoformat.Colourful.black.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Colourful/autoformat.Colourful.blue.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Colourful/autoformat.Colourful.orange.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Colourful/autoformat.Colourful.vanilla.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Financial/.category
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Financial/autoformat.Financial.basic.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Financial/autoformat.Financial.desert.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Financial/autoformat.Financial.ice.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Financial/autoformat.Financial.modern.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Financial/autoformat.Financial.purple.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/General/.category
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/General/autoformat.General.advanced.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/General/autoformat.General.basic.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/General/autoformat.General.empty.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/General/autoformat.General.table.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/List/.category
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/List/autoformat.List.basic.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/List/autoformat.List.green.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/List/autoformat.List.lila.xml
-share/gnome/gnumeric/%%VERSION%%/autoformat-templates/List/autoformat.List.simple.xml
-share/gnome/gnumeric/%%VERSION%%/glade/advanced-filter.glade
-share/gnome/gnumeric/%%VERSION%%/glade/anova-one.glade
-share/gnome/gnumeric/%%VERSION%%/glade/anova-two.glade
-share/gnome/gnumeric/%%VERSION%%/glade/autocorrect.glade
-share/gnome/gnumeric/%%VERSION%%/glade/autofilter-expression.glade
-share/gnome/gnumeric/%%VERSION%%/glade/autofilter-top10.glade
-share/gnome/gnumeric/%%VERSION%%/glade/autoformat.glade
-share/gnome/gnumeric/%%VERSION%%/glade/autosave.glade
-share/gnome/gnumeric/%%VERSION%%/glade/cell-comment.glade
-share/gnome/gnumeric/%%VERSION%%/glade/cell-format.glade
-share/gnome/gnumeric/%%VERSION%%/glade/cell-sort.glade
-share/gnome/gnumeric/%%VERSION%%/glade/col-width.glade
-share/gnome/gnumeric/%%VERSION%%/glade/colrow.glade
-share/gnome/gnumeric/%%VERSION%%/glade/consolidate.glade
-share/gnome/gnumeric/%%VERSION%%/glade/correlation.glade
-share/gnome/gnumeric/%%VERSION%%/glade/covariance.glade
-share/gnome/gnumeric/%%VERSION%%/glade/dao.glade
-share/gnome/gnumeric/%%VERSION%%/glade/data-table.glade
-share/gnome/gnumeric/%%VERSION%%/glade/define-name.glade
-share/gnome/gnumeric/%%VERSION%%/glade/delete-cells.glade
-share/gnome/gnumeric/%%VERSION%%/glade/descriptive-stats.glade
-share/gnome/gnumeric/%%VERSION%%/glade/dialog-stf-export.glade
-share/gnome/gnumeric/%%VERSION%%/glade/dialog-stf.glade
-share/gnome/gnumeric/%%VERSION%%/glade/dialog-zoom.glade
-share/gnome/gnumeric/%%VERSION%%/glade/doc-meta-data.glade
-share/gnome/gnumeric/%%VERSION%%/glade/exp-smoothing.glade
-share/gnome/gnumeric/%%VERSION%%/glade/fill-series.glade
-share/gnome/gnumeric/%%VERSION%%/glade/font-sel.glade
-share/gnome/gnumeric/%%VERSION%%/glade/formula-guru.glade
-share/gnome/gnumeric/%%VERSION%%/glade/fourier-analysis.glade
-share/gnome/gnumeric/%%VERSION%%/glade/function-select.glade
-share/gnome/gnumeric/%%VERSION%%/glade/goalseek.glade
-share/gnome/gnumeric/%%VERSION%%/glade/goto.glade
-share/gnome/gnumeric/%%VERSION%%/glade/hf-config.glade
-share/gnome/gnumeric/%%VERSION%%/glade/histogram.glade
-share/gnome/gnumeric/%%VERSION%%/glade/hyperlink.glade
-share/gnome/gnumeric/%%VERSION%%/glade/insert-cells.glade
-share/gnome/gnumeric/%%VERSION%%/glade/mean-tests.glade
-share/gnome/gnumeric/%%VERSION%%/glade/merge.glade
-share/gnome/gnumeric/%%VERSION%%/glade/moving-averages.glade
-share/gnome/gnumeric/%%VERSION%%/glade/paste-names.glade
-share/gnome/gnumeric/%%VERSION%%/glade/pivottable.glade
-share/gnome/gnumeric/%%VERSION%%/glade/plugin-manager.glade
-share/gnome/gnumeric/%%VERSION%%/glade/preferences.glade
-share/gnome/gnumeric/%%VERSION%%/glade/print.glade
-share/gnome/gnumeric/%%VERSION%%/glade/random-generation.glade
-share/gnome/gnumeric/%%VERSION%%/glade/rank.glade
-share/gnome/gnumeric/%%VERSION%%/glade/regression.glade
-share/gnome/gnumeric/%%VERSION%%/glade/row-height.glade
-share/gnome/gnumeric/%%VERSION%%/glade/sampling.glade
-share/gnome/gnumeric/%%VERSION%%/glade/scenario-add.glade
-share/gnome/gnumeric/%%VERSION%%/glade/scenario-manager.glade
-share/gnome/gnumeric/%%VERSION%%/glade/search-replace.glade
-share/gnome/gnumeric/%%VERSION%%/glade/search.glade
-share/gnome/gnumeric/%%VERSION%%/glade/sheet-order.glade
-share/gnome/gnumeric/%%VERSION%%/glade/shuffle.glade
-share/gnome/gnumeric/%%VERSION%%/glade/simulation.glade
-share/gnome/gnumeric/%%VERSION%%/glade/so-checkbox.glade
-share/gnome/gnumeric/%%VERSION%%/glade/so-frame.glade
-share/gnome/gnumeric/%%VERSION%%/glade/so-list.glade
-share/gnome/gnumeric/%%VERSION%%/glade/so-scrollbar.glade
-share/gnome/gnumeric/%%VERSION%%/glade/solver.glade
-share/gnome/gnumeric/%%VERSION%%/glade/tabulate.glade
-share/gnome/gnumeric/%%VERSION%%/glade/variance-tests.glade
-share/gnome/gnumeric/%%VERSION%%/glade/view.glade
-share/gnome/gnumeric/%%VERSION%%/glade/workbook-attr.glade
-share/gnome/gnumeric/%%VERSION%%/idl/GNOME_Gnumeric.idl
-share/gnome/gnumeric/%%VERSION%%/templates/invoice.gnumeric
-share/gnome/gnumeric/%%VERSION%%/templates/loan.gnumeric
-share/gnome/gnumeric/%%VERSION%%/templates/mileage.gnumeric
-share/gnome/gnumeric/%%VERSION%%/templates/purchase_order.gnumeric
+share/applications/gnumeric.desktop
+share/gnumeric/%%VERSION%%/GNOME_Gnumeric-gtk.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/3D/.category
+share/gnumeric/%%VERSION%%/autoformat-templates/3D/autoformat.3D.button.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/3D/autoformat.3D.list.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Classical/.category
+share/gnumeric/%%VERSION%%/autoformat-templates/Classical/autoformat.Classical.cool.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Classical/autoformat.Classical.simple.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Classical/autoformat.Classical.trendy.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Colourful/.category
+share/gnumeric/%%VERSION%%/autoformat-templates/Colourful/autoformat.Colourful.banana.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Colourful/autoformat.Colourful.black.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Colourful/autoformat.Colourful.blue.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Colourful/autoformat.Colourful.orange.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Colourful/autoformat.Colourful.vanilla.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Financial/.category
+share/gnumeric/%%VERSION%%/autoformat-templates/Financial/autoformat.Financial.basic.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Financial/autoformat.Financial.desert.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Financial/autoformat.Financial.ice.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Financial/autoformat.Financial.modern.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/Financial/autoformat.Financial.purple.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/General/.category
+share/gnumeric/%%VERSION%%/autoformat-templates/General/autoformat.General.advanced.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/General/autoformat.General.basic.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/General/autoformat.General.empty.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/General/autoformat.General.table.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/List/.category
+share/gnumeric/%%VERSION%%/autoformat-templates/List/autoformat.List.basic.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/List/autoformat.List.green.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/List/autoformat.List.lila.xml
+share/gnumeric/%%VERSION%%/autoformat-templates/List/autoformat.List.simple.xml
+share/gnumeric/%%VERSION%%/glade/advanced-filter.glade
+share/gnumeric/%%VERSION%%/glade/anova-one.glade
+share/gnumeric/%%VERSION%%/glade/anova-two.glade
+share/gnumeric/%%VERSION%%/glade/autocorrect.glade
+share/gnumeric/%%VERSION%%/glade/autofilter-expression.glade
+share/gnumeric/%%VERSION%%/glade/autofilter-top10.glade
+share/gnumeric/%%VERSION%%/glade/autoformat.glade
+share/gnumeric/%%VERSION%%/glade/autosave.glade
+share/gnumeric/%%VERSION%%/glade/cell-comment.glade
+share/gnumeric/%%VERSION%%/glade/cell-format.glade
+share/gnumeric/%%VERSION%%/glade/cell-sort.glade
+share/gnumeric/%%VERSION%%/glade/col-width.glade
+share/gnumeric/%%VERSION%%/glade/colrow.glade
+share/gnumeric/%%VERSION%%/glade/consolidate.glade
+share/gnumeric/%%VERSION%%/glade/correlation.glade
+share/gnumeric/%%VERSION%%/glade/covariance.glade
+share/gnumeric/%%VERSION%%/glade/dao.glade
+share/gnumeric/%%VERSION%%/glade/data-table.glade
+share/gnumeric/%%VERSION%%/glade/define-name.glade
+share/gnumeric/%%VERSION%%/glade/delete-cells.glade
+share/gnumeric/%%VERSION%%/glade/descriptive-stats.glade
+share/gnumeric/%%VERSION%%/glade/dialog-stf-export.glade
+share/gnumeric/%%VERSION%%/glade/dialog-stf.glade
+share/gnumeric/%%VERSION%%/glade/dialog-zoom.glade
+share/gnumeric/%%VERSION%%/glade/doc-meta-data.glade
+share/gnumeric/%%VERSION%%/glade/exp-smoothing.glade
+share/gnumeric/%%VERSION%%/glade/fill-series.glade
+share/gnumeric/%%VERSION%%/glade/font-sel.glade
+share/gnumeric/%%VERSION%%/glade/formula-guru.glade
+share/gnumeric/%%VERSION%%/glade/fourier-analysis.glade
+share/gnumeric/%%VERSION%%/glade/function-select.glade
+share/gnumeric/%%VERSION%%/glade/goalseek.glade
+share/gnumeric/%%VERSION%%/glade/goto.glade
+share/gnumeric/%%VERSION%%/glade/hf-config.glade
+share/gnumeric/%%VERSION%%/glade/histogram.glade
+share/gnumeric/%%VERSION%%/glade/hyperlink.glade
+share/gnumeric/%%VERSION%%/glade/insert-cells.glade
+share/gnumeric/%%VERSION%%/glade/mean-tests.glade
+share/gnumeric/%%VERSION%%/glade/merge.glade
+share/gnumeric/%%VERSION%%/glade/moving-averages.glade
+share/gnumeric/%%VERSION%%/glade/paste-names.glade
+share/gnumeric/%%VERSION%%/glade/pivottable.glade
+share/gnumeric/%%VERSION%%/glade/plugin-manager.glade
+share/gnumeric/%%VERSION%%/glade/preferences.glade
+share/gnumeric/%%VERSION%%/glade/print.glade
+share/gnumeric/%%VERSION%%/glade/random-generation.glade
+share/gnumeric/%%VERSION%%/glade/rank.glade
+share/gnumeric/%%VERSION%%/glade/regression.glade
+share/gnumeric/%%VERSION%%/glade/row-height.glade
+share/gnumeric/%%VERSION%%/glade/sampling.glade
+share/gnumeric/%%VERSION%%/glade/scenario-add.glade
+share/gnumeric/%%VERSION%%/glade/scenario-manager.glade
+share/gnumeric/%%VERSION%%/glade/search-replace.glade
+share/gnumeric/%%VERSION%%/glade/search.glade
+share/gnumeric/%%VERSION%%/glade/sheet-order.glade
+share/gnumeric/%%VERSION%%/glade/shuffle.glade
+share/gnumeric/%%VERSION%%/glade/simulation.glade
+share/gnumeric/%%VERSION%%/glade/so-checkbox.glade
+share/gnumeric/%%VERSION%%/glade/so-frame.glade
+share/gnumeric/%%VERSION%%/glade/so-list.glade
+share/gnumeric/%%VERSION%%/glade/so-scrollbar.glade
+share/gnumeric/%%VERSION%%/glade/solver.glade
+share/gnumeric/%%VERSION%%/glade/tabulate.glade
+share/gnumeric/%%VERSION%%/glade/variance-tests.glade
+share/gnumeric/%%VERSION%%/glade/view.glade
+share/gnumeric/%%VERSION%%/glade/workbook-attr.glade
+share/gnumeric/%%VERSION%%/idl/GNOME_Gnumeric.idl
+share/gnumeric/%%VERSION%%/templates/invoice.gnumeric
+share/gnumeric/%%VERSION%%/templates/loan.gnumeric
+share/gnumeric/%%VERSION%%/templates/mileage.gnumeric
+share/gnumeric/%%VERSION%%/templates/purchase_order.gnumeric
 share/gnome/help/gnumeric/C/about-authors.xml
 share/gnome/help/gnumeric/C/about-history.xml
 share/gnome/help/gnumeric/C/about-license.xml
@@ -755,28 +755,28 @@ share/gnome/help/gnumeric/C/quick-start.xml
 share/gnome/help/gnumeric/C/welcome.xml
 share/gnome/help/gnumeric/C/workbooks.xml
 share/gnome/help/gnumeric/C/worksheets.xml
-share/gnome/mime-info/gnumeric.mime
-share/gnome/omf/gnumeric/gnumeric-C.omf
-share/gnome/pixmaps/gnome-application-vnd.lotus-1-2-3.png
-share/gnome/pixmaps/gnome-application-x-applix-spreadsheet.png
-share/gnome/pixmaps/gnome-application-x-generic-spreadsheet.png
-share/gnome/pixmaps/gnome-application-x-gnumeric.png
-share/gnome/pixmaps/gnome-application-x-xls.png
-share/gnome/pixmaps/gnome-gnumeric.png
-share/gnome/pixmaps/gnumeric/down-right.png
-share/gnome/pixmaps/gnumeric/gnome-application-vnd.lotus-1-2-3.png
-share/gnome/pixmaps/gnumeric/gnome-application-x-applix-spreadsheet.png
-share/gnome/pixmaps/gnumeric/gnome-application-x-generic-spreadsheet.png
-share/gnome/pixmaps/gnumeric/gnome-application-x-gnumeric.png
-share/gnome/pixmaps/gnumeric/gnome-application-x-xls.png
-share/gnome/pixmaps/gnumeric/gnome-gnumeric.png
-share/gnome/pixmaps/gnumeric/gnumeric-about.png
-share/gnome/pixmaps/gnumeric/orient-horizontal.png
-share/gnome/pixmaps/gnumeric/orient-vertical.png
-share/gnome/pixmaps/gnumeric/right-down.png
-share/gnome/pixmaps/gnumeric/stf-druid.png
-share/gnome/pixmaps/gnumeric/win32-gnumeric.ico
-share/gnome/pixmaps/win32-gnumeric.ico
+share/mime-info/gnumeric.mime
+share/omf/gnumeric/gnumeric-C.omf
+share/pixmaps/gnome-application-vnd.lotus-1-2-3.png
+share/pixmaps/gnome-application-x-applix-spreadsheet.png
+share/pixmaps/gnome-application-x-generic-spreadsheet.png
+share/pixmaps/gnome-application-x-gnumeric.png
+share/pixmaps/gnome-application-x-xls.png
+share/pixmaps/gnome-gnumeric.png
+share/pixmaps/gnumeric/down-right.png
+share/pixmaps/gnumeric/gnome-application-vnd.lotus-1-2-3.png
+share/pixmaps/gnumeric/gnome-application-x-applix-spreadsheet.png
+share/pixmaps/gnumeric/gnome-application-x-generic-spreadsheet.png
+share/pixmaps/gnumeric/gnome-application-x-gnumeric.png
+share/pixmaps/gnumeric/gnome-application-x-xls.png
+share/pixmaps/gnumeric/gnome-gnumeric.png
+share/pixmaps/gnumeric/gnumeric-about.png
+share/pixmaps/gnumeric/orient-horizontal.png
+share/pixmaps/gnumeric/orient-vertical.png
+share/pixmaps/gnumeric/right-down.png
+share/pixmaps/gnumeric/stf-druid.png
+share/pixmaps/gnumeric/win32-gnumeric.ico
+share/pixmaps/win32-gnumeric.ico
 share/locale/am/LC_MESSAGES/gnumeric-functions.mo
 share/locale/am/LC_MESSAGES/gnumeric.mo
 share/locale/ar/LC_MESSAGES/gnumeric-functions.mo
@@ -879,23 +879,23 @@ share/locale/zh_CN/LC_MESSAGES/gnumeric-functions.mo
 share/locale/zh_CN/LC_MESSAGES/gnumeric.mo
 share/locale/zh_TW/LC_MESSAGES/gnumeric-functions.mo
 share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
-@dirrm share/gnome/pixmaps/gnumeric
-@dirrm share/gnome/omf/gnumeric
+@dirrm share/pixmaps/gnumeric
+@dirrm share/omf/gnumeric
 @dirrm share/gnome/help/gnumeric/C/figures
 @dirrm share/gnome/help/gnumeric/C
 @dirrm share/gnome/help/gnumeric
-@dirrm share/gnome/gnumeric/%%VERSION%%/templates
-@dirrm share/gnome/gnumeric/%%VERSION%%/idl
-@dirrm share/gnome/gnumeric/%%VERSION%%/glade
-@dirrm share/gnome/gnumeric/%%VERSION%%/autoformat-templates/List
-@dirrm share/gnome/gnumeric/%%VERSION%%/autoformat-templates/General
-@dirrm share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Financial
-@dirrm share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Colourful
-@dirrm share/gnome/gnumeric/%%VERSION%%/autoformat-templates/Classical
-@dirrm share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D
-@dirrm share/gnome/gnumeric/%%VERSION%%/autoformat-templates
-@dirrm share/gnome/gnumeric/%%VERSION%%
-@dirrm share/gnome/gnumeric
+@dirrm share/gnumeric/%%VERSION%%/templates
+@dirrm share/gnumeric/%%VERSION%%/idl
+@dirrm share/gnumeric/%%VERSION%%/glade
+@dirrm share/gnumeric/%%VERSION%%/autoformat-templates/List
+@dirrm share/gnumeric/%%VERSION%%/autoformat-templates/General
+@dirrm share/gnumeric/%%VERSION%%/autoformat-templates/Financial
+@dirrm share/gnumeric/%%VERSION%%/autoformat-templates/Colourful
+@dirrm share/gnumeric/%%VERSION%%/autoformat-templates/Classical
+@dirrm share/gnumeric/%%VERSION%%/autoformat-templates/3D
+@dirrm share/gnumeric/%%VERSION%%/autoformat-templates
+@dirrm share/gnumeric/%%VERSION%%
+@dirrm share/gnumeric
 @dirrm lib/gnumeric/%%VERSION%%/plugins/xbase
 @dirrm lib/gnumeric/%%VERSION%%/plugins/uihello
 @dirrm lib/gnumeric/%%VERSION%%/plugins/sylk
@@ -950,3 +950,4 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/applications

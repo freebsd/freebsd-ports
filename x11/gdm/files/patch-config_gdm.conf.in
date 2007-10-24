@@ -6,7 +6,7 @@
  
 -# Automatic VT allocation.  Right now only works on Linux.  This way we force
 +# Automatic VT allocation.  This way we force
- # X to use specific vts.  turn VTAllocation to false if this is causing
+ # X to use specific vts.  Turn VTAllocation to false if this is causing
  # problems.
 -#FirstVT=7
 -#VTAllocation=true
@@ -15,12 +15,3 @@
  # Should double login be treated with a warning (and possibility to change VT's
  # on Linux and FreeBSD systems for console logins)
  #DoubleLoginWarning=true
-@@ -305,7 +305,7 @@
- # The specific gtkrc file we use.  It should be the full path to the gtkrc that
- # we need.  Unless you need a specific gtkrc that doesn't correspond to a
- # specific theme, then just use the GtkTheme key.
--#GtkRC=@datadir@/themes/Default/gtk-2.0/gtkrc
-+#GtkRC=@datadir@/../themes/Default/gtk-2.0/gtkrc
- 
- # The GTK+ theme to use for the GUI.
- #GtkTheme=Default

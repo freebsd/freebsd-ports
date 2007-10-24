@@ -4,10 +4,12 @@
 # Whom:				ijliao
 #
 # $FreeBSD$
+#   $MCom: ports/audio/solfege/Makefile,v 1.7 2007/09/09 23:47:50 mezz Exp $
 #
 
 PORTNAME=	solfege
 PORTVERSION=	3.9.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-nosound

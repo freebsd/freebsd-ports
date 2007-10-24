@@ -7,7 +7,7 @@
 
 PORTNAME=	dlume
 PORTVERSION=	0.2.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://clay.ll.pl/download/
 
@@ -21,7 +21,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/dlume share/gnome/pixmaps/dlume.png
+PLIST_FILES=	bin/dlume share/pixmaps/dlume.png
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/src/Makefile.in

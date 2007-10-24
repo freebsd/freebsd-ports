@@ -33,6 +33,8 @@ SUB_FILES=	ebview.desktop
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-pthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|#define GTK_DISABLE_DEPRECATED 1||g' \
+		${WRKSRC}/src/ebview.c
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications

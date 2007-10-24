@@ -3,11 +3,12 @@
 # Whom:					Maxim Soboleb <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11/libcapplet/Makefile,v 1.4 2006/10/07 19:06:46 ahze Exp $
+#    $MCom: ports/x11/libcapplet/Makefile,v 1.7 2007/05/19 21:36:29 marcus Exp $
+#
 
 PORTNAME=	libcapplet
 PORTVERSION=	1.4.0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://people.freebsd.org/~sobomax/
 DIST_SUBDIR=	gnome
@@ -35,8 +36,8 @@ do-install:
 	${MKDIR} ${PREFIX}/include/libcapplet1
 	${INSTALL_DATA} ${WRKSRC}/capplet-widget.h \
 		${PREFIX}/include/libcapplet1
-	${MKDIR} ${PREFIX}/share/gnome/idl
-	${INSTALL_DATA} ${WRKSRC}/control-center.idl ${PREFIX}/share/gnome/idl
+	${MKDIR} ${PREFIX}/share/idl
+	${INSTALL_DATA} ${WRKSRC}/control-center.idl ${PREFIX}/share/idl
 	${INSTALL_SCRIPT} ${WRKSRC}/cappletConf.sh ${PREFIX}/etc
 
 .include <bsd.port.post.mk>

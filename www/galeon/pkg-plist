@@ -3,72 +3,72 @@ bin/galeon-config-tool
 etc/sound/events/galeon.soundlist
 libdata/bonobo/servers/GNOME_Galeon_Automation.server
 libdata/bonobo/servers/GNOME_Galeon_NautilusView.server
-share/gnome/applications/galeon.desktop
-share/gnome/galeon/FAQ.html
-share/gnome/galeon/about_logo.png
-share/gnome/galeon/autoscroll.xpm
-share/gnome/galeon/bookmarks-editor-small.glade
-share/gnome/galeon/bookmarks-editor.glade
-share/gnome/galeon/bookmarks.glade
-share/gnome/galeon/bug.png
-share/gnome/galeon/certificate-dialogs.glade
-share/gnome/galeon/chrome/branding/brand.dtd
-share/gnome/galeon/chrome/branding/brand.properties
-share/gnome/galeon/chrome/galeon.manifest
-share/gnome/galeon/chrome/global/about.xhtml
-share/gnome/galeon/debian.png
-share/gnome/galeon/default-bookmarks.xbel
-share/gnome/galeon/default-prefs.js
-share/gnome/galeon/fetch_favicon.xpm
-share/gnome/galeon/freshmeat.png
-share/gnome/galeon/galeon-bookmark-alias-mark.png
-share/gnome/galeon/galeon-default.png
-share/gnome/galeon/galeon-download.png
-share/gnome/galeon/galeon-egg-ui-toolbar.xml
-share/gnome/galeon/galeon-egg-ui.xml
-share/gnome/galeon/galeon-entry.png
-share/gnome/galeon/galeon-filter.png
-share/gnome/galeon/galeon-folder.png
-share/gnome/galeon/galeon-history.png
-share/gnome/galeon/galeon-insecure.png
-share/gnome/galeon/galeon-popup-blocked.png
-share/gnome/galeon/galeon-prefs-fonts.png
-share/gnome/galeon/galeon-prefs-general.png
-share/gnome/galeon/galeon-prefs-language.png
-share/gnome/galeon/galeon-prefs-mouse.png
-share/gnome/galeon/galeon-prefs-network.png
-share/gnome/galeon/galeon-prefs-privacy.png
-share/gnome/galeon/galeon-prefs-tabs.png
-share/gnome/galeon/galeon-prefs-web-content.png
-share/gnome/galeon/galeon-secure.png
-share/gnome/galeon/galeon-separator.png
-share/gnome/galeon/galeon-tab-loading.gif
-share/gnome/galeon/galeon.glade
-share/gnome/galeon/galeon.png
-share/gnome/galeon/gnu.png
-share/gnome/galeon/google.png
-share/gnome/galeon/google_groups.png
-share/gnome/galeon/google_images.png
-share/gnome/galeon/hand-open.png
-share/gnome/galeon/imdb_movies.png
-share/gnome/galeon/logo.png
-share/gnome/galeon/myportal.css
-share/gnome/galeon/new_alias.xpm
-share/gnome/galeon/new_alias_small.xpm
-share/gnome/galeon/new_folder.xpm
-share/gnome/galeon/new_folder_small.xpm
-share/gnome/galeon/new_item.xpm
-share/gnome/galeon/new_item_small.xpm
-share/gnome/galeon/new_separator.xpm
-share/gnome/galeon/new_separator_small.xpm
-share/gnome/galeon/prefs-dialog.glade
-share/gnome/galeon/print.glade
-share/gnome/galeon/rpm.png
-share/gnome/galeon/slack.png
-share/gnome/galeon/smart-bm-fold.png
-share/gnome/galeon/smart-bm-unfold.png
-share/gnome/galeon/stocks.png
-share/gnome/gnome-2.0/ui/galeon-bookmarks-editor-ui.xml
+share/applications/galeon.desktop
+share/galeon/FAQ.html
+share/galeon/about_logo.png
+share/galeon/autoscroll.xpm
+share/galeon/bookmarks-editor-small.glade
+share/galeon/bookmarks-editor.glade
+share/galeon/bookmarks.glade
+share/galeon/bug.png
+share/galeon/certificate-dialogs.glade
+share/galeon/chrome/branding/brand.dtd
+share/galeon/chrome/branding/brand.properties
+share/galeon/chrome/galeon.manifest
+share/galeon/chrome/global/about.xhtml
+share/galeon/debian.png
+share/galeon/default-bookmarks.xbel
+share/galeon/default-prefs.js
+share/galeon/fetch_favicon.xpm
+share/galeon/freshmeat.png
+share/galeon/galeon-bookmark-alias-mark.png
+share/galeon/galeon-default.png
+share/galeon/galeon-download.png
+share/galeon/galeon-egg-ui-toolbar.xml
+share/galeon/galeon-egg-ui.xml
+share/galeon/galeon-entry.png
+share/galeon/galeon-filter.png
+share/galeon/galeon-folder.png
+share/galeon/galeon-history.png
+share/galeon/galeon-insecure.png
+share/galeon/galeon-popup-blocked.png
+share/galeon/galeon-prefs-fonts.png
+share/galeon/galeon-prefs-general.png
+share/galeon/galeon-prefs-language.png
+share/galeon/galeon-prefs-mouse.png
+share/galeon/galeon-prefs-network.png
+share/galeon/galeon-prefs-privacy.png
+share/galeon/galeon-prefs-tabs.png
+share/galeon/galeon-prefs-web-content.png
+share/galeon/galeon-secure.png
+share/galeon/galeon-separator.png
+share/galeon/galeon-tab-loading.gif
+share/galeon/galeon.glade
+share/galeon/galeon.png
+share/galeon/gnu.png
+share/galeon/google.png
+share/galeon/google_groups.png
+share/galeon/google_images.png
+share/galeon/hand-open.png
+share/galeon/imdb_movies.png
+share/galeon/logo.png
+share/galeon/myportal.css
+share/galeon/new_alias.xpm
+share/galeon/new_alias_small.xpm
+share/galeon/new_folder.xpm
+share/galeon/new_folder_small.xpm
+share/galeon/new_item.xpm
+share/galeon/new_item_small.xpm
+share/galeon/new_separator.xpm
+share/galeon/new_separator_small.xpm
+share/galeon/prefs-dialog.glade
+share/galeon/print.glade
+share/galeon/rpm.png
+share/galeon/slack.png
+share/galeon/smart-bm-fold.png
+share/galeon/smart-bm-unfold.png
+share/galeon/stocks.png
+share/gnome-2.0/ui/galeon-bookmarks-editor-ui.xml
 share/gnome/help/galeon/C/apx-authors.xml
 share/gnome/help/galeon/C/apx-bugs.xml
 share/gnome/help/galeon/C/apx-command-line.xml
@@ -159,10 +159,10 @@ share/gnome/help/galeon/es/other-tools.xml
 share/gnome/help/galeon/es/plugins.xml
 share/gnome/help/galeon/es/preface.xml
 share/gnome/help/galeon/es/preferences.xml
-share/gnome/omf/galeon/galeon-C.omf
-share/gnome/omf/galeon/galeon-es.omf
-share/gnome/pixmaps/galeon.png
-share/gnome/sounds/galeon/clicked.wav
+share/omf/galeon/galeon-C.omf
+share/omf/galeon/galeon-es.omf
+share/pixmaps/galeon.png
+share/sounds/galeon/clicked.wav
 share/locale/am/LC_MESSAGES/galeon-2.0.mo
 share/locale/az/LC_MESSAGES/galeon-2.0.mo
 share/locale/be/LC_MESSAGES/galeon-2.0.mo
@@ -217,20 +217,21 @@ share/locale/wa/LC_MESSAGES/galeon-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/galeon-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/galeon-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
-@dirrm share/gnome/sounds/galeon
-@dirrm share/gnome/omf/galeon
+@dirrm share/sounds/galeon
+@dirrm share/omf/galeon
 @dirrm share/gnome/help/galeon/es/figures
 @dirrm share/gnome/help/galeon/es
 @dirrm share/gnome/help/galeon/C/figures
 @dirrm share/gnome/help/galeon/C
 @dirrm share/gnome/help/galeon
-@dirrm share/gnome/galeon/chrome/global
-@dirrm share/gnome/galeon/chrome/branding
-@dirrm share/gnome/galeon/chrome
-@dirrm share/gnome/galeon
+@dirrm share/galeon/chrome/global
+@dirrm share/galeon/chrome/branding
+@dirrm share/galeon/chrome
+@dirrm share/galeon
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/applications

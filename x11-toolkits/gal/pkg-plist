@@ -149,33 +149,33 @@ libdata/pkgconfig/gal.pc
 %%DOCSDIR%%/gal.hierarchy
 %%DOCSDIR%%/gal.signals
 %%DOCSDIR%%/gal.types
-share/gnome/etable/%%VERSION%%/glade/e-table-config-no-group.glade
-share/gnome/etable/%%VERSION%%/glade/e-table-config.glade
-share/gnome/etable/%%VERSION%%/glade/e-table-field-chooser.glade
-share/gnome/etable/%%VERSION%%/glade/e-table-group.glade
-share/gnome/gal/%%VERSION%%/glade/e-categories-master-list-dialog.glade
-share/gnome/gal/%%VERSION%%/glade/gal-categories.glade
-share/gnome/gal/%%VERSION%%/glade/gal-define-views.glade
-share/gnome/gal/%%VERSION%%/glade/gal-view-instance-save-as-dialog.glade
-share/gnome/gal/%%VERSION%%/glade/gal-view-new-dialog.glade
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_birthday_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_business_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_favorites_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_gifts_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_goals_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_holiday-cards_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_holiday_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_hot-contacts_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_ideas_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_international_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_key-customer_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_miscellaneous_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_personal_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_phonecalls_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_status_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_strategies_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_suppliers_16.png
-share/gnome/gal/%%VERSION%%/pixmaps/categories/category_time-and-expenses_16.png
+share/etable/%%VERSION%%/glade/e-table-config-no-group.glade
+share/etable/%%VERSION%%/glade/e-table-config.glade
+share/etable/%%VERSION%%/glade/e-table-field-chooser.glade
+share/etable/%%VERSION%%/glade/e-table-group.glade
+%%DATADIR%%/%%VERSION%%/glade/e-categories-master-list-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/gal-categories.glade
+%%DATADIR%%/%%VERSION%%/glade/gal-define-views.glade
+%%DATADIR%%/%%VERSION%%/glade/gal-view-instance-save-as-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/gal-view-new-dialog.glade
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_birthday_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_business_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_favorites_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_gifts_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_goals_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_holiday-cards_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_holiday_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_hot-contacts_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_ideas_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_international_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_key-customer_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_miscellaneous_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_personal_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_phonecalls_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_status_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_strategies_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_suppliers_16.png
+%%DATADIR%%/%%VERSION%%/pixmaps/categories/category_time-and-expenses_16.png
 share/locale/az/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gal-%%VERSION%%.mo
@@ -208,14 +208,14 @@ share/locale/tr/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gal-%%VERSION%%.mo
-@dirrm share/gnome/gal/%%VERSION%%/pixmaps/categories
-@dirrm share/gnome/gal/%%VERSION%%/pixmaps
-@dirrm share/gnome/gal/%%VERSION%%/glade
-@dirrm share/gnome/gal/%%VERSION%%
-@dirrm share/gnome/gal
-@dirrm share/gnome/etable/%%VERSION%%/glade
-@dirrm share/gnome/etable/%%VERSION%%
-@dirrm share/gnome/etable
+@dirrm %%DATADIR%%/%%VERSION%%/pixmaps/categories
+@dirrm %%DATADIR%%/%%VERSION%%/pixmaps
+@dirrm %%DATADIR%%/%%VERSION%%/glade
+@dirrm %%DATADIR%%/%%VERSION%%
+@dirrm %%DATADIR%%
+@dirrm share/etable/%%VERSION%%/glade
+@dirrm share/etable/%%VERSION%%
+@dirrm share/etable
 @dirrm %%DOCSDIR%%/gal
 @dirrm %%DOCSDIR%%
 @dirrm include/gal-1.0/gal/widgets

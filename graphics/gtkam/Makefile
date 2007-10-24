@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkam
 PORTVERSION=	0.1.14
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -46,7 +46,6 @@ PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomeprefix libgnomeui
 INSTALLS_OMF=	yes
 MAKE_ENV+=	GNOME_SUBDIRS="help omf-install"
-DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 .else
 CONFIGURE_ARGS+=	--without-bonobo --without-gnome
 MAKE_ENV+=	GNOME_SUBDIRS=""
@@ -68,10 +67,11 @@ post-patch:
 		 s|$$(libdir)/gimp/|$$(libexecdir)/gimp/|g'
 
 post-install:
+	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gtkam.desktop \
-		${PREFIX}/share/gnome/applications
+		${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gtkam.png \
-		${PREFIX}/share/gnome/pixmaps
+		${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS NEWS README

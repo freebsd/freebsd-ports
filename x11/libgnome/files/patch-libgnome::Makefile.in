@@ -1,12 +1,11 @@
---- libgnome/Makefile.in.orig	Mon May 31 16:33:14 2004
-+++ libgnome/Makefile.in	Mon May 31 16:33:45 2004
-@@ -211,6 +211,9 @@
+--- libgnome/Makefile.in.orig	Tue May 29 22:16:13 2007
++++ libgnome/Makefile.in	Tue May 29 22:16:58 2007
+@@ -280,6 +280,8 @@
+ LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
  libgnomeincludedir = $(includedir)/libgnome-2.0/libgnome
- 
  INCLUDES = \
 +	-DPREFIX=\""$(PREFIX)"\"				\
 +	-DLOCALBASE=\""$(LOCALBASE)"\"				\
-+	-DX11BASE=\""$(X11BASE)"\"				\
  	-I..							\
  	-I$(srcdir)/..						\
  	$(WARN_CFLAGS)						\

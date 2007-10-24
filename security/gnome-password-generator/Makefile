@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-password-generator
 PORTVERSION=	1.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnome-password
@@ -20,7 +20,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|prefix=/usr|prefix=${PREFIX}|g' -e 's|(prefix)/share|(prefix)/share/gnome|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|prefix=/usr|prefix=${PREFIX}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|g' ${WRKSRC}/${PORTNAME}
 
 .include <bsd.port.mk>

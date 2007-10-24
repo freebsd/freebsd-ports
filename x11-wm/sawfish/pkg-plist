@@ -23,28 +23,28 @@ libexec/sawfish/%%VERSION%%/%%GNUHOST%%/selection.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/selection.so
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/x.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/x.so
-share/gnome/applications/appearance-properties.desktop
-share/gnome/applications/bindings-properties.desktop
-share/gnome/applications/focus-properties.desktop
-share/gnome/applications/match-properties.desktop
-share/gnome/applications/maximize-properties.desktop
-share/gnome/applications/misc-properties.desktop
-share/gnome/applications/move-properties.desktop
-share/gnome/applications/placement-properties.desktop
-share/gnome/applications/sound-properties.desktop
-share/gnome/applications/workspace-properties.desktop
-share/gnome/pixmaps/sawfish-appearance.png
-share/gnome/pixmaps/sawfish-edgeflip.png
-share/gnome/pixmaps/sawfish-focus.png
-share/gnome/pixmaps/sawfish-logo.png
-share/gnome/pixmaps/sawfish-matched.png
-share/gnome/pixmaps/sawfish-minmax.png
-share/gnome/pixmaps/sawfish-misc.png
-share/gnome/pixmaps/sawfish-moveresize.png
-share/gnome/pixmaps/sawfish-placement.png
-share/gnome/pixmaps/sawfish-shortcuts.png
-share/gnome/pixmaps/sawfish-tooltips.png
-share/gnome/pixmaps/sawfish-workspaces.png
+share/applications/appearance-properties.desktop
+share/applications/bindings-properties.desktop
+share/applications/focus-properties.desktop
+share/applications/match-properties.desktop
+share/applications/maximize-properties.desktop
+share/applications/misc-properties.desktop
+share/applications/move-properties.desktop
+share/applications/placement-properties.desktop
+share/applications/sound-properties.desktop
+share/applications/workspace-properties.desktop
+share/pixmaps/sawfish-appearance.png
+share/pixmaps/sawfish-edgeflip.png
+share/pixmaps/sawfish-focus.png
+share/pixmaps/sawfish-logo.png
+share/pixmaps/sawfish-matched.png
+share/pixmaps/sawfish-minmax.png
+share/pixmaps/sawfish-misc.png
+share/pixmaps/sawfish-moveresize.png
+share/pixmaps/sawfish-placement.png
+share/pixmaps/sawfish-shortcuts.png
+share/pixmaps/sawfish-tooltips.png
+share/pixmaps/sawfish-workspaces.png
 share/gnome/wm-properties/Sawfish.desktop
 share/locale/am/LC_MESSAGES/sawfish.mo
 share/locale/az/LC_MESSAGES/sawfish.mo
@@ -680,3 +680,4 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 @dirrm libexec/sawfish/%%VERSION%%
 @dirrm libexec/sawfish
 @dirrm libexec/rep/%%GNUHOST%%/sawfish
+@dirrmtry share/applications

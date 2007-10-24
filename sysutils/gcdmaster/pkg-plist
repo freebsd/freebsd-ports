@@ -1,12 +1,13 @@
 bin/gcdmaster
 %%DATADIR%%/ProjectChooser.glade
-share/gnome/application-registry/gcdmaster.applications
-share/gnome/applications/gcdmaster.desktop
-share/gnome/mime-info/gcdmaster.keys
-share/gnome/mime-info/gcdmaster.mime
-share/gnome/pixmaps/document-icons/gcdmaster-doc.png
-share/gnome/pixmaps/gcdmaster.png
+share/application-registry/gcdmaster.applications
+share/applications/gcdmaster.desktop
+share/mime-info/gcdmaster.keys
+share/mime-info/gcdmaster.mime
+share/pixmaps/document-icons/gcdmaster-doc.png
+share/pixmaps/gcdmaster.png
 share/mime/packages/gcdmaster.xml
 @dirrm %%DATADIR%%
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@dirrmtry share/applications

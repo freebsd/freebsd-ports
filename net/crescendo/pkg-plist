@@ -1,10 +1,10 @@
 bin/crescendo
-share/gnome/crescendo/cr-about.jpg
-share/gnome/crescendo/cr-splash1.jpg
-share/gnome/crescendo/startup2.wav
+%%DATADIR%%/cr-about.jpg
+%%DATADIR%%/cr-splash1.jpg
+%%DATADIR%%/startup2.wav
 share/gnome/apps/Internet/crescendo.desktop
-share/gnome/pixmaps/crescendo.png
-@dirrm share/gnome/crescendo
+share/pixmaps/crescendo.png
+@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCDIR%%/HACKING

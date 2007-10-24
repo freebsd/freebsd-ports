@@ -102,43 +102,43 @@ lib/libgnomedb_handlers-3.la
 lib/libgnomedb_handlers-3.so
 lib/libgnomedb_handlers-3.so.4
 libdata/pkgconfig/libgnomedb-2.0.pc
-share/gnome/applications/database-properties.desktop
-share/gnome/mime-info/libgnomedb.keys
-share/gnome/mime-info/libgnomedb.mime
-share/gnome/omf/libgnomedb/libgnomedb-C.omf
-share/gnome/pixmaps/libgnomedb/gnome-db-aggregates_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-aggregates_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-commit_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-connect_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-database-login_48x48.png
-share/gnome/pixmaps/libgnomedb/gnome-db-database_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-database_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-database_48x48.png
-share/gnome/pixmaps/libgnomedb/gnome-db-designer_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-disconnect_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-field_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-indexes_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-no-transaction_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-procedures_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-procedures_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-query_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-query_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-relations_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-relations_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-rollback_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-sequences_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-sequences_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-sql_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-sql_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-table_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-tables_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-tables_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-triggers_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-types_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-types_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db-views_16x16.png
-share/gnome/pixmaps/libgnomedb/gnome-db-within-transaction_24x24.png
-share/gnome/pixmaps/libgnomedb/gnome-db.png
+share/applications/database-properties.desktop
+share/mime-info/libgnomedb.keys
+share/mime-info/libgnomedb.mime
+share/omf/libgnomedb/libgnomedb-C.omf
+share/pixmaps/libgnomedb/gnome-db-aggregates_16x16.png
+share/pixmaps/libgnomedb/gnome-db-aggregates_24x24.png
+share/pixmaps/libgnomedb/gnome-db-commit_24x24.png
+share/pixmaps/libgnomedb/gnome-db-connect_24x24.png
+share/pixmaps/libgnomedb/gnome-db-database-login_48x48.png
+share/pixmaps/libgnomedb/gnome-db-database_16x16.png
+share/pixmaps/libgnomedb/gnome-db-database_24x24.png
+share/pixmaps/libgnomedb/gnome-db-database_48x48.png
+share/pixmaps/libgnomedb/gnome-db-designer_24x24.png
+share/pixmaps/libgnomedb/gnome-db-disconnect_24x24.png
+share/pixmaps/libgnomedb/gnome-db-field_16x16.png
+share/pixmaps/libgnomedb/gnome-db-indexes_16x16.png
+share/pixmaps/libgnomedb/gnome-db-no-transaction_24x24.png
+share/pixmaps/libgnomedb/gnome-db-procedures_16x16.png
+share/pixmaps/libgnomedb/gnome-db-procedures_24x24.png
+share/pixmaps/libgnomedb/gnome-db-query_16x16.png
+share/pixmaps/libgnomedb/gnome-db-query_24x24.png
+share/pixmaps/libgnomedb/gnome-db-relations_16x16.png
+share/pixmaps/libgnomedb/gnome-db-relations_24x24.png
+share/pixmaps/libgnomedb/gnome-db-rollback_24x24.png
+share/pixmaps/libgnomedb/gnome-db-sequences_16x16.png
+share/pixmaps/libgnomedb/gnome-db-sequences_24x24.png
+share/pixmaps/libgnomedb/gnome-db-sql_16x16.png
+share/pixmaps/libgnomedb/gnome-db-sql_24x24.png
+share/pixmaps/libgnomedb/gnome-db-table_16x16.png
+share/pixmaps/libgnomedb/gnome-db-tables_16x16.png
+share/pixmaps/libgnomedb/gnome-db-tables_24x24.png
+share/pixmaps/libgnomedb/gnome-db-triggers_16x16.png
+share/pixmaps/libgnomedb/gnome-db-types_16x16.png
+share/pixmaps/libgnomedb/gnome-db-types_24x24.png
+share/pixmaps/libgnomedb/gnome-db-views_16x16.png
+share/pixmaps/libgnomedb/gnome-db-within-transaction_24x24.png
+share/pixmaps/libgnomedb/gnome-db.png
 share/locale/az/LC_MESSAGES/libgnomedb-3.mo
 share/locale/be/LC_MESSAGES/libgnomedb-3.mo
 share/locale/ca/LC_MESSAGES/libgnomedb-3.mo
@@ -185,8 +185,8 @@ share/locale/vi/LC_MESSAGES/libgnomedb-3.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomedb-3.mo
 share/locale/zh_HK/LC_MESSAGES/libgnomedb-3.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomedb-3.mo
-@dirrm share/gnome/pixmaps/libgnomedb
-@dirrm share/gnome/omf/libgnomedb
+@dirrm share/pixmaps/libgnomedb
+@dirrm share/omf/libgnomedb
 @dirrm lib/libgnomedb/plugins
 @dirrm lib/libgnomedb
 @dirrm include/libgnomedb-%%VERSION%%/libgnomedb/graph
@@ -197,3 +197,4 @@ share/locale/zh_TW/LC_MESSAGES/libgnomedb-3.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/applications

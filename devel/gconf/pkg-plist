@@ -58,8 +58,8 @@ share/locale/sv/LC_MESSAGES/GConf.mo
 share/locale/tr/LC_MESSAGES/GConf.mo
 share/locale/uk/LC_MESSAGES/GConf.mo
 share/locale/zh_CN/LC_MESSAGES/GConf.mo
-@dirrm share/gnome/gconf/1
-@dirrm share/gnome/gconf
+@dirrm %%DATADIR%%/1
+@dirrm %%DATADIR%%
 @dirrm lib/GConf/1
 @dirrm include/gconf/1/gconf
 @dirrm include/gconf/1

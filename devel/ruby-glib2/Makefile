@@ -3,7 +3,7 @@
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/ruby-glib2/Makefile,v 1.2 2005/10/17 07:05:39 mezz Exp $
+#   $MCom: ports/devel/ruby-glib2/Makefile,v 1.5 2007/10/05 05:06:39 mezz Exp $
 #
 
 PORTNAME=	glib2

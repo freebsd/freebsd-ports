@@ -7,7 +7,7 @@
 
 PORTNAME=	gringotts
 PORTVERSION=	1.2.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://devel.pluto.linux.it/projects/Gringotts/current/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -37,7 +37,6 @@ PLIST_SUB+=	GNOMEHIER='@comment '
 
 post-patch:
 	${REINPLACE_CMD} -E -e "s|^(gringottsdocdir =).*|\1 ${DOCSDIR}|;s|md5sum|md5|g" ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -E -e "s|^(pixmapdir =).*|\1 ${PREFIX}/share/gnome/pixmaps|" ${WRKSRC}/pixmaps/Makefile.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED||g'
 .if defined(NOPORTDOCS)

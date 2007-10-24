@@ -24,10 +24,11 @@ bin/raine
 %%DATADIR%%/languages/turkish.cfg
 %%DATADIR%%/languages/galego.cfg
 %%DATADIR%%/raine.dat
-share/gnome/applications/raine.desktop
-share/gnome/pixmaps/raine.png
+share/applications/raine.desktop
+share/pixmaps/raine.png
 @dirrmtry %%DATADIR%%/roms
 @dirrmtry %%DATADIR%%/emudx
 @dirrmtry %%DATADIR%%/artwork
 @dirrm %%DATADIR%%/languages
 @dirrmtry %%DATADIR%%
+@dirrmtry share/applications

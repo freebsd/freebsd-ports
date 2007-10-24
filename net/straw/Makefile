@@ -7,6 +7,7 @@
 
 PORTNAME=	straw
 PORTVERSION=	0.27
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/${PORTVERSION}
@@ -25,10 +26,10 @@ USE_GNOME=	gnomehier libglade2 pygnome2 pygnomeextras
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Straw
-PYDISTUTILS_EGGINFODIR=	${PREFIX}/share/gnome
+PYDISTUTILS_EGGINFODIR=	${PREFIX}/share
 PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
-				--install-lib=${PREFIX}/share/gnome \
-				--with-desktop-file-dir=share/gnome/applications
+				--install-lib=${PREFIX}/share \
+				--with-desktop-file-dir=share/applications
 
 GCONF_SCHEMAS=	straw.schemas
 

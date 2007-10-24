@@ -7,6 +7,7 @@
 
 PORTNAME=	meld
 PORTVERSION=	1.1.5.1
+PORTREVISION=	1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R:R}
@@ -28,11 +29,7 @@ INSTALLS_OMF=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "${MAKEFILE}" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(sharedir)/applications|$$(sharedir)/gnome/applications|g ; \
-		 s|$$(sharedir)/application-registry|$$(sharedir)/gnome/application-registry|g ; \
-		 s|$$(sharedir)/pixmaps|$$(sharedir)/gnome/pixmaps|g ; \
-		 s|$$(localstatedir)/lib/scrollkeeper|/var/db/scrollkeeper|g ; \
-		 s|$$(sharedir)/omf/meld|$$(sharedir)/gnome/omf/meld|g'
+		's|$$(localstatedir)/lib/scrollkeeper|/var/db/scrollkeeper|g'
 
 .include <bsd.port.pre.mk>
 

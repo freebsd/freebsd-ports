@@ -33,4 +33,4 @@ bin/gqview
 %%NLS%%share/locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gqview.mo
 share/gnome/apps/Graphics/gqview.desktop
-share/gnome/pixmaps/gqview.png
+share/pixmaps/gqview.png

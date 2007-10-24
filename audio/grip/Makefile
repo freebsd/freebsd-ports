@@ -3,11 +3,11 @@
 # Whom:					kbyanc@posi.net
 #
 # $FreeBSD$
-#
+#    $MCom: ports/audio/grip/Makefile,v 1.4 2007/05/19 21:35:57 marcus Exp $
 
 PORTNAME=	grip
 PORTVERSION=	3.2.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}

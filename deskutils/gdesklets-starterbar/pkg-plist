@@ -1,75 +1,75 @@
-share/gnome/gdesklets/Displays/StarterBar/README
-share/gnome/gdesklets/Displays/StarterBar/gfx/bg-e.png
-share/gnome/gdesklets/Displays/StarterBar/gfx/bg-n.png
-share/gnome/gdesklets/Displays/StarterBar/gfx/bg-ne.png
-share/gnome/gdesklets/Displays/StarterBar/gfx/bg-nw.png
-share/gnome/gdesklets/Displays/StarterBar/gfx/bg-s.png
-share/gnome/gdesklets/Displays/StarterBar/gfx/bg-se.png
-share/gnome/gdesklets/Displays/StarterBar/gfx/bg-sw.png
-share/gnome/gdesklets/Displays/StarterBar/gfx/bg-w.png
-share/gnome/gdesklets/Displays/StarterBar/gfx/bg.png
-share/gnome/gdesklets/Displays/StarterBar/gfx/preview.png
-share/gnome/gdesklets/Displays/StarterBar/gfx/waterbath.png
-share/gnome/gdesklets/Displays/StarterBar/starterbar.display
-share/gnome/gdesklets/Sensors/StarterBar/.order
-share/gnome/gdesklets/Sensors/StarterBar/ChangeLog
-share/gnome/gdesklets/Sensors/StarterBar/FileWatcher.py
-share/gnome/gdesklets/Sensors/StarterBar/FileWatcher.pyc
-share/gnome/gdesklets/Sensors/StarterBar/FileWatcher.pyo
-share/gnome/gdesklets/Sensors/StarterBar/GConfWatcher.py
-share/gnome/gdesklets/Sensors/StarterBar/GConfWatcher.pyc
-share/gnome/gdesklets/Sensors/StarterBar/GConfWatcher.pyo
-share/gnome/gdesklets/Sensors/StarterBar/Icon.py
-share/gnome/gdesklets/Sensors/StarterBar/Icon.pyc
-share/gnome/gdesklets/Sensors/StarterBar/Icon.pyo
-share/gnome/gdesklets/Sensors/StarterBar/IconSet.py
-share/gnome/gdesklets/Sensors/StarterBar/IconSet.pyc
-share/gnome/gdesklets/Sensors/StarterBar/IconSet.pyo
-share/gnome/gdesklets/Sensors/StarterBar/README
-share/gnome/gdesklets/Sensors/StarterBar/__init__.py
-share/gnome/gdesklets/Sensors/StarterBar/__init__.pyc
-share/gnome/gdesklets/Sensors/StarterBar/__init__.pyo
-share/gnome/gdesklets/Sensors/StarterBar/home.desktop
-share/gnome/gdesklets/Sensors/StarterBar/locale/ca/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/StarterBar/locale/cs/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/StarterBar/locale/de/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/StarterBar/locale/es/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/StarterBar/locale/fr/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/StarterBar/locale/hr/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/StarterBar/locale/nl/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/StarterBar/locale/pt/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/StarterBar/locale/pt_BR/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/StarterBar/locale/sq/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/StarterBar/locale/sr/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/StarterBar/locale/sr@Latn/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/Sensors/StarterBar/locale/sv/LC_MESSAGES/gdesklets.mo
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/sv/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/sv
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/sr@Latn/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/sr@Latn
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/sr/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/sr
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/sq/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/sq
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/pt_BR/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/pt_BR
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/pt/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/pt
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/nl/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/nl
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/hr/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/hr
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/fr/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/fr
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/es/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/es
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/de/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/de
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/cs/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/cs
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/ca/LC_MESSAGES
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale/ca
-@dirrm share/gnome/gdesklets/Sensors/StarterBar/locale
-@dirrm share/gnome/gdesklets/Sensors/StarterBar
-@dirrm share/gnome/gdesklets/Displays/StarterBar/gfx
-@dirrm share/gnome/gdesklets/Displays/StarterBar
+share/gdesklets/Displays/StarterBar/README
+share/gdesklets/Displays/StarterBar/gfx/bg-e.png
+share/gdesklets/Displays/StarterBar/gfx/bg-n.png
+share/gdesklets/Displays/StarterBar/gfx/bg-ne.png
+share/gdesklets/Displays/StarterBar/gfx/bg-nw.png
+share/gdesklets/Displays/StarterBar/gfx/bg-s.png
+share/gdesklets/Displays/StarterBar/gfx/bg-se.png
+share/gdesklets/Displays/StarterBar/gfx/bg-sw.png
+share/gdesklets/Displays/StarterBar/gfx/bg-w.png
+share/gdesklets/Displays/StarterBar/gfx/bg.png
+share/gdesklets/Displays/StarterBar/gfx/preview.png
+share/gdesklets/Displays/StarterBar/gfx/waterbath.png
+share/gdesklets/Displays/StarterBar/starterbar.display
+share/gdesklets/Sensors/StarterBar/.order
+share/gdesklets/Sensors/StarterBar/ChangeLog
+share/gdesklets/Sensors/StarterBar/FileWatcher.py
+share/gdesklets/Sensors/StarterBar/FileWatcher.pyc
+share/gdesklets/Sensors/StarterBar/FileWatcher.pyo
+share/gdesklets/Sensors/StarterBar/GConfWatcher.py
+share/gdesklets/Sensors/StarterBar/GConfWatcher.pyc
+share/gdesklets/Sensors/StarterBar/GConfWatcher.pyo
+share/gdesklets/Sensors/StarterBar/Icon.py
+share/gdesklets/Sensors/StarterBar/Icon.pyc
+share/gdesklets/Sensors/StarterBar/Icon.pyo
+share/gdesklets/Sensors/StarterBar/IconSet.py
+share/gdesklets/Sensors/StarterBar/IconSet.pyc
+share/gdesklets/Sensors/StarterBar/IconSet.pyo
+share/gdesklets/Sensors/StarterBar/README
+share/gdesklets/Sensors/StarterBar/__init__.py
+share/gdesklets/Sensors/StarterBar/__init__.pyc
+share/gdesklets/Sensors/StarterBar/__init__.pyo
+share/gdesklets/Sensors/StarterBar/home.desktop
+share/gdesklets/Sensors/StarterBar/locale/ca/LC_MESSAGES/gdesklets.mo
+share/gdesklets/Sensors/StarterBar/locale/cs/LC_MESSAGES/gdesklets.mo
+share/gdesklets/Sensors/StarterBar/locale/de/LC_MESSAGES/gdesklets.mo
+share/gdesklets/Sensors/StarterBar/locale/es/LC_MESSAGES/gdesklets.mo
+share/gdesklets/Sensors/StarterBar/locale/fr/LC_MESSAGES/gdesklets.mo
+share/gdesklets/Sensors/StarterBar/locale/hr/LC_MESSAGES/gdesklets.mo
+share/gdesklets/Sensors/StarterBar/locale/nl/LC_MESSAGES/gdesklets.mo
+share/gdesklets/Sensors/StarterBar/locale/pt/LC_MESSAGES/gdesklets.mo
+share/gdesklets/Sensors/StarterBar/locale/pt_BR/LC_MESSAGES/gdesklets.mo
+share/gdesklets/Sensors/StarterBar/locale/sq/LC_MESSAGES/gdesklets.mo
+share/gdesklets/Sensors/StarterBar/locale/sr/LC_MESSAGES/gdesklets.mo
+share/gdesklets/Sensors/StarterBar/locale/sr@Latn/LC_MESSAGES/gdesklets.mo
+share/gdesklets/Sensors/StarterBar/locale/sv/LC_MESSAGES/gdesklets.mo
+@dirrm share/gdesklets/Sensors/StarterBar/locale/sv/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/sv
+@dirrm share/gdesklets/Sensors/StarterBar/locale/sr@Latn/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/sr@Latn
+@dirrm share/gdesklets/Sensors/StarterBar/locale/sr/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/sr
+@dirrm share/gdesklets/Sensors/StarterBar/locale/sq/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/sq
+@dirrm share/gdesklets/Sensors/StarterBar/locale/pt_BR/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/pt_BR
+@dirrm share/gdesklets/Sensors/StarterBar/locale/pt/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/pt
+@dirrm share/gdesklets/Sensors/StarterBar/locale/nl/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/nl
+@dirrm share/gdesklets/Sensors/StarterBar/locale/hr/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/hr
+@dirrm share/gdesklets/Sensors/StarterBar/locale/fr/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/fr
+@dirrm share/gdesklets/Sensors/StarterBar/locale/es/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/es
+@dirrm share/gdesklets/Sensors/StarterBar/locale/de/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/de
+@dirrm share/gdesklets/Sensors/StarterBar/locale/cs/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/cs
+@dirrm share/gdesklets/Sensors/StarterBar/locale/ca/LC_MESSAGES
+@dirrm share/gdesklets/Sensors/StarterBar/locale/ca
+@dirrm share/gdesklets/Sensors/StarterBar/locale
+@dirrm share/gdesklets/Sensors/StarterBar
+@dirrm share/gdesklets/Displays/StarterBar/gfx
+@dirrm share/gdesklets/Displays/StarterBar

@@ -1,16 +1,16 @@
 bin/gnochm
-share/gnome/application-registry/gnochm.applications
-share/gnome/applications/gnochm.desktop
-share/gnome/gnochm/glade/gnochm.glade
-share/gnome/gnochm/glade/prefdialog.glade
+share/application-registry/gnochm.applications
+share/applications/gnochm.desktop
+share/gnochm/glade/gnochm.glade
+share/gnochm/glade/prefdialog.glade
 share/gnome/help/gnochm/C/gnochm.xml
 share/gnome/help/gnochm/C/legal.xml
-share/gnome/mime-info/gnochm.keys
-share/gnome/mime-info/gnochm.mime
-share/gnome/omf/gnochm/gnochm-C.omf
-share/gnome/pixmaps/chmfile.png
-share/gnome/pixmaps/gnochm.png
-share/gnome/pixmaps/gnochm_logo.png
+share/mime-info/gnochm.keys
+share/mime-info/gnochm.mime
+share/omf/gnochm/gnochm-C.omf
+share/pixmaps/chmfile.png
+share/pixmaps/gnochm.png
+share/pixmaps/gnochm_logo.png
 share/locale/be/LC_MESSAGES/gnochm.mo
 share/locale/cs/LC_MESSAGES/gnochm.mo
 share/locale/de/LC_MESSAGES/gnochm.mo
@@ -30,12 +30,13 @@ share/locale/zh_CN/LC_MESSAGES/gnochm.mo
 share/locale/zh_TW/LC_MESSAGES/gnochm.mo
 share/mime/application/x-chm.xml
 share/mime/packages/gnochm.xml
-@dirrm share/gnome/omf/gnochm
+@dirrm share/omf/gnochm
 @dirrm share/gnome/help/gnochm/C
 @dirrm share/gnome/help/gnochm
-@dirrm share/gnome/gnochm/glade
-@dirrm share/gnome/gnochm
+@dirrm share/gnochm/glade
+@dirrm share/gnochm
 @dirrmtry man/it/man1
 @dirrmtry man/it
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@dirrmtry share/applications

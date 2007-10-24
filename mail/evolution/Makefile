@@ -3,11 +3,11 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution/Makefile,v 1.134 2007/03/13 05:41:38 marcus Exp $
+#   $MCom: ports/mail/evolution/Makefile,v 1.153 2007/10/17 21:36:11 mezz Exp $
 #
 
 PORTNAME=	evolution
-PORTVERSION=	2.10.3
+PORTVERSION=	2.12.1
 PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -38,15 +38,17 @@ CONFIGURE_ARGS=	--enable-nss=yes \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-GCONF_SCHEMAS=	apps_evolution_addressbook-${EVO_VERSION}.schemas \
-		apps_evolution_calendar-${EVO_VERSION}.schemas \
-		apps-evolution-mail-prompts-checkdefault-${EVO_VERSION}.schemas \
-		apps_evolution_shell-${EVO_VERSION}.schemas \
-		evolution-mail-${EVO_VERSION}.schemas
+GCONF_SCHEMAS=	apps-evolution-mail-notification.schemas \
+		apps-evolution-mail-prompts-checkdefault.schemas \
+		apps_evolution_addressbook.schemas \
+		apps_evolution_calendar.schemas \
+		apps_evolution_shell.schemas \
+		apps-evolution-attachment-reminder.schemas \
+		evolution-mail.schemas
 
-EVO_VERSION=	2.10
+EVO_VERSION=	2.12
 PLIST_SUB=	VERSION=${EVO_VERSION} \
-		PORTVERSION=2.10
+		PORTVERSION=2.12
 
 OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 		LDAP "Enable LDAP support" on \
@@ -92,8 +94,7 @@ PLIST_SUB+=	DBUS=""
 PLIST_SUB+=	DBUS="@comment "
 .endif
 
-.if !defined(NO_KERBEROS) && \
-	exists(/usr/lib/libkrb5.so)
+.if !defined(NO_KERBEROS) && exists(/usr/lib/libkrb5.so)
 CONFIGURE_ARGS+=	--with-krb5=/usr
 .else
 LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
@@ -107,13 +108,12 @@ CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
 post-patch:
 	@${REINPLACE_CMD} -e '/^plugins_standard_always/s/audio-inline//' \
 	    	${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|stdlib.n|stdlib.h|' \
+	    	${WRKSRC}/iconv-detect.c
 
 post-install: install-ldconfig-file
 	${MKDIR} ${PREFIX}/include/evolution-${EVO_VERSION}/composer
 	${INSTALL_DATA} ${WRKSRC}/composer/e-msg*.h ${PREFIX}/include/evolution-${EVO_VERSION}/composer
 	${INSTALL_DATA} ${WRKSRC}/composer/Editor.h ${PREFIX}/include/evolution-${EVO_VERSION}/composer
-	@${LN} -sf ${PREFIX}/bin/evolution-${EVO_VERSION} \
-		${PREFIX}/bin/evolution
-	-@update-desktop-database
 
 .include <bsd.port.post.mk>

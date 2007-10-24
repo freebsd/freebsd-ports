@@ -1,27 +1,6 @@
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libnimbus.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libnimbus.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libnimbus.so
-share/gnome/themes/nimbus/metacity-1/button-close-icon-prelight.png
-share/gnome/themes/nimbus/metacity-1/button-close-icon-pressed.png
-share/gnome/themes/nimbus/metacity-1/button-close-icon-unfocused.png
-share/gnome/themes/nimbus/metacity-1/button-close-icon.png
-share/gnome/themes/nimbus/metacity-1/button-max-icon-prelight.png
-share/gnome/themes/nimbus/metacity-1/button-max-icon-pressed.png
-share/gnome/themes/nimbus/metacity-1/button-max-icon-unfocused.png
-share/gnome/themes/nimbus/metacity-1/button-max-icon.png
-share/gnome/themes/nimbus/metacity-1/button-menu-icon-prelight.png
-share/gnome/themes/nimbus/metacity-1/button-menu-icon-pressed.png
-share/gnome/themes/nimbus/metacity-1/button-menu-icon-unfocused.png
-share/gnome/themes/nimbus/metacity-1/button-menu-icon.png
-share/gnome/themes/nimbus/metacity-1/button-min-icon-prelight.png
-share/gnome/themes/nimbus/metacity-1/button-min-icon-pressed.png
-share/gnome/themes/nimbus/metacity-1/button-min-icon-unfocused.png
-share/gnome/themes/nimbus/metacity-1/button-min-icon.png
-share/gnome/themes/nimbus/metacity-1/button-unmax-icon-prelight.png
-share/gnome/themes/nimbus/metacity-1/button-unmax-icon-pressed.png
-share/gnome/themes/nimbus/metacity-1/button-unmax-icon-unfocused.png
-share/gnome/themes/nimbus/metacity-1/button-unmax-icon.png
-share/gnome/themes/nimbus/metacity-1/metacity-theme-1.xml
 share/icons/nimbus/12x12/actions/add.png
 share/icons/nimbus/12x12/actions/gtk-add.png
 share/icons/nimbus/12x12/actions/gtk-remove.png
@@ -506,6 +485,7 @@ share/icons/nimbus/16x16/places/application-x-executable.png
 share/icons/nimbus/16x16/places/bookmark-missing.png
 share/icons/nimbus/16x16/places/bookmark.png
 share/icons/nimbus/16x16/places/desktop.png
+share/icons/nimbus/16x16/places/emptytrash.png
 share/icons/nimbus/16x16/places/file.png
 share/icons/nimbus/16x16/places/folder-drag-accept.png
 share/icons/nimbus/16x16/places/folder.png
@@ -515,22 +495,26 @@ share/icons/nimbus/16x16/places/gnome-fs-directory.png
 share/icons/nimbus/16x16/places/gnome-fs-home.png
 share/icons/nimbus/16x16/places/gnome-fs-network.png
 share/icons/nimbus/16x16/places/gnome-fs-server.png
+share/icons/nimbus/16x16/places/gnome-fs-share.png
+share/icons/nimbus/16x16/places/gnome-fs-trash-empty.png
 share/icons/nimbus/16x16/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/16x16/places/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/16x16/places/gnome-mime-x-directory-smb-workgroup.png
+share/icons/nimbus/16x16/places/gnome-stock-trash.png
 share/icons/nimbus/16x16/places/gtk-network.png
 share/icons/nimbus/16x16/places/network-server.png
 share/icons/nimbus/16x16/places/network-workgroup.png
 share/icons/nimbus/16x16/places/network_local.png
 share/icons/nimbus/16x16/places/redhat-network-server.png
 share/icons/nimbus/16x16/places/server.png
-share/icons/nimbus/16x16/places/share.png
 share/icons/nimbus/16x16/places/stock_folder.png
+share/icons/nimbus/16x16/places/trashcan_empty.png
 share/icons/nimbus/16x16/places/user-desktop.png
 share/icons/nimbus/16x16/places/user-home.png
-share/icons/nimbus/16x16/places/user-trash_empty.png
-share/icons/nimbus/16x16/places/user-trash_full.png
+share/icons/nimbus/16x16/places/user-trash-full.png
+share/icons/nimbus/16x16/places/user-trash.png
 share/icons/nimbus/16x16/places/web.png
+share/icons/nimbus/16x16/places/xfce-trash_empty.png
 share/icons/nimbus/16x16/status/audio-volume-high.png
 share/icons/nimbus/16x16/status/audio-volume-low.png
 share/icons/nimbus/16x16/status/audio-volume-medium.png
@@ -751,6 +735,7 @@ share/icons/nimbus/192x192/mimetypes/gnome-mime-application-x-bzip.png
 share/icons/nimbus/192x192/mimetypes/gnome-mime-application-x-class-file.png
 share/icons/nimbus/192x192/mimetypes/gnome-mime-application-x-compress.png
 share/icons/nimbus/192x192/mimetypes/gnome-mime-application-x-compressed-tar.png
+share/icons/nimbus/192x192/mimetypes/gnome-mime-application-x-core.png
 share/icons/nimbus/192x192/mimetypes/gnome-mime-application-x-cpio.png
 share/icons/nimbus/192x192/mimetypes/gnome-mime-application-x-deb.png
 share/icons/nimbus/192x192/mimetypes/gnome-mime-application-x-dia-diagram.png
@@ -877,21 +862,26 @@ share/icons/nimbus/192x192/places/blockdev.png
 share/icons/nimbus/192x192/places/bookmark-missing.png
 share/icons/nimbus/192x192/places/bookmark.png
 share/icons/nimbus/192x192/places/desktop.png
+share/icons/nimbus/192x192/places/emptytrash.png
 share/icons/nimbus/192x192/places/file.png
 share/icons/nimbus/192x192/places/folder-drag-accept.png
 share/icons/nimbus/192x192/places/folder.png
 share/icons/nimbus/192x192/places/gnome-fs-desktop.png
 share/icons/nimbus/192x192/places/gnome-fs-directory.png
 share/icons/nimbus/192x192/places/gnome-fs-network.png
+share/icons/nimbus/192x192/places/gnome-fs-trash-empty.png
 share/icons/nimbus/192x192/places/gnome-mime-x-directory-smb-workgroup.png
+share/icons/nimbus/192x192/places/gnome-stock-trash.png
 share/icons/nimbus/192x192/places/gtk-network.png
 share/icons/nimbus/192x192/places/network-workgroup.png
 share/icons/nimbus/192x192/places/network_local.png
 share/icons/nimbus/192x192/places/stock_folder.png
+share/icons/nimbus/192x192/places/trashcan_empty.png
 share/icons/nimbus/192x192/places/user-desktop.png
-share/icons/nimbus/192x192/places/user-trash_empty.png
-share/icons/nimbus/192x192/places/user-trash_full.png
+share/icons/nimbus/192x192/places/user-trash-full.png
+share/icons/nimbus/192x192/places/user-trash.png
 share/icons/nimbus/192x192/places/web.png
+share/icons/nimbus/192x192/places/xfce-trash_empty.png
 share/icons/nimbus/20x20/status/dialog-apply.png
 share/icons/nimbus/20x20/status/dialog-cancel.png
 share/icons/nimbus/20x20/status/dialog-close.png
@@ -1145,6 +1135,8 @@ share/icons/nimbus/24x24/actions/zoom-best-fit.png
 share/icons/nimbus/24x24/actions/zoom-in.png
 share/icons/nimbus/24x24/actions/zoom-original.png
 share/icons/nimbus/24x24/actions/zoom-out.png
+share/icons/nimbus/24x24/animations/gnome-spinner.png
+share/icons/nimbus/24x24/animations/process-working.png
 share/icons/nimbus/24x24/apps/accessories-dictionary.png
 share/icons/nimbus/24x24/apps/accessories-text-editor.png
 share/icons/nimbus/24x24/apps/administration-login-screen-setup.png
@@ -1188,7 +1180,6 @@ share/icons/nimbus/24x24/apps/preferences-desktop-wallpaper.png
 share/icons/nimbus/24x24/apps/preferences-palmosdevices.png
 share/icons/nimbus/24x24/apps/preferences-settings-sound.png
 share/icons/nimbus/24x24/apps/preferences-system.png
-share/icons/nimbus/24x24/apps/process-working.png
 share/icons/nimbus/24x24/apps/programs.png
 share/icons/nimbus/24x24/apps/screensaver.png
 share/icons/nimbus/24x24/apps/searchtool.png
@@ -1307,6 +1298,8 @@ share/icons/nimbus/24x24/emblems/emblem-symbolic-link.png
 share/icons/nimbus/24x24/emblems/emblem-system.png
 share/icons/nimbus/24x24/emblems/stock_mail-priority-high.png
 share/icons/nimbus/24x24/mimetypes/gnome-fs-regular.icon
+share/icons/nimbus/24x24/mimetypes/gnome-mime-application-x-backup.png
+share/icons/nimbus/24x24/mimetypes/gnome-mime-application-x-core.png
 share/icons/nimbus/24x24/mimetypes/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/24x24/mimetypes/gnome-mime-x-directory-nfs-share.png
 share/icons/nimbus/24x24/mimetypes/gnome-mime-x-directory-smb-server.png
@@ -1317,35 +1310,40 @@ share/icons/nimbus/24x24/places/blockdev.png
 share/icons/nimbus/24x24/places/bookmark-missing.png
 share/icons/nimbus/24x24/places/bookmark.png
 share/icons/nimbus/24x24/places/desktop.png
+share/icons/nimbus/24x24/places/emptytrash.png
 share/icons/nimbus/24x24/places/file.png
 share/icons/nimbus/24x24/places/folder-drag-accept.png
 share/icons/nimbus/24x24/places/folder.png
 share/icons/nimbus/24x24/places/folder_home.png
-share/icons/nimbus/24x24/places/ftp.png
 share/icons/nimbus/24x24/places/gnome-fs-desktop.png
 share/icons/nimbus/24x24/places/gnome-fs-directory.png
+share/icons/nimbus/24x24/places/gnome-fs-ftp.png
 share/icons/nimbus/24x24/places/gnome-fs-home.png
 share/icons/nimbus/24x24/places/gnome-fs-network.png
+share/icons/nimbus/24x24/places/gnome-fs-nfs.png
 share/icons/nimbus/24x24/places/gnome-fs-server.png
+share/icons/nimbus/24x24/places/gnome-fs-share.png
+share/icons/nimbus/24x24/places/gnome-fs-smb.png
+share/icons/nimbus/24x24/places/gnome-fs-ssh.png
+share/icons/nimbus/24x24/places/gnome-fs-trash-empty.png
 share/icons/nimbus/24x24/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/24x24/places/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/24x24/places/gnome-mime-x-directory-smb-workgroup.png
+share/icons/nimbus/24x24/places/gnome-stock-trash.png
 share/icons/nimbus/24x24/places/gtk-network.png
 share/icons/nimbus/24x24/places/network-server.png
 share/icons/nimbus/24x24/places/network-workgroup.png
 share/icons/nimbus/24x24/places/network_local.png
-share/icons/nimbus/24x24/places/nfs.png
 share/icons/nimbus/24x24/places/redhat-network-server.png
 share/icons/nimbus/24x24/places/server.png
-share/icons/nimbus/24x24/places/share.png
-share/icons/nimbus/24x24/places/smb.png
-share/icons/nimbus/24x24/places/ssh.png
 share/icons/nimbus/24x24/places/stock_folder.png
+share/icons/nimbus/24x24/places/trashcan_empty.png
 share/icons/nimbus/24x24/places/user-desktop.png
 share/icons/nimbus/24x24/places/user-home.png
-share/icons/nimbus/24x24/places/user-trash_empty.png
-share/icons/nimbus/24x24/places/user-trash_full.png
+share/icons/nimbus/24x24/places/user-trash-full.png
+share/icons/nimbus/24x24/places/user-trash.png
 share/icons/nimbus/24x24/places/web.png
+share/icons/nimbus/24x24/places/xfce-trash_empty.png
 share/icons/nimbus/24x24/status/audio-volume-high.png
 share/icons/nimbus/24x24/status/audio-volume-low.png
 share/icons/nimbus/24x24/status/audio-volume-medium.png
@@ -1543,6 +1541,7 @@ share/icons/nimbus/32x32/mimetypes/gnome-mime-application-x-bzip.png
 share/icons/nimbus/32x32/mimetypes/gnome-mime-application-x-class-file.png
 share/icons/nimbus/32x32/mimetypes/gnome-mime-application-x-compress.png
 share/icons/nimbus/32x32/mimetypes/gnome-mime-application-x-compressed-tar.png
+share/icons/nimbus/32x32/mimetypes/gnome-mime-application-x-core.png
 share/icons/nimbus/32x32/mimetypes/gnome-mime-application-x-cpio.png
 share/icons/nimbus/32x32/mimetypes/gnome-mime-application-x-deb.png
 share/icons/nimbus/32x32/mimetypes/gnome-mime-application-x-dia-diagram.png
@@ -1672,25 +1671,32 @@ share/icons/nimbus/32x32/mimetypes/x-office-spreadsheet.png
 share/icons/nimbus/32x32/places/bookmark-missing.png
 share/icons/nimbus/32x32/places/bookmark.png
 share/icons/nimbus/32x32/places/distributor-logo.png
+share/icons/nimbus/32x32/places/emptytrash.png
 share/icons/nimbus/32x32/places/file.png
 share/icons/nimbus/32x32/places/folder-drag-accept.png
 share/icons/nimbus/32x32/places/folder.png
-share/icons/nimbus/32x32/places/ftp.png
 share/icons/nimbus/32x32/places/gnome-fs-directory.png
+share/icons/nimbus/32x32/places/gnome-fs-ftp.png
 share/icons/nimbus/32x32/places/gnome-fs-network.png
+share/icons/nimbus/32x32/places/gnome-fs-nfs.png
+share/icons/nimbus/32x32/places/gnome-fs-share.png
+share/icons/nimbus/32x32/places/gnome-fs-smb.png
+share/icons/nimbus/32x32/places/gnome-fs-ssh.png
+share/icons/nimbus/32x32/places/gnome-fs-trash-empty.png
 share/icons/nimbus/32x32/places/gnome-main-menu.png
 share/icons/nimbus/32x32/places/gnome-mime-x-directory-smb-workgroup.png
+share/icons/nimbus/32x32/places/gnome-stock-trash.png
 share/icons/nimbus/32x32/places/gtk-network.png
 share/icons/nimbus/32x32/places/network-workgroup.png
 share/icons/nimbus/32x32/places/network_local.png
-share/icons/nimbus/32x32/places/nfs.png
 share/icons/nimbus/32x32/places/novell-button.png
-share/icons/nimbus/32x32/places/share.png
-share/icons/nimbus/32x32/places/smb.png
-share/icons/nimbus/32x32/places/ssh.png
 share/icons/nimbus/32x32/places/start-here.png
 share/icons/nimbus/32x32/places/stock_folder.png
+share/icons/nimbus/32x32/places/trashcan_empty.png
+share/icons/nimbus/32x32/places/user-trash-full.png
+share/icons/nimbus/32x32/places/user-trash.png
 share/icons/nimbus/32x32/places/web.png
+share/icons/nimbus/32x32/places/xfce-trash_empty.png
 share/icons/nimbus/32x32/status/dialog-error.png
 share/icons/nimbus/32x32/status/dialog-information.png
 share/icons/nimbus/32x32/status/dialog-warning.png
@@ -1711,12 +1717,12 @@ share/icons/nimbus/36x36/actions/edit.png
 share/icons/nimbus/36x36/actions/filenew.png
 share/icons/nimbus/36x36/actions/gtk-new.png
 share/icons/nimbus/36x36/actions/stock_new-text.png
+share/icons/nimbus/36x36/animations/gnome-spinner.png
+share/icons/nimbus/36x36/animations/process-working.png
 share/icons/nimbus/36x36/apps/accessories-calculator.png
 share/icons/nimbus/36x36/apps/advanced-directory.png
 share/icons/nimbus/36x36/apps/calc.png
 share/icons/nimbus/36x36/apps/gnome-calculator.png
-share/icons/nimbus/36x36/apps/gnome-spinner-rest.png
-share/icons/nimbus/36x36/apps/gnome-spinner.png
 share/icons/nimbus/36x36/apps/kcalc.png
 share/icons/nimbus/36x36/apps/preferences-desktop-display.png
 share/icons/nimbus/36x36/apps/preferences-desktop-screen-resolution.png
@@ -1738,33 +1744,42 @@ share/icons/nimbus/36x36/devices/stock_printers.png
 share/icons/nimbus/36x36/devices/xfce-printer.png
 share/icons/nimbus/36x36/devices/yast_printer.png
 share/icons/nimbus/36x36/mimetypes/gnome-fs-regular.icon
+share/icons/nimbus/36x36/mimetypes/gnome-mime-application-x-backup.png
+share/icons/nimbus/36x36/mimetypes/gnome-mime-application-x-core.png
 share/icons/nimbus/36x36/mimetypes/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/36x36/mimetypes/gnome-mime-x-directory-nfs-share.png
 share/icons/nimbus/36x36/mimetypes/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/36x36/mimetypes/gnome-mime-x-directory-smb-share.png
 share/icons/nimbus/36x36/mimetypes/stock_generic-mimetype.png
 share/icons/nimbus/36x36/places/desktop.png
+share/icons/nimbus/36x36/places/emptytrash.png
 share/icons/nimbus/36x36/places/file.png
 share/icons/nimbus/36x36/places/folder-drag-accept.png
 share/icons/nimbus/36x36/places/folder.png
 share/icons/nimbus/36x36/places/folder_home.png
-share/icons/nimbus/36x36/places/ftp.png
 share/icons/nimbus/36x36/places/gnome-fs-desktop.png
 share/icons/nimbus/36x36/places/gnome-fs-directory.png
+share/icons/nimbus/36x36/places/gnome-fs-ftp.png
 share/icons/nimbus/36x36/places/gnome-fs-home.png
+share/icons/nimbus/36x36/places/gnome-fs-nfs.png
 share/icons/nimbus/36x36/places/gnome-fs-server.png
+share/icons/nimbus/36x36/places/gnome-fs-share.png
+share/icons/nimbus/36x36/places/gnome-fs-smb.png
+share/icons/nimbus/36x36/places/gnome-fs-ssh.png
+share/icons/nimbus/36x36/places/gnome-fs-trash-empty.png
 share/icons/nimbus/36x36/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/36x36/places/gnome-mime-x-directory-smb-server.png
+share/icons/nimbus/36x36/places/gnome-stock-trash.png
 share/icons/nimbus/36x36/places/network-server.png
-share/icons/nimbus/36x36/places/nfs.png
 share/icons/nimbus/36x36/places/redhat-network-server.png
 share/icons/nimbus/36x36/places/server.png
-share/icons/nimbus/36x36/places/share.png
-share/icons/nimbus/36x36/places/smb.png
-share/icons/nimbus/36x36/places/ssh.png
 share/icons/nimbus/36x36/places/stock_folder.png
+share/icons/nimbus/36x36/places/trashcan_empty.png
 share/icons/nimbus/36x36/places/user-desktop.png
 share/icons/nimbus/36x36/places/user-home.png
+share/icons/nimbus/36x36/places/user-trash-full.png
+share/icons/nimbus/36x36/places/user-trash.png
+share/icons/nimbus/36x36/places/xfce-trash_empty.png
 share/icons/nimbus/48x48/actions/document-print.png
 share/icons/nimbus/48x48/actions/edit.png
 share/icons/nimbus/48x48/actions/fileprint.png
@@ -1778,6 +1793,8 @@ share/icons/nimbus/48x48/actions/preferences.png
 share/icons/nimbus/48x48/actions/redhat-home.png
 share/icons/nimbus/48x48/actions/stock_home.png
 share/icons/nimbus/48x48/actions/stock_print.png
+share/icons/nimbus/48x48/animations/gnome-spinner.png
+share/icons/nimbus/48x48/animations/process-working.png
 share/icons/nimbus/48x48/apps/accessories-archive-manager.png
 share/icons/nimbus/48x48/apps/accessories-calculator.png
 share/icons/nimbus/48x48/apps/accessories-character-map.png
@@ -2023,6 +2040,7 @@ share/icons/nimbus/48x48/mimetypes/gnome-mime-application-x-bzip.png
 share/icons/nimbus/48x48/mimetypes/gnome-mime-application-x-class-file.png
 share/icons/nimbus/48x48/mimetypes/gnome-mime-application-x-compress.png
 share/icons/nimbus/48x48/mimetypes/gnome-mime-application-x-compressed-tar.png
+share/icons/nimbus/48x48/mimetypes/gnome-mime-application-x-core.png
 share/icons/nimbus/48x48/mimetypes/gnome-mime-application-x-cpio.png
 share/icons/nimbus/48x48/mimetypes/gnome-mime-application-x-deb.png
 share/icons/nimbus/48x48/mimetypes/gnome-mime-application-x-dia-diagram.png
@@ -2157,35 +2175,40 @@ share/icons/nimbus/48x48/places/blockdev.png
 share/icons/nimbus/48x48/places/bookmark-missing.png
 share/icons/nimbus/48x48/places/bookmark.png
 share/icons/nimbus/48x48/places/desktop.png
+share/icons/nimbus/48x48/places/emptytrash.png
 share/icons/nimbus/48x48/places/file.png
 share/icons/nimbus/48x48/places/folder-drag-accept.png
 share/icons/nimbus/48x48/places/folder.png
 share/icons/nimbus/48x48/places/folder_home.png
-share/icons/nimbus/48x48/places/ftp.png
 share/icons/nimbus/48x48/places/gnome-fs-desktop.png
 share/icons/nimbus/48x48/places/gnome-fs-directory.png
+share/icons/nimbus/48x48/places/gnome-fs-ftp.png
 share/icons/nimbus/48x48/places/gnome-fs-home.png
 share/icons/nimbus/48x48/places/gnome-fs-network.png
+share/icons/nimbus/48x48/places/gnome-fs-nfs.png
 share/icons/nimbus/48x48/places/gnome-fs-server.png
+share/icons/nimbus/48x48/places/gnome-fs-share.png
+share/icons/nimbus/48x48/places/gnome-fs-smb.png
+share/icons/nimbus/48x48/places/gnome-fs-ssh.png
+share/icons/nimbus/48x48/places/gnome-fs-trash-empty.png
 share/icons/nimbus/48x48/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/48x48/places/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/48x48/places/gnome-mime-x-directory-smb-workgroup.png
+share/icons/nimbus/48x48/places/gnome-stock-trash.png
 share/icons/nimbus/48x48/places/gtk-network.png
 share/icons/nimbus/48x48/places/network-server.png
 share/icons/nimbus/48x48/places/network-workgroup.png
 share/icons/nimbus/48x48/places/network_local.png
-share/icons/nimbus/48x48/places/nfs.png
 share/icons/nimbus/48x48/places/redhat-network-server.png
 share/icons/nimbus/48x48/places/server.png
-share/icons/nimbus/48x48/places/share.png
-share/icons/nimbus/48x48/places/smb.png
-share/icons/nimbus/48x48/places/ssh.png
 share/icons/nimbus/48x48/places/stock_folder.png
+share/icons/nimbus/48x48/places/trashcan_empty.png
 share/icons/nimbus/48x48/places/user-desktop.png
 share/icons/nimbus/48x48/places/user-home.png
-share/icons/nimbus/48x48/places/user-trash_empty.png
-share/icons/nimbus/48x48/places/user-trash_full.png
+share/icons/nimbus/48x48/places/user-trash-full.png
+share/icons/nimbus/48x48/places/user-trash.png
 share/icons/nimbus/48x48/places/web.png
+share/icons/nimbus/48x48/places/xfce-trash_empty.png
 share/icons/nimbus/48x48/status/audio-volume-high.png
 share/icons/nimbus/48x48/status/audio-volume-low.png
 share/icons/nimbus/48x48/status/audio-volume-medium.png
@@ -2268,6 +2291,7 @@ share/icons/nimbus/72x72/mimetypes/gnome-mime-application-x-bzip.png
 share/icons/nimbus/72x72/mimetypes/gnome-mime-application-x-class-file.png
 share/icons/nimbus/72x72/mimetypes/gnome-mime-application-x-compress.png
 share/icons/nimbus/72x72/mimetypes/gnome-mime-application-x-compressed-tar.png
+share/icons/nimbus/72x72/mimetypes/gnome-mime-application-x-core.png
 share/icons/nimbus/72x72/mimetypes/gnome-mime-application-x-cpio.png
 share/icons/nimbus/72x72/mimetypes/gnome-mime-application-x-deb.png
 share/icons/nimbus/72x72/mimetypes/gnome-mime-application-x-dvi.png
@@ -2390,30 +2414,37 @@ share/icons/nimbus/72x72/mimetypes/x-office-document.png
 share/icons/nimbus/72x72/mimetypes/x-office-presentation.png
 share/icons/nimbus/72x72/mimetypes/x-office-spreadsheet.png
 share/icons/nimbus/72x72/places/desktop.png
+share/icons/nimbus/72x72/places/emptytrash.png
 share/icons/nimbus/72x72/places/file.png
 share/icons/nimbus/72x72/places/folder-drag-accept.png
 share/icons/nimbus/72x72/places/folder.png
-share/icons/nimbus/72x72/places/ftp.png
 share/icons/nimbus/72x72/places/gnome-fs-desktop.png
 share/icons/nimbus/72x72/places/gnome-fs-directory.png
+share/icons/nimbus/72x72/places/gnome-fs-ftp.png
 share/icons/nimbus/72x72/places/gnome-fs-network.png
+share/icons/nimbus/72x72/places/gnome-fs-nfs.png
 share/icons/nimbus/72x72/places/gnome-fs-server.png
+share/icons/nimbus/72x72/places/gnome-fs-share.png
+share/icons/nimbus/72x72/places/gnome-fs-smb.png
+share/icons/nimbus/72x72/places/gnome-fs-ssh.png
+share/icons/nimbus/72x72/places/gnome-fs-trash-empty.png
 share/icons/nimbus/72x72/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/72x72/places/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/72x72/places/gnome-mime-x-directory-smb-workgroup.png
+share/icons/nimbus/72x72/places/gnome-stock-trash.png
 share/icons/nimbus/72x72/places/gtk-network.png
 share/icons/nimbus/72x72/places/network-server.png
 share/icons/nimbus/72x72/places/network-workgroup.png
 share/icons/nimbus/72x72/places/network_local.png
-share/icons/nimbus/72x72/places/nfs.png
 share/icons/nimbus/72x72/places/redhat-network-server.png
 share/icons/nimbus/72x72/places/server.png
-share/icons/nimbus/72x72/places/share.png
-share/icons/nimbus/72x72/places/smb.png
-share/icons/nimbus/72x72/places/ssh.png
 share/icons/nimbus/72x72/places/stock_folder.png
+share/icons/nimbus/72x72/places/trashcan_empty.png
 share/icons/nimbus/72x72/places/user-desktop.png
+share/icons/nimbus/72x72/places/user-trash-full.png
+share/icons/nimbus/72x72/places/user-trash.png
 share/icons/nimbus/72x72/places/web.png
+share/icons/nimbus/72x72/places/xfce-trash_empty.png
 share/icons/nimbus/96x96/apps/administration-login-screen-setup.png
 share/icons/nimbus/96x96/apps/administration-network-configuration.png
 share/icons/nimbus/96x96/apps/administration-printers.png
@@ -2535,6 +2566,7 @@ share/icons/nimbus/96x96/mimetypes/gnome-mime-application-x-bzip.png
 share/icons/nimbus/96x96/mimetypes/gnome-mime-application-x-class-file.png
 share/icons/nimbus/96x96/mimetypes/gnome-mime-application-x-compress.png
 share/icons/nimbus/96x96/mimetypes/gnome-mime-application-x-compressed-tar.png
+share/icons/nimbus/96x96/mimetypes/gnome-mime-application-x-core.png
 share/icons/nimbus/96x96/mimetypes/gnome-mime-application-x-cpio.png
 share/icons/nimbus/96x96/mimetypes/gnome-mime-application-x-deb.png
 share/icons/nimbus/96x96/mimetypes/gnome-mime-application-x-dia-diagram.png
@@ -2665,33 +2697,40 @@ share/icons/nimbus/96x96/places/blockdev.png
 share/icons/nimbus/96x96/places/bookmark-missing.png
 share/icons/nimbus/96x96/places/bookmark.png
 share/icons/nimbus/96x96/places/desktop.png
+share/icons/nimbus/96x96/places/emptytrash.png
 share/icons/nimbus/96x96/places/file.png
 share/icons/nimbus/96x96/places/folder-drag-accept.png
 share/icons/nimbus/96x96/places/folder.png
 share/icons/nimbus/96x96/places/folder_home.png
-share/icons/nimbus/96x96/places/ftp.png
 share/icons/nimbus/96x96/places/gnome-fs-desktop.png
 share/icons/nimbus/96x96/places/gnome-fs-directory.png
+share/icons/nimbus/96x96/places/gnome-fs-ftp.png
 share/icons/nimbus/96x96/places/gnome-fs-home.png
 share/icons/nimbus/96x96/places/gnome-fs-network.png
+share/icons/nimbus/96x96/places/gnome-fs-nfs.png
 share/icons/nimbus/96x96/places/gnome-fs-server.png
+share/icons/nimbus/96x96/places/gnome-fs-share.png
+share/icons/nimbus/96x96/places/gnome-fs-smb.png
+share/icons/nimbus/96x96/places/gnome-fs-ssh.png
+share/icons/nimbus/96x96/places/gnome-fs-trash-empty.png
 share/icons/nimbus/96x96/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/96x96/places/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/96x96/places/gnome-mime-x-directory-smb-workgroup.png
+share/icons/nimbus/96x96/places/gnome-stock-trash.png
 share/icons/nimbus/96x96/places/gtk-network.png
 share/icons/nimbus/96x96/places/network-server.png
 share/icons/nimbus/96x96/places/network-workgroup.png
 share/icons/nimbus/96x96/places/network_local.png
-share/icons/nimbus/96x96/places/nfs.png
 share/icons/nimbus/96x96/places/redhat-network-server.png
 share/icons/nimbus/96x96/places/server.png
-share/icons/nimbus/96x96/places/share.png
-share/icons/nimbus/96x96/places/smb.png
-share/icons/nimbus/96x96/places/ssh.png
 share/icons/nimbus/96x96/places/stock_folder.png
+share/icons/nimbus/96x96/places/trashcan_empty.png
 share/icons/nimbus/96x96/places/user-desktop.png
 share/icons/nimbus/96x96/places/user-home.png
+share/icons/nimbus/96x96/places/user-trash-full.png
+share/icons/nimbus/96x96/places/user-trash.png
 share/icons/nimbus/96x96/places/web.png
+share/icons/nimbus/96x96/places/xfce-trash_empty.png
 share/icons/nimbus/index.theme
 share/themes/nimbus/gtk-2.0/about.png
 share/themes/nimbus/gtk-2.0/add.png
@@ -2792,6 +2831,28 @@ share/themes/nimbus/gtk-2.0/zoom-in.png
 share/themes/nimbus/gtk-2.0/zoom-original.png
 share/themes/nimbus/gtk-2.0/zoom-out.png
 share/themes/nimbus/index.theme
+share/themes/nimbus/metacity-1/button-close-icon-prelight.png
+share/themes/nimbus/metacity-1/button-close-icon-pressed.png
+share/themes/nimbus/metacity-1/button-close-icon-unfocused.png
+share/themes/nimbus/metacity-1/button-close-icon.png
+share/themes/nimbus/metacity-1/button-max-icon-prelight.png
+share/themes/nimbus/metacity-1/button-max-icon-pressed.png
+share/themes/nimbus/metacity-1/button-max-icon-unfocused.png
+share/themes/nimbus/metacity-1/button-max-icon.png
+share/themes/nimbus/metacity-1/button-menu-icon-prelight.png
+share/themes/nimbus/metacity-1/button-menu-icon-pressed.png
+share/themes/nimbus/metacity-1/button-menu-icon-unfocused.png
+share/themes/nimbus/metacity-1/button-menu-icon.png
+share/themes/nimbus/metacity-1/button-min-icon-prelight.png
+share/themes/nimbus/metacity-1/button-min-icon-pressed.png
+share/themes/nimbus/metacity-1/button-min-icon-unfocused.png
+share/themes/nimbus/metacity-1/button-min-icon.png
+share/themes/nimbus/metacity-1/button-unmax-icon-prelight.png
+share/themes/nimbus/metacity-1/button-unmax-icon-pressed.png
+share/themes/nimbus/metacity-1/button-unmax-icon-unfocused.png
+share/themes/nimbus/metacity-1/button-unmax-icon.png
+share/themes/nimbus/metacity-1/metacity-theme-1.xml
+@dirrm share/themes/nimbus/metacity-1
 @dirrm share/themes/nimbus/gtk-2.0
 @dirrm share/themes/nimbus
 @dirrm share/icons/nimbus/96x96/places
@@ -2812,6 +2873,7 @@ share/themes/nimbus/index.theme
 @dirrm share/icons/nimbus/48x48/devices
 @dirrm share/icons/nimbus/48x48/categories
 @dirrm share/icons/nimbus/48x48/apps
+@dirrm share/icons/nimbus/48x48/animations
 @dirrm share/icons/nimbus/48x48/actions
 @dirrm share/icons/nimbus/48x48
 @dirrm share/icons/nimbus/36x36/places
@@ -2819,6 +2881,7 @@ share/themes/nimbus/index.theme
 @dirrm share/icons/nimbus/36x36/devices
 @dirrm share/icons/nimbus/36x36/categories
 @dirrm share/icons/nimbus/36x36/apps
+@dirrm share/icons/nimbus/36x36/animations
 @dirrm share/icons/nimbus/36x36/actions
 @dirrm share/icons/nimbus/36x36
 @dirrm share/icons/nimbus/32x32/status
@@ -2837,6 +2900,7 @@ share/themes/nimbus/index.theme
 @dirrm share/icons/nimbus/24x24/devices
 @dirrm share/icons/nimbus/24x24/categories
 @dirrm share/icons/nimbus/24x24/apps
+@dirrm share/icons/nimbus/24x24/animations
 @dirrm share/icons/nimbus/24x24/actions
 @dirrm share/icons/nimbus/24x24
 @dirrm share/icons/nimbus/20x20/status
@@ -2861,6 +2925,3 @@ share/themes/nimbus/index.theme
 @dirrm share/icons/nimbus/12x12/actions
 @dirrm share/icons/nimbus/12x12
 @dirrm share/icons/nimbus
-@dirrm share/gnome/themes/nimbus/metacity-1
-@dirrm share/gnome/themes/nimbus
-@dirrmtry lib/locale

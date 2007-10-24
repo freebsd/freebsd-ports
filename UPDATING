@@ -7,6 +7,33 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20071024:
+  AFFECTS: All GNOME users and ports depend on gnomehier
+  AUTHOR: gnome@FreeBSD.org
+
+  GNOME has been updated to 2.20.1. All ports that depend on gnomehier have
+  had their DATADIR moved from share/gnome/ to share/ (e.g.
+  ${LOCALBASE}/share/gnome/ to ${LOCALBASE}/share/).
+  This puts the FreeBSD GNOME ports more in line with the default
+  GNOME installation hierarchy. To find the specific directories that
+  have changed, see misc/gnomehier/files/dirlist. To upgrade your
+  installed ports, you will need to use either sysutils/portupgrade or
+  sysutils/portmaster.
+
+    Portupgrade users:
+        # pkgdb -Ff
+        # portupgrade -o textproc/rarian textproc/scrollkeeper
+        # portupgrade -a
+
+    Portmaster users:
+        # portmaster -o textproc/rarian textproc/scrollkeeper
+        # portmaster -a
+
+  If some of icons, applets, themes or other customized items have
+  disappered from your desktop in this upgrade, you will need to
+  remove and re-add these items to make them appear again due to the
+  DATADIR change.
+
+20071024:
   AFFECTS: users of databases/mysql-connector-java
   AUTHOR: miwi@FreeBSD.org
 

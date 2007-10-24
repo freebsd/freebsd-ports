@@ -7,7 +7,7 @@
 
 PORTNAME=	ghfaxviewer
 PORTVERSION=	0.22.0
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	halifax
@@ -31,8 +31,5 @@ MAN1=	halifax.1 ghfaxviewer.1
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\(\$$(datadir)/\)gnome/|\1|g ; \
-		 s|\$$(datadir)/locale|$$(prefix)/share/locale|g'
 
 .include <bsd.port.mk>

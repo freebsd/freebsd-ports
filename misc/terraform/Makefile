@@ -8,7 +8,7 @@
 
 PORTNAME=	terraform
 PORTVERSION=	0.9.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,8 +32,6 @@ post-patch:
 		 s|#define  1|#define HAVE_LIB_TRIO 1|g ; \
 		 s|(HAVE_LIB_TRIO)||g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|malloc\.h|stdlib.h|g" ${WRKSRC}/src/xmlsupport.c
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|@datadir@/gnome/|@datadir@/|g'
 
 post-install:
 .if !defined(NOPORTDOCS)

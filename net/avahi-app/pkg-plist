@@ -1,0 +1,112 @@
+bin/avahi-browse
+bin/avahi-browse-domains
+bin/avahi-publish
+bin/avahi-publish-address
+bin/avahi-publish-service
+bin/avahi-resolve
+bin/avahi-resolve-address
+bin/avahi-resolve-host-name
+bin/avahi-set-host-name
+etc/avahi/avahi-daemon.conf
+etc/avahi/avahi-dnsconfd.action
+etc/avahi/hosts
+etc/avahi/services/sftp-ssh.service
+etc/avahi/services/ssh.service
+etc/dbus-1/system.d/avahi-dbus.conf
+etc/rc.d/avahi-daemon.sh
+etc/rc.d/avahi-dnsconfd.sh
+include/avahi-client/client.h
+include/avahi-client/lookup.h
+include/avahi-client/publish.h
+include/avahi-common/address.h
+include/avahi-common/alternative.h
+include/avahi-common/cdecl.h
+include/avahi-common/defs.h
+include/avahi-common/domain.h
+include/avahi-common/error.h
+include/avahi-common/gccmacro.h
+include/avahi-common/llist.h
+include/avahi-common/malloc.h
+include/avahi-common/rlist.h
+include/avahi-common/simple-watch.h
+include/avahi-common/strlst.h
+include/avahi-common/thread-watch.h
+include/avahi-common/timeval.h
+include/avahi-common/watch.h
+include/avahi-compat-howl/corby/buffer.h
+include/avahi-compat-howl/corby/channel.h
+include/avahi-compat-howl/corby/corby.h
+include/avahi-compat-howl/corby/message.h
+include/avahi-compat-howl/corby/object.h
+include/avahi-compat-howl/corby/orb.h
+include/avahi-compat-howl/discovery/discovery.h
+include/avahi-compat-howl/discovery/text_record.h
+include/avahi-compat-howl/howl.h
+include/avahi-compat-howl/rendezvous/rendezvous.h
+include/avahi-compat-howl/rendezvous/text_record.h
+include/avahi-compat-howl/salt/address.h
+include/avahi-compat-howl/salt/debug.h
+include/avahi-compat-howl/salt/interface.h
+include/avahi-compat-howl/salt/platform.h
+include/avahi-compat-howl/salt/salt.h
+include/avahi-compat-howl/salt/signal.h
+include/avahi-compat-howl/salt/socket.h
+include/avahi-compat-howl/salt/time.h
+include/avahi-core/core.h
+include/avahi-core/log.h
+include/avahi-core/lookup.h
+include/avahi-core/publish.h
+include/avahi-core/rr.h
+include/avahi-glib/glib-malloc.h
+include/avahi-glib/glib-watch.h
+lib/libavahi-client.a
+lib/libavahi-client.la
+lib/libavahi-client.so
+lib/libavahi-client.so.3
+lib/libavahi-common.a
+lib/libavahi-common.la
+lib/libavahi-common.so
+lib/libavahi-common.so.3
+lib/libavahi-core.a
+lib/libavahi-core.la
+lib/libavahi-core.so
+lib/libavahi-core.so.5
+lib/libavahi-glib.a
+lib/libavahi-glib.la
+lib/libavahi-glib.so
+lib/libavahi-glib.so.1
+lib/libhowl.a
+lib/libhowl.la
+lib/libhowl.so
+lib/libhowl.so.0
+libdata/pkgconfig/avahi-client.pc
+libdata/pkgconfig/avahi-compat-howl.pc
+libdata/pkgconfig/avahi-core.pc
+libdata/pkgconfig/avahi-glib.pc
+sbin/avahi-daemon
+sbin/avahi-dnsconfd
+%%DATADIR%%/avahi-service.dtd
+%%DATADIR%%/introspection/AddressResolver.introspect
+%%DATADIR%%/introspection/DomainBrowser.introspect
+%%DATADIR%%/introspection/EntryGroup.introspect
+%%DATADIR%%/introspection/HostNameResolver.introspect
+%%DATADIR%%/introspection/RecordBrowser.introspect
+%%DATADIR%%/introspection/Server.introspect
+%%DATADIR%%/introspection/ServiceBrowser.introspect
+%%DATADIR%%/introspection/ServiceResolver.introspect
+%%DATADIR%%/introspection/ServiceTypeBrowser.introspect
+%%DATADIR%%/service-types
+@dirrm %%DATADIR%%/introspection
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrm include/avahi-glib
+@dirrm include/avahi-core
+@dirrm include/avahi-compat-howl/salt
+@dirrm include/avahi-compat-howl/rendezvous
+@dirrm include/avahi-compat-howl/discovery
+@dirrm include/avahi-compat-howl/corby
+@dirrm include/avahi-compat-howl
+@dirrm include/avahi-common
+@dirrm include/avahi-client
+@dirrm etc/avahi/services
+@dirrm etc/avahi

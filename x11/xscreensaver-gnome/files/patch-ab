@@ -9,12 +9,3 @@
      OBJCC="$OBJCC -Wall"
      # supposedly gcc 3.4 will have "-Wdeclaration-after-statement"
      # and then perhaps we can do without -pedantic?
-@@ -14516,7 +14516,7 @@
-   GTK_DATADIR=""
-   if test "$have_gtk" = yes; then
-     GTK_DATADIR=`$pkg_config --variable=prefix gtk+-2.0`
--    GTK_DATADIR="$GTK_DATADIR/share"
-+    GTK_DATADIR="$GTK_DATADIR/share/gnome"
-   fi
- 
-   if test "$have_gtk" = yes; then

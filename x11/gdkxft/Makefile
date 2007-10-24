@@ -7,7 +7,7 @@
 
 PORTNAME=	gdkxft
 PORTVERSION=	1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ WANT_GNOME=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnuregex -liconv" \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnuregex -liconv" \
 		CFLAGS="${CFLAGS} `pkg-config xft --cflags`"
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/bin
 USE_LDCONFIG=	yes
@@ -49,7 +49,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|src capplet|src @BUILD_CAPPLET_TRUE@capplet|g ; \
 		 s|DESTDIR)\$$(datadir|DESTDIR)\$$(pkgdatadir|g ; \
-		 s|/gnome/apps/|/apps/|g ; \
 		 s|la_LDFLAGS =.*$$|la_LDFLAGS = -module -avoid-version|g'
 .for file in gdkxft_sysinstall.in gdkxft.c generate.pl
 	@${REINPLACE_CMD} -e 's|<regex.h>|<gnuregex.h>|g ; \

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnometelnet
 PORTVERSION=	2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.cyest.org/downloads/
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
@@ -34,11 +34,11 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/gnome/apps/Internet
 	${INSTALL_DATA} ${WRKSRC}/share/GTelnet.desktop \
 		${PREFIX}/share/gnome/apps/Internet
-	@${MKDIR} ${PREFIX}/share/gnome/pixmaps
+	@${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/share/*.png \
-		${PREFIX}/share/gnome/pixmaps
-	@${MKDIR} ${PREFIX}/share/gnome/pixmaps/gnome-telnet
+		${PREFIX}/share/pixmaps
+	@${MKDIR} ${PREFIX}/share/pixmaps/gnome-telnet
 	${INSTALL_DATA} ${WRKSRC}/share/*.jpg \
-		${PREFIX}/share/gnome/pixmaps/gnome-telnet
+		${PREFIX}/share/pixmaps/gnome-telnet
 
 .include <bsd.port.mk>

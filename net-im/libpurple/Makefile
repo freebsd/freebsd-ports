@@ -3,12 +3,12 @@
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net-im/libgaim/Makefile,v 1.10 2007/03/11 06:36:56 marcus Exp $
+#   $MCom: ports/net-im/libpurple/Makefile,v 1.27 2007/10/11 16:32:55 marcus Exp $
 #
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.2.1
-PORTREVISION?=	0
+PORTREVISION?=	2
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pidgin
@@ -24,8 +24,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
 		--disable-consoleui \
 		--with-dynamic_prpls=${PRPL_MODULES}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		PTHREAD_LIB="${PTHREAD_LIBS}"
 
 .if !defined(PIDGIN_SLAVE)

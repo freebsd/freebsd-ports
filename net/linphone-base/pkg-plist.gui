@@ -1,18 +1,18 @@
 bin/linphone
 libdata/bonobo/servers/GNOME_LinphoneApplet.server
 libexec/linphone_applet
-share/gnome/applications/linphone.desktop
-share/gnome/applications/linphone_applet.desktop
-share/gnome/gnome-2.0/ui/GNOME_LinphoneApplet.xml
-share/gnome/pixmaps/linphone/linphone.png
-share/gnome/pixmaps/linphone/linphone2.png
-share/gnome/pixmaps/linphone/linphone2.xpm
-share/gnome/pixmaps/linphone/sip-away.png
-share/gnome/pixmaps/linphone/sip-bifm.png
-share/gnome/pixmaps/linphone/sip-busy.png
-share/gnome/pixmaps/linphone/sip-closed.png
-share/gnome/pixmaps/linphone/sip-online.png
-share/gnome/pixmaps/linphone/sip-otl.png
-share/gnome/pixmaps/linphone/sip-otp.png
-share/gnome/pixmaps/linphone/sip-wfa.png
-@dirrm share/gnome/pixmaps/linphone
+share/applications/linphone.desktop
+share/applications/linphone_applet.desktop
+share/gnome-2.0/ui/GNOME_LinphoneApplet.xml
+share/pixmaps/linphone/linphone.png
+share/pixmaps/linphone/linphone2.png
+share/pixmaps/linphone/linphone2.xpm
+share/pixmaps/linphone/sip-away.png
+share/pixmaps/linphone/sip-bifm.png
+share/pixmaps/linphone/sip-busy.png
+share/pixmaps/linphone/sip-closed.png
+share/pixmaps/linphone/sip-online.png
+share/pixmaps/linphone/sip-otl.png
+share/pixmaps/linphone/sip-otp.png
+share/pixmaps/linphone/sip-wfa.png
+@dirrm share/pixmaps/linphone

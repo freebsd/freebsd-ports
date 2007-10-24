@@ -7,7 +7,7 @@
 
 PORTNAME=	recentlyused
 PORTVERSION=	0.6
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -24,7 +24,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 NAME=		RecentlyUsed
-DATADIR=	${PREFIX}/share/gnome
+DATADIR=	${PREFIX}/share
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}

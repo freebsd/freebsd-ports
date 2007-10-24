@@ -1,34 +1,35 @@
 bin/etherape
 etc/etherape/services
-share/gnome/applications/etherape.desktop
-share/gnome/etherape/doc/etherape/C/etherape.xml
-share/gnome/etherape/doc/etherape/C/figures/appmain.png
-share/gnome/etherape/doc/etherape/C/figures/capture_file_dlg.png
-share/gnome/etherape/doc/etherape/C/figures/color_select_dlg.png
-share/gnome/etherape/doc/etherape/C/figures/eth_toolbar.png
-share/gnome/etherape/doc/etherape/C/figures/link_info.png
-share/gnome/etherape/doc/etherape/C/figures/node_info.png
-share/gnome/etherape/doc/etherape/C/figures/pref_colors_dlg.png
-share/gnome/etherape/doc/etherape/C/figures/pref_diagram_dlg.png
-share/gnome/etherape/doc/etherape/C/figures/pref_timings_dlg.png
-share/gnome/etherape/doc/etherape/C/figures/proto_info.png
-share/gnome/etherape/doc/etherape/C/figures/protocol_edit_dlg.png
-share/gnome/etherape/glade/etherape.glade2
-share/gnome/etherape/glade/etherape.png
-share/gnome/etherape/glade/pause.xpm
-share/gnome/etherape/glade/play.xpm
-share/gnome/etherape/glade/stop.xpm
-share/gnome/omf/etherape/etherape-C.omf
-share/gnome/pixmaps/etherape.png
+share/applications/etherape.desktop
+share/etherape/doc/etherape/C/etherape.xml
+share/etherape/doc/etherape/C/figures/appmain.png
+share/etherape/doc/etherape/C/figures/capture_file_dlg.png
+share/etherape/doc/etherape/C/figures/color_select_dlg.png
+share/etherape/doc/etherape/C/figures/eth_toolbar.png
+share/etherape/doc/etherape/C/figures/link_info.png
+share/etherape/doc/etherape/C/figures/node_info.png
+share/etherape/doc/etherape/C/figures/pref_colors_dlg.png
+share/etherape/doc/etherape/C/figures/pref_diagram_dlg.png
+share/etherape/doc/etherape/C/figures/pref_timings_dlg.png
+share/etherape/doc/etherape/C/figures/proto_info.png
+share/etherape/doc/etherape/C/figures/protocol_edit_dlg.png
+share/etherape/glade/etherape.glade2
+share/etherape/glade/etherape.png
+share/etherape/glade/pause.xpm
+share/etherape/glade/play.xpm
+share/etherape/glade/stop.xpm
+share/omf/etherape/etherape-C.omf
+share/pixmaps/etherape.png
 share/locale/es/LC_MESSAGES/etherape.mo
 share/locale/fr/LC_MESSAGES/etherape.mo
 share/locale/nl/LC_MESSAGES/etherape.mo
 share/locale/tr/LC_MESSAGES/etherape.mo
-@dirrm share/gnome/omf/etherape
-@dirrm share/gnome/etherape/glade
-@dirrm share/gnome/etherape/doc/etherape/C/figures
-@dirrm share/gnome/etherape/doc/etherape/C
-@dirrm share/gnome/etherape/doc/etherape
-@dirrm share/gnome/etherape/doc
-@dirrm share/gnome/etherape
+@dirrm share/omf/etherape
+@dirrm share/etherape/glade
+@dirrm share/etherape/doc/etherape/C/figures
+@dirrm share/etherape/doc/etherape/C
+@dirrm share/etherape/doc/etherape
+@dirrm share/etherape/doc
+@dirrm share/etherape
 @dirrm etc/etherape
+@dirrmtry share/applications

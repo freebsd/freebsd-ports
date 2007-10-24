@@ -1,6 +1,7 @@
 bin/gregexp
-share/gnome/applications/gregexp.desktop
-share/gnome/pixmaps/gregexp.png
-share/gnome/gregexp/glade/gregexp.glade
-@dirrm share/gnome/gregexp/glade
-@dirrm share/gnome/gregexp
+share/applications/gregexp.desktop
+share/pixmaps/gregexp.png
+share/gregexp/glade/gregexp.glade
+@dirrm share/gregexp/glade
+@dirrm share/gregexp
+@dirrmtry share/applications

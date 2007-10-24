@@ -396,9 +396,9 @@
 +	return list;
 +}
 +#endif /* __FreeBSD__ */
---- cpufreq/src/Makefile.in.orig	Mon Mar 12 11:58:09 2007
-+++ cpufreq/src/Makefile.in	Mon Mar 12 12:12:06 2007
-@@ -62,7 +62,8 @@ am__cpufreq_applet_SOURCES_DIST = cpufre
+--- cpufreq/src/Makefile.in.orig	2007-07-30 21:06:58.000000000 -0400
++++ cpufreq/src/Makefile.in	2007-07-30 21:06:58.000000000 -0400
+@@ -61,7 +61,8 @@ am__cpufreq_applet_SOURCES_DIST = cpufre
  	cpufreq-monitor-procfs.h cpufreq-monitor-sysfs.c \
  	cpufreq-monitor-sysfs.h cpufreq-monitor-libcpufreq.c \
  	cpufreq-monitor-libcpufreq.h cpufreq-monitor-cpuinfo.c \
@@ -408,7 +408,7 @@
  @HAVE_LIBCPUFREQ_TRUE@am__objects_1 =  \
  @HAVE_LIBCPUFREQ_TRUE@	cpufreq-monitor-libcpufreq.$(OBJEXT)
  am_cpufreq_applet_OBJECTS = cpufreq-applet.$(OBJEXT) \
-@@ -71,7 +72,8 @@ am_cpufreq_applet_OBJECTS = cpufreq-appl
+@@ -70,7 +71,8 @@ am_cpufreq_applet_OBJECTS = cpufreq-appl
  	cpufreq-monitor-factory.$(OBJEXT) \
  	cpufreq-monitor-procfs.$(OBJEXT) \
  	cpufreq-monitor-sysfs.$(OBJEXT) $(am__objects_1) \
@@ -418,15 +418,7 @@
  cpufreq_applet_OBJECTS = $(am_cpufreq_applet_OBJECTS)
  am__DEPENDENCIES_1 =
  cpufreq_applet_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-@@ -85,6 +87,7 @@ am__depfiles_maybe = depfiles
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor-libcpufreq.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor-procfs.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor-sysfs.Po \
-+@AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor-sysctl.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-popup.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-prefs.Po \
-@@ -411,6 +414,7 @@ cpufreq_applet_SOURCES = \
+@@ -402,6 +404,7 @@ cpufreq_applet_SOURCES = \
  	cpufreq-monitor.c       	cpufreq-monitor.h	      	\
  	cpufreq-monitor-factory.c	cpufreq-monitor-factory.h	\
  	cpufreq-monitor-procfs.c	cpufreq-monitor-procfs.h	\
@@ -434,7 +426,7 @@
  	cpufreq-monitor-sysfs.c	        cpufreq-monitor-sysfs.h	        \
  	$(cpufreq_files)						\
  	cpufreq-monitor-cpuinfo.c       cpufreq-monitor-cpuinfo.h
-@@ -496,6 +500,7 @@ distclean-compile:
+@@ -487,6 +490,7 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-factory.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-libcpufreq.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-procfs.Po@am__quote@

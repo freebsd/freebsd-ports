@@ -1,5 +1,5 @@
---- src/oobs-group.c.orig	Fri Sep 15 18:41:04 2006
-+++ src/oobs-group.c	Tue Oct 31 23:12:40 2006
+--- oobs/oobs-group.c.orig	Fri Sep 15 18:41:04 2006
++++ oobs/oobs-group.c	Tue Oct 31 23:12:40 2006
 @@ -18,7 +18,12 @@
   * Authors: Carlos Garnacho Parro  <carlosg@gnome.org>
   */

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnugadu2
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggadu
@@ -170,7 +171,7 @@ post-patch:
 post-install:
 .if (${HAVE_GNOME:Mgnomehier}!="")
 	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${LOCALBASE}/share/gnome/apps/Internet
-	${LN} -sf ${PREFIX}/share/pixmaps/gg2.png ${LOCALBASE}/share/gnome/pixmaps
+	${LN} -sf ${PREFIX}/share/pixmaps/gg2.png ${LOCALBASE}/share/pixmaps
 .endif
 .if exists(${LOCALBASE}/lib/libkdecore.so)
 	${INSTALL_DATA} ${WRKSRC}/gg2.desktop ${LOCALBASE}/share/applnk/Internet

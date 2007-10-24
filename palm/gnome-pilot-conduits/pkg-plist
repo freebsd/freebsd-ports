@@ -13,12 +13,12 @@ lib/gnome-pilot/conduits/libmemo_file_conduit.so
 lib/gnome-pilot/conduits/libtime_conduit.a
 lib/gnome-pilot/conduits/libtime_conduit.la
 lib/gnome-pilot/conduits/libtime_conduit.so
-share/gnome/gnome-pilot/conduits/expense.conduit
-share/gnome/gnome-pilot/conduits/mal.conduit
-share/gnome/gnome-pilot/conduits/memofile.conduit
-share/gnome/gnome-pilot/conduits/sendmail.conduit
-share/gnome/gnome-pilot/conduits/time.conduit
-share/gnome/pixmaps/avantgo.png
+share/gnome-pilot/conduits/expense.conduit
+share/gnome-pilot/conduits/mal.conduit
+share/gnome-pilot/conduits/memofile.conduit
+share/gnome-pilot/conduits/sendmail.conduit
+share/gnome-pilot/conduits/time.conduit
+share/pixmaps/avantgo.png
 share/locale/ar/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/az/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/be/LC_MESSAGES/gnome-pilot-conduits.mo
@@ -65,7 +65,11 @@ share/locale/xh/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-pilot-conduits.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-pilot-conduits.mo
+@dirrm share/gnome-pilot/conduits
+@dirrm lib/gnome-pilot/conduits
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrm share/gnome/gnome-pilot/conduits
-@dirrm lib/gnome-pilot/conduits
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw

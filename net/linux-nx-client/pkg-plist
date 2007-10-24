@@ -74,12 +74,10 @@ lib/linux-nx-client/share/keys/server.id_dsa.key
 @dirrm lib/linux-nx-client/share
 @dirrm lib/linux-nx-client
 @cwd %%LOCALBASE%%
-share/gnome/pixmaps/nx-desktop.png
-share/gnome/pixmaps/nx.png
-share/gnome/pixmaps/nxclient-admin.png
-share/gnome/pixmaps/nxclient-wizard.png
-@dirrmtry share/gnome/pixmaps
-@dirrmtry share/gnome
+share/pixmaps/nx-desktop.png
+share/pixmaps/nx.png
+share/pixmaps/nxclient-admin.png
+share/pixmaps/nxclient-wizard.png
 share/icons/crystalsvg/48x48/nx-desktop.png
 share/icons/crystalsvg/32x32/nx.png
 share/icons/crystalsvg/32x32/nxclient-admin.png

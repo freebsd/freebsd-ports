@@ -3,12 +3,11 @@
 # Whom:			Dave McKay <dave@mu.org>
 #
 # $FreeBSD$
-#   $MCom: ports/security/seahorse/Makefile,v 1.31 2007/03/15 16:34:55 marcus Exp $
+#   $MCom: ports/security/seahorse/Makefile,v 1.47 2007/10/15 17:59:07 mezz Exp $
 #
 
 PORTNAME=	seahorse
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	2.20.1
 CATEGORIES=	security gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,8 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME application for managing encryption keys (PGP, SSH)
 
-BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
-RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
+BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme \
     		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
@@ -42,12 +41,12 @@ MAN1=		seahorse-agent.1 seahorse-daemon.1 seahorse-tool.1
 OPTIONS=	NAUTILUS "Enable the Nautilus component" on \
 		LDAP "Enable LDAP support" on \
 		HKP "Enable HKP keyserver interface" on \
-		GEDIT "Enable GEdit plug-in support" on \
+		EPIPHANY "Enable Epiphany plug-in support" on \
 		NOTIFY "Enable libnotify support" on \
 		APPLET "Enable clipboard encryption applet" on \
 		KEYRING "Enable GNOME Keyring support" on \
 		MDNS "Enable mDNS key sharing" on \
-		EPIPHANY "Enable Epiphany plug-in support" on
+		GEDIT "Enable GEdit plug-in support" on
 
 .include <bsd.port.pre.mk>
 
@@ -93,7 +92,7 @@ CONFIGURE_ARGS+=--disable-libnotify
 .if !defined(WITHOUT_EPIPHANY)
 BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
-PLIST_SUB+=	EPHY="" EPHY_VERSION="2.18"
+PLIST_SUB+=	EPHY="" EPHY_VERSION="2.20"
 .else
 CONFIGURE_ARGS+=--disable-epiphany
 PLIST_SUB+=	EPHY="@comment "
@@ -118,6 +117,10 @@ LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi
 .else
 CONFIGURE_ARGS+=--disable-sharing
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|" == "|" = "|g' \
+			${WRKSRC}/configure
 
 post-install:
 	-@update-desktop-database

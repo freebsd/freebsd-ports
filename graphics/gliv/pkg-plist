@@ -1,6 +1,6 @@
 bin/gliv
-share/gnome/applications/gliv.desktop
-share/gnome/pixmaps/gliv.png
+share/applications/gliv.desktop
+share/pixmaps/gliv.png
 share/locale/bg/LC_MESSAGES/gliv.mo
 share/locale/de/LC_MESSAGES/gliv.mo
 share/locale/fr/LC_MESSAGES/gliv.mo
@@ -21,3 +21,4 @@ share/locale/vi/LC_MESSAGES/gliv.mo
 @dirrmtry man/de
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/applications

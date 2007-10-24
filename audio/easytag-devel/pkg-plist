@@ -1,8 +1,8 @@
 bin/easytag
-share/gnome/applications/easytag.desktop
-share/gnome/easytag/ChangeLog
-share/gnome/easytag/EasyTAG_logo.xpm
-share/gnome/pixmaps/EasyTAG.xpm
+share/applications/easytag.desktop
+share/easytag/ChangeLog
+share/easytag/EasyTAG_logo.xpm
+share/pixmaps/EasyTAG.xpm
 share/locale/bg/LC_MESSAGES/easytag.mo
 share/locale/cs/LC_MESSAGES/easytag.mo
 share/locale/da/LC_MESSAGES/easytag.mo
@@ -22,6 +22,7 @@ share/locale/ru/LC_MESSAGES/easytag.mo
 share/locale/sv/LC_MESSAGES/easytag.mo
 share/locale/uk/LC_MESSAGES/easytag.mo
 share/locale/zh_CN/LC_MESSAGES/easytag.mo
-@dirrm share/gnome/easytag
+@dirrm share/easytag
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/applications

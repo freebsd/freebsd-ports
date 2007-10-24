@@ -32,4 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 INFO=		mdk
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure
+
 .include <bsd.port.mk>

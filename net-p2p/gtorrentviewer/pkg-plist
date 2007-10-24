@@ -16,9 +16,10 @@ share/GTorrentViewer/pixmaps/warning.png
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/gnome/applications/gtorrentviewer.desktop
-share/gnome/pixmaps/gtorrentviewer.png
-share/gnome/pixmaps/gtorrentviewer.xpm
+share/applications/gtorrentviewer.desktop
+share/pixmaps/gtorrentviewer.png
+share/pixmaps/gtorrentviewer.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/GTorrentViewer/pixmaps
 @dirrm share/GTorrentViewer
+@dirrmtry share/applications

@@ -169,8 +169,8 @@
 -	then
 -	    # /opt/gnome icon
 -	    if test ! -d /opt/gnome/share/pixmaps/
-+	    # %%LOCALBASE%%/share/gnome icon
-+	    if test ! -d %%LOCALBASE%%/share/gnome/pixmaps/;
++	    # %%LOCALBASE%%/share icon
++	    if test ! -d %%LOCALBASE%%/share/pixmaps/;
  	    then
 -		if test -w /opt/gnome/share
 +		if test -w %%LOCALBASE%%/share/gnome;
@@ -178,17 +178,17 @@
 -		    mkdir $mkdirv $mkdirp /opt/gnome/share/pixmaps/
 -		    chmod $chmodv 755 /opt/gnome/share/pixmaps
 -		    cp $cpv $share_dir/images/opera.xpm /opt/gnome/share/pixmaps/opera.xpm
-+		    mkdir $mkdirv $mkdirp %%LOCALBASE%%/share/gnome/pixmaps/
-+		    chmod $chmodv 755 %%LOCALBASE%%/share/gnome/pixmaps
-+		    cp $cpv $share_dir/images/opera.xpm %%LOCALBASE%%/share/gnome/pixmaps/opera.xpm
++		    mkdir $mkdirv $mkdirp %%LOCALBASE%%/share/pixmaps/
++		    chmod $chmodv 755 %%LOCALBASE%%/share/pixmaps
++		    cp $cpv $share_dir/images/opera.xpm %%LOCALBASE%%/share/pixmaps/opera.xpm
  		fi
 -	    elif test -w /opt/gnome/share/pixmaps
 -	    then cp $cpv $share_dir/images/opera.xpm /opt/gnome/share/pixmaps/opera.xpm
-+	    elif test -w %%LOCALBASE%%/share/gnome/pixmaps
-+	    then cp $cpv $share_dir/images/opera.xpm %%LOCALBASE%%/share/gnome/pixmaps/opera.xpm
++	    elif test -w %%LOCALBASE%%/share/pixmaps
++	    then cp $cpv $share_dir/images/opera.xpm %%LOCALBASE%%/share/pixmaps/opera.xpm
  	    fi
 -	    # end /opt/gnome icon
-+	    # end %%LOCALBASE%%/share/gnome icon
++	    # end %%LOCALBASE%%/share icon
  
 -	    # /opt/gnome link
 -	    if test -d /opt/gnome/share/gnome/apps/

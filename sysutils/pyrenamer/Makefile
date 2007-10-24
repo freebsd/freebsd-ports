@@ -3,11 +3,12 @@
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/sysutils/pyrenamer/Makefile,v 1.1 2007/08/14 21:33:09 mezz Exp $
 #
 
 PORTNAME=	pyrenamer
 DISTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils python gnome
 MASTER_SITES=	http://www.infinicode.org/code/${PORTNAME}/
 

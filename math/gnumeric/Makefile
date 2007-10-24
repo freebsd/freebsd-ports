@@ -3,11 +3,12 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
-#   $MCom: ports/math/gnumeric/Makefile,v 1.28 2007/03/06 17:06:53 marcus Exp $
+#   $MCom: ports/math/gnumeric/Makefile,v 1.39 2007/09/16 21:42:03 marcus Exp $
 #
 
 PORTNAME=	gnumeric
 PORTVERSION=	1.7.12
+PORTREVISION=	1
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -59,10 +60,10 @@ post-patch:
 	@${RM} -f ${WRKSRC}/GNOME_Gnumeric.server.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/gnumeric.desktop ${PREFIX}/share/gnome/applications
-	${INSTALL_DATA} ${WRKSRC}/gnumeric.mime ${PREFIX}/share/gnome/mime-info
+	${INSTALL_DATA} ${WRKSRC}/gnumeric.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/gnumeric.mime ${PREFIX}/share/mime-info
 	@-update-desktop-database
-.for dir in share/gnome lib
+.for dir in share lib
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${dir}/gnumeric
 .endfor
 

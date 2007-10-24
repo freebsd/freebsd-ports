@@ -8,8 +8,8 @@ libexec/bubblemon-gnome2
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-share/gnome/gnome-2.0/ui/GNOME_BubblemonApplet.xml
-share/gnome/pixmaps/bubblemon.png
+share/gnome-2.0/ui/GNOME_BubblemonApplet.xml
+share/pixmaps/bubblemon.png
 share/locale/ca/LC_MESSAGES/bubblemon.mo
 share/locale/da/LC_MESSAGES/bubblemon.mo
 share/locale/de/LC_MESSAGES/bubblemon.mo

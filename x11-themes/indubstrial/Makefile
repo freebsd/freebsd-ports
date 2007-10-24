@@ -7,7 +7,7 @@
 
 PORTNAME=	indubstrial
 PORTVERSION=	0.3.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.gnome.org/~jdub/2004/indubstrial/
 
@@ -17,6 +17,10 @@ COMMENT=	A clean, clear modification on the Industrial GTK+ and Metacity themes
 RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras \
 		${LOCALBASE}/lib/gtk/themes/engines/libindustrial.so:${PORTSDIR}/x11-themes/gtk-industrial-theme
 
+BROKEN=		gnome-themes-extras no longer has industrial engine
+DEPRECATED=	yes
+EXPIRATION_DATE=2007-11-22
+
 WRKSRC=		${WRKDIR}/Indubstrial
 NO_BUILD=	yes
 USE_XLIB=	yes
@@ -25,13 +29,13 @@ USE_GNOME=	gnomehack gnomeprefix metacity
 do-install:
 	${MKDIR} ${PREFIX}/share/themes/Indubstrial/gtk-2.0
 	${MKDIR} ${PREFIX}/share/themes/Indubstrial/gtk
-	${MKDIR} ${PREFIX}/share/gnome/themes/Indubstrial/metacity-1
+	${MKDIR} ${PREFIX}/share/themes/Indubstrial/metacity-1
 	${INSTALL_DATA} ${WRKSRC}/gtk-2.0/gtkrc \
 		${PREFIX}/share/themes/Indubstrial/gtk-2.0
 	${INSTALL_DATA} ${WRKSRC}/gtk/gtkrc \
 		${PREFIX}/share/themes/Indubstrial/gtk
 	${INSTALL_DATA} ${WRKSRC}/metacity-1/metacity-theme-1.xml \
-		${PREFIX}/share/gnome/themes/Indubstrial/metacity-1
+		${PREFIX}/share/themes/Indubstrial/metacity-1
 	${INSTALL_DATA} ${WRKSRC}/index.theme \
 		${PREFIX}/share/themes/Indubstrial
 

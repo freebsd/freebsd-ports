@@ -7,7 +7,7 @@
 
 PORTNAME=	gdmap
 PORTVERSION=	0.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gdmap
@@ -28,5 +28,7 @@ MAN1=	gdmap.1
 post-patch:
 	@${REINPLACE_CMD} -e 's,<sys/vfs.h>,<sys/statvfs.h>,' \
 		${WRKSRC}/src/gui_main.c
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

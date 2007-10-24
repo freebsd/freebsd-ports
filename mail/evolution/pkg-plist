@@ -1,5 +1,4 @@
 bin/evolution
-bin/evolution-%%VERSION%%
 include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-config.h
 include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-menu.h
 include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-popup.h
@@ -23,7 +22,6 @@ include/evolution-%%VERSION%%/e-util/e-error.h
 include/evolution-%%VERSION%%/e-util/e-event.h
 include/evolution-%%VERSION%%/e-util/e-folder-map.h
 include/evolution-%%VERSION%%/e-util/e-fsutils.h
-include/evolution-%%VERSION%%/e-util/e-gtk-utils.h
 include/evolution-%%VERSION%%/e-util/e-gui-utils.h
 include/evolution-%%VERSION%%/e-util/e-html-utils.h
 include/evolution-%%VERSION%%/e-util/e-icon-factory.h
@@ -103,7 +101,6 @@ include/evolution-%%VERSION%%/misc/e-cell-date-edit.h
 include/evolution-%%VERSION%%/misc/e-cell-percent.h
 include/evolution-%%VERSION%%/misc/e-cell-renderer-combo.h
 include/evolution-%%VERSION%%/misc/e-charset-picker.h
-include/evolution-%%VERSION%%/misc/e-clipped-label.h
 include/evolution-%%VERSION%%/misc/e-colors.h
 include/evolution-%%VERSION%%/misc/e-combo-button.h
 include/evolution-%%VERSION%%/misc/e-combo-cell-editable.h
@@ -129,12 +126,12 @@ include/evolution-%%VERSION%%/misc/e-selection-model-array.h
 include/evolution-%%VERSION%%/misc/e-selection-model-simple.h
 include/evolution-%%VERSION%%/misc/e-selection-model.h
 include/evolution-%%VERSION%%/misc/e-send-options.h
+include/evolution-%%VERSION%%/misc/e-spinner.c
+include/evolution-%%VERSION%%/misc/e-spinner.h
 include/evolution-%%VERSION%%/misc/e-task-bar.h
 include/evolution-%%VERSION%%/misc/e-task-widget.h
 include/evolution-%%VERSION%%/misc/e-unicode.h
 include/evolution-%%VERSION%%/misc/e-url-entry.h
-include/evolution-%%VERSION%%/misc/gal-combo-box.h
-include/evolution-%%VERSION%%/misc/gal-combo-text.h
 include/evolution-%%VERSION%%/shell/Evolution.h
 include/evolution-%%VERSION%%/shell/e-component-view.h
 include/evolution-%%VERSION%%/shell/e-shell-utils.h
@@ -298,10 +295,13 @@ lib/evolution/%%VERSION%%/libfilter.so.0
 lib/evolution/%%VERSION%%/libmenus.la
 lib/evolution/%%VERSION%%/libmenus.so
 lib/evolution/%%VERSION%%/libmenus.so.0
+lib/evolution/%%VERSION%%/plugins/attachment-reminder.glade
 lib/evolution/%%VERSION%%/plugins/libmail-account-disable.la
 lib/evolution/%%VERSION%%/plugins/libmail-account-disable.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-addressbook-file.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-addressbook-file.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-backup-restore.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-backup-restore.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-calendar-file.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-calendar-file.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-calendar-http.la
@@ -314,6 +314,8 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-default-mailer.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-default-mailer.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-default-source.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-default-source.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-attachment-reminder.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-attachment-reminder.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-bbdb.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-bbdb.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-caldav.la
@@ -326,6 +328,8 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-startup-wizard.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-startup-wizard.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-exchange-operations.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-exchange-operations.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-face.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-face.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-groupwise-features.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-groupwise-features.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-gw-account-setup.la
@@ -334,6 +338,8 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-imap-features.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-imap-features.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-itip-formatter.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-itip-formatter.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-mail-notification.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-mail-notification.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-mail-to-task.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-mail-to-task.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-mailing-list-actions.la
@@ -361,6 +367,8 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-select-one-source.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-subject-thread.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-subject-thread.so
 lib/evolution/%%VERSION%%/plugins/org-gnome-addressbook-file.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-backup-restore.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-backup-restore.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-calendar-file.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-calendar-http.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-calendar-weather.eplug
@@ -368,6 +376,7 @@ lib/evolution/%%VERSION%%/plugins/org-gnome-compose-send-options.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-copy-tool.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-default-mailer.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-default-source.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-attachment-reminder.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-bbdb.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-caldav.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-hula-account-setup.eplug
@@ -377,6 +386,8 @@ lib/evolution/%%VERSION%%/plugins/org-gnome-exchange-ab-subscription.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-exchange-cal-subscription.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-exchange-operations.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-exchange-tasks-subscription.xml
+lib/evolution/%%VERSION%%/plugins/org-gnome-face-ui.xml
+lib/evolution/%%VERSION%%/plugins/org-gnome-face.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-folder-permissions.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-folder-subscription.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-groupwise-features.eplug
@@ -384,6 +395,7 @@ lib/evolution/%%VERSION%%/plugins/org-gnome-gw-account-setup.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-imap-features.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-itip-formatter.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-mail-account-disable.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-mail-notification.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-mail-to-task.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-mail-to-task.xml
 lib/evolution/%%VERSION%%/plugins/org-gnome-mailing-list-actions.eplug
@@ -402,176 +414,188 @@ lib/evolution/%%VERSION%%/plugins/org-gnome-sa-junk-plugin.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-save-calendar.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-select-one-source.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-subject-thread.eplug
-lib/evolution/%%VERSION%%/plugins/publish-calendar.glade
-libdata/bonobo/servers/GNOME_Evolution_Addressbook_%%VERSION%%.server
-libdata/bonobo/servers/GNOME_Evolution_Calendar_%%VERSION%%.server
-libdata/bonobo/servers/GNOME_Evolution_Calendar_AlarmNotify_%%VERSION%%.server
-libdata/bonobo/servers/GNOME_Evolution_Mail_%%VERSION%%.server
-libdata/bonobo/servers/GNOME_Evolution_Shell_%%VERSION%%.server
-libdata/pkgconfig/evolution-plugin-%%VERSION%%.pc
-libdata/pkgconfig/evolution-shell-%%VERSION%%.pc
+libdata/bonobo/servers/GNOME_Evolution_Addressbook.server
+libdata/bonobo/servers/GNOME_Evolution_Calendar.server
+libdata/bonobo/servers/GNOME_Evolution_Calendar_AlarmNotify.server
+libdata/bonobo/servers/GNOME_Evolution_Mail.server
+libdata/bonobo/servers/GNOME_Evolution_Shell.server
+libdata/pkgconfig/evolution-plugin.pc
+libdata/pkgconfig/evolution-shell.pc
 libexec/evolution/%%VERSION%%/csv2vcard
 libexec/evolution/%%VERSION%%/evolution-addressbook-clean
 libexec/evolution/%%VERSION%%/evolution-addressbook-export
 libexec/evolution/%%VERSION%%/evolution-alarm-notify
+libexec/evolution/%%VERSION%%/evolution-backup
 libexec/evolution/%%VERSION%%/killev
-share/gnome/applications/evolution.desktop
-share/gnome/evolution/%%VERSION%%/addresstypes.xml
-share/gnome/evolution/%%VERSION%%/default/C/mail/local/Inbox
-share/gnome/evolution/%%VERSION%%/default/de/mail/local/Inbox
-share/gnome/evolution/%%VERSION%%/default/es/mail/local/Inbox
-share/gnome/evolution/%%VERSION%%/default/fi/mail/local/Inbox
-share/gnome/evolution/%%VERSION%%/default/fr/mail/local/Inbox
-share/gnome/evolution/%%VERSION%%/default/ja/mail/local/Inbox
-share/gnome/evolution/%%VERSION%%/default/lt/mail/local/Inbox
-share/gnome/evolution/%%VERSION%%/default/mk/mail/local/Inbox
-share/gnome/evolution/%%VERSION%%/default/nl/mail/local/Inbox
-share/gnome/evolution/%%VERSION%%/default/pt/mail/local/Inbox
-share/gnome/evolution/%%VERSION%%/default/zh_CN/mail/local/Inbox
-share/gnome/evolution/%%VERSION%%/ecps/medbook.ecps
-share/gnome/evolution/%%VERSION%%/ecps/phonelist.ecps
-share/gnome/evolution/%%VERSION%%/ecps/smallbook.ecps
-share/gnome/evolution/%%VERSION%%/errors/addressbook.error
-share/gnome/evolution/%%VERSION%%/errors/calendar.error
-share/gnome/evolution/%%VERSION%%/errors/e-system.error
-share/gnome/evolution/%%VERSION%%/errors/filter.error
-share/gnome/evolution/%%VERSION%%/errors/mail-composer.error
-share/gnome/evolution/%%VERSION%%/errors/mail.error
-share/gnome/evolution/%%VERSION%%/errors/org-gnome-default-mailer.error
-share/gnome/evolution/%%VERSION%%/errors/org-gnome-exchange-operations.error
-share/gnome/evolution/%%VERSION%%/errors/org-gnome-itip-formatter.error
-share/gnome/evolution/%%VERSION%%/errors/org-gnome-mail-retract-errors.xml
-share/gnome/evolution/%%VERSION%%/errors/org-gnome-mailing-list-actions.error
-share/gnome/evolution/%%VERSION%%/errors/org-gnome-proxy-errors.xml
-share/gnome/evolution/%%VERSION%%/errors/org-gnome-proxy-login-errors.xml
-share/gnome/evolution/%%VERSION%%/errors/org-gnome-shared-folder.errors.xml
-share/gnome/evolution/%%VERSION%%/errors/shell.error
-share/gnome/evolution/%%VERSION%%/etspec/e-addressbook-view.etspec
-share/gnome/evolution/%%VERSION%%/etspec/e-cal-list-view.etspec
-share/gnome/evolution/%%VERSION%%/etspec/e-calendar-table.etspec
-share/gnome/evolution/%%VERSION%%/etspec/e-contact-list-editor.etspec
-share/gnome/evolution/%%VERSION%%/etspec/e-meeting-time-sel.etspec
-share/gnome/evolution/%%VERSION%%/etspec/e-memo-table.etspec
-share/gnome/evolution/%%VERSION%%/etspec/message-list.etspec
-share/gnome/evolution/%%VERSION%%/filtertypes.xml
-share/gnome/evolution/%%VERSION%%/glade/alarm-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/alarm-list-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/alarm-notify.glade
-share/gnome/evolution/%%VERSION%%/glade/cal-prefs-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/contact-editor.glade
-share/gnome/evolution/%%VERSION%%/glade/contact-list-editor.glade
-share/gnome/evolution/%%VERSION%%/glade/e-active-connection-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/e-attachment.glade
-share/gnome/evolution/%%VERSION%%/glade/e-contact-print.glade
-share/gnome/evolution/%%VERSION%%/glade/e-delegate-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/e-foreign-folder-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/e-itip-control.glade
-share/gnome/evolution/%%VERSION%%/glade/e-send-options.glade
-share/gnome/evolution/%%VERSION%%/glade/e-table-config-no-group.glade
-share/gnome/evolution/%%VERSION%%/glade/e-table-config.glade
-share/gnome/evolution/%%VERSION%%/glade/e-table-field-chooser.glade
-share/gnome/evolution/%%VERSION%%/glade/e-timezone-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/eab-contact-commit-duplicate-detected.glade
-share/gnome/evolution/%%VERSION%%/glade/eab-contact-duplicate-detected.glade
-share/gnome/evolution/%%VERSION%%/glade/event-page.glade
-share/gnome/evolution/%%VERSION%%/glade/exchange-change-password.glade
-share/gnome/evolution/%%VERSION%%/glade/exchange-delegates.glade
-share/gnome/evolution/%%VERSION%%/glade/exchange-folder-tree.glade
-share/gnome/evolution/%%VERSION%%/glade/exchange-oof.glade
-share/gnome/evolution/%%VERSION%%/glade/exchange-passwd-expiry.glade
-share/gnome/evolution/%%VERSION%%/glade/exchange-permissions-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/exchange-send-options.glade
-share/gnome/evolution/%%VERSION%%/glade/filter.glade
-share/gnome/evolution/%%VERSION%%/glade/fulladdr.glade
-share/gnome/evolution/%%VERSION%%/glade/fullname.glade
-share/gnome/evolution/%%VERSION%%/glade/gal-categories.glade
-share/gnome/evolution/%%VERSION%%/glade/gal-define-views.glade
-share/gnome/evolution/%%VERSION%%/glade/gal-view-instance-save-as-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/gal-view-new-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/goto-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/im.glade
-share/gnome/evolution/%%VERSION%%/glade/imap-headers.glade
-share/gnome/evolution/%%VERSION%%/glade/import.glade
-share/gnome/evolution/%%VERSION%%/glade/junk-settings.glade
-share/gnome/evolution/%%VERSION%%/glade/ldap-config.glade
-share/gnome/evolution/%%VERSION%%/glade/mail-config.glade
-share/gnome/evolution/%%VERSION%%/glade/mail-dialogs.glade
-share/gnome/evolution/%%VERSION%%/glade/meeting-page.glade
-share/gnome/evolution/%%VERSION%%/glade/memo-page.glade
-share/gnome/evolution/%%VERSION%%/glade/properties.glade
-share/gnome/evolution/%%VERSION%%/glade/proxy-add-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/proxy-listing.glade
-share/gnome/evolution/%%VERSION%%/glade/proxy-login-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/recurrence-page.glade
-share/gnome/evolution/%%VERSION%%/glade/schedule-page.glade
-share/gnome/evolution/%%VERSION%%/glade/smime-ui.glade
-share/gnome/evolution/%%VERSION%%/glade/task-details-page.glade
-share/gnome/evolution/%%VERSION%%/glade/task-page.glade
-share/gnome/evolution/%%VERSION%%/help/quickref/C/quickref.pdf
-share/gnome/evolution/%%VERSION%%/help/quickref/de/quickref.pdf
-share/gnome/evolution/%%VERSION%%/help/quickref/es/quickref.pdf
-share/gnome/evolution/%%VERSION%%/help/quickref/sv/quickref.pdf
-share/gnome/evolution/%%VERSION%%/images/evolution-contacts-mini.png
-share/gnome/evolution/%%VERSION%%/images/minus.png
-share/gnome/evolution/%%VERSION%%/images/offline.png
-share/gnome/evolution/%%VERSION%%/images/online.png
-share/gnome/evolution/%%VERSION%%/images/plus.png
-share/gnome/evolution/%%VERSION%%/images/query-free-busy.png
-share/gnome/evolution/%%VERSION%%/images/world_map-960.png
-share/gnome/evolution/%%VERSION%%/searchtypes.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-addressbook.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-calendar.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-composer-entries.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-editor.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-event-editor.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-mail-global.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-mail-list.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-mail-message.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-mail-messagedisplay.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-memo-editor.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-memos.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-message-composer.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-signature-editor.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-subscribe.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-task-editor.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-tasks.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution.xml
-share/gnome/evolution/%%VERSION%%/vfoldertypes.xml
-share/gnome/evolution/%%VERSION%%/views/addressbook/Address_Cards.galview
-share/gnome/evolution/%%VERSION%%/views/addressbook/By_Company.galview
-share/gnome/evolution/%%VERSION%%/views/addressbook/Phone_List.galview
-share/gnome/evolution/%%VERSION%%/views/addressbook/galview.xml
-share/gnome/evolution/%%VERSION%%/views/calendar/List_View.galview
-share/gnome/evolution/%%VERSION%%/views/calendar/galview.xml
-share/gnome/evolution/%%VERSION%%/views/mail/As_Sent_Folder.galview
-share/gnome/evolution/%%VERSION%%/views/mail/By_Follow_Up_Flag.galview
-share/gnome/evolution/%%VERSION%%/views/mail/By_Sender.galview
-share/gnome/evolution/%%VERSION%%/views/mail/By_Status.galview
-share/gnome/evolution/%%VERSION%%/views/mail/By_Subject.galview
-share/gnome/evolution/%%VERSION%%/views/mail/Messages.galview
-share/gnome/evolution/%%VERSION%%/views/mail/Wide_View_Normal.galview
-share/gnome/evolution/%%VERSION%%/views/mail/Wide_View_Sent.galview
-share/gnome/evolution/%%VERSION%%/views/mail/galview.xml
-share/gnome/evolution/%%VERSION%%/views/memos/Memos.galview
-share/gnome/evolution/%%VERSION%%/views/memos/galview.xml
-share/gnome/evolution/%%VERSION%%/views/tasks/Tasks.galview
-share/gnome/evolution/%%VERSION%%/views/tasks/With_DueDate.galview
-share/gnome/evolution/%%VERSION%%/views/tasks/With_Status.galview
-share/gnome/evolution/%%VERSION%%/views/tasks/galview.xml
-share/gnome/evolution/%%VERSION%%/weather/category_weather_cloudy_16.png
-share/gnome/evolution/%%VERSION%%/weather/category_weather_fog_16.png
-share/gnome/evolution/%%VERSION%%/weather/category_weather_partly_cloudy_16.png
-share/gnome/evolution/%%VERSION%%/weather/category_weather_rain_16.png
-share/gnome/evolution/%%VERSION%%/weather/category_weather_snow_16.png
-share/gnome/evolution/%%VERSION%%/weather/category_weather_sun_16.png
-share/gnome/evolution/%%VERSION%%/weather/category_weather_tstorm_16.png
-%%PILOT:%%share/gnome/gnome-pilot/conduits/e-address-%%VERSION%%.conduit
-%%PILOT:%%share/gnome/gnome-pilot/conduits/e-calendar-%%VERSION%%.conduit
-%%PILOT:%%share/gnome/gnome-pilot/conduits/e-memo-%%VERSION%%.conduit
-%%PILOT:%%share/gnome/gnome-pilot/conduits/e-todo-%%VERSION%%.conduit
+share/applications/evolution.desktop
+%%DATADIR%%/%%VERSION%%/addresstypes.xml
+%%DATADIR%%/%%VERSION%%/caltypes.xml
+%%DATADIR%%/%%VERSION%%/default/C/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/de/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/es/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/fi/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/fr/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/ja/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/lt/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/mk/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/nl/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/pl/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/pt/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/sv/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/default/zh_CN/mail/local/Inbox
+%%DATADIR%%/%%VERSION%%/ecps/medbook.ecps
+%%DATADIR%%/%%VERSION%%/ecps/phonelist.ecps
+%%DATADIR%%/%%VERSION%%/ecps/smallbook.ecps
+%%DATADIR%%/%%VERSION%%/errors/addressbook.error
+%%DATADIR%%/%%VERSION%%/errors/calendar.error
+%%DATADIR%%/%%VERSION%%/errors/e-system.error
+%%DATADIR%%/%%VERSION%%/errors/filter.error
+%%DATADIR%%/%%VERSION%%/errors/mail-composer.error
+%%DATADIR%%/%%VERSION%%/errors/mail.error
+%%DATADIR%%/%%VERSION%%/errors/org-gnome-attachment-reminder.error
+%%DATADIR%%/%%VERSION%%/errors/org-gnome-backup-restore.error
+%%DATADIR%%/%%VERSION%%/errors/org-gnome-default-mailer.error
+%%DATADIR%%/%%VERSION%%/errors/org-gnome-exchange-operations.error
+%%DATADIR%%/%%VERSION%%/errors/org-gnome-face.errors.xml
+%%DATADIR%%/%%VERSION%%/errors/org-gnome-itip-formatter.error
+%%DATADIR%%/%%VERSION%%/errors/org-gnome-mail-retract-errors.xml
+%%DATADIR%%/%%VERSION%%/errors/org-gnome-mailing-list-actions.error
+%%DATADIR%%/%%VERSION%%/errors/org-gnome-proxy-errors.xml
+%%DATADIR%%/%%VERSION%%/errors/org-gnome-proxy-login-errors.xml
+%%DATADIR%%/%%VERSION%%/errors/org-gnome-shared-folder.errors.xml
+%%DATADIR%%/%%VERSION%%/errors/shell.error
+%%DATADIR%%/%%VERSION%%/etspec/e-addressbook-view.etspec
+%%DATADIR%%/%%VERSION%%/etspec/e-cal-list-view.etspec
+%%DATADIR%%/%%VERSION%%/etspec/e-calendar-table.etspec
+%%DATADIR%%/%%VERSION%%/etspec/e-contact-list-editor.etspec
+%%DATADIR%%/%%VERSION%%/etspec/e-meeting-time-sel.etspec
+%%DATADIR%%/%%VERSION%%/etspec/e-memo-table.etspec
+%%DATADIR%%/%%VERSION%%/etspec/message-list.etspec
+%%DATADIR%%/%%VERSION%%/filtertypes.xml
+%%DATADIR%%/%%VERSION%%/glade/alarm-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/alarm-list-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/alarm-notify.glade
+%%DATADIR%%/%%VERSION%%/glade/cal-prefs-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/contact-editor.glade
+%%DATADIR%%/%%VERSION%%/glade/contact-list-editor.glade
+%%DATADIR%%/%%VERSION%%/glade/e-active-connection-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/e-attachment.glade
+%%DATADIR%%/%%VERSION%%/glade/e-contact-print.glade
+%%DATADIR%%/%%VERSION%%/glade/e-delegate-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/e-foreign-folder-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/e-itip-control.glade
+%%DATADIR%%/%%VERSION%%/glade/e-send-options.glade
+%%DATADIR%%/%%VERSION%%/glade/e-table-config-no-group.glade
+%%DATADIR%%/%%VERSION%%/glade/e-table-config.glade
+%%DATADIR%%/%%VERSION%%/glade/e-table-field-chooser.glade
+%%DATADIR%%/%%VERSION%%/glade/e-timezone-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/eab-contact-commit-duplicate-detected.glade
+%%DATADIR%%/%%VERSION%%/glade/eab-contact-duplicate-detected.glade
+%%DATADIR%%/%%VERSION%%/glade/event-page.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-change-password.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-delegates.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-folder-tree.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-oof.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-passwd-expiry.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-permissions-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/exchange-send-options.glade
+%%DATADIR%%/%%VERSION%%/glade/filter.glade
+%%DATADIR%%/%%VERSION%%/glade/fulladdr.glade
+%%DATADIR%%/%%VERSION%%/glade/fullname.glade
+%%DATADIR%%/%%VERSION%%/glade/gal-categories.glade
+%%DATADIR%%/%%VERSION%%/glade/gal-define-views.glade
+%%DATADIR%%/%%VERSION%%/glade/gal-view-instance-save-as-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/gal-view-new-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/goto-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/im.glade
+%%DATADIR%%/%%VERSION%%/glade/imap-headers.glade
+%%DATADIR%%/%%VERSION%%/glade/import.glade
+%%DATADIR%%/%%VERSION%%/glade/junk-settings.glade
+%%DATADIR%%/%%VERSION%%/glade/ldap-config.glade
+%%DATADIR%%/%%VERSION%%/glade/mail-config.glade
+%%DATADIR%%/%%VERSION%%/glade/mail-dialogs.glade
+%%DATADIR%%/%%VERSION%%/glade/meeting-page.glade
+%%DATADIR%%/%%VERSION%%/glade/memo-page.glade
+%%DATADIR%%/%%VERSION%%/glade/properties.glade
+%%DATADIR%%/%%VERSION%%/glade/proxy-add-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/proxy-listing.glade
+%%DATADIR%%/%%VERSION%%/glade/proxy-login-dialog.glade
+%%DATADIR%%/%%VERSION%%/glade/publish-calendar.glade
+%%DATADIR%%/%%VERSION%%/glade/recurrence-page.glade
+%%DATADIR%%/%%VERSION%%/glade/schedule-page.glade
+%%DATADIR%%/%%VERSION%%/glade/smime-ui.glade
+%%DATADIR%%/%%VERSION%%/glade/task-details-page.glade
+%%DATADIR%%/%%VERSION%%/glade/task-page.glade
+%%DATADIR%%/%%VERSION%%/help/quickref/C/quickref.pdf
+%%DATADIR%%/%%VERSION%%/help/quickref/de/quickref.pdf
+%%DATADIR%%/%%VERSION%%/help/quickref/es/quickref.pdf
+%%DATADIR%%/%%VERSION%%/help/quickref/fr/quickref.pdf
+%%DATADIR%%/%%VERSION%%/help/quickref/it/quickref.pdf
+%%DATADIR%%/%%VERSION%%/help/quickref/pl/quickref.pdf
+%%DATADIR%%/%%VERSION%%/help/quickref/pt/quickref.pdf
+%%DATADIR%%/%%VERSION%%/help/quickref/sq/quickref.pdf
+%%DATADIR%%/%%VERSION%%/help/quickref/sv/quickref.pdf
+%%DATADIR%%/%%VERSION%%/images/evolution-contacts-mini.png
+%%DATADIR%%/%%VERSION%%/images/minus.png
+%%DATADIR%%/%%VERSION%%/images/offline.png
+%%DATADIR%%/%%VERSION%%/images/online.png
+%%DATADIR%%/%%VERSION%%/images/plus.png
+%%DATADIR%%/%%VERSION%%/images/query-free-busy.png
+%%DATADIR%%/%%VERSION%%/images/world_map-960.png
+%%DATADIR%%/%%VERSION%%/memotypes.xml
+%%DATADIR%%/%%VERSION%%/searchtypes.xml
+%%DATADIR%%/%%VERSION%%/tasktypes.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-addressbook.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-calendar.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-composer-entries.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-editor.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-event-editor.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-mail-global.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-mail-list.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-mail-message.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-mail-messagedisplay.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-memo-editor.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-memos.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-message-composer.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-signature-editor.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-subscribe.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-task-editor.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution-tasks.xml
+%%DATADIR%%/%%VERSION%%/ui/evolution.xml
+%%DATADIR%%/%%VERSION%%/vfoldertypes.xml
+%%DATADIR%%/%%VERSION%%/views/addressbook/Address_Cards.galview
+%%DATADIR%%/%%VERSION%%/views/addressbook/By_Company.galview
+%%DATADIR%%/%%VERSION%%/views/addressbook/Phone_List.galview
+%%DATADIR%%/%%VERSION%%/views/addressbook/galview.xml
+%%DATADIR%%/%%VERSION%%/views/calendar/List_View.galview
+%%DATADIR%%/%%VERSION%%/views/calendar/galview.xml
+%%DATADIR%%/%%VERSION%%/views/mail/As_Sent_Folder.galview
+%%DATADIR%%/%%VERSION%%/views/mail/By_Follow_Up_Flag.galview
+%%DATADIR%%/%%VERSION%%/views/mail/By_Sender.galview
+%%DATADIR%%/%%VERSION%%/views/mail/By_Status.galview
+%%DATADIR%%/%%VERSION%%/views/mail/By_Subject.galview
+%%DATADIR%%/%%VERSION%%/views/mail/Messages.galview
+%%DATADIR%%/%%VERSION%%/views/mail/Wide_View_Normal.galview
+%%DATADIR%%/%%VERSION%%/views/mail/Wide_View_Sent.galview
+%%DATADIR%%/%%VERSION%%/views/mail/galview.xml
+%%DATADIR%%/%%VERSION%%/views/memos/Memos.galview
+%%DATADIR%%/%%VERSION%%/views/memos/galview.xml
+%%DATADIR%%/%%VERSION%%/views/tasks/Tasks.galview
+%%DATADIR%%/%%VERSION%%/views/tasks/With_DueDate.galview
+%%DATADIR%%/%%VERSION%%/views/tasks/With_Status.galview
+%%DATADIR%%/%%VERSION%%/views/tasks/galview.xml
+%%DATADIR%%/%%VERSION%%/weather/category_weather_cloudy_16.png
+%%DATADIR%%/%%VERSION%%/weather/category_weather_fog_16.png
+%%DATADIR%%/%%VERSION%%/weather/category_weather_partly_cloudy_16.png
+%%DATADIR%%/%%VERSION%%/weather/category_weather_rain_16.png
+%%DATADIR%%/%%VERSION%%/weather/category_weather_snow_16.png
+%%DATADIR%%/%%VERSION%%/weather/category_weather_sun_16.png
+%%DATADIR%%/%%VERSION%%/weather/category_weather_tstorm_16.png
 share/gnome/help/evolution/C/evolution.xml
 share/gnome/help/evolution/C/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/C/figures/account_editor_a.png
+share/gnome/help/evolution/C/figures/addrs_book_a.png
+share/gnome/help/evolution/C/figures/attach_reminder_a.png.png
 share/gnome/help/evolution/C/figures/calendar.png
 share/gnome/help/evolution/C/figures/categories_a.png
 share/gnome/help/evolution/C/figures/collap_head_a.png
@@ -586,10 +610,19 @@ share/gnome/help/evolution/C/figures/evo_account_info_a.png
 share/gnome/help/evolution/C/figures/evo_add_rule_a.png
 share/gnome/help/evolution/C/figures/evo_adv_search_a.png
 share/gnome/help/evolution/C/figures/evo_allday_a.png
+share/gnome/help/evolution/C/figures/evo_attachreminder_plugin.png
+share/gnome/help/evolution/C/figures/evo_backup.png
+share/gnome/help/evolution/C/figures/evo_backup_prgsbar.png
+share/gnome/help/evolution/C/figures/evo_backup_warning.png
+share/gnome/help/evolution/C/figures/evo_blink.png
 share/gnome/help/evolution/C/figures/evo_cal_a.png
+share/gnome/help/evolution/C/figures/evo_cal_advsearch.png
 share/gnome/help/evolution/C/figures/evo_cal_callout_a.png
+share/gnome/help/evolution/C/figures/evo_cal_prop_a.png
 share/gnome/help/evolution/C/figures/evo_calender_appointmnt.png
+share/gnome/help/evolution/C/figures/evo_calstatus_a.png
 share/gnome/help/evolution/C/figures/evo_contacteditor_a.png
+share/gnome/help/evolution/C/figures/evo_delegate_permission_a.png
 share/gnome/help/evolution/C/figures/evo_edit_rule_a.png
 share/gnome/help/evolution/C/figures/evo_edit_search.png
 share/gnome/help/evolution/C/figures/evo_email_a.png
@@ -597,20 +630,25 @@ share/gnome/help/evolution/C/figures/evo_flag_follow_up_a.png
 share/gnome/help/evolution/C/figures/evo_gwreceive_a.png
 share/gnome/help/evolution/C/figures/evo_gwreceiveedit_a.png
 share/gnome/help/evolution/C/figures/evo_gwreceiveoptedit_a.png
+share/gnome/help/evolution/C/figures/evo_gwstatustrack.png
 share/gnome/help/evolution/C/figures/evo_identity_a.png
 share/gnome/help/evolution/C/figures/evo_identityedit_a.png
 share/gnome/help/evolution/C/figures/evo_imapheader_a.png
 share/gnome/help/evolution/C/figures/evo_imapreceive_a.png
 share/gnome/help/evolution/C/figures/evo_import_asst_a.png
+share/gnome/help/evolution/C/figures/evo_junk_a.png
 share/gnome/help/evolution/C/figures/evo_mail_a.png
 share/gnome/help/evolution/C/figures/evo_mail_callout_a.png
+share/gnome/help/evolution/C/figures/evo_mail_notifier.png
 share/gnome/help/evolution/C/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/C/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/C/figures/evo_memo_a.png
 share/gnome/help/evolution/C/figures/evo_mereceive_a.png
 share/gnome/help/evolution/C/figures/evo_message_filters_a.png
 share/gnome/help/evolution/C/figures/evo_mhreceive_a.png
+share/gnome/help/evolution/C/figures/evo_newmail.png
 share/gnome/help/evolution/C/figures/evo_newmess_a.png
+share/gnome/help/evolution/C/figures/evo_offline.png
 share/gnome/help/evolution/C/figures/evo_popreceive_a.png
 share/gnome/help/evolution/C/figures/evo_proxyadd_a.png
 share/gnome/help/evolution/C/figures/evo_receive_setup2_a.png
@@ -657,6 +695,7 @@ share/gnome/help/evolution/C/figures/plus.png
 share/gnome/help/evolution/C/figures/proxy-cal.png
 share/gnome/help/evolution/C/figures/proxy-login.png
 share/gnome/help/evolution/C/figures/quick_add_a.png
+share/gnome/help/evolution/C/figures/quick_reference.png
 share/gnome/help/evolution/C/figures/replymsg.png
 share/gnome/help/evolution/C/figures/schedule.png
 share/gnome/help/evolution/C/figures/stock_search.png
@@ -667,6 +706,8 @@ share/gnome/help/evolution/C/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/de/evolution.xml
 share/gnome/help/evolution/de/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/de/figures/account_editor_a.png
+share/gnome/help/evolution/de/figures/addrs_book_a.png
+share/gnome/help/evolution/de/figures/attach_reminder_a.png.png
 share/gnome/help/evolution/de/figures/calendar.png
 share/gnome/help/evolution/de/figures/categories_a.png
 share/gnome/help/evolution/de/figures/collap_head_a.png
@@ -681,10 +722,19 @@ share/gnome/help/evolution/de/figures/evo_account_info_a.png
 share/gnome/help/evolution/de/figures/evo_add_rule_a.png
 share/gnome/help/evolution/de/figures/evo_adv_search_a.png
 share/gnome/help/evolution/de/figures/evo_allday_a.png
+share/gnome/help/evolution/de/figures/evo_attachreminder_plugin.png
+share/gnome/help/evolution/de/figures/evo_backup.png
+share/gnome/help/evolution/de/figures/evo_backup_prgsbar.png
+share/gnome/help/evolution/de/figures/evo_backup_warning.png
+share/gnome/help/evolution/de/figures/evo_blink.png
 share/gnome/help/evolution/de/figures/evo_cal_a.png
+share/gnome/help/evolution/de/figures/evo_cal_advsearch.png
 share/gnome/help/evolution/de/figures/evo_cal_callout_a.png
+share/gnome/help/evolution/de/figures/evo_cal_prop_a.png
 share/gnome/help/evolution/de/figures/evo_calender_appointmnt.png
+share/gnome/help/evolution/de/figures/evo_calstatus_a.png
 share/gnome/help/evolution/de/figures/evo_contacteditor_a.png
+share/gnome/help/evolution/de/figures/evo_delegate_permission_a.png
 share/gnome/help/evolution/de/figures/evo_edit_rule_a.png
 share/gnome/help/evolution/de/figures/evo_edit_search.png
 share/gnome/help/evolution/de/figures/evo_email_a.png
@@ -692,20 +742,25 @@ share/gnome/help/evolution/de/figures/evo_flag_follow_up_a.png
 share/gnome/help/evolution/de/figures/evo_gwreceive_a.png
 share/gnome/help/evolution/de/figures/evo_gwreceiveedit_a.png
 share/gnome/help/evolution/de/figures/evo_gwreceiveoptedit_a.png
+share/gnome/help/evolution/de/figures/evo_gwstatustrack.png
 share/gnome/help/evolution/de/figures/evo_identity_a.png
 share/gnome/help/evolution/de/figures/evo_identityedit_a.png
 share/gnome/help/evolution/de/figures/evo_imapheader_a.png
 share/gnome/help/evolution/de/figures/evo_imapreceive_a.png
 share/gnome/help/evolution/de/figures/evo_import_asst_a.png
+share/gnome/help/evolution/de/figures/evo_junk_a.png
 share/gnome/help/evolution/de/figures/evo_mail_a.png
 share/gnome/help/evolution/de/figures/evo_mail_callout_a.png
+share/gnome/help/evolution/de/figures/evo_mail_notifier.png
 share/gnome/help/evolution/de/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/de/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/de/figures/evo_memo_a.png
 share/gnome/help/evolution/de/figures/evo_mereceive_a.png
 share/gnome/help/evolution/de/figures/evo_message_filters_a.png
 share/gnome/help/evolution/de/figures/evo_mhreceive_a.png
+share/gnome/help/evolution/de/figures/evo_newmail.png
 share/gnome/help/evolution/de/figures/evo_newmess_a.png
+share/gnome/help/evolution/de/figures/evo_offline.png
 share/gnome/help/evolution/de/figures/evo_popreceive_a.png
 share/gnome/help/evolution/de/figures/evo_proxyadd_a.png
 share/gnome/help/evolution/de/figures/evo_receive_setup2_a.png
@@ -752,6 +807,7 @@ share/gnome/help/evolution/de/figures/plus.png
 share/gnome/help/evolution/de/figures/proxy-cal.png
 share/gnome/help/evolution/de/figures/proxy-login.png
 share/gnome/help/evolution/de/figures/quick_add_a.png
+share/gnome/help/evolution/de/figures/quick_reference.png
 share/gnome/help/evolution/de/figures/replymsg.png
 share/gnome/help/evolution/de/figures/schedule.png
 share/gnome/help/evolution/de/figures/stock_search.png
@@ -759,9 +815,123 @@ share/gnome/help/evolution/de/figures/sub-others-folder.png
 share/gnome/help/evolution/de/figures/sub-pub-fold.png
 share/gnome/help/evolution/de/figures/ver_view_a.png
 share/gnome/help/evolution/de/figures/vfolder-createrule-fig.png
+share/gnome/help/evolution/el/evolution.xml
+share/gnome/help/evolution/el/figures/Screenshot-Free-Busy.png
+share/gnome/help/evolution/el/figures/account_editor_a.png
+share/gnome/help/evolution/el/figures/addrs_book_a.png
+share/gnome/help/evolution/el/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/el/figures/calendar.png
+share/gnome/help/evolution/el/figures/categories_a.png
+share/gnome/help/evolution/el/figures/collap_head_a.png
+share/gnome/help/evolution/el/figures/config-cal.png
+share/gnome/help/evolution/el/figures/config-mail.png
+share/gnome/help/evolution/el/figures/contact-editor.png
+share/gnome/help/evolution/el/figures/contact.png
+share/gnome/help/evolution/el/figures/contacts_mainwindow_a.png
+share/gnome/help/evolution/el/figures/delgt-add.png
+share/gnome/help/evolution/el/figures/evo_account_editor_a.png
+share/gnome/help/evolution/el/figures/evo_account_info_a.png
+share/gnome/help/evolution/el/figures/evo_add_rule_a.png
+share/gnome/help/evolution/el/figures/evo_adv_search_a.png
+share/gnome/help/evolution/el/figures/evo_allday_a.png
+share/gnome/help/evolution/el/figures/evo_attachreminder_plugin.png
+share/gnome/help/evolution/el/figures/evo_backup.png
+share/gnome/help/evolution/el/figures/evo_backup_prgsbar.png
+share/gnome/help/evolution/el/figures/evo_backup_warning.png
+share/gnome/help/evolution/el/figures/evo_blink.png
+share/gnome/help/evolution/el/figures/evo_cal_a.png
+share/gnome/help/evolution/el/figures/evo_cal_advsearch.png
+share/gnome/help/evolution/el/figures/evo_cal_callout_a.png
+share/gnome/help/evolution/el/figures/evo_cal_prop_a.png
+share/gnome/help/evolution/el/figures/evo_calender_appointmnt.png
+share/gnome/help/evolution/el/figures/evo_calstatus_a.png
+share/gnome/help/evolution/el/figures/evo_contacteditor_a.png
+share/gnome/help/evolution/el/figures/evo_delegate_permission_a.png
+share/gnome/help/evolution/el/figures/evo_edit_rule_a.png
+share/gnome/help/evolution/el/figures/evo_edit_search.png
+share/gnome/help/evolution/el/figures/evo_email_a.png
+share/gnome/help/evolution/el/figures/evo_flag_follow_up_a.png
+share/gnome/help/evolution/el/figures/evo_gwreceive_a.png
+share/gnome/help/evolution/el/figures/evo_gwreceiveedit_a.png
+share/gnome/help/evolution/el/figures/evo_gwreceiveoptedit_a.png
+share/gnome/help/evolution/el/figures/evo_gwstatustrack.png
+share/gnome/help/evolution/el/figures/evo_identity_a.png
+share/gnome/help/evolution/el/figures/evo_identityedit_a.png
+share/gnome/help/evolution/el/figures/evo_imapheader_a.png
+share/gnome/help/evolution/el/figures/evo_imapreceive_a.png
+share/gnome/help/evolution/el/figures/evo_import_asst_a.png
+share/gnome/help/evolution/el/figures/evo_junk_a.png
+share/gnome/help/evolution/el/figures/evo_mail_a.png
+share/gnome/help/evolution/el/figures/evo_mail_callout_a.png
+share/gnome/help/evolution/el/figures/evo_mail_notifier.png
+share/gnome/help/evolution/el/figures/evo_maildirreceive_a.png
+share/gnome/help/evolution/el/figures/evo_mboxreceive_a.png
+share/gnome/help/evolution/el/figures/evo_memo_a.png
+share/gnome/help/evolution/el/figures/evo_mereceive_a.png
+share/gnome/help/evolution/el/figures/evo_message_filters_a.png
+share/gnome/help/evolution/el/figures/evo_mhreceive_a.png
+share/gnome/help/evolution/el/figures/evo_newmail.png
+share/gnome/help/evolution/el/figures/evo_newmess_a.png
+share/gnome/help/evolution/el/figures/evo_offline.png
+share/gnome/help/evolution/el/figures/evo_popreceive_a.png
+share/gnome/help/evolution/el/figures/evo_proxyadd_a.png
+share/gnome/help/evolution/el/figures/evo_receive_setup2_a.png
+share/gnome/help/evolution/el/figures/evo_receive_setup_a.png
+share/gnome/help/evolution/el/figures/evo_rmdrnotes_a.png
+share/gnome/help/evolution/el/figures/evo_rule_a.png
+share/gnome/help/evolution/el/figures/evo_select_add_folder.png
+share/gnome/help/evolution/el/figures/evo_select_folder.png
+share/gnome/help/evolution/el/figures/evo_send_option_a.png
+share/gnome/help/evolution/el/figures/evo_send_setup_a.png
+share/gnome/help/evolution/el/figures/evo_sendstatus_a.png
+share/gnome/help/evolution/el/figures/evo_shd_memo_a.png
+share/gnome/help/evolution/el/figures/evo_timezone_a.png
+share/gnome/help/evolution/el/figures/evo_usereceive_a.png
+share/gnome/help/evolution/el/figures/exchange-delegation.png
+share/gnome/help/evolution/el/figures/exchange-identity.png
+share/gnome/help/evolution/el/figures/exchange-receive-options.png
+share/gnome/help/evolution/el/figures/exchange-receive.png
+share/gnome/help/evolution/el/figures/exchg-identity.png
+share/gnome/help/evolution/el/figures/exchng-identity.png
+share/gnome/help/evolution/el/figures/exchng-rec-mail.png
+share/gnome/help/evolution/el/figures/exchng-rec-mails.png
+share/gnome/help/evolution/el/figures/exchng-rec-option.png
+share/gnome/help/evolution/el/figures/exchng-rec-options.png
+share/gnome/help/evolution/el/figures/exchng-settings.png
+share/gnome/help/evolution/el/figures/filter-new-fig.png
+share/gnome/help/evolution/el/figures/free_busy.png
+share/gnome/help/evolution/el/figures/full-1.png
+share/gnome/help/evolution/el/figures/full-2.png
+share/gnome/help/evolution/el/figures/full-3.png
+share/gnome/help/evolution/el/figures/full-4.png
+share/gnome/help/evolution/el/figures/full-5.png
+share/gnome/help/evolution/el/figures/full-6.png
+share/gnome/help/evolution/el/figures/full-7.png
+share/gnome/help/evolution/el/figures/mail-druid-pic.png
+share/gnome/help/evolution/el/figures/mail-inbox.png
+share/gnome/help/evolution/el/figures/mail-threaded.png
+share/gnome/help/evolution/el/figures/mail_mainwindow_a.png
+share/gnome/help/evolution/el/figures/mailer_preferences.png
+share/gnome/help/evolution/el/figures/mainwindow-pic.png
+share/gnome/help/evolution/el/figures/minus.png
+share/gnome/help/evolution/el/figures/newmsg.png
+share/gnome/help/evolution/el/figures/plus.png
+share/gnome/help/evolution/el/figures/proxy-cal.png
+share/gnome/help/evolution/el/figures/proxy-login.png
+share/gnome/help/evolution/el/figures/quick_add_a.png
+share/gnome/help/evolution/el/figures/quick_reference.png
+share/gnome/help/evolution/el/figures/replymsg.png
+share/gnome/help/evolution/el/figures/schedule.png
+share/gnome/help/evolution/el/figures/stock_search.png
+share/gnome/help/evolution/el/figures/sub-others-folder.png
+share/gnome/help/evolution/el/figures/sub-pub-fold.png
+share/gnome/help/evolution/el/figures/ver_view_a.png
+share/gnome/help/evolution/el/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/en_GB/evolution.xml
 share/gnome/help/evolution/en_GB/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/en_GB/figures/account_editor_a.png
+share/gnome/help/evolution/en_GB/figures/addrs_book_a.png
+share/gnome/help/evolution/en_GB/figures/attach_reminder_a.png.png
 share/gnome/help/evolution/en_GB/figures/calendar.png
 share/gnome/help/evolution/en_GB/figures/categories_a.png
 share/gnome/help/evolution/en_GB/figures/collap_head_a.png
@@ -776,10 +946,19 @@ share/gnome/help/evolution/en_GB/figures/evo_account_info_a.png
 share/gnome/help/evolution/en_GB/figures/evo_add_rule_a.png
 share/gnome/help/evolution/en_GB/figures/evo_adv_search_a.png
 share/gnome/help/evolution/en_GB/figures/evo_allday_a.png
+share/gnome/help/evolution/en_GB/figures/evo_attachreminder_plugin.png
+share/gnome/help/evolution/en_GB/figures/evo_backup.png
+share/gnome/help/evolution/en_GB/figures/evo_backup_prgsbar.png
+share/gnome/help/evolution/en_GB/figures/evo_backup_warning.png
+share/gnome/help/evolution/en_GB/figures/evo_blink.png
 share/gnome/help/evolution/en_GB/figures/evo_cal_a.png
+share/gnome/help/evolution/en_GB/figures/evo_cal_advsearch.png
 share/gnome/help/evolution/en_GB/figures/evo_cal_callout_a.png
+share/gnome/help/evolution/en_GB/figures/evo_cal_prop_a.png
 share/gnome/help/evolution/en_GB/figures/evo_calender_appointmnt.png
+share/gnome/help/evolution/en_GB/figures/evo_calstatus_a.png
 share/gnome/help/evolution/en_GB/figures/evo_contacteditor_a.png
+share/gnome/help/evolution/en_GB/figures/evo_delegate_permission_a.png
 share/gnome/help/evolution/en_GB/figures/evo_edit_rule_a.png
 share/gnome/help/evolution/en_GB/figures/evo_edit_search.png
 share/gnome/help/evolution/en_GB/figures/evo_email_a.png
@@ -787,20 +966,25 @@ share/gnome/help/evolution/en_GB/figures/evo_flag_follow_up_a.png
 share/gnome/help/evolution/en_GB/figures/evo_gwreceive_a.png
 share/gnome/help/evolution/en_GB/figures/evo_gwreceiveedit_a.png
 share/gnome/help/evolution/en_GB/figures/evo_gwreceiveoptedit_a.png
+share/gnome/help/evolution/en_GB/figures/evo_gwstatustrack.png
 share/gnome/help/evolution/en_GB/figures/evo_identity_a.png
 share/gnome/help/evolution/en_GB/figures/evo_identityedit_a.png
 share/gnome/help/evolution/en_GB/figures/evo_imapheader_a.png
 share/gnome/help/evolution/en_GB/figures/evo_imapreceive_a.png
 share/gnome/help/evolution/en_GB/figures/evo_import_asst_a.png
+share/gnome/help/evolution/en_GB/figures/evo_junk_a.png
 share/gnome/help/evolution/en_GB/figures/evo_mail_a.png
 share/gnome/help/evolution/en_GB/figures/evo_mail_callout_a.png
+share/gnome/help/evolution/en_GB/figures/evo_mail_notifier.png
 share/gnome/help/evolution/en_GB/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/en_GB/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/en_GB/figures/evo_memo_a.png
 share/gnome/help/evolution/en_GB/figures/evo_mereceive_a.png
 share/gnome/help/evolution/en_GB/figures/evo_message_filters_a.png
 share/gnome/help/evolution/en_GB/figures/evo_mhreceive_a.png
+share/gnome/help/evolution/en_GB/figures/evo_newmail.png
 share/gnome/help/evolution/en_GB/figures/evo_newmess_a.png
+share/gnome/help/evolution/en_GB/figures/evo_offline.png
 share/gnome/help/evolution/en_GB/figures/evo_popreceive_a.png
 share/gnome/help/evolution/en_GB/figures/evo_proxyadd_a.png
 share/gnome/help/evolution/en_GB/figures/evo_receive_setup2_a.png
@@ -847,6 +1031,7 @@ share/gnome/help/evolution/en_GB/figures/plus.png
 share/gnome/help/evolution/en_GB/figures/proxy-cal.png
 share/gnome/help/evolution/en_GB/figures/proxy-login.png
 share/gnome/help/evolution/en_GB/figures/quick_add_a.png
+share/gnome/help/evolution/en_GB/figures/quick_reference.png
 share/gnome/help/evolution/en_GB/figures/replymsg.png
 share/gnome/help/evolution/en_GB/figures/schedule.png
 share/gnome/help/evolution/en_GB/figures/stock_search.png
@@ -857,6 +1042,8 @@ share/gnome/help/evolution/en_GB/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/es/evolution.xml
 share/gnome/help/evolution/es/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/es/figures/account_editor_a.png
+share/gnome/help/evolution/es/figures/addrs_book_a.png
+share/gnome/help/evolution/es/figures/attach_reminder_a.png.png
 share/gnome/help/evolution/es/figures/calendar.png
 share/gnome/help/evolution/es/figures/categories_a.png
 share/gnome/help/evolution/es/figures/collap_head_a.png
@@ -871,10 +1058,19 @@ share/gnome/help/evolution/es/figures/evo_account_info_a.png
 share/gnome/help/evolution/es/figures/evo_add_rule_a.png
 share/gnome/help/evolution/es/figures/evo_adv_search_a.png
 share/gnome/help/evolution/es/figures/evo_allday_a.png
+share/gnome/help/evolution/es/figures/evo_attachreminder_plugin.png
+share/gnome/help/evolution/es/figures/evo_backup.png
+share/gnome/help/evolution/es/figures/evo_backup_prgsbar.png
+share/gnome/help/evolution/es/figures/evo_backup_warning.png
+share/gnome/help/evolution/es/figures/evo_blink.png
 share/gnome/help/evolution/es/figures/evo_cal_a.png
+share/gnome/help/evolution/es/figures/evo_cal_advsearch.png
 share/gnome/help/evolution/es/figures/evo_cal_callout_a.png
+share/gnome/help/evolution/es/figures/evo_cal_prop_a.png
 share/gnome/help/evolution/es/figures/evo_calender_appointmnt.png
+share/gnome/help/evolution/es/figures/evo_calstatus_a.png
 share/gnome/help/evolution/es/figures/evo_contacteditor_a.png
+share/gnome/help/evolution/es/figures/evo_delegate_permission_a.png
 share/gnome/help/evolution/es/figures/evo_edit_rule_a.png
 share/gnome/help/evolution/es/figures/evo_edit_search.png
 share/gnome/help/evolution/es/figures/evo_email_a.png
@@ -882,20 +1078,25 @@ share/gnome/help/evolution/es/figures/evo_flag_follow_up_a.png
 share/gnome/help/evolution/es/figures/evo_gwreceive_a.png
 share/gnome/help/evolution/es/figures/evo_gwreceiveedit_a.png
 share/gnome/help/evolution/es/figures/evo_gwreceiveoptedit_a.png
+share/gnome/help/evolution/es/figures/evo_gwstatustrack.png
 share/gnome/help/evolution/es/figures/evo_identity_a.png
 share/gnome/help/evolution/es/figures/evo_identityedit_a.png
 share/gnome/help/evolution/es/figures/evo_imapheader_a.png
 share/gnome/help/evolution/es/figures/evo_imapreceive_a.png
 share/gnome/help/evolution/es/figures/evo_import_asst_a.png
+share/gnome/help/evolution/es/figures/evo_junk_a.png
 share/gnome/help/evolution/es/figures/evo_mail_a.png
 share/gnome/help/evolution/es/figures/evo_mail_callout_a.png
+share/gnome/help/evolution/es/figures/evo_mail_notifier.png
 share/gnome/help/evolution/es/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/es/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/es/figures/evo_memo_a.png
 share/gnome/help/evolution/es/figures/evo_mereceive_a.png
 share/gnome/help/evolution/es/figures/evo_message_filters_a.png
 share/gnome/help/evolution/es/figures/evo_mhreceive_a.png
+share/gnome/help/evolution/es/figures/evo_newmail.png
 share/gnome/help/evolution/es/figures/evo_newmess_a.png
+share/gnome/help/evolution/es/figures/evo_offline.png
 share/gnome/help/evolution/es/figures/evo_popreceive_a.png
 share/gnome/help/evolution/es/figures/evo_proxyadd_a.png
 share/gnome/help/evolution/es/figures/evo_receive_setup2_a.png
@@ -942,6 +1143,7 @@ share/gnome/help/evolution/es/figures/plus.png
 share/gnome/help/evolution/es/figures/proxy-cal.png
 share/gnome/help/evolution/es/figures/proxy-login.png
 share/gnome/help/evolution/es/figures/quick_add_a.png
+share/gnome/help/evolution/es/figures/quick_reference.png
 share/gnome/help/evolution/es/figures/replymsg.png
 share/gnome/help/evolution/es/figures/schedule.png
 share/gnome/help/evolution/es/figures/stock_search.png
@@ -952,6 +1154,8 @@ share/gnome/help/evolution/es/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/fr/evolution.xml
 share/gnome/help/evolution/fr/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/fr/figures/account_editor_a.png
+share/gnome/help/evolution/fr/figures/addrs_book_a.png
+share/gnome/help/evolution/fr/figures/attach_reminder_a.png.png
 share/gnome/help/evolution/fr/figures/calendar.png
 share/gnome/help/evolution/fr/figures/categories_a.png
 share/gnome/help/evolution/fr/figures/collap_head_a.png
@@ -966,10 +1170,19 @@ share/gnome/help/evolution/fr/figures/evo_account_info_a.png
 share/gnome/help/evolution/fr/figures/evo_add_rule_a.png
 share/gnome/help/evolution/fr/figures/evo_adv_search_a.png
 share/gnome/help/evolution/fr/figures/evo_allday_a.png
+share/gnome/help/evolution/fr/figures/evo_attachreminder_plugin.png
+share/gnome/help/evolution/fr/figures/evo_backup.png
+share/gnome/help/evolution/fr/figures/evo_backup_prgsbar.png
+share/gnome/help/evolution/fr/figures/evo_backup_warning.png
+share/gnome/help/evolution/fr/figures/evo_blink.png
 share/gnome/help/evolution/fr/figures/evo_cal_a.png
+share/gnome/help/evolution/fr/figures/evo_cal_advsearch.png
 share/gnome/help/evolution/fr/figures/evo_cal_callout_a.png
+share/gnome/help/evolution/fr/figures/evo_cal_prop_a.png
 share/gnome/help/evolution/fr/figures/evo_calender_appointmnt.png
+share/gnome/help/evolution/fr/figures/evo_calstatus_a.png
 share/gnome/help/evolution/fr/figures/evo_contacteditor_a.png
+share/gnome/help/evolution/fr/figures/evo_delegate_permission_a.png
 share/gnome/help/evolution/fr/figures/evo_edit_rule_a.png
 share/gnome/help/evolution/fr/figures/evo_edit_search.png
 share/gnome/help/evolution/fr/figures/evo_email_a.png
@@ -977,20 +1190,25 @@ share/gnome/help/evolution/fr/figures/evo_flag_follow_up_a.png
 share/gnome/help/evolution/fr/figures/evo_gwreceive_a.png
 share/gnome/help/evolution/fr/figures/evo_gwreceiveedit_a.png
 share/gnome/help/evolution/fr/figures/evo_gwreceiveoptedit_a.png
+share/gnome/help/evolution/fr/figures/evo_gwstatustrack.png
 share/gnome/help/evolution/fr/figures/evo_identity_a.png
 share/gnome/help/evolution/fr/figures/evo_identityedit_a.png
 share/gnome/help/evolution/fr/figures/evo_imapheader_a.png
 share/gnome/help/evolution/fr/figures/evo_imapreceive_a.png
 share/gnome/help/evolution/fr/figures/evo_import_asst_a.png
+share/gnome/help/evolution/fr/figures/evo_junk_a.png
 share/gnome/help/evolution/fr/figures/evo_mail_a.png
 share/gnome/help/evolution/fr/figures/evo_mail_callout_a.png
+share/gnome/help/evolution/fr/figures/evo_mail_notifier.png
 share/gnome/help/evolution/fr/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/fr/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/fr/figures/evo_memo_a.png
 share/gnome/help/evolution/fr/figures/evo_mereceive_a.png
 share/gnome/help/evolution/fr/figures/evo_message_filters_a.png
 share/gnome/help/evolution/fr/figures/evo_mhreceive_a.png
+share/gnome/help/evolution/fr/figures/evo_newmail.png
 share/gnome/help/evolution/fr/figures/evo_newmess_a.png
+share/gnome/help/evolution/fr/figures/evo_offline.png
 share/gnome/help/evolution/fr/figures/evo_popreceive_a.png
 share/gnome/help/evolution/fr/figures/evo_proxyadd_a.png
 share/gnome/help/evolution/fr/figures/evo_receive_setup2_a.png
@@ -1037,6 +1255,7 @@ share/gnome/help/evolution/fr/figures/plus.png
 share/gnome/help/evolution/fr/figures/proxy-cal.png
 share/gnome/help/evolution/fr/figures/proxy-login.png
 share/gnome/help/evolution/fr/figures/quick_add_a.png
+share/gnome/help/evolution/fr/figures/quick_reference.png
 share/gnome/help/evolution/fr/figures/replymsg.png
 share/gnome/help/evolution/fr/figures/schedule.png
 share/gnome/help/evolution/fr/figures/stock_search.png
@@ -1044,9 +1263,123 @@ share/gnome/help/evolution/fr/figures/sub-others-folder.png
 share/gnome/help/evolution/fr/figures/sub-pub-fold.png
 share/gnome/help/evolution/fr/figures/ver_view_a.png
 share/gnome/help/evolution/fr/figures/vfolder-createrule-fig.png
+share/gnome/help/evolution/oc/evolution.xml
+share/gnome/help/evolution/oc/figures/Screenshot-Free-Busy.png
+share/gnome/help/evolution/oc/figures/account_editor_a.png
+share/gnome/help/evolution/oc/figures/addrs_book_a.png
+share/gnome/help/evolution/oc/figures/attach_reminder_a.png.png
+share/gnome/help/evolution/oc/figures/calendar.png
+share/gnome/help/evolution/oc/figures/categories_a.png
+share/gnome/help/evolution/oc/figures/collap_head_a.png
+share/gnome/help/evolution/oc/figures/config-cal.png
+share/gnome/help/evolution/oc/figures/config-mail.png
+share/gnome/help/evolution/oc/figures/contact-editor.png
+share/gnome/help/evolution/oc/figures/contact.png
+share/gnome/help/evolution/oc/figures/contacts_mainwindow_a.png
+share/gnome/help/evolution/oc/figures/delgt-add.png
+share/gnome/help/evolution/oc/figures/evo_account_editor_a.png
+share/gnome/help/evolution/oc/figures/evo_account_info_a.png
+share/gnome/help/evolution/oc/figures/evo_add_rule_a.png
+share/gnome/help/evolution/oc/figures/evo_adv_search_a.png
+share/gnome/help/evolution/oc/figures/evo_allday_a.png
+share/gnome/help/evolution/oc/figures/evo_attachreminder_plugin.png
+share/gnome/help/evolution/oc/figures/evo_backup.png
+share/gnome/help/evolution/oc/figures/evo_backup_prgsbar.png
+share/gnome/help/evolution/oc/figures/evo_backup_warning.png
+share/gnome/help/evolution/oc/figures/evo_blink.png
+share/gnome/help/evolution/oc/figures/evo_cal_a.png
+share/gnome/help/evolution/oc/figures/evo_cal_advsearch.png
+share/gnome/help/evolution/oc/figures/evo_cal_callout_a.png
+share/gnome/help/evolution/oc/figures/evo_cal_prop_a.png
+share/gnome/help/evolution/oc/figures/evo_calender_appointmnt.png
+share/gnome/help/evolution/oc/figures/evo_calstatus_a.png
+share/gnome/help/evolution/oc/figures/evo_contacteditor_a.png
+share/gnome/help/evolution/oc/figures/evo_delegate_permission_a.png
+share/gnome/help/evolution/oc/figures/evo_edit_rule_a.png
+share/gnome/help/evolution/oc/figures/evo_edit_search.png
+share/gnome/help/evolution/oc/figures/evo_email_a.png
+share/gnome/help/evolution/oc/figures/evo_flag_follow_up_a.png
+share/gnome/help/evolution/oc/figures/evo_gwreceive_a.png
+share/gnome/help/evolution/oc/figures/evo_gwreceiveedit_a.png
+share/gnome/help/evolution/oc/figures/evo_gwreceiveoptedit_a.png
+share/gnome/help/evolution/oc/figures/evo_gwstatustrack.png
+share/gnome/help/evolution/oc/figures/evo_identity_a.png
+share/gnome/help/evolution/oc/figures/evo_identityedit_a.png
+share/gnome/help/evolution/oc/figures/evo_imapheader_a.png
+share/gnome/help/evolution/oc/figures/evo_imapreceive_a.png
+share/gnome/help/evolution/oc/figures/evo_import_asst_a.png
+share/gnome/help/evolution/oc/figures/evo_junk_a.png
+share/gnome/help/evolution/oc/figures/evo_mail_a.png
+share/gnome/help/evolution/oc/figures/evo_mail_callout_a.png
+share/gnome/help/evolution/oc/figures/evo_mail_notifier.png
+share/gnome/help/evolution/oc/figures/evo_maildirreceive_a.png
+share/gnome/help/evolution/oc/figures/evo_mboxreceive_a.png
+share/gnome/help/evolution/oc/figures/evo_memo_a.png
+share/gnome/help/evolution/oc/figures/evo_mereceive_a.png
+share/gnome/help/evolution/oc/figures/evo_message_filters_a.png
+share/gnome/help/evolution/oc/figures/evo_mhreceive_a.png
+share/gnome/help/evolution/oc/figures/evo_newmail.png
+share/gnome/help/evolution/oc/figures/evo_newmess_a.png
+share/gnome/help/evolution/oc/figures/evo_offline.png
+share/gnome/help/evolution/oc/figures/evo_popreceive_a.png
+share/gnome/help/evolution/oc/figures/evo_proxyadd_a.png
+share/gnome/help/evolution/oc/figures/evo_receive_setup2_a.png
+share/gnome/help/evolution/oc/figures/evo_receive_setup_a.png
+share/gnome/help/evolution/oc/figures/evo_rmdrnotes_a.png
+share/gnome/help/evolution/oc/figures/evo_rule_a.png
+share/gnome/help/evolution/oc/figures/evo_select_add_folder.png
+share/gnome/help/evolution/oc/figures/evo_select_folder.png
+share/gnome/help/evolution/oc/figures/evo_send_option_a.png
+share/gnome/help/evolution/oc/figures/evo_send_setup_a.png
+share/gnome/help/evolution/oc/figures/evo_sendstatus_a.png
+share/gnome/help/evolution/oc/figures/evo_shd_memo_a.png
+share/gnome/help/evolution/oc/figures/evo_timezone_a.png
+share/gnome/help/evolution/oc/figures/evo_usereceive_a.png
+share/gnome/help/evolution/oc/figures/exchange-delegation.png
+share/gnome/help/evolution/oc/figures/exchange-identity.png
+share/gnome/help/evolution/oc/figures/exchange-receive-options.png
+share/gnome/help/evolution/oc/figures/exchange-receive.png
+share/gnome/help/evolution/oc/figures/exchg-identity.png
+share/gnome/help/evolution/oc/figures/exchng-identity.png
+share/gnome/help/evolution/oc/figures/exchng-rec-mail.png
+share/gnome/help/evolution/oc/figures/exchng-rec-mails.png
+share/gnome/help/evolution/oc/figures/exchng-rec-option.png
+share/gnome/help/evolution/oc/figures/exchng-rec-options.png
+share/gnome/help/evolution/oc/figures/exchng-settings.png
+share/gnome/help/evolution/oc/figures/filter-new-fig.png
+share/gnome/help/evolution/oc/figures/free_busy.png
+share/gnome/help/evolution/oc/figures/full-1.png
+share/gnome/help/evolution/oc/figures/full-2.png
+share/gnome/help/evolution/oc/figures/full-3.png
+share/gnome/help/evolution/oc/figures/full-4.png
+share/gnome/help/evolution/oc/figures/full-5.png
+share/gnome/help/evolution/oc/figures/full-6.png
+share/gnome/help/evolution/oc/figures/full-7.png
+share/gnome/help/evolution/oc/figures/mail-druid-pic.png
+share/gnome/help/evolution/oc/figures/mail-inbox.png
+share/gnome/help/evolution/oc/figures/mail-threaded.png
+share/gnome/help/evolution/oc/figures/mail_mainwindow_a.png
+share/gnome/help/evolution/oc/figures/mailer_preferences.png
+share/gnome/help/evolution/oc/figures/mainwindow-pic.png
+share/gnome/help/evolution/oc/figures/minus.png
+share/gnome/help/evolution/oc/figures/newmsg.png
+share/gnome/help/evolution/oc/figures/plus.png
+share/gnome/help/evolution/oc/figures/proxy-cal.png
+share/gnome/help/evolution/oc/figures/proxy-login.png
+share/gnome/help/evolution/oc/figures/quick_add_a.png
+share/gnome/help/evolution/oc/figures/quick_reference.png
+share/gnome/help/evolution/oc/figures/replymsg.png
+share/gnome/help/evolution/oc/figures/schedule.png
+share/gnome/help/evolution/oc/figures/stock_search.png
+share/gnome/help/evolution/oc/figures/sub-others-folder.png
+share/gnome/help/evolution/oc/figures/sub-pub-fold.png
+share/gnome/help/evolution/oc/figures/ver_view_a.png
+share/gnome/help/evolution/oc/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/ru/evolution.xml
 share/gnome/help/evolution/ru/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/ru/figures/account_editor_a.png
+share/gnome/help/evolution/ru/figures/addrs_book_a.png
+share/gnome/help/evolution/ru/figures/attach_reminder_a.png.png
 share/gnome/help/evolution/ru/figures/calendar.png
 share/gnome/help/evolution/ru/figures/categories_a.png
 share/gnome/help/evolution/ru/figures/collap_head_a.png
@@ -1061,10 +1394,19 @@ share/gnome/help/evolution/ru/figures/evo_account_info_a.png
 share/gnome/help/evolution/ru/figures/evo_add_rule_a.png
 share/gnome/help/evolution/ru/figures/evo_adv_search_a.png
 share/gnome/help/evolution/ru/figures/evo_allday_a.png
+share/gnome/help/evolution/ru/figures/evo_attachreminder_plugin.png
+share/gnome/help/evolution/ru/figures/evo_backup.png
+share/gnome/help/evolution/ru/figures/evo_backup_prgsbar.png
+share/gnome/help/evolution/ru/figures/evo_backup_warning.png
+share/gnome/help/evolution/ru/figures/evo_blink.png
 share/gnome/help/evolution/ru/figures/evo_cal_a.png
+share/gnome/help/evolution/ru/figures/evo_cal_advsearch.png
 share/gnome/help/evolution/ru/figures/evo_cal_callout_a.png
+share/gnome/help/evolution/ru/figures/evo_cal_prop_a.png
 share/gnome/help/evolution/ru/figures/evo_calender_appointmnt.png
+share/gnome/help/evolution/ru/figures/evo_calstatus_a.png
 share/gnome/help/evolution/ru/figures/evo_contacteditor_a.png
+share/gnome/help/evolution/ru/figures/evo_delegate_permission_a.png
 share/gnome/help/evolution/ru/figures/evo_edit_rule_a.png
 share/gnome/help/evolution/ru/figures/evo_edit_search.png
 share/gnome/help/evolution/ru/figures/evo_email_a.png
@@ -1072,20 +1414,25 @@ share/gnome/help/evolution/ru/figures/evo_flag_follow_up_a.png
 share/gnome/help/evolution/ru/figures/evo_gwreceive_a.png
 share/gnome/help/evolution/ru/figures/evo_gwreceiveedit_a.png
 share/gnome/help/evolution/ru/figures/evo_gwreceiveoptedit_a.png
+share/gnome/help/evolution/ru/figures/evo_gwstatustrack.png
 share/gnome/help/evolution/ru/figures/evo_identity_a.png
 share/gnome/help/evolution/ru/figures/evo_identityedit_a.png
 share/gnome/help/evolution/ru/figures/evo_imapheader_a.png
 share/gnome/help/evolution/ru/figures/evo_imapreceive_a.png
 share/gnome/help/evolution/ru/figures/evo_import_asst_a.png
+share/gnome/help/evolution/ru/figures/evo_junk_a.png
 share/gnome/help/evolution/ru/figures/evo_mail_a.png
 share/gnome/help/evolution/ru/figures/evo_mail_callout_a.png
+share/gnome/help/evolution/ru/figures/evo_mail_notifier.png
 share/gnome/help/evolution/ru/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/ru/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/ru/figures/evo_memo_a.png
 share/gnome/help/evolution/ru/figures/evo_mereceive_a.png
 share/gnome/help/evolution/ru/figures/evo_message_filters_a.png
 share/gnome/help/evolution/ru/figures/evo_mhreceive_a.png
+share/gnome/help/evolution/ru/figures/evo_newmail.png
 share/gnome/help/evolution/ru/figures/evo_newmess_a.png
+share/gnome/help/evolution/ru/figures/evo_offline.png
 share/gnome/help/evolution/ru/figures/evo_popreceive_a.png
 share/gnome/help/evolution/ru/figures/evo_proxyadd_a.png
 share/gnome/help/evolution/ru/figures/evo_receive_setup2_a.png
@@ -1132,6 +1479,7 @@ share/gnome/help/evolution/ru/figures/plus.png
 share/gnome/help/evolution/ru/figures/proxy-cal.png
 share/gnome/help/evolution/ru/figures/proxy-login.png
 share/gnome/help/evolution/ru/figures/quick_add_a.png
+share/gnome/help/evolution/ru/figures/quick_reference.png
 share/gnome/help/evolution/ru/figures/replymsg.png
 share/gnome/help/evolution/ru/figures/schedule.png
 share/gnome/help/evolution/ru/figures/stock_search.png
@@ -1142,6 +1490,8 @@ share/gnome/help/evolution/ru/figures/vfolder-createrule-fig.png
 share/gnome/help/evolution/sv/evolution.xml
 share/gnome/help/evolution/sv/figures/Screenshot-Free-Busy.png
 share/gnome/help/evolution/sv/figures/account_editor_a.png
+share/gnome/help/evolution/sv/figures/addrs_book_a.png
+share/gnome/help/evolution/sv/figures/attach_reminder_a.png.png
 share/gnome/help/evolution/sv/figures/calendar.png
 share/gnome/help/evolution/sv/figures/categories_a.png
 share/gnome/help/evolution/sv/figures/collap_head_a.png
@@ -1156,10 +1506,19 @@ share/gnome/help/evolution/sv/figures/evo_account_info_a.png
 share/gnome/help/evolution/sv/figures/evo_add_rule_a.png
 share/gnome/help/evolution/sv/figures/evo_adv_search_a.png
 share/gnome/help/evolution/sv/figures/evo_allday_a.png
+share/gnome/help/evolution/sv/figures/evo_attachreminder_plugin.png
+share/gnome/help/evolution/sv/figures/evo_backup.png
+share/gnome/help/evolution/sv/figures/evo_backup_prgsbar.png
+share/gnome/help/evolution/sv/figures/evo_backup_warning.png
+share/gnome/help/evolution/sv/figures/evo_blink.png
 share/gnome/help/evolution/sv/figures/evo_cal_a.png
+share/gnome/help/evolution/sv/figures/evo_cal_advsearch.png
 share/gnome/help/evolution/sv/figures/evo_cal_callout_a.png
+share/gnome/help/evolution/sv/figures/evo_cal_prop_a.png
 share/gnome/help/evolution/sv/figures/evo_calender_appointmnt.png
+share/gnome/help/evolution/sv/figures/evo_calstatus_a.png
 share/gnome/help/evolution/sv/figures/evo_contacteditor_a.png
+share/gnome/help/evolution/sv/figures/evo_delegate_permission_a.png
 share/gnome/help/evolution/sv/figures/evo_edit_rule_a.png
 share/gnome/help/evolution/sv/figures/evo_edit_search.png
 share/gnome/help/evolution/sv/figures/evo_email_a.png
@@ -1167,20 +1526,25 @@ share/gnome/help/evolution/sv/figures/evo_flag_follow_up_a.png
 share/gnome/help/evolution/sv/figures/evo_gwreceive_a.png
 share/gnome/help/evolution/sv/figures/evo_gwreceiveedit_a.png
 share/gnome/help/evolution/sv/figures/evo_gwreceiveoptedit_a.png
+share/gnome/help/evolution/sv/figures/evo_gwstatustrack.png
 share/gnome/help/evolution/sv/figures/evo_identity_a.png
 share/gnome/help/evolution/sv/figures/evo_identityedit_a.png
 share/gnome/help/evolution/sv/figures/evo_imapheader_a.png
 share/gnome/help/evolution/sv/figures/evo_imapreceive_a.png
 share/gnome/help/evolution/sv/figures/evo_import_asst_a.png
+share/gnome/help/evolution/sv/figures/evo_junk_a.png
 share/gnome/help/evolution/sv/figures/evo_mail_a.png
 share/gnome/help/evolution/sv/figures/evo_mail_callout_a.png
+share/gnome/help/evolution/sv/figures/evo_mail_notifier.png
 share/gnome/help/evolution/sv/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution/sv/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution/sv/figures/evo_memo_a.png
 share/gnome/help/evolution/sv/figures/evo_mereceive_a.png
 share/gnome/help/evolution/sv/figures/evo_message_filters_a.png
 share/gnome/help/evolution/sv/figures/evo_mhreceive_a.png
+share/gnome/help/evolution/sv/figures/evo_newmail.png
 share/gnome/help/evolution/sv/figures/evo_newmess_a.png
+share/gnome/help/evolution/sv/figures/evo_offline.png
 share/gnome/help/evolution/sv/figures/evo_popreceive_a.png
 share/gnome/help/evolution/sv/figures/evo_proxyadd_a.png
 share/gnome/help/evolution/sv/figures/evo_receive_setup2_a.png
@@ -1227,6 +1591,7 @@ share/gnome/help/evolution/sv/figures/plus.png
 share/gnome/help/evolution/sv/figures/proxy-cal.png
 share/gnome/help/evolution/sv/figures/proxy-login.png
 share/gnome/help/evolution/sv/figures/quick_add_a.png
+share/gnome/help/evolution/sv/figures/quick_reference.png
 share/gnome/help/evolution/sv/figures/replymsg.png
 share/gnome/help/evolution/sv/figures/schedule.png
 share/gnome/help/evolution/sv/figures/stock_search.png
@@ -1234,30 +1599,28 @@ share/gnome/help/evolution/sv/figures/sub-others-folder.png
 share/gnome/help/evolution/sv/figures/sub-pub-fold.png
 share/gnome/help/evolution/sv/figures/ver_view_a.png
 share/gnome/help/evolution/sv/figures/vfolder-createrule-fig.png
-share/gnome/idl/evolution-%%VERSION%%/Composer.idl
-share/gnome/idl/evolution-%%VERSION%%/Evolution-Component.idl
-share/gnome/idl/evolution-%%VERSION%%/Evolution-Composer.idl
-share/gnome/idl/evolution-%%VERSION%%/Evolution-ConfigControl.idl
-share/gnome/idl/evolution-%%VERSION%%/Evolution-Mail.idl
-share/gnome/idl/evolution-%%VERSION%%/Evolution-Shell.idl
-share/gnome/idl/evolution-%%VERSION%%/Evolution.idl
-share/gnome/idl/evolution-%%VERSION%%/evolution-calendar.idl
-share/gnome/mime-info/evolution.keys
-share/gnome/mime-info/evolution.mime
-share/gnome/omf/evolution/evolution-C.omf
-share/gnome/omf/evolution/evolution-de.omf
-share/gnome/omf/evolution/evolution-en_GB.omf
-share/gnome/omf/evolution/evolution-es.omf
-share/gnome/omf/evolution/evolution-fr.omf
-share/gnome/omf/evolution/evolution-ru.omf
-share/gnome/omf/evolution/evolution-sv.omf
 share/icons/hicolor/16x16/apps/evolution.png
 share/icons/hicolor/22x22/apps/evolution.png
 share/icons/hicolor/24x24/apps/evolution.png
 share/icons/hicolor/32x32/apps/evolution.png
+share/icons/hicolor/48x48/apps/preferences-autocompletion.png
+share/icons/hicolor/48x48/apps/preferences-calendar-and-tasks.png
+share/icons/hicolor/48x48/apps/preferences-certificates.png
+share/icons/hicolor/48x48/apps/preferences-composer.png
+share/icons/hicolor/48x48/apps/preferences-mail-accounts.png
+share/icons/hicolor/48x48/apps/preferences-mail.png
 share/icons/hicolor/scalable/apps/evolution.svg
+share/idl/evolution-%%VERSION%%/Composer.idl
+share/idl/evolution-%%VERSION%%/Evolution-Component.idl
+share/idl/evolution-%%VERSION%%/Evolution-Composer.idl
+share/idl/evolution-%%VERSION%%/Evolution-ConfigControl.idl
+share/idl/evolution-%%VERSION%%/Evolution-Mail.idl
+share/idl/evolution-%%VERSION%%/Evolution-Shell.idl
+share/idl/evolution-%%VERSION%%/Evolution.idl
+share/idl/evolution-%%VERSION%%/evolution-calendar.idl
 share/locale/am/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/as/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/be/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -1314,6 +1677,7 @@ share/locale/pt_BR/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ro/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/rw/LC_MESSAGES/evolution-%%VERSION%%.mo
+share/locale/si/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sk/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sl/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -1331,78 +1695,104 @@ share/locale/xh/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
-@dirrm share/gnome/omf/evolution
-@dirrm share/gnome/idl/evolution-%%VERSION%%
+share/mime-info/evolution.keys
+share/mime-info/evolution.mime
+share/omf/evolution/evolution-C.omf
+share/omf/evolution/evolution-de.omf
+share/omf/evolution/evolution-el.omf
+share/omf/evolution/evolution-en_GB.omf
+share/omf/evolution/evolution-es.omf
+share/omf/evolution/evolution-fr.omf
+share/omf/evolution/evolution-oc.omf
+share/omf/evolution/evolution-ru.omf
+share/omf/evolution/evolution-sv.omf
+@dirrm share/omf/evolution
+@dirrm share/idl/evolution-%%VERSION%%
 @dirrm share/gnome/help/evolution/sv/figures
 @dirrm share/gnome/help/evolution/sv
 @dirrm share/gnome/help/evolution/ru/figures
 @dirrm share/gnome/help/evolution/ru
+@dirrm share/gnome/help/evolution/oc/figures
+@dirrm share/gnome/help/evolution/oc
 @dirrm share/gnome/help/evolution/fr/figures
 @dirrm share/gnome/help/evolution/fr
 @dirrm share/gnome/help/evolution/es/figures
 @dirrm share/gnome/help/evolution/es
 @dirrm share/gnome/help/evolution/en_GB/figures
 @dirrm share/gnome/help/evolution/en_GB
+@dirrm share/gnome/help/evolution/el/figures
+@dirrm share/gnome/help/evolution/el
 @dirrm share/gnome/help/evolution/de/figures
 @dirrm share/gnome/help/evolution/de
 @dirrm share/gnome/help/evolution/C/figures
 @dirrm share/gnome/help/evolution/C
 @dirrm share/gnome/help/evolution
-@dirrm share/gnome/evolution/%%VERSION%%/weather
-@dirrm share/gnome/evolution/%%VERSION%%/views/tasks
-@dirrm share/gnome/evolution/%%VERSION%%/views/memos
-@dirrm share/gnome/evolution/%%VERSION%%/views/mail
-@dirrm share/gnome/evolution/%%VERSION%%/views/calendar
-@dirrm share/gnome/evolution/%%VERSION%%/views/addressbook
-@dirrm share/gnome/evolution/%%VERSION%%/views
-@dirrm share/gnome/evolution/%%VERSION%%/ui
-@dirrm share/gnome/evolution/%%VERSION%%/images
-@dirrm share/gnome/evolution/%%VERSION%%/help/quickref/sv
-@dirrm share/gnome/evolution/%%VERSION%%/help/quickref/es
-@dirrm share/gnome/evolution/%%VERSION%%/help/quickref/de
-@dirrm share/gnome/evolution/%%VERSION%%/help/quickref/C
-@dirrm share/gnome/evolution/%%VERSION%%/help/quickref
-@dirrm share/gnome/evolution/%%VERSION%%/help
-@dirrm share/gnome/evolution/%%VERSION%%/glade
-@dirrm share/gnome/evolution/%%VERSION%%/etspec
-@dirrm share/gnome/evolution/%%VERSION%%/errors
-@dirrm share/gnome/evolution/%%VERSION%%/ecps
-@dirrm share/gnome/evolution/%%VERSION%%/default/zh_CN/mail/local
-@dirrm share/gnome/evolution/%%VERSION%%/default/zh_CN/mail
-@dirrm share/gnome/evolution/%%VERSION%%/default/zh_CN
-@dirrm share/gnome/evolution/%%VERSION%%/default/pt/mail/local
-@dirrm share/gnome/evolution/%%VERSION%%/default/pt/mail
-@dirrm share/gnome/evolution/%%VERSION%%/default/pt
-@dirrm share/gnome/evolution/%%VERSION%%/default/nl/mail/local
-@dirrm share/gnome/evolution/%%VERSION%%/default/nl/mail
-@dirrm share/gnome/evolution/%%VERSION%%/default/nl
-@dirrm share/gnome/evolution/%%VERSION%%/default/mk/mail/local
-@dirrm share/gnome/evolution/%%VERSION%%/default/mk/mail
-@dirrm share/gnome/evolution/%%VERSION%%/default/mk
-@dirrm share/gnome/evolution/%%VERSION%%/default/lt/mail/local
-@dirrm share/gnome/evolution/%%VERSION%%/default/lt/mail
-@dirrm share/gnome/evolution/%%VERSION%%/default/lt
-@dirrm share/gnome/evolution/%%VERSION%%/default/ja/mail/local
-@dirrm share/gnome/evolution/%%VERSION%%/default/ja/mail
-@dirrm share/gnome/evolution/%%VERSION%%/default/ja
-@dirrm share/gnome/evolution/%%VERSION%%/default/fr/mail/local
-@dirrm share/gnome/evolution/%%VERSION%%/default/fr/mail
-@dirrm share/gnome/evolution/%%VERSION%%/default/fr
-@dirrm share/gnome/evolution/%%VERSION%%/default/fi/mail/local
-@dirrm share/gnome/evolution/%%VERSION%%/default/fi/mail
-@dirrm share/gnome/evolution/%%VERSION%%/default/fi
-@dirrm share/gnome/evolution/%%VERSION%%/default/es/mail/local
-@dirrm share/gnome/evolution/%%VERSION%%/default/es/mail
-@dirrm share/gnome/evolution/%%VERSION%%/default/es
-@dirrm share/gnome/evolution/%%VERSION%%/default/de/mail/local
-@dirrm share/gnome/evolution/%%VERSION%%/default/de/mail
-@dirrm share/gnome/evolution/%%VERSION%%/default/de
-@dirrm share/gnome/evolution/%%VERSION%%/default/C/mail/local
-@dirrm share/gnome/evolution/%%VERSION%%/default/C/mail
-@dirrm share/gnome/evolution/%%VERSION%%/default/C
-@dirrm share/gnome/evolution/%%VERSION%%/default
-@dirrm share/gnome/evolution/%%VERSION%%
-@dirrm share/gnome/evolution
+@dirrm %%DATADIR%%/%%VERSION%%/weather
+@dirrm %%DATADIR%%/%%VERSION%%/views/tasks
+@dirrm %%DATADIR%%/%%VERSION%%/views/memos
+@dirrm %%DATADIR%%/%%VERSION%%/views/mail
+@dirrm %%DATADIR%%/%%VERSION%%/views/calendar
+@dirrm %%DATADIR%%/%%VERSION%%/views/addressbook
+@dirrm %%DATADIR%%/%%VERSION%%/views
+@dirrm %%DATADIR%%/%%VERSION%%/ui
+@dirrm %%DATADIR%%/%%VERSION%%/images
+@dirrm %%DATADIR%%/%%VERSION%%/help/quickref/sv
+@dirrm %%DATADIR%%/%%VERSION%%/help/quickref/sq
+@dirrm %%DATADIR%%/%%VERSION%%/help/quickref/pt
+@dirrm %%DATADIR%%/%%VERSION%%/help/quickref/pl
+@dirrm %%DATADIR%%/%%VERSION%%/help/quickref/it
+@dirrm %%DATADIR%%/%%VERSION%%/help/quickref/fr
+@dirrm %%DATADIR%%/%%VERSION%%/help/quickref/es
+@dirrm %%DATADIR%%/%%VERSION%%/help/quickref/de
+@dirrm %%DATADIR%%/%%VERSION%%/help/quickref/C
+@dirrm %%DATADIR%%/%%VERSION%%/help/quickref
+@dirrm %%DATADIR%%/%%VERSION%%/help
+@dirrm %%DATADIR%%/%%VERSION%%/glade
+@dirrm %%DATADIR%%/%%VERSION%%/etspec
+@dirrm %%DATADIR%%/%%VERSION%%/errors
+@dirrm %%DATADIR%%/%%VERSION%%/ecps
+@dirrm %%DATADIR%%/%%VERSION%%/default/zh_CN/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/zh_CN/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/zh_CN
+@dirrm %%DATADIR%%/%%VERSION%%/default/sv/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/sv/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/sv
+@dirrm %%DATADIR%%/%%VERSION%%/default/pt/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/pt/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/pt
+@dirrm %%DATADIR%%/%%VERSION%%/default/pl/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/pl/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/pl
+@dirrm %%DATADIR%%/%%VERSION%%/default/nl/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/nl/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/nl
+@dirrm %%DATADIR%%/%%VERSION%%/default/mk/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/mk/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/mk
+@dirrm %%DATADIR%%/%%VERSION%%/default/lt/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/lt/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/lt
+@dirrm %%DATADIR%%/%%VERSION%%/default/ja/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/ja/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/ja
+@dirrm %%DATADIR%%/%%VERSION%%/default/fr/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/fr/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/fr
+@dirrm %%DATADIR%%/%%VERSION%%/default/fi/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/fi/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/fi
+@dirrm %%DATADIR%%/%%VERSION%%/default/es/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/es/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/es
+@dirrm %%DATADIR%%/%%VERSION%%/default/de/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/de/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/de
+@dirrm %%DATADIR%%/%%VERSION%%/default/C/mail/local
+@dirrm %%DATADIR%%/%%VERSION%%/default/C/mail
+@dirrm %%DATADIR%%/%%VERSION%%/default/C
+@dirrm %%DATADIR%%/%%VERSION%%/default
+@dirrm %%DATADIR%%/%%VERSION%%
+@dirrm %%DATADIR%%
 @dirrm libexec/evolution/%%VERSION%%
 @dirrm libexec/evolution
 @dirrm lib/evolution/%%VERSION%%/plugins
@@ -1431,6 +1821,8 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
@@ -1443,3 +1835,6 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrmtry share/applications

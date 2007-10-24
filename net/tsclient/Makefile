@@ -7,7 +7,7 @@
 
 PORTNAME=	tsclient
 PORTVERSION=	0.148
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomepro.com/tsclient/
 
@@ -44,7 +44,7 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	@${LN} -sf ${PREFIX}/share/gnome/pixmaps/tsclient/tsclient.png \
-		${PREFIX}/share/gnome/pixmaps/tsclient.png
+	@${LN} -sf ${PREFIX}/share/pixmaps/tsclient/tsclient.png \
+		${PREFIX}/share/pixmaps/tsclient.png
 
 .include <bsd.port.mk>

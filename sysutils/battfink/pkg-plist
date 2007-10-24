@@ -1,16 +1,16 @@
 bin/battfink
 libdata/bonobo/servers/GNOME_Battfink.server
-share/gnome/battfink/battfink.glade
-share/gnome/battfink/help/C/battfink.xml
-share/gnome/battfink/help/C/legal.xml
-share/gnome/battfink/icons/battfink-100.png
-share/gnome/battfink/icons/battfink-25.png
-share/gnome/battfink/icons/battfink-50.png
-share/gnome/battfink/icons/battfink-75.png
-share/gnome/battfink/icons/battfink-charge.png
-share/gnome/control-center-2.0/capplets/battfink-preferences.desktop
-share/gnome/omf/battfink/battfink-C.omf
-share/gnome/pixmaps/battfink.png
+share/battfink/battfink.glade
+share/battfink/help/C/battfink.xml
+share/battfink/help/C/legal.xml
+share/battfink/icons/battfink-100.png
+share/battfink/icons/battfink-25.png
+share/battfink/icons/battfink-50.png
+share/battfink/icons/battfink-75.png
+share/battfink/icons/battfink-charge.png
+share/control-center-2.0/capplets/battfink-preferences.desktop
+share/omf/battfink/battfink-C.omf
+share/pixmaps/battfink.png
 share/locale/az/LC_MESSAGES/battfink-0.1.mo
 share/locale/da/LC_MESSAGES/battfink-0.1.mo
 share/locale/de/LC_MESSAGES/battfink-0.1.mo
@@ -32,8 +32,8 @@ share/locale/sr@Latn/LC_MESSAGES/battfink-0.1.mo
 share/locale/sv/LC_MESSAGES/battfink-0.1.mo
 share/locale/zh_CN/LC_MESSAGES/battfink-0.1.mo
 share/locale/zh_TW/LC_MESSAGES/battfink-0.1.mo
-@dirrm share/gnome/omf/battfink
-@dirrm share/gnome/battfink/icons
-@dirrm share/gnome/battfink/help/C
-@dirrm share/gnome/battfink/help
-@dirrm share/gnome/battfink
+@dirrm share/omf/battfink
+@dirrm share/battfink/icons
+@dirrm share/battfink/help/C
+@dirrm share/battfink/help
+@dirrm share/battfink

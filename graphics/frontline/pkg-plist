@@ -15,10 +15,10 @@ lib/libgundo.a
 libdata/pkgconfig/frontline.pc
 share/aclocal/frontline.m4
 share/gnome/apps/Graphics/frontline.desktop
-share/gnome/mime-info/frontline.keys
-share/gnome/mime-info/frontline.mime
-share/gnome/pixmaps/fl-splash.png
-share/gnome/pixmaps/frontline.png
+share/mime-info/frontline.keys
+share/mime-info/frontline.mime
+share/pixmaps/fl-splash.png
+share/pixmaps/frontline.png
 share/locale/ja/LC_MESSAGES/frontline.mo
 @dirrm include/gundo
 @dirrm include/frontline

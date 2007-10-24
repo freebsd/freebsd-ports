@@ -3,12 +3,12 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/www/galeon/Makefile,v 1.9 2006/07/27 18:09:47 mezz Exp $
+#    $MCom: ports/www/galeon/Makefile,v 1.14 2007/10/08 19:42:51 mezz Exp $
 #
 
 PORTNAME=	galeon
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
@@ -29,14 +29,14 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--enable-nautilus-view=no \
 		--with-mozilla=${GECKO}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=		galeon.1
 GCONF_SCHEMAS=	galeon.schemas
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 # Galeon does not build correctly in -CURRENT if -Werror is passed
 # to the compiler.
@@ -54,7 +54,7 @@ post-patch:
 		's|malloc\.h|stdlib.h|g'
 	@${REINPLACE_CMD} -e 's|@prefix@/@DATADIRNAME@|@datadir@|g' \
 		${WRKSRC}/ui/galeon-bookmarks-editor-ui.xml.in
-	@${REINPLACE_CMD} -e 's|/usr/lib/mozilla/plugins|${LOCALBASE}/lib/browser_plugins:${X11BASE}/lib/browser_plugins:${LOCALBASE}/lib/browser_linux_plugins:${X11BASE}/lib/browser_linux_plugins|' \
+	@${REINPLACE_CMD} -e 's|/usr/lib/mozilla/plugins|${LOCALBASE}/lib/browser_plugins:${LOCALBASE}/lib/browser_linux_plugins|' \
 		${WRKSRC}/mozilla/mozilla-embed-shell.cpp
 
 .include <bsd.port.post.mk>

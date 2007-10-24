@@ -137,35 +137,35 @@ share/gnome/help/multi-gnome-terminal/no/stylesheet-images/toc-plus.gif
 share/gnome/help/multi-gnome-terminal/no/stylesheet-images/up.gif
 share/gnome/help/multi-gnome-terminal/no/stylesheet-images/warning.gif
 share/gnome/help/multi-gnome-terminal/no/topic.dat
-share/gnome/idl/MultiTerminal.idl
-share/gnome/mgt/glade/edit_cmd.glade
-share/gnome/mgt/glade/multi-gnome-terminal.glade
-share/gnome/mgt/glade/search.glade
-share/gnome/mgt/glade/win_keys.glade
-share/gnome/mgt/glade/win_prefs.glade
-share/gnome/omf/mgt/multi-gnome-terminal-C.omf
-share/gnome/pixmaps/mgt/MGT_bb_back.png
-share/gnome/pixmaps/mgt/MGT_bb_forward.png
-share/gnome/pixmaps/mgt/MGT_bb_newshell.png
-share/gnome/pixmaps/mgt/MGT_bb_remove.png
-share/gnome/pixmaps/mgt/MGT_bb_title.png
-share/gnome/pixmaps/mgt/MGT_tb_back.png
-share/gnome/pixmaps/mgt/MGT_tb_forward.png
-share/gnome/pixmaps/mgt/MGT_tb_newmc.png
-share/gnome/pixmaps/mgt/MGT_tb_newroot.png
-share/gnome/pixmaps/mgt/MGT_tb_newshell.png
-share/gnome/pixmaps/mgt/MGT_tb_remove.png
-share/gnome/pixmaps/mgt/MGT_tb_title.png
-share/gnome/pixmaps/mgt/arrow_left2.png
-share/gnome/pixmaps/mgt/arrow_right2.png
-share/gnome/pixmaps/mgt/gnome-notepad.png
-share/gnome/pixmaps/mgt/multignometerm.png
-share/gnome/pixmaps/mgt/panel-folder.png
-share/gnome/pixmaps/multignometerm.png
-@dirrm share/gnome/pixmaps/mgt
-@dirrm share/gnome/omf/mgt
-@dirrm share/gnome/mgt/glade
-@dirrm share/gnome/mgt
+share/idl/MultiTerminal.idl
+share/mgt/glade/edit_cmd.glade
+share/mgt/glade/multi-gnome-terminal.glade
+share/mgt/glade/search.glade
+share/mgt/glade/win_keys.glade
+share/mgt/glade/win_prefs.glade
+share/omf/mgt/multi-gnome-terminal-C.omf
+share/pixmaps/mgt/MGT_bb_back.png
+share/pixmaps/mgt/MGT_bb_forward.png
+share/pixmaps/mgt/MGT_bb_newshell.png
+share/pixmaps/mgt/MGT_bb_remove.png
+share/pixmaps/mgt/MGT_bb_title.png
+share/pixmaps/mgt/MGT_tb_back.png
+share/pixmaps/mgt/MGT_tb_forward.png
+share/pixmaps/mgt/MGT_tb_newmc.png
+share/pixmaps/mgt/MGT_tb_newroot.png
+share/pixmaps/mgt/MGT_tb_newshell.png
+share/pixmaps/mgt/MGT_tb_remove.png
+share/pixmaps/mgt/MGT_tb_title.png
+share/pixmaps/mgt/arrow_left2.png
+share/pixmaps/mgt/arrow_right2.png
+share/pixmaps/mgt/gnome-notepad.png
+share/pixmaps/mgt/multignometerm.png
+share/pixmaps/mgt/panel-folder.png
+share/pixmaps/multignometerm.png
+@dirrm share/pixmaps/mgt
+@dirrm share/omf/mgt
+@dirrm share/mgt/glade
+@dirrm share/mgt
 @dirrm share/gnome/help/multi-gnome-terminal/no/stylesheet-images
 @dirrm share/gnome/help/multi-gnome-terminal/no/figures
 @dirrm share/gnome/help/multi-gnome-terminal/no

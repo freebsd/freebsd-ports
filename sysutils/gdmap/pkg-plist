@@ -1,6 +1,7 @@
 bin/gdmap
-share/gnome/applications/gdmap.desktop
-share/gnome/gdmap/pixmaps/gdmap_icon.png
-share/gnome/pixmaps/gdmap_icon.png
-@dirrm share/gnome/gdmap/pixmaps
-@dirrm share/gnome/gdmap
+share/applications/gdmap.desktop
+share/gdmap/pixmaps/gdmap_icon.png
+share/pixmaps/gdmap_icon.png
+@dirrm share/gdmap/pixmaps
+@dirrm share/gdmap
+@dirrmtry share/applications

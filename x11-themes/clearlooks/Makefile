@@ -3,12 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#      $MCom: ports/x11-themes/clearlooks/Makefile,v 1.6 2006/07/19 19:56:11 ahze Exp $
+#   $MCom: ports/x11-themes/clearlooks/Makefile,v 1.8 2007/08/07 04:34:29 mezz Exp $
 #
 
 PORTNAME?=	clearlooks
 PORTVERSION=	0.6.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clearlooks
@@ -48,7 +48,7 @@ PLIST_SUB+=	ENGINE="@comment "
 .endif
 
 .if !defined(WITHOUT_METACITY) && ${PORTNAME}=="clearlooks"
-RUN_DEPENDS+=	${LOCALBASE}/share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/clearlooks-metacity
+RUN_DEPENDS+=	${LOCALBASE}/share/themes/Clearlooks/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/clearlooks-metacity
 .endif
 
 .if defined(WITH_ANIMATION)

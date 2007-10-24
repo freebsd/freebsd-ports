@@ -2,8 +2,6 @@ bin/ElectricEyes
 share/gnome/apps/Graphics/ee.desktop
 share/gnome/help/ee/C/ee.jpg
 share/gnome/help/ee/C/index.html
-share/gnome/mime-info/ee.keys
-share/gnome/pixmaps/gnome-ee.png
 share/locale/ca/LC_MESSAGES/ee.mo
 share/locale/da/LC_MESSAGES/ee.mo
 share/locale/de/LC_MESSAGES/ee.mo
@@ -31,5 +29,7 @@ share/locale/tr/LC_MESSAGES/ee.mo
 share/locale/uk/LC_MESSAGES/ee.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/ee.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/ee.mo
+share/mime-info/ee.keys
+share/pixmaps/gnome-ee.png
 @dirrm share/gnome/help/ee/C
 @dirrm share/gnome/help/ee

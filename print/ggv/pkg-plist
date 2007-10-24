@@ -1,11 +1,11 @@
 bin/ggv
 libdata/bonobo/servers/GNOME_GGV.server
 libexec/ggv-postscript-viewer
-share/gnome/applications/ggv.desktop
+share/applications/ggv.desktop
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-share/gnome/gnome-2.0/ui/ggv-control-ui.xml
-share/gnome/gnome-2.0/ui/ggv-postscript-view-ui.xml
-share/gnome/gnome-2.0/ui/ggv-ui.xml
+share/gnome-2.0/ui/ggv-control-ui.xml
+share/gnome-2.0/ui/ggv-postscript-view-ui.xml
+share/gnome-2.0/ui/ggv-ui.xml
 share/gnome/help/ggv/C/figures/ggv_window.png
 share/gnome/help/ggv/C/ggv.xml
 share/gnome/help/ggv/C/legal.xml
@@ -40,25 +40,25 @@ share/gnome/help/ggv/zh_CN/legal.xml
 share/gnome/help/ggv/zh_TW/figures/ggv_window.png
 share/gnome/help/ggv/zh_TW/ggv.xml
 share/gnome/help/ggv/zh_TW/legal.xml
-share/gnome/idl/Ggv.idl
-share/gnome/omf/ggv/ggv-C.omf
-share/gnome/omf/ggv/ggv-de.omf
-share/gnome/omf/ggv/ggv-es.omf
-share/gnome/omf/ggv/ggv-fr.omf
-share/gnome/omf/ggv/ggv-it.omf
-share/gnome/omf/ggv/ggv-ja.omf
-share/gnome/omf/ggv/ggv-ko.omf
-share/gnome/omf/ggv/ggv-sv.omf
-share/gnome/omf/ggv/ggv-zh_CN.omf
-share/gnome/omf/ggv/ggv-zh_TW.omf
-share/gnome/pixmaps/ggv/clearall.xpm
-share/gnome/pixmaps/ggv/fitwidth.png
-share/gnome/pixmaps/ggv/ggv-splash.png
-share/gnome/pixmaps/ggv/toggleall.xpm
-share/gnome/pixmaps/ggv/toggleeven.xpm
-share/gnome/pixmaps/ggv/toggleodd.xpm
-share/gnome/pixmaps/ggv/zoom.xpm
-share/gnome/pixmaps/gnome-ghostview.png
+share/idl/Ggv.idl
+share/omf/ggv/ggv-C.omf
+share/omf/ggv/ggv-de.omf
+share/omf/ggv/ggv-es.omf
+share/omf/ggv/ggv-fr.omf
+share/omf/ggv/ggv-it.omf
+share/omf/ggv/ggv-ja.omf
+share/omf/ggv/ggv-ko.omf
+share/omf/ggv/ggv-sv.omf
+share/omf/ggv/ggv-zh_CN.omf
+share/omf/ggv/ggv-zh_TW.omf
+share/pixmaps/ggv/clearall.xpm
+share/pixmaps/ggv/fitwidth.png
+share/pixmaps/ggv/ggv-splash.png
+share/pixmaps/ggv/toggleall.xpm
+share/pixmaps/ggv/toggleeven.xpm
+share/pixmaps/ggv/toggleodd.xpm
+share/pixmaps/ggv/zoom.xpm
+share/pixmaps/gnome-ghostview.png
 share/locale/af/LC_MESSAGES/ggv.mo
 share/locale/am/LC_MESSAGES/ggv.mo
 share/locale/ar/LC_MESSAGES/ggv.mo
@@ -126,8 +126,8 @@ share/locale/vi/LC_MESSAGES/ggv.mo
 share/locale/xh/LC_MESSAGES/ggv.mo
 share/locale/zh_CN/LC_MESSAGES/ggv.mo
 share/locale/zh_TW/LC_MESSAGES/ggv.mo
-@dirrm share/gnome/pixmaps/ggv
-@dirrm share/gnome/omf/ggv
+@dirrm share/pixmaps/ggv
+@dirrm share/omf/ggv
 @dirrm share/gnome/help/ggv/zh_TW/figures
 @dirrm share/gnome/help/ggv/zh_TW
 @dirrm share/gnome/help/ggv/zh_CN/figures
@@ -150,3 +150,8 @@ share/locale/zh_TW/LC_MESSAGES/ggv.mo
 @dirrm share/gnome/help/ggv/C
 @dirrm share/gnome/help/ggv
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/applications

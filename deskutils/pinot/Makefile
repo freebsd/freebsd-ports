@@ -3,10 +3,11 @@
 # Whom:			Thierry Thomas <thierry@pompo.net>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	pinot
 PORTVERSION=	0.76
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -83,6 +84,8 @@ pre-configure:
 		${UL2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|'	\
 		${SHR2FIX:S|^|${WRKSRC}/|}
+	${REINPLACE_CMD} -e 's|Icon=pinot.png|Icon=pinot|g' \
+		${WRKSRC}/*.desktop
 
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py		\

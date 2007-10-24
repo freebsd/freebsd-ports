@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/sysutils/gnome-pkgview/Makefile,v 1.6 2007/05/30 03:21:44 mezz Exp $
 
 PORTNAME=	gnome-pkgview
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.greatnorthern.demon.co.uk/packages/gnome-pkgview/
 
@@ -26,9 +26,6 @@ GCONF_SCHEMAS=	gnome-pkgview.schemas
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|%%X11BASE%%|${X11BASE}|g' \
-			${WRKSRC}/src/config-path.c
-	@${REINPLACE_CMD} -e 's|Icon=|Icon=${PREFIX}/share/gnome/pixmaps/|g' \
-		${WRKSRC}/gnome-pkgview.desktop.in
+		${WRKSRC}/src/config-path.c
 
 .include <bsd.port.mk>

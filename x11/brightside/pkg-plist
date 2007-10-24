@@ -1,19 +1,19 @@
 bin/brightside
 bin/brightside-properties
-share/gnome/brightside/brightside-16.png
-share/gnome/brightside/brightside-48.png
-share/gnome/brightside/brightside-brightness.png
-share/gnome/brightside/brightside-properties.glade
-share/gnome/brightside/brightside.glade
-share/gnome/brightside/brightside.svg
-share/gnome/brightside/custom-action.glade
-share/gnome/brightside/dpms.png
-share/gnome/brightside/gnome-lockscreen.png
-share/gnome/brightside/gnome-speakernotes-muted.png
-share/gnome/brightside/gnome-speakernotes.png
-share/gnome/brightside/xscreensaver.png
-share/gnome/control-center-2.0/capplets/brightside.desktop
-share/gnome/pixmaps/brightside-48.png
+share/brightside/brightside-16.png
+share/brightside/brightside-48.png
+share/brightside/brightside-brightness.png
+share/brightside/brightside-properties.glade
+share/brightside/brightside.glade
+share/brightside/brightside.svg
+share/brightside/custom-action.glade
+share/brightside/dpms.png
+share/brightside/gnome-lockscreen.png
+share/brightside/gnome-speakernotes-muted.png
+share/brightside/gnome-speakernotes.png
+share/brightside/xscreensaver.png
+share/control-center-2.0/capplets/brightside.desktop
+share/pixmaps/brightside-48.png
 share/locale/am/LC_MESSAGES/Brightside.mo
 share/locale/ar/LC_MESSAGES/Brightside.mo
 share/locale/az/LC_MESSAGES/Brightside.mo
@@ -66,4 +66,4 @@ share/locale/uk/LC_MESSAGES/Brightside.mo
 share/locale/vi/LC_MESSAGES/Brightside.mo
 share/locale/zh_CN/LC_MESSAGES/Brightside.mo
 share/locale/zh_TW/LC_MESSAGES/Brightside.mo
-@dirrm share/gnome/brightside
+@dirrm share/brightside

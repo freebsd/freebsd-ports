@@ -1,0 +1,270 @@
+bin/accerciser
+%%PYTHON_SITELIBDIR%%/accerciser/__init__.py
+%%PYTHON_SITELIBDIR%%/accerciser/__init__.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/__init__.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/about_dialog.py
+%%PYTHON_SITELIBDIR%%/accerciser/about_dialog.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/about_dialog.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/accerciser.py
+%%PYTHON_SITELIBDIR%%/accerciser/accerciser.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/accerciser.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/accessible_treeview.py
+%%PYTHON_SITELIBDIR%%/accerciser/accessible_treeview.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/accessible_treeview.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/bookmarks.py
+%%PYTHON_SITELIBDIR%%/accerciser/bookmarks.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/bookmarks.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/hotkey_manager.py
+%%PYTHON_SITELIBDIR%%/accerciser/hotkey_manager.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/hotkey_manager.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/i18n.py
+%%PYTHON_SITELIBDIR%%/accerciser/i18n.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/i18n.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/icons.py
+%%PYTHON_SITELIBDIR%%/accerciser/icons.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/icons.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/main_window.py
+%%PYTHON_SITELIBDIR%%/accerciser/main_window.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/main_window.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/node.py
+%%PYTHON_SITELIBDIR%%/accerciser/node.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/node.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__init__.py
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/base_plugin.py
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/base_plugin.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/base_plugin.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/message.py
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/message.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/message.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/plugin_manager.py
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/plugin_manager.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/plugin_manager.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/view.py
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/view.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/plugin/view.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/prefs_dialog.py
+%%PYTHON_SITELIBDIR%%/accerciser/prefs_dialog.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/prefs_dialog.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/pyatspi.zip
+%%PYTHON_SITELIBDIR%%/accerciser/script_playback.py
+%%PYTHON_SITELIBDIR%%/accerciser/script_playback.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/script_playback.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/tools.py
+%%PYTHON_SITELIBDIR%%/accerciser/tools.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/tools.pyo
+%%PYTHON_SITELIBDIR%%/accerciser/ui_manager.py
+%%PYTHON_SITELIBDIR%%/accerciser/ui_manager.pyc
+%%PYTHON_SITELIBDIR%%/accerciser/ui_manager.pyo
+%%DATADIR%%/pixmaps/hicolor/22x22/acceleratorlabel.png
+%%DATADIR%%/pixmaps/hicolor/22x22/alert.png
+%%DATADIR%%/pixmaps/hicolor/22x22/animation.png
+%%DATADIR%%/pixmaps/hicolor/22x22/arrow.png
+%%DATADIR%%/pixmaps/hicolor/22x22/calendar.png
+%%DATADIR%%/pixmaps/hicolor/22x22/canvas.png
+%%DATADIR%%/pixmaps/hicolor/22x22/care.png
+%%DATADIR%%/pixmaps/hicolor/22x22/character.png
+%%DATADIR%%/pixmaps/hicolor/22x22/chart.png
+%%DATADIR%%/pixmaps/hicolor/22x22/checkbox.png
+%%DATADIR%%/pixmaps/hicolor/22x22/checkmenuitem.png
+%%DATADIR%%/pixmaps/hicolor/22x22/clock.png
+%%DATADIR%%/pixmaps/hicolor/22x22/colorchooser.png
+%%DATADIR%%/pixmaps/hicolor/22x22/column.png
+%%DATADIR%%/pixmaps/hicolor/22x22/columnheader.png
+%%DATADIR%%/pixmaps/hicolor/22x22/combobox.png
+%%DATADIR%%/pixmaps/hicolor/22x22/cursor.png
+%%DATADIR%%/pixmaps/hicolor/22x22/dateeditor.png
+%%DATADIR%%/pixmaps/hicolor/22x22/desktopicon.png
+%%DATADIR%%/pixmaps/hicolor/22x22/dial.png
+%%DATADIR%%/pixmaps/hicolor/22x22/dialog.png
+%%DATADIR%%/pixmaps/hicolor/22x22/directorypane.png
+%%DATADIR%%/pixmaps/hicolor/22x22/drawingarea.png
+%%DATADIR%%/pixmaps/hicolor/22x22/embedded.png
+%%DATADIR%%/pixmaps/hicolor/22x22/endnote.png
+%%DATADIR%%/pixmaps/hicolor/22x22/entry.png
+%%DATADIR%%/pixmaps/hicolor/22x22/filechooser.png
+%%DATADIR%%/pixmaps/hicolor/22x22/filler.png
+%%DATADIR%%/pixmaps/hicolor/22x22/focustraversable.png
+%%DATADIR%%/pixmaps/hicolor/22x22/fontchooser.png
+%%DATADIR%%/pixmaps/hicolor/22x22/form.png
+%%DATADIR%%/pixmaps/hicolor/22x22/frame.png
+%%DATADIR%%/pixmaps/hicolor/22x22/glasspane.png
+%%DATADIR%%/pixmaps/hicolor/22x22/grip.png
+%%DATADIR%%/pixmaps/hicolor/22x22/heading.png
+%%DATADIR%%/pixmaps/hicolor/22x22/helpballoon.png
+%%DATADIR%%/pixmaps/hicolor/22x22/htmlcontainer.png
+%%DATADIR%%/pixmaps/hicolor/22x22/icon.png
+%%DATADIR%%/pixmaps/hicolor/22x22/image.png
+%%DATADIR%%/pixmaps/hicolor/22x22/imagemap.png
+%%DATADIR%%/pixmaps/hicolor/22x22/inputmethodwindow.png
+%%DATADIR%%/pixmaps/hicolor/22x22/invalid.png
+%%DATADIR%%/pixmaps/hicolor/22x22/label.png
+%%DATADIR%%/pixmaps/hicolor/22x22/link.png
+%%DATADIR%%/pixmaps/hicolor/22x22/list.png
+%%DATADIR%%/pixmaps/hicolor/22x22/listitem.png
+%%DATADIR%%/pixmaps/hicolor/22x22/menu.png
+%%DATADIR%%/pixmaps/hicolor/22x22/menubar.png
+%%DATADIR%%/pixmaps/hicolor/22x22/menuitem.png
+%%DATADIR%%/pixmaps/hicolor/22x22/pagetab.png
+%%DATADIR%%/pixmaps/hicolor/22x22/pagetablist.png
+%%DATADIR%%/pixmaps/hicolor/22x22/passwordtext.png
+%%DATADIR%%/pixmaps/hicolor/22x22/popupmenu.png
+%%DATADIR%%/pixmaps/hicolor/22x22/progressbar.png
+%%DATADIR%%/pixmaps/hicolor/22x22/pushbutton.png
+%%DATADIR%%/pixmaps/hicolor/22x22/radiobutton.png
+%%DATADIR%%/pixmaps/hicolor/22x22/radiomenuitem.png
+%%DATADIR%%/pixmaps/hicolor/22x22/row.png
+%%DATADIR%%/pixmaps/hicolor/22x22/ruler.png
+%%DATADIR%%/pixmaps/hicolor/22x22/scrollbar.png
+%%DATADIR%%/pixmaps/hicolor/22x22/scrollpane.png
+%%DATADIR%%/pixmaps/hicolor/22x22/section.png
+%%DATADIR%%/pixmaps/hicolor/22x22/separator.png
+%%DATADIR%%/pixmaps/hicolor/22x22/shape.png
+%%DATADIR%%/pixmaps/hicolor/22x22/slider.png
+%%DATADIR%%/pixmaps/hicolor/22x22/sound.png
+%%DATADIR%%/pixmaps/hicolor/22x22/spinbutton.png
+%%DATADIR%%/pixmaps/hicolor/22x22/splitpane.png
+%%DATADIR%%/pixmaps/hicolor/22x22/statusbar.png
+%%DATADIR%%/pixmaps/hicolor/22x22/table.png
+%%DATADIR%%/pixmaps/hicolor/22x22/tablecell.png
+%%DATADIR%%/pixmaps/hicolor/22x22/tearoffmenuitem.png
+%%DATADIR%%/pixmaps/hicolor/22x22/terminal.png
+%%DATADIR%%/pixmaps/hicolor/22x22/text.png
+%%DATADIR%%/pixmaps/hicolor/22x22/togglebutton.png
+%%DATADIR%%/pixmaps/hicolor/22x22/toolbar.png
+%%DATADIR%%/pixmaps/hicolor/22x22/tooltip.png
+%%DATADIR%%/pixmaps/hicolor/22x22/tree.png
+%%DATADIR%%/pixmaps/hicolor/22x22/treetable.png
+%%DATADIR%%/pixmaps/hicolor/22x22/window.png
+%%DATADIR%%/plugins/api_view.py
+%%DATADIR%%/plugins/console.py
+%%DATADIR%%/plugins/event_monitor.glade
+%%DATADIR%%/plugins/event_monitor.py
+%%DATADIR%%/plugins/interface_view.glade
+%%DATADIR%%/plugins/interface_view.py
+%%DATADIR%%/plugins/ipython_view.py
+%%DATADIR%%/plugins/quick_select.py
+%%DATADIR%%/plugins/script_recorder.glade
+%%DATADIR%%/plugins/script_recorder.py
+share/applications/accerciser.desktop
+share/gnome/help/accerciser/C/accerciser.xml
+share/gnome/help/accerciser/C/figures/accerciser.png
+share/gnome/help/accerciser/C/figures/api_browser.png
+share/gnome/help/accerciser/C/figures/event_monitor.png
+share/gnome/help/accerciser/C/figures/interface_viewer.png
+share/gnome/help/accerciser/C/figures/script_recorder.png
+share/gnome/help/accerciser/C/legal.xml
+share/gnome/help/accerciser/ca/accerciser.xml
+share/gnome/help/accerciser/ca/figures/accerciser.png
+share/gnome/help/accerciser/ca/figures/api_browser.png
+share/gnome/help/accerciser/ca/figures/event_monitor.png
+share/gnome/help/accerciser/ca/figures/interface_viewer.png
+share/gnome/help/accerciser/ca/figures/script_recorder.png
+share/gnome/help/accerciser/en_GB/accerciser.xml
+share/gnome/help/accerciser/en_GB/figures/accerciser.png
+share/gnome/help/accerciser/en_GB/figures/api_browser.png
+share/gnome/help/accerciser/en_GB/figures/event_monitor.png
+share/gnome/help/accerciser/en_GB/figures/interface_viewer.png
+share/gnome/help/accerciser/en_GB/figures/script_recorder.png
+share/gnome/help/accerciser/es/accerciser.xml
+share/gnome/help/accerciser/es/figures/accerciser.png
+share/gnome/help/accerciser/es/figures/api_browser.png
+share/gnome/help/accerciser/es/figures/event_monitor.png
+share/gnome/help/accerciser/es/figures/interface_viewer.png
+share/gnome/help/accerciser/es/figures/script_recorder.png
+share/gnome/help/accerciser/oc/accerciser.xml
+share/gnome/help/accerciser/oc/figures/accerciser.png
+share/gnome/help/accerciser/oc/figures/api_browser.png
+share/gnome/help/accerciser/oc/figures/event_monitor.png
+share/gnome/help/accerciser/oc/figures/interface_viewer.png
+share/gnome/help/accerciser/oc/figures/script_recorder.png
+share/gnome/help/accerciser/sv/accerciser.xml
+share/gnome/help/accerciser/sv/figures/accerciser.png
+share/gnome/help/accerciser/sv/figures/api_browser.png
+share/gnome/help/accerciser/sv/figures/event_monitor.png
+share/gnome/help/accerciser/sv/figures/interface_viewer.png
+share/gnome/help/accerciser/sv/figures/script_recorder.png
+share/icons/hicolor/16x16/apps/accerciser.png
+share/icons/hicolor/22x22/apps/accerciser.png
+share/icons/hicolor/32x32/apps/accerciser.png
+share/icons/hicolor/48x48/apps/accerciser.png
+share/icons/hicolor/scalable/apps/accerciser.svg
+share/locale/ar/LC_MESSAGES/accerciser.mo
+share/locale/bg/LC_MESSAGES/accerciser.mo
+share/locale/bn/LC_MESSAGES/accerciser.mo
+share/locale/bn_IN/LC_MESSAGES/accerciser.mo
+share/locale/ca/LC_MESSAGES/accerciser.mo
+share/locale/da/LC_MESSAGES/accerciser.mo
+share/locale/de/LC_MESSAGES/accerciser.mo
+share/locale/dz/LC_MESSAGES/accerciser.mo
+share/locale/el/LC_MESSAGES/accerciser.mo
+share/locale/en_CA/LC_MESSAGES/accerciser.mo
+share/locale/en_GB/LC_MESSAGES/accerciser.mo
+share/locale/es/LC_MESSAGES/accerciser.mo
+share/locale/fi/LC_MESSAGES/accerciser.mo
+share/locale/fr/LC_MESSAGES/accerciser.mo
+share/locale/gl/LC_MESSAGES/accerciser.mo
+share/locale/gu/LC_MESSAGES/accerciser.mo
+share/locale/he/LC_MESSAGES/accerciser.mo
+share/locale/hi/LC_MESSAGES/accerciser.mo
+share/locale/hu/LC_MESSAGES/accerciser.mo
+share/locale/ja/LC_MESSAGES/accerciser.mo
+share/locale/lt/LC_MESSAGES/accerciser.mo
+share/locale/lv/LC_MESSAGES/accerciser.mo
+share/locale/mk/LC_MESSAGES/accerciser.mo
+share/locale/nb/LC_MESSAGES/accerciser.mo
+share/locale/oc/LC_MESSAGES/accerciser.mo
+share/locale/or/LC_MESSAGES/accerciser.mo
+share/locale/pa/LC_MESSAGES/accerciser.mo
+share/locale/pl/LC_MESSAGES/accerciser.mo
+share/locale/pt/LC_MESSAGES/accerciser.mo
+share/locale/pt_BR/LC_MESSAGES/accerciser.mo
+share/locale/ru/LC_MESSAGES/accerciser.mo
+share/locale/si/LC_MESSAGES/accerciser.mo
+share/locale/sl/LC_MESSAGES/accerciser.mo
+share/locale/sq/LC_MESSAGES/accerciser.mo
+share/locale/sv/LC_MESSAGES/accerciser.mo
+share/locale/te/LC_MESSAGES/accerciser.mo
+share/locale/th/LC_MESSAGES/accerciser.mo
+share/locale/tr/LC_MESSAGES/accerciser.mo
+share/locale/uk/LC_MESSAGES/accerciser.mo
+share/locale/vi/LC_MESSAGES/accerciser.mo
+share/omf/accerciser/accerciser-C.omf
+share/omf/accerciser/accerciser-ca.omf
+share/omf/accerciser/accerciser-en_GB.omf
+share/omf/accerciser/accerciser-es.omf
+share/omf/accerciser/accerciser-oc.omf
+share/omf/accerciser/accerciser-sv.omf
+@dirrm share/omf/accerciser
+@dirrm share/gnome/help/accerciser/sv/figures
+@dirrm share/gnome/help/accerciser/sv
+@dirrm share/gnome/help/accerciser/oc/figures
+@dirrm share/gnome/help/accerciser/oc
+@dirrm share/gnome/help/accerciser/es/figures
+@dirrm share/gnome/help/accerciser/es
+@dirrm share/gnome/help/accerciser/en_GB/figures
+@dirrm share/gnome/help/accerciser/en_GB
+@dirrm share/gnome/help/accerciser/ca/figures
+@dirrm share/gnome/help/accerciser/ca
+@dirrm share/gnome/help/accerciser/C/figures
+@dirrm share/gnome/help/accerciser/C
+@dirrm share/gnome/help/accerciser
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/pixmaps/hicolor/22x22
+@dirrm %%DATADIR%%/pixmaps/hicolor
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/accerciser/plugin
+@dirrm %%PYTHON_SITELIBDIR%%/accerciser
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/applications

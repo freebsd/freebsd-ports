@@ -19,7 +19,7 @@ lib/vte/vterdb
 lib/vte/window
 libdata/pkgconfig/vte.pc
 libexec/gnome-pty-helper
-share/gnome/vte/termcap/xterm
+share/vte/termcap/xterm
 share/locale/am/LC_MESSAGES/vte.mo
 share/locale/ang/LC_MESSAGES/vte.mo
 share/locale/ar/LC_MESSAGES/vte.mo
@@ -101,8 +101,8 @@ share/locale/xh/LC_MESSAGES/vte.mo
 share/locale/zh_CN/LC_MESSAGES/vte.mo
 share/locale/zh_HK/LC_MESSAGES/vte.mo
 share/locale/zh_TW/LC_MESSAGES/vte.mo
-@dirrm share/gnome/vte/termcap
-@dirrm share/gnome/vte
+@dirrm share/vte/termcap
+@dirrm share/vte
 @dirrm lib/vte
 @dirrm include/vte
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

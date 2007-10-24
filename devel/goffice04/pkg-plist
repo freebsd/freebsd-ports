@@ -290,130 +290,22 @@ libdata/pkgconfig/libgoffice-0.4.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
-share/gnome/goffice/%%VERSION%%/glade/go-font-sel.glade
-share/gnome/goffice/%%VERSION%%/glade/go-format-sel.glade
-share/gnome/goffice/%%VERSION%%/glade/go-image-save-dialog-extra.glade
-share/gnome/goffice/%%VERSION%%/glade/go-rotation-sel.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-axis-prefs.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-error-bar-prefs.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-graph-prefs.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-guru-type-selector.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-guru.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-object-prefs.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-plot-prefs.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-reg-curve-prefs.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-reg-eqn-prefs.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-series-prefs.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-style-prefs.glade
-share/gnome/goffice/%%VERSION%%/patterns/svg-patterns.xml
-share/gnome/pixmaps/goffice/%%VERSION%%/area.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-hboth.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-hminus.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-hplus.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-none.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-vboth.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-vminus.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-vplus.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/boxplot.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/bubble.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_area_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_area_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_area_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bar_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bar_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bar_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bar_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bar_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bar_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_boxplot_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_boxplot_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bubble_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_colored_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_contour_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_dropbar_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_dropbar_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_histogram_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_minmax_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_minmax_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_minmax_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_minmax_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_3_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_polar_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_radar_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_radar_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_radar_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_ring_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_ring_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_3_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_3_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_4_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_4_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_4_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_4_4.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_stock_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_stock_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_stock_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_stock_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/color.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/column.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/doughnut.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/dropbar.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/hist.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/linegraph.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/minmax.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/pie.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/polar.png
-share/gnome/pixmaps/goffice/%%VERSION%%/radar.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/scatter.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/stock.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/surface.xpm
+%%DATADIR%%/%%VERSION%%/glade/go-font-sel.glade
+%%DATADIR%%/%%VERSION%%/glade/go-format-sel.glade
+%%DATADIR%%/%%VERSION%%/glade/go-image-save-dialog-extra.glade
+%%DATADIR%%/%%VERSION%%/glade/go-rotation-sel.glade
+%%DATADIR%%/%%VERSION%%/glade/gog-axis-prefs.glade
+%%DATADIR%%/%%VERSION%%/glade/gog-error-bar-prefs.glade
+%%DATADIR%%/%%VERSION%%/glade/gog-graph-prefs.glade
+%%DATADIR%%/%%VERSION%%/glade/gog-guru-type-selector.glade
+%%DATADIR%%/%%VERSION%%/glade/gog-guru.glade
+%%DATADIR%%/%%VERSION%%/glade/gog-object-prefs.glade
+%%DATADIR%%/%%VERSION%%/glade/gog-plot-prefs.glade
+%%DATADIR%%/%%VERSION%%/glade/gog-reg-curve-prefs.glade
+%%DATADIR%%/%%VERSION%%/glade/gog-reg-eqn-prefs.glade
+%%DATADIR%%/%%VERSION%%/glade/gog-series-prefs.glade
+%%DATADIR%%/%%VERSION%%/glade/gog-style-prefs.glade
+%%DATADIR%%/%%VERSION%%/patterns/svg-patterns.xml
 share/locale/am/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/goffice-%%VERSION%%.mo
@@ -458,16 +350,120 @@ share/locale/uk/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/goffice-%%VERSION%%.mo
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrm share/gnome/pixmaps/goffice/%%VERSION%%
-@dirrm share/gnome/pixmaps/goffice
-@dirrm share/gnome/goffice/%%VERSION%%/patterns
-@dirrm share/gnome/goffice/%%VERSION%%/glade
-@dirrm share/gnome/goffice/%%VERSION%%
-@dirrm share/gnome/goffice
+share/pixmaps/goffice/%%VERSION%%/area.xpm
+share/pixmaps/goffice/%%VERSION%%/bar-hboth.png
+share/pixmaps/goffice/%%VERSION%%/bar-hminus.png
+share/pixmaps/goffice/%%VERSION%%/bar-hplus.png
+share/pixmaps/goffice/%%VERSION%%/bar-none.png
+share/pixmaps/goffice/%%VERSION%%/bar-vboth.png
+share/pixmaps/goffice/%%VERSION%%/bar-vminus.png
+share/pixmaps/goffice/%%VERSION%%/bar-vplus.png
+share/pixmaps/goffice/%%VERSION%%/bar.xpm
+share/pixmaps/goffice/%%VERSION%%/boxplot.xpm
+share/pixmaps/goffice/%%VERSION%%/bubble.xpm
+share/pixmaps/goffice/%%VERSION%%/chart_area_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_area_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_area_1_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_bar_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_bar_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_bar_1_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_bar_2_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_bar_2_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_bar_2_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_boxplot_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_boxplot_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_bubble_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_colored_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_column_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_column_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_column_1_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_column_2_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_column_2_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_column_2_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_column_3_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_cone_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_cone_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_cone_1_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_cone_2_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_cone_2_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_cone_2_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_cone_3_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_contour_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_cylinder_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_cylinder_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_cylinder_1_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_cylinder_2_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_cylinder_2_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_cylinder_2_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_cylinder_3_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_dropbar_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_dropbar_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_histogram_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_line_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_line_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_line_1_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_line_2_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_line_2_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_line_2_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_line_3_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_minmax_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_minmax_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_minmax_2_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_minmax_2_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_pie_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_pie_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_pie_1_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_pie_2_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_pie_2_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_pie_2_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_pie_3_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_pie_3_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_polar_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_pyramid_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_pyramid_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_pyramid_1_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_pyramid_2_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_pyramid_2_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_pyramid_2_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_pyramid_3_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_radar_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_radar_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_radar_1_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_ring_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_ring_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_scatter_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_scatter_2_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_scatter_2_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_scatter_3_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_scatter_3_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_scatter_3_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_scatter_4_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_scatter_4_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_scatter_4_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_scatter_4_4.png
+share/pixmaps/goffice/%%VERSION%%/chart_stock_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_stock_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_stock_2_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_stock_2_2.png
+share/pixmaps/goffice/%%VERSION%%/color.xpm
+share/pixmaps/goffice/%%VERSION%%/column.xpm
+share/pixmaps/goffice/%%VERSION%%/doughnut.xpm
+share/pixmaps/goffice/%%VERSION%%/dropbar.xpm
+share/pixmaps/goffice/%%VERSION%%/hist.xpm
+share/pixmaps/goffice/%%VERSION%%/linegraph.xpm
+share/pixmaps/goffice/%%VERSION%%/minmax.xpm
+share/pixmaps/goffice/%%VERSION%%/pie.xpm
+share/pixmaps/goffice/%%VERSION%%/polar.png
+share/pixmaps/goffice/%%VERSION%%/radar.xpm
+share/pixmaps/goffice/%%VERSION%%/scatter.xpm
+share/pixmaps/goffice/%%VERSION%%/stock.xpm
+share/pixmaps/goffice/%%VERSION%%/surface.xpm
+@dirrm share/pixmaps/goffice/%%VERSION%%
+@dirrm share/pixmaps/goffice
+@dirrm %%DATADIR%%/%%VERSION%%/patterns
+@dirrm %%DATADIR%%/%%VERSION%%/glade
+@dirrm %%DATADIR%%/%%VERSION%%
+@dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
 @dirrm lib/goffice/%%VERSION%%/plugins/smoothing
 @dirrm lib/goffice/%%VERSION%%/plugins/reg_logfit
@@ -493,3 +489,7 @@ share/locale/zh_TW/LC_MESSAGES/goffice-%%VERSION%%.mo
 @dirrm include/libgoffice-0.4/goffice/app
 @dirrm include/libgoffice-0.4/goffice
 @dirrm include/libgoffice-0.4
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr

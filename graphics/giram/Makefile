@@ -46,6 +46,8 @@ MAN1=		giram.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '36s,static ,,' ${WRKSRC}/src/tools/tool_disc.c
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

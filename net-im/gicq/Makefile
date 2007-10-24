@@ -7,7 +7,7 @@
 
 PORTNAME=	gicq
 PORTVERSION=	0.33
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.sourceforge.net/gicq/ \
 		${MASTER_SITE_LOCAL}
@@ -21,7 +21,7 @@ LIB_DEPENDS=	icq.0:${PORTSDIR}/net-im/libicq
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk12 gnomehack
+USE_GNOME=	gtk12 gnomehack gnomeprefix
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -29,12 +29,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME+=	gnomeprefix gnomelibs
+USE_GNOME+=	gnomelibs
 PKGNAMESUFFIX=	-gnome
-PLIST_SUB=	DATADIR="share/gnome"
 .else
 CONFIGURE_ARGS+=--without-gnome
-PLIST_SUB=	DATADIR="share"
 .endif
 
 post-patch:

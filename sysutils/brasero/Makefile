@@ -3,11 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/sysutils/brasero/Makefile,v 1.15 2007/03/04 22:46:49 ahze Exp $
+#    $MCom: ports/sysutils/brasero/Makefile,v 1.18 2007/10/21 02:19:44 mezz Exp $
 
 PORTNAME=	brasero
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	SOURCEFORGE
 MASTER_SITE_SUBDIR=	bonfire
@@ -16,7 +16,9 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD/DVD mastering tool for the GNOME desktop
 
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
-		totem-plparser.1:${PORTSDIR}/multimedia/totem
+		totem-plparser.7:${PORTSDIR}/multimedia/totem
+
+IGNORE=	does not build and broke in runtime if you fix the build anyway
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes

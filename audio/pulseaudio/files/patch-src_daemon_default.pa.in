@@ -5,7 +5,7 @@
  
  ### Load something to the sample cache
 -load-sample x11-bell /usr/share/sounds/gtk-events/activate.wav
-+load-sample x11-bell %%LOCALBASE%%/share/gnome/sounds/gtk-events/activate.wav
++load-sample x11-bell %%LOCALBASE%%/share/sounds/gtk-events/activate.wav
  #load-sample-dir-lazy /usr/share/sounds/*.wav
  
  ### Load X11 bell module

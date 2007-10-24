@@ -5,7 +5,7 @@
  # standard applications.
  
 -make install-schemas
-+GAPPs=/usr/local/share/gnome/applications
++GAPPs=/usr/local/share/applications
 +APPs=/usr/local/share/applications
  
  while read n file; do

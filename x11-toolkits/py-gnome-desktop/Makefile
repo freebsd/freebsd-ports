@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11-toolkits/py-gnome-desktop/Makefile,v 1.58 2007/03/18 05:45:44 marcus Exp $
+#    $MCom: ports/x11-toolkits/py-gnome-desktop/Makefile,v 1.65 2007/09/16 17:47:04 ahze Exp $
 #
 
 PORTNAME=	gnome
-PORTVERSION=	2.18.0
-PORTREVISION=	2
+PORTVERSION=	2.20.0
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python-desktop/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -22,7 +21,7 @@ COMMENT=	A set of Python bindings used by modules in the GNOME Desktop
 
 BUILD_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
-		totem-plparser.1:${PORTSDIR}/multimedia/totem \
+		totem-plparser.7:${PORTSDIR}/multimedia/totem \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \
 		gnome-keyring:${PORTSDIR}/security/gnome-keyring
 RUN_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy

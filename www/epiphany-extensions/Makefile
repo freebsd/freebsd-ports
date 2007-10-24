@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/epiphany-extensions/Makefile,v 1.88 2007/03/11 20:34:21 mezz Exp $
+#   $MCom: ports/www/epiphany-extensions/Makefile,v 1.101 2007/10/15 22:00:17 mezz Exp $
 #
 
 PORTNAME=	epiphany-extensions
-PORTVERSION=	2.18.3
-PORTREVISION=	2
+PORTVERSION=	2.20.1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -18,6 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of add-ons for the Epiphany web browser
 
 BUILD_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
 
 USE_GETTEXT=	yes
@@ -35,12 +35,11 @@ CONFIGURE_ARGS=	--with-mozilla=${GECKO}
 GCONF_SCHEMAS=	smart-bookmarks.schemas
 
 EPHY_EXTENSIONS=all,rss
-EPHY_VERSION=	2.18
+EPHY_VERSION=	2.20
 
-PLIST_SUB=	VERSION="2.18" EPHY_VERSION=${EPHY_VERSION}
+PLIST_SUB=	VERSION="2.20" EPHY_VERSION=${EPHY_VERSION}
 
-OPTIONS=	OPENSP "Enable OpenSP SGML support" off \
-		ADBLOCK "Enable the adblock extension" on
+OPTIONS=	OPENSP "Enable OpenSP SGML support" off
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
@@ -49,14 +48,6 @@ OPTIONS=	OPENSP "Enable OpenSP SGML support" off \
 CONFIGURE_ARGS+=	--enable-opensp=yes
 .else
 CONFIGURE_ARGS+=	--disable-opensp
-.endif
-
-.if !defined(WITHOUT_ADBLOCK)
-EPHY_EXTENSIONS:=	${EPHY_EXTENSIONS},adblock
-LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
-PLIST_SUB+=		ADBLOCK=""
-.else
-PLIST_SUB+=		ADBLOCK="@comment "
 .endif
 
 .if exists(${LOCALBASE}/share/pygtk/2.0/defs/epiphany.defs)

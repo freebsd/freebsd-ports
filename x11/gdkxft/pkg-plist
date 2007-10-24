@@ -5,9 +5,9 @@ lib/libgdkxft.a
 lib/libgdkxft.la
 lib/libgdkxft.so
 %%PORTDOCS%%share/doc/gdkxft/README
-%%GNOME:%%share/gnome/apps/Settings/UIOptions/gdkxft.desktop
-%%GNOME:%%share/gnome/control-center/UIOptions/gdkxft.desktop
-%%GNOME:%%share/gnome/gdkxft/gdkxft-capplet.glade
-%%GNOME:%%share/gnome/pixmaps/gdkxft.png
-%%GNOME:%%@dirrm share/gnome/gdkxft
+%%GNOME:%%share/apps/Settings/UIOptions/gdkxft.desktop
+%%GNOME:%%share/control-center/UIOptions/gdkxft.desktop
+%%GNOME:%%share/gdkxft/gdkxft-capplet.glade
+%%GNOME:%%share/pixmaps/gdkxft.png
+%%GNOME:%%@dirrm share/gdkxft
 %%PORTDOCS%%@dirrm share/doc/gdkxft

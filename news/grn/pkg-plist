@@ -13,7 +13,7 @@ share/gnome/help/grn/ru/index.html
 share/gnome/help/grn/ru/inline_vars.html
 share/gnome/help/grn/ru/keyboard.html
 share/gnome/help/grn/ru/topic.dat
-share/gnome/pixmaps/grn.png
+share/pixmaps/grn.png
 @dirrm share/gnome/help/grn/ru
 @dirrm share/gnome/help/grn/C
 @dirrm share/gnome/help/grn

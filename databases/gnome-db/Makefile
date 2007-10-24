@@ -3,12 +3,12 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/gnome-db/Makefile,v 1.2 2006/09/10 00:51:05 mezz Exp $
+#   $MCom: ports/databases/gnome-db/Makefile,v 1.5 2007/05/19 21:36:00 marcus Exp $
 #
 
 PORTNAME=	gnome-db
 PORTVERSION=	0.2.96
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-db/0.2

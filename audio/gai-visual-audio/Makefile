@@ -7,7 +7,7 @@
 
 PORTNAME=	gai-visual-audio
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gai
@@ -33,7 +33,6 @@ post-patch:
 		${WRKSRC}/GNOME_DefaultApplet.server.in
 	@${REINPLACE_CMD} -e \
 		's|lib\(/bonobo\)|libdata\1|; \
-		 s|share\(/pixmaps\)|share/gnome\1|; \
 		 s|-O3||' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/plugin/Makefile

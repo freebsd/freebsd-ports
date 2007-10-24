@@ -71,6 +71,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/tree_store.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/aboutdialog.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/aboutdialog2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/alpha-demo.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/assistant.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/bindings.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/button.rb
@@ -112,10 +113,12 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/mouse-gesture.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/pangorenderer.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/pointer_grab.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/print.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/properties.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/radiobutton.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/recentchooserdialog.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/rgtk+cairo.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/scalebutton.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/settings.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/statusicon.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/stock.rb
@@ -129,6 +132,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/to_drawable.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/togglebutton.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/toolbar.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/tooltips.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/tree_combo.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/tree_progress.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/treemodelfilter.rb

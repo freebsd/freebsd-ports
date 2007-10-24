@@ -7,7 +7,7 @@
 
 PORTNAME=	dedit
 PORTVERSION=	0.6.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -35,8 +35,7 @@ BROKEN=		Broken with gcc 4.2
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\(\$$(datadir)/\)gnome/|\1|g ; \
-		 s|dedit.ja.1||'
+		's|dedit.ja.1||'
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/dedit.ja.1 ${MANPREFIX}/man/ja/man1/dedit.1

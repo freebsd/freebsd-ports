@@ -81,6 +81,8 @@
     SUBDIR += gtksourceview
     SUBDIR += gtksourceview-reference
     SUBDIR += gtksourceview-sharp
+    SUBDIR += gtksourceview2
+    SUBDIR += gtksourceview2-reference
     SUBDIR += gtkunique
     SUBDIR += gtoolkit
     SUBDIR += guile-gnome
@@ -193,6 +195,7 @@
     SUBDIR += py-gtkextra
     SUBDIR += py-gtkglext
     SUBDIR += py-gtkscintilla
+    SUBDIR += py-gtksourceview
     SUBDIR += py-gui
     SUBDIR += py-kde
     SUBDIR += py-kiwi

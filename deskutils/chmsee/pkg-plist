@@ -1,12 +1,12 @@
 bin/chmsee
-share/gnome/applications/chmsee.desktop
-share/gnome/chmsee/chmsee-splash.png
-share/gnome/chmsee/chmsee.glade
-share/gnome/chmsee/chmsee.html
-share/gnome/chmsee/chmsee.png
-share/gnome/mime-info/chmsee.keys
-share/gnome/mime-info/chmsee.mime
-share/gnome/pixmaps/chmsee.png
+share/applications/chmsee.desktop
+share/chmsee/chmsee-splash.png
+share/chmsee/chmsee.glade
+share/chmsee/chmsee.html
+share/chmsee/chmsee.png
+share/mime-info/chmsee.keys
+share/mime-info/chmsee.mime
+share/pixmaps/chmsee.png
 share/locale/zh_CN/LC_MESSAGES/chmsee.mo
-@dirrm share/gnome/chmsee
-@dirrmtry share/gnome/applications
+@dirrm share/chmsee
+@dirrmtry share/applications

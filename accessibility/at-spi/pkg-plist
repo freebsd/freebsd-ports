@@ -8,6 +8,7 @@ include/at-spi-1.0/libspi/accessible.h
 include/at-spi-1.0/libspi/action.h
 include/at-spi-1.0/libspi/application.h
 include/at-spi-1.0/libspi/base.h
+include/at-spi-1.0/libspi/collection.h
 include/at-spi-1.0/libspi/component.h
 include/at-spi-1.0/libspi/devicelistener.h
 include/at-spi-1.0/libspi/document.h
@@ -20,6 +21,7 @@ include/at-spi-1.0/libspi/keymasks.h
 include/at-spi-1.0/libspi/keystrokelistener.h
 include/at-spi-1.0/libspi/libspi.h
 include/at-spi-1.0/libspi/listener.h
+include/at-spi-1.0/libspi/matchrule.h
 include/at-spi-1.0/libspi/relation.h
 include/at-spi-1.0/libspi/remoteobject.h
 include/at-spi-1.0/libspi/selection.h
@@ -51,34 +53,53 @@ lib/orbit-2.0/Accessibility_LoginHelper_module.so
 lib/orbit-2.0/Accessibility_module.a
 lib/orbit-2.0/Accessibility_module.la
 lib/orbit-2.0/Accessibility_module.so
+%%PYTHON_SITELIBDIR%%/pyatspi/__init__.py
+%%PYTHON_SITELIBDIR%%/pyatspi/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyatspi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyatspi/accessible.py
+%%PYTHON_SITELIBDIR%%/pyatspi/accessible.pyc
+%%PYTHON_SITELIBDIR%%/pyatspi/accessible.pyo
+%%PYTHON_SITELIBDIR%%/pyatspi/constants.py
+%%PYTHON_SITELIBDIR%%/pyatspi/constants.pyc
+%%PYTHON_SITELIBDIR%%/pyatspi/constants.pyo
+%%PYTHON_SITELIBDIR%%/pyatspi/event.py
+%%PYTHON_SITELIBDIR%%/pyatspi/event.pyc
+%%PYTHON_SITELIBDIR%%/pyatspi/event.pyo
+%%PYTHON_SITELIBDIR%%/pyatspi/registry.py
+%%PYTHON_SITELIBDIR%%/pyatspi/registry.pyc
+%%PYTHON_SITELIBDIR%%/pyatspi/registry.pyo
+%%PYTHON_SITELIBDIR%%/pyatspi/utils.py
+%%PYTHON_SITELIBDIR%%/pyatspi/utils.pyc
+%%PYTHON_SITELIBDIR%%/pyatspi/utils.pyo
 libdata/bonobo/servers/Accessibility_Registry.server
 libdata/pkgconfig/cspi-1.0.pc
 libdata/pkgconfig/libloginhelper-1.0.pc
 libdata/pkgconfig/libspi-1.0.pc
 libexec/at-spi-registryd
-share/gnome/idl/at-spi-1.0/Accessibility.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Accessible.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Action.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Application.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Component.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Desktop.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Document.idl
-share/gnome/idl/at-spi-1.0/Accessibility_EditableText.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Event.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Hyperlink.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Hypertext.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Image.idl
-share/gnome/idl/at-spi-1.0/Accessibility_LoginHelper.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Registry.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Relation.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Role.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Selection.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Selector.idl
-share/gnome/idl/at-spi-1.0/Accessibility_State.idl
-share/gnome/idl/at-spi-1.0/Accessibility_StreamableContent.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Table.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Text.idl
-share/gnome/idl/at-spi-1.0/Accessibility_Value.idl
+share/idl/at-spi-1.0/Accessibility.idl
+share/idl/at-spi-1.0/Accessibility_Accessible.idl
+share/idl/at-spi-1.0/Accessibility_Action.idl
+share/idl/at-spi-1.0/Accessibility_Application.idl
+share/idl/at-spi-1.0/Accessibility_Collection.idl
+share/idl/at-spi-1.0/Accessibility_Component.idl
+share/idl/at-spi-1.0/Accessibility_Desktop.idl
+share/idl/at-spi-1.0/Accessibility_Document.idl
+share/idl/at-spi-1.0/Accessibility_EditableText.idl
+share/idl/at-spi-1.0/Accessibility_Event.idl
+share/idl/at-spi-1.0/Accessibility_Hyperlink.idl
+share/idl/at-spi-1.0/Accessibility_Hypertext.idl
+share/idl/at-spi-1.0/Accessibility_Image.idl
+share/idl/at-spi-1.0/Accessibility_LoginHelper.idl
+share/idl/at-spi-1.0/Accessibility_Registry.idl
+share/idl/at-spi-1.0/Accessibility_Relation.idl
+share/idl/at-spi-1.0/Accessibility_Role.idl
+share/idl/at-spi-1.0/Accessibility_Selection.idl
+share/idl/at-spi-1.0/Accessibility_Selector.idl
+share/idl/at-spi-1.0/Accessibility_State.idl
+share/idl/at-spi-1.0/Accessibility_StreamableContent.idl
+share/idl/at-spi-1.0/Accessibility_Table.idl
+share/idl/at-spi-1.0/Accessibility_Text.idl
+share/idl/at-spi-1.0/Accessibility_Value.idl
 share/locale/ar/LC_MESSAGES/at-spi.mo
 share/locale/az/LC_MESSAGES/at-spi.mo
 share/locale/be/LC_MESSAGES/at-spi.mo
@@ -121,6 +142,7 @@ share/locale/nb/LC_MESSAGES/at-spi.mo
 share/locale/ne/LC_MESSAGES/at-spi.mo
 share/locale/nl/LC_MESSAGES/at-spi.mo
 share/locale/nn/LC_MESSAGES/at-spi.mo
+share/locale/oc/LC_MESSAGES/at-spi.mo
 share/locale/or/LC_MESSAGES/at-spi.mo
 share/locale/pa/LC_MESSAGES/at-spi.mo
 share/locale/pl/LC_MESSAGES/at-spi.mo
@@ -145,12 +167,13 @@ share/locale/xh/LC_MESSAGES/at-spi.mo
 share/locale/zh_CN/LC_MESSAGES/at-spi.mo
 share/locale/zh_HK/LC_MESSAGES/at-spi.mo
 share/locale/zh_TW/LC_MESSAGES/at-spi.mo
-@dirrm share/gnome/idl/at-spi-1.0
-@dirrmtry lib/orbit-2.0
+@dirrm share/idl/at-spi-1.0
+@dirrm %%PYTHON_SITELIBDIR%%/pyatspi
 @dirrm include/at-spi-1.0/login-helper
 @dirrm include/at-spi-1.0/libspi
 @dirrm include/at-spi-1.0/cspi
 @dirrm include/at-spi-1.0
+@dirrmtry lib/orbit-2.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -161,6 +184,8 @@ share/locale/zh_TW/LC_MESSAGES/at-spi.mo
 @dirrmtry share/locale/sr@ije
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES

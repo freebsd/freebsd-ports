@@ -200,62 +200,62 @@ lib/libsfi.la
 lib/libsfi.so
 libdata/pkgconfig/bse.pc
 libdata/pkgconfig/sfi.pc
-share/gnome/application-registry/beast.applications
-share/gnome/applications/beast.desktop
-share/gnome/beast/v0.6.6/docs/architecture.markup
-share/gnome/beast/v0.6.6/docs/beast-gxk.3.markup
-share/gnome/beast/v0.6.6/docs/beast-index.markup
-share/gnome/beast/v0.6.6/docs/beast.1.markup
-share/gnome/beast/v0.6.6/docs/bse-procs.3.markup
-share/gnome/beast/v0.6.6/docs/bse-structs.3.markup
-share/gnome/beast/v0.6.6/docs/bse.3.markup
-share/gnome/beast/v0.6.6/docs/bsesh.1.markup
-share/gnome/beast/v0.6.6/docs/engine-mplan.markup
-share/gnome/beast/v0.6.6/docs/faq.markup
-share/gnome/beast/v0.6.6/docs/objdoc.markup
-share/gnome/beast/v0.6.6/docs/plugin-devel.markup
-share/gnome/beast/v0.6.6/docs/quickstart.markup
-share/gnome/beast/v0.6.6/docs/release-news.markup
-share/gnome/beast/v0.6.6/docs/release-notes.markup
-share/gnome/beast/v0.6.6/docs/sfi.3.markup
-share/gnome/beast/v0.6.6/docs/sfidl-manual.markup
-share/gnome/beast/v0.6.6/docs/sfidl.1.markup
-share/gnome/beast/v0.6.6/images/beast-components.png
-share/gnome/beast/v0.6.6/images/beast-mime.png
-share/gnome/beast/v0.6.6/images/beast-progs.png
-share/gnome/beast/v0.6.6/images/beast-splash.png
-share/gnome/beast/v0.6.6/images/bse-mime.png
-share/gnome/beast/v0.6.6/images/module-voices.png
-share/gnome/beast/v0.6.6/keys/keyrc.de
-share/gnome/beast/v0.6.6/keys/keyrc.us
-share/gnome/beast/v0.6.6/skins/biogreen.skin
-share/gnome/beast/v0.6.6/skins/blueimpress.skin
-share/gnome/beast/v0.6.6/skins/brownforms.skin
-share/gnome/beast/v0.6.6/skins/images/biogreen.jpg
-share/gnome/beast/v0.6.6/skins/images/blueimpress.jpg
-share/gnome/beast/v0.6.6/skins/images/brownforms.jpg
-share/gnome/beast/v0.6.6/skins/images/moonpaper.png
-share/gnome/beast/v0.6.6/skins/images/silvervein.png
-share/gnome/beast/v0.6.6/skins/moonpaper.skin
-share/gnome/beast/v0.6.6/skins/silvervein.skin
-share/gnome/beast/v0.6.6/skins/white.skin
-share/gnome/bse/v0.6.6/demo/partymonster.bse
-share/gnome/bse/v0.6.6/demo/stereo-through.bse
-share/gnome/bse/v0.6.6/demo/x2-midi-test.bse
-share/gnome/bse/v0.6.6/effects/atan-canyon.bse
-share/gnome/bse/v0.6.6/instruments/synth-lead.bse
-share/gnome/bse/v0.6.6/instruments/test-string.bse
-share/gnome/bse/v0.6.6/scripts/bse-scm-glue.boot
-share/gnome/bse/v0.6.6/scripts/mixer-splitup-by-track.scm
-share/gnome/bse/v0.6.6/scripts/modules2grid.scm
-share/gnome/bse/v0.6.6/scripts/part-harmonic-transposer.scm
-share/gnome/bse/v0.6.6/scripts/progressor-example.scm
-share/gnome/bse/v0.6.6/scripts/record-midi.scm
-share/gnome/bse/v0.6.6/scripts/song-parts-operations.scm
-share/gnome/mime-info/bse.keys
-share/gnome/mime-info/bse.mime
-share/gnome/pixmaps/beast-audio-x-bse.png
-share/gnome/pixmaps/beast.png
+share/application-registry/beast.applications
+share/applications/beast.desktop
+share/beast/v0.6.6/docs/architecture.markup
+share/beast/v0.6.6/docs/beast-gxk.3.markup
+share/beast/v0.6.6/docs/beast-index.markup
+share/beast/v0.6.6/docs/beast.1.markup
+share/beast/v0.6.6/docs/bse-procs.3.markup
+share/beast/v0.6.6/docs/bse-structs.3.markup
+share/beast/v0.6.6/docs/bse.3.markup
+share/beast/v0.6.6/docs/bsesh.1.markup
+share/beast/v0.6.6/docs/engine-mplan.markup
+share/beast/v0.6.6/docs/faq.markup
+share/beast/v0.6.6/docs/objdoc.markup
+share/beast/v0.6.6/docs/plugin-devel.markup
+share/beast/v0.6.6/docs/quickstart.markup
+share/beast/v0.6.6/docs/release-news.markup
+share/beast/v0.6.6/docs/release-notes.markup
+share/beast/v0.6.6/docs/sfi.3.markup
+share/beast/v0.6.6/docs/sfidl-manual.markup
+share/beast/v0.6.6/docs/sfidl.1.markup
+share/beast/v0.6.6/images/beast-components.png
+share/beast/v0.6.6/images/beast-mime.png
+share/beast/v0.6.6/images/beast-progs.png
+share/beast/v0.6.6/images/beast-splash.png
+share/beast/v0.6.6/images/bse-mime.png
+share/beast/v0.6.6/images/module-voices.png
+share/beast/v0.6.6/keys/keyrc.de
+share/beast/v0.6.6/keys/keyrc.us
+share/beast/v0.6.6/skins/biogreen.skin
+share/beast/v0.6.6/skins/blueimpress.skin
+share/beast/v0.6.6/skins/brownforms.skin
+share/beast/v0.6.6/skins/images/biogreen.jpg
+share/beast/v0.6.6/skins/images/blueimpress.jpg
+share/beast/v0.6.6/skins/images/brownforms.jpg
+share/beast/v0.6.6/skins/images/moonpaper.png
+share/beast/v0.6.6/skins/images/silvervein.png
+share/beast/v0.6.6/skins/moonpaper.skin
+share/beast/v0.6.6/skins/silvervein.skin
+share/beast/v0.6.6/skins/white.skin
+share/bse/v0.6.6/demo/partymonster.bse
+share/bse/v0.6.6/demo/stereo-through.bse
+share/bse/v0.6.6/demo/x2-midi-test.bse
+share/bse/v0.6.6/effects/atan-canyon.bse
+share/bse/v0.6.6/instruments/synth-lead.bse
+share/bse/v0.6.6/instruments/test-string.bse
+share/bse/v0.6.6/scripts/bse-scm-glue.boot
+share/bse/v0.6.6/scripts/mixer-splitup-by-track.scm
+share/bse/v0.6.6/scripts/modules2grid.scm
+share/bse/v0.6.6/scripts/part-harmonic-transposer.scm
+share/bse/v0.6.6/scripts/progressor-example.scm
+share/bse/v0.6.6/scripts/record-midi.scm
+share/bse/v0.6.6/scripts/song-parts-operations.scm
+share/mime-info/bse.keys
+share/mime-info/bse.mime
+share/pixmaps/beast-audio-x-bse.png
+share/pixmaps/beast.png
 share/locale/az/LC_MESSAGES/beast-v0.6.6.mo
 share/locale/bg/LC_MESSAGES/beast-v0.6.6.mo
 share/locale/ca/LC_MESSAGES/beast-v0.6.6.mo
@@ -290,20 +290,21 @@ share/mime/packages/beast.xml
 @dirrm lib/bse/v0.6.6/plugins
 @dirrm lib/bse/v0.6.6
 @dirrm lib/bse
-@dirrm share/gnome/beast/v0.6.6/docs
-@dirrm share/gnome/beast/v0.6.6/images
-@dirrm share/gnome/beast/v0.6.6/keys
-@dirrm share/gnome/beast/v0.6.6/skins/images
-@dirrm share/gnome/beast/v0.6.6/skins
-@dirrm share/gnome/beast/v0.6.6
-@dirrm share/gnome/beast
-@dirrm share/gnome/bse/v0.6.6/demo
-@dirrm share/gnome/bse/v0.6.6/effects
-@dirrm share/gnome/bse/v0.6.6/instruments
-@dirrm share/gnome/bse/v0.6.6/scripts
-@dirrm share/gnome/bse/v0.6.6
-@dirrm share/gnome/bse
+@dirrm share/beast/v0.6.6/docs
+@dirrm share/beast/v0.6.6/images
+@dirrm share/beast/v0.6.6/keys
+@dirrm share/beast/v0.6.6/skins/images
+@dirrm share/beast/v0.6.6/skins
+@dirrm share/beast/v0.6.6
+@dirrm share/beast
+@dirrm share/bse/v0.6.6/demo
+@dirrm share/bse/v0.6.6/effects
+@dirrm share/bse/v0.6.6/instruments
+@dirrm share/bse/v0.6.6/scripts
+@dirrm share/bse/v0.6.6
+@dirrm share/bse
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/applications

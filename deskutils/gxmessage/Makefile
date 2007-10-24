@@ -7,7 +7,7 @@
 
 PORTNAME=	gxmessage
 PORTVERSION=	2.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://homepages.ihug.co.nz/~trmusson/stuff/
 
@@ -24,6 +24,6 @@ MAKE_ARGS+=	INSTALL="${INSTALL_PROGRAM}"
 MANCOMPRESSED=	no
 MAN1=		gxmessage.1
 PLIST_FILES=	bin/gxmessage \
-		share/gnome/pixmaps/gxmessage.png
+		share/pixmaps/gxmessage.png
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@
  
 -Applicationsdir = $(datadir)/gnome/apps/Applications
 -Applications_DATA = gnotepad+.desktop gnotepad+.spec
-+@HAVE_GNOME_TRUE@Applicationsdir = $(datadir)/apps/Applications
++@HAVE_GNOME_TRUE@Applicationsdir = $(datadir)/gnome/apps/Applications
 +@HAVE_GNOME_TRUE@Applications_DATA = gnotepad+.desktop gnotepad+.spec
  
  SUBDIRS = docs po intl src

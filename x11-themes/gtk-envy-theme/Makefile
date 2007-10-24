@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-envy-theme
 PORTVERSION=	1.0.${SNAPSHOT}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	35093-Envy
@@ -24,9 +24,9 @@ WRKSRC=		${WRKDIR}/Envy
 
 do-install:
 	${MKDIR} ${PREFIX}/share/themes/Envy/gtk-2.0
-	${MKDIR} ${PREFIX}/share/gnome/themes/Envy/metacity-1
+	${MKDIR} ${PREFIX}/share/themes/Envy/metacity-1
 	@${CP} ${FILESDIR}/index.theme.in ${PREFIX}/share/themes/Envy/index.theme
 	@${CP} -R ${WRKDIR}/Envy/gtk-2.0/* ${PREFIX}/share/themes/Envy/gtk-2.0
-	@${CP} -R ${WRKDIR}/Envy/metacity-1/* ${PREFIX}/share/gnome/themes/Envy/metacity-1
+	@${CP} -R ${WRKDIR}/Envy/metacity-1/* ${PREFIX}/share/themes/Envy/metacity-1
 
 .include <bsd.port.mk>

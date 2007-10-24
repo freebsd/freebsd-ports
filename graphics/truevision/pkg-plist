@@ -1,7 +1,7 @@
 bin/truevision
 lib/libftgltv.a
-share/gnome/applications/truevision.desktop
-share/gnome/application-registry/truevision.applications
+share/applications/truevision.desktop
+share/application-registry/truevision.applications
 share/gnome/help/truevision/C/athmospherics.xml
 share/gnome/help/truevision/C/camera.xml
 share/gnome/help/truevision/C/figures/interface_editor.png
@@ -51,95 +51,96 @@ share/gnome/help/truevision/C/interface_toolbar.xml
 share/gnome/help/truevision/C/legal.xml
 share/gnome/help/truevision/C/truevision.xml
 share/gnome/help/truevision/C/welcome.xml
-share/gnome/mime-info/truevision.keys
-share/gnome/mime-info/truevision.mime
-share/gnome/pixmaps/truevision/create_icon.png
-share/gnome/pixmaps/truevision/gnome-mime-application-x-truevision.png
-share/gnome/pixmaps/truevision/gnome-truevision.png
-share/gnome/pixmaps/truevision/lock.xpm
-share/gnome/pixmaps/truevision/mapedit_cursor.xpm
-share/gnome/pixmaps/truevision/move_icon.png
-share/gnome/pixmaps/truevision/nopreview.xpm
-share/gnome/pixmaps/truevision/object_bkgd.xpm
-share/gnome/pixmaps/truevision/object_blob.xpm
-share/gnome/pixmaps/truevision/object_box.xpm
-share/gnome/pixmaps/truevision/object_camera.xpm
-share/gnome/pixmaps/truevision/object_cone.xpm
-share/gnome/pixmaps/truevision/object_csg.xpm
-share/gnome/pixmaps/truevision/object_cylinder.xpm
-share/gnome/pixmaps/truevision/object_default.xpm
-share/gnome/pixmaps/truevision/object_default2.xpm
-share/gnome/pixmaps/truevision/object_diff.xpm
-share/gnome/pixmaps/truevision/object_disc.xpm
-share/gnome/pixmaps/truevision/object_fog.xpm
-share/gnome/pixmaps/truevision/object_hf.xpm
-share/gnome/pixmaps/truevision/object_inter.xpm
-share/gnome/pixmaps/truevision/object_lathe.xpm
-share/gnome/pixmaps/truevision/object_light.xpm
-share/gnome/pixmaps/truevision/object_link.xpm
-share/gnome/pixmaps/truevision/object_merge.xpm
-share/gnome/pixmaps/truevision/object_plane.xpm
-share/gnome/pixmaps/truevision/object_prism.xpm
-share/gnome/pixmaps/truevision/object_sphere.xpm
-share/gnome/pixmaps/truevision/object_superellipsoid.xpm
-share/gnome/pixmaps/truevision/object_text.xpm
-share/gnome/pixmaps/truevision/object_torus.xpm
-share/gnome/pixmaps/truevision/object_union.xpm
-share/gnome/pixmaps/truevision/object_visible.xpm
-share/gnome/pixmaps/truevision/page_detach.png
-share/gnome/pixmaps/truevision/render.xpm
-share/gnome/pixmaps/truevision/rotate_icon.png
-share/gnome/pixmaps/truevision/scale_icon.png
-share/gnome/pixmaps/truevision/select_icon.png
-share/gnome/pixmaps/truevision/splash.png
-share/gnome/pixmaps/truevision/trackball_icon.png
-share/gnome/pixmaps/truevision/uscale_icon.png
-share/gnome/pixmaps/truevision/view_maximize.png
-share/gnome/pixmaps/truevision/view_menu.png
-share/gnome/pixmaps/truevision/view_restore.png
-share/gnome/pixmaps/truevision/view_rolldown.png
-share/gnome/pixmaps/truevision/view_rollup.png
-share/gnome/pixmaps/truevision/warning.xpm
-share/gnome/truevision/materials/Effects/Fire1.tvm
-share/gnome/truevision/materials/Effects/water.tvm
-share/gnome/truevision/materials/Metals/Brass/Brass1A.tvm
-share/gnome/truevision/materials/Metals/Brass/Brass1B.tvm
-share/gnome/truevision/materials/Metals/Brass/Brass1C.tvm
-share/gnome/truevision/materials/Metals/Brass/Brass1D.tvm
-share/gnome/truevision/materials/Metals/Copper/Copper_1A.tvm
-share/gnome/truevision/materials/Metals/Copper/Copper_1B.tvm
-share/gnome/truevision/materials/Metals/Copper/Copper_1C.tvm
-share/gnome/truevision/materials/Metals/Gold/Gold_1A.tvm
-share/gnome/truevision/materials/Metals/Gold/Gold_1B.tvm
-share/gnome/truevision/materials/Metals/Gold/Gold_1C.tvm
-share/gnome/truevision/materials/Skies/Cloud1.tvm
-share/gnome/truevision/materials/Stones/Marble1.tvm
-share/gnome/truevision/materials/Stones/granite3.tvm
-share/gnome/truevision/materials/Woods/Golden_Oak.tvm
-share/gnome/truevision/materials/Woods/Soft_Pine.tvm
-share/gnome/truevision/python/plug-ins/about_python.py
-share/gnome/truevision/python/plug-ins/starfield.py
-share/gnome/truevision/python/tv_classes.py
+share/mime-info/truevision.keys
+share/mime-info/truevision.mime
+share/pixmaps/truevision/create_icon.png
+share/pixmaps/truevision/gnome-mime-application-x-truevision.png
+share/pixmaps/truevision/gnome-truevision.png
+share/pixmaps/truevision/lock.xpm
+share/pixmaps/truevision/mapedit_cursor.xpm
+share/pixmaps/truevision/move_icon.png
+share/pixmaps/truevision/nopreview.xpm
+share/pixmaps/truevision/object_bkgd.xpm
+share/pixmaps/truevision/object_blob.xpm
+share/pixmaps/truevision/object_box.xpm
+share/pixmaps/truevision/object_camera.xpm
+share/pixmaps/truevision/object_cone.xpm
+share/pixmaps/truevision/object_csg.xpm
+share/pixmaps/truevision/object_cylinder.xpm
+share/pixmaps/truevision/object_default.xpm
+share/pixmaps/truevision/object_default2.xpm
+share/pixmaps/truevision/object_diff.xpm
+share/pixmaps/truevision/object_disc.xpm
+share/pixmaps/truevision/object_fog.xpm
+share/pixmaps/truevision/object_hf.xpm
+share/pixmaps/truevision/object_inter.xpm
+share/pixmaps/truevision/object_lathe.xpm
+share/pixmaps/truevision/object_light.xpm
+share/pixmaps/truevision/object_link.xpm
+share/pixmaps/truevision/object_merge.xpm
+share/pixmaps/truevision/object_plane.xpm
+share/pixmaps/truevision/object_prism.xpm
+share/pixmaps/truevision/object_sphere.xpm
+share/pixmaps/truevision/object_superellipsoid.xpm
+share/pixmaps/truevision/object_text.xpm
+share/pixmaps/truevision/object_torus.xpm
+share/pixmaps/truevision/object_union.xpm
+share/pixmaps/truevision/object_visible.xpm
+share/pixmaps/truevision/page_detach.png
+share/pixmaps/truevision/render.xpm
+share/pixmaps/truevision/rotate_icon.png
+share/pixmaps/truevision/scale_icon.png
+share/pixmaps/truevision/select_icon.png
+share/pixmaps/truevision/splash.png
+share/pixmaps/truevision/trackball_icon.png
+share/pixmaps/truevision/uscale_icon.png
+share/pixmaps/truevision/view_maximize.png
+share/pixmaps/truevision/view_menu.png
+share/pixmaps/truevision/view_restore.png
+share/pixmaps/truevision/view_rolldown.png
+share/pixmaps/truevision/view_rollup.png
+share/pixmaps/truevision/warning.xpm
+share/truevision/materials/Effects/Fire1.tvm
+share/truevision/materials/Effects/water.tvm
+share/truevision/materials/Metals/Brass/Brass1A.tvm
+share/truevision/materials/Metals/Brass/Brass1B.tvm
+share/truevision/materials/Metals/Brass/Brass1C.tvm
+share/truevision/materials/Metals/Brass/Brass1D.tvm
+share/truevision/materials/Metals/Copper/Copper_1A.tvm
+share/truevision/materials/Metals/Copper/Copper_1B.tvm
+share/truevision/materials/Metals/Copper/Copper_1C.tvm
+share/truevision/materials/Metals/Gold/Gold_1A.tvm
+share/truevision/materials/Metals/Gold/Gold_1B.tvm
+share/truevision/materials/Metals/Gold/Gold_1C.tvm
+share/truevision/materials/Skies/Cloud1.tvm
+share/truevision/materials/Stones/Marble1.tvm
+share/truevision/materials/Stones/granite3.tvm
+share/truevision/materials/Woods/Golden_Oak.tvm
+share/truevision/materials/Woods/Soft_Pine.tvm
+share/truevision/python/plug-ins/about_python.py
+share/truevision/python/plug-ins/starfield.py
+share/truevision/python/tv_classes.py
 share/locale/de/LC_MESSAGES/truevision.mo
 share/locale/fr/LC_MESSAGES/truevision.mo
 share/locale/ru/LC_MESSAGES/truevision.mo
 share/mime/packages/truevision.xml
-@dirrm share/gnome/truevision/python/plug-ins
-@dirrm share/gnome/truevision/python
-@dirrm share/gnome/truevision/materials/Woods
-@dirrm share/gnome/truevision/materials/Stones
-@dirrm share/gnome/truevision/materials/Skies
-@dirrm share/gnome/truevision/materials/Metals/Gold
-@dirrm share/gnome/truevision/materials/Metals/Copper
-@dirrm share/gnome/truevision/materials/Metals/Brass
-@dirrm share/gnome/truevision/materials/Metals
-@dirrm share/gnome/truevision/materials/Glass
-@dirrm share/gnome/truevision/materials/Effects
-@dirrm share/gnome/truevision/materials
-@dirrm share/gnome/truevision
-@dirrm share/gnome/pixmaps/truevision
+@dirrm share/truevision/python/plug-ins
+@dirrm share/truevision/python
+@dirrm share/truevision/materials/Woods
+@dirrm share/truevision/materials/Stones
+@dirrm share/truevision/materials/Skies
+@dirrm share/truevision/materials/Metals/Gold
+@dirrm share/truevision/materials/Metals/Copper
+@dirrm share/truevision/materials/Metals/Brass
+@dirrm share/truevision/materials/Metals
+@dirrm share/truevision/materials/Glass
+@dirrm share/truevision/materials/Effects
+@dirrm share/truevision/materials
+@dirrm share/truevision
+@dirrm share/pixmaps/truevision
 @dirrm share/gnome/help/truevision/C/figures
 @dirrm share/gnome/help/truevision/C
 @dirrm share/gnome/help/truevision
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@dirrmtry share/applications

@@ -36,7 +36,7 @@ share/doc/rsvg/rsvg.devhelp2
 share/doc/rsvg/rsvg.html
 share/doc/rsvg/style.css
 share/doc/rsvg/up.png
-share/gnome/pixmaps/svg-viewer.svg
+share/pixmaps/svg-viewer.svg
 @dirrm share/doc/rsvg
 @dirrm include/librsvg-2/librsvg
 @dirrm include/librsvg-2

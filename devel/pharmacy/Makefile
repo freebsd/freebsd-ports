@@ -7,6 +7,7 @@
 
 PORTNAME=	pharmacy
 PORTVERSION=	0.3
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	SF
 
@@ -26,8 +27,5 @@ pre-patch:
 		s|\(DATADIRNAME=\)lib|\1share|g ; \
 		s|USE_INCLUDED_LIBINTL=yes|#&|g ; \
 		s|\$$(top_builddir)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\(\$$(datadir)/\)gnome/|\1|g ; \
-		 s|\$$(datadir)/locale|$$(prefix)/share/locale|g'
 
 .include <bsd.port.mk>

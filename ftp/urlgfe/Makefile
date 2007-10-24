@@ -7,7 +7,7 @@
 
 PORTNAME=	urlgfe
 PORTVERSION=	0.7.1
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	urlget
@@ -51,7 +51,7 @@ post-patch:
 .if defined(WITH_GNOME)
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/gnome/apps/Internet/
-	@${INSTALL_DATA} ${WRKSRC}/pixmaps/${PORTNAME}-icon.png ${PREFIX}/share/gnome/pixmaps/
+	@${INSTALL_DATA} ${WRKSRC}/pixmaps/${PORTNAME}-icon.png ${PREFIX}/share/pixmaps/
 .endif
 
 .include <bsd.port.post.mk>

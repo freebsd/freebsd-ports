@@ -102,7 +102,7 @@ share/gnome/help/alexandria/C/figures/alexandria_list_view_search.png
 share/gnome/help/alexandria/C/figures/alexandria_loaning.png
 share/gnome/help/alexandria/C/figures/alexandria_main_window.png
 share/gnome/help/alexandria/ChangeLog
-share/gnome/omf/alexandria/alexandria-C.omf
+share/omf/alexandria/alexandria-C.omf
 share/locale/cs/LC_MESSAGES/alexandria.mo
 share/locale/cy/LC_MESSAGES/alexandria.mo
 share/locale/de/LC_MESSAGES/alexandria.mo
@@ -114,7 +114,7 @@ share/locale/pl/LC_MESSAGES/alexandria.mo
 share/locale/pt/LC_MESSAGES/alexandria.mo
 share/locale/pt_BR/LC_MESSAGES/alexandria.mo
 share/locale/sv/LC_MESSAGES/alexandria.mo
-@dirrm share/gnome/omf/alexandria
+@dirrm share/omf/alexandria
 @dirrm share/gnome/help/alexandria/C/figures
 @dirrm share/gnome/help/alexandria/C
 @dirrm share/gnome/help/alexandria

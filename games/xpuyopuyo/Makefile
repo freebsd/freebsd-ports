@@ -7,7 +7,7 @@
 
 PORTNAME=	xpuyopuyo
 PORTVERSION=	0.9.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xpuyopuyo/
 
@@ -37,10 +37,8 @@ CONFIGURE_ARGS+=--with-libmikmod-prefix=${LOCALBASE}
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 USE_GNOME+=	gnomelibs gnomehack
 PKGNAMESUFFIX=	-gnome
-PLIST_SUB+=	DATADIR="share/gnome"
 .else
 CONFIGURE_ARGS+=	--without-gnome
-PLIST_SUB+=	DATADIR="share"
 .endif
 
 .if defined(WITH_ROTATE_FIXED)

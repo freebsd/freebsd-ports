@@ -5,4 +5,4 @@
  [Window Manager]
  SessionManaged=false
 -ConfigExec=/usr/X11R6/lib/GNUstep/Apps/WPrefs.app/WPrefs
-+ConfigExec=/usr/X11R6/share/GNUstep/Apps/WPrefs.app/WPrefs
++ConfigExec=/usr/local/share/GNUstep/Apps/WPrefs.app/WPrefs

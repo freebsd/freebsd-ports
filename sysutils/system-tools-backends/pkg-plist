@@ -37,6 +37,7 @@ share/system-tools-backends-2.0/scripts/Users/Shells.pm
 share/system-tools-backends-2.0/scripts/Users/Users.pm
 share/system-tools-backends-2.0/scripts/UsersConfig.pm
 share/system-tools-backends-2.0/scripts/Utils/Backend.pm
+share/system-tools-backends-2.0/scripts/Utils/DBus.pm
 share/system-tools-backends-2.0/scripts/Utils/File.pm
 share/system-tools-backends-2.0/scripts/Utils/Monitor.pm
 share/system-tools-backends-2.0/scripts/Utils/Parse.pm

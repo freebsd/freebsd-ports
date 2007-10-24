@@ -85,13 +85,13 @@ lib/libgnomeprint/%%VERSION%%/modules/transports/libgnomeprint-lpr.a
 lib/libgnomeprint/%%VERSION%%/modules/transports/libgnomeprint-lpr.la
 lib/libgnomeprint/%%VERSION%%/modules/transports/libgnomeprint-lpr.so
 libdata/pkgconfig/libgnomeprint-%%LIBVERSION%%.pc
-share/gnome/libgnomeprint/%%VERSION%%/globals.xml
-share/gnome/libgnomeprint/%%VERSION%%/models/GNOME-GENERIC-PS.xml
-share/gnome/libgnomeprint/%%VERSION%%/models/GNOME-PDF-WRITER.xml
-share/gnome/libgnomeprint/%%VERSION%%/models/uninstalled/GNOME-META.xml
-share/gnome/libgnomeprint/%%VERSION%%/printers/GENERIC.xml
-share/gnome/libgnomeprint/%%VERSION%%/printers/PDF-WRITER.xml
-share/gnome/libgnomeprint/%%VERSION%%/printers/uninstalled/META.xml
+%%DATADIR%%/%%VERSION%%/globals.xml
+%%DATADIR%%/%%VERSION%%/models/GNOME-GENERIC-PS.xml
+%%DATADIR%%/%%VERSION%%/models/GNOME-PDF-WRITER.xml
+%%DATADIR%%/%%VERSION%%/models/uninstalled/GNOME-META.xml
+%%DATADIR%%/%%VERSION%%/printers/GENERIC.xml
+%%DATADIR%%/%%VERSION%%/printers/PDF-WRITER.xml
+%%DATADIR%%/%%VERSION%%/printers/uninstalled/META.xml
 share/locale/am/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/ar/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/az/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
@@ -167,12 +167,12 @@ share/locale/xh/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
-@dirrm share/gnome/libgnomeprint/%%VERSION%%/printers/uninstalled
-@dirrm share/gnome/libgnomeprint/%%VERSION%%/printers
-@dirrm share/gnome/libgnomeprint/%%VERSION%%/models/uninstalled
-@dirrm share/gnome/libgnomeprint/%%VERSION%%/models
-@dirrm share/gnome/libgnomeprint/%%VERSION%%
-@dirrm share/gnome/libgnomeprint
+@dirrm %%DATADIR%%/%%VERSION%%/printers/uninstalled
+@dirrm %%DATADIR%%/%%VERSION%%/printers
+@dirrm %%DATADIR%%/%%VERSION%%/models/uninstalled
+@dirrm %%DATADIR%%/%%VERSION%%/models
+@dirrm %%DATADIR%%/%%VERSION%%
+@dirrm %%DATADIR%%
 @dirrm lib/libgnomeprint/%%VERSION%%/modules/transports
 @dirrm lib/libgnomeprint/%%VERSION%%/modules/filters
 @dirrm lib/libgnomeprint/%%VERSION%%/modules

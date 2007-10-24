@@ -14,7 +14,7 @@ diff -U 4 -r -N ./install.sh.orig ./install.sh
  
  LOCALEDIR=$PREFIX/share/locale
 -ASSETMLDIR=/usr/share/assetml
-+ASSETMLDIR=$PREFIX/share/gnome/assetml
++ASSETMLDIR=$PREFIX/share/assetml
  PYTHON=`which python`
  SCOREDIR=/var/games
  DOCDIR=$PREFIX/share/doc/childsplay

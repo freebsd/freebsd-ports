@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- guile-gnome/bonobo/Makefile.in.orig	Fri Mar  9 19:07:48 2001
 +++ guile-gnome/bonobo/Makefile.in	Mon Nov 12 14:05:21 2001
 @@ -98,10 +98,10 @@

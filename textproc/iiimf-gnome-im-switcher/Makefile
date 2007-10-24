@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-im-switcher
 PORTVERSION=	12.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -46,25 +46,15 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 post-patch:
 	${REINPLACE_CMD} \
 		-e '/^serverdir/s,$$[(]libdir[)],%%LOCALBASE%%/libdata,g' \
-		-e '/^uidir/s,$$[(]datadir[)]/,&gnome/,g' \
 		${BUILDDIR}/src/Makefile.am
 	${REINPLACE_CMD} \
 		-e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		-e "s,%%PREFIX%%,${PREFIX},g" \
 		${WRKSRC}/Makefile ${BUILDDIR}/Makefile.am \
 		${BUILDDIR}/src/Makefile.am
-	${REINPLACE_CMD} -e "/GNOMECC_DATA_DIR/s,/share/,&gnome/,g" \
-		${BUILDDIR}/configure.ac
-	${REINPLACE_CMD} -e "/^GNOMECC_.*_DIR=/s,[(]datadir[)]/,&gnome/,g" \
-		${BUILDDIR}/configure.ac
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${GMAKE} bootstrap
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${GMAKE} config
-
-post-configure:
-	${REINPLACE_CMD} -e '/^pkgdatadir/s,[(]datadir[)]/,&gnome/,g' \
-		-e '/^iconsdir/s,[(]datadir[)]/,&gnome/,g' \
-		${BUILDDIR}/src/Makefile
 
 .include <bsd.port.post.mk>

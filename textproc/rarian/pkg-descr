@@ -1,0 +1,9 @@
+Rarian is designed to be a replacement for scrollkeeper.  It is
+currently undergoing heavy development.  As of writing, rarian can be
+installed in place of scrollkeeper and everything will work okay.
+
+Rarian manages documentation metadata (as specified by the Open Source
+Metadata Framework (OMF) and provides a simple API to allow help browsers
+to find, sort, and search the document catalog.  It will also be able to
+communicate with catalog servers on the Net to search for documents which
+are not on the local system.

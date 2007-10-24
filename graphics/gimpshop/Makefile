@@ -7,7 +7,7 @@
 
 PORTNAME=	gimpshop
 PORTVERSION=	2.2.11
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.plasticbugs.com/blogimg/ \
 		http://freebsd.powered.net/distfiles/
@@ -33,7 +33,8 @@ USE_XPM=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 librsvg2
+USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 librsvg2 \
+		desktopfileutils
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
@@ -41,7 +42,8 @@ CONFIGURE_ARGS=	--disable-perl \
 		--with-html-dir=${DOCSDIR} \
 		--disable-gtk-doc \
 		--enable-static \
-		--disable-print
+		--disable-print \
+		--with-desktop-dir=${LOCALBASE}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
@@ -79,8 +81,7 @@ CONFIGURE_ARGS+=	--enable-mp
 .endif
 
 .if ${HAVE_GNOME:Mgnomepanel}!=""
-USE_GNOME+=		gnomepanel desktopfileutils
-CONFIGURE_ARGS+=	--with-desktop-dir=${LOCALBASE}/share/gnome
+USE_GNOME+=		gnomepanel
 CONFIGURE_ENV+=		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
 PLIST_SUB+=		GNOMEPANEL:=""
 GNOME_ENABLED=		yes

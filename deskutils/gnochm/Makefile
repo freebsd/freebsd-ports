@@ -7,6 +7,7 @@
 
 PORTNAME=	gnochm
 PORTVERSION=	0.9.11
+PORTREVISION=	1
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	SF
 
@@ -29,7 +30,6 @@ GCONF_SCHEMAS=	gnochm.schemas
 INSTALLS_OMF=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|@APPDATADIR@|@APPDATADIR@/gnome|' ${WRKSRC}/gnochm.py.in
 	@${REINPLACE_CMD} -e 's|$(prefix)/share/man|$(prefix)/man|' ${WRKSRC}/data/Makefile.in
 
 .include <bsd.port.mk>

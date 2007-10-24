@@ -4,7 +4,7 @@ lib/cowbell/cowbell.exe.config
 lib/cowbell/libtaglibsharpglue.a
 lib/cowbell/libtaglibsharpglue.la
 lib/cowbell/libtaglibsharpglue.so
-share/gnome/applications/cowbell.desktop
+share/applications/cowbell.desktop
 share/icons/hicolor/48x48/apps/cowbell.png
 share/icons/hicolor/scalable/apps/cowbell.svg
 share/locale/de/LC_MESSAGES/cowbell.mo
@@ -20,3 +20,4 @@ share/locale/pt_BR/LC_MESSAGES/cowbell.mo
 share/locale/sv/LC_MESSAGES/cowbell.mo
 share/locale/tr/LC_MESSAGES/cowbell.mo
 @dirrm lib/cowbell
+@dirrmtry share/applications

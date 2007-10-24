@@ -28,12 +28,12 @@ include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-find-directory.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-handle.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-init.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-job-limit.h
-include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-deprecated.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-handlers.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-info-cache.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-monitor.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime-utils.h
+include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-mime.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-module-callback.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-monitor.h
 include/gnome-vfs-2.0/libgnomevfs/gnome-vfs-ops.h
@@ -160,6 +160,7 @@ share/locale/ne/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/nso/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/oc/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/or/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/pa/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/pl/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -176,6 +177,7 @@ share/locale/sr@Latn/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/sr@ije/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-vfs-2.0.mo
+share/locale/te/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -200,10 +202,14 @@ share/locale/zu/LC_MESSAGES/gnome-vfs-2.0.mo
 @dirrmtry share/locale/yi
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/sr@ije/LC_MESSAGES
 @dirrmtry share/locale/sr@ije
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
 @dirrmtry share/locale/mr/LC_MESSAGES

@@ -7,6 +7,7 @@
 
 PORTNAME=	scribes
 PORTVERSION=	0.3.2.8
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,8 +29,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 GCONF_SCHEMAS=	scribes.schemas
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|(datadir)/icons|(prefix)/share/icons|' ${WRKSRC}/data/Makefile.in
 
 .include <bsd.port.mk>
