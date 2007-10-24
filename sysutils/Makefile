@@ -322,6 +322,7 @@
     SUBDIR += jps
     SUBDIR += jtop
     SUBDIR += k3b
+    SUBDIR += k8temp
     SUBDIR += kcpuload
     SUBDIR += kcube
     SUBDIR += kdeadmin3

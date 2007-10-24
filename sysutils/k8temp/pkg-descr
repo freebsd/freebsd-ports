@@ -1,0 +1,4 @@
+k8temp is a utility to read the on-die temperature sensors provided by
+AMD K8 processors, including most Athlon 64's and Opterons.
+
+WWW: http://hur.st/k8temp/
