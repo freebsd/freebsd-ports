@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Net/OAuth/AccessTokenRequest.pm
+%%SITE_PERL%%/Net/OAuth/ProtectedResourceRequest.pm
+%%SITE_PERL%%/Net/OAuth/Request.pm
+%%SITE_PERL%%/Net/OAuth/RequestTokenRequest.pm
+%%SITE_PERL%%/Net/OAuth/SignatureMethod/HMAC_SHA1.pm
+%%SITE_PERL%%/Net/OAuth/SignatureMethod/PLAINTEXT.pm
+%%SITE_PERL%%/Net/OAuth/SignatureMethod/RSA_SHA1.pm
+@dirrm %%SITE_PERL%%/Net/OAuth/SignatureMethod
+@dirrm %%SITE_PERL%%/Net/OAuth
+@dirrmtry %%SITE_PERL%%/Net
