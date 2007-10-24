@@ -7,19 +7,22 @@
 
 PORTNAME=	opieprint
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.inner.net/pub/opie/contrib/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Output postscript with 100 OPIE passwords credit card sized
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PERL5_RUN=	yes
 
-EXTRACT_AFTER_ARGS= > ${WRKSRC}/${PORTNAME}
+PLIST_FILES=	bin/opieprint
+
+EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local/bin/perl,${PERL},' ${WRKSRC}/opieprint
