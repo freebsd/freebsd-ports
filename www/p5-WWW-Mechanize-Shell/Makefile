@@ -1,10 +1,12 @@
 # New Ports Collection Makefile for:	p5-WWW-Mechanize-Shell
 # Date created:				2004-07-08
 # Whom:					Anton Berezin <tobez@FreeBSD.org>
+#
 # $FreeBSD$
+#
 
 PORTNAME=	WWW-Mechanize-Shell
-PORTVERSION=	0.44
+PORTVERSION=	0.46
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -19,27 +21,13 @@ BUILD_DEPENDS=	${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/WWW/Mechanize/FormFiller.pm:${PORTSDIR}/www/p5-WWW-Mechanize-FormFiller \
 		${SITE_PERL}/Hook/LexWrap.pm:${PORTSDIR}/devel/p5-Hook-LexWrap \
 		${SITE_PERL}/HTML/TokeParser/Simple.pm:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
+		p5-HTML-Display>=0:${PORTSDIR}/www/p5-HTML-Display \
 		p5-WWW-Mechanize>=1.20:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	HTML::Display.3 \
-	HTML::Display::Common.3 \
-	HTML::Display::Debian.3 \
-	HTML::Display::Dump.3 \
-	HTML::Display::Galeon.3 \
-	HTML::Display::Mozilla.3 \
-	HTML::Display::OSX.3 \
-	HTML::Display::OSX::Camino.3 \
-	HTML::Display::OSX::Safari.3 \
-	HTML::Display::Opera.3 \
-	HTML::Display::Phoenix.3 \
-	HTML::Display::TempFile.3 \
-	HTML::Display::Win32.3 \
-	HTML::Display::Win32::IE.3 \
-	HTML::Display::Win32::OLE.3 \
-	WWW::Mechanize::Shell.3
+MAN3=	WWW::Mechanize::Shell.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
