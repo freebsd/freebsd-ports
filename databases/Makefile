@@ -133,6 +133,7 @@
     SUBDIR += mysql++
     SUBDIR += mysql++1
     SUBDIR += mysql-connector-java
+    SUBDIR += mysql-connector-java50
     SUBDIR += mysql-connector-odbc
     SUBDIR += mysql-editor
     SUBDIR += mysql-navigator
