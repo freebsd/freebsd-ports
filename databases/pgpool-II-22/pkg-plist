@@ -11,11 +11,13 @@ bin/pg_md5
 bin/pgpool
 etc/pcp.conf.sample
 etc/pgpool.conf.sample
+etc/pool_hba.conf.sample
 include/pcp.h
 include/pool_type.h
 lib/libpcp.a
 lib/libpcp.la
 lib/libpcp.so
 lib/libpcp.so.0
+%%DATADIR%%/pgpool.pam
 %%DATADIR%%/system_db.sql
 @dirrm %%DATADIR%%
