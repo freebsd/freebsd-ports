@@ -9,7 +9,7 @@
     sbin
     ..
     etc
-	mpd4
+	mpd5
 	..
     ..
     man
@@ -20,7 +20,7 @@
     ..
     share
         doc
-	    mpd4
+	    mpd5
 	    ..
         ..
     ..
