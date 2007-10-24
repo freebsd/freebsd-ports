@@ -1,0 +1,19 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Display/.packlist
+%%SITE_PERL%%/HTML/Display.pm
+%%SITE_PERL%%/HTML/Display/Common.pm
+%%SITE_PERL%%/HTML/Display/Debian.pm
+%%SITE_PERL%%/HTML/Display/Dump.pm
+%%SITE_PERL%%/HTML/Display/Galeon.pm
+%%SITE_PERL%%/HTML/Display/Mozilla.pm
+%%SITE_PERL%%/HTML/Display/OSX.pm
+%%SITE_PERL%%/HTML/Display/Opera.pm
+%%SITE_PERL%%/HTML/Display/Phoenix.pm
+%%SITE_PERL%%/HTML/Display/TempFile.pm
+%%SITE_PERL%%/HTML/Display/Win32.pm
+%%SITE_PERL%%/HTML/Display/Win32/IE.pm
+%%SITE_PERL%%/HTML/Display/Win32/OLE.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Display
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/Display/Win32
+@dirrmtry %%SITE_PERL%%/HTML/Display
+@dirrmtry %%SITE_PERL%%/HTML
