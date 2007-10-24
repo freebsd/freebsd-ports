@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.59
+PORTVERSION=	1.60.1
 CATEGORIES=	databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	DBI
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
@@ -51,6 +51,9 @@ MAN3=		Bundle::DBI.3 \
 		DBI::Gofer::Execute.3 \
 		DBI::Gofer::Request.3 \
 		DBI::Gofer::Response.3 \
+		DBI::Gofer::Serializer::DataDumper.3 \
+		DBI::Gofer::Serializer::Base.3 \
+		DBI::Gofer::Serializer::Storable.3 \
 		DBI::Gofer::Transport::Base.3 \
 		DBI::Gofer::Transport::pipeone.3 \
 		DBI::Gofer::Transport::stream.3 \
@@ -62,6 +65,7 @@ MAN3=		Bundle::DBI.3 \
 		DBI::ProxyServer.3 \
 		DBI::PurePerl.3 \
 		DBI::SQL::Nano.3 \
+		DBI::Util::CacheMemory.3 \
 		DBI::W32ODBC.3 \
 		Roadmap.3 \
 		TASKS.3 \
