@@ -323,6 +323,7 @@
     SUBDIR += morebalance
     SUBDIR += mpd
     SUBDIR += mpd4
+    SUBDIR += mpd5
     SUBDIR += mpich
     SUBDIR += mpich2
     SUBDIR += mping
