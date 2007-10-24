@@ -1,0 +1,3 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/parent/.packlist
+%%SITE_PERL%%/parent.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/parent
