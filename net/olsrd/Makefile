@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	olsrd
-PORTVERSION=	0.4.10
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.olsr.org/releases/0.4/
+MASTER_SITES=	http://www.olsr.org/releases/0.5/ \
+		http://bernd.petrovitsch.priv.at/olsr-ng/
 
 MAINTAINER=	dave@dogwood.com
 COMMENT=	OLSR routing daemon
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 BUILD_DEPENDS+=	libnet*>=1.1.2,1:${PORTSDIR}/net/libnet
 .endif
 
+USE_BZIP2=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
 
@@ -35,14 +36,10 @@ INSTALL_TARGET=	install_all
 MAKE_ARGS+=	LIBNET=1
 .endif
 .if defined(PREFIX)
-MAKE_ARGS+=	INSTALL_PREFIX=${PREFIX}
+MAKE_ARGS+=	PREFIX=${PREFIX}
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC

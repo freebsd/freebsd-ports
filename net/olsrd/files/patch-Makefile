@@ -1,22 +1,22 @@
---- Makefile.orig	Tue Jan  3 22:45:38 2006
-+++ Makefile	Tue Mar  7 19:25:12 2006
-@@ -90,13 +90,13 @@
- 
+--- Makefile.orig	2007-10-20 13:27:59.000000000 +0200
++++ Makefile	2007-10-20 18:58:02.000000000 +0200
+@@ -107,12 +107,14 @@
  install_olsrd:	install_bin
  		@echo ========= C O N F I G U R A T I O N - F I L E ============
--		@echo olsrd uses the configfile $(INSTALL_PREFIX)/etc/olsr.conf
+ 		@echo $(EXENAME) uses the configfile $(CFGFILE)
 -		@echo a default configfile. A sample RFC-compliance aimed
 -		@echo configfile can be installed. Note that a LQ-based configfile
 -		@echo can be found at files/olsrd.conf.default.lq
-+		@echo olsrd uses the configfile $(CFGFILE)
 +		@echo an RFC compliant version is installed as $(CFGFILE).rfc
 +		@echo an LQ version is installed as $(CFGFILE).lq
++		@echo an LQ fisheye version is installed as $(CFGFILE).lq-fisheye
 +		@echo copy and edit one of these to $(CFGFILE)
  		@echo ==========================================================
 -		mkdir -p $(ETCDIR)
 -		-cp -i files/olsrd.conf.default.rfc $(CFGFILE)
 +		-cp files/olsrd.conf.default.rfc $(CFGFILE).rfc
 +		-cp files/olsrd.conf.default.lq $(CFGFILE).lq
++		-cp files/olsrd.conf.default.lq-fisheye $(CFGFILE).lq-fisheye
  		@echo -------------------------------------------
  		@echo Edit $(CFGFILE) before running olsrd!!
  		@echo -------------------------------------------
