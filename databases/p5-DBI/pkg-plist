@@ -30,6 +30,9 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Execute.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Request.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Response.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Serializer/Base.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Serializer/DataDumper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Serializer/Storable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Transport/Base.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Transport/pipeone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Transport/stream.pm
@@ -43,6 +46,7 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Roadmap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/SQL/Nano.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Util/_accessor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBI/Util/CacheMemory.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/W32ODBC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Roadmap.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/TASKS.pod
@@ -64,6 +68,7 @@ bin/dbiproxy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Util
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/SQL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/ProfileDumper
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Serializer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Transport
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/DBD
