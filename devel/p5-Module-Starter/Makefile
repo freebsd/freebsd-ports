@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Module-Starter
-PORTVERSION=	1.42
+PORTVERSION=	1.44
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Module
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
@@ -19,6 +18,7 @@ PERL_CONFIGURE=	yes
 
 MAN1=		module-starter.1
 MAN3=		Module::Starter.3 \
+		Module::Starter::BuilderSet.3 \
 		Module::Starter::Simple.3 \
 		Module::Starter::Plugin.3 \
 		Module::Starter::Plugin::Template.3
