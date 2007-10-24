@@ -19,6 +19,8 @@ RUN_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
 # Check for GNAT sources.
 .if !exists(${DISTDIR}/${DISTFILE}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=	${PRINTF}
@@ -45,4 +47,4 @@ post-install:
 test:
 	@${CD} ${WRKSRC} && ${GMAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
