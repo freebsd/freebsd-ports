@@ -9,13 +9,10 @@ PORTNAME=	bazaar-ng
 PORTVERSION=	0.91
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/
-MASTER_SITE_SUBDIR=	gnu-arch
 DISTNAME=	bzr-${PORTVERSION}
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Distributed version control system by Canonical
-
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
 
 OPTIONS=	SFTP "Enable Paramiko for SFTP support" on
 
@@ -27,6 +24,11 @@ PYDISTUTILS_PKGVERSION=	${PORTVERSION}.0
 MAN1=		bzr.1
 
 .include <bsd.port.pre.mk>
+
+# Included in 2.5
+.if (${PYTHON_VERSION} == python2.4)
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
+.endif
 
 .if defined(WITH_SFTP)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/paramiko/__init__.py:${PORTSDIR}/security/py-paramiko
