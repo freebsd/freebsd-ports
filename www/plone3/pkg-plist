@@ -2005,6 +2005,11 @@
 %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/HISTORY.txt
 %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/__init__.py
 %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/__init__.pyc
+%%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/browser/__init__.py
+%%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/browser/__init__.pyc
+%%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/browser/addWithPresettings.pt
+%%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/browser/typeinfo.py
+%%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/browser/typeinfo.pyc
 %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/browserdefault.py
 %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/browserdefault.pyc
 %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/configure.zcml
@@ -2017,8 +2022,6 @@
 %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/interface/_base.pyc
 %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/interfaces.py
 %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/interfaces.pyc
-%%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/migrate.py
-%%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/migrate.pyc
 %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/permissions.py
 %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/permissions.pyc
 %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/profiles/sample_types/types.xml
@@ -2621,6 +2624,8 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v2_5/two51_two52.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v2_5/two52_two53.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v2_5/two52_two53.pyc
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v2_5/two53_two54.py
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v2_5/two53_two54.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/__init__.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/__init__.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/alphas.py
@@ -2660,6 +2665,10 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01/toolset.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01/rolemap.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01/componentregistry.xml
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/controlpanel.xml
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/cssregistry.xml
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/jsregistry.xml
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/rolemap.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/final_three0x.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/final_three0x.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/rcs.py
@@ -3058,7 +3067,6 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_ecmascript/toc.js
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_ecmascript/unittestUtilities.js
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_ecmascript/unlockOnFormUnload.js
-%%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_ecmascript/webstats.js.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_form_scripts/change_ownership.cpy
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_form_scripts/change_ownership.cpy.metadata
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_form_scripts/content_status_modify.cpy
@@ -3437,6 +3445,7 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_navigation_set.cpy
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_navigation_set.cpy.metadata
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_portrait_delete.py
+%%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_reinstallProducts.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_search_macros.pt
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_user_details.cpt
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_user_details.cpt.metadata
@@ -4758,6 +4767,7 @@
 %%ZOPEPRODUCTDIR%%/NuPlone/profiles.zcml
 %%ZOPEPRODUCTDIR%%/NuPlone/profiles/default/cssregistry.xml
 %%ZOPEPRODUCTDIR%%/NuPlone/profiles/default/import_steps.xml
+%%ZOPEPRODUCTDIR%%/NuPlone/profiles/default/nuplone_various.txt
 %%ZOPEPRODUCTDIR%%/NuPlone/profiles/default/skins.xml
 %%ZOPEPRODUCTDIR%%/NuPlone/refresh.txt
 %%ZOPEPRODUCTDIR%%/NuPlone/setuphandlers.py
@@ -4918,6 +4928,8 @@
 %%ZOPEPRODUCTDIR%%/PloneLanguageTool/interfaces.py
 %%ZOPEPRODUCTDIR%%/PloneLanguageTool/interfaces.pyc
 %%ZOPEPRODUCTDIR%%/PloneLanguageTool/profiles.zcml
+%%ZOPEPRODUCTDIR%%/PloneLanguageTool/profiles/default/export_steps.xml
+%%ZOPEPRODUCTDIR%%/PloneLanguageTool/profiles/default/import_steps.xml
 %%ZOPEPRODUCTDIR%%/PloneLanguageTool/profiles/default/portal_languages.xml
 %%ZOPEPRODUCTDIR%%/PloneLanguageTool/profiles/default/skins.xml
 %%ZOPEPRODUCTDIR%%/PloneLanguageTool/profiles/default/toolset.xml
@@ -5106,65 +5118,6 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/__init__.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/__init__.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/configure.zcml
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-af.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ar.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-bg.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-bn.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ca.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-cs.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-cy.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-da.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-de.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-el.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-eo.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-es.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-et.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-eu.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-fa.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-fi.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-fr.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-fu.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-he.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-hi.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-hr.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-hu.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-hy.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-id.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-it.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ja.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ka.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-kn.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ko.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-lt.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-manual.pot
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-mi.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-my.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-nl.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-nn.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-no.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-pl.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-pt-br.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-pt.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ro.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ru.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sk.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sl.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sm.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sq.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sr-Latn.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sr.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sv.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ta.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-te.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-to.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-tr.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-uk.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-vi.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-zh-cn.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-zh-hk.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-zh-tw.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-zh.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes.pot
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-af.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ar.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-bg.po
@@ -5736,8 +5689,6 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/fillmsgstr.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/filter.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/filter.pyc
-%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/find-untranslated.py
-%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/find-untranslated.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/i18ngenerate.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/i18ngenerate.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/rebuild-pot.py
@@ -6731,6 +6682,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-fi.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-fr.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-he.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-hu.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-it.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-ja.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-nl.po
@@ -7131,7 +7083,6 @@
 %%ZOPEPRODUCTDIR%%/statusmessages/message.pyc
 %%ZOPEPRODUCTDIR%%/statusmessages/tests/__init__.py
 %%ZOPEPRODUCTDIR%%/statusmessages/tests/__init__.pyc
-%%ZOPEPRODUCTDIR%%/statusmessages/tests/configure.zcml
 %%ZOPEPRODUCTDIR%%/statusmessages/tests/test_adapter.py
 %%ZOPEPRODUCTDIR%%/statusmessages/tests/test_adapter.pyc
 %%ZOPEPRODUCTDIR%%/statusmessages/tests/test_doctests.py
@@ -7412,6 +7363,8 @@
 %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/browser/develui.pt
 %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/browser/develview.py
 %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/browser/develview.pyc
+%%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/browser/interfaces.py
+%%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/browser/interfaces.pyc
 %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/command.py
 %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/command.pyc
 %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/commandset.py
@@ -9620,6 +9573,7 @@
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/profiles/default
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/profiles
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/patches
+@dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/rc2_final
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/beta3_beta4
@@ -9684,6 +9638,7 @@
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/profiles
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/interface
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/images
+@dirrm %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI/browser
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDynamicViewFTI
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDiffTool/zpt
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDiffTool/tests
