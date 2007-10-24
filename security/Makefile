@@ -533,6 +533,7 @@
     SUBDIR += pantera
     SUBDIR += parano
     SUBDIR += pbnj
+    SUBDIR += pdfcrack
     SUBDIR += pear-Auth
     SUBDIR += pear-Auth_HTTP
     SUBDIR += pear-Auth_PrefManager
