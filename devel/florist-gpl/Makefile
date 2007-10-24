@@ -21,6 +21,8 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 
+.include <bsd.port.pre.mk>
+
 # Check for GNAT sources.
 .if !exists(${DISTDIR}/${DISTFILE}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=	${PRINTF}
@@ -35,4 +37,4 @@ IGNORE=Because of licensing and registration restrictions, you must fetch\n \
 
 WRKSRC=		${WRKDIR}/florist-${PORTVERSION}-src
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
