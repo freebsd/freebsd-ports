@@ -8,7 +8,8 @@
 PORTNAME=	libsexy
 PORTVERSION=	0.1.11
 CATEGORIES=	x11-toolkits devel
-MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexy/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+		http://releases.chipx86.com/libsexy/libsexy/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension widgets for GTK+
