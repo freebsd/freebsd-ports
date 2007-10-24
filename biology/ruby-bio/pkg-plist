@@ -13,18 +13,24 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/db.rb
 %%RUBY_SITELIBDIR%%/bio/feature.rb
 %%RUBY_SITELIBDIR%%/bio/location.rb
+%%RUBY_SITELIBDIR%%/bio/map.rb
 %%RUBY_SITELIBDIR%%/bio/pathway.rb
 %%RUBY_SITELIBDIR%%/bio/reference.rb
 %%RUBY_SITELIBDIR%%/bio/sequence.rb
 %%RUBY_SITELIBDIR%%/bio/shell.rb
+%%RUBY_SITELIBDIR%%/bio/tree.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast.rb
 %%RUBY_SITELIBDIR%%/bio/appl/clustalw.rb
 %%RUBY_SITELIBDIR%%/bio/appl/emboss.rb
 %%RUBY_SITELIBDIR%%/bio/appl/fasta.rb
 %%RUBY_SITELIBDIR%%/bio/appl/hmmer.rb
 %%RUBY_SITELIBDIR%%/bio/appl/mafft.rb
+%%RUBY_SITELIBDIR%%/bio/appl/muscle.rb
+%%RUBY_SITELIBDIR%%/bio/appl/probcons.rb
 %%RUBY_SITELIBDIR%%/bio/appl/psort.rb
+%%RUBY_SITELIBDIR%%/bio/appl/pts1.rb
 %%RUBY_SITELIBDIR%%/bio/appl/sim4.rb
+%%RUBY_SITELIBDIR%%/bio/appl/tcoffee.rb
 %%RUBY_SITELIBDIR%%/bio/appl/bl2seq/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast/format0.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast/format8.rb
@@ -35,10 +41,14 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/appl/blat/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/clustalw/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/fasta/format10.rb
-%%RUBY_SITELIBDIR%%/bio/appl/fasta/format6.rb
+%%RUBY_SITELIBDIR%%/bio/appl/gcg/msf.rb
+%%RUBY_SITELIBDIR%%/bio/appl/gcg/seq.rb
 %%RUBY_SITELIBDIR%%/bio/appl/genscan/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/hmmer/report.rb
+%%RUBY_SITELIBDIR%%/bio/appl/iprscan/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/mafft/report.rb
+%%RUBY_SITELIBDIR%%/bio/appl/phylip/alignment.rb
+%%RUBY_SITELIBDIR%%/bio/appl/phylip/distance_matrix.rb
 %%RUBY_SITELIBDIR%%/bio/appl/psort/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/sim4/report.rb
 %%RUBY_SITELIBDIR%%/bio/appl/sosui/report.rb
@@ -53,12 +63,16 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/db/fasta.rb
 %%RUBY_SITELIBDIR%%/bio/db/gff.rb
 %%RUBY_SITELIBDIR%%/bio/db/go.rb
+%%RUBY_SITELIBDIR%%/bio/db/lasergene.rb
 %%RUBY_SITELIBDIR%%/bio/db/litdb.rb
 %%RUBY_SITELIBDIR%%/bio/db/medline.rb
 %%RUBY_SITELIBDIR%%/bio/db/nbrf.rb
+%%RUBY_SITELIBDIR%%/bio/db/newick.rb
+%%RUBY_SITELIBDIR%%/bio/db/nexus.rb
 %%RUBY_SITELIBDIR%%/bio/db/pdb.rb
 %%RUBY_SITELIBDIR%%/bio/db/prosite.rb
 %%RUBY_SITELIBDIR%%/bio/db/rebase.rb
+%%RUBY_SITELIBDIR%%/bio/db/soft.rb
 %%RUBY_SITELIBDIR%%/bio/db/transfac.rb
 %%RUBY_SITELIBDIR%%/bio/db/embl/common.rb
 %%RUBY_SITELIBDIR%%/bio/db/embl/embl.rb
@@ -72,8 +86,8 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/db/genbank/genpept.rb
 %%RUBY_SITELIBDIR%%/bio/db/genbank/refseq.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/brite.rb
-%%RUBY_SITELIBDIR%%/bio/db/kegg/cell.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/compound.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/drug.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/enzyme.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/expression.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/genes.rb
@@ -81,8 +95,9 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/db/kegg/glycan.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/keggtab.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/kgml.rb
-%%RUBY_SITELIBDIR%%/bio/db/kegg/ko.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/orthology.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/reaction.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/taxonomy.rb
 %%RUBY_SITELIBDIR%%/bio/db/pdb/atom.rb
 %%RUBY_SITELIBDIR%%/bio/db/pdb/chain.rb
 %%RUBY_SITELIBDIR%%/bio/db/pdb/chemicalcomponent.rb
@@ -93,11 +108,14 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/io/das.rb
 %%RUBY_SITELIBDIR%%/bio/io/dbget.rb
 %%RUBY_SITELIBDIR%%/bio/io/ddbjxml.rb
+%%RUBY_SITELIBDIR%%/bio/io/ebisoap.rb
+%%RUBY_SITELIBDIR%%/bio/io/ensembl.rb
 %%RUBY_SITELIBDIR%%/bio/io/fastacmd.rb
 %%RUBY_SITELIBDIR%%/bio/io/fetch.rb
 %%RUBY_SITELIBDIR%%/bio/io/flatfile.rb
 %%RUBY_SITELIBDIR%%/bio/io/higet.rb
 %%RUBY_SITELIBDIR%%/bio/io/keggapi.rb
+%%RUBY_SITELIBDIR%%/bio/io/ncbisoap.rb
 %%RUBY_SITELIBDIR%%/bio/io/pubmed.rb
 %%RUBY_SITELIBDIR%%/bio/io/registry.rb
 %%RUBY_SITELIBDIR%%/bio/io/soapwsdl.rb
@@ -114,62 +132,40 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/shell/core.rb
 %%RUBY_SITELIBDIR%%/bio/shell/demo.rb
 %%RUBY_SITELIBDIR%%/bio/shell/interface.rb
+%%RUBY_SITELIBDIR%%/bio/shell/irb.rb
 %%RUBY_SITELIBDIR%%/bio/shell/object.rb
+%%RUBY_SITELIBDIR%%/bio/shell/script.rb
+%%RUBY_SITELIBDIR%%/bio/shell/setup.rb
 %%RUBY_SITELIBDIR%%/bio/shell/web.rb
+%%RUBY_SITELIBDIR%%/bio/shell/plugin/blast.rb
 %%RUBY_SITELIBDIR%%/bio/shell/plugin/codon.rb
+%%RUBY_SITELIBDIR%%/bio/shell/plugin/das.rb
 %%RUBY_SITELIBDIR%%/bio/shell/plugin/emboss.rb
 %%RUBY_SITELIBDIR%%/bio/shell/plugin/entry.rb
 %%RUBY_SITELIBDIR%%/bio/shell/plugin/flatfile.rb
 %%RUBY_SITELIBDIR%%/bio/shell/plugin/keggapi.rb
 %%RUBY_SITELIBDIR%%/bio/shell/plugin/midi.rb
 %%RUBY_SITELIBDIR%%/bio/shell/plugin/obda.rb
+%%RUBY_SITELIBDIR%%/bio/shell/plugin/psort.rb
 %%RUBY_SITELIBDIR%%/bio/shell/plugin/seq.rb
-%%RUBY_SITELIBDIR%%/bio/shell/rails/Rakefile
-%%RUBY_SITELIBDIR%%/bio/shell/rails/app/controllers/application.rb
-%%RUBY_SITELIBDIR%%/bio/shell/rails/app/controllers/shell_controller.rb
-%%RUBY_SITELIBDIR%%/bio/shell/rails/app/helpers/application_helper.rb
-%%RUBY_SITELIBDIR%%/bio/shell/rails/app/models/shell_connection.rb
-%%RUBY_SITELIBDIR%%/bio/shell/rails/app/views/layouts/shell.rhtml
-%%RUBY_SITELIBDIR%%/bio/shell/rails/app/views/shell/history.rhtml
-%%RUBY_SITELIBDIR%%/bio/shell/rails/app/views/shell/index.rhtml
-%%RUBY_SITELIBDIR%%/bio/shell/rails/app/views/shell/show.rhtml
-%%RUBY_SITELIBDIR%%/bio/shell/rails/config/boot.rb
-%%RUBY_SITELIBDIR%%/bio/shell/rails/config/database.yml
-%%RUBY_SITELIBDIR%%/bio/shell/rails/config/environment.rb
-%%RUBY_SITELIBDIR%%/bio/shell/rails/config/routes.rb
-%%RUBY_SITELIBDIR%%/bio/shell/rails/config/environments/development.rb
-%%RUBY_SITELIBDIR%%/bio/shell/rails/config/environments/production.rb
-%%RUBY_SITELIBDIR%%/bio/shell/rails/config/environments/test.rb
-%%RUBY_SITELIBDIR%%/bio/shell/rails/doc/README_FOR_APP
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/404.html
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/500.html
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/dispatch.cgi
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/dispatch.fcgi
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/dispatch.rb
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/favicon.ico
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/index.html
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/robots.txt
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/images/icon.png
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/images/rails.png
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/javascripts/controls.js
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/javascripts/dragdrop.js
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/javascripts/effects.js
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/javascripts/prototype.js
-%%RUBY_SITELIBDIR%%/bio/shell/rails/public/stylesheets/main.css
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/about
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/breakpointer
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/console
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/destroy
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/generate
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/plugin
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/runner
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/server
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/performance/benchmarker
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/performance/profiler
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/process/reaper
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/process/spawner
-%%RUBY_SITELIBDIR%%/bio/shell/rails/script/process/spinner
-%%RUBY_SITELIBDIR%%/bio/shell/rails/test/test_helper.rb
+%%RUBY_SITELIBDIR%%/bio/shell/plugin/soap.rb
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/bioruby_generator.rb
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/_classes.rhtml
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/_log.rhtml
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/_methods.rhtml
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/_modules.rhtml
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/_variables.rhtml
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/bioruby-bg.gif
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/bioruby-console.png
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/bioruby-gem.png
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/bioruby-link.gif
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/bioruby.css
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/bioruby.rhtml
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/bioruby_controller.rb
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/bioruby_helper.rb
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/commands.rhtml
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/history.rhtml
+%%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates/index.rhtml
 %%RUBY_SITELIBDIR%%/bio/util/color_scheme.rb
 %%RUBY_SITELIBDIR%%/bio/util/contingency_table.rb
 %%RUBY_SITELIBDIR%%/bio/util/sirna.rb
@@ -181,26 +177,41 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/util/color_scheme/taylor.rb
 %%RUBY_SITELIBDIR%%/bio/util/color_scheme/turn.rb
 %%RUBY_SITELIBDIR%%/bio/util/color_scheme/zappo.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/analysis.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/analysis_basic.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/cut_symbol.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/double_stranded/aligned_strands.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/double_stranded/cut_location_pair.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/double_stranded/cut_location_pair_in_enzyme_notation.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/double_stranded/cut_locations.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/double_stranded/cut_locations_in_enzyme_notation.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/double_stranded.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/enzymes.yaml
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/range/cut_range.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/range/cut_ranges.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/range/horizontal_cut_range.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/range/sequence_range/calculated_cuts.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/range/sequence_range/fragment.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/range/sequence_range/fragments.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/range/sequence_range.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/range/vertical_cut_range.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/single_strand/cut_locations_in_enzyme_notation.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/single_strand.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/single_strand_complement.rb
+%%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/string_formatting.rb
+@dirrm %%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/single_strand
+@dirrm %%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/range/sequence_range
+@dirrm %%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/range
+@dirrm %%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme/double_stranded
+@dirrm %%RUBY_SITELIBDIR%%/bio/util/restriction_enzyme
 @dirrm %%RUBY_SITELIBDIR%%/bio/util/color_scheme
 @dirrm %%RUBY_SITELIBDIR%%/bio/util
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/test
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/script/process
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/script/performance
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/script
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/public/stylesheets
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/public/javascripts
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/public/images
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/public
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/doc
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/config/environments
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/config
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/app/views/shell
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/app/views/layouts
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/app/views
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/app/models
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/app/helpers
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/app/controllers
-@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/app
+@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby/templates
+@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators/bioruby
+@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins/generators
+@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/vendor/plugins
+@dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails/vendor
 @dirrm %%RUBY_SITELIBDIR%%/bio/shell/rails
 @dirrm %%RUBY_SITELIBDIR%%/bio/shell/plugin
 @dirrm %%RUBY_SITELIBDIR%%/bio/shell
@@ -219,9 +230,12 @@ etc/bioinformatics/seqdatabase.ini.sample
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/sosui
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/sim4
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/psort
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/phylip
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/mafft
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/iprscan
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/hmmer
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/genscan
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl/gcg
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/fasta
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/clustalw
 @dirrm %%RUBY_SITELIBDIR%%/bio/appl/blat
@@ -233,6 +247,7 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/biofetch.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/color_scheme_na.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dbget
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/enzymes.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fasta2tab.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fsplit.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gb2fasta.rb
@@ -258,10 +273,7 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/KEGG_API.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Tutorial.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Changes-0.7.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/BioRuby.rd.ja
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Design.rd.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/KEGG_API.rd.ja
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/TODO.rd.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Tutorial.rd.ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
