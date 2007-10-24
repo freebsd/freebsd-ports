@@ -4,16 +4,15 @@
 # $FreeBSD$
 
 PORTNAME=	Digest-MD5-Reverse
-PORTVERSION=	1.0
+PORTVERSION=	1.3
 CATEGORIES=	security perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Digest
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Perl extension that looks for MD5 hashes in several databases
 
-PERL_CONFIGURE= yes
+PERL_MODBUILD=	yes
 
 MAN3=	Digest::MD5::Reverse.3
 
