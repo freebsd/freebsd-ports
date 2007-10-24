@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	PyX
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -19,7 +18,7 @@ COMMENT=	A Python package for the creation of encapsulated PostScript figures
 
 BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX
 
-USE_PYTHON=	2.1+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	etc/pyxrc
