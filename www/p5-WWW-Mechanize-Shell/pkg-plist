@@ -1,18 +1,3 @@
-%%SITE_PERL%%/HTML/Display.pm
-%%SITE_PERL%%/HTML/Display/Common.pm
-%%SITE_PERL%%/HTML/Display/Debian.pm
-%%SITE_PERL%%/HTML/Display/Dump.pm
-%%SITE_PERL%%/HTML/Display/Galeon.pm
-%%SITE_PERL%%/HTML/Display/Mozilla.pm
-%%SITE_PERL%%/HTML/Display/OSX.pm
-%%SITE_PERL%%/HTML/Display/OSX/Camino.pm
-%%SITE_PERL%%/HTML/Display/OSX/Safari.pm
-%%SITE_PERL%%/HTML/Display/Opera.pm
-%%SITE_PERL%%/HTML/Display/Phoenix.pm
-%%SITE_PERL%%/HTML/Display/TempFile.pm
-%%SITE_PERL%%/HTML/Display/Win32.pm
-%%SITE_PERL%%/HTML/Display/Win32/IE.pm
-%%SITE_PERL%%/HTML/Display/Win32/OLE.pm
 %%SITE_PERL%%/WWW/Mechanize/Shell.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Shell/.packlist
 %%PORTDOCS%%%%EXAMPLESDIR%%/banking.postbank.de.mech
@@ -24,7 +9,3 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW/Mechanize
 @dirrmtry %%SITE_PERL%%/WWW
-@dirrmtry %%SITE_PERL%%/HTML/Display/Win32
-@dirrmtry %%SITE_PERL%%/HTML/Display/OSX
-@dirrmtry %%SITE_PERL%%/HTML/Display
-@dirrmtry %%SITE_PERL%%/HTML
