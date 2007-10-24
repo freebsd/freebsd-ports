@@ -9,7 +9,7 @@ PORTNAME=	aunit
 PORTVERSION=	1.05
 CATEGORIES=	devel
 MASTER_SITES=	http://libre.adacore.com/
-EXTRACT_SUFX=	-src.tgz
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz
 
 MAINTAINER=	john_m_cooper@yahoo.com
 COMMENT=	AUnit is an adaption of the Java JUnit unit test framework
@@ -18,22 +18,23 @@ BUILD_DEPENDS=	gnatmake:${PORTSDIR}/lang/gnat
 RUN_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
 USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 
 .include <bsd.port.pre.mk>
 
 # Check for GNAT sources.
-.if !exists(${DISTDIR}/${DISTFILE}) && !defined(PACKAGE_BUILDING)
-ECHO_MSG=	${PRINTF}
-IGNORE=Because of licensing and registration restrictions, you must fetch\n \
-	the source distribution manually.  Please access\n \
-	http://libre.adacore.com/\ with a web browser, register\n \
-	(It's free!) and log in.  Download the source files:\n\n \
-	\t${DISTFILE}\n\n \
-	and place them in ${DISTDIR}\n
-	${ECHO_MSG} ${IGNORE}
+.if !exists(${DISTDIR}/${DISTFILES}) && !defined(PACKAGE_BUILDING)
+pre-everything::
+	@echo "Because of licensing and registration restrictions, you must"
+	@echo "fetch the source distribution manually.  Please access"
+	@echo "http://libre.adacore.com/ with a web browser, register"
+	@echo "(It's free!) and log in.  Download the source files:"
+	@echo
+	@echo "	${DISTFILES}"
+	@echo
+	@echo "and place them in ${DISTDIR}"
+	@exit 1
 .endif
-
-WRKSRC=		${WRKDIR}/aunit-${PORTVERSION}-src
 
 pre-build:
 	@${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile
