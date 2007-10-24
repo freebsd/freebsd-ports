@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/p
 		${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		leaves egg file behind on deinstall
+
 WRKSRC=		${WRKDIR}/PenguinTV-${PORTVERSION}
 
 OPTIONS=	PYLUCENE "Use Lucene search engine" ON \
