@@ -7,11 +7,11 @@
 
 PORTNAME=	miniupnpd
 PORTVERSION=	1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
 		http://miniupnp.free.fr/files/
-DISTNAME=	${PORTNAME}-1.0-RC8
+DISTNAME=	${PORTNAME}-1.0-RC9
 
 MAINTAINER=	darius@dons.net.au
 COMMENT=	A UPnP IGD implementation which uses pf
