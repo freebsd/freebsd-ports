@@ -2,6 +2,7 @@ bin/graph-easy
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graph/Easy/.packlist
 %%SITE_PERL%%/Graph/Easy.pm
 %%SITE_PERL%%/Graph/Easy/As_ascii.pm
+%%SITE_PERL%%/Graph/Easy/As_graphml.pm
 %%SITE_PERL%%/Graph/Easy/As_graphviz.pm
 %%SITE_PERL%%/Graph/Easy/As_txt.pm
 %%SITE_PERL%%/Graph/Easy/As_vcg.pm
@@ -14,6 +15,7 @@ bin/graph-easy
 %%SITE_PERL%%/Graph/Easy/Group/Cell.pm
 %%SITE_PERL%%/Graph/Easy/Layout.pm
 %%SITE_PERL%%/Graph/Easy/Layout/Chain.pm
+%%SITE_PERL%%/Graph/Easy/Layout/Force.pm
 %%SITE_PERL%%/Graph/Easy/Layout/Grid.pm
 %%SITE_PERL%%/Graph/Easy/Layout/Path.pm
 %%SITE_PERL%%/Graph/Easy/Layout/Repair.pm
