@@ -9869,6 +9869,7 @@ p5-HTML-Chunks	ports/www/p5-HTML-Chunks
 p5-HTML-Clean	ports/www/p5-HTML-Clean
 p5-HTML-Copy	ports/textproc/p5-HTML-Copy
 p5-HTML-Diff	ports/www/p5-HTML-Diff
+p5-HTML-Display	ports/www/p5-HTML-Display
 p5-HTML-Element-Extended	ports/www/p5-HTML-Element-Extended
 p5-HTML-Element-Library	ports/www/p5-HTML-Element-Library
 p5-HTML-Email-Obfuscate	ports/security/p5-HTML-Email-Obfuscate
