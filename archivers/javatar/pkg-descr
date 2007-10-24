@@ -1,0 +1,10 @@
+The package com.ice.tar implements a tar archive io package.
+This package allows you to create, and extract tar archives.
+Since the package uses InputStream and OutputStream, it is possible
+to combine this package with the java.util.zip package to handle
+.tar.gz files.
+
+WWW: http://www.trustice.com/java/tar/
+
+- Alex Dupre
+ale@FreeBSD.org
