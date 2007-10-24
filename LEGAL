@@ -494,6 +494,11 @@ savage/Samuraiwars*	games/linux-savage-samuraiwars	SamuraiWars is freeware, but 
 							not sure of its license
 savage/SFE*		games/linux-savage	Savage is freeware, but i am
 						not sure of its license
+scim-kmfl-sil-ipa-unicode5* textproc/scim-kmfl-sil-ipa-unicode5	SIL's Freeware License
+								(a) doesn't allow distribution,
+								(b) makes keyboard free for personal use only,
+								(c) doesn't allow distribution of modified
+								    keyboard sources under the same name.
 sdr-*			mbone/sdr		Crypto; export-controlled
 seatools_cli.tar	sysutils/seatools	Distfile should be loaded by hand
 serialmail-*		mail/serialmail		No license -- see
