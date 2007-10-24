@@ -5,7 +5,7 @@
  
  #Set this to be the location of your JRE
 -JAVA_HOME = ~/vm/sun142
-+JAVA_HOME = /usr/local/jdk1.6.0
++
  
  JDK_INCLUDE = -I ${JAVA_HOME}/include -I ${JAVA_HOME}/include/${OS_TYPE}
  COMMON_INCLUDE = -I include
