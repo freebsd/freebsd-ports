@@ -7,15 +7,14 @@
 
 PORTNAME=	smstools
 PORTVERSION=	2.2.18
+PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	http://www.meinemullemaus.de/software/smstools/packages/
+MASTER_SITES=	http://www.meinemullemaus.de/smstools/packages/
 
-MAINTAINER=	bennyk@wax.dk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to handle Short Message Service
 
 LIB_DEPENDS=	mm:${PORTSDIR}/devel/mm
-
-BROKEN=		Size/checksum mismatch
 
 WRKSRC=		${WRKDIR}/smstools
 USE_GMAKE=	yes
