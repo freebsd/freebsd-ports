@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pgpool-II
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1258/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1488/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A connection pool server for PostgreSQL
@@ -19,7 +18,6 @@ GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
 
 CONFLICTS=	pgpool-3.*
-CONFIGURE_ARGS=	--datadir=${DATADIR}
 USE_RC_SUBR=	pgpool
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README.euc_jp
@@ -32,6 +30,9 @@ MAN8=		pgpool.8
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	${WRKSRC}/configure
+
+pre-install:
+	${MKDIR} ${DATADIR}
 
 post-install:
 .if !defined(NOPORTDOCS)
