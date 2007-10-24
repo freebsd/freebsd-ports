@@ -86,7 +86,7 @@ upgrades.
   AFFECTS: users of sysutils/nut sysutils/nut-*
   AUTHOR: Martin Matuska <mm@FreeBSD.org>
 
-  The slave ports sysutils/nut-libupsclient, sysutils/nut-snmp and 
+  The slave ports sysutils/nut-libupsclient, sysutils/nut-snmp and
   sysutils/nut-usb have been removed with the upgrade of sysutils/nut to 2.2.0
   They are now fully integrated into sysutils/nut and their functionality
   can be enabled/disabled in OPTIONS of sysutils/nut.
@@ -124,10 +124,10 @@ upgrades.
   AFFECTS: users of devel/p5-gearmand
   AUTHOR: clsung@FreeBSD.org
 
-  The port p5-gearmand has been splited up, so Gearman servers can 
-  be embedded into other processes. The Gearman::Server class is 
+  The port p5-gearmand has been splited up, so Gearman servers can
+  be embedded into other processes. The Gearman::Server class is
   located at devel/p5-Gearman-Server, if you have devel/p5-gearmand
-  installed, perform an upgrade devel/p5-Gearman-Server with a 
+  installed, perform an upgrade devel/p5-Gearman-Server with a
   command like:
 
     # portupgrade -o devel/p5-Gearman-Server devel/p5-gearmand
@@ -144,7 +144,7 @@ upgrades.
   AUTHOR: Wesley Shields <wxs@atarininja.org>
 
   The new version of grok has changed the meaning of a couple of
-  pre-defined patterns. 
+  pre-defined patterns.
   Please see /usr/local/share/doc/grok/CHANGELIST for more
   information. Existing grok.conf may be broken by these changes.
 
