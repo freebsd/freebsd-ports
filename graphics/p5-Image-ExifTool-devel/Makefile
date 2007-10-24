@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	6.90
+PORTVERSION=	7.00
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -18,9 +18,9 @@ COMMENT=	Perl module for getting EXIF data from image files
 
 PERL_CONFIGURE=	yes
 
-MANTAGS=	AFCP AIFF APE APP12 ASF BMP BuildTagLookup Canon	 \
-		CanonCustom CanonRaw CanonVRD Casio DICOM DNG Exif FLAC	 \
-		Fixup Flash FlashPix FotoStation FujiFilm GIF GPS	 \
+MANTAGS=	AFCP AIFF APE APP12 ASF BMP BigTIFF BuildTagLookup	 \
+		Canon CanonCustom CanonRaw CanonVRD Casio DICOM DNG Exif \
+		FLAC Fixup Flash FlashPix FotoStation FujiFilm GIF GPS	 \
 		GeoTiff HTML HP HtmlDump ICC_Profile ID3 IPTC JPEG JVC	 \
 		Jpeg2000 Kodak KyoceraRaw Leaf MIE MIFF MNG MPC MPEG	 \
 		MakerNotes Minolta MinoltaRaw Nikon NikonCapture Olympus \

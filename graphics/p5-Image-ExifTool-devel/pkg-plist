@@ -9,6 +9,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/APP12.pm
 %%SITE_PERL%%/Image/ExifTool/ASF.pm
 %%SITE_PERL%%/Image/ExifTool/BMP.pm
+%%SITE_PERL%%/Image/ExifTool/BigTIFF.pm
 %%SITE_PERL%%/Image/ExifTool/BuildTagLookup.pm
 %%SITE_PERL%%/Image/ExifTool/Canon.pm
 %%SITE_PERL%%/Image/ExifTool/CanonCustom.pm
