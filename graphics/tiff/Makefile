@@ -26,9 +26,12 @@ CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
 			--with-jpeg-lib-dir=${LOCALBASE}/lib
 
 .if defined(WITH_X11) && !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	sm ice xmu xi x11
+USE_GL=		glut glu gl
+PLIST_SUB+=	WITH_X11=""
 .else
 CONFIGURE_ARGS+=	--without-x --without-libgl
+PLIST_SUB+=	WITH_X11="@comment "
 .endif
 
 MAN1=	bmp2tiff.1 tiff2pdf.1 fax2ps.1 fax2tiff.1 gif2tiff.1 pal2rgb.1 \
