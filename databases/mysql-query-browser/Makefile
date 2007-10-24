@@ -22,6 +22,10 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
+BROKEN=		fails to fetch
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2007-12-24
+
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:261:env
@@ -77,4 +81,12 @@ do-install:
 	@cd ${MAIN_DIR}; \
 	${GMAKE} ${INSTALL_TARGET}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
+.include <bsd.port.post.mk>
