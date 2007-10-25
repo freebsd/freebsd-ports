@@ -5,9 +5,6 @@ bin/deluge
 %%PYTHON_SITELIBDIR%%/deluge/_dbus.py
 %%PYTHON_SITELIBDIR%%/deluge/_dbus.pyc
 %%PYTHON_SITELIBDIR%%/deluge/_dbus.pyo
-%%PYTHON_SITELIBDIR%%/deluge/browser.py
-%%PYTHON_SITELIBDIR%%/deluge/browser.pyc
-%%PYTHON_SITELIBDIR%%/deluge/browser.pyo
 %%PYTHON_SITELIBDIR%%/deluge/common.py
 %%PYTHON_SITELIBDIR%%/deluge/common.pyc
 %%PYTHON_SITELIBDIR%%/deluge/common.pyo
@@ -27,9 +24,6 @@ bin/deluge
 %%PYTHON_SITELIBDIR%%/deluge/files.py
 %%PYTHON_SITELIBDIR%%/deluge/files.pyc
 %%PYTHON_SITELIBDIR%%/deluge/files.pyo
-%%PYTHON_SITELIBDIR%%/deluge/info.py
-%%PYTHON_SITELIBDIR%%/deluge/info.pyc
-%%PYTHON_SITELIBDIR%%/deluge/info.pyo
 %%PYTHON_SITELIBDIR%%/deluge/interface.py
 %%PYTHON_SITELIBDIR%%/deluge/interface.pyc
 %%PYTHON_SITELIBDIR%%/deluge/interface.pyo
@@ -45,9 +39,6 @@ bin/deluge
 %%PYTHON_SITELIBDIR%%/deluge/tab_details.py
 %%PYTHON_SITELIBDIR%%/deluge/tab_details.pyc
 %%PYTHON_SITELIBDIR%%/deluge/tab_details.pyo
-%%PYTHON_SITELIBDIR%%/deluge/update.py
-%%PYTHON_SITELIBDIR%%/deluge/update.pyc
-%%PYTHON_SITELIBDIR%%/deluge/update.pyo
 %%PYTHON_SITELIBDIR%%/deluge/wizard.py
 %%PYTHON_SITELIBDIR%%/deluge/wizard.pyc
 %%PYTHON_SITELIBDIR%%/deluge/wizard.pyo
@@ -64,12 +55,8 @@ share/applications/deluge.desktop
 %%DATADIR%%/glade/tray_menu.glade
 %%DATADIR%%/glade/wizard.glade
 %%DATADIR%%/pixmaps/deluge-about.png
-%%DATADIR%%/pixmaps/deluge128.png
-%%DATADIR%%/pixmaps/deluge192.png
-%%DATADIR%%/pixmaps/deluge22.png
-%%DATADIR%%/pixmaps/deluge256.png
-%%DATADIR%%/pixmaps/deluge32.png
-%%DATADIR%%/pixmaps/deluge48.png
+%%DATADIR%%/pixmaps/deluge.png
+%%DATADIR%%/pixmaps/deluge.svg
 %%DATADIR%%/pixmaps/downloading16.png
 %%DATADIR%%/pixmaps/flags18x12/ad.png
 %%DATADIR%%/pixmaps/flags18x12/ae.png
@@ -592,6 +579,8 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/NetworkGraph/tab_graph.py
 %%DATADIR%%/plugins/NetworkHealth/__init__.py
 %%DATADIR%%/plugins/NetworkHealth/plugin.py
+%%DATADIR%%/plugins/Scheduler/__init__.py
+%%DATADIR%%/plugins/Scheduler/plugin.py
 %%DATADIR%%/plugins/SimpleRSS/__init__.py
 %%DATADIR%%/plugins/SimpleRSS/feedparser.py
 %%DATADIR%%/plugins/SimpleRSS/plugin.py
@@ -608,14 +597,77 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/TorrentPeers/__init__.py
 %%DATADIR%%/plugins/TorrentPeers/peers_preferences.glade
 %%DATADIR%%/plugins/TorrentPeers/tab_peers.py
-%%DATADIR%%/plugins/TorrentPieces/__init__.py
-%%DATADIR%%/plugins/TorrentPieces/pieces_preferences.glade
-%%DATADIR%%/plugins/TorrentPieces/tab_pieces.py
 %%DATADIR%%/plugins/TorrentSearch/__init__.py
 %%DATADIR%%/plugins/TorrentSearch/plugin.py
 %%DATADIR%%/plugins/TorrentSearch/searchdlg.glade
 %%DATADIR%%/plugins/WebSeed/__init__.py
 %%DATADIR%%/plugins/WebSeed/webseed.glade
+%%DATADIR%%/plugins/WebUi/LICENSE
+%%DATADIR%%/plugins/WebUi/__init__.py
+%%DATADIR%%/plugins/WebUi/dbus_interface.py
+%%DATADIR%%/plugins/WebUi/dbus_pythonize.py
+%%DATADIR%%/plugins/WebUi/debugerror.py
+%%DATADIR%%/plugins/WebUi/deluge_webserver.py
+%%DATADIR%%/plugins/WebUi/gtk_cherrypy_wsgiserver.py
+%%DATADIR%%/plugins/WebUi/revno
+%%DATADIR%%/plugins/WebUi/run_webserver
+%%DATADIR%%/plugins/WebUi/scripts/add_torrents_to_deluge.user.js
+%%DATADIR%%/plugins/WebUi/scripts/build_webui_tarball.sh
+%%DATADIR%%/plugins/WebUi/scripts/curl-example
+%%DATADIR%%/plugins/WebUi/scripts/extract_template_strings.py
+%%DATADIR%%/plugins/WebUi/scripts/template_strings.py
+%%DATADIR%%/plugins/WebUi/static/images/deluge_icon.gif
+%%DATADIR%%/plugins/WebUi/static/images/downloading16.png
+%%DATADIR%%/plugins/WebUi/static/images/inactive16.png
+%%DATADIR%%/plugins/WebUi/static/images/seeding16.png
+%%DATADIR%%/plugins/WebUi/static/images/simple_bg.jpg
+%%DATADIR%%/plugins/WebUi/static/images/simple_line.jpg
+%%DATADIR%%/plugins/WebUi/static/images/simple_logo.jpg
+%%DATADIR%%/plugins/WebUi/static/images/tango/down.png
+%%DATADIR%%/plugins/WebUi/static/images/tango/list-add.png
+%%DATADIR%%/plugins/WebUi/static/images/tango/list-remove.png
+%%DATADIR%%/plugins/WebUi/static/images/tango/media-playback-pause.png
+%%DATADIR%%/plugins/WebUi/static/images/tango/media-playback-start.png
+%%DATADIR%%/plugins/WebUi/static/images/tango/preferences-system.png
+%%DATADIR%%/plugins/WebUi/static/images/tango/process-stop.png
+%%DATADIR%%/plugins/WebUi/static/images/tango/up.png
+%%DATADIR%%/plugins/WebUi/static/images/tango/user-trash.png
+%%DATADIR%%/plugins/WebUi/static/images/tango/view-refresh.png
+%%DATADIR%%/plugins/WebUi/static/simple_site_style.css
+%%DATADIR%%/plugins/WebUi/templates/deluge/about.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/authors.txt
+%%DATADIR%%/plugins/WebUi/templates/deluge/error.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/footer.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/header.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/index.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/login.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/part_button.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/part_refresh.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/refresh_form.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/sort_column_head.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/torrent_add.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/torrent_delete.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/torrent_info.html
+%%DATADIR%%/plugins/WebUi/templates/hacking-templates.txt
+%%DATADIR%%/plugins/WebUi/version
+%%DATADIR%%/plugins/WebUi/webpy022/Dependency-not-really part of webui.txt
+%%DATADIR%%/plugins/WebUi/webpy022/__init__.py
+%%DATADIR%%/plugins/WebUi/webpy022/changes.txt
+%%DATADIR%%/plugins/WebUi/webpy022/cheetah.py
+%%DATADIR%%/plugins/WebUi/webpy022/db.py
+%%DATADIR%%/plugins/WebUi/webpy022/debugerror.py
+%%DATADIR%%/plugins/WebUi/webpy022/form.py
+%%DATADIR%%/plugins/WebUi/webpy022/http.py
+%%DATADIR%%/plugins/WebUi/webpy022/httpserver.py
+%%DATADIR%%/plugins/WebUi/webpy022/net.py
+%%DATADIR%%/plugins/WebUi/webpy022/request.py
+%%DATADIR%%/plugins/WebUi/webpy022/template.py
+%%DATADIR%%/plugins/WebUi/webpy022/utils.py
+%%DATADIR%%/plugins/WebUi/webpy022/webapi.py
+%%DATADIR%%/plugins/WebUi/webpy022/wsgi.py
+%%DATADIR%%/plugins/WebUi/webpy022/wsgiserver/__init__.py
+%%DATADIR%%/plugins/WebUi/webserver_common.py
+%%DATADIR%%/plugins/WebUi/webserver_framework.py
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/ar/LC_MESSAGES/deluge.mo
@@ -639,6 +691,7 @@ share/locale/he/LC_MESSAGES/deluge.mo
 share/locale/hr/LC_MESSAGES/deluge.mo
 share/locale/hu/LC_MESSAGES/deluge.mo
 share/locale/id/LC_MESSAGES/deluge.mo
+share/locale/is/LC_MESSAGES/deluge.mo
 share/locale/it/LC_MESSAGES/deluge.mo
 share/locale/ja/LC_MESSAGES/deluge.mo
 share/locale/ko/LC_MESSAGES/deluge.mo
@@ -647,6 +700,7 @@ share/locale/la/LC_MESSAGES/deluge.mo
 share/locale/lt/LC_MESSAGES/deluge.mo
 share/locale/lv/LC_MESSAGES/deluge.mo
 share/locale/mk/LC_MESSAGES/deluge.mo
+share/locale/ms/LC_MESSAGES/deluge.mo
 share/locale/nb/LC_MESSAGES/deluge.mo
 share/locale/nl/LC_MESSAGES/deluge.mo
 share/locale/pl/LC_MESSAGES/deluge.mo
@@ -674,15 +728,24 @@ share/pixmaps/deluge.png
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/plugins/WebUi/webpy022/wsgiserver
+@dirrm %%DATADIR%%/plugins/WebUi/webpy022
+@dirrm %%DATADIR%%/plugins/WebUi/templates/deluge
+@dirrm %%DATADIR%%/plugins/WebUi/templates
+@dirrm %%DATADIR%%/plugins/WebUi/static/images/tango
+@dirrm %%DATADIR%%/plugins/WebUi/static/images
+@dirrm %%DATADIR%%/plugins/WebUi/static
+@dirrm %%DATADIR%%/plugins/WebUi/scripts
+@dirrm %%DATADIR%%/plugins/WebUi
 @dirrm %%DATADIR%%/plugins/WebSeed
 @dirrm %%DATADIR%%/plugins/TorrentSearch
-@dirrm %%DATADIR%%/plugins/TorrentPieces
 @dirrm %%DATADIR%%/plugins/TorrentPeers
 @dirrm %%DATADIR%%/plugins/TorrentNotification
 @dirrm %%DATADIR%%/plugins/TorrentFiles
 @dirrm %%DATADIR%%/plugins/TorrentCreator
 @dirrm %%DATADIR%%/plugins/SpeedLimiter
 @dirrm %%DATADIR%%/plugins/SimpleRSS
+@dirrm %%DATADIR%%/plugins/Scheduler
 @dirrm %%DATADIR%%/plugins/NetworkHealth
 @dirrm %%DATADIR%%/plugins/NetworkGraph
 @dirrm %%DATADIR%%/plugins/MoveTorrent
@@ -695,6 +758,10 @@ share/pixmaps/deluge.png
 @dirrm %%DATADIR%%/pixmaps/flags25x15
 @dirrm %%DATADIR%%/pixmaps/flags18x12
 @dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/icons/scalable/apps
+@dirrm %%DATADIR%%/icons/scalable
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/glade
 @dirrmtry %%DATADIR%%
 @dirrmtry share/applications
