@@ -6,9 +6,15 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/hgext/acl.py
 %%PYTHON_SITELIBDIR%%/hgext/acl.pyc
 %%PYTHON_SITELIBDIR%%/hgext/acl.pyo
+%%PYTHON_SITELIBDIR%%/hgext/alias.py
+%%PYTHON_SITELIBDIR%%/hgext/alias.pyc
+%%PYTHON_SITELIBDIR%%/hgext/alias.pyo
 %%PYTHON_SITELIBDIR%%/hgext/bugzilla.py
 %%PYTHON_SITELIBDIR%%/hgext/bugzilla.pyc
 %%PYTHON_SITELIBDIR%%/hgext/bugzilla.pyo
+%%PYTHON_SITELIBDIR%%/hgext/children.py
+%%PYTHON_SITELIBDIR%%/hgext/children.pyc
+%%PYTHON_SITELIBDIR%%/hgext/children.pyo
 %%PYTHON_SITELIBDIR%%/hgext/convert/__init__.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/__init__.pyo
@@ -18,12 +24,24 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/hgext/convert/cvs.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/cvs.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/cvs.pyo
+%%PYTHON_SITELIBDIR%%/hgext/convert/darcs.py
+%%PYTHON_SITELIBDIR%%/hgext/convert/darcs.pyc
+%%PYTHON_SITELIBDIR%%/hgext/convert/darcs.pyo
+%%PYTHON_SITELIBDIR%%/hgext/convert/filemap.py
+%%PYTHON_SITELIBDIR%%/hgext/convert/filemap.pyc
+%%PYTHON_SITELIBDIR%%/hgext/convert/filemap.pyo
 %%PYTHON_SITELIBDIR%%/hgext/convert/git.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/git.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/git.pyo
 %%PYTHON_SITELIBDIR%%/hgext/convert/hg.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/hg.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/hg.pyo
+%%PYTHON_SITELIBDIR%%/hgext/convert/subversion.py
+%%PYTHON_SITELIBDIR%%/hgext/convert/subversion.pyc
+%%PYTHON_SITELIBDIR%%/hgext/convert/subversion.pyo
+%%PYTHON_SITELIBDIR%%/hgext/convert/transport.py
+%%PYTHON_SITELIBDIR%%/hgext/convert/transport.pyc
+%%PYTHON_SITELIBDIR%%/hgext/convert/transport.pyo
 %%PYTHON_SITELIBDIR%%/hgext/extdiff.py
 %%PYTHON_SITELIBDIR%%/hgext/extdiff.pyc
 %%PYTHON_SITELIBDIR%%/hgext/extdiff.pyo
@@ -42,18 +60,30 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/hgext/hgk.py
 %%PYTHON_SITELIBDIR%%/hgext/hgk.pyc
 %%PYTHON_SITELIBDIR%%/hgext/hgk.pyo
+%%PYTHON_SITELIBDIR%%/hgext/imerge.py
+%%PYTHON_SITELIBDIR%%/hgext/imerge.pyc
+%%PYTHON_SITELIBDIR%%/hgext/imerge.pyo
+%%PYTHON_SITELIBDIR%%/hgext/interhg.py
+%%PYTHON_SITELIBDIR%%/hgext/interhg.pyc
+%%PYTHON_SITELIBDIR%%/hgext/interhg.pyo
 %%PYTHON_SITELIBDIR%%/hgext/mq.py
 %%PYTHON_SITELIBDIR%%/hgext/mq.pyc
 %%PYTHON_SITELIBDIR%%/hgext/mq.pyo
 %%PYTHON_SITELIBDIR%%/hgext/notify.py
 %%PYTHON_SITELIBDIR%%/hgext/notify.pyc
 %%PYTHON_SITELIBDIR%%/hgext/notify.pyo
+%%PYTHON_SITELIBDIR%%/hgext/parentrevspec.py
+%%PYTHON_SITELIBDIR%%/hgext/parentrevspec.pyc
+%%PYTHON_SITELIBDIR%%/hgext/parentrevspec.pyo
 %%PYTHON_SITELIBDIR%%/hgext/patchbomb.py
 %%PYTHON_SITELIBDIR%%/hgext/patchbomb.pyc
 %%PYTHON_SITELIBDIR%%/hgext/patchbomb.pyo
 %%PYTHON_SITELIBDIR%%/hgext/purge.py
 %%PYTHON_SITELIBDIR%%/hgext/purge.pyc
 %%PYTHON_SITELIBDIR%%/hgext/purge.pyo
+%%PYTHON_SITELIBDIR%%/hgext/record.py
+%%PYTHON_SITELIBDIR%%/hgext/record.pyc
+%%PYTHON_SITELIBDIR%%/hgext/record.pyo
 %%PYTHON_SITELIBDIR%%/hgext/transplant.py
 %%PYTHON_SITELIBDIR%%/hgext/transplant.pyc
 %%PYTHON_SITELIBDIR%%/hgext/transplant.pyo
@@ -98,9 +128,13 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.py
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/diffhelpers.so
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.py
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/dispatch.py
+%%PYTHON_SITELIBDIR%%/mercurial/dispatch.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/dispatch.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/extensions.py
 %%PYTHON_SITELIBDIR%%/mercurial/extensions.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/extensions.pyo
@@ -180,6 +214,10 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/node.py
 %%PYTHON_SITELIBDIR%%/mercurial/node.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/node.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/osutil.py
+%%PYTHON_SITELIBDIR%%/mercurial/osutil.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/osutil.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/osutil.so
 %%PYTHON_SITELIBDIR%%/mercurial/patch.py
 %%PYTHON_SITELIBDIR%%/mercurial/patch.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/patch.pyo
@@ -213,6 +251,13 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/templater.py
 %%PYTHON_SITELIBDIR%%/mercurial/templater.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/templater.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/templates/atom/changelog.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/atom/changelogentry.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/atom/filelog.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/atom/header.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/atom/map
+%%PYTHON_SITELIBDIR%%/mercurial/templates/atom/tagentry.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/atom/tags.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/changelog.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/changelogentry.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/changeset.tmpl
@@ -236,6 +281,7 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/index.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/manifest.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/map
+%%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/notfound.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/search.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/shortlog.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/summary.tmpl
@@ -305,53 +351,43 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/version.py
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/version.pyo
-%%PORTDOCS%%%%DOCSDIR%%/hg.1.gendoc.txt
-%%PORTDOCS%%%%DOCSDIR%%/hg.1.txt
-%%PORTDOCS%%%%DOCSDIR%%/hgignore.5.txt
-%%PORTDOCS%%%%DOCSDIR%%/hgmerge.1.txt
-%%PORTDOCS%%%%DOCSDIR%%/hgrc.5.txt
-%%PORTDOCS%%%%DOCSDIR%%/hg.1.html
-%%PORTDOCS%%%%DOCSDIR%%/hgignore.5.html
-%%PORTDOCS%%%%DOCSDIR%%/hgmerge.1.html
-%%PORTDOCS%%%%DOCSDIR%%/hgrc.5.html
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/hg.1.gendoc.txt
+%%PORTDOCS%%%%DOCSDIR%%/hg.1.html
+%%PORTDOCS%%%%DOCSDIR%%/hg.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/hgignore.5.html
+%%PORTDOCS%%%%DOCSDIR%%/hgignore.5.txt
+%%PORTDOCS%%%%DOCSDIR%%/hgmerge.1.html
+%%PORTDOCS%%%%DOCSDIR%%/hgmerge.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/hgrc.5.html
+%%PORTDOCS%%%%DOCSDIR%%/hgrc.5.txt
+%%DATADIR%%/contrib/bash_completion
+%%DATADIR%%/contrib/convert-repo
+%%DATADIR%%/contrib/darcs2hg.py
+%%DATADIR%%/contrib/favicon.ico
 %%DATADIR%%/contrib/git-viz/git-cat-file
 %%DATADIR%%/contrib/git-viz/git-diff-tree
 %%DATADIR%%/contrib/git-viz/git-rev-list
 %%DATADIR%%/contrib/git-viz/git-rev-tree
 %%DATADIR%%/contrib/git-viz/hg-viz
+%%DATADIR%%/contrib/hg-ssh
+%%DATADIR%%/contrib/hgdiff
+%%DATADIR%%/contrib/hgk
 %%DATADIR%%/contrib/hgsh/Makefile
 %%DATADIR%%/contrib/hgsh/hgsh.c
+%%DATADIR%%/contrib/mercurial.el
+%%DATADIR%%/contrib/sample.hgrc
+%%DATADIR%%/contrib/tcsh_completion
 %%DATADIR%%/contrib/vim/HGAnnotate.vim
 %%DATADIR%%/contrib/vim/hg-menu.vim
 %%DATADIR%%/contrib/vim/hgcommand.vim
 %%DATADIR%%/contrib/vim/patchreview.txt
 %%DATADIR%%/contrib/vim/patchreview.vim
-%%DATADIR%%/contrib/bash_completion
-%%DATADIR%%/contrib/convert-repo
-%%DATADIR%%/contrib/darcs2hg.py
-%%DATADIR%%/contrib/favicon.ico
-%%DATADIR%%/contrib/hg-ssh
-%%DATADIR%%/contrib/hgdiff
-%%DATADIR%%/contrib/hgk
-%%DATADIR%%/contrib/mercurial.el
-%%DATADIR%%/contrib/sample.hgrc
-%%DATADIR%%/contrib/tcsh_completion
 %%DATADIR%%/contrib/zsh_completion
 %%DATADIR%%/www/hgweb.cgi
 %%DATADIR%%/www/hgwebdir.cgi
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/static
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/rss
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/raw
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/old
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/hgweb
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial
-@dirrm %%PYTHON_SITELIBDIR%%/hgext/convert
-@dirrm %%PYTHON_SITELIBDIR%%/hgext
 @dirrm %%DATADIR%%/www
 @dirrm %%DATADIR%%/contrib/vim
 @dirrm %%DATADIR%%/contrib/hgsh
@@ -359,3 +395,14 @@ bin/hgmerge
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/static
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/rss
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/raw
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/old
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/atom
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial/hgweb
+@dirrm %%PYTHON_SITELIBDIR%%/mercurial
+@dirrm %%PYTHON_SITELIBDIR%%/hgext/convert
+@dirrm %%PYTHON_SITELIBDIR%%/hgext
