@@ -1,5 +1,5 @@
 bin/gnome-crash
-share/apps/Utilities/gnome-crash.desktop
+share/gnome/apps/Utilities/gnome-crash.desktop
 share/gnome-crash/gdb/gdb-cmd
 share/gnome-crash/glade/about.glade
 share/gnome-crash/glade/gnome-crash.glade
