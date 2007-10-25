@@ -7,7 +7,7 @@
 
 PORTNAME=	skencil
 PORTVERSION=	0.6.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sketch
@@ -21,7 +21,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab \
 		${PYXML}
 
-USE_PYTHON=	yes
+# Core dump with Python 2.5, see ports/115926.
+USE_PYTHON=	-2.4
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_NOEGGINFO=	yes
 
@@ -32,6 +33,12 @@ CONFFLAGS=	--tk-autoconf --tk-flags="-I${X11BASE}/include -I${LOCALBASE}/include
 SKETCHDOCS=	BUGS Doc NEWS PROJECTS README TODO
 SKETCHSCRIPTS=	finishinst.py sk2ppm.py sk2ps.py skconvert.py skencil.py \
 		skshow.py
+
+.include <bsd.port.pre.mk>
+
+.if defined(PACKAGE_BUILDING) && ${PYTHON_VERSION} != ${PYTHON_DEFAULT_VERSION}
+IGNORE=		needs Python ${PYTHON_VER} as default on pointyhat/TB
+.endif
 
 do-configure:
 	@(cd ${WRKSRC} && \
@@ -66,4 +73,4 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
