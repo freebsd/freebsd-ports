@@ -197,6 +197,7 @@ bin/prewikka-httpd
 %%DATADIR%%/htdocs/images/play.png
 %%DATADIR%%/htdocs/css/style.css
 %%DATADIR%%/htdocs/js/functions.js
+%%DATADIR%%/htdocs/js/jquery.js
 %%DATADIR%%/database/sqlite.sql
 %%DATADIR%%/database/sqlite-update-0.9.11.sql
 %%DATADIR%%/database/mysql.sql
