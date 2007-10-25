@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	guile-lib
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.6
 CATEGORIES=	devel scheme
 MASTER_SITES=	http://download.gna.org/guile-lib/
 

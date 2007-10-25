@@ -1,4 +1,6 @@
+share/guile/site/apicheck.scm
 share/guile/site/config/load.scm
+share/guile/site/container/async-queue.scm
 share/guile/site/container/delay-tree.scm
 share/guile/site/container/nodal-tree.scm
 share/guile/site/container/queue.scm
@@ -10,12 +12,14 @@ share/guile/site/io/string.scm
 share/guile/site/logging/logger.scm
 share/guile/site/logging/port-log.scm
 share/guile/site/logging/rotating-log.scm
+share/guile/site/match-bind.scm
 share/guile/site/math/minima.scm
 share/guile/site/math/primes.scm
 share/guile/site/math/rationalize.scm
 share/guile/site/md5.scm
 share/guile/site/os/process.scm
 share/guile/site/scheme/documentation.scm
+share/guile/site/scheme/kwargs.scm
 share/guile/site/scheme/session.scm
 share/guile/site/search/basic.scm
 share/guile/site/srfi/srfi-34.scm
@@ -27,6 +31,7 @@ share/guile/site/string/soundex.scm
 share/guile/site/string/transform.scm
 share/guile/site/string/wrap.scm
 share/guile/site/sxml/apply-templates.scm
+share/guile/site/sxml/fold.scm
 share/guile/site/sxml/simple.scm
 share/guile/site/sxml/ssax-simple.scm
 share/guile/site/sxml/ssax.scm
@@ -42,6 +47,7 @@ share/guile/site/sxml/upstream/packages.scm
 share/guile/site/sxml/xpath.scm
 share/guile/site/term/ansi-color.scm
 share/guile/site/texinfo.scm
+share/guile/site/texinfo/docbook.scm
 share/guile/site/texinfo/html.scm
 share/guile/site/texinfo/indexing.scm
 share/guile/site/texinfo/nodal-tree.scm
