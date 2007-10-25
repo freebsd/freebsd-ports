@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gimmix
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	gimmix
@@ -22,5 +21,10 @@ USE_GNOME=	gtk20 libglade2
 USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
+
+post-patch:
+	${LN} -sf ${LOCALBASE}/share/intltool/intltool-update.in ${WRKSRC}/intltool-update.in
+	${LN} -sf ${LOCALBASE}/share/intltool/intltool-merge.in ${WRKSRC}/intltool-merge.in
+	${LN} -sf ${LOCALBASE}/share/intltool/intltool-extract.in ${WRKSRC}/intltool-extract.in
 
 .include <bsd.port.mk>
