@@ -15,4 +15,6 @@ COMMENT=	KDE Kool Gorilla iconset
 USE_BZIP2=	yes
 WRKSRC=		"${WRKDIR}/Kool.Gorilla"
 
+BROKEN=		fails to fetch
+
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
