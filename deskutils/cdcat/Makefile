@@ -33,10 +33,6 @@ MAKE_ENV=	QTDIR="${QTDIR}" MAKE="${GMAKE}" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 PLIST_FILES=	bin/cdcat \
 		share/cdcat/Authors \
 		share/cdcat/COPYING \
@@ -58,6 +54,10 @@ PLIST_FILES=	bin/cdcat \
 		share/cdcat/translations/cdcat_sr.qm
 PLIST_DIRS=	share/cdcat/translations \
 		share/cdcat
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|importGtktalogCsv\:\:importGtktalogCsv|importGtktalogCsv|' \
+		${WRKSRC}/import.h
 
 pre-configure:
 	cd ${WRKSRC} && ${MAKE_ENV} qmake cdcat.pro
