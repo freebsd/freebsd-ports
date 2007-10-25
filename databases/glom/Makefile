@@ -22,6 +22,8 @@ LIB_DEPENDS=	bakery-2.4:${PORTSDIR}/x11-toolkits/bakery \
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
+BROKEN=	py-gnome-extras has pygda disable because it is broke
+
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_PYTHON=	yes
