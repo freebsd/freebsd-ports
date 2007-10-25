@@ -129,6 +129,8 @@ libdata/pkgconfig/libdecoration.pc
 %%DATADIR%%/schemas.xslt
 %%GNOME%%@cwd %%WINDOWSETTINGSDATADIR%%
 %%GNOME%%share/gnome/wm-properties/compiz.desktop
+%%GNOME%%share/gnome-control-center/keybindings/50-compiz-desktop-key.xml
+%%GNOME%%share/gnome-control-center/keybindings/50-compiz-key.xml
 %%GNOME%%@cwd %%WINDOWSETTINGSLIBDIR%%
 %%GNOME%%window-manager-settings/libcompiz.so
 %%GNOME%%window-manager-settings/libcompiz.la

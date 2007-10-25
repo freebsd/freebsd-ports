@@ -7,7 +7,7 @@
 
 PORTNAME=	compiz
 PORTVERSION=	0.5.2
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	rnoland@2hip.net
@@ -15,7 +15,8 @@ COMMENT=	Compiz Composite/Window Manager
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 XORG_CAT=	app
 GNU_CONFIGURE=	yes
@@ -105,7 +106,8 @@ CONFIGURE_ARGS+=	--disable-metacity
 .endif
 
 .if defined(WITH_GNOME)
-CONFIGURE_ARGS+=	--enable-gnome
+CONFIGURE_ARGS+=	--enable-gnome \
+			--enable-gnome-keybindings
 USE_GNOME+=	 gnomecontrolcenter2
 WINDOWSETTINGSDATADIR=	\
 		`pkg-config --variable=prefix gnome-window-settings-2.0`
@@ -115,7 +117,8 @@ PLIST_SUB+=	GNOME="" \
 		WINDOWSETTINGSDATADIR="${WINDOWSETTINGSDATADIR}" \
 		WINDOWSETTINGSLIBDIR="${WINDOWSETTINGSLIBDIR}"
 .else
-CONFIGURE_ARGS+=	--disable-gnome
+CONFIGURE_ARGS+=	--disable-gnome \
+			--disable-gnome-keybindings
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
