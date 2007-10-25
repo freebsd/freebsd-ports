@@ -8,7 +8,7 @@
 PORTNAME=	tor
 DISTVERSION=	0.2.0.8-alpha
 CATEGORIES=	security net
-MASTER_SITES=	http://tor.eff.org/dist/ \
+MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://mirror.onionland.org/dist/
 PKGNAMESUFFIX=	-devel
 
