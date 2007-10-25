@@ -109,7 +109,6 @@
 %%SITE_PERL%%/IkiWiki/Plugin/postsparkline.pm
 %%SITE_PERL%%/IkiWiki/Plugin/prettydate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/rawhtml.pm
-%%SITE_PERL%%/IkiWiki/Plugin/rst.pm
 %%SITE_PERL%%/IkiWiki/Plugin/search.pm
 %%SITE_PERL%%/IkiWiki/Plugin/shortcut.pm
 %%SITE_PERL%%/IkiWiki/Plugin/sidebar.pm
@@ -140,10 +139,12 @@
 %%SITE_PERL%%/IkiWiki/Wrapper.pm
 bin/ikiwiki
 lib/ikiwiki/plugins/externaldemo
+lib/ikiwiki/plugins/rst
 %%W3M%%libexec/w3m/cgi-bin/ikiwiki-w3m.cgi
 sbin/ikiwiki-mass-rebuild
 share/locale/bg/LC_MESSAGES/ikiwiki.mo
 share/locale/cs/LC_MESSAGES/ikiwiki.mo
+share/locale/da/LC_MESSAGES/ikiwiki.mo
 share/locale/es/LC_MESSAGES/ikiwiki.mo
 share/locale/fr/LC_MESSAGES/ikiwiki.mo
 share/locale/gu/LC_MESSAGES/ikiwiki.mo
