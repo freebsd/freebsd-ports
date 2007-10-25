@@ -3321,4 +3321,4 @@ games/actioncube|games/assaultcube|2007-10-19|Project name changed
 x11-fm/pcmanfm||2007-10-21|Has expired: Unmaintained upstream
 graphics/gimp-devel|graphics/gimp|2007-10-24|Gimp 2.4.0 released
 graphics/gimp-app-devel|graphics/gimp-app|2007-10-24|Gimp 2.4.0 released
-print/gimp-devel-gutenprint|print|gimp-gutenprint|2007-10-24|Gimp 2.4.0 released
+print/gimp-devel-gutenprint|print/gimp-gutenprint|2007-10-24|Gimp 2.4.0 released
