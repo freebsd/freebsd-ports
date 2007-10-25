@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-manager
-PORTVERSION=	0.9.9.1
+PORTVERSION=	0.9.10
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -42,7 +42,8 @@ PLIST_SUB+=	PRELUDEDIR=${PRELUDEDIR} \
 SUB_FILES=	pkg-install \
 		pkg-deinstall
 
-SUB_LIST=	${PLIST_SUB}
+SUB_LIST=	PREFIX=${PREFIX} \
+		${PLIST_SUB}
 
 .if defined(WITHOUT_XML)
 PLIST_SUB+=		WITH_XML="@comment "
