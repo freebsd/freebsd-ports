@@ -6,8 +6,8 @@
  
 -			bool x_threshold_passed =  (abs ((nframes64_t) (drag_info.current_pointer_x - drag_info.grab_x)) > 4LL);
 -			bool y_threshold_passed =  (abs ((nframes64_t) (drag_info.current_pointer_y - drag_info.grab_y)) > 4LL);
-+			bool x_threshold_passed =  (abs ((long long) (drag_info.current_pointer_x - drag_info.grab_x)) > 4LL);
-+			bool y_threshold_passed =  (abs ((long long) (drag_info.current_pointer_y - drag_info.grab_y)) > 4LL);
++			bool x_threshold_passed =  (::llabs ((nframes64_t) (drag_info.current_pointer_x - drag_info.grab_x)) > 4LL);
++			bool y_threshold_passed =  (::llabs ((nframes64_t) (drag_info.current_pointer_y - drag_info.grab_y)) > 4LL);
  			
  			drag_info.move_threshold_passed = (x_threshold_passed || y_threshold_passed);
  			
