@@ -63,7 +63,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 pre-install:
-	@${MKDIR} ${PREIX}/share/mime
+	@${MKDIR} ${PREFIX}/share/mime
 
 .include <bsd.port.pre.mk>
 
