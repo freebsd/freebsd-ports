@@ -88,9 +88,12 @@ post-patch:
 		${WRKSRC}/mcs/class/Managed.Windows.Forms/build-csproj \
 		${WRKSRC}/mcs/class/Managed.Windows.Forms/build-csproj2k5
 
-.if ${OSVERSION} >= 700000
+.if ${OSVERSION} >= 700000 && ${OSVERSION} < 800000
 	@${REINPLACE_CMD} -e 's|freebsd6|freebsd7|g' \
-	${WRKSRC}/configure ${WRKSRC}/libgc/configure
+		${WRKSRC}/configure ${WRKSRC}/libgc/configure
+.elif ${OSVERSION} >= 800000
+	@${REINPLACE_CMD} -e 's|freebsd6|freebsd8|g' \
+		${WRKSRC}/configure ${WRKSRC}/libgc/configure
 .endif
 
 tests: build
