@@ -7,6 +7,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		http://komquats.com/distfiles/ \
@@ -23,6 +24,10 @@ OPTIONS=	CJK "Treat CJK ambiguous characters as full width" OFF \
 		NETHACK "Enable nethack-style messages" ON \
 		XTERM_256 "Enable support for 256 colour xterm" OFF
 
+NO_PACKAGE=	Tends to loop using 100% CPU when used from package - perhaps it hard-codes information about the build host
+
+.include <bsd.port.pre.mk>
+
 GNU_CONFIGURE=	yes
 .if defined(WITH_MAN)
 MAN1=		screen.1
@@ -37,10 +42,6 @@ INFO=		screen
 .else
 MAKE_ARGS+=	-DNO_INFO
 .endif
-
-NO_PACKAGE=	Tends to loop using 100% CPU when used from package - perhaps it hard-codes information about the build host
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
 CFLAGS+=	-O0
@@ -72,5 +73,8 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/screenrc ]; then \
 		${CP} ${EXAMPLESDIR}/screenrc ${PREFIX}/etc/screenrc ; \
 	fi
+.if defined(WITH_MAN)
+	${INSTALL_MAN} ${WRKSRC}/doc/screen.1 ${MANPREFIX}/man/man1
+.endif
 
 .include <bsd.port.post.mk>
