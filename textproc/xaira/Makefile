@@ -30,6 +30,12 @@ OPTIONS=	PHP5 "Build PHP5 extension" no
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
 .if defined(WITH_PHP5)
 BUILD_DEPENDS+=	php5>=5:${PORTSDIR}/lang/php5
 CONFIGURE_ARGS+=	--with-php5=`${LOCALBASE}/bin/php-config --include-dir`
