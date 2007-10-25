@@ -2,6 +2,7 @@ bin/gcin
 bin/gcin-gb-toggle
 bin/gcin-message
 bin/gcin-setup
+bin/gcin-setup-tab
 bin/gcin2tab
 bin/gtab-merge
 bin/juyin-learn
@@ -42,6 +43,7 @@ lib/libgcin-im-client.so.1
 %%DATADIR%%/table/latin-letters.gtab
 %%DATADIR%%/table/mitac.kbm
 %%BOSHIAMY%%%%DATADIR%%/table/noseeing.gtab
+%%DATADIR%%/table/phrase-ctrl.table
 %%DATADIR%%/table/pho-huge.tab
 %%DATADIR%%/table/pho.tab
 %%DATADIR%%/table/phrase.table

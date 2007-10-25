@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTVERSION=	1.3.5
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://ftp.twaren.net/local-distfiles/gcin/:main \
@@ -48,15 +47,17 @@ pre-patch:
 		s,QT_IM_DIR=/usr,QT_IM_DIR=$$prefix,; \
 		s,mandir=$$datadir,mandir=$$prefix,; \
 		s,/usr/share,$$prefix/share,; s,libdir)\/gcin,libdir),; \
-		140 s,control-center-2\.0,gnome\/control-center-2\.0,g; \
+		143,150 d; \
 		s,gcc,$$CC,; s,gcin-$$GCIN_VERSION,gcin,' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,\/usr\/share,$$(prefix)\/share,' \
+		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/local,/usr,g' \
 		${WRKSRC}/gtk-im/Makefile ${WRKSRC}/menu/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/lib,${LOCALBASE}/lib,g; \
 		s,/usr/include,${X11BASE}/include,g; s,Xft2/X11/Xft,X11/Xft,' \
 		${WRKSRC}/qt-im/Makefile
-	@${REINPLACE_CMD} -e 's,modify-XIM ,,; 8,10 d' ${WRKSRC}/scripts/Makefile
+	@${REINPLACE_CMD} -e 's,modify-XIM ,,; 8,10 d' \
+		${WRKSRC}/scripts/Makefile
 	@${REINPLACE_CMD} -e 's,bash,sh,; s/&//; s,/opt/gnome,${X11BASE},;' \
 		${WRKSRC}/scripts/utf8-edit ${WRKSRC}/scripts/gcin-user-setup \
 		${WRKSRC}/scripts/gtab.append_prepare
