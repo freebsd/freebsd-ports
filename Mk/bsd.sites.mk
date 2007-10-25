@@ -1351,7 +1351,7 @@ MASTER_SITE_XEMACS+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XFCE)
-MASTER_SITES_XFCE+= \
+MASTER_SITE_XFCE+= \
 	http://mocha.xfce.org/archive/%SUBDIR%/src/ \
 	http://www.us.xfce.org/archive/%SUBDIR%/src/ \
 	http://www.de.xfce.org/archive/%SUBDIR%/src/ \
