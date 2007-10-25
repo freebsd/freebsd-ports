@@ -7,7 +7,7 @@
 
 PORTNAME=	proofgeneral
 PORTVERSION=	3.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math elisp
 MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
 DISTNAME=	ProofGeneral-3.6pre061107
@@ -73,6 +73,9 @@ pre-build:
 #.if defined(BYTE_COMPILE)
 	@${RM} ${WRKSRC}/.byte-compile || ${TRUE}
 #.endif
+
+pre-install:
+	@${MKDIR} ${PREIX}/share/applications
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
