@@ -16,4 +16,6 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"
 
+BROKEN=		fails to fetch
+
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
