@@ -90,3 +90,4 @@ lib/libxqdbm.so.3.0.0
 %%DATADIR%%/plus/xspex.html
 @dirrm %%DATADIR%%/plus/xapidoc
 @dirrm %%DATADIR%%/plus
+@dirrmtry %%DATADIR%%
