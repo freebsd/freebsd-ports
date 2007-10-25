@@ -51,6 +51,10 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's,(install-data-am:).*$$,\1,' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's,defined(__LINUX__),& || defined(__BSD__),' \
 		${WRKSRC}/src/gui/calc/pckeys.h ${WRKSRC}/src/misc/paths.h
+	${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|#define GTK_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/src/gui/device.c
 
 pre-install:
 	${CHMOD} +x ${WRKSRC}/install-sh
