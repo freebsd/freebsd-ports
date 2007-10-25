@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	aacplusenc
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	audio
-MASTER_SITES=	http://teknoraver.campuslife.it/software/
+MASTER_SITES=	http://openjlabs.com/tl_files/openjlabs/downloads/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	aacPlus v2 command-line encoder
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
-ONLY_FOR_ARCHS=	i386
-ONLY_FOR_ARCHS_REASON=	Produces badly sounding files on amd64
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 
 PLIST_FILES=	bin/aacplusenc
