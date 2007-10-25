@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cmospwd
-PORTVERSION=	4.8
+PORTVERSION=	5.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/ \
 		http://critical.ch/distfiles/ \
