@@ -7,16 +7,16 @@
 #
 
 PORTNAME=	twitter
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.1
 CATEGORIES=	net rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Command line twits and an API wrapper
 
 BUILD_DEPENDS=	rubygem-hpricot>0:${PORTSDIR}/www/rubygem-hpricot \
-		rubygem-hoe>=1.2.0:${PORTSDIR}/devel/rubygem-hoe
+		rubygem-hoe>=1.2.0:${PORTSDIR}/devel/rubygem-hoe \
+		rubygem-activesupport>0:${PORTSDIR}/devel/rubygem-activesupport
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
