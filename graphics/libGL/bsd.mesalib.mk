@@ -57,12 +57,19 @@ PLIST_SUB+=	I386_AMD64="@comment "
 ALL_TARGET=	freebsd-dri
 .endif
 
+.if ${ARCH} == alpha
+FAST_MATH=	
+.else
+FAST_MATH=	-ffast-math
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} \
 		-e '/^CC =/d' -e '/^CXX =/d' \
 		-e 's|/usr/X11R6|${X11BASE}|g' \
 		-e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		-e 's|-ffast-math|${FAST_MATH}|g' \
 		-e 's|CFLAGS = |CFLAGS = ${CFLAGS} |g' \
 		-e 's|OPT_FLAGS = .*|OPT_FLAGS = ${CFLAGS}|g' \
 		-e "s|SRC_DIRS = .*|SRC_DIRS = ${SRCDIR}|g" \
