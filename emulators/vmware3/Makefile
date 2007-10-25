@@ -62,11 +62,7 @@ IGNORE=		linprocfs is required, please build the module and/or add it to your ke
 IGNORE=		kernel source files required
 .endif
 
-.if ${OSVERSION} < 500023
-VMNET1_MINOR=	0x00010001
-.else
 VMNET1_MINOR=	0x00800001
-.endif
 
 SCRIPTS_ENV+=	LINUXBASE="${LINUXBASE}" \
 		VMNET_HOST_IP="${VMNET_HOST_IP}" \
@@ -74,14 +70,6 @@ SCRIPTS_ENV+=	LINUXBASE="${LINUXBASE}" \
 		VMNET1_MINOR="${VMNET1_MINOR}"
 MAKE_ARGS=	KMODDIR="${VMDIR}/modules"
 PLIST_SUB=	LINUXBASE="${LINUXBASE}" VMNET1_MINOR="${VMNET1_MINOR}"
-
-.if ${OSVERSION} < 500113
-	@${ECHO}
-	@${ECHO} "You need an uncommitted kernel patch to run this port:"
-	@${ECHO} "You can get it at: http://people.freebsd.org/~mbr/patches/"
-	@${ECHO} "linux.shm.patch-cvs-freebsd5-20030329"
-	@${ECHO}
-.endif
 
 post-extract:
 .for m in ${MODULES}
@@ -106,10 +94,8 @@ pre-patch:
 		${WRKSRC}/vmmon-only/freebsd/*.c
 .endif
 	cd ${WRKSRC}/vmmon-only/freebsd && ${TOUCH} bus_if.h device_if.h
-.if ${OSVERSION} >= 500019
 	${REINPLACE_CMD} -i "" -e 's,<machine/ioctl_fd\.h>,<sys/fdcio.h>,' \
 		${WRKSRC}/vmmon-only/freebsd/*.c
-.endif
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
