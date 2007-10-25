@@ -18,15 +18,20 @@ COMMENT=	Universal Plug and Play Software Development Kit
 
 CONFLICTS=	upnp-1.0.*
 USE_BZIP2=	yes
+USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
+USE_DOS2UNIX=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-USE_AUTOTOOLS=	libtool:15
-NOT_FOR_ARCHS=	amd64 sparc64
-GNU_CONFIGURE=	yes
-USE_DOS2UNIX=	yes
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
-USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	LIBS="-llwres -lcompat"
 
 .if defined(NOPORTDOCS)
