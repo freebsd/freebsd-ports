@@ -34,7 +34,7 @@ USE_GECKO=	xulrunner firefox mozilla seamonkey
 .endif
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 
 NO_WRKSUBDIR=	yes
