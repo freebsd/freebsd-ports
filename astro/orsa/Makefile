@@ -19,7 +19,7 @@ COMMENT=	Orbit Reconstruction, Simulation and Analysis
 LIB_DEPENDS=	gsl.10:${PORTSDIR}/math/gsl \
 		cln.4:${PORTSDIR}/math/cln \
 		fftw.2:${PORTSDIR}/math/fftw \
-		ginac-1.3.3:${PORTSDIR}/math/GiNaC
+		ginac-1.3.8:${PORTSDIR}/math/GiNaC
 
 USE_AUTOTOOLS=	libtool:15
 USE_QT_VER=	3
