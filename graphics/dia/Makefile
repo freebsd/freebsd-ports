@@ -8,7 +8,7 @@
 
 PORTNAME=	dia
 DISTVERSION=	0.96.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -51,13 +51,16 @@ USE_GNOME+=		libgnomeui
 CONFIGURE_ARGS+=	--enable-gnome --enable-bonobo
 PKGNAMESUFFIX=		-gnome
 GNOME_ENABLED=		yes
+.else
+CONFIGURE_ARGS+=	--disable-gnome --disable-bonobo
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/lib/intl.c
-	@${REINPLACE_CMD} -e 's|[(]pkgdatadir[)]/help|(datadir)/gnome/help/dia|g' \
-		${WRKSRC}/doc/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|[(]pkgdatadir[)]/help|(datadir)/gnome/help/dia|g ; \
+		s|[(]datadir[)]/help|(datadir)/gnome/help|g'
 .ifndef (GNOME_ENABLED)
 	@${FIND} ${WRKSRC} -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} -e \
