@@ -33,18 +33,6 @@ SLAVEDIRS=	editors/vim-lite
 .include "${.CURDIR}/options"
 .endif
 
-.if defined(PACKAGE_BUILDING) && !defined(LITE)
-#WITH_TCL=	yes
-WITH_PERL=	yes
-WITH_PYTHON=	yes
-WITH_CSCOPE=	yes
-WITH_EXUBERANT_CTAGS=yes
-.endif
-
-.if defined(WITH_TCL)
-BROKEN=		Does not compile
-.endif
-
 USE_BZIP2=	yes
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
@@ -66,8 +54,17 @@ MLINKS+=	vim.1 gvim.1	vim.1 gview.1	vimdiff.1 gvimdiff.1 \
 MANLANG=	"" ru.KOI8-R ru.UTF-8 pl.ISO8859-2 pl.UTF-8 pl fr.ISO8859-1 \
 		fr.UTF-8 fr it.ISO8859-1 it.UTF-8 it
 
-WANT_GNOME=	yes
-WANT_PERL=	yes
+.if defined(PACKAGE_BUILDING) && !defined(LITE)
+#WITH_TCL=	yes
+WITH_PERL=	yes
+WITH_PYTHON=	yes
+WITH_CSCOPE=	yes
+WITH_EXUBERANT_CTAGS=yes
+.endif
+
+.if defined(WITH_TCL)
+BROKEN=		Does not compile
+.endif
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
@@ -77,6 +74,14 @@ MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-pythoninterp"
 .if defined(WITH_RUBY)
 USE_RUBY=	yes
 MAKE_ARGS+=	CONF_OPT_RUBY="--enable-rubyinterp"
+.endif
+
+.if defined(WITH_PERL)
+WANT_PERL=	yes
+.endif
+
+.if !defined(WITHOUT_X11)
+WANT_GNOME=	yes
 .endif
 
 .include <bsd.port.pre.mk>
