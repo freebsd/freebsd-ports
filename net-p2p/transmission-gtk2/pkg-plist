@@ -1,22 +1,22 @@
-bin/transmission-gtk
-share/applications/transmission-gtk.desktop
+bin/transmission
+share/applications/transmission.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/locale/bg/LC_MESSAGES/transmission-gtk.mo
-share/locale/es/LC_MESSAGES/transmission-gtk.mo
-share/locale/fi/LC_MESSAGES/transmission-gtk.mo
-share/locale/fr/LC_MESSAGES/transmission-gtk.mo
-share/locale/it/LC_MESSAGES/transmission-gtk.mo
-share/locale/nl/LC_MESSAGES/transmission-gtk.mo
-share/locale/pl/LC_MESSAGES/transmission-gtk.mo
-share/locale/pt/LC_MESSAGES/transmission-gtk.mo
-share/locale/pt_BR/LC_MESSAGES/transmission-gtk.mo
-share/locale/ro/LC_MESSAGES/transmission-gtk.mo
-share/locale/ru/LC_MESSAGES/transmission-gtk.mo
-share/locale/sk/LC_MESSAGES/transmission-gtk.mo
-share/locale/sv/LC_MESSAGES/transmission-gtk.mo
+share/locale/de/LC_MESSAGES/transmission.mo
+share/locale/es/LC_MESSAGES/transmission.mo
+share/locale/fi/LC_MESSAGES/transmission.mo
+share/locale/fr/LC_MESSAGES/transmission.mo
+share/locale/it/LC_MESSAGES/transmission.mo
+share/locale/nl/LC_MESSAGES/transmission.mo
+share/locale/pl/LC_MESSAGES/transmission.mo
+share/locale/pt/LC_MESSAGES/transmission.mo
+share/locale/pt_BR/LC_MESSAGES/transmission.mo
+share/locale/ro/LC_MESSAGES/transmission.mo
+share/locale/ru/LC_MESSAGES/transmission.mo
+share/locale/sk/LC_MESSAGES/transmission.mo
+share/locale/sv/LC_MESSAGES/transmission.mo
 share/pixmaps/transmission.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications

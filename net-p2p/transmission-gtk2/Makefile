@@ -13,21 +13,19 @@ COMMENT=	A free BitTorrent client written from scratch in C with GTK+2
 MASTERDIR=	${.CURDIR}/../transmission
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_XLIB=	yes
-USE_GNOME=	gtk20 desktopfileutils
-SLAVE_TRANS=	gtk2
+USE_GNOME=	gnometarget gnomehack gtk20 desktopfileutils intlhack
 USE_GETTEXT=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--disable-daemon
+CONFIGURE_ARGS=	--without-wx
 
-MAN1=		transmission-gtk.1
+CUSTOM_SUBDIRS=	third-party libtransmission gtk po
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+#MAN1=		transmission-gtk.1
 
 post-patch: general-patch
-	@${REINPLACE_CMD} -e 's|TARGETS = .cli|#TARGETS = .cli|g' \
-		${WRKSRC}/mk/default.mk
 	@${REINPLACE_CMD} -e 's|TryExec=.*||g ; /^$$/d' \
-		${WRKSRC}/gtk/transmission-gtk.desktop
+		${WRKSRC}/gtk/transmission.desktop.in
+	@${REINPLACE_CMD} -e 's|[$$]GMSGFMT[$$]|$$INTLTOOL_MSGFMT$$|g' \
+		${WRKSRC}/configure
 
 post-install: general-install
 	@-update-desktop-database
