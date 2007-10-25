@@ -8,7 +8,7 @@
 PORTNAME=	tbb
 PORTVERSION=	2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://osstbb.intel.com/uploads/76/74/2.0/
+MASTER_SITES=	http://threadingbuildingblocks.org/download_file.php?file=uploads/76/74/2.0/
 DISTNAME=	tbb20_20070815oss_src
 
 MAINTAINER=	arun@FreeBSD.org
