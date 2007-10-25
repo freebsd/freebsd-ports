@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	dar
-PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTVERSION=	2.3.6
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	A full featured command-line backup tool, aimed for disks
 
 USE_AUTOTOOLS=	libtool:15
