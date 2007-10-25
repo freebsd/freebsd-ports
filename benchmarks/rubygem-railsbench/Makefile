@@ -6,9 +6,9 @@
 
 PORTNAME=	railsbench
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	benchmarks rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Scripts designed for benchmarking of Rails applications
@@ -16,6 +16,14 @@ COMMENT=	Scripts designed for benchmarking of Rails applications
 BUILD_DEPENDS=	rubygem-hoe>=1.2.0:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+OPTIONS=	GRUFF	"Plotting of perf data support using gruff"	off
+OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_GRUFF)
+RUN_DEPENDS+=	rubygem-gruff>=0.2.8:${PORTSDIR}/graphics/rubygem-gruff
+.endif
+
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>
