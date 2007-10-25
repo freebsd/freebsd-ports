@@ -63,7 +63,7 @@ fi
 # is present both as "toolABC" and as "tool-A.BC".  We take no special
 # measures to handle this case.
 #
-find ${bindir} -name "${tool}*[0-9]" | sed -E \
+find ${bindir}/ -name "${tool}*[0-9]" | sed -E \
     -e "s@^.*/${tool}-([0-9])\\.([0-9]+)\$@\1 \2 -\1.\2@" \
     -e "s@^.*/${tool}([0-9])([0-9]+)\$@\1 \2 \1\2@" | \
     sort -n -k1 | sort -n -s -k2 | {
