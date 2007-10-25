@@ -8,7 +8,8 @@
 PORTNAME=	TracSpamFilter
 PORTVERSION=	0.2.1
 CATEGORIES=	www devel python
-MASTER_SITES=	http://zhoushuqun.com/files/
+MASTER_SITES=	http://zhoushuqun.com/files/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	trac-
 
 MAINTAINER=	zhoushuqun@gmail.com
