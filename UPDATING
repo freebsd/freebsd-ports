@@ -21,7 +21,7 @@ upgrades.
 
     Portupgrade users:
         # pkgdb -Ff
-        # portupgrade -o textproc/rarian textproc/scrollkeeper
+        # portupgrade -f -o textproc/rarian textproc/scrollkeeper
         # portupgrade -a
 
     Portmaster users:
