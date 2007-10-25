@@ -7,17 +7,16 @@
 #
 
 PORTNAME=	sdom
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	textproc scheme
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	An implementation of the W3C DOM recommendation in Scheme
 
 RUN_DEPENDS=	${LOCALBASE}/share/guile/site/config/load.scm:${PORTSDIR}/devel/guile-lib
 
-NO_BUILD=	yes
+ALL_TARGET=	guile
 
 FILES=	core.scm events.scm ls.scm
 PLIST_FILES=	share/guile/sdom/core.scm \
