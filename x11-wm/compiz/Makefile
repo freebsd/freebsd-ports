@@ -15,8 +15,6 @@ COMMENT=	Compiz Composite/Window Manager
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
-RUN_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 XORG_CAT=	app
 GNU_CONFIGURE=	yes
@@ -125,9 +123,11 @@ PLIST_SUB+=	GNOME="@comment "
 .if defined(WITH_DBUS)
 CONFIGURE_ARGS+=	--enable-dbus
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
 .if defined(WITH_GTK) || defined(WITH_GNOME)
 CONFIGURE_ARGS+=	--enable-dbus-glib
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
 .endif
 PLIST_SUB+=	DBUS=""
 .else
@@ -138,6 +138,7 @@ PLIST_SUB+=	DBUS="@comment "
 .if defined(WITH_FUSEFS)
 CONFIGURE_ARGS+=	--enable-fuse
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fuse.pc:${PORTSDIR}/sysutils/fusefs-libs
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fuse.pc:${PORTSDIR}/sysutils/fusefs-libs
 PLIST_SUB+=		FUSEFS=""
 .else
 CONFIGURE_ARGS+=	--disable-fuse
