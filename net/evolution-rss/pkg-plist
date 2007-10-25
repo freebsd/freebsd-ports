@@ -8,3 +8,4 @@ share/evolution/2.12/images/rss.png
 share/evolution/glade/rss-ui.glade
 share/locale/en_AU/LC_MESSAGES/evolution-rss.mo
 share/locale/sv/LC_MESSAGES/evolution-rss.mo
+@dirrmtry share/evolution/glade

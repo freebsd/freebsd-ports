@@ -7,7 +7,7 @@
 
 PORTNAME=	evolution-rss
 PORTVERSION=	0.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	http://mips.edu.ms/
 
