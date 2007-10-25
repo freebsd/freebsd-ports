@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keynav
-DISTVERSION=	20070903
+DISTVERSION=	20071023
 CATEGORIES=	x11
 MASTER_SITES=	http://www.semicomplete.com/files/keynav/ \
 		http://www.atarininja.org/~wxs/distfiles/
@@ -15,7 +15,7 @@ MAINTAINER=	wxs@atarininja.org
 COMMENT=	Quickly select a portion of the screen using minimal keystrokes
 
 USE_GNOME=	pkgconfig
-USE_XLIB=	yes
+USE_XORG=	xtst x11
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/keynav
