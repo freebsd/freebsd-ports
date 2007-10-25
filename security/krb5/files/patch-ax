@@ -1,7 +1,9 @@
---- ../doc/Makefile.orig	Thu Dec 21 14:07:10 2006
-+++ ../doc/Makefile	Tue Jan  9 18:29:27 2007
-@@ -2,7 +2,7 @@
- DVI=texi2dvi
+--- ../doc/Makefile.orig	2007-09-17 20:36:09.000000000 -0700
++++ ../doc/Makefile	2007-10-25 14:04:48.000000000 -0700
+@@ -1,8 +1,8 @@
+ SRCDIR=../src
+-DVI=texi2dvi4a2ps	# texi2dvi
++DVI=texi2dvi	# texi2dvi
  DVIPS=dvips -o "$@"
  PSPDF=ps2pdf
 -INFO=makeinfo
