@@ -16,7 +16,7 @@ MASTER_SITES=	http://ftp.bishopston.net/freebsd/distfiles/ \
 MAINTAINER=	jamie@bishopston.net
 COMMENT=	A puzzle game based on hexagonal tiles
 
-NOT_FOR_ARCHS=	amd sparc64
+NOT_FOR_ARCHS=	amd64 sparc64
 NOT_FOR_ARCHS_REASON_amd64=	Probably an easy fix, but I've no access to an amd64 machine. Offers of help appreciated!
 NOT_FOR_ARCHS_REASON_sparc64=	Probably an easy fix, but I've no access to an sparc64 machine. Offers of help appreciated!
 
