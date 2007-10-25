@@ -1,0 +1,16 @@
+--- src/Makefile.in.orig	2007-10-25 11:55:32.000000000 -0500
++++ src/Makefile.in	2007-10-25 11:55:48.000000000 -0500
+@@ -265,12 +265,7 @@
+ 	$(XML_CFLAGS) \
+ 	-DPKGDATADIR=\"$(pkgdatadir)\" \
+ 	-DPIXMAPDIR=\"$(pixmapdir)\" \
+-	-DDTDDIR=\"$(dtddir)\" \
+-	-DG_DISABLE_DEPRECATED=1 \
+-	-DGTK_DISABLE_DEPRECATED=1 \
+-	-DGDK_DISABLE_DEPRECATED=1 \
+-	-DGDK_PIXBUF_DISABLE_DEPRECATED=1 \
+-	-DGNOME_DISABLE_DEPRECATED=1
++	-DDTDDIR=\"$(dtddir)\"
+ 
+ jack_rack_LDFLAGS = \
+ 	$(JACK_LIBS) \
