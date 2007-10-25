@@ -8,6 +8,7 @@
 
 PORTNAME=	lsof
 PORTVERSION=	4.79C
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
