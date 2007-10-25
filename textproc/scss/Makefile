@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	scss
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.0
 CATEGORIES=	textproc scheme
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	A Scheme module for W3C Cascading Stylesheets recommendation
