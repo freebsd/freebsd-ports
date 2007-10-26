@@ -73,8 +73,5 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/screenrc ]; then \
 		${CP} ${EXAMPLESDIR}/screenrc ${PREFIX}/etc/screenrc ; \
 	fi
-.if defined(WITH_MAN)
-	${INSTALL_MAN} ${WRKSRC}/doc/screen.1 ${MANPREFIX}/man/man1
-.endif
 
 .include <bsd.port.post.mk>
