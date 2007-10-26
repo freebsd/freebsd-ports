@@ -47,7 +47,6 @@ lib/oss/modules/ymf7xx.ko
 lib/oss/version.dat
 lib/oss/sysfiles.list
 @dirrmtry lib/oss
-sbin/ossctl
 sbin/ossdetect
 sbin/ossdevlinks
 sbin/savemixer

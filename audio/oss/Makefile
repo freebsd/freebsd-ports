@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oss
-DISTVERSION=	4.0-build1006
-PORTREVISION=	3
+DISTVERSION=	4.0-build1008
 CATEGORIES=	audio kld
 MASTER_SITES=	http://developer.opensound.com/sources/stable/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-cddl
@@ -28,7 +27,7 @@ SUB_FILES=	pkg-install
 ONLY_FOR_ARCHS=	amd64 i386
 
 MAN1=		ossinfo.1 ossmix.1 ossplay.1 ossrecord.1 osstest.1 ossxmix.1
-MAN8=		ossctl.8 ossdevlinks.8 savemixer.8 ossdetect.8
+MAN8=		ossdevlinks.8 savemixer.8 ossdetect.8
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source to be installed
@@ -73,7 +72,6 @@ do-install:
 	${INSTALL_KLD} ${WRKSRC}/prototype/usr/lib/oss/modules/*.ko ${PREFIX}/lib/oss/modules/
 	${INSTALL_MAN} ${WRKSRC}/prototype/usr/man/man1/*.1 ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/prototype/usr/man/man8/*.8 ${PREFIX}/man/man8/
-	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/sbin/ossctl ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/sbin/ossdetect ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/sbin/ossdevlinks ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/sbin/savemixer ${PREFIX}/sbin/
