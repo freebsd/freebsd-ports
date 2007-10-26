@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	expect
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +16,6 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A PHP extension for expect library
 
-BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
 LIB_DEPENDS=	expect543:${PORTSDIR}/lang/expect
 
 USE_PHP=	yes
