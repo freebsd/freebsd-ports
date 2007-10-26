@@ -13,7 +13,6 @@ rcvar=${name}_enable
 command="%%PREFIX%%/sbin/${name}"
 command_interpreter="%%PREFIX%%/bin/python"
 pidfile="/var/run/${name}.pid"
-portfile="/var/run/${name}.port"
 hpssd_user=nobody
 command_args=">/dev/null"
 
@@ -26,9 +25,7 @@ load_rc_config $name
 hpssd_prestart()
 {
 	touch ${pidfile}
-	touch ${portfile}
 	chown ${hpssd_user} ${pidfile}
-	chown ${hpssd_user} ${portfile}
 }
 
 run_rc_command $*
