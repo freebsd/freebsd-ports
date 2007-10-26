@@ -1,5 +1,5 @@
---- src/pthread_debug.c.orig	Mon May 14 14:30:15 2007
-+++ src/pthread_debug.c	Fri Jun 29 00:24:12 2007
+--- src/pthread_debug.c.orig	2007-05-14 14:30:15.000000000 +0800
++++ src/pthread_debug.c	2007-10-25 16:30:35.000000000 +0800
 @@ -77,6 +77,7 @@
  }
  
