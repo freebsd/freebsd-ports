@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 CATEGORIES=	devel
 MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	A distributed version control system with digital signatures
 
-LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 
 SUB_FILES=	pkg-message
 USE_GCC=	3.4+
