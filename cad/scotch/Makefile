@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	scotch
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.3
 CATEGORIES=	cad science
-MASTER_SITES=	http://gforge.inria.fr/frs/download.php/2827/
+MASTER_SITES=	http://gforge.inria.fr/frs/download.php/3401/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
