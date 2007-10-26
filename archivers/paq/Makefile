@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paq
-DISTVERSION=	8o7
+DISTVERSION=	8o8
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cs.fit.edu/~mmahoney/compression/
 DISTNAME=	${PORTNAME}${DISTVERSION}
