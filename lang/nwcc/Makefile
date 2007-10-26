@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Nils Weller's C compiler for Unix systems
 
+BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 HAS_CONFIGURE=	yes
