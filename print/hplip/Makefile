@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hplip
-PORTVERSION=	1.7.4a
+PORTVERSION=	2.7.9
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hplip
@@ -20,15 +20,22 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		usb:${PORTSDIR}/devel/libusb \
 		netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 
-CONFLICTS=	hpijs-* foomatic-filters-*
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2 \
+		foomatic-rip:${PORTSDIR}/print/foomatic-filters
+
+CONFLICTS=	hpijs-*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
-		--disable-pp-build
+		--disable-pp-build \
+		--enable-foomatic-ppd-install \
+		--with-icondir=${LOCALBASE}/share/applications \
+		--with-cupsbackenddir=${LOCALBASE}/libexec/cups/backend
+
 USE_LDCONFIG=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
-USE_RC_SUBR=	hpiod.sh hpssd.sh
+USE_RC_SUBR=	hpssd.sh
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
@@ -53,45 +60,55 @@ post-extract:
 	@${RM} -r ${WRKSRC}/data/images/CVS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/share/cups|${LOCALBASE}/share/cups|g ; \
-		s|/usr/lib/cups/backend|${LOCALBASE}/libexec/cups/backend|g ; \
-		s|/usr/lib/cups/filter|${LOCALBASE}/libexec/cups/filter|g' \
-			${WRKSRC}/configure ${WRKSRC}/prnt/hpijs/configure
-	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|g ; \
-		s|/usr/lib|${LOCALBASE}/lib|g ; \
-		s|/etc/init.d|${LOCALBASE}/etc/rc.d|g ; \
-		s|/etc/sane.d|${LOCALBASE}/etc/sane.d|g ; \
-		s|/etc/hp|${LOCALBASE}/etc/hp|g' \
-			${WRKSRC}/Makefile.in \
-			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|g ; \
-			s|/usr/lib|${LOCALBASE}/lib|g' \
-			${WRKSRC}/prnt/hpijs/foomatic-rip
-	@${REINPLACE_CMD} -e 's|/etc/hp/|${LOCALBASE}/etc/hp/|g ; \
-		s|/usr/lib/cups/filter|${LOCALBASE}/libexec/cups/filter|g' \
-			${WRKSRC}/base/g.py \
-			${WRKSRC}/fax/backend/hpfax.py \
-			${WRKSRC}/hpssd.py \
-			${WRKSRC}/io/hpiod/hpiod.h \
-			${WRKSRC}/api/hplip_api.h \
-			${WRKSRC}/prnt/hpijs/configure.in
-	@${REINPLACE_CMD} -e 's|#!/usr/bin/env python|#!${LOCALBASE}/bin/python|g' \
-			${WRKSRC}/*.py \
-			${WRKSRC}/*/*.py \
-			${WRKSRC}/*/*/*.py
-	@${REINPLACE_CMD} -e 's|-ldld||g ; \
-			s|-ldl||g' \
-		${WRKSRC}/prnt/hpijs/configure \
-		${WRKSRC}/prnt/hpijs/configure.in \
-		${WRKSRC}/prnt/hpijs/Makefile.in \
-		${WRKSRC}/prnt/hpijs/aclocal.m4
-	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/etc/hp|${LOCALBASE}/etc/hp|g ; \
+		s|/etc/sane.d|${LOCALBASE}/etc/sane.d|g' \
+		${WRKSRC}/Makefile.am \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/check.py \
+		${WRKSRC}/hpssd.py \
+		${WRKSRC}/base/g.py \
+		${WRKSRC}/doc/release_notes.html \
+		${WRKSRC}/doc/tech_docs/man_pages/hpssd.html \
+		${WRKSRC}/fax/backend/hpfax.py \
+		${WRKSRC}/installer/distros.dat \
+		${WRKSRC}/installer/core_install.py \
+		${WRKSRC}/prnt/hpijs/ljzjs.cpp
+
+	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/configure.in
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|install-data-am: install-docDATA|install-data-am:|g' \
-		${WRKSRC}/prnt/hpijs/Makefile.in
-	@${REINPLACE_CMD} -e 's|install-dist_xmlDATA install-docDATA|install-dist_xmlDATA|g' \
+	@${REINPLACE_CMD} -e 's|install-dist_www7DATA install-docDATA|install-dist_www7DATA|g ; \
+				s|install-dist_unrelDATA install-dist_www0DATA|install-dist_unrelDATA|g ; \
+				s|install-dist_www1DATA install-dist_www21DATA||g ; \
+				s|install-dist_www22DATA install-dist_www23DATA||g ; \
+				s|install-dist_www241DATA install-dist_www242DATA||g ; \
+				s|install-dist_www243DATA install-dist_www24DATA||g ; \
+				s|install-dist_www251DATA install-dist_www252DATA||g ; \
+				s|install-dist_www261DATA install-dist_www2DATA||g ; \
+				s|install-dist_www3DATA install-dist_www4DATA||g ; \
+				s|install-dist_www5DATA install-dist_www61DATA||g ; \
+				s|install-dist_www6DATA install-dist_www7DATA||g' \
 		${WRKSRC}/Makefile.in
 .endif
+	@${REINPLACE_CMD} -e 's|install-dist_prntSCRIPTS install-dist_rulesDATA|install-dist_prntSCRIPTS|g ; \
+				s|install-hpPROGRAMS install-hplip_confDATA|install-hpPROGRAMS|g' \
+		${WRKSRC}/Makefile.in
+#	@${REINPLACE_CMD} -e 's|install-dist_www7DATA install-docDATA|install-dist_www7DATA|g' \
+#		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-ldld||g ; \
+			s|-ldl||g ; \
+			s|-dld||g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/configure.in \
+		${WRKSRC}/foomatic-db-hpijs/make_configure \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/Makefile.am \
+		${WRKSRC}/aclocal.m4 \
+		${WRKSRC}/foomatic-db-hpijs/configure.ac
+
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${LOCALBASE}/bin/python|g' \
+		${WRKSRC}/hpssd.py
 
 pre-su-install:
 	@${MKDIR} ${PREFIX}/share/applications
@@ -101,13 +118,12 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 	@${LN} -sf ${PREFIX}/share/hplip/hpssd.py ${PREFIX}/sbin/hpssd
-	@${LN} -sf ${PREFIX}/bin/foomatic-rip \
-		${PREFIX}/libexec/cups/filter/foomatic-rip
 	@${MKDIR} ${PREFIX}/etc/hp
 	# Auto-generate sample configuration file
-	@${ECHO} "home=${PREFIX}/share/hplip" >> ${WRKSRC}/hplip.conf
-	@${ECHO} "ppd=${PREFIX}/share/ppd" >> ${WRKSRC}/hplip.conf
 	@${INSTALL_DATA} ${WRKSRC}/hplip.conf ${PREFIX}/etc/hp/hplip.conf.sample
+.if !exists(${PREFIX}/etc/hp/hplip.conf)
+	@${INSTALL_DATA} ${WRKSRC}/hplip.conf ${PREFIX}/etc/hp/hplip.conf
+.endif
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
