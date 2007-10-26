@@ -1961,7 +1961,6 @@
     SUBDIR += py-qt4-dbus
     SUBDIR += py-qt4-designer
     SUBDIR += py-qt4-designerplugin
-    SUBDIR += py-qt4-qct
     SUBDIR += py-qt4-qscintilla2
     SUBDIR += py-qt4-script
     SUBDIR += py-qt4-test
@@ -2019,6 +2018,7 @@
     SUBDIR += pythk
     SUBDIR += pythontidy
     SUBDIR += qca
+    SUBDIR += qct
     SUBDIR += qdevelop
     SUBDIR += qmake
     SUBDIR += qmake4
