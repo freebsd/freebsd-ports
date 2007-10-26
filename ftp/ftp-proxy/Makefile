@@ -29,8 +29,8 @@ CFLAGS+=	-I${PREFIX}/include
 IGNORE=		is a part of base for 7.0 and above
 .endif
 
-.if ${OSVERSION} < 502106
-IGNORE=		only for 5.3 and above
+.if ${OSVERSION} < 600105
+BROKEN=	does not build on 5.x
 .endif
 
 do-install:
