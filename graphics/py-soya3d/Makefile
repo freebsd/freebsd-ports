@@ -50,6 +50,8 @@ DISTFILES+=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
 
 .include <bsd.port.pre.mk>
 
+BROKEN=		broken with current version of devel/pyrex
+
 .if ${ARCH} == "amd64"
 CFLAGS	+=	-fPIC
 .endif
