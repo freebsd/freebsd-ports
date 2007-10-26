@@ -30,7 +30,7 @@ include/ntfs-3g/volume.h
 lib/libntfs-3g.a
 lib/libntfs-3g.la
 lib/libntfs-3g.so
-lib/libntfs-3g.so.12
+lib/libntfs-3g.so.13
 @dirrm include/ntfs-3g
 @cwd /usr
 sbin/mount_ntfs-3g
