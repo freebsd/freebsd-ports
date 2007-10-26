@@ -28,18 +28,17 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft	\
 		jpeg.9:${PORTSDIR}/graphics/jpeg	\
 		png.5:${PORTSDIR}/graphics/png
 
-BROKEN=		Segfault during build
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared --enable-xft --enable-gl \
 		--enable-xrender --enable-cairo --with-x --enable-pthread \
 		--enable-lt=${LIBTOOL} \
 		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib \
 		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+		CPPFLAGS="${CPPFLAGS}"
 
 # Force the "configure" script to look in $LOCALBASE for -lpng and -ljpeg
 LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/plt-${PORTVERSION}/src
 USE_ICONV=	yes
@@ -66,6 +65,10 @@ INSTALL_TARGET=		install-both
 PLIST_SUB+=		CGC=""
 .else
 PLIST_SUB+=		CGC="@comment "
+.endif
+
+.if ${ARCH} == "amd64"
+CPPFLAGS+=	-DLONG64
 .endif
 
 .include <bsd.port.post.mk>
