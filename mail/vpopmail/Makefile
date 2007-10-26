@@ -147,6 +147,7 @@ USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--enable-auth-module=mysql \
 			--enable-incdir=${LOCALBASE}/include/mysql \
 			--enable-libdir=${LOCALBASE}/lib/mysql
+PLIST_SUB+=	MYSQL=""
 .if defined(WITH_MYSQL_REPLICATION)
 CONFIGURE_ARGS+=	--enable-mysql-replication
 .endif
@@ -172,6 +173,8 @@ BROKEN_MYSQL_PARAMS=	true
 .if defined(BROKEN_MYSQL_PARAMS)
 BROKEN=	The MySQL connection parameters are no longer setup at compile time - please edit the ${PREFIX}/vpopmail/etc/vpopmail.mysql file instead
 .endif
+.else
+PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(DEFAULT_DOMAIN)
