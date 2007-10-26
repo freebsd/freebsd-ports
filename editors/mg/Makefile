@@ -10,7 +10,7 @@ PORTVERSION=	20070918
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xs4all.nl/~hanb/software/mg/
 
-MAINTAINER=	denisehg@hotpop.com
+MAINTAINER=	darcsis@gmail.com
 COMMENT=	A small, fast Emacs-like editor
 
 MAN1=	mg.1
