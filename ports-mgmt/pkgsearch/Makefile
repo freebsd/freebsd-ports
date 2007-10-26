@@ -12,10 +12,12 @@ MASTER_SITES=	http://dl.sharesource.org/${PORTNAME}/ \
 		http://andsux.homeip.net/~diego/stable/
 
 MAINTAINER=	diegorocha1987@gmail.com
-COMMENT=	Find your packages in ports and installeds packages
+COMMENT=	Find your packages in ports and installed packages
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost
+
+BROKEN=		Creates /usr/local/etc/pkgsearch directory during configure phase
 
 USE_PGSQL=	yes
 
