@@ -84,7 +84,9 @@ CONFIGURE_ARGS+=--enable-qt3
 CONFIGURE_ARGS+=--disable-qt3
 .endif
 .if ${AVAHI_SLAVE}=="qt4"
-CONFIGURE_ARGS+=--enable-qt4
+CONFIGURE_ARGS+=--enable-qt4 \
+		--disable-expat \
+		--disable-gdbm
 .else
 CONFIGURE_ARGS+=--disable-qt4
 .endif
