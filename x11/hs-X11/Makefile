@@ -5,20 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	x11
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	x11 haskell
-MASTER_SITES=	http://www.haskell.org/ghc/dist/${GHC_VERSION}/
+MASTER_SITES=	http://hackage.haskell.org/packages/archive/X11/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
 PKGNAMESUFFIX=	-ghc
-DISTNAME=	ghc-${GHC_VERSION}-src-extralibs
-
-PATCH_SITES=	http://lambda.foldr.org/~vs/FreeBSD/ghc-cabal-${GHC_VERSION}/
-PATCHFILES=	patch-cabal-${GHC_VERSION}-Setup.hs
+DISTNAME=	X11-${PORTVERSION}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	X11 bindings for Haskell programs
 
-USE_BZIP2=	yes
 USE_XLIB=	yes
 
 # include the version verbatim. This will require a revision bump
@@ -40,8 +36,6 @@ RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 CABALDIR=	${PREFIX}/lib/ghc-${GHC_VERSION}/cabal
 CABALCMD=	${LOCALBASE}/bin/runghc Setup.hs
 SUBDIR=		${PORTNAME}${PKGNAMESUFFIX}
-
-WRKSRC=	${WRKDIR}/ghc-${GHC_VERSION}/libraries/X11
 
 do-configure:
 	cd ${WRKSRC} && ${CABALCMD} configure --ghc --prefix=${PREFIX} --libdir=${CABALDIR} \
