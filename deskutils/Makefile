@@ -71,6 +71,7 @@
     SUBDIR += gkrellm-reminder2
     SUBDIR += gkrellm-timers
     SUBDIR += glabels
+    SUBDIR += glipper
     SUBDIR += gmcal
     SUBDIR += gnochm
     SUBDIR += gnome-blog
