@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- ndpmon_defs.h.in.orig
++++ ndpmon_defs.h.in
+@@ -10,9 +10,9 @@
+ #endif
+ 
+ #define _CONFIG_PATH_ "@prefix@/etc/ndpmon/config_ndpmon.xml"
+-#define _CONFIG_DTD_PATH_ "@prefix@/etc/ndpmon/config_ndpmon.dtd"
++#define _CONFIG_DTD_PATH_ "@prefix@/share/ndpmon/config_ndpmon.dtd"
+ #define _CACHE_PATH_ "@VARDATADIR@/ndpmon/neighbor_list.xml"
+-#define _CACHE_DTD_PATH_ "@VARDATADIR@/ndpmon/neighbor_list.dtd"
++#define _CACHE_DTD_PATH_ "@prefix@/share/ndpmon/neighbor_list.dtd"
+ #define _DISCOVERY_HISTORY_PATH_ "@VARDATADIR@/ndpmon/discovery_history.dat"
+ 
+ extern int DEBUG;

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ndpmon
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3a
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,21 +18,21 @@ COMMENT=	On-link icmpv6 message monitoring and reporting daemon
 USE_GNOME=	libxml2
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	ndpmonitor
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OSTYPE=FreeBSD
+CONFIGURE_ARGS=	--with-var-datadir=${PREFIX}/var
 
 MAN8=		ndpmon.8
 PORTDOCS=	INSTALL README
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/ndpmon.c \
 		${WRKSRC}/ndpmon.8 \
 		${WRKSRC}/config_ndpmon.xml \
-		${WRKSRC}/neighbor_list.xml \
-		${WRKSRC}/demopipeprogram.pl
+		${WRKSRC}/create_html_table.py \
+		${WRKSRC}/demopipeprogram.pl.sample
+	(cd ${WRKSRC}; ${MAKE} clean)
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/ndpmon.8 ${PREFIX}/man/man8
@@ -41,9 +40,12 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.dtd \
 		${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/demopipeprogram.pl \
+	${INSTALL_SCRIPT} ${WRKSRC}/demopipeprogram.pl.sample \
 		${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/config_ndpmon.xml ${PREFIX}/etc/config_ndpmon.xml-dist
+	${INSTALL_SCRIPT} ${WRKSRC}/create_html_table.py \
+		${DATADIR}
+	${MKDIR} ${PREFIX}/etc/ndpmon
+	${INSTALL_DATA} ${WRKSRC}/config_ndpmon.xml ${PREFIX}/etc/ndpmon/config_ndpmon.xml-dist
 	${MKDIR} ${PREFIX}/var
 	${INSTALL_DATA} ${WRKSRC}/neighbor_list.xml ${PREFIX}/var/ndpmon_neighbor_list.xml
 
