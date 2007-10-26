@@ -33,6 +33,7 @@ etc/lam-helpfile
 etc/lam-hostmap.txt
 etc/lam-ssi-boot-globus-helpfile
 etc/lam-ssi-boot-slurm-helpfile
+etc/lam-ssi-crlam-self-helpfile
 etc/lam-ssi-crmpi-self-helpfile
 include/lam_config.h
 include/lam_config_bottom.h
@@ -86,7 +87,6 @@ include/mpi2cxx/topology_inln.h
 include/mpi2cxx/win.h
 include/mpi2cxx/win_inln.h
 include/mpicxx.h
-include/mpif.h
 include/mpio.h
 include/mpiof.h
 %%I386%%lib/lam/liblam_totalview.la
@@ -94,8 +94,6 @@ include/mpiof.h
 %%I386%%lib/lam/liblam_totalview.so.0
 lib/liblam.a
 lib/liblam.la
-lib/liblamf77mpi.a
-lib/liblamf77mpi.la
 lib/liblammpi++.a
 lib/liblammpi++.la
 lib/liblammpio.a
