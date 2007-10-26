@@ -672,6 +672,7 @@ avahi-autoipd	ports/net/avahi-autoipd
 avahi-gtk	ports/net/avahi-gtk
 avahi-libdns	ports/net/avahi-libdns
 avahi-qt3	ports/net/avahi-qt3
+avahi-qt4	ports/net/avahi-qt4
 avahi-sharp	ports/net/avahi-sharp
 avalon-framework	ports/devel/avalon-framework
 avalon-logkit	ports/java/avalon-logkit
