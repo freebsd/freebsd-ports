@@ -24,6 +24,12 @@ CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
 		--with-event=${LOCALBASE}
 CONFIGURE_ENV+=	${MAKE_ENV}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Incorrect plist
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -i '' -e 's=lib/py ==' ${WRKSRC}/*.*
 
@@ -34,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/thrift.pdf ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
