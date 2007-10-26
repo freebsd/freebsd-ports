@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	DateTime-Format-Strptime
-PORTVERSION=	1.07.00
+PORTVERSION=	1.07.02
 DISTVERSION=	${PORTVERSION:C/\.(..)$/\1/}
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Parse and format strp and strf time patterns
