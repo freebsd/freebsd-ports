@@ -6,23 +6,18 @@
 #
 
 PORTNAME=	qct
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.4
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://qct.sourceforge.net/
-MASTER_SITE_SUBDIR=	qct
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
+MASTER_SITES=	http://qct.sourceforge.net/ \
+		ftp://ftp.ipt.ru/pub/download/${PORTNAME}/
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	QCT GUI commit tool
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
-
-DOCSDIR=	${PREFIX}/share/doc/py-qt4-${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
