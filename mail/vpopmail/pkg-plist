@@ -71,9 +71,9 @@ vpopmail/etc/vlimits.default-dist
 %%LDAP%%@unexec if cmp -s %D/vpopmail/etc/vpopmail.ldap %D/vpopmail/etc/vpopmail.ldap-dist; then rm -f %D/vpopmail/etc/vpopmail.ldap; fi
 %%LDAP%%vpopmail/etc/vpopmail.ldap-dist
 %%LDAP%%@exec if [ ! -f %D/vpopmail/etc/vpopmail.ldap ] ; then cp -p %D/%F %B/vpopmail.ldap; fi
-@unexec if cmp -s %D/vpopmail/etc/vpopmail.mysql %D/vpopmail/etc/vpopmail.mysql-dist; then rm -f %D/vpopmail/etc/vpopmail.mysql; fi
-vpopmail/etc/vpopmail.mysql-dist
-@exec if [ ! -f %D/vpopmail/etc/vpopmail.mysql ] ; then cp -p %D/%F %B/vpopmail.mysql; fi
+%%MYSQL%%@unexec if cmp -s %D/vpopmail/etc/vpopmail.mysql %D/vpopmail/etc/vpopmail.mysql-dist; then rm -f %D/vpopmail/etc/vpopmail.mysql; fi
+%%MYSQL%%vpopmail/etc/vpopmail.mysql-dist
+%%MYSQL%%@exec if [ ! -f %D/vpopmail/etc/vpopmail.mysql ] ; then cp -p %D/%F %B/vpopmail.mysql; fi
 vpopmail/include/config.h
 vpopmail/include/vauth.h
 vpopmail/include/vlimits.h
