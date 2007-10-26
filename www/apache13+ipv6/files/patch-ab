@@ -1,19 +1,21 @@
---- Makefile.tmpl.orig	Thu Mar 14 00:05:27 2002
-+++ Makefile.tmpl	Sat Jun 22 09:33:52 2002
-@@ -270,10 +270,10 @@
+--- Makefile.tmpl.orig	2006-07-12 12:16:05.000000000 +0400
++++ Makefile.tmpl	2007-10-01 09:21:04.000000000 +0400
+@@ -227,10 +227,12 @@
  	$(MKDIR) $(root)$(mandir)/man1
  	$(MKDIR) $(root)$(mandir)/man8
  	$(MKDIR) $(root)$(sysconfdir)
 -	$(MKDIR) $(root)$(htdocsdir)
++	$(MKDIR) $(root)$(htdocsdir)/
 +	$(MKDIR) $(root)$(htdocsdir)-dist
  	$(MKDIR) $(root)$(manualdir)
  	$(MKDIR) $(root)$(iconsdir)
 -	$(MKDIR) $(root)$(cgidir)
++	$(MKDIR) $(root)$(cgidir)/
 +	$(MKDIR) $(root)$(cgidir)-dist
  	$(MKDIR) $(root)$(includedir)
  	$(MKDIR) $(root)$(includedir)/xml
  	$(MKDIR) $(root)$(runtimedir)
-@@ -459,33 +459,29 @@
+@@ -416,33 +418,23 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
@@ -36,13 +38,11 @@
  		(cd $(root)$(manualdir)/ && $(TAR) -xf -); \
  		find $(root)$(manualdir)/ -type d -exec chmod a+rx {} \; ; \
 -		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ; \
-+		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ;
-+	if [ ! -d $(root)$(htdocsdir)/ ]; then \
-+		$(LN) -sf $(root)$(htdocsdir)-dist $(root)$(htdocsdir); \
- 	fi
+-	fi
 -	-@if [ -f $(root)$(cgidir)/printenv ]; then \
 -		echo "[PRESERVING EXISTING CGI SUBDIR: $(root)$(cgidir)/]"; \
 -	else \
++		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ;
  		for script in printenv test-cgi; do \
  			cat $(TOP)/cgi-bin/$${script} |\
  			sed -e 's;^#!/.*perl;#!$(PERL);' \
@@ -54,13 +54,10 @@
 +			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir)-dist/$${script}"; \
 +			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir)-dist/$${script}; \
 +		done;
-+	if [ ! -d $(root)$(cgidir)/ ]; then \
-+		$(LN) -sf $(root)$(cgidir)-dist $(root)$(cgidir); \
-+  	fi
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
  	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
-@@ -524,10 +520,10 @@
+@@ -481,10 +473,10 @@
  			-e 's;logs/accept\.lock;$(runtimedir)/$(TARGET).lock;' \
  			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
  			-e 's;logs/httpd\.pid;$(runtimedir)/$(TARGET).pid;' \
@@ -73,9 +70,9 @@
 +			-e "s;logs/referer_log;$(logfiledir)/$${target_prefix}httpd-referer.log;" \
 +			-e "s;logs/agent_log;$(logfiledir)/$${target_prefix}httpd-agent.log;" \
  			-e 's;conf/magic;$(sysconfdir)/magic;' \
- 			-e 's;conf/mime\.types;$(sysconfdir)/mime.types;' \
- 			-e 's;User nobody;User $(conf_user);' \
-@@ -537,8 +533,8 @@
+ 			-e 's;conf/srm.conf;$(sysconfdir)/srm.conf;' \
+ 			-e 's;conf/access.conf;$(sysconfdir)/access.conf;' \
+@@ -496,8 +488,8 @@
  			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
  			-e 's;ServerName new.host.name;ServerName $(conf_servername);' \
  			> $(TOP)/$(SRC)/.apaci.install.tmp && \
@@ -86,7 +83,7 @@
  		if [ ! -f "$(root)$(sysconfdir)/$${target_conf}" ]; then \
  			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}"; \
  			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}; \
-@@ -547,8 +543,8 @@
+@@ -506,8 +498,8 @@
  		fi; \
  	done
  	-@for conf in mime.types magic; do \
