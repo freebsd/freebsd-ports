@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ufraw
-PORTVERSION=	0.12
+PORTVERSION=	0.12.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
@@ -38,7 +38,7 @@ LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
 PC_FALSE+=	exiv2
 .endif
 .ifndef WITHOUT_GIMP
-LIB_DEPENDS+=	gimp-2.0.200:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS+=	gimp-2.0.0:${PORTSDIR}/graphics/gimp-app
 PLIST_SUB+=	GIMP=""
 .else
 PC_FALSE+=	gimp
