@@ -3762,6 +3762,7 @@ glide3		ports/graphics/glide3
 glife		ports/games/glife
 glimmer		ports/editors/glimmer
 glimpse		ports/textproc/glimpse
+glipper		ports/deskutils/glipper
 glitz		ports/graphics/glitz
 gliv		ports/graphics/gliv
 glload		ports/sysutils/glload
