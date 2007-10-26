@@ -125,6 +125,7 @@ include/wine/windows/d3dvec.inl
 include/wine/windows/d3dx8.h
 include/wine/windows/d3dx8core.h
 include/wine/windows/d3dx8math.h
+include/wine/windows/d3dx8math.inl
 include/wine/windows/dbghelp.h
 include/wine/windows/dbinit.idl
 include/wine/windows/dbprop.idl
@@ -141,6 +142,8 @@ include/wine/windows/ddstream.idl
 include/wine/windows/devenum.idl
 include/wine/windows/devguid.h
 include/wine/windows/digitalv.h
+include/wine/windows/dimm.h
+include/wine/windows/dimm.idl
 include/wine/windows/dinput.h
 include/wine/windows/dispdib.h
 include/wine/windows/dispex.h
@@ -606,9 +609,11 @@ lib/wine/libclusapi.def
 lib/wine/libcomctl32.def
 lib/wine/libcomdlg32.def
 lib/wine/libcompstui.def
+lib/wine/libcredui.def
 lib/wine/libcrtdll.def
 lib/wine/libcrypt32.def
 lib/wine/libcryptdll.def
+lib/wine/libcryptnet.def
 lib/wine/libctl3d32.def
 lib/wine/libd3d8.def
 lib/wine/libd3d9.def
@@ -755,6 +760,7 @@ lib/wine/mshtml.tlb.so
 lib/wine/msi.dll.so
 lib/wine/msiexec.exe.so
 lib/wine/msimg32.dll.so
+lib/wine/msimtf.dll.so
 lib/wine/msisys.ocx.so
 lib/wine/msnet32.dll.so
 lib/wine/msrle32.dll.so
