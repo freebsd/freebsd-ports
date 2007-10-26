@@ -1,9 +1,4 @@
 %%SITE_PERL%%/Text/Reform.pm
-%%SITE_PERL%%/Text/demo.pl
-%%SITE_PERL%%/Text/demo_columns.pl
-%%SITE_PERL%%/Text/demo_filler.pl
-%%SITE_PERL%%/Text/demo_table.pl
-%%SITE_PERL%%/Text/demo_ws.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Reform/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Reform
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text

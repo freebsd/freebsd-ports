@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	Text-Reform
-PORTVERSION=	1.11
+PORTVERSION=	1.12.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	Text/DCONWAY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mat@FreeBSD.org
@@ -17,8 +19,5 @@ COMMENT=	Manual text wrapping and reformatting
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Reform.3
-
-pre-configure:
-	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 .include <bsd.port.mk>
