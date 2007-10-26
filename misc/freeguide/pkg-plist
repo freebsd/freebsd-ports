@@ -1,31 +1,68 @@
-@comment $FreeBSD$
 bin/freeguide
-share/applications/freeguide.desktop
-%%DOCSDIR%%/FAQ.html
-%%DOCSDIR%%/FreeGuide-0_7-Linux-MetalLookAndFeel.png
-%%DOCSDIR%%/INSTALL-linux-noxmltv.html
-%%DOCSDIR%%/LookAndFeel.html
-%%DOCSDIR%%/README.html
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/contributors.html
-%%DOCSDIR%%/design.html
-%%DOCSDIR%%/developers-compiling.html
-%%DOCSDIR%%/developers-cvs.html
-%%DOCSDIR%%/developers-translating.html
 %%DOCSDIR%%/developers.html
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/stylesheet.css
-%%DOCSDIR%%/timezone.html
+%%DOCSDIR%%/sflogo.png
 %%DOCSDIR%%/userguide.html
-%%JAVAJARDIR%%/FreeGuide.jar
-%%JAVASHAREDIR%%/pixmaps/freeguide.png
-%%JAVASHAREDIR%%/pixmaps/freeguide/logo-16x16.png
-%%JAVASHAREDIR%%/pixmaps/freeguide/logo-32x32.png
-%%JAVASHAREDIR%%/pixmaps/freeguide/logo-48x48.png
-%%JAVASHAREDIR%%/pixmaps/freeguide/logo-64x64.png
-%%JAVASHAREDIR%%/pixmaps/freeguide/logo-72x72.png
-%%JAVASHAREDIR%%/pixmaps/freeguide/logo-96x96.png
-@dirrm %%JAVASHAREDIR%%/pixmaps/freeguide
-@dirrmtry %%JAVASHAREDIR%%/pixmaps
-@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/ls-docs
+%%DOCSDIR%%/userguide.choosing_channels.html
+%%DOCSDIR%%/userguide.features.html
+%%DOCSDIR%%/timezone.html
+%%DOCSDIR%%/contributors.html
+%%DOCSDIR%%/README.html
+%%DOCSDIR%%/downinst.html
+%%DOCSDIR%%/FAQ.html
+%%DOCSDIR%%/developers-translating.html
+%%DOCSDIR%%/downinst.macos.html
+%%DOCSDIR%%/contact.html
+%%DOCSDIR%%/INSTALL-linux-noxmltv.html
+%%DOCSDIR%%/userguide.look_and_feel.html
+%%DOCSDIR%%/developers-cvs.html
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/FreeGuide-0_7-Linux-MetalLookAndFeel.png
+%%DOCSDIR%%/downinst.linux.html
+%%DOCSDIR%%/userguide.mainscreen.html
+%%DOCSDIR%%/license.html
+%%DOCSDIR%%/toc.html
+%%DOCSDIR%%/stylesheet.css
+%%DOCSDIR%%/design.html
+%%DOCSDIR%%/LookAndFeel.html
+%%DOCSDIR%%/help.html
+%%DOCSDIR%%/developers-compiling.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/COPYING
+%%JAVAJARDIR%%/freeguide/lib/importexport-palmatv.jar
+%%JAVAJARDIR%%/freeguide/lib/grabber-vsetv.jar
+%%JAVAJARDIR%%/freeguide/lib/reminder-alarm.jar
+%%JAVAJARDIR%%/freeguide/lib/grabber-newsvm.jar
+%%JAVAJARDIR%%/freeguide/lib/common.jar
+%%JAVAJARDIR%%/freeguide/lib/docs.jar
+%%JAVAJARDIR%%/freeguide/lib/grabber-kulichki.jar
+%%JAVAJARDIR%%/freeguide/lib/xmltv-win.jar
+%%JAVAJARDIR%%/freeguide/lib/ui-vertical.jar
+%%JAVAJARDIR%%/freeguide/lib/grabber-ntvplus.jar
+%%JAVAJARDIR%%/freeguide/lib/ui-horizontal.jar
+%%JAVAJARDIR%%/freeguide/lib/importexport-xmltv.jar
+%%JAVAJARDIR%%/freeguide/lib/importexport-html.jar
+%%JAVAJARDIR%%/freeguide/lib/grabber-xmltv.jar
+%%JAVAJARDIR%%/freeguide/lib/grabber-cosmostv.jar
+%%JAVAJARDIR%%/freeguide/lib/importexport-jtv.jar
+%%JAVAJARDIR%%/freeguide/lib/grabber-hallmark.jar
+%%JAVAJARDIR%%/freeguide/lib/tagsoup-1.0.1.jar
+%%JAVAJARDIR%%/freeguide/lib/program-freeguide.jar
+%%JAVAJARDIR%%/freeguide/lib/grabber-rbc.jar
+%%JAVAJARDIR%%/freeguide/lib/importexport-mobile.jar
+%%JAVAJARDIR%%/freeguide/lib/retroweaver-rt-1.2.5.jar
+%%JAVAJARDIR%%/freeguide/lib/storage-serfiles.jar
+%%JAVAJARDIR%%/freeguide/startup.jar
+share/pixmaps/freeguide/logo-96x96.png
+share/pixmaps/freeguide/logo-16x16.png
+share/pixmaps/freeguide/logo-72x72.png
+share/pixmaps/freeguide/logo-64x64.png
+share/pixmaps/freeguide/logo-48x48.png
+share/pixmaps/freeguide/logo-32x32.png
+share/pixmaps/freeguide.png
+share/applications/freeguide.desktop
 @dirrmtry share/applications
+@dirrm share/pixmaps/freeguide
+@dirrm %%JAVAJARDIR%%/freeguide/lib
+@dirrm %%JAVAJARDIR%%/freeguide/
+@dirrm %%DOCSDIR%%
