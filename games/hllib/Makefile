@@ -19,6 +19,7 @@ USE_ZIP=	yes
 USE_DOS2UNIX=	Makefile
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/HLLib
+CFLAGS+=	-fpic
 
 PLIST_FILES=	include/hl.h lib/libhl.so.${PORTVERSION} \
 		lib/libhl.so.2 lib/libhl.so
