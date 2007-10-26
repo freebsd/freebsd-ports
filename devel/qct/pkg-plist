@@ -2,6 +2,9 @@ bin/qct
 %%PYTHON_SITELIBDIR%%/qctlib/__init__.py
 %%PYTHON_SITELIBDIR%%/qctlib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/qctlib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/qctlib/changeselect.py
+%%PYTHON_SITELIBDIR%%/qctlib/changeselect.pyc
+%%PYTHON_SITELIBDIR%%/qctlib/changeselect.pyo
 %%PYTHON_SITELIBDIR%%/qctlib/gui_logic.py
 %%PYTHON_SITELIBDIR%%/qctlib/gui_logic.pyc
 %%PYTHON_SITELIBDIR%%/qctlib/gui_logic.pyo
@@ -11,6 +14,12 @@ bin/qct
 %%PYTHON_SITELIBDIR%%/qctlib/ui_preferences.py
 %%PYTHON_SITELIBDIR%%/qctlib/ui_preferences.pyc
 %%PYTHON_SITELIBDIR%%/qctlib/ui_preferences.pyo
+%%PYTHON_SITELIBDIR%%/qctlib/ui_select.py
+%%PYTHON_SITELIBDIR%%/qctlib/ui_select.pyc
+%%PYTHON_SITELIBDIR%%/qctlib/ui_select.pyo
+%%PYTHON_SITELIBDIR%%/qctlib/patches.py
+%%PYTHON_SITELIBDIR%%/qctlib/patches.pyc
+%%PYTHON_SITELIBDIR%%/qctlib/patches.pyo
 %%PYTHON_SITELIBDIR%%/qctlib/utils.py
 %%PYTHON_SITELIBDIR%%/qctlib/utils.pyc
 %%PYTHON_SITELIBDIR%%/qctlib/utils.pyo
