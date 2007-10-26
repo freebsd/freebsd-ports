@@ -46,8 +46,7 @@ MAN8=		auditfilterd.8
 
 .include <bsd.port.pre.mk>
 
-.if ( ( ${OSVERSION} < 600000 && ${OSVERSION} > 503100 ) || \
-	${OSVERSION} >= 600000 )
+.if ${OSVERSION} >= 600000
 MAN8+=		audit.8			\
 		auditd.8
 
