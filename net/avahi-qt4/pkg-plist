@@ -1,0 +1,7 @@
+include/avahi-qt4/qt-watch.h
+lib/libavahi-qt4.a
+lib/libavahi-qt4.la
+lib/libavahi-qt4.so
+lib/libavahi-qt4.so.1
+libdata/pkgconfig/avahi-qt4.pc
+@dirrm include/avahi-qt4
