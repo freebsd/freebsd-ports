@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Class-Singleton
-PORTVERSION=	1.03
+PORTVERSION=	1.4
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Class
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Perl module that describes a singular object class
 
 PERL_CONFIGURE=	yes
