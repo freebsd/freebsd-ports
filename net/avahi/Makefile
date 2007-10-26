@@ -22,11 +22,11 @@ RUN_DEPENDS=	avahi-resolve:${PORTSDIR}/net/avahi-app \
 
 OPTIONS=	AUTOIPD "IPv4LL network address configuration daemon" off \
 		GTK "Gtk+ tools and bindings" off \
-		LIBDNS "mDNSResponder compatibility" off \
+		LIBDNS "Apple's mDNSResponder compatibility library" off \
 		MONO "Mono bindings" off \
 		QT3 "Qt 3 bindings" off \
+		QT4 "Qt 4 bindings" off \
 		PYTHON "Python bindings and tools" off
-#		QT4 "Qt 4 bindings" off \
 
 NO_BUILD=	yes
 
@@ -52,9 +52,9 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/mono/avahi-sharp/avahi-sharp.dll:${PORTSDIR}/net/
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/avahi-qt3.pc:${PORTSDIR}/net/avahi-qt3
 .endif
 
-#.if defined(WITH_QT4)
-#RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/avahi-qt4.pc:${PORTSDIR}/net/avahi-qt4
-#.endif
+.if defined(WITH_QT4)
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/avahi-qt4.pc:${PORTSDIR}/net/avahi-qt4
+.endif
 
 .if defined(WITH_PYTHON)
 RUN_DEPENDS+=	avahi-bookmarks:${PORTSDIR}/net/py-avahi
