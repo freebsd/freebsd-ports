@@ -103,6 +103,8 @@ post-patch:
 		-e 's,DB_MAN_PREREQS=.*,DB_MAN_PREREQS="databases/p5-DBD-mysql${MYSQL_VER} databases/mysql${MYSQL_VER}-client",' \
 		${WRKSRC}/lib/setup-mysql.sh
 	@${RM} ${WRKSRC}/lib/setup-mysql.sh.bak
+	@${RM} ${WRKSRC}/rawenv.dist.orig
+	@${RM} ${WRKSRC}/portbuild.orig
 .endif
 .if ! (${OSVERSION} > 700014 || ( ${OSVERSION} >= 601101 && ${OSVERSION} < 700000 ))
 	${REINPLACE_CMD} -E -e 's!/usr/bin/csup!${PREFIX}/bin/csup!' \
