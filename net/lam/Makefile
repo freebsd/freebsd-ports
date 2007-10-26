@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lam
-PORTVERSION=	7.1.2
+PORTVERSION=	7.1.4
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.lam-mpi.org/download/files/ \
 		http://www.thinkingnerds.com/lam/download/files/
@@ -17,7 +17,7 @@ COMMENT=	Local Area Multicomputer MPI implementation
 USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-rsh=ssh
+CONFIGURE_ARGS=	--with-rsh=ssh --without-fc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 
@@ -372,10 +372,6 @@ MAN7=	LAM.7 \
 	mpi.7
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
