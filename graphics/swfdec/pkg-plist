@@ -20,6 +20,7 @@ include/swfdec-%%VERSION%%/libswfdec/swfdec_keys.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_loader.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_player.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_script.h
+include/swfdec-%%VERSION%%/libswfdec/swfdec_rectangle.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_system.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_url.h
 lib/libswfdec-%%VERSION%%.a
