@@ -17,4 +17,3 @@ www/cgi-bin/kdedictionary/sessiondb
 www/cgi-bin/kdedictionary/userdb
 www/cgi-bin/kdedictionary/users
 @dirrm www/cgi-bin/kdedictionary
-@dirrmtry www/cgi-bin
