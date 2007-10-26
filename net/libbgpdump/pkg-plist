@@ -7,3 +7,4 @@ include/bgpdump_attr.h
 include/bgpdump_formats.h
 include/bgpdump_lib.h
 include/bgpdump_mstream.h
+include/cfile_tools.h
