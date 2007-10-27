@@ -1,8 +1,6 @@
---- fontforge/Makefile.dynamic.in.orig	Fri Apr 14 02:59:01 2006
-+++ fontforge/Makefile.dynamic.in	Thu Apr 27 16:21:35 2006
-@@ -43,19 +43,19 @@
-  cvdgloss.o groups.o parsepdf.o plugins.o bdfinfo.o \
-  glyphcomp.o @FF_EXTRA_FILES@
+--- fontforge/Makefile.dynamic.in.orig	Tue Oct 16 12:59:51 2007
++++ fontforge/Makefile.dynamic.in	Tue Oct 16 13:00:38 2007
+@@ -51,7 +51,7 @@
  DIFFOBJS = sfddiff.o sfd.o diffstubs.o stamp.o namelist.o pua.o
  ACORNOBJS = acorn2sfd.o sfd.o diffstubs.o psunicodenames.o stamp.o
  
@@ -11,15 +9,14 @@
      @DEFS@ '-DSHAREDIR="$(sharedir)"' -DLIBDIR='"$(libdir)"' \
      @CPPFLAGS@ '-DPREFIX="@prefix@"'
  CFLAGS = @CFLAGS@ $(_CFLAGS)
- 
+@@ -59,8 +59,8 @@
  #I used to include -L/usr/lib explicitly after static_libs. Not sure why. Should be implied & breaks 64bit compiles
+ LDFLAGS = @LDFLAGS@
  LIBS = -rpath $(libdir) $(X_LIBS) ../libgdraw.la ../libgunicode.la \
 -    $(X_PRE_LIBS) $(X_11LIB) $(X_EXTRA_LIBS) @LIBS@ $(STATIC_LIBS) -lm
 -DLIBS = -rpath $(libdir) ../libgunicode.la @LIBS@ $(STATIC_LIBS) -lm
 +    $(X_PRE_LIBS) $(X_11LIB) $(X_EXTRA_LIBS) @LIBS@ $(STATIC_LIBS) -lm -lintl
 +DLIBS = -rpath $(libdir) ../libgunicode.la @LIBS@ $(STATIC_LIBS) -lm -lintl
  
- all: fontforge sfddiff
+ all: @FINAL_TARGET@ sfddiff fontimage fontlint
  
- fontforge: main.o $(fontforge_LIBOBJECTS)
- 	$(LIBTOOL) --mode=link $(CC) -export-dynamic -o fontforge main.o $(fontforge_LIBOBJECTS) $(LIBS)

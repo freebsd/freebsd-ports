@@ -6,19 +6,13 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20060822
-PORTREVISION=	1
+PORTVERSION=	20071002
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	fontforge
+MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
 EXTRACT_ONLY=	${PORTNAME}_full-${PORTVERSION}.tar.bz2
-.if defined(FONTFORGE_WITH_TTF_DEBUGGER)
-FREETYPE_VERSION=	2.1.10
-EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
-.endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
 
 LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
@@ -29,10 +23,14 @@ LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-DOC_VERSION=	20060822
-DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
+.if defined(FONTFORGE_WITH_TTF_DEBUGGER)
+FREETYPE_VERSION=	2.1.10
+EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
+.endif
+
 .if !defined(NOPORTDOCS)
-DOCFILES+=	${PORTNAME}_ja_htdocs-${DOC_VERSION}.tar.bz2
+DOC_VERSION=	${PORTVERSION}
+DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
 .endif
 
 USE_BZIP2=	yes
@@ -53,25 +51,23 @@ WITH_FREETYPE_SRC=	--without-freetype-src
 .endif
 CONFIGURE_ARGS=	${WITH_MULTILAYER} --with-devicetables ${WITH_FREETYPE_SRC}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CFLAGS="${CFLAGS} \
-		-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
-		-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include \
-		-I${LOCALBASE}/include/freetype2"
+		-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GCC=	3.2+
 
-MAN1=		fontforge.1 sfddiff.1
+MAN1=		fontforge.1 fontimage.1 fontlint.1 sfddiff.1
+
+.if defined(FONTFORGE_NO_PLUGINS)
+PLIST_SUB+=	NO_PLUGINS="@comment "
+.else
+PLIST_SUB+=	NO_PLUGINS=""
+.endif
 
 pre-everything::
-.if defined(WITHOUT_EXTRA_ENCODINGS)
-	@${ECHO_MSG} "WARNING: You should not compile libiconv with WITHOUT_EXTRA_ENCODINGS"
-	@${ECHO_MSG} "defined, because libiconv must be configured with --enable-extra-encoding"
-	@${ECHO_MSG} "as FontForge requires Shift-JIS."
-	@${ECHO_MSG} ""
-.endif
 .if !defined(WITHOUT_TTF_BYTECODE_ENABLED) && !defined(FONTFORGE_WITH_TTF_DEBUGGER)
 	@${ECHO_MSG} "If you have built freetype2 port with bytecode interpreter enabled,"
 	@${ECHO_MSG} "You can use TTF instruction debugger by compiling fontforge port"
@@ -109,11 +105,9 @@ post-install:
 	(cd ${WRKSRC}/plugins; ${INSTALL_DATA} .libs/* ${PREFIX}/share/fontforge/plugins )
 .endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/flags ${DOCSDIR}/ja ${DOCSDIR}/ja/nonBMP/
+	${MKDIR} ${DOCSDIR}/flags
 	${INSTALL_DATA} ${WRKDIR}/html/*.* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/html/flags/* ${DOCSDIR}/flags
-	${INSTALL_DATA} ${WRKDIR}/html/ja/*.* ${DOCSDIR}/ja
-	${INSTALL_DATA} ${WRKDIR}/html/ja/nonBMP/*.* ${DOCSDIR}/ja/nonBMP
+	${INSTALL_DATA} ${WRKDIR}/html/flags/*.* ${DOCSDIR}/flags
 .endif
 
 .include <bsd.port.mk>
