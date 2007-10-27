@@ -1,0 +1,7 @@
+
+To enable desired plugins symlink their directories from
+
+    %%DATADIR%%
+
+to ~/.tkabber/plugins/
+
