@@ -117,6 +117,11 @@ share/gnome/help/gthumb/es/figures/main-win.png
 share/gnome/help/gthumb/es/figures/nav-button.png
 share/gnome/help/gthumb/es/figures/preferences.png
 share/gnome/help/gthumb/es/gthumb.xml
+share/gnome/help/gthumb/fr/figures/comment.png
+share/gnome/help/gthumb/fr/figures/main-win.png
+share/gnome/help/gthumb/fr/figures/nav-button.png
+share/gnome/help/gthumb/fr/figures/preferences.png
+share/gnome/help/gthumb/fr/gthumb.xml
 share/gnome/help/gthumb/sv/figures/comment.png
 share/gnome/help/gthumb/sv/figures/main-win.png
 share/gnome/help/gthumb/sv/figures/nav-button.png
@@ -124,6 +129,7 @@ share/gnome/help/gthumb/sv/figures/preferences.png
 share/gnome/help/gthumb/sv/gthumb.xml
 share/omf/gthumb/gthumb-C.omf
 share/omf/gthumb/gthumb-es.omf
+share/omf/gthumb/gthumb-fr.omf
 share/omf/gthumb/gthumb-sv.omf
 share/icons/hicolor/48x48/apps/gthumb.png
 share/locale/am/LC_MESSAGES/gthumb.mo
@@ -186,6 +192,8 @@ share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm share/omf/gthumb
 @dirrm share/gnome/help/gthumb/sv/figures
 @dirrm share/gnome/help/gthumb/sv
+@dirrm share/gnome/help/gthumb/fr/figures
+@dirrm share/gnome/help/gthumb/fr
 @dirrm share/gnome/help/gthumb/es/figures
 @dirrm share/gnome/help/gthumb/es
 @dirrm share/gnome/help/gthumb/C/figures
