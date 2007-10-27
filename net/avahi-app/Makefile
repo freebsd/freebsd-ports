@@ -60,6 +60,9 @@ USE_RC_SUBR=yes
 
 .if ${AVAHI_SLAVE}=="autoipd"
 CONFIGURE_ARGS+=--enable-autoipd
+.if ${OSVERSION} < 600000
+IGNORE=	${PORTNAME} does not build with libpcap from FreeBSD ${OSVERSION}
+.endif
 .else
 CONFIGURE_ARGS+=--disable-autoipd
 .endif
