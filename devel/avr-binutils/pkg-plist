@@ -2,6 +2,7 @@ avr/bin/ar
 avr/bin/as
 avr/bin/ld
 avr/bin/nm
+avr/bin/objcopy
 avr/bin/objdump
 avr/bin/ranlib
 avr/bin/strip
@@ -54,9 +55,11 @@ share/locale/es/LC_MESSAGES/binutils.mo
 share/locale/es/LC_MESSAGES/gas.mo
 share/locale/es/LC_MESSAGES/ld.mo
 share/locale/fi/LC_MESSAGES/binutils.mo
+share/locale/fi/LC_MESSAGES/ld.mo
 share/locale/fr/LC_MESSAGES/binutils.mo
 share/locale/fr/LC_MESSAGES/gas.mo
 share/locale/fr/LC_MESSAGES/ld.mo
+share/locale/ga/LC_MESSAGES/ld.mo
 share/locale/ja/LC_MESSAGES/binutils.mo
 share/locale/ro/LC_MESSAGES/binutils.mo
 share/locale/ru/LC_MESSAGES/binutils.mo
@@ -67,11 +70,13 @@ share/locale/sv/LC_MESSAGES/ld.mo
 share/locale/tr/LC_MESSAGES/binutils.mo
 share/locale/tr/LC_MESSAGES/gas.mo
 share/locale/tr/LC_MESSAGES/ld.mo
+share/locale/uk/LC_MESSAGES/binutils.mo
 share/locale/vi/LC_MESSAGES/binutils.mo
 share/locale/vi/LC_MESSAGES/ld.mo
 share/locale/zh_CN/LC_MESSAGES/binutils.mo
 share/locale/zh_CN/LC_MESSAGES/ld.mo
 share/locale/zh_TW/LC_MESSAGES/binutils.mo
+share/locale/zh_TW/LC_MESSAGES/ld.mo
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrm avr/lib/ldscripts

@@ -1,6 +1,7 @@
---- ./binutils/doc/objcopy.1.orig	Fri Jun 23 20:19:49 2006
-+++ ./binutils/doc/objcopy.1	Tue Sep 26 00:25:05 2006
-@@ -190,6 +190,8 @@
+diff -Nur ../binutils-2.18.orig/binutils/doc/objcopy.1 ./binutils/doc/objcopy.1
+--- ../binutils-2.18.orig/binutils/doc/objcopy.1	Tue Oct 23 21:44:42 2007
++++ ./binutils/doc/objcopy.1	Tue Oct 23 22:18:44 2007
+@@ -193,6 +193,8 @@
          [\fB\-\-readonly\-text\fR]
          [\fB\-\-pure\fR]
          [\fB\-\-impure\fR]
@@ -9,9 +10,9 @@
          [\fB\-v\fR|\fB\-\-verbose\fR]
          [\fB\-V\fR|\fB\-\-version\fR]  
          [\fB\-\-help\fR] [\fB\-\-info\fR]
-@@ -745,6 +747,23 @@
- full executable.  It does not have to be a file created by the
- \&\fB\-\-only\-keep\-debug\fR switch.
+@@ -807,6 +809,23 @@
+ It can also be a useful way of reducing the size of a \fB\-\-just\-symbols\fR
+ linker input file.
  .RE
 +.IP "\fB\-\-change\-pathname\fR \fIold\fR=\fInew\fR" 4
 +.IX Item "--change-pathname old=new"
@@ -33,18 +34,20 @@
  .IP "\fB\-V\fR" 4
  .IX Item "-V"
  .PD 0
---- ./binutils/Makefile.am.orig	Thu Apr  6 23:49:26 2006
-+++ ./binutils/Makefile.am	Tue Sep 26 00:25:05 2006
-@@ -97,14 +97,14 @@
- 	rdcoff.c rddbg.c readelf.c rename.c \
+diff -Nur ../binutils-2.18.orig/binutils/Makefile.am ./binutils/Makefile.am
+--- ../binutils-2.18.orig/binutils/Makefile.am	Tue Oct 23 21:44:42 2007
++++ ./binutils/Makefile.am	Tue Oct 23 22:22:40 2007
+@@ -98,7 +98,7 @@
  	resbin.c rescoff.c resrc.c resres.c \
- 	size.c srconv.c stabs.c strings.c sysdump.c version.c \
--	windres.c winduni.c wrstabs.c
-+	windres.c winduni.c wrcoff.c wrstabs.c
+ 	size.c srconv.c stabs.c strings.c sysdump.c \
+ 	unwind-ia64.c version.c \
+-	windres.c winduni.c wrstabs.c \
++	windres.c winduni.c wrcoff.c wrstabs.c \
+ 	windmc.c mclex.c
  
  GENERATED_CFILES = \
- 	arparse.c arlex.c sysroff.c sysinfo.c syslex.c \
- 	defparse.c deflex.c nlmheader.c rcparse.c rclex.c
+@@ -106,7 +106,7 @@
+ 	defparse.c deflex.c nlmheader.c rcparse.c mcparse.c
  
  DEBUG_SRCS = rddbg.c debug.c stabs.c ieee.c rdcoff.c
 -WRITE_DEBUG_SRCS = $(DEBUG_SRCS) wrstabs.c
@@ -52,27 +55,29 @@
  
  # Code shared by all the binutils.
  BULIBS = bucomm.c version.c filemode.c
---- ./binutils/Makefile.in.orig	Fri Jun  2 04:21:08 2006
-+++ ./binutils/Makefile.in	Tue Sep 26 00:25:05 2006
-@@ -133,7 +133,7 @@
- nm_new_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
- 	$(am__DEPENDENCIES_3)
+diff -Nur ../binutils-2.18.orig/binutils/Makefile.in ./binutils/Makefile.in
+--- ../binutils-2.18.orig/binutils/Makefile.in	Tue Oct 23 21:44:42 2007
++++ ./binutils/Makefile.in	Tue Oct 23 22:26:52 2007
+@@ -129,7 +129,7 @@
+ nm_new_OBJECTS = $(am_nm_new_OBJECTS)
+ nm_new_LDADD = $(LDADD)
  am__objects_2 = rddbg.$(OBJEXT) debug.$(OBJEXT) stabs.$(OBJEXT) \
 -	ieee.$(OBJEXT) rdcoff.$(OBJEXT)
 +	ieee.$(OBJEXT) rdcoff.$(OBJEXT) wrcoff.$(OBJEXT)
  am__objects_3 = $(am__objects_2) wrstabs.$(OBJEXT)
  am_objcopy_OBJECTS = objcopy.$(OBJEXT) not-strip.$(OBJEXT) \
  	rename.$(OBJEXT) $(am__objects_3) $(am__objects_1)
-@@ -424,14 +424,14 @@
- 	rdcoff.c rddbg.c readelf.c rename.c \
+@@ -418,7 +418,7 @@
  	resbin.c rescoff.c resrc.c resres.c \
- 	size.c srconv.c stabs.c strings.c sysdump.c version.c \
--	windres.c winduni.c wrstabs.c
-+	windres.c winduni.c wrcoff.c wrstabs.c
+ 	size.c srconv.c stabs.c strings.c sysdump.c \
+ 	unwind-ia64.c version.c \
+-	windres.c winduni.c wrstabs.c \
++	windres.c winduni.c wrcoff.c wrstabs.c \
+ 	windmc.c mclex.c
  
  GENERATED_CFILES = \
- 	arparse.c arlex.c sysroff.c sysinfo.c syslex.c \
- 	defparse.c deflex.c nlmheader.c rcparse.c rclex.c
+@@ -426,7 +426,7 @@
+ 	defparse.c deflex.c nlmheader.c rcparse.c mcparse.c
  
  DEBUG_SRCS = rddbg.c debug.c stabs.c ieee.c rdcoff.c
 -WRITE_DEBUG_SRCS = $(DEBUG_SRCS) wrstabs.c
@@ -80,9 +85,10 @@
  
  # Code shared by all the binutils.
  BULIBS = bucomm.c version.c filemode.c
---- ./binutils/bucomm.c.orig	Mon Mar 13 23:27:22 2006
-+++ ./binutils/bucomm.c	Tue Sep 26 00:25:05 2006
-@@ -452,6 +452,32 @@
+diff -Nur ../binutils-2.18.orig/binutils/bucomm.c ./binutils/bucomm.c
+--- ../binutils-2.18.orig/binutils/bucomm.c	Tue Oct 23 21:44:42 2007
++++ ./binutils/bucomm.c	Tue Oct 23 22:18:44 2007
+@@ -501,6 +501,32 @@
    return ret;
  }
  
@@ -115,9 +121,10 @@
  /* Returns the size of the named file.  If the file does not
     exist, or if it is not a real file, then a suitable non-fatal
     error message is printed and zero is returned.  */
---- ./binutils/bucomm.h.orig	Thu Feb  9 12:49:53 2006
-+++ ./binutils/bucomm.h	Tue Sep 26 00:25:05 2006
-@@ -205,6 +205,8 @@
+diff -Nur ../binutils-2.18.orig/binutils/bucomm.h ./binutils/bucomm.h
+--- ../binutils-2.18.orig/binutils/bucomm.h	Tue Oct 23 21:44:42 2007
++++ ./binutils/bucomm.h	Tue Oct 23 22:18:44 2007
+@@ -54,6 +54,8 @@
  
  off_t get_file_size (const char *);
  
@@ -126,8 +133,9 @@
  extern char *program_name;
  
  /* filemode.c */
---- ./binutils/budbg.h.orig	Sun May  8 16:17:38 2005
-+++ ./binutils/budbg.h	Tue Sep 26 00:25:05 2006
+diff -Nur ../binutils-2.18.orig/binutils/budbg.h ./binutils/budbg.h
+--- ../binutils-2.18.orig/binutils/budbg.h	Tue Oct 23 21:44:42 2007
++++ ./binutils/budbg.h	Tue Oct 23 22:18:44 2007
 @@ -51,8 +51,11 @@
  
  extern bfd_boolean write_ieee_debugging_info (bfd *, void *);
@@ -141,9 +149,17 @@
 +  (bfd *abfd, void *, long *symcountp, asymbol ***);
  
  #endif
---- ./binutils/debug.c.orig	Sun May  8 16:17:38 2005
-+++ ./binutils/debug.c	Tue Sep 26 00:25:05 2006
-@@ -553,6 +553,19 @@
+--- binutils/debug.c.orig	Mon Aug  6 21:55:10 2007
++++ binutils/debug.c	Tue Oct 23 23:43:19 2007
+@@ -31,6 +31,7 @@
+ #include <assert.h>
+ #include "bfd.h"
+ #include "libiberty.h"
++#include "bucomm.h"
+ #include "debug.h"
+ 
+ /* Global information we keep for debugging.  A pointer to this
+@@ -552,6 +553,19 @@
    struct debug_type *t;
  };
  
@@ -163,7 +179,7 @@
  /* Local functions.  */
  
  static void debug_error (const char *);
-@@ -589,6 +602,11 @@
+@@ -588,6 +602,11 @@
    (struct debug_handle *, struct debug_type *, struct debug_type *);
  static bfd_boolean debug_class_type_samep
    (struct debug_handle *, struct debug_type *, struct debug_type *);
@@ -175,7 +191,7 @@
  
  /* Issue an error message.  */
  
-@@ -681,6 +699,8 @@
+@@ -680,6 +699,8 @@
  
    if (name == NULL)
      name = "";
@@ -184,7 +200,7 @@
  
    nfile = (struct debug_file *) xmalloc (sizeof *nfile);
    memset (nfile, 0, sizeof *nfile);
-@@ -721,6 +741,8 @@
+@@ -720,6 +741,8 @@
  
    if (name == NULL)
      name = "";
@@ -193,7 +209,7 @@
  
    if (info->current_unit == NULL)
      {
-@@ -3370,4 +3392,70 @@
+@@ -3369,4 +3392,70 @@
      }
  
    return TRUE;
@@ -264,8 +280,9 @@
 +  /* Not found, pass the original name on. */
 +  return oname;
  }
---- ./binutils/debug.h.orig	Sun May  8 16:17:38 2005
-+++ ./binutils/debug.h	Tue Sep 26 00:25:05 2006
+diff -Nur ../binutils-2.18.orig/binutils/debug.h ./binutils/debug.h
+--- ../binutils-2.18.orig/binutils/debug.h	Tue Oct 23 21:44:43 2007
++++ ./binutils/debug.h	Tue Oct 23 22:18:44 2007
 @@ -440,6 +440,12 @@
  
  extern bfd_boolean debug_start_source (void *, const char *);
@@ -279,9 +296,10 @@
  /* Record a function definition.  This implicitly starts a function
     block.  The debug_type argument is the type of the return value.
     The bfd_boolean indicates whether the function is globally visible.
---- ./binutils/objcopy.c.orig	Tue Feb 28 17:09:01 2006
-+++ ./binutils/objcopy.c	Tue Sep 26 00:25:14 2006
-@@ -31,6 +31,7 @@
+diff -Nur ../binutils-2.18.orig/binutils/objcopy.c ./binutils/objcopy.c
+--- ../binutils-2.18.orig/binutils/objcopy.c	Tue Oct 23 21:44:43 2007
++++ ./binutils/objcopy.c	Tue Oct 23 22:38:29 2007
+@@ -32,6 +32,7 @@
  #include "elf-bfd.h"
  #include <sys/stat.h>
  #include "libbfd.h"
@@ -289,18 +307,18 @@
  
  /* A list of symbols to explicitly strip out, or to keep.  A linked
     list is good enough for a small number from the command line, but
-@@ -257,7 +258,9 @@
-     OPTION_READONLY_TEXT,
-     OPTION_WRITABLE_TEXT,
+@@ -272,7 +273,9 @@
      OPTION_PURE,
--    OPTION_IMPURE
-+    OPTION_IMPURE,
+     OPTION_IMPURE,
+     OPTION_EXTRACT_SYMBOL,
+-    OPTION_REVERSE_BYTES
++    OPTION_REVERSE_BYTES,
 +    OPTION_CHANGE_PATHNAME,
 +    OPTION_BASENAME
    };
  
  /* Options to handle if running as "strip".  */
-@@ -301,10 +304,12 @@
+@@ -316,10 +319,12 @@
    {"adjust-section-vma", required_argument, 0, OPTION_CHANGE_SECTION_ADDRESS},
    {"adjust-warnings", no_argument, 0, OPTION_CHANGE_WARNINGS},
    {"alt-machine-code", required_argument, 0, OPTION_ALT_MACH_CODE},
@@ -313,7 +331,7 @@
    {"change-section-address", required_argument, 0, OPTION_CHANGE_SECTION_ADDRESS},
    {"change-section-lma", required_argument, 0, OPTION_CHANGE_SECTION_LMA},
    {"change-section-vma", required_argument, 0, OPTION_CHANGE_SECTION_VMA},
-@@ -483,6 +488,8 @@
+@@ -504,6 +509,8 @@
       --prefix-alloc-sections <prefix>\n\
                                     Add <prefix> to start of every allocatable\n\
                                       section name\n\
@@ -322,16 +340,16 @@
    -v --verbose                     List all object files modified\n\
    @<file>                          Read options from <file>\n\
    -V --version                     Display this program's version number\n\
-@@ -821,6 +828,8 @@
+@@ -911,6 +918,8 @@
+   asymbol **from = isyms, **to = osyms;
    long src_count = 0, dst_count = 0;
-   int relocatable = (abfd->flags & (HAS_RELOC | EXEC_P | DYNAMIC))
- 		    == HAS_RELOC;
+   int relocatable = (abfd->flags & (EXEC_P | DYNAMIC)) == 0;
 +  bfd_boolean need_for_debugging = convert_debugging
 +    && bfd_get_arch (abfd) == bfd_arch_avr;
  
    for (; src_count < symcount; src_count++)
      {
-@@ -916,9 +925,10 @@
+@@ -1010,9 +1019,10 @@
  	       || bfd_is_com_section (bfd_get_section (sym)))
  	keep = strip_symbols != STRIP_UNNEEDED;
        else if ((flags & BSF_DEBUGGING) != 0)	/* Debugging symbol.  */
@@ -345,7 +363,7 @@
        else if (bfd_coff_get_comdat_section (abfd, bfd_get_section (sym)))
  	/* COMDAT sections store special information in local
  	   symbols, so we cannot risk stripping any of them.  */
-@@ -2417,6 +2427,10 @@
+@@ -2588,6 +2598,10 @@
      return write_ieee_debugging_info (obfd, dhandle);
  
    if (bfd_get_flavour (obfd) == bfd_target_coff_flavour
@@ -356,7 +374,7 @@
        || bfd_get_flavour (obfd) == bfd_target_elf_flavour)
      {
        bfd_byte *syms, *strings;
-@@ -3096,6 +3110,30 @@
+@@ -3287,6 +3301,30 @@
  
  	case OPTION_PREFIX_ALLOC_SECTIONS:
  	  prefix_alloc_sections_string = optarg;
@@ -387,9 +405,10 @@
  	  break;
  
  	case OPTION_READONLY_TEXT:
---- ./binutils/rdcoff.c.orig	Sun May  8 16:17:39 2005
-+++ ./binutils/rdcoff.c	Tue Sep 26 00:25:05 2006
-@@ -80,6 +80,9 @@
+diff -Nur ../binutils-2.18.orig/binutils/rdcoff.c ./binutils/rdcoff.c
+--- ../binutils-2.18.orig/binutils/rdcoff.c	Tue Oct 23 21:44:43 2007
++++ ./binutils/rdcoff.c	Tue Oct 23 22:18:44 2007
+@@ -82,6 +82,9 @@
    struct coff_slots *slots;
    /* Basic types.  */
    debug_type basic[T_MAX + 1];
@@ -399,7 +418,7 @@
  };
  
  static debug_type *coff_get_slot (struct coff_types *, int);
-@@ -99,6 +102,7 @@
+@@ -101,6 +104,7 @@
    (bfd *, struct coff_types *, asymbol *, long, struct internal_syment *,
     void *, debug_type, bfd_boolean);
  static bfd_boolean external_coff_symbol_p (int sym_class);
@@ -407,7 +426,7 @@
  
  /* Return the slot for a type.  */
  
-@@ -269,8 +273,7 @@
+@@ -271,8 +275,7 @@
        break;
  
      case T_INT:
@@ -417,7 +436,7 @@
        name = "int";
        break;
  
-@@ -285,7 +288,7 @@
+@@ -287,7 +290,7 @@
        break;
  
      case T_DOUBLE:
@@ -426,7 +445,7 @@
        name = "double";
        break;
  
-@@ -305,7 +308,7 @@
+@@ -307,7 +310,7 @@
        break;
  
      case T_UINT:
@@ -435,7 +454,7 @@
        name = "unsigned int";
        break;
  
-@@ -563,6 +566,8 @@
+@@ -565,6 +568,8 @@
  
      case C_WEAKEXT:
      case C_EXT:
@@ -444,7 +463,7 @@
        if (! debug_record_variable (dhandle, bfd_asymbol_name (sym), type,
  				   DEBUG_GLOBAL, bfd_asymbol_value (sym)))
  	return FALSE;
-@@ -578,9 +583,9 @@
+@@ -580,9 +585,9 @@
        break;
  
      case C_REG:
@@ -456,7 +475,7 @@
  	return FALSE;
        break;
  
-@@ -594,9 +599,9 @@
+@@ -596,9 +601,9 @@
        break;
  
      case C_REGPARM:
@@ -468,7 +487,7 @@
  	return FALSE;
        break;
  
-@@ -646,6 +651,28 @@
+@@ -648,6 +653,28 @@
    return FALSE;
  }
  
@@ -497,7 +516,7 @@
  /* This is the main routine.  It looks through all the symbols and
     handles them.  */
  
-@@ -672,6 +699,17 @@
+@@ -674,6 +701,17 @@
    types.slots = NULL;
    for (i = 0; i <= T_MAX; i++)
      types.basic[i] = DEBUG_TYPE_NULL;
@@ -515,7 +534,7 @@
  
    next_c_file = -1;
    fnname = NULL;
-@@ -732,7 +770,6 @@
+@@ -734,7 +772,6 @@
        switch (syment.n_sclass)
  	{
  	case C_EFCN:
@@ -523,7 +542,7 @@
  	case C_ULABEL:
  	case C_USTATIC:
  	case C_LINE:
-@@ -755,6 +792,8 @@
+@@ -757,6 +794,8 @@
  	  /* Fall through.  */
  	case C_WEAKEXT:
  	case C_EXT:
@@ -532,9 +551,10 @@
  	  if (ISFCN (syment.n_type))
  	    {
  	      fnname = name;
---- ./binutils/wrcoff.c.orig	Tue Sep 26 00:25:05 2006
-+++ ./binutils/wrcoff.c	Tue Sep 26 00:25:05 2006
-@@ -0,0 +1,3409 @@
+diff -Nur ../binutils-2.18.orig/binutils/wrcoff.c ./binutils/wrcoff.c
+--- ../binutils-2.18.orig/binutils/wrcoff.c	Thu Jan  1 01:00:00 1970
++++ ./binutils/wrcoff.c	Tue Oct 23 22:18:44 2007
+@@ -0,0 +1,3410 @@
 +/* wrcoff.c -- Generate (AVR) COFF debugging information
 +   Copyright 2003 Free Software Foundation, Inc.
 +
@@ -565,6 +585,7 @@
 +#include <stdio.h>
 +#include <assert.h>
 +
++#include "sysdep.h"
 +#include "bfd.h"
 +#include "coff/internal.h"
 +#include "bucomm.h"
@@ -3944,9 +3965,10 @@
 +
 +  return TRUE;
 +}
---- ./bfd/Makefile.am.orig	Fri Jun 23 20:17:17 2006
-+++ ./bfd/Makefile.am	Tue Sep 26 00:25:05 2006
-@@ -199,6 +199,8 @@
+diff -Nur ../binutils-2.18.orig/bfd/Makefile.am ./bfd/Makefile.am
+--- ../binutils-2.18.orig/bfd/Makefile.am	Tue Oct 23 21:44:07 2007
++++ ./bfd/Makefile.am	Tue Oct 23 22:41:01 2007
+@@ -208,6 +208,8 @@
  	coff-apollo.lo \
  	coff-arm.lo \
  	coff-aux.lo \
@@ -3955,7 +3977,7 @@
  	coff-h8300.lo \
  	coff-h8500.lo \
  	coff-i386.lo \
-@@ -371,6 +373,8 @@
+@@ -387,6 +389,8 @@
  	coff-apollo.c \
  	coff-arm.c \
  	coff-aux.c \
@@ -3964,22 +3986,25 @@
  	coff-h8300.c \
  	coff-h8500.c \
  	coff-i386.c \
-@@ -934,10 +938,10 @@
+@@ -976,13 +980,13 @@
  bfdver.h: $(srcdir)/version.h $(srcdir)/Makefile.in
  	@echo "creating $@"
  	@bfd_version=`echo "$(VERSION)" | sed -e 's/\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\).*/\1.00\2.00\3.00\4.00\5/' -e 's/\([^\.]*\)\..*\(..\)\..*\(..\)\..*\(..\)\..*\(..\)$$/\1\2\3\4\5/'` ;\
 -	bfd_version_string="\"$(VERSION)\"" ;\
 +	bfd_version_string="\"$(VERSION) + coff-avr-patch (20050630)\"" ;\
+ 	bfd_soversion="$(VERSION)" ;\
+ 	bfd_version_package="\"$(PKGVERSION)\"" ;\
+ 	report_bugs_to="\"$(REPORT_BUGS_TO)\"" ;\
  	if test "x$(RELEASE)" = x ; then \
  	  bfd_version_date=`sed -n -e 's/.*DATE //p' < $(srcdir)/version.h` ;\
--	  bfd_version_string="\"$(VERSION) $${bfd_version_date}\"" ;\
-+	  bfd_version_string="\"$(VERSION) $${bfd_version_date} + coff-avr-patch (20050630)\"" ;\
+-	  bfd_version_string="\"$(VERSION).$${bfd_version_date}\"" ;\
++	  bfd_version_string="\"$(VERSION).$${bfd_version_date} + coff-avr-patch (20050630)\"" ;\
+ 	  bfd_soversion="$(VERSION).$${bfd_version_date}" ;\
  	fi ;\
- 	sed -e "s/@bfd_version@/$$bfd_version/" -e "s/@bfd_version_string@/$$bfd_version_string/" < $(srcdir)/version.h > $@
- 
-@@ -1129,6 +1133,12 @@
-   $(INCDIR)/coff/internal.h $(INCDIR)/coff/m68k.h $(INCDIR)/coff/external.h \
-   coff-m68k.c $(INCDIR)/hashtab.h libcoff.h $(INCDIR)/bfdlink.h \
+ 	sed -e "s,@bfd_version@,$$bfd_version," \
+@@ -1186,6 +1190,12 @@
+   coff-m68k.c $(INCDIR)/hashtab.h $(INCDIR)/coff/m68k.h \
+   $(INCDIR)/coff/internal.h libcoff.h $(INCDIR)/bfdlink.h \
    coffcode.h coffswap.h
 +coff-avr.lo: coff-avr.c $(INCDIR)/filenames.h $(INCDIR)/coff/avr.h \
 +  $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
@@ -3990,9 +4015,10 @@
  coff-h8300.lo: coff-h8300.c $(INCDIR)/filenames.h $(INCDIR)/hashtab.h \
    $(INCDIR)/bfdlink.h genlink.h $(INCDIR)/coff/h8300.h \
    $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
---- ./bfd/Makefile.in.orig	Fri Jun 23 20:17:19 2006
-+++ ./bfd/Makefile.in	Tue Sep 26 00:25:05 2006
-@@ -436,6 +436,8 @@
+diff -Nur ../binutils-2.18.orig/bfd/Makefile.in ./bfd/Makefile.in
+--- ../binutils-2.18.orig/bfd/Makefile.in	Tue Oct 23 21:44:07 2007
++++ ./bfd/Makefile.in	Tue Oct 23 22:41:31 2007
+@@ -458,6 +458,8 @@
  	coff-apollo.lo \
  	coff-arm.lo \
  	coff-aux.lo \
@@ -4001,7 +4027,7 @@
  	coff-h8300.lo \
  	coff-h8500.lo \
  	coff-i386.lo \
-@@ -608,6 +610,8 @@
+@@ -637,6 +639,8 @@
  	coff-apollo.c \
  	coff-arm.c \
  	coff-aux.c \
@@ -4010,22 +4036,25 @@
  	coff-h8300.c \
  	coff-h8500.c \
  	coff-i386.c \
-@@ -1500,10 +1504,10 @@
+@@ -1556,13 +1560,13 @@
  bfdver.h: $(srcdir)/version.h $(srcdir)/Makefile.in
  	@echo "creating $@"
  	@bfd_version=`echo "$(VERSION)" | sed -e 's/\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\)\.*\([^\.]*\).*/\1.00\2.00\3.00\4.00\5/' -e 's/\([^\.]*\)\..*\(..\)\..*\(..\)\..*\(..\)\..*\(..\)$$/\1\2\3\4\5/'` ;\
 -	bfd_version_string="\"$(VERSION)\"" ;\
 +	bfd_version_string="\"$(VERSION) + coff-avr-patch (20050630)\"" ;\
+ 	bfd_soversion="$(VERSION)" ;\
+ 	bfd_version_package="\"$(PKGVERSION)\"" ;\
+ 	report_bugs_to="\"$(REPORT_BUGS_TO)\"" ;\
  	if test "x$(RELEASE)" = x ; then \
  	  bfd_version_date=`sed -n -e 's/.*DATE //p' < $(srcdir)/version.h` ;\
--	  bfd_version_string="\"$(VERSION) $${bfd_version_date}\"" ;\
-+	  bfd_version_string="\"$(VERSION) $${bfd_version_date} + coff-avr-patch (20050630)\"" ;\
+-	  bfd_version_string="\"$(VERSION).$${bfd_version_date}\"" ;\
++	  bfd_version_string="\"$(VERSION).$${bfd_version_date} + coff-avr-patch (20050630)\"" ;\
+ 	  bfd_soversion="$(VERSION).$${bfd_version_date}" ;\
  	fi ;\
- 	sed -e "s/@bfd_version@/$$bfd_version/" -e "s/@bfd_version_string@/$$bfd_version_string/" < $(srcdir)/version.h > $@
- 
-@@ -1695,6 +1699,12 @@
-   $(INCDIR)/coff/internal.h $(INCDIR)/coff/m68k.h $(INCDIR)/coff/external.h \
-   coff-m68k.c $(INCDIR)/hashtab.h libcoff.h $(INCDIR)/bfdlink.h \
+ 	sed -e "s,@bfd_version@,$$bfd_version," \
+@@ -1766,6 +1770,12 @@
+   coff-m68k.c $(INCDIR)/hashtab.h $(INCDIR)/coff/m68k.h \
+   $(INCDIR)/coff/internal.h libcoff.h $(INCDIR)/bfdlink.h \
    coffcode.h coffswap.h
 +coff-avr.lo: coff-avr.c $(INCDIR)/filenames.h $(INCDIR)/coff/avr.h \
 +  $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
@@ -4036,8 +4065,9 @@
  coff-h8300.lo: coff-h8300.c $(INCDIR)/filenames.h $(INCDIR)/hashtab.h \
    $(INCDIR)/bfdlink.h genlink.h $(INCDIR)/coff/h8300.h \
    $(INCDIR)/coff/external.h $(INCDIR)/coff/internal.h \
---- ./bfd/coff-avr.c.orig	Tue Sep 26 00:25:05 2006
-+++ ./bfd/coff-avr.c	Tue Sep 26 00:25:05 2006
+diff -Nur ../binutils-2.18.orig/bfd/coff-avr.c ./bfd/coff-avr.c
+--- ../binutils-2.18.orig/bfd/coff-avr.c	Thu Jan  1 01:00:00 1970
++++ ./bfd/coff-avr.c	Tue Oct 23 22:18:44 2007
 @@ -0,0 +1,609 @@
 +/* BFD back-end for Atmel AVR COFF files.
 +   Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1999, 2000, 2001, 2003
@@ -4648,8 +4678,9 @@
 +
 +  COFF_SWAP_TABLE
 +};
---- ./bfd/coff-ext-avr.c.orig	Tue Sep 26 00:25:05 2006
-+++ ./bfd/coff-ext-avr.c	Tue Sep 26 00:25:05 2006
+diff -Nur ../binutils-2.18.orig/bfd/coff-ext-avr.c ./bfd/coff-ext-avr.c
+--- ../binutils-2.18.orig/bfd/coff-ext-avr.c	Thu Jan  1 01:00:00 1970
++++ ./bfd/coff-ext-avr.c	Tue Oct 23 22:18:44 2007
 @@ -0,0 +1,424 @@
 +/* BFD back-end for Atmel AVR "extended" COFF files.
 +   Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1999, 2000, 2001, 2003
@@ -5075,14 +5106,15 @@
 +
 +  COFF_SWAP_TABLE
 +};
---- ./bfd/coffcode.h.orig	Tue Oct 25 19:40:09 2005
-+++ ./bfd/coffcode.h	Tue Sep 26 00:25:05 2006
+diff -Nur ../binutils-2.18.orig/bfd/coffcode.h ./bfd/coffcode.h
+--- ../binutils-2.18.orig/bfd/coffcode.h	Tue Oct 23 21:44:07 2007
++++ ./bfd/coffcode.h	Tue Oct 23 22:18:44 2007
 @@ -1,3 +1,4 @@
 +
  /* Support for the generic parts of most COFF variants, for BFD.
     Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
-    2000, 2001, 2002, 2003, 2004, 2005
-@@ -1760,6 +1761,17 @@
+    2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007
+@@ -1769,6 +1770,17 @@
    coff->relocbase = 0;
    coff->local_toc_sym_map = 0;
  
@@ -5100,7 +5132,7 @@
  /*  make_abs_section(abfd);*/
  
    return TRUE;
-@@ -1784,17 +1796,6 @@
+@@ -1793,17 +1805,6 @@
  
    coff->sym_filepos = internal_f->f_symptr;
  
@@ -5118,7 +5150,7 @@
    coff->timestamp = internal_f->f_timdat;
  
    obj_raw_syment_count (abfd) =
-@@ -1915,6 +1916,11 @@
+@@ -1930,6 +1931,11 @@
  	}
        break;
  #endif
@@ -5130,7 +5162,7 @@
  #ifdef MC68MAGIC
      case MC68MAGIC:
      case M68MAGIC:
-@@ -2707,6 +2713,13 @@
+@@ -2726,6 +2732,13 @@
        return TRUE;
  #endif
  
@@ -5144,7 +5176,7 @@
  #ifdef PPCMAGIC
      case bfd_arch_powerpc:
        *magicp = PPCMAGIC;
-@@ -3498,6 +3511,11 @@
+@@ -3522,6 +3535,11 @@
        section.s_page = coff_get_section_load_page (current);
  #endif
  
@@ -5156,7 +5188,7 @@
  #ifdef COFF_WITH_PE
        section.s_paddr = 0;
  #endif
-@@ -3840,6 +3858,17 @@
+@@ -3866,6 +3884,17 @@
      internal_a.magic = ZMAGIC;
  #endif
  
@@ -5174,7 +5206,7 @@
  #if defined(PPC_PE)
  #define __A_MAGIC_SET__
      internal_a.magic = IMAGE_NT_OPTIONAL_HDR_MAGIC;
-@@ -3905,8 +3934,16 @@
+@@ -3933,8 +3962,16 @@
  #endif
    }
  
@@ -5191,7 +5223,7 @@
  
    /* Now should write relocs, strings, syms.  */
    obj_sym_filepos (abfd) = sym_base;
-@@ -4092,22 +4129,29 @@
+@@ -4120,22 +4157,29 @@
        char * buff;
        bfd_size_type amount = bfd_coff_aoutsz (abfd);
  
@@ -5231,7 +5263,7 @@
      }
  #ifdef RS6000COFF_C
    else
-@@ -4388,6 +4432,10 @@
+@@ -4491,6 +4535,10 @@
  	    /* In PE, 0x69 (105) denotes a weak external symbol.  */
  	    case C_NT_WEAK:
  #endif
@@ -5242,7 +5274,7 @@
  	      switch (coff_classify_symbol (abfd, &src->u.syment))
  		{
  		case COFF_SYMBOL_GLOBAL:
-@@ -4611,7 +4659,9 @@
+@@ -4714,7 +4762,9 @@
  		  && src->u.syment.n_scnum == 0)
  		break;
  	      /* Fall through.  */
@@ -5252,9 +5284,10 @@
  	    case C_ULABEL:	/* Undefined label.  */
  	    case C_USTATIC:	/* Undefined static.  */
  #ifndef COFF_WITH_PE
---- ./bfd/coffgen.c.orig	Mon May 23 19:44:52 2005
-+++ ./bfd/coffgen.c	Tue Sep 26 00:25:05 2006
-@@ -682,6 +682,20 @@
+diff -Nur ../binutils-2.18.orig/bfd/coffgen.c ./bfd/coffgen.c
+--- ../binutils-2.18.orig/bfd/coffgen.c	Tue Oct 23 21:44:07 2007
++++ ./bfd/coffgen.c	Tue Oct 23 23:07:23 2007
+@@ -687,6 +687,20 @@
  	      if (last_file != NULL)
  		last_file->n_value = native_index;
  	      last_file = &(s->u.syment);
@@ -5275,7 +5308,7 @@
  	    }
  	  else
  	    /* Modify the symbol values according to their section and
-@@ -810,6 +824,20 @@
+@@ -815,6 +829,20 @@
  	{
  	  if (name_length <= filnmlen)
  	    strncpy (auxent->x_file.x_fname, name, filnmlen);
@@ -5296,7 +5329,7 @@
  	  else
  	    {
  	      auxent->x_file.x_n.x_offset = *string_size_p + STRING_SIZE_SIZE;
-@@ -1213,7 +1241,11 @@
+@@ -1218,7 +1246,11 @@
  		  if (bfd_bwrite (".file", (bfd_size_type) 6, abfd) != 6)
  		    return FALSE;
  		}
@@ -5309,7 +5342,7 @@
  	    }
  	  else
  	    maxlen = bfd_coff_force_symnames_in_strings (abfd) ? 0 : SYMNMLEN;
-@@ -1648,14 +1680,27 @@
+@@ -1655,14 +1687,27 @@
  	    {
  	      /* Ordinary short filename, put into memory anyway.  The
                   Microsoft PE tools sometimes store a filename in
@@ -5319,7 +5352,7 @@
  	      if (internal_ptr->u.syment.n_numaux > 1
 -		  && coff_data (abfd)->pe)
 -		internal_ptr->u.syment._n._n_n._n_offset =
--		  ((long)
+-		  ((bfd_hostptr_t)
 -		   copy_name (abfd,
 -			      (internal_ptr + 1)->u.auxent.x_file.x_fname,
 -			      internal_ptr->u.syment.n_numaux * symesz));
@@ -5336,15 +5369,15 @@
 +		     into the aux records. */
 +		  b = (char *) bfd_alloc (abfd,
 +					  internal_ptr->u.syment.n_numaux * FILNMLEN + 1);
-+		  internal_ptr->u.syment._n._n_n._n_offset = (long) b;
++		  internal_ptr->u.syment._n._n_n._n_offset = (bfd_hostptr_t) b;
 +		  b[internal_ptr->u.syment.n_numaux * FILNMLEN] = '\0';
 +		  for (i = 0; i < internal_ptr->u.syment.n_numaux; i++, b += FILNMLEN)
 +		    memcpy (b, (internal_ptr + i + 1)->u.auxent.x_file.x_fname, FILNMLEN);
 +		}
  	      else
  		internal_ptr->u.syment._n._n_n._n_offset =
- 		  ((long)
-@@ -1761,9 +1806,9 @@
+ 		  ((bfd_hostptr_t)
+@@ -1768,9 +1813,9 @@
  
    if (new == NULL)
      return NULL;
@@ -5357,9 +5390,10 @@
    new->native = bfd_zalloc (abfd, amt);
    if (!new->native)
      return NULL;
---- ./bfd/coffswap.h.orig	Wed May  4 17:53:05 2005
-+++ ./bfd/coffswap.h	Tue Sep 26 00:25:05 2006
-@@ -382,7 +382,11 @@
+diff -Nur ../binutils-2.18.orig/bfd/coffswap.h ./bfd/coffswap.h
+--- ../binutils-2.18.orig/bfd/coffswap.h	Tue Oct 23 21:44:07 2007
++++ ./bfd/coffswap.h	Tue Oct 23 22:18:44 2007
+@@ -383,7 +383,11 @@
  		  void * ext1,
  		  int type,
  		  int class,
@@ -5372,7 +5406,7 @@
  		  int numaux,
  		  void * in1)
  {
-@@ -408,9 +412,13 @@
+@@ -409,9 +413,13 @@
  #else
  	  if (numaux > 1)
  	    {
@@ -5386,9 +5420,10 @@
  	    }
  	  else
  	    memcpy (in->x_file.x_fname, ext->x_file.x_fname, FILNMLEN);
---- ./bfd/config.bfd.orig	Wed Apr  5 14:41:57 2006
-+++ ./bfd/config.bfd	Tue Sep 26 00:25:05 2006
-@@ -309,6 +309,7 @@
+diff -Nur ../binutils-2.18.orig/bfd/config.bfd ./bfd/config.bfd
+--- ../binutils-2.18.orig/bfd/config.bfd	Tue Oct 23 21:44:07 2007
++++ ./bfd/config.bfd	Tue Oct 23 22:18:44 2007
+@@ -327,6 +327,7 @@
  
    avr-*-*)
      targ_defvec=bfd_elf32_avr_vec
@@ -5396,9 +5431,10 @@
      ;;
  
    bfin-*-*)
---- ./bfd/configure.orig	Fri Jun 23 20:17:03 2006
-+++ ./bfd/configure	Tue Sep 26 00:25:05 2006
-@@ -13064,6 +13064,8 @@
+diff -Nur ../binutils-2.18.orig/bfd/configure ./bfd/configure
+--- ../binutils-2.18.orig/bfd/configure	Tue Oct 23 21:44:09 2007
++++ ./bfd/configure	Tue Oct 23 22:18:44 2007
+@@ -19034,6 +19034,8 @@
      armpe_little_vec)		tb="$tb pe-arm.lo peigen.lo cofflink.lo " ;;
      armpei_big_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
      armpei_little_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
@@ -5407,9 +5443,10 @@
      b_out_vec_big_host)		tb="$tb bout.lo aout32.lo" ;;
      b_out_vec_little_host)	tb="$tb bout.lo aout32.lo" ;;
      bfd_efi_app_ia32_vec)	tb="$tb efi-app-ia32.lo peigen.lo cofflink.lo" ;;
---- ./bfd/configure.in.orig	Fri Jun 23 20:17:07 2006
-+++ ./bfd/configure.in	Tue Sep 26 00:25:05 2006
-@@ -577,6 +577,8 @@
+diff -Nur ../binutils-2.18.orig/bfd/configure.in ./bfd/configure.in
+--- ../binutils-2.18.orig/bfd/configure.in	Tue Oct 23 21:44:07 2007
++++ ./bfd/configure.in	Tue Oct 23 22:18:44 2007
+@@ -612,6 +612,8 @@
      armpe_little_vec)		tb="$tb pe-arm.lo peigen.lo cofflink.lo " ;;
      armpei_big_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
      armpei_little_vec)		tb="$tb pei-arm.lo peigen.lo cofflink.lo " ;;
@@ -5418,9 +5455,10 @@
      b_out_vec_big_host)		tb="$tb bout.lo aout32.lo" ;;
      b_out_vec_little_host)	tb="$tb bout.lo aout32.lo" ;;
      bfd_efi_app_ia32_vec)	tb="$tb efi-app-ia32.lo peigen.lo cofflink.lo" ;;
---- ./bfd/targets.c.orig	Wed Apr  5 14:41:57 2006
-+++ ./bfd/targets.c	Tue Sep 26 00:25:05 2006
-@@ -548,6 +548,8 @@
+diff -Nur ../binutils-2.18.orig/bfd/targets.c ./bfd/targets.c
+--- ../binutils-2.18.orig/bfd/targets.c	Tue Oct 23 21:44:09 2007
++++ ./bfd/targets.c	Tue Oct 23 22:18:44 2007
+@@ -558,6 +558,8 @@
  extern const bfd_target armpe_little_vec;
  extern const bfd_target armpei_big_vec;
  extern const bfd_target armpei_little_vec;
@@ -5429,7 +5467,7 @@
  extern const bfd_target b_out_vec_big_host;
  extern const bfd_target b_out_vec_little_host;
  extern const bfd_target bfd_efi_app_ia32_vec;
-@@ -848,6 +850,8 @@
+@@ -876,6 +878,8 @@
  	&armpe_little_vec,
  	&armpei_big_vec,
  	&armpei_little_vec,
@@ -5438,8 +5476,9 @@
  	&b_out_vec_big_host,
  	&b_out_vec_little_host,
  	&bfd_efi_app_ia32_vec,
---- ./include/coff/avr.h.orig	Tue Sep 26 00:25:05 2006
-+++ ./include/coff/avr.h	Tue Sep 26 00:25:06 2006
+diff -Nur ../binutils-2.18.orig/include/coff/avr.h ./include/coff/avr.h
+--- ../binutils-2.18.orig/include/coff/avr.h	Thu Jan  1 01:00:00 1970
++++ ./include/coff/avr.h	Tue Oct 23 22:18:44 2007
 @@ -0,0 +1,110 @@
 +/* coff information for Atmel AVR.
 +   
@@ -5551,9 +5590,10 @@
 +
 +#define RELOC struct external_reloc
 +#define RELSZ 10
---- ./include/coff/internal.h.orig	Sun Feb  5 12:57:34 2006
-+++ ./include/coff/internal.h	Tue Sep 26 00:25:06 2006
-@@ -592,6 +592,8 @@
+diff -Nur ../binutils-2.18.orig/include/coff/internal.h ./include/coff/internal.h
+--- ../binutils-2.18.orig/include/coff/internal.h	Tue Oct 23 21:44:43 2007
++++ ./include/coff/internal.h	Tue Oct 23 22:18:44 2007
+@@ -630,6 +630,8 @@
  
  };
  
