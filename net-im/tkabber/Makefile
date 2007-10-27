@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.jabber.ru/files/tkabber/
+MASTER_SITES=	http://files.jabber.ru/tkabber/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Tcl/Tk based jabber client
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
@@ -22,8 +21,8 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
 
-SUBDIRS=	aniemoteicons emoticons-tkabber ifacetk plugins \
-		jabberlib-tclxml pixmaps sounds textundo msgs mclistbox-1.02
+SUBDIRS=	contrib doc emoticons examples ifacetk jabberlib-tclxml mclistbox \
+		msgs pixmaps plugins sounds trans
 
 do-install:
 	${ECHO} -e "#!/bin/sh\nexec wish8.4 ${DATADIR}/tkabber.tcl \
@@ -34,8 +33,10 @@ do-install:
 .for i in ${SUBDIRS}
 	${CP} -R ${WRKSRC}/${i} ${DATADIR}
 .endfor
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in tkabber.html tkabber.xml
