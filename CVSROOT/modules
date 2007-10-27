@@ -15659,6 +15659,7 @@ tk85-thread	ports/x11-toolkits/tk85-thread
 tkXwin		ports/x11/tkXwin
 tkabber		ports/net-im/tkabber
 tkabber-devel	ports/net-im/tkabber-devel
+tkabber-plugins	ports/net-im/tkabber-plugins
 tkcon		ports/devel/tkcon
 tkcvs		ports/devel/tkcvs
 tkdesk		ports/x11-fm/tkdesk
