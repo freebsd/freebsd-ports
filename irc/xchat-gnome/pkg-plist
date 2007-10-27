@@ -38,29 +38,30 @@ share/xchat-gnome/dcc-window.glade
 share/xchat-gnome/irc-network-editor.glade
 share/xchat-gnome/message.wav
 share/xchat-gnome/preferences-dialog.glade
+share/xchat-gnome/preferences-notification.glade
 share/xchat-gnome/setup-dialog.glade
 share/xchat-gnome/topic-change.glade
 share/xchat-gnome/xchat-gnome-ui.xml
 share/xchat-gnome/xchat-gnome.glade
 share/icons/hicolor/128x128/apps/xchat-gnome.png
-share/icons/hicolor/16x16/apps/xchat-gnome-dcc.png
-share/icons/hicolor/16x16/apps/xchat-gnome-message-data.png
-share/icons/hicolor/16x16/apps/xchat-gnome-message-new.png
-share/icons/hicolor/16x16/apps/xchat-gnome-message-nickname-said.png
-share/icons/hicolor/16x16/apps/xchat-gnome-plugin.png
-share/icons/hicolor/16x16/apps/xchat-gnome-search-wrapped.png
-share/icons/hicolor/16x16/apps/xchat-gnome-status-halfop.png
-share/icons/hicolor/16x16/apps/xchat-gnome-status-operator.png
-share/icons/hicolor/16x16/apps/xchat-gnome-status-voice.png
-share/icons/hicolor/16x16/apps/xchat-gnome-users.png
-share/icons/hicolor/22x22/apps/xchat-gnome-message-new.png
-share/icons/hicolor/22x22/apps/xchat-gnome-message-nickname-said.png
-share/icons/hicolor/22x22/apps/xchat-gnome-plugin.png
-share/icons/hicolor/22x22/apps/xchat-gnome-status-halfop.png
-share/icons/hicolor/22x22/apps/xchat-gnome-status-operator.png
-share/icons/hicolor/22x22/apps/xchat-gnome-users.png
 share/icons/hicolor/48x48/apps/xchat-gnome.png
-share/icons/hicolor/scalable/apps/xchat-gnome-plugin.svg
+share/xchat-gnome/icons/hicolor/22x22/apps/xchat-gnome-message-new.png
+share/xchat-gnome/icons/hicolor/22x22/apps/xchat-gnome-status-halfop.png
+share/xchat-gnome/icons/hicolor/22x22/apps/xchat-gnome-message-nickname-said.png
+share/xchat-gnome/icons/hicolor/22x22/apps/xchat-gnome-users.png
+share/xchat-gnome/icons/hicolor/22x22/apps/xchat-gnome-plugin.png
+share/xchat-gnome/icons/hicolor/22x22/apps/xchat-gnome-status-operator.png
+share/xchat-gnome/icons/hicolor/16x16/apps/xchat-gnome-message-new.png
+share/xchat-gnome/icons/hicolor/16x16/apps/xchat-gnome-dcc.png
+share/xchat-gnome/icons/hicolor/16x16/apps/xchat-gnome-status-voice.png
+share/xchat-gnome/icons/hicolor/16x16/apps/xchat-gnome-search-wrapped.png
+share/xchat-gnome/icons/hicolor/16x16/apps/xchat-gnome-message-data.png
+share/xchat-gnome/icons/hicolor/16x16/apps/xchat-gnome-plugin.png
+share/xchat-gnome/icons/hicolor/16x16/apps/xchat-gnome-status-operator.png
+share/xchat-gnome/icons/hicolor/16x16/apps/xchat-gnome-users.png
+share/xchat-gnome/icons/hicolor/16x16/apps/xchat-gnome-message-nickname-said.png
+share/xchat-gnome/icons/hicolor/16x16/apps/xchat-gnome-status-halfop.png
+share/xchat-gnome/icons/hicolor/scalable/apps/xchat-gnome-plugin.svg
 share/locale/am/LC_MESSAGES/xchat-gnome.mo
 share/locale/az/LC_MESSAGES/xchat-gnome.mo
 share/locale/bg/LC_MESSAGES/xchat-gnome.mo
@@ -69,6 +70,7 @@ share/locale/ca/LC_MESSAGES/xchat-gnome.mo
 share/locale/cs/LC_MESSAGES/xchat-gnome.mo
 share/locale/da/LC_MESSAGES/xchat-gnome.mo
 share/locale/de/LC_MESSAGES/xchat-gnome.mo
+share/locale/dz/LC_MESSAGES/xchat-gnome.mo
 share/locale/el/LC_MESSAGES/xchat-gnome.mo
 share/locale/en_AU/LC_MESSAGES/xchat-gnome.mo
 share/locale/en_GB/LC_MESSAGES/xchat-gnome.mo
@@ -112,6 +114,14 @@ share/locale/wa/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_CN/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_HK/LC_MESSAGES/xchat-gnome.mo
 share/locale/zh_TW/LC_MESSAGES/xchat-gnome.mo
+@dirrm share/xchat-gnome/icons/hicolor/scalable/apps
+@dirrm share/xchat-gnome/icons/hicolor/scalable
+@dirrm share/xchat-gnome/icons/hicolor/22x22/apps
+@dirrm share/xchat-gnome/icons/hicolor/22x22
+@dirrm share/xchat-gnome/icons/hicolor/16x16/apps
+@dirrm share/xchat-gnome/icons/hicolor/16x16
+@dirrm share/xchat-gnome/icons/hicolor
+@dirrm share/xchat-gnome/icons
 @dirrm share/xchat-gnome
 @dirrm share/omf/xchat-gnome
 @dirrm share/gnome/help/xchat-gnome/C/figures
