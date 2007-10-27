@@ -1784,6 +1784,7 @@
     SUBDIR += pecl-expect
     SUBDIR += pecl-hidef
     SUBDIR += pecl-htscanner
+    SUBDIR += pecl-inclued
     SUBDIR += pecl-json
     SUBDIR += pecl-operator
     SUBDIR += pecl-runkit
