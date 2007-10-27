@@ -130,6 +130,7 @@
     SUBDIR += telepathy-salut
     SUBDIR += tkabber
     SUBDIR += tkabber-devel
+    SUBDIR += tkabber-plugins
     SUBDIR += tmsnc
     SUBDIR += vicq
     SUBDIR += vqcc-gtk
