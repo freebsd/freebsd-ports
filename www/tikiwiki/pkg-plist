@@ -1,4 +1,4 @@
-www/tikiwiki/INSTALL
+%%TIKIWIKI%%/INSTALL
 %%TIKIWIKI%%/README
 %%TIKIWIKI%%/_htaccess
 %%TIKIWIKI%%/about.php
@@ -3535,8 +3535,6 @@ www/tikiwiki/INSTALL
 @dirrm %%TIKIWIKI%%/popups
 @dirrm %%TIKIWIKI%%/modules/cache
 @dirrm %%TIKIWIKI%%/modules
-@dirrm %%TIKIWIKI%%/mods
-@dirrm %%TIKIWIKI%%/maps
 @dirrm %%TIKIWIKI%%/lib/wiki3d/src/test/br/arca/morcego
 @dirrm %%TIKIWIKI%%/lib/wiki3d/src/test/br/arca
 @dirrm %%TIKIWIKI%%/lib/wiki3d/src/test/br
