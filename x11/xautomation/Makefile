@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	xautomation
-PORTVERSION=	0.96
-PORTREVISION=	1
+PORTVERSION=	0.98
 CATEGORIES=	x11
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
@@ -17,11 +16,11 @@ COMMENT=	Control X from the command line for scripts
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_XLIB=	yes
+USE_XORG=	xtst
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/pat2ppm bin/patextract bin/png2pat bin/rgb2pat \
 		bin/visgrep bin/xte
