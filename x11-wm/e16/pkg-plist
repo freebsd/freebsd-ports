@@ -379,6 +379,8 @@ bin/starte16
 %%DATADIR%%/themes/winter/ttfonts/Vera.ttf
 %%DATADIR%%/themes/winter/ttfonts/VeraBd.ttf
 share/xsessions/e16.desktop
+share/xsessions/e16-gnome.desktop
+share/xsessions/e16-kde.desktop
 @dirrm %%DATADIR%%/E-docs
 @dirrm %%DATADIR%%/config/menus
 @dirrm %%DATADIR%%/config/pix
