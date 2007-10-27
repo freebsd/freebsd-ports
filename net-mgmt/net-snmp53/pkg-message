@@ -4,7 +4,8 @@
      lines into /etc/rc.conf.
 
 	snmpd_enable="YES"
-	snmpd_flags="-a -p /var/run/snmpd.pid"
+	snmpd_flags="-a"
+	snmpd_conffile="/usr/local/share/snmpd.conf /etc/snmpd.conf"
 	snmptrapd_enable="YES"
 	snmptrapd_flags="-a -p /var/run/snmptrapd.pid"
 

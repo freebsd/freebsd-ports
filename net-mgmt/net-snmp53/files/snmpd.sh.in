@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net-mgmt/net-snmp53/files/Attic/snmpd.sh.in,v 1.6 2007-03-25 12:35:45 kuriyama Exp $
+# $FreeBSD: /tmp/pcvs/ports/net-mgmt/net-snmp53/files/Attic/snmpd.sh.in,v 1.7 2007-10-27 07:20:34 kuriyama Exp $
 #
 # PROVIDE: snmpd
 # REQUIRE: DAEMON
@@ -52,14 +52,27 @@ case "${snmpd_flags}" in
 	;;
 esac
 
+for conffile in ${snmpd_conffile}; do
+	if [ ! -z ${conffile} -a -f ${conffile} ]; then
+	       if [ -z ${snmpd_conffile_set} ]; then
+		       snmpd_conffile_set="${conffile}"
+	       else
+		       snmpd_conffile_set="${snmpd_conffile_set},${conffile}"
+	       fi
+	else
+	       echo "snmpd configuration file $conffile not set or not found."
+	       exit 1
+	fi
+done
+
 case "${snmpd_flags}" in
 *-c\ *)
 	echo "Warning: \$snmpd_flags includes -c option." \
 		"Please use \$snmpd_conffile instead."
 	;;
 *)
-	if [ ! -z "${snmpd_conffile}" -a -f ${snmpd_conffile} ]; then
-		snmpd_flags="-c ${snmpd_conffile} ${snmpd_flags}"
+	if [ ! -z "${snmpd_conffile_set}" ]; then
+		snmpd_flags="-c ${snmpd_conffile_set} ${snmpd_flags}"
 	fi
 	;;
 esac
