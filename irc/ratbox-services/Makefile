@@ -6,12 +6,13 @@
 
 PORTNAME=	ratbox-services
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/${PORTNAME}/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/${PORTNAME}/ \
 		http://services.ircd-ratbox.org/download/		\
-		ftp://ftp.parodius.com/pub/ircd-ratbox/${PORTNAME}/
+		ftp://ftp.parodius.com/pub/ircd-ratbox/${PORTNAME}/	\
+		http://services.ircd-ratbox.org/download/old/
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=	http://www.elasticmind.net/freebsd/ports/distfiles/	\
@@ -182,6 +183,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/INSTALL.sqlite ${DOCSDIR}/INSTALL.sqlite
 	${INSTALL_DATA} ${WRKSRC}/UPGRADING ${DOCSDIR}/UPGRADING
 	${INSTALL_DATA} ${WRKSRC}/DBMOVE ${DOCSDIR}/DBMOVE
+
+	@if [ ! -f ${PREFIX}/etc/ratbox-services.conf ]; then \
+		${ECHO} "Installing default configuration file."; \
+		${CP} -p ${PREFIX}/etc/ratbox-services.conf.sample ${PREFIX}/etc/ratbox-services.conf ; \
+	fi
 
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
