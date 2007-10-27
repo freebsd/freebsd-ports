@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Request
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	www pear
 
 MAINTAINER=	chinsan@FreeBSD.org
