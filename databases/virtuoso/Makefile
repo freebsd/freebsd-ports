@@ -24,6 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"\
 		LDFLAGS="-L${LOCALBASE}/lib"
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
+ONLY_FOR_ARCHS=	i386
 
 OPTIONS=	IMAGEMAGICK "ImageMagick support" off\
 		KERBEROS "Kerberos extension" off\
