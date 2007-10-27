@@ -1,5 +1,6 @@
 bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/HARDWARE
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -48,9 +49,13 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/current_ce_value.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/custom.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/dark_yamyam.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/dc_gate_fake_gray.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/dc_gate_white.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/dc_gate_white_gray.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/dc_key_white.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/dc_landmine.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/dc_magic_wall.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/diamond.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/door_white.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/door_white_gray.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/dragon.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/dx_supabomb.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/dynabomb_increase_number.txt
@@ -58,6 +63,8 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/dynabomb_increase_size.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/dynamite.active.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/dynamite.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/em_exit_closed.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/em_exit_open.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/em_gate_1.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/em_gate_1_gray.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/em_gate_2.txt
@@ -70,6 +77,8 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/em_key_2.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/em_key_3.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/em_key_4.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/em_steel_exit_closed.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/em_steel_exit_open.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/emc_android.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/emc_dripper.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/emc_fake_acid.txt
@@ -103,6 +112,7 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/expandable_wall_horizontal.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/expandable_wall_vertical.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/extra_time.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/frankie.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/game_of_life.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/gate_1.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/gate_1_gray.txt
@@ -120,7 +130,6 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/key_2.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/key_3.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/key_4.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/key_white.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/lamp.active.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/lamp.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/landmine.txt
@@ -140,6 +149,8 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/player_4.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/prev_ce.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/quicksand_empty.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/quicksand_fast_empty.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/quicksand_fast_full.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/quicksand_full.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/robot.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/robot_wheel.txt
@@ -149,8 +160,7 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/self.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/shield_deadly.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/shield_normal.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sign_exclamation.txt
-%%PORTDOCS%%%%DOCSDIR%%/elements/sign_stop.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/sign.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/sokoban_field_empty.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/sokoban_field_full.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/sokoban_field_player.txt
@@ -194,6 +204,9 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/spaceship.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/speed_pill.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/spring.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/steel_char.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/steel_exit_closed.txt
+%%PORTDOCS%%%%DOCSDIR%%/elements/steel_exit_open.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/steelwall.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/steelwall_slippery.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/stoneblock.txt
@@ -223,11 +236,14 @@ bin/rocksndiamonds
 %%PORTDOCS%%%%DOCSDIR%%/elements/wall_pearl.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/wall_slippery.txt
 %%PORTDOCS%%%%DOCSDIR%%/elements/yamyam.txt
+%%DATADIR%%/graphics/gfx_classic/RocksBusy.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksDC.pcx
+%%DATADIR%%/graphics/gfx_classic/RocksDC2.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksDoor.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksEMC.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksElements.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksFontBig.pcx
+%%DATADIR%%/graphics/gfx_classic/RocksFontDC.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksFontEM.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksFontMedium.pcx
 %%DATADIR%%/graphics/gfx_classic/RocksFontSmall.pcx
