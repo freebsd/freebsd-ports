@@ -52,14 +52,27 @@ case "${snmpd_flags}" in
 	;;
 esac
 
+for conffile in ${snmpd_conffile}; do
+	if [ ! -z ${conffile} -a -f ${conffile} ]; then
+	       if [ -z ${snmpd_conffile_set} ]; then
+		       snmpd_conffile_set="${conffile}"
+	       else
+		       snmpd_conffile_set="${snmpd_conffile_set},${conffile}"
+	       fi
+	else
+	       echo "snmpd configuration file $conffile not set or not found."
+	       exit 1
+	fi
+done
+
 case "${snmpd_flags}" in
 *-c\ *)
 	echo "Warning: \$snmpd_flags includes -c option." \
 		"Please use \$snmpd_conffile instead."
 	;;
 *)
-	if [ ! -z "${snmpd_conffile}" -a -f ${snmpd_conffile} ]; then
-		snmpd_flags="-c ${snmpd_conffile} ${snmpd_flags}"
+	if [ ! -z "${snmpd_conffile_set}" ]; then
+		snmpd_flags="-c ${snmpd_conffile_set} ${snmpd_flags}"
 	fi
 	;;
 esac
