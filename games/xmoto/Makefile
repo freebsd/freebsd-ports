@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://www.amdmi3.ru/distfiles/
@@ -69,14 +69,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/||; s|endian.h|sys/endian.h|' \
-		${WRKSRC}/src/VCommon.h
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
-		${WRKSRC}/src/image/tim_memory_crt.cpp
-	@${REINPLACE_CMD} -e \
-		'/LIBS/ s|-lSDL_mixer|`${SDL_CONFIG} --libs` &|; \
-		 s|^function \([a-zA-Z]*\)|\1()|; \
-		 /Locales/ s|libc|libintl|; s|lua50|luaxx|g' \
+	@${REINPLACE_CMD} -e '/LIBS/ s|-lSDL_mixer|`${SDL_CONFIG} --libs` &|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/mang|/man6|' ${WRKSRC}/Makefile.in
 
