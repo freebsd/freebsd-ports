@@ -1,7 +1,7 @@
---- config.mk.orig	Mon Aug 20 00:36:39 2007
-+++ config.mk	Mon Aug 20 00:48:16 2007
-@@ -7,19 +7,19 @@
- SRC = tile.c
+--- config.mk.orig	2007-10-25 20:24:37.000000000 +0200
++++ config.mk	2007-10-27 00:42:50.000000000 +0200
+@@ -4,21 +4,21 @@
+ # Customize below to fit your system
  
  # paths
 -PREFIX = /usr/local
@@ -21,12 +21,16 @@
  # flags
 -CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
 -LDFLAGS = -s ${LIBS}
+-CFLAGS = -g -std=c99 -pedantic -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
+-LDFLAGS = -g ${LIBS}
 +CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
 +LDFLAGS+= ${LIBS}
- #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
- #LDFLAGS = -g ${LIBS}
++#CFLAGS = -g -std=c99 -pedantic -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
++#LDFLAGS = -g ${LIBS}
  
-@@ -29,4 +29,4 @@
+ # Solaris
+ #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
+@@ -26,4 +26,4 @@
  #CFLAGS += -xtarget=ultra
  
  # compiler and linker
