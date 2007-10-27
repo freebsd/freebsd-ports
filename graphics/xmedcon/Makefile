@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xmedcon
-PORTVERSION=	0.9.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.10
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A medical image conversion utility and library
@@ -32,7 +30,6 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_SUBMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/xmedcon \
