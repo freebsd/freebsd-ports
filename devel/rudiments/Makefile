@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	rudiments
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility C++ class library for daemons, clients, servers and more
 
-USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	pkgconfig
-USE_GMAKE=	yes
+USE_GNOME=	gnometarget pkgconfig
 USE_OPENSSL=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ssl-includes=-I${OPENSSLBASE}/include \
-		--with-ssl-libs=-L${OPENSSLBASE}/lib --disable-pcre
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
 		PTHREADLIB="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--with-ssl-includes=-I${OPENSSLINC} \
+		--with-ssl-libs=-L${OPENSSLLIB} \
+		--disable-pcre
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
