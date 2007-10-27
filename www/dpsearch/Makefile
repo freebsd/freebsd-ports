@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dpsearch
-PORTVERSION=	4.47
+PORTVERSION=	4.48
 CATEGORIES=	www
 MASTER_SITES=	http://www.dataparksearch.org/ \
 		http://dataparksearch.newsa.ru/
