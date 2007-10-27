@@ -35,7 +35,7 @@ AUTOMAKE_ARGS=	-c -a
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.* | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-D.*_DISABLE_DEPRECATED||g'
+		's|-DG.*_DISABLE_DEPRECATED||g'
 
 pre-configure:
 	@echo "===>  Regenerating ${WRKSRC}/libmodifiedgtk2/Makefile.in"
