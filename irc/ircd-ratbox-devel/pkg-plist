@@ -7,8 +7,6 @@ bin/viconf
 bin/viklines
 bin/vimotd
 etc/ircd-ratbox/ircd-efnet.conf.sample
-etc/ircd-ratbox/ircd.conf.sample
-etc/ircd-ratbox/ircd.motd.sample
 lib/ircd-ratbox/modules/autoload/m_accept.so
 lib/ircd-ratbox/modules/autoload/m_admin.so
 lib/ircd-ratbox/modules/autoload/m_away.so
@@ -232,6 +230,12 @@ lib/ircd-ratbox/modules/m_squit.so
 @unexec f="%D/etc/ircd-ratbox/kline.conf"; if [ ! -s "$f" ]; then rm -f "$f"; fi
 @unexec f="%D/etc/ircd-ratbox/resv.conf";  if [ ! -s "$f" ]; then rm -f "$f"; fi
 @unexec f="%D/etc/ircd-ratbox/xline.conf"; if [ ! -s "$f" ]; then rm -f "$f"; fi
+@unexec if cmp -s %D/etc/ircd-ratbox/ircd.conf.sample %D/etc/ircd-ratbox/ircd.conf; then rm -f %D/etc/ircd-ratbox/ircd.conf; fi
+etc/ircd-ratbox/ircd.conf.sample
+@exec if [ ! -f %D/etc/ircd-ratbox/ircd.conf ] ; then cp -p %D/%F %B/ircd.conf; fi
+@unexec if cmp -s %D/etc/ircd-ratbox/ircd.motd.sample %D/etc/ircd-ratbox/ircd.motd; then rm -f %D/etc/ircd-ratbox/ircd.motd; fi
+etc/ircd-ratbox/ircd.motd.sample
+@exec if [ ! -f %D/etc/ircd-ratbox/ircd.motd ] ; then cp -p %D/%F %B/ircd.motd; fi
 @dirrmtry etc/ircd-ratbox
-@unexec rmdir %%LOGDIR%% 2>/dev/null || true
-@unexec rmdir %%RUNDIR%% 2>/dev/null || true
+@dirrmtry %%LOGDIR%%
+@dirrmtry %%RUNDIR%%

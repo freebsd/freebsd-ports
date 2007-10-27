@@ -8,16 +8,18 @@
 
 PORTNAME=	ircd-ratbox
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/		\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/		\
 		http://www.ircd-ratbox.org/download/			\
-		ftp://ftp.parodius.com/pub/ircd-ratbox/
+		ftp://ftp.parodius.com/pub/ircd-ratbox/			\
+		http://www.ircd-ratbox.org/download/old/
 PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	moggie@elasticmind.net
-COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers ('testing' release)
+COMMENT=	Advanced, stable IRC daemon, used widely on EFnet ('testing' release)
 
 CONFLICTS=	ircd-ratbox-[0-9]*
 
@@ -137,6 +139,16 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/ircd.motd ${PREFIX}/etc/${PORTNAME}/ircd.motd.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/example.conf ${PREFIX}/etc/${PORTNAME}/ircd.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/example.efnet.conf ${PREFIX}/etc/${PORTNAME}/ircd-efnet.conf.sample
+
+	@if [ ! -f ${PREFIX}/etc/${PORTNAME}/ircd.conf ]; then \
+		${ECHO} "Installing default configuration file."; \
+		${CP} -p ${PREFIX}/etc/${PORTNAME}/ircd.conf.sample ${PREFIX}/etc/${PORTNAME}/ircd.conf ; \
+	fi
+
+	@if [ ! -f ${PREFIX}/etc/${PORTNAME}/ircd.motd ]; then \
+		${ECHO} "Installing default motd file."; \
+		${CP} -p ${PREFIX}/etc/${PORTNAME}/ircd.motd.sample ${PREFIX}/etc/${PORTNAME}/ircd.motd ; \
+	fi
 
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
