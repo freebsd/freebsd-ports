@@ -2,12 +2,10 @@
 bin/jalbum
 %%DATADIR%%/JAlbum.jar
 %%DATADIR%%/StartJAlbum.bat
-%%DATADIR%%/filetypes.xml
 %%DATADIR%%/includes/printing.bsh
 %%DATADIR%%/includes/printing.inc
 %%DATADIR%%/includes/shutterfly.inc
 %%DATADIR%%/includes/test.inc
-%%DATADIR%%/init.bsh
 %%DATADIR%%/license/JSCH.txt
 %%DATADIR%%/license/Jetty.txt
 %%DATADIR%%/license/edtFTPj.txt
@@ -82,6 +80,8 @@ bin/jalbum
 %%DATADIR%%/skins/BananAlbum/onload.bsh
 %%DATADIR%%/skins/BananAlbum/preview.jpg
 %%DATADIR%%/skins/BananAlbum/res/BananAlbum.swf
+%%DATADIR%%/skins/BananAlbum/res/PleaseEnableJavascript.gif
+%%DATADIR%%/skins/BananAlbum/res/PleaseUpdateFlashPlayer.gif
 %%DATADIR%%/skins/BananAlbum/res/bananatree/arial-no-icon.swf
 %%DATADIR%%/skins/BananAlbum/res/bananatree/arial-tree.swf
 %%DATADIR%%/skins/BananAlbum/res/bananatree/chicago-tree.swf
@@ -93,8 +93,10 @@ bin/jalbum
 %%DATADIR%%/skins/BananAlbum/res/download.html
 %%DATADIR%%/skins/BananAlbum/res/download.php
 %%DATADIR%%/skins/BananAlbum/res/folder.gif
+%%DATADIR%%/skins/BananAlbum/res/index.html
 %%DATADIR%%/skins/BananAlbum/res/loading.gif
 %%DATADIR%%/skins/BananAlbum/res/scripts.js
+%%DATADIR%%/skins/BananAlbum/res/swfobject.js
 %%DATADIR%%/skins/BananAlbum/res/typefaces/arial.swf
 %%DATADIR%%/skins/BananAlbum/res/typefaces/chicago.swf
 %%DATADIR%%/skins/BananAlbum/res/typefaces/custom1.fla
@@ -522,6 +524,7 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_uk.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_zh.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_zh.properties_original
+%%DATADIR%%/skins/Chameleon/config/cameras.properties
 %%DATADIR%%/skins/Chameleon/guestbook/guestbook.swf
 %%DATADIR%%/skins/Chameleon/guestbook/processXML.php
 %%DATADIR%%/skins/Chameleon/help.htt
@@ -529,6 +532,8 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/help/albuminfo.png
 %%DATADIR%%/skins/Chameleon/help/bg.jpg
 %%DATADIR%%/skins/Chameleon/help/colormap.jpg
+%%DATADIR%%/skins/Chameleon/help/design.html
+%%DATADIR%%/skins/Chameleon/help/design.png
 %%DATADIR%%/skins/Chameleon/help/filters.html
 %%DATADIR%%/skins/Chameleon/help/filters1.png
 %%DATADIR%%/skins/Chameleon/help/filters2.png
@@ -540,6 +545,8 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/help/general.png
 %%DATADIR%%/skins/Chameleon/help/graysc.jpg
 %%DATADIR%%/skins/Chameleon/help/grayscandcolormap.jpg
+%%DATADIR%%/skins/Chameleon/help/guestbook.html
+%%DATADIR%%/skins/Chameleon/help/guestbook.png
 %%DATADIR%%/skins/Chameleon/help/head1.gif
 %%DATADIR%%/skins/Chameleon/help/head2.gif
 %%DATADIR%%/skins/Chameleon/help/help.css
@@ -553,11 +560,16 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/help/metadata.png
 %%DATADIR%%/skins/Chameleon/help/metadata2.png
 %%DATADIR%%/skins/Chameleon/help/metadata3.png
+%%DATADIR%%/skins/Chameleon/help/metadata4.png
+%%DATADIR%%/skins/Chameleon/help/metadata5.png
+%%DATADIR%%/skins/Chameleon/help/selling.html
+%%DATADIR%%/skins/Chameleon/help/selling.png
 %%DATADIR%%/skins/Chameleon/help/slide.png
 %%DATADIR%%/skins/Chameleon/help/slidepage.html
 %%DATADIR%%/skins/Chameleon/help/styles.html
 %%DATADIR%%/skins/Chameleon/help/thumbs.html
 %%DATADIR%%/skins/Chameleon/help/thumbs.png
+%%DATADIR%%/skins/Chameleon/help/thumbs2.png
 %%DATADIR%%/skins/Chameleon/hints.jap
 %%DATADIR%%/skins/Chameleon/includes/guestbook.inc
 %%DATADIR%%/skins/Chameleon/includes/indexscripts.inc
@@ -609,6 +621,12 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/plugins/Gui$40.class
 %%DATADIR%%/skins/Chameleon/plugins/Gui$41.class
 %%DATADIR%%/skins/Chameleon/plugins/Gui$42.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$43.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$44.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$45.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$46.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$47.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$48.class
 %%DATADIR%%/skins/Chameleon/plugins/Gui$5.class
 %%DATADIR%%/skins/Chameleon/plugins/Gui$6.class
 %%DATADIR%%/skins/Chameleon/plugins/Gui$7.class
@@ -616,6 +634,7 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/plugins/Gui$9.class
 %%DATADIR%%/skins/Chameleon/plugins/Gui.class
 %%DATADIR%%/skins/Chameleon/plugins/JColorBox.class
+%%DATADIR%%/skins/Chameleon/plugins/JFileFilter.class
 %%DATADIR%%/skins/Chameleon/plugins/Laza.jpg
 %%DATADIR%%/skins/Chameleon/plugins/SkinPanel.class
 %%DATADIR%%/skins/Chameleon/res/avi.gif
@@ -633,6 +652,7 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/res/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/res/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/res/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/res/heart.gif
 %%DATADIR%%/skins/Chameleon/res/idx.gif
 %%DATADIR%%/skins/Chameleon/res/idx1.gif
 %%DATADIR%%/skins/Chameleon/res/movie.gif
@@ -1464,6 +1484,7 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/substyles/White/Yellow/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/substyles/White/Yellow/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/texts/texts.properties
+%%DATADIR%%/skins/Chameleon/texts/texts_bs.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_cs.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_da.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_de.properties
@@ -1494,6 +1515,53 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/styles.inc
 %%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/titles.properties
 %%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/variables.inc
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/download.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/foldernew.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/help.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/info.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/orderprints.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground/zoom.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/download.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/first.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/folder.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/foldernew.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/help.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/index.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/index_next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/index_next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/index_previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/index_previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/info.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/last.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/last_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/movie.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/next.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/next_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/orderprints.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/previous.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/previous_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/slideshowstart.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/slideshowstop.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/up.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/warning_icon.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground/zoom.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/first.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/first_disabled.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/help1.gif
@@ -1518,6 +1586,7 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground/zoom.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/first.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/foldernew.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/help1.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/index.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground/index_next.gif
@@ -1562,6 +1631,7 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground/zoom.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/first.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/foldernew.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/help1.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/index.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-lightbackground/index_next.gif
@@ -1707,6 +1777,7 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-darkbackground/zoom.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/first.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/foldernew.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/help1.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/index.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-21px-lightbackground/index_next.gif
@@ -1751,6 +1822,7 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground/zoom.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/first.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/first_disabled.gif
+%%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/foldernew.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/help1.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/index.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/index_next.gif
@@ -1771,7 +1843,6 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/slideshowstop.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/up.gif
 %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground/zoom.gif
-%%DATADIR%%/skins/ExhibitPlus/cameras.properties
 %%DATADIR%%/skins/ExhibitPlus/changelog.txt
 %%DATADIR%%/skins/ExhibitPlus/guestbook.inc
 %%DATADIR%%/skins/ExhibitPlus/guestbook/processXML.php
@@ -1779,14 +1850,9 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/index.bsh
 %%DATADIR%%/skins/ExhibitPlus/index.htt
 %%DATADIR%%/skins/ExhibitPlus/init.bsh
-%%DATADIR%%/skins/ExhibitPlus/next_version.txt
 %%DATADIR%%/skins/ExhibitPlus/onload.bsh
 %%DATADIR%%/skins/ExhibitPlus/originalslide.htt
 %%DATADIR%%/skins/ExhibitPlus/originalslide2.htt
-%%DATADIR%%/skins/ExhibitPlus/patches/bugfix_14-001.txt
-%%DATADIR%%/skins/ExhibitPlus/patches/bugfix_14-002.txt
-%%DATADIR%%/skins/ExhibitPlus/patches/bugfix_14-003.txt
-%%DATADIR%%/skins/ExhibitPlus/patches/bugfix_14-004.txt
 %%DATADIR%%/skins/ExhibitPlus/plugins/Compile.bat
 %%DATADIR%%/skins/ExhibitPlus/plugins/Utils.class
 %%DATADIR%%/skins/ExhibitPlus/plugins/Utils.java
@@ -1794,10 +1860,10 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/res/basestyle.css
 %%DATADIR%%/skins/ExhibitPlus/res/download.gif
 %%DATADIR%%/skins/ExhibitPlus/res/folder.gif
-%%DATADIR%%/skins/ExhibitPlus/res/folder2.gif
 %%DATADIR%%/skins/ExhibitPlus/res/foldernew.gif
 %%DATADIR%%/skins/ExhibitPlus/res/guestbook.swf
 %%DATADIR%%/skins/ExhibitPlus/res/help.gif
+%%DATADIR%%/skins/ExhibitPlus/res/index.html
 %%DATADIR%%/skins/ExhibitPlus/res/info.gif
 %%DATADIR%%/skins/ExhibitPlus/res/keyboard.js
 %%DATADIR%%/skins/ExhibitPlus/res/movie.gif
@@ -1808,7 +1874,7 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/res/orderprints.gif
 %%DATADIR%%/skins/ExhibitPlus/res/purplestripe.gif
 %%DATADIR%%/skins/ExhibitPlus/res/warning_icon.gif
-%%DATADIR%%/skins/ExhibitPlus/shutterfly_xhtml.inc
+%%DATADIR%%/skins/ExhibitPlus/shutterfly_html.inc
 %%DATADIR%%/skins/ExhibitPlus/slide.bsh
 %%DATADIR%%/skins/ExhibitPlus/slide.htt
 %%DATADIR%%/skins/ExhibitPlus/styles/black.css
@@ -1819,13 +1885,22 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/styles/dark.jpg
 %%DATADIR%%/skins/ExhibitPlus/styles/green.css
 %%DATADIR%%/skins/ExhibitPlus/styles/green.jpg
+%%DATADIR%%/skins/ExhibitPlus/styles/light-blue.css
+%%DATADIR%%/skins/ExhibitPlus/styles/light-blue.jpg
 %%DATADIR%%/skins/ExhibitPlus/styles/light.css
 %%DATADIR%%/skins/ExhibitPlus/styles/light.jpg
-%%DATADIR%%/skins/ExhibitPlus/styles/light2.css
 %%DATADIR%%/skins/ExhibitPlus/styles/metodi-black.css
 %%DATADIR%%/skins/ExhibitPlus/styles/metodi-black.jpg
+%%DATADIR%%/skins/ExhibitPlus/styles/mid-gray.css
+%%DATADIR%%/skins/ExhibitPlus/styles/mid-gray.jpg
+%%DATADIR%%/skins/ExhibitPlus/styles/white.css
+%%DATADIR%%/skins/ExhibitPlus/styles/white.jpg
+%%DATADIR%%/skins/ExhibitPlus/styles/zframe-white.css
+%%DATADIR%%/skins/ExhibitPlus/styles/zframe-white.jpg
 %%DATADIR%%/skins/ExhibitPlus/texts/texts.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_ca.properties
 %%DATADIR%%/skins/ExhibitPlus/texts/texts_cs.properties
+%%DATADIR%%/skins/ExhibitPlus/texts/texts_da.properties
 %%DATADIR%%/skins/ExhibitPlus/texts/texts_de.properties
 %%DATADIR%%/skins/ExhibitPlus/texts/texts_en.properties
 %%DATADIR%%/skins/ExhibitPlus/texts/texts_es.properties
@@ -1835,7 +1910,6 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/texts/texts_is.properties
 %%DATADIR%%/skins/ExhibitPlus/texts/texts_it.properties
 %%DATADIR%%/skins/ExhibitPlus/texts/texts_ja.properties
-%%DATADIR%%/skins/ExhibitPlus/texts/texts_ja.txt
 %%DATADIR%%/skins/ExhibitPlus/texts/texts_nl.properties
 %%DATADIR%%/skins/ExhibitPlus/texts/texts_pt.properties
 %%DATADIR%%/skins/ExhibitPlus/texts/texts_sr.properties
@@ -1914,7 +1988,6 @@ bin/jalbum
 %%DATADIR%%/skins/Mamba/slide.htt
 %%DATADIR%%/skins/Mamba/styles/Black.css
 %%DATADIR%%/skins/Minimal/about.txt
-%%DATADIR%%/skins/Minimal/hints.jap
 %%DATADIR%%/skins/Minimal/index.htt
 %%DATADIR%%/skins/Minimal/preview.jpg
 %%DATADIR%%/skins/Minimal/res/camera.gif
@@ -2155,6 +2228,9 @@ bin/jalbum
 %%DATADIR%%/sunos/jdic_stub.jar
 %%DATADIR%%/sunos/sparc/libtray.so
 %%DATADIR%%/sunos/x86/libtray.so
+%%DATADIR%%/system/cameras.properties
+%%DATADIR%%/system/filetypes.xml
+%%DATADIR%%/system/init.bsh
 %%DATADIR%%/texts/texts.properties
 %%DATADIR%%/texts/texts_bg.properties
 %%DATADIR%%/texts/texts_ca.properties
@@ -2175,6 +2251,7 @@ bin/jalbum
 %%DATADIR%%/texts/texts_no.properties
 %%DATADIR%%/texts/texts_pl.properties
 %%DATADIR%%/texts/texts_pt.properties
+%%DATADIR%%/texts/texts_ro.properties
 %%DATADIR%%/texts/texts_ru.properties
 %%DATADIR%%/texts/texts_sh.properties
 %%DATADIR%%/texts/texts_sk.properties
@@ -2194,15 +2271,18 @@ bin/jalbum
 %%DATADIR%%/tools/Perform garbage collection.bsh
 %%DATADIR%%/tools/Replace spaces with underscores.bsh
 %%DATADIR%%/tools/Reset file date to camera date.bsh
+%%DATADIR%%/tools/Reset folder date to last file date.bsh
 %%DATADIR%%/tools/Sample tool.bsh
 %%DATADIR%%/tools/Server mode.bsh
 %%DATADIR%%/tools/Show supported file types.bsh
 %%DATADIR%%/windows/jdic_stub.jar
+%%DATADIR%%/windows/x86/jdic_fileutil.dll
 %%DATADIR%%/windows/x86/tray.dll
 @dirrm %%DATADIR%%/windows/x86
 @dirrm %%DATADIR%%/windows
 @dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%/texts
+@dirrm %%DATADIR%%/system
 @dirrm %%DATADIR%%/sunos/x86
 @dirrm %%DATADIR%%/sunos/sparc
 @dirrm %%DATADIR%%/sunos
@@ -2257,7 +2337,6 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/ExhibitPlus/styles
 @dirrm %%DATADIR%%/skins/ExhibitPlus/res
 @dirrm %%DATADIR%%/skins/ExhibitPlus/plugins
-@dirrm %%DATADIR%%/skins/ExhibitPlus/patches
 @dirrm %%DATADIR%%/skins/ExhibitPlus/guestbook
 @dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-lightbackground
 @dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/silver-32px-darkbackground
@@ -2272,6 +2351,8 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-32px-darkbackground
 @dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-lightbackground
 @dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/gold-21px-darkbackground
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/crystal-22px-lightbackground
+@dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets/aqua-32px-lightbackground
 @dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets
 @dirrm %%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory
 @dirrm %%DATADIR%%/skins/ExhibitPlus
@@ -2343,6 +2424,7 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Chameleon/includes
 @dirrm %%DATADIR%%/skins/Chameleon/help
 @dirrm %%DATADIR%%/skins/Chameleon/guestbook
+@dirrm %%DATADIR%%/skins/Chameleon/config
 @dirrm %%DATADIR%%/skins/Chameleon
 @dirrm %%DATADIR%%/skins/BluPlusPlus/texts
 @dirrm %%DATADIR%%/skins/BluPlusPlus/styles
