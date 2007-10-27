@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-libdns
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	mDNSResponder compatibility from Avahi
 
-LIB_DEPENDS=	avahi-common.3:${PORTSDIR}/net/avahi
+LIB_DEPENDS=	avahi-common.3:${PORTSDIR}/net/avahi-app
 
 MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-compat-libdns_sd
