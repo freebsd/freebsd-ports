@@ -1,3 +1,6 @@
 MD5 (libiconv-1.11.tar.gz) = b77a17e4a5a817100ad4b2613935055e
 SHA256 (libiconv-1.11.tar.gz) = fbf5b9a63ea6e3abebfabc04506f0e18a2860071031e34ea4ad4f450b8c43d4b
 SIZE (libiconv-1.11.tar.gz) = 4430930
+MD5 (libiconv-1.11-cp932.patch.gz) = 1d6c7711b6ec76c9c42230d8e097baa0
+SHA256 (libiconv-1.11-cp932.patch.gz) = 48ed20ab2bd59d9af9fa6d4328b363849bf0e155b70bdbe137dc8973341b65d1
+SIZE (libiconv-1.11-cp932.patch.gz) = 112830
