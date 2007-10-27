@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-autoipd
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	IPv4LL network address configuration daemon
 
-LIB_DEPENDS=	avahi-common.3:${PORTSDIR}/net/avahi
+LIB_DEPENDS=	avahi-common.3:${PORTSDIR}/net/avahi-app
 
 MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-autoipd
