@@ -6,27 +6,35 @@
 #
 
 PORTNAME=	toppler
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTVERSION=	1.1.3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	toppler
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game where you have to climb the tower and avoid the monsters
 
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnometarget
+USE_SDL=	mixer sdl
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_SDL=	mixer sdl
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"  \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-lintl"
-CONFIGURE_ARGS=	--program-transform-name= --localstatedir=/var/games
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--localstatedir=/var/games
 
 MAN6=		toppler.6
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|DATA install-dist_pkgdocDATA|DATA|g' ${WRKSRC}/Makefile.in
+
 post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS ChangeLog NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 	@${CHOWN} root:games ${PREFIX}/bin/toppler
 	@${CHMOD} g+s ${PREFIX}/bin/toppler
 	@${SETENV} "PKG_PREFIX=${PREFIX}" \
