@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nedi
-DISTVERSION=	1.0.w-rc4
+DISTVERSION=	1.0.w
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -50,11 +50,17 @@ NEDIDIR=	${PREFIX}/www/nedi
 SUB_FILES=	pkg-message
 SUB_LIST=	NEDIDIR=${NEDIDIR}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/var/nedi|${NEDIDIR}|' ${WRKSRC}/html/inc/libgraph.php
+	@${REINPLACE_CMD} -e "s|'/etc|'${PREFIX}/etc|" ${WRKSRC}/html/inc/libmisc.php
+	@${FIND} ${WRKSRC} -name *.bak -or -name *.orig | ${XARGS} ${RM}
+
 do-install:
 	@ ${MKDIR} -m 755 ${NEDIDIR}
 	@ ${CP} -r ${WRKSRC}/* ${NEDIDIR}
 	@ ${MV} ${NEDIDIR}/seedlist ${PREFIX}/etc/nedi.seedlist.sample
 	@ ${MV} ${NEDIDIR}/nedi.conf ${PREFIX}/etc/nedi.conf.sample
+	@ ${CHOWN} www ${NEDIDIR}/rrd
 
 post-install:
 	@ ${CAT} ${PKGMESSAGE}
