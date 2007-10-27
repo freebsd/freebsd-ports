@@ -7,7 +7,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,8 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		png.5:${PORTSDIR}/graphics/png \
 		dv.4:${PORTSDIR}/multimedia/libdv \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		faad.0:${PORTSDIR}/audio/faad
+		faad.0:${PORTSDIR}/audio/faad \
+		x264.50:${PORTSDIR}/multimedia/x264
 
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes

@@ -40,6 +40,8 @@ lib/libquicktime/lqt_videocodec.la
 lib/libquicktime/lqt_videocodec.so
 lib/libquicktime/lqt_vorbis.la
 lib/libquicktime/lqt_vorbis.so
+lib/libquicktime/lqt_x264.la
+lib/libquicktime/lqt_x264.so
 libdata/pkgconfig/libquicktime.pc
 share/aclocal/lqt.m4
 share/locale/de/LC_MESSAGES/libquicktime.mo
