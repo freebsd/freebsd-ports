@@ -24,6 +24,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	install docinstall
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|prefix=/usr|prefix=${PREFIX}|' \
 		${WRKSRC}/Makefile
@@ -32,4 +38,4 @@ post-install:
 	@-update-mime-database ${PREFIX}/share/mime
 	@-update-desktop-database
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
