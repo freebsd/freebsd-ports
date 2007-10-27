@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fbdesk
-PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTVERSION=	1.4.1
 CATEGORIES=	x11
 MASTER_SITES=	http://fluxbox.sourceforge.net/download/ \
 		${MASTER_SITE_GENTOO} \
@@ -18,26 +17,31 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Fluxbox utility to create and manage icons on the desktop
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft \
-		Imlib2.4:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-PLIST_FILES=	bin/fbdesk
-USE_X_PREFIX=	yes
+OPTIONS=	IMLIB2 "Imlib2 (pixmap themes) support" On
+
+USE_XORG=	xext xft xpm xrender
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
-PORTDOCS=	COPYING ChangeLog INSTALL README
+PORTDOCS=	ChangeLog INSTALL README
+PLIST_FILES=	bin/fbdesk
 
-post-patch:
-	${REINPLACE_CMD} -e "s/inttypes\.h/stdint\.h/" \
-		${WRKSRC}/src/FbTk/Timer.hh
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_IMLIB2)
+CONFIGURE_ARGS+=	--disable-imlib2
+.else
+LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
+.endif
 
 post-install:
-.ifndef (NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
