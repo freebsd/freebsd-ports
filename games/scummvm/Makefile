@@ -7,6 +7,7 @@
 
 PORTNAME=	scummvm
 PORTVERSION=	0.10.0a
+PORTREVISION=	1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 
@@ -21,12 +22,15 @@ USE_SDL=	sdl
 CONFIGURE_ARGS=--with-sdl-prefix=${LOCALBASE} \
 		--disable-alsa \
 		--with-zlib-prefix=/usr \
-		--disable-debug
+		--disable-debug \
+		--disable-tremor
 CONFIGURE_ENV=	CXX="${CXX}"
 
 OPTIONS=	VORBIS "Enable Ogg Vorbis support" off \
 		MAD "Enable mad (MP3) support" on \
-		MPEG2 "Enable MPEG2 support (implies VORBIS)" off
+		MPEG2 "Enable MPEG2 support (implies VORBIS)" off \
+		FLAC "Enable FLAC support" off \
+		FLUIDSYNTH "Enable FluidSynth MIDI synthesizer" off
 
 MAN6=		scummvm.6
 
@@ -63,8 +67,23 @@ CONFIGURE_ARGS+=--with-mpeg2-prefix=${LOCALBASE}
 CONFIGURE_ARGS+=--disable-mpeg2
 .endif
 
+.if defined(WITH_FLAC)
+LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+CONFIGURE_ARGS+=--with-flac-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--disable-flac
+.endif
+
+.if defined(WITH_FLUIDSYNTH)
+LIB_DEPENDS+=	fluidsynth.2:${PORTSDIR}/audio/fluidsynth
+CONFIGURE_ARGS+=--with-fluidsynth-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--disable-fluidsynth
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O//' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/-lfluidsynth/& -pthread/' ${WRKSRC}/configure
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
