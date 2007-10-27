@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.17
-PORTREVISION=	5
+PORTVERSION=	2.18
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -16,12 +15,16 @@ PKGNAMEPREFIX=	avr-
 MAINTAINER=	joerg@freebsd.org
 COMMENT=	GNU binutils for Atmel AVR 8-bit RISC cross-development
 
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--target=avr
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+= CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 .if (${MACHINE_ARCH} == "amd64")
 MACHINE_ARCH=	x86_64
 .endif
