@@ -8,7 +8,7 @@
 PORTNAME=	drupal4
 PORTVERSION=	4.7.8
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
+MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
 DIST_SUBDIR=	drupal
 
