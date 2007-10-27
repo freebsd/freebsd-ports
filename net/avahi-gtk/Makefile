@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-gtk
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gtk+ tools and bindings to the Avahi mDNS system
 
-LIB_DEPENDS=	avahi-common.3:${PORTSDIR}/net/avahi
+LIB_DEPENDS=	avahi-common.3:${PORTSDIR}/net/avahi-app
 
 MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-ui

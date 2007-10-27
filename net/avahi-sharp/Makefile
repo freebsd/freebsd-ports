@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-sharp
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono bindings for Avahi service discovery
 
-LIB_DEPENDS=	avahi-core:${PORTSDIR}/net/avahi
+LIB_DEPENDS=	avahi-core:${PORTSDIR}/net/avahi-app
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
