@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	shaun
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	The Helix Community's open source media player		# '
 
-LIB_DEPENDS=	theora.[1-9]:${PORTSDIR}/multimedia/libtheora		\
+LIB_DEPENDS=	theora.0:${PORTSDIR}/multimedia/libtheora		\
 		esd.2:${PORTSDIR}/audio/esound	\
 		png:${PORTSDIR}/graphics/png	\
 		jpeg:${PORTSDIR}/graphics/jpeg
