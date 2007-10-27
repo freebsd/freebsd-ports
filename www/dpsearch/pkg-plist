@@ -393,6 +393,8 @@ sbin/stored
 %%DOCSDIR%%/dpsearch-categories.ru.html
 %%DOCSDIR%%/dpsearch-cjk.en.html
 %%DOCSDIR%%/dpsearch-cjk.ru.html
+%%DOCSDIR%%/dpsearch-clones.en.html
+%%DOCSDIR%%/dpsearch-clones.ru.html
 %%DOCSDIR%%/dpsearch-content-enc.en.html
 %%DOCSDIR%%/dpsearch-content-enc.ru.html
 %%DOCSDIR%%/dpsearch-dbschema.en.html
