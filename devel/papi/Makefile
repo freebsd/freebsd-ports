@@ -7,10 +7,10 @@
 
 PORTNAME=	papi
 PORTVERSION=	3.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://papi-for-freebsd.googlecode.com/files/:source1
-DISTFILES=	papi-3.5.0-freebsd-rev45.tar.bz2:source1
+DISTFILES=	papi-3.5.0-freebsd-rev49.tar.bz2:source1
 
 MAINTAINER=	redcrash@gmail.com
 COMMENT=	API to access the performance counter hw in the microprocessor
@@ -27,6 +27,8 @@ WRKMAN=		${WRKDIR}/PAPI/man
 # fortran compiler
 USE_FORTRAN=	yes
 
+CONFIGURE_ENV+=	F77="${F77}" FFLAGS="-fdefault-integer-8"
+
 OPTIONS=	CTESTS "Install C tests" On
 OPTIONS+=	FTESTS "Install Fortran tests" On
 OPTIONS+=	DEBUG  "Add debug information (increased verbosity)" Off
@@ -36,12 +38,6 @@ OPTIONS+=	DEBUG  "Add debug information (increased verbosity)" Off
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	HWPMC kernel module is only available for I386 and \
   AMD64 machines
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
 
 .if defined(WITHOUT_CTESTS)
 PLIST_SUB+=	CTESTS="@comment "
