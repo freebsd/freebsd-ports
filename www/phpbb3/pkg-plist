@@ -5,9 +5,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.html
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/auth_api.html
+%%PORTDOCS%%%%DOCSDIR%%/bg_header.gif
 %%PORTDOCS%%%%DOCSDIR%%/coding-guidelines.html
-%%PORTDOCS%%%%DOCSDIR%%/header_bg.jpg
-%%PORTDOCS%%%%DOCSDIR%%/header_left.jpg
+%%PORTDOCS%%%%DOCSDIR%%/corners_left.gif
+%%PORTDOCS%%%%DOCSDIR%%/corners_left.png
+%%PORTDOCS%%%%DOCSDIR%%/corners_right.gif
+%%PORTDOCS%%%%DOCSDIR%%/corners_right.png
+%%PORTDOCS%%%%DOCSDIR%%/hook_system.html
+%%PORTDOCS%%%%DOCSDIR%%/site_logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
+%%PHPBBDIR%%/.htaccess
 %%PHPBBDIR%%/adm/images/arrow_down.gif
 %%PHPBBDIR%%/adm/images/arrow_left.gif
 %%PHPBBDIR%%/adm/images/arrow_right.gif
@@ -125,7 +132,6 @@
 %%PHPBBDIR%%/adm/swatch.php
 %%PHPBBDIR%%/cache/.htaccess
 %%PHPBBDIR%%/cache/index.htm
-%%PHPBBDIR%%/.htaccess
 %%PHPBBDIR%%/common.php
 %%PHPBBDIR%%/cron.php
 %%PHPBBDIR%%/docs/AUTHORS
@@ -135,10 +141,16 @@
 %%PHPBBDIR%%/docs/INSTALL.html
 %%PHPBBDIR%%/docs/README.html
 %%PHPBBDIR%%/docs/auth_api.html
+%%PHPBBDIR%%/docs/bg_header.gif
 %%PHPBBDIR%%/docs/coding-guidelines.html
-%%PHPBBDIR%%/docs/header_bg.jpg
-%%PHPBBDIR%%/docs/header_left.jpg
-%%PHPBBDIR%%/download.php
+%%PHPBBDIR%%/docs/corners_left.gif
+%%PHPBBDIR%%/docs/corners_left.png
+%%PHPBBDIR%%/docs/corners_right.gif
+%%PHPBBDIR%%/docs/corners_right.png
+%%PHPBBDIR%%/docs/hook_system.html
+%%PHPBBDIR%%/docs/site_logo.gif
+%%PHPBBDIR%%/docs/stylesheet.css
+%%PHPBBDIR%%/download/file.php
 %%PHPBBDIR%%/faq.php
 %%PHPBBDIR%%/files/.htaccess
 %%PHPBBDIR%%/files/index.htm
@@ -278,6 +290,7 @@
 %%PHPBBDIR%%/includes/captcha/captcha_gd.php
 %%PHPBBDIR%%/includes/captcha/captcha_non_gd.php
 %%PHPBBDIR%%/includes/constants.php
+%%PHPBBDIR%%/includes/db/db_tools.php
 %%PHPBBDIR%%/includes/db/dbal.php
 %%PHPBBDIR%%/includes/db/firebird.php
 %%PHPBBDIR%%/includes/db/index.htm
@@ -294,6 +307,7 @@
 %%PHPBBDIR%%/includes/functions.php
 %%PHPBBDIR%%/includes/functions_admin.php
 %%PHPBBDIR%%/includes/functions_compress.php
+%%PHPBBDIR%%/includes/functions_content.php
 %%PHPBBDIR%%/includes/functions_convert.php
 %%PHPBBDIR%%/includes/functions_display.php
 %%PHPBBDIR%%/includes/functions_install.php
@@ -307,6 +321,7 @@
 %%PHPBBDIR%%/includes/functions_transfer.php
 %%PHPBBDIR%%/includes/functions_upload.php
 %%PHPBBDIR%%/includes/functions_user.php
+%%PHPBBDIR%%/includes/hooks/index.php
 %%PHPBBDIR%%/includes/index.htm
 %%PHPBBDIR%%/includes/mcp/info/mcp_ban.php
 %%PHPBBDIR%%/includes/mcp/info/mcp_logs.php
@@ -663,6 +678,7 @@
 %%PHPBBDIR%%/styles/prosilver/template/viewonline_whois.html
 %%PHPBBDIR%%/styles/prosilver/template/viewtopic_body.html
 %%PHPBBDIR%%/styles/prosilver/template/viewtopic_print.html
+%%PHPBBDIR%%/styles/prosilver/theme/bidi.css
 %%PHPBBDIR%%/styles/prosilver/theme/buttons.css
 %%PHPBBDIR%%/styles/prosilver/theme/colours.css
 %%PHPBBDIR%%/styles/prosilver/theme/common.css
@@ -706,7 +722,6 @@
 %%PHPBBDIR%%/styles/prosilver/theme/images/index.htm
 %%PHPBBDIR%%/styles/prosilver/theme/images/no_avatar.gif
 %%PHPBBDIR%%/styles/prosilver/theme/images/quote.gif
-%%PHPBBDIR%%/styles/prosilver/theme/bidi.css
 %%PHPBBDIR%%/styles/prosilver/theme/index.htm
 %%PHPBBDIR%%/styles/prosilver/theme/large.css
 %%PHPBBDIR%%/styles/prosilver/theme/links.css
@@ -934,8 +949,8 @@
 @dirrm %%PHPBBDIR%%/language/en/acp
 @dirrm %%PHPBBDIR%%/language/en
 @dirrm %%PHPBBDIR%%/language
-@dirrm %%PHPBBDIR%%/install/data
 @dirrm %%PHPBBDIR%%/install/schemas
+@dirrm %%PHPBBDIR%%/install/data
 @dirrm %%PHPBBDIR%%/install/convertors
 @dirrm %%PHPBBDIR%%/install
 @dirrm %%PHPBBDIR%%/includes/utf/data
@@ -945,6 +960,7 @@
 @dirrm %%PHPBBDIR%%/includes/search
 @dirrm %%PHPBBDIR%%/includes/mcp/info
 @dirrm %%PHPBBDIR%%/includes/mcp
+@dirrm %%PHPBBDIR%%/includes/hooks
 @dirrm %%PHPBBDIR%%/includes/diff
 @dirrm %%PHPBBDIR%%/includes/db
 @dirrm %%PHPBBDIR%%/includes/captcha
@@ -964,6 +980,7 @@
 @dirrmtry %%PHPBBDIR%%/images/avatars
 @dirrmtry %%PHPBBDIR%%/images
 @dirrm %%PHPBBDIR%%/files
+@dirrm %%PHPBBDIR%%/download
 @dirrm %%PHPBBDIR%%/docs
 @dirrm %%PHPBBDIR%%/cache
 @dirrm %%PHPBBDIR%%/adm/style
