@@ -11957,6 +11957,7 @@ pecl-htscanner	ports/devel/pecl-htscanner
 pecl-id3	ports/audio/pecl-id3
 pecl-imagick	ports/graphics/pecl-imagick
 pecl-imlib2	ports/graphics/pecl-imlib2
+pecl-inclued	ports/devel/pecl-inclued
 pecl-json	ports/devel/pecl-json
 pecl-lzf	ports/archivers/pecl-lzf
 pecl-mailparse	ports/mail/pecl-mailparse
