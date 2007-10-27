@@ -98,5 +98,5 @@ lib/libpapi.so
 %%FTESTS%%share/ftests/strtest
 %%FTESTS%%share/ftests/tenth
 %%FTESTS%%share/ftests/zero
-%%CTESTS%%@dirrm share/ctests
 %%FTESTS%%@dirrm share/ftests
+%%CTESTS%%@dirrm share/ctests
