@@ -7,21 +7,21 @@
 
 PORTNAME=	miniupnpd
 PORTVERSION=	1.0
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
 		http://miniupnp.free.fr/files/
-DISTNAME=	${PORTNAME}-1.0-RC9
+DISTNAME=	${PORTNAME}-1.0-RC11
 
-MAINTAINER=	darius@dons.net.au
-COMMENT=	A UPnP IGD implementation which uses pf
-
-USE_GMAKE=	yes
+MAINTAINER=	squat@squat.no
+COMMENT=	A UPnP IGD implementation which uses pf/ipf
 
 SUB_FILES=	miniupnpd.conf.sample
 SUB_LIST=	UUID=${UUID}
 
 UUID!=		uuidgen
+FWNAME?=	pf
+PLIST_FILES=	etc/miniupnpd.conf.sample sbin/miniupnpd
 
 USE_RC_SUBR=	miniupnpd.sh
 
