@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pstree
-PORTVERSION=	2.31
+PORTVERSION=	2.32
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.thp.uni-duisburg.de/pub/source/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/
