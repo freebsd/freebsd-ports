@@ -1,5 +1,4 @@
-@unexec %D/etc/rc.d/radiusd.sh forcestop 2>/dev/null || true
-@unexec %D/etc/rc.d/radiusd forcestop 2>/dev/null || true
+@stopdaemon radiusd
 bin/radclient
 bin/radeapclient
 bin/radlast
@@ -14,6 +13,10 @@ bin/rlm_ippool_tool
 bin/smbencrypt
 @unexec for i in `find %D/%%EXAMPLESDIR%%/raddb/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ -f %D/%%EXAMPLESDIR%%/raddb/${i} ]; then if cmp -s %D/%%EXAMPLESDIR%%/raddb/${i} %D/etc/raddb/${i}; then rm -f %D/etc/raddb/${i}; fi; fi; done
 @unexec for i in `find -d %D/%%EXAMPLESDIR%%/raddb/ -type d -mindepth 1 -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ -d %D/etc/raddb/${i} ]; then rmdir %D/etc/raddb/${i} 2>/dev/null || true; fi; done
+@dirrmtry etc/raddb/certs/demoCA
+@dirrmtry etc/raddb/certs
+@dirrmtry etc/raddb
+@unexec if [ -d %D/etc/raddb ]; then echo "You should remove %D/etc/raddb if you don't need it any more."; fi
 %%EXAMPLESDIR%%/raddb/acct_users
 %%EXAMPLESDIR%%/raddb/attrs
 %%EXAMPLESDIR%%/raddb/certs/README
@@ -35,11 +38,10 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/certs/root.der
 %%EXAMPLESDIR%%/raddb/certs/root.p12
 %%EXAMPLESDIR%%/raddb/certs/root.pem
-%%EXAMPLESDIR%%/raddb/clients.conf
 %%EXAMPLESDIR%%/raddb/clients
+%%EXAMPLESDIR%%/raddb/clients.conf
 %%EXAMPLESDIR%%/raddb/dictionary
 %%EXAMPLESDIR%%/raddb/eap.conf
-%%EXAMPLESDIR%%/raddb/example.pl
 %%EXAMPLESDIR%%/raddb/experimental.conf
 %%EXAMPLESDIR%%/raddb/hints
 %%EXAMPLESDIR%%/raddb/huntgroups
@@ -59,8 +61,9 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/sql.conf
 %%EXAMPLESDIR%%/raddb/sqlippool.conf
 %%EXAMPLESDIR%%/raddb/users
+%%EXAMPLESDIR%%/raddb/example.pl
 @exec for i in `find %D/%%EXAMPLESDIR%%/raddb/ -type d -mindepth 1 -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ ! -d %D/etc/raddb/${i} ]; then mkdir -p %D/etc/raddb/${i}; fi; done
-@exec for i in `find %D/%%EXAMPLESDIR%%/raddb/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ ! -f %D/etc/raddb/${i} ]; then cp -p %D/%%EXAMPLESDIR%%/raddb/${i} %D/etc/raddb/${i}; fi; done
+@exec for i in `find %D/%%EXAMPLESDIR%%/raddb/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ ! -f %D/etc/raddb/${i} ]; then cp %D/%%EXAMPLESDIR%%/raddb/${i} %D/etc/raddb/${i}; fi; done
 @exec chmod -R g-w,o-rwx %D/etc/raddb
 @dirrm %%EXAMPLESDIR%%/raddb/certs/demoCA
 @dirrm %%EXAMPLESDIR%%/raddb/certs
@@ -421,6 +424,9 @@ sbin/rc.radiusd
 %%PORTDOCS%%%%DOCSDIR%%/supervise-radiusd.txt
 %%PORTDOCS%%%%DOCSDIR%%/tuning_guide
 %%PORTDOCS%%%%DOCSDIR%%/variables.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/dictionary
 %%DATADIR%%/dictionary.3com
 %%DATADIR%%/dictionary.3gpp
@@ -522,14 +528,7 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.xylan
 %%DATADIR%%/dictionary.zyxel
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p /var/log/raddb
 @exec chmod -R og= /var/log/raddb
 @exec mkdir -p /var/run/radiusd
 @unexec rm -fr /var/run/radiusd
-@dirrmtry etc/raddb/certs/demoCA
-@dirrmtry etc/raddb/certs
-@dirrmtry etc/raddb
-@unexec if [ -d %D/etc/raddb ]; then echo "You should remove %D/etc/raddb if you don't need it anymore."; fi
