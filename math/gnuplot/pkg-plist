@@ -1,7 +1,7 @@
 bin/gnuplot
 bin/lasergnu
 lib/X11/app-defaults/Gnuplot.app-defaults
-libexec/gnuplot/4.2/gnuplot_x11
+%%X11%%libexec/gnuplot/4.2/gnuplot_x11
 %%PORTDOCS%%%%DOCSDIR%%/gnuplot.dvi
 %%PORTDOCS%%%%DOCSDIR%%/gnuplot.ps
 %%PORTDOCS%%%%DOCSDIR%%/gnuplot.txt
@@ -154,8 +154,8 @@ libexec/gnuplot/4.2/gnuplot_x11
 %%DATADIR%%/4.2/PostScript/koi8u.ps
 %%DATADIR%%/4.2/PostScript/prologue.ps
 %%DATADIR%%/4.2/gnuplot.gih
-share/texmf-local/tex/latex/gnuplot/gnuplot.cfg
-@dirrm share/texmf-local/tex/latex/gnuplot
+%%TETEX%%share/texmf-local/tex/latex/gnuplot/gnuplot.cfg
+%%TETEX%%@dirrm share/texmf-local/tex/latex/gnuplot
 @dirrmtry share/texmf-local/tex/latex
 @dirrmtry share/texmf-local/tex
 @dirrmtry share/texmf-local
