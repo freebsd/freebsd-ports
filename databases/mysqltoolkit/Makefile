@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysqltoolkit
-PORTVERSION=	1012
+PORTVERSION=	1053
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -26,6 +26,7 @@ MAN1=	mysql-archiver.1 \
 	mysql-find.1 \
 	mysql-heartbeat.1 \
 	mysql-parallel-dump.1 \
+	mysql-parallel-restore.1 \
 	mysql-profile-compact.1 \
 	mysql-query-profiler.1 \
 	mysql-show-grants.1 \
