@@ -8,8 +8,8 @@
 -CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
 +CFLAGS+=-Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
  
- VERSION=2.2.6
- DATE=2007-06-20
+ VERSION=2.2.8
+ DATE=2007-10-19
  
 -PREFIX=/usr/local
  SBINDIR=$(PREFIX)/sbin
