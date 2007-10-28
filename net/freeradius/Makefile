@@ -7,14 +7,14 @@
 
 PORTNAME=	freeradius
 PORTVERSION?=	1.1.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/ \
 		ftp://ftp.uk.freeradius.org/pub/radius/ \
 		ftp://ftp.us.freeradius.org/pub/radius/ \
-		ftp://ftp.freeradius.org/pub/radius/old/ \
 		http://freeradius.portal-to-web.de/
+MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER?=	david@wood2.org.uk
 COMMENT?=	A free RADIUS server implementation
@@ -29,7 +29,7 @@ LOGDIR?=	/var/log
 # If FREERADIUS_SLAVE_MYSQL is defined, we want to build the
 # freeradius-mysql slave port
 
-CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
+CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].*
 .ifdef(FREERADIUS_SLAVE_MYSQL)
 CONFLICTS+=	freeradius-[0-9].* freeradius-mysql-[02-9].*
 PKGNAMESUFFIX=	-mysql
@@ -87,9 +87,13 @@ PLIST_SUB+=	PORTDOCS=""
 .endif
 CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
 		--with-large-files \
-		--with-openssl-includes=${OPENSSLINC} \
-		--with-openssl-libraries=${OPENSSLLIB} \
-		--without-rlm_sql_db2 \
+		--with-openssl-includes=${OPENSSLINC}
+# This conditionality avoids -L/usr/lib in the radiusd build step when
+# building with base system OpenSSL
+.if ${OPENSSLLIB} != "/usr/lib"
+CONFIGURE_ARGS+=--with-openssl-libraries=${OPENSSLLIB}
+.endif
+CONFIGURE_ARGS+=--without-rlm_sql_db2 \
 		--without-rlm_sql_freetds \
 		--without-rlm_sql_iodbc \
 		--without-rlm_sql_oracle \
@@ -186,15 +190,15 @@ PLIST_SUB+=	EXPM=""
 PLIST_SUB+=	EXPM="@comment "
 .endif
 
-.ifndef(WITH_NOPERL)
-USE_PERL5=	yes
+.ifdef(WITH_DEVELOPER)
+CONFIGURE_ARGS+=--enable-developer
 .endif
 
-# rlm_perl does not build on 4.x
-.if defined(WITH_NOPERL)
+.ifdef(WITH_NOPERL)
 CONFIGURE_ARGS+=--without-rlm_perl
 PLIST_SUB+=	RLMPERL="@comment "
 .else
+USE_PERL5=	yes
 CONFIGURE_ARGS+=--with-rlm_perl
 PLIST_SUB+=	RLMPERL=""
 .endif
@@ -222,6 +226,9 @@ post-patch:
 	@${FIND} -E ${WRKSRC} -regex '.*/Makefile(\.in)?\.(orig|bak)$$' -delete
 
 pre-configure:
+# Replace -pthread with ${PTHREAD_LIBS} in configure(.in) files
+	@${FIND} -E ${WRKSRC} -regex '.*/configure(\.in)?$$' -exec \
+		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" {} \;
 # Force the rebuild of some configures from configure.in, as we're patching
 # the configure.in
 # NOTE: ${WRKSRC}/configure is rebuilt automatically once autoconf:261 is
@@ -245,7 +252,7 @@ post-install:
 	@for i in `${FIND} ${EXAMPLESDIR}/raddb/ -type f -print \
 	| ${SED} -e 's:^${EXAMPLESDIR}/raddb/::g'`; do \
 		if [ ! -f ${PREFIX}/etc/raddb/$${i} ]; then \
-			${CP} -p ${EXAMPLESDIR}/raddb/$${i} ${PREFIX}/etc/raddb/$${i}; \
+			${CP} ${EXAMPLESDIR}/raddb/$${i} ${PREFIX}/etc/raddb/$${i}; \
 		fi; \
 	done
 # Set ${PREFIX}/etc/raddb and all the files and folders in it to g-w,o-rwx
