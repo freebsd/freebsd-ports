@@ -1,5 +1,2 @@
 %%SITE_PERL%%/File/BaseDir.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/BaseDir/.packlist
 @dirrmtry %%SITE_PERL%%/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/BaseDir
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
