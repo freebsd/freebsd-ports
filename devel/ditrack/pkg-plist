@@ -1,6 +1,18 @@
 @comment $FreeBSD$
-%%DATADIR%%/upgrade-0.4-db.py
+%%DATADIR%%/upgrade-0.5-db.py
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PYTHON_SITELIBDIR%%/DITrack/Backend/__init__.py
+%%PYTHON_SITELIBDIR%%/DITrack/Backend/__init__.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Backend/__init__.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/Backend/Common.py
+%%PYTHON_SITELIBDIR%%/DITrack/Backend/Common.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Backend/Common.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/Client.py
+%%PYTHON_SITELIBDIR%%/DITrack/Client.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Client.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/Common.py
+%%PYTHON_SITELIBDIR%%/DITrack/Common.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Common.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/Command/__init__.py
 %%PYTHON_SITELIBDIR%%/DITrack/Command/__init__.pyc
 %%PYTHON_SITELIBDIR%%/DITrack/Command/__init__.pyo
@@ -31,15 +43,51 @@
 %%PYTHON_SITELIBDIR%%/DITrack/Command/status.py
 %%PYTHON_SITELIBDIR%%/DITrack/Command/status.pyc
 %%PYTHON_SITELIBDIR%%/DITrack/Command/status.pyo
-%%PYTHON_SITELIBDIR%%/DITrack/DB.py
-%%PYTHON_SITELIBDIR%%/DITrack/DB.pyc
-%%PYTHON_SITELIBDIR%%/DITrack/DB.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/Command/update.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/update.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Command/update.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/DB/__init__.py
+%%PYTHON_SITELIBDIR%%/DITrack/DB/__init__.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/DB/__init__.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Common.py
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Common.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Common.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Configuration.py
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Configuration.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Configuration.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Exceptions.py
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Exceptions.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Exceptions.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Issue.py
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Issue.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/DB/Issue.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/DB/LMA.py
+%%PYTHON_SITELIBDIR%%/DITrack/DB/LMA.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/DB/LMA.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/DB/WC.py
+%%PYTHON_SITELIBDIR%%/DITrack/DB/WC.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/DB/WC.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/Edit.py
 %%PYTHON_SITELIBDIR%%/DITrack/Edit.pyc
 %%PYTHON_SITELIBDIR%%/DITrack/Edit.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/Logging.py
+%%PYTHON_SITELIBDIR%%/DITrack/Logging.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Logging.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/SVN.py
 %%PYTHON_SITELIBDIR%%/DITrack/SVN.pyc
 %%PYTHON_SITELIBDIR%%/DITrack/SVN.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/__init__.py
+%%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/__init__.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/__init__.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/ezt.py
+%%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/ezt.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/ezt.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/Python/__init__.py
+%%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/Python/__init__.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/Python/__init__.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/Python/string.py
+%%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/Python/string.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/Python/string.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/UI.py
 %%PYTHON_SITELIBDIR%%/DITrack/UI.pyc
 %%PYTHON_SITELIBDIR%%/DITrack/UI.pyo
@@ -52,6 +100,12 @@
 %%PYTHON_SITELIBDIR%%/DITrack/Util/common.py
 %%PYTHON_SITELIBDIR%%/DITrack/Util/common.pyc
 %%PYTHON_SITELIBDIR%%/DITrack/Util/common.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/Util/Locking.py
+%%PYTHON_SITELIBDIR%%/DITrack/Util/Locking.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Util/Locking.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/Util/Misc.py
+%%PYTHON_SITELIBDIR%%/DITrack/Util/Misc.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Util/Misc.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/__init__.py
 %%PYTHON_SITELIBDIR%%/DITrack/__init__.pyc
 %%PYTHON_SITELIBDIR%%/DITrack/__init__.pyo
@@ -64,8 +118,12 @@
 bin/dt
 bin/dt-createdb
 @dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/dt
+@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/ThirdParty/Python
+@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/ThirdParty
 @dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/Util
+@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/DB
 @dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/Command
+@dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/Backend
 @dirrmtry %%PYTHON_SITELIBDIR%%/DITrack
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
