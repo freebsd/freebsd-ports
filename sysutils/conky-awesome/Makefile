@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,7 +30,7 @@ PORTDOCS=	README AUTHORS ChangeLog TODO NEWS \
 		docs.html variables.html config_settings.html
 
 .if defined(WITH_AUDACIOUS)
-LIB_DEPENDS+=		audacious.3:${PORTSDIR}/multimedia/audacious
+LIB_DEPENDS+=		audacious.5:${PORTSDIR}/multimedia/audacious
 CONFIGURE_ARGS+=	--enable-audacious
 .else
 CONFIGURE_ARGS+=	--disable-audacious
@@ -82,9 +82,6 @@ pre-everything::
 	@${ECHO_MSG} "WITH_MPD=yes to enable MPD support"
 	@${ECHO_MSG} "WITHOUT_DOUBLE_BUFFER=yes to disable double buffer support"
 	@${ECHO_MSG} " "
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|-lm|-lm -liconv|' ${WRKSRC}/src/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/conky ${PREFIX}/bin
