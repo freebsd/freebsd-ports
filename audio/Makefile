@@ -585,6 +585,7 @@
     SUBDIR += slimserver-slimscrobbler
     SUBDIR += slimserver-sqlplaylist
     SUBDIR += slimserver-superdatetime
+    SUBDIR += slimserver-trackstat
     SUBDIR += snack
     SUBDIR += snd
     SUBDIR += snett
