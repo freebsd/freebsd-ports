@@ -17,7 +17,7 @@ COMMENT=	ILM Base libraries a.k.a. Half, IlmThread, Imath and Iex
 
 CONFLICT=	OpenEXR-1.[0-4].*
 
-OPTIONS=	THREAD	"Enable multithreaded file I/O support"	off
+OPTIONS=	THREAD	"Enable multithreaded file I/O support"	on
 
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
@@ -26,10 +26,6 @@ USE_AUTOTOOLS=	libtool:15
 
 test check:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
-
-.if defined(PACKAGE_BUILDING)
-pre-install:	test
-.endif
 
 .include <bsd.port.pre.mk>
 
