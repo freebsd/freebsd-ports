@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	alliance
-PORTVERSION=	5.0.20060509
-PORTREVISION=	2
+PORTVERSION=	5.0.20070718
 CATEGORIES=	cad
 MASTER_SITES=	http://www-asim.lip6.fr/pub/alliance/distribution/5.0/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs
-DISTNAME=	${PORTNAME}-5.0-20060509
+DISTNAME=	${PORTNAME}-5.0-20070718
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A complete set of CAD tools and libraries for VLSI design
@@ -35,10 +34,6 @@ CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man \
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 ALLIANCE_TOP=	${PREFIX}/alliance
 SRCDIRLIST!=	${CAT} ${FILESDIR}/srcdirs.list
