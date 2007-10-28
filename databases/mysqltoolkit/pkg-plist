@@ -6,6 +6,7 @@ bin/mysql-duplicate-key-checker
 bin/mysql-find
 bin/mysql-heartbeat
 bin/mysql-parallel-dump
+bin/mysql-parallel-restore
 bin/mysql-profile-compact
 bin/mysql-query-profiler
 bin/mysql-show-grants
