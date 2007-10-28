@@ -479,9 +479,12 @@ lib/libsym.a
 %%DATADIR%%/leap/prep/unict.in
 %%DATADIR%%/leap/prep/unint.in
 %%DATADIR%%/lib/blas.a
+%%DATADIR%%/lib/libblas.a
 %%DATADIR%%/lib/cifparse.a
 %%DATADIR%%/lib/f2c.a
+%%DATADIR%%/lib/libf2c.a
 %%DATADIR%%/lib/lapack.a
+%%DATADIR%%/lib/liblapack.a
 %%DATADIR%%/lib/libnab.a
 %%DATADIR%%/lib/libsym.a
 %%DATADIR%%/reslib/adna.std.rlb

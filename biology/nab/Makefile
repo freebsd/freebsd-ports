@@ -7,6 +7,7 @@
 
 PORTNAME=	nab
 PORTVERSION=	5.1.2
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.scripps.edu/mb/case/
 
@@ -15,8 +16,6 @@ COMMENT=	A language for macromolecules
 
 BUILD_DEPENDS=	ucpp:${PORTSDIR}/devel/ucpp
 RUN_DEPENDS=	ucpp:${PORTSDIR}/devel/ucpp
-
-ONLY_FOR_ARCHS=	i386
 
 MAKE_ENV+=	NABHOME=${WRKSRC} ARCH= PATH=${WRKSRC}/bin:${PATH} \
 		CFLAGS="${CFLAGS}" OCFLAGS="${CFLAGS}" FFLAGS="${FFLAGS}"
@@ -83,6 +82,7 @@ do-install: build-general-version
 .endfor
 .for f in blas.a lapack.a f2c.a
 	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${DATADIR}/lib
+	${LN} ${DATADIR}/lib/${f} ${DATADIR}/lib/lib${f}
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
