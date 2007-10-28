@@ -7,6 +7,7 @@
 
 PORTNAME=	pear
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		${MASTER_SITE_LOCAL}
