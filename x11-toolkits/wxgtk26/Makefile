@@ -67,11 +67,11 @@ USE_LDCONFIG=	yes
 .endif # *-common
 
 .if ${WXGTK_FLAVOR:M*-contrib*} != ""
-USE_WX=		2.6
 BUILD_WRKSRC=	${WRKSRC}/contrib
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .if ${WXGTK_FLAVOR} != "gtk2-contrib-common"
+USE_WX=		2.6
 RUN_DEPENDS=	${X11BASE}/include/wx-2.6/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk26-contrib-common
 
 .if ${WXGTK_FLAVOR:M*-unicode*} != ""
