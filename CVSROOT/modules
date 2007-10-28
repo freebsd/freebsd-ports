@@ -14858,6 +14858,7 @@ slige		ports/games/slige
 slim		ports/x11/slim
 slime		ports/editors/slime
 slimserver	ports/audio/slimserver
+slimserver-dynamicplaylist	ports/audio/slimserver-dynamicplaylist
 slimserver-dynamictransition	ports/audio/slimserver-dynamictransition
 slimserver-lastfm	ports/audio/slimserver-lastfm
 slimserver-lazysearch	ports/audio/slimserver-lazysearch
