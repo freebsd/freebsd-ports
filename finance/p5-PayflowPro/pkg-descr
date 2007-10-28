@@ -1,0 +1,10 @@
+Interface to HTTP gateway for PayPal's Payflow Pro service, as described on
+the PayPal developer forums at
+http://www.pdncommunity.com/pdn/board?board.id=payflow
+
+This module is intended to be a drop-in replacement for PFProAPI (a couple of
+minor changes to your code are necessary to use this module instead of
+PFProAPI).  The major difference is that it is pure Perl, and not architecture
+dependent (ie, you can use this on your 64-bit FreeBSD platform.)
+
+WWW: http://labs.mailermailer.com/downloads/

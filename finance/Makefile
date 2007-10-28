@@ -60,6 +60,7 @@
     SUBDIR += p5-Locale-Currency-Format
     SUBDIR += p5-Math-Financial
     SUBDIR += p5-PFProAPI
+    SUBDIR += p5-PayflowPro
     SUBDIR += pfpro
     SUBDIR += php4-pfpro
     SUBDIR += qhacc
