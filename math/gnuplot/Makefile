@@ -16,19 +16,17 @@ COMMENT=	A command-driven interactive function plotting program
 
 GNU_CONFIGURE=	yes
 WANT_WX=	yes
-CONFIGURE_ARGS+=--with-kpsexpand \
-		--with-lasergnu \
+CONFIGURE_ARGS+=--with-lasergnu \
 		--with-readline=gnu \
 		--without-linux-vga \
 		--without-lisp-files \
 		--without-tutorial
 
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base
-
 OPTIONS=	GD		"Enable GD support"		on \
-		GRIDBOX 	"Use the gridbox optimization for hidden3d" off \
+		GRIDBOX		"Use the gridbox optimization for hidden3d" off \
 		PDF		"Enable PDF support"		on \
 		PLOT		"Enable plot support"		on \
+		TETEX		"Search kpsexpand at run-time"	on \
 		THINSPLINES	"Enable thin plate splines for grids in dgrid3d" off \
 		WX		"Enable WX support"		off
 
@@ -70,6 +68,14 @@ LIB_DEPENDS+=		plot.4:${PORTSDIR}/graphics/plotutils
 CONFIGURE_ARGS+=	--with-plot=${LOCALBASE}
 .endif
 
+.if defined(WITHOUT_TETEX)
+PLIST_SUB+=		TETEX="@comment "
+.else
+BUILD_DEPENDS+=		latex:${PORTSDIR}/print/teTeX-base
+CONFIGURE_ARGS+=	--with-kpsexpand
+PLIST_SUB+=		TETEX=""
+.endif
+
 .if defined(WITHOUT_THINSPLINES)
 CONFIGURE_ARGS+=	--disable-thin-splines
 .else
@@ -84,6 +90,10 @@ WX_CONF_ARGS=		absolute
 .endif
 
 post-patch:
+.if defined(WITHOUT_TETEX)
+	@${REINPLACE_CMD} -e \
+		'/^install:/s/install-am//' ${WRKSRC}/share/LaTeX/Makefile.in
+.endif
 	@${REINPLACE_CMD} -e \
 		's|)/@PACKAGE@/@PKG_MAJOR@|)|g' ${WRKSRC}/src/Makefile.in
 	@${FIND} "${WRKSRC}" -name '*.orig' -delete
