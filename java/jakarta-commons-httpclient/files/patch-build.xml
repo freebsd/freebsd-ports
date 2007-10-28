@@ -1,27 +1,18 @@
---- build.xml.orig	Sun May  7 16:22:18 2006
-+++ build.xml	Sun Jun 17 14:12:16 2007
-@@ -158,10 +158,6 @@
-     <copy todir="${dist.home}/src" filtering="on">
-       <fileset dir="${source.home}"/>
-     </copy>
--    <mkdir dir="${dist.home}/lib"/>
--    <copy todir="${dist.home}/lib">
--      <fileset dir="lib"/>
--    </copy>
-   </target>
- 
- <!-- ========== Targets: "External" Targets: Clean-up ===================== -->
-@@ -181,13 +177,6 @@
-           description="Compile shareable components">
-     <javac srcdir      ="${source.home}/java"
-            destdir     ="${build.home}/classes"
--           debug       ="${compile.debug}"
--           deprecation ="${compile.deprecation}"
--           optimize    ="${compile.optimize}">
--      <classpath refid="compile.classpath"/>
--    </javac>
+--- build.xml.orig	2007-10-28 09:00:18.000000000 +0100
++++ build.xml	2007-10-28 09:00:37.000000000 +0100
+@@ -184,13 +184,13 @@
+            optimize    ="${compile.optimize}">
+       <classpath refid="compile.classpath"/>
+     </javac>
 -    <javac srcdir      ="${source.home}/examples"
--           destdir     ="${build.home}/examples"
++    <!--javac srcdir      ="${source.home}/examples"
+            destdir     ="${build.home}/examples"
             debug       ="${compile.debug}"
             deprecation ="${compile.deprecation}"
             optimize    ="${compile.optimize}">
+       <classpath refid="compile.classpath"/>
+-    </javac>
++    </javac-->
+   </target>
+ 
+   <target name="compile.tests" depends="compile"
