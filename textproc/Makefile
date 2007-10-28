@@ -749,6 +749,7 @@
     SUBDIR += pecl-stem
     SUBDIR += pecl-syck
     SUBDIR += pecl-xdiff
+    SUBDIR += pecl-xslcache
     SUBDIR += perl2html
     SUBDIR += permute
     SUBDIR += php4-ctype
