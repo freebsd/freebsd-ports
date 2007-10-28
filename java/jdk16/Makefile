@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	5
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/jdk6/
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk16.html
@@ -25,13 +24,9 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 
 OPTIONS=	DEBUG	"Enable debugging support"	off \
-		IPV6	"Enable IPv6 support"		off
-.if ${MACHINE_ARCH} == "amd64"
-OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start"	off
-.else
-OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start"	on
-.endif
-OPTIONS+=	POLICY	"Install the Unlimited Strength Policy Files"	off \
+		IPV6	"Enable IPv6 support"		off \
+		WEB	"Enable the browser plugin and Java Web Start"	on \
+		POLICY	"Install the Unlimited Strength Policy Files"	off \
 		TZUPDATE	"Update the time zone data"		on \
 		JAIL	"Port is being built within a jail"		off
 
@@ -49,17 +44,18 @@ USE_ZIP=	YES
 
 JRL_SRCFILE=	jdk-${JDK_MAJOR_VERSION}u${JDK_UPDATE_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-jrl-${JDK_BUILD_DATE}.jar
 JRL_BINFILE=	jdk-${JDK_MAJOR_VERSION}u${JDK_UPDATE_VERSION}-fcs-bin-b${JDK_BUILD_NUMBER}-jrl-${JDK_BUILD_DATE}.jar
-JRL_MOZFILE=	jdk-${JDK_MAJOR_VERSION}u${JDK_UPDATE_VERSION}-fcs-mozilla_headers-b${JDK_BUILD_NUMBER}-unix-${JDK_BUILD_DATE}.jar
+JRL_MOZFILE=	jdk-${JDK_MAJOR_VERSION}u${JDK_UPDATE_VERSION}-fcs-mozilla_headers-b${JDK_BUILD_NUMBER}-unix-${JDK_MOZHDR_BUILD_DATE}.jar
 PATCHSETFILE=	bsd-jdk16-patches-${JDK_PATCHSET_VERSION}.tar.bz2
 POLICYFILE=	jce_policy-${JDK_MAJOR_VERSION}.zip
 TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION:S/./_/g}-${TZUPDATE_TZVERSION}.zip
 
 JDK_VERSION=	1.6.0
 JDK_MAJOR_VERSION=	6
-JDK_UPDATE_VERSION=	1
-JDK_PATCHSET_VERSION=	1
-JDK_BUILD_NUMBER=	06
-JDK_BUILD_DATE=		14_mar_2007
+JDK_UPDATE_VERSION=	2
+JDK_PATCHSET_VERSION=	2
+JDK_BUILD_NUMBER=	05
+JDK_BUILD_DATE=		22_jun_2007
+JDK_MOZHDR_BUILD_DATE=	14_jun_2007
 LATEST_LINK=	jdk16
 
 TZUPDATE_VERSION=	1.2.2
@@ -278,24 +274,13 @@ do-extract:
 
 post-extract:
 	@${MV} ${WRKDIR}/share/plugin ${WRKDIR}/deploy/src/plugin/share/
-	@${CP} -fp ${WRKDIR}/deploy/src/plugin/share/plugin/mozilla_headers_18/nspr/md/_freebsd.cfg \
-		${WRKDIR}/deploy/src/plugin/share/plugin/mozilla_headers_18/nspr/prcpucfg.h
 	@${RMDIR} ${WRKDIR}/share
-	@${MKDIR} ${WRKDIR}/hotspot/build/bsd
-	@${CP} ${WRKDIR}/hotspot/build/solaris/Queens.class \
-		${WRKDIR}/hotspot/build/bsd
-	@${TOUCH} ${WRKDIR}/j2se/src/solaris/native/sun/tools/attach/BSDVirtualMachine.c
 
 pre-patch:
 	@cd ${WRKDIR} &&  \
 		${BZIP2_CMD} -dc ${DISTDIR}/${PATCHSETFILE} | ${TAR} -xf - && \
 		${CHMOD} -R u+w * && \
 		${PATCH} -p0 < ${WRKDIR}/jdk16.patches
-.if (${ARCH} == amd64) && !defined(WITHOUT_WEB)
-	@cd ${WRKDIR} && \
-		uudecode -o /dev/stdout < ${FILESDIR}/plugin_amd64.bz2.uu | \
-		${BZIP2_CMD} -dc | ${PATCH} -p0
-.endif
 
 post-patch:
 	@for file in ${LOCAL_FILES}; do \
