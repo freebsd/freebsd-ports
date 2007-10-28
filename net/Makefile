@@ -308,6 +308,7 @@
     SUBDIR += liveMedia
     SUBDIR += lla
     SUBDIR += ltm
+    SUBDIR += lua50-luasocket
     SUBDIR += luasocket
     SUBDIR += lyntin
     SUBDIR += mDNSResponder
