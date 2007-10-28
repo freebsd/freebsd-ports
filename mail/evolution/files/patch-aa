@@ -1,6 +1,6 @@
---- configure.orig	Tue Jun 19 00:18:59 2007
-+++ configure	Tue Jun 19 00:25:55 2007
-@@ -24959,6 +24959,15 @@ case "$host" in
+--- configure.orig	2007-10-28 12:24:23.000000000 -0500
++++ configure	2007-10-28 12:26:19.000000000 -0500
+@@ -23831,6 +23831,16 @@
      SOFTOKN3_LIB=''
      HAL_REQUIREMENT=''
      ;;
@@ -9,6 +9,7 @@
 +    SOCKET_LIBS=''
 +    SOEXT='.so'
 +    SA_JUNK_PLUGIN=sa-junk-plugin
++    BF_JUNK_PLUGIN=bogo-junk-plugin
 +    DL_LIB=''
 +    SOFTOKN3_LIB='-lsoftokn3'
 +    HAL_REQUIREMENT='hal'
@@ -16,7 +17,7 @@
  *)  os_win32=no
      NO_UNDEFINED=''
      SOEXT='.so'
-@@ -26433,6 +26442,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -25449,6 +25459,7 @@
  		#include <sys/socket.h>
  		#include <netinet/in.h>
  		#include <netdb.h>
@@ -24,7 +25,7 @@
  
  		#define BUFSIZE (sizeof(struct hostent)+10)
  
-@@ -30930,7 +30940,7 @@ if test "x${with_krb5}" != "xno"; then
+@@ -29382,7 +29393,7 @@
  	LDFLAGS_save="$LDFLAGS"
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
@@ -33,7 +34,7 @@
  	sunlibs="-lkrb5 -lgss"
  	{ echo "$as_me:$LINENO: checking for Kerberos 5" >&5
  echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6; }
-@@ -37393,7 +37403,7 @@ componentdir="$privlibdir/components"
+@@ -37936,7 +37947,7 @@
  idldir='${datadir}'/idl/evolution-$BASE_VERSION
  
  

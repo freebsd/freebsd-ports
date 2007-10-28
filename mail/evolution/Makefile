@@ -8,7 +8,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	2.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -110,6 +110,10 @@ post-patch:
 	    	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|stdlib.n|stdlib.h|' \
 	    	${WRKSRC}/iconv-detect.c
+	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
+		${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c
+	@${REINPLACE_CMD} -e 's|/usr/sbin|${LOCALBASE}/bin|g' \
+		${WRKSRC}/plugins/sa-junk-plugin/em-junk-filter.c
 
 post-install: install-ldconfig-file
 	${MKDIR} ${PREFIX}/include/evolution-${EVO_VERSION}/composer
