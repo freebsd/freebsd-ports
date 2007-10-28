@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	commons-httpclient
-DISTVERSION=	3.0.1
-PORTREVISION=	1
+DISTVERSION=	3.1
 CATEGORIES=	java www
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
-MASTER_SITE_SUBDIR=	commons/httpclient/source
+MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}-3.x/source
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
@@ -32,9 +31,7 @@ ALL_TARGET=	dist
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	LICENSE api
-.endif
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
