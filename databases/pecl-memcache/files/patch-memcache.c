@@ -1,11 +1,11 @@
---- memcache.c.orig	Wed May  3 16:41:31 2006
-+++ memcache.c	Wed May  3 16:42:05 2006
-@@ -120,7 +120,7 @@
+--- memcache.c.orig	2007-10-28 22:53:21.000000000 +0100
++++ memcache.c	2007-10-28 22:53:54.000000000 +0100
+@@ -201,7 +201,7 @@
  
  /* {{{ macros */
  #define MMC_PREPARE_KEY(key, key_len) \
 -	php_strtr(key, key_len, "\t\r\n ", "____", 4); \
 +	php_strtr(key, key_len, "\t\r\n ", "____", 4);
+ /* }}} */
  
- #if ZEND_DEBUG
- 
+ /* {{{ internal function protos */
