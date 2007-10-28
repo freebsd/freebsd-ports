@@ -6,21 +6,29 @@
 #
 
 PORTNAME=	wmpal
-PORTVERSION=	0.5
-PORTREVISION=	4
+PORTVERSION=	0.6
 CATEGORIES=	misc windowmaker
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A one of the most useless dockapps in the world
 
-LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
-
-USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
+USE_XORG=	xpm
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
+
+PORTDOCS=	README
+PLIST_FILES=	bin/wmpal
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"dino"|"daemon"|g' ${WRKSRC}/wmpal.c
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
