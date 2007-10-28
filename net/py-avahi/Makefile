@@ -15,7 +15,7 @@ COMMENT=	Python interface to the Avahi mDNS system
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
-LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi
+LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi-app
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
 
