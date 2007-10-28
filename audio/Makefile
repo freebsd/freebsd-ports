@@ -578,6 +578,7 @@
     SUBDIR += sidplayer
     SUBDIR += simplemod
     SUBDIR += slimserver
+    SUBDIR += slimserver-dynamicplaylist
     SUBDIR += slimserver-dynamictransition
     SUBDIR += slimserver-lastfm
     SUBDIR += slimserver-lazysearch
