@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vidalia
-PORTVERSION=	0.0.14
+PORTVERSION=	0.0.15
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://www.vidalia-project.net:8001/vidalia/\
 		http://tor.eff.org/dist/vidalia-bundles/
@@ -65,6 +65,6 @@ post-configure:
 .if defined(TOR_CONTROL_ADDR)
 	 ${REINPLACE_CMD} -e 's@127\.0\.0\.1@${TOR_CONTROL_ADDR}@' ${WRKSRC}/src/config/torsettings.cpp
 .endif
-	 ${REINPLACE_CMD} -E -e 's@(INCPATH +=)@\1 -I${X11BASE}/include@' ${WRKSRC}/Makefile
+	 ${REINPLACE_CMD} -E -e 's@(INCPATH +=)@\1 -I${X11BASE}/include@' -e 's@/share(/man/man1)@\1@' ${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>
