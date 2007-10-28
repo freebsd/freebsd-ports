@@ -28,6 +28,8 @@ CONFIGURE_ARGS=	--localedir=${PREFIX}/share/locale
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${libdir}/locale|$${datadir}/locale|' \
 		${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|' \
+		${WRKSRC}/configure
 
 pre-configure:
 	@(cd ${WRKSRC} && ${INTLTOOLIZE} -f)
