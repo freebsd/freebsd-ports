@@ -10719,6 +10719,7 @@ p5-ParseLex	ports/devel/p5-ParseLex
 p5-PatchReader	ports/devel/p5-PatchReader
 p5-Path-Class	ports/devel/p5-Path-Class
 p5-PathTools	ports/devel/p5-PathTools
+p5-PayflowPro	ports/finance/p5-PayflowPro
 p5-Penguin	ports/devel/p5-Penguin
 p5-Penguin-Easy	ports/devel/p5-Penguin-Easy
 p5-Perl-Critic	ports/textproc/p5-Perl-Critic
