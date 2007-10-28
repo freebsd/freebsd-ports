@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL-${PORTVERSION}
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
