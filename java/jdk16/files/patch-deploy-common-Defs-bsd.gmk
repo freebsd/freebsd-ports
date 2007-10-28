@@ -13,17 +13,3 @@ $FreeBSD$
  ifneq ($(OS_VENDOR), NetBSD)
  LIBS           = -L$(X11DIR)/lib -lX11 -L$(LOCALDIR)/lib -liconv
  else
-@@ -43,11 +43,11 @@
- 	$(BSD_INCLUDES) -D_ALLBSD_SOURCE
- 
- ifeq ($(OS_VENDOR), FreeBSD)
--LINK_FLAGS_COMMON = -pthread
-+LINK_FLAGS_COMMON = ${PTHREAD_LIBS}
- endif
- 
- ifeq ($(OS_VENDOR), OpenBSD)
--LINK_FLAGS_COMMON = -pthread
-+LINK_FLAGS_COMMON = ${PTHREAD_LIBS}
- endif
- 
- C_FLAGS_OPT =
