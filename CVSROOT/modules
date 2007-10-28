@@ -11988,6 +11988,7 @@ pecl-timezonedb	ports/misc/pecl-timezonedb
 pecl-uploadprogress	ports/devel/pecl-uploadprogress
 pecl-vld	ports/devel/pecl-vld
 pecl-xdiff	ports/textproc/pecl-xdiff
+pecl-xslcache	ports/textproc/pecl-xslcache
 pecl-yaz	ports/net/pecl-yaz
 pecl-zip	ports/archivers/pecl-zip
 pecomato	ports/graphics/pecomato
