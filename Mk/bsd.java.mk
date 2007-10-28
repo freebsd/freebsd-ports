@@ -25,7 +25,7 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 #
 # JAVA_VERSION		List of space-separated suitable java versions for the
 #					port. An optional "+" allows you to specify a range of
-#					versions. (allowed values: 1.1[+] 1.2[+] 1.3[+] 1.4[+])
+#					versions. (allowed values: 1.3[+] 1.4[+] 1.5[+] 1.6[+])
 #
 # JAVA_OS			List of space-separated suitable JDK port operating systems
 #					for the port. (allowed values: native linux)
@@ -70,13 +70,13 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 #					'/usr/local/jdk1.3.1')
 #
 # JAVAC				Path to the Java compiler to use. (e.g.
-#					'/usr/local/jdk1.1.8/bin/javac' or '/usr/local/bin/jikes')
+#					'/usr/local/jdk1.5.0/bin/javac' or '/usr/local/bin/jikes')
 #
 # JAR				Path to the JAR tool to use. (e.g.
-#					'/usr/local/jdk1.2.2/bin/jar' or '/usr/local/bin/fastjar')
+#					'/usr/local/jdk1.5.0/bin/jar' or '/usr/local/bin/fastjar')
 #
 # APPLETVIEWER		Path to the appletviewer utility. (e.g.
-#					'/usr/local/linux-jdk1.2.2/bin/appletviewer')
+#					'/usr/local/linux-jdk1.3.1/bin/appletviewer')
 #
 # JAVA				Path to the java executable. Use this for executing Java
 #					programs. (e.g. '/usr/local/jdk1.3.1/bin/java')
@@ -87,13 +87,11 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 #
 # JAVAP				Path to the javap program.
 #
-# JAVA_KEYTOOL		Path to the keytool utility program. This settings is
-#					availble only if the JDK is Java 1.2 or higher.
+# JAVA_KEYTOOL		Path to the keytool utility program.
 #
 # JAVA_N2A			Path to the native2ascii tool.
 #
-# JAVA_POLICYTOOL	Path to the policytool program. This variable is available
-#					only if the JDK is Java 1.2 or higher.
+# JAVA_POLICYTOOL	Path to the policytool program.
 #
 # JAVA_SERIALVER	Path to the serialver utility program.
 #
@@ -101,12 +99,10 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 #
 # RMIREGISTRY		Path to the RMI registry program, rmiregistry.
 #
-# RMID				Path to the RMI daemon program. This settings is only
-#					available if the JDK is Java 1.2 or higher.
+# RMID				Path to the RMI daemon program.
 #
 # JAVA_CLASSES		Path to the archive that contains the JDK class files. On
-#					JDK 1.2 or later, this is ${JAVA_HOME}/jre/lib/rt.jar.
-#					Earlier JDK's use ${JAVA_HOME}/lib/classes.zip.
+#					most JDKs, this is ${JAVA_HOME}/jre/lib/rt.jar.
 #
 # JAVASHAREDIR		The base directory for all shared Java resources.
 #
@@ -166,8 +162,8 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 .		endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	1.1 1.2 1.3 1.4 1.5 1.6
-_JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
+__JAVA_VERSION_LIST=	1.3 1.4 1.5 1.6
+_JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/} 1.1+ 1.2+
 _JAVA_OS_LIST=			native linux
 _JAVA_VENDOR_LIST=		freebsd bsdjava sun blackdown
 
@@ -175,10 +171,6 @@ _JAVA_VENDOR_LIST=		freebsd bsdjava sun blackdown
 # port location, corresponding JAVA_HOME, JDK version, OS, vendor
 _JAVA_PORT_NATIVE_FREEBSD_JDK_1_5_INFO=		PORT=java/diablo-jdk15			HOME=${LOCALBASE}/diablo-jdk1.5.0 \
 											VERSION=1.5.0	OS=native	VENDOR=freebsd
-_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1_INFO=		PORT=java/jdk11					HOME=${LOCALBASE}/jdk1.1.8 \
-											VERSION=1.1.8	OS=native	VENDOR=bsdjava
-_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2_INFO=		PORT=java/jdk12					HOME=${LOCALBASE}/jdk1.2.2 \
-											VERSION=1.2.2	OS=native	VENDOR=bsdjava
 _JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3_INFO=		PORT=java/jdk13					HOME=${LOCALBASE}/jdk1.3.1 \
 											VERSION=1.3.1	OS=native	VENDOR=bsdjava
 _JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4_INFO=		PORT=java/jdk14					HOME=${LOCALBASE}/jdk1.4.2 \
@@ -187,12 +179,8 @@ _JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5_INFO=		PORT=java/jdk15					HOME=${LOCALBASE}/j
 											VERSION=1.5.0	OS=native	VENDOR=bsdjava
 _JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6_INFO=		PORT=java/jdk16					HOME=${LOCALBASE}/jdk1.6.0 \
 											VERSION=1.6.0	OS=native	VENDOR=bsdjava
-_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2_INFO=	PORT=java/linux-blackdown-jdk12	HOME=${LOCALBASE}/linux-blackdown-jdk1.2.2 \
-											VERSION=1.2.2	OS=linux	VENDOR=blackdown
 _JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4_INFO=	PORT=java/linux-blackdown-jdk14	HOME=${LOCALBASE}/linux-blackdown-jdk1.4.2 \
 											VERSION=1.4.2	OS=linux	VENDOR=blackdown
-_JAVA_PORT_LINUX_SUN_JDK_1_2_INFO=			PORT=java/linux-sun-jdk12		HOME=${LOCALBASE}/linux-sun-jdk1.2.2 \
-											VERSION=1.2.2	OS=linux	VENDOR=sun
 _JAVA_PORT_LINUX_SUN_JDK_1_3_INFO=			PORT=java/linux-sun-jdk13		HOME=${LOCALBASE}/linux-sun-jdk1.3.1 \
 											VERSION=1.3.1	OS=linux	VENDOR=sun
 _JAVA_PORT_LINUX_SUN_JDK_1_4_INFO=			PORT=java/linux-sun-jdk14		HOME=${LOCALBASE}/linux-sun-jdk1.4.2 \
@@ -226,15 +214,11 @@ __JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_FREEBSD_JDK_1_5 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3 \
-					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2 \
-					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1 \
 					JAVA_PORT_LINUX_SUN_JDK_1_6 \
 					JAVA_PORT_LINUX_SUN_JDK_1_5 \
 					JAVA_PORT_LINUX_SUN_JDK_1_4 \
 					JAVA_PORT_LINUX_SUN_JDK_1_3 \
-					JAVA_PORT_LINUX_SUN_JDK_1_2 \
-					JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4 \
-					JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2
+					JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4
 _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
 					${_JAVA_PREFERRED_PORTS} \
 					${__JAVA_PORTS_ALL}
@@ -308,7 +292,7 @@ JAVA_RUN=	jre
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
 .		if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/1.1+/1.1 1.2 1.3 1.4 1.5 1.6/:S/1.2+/1.2 1.3 1.4 1.5 1.6/:S/1.3+/1.3 1.4 1.5 1.6/:S/1.4+/1.4 1.5 1.6/:S/1.5+/1.5 1.6/:S/1.6+/1.6/}
+_JAVA_VERSION=	${JAVA_VERSION:S/1.1+/1.3+/:S/1.2+/1.3+/:S/1.3+/1.3 1.4+/:S/1.4+/1.4 1.5+/:S/1.5+/1.5 1.6+/:S/1.6+/1.6/}
 .		else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
 .		endif
@@ -490,20 +474,12 @@ JAVA_N2A?=		${JAVA_HOME}/bin/native2ascii
 JAVA_SERIALVER?=${JAVA_HOME}/bin/serialver
 RMIC?=			${JAVA_HOME}/bin/rmic
 RMIREGISTRY?=	${JAVA_HOME}/bin/rmiregistry
-
-# Some executables only exists in JDK 1.2 and up
-.		if ${_JAVA_PORT} != "JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1"
 JAVA_KEYTOOL?=		${JAVA_HOME}/bin/keytool
 JAVA_POLICYTOOL?=	${JAVA_HOME}/bin/policytool
 RMID?=				${JAVA_HOME}/bin/rmid
-.		endif
 
 # Set the location of the ZIP or JAR file with all standard Java classes.
-.		if ${_JAVA_PORT} == "JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1"
-JAVA_CLASSES=	${JAVA_HOME}/lib/classes.zip
-.		else
 JAVA_CLASSES=	${JAVA_HOME}/jre/lib/rt.jar
-.		endif
 
 
 #-------------------------------------------------------------------------------
