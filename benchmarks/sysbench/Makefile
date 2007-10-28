@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kris@FreeBSD.org
 COMMENT=	A modular, cross-platform and multi-threaded benchmark tool
 
 USE_AUTOTOOLS=	libtool:15
