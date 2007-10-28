@@ -6,22 +6,26 @@
 #
 
 PORTNAME=	luasocket
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	net
-MASTER_SITES=	http://luaforge.net/frs/download.php/1097/
+MASTER_SITES=	http://luaforge.net/frs/download.php/2664/
+PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	IPv4 Sockets support for the Lua language
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:extract
-
 USE_GMAKE=	yes
-USE_LUA=	5.0
-LUA_COMPS=	lua compat51
+USE_LUA?=	5.1
+LUA_COMPS=	lua
 
+.if ${USE_LUA} == 5.0
+LUA_COMPS+=	compat51
+
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/lua50-compat51:build
 COMPAT_SRC=	`(cd ${PORTSDIR}/devel/lua50-compat51 && ${MAKE} -V WRKSRC)`
-MAKE_ENV=	COMPATDIR="${COMPAT_SRC}"
+MAKE_ENV=	COMPATDIR="${COMPAT_SRC}" \
+		COMPAT_OBJ="${COMPAT_SRC}/compat-5.1.o"
+.endif
 
 post-extract:
 	@${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile

@@ -38,7 +38,7 @@
 #				  Other components (modules):
 #				  5.0			- app, compat51, dfui, filename, gettext,
 #								  posix, pty, socket.
-#				  5.1			- filename, gettext, posix, pty.
+#				  5.1			- filename, gettext, posix, pty, socket.
 #				  The available dependency types are:
 #				  build			- Requires component for building.
 #				  lib			- Requires component for building and running.
@@ -159,7 +159,7 @@ _LUA_PORT_filename_5.0=	devel/lua50-filename
 _LUA_PORT_gettext_5.0=	devel/lua50-gettext
 _LUA_PORT_posix_5.0=	devel/lua50-posix
 _LUA_PORT_pty_5.0=		devel/lua50-pty
-_LUA_PORT_socket_5.0=	net/luasocket
+_LUA_PORT_socket_5.0=	net/lua50-luasocket
 
 _LUA_PORT_lua_5.1=		lang/lua
 _LUA_DEPTYPE_lua_5.1=	build
@@ -168,6 +168,7 @@ _LUA_PORT_filename_5.1=	devel/lua-filename
 _LUA_PORT_gettext_5.1=	devel/lua-gettext
 _LUA_PORT_posix_5.1=	devel/lua-posix
 _LUA_PORT_pty_5.1=		devel/lua-pty
+_LUA_PORT_socket_5.1=	net/luasocket
 
 .	for comp in ${_LUA_COMPS_ALL}
 _LUA_COMP=				${comp}

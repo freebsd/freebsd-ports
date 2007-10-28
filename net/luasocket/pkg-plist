@@ -10,8 +10,8 @@
 %%LUA_MODLIBDIR%%/mime/core.so
 %%PORTDOCS%%%%DOCSDIR%%/dns.html
 %%PORTDOCS%%%%DOCSDIR%%/ftp.html
-%%PORTDOCS%%%%DOCSDIR%%/home.html
 %%PORTDOCS%%%%DOCSDIR%%/http.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/ltn12.html
