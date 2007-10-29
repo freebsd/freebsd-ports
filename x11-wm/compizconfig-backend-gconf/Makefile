@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	compizconfig-backend-gconf
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.0
 #PORTREVISION=	0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
@@ -30,5 +30,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'	\
 		${WRKSRC}/settings-backend/gconf.c	\
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

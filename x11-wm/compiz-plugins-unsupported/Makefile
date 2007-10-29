@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	compiz-fusion-plugins-unsupported
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.6.0
+#PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
@@ -39,5 +39,4 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--enable-schemas
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

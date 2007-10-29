@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	compizconfig-python
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.0.1
 #PORTREVISION=	0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
@@ -33,5 +33,4 @@ post-patch:
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
