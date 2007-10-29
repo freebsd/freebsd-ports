@@ -2,7 +2,9 @@ bin/%%ARCH%%-portbld-freebsd%%OSREL%%-SC2Elmer
 bin/ElmerSolver
 bin/GebhardtFactors
 bin/ViewFactors
+bin/elmerld
 bin/elmerf90
+bin/elmerf90-nosh
 lib/libelmersolver.so
 %%DATADIR%%/include/adaptive.mod
 %%DATADIR%%/include/bandmatrix.mod
@@ -25,6 +27,7 @@ lib/libelmersolver.so
 %%DATADIR%%/include/hashtable.mod
 %%DATADIR%%/include/integration.mod
 %%DATADIR%%/include/interpolation.mod
+%%DATADIR%%/include/iterativemethods.mod
 %%DATADIR%%/include/itersolve.mod
 %%DATADIR%%/include/linearalgebra.mod
 %%DATADIR%%/include/lists.mod
@@ -75,6 +78,7 @@ lib/libelmersolver.so
 %%DATADIR%%/lib/FDiffusion.so
 %%DATADIR%%/lib/FDiffusion3D.so
 %%DATADIR%%/lib/FluidicForce.so
+%%DATADIR%%/lib/FluxSolver.so
 %%DATADIR%%/lib/FreeSurfaceReduced.so
 %%DATADIR%%/lib/FreeSurfaceSolver.so
 %%DATADIR%%/lib/HelmholtzBEM.so
@@ -83,9 +87,12 @@ lib/libelmersolver.so
 %%DATADIR%%/lib/LevelSet.so
 %%DATADIR%%/lib/MagneticSolve.so
 %%DATADIR%%/lib/MovingElstatSolver.so
+%%DATADIR%%/lib/NormalSolver.so
+%%DATADIR%%/lib/PhaseChangeSolve.so
 %%DATADIR%%/lib/PoissonBEM.so
 %%DATADIR%%/lib/PoissonBoltzmannSolve.so
 %%DATADIR%%/lib/RateOfChange.so
+%%DATADIR%%/lib/ReloadData.so
 %%DATADIR%%/lib/ReloadInput.so
 %%DATADIR%%/lib/ResultOutputSolve.so
 %%DATADIR%%/lib/RigidBodyReduction.so
