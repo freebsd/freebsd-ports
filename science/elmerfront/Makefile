@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	front
-PORTVERSION=	5.2.0
-PORTREVISION=	2
+PORTVERSION=	5.4.0
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer
@@ -33,7 +32,6 @@ BROKEN=		Does not configure on FreeBSD 7.0
 CXXFLAGS+=	-Wno-deprecated
 
 USE_FORTRAN=	yes
-USE_GCC=	3.4
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	FC=${FC} F77=${FC} FCFLAGS="${FCFLAGS}"
