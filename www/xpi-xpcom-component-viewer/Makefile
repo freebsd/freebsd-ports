@@ -9,6 +9,7 @@ PORTNAME=	xpcom-component-viewer
 PORTVERSION=	0.7.0
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
+MASTER_SITES=	CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	XPCOM Component Viewer
