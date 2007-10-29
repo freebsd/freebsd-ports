@@ -1,6 +1,18 @@
---- Makefile.orig	Tue Jul 26 23:32:00 2005
-+++ Makefile	Thu Nov 17 10:15:57 2005
-@@ -43,12 +43,14 @@
+--- Makefile.orig	Wed Aug  8 21:00:54 2007
++++ Makefile	Fri Sep 14 12:30:38 2007
+@@ -11,7 +11,10 @@
+ 
+ include $(top_srcdir)/config/Make.rules
+ 
+-SUBDIRS		= config src include test demo slice doc
++SUBDIRS		= config src include test demo slice
++ifndef NOPORTDOCS
++SUBDIRS		+= doc
++endif
+ 
+ INSTALL_SUBDIRS	= $(install_bindir) $(install_libdir) $(install_includedir) $(install_slicedir) $(install_docdir)
+ 
+@@ -51,12 +54,14 @@
  	@( cd doc && $(MAKE) ) || exit 1
  
  install::
