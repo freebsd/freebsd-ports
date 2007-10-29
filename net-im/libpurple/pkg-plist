@@ -139,6 +139,7 @@ share/aclocal/purple.m4
 share/applications/pidgin.desktop
 share/purple/ca-certs/Equifax_Secure_CA.pem
 share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
+share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem
 share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
 share/purple/ca-certs/Verisign_RSA_Secure_Server_CA.pem
 share/sounds/purple/alert.wav
@@ -238,7 +239,6 @@ share/locale/zh_TW/LC_MESSAGES/pidgin.mo
 @dirrmtry share/locale/be@latin
 @dirrm share/purple/ca-certs
 @dirrm share/purple
-@dirrm share/pidgin/
 @dirrm share/sounds/purple
 %%PERL:%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Purple
 @dirrm lib/purple-2

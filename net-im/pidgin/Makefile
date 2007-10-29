@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pidgin
-PORTREVISION=	2
+PORTREVISION=	0
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Pidgin multi-protocol messaging client (GTK+ UI)
