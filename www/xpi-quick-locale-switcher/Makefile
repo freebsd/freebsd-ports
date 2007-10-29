@@ -8,6 +8,7 @@
 PORTNAME=	quick-locale-switcher
 PORTVERSION=	1.6.3.4
 DISTVERSIONSUFFIX=	-fx+mz+tb+sb+nvu+ns+sm+fl
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -18,6 +19,10 @@ XPI_ID=		{25A1388B-6B18-46c3-BEBA-A81915D0DE8F}
 XPI_NUM=	1333
 XPI_FILES=	chrome/qls.jar chrome.manifest defaults/preferences/prefs.js install.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
+
+post-patch:
+	@${REINPLACE_CMD} -e '/maxVersion/s|0.5|0.7|' ${WRKSRC}/install.rdf
+	@${RM} -f ${WRKSRC}/install.rdf.bak
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
