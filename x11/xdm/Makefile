@@ -7,7 +7,7 @@
 
 PORTNAME=	xdm
 PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -27,6 +27,10 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|XDMCONFIGDIR/|${PREFIX}/lib/X11/xdm/|" \
 		-e "s|XDMSCRIPTDIR/|${PREFIX}/lib/X11/xdm/|" \
 			${WRKSRC}/config/xdm-config.cpp
+
+post-configure:
+	@${REINPLACE_CMD} -e "s|${EXAMPLESDIR}|${PREFIX}/lib/X11/xdm|" \
+		${WRKSRC}/config.h
 
 post-install:
 .for f in ${CFFILES}
