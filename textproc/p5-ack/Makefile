@@ -7,6 +7,7 @@
 
 PORTNAME=	ack
 PORTVERSION=	1.68
+PORTREVISION=	1
 CATEGORIES=	textproc perl5 sysutils
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	App
@@ -16,6 +17,7 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A grep-like text finder for large trees of text
 
 BUILD_DEPENDS=	p5-File-Next>=0.40:${PORTSDIR}/sysutils/p5-File-Next
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
