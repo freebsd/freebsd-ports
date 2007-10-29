@@ -7,6 +7,7 @@
 
 PORTNAME=	avr-libc
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -34,6 +35,9 @@ BROKEN=		Does not build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
+
+CONFLICTS=	avr-libc-devel*
+
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS=	--build=`./config.guess` --host=avr \
