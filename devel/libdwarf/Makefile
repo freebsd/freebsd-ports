@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdwarf
-PORTVERSION=	20060421
+PORTVERSION=	20070703
 CATEGORIES=	devel
 MASTER_SITES=	http://reality.sgiweb.org/davea/
 
@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PS_FILES=	dwarf.v2.ps index.v2.ps libdwarf2.1.ps libdwarf2p.1.ps mips_extensions.ps
+PS_FILES=	dwarf.v2.pdf index.v2.pdf libdwarf2.1.pdf libdwarf2p.1.pdf mips_extensions.pdf
 
 do-install:
 		${INSTALL_DATA} ${WRKSRC}/libdwarf.a ${PREFIX}/lib
