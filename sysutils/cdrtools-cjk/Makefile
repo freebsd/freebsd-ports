@@ -7,11 +7,12 @@
 
 PORTVERSION=	2.01.${PATCHDATE}
 PORTREVISION=	2
-CATEGORIES=	sysutils chinese japanese korean audio
+CATEGORIES=	chinese japanese korean sysutils audio
 PKGNAMEPREFIX=	cjk-
 
 #PATCH_SITES=	http://www.geocities.co.jp/SiliconValley/3657/mkisofs_patch/
-PATCH_SITES=	ftp://ftp.zeist.de/pub/distfiles/
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	marius
 PATCHFILES=	noboru_nls_patch_${PATCHDATE}.txt.gz
 PATCH_DIST_STRIP=	-p1
 
