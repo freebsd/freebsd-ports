@@ -17630,6 +17630,7 @@ yell		ports/audio/yell
 yelp		ports/x11/yelp
 yencode		ports/news/yencode
 yersinia	ports/security/yersinia
+yfklog		ports/comms/yfklog
 yi-aspell	ports/textproc/yi-aspell
 yodl		ports/textproc/yodl
 yorick		ports/lang/yorick
