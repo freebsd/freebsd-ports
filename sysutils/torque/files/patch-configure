@@ -1,0 +1,11 @@
+--- configure.orig	2007-10-28 11:47:59.000000000 +0100
++++ configure	2007-10-28 11:48:08.000000000 +0100
+@@ -19076,7 +19076,7 @@
+ 
+ 
+ 
+-gcc_warning_flags="-W -Wall -Wno-unused-parameter -Wno-long-long -pedantic -Werror"
++gcc_warning_flags="-W -Wall -Wno-unused-parameter -Wno-long-long -pedantic"
+ # Check whether --enable-gcc_warnings or --disable-gcc_warnings was given.
+ if test "${enable_gcc_warnings+set}" = set; then
+   enableval="$enable_gcc_warnings"

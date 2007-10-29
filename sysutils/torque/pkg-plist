@@ -4,7 +4,7 @@ include/tm.h
 include/tm_.h
 include/rpp.h
 include/rm.h
-lib/libtorque.so.0
+lib/libtorque.so.2
 lib/libtorque.so
 lib/libtorque.la
 lib/libtorque.a
@@ -42,6 +42,10 @@ bin/printjob
 bin/printtracking
 bin/tracejob
 bin/pbs-config
+bin/qnodes
+sbin/qserverd
+sbin/qschedd
+sbin/qnoded
 %%EXAMPLESDIR%%/torque.setup
 %%EXAMPLESDIR%%/var/spool/torque/pbs_environment
 %%EXAMPLESDIR%%/var/spool/torque/server_name
@@ -49,6 +53,8 @@ bin/pbs-config
 %%EXAMPLESDIR%%/var/spool/torque/sched_priv/resource_group
 %%EXAMPLESDIR%%/var/spool/torque/sched_priv/holidays
 %%EXAMPLESDIR%%/var/spool/torque/sched_priv/dedicated_time
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/sched_priv/accounting
+@dirrm %%EXAMPLESDIR%%/var/spool/torque/sched_priv/accounting
 @exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/aux
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/aux
 @exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/checkpoint
@@ -80,6 +86,10 @@ bin/pbs-config
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/accounting
 @exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_priv/disallowed_types
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/disallowed_types
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_priv/hostlist
+@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/arrays
+@exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/server_priv/hostlist
+@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/hostlist
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv
 @exec mkdir -p %D%/%%EXAMPLESDIR%%/var/spool/torque/undelivered
 @dirrm %%EXAMPLESDIR%%/var/spool/torque/undelivered
