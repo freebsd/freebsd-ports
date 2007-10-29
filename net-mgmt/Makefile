@@ -223,6 +223,7 @@
     SUBDIR += snmp++
     SUBDIR += snmptt
     SUBDIR += softflowd
+    SUBDIR += spectools
     SUBDIR += subcalc
     SUBDIR += sysmon
     SUBDIR += tcpreplay
@@ -236,7 +237,6 @@
     SUBDIR += weplab
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
-    SUBDIR += wispy-tools
     SUBDIR += yabm
     SUBDIR += zabbix
     SUBDIR += zabbix-agent
