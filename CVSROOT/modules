@@ -1504,6 +1504,7 @@ compiz		ports/x11-wm/compiz
 compizconfig-backend-gconf	ports/x11-wm/compizconfig-backend-gconf
 compizconfig-python	ports/x11-wm/compizconfig-python
 compiz-bcop	ports/devel/compiz-bcop
+compiz-fusion	ports/x11-wm/compiz-fusion
 compiz-fusion-plugins-extra	ports/x11-wm/compiz-fusion-plugins-extra
 compiz-fusion-plugins-main	ports/x11-wm/compiz-fusion-plugins-main
 compiz-fusion-plugins-unsupported	ports/x11-wm/compiz-fusion-plugins-unsupported
