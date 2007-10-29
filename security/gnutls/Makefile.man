@@ -64,6 +64,7 @@ MAN3=	\
 	gnutls_certificate_set_x509_trust_mem.3 \
 	gnutls_certificate_type_get.3 \
 	gnutls_certificate_type_get_name.3 \
+	gnutls_certificate_type_list.3 \
 	gnutls_certificate_type_set_priority.3 \
 	gnutls_certificate_verify_peers.3 \
 	gnutls_certificate_verify_peers2.3 \
@@ -71,10 +72,13 @@ MAN3=	\
 	gnutls_cipher_get.3 \
 	gnutls_cipher_get_key_size.3 \
 	gnutls_cipher_get_name.3 \
+	gnutls_cipher_list.3 \
 	gnutls_cipher_set_priority.3 \
 	gnutls_cipher_suite_get_name.3 \
+	gnutls_cipher_suite_info.3 \
 	gnutls_compression_get.3 \
 	gnutls_compression_get_name.3 \
+	gnutls_compression_list.3 \
 	gnutls_compression_set_priority.3 \
 	gnutls_credentials_clear.3 \
 	gnutls_credentials_set.3 \
@@ -142,9 +146,11 @@ MAN3=	\
 	gnutls_init.3 \
 	gnutls_kx_get.3 \
 	gnutls_kx_get_name.3 \
+	gnutls_kx_list.3 \
 	gnutls_kx_set_priority.3 \
 	gnutls_mac_get.3 \
 	gnutls_mac_get_name.3 \
+	gnutls_mac_list.3 \
 	gnutls_mac_set_priority.3 \
 	gnutls_malloc.3 \
 	gnutls_openpgp_key_check_hostname.3 \
@@ -172,6 +178,7 @@ MAN3=	\
 	gnutls_openpgp_privkey_get_pk_algorithm.3 \
 	gnutls_openpgp_privkey_import.3 \
 	gnutls_openpgp_privkey_init.3 \
+	gnutls_openpgp_privkey_sign_hash.3 \
 	gnutls_openpgp_send_key.3 \
 	gnutls_openpgp_set_recv_key_function.3 \
 	gnutls_openpgp_trustdb_deinit.3 \
@@ -223,6 +230,7 @@ MAN3=	\
 	gnutls_prf_raw.3 \
 	gnutls_protocol_get_name.3 \
 	gnutls_protocol_get_version.3 \
+	gnutls_protocol_list.3 \
 	gnutls_protocol_set_priority.3 \
 	gnutls_psk_allocate_client_credentials.3 \
 	gnutls_psk_allocate_server_credentials.3 \
@@ -268,6 +276,8 @@ MAN3=	\
 	gnutls_set_default_export_priority.3 \
 	gnutls_set_default_priority.3 \
 	gnutls_sign_algorithm_get_name.3 \
+	gnutls_sign_callback_set.3 \
+	gnutls_sign_callback_get.3 \
 	gnutls_srp_allocate_client_credentials.3 \
 	gnutls_srp_allocate_server_credentials.3 \
 	gnutls_srp_base64_decode.3 \
@@ -298,14 +308,22 @@ MAN3=	\
 	gnutls_x509_crl_get_crt_count.3 \
 	gnutls_x509_crl_get_crt_serial.3 \
 	gnutls_x509_crl_get_dn_oid.3 \
+	gnutls_x509_crt_get_extension_info.3 \
+	gnutls_x509_crt_get_extension_data.3 \
 	gnutls_x509_crl_get_issuer_dn.3 \
 	gnutls_x509_crl_get_issuer_dn_by_oid.3 \
 	gnutls_x509_crl_get_next_update.3 \
+	gnutls_x509_crt_get_raw_issuer_dn.3 \
+	gnutls_x509_crt_get_raw_dn.3 \
+	gnutls_x509_crt_get_signature.3 \
 	gnutls_x509_crl_get_signature_algorithm.3 \
+	gnutls_x509_crt_get_subject_alt_othername_oid.3 \
 	gnutls_x509_crl_get_this_update.3 \
 	gnutls_x509_crl_get_version.3 \
 	gnutls_x509_crl_import.3 \
 	gnutls_x509_crl_init.3 \
+	gnutls_x509_crl_print.3 \
+	gnutls_x509_crt_print.3 \
 	gnutls_x509_crl_set_crt.3 \
 	gnutls_x509_crl_set_crt_serial.3 \
 	gnutls_x509_crl_set_next_update.3 \
@@ -339,9 +357,8 @@ MAN3=	\
 	gnutls_x509_crt_export.3 \
 	gnutls_x509_crt_get_activation_time.3 \
 	gnutls_x509_crt_get_authority_key_id.3 \
+	gnutls_x509_crt_get_basic_constraints.3 \
 	gnutls_x509_crt_get_crl_dist_points.3 \
-	gnutls_x509_crt_get_raw_issuer_dn.3 \
-	gnutls_x509_crt_get_raw_dn.3 \
 	gnutls_x509_crt_get_dn.3 \
 	gnutls_x509_crt_get_dn_by_oid.3 \
 	gnutls_x509_crt_get_dn_oid.3 \
@@ -357,7 +374,9 @@ MAN3=	\
 	gnutls_x509_crt_get_pk_algorithm.3 \
 	gnutls_x509_crt_get_pk_dsa_raw.3 \
 	gnutls_x509_crt_get_pk_rsa_raw.3 \
+	gnutls_x509_crt_get_proxy.3 \
 	gnutls_x509_crt_get_serial.3 \
+	gnutls_x509_crl_get_signature.3 \
 	gnutls_x509_crt_get_signature_algorithm.3 \
 	gnutls_x509_crt_get_subject_alt_name.3 \
 	gnutls_x509_crt_get_subject_key_id.3 \
@@ -367,6 +386,7 @@ MAN3=	\
 	gnutls_x509_crt_list_verify.3 \
 	gnutls_x509_crt_set_activation_time.3 \
 	gnutls_x509_crt_set_authority_key_id.3 \
+	gnutls_x509_crt_set_basic_constraints.3 \
 	gnutls_x509_crt_set_ca_status.3 \
 	gnutls_x509_crt_set_crl_dist_points.3 \
 	gnutls_x509_crt_set_dn_by_oid.3 \
@@ -376,6 +396,8 @@ MAN3=	\
 	gnutls_x509_crt_set_key.3 \
 	gnutls_x509_crt_set_key_purpose_oid.3 \
 	gnutls_x509_crt_set_key_usage.3 \
+	gnutls_x509_crt_set_proxy.3 \
+	gnutls_x509_crt_set_proxy_dn.3 \
 	gnutls_x509_crt_set_serial.3 \
 	gnutls_x509_crt_set_subject_alternative_name.3 \
 	gnutls_x509_crt_set_subject_key_id.3 \
@@ -399,6 +421,7 @@ MAN3=	\
 	gnutls_x509_privkey_import_rsa_raw.3 \
 	gnutls_x509_privkey_init.3 \
 	gnutls_x509_privkey_sign_data.3 \
+	gnutls_x509_privkey_sign_hash.3 \
 	gnutls_x509_privkey_verify_data.3 \
 	gnutls_x509_rdn_get.3 \
 	gnutls_x509_rdn_get_by_oid.3 \
@@ -408,8 +431,11 @@ MAN3=	\
         gnutls_x509_crt_check_revocation.3 \
         gnutls_x509_crt_get_ca_status.3 \
         gnutls_x509_crt_get_extension_by_oid.3 \
-        gnutls_x509_crt_init.3 \
+        gnutls_x509_crt_get_subject.3 \
+	gnutls_x509_crt_get_issuer.3 \
+	gnutls_x509_crt_init.3 \
         gnutls_x509_crt_set_crq.3 \
         gnutls_x509_crt_set_version.3 \
         gnutls_x509_crt_sign.3 \
-        gnutls_x509_crt_verify_data.3
+        gnutls_x509_crt_verify_data.3 \
+	gnutls_x509_dn_get_rdn_ava.3
