@@ -9,6 +9,7 @@ PORTNAME=	autobrowse
 PORTVERSION=	0.7
 DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
+MASTER_SITES=	BERLIOS CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Surfs the net for you
