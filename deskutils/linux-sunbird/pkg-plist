@@ -26,7 +26,6 @@ lib/%%APP_NAME%%/components/appshell.xpt
 lib/%%APP_NAME%%/components/appstartup.xpt
 lib/%%APP_NAME%%/components/autocomplete.xpt
 lib/%%APP_NAME%%/components/bookmarks.xpt
-lib/%%APP_NAME%%/components/calAlarmMonitor.js
 lib/%%APP_NAME%%/components/calCompositeCalendar.js
 lib/%%APP_NAME%%/components/calDavCalendar.js
 lib/%%APP_NAME%%/components/calICSCalendar.js
@@ -182,18 +181,21 @@ lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback.so
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/install.rdf
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/%%APP_NAME%%/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/install.rdf
 lib/%%APP_NAME%%/greprefs/all.js
 lib/%%APP_NAME%%/greprefs/security-prefs.js
 lib/%%APP_NAME%%/greprefs/xpinstall.js
 lib/%%APP_NAME%%/icons/mozicon128.png
 lib/%%APP_NAME%%/icons/mozicon16.xpm
 lib/%%APP_NAME%%/icons/mozicon50.xpm
+lib/%%APP_NAME%%/js/calAlarmMonitor.js
 lib/%%APP_NAME%%/js/calAlarmService.js
 lib/%%APP_NAME%%/js/calAttachment.js
 lib/%%APP_NAME%%/js/calAttendee.js
 lib/%%APP_NAME%%/js/calCalendarManager.js
 lib/%%APP_NAME%%/js/calDateTimeFormatter.js
 lib/%%APP_NAME%%/js/calEvent.js
+lib/%%APP_NAME%%/js/calFreeBusyService.js
 lib/%%APP_NAME%%/js/calHtmlExport.js
 lib/%%APP_NAME%%/js/calIcsImportExport.js
 lib/%%APP_NAME%%/js/calIcsParser.js
@@ -209,7 +211,6 @@ lib/%%APP_NAME%%/js/calRecurrenceInfo.js
 lib/%%APP_NAME%%/js/calTodo.js
 lib/%%APP_NAME%%/js/calTransactionManager.js
 lib/%%APP_NAME%%/js/calUtils.js
-lib/%%APP_NAME%%/js/calWcapCachedCalendar.js
 lib/%%APP_NAME%%/js/calWcapCalendar.js
 lib/%%APP_NAME%%/js/calWcapCalendarItems.js
 lib/%%APP_NAME%%/js/calWcapErrors.js
@@ -295,6 +296,7 @@ lib/%%APP_NAME%%/xpicleanup
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components
 @dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org
 @dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
+@dirrm lib/%%APP_NAME%%/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}
 @dirrm lib/%%APP_NAME%%/extensions
 @dirrm lib/%%APP_NAME%%/greprefs
 @dirrm lib/%%APP_NAME%%/icons
