@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.20
-PORTREVISION=	1
+PORTVERSION=	4.21
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
@@ -24,7 +23,7 @@ USE_RC_SUBR=	YES
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--localstatedir=/var/tmp --with-pem-dir=${PEM_DIR} \
-		--enable-static
+		--enable-static --disable-fips
 
 .if !defined(NOPORTDOCS)
 MAN8=		stunnel.8 stunnel.fr.8 stunnel.pl.8

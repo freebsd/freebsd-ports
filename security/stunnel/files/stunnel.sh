@@ -27,7 +27,7 @@ name="stunnel"
 rcvar=`set_rcvar`
 stunnel_config="!!PREFIX!!/etc/stunnel/${name}.conf"
 stunnel_pidfile="/var/run/${name}.pid"
-command="!!PREFIX!!/sbin/stunnel"
+command="!!PREFIX!!/bin/stunnel"
 
 [ -z "$stunnel_enable" ]		&& stunnel_enable="NO"
 
