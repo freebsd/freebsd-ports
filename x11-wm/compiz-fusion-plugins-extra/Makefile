@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	compiz-fusion-plugins-extra
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.6.0
+#PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
@@ -40,7 +40,6 @@ GCONF_SCHEMAS=	compiz-addhelper.schemas \
 		compiz-fadedesktop.schemas \
 		compiz-firepaint.schemas \
 		compiz-gears.schemas \
-		compiz-gotovp.schemas \
 		compiz-group.schemas \
 		compiz-mblur.schemas \
 		compiz-reflex.schemas \

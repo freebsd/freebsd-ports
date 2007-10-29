@@ -63,9 +63,14 @@ share/locale/el/LC_MESSAGES/compiz-fusion-plugins-main.mo
 share/locale/fr/LC_MESSAGES/compiz-fusion-plugins-main.mo
 share/locale/it/LC_MESSAGES/compiz-fusion-plugins-main.mo
 share/locale/ja/LC_MESSAGES/compiz-fusion-plugins-main.mo
-share/locale/pt_PT/LC_MESSAGES/compiz-fusion-plugins-main.mo
 share/locale/zh_CN/LC_MESSAGES/compiz-fusion-plugins-main.mo
-share/locale/pl_PL/LC_MESSAGES/compiz-fusion-plugins-main.mo
+share/locale/ca/LC_MESSAGES/compiz-fusion-plugins-main.mo
+share/locale/gl/LC_MESSAGES/compiz-fusion-plugins-main.mo
+share/locale/nb/LC_MESSAGES/compiz-fusion-plugins-main.mo
+share/locale/pl/LC_MESSAGES/compiz-fusion-plugins-main.mo
+share/locale/pt/LC_MESSAGES/compiz-fusion-plugins-main.mo
+share/locale/sv/LC_MESSAGES/compiz-fusion-plugins-main.mo
+share/locale/tr/LC_MESSAGES/compiz-fusion-plugins-main.mo
 share/compiz/animation.xml
 share/compiz/colorfilter.xml
 share/compiz/expo.xml
@@ -85,5 +90,8 @@ share/compiz/workarounds.xml
 share/compiz/scaleaddon.xml
 share/compiz/vpswitch.xml
 share/compiz/shift.xml
-@dirrmtry share/locale/pl_PL/LC_MESSAGES
-@dirrmtry share/locale/pl_PL
+share/compiz/filters/negative
+share/compiz/filters/contrast
+share/compiz/filters/negative-green
+share/compiz/filters/grayscale
+@dirrmtry share/compiz/filters

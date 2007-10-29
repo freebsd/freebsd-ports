@@ -26,9 +26,6 @@ lib/compiz/libfirepaint.la
 lib/compiz/libfirepaint.a
 lib/compiz/libgears.la
 lib/compiz/libgears.a
-lib/compiz/libgotovp.so
-lib/compiz/libgotovp.la
-lib/compiz/libgotovp.a
 lib/compiz/libgroup.so
 lib/compiz/libgroup.la
 lib/compiz/libgroup.a
@@ -58,9 +55,14 @@ share/locale/el/LC_MESSAGES/compiz-fusion-plugins-extra.mo
 share/locale/fr/LC_MESSAGES/compiz-fusion-plugins-extra.mo
 share/locale/it/LC_MESSAGES/compiz-fusion-plugins-extra.mo
 share/locale/ja/LC_MESSAGES/compiz-fusion-plugins-extra.mo
-share/locale/pt_PT/LC_MESSAGES/compiz-fusion-plugins-extra.mo
 share/locale/zh_CN/LC_MESSAGES/compiz-fusion-plugins-extra.mo
-share/locale/pl_PL/LC_MESSAGES/compiz-fusion-plugins-extra.mo
+share/locale/ca/LC_MESSAGES/compiz-fusion-plugins-extra.mo
+share/locale/gl/LC_MESSAGES/compiz-fusion-plugins-extra.mo
+share/locale/nb/LC_MESSAGES/compiz-fusion-plugins-extra.mo
+share/locale/pl/LC_MESSAGES/compiz-fusion-plugins-extra.mo
+share/locale/pt/LC_MESSAGES/compiz-fusion-plugins-extra.mo
+share/locale/sv/LC_MESSAGES/compiz-fusion-plugins-extra.mo
+share/locale/tr/LC_MESSAGES/compiz-fusion-plugins-extra.mo
 share/compiz/addhelper.xml
 share/compiz/bench.xml
 share/compiz/crashhandler.xml
@@ -70,7 +72,6 @@ share/compiz/extrawm.xml
 share/compiz/fadedesktop.xml
 share/compiz/firepaint.xml
 share/compiz/gears.xml
-share/compiz/gotovp.xml
 share/compiz/group.xml
 share/compiz/mblur.xml
 share/compiz/reflex.xml
@@ -80,3 +81,7 @@ share/compiz/splash.xml
 share/compiz/trailfocus.xml
 share/compiz/widget.xml
 share/compiz/reflection.png
+share/compiz/fusioncap.png
+share/compiz/compizcap.png
+share/compiz/splash_background.png
+share/compiz/splash_logo.png

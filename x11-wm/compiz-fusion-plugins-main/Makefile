@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	compiz-fusion-plugins-main
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.6.0
+#PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
