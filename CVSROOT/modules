@@ -13801,6 +13801,7 @@ raproxy		ports/audio/raproxy
 raptor		ports/textproc/raptor
 raqdevil	ports/www/raqdevil
 rar		ports/archivers/rar
+rarcrack	ports/security/rarcrack
 rarian		ports/textproc/rarian
 rascal		ports/math/rascal
 rasmol		ports/biology/rasmol
