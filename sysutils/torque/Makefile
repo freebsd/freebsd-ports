@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	torque
-PORTVERSION=	2.1.9
+PORTVERSION=	2.2.0
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.clusterresources.com/downloads/torque/
 
@@ -57,4 +57,10 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/torque.setup ${EXAMPLESDIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include	<bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		Does not build on 7.x
+.endif
+
+.include <bsd.port.post.mk>
