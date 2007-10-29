@@ -85,6 +85,6 @@ for daemon in ${quagga_daemons}; do
 done
 
 if [ "${quagga_delay}" != "0" ]; then
-    echo "Sleeping ${quagga_delay} to obtain dynamic routing information..."
+    echo "Sleeping ${quagga_delay} seconds to obtain dynamic routing information..."
     sleep ${quagga_delay}
 fi
