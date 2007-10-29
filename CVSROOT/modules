@@ -15035,6 +15035,7 @@ spe		ports/editors/spe
 speak		ports/games/speak
 speak_freely	ports/mbone/speak_freely
 specimen	ports/audio/specimen
+spectools	ports/net-mgmt/spectools
 speedbar	ports/editors/speedbar
 speedcrunch	ports/math/speedcrunch
 speex		ports/audio/speex
@@ -16465,7 +16466,6 @@ wired-tracker	ports/net/wired-tracker
 wireshark	ports/net/wireshark
 wireshark-lite	ports/net/wireshark-lite
 wise		ports/biology/wise
-wispy-tools	ports/net-mgmt/wispy-tools
 wistumbler2	ports/net/wistumbler2
 wizardkit	ports/devel/wizardkit
 wm2		ports/x11-wm/wm2
