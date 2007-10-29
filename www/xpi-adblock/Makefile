@@ -13,6 +13,7 @@ CATEGORIES=	www
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A content filtering extension
 
+XPI_NUM=	10
 XPI_ID=		{34274bf4-1d97-a289-e984-17e546307e4f}
 XPI_FILES=	chrome/adblock.jar chrome.manifest components/.autoreg components/nsAdblock.js \
 		defaults/preferences/adblock.js install.js install.rdf license.txt
