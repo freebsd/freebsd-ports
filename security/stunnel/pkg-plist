@@ -1,10 +1,10 @@
+bin/stunnel
+bin/stunnel3
 etc/rc.d/stunnel.sh
 etc/stunnel/stunnel.conf-sample
-lib/libstunnel.a
-lib/libstunnel.la
-lib/libstunnel.so
-sbin/stunnel
-sbin/stunnel3
+lib/stunnel/libstunnel.a
+lib/stunnel/libstunnel.la
+lib/stunnel/libstunnel.so
 %%PORTDOCS%%%%DOCSDIR%%/stunnel.html
 %%PORTDOCS%%%%DOCSDIR%%/stunnel.fr.html
 %%PORTDOCS%%%%DOCSDIR%%/stunnel.pl.html
@@ -22,12 +22,13 @@ sbin/stunnel3
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.GPL
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.FIPS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.W32
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.WCE
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/PORTS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/stunnel
 @unexec rmdir %D/etc/stunnel 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/stunnel`` to remove any configuration files left." | fmt
