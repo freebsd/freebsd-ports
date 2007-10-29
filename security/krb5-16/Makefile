@@ -7,7 +7,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.6.3
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
@@ -77,6 +77,12 @@ HTML_DOCS=		ftp.html kdestroy.html kinit.html klist.html \
 
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+PLIST_SUB+=		PKINIT="@comment "
+.else
+PLIST_SUB+=		PKINIT=""
+.endif
 
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
