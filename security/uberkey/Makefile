@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.linuks.mine.nu/uberkey/ LOCAL/chinsan
 
-MAINTAINER=	chinsan@chinsan.info
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A keylogger for x86 systems
 
 ONLY_FOR_ARCHS=	i386
