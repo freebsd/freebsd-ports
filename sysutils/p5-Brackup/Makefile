@@ -7,6 +7,7 @@
 
 PORTNAME=	Brackup
 PORTVERSION=	1.06
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
@@ -17,7 +18,8 @@ COMMENT=	Flexible backup tool
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+		${SITE_PERL}/Net/Amazon/S3.pm:${PORTSDIR}/net/p5-Net-Amazon-S3
 
 PERL_CONFIGURE=	yes
 
