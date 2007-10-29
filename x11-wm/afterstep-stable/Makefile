@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	afterstep
-PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTVERSION=	2.2.7
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -17,7 +16,8 @@ DISTNAME=	AfterStep-${PORTVERSION}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A stable version of the AfterStep window manager
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
+		execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
@@ -28,9 +28,9 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 RUN_DEPENDS=	${X11BASE}/bin/xli:${PORTSDIR}/graphics/xli
 
 USE_BZIP2=	yes
-USE_GNOME=	gtk20
-USE_XPM=	yes
-USE_XLIB=	yes
+USE_GNOME=	glib20 gtk20 pango
+USE_ICONV=	yes
+USE_XORG+=	ice sm x11 xcursor xext xfixes xi xinerama xrandr xrender
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-ascp \
