@@ -1,5 +1,5 @@
---- source/nan_definitions.mk.orig	Wed Nov 22 11:05:35 2006
-+++ source/nan_definitions.mk	Wed Mar 21 21:24:37 2007
+--- source/nan_definitions.mk.orig	Tue Sep 18 06:58:49 2007
++++ source/nan_definitions.mk	Thu Oct  4 22:00:38 2007
 @@ -55,9 +55,9 @@
      export NAN_LIBDIR ?= $(NANBLENDERHOME)/../lib
      export NAN_OBJDIR ?= $(NANBLENDERHOME)/obj
@@ -10,22 +10,5 @@
 -    export OCGDIR = $(NAN_OBJDIR)/$(CONFIG_GUESS)
 +    export OCGDIR = $(NAN_OBJDIR)/freebsd
  
-     export NAN_MOTO ?= $(LCGDIR)/moto
- ifeq ($(FREE_WINDOWS), true)
-@@ -132,7 +132,7 @@
- 	  export NAN_OPENEXR_LIBS ?= $(NAN_OPENEXR)/lib/libIlmImf.a $(NAN_OPENEXR)/lib/libHalf.a $(NAN_OPENEXR)/lib/libIex.a
-         else
-           export NAN_OPENEXR ?= /usr/local
--	  export NAN_OPENEXR_LIBS ?= $(NAN_OPENEXR)/lib/libIlmImf.a $(NAN_OPENEXR)/lib/libHalf.a $(NAN_OPENEXR)/lib/libIex.a
-+	  export NAN_OPENEXR_LIBS ?= $(NAN_OPENEXR)/lib/libIlmImf.a $(NAN_OPENEXR)/lib/libIlmThread.a $(NAN_OPENEXR)/lib/libHalf.a $(NAN_OPENEXR)/lib/libIex.a
-         endif
-       endif
-       export NAN_OPENEXR_INC ?= -I$(NAN_OPENEXR)/include -I$(NAN_OPENEXR)/include/OpenEXR
-@@ -291,6 +291,7 @@
- 
-     # enable freetype2 support for text objects
-     # export WITH_FREETYPE2 ?= true
-+    export NAN_NO_KETSJI=true
- 
-   else
-   ifeq ($(OS),irix)
+     # Determines what targets are built
+     export WITH_BF_DYNAMICOPENGL ?= true

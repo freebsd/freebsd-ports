@@ -1,5 +1,5 @@
---- user-def.mk.orig	1969-12-31 14:00:00.000000000 -1000
-+++ user-def.mk	2007-08-07 00:38:53.000000000 -0800
+--- ./user-def.mk.orig	Thu Oct  4 22:55:33 2007
++++ ./user-def.mk	Thu Oct  4 22:56:26 2007
 @@ -0,0 +1,74 @@
 +export NAN_DEBUG=-g
 +
@@ -44,7 +44,7 @@
 +	export WITH_FFMPEG=false
 +	export NAN_PYTHON=/usr/local
 +	export NAN_PYTHON_VERSION=2.5
-+	export NAN_OPENAL=/usr
++	#export NAN_OPENAL=/usr
 +	export NAN_FMOD=/usr/local
 +	export NAN_JPEG=/usr/local
 +	export NAN_PNG=/usr/local
