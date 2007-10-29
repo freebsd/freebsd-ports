@@ -366,6 +366,7 @@ share/locale/uk/LC_MESSAGES/kmobile.mo
 share/locale/uk/LC_MESSAGES/kmoon.mo
 share/locale/uk/LC_MESSAGES/kmousetool.mo
 share/locale/uk/LC_MESSAGES/kmouth.mo
+share/locale/uk/LC_MESSAGES/kmplot.mo
 share/locale/uk/LC_MESSAGES/kmrml.mo
 share/locale/uk/LC_MESSAGES/knetattach.mo
 share/locale/uk/LC_MESSAGES/knetwalk.mo
@@ -452,7 +453,6 @@ share/locale/uk/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/uk/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/uk/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/uk/LC_MESSAGES/ksvgplugin.mo
-share/locale/uk/LC_MESSAGES/ksync.mo
 share/locale/uk/LC_MESSAGES/ksysguard.mo
 share/locale/uk/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/uk/LC_MESSAGES/ksystraycmd.mo

@@ -98,6 +98,27 @@ share/apps/kturtle/examples/de_DE/zufallsname.logo
 share/doc/HTML/de/KRegExpEditor/common
 share/doc/HTML/de/KRegExpEditor/index.cache.bz2
 share/doc/HTML/de/KRegExpEditor/index.docbook
+share/doc/HTML/de/akregator/add-feed.png
+share/doc/HTML/de/akregator/add-feed2.png
+share/doc/HTML/de/akregator/add-folder.png
+share/doc/HTML/de/akregator/add-folder2.png
+share/doc/HTML/de/akregator/advanced-tab.png
+share/doc/HTML/de/akregator/appearance-tab.png
+share/doc/HTML/de/akregator/archive-tab.png
+share/doc/HTML/de/akregator/browser-tab.png
+share/doc/HTML/de/akregator/common
+share/doc/HTML/de/akregator/general-tab.png
+share/doc/HTML/de/akregator/index.cache.bz2
+share/doc/HTML/de/akregator/index.docbook
+share/doc/HTML/de/akregator/konq.png
+share/doc/HTML/de/akregator/konq2.png
+share/doc/HTML/de/akregator/main-window.png
+share/doc/HTML/de/akregator/main-window2.png
+share/doc/HTML/de/akregator/main-window3.png
+share/doc/HTML/de/akregator/main-window4.png
+share/doc/HTML/de/akregator/quick-filter.png
+share/doc/HTML/de/akregator/rss.png
+share/doc/HTML/de/akregator/rss3.png
 share/doc/HTML/de/amor/common
 share/doc/HTML/de/amor/index.cache.bz2
 share/doc/HTML/de/amor/index.docbook
@@ -1361,6 +1382,10 @@ share/doc/HTML/de/kshisen/common
 share/doc/HTML/de/kshisen/index.cache.bz2
 share/doc/HTML/de/kshisen/index.docbook
 share/doc/HTML/de/kshisen/kshisen-configuration.png
+share/doc/HTML/de/ksig/common
+share/doc/HTML/de/ksig/index.cache.bz2
+share/doc/HTML/de/ksig/index.docbook
+share/doc/HTML/de/ksig/screenshot.png
 share/doc/HTML/de/ksim/common
 share/doc/HTML/de/ksim/index.cache.bz2
 share/doc/HTML/de/ksim/index.docbook
@@ -2410,6 +2435,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/ksirtet
 @dirrm share/doc/HTML/de/ksirc
 @dirrm share/doc/HTML/de/ksim
+@dirrm share/doc/HTML/de/ksig
 @dirrm share/doc/HTML/de/kshisen
 @dirrm share/doc/HTML/de/kscd
 @dirrm share/doc/HTML/de/ksame
@@ -2628,6 +2654,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/artsbuilder
 @dirrm share/doc/HTML/de/ark
 @dirrm share/doc/HTML/de/amor
+@dirrm share/doc/HTML/de/akregator
 @dirrm share/doc/HTML/de/KRegExpEditor
 @dirrm share/apps/kturtle/examples/de_DE
 @dirrm share/apps/kturtle/examples

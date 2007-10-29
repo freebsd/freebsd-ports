@@ -1,8 +1,3 @@
-share/apps/khangman/data/nb/animals.kvtml
-share/apps/khangman/data/nb/easy.kvtml
-share/apps/khangman/data/nb/hard.kvtml
-share/apps/khangman/data/nb/medium.kvtml
-share/apps/khangman/nb.txt
 share/locale/nb/LC_MESSAGES/akregator.mo
 share/locale/nb/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/nb/LC_MESSAGES/alsaplayerui.mo
@@ -186,9 +181,7 @@ share/locale/nb/LC_MESSAGES/kdesktop.mo
 share/locale/nb/LC_MESSAGES/kdessh.mo
 share/locale/nb/LC_MESSAGES/kdesu.mo
 share/locale/nb/LC_MESSAGES/kdesud.mo
-share/locale/nb/LC_MESSAGES/kdevdesigner.mo
 share/locale/nb/LC_MESSAGES/kdevelop.mo
-share/locale/nb/LC_MESSAGES/kdevtipofday.mo
 share/locale/nb/LC_MESSAGES/kdf.mo
 share/locale/nb/LC_MESSAGES/kdgantt.mo
 share/locale/nb/LC_MESSAGES/kdialog.mo
@@ -277,6 +270,7 @@ share/locale/nb/LC_MESSAGES/khotkeys.mo
 share/locale/nb/LC_MESSAGES/khtmlkttsd.mo
 share/locale/nb/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/nb/LC_MESSAGES/kicker.mo
+share/locale/nb/LC_MESSAGES/kickermenu_kate.mo
 share/locale/nb/LC_MESSAGES/kiconedit.mo
 share/locale/nb/LC_MESSAGES/kig.mo
 share/locale/nb/LC_MESSAGES/kinetd.mo
@@ -363,12 +357,6 @@ share/locale/nb/LC_MESSAGES/kolf.mo
 share/locale/nb/LC_MESSAGES/kolourpaint.mo
 share/locale/nb/LC_MESSAGES/kolourpicker.mo
 share/locale/nb/LC_MESSAGES/kompare.mo
-share/locale/nb/LC_MESSAGES/konnector_dummy.mo
-share/locale/nb/LC_MESSAGES/konnector_kabc.mo
-share/locale/nb/LC_MESSAGES/konnector_kcal.mo
-share/locale/nb/LC_MESSAGES/konnector_local.mo
-share/locale/nb/LC_MESSAGES/konnector_qtopia.mo
-share/locale/nb/LC_MESSAGES/konnector_remote.mo
 share/locale/nb/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/nb/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/nb/LC_MESSAGES/konqsidebar_metabar.mo
@@ -442,7 +430,6 @@ share/locale/nb/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/nb/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/nb/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/nb/LC_MESSAGES/ksvgplugin.mo
-share/locale/nb/LC_MESSAGES/ksync.mo
 share/locale/nb/LC_MESSAGES/ksysguard.mo
 share/locale/nb/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/nb/LC_MESSAGES/ksystraycmd.mo
@@ -522,7 +509,6 @@ share/locale/nb/LC_MESSAGES/libkscan.mo
 share/locale/nb/LC_MESSAGES/libkscreensaver.mo
 share/locale/nb/LC_MESSAGES/libksieve.mo
 share/locale/nb/LC_MESSAGES/libksirtet.mo
-share/locale/nb/LC_MESSAGES/libksync.mo
 share/locale/nb/LC_MESSAGES/libtaskbar.mo
 share/locale/nb/LC_MESSAGES/libtaskmanager.mo
 share/locale/nb/LC_MESSAGES/lockout.mo
@@ -532,7 +518,6 @@ share/locale/nb/LC_MESSAGES/mediaapplet.mo
 share/locale/nb/LC_MESSAGES/mediacontrol.mo
 share/locale/nb/LC_MESSAGES/mf_konqplugin.mo
 share/locale/nb/LC_MESSAGES/minitoolsplugin.mo
-share/locale/nb/LC_MESSAGES/multisynk.mo
 share/locale/nb/LC_MESSAGES/naughtyapplet.mo
 share/locale/nb/LC_MESSAGES/nexscope.mo
 share/locale/nb/LC_MESSAGES/noatun.mo
@@ -563,6 +548,3 @@ share/locale/nb/README
 share/locale/nb/charset
 share/locale/nb/entry.desktop
 share/locale/nb/flag.png
-@dirrm share/apps/khangman/data/nb
-@dirrm share/apps/khangman/data
-@dirrm share/apps/khangman

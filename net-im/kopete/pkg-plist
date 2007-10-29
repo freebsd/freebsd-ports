@@ -33,6 +33,7 @@ include/kopete/kopetepassword.h
 include/kopete/kopetepasswordedaccount.h
 include/kopete/kopetepicture.h
 include/kopete/kopeteplugin.h
+include/kopete/kopetepluginmanager.h
 include/kopete/kopeteprefs.h
 include/kopete/kopeteprotocol.h
 include/kopete/kopetesimplemessagehandler.h

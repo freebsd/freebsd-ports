@@ -488,6 +488,9 @@ share/doc/HTML/nl/kghostview/index.docbook
 share/doc/HTML/nl/kgoldrunner/common
 share/doc/HTML/nl/kgoldrunner/index.cache.bz2
 share/doc/HTML/nl/kgoldrunner/index.docbook
+share/doc/HTML/nl/kgpg/common
+share/doc/HTML/nl/kgpg/index.cache.bz2
+share/doc/HTML/nl/kgpg/index.docbook
 share/doc/HTML/nl/khangman/common
 share/doc/HTML/nl/khangman/index.cache.bz2
 share/doc/HTML/nl/khangman/index.docbook
@@ -1773,7 +1776,6 @@ share/locale/nl/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/nl/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/nl/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/nl/LC_MESSAGES/ksvgplugin.mo
-share/locale/nl/LC_MESSAGES/ksync.mo
 share/locale/nl/LC_MESSAGES/ksysguard.mo
 share/locale/nl/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/nl/LC_MESSAGES/ksystraycmd.mo
@@ -2025,6 +2027,7 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/khelpcenter/faq
 @dirrm share/doc/HTML/nl/khelpcenter
 @dirrm share/doc/HTML/nl/khangman
+@dirrm share/doc/HTML/nl/kgpg
 @dirrm share/doc/HTML/nl/kgoldrunner
 @dirrm share/doc/HTML/nl/kghostview
 @dirrm share/doc/HTML/nl/kget

@@ -562,6 +562,7 @@ share/apps/umbrello/headings/heading.ads
 share/apps/umbrello/headings/heading.as
 share/apps/umbrello/headings/heading.cpp
 share/apps/umbrello/headings/heading.cs
+share/apps/umbrello/headings/heading.d
 share/apps/umbrello/headings/heading.h
 share/apps/umbrello/headings/heading.idl
 share/apps/umbrello/headings/heading.java

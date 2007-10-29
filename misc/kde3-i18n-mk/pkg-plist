@@ -1,17 +1,17 @@
-share/apps/katepart/syntax/logohighlightstyle.mk_MK.xml
-share/apps/kturtle/data/logokeywords.mk_MK.xml
-share/apps/kturtle/examples/mk_MK/boiplatno.logo
-share/apps/kturtle/examples/mk_MK/cvekje.logo
-share/apps/kturtle/examples/mk_MK/izvitkano.logo
-share/apps/kturtle/examples/mk_MK/kde.logo
-share/apps/kturtle/examples/mk_MK/kvadrat.logo
-share/apps/kturtle/examples/mk_MK/kvadratii.logo
-share/apps/kturtle/examples/mk_MK/reklama.logo
-share/apps/kturtle/examples/mk_MK/slucajnoime.logo
-share/apps/kturtle/examples/mk_MK/strelka.logo
-share/apps/kturtle/examples/mk_MK/tablicamnozenje.logo
-share/apps/kturtle/examples/mk_MK/triagolnicii.logo
-share/apps/kturtle/examples/mk_MK/triagolnik.logo
+share/apps/katepart/syntax/logohighlightstyle.mk.xml
+share/apps/kturtle/data/logokeywords.mk.xml
+share/apps/kturtle/examples/mk/boiplatno.logo
+share/apps/kturtle/examples/mk/cvekje.logo
+share/apps/kturtle/examples/mk/izvitkano.logo
+share/apps/kturtle/examples/mk/kde.logo
+share/apps/kturtle/examples/mk/kvadrat.logo
+share/apps/kturtle/examples/mk/kvadratii.logo
+share/apps/kturtle/examples/mk/reklama.logo
+share/apps/kturtle/examples/mk/slucajnoime.logo
+share/apps/kturtle/examples/mk/strelka.logo
+share/apps/kturtle/examples/mk/tablicamnozenje.logo
+share/apps/kturtle/examples/mk/triagolnicii.logo
+share/apps/kturtle/examples/mk/triagolnik.logo
 share/locale/mk/LC_MESSAGES/akregator.mo
 share/locale/mk/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/mk/LC_MESSAGES/alsaplayerui.mo
@@ -438,7 +438,6 @@ share/locale/mk/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/mk/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/mk/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/mk/LC_MESSAGES/ksvgplugin.mo
-share/locale/mk/LC_MESSAGES/ksync.mo
 share/locale/mk/LC_MESSAGES/ksysguard.mo
 share/locale/mk/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/mk/LC_MESSAGES/ksystraycmd.mo
@@ -518,7 +517,6 @@ share/locale/mk/LC_MESSAGES/libkscan.mo
 share/locale/mk/LC_MESSAGES/libkscreensaver.mo
 share/locale/mk/LC_MESSAGES/libksieve.mo
 share/locale/mk/LC_MESSAGES/libksirtet.mo
-share/locale/mk/LC_MESSAGES/libksync.mo
 share/locale/mk/LC_MESSAGES/libtaskbar.mo
 share/locale/mk/LC_MESSAGES/libtaskmanager.mo
 share/locale/mk/LC_MESSAGES/lockout.mo
@@ -555,7 +553,7 @@ share/locale/mk/LC_MESSAGES/webarchiver.mo
 share/locale/mk/charset
 share/locale/mk/entry.desktop
 share/locale/mk/flag.png
-@dirrm share/apps/kturtle/examples/mk_MK
+@dirrm share/apps/kturtle/examples/mk
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data
 @dirrm share/apps/kturtle

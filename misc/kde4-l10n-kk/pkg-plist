@@ -169,6 +169,7 @@ share/locale/kk/LC_MESSAGES/kdict.mo
 share/locale/kk/LC_MESSAGES/kdictapplet.mo
 share/locale/kk/LC_MESSAGES/kdmconfig.mo
 share/locale/kk/LC_MESSAGES/kdmgreet.mo
+share/locale/kk/LC_MESSAGES/kdvi.mo
 share/locale/kk/LC_MESSAGES/kedit.mo
 share/locale/kk/LC_MESSAGES/kfile_au.mo
 share/locale/kk/LC_MESSAGES/kfile_avi.mo
@@ -352,7 +353,6 @@ share/locale/kk/LC_MESSAGES/kstyle_highcontrast_config.mo
 share/locale/kk/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/kk/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/kk/LC_MESSAGES/ksvgplugin.mo
-share/locale/kk/LC_MESSAGES/ksync.mo
 share/locale/kk/LC_MESSAGES/ksysguard.mo
 share/locale/kk/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/kk/LC_MESSAGES/ksystraycmd.mo

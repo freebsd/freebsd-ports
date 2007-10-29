@@ -2674,7 +2674,6 @@ share/locale/sv/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/sv/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/sv/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/sv/LC_MESSAGES/ksvgplugin.mo
-share/locale/sv/LC_MESSAGES/ksync.mo
 share/locale/sv/LC_MESSAGES/ksysguard.mo
 share/locale/sv/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/sv/LC_MESSAGES/ksystraycmd.mo
@@ -2755,7 +2754,6 @@ share/locale/sv/LC_MESSAGES/libkscan.mo
 share/locale/sv/LC_MESSAGES/libkscreensaver.mo
 share/locale/sv/LC_MESSAGES/libksieve.mo
 share/locale/sv/LC_MESSAGES/libksirtet.mo
-share/locale/sv/LC_MESSAGES/libksync.mo
 share/locale/sv/LC_MESSAGES/libtaskbar.mo
 share/locale/sv/LC_MESSAGES/libtaskmanager.mo
 share/locale/sv/LC_MESSAGES/lockout.mo

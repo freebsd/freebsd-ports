@@ -156,7 +156,6 @@ share/locale/se/LC_MESSAGES/kio_finger.mo
 share/locale/se/LC_MESSAGES/kio_fish.mo
 share/locale/se/LC_MESSAGES/kio_floppy.mo
 share/locale/se/LC_MESSAGES/kio_help.mo
-share/locale/se/LC_MESSAGES/kio_imap4.mo
 share/locale/se/LC_MESSAGES/kio_ldap.mo
 share/locale/se/LC_MESSAGES/kio_mac.mo
 share/locale/se/LC_MESSAGES/kio_man.mo
@@ -215,7 +214,6 @@ share/locale/se/LC_MESSAGES/krdb.mo
 share/locale/se/LC_MESSAGES/kreadconfig.mo
 share/locale/se/LC_MESSAGES/krec.mo
 share/locale/se/LC_MESSAGES/kres_exchange.mo
-share/locale/se/LC_MESSAGES/kres_imap.mo
 share/locale/se/LC_MESSAGES/kres_remote.mo
 share/locale/se/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/se/LC_MESSAGES/kruler.mo
@@ -232,7 +230,6 @@ share/locale/se/LC_MESSAGES/kstart.mo
 share/locale/se/LC_MESSAGES/kstyle_highcontrast_config.mo
 share/locale/se/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/se/LC_MESSAGES/kstyle_plastik_config.mo
-share/locale/se/LC_MESSAGES/ksync.mo
 share/locale/se/LC_MESSAGES/ksysguard.mo
 share/locale/se/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/se/LC_MESSAGES/ksystraycmd.mo

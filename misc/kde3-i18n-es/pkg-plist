@@ -812,6 +812,9 @@ share/doc/HTML/es/kdcop/common
 share/doc/HTML/es/kdcop/index.cache.bz2
 share/doc/HTML/es/kdcop/index.docbook
 share/doc/HTML/es/kde_app_devel/appwizard.png
+share/doc/HTML/es/kde_app_devel/common
+share/doc/HTML/es/kde_app_devel/index.cache.bz2
+share/doc/HTML/es/kde_app_devel/index.docbook
 share/doc/HTML/es/kde_app_devel/kscribblefiles.png
 share/doc/HTML/es/kdearch/affine-general.png
 share/doc/HTML/es/kdearch/affine-rotate.png
@@ -823,6 +826,9 @@ share/doc/HTML/es/kdearch/canvas.png
 share/doc/HTML/es/kdearch/capflat.png
 share/doc/HTML/es/kdearch/capround.png
 share/doc/HTML/es/kdearch/capsquare.png
+share/doc/HTML/es/kdearch/common
+share/doc/HTML/es/kdearch/index.cache.bz2
+share/doc/HTML/es/kdearch/index.docbook
 share/doc/HTML/es/kdearch/joinbevel.png
 share/doc/HTML/es/kdearch/joinmiter.png
 share/doc/HTML/es/kdearch/joinround.png
@@ -925,6 +931,7 @@ share/doc/HTML/es/kdevelop/automake-target-popup.png
 share/doc/HTML/es/kdevelop/automakemanager.png
 share/doc/HTML/es/kdevelop/class-browsers.docbook
 share/doc/HTML/es/kdevelop/classview.png
+share/doc/HTML/es/kdevelop/commands.docbook
 share/doc/HTML/es/kdevelop/configure-adddialog-baselibs.png
 share/doc/HTML/es/kdevelop/configure-doctree-textsearch.png
 share/doc/HTML/es/kdevelop/configure-docu-chm.png
@@ -955,16 +962,20 @@ share/doc/HTML/es/kdevelop/folded-tabs.png
 share/doc/HTML/es/kdevelop/getting-started.docbook
 share/doc/HTML/es/kdevelop/kdevelop-ideal-mode-0.png
 share/doc/HTML/es/kdevelop/kdevelop-ideal-mode.png
+share/doc/HTML/es/kdevelop/kdevelop-install.docbook
 share/doc/HTML/es/kdevelop/kdevelop-mdi-mode.png
 share/doc/HTML/es/kdevelop/kdevelop-scripting.docbook
+share/doc/HTML/es/kdevelop/kdevelop-survey.docbook
 share/doc/HTML/es/kdevelop/kdevelop-tabbed-mode.png
 share/doc/HTML/es/kdevelop/kdevelop-toplevel-mode.png
 share/doc/HTML/es/kdevelop/nutshell.docbook
 share/doc/HTML/es/kdevelop/project-advanced.docbook
+share/doc/HTML/es/kdevelop/project-management.docbook
 share/doc/HTML/es/kdevelop/select-user-interface-0.png
 share/doc/HTML/es/kdevelop/select-user-interface.png
 share/doc/HTML/es/kdevelop/survey-manual.docbook
 share/doc/HTML/es/kdevelop/tip.database
+share/doc/HTML/es/kdevelop/unixdev.docbook
 share/doc/HTML/es/kdf/common
 share/doc/HTML/es/kdf/index.cache.bz2
 share/doc/HTML/es/kdf/index.docbook
@@ -3167,7 +3178,6 @@ share/locale/es/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/es/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/es/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/es/LC_MESSAGES/ksvgplugin.mo
-share/locale/es/LC_MESSAGES/ksync.mo
 share/locale/es/LC_MESSAGES/ksysguard.mo
 share/locale/es/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/es/LC_MESSAGES/ksystraycmd.mo
@@ -3248,7 +3258,6 @@ share/locale/es/LC_MESSAGES/libkscan.mo
 share/locale/es/LC_MESSAGES/libkscreensaver.mo
 share/locale/es/LC_MESSAGES/libksieve.mo
 share/locale/es/LC_MESSAGES/libksirtet.mo
-share/locale/es/LC_MESSAGES/libksync.mo
 share/locale/es/LC_MESSAGES/libtaskbar.mo
 share/locale/es/LC_MESSAGES/libtaskmanager.mo
 share/locale/es/LC_MESSAGES/lockout.mo

@@ -573,6 +573,10 @@ lib/libgpgme++.a
 lib/libgpgme++.la
 lib/libgpgme++.so
 lib/libgpgme++.so.2
+lib/libgwsoap.a
+lib/libgwsoap.la
+lib/libgwsoap.so
+lib/libgwsoap.so.0
 lib/libindex.a
 lib/libindex.la
 lib/libindex.so
@@ -886,6 +890,7 @@ share/apps/kconf_update/kmail-3.3-use-ID-for-accounts.pl
 share/apps/kconf_update/kmail-3.3b1-misc.pl
 share/apps/kconf_update/kmail-3.4-misc.pl
 share/apps/kconf_update/kmail-3.4.1-update-status-filters.pl
+share/apps/kconf_update/kmail-3.5-trigger-flag-migration.pl
 share/apps/kconf_update/kmail-pgpidentity.pl
 share/apps/kconf_update/kmail-upd-identities.pl
 share/apps/kconf_update/kmail.upd
@@ -1301,6 +1306,7 @@ share/apps/libical/zoneinfo/America/Indiana/Indianapolis.ics
 share/apps/libical/zoneinfo/America/Indiana/Knox.ics
 share/apps/libical/zoneinfo/America/Indiana/Marengo.ics
 share/apps/libical/zoneinfo/America/Indiana/Petersburg.ics
+share/apps/libical/zoneinfo/America/Indiana/Tell_City.ics
 share/apps/libical/zoneinfo/America/Indiana/Vevay.ics
 share/apps/libical/zoneinfo/America/Indiana/Vincennes.ics
 share/apps/libical/zoneinfo/America/Indiana/Winamac.ics
@@ -1610,6 +1616,7 @@ share/apps/libkdepim/about/kde_infopage_rtl.css
 share/apps/libkdepim/about/top-left.png
 share/apps/libkdepim/about/top-middle.png
 share/apps/libkholidays/holiday_Suedtirol
+share/apps/libkholidays/holiday_ar
 share/apps/libkholidays/holiday_at
 share/apps/libkholidays/holiday_au
 share/apps/libkholidays/holiday_bavarian
