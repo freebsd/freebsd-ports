@@ -7,7 +7,7 @@
 
 PORTNAME=	python23
 PORTVERSION=	2.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -32,6 +32,8 @@ PYTHON_VERSION=	python2.3
 PYTHON_NO_DEPENDS=	yes
 LATEST_LINK?=	${PYTHON_VERSION:S/.//}
 
+PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 plat-freebsd7 \
+		plat-freebsd8
 SHARED_WRKSRC=	${WRKSRC}/build.shared
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
@@ -99,14 +101,6 @@ CONFIGURE_ARGS+= --enable-ipv6
 CONFIGURE_ARGS+= --disable-ipv6
 .endif
 
-.if ${OSVERSION} >= 700000
-PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
-.elif ${OSVERSION} >= 600000
-PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd7
-.else
-PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
-.endif
-
 post-extract:
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
 		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.3
@@ -120,7 +114,7 @@ pre-patch:
 	${REINPLACE_CMD} -e \
 		's|^\(prefixes = .*\)\]$$|\1, "${X11BASE}"]|g' \
 		${WRKSRC}/Lib/site.py
-.for ver in 6 7
+.for ver in 6 7 8
 	${MKDIR} ${WRKSRC}/Lib/plat-freebsd${ver}
 	${CP} ${WRKSRC}/Lib/plat-freebsd5/regen ${WRKSRC}/Lib/plat-freebsd${ver}/
 .endfor

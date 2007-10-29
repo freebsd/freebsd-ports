@@ -6,6 +6,7 @@
 
 PORTNAME=	python25
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -37,6 +38,9 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		PYVER_WITHPAT=${PORTVERSION:S/.c/c/}
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
+
+PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
+		plat-freebsd7 plat-freebsd8
 
 BIN_SCRIPTS=	idle pydoc python python-shared smtpd.py python-config \
 		python-shared-config
@@ -114,14 +118,6 @@ CONFIGURE_ARGS+= --disable-ipv6
 
 .if defined(WITH_FPECTL)
 CONFIGURE_ARGS+= --with-fpectl
-.endif
-
-.if ${OSVERSION} >= 700000
-PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
-.elif ${OSVERSION} >= 600000
-PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd7
-.else
-PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
 .endif
 
 pre-patch:

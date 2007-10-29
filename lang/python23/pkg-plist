@@ -1396,6 +1396,10 @@ lib/%%PYTHON_VERSION%%/plat-freebsd7/IN.py
 lib/%%PYTHON_VERSION%%/plat-freebsd7/IN.pyc
 lib/%%PYTHON_VERSION%%/plat-freebsd7/IN.pyo
 lib/%%PYTHON_VERSION%%/plat-freebsd7/regen
+lib/%%PYTHON_VERSION%%/plat-freebsd8/IN.py
+lib/%%PYTHON_VERSION%%/plat-freebsd8/IN.pyc
+lib/%%PYTHON_VERSION%%/plat-freebsd8/IN.pyo
+lib/%%PYTHON_VERSION%%/plat-freebsd8/regen
 lib/%%PYTHON_VERSION%%/platform.py
 lib/%%PYTHON_VERSION%%/platform.pyc
 lib/%%PYTHON_VERSION%%/platform.pyo
@@ -3068,6 +3072,7 @@ lib/%%PYTHON_VERSION%%/zipfile.pyo
 @dirrm lib/%%PYTHON_VERSION%%/test/output
 @dirrm lib/%%PYTHON_VERSION%%/test
 @dirrm lib/%%PYTHON_VERSION%%/site-packages
+@dirrm lib/%%PYTHON_VERSION%%/plat-freebsd8
 @dirrm lib/%%PYTHON_VERSION%%/plat-freebsd7
 @dirrm lib/%%PYTHON_VERSION%%/plat-freebsd6
 @dirrm lib/%%PYTHON_VERSION%%/plat-freebsd5
