@@ -4,10 +4,25 @@
 #
 # $FreeBSD$
 #
+###########################################################################
+# This makefile was contributed by Marius Strobl.
+###########################################################################
+# The contents of this file are subject to the terms of the
+# Common Development and Distribution License, Version 1.0 only
+# (the "License").  You may not use this file except in compliance
+# with the License.
+#
+# See the file CDDL.Schily.txt in this distribution for details.
+#
+# When distributing Covered Code, include this CDDL HEADER in each
+# file and include the License file CDDL.Schily.txt from this distribution.
+###########################################################################
+# The file CDDL.Schily.txt can be found in the original cdrtools tarball,
+# which is mirrored at ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/.
+###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.01.01a11
-PORTREVISION=	1
+PORTVERSION=	2.01.01a36
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
@@ -22,10 +37,11 @@ MAN1=		btcflash.1 cdda2wav.1 cdrecord.1 readcd.1 scgcheck.1
 MAN8=		isoinfo.8 mkisofs.8
 MLINKS=		isoinfo.8 devdump.8 isoinfo.8 isodump.8 isoinfo.8 isovfy.8 \
 		mkisofs.8 mkhybrid.8
-DOCS=		README README.ATAPI README.DiskT@2 README.FreeBSD README.WORM \
-		README.audio README.cdplus README.cdrw README.cdtext \
-		README.clone README.copy README.mkisofs README.multi \
-		README.raw README.rscsi README.sony README.verify
+DOCS=		README.FreeBSD README.mkisofs
+CDRECORDDOCS=	README README.ATAPI README.DiskT@2 README.WORM README.audio \
+		README.cdplus README.cdrw README.cdtext README.clone \
+		README.copy README.multi README.raw README.rscsi README.sony \
+		README.verify
 CDDA2WAVDOCS=	FAQ Frontends HOWTOUSE OtherProgs README THANKS TODO
 MKISOFSDOCS=	README README.compression README.eltorito README.graft_dirs \
 		README.hfs_boot README.hfs_magic README.hide README.joliet \
@@ -72,8 +88,8 @@ pre-everything::
 	@${ECHO_MSG} "WITH_RSCSI=yes		builds with the rscsi daemon which provides access to"
 	@${ECHO_MSG} "			local SCSI-devices over the network (the client-side"
 	@${ECHO_MSG} "			in cdda2wav, cdrecord, etc. is built unconditionally)."
-	@${ECHO_MSG} "			BEWARE:	The rscsi binary gets installed suid root as"
-	@${ECHO_MSG} "				this is the preferred method to set it up."
+	@${ECHO_MSG} "			BEWARE:	The rscsi binary will be installed suid root"
+	@${ECHO_MSG} "				as this is the preferred way of setting it up."
 	@${ECHO_MSG} ""
 .endif
 .if !defined(WITH_CDDB)
@@ -96,9 +112,9 @@ post-patch:
 .if !defined(WITH_RSCSI)
 	@${RM} ${WRKSRC}/TARGETS/55rscsi
 .endif
-.for i in README.rscsi btcflash/btcflash.1 cdda2wav/cdda2wav.1 \
+.for i in btcflash/btcflash.1 cdda2wav/cdda2wav.1 cdrecord/README.rscsi \
 	cdrecord/cdrecord.1 cdrecord/cdrecord.dfl cdrecord/defaults.c \
-	include/deflts.h librscg/scsi-remote.c readcd/readcd.1 \
+	include/schily/deflts.h librscg/scsi-remote.c readcd/readcd.1 \
 	rscsi/rscsi.c rscsi/rscsi.dfl scgcheck/scgcheck.1
 	@${REINPLACE_CMD} -e 's|\/opt\/schily|${PREFIX}|g; \
 		s|\/usr\/local|${PREFIX}|g; s|\/etc\/default|${PREFIX}\/etc|g; \
@@ -158,6 +174,10 @@ do-install:
 	@${MKDIR} ${DOCSDIR}/cdda2wav
 .for i in ${CDDA2WAVDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/cdda2wav/${i} ${DOCSDIR}/cdda2wav
+.endfor
+	@${MKDIR} ${DOCSDIR}/cdrecord
+.for i in ${CDRECORDDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/cdrecord/${i} ${DOCSDIR}/cdrecord
 .endfor
 	@${MKDIR} ${DOCSDIR}/mkisofs
 .for i in ${MKISOFSDOCS}

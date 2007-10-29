@@ -21,23 +21,8 @@ etc/cdrecord.sample
 %%RSCSI%%@exec [ -f %B/rscsi ] || cp %B/%f %B/rscsi
 %%RSCSI%%@unexec if pw usershow rscsi >/dev/null 2>&1; then echo "If permanently deleting this package, user \"rscsi\" and its homedirectory must be removed manually."; fi
 %%RSCSI%%@unexec if pw groupshow rscsi >/dev/null 2>&1; then echo "If permanently deleting this package, group \"rscsi\" must be removed manually."; fi
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.ATAPI
-%%PORTDOCS%%%%DOCSDIR%%/README.DiskT@2
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
-%%PORTDOCS%%%%DOCSDIR%%/README.WORM
-%%PORTDOCS%%%%DOCSDIR%%/README.audio
-%%PORTDOCS%%%%DOCSDIR%%/README.cdplus
-%%PORTDOCS%%%%DOCSDIR%%/README.cdrw
-%%PORTDOCS%%%%DOCSDIR%%/README.cdtext
-%%PORTDOCS%%%%DOCSDIR%%/README.clone
-%%PORTDOCS%%%%DOCSDIR%%/README.copy
 %%PORTDOCS%%%%DOCSDIR%%/README.mkisofs
-%%PORTDOCS%%%%DOCSDIR%%/README.multi
-%%PORTDOCS%%%%DOCSDIR%%/README.raw
-%%PORTDOCS%%%%DOCSDIR%%/README.rscsi
-%%PORTDOCS%%%%DOCSDIR%%/README.sony
-%%PORTDOCS%%%%DOCSDIR%%/README.verify
 %%PORTDOCS%%%%DOCSDIR%%/cdda2wav/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/cdda2wav/Frontends
 %%PORTDOCS%%%%DOCSDIR%%/cdda2wav/HOWTOUSE
@@ -46,6 +31,22 @@ etc/cdrecord.sample
 %%PORTDOCS%%%%DOCSDIR%%/cdda2wav/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/cdda2wav/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cdda2wav
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.ATAPI
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.DiskT@2
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.WORM
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.audio
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.cdplus
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.cdrw
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.cdtext
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.clone
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.copy
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.multi
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.raw
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.rscsi
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.sony
+%%PORTDOCS%%%%DOCSDIR%%/cdrecord/README.verify
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cdrecord
 %%PORTDOCS%%%%DOCSDIR%%/mkisofs/README
 %%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.compression
 %%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.eltorito
