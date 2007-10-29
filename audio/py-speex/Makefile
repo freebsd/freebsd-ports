@@ -16,7 +16,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	cjg@bsdmail.org
 COMMENT=	Python bindings for the Speex compressor/decompressor audio codec
 
-BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
+BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
 
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/speex.so
