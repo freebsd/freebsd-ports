@@ -36,9 +36,10 @@ MAN1=		Xvnc.1 vncviewer.1 vncpasswd.1 vncconnect.1 vncserver.1
 
 OPTIONS=	JVNC_VIEWER "Install Java-based vnc viewer" off
 
-#.include <bsd.port.pre.mk>
+.include <bsd.port.pre.mk>
 
-.include "bsd.port.options.mk"
+### use me when 5.5, 6.1, 6.2R die or we do impement something in b.p.m
+#.include "bsd.port.options.mk"
 
 .ifdef(WITH_JVNC_VIEWER)
 USE_JAVA=	yes
@@ -48,7 +49,7 @@ PLIST_SUB+=	JVNC_VIEWER=""
 PLIST_SUB+=	JVNC_VIEWER="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
+#.include <bsd.port.pre.mk>
 
 .if exists(${X11BASE}/share/vnc/classes/index.vnc)
 IGNORE=		vnc has already been installed, please uninstall it first
