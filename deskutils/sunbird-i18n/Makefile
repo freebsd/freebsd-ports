@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sunbird-i18n
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	deskutils
 MASTER_SITES=	MOZILLA_EXTENDED/calendar/sunbird/releases/${DISTVERSION}/langpacks
 PKGNAMEPREFIX=
@@ -23,8 +23,8 @@ RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-swit
 NO_BUILD=	yes
 USE_XPI=	*sunbird
 
-SUNBIRD_I18N_ALL=	ca cs da de es-ES eu fr ga-IE hu it mk mn nb-NO nl pa-IN pl \
-			pt-BR ru sk sl sv-SE
+SUNBIRD_I18N_ALL=	ca cs da de es-AR es-ES eu fr ga-IE hu it ka lt mk \
+			nb-NO nl pa-IN pl pt-BR pt-PT ru sk sl sv-SE tr zh-CN
 SUNBIRD_I18N?=	all
 
 .if ${SUNBIRD_I18N} == all
