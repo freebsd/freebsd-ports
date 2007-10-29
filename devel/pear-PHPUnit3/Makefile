@@ -17,15 +17,17 @@ COMMENT=	PEAR regression testing framework for unit tests
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Does not fetch
-
-CONFLICTS=	*PHPUnit*
+CONFLICTS=	PHPUnit-[0-9]*
 
 LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_LOG "PEAR::Log support" off \
 		JSON "Enable JSON support" off \
 
 CHANNEL=	pear.phpunit.de
+SUB_FILES=	pear-deinstall pear-install
+SUB_LIST+=	CHANNEL=${CHANNEL}
+PKGINSTALL=	${WRKDIR}/pear-install
+PKGDEINSTALL=	${WRKDIR}/pear-deinstall
 
 DEFAULT_PHP_VER=5
 IGNORE_WITH_PHP=4
