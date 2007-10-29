@@ -15,10 +15,11 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
-SNAPSHOT=	20070525
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
+
+SNAPSHOT=	20071029
 
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
@@ -37,6 +38,12 @@ OPTIONS=	MOD_PYTHON3	"Install Apache2 with mod_python3"	off \
 		MYSQL	"MySQL support"	off \
 		SQLITE	"SQLite support"	off \
 		FASTCGI	"FastCGI support"	off
+
+MAN1=	compile-messages.1 \
+	daily_cleanup.1 \
+	django-admin.1 \
+	gather_profile_stats.1 \
+	make-messages.1
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
@@ -65,9 +72,10 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/${PYFLUP_EGG}/flup/__init__.py:${PORTSDIR}/ww
 .endif
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${DOCSDIR}
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"			* See ${DOCSDIR} for complete documentation"
 	@${ECHO_MSG}	""
