@@ -7,7 +7,7 @@
 
 PORTNAME=	python24
 PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -30,6 +30,8 @@ USE_PYTHON=	yes
 PYTHON_VERSION=	python2.4
 PYTHON_NO_DEPENDS=	yes
 
+PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 plat-freebsd7 \
+		plat-freebsd8
 SHARED_WRKSRC=	${WRKSRC}/build.shared
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
@@ -111,14 +113,6 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if defined(WITH_FPECTL)
 CONFIGURE_ARGS+=	--with-fpectl
-.endif
-
-.if ${OSVERSION} >= 700000
-PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
-.elif ${OSVERSION} >= 600000
-PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd7
-.else
-PLATFORMS=plat-freebsd4 plat-freebsd6 plat-freebsd7
 .endif
 
 post-extract:
