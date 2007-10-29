@@ -8468,6 +8468,7 @@ ocre		ports/graphics/ocre
 ocs		ports/lang/ocs
 ocsigen		ports/www/ocsigen
 ocsinventory-agent	ports/net-mgmt/ocsinventory-agent
+ocsinventory-ng	ports/net-mgmt/ocsinventory-ng
 octave		ports/math/octave
 octave-devel	ports/math/octave-devel
 octave-forge	ports/math/octave-forge
