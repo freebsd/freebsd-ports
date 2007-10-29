@@ -43,6 +43,10 @@ PLIST_SUB=	WITH_EXAMPLES="@comment "
 PLIST_SUB=	WITH_EXAMPLES=""
 .endif
 
+.if !defined (OPENGL_DISPLAY)
+EXTRA_PATCHES=	${PATCHDIR}/extra-disable-mkfppinc
+.endif
+
 post-patch:
 	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
 
@@ -67,6 +71,10 @@ pre-build:
 			-e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC_SHARED}/examples/mf8lnt
 
 do-build:
+.if !defined (OPENGL_DISPLAY)
+	${CP} ${FILESDIR}/glopt.h ${WRKSRC}/util
+	${CP} ${FILESDIR}/glopt.h ${WRKSRC_SHARED}/util
+.endif
 	cd ${WRKSRC}                 ; ${MAKE} -f mf8lim7
 	cd ${WRKSRC_SHARED}          ; ${MAKE} -f mf8lim7
 	cd ${WRKSRC_SHARED}/examples ; ${MAKE} -f mf8lnt
