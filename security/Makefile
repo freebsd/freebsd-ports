@@ -636,6 +636,7 @@
     SUBDIR += radiusniff
     SUBDIR += rain
     SUBDIR += rainbowcrack
+    SUBDIR += rarcrack
     SUBDIR += rats
     SUBDIR += rc5pipe
     SUBDIR += rdigest
