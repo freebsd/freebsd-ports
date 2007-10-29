@@ -7,7 +7,7 @@
 
 PORTNAME=	libnet
 PORTVERSION=	1.0.2a
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
