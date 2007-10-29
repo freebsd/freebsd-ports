@@ -8,6 +8,7 @@
 
 PORTNAME=	tightvnc
 PORTVERSION=	1.3.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	vnc-tight
@@ -17,7 +18,8 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Enhanced version of VNC
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/misc/10x20.pcf.gz:${X_FONTS_MISC_PORT}
+RUN_DEPENDS=	xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts \
+		xauth:${PORTSDIR}/x11/xauth
 
 CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]*
 
@@ -29,9 +31,22 @@ USE_IMAKE=	yes
 USE_XPM=	yes
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
-XFREE86_HTML_MAN=	no
 
 MAN1=		Xvnc.1 vncviewer.1 vncpasswd.1 vncconnect.1 vncserver.1
+
+OPTIONS=	JVNC_VIEWER "Install Java-based vnc viewer" off
+
+#.include <bsd.port.pre.mk>
+
+.include "bsd.port.options.mk"
+
+.ifdef(WITH_JVNC_VIEWER)
+USE_JAVA=	yes
+JAVA_RUN=	yes
+PLIST_SUB+=	JVNC_VIEWER=""
+.else
+PLIST_SUB+=	JVNC_VIEWER="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -53,7 +68,9 @@ do-install:
 .for FILE in Xvnc vncviewer vncpasswd vncconnect
 	@${STRIP_CMD} ${PREFIX}/bin/${FILE}
 .endfor
+.ifdef(WITH_JVNC_VIEWER)
 	@${MKDIR} ${DATADIR}/classes
 	${INSTALL_DATA} ${WRKSRC}/classes/*.* ${DATADIR}/classes
+.endif
 
 .include <bsd.port.post.mk>
