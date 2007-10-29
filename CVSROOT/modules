@@ -15958,6 +15958,7 @@ uDrawGraph	ports/graphics/uDrawGraph
 ua-ispell	ports/textproc/ua-ispell
 uae		ports/emulators/uae
 ubench		ports/benchmarks/ubench
+uberkey		ports/security/uberkey
 ubh		ports/news/ubh
 ubuntulooks	ports/x11-themes/ubuntulooks
 ucarp		ports/net/ucarp
