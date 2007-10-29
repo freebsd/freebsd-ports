@@ -1,0 +1,15 @@
+--- Xvnc/config/cf/Imake.cf.orig	2006-12-23 21:07:55.000000000 +0900
++++ Xvnc/config/cf/Imake.cf	2007-09-05 07:45:05.000000000 +0900
+@@ -206,6 +206,12 @@
+ #  define i386Architecture
+ #  undef i386
+ # endif
++# ifdef __x86_64__
++#  ifndef x86_64Architecture
++#   define x86_64Architecture
++#  endif
++#  undef __x86_64__
++# endif
+ # ifdef __alpha__
+ #  define AlphaBsdArchitecture
+ #  define AlphaArchitecture
