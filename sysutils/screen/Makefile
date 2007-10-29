@@ -31,16 +31,14 @@ NO_PACKAGE=	Tends to loop using 100% CPU when used from package - perhaps it har
 GNU_CONFIGURE=	yes
 .if defined(WITH_MAN)
 MAN1=		screen.1
-.else
-MAKE_ARGS+=	-DNO_MAN
+MAKE_ARGS+=	-DWITH_MAN
 .endif
 .if defined(WITH_INFO)
 .if !exists(/usr/bin/install-info)
 RUN_DEPENDS+=	install-info:${PORTSDIR}/print/texinfo
 .endif
 INFO=		screen
-.else
-MAKE_ARGS+=	-DNO_INFO
+MAKE_ARGS+=	-DWITH_INFO
 .endif
 
 .if ${ARCH} == "alpha"
