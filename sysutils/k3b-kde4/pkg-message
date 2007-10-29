@@ -49,13 +49,5 @@ Notes for FreeBSD 5.x and onwards users:
    recorder click on the string "auto" behind "Cdrdao driver:" For most of the 
    recent drives "generic-mmc" or "generic-mmc-raw" should work. 
    See http://cdrdao.sourceforge.net/drives.html.
-7. To burn video CDs install the port multimedia/vcdimager.
-8. To rip DVDs additionally install the ports multimedia/transcode,
-   multimedia/libdvdread and multimedia/xvid.The ripping process itself is described 
-   in http://k3b.plainblack.com/videoencoding.
-9. To burn bootable video CDs, install the port multimedia/emovix.
-10. To burn DVDs, install the port sysutils/dvd+rw-tools.
-11. To normalize the volumes of audio cds, install the port audio/normalize.
-12. To rip into more audio formats, install the port audio/sox.
 
 To read this instructions again, type 'make showinfo' in the k3b port directory
