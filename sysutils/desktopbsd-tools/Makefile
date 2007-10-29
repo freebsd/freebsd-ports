@@ -24,14 +24,14 @@ USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 
+INSTALLS_ICONS=	yes
+
 QMAKE?=		qmake
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DATADIR=	${PREFIX}/share/desktopbsd
-
-BROKEN=		fails to compile in various ways
 
 .include <bsd.port.pre.mk>
 
@@ -43,10 +43,9 @@ RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
 RUN_DEPENDS+=	portsnap:${PORTSDIR}/ports-mgmt/portsnap
 .endif
 
-post-extract:
-.for f in ${X11R6_FILES}
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${X11BASE}|g' ${WRKSRC}/${f}
-.endfor
+.if ${OSVERSION} > 600007
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libdesktopbsd_accesspoint.h ${FILESDIR}/extra-patch-libdesktopbsd_accesspoint.cpp ${FILESDIR}/extra-patch-libdesktopbsd_wirelessinterface.h ${FILESDIR}/extra-patch-libdesktopbsd_wirelessinterface.cpp
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
