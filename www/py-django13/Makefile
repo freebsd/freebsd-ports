@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	django
-PORTVERSION=	0.96
+PORTVERSION=	0.96.1
 CATEGORIES=	www python
-MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION}/ \
+MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION:R}/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
@@ -21,7 +21,6 @@ USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Django
-PYDISTUTILS_PKGVERSION=	0.96_None
 
 CONFLICTS=	py2[0-9]-django-devel-[0-9]*
 
