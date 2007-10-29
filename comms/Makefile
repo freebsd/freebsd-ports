@@ -139,6 +139,7 @@
     SUBDIR += yagiuda
     SUBDIR += yaps
     SUBDIR += yawmppp
+    SUBDIR += yfklog
     SUBDIR += zmtx-zmrx
     SUBDIR += zssh
 
