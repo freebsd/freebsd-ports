@@ -51,6 +51,12 @@ JAVA_VENDOR=	freebsd bsdjava
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		does not compile with GCC 4.2; consider upgrading to editors/openoffice.org-2
+.else
+BROKEN=		fails to install; consider upgrading to editors/openoffice.org-2
+.endif
+
 LANG_EXT?=	01
 LANG_CONFIGURE_ARG?=	ENUS
 L10NHELP?=     helpcontent_01_unix.tgz
