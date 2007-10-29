@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	azureus
-PORTVERSION=	3.0.3.0
+PORTVERSION=	3.0.3.4
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
 DISTNAME=	Azureus_${PORTVERSION}_source
@@ -16,9 +16,7 @@ COMMENT=	A BitTorrent client written in Java
 
 BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
-		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
-		${JAVALIBDIR}/${SWT}.jar:${PORTSDIR}/x11-toolkits/${SWT}
-RUN_DEPENDS=	${JAVALIBDIR}/${SWT}.jar:${PORTSDIR}/x11-toolkits/${SWT}
+		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
@@ -26,8 +24,6 @@ JAVA_OS=	native
 USE_ANT=	yes
 
 USE_ZIP=	yes
-USE_DOS2UNIX=	org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
-		org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java
 
 NO_WRKSUBDIR=	yes
 
@@ -41,18 +37,35 @@ MAKE_ENV=	LANG=C
 CLASSPATH_JARS=	${BUILD_DEPENDS:C/:.+$//:M*.jar}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE} \
-		bin/${PORTNAME}
+		bin/${PORTNAME} \
+		share/icons/hicolor/16x16/apps/${PORTNAME}.png \
+		share/icons/hicolor/32x32/apps/${PORTNAME}.png \
+		share/icons/hicolor/64x64/apps/${PORTNAME}.png \
+		share/icons/hicolor/128x128/apps/${PORTNAME}.png
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	LIBDIR="${LOCALBASE}/lib" JARFILE="${JARFILE}" \
 		SWTJAR="${JAVALIBDIR}/${SWT}.jar" JAVA="${LOCALBASE}/bin/java"
 
+DESKTOP_ENTRIES=	"Azureus" \
+			"A full feature BitTorrent client" \
+			"${PORTNAME}.png" \
+			"${PORTNAME}" \
+			"" \
+			true
+
+INSTALLS_ICONS=		yes
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SWTDEVEL)
 SWT=		swt-devel
+BUILD_DEPENDS+=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
+RUN_DEPENDS+=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
 .else
 SWT=		swt
+BUILD_DEPENDS+=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
+RUN_DEPENDS+=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
 .endif
 
 # Ok, I'm not quite sure why this works, or if it is in any way a proper fix.
@@ -78,6 +91,14 @@ do-install:
 	${MKDIR} ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/dist/lib/${JARFILE} ${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a16.png \
+		${PREFIX}/share/icons/hicolor/16x16/apps/${PORTNAME}.png
+	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a32.png \
+		${PREFIX}/share/icons/hicolor/32x32/apps/${PORTNAME}.png
+	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a64.png \
+		${PREFIX}/share/icons/hicolor/64x64/apps/${PORTNAME}.png
+	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a128.png \
+		${PREFIX}/share/icons/hicolor/128x128/apps/${PORTNAME}.png
 
 post-install:
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
