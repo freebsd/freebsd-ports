@@ -7,6 +7,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,7 +36,13 @@ OPTIONS=	FLAC "Add audio/flac decoder" On \
 		FFMPEG "Add multimedia/ffmpeg decoder (for wma files)" Off \
 		MUSICBRAINZ "Use audio/libmusicbrainz music meta database" Off \
 		MPC "Add audio/libmpcdec decoder (for musepack file)" Off \
-		LIBDVDREAD "Use libdvdread (for video dvd ripping)" On
+		LIBDVDREAD "Use libdvdread (for video dvd ripping)" On \
+		DVDPLUSRW "Add DVD+RW Tools (for DVD+/-R(W) burning)" On \
+		TRANSCODE "Add Transcode (for DVD ripping)" Off \
+		EMOVIX "Add eMovix (to burn bootable video CD)" Off \
+		NORMALIZE "Add Normalize (adjust audio to a std. level)" Off \
+		SOX "Add SoX (more audio encoding formats)" Off \
+		VCDIMAGER "Add VCDImager (for Video CD burning)" Off
 
 pre-configure:
 	${RM} ${WRKSRC}/admin/cvs.sh
@@ -96,6 +103,30 @@ LIB_DEPENDS+=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 .else
 PLIST_SUB+=	LIBDVDREAD="@comment "
 CONFIGURE_ARGS+=	--without-libdvdread
+.endif
+
+.if !defined (WITHOUT_DVDPLUSRW)
+RUN_DEPENDS+=	dvd+rw-format:${PORTSDIR}/sysutils/dvd+rw-tools
+.endif
+
+.if defined (WITH_TRANSCODE)
+RUN_DEPENDS+=	transcode:${PORTSDIR}/multimedia/transcode
+.endif
+
+.if defined (WITH_EMOVIX)
+RUN_DEPENDS+=	mkmovixiso:${PORTSDIR}/multimedia/emovix
+.endif
+
+.if defined (WITH_NORMALIZE)
+RUN_DEPENDS+=	normalize:${PORTSDIR}/audio/normalize
+.endif
+
+.if defined (WITH_SOX)
+RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
+.endif
+
+.if defined (WITH_VCDIMAGER)
+RUN_DEPENDS+=   vcdxrip:${PORTSDIR}/multimedia/vcdimager
 .endif
 
 .include <bsd.port.post.mk>
