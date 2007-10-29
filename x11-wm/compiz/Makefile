@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	compiz
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.6.2
+#PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	rnoland@2hip.net
@@ -68,17 +68,15 @@ OPTIONS=	RSVG "Enable librsvg2 support" on \
 		METACITY "Enable Metacity support" on \
 		GNOME "Enable Gnome support" on \
 		DBUS "Enable DBUS support" on \
-		FUSEFS "Enable fusefs support" off
-
-# No KDE support for now...
-CONFIGURE_ARGS=	--disable-kde
+		FUSEFS "Enable fusefs support" off \
+		KDE "Enable KDE support" off
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_RSVG)
+.if !defined(WITHOUT_RSVG)
 CONFIGURE_ARGS+=	--enable-librsvg
 USE_GNOME+=		librsvg2
 PLIST_SUB+=		RSVG=""
@@ -87,7 +85,7 @@ CONFIGURE_ARGS+=	--disable-librsvg
 PLIST_SUB+=		RSVG="@comment "
 .endif
 
-.if defined(WITH_METACITY) || defined(WITH_GTK) || defined(WITH_GNOME)
+.if !defined(WITHOUT_GTK)
 CONFIGURE_ARGS+=	--enable-gtk
 USE_GNOME+=	 glib20 libwnck
 PLIST_SUB+=	GTK=""
@@ -96,14 +94,14 @@ CONFIGURE_ARGS+=	--disable-gtk
 PLIST_SUB+=	GTK="@comment "
 .endif
 
-.if defined(WITH_METACITY) || defined(WITH_GNOME)
+.if !defined(WITHOUT_METACITY) && !defined(WITHOUT_GNOME) && !defined(WITHOUT_GTK)
 CONFIGURE_ARGS+=	--enable-metacity
 USE_GNOME+=	metacity
 .else
 CONFIGURE_ARGS+=	--disable-metacity
 .endif
 
-.if defined(WITH_GNOME)
+.if !defined(WITHOUT_GNOME) && !defined(WITHOUT_GTK)
 CONFIGURE_ARGS+=	--enable-gnome \
 			--enable-gnome-keybindings
 USE_GNOME+=	 gnomecontrolcenter2
@@ -120,11 +118,11 @@ CONFIGURE_ARGS+=	--disable-gnome \
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
-.if defined(WITH_DBUS)
+.if !defined(WITHOUT_DBUS)
 CONFIGURE_ARGS+=	--enable-dbus
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
-.if defined(WITH_GTK) || defined(WITH_GNOME)
+.if !defined(WITHOUT_GTK) && !defined(WITHOUT_GNOME)
 CONFIGURE_ARGS+=	--enable-dbus-glib
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
@@ -143,6 +141,17 @@ PLIST_SUB+=		FUSEFS=""
 .else
 CONFIGURE_ARGS+=	--disable-fuse
 PLIST_SUB+=		FUSEFS="@comment "
+.endif
+
+.if defined(WITH_KDE)
+USE_KDEBASE_VER=	3
+CONFIGURE_ARGS+=	--enable-kde
+PLIST_SUB+=	KDE=""
+# allow bsd.kde.mk to be included after bsd.port.mk
+.include "${PORTSDIR}/Mk/bsd.kde.mk"
+.else
+CONFIGURE_ARGS+=	--disable-kde
+PLIST_SUB+=	KDE="@comment "
 .endif
 
 .include <bsd.port.post.mk>
