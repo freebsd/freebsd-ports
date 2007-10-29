@@ -1,0 +1,31 @@
+share/doc/avr-libc/avr-libc-user-manual.pdf
+share/doc/avr-libc/avr-libc-user-manual.ps
+share/doc/avr-libc/examples/asmdemo/Makefile
+share/doc/avr-libc/examples/asmdemo/asmdemo.c
+share/doc/avr-libc/examples/asmdemo/isrs.S
+share/doc/avr-libc/examples/asmdemo/project.h
+share/doc/avr-libc/examples/demo/Makefile
+share/doc/avr-libc/examples/demo/demo.c
+share/doc/avr-libc/examples/demo/iocompat.h
+share/doc/avr-libc/examples/largedemo/Makefile
+share/doc/avr-libc/examples/largedemo/largedemo.c
+share/doc/avr-libc/examples/stdiodemo/Makefile
+share/doc/avr-libc/examples/stdiodemo/defines.h
+share/doc/avr-libc/examples/stdiodemo/hd44780.c
+share/doc/avr-libc/examples/stdiodemo/hd44780.h
+share/doc/avr-libc/examples/stdiodemo/lcd.c
+share/doc/avr-libc/examples/stdiodemo/lcd.h
+share/doc/avr-libc/examples/stdiodemo/stdiodemo.c
+share/doc/avr-libc/examples/stdiodemo/uart.c
+share/doc/avr-libc/examples/stdiodemo/uart.h
+share/doc/avr-libc/examples/twitest/Makefile
+share/doc/avr-libc/examples/twitest/twitest.c
+@dirrm share/doc/avr-libc/examples/twitest
+@dirrm share/doc/avr-libc/examples/stdiodemo
+@dirrm share/doc/avr-libc/examples/largedemo
+@dirrm share/doc/avr-libc/examples/demo
+@dirrm share/doc/avr-libc/examples/asmdemo
+@dirrm share/doc/avr-libc/examples
+@dirrm share/doc/avr-libc/man/man3
+@dirrm share/doc/avr-libc/man
+@dirrm share/doc/avr-libc/avr-libc-user-manual
