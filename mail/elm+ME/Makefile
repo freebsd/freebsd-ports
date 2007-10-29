@@ -7,6 +7,7 @@
 
 PORTNAME=	elm+ME
 PORTVERSION=	${ELM_VERSION}.${ELM_REVISION}${ELM_PATCHLEVEL:S/_//}
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.elmme-mailer.org/ \
 	ftp://ftp.elmme-mailer.org/elmme-mailer.org/src/elm-2.4ME+/ \
@@ -220,7 +221,7 @@ rename-readmes:
 # Pre-install
 #
 
-pre-install: create-install-dirs backup-conf-files
+pre-su-install: create-install-dirs backup-conf-files
 
 create-install-dirs:
 	@${MKDIR} ${CONF_DIR} ${LIB_DIR} ${SHLIB_DIR}
