@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20071029:
+  AFFECTS: users of security/stunnel
+  AUTHOR: roam@FreeBSD.org
+
+  In the 4.21 update there are two major user-visible changes:
+  - the stunnel binary is in ${PREFIX}/bin/, no longer in ${PREFIX}/sbin/;
+  - the libstunnel library is in ${PREFIX}/lib/stunnel/ instead of lib/.
+
+  You may need to adjust your PATH settings or your scripts to accomodate
+  the new location of the stunnel executable (and library, if there is
+  actually anything using it).
+
 20071024:
   AFFECTS: All GNOME users and ports depend on gnomehier
   AUTHOR: gnome@FreeBSD.org
