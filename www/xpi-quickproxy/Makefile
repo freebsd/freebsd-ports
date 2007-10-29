@@ -14,6 +14,7 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A statusbar button to quickly turn the proxy on and off
 
 XPI_ID=		{d5ea4520-61a1-11da-8cd6-0800200c9a66}
+XPI_NUM=	1557
 XPI_FILES=	chrome/quickproxy.jar chrome.manifest install.rdf
 XPI_DIRS=	chrome
 
