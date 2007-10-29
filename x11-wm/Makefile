@@ -143,6 +143,7 @@
     SUBDIR += xfce4-panel
     SUBDIR += xfce4-session
     SUBDIR += xfce4-wm
+    SUBDIR += xmonad
     SUBDIR += yawm
 
 .include <bsd.port.subdir.mk>
