@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.44.1
-PORTREVISION=	1
+PORTVERSION=	2.45
 CATEGORIES=	graphics games
-MASTER_SITES=	CENKES
+MASTER_SITES=	http://download.blender.org/source/ \
+		http://mirror.cs.umn.edu/blender.org/source/	\
+		http://public.planetmirror.com/pub/blender/source/
 
 MAINTAINER=	dyeske@gmail.com
 COMMENT=	3D modeling/rendering/animation/gaming package
@@ -23,7 +24,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		alut.1:${PORTSDIR}/audio/freealut \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 
-CONFLICTS=	blender-devel-[0-9]*
 PLIST_FILES=	bin/blender
 USE_XORG=	x11 xext xmu xi
 USE_GETTEXT=	yes
@@ -44,16 +44,26 @@ OPTIONS=	OCFLAGS "With Optimized Cflags" off \
 MAKE_ENV+=	NAN_CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 		-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/OpenEXR \
-		-I${PYTHON_INCLUDEDIR}"
-MAKE_ENV+=	NAN_FREETYPE="${LOCALBASE}"
-MAKE_ENV+=	NAN_OPENEXR="${LOCALBASE}"
-MAKE_ENV+=	WITH_BF_BLENDERPLAYER="false"
+		-I${PYTHON_INCLUDEDIR}/"
+MAKE_ENV+=	NAN_FREETYPE="${LOCALBASE}/"
+MAKE_ENV+=	NAN_OPENEXR="${LOCALBASE}/"
+MAKE_ENV+=	NAN_OPENAL="${LOCALBASE}/"
 
 .if defined(WITH_OCFLAGS)
 CFLAGS+=	-O3 -ffast-math
 .endif
 
-post-patch:
+.if ${ARCH} == "amd64"
+MAKE_ENV+=	NAN_NO_KETSJI="true"
+MAKE_ENV+=	WITH_BF_BLENDERGAMEENGINE="false"
+MAKE_ENV+=	WITH_BF_BLENDERPLAYER="false"
+.else
+MAKE_ENV+=	WITH_BF_BLENDERGAMEENGINE="true"
+MAKE_ENV+=	WITH_BF_OPENAL="true"
+MAKE_ENV+=	WITH_BF_BLENDERPLAYER="true"
+.endif
+
+pre-configure:
 	@${REINPLACE_CMD} -e \
 		's|sdl11-config|${SDL_CONFIG}|; \
 		s|2.3|${PYTHON_VER}|' \
@@ -79,7 +89,7 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd/bin/blender ${PREFIX}/bin
 .if !defined(WITH_NOPORTDOCS)
-	@${MV} ${WRKSRC}/README ${WRKSRC}/doc/
+	@${CP} -p ${WRKSRC}/README ${WRKSRC}/doc/
 	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
