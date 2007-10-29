@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jsview
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	www
 MASTER_SITES=	http://forum.softwareblaze.com/jsview/ CENKES
 DISTNAME=	${PORTNAME}${DISTVERSION}
