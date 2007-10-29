@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mcabber
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 
@@ -28,6 +28,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 MAN1=		mcabber.1
 
 OPTIONS=	GPGME "Use security/gpgme for PGP support" off \
+		OTR "Off-the-record messaging support" off \
 		ASPELL "Use textproc/aspell for spell checking" off
 
 .include <bsd.port.pre.mk>
@@ -52,6 +53,14 @@ LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=--enable-aspell
 .else
 CONFIGURE_ARGS+=--disable-aspell
+.endif
+
+.if defined(WITH_OTR)
+LIB_DEPENDS+=	otr.3:${PORTSDIR}/security/libotr \
+		gcrypt.13:${PORTSDIR}/security/libgcrypt
+CONFIGURE_ARGS+=--enable-otr
+.else
+CONFIGURE_ARGS+=--disable-otr
 .endif
 
 post-patch:
