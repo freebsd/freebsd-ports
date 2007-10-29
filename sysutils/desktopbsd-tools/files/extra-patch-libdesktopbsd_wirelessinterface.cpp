@@ -41,7 +41,7 @@ Index: libdesktopbsd/wirelessinterface.cpp
 + * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 + * SUCH DAMAGE.
 + *
-+ * $FreeBSD: /tmp/pcvs/ports/sysutils/desktopbsd-tools/files/Attic/patch-libdesktopbsd_wirelessinterface.cpp,v 1.1 2007-09-07 20:02:13 lme Exp $
++ * $FreeBSD: /tmp/pcvs/ports/sysutils/desktopbsd-tools/files/Attic/extra-patch-libdesktopbsd_wirelessinterface.cpp,v 1.1 2007-10-29 21:03:57 lme Exp $
 + */
 +
 +/*-
