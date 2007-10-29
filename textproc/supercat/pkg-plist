@@ -1,5 +1,10 @@
 bin/spc
+%%ETCDIR%%/spcrc-ChangeLog
 %%ETCDIR%%/spcrc-c
+%%ETCDIR%%/spcrc-diff
 %%ETCDIR%%/spcrc-emerge
+%%ETCDIR%%/spcrc-gentooconfd
+%%ETCDIR%%/spcrc-patch
 %%ETCDIR%%/spcrc-py
+%%ETCDIR%%/spcrc-xorg
 @dirrmtry %%ETCDIR%%
