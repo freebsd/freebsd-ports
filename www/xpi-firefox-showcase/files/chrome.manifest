@@ -24,6 +24,8 @@ locale	showcase	fi-FI	jar:chrome/showcase.jar!/locale/fi-FI/showcase/
 
 locale	showcase	fr-FR	jar:chrome/showcase.jar!/locale/fr-FR/showcase/
 
+locale	showcase	fy-NL	jar:chrome/showcase.jar!/locale/fy-NL/showcase/
+
 locale	showcase	hu-HU	jar:chrome/showcase.jar!/locale/hu-HU/showcase/
 
 locale	showcase	it-IT	jar:chrome/showcase.jar!/locale/it-IT/showcase/
