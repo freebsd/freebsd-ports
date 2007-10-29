@@ -18,6 +18,8 @@ INFO=		cronolog
 MAN1=		cronolog.1m cronosplit.1m
 
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	automake:196 aclocal:19 autoconf:261
+AUTOMAKE_ARGS+=	--add-missing
 
 OPTIONS=	SETUID_PATCH "Build with setuid functionality" On
 
