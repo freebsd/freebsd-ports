@@ -16,6 +16,8 @@ PKGNAMESUFFIX=	10
 MAINTAINER=	shipley@dis.org
 COMMENT=	A C library for creating IP packets
 
+CFLAGS+=	-fPIC
+
 USE_AUTOTOOLS=	autoconf:261
 WRKSRC=		${WRKDIR}/Libnet-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}

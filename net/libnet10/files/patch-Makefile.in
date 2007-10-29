@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Feb  5 14:51:41 2001
-+++ Makefile.in	Mon Sep 25 18:26:09 2006
+--- Makefile.in.orig	2001-02-05 12:51:41.000000000 -0500
++++ Makefile.in	2007-10-03 12:45:33.000000000 -0400
 @@ -14,8 +14,8 @@
  exec_prefix =   @exec_prefix@
  srcdir      =   @srcdir@
@@ -11,6 +11,15 @@
  MAN_PREFIX  =   @MAN_PREFIX@
  
  LIBNET      =   libnet
+@@ -37,7 +37,7 @@
+ CC          =   @CC@
+ ENSUREDIR   =   $(srcdir)/ensure-dir.sh
+ INSTALL_DATA=   $(srcdir)/install-sh
+-CFLAGS      =   @CFLAGS@
++CFLAGS      +=  @CFLAGS@
+ CPPFLAGS    =   @CPPFLAGS@
+ OBJECTS     =   src/libnet_resolve.o\
+ 		src/libnet_socket.o\
 @@ -108,8 +108,8 @@
  	$(INSTALL_DATA) $(INCLUDE-M) $(DESTDIR)$(INC_PREFIX)$(LIBNET)
  	$(INSTALL_DATA) $(INCLUDE-A) $(DESTDIR)$(INC_PREFIX)$(LIBNET)
