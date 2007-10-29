@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.11.3
+DISTVERSION=	0.11.4
 CATEGORIES=	www
 MASTER_SITES=	SFE
 
@@ -30,6 +30,7 @@ PLIST_FILES=	bin/aria2c \
 		share/locale/de/LC_MESSAGES/aria2c.mo \
 		share/locale/fr/LC_MESSAGES/aria2c.mo \
 		share/locale/ja/LC_MESSAGES/aria2c.mo \
+		share/locale/nl/LC_MESSAGES/aria2c.mo \
 		share/locale/ru/LC_MESSAGES/aria2c.mo
 MAN1=		aria2c.1
 
