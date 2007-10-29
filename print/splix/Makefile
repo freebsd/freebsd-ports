@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	splix
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	tomasv@megalogika.lt
 COMMENT=	A set of CUPS printer drivers for Samsung Printer Language printers
 
-BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-base
+BUILD_DEPENDS=	cups-config:${PORTSDIR}/print/cups-base \
+				ppdc:${PORTSDIR}/print/cupsddk
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
