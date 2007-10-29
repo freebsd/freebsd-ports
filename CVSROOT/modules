@@ -17246,6 +17246,7 @@ xmodmap		ports/x11/xmodmap
 xmold		ports/x11/xmold
 xmolwt		ports/biology/xmolwt
 xmon		ports/x11/xmon
+xmonad		ports/x11-wm/xmonad
 xmoontool	ports/astro/xmoontool
 xmore		ports/x11/xmore
 xmorph		ports/graphics/xmorph
