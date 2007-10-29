@@ -7,7 +7,7 @@
 
 PORTNAME=	pixman
 PORTVERSION=	0.9.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -17,6 +17,6 @@ XORG_CAT=	lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk+-2\.0|disable-gtk|g' \
-		${WRKSRC}/configure
+		-e 's|-msse||' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
