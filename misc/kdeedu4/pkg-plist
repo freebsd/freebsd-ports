@@ -381,7 +381,7 @@ share/apps/kanagram/sounds/chalk.ogg
 share/apps/kanagram/sounds/right.ogg
 share/apps/kanagram/sounds/wrong.ogg
 share/apps/katepart/syntax/logohighlightstyle.en_US.xml
-%%BOOST_PYTHON%%share/apps/katepart/syntax/python-kig.xml
+share/apps/katepart/syntax/python-kig.xml
 share/apps/kbruch/kbruchui.rc
 share/apps/keduca/icons/crystalsvg/16x16/actions/addquestion.png
 share/apps/keduca/icons/crystalsvg/16x16/actions/control.png
@@ -1719,6 +1719,7 @@ share/apps/ktouch/he.keyboard
 share/apps/ktouch/hu.keyboard
 share/apps/ktouch/hungarian.ktouch.xml
 share/apps/ktouch/hungarian_expert.ktouch.xml
+share/apps/ktouch/it.keyboard
 share/apps/ktouch/italian.ktouch.xml
 share/apps/ktouch/ktouchui.rc
 share/apps/ktouch/nederlands.ktouch.xml
@@ -2531,6 +2532,7 @@ share/mimelnk/application/x-kig.desktop
 share/mimelnk/application/x-kmplot.desktop
 share/mimelnk/application/x-kseg.desktop
 share/mimelnk/application/x-kwordquiz.desktop
+share/mimelnk/text/x-kvtml.desktop
 share/services/keduca_part.desktop
 share/services/kfile_drgeo.desktop
 share/services/kfile_kig.desktop

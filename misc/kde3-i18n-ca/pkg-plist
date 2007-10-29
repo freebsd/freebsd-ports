@@ -1,9 +1,39 @@
+share/apps/kanagram/data/ca/animals_pri.kvtml
+share/apps/kanagram/data/ca/biografies_sec.kvtml
+share/apps/kanagram/data/ca/capitals_del_mon_sec.kvtml
+share/apps/kanagram/data/ca/comarques_sec.kvtml
+share/apps/kanagram/data/ca/divises_sec.kvtml
+share/apps/kanagram/data/ca/espai_pri.kvtml
+share/apps/kanagram/data/ca/esports_sec.kvtml
+share/apps/kanagram/data/ca/fruites_pri.kvtml
+share/apps/kanagram/data/ca/informatica_pri.kvtml
+share/apps/kanagram/data/ca/invents_sec.kvtml
+share/apps/kanagram/data/ca/objectes_pri.kvtml
+share/apps/kanagram/data/ca/professions_pri.kvtml
+share/apps/kanagram/data/ca/provincies_sec.kvtml
+share/apps/kanagram/data/ca/transports_pri.kvtml
+share/apps/kanagram/data/ca/verdures_pri.kvtml
+share/apps/kanagram/data/ca/vestit_pri.kvtml
 share/apps/katepart/syntax/logohighlightstyle.ca.xml
 share/apps/khangman/ca.txt
 share/apps/khangman/data/ca/animals.kvtml
 share/apps/khangman/data/ca/easy.kvtml
 share/apps/khangman/data/ca/hard.kvtml
 share/apps/khangman/data/ca/medium.kvtml
+share/apps/klatin/data/vocabs/ca/A.kvtml
+share/apps/klatin/data/vocabs/ca/BC.kvtml
+share/apps/klatin/data/vocabs/ca/D.kvtml
+share/apps/klatin/data/vocabs/ca/EF.kvtml
+share/apps/klatin/data/vocabs/ca/GHI1.kvtml
+share/apps/klatin/data/vocabs/ca/I2L.kvtml
+share/apps/klatin/data/vocabs/ca/M.kvtml
+share/apps/klatin/data/vocabs/ca/N.kvtml
+share/apps/klatin/data/vocabs/ca/OP1.kvtml
+share/apps/klatin/data/vocabs/ca/P2.kvtml
+share/apps/klatin/data/vocabs/ca/QR.kvtml
+share/apps/klatin/data/vocabs/ca/S.kvtml
+share/apps/klatin/data/vocabs/ca/TU.kvtml
+share/apps/klatin/data/vocabs/ca/V.kvtml
 share/apps/kturtle/data/logokeywords.ca.xml
 share/apps/kturtle/examples/ca/aprenquadrats.logo
 share/apps/kturtle/examples/ca/colorspaper.logo
@@ -1338,7 +1368,6 @@ share/locale/ca/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/ca/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/ca/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/ca/LC_MESSAGES/ksvgplugin.mo
-share/locale/ca/LC_MESSAGES/ksync.mo
 share/locale/ca/LC_MESSAGES/ksysguard.mo
 share/locale/ca/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/ca/LC_MESSAGES/ksystraycmd.mo
@@ -1419,7 +1448,6 @@ share/locale/ca/LC_MESSAGES/libkscan.mo
 share/locale/ca/LC_MESSAGES/libkscreensaver.mo
 share/locale/ca/LC_MESSAGES/libksieve.mo
 share/locale/ca/LC_MESSAGES/libksirtet.mo
-share/locale/ca/LC_MESSAGES/libksync.mo
 share/locale/ca/LC_MESSAGES/libtaskbar.mo
 share/locale/ca/LC_MESSAGES/libtaskmanager.mo
 share/locale/ca/LC_MESSAGES/lockout.mo
@@ -1642,6 +1670,13 @@ share/locale/ca/flag.png
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data
 @dirrm share/apps/kturtle
+@dirrm share/apps/klatin/data/vocabs/ca
+@dirrm share/apps/klatin/data/vocabs
+@dirrm share/apps/klatin/data
+@dirrm share/apps/klatin
 @dirrm share/apps/khangman/data/ca
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman
+@dirrm share/apps/kanagram/data/ca
+@dirrm share/apps/kanagram/data
+@dirrm share/apps/kanagram

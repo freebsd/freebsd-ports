@@ -59,6 +59,7 @@ share/locale/km/LC_MESSAGES/kasbarextension.mo
 share/locale/km/LC_MESSAGES/kasteroids.mo
 share/locale/km/LC_MESSAGES/kate.mo
 share/locale/km/LC_MESSAGES/katecppsymbolviewer.mo
+share/locale/km/LC_MESSAGES/katedefaultproject.mo
 share/locale/km/LC_MESSAGES/katefiletemplates.mo
 share/locale/km/LC_MESSAGES/katefll_initplugin.mo
 share/locale/km/LC_MESSAGES/katefll_plugin.mo
@@ -168,6 +169,7 @@ share/locale/km/LC_MESSAGES/kcmwifi.mo
 share/locale/km/LC_MESSAGES/kcmxinerama.mo
 share/locale/km/LC_MESSAGES/kcoloredit.mo
 share/locale/km/LC_MESSAGES/kcontrol.mo
+share/locale/km/LC_MESSAGES/kcron.mo
 share/locale/km/LC_MESSAGES/kdcop.mo
 share/locale/km/LC_MESSAGES/kdebugdialog.mo
 share/locale/km/LC_MESSAGES/kdelibs.mo
@@ -312,6 +314,7 @@ share/locale/km/LC_MESSAGES/klettres.mo
 share/locale/km/LC_MESSAGES/klickety.mo
 share/locale/km/LC_MESSAGES/klines.mo
 share/locale/km/LC_MESSAGES/klipper.mo
+share/locale/km/LC_MESSAGES/kmag.mo
 share/locale/km/LC_MESSAGES/kmahjongg.mo
 share/locale/km/LC_MESSAGES/kmail.mo
 share/locale/km/LC_MESSAGES/kmail_text_calendar_plugin.mo
@@ -335,6 +338,7 @@ share/locale/km/LC_MESSAGES/kminipagerapplet.mo
 share/locale/km/LC_MESSAGES/kmix.mo
 share/locale/km/LC_MESSAGES/kmobile.mo
 share/locale/km/LC_MESSAGES/kmoon.mo
+share/locale/km/LC_MESSAGES/kmousetool.mo
 share/locale/km/LC_MESSAGES/kmouth.mo
 share/locale/km/LC_MESSAGES/kmplot.mo
 share/locale/km/LC_MESSAGES/kmrml.mo
@@ -404,6 +408,7 @@ share/locale/km/LC_MESSAGES/krfb.mo
 share/locale/km/LC_MESSAGES/kruler.mo
 share/locale/km/LC_MESSAGES/krunapplet.mo
 share/locale/km/LC_MESSAGES/ksame.mo
+share/locale/km/LC_MESSAGES/ksayit.mo
 share/locale/km/LC_MESSAGES/kscd.mo
 share/locale/km/LC_MESSAGES/kscreensaver.mo
 share/locale/km/LC_MESSAGES/kshisen.mo
@@ -430,6 +435,7 @@ share/locale/km/LC_MESSAGES/ksysguard.mo
 share/locale/km/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/km/LC_MESSAGES/ksystraycmd.mo
 share/locale/km/LC_MESSAGES/ktalkd.mo
+share/locale/km/LC_MESSAGES/ktaskbarapplet.mo
 share/locale/km/LC_MESSAGES/kteatime.mo
 share/locale/km/LC_MESSAGES/ktexteditor_autobookmarker.mo
 share/locale/km/LC_MESSAGES/ktexteditor_docwordcompletion.mo
@@ -447,10 +453,15 @@ share/locale/km/LC_MESSAGES/ktron.mo
 share/locale/km/LC_MESSAGES/kttsd.mo
 share/locale/km/LC_MESSAGES/kttsd_commandplugin.mo
 share/locale/km/LC_MESSAGES/kttsd_eposplugin.mo
+share/locale/km/LC_MESSAGES/kttsd_festivalintplugin.mo
 share/locale/km/LC_MESSAGES/kttsd_fliteplugin.mo
 share/locale/km/LC_MESSAGES/kttsd_freettsplugin.mo
+share/locale/km/LC_MESSAGES/kttsd_hadifixplugin.mo
 share/locale/km/LC_MESSAGES/kttsd_sbdplugin.mo
+share/locale/km/LC_MESSAGES/kttsd_stringreplacerplugin.mo
+share/locale/km/LC_MESSAGES/kttsd_talkerchooserplugin.mo
 share/locale/km/LC_MESSAGES/kttsd_xmltransformerplugin.mo
+share/locale/km/LC_MESSAGES/kttsjobmgr.mo
 share/locale/km/LC_MESSAGES/kttsmgr.mo
 share/locale/km/LC_MESSAGES/ktuberling.mo
 share/locale/km/LC_MESSAGES/kturtle.mo
@@ -539,6 +550,7 @@ share/locale/km/LC_MESSAGES/rellinks.mo
 share/locale/km/LC_MESSAGES/searchbarplugin.mo
 share/locale/km/LC_MESSAGES/superkaramba.mo
 share/locale/km/LC_MESSAGES/synaescope.mo
+share/locale/km/LC_MESSAGES/taskbarextension.mo
 share/locale/km/LC_MESSAGES/timezones.mo
 share/locale/km/LC_MESSAGES/tippecanoe.mo
 share/locale/km/LC_MESSAGES/trashapplet.mo

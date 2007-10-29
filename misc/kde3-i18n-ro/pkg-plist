@@ -535,7 +535,6 @@ share/locale/ro/LC_MESSAGES/kstyle_highcontrast_config.mo
 share/locale/ro/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/ro/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/ro/LC_MESSAGES/ksvgplugin.mo
-share/locale/ro/LC_MESSAGES/ksync.mo
 share/locale/ro/LC_MESSAGES/ksysguard.mo
 share/locale/ro/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/ro/LC_MESSAGES/ksystraycmd.mo
@@ -570,7 +569,6 @@ share/locale/ro/LC_MESSAGES/kvieweffectsplugin.mo
 share/locale/ro/LC_MESSAGES/kviewpresenterplugin.mo
 share/locale/ro/LC_MESSAGES/kviewscannerplugin.mo
 share/locale/ro/LC_MESSAGES/kviewshell.mo
-share/locale/ro/LC_MESSAGES/kviewtemplateplugin.mo
 share/locale/ro/LC_MESSAGES/kviewviewer.mo
 share/locale/ro/LC_MESSAGES/kvoctrain.mo
 share/locale/ro/LC_MESSAGES/kwalletmanager.mo

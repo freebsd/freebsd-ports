@@ -1544,6 +1544,7 @@ share/locale/pt_BR/LC_MESSAGES/kdgantt.mo
 share/locale/pt_BR/LC_MESSAGES/kdialog.mo
 share/locale/pt_BR/LC_MESSAGES/kdict.mo
 share/locale/pt_BR/LC_MESSAGES/kdictapplet.mo
+share/locale/pt_BR/LC_MESSAGES/kdjview.mo
 share/locale/pt_BR/LC_MESSAGES/kdmconfig.mo
 share/locale/pt_BR/LC_MESSAGES/kdmgreet.mo
 share/locale/pt_BR/LC_MESSAGES/kdvi.mo
@@ -1551,6 +1552,7 @@ share/locale/pt_BR/LC_MESSAGES/kedit.mo
 share/locale/pt_BR/LC_MESSAGES/keduca.mo
 share/locale/pt_BR/LC_MESSAGES/kenolaba.mo
 share/locale/pt_BR/LC_MESSAGES/kfax.mo
+share/locale/pt_BR/LC_MESSAGES/kfaxview.mo
 share/locale/pt_BR/LC_MESSAGES/kfifteenapplet.mo
 share/locale/pt_BR/LC_MESSAGES/kfile_au.mo
 share/locale/pt_BR/LC_MESSAGES/kfile_avi.mo
@@ -1577,6 +1579,7 @@ share/locale/pt_BR/LC_MESSAGES/kfile_m3u.mo
 share/locale/pt_BR/LC_MESSAGES/kfile_mhtml.mo
 share/locale/pt_BR/LC_MESSAGES/kfile_mp3.mo
 share/locale/pt_BR/LC_MESSAGES/kfile_mpc.mo
+share/locale/pt_BR/LC_MESSAGES/kfile_mpeg.mo
 share/locale/pt_BR/LC_MESSAGES/kfile_ogg.mo
 share/locale/pt_BR/LC_MESSAGES/kfile_palm.mo
 share/locale/pt_BR/LC_MESSAGES/kfile_pcx.mo
@@ -1638,6 +1641,7 @@ share/locale/pt_BR/LC_MESSAGES/kio_groupwise.mo
 share/locale/pt_BR/LC_MESSAGES/kio_help.mo
 share/locale/pt_BR/LC_MESSAGES/kio_home.mo
 share/locale/pt_BR/LC_MESSAGES/kio_imap4.mo
+share/locale/pt_BR/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/pt_BR/LC_MESSAGES/kio_lan.mo
 share/locale/pt_BR/LC_MESSAGES/kio_ldap.mo
 share/locale/pt_BR/LC_MESSAGES/kio_mac.mo
@@ -1661,6 +1665,7 @@ share/locale/pt_BR/LC_MESSAGES/kio_thumbnail.mo
 share/locale/pt_BR/LC_MESSAGES/kio_trash.mo
 share/locale/pt_BR/LC_MESSAGES/kio_zeroconf.mo
 share/locale/pt_BR/LC_MESSAGES/kioexec.mo
+share/locale/pt_BR/LC_MESSAGES/kitchensync.mo
 share/locale/pt_BR/LC_MESSAGES/kiten.mo
 share/locale/pt_BR/LC_MESSAGES/kjobviewer.mo
 share/locale/pt_BR/LC_MESSAGES/kjots.mo
@@ -1701,6 +1706,7 @@ share/locale/pt_BR/LC_MESSAGES/kmouth.mo
 share/locale/pt_BR/LC_MESSAGES/kmplot.mo
 share/locale/pt_BR/LC_MESSAGES/kmrml.mo
 share/locale/pt_BR/LC_MESSAGES/knetattach.mo
+share/locale/pt_BR/LC_MESSAGES/knetwalk.mo
 share/locale/pt_BR/LC_MESSAGES/knetworkconf.mo
 share/locale/pt_BR/LC_MESSAGES/knewsticker.mo
 share/locale/pt_BR/LC_MESSAGES/knode.mo
@@ -1714,6 +1720,7 @@ share/locale/pt_BR/LC_MESSAGES/kommander.mo
 share/locale/pt_BR/LC_MESSAGES/kompare.mo
 share/locale/pt_BR/LC_MESSAGES/konqsidebar_delicious.mo
 share/locale/pt_BR/LC_MESSAGES/konqsidebar_mediaplayer.mo
+share/locale/pt_BR/LC_MESSAGES/konqsidebar_metabar.mo
 share/locale/pt_BR/LC_MESSAGES/konqsidebar_news.mo
 share/locale/pt_BR/LC_MESSAGES/konqueror.mo
 share/locale/pt_BR/LC_MESSAGES/konquest.mo
@@ -1784,7 +1791,6 @@ share/locale/pt_BR/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/pt_BR/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/pt_BR/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/pt_BR/LC_MESSAGES/ksvgplugin.mo
-share/locale/pt_BR/LC_MESSAGES/ksync.mo
 share/locale/pt_BR/LC_MESSAGES/ksysguard.mo
 share/locale/pt_BR/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/pt_BR/LC_MESSAGES/ksystraycmd.mo
@@ -1846,6 +1852,7 @@ share/locale/pt_BR/LC_MESSAGES/libkcddb.mo
 share/locale/pt_BR/LC_MESSAGES/libkdeedu.mo
 share/locale/pt_BR/LC_MESSAGES/libkdegames.mo
 share/locale/pt_BR/LC_MESSAGES/libkdepim.mo
+share/locale/pt_BR/LC_MESSAGES/libkfaximgage.mo
 share/locale/pt_BR/LC_MESSAGES/libkholidays.mo
 share/locale/pt_BR/LC_MESSAGES/libkicker.mo
 share/locale/pt_BR/LC_MESSAGES/libkickermenu_kdeprint.mo
@@ -1864,7 +1871,6 @@ share/locale/pt_BR/LC_MESSAGES/libkscan.mo
 share/locale/pt_BR/LC_MESSAGES/libkscreensaver.mo
 share/locale/pt_BR/LC_MESSAGES/libksieve.mo
 share/locale/pt_BR/LC_MESSAGES/libksirtet.mo
-share/locale/pt_BR/LC_MESSAGES/libksync.mo
 share/locale/pt_BR/LC_MESSAGES/libtaskbar.mo
 share/locale/pt_BR/LC_MESSAGES/libtaskmanager.mo
 share/locale/pt_BR/LC_MESSAGES/lockout.mo

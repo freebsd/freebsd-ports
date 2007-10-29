@@ -7,7 +7,7 @@
 
 PORTNAME=	klaptopdaemon
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -16,7 +16,7 @@ DISTNAME=	kdeutils-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Power management utility for KDE
+COMMENT=	APM monitor for KDE
 
 CONFLICTS=	kdeutils-3.1.* kdeutils-3.2.[0-3]
 

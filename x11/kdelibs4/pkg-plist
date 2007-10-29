@@ -60,6 +60,7 @@ bin/makekdewidgets
 bin/meinproc
 bin/preparetips
 bin/start_kdeinit
+bin/start_kdeinit_wrapper
 etc/xdg/menus/kde-applications.menu
 include/arts/artskde.h
 include/arts/kartsdispatcher.h
@@ -641,6 +642,7 @@ include/kstringhandler.h
 include/kstringvalidator.h
 include/kstyle.h
 include/ksvgiconengine.h
+include/kswitchlanguagedialog.h
 include/ksycoca.h
 include/ksycocaentry.h
 include/ksycocatype.h
@@ -1340,6 +1342,8 @@ share/apps/kdeprint/filters/enscript.desktop
 share/apps/kdeprint/filters/enscript.xml
 share/apps/kdeprint/filters/imagetops.desktop
 share/apps/kdeprint/filters/imagetops.xml
+share/apps/kdeprint/filters/pdf2ps.desktop
+share/apps/kdeprint/filters/pdf2ps.xml
 share/apps/kdeprint/filters/pdfwrite.desktop
 share/apps/kdeprint/filters/pdfwrite.xml
 share/apps/kdeprint/filters/poster.desktop
@@ -5249,6 +5253,7 @@ share/mimelnk/application/x-webarchive.desktop
 share/mimelnk/application/x-x509-ca-cert.desktop
 share/mimelnk/application/x-xliff.desktop
 share/mimelnk/application/x-zerosize.desktop
+share/mimelnk/application/x-zip-compressed.desktop
 share/mimelnk/application/x-zip.desktop
 share/mimelnk/application/x-zoo.desktop
 share/mimelnk/application/xhtml+xml.desktop

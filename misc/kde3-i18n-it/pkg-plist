@@ -531,6 +531,9 @@ share/doc/HTML/it/kdesu/common
 share/doc/HTML/it/kdesu/index.cache.bz2
 share/doc/HTML/it/kdesu/index.docbook
 share/doc/HTML/it/kdesu/man-kdesu.1.docbook
+share/doc/HTML/it/kdesvn-build/common
+share/doc/HTML/it/kdesvn-build/index.cache.bz2
+share/doc/HTML/it/kdesvn-build/index.docbook
 share/doc/HTML/it/kdevelop/SF-general.png
 share/doc/HTML/it/kdevelop/SF-indent.png
 share/doc/HTML/it/kdevelop/SF-other.png
@@ -2093,7 +2096,6 @@ share/locale/it/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/it/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/it/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/it/LC_MESSAGES/ksvgplugin.mo
-share/locale/it/LC_MESSAGES/ksync.mo
 share/locale/it/LC_MESSAGES/ksysguard.mo
 share/locale/it/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/it/LC_MESSAGES/ksystraycmd.mo
@@ -2174,7 +2176,6 @@ share/locale/it/LC_MESSAGES/libkscan.mo
 share/locale/it/LC_MESSAGES/libkscreensaver.mo
 share/locale/it/LC_MESSAGES/libksieve.mo
 share/locale/it/LC_MESSAGES/libksirtet.mo
-share/locale/it/LC_MESSAGES/libksync.mo
 share/locale/it/LC_MESSAGES/libtaskbar.mo
 share/locale/it/LC_MESSAGES/libtaskmanager.mo
 share/locale/it/LC_MESSAGES/lockout.mo
@@ -2383,6 +2384,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kdm
 @dirrm share/doc/HTML/it/kdf
 @dirrm share/doc/HTML/it/kdevelop
+@dirrm share/doc/HTML/it/kdesvn-build
 @dirrm share/doc/HTML/it/kdesu
 @dirrm share/doc/HTML/it/kdeprint
 @dirrm share/doc/HTML/it/kdelibs

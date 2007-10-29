@@ -180,6 +180,7 @@ share/doc/HTML/fr/kate/highlighting.docbook
 share/doc/HTML/fr/kate/index.cache.bz2
 share/doc/HTML/fr/kate/index.docbook
 share/doc/HTML/fr/kate/kate.png
+share/doc/HTML/fr/kate/man-kate.1.docbook
 share/doc/HTML/fr/kate/mdi.docbook
 share/doc/HTML/fr/kate/menus.docbook
 share/doc/HTML/fr/kate/mimetypechoose.png
@@ -485,7 +486,33 @@ share/doc/HTML/fr/kdesu/common
 share/doc/HTML/fr/kdesu/index.cache.bz2
 share/doc/HTML/fr/kdesu/index.docbook
 share/doc/HTML/fr/kdesu/man-kdesu.1.docbook
+share/doc/HTML/fr/kdevelop/adv-build-management.docbook
+share/doc/HTML/fr/kdevelop/app-changelog.docbook
+share/doc/HTML/fr/kdevelop/app-files.docbook
+share/doc/HTML/fr/kdevelop/app-menu.docbook
+share/doc/HTML/fr/kdevelop/app-misc-info.docbook
+share/doc/HTML/fr/kdevelop/app-uimodes-examples.docbook
+share/doc/HTML/fr/kdevelop/applicationwizard.docbook
+share/doc/HTML/fr/kdevelop/class-browsers.docbook
+share/doc/HTML/fr/kdevelop/commands.docbook
+share/doc/HTML/fr/kdevelop/credits.docbook
+share/doc/HTML/fr/kdevelop/cvs.docbook
+share/doc/HTML/fr/kdevelop/debugger.docbook
+share/doc/HTML/fr/kdevelop/documentation.docbook
+share/doc/HTML/fr/kdevelop/editing.docbook
+share/doc/HTML/fr/kdevelop/file-browsers.docbook
+share/doc/HTML/fr/kdevelop/getting-started.docbook
+share/doc/HTML/fr/kdevelop/kdevelop-install.docbook
+share/doc/HTML/fr/kdevelop/kdevelop-scripting.docbook
+share/doc/HTML/fr/kdevelop/kdevelop-survey.docbook
+share/doc/HTML/fr/kdevelop/nutshell.docbook
+share/doc/HTML/fr/kdevelop/plugin-tools.docbook
+share/doc/HTML/fr/kdevelop/project-advanced.docbook
+share/doc/HTML/fr/kdevelop/project-management.docbook
+share/doc/HTML/fr/kdevelop/setup.docbook
+share/doc/HTML/fr/kdevelop/survey-manual.docbook
 share/doc/HTML/fr/kdevelop/tip.database
+share/doc/HTML/fr/kdevelop/unixdev.docbook
 share/doc/HTML/fr/kdf/common
 share/doc/HTML/fr/kdf/index.cache.bz2
 share/doc/HTML/fr/kdf/index.docbook
@@ -494,6 +521,9 @@ share/doc/HTML/fr/kdf/kdf_config.png
 share/doc/HTML/fr/kdict/common
 share/doc/HTML/fr/kdict/index.cache.bz2
 share/doc/HTML/fr/kdict/index.docbook
+share/doc/HTML/fr/kdm/common
+share/doc/HTML/fr/kdm/index.cache.bz2
+share/doc/HTML/fr/kdm/index.docbook
 share/doc/HTML/fr/kdm/kdmrc-ref.docbook
 share/doc/HTML/fr/kdvi/common
 share/doc/HTML/fr/kdvi/index.cache.bz2
@@ -567,6 +597,7 @@ share/doc/HTML/fr/khangman/index.cache.bz2
 share/doc/HTML/fr/khangman/index.docbook
 share/doc/HTML/fr/khangman/khangman1.png
 share/doc/HTML/fr/khangman/khangman2.png
+share/doc/HTML/fr/khangman/man-khangman.6.docbook
 share/doc/HTML/fr/khangman/settings1.png
 share/doc/HTML/fr/khangman/settings2.png
 share/doc/HTML/fr/khangman/settings3.png
@@ -912,6 +943,7 @@ share/doc/HTML/fr/kmathtool/common
 share/doc/HTML/fr/kmathtool/index.cache.bz2
 share/doc/HTML/fr/kmathtool/index.docbook
 share/doc/HTML/fr/kmenuedit/common
+share/doc/HTML/fr/kmenuedit/done.png
 share/doc/HTML/fr/kmenuedit/i_copy.png
 share/doc/HTML/fr/kmenuedit/i_cut.png
 share/doc/HTML/fr/kmenuedit/i_delete.png
@@ -923,6 +955,10 @@ share/doc/HTML/fr/kmenuedit/icon_sets.png
 share/doc/HTML/fr/kmenuedit/icons.png
 share/doc/HTML/fr/kmenuedit/index.cache.bz2
 share/doc/HTML/fr/kmenuedit/index.docbook
+share/doc/HTML/fr/kmenuedit/itemname.png
+share/doc/HTML/fr/kmenuedit/new.png
+share/doc/HTML/fr/kmenuedit/selecticon.png
+share/doc/HTML/fr/kmenuedit/selectinternet.png
 share/doc/HTML/fr/kmessedwords/common
 share/doc/HTML/fr/kmessedwords/index.cache.bz2
 share/doc/HTML/fr/kmessedwords/index.docbook
@@ -1056,6 +1092,15 @@ share/doc/HTML/fr/kolourpaint/kolourpaint-main.png
 share/doc/HTML/fr/kompare/common
 share/doc/HTML/fr/kompare/index.cache.bz2
 share/doc/HTML/fr/kompare/index.docbook
+share/doc/HTML/fr/kompare/settings-diff1.png
+share/doc/HTML/fr/kompare/settings-diff2.png
+share/doc/HTML/fr/kompare/settings-diff3.png
+share/doc/HTML/fr/kompare/settings-diff4.png
+share/doc/HTML/fr/kompare/settings-view1.png
+share/doc/HTML/fr/kompare/settings-view2.png
+share/doc/HTML/fr/kompmgr/common
+share/doc/HTML/fr/kompmgr/index.cache.bz2
+share/doc/HTML/fr/kompmgr/index.docbook
 share/doc/HTML/fr/konq-plugins/babel/common
 share/doc/HTML/fr/konq-plugins/babel/index.cache.bz2
 share/doc/HTML/fr/konq-plugins/babel/index.docbook
@@ -2095,7 +2140,6 @@ share/locale/fr/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/fr/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/fr/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/fr/LC_MESSAGES/ksvgplugin.mo
-share/locale/fr/LC_MESSAGES/ksync.mo
 share/locale/fr/LC_MESSAGES/ksysguard.mo
 share/locale/fr/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/fr/LC_MESSAGES/ksystraycmd.mo
@@ -2304,6 +2348,7 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/konq-plugins/crashes
 @dirrm share/doc/HTML/fr/konq-plugins/babel
 @dirrm share/doc/HTML/fr/konq-plugins
+@dirrm share/doc/HTML/fr/kompmgr
 @dirrm share/doc/HTML/fr/kompare
 @dirrm share/doc/HTML/fr/kolourpaint
 @dirrm share/doc/HTML/fr/kolf

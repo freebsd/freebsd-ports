@@ -278,6 +278,7 @@ share/locale/bg/LC_MESSAGES/kio.mo
 share/locale/bg/LC_MESSAGES/kio_audiocd.mo
 share/locale/bg/LC_MESSAGES/kio_finger.mo
 share/locale/bg/LC_MESSAGES/kio_fish.mo
+share/locale/bg/LC_MESSAGES/kio_floppy.mo
 share/locale/bg/LC_MESSAGES/kio_groupwise.mo
 share/locale/bg/LC_MESSAGES/kio_help.mo
 share/locale/bg/LC_MESSAGES/kio_home.mo
@@ -431,7 +432,6 @@ share/locale/bg/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/bg/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/bg/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/bg/LC_MESSAGES/ksvgplugin.mo
-share/locale/bg/LC_MESSAGES/ksync.mo
 share/locale/bg/LC_MESSAGES/ksysguard.mo
 share/locale/bg/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/bg/LC_MESSAGES/ksystraycmd.mo

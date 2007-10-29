@@ -41,6 +41,9 @@ share/doc/HTML/pl/akregator/main-window4.png
 share/doc/HTML/pl/akregator/quick-filter.png
 share/doc/HTML/pl/akregator/rss.png
 share/doc/HTML/pl/akregator/rss3.png
+share/doc/HTML/pl/amor/common
+share/doc/HTML/pl/amor/index.cache.bz2
+share/doc/HTML/pl/amor/index.docbook
 share/doc/HTML/pl/ark/common
 share/doc/HTML/pl/ark/index.cache.bz2
 share/doc/HTML/pl/ark/index.docbook
@@ -104,6 +107,9 @@ share/doc/HTML/pl/kate/part.docbook
 share/doc/HTML/pl/kate/plugins.docbook
 share/doc/HTML/pl/kate/regular-expressions.docbook
 share/doc/HTML/pl/kate/unhighlighted.png
+share/doc/HTML/pl/katomic/common
+share/doc/HTML/pl/katomic/index.cache.bz2
+share/doc/HTML/pl/katomic/index.docbook
 share/doc/HTML/pl/kaudiocreator/common
 share/doc/HTML/pl/kaudiocreator/index.cache.bz2
 share/doc/HTML/pl/kaudiocreator/index.docbook
@@ -113,6 +119,9 @@ share/doc/HTML/pl/kbackgammon/index.docbook
 share/doc/HTML/pl/kbattleship/common
 share/doc/HTML/pl/kbattleship/index.cache.bz2
 share/doc/HTML/pl/kbattleship/index.docbook
+share/doc/HTML/pl/kbounce/common
+share/doc/HTML/pl/kbounce/index.cache.bz2
+share/doc/HTML/pl/kbounce/index.docbook
 share/doc/HTML/pl/kbruch/checked.png
 share/doc/HTML/pl/kbruch/common
 share/doc/HTML/pl/kbruch/compare.png
@@ -608,6 +617,9 @@ share/doc/HTML/pl/kiten/kiten2.png
 share/doc/HTML/pl/kjots/common
 share/doc/HTML/pl/kjots/index.cache.bz2
 share/doc/HTML/pl/kjots/index.docbook
+share/doc/HTML/pl/kjumpingcube/common
+share/doc/HTML/pl/kjumpingcube/index.cache.bz2
+share/doc/HTML/pl/kjumpingcube/index.docbook
 share/doc/HTML/pl/klatin/adjectives.docbook
 share/doc/HTML/pl/klatin/common
 share/doc/HTML/pl/klatin/index.cache.bz2
@@ -628,6 +640,9 @@ share/doc/HTML/pl/klettres/klettres6.png
 share/doc/HTML/pl/klickety/common
 share/doc/HTML/pl/klickety/index.cache.bz2
 share/doc/HTML/pl/klickety/index.docbook
+share/doc/HTML/pl/klines/common
+share/doc/HTML/pl/klines/index.cache.bz2
+share/doc/HTML/pl/klines/index.docbook
 share/doc/HTML/pl/klipper/common
 share/doc/HTML/pl/klipper/index.cache.bz2
 share/doc/HTML/pl/klipper/index.docbook
@@ -806,6 +821,9 @@ share/doc/HTML/pl/kpercentage/install.docbook
 share/doc/HTML/pl/kpercentage/introduction.docbook
 share/doc/HTML/pl/kpercentage/using.docbook
 share/doc/HTML/pl/kpercentage/welcome.png
+share/doc/HTML/pl/kpf/common
+share/doc/HTML/pl/kpf/index.cache.bz2
+share/doc/HTML/pl/kpf/index.docbook
 share/doc/HTML/pl/kppp/accounting.docbook
 share/doc/HTML/pl/kppp/callback.docbook
 share/doc/HTML/pl/kppp/chap.docbook
@@ -1056,6 +1074,9 @@ share/doc/HTML/pl/kwallet/kwalletmanager.png
 share/doc/HTML/pl/kweather/common
 share/doc/HTML/pl/kweather/index.cache.bz2
 share/doc/HTML/pl/kweather/index.docbook
+share/doc/HTML/pl/kwifimanager/common
+share/doc/HTML/pl/kwifimanager/index.cache.bz2
+share/doc/HTML/pl/kwifimanager/index.docbook
 share/doc/HTML/pl/kwin4/common
 share/doc/HTML/pl/kwin4/index.cache.bz2
 share/doc/HTML/pl/kwin4/index.docbook
@@ -1518,7 +1539,6 @@ share/locale/pl/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/pl/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/pl/LC_MESSAGES/kstyle_plastik_config.mo
 share/locale/pl/LC_MESSAGES/ksvgplugin.mo
-share/locale/pl/LC_MESSAGES/ksync.mo
 share/locale/pl/LC_MESSAGES/ksysguard.mo
 share/locale/pl/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/pl/LC_MESSAGES/ksystraycmd.mo
@@ -1646,6 +1666,7 @@ share/locale/pl/flag.png
 @dirrm share/doc/HTML/pl/kwrite
 @dirrm share/doc/HTML/pl/kwordquiz
 @dirrm share/doc/HTML/pl/kwin4
+@dirrm share/doc/HTML/pl/kwifimanager
 @dirrm share/doc/HTML/pl/kweather
 @dirrm share/doc/HTML/pl/kwallet
 @dirrm share/doc/HTML/pl/kvoctrain
@@ -1669,6 +1690,7 @@ share/locale/pl/flag.png
 @dirrm share/doc/HTML/pl/kreversi
 @dirrm share/doc/HTML/pl/krdc
 @dirrm share/doc/HTML/pl/kppp
+@dirrm share/doc/HTML/pl/kpf
 @dirrm share/doc/HTML/pl/kpercentage
 @dirrm share/doc/HTML/pl/kpdf
 @dirrm share/doc/HTML/pl/kpat
@@ -1704,9 +1726,11 @@ share/locale/pl/flag.png
 @dirrm share/doc/HTML/pl/kmenuedit
 @dirrm share/doc/HTML/pl/kmail
 @dirrm share/doc/HTML/pl/klipper
+@dirrm share/doc/HTML/pl/klines
 @dirrm share/doc/HTML/pl/klickety
 @dirrm share/doc/HTML/pl/klettres
 @dirrm share/doc/HTML/pl/klatin
+@dirrm share/doc/HTML/pl/kjumpingcube
 @dirrm share/doc/HTML/pl/kjots
 @dirrm share/doc/HTML/pl/kiten
 @dirrm share/doc/HTML/pl/kioslave
@@ -1805,9 +1829,11 @@ share/locale/pl/flag.png
 @dirrm share/doc/HTML/pl/kcontrol
 @dirrm share/doc/HTML/pl/kcalc
 @dirrm share/doc/HTML/pl/kbruch
+@dirrm share/doc/HTML/pl/kbounce
 @dirrm share/doc/HTML/pl/kbattleship
 @dirrm share/doc/HTML/pl/kbackgammon
 @dirrm share/doc/HTML/pl/kaudiocreator
+@dirrm share/doc/HTML/pl/katomic
 @dirrm share/doc/HTML/pl/kate-plugins
 @dirrm share/doc/HTML/pl/kate
 @dirrm share/doc/HTML/pl/kappfinder
@@ -1818,6 +1844,7 @@ share/locale/pl/flag.png
 @dirrm share/doc/HTML/pl/docs
 @dirrm share/doc/HTML/pl/blinken
 @dirrm share/doc/HTML/pl/ark
+@dirrm share/doc/HTML/pl/amor
 @dirrm share/doc/HTML/pl/akregator
 @dirrm share/doc/HTML/pl/KRegExpEditor
 @dirrm share/apps/kturtle/examples/pl

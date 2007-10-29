@@ -21,12 +21,7 @@ USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=  libtool:15
-USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdebase-${PORTVERSION}
-USE_LDCONFIG=	yes
-
-CONFIGURE_ARGS+=--without-java
 
 PLIST_FILES=	bin/kompmgr
 
@@ -36,14 +31,14 @@ PLIST_FILES=	bin/kompmgr
 IGNORE=	Requires the composite extension, which is unavailable with XFree86
 .endif
 
-pre-configure:
-	${CP} ${FILESDIR}/configure ${WRKSRC}/
-
 do-build:
-	cd ${WRKSRC}/kwin/kompmgr && ${GMAKE}
+	cd ${WRKSRC}/kwin/kompmgr && \
+	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${X11BASE}/lib -lX11 -lXdamage\
+	-lXfixes -lXrender -lXcomposite -lm -o kompmgr kompmgr.c
 
 do-install:
-	cd ${WRKSRC}/kwin/kompmgr && ${GMAKE} install
+	cd ${WRKSRC}/kwin/kompmgr && ${INSTALL_PROGRAM} kompmgr\
+	${PREFIX}/bin/kompmgr
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>

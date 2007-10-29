@@ -8,7 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -79,10 +79,6 @@ FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif # !exists(/usr/bin/bzip2)
 
-.if !exists(/usr/bin/pgrep)
-RUN_DEPENDS+=	pgrep:${PORTSDIR}/sysutils/pkill
-.endif # !exists(/usr/bin/pgrep)
-
 .if ${X_WINDOW_SYSTEM:L} != xorg
 BUILD_DEPENDS+=	mkfontdir:${X_CLIENTS_PORT}
 RUN_DEPENDS+=	iceauth:${X_CLIENTS_PORT}
@@ -103,6 +99,8 @@ pre-configure:
 			-e "s,/etc/security/,${LOCALBASE}/etc/,g" \
 			-e "s,'fileshare','network',g" \
 		${WRKSRC}/kio/misc/fileshareset
+	${REINPLACE_CMD} -e "s,LIB_QT),LIB_QT) $$\(LIBPTHREAD\) $$\(USE_THREADS\),g" \
+		${WRKSRC}/dcop/dcopidl/Makefile.in ${WRKSRC}/dcop/dcopidl2cpp/Makefile.in
 	${MV} ${WRKSRC}/kded/applications.menu ${WRKSRC}/kded/kde-applications.menu
 
 post-configure:

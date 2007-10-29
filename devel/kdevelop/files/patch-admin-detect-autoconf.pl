@@ -1,12 +1,18 @@
---- admin/detect-autoconf.pl.orig	2007-05-14 03:57:35.000000000 -0700
-+++ admin/detect-autoconf.pl	2007-09-10 02:02:32.000000000 -0700
-@@ -5,2 +5,5 @@
+--- admin/detect-autoconf.pl.orig	2007-10-08 13:35:17.000000000 +0200
++++ admin/detect-autoconf.pl	2007-10-20 13:42:33.000000000 +0200
+@@ -3,6 +3,9 @@
+ # Try to locate best version of auto*
+ # By Michael Pyne <michael.pyne@kdemail.net>
  #
 +# Stripped down for new FreeBSD autotools environment
 +# Ade Lovett <ade@FreeBSD.org> 2007-09-10
 +#
  # Copyright (c) 2005.
-@@ -23,69 +26,2 @@
+ # This code is public domain.  You may use it however you like (including
+ # relicensing).
+@@ -21,75 +24,6 @@
+     return "";
+ }
  
 -# Subroutine to determine the highest installed version of the given program,
 -# searching from the given paths.
@@ -33,6 +39,8 @@
 -
 -	    ($version) = $file =~ /$prefix\/$program-?(.*)$/;
 -	    $version =~ s/-|\.//g;
+-	    # Don't check the -wrapper ones
+-	    next if $version eq "wrapper";
 -
 -	    # Special case some programs to make sure it has a minimum version.
 -	    if (not $version and exists $minimumVersions{$program})
@@ -76,7 +84,11 @@
 -}
 -
  # Find an appropriate "which" program for later use by the shell script calling
-@@ -103,13 +39,2 @@
+ # us.
+ sub findWhich
+@@ -103,17 +37,6 @@
+     }
+ }
  
 -# Uses which() to find a program unless the user provided its path in the
 -# environment (the upper case program name is searched).
@@ -90,7 +102,11 @@
 -}
 -
  # SCRIPT STARTS.
-@@ -123,45 +48,12 @@
+ 
+ # Search in path.
+@@ -123,49 +46,16 @@
+ unshift @paths, '/usr/local/bin' unless grep $_ eq '/usr/local/bin', @paths;
+ unshift @paths, '/usr/bin' unless grep $_ eq '/usr/bin', @paths;
  
 -$autoconf = findBest('autoconf', @paths);
 -($autoconf_suffix) = $autoconf =~ /.*autoconf(.*)$/;
@@ -140,4 +156,6 @@
 -ACLOCAL="$aclocal"
 +AUTOMAKE="automake"
 +ACLOCAL="aclocal"
+ 
+ WHICH="$which"
  
