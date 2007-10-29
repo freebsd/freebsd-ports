@@ -9,6 +9,7 @@ PORTNAME=	savegenpage
 PORTVERSION=	2006.03.20
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
+MASTER_SITES=	CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Save Javascript Generated/Rendered HTML Pages
