@@ -52,10 +52,11 @@ PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 CONFIGURE_ARGS+=--without-cpuflags
 .endif
 
-.if ${HAVE_GNOME:Mgtk20}!="" || defined(WITH_GTK2)
+.if ${HAVE_GNOME:Mgtk20}!="" && defined(WITH_GTK2)
 USE_GNOME+=	gtk20
 PLIST_SUB+=	GTK=""
 .else
+CONFIGURE_ARGS+=--without-gtk
 PLIST_SUB+=	GTK="@comment "
 .endif
 
