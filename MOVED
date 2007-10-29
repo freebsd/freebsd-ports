@@ -3324,3 +3324,4 @@ graphics/gimp-app-devel|graphics/gimp-app|2007-10-24|Gimp 2.4.0 released
 print/gimp-devel-gutenprint|print/gimp-gutenprint|2007-10-24|Gimp 2.4.0 released
 print/yatex-mule||2007-10-25|Has expired: emacs19 and related ports are obsolete
 devel/py-qt4-qct|devel/qct|2007-10-26|Since it's an application but not a Py/Qt library the port was renamed
+net-mgmt/wispy-tools|net-mgmt/spectools|2007-10-29|project renamed

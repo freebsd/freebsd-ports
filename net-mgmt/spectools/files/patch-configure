@@ -1,6 +1,19 @@
---- configure.in.orig	Sun Nov 19 18:04:52 2006
-+++ configure.in	Sun Nov 19 18:01:44 2006
-@@ -204,7 +204,7 @@
+--- configure.in.orig	2007-10-08 18:29:44.000000000 +0200
++++ configure.in	2007-10-09 18:28:21.000000000 +0200
+@@ -135,10 +135,10 @@ dnl Let them override the gtk version
+ AC_ARG_WITH(gtk-version,
+ 	[  --with-gtk-version=\[1|2\]     Force a GTK version instead of autodetect ],
+ 	[
+-	if test "$withval" == "1" ; then
++	if test "$withval" = "1" ; then
+ 		AC_MSG_WARN(*** Overriding GTK detection to use GTK1 only ***)
+ 		forcegtk=1
+-	elif test "$withval" == "2" ; then
++	elif test "$withval" = "2" ; then
+ 		AC_MSG_WARN(*** Overriding GTK detection to use GTK2 only ***)
+ 		forcegtk=2
+ 	fi
+@@ -193,7 +193,7 @@ if test "$GTK_CONFIG"x != "x"; then
    		GTKLIBS="$LIBS"
    		LIBS="$olfl"
  
@@ -9,9 +22,23 @@
  			AC_DEFINE(HAVE_LIB_GTK2, 1, we have libgtk2.x)
  		else
  			AC_MSG_WARN(*** GTK1 being used.  GTK2 is preferred and GTK1 support may vanish in future releases ***)
---- configure.orig	Sun Nov 19 18:04:45 2006
-+++ configure	Sun Nov 19 18:01:18 2006
-@@ -4185,7 +4185,7 @@
+--- configure.orig	2007-10-08 18:29:44.000000000 +0200
++++ configure	2007-10-09 18:32:58.000000000 +0200
+@@ -4573,11 +4573,11 @@ fi
+ # Check whether --with-gtk-version was given.
+ if test "${with_gtk_version+set}" = set; then
+   withval=$with_gtk_version;
+-	if test "$withval" == "1" ; then
++	if test "$withval" = "1" ; then
+ 		{ echo "$as_me:$LINENO: WARNING: *** Overriding GTK detection to use GTK1 only ***" >&5
+ echo "$as_me: WARNING: *** Overriding GTK detection to use GTK1 only ***" >&2;}
+ 		forcegtk=1
+-	elif test "$withval" == "2" ; then
++	elif test "$withval" = "2" ; then
+ 		{ echo "$as_me:$LINENO: WARNING: *** Overriding GTK detection to use GTK2 only ***" >&5
+ echo "$as_me: WARNING: *** Overriding GTK detection to use GTK2 only ***" >&2;}
+ 		forcegtk=2
+@@ -4889,7 +4889,7 @@ _ACEOF
    		GTKLIBS="$LIBS"
    		LIBS="$olfl"
  
