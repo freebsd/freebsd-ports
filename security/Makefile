@@ -748,6 +748,7 @@
     SUBDIR += tripwire-131
     SUBDIR += tripwire12
     SUBDIR += tthsum
+    SUBDIR += uberkey
     SUBDIR += umit
     SUBDIR += unicornscan
     SUBDIR += vida

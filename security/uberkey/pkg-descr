@@ -1,0 +1,5 @@
+uberkey is a keylogger for x86 systems.
+It directly reads keyboard input from the keyboard controller and
+does a basic translation.
+
+WWW:	http://www.linuks.mine.nu/uberkey/
