@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hutiter
-PORTVERSION=	5.3.2
-PORTREVISION=	1
+PORTVERSION=	5.4.0
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-
