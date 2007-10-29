@@ -59,6 +59,10 @@ PLTPATCHES=	# none yet for this version
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 .if defined(WITH_CGC)
 ALL_TARGET=		both
 INSTALL_TARGET=		install-both
