@@ -71,7 +71,7 @@ lib/libkrb5.so.3
 lib/libkrb5support.so
 lib/libkrb5support.so.0
 lib/krb5/plugins/kdb/db2.so
-%%PKINIT%%lib/krb5/plugins/preauth/pkinit.so
+lib/krb5/plugins/preauth/pkinit.so
 sbin/ftpd
 sbin/gss-server
 sbin/k5srvutil
