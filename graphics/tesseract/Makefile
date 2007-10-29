@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tesseract
-DISTVERSION=	2.00
+DISTVERSION=	2.01
 CATEGORIES=	graphics
 MASTER_SITES=	http://tesseract-ocr.googlecode.com/files/ CENKES
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LANGFILES}
@@ -18,7 +18,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
 LANGS=	deu eng fra ita nld spa
-LANGFILES=	${LANGS:S|^|${DISTNAME}.|:S|$|${EXTRACT_SUFX}|}
+LANGVER=	2.00
+LANGFILES=	${LANGS:S|^|${PORTNAME}-${LANGVER}.|:S|$|${EXTRACT_SUFX}|}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBTIFF_CFLAGS="-I${LOCALBASE}/include"\
 		LIBTIFF_LIBS="-L${LOCALBASE}/lib -ltiff"

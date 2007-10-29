@@ -24,6 +24,7 @@ include/tesseract/blobcmp.h
 include/tesseract/blobcmpl.h
 include/tesseract/blobs.h
 include/tesseract/blread.h
+include/tesseract/boxread.h
 include/tesseract/callcpp.h
 include/tesseract/callnet.h
 include/tesseract/charcut.h
@@ -272,6 +273,7 @@ lib/libtesseract_textord.a
 lib/libtesseract_training.a
 lib/libtesseract_viewer.a
 lib/libtesseract_wordrec.a
+share/tessdata/configs/api_config
 share/tessdata/configs/box.train
 share/tessdata/configs/inter
 share/tessdata/configs/makebox
