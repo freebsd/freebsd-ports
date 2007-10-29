@@ -146,6 +146,7 @@
     SUBDIR += nsca-client
     SUBDIR += nstreams
     SUBDIR += ocsinventory-agent
+    SUBDIR += ocsinventory-ng
     SUBDIR += openlldp
     SUBDIR += openvmps
     SUBDIR += oproute
