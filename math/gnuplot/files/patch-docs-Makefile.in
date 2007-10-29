@@ -1,0 +1,23 @@
+$FreeBSD$
+
+--- docs/Makefile.in.orig	Sun Oct 28 18:24:49 2007
++++ docs/Makefile.in	Sun Oct 28 18:25:14 2007
+@@ -351,12 +351,12 @@
+ # Thanks to Bruce Ravel for doc2texi.el!
+ $(srcdir)/gnuplot.texi: $(srcdir)/doc2texi.el $(srcdir)/gnuplot.doc
+ 	@echo "Creating texinfo"
+-	@if test "$(EMACS)" != no; then \
+-	   cd $(srcdir) ;  \
+-	   $(EMACS) -batch -l doc2texi.el -f d2t-doc-to-texi ; \
+-	else \
+-	   echo "No emacs found - cannot create texinfo file" ; \
+-	fi
++#	@if test "$(EMACS)" != no; then \
++#	   cd $(srcdir) ;  \
++#	   $(EMACS) -batch -l doc2texi.el -f d2t-doc-to-texi ; \
++#	else \
++#	   echo "No emacs found - cannot create texinfo file" ; \
++#	fi
+ 
+ # this is how to make OS/2 ipfc documentation
+ ipf: gnuplot.ipf
