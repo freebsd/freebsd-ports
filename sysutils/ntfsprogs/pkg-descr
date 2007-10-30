@@ -3,6 +3,9 @@ file system (v1.2 and later 3.0), user space utilities (e.g. format, ntfs
 check, etc.) and a library to avoid code duplication and provide access to
 NTFS to other GPLed programs.
 
+It includes a read-only fusefs driver to mount NTFS volumes, but a read-write
+version exists in sysutils/fusefs-ntfs. They can be installed simultaneously.
+
 WWW: http://www.linux-ntfs.org/
 
 - Florent Thoumie
