@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ike
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	security net
 MASTER_SITES=	http://www.shrew.net/vpn/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
@@ -30,6 +30,7 @@ OPTIONS=	QTGUI		"Enable QT client front end applications" on \
 		LDAP		"Enable LDAP XAuth daemon support" off \
 		DEBUG		"Enable Debug support" off
 
+MAN1=		ikea.1 ikec.1
 MAN5=		iked.conf.5
 MAN8=		iked.8
 
@@ -57,20 +58,23 @@ LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 
 post-patch:
 .ifdef(WITH_NATT)
-. if ${OSVERSION} < 700000
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
 	@${ECHO_MSG} "===> ATTENTION: You need a kernel patch to enable NAT-Traversal functionality!"
-	@${ECHO_MSG} "===> You can download the patch here:"
-	@${ECHO_MSG} "===>     http://ipsec-tools.sf.net/freebsd6-natt.diff"
-	@${ECHO_MSG} "===> You might possibly have to do some steps manually if it fails to apply."
-	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
-. else
-	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
-	@${ECHO_MSG} "===> ATTENTION: You need a kernel patch to enable NAT-Traversal functionality!"
-	@${ECHO_MSG} "===>     There is no known NAT-T patch for FreeBSD 7!!!"
-	@${ECHO_MSG} "===> You might possibly have to do some steps manually if it fails to apply."
-	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
+. if ${OSVERSION} < 600000
+	@${ECHO_MSG} "===>     There is no known NAT-T patch for FreeBSD 1 - 5!!!"
 . endif
+. if ${OSVERSION} > 600000 && ${OSVERSION} < 699999
+	@${ECHO_MSG} "===>     http://ipsec-tools.sf.net/freebsd6-natt.diff"
+. endif
+. if ${OSVERSION} > 700000 && ${OSVERSION} < 799999
+	@${ECHO_MSG} "===>     http://vanhu.free.fr/FreeBSD/patch-natt-freebsd7-2007-10-22.diff"
+. endif
+. if ${OSVERSION} > 800000
+	@${ECHO_MSG} "===>     http://vanhu.free.fr/FreeBSD/patch-natt-freebsd-HEAD-2007-10-22.diff"
+. endif
+	@${ECHO_MSG} "===> You might possibly have to do some steps manually if it fails to apply."
+	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
+
 	@sleep 3
 .endif
 
