@@ -1,0 +1,19 @@
+--- ntfsprogs/Makefile.in.orig	Wed Jun 21 05:41:46 2006
++++ ntfsprogs/Makefile.in	Mon Sep 10 15:47:08 2007
+@@ -914,13 +914,14 @@
+ 
+ install-exec-hook:
+ 	$(INSTALL) -d $(DESTDIR)/sbin
++	$(INSTALL) -d $(DESTDIR)/usr/sbin
+ 	$(LN_S) -f $(sbindir)/mkntfs $(DESTDIR)/sbin/mkfs.ntfs
+-@ENABLE_FUSE_MODULE_TRUE@	$(LN_S) -f $(bindir)/ntfsmount $(DESTDIR)/sbin/mount.ntfs-fuse
++@ENABLE_FUSE_MODULE_TRUE@	$(LN_S) -f $(bindir)/ntfsmount $(DESTDIR)/usr/sbin/mount_ntfs-fuse
+ 
+ install-data-hook:
+ 	$(INSTALL) -d $(DESTDIR)$(man8dir)
+ 	$(LN_S) -f mkntfs.8 $(DESTDIR)$(man8dir)/mkfs.ntfs.8
+-@ENABLE_FUSE_MODULE_TRUE@	$(LN_S) -f ntfsmount.8 $(DESTDIR)$(man8dir)/mount.ntfs-fuse.8
++@ENABLE_FUSE_MODULE_TRUE@	$(LN_S) -f ntfsmount.8 $(DESTDIR)$(man8dir)/mount_ntfs-fuse.8
+ 
+ uninstall-local:
+ 	$(RM) -f $(DESTDIR)/sbin/mkfs.ntfs
