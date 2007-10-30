@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Response/Encoding/.packlist
+%%SITE_PERL%%/HTTP/Response/Encoding.pm
+@dirrmtry %%SITE_PERL%%/HTTP/Response
+@dirrmtry %%SITE_PERL%%/HTTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Response/Encoding
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Response
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
