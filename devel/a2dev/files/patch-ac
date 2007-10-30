@@ -1,5 +1,5 @@
---- a2dev-1.2/asm/Makefile.orig	Sat Mar 25 21:52:23 1995
-+++ a2dev-1.2/asm/Makefile	Tue Oct 13 21:25:02 1998
+--- asm/Makefile.orig	Sat Mar 25 21:52:23 1995
++++ asm/Makefile	Tue Oct 13 21:25:02 1998
 @@ -25,15 +25,15 @@
  ### Abstract rules
  ###
