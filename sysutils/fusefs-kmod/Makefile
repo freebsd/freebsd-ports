@@ -7,6 +7,7 @@
 
 PORTNAME=	fusefs
 DISTVERSION=	0.3.9-pre1
+PORTREVISION=	1
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://fuse4bsd.creo.hu/downloads/ \
 		http://am-productions.biz/docs/
@@ -65,6 +66,10 @@ IGNORE=		requires the Kernel source to be installed. Set SRC_BASE if it is not i
 IGNORE=		requires the userland sources to be installed. Set SRC_BASE if it is not in /usr/src
 .endif
 
+.if !defined(WITH_AUTOSETUP)
+SUB_FILES=	pkg-message
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/deplate.rb/deplate/g' \
 		${WRKSRC}/doc/Makefile
@@ -81,15 +86,14 @@ pre-install:
 	@${MKDIR} ${KMODDIR}
 
 post-install:
-.if (defined(WITH_AUTOSETUP) && !defined(BATCH) && !defined(PACKAGE_BUILDING)) \
-	|| (defined(WITH_AUTOSETUP) && defined(BATCH) && !defined(PACKAGE_BUILDING))
+	@${LN} -s ${PREFIX}/sbin/mount_fusefs /usr/sbin
+.if defined(WITH_AUTOSETUP) && !defined(PACKAGE_BUILDING)
 	@${SED} -e 's|@@PREFIX@@|${PREFIX}|g' \
 		${FILESDIR}/${SETUP} > ${WRKDIR}/${SETUP}
 	@${ECHO} "Modifying global startup config files and loading module...";
 	${SH} ${WRKDIR}/${SETUP}
 .else
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
-		-e "s|%%MODULE_PATH%%|${MODULE_PATH}|g" ${PKGMESSAGE}
+	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 .endif
 
 .if !defined(NOPORTDOCS)

@@ -4,6 +4,7 @@
 #
 # PROVIDE: fusefs
 # REQUIRE: sysctl
+# BEFORE: mountlate
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
