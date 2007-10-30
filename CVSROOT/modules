@@ -9989,6 +9989,7 @@ p5-HTTP-Proxy	ports/www/p5-HTTP-Proxy
 p5-HTTP-Recorder	ports/www/p5-HTTP-Recorder
 p5-HTTP-Request-AsCGI	ports/www/p5-HTTP-Request-AsCGI
 p5-HTTP-Request-Params	ports/www/p5-HTTP-Request-Params
+p5-HTTP-Response-Encoding	ports/www/p5-HTTP-Response-Encoding
 p5-HTTP-Server-Simple	ports/www/p5-HTTP-Server-Simple
 p5-HTTP-Server-Simple-Mason	ports/www/p5-HTTP-Server-Simple-Mason
 p5-HTTP-Server-Simple-Recorder	ports/www/p5-HTTP-Server-Simple-Recorder
