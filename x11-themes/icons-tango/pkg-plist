@@ -76,6 +76,7 @@ share/icons/Tango/16x16/actions/go-up.png
 share/icons/Tango/16x16/actions/gohome.png
 share/icons/Tango/16x16/actions/gtk-add.png
 share/icons/Tango/16x16/actions/gtk-bold.png
+share/icons/Tango/16x16/actions/gtk-cancel.png
 share/icons/Tango/16x16/actions/gtk-clear.png
 share/icons/Tango/16x16/actions/gtk-copy.png
 share/icons/Tango/16x16/actions/gtk-cut.png
@@ -96,7 +97,8 @@ share/icons/Tango/16x16/actions/gtk-goto-last-ltr.png
 share/icons/Tango/16x16/actions/gtk-goto-last-rtl.png
 share/icons/Tango/16x16/actions/gtk-goto-top.png
 share/icons/Tango/16x16/actions/gtk-home.png
-share/icons/Tango/16x16/actions/gtk-indent.png
+share/icons/Tango/16x16/actions/gtk-indent-ltr.png
+share/icons/Tango/16x16/actions/gtk-indent-rtl.png
 share/icons/Tango/16x16/actions/gtk-italic.png
 share/icons/Tango/16x16/actions/gtk-jump-to-ltr.png
 share/icons/Tango/16x16/actions/gtk-jump-to-rtl.png
@@ -132,7 +134,8 @@ share/icons/Tango/16x16/actions/gtk-stop.png
 share/icons/Tango/16x16/actions/gtk-strikethrough.png
 share/icons/Tango/16x16/actions/gtk-underline.png
 share/icons/Tango/16x16/actions/gtk-undo-ltr.png
-share/icons/Tango/16x16/actions/gtk-unindent.png
+share/icons/Tango/16x16/actions/gtk-unindent-ltr.png
+share/icons/Tango/16x16/actions/gtk-unindent-rtl.png
 share/icons/Tango/16x16/actions/kfind.png
 share/icons/Tango/16x16/actions/kfm_home.png
 share/icons/Tango/16x16/actions/leftjust.png
@@ -381,6 +384,7 @@ share/icons/Tango/16x16/categories/gnome-globe.png
 share/icons/Tango/16x16/categories/gnome-graphics.png
 share/icons/Tango/16x16/categories/gnome-joystick.png
 share/icons/Tango/16x16/categories/gnome-multimedia.png
+share/icons/Tango/16x16/categories/gnome-other.png
 share/icons/Tango/16x16/categories/gnome-settings.png
 share/icons/Tango/16x16/categories/gnome-system.png
 share/icons/Tango/16x16/categories/gnome-util.png
@@ -511,6 +515,8 @@ share/icons/Tango/16x16/devices/yast_printer.png
 share/icons/Tango/16x16/devices/yast_soundcard.png
 share/icons/Tango/16x16/emblems/emblem-favorite.png
 share/icons/Tango/16x16/emblems/emblem-important.png
+share/icons/Tango/16x16/emblems/emblem-noread.png
+share/icons/Tango/16x16/emblems/emblem-nowrite.png
 share/icons/Tango/16x16/emblems/emblem-photos.png
 share/icons/Tango/16x16/emblems/emblem-readonly.png
 share/icons/Tango/16x16/emblems/emblem-symbolic-link.png
@@ -530,6 +536,18 @@ share/icons/Tango/16x16/emotes/face-smile-big.png
 share/icons/Tango/16x16/emotes/face-smile.png
 share/icons/Tango/16x16/emotes/face-surprise.png
 share/icons/Tango/16x16/emotes/face-wink.png
+share/icons/Tango/16x16/emotes/stock_smiley-1.png
+share/icons/Tango/16x16/emotes/stock_smiley-11.png
+share/icons/Tango/16x16/emotes/stock_smiley-13.png
+share/icons/Tango/16x16/emotes/stock_smiley-18.png
+share/icons/Tango/16x16/emotes/stock_smiley-2.png
+share/icons/Tango/16x16/emotes/stock_smiley-22.png
+share/icons/Tango/16x16/emotes/stock_smiley-3.png
+share/icons/Tango/16x16/emotes/stock_smiley-4.png
+share/icons/Tango/16x16/emotes/stock_smiley-5.png
+share/icons/Tango/16x16/emotes/stock_smiley-6.png
+share/icons/Tango/16x16/emotes/stock_smiley-7.png
+share/icons/Tango/16x16/emotes/stock_smiley-8.png
 share/icons/Tango/16x16/mimetypes/application-certificate.png
 share/icons/Tango/16x16/mimetypes/application-x-executable.png
 share/icons/Tango/16x16/mimetypes/ascii.png
@@ -712,6 +730,7 @@ share/icons/Tango/16x16/places/gnome-mime-x-directory-smb-server.png
 share/icons/Tango/16x16/places/gnome-mime-x-directory-smb-share.png
 share/icons/Tango/16x16/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Tango/16x16/places/gnome-stock-trash.png
+share/icons/Tango/16x16/places/gtk-directory.png
 share/icons/Tango/16x16/places/gtk-network.png
 share/icons/Tango/16x16/places/network-server.png
 share/icons/Tango/16x16/places/network-workgroup.png
@@ -780,6 +799,7 @@ share/icons/Tango/16x16/status/nm-device-wired.png
 share/icons/Tango/16x16/status/nm-device-wireless.png
 share/icons/Tango/16x16/status/nm-no-connection.png
 share/icons/Tango/16x16/status/printer-error.png
+share/icons/Tango/16x16/status/stock_attach.png
 share/icons/Tango/16x16/status/stock_dialog-error.png
 share/icons/Tango/16x16/status/stock_dialog-info.png
 share/icons/Tango/16x16/status/stock_dialog-warning.png
@@ -891,6 +911,7 @@ share/icons/Tango/22x22/actions/go-up.png
 share/icons/Tango/22x22/actions/gohome.png
 share/icons/Tango/22x22/actions/gtk-add.png
 share/icons/Tango/22x22/actions/gtk-bold.png
+share/icons/Tango/22x22/actions/gtk-cancel.png
 share/icons/Tango/22x22/actions/gtk-clear.png
 share/icons/Tango/22x22/actions/gtk-copy.png
 share/icons/Tango/22x22/actions/gtk-cut.png
@@ -911,7 +932,8 @@ share/icons/Tango/22x22/actions/gtk-goto-last-ltr.png
 share/icons/Tango/22x22/actions/gtk-goto-last-rtl.png
 share/icons/Tango/22x22/actions/gtk-goto-top.png
 share/icons/Tango/22x22/actions/gtk-home.png
-share/icons/Tango/22x22/actions/gtk-indent.png
+share/icons/Tango/22x22/actions/gtk-indent-ltr.png
+share/icons/Tango/22x22/actions/gtk-indent-rtl.png
 share/icons/Tango/22x22/actions/gtk-italic.png
 share/icons/Tango/22x22/actions/gtk-jump-to-ltr.png
 share/icons/Tango/22x22/actions/gtk-jump-to-rtl.png
@@ -947,7 +969,8 @@ share/icons/Tango/22x22/actions/gtk-stop.png
 share/icons/Tango/22x22/actions/gtk-strikethrough.png
 share/icons/Tango/22x22/actions/gtk-underline.png
 share/icons/Tango/22x22/actions/gtk-undo-ltr.png
-share/icons/Tango/22x22/actions/gtk-unindent.png
+share/icons/Tango/22x22/actions/gtk-unindent-ltr.png
+share/icons/Tango/22x22/actions/gtk-unindent-rtl.png
 share/icons/Tango/22x22/actions/kfind.png
 share/icons/Tango/22x22/actions/kfm_home.png
 share/icons/Tango/22x22/actions/leftjust.png
@@ -1196,6 +1219,7 @@ share/icons/Tango/22x22/categories/gnome-globe.png
 share/icons/Tango/22x22/categories/gnome-graphics.png
 share/icons/Tango/22x22/categories/gnome-joystick.png
 share/icons/Tango/22x22/categories/gnome-multimedia.png
+share/icons/Tango/22x22/categories/gnome-other.png
 share/icons/Tango/22x22/categories/gnome-settings.png
 share/icons/Tango/22x22/categories/gnome-system.png
 share/icons/Tango/22x22/categories/gnome-util.png
@@ -1326,6 +1350,8 @@ share/icons/Tango/22x22/devices/yast_printer.png
 share/icons/Tango/22x22/devices/yast_soundcard.png
 share/icons/Tango/22x22/emblems/emblem-favorite.png
 share/icons/Tango/22x22/emblems/emblem-important.png
+share/icons/Tango/22x22/emblems/emblem-noread.png
+share/icons/Tango/22x22/emblems/emblem-nowrite.png
 share/icons/Tango/22x22/emblems/emblem-photos.png
 share/icons/Tango/22x22/emblems/emblem-readonly.png
 share/icons/Tango/22x22/emblems/emblem-symbolic-link.png
@@ -1345,6 +1371,18 @@ share/icons/Tango/22x22/emotes/face-smile-big.png
 share/icons/Tango/22x22/emotes/face-smile.png
 share/icons/Tango/22x22/emotes/face-surprise.png
 share/icons/Tango/22x22/emotes/face-wink.png
+share/icons/Tango/22x22/emotes/stock_smiley-1.png
+share/icons/Tango/22x22/emotes/stock_smiley-11.png
+share/icons/Tango/22x22/emotes/stock_smiley-13.png
+share/icons/Tango/22x22/emotes/stock_smiley-18.png
+share/icons/Tango/22x22/emotes/stock_smiley-2.png
+share/icons/Tango/22x22/emotes/stock_smiley-22.png
+share/icons/Tango/22x22/emotes/stock_smiley-3.png
+share/icons/Tango/22x22/emotes/stock_smiley-4.png
+share/icons/Tango/22x22/emotes/stock_smiley-5.png
+share/icons/Tango/22x22/emotes/stock_smiley-6.png
+share/icons/Tango/22x22/emotes/stock_smiley-7.png
+share/icons/Tango/22x22/emotes/stock_smiley-8.png
 share/icons/Tango/22x22/mimetypes/application-certificate.png
 share/icons/Tango/22x22/mimetypes/application-x-executable.png
 share/icons/Tango/22x22/mimetypes/ascii.png
@@ -1527,6 +1565,7 @@ share/icons/Tango/22x22/places/gnome-mime-x-directory-smb-server.png
 share/icons/Tango/22x22/places/gnome-mime-x-directory-smb-share.png
 share/icons/Tango/22x22/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Tango/22x22/places/gnome-stock-trash.png
+share/icons/Tango/22x22/places/gtk-directory.png
 share/icons/Tango/22x22/places/gtk-network.png
 share/icons/Tango/22x22/places/network-server.png
 share/icons/Tango/22x22/places/network-workgroup.png
@@ -1595,6 +1634,7 @@ share/icons/Tango/22x22/status/nm-device-wired.png
 share/icons/Tango/22x22/status/nm-device-wireless.png
 share/icons/Tango/22x22/status/nm-no-connection.png
 share/icons/Tango/22x22/status/printer-error.png
+share/icons/Tango/22x22/status/stock_attach.png
 share/icons/Tango/22x22/status/stock_dialog-error.png
 share/icons/Tango/22x22/status/stock_dialog-info.png
 share/icons/Tango/22x22/status/stock_dialog-warning.png
@@ -1706,6 +1746,7 @@ share/icons/Tango/24x24/actions/go-up.png
 share/icons/Tango/24x24/actions/gohome.png
 share/icons/Tango/24x24/actions/gtk-add.png
 share/icons/Tango/24x24/actions/gtk-bold.png
+share/icons/Tango/24x24/actions/gtk-cancel.png
 share/icons/Tango/24x24/actions/gtk-clear.png
 share/icons/Tango/24x24/actions/gtk-copy.png
 share/icons/Tango/24x24/actions/gtk-cut.png
@@ -1726,7 +1767,8 @@ share/icons/Tango/24x24/actions/gtk-goto-last-ltr.png
 share/icons/Tango/24x24/actions/gtk-goto-last-rtl.png
 share/icons/Tango/24x24/actions/gtk-goto-top.png
 share/icons/Tango/24x24/actions/gtk-home.png
-share/icons/Tango/24x24/actions/gtk-indent.png
+share/icons/Tango/24x24/actions/gtk-indent-ltr.png
+share/icons/Tango/24x24/actions/gtk-indent-rtl.png
 share/icons/Tango/24x24/actions/gtk-italic.png
 share/icons/Tango/24x24/actions/gtk-jump-to-ltr.png
 share/icons/Tango/24x24/actions/gtk-jump-to-rtl.png
@@ -1762,7 +1804,8 @@ share/icons/Tango/24x24/actions/gtk-stop.png
 share/icons/Tango/24x24/actions/gtk-strikethrough.png
 share/icons/Tango/24x24/actions/gtk-underline.png
 share/icons/Tango/24x24/actions/gtk-undo-ltr.png
-share/icons/Tango/24x24/actions/gtk-unindent.png
+share/icons/Tango/24x24/actions/gtk-unindent-ltr.png
+share/icons/Tango/24x24/actions/gtk-unindent-rtl.png
 share/icons/Tango/24x24/actions/kfind.png
 share/icons/Tango/24x24/actions/kfm_home.png
 share/icons/Tango/24x24/actions/leftjust.png
@@ -2009,6 +2052,7 @@ share/icons/Tango/24x24/categories/gnome-globe.png
 share/icons/Tango/24x24/categories/gnome-graphics.png
 share/icons/Tango/24x24/categories/gnome-joystick.png
 share/icons/Tango/24x24/categories/gnome-multimedia.png
+share/icons/Tango/24x24/categories/gnome-other.png
 share/icons/Tango/24x24/categories/gnome-settings.png
 share/icons/Tango/24x24/categories/gnome-system.png
 share/icons/Tango/24x24/categories/gnome-util.png
@@ -2139,6 +2183,8 @@ share/icons/Tango/24x24/devices/yast_printer.png
 share/icons/Tango/24x24/devices/yast_soundcard.png
 share/icons/Tango/24x24/emblems/emblem-favorite.png
 share/icons/Tango/24x24/emblems/emblem-important.png
+share/icons/Tango/24x24/emblems/emblem-noread.png
+share/icons/Tango/24x24/emblems/emblem-nowrite.png
 share/icons/Tango/24x24/emblems/emblem-photos.png
 share/icons/Tango/24x24/emblems/emblem-readonly.png
 share/icons/Tango/24x24/emblems/emblem-symbolic-link.png
@@ -2158,6 +2204,18 @@ share/icons/Tango/24x24/emotes/face-smile-big.png
 share/icons/Tango/24x24/emotes/face-smile.png
 share/icons/Tango/24x24/emotes/face-surprise.png
 share/icons/Tango/24x24/emotes/face-wink.png
+share/icons/Tango/24x24/emotes/stock_smiley-1.png
+share/icons/Tango/24x24/emotes/stock_smiley-11.png
+share/icons/Tango/24x24/emotes/stock_smiley-13.png
+share/icons/Tango/24x24/emotes/stock_smiley-18.png
+share/icons/Tango/24x24/emotes/stock_smiley-2.png
+share/icons/Tango/24x24/emotes/stock_smiley-22.png
+share/icons/Tango/24x24/emotes/stock_smiley-3.png
+share/icons/Tango/24x24/emotes/stock_smiley-4.png
+share/icons/Tango/24x24/emotes/stock_smiley-5.png
+share/icons/Tango/24x24/emotes/stock_smiley-6.png
+share/icons/Tango/24x24/emotes/stock_smiley-7.png
+share/icons/Tango/24x24/emotes/stock_smiley-8.png
 share/icons/Tango/24x24/mimetypes/application-certificate.png
 share/icons/Tango/24x24/mimetypes/application-x-executable.png
 share/icons/Tango/24x24/mimetypes/ascii.png
@@ -2340,6 +2398,7 @@ share/icons/Tango/24x24/places/gnome-mime-x-directory-smb-server.png
 share/icons/Tango/24x24/places/gnome-mime-x-directory-smb-share.png
 share/icons/Tango/24x24/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Tango/24x24/places/gnome-stock-trash.png
+share/icons/Tango/24x24/places/gtk-directory.png
 share/icons/Tango/24x24/places/gtk-network.png
 share/icons/Tango/24x24/places/network-server.png
 share/icons/Tango/24x24/places/network-workgroup.png
@@ -2408,6 +2467,7 @@ share/icons/Tango/24x24/status/nm-device-wired.png
 share/icons/Tango/24x24/status/nm-device-wireless.png
 share/icons/Tango/24x24/status/nm-no-connection.png
 share/icons/Tango/24x24/status/printer-error.png
+share/icons/Tango/24x24/status/stock_attach.png
 share/icons/Tango/24x24/status/stock_dialog-error.png
 share/icons/Tango/24x24/status/stock_dialog-info.png
 share/icons/Tango/24x24/status/stock_dialog-warning.png
@@ -2519,6 +2579,7 @@ share/icons/Tango/32x32/actions/go-up.png
 share/icons/Tango/32x32/actions/gohome.png
 share/icons/Tango/32x32/actions/gtk-add.png
 share/icons/Tango/32x32/actions/gtk-bold.png
+share/icons/Tango/32x32/actions/gtk-cancel.png
 share/icons/Tango/32x32/actions/gtk-clear.png
 share/icons/Tango/32x32/actions/gtk-copy.png
 share/icons/Tango/32x32/actions/gtk-cut.png
@@ -2539,7 +2600,8 @@ share/icons/Tango/32x32/actions/gtk-goto-last-ltr.png
 share/icons/Tango/32x32/actions/gtk-goto-last-rtl.png
 share/icons/Tango/32x32/actions/gtk-goto-top.png
 share/icons/Tango/32x32/actions/gtk-home.png
-share/icons/Tango/32x32/actions/gtk-indent.png
+share/icons/Tango/32x32/actions/gtk-indent-ltr.png
+share/icons/Tango/32x32/actions/gtk-indent-rtl.png
 share/icons/Tango/32x32/actions/gtk-italic.png
 share/icons/Tango/32x32/actions/gtk-jump-to-ltr.png
 share/icons/Tango/32x32/actions/gtk-jump-to-rtl.png
@@ -2575,7 +2637,8 @@ share/icons/Tango/32x32/actions/gtk-stop.png
 share/icons/Tango/32x32/actions/gtk-strikethrough.png
 share/icons/Tango/32x32/actions/gtk-underline.png
 share/icons/Tango/32x32/actions/gtk-undo-ltr.png
-share/icons/Tango/32x32/actions/gtk-unindent.png
+share/icons/Tango/32x32/actions/gtk-unindent-ltr.png
+share/icons/Tango/32x32/actions/gtk-unindent-rtl.png
 share/icons/Tango/32x32/actions/kfind.png
 share/icons/Tango/32x32/actions/kfm_home.png
 share/icons/Tango/32x32/actions/leftjust.png
@@ -2824,6 +2887,7 @@ share/icons/Tango/32x32/categories/gnome-globe.png
 share/icons/Tango/32x32/categories/gnome-graphics.png
 share/icons/Tango/32x32/categories/gnome-joystick.png
 share/icons/Tango/32x32/categories/gnome-multimedia.png
+share/icons/Tango/32x32/categories/gnome-other.png
 share/icons/Tango/32x32/categories/gnome-settings.png
 share/icons/Tango/32x32/categories/gnome-system.png
 share/icons/Tango/32x32/categories/gnome-util.png
@@ -2954,6 +3018,8 @@ share/icons/Tango/32x32/devices/yast_printer.png
 share/icons/Tango/32x32/devices/yast_soundcard.png
 share/icons/Tango/32x32/emblems/emblem-favorite.png
 share/icons/Tango/32x32/emblems/emblem-important.png
+share/icons/Tango/32x32/emblems/emblem-noread.png
+share/icons/Tango/32x32/emblems/emblem-nowrite.png
 share/icons/Tango/32x32/emblems/emblem-photos.png
 share/icons/Tango/32x32/emblems/emblem-readonly.png
 share/icons/Tango/32x32/emblems/emblem-symbolic-link.png
@@ -2973,6 +3039,18 @@ share/icons/Tango/32x32/emotes/face-smile-big.png
 share/icons/Tango/32x32/emotes/face-smile.png
 share/icons/Tango/32x32/emotes/face-surprise.png
 share/icons/Tango/32x32/emotes/face-wink.png
+share/icons/Tango/32x32/emotes/stock_smiley-1.png
+share/icons/Tango/32x32/emotes/stock_smiley-11.png
+share/icons/Tango/32x32/emotes/stock_smiley-13.png
+share/icons/Tango/32x32/emotes/stock_smiley-18.png
+share/icons/Tango/32x32/emotes/stock_smiley-2.png
+share/icons/Tango/32x32/emotes/stock_smiley-22.png
+share/icons/Tango/32x32/emotes/stock_smiley-3.png
+share/icons/Tango/32x32/emotes/stock_smiley-4.png
+share/icons/Tango/32x32/emotes/stock_smiley-5.png
+share/icons/Tango/32x32/emotes/stock_smiley-6.png
+share/icons/Tango/32x32/emotes/stock_smiley-7.png
+share/icons/Tango/32x32/emotes/stock_smiley-8.png
 share/icons/Tango/32x32/mimetypes/application-certificate.png
 share/icons/Tango/32x32/mimetypes/application-x-executable.png
 share/icons/Tango/32x32/mimetypes/ascii.png
@@ -3155,6 +3233,7 @@ share/icons/Tango/32x32/places/gnome-mime-x-directory-smb-server.png
 share/icons/Tango/32x32/places/gnome-mime-x-directory-smb-share.png
 share/icons/Tango/32x32/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Tango/32x32/places/gnome-stock-trash.png
+share/icons/Tango/32x32/places/gtk-directory.png
 share/icons/Tango/32x32/places/gtk-network.png
 share/icons/Tango/32x32/places/network-server.png
 share/icons/Tango/32x32/places/network-workgroup.png
@@ -3223,6 +3302,7 @@ share/icons/Tango/32x32/status/nm-device-wired.png
 share/icons/Tango/32x32/status/nm-device-wireless.png
 share/icons/Tango/32x32/status/nm-no-connection.png
 share/icons/Tango/32x32/status/printer-error.png
+share/icons/Tango/32x32/status/stock_attach.png
 share/icons/Tango/32x32/status/stock_dialog-error.png
 share/icons/Tango/32x32/status/stock_dialog-info.png
 share/icons/Tango/32x32/status/stock_dialog-warning.png
@@ -3335,6 +3415,7 @@ share/icons/Tango/scalable/actions/go-up.svg
 share/icons/Tango/scalable/actions/gohome.svg
 share/icons/Tango/scalable/actions/gtk-add.svg
 share/icons/Tango/scalable/actions/gtk-bold.svg
+share/icons/Tango/scalable/actions/gtk-cancel.svg
 share/icons/Tango/scalable/actions/gtk-clear.svg
 share/icons/Tango/scalable/actions/gtk-copy.svg
 share/icons/Tango/scalable/actions/gtk-cut.svg
@@ -3355,7 +3436,8 @@ share/icons/Tango/scalable/actions/gtk-goto-last-ltr.svg
 share/icons/Tango/scalable/actions/gtk-goto-last-rtl.svg
 share/icons/Tango/scalable/actions/gtk-goto-top.svg
 share/icons/Tango/scalable/actions/gtk-home.svg
-share/icons/Tango/scalable/actions/gtk-indent.svg
+share/icons/Tango/scalable/actions/gtk-indent-ltr.svg
+share/icons/Tango/scalable/actions/gtk-indent-rtl.svg
 share/icons/Tango/scalable/actions/gtk-italic.svg
 share/icons/Tango/scalable/actions/gtk-jump-to-ltr.svg
 share/icons/Tango/scalable/actions/gtk-jump-to-rtl.svg
@@ -3391,7 +3473,8 @@ share/icons/Tango/scalable/actions/gtk-stop.svg
 share/icons/Tango/scalable/actions/gtk-strikethrough.svg
 share/icons/Tango/scalable/actions/gtk-underline.svg
 share/icons/Tango/scalable/actions/gtk-undo-ltr.svg
-share/icons/Tango/scalable/actions/gtk-unindent.svg
+share/icons/Tango/scalable/actions/gtk-unindent-ltr.svg
+share/icons/Tango/scalable/actions/gtk-unindent-rtl.svg
 share/icons/Tango/scalable/actions/kfind.svg
 share/icons/Tango/scalable/actions/kfm_home.svg
 share/icons/Tango/scalable/actions/leftjust.svg
@@ -3636,6 +3719,7 @@ share/icons/Tango/scalable/categories/gnome-globe.svg
 share/icons/Tango/scalable/categories/gnome-graphics.svg
 share/icons/Tango/scalable/categories/gnome-joystick.svg
 share/icons/Tango/scalable/categories/gnome-multimedia.svg
+share/icons/Tango/scalable/categories/gnome-other.svg
 share/icons/Tango/scalable/categories/gnome-settings.svg
 share/icons/Tango/scalable/categories/gnome-system.svg
 share/icons/Tango/scalable/categories/gnome-util.svg
@@ -3766,6 +3850,8 @@ share/icons/Tango/scalable/devices/yast_printer.svg
 share/icons/Tango/scalable/devices/yast_soundcard.svg
 share/icons/Tango/scalable/emblems/emblem-favorite.svg
 share/icons/Tango/scalable/emblems/emblem-important.svg
+share/icons/Tango/scalable/emblems/emblem-noread.svg
+share/icons/Tango/scalable/emblems/emblem-nowrite.svg
 share/icons/Tango/scalable/emblems/emblem-photos.svg
 share/icons/Tango/scalable/emblems/emblem-readonly.svg
 share/icons/Tango/scalable/emblems/emblem-symbolic-link.svg
@@ -3785,6 +3871,18 @@ share/icons/Tango/scalable/emotes/face-smile-big.svg
 share/icons/Tango/scalable/emotes/face-smile.svg
 share/icons/Tango/scalable/emotes/face-surprise.svg
 share/icons/Tango/scalable/emotes/face-wink.svg
+share/icons/Tango/scalable/emotes/stock_smiley-1.svg
+share/icons/Tango/scalable/emotes/stock_smiley-11.svg
+share/icons/Tango/scalable/emotes/stock_smiley-13.svg
+share/icons/Tango/scalable/emotes/stock_smiley-18.svg
+share/icons/Tango/scalable/emotes/stock_smiley-2.svg
+share/icons/Tango/scalable/emotes/stock_smiley-22.svg
+share/icons/Tango/scalable/emotes/stock_smiley-3.svg
+share/icons/Tango/scalable/emotes/stock_smiley-4.svg
+share/icons/Tango/scalable/emotes/stock_smiley-5.svg
+share/icons/Tango/scalable/emotes/stock_smiley-6.svg
+share/icons/Tango/scalable/emotes/stock_smiley-7.svg
+share/icons/Tango/scalable/emotes/stock_smiley-8.svg
 share/icons/Tango/scalable/mimetypes/application-certificate.svg
 share/icons/Tango/scalable/mimetypes/application-x-executable.svg
 share/icons/Tango/scalable/mimetypes/ascii.svg
@@ -3969,6 +4067,8 @@ share/icons/Tango/scalable/places/gnome-mime-x-directory-smb-server.svg
 share/icons/Tango/scalable/places/gnome-mime-x-directory-smb-share.svg
 share/icons/Tango/scalable/places/gnome-mime-x-directory-smb-workgroup.svg
 share/icons/Tango/scalable/places/gnome-stock-trash.svg
+share/icons/Tango/scalable/places/gtk-directory.icon
+share/icons/Tango/scalable/places/gtk-directory.svg
 share/icons/Tango/scalable/places/gtk-network.svg
 share/icons/Tango/scalable/places/network-server.svg
 share/icons/Tango/scalable/places/network-workgroup.svg
@@ -4042,6 +4142,7 @@ share/icons/Tango/scalable/status/nm-device-wired.svg
 share/icons/Tango/scalable/status/nm-device-wireless.svg
 share/icons/Tango/scalable/status/nm-no-connection.svg
 share/icons/Tango/scalable/status/printer-error.svg
+share/icons/Tango/scalable/status/stock_attach.svg
 share/icons/Tango/scalable/status/stock_dialog-error.svg
 share/icons/Tango/scalable/status/stock_dialog-info.svg
 share/icons/Tango/scalable/status/stock_dialog-warning.svg

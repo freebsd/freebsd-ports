@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-themes-extras
 PORTVERSION=	2.20
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

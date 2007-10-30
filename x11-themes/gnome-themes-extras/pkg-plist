@@ -331,6 +331,7 @@ share/icons/Foxtrot/scalable/places/gnome-fs-trash-full.svg
 share/icons/Foxtrot/scalable/places/gnome-mime-x-directory-smb-share.svg
 share/icons/Foxtrot/scalable/places/gnome-mime-x-directory-smb-workgroup.svg
 share/icons/Foxtrot/scalable/places/gnome-stock-trash.svg
+share/icons/Foxtrot/scalable/places/gtk-directory.svg
 share/icons/Foxtrot/scalable/places/gtk-network.svg
 share/icons/Foxtrot/scalable/places/network-workgroup.svg
 share/icons/Foxtrot/scalable/places/network.svg
@@ -374,6 +375,7 @@ share/icons/Gion/128x128/actions/go-down.png
 share/icons/Gion/128x128/actions/go-next.png
 share/icons/Gion/128x128/actions/go-previous.png
 share/icons/Gion/128x128/actions/go-up.png
+share/icons/Gion/128x128/actions/gtk-cancel.png
 share/icons/Gion/128x128/actions/gtk-go-back-ltr.png
 share/icons/Gion/128x128/actions/gtk-go-back-rtl.png
 share/icons/Gion/128x128/actions/gtk-go-down.png
@@ -568,6 +570,7 @@ share/icons/Gion/128x128/places/gnome-fs-ssh.png
 share/icons/Gion/128x128/places/gnome-fs-trash-empty.png
 share/icons/Gion/128x128/places/gnome-mime-x-directory-smb-share.png
 share/icons/Gion/128x128/places/gnome-stock-trash.png
+share/icons/Gion/128x128/places/gtk-directory.png
 share/icons/Gion/128x128/places/network.png
 share/icons/Gion/128x128/places/stock_folder.png
 share/icons/Gion/128x128/places/trashcan_empty.png
@@ -629,6 +632,7 @@ share/icons/Gion/16x16/actions/go-previous.png
 share/icons/Gion/16x16/actions/go-top.png
 share/icons/Gion/16x16/actions/go-up.png
 share/icons/Gion/16x16/actions/gohome.png
+share/icons/Gion/16x16/actions/gtk-about.png
 share/icons/Gion/16x16/actions/gtk-add.png
 share/icons/Gion/16x16/actions/gtk-cancel.png
 share/icons/Gion/16x16/actions/gtk-copy.png
@@ -670,6 +674,7 @@ share/icons/Gion/16x16/actions/reload_page.png
 share/icons/Gion/16x16/actions/remove.png
 share/icons/Gion/16x16/actions/search.png
 share/icons/Gion/16x16/actions/start.png
+share/icons/Gion/16x16/actions/stock_about.png
 share/icons/Gion/16x16/actions/stock_add-bookmark.png
 share/icons/Gion/16x16/actions/stock_bottom.png
 share/icons/Gion/16x16/actions/stock_copy.png
@@ -849,6 +854,7 @@ share/icons/Gion/16x16/places/gnome-fs-directory.png
 share/icons/Gion/16x16/places/gnome-fs-home.png
 share/icons/Gion/16x16/places/gnome-fs-trash-empty.png
 share/icons/Gion/16x16/places/gnome-stock-trash.png
+share/icons/Gion/16x16/places/gtk-directory.png
 share/icons/Gion/16x16/places/stock_folder.png
 share/icons/Gion/16x16/places/trashcan_empty.png
 share/icons/Gion/16x16/places/user-home.png
@@ -896,6 +902,7 @@ share/icons/Gion/22x22/actions/go-previous.png
 share/icons/Gion/22x22/actions/go-top.png
 share/icons/Gion/22x22/actions/go-up.png
 share/icons/Gion/22x22/actions/gohome.png
+share/icons/Gion/22x22/actions/gtk-about.png
 share/icons/Gion/22x22/actions/gtk-add.png
 share/icons/Gion/22x22/actions/gtk-cancel.png
 share/icons/Gion/22x22/actions/gtk-copy.png
@@ -938,6 +945,7 @@ share/icons/Gion/22x22/actions/reload_page.png
 share/icons/Gion/22x22/actions/remove.png
 share/icons/Gion/22x22/actions/search.png
 share/icons/Gion/22x22/actions/start.png
+share/icons/Gion/22x22/actions/stock_about.png
 share/icons/Gion/22x22/actions/stock_add-bookmark.png
 share/icons/Gion/22x22/actions/stock_bottom.png
 share/icons/Gion/22x22/actions/stock_copy.png
@@ -1126,6 +1134,7 @@ share/icons/Gion/22x22/places/gnome-fs-ssh.png
 share/icons/Gion/22x22/places/gnome-fs-trash-empty.png
 share/icons/Gion/22x22/places/gnome-mime-x-directory-smb-share.png
 share/icons/Gion/22x22/places/gnome-stock-trash.png
+share/icons/Gion/22x22/places/gtk-directory.png
 share/icons/Gion/22x22/places/network.png
 share/icons/Gion/22x22/places/stock_folder.png
 share/icons/Gion/22x22/places/trashcan_empty.png
@@ -1424,6 +1433,7 @@ share/icons/Gion/24x24/places/gnome-fs-ssh.png
 share/icons/Gion/24x24/places/gnome-fs-trash-empty.png
 share/icons/Gion/24x24/places/gnome-mime-x-directory-smb-share.png
 share/icons/Gion/24x24/places/gnome-stock-trash.png
+share/icons/Gion/24x24/places/gtk-directory.png
 share/icons/Gion/24x24/places/network.png
 share/icons/Gion/24x24/places/stock_folder.png
 share/icons/Gion/24x24/places/trashcan_empty.png
@@ -1458,6 +1468,7 @@ share/icons/Gion/48x48/actions/go-down.png
 share/icons/Gion/48x48/actions/go-next.png
 share/icons/Gion/48x48/actions/go-previous.png
 share/icons/Gion/48x48/actions/go-up.png
+share/icons/Gion/48x48/actions/gtk-cancel.png
 share/icons/Gion/48x48/actions/gtk-go-back-ltr.png
 share/icons/Gion/48x48/actions/gtk-go-back-rtl.png
 share/icons/Gion/48x48/actions/gtk-go-down.png
@@ -1656,6 +1667,7 @@ share/icons/Gion/48x48/places/gnome-fs-ssh.png
 share/icons/Gion/48x48/places/gnome-fs-trash-empty.png
 share/icons/Gion/48x48/places/gnome-mime-x-directory-smb-share.png
 share/icons/Gion/48x48/places/gnome-stock-trash.png
+share/icons/Gion/48x48/places/gtk-directory.png
 share/icons/Gion/48x48/places/network.png
 share/icons/Gion/48x48/places/stock_folder.png
 share/icons/Gion/48x48/places/trashcan_empty.png
@@ -1690,6 +1702,7 @@ share/icons/Gion/scalable/actions/go-down.svg
 share/icons/Gion/scalable/actions/go-next.svg
 share/icons/Gion/scalable/actions/go-previous.svg
 share/icons/Gion/scalable/actions/go-up.svg
+share/icons/Gion/scalable/actions/gtk-cancel.svg
 share/icons/Gion/scalable/actions/gtk-go-back-ltr.svg
 share/icons/Gion/scalable/actions/gtk-go-back-rtl.svg
 share/icons/Gion/scalable/actions/gtk-go-down.svg
@@ -1884,6 +1897,7 @@ share/icons/Gion/scalable/places/gnome-fs-ssh.svg
 share/icons/Gion/scalable/places/gnome-fs-trash-empty.svg
 share/icons/Gion/scalable/places/gnome-mime-x-directory-smb-share.svg
 share/icons/Gion/scalable/places/gnome-stock-trash.svg
+share/icons/Gion/scalable/places/gtk-directory.svg
 share/icons/Gion/scalable/places/network.svg
 share/icons/Gion/scalable/places/stock_folder.svg
 share/icons/Gion/scalable/places/trashcan_empty.svg
@@ -1980,8 +1994,10 @@ share/icons/Neu/128x128/actions/go-previous.png
 share/icons/Neu/128x128/actions/go-top.png
 share/icons/Neu/128x128/actions/go-up.png
 share/icons/Neu/128x128/actions/gohome.png
+share/icons/Neu/128x128/actions/gtk-about.png
 share/icons/Neu/128x128/actions/gtk-add.png
 share/icons/Neu/128x128/actions/gtk-bold.png
+share/icons/Neu/128x128/actions/gtk-cancel.png
 share/icons/Neu/128x128/actions/gtk-clear.png
 share/icons/Neu/128x128/actions/gtk-copy.png
 share/icons/Neu/128x128/actions/gtk-cut.png
@@ -2001,7 +2017,8 @@ share/icons/Neu/128x128/actions/gtk-goto-last-ltr.png
 share/icons/Neu/128x128/actions/gtk-goto-last-rtl.png
 share/icons/Neu/128x128/actions/gtk-goto-top.png
 share/icons/Neu/128x128/actions/gtk-home.png
-share/icons/Neu/128x128/actions/gtk-indent.png
+share/icons/Neu/128x128/actions/gtk-indent-ltr.png
+share/icons/Neu/128x128/actions/gtk-indent-rtl.png
 share/icons/Neu/128x128/actions/gtk-italic.png
 share/icons/Neu/128x128/actions/gtk-jump-to-ltr.png
 share/icons/Neu/128x128/actions/gtk-jump-to-rtl.png
@@ -2024,7 +2041,8 @@ share/icons/Neu/128x128/actions/gtk-select-all.png
 share/icons/Neu/128x128/actions/gtk-stop.png
 share/icons/Neu/128x128/actions/gtk-underline.png
 share/icons/Neu/128x128/actions/gtk-undo-ltr.png
-share/icons/Neu/128x128/actions/gtk-unindent.png
+share/icons/Neu/128x128/actions/gtk-unindent-ltr.png
+share/icons/Neu/128x128/actions/gtk-unindent-rtl.png
 share/icons/Neu/128x128/actions/help-about.png
 share/icons/Neu/128x128/actions/kfind.png
 share/icons/Neu/128x128/actions/kfm_home.png
@@ -2054,6 +2072,7 @@ share/icons/Neu/128x128/actions/remove.png
 share/icons/Neu/128x128/actions/rightjust.png
 share/icons/Neu/128x128/actions/search.png
 share/icons/Neu/128x128/actions/start.png
+share/icons/Neu/128x128/actions/stock_about.png
 share/icons/Neu/128x128/actions/stock_add-bookmark.png
 share/icons/Neu/128x128/actions/stock_bottom.png
 share/icons/Neu/128x128/actions/stock_copy.png
@@ -2227,6 +2246,7 @@ share/icons/Neu/128x128/categories/gnome-globe.png
 share/icons/Neu/128x128/categories/gnome-graphics.png
 share/icons/Neu/128x128/categories/gnome-joystick.png
 share/icons/Neu/128x128/categories/gnome-multimedia.png
+share/icons/Neu/128x128/categories/gnome-other.png
 share/icons/Neu/128x128/categories/gnome-settings.png
 share/icons/Neu/128x128/categories/gnome-system.png
 share/icons/Neu/128x128/categories/gnome-util.png
@@ -2320,6 +2340,8 @@ share/icons/Neu/128x128/devices/yast_idetude.png
 share/icons/Neu/128x128/devices/yast_mouse.png
 share/icons/Neu/128x128/devices/yast_printer.png
 share/icons/Neu/128x128/emblems/emblem-important.png
+share/icons/Neu/128x128/emblems/emblem-noread.png
+share/icons/Neu/128x128/emblems/emblem-nowrite.png
 share/icons/Neu/128x128/emblems/emblem-pictures.png
 share/icons/Neu/128x128/emblems/emblem-readonly.png
 share/icons/Neu/128x128/emblems/emblem-symbolic-link.png
@@ -2479,6 +2501,7 @@ share/icons/Neu/128x128/places/gnome-mime-x-directory-smb-server.png
 share/icons/Neu/128x128/places/gnome-mime-x-directory-smb-share.png
 share/icons/Neu/128x128/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Neu/128x128/places/gnome-stock-trash.png
+share/icons/Neu/128x128/places/gtk-directory.png
 share/icons/Neu/128x128/places/gtk-network.png
 share/icons/Neu/128x128/places/network-server.png
 share/icons/Neu/128x128/places/network-workgroup.png
@@ -2645,6 +2668,7 @@ share/icons/Neu/22x22/actions/go-previous.png
 share/icons/Neu/22x22/actions/go-top.png
 share/icons/Neu/22x22/actions/go-up.png
 share/icons/Neu/22x22/actions/gohome.png
+share/icons/Neu/22x22/actions/gtk-about.png
 share/icons/Neu/22x22/actions/gtk-add.png
 share/icons/Neu/22x22/actions/gtk-bold.png
 share/icons/Neu/22x22/actions/gtk-cancel.png
@@ -2652,6 +2676,7 @@ share/icons/Neu/22x22/actions/gtk-clear.png
 share/icons/Neu/22x22/actions/gtk-copy.png
 share/icons/Neu/22x22/actions/gtk-cut.png
 share/icons/Neu/22x22/actions/gtk-delete.png
+share/icons/Neu/22x22/actions/gtk-execute.png
 share/icons/Neu/22x22/actions/gtk-find-and-replace.png
 share/icons/Neu/22x22/actions/gtk-find.png
 share/icons/Neu/22x22/actions/gtk-go-back-ltr.png
@@ -2667,7 +2692,8 @@ share/icons/Neu/22x22/actions/gtk-goto-last-ltr.png
 share/icons/Neu/22x22/actions/gtk-goto-last-rtl.png
 share/icons/Neu/22x22/actions/gtk-goto-top.png
 share/icons/Neu/22x22/actions/gtk-home.png
-share/icons/Neu/22x22/actions/gtk-indent.png
+share/icons/Neu/22x22/actions/gtk-indent-ltr.png
+share/icons/Neu/22x22/actions/gtk-indent-rtl.png
 share/icons/Neu/22x22/actions/gtk-italic.png
 share/icons/Neu/22x22/actions/gtk-jump-to-ltr.png
 share/icons/Neu/22x22/actions/gtk-jump-to-rtl.png
@@ -2690,7 +2716,8 @@ share/icons/Neu/22x22/actions/gtk-select-all.png
 share/icons/Neu/22x22/actions/gtk-stop.png
 share/icons/Neu/22x22/actions/gtk-underline.png
 share/icons/Neu/22x22/actions/gtk-undo-ltr.png
-share/icons/Neu/22x22/actions/gtk-unindent.png
+share/icons/Neu/22x22/actions/gtk-unindent-ltr.png
+share/icons/Neu/22x22/actions/gtk-unindent-rtl.png
 share/icons/Neu/22x22/actions/help-about.png
 share/icons/Neu/22x22/actions/kfind.png
 share/icons/Neu/22x22/actions/kfm_home.png
@@ -2720,6 +2747,7 @@ share/icons/Neu/22x22/actions/remove.png
 share/icons/Neu/22x22/actions/rightjust.png
 share/icons/Neu/22x22/actions/search.png
 share/icons/Neu/22x22/actions/start.png
+share/icons/Neu/22x22/actions/stock_about.png
 share/icons/Neu/22x22/actions/stock_add-bookmark.png
 share/icons/Neu/22x22/actions/stock_bottom.png
 share/icons/Neu/22x22/actions/stock_copy.png
@@ -2894,6 +2922,7 @@ share/icons/Neu/22x22/categories/gnome-globe.png
 share/icons/Neu/22x22/categories/gnome-graphics.png
 share/icons/Neu/22x22/categories/gnome-joystick.png
 share/icons/Neu/22x22/categories/gnome-multimedia.png
+share/icons/Neu/22x22/categories/gnome-other.png
 share/icons/Neu/22x22/categories/gnome-settings.png
 share/icons/Neu/22x22/categories/gnome-system.png
 share/icons/Neu/22x22/categories/gnome-util.png
@@ -3144,6 +3173,7 @@ share/icons/Neu/22x22/places/gnome-mime-x-directory-smb-server.png
 share/icons/Neu/22x22/places/gnome-mime-x-directory-smb-share.png
 share/icons/Neu/22x22/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Neu/22x22/places/gnome-stock-trash.png
+share/icons/Neu/22x22/places/gtk-directory.png
 share/icons/Neu/22x22/places/gtk-network.png
 share/icons/Neu/22x22/places/network-server.png
 share/icons/Neu/22x22/places/network-workgroup.png
@@ -3310,6 +3340,7 @@ share/icons/Neu/24x24/actions/go-previous.png
 share/icons/Neu/24x24/actions/go-top.png
 share/icons/Neu/24x24/actions/go-up.png
 share/icons/Neu/24x24/actions/gohome.png
+share/icons/Neu/24x24/actions/gtk-about.png
 share/icons/Neu/24x24/actions/gtk-add.png
 share/icons/Neu/24x24/actions/gtk-bold.png
 share/icons/Neu/24x24/actions/gtk-cancel.png
@@ -3317,6 +3348,7 @@ share/icons/Neu/24x24/actions/gtk-clear.png
 share/icons/Neu/24x24/actions/gtk-copy.png
 share/icons/Neu/24x24/actions/gtk-cut.png
 share/icons/Neu/24x24/actions/gtk-delete.png
+share/icons/Neu/24x24/actions/gtk-execute.png
 share/icons/Neu/24x24/actions/gtk-find-and-replace.png
 share/icons/Neu/24x24/actions/gtk-find.png
 share/icons/Neu/24x24/actions/gtk-go-back-ltr.png
@@ -3332,7 +3364,8 @@ share/icons/Neu/24x24/actions/gtk-goto-last-ltr.png
 share/icons/Neu/24x24/actions/gtk-goto-last-rtl.png
 share/icons/Neu/24x24/actions/gtk-goto-top.png
 share/icons/Neu/24x24/actions/gtk-home.png
-share/icons/Neu/24x24/actions/gtk-indent.png
+share/icons/Neu/24x24/actions/gtk-indent-ltr.png
+share/icons/Neu/24x24/actions/gtk-indent-rtl.png
 share/icons/Neu/24x24/actions/gtk-italic.png
 share/icons/Neu/24x24/actions/gtk-jump-to-ltr.png
 share/icons/Neu/24x24/actions/gtk-jump-to-rtl.png
@@ -3355,7 +3388,8 @@ share/icons/Neu/24x24/actions/gtk-select-all.png
 share/icons/Neu/24x24/actions/gtk-stop.png
 share/icons/Neu/24x24/actions/gtk-underline.png
 share/icons/Neu/24x24/actions/gtk-undo-ltr.png
-share/icons/Neu/24x24/actions/gtk-unindent.png
+share/icons/Neu/24x24/actions/gtk-unindent-ltr.png
+share/icons/Neu/24x24/actions/gtk-unindent-rtl.png
 share/icons/Neu/24x24/actions/help-about.png
 share/icons/Neu/24x24/actions/kfind.png
 share/icons/Neu/24x24/actions/kfm_home.png
@@ -3385,6 +3419,7 @@ share/icons/Neu/24x24/actions/remove.png
 share/icons/Neu/24x24/actions/rightjust.png
 share/icons/Neu/24x24/actions/search.png
 share/icons/Neu/24x24/actions/start.png
+share/icons/Neu/24x24/actions/stock_about.png
 share/icons/Neu/24x24/actions/stock_add-bookmark.png
 share/icons/Neu/24x24/actions/stock_bottom.png
 share/icons/Neu/24x24/actions/stock_copy.png
@@ -3560,6 +3595,7 @@ share/icons/Neu/24x24/categories/gnome-globe.png
 share/icons/Neu/24x24/categories/gnome-graphics.png
 share/icons/Neu/24x24/categories/gnome-joystick.png
 share/icons/Neu/24x24/categories/gnome-multimedia.png
+share/icons/Neu/24x24/categories/gnome-other.png
 share/icons/Neu/24x24/categories/gnome-settings.png
 share/icons/Neu/24x24/categories/gnome-system.png
 share/icons/Neu/24x24/categories/gnome-util.png
@@ -3805,6 +3841,7 @@ share/icons/Neu/24x24/places/gnome-mime-x-directory-smb-server.png
 share/icons/Neu/24x24/places/gnome-mime-x-directory-smb-share.png
 share/icons/Neu/24x24/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Neu/24x24/places/gnome-stock-trash.png
+share/icons/Neu/24x24/places/gtk-directory.png
 share/icons/Neu/24x24/places/gtk-network.png
 share/icons/Neu/24x24/places/network-server.png
 share/icons/Neu/24x24/places/network-workgroup.png
@@ -3971,6 +4008,7 @@ share/icons/Neu/48x48/actions/go-previous.png
 share/icons/Neu/48x48/actions/go-top.png
 share/icons/Neu/48x48/actions/go-up.png
 share/icons/Neu/48x48/actions/gohome.png
+share/icons/Neu/48x48/actions/gtk-about.png
 share/icons/Neu/48x48/actions/gtk-add.png
 share/icons/Neu/48x48/actions/gtk-bold.png
 share/icons/Neu/48x48/actions/gtk-cancel.png
@@ -3978,6 +4016,7 @@ share/icons/Neu/48x48/actions/gtk-clear.png
 share/icons/Neu/48x48/actions/gtk-copy.png
 share/icons/Neu/48x48/actions/gtk-cut.png
 share/icons/Neu/48x48/actions/gtk-delete.png
+share/icons/Neu/48x48/actions/gtk-execute.png
 share/icons/Neu/48x48/actions/gtk-find-and-replace.png
 share/icons/Neu/48x48/actions/gtk-find.png
 share/icons/Neu/48x48/actions/gtk-go-back-ltr.png
@@ -3993,7 +4032,8 @@ share/icons/Neu/48x48/actions/gtk-goto-last-ltr.png
 share/icons/Neu/48x48/actions/gtk-goto-last-rtl.png
 share/icons/Neu/48x48/actions/gtk-goto-top.png
 share/icons/Neu/48x48/actions/gtk-home.png
-share/icons/Neu/48x48/actions/gtk-indent.png
+share/icons/Neu/48x48/actions/gtk-indent-ltr.png
+share/icons/Neu/48x48/actions/gtk-indent-rtl.png
 share/icons/Neu/48x48/actions/gtk-italic.png
 share/icons/Neu/48x48/actions/gtk-jump-to-ltr.png
 share/icons/Neu/48x48/actions/gtk-jump-to-rtl.png
@@ -4016,7 +4056,8 @@ share/icons/Neu/48x48/actions/gtk-select-all.png
 share/icons/Neu/48x48/actions/gtk-stop.png
 share/icons/Neu/48x48/actions/gtk-underline.png
 share/icons/Neu/48x48/actions/gtk-undo-ltr.png
-share/icons/Neu/48x48/actions/gtk-unindent.png
+share/icons/Neu/48x48/actions/gtk-unindent-ltr.png
+share/icons/Neu/48x48/actions/gtk-unindent-rtl.png
 share/icons/Neu/48x48/actions/help-about.png
 share/icons/Neu/48x48/actions/kfind.png
 share/icons/Neu/48x48/actions/kfm_home.png
@@ -4046,6 +4087,7 @@ share/icons/Neu/48x48/actions/remove.png
 share/icons/Neu/48x48/actions/rightjust.png
 share/icons/Neu/48x48/actions/search.png
 share/icons/Neu/48x48/actions/start.png
+share/icons/Neu/48x48/actions/stock_about.png
 share/icons/Neu/48x48/actions/stock_add-bookmark.png
 share/icons/Neu/48x48/actions/stock_bottom.png
 share/icons/Neu/48x48/actions/stock_copy.png
@@ -4221,6 +4263,7 @@ share/icons/Neu/48x48/categories/gnome-globe.png
 share/icons/Neu/48x48/categories/gnome-graphics.png
 share/icons/Neu/48x48/categories/gnome-joystick.png
 share/icons/Neu/48x48/categories/gnome-multimedia.png
+share/icons/Neu/48x48/categories/gnome-other.png
 share/icons/Neu/48x48/categories/gnome-settings.png
 share/icons/Neu/48x48/categories/gnome-system.png
 share/icons/Neu/48x48/categories/gnome-util.png
@@ -4314,6 +4357,8 @@ share/icons/Neu/48x48/devices/yast_idetude.png
 share/icons/Neu/48x48/devices/yast_mouse.png
 share/icons/Neu/48x48/devices/yast_printer.png
 share/icons/Neu/48x48/emblems/emblem-important.png
+share/icons/Neu/48x48/emblems/emblem-noread.png
+share/icons/Neu/48x48/emblems/emblem-nowrite.png
 share/icons/Neu/48x48/emblems/emblem-pictures.png
 share/icons/Neu/48x48/emblems/emblem-readonly.png
 share/icons/Neu/48x48/emblems/emblem-symbolic-link.png
@@ -4474,6 +4519,7 @@ share/icons/Neu/48x48/places/gnome-mime-x-directory-smb-server.png
 share/icons/Neu/48x48/places/gnome-mime-x-directory-smb-share.png
 share/icons/Neu/48x48/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/Neu/48x48/places/gnome-stock-trash.png
+share/icons/Neu/48x48/places/gtk-directory.png
 share/icons/Neu/48x48/places/gtk-network.png
 share/icons/Neu/48x48/places/network-server.png
 share/icons/Neu/48x48/places/network-workgroup.png
@@ -4640,6 +4686,7 @@ share/icons/Neu/scalable/actions/go-previous.svg
 share/icons/Neu/scalable/actions/go-top.svg
 share/icons/Neu/scalable/actions/go-up.svg
 share/icons/Neu/scalable/actions/gohome.svg
+share/icons/Neu/scalable/actions/gtk-about.svg
 share/icons/Neu/scalable/actions/gtk-add.svg
 share/icons/Neu/scalable/actions/gtk-bold.svg
 share/icons/Neu/scalable/actions/gtk-cancel.svg
@@ -4662,7 +4709,8 @@ share/icons/Neu/scalable/actions/gtk-goto-last-ltr.svg
 share/icons/Neu/scalable/actions/gtk-goto-last-rtl.svg
 share/icons/Neu/scalable/actions/gtk-goto-top.svg
 share/icons/Neu/scalable/actions/gtk-home.svg
-share/icons/Neu/scalable/actions/gtk-indent.svg
+share/icons/Neu/scalable/actions/gtk-indent-ltr.svg
+share/icons/Neu/scalable/actions/gtk-indent-rtl.svg
 share/icons/Neu/scalable/actions/gtk-italic.svg
 share/icons/Neu/scalable/actions/gtk-jump-to-ltr.svg
 share/icons/Neu/scalable/actions/gtk-jump-to-rtl.svg
@@ -4685,7 +4733,8 @@ share/icons/Neu/scalable/actions/gtk-select-all.svg
 share/icons/Neu/scalable/actions/gtk-stop.svg
 share/icons/Neu/scalable/actions/gtk-underline.svg
 share/icons/Neu/scalable/actions/gtk-undo-ltr.svg
-share/icons/Neu/scalable/actions/gtk-unindent.svg
+share/icons/Neu/scalable/actions/gtk-unindent-ltr.svg
+share/icons/Neu/scalable/actions/gtk-unindent-rtl.svg
 share/icons/Neu/scalable/actions/help-about.svg
 share/icons/Neu/scalable/actions/kfind.svg
 share/icons/Neu/scalable/actions/kfm_home.svg
@@ -4715,6 +4764,7 @@ share/icons/Neu/scalable/actions/remove.svg
 share/icons/Neu/scalable/actions/rightjust.svg
 share/icons/Neu/scalable/actions/search.svg
 share/icons/Neu/scalable/actions/start.svg
+share/icons/Neu/scalable/actions/stock_about.svg
 share/icons/Neu/scalable/actions/stock_add-bookmark.svg
 share/icons/Neu/scalable/actions/stock_bottom.svg
 share/icons/Neu/scalable/actions/stock_copy.svg
@@ -4891,6 +4941,7 @@ share/icons/Neu/scalable/categories/gnome-globe.svg
 share/icons/Neu/scalable/categories/gnome-graphics.svg
 share/icons/Neu/scalable/categories/gnome-joystick.svg
 share/icons/Neu/scalable/categories/gnome-multimedia.svg
+share/icons/Neu/scalable/categories/gnome-other.svg
 share/icons/Neu/scalable/categories/gnome-settings.svg
 share/icons/Neu/scalable/categories/gnome-system.svg
 share/icons/Neu/scalable/categories/gnome-util.svg
@@ -4984,6 +5035,8 @@ share/icons/Neu/scalable/devices/yast_idetude.svg
 share/icons/Neu/scalable/devices/yast_mouse.svg
 share/icons/Neu/scalable/devices/yast_printer.svg
 share/icons/Neu/scalable/emblems/emblem-important.svg
+share/icons/Neu/scalable/emblems/emblem-noread.svg
+share/icons/Neu/scalable/emblems/emblem-nowrite.svg
 share/icons/Neu/scalable/emblems/emblem-pictures.svg
 share/icons/Neu/scalable/emblems/emblem-readonly.svg
 share/icons/Neu/scalable/emblems/emblem-symbolic-link.svg
@@ -5144,6 +5197,7 @@ share/icons/Neu/scalable/places/gnome-mime-x-directory-smb-server.svg
 share/icons/Neu/scalable/places/gnome-mime-x-directory-smb-share.svg
 share/icons/Neu/scalable/places/gnome-mime-x-directory-smb-workgroup.svg
 share/icons/Neu/scalable/places/gnome-stock-trash.svg
+share/icons/Neu/scalable/places/gtk-directory.svg
 share/icons/Neu/scalable/places/gtk-network.svg
 share/icons/Neu/scalable/places/network-server.svg
 share/icons/Neu/scalable/places/network-workgroup.svg

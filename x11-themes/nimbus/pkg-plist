@@ -18,6 +18,7 @@ share/icons/nimbus/12x12/places/file.png
 share/icons/nimbus/12x12/places/folder-drag-accept.png
 share/icons/nimbus/12x12/places/folder.png
 share/icons/nimbus/12x12/places/gnome-fs-directory.png
+share/icons/nimbus/12x12/places/gtk-directory.png
 share/icons/nimbus/12x12/places/stock_folder.png
 share/icons/nimbus/16x16/actions/add.png
 share/icons/nimbus/16x16/actions/application-exit.png
@@ -87,8 +88,10 @@ share/icons/nimbus/16x16/actions/go-previous.png
 share/icons/nimbus/16x16/actions/go-top.png
 share/icons/nimbus/16x16/actions/go-up.png
 share/icons/nimbus/16x16/actions/gohome.png
+share/icons/nimbus/16x16/actions/gtk-about.png
 share/icons/nimbus/16x16/actions/gtk-add.png
 share/icons/nimbus/16x16/actions/gtk-bold.png
+share/icons/nimbus/16x16/actions/gtk-cancel.png
 share/icons/nimbus/16x16/actions/gtk-copy.png
 share/icons/nimbus/16x16/actions/gtk-cut.png
 share/icons/nimbus/16x16/actions/gtk-delete.png
@@ -108,7 +111,8 @@ share/icons/nimbus/16x16/actions/gtk-goto-last-ltr.png
 share/icons/nimbus/16x16/actions/gtk-goto-last-rtl.png
 share/icons/nimbus/16x16/actions/gtk-goto-top.png
 share/icons/nimbus/16x16/actions/gtk-home.png
-share/icons/nimbus/16x16/actions/gtk-indent.png
+share/icons/nimbus/16x16/actions/gtk-indent-ltr.png
+share/icons/nimbus/16x16/actions/gtk-indent-rtl.png
 share/icons/nimbus/16x16/actions/gtk-italic.png
 share/icons/nimbus/16x16/actions/gtk-jump-to-ltr.png
 share/icons/nimbus/16x16/actions/gtk-jump-to-rtl.png
@@ -130,11 +134,13 @@ share/icons/nimbus/16x16/actions/gtk-save-as.png
 share/icons/nimbus/16x16/actions/gtk-save.png
 share/icons/nimbus/16x16/actions/gtk-sort-ascending.png
 share/icons/nimbus/16x16/actions/gtk-sort-descending.png
+share/icons/nimbus/16x16/actions/gtk-spell-check.png
 share/icons/nimbus/16x16/actions/gtk-stop.png
 share/icons/nimbus/16x16/actions/gtk-strikethrough.png
 share/icons/nimbus/16x16/actions/gtk-underline.png
 share/icons/nimbus/16x16/actions/gtk-undo-ltr.png
-share/icons/nimbus/16x16/actions/gtk-unindent.png
+share/icons/nimbus/16x16/actions/gtk-unindent-ltr.png
+share/icons/nimbus/16x16/actions/gtk-unindent-rtl.png
 share/icons/nimbus/16x16/actions/gtk-zoom-100.png
 share/icons/nimbus/16x16/actions/gtk-zoom-in.png
 share/icons/nimbus/16x16/actions/gtk-zoom-out.png
@@ -161,6 +167,7 @@ share/icons/nimbus/16x16/actions/reload_page.png
 share/icons/nimbus/16x16/actions/remove.png
 share/icons/nimbus/16x16/actions/rightjust.png
 share/icons/nimbus/16x16/actions/start.png
+share/icons/nimbus/16x16/actions/stock_about.png
 share/icons/nimbus/16x16/actions/stock_bottom.png
 share/icons/nimbus/16x16/actions/stock_copy.png
 share/icons/nimbus/16x16/actions/stock_cut.png
@@ -184,6 +191,7 @@ share/icons/nimbus/16x16/actions/stock_save-as.png
 share/icons/nimbus/16x16/actions/stock_save.png
 share/icons/nimbus/16x16/actions/stock_search-and-replace.png
 share/icons/nimbus/16x16/actions/stock_search.png
+share/icons/nimbus/16x16/actions/stock_spellcheck.png
 share/icons/nimbus/16x16/actions/stock_stop.png
 share/icons/nimbus/16x16/actions/stock_text-strikethrough.png
 share/icons/nimbus/16x16/actions/stock_text_bold.png
@@ -501,6 +509,7 @@ share/icons/nimbus/16x16/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/16x16/places/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/16x16/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/nimbus/16x16/places/gnome-stock-trash.png
+share/icons/nimbus/16x16/places/gtk-directory.png
 share/icons/nimbus/16x16/places/gtk-network.png
 share/icons/nimbus/16x16/places/network-server.png
 share/icons/nimbus/16x16/places/network-workgroup.png
@@ -872,6 +881,7 @@ share/icons/nimbus/192x192/places/gnome-fs-network.png
 share/icons/nimbus/192x192/places/gnome-fs-trash-empty.png
 share/icons/nimbus/192x192/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/nimbus/192x192/places/gnome-stock-trash.png
+share/icons/nimbus/192x192/places/gtk-directory.png
 share/icons/nimbus/192x192/places/gtk-network.png
 share/icons/nimbus/192x192/places/network-workgroup.png
 share/icons/nimbus/192x192/places/network_local.png
@@ -959,8 +969,10 @@ share/icons/nimbus/24x24/actions/go-previous.png
 share/icons/nimbus/24x24/actions/go-top.png
 share/icons/nimbus/24x24/actions/go-up.png
 share/icons/nimbus/24x24/actions/gohome.png
+share/icons/nimbus/24x24/actions/gtk-about.png
 share/icons/nimbus/24x24/actions/gtk-add.png
 share/icons/nimbus/24x24/actions/gtk-bold.png
+share/icons/nimbus/24x24/actions/gtk-cancel.png
 share/icons/nimbus/24x24/actions/gtk-copy.png
 share/icons/nimbus/24x24/actions/gtk-cut.png
 share/icons/nimbus/24x24/actions/gtk-delete.png
@@ -980,7 +992,8 @@ share/icons/nimbus/24x24/actions/gtk-goto-last-ltr.png
 share/icons/nimbus/24x24/actions/gtk-goto-last-rtl.png
 share/icons/nimbus/24x24/actions/gtk-goto-top.png
 share/icons/nimbus/24x24/actions/gtk-home.png
-share/icons/nimbus/24x24/actions/gtk-indent.png
+share/icons/nimbus/24x24/actions/gtk-indent-ltr.png
+share/icons/nimbus/24x24/actions/gtk-indent-rtl.png
 share/icons/nimbus/24x24/actions/gtk-italic.png
 share/icons/nimbus/24x24/actions/gtk-jump-to-ltr.png
 share/icons/nimbus/24x24/actions/gtk-jump-to-rtl.png
@@ -1013,11 +1026,13 @@ share/icons/nimbus/24x24/actions/gtk-save-as.png
 share/icons/nimbus/24x24/actions/gtk-save.png
 share/icons/nimbus/24x24/actions/gtk-sort-ascending.png
 share/icons/nimbus/24x24/actions/gtk-sort-descending.png
+share/icons/nimbus/24x24/actions/gtk-spell-check.png
 share/icons/nimbus/24x24/actions/gtk-stop.png
 share/icons/nimbus/24x24/actions/gtk-strikethrough.png
 share/icons/nimbus/24x24/actions/gtk-underline.png
 share/icons/nimbus/24x24/actions/gtk-undo-ltr.png
-share/icons/nimbus/24x24/actions/gtk-unindent.png
+share/icons/nimbus/24x24/actions/gtk-unindent-ltr.png
+share/icons/nimbus/24x24/actions/gtk-unindent-rtl.png
 share/icons/nimbus/24x24/actions/gtk-zoom-100.png
 share/icons/nimbus/24x24/actions/gtk-zoom-fit.png
 share/icons/nimbus/24x24/actions/gtk-zoom-in.png
@@ -1063,6 +1078,7 @@ share/icons/nimbus/24x24/actions/reload_page.png
 share/icons/nimbus/24x24/actions/remove.png
 share/icons/nimbus/24x24/actions/rightjust.png
 share/icons/nimbus/24x24/actions/start.png
+share/icons/nimbus/24x24/actions/stock_about.png
 share/icons/nimbus/24x24/actions/stock_bottom.png
 share/icons/nimbus/24x24/actions/stock_copy.png
 share/icons/nimbus/24x24/actions/stock_cut.png
@@ -1093,6 +1109,7 @@ share/icons/nimbus/24x24/actions/stock_save-as.png
 share/icons/nimbus/24x24/actions/stock_save.png
 share/icons/nimbus/24x24/actions/stock_search-and-replace.png
 share/icons/nimbus/24x24/actions/stock_search.png
+share/icons/nimbus/24x24/actions/stock_spellcheck.png
 share/icons/nimbus/24x24/actions/stock_stop.png
 share/icons/nimbus/24x24/actions/stock_text-strikethrough.png
 share/icons/nimbus/24x24/actions/stock_text_bold.png
@@ -1330,6 +1347,7 @@ share/icons/nimbus/24x24/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/24x24/places/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/24x24/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/nimbus/24x24/places/gnome-stock-trash.png
+share/icons/nimbus/24x24/places/gtk-directory.png
 share/icons/nimbus/24x24/places/gtk-network.png
 share/icons/nimbus/24x24/places/network-server.png
 share/icons/nimbus/24x24/places/network-workgroup.png
@@ -1686,6 +1704,7 @@ share/icons/nimbus/32x32/places/gnome-fs-trash-empty.png
 share/icons/nimbus/32x32/places/gnome-main-menu.png
 share/icons/nimbus/32x32/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/nimbus/32x32/places/gnome-stock-trash.png
+share/icons/nimbus/32x32/places/gtk-directory.png
 share/icons/nimbus/32x32/places/gtk-network.png
 share/icons/nimbus/32x32/places/network-workgroup.png
 share/icons/nimbus/32x32/places/network_local.png
@@ -1770,6 +1789,7 @@ share/icons/nimbus/36x36/places/gnome-fs-trash-empty.png
 share/icons/nimbus/36x36/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/36x36/places/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/36x36/places/gnome-stock-trash.png
+share/icons/nimbus/36x36/places/gtk-directory.png
 share/icons/nimbus/36x36/places/network-server.png
 share/icons/nimbus/36x36/places/redhat-network-server.png
 share/icons/nimbus/36x36/places/server.png
@@ -2195,6 +2215,7 @@ share/icons/nimbus/48x48/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/48x48/places/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/48x48/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/nimbus/48x48/places/gnome-stock-trash.png
+share/icons/nimbus/48x48/places/gtk-directory.png
 share/icons/nimbus/48x48/places/gtk-network.png
 share/icons/nimbus/48x48/places/network-server.png
 share/icons/nimbus/48x48/places/network-workgroup.png
@@ -2432,6 +2453,7 @@ share/icons/nimbus/72x72/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/72x72/places/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/72x72/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/nimbus/72x72/places/gnome-stock-trash.png
+share/icons/nimbus/72x72/places/gtk-directory.png
 share/icons/nimbus/72x72/places/gtk-network.png
 share/icons/nimbus/72x72/places/network-server.png
 share/icons/nimbus/72x72/places/network-workgroup.png
@@ -2717,6 +2739,7 @@ share/icons/nimbus/96x96/places/gnome-mime-x-directory-nfs-server.png
 share/icons/nimbus/96x96/places/gnome-mime-x-directory-smb-server.png
 share/icons/nimbus/96x96/places/gnome-mime-x-directory-smb-workgroup.png
 share/icons/nimbus/96x96/places/gnome-stock-trash.png
+share/icons/nimbus/96x96/places/gtk-directory.png
 share/icons/nimbus/96x96/places/gtk-network.png
 share/icons/nimbus/96x96/places/network-server.png
 share/icons/nimbus/96x96/places/network-workgroup.png
