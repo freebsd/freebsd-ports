@@ -17,7 +17,8 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Service monitoring and logging utilities by djb
 
 OPTIONS=	MAN	"Install Gerrit Pape's manual pages" on \
-		SIGQ12	"Add svc support for QUIT, USR1, and USR2 signals" off
+		SIGQ12	"Add svc support for QUIT, USR1, and USR2 signals" off \
+		TESTS	"Run the test suite, fails on NFS-mounted workdir" on
 
 .include <bsd.port.pre.mk>
 
@@ -57,6 +58,10 @@ PLIST_SUB+=	STARTUP_SCRIPT="${STARTUP_SCRIPT}"
 RC_SCRIPTS_SUB+=	DAEMON="/usr/sbin/daemon -f"
 .else
 RC_SCRIPTS_SUB+=	DAEMON=""
+.endif
+
+.if defined(WITHOUT_TESTS)
+EXTRA_PATCHES+=	${FILESDIR}/rts-skip.patch
 .endif
 
 post-patch:
