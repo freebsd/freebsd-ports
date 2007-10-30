@@ -17,8 +17,8 @@ DISTFILES=	${DISTNAME}.tar.gz
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A LaTeX2e macro package which enables the use of CJK scripts
 
-RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf \
-		latex:${PORTSDIR}/print/teTeX \
+RUN_DEPENDS=	zh-arphicttf>=0:${PORTSDIR}/chinese/arphicttf \
+		teTeX>=0:${PORTSDIR}/print/teTeX \
 		ttf2pk:${PORTSDIR}/print/freetype-tools
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${LOCALBASE}/share/ttf2pt1/maps/cugb.map:${PORTSDIR}/chinese/ttf2pt1 \
