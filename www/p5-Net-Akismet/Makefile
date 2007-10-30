@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-Akismet
-PORTVERSION=	0.02
-PORTREVISION=	1
+PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -26,10 +25,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::Akismet.3
-
-post-patch:
-		# Grrrr, this really shouldn't be needed!
-		${FIND} ${WRKSRC} -type f -name \*.orig -delete
 
 test:		build
 		@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
