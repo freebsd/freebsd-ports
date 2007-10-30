@@ -40,6 +40,7 @@ NOT_FOR_ARCHS=	amd64 ia64 sparc64
 
 CONFIGURE_ARGS=	--prefix="${WRKDIR}" \
 		--disable-absolute-pathes \
+		--disable-locallinks \
 		--with-tcl-lib="-L${LOCALBASE}/lib -ltcl${TCL_VER:S/.//}" \
 		--with-tcl-incl="-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} -I${X11BASE}/include" \
 		--with-tk-lib="-ltk${TK_VER:S/.//}" \
