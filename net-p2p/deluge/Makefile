@@ -7,6 +7,7 @@
 
 PORTNAME=	deluge
 PORTVERSION=	0.5.6.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/tarball/${PORTVERSION}/
 
@@ -14,7 +15,8 @@ MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A Bittorrent client, using Python, GTK+2 and Rasterbar libtorrent
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
+		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
 
