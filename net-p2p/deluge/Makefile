@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	deluge
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.6.1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/tarball/${PORTVERSION}/
 
@@ -22,6 +22,7 @@ USE_GNOME=	pygtk2 desktopfileutils
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_PYTHON=	yes
+USE_DOS2UNIX=	*.py
 USE_PYDISTUTILS=yes
 
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
