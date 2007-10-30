@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.191
+# Local version: 1.192
 # $FreeBSD$
 
 # Copyright (c) 2005-2007 Douglas Barton, All rights reserved
@@ -183,7 +183,7 @@ trap_exit () {
 		for file in ${TMPDIR}/fetchlog-${PARENT_PID}-*; do
 			pid=`awk '/^MCS_CHILD_PID / {print $2}' $file 2>/dev/null`
 			test -n "$pid" || continue
-			echo -n "===>>> Child process $pid: "
+			echo "===>>> Child process $pid:"
 			if ! pmkill $pid ; then
 				if ps -p $pid >/dev/null; then
 					echo "Did not die!"
@@ -287,7 +287,7 @@ dep_warn () {
 	echo "===>>> Warning! Potential unrecorded dependencies on $new_port"
 	echo "===>>> From existing +CONTENTS files:"
 	grep -B1 DEPORIGIN:$upg_origin$ $pdb/*/+CONTENTS |
-	    sort -u | sed -e "s#$pdb/##" -e 1d
+	    sort -u | sed -e "s#$pdb/##" -e 1d | less -F
 	num_ports1=`grep DEPORIGIN:$upg_origin$ $pdb/*/+CONTENTS |
 	    sort -u | wc -l | awk '{print $1}'`
 	echo "===>>> $num_ports1 ports"
@@ -300,7 +300,7 @@ update_reqfile () {
 	dep_warn
 	num_ports2=`wc -l $req_deps | awk '{print $1}'`
 	echo "===>>> From $pdb/$upg_port/+REQUIRED_BY:"
-	cat $req_deps
+	less -F $req_deps
 	echo "===>>> $num_ports2 ports"
 	echo ''
 	echo "===>>> Use dependencies from existing +CONTENTS files	[c]"
@@ -640,12 +640,14 @@ echo "===>>> Skipping ${dep_port#$pd/} because it matches the pattern: *${EXCL}*
 			ign_p=$cur_p
 		else
 			upd_args="-p $dep_port"		# Sensible default
+
 			# Check to see if the dependency has moved because
 			# if so, we need to update the old port to fix it
 			p=${dep_port#$pd/}
 			op=`sed -ne "s#\([^|]*\)|$p|.*#\1#p" $pd/MOVED`
+
 			# In case there is more than one match, use the latest
-			op=`echo $op | sed 's/.* //'`
+			op=${op##* }
 
 			if [ -n "$op" ]; then
 				old_p=`iport_from_origin ${op}`
@@ -833,7 +835,7 @@ delete_stale_distfiles () {
 	fi
 
 	# Eventually we will hide this behind an "aggressive distfile purge"
-	# flag, but until the DISTFILE stuff is well populated in +CONTENTS,
+	# flag, but until the DISTFILE stuff is well populated in PORT_DBDIR,
 	# keep doing it both ways.
 	for distfile in $distfiles; do
 		find_and_delete_distfiles $distfile
@@ -864,7 +866,7 @@ delete_all_distfiles () {
 		if [ -n "$do_delete" ]; then
 			delete_stale_distfiles
 			rm -f $distfiles
-			find $pd/distfiles/ -type d -empty -delete
+			find ${distdir}/ -type d -empty -delete
 		fi
 	fi
 }
@@ -878,7 +880,6 @@ init_pkgrep () {
 
 backup_package () {
 	echo "===>>> Creating a backup package for old version $1"
-	[ -n "$pkgrep" ] || fail "No package repository variable set"
 	cd $pkgrep || fail "Cannot cd into the $pkgrep directory for backup"
 	if pkg_create -b $1; then
 		echo "	===>>> Package can be found in $pkgrep"
@@ -940,11 +941,12 @@ case "$1" in
 esac
 
 read_distinfos () {
-	local origin distinfo disc1 file disc2
+	local ugp pkg origin distinfo disc1 file disc2
 
 	echo "===>>> Gathering distinfo list for installed ports"
+	[ -n "$upg_port" ] && upg="${pdb}/$upg_port"
 
-	for pkg in ${pdb}/*; do
+	for pkg in $upg ${pdb}/*; do
 		[ -d $pkg ] || continue
 		origin=`origin_from_pdb $pkg`
 
@@ -1081,12 +1083,14 @@ if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
 		echo "	===>>> $num_updates have new versions available"
 	elif [ "$num_updates" -eq 1 ]; then
 		echo "	===>>> 1 has a new version available"
+	else
+		echo "	===>>> There are no new versions available"
 	fi
 
 	exit 0
 fi
 
-find_contents_distfiles () {
+find_dl_distfiles () {
 	# dist_list and dist_list_files are used globally
 
 	# We need to define this for use in the deletion/update process.
@@ -1128,7 +1132,7 @@ if [ -n "$EXPUNGE" ]; then
 			backup_package $EXPUNGE
 		fi
 
-		find_contents_distfiles $origin
+		find_dl_distfiles $origin
 
 		echo "===>>> Running pkg_delete -f $EXPUNGE"
 		pkg_delete -f $EXPUNGE
@@ -1178,7 +1182,7 @@ if [ -n "$CLEAN_STALE" ]; then
 				backup_package $iport
 			fi
 
-			find_contents_distfiles $origin
+			find_dl_distfiles $origin
 
 			echo "===>>> Running pkg_delete -f $iport"
 			pkg_delete -f ${iport}
@@ -1255,7 +1259,19 @@ if [ "$$" -eq "$PARENT_PID" ]; then
 		fi
 	fi
 
+	if [ -z "$SHOW_WORK" -a -z "$DONT_SCRUB_DISTFILES" ]; then
+		# Set the file name here so it's visible to the children
+		DI_FILES=`mktemp -t DI-FILES-$PARENT_PID`
+		export DI_FILES
+	fi
+
 	if [ $# -gt 1 -a -z "$REPLACE_ORIGIN" ]; then
+		# This has to be done here because the children
+		# will never be PARENT_PID for the test below.
+		if [ -z "$SHOW_WORK" -a -z "$DONT_SCRUB_DISTFILES" ]; then
+			(read_distinfos)&
+		fi
+
 		if [ -z "$NO_RECURSIVE_CONFIG" ]; then
 			for port in $@; do
 				($0 $ARGS $port) ||
@@ -1281,9 +1297,6 @@ fi
 
 if [ -n "$UPDATE_ALL" ]; then
 	if [ -z "$DONT_SCRUB_DISTFILES" ]; then
-		# Set the file name here so it's visible to the parent
-		DI_FILES=`mktemp -t DI-FILES-$PARENT_PID`
-		export DI_FILES
 		(read_distinfos)&
 	fi
 
@@ -1330,12 +1343,12 @@ echo "===>>> Skipping ${pkg#$pdb/} because it matches the pattern: *${EXCL}*"
 	export BUILDING
 
 	for pkg in $roots $trunks $branches $leaves; do
-			case "$pkg" in
-			*${EXCL}*) test -n "$VERBOSE" &&
+		case "$pkg" in
+		*${EXCL}*) test -n "$VERBOSE" &&
 echo "===>>> Skipping ${pkg#$pdb/} because it matches the pattern: *${EXCL}*"
-				continue
-				;;
-			esac
+			continue
+			;;
+		esac
 
 		if [ ! -d "$pkg" ]; then
 			# This port probably got updated as a dependency
@@ -1490,11 +1503,11 @@ for state in FORBIDDEN BROKEN IGNORE; do
 	fi
 done
 
+# Since this task is non-trivial, when only one port is supplied on the
+# command line do not start this process until we are sure that we are
+# going to (at least try to) build the port.
 if [ "$$" -eq "$PARENT_PID" -a -z "$SHOW_WORK" \
     -a -z "$DONT_SCRUB_DISTFILES" ]; then
-	# Set the file name here so it's visible to the parent
-	DI_FILES=`mktemp -t DI-FILES-$PARENT_PID`
-	export DI_FILES
 	(read_distinfos)&
 fi
 
@@ -1718,7 +1731,7 @@ fi
 
 # Ignore if no old port exists
 if [ -n "$upg_port" ]; then
-	find_contents_distfiles $portdir
+	find_dl_distfiles $portdir
 
 	UPGRADE_PORT=$upg_port
 	UPGRADE_PORT_VER=`echo $UPGRADE_PORT | sed 's#.*-\(.*\)#\1#'`
@@ -1754,15 +1767,10 @@ if [ -n "$upg_port" ]; then
 	fi
 fi
 
-if [ -z "$RECURSE_THOROUGH" -a ! -e "$NO_DEP_UPDATES" ]; then
-	echo "===>>> Starting check for runtime dependencies"
-	dependency_check run-depends-list
-fi
-
-# In case we went elsewhere in the dependency check
-cd $pd/$portdir
-
-make $PM_MAKE_ARGS install || {
+# Do the install here in case a run dependency has a build dependency on us.
+# Defining NO_DEPENDS ensures that we will control the installation of the
+# run depends, not bsd.port.mk.
+make -DNO_DEPENDS $PM_MAKE_ARGS install || {
     if [ -z "$NO_BACKUP" -a -n "$upg_port" ]; then
 	echo ''
 	echo "===>>> A backup package for $portdir should be located in $pkgrep"
@@ -1797,6 +1805,15 @@ if [ ! "$allfiles" = ' ' ]; then
 		echo "DISTFILE:${ds}${file}:SIZE=${size}:SHA256=${sha256}:MD5=${md5}" >> $dist_list
 	done
 fi
+
+if [ -z "$RECURSE_THOROUGH" -a ! -e "$NO_DEP_UPDATES" ]; then
+	echo ''
+	echo "===>>> Starting check for runtime dependencies"
+	dependency_check run-depends-list
+fi
+
+# In case we went elsewhere in the dependency check
+cd $pd/$portdir
 
 if [ -n "$MAKE_PACKAGE" ]; then
 	echo "===>>> Creating a package for new version $new_port"
@@ -1845,6 +1862,7 @@ fi
 echo ''
 test -z "$upg_port" && upg_port=$portdir
 echo "===>>> Upgrade for $upg_port to $new_port succeeded"
+echo ''
 
 test -n "$FORCE" && FORCE_DONE_LIST="${FORCE_DONE_LIST}${portdir}:"
 test -e "$pdb/$new_port/+DISPLAY" &&
@@ -1876,7 +1894,6 @@ fi
 if [ -n "$UPDATE_REQ_BYS" -a -s "$pdb/$new_port/+REQUIRED_BY" ]; then
 	URB_YES=yes ; export URB_YES
 	MASTER_RB_LIST=$pdb/$new_port/+REQUIRED_BY
-	echo ''
 	echo "===>>> Updating ports that depend on $new_port"
 	for req_by in `cat $pdb/$new_port/+REQUIRED_BY`; do
 		if [ ! -d "$pdb/$req_by" ]; then
