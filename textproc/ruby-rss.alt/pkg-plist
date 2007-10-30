@@ -26,7 +26,9 @@
 %%RUBY_SITELIBDIR%%/rss/maker/syndication.rb
 %%RUBY_SITELIBDIR%%/rss/maker/taxonomy.rb
 %%RUBY_SITELIBDIR%%/rss/maker/trackback.rb
+%%RUBY_SITELIBDIR%%/rss/maker/slash.rb
 %%RUBY_SITELIBDIR%%/rss/parser.rb
+%%RUBY_SITELIBDIR%%/rss/slash.rb
 %%RUBY_SITELIBDIR%%/rss/rexmlparser.rb
 %%RUBY_SITELIBDIR%%/rss/rss.rb
 %%RUBY_SITELIBDIR%%/rss/syndication.rb
