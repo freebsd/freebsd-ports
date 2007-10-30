@@ -7,6 +7,17 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20071030:
+  AFFECTS: users of net/skype
+  AUTHOR: beech@FreeBSD.org
+
+  The skype port has been upgraded to version 1.4.0.118. This requires a sysctl
+  change to run. After upgrading, please do: "sysctl compat.linux.osrelease=2.6"
+  from a terminal. Also add: "compat.linux.osrelease=2.6" to your
+  /etc/sysctl.conf  to make this change at boot time. Also, net/skype-devel has
+  been removed from the ports tree. All skype users are encouraged to update to
+  the latest version.
+
+20071030:
   AFFECTS: users of sysutils/daemontools
   AUTHOR: roam@FreeBSD.org
 
