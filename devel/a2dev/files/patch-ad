@@ -1,5 +1,5 @@
---- a2dev-1.2/link/Makefile.orig	Sat Mar 25 21:52:45 1995
-+++ a2dev-1.2/link/Makefile	Tue Oct 13 21:28:09 1998
+--- link/Makefile.orig	Sat Mar 25 21:52:45 1995
++++ link/Makefile	Tue Oct 13 21:28:09 1998
 @@ -16,15 +16,15 @@
  ### Abstract rules
  ###
