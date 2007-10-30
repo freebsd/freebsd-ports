@@ -56,6 +56,15 @@ share/doc/HTML/nl/gwenview/introduction.docbook
 share/doc/HTML/nl/gwenview/keybindings.docbook
 share/doc/HTML/nl/gwenview/mouse.docbook
 share/doc/HTML/nl/gwenview/view_mode.png
+share/doc/HTML/pl/gwenview/common
+share/doc/HTML/pl/gwenview/docked_windows.docbook
+share/doc/HTML/pl/gwenview/external_tools.docbook
+share/doc/HTML/pl/gwenview/index.cache.bz2
+share/doc/HTML/pl/gwenview/index.docbook
+share/doc/HTML/pl/gwenview/interface.docbook
+share/doc/HTML/pl/gwenview/introduction.docbook
+share/doc/HTML/pl/gwenview/keybindings.docbook
+share/doc/HTML/pl/gwenview/mouse.docbook
 share/doc/HTML/pt/gwenview/common
 share/doc/HTML/pt/gwenview/docked_windows.docbook
 share/doc/HTML/pt/gwenview/external_tools.docbook
@@ -110,10 +119,10 @@ share/locale/el/LC_MESSAGES/gwenview.mo
 share/locale/en_GB/LC_MESSAGES/gwenview.mo
 share/locale/es/LC_MESSAGES/gwenview.mo
 share/locale/et/LC_MESSAGES/gwenview.mo
+share/locale/fa/LC_MESSAGES/gwenview.mo
 share/locale/fi/LC_MESSAGES/gwenview.mo
 share/locale/fo/LC_MESSAGES/gwenview.mo
 share/locale/fr/LC_MESSAGES/gwenview.mo
-share/locale/ga/LC_MESSAGES/gwenview.mo
 share/locale/gl/LC_MESSAGES/gwenview.mo
 share/locale/he/LC_MESSAGES/gwenview.mo
 share/locale/hi/LC_MESSAGES/gwenview.mo
@@ -124,7 +133,9 @@ share/locale/ja/LC_MESSAGES/gwenview.mo
 share/locale/ka/LC_MESSAGES/gwenview.mo
 share/locale/ko/LC_MESSAGES/gwenview.mo
 share/locale/lt/LC_MESSAGES/gwenview.mo
+share/locale/ms/LC_MESSAGES/gwenview.mo
 share/locale/nb/LC_MESSAGES/gwenview.mo
+share/locale/nds/LC_MESSAGES/gwenview.mo
 share/locale/nl/LC_MESSAGES/gwenview.mo
 share/locale/nso/LC_MESSAGES/gwenview.mo
 share/locale/pa/LC_MESSAGES/gwenview.mo
@@ -143,6 +154,7 @@ share/locale/th/LC_MESSAGES/gwenview.mo
 share/locale/tr/LC_MESSAGES/gwenview.mo
 share/locale/uk/LC_MESSAGES/gwenview.mo
 share/locale/ven/LC_MESSAGES/gwenview.mo
+share/locale/vi/LC_MESSAGES/gwenview.mo
 share/locale/xh/LC_MESSAGES/gwenview.mo
 share/locale/zh_CN/LC_MESSAGES/gwenview.mo
 share/locale/zh_TW/LC_MESSAGES/gwenview.mo
@@ -157,12 +169,15 @@ share/locale/zu/LC_MESSAGES/gwenview.mo
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/fo/LC_MESSAGES
 @dirrmtry share/locale/fo
 @dirrm share/doc/HTML/sv/gwenview
 @dirrm share/doc/HTML/ru/gwenview
 @dirrm share/doc/HTML/pt_BR/gwenview
 @dirrm share/doc/HTML/pt/gwenview
+@dirrm share/doc/HTML/pl/gwenview
 @dirrm share/doc/HTML/nl/gwenview
 @dirrm share/doc/HTML/it/gwenview
 @dirrm share/doc/HTML/fr/gwenview
