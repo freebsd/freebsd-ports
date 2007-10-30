@@ -21,6 +21,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=	yes
 
+PORTSCOUT=	limit:^0\.
+
 MAN3=		__zzip_fetch_disk_trailer.3 __zzip_parse_root_directory.3 __zzip_try_open.3 \
 		zzip_close.3 zzip_closedir.3 zzip_compr_str.3 zzip_dir_alloc.3 \
 		zzip_dir_alloc_ext_io.3 zzip_dir_close.3 zzip_dir_fdopen.3 \
