@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	0.90
+PORTVERSION=	0.91
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
@@ -21,12 +21,12 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-# --without-gtk broke configure, CUSTOM_SUBDIRS (manual) will taking care of it.
-CONFIGURE_ARGS?=--without-wx
+CONFIGURE_ARGS?=--without-gtk \
+		--without-wx
 
 CUSTOM_SUBDIRS?=third-party libtransmission cli
 DOCS=		AUTHORS LICENSE NEWS README
-#MAN1?=		transmissioncli.1
+MAN1?=		transmissioncli.1
 
 general-patch:
 	@${REINPLACE_CMD} -e \
@@ -36,6 +36,8 @@ general-patch:
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%CUSTOM_SUBDIRS%%|${CUSTOM_SUBDIRS}|g' \
 		${WRKSRC}/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|$$(OPENSSL_CFLAGS)||g ; s|$$(OPENSSL_LIBS)||g'
 
 post-patch: general-patch
 

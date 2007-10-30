@@ -19,7 +19,7 @@ CONFIGURE_ARGS=	--without-wx
 
 CUSTOM_SUBDIRS=	third-party libtransmission gtk po
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-#MAN1=		transmission-gtk.1
+MAN1=		transmission.1
 
 post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|TryExec=.*||g ; /^$$/d' \
