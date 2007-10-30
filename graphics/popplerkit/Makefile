@@ -17,8 +17,6 @@ COMMENT=	Framework that supports rendering of PDF content
 
 LIB_DEPENDS=	poppler:${PORTSDIR}/graphics/poppler
 
-BROKEN=		does not compile with poppler-0.6 due to API change
-
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
