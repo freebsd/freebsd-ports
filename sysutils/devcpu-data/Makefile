@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
