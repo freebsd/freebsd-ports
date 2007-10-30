@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.4.6
-PORTREVISION=	1
+PORTVERSION=	1.4.7
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -29,8 +28,6 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
 		fig2dev:${PORTSDIR}/print/transfig \
 		jpegtopnm:${PORTSDIR}/graphics/netpbm
 .endif
-
-BROKEN=		Does not build
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
