@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20071030:
+  AFFECTS: users of sysutils/daemontools
+  AUTHOR: roam@FreeBSD.org
+
+  If you were experiencing build problems on NFS when running daemontools's
+  run-time testsuite, turn off the new TESTS option in the configure screen.
+  On a related note, svscan can now send its error messages to multilog
+  instead of readproctitle; see the etc/rc.d/svscan.sh startup script for
+  more information on the svscan_* configurable variables.
+
 20071029:
   AFFECTS: users of security/stunnel
   AUTHOR: roam@FreeBSD.org
