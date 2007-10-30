@@ -8,6 +8,7 @@
 
 PORTNAME=	accerciser
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Interactive Python accessibility explorer for GNOME
 
 USE_BZIP2=	yes
-USE_GNOME=	pygnomedesktop
+USE_GNOME=	atspi pygnomedesktop
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
