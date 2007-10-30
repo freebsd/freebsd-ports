@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-GCrypt
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Perl interface to the GNU Cryptographic library
 
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \
@@ -28,7 +28,5 @@ MAN3=		Crypt::GCrypt.3
 
 post-extract:
 	${RM} -f ${WRKSRC}/._Makefile.PL
-	${RM} -f ${WRKSRC}/._GCrypt.pm
-	${RM} -f ${WRKSRC}/._GCrypt.xs
 
 .include <bsd.port.post.mk>
