@@ -9,8 +9,7 @@ PORTNAME=	ivan
 PORTVERSION=	0.50
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ivan
+MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A graphical roguelike game
@@ -30,6 +29,12 @@ post-patch:
 		${WRKSRC}/FeLib/Include/fearray.h
 	@${REINPLACE_CMD} -Ee 's|([a-z]+<[a-z ,]+>::~?[a-z]+)<[a-z ,]+>|\1|' \
 		${WRKSRC}/Main/Source/script.cpp
+	@${REINPLACE_CMD} -e 's|truth(|bool(|' ${WRKSRC}/Main/Source/fluid.cpp \
+		${WRKSRC}/Main/Include/char.h ${WRKSRC}/Main/Include/lsquare.h \
+		${WRKSRC}/FeLib/Include/save.h ${WRKSRC}/Main/Include/lsquare.h \
+		${WRKSRC}/Main/Include/human.h ${WRKSRC}/Main/Source/command.cpp \
+		${WRKSRC}/Main/Include/stack.h ${WRKSRC}/Main/Source/lsquare.cpp \
+		${WRKSRC}/Main/Source/lterras.cpp
 
 post-install:
 	${CHGRP} games ${PREFIX}/bin/ivan
@@ -42,12 +47,4 @@ post-install:
 	${CHMOD} -R g+w ${STATEDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
