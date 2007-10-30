@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tellico
-PORTVERSION=	1.2.10
-PORTREVISION=	1
+PORTVERSION=	1.2.14
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.periapsis.org/tellico/download/
 
