@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pho
-DISTVERSION=	0.9.5-pre4
-PORTREVISION=	3
+DISTVERSION=	0.9.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://shallowsky.com/software/pho/
 
@@ -34,9 +33,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g; \
 		s|$$(INSTALL) \(pho \)|${INSTALL_PROGRAM} \1|; \
 		s|$$(INSTALL) \(pho.1\)|${INSTALL_MAN} \1|; \
-		s|-g -O2|${CFLAGS}|; s|pho xpho$$|pho|' \
-		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|^G${BAD_GTK}FLAGS|#&|' ${WRKSRC}/Makefile
+		s|-g -O|${CFLAGS}|; s|pho xpho$$|pho|; \
+		s|^G${BAD_GTK}FLAGS|#&|' ${WRKSRC}/Makefile
 
 MAN1=		pho.1
 PLIST_FILES=	bin/pho
