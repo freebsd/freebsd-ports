@@ -6,10 +6,12 @@ share/applications/kshutdown.desktop
 share/apps/kconf_update/kshutdown.upd
 share/apps/kicker/applets/kshutdownlockout.desktop
 share/apps/kshutdown/eventsrc
+share/apps/kshutdown/extras/hibernate.desktop
 share/apps/kshutdown/extras/multimedia/.directory
 share/apps/kshutdown/extras/multimedia/amarok.desktop
 share/apps/kshutdown/extras/multimedia/juk.desktop
 share/apps/kshutdown/extras/multimedia/kaffeine.desktop
+share/apps/kshutdown/extras/multimedia/kdetv.desktop
 share/apps/kshutdown/extras/multimedia/kscd.desktop
 share/apps/kshutdown/extras/multimedia/noatun.desktop
 share/apps/kshutdown/extras/multimedia/xmms.desktop
@@ -26,9 +28,6 @@ share/apps/kshutdown/karamba/kshutdown-classic-text.theme
 share/apps/kshutdown/sounds/1m.ogg
 share/apps/kshutdown/sounds/5m.ogg
 share/apps/kshutdown/sounds/COPYRIGHT
-share/apps/kshutdown/sounds/one.ogg
-share/apps/kshutdown/sounds/three.ogg
-share/apps/kshutdown/sounds/two.ogg
 share/doc/HTML/de/kshutdown/common
 share/doc/HTML/de/kshutdown/index.cache.bz2
 share/doc/HTML/de/kshutdown/index.docbook
@@ -39,9 +38,13 @@ share/doc/HTML/en/kshutdown/index.docbook
 share/doc/HTML/en/kshutdown/mainwindow.png
 share/icons/hicolor/32x32/apps/kshutdown.png
 share/icons/hicolor/48x48/apps/kshutdown.png
+share/locale/ar/LC_MESSAGES/kshutdown.mo
+share/locale/bg/LC_MESSAGES/kshutdown.mo
 share/locale/cs/LC_MESSAGES/kshutdown.mo
 share/locale/de/LC_MESSAGES/kshutdown.mo
+share/locale/el/LC_MESSAGES/kshutdown.mo
 share/locale/es/LC_MESSAGES/kshutdown.mo
+share/locale/fr/LC_MESSAGES/kshutdown.mo
 share/locale/hu/LC_MESSAGES/kshutdown.mo
 share/locale/it/LC_MESSAGES/kshutdown.mo
 share/locale/nl/LC_MESSAGES/kshutdown.mo
