@@ -20,12 +20,6 @@ USE_BISON=	build
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 700000
-BROKEN=		Doesn't build
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|g++|${CXX}|' ${WRKSRC}/Makefile
@@ -34,4 +28,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^INSTALL_DATADIR=.*$$|INSTALL_DATADIR=${DATADIR}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|^INSTALL_BINDIR=.*$$|INSTALL_BINDIR=${PREFIX}/bin|' ${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
