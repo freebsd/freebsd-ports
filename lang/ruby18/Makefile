@@ -44,8 +44,14 @@ OPTIONS=	PTHREADS "Enable pthreads support (may break some apps)" off \
 .include <bsd.port.pre.mk>
 
 # PORTEPOCH/PORTREVISION hack
+
+.if ${PORTEPOCH} != 0
 _SUF2=	,${PORTEPOCH}
+.endif
+
+.if ${PORTREVISION} != 0
 _SUF1=	_${PORTREVISION}
+.endif
 
 PKGNAMESUFFIX=	#empty
 CFLAGS+=	${PTHREAD_CFLAGS}	# Keep this, else ruby will fail to load

@@ -493,6 +493,9 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rexml/encodings/UTF-8.rb
 %%RUBY_LIBDIR%%/rexml/entity.rb
 %%RUBY_LIBDIR%%/rexml/functions.rb
+%%RUBY_LIBDIR%%/rexml/formatters/default.rb                                    
+%%RUBY_LIBDIR%%/rexml/formatters/pretty.rb                                     
+%%RUBY_LIBDIR%%/rexml/formatters/transitive.rb
 %%RUBY_LIBDIR%%/rexml/instruction.rb
 %%RUBY_LIBDIR%%/rexml/light/node.rb
 %%RUBY_LIBDIR%%/rexml/namespace.rb
@@ -837,6 +840,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @dirrm %%RUBY_LIBDIR%%/rexml/light
 @dirrm %%RUBY_LIBDIR%%/rexml/encodings
 @dirrm %%RUBY_LIBDIR%%/rexml/dtd
+@dirrm %%RUBY_LIBDIR%%/rexml/formatters
 @dirrm %%RUBY_LIBDIR%%/rexml
 @dirrm %%RUBY_LIBDIR%%/rdoc/ri
 @dirrm %%RUBY_LIBDIR%%/rdoc/parsers
