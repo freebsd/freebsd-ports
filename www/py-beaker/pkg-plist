@@ -13,6 +13,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/converters.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/converters.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/converters.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/cookie.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/cookie.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/cookie.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/exceptions.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/exceptions.pyo
@@ -22,6 +25,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/session.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/session.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/session.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/signedcookie.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/signedcookie.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/signedcookie.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/synchronization.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/synchronization.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/beaker/synchronization.pyo
