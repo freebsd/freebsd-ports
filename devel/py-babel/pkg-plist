@@ -50,6 +50,9 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/bn.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/bn_BD.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/bn_IN.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/bo.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/bo_CN.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/bo_IN.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/bs.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/bs_BA.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/byn.dat
@@ -58,6 +61,12 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ca_ES.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/cch.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/cch_NG.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/cop.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/cop_Arab.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/cop_Arab_EG.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/cop_Arab_US.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/cop_EG.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/cop_US.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/cs.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/cs_CZ.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/cy.dat
@@ -81,7 +90,7 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/el.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/el_CY.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/el_GR.dat
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/el_POLYTONI.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/el_POLYTON.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/en.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/en_AS.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/en_AU.dat
@@ -141,6 +150,7 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/fa_IR.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/fi.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/fi_FI.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/fil.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/fo.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/fo_FO.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/fr.dat
@@ -193,6 +203,8 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/id_ID.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ig.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ig_NG.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ii.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ii_CN.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/is.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/is_IS.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/it.dat
@@ -223,6 +235,9 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/kok.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/kok_IN.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ko_KR.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/kpe.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/kpe_GN.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/kpe_LR.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ku.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ku_Arab.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ku_IQ.dat
@@ -260,6 +275,8 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ms_MY.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/mt.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/mt_MT.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/my.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/my_MM.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/nb.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/nb_NO.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ne.dat
@@ -305,6 +322,7 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/sa.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/sa_IN.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/se.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/se_FI.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/se_NO.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/sh.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/sh_BA.dat
@@ -343,6 +361,7 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/sr_YU.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ss.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ss_ZA.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ssy.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/st.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/st_ZA.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/sv.dat
@@ -368,14 +387,19 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ti_ET.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/tn.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/tn_ZA.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/to.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/to_TO.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/tr.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/tr_TR.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ts.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ts_ZA.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/tt.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/tt_RU.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ug.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/uk.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/uk_UA.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/und.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/und_ZZ.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ur.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ur_IN.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/ur_PK.dat
@@ -394,6 +418,12 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/vi_VN.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/wal.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/wal_ET.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/wo.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/wo_Arab.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/wo_Arab_SN.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/wo_Latn.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/wo_Latn_SN.dat
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/wo_SN.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/xh.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/xh_ZA.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata/yo.dat
@@ -416,12 +446,18 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/catalog.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/catalog.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/catalog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/checkers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/checkers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/checkers.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/extract.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/extract.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/extract.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/frontend.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/frontend.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/frontend.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/mofile.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/mofile.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/mofile.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/plurals.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/plurals.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/messages/plurals.pyo
@@ -437,6 +473,7 @@ bin/pybabel
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/dates.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/dates.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/dates.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/global.dat
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel/localedata.pyo
@@ -463,10 +500,16 @@ bin/pybabel
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.catalog-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.catalog.Catalog-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.catalog.Message-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.catalog.TranslationError-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.checkers-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.extract-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.frontend-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.frontend.CommandLineInterface-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.frontend.compile_catalog-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.frontend.extract_messages-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.frontend.init_catalog-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.frontend.update_catalog-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.mofile-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.plurals-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.pofile-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.numbers-module.html
@@ -476,6 +519,7 @@ bin/pybabel
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.support.LazyProxy-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.support.Translations-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.util-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/babel.util.odict-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/class-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/crarr.png
 %%PORTDOCS%%%%DOCSDIR%%/api/epydoc.css
@@ -485,15 +529,21 @@ bin/pybabel
 %%PORTDOCS%%%%DOCSDIR%%/api/index.html
 %%PORTDOCS%%%%DOCSDIR%%/api/module-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/api/redirect.html
-%%PORTDOCS%%%%DOCSDIR%%/conf/docutils.ini
-%%PORTDOCS%%%%DOCSDIR%%/conf/epydoc.ini
-%%PORTDOCS%%%%DOCSDIR%%/style/bkgnd_pattern.png
-%%PORTDOCS%%%%DOCSDIR%%/style/docutils.css
-%%PORTDOCS%%%%DOCSDIR%%/style/edgewall.css
-%%PORTDOCS%%%%DOCSDIR%%/style/epydoc.css
-%%PORTDOCS%%%%DOCSDIR%%/style/pygments.css
-%%PORTDOCS%%%%DOCSDIR%%/style/shadow.gif
-%%PORTDOCS%%%%DOCSDIR%%/style/vertbars.png
+%%PORTDOCS%%%%DOCSDIR%%/api/since-index.html
+%%PORTDOCS%%%%DOCSDIR%%/common/conf/docutils.ini
+%%PORTDOCS%%%%DOCSDIR%%/common/conf/epydoc.ini
+%%PORTDOCS%%%%DOCSDIR%%/common/style/bkgnd_pattern.png
+%%PORTDOCS%%%%DOCSDIR%%/common/style/docutils.css
+%%PORTDOCS%%%%DOCSDIR%%/common/style/edgewall.css
+%%PORTDOCS%%%%DOCSDIR%%/common/style/epydoc.css
+%%PORTDOCS%%%%DOCSDIR%%/common/style/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/common/style/shadow.gif
+%%PORTDOCS%%%%DOCSDIR%%/common/style/vertbars.png
+%%PORTDOCS%%%%DOCSDIR%%/common/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/common/doctools.py
+%%PORTDOCS%%%%DOCSDIR%%/common/doctools.pyc
+%%PORTDOCS%%%%DOCSDIR%%/common/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/common/template.html
 %%PORTDOCS%%%%DOCSDIR%%/cmdline.html
 %%PORTDOCS%%%%DOCSDIR%%/cmdline.txt
 %%PORTDOCS%%%%DOCSDIR%%/dates.html
@@ -521,5 +571,6 @@ bin/pybabel
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/babel
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/style
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/common/conf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/common/style
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/common
