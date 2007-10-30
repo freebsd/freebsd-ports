@@ -93,6 +93,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/randoms.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/sha.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/shaper.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stringprep.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/stringprep_sup.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/tls.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/translate.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/xml.beam
@@ -126,6 +127,8 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/uk.msg
 %%PORTDOCS%%%%DOCSDIR%%/guide.tex
 %%PORTDOCS%%%%DOCSDIR%%/introduction.tex
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_1.1.4.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_1.1.3.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_1.1.2.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.1.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.8.txt

@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Apr  1 13:06:36 2006
-+++ Makefile.in	Tue Apr 25 07:43:19 2006
+--- Makefile.in.orig	2007-04-30 08:08:01.000000000 +0100
++++ Makefile.in	2007-10-30 01:26:29.000000000 +0000
 @@ -32,15 +32,15 @@
  SOURCES = $(wildcard *.erl)
  BEAMS = $(SOURCES:.erl=.beam)
@@ -21,11 +21,11 @@
  
  ASN_FLAGS = -bber_bin +der +compact_bit_string +optimize +noobj
  
-@@ -82,7 +82,7 @@
+@@ -89,7 +89,7 @@
  	install -d $(MSGSDIR)
  	install -m 644 msgs/*.msg $(MSGSDIR)
  	install -d $(ETCDIR)
--	install -b -m 644 ejabberd.cfg.example $(ETCDIR)/ejabberd.cfg
+-	[ -f $(ETCDIR)/ejabberd.cfg ] && install -b -m 644 ejabberd.cfg.example $(ETCDIR)/ejabberd.cfg-new || install -b -m 644 ejabberd.cfg.example $(ETCDIR)/ejabberd.cfg
 +	install -b -m 644 ejabberd.cfg.example $(ETCDIR)
  	install -d $(LOGDIR)
  
