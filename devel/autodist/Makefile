@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autodist
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	devel
 MASTER_SITES=	http://silcnet.org/download/autodist/sources/ \
 		http://public.planetmirror.com/pub/silcnet/autodist/sources/ \
