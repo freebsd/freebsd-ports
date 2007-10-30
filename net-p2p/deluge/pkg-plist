@@ -611,6 +611,7 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/WebUi/gtk_cherrypy_wsgiserver.py
 %%DATADIR%%/plugins/WebUi/revno
 %%DATADIR%%/plugins/WebUi/run_webserver
+%%DATADIR%%/plugins/WebUi/scripts/add_torrent_to_deluge_webui
 %%DATADIR%%/plugins/WebUi/scripts/add_torrents_to_deluge.user.js
 %%DATADIR%%/plugins/WebUi/scripts/build_webui_tarball.sh
 %%DATADIR%%/plugins/WebUi/scripts/curl-example
@@ -630,12 +631,15 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/WebUi/static/images/tango/media-playback-start.png
 %%DATADIR%%/plugins/WebUi/static/images/tango/preferences-system.png
 %%DATADIR%%/plugins/WebUi/static/images/tango/process-stop.png
+%%DATADIR%%/plugins/WebUi/static/images/tango/system-log-out.png
 %%DATADIR%%/plugins/WebUi/static/images/tango/up.png
 %%DATADIR%%/plugins/WebUi/static/images/tango/user-trash.png
 %%DATADIR%%/plugins/WebUi/static/images/tango/view-refresh.png
 %%DATADIR%%/plugins/WebUi/static/simple_site_style.css
+%%DATADIR%%/plugins/WebUi/static_handler.py
 %%DATADIR%%/plugins/WebUi/templates/deluge/about.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/authors.txt
+%%DATADIR%%/plugins/WebUi/templates/deluge/config.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/error.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/footer.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/header.html
@@ -643,11 +647,15 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/WebUi/templates/deluge/login.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/part_button.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/part_refresh.html
+%%DATADIR%%/plugins/WebUi/templates/deluge/part_stats.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/refresh_form.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/sort_column_head.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/torrent_add.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/torrent_delete.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/torrent_info.html
+%%DATADIR%%/plugins/WebUi/templates/example/footer.html
+%%DATADIR%%/plugins/WebUi/templates/example/header.html
+%%DATADIR%%/plugins/WebUi/templates/example/index.html
 %%DATADIR%%/plugins/WebUi/templates/hacking-templates.txt
 %%DATADIR%%/plugins/WebUi/version
 %%DATADIR%%/plugins/WebUi/webpy022/Dependency-not-really part of webui.txt
@@ -681,6 +689,7 @@ share/locale/el/LC_MESSAGES/deluge.mo
 share/locale/en_AU/LC_MESSAGES/deluge.mo
 share/locale/en_CA/LC_MESSAGES/deluge.mo
 share/locale/en_GB/LC_MESSAGES/deluge.mo
+share/locale/eo/LC_MESSAGES/deluge.mo
 share/locale/es/LC_MESSAGES/deluge.mo
 share/locale/et/LC_MESSAGES/deluge.mo
 share/locale/eu/LC_MESSAGES/deluge.mo
@@ -694,6 +703,7 @@ share/locale/id/LC_MESSAGES/deluge.mo
 share/locale/is/LC_MESSAGES/deluge.mo
 share/locale/it/LC_MESSAGES/deluge.mo
 share/locale/ja/LC_MESSAGES/deluge.mo
+share/locale/ka/LC_MESSAGES/deluge.mo
 share/locale/ko/LC_MESSAGES/deluge.mo
 share/locale/ku/LC_MESSAGES/deluge.mo
 share/locale/la/LC_MESSAGES/deluge.mo
@@ -708,6 +718,7 @@ share/locale/pt/LC_MESSAGES/deluge.mo
 share/locale/pt_BR/LC_MESSAGES/deluge.mo
 share/locale/ro/LC_MESSAGES/deluge.mo
 share/locale/ru/LC_MESSAGES/deluge.mo
+share/locale/si/LC_MESSAGES/deluge.mo
 share/locale/sk/LC_MESSAGES/deluge.mo
 share/locale/sl/LC_MESSAGES/deluge.mo
 share/locale/sr/LC_MESSAGES/deluge.mo
@@ -716,11 +727,14 @@ share/locale/ta/LC_MESSAGES/deluge.mo
 share/locale/tlh/LC_MESSAGES/deluge.mo
 share/locale/tr/LC_MESSAGES/deluge.mo
 share/locale/uk/LC_MESSAGES/deluge.mo
+share/locale/vi/LC_MESSAGES/deluge.mo
 share/locale/zh_CN/LC_MESSAGES/deluge.mo
 share/locale/zh_TW/LC_MESSAGES/deluge.mo
 share/pixmaps/deluge.png
 @dirrmtry share/locale/tlh/LC_MESSAGES
 @dirrmtry share/locale/tlh
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/la/LC_MESSAGES
 @dirrmtry share/locale/la
 @dirrmtry share/locale/ku/LC_MESSAGES
@@ -730,6 +744,7 @@ share/pixmaps/deluge.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/plugins/WebUi/webpy022/wsgiserver
 @dirrm %%DATADIR%%/plugins/WebUi/webpy022
+@dirrm %%DATADIR%%/plugins/WebUi/templates/example
 @dirrm %%DATADIR%%/plugins/WebUi/templates/deluge
 @dirrm %%DATADIR%%/plugins/WebUi/templates
 @dirrm %%DATADIR%%/plugins/WebUi/static/images/tango

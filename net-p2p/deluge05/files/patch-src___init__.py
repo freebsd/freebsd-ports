@@ -1,5 +1,5 @@
---- src/__init__.py.orig	2007-10-25 17:19:53.000000000 -0500
-+++ src/__init__.py	2007-10-25 17:21:29.000000000 -0500
+--- src/__init__.py.orig	2007-10-30 00:15:34.000000000 -0500
++++ src/__init__.py	2007-10-30 00:16:07.000000000 -0500
 @@ -37,15 +37,15 @@
  
  APP = 'deluge'
@@ -11,7 +11,7 @@
 -else:
 -    import gtk.glade
 -    locale.setlocale(locale.LC_ALL, '')
--    gtk.glade.bindtextdomain(APP, DIR)
+-    gtk.glade.bindtextdomain(APP,DIR)
 -    gtk.glade.textdomain(APP)
 +#if not common.windows_check(): 
 +#    locale.setlocale(locale.LC_MESSAGES, '')
@@ -20,7 +20,7 @@
 +#else:
 +#    import gtk.glade
 +#    locale.setlocale(locale.LC_ALL, '')
-+#    gtk.glade.bindtextdomain(APP, DIR)
++#    gtk.glade.bindtextdomain(APP,DIR)
 +#    gtk.glade.textdomain(APP)
  gettext.bindtextdomain(APP, DIR)
  gettext.textdomain(APP)
