@@ -21,3 +21,5 @@ sbin/mount_fusefs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/kmod/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/kmod
 @dirrmtry %%DOCSDIR%%
+@cwd /usr
+sbin/mount_fusefs
