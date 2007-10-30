@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	cw
-PORTVERSION=	1.0.14
+PORTVERSION=	1.0.15
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cwrapper.sourceforge.net/ \
 		http://www.fakehalo.us/cw/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	A non-intrusive color wrapper for common commands
 
 GNU_CONFIGURE=	yes
