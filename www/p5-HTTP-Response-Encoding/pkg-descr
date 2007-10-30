@@ -1,0 +1,3 @@
+This module adds the following methods to HTTP::Response objects.
+
+WWW:	http://search.cpan.org/dist/HTTP-Response-Encoding/
