@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	100.14.11
+DISTVERSION?=	100.14.19
 PORTREVISION?=	0			# For consistency with slave ports
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -35,13 +35,13 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 # you need to use legacy driver version and install one of corresponding
 # `x11/nvidia-driver-71xx' or `x11/nvidia-driver-96xx' slave ports.
 #
-.if ${DISTVERSION:M1.0-*}
-NVVERSION=	${DISTVERSION:S/1.0-//}
-.else
 NVVERSION=	${DISTVERSION:S/.//g}
-.endif
 
-EXTRA_PATCHES+=	${FILESDIR}/7667-patch-lib::Makefile
+# Use a dirty hack to apply patches selectively based on NVVERSION (first
+# two or three digits, really).
+#
+EXTRA_PATCHES=	${PATCHDIR}/7667-patch-lib::Makefile \
+		${PATCHDIR}/${NVVERSION:C/....$//}xx-patch-*
 
 .include <bsd.port.pre.mk>
 
@@ -90,9 +90,7 @@ LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
 
 post-patch: .SILENT
 # We should support -CURRENT: kill the check
-.if ${NVVERSION} >= 7174
 	${REINPLACE_CMD} '24,26d' ${WRKSRC}/src/nv-freebsd.h
-.endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
@@ -110,7 +108,7 @@ post-patch: .SILENT
 		${WRKSRC}/src/nv-freebsd.h
 .endif
 # Don't build any binaries (nvidia-settings and nvidia-xconfig)
-.if ${NVVERSION} < 9746
+.if ${NVVERSION} < 974600
 	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
 .else
 	${REINPLACE_CMD} -E 's/(lib).*/\1/' ${WRKSRC}/x11/Makefile
@@ -120,29 +118,27 @@ post-patch: .SILENT
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -E 's/(x11).*/\1/ ; /doc/d' ${WRKSRC}/Makefile
 .endif
-.if ${X_WINDOW_SYSTEM} == "xorg"
-	${REINPLACE_CMD} -e 's|lib/modules|lib/xorg/modules|' \
-		${WRKSRC}/x11/driver/Makefile \
-		${WRKSRC}/x11/extension/Makefile
-.if ${NVVERSION} >= 9746
-	${REINPLACE_CMD} -e 's|lib/modules|lib/xorg/modules|' \
-		${WRKSRC}/x11/lib/Makefile
-.endif
-.endif
 # Do not execute afterinstall target (prevent automatic module registration)
 	${REINPLACE_CMD} -e 's/afterinstall/dontexecute/' ${WRKSRC}/Makefile
 
 pre-su-install:
+# XXX This port silently assumes PREFIX == X11BASE XXX
 	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
+# xorg-server-1.4 installs its own ${X11BASE}/lib/xorg/modules/libwfb.so,
+# so back it up so it can be later restored similarly to what nVidia does:
+.if ${NVVERSION} >= 974600 && ${X_WINDOW_SYSTEM} == "xorg"
+	@${MV} -f ${PREFIX}/${MODULESDIR}/libwfb.so \
+		${PREFIX}/${MODULESDIR}/XXX-libwfb.so.%%.${XSERVVERSION}
+.endif
 
 post-install:
 # pkg-plist is already overbloated, so use this hack instead of PLIST_SUB's
-.if ${NVVERSION} < 8174
+.if ${NVVERSION} < 817400
 	@${REINPLACE_CMD} '/libnvidia-cfg/d' ${TMPPLIST}
 .else
 	@${REINPLACE_CMD} '/nvidia_drv\.o/d' ${TMPPLIST}
 .endif
-.if ${NVVERSION} < 9746
+.if ${NVVERSION} < 974600
 	@${REINPLACE_CMD} '/wfb/d' ${TMPPLIST}
 .endif
 	@${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
