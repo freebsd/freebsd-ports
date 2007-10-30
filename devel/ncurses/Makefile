@@ -120,7 +120,7 @@ post-patch:
 
 post-configure:
 .if !defined(WITHOUT_WIDEC)
-	${MAKE} CONFIGURE_WRKSRC=${WIDEC_WRKSRC} \
+	${MAKE} ${.MAKEFLAGS} CONFIGURE_WRKSRC=${WIDEC_WRKSRC} \
 	    CONFIGURE_ARGS="${CONFIGURE_ARGS} --enable-widec" \
 	    do-configure
 .endif
@@ -133,12 +133,12 @@ post-configure:
 
 post-build:
 .if !defined(WITHOUT_WIDEC)
-	${MAKE} BUILD_WRKSRC=${WIDEC_WRKSRC} do-build
+	${MAKE} ${.MAKEFLAGS} BUILD_WRKSRC=${WIDEC_WRKSRC} do-build
 .endif
 
 post-install:
 .if !defined(WITHOUT_WIDEC)
-	${MAKE} INSTALL_WRKSRC=${WIDEC_WRKSRC} do-install
+	${MAKE} ${.MAKEFLAGS} INSTALL_WRKSRC=${WIDEC_WRKSRC} do-install
 .endif
 
 .for i in ${EXAMPLES_TARGETS}
