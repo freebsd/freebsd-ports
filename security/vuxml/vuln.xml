@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="db449245-870d-11dc-a3ec-001921ab2fa4">
+    <topic>openldap -- multiple remote denial of service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openldap-server</name>
+	<range><lt>2.3.39</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>BugTraq reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/26245/">
+	  <p>OpenLDAP is prone to multiple remote denial-of-service
+	    vulnerabilities because of an incorrect NULL-termination
+	    issue and a double-free issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>26245</bid>
+      <cvename>CVE-2007-5707</cvename>
+      <cvename>CVE-2007-5708</cvename>
+    </references>
+    <dates>
+      <discovery>2007-10-29</discovery>
+      <entry>2007-10-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2c2952d-85a1-11dc-bfff-003048705d5a">
     <topic>py-django -- denial of service vulnerability</topic>
     <affects>
