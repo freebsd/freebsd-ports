@@ -2766,8 +2766,11 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>mod_jk</name>
-	<name>mod_jk-ap2</name>
 	<range><lt>1.2.23,1</lt></range>
+      </package>
+      <package>
+	<name>mod_jk-ap2</name>
+	<range><lt>1.2.23</lt></range>
       </package>
     </affects>
     <description>
