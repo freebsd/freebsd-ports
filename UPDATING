@@ -6,6 +6,28 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20071101:
+  AFFECTS: users of x11/nvidia-driver
+  AUTHOR: danfe@FreeBSD.org
+
+  There appears to be a conflict with xorg-server 1.4 and previous version
+  of nvidia-driver: new xorg-server had plist change that made upgrading of
+  nvidia-driver bomb out with the following error:
+
+	===>  Checking if x11/nvidia-driver already installed
+	mv: rename /usr/local/lib/xorg/modules/libwfb.so to
+	/usr/local/lib/xorg/modules/XXX-libwfb.so.%%.xorg-server-1.4_2,1:
+	No such file or directory
+	*** Error code 1
+
+  To remedy the situation, deinstall any instance of nvidia-driver you might
+  have, then reinstall xorg-server, e.g.:
+
+	# cd /usr/ports/x11-servers/xorg-server
+	# make install -DFORCE_PKG_REGISTER
+
+  After that, new nvidia-driver will install cleanly.
+
 20071030:
   AFFECTS: users of net/skype
   AUTHOR: beech@FreeBSD.org
