@@ -1036,7 +1036,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>seamonkey</name>
 	<name>linux-seamonkey</name>
-	<range><gt>0</gt></range>
+	<range><lt>1.1.5</lt></range>
       </package>
       <package>
 	<name>linux-firefox-devel</name>
@@ -1075,6 +1075,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-09-18</discovery>
       <entry>2007-09-19</entry>
+      <modified>2007-10-31</modified>
     </dates>
   </vuln>
 
