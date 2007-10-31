@@ -9,10 +9,9 @@ PORTNAME=	openmortal
 PORTVERSION=	0.7
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A parody of the once popular coin-up fighting game, Mortal Kombat
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
@@ -25,12 +24,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-post-patch:
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
