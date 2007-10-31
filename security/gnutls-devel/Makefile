@@ -37,6 +37,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-included-lzo
 MANCOMPRESSED=	no
 
+IGNORE=		is obsolete
+
 .include <bsd.port.pre.mk>
 .if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.9)
 LIB_DEPENDS+=	opencdk.9:${PORTSDIR}/security/opencdk
