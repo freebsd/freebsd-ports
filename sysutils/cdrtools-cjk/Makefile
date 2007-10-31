@@ -7,7 +7,7 @@
 
 PORTVERSION=	2.01.${PATCHDATE}
 PORTREVISION=	2
-CATEGORIES=	chinese japanese korean sysutils audio
+CATEGORIES=	sysutils chinese japanese korean audio
 PKGNAMEPREFIX=	cjk-
 
 #PATCH_SITES=	http://www.geocities.co.jp/SiliconValley/3657/mkisofs_patch/
