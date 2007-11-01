@@ -1,13 +1,17 @@
-bin/ports-config
-lib/ports-%%PORTVERSION%%/ghc6/import/HPL.hi
-lib/ports-%%PORTVERSION%%/ghc6/import/PortThreads.hi
-lib/ports-%%PORTVERSION%%/ghc6/import/Ports.hi
-lib/ports-%%PORTVERSION%%/ghc6/import/PortsConfig.hi
-lib/ports-%%PORTVERSION%%/ghc6/import/PortsVersion.hi
-lib/ports-%%PORTVERSION%%/ghc6/import/Processes.hi
-lib/ports-%%PORTVERSION%%/ghc6/import/SVars.hi
-lib/ports-%%PORTVERSION%%/ghc6/import/ThreadUtils.hi
-lib/ports-%%PORTVERSION%%/ghc6/libportsHS.a
-@dirrm lib/ports-%%PORTVERSION%%/ghc6/import
-@dirrm lib/ports-%%PORTVERSION%%/ghc6
-@dirrm lib/ports-%%PORTVERSION%%
+%%SUBDIR%%/HSports-%%PORTVERSION%%.o
+%%SUBDIR%%/libHSports-%%PORTVERSION%%.a
+%%SUBDIR%%/Control/Concurrent/HPL.hi
+%%SUBDIR%%/Control/Concurrent/PortThreads.hi
+%%SUBDIR%%/Control/Concurrent/Ports.hi
+%%SUBDIR%%/Control/Concurrent/Processes.hi
+%%SUBDIR%%/Control/Concurrent/SVars.hi
+%%SUBDIR%%/Control/Concurrent/ThreadUtils.hi
+%%SUBDIR%%/Control/Concurrent/PortsConfig.hi
+%%SUBDIR%%/Control/Concurrent/PortsVersion.hi
+@dirrmtry %%SUBDIR%%/Control/Concurrent
+@dirrmtry %%SUBDIR%%/Control
+%%SUBDIR%%/%%HSPORTNAME%%-register.sh
+@exec /bin/sh %D/%%SUBDIR%%/%%HSPORTNAME%%-register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister %%HSPORTNAME%%
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
