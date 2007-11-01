@@ -813,6 +813,7 @@
     SUBDIR += sixxs-aiccu
     SUBDIR += skstream
     SUBDIR += skype
+    SUBDIR += skype-devel
     SUBDIR += sl2tps
     SUBDIR += slbd
     SUBDIR += slirp
