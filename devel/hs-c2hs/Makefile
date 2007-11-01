@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	c2hs
-PORTVERSION=	0.13.6
-PORTREVISION=	3
+PORTVERSION=	0.15.0
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
 PKGNAMEPREFIX=	hs-
@@ -15,43 +14,34 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	C->Haskell, an Interface Generator for Haskell
 
-OPTIONS=	GHC5 "Build for ghc5" off
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
+		happy:${PORTSDIR}/devel/hs-happy \
+		alex:${PORTSDIR}/devel/hs-alex
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GHC5)
-GHC=		ghc-5.04.3
-GHCDEP=		ghc5
-GHCMAJOR=	5
-.else
-BROKEN=		Does not build with latest GHC
-GHC=		ghc-6.6
-GHCDEP=		ghc
-GHCMAJOR=	6
-.endif
-PKGNAMESUFFIX=	-${GHCDEP}
+GHC_VERSION=	6.6.1
 
-BUILD_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
-RUN_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
+# 'owned' by lang/ghc:
+CABALDIR=       ${PREFIX}/lib/ghc-${GHC_VERSION}/cabal
+CABALCMD=       ${LOCALBASE}/bin/runghc Setup.hs
 
-HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
+PLIST_FILES=	bin/c2hs
 
-GHC_VERSION=	${GHC:S/^ghc-//} # `${LOCALBASE}/bin/${GHC} --numeric-version`
-PLIST_SUB+=	C2HS_VERSION="${PORTVERSION}" GHC_VERSION="${GHC_VERSION}"
-PLIST_SUB+=	GHCMAJOR="${GHCMAJOR}"
+CONFIGURE_ARGS=	--ghc --prefix=${PREFIX} --libdir=${CABALDIR} \
+			--libsubdir='' --datasubdir=''
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-add-package \
-			--with-hc=${GHC}
+do-configure:
+	cd ${WRKSRC} && ${CABALCMD} configure ${CONFIGURE_ARGS}
 
-MAN1=	c2hs-config.1 c2hs.1
+do-build:
+	cd ${WRKSRC} && ${CABALCMD} build
 
-post-build:
-	@(cd ${WRKSRC}/doc/c2hs && ${GMAKE} man1/c2hs-config.1 man1/c2hs.1)
+do-install:
+	cd ${WRKSRC} && ${CABALCMD} install
 
 post-install:
-	@(cd ${WRKSRC}/doc/c2hs/man1 && \
-		 ${INSTALL_MAN} c2hs-config.1 c2hs.1 ${MANPREFIX}/man/man1)
-	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
+	@${STRIP_CMD} ${PREFIX}/bin/c2hs
 
 .include <bsd.port.post.mk>
