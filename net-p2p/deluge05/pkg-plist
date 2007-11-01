@@ -54,6 +54,7 @@ share/applications/deluge.desktop
 %%DATADIR%%/glade/torrent_menu.glade
 %%DATADIR%%/glade/tray_menu.glade
 %%DATADIR%%/glade/wizard.glade
+%%DATADIR%%/icons/scalable/apps/deluge.svg
 %%DATADIR%%/pixmaps/deluge-about.png
 %%DATADIR%%/pixmaps/deluge.png
 %%DATADIR%%/pixmaps/deluge.svg
@@ -678,6 +679,18 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/WebUi/webserver_framework.py
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/icons/hicolor/128x128/apps/deluge.png
+share/icons/hicolor/16x16/apps/deluge.png
+share/icons/hicolor/192x192/apps/deluge.png
+share/icons/hicolor/22x22/apps/deluge.png
+share/icons/hicolor/24x24/apps/deluge.png
+share/icons/hicolor/256x256/apps/deluge.png
+share/icons/hicolor/32x32/apps/deluge.png
+share/icons/hicolor/36x36/apps/deluge.png
+share/icons/hicolor/48x48/apps/deluge.png
+share/icons/hicolor/64x64/apps/deluge.png
+share/icons/hicolor/72x72/apps/deluge.png
+share/icons/hicolor/96x96/apps/deluge.png
 share/locale/ar/LC_MESSAGES/deluge.mo
 share/locale/ast/LC_MESSAGES/deluge.mo
 share/locale/bg/LC_MESSAGES/deluge.mo
@@ -741,12 +754,15 @@ share/pixmaps/deluge.png
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/plugins/WebUi/webpy022/wsgiserver
 @dirrm %%DATADIR%%/plugins/WebUi/webpy022
 @dirrm %%DATADIR%%/plugins/WebUi/templates/example
 @dirrm %%DATADIR%%/plugins/WebUi/templates/deluge
 @dirrm %%DATADIR%%/plugins/WebUi/templates
+@dirrm %%DATADIR%%/plugins/WebUi/static/xul
 @dirrm %%DATADIR%%/plugins/WebUi/static/images/tango
 @dirrm %%DATADIR%%/plugins/WebUi/static/images
 @dirrm %%DATADIR%%/plugins/WebUi/static
