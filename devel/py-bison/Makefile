@@ -19,7 +19,7 @@ COMMENT=	Python-based parsing at the speed of C
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex
 
-USE_BISON=	run
+USE_BISON=	both
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.1
@@ -32,7 +32,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Does not compile on ia64"
+BROKEN=		Does not compile on ia64
 .endif
 
 .if !defined(NOPORTDOCS)
