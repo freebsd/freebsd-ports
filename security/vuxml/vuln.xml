@@ -40,6 +40,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>openldap-server</name>
 	<range><lt>2.3.39</lt></range>
+	<range><gt>2.4.0</gt><lt>2.4.6</lt></range>
       </package>
     </affects>
     <description>
@@ -60,6 +61,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-10-29</discovery>
       <entry>2007-10-30</entry>
+      <modified>2007-10-31</modified>
     </dates>
   </vuln>
 
