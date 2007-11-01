@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	deluge
-PORTVERSION=	0.5.6.1
-PORTREVISION=	1
+PORTVERSION=	0.5.6.2
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/tarball/${PORTVERSION}/
 
@@ -20,12 +19,13 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-torrent-${PORTVERSION}
 USE_GNOME=	pygtk2 desktopfileutils
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_PYTHON=	yes
-USE_DOS2UNIX=	*.py
 USE_PYDISTUTILS=yes
+INSTALLS_ICONS=	yes
 
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
