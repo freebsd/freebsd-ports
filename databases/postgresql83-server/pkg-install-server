@@ -8,7 +8,7 @@ DB_DIR=${PKG_PREFIX}/${PGUSER}
 
 backupwarning() { echo "
 
-  == BETA QUALITY, DON'T FOR PRODUCTION USE ==
+  == BETA QUALITY, NOT FOR PRODUCTION USE! ==
 
   =========== BACKUP YOUR DATA! =============
   As always, backup your data before

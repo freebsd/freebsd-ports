@@ -274,9 +274,22 @@ include/postgresql/server/port/win32/netinet/in.h
 include/postgresql/server/port/win32/pwd.h
 include/postgresql/server/port/win32/sys/socket.h
 include/postgresql/server/port/win32/sys/wait.h
+include/postgresql/server/port/win32_msvc/dirent.h
+include/postgresql/server/port/win32_msvc/sys/file.h
+include/postgresql/server/port/win32_msvc/sys/param.h
+include/postgresql/server/port/win32_msvc/sys/time.h
+include/postgresql/server/port/win32_msvc/unistd.h
+include/postgresql/server/port/win32_msvc/utime.h
 include/postgresql/server/postgres.h
 include/postgresql/server/postgres_ext.h
 include/postgresql/server/postgres_fe.h
+include/postgresql/server/postmaster/autovacuum.h
+include/postgresql/server/postmaster/bgwriter.h
+include/postgresql/server/postmaster/fork_process.h
+include/postgresql/server/postmaster/pgarch.h
+include/postgresql/server/postmaster/postmaster.h
+include/postgresql/server/postmaster/syslogger.h
+include/postgresql/server/postmaster/walwriter.h
 include/postgresql/server/regex/regcustom.h
 include/postgresql/server/regex/regerrs.h
 include/postgresql/server/regex/regex.h
@@ -288,6 +301,40 @@ include/postgresql/server/rewrite/rewriteManip.h
 include/postgresql/server/rewrite/rewriteRemove.h
 include/postgresql/server/rewrite/rewriteSupport.h
 include/postgresql/server/rusagestub.h
+include/postgresql/server/snowball/header.h
+include/postgresql/server/snowball/libstemmer/api.h
+include/postgresql/server/snowball/libstemmer/header.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_danish.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_dutch.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_english.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_finnish.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_french.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_german.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_hungarian.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_italian.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_norwegian.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_porter.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_portuguese.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_spanish.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_1_swedish.h
+include/postgresql/server/snowball/libstemmer/stem_ISO_8859_2_romanian.h
+include/postgresql/server/snowball/libstemmer/stem_KOI8_R_russian.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_danish.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_dutch.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_english.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_finnish.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_french.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_german.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_hungarian.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_italian.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_norwegian.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_porter.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_portuguese.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_romanian.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_russian.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_spanish.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_swedish.h
+include/postgresql/server/snowball/libstemmer/stem_UTF_8_turkish.h
 include/postgresql/server/storage/backendid.h
 include/postgresql/server/storage/block.h
 include/postgresql/server/storage/buf.h
@@ -326,6 +373,8 @@ include/postgresql/server/tcop/pquery.h
 include/postgresql/server/tcop/tcopdebug.h
 include/postgresql/server/tcop/tcopprot.h
 include/postgresql/server/tcop/utility.h
+include/postgresql/server/tsearch/dicts/regis.h
+include/postgresql/server/tsearch/dicts/spell.h
 include/postgresql/server/tsearch/ts_cache.h
 include/postgresql/server/tsearch/ts_locale.h
 include/postgresql/server/tsearch/ts_public.h
@@ -385,11 +434,17 @@ include/postgresql/server/utils/uuid.h
 include/postgresql/server/utils/varbit.h
 include/postgresql/server/utils/xml.h
 @dirrm include/postgresql/server/utils
+@dirrm include/postgresql/server/tsearch/dicts
 @dirrm include/postgresql/server/tsearch
 @dirrm include/postgresql/server/tcop
 @dirrm include/postgresql/server/storage
+@dirrm include/postgresql/server/snowball/libstemmer
+@dirrm include/postgresql/server/snowball
 @dirrm include/postgresql/server/rewrite
 @dirrm include/postgresql/server/regex
+@dirrm include/postgresql/server/postmaster
+@dirrm include/postgresql/server/port/win32_msvc/sys
+@dirrm include/postgresql/server/port/win32_msvc
 @dirrm include/postgresql/server/port/win32/sys
 @dirrm include/postgresql/server/port/win32/netinet
 @dirrm include/postgresql/server/port/win32/arpa
@@ -536,6 +591,7 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_dump.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/ta/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_config.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_dump.mo

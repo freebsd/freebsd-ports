@@ -6,11 +6,11 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.3beta1
+PORTVERSION?=	8.3beta2
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
+MASTER_SITE_SUBDIR=	source/v${PORTVERSION:C/[0-9]$//}
 PKGNAMESUFFIX?=	-server
 DISTFILES?=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
@@ -48,8 +48,8 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
 BUILD_DIRS?=	src/port src/timezone src/backend src/backend/utils/mb/conversion_procs \
-		src/bin/initdb src/bin/ipcclean src/bin/pg_ctl src/bin/pg_controldata \
-		src/bin/pg_resetxlog src/pl
+		src/backend/snowball src/bin/initdb src/bin/ipcclean src/bin/pg_ctl \
+		src/bin/pg_controldata src/bin/pg_resetxlog src/pl
 
 INSTALL_DIRS?=	${BUILD_DIRS}
 
