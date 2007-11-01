@@ -9,6 +9,7 @@ etc/periodic/daily/502.pgsql
 lib/libpgport.a
 lib/postgresql/ascii_and_mic.so
 lib/postgresql/cyrillic_and_mic.so
+lib/postgresql/dict_snowball.so
 lib/postgresql/euc_cn_and_mic.so
 lib/postgresql/euc_jis_2004_and_shift_jis_2004.so
 lib/postgresql/euc_jp_and_sjis.so
@@ -116,6 +117,7 @@ share/postgresql/system_views.sql
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_ctl.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/postgres.mo
+%%GETTEXT%%share/locale/ta/LC_MESSAGES/initdb.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/initdb.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_ctl.mo
@@ -132,6 +134,7 @@ share/postgresql/system_views.sql
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/postgres.mo
 share/postgresql/postgres.shdescription
+share/postgresql/snowball_create.sql
 share/postgresql/timezone/Africa/Abidjan
 share/postgresql/timezone/Africa/Accra
 share/postgresql/timezone/Africa/Addis_Ababa
@@ -727,6 +730,20 @@ share/postgresql/timezonesets/Pacific.txt
 @dirrm share/postgresql/timezone/US
 @dirrm share/postgresql/timezone
 @dirrm share/postgresql/timezonesets
+share/postgresql/tsearch_data/danish.stop
+share/postgresql/tsearch_data/dutch.stop
+share/postgresql/tsearch_data/english.stop
+share/postgresql/tsearch_data/finnish.stop
+share/postgresql/tsearch_data/french.stop
+share/postgresql/tsearch_data/german.stop
+share/postgresql/tsearch_data/hungarian.stop
+share/postgresql/tsearch_data/italian.stop
+share/postgresql/tsearch_data/norwegian.stop
+share/postgresql/tsearch_data/portuguese.stop
+share/postgresql/tsearch_data/russian.stop
+share/postgresql/tsearch_data/spanish.stop
+share/postgresql/tsearch_data/swedish.stop
+share/postgresql/tsearch_data/turkish.stop
 share/postgresql/tsearch_data/hunspell_sample.affix
 share/postgresql/tsearch_data/ispell_sample.affix
 share/postgresql/tsearch_data/ispell_sample.dict
