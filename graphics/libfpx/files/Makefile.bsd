@@ -34,7 +34,7 @@ LDADD	+=	-L${LOCALBASE}/lib -lm -lstdc++
 
 .PATH: ${CPPS:H}
 
-.for d in oless/h jpeg ole basics ri_image oless fpx
+.for d in oless/h jpeg ole basics ri_image oless fpx .
 CXXFLAGS+=	-I${.CURDIR}/$d
 .endfor
 
