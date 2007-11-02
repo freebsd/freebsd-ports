@@ -56,14 +56,4 @@ MAKE_ENV+=	PORTDOCS=true
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.if ${ARCH} != "i386"
-BROKEN=		fails to install
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
