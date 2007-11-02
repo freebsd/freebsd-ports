@@ -1,7 +1,8 @@
 LIB	=	fpx
 INCS	=	fpxlib.h
-SHLIB_MAJOR=	1
+SHLIB_MAJOR=	2
 SHLIB_MINOR=	7
+WARNS=	3
 
 LIBDIR	=	${LOCALBASE}/lib
 INCSDIR	=	${LOCALBASE}/include
@@ -26,7 +27,7 @@ JPGS	!=	find ${.CURDIR}/jpeg -name \*.c
 
 CPPS	+=	${OLESS:S/^/${.CURDIR}\/oless\//} ${JPGS}
 
-SRCS	=	${CPPS:T}
+SRCS	=	${CPPS:T:Nejpeg.c}
 
 CXXFLAGS+=	-fno-rtti -fno-exceptions ${HAVES}
 LDADD	+=	-L${LOCALBASE}/lib -lm -lstdc++
