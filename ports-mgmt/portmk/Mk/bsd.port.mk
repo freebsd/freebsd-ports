@@ -2042,21 +2042,21 @@ RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 .endif
 
 .if defined(USE_BISON)
-_BISON_DEPENDS= bison:${PORTSDIR}/devel/bison
+_BISON_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 # XXX: backwards compatibility
 . if ${USE_BISON:L} == "yes"
-BUILD_DEPENDS+= ${_BISON_DEPENDS}
+USE_BISON=	build
 pre-everything::
 	@${ECHO_MSG} "WARNING: USE_BISON=yes deprecated, use build/run/both"
 . endif
 
 . if ${USE_BISON:L} == "build"
-BUILD_DEPENDS+=	${_BISON_DEPENDS}
+BUILD_DEPENDS+= ${_BISON_DEPENDS}
 . elif ${USE_BISON:L} == "run"
 RUN_DEPENDS+=	${_BISON_DEPENDS}
 . elif ${USE_BISON:L} == "both"
-BUILD_DEPENDS+=	${_BISON_DEPENDS}
+BUILD_DEPENDS+= ${_BISON_DEPENDS}
 RUN_DEPENDS+=	${_BISON_DEPENDS}
 . else
 IGNORE=	uses unknown USE_BISON construct
