@@ -19,22 +19,22 @@
 @@ -1479,5 +1479,5 @@
  install-pkgLTLIBRARIES: $(pkg_LTLIBRARIES)
  	@$(NORMAL_INSTALL)
--	test -z "$(pkgdir)" || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
-+	test -z "$(pkgdir)" -o -z "$(pkg_LTLIBRARIES)" || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
+-	test -z "$(pkgdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)" -o -z "$(pkg_LTLIBRARIES)" || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
  	@list='$(pkg_LTLIBRARIES)'; for p in $$list; do \
  	 if test -f $$p; then \
 @@ -1825,5 +1825,5 @@
  install-pkgDATA: $(pkg_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(pkgdir)" || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
-+	test -z "$(pkgdir)" -o -z '$(pkg_DATA)' || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
+-	test -z "$(pkgdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)" -o -z '$(pkg_DATA)' || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
  	@list='$(pkg_DATA)'; for p in $$list; do \
  	 if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 @@ -1842,5 +1842,5 @@
  install-pkgdataDATA: $(pkgdata_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(pkgdatadir)" || $(mkdir_p) "$(DESTDIR)$(pkgdatadir)"
-+	test -z "$(pkgdatadir)" -o -z '$(pkgdata_DATA)' || $(mkdir_p) "$(DESTDIR)$(pkgdatadir)"
+-	test -z "$(pkgdatadir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdatadir)"
++	test -z "$(pkgdatadir)" -o -z '$(pkgdata_DATA)' || $(MKDIR_P) "$(DESTDIR)$(pkgdatadir)"
  	@list='$(pkgdata_DATA)'; for p in $$list; do \
  	 if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 --- filters/Makefile.in        Fri Mar 18 19:36:17 2005
@@ -42,15 +42,15 @@
 @@ -522,5 +522,5 @@
  install-pkgLTLIBRARIES: $(pkg_LTLIBRARIES)
  	@$(NORMAL_INSTALL)
--	test -z "$(pkgdir)" || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
-+	test -z "$(pkgdir)"  -o -z '$(pkg_LTLIBRARIES)' || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
+-	test -z "$(pkgdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)"  -o -z '$(pkg_LTLIBRARIES)' || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
  	@list='$(pkg_LTLIBRARIES)'; for p in $$list; do \
  	  if test -f $$p; then \
 @@ -592,5 +592,5 @@
  install-pkgDATA: $(pkg_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(pkgdir)" || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
-+	test -z "$(pkgdir)" -o -z '$(pkg_DATA)' || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
+-	test -z "$(pkgdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)" -o -z '$(pkg_DATA)' || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
  	@list='$(pkg_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 --- magick/Makefile.in	Fri Mar 18 19:36:18 2005
@@ -65,8 +65,8 @@
 @@ -930,5 +930,5 @@
  install-pkgDATA: $(pkg_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(pkgdir)" || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
-+	test -z "$(pkgdir)" -o -z '$(pkg_DATA)' || $(mkdir_p) "$(DESTDIR)$(pkgdir)"
+-	test -z "$(pkgdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
++	test -z "$(pkgdir)" -o -z '$(pkg_DATA)' || $(MKDIR_P) "$(DESTDIR)$(pkgdir)"
  	@list='$(pkg_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 --- Magick++/lib/Makefile.in	Fri Mar 18 19:36:13 2005

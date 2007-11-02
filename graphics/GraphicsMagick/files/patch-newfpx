@@ -1,0 +1,20 @@
+--- coders/fpx.c	2004-04-14 18:45:28.000000000 -0400
++++ coders/fpx.c	2007-11-01 23:30:18.000000000 -0500
+@@ -182,13 +182,13 @@
+   unsigned int
+     status,
+-    subimage;
+-
+-  unsigned long
++    subimage,
+     height,
+-    memory_limit,
+     tile_width,
+     tile_height,
+     width;
+ 
++  size_t
++    memory_limit;
++
+   /*
+     Open image.

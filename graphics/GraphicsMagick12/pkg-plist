@@ -116,9 +116,7 @@ libdata/pkgconfig/GraphicsMagickWand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/Copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/www/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/www/GraphicsMagick.html
-%%PORTDOCS%%%%DOCSDIR%%/www/INSTALL-mac.html
 %%PORTDOCS%%%%DOCSDIR%%/www/INSTALL-unix.html
-%%PORTDOCS%%%%DOCSDIR%%/www/INSTALL-vms.html
 %%PORTDOCS%%%%DOCSDIR%%/www/INSTALL-windows.html
 %%PORTDOCS%%%%DOCSDIR%%/www/ImageMagickObject.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Blob.html

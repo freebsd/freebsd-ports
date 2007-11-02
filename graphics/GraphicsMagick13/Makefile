@@ -6,28 +6,27 @@
 #
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.1.7
-PORTREVISION=	2
+PORTVERSION=	1.1.10
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Fast image processing tools based on ImageMagick
 
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
+		fpx.[2-9]:${PORTSDIR}/graphics/libfpx	\
 		jbig:${PORTSDIR}/graphics/jbigkit	\
-		wmf:${PORTSDIR}/graphics/libwmf	\
+		wmflite:${PORTSDIR}/graphics/libwmf	\
 		xml2:${PORTSDIR}/textproc/libxml2
 OTHERGRAPHICS=	jasper jpeg lcms png tiff
 LIB_DEPENDS+=	${OTHERGRAPHICS:C|(.+)|\1:${PORTSDIR}/graphics/\1|}
 OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off
 
-# Use libfpx only on i386. On other systems it does not seem to work :-(
-OPTIONS+=	FPX "Build FPX backend -- broken on non-i386 systems" \
-		    ${ARCH:S,i386,on,:C,^[^o].*,off,}
+OPTIONS+=	TESTS "Run bundled self-tests after build" off
 
+USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
@@ -54,11 +53,16 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
 .endif
 
+ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
+
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-data-html
 .endif
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"       \
 	LDFLAGS="-L${LOCALBASE}/lib"
+
+test check:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.pre.mk>
 
@@ -70,18 +74,22 @@ PKGNAMESUFFIX+=	-nox11
 CONFIGURE_ARGS+=--without-x
 .endif
 
-.if defined(WITH_FPX)
-LIB_DEPENDS+=	fpx:${PORTSDIR}/graphics/libfpx
-.else
-CONFIGURE_ARGS+=--without-fpx
-.endif
-
 .if defined(WITH_Q8BIT) || defined(WITHOUT_GRAPHICSMAGICK_16BIT_PIXEL)
 CONFIGURE_ARGS+=	--with-quantum-depth=8
 PLIST_SUB+=		Q=8
 .else
 CONFIGURE_ARGS+=	--with-quantum-depth=16
 PLIST_SUB+=		Q=16
+.endif
+
+.if !defined(WITHOUT_TESTS)
+post-build::	test
+.else
+post-build::
+	#
+	# You are strongly advised to run ``make test'' now
+	# and report any failures to ${MAINTAINER}.
+	#
 .endif
 
 .include <bsd.port.post.mk>
