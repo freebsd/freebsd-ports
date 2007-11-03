@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_LUA=	5.0
 USE_SDL=	sdl mixer ttf net
 USE_GL=		yes
-USE_GCC=	4.0+
+USE_GCC=	4.2+
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--datadir=${DATADIR}

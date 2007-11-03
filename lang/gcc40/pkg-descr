@@ -1,6 +1,0 @@
-GCC, the GNU Compiler Collection includes C, C++, and Objective-C.
-
-This port installs the various front ends as gcc40, g++40, and
-so forth into the ${PREFIX}/bin directory.
-
-WWW: http://gcc.gnu.org/

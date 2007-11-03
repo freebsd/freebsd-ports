@@ -17,7 +17,7 @@ LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost \
 		event:${PORTSDIR}/devel/libevent
 
 USE_AUTOTOOLS=	libtool:15
-USE_GCC=	4.0+
+USE_GCC=	4.2+
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
