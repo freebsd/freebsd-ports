@@ -302,6 +302,8 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-addressbook-file.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-addressbook-file.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-backup-restore.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-backup-restore.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-bogo-junk-plugin.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-bogo-junk-plugin.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-calendar-file.la
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-calendar-file.so
 lib/evolution/%%VERSION%%/plugins/liborg-gnome-calendar-http.la
@@ -369,6 +371,7 @@ lib/evolution/%%VERSION%%/plugins/liborg-gnome-subject-thread.so
 lib/evolution/%%VERSION%%/plugins/org-gnome-addressbook-file.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-backup-restore.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-backup-restore.xml
+lib/evolution/%%VERSION%%/plugins/org-gnome-bogo-junk-plugin.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-calendar-file.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-calendar-http.eplug
 lib/evolution/%%VERSION%%/plugins/org-gnome-calendar-weather.eplug
