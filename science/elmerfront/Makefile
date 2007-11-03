@@ -21,12 +21,6 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84	\
 		ElmerSolver:${PORTSDIR}/science/elmer-fem	\
 		${MACHINE_ARCH}-portbld-freebsd${OSREL}-ElmerMesh2D:${PORTSDIR}/science/elmer-meshgen2d
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not configure on FreeBSD 7.0
-.endif
-
 # Elmer avoids the new C++ headers because they cause problems
 # on older systems (Irix)
 CXXFLAGS+=	-Wno-deprecated
@@ -41,4 +35,4 @@ ALL_TARGET=
 DATADIR=	${PREFIX}/share/elmerfront
 PLIST_SUB=	ARCH=${MACHINE_ARCH}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
