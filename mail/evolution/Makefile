@@ -8,7 +8,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	2.12.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -44,6 +44,7 @@ GCONF_SCHEMAS=	apps-evolution-mail-notification.schemas \
 		apps_evolution_calendar.schemas \
 		apps_evolution_shell.schemas \
 		apps-evolution-attachment-reminder.schemas \
+		bogo-junk-plugin.schemas \
 		evolution-mail.schemas
 
 EVO_VERSION=	2.12
