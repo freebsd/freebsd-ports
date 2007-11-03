@@ -18,13 +18,14 @@ DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	GNU Compiler Collection
 
+CONFLICTS=	gcc-4.*.*
 ONLY_FOR_ARCHS=	alpha i386
 USE_BZIP2=	yes
 
 LATEST_LINK=	gcc295
 
 .ifdef USE_GCC
-IGNORE=	Cannot install: you have the 'USE_GCC' variable defined either in environment or in make(1) arguments. Please undefine and try again
+IGNORE=	you have the 'USE_GCC' variable defined either in environment or in make(1) arguments. Please undefine and try again
 .endif
 
 .include <bsd.port.pre.mk>
