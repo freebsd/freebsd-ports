@@ -53,7 +53,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
 .endif
 
-ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
+#ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-data-html
