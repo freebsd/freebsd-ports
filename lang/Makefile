@@ -80,7 +80,6 @@
     SUBDIR += gcc32
     SUBDIR += gcc33
     SUBDIR += gcc34
-    SUBDIR += gcc40
     SUBDIR += gcc41
     SUBDIR += gcc41-withgcjawt
     SUBDIR += gcc42
