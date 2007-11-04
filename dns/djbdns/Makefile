@@ -7,7 +7,7 @@
 
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}
-PORTREVISION?=	10
+PORTREVISION?=	11
 CATEGORIES?=	dns
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://cr.yp.to/djbdns/
