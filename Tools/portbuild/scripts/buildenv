@@ -27,6 +27,12 @@ buildenv () {
 	x7)
 	export INDEXFILE=INDEX-7
 	    ;;
+	x7-exp)
+	export INDEXFILE=INDEX-7
+	    ;;
+	x8)
+	export INDEXFILE=INDEX-8
+	    ;;
 	*)
 	    echo "buildenv: invalid branch"
 	    exit 1
@@ -41,7 +47,8 @@ buildenv () {
     export PKGSUFFIX=.tbz
     export PKGZIPCMD=bzip2
     export X_WINDOW_SYSTEM=xorg
-    export XORG_UPGRADE=1
+
+    #export USA_RESIDENT=yes
 
     # Have to use realpath because 'make index' doesn't deal with symlinks in PORTSDIR
     # - kk 020311
@@ -70,8 +77,6 @@ buildenv () {
 
     export BATCH=1
     export PACKAGE_BUILDING=1
-
-    export USA_RESIDENT=yes
 
     export FTP_PASSIVE_MODE=yes
     #export FETCH_BEFORE_ARGS=-vvv
