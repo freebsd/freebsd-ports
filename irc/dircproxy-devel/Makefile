@@ -7,6 +7,7 @@
 
 PORTNAME=	dircproxy
 PORTVERSION=	1.2.0.b2
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://dircproxy.securiweb.net/pub/1.2/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/g}
