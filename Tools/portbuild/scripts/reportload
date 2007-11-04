@@ -20,7 +20,7 @@ for i in squid disk; do
 done
 
 if [ ${error} = 0 ]; then
-  num=$(echo $(ls -1d ${scratchdir}/*/chroot/*/used 2>/dev/null| wc -l))
+  num=$(echo $(ls -1d ${scratchdir}/*/*/used ${scratchdir}/*/chroot/*/used 2>/dev/null| wc -l))
 else
   num=ERR
 fi
