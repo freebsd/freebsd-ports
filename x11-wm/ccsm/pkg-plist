@@ -42,7 +42,6 @@ bin/ccsm
 %%DATADIR%%/images/plugin-fs.svg
 %%DATADIR%%/images/plugin-gears.svg
 %%DATADIR%%/images/plugin-glib.svg
-%%DATADIR%%/images/plugin-gotovp.svg
 %%DATADIR%%/images/plugin-group.svg
 %%DATADIR%%/images/plugin-imgjpeg.svg
 %%DATADIR%%/images/plugin-inotify.svg
@@ -94,26 +93,20 @@ bin/ccsm
 %%DATADIR%%/images/plugin-zoom.svg
 %%PYTHON_SITELIBDIR%%/ccm/Conflicts.py
 %%PYTHON_SITELIBDIR%%/ccm/Conflicts.pyc
-%%PYTHON_SITELIBDIR%%/ccm/Conflicts.pyo
 %%PYTHON_SITELIBDIR%%/ccm/Constants.py
 %%PYTHON_SITELIBDIR%%/ccm/Constants.pyc
-%%PYTHON_SITELIBDIR%%/ccm/Constants.pyo
 %%PYTHON_SITELIBDIR%%/ccm/Pages.py
 %%PYTHON_SITELIBDIR%%/ccm/Pages.pyc
-%%PYTHON_SITELIBDIR%%/ccm/Pages.pyo
 %%PYTHON_SITELIBDIR%%/ccm/Settings.py
 %%PYTHON_SITELIBDIR%%/ccm/Settings.pyc
-%%PYTHON_SITELIBDIR%%/ccm/Settings.pyo
 %%PYTHON_SITELIBDIR%%/ccm/Utils.py
 %%PYTHON_SITELIBDIR%%/ccm/Utils.pyc
-%%PYTHON_SITELIBDIR%%/ccm/Utils.pyo
+%%PYTHON_SITELIBDIR%%/ccm/Widgets.py
+%%PYTHON_SITELIBDIR%%/ccm/Widgets.pyc
 %%PYTHON_SITELIBDIR%%/ccm/Window.py
 %%PYTHON_SITELIBDIR%%/ccm/Window.pyc
-%%PYTHON_SITELIBDIR%%/ccm/Window.pyo
 %%PYTHON_SITELIBDIR%%/ccm/__init__.py
 %%PYTHON_SITELIBDIR%%/ccm/__init__.pyc
-%%PYTHON_SITELIBDIR%%/ccm/__init__.pyo
-%%PYTHON_SITELIBDIR%%/ccsm-0.5.2-py2.5.egg-info
 share/applications/ccsm.desktop
 share/pixmaps/ccsm.png
 share/icons/hicolor/scalable/apps/ccsm.svg
@@ -122,13 +115,24 @@ share/locale/el/LC_MESSAGES/ccsm.mo
 share/locale/fr/LC_MESSAGES/ccsm.mo
 share/locale/gu/LC_MESSAGES/ccsm.mo
 share/locale/it/LC_MESSAGES/ccsm.mo
-share/locale/pl_PL/LC_MESSAGES/ccsm.mo
-share/locale/pt_PT/LC_MESSAGES/ccsm.mo
 share/locale/sv/LC_MESSAGES/ccsm.mo
 share/locale/zh_CN/LC_MESSAGES/ccsm.mo
+share/locale/ar/LC_MESSAGES/ccsm.mo
+share/locale/bn/LC_MESSAGES/ccsm.mo
+share/locale/ca/LC_MESSAGES/ccsm.mo
+share/locale/gl/LC_MESSAGES/ccsm.mo
+share/locale/id/LC_MESSAGES/ccsm.mo
+share/locale/nb/LC_MESSAGES/ccsm.mo
+share/locale/nl/LC_MESSAGES/ccsm.mo
+share/locale/pl/LC_MESSAGES/ccsm.mo
+share/locale/pt/LC_MESSAGES/ccsm.mo
+share/locale/pt_BR/LC_MESSAGES/ccsm.mo
+share/locale/sk/LC_MESSAGES/ccsm.mo
+share/locale/tr/LC_MESSAGES/ccsm.mo
+share/locale/wo/LC_MESSAGES/ccsm.mo
 @dirrmtry %%DATADIR%%/images
 @dirrmtry %%DATADIR%%
 @dirrmtry %%PYTHON_SITELIBDIR%%/ccm
 @dirrmtry share/applications
-@dirrmtry share/locale/pl_PL/LC_MESSAGES
-@dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/wo/LC_MESSAGES
+@dirrmtry share/locale/wo
