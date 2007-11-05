@@ -34,10 +34,10 @@ PLIST_FILES=	bin/lfhex
 
 .include <bsd.port.pre.mk>
 
+post-patch:
 .if ${OSVERSION} >= 700042
-.if ${ARCH} == "i386"
-BROKEN=		Does not compile with GCC 4.2
-.endif
+	${REINPLACE_CMD} -e 's|abs|llabs|g' \
+		${WRKSRC}/src/reader.cpp
 .endif
 
 .include <bsd.port.post.mk>
