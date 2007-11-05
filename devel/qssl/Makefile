@@ -20,18 +20,12 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 SHLIB_MAJOR=	1
 
 USE_OPENSSL=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKE_ARGS=	QTDIR=${QT_PREFIX}
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 USE_QT_VER=	3
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ARGS} qmake \
@@ -42,4 +36,4 @@ do-install:
 		${PREFIX}/lib/libqssl.so.${SHLIB_MAJOR}
 	${LN} -s libqssl.so.${SHLIB_MAJOR} ${PREFIX}/lib/libqssl.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
