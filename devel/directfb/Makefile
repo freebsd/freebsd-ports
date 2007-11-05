@@ -46,10 +46,6 @@ MAN5=		directfbrc.5
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 .if ${ARCH} == "alpha"
 BROKEN=		Does not compile on alpha
 .endif
