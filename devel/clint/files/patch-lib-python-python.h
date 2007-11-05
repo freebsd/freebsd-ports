@@ -1,6 +1,6 @@
---- lib/python/python.h.orig	Mon Apr 16 12:53:21 2001
-+++ lib/python/python.h	Thu Nov 30 22:25:14 2006
-@@ -3,6 +3,22 @@
+--- lib/python/python.h.orig	2001-04-16 21:53:21.000000000 +0200
++++ lib/python/python.h	2007-11-03 16:31:32.000000000 +0100
+@@ -3,22 +3,42 @@
  
  #pragma interface
  
@@ -23,7 +23,10 @@
  #include <Python.h>
  #include <string>
  #include <iterator>
-@@ -12,13 +28,17 @@
+ #include <utility>
+-#include <strstream>
++#include <sstream>
+ #include "exceptions.h"
  #include "debug.h"
  
  // I hate #define macros, seee if I can remove this

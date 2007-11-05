@@ -10,8 +10,7 @@ PORTNAME=	clint
 PORTVERSION=	0.1.2
 PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A static source code checker for C++
@@ -25,16 +24,10 @@ USE_LDCONFIG=	yes
 
 INFO=		clint
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-pedantic||g ; \
 		 s|-ldl||g'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
