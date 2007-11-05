@@ -1,5 +1,5 @@
---- src/irc_server.c.orig	2007-10-02 13:27:29.000000000 +0200
-+++ src/irc_server.c	2007-10-02 13:28:07.000000000 +0200
+--- src/irc_server.c.orig	2002-01-31 15:56:37.000000000 +0100
++++ src/irc_server.c	2007-11-05 12:35:57.000000000 +0100
 @@ -700,7 +700,7 @@
                free(s);
  
@@ -18,3 +18,12 @@
                squelch = 1;
                break;
              } else {
+@@ -1076,7 +1076,7 @@
+       
+         if (!strcmp(cmsg.cmd, "ACTION")) {
+           if (p->conn_class->log_events & IRC_LOG_ACTION)
+-            irclog_ctcp(p, msg.params[0], msg.src.orig, "%s", cmsg.orig);
++            irclog_ctcp(p, (msg.params != NULL ) ? msg.params[0]: "none", msg.src.orig, "%s", cmsg.orig);
+ 
+         } else if (!strcmp(cmsg.cmd, "DCC")
+                    && p->conn_class->dcc_proxy_incoming) {

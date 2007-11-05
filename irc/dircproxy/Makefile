@@ -7,6 +7,7 @@
 
 PORTNAME=	dircproxy
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.securiweb.net/pub/oss/dircproxy/1.0/ \
 		ftp://ftp.netsplit.com/pub/dircproxy/stable/
