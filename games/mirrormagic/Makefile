@@ -9,15 +9,21 @@ PORTNAME=	mirrormagic
 PORTVERSION=	2.0.2
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/
+MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/ \
+		http://www.amdmi3.ru/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	An arcade style game with stereo sound for X Window System
 
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" MAKE="${GMAKE}" OPTIONS="${CFLAGS}" \
 		RO_GAME_DIR="${DATADIR}" RW_GAME_DIR="${DATADIR}/scores" \
 		X11_PATH="${X11BASE}"
+WANT_SDL=	yes
+
+OPTIONS=	SDL	"SDL support"	on
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_SDL)
 USE_SDL=	image mixer sdl
@@ -25,12 +31,6 @@ ALL_TARGET=	sdl
 .else
 USE_XLIB=	yes
 ALL_TARGET=	x11
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
 .endif
 
 post-patch:
