@@ -23,6 +23,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		kcd.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64 && ${OSVERSION} > 800000
+BROKEN=		Attempts to allocate all of memory during configure
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/kcd-inst ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/kcdscr ${PREFIX}/bin
@@ -41,4 +47,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/kcd.sh.init ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
