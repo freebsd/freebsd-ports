@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	diameter
-PORTVERSION=	0.4.0.1
-PORTREVISION=	1
+PORTVERSION=	0.4.0.2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gamediameter
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Arcade-style game with elements of economy and adventure
@@ -24,7 +22,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer image
-USE_GCC=	3.4+
 USE_PYTHON=	yes
 
 WRKSRC=		${WRKDIR}/gamediameter
@@ -34,20 +31,8 @@ CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags` -I${X11BASE}/include" \
 
 DATADIR=	${PREFIX}/share/gamediameter
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e '/PKG_CONFIG/ s|libpng|libpng12|' \
-		-e 's|sdl-config|$$SDL_CONFIG|' \
-		-e '/LIBS/ s|-lSDL |`$$SDL_CONFIG --libs` |' \
-		-e '/^CFLAGS=.*march/ d' \
-		-e '/PKG_CHECK_MODULES/ s|^|#|' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|; /^CFLAGS=.*march/ d; \
+		/PKG_CONFIG/ s|libpng|libpng12|' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
