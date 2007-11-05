@@ -35,13 +35,7 @@ CFLAGS+=	-DHAVE_MBRTOWC
 CONFIGURE_ARGS+=	--enable-NeXT-look
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|po pixmap man|po man|g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
