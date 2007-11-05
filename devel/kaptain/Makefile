@@ -11,8 +11,7 @@ PORTNAME=	kaptain
 PORTVERSION=	0.72
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for building/running QT GUIs for commmand line programs
@@ -27,12 +26,6 @@ CONFIGURE_ARGS=	--enable-mt \
 MAN1=		kaptain.1
 INFO=		kaptain
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/*.info*
 
@@ -40,4 +33,4 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/examples/dia2code.kaptn
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
