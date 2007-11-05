@@ -1,5 +1,5 @@
---- calendar/libical/src/libical/icaltz-util.c.orig	2007-08-24 02:48:28.000000000 -0400
-+++ calendar/libical/src/libical/icaltz-util.c	2007-08-27 16:23:59.000000000 -0400
+--- calendar/libical/src/libical/icaltz-util.c.orig	2007-10-12 02:31:10.000000000 -0400
++++ calendar/libical/src/libical/icaltz-util.c	2007-11-03 12:22:24.000000000 -0400
 @@ -23,6 +23,15 @@
  #include <string.h>
  #if defined(sun) && defined(__SVR4)
@@ -16,3 +16,12 @@
  #else
  #include <byteswap.h>
  #include <endian.h>
+@@ -148,7 +157,7 @@
+ 	idx = trans_idx [i];
+ 	types [idx].isdst ? (*dstidx = i) : (*stdidx = i);
+ 	
+-	if (i >= num_trans) 
++	if (i >= num_trans - 1) 
+ 		i--;
+ 	else 
+ 		i++;
