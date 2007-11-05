@@ -41,10 +41,8 @@ pre-everything::
 	@${ECHO_MSG} "Use WITH_IMLIB=yes to enable these features."
 	@${ECHO_MSG} ""
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${FIND} ${WRKSRC} -name *.xpm | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^"|(char *)"|g'
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
