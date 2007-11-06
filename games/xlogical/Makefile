@@ -5,20 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=      xlogical
-PORTVERSION=   1.0p8
-CATEGORIES=    games
-MASTER_SITES=  http://changeling.ixionstudios.com/xlogical/downloads/ \
-	       http://freebsd.portsreview.info/downloads/
-DISTNAME=      ${PORTNAME}-${PORTVERSION:S/p/-/}
+PORTNAME=	xlogical
+PORTVERSION=	1.0p8
+CATEGORIES=	games
+MASTER_SITES=	http://changeling.ixionstudios.com/xlogical/downloads/ \
+		http://freebsd.portsreview.info/downloads/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-/}
 
-MAINTAINER=    aaron@baugher.biz
-COMMENT=       Remake of the classic puzzle game Logical
+MAINTAINER=	aaron@baugher.biz
+COMMENT=	Remake of the classic puzzle game Logical
 
-USE_BZIP2=     yes
-USE_GMAKE=     yes
-USE_SDL=       sdl image mixer
-GNU_CONFIGURE= yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_SDL=	sdl image mixer
+GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
@@ -30,10 +30,4 @@ post-install:
 	${RM} ${WRKSRC}/LICENSE
 	${CP} ${WRKSRC}/[A-Z][A-Z]* ${DOCSDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
