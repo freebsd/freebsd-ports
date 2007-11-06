@@ -7,6 +7,7 @@
 
 PORTNAME=	baudline
 PORTVERSION=	1.06
+PORTREVISION=	1
 CATEGORIES=	audio linux
 # We have permission from author Erik Olsen <erik@sigblips.net> for the
 # package cluster to automatically fetch baudline
@@ -22,7 +23,6 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 USE_XORG=	x11 xext xt ice
 USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386 amd64
-NO_BUILD=	yes
 
 RESTRICTED=	author requests no distribution except from their site
 
@@ -38,6 +38,9 @@ IGNORE=		may not be automatically fetched due to licensing\
 		has been downloaded, move it to ${DISTDIR} and then\
 		restart this build
 .endif
+
+do-build:
+	@${BRANDELF} -t Linux ${WRKSRC}/baudline
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/baudline ${PREFIX}/bin
