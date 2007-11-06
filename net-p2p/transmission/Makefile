@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
@@ -36,6 +36,8 @@ general-patch:
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%CUSTOM_SUBDIRS%%|${CUSTOM_SUBDIRS}|g' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|@SUBDIRS = . sample.*|@SUBDIRS = .|g' \
+		${WRKSRC}/third-party/libevent/Makefile.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|$$(OPENSSL_CFLAGS)||g ; s|$$(OPENSSL_LIBS)||g'
 
