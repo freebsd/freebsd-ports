@@ -9,14 +9,14 @@
 
 PORTNAME=		gnat-gcc
 PORTVERSION=		4.2.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		lang
-MASTER_SITES=		GCC/snapshots/${versionstring} \
+MASTER_SITES=		GCC/releases/gcc-${PORTVERSION} \
 			CENKES:boot \
 			http://lovetemple.net/data/:boot
-DISTFILES=		gcc-core-${versionstring}${EXTRACT_SUFX} \
-			gcc-ada-${versionstring}${EXTRACT_SUFX} \
-			gcc-testsuite-${versionstring}${EXTRACT_SUFX} \
+DISTFILES=		gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
+			gcc-ada-${PORTVERSION}${EXTRACT_SUFX} \
+			gcc-testsuite-${PORTVERSION}${EXTRACT_SUFX} \
 			gnat-gcc41-boot-${boot_stamp}.tbz:boot
 
 MAINTAINER=		karel@lovetemple.net
@@ -52,13 +52,7 @@ LATEST_LINK=		${PORTNAME}${gcc_suffix}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=			Broken with gcc 4.2
-.endif
-
-gcc_snapshot=		20070822
-versionstring=		${PORTVERSION:C/\.[0-9]*$//}-${gcc_snapshot}
-srcdir=			${WRKDIR}/gcc-${versionstring}
+srcdir=			${WRKDIR}/gcc-${PORTVERSION}
 gcc_suffix=		42
 fsf_mans=		fsf-funding gfdl gpl
 fsf_suffix=		-${PORTNAME}${gcc_suffix}
@@ -100,16 +94,21 @@ pre-everything::
 	@${ECHO_MSG} -n "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} "
 	@${ECHO_MSG}     "${OSREL} target=${CONFIGURE_TARGET}"
 
-# Append ' [FreeBSD]' to the gcc version string.
 post-patch:
-	@${REINPLACE_CMD} \
+	# Append ' [FreeBSD]' to the gcc version string.
+	${REINPLACE_CMD} \
 	    -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
 	    ${srcdir}/gcc/version.c
+	# New putenv(3) behavior in FreeBSD 7.
+	if [ ${OSVERSION} -ge 700050 ]; then \
+	    ${REINPLACE_CMD} -e 's/#if defined (__FreeBSD__) ||/#if/' \
+	        ${srcdir}/gcc/ada/env.c; \
+	fi
 
 pre-configure:
 	cd ${srcdir} ; contrib/gcc_update --touch
-	@${RM} -f ${srcdir}/gcc/*/*.info*
-	@${MKDIR} ${CONFIGURE_WRKSRC}
+	${RM} -f ${srcdir}/gcc/*/*.info*
+	${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-build:
 	@${ECHO_MSG} -n "Consider running 'make check' before 'make install', "
