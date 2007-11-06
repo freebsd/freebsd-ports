@@ -212,7 +212,6 @@ bin/nmg-rib
 bin/nmg-sgp
 bin/nmgmodel
 bin/off-g
-bin/op-bw
 bin/orle-fb
 bin/orle-pix
 bin/patch-g
@@ -518,38 +517,13 @@ include/itclInt.h
 include/itclIntDecls.h
 include/itk.h
 include/itkDecls.h
-include/jama_cholesky.h
-include/jama_eig.h
-include/jama_lu.h
-include/jama_qr.h
-include/jama_svd.h
 include/missing.h
-include/plane.h
 include/qray.h
 include/rb_internals.h
-include/tnt.h
-include/tnt_array1d.h
-include/tnt_array1d_utils.h
-include/tnt_array2d.h
-include/tnt_array2d_utils.h
-include/tnt_array3d.h
-include/tnt_array3d_utils.h
-include/tnt_fortran_array1d.h
-include/tnt_fortran_array1d_utils.h
-include/tnt_fortran_array2d.h
-include/tnt_fortran_array2d_utils.h
-include/tnt_fortran_array3d.h
-include/tnt_fortran_array3d_utils.h
-include/tnt_i_refvec.h
-include/tnt_linalg.h
-include/tnt_math_utils.h
-include/tnt_matrix.h
-include/tnt_sparse_matrix.h
-include/tnt_sparse_vector.h
-include/tnt_stopwatch.h
-include/tnt_subscript.h
-include/tnt_vector.h
-include/tnt_version.h
+include/tie/tie.h
+include/tie/tie_define.h
+include/tie/tie_kdtree.h
+include/tie/tie_struct.h
 lib/blt2.4/ZoomStack.itcl
 lib/blt2.4/dd_protocols/dd-color.tcl
 lib/blt2.4/dd_protocols/dd-file.tcl
@@ -734,6 +708,10 @@ lib/libtermio.a
 lib/libtermio.la
 lib/libtermio.so
 lib/libtermio.so.19
+lib/libtie.a
+lib/libtie.la
+lib/libtie.so
+lib/libtie.so.0
 lib/libwdb.a
 lib/libwdb.la
 lib/libwdb.so
@@ -1612,6 +1590,8 @@ libdata/pkgconfig/wdb.pc
 %%DATADIR%%/%%PORTVERSION%%/tclscripts/vmath.tcl
 %%DATADIR%%/%%PORTVERSION%%/vfont/fix.6r
 %%DATADIR%%/%%PORTVERSION%%/vfont/nonie.r.12
+@dirrmtry libdata/pkgconfig
+@dirrmtry libdata
 @dirrm %%DATADIR%%/%%PORTVERSION%%/vfont
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/util
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tclscripts/swidgets/scripts
@@ -1677,8 +1657,6 @@ libdata/pkgconfig/wdb.pc
 @dirrm man/man3
 @dirrm man/man1
 @dirrm man
-@dirrmtry libdata/pkgconfig
-@dirrmtry libdata
 @dirrm lib/iwidgets4.0.1/scripts
 @dirrm lib/iwidgets4.0.1
 @dirrm lib/itk3.3
@@ -1686,6 +1664,7 @@ libdata/pkgconfig/wdb.pc
 @dirrm lib/blt2.4/dd_protocols
 @dirrm lib/blt2.4
 @dirrm lib
+@dirrm include/tie
 @dirrm include/brlcad
 @dirrm include
 @dirrm bin
