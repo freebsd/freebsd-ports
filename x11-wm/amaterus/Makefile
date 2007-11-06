@@ -16,16 +16,10 @@ COMMENT=	A GTK+ window manager
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
