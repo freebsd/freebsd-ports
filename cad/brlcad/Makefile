@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	brlcad
-PORTVERSION=	7.10.2
+PORTVERSION=	7.10.4
 CATEGORIES=	cad
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	brlcad
+MASTER_SITES=	SF
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 
+BUILD_DEPENDS=	${LOCALBASE}/include/tnt/jama_lu.h:${PORTSDIR}/math/jama
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		rle.1:${PORTSDIR}/graphics/urt
 
@@ -31,16 +31,16 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.5\
-	-I${LOCALBASE}/include/tk8.5
+ -I${LOCALBASE}/include/tk8.5 -I${LOCALBASE}/include/tnt
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-adrt-build \
 	--with-libs="-lpng ${EXTRA_LIBS}" --program-transform-name=""		\
-	--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/libs		\
+	--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/libs	\
 	--disable-jove-build
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-MAN1=	alias-pix.1 all_sf.1 anim_cascade.1 anim_fly.1 anim_hardtrack.1 	\
+MAN1=	alias-pix.1 all_sf.1 anim_cascade.1 anim_fly.1 anim_hardtrack.1		\
 	anim_keyread.1 anim_lookat.1 anim_offset.1 anim_orient.1 anim_script.1	\
 	anim_sort.1 anim_time.1 anim_track.1 anim_turn.1 ap-pix.1 asc-nmg.1	\
 	asc-pl.1 awf.1 azel.1 bary.1 benchmark.1 bot_shell-vtk.1		\
@@ -60,7 +60,7 @@ MAN1=	alias-pix.1 all_sf.1 anim_cascade.1 anim_fly.1 anim_hardtrack.1 	\
 	g_diff.1 g_lint.1 g_qa.1 gencolor.1 gif-fb.1 gif2fb.1 halftone.1 hd.1	\
 	iges-g.1 imgdims.1 ir-X.1 ir-sgi.1 irdisp.1 lgt.1 loop.1 mac-pix.1	\
 	mged.1 mk_bolt.1 mk_gastank.1 mk_handle.1 mk_window.1 mk_winfrm.1	\
-	mk_wire.1 morphedit.1 nastran-g.1 nirt.1 nmg-bot.1 nmg-rib.1 op-bw.1	\
+	mk_wire.1 morphedit.1 nastran-g.1 nirt.1 nmg-bot.1 nmg-rib.1		\
 	orle-fb.1 orle-pix.1 patch-g.1 pcd-pix.1 picket_fence.1 pix-alias.1	\
 	pix-bw.1 pix-bw3.1 pix-fb.1 pix-orle.1 pix-png.1 pix-ps.1 pix-rle.1	\
 	pix-sun.1 pix2asc.1 pixautosize.1 pixbackgnd.1 pixbgstrip.1 pixblend.1	\
@@ -108,42 +108,26 @@ MANN=	Archetype.n Toplevel.n Widget.n body.n class.n code.n	\
 	iwidgets_timefield.n iwidgets_toolbar.n iwidgets_watch.n local.n	\
 	scope.n usual.n
 
-OPTIONS=	OPTIMIZATION "Try building with optimizations" on
+OPTIONS=	OPTIMIZATION "Build with optimizations" on
 
 .include <bsd.port.pre.mk>
 
 EXTRA_LIBS=	${PTHREAD_LIBS}
 
-.if !(${ARCH} == i386 || ${ARCH} == amd64 || ${ARCH} == sparc64)
-IGNORE=		dumps core on ${ARCH}
-.endif
-
 .ifdef WITH_OPTIMIZATION
-CONFIGURE_ARGS+=	--disable-debug
-.if (${ARCH} == i386 || ${ARCH} == amd64 || ${ARCH} == sparc64)
-CONFIGURE_ARGS+=	--enable-optimized
-.endif
+CONFIGURE_ARGS+=	--disable-debug --enable-optimized
 .endif
 
 post-patch:
-	${REINPLACE_CMD} "s+/usr/X11R6+${X11BASE}+;41602,41612d" ${WRKSRC}/configure
+	${REINPLACE_CMD} "s+8\.5a6+8.5b1+" ${WRKSRC}/src/other/tcl/library/init.tcl
 
 pre-install:
 	${CP} ${FILESDIR}/mged.sh ${WRKSRC}
-	${REINPLACE_CMD} -e 's+%%BRLCAD_ROOT%%+${PREFIX}+g;'	\
-		${WRKSRC}/mged.sh
+	${REINPLACE_CMD} -e 's+%%BRLCAD_ROOT%%+${PREFIX}+g;' ${WRKSRC}/mged.sh
 
 # note that installing outside of PREFIX wigs out package stuff... :/
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mged.sh ${PREFIX}/bin/mged.sh
 	${LN} -s ${PREFIX}/bin/mged.sh ${LOCALBASE}/bin/mged.sh
-.if defined(WITH_OPTIMIZATION) && !(${ARCH} == i386 || ${ARCH} == amd64)
-	@echo "Optimization does not work here, but we went ahead and turned off debugging"
-.endif
-
-.if defined(WITH_OPTIMIZATION) && !(${ARCH} == i386 || ${ARCH} == amd64)
-post-build:
-	@echo "Optimization does not work here, but we went ahead and turned off debugging"
-.endif
 
 .include <bsd.port.post.mk>
