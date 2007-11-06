@@ -1,5 +1,5 @@
---- configure.orig	2007-10-29 13:41:33.000000000 -0500
-+++ configure	2007-10-29 13:44:51.000000000 -0500
+--- configure.orig	2007-11-05 17:12:30.000000000 -0600
++++ configure	2007-11-05 17:13:40.000000000 -0600
 @@ -880,11 +880,9 @@
  PTHREAD_CC
  PTHREAD_LIBS
@@ -22,7 +22,7 @@
  GTK_CFLAGS
  GTK_LIBS'
  ac_subdirs_all='third-party/libevent'
-@@ -1592,10 +1588,6 @@
+@@ -1593,10 +1589,6 @@
    F77         Fortran 77 compiler command
    FFLAGS      Fortran 77 compiler flags
    PKG_CONFIG  path to pkg-config utility
@@ -33,210 +33,210 @@
    GTK_CFLAGS  C compiler flags for GTK, overriding pkg-config
    GTK_LIBS    linker flags for GTK, overriding pkg-config
  
-@@ -4491,7 +4483,7 @@
+@@ -4492,7 +4484,7 @@
    ;;
  *-*-irix6*)
    # Find out which ABI we are using.
--  echo '#line 4494 "configure"' > conftest.$ac_ext
-+  echo '#line 4486 "configure"' > conftest.$ac_ext
+-  echo '#line 4495 "configure"' > conftest.$ac_ext
++  echo '#line 4487 "configure"' > conftest.$ac_ext
    if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
    (eval $ac_compile) 2>&5
    ac_status=$?
-@@ -7222,11 +7214,11 @@
+@@ -7223,11 +7215,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:7225: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:7217: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:7226: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:7218: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>conftest.err)
     ac_status=$?
     cat conftest.err >&5
--   echo "$as_me:7229: \$? = $ac_status" >&5
-+   echo "$as_me:7221: \$? = $ac_status" >&5
+-   echo "$as_me:7230: \$? = $ac_status" >&5
++   echo "$as_me:7222: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s "$ac_outfile"; then
       # The compiler can only warn and ignore the option if not recognized
       # So say no if there are warnings other than the usual output.
-@@ -7490,11 +7482,11 @@
+@@ -7491,11 +7483,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:7493: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:7485: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:7494: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:7486: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>conftest.err)
     ac_status=$?
     cat conftest.err >&5
--   echo "$as_me:7497: \$? = $ac_status" >&5
-+   echo "$as_me:7489: \$? = $ac_status" >&5
+-   echo "$as_me:7498: \$? = $ac_status" >&5
++   echo "$as_me:7490: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s "$ac_outfile"; then
       # The compiler can only warn and ignore the option if not recognized
       # So say no if there are warnings other than the usual output.
-@@ -7594,11 +7586,11 @@
+@@ -7595,11 +7587,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:7597: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:7589: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:7598: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:7590: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>out/conftest.err)
     ac_status=$?
     cat out/conftest.err >&5
--   echo "$as_me:7601: \$? = $ac_status" >&5
-+   echo "$as_me:7593: \$? = $ac_status" >&5
+-   echo "$as_me:7602: \$? = $ac_status" >&5
++   echo "$as_me:7594: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s out/conftest2.$ac_objext
     then
       # The compiler can only warn and ignore the option if not recognized
-@@ -9059,7 +9051,7 @@
+@@ -9060,7 +9052,7 @@
    libsuff=
    case "$host_cpu" in
    x86_64*|s390x*|powerpc64*)
--    echo '#line 9062 "configure"' > conftest.$ac_ext
-+    echo '#line 9054 "configure"' > conftest.$ac_ext
+-    echo '#line 9063 "configure"' > conftest.$ac_ext
++    echo '#line 9055 "configure"' > conftest.$ac_ext
      if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
    (eval $ac_compile) 2>&5
    ac_status=$?
-@@ -9923,7 +9915,7 @@
+@@ -9924,7 +9916,7 @@
    lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
    lt_status=$lt_dlunknown
    cat > conftest.$ac_ext <<EOF
--#line 9926 "configure"
-+#line 9918 "configure"
+-#line 9927 "configure"
++#line 9919 "configure"
  #include "confdefs.h"
  
  #if HAVE_DLFCN_H
-@@ -10023,7 +10015,7 @@
+@@ -10024,7 +10016,7 @@
    lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
    lt_status=$lt_dlunknown
    cat > conftest.$ac_ext <<EOF
--#line 10026 "configure"
-+#line 10018 "configure"
+-#line 10027 "configure"
++#line 10019 "configure"
  #include "confdefs.h"
  
  #if HAVE_DLFCN_H
-@@ -12359,11 +12351,11 @@
+@@ -12360,11 +12352,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:12362: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:12354: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:12363: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:12355: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>conftest.err)
     ac_status=$?
     cat conftest.err >&5
--   echo "$as_me:12366: \$? = $ac_status" >&5
-+   echo "$as_me:12358: \$? = $ac_status" >&5
+-   echo "$as_me:12367: \$? = $ac_status" >&5
++   echo "$as_me:12359: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s "$ac_outfile"; then
       # The compiler can only warn and ignore the option if not recognized
       # So say no if there are warnings other than the usual output.
-@@ -12463,11 +12455,11 @@
+@@ -12464,11 +12456,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:12466: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:12458: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:12467: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:12459: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>out/conftest.err)
     ac_status=$?
     cat out/conftest.err >&5
--   echo "$as_me:12470: \$? = $ac_status" >&5
-+   echo "$as_me:12462: \$? = $ac_status" >&5
+-   echo "$as_me:12471: \$? = $ac_status" >&5
++   echo "$as_me:12463: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s out/conftest2.$ac_objext
     then
       # The compiler can only warn and ignore the option if not recognized
-@@ -12999,7 +12991,7 @@
+@@ -13000,7 +12992,7 @@
    libsuff=
    case "$host_cpu" in
    x86_64*|s390x*|powerpc64*)
--    echo '#line 13002 "configure"' > conftest.$ac_ext
-+    echo '#line 12994 "configure"' > conftest.$ac_ext
+-    echo '#line 13003 "configure"' > conftest.$ac_ext
++    echo '#line 12995 "configure"' > conftest.$ac_ext
      if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
    (eval $ac_compile) 2>&5
    ac_status=$?
-@@ -14054,11 +14046,11 @@
+@@ -14055,11 +14047,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:14057: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:14049: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:14058: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:14050: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>conftest.err)
     ac_status=$?
     cat conftest.err >&5
--   echo "$as_me:14061: \$? = $ac_status" >&5
-+   echo "$as_me:14053: \$? = $ac_status" >&5
+-   echo "$as_me:14062: \$? = $ac_status" >&5
++   echo "$as_me:14054: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s "$ac_outfile"; then
       # The compiler can only warn and ignore the option if not recognized
       # So say no if there are warnings other than the usual output.
-@@ -14158,11 +14150,11 @@
+@@ -14159,11 +14151,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:14161: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:14153: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:14162: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:14154: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>out/conftest.err)
     ac_status=$?
     cat out/conftest.err >&5
--   echo "$as_me:14165: \$? = $ac_status" >&5
-+   echo "$as_me:14157: \$? = $ac_status" >&5
+-   echo "$as_me:14166: \$? = $ac_status" >&5
++   echo "$as_me:14158: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s out/conftest2.$ac_objext
     then
       # The compiler can only warn and ignore the option if not recognized
-@@ -15603,7 +15595,7 @@
+@@ -15604,7 +15596,7 @@
    libsuff=
    case "$host_cpu" in
    x86_64*|s390x*|powerpc64*)
--    echo '#line 15606 "configure"' > conftest.$ac_ext
-+    echo '#line 15598 "configure"' > conftest.$ac_ext
+-    echo '#line 15607 "configure"' > conftest.$ac_ext
++    echo '#line 15599 "configure"' > conftest.$ac_ext
      if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
    (eval $ac_compile) 2>&5
    ac_status=$?
-@@ -16377,11 +16369,11 @@
+@@ -16378,11 +16370,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:16380: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:16372: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:16381: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:16373: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>conftest.err)
     ac_status=$?
     cat conftest.err >&5
--   echo "$as_me:16384: \$? = $ac_status" >&5
-+   echo "$as_me:16376: \$? = $ac_status" >&5
+-   echo "$as_me:16385: \$? = $ac_status" >&5
++   echo "$as_me:16377: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s "$ac_outfile"; then
       # The compiler can only warn and ignore the option if not recognized
       # So say no if there are warnings other than the usual output.
-@@ -16645,11 +16637,11 @@
+@@ -16646,11 +16638,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:16648: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:16640: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:16649: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:16641: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>conftest.err)
     ac_status=$?
     cat conftest.err >&5
--   echo "$as_me:16652: \$? = $ac_status" >&5
-+   echo "$as_me:16644: \$? = $ac_status" >&5
+-   echo "$as_me:16653: \$? = $ac_status" >&5
++   echo "$as_me:16645: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s "$ac_outfile"; then
       # The compiler can only warn and ignore the option if not recognized
       # So say no if there are warnings other than the usual output.
-@@ -16749,11 +16741,11 @@
+@@ -16750,11 +16742,11 @@
     -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
     -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
     -e 's:$: $lt_compiler_flag:'`
--   (eval echo "\"\$as_me:16752: $lt_compile\"" >&5)
-+   (eval echo "\"\$as_me:16744: $lt_compile\"" >&5)
+-   (eval echo "\"\$as_me:16753: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:16745: $lt_compile\"" >&5)
     (eval "$lt_compile" 2>out/conftest.err)
     ac_status=$?
     cat out/conftest.err >&5
--   echo "$as_me:16756: \$? = $ac_status" >&5
-+   echo "$as_me:16748: \$? = $ac_status" >&5
+-   echo "$as_me:16757: \$? = $ac_status" >&5
++   echo "$as_me:16749: \$? = $ac_status" >&5
     if (exit $ac_status) && test -s out/conftest2.$ac_objext
     then
       # The compiler can only warn and ignore the option if not recognized
-@@ -18214,7 +18206,7 @@
+@@ -18215,7 +18207,7 @@
    libsuff=
    case "$host_cpu" in
    x86_64*|s390x*|powerpc64*)
--    echo '#line 18217 "configure"' > conftest.$ac_ext
-+    echo '#line 18209 "configure"' > conftest.$ac_ext
+-    echo '#line 18218 "configure"' > conftest.$ac_ext
++    echo '#line 18210 "configure"' > conftest.$ac_ext
      if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
    (eval $ac_compile) 2>&5
    ac_status=$?
-@@ -21670,6 +21662,148 @@
+@@ -22076,6 +22068,148 @@
  
  
  
@@ -385,134 +385,131 @@
  { echo "$as_me:$LINENO: checking for library containing socket" >&5
  echo $ECHO_N "checking for library containing socket... $ECHO_C" >&6; }
  if test "${ac_cv_search_socket+set}" = set; then
-@@ -21838,6 +21972,123 @@
- 
- 
- 
-+{ echo "$as_me:$LINENO: checking how to copy va_list" >&5
-+echo $ECHO_N "checking how to copy va_list... $ECHO_C" >&6; }
-+cat >conftest.$ac_ext <<_ACEOF
-+/* confdefs.h.  */
-+_ACEOF
-+cat confdefs.h >>conftest.$ac_ext
-+cat >>conftest.$ac_ext <<_ACEOF
-+/* end confdefs.h.  */
-+#include <stdarg.h>
-+int
-+main ()
-+{
-+va_list ap1, ap2; va_copy(ap1, ap2);
-+  ;
-+  return 0;
-+}
-+_ACEOF
-+rm -f conftest.$ac_objext conftest$ac_exeext
-+if { (ac_try="$ac_link"
-+case "(($ac_try" in
-+  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
-+  *) ac_try_echo=$ac_try;;
-+esac
-+eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
-+  (eval "$ac_link") 2>conftest.er1
-+  ac_status=$?
-+  grep -v '^ *+' conftest.er1 >conftest.err
-+  rm -f conftest.er1
-+  cat conftest.err >&5
-+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
-+  (exit $ac_status); } && {
-+	 test -z "$ac_c_werror_flag" ||
-+	 test ! -s conftest.err
-+       } && test -s conftest$ac_exeext &&
-+       $as_test_x conftest$ac_exeext; then
-+  { echo "$as_me:$LINENO: result: va_copy" >&5
-+echo "${ECHO_T}va_copy" >&6; }
-+else
-+  echo "$as_me: failed program was:" >&5
-+sed 's/^/| /' conftest.$ac_ext >&5
-+
-+
-+
-+        cat >conftest.$ac_ext <<_ACEOF
-+/* confdefs.h.  */
-+_ACEOF
-+cat confdefs.h >>conftest.$ac_ext
-+cat >>conftest.$ac_ext <<_ACEOF
-+/* end confdefs.h.  */
-+#include <stdarg.h>
-+int
-+main ()
-+{
-+va_list ap1, ap2; __va_copy(ap1, ap2);
-+  ;
-+  return 0;
-+}
-+_ACEOF
-+rm -f conftest.$ac_objext conftest$ac_exeext
-+if { (ac_try="$ac_link"
-+case "(($ac_try" in
-+  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
-+  *) ac_try_echo=$ac_try;;
-+esac
-+eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
-+  (eval "$ac_link") 2>conftest.er1
-+  ac_status=$?
-+  grep -v '^ *+' conftest.er1 >conftest.err
-+  rm -f conftest.er1
-+  cat conftest.err >&5
-+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
-+  (exit $ac_status); } && {
-+	 test -z "$ac_c_werror_flag" ||
-+	 test ! -s conftest.err
-+       } && test -s conftest$ac_exeext &&
-+       $as_test_x conftest$ac_exeext; then
-+   cat >>confdefs.h <<\_ACEOF
-+#define va_copy __va_copy
-+_ACEOF
-+
-+        { echo "$as_me:$LINENO: result: __va_copy" >&5
-+echo "${ECHO_T}__va_copy" >&6; }
-+else
-+  echo "$as_me: failed program was:" >&5
-+sed 's/^/| /' conftest.$ac_ext >&5
-+
-+	 cat >>confdefs.h <<\_ACEOF
-+#define va_copy(dest,src) memcpy(&dest,&src,sizeof(va_list))
-+_ACEOF
-+
-+        { echo "$as_me:$LINENO: result: memcpy" >&5
-+echo "${ECHO_T}memcpy" >&6; }
-+
-+fi
-+
-+rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
-+      conftest$ac_exeext conftest.$ac_ext
-+
-+fi
-+
-+rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
-+      conftest$ac_exeext conftest.$ac_ext
-+
-+
-+
-+subdirs="$subdirs third-party/libevent"
-+
-+{ echo "$as_me:$LINENO: invoking libevent's configure script" >&5
-+echo "$as_me: invoking libevent's configure script" >&6;}
-+LIBEVENT_CPPFLAGS="-I\$(top_srcdir)/third-party/libevent"
-+
-+
-+
-+
-+have_gtk=yes
-+
-+
- if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
- 	if test -n "$ac_tool_prefix"; then
-   # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
-@@ -21958,234 +22209,6 @@
+@@ -22243,237 +22377,6 @@
  fi
  
- pkg_failed=no
+ 
+-
+-if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+-	if test -n "$ac_tool_prefix"; then
+-  # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
+-set dummy ${ac_tool_prefix}pkg-config; ac_word=$2
+-{ echo "$as_me:$LINENO: checking for $ac_word" >&5
+-echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
+-if test "${ac_cv_path_PKG_CONFIG+set}" = set; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-  case $PKG_CONFIG in
+-  [\\/]* | ?:[\\/]*)
+-  ac_cv_path_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test with a path.
+-  ;;
+-  *)
+-  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-  for ac_exec_ext in '' $ac_executable_extensions; do
+-  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
+-    ac_cv_path_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
+-    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-done
+-IFS=$as_save_IFS
+-
+-  ;;
+-esac
+-fi
+-PKG_CONFIG=$ac_cv_path_PKG_CONFIG
+-if test -n "$PKG_CONFIG"; then
+-  { echo "$as_me:$LINENO: result: $PKG_CONFIG" >&5
+-echo "${ECHO_T}$PKG_CONFIG" >&6; }
+-else
+-  { echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6; }
+-fi
+-
+-
+-fi
+-if test -z "$ac_cv_path_PKG_CONFIG"; then
+-  ac_pt_PKG_CONFIG=$PKG_CONFIG
+-  # Extract the first word of "pkg-config", so it can be a program name with args.
+-set dummy pkg-config; ac_word=$2
+-{ echo "$as_me:$LINENO: checking for $ac_word" >&5
+-echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
+-if test "${ac_cv_path_ac_pt_PKG_CONFIG+set}" = set; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-  case $ac_pt_PKG_CONFIG in
+-  [\\/]* | ?:[\\/]*)
+-  ac_cv_path_ac_pt_PKG_CONFIG="$ac_pt_PKG_CONFIG" # Let the user override the test with a path.
+-  ;;
+-  *)
+-  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-  for ac_exec_ext in '' $ac_executable_extensions; do
+-  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
+-    ac_cv_path_ac_pt_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
+-    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-done
+-IFS=$as_save_IFS
+-
+-  ;;
+-esac
+-fi
+-ac_pt_PKG_CONFIG=$ac_cv_path_ac_pt_PKG_CONFIG
+-if test -n "$ac_pt_PKG_CONFIG"; then
+-  { echo "$as_me:$LINENO: result: $ac_pt_PKG_CONFIG" >&5
+-echo "${ECHO_T}$ac_pt_PKG_CONFIG" >&6; }
+-else
+-  { echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6; }
+-fi
+-
+-  if test "x$ac_pt_PKG_CONFIG" = x; then
+-    PKG_CONFIG=""
+-  else
+-    case $cross_compiling:$ac_tool_warned in
+-yes:)
+-{ echo "$as_me:$LINENO: WARNING: In the future, Autoconf will not detect cross-tools
+-whose name does not start with the host triplet.  If you think this
+-configuration is useful to you, please write to autoconf@gnu.org." >&5
+-echo "$as_me: WARNING: In the future, Autoconf will not detect cross-tools
+-whose name does not start with the host triplet.  If you think this
+-configuration is useful to you, please write to autoconf@gnu.org." >&2;}
+-ac_tool_warned=yes ;;
+-esac
+-    PKG_CONFIG=$ac_pt_PKG_CONFIG
+-  fi
+-else
+-  PKG_CONFIG="$ac_cv_path_PKG_CONFIG"
+-fi
+-
+-fi
+-if test -n "$PKG_CONFIG"; then
+-	_pkg_min_version=0.9.0
+-	{ echo "$as_me:$LINENO: checking pkg-config is at least version $_pkg_min_version" >&5
+-echo $ECHO_N "checking pkg-config is at least version $_pkg_min_version... $ECHO_C" >&6; }
+-	if $PKG_CONFIG --atleast-pkgconfig-version $_pkg_min_version; then
+-		{ echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6; }
+-	else
+-		{ echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6; }
+-		PKG_CONFIG=""
+-	fi
+-
+-fi
+-
+-pkg_failed=no
 -{ echo "$as_me:$LINENO: checking for OPENSSL" >&5
 -echo $ECHO_N "checking for OPENSSL... $ECHO_C" >&6; }
 -
@@ -521,12 +518,12 @@
 -        pkg_cv_OPENSSL_CFLAGS="$OPENSSL_CFLAGS"
 -    else
 -        if test -n "$PKG_CONFIG" && \
--    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"openssl >= 0.9.8\"") >&5
--  ($PKG_CONFIG --exists --print-errors "openssl >= 0.9.8") 2>&5
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"openssl >= 0.9.4\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "openssl >= 0.9.4") 2>&5
 -  ac_status=$?
 -  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 -  (exit $ac_status); }; then
--  pkg_cv_OPENSSL_CFLAGS=`$PKG_CONFIG --cflags "openssl >= 0.9.8" 2>/dev/null`
+-  pkg_cv_OPENSSL_CFLAGS=`$PKG_CONFIG --cflags "openssl >= 0.9.4" 2>/dev/null`
 -else
 -  pkg_failed=yes
 -fi
@@ -539,12 +536,12 @@
 -        pkg_cv_OPENSSL_LIBS="$OPENSSL_LIBS"
 -    else
 -        if test -n "$PKG_CONFIG" && \
--    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"openssl >= 0.9.8\"") >&5
--  ($PKG_CONFIG --exists --print-errors "openssl >= 0.9.8") 2>&5
+-    { (echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"openssl >= 0.9.4\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "openssl >= 0.9.4") 2>&5
 -  ac_status=$?
 -  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 -  (exit $ac_status); }; then
--  pkg_cv_OPENSSL_LIBS=`$PKG_CONFIG --libs "openssl >= 0.9.8" 2>/dev/null`
+-  pkg_cv_OPENSSL_LIBS=`$PKG_CONFIG --libs "openssl >= 0.9.4" 2>/dev/null`
 -else
 -  pkg_failed=yes
 -fi
@@ -563,14 +560,14 @@
 -        _pkg_short_errors_supported=no
 -fi
 -        if test $_pkg_short_errors_supported = yes; then
--	        OPENSSL_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "openssl >= 0.9.8"`
+-	        OPENSSL_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "openssl >= 0.9.4"`
 -        else
--	        OPENSSL_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "openssl >= 0.9.8"`
+-	        OPENSSL_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "openssl >= 0.9.4"`
 -        fi
 -	# Put the nasty error message in config.log where it belongs
 -	echo "$OPENSSL_PKG_ERRORS" >&5
 -
--	{ { echo "$as_me:$LINENO: error: Package requirements (openssl >= 0.9.8) were not met:
+-	{ { echo "$as_me:$LINENO: error: Package requirements (openssl >= 0.9.4) were not met:
 -
 -$OPENSSL_PKG_ERRORS
 -
@@ -581,7 +578,7 @@
 -and OPENSSL_LIBS to avoid the need to call pkg-config.
 -See the pkg-config man page for more details.
 -" >&5
--echo "$as_me: error: Package requirements (openssl >= 0.9.8) were not met:
+-echo "$as_me: error: Package requirements (openssl >= 0.9.4) were not met:
 -
 -$OPENSSL_PKG_ERRORS
 -
@@ -623,139 +620,137 @@
 -	:
 -fi
 -
--
--{ echo "$as_me:$LINENO: checking how to copy va_list" >&5
--echo $ECHO_N "checking how to copy va_list... $ECHO_C" >&6; }
--cat >conftest.$ac_ext <<_ACEOF
--/* confdefs.h.  */
--_ACEOF
--cat confdefs.h >>conftest.$ac_ext
--cat >>conftest.$ac_ext <<_ACEOF
--/* end confdefs.h.  */
--#include <stdarg.h>
--int
--main ()
--{
--va_list ap1, ap2; va_copy(ap1, ap2);
--  ;
--  return 0;
--}
--_ACEOF
--rm -f conftest.$ac_objext conftest$ac_exeext
--if { (ac_try="$ac_link"
--case "(($ac_try" in
--  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
--  *) ac_try_echo=$ac_try;;
--esac
--eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
--  (eval "$ac_link") 2>conftest.er1
--  ac_status=$?
--  grep -v '^ *+' conftest.er1 >conftest.err
--  rm -f conftest.er1
--  cat conftest.err >&5
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } && {
--	 test -z "$ac_c_werror_flag" ||
--	 test ! -s conftest.err
--       } && test -s conftest$ac_exeext &&
--       $as_test_x conftest$ac_exeext; then
--  { echo "$as_me:$LINENO: result: va_copy" >&5
--echo "${ECHO_T}va_copy" >&6; }
--else
--  echo "$as_me: failed program was:" >&5
--sed 's/^/| /' conftest.$ac_ext >&5
--
--
--
--        cat >conftest.$ac_ext <<_ACEOF
--/* confdefs.h.  */
--_ACEOF
--cat confdefs.h >>conftest.$ac_ext
--cat >>conftest.$ac_ext <<_ACEOF
--/* end confdefs.h.  */
--#include <stdarg.h>
--int
--main ()
--{
--va_list ap1, ap2; __va_copy(ap1, ap2);
--  ;
--  return 0;
--}
--_ACEOF
--rm -f conftest.$ac_objext conftest$ac_exeext
--if { (ac_try="$ac_link"
--case "(($ac_try" in
--  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
--  *) ac_try_echo=$ac_try;;
--esac
--eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
--  (eval "$ac_link") 2>conftest.er1
--  ac_status=$?
--  grep -v '^ *+' conftest.er1 >conftest.err
--  rm -f conftest.er1
--  cat conftest.err >&5
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } && {
--	 test -z "$ac_c_werror_flag" ||
--	 test ! -s conftest.err
--       } && test -s conftest$ac_exeext &&
--       $as_test_x conftest$ac_exeext; then
--   cat >>confdefs.h <<\_ACEOF
--#define va_copy __va_copy
--_ACEOF
--
--        { echo "$as_me:$LINENO: result: __va_copy" >&5
--echo "${ECHO_T}__va_copy" >&6; }
--else
--  echo "$as_me: failed program was:" >&5
--sed 's/^/| /' conftest.$ac_ext >&5
--
--	 cat >>confdefs.h <<\_ACEOF
--#define va_copy(dest,src) memcpy(&dest,&src,sizeof(va_list))
--_ACEOF
--
--        { echo "$as_me:$LINENO: result: memcpy" >&5
--echo "${ECHO_T}memcpy" >&6; }
--
--fi
--
--rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
--      conftest$ac_exeext conftest.$ac_ext
--
--fi
--
--rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
--      conftest$ac_exeext conftest.$ac_ext
--
--
--
--subdirs="$subdirs third-party/libevent"
--
--{ echo "$as_me:$LINENO: invoking libevent's configure script" >&5
--echo "$as_me: invoking libevent's configure script" >&6;}
--LIBEVENT_CPPFLAGS="-I\$(top_srcdir)/third-party/libevent"
--
--
--
--
--have_gtk=yes
--
--pkg_failed=no
+ # Check whether --enable-largefile was given.
+ if test "${enable_largefile+set}" = set; then
+   enableval=$enable_largefile;
+@@ -22942,6 +22845,126 @@
+ 
+ have_gtk=yes
+ 
++
++if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
++	if test -n "$ac_tool_prefix"; then
++  # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
++set dummy ${ac_tool_prefix}pkg-config; ac_word=$2
++{ echo "$as_me:$LINENO: checking for $ac_word" >&5
++echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
++if test "${ac_cv_path_PKG_CONFIG+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  case $PKG_CONFIG in
++  [\\/]* | ?:[\\/]*)
++  ac_cv_path_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test with a path.
++  ;;
++  *)
++  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++for as_dir in $PATH
++do
++  IFS=$as_save_IFS
++  test -z "$as_dir" && as_dir=.
++  for ac_exec_ext in '' $ac_executable_extensions; do
++  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
++    ac_cv_path_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
++    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++    break 2
++  fi
++done
++done
++IFS=$as_save_IFS
++
++  ;;
++esac
++fi
++PKG_CONFIG=$ac_cv_path_PKG_CONFIG
++if test -n "$PKG_CONFIG"; then
++  { echo "$as_me:$LINENO: result: $PKG_CONFIG" >&5
++echo "${ECHO_T}$PKG_CONFIG" >&6; }
++else
++  { echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6; }
++fi
++
++
++fi
++if test -z "$ac_cv_path_PKG_CONFIG"; then
++  ac_pt_PKG_CONFIG=$PKG_CONFIG
++  # Extract the first word of "pkg-config", so it can be a program name with args.
++set dummy pkg-config; ac_word=$2
++{ echo "$as_me:$LINENO: checking for $ac_word" >&5
++echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6; }
++if test "${ac_cv_path_ac_pt_PKG_CONFIG+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  case $ac_pt_PKG_CONFIG in
++  [\\/]* | ?:[\\/]*)
++  ac_cv_path_ac_pt_PKG_CONFIG="$ac_pt_PKG_CONFIG" # Let the user override the test with a path.
++  ;;
++  *)
++  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++for as_dir in $PATH
++do
++  IFS=$as_save_IFS
++  test -z "$as_dir" && as_dir=.
++  for ac_exec_ext in '' $ac_executable_extensions; do
++  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
++    ac_cv_path_ac_pt_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
++    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++    break 2
++  fi
++done
++done
++IFS=$as_save_IFS
++
++  ;;
++esac
++fi
++ac_pt_PKG_CONFIG=$ac_cv_path_ac_pt_PKG_CONFIG
++if test -n "$ac_pt_PKG_CONFIG"; then
++  { echo "$as_me:$LINENO: result: $ac_pt_PKG_CONFIG" >&5
++echo "${ECHO_T}$ac_pt_PKG_CONFIG" >&6; }
++else
++  { echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6; }
++fi
++
++  if test "x$ac_pt_PKG_CONFIG" = x; then
++    PKG_CONFIG=""
++  else
++    case $cross_compiling:$ac_tool_warned in
++yes:)
++{ echo "$as_me:$LINENO: WARNING: In the future, Autoconf will not detect cross-tools
++whose name does not start with the host triplet.  If you think this
++configuration is useful to you, please write to autoconf@gnu.org." >&5
++echo "$as_me: WARNING: In the future, Autoconf will not detect cross-tools
++whose name does not start with the host triplet.  If you think this
++configuration is useful to you, please write to autoconf@gnu.org." >&2;}
++ac_tool_warned=yes ;;
++esac
++    PKG_CONFIG=$ac_pt_PKG_CONFIG
++  fi
++else
++  PKG_CONFIG="$ac_cv_path_PKG_CONFIG"
++fi
++
++fi
++if test -n "$PKG_CONFIG"; then
++	_pkg_min_version=0.9.0
++	{ echo "$as_me:$LINENO: checking pkg-config is at least version $_pkg_min_version" >&5
++echo $ECHO_N "checking pkg-config is at least version $_pkg_min_version... $ECHO_C" >&6; }
++	if $PKG_CONFIG --atleast-pkgconfig-version $_pkg_min_version; then
++		{ echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6; }
++	else
++		{ echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6; }
++		PKG_CONFIG=""
++	fi
++
++fi
++
+ pkg_failed=no
  { echo "$as_me:$LINENO: checking for GTK" >&5
  echo $ECHO_N "checking for GTK... $ECHO_C" >&6; }
- 
-@@ -24924,8 +24947,9 @@
-    { (exit 1); exit 1; }; }
- fi
- 
-+if test "x$use_gtk" = "xyes"; then
-   ac_config_commands="$ac_config_commands po/stamp-it"
--
-+fi
- 
- if test -z "${HAVE_WX_TRUE}" && test -z "${HAVE_WX_FALSE}"; then
-   { { echo "$as_me:$LINENO: error: conditional \"HAVE_WX\" was never defined.
-@@ -25642,11 +25666,9 @@
+@@ -26392,11 +26415,9 @@
  PTHREAD_CC!$PTHREAD_CC$ac_delim
  PTHREAD_LIBS!$PTHREAD_LIBS$ac_delim
  PTHREAD_CFLAGS!$PTHREAD_CFLAGS$ac_delim
@@ -768,7 +763,7 @@
  GTK_CFLAGS!$GTK_CFLAGS$ac_delim
  GTK_LIBS!$GTK_LIBS$ac_delim
  WITH_GTK_TRUE!$WITH_GTK_TRUE$ac_delim
-@@ -25718,7 +25740,7 @@
+@@ -26468,7 +26489,7 @@
  LTLIBOBJS!$LTLIBOBJS$ac_delim
  _ACEOF
  
