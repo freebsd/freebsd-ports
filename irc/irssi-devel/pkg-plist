@@ -294,13 +294,13 @@ include/irssi/src/lib-popt/poptint.h
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Irssi
 @exec mkdir -p %D/lib/irssi/modules
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/help
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/themes
+@dirrmtry %%DATADIR%%/scripts
+@dirrmtry %%DATADIR%%/help
+@dirrmtry %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@dirrm lib/irssi/modules
-@dirrm lib/irssi
+@dirrmtry lib/irssi/modules
+@dirrmtry lib/irssi
 @dirrm include/irssi/src/lib-popt
 @dirrm include/irssi/src/lib-config
 @dirrm include/irssi/src/irc/notifylist
