@@ -50,12 +50,6 @@ MAN3=		fltk.3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
-
 pre-everything::
 .if !defined(WITH_THREADS)
 	@${ECHO_MSG} "===>  You can enable threads support by defining WITH_THREADS"
