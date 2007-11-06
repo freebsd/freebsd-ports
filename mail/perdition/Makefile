@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perdition
-PORTVERSION=	1.17
+PORTVERSION=	1.17.1
 CATEGORIES=	mail net security
 MASTER_SITES=	http://www.vergenet.net/linux/perdition/download/${PORTVERSION}/
 
@@ -31,7 +31,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	DOCSDIR=${DOCSDIR}
 CONFIGURE_ARGS+=	--disable-daemon-map
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 ##
 ## Available knobs:
@@ -122,7 +122,9 @@ PLIST_SUB+=		PGSQL="@comment "
 
 .if defined(WITH_OPENLDAP)
 USE_OPENLDAP=		YES
-CONFIGURE_ARGS+=	--enable-ldap --with-ldap-schema-directory=${LOCALBASE}/etc/openldap/schema/
+CONFIGURE_ARGS+=	--enable-ldap \
+			--with-ldap-schema-directory=${LOCALBASE}/etc/openldap/schema/ \
+			--disable-ldap-doc
 PLIST_SUB+=		OPENLDAP=""
 MAN8+=			perditiondb_ldap_makedb.8
 .else

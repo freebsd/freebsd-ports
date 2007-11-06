@@ -1,11 +1,11 @@
---- perdition/db/bdb/Makefile.in.orig	Tue Dec  6 15:56:55 2005
-+++ perdition/db/bdb/Makefile.in	Tue Dec  6 15:57:17 2005
-@@ -142,7 +142,7 @@
+--- perdition/db/bdb/Makefile.in.orig	2007-11-02 15:49:39.000000000 +0100
++++ perdition/db/bdb/Makefile.in	2007-11-02 15:50:20.000000000 +0100
+@@ -235,7 +235,7 @@
+   perditiondb_bdb.h
  
  libperditiondb_bdb_la_LDFLAGS = -version-info 0:0:0
- 
 -libperditiondb_bdb_la_LIBADD = -ldb
 +libperditiondb_bdb_la_LIBADD = -ldb3
- 
- INCLUDES =    -I$(top_srcdir)/   -I$(top_srcdir)/perdition   -I$(top_srcdir)/libjain   -DPERDITIONDB_BDB_SYSCONFDIR=\"$(sysconfdir)/perdition\" @ssl_includes@
- 
+ INCLUDES = \
+   -I$(top_srcdir)/ \
+   -I$(top_srcdir)/perdition \

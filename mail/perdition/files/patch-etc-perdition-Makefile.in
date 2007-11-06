@@ -1,18 +1,23 @@
---- etc/perdition/Makefile.in.orig	Sun Jun 15 19:07:06 2003
-+++ etc/perdition/Makefile.in	Sun Jun 15 19:07:13 2003
-@@ -169,11 +169,11 @@
- 	$(mkinstalldirs) $(DESTDIR)$(perditionconfdir)
+--- etc/perdition/Makefile.in.orig	2007-11-02 15:40:32.000000000 +0100
++++ etc/perdition/Makefile.in	2007-11-02 15:45:43.000000000 +0100
+@@ -259,16 +259,16 @@
  	@list='$(perditionconf_DATA)'; for p in $$list; do \
- 	  if test -f $(srcdir)/$$p; then \
--	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(perditionconfdir)/$$p"; \
--	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(perditionconfdir)/$$p; \
-+	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(perditionconfdir)/$$p-dist"; \
-+	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(perditionconfdir)/$$p-dist; \
- 	  else if test -f $$p; then \
--	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(perditionconfdir)/$$p"; \
--	    $(INSTALL_DATA) $$p $(DESTDIR)$(perditionconfdir)/$$p; \
-+	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(perditionconfdir)/$$p-dist"; \
-+	    $(INSTALL_DATA) $$p $(DESTDIR)$(perditionconfdir)/$$p-dist; \
- 	  fi; fi; \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(perditionconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(perditionconfdir)/$$f'"; \
+-	  $(perditionconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(perditionconfdir)/$$f"; \
++	  echo " $(perditionconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(perditionconfdir)/$$f-dist'"; \
++	  $(perditionconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(perditionconfdir)/$$f-dist"; \
  	done
  
+ uninstall-perditionconfDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(perditionconf_DATA)'; for p in $$list; do \
+ 	  f=$(am__strip_dir) \
+-	  echo " rm -f '$(DESTDIR)$(perditionconfdir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(perditionconfdir)/$$f"; \
++	  echo " rm -f '$(DESTDIR)$(perditionconfdir)/$$f-dist'"; \
++	  rm -f "$(DESTDIR)$(perditionconfdir)/$$f-dist"; \
+ 	done
+ tags: TAGS
+ TAGS:
