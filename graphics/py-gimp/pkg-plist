@@ -9,7 +9,6 @@ libexec/gimp/2.2/plug-ins/palette-sort.py
 libexec/gimp/2.2/plug-ins/palette-to-gradient.py
 libexec/gimp/2.2/plug-ins/py-slice.py
 libexec/gimp/2.2/plug-ins/pyconsole.py
-libexec/gimp/2.2/plug-ins/shadow_bevel.py
 libexec/gimp/2.2/python/_gimpenums.a
 libexec/gimp/2.2/python/_gimpenums.la
 libexec/gimp/2.2/python/_gimpenums.so
