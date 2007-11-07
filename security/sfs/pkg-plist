@@ -13,7 +13,6 @@ etc/rc.d/sfscd.sh.sample
 etc/rc.d/sfssd.sh.sample
 etc/sfs/sfsrwsd_config.sample
 include/sfs
-include/sfs.h
 include/sfs-%%SFS_VERSION%%/aclnt.h
 include/sfs-%%SFS_VERSION%%/aes.h
 include/sfs-%%SFS_VERSION%%/afsnode.h
@@ -130,7 +129,7 @@ include/sfs-%%SFS_VERSION%%/wmstr.h
 include/sfs-%%SFS_VERSION%%/xdr_suio.h
 include/sfs-%%SFS_VERSION%%/xdrmisc.h
 include/sfs-%%SFS_VERSION%%/xhinfo.h
-@dirrm include/sfs-%%SFS_VERSION%%
+include/sfs.h
 lib/libsfs.a
 lib/sfs
 lib/sfs-%%SFS_VERSION%%/aiod
@@ -155,24 +154,21 @@ lib/sfs-%%SFS_VERSION%%/proxy
 lib/sfs-%%SFS_VERSION%%/ptyd
 lib/sfs-%%SFS_VERSION%%/rexd
 lib/sfs-%%SFS_VERSION%%/sfsauthd
-lib/sfs-%%SFS_VERSION%%/sfsrwcd
 lib/sfs-%%SFS_VERSION%%/sfsrwsd
-lib/sfs-%%SFS_VERSION%%/upgradedb.pl
 @group sfs
 lib/sfs-%%SFS_VERSION%%/suidconnect
 @group
 lib/sfs-%%SFS_VERSION%%/ttyd
+lib/sfs-%%SFS_VERSION%%/upgradedb.pl
 lib/sfs-%%SFS_VERSION%%/xfer
-@dirrm lib/sfs-%%SFS_VERSION%%
 sbin/funmount
 sbin/sfscd
 sbin/sfssd
 sbin/vidb
-%%DOCSDIR%%/WELCOME
 %%DOCSDIR%%/README
-%%DOCSDIR%%/README.packageblurb
 %%DOCSDIR%%/README.0.7-upgrade
-@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/README.packageblurb
+%%DOCSDIR%%/WELCOME
 %%DATADIR%%/agentrc
 %%DATADIR%%/sfs_config
 %%DATADIR%%/sfs_srp_parms
@@ -180,4 +176,7 @@ sbin/vidb
 %%DATADIR%%/sfscd_config
 %%DATADIR%%/sfssd_config
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
+@dirrm lib/sfs-%%SFS_VERSION%%
+@dirrm include/sfs-%%SFS_VERSION%%
 @dirrm etc/sfs
