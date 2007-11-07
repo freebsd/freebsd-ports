@@ -15,16 +15,12 @@ COMMENT=	Very fast XML parser and decoder written in pure assembler
 
 BUILD_DEPENDS=	fasm:${PORTSDIR}/lang/fasm
 
+BROKEN=		Does not build on amd64
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_DOS2UNIX=	YES
 
 PLIST_FILES=	include/asm-xml.h lib/libasm-xml.a
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		Does not build on amd64
-.endif
 
 post-extract:
 	${RM} -rf ${WRKSRC}/obj
@@ -32,4 +28,4 @@ post-extract:
 post-patch:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
