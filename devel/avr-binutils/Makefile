@@ -7,6 +7,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.18
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -35,6 +36,7 @@ MAN1=	\
 		avr-as.1 \
 		avr-c++filt.1 \
 		avr-dlltool.1 \
+		avr-gprof.1 \
 		avr-ld.1 \
 		avr-nlmconv.1 \
 		avr-nm.1 \
@@ -45,7 +47,8 @@ MAN1=	\
 		avr-size.1 \
 		avr-strings.1 \
 		avr-strip.1 \
+		avr-windmc.1 \
 		avr-windres.1
-INFO=		as binutils ld
+INFO=		as binutils gprof ld
 
 .include <bsd.port.mk>
