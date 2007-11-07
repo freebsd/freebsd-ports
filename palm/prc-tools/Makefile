@@ -68,10 +68,6 @@ CFLAGS:=	${CFLAGS:C/-m[-=0-9a-z]*//g}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 post-extract:
 	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS})
 
@@ -115,6 +111,18 @@ post-patch:
 	@cd ${WRKDIR}/gcc-3.3.1 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-gcc3-configure.in
 	@cd ${WRKDIR}/gcc-2.95.3 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-gcc2-configure.in
 	@cd ${WRKDIR}/gdb-5.3 && ${PATCH} -p0 --forward --quiet -E < ${FILESDIR}/post-patch-gdb-configure.in
+.if ${OSVERSION} >= 700042
+	@(cd ${WRKDIR}; \
+	 	PATCHES_APPLIED="" ; \
+		${ECHO_MSG} `${ECHO_CMD} ">>> OSVERSION=${OSVERSION}, applying gcc-42 patches."`; \
+		for i in ${FILESDIR}/gcc42-patch-*; do \
+		if ${PATCH} -p0 --forward --quiet -E < $$i; then \
+			PATCHES_APPLIED="$$PATCHES_APPLIED $$i"; \
+		else \
+			${ECHO_MSG} `${ECHO_CMD} ">> Patch $$i failed to apply cleanly."` ; \
+		fi; \
+	 	done)
+.endif
 
 pre-configure:
 	(cd ${WRKDIR}/prc-tools-${PORTVERSION} && \
