@@ -9,6 +9,7 @@ PORTNAME=	videodownloader
 PORTVERSION=	1.1.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
+MASTER_SITES=	CENKES
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Download embedded video files

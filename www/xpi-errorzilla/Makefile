@@ -14,6 +14,7 @@ MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	Useful error pages
 
 XPI_DISTNAME=	errorzilla_mod
+XPI_NUM=	3336
 XPI_ID=		ErrorZillaMod@jaybaldwin
 XPI_FILES=	chrome/errorzillamod.jar chrome.manifest install.rdf license.txt
 XPI_DIRS=	chrome
