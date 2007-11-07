@@ -7,12 +7,12 @@
 
 PORTNAME=	sshit
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://anp.ath.cx/sshit/ \
 		${MASTER_SITE_LOCAL}
 
-MAINTAINER=	jnlin@csie.nctu.edu.tw
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Checks for SSH/FTP bruteforce and blocks given IPs
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
