@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.3.5-10
-PORTREVISION=	1
+DISTVERSION=	6.3.6-9
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -37,9 +36,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --without-dps
 USE_LDCONFIG=	yes
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
-USE_DOS2UNIX=	YES
-DOS2UNIX_REGEX=	.*\.(html|t)$
-
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
 		animate.1 conjure.1 compare.1 composite.1 convert.1 display.1 \
@@ -58,13 +54,14 @@ OPTIONS=	X11				"X11 support" on \
 		IMAGEMAGICK_16BIT_PIXEL		"16bit pixel support" on \
 		IMAGEMAGICK_DJVU	"DJVU format support (needs threads)" off \
 		IMAGEMAGICK_LCMS		"LCMS support" on \
+		IMAGEMAGICK_HDRI		"High Dynamic Range Images (HDRI)" off \
 		IMAGEMAGICK_TTF			"Freetype support" on \
 		IMAGEMAGICK_FONTCONFIG		"Fontconfig support" on \
 		IMAGEMAGICK_JPEG		"JPG format support" on \
 		IMAGEMAGICK_OPENEXR		"OpenEXR support (needs threads)" off \
 		IMAGEMAGICK_PNG			"PNG format support" on \
 		IMAGEMAGICK_TIFF		"TIFF format support" on \
-		IMAGEMAGICK_FPX			"FPX format support" off \
+		IMAGEMAGICK_FPX			"FPX format support" on \
 		IMAGEMAGICK_JBIG		"JBIG format support" on \
 		IMAGEMAGICK_JPEG2000		"JPEG2000 format support" on \
 		IMAGEMAGICK_DOT		"GraphViz dot graphs support" off \
@@ -76,8 +73,14 @@ OPTIONS=	X11				"X11 support" on \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GHOSTSCRIPT_GNU)
+.if defined(WITH_GHOSTSCRIPT_GNU) && !defined(WITHOUT_IMAGEMAGICK_PDF)
 IGNORE=		requires newer version of ghostscript
+.endif
+
+.if defined(WITH_IMAGEMAGICK_HDRI)
+CONFIGURE_ARGS+=	--enable-hdri
+.else
+CONFIGURE_ARGS+=	--disable-hdri
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK_PERL)
@@ -101,9 +104,6 @@ WITH_IMAGEMAGICK_THREADS=yes
 .else
 CONFIGURE_ARGS+=	--without-threads
 .undef WITH_IMAGEMAGICK_THREADS
-.if defined(WITH_IMAGEMAGICK_OPENEXR) && !defined(WITHOUT_IMAGEMAGICK_PERL)
-.	warning OpenEXR's libIlmThread may prevent PerlMagick from working
-.endif
 .if defined(WITH_IMAGEMAGICK_DJVU)
 .	warning DjVu requires threads and will not be supported
 .	undef WITH_IMAGEMAGICK_DJVU
@@ -190,7 +190,7 @@ CONFIGURE_ARGS+=	--without-bzlib
 
 # FPX (FlashPIX) images
 .if !defined(WITHOUT_IMAGEMAGICK_FPX)
-LIB_DEPENDS+=		fpx:${PORTSDIR}/graphics/libfpx
+LIB_DEPENDS+=		fpx.[2-9]:${PORTSDIR}/graphics/libfpx
 CONFIGURE_ARGS+=	--with-fpx
 PLIST_SUB+=		FPX=""
 .else
@@ -356,14 +356,21 @@ test check:
 .if !defined(WITHOUT_IMAGEMAGICK_TESTS)
 .	for m in TTF
 .		if defined(WITHOUT_IMAGEMAGICK_$m)
-IGNORE+=	Absence of $m breaks self-tests. Enable $m or disable automatic tests.
+.			warning	Absence of $m breaks self-tests. Disabling them.
+WITHOUT_IMAGEMAGICK_TESTS=yes
 .		endif
 .	endfor
-.	for m in FPX
+.endif
+.if !defined(WITHOUT_IMAGEMAGICK_TESTS)
+.	for m in HDRI MODULES
 .		if defined(WITH_IMAGEMAGICK_$m)
-IGNORE+=	Presence of $m breaks self-tests. Disable $m or disable automatic tests.
+.			warning	Presence of $m breaks self-tests. Disabling them.
+WITHOUT_IMAGEMAGICK_TESTS=yes
 .		endif
 .	endfor
+.endif
+
+.if !defined(WITHOUT_IMAGEMAGICK_TESTS)
 post-build:	test
 .endif
 
