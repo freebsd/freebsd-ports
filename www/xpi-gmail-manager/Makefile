@@ -14,6 +14,7 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Manage multiple Gmail accounts and receive new mail notifications
 
 XPI_DISTNAME=	gmail_manager
+XPI_NUM=	1320
 XPI_ID=		{582195F5-92E7-40a0-A127-DB71295901D7}
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
