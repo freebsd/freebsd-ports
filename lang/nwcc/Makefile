@@ -17,15 +17,21 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Nils Weller's C compiler for Unix systems
 
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
-
 ONLY_FOR_ARCHS=	i386 amd64
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--installprefix=${PREFIX}
 ALL_TARGET=
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+.else
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+.endif
+
 post-build:
 	cd ${WRKSRC} ; ${MAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
