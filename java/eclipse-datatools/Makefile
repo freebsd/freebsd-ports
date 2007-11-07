@@ -18,7 +18,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Datatools for eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.2.1.v200609210005/feature.xml:${PORTSDIR}/java/eclipse-emf \
+		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.2.4.v200710030400/feature.xml:${PORTSDIR}/java/eclipse-emf \
 		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.2.2.v20070208/feature.xml:${PORTSDIR}/java/eclipse-gef
 
 NO_BUILD=	yes
