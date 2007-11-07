@@ -25,7 +25,7 @@ MAN1=		kcd.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64 && ${OSVERSION} > 800000
+.if ${OSVERSION} > 800000
 BROKEN=		Attempts to allocate all of memory during configure
 .endif
 
