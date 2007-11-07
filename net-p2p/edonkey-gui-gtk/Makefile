@@ -21,6 +21,10 @@ COMMENT=	GTK GUI to eDonkey2000 'core' command line client
 LIB_DEPENDS=	gnet-2.0:${PORTSDIR}/net/gnet2
 RUN_DEPENDS=	donkey:${PORTSDIR}/net-p2p/linux-edonkey-core
 
+BROKEN=		fails to install
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2008-01-06
+
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_XLIB=	yes
