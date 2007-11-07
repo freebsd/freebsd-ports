@@ -39,6 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>perl</name>
+	<name>perl-threaded</name>
 	<range><gt>5.8.*</gt><lt>5.8.8_1</lt></range>
       </package>
     </affects>
@@ -60,6 +61,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-11-05</discovery>
       <entry>2007-11-06</entry>
+      <modified>2007-11-07</modified>
     </dates>
   </vuln>
 
@@ -24358,6 +24360,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>perl</name>
+	<name>perl-threaded</name>
 	<range><ge>5.8</ge><lt>5.8.6_2</lt></range>
       </package>
     </affects>
@@ -24387,6 +24390,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-02-02</discovery>
       <entry>2005-02-02</entry>
+      <modified>2007-11-07</modified>
     </dates>
   </vuln>
 
@@ -25041,6 +25045,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>perl</name>
+	<name>perl-threaded</name>
 	<range><ge>0</ge><lt>5.6.2</lt></range>
 	<range><ge>5.8.0</ge><lt>5.8.6</lt></range>
       </package>
@@ -25060,7 +25065,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2004-12-30</discovery>
       <entry>2005-01-21</entry>
-      <modified>2005-02-01</modified>
+      <modified>2007-11-07</modified>
     </dates>
   </vuln>
 
