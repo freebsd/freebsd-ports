@@ -9,7 +9,7 @@ PORTNAME=	wmnd
 PORTVERSION=	0.4.12
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://www.yuv.info/wmnd/releases/
+MASTER_SITES=	http://www.thregr.org/~wavexx/software/wmnd/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved network monitoring dock app (with tons of features)
