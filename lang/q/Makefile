@@ -80,8 +80,12 @@ INFO=	qdoc
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (shared libraries must be compiled with -fPIC)"
+BROKEN=		Does not build on amd64 (shared libraries must be compiled with -fPIC)
 .endif
 
 post-extract:
