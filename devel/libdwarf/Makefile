@@ -7,6 +7,7 @@
 
 PORTNAME=	libdwarf
 PORTVERSION=	20070703
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://reality.sgiweb.org/davea/
 
