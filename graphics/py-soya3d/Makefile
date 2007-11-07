@@ -7,6 +7,7 @@
 
 PORTNAME=	soya3d
 PORTVERSION=	0.13.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,8 +20,7 @@ COMMENT=	Very high level 3D engine for Python
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_SITELIBDIR}/pysdl_mixer/sdl_mixer.so:${PORTSDIR}/audio/py-sdl_mixer \
-		pyrexc:${PORTSDIR}/devel/pyrex
+		${PYTHON_SITELIBDIR}/pysdl_mixer/sdl_mixer.so:${PORTSDIR}/audio/py-sdl_mixer
 LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
 		GLEW.1:${PORTSDIR}/graphics/glew \
 		openal.0:${PORTSDIR}/audio/openal \
@@ -49,8 +49,6 @@ DISTFILES+=	SoyaTutorial-${SOYATUTVER}${EXTRACT_SUFX}
 .endif
 
 .include <bsd.port.pre.mk>
-
-BROKEN=		broken with current version of devel/pyrex
 
 .if ${ARCH} == "amd64"
 CFLAGS	+=	-fPIC
