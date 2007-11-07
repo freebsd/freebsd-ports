@@ -122,6 +122,12 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/templates/utils.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/modules/__init__.py
 %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/__init__.py
+%%PYTHON_SITELIBDIR%%/prewikka/modules/auth/anonymous/anonymous.py
+%%PYTHON_SITELIBDIR%%/prewikka/modules/auth/anonymous/__init__.py
+%%PYTHON_SITELIBDIR%%/prewikka/modules/auth/anonymous/anonymous.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/modules/auth/anonymous/__init__.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/modules/auth/anonymous/anonymous.pyo
+%%PYTHON_SITELIBDIR%%/prewikka/modules/auth/anonymous/__init__.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/loginpassword/loginpassword.py
 %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/loginpassword/__init__.py
 %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/loginpassword/loginpassword.pyc
@@ -208,6 +214,7 @@ bin/prewikka-httpd
 %%DATADIR%%/database/pgsql-update-0.9.11.sql
 %%DATADIR%%/database/mysql2sqlite.sh
 %%DATADIR%%/database/mysql2pgsql.sh
+@dirrmtry %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/anonymous
 @dirrmtry %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/cgi
 @dirrmtry %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/loginpassword
 @dirrmtry %%PYTHON_SITELIBDIR%%/prewikka/modules/auth
