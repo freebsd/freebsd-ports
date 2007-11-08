@@ -21,10 +21,6 @@ COMMENT=	GTK GUI to eDonkey2000 'core' command line client
 LIB_DEPENDS=	gnet-2.0:${PORTSDIR}/net/gnet2
 RUN_DEPENDS=	donkey:${PORTSDIR}/net-p2p/linux-edonkey-core
 
-BROKEN=		fails to install
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=	2008-01-06
-
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_XLIB=	yes
@@ -45,6 +41,8 @@ post-patch:
 		 ${WRKSRC}/docs/Makefile.in
 	@${REINPLACE_CMD} -e 's|-Wall -g||g ; \
 		 s| == "xyes| = "xyes|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name Makefile.* | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-DG.*_DISABLE_DEPRECATED||g'
 
 post-install:
 	@${LN} -sf ed2k_gui ${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
