@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ccscript
-PORTVERSION=	2.5.9
-PORTREVISION=	1
+PORTVERSION=	1.1.6
+PORTEPOCH=	1
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gnutelephony
+MASTER_SITES=	GNU
+DISTNAME=	${PORTNAME:S/$/3/}-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	State-event driven class extendible C++ script interpreter
@@ -20,19 +20,9 @@ LIB_DEPENDS=	ccgnu2-1.5.0:${PORTSDIR}/devel/commoncpp
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
-INSTALL_TARGET=	install man
 USE_LDCONFIG=	yes
 
-MAN3=		ScriptCommand.3cc ScriptImage.3cc ScriptInterp.3cc \
-		ScriptModule.3cc ScriptSymbol.3cc Script_Locks.3cc \
-		Script_Package.3cc Script_Property.3cc Script_Session.3cc
-
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
