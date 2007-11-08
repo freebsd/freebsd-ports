@@ -16,6 +16,7 @@ COMMENT=	The Neko Programming Language
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
 OPTIONS=	APACHE13 "Build with mod_neko for Apache 1.3.x" off \
