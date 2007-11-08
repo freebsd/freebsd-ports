@@ -22,6 +22,7 @@ DIST_SUBDIR=		${PORTNAME}-${SNAPDATE}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
+FORBIDDEN=	multiple vulnerabilities
 SNAPDATE=	2007-06-26
 USE_BZIP2=	yes
 

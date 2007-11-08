@@ -18,5 +18,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	The free web browser that makes it easier to share with your friends
 
+FORBIDDEN=	multiple vulnerabilities
+
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
 .include <bsd.port.mk>
