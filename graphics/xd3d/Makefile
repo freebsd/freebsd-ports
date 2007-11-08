@@ -54,6 +54,8 @@ XD3D_LANG=	ENGLISH
 DOCS=		BUGS CHANGELOG FAQ FORMATS INSTALL README Manuals/formats.txt	\
 		Manuals/xd3d_doc.pdf Manuals/xgraphic_doc.pdf
 
+.include <bsd.port.pre.mk>
+
 do-fetch:
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 	${FETCH_CMD} ${FETCH_BEFORE_ARGS}			\
@@ -87,4 +89,4 @@ post-install:
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
