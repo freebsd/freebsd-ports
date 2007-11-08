@@ -20,6 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/lisp:${PORTSDIR}/lang/cmucl
 
 NO_BUILD=	yes
 
+BROKEN=		Does not compile (dumps core)
+
 pre-install:
 	(cd ${WRKDIR}/screamer && ${LOCALBASE}/bin/lisp -eval '(load "${FILESDIR}/build.lisp")')
 
@@ -36,10 +38,4 @@ post-install:
 	@echo "  (2) (require 'screamer)"
 	@echo "${PREFIX}/share/screamer constains source and documentation."
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
