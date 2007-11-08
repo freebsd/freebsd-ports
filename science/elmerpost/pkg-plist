@@ -256,6 +256,7 @@ bin/%%ARCH%%-portbld-freebsd%%OSREL%%-sico2elmer
 %%DATADIR%%/tcl/saveimage.tcl
 %%DATADIR%%/tcl/readfile.tcl
 %%DATADIR%%/tcl/particle.tcl
+%%DATADIR%%/tcl/loadsingle
 %%DATADIR%%/tcl/misc.tcl
 %%DATADIR%%/tcl/message.tcl
 %%DATADIR%%/tcl/mesh.tcl
@@ -281,6 +282,5 @@ bin/%%ARCH%%-portbld-freebsd%%OSREL%%-sico2elmer
 %%DATADIR%%/tcl/vectors.tcl
 @dirrm %%DATADIR%%/tcl
 %%DATADIR%%/modules/screensave.so
-%%DATADIR%%/modules/window.so
 @dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%
