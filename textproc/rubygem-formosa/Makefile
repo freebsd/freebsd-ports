@@ -8,9 +8,9 @@
 
 PORTNAME=	formosa
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	lukhnos@gmail.com
 COMMENT=	A collection of libraries for Taiwanese languages processing

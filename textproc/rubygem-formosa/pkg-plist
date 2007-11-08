@@ -43,7 +43,10 @@
 %%GEM_DOC_DIR%%/rdoc/files/lib/formosa_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/formosa/version_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/formosa/syllable_utility_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ext/native_syllable_composer/HoloVowels_h.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ext/native_syllable_composer/LibHolo_h.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/ext/native_syllable_composer/compose_cpp.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/ext/native_syllable_composer/compose_h.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/ext/native_syllable_composer/extconf_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/ext/native_syllable_composer/native_syllable_composer_c.html
 %%GEM_DOC_DIR%%/rdoc/files/History_txt.html
