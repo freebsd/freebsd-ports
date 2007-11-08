@@ -22,6 +22,7 @@ DIST_SUBDIR=		${PORTNAME}-${SNAPDATE}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
+FORBIDDEN=	multiple vulnerabilities
 SNAPDATE=	2007-06-26
 USE_BZIP2=	yes
 
