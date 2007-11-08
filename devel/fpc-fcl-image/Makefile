@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-image
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		${UNITSDIR}/netdb/Package.fpc:${PORTSDIR}/net/fpc-netdb \
 		${UNITSDIR}/pasjpeg/Package.fpc:${PORTSDIR}/graphics/fpc-pasjpeg \
 		${UNITSDIR}/paszlib/Package.fpc:${PORTSDIR}/archivers/fpc-paszlib \
+		${UNITSDIR}/libasync/Package.fpc:${PORTSDIR}/net/fpc-libasync \
 		${UNITSDIR}/libpng/Package.fpc:${PORTSDIR}/graphics/fpc-libpng
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
