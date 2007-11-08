@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-db
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		${UNITSDIR}/mysql/Package.fpc:${PORTSDIR}/databases/fpc-mysql \
 		${UNITSDIR}/odbc/Package.fpc:${PORTSDIR}/databases/fpc-odbc \
 		${UNITSDIR}/oracle/Package.fpc:${PORTSDIR}/databases/fpc-oracle \
+		${UNITSDIR}/paszlib/Package.fpc:${PORTSDIR}/archivers/fpc-paszlib \
 		${UNITSDIR}/postgres/Package.fpc:${PORTSDIR}/databases/fpc-postgres \
 		${UNITSDIR}/sqlite/Package.fpc:${PORTSDIR}/databases/fpc-sqlite
 

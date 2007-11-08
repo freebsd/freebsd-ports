@@ -101,6 +101,10 @@ OPT+=	-Fuunits/${ARCH}-freebsd -Fu../units/${ARCH}-freebsd \
 HAVE_EXAMPLES=  true
 .endif
 
+.if ${PKGNAMESUFFIX} == "-fcl-net"
+OPT+=	-Fu${WRKDIR}/${WRKUNITDIR}/*
+.endif
+
 .if ${PKGNAMESUFFIX} == "-fpgtk"
 .	if defined(WITH_GTK1)
 .include <${PORTSDIR}/Mk/bsd.gnome.mk>
