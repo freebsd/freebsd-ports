@@ -1,5 +1,5 @@
---- lib/ftfile.c.orig	Thu Feb 13 05:38:42 2003
-+++ lib/ftfile.c	Fri Feb 10 10:39:40 2006
+--- lib/ftfile.c.orig	2003-02-13 05:38:42.000000000 +0300
++++ lib/ftfile.c	2007-11-09 01:07:46.000000000 +0300
 @@ -311,7 +311,7 @@
  int ftfile_expire (struct ftfile_entries *fte, int doit, int curbytes)
  {
@@ -75,6 +75,15 @@
    } /* if */
  
    if (debug)
+@@ -499,7 +517,7 @@
+  * returns -1 on error
+  * 
+  */
+-int ftfile_mkpath(u_int32 ftime, int nest)
++int ftfile_mkpath(time_t ftime, int nest)
+ {
+   struct tm *tm;
+   char buf[32];
 @@ -762,13 +780,19 @@
  {
    struct ftfile_entry *n1, *n2;
