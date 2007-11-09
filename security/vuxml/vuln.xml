@@ -34,6 +34,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="20a4eb11-8ea3-11dc-a396-0016179b2dd5">
+    <topic>tikiwiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>tikiwik</name>
+	<range><lt>1.9.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/26618/">
+	  <p>Some vulnerabilities have been reported in TikiWiki, which
+	    can be exploited by malicious people to conduct cross-site
+	    scripting and script insertion attacks and disclose potentially
+	    sensitive information.</p>
+	  <p>Input passed to the username parameter in tiki-remind_password.php
+	    (when remind is set to send me my password) is not properly sanitised
+	    before being returned to the user. This can be exploited to execute
+	    arbitrary HTML and script code (for example with meta refreshes to a
+	    javascript: URL) in a user's browser session in context of an affected
+	    site.</p>
+	  <p>Input passed to the local_php and error_handler parameters in
+	    tiki-index.php is not properly verified before being used to include
+	    files. This can be exploited to include arbitrary files from local
+	    resources.</p>
+	  <p>Input passed to the imp_language parameter in tiki-imexport_languages.php
+	    is not properly verified before being used to include files.
+	    This can be exploited to include arbitrary files from local
+	    resources.</p>
+	  <p>Certain img src elements are not properly santised before being used.
+	    This can be exploited to insert arbitrary HTML and script code, which
+	    is executed in a user's browser session in context of an affected site
+	    when the malicious data is viewed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-4554</cvename>
+      <cvename>CVE-2007-5683</cvename>
+      <cvename>CVE-2007-5684</cvename>
+      <url>http://secunia.com/advisories/26618/</url>
+      <url>http://tikiwiki.cvs.sourceforge.net/tikiwiki/tiki/changelog.txt?view=markup&amp;pathrev=REL-1-9-8-2</url>
+    </references>
+    <dates>
+      <discovery>2007-08-27</discovery>
+      <entry>2007-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8dd9722c-8e97-11dc-b8f6-001c2514716c">
     <topic>cups -- off-by-one buffer overflow</topic>
     <affects>
