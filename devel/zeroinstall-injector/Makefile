@@ -22,15 +22,10 @@ EXTRACT_DEPENDS=gpg:${PORTSDIR}/security/gnupg
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-.if defined(PACKAGE_BUILDING)
-IGNORE=		attempts to contact gpg keyserver
-.endif
-
 MAN1=		0launch.1 0alias.1 0store.1
 
 do-extract:
 	@${RM} -rf ${DISTDIR}/${DISTNAME}.tar.gz
-	@gpg --recv-key --keyserver www.keyserver.net 59A53CC1
 	@gpg ${DISTDIR}/${DISTFILES}
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
