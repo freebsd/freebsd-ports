@@ -29,6 +29,7 @@ CABALCMD=	${LOCALBASE}/bin/runghc Setup.lhs
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}" \
 		HSPORTNAME="${HSPORTNAME}" \
+		GHC_VERSION="${GHC_VERSION}" \
 		SUBDIR=lib/ghc-${GHC_VERSION}/cabal
 
 CONFIGURE_ARGS= --ghc --prefix=${PREFIX} --libdir=${CABALDIR} \
@@ -47,5 +48,8 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${CABALCMD} install \
 	 && ${INSTALL_SCRIPT} ${WRKSRC}/register.sh ${CABALDIR}/${HSPORTNAME}-register.sh
+
+post-install:
+	@${RMDIR} ${CABALDIR}/include	# empty
 
 .include <bsd.port.post.mk>
