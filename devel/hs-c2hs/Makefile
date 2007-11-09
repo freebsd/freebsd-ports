@@ -24,12 +24,15 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 GHC_VERSION=	6.6.1
 
 # 'owned' by lang/ghc:
-CABALDIR=       ${PREFIX}/lib/ghc-${GHC_VERSION}/cabal
+CABALDIR=       ${PREFIX}/${SUBDIR}
 CABALCMD=       ${LOCALBASE}/bin/runghc Setup.hs
+SUBDIR=		lib/ghc-${GHC_VERSION}/cabal
 
-PLIST_FILES=	bin/c2hs
+PLIST_FILES=	bin/c2hs ${SUBDIR}/${PORTNAME}/C2HS.hs
+PLIST_DIRS=	${SUBDIR}/${PORTNAME}
 
 CONFIGURE_ARGS=	--ghc --prefix=${PREFIX} --libdir=${CABALDIR} \
+			--datadir=${CABALDIR}/${PORTNAME} \
 			--libsubdir='' --datasubdir=''
 
 do-configure:
