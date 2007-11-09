@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lugtools
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.0
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://vvelox.net/src/ldap/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -20,22 +20,20 @@ WANT_OPENLDAP_VER?=	23
 BROKEN=	Incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
-RUN_DEPENDS+=	ldapadd:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client
+RUN_DEPENDS+=	ldapadd:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client \
+		${PREFIX}/bin/sh-include:${PORTSDIR}/shells/shell-include
 
 USE_PERL5=	yes
 
-PLIST_FILES=	bin/lgadd bin/lgrm bin/lpwo bin/luadd bin/lurm bin/lgmod
+PLIST_FILES=	bin/lgadd bin/lgrm bin/lpwo bin/luadd bin/lurm bin/lgmod \
+		libexec/shell-include/bash/lugtools \
+		libexec/shell-include/sh/lugtools
 
-MAN1=		lpwo.1 \
-		luadd.1 \
-		lurm.1 \
-		lgadd.1 \
-		lgrm.1 \
-		lgmod.1
+MAN1=		lgadd.1 lgmod.1 lgrm.1 lpwo.1 luadd.1 lurm.1
 
 MAN5=		dotlugtools.5
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 #nothing to configure
 do-configure:
@@ -46,6 +44,6 @@ do-build:
 	@${ECHO} -n
 
 do-install:
-	@${EXEC} cd ${WRKDIR}/${PORTNAME}/ ; ${WRKDIR}/${PORTNAME}/install ${PREFIX}
+	@${EXEC} cd ${WRKSRC} ; ${WRKSRC}/install ${PREFIX}
 
 .include <bsd.port.mk>
