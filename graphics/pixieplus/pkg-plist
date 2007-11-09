@@ -208,7 +208,6 @@ share/apps/pixie/toolbar/mini-ray.png
 share/apps/pixie/toolbar/kwin.png
 share/mimelnk/image/x-xwd.desktop
 share/mimelnk/image/x-miff.desktop
-share/mimelnk/image/x-tga.desktop
 share/mimelnk/image/x-pict.desktop
 share/icons/locolor/22x22/actions/thumb.png
 share/icons/locolor/16x16/apps/run.png
@@ -237,10 +236,10 @@ share/icons/hicolor/32x32/apps/pixie.png
 share/icons/hicolor/32x32/actions/thumb.png
 share/icons/hicolor/32x32/actions/window_new.png
 share/icons/hicolor/32x32/actions/catagory.png
-@dirrm share/applnk/Graphics
-@dirrm share/applnk
-@dirrm share/apps/konqueror/servicemenus
-@dirrm share/apps/konqueror
+@dirrmtry share/applnk/Graphics
+@dirrmtry share/applnk
+@dirrmtry share/apps/konqueror/servicemenus
+@dirrmtry share/apps/konqueror
 @dirrm share/apps/pixie/doc/en/basic
 @dirrm share/apps/pixie/doc/en/framed
 @dirrm share/apps/pixie/doc/en/liquid
@@ -250,26 +249,26 @@ share/icons/hicolor/32x32/actions/catagory.png
 @dirrm share/apps/pixie/doc
 @dirrm share/apps/pixie/toolbar
 @dirrm share/apps/pixie
-@dirrm share/apps
-@dirrm share/mimelnk/image
-@dirrm share/mimelnk
-@dirrm share/icons/locolor/22x22/actions
-@dirrm share/icons/locolor/22x22
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16/actions
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor/32x32/actions
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32/actions
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor
-@dirrm share/icons
+@dirrmtry share/apps
+@dirrmtry share/mimelnk/image
+@dirrmtry share/mimelnk
+@dirrmtry share/icons/locolor/22x22/actions
+@dirrmtry share/icons/locolor/22x22
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16/actions
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor/32x32/actions
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor
+@dirrmtry share/icons/hicolor/16x16/actions
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/22x22/actions
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32/actions
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
