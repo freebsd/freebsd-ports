@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9b718b82-8ef5-11dc-8e42-001c2514716c">
+    <topic>gallery2 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gallery2</name>
+	<range><lt>2.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gallery project reports:</p>
+	<blockquote cite="http://gallery.menalto.com/gallery_2.2.3_released">
+	  <p>Gallery 2.2.3 addresses the following security vulnerabilities:</p>
+	  <ul>
+	    <li>Unauthorized renaming of items possible with WebDAV (reported
+	      by Merrick Manalastas)</li>
+	    <li>Unauthorized modification and retrieval of item properties possible
+	      with WebDAV</li>
+	    <li>Unauthorized locking and replacing of items possible with WebDAV</li>
+	    <li>Unauthorized editing of data file possible via linked items with
+	      Reupload and WebDAV (reported by Nicklous Roberts)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-4650</cvename>
+      <bid>25580</bid>
+    </references>
+    <dates>
+      <discovery>2007-08-29</discovery>
+      <entry>2007-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="20a4eb11-8ea3-11dc-a396-0016179b2dd5">
     <topic>tikiwiki -- multiple vulnerabilities</topic>
     <affects>
