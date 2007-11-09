@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8dd9722c-8e97-11dc-b8f6-001c2514716c">
+    <topic>cups -- off-by-one buffer overflow</topic>
+    <affects>
+      <package>
+	<name>cups-base</name>
+	<range><lt>1.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/27233">
+	  <p>Secunia Research has discovered a vulnerability in CUPS, which can be
+	    exploited by malicious people to compromise a vulnerable system.</p>
+	  <p>The vulnerability is caused due to a boundary error within the "ippReadIO()"
+	    function in cups/ipp.c when processing IPP (Internet Printing Protocol) tags.
+	    This can be exploited to overwrite one byte on the stack with a zero by sending
+	    an IPP request containing specially crafted "textWithLanguage" or
+	    "nameWithLanguage" tags.</p>
+	  <p>Successful exploitation allows execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-4351</cvename>
+      <url>http://secunia.com/secunia_research/2007-76/</url>
+    </references>
+    <dates>
+      <discovery>2007-11-06</discovery>
+      <entry>2007-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b47c279-8cb5-11dc-8878-0016179b2dd5">
     <topic>perl --  regular expressions unicode data buffer overflow</topic>
     <affects>
