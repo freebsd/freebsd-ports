@@ -9,7 +9,7 @@ PORTVERSION=		1.1.0
 PORTREVISION=	1
 CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/koffice-1.6.1/src
+MASTER_SITE_SUBDIR=	stable/koffice-1.6.3/src
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		MS Access import plugin for Kexi
