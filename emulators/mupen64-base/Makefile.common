@@ -1,3 +1,5 @@
+USE_DOS2UNIX=		*.c *.cpp *.h *.H *.ini
+
 DISTNAME=		${PORTNAME}_src-${MUPEN64VERSION}
 PATCHDIR=		${.CURDIR}/files
 WRKSRC?=		${WRKDIR}/${DISTNAME}

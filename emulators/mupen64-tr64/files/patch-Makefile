@@ -1,4 +1,4 @@
---- Makefile.orig	2005-08-26 14:11:28.000000000 -0500
+--- Makefile	2005-08-26 14:11:28.000000000 -0500
 +++ Makefile	2007-10-09 01:55:17.000000000 -0500
 @@ -1,26 +1,26 @@
  ifneq ("$(shell grep GTK2 config.h)","\#define GTK2_SUPPORT 1")
