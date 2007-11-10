@@ -1,4 +1,4 @@
---- wrapper/glidesys.h.orig	Sun Jun 13 23:58:12 2004
+--- wrapper/glidesys.h	Sun Jun 13 23:58:12 2004
 +++ wrapper/glidesys.h	Thu Aug 12 17:14:11 2004
 @@ -96,7 +96,7 @@
  #endif
