@@ -108,6 +108,8 @@ QWDTOOLS_AS_OBJS = \
 		bothtoolsa.o
 .endif
 
+QWDTOOLS_LIBS = -lm
+
 ########################################################################
 
 .c.o:
@@ -123,7 +125,7 @@ mvdsv:	${SV_OBJS} ${SV_AS_OBJS} .PHONY
 
 qwdtools:	${QWDTOOLS_OBJS} ${QWDTOOLS_AS_OBJS} .PHONY
 		${CC} ${CFLAGS} -o ../qwdtools ${QWDTOOLS_OBJS} \
-			${QWDTOOLS_AS_OBJS}
+			${QWDTOOLS_AS_OBJS} ${QWDTOOLS_LIBS}
 
 clean:
 		-rm -f *.o *.core
