@@ -25,14 +25,10 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=	yes
 USE_GNOME=	gtk12
 
 MAN1=		nvtv.1x
 MAN8=		nvtvd.8
 PLIST_FILES=	bin/nvtv bin/nvtvd
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lgnugetopt||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
