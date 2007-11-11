@@ -7,7 +7,7 @@
 
 PORTNAME=	devcpu
 PORTVERSION=	0.8.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils kld
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
@@ -21,7 +21,6 @@ USE_RC_SUBR=	devcpu
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
-RUBY_SHEBANG_FILES=	tools/extract_mcodes.rb
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_PACKAGE=	depends on kernel
