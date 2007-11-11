@@ -225,6 +225,7 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/util.scm
 %%DATADIR%%/viqr.scm
 %%DATADIR%%/zaurus.scm
+@dirrm include/libgcroots
 @dirrm include/sigscheme
 @dirrm include/uim
 @dirrm lib/uim/plugin
