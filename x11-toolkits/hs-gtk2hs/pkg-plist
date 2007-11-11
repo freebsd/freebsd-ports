@@ -87,6 +87,7 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Image.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Label.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/ProgressBar.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/Statusbar.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Display/StatusIcon.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding/Embedding.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding/Plug.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Embedding/Socket.hi
@@ -107,6 +108,7 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Pixbuf.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/PixbufData.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Pixmap.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Gdk/Region.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Clipboard.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/DNDTypes.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Drag.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/General/Enums.hi
