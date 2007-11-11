@@ -7,6 +7,7 @@
 
 PORTNAME=	libpci
 PORTVERSION=	2.2.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		ftp://ftp.kernel.org/pub/software/utils/pciutils/ \
@@ -28,7 +29,7 @@ post-build:
 do-install:
 	@(${INSTALL_DATA} ${WRKSRC}/lib/libpci.so ${PREFIX}/lib/libpci.so.2)
 	@(${INSTALL_DATA} ${WRKSRC}/lib/libpci.a ${PREFIX}/lib/libpci.a)
-	@(${LN} -sf ${PREFIX}/lib/libpci.so.2.1 ${PREFIX}/lib/libpci.so)
+	@(${LN} -sf ${PREFIX}/lib/libpci.so.2 ${PREFIX}/lib/libpci.so)
 	@(${MKDIR} ${PREFIX}/include/pci)
 	@(${INSTALL_DATA} ${WRKSRC}/lib/config.h ${PREFIX}/include/pci/config.h)
 	@(${INSTALL_DATA} ${WRKSRC}/lib/header.h ${PREFIX}/include/pci/header.h)
