@@ -7,6 +7,7 @@
 
 PORTNAME=	uim
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES?=	textproc
 MASTER_SITES=	http://uim.googlecode.com/files/ \
 		http://uim.freedesktop.org/releases/uim/stable/
