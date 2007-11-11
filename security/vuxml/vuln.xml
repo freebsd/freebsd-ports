@@ -286,7 +286,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>gftp</name>
-	<range><lt>2.10.18_6</lt></range>
+	<range><lt>2.0.18_6</lt></range>
       </package>
     </affects>
     <description>
@@ -311,6 +311,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-11-01</discovery>
       <entry>2007-11-05</entry>
+      <modified>2007-11-11</modified>
     </dates>
   </vuln>
 
