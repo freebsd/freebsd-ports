@@ -35,12 +35,6 @@ MAN1=	crashecho.1 \
 	crashwrite.1
 MAN5=	crashecho.conf.5
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-extract:
 	cd ${WRKDIR} && tar zxf ${PORTNAME}-${PORTVERSION}.tar.gz
 
@@ -48,4 +42,4 @@ post-install:
 	${MKDIR} ${PREFIX}/etc/ftn
 	${INSTALL_DATA} ${WRKSRC}/doc/crashecho.conf ${PREFIX}/etc/ftn/crashecho.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
