@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2d2dcbb4-906c-11dc-a951-0016179b2dd5">
+    <topic>phpmyadmin -- cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>2.11.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The DigiTrust Group reports:</p>
+	<blockquote cite="http://www.digitrustgroup.com/advisories/tdg-advisory071108a.html">
+	  <p>When creating a new database, a malicious user can use a client-side
+	    Web proxy to place malicious code in the db parameter of the POST
+	    request. Since db_create.php does not properly sanitize user-supplied
+	    input, an administrator could face a persistent XSS attack when the database
+	    names are displayed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.digitrustgroup.com/advisories/tdg-advisory071108a.html</url>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2007-7</url>
+    </references>
+    <dates>
+      <discovery>2007-11-11</discovery>
+      <entry>2007-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9b718b82-8ef5-11dc-8e42-001c2514716c">
     <topic>gallery2 -- multiple vulnerabilities</topic>
     <affects>
