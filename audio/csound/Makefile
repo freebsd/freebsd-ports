@@ -31,7 +31,7 @@ USE_PYTHON=	2.4+
 USE_SCONS=	yes
 SCONS_ARGS+=	prefix=${PREFIX} CC=${CC} CXX=${CXX} \
 		buildRelease=1 install=1 buildCsound5GUI=1 \
-		buildWinsound=1 buildVirtual=1 buildCSEditor=1
+		buildWinsound=1 buildVirtual=1 buildCSEditor=1 Word64=1
 SUB_FILES=	custom.py \
 		pkg-message
 SUB_LIST+=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR}
@@ -47,7 +47,7 @@ post-patch: apply-slist
 	@${MV} ${WRKDIR}/custom.py ${WRKSRC}
 	@${REINPLACE_CMD} -e "s|'unsupported'|'linux'|; \
 		s|ENV = {'PATH' : os.environ\['PATH'\]}|ENV = os.environ|; \
-		s|'dl'|''|" \
+		s|'dl'|''| ; s|lib64|lib|g" \
 		${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} 's|linux/if.h|net/if.h|' ${WRKSRC}/OOps/remote.c
 
