@@ -36,6 +36,8 @@ AUTOMAKE_ARGS=	-c -a
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.* | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-DG.*_DISABLE_DEPRECATED||g'
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure \
+		${WRKSRC}/libmodifiedghttp/configure ${WRKSRC}/libmodifiedgtk2/configure
 
 pre-configure:
 	@echo "===>  Regenerating ${WRKSRC}/libmodifiedgtk2/Makefile.in"
