@@ -47,6 +47,14 @@ MAIN_BUILD_COOKIE=	${WRKDIR}/.main_build_done
 GUI_DIR=	${WRKSRC}/mysql-gui-common
 MAIN_DIR=	${WRKSRC}/mysql-query-browser
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
 do-configure:
 	@${DO_NADA}
 
@@ -76,4 +84,4 @@ do-install:
 	@cd ${MAIN_DIR}; \
 	${GMAKE} ${INSTALL_TARGET}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
