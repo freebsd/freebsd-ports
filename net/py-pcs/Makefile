@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Protocol Construction Set
 
-BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
+BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
