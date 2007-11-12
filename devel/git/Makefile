@@ -153,7 +153,6 @@ MAN1=		git-add.1 \
 		git-whatchanged.1 \
 		git-write-tree.1 \
 		gitk.1
-MAN3PREFIX=	${PREFIX}/share
 MAN3=		Git.3
 MAN5=		gitattributes.5 gitignore.5
 MAN7=		git.7
@@ -194,6 +193,9 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Ter
 
 pre-patch:
 	${REINPLACE_CMD} -e 's|OPENSSLDIR|OPENSSLBASE|g' ${WRKSRC}/Makefile
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|share/man/man3|man/man3|' ${WRKSRC}/perl/Makefile.PL
 
 post-build:
 	${SED} -e'1s|#!/usr/bin/python|#!${PYTHON_CMD}|' \
