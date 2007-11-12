@@ -1,5 +1,5 @@
---- configure.in.orig	Mon Oct 17 02:37:39 2005
-+++ configure.in	Fri Nov 11 13:14:10 2005
+--- configure.in.orig	2006-03-23 03:04:54.000000000 +0900
++++ configure.in	2007-11-11 14:37:20.000000000 +0900
 @@ -349,6 +349,31 @@
  
  ac_default_prefix="/usr/local/mpqc/$SC_VERSION"
@@ -32,6 +32,15 @@
  AC_ARG_WITH(cc,
  [  --with-cc               Gives the name of the C compiler to use.],
  CC=$withval
+@@ -488,7 +513,7 @@
+   CCA_CHEM_CONFIG=$withval
+   echo Using cca-chem-config: $withval
+ ],[
+-  if test "$components" == "yes"; then
++  if test "$components" = "yes"; then
+     AC_PATH_PROG(CCA_CHEM_CONFIG,cca-chem-config,"not-found")
+   fi
+ ]
 @@ -736,6 +761,23 @@
    ;;
  esac
@@ -49,112 +58,14 @@
 +
 +if test "$F77OPTFLAGS" = NONE; then
 +else
-+   echo "overrides the Fortrna 77 optimization flag with $F77OPTFLAGS"
++   echo "overrides the Fortran 77 optimization flag with $F77OPTFLAGS"
 +   F77OPTIONS_OPT="$F77OPTFLAGS"
 +fi
 +
  dnl -- special architecture options --
  
  case $target_cpu in
-@@ -969,6 +1011,7 @@
- elif test $DEBUG = opt; then
-   CFLAGS="$COPTIONS_DBG $COPTIONS_OPT $COPTIONS_MISC"
-   CXXFLAGS="$CXXOPTIONS_DBG $CXXOPTIONS_OPT $CXXOPTIONS_MISC"
-+  FFLAGS="$F77OPTIONS_OPT"
-   LDFLAGS="$LDFLAGS -g"
- else
-   CFLAGS="$COPTIONS_OPT $COPTIONS_MISC"
-@@ -1109,6 +1152,19 @@
- AC_LANG_RESTORE
- fi
- 
-+dnl see if posix threads are in -pthreads
-+if test $HAVE_PTHREAD = no; then
-+AC_LANG_SAVE
-+AC_LANG_CPLUSPLUS
-+LIBSSAV="$LIBS"
-+LIBS="$LIBS -pthread"
-+AC_TRY_LINK([#include <pthread.h>],[pthread_join(0,0);],[
-+HAVE_PTHREAD=yes],[
-+HAVE_PTHREAD=no
-+LIBS="$LIBSSAV"])
-+AC_LANG_RESTORE
-+fi
-+
- AC_MSG_RESULT($HAVE_PTHREAD)
- fi
- if test X$HAVE_PTHREAD = Xyes; then
-@@ -1488,18 +1544,26 @@
- LIBS="$LIBSSAV $FLIBS"
- 
- LIBBLAS=""
-+
- F77_DGEMM=`$PERL $srcdir/bin/mkf77sym.pl.in -method $F77_SYMBOLS DAXPY`
--AC_CHECK_FUNC($F77_DGEMM,HAVE_BLAS=yes,[
--  AC_CHECK_LIB(essl,$F77_DGEMM,[HAVE_BLAS=yes;LIBBLAS="-lessl"],
--    AC_CHECK_LIB(blas,$F77_DGEMM,[HAVE_BLAS=yes;LIBBLAS="-lblas"])
--  )]
--)
--if test X$HAVE_BLAS != Xyes; then
--  LIBSSAV2="$LIBS"
--  LIBS="-latlas $LIBS"
--  AC_CHECK_LIB(f77blas,$F77_DGEMM,[HAVE_BLAS=yes;LIBBLAS="-lf77blas -latlas"],
--               LIBS="$LIBSSAV2")
-+
-+if test "$BLASNAME" = NONE; then
-+  AC_CHECK_FUNC($F77_DGEMM,HAVE_BLAS=yes,[
-+    AC_CHECK_LIB(essl,$F77_DGEMM,[HAVE_BLAS=yes;LIBBLAS="-lessl"],
-+      AC_CHECK_LIB(blas,$F77_DGEMM,[HAVE_BLAS=yes;LIBBLAS="-lblas"])
-+    )]
-+  )
-+  if test X$HAVE_BLAS != Xyes; then
-+    LIBSSAV2="$LIBS"
-+    LIBS="-latlas $LIBS"
-+    AC_CHECK_LIB(f77blas,$F77_DGEMM,[HAVE_BLAS=yes;LIBBLAS="-lf77blas -latlas"],
-+                 LIBS="$LIBSSAV2")
-+  fi
-+else
-+  HAVE_BLAS="yes"
-+  LIBBLAS="$BLASNAME"
- fi
-+
- AC_SUBST(HAVE_BLAS)
- if test X$HAVE_BLAS != Xyes; then
-   echo "WARNING: Could not link to the BLAS library.  It can be obtained at"
-@@ -1512,10 +1576,17 @@
- 
- LIBLAPACK=""
- F77_DGESVD=`$PERL $srcdir/bin/mkf77sym.pl.in -method $F77_SYMBOLS DGESVD`
--AC_CHECK_FUNC($F77_DGESVD,HAVE_LAPACK=yes,[
--  AC_CHECK_LIB(lapack,$F77_DGESVD,[HAVE_LAPACK=yes;LIBLAPACK="-llapack"]
--  )]
--)
-+
-+if test "$LAPACKNAME" = NONE; then
-+  AC_CHECK_FUNC($F77_DGESVD,HAVE_LAPACK=yes,[
-+    AC_CHECK_LIB(lapack,$F77_DGESVD,[HAVE_LAPACK=yes;LIBLAPACK="-llapack"]
-+    )]
-+  )
-+else
-+  HAVE_LAPACK="yes"
-+  LIBLAPACK="$LAPACKNAME"
-+fi
-+
- AC_SUBST(HAVE_LAPACK)
- if test X$HAVE_LAPACK != Xyes; then
-   echo "Could not link to the LAPACK library.  It can be obtained at"
---- configure.in~	Sun Nov 19 16:09:19 2006
-+++ configure.in	Sun Nov 19 16:11:58 2006
-@@ -513,7 +513,7 @@
-   CCA_CHEM_CONFIG=$withval
-   echo Using cca-chem-config: $withval
- ],[
--  if test "$components" == "yes"; then
-+  if test "$components" = "yes"; then
-     AC_PATH_PROG(CCA_CHEM_CONFIG,cca-chem-config,"not-found")
-   fi
- ]
-@@ -789,7 +789,7 @@
+@@ -747,7 +789,7 @@
       ;;
  esac
  
@@ -163,7 +74,7 @@
    AC_MSG_CHECKING([for C++ cpu tuning flag])
    AC_LANG_SAVE
    AC_LANG_CPLUSPLUS
-@@ -801,7 +801,7 @@
+@@ -759,7 +801,7 @@
    AC_MSG_RESULT($cxx_tuneflag)
  fi
  
@@ -172,7 +83,15 @@
    AC_MSG_CHECKING([for C cpu tuning flag])
    CFLAGS_SAV=$CFLAGS
    CFLAGS="-mtune=$opt_target_cpu $CFLAGS_SAV"
-@@ -1098,7 +1098,7 @@
+@@ -969,6 +1011,7 @@
+ elif test $DEBUG = opt; then
+   CFLAGS="$COPTIONS_DBG $COPTIONS_OPT $COPTIONS_MISC"
+   CXXFLAGS="$CXXOPTIONS_DBG $CXXOPTIONS_OPT $CXXOPTIONS_MISC"
++  FFLAGS="$F77OPTIONS_OPT"
+   LDFLAGS="$LDFLAGS -g"
+ else
+   CFLAGS="$COPTIONS_OPT $COPTIONS_MISC"
+@@ -1055,7 +1098,7 @@
      char c[sizeof (long)];
    } u;
    u.l = 1;
@@ -181,7 +100,72 @@
  }], sc_cv_c_bigendian=no, sc_cv_c_bigendian=yes,
  AC_MSG_ERROR([Could not determine endianness and cross compiling])
  )
-@@ -1840,10 +1840,10 @@
+@@ -1073,47 +1116,28 @@
+ dnl -- seems to be in libc on IRIX and we must generate a -lpthread in LIBS.
+ if test "(" X$PARALLEL = Xyes -a X$THREADS != Xno ")" -o X$THREADS = Xyes; then
+ 
+-AC_MSG_CHECKING([pthreads])
+-dnl see if posix threads are automatically linked ...
+-AC_LANG_SAVE
+-AC_LANG_CPLUSPLUS
+-LIBSSAV="$LIBS"
+-AC_TRY_LINK([#include <pthread.h>],[pthread_join(0,0);],[
+-HAVE_PTHREAD=yes],[
+-HAVE_PTHREAD=no])
+-AC_LANG_RESTORE
+-
+-dnl see if posix threads are in -lpthread
+-if test $HAVE_PTHREAD = no; then
+-AC_LANG_SAVE
+-AC_LANG_CPLUSPLUS
+-LIBSSAV="$LIBS"
+-LIBS="$LIBS -lpthread"
+-AC_TRY_LINK([#include <pthread.h>],[pthread_join(0,0);],[
+-HAVE_PTHREAD=yes],[
+-HAVE_PTHREAD=no
+-LIBS="$LIBSSAV"])
+-AC_LANG_RESTORE
+-fi
+-
+-dnl see if posix threads are in -lpthreads
+-if test $HAVE_PTHREAD = no; then
+-AC_LANG_SAVE
+-AC_LANG_CPLUSPLUS
+-LIBSSAV="$LIBS"
+-LIBS="$LIBS -lpthreads"
+-AC_TRY_LINK([#include <pthread.h>],[pthread_join(0,0);],[
+-HAVE_PTHREAD=yes],[
+-HAVE_PTHREAD=no
+-LIBS="$LIBSSAV"])
+-AC_LANG_RESTORE
+-fi
+-
++for flag in -pthread -lpthreads -lpthread; do
++AC_MSG_CHECKING([for pthread_create using $flag])
++  SAVELIBS="$LIBS"
++  LIBS="$flag $LIBS"
++  AC_TRY_LINK([#include <pthread.h>],[pthread_join(0,0);],[
++  HAVE_PTHREAD=yes],[
++  HAVE_PTHREAD=no])
++  AC_MSG_RESULT([$have_pthread])
++      if test X$HAVE_PTHREAD = Xyes; then
++      break
++      fi
++done
++  
+ AC_MSG_RESULT($HAVE_PTHREAD)
+ fi
+ if test X$HAVE_PTHREAD = Xyes; then
+   AC_DEFINE(HAVE_PTHREAD)
+   EXTRADEFINES="-D_REENTRANT $EXTRADEFINES"
++  # Solaris requires -D_POSIX_PTHREAD_SEMANTICS
++  if test x$uname = xSunOS; then
++    PTHREAD_FLAGS="$PTHREAD_FLAGS -D_POSIX_PTHREAD_SEMANTICS"
++  fi
+   AC_CHECK_FUNC(pthread_attr_getstacksize)
+   AC_CHECK_FUNC(pthread_attr_setstacksize)
+   AC_CHECK_FUNC(pthread_attr_setscope)
+@@ -1769,10 +1793,10 @@
  
  dnl --------- CCA component configuration ---------
  
