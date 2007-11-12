@@ -32,6 +32,7 @@ USE_GL=		yes
 USE_GMAKE=	yes
 
 PYDISTUTILS_PKGNAME=	BalazarBrothers
+PYDISTUTILS_EGGINFODIR=	${PREFIX}/share
 DATADIR=	share/balazar_brothers
 
 OPTIONS=	OPENAL	"Use openal sound system" on \
