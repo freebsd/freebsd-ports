@@ -49,6 +49,10 @@ SUBDIRS=	ospfd \
 IGNORE=		requires macros present in <sys/tree.h>
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile
+.endif
+
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/if_media.h ${WRKSRC}/ospfctl/
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/hash.h ${WRKSRC}/ospfd/
