@@ -7,6 +7,7 @@
 
 PORTNAME=	cups
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
@@ -20,7 +21,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 CONFLICTS=	LPRng-[0-9]*
-FORBIDDEN=	remote execution of arbitrary code
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
