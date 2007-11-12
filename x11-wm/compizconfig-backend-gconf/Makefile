@@ -7,16 +7,15 @@
 
 PORTNAME=	compizconfig-backend-gconf
 PORTVERSION=	0.6.0
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
 MAINTAINER=	rnoland@2hip.net
 COMMENT=	The gconf backend for CompizConfig
 
-BUILD_DEPENDS=	\
-	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz \
-	${LOCALBASE}/libdata/pkgconfig/libcompizconfig.pc:${PORTSDIR}/x11-wm/libcompizconfig
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz
+LIB_DEPENDS=	compizconfig.0:${PORTSDIR}/x11-wm/libcompizconfig
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
