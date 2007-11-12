@@ -47,7 +47,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 PLIST_SUB+=	PORTVERSION=${PORTVERSION:R}
 
 OPTIONS=	X11				"X11 support" on \
-		IMAGEMAGICK_TESTS	"Run bundled self-tests after build" on \
+		IMAGEMAGICK_TESTS	"Run bundled self-tests after build" off \
 		IMAGEMAGICK_PERL		"Perl support" on \
 		IMAGEMAGICK_MODULES		"Modules support (broken)" off \
 		IMAGEMAGICK_BZLIB		"Bzlib support" on \
