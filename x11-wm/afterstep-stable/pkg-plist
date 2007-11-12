@@ -1364,6 +1364,7 @@ lib/libAfterStep.a
 %%DATADIR%%/wharf
 %%DATADIR%%/winlist
 %%DATADIR%%/wintabs
+share/gnome/wm-properties/AfterStep.desktop
 share/xsessions/AfterStep.desktop
 @dirrm share/xsessions
 @dirrm %%DATADIR%%/themes
