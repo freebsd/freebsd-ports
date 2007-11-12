@@ -16,6 +16,8 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ERC is an Emacs InternetRelayChat client
 
+BROKEN=		Conflicting dependencies
+
 USE_EMACS=	yes
 
 ERC_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
