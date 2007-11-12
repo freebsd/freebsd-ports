@@ -30,6 +30,9 @@ CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 
 MAKEFILE=	${FILESDIR}/Makefile
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 # "obj" is magic to our make(1)
 post-configure:
 	@${RM} -rf ${WRKSRC}/obj
