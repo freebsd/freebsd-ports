@@ -35,6 +35,7 @@ USE_SDL=	sdl mixer
 USE_GETTEXT=	yes
 
 PYDISTUTILS_PKGNAME=	Balazar
+PYDISTUTILS_EGGINFODIR=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/setup.cfg
