@@ -38,4 +38,8 @@ PLIST_SUB+=	IVDL="@comment "
 PLIST_SUB+=	IVDL=""
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile with GCC 4.2
+.endif
+
 .include <bsd.port.post.mk>
