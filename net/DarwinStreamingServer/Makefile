@@ -35,6 +35,12 @@ MAKE_ENV+=	CC="${CC}"				\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042 && ${ARCH} != i386
+BROKEN=		Does not compile
+.endif
+
 post-extract:
 	@${RM} -rf ${WRKSRC}/dssPackageMetaData ${WRKSRC}/pubPackageMetaData ${WRKSRC}/qtssPackageMetaData
 
@@ -137,4 +143,4 @@ do-install:
 	@(cd ${WRKSRC}/${OPSYS}; ${SETENV} ${MAKE_ENV} ./Install)
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
