@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	iscsi-target
-PORTVERSION=	20070908
+PORTVERSION=	20071025
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/ \
                 http://www.magnesium.net/~mdf/distfiles/
 DISTNAME=	netbsd-iscsi-${PORTVERSION}
 
 MAINTAINER=	mark@foster.cc
-COMMENT=	Implementation of userland ISCSI target (derived from NetBSD)
+COMMENT=	Implementation of userland ISCSI target (from NetBSD)
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
