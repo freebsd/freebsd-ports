@@ -38,6 +38,12 @@ PLIST=		${WRKDIR}/PLIST
 CFLAGS+=	-fPIC
 .endif
 
+.if ${OSVERSION} >= 700000
+PLIST_SUB+=	HCRYPTO="@comment "
+.else
+PLIST_SUB+=	HCRYPTO=""
+.endif
+
 .if defined(WITH_LDAP)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
