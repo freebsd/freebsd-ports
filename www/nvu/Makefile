@@ -38,6 +38,12 @@ CFLAGS+=	-I${X11BASE}/include
 BROKEN=		does not build
 .endif
 
+.if ${ARCH}=="amd64"
+.if ${OSVERSION} >= 700042
+BROKEN=		does not build
+.endif
+.endif
+
 .if ${ARCH}=="sparc64"
 .if ${OSVERSION} < 601101 || ${OSVERSION} >= 700042
 IGNORE=		does not build
