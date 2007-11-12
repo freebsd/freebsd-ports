@@ -22,10 +22,6 @@ INST_AIRTOOLS=	${CONF_AIRTOOLS} ${MAKE_AIRTOOLS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.if !exists(/usr/include/dev/wi/if_wavelan_ieee.h)
-BROKEN=	You need to upgrade
-.endif
-
 do-build:
 .for TOOL in ${CONF_AIRTOOLS}
 	@cd ${WRKSRC}/${TOOL}; ${SH} ${CONFIGURE_SCRIPT}; ${MAKE}
@@ -44,8 +40,8 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
+.if ${OSVERSION} >= 700052
+IGNORE=		broken by removal of wicontrol ioctls from if_wavelan_ieee.h
 .endif
 
 .include <bsd.port.post.mk>
