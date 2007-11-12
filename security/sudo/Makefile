@@ -9,15 +9,13 @@ PORTNAME=	sudo
 PORTVERSION=	1.6.9.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
-		http://probsd.org/sudoftp/ \
-		http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/sudo/ \
-		http://mirrors.theonlinerecordstore.com/sudo/ \
-		http://core.ring.gr.jp/archives/misc/sudo/ \
-		http://www.ring.gr.jp/archives/misc/sudo/ \
-		http://sudo.tsuren.net/dist/ \
-		http://pluto.cdpa.nsysu.edu.tw/sudo/ \
-		ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/ \
-		ftp://ftp.stikman.com/pub/sudo/
+		ftp://obsd.isc.org/pub/sudo/ \
+		ftp://ftp.uwsg.indiana.edu/pub/security/sudo/ \
+		ftp://boulder.tele.dk/pub/sudo/ \
+		ftp://core.ring.gr.jp/pub/misc/sudo/ \
+		ftp://ftp.wiretapped.net/pub/security/host-security/sudo/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	tmclaugh/sudo
 DISTNAME=	${PORTNAME}-1.6.9p6
 
 MAINTAINER=	tmclaugh@FreeBSD.org
