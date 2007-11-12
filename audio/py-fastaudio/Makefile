@@ -19,7 +19,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	ninjin@kth.se
 COMMENT=	Python bindings for the PortAudio multi-platform audio library
 
-BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
+BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
 LIB_DEPENDS=	portaudio:${PORTSDIR}/audio/portaudio \
 		sndfile:${PORTSDIR}/audio/libsndfile
 
