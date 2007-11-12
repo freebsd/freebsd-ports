@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ffba6ab0-90b5-11dc-9835-003048705d5a">
+    <topic>plone -- unsafe data interpreted as pickles</topic>
+    <affects>
+      <package>
+	<name>plone</name>
+	<range><ge>2.5</ge><lt>2.5.5</lt></range>
+	<range><ge>3.0</ge><lt>3.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Plone projectreports:</p>
+	<blockquote cite="http://plone.org/about/security/advisories/cve-2007-5741">
+	  <p>This hotfix corrects a vulnerability in the statusmessages
+	    and linkintegrity modules, where unsafe network data was
+	    interpreted as python pickles. This allows an attacker to
+	    run arbitrary python code within the Zope/Plone process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>26354</bid>
+      <cvename>CVE-2007-5741</cvename>
+    </references>
+    <dates>
+      <discovery>2007-11-06</discovery>
+      <entry>2007-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2d2dcbb4-906c-11dc-a951-0016179b2dd5">
     <topic>phpmyadmin -- cross-site scripting vulnerability</topic>
     <affects>
