@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oracle8-client
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fjoe
@@ -20,10 +19,15 @@ ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ORACLE_HOME=	${PREFIX}/${PORTNAME}
 
-NO_BUILD=	yes
+.include <bsd.port.pre.mk>
+
+do-build:
+.if ${OSVERSION} < 700000
+	@cd ${WRKSRC}/freebsd && ${MAKE} all patch clean ORACLE_HOME=${WRKSRC}
+.endif
 
 do-install:
 	@${MKDIR} ${ORACLE_HOME}
 	cd ${WRKSRC} && ${FIND} . -print0 | ${CPIO} -dump0 -R ${SHAREOWN}:${SHAREGRP} ${ORACLE_HOME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
