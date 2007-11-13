@@ -7,11 +7,14 @@
 
 PORTNAME=	xmms-flac
 PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	flac
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	flac/:sf naddy/:local
 DISTNAME=	flac-${PORTVERSION}
+DISTFILES=	${EXTRACT_ONLY}:sf flac-alloc.h:local
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	XMMS input plugin for playing FLAC files
@@ -27,6 +30,9 @@ CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 MAKE_ARGS=	LIBTOOL="${LIBTOOL} --tag=disable-static"
 MAKE_ENV=	MAKEOBJDIR=/nonexistent		# ignore ${WRKSRC}/obj
 MAKEFILE=	${FILESDIR}/Makefile
+
+post-extract:
+	@${CP} ${DISTDIR}/flac-alloc.h ${WRKSRC}/include/share/alloc.h
 
 # XXX
 post-install:
