@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	muine
-PORTVERSION=	0.8.7
-PORTREVISION=	5
+PORTVERSION=	0.8.8
 CATEGORIES=	audio gnome
-MASTER_SITES=	http://muine-player.org/releases/
+MASTER_SITES=	http://muine-player.org/releases/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	tmclaugh/muine
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Mono based Gnome audio player
