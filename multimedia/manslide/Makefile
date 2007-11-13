@@ -20,6 +20,8 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		ImageMagick>=6.3.2.9:${PORTSDIR}/graphics/ImageMagick \
 		xvid4conf:${PORTSDIR}/multimedia/xvid4conf
 
+BROKEN=		unfetchable; new version will have to wait for post-freeze
+
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc opengl qmake rcc uic \
 		imageformats inputmethods iconengines
