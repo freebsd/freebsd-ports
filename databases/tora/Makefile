@@ -7,7 +7,7 @@
 
 PORTNAME=	tora
 PORTVERSION=	1.3.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,10 +51,6 @@ PORTDOCS=	AUTHORS BUGS ChangeLog INSTALL NEWS README README.CODESTYLE README.LIC
 PREFIX2FIX=	help/preferences.html totool.cpp
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		does not link with oracle8-client
-.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
