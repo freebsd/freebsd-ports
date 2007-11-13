@@ -40,4 +40,7 @@ MAN5=	sensor.conf.5 silk.conf.5
 MAN8=	rwflowpack.8 rwpackchecker.8 rwflowappend.8 rwreceiver.8 rwsender.8 \
 	flowcap.8
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
