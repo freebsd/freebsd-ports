@@ -7,14 +7,14 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/xpdf
 
 PATCH_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
-PATCHFILES=	
+PATCHFILES=	xpdf-3.02pl1.patch xpdf-3.02pl2.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nork@FreeBSD.org
