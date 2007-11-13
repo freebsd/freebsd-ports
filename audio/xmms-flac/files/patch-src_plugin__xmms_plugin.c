@@ -16,3 +16,19 @@ $FreeBSD$
  	xmms_cfg_read_int(cfg, "flac", "stream.http_buffer_size", &flac_cfg.stream.http_buffer_size);
  	xmms_cfg_read_int(cfg, "flac", "stream.http_prebuffer", &flac_cfg.stream.http_prebuffer);
  	xmms_cfg_read_boolean(cfg, "flac", "stream.use_proxy", &flac_cfg.stream.use_proxy);
+@@ -425,8 +431,13 @@
+ 		if(title) {
+ 			if (source_to_decoder_type (filename) == DECODER_FILE) {
+ 				static const char *errtitle = "Invalid FLAC File: ";
+-				*title = g_malloc(strlen(errtitle) + 1 + strlen(filename) + 1 + 1);
+-				sprintf(*title, "%s\"%s\"", errtitle, filename);
++				if(strlen(errtitle) + 1 + strlen(filename) + 1 + 1 < strlen(filename)) { /* overflow check */
++					*title = NULL;
++				}
++				else {
++					*title = g_malloc(strlen(errtitle) + 1 + strlen(filename) + 1 + 1);
++					sprintf(*title, "%s\"%s\"", errtitle, filename);
++				}
+ 			} else {
+ 				*title = NULL;
+ 			}

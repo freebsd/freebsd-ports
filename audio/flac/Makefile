@@ -7,10 +7,13 @@
 
 PORTNAME=	flac
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	${PORTNAME}/:sf naddy/:local
+DISTFILES=	${EXTRACT_ONLY}:sf flac-alloc.h:local
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Free lossless audio codec
@@ -41,6 +44,9 @@ MAN1=		flac.1 metaflac.1
 .if ${ARCH} == "i386"
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 .endif
+
+post-extract:
+	@${CP} ${DISTDIR}/flac-alloc.h ${WRKSRC}/include/share/alloc.h
 
 # "obj" is magic to our make(1)
 post-configure:
