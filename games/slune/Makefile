@@ -31,6 +31,7 @@ USE_GL=		yes
 USE_SDL=	sdl mixer
 
 PYDISTUTILS_PKGNAME=	Slune
+PYDISTUTILS_EGGINFODIR=	${PREFIX}/share
 
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.cfg
