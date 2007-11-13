@@ -1,0 +1,17 @@
+#! /bin/sh
+
+case $2 in
+DEINSTALL)
+	if test -f %%PREFIX%%/lib/oss/etc/installed_drivers; then
+		rm -f %%PREFIX%%/lib/oss/etc/installed_drivers
+	fi
+	if test -f %%PREFIX%%/lib/oss/etc/userdefs; then
+		mv -f %%PREFIX%%/lib/oss/etc/userdefs %%PREFIX%%/lib/oss/etc/userdefs.bak
+		/usr/bin/grep -v '^autosave_mixer yes$' %%PREFIX%%/lib/oss/etc/userdefs.bak > %%PREFIX%%/lib/oss/etc/userdefs
+		if /usr/bin/cmp %%PREFIX%%/lib/oss/etc/userdefs /dev/null; then
+			rm -f %%PREFIX%%/lib/oss/etc/userdefs %%PREFIX%%/lib/oss/etc/userdefs.bak
+		else
+			mv -f %%PREFIX%%/lib/oss/etc/userdefs.bak %%PREFIX%%/lib/oss/etc/userdefs
+		fi
+	fi
+esac

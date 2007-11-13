@@ -7,6 +7,7 @@
 
 PORTNAME=	oss
 DISTVERSION=	4.0-build1008
+PORTREVISION=	1
 CATEGORIES=	audio kld
 MASTER_SITES=	http://developer.opensound.com/sources/stable/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-cddl
@@ -23,7 +24,7 @@ USE_GNOME=	gtk20
 USE_RC_SUBR=	oss
 WRKSRC=		${WRKDIR}/build
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
-SUB_FILES=	pkg-install
+SUB_FILES=	pkg-install pkg-deinstall
 ONLY_FOR_ARCHS=	amd64 i386
 
 MAN1=		ossinfo.1 ossmix.1 ossplay.1 ossrecord.1 osstest.1 ossxmix.1
@@ -34,10 +35,6 @@ IGNORE=		requires kernel source to be installed
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile on 5.x.
-.endif
 
 pre-patch:
 	${REINPLACE_CMD} -e 's|"/usr/include/stdarg.h"|<${ARCH}/include/stdarg.h>|g' \

@@ -1,6 +1,14 @@
---- kernel/OS/FreeBSD/os_freebsd.c.orig	2007-06-12 17:32:57.000000000 -0400
-+++ kernel/OS/FreeBSD/os_freebsd.c	2007-07-11 20:41:43.000000000 -0400
-@@ -145,7 +145,7 @@
+--- kernel/OS/FreeBSD/os_freebsd.c.orig	2007-11-12 15:40:51.000000000 -0500
++++ kernel/OS/FreeBSD/os_freebsd.c	2007-11-12 15:42:12.000000000 -0500
+@@ -28,6 +28,7 @@
+ #include <sys/proc.h>
+ #include <sys/sx.h>
+ #include <sys/mman.h>
++#include <sys/lockmgr.h>
+ #include <fs/devfs/devfs.h>
+ #include <sys/poll.h>
+ 
+@@ -153,7 +154,7 @@
      return 0;
  
    wq->flags = 0;

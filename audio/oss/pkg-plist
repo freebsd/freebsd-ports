@@ -6,7 +6,6 @@ bin/osstest
 bin/ossxmix
 etc/oss.conf
 lib/oss/etc/devices.list
-@unexec rm -f %D/lib/oss/etc/installed_drivers 2>/dev/null || true
 @dirrmtry lib/oss/etc
 @dirrmtry lib/oss/logs
 lib/oss/modules/osscore.ko
