@@ -34,6 +34,70 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2747fc39-915b-11dc-9239-001c2514716c">
+    <topic>xpdf -- multiple remote Stream.CC vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>cups-base</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>gpdf</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+        <name>kdegraphics</name>
+	<range><lt>3.5.8_1</lt></range>
+      </package>
+      <package>
+	<name>koffice</name>
+	<range><lt>1.6.3_3,2</lt></range>
+      </package>
+      <package>
+        <name>poppler</name>
+	<range><lt>0.6</lt></range>
+      </package>
+      <package>
+	<name>xpdf</name>
+	<range><lt>3.02_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia Research reports:</p>
+	<blockquote cite="http://www.securityfocus.com/archive/1/483372">
+	  <p>Secunia Research has discovered some vulnerabilities in Xpdf,
+	    which can be exploited by malicious people to compromise a user's
+	    system.</p>
+	  <ul>
+	    <li>An array indexing error within the
+	      "DCTStream::readProgressiveDataUnit()" method in xpdf/Stream.cc
+	      can be exploited to corrupt memory via a specially crafted PDF
+	      file.</li>
+	    <li>An integer overflow error within the "DCTStream::reset()"
+	      method in xpdf/Stream.cc can be exploited to cause a heap-based
+	      buffer overflow via a specially crafted PDF file.</li>
+	    <li>A boundary error within the "CCITTFaxStream::lookChar()" method
+	      in xpdf/Stream.cc can be exploited to cause a heap-based buffer
+	      overflow by tricking a user into opening a PDF file containing a
+	      specially crafted "CCITTFaxDecode" filter.<li>
+	  </ul>
+	  <p>Successful exploitation may allow execution of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>26367</bid>
+      <cvename>CVE-2007-4352</cvename>
+      <cvename>CVE-2007-5392</cvename>
+      <cvename>CVE-2007-5393</cvename>
+    </references>
+    <dates>
+      <discovery>2007-11-07</discovery>
+      <entry>2007-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ffba6ab0-90b5-11dc-9835-003048705d5a">
     <topic>plone -- unsafe data interpreted as pickles</topic>
     <affects>
