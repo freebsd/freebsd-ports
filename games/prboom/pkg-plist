@@ -1,8 +1,9 @@
 bin/prboom
 bin/prboom-game-server
 %%DATADIR%%/prboom.wad
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.compat
-%%PORTDOCS%%%%DOCSDIR%%/README.demos
-%%PORTDOCS%%%%DOCSDIR%%/boom.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/doc/prboom-%%PORTVERSION%%/boom.txt
+share/doc/prboom-%%PORTVERSION%%/MBF.txt
+share/doc/prboom-%%PORTVERSION%%/MBFFAQ.txt
+share/doc/prboom-%%PORTVERSION%%/README.demos
+share/doc/prboom-%%PORTVERSION%%/README.compat
+@dirrm share/doc/prboom-%%PORTVERSION%%

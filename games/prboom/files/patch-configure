@@ -1,23 +1,14 @@
---- configure.orig	Sat Sep 29 04:39:08 2001
-+++ configure	Sat Nov 10 20:30:26 2001
-@@ -922,9 +922,9 @@
- 
- 
- if test "x$prefix" != xNONE; then
+--- configure.orig	Sun Nov 19 12:45:22 2006
++++ configure	Fri Oct 12 14:02:43 2007
+@@ -1913,9 +1913,9 @@
+   DOOMWADDIR="$withval"
+ else
+   if test "x$prefix" != xNONE; then
 -  DOOMWADDIR="$prefix/share/games/doom"
 +  DOOMWADDIR="$prefix/share/doom"
  else
 -  DOOMWADDIR="$ac_default_prefix/share/games/doom"
 +  DOOMWADDIR="$ac_default_prefix/share/doom"
  fi
- cat >> confdefs.h <<EOF
- #define DOOMWADDIR "$DOOMWADDIR"
-@@ -1220,7 +1220,7 @@
-   echo '    the source to insert the relevant pragmas so structures are packed.'
- fi
  
--CFLAGS_OPT="-O2 -fomit-frame-pointer"
-+CFLAGS_OPT="-fomit-frame-pointer"
- # Check whether --enable-debug or --disable-debug was given.
- if test "${enable_debug+set}" = set; then
-   enableval="$enable_debug"
+ fi;

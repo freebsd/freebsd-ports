@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	prboom
-PORTVERSION=	2.2.6
-PORTREVISION=	2
+PORTVERSION=	2.4.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	robin.schoonover@gmail.com
-COMMENT=	A multiplayer-capable and modified version of ID's classic doom game
+COMMENT=	A multiplayer-capable and modified version of ID's classic DOOM game
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
@@ -31,22 +30,16 @@ MAN5=		boom.cfg.5
 MAN6=		prboom.6 prboom-game-server.6
 
 DATADIR=	${DMDIR}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GL)
-CONFIGURE_ARGS+=--enable-gl
 USE_GL=		yes
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.   for f in README doc/README.compat doc/README.demos doc/boom.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.   endfor
+.else
+CONFIGURE_ARGS+=--disable-gl
 .endif
 
 .include <bsd.port.post.mk>
