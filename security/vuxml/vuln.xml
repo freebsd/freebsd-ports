@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ff65eecb-91e4-11dc-bd6c-0016179b2dd5">
+    <topic>flac -- media file processing integer overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>flac</name>
+	<range><lt>1.1.2_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>iDefense Laps reports:</p>
+	<blockquote cite="http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=608">
+	  <p>Remote exploitation of multiple integer overflow vulnerabilities
+	    in libFLAC, as included with various vendor's software
+	    distributions, allows attackers to execute arbitrary code
+	    in the context of the currently logged in user.</p>
+	  <p>These vulnerabilities specifically exist in the handling
+	    of malformed FLAC media files. In each case, an integer overflow
+	    can occur while calculating the amount of memory to allocate. As
+	    such, insufficient memory is allocated for the data that is subsequently
+	    read in from the file, and a heap based buffer overflow occurs.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-4619</cvename>
+      <url>http://secunia.com/advisories/27210/</url>
+      <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=608</url>
+    </references>
+    <dates>
+      <discovery>2007-10-11</discovery>
+      <entry>2007-11-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2747fc39-915b-11dc-9239-001c2514716c">
     <topic>xpdf -- multiple remote Stream.CC vulnerabilities</topic>
     <affects>
