@@ -256,9 +256,11 @@ bin/edit_json.rb
 %%GEM_DOC_DIR%%/rdoc/files/ext/json/ext/generator/extconf_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/ext/json/ext/generator/generator_c.html
 %%GEM_DOC_DIR%%/rdoc/files/ext/json/ext/generator/unicode_c.html
+%%GEM_DOC_DIR%%/rdoc/files/ext/json/ext/generator/unicode_h.html
 %%GEM_DOC_DIR%%/rdoc/files/ext/json/ext/parser/extconf_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/ext/json/ext/parser/parser_c.html
 %%GEM_DOC_DIR%%/rdoc/files/ext/json/ext/parser/unicode_c.html
+%%GEM_DOC_DIR%%/rdoc/files/ext/json/ext/parser/unicode_h.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/json/add/core_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/json/add/rails_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/json/common_rb.html
