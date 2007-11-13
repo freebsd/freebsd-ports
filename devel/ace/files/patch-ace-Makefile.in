@@ -1,0 +1,26 @@
+--- ace/Makefile.in.orig	Mon Oct 15 22:02:49 2007
++++ ace/Makefile.in	Mon Oct 15 23:57:10 2007
+@@ -402,6 +402,7 @@
+ @BUILD_ACE_FOR_TAO_FALSE@  Null_Mutex.h \
+ @BUILD_ACE_FOR_TAO_FALSE@  Null_Semaphore.h \
+ @BUILD_ACE_FOR_TAO_FALSE@  OS.h \
++@BUILD_ACE_FOR_TAO_FALSE@  OS.inl \
+ @BUILD_ACE_FOR_TAO_FALSE@  OS_Dirent.h \
+ @BUILD_ACE_FOR_TAO_FALSE@  OS_Errno.h \
+ @BUILD_ACE_FOR_TAO_FALSE@  OS_Errno.inl \
+@@ -485,6 +486,7 @@
+ @BUILD_ACE_FOR_TAO_FALSE@  Object_Manager.h \
+ @BUILD_ACE_FOR_TAO_FALSE@  Object_Manager.inl \
+ @BUILD_ACE_FOR_TAO_FALSE@  Object_Manager_Base.h \
++@BUILD_ACE_FOR_TAO_FALSE@  Obstack.h \
+ @BUILD_ACE_FOR_TAO_FALSE@  Obstack_T.cpp \
+ @BUILD_ACE_FOR_TAO_FALSE@  Obstack_T.h \
+ @BUILD_ACE_FOR_TAO_FALSE@  Obstack_T.inl \
+@@ -662,6 +664,7 @@
+ @BUILD_ACE_FOR_TAO_FALSE@  Svc_Conf_Tokens.h \
+ @BUILD_ACE_FOR_TAO_FALSE@  Svc_Handler.cpp \
+ @BUILD_ACE_FOR_TAO_FALSE@  Svc_Handler.h \
++@BUILD_ACE_FOR_TAO_FALSE@  Swap.cpp \
+ @BUILD_ACE_FOR_TAO_FALSE@  Swap.h \
+ @BUILD_ACE_FOR_TAO_FALSE@  Swap.inl \
+ @BUILD_ACE_FOR_TAO_FALSE@  Synch.h \

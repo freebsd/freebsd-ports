@@ -437,6 +437,7 @@ include/ace/Null_Condition.h
 include/ace/Null_Mutex.h
 include/ace/Null_Semaphore.h
 include/ace/OS.h
+include/ace/OS.inl
 include/ace/OS_Dirent.h
 include/ace/OS_Errno.h
 include/ace/OS_Errno.inl
@@ -520,6 +521,7 @@ include/ace/Obchunk.inl
 include/ace/Object_Manager.h
 include/ace/Object_Manager.inl
 include/ace/Object_Manager_Base.h
+include/ace/Obstack.h
 include/ace/Obstack_T.cpp
 include/ace/Obstack_T.h
 include/ace/Obstack_T.inl
@@ -711,6 +713,7 @@ include/ace/Svc_Conf_Lexer.h
 include/ace/Svc_Conf_Tokens.h
 include/ace/Svc_Handler.cpp
 include/ace/Svc_Handler.h
+include/ace/Swap.cpp
 include/ace/Swap.h
 include/ace/Swap.inl
 include/ace/Synch.h
