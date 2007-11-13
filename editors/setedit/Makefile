@@ -39,6 +39,10 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --without-mp3
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile
+.endif
+
 .if defined(WITHOUT_BZIP2)
 CONFIGURE_ARGS+=	--no-bzip2
 .else
