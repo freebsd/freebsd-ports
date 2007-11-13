@@ -80,7 +80,7 @@ Note:  Please add new entries to the beginning of this file.
 	    <li>A boundary error within the "CCITTFaxStream::lookChar()" method
 	      in xpdf/Stream.cc can be exploited to cause a heap-based buffer
 	      overflow by tricking a user into opening a PDF file containing a
-	      specially crafted "CCITTFaxDecode" filter.<li>
+	      specially crafted "CCITTFaxDecode" filter.</li>
 	  </ul>
 	  <p>Successful exploitation may allow execution of arbitrary code.</p>
 	</blockquote>
