@@ -36,6 +36,9 @@ EXAMPLES_EN=	es.png		png.rb		pngtest.rb	pngtest.sh	\
 		sample/4.png	sample/5.png	sample/6.png	sample/7.png	\
 		sample/8.png	sample/9.png	sample/pngcat.rb
 
+post-configure:
+	@${REINPLACE_CMD} -e "s| -L'.'||" ${WRKSRC}/Makefile
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
