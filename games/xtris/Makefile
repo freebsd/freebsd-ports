@@ -9,7 +9,8 @@ PORTNAME=	xtris
 PORTVERSION=	1.15
 PORTREVISION=	1
 CATEGORIES=	games ipv6
-MASTER_SITES=	ftp://quatramaran.ens.fr/pub/orabidoo/
+MASTER_SITES=	http://www.iagora.com/~espel/xtris/ \
+		ftp://quatramaran.ens.fr/pub/orabidoo/
 
 PATCH_SITES=	ftp://ftp.42.org/pub/orphan/	
 PATCHFILES=	xtris-1.15-v6-19991218.diff.gz
