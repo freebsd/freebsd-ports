@@ -16,7 +16,7 @@ COMMENT?=	A free BitTorrent client written from scratch in C
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME?=	gnometarget
+USE_GNOME?=	gnometarget intltool
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
