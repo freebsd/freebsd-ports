@@ -29,6 +29,8 @@ SUB_LIST+=	CHANNEL=${CHANNEL}
 PKGINSTALL=	${WRKDIR}/pear-install
 PKGDEINSTALL=	${WRKDIR}/pear-deinstall
 
+BROKEN=		doesn't work in jails
+
 DEFAULT_PHP_VER=5
 IGNORE_WITH_PHP=4
 
