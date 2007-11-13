@@ -22,14 +22,9 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e '/@INSTALL@/s/$$INSTALL/${INSTALL}/' \
+	@${REINPLACE_CMD} -e '/@INSTALL@/s/$$INSTALL/${INSTALL}/; \
+		s/echo aout/echo elf/' \
 		${WRKSRC}/libyahoo/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
