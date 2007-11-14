@@ -33,6 +33,7 @@ SLAVEDIRS=	editors/vim-lite
 .include "${.CURDIR}/options"
 .endif
 
+CONFLICTS=	vim6* vim*-lite
 USE_BZIP2=	yes
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
