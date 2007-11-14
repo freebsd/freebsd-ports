@@ -26,7 +26,7 @@ MAN1=		0launch.1 0alias.1 0store.1
 
 do-extract:
 	@${RM} -rf ${DISTDIR}/${DISTNAME}.tar.gz
-	@gpg ${DISTDIR}/${DISTFILES}
+	@gpg --skip-verify ${DISTDIR}/${DISTFILES}
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
