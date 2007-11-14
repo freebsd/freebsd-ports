@@ -1,5 +1,5 @@
---- ext/standard/image.c.orig	Sun Apr  2 09:34:50 2006
-+++ ext/standard/image.c	Sun Apr  2 09:35:27 2006
+--- ext/standard/image.c.orig	2007-10-04 15:31:11.000000000 +0200
++++ ext/standard/image.c	2007-11-13 22:47:04.000000000 +0100
 @@ -31,9 +31,7 @@
  #endif
  #include "php_image.h"
@@ -36,15 +36,14 @@
  
  /* {{{ php_handle_swf
   */
-@@ -1310,12 +1304,7 @@
+@@ -1314,11 +1308,7 @@
  			result = php_handle_swf(stream TSRMLS_CC);
  			break;
  		case IMAGE_FILETYPE_SWC:
 -#if HAVE_ZLIB && !defined(COMPILE_DL_ZLIB)
  			result = php_handle_swc(stream TSRMLS_CC);
 -#else
--			php_error_docref(NULL TSRMLS_CC, E_NOTICE, "The image is a compressed SWF file, but you do not have a static version of the zlib extension enabled.");
--
+-			php_error_docref(NULL TSRMLS_CC, E_NOTICE, "The image is a compressed SWF file, but you do not have a static version of the zlib extension enabled");
 -#endif
  			break;
  		case IMAGE_FILETYPE_PSD:
