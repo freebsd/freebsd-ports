@@ -7,6 +7,7 @@
 
 PORTNAME=	dcc-dccd
 PORTVERSION=	1.3.50
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/ \
 		http://www.wa.apana.org.au/~dean/sources/
@@ -38,7 +39,7 @@ DCCGID?=	112
 # sed scripting breaks things.
 #
 
-CONFIGURE_ARGS=	--homedir=${PREFIX}/dcc --bindir=${PREFIX}/bin --mandir=${MANPREFIX}/man --with-rundir=/var/run
+CONFIGURE_ARGS=	--homedir=${PREFIX}/dcc --bindir=${PREFIX}/bin --mandir=${MANPREFIX}/man --with-rundir=/var/run/dcc
 
 .include <bsd.port.pre.mk>
 
