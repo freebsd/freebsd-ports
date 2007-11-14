@@ -11,23 +11,16 @@ PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	Streaming audio to Icecast/shoutcast supports multiple bitrate stream
 
-LIB_DEPENDS=	shout.2:${PORTSDIR}/audio/libshout
+LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \
+		mp3lame.0:${PORTSDIR}/audio/lame
 
 PLIST_FILES=	bin/holyshout
-USE_GMAKE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \
 		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's,,\\r,g' ${WRKSRC}/holyshout.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

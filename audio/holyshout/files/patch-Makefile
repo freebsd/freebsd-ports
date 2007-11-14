@@ -1,0 +1,34 @@
+--- Makefile.orig	2003-11-23 05:52:12.000000000 +0100
++++ Makefile	2007-11-09 01:35:21.000000000 +0100
+@@ -44,28 +44,20 @@
+ #
+ # CAUTION: this Makefile doesn't work if your $HOME contains whitespaces!
+ 
+-CC	= gcc
+-CFLAG	+= -fomit-frame-pointer -funroll-all-loops -g -L. -Lliblame -lm -lncurses -lmp3lame -L/usr/local/lib -I/usr/local/include -lshout
++CFLAG	+= -fomit-frame-pointer -funroll-all-loops -g -lm -lncurses -lmp3lame -L/usr/local/lib -I/usr/local/include -lshout -lspeex -lpthread
+ PROG	= holyshout
+ DESTDIR	= /usr/local/bin/ 
+ RM = /bin/rm -f 
+ 
+-all: liblame holyshout
++all: holyshout
+ 
+ 
+-holyshout : holyshout.c liblame
+-	cd liblame ; gmake ;
+-	@echo; echo -n It needs a shout library. if you have a error about -lshout , please install libshout.
+-	@echo; echo -n Building holyshout.
+-	@echo; echo
++holyshout : holyshout.c
+ 	${CC} -o holyshout holyshout.c ${CFLAG}
+ 
+ install: all
+ 	install -c -m 755 ${PROG} ${DESTDIR}
+ 
+-clean:
+-	cd liblame ; gmake clean
+-	${RM} ${PROG} *.o
+ holyclean:
+ 	${RM} ${PROG} *.o
+ 
