@@ -7,6 +7,7 @@
 
 PORTNAME=	objc
 PORTVERSION=	3.2.8
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://users.pandora.be/stes/
 DISTFILES=	objc-bootstrap-${BOOTVERSION}.tar.gz objc-${PORTVERSION}.tar.gz
@@ -21,6 +22,11 @@ MAKE_ENV=	PATH=${WRKDIR}/bin:${PATH}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PATH=${WRKDIR}/bin:${PATH}
 USE_GCC=	3.4
+
+#
+# We need the compiler in run-time
+#
+RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
 
