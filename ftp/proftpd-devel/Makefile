@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -30,7 +30,10 @@ PORTDOCSdoc=	Configuration.html faq.html
 PORTDOCScontrib=mod_ifsession.html mod_radius.html mod_rewrite.html \
 		mod_tls.html mod_wrap2.html mod_wrap2_file.html mod_wrap2_sql.html \
 		mod_ban.html mod_quotatab_radius.html ftpasswd.html
-PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib}
+PORTDOCSreadme=	README README.DSO README.FreeBSD README.IPv6 README.LDAP README.PAM \
+		README.capabilities README.classes README.facl README.modules \
+		README.ports RELEASE_NOTES
+PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib} ${PORTDOCSreadme}
 
 PORTEXAMPLES=	ASCII.html CreateHome.html Filters.html SQL.html Umask.html \
 		AuthFiles.html DNS.html Globbing.html SSH.html Upgrade.html \
@@ -50,7 +53,6 @@ USE_RC_SUBR=	proftpd.sh
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
 		--sysconfdir=${PREFIX}/etc \
-		--enable-builtin-getnameinfo \
 		--disable-sendfile
 
 OPTIONS=	IPV6 "Use IPv6" off \
@@ -273,6 +275,7 @@ post-install:
 	@${INSTALL} -d ${DOCSDIR}/
 	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCSdoc} ${DOCSDIR}/
 	@cd ${WRKSRC}/doc/contrib && ${INSTALL_DATA} ${PORTDOCScontrib} ${DOCSDIR}/
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCSreadme} ${DOCSDIR}/
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${INSTALL} -d ${EXAMPLESDIR}/
