@@ -8,28 +8,31 @@
 %%WWWDIR%%/license.txt
 %%WWWDIR%%/wp-activate.php
 %%WWWDIR%%/wp-admin/admin-ajax.php
-%%WWWDIR%%/wp-admin/admin-db.php
 %%WWWDIR%%/wp-admin/admin-footer.php
 %%WWWDIR%%/wp-admin/admin-functions.php
 %%WWWDIR%%/wp-admin/admin-header.php
 %%WWWDIR%%/wp-admin/admin.php
 %%WWWDIR%%/wp-admin/bookmarklet.php
-%%WWWDIR%%/wp-admin/cat.js
-%%WWWDIR%%/wp-admin/categories.js
 %%WWWDIR%%/wp-admin/categories.php
 %%WWWDIR%%/wp-admin/comment.php
-%%WWWDIR%%/wp-admin/custom-fields.js
+%%WWWDIR%%/wp-admin/css/install-rtl.css
+%%WWWDIR%%/wp-admin/css/install.css
+%%WWWDIR%%/wp-admin/css/upload-rtl.css
+%%WWWDIR%%/wp-admin/css/upload.css
+%%WWWDIR%%/wp-admin/css/widgets-rtl.css
+%%WWWDIR%%/wp-admin/css/widgets.css
 %%WWWDIR%%/wp-admin/custom-header.php
-%%WWWDIR%%/wp-admin/dbx-admin-key.js
 %%WWWDIR%%/wp-admin/edit-category-form.php
-%%WWWDIR%%/wp-admin/edit-comments.js
 %%WWWDIR%%/wp-admin/edit-comments.php
 %%WWWDIR%%/wp-admin/edit-form-advanced.php
 %%WWWDIR%%/wp-admin/edit-form-comment.php
 %%WWWDIR%%/wp-admin/edit-form.php
+%%WWWDIR%%/wp-admin/edit-link-categories.php
+%%WWWDIR%%/wp-admin/edit-link-category-form.php
 %%WWWDIR%%/wp-admin/edit-link-form.php
 %%WWWDIR%%/wp-admin/edit-page-form.php
 %%WWWDIR%%/wp-admin/edit-pages.php
+%%WWWDIR%%/wp-admin/edit-post-rows.php
 %%WWWDIR%%/wp-admin/edit.php
 %%WWWDIR%%/wp-admin/export.php
 %%WWWDIR%%/wp-admin/images/box-bg-left.gif
@@ -46,25 +49,57 @@
 %%WWWDIR%%/wp-admin/images/heading-bg.gif
 %%WWWDIR%%/wp-admin/images/login-bkg-bottom.gif
 %%WWWDIR%%/wp-admin/images/login-bkg-tile.gif
+%%WWWDIR%%/wp-admin/images/logo-ghost.png
 %%WWWDIR%%/wp-admin/images/notice.gif
 %%WWWDIR%%/wp-admin/images/toggle.gif
 %%WWWDIR%%/wp-admin/images/wordpress-logo.png
 %%WWWDIR%%/wp-admin/import.php
 %%WWWDIR%%/wp-admin/import/blogger.php
 %%WWWDIR%%/wp-admin/import/blogware.php
+%%WWWDIR%%/wp-admin/import/btt.php
 %%WWWDIR%%/wp-admin/import/dotclear.php
 %%WWWDIR%%/wp-admin/import/greymatter.php
+%%WWWDIR%%/wp-admin/import/jkw.php
 %%WWWDIR%%/wp-admin/import/livejournal.php
 %%WWWDIR%%/wp-admin/import/mt.php
 %%WWWDIR%%/wp-admin/import/rss.php
+%%WWWDIR%%/wp-admin/import/stp.php
 %%WWWDIR%%/wp-admin/import/textpattern.php
+%%WWWDIR%%/wp-admin/import/utw.php
 %%WWWDIR%%/wp-admin/import/wordpress.php
+%%WWWDIR%%/wp-admin/import/wp-cat2tag.php
+%%WWWDIR%%/wp-admin/includes/admin.php
+%%WWWDIR%%/wp-admin/includes/bookmark.php
+%%WWWDIR%%/wp-admin/includes/comment.php
+%%WWWDIR%%/wp-admin/includes/file.php
+%%WWWDIR%%/wp-admin/includes/image.php
+%%WWWDIR%%/wp-admin/includes/import.php
+%%WWWDIR%%/wp-admin/includes/misc.php
+%%WWWDIR%%/wp-admin/includes/mu.php
+%%WWWDIR%%/wp-admin/includes/plugin.php
+%%WWWDIR%%/wp-admin/includes/post.php
+%%WWWDIR%%/wp-admin/includes/schema.php
+%%WWWDIR%%/wp-admin/includes/taxonomy.php
+%%WWWDIR%%/wp-admin/includes/template.php
+%%WWWDIR%%/wp-admin/includes/theme.php
+%%WWWDIR%%/wp-admin/includes/update.php
+%%WWWDIR%%/wp-admin/includes/upgrade.php
+%%WWWDIR%%/wp-admin/includes/upload.php
+%%WWWDIR%%/wp-admin/includes/user.php
 %%WWWDIR%%/wp-admin/index-extra.php
 %%WWWDIR%%/wp-admin/index.php
 %%WWWDIR%%/wp-admin/install-helper.php
-%%WWWDIR%%/wp-admin/install-rtl.css
-%%WWWDIR%%/wp-admin/install.css
+%%WWWDIR%%/wp-admin/js/cat.js
+%%WWWDIR%%/wp-admin/js/categories.js
+%%WWWDIR%%/wp-admin/js/custom-fields.js
+%%WWWDIR%%/wp-admin/js/dbx-admin-key.js
+%%WWWDIR%%/wp-admin/js/edit-comments.js
+%%WWWDIR%%/wp-admin/js/link-cat.js
+%%WWWDIR%%/wp-admin/js/upload.js
+%%WWWDIR%%/wp-admin/js/users.js
+%%WWWDIR%%/wp-admin/js/xfn.js
 %%WWWDIR%%/wp-admin/link-add.php
+%%WWWDIR%%/wp-admin/link-category.php
 %%WWWDIR%%/wp-admin/link-import.php
 %%WWWDIR%%/wp-admin/link-manager.php
 %%WWWDIR%%/wp-admin/link-parse-opml.php
@@ -92,23 +127,14 @@
 %%WWWDIR%%/wp-admin/rtl.css
 %%WWWDIR%%/wp-admin/setup-config.php
 %%WWWDIR%%/wp-admin/sidebar.php
-%%WWWDIR%%/wp-admin/templates.php
-%%WWWDIR%%/wp-admin/theme-editor.php
 %%WWWDIR%%/wp-admin/themes.php
 %%WWWDIR%%/wp-admin/update-links.php
 %%WWWDIR%%/wp-admin/upgrade-functions.php
-%%WWWDIR%%/wp-admin/upgrade-schema.php
 %%WWWDIR%%/wp-admin/upgrade.php
 %%WWWDIR%%/wp-admin/upload-functions.php
-%%WWWDIR%%/wp-admin/upload-rtl.css
-%%WWWDIR%%/wp-admin/upload.css
-%%WWWDIR%%/wp-admin/upload.js
 %%WWWDIR%%/wp-admin/upload.php
 %%WWWDIR%%/wp-admin/user-edit.php
-%%WWWDIR%%/wp-admin/users.js
 %%WWWDIR%%/wp-admin/users.php
-%%WWWDIR%%/wp-admin/widgets-rtl.css
-%%WWWDIR%%/wp-admin/widgets.css
 %%WWWDIR%%/wp-admin/widgets.php
 %%WWWDIR%%/wp-admin/wp-admin.css
 %%WWWDIR%%/wp-admin/wpmu-admin.php
@@ -118,7 +144,6 @@
 %%WWWDIR%%/wp-admin/wpmu-themes.php
 %%WWWDIR%%/wp-admin/wpmu-upgrade-site.php
 %%WWWDIR%%/wp-admin/wpmu-users.php
-%%WWWDIR%%/wp-admin/xfn.js
 %%WWWDIR%%/wp-app.php
 %%WWWDIR%%/wp-atom.php
 %%WWWDIR%%/wp-blog-header.php
@@ -127,12 +152,14 @@
 %%WWWDIR%%/wp-config-sample.php
 %%WWWDIR%%/wp-content/blogs.php
 %%WWWDIR%%/wp-content/index.php
+%%WWWDIR%%/wp-content/mu-plugins/sync-taxonomy.php
 %%WWWDIR%%/wp-content/themes/classic/comments-popup.php
 %%WWWDIR%%/wp-content/themes/classic/comments.php
 %%WWWDIR%%/wp-content/themes/classic/footer.php
 %%WWWDIR%%/wp-content/themes/classic/functions.php
 %%WWWDIR%%/wp-content/themes/classic/header.php
 %%WWWDIR%%/wp-content/themes/classic/index.php
+%%WWWDIR%%/wp-content/themes/classic/rtl.css
 %%WWWDIR%%/wp-content/themes/classic/screenshot.png
 %%WWWDIR%%/wp-content/themes/classic/sidebar.php
 %%WWWDIR%%/wp-content/themes/classic/style.css
@@ -193,10 +220,12 @@
 %%WWWDIR%%/wp-content/themes/home/style.css
 %%WWWDIR%%/wp-cron.php
 %%WWWDIR%%/wp-feed.php
+%%WWWDIR%%/wp-includes/atomlib.php
 %%WWWDIR%%/wp-includes/author-template.php
 %%WWWDIR%%/wp-includes/bookmark-template.php
 %%WWWDIR%%/wp-includes/bookmark.php
 %%WWWDIR%%/wp-includes/cache.php
+%%WWWDIR%%/wp-includes/canonical.php
 %%WWWDIR%%/wp-includes/capabilities.php
 %%WWWDIR%%/wp-includes/category-template.php
 %%WWWDIR%%/wp-includes/category.php
@@ -223,8 +252,8 @@
 %%WWWDIR%%/wp-includes/functions.php
 %%WWWDIR%%/wp-includes/general-template.php
 %%WWWDIR%%/wp-includes/gettext.php
-%%WWWDIR%%/wp-includes/images/rss.png
 %%WWWDIR%%/wp-includes/images/bullet_arrow_down.gif
+%%WWWDIR%%/wp-includes/images/rss.png
 %%WWWDIR%%/wp-includes/images/smilies/icon_arrow.gif
 %%WWWDIR%%/wp-includes/images/smilies/icon_biggrin.gif
 %%WWWDIR%%/wp-includes/images/smilies/icon_confused.gif
@@ -247,6 +276,9 @@
 %%WWWDIR%%/wp-includes/images/smilies/icon_surprised.gif
 %%WWWDIR%%/wp-includes/images/smilies/icon_twisted.gif
 %%WWWDIR%%/wp-includes/images/smilies/icon_wink.gif
+%%WWWDIR%%/wp-includes/images/wlw/wp-comments.png
+%%WWWDIR%%/wp-includes/images/wlw/wp-icon.png
+%%WWWDIR%%/wp-includes/images/wlw/wp-watermark.png
 %%WWWDIR%%/wp-includes/images/wordpress-mu.png
 %%WWWDIR%%/wp-includes/js/autosave.js
 %%WWWDIR%%/wp-includes/js/colorpicker.js
@@ -270,11 +302,11 @@
 %%WWWDIR%%/wp-includes/js/scriptaculous/prototype.js
 %%WWWDIR%%/wp-includes/js/scriptaculous/scriptaculous.js
 %%WWWDIR%%/wp-includes/js/scriptaculous/slider.js
+%%WWWDIR%%/wp-includes/js/scriptaculous/sound.js
 %%WWWDIR%%/wp-includes/js/scriptaculous/unittest.js
 %%WWWDIR%%/wp-includes/js/scriptaculous/wp-scriptaculous.js
 %%WWWDIR%%/wp-includes/js/tinymce/blank.htm
 %%WWWDIR%%/wp-includes/js/tinymce/langs/en.js
-%%WWWDIR%%/wp-includes/js/tinymce/license.html
 %%WWWDIR%%/wp-includes/js/tinymce/license.txt
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/autosave/editor_plugin.js
 %%WWWDIR%%/wp-includes/js/tinymce/plugins/autosave/editor_plugin_src.js
@@ -454,12 +486,15 @@
 %%WWWDIR%%/wp-includes/rss.php
 %%WWWDIR%%/wp-includes/script-loader.php
 %%WWWDIR%%/wp-includes/streams.php
+%%WWWDIR%%/wp-includes/taxonomy.php
 %%WWWDIR%%/wp-includes/template-loader.php
 %%WWWDIR%%/wp-includes/theme.php
+%%WWWDIR%%/wp-includes/update.php
 %%WWWDIR%%/wp-includes/user.php
 %%WWWDIR%%/wp-includes/vars.php
 %%WWWDIR%%/wp-includes/version.php
 %%WWWDIR%%/wp-includes/widgets.php
+%%WWWDIR%%/wp-includes/wlwmanifest.xml
 %%WWWDIR%%/wp-includes/wp-db.php
 %%WWWDIR%%/wp-includes/wpmu-functions.php
 %%WWWDIR%%/wp-links-opml.php
@@ -514,6 +549,7 @@
 @dirrm %%WWWDIR%%/wp-includes/js/jquery
 @dirrm %%WWWDIR%%/wp-includes/js/crop
 @dirrm %%WWWDIR%%/wp-includes/js
+@dirrm %%WWWDIR%%/wp-includes/images/wlw
 @dirrm %%WWWDIR%%/wp-includes/images/smilies
 @dirrm %%WWWDIR%%/wp-includes/images
 @dirrm %%WWWDIR%%/wp-includes
@@ -524,10 +560,13 @@
 @dirrm %%WWWDIR%%/wp-content/themes/classic
 @dirrm %%WWWDIR%%/wp-content/themes
 @dirrm %%WWWDIR%%/wp-content/plugins
-@dirrmtry %%WWWDIR%%/wp-content/mu-plugins
+@dirrm %%WWWDIR%%/wp-content/mu-plugins
 @dirrm %%WWWDIR%%/wp-content
+@dirrm %%WWWDIR%%/wp-admin/js
+@dirrm %%WWWDIR%%/wp-admin/includes
 @dirrm %%WWWDIR%%/wp-admin/import
 @dirrm %%WWWDIR%%/wp-admin/images
+@dirrm %%WWWDIR%%/wp-admin/css
 @dirrm %%WWWDIR%%/wp-admin
 @dirrm %%WWWDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
