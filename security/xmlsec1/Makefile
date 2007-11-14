@@ -69,6 +69,7 @@ post-patch:
 	    -e 's|^confexecdir =.*$$|confexecdir = \$$(sysconfdir)|g' \
 	    -e 's|/tmp/\*\.log|${WRKSRC}/*.log|g' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-ldl"|"|' \
 	    -e 's,with_nspr/include,with_nspr/include/nspr ${PTHREAD_CFLAGS},' \
 	    -e 's,with_nss/include,with_nss/include/nss/nss,' \
