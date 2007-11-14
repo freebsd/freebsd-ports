@@ -30,7 +30,7 @@ COMMENT?=	Vi "workalike", with many additional features
 SLAVEDIRS=	editors/vim-lite
 
 .if defined(WITH_OPTIONS) || defined(WITH_VIM_OPTIONS)
-.include "${.CURDIR}/options"
+.include "${.CURDIR}/../vim/options"
 .endif
 
 CONFLICTS=	vim6* vim*-lite
