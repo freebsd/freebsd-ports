@@ -20,17 +20,12 @@ COMMENT=	A GTK theme engine looking like SGI enhanced Motif (aka Roxy)
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gtk12
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
