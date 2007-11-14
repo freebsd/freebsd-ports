@@ -35,10 +35,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=--with-gtk
@@ -67,7 +63,7 @@ pre-configure:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/TekNap
-	${TAR} --directory ${WRKSRC}/teknap-help -cf - . --exclude CVS | \
+	${TAR} --directory ${WRKSRC}/teknap-help -cf - . | \
 	${TAR} --directory ${PREFIX}/share/TekNap/help -xf -
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/TekNap
 	@${ECHO}
