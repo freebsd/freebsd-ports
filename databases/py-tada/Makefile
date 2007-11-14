@@ -19,6 +19,8 @@ COMMENT=	Twisted Asynchronous Database API
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Unfetchable
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
