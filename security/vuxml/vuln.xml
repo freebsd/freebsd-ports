@@ -99,7 +99,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
         <name>cups-base</name>
-	<range><gt>0</gt></range>
+	<range><gt>1.3.3_2</gt></range>
       </package>
       <package>
 	<name>gpdf</name>
@@ -155,6 +155,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-11-07</discovery>
       <entry>2007-11-12</entry>
+      <modified>2007-11-14</modified>
     </dates>
   </vuln>
 
