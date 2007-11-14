@@ -21,6 +21,7 @@ COMMENT=	RusNet Internet Relay Chat Server
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	irc_cv_mathlib=-lm
 
 USER=		ircd
 GROUP=		${USER}
@@ -73,10 +74,6 @@ CONFIGURE_ARGS+=--enable-dsm
 
 .if ${ARCH} == "amd64"
 BROKEN=		"Does not build on amd64"
-.endif
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
 .endif
 
 pre-configure:
