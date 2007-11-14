@@ -23,12 +23,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PATH=${WRKDIR}/bin:${PATH}
 USE_GCC=	3.4
 
+.include <bsd.port.pre.mk>
 #
 # We need the compiler in run-time
 #
+.if ${OSVERSION} >= 700042
 RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:${PORTSDIR}/lang/${_GCC_BUILD_DEPENDS}
-
-.include <bsd.port.pre.mk>
+.endif
 
 pre-configure:
 	cd ${WRKDIR}/${PORTNAME}-bootstrap-${BOOTVERSION};\
