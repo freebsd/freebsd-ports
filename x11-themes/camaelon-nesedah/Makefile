@@ -39,9 +39,9 @@ post-install:
 	@${ECHO_MSG}
 
 install-user:
-	@(. ${SYSMAKEDIR}/GNUStep.sh && defaults write Camaelon Theme Nesedah)
+	@(. ${SYSMAKEDIR}/GNUstep.sh && defaults write Camaelon Theme Nesedah)
 
 deinstall-user:
-	@(. ${SYSMAKEDIR}/GNUStep.sh && defaults delete Camaelon Theme)
+	@(. ${SYSMAKEDIR}/GNUstep.sh && defaults delete Camaelon Theme)
 
 .include <bsd.port.post.mk>
