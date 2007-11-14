@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a7080c30-91a2-11dc-b2eb-00b0d07e6c7e">
+    <topic>mt-daapd -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>mt-daapd</name>
+	<range><lt>0.2.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>US-CERT reports:</p>
+	<blockquote cite="http://www.us-cert.gov/cas/bulletins/SB07-316.html">
+	  <p>webserver.c in mt-dappd in Firefly Media Server 0.2.4 and
+	    earlier allows remote attackers to cause a denial of service
+	    (NULL dereference and daemon crash) via a stats method action
+	    to /xml-rpc with (1) an empty Authorization header line, which
+	    triggers a crash in the ws_decodepassword function; or (2) a
+	    header line without a ':' character, which triggers a crash
+	    in the ws_getheaders function.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-5824</cvename>
+    </references>
+    <dates>
+      <discovery>2007-11-05</discovery>
+      <entry>2007-11-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="92f86b93-923f-11dc-a2bf-02e081235dab">
     <topic>net-snmp -- denial of service via GETBULK request</topic>
     <affects>
@@ -46,7 +77,10 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>CVE reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5846">
-	  <p>The SNMP agent (snmp_agent.c) in net-snmp before 5.4.1 allows remote attackers to cause a denial of service (CPU and memory consumption) via a GETBULK request with a large max-repeaters value..</p>
+	  <p>The SNMP agent (snmp_agent.c) in net-snmp before 5.4.1
+	    allows remote attackers to cause a denial of service (CPU
+	    and memory consumption) via a GETBULK request with a large
+	    max-repeaters value.</p>
 	</blockquote>
       </body>
     </description>
@@ -56,6 +90,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-11-06</discovery>
       <entry>2007-11-13</entry>
+      <modified>2007-11-14</modified>
     </dates>
   </vuln>
 
