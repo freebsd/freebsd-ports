@@ -3,7 +3,7 @@
 #define GL_EXT_blend_logic_op
 #define GL_EXT_blend_minmax
 #define GL_EXT_blend_subtract
-#define GL_EXT_color_table
+#undef GL_EXT_color_table
 #define GL_EXT_paletted_texture
 #define GL_EXT_point_parameters
 #define GL_EXT_polygon_offset
