@@ -7,7 +7,7 @@
 
 PORTNAME=	fusefs
 DISTVERSION=	0.3.9-pre1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://fuse4bsd.creo.hu/downloads/ \
 		http://am-productions.biz/docs/
@@ -86,7 +86,7 @@ pre-install:
 	@${MKDIR} ${KMODDIR}
 
 post-install:
-	@${LN} -s ${PREFIX}/sbin/mount_fusefs /usr/sbin
+	@${LN} -fs ${PREFIX}/sbin/mount_fusefs /usr/sbin
 .if defined(WITH_AUTOSETUP) && !defined(PACKAGE_BUILDING)
 	@${SED} -e 's|@@PREFIX@@|${PREFIX}|g' \
 		${FILESDIR}/${SETUP} > ${WRKDIR}/${SETUP}
