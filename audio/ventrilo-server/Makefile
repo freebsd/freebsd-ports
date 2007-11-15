@@ -18,6 +18,8 @@ COMMENT=	Server side of the Ventrilo group voice chat system
 FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 
+BROKEN=		bad checksum
+
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
