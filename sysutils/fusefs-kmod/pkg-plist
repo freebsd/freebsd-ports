@@ -1,5 +1,7 @@
 modules/fuse.ko
 sbin/mount_fusefs
+@exec ln -fs %D/%F /usr/sbin
+@unexec rm -f /usr/sbin/mount_fusefs 2>&1 >/dev/null || true
 @unexec kldxref %D/modules
 @dirrmtry modules
 %%PORTDOCS%%%%DOCSDIR%%/kmod/doc.text
@@ -21,5 +23,3 @@ sbin/mount_fusefs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/kmod/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/kmod
 @dirrmtry %%DOCSDIR%%
-@cwd /usr
-sbin/mount_fusefs
