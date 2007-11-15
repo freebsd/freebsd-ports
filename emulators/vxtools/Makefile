@@ -34,10 +34,4 @@ do-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/vxmount.1 ${PREFIX}/man/man1
 	@ ${INSTALL_MAN} ${WRKSRC}/vxumount.1 ${PREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
