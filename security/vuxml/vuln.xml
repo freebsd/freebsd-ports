@@ -1052,21 +1052,19 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>jdk</name>
-	<range><ge>1.3.0</ge><lt>1.3.1p9_8</lt></range>
-	<range><ge>1.4.0</ge><lt>1.4.2p8_7</lt></range>
-	<range><ge>1.5.0</ge><lt>1.5.0.12p6,1</lt></range>
-	<range><ge>1.6.0</ge><lt>1.6.0.1p1_2</lt></range>
+	<range><ge>1.3.0</ge><lt>1.5.0.13p7,1</lt></range>
+	<range><ge>1.6.0</ge><lt>1.6.0.3p3</lt></range>
       </package>
       <package>
 	<name>linux-blackdown-jdk</name>
-	<range><ge>1.4.0</ge><lt>1.4.2-02</lt></range>
+	<range><ge>1.3.0</ge></range>
       </package>
       <package>
 	<name>linux-sun-jdk</name>
-	<range><ge>1.3.0</ge><lt>1.3.1.18</lt></range>
-	<range><ge>1.4.0</ge><lt>1.4.2.13</lt></range>
-	<range><ge>1.5.0</ge><lt>1.5.0.12,2</lt></range>
-	<range><ge>1.6.0</ge><lt>1.6.0.02</lt></range>
+	<range><ge>1.3.0</ge><lt>1.3.1.20</lt></range>
+	<range><ge>1.4.0</ge><lt>1.4.2.16</lt></range>
+	<range><ge>1.5.0</ge><lt>1.5.0.13,2</lt></range>
+	<range><ge>1.6.0</ge><lt>1.6.0.03</lt></range>
       </package>
     </affects>
     <description>
@@ -1090,6 +1088,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-10-03</discovery>
       <entry>2007-10-08</entry>
+      <modified>2007-11-16</modified>
     </dates>
   </vuln>
 
