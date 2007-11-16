@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	2.0.0.6
+PORTVERSION=	2.0.0.9
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -23,8 +23,9 @@ RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-swit
 NO_BUILD=	yes
 USE_XPI=	*thunderbird
 
-THUNDERBIRD_I18N_ALL=	be bg ca cs da de el en-GB es-AR es-ES eu fi fr ga-IE hu it ja ko lt \
-			mk nb-NO nl nn-NO pa-IN pl pt-BR pt-PT ru sk sl sv-SE tr zh-CN zh-TW
+THUNDERBIRD_I18N_ALL=	be bg ca cs da de el en-GB es-AR es-ES eu fi fr ga-IE \
+			he hu it ja ko lt mk nb-NO nl nn-NO pa-IN pl pt-BR \
+			pt-PT ru sk sl sv-SE tr zh-CN zh-TW
 .ifdef PACKAGE_BUILDING
 THUNDERBIRD_I18N?=	all
 .else
@@ -70,6 +71,10 @@ do-install:
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \
 		${XARGS} -0L1 ${REINPLACE_CMD} -i '' '/<?xml/,$$!d'
+
+list-langs:
+	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/${MASTER_SITE_SUBDIR}"|\
+		perl -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1 "}'
 
 .include "${.CURDIR}/../../www/xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
