@@ -8,14 +8,13 @@
 PORTNAME=	aacplusenc
 PORTVERSION=	0.7
 CATEGORIES=	audio
-MASTER_SITES=	http://openjlabs.com/tl_files/openjlabs/downloads/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	http://teknoraver.campuslife.it/software/mp4tools/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	aacPlus v2 command-line encoder
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 
