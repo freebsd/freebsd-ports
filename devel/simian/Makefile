@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	simian
-PORTVERSION=	2.2.18
+PORTVERSION=	2.2.19
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.redhillconsulting.com.au/products/simian/
 
