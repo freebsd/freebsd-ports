@@ -179,6 +179,9 @@ CFLAGS+=	-fPIC
 CFLAGS+=	-fpic
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
 
 post-extract:
 	@${CP} ${FILESDIR}/config.fixed-${OPSYS:L} ${WRKSRC}/
