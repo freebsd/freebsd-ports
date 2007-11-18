@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Trancode NUV to DVD compliant MPEG2 (PAL or NTSC)
+# Transcode NUV to DVD compliant MPEG2 (PAL or NTSC)
 #
  
 usage(){
@@ -97,7 +97,7 @@ retval=0
 for PROG in nuvplay lame mpeg2enc mplex ; do
     which -s $PROG || retval=$?
     if [ $retval -ne 0 ]; then
-	echo "Error: could't find '$PROG' on this system." >&2
+	echo "Error: couldn't find '$PROG' on this system." >&2
 	exit 1
     fi
 done
