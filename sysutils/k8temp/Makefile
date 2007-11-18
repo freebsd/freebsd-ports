@@ -13,6 +13,8 @@ MASTER_SITES=	http://hur.st/k8temp/
 MAINTAINER=	tom@hur.st
 COMMENT=	Athlon 64 and Opteron on-die temperature reader
 
+ONLY_FOR_ARCHS=	i386 amd64
+
 MAN8=	k8temp.8
 
 PLIST_FILES=	sbin/k8temp
