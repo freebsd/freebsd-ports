@@ -13,7 +13,7 @@ MASTER_SITES=	http://google-perftools.googlecode.com/files/ \
 MASTER_SITE_SUBDIR=	vd/${PORTNAME}
 
 MAINTAINER=	yuri@tsoft.com
-COMMENT=	Fast, mutli-threaded malloc() and nifty performance analysis tools
+COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
@@ -43,9 +43,9 @@ check: build
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 # src/stacktrace.cc:81:5: #error Cannnot calculate stack trace: need libunwind (see INSTALL file)
-BROKEN=	Does not build on amd64, cannnot calculate stack trace: need libunwind (see INSTALL file)
+BROKEN=	Does not build, cannnot calculate stack trace: need libunwind (see INSTALL file)
 .endif
 
 .include <bsd.port.post.mk>
