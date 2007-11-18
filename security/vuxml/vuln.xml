@@ -7398,7 +7398,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>postnuke</name>
-	<range><lt>0.800</lt></range>
+	<range><lt>0.763</lt></range>
       </package>
     </affects>
     <description>
@@ -7423,7 +7423,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-09-29</discovery>
       <entry>2006-10-03</entry>
-      <modified>2006-10-15</modified>
+      <modified>2007-11-17</modified>
     </dates>
   </vuln>
 
