@@ -27,6 +27,8 @@ MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
 MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/'
 #MOZ_TOOLKIT=	cairo-gtk2
 
+NO_LATEST_LINK=	yes
+
 WANT_GNOME=	yes
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
