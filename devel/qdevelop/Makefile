@@ -20,6 +20,8 @@ BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 		qt4-sqlite-plugin>=0:${PORTSDIR}/databases/qt4-sqlite3-plugin
 
+BROKEN=		checksum fails
+
 CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DCMAKE_C_COMPILER:STRING='${CC}' \
 		-DCMAKE_CXX_COMPILER:STRING=${CXX} \
