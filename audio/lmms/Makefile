@@ -23,10 +23,6 @@ LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
 		sndfile:${PORTSDIR}/audio/libsndfile
 RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
-BROKEN=		fails to install
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=	2007-11-05
-
 USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_SDL=	sdl sound
@@ -58,4 +54,10 @@ post-install:
 	# (root privileges are dropped in the main routine)
 	${CHMOD} u+s ${PREFIX}/bin/lmms
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		fails to install
+.endif
+
+.include <bsd.port.post.mk>
