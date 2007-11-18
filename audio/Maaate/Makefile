@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.cmis.csiro.au/maaate/packages/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG audio analysis toolkit
 
+BROKEN=		unfetchable
+
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
