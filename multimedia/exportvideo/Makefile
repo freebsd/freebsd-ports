@@ -37,10 +37,6 @@ WITHOUT_MMX=	yes
 IGNORE=		supported for i386 architecture only
 .endif
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 .if defined(WITHOUT_MMX)
 CONFIGURE_ARGS+=	--no-mmx
 .endif
