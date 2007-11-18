@@ -17,10 +17,11 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Indonesian messages and documentation for KDE3
 
-DEPRECATED=	Distfile no longer available, outdated
-EXPIRATION_DATE=2007-12-31
-
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+
+BROKEN=		Distfile no longer available, outdated
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2007-12-31
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
