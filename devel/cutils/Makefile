@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Miscellaneous C programmer's utilities
 
 GNU_CONFIGURE=	yes
-MAKE_ENV=	MAKEINFO=/usr/bin/makeinfo
+MAKE_ENV=	MAKEINFO=makeinfo
 MAN1=		cdecl.1 chilight.1 cobfusc.1 cundecl.1 cunloop.1 yyextract.1 \
 		yyref.1
 INFO=		cutils

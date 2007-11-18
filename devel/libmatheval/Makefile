@@ -18,7 +18,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+=	MAKEINFO="/usr/bin/makeinfo --no-split"
+CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 

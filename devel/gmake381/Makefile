@@ -29,7 +29,7 @@ PLIST_SUB=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
-CONFIGURE_ENV+=	MAKEINFO="/usr/bin/makeinfo --no-split"
+CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
 
 MAN1=		gmake.1
 INFO=		make

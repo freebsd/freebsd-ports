@@ -40,14 +40,7 @@ PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 MAKEINFO=	${LOCALBASE}/bin/makeinfo
 .else
-MAKEINFO=	/usr/bin/makeinfo
-.endif
-
-.if ${OSVERSION} < 600000
-BUILD_DEPENDS+=	${MAKEINFO_CMD}:${PORTSDIR}/print/texinfo
-MAKEINFO_CMD=	${LOCALBASE}/bin/makeinfo
-.else
-MAKEINFO_CMD=	/usr/bin/makeinfo
+MAKEINFO=	makeinfo
 .endif
 
 .if defined(WITH_GNEE)
@@ -88,7 +81,7 @@ post-patch:
 		's|cp $$(PNEE)|$$(INSTALL_PROGRAM) $$(PNEE)|g' ${WRKSRC}/pnee/src/Makefile.in
 
 post-build:
-	cd ${WRKSRC}/cnee/src && ${MAKEINFO_CMD} --no-split cnee.texi
+	cd ${WRKSRC}/cnee/src && ${MAKEINFO} --no-split cnee.texi
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/cnee/src/cnee.info ${PREFIX}/${INFO_PATH}
