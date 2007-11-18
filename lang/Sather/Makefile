@@ -123,7 +123,7 @@ pre-build:
 
 post-build:
 .for file in sather-tutorial.texinfo sather-mode.texinfo sather.texinfo
-	cd ${WRKSRC}/Emacs && /usr/bin/makeinfo --no-split ${file}
+	cd ${WRKSRC}/Emacs && makeinfo --no-split ${file}
 .endfor
 
 do-install:
