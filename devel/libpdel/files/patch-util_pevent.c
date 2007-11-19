@@ -1,5 +1,5 @@
---- util/pevent.c	2005/09/10 20:19:46	972
-+++ util/pevent.c	2007/10/09 19:56:17	980
+--- util/pevent.c.orig	2005-01-21 23:02:19.000000000 +0200
++++ util/pevent.c	2007-11-11 16:06:04.000000000 +0200
 @@ -155,6 +155,15 @@
  		_pevent_unref(ev);					\
  	} while (0)
@@ -29,7 +29,27 @@
  		break;
  	case PEVENT_MESG_PORT:
  		va_start(args, type);
-@@ -469,7 +482,7 @@
+@@ -394,15 +407,16 @@
+ 	} else
+ 		pevent_ctx_notify(ctx);
+ 
++	/* Caller gets the one reference */
++	ev->peventp = peventp;
++	*peventp = ev;
++
+ 	/* Add event to the pending event list */
+ 	PEVENT_ENQUEUE(ctx, ev);
+ 
+ 	/* Unlock context */
+ 	MUTEX_UNLOCK(&ctx->mutex, ctx->mutex_count);
+ 
+-	/* Done; caller gets the one reference */
+-	ev->peventp = peventp;
+-	*peventp = ev;
+ 	return (0);
+ }
+ 
+@@ -469,7 +483,7 @@
  		goto done;
  
  	/* Mark event as having occurred */
@@ -38,7 +58,7 @@
  
  	/* Wake up thread if event is still in the queue */
  	if ((ev->flags & PEVENT_ENQUEUED) != 0)
-@@ -523,6 +536,7 @@
+@@ -523,6 +537,7 @@
  	struct timeval now;
  	struct pollfd *fd;
  	struct pevent *ev;
@@ -46,7 +66,7 @@
  	int poll_idx;
  	int timeout;
  	int r;
-@@ -562,6 +576,13 @@
+@@ -562,6 +577,13 @@
  		}
  	}
  
@@ -60,7 +80,7 @@
  	/* Add event for the notify pipe */
  	poll_idx = 0;
  	if (ctx->fds_alloc > 0) {
-@@ -620,7 +641,7 @@
+@@ -620,7 +642,7 @@
  		switch (ev->type) {
  		case PEVENT_MESG_PORT:
  			if (mesg_port_qlen(ev->u.port) > 0)
@@ -69,7 +89,7 @@
  			break;
  		default:
  			break;
-@@ -654,7 +675,8 @@
+@@ -654,7 +676,8 @@
  	gettimeofday(&now, NULL);
  
  	/* Mark poll() events that have occurred */
@@ -79,7 +99,7 @@
  		assert(ev->magic == PEVENT_MAGIC);
  		switch (ev->type) {
  		case PEVENT_READ:
-@@ -664,33 +686,23 @@
+@@ -664,33 +687,23 @@
  			fd = &ctx->fds[ev->poll_idx];
  			if ((fd->revents & ((ev->type == PEVENT_READ) ?
  			    READABLE_EVENTS : WRITABLE_EVENTS)) != 0)
