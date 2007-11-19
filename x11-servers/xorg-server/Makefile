@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-server
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/:fdo \
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--enable-aiglx=yes
 .else
 CONFIGURE_ARGS+=	--disable-aiglx=yes
 .endif
-		
+
 .if !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
 CONFIGURE_ARGS+=--enable-install-setuid
 .else
@@ -94,11 +94,11 @@ PLIST_SUB+=	SPARC64="@comment "
 PLIST_SUB+=	SPARC64_NA=""
 .endif
 
-.if ${ARCH} == amd64 || ${ARCH} == i386
-PLIST_SUB+=	AMD64_I386=""
+.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == sparc64
+PLIST_SUB+=	AMD64_I386_SPARC64=""
 MAN1+=		scanpci.1
 .else
-PLIST_SUB+=	AMD64_I386="@comment "
+PLIST_SUB+=	AMD64_I386_SPARC64="@comment "
 .endif
 
 .if !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
