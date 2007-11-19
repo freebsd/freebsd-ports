@@ -13,3 +13,6 @@ SIZE (tree_console_missing_hosts.patch) = 771
 MD5 (thumbnail_graphs_not_working.patch) = 1a3c9580a1f94d991502c8650d18b617
 SHA256 (thumbnail_graphs_not_working.patch) = 3b18602aed1aa8b9773a75a4e89413cd12ce2670fd185eae113de1aa2c1186bd
 SIZE (thumbnail_graphs_not_working.patch) = 1515
+MD5 (sec_sql_injection-0.8.6j.patch) = ebf8ce0e11845ebcd838847e7cc2912d
+SHA256 (sec_sql_injection-0.8.6j.patch) = 0f05946e598ce34b9507b8eeaa431c45280c2f6e07003cf583a11735fc01d245
+SIZE (sec_sql_injection-0.8.6j.patch) = 749

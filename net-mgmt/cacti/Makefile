@@ -16,7 +16,8 @@ DISTFILES=	${PORTNAME}-${SITEDISTVERSION}${EXTRACT_SUFX}
 PATCH_SITES=	http://www.cacti.net/downloads/patches/${SITEDISTVERSION}/
 PATCHFILES=	ping_php_version4_snmpgetnext.patch \
 		tree_console_missing_hosts.patch \
-		thumbnail_graphs_not_working.patch
+		thumbnail_graphs_not_working.patch \
+		sec_sql_injection-0.8.6j.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sem@FreeBSD.org
@@ -24,7 +25,7 @@ COMMENT=	Web-driven graphing interface for RRDTool
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 
-PATCHLEVEL=	.3
+PATCHLEVEL=	.4
 PATCH_STRIP=	-p1
 USE_MYSQL=	yes
 USE_PHP=	mysql pcre session sockets snmp xml
