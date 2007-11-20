@@ -86,7 +86,7 @@ MAKE_ENV+=	CC=${CC} CXX=${CXX} FIREBIRD_TMP="${WRKDIR}" FIREBIRD_LOCK="${WRKDIR}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700042
-BROKEN=		Client does not compile with GCC 4.2.  Please use firebird2 instead
+IGNORE=		Client does not compile with GCC 4.2.  Please use firebird2 instead
 .endif
 
 .if !defined(CLIENT_ONLY)
