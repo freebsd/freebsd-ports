@@ -67,7 +67,7 @@ OPTIONS=	DEBUG	"Build with debugging information"	off \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700000
-BROKEN=		Some dependencies do not compile with gcc4
+IGNORE=		Some dependencies do not compile with gcc4
 .endif
 
 .if ${ARCH} == "sparc64"
