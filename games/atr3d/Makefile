@@ -40,10 +40,6 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 pre-patch:
 	@${PERL} -pi.orig -e 's|^aclocal|${ACLOCAL}|; \
 		s|^autoconf|${AUTOCONF}|; s|^automake|${AUTOMAKE}|' \
