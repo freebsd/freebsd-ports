@@ -7,6 +7,7 @@
 
 PORTNAME=	setuptools
 PORTVERSION=	0.6c7
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/s/setuptools
@@ -32,6 +33,12 @@ PLIST_SUB+=	PYTHON_OLD="@comment "
 .endif
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/site.py ${PYTHON_SITELIBDIR}
+.for opt in -Qold -O
+	${PYTHON_CMD} ${opt} -m compileall -l -x \
+		'^[^s][^i]?[^t]?[^e]?[^.][^p][^y]$$' ${PYTHON_SITELIBDIR}
+.endfor
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
