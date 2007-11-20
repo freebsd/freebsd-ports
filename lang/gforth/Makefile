@@ -46,16 +46,12 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700029
-BROKEN=		Does not compile
-.endif
-
 .if !defined(WITHOUT_FFCALL)
 BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:${PORTSDIR}/devel/ffcall
 .endif
 
 .if ${OSVERSION} < 700000
-BROKEN=	Does not compile on pointyhat
+BROKEN=		Does not compile on ports build cluster
 .endif
 
 .if ${ARCH} == i386
