@@ -29,9 +29,6 @@ BOOTSTRAP_TARGET=	stage1
 .if ${ARCH} != "i386"
 BROKEN=		fails to install on ${ARCH}
 .endif
-.if ${OSVERSION} >= 700000
-BROKEN=		fails to install on 7.X
-.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC} ${WRKDIR}/build
