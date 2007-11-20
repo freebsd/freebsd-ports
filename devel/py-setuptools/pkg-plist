@@ -3,6 +3,9 @@ bin/easy_install
 bin/easy_install-%%PYVER%%
 %%PYTHON_SITELIBDIR%%/easy-install.pth
 %%PYTHON_SITELIBDIR%%/setuptools.pth
+%%PYTHON_SITELIBDIR%%/site.py
+%%PYTHON_SITELIBDIR%%/site.pyc
+%%PYTHON_SITELIBDIR%%/site.pyo
 %%PYTHON_CURRENT%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/PKG-INFO
 %%PYTHON_OLD%%%%PYTHON_SITELIBDIR%%/setuptools-%%VERSION%%-py%%PYVER%%.egg/EGG-INFO/SOURCES.txt
