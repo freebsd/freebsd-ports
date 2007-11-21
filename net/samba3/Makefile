@@ -7,7 +7,7 @@
 
 PORTNAME=		samba
 PORTVERSION?=		3.0.26a
-PORTREVISION?=		1
+PORTREVISION=		2
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -43,6 +43,10 @@ SAMBA_CONFIG=		smb.conf
 SAMBA_LIB=		lib
 SAMBA_LIBDIR=		${PREFIX}/${SAMBA_LIB}
 SAMBA_MODULEDIR=	${SAMBA_LIBDIR}/samba
+
+PATCH_SITES=	http://us1.samba.org/samba/ftp/patches/security/	
+PATCHFILES=	samba-3.0.26a-CVE-2007-4572.patch samba-3.0.26a-CVE-2007-5398.patch
+PATCH_DIST_STRIP=	-p2
 
 CONFIGURE_TARGET=	--build="${MACHINE_ARCH}-portbld-freebsd${OSREL}"
 
