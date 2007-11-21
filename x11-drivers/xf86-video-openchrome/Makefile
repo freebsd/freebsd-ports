@@ -30,4 +30,10 @@ MAN4=		via.4x
 pre-configure:
 	@(cd ${WRKSRC} && ${SH} ./autogen.sh)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 600000
+BROKEN=		Does not compile
+.endif
+
+.include <bsd.port.post.mk>
