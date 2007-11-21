@@ -41,7 +41,7 @@ Note:  Please add new entries to the beginning of this file.
         <name>samba</name>
 	<name>samba3</name>
 	<name>ja-samba</name>
-	<range><lt>3.0.26a,1_2</lt></range>
+	<range><lt>3.0.26a_2,1</lt></range>
       </package>
     </affects>
     <description>
@@ -67,6 +67,8 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2007-4572</cvename>
       <cvename>CVE-2007-5398</cvename>
       <url>http://secunia.com/advisories/27450/</url>
+      <url>http://us1.samba.org/samba/security/CVE-2007-4572.html</url>
+      <url>http://us1.samba.org/samba/security/CVE-2007-5398.html</url>
     </references>
     <dates>
       <discovery>2007-11-15</discovery>
