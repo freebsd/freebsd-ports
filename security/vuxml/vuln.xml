@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a63b15f9-97ff-11dc-9e48-0016179b2dd5">
+    <topic>samba -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>samba</name>
+	<name>samba3</name>
+	<name>ja-samba</name>
+	<range><lt>3.0.26a,1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba Team reports:</p>
+	<blockquote cite="http://us1.samba.org/samba/security/CVE-2007-5398.html">
+	  <p>Secunia Research reported a vulnerability that allows for
+	    the execution of arbitrary code in nmbd.  This defect may
+	    only be exploited when the "wins support" parameter has
+	    been enabled in smb.conf.</p>
+	</blockquote>
+	<blockquote cite="http://us1.samba.org/samba/security/CVE-2007-4572.html">
+	  <p>Samba developers have discovered what is believed to be
+	  a non-exploitable buffer over in nmbd during the processing
+	  of GETDC logon server requests.  This code is only used
+	  when the Samba server is configured as a Primary or Backup
+	  Domain Controller.</p>
+	</blockquote>  
+      </body>
+    </description>
+    <references>
+      <bid>26454</bid>
+      <cvename>CVE-2007-4572</cvename>
+      <cvename>CVE-2007-5398</cvename>
+      <url>http://secunia.com/advisories/27450/</url>
+    </references>
+    <dates>
+      <discovery>2007-11-15</discovery>
+      <entry>2007-11-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="392b5b1d-9471-11dc-9db7-001c2514716c">
     <topic>php -- multiple security vulnerabilities</topic>
     <affects>
