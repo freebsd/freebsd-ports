@@ -32,10 +32,4 @@ CONFIGURE_ARGS=	--with-ttf-includes=${LOCALBASE}/include/freetype1 \
 		--with-glut-libraries=${X11BASE}/lib
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
