@@ -32,6 +32,10 @@ SUB_FILES=	pkg-install pkg-message
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 700000
+BROKEN=		bad plist
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -i '' \
 		-e 's|^.*c_compiler_options:.*$$|c_compiler_options: ${CFLAGS}|' \
