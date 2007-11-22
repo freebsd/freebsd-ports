@@ -10,14 +10,17 @@ PORTNAME=	cxterm
 PORTVERSION=	5.0.3
 PORTREVISION=	1
 CATEGORIES=	chinese x11
-MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/
+MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/ \
+		http://www.525183.com/freebsd/cxterm/ \
+		http://www.chinatinco.com/freebsd/cxterm/ \
+		http://525183.serverbox.org/freebsd/cxterm/
 DISTNAME=	cxterm5.0.p3
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	cxterm-5.0.p3-color.patch.gz	# cxterm-5.0-hz-patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunrychen@gmail.com
 COMMENT=	An xterm that speaks Chinese
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
@@ -37,11 +40,7 @@ ALL_TARGET=	xrelease Makefiles includes all
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Coredump during build on ia64"
-.endif
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile on GCC 4.2
+BROKEN=		Coredump during build on ia64
 .endif
 
 post-install:
