@@ -19,7 +19,7 @@ BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 WRKSRC=		${WRKDIR}/galax
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2 1.3 1.4
+JAVA_VERSION=	1.3 1.4
 USE_GMAKE=	yes
 ALL_TARGET=	world
 MAKE_ARGS=	JAVAHOME=${JAVA_HOME} JAVAINCLUDE="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd" \
@@ -32,7 +32,7 @@ PLIST_SUB+=	GALAX=Galax-${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 pre-patch:
