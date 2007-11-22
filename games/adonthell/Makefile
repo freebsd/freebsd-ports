@@ -22,20 +22,16 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_SDL=	mixer sdl
-USE_PYTHON=	-2.4
+USE_PYTHON=	-2.5
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--disable-py-debug
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
 		PYPACKAGE=${PYTHON_CMD}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not build on sparc64
