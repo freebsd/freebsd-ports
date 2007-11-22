@@ -1,5 +1,14 @@
---- common/UCvsFiles.cpp.orig	Tue Aug 13 13:46:40 2002
-+++ common/UCvsFiles.cpp	Sun Aug 24 13:47:21 2003
+--- common/UCvsFiles.cpp.orig	2002-08-13 13:46:40.000000000 +0200
++++ common/UCvsFiles.cpp	2007-11-22 21:01:27.000000000 +0100
+@@ -201,7 +201,7 @@
+ 
+ #define NUM_COLUMNS	7
+ 
+-static char *_gszColumnLabel[NUM_COLUMNS] =
++static const char *_gszColumnLabel[NUM_COLUMNS] =
+ {
+ 	"Name", "Rev.", "Option", "Status",	"Tag", "Date", "Conflict"
+ };
 @@ -1214,7 +1214,7 @@
  {
  	UStr uppath, filename;
