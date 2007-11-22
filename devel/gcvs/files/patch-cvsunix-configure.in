@@ -1,5 +1,5 @@
---- cvsunix/configure.in.orig	Wed Nov 22 16:09:07 2006
-+++ cvsunix/configure.in	Wed Nov 22 16:10:02 2006
+--- cvsunix/configure.in.orig	2001-03-06 20:23:49.000000000 +0100
++++ cvsunix/configure.in	2007-11-22 20:55:15.000000000 +0100
 @@ -178,7 +178,7 @@
      # the user's setting for LDFLAGS
      hold_ldflags=$LDFLAGS
@@ -9,7 +9,19 @@
      LDFLAGS=$hold_ldflags
      if test -n "$krb_incdir"; then
        includeopt="${includeopt} -I$krb_incdir"
-@@ -212,7 +212,7 @@
+@@ -202,27 +202,22 @@
+ 
+ hold_cppflags=$CPPFLAGS
+ CPPFLAGS="$CPPFLAGS -I$GSSAPI/include "
+-AC_CHECK_HEADERS(krb5.h gssapi.h gssapi/gssapi.h gssapi/gssapi_generic.h)
++AC_CHECK_HEADERS(krb5.h gssapi/gssapi.h gssapi/gssapi_generic.h)
+ CPPFLAGS=$hold_cppflags
+ 
+ if test "$ac_cv_header_krb5_h" = "yes" && 
+-   (test "$ac_cv_header_gssapi_h" = "yes" ||
+-    test "$ac_cv_header_gssapi_gssapi_h" = "yes"); then
++   test "$ac_cv_header_gssapi_gssapi_h" = "yes"; then
+   AC_DEFINE(HAVE_GSSAPI)
    includeopt="${includeopt} -I$GSSAPI/include"
    # FIXME: This is ugly, but these things don't seem to be standardized.
    if test "$ac_cv_header_gssapi_h" = "yes"; then
@@ -18,3 +30,14 @@
    else
      LIBS="$LIBS -L$GSSAPI/lib -lgssapi_krb5 -lkrb5 -lcrypto -lcom_err"
    fi
+   save_CPPFLAGS=$CPPFLAGS
+   CPPFLAGS="-I$GSSAPI/include $CPPFLAGS"
+-  if test "$ac_cv_header_gssapi_h" = "yes"; then
+-    AC_EGREP_HEADER(GSS_C_NT_HOSTBASED_SERVICE, gssapi.h, AC_DEFINE(HAVE_GSS_C_NT_HOSTBASED_SERVICE))
+-  else
+-    AC_EGREP_HEADER(GSS_C_NT_HOSTBASED_SERVICE, gssapi/gssapi.h, AC_DEFINE(HAVE_GSS_C_NT_HOSTBASED_SERVICE))
+-  fi
++  AC_EGREP_HEADER(GSS_C_NT_HOSTBASED_SERVICE, gssapi/gssapi.h, AC_DEFINE(HAVE_GSS_C_NT_HOSTBASED_SERVICE))
+   CPPFLAGS=$save_CPPFLAGS
+   # This is necessary on Irix 5.3, in order to link against libkrb5 --
+   # there, an_to_ln.o refers to things defined only in -lgen.
