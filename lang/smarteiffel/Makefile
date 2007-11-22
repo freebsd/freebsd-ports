@@ -32,8 +32,10 @@ SUB_FILES=	pkg-install pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 700000
-BROKEN=		bad plist
+.if ${OSVERSION} >= 700000
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		Does not install
+.endif
 .endif
 
 post-patch:
