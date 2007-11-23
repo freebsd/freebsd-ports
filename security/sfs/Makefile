@@ -8,7 +8,7 @@
 
 PORTNAME=	sfs
 PORTVERSION=	0.7.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security net
 MASTER_SITES=	http://www.fs.net/sfswww/dist/
 
@@ -107,7 +107,7 @@ post-extract:
 		${WRKSRC}/sfsrwsd/client.C
 
 post-configure:
-	@${REINPLACE_CMD} -e 's/^LIBTOOL =/#LIBTOOL =/' \
+	@${REINPLACE_CMD} -e 's/^\(NOPAGING =\).*$$/(\1)/' \
 		${WRKSRC}/sfsrwcd/Makefile
 
 pre-install:

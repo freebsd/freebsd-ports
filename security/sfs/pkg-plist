@@ -154,6 +154,7 @@ lib/sfs-%%SFS_VERSION%%/proxy
 lib/sfs-%%SFS_VERSION%%/ptyd
 lib/sfs-%%SFS_VERSION%%/rexd
 lib/sfs-%%SFS_VERSION%%/sfsauthd
+lib/sfs-%%SFS_VERSION%%/sfsrwcd
 lib/sfs-%%SFS_VERSION%%/sfsrwsd
 @group sfs
 lib/sfs-%%SFS_VERSION%%/suidconnect
