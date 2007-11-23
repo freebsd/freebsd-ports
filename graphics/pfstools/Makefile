@@ -42,6 +42,7 @@ MLINKS=		pfsoutppm.1 pfsouttiff.1 \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OCTAVE)
+USE_FORTRAN=	yes
 BUILD_DEPENDS+=	octave:${PORTSDIR}/math/octave
 RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave
 PLIST_SUB=	OCTAVE_VERSION="`${LOCALBASE}/bin/octave-config -v`" \
