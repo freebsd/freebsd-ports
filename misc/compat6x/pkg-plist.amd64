@@ -1,5 +1,6 @@
 lib/compat/libalias.so.5
 lib/compat/libarchive.so.2
+lib/compat/libasn1.so.8
 lib/compat/libatm.so.3
 lib/compat/libbegemot.so.2
 lib/compat/libbluetooth.so.2
@@ -26,10 +27,16 @@ lib/compat/libg2c.so.2
 lib/compat/libgeom.so.3
 lib/compat/libgnuregex.so.3
 lib/compat/libgpib.so.1
+lib/compat/libgssapi.so.8
+lib/compat/libhdb.so.8
 lib/compat/libhistory.so.6
 lib/compat/libipsec.so.2
 lib/compat/libipx.so.3
+lib/compat/libkadm5clnt.so.8
+lib/compat/libkadm5srv.so.8
+lib/compat/libkafs5.so.8
 lib/compat/libkiconv.so.2
+lib/compat/libkrb5.so.8
 lib/compat/libkvm.so.3
 lib/compat/libm.so.4
 lib/compat/libmagic.so.2
@@ -44,6 +51,7 @@ lib/compat/libncurses.so.6
 lib/compat/libncursesw.so.6
 lib/compat/libnetgraph.so.2
 lib/compat/libngatm.so.2
+lib/compat/libobjc.so.2
 lib/compat/libopie.so.4
 lib/compat/libpam.so.3
 lib/compat/libpanel.so.3
@@ -140,6 +148,7 @@ lib32/compat/libmp.so.5
 lib32/compat/libncp.so.2
 lib32/compat/libnetgraph.so.2
 lib32/compat/libngatm.so.2
+lib32/compat/libobjc.so.2
 lib32/compat/libopie.so.4
 lib32/compat/libpanel.so.3
 lib32/compat/libpanelw.so.3
