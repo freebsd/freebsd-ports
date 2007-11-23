@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mailparse
-PORTVERSION=	2.1.1
-PORTREVISION=	0
+PORTVERSION=	2.1.2
 CATEGORIES=	mail www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
