@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
+BROKEN=		fails to find jack plugin
+
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
