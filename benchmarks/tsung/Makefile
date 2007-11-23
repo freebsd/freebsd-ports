@@ -20,6 +20,10 @@ RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
 		gnuplot:${PORTSDIR}/math/gnuplot \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
 
+BROKEN=		fails to install
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2008-01-22
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}
 USE_GMAKE=	yes
