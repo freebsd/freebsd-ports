@@ -32,6 +32,10 @@ PORTDOCS=	CHANGELOG README
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
+BROKEN=		Does not compile
+.endif
+
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64 or sparc64
 .endif
