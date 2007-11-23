@@ -40,6 +40,10 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042 && ${ARCH} == amd64
+BROKEN=		does not compile
+.endif
+
 pre-patch:
 	@${PERL} -pi.orig -e 's|^aclocal|${ACLOCAL}|; \
 		s|^autoconf|${AUTOCONF}|; s|^automake|${AUTOMAKE}|' \
