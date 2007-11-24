@@ -65,7 +65,7 @@ INSTALL_TARGET+=	install-doc
 BUILD_DEPENDS+=	boehm-gc=6.8:${PORTSDIR}/devel/boehm-gc
 CONFIGURE_ARGS+=	--enable-gc=system
 .else
-BUILD_DEPENDS+=	${NOEXISTENT}:${PORTSDIR}/devel/boehm-gc:fetch
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/boehm-gc:fetch
 CONFIGURE_ARGS+=	--enable-gc=${GCVERSION}
 GCVERSION=	6.8
 GC_DISTNAME=	gc${GCVERSION}.tar.gz
