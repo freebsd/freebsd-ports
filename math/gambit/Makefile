@@ -29,6 +29,10 @@ CFLAGS+=	-O2 -fno-strict-aliasing
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
 
