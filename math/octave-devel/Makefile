@@ -43,6 +43,7 @@ MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
 
 .if ${OSVERSION} < 600000
 BUILD_DEPENDS+=	info:${PORTSDIR}/print/texinfo
+BROKEN=		Fails to install
 .endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
