@@ -13,7 +13,7 @@
 
 PORTNAME=	linux-panorama-tools
 PORTVERSION=	2.6b1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.all-in-one.ee/~dersch/
 DISTNAME=	PanoTools
@@ -23,22 +23,20 @@ COMMENT=	Software to View, Create, Edit and Remap Panoramic Images
 
 RUN_DEPENDS=	${LINUXBASE}/usr/bin/jpegtran:${PORTSDIR}/graphics/linux-jpeg \
 		${LINUXBASE}/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff \
-		${LINUXBASE}/usr/lib/libpng12.so.0:${PORTSDIR}/graphics/linux-png
+		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png10
 
 NO_BUILD=	yes
+USE_LINUX_PREFIX=yes
+USE_LDCONFIG=	yes
+# USE_LINUX is supposed to be defined automatically when USE_LINUX_PREFIX and
+# USE_LDCONFIG are defined but it is not :-/
 USE_LINUX=	yes
 
 WRKSRC=	${WRKDIR}/PTLinux
-PROGRAM=	Helpers/PTStitcher
 
 do-install:
-	${MKDIR} ${PREFIX}/${PORTNAME}/lib
-	${MKDIR} ${PREFIX}/${PORTNAME}/bin
-	${CP} ${WRKSRC}/${PROGRAM} ${PREFIX}/${PORTNAME}/bin
-	${CHMOD} 555 ${PREFIX}/${PORTNAME}/bin/PTStitcher
-	${CP} ${WRKSRC}/libpano12.so ${PREFIX}/${PORTNAME}/lib
-	${CHMOD} 555 ${PREFIX}/${PORTNAME}/lib/libpano12.so
-	${LN} -s ${PREFIX}/${PORTNAME}/bin/PTStitcher ${PREFIX}/bin/PTStitcher
-	${LINUXBASE}/sbin/ldconfig ${PREFIX}/${PORTNAME}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/Helpers/PTStitcher ${PREFIX}/usr/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/libpano12.so ${PREFIX}/usr/lib/
+	${LN} -sf ${PREFIX}/usr/bin/PTStitcher ${LOCALBASE}/bin/
 
 .include <bsd.port.mk>
