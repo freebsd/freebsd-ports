@@ -44,4 +44,10 @@ do-extract:
 	${CP} -rp /usr/src/contrib/groff/src/xditview/* ${WRKSRC}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 600000
+BROKEN=		Missing dependency on imake
+.endif
+
+.include <bsd.port.post.mk>
