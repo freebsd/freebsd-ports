@@ -60,4 +60,8 @@ post-install:
 BROKEN=		fails to install
 .endif
 
+.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
 .include <bsd.port.post.mk>
