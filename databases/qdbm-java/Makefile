@@ -9,6 +9,8 @@ PKGNAMESUFFIX=	-java
 
 COMMENT=	Java API for QDBM
 
+BROKEN=		fails to install
+
 SLAVEPORT=	java
 
 USE_JAVA=	yes
