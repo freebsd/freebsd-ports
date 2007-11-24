@@ -621,6 +621,7 @@ bin/nevow-xmlgettext
 %%PORTDOCS%%%%DOCSDIR%%/hier.py
 %%PORTDOCS%%%%DOCSDIR%%/hier.pyc
 %%PORTDOCS%%%%DOCSDIR%%/README
+@unexec rm -f %D/%%PYTHON_SITELIBDIR%%/nevow/plugins/dropin.cache || true
 @dirrmtry %%PYTHON_SITELIBDIR%%/nevow/athena_private
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/test/test_package/Foo/Baz
 @dirrm %%PYTHON_SITELIBDIR%%/nevow/test/test_package/Foo
