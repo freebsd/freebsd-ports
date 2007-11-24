@@ -11,6 +11,7 @@ oracle8-client/freebsd/old/patch-lib-sysliblist
 oracle8-client/freebsd/old/patch-rdbms-lib-env_rdbms.mk
 oracle8-client/freebsd/redefine-syms.lst
 oracle8-client/freebsd/redefine-syms.sh
+oracle8-client/freebsd/strtod.c
 oracle8-client/lib/ldflags
 oracle8-client/lib/libclntsh.a
 oracle8-client/lib/libclntst8.a
