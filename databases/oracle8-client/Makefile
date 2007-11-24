@@ -28,6 +28,7 @@ do-build:
 
 do-install:
 	@${MKDIR} ${ORACLE_HOME}
-	cd ${WRKSRC} && ${FIND} . -print0 | ${CPIO} -dump0 -R ${SHAREOWN}:${SHAREGRP} ${ORACLE_HOME}
+	cd ${WRKSRC} && ${FIND} . -not -name '*.orig' -print0 |\
+	    ${CPIO} -dump0 -R ${SHAREOWN}:${SHAREGRP} ${ORACLE_HOME}
 
 .include <bsd.port.post.mk>
