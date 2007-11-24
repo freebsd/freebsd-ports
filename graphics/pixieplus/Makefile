@@ -14,8 +14,8 @@ MASTER_SITES=	http://people.fruitsalad.org/avleeuwen/distfiles/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free, fast, and feature packed image browser and viewer for KDE
 
-PATCH_DEPENDS=	GraphicsMagick:${PORTSDIR}/graphics/GraphicsMagick
-LIB_DEPENDS=	${PATCH_DEPENDS} \
+PATCH_DEPENDS=	GraphicsMagick-config:${PORTSDIR}/graphics/GraphicsMagick
+LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
 		ungif:${PORTSDIR}/graphics/libungif
 
 USE_AUTOTOOLS=	libtool:15
