@@ -23,4 +23,10 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	python_twitter
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Leaves egg file behind on deinstall
+.endif
+
+.include <bsd.port.post.mk>
