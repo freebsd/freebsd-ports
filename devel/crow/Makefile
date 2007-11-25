@@ -32,4 +32,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/${PORTNAME}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Fails to compile
+.endif
+
+.include <bsd.port.post.mk>
