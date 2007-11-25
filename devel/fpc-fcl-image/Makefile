@@ -21,6 +21,8 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		${UNITSDIR}/libasync/Package.fpc:${PORTSDIR}/net/fpc-libasync \
 		${UNITSDIR}/libpng/Package.fpc:${PORTSDIR}/graphics/fpc-libpng
 
+BROKEN=		fails to install
+
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
