@@ -46,4 +46,10 @@ pre-build:
 	@${LRELEASE} ${BUILD_WRKSRC}/project.pro
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} -spec ${QMAKESPEC}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile (compiler segfault)
+.endif
+
+.include <bsd.port.post.mk>
