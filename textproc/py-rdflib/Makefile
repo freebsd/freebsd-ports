@@ -25,4 +25,10 @@ pre-build:
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c bdist_egg -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//}
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c bdist -o plat-name -s ${PYEASYINSTALL_OSARCH:S/^-//}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Leaves egg file behind on deinstall
+.endif
+
+.include <bsd.port.post.mk>
