@@ -23,6 +23,8 @@ RUN_DEPENDS+= ${LOCALBASE}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gc
 RUN_DEPENDS+= gjdoc:${PORTSDIR}/java/gjdoc
 RUN_DEPENDS+= ecj:${PORTSDIR}/java/ecj-bootstrap
 
+BROKEN=		leaves egg file behind on deinstall
+
 GCJVER=41
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
