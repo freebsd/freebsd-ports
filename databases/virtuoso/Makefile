@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Universal SQL/Application Server
 
+BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
+
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-readline\
 		--with-iodbc=${LOCALBASE}\
@@ -22,8 +25,6 @@ CONFIGURE_ARGS=	--with-readline\
 		--disable-jdbc
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"\
 		LDFLAGS="-L${LOCALBASE}/lib"
-BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
 ONLY_FOR_ARCHS=	i386
 
 OPTIONS=	IMAGEMAGICK "ImageMagick support" off\
@@ -59,6 +60,10 @@ CHECK_PORT=	${LOCALBASE}/bin/nc -vz localhost $$\1 2>\&1 | ${GREP} open
 BUILD_DEPENDS+=	${NETCAT}:${PORTSDIR}/net/netcat
 .else
 CHECK_PORT=	/usr/bin/nc -z localhost $$\1
+.endif
+
+.if ${OSVERSION} < 600000
+BROKEN=		Fails to compile: does not find pthread include file
 .endif
 
 .if defined(WITH_IMAGEMAGICK)

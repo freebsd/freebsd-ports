@@ -37,6 +37,10 @@ OPTIONS=	SSL "Enable SSL proxying (not scanned, only forwarded!)" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+BROKEN=		Fails to compile: does not find pthread include file
+.endif
+
 .if defined(WITH_SSL)
 CONFIGURE_ARGS+=	--enable-ssl-tunnel
 .else
