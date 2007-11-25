@@ -22,6 +22,8 @@ BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		${UNITSDIR}/postgres/Package.fpc:${PORTSDIR}/databases/fpc-postgres \
 		${UNITSDIR}/sqlite/Package.fpc:${PORTSDIR}/databases/fpc-sqlite
 
+BROKEN=		fails to install
+
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
