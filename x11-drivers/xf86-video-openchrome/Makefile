@@ -33,7 +33,7 @@ pre-configure:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 600000
-BROKEN=		Does not compile
+BROKEN=		Fails to compile: does not find pthread include file
 .endif
 
 .include <bsd.port.post.mk>

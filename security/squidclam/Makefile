@@ -31,6 +31,11 @@ PLIST_FILES=	bin/squidclam %%EXAMPLESDIR%%/squidclam.conf
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Fails to compile: does not find pthread include file
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 			  -e 's|%%PREFIX%%|${PREFIX}|g' \
