@@ -62,10 +62,6 @@ BUILD_DEPENDS+=	${NETCAT}:${PORTSDIR}/net/netcat
 CHECK_PORT=	/usr/bin/nc -z localhost $$\1
 .endif
 
-.if ${OSVERSION} < 600000
-BROKEN=		Fails to compile: does not find pthread include file
-.endif
-
 .if defined(WITH_IMAGEMAGICK)
 CONFIGURE_ARGS+=--enable-imagemagick=${LOCALBASE}
 LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
