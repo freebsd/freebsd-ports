@@ -22,6 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
+CFLAGS+=	${PTHREAD_LIBS}
 
 PORTDOCS=	README Changelog
 
@@ -29,12 +30,6 @@ SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/squidclam %%EXAMPLESDIR%%/squidclam.conf
 PLIST_DIRS=	%%EXAMPLESDIR%%
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		Fails to compile: does not find pthread include file
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
@@ -57,4 +52,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

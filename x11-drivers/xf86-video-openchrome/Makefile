@@ -30,10 +30,4 @@ MAN4=		via.4x
 pre-configure:
 	@(cd ${WRKSRC} && ${SH} ./autogen.sh)
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 600000
-BROKEN=		Fails to compile: does not find pthread include file
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
