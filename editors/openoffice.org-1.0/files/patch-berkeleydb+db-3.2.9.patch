@@ -1,6 +1,6 @@
 --- berkeleydb/db-3.2.9.patch.orig	Sun Jan 19 14:58:19 2003
 +++ berkeleydb/db-3.2.9.patch	Sun Jan 19 15:00:02 2003
-@@ -62,54 +62,57 @@
+@@ -62,54 +62,66 @@
    	solaris*)	JINCSUBDIRS="solaris";;
    	linux*)		JINCSUBDIRS="linux genunix";;
  + 	irix*)		JINCSUBDIRS="irix";;
@@ -74,6 +74,15 @@
 +   solaris* | sysv5*)
 +     if $LD -v 2>&1 | egrep 'BFD 2\.8' > /dev/null; then
 +       ld_shlibs=no
++@@ -1891,7 +1902,7 @@
++   ;;
++   
++ freebsd*)
++-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++   version_type=freebsd-$objformat
++   case "$version_type" in
++     freebsd-elf*)
 +@@ -1955,7 +1966,7 @@
 +   version_type=irix
 +   need_lib_prefix=no
@@ -83,14 +92,10 @@
 +   library_names_spec='${libname}${release}.so.$versuffix ${libname}${release}.so.$major ${libname}${release}.so $libname.so'
 +   case "$host_os" in
 +   irix5*)
-+@@ -2019,6 +2030,20 @@
-+     library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so$major ${libname}${release}.so ${libname}.so'
-+     soname_spec='${libname}${release}.so$major'
-+     dynamic_linker='NetBSD ld.elf_so'
-++  fi
-++  shlibpath_var=LD_LIBRARY_PATH
-++  ;;
-++
++@@ -2023,6 +2034,20 @@
++   shlibpath_var=LD_LIBRARY_PATH
++   ;;
++ 
 ++freebsd*)
 ++  version_type=sunos
 ++  if echo __ELF__ | $CC -E - | grep __ELF__ >/dev/null; then
@@ -101,6 +106,10 @@
 ++    library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so$major ${libname}${release}.so ${libname}.so'
 ++    soname_spec='${libname}${release}.so$major'
 ++    dynamic_linker='FreeBSD ld.elf_so'
-+   fi
-+   shlibpath_var=LD_LIBRARY_PATH
-+   ;;
+++  fi
+++  shlibpath_var=LD_LIBRARY_PATH
+++  ;;
+++
++ openbsd*)
++   version_type=sunos
++   if test "$with_gnu_ld" = yes; then

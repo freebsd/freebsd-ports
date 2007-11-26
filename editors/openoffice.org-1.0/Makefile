@@ -49,8 +49,6 @@ ONLY_FOR_ARCHS=	i386
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-BROKEN=		fails to install; consider upgrading to editors/openoffice.org-2
-
 LANG_EXT?=	01
 LANG_CONFIGURE_ARG?=	ENUS
 L10NHELP?=     helpcontent_01_unix.tgz
@@ -91,16 +89,20 @@ PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .endif
 
 # This port might build with gcc 2.95.2+
-BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
-# FIXME (correctly add ccache before gcc and g++)
+USE_GCC=	3.2
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
-CC=	ccache gcc32
-CXX=	ccache g++32
+CCACHE_PREFIX=	ccache
+OOOCC=		${CCACHE_PREFIX} ${CC}
+OOOCXX=		${CCACHE_PREFIX} ${CXX}
 .else
-CC=	gcc32
-CXX=	g++32
+OOOCC=		${CC}
+OOOCXX=		${CXX}
 .endif
+CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"           \
+		CPPFLAGS="-I${LOCALBASE}/include"       \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		imake:${X_IMAKE_PORT} \
@@ -114,8 +116,7 @@ CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-MAKE_ENV+=		DISPLAY="localhost:1001"
-CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
+CONFIGURE_ENV+=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" \
 			--with-os-version=${OSVERSION}
@@ -175,6 +176,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g' \
 			  -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
 				${WRKSRC}/product/settings/settings.mk
+pre-configure:
+#Workaround for moz project, it uses gcc directly.
+	@${LN} -sf `which ${CC}` ${WRKSRC}/solenv/bin/gcc
+	@${LN} -sf `which ${CC}` ${WRKSRC}/solenv/bin/cc
+	@${LN} -sf `which ${CXX}` ${WRKSRC}/solenv/bin/g++
+	@${LN} -sf `which ${CXX}` ${WRKSRC}/solenv/bin/c++
+
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
 	@cd ${WRKSRC}/moz ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; dmake zip' ; ${CP} unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
@@ -197,7 +205,7 @@ do-install:
 .endif
 	@${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
-	@${SETENV} "LC_ALL=C" "LANG=C" ${TCSH} -c "cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal ; ./install --prefix=${PREFIX}"
+	@${SETENV} "LC_ALL=C" "LANG=C" DISPLAY="localhost:1001" ${TCSH} -c "cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal ; ./install --prefix=${PREFIX}"
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 #XXX temporary hack (contains space in dir name)
