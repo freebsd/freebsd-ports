@@ -9,7 +9,7 @@ PORTNAME=	hercules
 PORTVERSION=	3.04
 PORTREVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.conmicro.cx/hercules/
+MASTER_SITES=	http://www.hercules-390.org/
 
 MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
 COMMENT=	The Hercules System/370, ESA/390, and z/Architecture Emulator
