@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}.tar.gz	\
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	GNU Backgammon
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
@@ -67,16 +67,6 @@ CONFIGURE_ARGS+=	--with-python
 CONFIGURE_ARGS+=	--without-python
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		does not compile on sparc64
-.endif
-
 post-extract:
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg.weights-${GNUBG_WEIGHTS_VERSION}.gz > ${WRKSRC}/gnubg.weights
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_os0.bd.gz > ${WRKSRC}/gnubg_os0.bd
@@ -87,4 +77,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/${file}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
