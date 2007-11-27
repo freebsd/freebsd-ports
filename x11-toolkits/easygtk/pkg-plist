@@ -2,7 +2,7 @@ include/easygtk.h
 lib/libeasygtk.a
 lib/libeasygtk.so
 lib/libeasygtk.so.1
-share/doc/EasyGTK/manual.html
-share/examples/EasyGTK/example.c
-@dirrm share/examples/EasyGTK
-@dirrm share/doc/EasyGTK
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.c
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
