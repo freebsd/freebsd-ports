@@ -1,0 +1,61 @@
+--- XMotif/xinit.c.orig	2007-11-23 21:08:13.000000000 +0100
++++ XMotif/xinit.c	2007-11-23 21:29:50.000000000 +0100
+@@ -83,32 +83,32 @@
+ 
+ 
+ XtActionsRec actions[]={
+-  {"move_component",move_component},
+-  {"lower_component",lower_component},
+-  {"raise_component",raise_component},
+-  {"join_components",join_components},
+-  {"select_component",select_component},
+-  {"open_group",open_group},
+-  {"close_group",close_group},
+-  {"drag_component_icon",create_comp_drag_icon},
+-  {"open_parameter_window",open_param_w_tn},
+-  {"close_parameter_window",close_param_w_tn},
+-  {"open_close_parameter_window",open_close_param_w_tn},
+-  {"open_information_window",open_info_w_tn},
+-  {"open_close_information_window",open_close_info_w_tn},
+-  {"close_information_window",close_info_w_tn},
+-  {"move_window",move_window},
+-  {"raise_window",raise_window},
+-  {"lower_window",lower_window},
+-  {"rubberbox",rubberbox},
+-  {"make_peers",make_peer},
+-  {"open_meter_information_window",open_meter_info_w_tn},
+-  {"close_meter_information_window",close_meter_info_w_tn},
+-  {"open_close_meter_information_window",open_close_meter_info_w_tn},
+-  {"move_meter",move_meter},
+-  {"raise_meter",raise_meter},
+-  {"lower_meter",lower_meter},
+-  {"resize_meter",resize_meter}
++  {(String)"move_component",(XtActionProc)move_component},
++  {(String)"lower_component",(XtActionProc)lower_component},
++  {(String)"raise_component",(XtActionProc)raise_component},
++  {(String)"join_components",(XtActionProc)join_components},
++  {(String)"select_component",(XtActionProc)select_component},
++  {(String)"open_group",(XtActionProc)open_group},
++  {(String)"close_group",(XtActionProc)close_group},
++  {(String)"drag_component_icon",(XtActionProc)create_comp_drag_icon},
++  {(String)"open_parameter_window",(XtActionProc)open_param_w_tn},
++  {(String)"close_parameter_window",(XtActionProc)close_param_w_tn},
++  {(String)"open_close_parameter_window",(XtActionProc)open_close_param_w_tn},
++  {(String)"open_information_window",(XtActionProc)open_info_w_tn},
++  {(String)"open_close_information_window",(XtActionProc)open_close_info_w_tn},
++  {(String)"close_information_window",(XtActionProc)close_info_w_tn},
++  {(String)"move_window",(XtActionProc)move_window},
++  {(String)"raise_window",(XtActionProc)raise_window},
++  {(String)"lower_window",(XtActionProc)lower_window},
++  {(String)"rubberbox",(XtActionProc)rubberbox},
++  {(String)"make_peers",(XtActionProc)make_peer},
++  {(String)"open_meter_information_window",(XtActionProc)open_meter_info_w_tn},
++  {(String)"close_meter_information_window",(XtActionProc)close_meter_info_w_tn},
++  {(String)"open_close_meter_information_window",(XtActionProc)open_close_meter_info_w_tn},
++  {(String)"move_meter",(XtActionProc)move_meter},
++  {(String)"raise_meter",(XtActionProc)raise_meter},
++  {(String)"lower_meter",(XtActionProc)lower_meter},
++  {(String)"resize_meter",(XtActionProc)resize_meter}
+ };
+ 
+ int screen_update;
