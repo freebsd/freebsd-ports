@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	mt-daapd
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.2.4.1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	alexbl@FreeBSD.org
+MAINTAINER=	mark@foster.cc
 COMMENT=	Multithread daapd yet another Server for Apple iTunes
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
@@ -38,7 +36,7 @@ SUB_LIST+=	USER=${DAAPD_USER} GROUP=${DAAPD_GROUP} DAAPD_DBDIR=${DAAPD_DBDIR}
 SUB_FILES+=	pkg-install pkg-deinstall mt-daapd.conf
 
 pre-everything::
-	@${ECHO_CMD} "Define vars bellow if you need:"
+	@${ECHO_CMD} "Define vars below if you need:"
 	@${ECHO_CMD} "DAAPD_USER=${DAAPD_USER} (default: daapd)"
 	@${ECHO_CMD} "DAAPD_GROUP=${DAAPD_GROUP} (default: daapd)"
 	@${ECHO_CMD} "DAAPD_DBDIR=${DAAPD_DBDIR} (default: /var/db/${PORTNAME})"
