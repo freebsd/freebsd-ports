@@ -16,24 +16,31 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MaRS-2-doc${EXTRACT_SUFX}
 .endif
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	Maryland Routing Simulator
 
+OPTIONS=	X11 "Build with X11 support via Motif" on
+
+.include <bsd.port.pre.mk>
+
 NO_WRKSUBDIR=	yes
-.if defined(WITHOUT_X11)
-MAKEFILE=	Makefile.NoX
-.else
+.if defined(WITH_X11)
 USE_MOTIF=	yes
 MAKEFILE=	Makefile.XMotif
+.else
+MAKEFILE=	Makefile.NoX
 .endif
 ALL_TARGET=	depend mars
 MAN1=		mars.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
+post-configure:
+	@${REINPLACE_CMD} -e 's/INFINITY/MARS_INFINITY/g' \
+		${WRKSRC}/include/route.h \
+		${WRKSRC}/comps/exBF.c \
+		${WRKSRC}/comps/exBF_ack.c \
+		${WRKSRC}/comps/route.c \
+		${WRKSRC}/comps/segal.c \
+		${WRKSRC}/comps/spf.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mars ${PREFIX}/bin
