@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-cvs-backup-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	A multiplayer game like Quake in 2D or Worms done right
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -26,10 +26,6 @@ GNU_CONFIGURE=	yes
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 .if ${ARCH} == "ia64"
 BROKEN=		does not link on ${ARCH}
