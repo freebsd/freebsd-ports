@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sobomax
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	A wrapper library for GTK+ which provides simplified GUI API
 
 EXTRACT_BEFORE_ARGS=	# it's intentionally left blank
@@ -27,10 +27,18 @@ USE_LDCONFIG=	yes
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		LN="${LN}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/libeasygtk.a ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/easygtk.h ${PREFIX}/include/
+	${INSTALL_PROGRAM} ${WRKSRC}/libeasygtk.so.1 ${PREFIX}/lib/
+	${LN} -sf ${PREFIX}/lib/libeasygtk.so.1 ${PREFIX}/lib/libeasygtk.so
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/manual.html ${DOCSDIR}/
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example.c ${EXAMPLESDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
