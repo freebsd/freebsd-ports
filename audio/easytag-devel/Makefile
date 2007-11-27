@@ -7,7 +7,7 @@
 
 PORTNAME=	easytag
 PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GTK2 Tag editor for MP3 and OGG files
 
-LIB_DEPENDS=	id3:${PORTSDIR}/audio/id3lib \
+LIB_DEPENDS=	id3tag:${PORTSDIR}/audio/libid3tag \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		FLAC:${PORTSDIR}/audio/flac \
 		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	--disable-wavpack
 .if defined(WITHOUT_ID3V23)
 CONFIGURE_ARGS+=	--disable-id3v23
 .else
-LIB_DEPENDS+=		id3tag.0:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS+=		id3:${PORTSDIR}/audio/id3lib
 .endif
 
 .include <bsd.port.mk>
