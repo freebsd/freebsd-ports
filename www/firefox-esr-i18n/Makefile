@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	2.0.0.9
+PORTVERSION=	2.0.0.10
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA_EXTENDED/firefox/releases/${PORTVERSION}/linux-i686/xpi \
 		CENKES/myports/xpi/firefox-i18n-2.0.0.2:alt
@@ -78,6 +78,10 @@ do-install:
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \
 		${XARGS} -0L1 ${REINPLACE_CMD} -i '' '/<?xml/,$$!d'
+
+list-langs:
+	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${PORTVERSION}/linux-i686/xpi"|\
+		perl -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1 "}'
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
