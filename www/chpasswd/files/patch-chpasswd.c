@@ -1,8 +1,17 @@
---- chpasswd.c.orig	Fri Apr 11 01:54:02 2003
-+++ chpasswd.c	Wed Sep 22 15:46:47 2004
-@@ -23,6 +23,16 @@
- static void vrfyauth(IpAuth,PwdLogFile,PwdFile,SmtpUser,SmtpSubject);
- eperror(s);
+--- chpasswd.c.orig	2005-05-09 13:05:08.000000000 +0000
++++ chpasswd.c	2007-11-08 15:10:11.000000000 +0000
+@@ -282,7 +282,7 @@
+ }
+ 
+ 
+-static int
++int
+ htoi(s)
+         unsigned char   *s;
+ {
+@@ -664,6 +664,16 @@
+ }
+ 
  
 +void getword(char *, char *, char);
 +void Herror(char *);
