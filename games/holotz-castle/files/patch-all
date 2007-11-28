@@ -1,6 +1,6 @@
-diff -ru JLib/JLib/Util/JFS.cpp holotz-castle-1.3.8-src/JLib/JLib/Util/JFS.cpp
---- JLib/JLib/Util/JFS.cpp	Fri Jan 20 08:59:37 2006
-+++ holotz-castle-1.3.8-src/JLib/JLib/Util/JFS.cpp	Mon Jan 23 21:21:36 2006
+diff -ruN JLib/JLib/Util/JFS.cpp JLib/JLib/Util/JFS.cpp
+--- JLib/JLib/Util/JFS.cpp	2007-11-01 02:27:55.000000000 +0000
++++ JLib/JLib/Util/JFS.cpp	2007-11-01 02:28:00.000000000 +0000
 @@ -886,8 +886,8 @@
  		s32 n, k;
  
@@ -12,29 +12,67 @@ diff -ru JLib/JLib/Util/JFS.cpp holotz-castle-1.3.8-src/JLib/JLib/Util/JFS.cpp
  
  		if (n < 0)
  		{
-diff -ru JLib/Makefile holotz-castle-1.3.8-src/JLib/Makefile
---- JLib/Makefile	Fri Jan 20 08:59:37 2006
-+++ holotz-castle-1.3.8-src/JLib/Makefile	Mon Jan 23 21:20:53 2006
+diff -ruN JLib/Makefile JLib/Makefile
+--- JLib/Makefile	2007-11-01 02:27:55.000000000 +0000
++++ JLib/Makefile	2007-11-01 02:29:12.000000000 +0000
 @@ -19,7 +19,7 @@
  endif
  
  # Define -D_JLIB_DEBUG to debug JLib. Compile the app to debug also with this flag
 -CFLAGS=-I. -O3 -ffast-math -fPIC -Wall -Wshadow `$(SDL_CONFIG) --cflags`
-+CFLAGS=-I$(X11BASE)/include -I. -O3 -ffast-math -fPIC -Wall -Wshadow `$(SDL_CONFIG) --cflags`
++CFLAGS+=-I$(LOCALBASE)/include -I. -fPIC -Wall -Wshadow `$(SDL_CONFIG) --cflags`
  
  # Sample LDFLAGS for applications
  # LDFLAGS=-L. -ffast-math -lSDL_image -lSDL_ttf -lSDL_mixer `$(SDL_CONFIG) --libs`
-diff -ru src/Makefile holotz-castle-1.3.8-src/src/Makefile
---- src/Makefile	Fri Jan 20 08:59:38 2006
-+++ holotz-castle-1.3.8-src/src/Makefile	Mon Jan 23 21:12:33 2006
-@@ -42,8 +42,8 @@
+@@ -28,15 +28,15 @@
+ 
+ # JLib
+ libJLib: $(JLIB_OBJS)
+-	g++ -shared -fPIC -o $@.so $? \
++	$(CXX) -shared -fPIC -o $@.so $? \
+ 	&& ar rvus $@.a $? \
+ 
+ $(GRAPHICS)/%.o: $(GRAPHICS)/%.cpp
+-	g++ $(CFLAGS) -c -o $@ $<
++	$(CXX) $(CFLAGS) -c -o $@ $<
+ $(UTIL)/%.o: $(UTIL)/%.cpp
+-	g++ $(CFLAGS) -c -o $@ $<
++	$(CXX) $(CFLAGS) -c -o $@ $<
+ $(MATH)/%.o: $(MATH)/%.cpp
+-	g++ $(CFLAGS) -c -o $@ $<
++	$(CXX) $(CFLAGS) -c -o $@ $<
+ 
+ .PHONY: install
+ install:
+diff -ruN src/Makefile src/Makefile
+--- src/Makefile	2007-11-01 02:27:56.000000000 +0000
++++ src/Makefile	2007-11-01 02:28:55.000000000 +0000
+@@ -42,23 +42,23 @@
  
  # Definir -D_JLIB_DEBUG para debug con JLib. Ponerlo también en el Makefile de JLib.
  # Define -D_JLIB_DEBUG for JLib debug mode. Put it also in JLib's Makefile.
 -CFLAGS=-I. -I../JLib -O3 -Wall -Werror -Wshadow $(CPU_OPTS) -ffast-math -c `$(SDL_CONFIG) --cflags`
 -LDFLAGS=-L. -ffast-math -lSDL_image -lSDL_ttf -lSDL_mixer `$(SDL_CONFIG) --libs`
-+CFLAGS=-I$(X11BASE)/include -I. -I../JLib -O3 -Wall -Werror -Wshadow $(CPU_OPTS) -ffast-math -c `$(SDL_CONFIG) --cflags`
-+LDFLAGS=-L$(X11BASE)/lib -L. -ffast-math -lSDL_image -lSDL_ttf -lSDL_mixer `$(SDL_CONFIG) --libs`
++CFLAGS+=-I$(LOCALBASE)/include -I. -I../JLib -Wall -Wshadow $(CPU_OPTS) -c `$(SDL_CONFIG) --cflags`
++LDFLAGS=-L$(LOCALBASE)/lib -L. -lSDL_image -lSDL_ttf -lSDL_mixer `$(SDL_CONFIG) --libs`
  
  
  JLib: 
+ 	$(MAKE) -C ../JLib;
+ 
+ %.o: %.cpp %.h
+-	g++ $(CFLAGS) $(DEFINES) $< -o $@
++	$(CXX) $(CFLAGS) $(DEFINES) $< -o $@
+ 
+ HC: $(HC_OBJS) $(HC_OBJ_MAIN) ../JLib/libJLib.a
+-	g++ $(LDFLAGS) $? -o $@;\
++	$(CXX) $(LDFLAGS) $? -o $@;\
+ 	mv HC ../holotz-castle
+ 
+ # HCed (Holotz's Castle editor).
+ HCed: $(HC_OBJS) $(HCED_OBJ_MAIN) ../JLib/libJLib.a
+-	g++ $(LDFLAGS) $? -o $@;\
++	$(CXX) $(LDFLAGS) $? -o $@;\
+ 	mv HCed ../holotz-castle-editor
+ 
+ install:

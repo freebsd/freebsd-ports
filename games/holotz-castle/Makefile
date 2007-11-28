@@ -15,17 +15,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ppl@nbnet.nb.ca
 COMMENT=	A platform game with high doses of mystery
 
-MAKE_ARGS=	HC_BASE=${PREFIX}/share/${PORTNAME}/ HC_BIN_DIR=${PREFIX}/bin/
+MAKE_ARGS=	HC_BASE=${PREFIX}/share/${PORTNAME}/ HC_BIN_DIR=${PREFIX}/bin/ CXX=${CXX}
 
 USE_GL=		gl
 USE_SDL=	image mixer sdl ttf
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
+BROKEN=		Does not run (No video mode large enough for 676550817x676551540)
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
