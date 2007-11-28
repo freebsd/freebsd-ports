@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	2.10
+PORTVERSION=	2.14
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	henrik@brixandersen.dk
+MAINTAINER=	brix@FreeBSD.org
 COMMENT=	A wiki compiler
 
 BUILD_DEPENDS=	${SITE_PERL}/Text/Markdown.pm:${PORTSDIR}/textproc/p5-Text-Markdown \
@@ -53,9 +53,7 @@ PLIST_SUB=	W3M="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
-	@${REINPLACE_CMD} \
-		-e "s|/usr/local|${LOCALBASE}|" \
-		-e "s|/etc/ikiwiki/wikilist|${LOCALBASE}/etc/ikiwiki/wikilist|" \
+	@${REINPLACE_CMD} -e "s|/etc/ikiwiki/wikilist|${LOCALBASE}/etc/ikiwiki/wikilist|" \
 		${WRKSRC}/ikiwiki-mass-rebuild
 	@${REINPLACE_CMD} -e "s|/etc/ikiwiki/wikilist|${LOCALBASE}/etc/ikiwiki/wikilist|" \
 		${WRKSRC}/doc/ikiwiki-mass-rebuild.mdwn
