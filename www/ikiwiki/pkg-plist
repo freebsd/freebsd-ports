@@ -70,6 +70,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/aggregate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/anonok.pm
 %%SITE_PERL%%/IkiWiki/Plugin/brokenlinks.pm
+%%SITE_PERL%%/IkiWiki/Plugin/calendar.pm
 %%SITE_PERL%%/IkiWiki/Plugin/camelcase.pm
 %%SITE_PERL%%/IkiWiki/Plugin/conditional.pm
 %%SITE_PERL%%/IkiWiki/Plugin/ddate.pm
