@@ -7,6 +7,7 @@
 
 PORTNAME=	oracle8-client
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fjoe
@@ -22,9 +23,8 @@ ORACLE_HOME=	${PREFIX}/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 do-build:
-.if ${OSVERSION} < 700000
+	@cd ${WRKSRC}/freebsd && ./redefine-syms.sh ../lib/libclntst8.a
 	@cd ${WRKSRC}/freebsd && ${MAKE} all patch clean ORACLE_HOME=${WRKSRC}
-.endif
 
 do-install:
 	@${MKDIR} ${ORACLE_HOME}
