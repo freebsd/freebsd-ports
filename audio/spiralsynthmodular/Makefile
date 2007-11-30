@@ -21,14 +21,12 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
-BROKEN=		fails to find jack plugin
-
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	FLTK_CONFIG="${FLTK_CONFIG}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LIBS="${LIBS} -L${LOCALBASE}/lib"
+		LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
@@ -81,6 +79,7 @@ post-patch:
 
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|-ldl||; \
+		s|-lrt||; \
 		s|^CC[[:space:]]*=.+$$|CC=${CC}|; \
 		s|^CXX[[:space:]]*=.+$$|CXX=${CXX}|; \
 		s|g\+\+|${CXX}|; \
