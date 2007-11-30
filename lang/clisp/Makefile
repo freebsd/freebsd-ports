@@ -52,8 +52,9 @@ MAN1=		clisp.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000 && defined(PACKAGE_BUILDING)
-BROKEN=		coredumps when building on pointyhat with FreeBSD 7.x
+# Does not build with GCC 4.2.
+.if ${OSVERSION} >= 700000
+USE_GCC=	3.4
 .endif
 
 MODULES=	BDB CLX_MIT CLX_NEW FASTCGI ORACLE PARI PCRE PGSQL RAWSOCK \
