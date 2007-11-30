@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	sdlmame
-PORTVERSION=	0.119
+PORTVERSION=	0.120u2
 CATEGORIES=	emulators
-MASTER_SITES=	http://rbelmont.mameworld.info/
+MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SDL port of the popular MAME (Multi Arcade Machine Emulator)
-
-BROKEN=		unfetchable
 
 USE_ZIP=	yes
 USE_GL=		yes

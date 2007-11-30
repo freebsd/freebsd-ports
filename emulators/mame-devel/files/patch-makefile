@@ -1,8 +1,8 @@
---- makefile.orig	Fri Sep 14 17:11:34 2007
-+++ makefile	Mon Sep 17 19:59:44 2007
-@@ -69,11 +69,13 @@
- # uncomment next line to include the debugger
- # DEBUG = 1
+--- makefile.orig	Sat Oct 20 16:33:18 2007
++++ makefile	Wed Nov  7 18:22:11 2007
+@@ -72,11 +72,13 @@
+ # uncomment next line to include the internal profiler
+ # PROFILER = 1
  
 +ifeq ($(ARCH),i386)
  # uncomment next line to use DRC MIPS3 engine
@@ -14,7 +14,7 @@
  
  # uncomment next line to use DRC Voodoo rasterizers
  # X86_VOODOO_DRC = 1
-@@ -96,7 +98,9 @@
+@@ -99,7 +101,9 @@
  # CELL = 1
  
  # uncomment next line if you are building for a 64-bit target
@@ -25,7 +25,7 @@
  
  # uncomment next line to build expat as part of MAME build
  BUILD_EXPAT = 1
-@@ -160,8 +164,8 @@
+@@ -168,8 +172,8 @@
  
  # compiler, linker and utilities
  AR = @ar
@@ -36,7 +36,7 @@
  MD = -mkdir$(EXE)
  RM = @rm -f
  
-@@ -240,7 +244,7 @@
+@@ -248,7 +252,7 @@
  endif
  
  # fullname is prefix+name+suffix
@@ -45,7 +45,7 @@
  
  # add an EXE suffix to get the final emulator name
  EMULATOR = $(FULLNAME)$(EXE)
-@@ -305,7 +309,7 @@
+@@ -318,7 +322,7 @@
  #-------------------------------------------------
  
  # we compile to C89 standard with GNU extensions
@@ -54,7 +54,7 @@
  
  # add -g if we need symbols
  ifdef SYMBOLS
-@@ -340,12 +344,12 @@
+@@ -352,11 +356,11 @@
  # if we are optimizing, include optimization options
  # and make all errors into warnings
  ifneq ($(OPTIMIZE),0)
@@ -63,13 +63,12 @@
  
  # only -Werror if not PTR64 and not DEBUG
  ifndef DEBUG
- ifndef PTR64
--CFLAGS += -Werror $(ARCH) -fno-strict-aliasing
-+#CFLAGS += -Werror -fno-strict-aliasing
- endif   # PTR64
+-CFLAGS += $(ARCH) -fno-strict-aliasing
++CFLAGS += -fno-strict-aliasing
  endif	# !DEBUG
  endif	# neq OPTIMIZE
-@@ -366,6 +370,7 @@
+ 
+@@ -376,6 +380,7 @@
  	-I$(SRC)/lib/util \
  	-I$(SRC)/osd \
  	-I$(SRC)/osd/$(OSD) \
@@ -77,7 +76,7 @@
  
  
  
-@@ -375,7 +380,7 @@
+@@ -385,7 +390,7 @@
  
  # LDFLAGS are used generally; LDFLAGSEMULATOR are additional
  # flags only used when linking the core emulator
