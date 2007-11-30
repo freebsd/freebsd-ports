@@ -1,6 +1,6 @@
---- configure.ac.orig	Wed Feb 22 06:53:28 2006
-+++ configure.ac	Wed May 23 22:03:00 2007
-@@ -136,7 +136,7 @@ case "$target_cpu" in
+--- configure.ac.orig	Wed Feb 22 05:53:28 2006
++++ configure.ac	Tue Nov 27 16:58:54 2007
+@@ -136,7 +136,7 @@
     x86 | i686 | i586 | i486 | i386 ) MACHTYPE=x86
                     ;;
  
@@ -9,7 +9,18 @@
  		   P_64BIT=1 ;
                     LIB64=1 ;
  		   ;;
-@@ -278,7 +278,7 @@ fi
+@@ -145,7 +145,9 @@
+ 		   P_64BIT=1 ;
+ 		   ;;
+ 
+-   sparc )         MACHTYPE=sparc ;
++   sparc|sparc64 ) MACHTYPE=sparc ;
++		   P_64BIT=1 ;
++		   LIB64=1 ;
+ 		   ;;
+ 
+    powerpc )       MACHTYPE=ppc ;
+@@ -278,7 +280,7 @@
  
  AC_MSG_CHECKING(if linker accepts -Wreorder)
  AC_LANG_CONFTEST([[int main(int ac,char **av) { return 0; }]])
@@ -18,7 +29,7 @@
  if test $? = 0 ; then
    AC_MSG_RESULT(yes)
    STDCXXFLAGS="$STDCXXFLAGS -Wreorder"
-@@ -291,7 +291,7 @@ fi
+@@ -291,7 +293,7 @@
  # $CXX $CFLAGS -Woverloaded-virtual conftest.cc > /dev/null 2>&1
  # if test $? = 0 ; then
  #   AC_MSG_RESULT(yes)
@@ -27,7 +38,7 @@
  # else
  #   AC_MSG_RESULT(no)
  # fi
-@@ -320,7 +320,7 @@ if test "$DEFAULT_RTTI" = "1" ; then
+@@ -320,7 +322,7 @@
    AC_MSG_RESULT(yes)
  else
    AC_MSG_RESULT(no)
@@ -36,7 +47,7 @@
  fi
  
  GCSECTIONS=0
-@@ -341,7 +341,7 @@ if test 0 = 1 ;  then
+@@ -341,7 +343,7 @@
    $CXX $CFLAGS -ffunction-sections -c conftest.cc > /dev/null 2>&1
    if test $? = 0 ; then
      AC_MSG_RESULT(yes)
@@ -45,7 +56,7 @@
      GCSECTIONS=1
    else
      AC_MSG_RESULT(no)
-@@ -357,7 +357,7 @@ if test 0 = 1 ;  then
+@@ -357,7 +359,7 @@
    dnl $CXX $CFLAGS -fdata-sections -c conftest.cc > /dev/null 2>&1
    dnl if test $? = 0 ; then
    dnl   AC_MSG_RESULT(yes)
@@ -54,7 +65,7 @@
    dnl   GCSECTIONS=1
    dnl else
    dnl   AC_MSG_RESULT(no)
-@@ -370,7 +370,7 @@ if test 0 = 1 ;  then
+@@ -370,7 +372,7 @@
    dnl $CXX $CFLAGS -fvtable-gc -c conftest.cc > /dev/null 2>&1
    dnl if test $? = 0 ; then
    dnl   AC_MSG_RESULT(yes)
@@ -63,7 +74,7 @@
    dnl   GCSECTIONS=1
    dnl else
    dnl   AC_MSG_RESULT(no)
-@@ -593,12 +593,12 @@ dnl see if using GNU glibc++, because th
+@@ -593,12 +595,12 @@
  P_HAS_ATOMIC_INT=0
  P_NEEDS_GNU_CXX_NAMESPACE=0
  AC_MSG_CHECKING(if atomic integer available)
@@ -78,7 +89,7 @@
                   [_Atomic_word val; __gnu_cxx::__exchange_and_add(&val, 1)], P_NEEDS_GNU_CXX_NAMESPACE=1)
    if test ${P_NEEDS_GNU_CXX_NAMESPACE} = 1 ; then
      AC_MSG_RESULT(yes)
-@@ -640,7 +640,7 @@ if test "${OSTYPE:-unknown}" = "solaris"
+@@ -640,7 +642,7 @@
    AC_MSG_CHECKING(for upad128_t)
    AC_TRY_COMPILE([#include <sys/types.h>],
                   [upad128_t upad; upad._q = 0.0;], has_upad128_t=y)
@@ -87,7 +98,7 @@
      AC_MSG_RESULT(yes)
      AC_DEFINE(P_HAS_UPAD128_T)
    else
-@@ -665,7 +665,7 @@ if test ${OSTYPE} != Darwin ; then
+@@ -665,7 +667,7 @@
    fi
  fi
  
@@ -96,7 +107,7 @@
    
    AC_TRY_COMPILE([#include <semaphore.h>],
                   [sem_t *s = sem_open("test", O_CREAT)],
-@@ -689,18 +689,18 @@ dnl check for pthreads library
+@@ -689,18 +691,18 @@
  dnl MSWIN_DISPLAY semaphore,Semaphore Support
  dnl MSWIN_DEFINE  semaphore,P_HAS_SEMAPHORES
  
@@ -121,7 +132,7 @@
    fi
  fi
  
-@@ -746,7 +746,7 @@ AC_TRY_COMPILE([#include <pthread.h>],
+@@ -746,7 +748,7 @@
  if test ${P_HAS_RECURSIVE_MUTEX} = 1 ; then
    AC_MSG_RESULT(yes)
  else
@@ -130,7 +141,7 @@
      AC_TRY_COMPILE([#include <pthread.h>],
      			   [pthread_mutexattr_t attr; pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);], P_HAS_RECURSIVE_MUTEX=1)
      if test ${P_HAS_RECURSIVE_MUTEX} = 1 ; then
-@@ -847,7 +847,7 @@ fi
+@@ -847,7 +849,7 @@
  AC_SUBST(HAS_PLUGINS)
  
  if test "x$LIB64" != "x" ; then
@@ -139,7 +150,7 @@
  else
    AC_DEFINE_UNQUOTED([P_DEFAULT_PLUGIN_DIR], ["${INSTALLPREFIX}/lib/pwlib"], [Default plugin directory])
  fi
-@@ -1253,7 +1253,7 @@ if test "$enable_expat" = "no" ; then
+@@ -1253,7 +1255,7 @@
  else
    AC_CHECK_HEADERS(expat.h, HAS_EXPAT=1)
    if test "${HAS_EXPAT:-unset}" != "unset" ; then
@@ -148,7 +159,7 @@
    else
      AC_CHECK_FILE(/usr/local/include/expat.h, HAS_EXPAT=1)
      if test "${HAS_EXPAT:-unset}" != "unset" ; then
-@@ -1428,7 +1428,8 @@ else
+@@ -1428,7 +1430,8 @@
    if test $HAS_IPV6 = no ; then
      AC_MSG_RESULT(no)
    else
@@ -158,7 +169,7 @@
                       #include <netdb.h>],
                       [getnameinfo(NULL, 0, NULL, 0, NULL, 0, 0);], HAS_IPV6=yes, HAS_IPV6=no)
      if test $HAS_IPV6 = no ; then
-@@ -1485,7 +1486,7 @@ fi
+@@ -1485,7 +1488,7 @@
  HAS_SDL=
  if test "$enable_sdl" = "no" ; then
    AC_MSG_NOTICE(SDL disabled)
@@ -167,7 +178,7 @@
  else
    dnl SDL checks
    if test "${SDLLIB:-unset}" = "unset" ; then
-@@ -1495,17 +1496,17 @@ else
+@@ -1495,17 +1498,17 @@
    dnl Linux check
    AC_CHECK_HEADERS(SDL/SDL.h, HAS_SDL=1)
    if test "${HAS_SDL:-unset}" != "unset" ; then
@@ -189,7 +200,7 @@
      fi
    fi
  
-@@ -1527,7 +1528,7 @@ AC_SUBST(HAS_SDL)
+@@ -1527,7 +1530,7 @@
  dnl ########################################################################
  dnl check for video capture support.
  dnl videodev.h on linux
@@ -198,7 +209,7 @@
  dnl i386/ioctl_meteor on OpenBSD
  dnl dev/ic/bt8xx on NetBSD
  
-@@ -1553,9 +1554,10 @@ else
+@@ -1553,9 +1556,10 @@
      HAS_VIDEO_CAPTURE=1
    else
      AC_CHECK_HEADER(linux/videodev.h, HAS_VIDEO_CAPTURE=1)
@@ -212,7 +223,7 @@
      if test "${HAS_VIDEO_CAPTURE}z" = "z" ; then
        AC_MSG_NOTICE(No Video Capture support)
        AC_DEFINE([NO_VIDEO_CAPTURE], [], [No video capture])
-@@ -2046,6 +2048,9 @@ if test "${enable_exceptions}z" = "yesz"
+@@ -2046,6 +2050,9 @@
    AC_MSG_NOTICE(C++ exceptions enabled)
    STDCCFLAGS="$STDCCFLAGS -fno-exceptions"
  fi
