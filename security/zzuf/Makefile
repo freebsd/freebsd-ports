@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zzuf
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	security
 MASTER_SITES=	http://sam.zoy.org/zzuf/
 
