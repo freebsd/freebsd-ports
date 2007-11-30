@@ -51,10 +51,15 @@ libexec/sdlmess/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/update.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/win32cmd.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/wintoc.xml
+%%DATADIR%%/artwork/amsterd.zip
 %%DATADIR%%/artwork/avigo.zip
+%%DATADIR%%/artwork/dallas.zip
+%%DATADIR%%/artwork/dallas16.zip
+%%DATADIR%%/artwork/dallas32.zip
 %%DATADIR%%/artwork/dir.txt
 %%DATADIR%%/artwork/floppyr.png
 %%DATADIR%%/artwork/floppyw.png
+%%DATADIR%%/artwork/glasgow.zip
 %%DATADIR%%/artwork/kim1.zip
 %%DATADIR%%/artwork/aim65.zip
 %%DATADIR%%/artwork/ledoff.png
@@ -69,6 +74,7 @@ libexec/sdlmess/testkeys
 %%DATADIR%%/artwork/pc1402.zip
 %%DATADIR%%/artwork/pc1403.zip
 %%DATADIR%%/artwork/rebel5.zip
+%%DATADIR%%/artwork/roma32.zip
 %%DATADIR%%/artwork/ssystem3.zip
 %%DATADIR%%/artwork/thomson.lay
 %%DATADIR%%/hash/a2600.hsi

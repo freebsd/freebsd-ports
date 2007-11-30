@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	sdlmess
-PORTVERSION=	0.119
+PORTVERSION=	0.120
 CATEGORIES=	emulators
-MASTER_SITES=	http://rbelmont.mameworld.info/
+MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SDL port of MESS (Multiple Emulator Super System)
-
-BROKEN=		fails to fetch
 
 USE_ZIP=	yes
 USE_GL=		yes
