@@ -15,10 +15,11 @@ COMMENT=	Free Pascal Component Library
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		${UNITSDIR}/fcl-base/Package.fpc:${PORTSDIR}/devel/fpc-fcl-base \
 		${UNITSDIR}/fcl-xml/Package.fpc:${PORTSDIR}/devel/fpc-fcl-xml \
+		${UNITSDIR}/hash/Package.fpc:${PORTSDIR}/security/fpc-hash \
 		${UNITSDIR}/libasync/Package.fpc:${PORTSDIR}/net/fpc-libasync \
-		${UNITSDIR}/netdb/Package.fpc:${PORTSDIR}/net/fpc-netdb
-
-BROKEN=		fails to install
+		${UNITSDIR}/netdb/Package.fpc:${PORTSDIR}/net/fpc-netdb \
+		${UNITSDIR}/paszlib/Package.fpc:${PORTSDIR}/archivers/fpc-paszlib \
+		${UNITSDIR}/pthreads/Package.fpc:${PORTSDIR}/devel/fpc-pthreads
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 MASTERDIR=	${.CURDIR}/../../lang/fpc
