@@ -79,7 +79,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Rails core team reports:</p>
 	<blockquote cite="http://weblog.rubyonrails.org/2007/10/12/rails-1-2-5-maintenance-release">
 	  <p>All users of Rails 1.2.4 or earlier are advised to upgrade
-	    to 1.2.5, though it isn¡¯t strictly necessary if you
+	    to 1.2.5, though it isn't strictly necessary if you
 	    aren't working with JSON. For more information the JSON
 	    vulnerability, see CVE-2007-3227.</p>
 	</blockquote>
@@ -91,7 +91,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-10-12</discovery>
       <entry>2007-11-28</entry>
-      <modified>2007-11-28</modified>
+      <modified>2007-12-01</modified>
     </dates>
   </vuln>
 
