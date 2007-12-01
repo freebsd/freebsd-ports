@@ -18,12 +18,3 @@
  
  cat >>confdefs.h <<_ACEOF
  #define DEBUG 1
-@@ -27548,7 +27548,7 @@ _ACEOF
- 
- 
- cat >>confdefs.h <<_ACEOF
--#define PACKAGE_DATA_DIR "${myprefix}/${DATADIRNAME}"
-+#define PACKAGE_DATA_DIR "${myprefix}/${DATADIRNAME}/gnome"
- _ACEOF
- 
- 
