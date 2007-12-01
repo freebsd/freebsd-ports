@@ -13,12 +13,12 @@ DNS Protocol Enhancements
      Improved standards conformance
 Views
      One server process can provide multiple "views" of
-          the DNS namespace, e.g. an "inside" view to certain
-          clients, and an "outside" view to others.
+     the DNS namespace, e.g. an "inside" view to certain
+     clients, and an "outside" view to others.
 
 Multiprocessor Support, including working threads in this version
 
-WWW: http://www.isc.org/index.pl?/sw/bind/bind9.4-beta.php
+WWW: http://www.isc.org/index.pl?/sw/bind/index.php
 
 - Doug Barton
 DougB@FreeBSD.org
