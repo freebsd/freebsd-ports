@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="80e119d1-a04a-11dc-9264-001c2514716c">
+    <topic>rsync -- two security bypass vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rsync</name>
+	<range><lt>2.6.9_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Rsync security page reports:</p>
+	<blockquote cite="http://rsync.samba.org/security.html">
+	  <p>Two security advisories affect people who run a writable
+	    rsync daemon: The first affects only those with
+	    "use chroot = no" (which is not a very safe combination in
+	    general), and the second affects a daemon that has
+	    daemon-excluded files that are being hidden in a module's
+	    hierarchy. Included are simple config-change suggestions
+	    that should help you to avoid the security issues. These
+	    advisories affect all rsync versions.</p>
+	  <p>Starting with the 3.0.0-pre6 release, there is a new
+	    daemon option available: "munge symlinks". This allows
+	    an rsync daemon to accept symlinks and return them intact
+	    (with even a leading slash still there, which is new for
+	    a non-chroot daemon), but will not allow the symlinks to
+	    be used while they are in the daemon's hierarchy.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-6200</cvename>
+      <url>http://secunia.com/advisories/27863/</url>
+    </references>
+    <dates>
+      <discovery>2007-11-28</discovery>
+      <entry>2007-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="30acb8ae-9d46-11dc-9114-001c2514716c">
     <topic>rubygem-rails -- session-fixation vulnerability</topic>
     <affects>
