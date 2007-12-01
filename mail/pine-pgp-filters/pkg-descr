@@ -1,13 +1,12 @@
-Simple, fast, /bin/sh-based filters to integrate Pine with gnupg.
+Simple, fast, /bin/sh-based filters to use GnuPG with Pine or Alpine.
 
 In addition to the standard functions of encrypt/decrypt and sign/verify
 for inline messages, I added pseudo-filters to verify or decrypt messages
 that were sent using MIME encoding.
 
-See the INSTALL file for instructions on how to configure Pine to use these
-filters.
+See the INSTALL file for instructions on how to configure these filters.
 
-WWW: http://dougbarton.us/Downloads/
+WWW: http://dougbarton.us/PGP/scripts/ppf/
 
 - Doug Barton
 DougB@FreeBSD.org

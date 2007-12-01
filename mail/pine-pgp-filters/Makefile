@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	pine-pgp-filters
-PORTVERSION=	1.3
+PORTVERSION=	1.5
 CATEGORIES=	mail security
-MASTER_SITES=	http://dougbarton.us/Downloads/ \
+MASTER_SITES=	http://dougbarton.us/PGP/scripts/ppf/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dougb
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	DougB@FreeBSD.org
-COMMENT=	Simple, fast, /bin/sh-based filters to integrate Pine with gnupg
+COMMENT=	Simple /bin/sh-based filters to use GnuPG with Pine or Alpine
 
 RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
 
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
-do-build:
-	cd ${WRKSRC} && ./configure --prefix=${PREFIX}
+do-configure:
+	@(cd ${WRKSRC} && ./configure --prefix=${PREFIX})
 
 post-install:
 .if !defined(NOPORTDOCS)
