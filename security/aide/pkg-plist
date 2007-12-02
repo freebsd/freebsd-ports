@@ -5,8 +5,8 @@ etc/aide.conf.sample
 @exec /bin/mkdir -p /var/db/aide/databases
 @exec [ -f /var/db/aide/aide.conf ] || /usr/sbin/chown root:wheel /var/db/aide
 @exec [ -f /var/db/aide/aide.conf ] || /usr/sbin/chown root:wheel /var/db/aide/databases
-@exec [ -f /var/db/aide/aide.conf ] || /usr/sbin/chmod 0700 /var/db/aide
-@exec [ -f /var/db/aide/aide.conf ] || /usr/sbin/chmod 0700 /var/db/aide/databases
+@exec [ -f /var/db/aide/aide.conf ] || /bin/chmod 0700 /var/db/aide
+@exec [ -f /var/db/aide/aide.conf ] || /bin/chmod 0700 /var/db/aide/databases
 @unexec rmdir /var/db/aide/databases 2>/dev/null || true
 @unexec rmdir /var/db/aide 2>/dev/null || true
 @unexec rmdir /var/db 2>/dev/null || true
