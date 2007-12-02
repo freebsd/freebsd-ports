@@ -32,7 +32,7 @@ RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
 		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/finance/p5-Finance-QuoteHist \
 		${LOCALBASE}/share/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
 
-OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off
+#OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -71,14 +71,14 @@ GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 .include <bsd.port.pre.mk>
 
 # WITH_OPENHBCI is old synonym for aqbanking option
-.if defined(WITH_AQBANKING) || defined(WITH_OPENHBCI)
-LIB_DEPENDS+=	aqbanking.5:${PORTSDIR}/finance/aqbanking \
-		ktoblzcheck.5:${PORTSDIR}/finance/ktoblzcheck
-CONFIGURE_ARGS+=--enable-hbci
-PLIST_SUB=	AQBANKING=""
-.else
+#.if defined(WITH_AQBANKING) || defined(WITH_OPENHBCI)
+#LIB_DEPENDS+=	aqbanking.5:${PORTSDIR}/finance/aqbanking \
+#		ktoblzcheck.5:${PORTSDIR}/finance/ktoblzcheck
+#CONFIGURE_ARGS+=--enable-hbci
+#PLIST_SUB+=	AQBANKING=""
+#.else
 CONFIGURE_ARGS+=--disable-hbci
-PLIST_SUB=	AQBANKING="@comment "
-.endif
+PLIST_SUB+=	AQBANKING="@comment "
+#.endif
 
 .include <bsd.port.post.mk>
