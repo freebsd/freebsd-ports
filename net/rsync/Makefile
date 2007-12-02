@@ -7,7 +7,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	2.6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
