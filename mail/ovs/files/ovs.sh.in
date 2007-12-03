@@ -24,13 +24,13 @@ stop_postcmd()
     rm -f $pidfile
 }
 
+load_rc_config $name
+
 : ${ovs_enable="NO"}
 : ${ovs_pidfile="%%DATADIR%%/ovs.pid"}
 : ${ovs_flags="--logfile /var/log/maillog --daemon-rrd=%%DATADIR%% --ignore-localhost --daemon --daemon-pid=${ovs_pidfile} --rbl-is-spam --greylist --helo --spf --domain-not-found"}
 : ${ovs_user="%%OVS_USER%%"}
 : ${ovs_chdir="%%DATADIR%%"}
-
-load_rc_config $name
 
 pidfile=${ovs_pidfile}
 
