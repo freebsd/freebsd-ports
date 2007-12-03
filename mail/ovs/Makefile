@@ -7,6 +7,7 @@
 
 PORTNAME=	ovs
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.oav.net/openvisp/stats/
 
