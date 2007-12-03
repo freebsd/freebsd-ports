@@ -860,8 +860,6 @@ bihar		ports/math/bihar
 biloba		ports/games/biloba
 bin86		ports/devel/bin86
 bincimap	ports/mail/bincimap
-bind8		ports/dns/bind8
-bind84		ports/dns/bind84
 bind9		ports/dns/bind9
 bind9-dlz	ports/dns/bind9-dlz
 bind9-sdb-ldap	ports/dns/bind9-sdb-ldap
@@ -14912,7 +14910,6 @@ smb_auth	ports/www/smb_auth
 smbftpd		ports/ftp/smbftpd
 smbldap-tools	ports/net/smbldap-tools
 smc		ports/devel/smc
-smc-milter	ports/mail/smc-milter
 smiley		ports/games/smiley
 sml-fxp		ports/textproc/sml-fxp
 sml-mode.el	ports/lang/sml-mode.el
@@ -17682,7 +17679,6 @@ zh-bg5pdf	ports/chinese/bg5pdf
 zh-bg5ps	ports/chinese/bg5ps
 zh-big5con	ports/chinese/big5con
 zh-big5width	ports/chinese/big5width
-zh-bind8	ports/chinese/bind8
 zh-bitchx	ports/chinese/bitchx
 zh-c2t		ports/chinese/c2t
 zh-cce		ports/chinese/cce
