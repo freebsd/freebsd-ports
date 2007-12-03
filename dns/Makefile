@@ -5,8 +5,6 @@
 
     SUBDIR += adns
     SUBDIR += ares
-    SUBDIR += bind8
-    SUBDIR += bind84
     SUBDIR += bind9
     SUBDIR += bind9-dlz
     SUBDIR += bind9-sdb-ldap

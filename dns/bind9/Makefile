@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 USE_OPENSSL=	yes
 
-CONFLICTS=	bind-8.* bind84-8.* bind9-9.4.* bind9-dlz-* bind9-sdb-mysql-* host-* zh-bind-8.*
+CONFLICTS=	bind9-9.4.* bind9-dlz-* bind9-sdb-mysql-* host-*
 
 OPTIONS=	REPLACE_BASE "Replace base BIND with this version" off \
 		THREADS	"Compile with thread support (NOT RECOMMENDED!)" off
