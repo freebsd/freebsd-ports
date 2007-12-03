@@ -549,7 +549,6 @@
     SUBDIR += simscan
     SUBDIR += sma
     SUBDIR += smail
-    SUBDIR += smc-milter
     SUBDIR += smtp-gated
     SUBDIR += smtpclient
     SUBDIR += smtpd

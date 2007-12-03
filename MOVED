@@ -3325,3 +3325,7 @@ print/yatex-mule||2007-10-25|Has expired: emacs19 and related ports are obsolete
 devel/py-qt4-qct|devel/qct|2007-10-26|Since it's an application but not a Py/Qt library the port was renamed
 net-mgmt/wispy-tools|net-mgmt/spectools|2007-10-29|project renamed
 lang/gcc40|lang/gcc42|2007-11-04|Superseded by gcc41 and later, gcc42 being the recommended update path
+chinese/bind8||2007-12-03|EOL: Use dns/bind94 instead
+dns/bind8||2007-12-03|EOL: Use dns/bind94 instead
+dns/bind84||2007-12-03|EOL: Use dns/bind94 instead
+mail/smc-milter||2007-12-03|Relies on BIND 8, which is EOL
