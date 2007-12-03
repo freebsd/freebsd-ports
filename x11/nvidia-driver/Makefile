@@ -96,9 +96,11 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's,pci/agpvar\.h,dev/agp/agpvar.h,' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
-# Building with -Werror requires prototype for suser()
+# Building with -Werror requires prototype for suser() which was moved
+.if ${OSVERSION} >= 700048
 	${REINPLACE_CMD} -e '15s,^,#include <sys/priv.h>,' \
 		${WRKSRC}/src/nvidia_os.c
+.endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
