@@ -5,7 +5,6 @@
 %%GEM_LIB_DIR%%/README
 %%GEM_LIB_DIR%%/CHANGELOG
 %%GEM_LIB_DIR%%/MIT-LICENSE
-%%GEM_LIB_DIR%%/lib/action_mailer.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/adv_attr_accessor.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/base.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/helpers.rb
@@ -14,8 +13,6 @@
 %%GEM_LIB_DIR%%/lib/action_mailer/part_container.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/quoting.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/utils.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/version.rb
-%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/vendor/text/format.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/address.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/attachments.rb
@@ -39,13 +36,18 @@
 %%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/stringio.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/tmail.rb
 %%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail/utils.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/vendor/tmail.rb
+%%GEM_LIB_DIR%%/lib/action_mailer/version.rb
+%%GEM_LIB_DIR%%/lib/action_mailer.rb
 %%GEM_LIB_DIR%%/test/abstract_unit.rb
-%%GEM_LIB_DIR%%/test/mail_helper_test.rb
-%%GEM_LIB_DIR%%/test/mail_render_test.rb
-%%GEM_LIB_DIR%%/test/mail_service_test.rb
-%%GEM_LIB_DIR%%/test/quoting_test.rb
-%%GEM_LIB_DIR%%/test/tmail_test.rb
-%%GEM_LIB_DIR%%/test/url_test.rb
+%%GEM_LIB_DIR%%/test/fixtures/first_mailer/share.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_helper.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_helper_method.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_mail_helper.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_test_helper.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/helpers/test_helper.rb
+%%GEM_LIB_DIR%%/test/fixtures/path.with.dots/funky_path_mailer/multipart_with_template_path_with_dots.rhtml
+%%GEM_LIB_DIR%%/test/fixtures/path.with.dots/multipart_with_template_path_with_dots.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/raw_email
 %%GEM_LIB_DIR%%/test/fixtures/raw_email10
 %%GEM_LIB_DIR%%/test/fixtures/raw_email11
@@ -61,14 +63,6 @@
 %%GEM_LIB_DIR%%/test/fixtures/raw_email9
 %%GEM_LIB_DIR%%/test/fixtures/raw_email_quoted_with_0d0a
 %%GEM_LIB_DIR%%/test/fixtures/raw_email_with_partially_quoted_subject
-%%GEM_LIB_DIR%%/test/fixtures/first_mailer/share.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_helper.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_helper_method.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_mail_helper.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/helper_mailer/use_test_helper.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/helpers/test_helper.rb
-%%GEM_LIB_DIR%%/test/fixtures/path.with.dots/multipart_with_template_path_with_dots.rhtml
-%%GEM_LIB_DIR%%/test/fixtures/path.with.dots/funky_path_mailer/multipart_with_template_path_with_dots.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/second_mailer/share.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/templates/signed_up.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test_mailer/implicitly_multipart_example.ignored.rhtml
@@ -78,9 +72,13 @@
 %%GEM_LIB_DIR%%/test/fixtures/test_mailer/implicitly_multipart_example.text.yaml.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test_mailer/signed_up.rhtml
 %%GEM_LIB_DIR%%/test/fixtures/test_mailer/signed_up_with_url.rhtml
-%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_LIB_DIR%%/test/mail_helper_test.rb
+%%GEM_LIB_DIR%%/test/mail_render_test.rb
+%%GEM_LIB_DIR%%/test/mail_service_test.rb
+%%GEM_LIB_DIR%%/test/quoting_test.rb
+%%GEM_LIB_DIR%%/test/tmail_test.rb
+%%GEM_LIB_DIR%%/test/url_test.rb
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/adv_attr_accessor_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/base_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/helpers_rb.html
@@ -89,8 +87,6 @@
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/part_container_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/quoting_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/utils_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/version_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/text/format_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/address_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/attachments_rb.html
@@ -114,6 +110,9 @@
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/tmail_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/stringio_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail/utils_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/vendor/tmail_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer/version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_mailer_rb.html
 %%GEM_DOC_DIR%%/rdoc/classes/TC_Unquoter.src/M000001.html
 %%GEM_DOC_DIR%%/rdoc/classes/TC_Unquoter.src/M000002.html
 %%GEM_DOC_DIR%%/rdoc/classes/TC_Unquoter.src/M000003.html
@@ -562,6 +561,7 @@
 %%GEM_DOC_DIR%%/rdoc/fr_class_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/test_mailer
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/templates
 @dirrm %%GEM_LIB_DIR%%/test/fixtures/second_mailer
