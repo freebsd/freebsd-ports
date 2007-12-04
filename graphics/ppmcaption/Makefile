@@ -25,8 +25,8 @@ PLIST_FILES=	bin/ppmcaption
 BROKEN=		"Does not compile on ia64"
 .endif
 
-.if ${ARCH} == "amd64" && ${OSVERSION} < 600000
-BROKEN=		"Does not compile on amd64 5.x"
+.if ${ARCH} == "amd64" && ${OSVERSION} < 700000
+BROKEN=		Does not compile on amd64 5.x/6.x
 .endif
 
 post-patch:
