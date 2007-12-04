@@ -54,4 +54,8 @@ post-install:
 BROKEN=		Does not compile with GCC 4.2
 .endif
 
+.if ${ARCH} != "i386"
+BROKEN=		Does not compile
+.endif
+
 .include <bsd.port.post.mk>
