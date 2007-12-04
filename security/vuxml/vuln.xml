@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6eb580d7-a29c-11dc-8919-001c2514716c">
+    <topic>Squid -- Denial of Service Vulnerability</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>2.0</ge><lt>2.6.17</lt></range>
+	<range><ge>3.*</ge><lt>3.0.r1.20071128</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Squid secuirty advisory reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2007_2.txt">
+	  <p>Due to incorrect bounds checking Squid is vulnerable
+	    to a denial of service check during some cache update
+	    reply processing.</p>
+	  <p>This problem allows any client trusted to use the
+	    service to perform a denial of service attack on the
+	    Squid service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>26687</bid>
+    </references>
+    <dates>
+      <discovery>2007-11-28</discovery>
+      <entry>2007-12-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="30acb8ae-9d46-11dc-9114-001c2514716c">
     <topic>rubygem-rails -- session-fixation vulnerability</topic>
     <affects>
