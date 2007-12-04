@@ -354,11 +354,14 @@ check_chroot ()
 				err 1 "dhcpd_devfs_enable and dhcpd_makedev_enable" \
 				      "are mutually exclusive. enable only one!"
 			fi
-			if checkyesno dhcpd_devfs_enable &&
-			   ! ( type mount_devfs ) > /dev/null 2>&1; then
-				warn "dhcpd_devfs_enable disabled" \
-				     "-- not available"
-				dhcpd_devfs_enable=NO
+			if test `uname -r | cut -c 1` -le 6; then
+				if checkyesno dhcpd_devfs_enable &&
+				   ! ( type mount_devfs ) > /dev/null 2>&1;
+				then
+					warn "dhcpd_devfs_enable disabled" \
+					     "-- not available"
+					dhcpd_devfs_enable=NO
+				fi
 			fi
 			if checkyesno dhcpd_makedev_enable &&
 			   ! [ -x ${__dhcpd_devdir}/MAKEDEV ]; then
