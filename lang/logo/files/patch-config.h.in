@@ -1,0 +1,18 @@
+--- config.h.in.orig	2005-03-17 03:23:00.000000000 +0300
++++ config.h.in	2007-12-04 15:40:18.000000000 +0300
+@@ -4,13 +4,13 @@
+ #undef _POSIX_SOURCE
+ 
+ /* Define as the return instruction for signal handlers. */
+-#undef SIGRET
++#define SIGRET
+ 
+ /* Define as the return type of signal handlers (int or void).  */
+ #undef RETSIGTYPE
+ 
+ /* Define if signal handlers take an argument. */
+-#undef SIG_TAKES_ARG
++#define SIG_TAKES_ARG
+ 
+ /* Define to `unsigned' if <sys/types.h> doesn't define.  */
+ #undef size_t

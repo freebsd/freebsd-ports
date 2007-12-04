@@ -27,6 +27,7 @@ BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
+USE_AUTOTOOLS=  autoconf:261
 MAKEFILE=	makefile
 HAS_CONFIGURE=	yes
 
@@ -53,10 +54,6 @@ PLIST_SUB+=	EMACS_LOGO_MODE="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 700000
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
 
 pre-everything::
 .if !defined(EMACS_LOGO_MODE)
