@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>squid</name>
-	<range><ge>2.0</ge><lt>2.6.17</lt></range>
+	<range><ge>2.0</ge><lt>2.6.16_1</lt></range>
 	<range><ge>3.*</ge><lt>3.0.r1.20071128</lt></range>
       </package>
     </affects>
@@ -62,6 +62,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-11-28</discovery>
       <entry>2007-12-04</entry>
+      <modified>2007-12-04</modified>
     </dates>
   </vuln>
 
