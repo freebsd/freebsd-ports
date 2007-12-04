@@ -1,3 +1,6 @@
 MD5 (squid2.6/squid-2.6.STABLE16.tar.bz2) = 849bee6f269e6c773f215fd4b41de0e3
 SHA256 (squid2.6/squid-2.6.STABLE16.tar.bz2) = 9e306c885c4a37b1a57e2e8c0cdac5c90e4cffa2801e30f3c78b1cca880a62c7
 SIZE (squid2.6/squid-2.6.STABLE16.tar.bz2) = 1293078
+MD5 (squid2.6/11780.patch) = cad6a2343d93ef4127150d5837c9662b
+SHA256 (squid2.6/11780.patch) = b28045f3d47b5d4ffcfc46d934ffe533480a3b8a4c47503336c5e0fe9b8dccec
+SIZE (squid2.6/11780.patch) = 3732
