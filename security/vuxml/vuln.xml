@@ -53,8 +53,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-1999-1165</cvename>
       <url>http://www.gnu.org/software/finger/</url>
-      <url>http://nvd.nist.gov/nvd.cfm?cvename=CVE-1999-1165</url>
     </references>
     <dates>
       <discovery>1999-07-21</discovery>
