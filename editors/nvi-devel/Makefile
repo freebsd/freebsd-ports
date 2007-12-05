@@ -7,7 +7,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.81.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	http://193.190.253.81/~skimo/nvi/devel/ \
 		${MASTER_SITE_LOCAL}
@@ -30,7 +30,14 @@ MAN1=			ex.1 vi.1 view.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
+EXTRA_PATCHES+=	\
+		files/extra-patch-cl-cl.h \
+		files/extra-patch-cl-cl_funcs.c \
+		files/extra-patch-cl-cl_screen.c \
+		files/extra-patch-common-db.c \
+		files/extra-patch-common-key.c \
+		files/extra-patch-common-mem.h \
+		files/extra-patch-vi-v_txt.c
 .endif
 
 # XXX: nvi doesn't really need sys/select.h, but I don't think the
