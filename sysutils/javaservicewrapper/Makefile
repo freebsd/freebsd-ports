@@ -20,7 +20,7 @@ USE_JAVA=	1.3+
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS}|' \
+	@${REINPLACE_CMD} -e 's|gcc|${CC} ${CFLAGS} -fPIC|' \
 		${WRKSRC}/src/c/Makefile-freebsd-x86-32
 
 do-build:
