@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="610bc692-a2ad-11dc-900c-000bcdc1757a">
+    <topic>GNU finger vulnerability</topic>
+    <affects>
+      <package>
+	<name>gnu-finger</name>
+	<range><le>1.37_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GNU security announcement:</p>
+	<blockquote cite="http://www.gnu.org/software/finger/">
+	  <p>GNU Finger unfortunately has not been updated in
+	   many years, and has known security vulnerabilities.
+	   Please do not use it in production environments.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.gnu.org/software/finger/</url>
+      <url>http://nvd.nist.gov/nvd.cfm?cvename=CVE-1999-1165</url>
+    </references>
+    <dates>
+      <discovery>1999-07-21</discovery>
+      <entry>2007-12-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6eb580d7-a29c-11dc-8919-001c2514716c">
     <topic>Squid -- Denial of Service Vulnerability</topic>
     <affects>
