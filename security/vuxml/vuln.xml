@@ -40,7 +40,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>squid</name>
 	<range><ge>2.0</ge><lt>2.6.16_1</lt></range>
-	<range><ge>3.*</ge><lt>3.0.r1.20071128</lt></range>
+	<range><ge>3.*</ge><lt>3.0.r1.20071001_1</lt></range>
       </package>
     </affects>
     <description>
