@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pine-pgp-filters
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	mail security
 MASTER_SITES=	http://dougbarton.us/PGP/scripts/ppf/ \
 		${MASTER_SITE_LOCAL}
@@ -18,6 +18,16 @@ MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Simple /bin/sh-based filters to use GnuPG with Pine or Alpine
 
 RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
+
+.include <bsd.port.pre.mk>
+
+# We want to be version-agnostic here, but also record the right dependency
+# if the user installs the package and already has one or the other installed.
+.if exists(${LOCALBASE}/bin/gpg2)
+RUN_DEPENDS+=	gpg2:${PORTSDIR}/security/gnupg
+.else
+RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg1
+.endif
 
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
@@ -34,4 +44,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
