@@ -4,6 +4,7 @@ bin/cceconv
 bin/ccegbk
 bin/ccejis
 bin/cceksc
+etc/cce.cfg
 share/cce/8x16.bin
 share/cce/all/ciyin.tab
 share/cce/all/ciyingb.tab
@@ -18,7 +19,6 @@ share/cce/big5/dayi.tab
 share/cce/big5/kc16.bin
 share/cce/big5/liu5.tab
 share/cce/big5/simplex.tab
-share/cce/cce.cfg
 share/cce/cceconv.tab
 share/cce/cin2tab
 share/cce/gb/ZiRanMa.tab
