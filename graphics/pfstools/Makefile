@@ -7,7 +7,7 @@
 
 PORTNAME=	pfstools
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +26,7 @@ CONFIGURE_ARGS+=--disable-jpeghdr --disable-ppm
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	3
+USE_GL=		glut
 
 OPTIONS=	OCTAVE "Install Octave interface" on
 

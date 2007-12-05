@@ -36,6 +36,7 @@ include/pfs-1.2/pfs.h
 @dirrm include/pfs-1.2
 lib/libpfs-1.2.a
 lib/libpfs-1.2.la
+lib/libpfs-1.2.so
 lib/libpfs-1.2.so.0
 libdata/pkgconfig/pfs.pc
 %%OCTAVE_PLIST%%libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%%/pfstools/pfsclose.oct
