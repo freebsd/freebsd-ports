@@ -1,3 +1,6 @@
 MD5 (cce-0.51-02132004-dist.tgz) = 3f3cadb0daed1f67771982459c42cfea
 SHA256 (cce-0.51-02132004-dist.tgz) = 3d5498f7940191b2a99b284e4e3c37b8b4552bd4a9a8ac8f2692ee138d53f078
 SIZE (cce-0.51-02132004-dist.tgz) = 7130658
+MD5 (cce_0.51-1.diff.gz) = 2fc71dbcc6d0ef7f21f3dfef1bf9537a
+SHA256 (cce_0.51-1.diff.gz) = 8e0cdabacadea3c469cac1ae735c68a8fcea373ab1d59ef3f5de94315a301b72
+SIZE (cce_0.51-1.diff.gz) = 8911
