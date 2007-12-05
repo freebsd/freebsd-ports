@@ -1,0 +1,143 @@
+Patch for the remote denial of service vulnerability as documented in
+Squid advisory 2007_2 (http://www.squid-cache.org/Advisories/SQUID-2007_2.txt):
+
+This is a slightly revised version of the original PatchSet 11211, with
+one hunk removed and path informations stripped in order to make it
+apply to otherwise unpatched 3.0.RC1 sources.
+
+Created: 2007-12-04 by Thomas-Martin Seck <tmseck@netcologne.de> for the
+FreeBSD port of Squid 3.0.
+
+---------------------
+PatchSet 11211 
+Date: 2007/11/26 13:09:54
+Author: hno
+Branch: HEAD
+Tag: (none) 
+Log:
+pack header entries on cache updates
+
+Members: 
+	include/Array.h:1.24->1.25 
+	src/HttpHeader.cc:1.137->1.138 
+	src/HttpHeader.h:1.23->1.24 
+	src/HttpReply.cc:1.96->1.97 
+
+Index: squid3/include/Array.h
+===================================================================
+RCS file: /cvsroot/squid/squid3/include/Array.h,v
+retrieving revision 1.24
+retrieving revision 1.25
+diff -u -r1.24 -r1.25
+--- include/Array.h	21 Nov 2005 22:43:41 -0000	1.24
++++ include/Array.h	26 Nov 2007 13:09:54 -0000	1.25
+@@ -1,5 +1,5 @@
+ /*
+- * $Id: Array.h,v 1.24 2005/11/21 22:43:41 wessels Exp $
++ * $Id: Array.h,v 1.25 2007/11/26 13:09:54 hno Exp $
+  *
+  * AUTHOR: Alex Rousskov
+  *
+@@ -98,6 +98,7 @@
+     E &back();
+     E pop_back();
+     E shift();         // aka pop_front
++    void prune(E);
+     void preAppend(int app_count);
+     bool empty() const;
+     size_t size() const;
+@@ -243,6 +244,22 @@
+     return items[size() - 1];
+ }
+ 
++template<class E>
++void
++Vector<E>::prune(E item)
++{
++    unsigned int n = 0;
++    for (unsigned int i = 0; i < count; i++) {
++	if (items[i] != item) {
++	    if (i != n)
++		items[n] = items[i];
++	    n++;
++	}
++    }
++
++    count = n;
++}
++
+ /* if you are going to append a known and large number of items, call this first */
+ template<class E>
+ void
+Index: squid3/src/HttpHeader.cc
+===================================================================
+RCS file: /cvsroot/squid/squid3/src/HttpHeader.cc,v
+retrieving revision 1.137
+retrieving revision 1.138
+diff -u -r1.137 -r1.138
+--- src/HttpHeader.cc	26 Nov 2007 12:31:37 -0000	1.137
++++ src/HttpHeader.cc	26 Nov 2007 13:09:55 -0000	1.138
+@@ -787,6 +787,15 @@
+ }
+ 
+ /*
++ * Compacts the header storage
++ */
++void
++HttpHeader::compact()
++{
++    entries.prune(NULL);
++}
++
++/*
+  * Refreshes the header mask. Required after delAt() calls.
+  */
+ void
+Index: squid3/src/HttpHeader.h
+===================================================================
+RCS file: /cvsroot/squid/squid3/src/HttpHeader.h,v
+retrieving revision 1.23
+retrieving revision 1.24
+diff -u -r1.23 -r1.24
+--- src/HttpHeader.h	13 Aug 2007 17:20:51 -0000	1.23
++++ src/HttpHeader.h	26 Nov 2007 13:09:55 -0000	1.24
+@@ -1,6 +1,6 @@
+ 
+ /*
+- * $Id: HttpHeader.h,v 1.23 2007/08/13 17:20:51 hno Exp $
++ * $Id: HttpHeader.h,v 1.24 2007/11/26 13:09:55 hno Exp $
+  *
+  *
+  * SQUID Web Proxy Cache          http://www.squid-cache.org/
+@@ -202,6 +202,7 @@
+     void clean();
+     void append(const HttpHeader * src);
+     void update (HttpHeader const *fresh, HttpHeaderMask const *denied_mask);
++    void compact();
+     int reset();
+     int parse(const char *header_start, const char *header_end);
+     void packInto(Packer * p) const;
+Index: squid3/src/HttpReply.cc
+===================================================================
+RCS file: /cvsroot/squid/squid3/src/HttpReply.cc,v
+retrieving revision 1.96
+retrieving revision 1.97
+diff -u -r1.96 -r1.97
+--- src/HttpReply.cc	13 Aug 2007 17:20:51 -0000	1.96
++++ src/HttpReply.cc	26 Nov 2007 13:09:55 -0000	1.97
+@@ -1,6 +1,6 @@
+ 
+ /*
+- * $Id: HttpReply.cc,v 1.96 2007/08/13 17:20:51 hno Exp $
++ * $Id: HttpReply.cc,v 1.97 2007/11/26 13:09:55 hno Exp $
+  *
+  * DEBUG: section 58    HTTP Reply (Response)
+  * AUTHOR: Alex Rousskov
+@@ -312,6 +312,7 @@
+     header.update(&freshRep->header,
+                   (const HttpHeaderMask *) &Denied304HeadersMask);
+ 
++    header.compact();
+     /* init cache */
+     hdrCacheInit();
+ }
