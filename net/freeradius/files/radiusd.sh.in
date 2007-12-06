@@ -14,13 +14,19 @@
 
 name=radiusd
 rcvar=`set_rcvar`
+load_rc_config $name
 
 command=%%PREFIX%%/sbin/radiusd
-radiusd_config=${radiusd_config:-"%%PREFIX%%/etc/raddb/radiusd.conf"}
-required_files=${radiusd_config}
 pidfile=/var/run/radiusd/radiusd.pid
+
+# The radiusd_config parameter is now obsolete. Instead, derive the
+# configuration directory name from radiusd_flags if possible, otherwise
+# default to %%PREFIX%%/etc/raddb
+required_dirs=`echo ${radiusd_flags} | sed -Ee 's:.*\-[^[:space:]d]*d[[:space:]]*([^[:space:]]+).*:\1:'`
+required_dirs=${required_dirs:-"%%PREFIX%%/etc/raddb"}
+
+required_files="${required_dirs}/radiusd.conf"
 
 radiusd_enable=${radiusd_enable-"NO"}
 
-load_rc_config $name
 run_rc_command "$1"
