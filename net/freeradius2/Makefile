@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION?=	1.1.7
-PORTREVISION?=	1
+PORTVERSION=	1.1.7
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/ \
@@ -16,15 +16,15 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		http://freeradius.portal-to-web.de/
 MASTER_SITE_SUBDIR=	. old
 
-MAINTAINER?=	david@wood2.org.uk
-COMMENT?=	A free RADIUS server implementation
+MAINTAINER=	david@wood2.org.uk
+COMMENT=	A free RADIUS server implementation
 
 USE_BZIP2=	yes
 WANT_PERL=	yes
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
-LOGDIR?=	/var/log
+LOGDIR=	/var/log
 
 # If FREERADIUS_SLAVE_MYSQL is defined, we want to build the
 # freeradius-mysql slave port
@@ -60,12 +60,6 @@ OPTIONS+=	PGSQL		"With PostgreSQL database support" off \
 		EXPERIMENTAL	"Build experimental modules" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
 
 # Default requirements for rc script
 _REQUIRE=	NETWORKING SERVERS
@@ -110,7 +104,7 @@ WITH_KERBEROS=	yes
 
 .ifdef(WITH_KERBEROS)
 .ifdef(WITH_HEIMDAL)
-LIB_DEPENDS+=	krb5.21:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	krb5.23:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=--enable-heimdal-krb5
 .else
 LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
