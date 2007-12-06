@@ -37,6 +37,10 @@ OPTIONS=	OPENSSL "OpenSSL support" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700000
+BROKEN=		Does not compile: MNT_NODEV undeclared
+.endif
+
 .if defined(WITH_OPENSSL)
 CONFIGURE_ARGS+=	--with-openssl=yes
 .endif
