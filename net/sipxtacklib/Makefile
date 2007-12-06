@@ -37,8 +37,14 @@ CONFIGURE_ARGS+=	--enable-sip-tls \
 		--prefix=${PREFIX} \
 		--localstatedir=${LOCALSTATEDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/bash,${PREFIX}/bin/bash," ${WRKSRC}/siptest/src/siptest/subscribe-dialog-test
 	@${REINPLACE_CMD} -e "s,/bin/bash,${PREFIX}/bin/bash," ${WRKSRC}/syslog2siptrace/merge-logs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
