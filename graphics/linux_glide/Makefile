@@ -30,8 +30,8 @@ do-build:
 		(cd ${WRKSRC}; tar fx - lib include bin/test00)
 
 do-install:
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${PREFIX}/usr)
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} include ${PREFIX}/usr)
+	(cd ${WRKSRC} && ${INSTALL_DATA} lib/* ${PREFIX}/usr/lib/)
+	(cd ${WRKSRC} && ${INSTALL_DATA} include/* ${PREFIX}/usr/include)
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} bin/test00 \
 		${PREFIX}/usr/bin/test-glide)
 	-/compat/linux/sbin/ldconfig
