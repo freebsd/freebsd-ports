@@ -102,6 +102,7 @@ LATEST_LINK=	squid25
 
 DEPRECATED=	This version is no longer supported by the developers
 EXPIRATION_DATE=	2007-10-31
+FORBIDDEN=	Security issue - see http://www.vuxml.org/freebsd/6eb580d7-a29c-11dc-8919-001c2514716c.html
 
 CONFLICTS=	squid-2.[^5]*
 GNU_CONFIGURE=	yes
