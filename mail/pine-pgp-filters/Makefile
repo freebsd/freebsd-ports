@@ -24,8 +24,10 @@ RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
 # We want to be version-agnostic here, but also record the right dependency
 # if the user installs the package and already has one or the other installed.
 .if exists(${LOCALBASE}/bin/gpg2)
+BUILD_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
 RUN_DEPENDS+=	gpg2:${PORTSDIR}/security/gnupg
 .else
+BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg1
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg1
 .endif
 
