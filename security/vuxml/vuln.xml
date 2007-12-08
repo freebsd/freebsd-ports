@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="821afaa2-9e9a-11dc-a7e3-0016360406fa">
+    <topic>liveMedia -- DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>liveMedia</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The live555 development team reports:</p>
+	<blockquote cite="http://www.live555.com/liveMedia/public/changelog.txt">
+	  <p>Fixed a bounds-checking error in "parseRTSPRequestString()"
+	    caused by an int vs. unsigned problem.</p>
+	</blockquote>
+	<blockquote cite="http://aluigi.altervista.org/adv/live555x-adv.txt">
+	  <p>The function which handles the incoming queries from the
+	    clients is affected by a vulnerability which allows an attacker
+	    to crash the server remotely using the smallest RTSP query
+	    possible to use.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-6036</cvename>
+      <url>http://aluigi.altervista.org/adv/live555x-adv.txt</url>
+      <url>http://www.live555.com/liveMedia/public/changelog.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-11-20</discovery>
+      <entry>2007-12-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="610bc692-a2ad-11dc-900c-000bcdc1757a">
     <topic>GNU finger vulnerability</topic>
     <affects>
