@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>liveMedia</name>
-	<range><gt>0</gt></range>
+	<range><lt>2007.11.18,1</lt></range>
       </package>
     </affects>
     <description>
@@ -65,6 +65,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-11-20</discovery>
       <entry>2007-12-08</entry>
+      <modified>2007-12-09</modified>
     </dates>
   </vuln>
 
