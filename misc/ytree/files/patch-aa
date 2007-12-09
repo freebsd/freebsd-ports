@@ -21,7 +21,7 @@ $FreeBSD$
 -#CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
 -#LDFLAGS     = -lncurses -lmytinfo -lcompat
 +CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
-+LDFLAGS     = -lncurses -lmytinfo -lcompat
++LDFLAGS     = -lncurses -lcompat
  
  ###########################
  # MAC OS X
