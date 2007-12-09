@@ -14,7 +14,7 @@ COMMENT=	Free Pascal interface to cairo library
 
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc \
 		fpcmake:${PORTSDIR}/lang/fpc-utils \
-		${UNITSDIR}/fpc-image/Package.fpc:${PORTSDIR}/devel/fpc-fcl-image \
+		${UNITSDIR}/fcl-image/Package.fpc:${PORTSDIR}/devel/fpc-fcl-image \
 		${UNITSDIR}/x11/Package.fpc:${PORTSDIR}/x11/fpc-x11
 
 UNITSDIR=	${LOCALBASE}/lib/fpc/${PORTVERSION}/units/${BUILDNAME}
