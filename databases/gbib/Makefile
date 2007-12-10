@@ -17,25 +17,19 @@ PATCH_SITE_SUBDIR=	pool/main/g/gbib
 PATCHFILES=	${PORTNAME}_${PORTVERSION}-3.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	Editor/browser for BibTeX bibliographic databases
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
 CFLAGS+=	-fpermissive
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|map.h,|map,|g ; \
@@ -47,9 +41,11 @@ post-patch:
 		 s|^exec_prefix =.*$$|exec_prefix = @exec_prefix@|g ; \
 		 s|^datadir =.*$$|datadir = @datadir@|g ; \
 		 s|^localedir =.*$$|localedir = $$(prefix)/share/locale|g ; \
-		 s|^gnulocaledir =.*$$|gnulocaledir = $$(prefix)/share/locale|g'
+		 s|^gnulocaledir =.*$$|gnulocaledir = $$(prefix)/share/locale|g; \
+		 s|-fwritable-strings||g'
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
