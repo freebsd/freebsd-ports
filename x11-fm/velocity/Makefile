@@ -20,8 +20,14 @@ USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GNOME=	libgnomeui gnomedesktop librsvg2
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
 			${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
