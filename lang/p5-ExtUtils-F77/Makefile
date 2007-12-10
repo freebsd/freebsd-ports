@@ -7,6 +7,7 @@
 
 PORTNAME=	ExtUtils-F77
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	ExtUtils
@@ -23,6 +24,6 @@ F2CLIB=		-lg2c
 
 post-patch:
 	@cd ${WRKSRC}; ${PERL5} -i.orig -pe \
-		's/(.*Freebsd.*lib )(-lf2c)(.*)/$$1 ${F2CLIB} $$3/' F77.pm
+		"s/(.*Freebsd.*lib )(-lf2c)(.*)/$$1 ${F2CLIB} $$3/ ; s/'f77',/'f77','g77-34',/" F77.pm
 
 .include <bsd.port.mk>
