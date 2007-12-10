@@ -17,19 +17,22 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech recognition system
 
 DEST=		${WRKSRC}/src/libsphinx2/
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_GMAKE=	yes
+USE_AUTOTOOLS=libtool:15
 
 # contains i386 sound code
 ONLY_FOR_ARCHS=	i386
 
 post-patch:
-.for ii in CM_funcs.c hash.c linklist.c list.c salloc.c
-	${MV} ${DEST}${ii} ${DEST}${ii}.orig
-	${SED} -e "s:<malloc.h>:<stdlib.h>:g" < ${DEST}${ii}.orig > ${DEST}${ii}
-.endfor
+	@${REINPLACE_CMD} -e 's:<malloc.h>:<stdlib.h>:g' \
+		${WRKSRC}/src/libsphinx2/CM_funcs.c	\
+		${WRKSRC}/src/libsphinx2/hash.c	\
+		${WRKSRC}/src/libsphinx2/list.c	\
+		${WRKSRC}/src/libsphinx2/salloc.c
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+		${WRKSRC}/configure
 
 post-build:
 	${ECHO_CMD} "*** WARNING ***"				 > ${PKGMESSAGE}
@@ -40,10 +43,4 @@ post-build:
 pre-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
