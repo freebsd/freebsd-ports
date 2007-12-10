@@ -34,6 +34,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6ae7cef2-a6ae-11dc-95e6-000c29c5647f">
+    <topic>jetty -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jetty</name>
+	<range><lt>6.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-5613">
+	  <p>Cross-site scripting (XSS) vulnerability in Dump Servlet in
+	    Mortbay Jetty before 6.1.6rc1 allows remote attackers to inject
+	    arbitrary web script or HTML via unspecified parameters and
+	    cookies.</p>
+	</blockquote>
+	<blockquote cite="http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-5614">
+	  <p>Mortbay Jetty before 6.1.6rc1 does not properly handle "certain
+	    quote sequences" in HTML cookie parameters, which allows remote
+	    attackers to hijack browser sessions via unspecified vectors.</p>
+	</blockquote>
+	<blockquote cite="http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-5615">
+	  <p>CRLF injection vulnerability in Mortbay Jetty before 6.1.6rc0
+	    allows remote attackers to inject arbitrary HTTP headers and
+	    conduct HTTP response splitting attacks via unspecified vectors.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <certvu>237888</certvu>
+      <certvu>212984</certvu>
+      <certvu>438616</certvu>
+      <cvename>CVE-2007-5613</cvename>
+      <cvename>CVE-2007-5614</cvename>
+      <cvename>CVE-2007-5615</cvename>
+      <url>http://svn.codehaus.org/jetty/jetty/trunk/VERSION.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-12-05</discovery>
+      <entry>2007-12-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="821afaa2-9e9a-11dc-a7e3-0016360406fa">
     <topic>liveMedia -- DoS vulnerability</topic>
     <affects>
