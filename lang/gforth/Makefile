@@ -54,6 +54,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:${PORTSDIR}/devel/ffcall
 BROKEN=		Does not compile on ports build cluster
 .endif
 
+.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
+BROKEN=		Does not compile
+.endif
+
 .if ${ARCH} == i386
 WORDSIZE=32
 .else
