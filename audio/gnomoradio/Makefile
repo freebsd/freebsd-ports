@@ -12,7 +12,7 @@ CATEGORIES=		audio net
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		gahr@gahr.ch
 COMMENT=		A program for finding and playing free music from the Internet
 
 LIB_DEPENDS=		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
@@ -29,17 +29,13 @@ USE_AUTOTOOLS=		libtool:15
 USE_LDCONFIG=		yes
 LIBTOOLFLAGS=		--tag=CXX
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
+						LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CCLD = $$(CC)|CCLD = $$(CXX)|; \
 		s|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/roboradio/mp3/Makefile.in
+	@${REINPLACE_CMD} -e 's|static char|static const char|' \
+		${WRKSRC}/gnomoradio/*.xpm
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
