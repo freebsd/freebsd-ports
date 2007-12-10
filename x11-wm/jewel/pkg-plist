@@ -1,0 +1,12 @@
+bin/jewel
+bin/jewel-appbar
+bin/jewel-fspanel
+bin/jewel-setrootimage
+bin/jewel-xsession
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/Changelog.DLR
+%%PORTDOCS%%%%DOCSDIR%%/Changelog.jewel
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
