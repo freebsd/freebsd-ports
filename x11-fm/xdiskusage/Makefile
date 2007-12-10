@@ -29,6 +29,10 @@ CXXFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
+.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
+BROKEN=		Does not compile
+.endif
+
 do-build:
 .for i in panels xdiskusage
 	${CXX} ${CXXFLAGS} -I${X11BASE}/include -c \
