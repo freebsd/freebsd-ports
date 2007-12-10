@@ -28,9 +28,15 @@ PLIST_FILES=	bin/xtrader \
 		%%DATADIR%%/sample.xt
 PLIST_DIRS=	%%DATADIR%%
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
+BROKEN=		Does not compile
+.endif
+
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/sample.xt ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/xtrader ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
