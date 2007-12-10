@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	General sound interface
 
 USE_BZIP2=	yes
@@ -28,24 +28,18 @@ MAN5=		gsi.conf.5
 MAN7=		gsi_overview.7
 MAN8=		gsi_server.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-extract:
 	@${RM} -f ${WRKSRC}/lib/include/gsi/gsisynth.h
 
 post-patch:
-.for file in lib/device/gsimixer/api/mixer_fbsd.c \
+.for f in lib/device/gsimixer/api/mixer_fbsd.c \
 	lib/device/gsipcm/api/pcm_fbsd.c
 	@${REINPLACE_CMD} -e \
-		's|machine/soundcard.h|sys/soundcard.h|g' ${WRKSRC}/${file}
+		's|machine/soundcard.h|sys/soundcard.h|g' ${WRKSRC}/${f}
 .endfor
-.for file in server/FINISH_host_allow.c server/client.c server/conf.c
+.for f in server/FINISH_host_allow.c server/client.c server/conf.c
 	@${REINPLACE_CMD} -e \
-		's|"/etc/|"${PREFIX}/etc/|g' ${WRKSRC}/${file}
+		's|"/etc/|"${PREFIX}/etc/|g' ${WRKSRC}/${f}
 .endfor
 
 do-configure:
@@ -63,4 +57,4 @@ post-install:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
