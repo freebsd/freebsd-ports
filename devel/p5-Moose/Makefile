@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.26
+PORTVERSION=	0.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
@@ -17,7 +17,7 @@ COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
-	p5-Class-MOP>=0.39:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.48:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-Sub-Name>=0.02:${PORTSDIR}/devel/p5-Sub-Name \
 	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter
 
@@ -27,6 +27,7 @@ MAN3=	Moose.3 \
 	Moose::Cookbook.3 \
 	Moose::Cookbook::FAQ.3 \
 	Moose::Cookbook::Recipe1.3 \
+	Moose::Cookbook::Recipe11.3 \
 	Moose::Cookbook::Recipe2.3 \
 	Moose::Cookbook::Recipe3.3 \
 	Moose::Cookbook::Recipe4.3 \
