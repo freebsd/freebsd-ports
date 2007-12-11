@@ -7,6 +7,7 @@
 
 PORTNAME=	gnokii
 PORTVERSION=	0.6.18
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -46,8 +47,20 @@ WANT_GNOME=	yes
 WITH_ICAL=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libusb.so)
+WITH_USB=	yes
+.endif
+
 .if defined(WITH_ICAL)
 LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
+.endif
+
+.if defined(WITH_USB)
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+
+CONFIGURE_ARGS+=	--enable-libusb
+.else
+CONFIGURE_ARGS+=	--disable-libusb
 .endif
 
 # If smsd is enabled check if MySQL or PostgreSQL are installed and
@@ -133,6 +146,10 @@ post-patch:
 .if defined(SMSD_WITH_GLIB1)
 	@cd ${WRKSRC} && ${PATCH} -s <${PATCHDIR}/smsd-Makefile-WITH_GLIB.diff
 .endif
+# fix test conditions on configure
+	@${REINPLACE_CMD} -E \
+		-e 's|([[:space:]]+test[[:space:]]+.+)==([[:space:]]+"yes")|\1=\2|' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-build:
 .if defined(WITH_SMSD)
