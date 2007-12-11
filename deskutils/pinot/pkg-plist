@@ -7,6 +7,9 @@ etc/pinot/globalconfig.xml
 etc/pinot/textcat3_conf.txt
 etc/pinot/textcat_conf.txt
 etc/xdg/autostart/pinot-dbus-daemon.desktop
+%%DESKBAR_MOD%%/pinot-module.py
+%%DESKBAR_MOD%%/pinot-module.pyc
+%%DESKBAR_MOD%%/pinot-module.pyo
 lib/deskbar-applet/handlers/pinot-live.py
 lib/deskbar-applet/handlers/pinot-live.pyc
 lib/deskbar-applet/handlers/pinot-live.pyo
@@ -52,7 +55,6 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/engines/Wikipedia.src
 %%DATADIR%%/engines/WiseNut.src
 %%DATADIR%%/engines/Yahoo.src
-%%DATADIR%%/engines/YahooAPI.src
 %%DATADIR%%/metase-gtk2.glade
 %%DATADIR%%/metase-gtk2.gladep
 %%DATADIR%%/pinot-dbus-daemon.xml
@@ -66,6 +68,7 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 @dirrmtry share/applications
 @dirrm lib/pinot/filters
 @dirrm lib/pinot
+@dirrmtry lib/deskbar-applet/modules-2.20-compatible
 @dirrmtry lib/deskbar-applet/handlers
 @dirrmtry lib/deskbar-applet
 @dirrmtry etc/xdg/autostart
