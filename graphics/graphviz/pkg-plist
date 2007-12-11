@@ -1,6 +1,7 @@
 bin/dot
 bin/dot2gxl
 bin/circo
+bin/diffimg
 bin/fdp
 bin/gc
 bin/gvcolor
@@ -23,6 +24,7 @@ bin/dotty
 bin/prune
 include/graphviz/ast_common.h
 include/graphviz/cdt.h
+include/graphviz/cgraph.h
 include/graphviz/demand_loading.c
 include/graphviz/dot_builtins.c
 include/graphviz/dthdr.h
@@ -64,9 +66,6 @@ include/graphviz/gvplugin_loadimage.h
 include/graphviz/gvplugin_textlayout.h
 include/graphviz/gvplugin_device.h
 include/graphviz/pack.h
-include/graphviz/exlib.h
-include/graphviz/exgram.h
-include/graphviz/expr.h
 include/graphviz/gv.i
 include/graphviz/gv.cpp
 lib/graphviz/config
@@ -82,6 +81,10 @@ lib/graphviz/libagraph.so
 lib/graphviz/libagraph.so.4
 lib/graphviz/libagraph.la
 lib/graphviz/libagraph.a
+lib/graphviz/libcgraph.so
+lib/graphviz/libcgraph.so.4
+lib/graphviz/libcgraph.la
+lib/graphviz/libcgraph.a
 lib/graphviz/libpathplan.so
 lib/graphviz/libpathplan.so.4
 lib/graphviz/libpathplan.la
@@ -94,53 +97,45 @@ lib/graphviz/libgvc_builtins.so
 lib/graphviz/libgvc_builtins.so.4
 lib/graphviz/libgvc_builtins.la
 lib/graphviz/libgvc_builtins.a
-lib/graphviz/libexpr.so
-lib/graphviz/libexpr.so.4
-lib/graphviz/libexpr.la
-lib/graphviz/libexpr.a
 lib/graphviz/libgvplugin_core.so
-lib/graphviz/libgvplugin_core.so.4
+lib/graphviz/libgvplugin_core.so.5
 lib/graphviz/libgvplugin_core.la
 lib/graphviz/libgvplugin_core.a
 lib/graphviz/libgvplugin_dot_layout.so
-lib/graphviz/libgvplugin_dot_layout.so.4
+lib/graphviz/libgvplugin_dot_layout.so.5
 lib/graphviz/libgvplugin_dot_layout.la
 lib/graphviz/libgvplugin_dot_layout.a
 lib/graphviz/libgvplugin_gd.so
-lib/graphviz/libgvplugin_gd.so.4
+lib/graphviz/libgvplugin_gd.so.5
 lib/graphviz/libgvplugin_gd.la
 lib/graphviz/libgvplugin_gd.a
 %%WITH_GTK%%lib/graphviz/libgvplugin_gtk.a
 %%WITH_GTK%%lib/graphviz/libgvplugin_gtk.la
 %%WITH_GTK%%lib/graphviz/libgvplugin_gtk.so
-%%WITH_GTK%%lib/graphviz/libgvplugin_gtk.so.4
+%%WITH_GTK%%lib/graphviz/libgvplugin_gtk.so.5
+%%WITH_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.a
+%%WITH_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.la
+%%WITH_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.so
+%%WITH_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.so.5
 lib/graphviz/libgvplugin_neato_layout.so
-lib/graphviz/libgvplugin_neato_layout.so.4
+lib/graphviz/libgvplugin_neato_layout.so.5
 lib/graphviz/libgvplugin_neato_layout.la
 lib/graphviz/libgvplugin_neato_layout.a
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_pango.so
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_pango.so.4
+%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_pango.so.5
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_pango.la
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_pango.a
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.a
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.la
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.so
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.so.4
+%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.so.5
 %%WITH_GUILE%%lib/graphviz/guile/libgv_guile.a
 %%WITH_GUILE%%lib/graphviz/guile/libgv_guile.la
 %%WITH_GUILE%%lib/graphviz/guile/libgv_guile.so
-%%WITH_GUILE%%lib/graphviz/guile/libgv_guile.so.0
-%%WITH_MING%%lib/graphviz/Bitstream_Vera_Sans.fdb
-%%WITH_MING%%lib/graphviz/Bitstream_Vera_Serif.fdb
-%%WITH_MING%%lib/graphviz/libgvplugin_ming.a
-%%WITH_MING%%lib/graphviz/libgvplugin_ming.la
-%%WITH_MING%%lib/graphviz/libgvplugin_ming.so
-%%WITH_MING%%lib/graphviz/libgvplugin_ming.so.4
 %%WITH_PHP%%lib/graphviz/php/gv.php
 %%WITH_PHP%%lib/graphviz/php/libgv_php.a
 %%WITH_PHP%%lib/graphviz/php/libgv_php.la
 %%WITH_PHP%%lib/graphviz/php/libgv_php.so
-%%WITH_PHP%%lib/graphviz/php/libgv_php.so.0
 %%WITH_PHP%%lib/graphviz/php/php_gv.h
 lib/graphviz/tcl/gv.so
 %%WITH_TCL%%lib/graphviz/tcl/libgdtclft.a
@@ -150,7 +145,6 @@ lib/graphviz/tcl/gv.so
 %%WITH_TCL%%lib/graphviz/tcl/libgv_tcl.a
 %%WITH_TCL%%lib/graphviz/tcl/libgv_tcl.la
 %%WITH_TCL%%lib/graphviz/tcl/libgv_tcl.so
-%%WITH_TCL%%lib/graphviz/tcl/libgv_tcl.so.0
 %%WITH_TCL%%lib/graphviz/tcl/libtcldot.a
 %%WITH_TCL%%lib/graphviz/tcl/libtcldot.la
 %%WITH_TCL%%lib/graphviz/tcl/libtcldot.so
@@ -171,32 +165,31 @@ lib/graphviz/lua/gv.so
 %%WITH_LUA%%lib/graphviz/lua/libgv_lua.a
 %%WITH_LUA%%lib/graphviz/lua/libgv_lua.la
 %%WITH_LUA%%lib/graphviz/lua/libgv_lua.so
-%%WITH_LUA%%lib/graphviz/lua/libgv_lua.so.0
 lib/graphviz/perl/gv.so
 %%WITH_PERL%%lib/graphviz/perl/gv.pm
 %%WITH_PERL%%lib/graphviz/perl/libgv_perl.a
 %%WITH_PERL%%lib/graphviz/perl/libgv_perl.la
 %%WITH_PERL%%lib/graphviz/perl/libgv_perl.so
-%%WITH_PERL%%lib/graphviz/perl/libgv_perl.so.0
 lib/graphviz/python/_gv.so
+lib/graphviz/python23/_gv.so
+lib/graphviz/python24/_gv.so
+lib/graphviz/python25/_gv.so
 %%WITH_PYTHON%%lib/graphviz/python/gv.py
 %%WITH_PYTHON%%lib/graphviz/python/libgv_python.a
 %%WITH_PYTHON%%lib/graphviz/python/libgv_python.la
 %%WITH_PYTHON%%lib/graphviz/python/libgv_python.so
-%%WITH_PYTHON%%lib/graphviz/python/libgv_python.so.0
 lib/graphviz/ruby/gv.so
 %%WITH_RUBY%%lib/graphviz/ruby/libgv_ruby.a
 %%WITH_RUBY%%lib/graphviz/ruby/libgv_ruby.la
 %%WITH_RUBY%%lib/graphviz/ruby/libgv_ruby.so
-%%WITH_RUBY%%lib/graphviz/ruby/libgv_ruby.so.0
 lib/graphviz/pkgIndex.tcl
 libdata/pkgconfig/libcdt.pc
 libdata/pkgconfig/libgraph.pc
 libdata/pkgconfig/libagraph.pc
+libdata/pkgconfig/libcgraph.pc
 libdata/pkgconfig/libpathplan.pc
 libdata/pkgconfig/libgvc.pc
 libdata/pkgconfig/libgvc_builtins.pc
-libdata/pkgconfig/libexpr.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/html/build.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
@@ -331,7 +324,6 @@ libdata/pkgconfig/libexpr.pc
 %%PORTDOCS%%%%DOCSDIR%%/pdf/prune.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/agraph.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/cdt.pdf
-%%PORTDOCS%%%%DOCSDIR%%/pdf/expr.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/graph.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/pathplan.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gdtclft.pdf
@@ -342,6 +334,7 @@ libdata/pkgconfig/libexpr.pc
 %%PORTDOCS%%%%DOCSDIR%%/pdf/twopi.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/fdp.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/circo.pdf
+%%PORTDOCS%%%%DOCSDIR%%/pdf/cgraph.pdf
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -459,6 +452,9 @@ libdata/pkgconfig/libexpr.pc
 @dirrm lib/graphviz/ocaml
 @dirrm lib/graphviz/perl
 @dirrm lib/graphviz/php
+@dirrm lib/graphviz/python25
+@dirrm lib/graphviz/python24
+@dirrm lib/graphviz/python23
 @dirrm lib/graphviz/python
 @dirrm lib/graphviz/ruby
 @dirrm lib/graphviz/sharp

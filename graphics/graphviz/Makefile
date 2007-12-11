@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.14.1
-PORTREVISION=	3
+PORTVERSION=	2.16
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -34,7 +33,7 @@ MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 \
 		dotty.1 gc.1 gvcolor.1 gvpack.1 gvpr.1 gxl2dot.1 \
 		lneato.1 nop.1 prune.1 sccmap.1 tred.1 unflatten.1
-MAN3=		agraph.3 cdt.3 expr.3 graph.3 gvc.3 pathplan.3
+MAN3=		agraph.3 cdt.3 cgraph.3 graph.3 gvc.3 pathplan.3
 MAN7=		graphviz.7
 MLINKS=		dot.1 circo.1 \
 		gxl2dot.1 dot2gxl.1 \
@@ -53,9 +52,7 @@ FIX_INCLUDE=	ast_common.h \
 		lib/pathplan/vis.h lib/pathplan/vispath.h \
 		lib/common/arith.h lib/common/logic.h \
 		lib/common/globals.h \
-		lib/gvc/gvcint.h \
-		lib/expr/exlib.h lib/expr/exgram.h \
-		lib/expr/expr.h
+		lib/gvc/gvcint.h
 
 PATCH_TCL_SCRIPTS=	tclpkg/gv/Makefile.in tclpkg/tcldot/demo/doted \
 			tclpkg/tclpathplan/demo/pathplan tclpkg/tkspline/demo/spline
@@ -73,6 +70,7 @@ OPTIONS=	TK "Build with TK support" on \
 		NLS "Build with gettext support" on \
 		PANGOCAIRO "build with pangocairo support" off \
 		GTK "build with gtk plugin" off \
+		GDK_PIXBUF  "build with gdk pixbuf support" off \
 		GNOMEUI  "build with libgnomeui support" off \
 		DIGCOLA "DIGCOLA features in neato layout engine" off \
 		IPSEPCOLA "IPSEPCOLA features in neato layout engine" off \
@@ -158,8 +156,20 @@ USE_XORG+=		sm ice xext xinerama xi xrandr xcursor xfixes
 IGNORE=			option WITH_PANGOCAIRO is required for option WITH_GTK
 .endif
 .else
-CONFIGURE_ARGS+=	--without-gtk
+CONFIGURE_ARGS+=	--without-gtk --without-gdk-pixbuf=yes
 PLIST_SUB+=		WITH_GTK="@comment "
+.endif
+
+.if defined(WITH_GDK_PIXBUF)
+CONFIGURE_ARGS+=	--with-gdk-pixbuf=yes
+PLIST_SUB+=		WITH_PIXBUF=""
+USE_GNOME+=		gdkpixbuf
+.if !defined(WITH_GTK)
+IGNORE=			option WITH_GTK is required for option WITH_GDK_PIXBUF
+.endif
+.else
+CONFIGURE_ARGS+=	--without-gdk-pixbuf=yes
+PLIST_SUB+=		WITH_PIXBUF="@comment "
 .endif
 
 .if defined(WITH_GNOMEUI)
@@ -327,6 +337,8 @@ post-install-script:
 .endif
 
 post-install: install-ldconfig-file
+	cd ${WRKSRC}/lib/expr && \
+		${MAKE} ${INSTALL_TARGET}
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} ${FIX_INCLUDE} ${PREFIX}/include/graphviz/
 .if !defined(NOPORTDOCS)
