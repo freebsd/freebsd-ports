@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	${DICT}-aspell
-DISTVERSION=	6-fy-0.11-0
+DISTVERSION=	6-fy-0.12-0
 CATEGORIES=	textproc
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell Frisian (Frysk) dictionary
 
 DICT=	 	fy
