@@ -7531,6 +7531,7 @@ mirage		ports/graphics/mirage
 mird		ports/databases/mird
 miredo		ports/net/miredo
 mirmon		ports/misc/mirmon
+miro		ports/multimedia/miro
 mirror		ports/ftp/mirror
 mirrormagic	ports/games/mirrormagic
 miscom		ports/games/miscom
