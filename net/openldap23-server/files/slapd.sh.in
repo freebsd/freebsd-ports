@@ -43,7 +43,7 @@ start_precmd()
 {
   local slapd_ownername slapd_groupname
 
-  case x"$slapd_owner" in
+  case "$slapd_owner" in
   ""|[Nn][Oo][Nn][Ee]|[Dd][Ee][Ff][Aa][Uu][Ll][Tt])
     ;;
   *)
