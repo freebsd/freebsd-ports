@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	iscsi-target
-PORTVERSION=	20071025
+PORTVERSION=	20071205
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/ \
-                http://www.magnesium.net/~mdf/distfiles/
+		http://www.magnesium.net/~mdf/distfiles/
 DISTNAME=	netbsd-iscsi-${PORTVERSION}
 
 MAINTAINER=	mark@foster.cc
@@ -31,7 +31,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|_FLAGS= -pthread|_FLAGS= ${PTHREAD_CFLAGS}|' ${WRKSRC}/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/iscsi-target ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/iscsi-target ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/etc/iscsi
 .for i in targets passwd auths
 	${INSTALL_DATA} ${WRKSRC}/etc/$i ${PREFIX}/etc/iscsi/$i.sample
