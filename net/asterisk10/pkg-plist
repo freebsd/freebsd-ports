@@ -58,8 +58,6 @@ etc/asterisk/meetme.conf-dist
 etc/asterisk/mgcp.conf-dist
 @unexec if cmp -s %D/etc/asterisk/misdn.conf %D/etc/asterisk/misdn.conf-dist; then rm -f %D/etc/asterisk/misdn.conf; fi
 etc/asterisk/misdn.conf-dist
-@unexec if cmp -s %D/etc/asterisk/modem.conf %D/etc/asterisk/modem.conf-dist; then rm -f %D/etc/asterisk/modem.conf; fi
-etc/asterisk/modem.conf-dist
 @unexec if cmp -s %D/etc/asterisk/modules.conf %D/etc/asterisk/modules.conf-dist; then rm -f %D/etc/asterisk/modules.conf; fi
 etc/asterisk/modules.conf-dist
 @unexec if cmp -s %D/etc/asterisk/musiconhold.conf %D/etc/asterisk/musiconhold.conf-dist; then rm -f %D/etc/asterisk/musiconhold.conf; fi
@@ -137,6 +135,7 @@ include/asterisk/ast_expr.h
 include/asterisk/astdb.h
 include/asterisk/astmm.h
 include/asterisk/astobj.h
+include/asterisk/astobj2.h
 include/asterisk/astosp.h
 include/asterisk/autoconfig.h
 include/asterisk/build.h

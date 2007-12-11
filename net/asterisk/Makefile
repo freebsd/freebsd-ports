@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.11
-PORTREVISION=	3
+PORTVERSION=	1.4.13
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -18,6 +17,7 @@ COMMENT=	An Open Source PBX and telephony toolkit
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.51:${PORTSDIR}/devel/newt \
+		gsm.1:${PORTSDIR}/audio/gsm \
 		curl.4:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
@@ -26,6 +26,7 @@ ONLY_FOR_ARCHS=	i386 sparc64 amd64
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
 CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GMAKE=	yes
 USE_BISON=	build
@@ -157,7 +158,7 @@ LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2
 .endif
 
 .if defined(WITH_CODEC_PATCH)
-PATCHFILES=	asterisk-1.4.11-codec-negotiation-20070831.diff.gz
+PATCHFILES=	asterisk-1.4.13-codec-negotiation-20071112.diff.gz
 PATCH_SITES=	http://b2bua.org/chrome/site/
 EXTRA_PATCHES+=	${PATCHDIR}/codecnego-patch-Makefile
 .else
