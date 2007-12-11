@@ -4,7 +4,7 @@
 %%YULE%%sbin/yule
 %%YULE%%sbin/yulectl
 %%YULE%%etc/rc.d/yule.sh
-%%YULE%%@unexec echo "To delete the yule user permanently, use 'pw userdel ${USER}'"
+%%YULE%%@unexec echo "To delete the yule user permanently, use 'pw userdel yule'"
 %%YULE%%@unexec rmdir /var/lib/yule 2>/dev/null || true
 %%SAMHAIN%%sbin/samhain
 %%SAMHAIN%%etc/rc.d/samhain.sh
