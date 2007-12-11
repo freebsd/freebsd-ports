@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bouml
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.5
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://bouml.free.fr/
