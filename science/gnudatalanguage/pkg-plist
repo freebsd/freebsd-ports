@@ -15,6 +15,8 @@
 %%MASTER%%%%PORTDOCS%%%%EXAMPLESDIR%%/dicom/gdlffdicom_trim.pro
 %%MASTER%%%%PORTDOCS%%%%EXAMPLESDIR%%/dist.pro
 %%MASTER%%%%PORTDOCS%%%%EXAMPLESDIR%%/factorial.pro
+%%MASTER%%%%PORTDOCS%%%%EXAMPLESDIR%%/file_basename.pro
+%%MASTER%%%%PORTDOCS%%%%EXAMPLESDIR%%/file_dirname.pro
 %%MASTER%%%%PORTDOCS%%%%EXAMPLESDIR%%/file_lines.pro
 %%MASTER%%%%PORTDOCS%%%%EXAMPLESDIR%%/filepath.pro
 %%MASTER%%%%PORTDOCS%%%%EXAMPLESDIR%%/findfile.pro
