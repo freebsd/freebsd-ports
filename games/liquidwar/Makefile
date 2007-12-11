@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	liquidwar
-PORTVERSION=	5.6.3
-PORTREVISION=	3
+PORTVERSION=	5.6.4
 CATEGORIES=	games
 MASTER_SITES=	http://liquidwar.sunsite.dk/archive/ \
 		${MASTER_SITE_SAVANNAH} \
@@ -17,7 +16,7 @@ MASTER_SITE_SUBDIR=	liquidwar
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	You control an army of liquid and have to try and eat your opponents
 
-LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	alleg.43:${PORTSDIR}/devel/allegro-devel
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
