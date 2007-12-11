@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.brucker.ch/projects/svninfo/download/ \
 MASTER_SITE_SUBDIR=	miwi
 PKGNAMEPREFIX=	latex-
 
-MAINTAINER=	henrik@brixandersen.dk
+MAINTAINER=	brix@FreeBSD.org
 COMMENT=	A LaTeX package for Subversion support
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
