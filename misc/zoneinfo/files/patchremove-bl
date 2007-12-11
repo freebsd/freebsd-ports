@@ -1,0 +1,11 @@
+--- zone.tab.orig	Tue Dec  4 09:46:40 2007
++++ zone.tab	Tue Dec  4 09:46:50 2007
+@@ -77,7 +77,7 @@
+ BH	+2623+05035	Asia/Bahrain
+ BI	-0323+02922	Africa/Bujumbura
+ BJ	+0629+00237	Africa/Porto-Novo
+-BL	+1753-06251	America/St_Barthelemy
++#BL	+1753-06251	America/St_Barthelemy
+ BM	+3217-06446	Atlantic/Bermuda
+ BN	+0456+11455	Asia/Brunei
+ BO	-1630-06809	America/La_Paz
