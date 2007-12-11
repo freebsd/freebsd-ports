@@ -1,9 +1,7 @@
 lib/aspell-%%VER%%/sk.dat
-share/aspell/sk-extend.rws
-share/aspell/sk-extended.multi
+lib/aspell-%%VER%%/sk_affix.dat
 share/aspell/sk.multi
 share/aspell/sk.rws
-share/aspell/sk_SK-extended.alias
 share/aspell/sk_SK.alias
-share/aspell/slovak-extended.alias
 share/aspell/slovak.alias
+share/aspell/slovensky.alias
