@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bouncycastle
-PORTVERSION=	1.37
+PORTVERSION=	1.38
 CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/ \
 		http://polydistortion.net/bc/download/ \
