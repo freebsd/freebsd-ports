@@ -127,6 +127,9 @@ post-patch:
 .endif
 .endif
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's|"freebsd7"|"freebsd7", "freebsd8"|' ${WRKSRC}/do_configure.py
+
 do-configure:
 	@cd ${WRKSRC} && ${MAKE} configure
 
