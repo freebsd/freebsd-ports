@@ -23,7 +23,7 @@ INSTALL_DIR?=	www/${PORTNAME}
 PLIST=		${WRKDIR}/pkg-plist
 
 WANT_PHP_WEB=	yes
-USE_PHP=	session imap
+USE_PHP=	session imap pcre
 
 .include <bsd.port.pre.mk>
 
