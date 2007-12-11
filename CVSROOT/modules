@@ -494,6 +494,7 @@ argus-monitor	ports/net-mgmt/argus-monitor
 ari-yahoo	ports/net-im/ari-yahoo
 aria		ports/www/aria
 aria2		ports/www/aria2
+aria2fe		ports/www/aria2fe
 ariadne		ports/biology/ariadne
 aribas		ports/math/aribas
 arirang		ports/security/arirang
