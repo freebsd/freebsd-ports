@@ -1,5 +1,6 @@
---- modules/Makefile.in.orig	Tue Jul 24 07:13:54 2007
-+++ modules/Makefile.in	Sun Sep 23 22:16:11 2007
+diff -Naur modules/Makefile.in.orig modules/Makefile.in
+--- modules/Makefile.in.orig	2007-07-23 21:13:54.000000000 +0000
++++ modules/Makefile.in	2007-08-12 14:25:19.000000000 +0000
 @@ -11,7 +11,7 @@
  CXX := @CXX@ -Wall
  SED := sed
@@ -36,7 +37,7 @@
  ysigchan.yate wpcard.yate zapcard.yate: LOCALLIBS = -lyatess7
  
 -h323chan.yate: LOCALFLAGS = -DPHAS_TEMPLATES -D_REENTRANT -DP_HAS_SEMAPHORES @H323_INC@
-+h323chan.yate: LOCALFLAGS = -DPHAS_TEMPLATES -D_REENTRANT -DP_HAS_SEMAPHORES @H323_INC@ -L%%LOCALBASE%%/lib -L%%LOCALBASE%%/lib
++h323chan.yate: LOCALFLAGS = -DPHAS_TEMPLATES -D_REENTRANT -DP_HAS_SEMAPHORES @H323_INC@ -L%%LOCALBASE%%/lib
  h323chan.yate: LOCALLIBS = @H323_LIB@
  
 -pgsqldb.yate: LOCALFLAGS = @PGSQL_INC@
@@ -48,7 +49,7 @@
  mysqldb.yate: LOCALLIBS = @MYSQL_LIB@
  
 -enumroute.yate: LOCALLIBS = -lresolv
-+enumroute.yate: LOCALLIBS = -L%%LOCALBASE%%/lib
++enumroute.yate: LOCALLIBS = -lc
  
  alsachan.yate: LOCALLIBS = -lasound
  
