@@ -1,5 +1,5 @@
---- Makefile.in.orig	2007-04-24 13:08:01.000000000 +0200
-+++ Makefile.in	2007-09-20 08:47:23.000000000 +0200
+--- Makefile.in.orig	2007-04-24 11:08:01.000000000 +0000
++++ Makefile.in	2007-12-03 21:15:51.000000000 +0000
 @@ -31,9 +31,11 @@
  install-conf:
  	@echo Installing configuration files
@@ -31,7 +31,7 @@
  	    	fi; \
  	    	fi; \
  	    done ; \
-@@ -117,48 +119,28 @@
+@@ -117,48 +119,29 @@
  	doxygen $(top_srcdir)/docs/doxygen.conf
  
  install-htdocs:
@@ -48,8 +48,9 @@
 -		cd $(DESTDIR)$(htdocsdir) && find . -name ".svn" -type d -print | xargs rm -rf 2>/dev/null || true; \
 -	    fi; \
 -	fi
++	    $(MKINSTALLDIRS) $(DESTDIR)$(EXAMPLESDIR) ; \
 +		test -d $(htdocs-srcdir) && (cd $(htdocs-srcdir) && cp -rp index.html $(DESTDIR)$(EXAMPLESDIR)) && \
-+		( [ ! -f $(DESTDIR)$(htdocsdir)/index.html ] && cp -p $(DESTDIR)$(EXAMPLESDIR)/index.html $(DESTDIR)$(htdocsdir)/index.html)
++		( [ ! -f $(DESTDIR)$(htdocsdir)/index.html ] && cp -p $(DESTDIR)$(EXAMPLESDIR)/index.html $(DESTDIR)$(htdocsdir)/index.html) || true
  
  install-error:
 -	-@if [ -d $(DESTDIR)$(errordir) ]; then \
@@ -89,7 +90,7 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -206,12 +188,14 @@
+@@ -206,12 +189,14 @@
  	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
  	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
  	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8
