@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	deluge
-PORTVERSION=	0.5.6.2
+PORTVERSION=	0.5.7.1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/tarball/${PORTVERSION}/
 
