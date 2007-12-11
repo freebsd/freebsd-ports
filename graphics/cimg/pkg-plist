@@ -114,7 +114,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x77.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x78.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x79.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x7a.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_0x7e.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/functions_func_0x62.html
@@ -171,8 +170,6 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/structcimg__library_1_1_c_img_exception.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/structcimg__library_1_1_c_img_list-members.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/structcimg__library_1_1_c_img_list.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structcimg__library_1_1_c_img_stats-members.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/structcimg__library_1_1_c_img_stats.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/tab_b.gif
 %%PORTDOCS%%%%DOCSDIR%%/reference/tab_l.gif
 %%PORTDOCS%%%%DOCSDIR%%/reference/tab_r.gif

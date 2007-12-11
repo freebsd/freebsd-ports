@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cimg
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.5
 PORTEPOCH=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -49,16 +48,19 @@ ALL_TARGET=	oFreeBSD
 ALL_TARGET=	dFreeBSD
 . endif
 
+.if !defined(WITHOUT_GM)
+RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
+.endif
+.if !defined(WITHOUT_MEDCON)
+RUN_DEPENDS+=	medcon:${PORTSDIR}/graphics/xmedcon
+.endif
+
 DOCBASE=	CHANGES.txt README.txt
 DOCREFS=	download.shtml favicon.ico favicon.png foot_reference.html	\
 		head.html head_reference.html img index.shtml links.shtml	\
 		news.shtml reference screenshots.shtml
 .else
 NOBUILD=	yes
-.endif
-
-.if !defined(WITHOUT_IM)
-RUN_DEPENDS+=	${LOCALBASE}/lib/libMagick.so.10:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 pre-configure:
