@@ -668,6 +668,7 @@
     SUBDIR += uptimec
     SUBDIR += uptimed
     SUBDIR += usbhotkey
+    SUBDIR += usbutils
     SUBDIR += uschedule
     SUBDIR += userinfo
     SUBDIR += userlist
