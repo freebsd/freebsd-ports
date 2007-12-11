@@ -307,7 +307,6 @@
     SUBDIR += last.fm
     SUBDIR += laudio
     SUBDIR += liba52
-    SUBDIR += liba52-devel
     SUBDIR += libadplug
     SUBDIR += libaiff
     SUBDIR += libamrnb

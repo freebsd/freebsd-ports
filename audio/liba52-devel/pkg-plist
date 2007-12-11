@@ -1,9 +1,0 @@
-include/a52dec-devel/a52.h
-include/a52dec-devel/a52_internal.h
-include/a52dec-devel/a52_util.h
-include/a52dec-devel/mm_accel.h
-lib/liba52-devel.a
-lib/liba52-devel.la
-lib/liba52-devel.so
-lib/liba52-devel.so.%%LIB_VERSION%%
-@dirrm include/a52dec-devel
