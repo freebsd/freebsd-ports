@@ -1,39 +1,28 @@
---- driver/Makefile.in.orig	Tue May 23 16:01:35 2006
-+++ driver/Makefile.in	Sun Jun  4 00:01:46 2006
-@@ -121,7 +121,7 @@
- 		  test-randr    xdpyinfo
+--- driver/Makefile.in.orig	2007-11-13 00:39:35.000000000 -0800
++++ driver/Makefile.in	2007-12-08 23:23:01.000000000 -0800
+@@ -81,8 +81,8 @@
  
- MOTIF_LIBS	= @MOTIF_LIBS@ @XPM_LIBS@ $(XMU_LIBS)
--GTK_LIBS	= @GTK_LIBS@ $(XMU_LIBS)
-+GTK_LIBS	= @GTK_LIBS@ @XPM_LIBS@ $(XMU_LIBS)
- XML_LIBS	= @XML_LIBS@
  
- XDPMS_LIBS	= @XDPMS_LIBS@
-@@ -236,9 +236,8 @@
- MEN		= $(MEN_1) @MEN_OSX@
+ AD_DIR		= @APPDEFAULTS@
+-PAM_DIR		= /etc/pam.d
+-PAM_CONF	= /etc/pam.conf
++PAM_DIR		= ${prefix}/etc/pam.d
++PAM_CONF	= ${prefix}/etc/pam.conf
  
+ UTILS_SRC	= $(srcdir)/../utils
+ UTILS_BIN	= ../utils
+@@ -239,7 +239,6 @@
  EXTRAS		= README Makefile.in \
--		  XScreenSaver.ad.in XScreenSaver-Xm.ad xscreensaver.pam \
-+		  XScreenSaver.ad.in XScreenSaver-Xm.ad \
+ 		  XScreenSaver.ad.in XScreenSaver-Xm.ad xscreensaver.pam \
  		  xscreensaver-demo.glade2 xscreensaver-demo.glade2p \
 -		  screensaver-properties.desktop.in \
  		  .gdbinit
  VMSFILES	= compile_axp.com compile_decc.com link_axp.com link_decc.com \
  		  vms-getpwnam.c vms-pwd.h vms-hpwd.c vms-validate.c \
-@@ -257,7 +256,7 @@
- tests: $(TEST_EXES)
- 
- install:   install-program   install-ad    install-scripts \
--	   install-gnome     install-man   install-xml install-pam
-+	   install-gnome     install-man   install-xml
- uninstall: uninstall-program uninstall-ad  \
- 	   uninstall-gnome   uninstall-man uninstall-xml  
- 
-@@ -486,21 +485,6 @@
-  $$e ""									     ;\
+@@ -490,21 +489,6 @@
  	  fi ;								\
  	fi
--
+ 
 -# screensaver-properties.desktop
 -# into /usr/share/applications/
 -install-gnome:: screensaver-properties.desktop
@@ -48,6 +37,7 @@
 -		$(INSTALL_DATA) screensaver-properties.desktop		      \
 -		  $(install_prefix)$(GTK_APPDIR)/$$name2		     ;\
 -	 fi
- 
+-
  
  # xscreensaver.xpm
+ # into /usr/share/pixmaps/

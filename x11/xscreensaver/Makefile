@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.03
+PORTVERSION=	5.04
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -23,19 +23,34 @@ USE_XPM=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
+CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
+		--with-jpeg=${LOCALBASE} --with-xshm-ext --with-xdbe-ext \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
 		--with-configdir=${PREFIX}/share/xscreensaver/config/ \
-		--with-jpeg=${LOCALBASE} --without-gnome --without-kerberos \
-		--without-motif
+		--with-dpms-ext --with-xinerama-ext --with-xf86vmode-ext \
+		--with-xf86gamma-ext --with-randr-ext --enable-locking
 
 OPTIONS=	ALL_FORTUNES "Run fortune with -sa argument" off \
+		KERBEROS "Add support for kerberos" off \
+		PAM "Add support for pam authentication" off \
 		SETUID_HACKS "Install sonar hack suid so it can ping" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ALL_FORTUNES)
 CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
+.endif
+.if defined(WITH_KERBEROS)
+CONFIGURE_ARGS+=	--with-kerberos
+.else
+CONFIGURE_ARGS+=	--without-kerberos
+.endif
+.if defined(WITH_PAM)
+CONFIGURE_ARGS+=	--with-pam
+PLIST_SUB+=		PAM=""
+.else
+CONFIGURE_ARGS+=	--without-pam
+PLIST_SUB+=		PAM="@comment not installed: "
 .endif
 .if defined(WITH_SETUID_HACKS)
 CONFIGURE_ARGS+=	--with-setuid-hacks
@@ -82,6 +97,7 @@ MAN6=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 	wander.6 webcollage.6 whirlwindwarp.6 whirlygig.6 worm.6 wormhole.6 \
 	xanalogtv.6 xflame.6 xjack.6 xlyap.6 xmatrix.6 xrayswarm.6 \
 	xspirograph.6 xsublim.6 zoom.6 cwaves.6 glcells.6 voronoi.6 \
+	abstractile.6 moebiusgears.6 lockward.6 \
 	xscreensaver-gl-helper.6
 
 .if ${ARCH} == "amd64"
@@ -105,6 +121,14 @@ post-patch:
 		-e 's#malloc.h#stdlib.h#g' \
 		-e 's#/usr/X11R6#${LOCALBASE}#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
+.if defined(WITH_PAM)
+.for f in driver/passwd-pam.c driver/xscreensaver.man
+	@ ${CP} ${WRKSRC}/${f} ${WRKSRC}/${f}.presed
+	@ ${SED} -e "s#/etc/pam.d#${PREFIX}/etc/pam.d#g" \
+	    ${WRKSRC}/${f}.presed > ${WRKSRC}/${f}
+.endfor
+	@ ${CP} ${FILESDIR}/xscreensaver.pam ${WRKSRC}/driver/xscreensaver.pam
+.endif
 
 post-install:
 	@(if test -x ${LOCALBASE}/bin/xscreensaver-hacks/webcollage-helper; then \

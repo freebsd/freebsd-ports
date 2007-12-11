@@ -5,6 +5,7 @@ bin/xscreensaver-getimage
 bin/xscreensaver-getimage-file
 bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
+bin/xscreensaver-hacks/abstractile
 bin/xscreensaver-hacks/anemone
 bin/xscreensaver-hacks/anemotaxis
 bin/xscreensaver-hacks/antinspect
@@ -121,6 +122,7 @@ bin/xscreensaver-hacks/lisa
 bin/xscreensaver-hacks/lissie
 bin/xscreensaver-hacks/ljlatest
 bin/xscreensaver-hacks/lmorph
+bin/xscreensaver-hacks/lockward
 bin/xscreensaver-hacks/loop
 bin/xscreensaver-hacks/m6502
 bin/xscreensaver-hacks/maze
@@ -130,6 +132,7 @@ bin/xscreensaver-hacks/metaballs
 bin/xscreensaver-hacks/mirrorblob
 bin/xscreensaver-hacks/mismunch
 bin/xscreensaver-hacks/moebius
+bin/xscreensaver-hacks/moebiusgears
 bin/xscreensaver-hacks/moire
 bin/xscreensaver-hacks/moire2
 bin/xscreensaver-hacks/molecule
@@ -215,8 +218,10 @@ bin/xscreensaver-hacks/xspirograph
 bin/xscreensaver-hacks/xsublim
 bin/xscreensaver-hacks/zoom
 bin/xscreensaver-text
+%%PAM%%etc/pam.d/xscreensaver
 share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/README
+%%DATADIR%%/config/abstractile.xml
 %%DATADIR%%/config/anemone.xml
 %%DATADIR%%/config/anemotaxis.xml
 %%DATADIR%%/config/antinspect.xml
@@ -336,6 +341,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/lisa.xml
 %%DATADIR%%/config/lissie.xml
 %%DATADIR%%/config/lmorph.xml
+%%DATADIR%%/config/lockward.xml
 %%DATADIR%%/config/loop.xml
 %%DATADIR%%/config/m6502.xml
 %%DATADIR%%/config/maze.xml
@@ -345,6 +351,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/mirrorblob.xml
 %%DATADIR%%/config/mismunch.xml
 %%DATADIR%%/config/moebius.xml
+%%DATADIR%%/config/moebiusgears.xml
 %%DATADIR%%/config/moire.xml
 %%DATADIR%%/config/moire2.xml
 %%DATADIR%%/config/molecule.xml
