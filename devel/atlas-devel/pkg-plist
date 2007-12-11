@@ -14,7 +14,6 @@ include/Atlas-C++-0.6/Atlas/Formatter.h
 include/Atlas-C++-0.6/Atlas/Funky/FEncoder.h
 include/Atlas-C++-0.6/Atlas/Message/DecoderBase.h
 include/Atlas-C++-0.6/Atlas/Message/Element.h
-include/Atlas-C++-0.6/Atlas/Message/Layer.h
 include/Atlas-C++-0.6/Atlas/Message/MEncoder.h
 include/Atlas-C++-0.6/Atlas/Message/QueuedDecoder.h
 include/Atlas-C++-0.6/Atlas/Negotiate.h
