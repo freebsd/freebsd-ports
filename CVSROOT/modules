@@ -17268,7 +17268,6 @@ xmradio		ports/audio/xmradio
 xmris		ports/games/xmris
 xmrm		ports/graphics/xmrm
 xmsg		ports/x11/xmsg
-xmule		ports/net-p2p/xmule
 xmulti		ports/games/xmulti
 xmx		ports/x11/xmx
 xmysqladmin	ports/databases/xmysqladmin
