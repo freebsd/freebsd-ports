@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.11.4
+DISTVERSION=	0.12.0
 CATEGORIES=	www
 MASTER_SITES=	SFE
 
@@ -26,12 +26,9 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack libxml2
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+LINGUAS=	ca de es fr it ja nl pt_BR ru sv
 PLIST_FILES=	bin/aria2c \
-		share/locale/de/LC_MESSAGES/aria2c.mo \
-		share/locale/fr/LC_MESSAGES/aria2c.mo \
-		share/locale/ja/LC_MESSAGES/aria2c.mo \
-		share/locale/nl/LC_MESSAGES/aria2c.mo \
-		share/locale/ru/LC_MESSAGES/aria2c.mo
+		${LINGUAS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2c.mo|}
 MAN1=		aria2c.1
 
 post-configure:
