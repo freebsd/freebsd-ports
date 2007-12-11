@@ -7,14 +7,12 @@
 
 PORTNAME=	noia-warm
 PORTVERSION=	0.95
-MASTER_SITES=	http://easylinuxguide.com/downloads/kde-iconthemes/
+MASTER_SITES=	http://fc05.deviantart.com/files/icon/nixicons/
 DISTNAME=	${PORTNAME:S/-//}kde${PORTVERSION:S/.//g}
 
 COMMENT=	KDE iconset variation of the 'Noia' icons using warm colors
 
 WRKSRC=		"${WRKDIR}/Noia Warm KDE ${PORTVERSION}"
 PORT_SHAREDIR=	"${PORTNAME}-${PORTVERSION}"
-
-BROKEN=		Unfetchable
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
