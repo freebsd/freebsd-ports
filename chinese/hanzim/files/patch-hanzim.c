@@ -1,11 +1,11 @@
---- hanzim.c.orig	Wed Mar 20 01:34:31 2002
-+++ hanzim.c	Sat Jun 14 09:20:04 2003
+--- ./hanzim.c.orig	2002-03-20 14:34:31.000000000 +0800
++++ ./hanzim.c	2007-11-08 16:33:14.000000000 +0800
 @@ -204,6 +204,16 @@
  main(int argc, char *argv[]) {
    Tcl_Interp *interp;
  
 +/* hanzim need a running XFree to do its initial setup, rectify */
-+  if (!(strcmp(argv[1], "-port-install")))
++  if (argc>1 && !(strcmp(argv[1], "-port-install")))
 +  {
 +        char *portdatadir = "%%PREFIX%%/lib/hanzim";
 +        init_vars(portdatadir);
