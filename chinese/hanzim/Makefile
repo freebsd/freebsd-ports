@@ -8,13 +8,16 @@
 
 PORTNAME=	hanzim
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese tk84
-MASTER_SITES=	http://kamares.ucsd.edu/~arobert/Files/Chinese/
+MASTER_SITES=	http://kamares.ucsd.edu/~arobert/Files/Chinese/ \
+		http://www.525183.com/freebsd/hanzim/ \
+		http://www.chinatinco.com/freebsd/hanzim/ \
+		http://525183.serverbox.org/freebsd/hanzim/
 MASTER_SITE_SUBDIR=	. Old
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunrychen@gmail.com
 COMMENT=	A Chinese character learning-aid program
 
 BUILD_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
