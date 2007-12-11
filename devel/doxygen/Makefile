@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
+MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
+		http://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	mwisnicki+freebsd@gmail.com

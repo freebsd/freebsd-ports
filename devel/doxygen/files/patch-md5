@@ -3,6 +3,29 @@ implementation. Try to trim this insanity, where we can...
 
 	-mi
 
+diff -ruN src/definition.cpp src/definition.cpp
+--- src/definition.cpp	Sat Sep  1 13:11:48 2007
++++ src/definition.cpp	Mon Dec  3 01:25:59 2007
+@@ -18,6 +18,7 @@
+ #include "qtbc.h"
+ #include <ctype.h>
+ #include <qregexp.h>
++#include <sys/types.h>
+ #include <md5.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -352,10 +353,8 @@
+ 
+ bool Definition::_docsAlreadyAdded(const QString &doc)
+ {
+-  uchar md5_sig[16];
+   QCString sigStr(33);
+-  MD5Buffer((const unsigned char *)doc.data(),doc.length(),md5_sig);
+-  MD5SigToString(md5_sig,sigStr.data(),33);
++  MD5Data((const unsigned char*)doc.data(),doc.length(),sigStr.data());
+   if (m_impl->docSignatures.find(sigStr)==-1) // new docs, add signature to prevent re-adding it
+   {
+     m_impl->docSignatures+=":"+sigStr;
 diff -ruN src/dirdef.cpp src/dirdef.cpp
 --- src/dirdef.cpp	Sun Jan 28 13:28:50 2007
 +++ src/dirdef.cpp	Mon Jun 11 18:32:26 2007
