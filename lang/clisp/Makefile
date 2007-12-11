@@ -6,65 +6,62 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2.41a
-PORTREVISION=	1
+PORTVERSION=	2.43
 CATEGORIES=	lang lisp
-MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION:C/[[:alpha:]]+$//} \
+MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION} \
 		ftp://sunsite.unc.edu/pub/Linux/devel/lang/lisp/
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A Common Lisp implementation
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv \
-		dvipdf:${PORTSDIR}/${GHOSTSCRIPT_PORT}
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv
 LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline
 
-NOT_FOR_ARCHS=	ia64
-NOT_FOR_ARCHS_REASON=	does not currently support this architecture
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:C/[[:alpha:]]+$//}
-BUILD_WRKSRC=	${WRKSRC}/${CONFIGURE_TARGET}
+USE_GHOSTSCRIPT_BUILD=	yes
+WANT_GNOME=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${MANPREFIX}/man" \
+		--elispdir="${DATADIR}/emacs" --vimdir="${DATADIR}/vim" \
+		--docdir="${DOCSDIR}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
+# Complaints if the environment changes between build stages.
+MAKE_ENV=	${CONFIGURE_ENV}
+BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-MAKE_ENV=	${CONFIGURE_ENV}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-MAKEMAKE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man \
-		--srcdir=${WRKSRC}/src --with-dynamic-ffi
 
 OPTIONS=	BDB "Build Berkeley Database module" off \
 		CLX_MIT "Build X11 module (original MIT version)" off \
 		CLX_NEW "Build X11 module (new faster version)" off \
 		FASTCGI "Build FastCGI module" off \
+		GDBM "Build GNU Database manager module" off \
+		GTK2 "Build Gtk+2 module" off \
 		ORACLE "Build Oracle database module" off \
-		PARI "Build PARI (math and calculator lib) module" off \
+		PARI "Build PARI (math and calc lib) module" off \
 		PCRE "Build PCRE (Perl Compatible Regexp) module" off \
 		PGSQL "Build PostgreSQL database module" off \
 		RAWSOCK "Build Raw Socket Access module" on \
+		SVM "Enable Support Vector Machines module" off \
 		WILDCARD "Build wildcard matching module" on \
 		ZLIB "Build ZLib interface module " off
 
 MAN1=		clisp.1
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-# Does not build with GCC 4.2.
-.if ${OSVERSION} >= 700000
-USE_GCC=	3.4
-.endif
-
-MODULES=	BDB CLX_MIT CLX_NEW FASTCGI ORACLE PARI PCRE PGSQL RAWSOCK \
-		WILDCARD ZLIB
-
+# Semgentation fault in amd64 when using 'mmap(2)'. Also in Linux/ia64.
 .if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--disable-mmap
-MAKEMAKE_ARGS+=	--disable-mmap
 .endif
+
+MODULES=	BDB CLX_MIT CLX_NEW FASTCGI GDBM GTK2 ORACLE PARI PCRE PGSQL \
+		RAWSOCK SVM WILDCARD ZLIB
 
 .for mod in ${MODULES}
 .   if defined(WITH_${mod})
@@ -75,8 +72,8 @@ PLIST_SUB+=	${mod}="@comment "
 .endfor
 
 .if defined(WITH_BDB)
-USE_BDB=	42+
-MAKEMAKE_ARGS+=	--with-module=berkeley-db
+USE_BDB=	43+
+CONFIGURE_ARGS+=--with-module=berkeley-db
 CPPFLAGS+=	-I${LOCALBASE}/include/db${BDB_VER}
 LDFLAGS+=	-L${LOCALBASE}/lib/db${BDB_VER}
 .endif
@@ -85,74 +82,86 @@ LDFLAGS+=	-L${LOCALBASE}/lib/db${BDB_VER}
 IGNORE=		selected different implementations of the same X11 module
 .endif
 .if defined(WITH_CLX_MIT) || defined(WITH_CLX_NEW)
-# Avoid USE_XLIB because of the additional CONFIGURE_ARGS.
-LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
+USE_XLIB=	yes
 .endif
 .if defined(WITH_CLX_MIT)
-MAKEMAKE_ARGS+=	--with-module=clx/mit-clx
+CONFIGURE_ARGS+=--with-module=clx/mit-clx
 .endif
 .if defined(WITH_CLX_NEW)
-MAKEMAKE_ARGS+=	--with-module=clx/new-clx
+CONFIGURE_ARGS+=--with-module=clx/new-clx
 .endif
 
 .if defined(WITH_FASTCGI)
 LIB_DEPENDS+=	fcgi.0:${PORTSDIR}/www/fcgi
-MAKEMAKE_ARGS+=	--with-module=fastcgi
+CONFIGURE_ARGS+=--with-module=fastcgi
+.endif
+
+.if defined(WITH_GDBM)
+LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+CONFIGURE_ARGS+=--with-module=gdbm
+.endif
+
+.if defined(WITH_GTK2)
+USE_GNOME=	gtk20 libglade2
+CONFIGURE_ARGS+=--with-module=gtk2
 .endif
 
 .if defined(WITH_ORACLE)
 BUILD_DEPENDS+=	${ORACLE_HOME}:${PORTSDIR}/databases/oracle8-client
-MAKEMAKE_ARGS+=	--with-module=oracle
+CONFIGURE_ARGS+=--with-module=oracle
 CPPFLAGS+=	-I${ORACLE_HOME}/rdbms/demo -I${ORACLE_HOME}/rdbms/public
 LDFLAGS+=	-L${ORACLE_HOME}/lib
-ORACLE_HOME=	${LOCALBASE}/oracle8-client
+ORACLE_HOME?=	${LOCALBASE}/oracle8-client
 .endif
 
 .if defined(WITH_PARI)
 LIB_DEPENDS+=	pari.2:${PORTSDIR}/math/pari
-MAKEMAKE_ARGS+=	--with-module=pari
-BROKEN=		Lisp stack overflow when building PARI module
+CONFIGURE_ARGS+=--with-module=pari
 .endif
 
 .if defined(WITH_PCRE)
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
-MAKEMAKE_ARGS+=--with-module=pcre
+CONFIGURE_ARGS+=--with-module=pcre
 .endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
-MAKEMAKE_ARGS+=	--with-module=postgresql
+CONFIGURE_ARGS+=--with-module=postgresql
 .endif
 
 .if defined(WITH_RAWSOCK)
-MAKEMAKE_ARGS+=	--with-module=rawsock
+CONFIGURE_ARGS+=--with-module=rawsock
+.endif
+
+.if defined(WITH_SVM)
+RUN_DEPENDS+=	svm-predict:${PORTSDIR}/science/libsvm
+CONFIGURE_ARGS+=--with-module=libsvm
 .endif
 
 .if defined(WITH_WILDCARD)
-MAKEMAKE_ARGS+=	--with-module=wildcard
+CONFIGURE_ARGS+=--with-module=wildcard
 .endif
 
 .if defined(WITH_ZLIB)
-MAKEMAKE_ARGS+=	--with-module=zlib
+CONFIGURE_ARGS+=--with-module=zlib
 .endif
 
 post-patch:
 .if ${ARCH} == "amd64"
-	@${REINPLACE_CMD} -Ee \
-		"s|^(subdir_configure_args=')|\1--build=${CONFIGURE_TARGET}|; \
-		 s|^(module_configure_flags=')|\1--build=${CONFIGURE_TARGET}|" \
-		${WRKSRC}/configure ${WRKSRC}/src/makemake.in
+# Override CONFIGURE_TARGET (amd64 -> x86_64) in configure scripts.
+	@${REINPLACE_CMD} -e \
+		"s|^subdir_configure_args='|&--build=${CONFIGURE_TARGET}|;" \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		"s|^module_configure_flags='|&--build=${CONFIGURE_TARGET}|" \
+		${WRKSRC}/src/makemake.in
 .endif
 .if defined(WITH_ORACLE)
 	@${REINPLACE_CMD} -e 's|-ldl||; s|-lpthread|-lcompat ${PTHREAD_LIBS}|' \
 		${WRKSRC}/modules/oracle/link.sh
 .endif
 
-post-configure:
-	cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ./makemake ${MAKEMAKE_ARGS} > Makefile && \
-		${MAKE} config.lisp
-	@${REINPLACE_CMD} -Ee 's|^(CFLAGS =)|\1 ${CPPFLAGS} ${CFLAGS}|' \
-		${BUILD_WRKSRC}/${MAKEFILE}
+post-install:
+	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.post.mk>

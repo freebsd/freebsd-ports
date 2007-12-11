@@ -1,0 +1,11 @@
+--- ./src/makemake.in.orig	Mon Oct 15 15:16:52 2007
++++ ./src/makemake.in	Fri Dec  7 17:28:56 2007
+@@ -1944,7 +1944,7 @@
+ echol "psdir   = ${PSDIR}"
+ echol "pdfdir  = ${PDFDIR}"
+ echol "libdir  = ${LIBDIR}"
+-echol "lisplibdir = \$(libdir)${NEXT_}\$(TOPDIR)"
++echol "lisplibdir = \$(libdir)${NEXT_}clisp"
+ if [ -n "$USE_GETTEXT" ] ; then
+   echol "localedir = ${LOCALEDIR}"
+ fi
