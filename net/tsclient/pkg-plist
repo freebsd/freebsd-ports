@@ -7,6 +7,7 @@ share/pixmaps/tsclient.png
 share/pixmaps/tsclient/banner-ar.png
 share/pixmaps/tsclient/banner-en.png
 share/pixmaps/tsclient/banner-es.png
+share/pixmaps/tsclient/banner-he.png
 share/pixmaps/tsclient/banner-hu.png
 share/pixmaps/tsclient/banner-ja.png
 share/pixmaps/tsclient/banner-ms.png
@@ -34,6 +35,7 @@ share/locale/es/LC_MESSAGES/tsclient.mo
 share/locale/fi/LC_MESSAGES/tsclient.mo
 share/locale/fr/LC_MESSAGES/tsclient.mo
 share/locale/gr/LC_MESSAGES/tsclient.mo
+share/locale/he/LC_MESSAGES/tsclient.mo
 share/locale/hu/LC_MESSAGES/tsclient.mo
 share/locale/id/LC_MESSAGES/tsclient.mo
 share/locale/it/LC_MESSAGES/tsclient.mo
@@ -47,20 +49,23 @@ share/locale/pl_PL/LC_MESSAGES/tsclient.mo
 share/locale/pt_BR/LC_MESSAGES/tsclient.mo
 share/locale/pt_PT/LC_MESSAGES/tsclient.mo
 share/locale/ru/LC_MESSAGES/tsclient.mo
-share/locale/se/LC_MESSAGES/tsclient.mo
+share/locale/sv/LC_MESSAGES/tsclient.mo
 share/locale/tr/LC_MESSAGES/tsclient.mo
 share/locale/xh/LC_MESSAGES/tsclient.mo
 share/locale/zh_CN/LC_MESSAGES/tsclient.mo
+share/locale/zh_HK/LC_MESSAGES/tsclient.mo
 share/locale/zh_TW/LC_MESSAGES/tsclient.mo
+@dirrmtry share/application-registry
 @dirrmtry share/locale/gr/LC_MESSAGES
 @dirrmtry share/locale/gr
 @dirrmtry share/locale/nl_NL/LC_MESSAGES
 @dirrmtry share/locale/nl_NL
 @dirrmtry share/locale/pl_PL/LC_MESSAGES
 @dirrmtry share/locale/pl_PL
-@dirrmtry share/locale/se/LC_MESSAGES
-@dirrmtry share/locale/se
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/mime-info
 @dirrm share/pixmaps/tsclient
 @dirrmtry share/applications

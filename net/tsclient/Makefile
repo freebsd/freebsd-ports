@@ -6,45 +6,64 @@
 #
 
 PORTNAME=	tsclient
-PORTVERSION=	0.148
-PORTREVISION=	3
+PORTVERSION=	0.150
 CATEGORIES=	net gnome
-MASTER_SITES=	http://www.gnomepro.com/tsclient/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@thepentagon.org
 COMMENT=	A GNOME 2 frontend for rdesktop and vncviewer
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 
-.ifdef (WITH_TIGHTVNC)
-RUN_DEPENDS+=	vncviewer:${PORTSDIR}/net/tightvnc
-.endif
+OPTIONS=	GNOME		"Build with gnome support" on \
+		TIGHTVNC	"vncviewer support" off \
+		XNEST		"X via Xnest support (experimental)" off
 
-.ifdef (WITH_XNEST)
-RUN_DEPENDS+=	Xnest:${X_NESTSERVER_PORT}
-.endif
-
+USE_AUTOTOOLS=	libtool:15 automake:19 autoconf:261
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		tsclient.1
+PORTDOCS=	COPYING NEWS README
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "   set WITH_TIGHTVNC for vncviewer support"
-	@${ECHO_MSG} "   set WITH_XNEST for X via Xnest support (experimental)"
-	@${ECHO_MSG} ""
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GNOME)
+USE_GNOME+=	gnomeprefix gnomehack libgnomeui
+.else
+CONFIGURE_ARGS+=	--disable-gnome
+.endif
+
+.if defined(WITH_TIGHTVNC)
+RUN_DEPENDS+=	vncviewer:${PORTSDIR}/net/tightvnc
+.endif
+
+.if defined(WITH_XNEST)
+RUN_DEPENDS+=	Xnest:${X_NESTSERVER_PORT}
+.endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/applet/d' \
+		${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e '/^SUBDIRS/ s,applet ,,g' \
+			  -e '/^man1dir *=/ s,datadir,prefix,g' \
+		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|g' \
-		${WRKSRC}/configure
+		${WRKSRC}/aclocal.m4
 
 post-install:
 	@${LN} -sf ${PREFIX}/share/pixmaps/tsclient/tsclient.png \
 		${PREFIX}/share/pixmaps/tsclient.png
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+. for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+. endfor
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
