@@ -31,12 +31,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 pre-everything::
 .if !defined(WITH_FAM)
 	@${ECHO} ""
@@ -45,4 +39,4 @@ pre-everything::
 	@${ECHO} ""
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
