@@ -1,0 +1,3 @@
+sbin/lsusb
+%%DATADIR%%/usb.ids.gz
+@dirrm %%DATADIR%%
