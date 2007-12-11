@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	irpf
-PORTVERSION=	2007.1.0
-PORTREVISION=	3
+PORTVERSION=	2007.2.0
 CATEGORIES=	portuguese finance java
 MASTER_SITES=	http://www.receita.fazenda.gov.br/publico/programas/irpf/2007/PGDIrpf2007/Java/ZIP/
 PKGNAMEPREFIX?=	pt_BR-
-DISTNAME=	irpf2007v1.0
+DISTNAME=	irpf2007v2.0
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Programa do Imposto de Renda Pessoa Fisica 2007 versao Java
-
-BROKEN=		Size mismatch
 
 USE_ZIP=	yes
 
