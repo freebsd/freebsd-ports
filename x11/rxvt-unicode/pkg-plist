@@ -1,7 +1,6 @@
 bin/urxvt
 bin/urxvtc
 bin/urxvtd
-%%PERL%%lib/urxvt/perl/automove-background
 %%PERL%%lib/urxvt/perl/block-graphics-to-ascii
 %%PERL%%lib/urxvt/perl/digital-clock
 %%PERL%%lib/urxvt/perl/example-refresh-hooks
