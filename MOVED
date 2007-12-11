@@ -3332,3 +3332,6 @@ mail/smc-milter||2007-12-03|Relies on BIND 8, which is EOL
 net-p2p/xmule||2007-12-11|It is no longer developed
 audio/liba52-devel||2007-12-11|Does not work
 www/squid25||2007-12-11|Has expired: This version is no longer supported by the developers
+x11-themes/kde-icons-gorilla_svg||2007-12-11|Unfetchable
+x11-themes/kde-icons-kids||2007-12-11|Unfetchable
+x11-themes/kde-icons-outline||2007-12-11|Unfetchable
