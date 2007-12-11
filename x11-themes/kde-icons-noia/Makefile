@@ -7,17 +7,14 @@
 
 PORTNAME=	noia
 PORTVERSION=	1.00
-MASTER_SITES=	http://files.deviantart.com/f/2003/37/1/0/
-DISTNAME=	noiakdeicon100
+MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
+DISTNAME=	noia-kde-icons-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 COMMENT=	KDE Noia complete iconset
 
 WRKSRC=		"${WRKDIR}/noia_kde_${PORTVERSION:C/\.//}"
 PORT_SHAREDIR=	${PORTNAME}
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
 
 .include "${.CURDIR}/Makefile.icons"
