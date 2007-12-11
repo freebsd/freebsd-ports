@@ -1,15 +1,19 @@
---- setup/FreeBSD/oss/build/osscore.c.orig	2007-06-12 08:22:35.000000000 -0400
-+++ setup/FreeBSD/oss/build/osscore.c	2007-07-11 18:45:01.000000000 -0400
-@@ -164,7 +164,11 @@
+--- setup/FreeBSD/oss/build/osscore.c.orig	2007-12-11 15:01:24.000000000 -0500
++++ setup/FreeBSD/oss/build/osscore.c	2007-12-11 15:06:33.000000000 -0500
+@@ -163,9 +163,13 @@
+       return -EIO;
      }
  
-   intr->irq == bus_setup_intr (osdev->dip, intr->irqres,
+-  intr->irq == bus_setup_intr (osdev->dip, intr->irqres,
 -			       INTR_TYPE_AV | INTR_MPSAFE, ossintr, intr,
-+			       INTR_TYPE_AV | INTR_MPSAFE,
+-			       &(intr->cookie));
++  intr->irq = bus_setup_intr (osdev->dip, intr->irqres,
++			      INTR_TYPE_AV | INTR_MPSAFE,
 +#if __FreeBSD_version >= 700031
-+			       NULL,
++			      NULL,
 +#endif
-+			       ossintr, intr,
- 			       &(intr->cookie));
++			      ossintr, intr,
++			      &(intr->cookie));
  
    nintrs++;
+ 
