@@ -7,7 +7,7 @@
 
 PORTNAME=	rinetd
 PORTVERSION=	0.62
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.boutell.com/rinetd/http/
 DISTNAME=	rinetd
@@ -25,7 +25,9 @@ USE_RC_SUBR=	rinetd.sh
 
 post-patch:
 	@${REINPLACE_CMD} -E "s,(/etc/rinetd.conf),${PREFIX}\1," \
-		${WRKSRC}/rinetd.c
+		${WRKSRC}/rinetd.[8c]
+	@${REINPLACE_CMD} -E "s,/usr(/sbin/rinetd),${PREFIX}\1," \
+		${WRKSRC}/rinetd.8
 
 post-install:
 .if !defined(NOPORTDOCS)
