@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldapscripts
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://contribs.martymac.com/ldapscripts/
