@@ -28,4 +28,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	notification-daemon.schemas
 
+CONFLICTS=	xfce4-notification-daemon-[0-9]*
+
 .include <bsd.port.mk>
