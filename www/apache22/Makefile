@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -45,6 +45,13 @@ USE_RC_SUBR=		apache22.sh htcacheclean.sh
 SUB_LIST+=		RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 LIBTOOLFILES=		configure
 
+# for slave ports
+.if !defined(MASTERDIR)
+APACHEDIR=	${.CURDIR}
+.else
+APACHEDIR=	${MASTERDIR}
+.endif
+
 .if !defined(WITHOUT_APACHE_OPTIONS)
 OPTIONS= \
 	APR_FROM_PORTS "Use devel/apr as APR (beware!)" Off \
@@ -54,7 +61,7 @@ OPTIONS= \
 	SQLITE "Enable SQLite support for apr-dbd" Off \
 	IPV6 "Enable IPv6 support" On \
 	PCRE_FROM_PORTS "Use devel/pcre instead of bundled one" Off
-.include "${.CURDIR}/Makefile.options"
+.include "${APACHEDIR}/Makefile.options"
 .endif
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
@@ -94,14 +101,6 @@ WITH_EXCEPTION_HOOK=	YES
 CONFIGURE_ARGS+=	--enable-exception-hook
 .endif
 
-# for slave ports
-.if !defined(MASTERDIR)
-APACHEDIR=	${.CURDIR}
-.else
-APACHEDIR=	${MASTERDIR}
-.endif
-
-
 .include "${APACHEDIR}/Makefile.doc"
 .include "${APACHEDIR}/Makefile.modules"
 .include <bsd.port.pre.mk>
@@ -123,7 +122,7 @@ CONFIGURE_ENV+=		LTFLAGS="--tag=CXX"
 .else
 USE_LDCONFIG=	yes
 PLIST_SUB+=	APR_PORTS=""
-CONFLICTS+=	apr-1.*
+CONFLICTS+=	apr-1.* apr-db4[0-9]-1.*
 CONFIGURE_ENV+=	USE_BUNDLED_APR=YES
 .endif
 
