@@ -1,20 +1,19 @@
 # New ports collection makefile for:	yate
 # Date created:		2006-12-11
-# Whom:			Balwinder S "bsd" Dheeman <bdheeman@hotmail.com>
+# Whom:			Balwinder S "bsd" Dheeman <bdheeman@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	yate
-DISTVERSION=	1.2.0.p4
-PORTREVISION=	1
+PORTVERSION=	1.3.0.p2
+DISTVERSION=	${PORTVERSION:S/.p/-/}
 CATEGORIES=	net comms
 MASTER_SITES=	http://cto.homelinux.net/pub/FreeBSD/ports/distfiles/ \
-		http://yate.null.ro/tarballs/yate1/
+		${MASTER_SITE_LOCAL}
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${DISTVERSION:S/.p/-/}
 
-MAINTAINER=	bdheeman@hotmail.com
+MAINTAINER=	bdheeman@gmail.com
 COMMENT=	Yet Another Telephony Engine
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
@@ -50,9 +49,10 @@ OPTIONS=	X11 "Build GUI client; yate-gtk2" on \
 DOCSDIR=	${LOCALBASE}/share/doc/yate
 PORTDOCS=	${DOCSDIR}/*
 PLIST_SUB=	BRISTUFF="@comment "
+PLIST_SUB+=	VERSION=${PORTVERSION:S/.p2//}
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	yate.sh
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.2.0
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.p2//}
 
 .include <bsd.port.pre.mk>
 
@@ -134,11 +134,12 @@ pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/yate
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/yate
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/yate
-	${INSTALL_DATA} ${FILESDIR}/README.too ${PREFIX}/share/doc/yate
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} files/README.too ${DOCSDIR}
+	@cd ${PREFIX}/etc/${PORTNAME}; for cfg in *.sample; do test -f $${cfg%%.sample} || cp -p $${cfg} $${cfg%%.sample}; done
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

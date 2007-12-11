@@ -29,7 +29,7 @@ The Zaptel module can be installed using one of the following methods:
 	svn co --username svn --password svn https://svn.bluezbox.com/repos/zaptel-bsd
 
 The Asterisk application can be installed from ports collection:
-	# cd asterisk
+	# cd /usr/ports/net/asterisk
 	# make install
 
 
