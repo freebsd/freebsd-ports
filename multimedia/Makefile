@@ -130,6 +130,7 @@
     SUBDIR += manslide
     SUBDIR += mencoder
     SUBDIR += mimms
+    SUBDIR += miro
     SUBDIR += mjpegtools
     SUBDIR += mjpegtools-yuvfilters
     SUBDIR += mkvtoolnix
