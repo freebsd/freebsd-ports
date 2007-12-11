@@ -20,7 +20,7 @@ RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect \
 		${SITE_PERL}/LockFile/Simple.pm:${PORTSDIR}/devel/p5-LockFile-Simple
 
 USE_PERL5=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
@@ -51,7 +51,6 @@ pre-everything::
 post-install:
 	${LN} -s ${PREFIX}/libexec/${PORTNAME}/rancid-cvs ${PREFIX}/bin
 	${LN} -s ${PREFIX}/libexec/${PORTNAME}/rancid-run ${PREFIX}/bin
-	@ ${SED} -e "s:%%INSTDIR%%:${PREFIX}:g" pkg-message >${PKGMESSAGE}
 .if !defined(BATCH)
 	@ ${ECHO}
 	@ ${CAT} ${PKGMESSAGE}
