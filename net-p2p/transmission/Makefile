@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	0.92
+PORTVERSION=	0.96
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
@@ -16,7 +16,7 @@ COMMENT?=	A free BitTorrent client written from scratch in C
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME?=	gnometarget intltool
+USE_GNOME?=	gnometarget intlhack
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
