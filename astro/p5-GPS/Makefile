@@ -5,20 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	GPS
-PORTVERSION=	0.12
+PORTVERSION=	0.15
 CATEGORIES=	astro perl5 geography
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	perl-gps
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	GPS
 PKGNAMEPREFIX=	p5-
 DISTNAME=	perl-GPS-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl interface to GPS receivers
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
 
-MAN3=		GPS::Garmin.3 \
-		GPS::Serial.3 \
+MAN3=		GPS::Serial.3 \
+		GPS::NMEA.3 \
+		GPS::NMEA::Handler.3 \
+		GPS::Garmin.3 \
 		GPS::Garmin::Handler.3
 
 .include <bsd.port.mk>
