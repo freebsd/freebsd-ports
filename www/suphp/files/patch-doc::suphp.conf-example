@@ -1,0 +1,30 @@
+--- doc/suphp.conf-example.orig	2005-11-26 11:29:02.000000000 -0800
++++ doc/suphp.conf-example	2007-11-11 02:36:02.000000000 -0800
+@@ -6,7 +6,7 @@
+ loglevel=info
+ 
+ ;User Apache is running as
+-webserver_user=wwwrun
++webserver_user=www
+ 
+ ;Path all scripts have to be in
+ docroot=/
+@@ -33,15 +33,15 @@
+ umask=0077
+ 
+ ; Minimum UID
+-min_uid=100
++min_uid=80
+ 
+ ; Minimum GID
+-min_gid=100
++min_gid=80
+ 
+ 
+ [handlers]
+ ;Handler for php-scripts
+-x-httpd-php=php:/usr/bin/php
++x-httpd-php=php:/usr/local/bin/php-cgi
+ 
+ ;Handler for CGI-scripts
+ x-suphp-cgi=execute:!self

@@ -1,23 +1,14 @@
 sbin/suphp
+etc/suphp.conf-example
 %%APACHEMODDIR%%/mod_suphp.so
 @exec %D/sbin/apxs -e -a -n suphp %D/%f
 @unexec %D/sbin/apxs -e -A -n suphp %D/%f
-%%PORTDOCS%%%%DOCSDIR%%/en/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/en/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/en/README
-%%PORTDOCS%%%%DOCSDIR%%/en/apache/CONFIG
-%%PORTDOCS%%%%DOCSDIR%%/en/apache/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/en/apache/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/en/apache/README
-%%PORTDOCS%%%%DOCSDIR%%/de/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/de/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/de/README
-%%PORTDOCS%%%%DOCSDIR%%/de/apache/CONFIG
-%%PORTDOCS%%%%DOCSDIR%%/de/apache/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/de/apache/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/de/apache/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de/apache
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/apache
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/CONFIG
+%%PORTDOCS%%%%DOCSDIR%%/apache/CONFIG
+%%PORTDOCS%%%%DOCSDIR%%/apache/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/apache/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apache
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
