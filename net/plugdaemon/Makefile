@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	plugdaemon
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.taronga.com/plugdaemon/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Plug proxy daemon, forwards TCP/IP connections
 
 MAN1=		plug.1
