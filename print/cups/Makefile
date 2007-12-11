@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -18,6 +18,7 @@ COMMENT=	Common UNIX Printing System: Metaport to install complete system
 
 BUILD_DEPENDS=	espgs:${PORTSDIR}/${PKGCATEGORY}/cups-pstoraster \
 		cupsd:${PORTSDIR}/${PKGCATEGORY}/cups-base
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 NO_INSTALL=	yes
