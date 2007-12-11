@@ -30,14 +30,9 @@ CONFIGURE_ARGS=	--with-gd-lib="${LOCALBASE}/lib" \
 		--with-freetype
 INSTALL_TARGET=	site-install
 
-.if defined(WITH_GD1)
-CONFIGURE_ARGS+=	--with-gd-include="${LOCALBASE}/include/gd"
-LIB_DEPENDS+=	gd1.2:${PORTSDIR}/graphics/gd1
-.else
 CONFIGURE_ARGS+=	--enable-gd2_0 \
 		--with-gd-include="${LOCALBASE}/include"
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
-.endif
 
 .include <bsd.port.pre.mk>
 
