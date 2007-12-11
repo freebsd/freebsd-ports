@@ -12180,6 +12180,7 @@ php5-ftp	ports/ftp/php5-ftp
 php5-gd		ports/graphics/php5-gd
 php5-gettext	ports/devel/php5-gettext
 php5-gmp	ports/math/php5-gmp
+php5-ice	ports/devel/php5-ice
 php5-iconv	ports/converters/php5-iconv
 php5-imap	ports/mail/php5-imap
 php5-interbase	ports/databases/php5-interbase
