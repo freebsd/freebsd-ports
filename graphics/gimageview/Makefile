@@ -107,6 +107,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/DATADIRNAME=lib/DATADIRNAME=share/g' \
 		-e 's|echo aout|echo elf|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/gnome/apps/|/apps/|' \
+		${WRKSRC}/gimageview.spec \
+		${WRKSRC}/etc/Makefile.in
 
 post-configure:
 .if !defined(WITH_IMLIB)

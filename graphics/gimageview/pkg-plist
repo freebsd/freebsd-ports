@@ -32,6 +32,7 @@ lib/gimageview/thumbnail/libgimv_nautilus_thumb.so
 lib/gimageview/thumbnail/libgimv_thumb.so
 lib/gimageview/thumbnail/libgimv_xvpics_thumb.so
 lib/gimageview/thumbnail_view/libgimv_thumbview_detail.so
+share/apps/Graphics/gimageview.desktop
 share/doc/gimageview/html/ja/01.html
 share/doc/gimageview/html/ja/02.html
 share/doc/gimageview/html/ja/03.html
@@ -115,7 +116,6 @@ share/gimageview/pixmaps/default/zoom.xpm
 share/gimageview/pixmaps/default/zoom_fit.xpm
 share/gimageview/pixmaps/default/zoom_in.xpm
 share/gimageview/pixmaps/default/zoom_out.xpm
-share/gnome/apps/Graphics/gimageview.desktop
 share/locale/fr/LC_MESSAGES/gimageview.mo
 share/locale/ja/LC_MESSAGES/gimageview.mo
 share/pixmaps/gimv.png
@@ -136,3 +136,5 @@ share/pixmaps/gimv.png
 @dirrm share/gimageview/pixmaps/default
 @dirrm share/gimageview/pixmaps
 @dirrm share/gimageview
+@dirrmtry share/apps/Graphics
+@dirrmtry share/apps
