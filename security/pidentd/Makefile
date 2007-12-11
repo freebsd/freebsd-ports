@@ -38,6 +38,7 @@ post-patch:
 		-e "s| /etc/identd.conf| ${PREFIX}/etc/identd.conf|" \
 		-e "s| /etc/identd.key| ${PREFIX}/etc/identd.key|" \
 		${WRKSRC}/doc/identd.8 ${WRKSRC}/doc/idecrypt.8
+	@${REINPLACE_CMD} -e "s|freebsd.4.7.|freebsd|" ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} -m 644 ${WRKSRC}/doc/idecrypt.8 ${MANPREFIX}/man/man8
