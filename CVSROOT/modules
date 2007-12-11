@@ -6362,7 +6362,6 @@ libXxf86misc	ports/x11/libXxf86misc
 libXxf86vm	ports/x11/libXxf86vm
 libYGP		ports/devel/libYGP
 liba52		ports/audio/liba52
-liba52-devel	ports/audio/liba52-devel
 libadplug	ports/audio/libadplug
 libafterbase	ports/devel/libafterbase
 libafterimage	ports/graphics/libafterimage
