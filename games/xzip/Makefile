@@ -7,7 +7,7 @@
 
 PORTNAME=	xzip
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/infocom/interpreters/zip/ \
 	ftp://www.plover.net/if-archive/infocom/interpreters/zip/ \
@@ -24,7 +24,7 @@ COMMENT=	An Infocom game interpreter that runs under X11
 WRKSRC=		${WRKDIR}/xzip
 ALL_TARGET=
 
-USE_XLIB=	yes
+USE_XORG=	x11
 
 MAN1=		xzip.1
 PLIST_FILES=	bin/xzip

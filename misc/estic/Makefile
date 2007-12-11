@@ -26,7 +26,7 @@ X_OR_NOT=
 PLIST_SUB+=		WITHOUT_X=""
 PLIST_SUB+=		WITH_X="@comment "
 .else
-USE_XLIB=		yes
+USE_XORG=		x11
 X_OR_NOT=-x
 PLIST_SUB+=		WITHOUT_X="@comment "
 PLIST_SUB+=		WITH_X=""
