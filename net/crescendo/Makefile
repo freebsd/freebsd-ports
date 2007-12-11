@@ -8,7 +8,7 @@
 
 PORTNAME=	crescendo
 PORTVERSION=	1.1.7
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net gnome
 # Master Site broken
 #MASTER_SITES=	http://crescendo.lyrical.net/files/
@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CFLAGS+=	-g
 PLIST_SUB=	DOCDIR=share/doc/${PORTNAME}
 
-USE_XLIB=	yes
+USE_XORG=	x11 sm ice xi xext
 USE_GNOME=	gnomelibs
 
 post-patch:

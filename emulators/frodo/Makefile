@@ -7,7 +7,7 @@
 
 PORTNAME=	frodo
 PORTVERSION=	4.1b
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators tk84
 MASTER_SITES=	http://frodo.cebix.net/downloads/
 DISTNAME=	FrodoV4_1b.Src
@@ -17,7 +17,7 @@ COMMENT=	Emulates a Commodore 64
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-USE_XLIB=	yes
+USE_XORG=	x11 xt xext sm ice
 ALL_TARGET=	Frodo
 WRKNAME=	Frodo-4.1b
 WRKSRC=		${WRKDIR}/${WRKNAME}/Src
