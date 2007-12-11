@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: perdition
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable perdition
+#
+# perdition_enable="YES"
+#
+# See perdition(8) for flags
+#
+
+perdition_enable=${perdition_enable-"NO"}
+perdition_flags=${perdition_flags-""}
+
+. %%RC_SUBR%%
+
+name="perdition"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/perdition/${name}.pid"
+
+load_rc_config $name
+
+run_rc_command "$1"
