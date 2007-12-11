@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/xfce4 \
 
 MAKE_ENV+=	CFLAGS="${CFLAGS}"
 
-CONFLICTS=	^notification-daemon-[0-9]*
+CONFLICTS=	notification-daemon-[0-9]*
 
 OPTIONS=	GRADIENT "Show a gradient look in the default theme"  off \
 		CLOSE    "Show the close button in the default theme" on  \
