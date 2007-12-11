@@ -3,11 +3,11 @@
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/glib20/Makefile,v 1.105 2007/10/16 12:35:26 ahze Exp $
+#   $MCom: ports-stable/devel/glib20/Makefile,v 1.1 2007/11/30 18:48:03 marcus Exp $
 #
 
 PORTNAME=	glib
-PORTVERSION=	2.14.2
+PORTVERSION=	2.14.4
 PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
