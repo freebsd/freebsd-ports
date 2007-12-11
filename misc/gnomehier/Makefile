@@ -47,7 +47,9 @@ pre-su-install:
 	${CHGRP} games ${WRKSRC}/share/games
 	${CHMOD} g=rwXs ${WRKSRC}/share/games
 	cd ${WRKSRC} && \
-		${MTREE_CMD} -U -d -n -i -c -k "uname, gname, mode" \
+		${MTREE_CMD} -U -d -n -i -c -k "uname, gname, mode" | \
+		${SED} -e 's|uname=[A-Za-z0-9_]*|uname=root|' \
+			-e 's|gname=[A-Za-z0-9_]*|gname=wheel|' \
 			> ${WRKDIR}/${GNOME_MTREE}
 
 do-install:
