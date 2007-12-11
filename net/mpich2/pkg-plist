@@ -172,7 +172,6 @@ lib/libmpichf90.a
 lib/libtmpe.a
 %%JAVA%%lib/logconvertor.jar
 lib/mpe_prof.o
-lib/mpich2-ch3.pc
 %%JAVA%%lib/slog2filter.jar
 %%JAVA%%lib/slog2navigator.jar
 %%JAVA%%lib/slog2printrecur.jar
@@ -749,3 +748,6 @@ share/examples_logging/srtest.c
 @dirrm include
 @dirrm etc
 @dirrm bin
+@unexec rmdir %D 2>/dev/null || true
+@cwd %%LOCALBASE%%
+libdata/pkgconfig/mpich2-ch3.pc
