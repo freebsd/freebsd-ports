@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	dynamips
-DISTVERSION=	0.2.8-RC1
+DISTVERSION=	0.2.8-RC2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	pol@opk.ru
-COMMENT=	Cisco 3600/7200 Simulator
+COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
 
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
 
@@ -46,8 +46,13 @@ DYNAMIPS_ARCH=	"amd64"
 DYNAMIPS_ARCH=	"nojit"
 .endif
 
-.if ${OSVERSION} < 602100 || ${OSVERSION} < 700021
-BUILD_DEPENDS+=	libpcap>=0.9.4:${PORTSDIR}/net/libpcap
+# It required libpcap version 0.9.4 or is higher.
+.if ${OSVERSION} < 602100 || (${OSVERSION} >= 700000 && ${OSVERSION} < 700021)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+MAKE_ENV+=	PCAP_LIB=${LOCALBASE}/lib/libpcap.a
+#.warning Do not overlook, make libpcap with LIBPCAP_OVERWRITE_BASE parameter, for use with shared library.
+#LIB_DEPENDS+=	pcap.\(0.9.\)?[2-9]:${PORTSDIR}/net/libpcap
+#MAKE_ENV+=	PCAP_LIB=-lpcap.2
 .endif
 
 .if ${OSVERSION} >= 700013
