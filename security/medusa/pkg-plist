@@ -10,18 +10,19 @@ lib/medusa/modules/mysql.mod
 lib/medusa/modules/pcanywhere.mod
 lib/medusa/modules/ftp.mod
 lib/medusa/modules/imap.mod
+lib/medusa/modules/nntp.mod
 lib/medusa/modules/rsh.mod
 lib/medusa/modules/rexec.mod
 lib/medusa/modules/wrapper.mod
 lib/medusa/modules/rlogin.mod
-lib/medusa/modules/ncp.mod
 lib/medusa/modules/vnc.mod
-lib/medusa/modules/postgres.mod
+%%POSTGRESQL%%lib/medusa/modules/postgres.mod
 lib/medusa/modules/cvs.mod
 lib/medusa/modules/vmauthd.mod
 lib/medusa/modules/snmp.mod
 lib/medusa/modules/smtp-vrfy.mod
-lib/medusa/modules/smtp-auth.mod
-lib/medusa/modules/svn.mod
+%%SMTPAUTH%%lib/medusa/modules/smtp-auth.mod
+%%SVN%%lib/medusa/modules/svn.mod
+%%WEBFORM%%lib/medusa/modules/web-form.mod
 @dirrm lib/medusa/modules
 @dirrm lib/medusa
