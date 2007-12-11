@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mpich2
-PORTVERSION=	1.0.6
-PORTEPOCH=	2
+DISTVERSION=	1.0.6p1
+PORTEPOCH=	3
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/	\
 		http://www-unix.mcs.anl.gov/mpi/mpich/downloads/
@@ -30,6 +30,7 @@ COMMENT=	A portable implementation of MPI-1 and MPI-2
 
 USE_PYTHON=	yes
 USE_PERL5_BUILD=yes
+USE_GNOME=	pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -136,6 +137,10 @@ pre-configure:
 	${MV} ${WRKSRC}/src/mpe2/man/man4/${mp:S/4$/3/}	\
 		${WRKSRC}/src/mpe2/man/man4/${mp}
 .endfor
+
+post-configure:
+	${REINPLACE_CMD} -e 's|$${exec_prefix}|${PREFIX}|g;	\
+		s|$${prefix}|${PREFIX}|g' ${WRKSRC}/src/pkgconfig/mpich2-ch3.pc
 
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
