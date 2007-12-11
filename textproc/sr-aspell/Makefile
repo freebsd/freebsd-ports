@@ -10,7 +10,7 @@ DISTVERSION=	6-sr-0.02
 PORTEPOCH=	2
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Aspell Serbian dictionary
 
 DICT=	 	sr
