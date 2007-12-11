@@ -1,0 +1,7 @@
+--- zone.tab.orig	Tue Dec  4 01:50:41 2007
++++ zone.tab	Tue Dec  4 09:57:33 2007
+@@ -254,3 +254,3 @@
+-MF	+1804-06305	America/Marigot
++#MF	+1804-06305	America/Marigot
+ MG	-1855+04731	Indian/Antananarivo
+ MH	+0709+17112	Pacific/Majuro	most locations

@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2007h
-PORTREVISION=	1
+DISTVERSION=	2007j
 CATEGORIES=	misc
 MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/
 DISTNAME=	tzdata${DISTVERSION}
@@ -36,14 +35,16 @@ MASTER_SITES+=	http://people.freebsd.org/~edwin/
 
 # The following country codes can be missing from /usr/share/misc/iso3166 and
 # shouldn't appear in the zoneinfo file.
-MISSING=	ax gg im je me rs
+MISSING=	ax bl gg im je me mf rs
 
+.ifndef NOMISSING
 .for M in ${MISSING}
 HAS_${M:U}!=	${GREP} -c ^${M:U} /usr/share/misc/iso3166 || ${TRUE}
 .if ${HAS_${M:U}} == "0"
 EXTRA_PATCHES+=	${FILESDIR}/patchremove-${M}
 .endif
 .endfor
+.endif
 
 do-build:
 	umask 022; \
@@ -62,7 +63,7 @@ post-install:
 test-patches:
 .for M in ${MISSING}
 	make clean
-	EXTRA_PATCHES=${FILESDIR}/patchremove-${M} make patch
+	NOMISSING=1 EXTRA_PATCHES=${FILESDIR}/patchremove-${M} make patch
 .endfor
 
 .include <bsd.port.post.mk>
