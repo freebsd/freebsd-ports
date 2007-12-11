@@ -1,0 +1,4 @@
+lib/php/%%PHP_EXT_DIR%%/ICE_LICENSE
+lib/php/%%PHP_EXT_DIR%%/IcePHP.so
+lib/php/%%PHP_EXT_DIR%%/LICENSE
+@dirrm lib/php/%%PHP_EXT_DIR%%/slice
