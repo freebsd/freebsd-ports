@@ -103,6 +103,7 @@ STATIC			Build statically linked executables
 THEORA			Theora video codec support
 TREMOR			Tremor (integer-only Vorbis) audio support
 UNIXODBC		Use UNIXODBC as the ODBC driver
+USB			Add devel/libusb support for USB devices
 VORBIS			OGG/Vorbis audio support
 WX			wxWindows support
 X11			Support for X11
