@@ -5,6 +5,8 @@ bin/cdfdump
 bin/cdfedit
 bin/cdfexport
 bin/cdfinquire
+bin/cdfirsdump
+bin/cdfmerge
 bin/cdfstats
 bin/definitions.B
 bin/definitions.C
@@ -32,6 +34,10 @@ lib/cdf/help/cdfedit.olh
 lib/cdf/help/cdfeditj.olh
 lib/cdf/help/cdfinq.olh
 lib/cdf/help/cdfinqj.olh
+lib/cdf/help/cdfirsdump.olh
+lib/cdf/help/cdfirsdumpj.olh
+lib/cdf/help/cdfmerge.olh
+lib/cdf/help/cdfmergej.olh
 lib/cdf/help/cdfstatj.olh
 lib/cdf/help/cdfstats.olh
 lib/cdf/help/cdfxp.ilh

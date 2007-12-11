@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	cdf3
-PORTVERSION=	3.1
-PORTREVISION=	7
+PORTVERSION=	3.2
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_LOCAL}	\
-		ftp://nssdcftp.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix-linux/	\
-		http://windsor.gsfc.nasa.gov/standards/cdf/dist/cdf${VER}/unix-linux/
-MASTER_SITE_SUBDIR=	thierry/${PKGNAME}
+		ftp://cdaweb.gsfc.nasa.gov/pub/cdf/dist/cdf${VER}/unix/
+MASTER_SITE_SUBDIR=	thierry/${PORTNAME}
 DISTNAME=	cdf${VER}-dist-cdf
 DIST_SUBDIR=	${PKGNAME}
 
@@ -27,7 +25,7 @@ VER=		${PORTVERSION:S/.//}
 
 USE_FORTRAN=	yes
 
-WRKSRC=		${WRKDIR}/cdf${VER}-dist
+WRKSRC=		${WRKDIR}/cdf${VER}-dist-readonly
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -60,10 +58,8 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.if defined(MAINTAINER_MODE)
-regression-test:	build
+regression-test:
 	(cd ${BUILD_WRKSRC} ;	\
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
-.endif
 
 .include <bsd.port.post.mk>
