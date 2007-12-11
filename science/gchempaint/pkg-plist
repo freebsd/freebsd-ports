@@ -121,6 +121,7 @@ share/locale/de/LC_MESSAGES/gchempaint.mo
 share/locale/fr/LC_MESSAGES/gchempaint.mo
 share/locale/it/LC_MESSAGES/gchempaint.mo
 share/locale/pl/LC_MESSAGES/gchempaint.mo
+share/locale/pt_BR/LC_MESSAGES/gchempaint.mo
 share/locale/ru/LC_MESSAGES/gchempaint.mo
 share/locale/zh_CN/LC_MESSAGES/gchempaint.mo
 share/mime/application/x-gchempaint.xml
