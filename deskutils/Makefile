@@ -214,6 +214,7 @@
     SUBDIR += xcalendar
     SUBDIR += xchm
     SUBDIR += xfce4-notes-plugin
+    SUBDIR += xfce4-notification-daemon
     SUBDIR += xfce4-xkb-plugin
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
