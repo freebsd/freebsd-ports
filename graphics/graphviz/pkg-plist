@@ -110,10 +110,10 @@ lib/graphviz/libgvplugin_gd.so
 lib/graphviz/libgvplugin_gd.so.4
 lib/graphviz/libgvplugin_gd.la
 lib/graphviz/libgvplugin_gd.a
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_gtk.a
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_gtk.la
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_gtk.so
-%%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_gtk.so.4
+%%WITH_GTK%%lib/graphviz/libgvplugin_gtk.a
+%%WITH_GTK%%lib/graphviz/libgvplugin_gtk.la
+%%WITH_GTK%%lib/graphviz/libgvplugin_gtk.so
+%%WITH_GTK%%lib/graphviz/libgvplugin_gtk.so.4
 lib/graphviz/libgvplugin_neato_layout.so
 lib/graphviz/libgvplugin_neato_layout.so.4
 lib/graphviz/libgvplugin_neato_layout.la
@@ -130,6 +130,12 @@ lib/graphviz/libgvplugin_neato_layout.a
 %%WITH_GUILE%%lib/graphviz/guile/libgv_guile.la
 %%WITH_GUILE%%lib/graphviz/guile/libgv_guile.so
 %%WITH_GUILE%%lib/graphviz/guile/libgv_guile.so.0
+%%WITH_MING%%lib/graphviz/Bitstream_Vera_Sans.fdb
+%%WITH_MING%%lib/graphviz/Bitstream_Vera_Serif.fdb
+%%WITH_MING%%lib/graphviz/libgvplugin_ming.a
+%%WITH_MING%%lib/graphviz/libgvplugin_ming.la
+%%WITH_MING%%lib/graphviz/libgvplugin_ming.so
+%%WITH_MING%%lib/graphviz/libgvplugin_ming.so.4
 %%WITH_PHP%%lib/graphviz/php/gv.php
 %%WITH_PHP%%lib/graphviz/php/libgv_php.a
 %%WITH_PHP%%lib/graphviz/php/libgv_php.la
