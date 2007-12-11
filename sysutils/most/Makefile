@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	most
-PORTVERSION=	4.10.2
-PORTREVISION=	1
+PORTVERSION=	5.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/most/ \
@@ -18,8 +17,9 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A pager (like less) which has support for windows and binary files
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-mmap
 
