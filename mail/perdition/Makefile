@@ -7,6 +7,7 @@
 
 PORTNAME=	perdition
 PORTVERSION=	1.17.1
+PORTREVISION=	1
 CATEGORIES=	mail net security
 MASTER_SITES=	http://www.vergenet.net/linux/perdition/download/${PORTVERSION}/
 
@@ -29,9 +30,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" BDB_LIB=db3
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	DOCSDIR=${DOCSDIR}
-CONFIGURE_ARGS+=	--disable-daemon-map
+CONFIGURE_ARGS+=--disable-daemon-map --localstatedir=/var
 
 USE_LDCONFIG=	yes
+USE_RC_SUBR=	perdition perdition.pop3 perdition.pop3s \
+		perdition.imap4 perdition.imap4s perdition.imaps
 
 ##
 ## Available knobs:

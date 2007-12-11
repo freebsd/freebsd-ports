@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: perdition_imap4s
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable perdition.imap4s
+#
+# perdition_imap4s_enable="YES"
+#
+# See perdition(8) for flags
+#
+
+perdition_imap4s_enable=${perdition_imap4s_enable-"NO"}
+perdition_imap4s_flags=${perditon_imap4s_flags-""}
+
+. %%RC_SUBR%%
+
+name="perdition_imap4s"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/perdition.imap4s"
+pidfile="/var/run/perdition.imap4s/perdition.imap4s.pid"
+
+load_rc_config $name
+
+run_rc_command "$1"

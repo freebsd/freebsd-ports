@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: perdition_imaps
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable perdition.imaps
+#
+# perdition_imaps_enable="YES"
+#
+# See perdition(8) for flags
+#
+
+perdition_imaps_enable=${perdition_imaps_enable-"NO"}
+perdition_imaps_flags=${perditon_imaps_flags-""}
+
+. %%RC_SUBR%%
+
+name="perdition_imaps"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/perdition.imaps"
+pidfile="/var/run/perdition.imaps/perdition.imaps.pid"
+
+load_rc_config $name
+
+run_rc_command "$1"
