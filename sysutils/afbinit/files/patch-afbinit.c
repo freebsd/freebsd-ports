@@ -1,5 +1,3 @@
-This patch is based on code marked:
-
 /*
  * Creator, Creator3D and Elite3D framebuffer driver.
  *
@@ -26,7 +24,17 @@ This patch is based on code marked:
 
 --- afbinit.c.orig	Fri Nov 30 03:04:21 2001
 +++ afbinit.c	Mon Sep 15 17:33:19 2003
-@@ -184,7 +184,7 @@
+@@ -12,7 +12,9 @@
+ #include <sys/mman.h>
+ #include <unistd.h>
+ #include <fcntl.h>
++#include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ 
+ /* Define this to debug the microcode loading procedure. */
+ #undef DEBUG_UCODE_LOAD
+@@ -184,7 +186,7 @@
  
  static void usage(char *me)
  {
@@ -35,7 +43,7 @@ This patch is based on code marked:
  	exit(1);
  }
  
-@@ -193,13 +193,14 @@
+@@ -193,13 +195,14 @@
  	struct afb_ucode_header {
  		char ident[8];
  		unsigned int ucode_words;
@@ -51,7 +59,7 @@ This patch is based on code marked:
  
  	if(argc != 2 && argc != 3)
  		usage(argp[0]);
-@@ -222,7 +223,7 @@
+@@ -222,7 +225,7 @@
  		perror("Read UCODE header");
  		exit(1);
  	}
@@ -60,7 +68,7 @@ This patch is based on code marked:
  	if(ucode == NULL) {
  		fprintf(stderr, "Cannot malloc %d bytes for UCODE.\n",
  			ucheader.ucode_words << 2);
-@@ -236,7 +237,7 @@
+@@ -236,7 +239,7 @@
  	/* MMAP the registers. */
  	uregs = mmap(0, 0x2000,
  		     PROT_READ | PROT_WRITE,
@@ -69,7 +77,7 @@ This patch is based on code marked:
  		     afb_fd,
  		     0x04000000);
  	if (uregs == (void *)-1L) {
-@@ -246,7 +247,7 @@
+@@ -246,7 +249,7 @@
  
  	kregs = mmap(0, 0x2000,
  		     PROT_READ | PROT_WRITE,
@@ -78,15 +86,15 @@ This patch is based on code marked:
  		     afb_fd,
  		     0x0bc04000);
  	if (kregs == (void *)-1L) {
-@@ -254,14 +255,26 @@
+@@ -254,14 +257,26 @@
  		exit(1);
  	}
  
 -	/* Say what UCODE version we are loading. */
-+	fem = (*((volatile unsigned int *)AFB_UREG_FEM(uregs))) & 0x7f;
++	fem = *AFB_UREG_FEM(uregs) & 0x7f;
 +	if (fem == 0x07 || fem == 0x3f) {
 +		fprintf(stderr, "%s: Elite3D/M%s microcode already loaded.\n",
-+			afb_fname, fem == 0x07 ?  "3" : "6");
++			afb_fname, fem == 0x07 ? "3" : "6");
 +		exit(1);
 +	}
 +	if (fem != 0x01) {
@@ -94,13 +102,13 @@ This patch is based on code marked:
 +		exit(1);
 +	}
 +
-+	printf("%s: Loading microcode...\n", afb_fname);
 +	afb_ucode_upload((char *)ucode, ucheader.ucode_words / 16, uregs,
 +		kregs);
  	ucode_version = *(ucode + (0x404 / sizeof(unsigned int)));
 -	printf("Revision-%d.%d.%d ",
++	fem = *AFB_UREG_FEM(uregs) & 0x7f;
 +	printf("%s: Elite3D/M%s microcode revision %d.%d.%d loaded.\n",
-+		afb_fname, fem == 0x07 ?  "3" : "6",
++		afb_fname, fem == 0x07 ? "3" : "6",
  	       (ucode_version >> 16) & 0xff,
  	       (ucode_version >>  8) & 0xff,
  	       (ucode_version >>  0) & 0xff);
