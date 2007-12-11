@@ -9,7 +9,7 @@ PORTNAME=	unison
 PORTVERSION=	2.13.16
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/
+MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
@@ -17,12 +17,10 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	daniel+unison@pelleg.org
 COMMENT=	A user-level file synchronization tool
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml-nox11
-PATCH_DEPENDS=	${BUILD_DEPENDS}
-
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_GMAKE=	yes
 MAKE_ARGS=	CFLAGS=""
+CONFLICTS=	unison-devel-[0-9]*
 
 .include <bsd.port.pre.mk>
 
@@ -32,18 +30,23 @@ EXTRA_DOCS=	unison-${PORTVERSION}-manual.html \
 		unison-${PORTVERSION}-manual.pdf unison-${PORTVERSION}-manual.ps
 .endif
 
-.if !defined(WITHOUT_GTK2) && !defined(WITHOUT_X11) && exists(${LOCALBASE}/bin/lablgtk2)
+.if !defined(WITHOUT_GTK2) && !defined(WITHOUT_X11)
 WITH_GTK2=	yes
 .endif
 
 .if defined(WITH_GTK2)
 MAKE_ARGS+=	UISTYLE=gtk2
-RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
-BUILD_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 PLIST_SUB+=	TEXT=""
+BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml \
+		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+RUN_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+PATCH_DEPENDS+=	${BUILD_DEPENDS}
+CONFLICTS+=	ocaml-nox11*
 .else
 MAKE_ARGS+=	UISTYLE=text
 PLIST_SUB+=	TEXT="@comment "
+BUILD_DEPENDS+=	ocamlc:${PORTSDIR}/lang/ocaml-nox11
+PATCH_DEPENDS+=	${BUILD_DEPENDS}
 .endif
 
 .if defined(WITH_GTK2)
