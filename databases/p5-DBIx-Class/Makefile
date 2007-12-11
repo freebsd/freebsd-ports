@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08007
+PORTVERSION=	0.08008
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -75,6 +75,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Schema.3 \
 	DBIx::Class::Schema::Versioned.3 \
 	DBIx::Class::Serialize::Storable.3 \
+	DBIx::Class::StartupCheck.3 \
 	DBIx::Class::Storage.3 \
 	DBIx::Class::Storage::DBI.3 \
 	DBIx::Class::Storage::DBI::Cursor.3 \

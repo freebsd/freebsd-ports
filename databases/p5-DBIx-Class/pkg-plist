@@ -76,6 +76,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Schema.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Versioned.pm
 %%SITE_PERL%%/DBIx/Class/Serialize/Storable.pm
+%%SITE_PERL%%/DBIx/Class/StartupCheck.pm
 %%SITE_PERL%%/DBIx/Class/Storage.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Cursor.pm
