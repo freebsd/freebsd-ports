@@ -10873,6 +10873,7 @@ p5-SMS-Send-TW-emome	ports/comms/p5-SMS-Send-TW-emome
 p5-SNMP		ports/net-mgmt/p5-SNMP
 p5-SNMP-Info	ports/net-mgmt/p5-SNMP-Info
 p5-SNMP-MIB-Compiler	ports/net-mgmt/p5-SNMP-MIB-Compiler
+p5-SNMP-Simple	ports/net-mgmt/p5-SNMP-Simple
 p5-SNMP-Util	ports/net-mgmt/p5-SNMP-Util
 p5-SNMP_Session	ports/net-mgmt/p5-SNMP_Session
 p5-SOAP		ports/net/p5-SOAP
