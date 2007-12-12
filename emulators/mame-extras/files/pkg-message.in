@@ -8,4 +8,6 @@ For example, to use the cheats in XMAME (user installation):
 
 $ ln -s %%DATADIR%%/cheat.dat ~/.xmame
 
+Many MAME GUIs however, can be configured to locate them where they are.
+
 ==============================================================================
