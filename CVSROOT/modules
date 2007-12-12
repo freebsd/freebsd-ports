@@ -6916,6 +6916,7 @@ linux-aspell	ports/textproc/linux-aspell
 linux-atk	ports/accessibility/linux-atk
 linux-blackdown-jdk14	ports/java/linux-blackdown-jdk14
 linux-blackdown-jre11	ports/java/linux-blackdown-jre11
+linux-cairo	ports/graphics/linux-cairo
 linux-curl		ports/ftp/linux-curl
 linux-darwinia-demo	ports/games/linux-darwinia-demo
 linux-defcon	ports/games/linux-defcon
