@@ -19,6 +19,10 @@ COMMENT=	The development version of the Ion window manager
 
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
 
+DEPRECATED=	is more than 28 days old, which the author states violates his license.  Do not contact author.
+RESTRICTED=	${DEPRECATED}
+EXPIRATION_DATE=	2008-01-12
+
 CONFLICTS=	ion-3ds-200*
 
 USE_XLIB=	yes
