@@ -1,0 +1,12 @@
+Test::Dir - test directory attributes
+
+FUNCTIONS
+dir_exists_ok
+
+Ok if the directory exists, and not ok otherwise.
+dir_not_exists_ok
+
+Ok if the directory does not exist, and not ok otherwise.
+
+
+WWW: http://search.cpan.org/dist/Test-Dir/
