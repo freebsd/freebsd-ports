@@ -983,6 +983,7 @@
     SUBDIR += phpgedview
     SUBDIR += phpmp
     SUBDIR += phpmyfaq
+    SUBDIR += phprecipebook
     SUBDIR += phproxy
     SUBDIR += phpsurveyor
     SUBDIR += phpwebapp
