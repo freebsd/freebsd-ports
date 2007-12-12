@@ -1,0 +1,15 @@
+
+You need to do some things before you can use the Amazon Elastic
+Compute Cloud:
+
+1) Visit http://aws.amazon.com/ to create an Amazon AWS account.
+
+2) Obtain your AWS public key and secret key to use with the EC2 service.
+
+3) Create AMIs and use them as needed.
+
+   DISCLAIMER: No one but you is responsible for paying Amazon to use
+               the EC2 service. EC2 does not have a free sandbox area,
+               so be aware how much money you are spending to use the
+               service.
+
