@@ -1,5 +1,6 @@
 bin/slon
 bin/slonik
+bin/slony_logshipper
 lib/postgresql/slony1_funcs.so
 lib/postgresql/xxid.so
 etc/slon.conf-sample
@@ -178,7 +179,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.upgradeschema-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/hdrcmds.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/help.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/i11597.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/i11812.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/listenpaths.html
@@ -189,6 +190,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/metacmds.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/monitoring.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/noslonik.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/partitioning.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/plainpaths.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/releasechecklist.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/requirements.html
