@@ -1,0 +1,15 @@
+bin/genisoimage
+bin/devdump
+bin/isodebug
+bin/isodump
+bin/isoinfo
+bin/isovfy
+bin/wodim
+bin/icedax
+bin/pitchplay
+bin/readmult
+bin/cdda2mp3
+bin/cdda2ogg
+bin/readom
+bin/dirsplit
+sbin/netscsid

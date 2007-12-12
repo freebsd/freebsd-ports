@@ -1,0 +1,8 @@
+cdrkit is a suite of programs for recording CDs and DVDs, blanking CD-RW media,
+creating ISO-9660 filesystem images, extracting audio CD data, and more. The
+programs included in the cdrkit package were originally derived from several
+sources, most notably mkisofs by Eric Youngdale and others, cdda2wav by Heiko
+Eissfeldt, and cdrecord by Joerg Schilling. However, cdrkit is not affiliated
+with any of these authors; it is now an independent project.
+
+WWW: http://www.cdrkit.org/
