@@ -1136,6 +1136,7 @@ bin/freeoriond
 %%DATADIR%%/default/data/sound/window_maximize.wav
 %%DATADIR%%/default/data/sound/window_minimize.wav
 %%DATADIR%%/default/den_stringtable.txt
+%%DATADIR%%/default/dut_stringtable.txt
 %%DATADIR%%/default/empire_colors.xml
 %%DATADIR%%/default/eng_stringtable.txt
 %%DATADIR%%/default/esp_stringtable.txt
