@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Web/Scraper/.packlist
+%%SITE_PERL%%/Web/Scraper.pm
+%%SITE_PERL%%/Web/Scraper/Filter.pm
+bin/scraper
+@dirrmtry %%SITE_PERL%%/Web/Scraper
+@dirrmtry %%SITE_PERL%%/Web
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Web/Scraper
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Web
