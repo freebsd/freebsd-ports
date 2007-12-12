@@ -16,12 +16,3 @@
  #else
  #include <byteswap.h>
  #include <endian.h>
-@@ -148,7 +157,7 @@
- 	idx = trans_idx [i];
- 	types [idx].isdst ? (*dstidx = i) : (*stdidx = i);
- 	
--	if (i >= num_trans) 
-+	if (i >= num_trans - 1) 
- 		i--;
- 	else 
- 		i++;
