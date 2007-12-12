@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007.605
+PORTVERSION=	2007.610
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/alienarena/files/ \
-		http://distfiles.gentoo.org/distfiles/
-DISTNAME=	${PORTNAME}2007-20070613-linux
+MASTER_SITES=	ftp://ftp.simtel.com/pub/gamezone/31/5/17/
+DISTNAME=	${PORTNAME}2007-20071011-linux
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (native version)
@@ -24,7 +23,6 @@ USE_GMAKE=	yes
 MAKE_ENV=	WITH_DATADIR=yes WITH_LIBDIR=yes \
 		DATADIR="${DATADIR}" LIBDIR="${LIBDIR}"
 WRKSRC=		${WRKDIR}/${PORTNAME}2007/source
-BUILD_WRKSRC=	${WRKSRC}/..
 ALL_TARGET=	build-release
 
 OPTIONS=	CLIENT "Build client" on \
@@ -44,7 +42,9 @@ IGNORE=		needs at least one executable (CLIENT, DEDICATED or SDL)
 .endif
 
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SDL)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 USE_GL=		yes
 .endif
 
@@ -80,22 +80,22 @@ PLIST_SUB+=	SDL="@comment "
 
 do-install:
 	${MKDIR} ${LIBDIR}/arena ${LIBDIR}/data1
-	cd ${BUILD_WRKSRC}/release && \
+	cd ${WRKSRC}/release && \
 		${INSTALL_PROGRAM} arena/game.so ${LIBDIR}/arena && \
 		${INSTALL_PROGRAM} game.so ${LIBDIR}/data1
 	${LN} -s ${DATADIR}/arena/* ${LIBDIR}/arena
 	${LN} -s ${DATADIR}/botinfo ${LIBDIR}
 	${LN} -s ${DATADIR}/data1/* ${LIBDIR}/data1
 .if !defined(WITHOUT_CLIENT)
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/crx \
+	${INSTALL_PROGRAM} ${WRKSRC}/release/crx \
 		${PREFIX}/bin/${PORTNAME}
 .endif
 .if !defined(WITHOUT_DEDICATED)
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/crded \
+	${INSTALL_PROGRAM} ${WRKSRC}/release/crded \
 		${PREFIX}/bin/${PORTNAME}-ded
 .endif
 .if !defined(WITHOUT_SDL)
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/release/crx.sdl \
+	${INSTALL_PROGRAM} ${WRKSRC}/release/crx.sdl \
 		${PREFIX}/bin/${PORTNAME}-sdl
 .endif
 

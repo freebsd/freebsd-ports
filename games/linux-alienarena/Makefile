@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007.605
+PORTVERSION=	2007.610
 CATEGORIES=	games linux
-MASTER_SITES=	http://offload1.icculus.org/alienarena/files/ \
-		http://distfiles.gentoo.org/distfiles/
+MASTER_SITES=	ftp://ftp.simtel.com/pub/gamezone/31/5/17/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}2007-20070613-linux
+DISTNAME=	${PORTNAME}2007-20071011-linux
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (Linux version)
+
+DEPRECATED=	needs missing/outdated Linux dependencies; use native instead
+BROKEN=		${DEPRECATED}
 
 RUN_DEPENDS=	${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
 
@@ -40,6 +42,9 @@ IGNORE=		needs at least one executable (CLIENT, DEDICATED or SDL)
 .endif
 
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SDL)
+# FIXME: needs OpenSSL 0.9.8 and libidn for Linux (not updated/available).
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libcurl.so.3:${PORTSDIR}/ftp/linux-curl \
+		${LINUXBASE}/lib/libssl.so.5:${PORTSDIR}/security/linux-openssl
 USE_GL=		linux
 .endif
 

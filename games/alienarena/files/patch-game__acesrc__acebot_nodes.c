@@ -4,7 +4,7 @@
  
  	safe_bprintf(PRINT_MEDIUM,"Saving node table...");
  
--#ifdef __linux__
+-#ifdef __unix__
 -	strcpy(filename,"botinfo/nav/");
 -#else
 -	strcpy(filename,"botinfo\\nav\\");
