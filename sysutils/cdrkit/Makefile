@@ -23,7 +23,7 @@ MAN1=		cdda2ogg.1 devdump.1 dirsplit.1 genisoimage.1 icedax.1 \
 		pitchplay.1 readmult.1 readom.1 wodim.1
 MAN5=		genisoimagerc.5
 
-CONFLICTS=	cdrtools-*
+CONFLICTS=	cdrtools-* cjk-cdrtools-*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/include/AddSchilyBits.cmake ${WRKSRC}/3rd-party/dirsplit/CMakeLists.txt
