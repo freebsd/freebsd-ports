@@ -16070,6 +16070,7 @@ undms		ports/archivers/undms
 unfoo		ports/archivers/unfoo
 unfs3		ports/net/unfs3
 uni2ascii	ports/textproc/uni2ascii
+uniconvertor	ports/graphics/uniconvertor
 unicornscan	ports/security/unicornscan
 unieject	ports/sysutils/unieject
 unison		ports/net/unison
