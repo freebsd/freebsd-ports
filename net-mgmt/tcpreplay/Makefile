@@ -1,41 +1,32 @@
-# New ports collection makefile for:   tcpreplay
-# Date created:        2 November 2000
-# Whom:                cnh@ivmg.net
+# New ports collection makefile for:	tcpreplay
+# Date created:				2 November 2000
+# Whom:					cnh@ivmg.net
 #
 # $FreeBSD$
 #
 
 PORTNAME=	tcpreplay
-PORTVERSION=	2.3.5
-PORTREVISION=	1
+PORTVERSION=	3.2.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to replay saved packet capture files
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
-		${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 
 GNU_CONFIGURE=	yes
+
 CONFIGURE_ARGS=	--with-libpcap=${LOCALBASE} \
-		--without-pcapnav-config
-CFLAGS+=	`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include
+		--without-pcapnav-config \
+		--program-transform-name='s|.*\(tcp.*\)|\1|' \
+		--enable-tcpreplay-edit
 
-MAN1=		capinfo.1 tcpprep.1 pcapmerge.1 flowreplay.1
-MAN8=		tcpreplay.8
-
-PLIST_FILES=	bin/capinfo bin/pcapmerge bin/tcpprep sbin/tcpreplay bin/flowreplay
-
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
+MAN1=		tcpreplay.1 tcpprep.1 tcprewrite.1 tcpbridge.1
+PLIST_FILES=	bin/tcpreplay bin/tcpprep bin/tcprewrite bin/tcpbridge
 
 post-patch:
-	@${REINPLACE_CMD} -Ee \
-		's|-pipe -Wall|$$CFLAGS &|; \
-		 s|^(foundnet=)no|\1yes|; \
-		 s|\$$LNETLIB|`${LIBNET_CONFIG} --libs`|; \
-		 s|\$$LNETINCDIR/||' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-Wall -O3||' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
