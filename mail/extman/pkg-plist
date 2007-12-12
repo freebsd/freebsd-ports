@@ -1,9 +1,8 @@
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 www/extman/AUTHORS
 www/extman/ChangeLog
 www/extman/INSTALL
 www/extman/README
+www/extman/README.fcgi
 www/extman/Version
 www/extman/addon/README
 www/extman/addon/cleanup.sql
@@ -175,6 +174,7 @@ www/extman/html/default/overview_manager.html
 www/extman/html/default/overview_user.html
 www/extman/html/default/passwd.html
 www/extman/html/default/signup.html
+www/extman/html/default/signup.html.old
 www/extman/html/default/viewlog_all.html
 www/extman/html/images/donate.png
 www/extman/html/images/extman_logo.gif
@@ -186,11 +186,14 @@ www/extman/html/plugins/rpc_init.js
 www/extman/lang/en_US
 www/extman/lang/zh_CN
 www/extman/lang/zh_TW
+www/extman/libs/CmdTools.pm
 www/extman/libs/Crypt/PasswdMD5.pm
+www/extman/libs/Ext.pm
 www/extman/libs/Ext/CGI.pm
 www/extman/libs/Ext/CaptCha.pm
 www/extman/libs/Ext/Config.pm
 www/extman/libs/Ext/DateTime.pm
+www/extman/libs/Ext/FCGI.pm
 www/extman/libs/Ext/GD.pm
 www/extman/libs/Ext/GraphLog.pm
 www/extman/libs/Ext/HashDir.pm
@@ -206,6 +209,7 @@ www/extman/libs/Ext/MgrApp/Login.pm
 www/extman/libs/Ext/MgrApp/Manager.pm
 www/extman/libs/Ext/MgrApp/OverView.pm
 www/extman/libs/Ext/MgrApp/Signup.pm
+www/extman/libs/Ext/MgrApp/Signup.pm.old
 www/extman/libs/Ext/MgrApp/User.pm
 www/extman/libs/Ext/MgrApp/ViewLog.pm
 www/extman/libs/Ext/Passwd.pm

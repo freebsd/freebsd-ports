@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	extman
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	mail
-MASTER_SITES=	http://www.extmail.org/dist/extman/%SUBDIR%/ \
+MASTER_SITES=	http://www.chifeng.name/dist/extman/%SUBDIR%/ \
 		http://chifeng.cosoft.org.cn/extman/%SUBDIR%/
 
 MAINTAINER?=	chifeng@gmail.com
@@ -17,7 +17,8 @@ COMMENT=	Web interface to manage Virtual Accounts
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
 OPTIONS=	MySQL "Use MySQL support" On \
 		LDAP "Use LDAP support" Off
