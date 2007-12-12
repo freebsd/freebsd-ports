@@ -68,10 +68,12 @@
 %%WWWDIR%%/classes/base/ldap.security.class.inc
 %%WWWDIR%%/classes/base/ldap.users.class.inc
 %%WWWDIR%%/classes/base/links.class.inc
+%%WWWDIR%%/classes/base/logger.class.inc
 %%WWWDIR%%/classes/base/modules.class.inc
 %%WWWDIR%%/classes/base/passwd.groups.class.inc
 %%WWWDIR%%/classes/base/passwd.security.class.inc
 %%WWWDIR%%/classes/base/passwd.users.class.inc
+%%WWWDIR%%/classes/base/reminder.class.inc
 %%WWWDIR%%/classes/base/search.class.inc
 %%WWWDIR%%/classes/base/sql.auth.class.inc
 %%WWWDIR%%/classes/base/sql.groups.class.inc
@@ -328,10 +330,45 @@
 %%WWWDIR%%/classes/mail/phpmailer/language/phpmailer.lang-tr.php
 %%WWWDIR%%/classes/profiles.class.inc
 %%WWWDIR%%/classes/sajax.class.inc
+%%WWWDIR%%/classes/tcpdf/config/lang/eng.php
+%%WWWDIR%%/classes/tcpdf/config/tcpdf_config.php
+%%WWWDIR%%/classes/tcpdf/fonts/.noencode
+%%WWWDIR%%/classes/tcpdf/fonts/vera.ctg.z
+%%WWWDIR%%/classes/tcpdf/fonts/vera.php
+%%WWWDIR%%/classes/tcpdf/fonts/vera.z
+%%WWWDIR%%/classes/tcpdf/fonts/verab.ctg.z
+%%WWWDIR%%/classes/tcpdf/fonts/verab.php
+%%WWWDIR%%/classes/tcpdf/fonts/verab.z
+%%WWWDIR%%/classes/tcpdf/fonts/verabi.ctg.z
+%%WWWDIR%%/classes/tcpdf/fonts/verabi.php
+%%WWWDIR%%/classes/tcpdf/fonts/verabi.z
+%%WWWDIR%%/classes/tcpdf/fonts/verai.ctg.z
+%%WWWDIR%%/classes/tcpdf/fonts/verai.php
+%%WWWDIR%%/classes/tcpdf/fonts/verai.z
+%%WWWDIR%%/classes/tcpdf/fonts/veramo.ctg.z
+%%WWWDIR%%/classes/tcpdf/fonts/veramo.php
+%%WWWDIR%%/classes/tcpdf/fonts/veramo.z
+%%WWWDIR%%/classes/tcpdf/fonts/veramob.ctg.z
+%%WWWDIR%%/classes/tcpdf/fonts/veramob.php
+%%WWWDIR%%/classes/tcpdf/fonts/veramob.z
+%%WWWDIR%%/classes/tcpdf/fonts/veramobi.ctg.z
+%%WWWDIR%%/classes/tcpdf/fonts/veramobi.php
+%%WWWDIR%%/classes/tcpdf/fonts/veramobi.z
+%%WWWDIR%%/classes/tcpdf/fonts/veramoi.ctg.z
+%%WWWDIR%%/classes/tcpdf/fonts/veramoi.php
+%%WWWDIR%%/classes/tcpdf/fonts/veramoi.z
+%%WWWDIR%%/classes/tcpdf/fonts/verase.ctg.z
+%%WWWDIR%%/classes/tcpdf/fonts/verase.php
+%%WWWDIR%%/classes/tcpdf/fonts/verase.z
+%%WWWDIR%%/classes/tcpdf/fonts/veraseb.ctg.z
+%%WWWDIR%%/classes/tcpdf/fonts/veraseb.php
+%%WWWDIR%%/classes/tcpdf/fonts/veraseb.z
+%%WWWDIR%%/classes/tcpdf/tcpdf.php
 %%WWWDIR%%/classes/validate.class.inc
 %%WWWDIR%%/classes/xml/wbxml.class.inc
 %%WWWDIR%%/classes/xml/xml.class.inc
 %%WWWDIR%%/classes/xml/xpath.class.inc
+%%WWWDIR%%/configuration/groups.inc
 %%WWWDIR%%/configuration/index.php
 %%WWWDIR%%/configuration/look.inc
 %%WWWDIR%%/configuration/notations.inc
@@ -1820,6 +1857,7 @@
 %%WWWDIR%%/javascript/multifile.js
 %%WWWDIR%%/javascript/pngfix.js
 %%WWWDIR%%/javascript/select_users.js
+%%WWWDIR%%/language/about/ar.inc
 %%WWWDIR%%/language/about/bg.inc
 %%WWWDIR%%/language/about/ca.inc
 %%WWWDIR%%/language/about/cs.inc
@@ -1845,6 +1883,7 @@
 %%WWWDIR%%/language/about/tr.inc
 %%WWWDIR%%/language/about/zh-tw.inc
 %%WWWDIR%%/language/about/zh_TW_big5.inc
+%%WWWDIR%%/language/account/ar.inc
 %%WWWDIR%%/language/account/bg.inc
 %%WWWDIR%%/language/account/ca.inc
 %%WWWDIR%%/language/account/cs.inc
@@ -1870,6 +1909,7 @@
 %%WWWDIR%%/language/account/tr.inc
 %%WWWDIR%%/language/account/zh-tw.inc
 %%WWWDIR%%/language/account/zh_TW_big5.inc
+%%WWWDIR%%/language/common/ar.inc
 %%WWWDIR%%/language/common/bg.inc
 %%WWWDIR%%/language/common/ca.inc
 %%WWWDIR%%/language/common/cs.inc
@@ -1895,6 +1935,7 @@
 %%WWWDIR%%/language/common/tr.inc
 %%WWWDIR%%/language/common/zh-tw.inc
 %%WWWDIR%%/language/common/zh_TW_big5.inc
+%%WWWDIR%%/language/filetypes/ar.inc
 %%WWWDIR%%/language/filetypes/bg.inc
 %%WWWDIR%%/language/filetypes/ca.inc
 %%WWWDIR%%/language/filetypes/cs.inc
@@ -1922,6 +1963,7 @@
 %%WWWDIR%%/language/filetypes/zh_TW_big5.inc
 %%WWWDIR%%/language/holidays.inc
 %%WWWDIR%%/language/languages.inc
+%%WWWDIR%%/language/login/ar.inc
 %%WWWDIR%%/language/login/bg.inc
 %%WWWDIR%%/language/login/ca.inc
 %%WWWDIR%%/language/login/cs.inc
@@ -1948,6 +1990,7 @@
 %%WWWDIR%%/language/login/zh-tw.inc
 %%WWWDIR%%/language/login/zh_TW_big5.inc
 %%WWWDIR%%/language/make_language_pack
+%%WWWDIR%%/language/preferences/ar.inc
 %%WWWDIR%%/language/preferences/bu.inc
 %%WWWDIR%%/language/preferences/ca.inc
 %%WWWDIR%%/language/preferences/cs.inc
@@ -1973,6 +2016,7 @@
 %%WWWDIR%%/language/preferences/tr.inc
 %%WWWDIR%%/language/preferences/zh-tw.inc
 %%WWWDIR%%/language/preferences/zh_TW_big5.inc
+%%WWWDIR%%/language/sync/ar.inc
 %%WWWDIR%%/language/sync/ca.inc
 %%WWWDIR%%/language/sync/cs.inc
 %%WWWDIR%%/language/sync/de.inc
@@ -2035,6 +2079,7 @@
 %%WWWDIR%%/lib/scripts/218.inc
 %%WWWDIR%%/lib/scripts/alias.sh
 %%WWWDIR%%/lib/scripts/check_links.php
+%%WWWDIR%%/lib/scripts/convertToUtf8.sh
 %%WWWDIR%%/lib/scripts/convert_links.php
 %%WWWDIR%%/lib/scripts/createmodule.php
 %%WWWDIR%%/lib/scripts/generatecode.php
@@ -2081,6 +2126,7 @@
 %%WWWDIR%%/modules/addressbook/import.inc
 %%WWWDIR%%/modules/addressbook/import.php
 %%WWWDIR%%/modules/addressbook/index.php
+%%WWWDIR%%/modules/addressbook/language/ar.inc
 %%WWWDIR%%/modules/addressbook/language/bg.inc
 %%WWWDIR%%/modules/addressbook/language/ca.inc
 %%WWWDIR%%/modules/addressbook/language/cs.inc
@@ -2126,6 +2172,7 @@
 %%WWWDIR%%/modules/bookmarks/catagory.php
 %%WWWDIR%%/modules/bookmarks/classes/bookmarks.class.inc
 %%WWWDIR%%/modules/bookmarks/index.php
+%%WWWDIR%%/modules/bookmarks/language/ar.inc
 %%WWWDIR%%/modules/bookmarks/language/bg.inc
 %%WWWDIR%%/modules/bookmarks/language/ca.inc
 %%WWWDIR%%/modules/bookmarks/language/cs.inc
@@ -2183,6 +2230,7 @@
 %%WWWDIR%%/modules/calendar/holidays.inc
 %%WWWDIR%%/modules/calendar/import.inc
 %%WWWDIR%%/modules/calendar/index.php
+%%WWWDIR%%/modules/calendar/language/ar.inc
 %%WWWDIR%%/modules/calendar/language/ca.inc
 %%WWWDIR%%/modules/calendar/language/cs.inc
 %%WWWDIR%%/modules/calendar/language/da.inc
@@ -2254,6 +2302,7 @@
 %%WWWDIR%%/modules/cms/index.php.move
 %%WWWDIR%%/modules/cms/insert_link.php
 %%WWWDIR%%/modules/cms/jupload.php
+%%WWWDIR%%/modules/cms/language/ar.inc
 %%WWWDIR%%/modules/cms/language/bg.inc
 %%WWWDIR%%/modules/cms/language/ca.inc
 %%WWWDIR%%/modules/cms/language/cs.inc
@@ -2321,6 +2370,7 @@
 %%WWWDIR%%/modules/cms/view.php
 %%WWWDIR%%/modules/comics/classes/comics.class.inc
 %%WWWDIR%%/modules/comics/index.php
+%%WWWDIR%%/modules/comics/language/ar.inc
 %%WWWDIR%%/modules/comics/language/ca.inc
 %%WWWDIR%%/modules/comics/language/cs.inc
 %%WWWDIR%%/modules/comics/language/da.inc
@@ -2362,6 +2412,7 @@
 %%WWWDIR%%/modules/email/import_ics.php
 %%WWWDIR%%/modules/email/import_vcf.php
 %%WWWDIR%%/modules/email/index.php
+%%WWWDIR%%/modules/email/language/ar.inc
 %%WWWDIR%%/modules/email/language/bg.inc
 %%WWWDIR%%/modules/email/language/ca.inc
 %%WWWDIR%%/modules/email/language/cs.inc
@@ -2422,6 +2473,7 @@
 %%WWWDIR%%/modules/filesystem/filesystem.settings.inc
 %%WWWDIR%%/modules/filesystem/index.php
 %%WWWDIR%%/modules/filesystem/jupload.php
+%%WWWDIR%%/modules/filesystem/language/ar.inc
 %%WWWDIR%%/modules/filesystem/language/bg.inc
 %%WWWDIR%%/modules/filesystem/language/ca.inc
 %%WWWDIR%%/modules/filesystem/language/cs.inc
@@ -2448,13 +2500,16 @@
 %%WWWDIR%%/modules/filesystem/language/zh-tw.inc
 %%WWWDIR%%/modules/filesystem/language/zh_TW_big5.inc
 %%WWWDIR%%/modules/filesystem/link_upload.php
+%%WWWDIR%%/modules/filesystem/links.in
 %%WWWDIR%%/modules/filesystem/links.inc
 %%WWWDIR%%/modules/filesystem/listview.inc
 %%WWWDIR%%/modules/filesystem/module.info
 %%WWWDIR%%/modules/filesystem/new_folder.inc
+%%WWWDIR%%/modules/filesystem/new_folder.php
 %%WWWDIR%%/modules/filesystem/overwrite.inc
 %%WWWDIR%%/modules/filesystem/properties.inc
 %%WWWDIR%%/modules/filesystem/search.inc
+%%WWWDIR%%/modules/filesystem/select_destination.php
 %%WWWDIR%%/modules/filesystem/shares.inc
 %%WWWDIR%%/modules/filesystem/sql/13.inc
 %%WWWDIR%%/modules/filesystem/sql/14.inc
@@ -2470,6 +2525,7 @@
 %%WWWDIR%%/modules/gallery/gallery.php
 %%WWWDIR%%/modules/gallery/index.php
 %%WWWDIR%%/modules/gallery/jupload.php
+%%WWWDIR%%/modules/gallery/language/ar.inc
 %%WWWDIR%%/modules/gallery/language/ca.inc
 %%WWWDIR%%/modules/gallery/language/cs.inc
 %%WWWDIR%%/modules/gallery/language/de.inc
@@ -2488,6 +2544,7 @@
 %%WWWDIR%%/modules/gallery/sql/gallery.updates.inc
 %%WWWDIR%%/modules/groups/group.php
 %%WWWDIR%%/modules/groups/index.php
+%%WWWDIR%%/modules/groups/language/ar.inc
 %%WWWDIR%%/modules/groups/language/bg.inc
 %%WWWDIR%%/modules/groups/language/ca.inc
 %%WWWDIR%%/modules/groups/language/cs.inc
@@ -2514,7 +2571,14 @@
 %%WWWDIR%%/modules/groups/language/zh-tw.inc
 %%WWWDIR%%/modules/groups/language/zh_TW_big5.inc
 %%WWWDIR%%/modules/groups/module.info
+%%WWWDIR%%/modules/logviewer/index.php
+%%WWWDIR%%/modules/logviewer/language/en.inc
+%%WWWDIR%%/modules/logviewer/language/nl.inc
+%%WWWDIR%%/modules/logviewer/module.info
+%%WWWDIR%%/modules/logviewer/themes/Default/images/logviewer.png
+%%WWWDIR%%/modules/logviewer/themes/Default/images.inc
 %%WWWDIR%%/modules/modules/index.php
+%%WWWDIR%%/modules/modules/language/ar.inc
 %%WWWDIR%%/modules/modules/language/bu.inc
 %%WWWDIR%%/modules/modules/language/ca.inc
 %%WWWDIR%%/modules/modules/language/cs.inc
@@ -2546,6 +2610,7 @@
 %%WWWDIR%%/modules/notes/classes/notes.class.inc
 %%WWWDIR%%/modules/notes/classes/notes_list.class.inc
 %%WWWDIR%%/modules/notes/index.php
+%%WWWDIR%%/modules/notes/language/ar.inc
 %%WWWDIR%%/modules/notes/language/ca.inc
 %%WWWDIR%%/modules/notes/language/cs.inc
 %%WWWDIR%%/modules/notes/language/da.inc
@@ -2665,6 +2730,7 @@
 %%WWWDIR%%/modules/phpsysinfo/includes/xml/network.php
 %%WWWDIR%%/modules/phpsysinfo/includes/xml/vitals.php
 %%WWWDIR%%/modules/phpsysinfo/index.php
+%%WWWDIR%%/modules/phpsysinfo/language/ar.inc
 %%WWWDIR%%/modules/phpsysinfo/language/ca.inc
 %%WWWDIR%%/modules/phpsysinfo/language/cs.inc
 %%WWWDIR%%/modules/phpsysinfo/language/de.inc
@@ -2700,6 +2766,7 @@
 %%WWWDIR%%/modules/projects/fee.php
 %%WWWDIR%%/modules/projects/fees.php
 %%WWWDIR%%/modules/projects/index.php
+%%WWWDIR%%/modules/projects/language/ar.inc
 %%WWWDIR%%/modules/projects/language/bg.inc
 %%WWWDIR%%/modules/projects/language/ca.inc
 %%WWWDIR%%/modules/projects/language/cs.inc
@@ -2747,6 +2814,7 @@
 %%WWWDIR%%/modules/projects/template_event.php
 %%WWWDIR%%/modules/projects/templates.php
 %%WWWDIR%%/modules/search/index.php
+%%WWWDIR%%/modules/search/language/ar.inc
 %%WWWDIR%%/modules/search/language/bg.inc
 %%WWWDIR%%/modules/search/language/ca.inc
 %%WWWDIR%%/modules/search/language/cs.inc
@@ -2776,6 +2844,7 @@
 %%WWWDIR%%/modules/summary/announcements.php
 %%WWWDIR%%/modules/summary/classes/summary.class.inc
 %%WWWDIR%%/modules/summary/index.php
+%%WWWDIR%%/modules/summary/language/ar.inc
 %%WWWDIR%%/modules/summary/language/ca.inc
 %%WWWDIR%%/modules/summary/language/cs.inc
 %%WWWDIR%%/modules/summary/language/da.inc
@@ -2804,6 +2873,7 @@
 %%WWWDIR%%/modules/summary/sum_notes.inc
 %%WWWDIR%%/modules/summary/sum_todos.inc
 %%WWWDIR%%/modules/todos/index.php
+%%WWWDIR%%/modules/todos/language/ar.inc
 %%WWWDIR%%/modules/todos/language/ca.inc
 %%WWWDIR%%/modules/todos/language/cs.inc
 %%WWWDIR%%/modules/todos/language/de.inc
@@ -2829,7 +2899,9 @@
 %%WWWDIR%%/modules/tools/dbcheck.php
 %%WWWDIR%%/modules/tools/importusers.php
 %%WWWDIR%%/modules/tools/index.php
+%%WWWDIR%%/modules/tools/language/ar.inc
 %%WWWDIR%%/modules/tools/language/cs.inc
+%%WWWDIR%%/modules/tools/language/de.inc
 %%WWWDIR%%/modules/tools/language/en.inc
 %%WWWDIR%%/modules/tools/language/si.inc
 %%WWWDIR%%/modules/tools/module.info
@@ -2839,6 +2911,7 @@
 %%WWWDIR%%/modules/tools/themes/Default/images.inc
 %%WWWDIR%%/modules/translate/classes/translate.class.inc
 %%WWWDIR%%/modules/translate/index.php
+%%WWWDIR%%/modules/translate/language/ar.inc
 %%WWWDIR%%/modules/translate/language/ca.inc
 %%WWWDIR%%/modules/translate/language/de.inc
 %%WWWDIR%%/modules/translate/language/en.inc
@@ -2852,7 +2925,9 @@
 %%WWWDIR%%/modules/translate/module.info
 %%WWWDIR%%/modules/updateclient/classes/updateclient.class.inc
 %%WWWDIR%%/modules/updateclient/index.php
+%%WWWDIR%%/modules/updateclient/language/ar.inc
 %%WWWDIR%%/modules/updateclient/language/cs.inc
+%%WWWDIR%%/modules/updateclient/language/de.inc
 %%WWWDIR%%/modules/updateclient/language/en.inc
 %%WWWDIR%%/modules/updateclient/language/si.inc
 %%WWWDIR%%/modules/updateclient/module.info
@@ -2867,6 +2942,7 @@
 %%WWWDIR%%/modules/users/classes/users.class.inc
 %%WWWDIR%%/modules/users/fckconfig.js
 %%WWWDIR%%/modules/users/index.php
+%%WWWDIR%%/modules/users/language/ar.inc
 %%WWWDIR%%/modules/users/language/bg.inc
 %%WWWDIR%%/modules/users/language/ca.inc
 %%WWWDIR%%/modules/users/language/cs.inc
@@ -2905,6 +2981,7 @@
 %%WWWDIR%%/phpUnit/index.php
 %%WWWDIR%%/phpdoc.ini
 %%WWWDIR%%/register.php
+%%WWWDIR%%/reminder.php
 %%WWWDIR%%/themes/Default/css/addressbook.css
 %%WWWDIR%%/themes/Default/css/billing.css
 %%WWWDIR%%/themes/Default/css/calendar.css
@@ -3057,6 +3134,7 @@
 %%WWWDIR%%/themes/Default/images/buttons/properties.png
 %%WWWDIR%%/themes/Default/images/buttons/recur.png
 %%WWWDIR%%/themes/Default/images/buttons/refresh.png
+%%WWWDIR%%/themes/Default/images/buttons/reminder.png
 %%WWWDIR%%/themes/Default/images/buttons/reply.png
 %%WWWDIR%%/themes/Default/images/buttons/reply_all.png
 %%WWWDIR%%/themes/Default/images/buttons/resources.png
@@ -4947,6 +5025,10 @@
 @dirrm %%WWWDIR%%/classes/mail/phpmailer/language
 @dirrm %%WWWDIR%%/classes/mail/phpmailer
 @dirrm %%WWWDIR%%/classes/mail
+@dirrm %%WWWDIR%%/classes/tcpdf/config/lang
+@dirrm %%WWWDIR%%/classes/tcpdf/config
+@dirrm %%WWWDIR%%/classes/tcpdf/fonts
+@dirrm %%WWWDIR%%/classes/tcpdf
 @dirrm %%WWWDIR%%/classes/xml
 @dirrm %%WWWDIR%%/classes
 @dirrm %%WWWDIR%%/configuration
@@ -5139,6 +5221,11 @@
 @dirrm %%WWWDIR%%/modules/gallery
 @dirrm %%WWWDIR%%/modules/groups/language
 @dirrm %%WWWDIR%%/modules/groups
+@dirrm %%WWWDIR%%/modules/logviewer/language
+@dirrm %%WWWDIR%%/modules/logviewer/themes/Default/images
+@dirrm %%WWWDIR%%/modules/logviewer/themes/Default
+@dirrm %%WWWDIR%%/modules/logviewer/themes
+@dirrm %%WWWDIR%%/modules/logviewer
 @dirrm %%WWWDIR%%/modules/modules/language
 @dirrm %%WWWDIR%%/modules/modules
 @dirrm %%WWWDIR%%/modules/notes/classes
