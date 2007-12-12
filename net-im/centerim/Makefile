@@ -7,13 +7,10 @@
 #
 
 PORTNAME=	centerim
-PORTVERSION=	4.22.1
-PORTREVISION=	1
+PORTVERSION=	4.22.2
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.centerim.org/download/ \
-		http://cim.sbisinger.net/tars/ \
-		ftp://ftp.centerim.org/
-DISTNAME=	${PORTNAME}-20071003
+MASTER_SITES=	http://www.centerim.org/download/releases/ \
+		ftp://ftp.centerim.org/releases/
 
 MAINTAINER=	frank@altpeter.de
 COMMENT=	A text mode menu- and window-driven IM interface
