@@ -9764,6 +9764,7 @@ p5-File-pushd	ports/devel/p5-File-pushd
 p5-FileHandle-Fmode	ports/devel/p5-FileHandle-Fmode
 p5-FileHandle-Unget	ports/devel/p5-FileHandle-Unget
 p5-Filesys-Df	ports/sysutils/p5-Filesys-Df
+p5-Filesys-DfPortable	ports/sysutils/p5-Filesys-DfPortable
 p5-Filesys-DiskFree	ports/sysutils/p5-Filesys-DiskFree
 p5-Filesys-DiskSpace	ports/sysutils/p5-Filesys-DiskSpace
 p5-Filesys-DiskUsage	ports/sysutils/p5-Filesys-DiskUsage
