@@ -6,12 +6,11 @@
 # $FreeBSD$
 
 PORTNAME=	fastercsv
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete replacement to the CSV standard library
 
 .include <bsd.port.pre.mk>
