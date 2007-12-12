@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	edu.umd.cs.findbugs.plugin.eclipse_${DISTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Eclipse plug-in that provides FindBugs support
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
