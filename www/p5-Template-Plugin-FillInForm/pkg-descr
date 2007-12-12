@@ -1,0 +1,4 @@
+Template::Plugin::FillInForm is a plugin for TT, which allows you
+to make your HTML form sticky using HTML::FillInForm.
+
+WWW: http://search.cpan.org/dist/Template-Plugin-FillInForm
