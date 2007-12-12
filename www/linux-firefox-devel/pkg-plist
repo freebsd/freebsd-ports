@@ -1,6 +1,7 @@
 bin/%%APP_NAME%%
 share/applications/%%APP_NAME%%.desktop
 lib/%%APP_NAME%%/.autoreg
+lib/%%APP_NAME%%/application.ini
 lib/%%APP_NAME%%/browserconfig.properties
 lib/%%APP_NAME%%/chrome/browser.jar
 lib/%%APP_NAME%%/chrome/browser.manifest
@@ -26,25 +27,29 @@ lib/%%APP_NAME%%/components/fuelApplication.js
 lib/%%APP_NAME%%/components/jsconsole-clhandler.js
 lib/%%APP_NAME%%/components/libbrowsercomps.so
 lib/%%APP_NAME%%/components/libbrowserdirprovider.so
+lib/%%APP_NAME%%/components/libimgicon.so
 lib/%%APP_NAME%%/components/libmozgnome.so
 lib/%%APP_NAME%%/components/libnkgnomevfs.so
+lib/%%APP_NAME%%/components/nsBlocklistService.js
 lib/%%APP_NAME%%/components/nsBrowserContentHandler.js
 lib/%%APP_NAME%%/components/nsBrowserGlue.js
-lib/%%APP_NAME%%/components/nsCloseAllWindows.js
+lib/%%APP_NAME%%/components/nsContentDispatchChooser.js
 lib/%%APP_NAME%%/components/nsContentPrefService.js
 lib/%%APP_NAME%%/components/nsDefaultCLH.js
-lib/%%APP_NAME%%/components/nsDictionary.js
+lib/%%APP_NAME%%/components/nsDownloadManagerUI.js
 lib/%%APP_NAME%%/components/nsExtensionManager.js
 lib/%%APP_NAME%%/components/nsFilePicker.js
+lib/%%APP_NAME%%/components/nsHandlerService.js
 lib/%%APP_NAME%%/components/nsHelperAppDlg.js
-lib/%%APP_NAME%%/components/nsInterfaceInfoToIDL.js
 lib/%%APP_NAME%%/components/nsLivemarkService.js
 lib/%%APP_NAME%%/components/nsLoginInfo.js
 lib/%%APP_NAME%%/components/nsLoginManager.js
 lib/%%APP_NAME%%/components/nsLoginManagerPrompter.js
 lib/%%APP_NAME%%/components/nsMicrosummaryService.js
+lib/%%APP_NAME%%/components/nsPlacesTransactionsService.js
 lib/%%APP_NAME%%/components/nsProxyAutoConfig.js
 lib/%%APP_NAME%%/components/nsSafebrowsingApplication.js
+lib/%%APP_NAME%%/components/nsScriptableIO.js
 lib/%%APP_NAME%%/components/nsSearchService.js
 lib/%%APP_NAME%%/components/nsSearchSuggestions.js
 lib/%%APP_NAME%%/components/nsSessionStartup.js
@@ -52,12 +57,12 @@ lib/%%APP_NAME%%/components/nsSessionStore.js
 lib/%%APP_NAME%%/components/nsSetDefaultBrowser.js
 lib/%%APP_NAME%%/components/nsSidebar.js
 lib/%%APP_NAME%%/components/nsTaggingService.js
+lib/%%APP_NAME%%/components/nsTryToClose.js
 lib/%%APP_NAME%%/components/nsURLFormatter.js
 lib/%%APP_NAME%%/components/nsUpdateService.js
 lib/%%APP_NAME%%/components/nsUrlClassifierLib.js
 lib/%%APP_NAME%%/components/nsUrlClassifierListManager.js
-lib/%%APP_NAME%%/components/nsUrlClassifierTable.js
-lib/%%APP_NAME%%/components/nsXmlRpcClient.js
+lib/%%APP_NAME%%/components/nsWebHandlerApp.js
 lib/%%APP_NAME%%/components/pluginGlue.js
 lib/%%APP_NAME%%/components/storage-Legacy.js
 lib/%%APP_NAME%%/components/txEXSLTRegExFunctions.js
@@ -84,12 +89,8 @@ lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome/inspector.jar
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components/inspector-cmdline.js
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/install.rdf
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/chrome.manifest
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/qfaservices.xpt
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/XTalkback.ad
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback.so
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/install.rdf
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/winInspectorMain.xpm
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/winInspectorMain16.xpm
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
 lib/%%APP_NAME%%/firefox
 lib/%%APP_NAME%%/firefox-bin
@@ -106,18 +107,25 @@ lib/%%APP_NAME%%/libmozjs.so
 lib/%%APP_NAME%%/libnspr4.so
 lib/%%APP_NAME%%/libnss3.so
 lib/%%APP_NAME%%/libnssckbi.so
+lib/%%APP_NAME%%/libnssdbm3.so
 lib/%%APP_NAME%%/libplc4.so
 lib/%%APP_NAME%%/libplds4.so
 lib/%%APP_NAME%%/libsmime3.so
 lib/%%APP_NAME%%/libsoftokn3.chk
 lib/%%APP_NAME%%/libsoftokn3.so
+lib/%%APP_NAME%%/libsqlite3.so
 lib/%%APP_NAME%%/libssl3.so
 lib/%%APP_NAME%%/libxpcom.so
 lib/%%APP_NAME%%/libxul.so
+lib/%%APP_NAME%%/modules/ISO8601DateUtils.jsm
+lib/%%APP_NAME%%/modules/JSON.jsm
+lib/%%APP_NAME%%/modules/Microformats.js
+lib/%%APP_NAME%%/modules/XPCOMUtils.jsm
+lib/%%APP_NAME%%/modules/distribution.js
 lib/%%APP_NAME%%/mozilla-xremote-client
 lib/%%APP_NAME%%/old-homepage-default.properties
+lib/%%APP_NAME%%/platform.ini
 lib/%%APP_NAME%%/plugins/libnullplugin.so
-lib/%%APP_NAME%%/readme.txt
 lib/%%APP_NAME%%/removed-files
 lib/%%APP_NAME%%/res/EditorOverride.css
 lib/%%APP_NAME%%/res/arrow.gif
@@ -126,6 +134,8 @@ lib/%%APP_NAME%%/res/broken-image.gif
 lib/%%APP_NAME%%/res/charsetData.properties
 lib/%%APP_NAME%%/res/charsetalias.properties
 lib/%%APP_NAME%%/res/cmessage.txt
+lib/%%APP_NAME%%/res/contenteditable.css
+lib/%%APP_NAME%%/res/designmode.css
 lib/%%APP_NAME%%/res/dtd/mathml.dtd
 lib/%%APP_NAME%%/res/dtd/xhtml11.dtd
 lib/%%APP_NAME%%/res/effective_tld_names.dat
@@ -136,28 +146,15 @@ lib/%%APP_NAME%%/res/entityTables/htmlEntityVersions.properties
 lib/%%APP_NAME%%/res/entityTables/mathml20.properties
 lib/%%APP_NAME%%/res/entityTables/transliterate.properties
 lib/%%APP_NAME%%/res/fonts/mathfont.properties
-lib/%%APP_NAME%%/res/fonts/mathfontCMEX10.properties
-lib/%%APP_NAME%%/res/fonts/mathfontCMSY10.properties
-lib/%%APP_NAME%%/res/fonts/mathfontMTExtra.properties
-lib/%%APP_NAME%%/res/fonts/mathfontMath1.properties
-lib/%%APP_NAME%%/res/fonts/mathfontMath2.properties
-lib/%%APP_NAME%%/res/fonts/mathfontMath4.properties
-lib/%%APP_NAME%%/res/fonts/mathfontPUA.properties
-lib/%%APP_NAME%%/res/fonts/mathfontSymbol.properties
+lib/%%APP_NAME%%/res/fonts/mathfontSTIXNonUnicode.properties
+lib/%%APP_NAME%%/res/fonts/mathfontSTIXSize1.properties
+lib/%%APP_NAME%%/res/fonts/mathfontStandardSymbolsL.properties
+lib/%%APP_NAME%%/res/fonts/mathfontUnicode.properties
 lib/%%APP_NAME%%/res/forms.css
 lib/%%APP_NAME%%/res/grabber.gif
 lib/%%APP_NAME%%/res/hiddenWindow.html
 lib/%%APP_NAME%%/res/html.css
-lib/%%APP_NAME%%/res/html/gopher-audio.gif
-lib/%%APP_NAME%%/res/html/gopher-binary.gif
-lib/%%APP_NAME%%/res/html/gopher-find.gif
-lib/%%APP_NAME%%/res/html/gopher-image.gif
-lib/%%APP_NAME%%/res/html/gopher-menu.gif
-lib/%%APP_NAME%%/res/html/gopher-movie.gif
-lib/%%APP_NAME%%/res/html/gopher-sound.gif
-lib/%%APP_NAME%%/res/html/gopher-telnet.gif
-lib/%%APP_NAME%%/res/html/gopher-text.gif
-lib/%%APP_NAME%%/res/html/gopher-unknown.gif
+lib/%%APP_NAME%%/res/html/folder.png
 lib/%%APP_NAME%%/res/langGroups.properties
 lib/%%APP_NAME%%/res/language.properties
 lib/%%APP_NAME%%/res/loading-image.gif
@@ -213,14 +210,17 @@ lib/%%APP_NAME%%/xpicleanup
 @dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components
 @dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults/preferences
 @dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome/icons
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform
 @dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org
-@dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback
-@dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components
-@dirrm lib/%%APP_NAME%%/extensions/talkback@mozilla.org
 @dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
 @dirrm lib/%%APP_NAME%%/extensions
 @dirrm lib/%%APP_NAME%%/greprefs
 @dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/modules
 @dirrm lib/%%APP_NAME%%/plugins
 @dirrm lib/%%APP_NAME%%/res/dtd
 @dirrm lib/%%APP_NAME%%/res/entityTables

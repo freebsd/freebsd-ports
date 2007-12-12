@@ -7,7 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	3.0.a${SNAPDATE:S/-/./g}
-DISTVERSION=	3.0a6pre
+DISTVERSION=	3.0b3pre
 DISTVERSIONSUFFIX=	.en-US.linux-i686
 CATEGORIES=	www
 MASTER_SITES=   http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
@@ -22,8 +22,7 @@ DIST_SUBDIR=		${PORTNAME}-${SNAPDATE}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-FORBIDDEN=	multiple vulnerabilities
-SNAPDATE=	2007-06-26
+SNAPDATE=	2007-12-12
 USE_BZIP2=	yes
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
