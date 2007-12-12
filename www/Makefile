@@ -864,6 +864,7 @@
     SUBDIR += p5-Template-Plugin-Clickable
     SUBDIR += p5-Template-Plugin-Clickable-Email
     SUBDIR += p5-Template-Plugin-Comma
+    SUBDIR += p5-Template-Plugin-FillInForm
     SUBDIR += p5-Template-Plugin-JSON
     SUBDIR += p5-Template-Plugin-JavaScript
     SUBDIR += p5-Template-Plugin-MP3
