@@ -6,40 +6,33 @@
 #
 
 PORTNAME=	tuxmath
-DISTVERSION=	2001.09.07-0102
-PORTREVISION=	1
+PORTVERSION=	1.5.8
+PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/2191/
+DISTNAME=	${PORTNAME}_w_fonts-${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Educational arcade game starring Tux
 
 USE_GMAKE=	yes
-USE_SDL=	image mixer sdl
+USE_SDL=	image mixer sdl ttf
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--program-transform-name=""
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+OPTIONS=	NLS "Enable Native Language Support" on
 
-post-extract:
-# Remove CVS and .xvpics directories
-.for d in CVS .xvpics
-	@${FIND} ${WRKSRC} -type d -name ${d} -print0 | \
-		${XARGS} -0 ${RM} -rf
-.endfor
+.include <bsd.port.pre.mk>
 
-post-install:
-# Fix permissions
-	@${CHOWN} -R ${BINOWN}:${BINGRP} ${DATADIR}
-	@${FIND} ${DATADIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644
-	@${FIND} ${DATADIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
-# Fix Makefile
-	@${REINPLACE_CMD} -e 's|/usr/share/tuxmath|${DATADIR}| ; \
-			s|\(BIN_PREFIX=\).*|\1${PREFIX}/bin/| ; \
-			s|sdl-config|${SDL_CONFIG}|' \
-				${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|$$(prefix)/doc/$$(PACKAGE)|$$(docdir)|' \
+		${WRKSRC}/docs/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
