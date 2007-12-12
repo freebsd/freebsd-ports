@@ -16,13 +16,11 @@ PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://mlton.org/pages/Download/attachments/ \
 		http://mlton.org/pages/Experimental/attachments/
-
 DISTFILES=	${BOOT_DIST} ${SRC_DIST}
 EXTRACT_ONLY=	${SRC_DIST}
 
-# Other maintainers are Geoffrey Mainland (mainland@apeiron.net)
-#  and Jesper Louis Andersen (jlouis@mongers.org)
-MAINTAINER=	sweeks@sweeks.com
+# Other maintainer is Geoffrey Mainland (mainland@apeiron.net)
+MAINTAINER=	jlouis@mongers.org
 COMMENT=	An optimizing Standard ML compiler
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
@@ -121,7 +119,7 @@ build-package:
 	${MAKE} install
 	${MAKE} package
 	${MAKE} deinstall
-	pkg_add ${PORTNAME}-${PORTVERSION}_1.tbz
+	${PKG_ADD} ${PORTNAME}-${PORTVERSION}_1.tbz
 	${MAKE} deinstall
 	${MAKE} reinstall
 	${MAKE} package
