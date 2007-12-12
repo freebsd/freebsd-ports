@@ -1617,6 +1617,7 @@
     SUBDIR += p5-Test-TAP-Model
     SUBDIR += p5-Test-Tester
     SUBDIR += p5-Test-Unit
+    SUBDIR += p5-Test-UseAllModules
     SUBDIR += p5-Test-WWW-Mechanize
     SUBDIR += p5-Test-WWW-Mechanize-Catalyst
     SUBDIR += p5-Test-Warn

@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/UseAllModules/.packlist
+%%SITE_PERL%%/Test/UseAllModules.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/UseAllModules
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
