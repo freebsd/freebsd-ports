@@ -1,0 +1,14 @@
+**********************************************************************
+To enable dnsproxy you need:
+
+1) Enable dnsproxy in /etc/rc.conf with the following line:
+   dnsproxy_enable="YES"
+
+2) Configuration template is available in %%ETCDIR%%/ as
+   dnsproxy.conf.sample file.
+
+For more information see man dnsproxy(1)
+
+**********************************************************************
+
+
