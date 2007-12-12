@@ -145,6 +145,7 @@
     SUBDIR += kde-icons-marbles-translucent
     SUBDIR += kde-icons-noia
     SUBDIR += kde-icons-noia-warm
+    SUBDIR += kde-icons-nuovext
     SUBDIR += kde-icons-nuvola
     SUBDIR += kde-icons-os-k
     SUBDIR += kde-icons-realistic
