@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-table-imengine
 PORTVERSION=	0.5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -31,9 +31,7 @@ MAN1=		scim-make-table.1
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl" \
-		PREFIX="${PREFIX}" \
-		SCIM_DATADIR=${PREFIX}/share/scim \
-		SCIM_ICONDIR=${PREFIX}/share/scim/icons
+		PREFIX="${PREFIX}"
 
 PLIST_SUB=	SKIM="@comment "
 
