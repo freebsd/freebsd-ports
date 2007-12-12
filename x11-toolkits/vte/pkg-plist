@@ -19,7 +19,6 @@ lib/vte/vterdb
 lib/vte/window
 libdata/pkgconfig/vte.pc
 libexec/gnome-pty-helper
-share/vte/termcap/xterm
 share/locale/am/LC_MESSAGES/vte.mo
 share/locale/ang/LC_MESSAGES/vte.mo
 share/locale/ar/LC_MESSAGES/vte.mo
@@ -91,6 +90,7 @@ share/locale/sr/LC_MESSAGES/vte.mo
 share/locale/sr@Latn/LC_MESSAGES/vte.mo
 share/locale/sv/LC_MESSAGES/vte.mo
 share/locale/ta/LC_MESSAGES/vte.mo
+share/locale/te/LC_MESSAGES/vte.mo
 share/locale/th/LC_MESSAGES/vte.mo
 share/locale/tr/LC_MESSAGES/vte.mo
 share/locale/ug/LC_MESSAGES/vte.mo
@@ -101,8 +101,9 @@ share/locale/xh/LC_MESSAGES/vte.mo
 share/locale/zh_CN/LC_MESSAGES/vte.mo
 share/locale/zh_HK/LC_MESSAGES/vte.mo
 share/locale/zh_TW/LC_MESSAGES/vte.mo
-@dirrm share/vte/termcap
-@dirrm share/vte
+%%DATADIR%%/termcap/xterm
+@dirrm %%DATADIR%%/termcap
+@dirrm %%DATADIR%%
 @dirrm lib/vte
 @dirrm include/vte
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -111,6 +112,8 @@ share/locale/zh_TW/LC_MESSAGES/vte.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
