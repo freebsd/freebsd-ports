@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ffe
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	textproc
 MASTER_SITES=	SFE/ff-extractor
 
