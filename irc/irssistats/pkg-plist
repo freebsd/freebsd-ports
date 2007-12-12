@@ -42,6 +42,7 @@ bin/irssistats
 %%DATADIR%%/zerezo.css
 %%EXAMPLESDIR%%/sample.configfile
 %%EXAMPLESDIR%%/sample.nickfile
+%%EXAMPLESDIR%%/sample.photofile
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
