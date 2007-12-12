@@ -156,7 +156,7 @@ USE_XORG+=		sm ice xext xinerama xi xrandr xcursor xfixes
 IGNORE=			option WITH_PANGOCAIRO is required for option WITH_GTK
 .endif
 .else
-CONFIGURE_ARGS+=	--without-gtk --without-gdk-pixbuf=yes
+CONFIGURE_ARGS+=	--without-gtk --without-gdk-pixbuf
 PLIST_SUB+=		WITH_GTK="@comment "
 .endif
 
@@ -168,7 +168,7 @@ USE_GNOME+=		gdkpixbuf
 IGNORE=			option WITH_GTK is required for option WITH_GDK_PIXBUF
 .endif
 .else
-CONFIGURE_ARGS+=	--without-gdk-pixbuf=yes
+CONFIGURE_ARGS+=	--without-gdk-pixbuf
 PLIST_SUB+=		WITH_PIXBUF="@comment "
 .endif
 
