@@ -132,6 +132,7 @@
     SUBDIR += kde-icons-black-and-white
     SUBDIR += kde-icons-cezanne
     SUBDIR += kde-icons-crystal-project
+    SUBDIR += kde-icons-dark-glass
     SUBDIR += kde-icons-gartoon-blue-svg
     SUBDIR += kde-icons-gartoon-svg
     SUBDIR += kde-icons-graphite-rade8
