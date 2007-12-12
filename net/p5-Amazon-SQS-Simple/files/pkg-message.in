@@ -1,0 +1,20 @@
+
+You need to do some things before you can use the Amazon Simple
+Queue Service:
+
+1) Visit http://aws.amazon.com/ to create an Amazon AWS account.
+
+2) Obtain your AWS public key and secret key to use with the SQS service.
+
+3) Use the Amazon AWS calculator to estimate your monthly cost:
+   http://calculator.s3.amazonaws.com/calc5.html?
+
+4) Visit the Amazon SQS Resource Center for information, tutorials and
+   sample code:
+   http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=8
+
+   DISCLAIMER: No one but you is responsible for paying Amazon to use
+               the SQS service. SQS does not have a free sandbox area,
+               so be aware how much money you are spending to use the
+               service.
+
