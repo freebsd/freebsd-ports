@@ -5,6 +5,9 @@
       %%EXAMPLESDIR%%/pgbouncer.ini
       to %%PREFIX%%/etc/pgbouncer.ini and edit appropriately.
 
+      You will also need to define the list of allowed users as
+      per the pgbouncer(5) man page.
+
       To run pgbouncer from startup, add pgbouncer_enable="YES"
       in your /etc/rc.conf.
 
