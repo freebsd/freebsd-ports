@@ -716,6 +716,7 @@
     SUBDIR += tulip
     SUBDIR += uDrawGraph
     SUBDIR += ufraw
+    SUBDIR += uniconvertor
     SUBDIR += unpaper
     SUBDIR += urt
     SUBDIR += vcg
