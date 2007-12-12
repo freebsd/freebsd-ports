@@ -79,7 +79,7 @@ otrs/scripts/database/update/otrs-upgrade-to-2.2.xml
 otrs/scripts/login.php
 otrs/scripts/login.pl
 otrs/scripts/restore.pl
-otrs/scripts/rpc-examlple.pl
+otrs/scripts/rpc-example.pl
 otrs/scripts/sync_node.sh
 otrs/scripts/syncuser_csv2otrs.pl
 otrs/scripts/test/CustomerBackend.pl

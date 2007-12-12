@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -44,6 +44,8 @@ OPTIONS=	MYSQL "MySQL database support" on \
 		ISPELL "Enable spell checking" on \
 		GNUPG "Use GnuPG" off
 
+USE_BZIP2=	yes
+
 OTRSDIR=	${PREFIX}/otrs
 
 SUB_FILES=	pkg-install pkg-message
@@ -60,7 +62,7 @@ DOCS_DIRS_LIST=	"" manual/en/pdf
 DOCS_FILES_LIST=	C* INSTALL RE* TODO UPGRADING
 
 SCRIPTS_DIRS_LIST=	"" database/update test tools
-CLEAN_CPAN_DIRS=	Algorithm Authen Crypt Date Email IO Mail MIME Text XML auto
+CLEAN_CPAN_DIRS=	Algorithm Authen Crypt Date Email File IO Mail MIME Text XML auto
 CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* \
 		scripts/redhat* scripts/DBUpdate*
 
