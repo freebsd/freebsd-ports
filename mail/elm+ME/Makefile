@@ -7,7 +7,6 @@
 
 PORTNAME=	elm+ME
 PORTVERSION=	${ELM_VERSION}.${ELM_REVISION}${ELM_PATCHLEVEL:S/_//}
-PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.elmme-mailer.org/ \
 	ftp://ftp.elmme-mailer.org/elmme-mailer.org/src/elm-2.4ME+/ \
@@ -83,7 +82,7 @@ OPTIONS=	ELM_ICONV "libiconv support" on \
 
 ELM_VERSION=	2.4
 ELM_REVISION=	124
-ELM_PATCHLEVEL=	_	# a...z = patch-level, _ means no patch-level.
+ELM_PATCHLEVEL=	a	# a...z = patch-level, _ means no patch-level.
 
 ELM_PATCHDONE=	false
 .for level in _ a b c d e f g h i j k l m n o p q r s t u v w x y z

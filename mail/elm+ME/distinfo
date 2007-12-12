@@ -1,3 +1,6 @@
 MD5 (elm-2.4ME+124.tar.gz) = c9604dd0629094dd7c4b29712df1159d
 SHA256 (elm-2.4ME+124.tar.gz) = 609e07dfc31d05fad4757639dbc6f60ffb56d049528b6a1d258c7f259144e6cf
 SIZE (elm-2.4ME+124.tar.gz) = 1669056
+MD5 (elm-2.4ME+PL124a.patch.gz) = 9bd8eea44642aecaf7f56efd44859fed
+SHA256 (elm-2.4ME+PL124a.patch.gz) = fd641f7153d8767414f0f8ec2cddf7d703663c1347c524d6c38a46cf39bc52c1
+SIZE (elm-2.4ME+PL124a.patch.gz) = 3964
