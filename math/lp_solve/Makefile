@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lp_solve
-PORTVERSION=	${PORTMAJOR_VER}.0.9
+PORTVERSION=	${PORTMAJOR_VER}.0.10
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} # http://groups.yahoo.com/group/lp_solve/
 MASTER_SITE_SUBDIR=	lpsolve
@@ -35,8 +35,10 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lp_solve/lp_solve ${PREFIX}/bin
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/demo/demo ${EXAMPLESDIR}
+.endif
 	${MKDIR} ${PREFIX}/include/lpsolve
 	${INSTALL_DATA} ${WRKSRC}/lp_lib.h ${PREFIX}/include/lpsolve
 	${INSTALL_DATA} ${WRKSRC}/lp_types.h ${PREFIX}/include/lpsolve
