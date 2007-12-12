@@ -8958,6 +8958,7 @@ p5-Business-PayPal	ports/www/p5-Business-PayPal
 p5-Business-PayPal-EWP	ports/security/p5-Business-PayPal-EWP
 p5-Business-PayPal-IPN	ports/finance/p5-Business-PayPal-IPN
 p5-Business-TW-TSIB-CStorePayment	ports/finance/p5-Business-TW-TSIB-CStorePayment
+p5-Business-TW-TSIB-VirtualAccount	ports/finance/p5-Business-TW-TSIB-VirtualAccount
 p5-Business-UPS	ports/misc/p5-Business-UPS
 p5-Business-WorldPay-Junior	ports/finance/p5-Business-WorldPay-Junior
 p5-C-Scan	ports/devel/p5-C-Scan
