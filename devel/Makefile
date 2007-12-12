@@ -1797,6 +1797,7 @@
     SUBDIR += pecl-json
     SUBDIR += pecl-operator
     SUBDIR += pecl-runkit
+    SUBDIR += pecl-shape
     SUBDIR += pecl-statgrab
     SUBDIR += pecl-svn
     SUBDIR += pecl-uploadprogress
