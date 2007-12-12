@@ -31,6 +31,9 @@ bin/pyawale
 %%DATADIR%%/data/awale_seed_10d.png
 %%DATADIR%%/data/awale_seed_11d.png
 %%DATADIR%%/data/awale_seed_12d.png
+%%DATADIR%%/data/awale_seed_12d_13.png
+%%DATADIR%%/data/awale_seed_14d.png
+%%DATADIR%%/data/awale_seed_15d.png
 %%DATADIR%%/data/awale_seed_1d.png
 %%DATADIR%%/data/awale_seed_2c.png
 %%DATADIR%%/data/awale_seed_3b.png
