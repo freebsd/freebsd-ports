@@ -1,0 +1,11 @@
+--- ./magic/Makefile.orig	Sun Oct 28 04:19:05 2007
++++ ./magic/Makefile	Wed Dec 12 03:13:51 2007
+@@ -19,7 +19,7 @@
+ TP_MAGIC_CFLAGS=$(shell if [ -x tp-magic-config ] ; then tp-magic-config --cflags ; else echo -I../src/ ; fi)
+ 
+ SDL_CFLAGS=$(shell sdl-config --cflags)
+-CFLAGS=-g -Wall $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS)
++CFLAGS=$(MYCFLAGS) -g -Wall $(SDL_CFLAGS) $(TP_MAGIC_CFLAGS) -fPIC
+ 
+ SDL_LIBS=-L/usr/local/lib -lmingw32 -lSDL -lSDL_image -lSDL_ttf $(SDL_MIXER_LIB)
+ SDL_MIXER_LIB=-lSDL_mixer

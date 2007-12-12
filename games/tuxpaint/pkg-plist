@@ -1,8 +1,34 @@
+bin/tp-magic-config
 bin/tuxpaint
 bin/tuxpaint-import
 @unexec if cmp -s %D/etc/tuxpaint/tuxpaint.conf %D/etc/tuxpaint/tuxpaint.conf.sample; then rm -f %D/etc/tuxpaint/tuxpaint.conf; fi
 etc/tuxpaint/tuxpaint.conf.sample
 @exec [ -f %D/etc/tuxpaint/tuxpaint.conf ] || cp %D/etc/tuxpaint/tuxpaint.conf.sample %D/etc/tuxpaint/tuxpaint.conf
+include/tuxpaint/tp_magic_api.h
+lib/tuxpaint/plugins/blocks_chalk_drip.so
+lib/tuxpaint/plugins/blur.so
+lib/tuxpaint/plugins/bricks.so
+lib/tuxpaint/plugins/calligraphy.so
+lib/tuxpaint/plugins/cartoon.so
+lib/tuxpaint/plugins/distortion.so
+lib/tuxpaint/plugins/emboss.so
+lib/tuxpaint/plugins/fade_darken.so
+lib/tuxpaint/plugins/fill.so
+lib/tuxpaint/plugins/flower.so
+lib/tuxpaint/plugins/foam.so
+lib/tuxpaint/plugins/glasstile.so
+lib/tuxpaint/plugins/grass.so
+lib/tuxpaint/plugins/kalidescope.so
+lib/tuxpaint/plugins/light.so
+lib/tuxpaint/plugins/metalpaint.so
+lib/tuxpaint/plugins/mirror_flip.so
+lib/tuxpaint/plugins/negative.so
+lib/tuxpaint/plugins/rainbow.so
+lib/tuxpaint/plugins/ripples.so
+lib/tuxpaint/plugins/shift.so
+lib/tuxpaint/plugins/smudge.so
+lib/tuxpaint/plugins/tint.so
+lib/tuxpaint/plugins/waves.so
 %%PORTDOCS%%%%DOCSDIR%%/ADVANCED-STAMPS-HOWTO.txt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
@@ -81,6 +107,10 @@ etc/tuxpaint/tuxpaint.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/de/PNG.txt
 %%PORTDOCS%%%%DOCSDIR%%/default_colors.txt
 %%PORTDOCS%%%%DOCSDIR%%/dejavu.txt
+%%PORTDOCS%%%%DOCSDIR%%/dev/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/dev/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/dev/html/README.html
+%%PORTDOCS%%%%DOCSDIR%%/dev/tp_magic_example.c
 %%PORTDOCS%%%%DOCSDIR%%/el/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/el/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/el/FAQ.txt
@@ -89,13 +119,11 @@ etc/tuxpaint/tuxpaint.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/el/PNG.txt
 %%PORTDOCS%%%%DOCSDIR%%/el/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/es/AUTORES.txt
-%%PORTDOCS%%%%DOCSDIR%%/es/CONTRIBUYENTES.txt
 %%PORTDOCS%%%%DOCSDIR%%/es/COPIADO.txt
 %%PORTDOCS%%%%DOCSDIR%%/es/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/es/INSTALACION.txt
 %%PORTDOCS%%%%DOCSDIR%%/es/LEEME.txt
 %%PORTDOCS%%%%DOCSDIR%%/es/OPCIONES.txt
-%%PORTDOCS%%%%DOCSDIR%%/es/OPTIONS.txt
 %%PORTDOCS%%%%DOCSDIR%%/es/PNG.txt
 %%PORTDOCS%%%%DOCSDIR%%/es/html/LEEME.html
 %%PORTDOCS%%%%DOCSDIR%%/es/html/OPCIONES.html
@@ -295,6 +323,61 @@ etc/tuxpaint/tuxpaint.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/lt/OPTIONS.txt
 %%PORTDOCS%%%%DOCSDIR%%/lt/PNG.txt
 %%PORTDOCS%%%%DOCSDIR%%/lt/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/blocks.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/blur.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/bricks.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/calligraphy.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/cartoon.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/chalk.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/darken.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/drip.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/emboss.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/fade.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/fill.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/flip.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/flower.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/foam.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/glasstile.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/grass.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/blocks.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/blur.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/bricks.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/calligraphy.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/cartoon.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/chalk.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/darken.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/drip.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/emboss.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/fade.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/fill.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/flip.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/flower.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/foam.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/glasstile.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/grass.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/kalidescope.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/light.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/metalpaint.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/mirror.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/negative.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/rainbow.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/ripples.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/shift.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/smudge.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/tint.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/waves.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/kalidescope.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/light.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/metalpaint.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/mirror.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/negative.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/rainbow.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/ripples.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/shift.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/smudge.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/tint.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/waves.txt
 %%PORTDOCS%%%%DOCSDIR%%/ms/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/nb/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/nb/COPYING.txt
@@ -339,9 +422,15 @@ etc/tuxpaint/tuxpaint.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/ro/PNG.txt
 %%PORTDOCS%%%%DOCSDIR%%/ro/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/ru/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/ru/EXTENDING.txt
+%%PORTDOCS%%%%DOCSDIR%%/ru/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/ru/INSTALL.txt
 %%PORTDOCS%%%%DOCSDIR%%/ru/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/ru/OPTIONS.txt
+%%PORTDOCS%%%%DOCSDIR%%/ru/PNG.txt
 %%PORTDOCS%%%%DOCSDIR%%/ru/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/EXTENDING.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/ru/html/OPTIONS.html
 %%PORTDOCS%%%%DOCSDIR%%/ru/html/README.html
 %%PORTDOCS%%%%DOCSDIR%%/sk/COPYING.txt
@@ -369,16 +458,22 @@ etc/tuxpaint/tuxpaint.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/tr/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/wa/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/zh_cn/COPYING.html
+%%PORTDOCS%%%%DOCSDIR%%/zh_cn/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/zh_cn/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/zh_cn/html/README.html
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/GNU_GPL_Chinese.html
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/zh_tw/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/OPTIONS.txt
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/PNG.txt
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/html/OPTIONS.html
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/html/README.html
+%%PORTDOCS%%%%DOCSDIR%%/zh_tw/mkTuxpaintIM.py
+%%PORTDOCS%%%%DOCSDIR%%/zh_tw/phone.cin
 share/locale/af/LC_MESSAGES/tuxpaint.mo
 share/locale/ar/LC_MESSAGES/tuxpaint.mo
 share/locale/be/LC_MESSAGES/tuxpaint.mo
@@ -393,6 +488,7 @@ share/locale/de/LC_MESSAGES/tuxpaint.mo
 share/locale/el/LC_MESSAGES/tuxpaint.mo
 share/locale/en_GB/LC_MESSAGES/tuxpaint.mo
 share/locale/en_ZA/LC_MESSAGES/tuxpaint.mo
+share/locale/eo/LC_MESSAGES/tuxpaint.mo
 share/locale/es/LC_MESSAGES/tuxpaint.mo
 share/locale/es_MX/LC_MESSAGES/tuxpaint.mo
 share/locale/et/LC_MESSAGES/tuxpaint.mo
@@ -423,6 +519,7 @@ share/locale/nb/LC_MESSAGES/tuxpaint.mo
 share/locale/nl/LC_MESSAGES/tuxpaint.mo
 share/locale/nn/LC_MESSAGES/tuxpaint.mo
 share/locale/nr/LC_MESSAGES/tuxpaint.mo
+share/locale/oj/LC_MESSAGES/tuxpaint.mo
 share/locale/pl/LC_MESSAGES/tuxpaint.mo
 share/locale/pt_BR/LC_MESSAGES/tuxpaint.mo
 share/locale/pt_PT/LC_MESSAGES/tuxpaint.mo
@@ -446,6 +543,7 @@ share/locale/uk/LC_MESSAGES/tuxpaint.mo
 share/locale/ve/LC_MESSAGES/tuxpaint.mo
 share/locale/vi/LC_MESSAGES/tuxpaint.mo
 share/locale/wa/LC_MESSAGES/tuxpaint.mo
+share/locale/wo/LC_MESSAGES/tuxpaint.mo
 share/locale/xh/LC_MESSAGES/tuxpaint.mo
 share/locale/zh_CN/LC_MESSAGES/tuxpaint.mo
 share/locale/zh_TW/LC_MESSAGES/tuxpaint.mo
@@ -487,6 +585,8 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/brushes/slash_16_rt.png
 %%DATADIR%%/brushes/slash_20_lt.png
 %%DATADIR%%/brushes/slash_20_rt.png
+%%DATADIR%%/brushes/sparkles.dat
+%%DATADIR%%/brushes/sparkles.png
 %%DATADIR%%/brushes/sphere.png
 %%DATADIR%%/brushes/spiral.dat
 %%DATADIR%%/brushes/spiral.png
@@ -564,6 +664,8 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/fonts/locale/zh_tw_docs/tuxpaintsubset.pe
 %%DATADIR%%/im/ja.im
 %%DATADIR%%/im/ko.im
+%%DATADIR%%/im/th.im
+%%DATADIR%%/im/zh_tw.im
 %%DATADIR%%/images/icon-win32.ico
 %%DATADIR%%/images/icon.png
 %%DATADIR%%/images/icon128x128.png
@@ -577,28 +679,47 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/images/icon96x96.png
 %%DATADIR%%/images/magic/blocks.png
 %%DATADIR%%/images/magic/blur.png
+%%DATADIR%%/images/magic/calligraphy.png
+%%DATADIR%%/images/magic/calligraphy_brush.png
 %%DATADIR%%/images/magic/cartoon.png
 %%DATADIR%%/images/magic/chalk.png
 %%DATADIR%%/images/magic/darken.png
+%%DATADIR%%/images/magic/distortion.png
 %%DATADIR%%/images/magic/drip.png
+%%DATADIR%%/images/magic/emboss.png
 %%DATADIR%%/images/magic/fade.png
 %%DATADIR%%/images/magic/fill.png
 %%DATADIR%%/images/magic/flip.png
+%%DATADIR%%/images/magic/flower.png
+%%DATADIR%%/images/magic/flower_base.png
+%%DATADIR%%/images/magic/flower_leaf.png
+%%DATADIR%%/images/magic/flower_petals.png
+%%DATADIR%%/images/magic/foam.png
+%%DATADIR%%/images/magic/foam_data.png
+%%DATADIR%%/images/magic/glasstile.png
 %%DATADIR%%/images/magic/grass.png
+%%DATADIR%%/images/magic/grass_data.png
+%%DATADIR%%/images/magic/kalidescope.png
 %%DATADIR%%/images/magic/largebrick.png
+%%DATADIR%%/images/magic/light.png
+%%DATADIR%%/images/magic/metalpaint.png
 %%DATADIR%%/images/magic/mirror.png
 %%DATADIR%%/images/magic/negative.png
 %%DATADIR%%/images/magic/rainbow.png
+%%DATADIR%%/images/magic/ripples.png
+%%DATADIR%%/images/magic/shift.png
 %%DATADIR%%/images/magic/smallbrick.png
 %%DATADIR%%/images/magic/smudge.png
-%%DATADIR%%/images/magic/sparkles.png
 %%DATADIR%%/images/magic/thick.png
 %%DATADIR%%/images/magic/thin.png
 %%DATADIR%%/images/magic/tint.png
+%%DATADIR%%/images/magic/waves.png
 %%DATADIR%%/images/shapes/circle.png
 %%DATADIR%%/images/shapes/circle_f.png
 %%DATADIR%%/images/shapes/diamond.png
 %%DATADIR%%/images/shapes/diamond_f.png
+%%DATADIR%%/images/shapes/octagon.png
+%%DATADIR%%/images/shapes/octagon_f.png
 %%DATADIR%%/images/shapes/oval.png
 %%DATADIR%%/images/shapes/oval_f.png
 %%DATADIR%%/images/shapes/pentagon.png
@@ -648,6 +769,7 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/images/ui/btnsm_up.png
 %%DATADIR%%/images/ui/color_btn_down.png
 %%DATADIR%%/images/ui/color_btn_up.png
+%%DATADIR%%/images/ui/color_picker.png
 %%DATADIR%%/images/ui/cursor_down.png
 %%DATADIR%%/images/ui/cursor_down_large.png
 %%DATADIR%%/images/ui/cursor_starter_down.png
@@ -656,9 +778,10 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/images/ui/cursor_up_large.png
 %%DATADIR%%/images/ui/dead40x40.png
 %%DATADIR%%/images/ui/erase.png
-%%DATADIR%%/images/ui/grass.png
+%%DATADIR%%/images/ui/flip.png
 %%DATADIR%%/images/ui/grow.png
 %%DATADIR%%/images/ui/italic.png
+%%DATADIR%%/images/ui/mirror.png
 %%DATADIR%%/images/ui/mouse.png
 %%DATADIR%%/images/ui/mouse_click.png
 %%DATADIR%%/images/ui/next.png
@@ -683,28 +806,18 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/images/ui/shrink.png
 %%DATADIR%%/images/ui/slideshow.png
 %%DATADIR%%/images/ui/sparkles-old.png
-%%DATADIR%%/images/ui/sparkles.png
 %%DATADIR%%/images/ui/title.png
 %%DATADIR%%/images/ui/title_large.png
 %%DATADIR%%/images/ui/trash.png
 %%DATADIR%%/images/ui/yes.png
 %%DATADIR%%/sounds/areyousure.wav
 %%DATADIR%%/sounds/bleep.wav
-%%DATADIR%%/sounds/blocks.wav
-%%DATADIR%%/sounds/blur.wav
-%%DATADIR%%/sounds/brick.wav
 %%DATADIR%%/sounds/bubble.wav
-%%DATADIR%%/sounds/cartoon.wav
-%%DATADIR%%/sounds/chalk.wav
 %%DATADIR%%/sounds/click.wav
-%%DATADIR%%/sounds/darken.wav
-%%DATADIR%%/sounds/drip.wav
 %%DATADIR%%/sounds/eraser1.wav
 %%DATADIR%%/sounds/eraser2.wav
-%%DATADIR%%/sounds/fade.wav
 %%DATADIR%%/sounds/flip.wav
 %%DATADIR%%/sounds/giggle.wav
-%%DATADIR%%/sounds/grass.wav
 %%DATADIR%%/sounds/grow.wav
 %%DATADIR%%/sounds/harp.wav
 %%DATADIR%%/sounds/italic_off.wav
@@ -712,25 +825,49 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/sounds/keyclick.wav
 %%DATADIR%%/sounds/line_end.wav
 %%DATADIR%%/sounds/line_start.wav
+%%DATADIR%%/sounds/magic/blocks.wav
+%%DATADIR%%/sounds/magic/blur.wav
+%%DATADIR%%/sounds/magic/brick.wav
+%%DATADIR%%/sounds/magic/cartoon.wav
+%%DATADIR%%/sounds/magic/chalk.wav
+%%DATADIR%%/sounds/magic/darken.wav
+%%DATADIR%%/sounds/magic/drip.wav
+%%DATADIR%%/sounds/magic/emboss.ogg
+%%DATADIR%%/sounds/magic/fade.wav
+%%DATADIR%%/sounds/magic/fill.wav
+%%DATADIR%%/sounds/magic/flip.wav
+%%DATADIR%%/sounds/magic/flower_click.ogg
+%%DATADIR%%/sounds/magic/flower_release.ogg
+%%DATADIR%%/sounds/magic/foam.ogg
+%%DATADIR%%/sounds/magic/glasstile.ogg
+%%DATADIR%%/sounds/magic/grass.wav
+%%DATADIR%%/sounds/magic/kaleidoscope.ogg
+%%DATADIR%%/sounds/magic/light1.ogg
+%%DATADIR%%/sounds/magic/light2.ogg
+%%DATADIR%%/sounds/magic/metalpaint.wav
+%%DATADIR%%/sounds/magic/mirror.wav
+%%DATADIR%%/sounds/magic/negative.wav
+%%DATADIR%%/sounds/magic/rainbow.wav
+%%DATADIR%%/sounds/magic/ripples.ogg
+%%DATADIR%%/sounds/magic/shift.ogg
+%%DATADIR%%/sounds/magic/smudge.wav
+%%DATADIR%%/sounds/magic/thick.wav
+%%DATADIR%%/sounds/magic/thin.wav
+%%DATADIR%%/sounds/magic/tint.wav
+%%DATADIR%%/sounds/magic/waves.wav
 %%DATADIR%%/sounds/mirror.wav
-%%DATADIR%%/sounds/negative.wav
 %%DATADIR%%/sounds/paint1.wav
 %%DATADIR%%/sounds/paint2.wav
 %%DATADIR%%/sounds/paint3.wav
 %%DATADIR%%/sounds/paint4.wav
 %%DATADIR%%/sounds/prompt.wav
-%%DATADIR%%/sounds/rainbow.wav
 %%DATADIR%%/sounds/return.wav
 %%DATADIR%%/sounds/save.wav
 %%DATADIR%%/sounds/scroll.wav
 %%DATADIR%%/sounds/shrink.wav
-%%DATADIR%%/sounds/smudge.wav
-%%DATADIR%%/sounds/sparkles1.wav
-%%DATADIR%%/sounds/sparkles2.wav
 %%DATADIR%%/sounds/stamp.wav
 %%DATADIR%%/sounds/thick.wav
 %%DATADIR%%/sounds/thin.wav
-%%DATADIR%%/sounds/tint.wav
 %%DATADIR%%/sounds/tuxok.wav
 %%DATADIR%%/sounds/typewriterbell.wav
 %%DATADIR%%/sounds/youcannot.wav
@@ -774,11 +911,14 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/starters/worldmap_asia_north.png
 %%DATADIR%%/starters/worldmap_asia_south.png
 %%DATADIR%%/starters/worldmap_australasia.png
+%%DATADIR%%/starters/worldmap_canada.png
 %%DATADIR%%/starters/worldmap_europe.png
+%%DATADIR%%/starters/worldmap_japan.png
 @dirrm %%DATADIR%%/starters
 @dirrm %%DATADIR%%/stamps/cartoon/tux
 @dirrm %%DATADIR%%/stamps/cartoon
 @dirrm %%DATADIR%%/stamps
+@dirrm %%DATADIR%%/sounds/magic
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/images/ui
 @dirrm %%DATADIR%%/images/tux
@@ -804,26 +944,23 @@ share/pixmaps/tuxpaint.png
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/brushes
 @dirrm %%DATADIR%%
-@dirrm share/locale/ve/LC_MESSAGES
-@dirrm share/locale/ve
 @dirrm share/locale/tlh/LC_MESSAGES
 @dirrm share/locale/tlh
-@dirrm share/locale/sw/LC_MESSAGES
-@dirrm share/locale/sw
+@dirrm share/locale/oj/LC_MESSAGES
+@dirrm share/locale/oj
 @dirrm share/locale/nr/LC_MESSAGES
 @dirrm share/locale/nr
 @dirrm share/locale/gos/LC_MESSAGES
 @dirrm share/locale/gos
 @dirrm share/locale/gd/LC_MESSAGES
 @dirrm share/locale/gd
-@dirrm share/locale/fo/LC_MESSAGES
-@dirrm share/locale/fo
 @dirrm share/locale/en_ZA/LC_MESSAGES
 @dirrm share/locale/en_ZA
 @dirrm share/locale/bo/LC_MESSAGES
 @dirrm share/locale/bo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_tw/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_tw
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_cn/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_cn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/wa
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tr
@@ -842,6 +979,8 @@ share/pixmaps/tuxpaint.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/nl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/nb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ms
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/magic-docs/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/magic-docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ko
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
@@ -867,6 +1006,8 @@ share/pixmaps/tuxpaint.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/es/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/es
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/el
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/dev/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/dev
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/da
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cy
@@ -877,6 +1018,17 @@ share/pixmaps/tuxpaint.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/be
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/af
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/tuxpaint/plugins
+@dirrm lib/tuxpaint
+@dirrm include/tuxpaint
+@dirrmtry share/locale/wo/LC_MESSAGES
+@dirrmtry share/locale/wo
+@dirrmtry share/locale/ve/LC_MESSAGES
+@dirrmtry share/locale/ve
 @dirrmtry share/locale/twi/LC_MESSAGES
 @dirrmtry share/locale/twi
+@dirrmtry share/locale/sw/LC_MESSAGES
+@dirrmtry share/locale/sw
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
 @dirrmtry etc/tuxpaint
