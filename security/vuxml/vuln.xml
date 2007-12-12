@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b2571f88-a867-11dc-a6f0-00a0cce0781e">
+    <topic>smbftpd -- format string vulnerability </topic>
+    <affects>
+      <package>
+	<name>smbftpd</name>
+	<range><lt>0.96</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-5184">
+	  <p>Format string vulnerability in the SMBDirList function in dirlist.c in 
+		SmbFTPD 0.96 allows remote attackers to execute arbitrary code via 
+		format string specifiers in a directory name..</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2007-5184</cvename>
+    </references>
+    <dates>
+      <discovery>2007-10-01</discovery>
+      <entry>2007-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6ae7cef2-a6ae-11dc-95e6-000c29c5647f">
     <topic>jetty -- multiple vulnerabilities</topic>
     <affects>
