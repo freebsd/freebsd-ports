@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	1.1.7
-PORTREVISION=	2
+PORTVERSION?=	1.1.7
+PORTREVISION?=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/ \
@@ -16,15 +16,15 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		http://freeradius.portal-to-web.de/
 MASTER_SITE_SUBDIR=	. old
 
-MAINTAINER=	david@wood2.org.uk
-COMMENT=	A free RADIUS server implementation
+MAINTAINER?=	david@wood2.org.uk
+COMMENT?=	A free RADIUS server implementation
 
 USE_BZIP2=	yes
 WANT_PERL=	yes
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
-LOGDIR=	/var/log
+LOGDIR?=	/var/log
 
 # If FREERADIUS_SLAVE_MYSQL is defined, we want to build the
 # freeradius-mysql slave port
