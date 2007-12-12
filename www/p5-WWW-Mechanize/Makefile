@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	WWW-Mechanize
-PORTVERSION=	1.30
+PORTVERSION=	1.34
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	WWW
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -20,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--mech-dump --nolive
+CONFIGURE_ARGS+=	--nolive
 
 MAN3=		WWW::Mechanize.3 WWW::Mechanize::Cookbook.3 \
 		WWW::Mechanize::Examples.3 WWW::Mechanize::FAQ.3 \
