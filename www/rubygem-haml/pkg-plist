@@ -2,7 +2,6 @@ bin/haml
 bin/html2haml
 bin/sass
 %%GEM_CACHE%%
-%%GEM_DOC_DIR%%/rdoc/classes/ActionController.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionView.html
 %%GEM_DOC_DIR%%/rdoc/classes/ActionView/Helpers.html
 %%GEM_DOC_DIR%%/rdoc/classes/Haml.html
@@ -50,6 +49,8 @@ bin/sass
 %%GEM_DOC_DIR%%/rdoc/files/lib/sass/css_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/sass/engine_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/sass/error_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sass/plugin/merb_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sass/plugin/rails_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/sass/plugin_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/sass/tree/attr_node_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/sass/tree/comment_node_rb.html
@@ -80,6 +81,7 @@ bin/sass
 %%GEM_LIB_DIR%%/lib/haml/helpers.rb
 %%GEM_LIB_DIR%%/lib/haml/helpers/action_view_extensions.rb
 %%GEM_LIB_DIR%%/lib/haml/helpers/action_view_mods.rb
+%%GEM_LIB_DIR%%/lib/haml/helpers/action_view_mods.rb.rej
 %%GEM_LIB_DIR%%/lib/haml/html.rb
 %%GEM_LIB_DIR%%/lib/haml/template.rb
 %%GEM_LIB_DIR%%/lib/haml/util.rb
@@ -94,6 +96,8 @@ bin/sass
 %%GEM_LIB_DIR%%/lib/sass/engine.rb
 %%GEM_LIB_DIR%%/lib/sass/error.rb
 %%GEM_LIB_DIR%%/lib/sass/plugin.rb
+%%GEM_LIB_DIR%%/lib/sass/plugin/merb.rb
+%%GEM_LIB_DIR%%/lib/sass/plugin/rails.rb
 %%GEM_LIB_DIR%%/lib/sass/tree/attr_node.rb
 %%GEM_LIB_DIR%%/lib/sass/tree/comment_node.rb
 %%GEM_LIB_DIR%%/lib/sass/tree/node.rb
@@ -181,6 +185,7 @@ bin/sass
 @dirrm %%GEM_LIB_DIR%%/test/haml
 @dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%/lib/sass/tree
+@dirrm %%GEM_LIB_DIR%%/lib/sass/plugin
 @dirrm %%GEM_LIB_DIR%%/lib/sass/constant
 @dirrm %%GEM_LIB_DIR%%/lib/sass
 @dirrm %%GEM_LIB_DIR%%/lib/haml/helpers
@@ -189,6 +194,7 @@ bin/sass
 @dirrm %%GEM_LIB_DIR%%/bin
 @dirrm %%GEM_LIB_DIR%%
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sass/tree
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sass/plugin
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sass/constant
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sass
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/haml/helpers
