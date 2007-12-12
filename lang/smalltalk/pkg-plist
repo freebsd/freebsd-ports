@@ -164,6 +164,7 @@ share/emacs/site-lisp/smalltalk-mode.el
 %%DATADIR%%/i18n/Numbers.st
 %%DATADIR%%/i18n/Sets.st
 %%DATADIR%%/i18n/Times.st
+%%DATADIR%%/i18n/iconvtests.st
 %%DATADIR%%/java/Java.st
 %%DATADIR%%/java/JavaClassFiles.st
 %%DATADIR%%/java/JavaExtensions.st
