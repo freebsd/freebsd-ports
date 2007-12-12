@@ -73,6 +73,7 @@
     SUBDIR += cdf
     SUBDIR += cdircmp
     SUBDIR += cdrdao
+    SUBDIR += cdrkit
     SUBDIR += cdroot
     SUBDIR += cdrtools
     SUBDIR += cdrtools-cjk
