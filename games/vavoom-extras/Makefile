@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF:sf \
+		http://doomtextures.freelanzer.com/:dt
 PKGNAMESUFFIX=	-extras
 DISTFILES=	#
 
@@ -35,7 +36,7 @@ IGNORE=		needs at least one option selected
 
 .if defined(WITH_MODELS)
 . for f in doom heretic hexen strife
-DISTFILES+=	vmodels-${f}-1.4.1${EXTRACT_SUFX}
+DISTFILES+=	vmodels-${f}-1.4.2${EXTRACT_SUFX}:sf
 . endfor
 PLIST_SUB+=	MODELS=""
 .else
@@ -43,11 +44,9 @@ PLIST_SUB+=	MODELS="@comment "
 .endif
 
 .if defined(WITH_TEXTURES)
-. for f in doom doom1 doom2
-DISTFILES+=	vtextures-${f}-1.1${EXTRACT_SUFX}
-. endfor
+DISTFILES+=	vv-dhtp-20071114.pk3:dt
 . for f in heretic hexen strife
-DISTFILES+=	vtextures-${f}-1.0${EXTRACT_SUFX}
+DISTFILES+=	vtextures-${f}-1.0${EXTRACT_SUFX}:sf
 . endfor
 PLIST_SUB+=	TEXTURES=""
 .else
@@ -56,12 +55,15 @@ PLIST_SUB+=	TEXTURES="@comment "
 
 .if defined(WITH_SOUNDTRACKS)
 . for f in doom1 doom2 tnt plutonia heretic hexen
-DISTFILES+=	vmusic-${f}-1.0${EXTRACT_SUFX}
+DISTFILES+=	vmusic-${f}-1.0${EXTRACT_SUFX}:sf
 . endfor
 PLIST_SUB+=	SOUNDTRACKS=""
 .else
 PLIST_SUB+=	SOUNDTRACKS="@comment "
 .endif
+
+post-extract:
+	@${FIND} ${WRKSRC} -type f -name "*.txt" -delete
 
 do-install:
 	cd ${WRKSRC} && ${FIND} basev -type f \
