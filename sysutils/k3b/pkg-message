@@ -25,20 +25,21 @@ Notes for FreeBSD 5.x and onwards users:
           Alternatively (especially if you are using hot plug capable CD or 
           DVD drives) you could add an 'add path 'cd*' mode 666' or an 
           'add path 'cd*' mode 660 group XXX' to your /etc/devfs.rules
-          under '[system=10]'. To enable it, add a 'devfs_system_ruleset="system"'
-          to your /etc/rc.conf.
+          under '[system=10]'. To enable it, add a 
+          'devfs_system_ruleset="system"' to your /etc/rc.conf.
     - or just give mount and umount the suid flag, which is a security leak.
 3c. Every user who should be able to use k3b must have read and write access
     to all pass through devices connected with CD and DVD drives and to the 
     /dev/xpt0 device. Run 'camcontrol devlist' to identify those devices (seek 
-    string 'passX' at the end of each line and modify the rights of 
-    /dev/passX). Note, that this is a security leak as well but that there is 
-    no alternative! To make this changes permanent, add 'devd_enable="YES"' 
-    to /etc/rc.conf as described above. Furthermore add a 'perm passX 666' 
-    for each pass device and a 'perm xpt0 666'. If you prefer to bind the 
-    access rights to a group, use the own command as described above. If you
-    prefer to set this rights dynamically, add a line 'add path 'pass*' ...'
-    to your /etc/devfs.rules as described above.
+    string 'passX' at the end of each line) and modify the rights of 
+    /dev/passX. Note, that this is a security leak as well but that there is no 
+    alternative! 
+    To make this changes permanent, add (as described above) a 
+    'devd_enable="YES"' to /etc/rc.conf and a 'perm passX 666' for each pass 
+    device and a 'perm xpt0 666' to /etc/devfs.conf. If you prefer to bind 
+    the access rights to a group, use the 'own' command as described above.
+    Instead, if you prefer to set this rights dynamically, add a line 
+    'add path 'pass*' ...' to your /etc/devfs.rules as described above.
 4. Check, that DMA is activated for atapi devices: 'sysctl hw.ata.atapi_dma'
    If not, set it to 1 and put a 'hw.ata.atapi_dma=1' into /boot/loader.conf.
 5. Create a directory on a partition, which has enough disk space to hold a CDs
