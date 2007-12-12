@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Net/Amazon/EC2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/EC2/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/EC2
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
+@dirrm %%SITE_PERL%%/Net/Amazon
