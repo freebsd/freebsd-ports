@@ -11147,6 +11147,7 @@ p5-Test-SubCalls	ports/devel/p5-Test-SubCalls
 p5-Test-TAP-HTMLMatrix	ports/devel/p5-Test-TAP-HTMLMatrix
 p5-Test-TAP-Model	ports/devel/p5-Test-TAP-Model
 p5-Test-Tester	ports/devel/p5-Test-Tester
+p5-Test-URI	ports/net/p5-Test-URI
 p5-Test-Unit	ports/devel/p5-Test-Unit
 p5-Test-UseAllModules	ports/devel/p5-Test-UseAllModules
 p5-Test-WWW-Mechanize	ports/devel/p5-Test-WWW-Mechanize
