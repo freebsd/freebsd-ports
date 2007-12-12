@@ -19,10 +19,7 @@ LIB_DEPENDS=	yaz.2:${PORTSDIR}/net/yaz
 RUN_DEPENDS=	${SITE_PERL}/MARC/Record.pm:${PORTSDIR}/textproc/p5-MARC-Record \
 		${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event
 
-BROKEN=		Does not build
-
 PERL_CONFIGURE=	yes
-CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 
 MAN3=		Net::Z3950::ResultSet.3 Net::Z3950::Manager.3 \
 		Net::Z3950::Tutorial.3 Net::Z3950::Record.3 \
