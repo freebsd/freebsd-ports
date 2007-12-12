@@ -19,7 +19,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/QueryParser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/RSet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/SimpleStopper.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/Stem.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/Stem.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/Stopper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/TermGenerator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/TermIterator.pm
