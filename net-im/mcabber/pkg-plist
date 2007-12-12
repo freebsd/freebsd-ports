@@ -210,6 +210,8 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/pl/hlp_info.txt
 %%DATADIR%%/help/pl/hlp_move.txt
 %%DATADIR%%/help/pl/hlp_msay.txt
+%%DATADIR%%/help/pl/hlp_otr.txt
+%%DATADIR%%/help/pl/hlp_otrpolicy.txt
 %%DATADIR%%/help/pl/hlp_pgp.txt
 %%DATADIR%%/help/pl/hlp_quit.txt
 %%DATADIR%%/help/pl/hlp_rawxml.txt
