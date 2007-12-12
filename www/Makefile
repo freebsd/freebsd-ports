@@ -930,6 +930,7 @@
     SUBDIR += p5-Web-Scraper
     SUBDIR += p5-WebService-Basecamp
     SUBDIR += p5-WebService-Bloglines
+    SUBDIR += p5-WebService-BuzzurlAPI
     SUBDIR += p5-WebService-CIA
     SUBDIR += p5-WebService-ISBNDB
     SUBDIR += p5-WebService-NoPaste
