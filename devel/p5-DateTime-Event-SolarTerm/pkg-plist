@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Event/SolarTerm/.packlist
+%%SITE_PERL%%/DateTime/Event/SolarTerm.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Event/SolarTerm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Event
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
+@dirrmtry %%SITE_PERL%%/DateTime/Event
+@dirrmtry %%SITE_PERL%%/DateTime
