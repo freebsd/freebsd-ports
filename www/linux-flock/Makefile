@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flock
-PORTVERSION=	0.9.0.2
+PORTVERSION=	1.0.3
 DISTVERSIONSUFFIX=	.en-US.linux-i686
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.acc.umu.se/mirror/%SUBDIR%/ \
@@ -16,9 +16,7 @@ MASTER_SITES=	http://ftp.acc.umu.se/mirror/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}
 
 MAINTAINER=	infofarmer@FreeBSD.org
-COMMENT=	The free web browser that makes it easier to share with your friends
-
-FORBIDDEN=	multiple vulnerabilities
+COMMENT=	The social web browser
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
 .include <bsd.port.mk>
