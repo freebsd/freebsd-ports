@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.8.1
+PORTVERSION=	1.10.2
+DISTVERSIONSUFFIX=	-1.gst.1.4
 CATEGORIES=	x11-toolkits linux
-DISTNAME=	${PORTNAME}-${PORTVERSION}-2
+MASTER_SITES=	http://gstreamer.freedesktop.org/pkg/%SUBDIR%/ CENKES/myports
+MASTER_SITE_SUBDIR=	${LINUX_DIST}/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/RPMS.gst010
+MASTER_SITE_SRC_SUBDIR=	${LINUX_DIST}/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/SRPMS.gst010
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux pango binary
@@ -16,6 +19,7 @@ COMMENT=	Linux pango binary
 # these libraries are required by pango-querymodules
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
 		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
+		${LINUXBASE}/usr/lib/libcairo.so.2.2.3:${PORTSDIR}/graphics/linux-cairo \
 		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
 
 USE_XLIB=	yes
@@ -24,9 +28,9 @@ USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
 INSTALLS_SHLIB=	yes
 BRANDELF_DIRS=	usr/bin
-PLIST_SUB+=	LIBVERSION="800.1" PORTVERSION="${PORTVERSION}"
+PLIST_SUB+=	LIBVERSION="1001.1" PORTVERSION="${PORTVERSION}"
 
 post-install:
-	@${PREFIX}/usr/bin/pango-querymodules-32 > ${PREFIX}/etc/pango/i386-redhat-linux-gnu/pango.modules
+	@${PREFIX}/usr/bin/pango-querymodules-32 > ${PREFIX}/etc/pango/i686-redhat-linux-gnu/pango.modules
 
 .include <bsd.port.mk>
