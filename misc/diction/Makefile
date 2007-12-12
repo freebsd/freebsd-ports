@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diction
-PORTVERSION=	1.02
+PORTVERSION=	1.11
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,14 +15,12 @@ MAINTAINER=	mva@sysfault.org
 COMMENT=	GNU diction and style
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_FILES=	bin/diction bin/style share/diction/C share/diction/de \
-		share/diction/en
+		share/diction/en share/diction/en_GB share/diction/nl
 PLIST_DIRS=	share/diction
 
 MAN1=		diction.1 style.1
-
-post-patch:
-	${REINPLACE_CMD} -e "s,-pedantic,," ${WRKSRC}/configure
 
 .include <bsd.port.mk>
