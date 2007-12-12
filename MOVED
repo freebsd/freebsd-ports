@@ -3335,3 +3335,9 @@ www/squid25||2007-12-11|Has expired: This version is no longer supported by the 
 x11-themes/kde-icons-gorilla_svg||2007-12-11|Unfetchable
 x11-themes/kde-icons-kids||2007-12-11|Unfetchable
 x11-themes/kde-icons-outline||2007-12-11|Unfetchable
+java/jdk11|java/jdk16|2007-12-11|Obsolete version|
+java/jdk12|java/jdk16|2007-12-11|Obsolete version|
+java/jfc||2007-12-11|For obsolete version of jdk|
+java/jre||2007-12-11|For obsolete version of jdk|
+java/linux-blackdown-jdk12|java/linux-blackdown-jdk14|2007-12-11|Obsolete version|
+java/linux-sun-jdk12|java/linux-sun-jdk16|2007-12-11|Obsolete version|
