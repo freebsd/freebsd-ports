@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	k8temp
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hur.st/k8temp/
 
