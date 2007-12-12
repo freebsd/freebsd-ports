@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.142
+PORTVERSION=	4.143
 CATEGORIES=	lang
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -15,7 +15,7 @@ COMMENT=	Static lisp interpreter with text processing abilities
 
 DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
-MAN1=		munger.1
+MAN1=		munger.1 minimunger.1
 MANCOMPRESSED=	yes
 
 OPTIONS=	SQL  "include SQLite interface"  on \
