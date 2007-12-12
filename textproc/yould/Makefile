@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yould
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.7
 CATEGORIES=	textproc
 MASTER_SITES=	http://ygingras.net/files/ CENKES
 
