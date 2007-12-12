@@ -39,25 +39,6 @@ CONFIGURE_ARGS=	--with-mesa-source=${WRKDIR}/Mesa-7.0.1 \
 		--disable-dmx --disable-xvfb --disable-xnest --disable-xprint \
 		--localstatedir=/var
 
-.if !defined(WITHOUT_HAL)
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
-CONFIGURE_ARGS+=	--enable-config-hal
-.else
-CONFIGURE_ARGS+=	--disable-config-hal
-.endif
-
-.if !defined(WITHOUT_AIGLX)
-CONFIGURE_ARGS+=	--enable-aiglx=yes
-.else
-CONFIGURE_ARGS+=	--disable-aiglx=yes
-.endif
-
-.if !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
-CONFIGURE_ARGS+=--enable-install-setuid
-.else
-CONFIGURE_ARGS+=--disable-install-setuid
-.endif
-
 MAN1=		Xorg.1 \
 		Xserver.1 \
 		cvt.1 \
@@ -71,7 +52,30 @@ MAN5=		xorg.conf.5 \
 
 NOT_FOR_ARCHS=	ia64 alpha
 
+OPTIONS=	HAL	"Compile with HAL config support" on \
+		AIGLX	"Compile with Accelerated Indirect GLX support" on \
+		SUID	"Install the Xorg server with setuid bit set" on
+
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_HAL)
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+CONFIGURE_ARGS+=	--enable-config-hal=yes
+.else
+CONFIGURE_ARGS+=	--enable-config-hal=no
+.endif
+
+.if !defined(WITHOUT_AIGLX)
+CONFIGURE_ARGS+=	--enable-aiglx=yes
+.else
+CONFIGURE_ARGS+=	--enable-aiglx=no
+.endif
+
+.if !defined(WITHOUT_SUID) || !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
+CONFIGURE_ARGS+=--enable-install-setuid=yes
+.else
+CONFIGURE_ARGS+=--enable-install-setuid=no
+.endif
 
 .if ${ARCH} == alpha
 PLIST_SUB+=	ALPHA_NA="@comment "
@@ -101,7 +105,7 @@ MAN1+=		scanpci.1
 PLIST_SUB+=	AMD64_I386_SPARC64="@comment "
 .endif
 
-.if !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
+.if !defined(WITHOUT_SUID) || !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
 pre-everything::
 	@${ECHO_MSG} "By default, the X Server installs as a set-user-id root binary. When run by"
 	@${ECHO_MSG} "a normal user, it checks arguments and environment as done in the x11/wrapper"
