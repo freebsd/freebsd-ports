@@ -1,0 +1,8 @@
+This projects purpose is to provide a convenient way to construct
+a weekly shopping list from a known list of recipes. The user can
+view, add, search and modify recipes like any decent web based
+cookbook. This cookbook provides the extra functionality to add
+recipes to a shopping list. The shopping list then can be saved or
+printed out.
+
+WWW: http://phprecipebook.sourceforge.net/

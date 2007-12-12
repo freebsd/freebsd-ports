@@ -1,0 +1,9 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Please read:
+
+%%RECIPEDIR%%/docs/INSTALL.UNIX
+
+If you are upgrading then read this too:
+
+%%RECIPEDIR%%/docs/UPGRADE.TXT
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
