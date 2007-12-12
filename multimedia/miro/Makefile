@@ -7,6 +7,7 @@
 
 PORTNAME=	Miro
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -19,7 +20,8 @@ BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex				\
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine			\
 		fame-0.9:${PORTSDIR}/multimedia/libfame			\
 		boost_python.4:${PORTSDIR}/devel/boost-python
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/glib.py:${PORTSDIR}/devel/py-dbus	\
+RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick			\
+		${PYTHON_SITELIBDIR}/dbus/glib.py:${PORTSDIR}/devel/py-dbus	\
 		${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb	\
 		${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/py-pysqlite23
 
