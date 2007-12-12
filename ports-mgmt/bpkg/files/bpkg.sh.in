@@ -607,6 +607,13 @@ make_search_S() {
 	exit 0
 }
 
+make_search_info() {
+	for e in $pkg; do
+		cd /usr/ports && make search info=$e
+	done
+	exit 0
+}
+
 pkg_find() {
 	arch=`uname -m`
 	sys=`uname -r | cut -d- -f1,2 | tr '[:upper:]' '[:lower:]'`
@@ -714,7 +721,7 @@ pkg_backup() {
 pkg_time() {
 	echo "Packages (date of installation):"
 	echo ""
-	/bin/ls -lTt /var/db/pkg/*/+CONTENTS | awk -F' ' '{ print $6,$7,$8,$9,$10 }' | cut -d/ -f1,5 
+	/bin/ls -lUTt /var/db/pkg/ | awk -F' ' '{ print $6,$7,$8,$9,$10 }' | cut -d/ -f1,5 
 	echo "***`pkg_info | wc -l` packages installed     ***"
 	exit 0
 }
@@ -1114,7 +1121,7 @@ make_ldd_all() {
 help() {
 	echo "bpkg version `pkg_info -xI bpkg | cut -d- -f2 | cut -d' ' -f1`" 
 	echo ""
-	echo "Usage: bpkg [-bBdDeEfFgiIkLmMnoOpqQrsSwz] pkg-name ..."
+	echo "Usage: bpkg [-bBdDeEfFgiIjkLmMnoOpqQrsSwz] pkg-name ..."
 	echo "       bpkg [-aAcChltvZ]"
 	echo ""
 	echo "Please see the bpkg(8) man page for more information"
@@ -1125,7 +1132,7 @@ help() {
 # End of functions
 ################################################################################
 
-while getopts b:B:d:D:e:E:f:F:g:i:I:k:L:m:M:n:o:O:p:q:Q:r:s:S:w:z:aAcChltvZ opts; do
+while getopts b:B:d:D:e:E:f:F:g:i:I:j:k:L:m:M:n:o:O:p:q:Q:r:s:S:w:z:aAcChltvZ opts; do
 	case $opts in
 		b) pkg=$OPTARG
 		   build_port;;
@@ -1149,6 +1156,8 @@ while getopts b:B:d:D:e:E:f:F:g:i:I:k:L:m:M:n:o:O:p:q:Q:r:s:S:w:z:aAcChltvZ opts
 		   make_search;;
 		I) pkg=$OPTARG
 		   pkg_info-xI;;
+		j) pkg=$OPTARG
+		   make_search_info;;
 		k) pkg=$OPTARG
 		   pkg_info-xk;;
 		L) pkg=$OPTARG
