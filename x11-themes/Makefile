@@ -146,6 +146,7 @@
     SUBDIR += kde-icons-noia
     SUBDIR += kde-icons-noia-warm
     SUBDIR += kde-icons-nuvola
+    SUBDIR += kde-icons-os-k
     SUBDIR += kde-icons-realistic
     SUBDIR += kde-icons-sky
     SUBDIR += kde-icons-steel
