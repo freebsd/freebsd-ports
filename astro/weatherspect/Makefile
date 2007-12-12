@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	weatherspect
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	astro
-MASTER_SITES=	http://www.robobunny.com/projects/weatherspect/ \
-		http://olofsson.de/mirror/distfiles/
+MASTER_SITES=	http://www.robobunny.com/projects/weatherspect/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	simon@olofsson.de
