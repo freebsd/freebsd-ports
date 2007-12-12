@@ -1073,6 +1073,7 @@
     SUBDIR += p5-DateTime-Calendar-Discordian
     SUBDIR += p5-DateTime-Calendar-FrenchRevolutionary
     SUBDIR += p5-DateTime-Calendar-Hebrew
+    SUBDIR += p5-DateTime-Calendar-Japanese
     SUBDIR += p5-DateTime-Calendar-Julian
     SUBDIR += p5-DateTime-Calendar-Mayan
     SUBDIR += p5-DateTime-Calendar-Pataphysical
