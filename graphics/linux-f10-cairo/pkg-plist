@@ -1,0 +1,10 @@
+usr/lib/libcairo.so.2
+usr/lib/libcairo.so.2.2.3
+usr/share/doc/cairo-%%PORTVERSION%%/AUTHORS
+usr/share/doc/cairo-%%PORTVERSION%%/COPYING
+usr/share/doc/cairo-%%PORTVERSION%%/ChangeLog
+usr/share/doc/cairo-%%PORTVERSION%%/INSTALL
+usr/share/doc/cairo-%%PORTVERSION%%/NEWS
+usr/share/doc/cairo-%%PORTVERSION%%/README
+usr/share/doc/cairo-%%PORTVERSION%%/TODO
+@dirrm usr/share/doc/cairo-%%PORTVERSION%%
