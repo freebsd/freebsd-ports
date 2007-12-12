@@ -6702,6 +6702,7 @@ libpri-bristuff		ports/misc/libpri-bristuff
 libpst		ports/mail/libpst
 libpthread-stubs	ports/devel/libpthread-stubs
 libpurple	ports/net-im/libpurple
+libpuzzle	ports/graphics/libpuzzle
 libqalculate	ports/math/libqalculate
 libqglviewer	ports/graphics/libqglviewer
 libqrencode	ports/graphics/libqrencode
