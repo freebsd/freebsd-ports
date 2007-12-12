@@ -16,8 +16,9 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer for the PDF files written in Java(TM)
 
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre
+#RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
+#		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre
+RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
 USE_XLIB=	yes
