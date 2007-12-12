@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	findbugs
-DISTVERSION=	1.2.0.20070317
-PORTREVISION=	1
+DISTVERSION=	1.3.0.20071108
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,12 +25,65 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
 
+PLIST_DIRS=	\
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/plugin \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%
+#
+PLIST_FILES=	\
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/FindBugs.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/Fortify.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/RELEASENOTES \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/about.html \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/about.ini \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/about.properties \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/annotations.jar \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/asm-3.0.jar \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/asm-commons-3.0.jar \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/asm-tree-3.0.jar \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/bcel.jar \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/dom4j-full.jar \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/findbugs-ant.jar \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/findbugs-plugin.jar \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/findbugs.jar \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/annotationsView.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/bug.gif \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/buggy-tiny-blue.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/buggy-tiny-green.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/buggy-tiny-orange.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/buggy-tiny-yellow.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/buggy-tiny.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/bugview.gif \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/detailsView.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/runFindbugs.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/treeView.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/warning.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/jsr305.jar \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/plugin.properties \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/plugin.xml \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/plugin/coreplugin.jar \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/plugin/findbugs-resolutions.xml \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/plugin_fr.properties \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/plugin_ja.properties \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/smallBuggy.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/surelogic.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/umdFindbugs.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/welcome.xml
+#
+PLIST_SUB=	\
+	ECLIPSE_PLUGINS="eclipse/plugins" \
+	DISTNAME="${DISTNAME}"
+
+post-extract:
+	@${RM} -Rf ${WRKSRC}/src
+
 do-install:
 		@${MKDIR} ${PREFIX}/eclipse/plugins
-		@${CP} -r ${WRKSRC} ${PREFIX}/eclipse/plugins
-		@(cd ${WRKDIR}; ${FIND} -s $$(${BASENAME} ${WRKSRC}) -not -type d) \
-			| ${SED} -ne 's,^,eclipse/plugins/,p' > ${TMPPLIST}
-		@(cd ${WRKDIR}; ${FIND} -s -d $$(${BASENAME} ${WRKSRC}) -type d) \
-			| ${SED} -ne 's,^,@dirrm eclipse/plugins/,p' >> ${TMPPLIST}
-
+		@(cd ${WRKDIR} && \
+			${FIND} -s $$(${BASENAME} ${WRKSRC}) -type d \
+				-exec ${MKDIR} "${PREFIX}/eclipse/plugins/{}" \; && \
+			${FIND} -s $$(${BASENAME} ${WRKSRC}) -not -type d \
+				-exec ${INSTALL_DATA} "{}" "${PREFIX}/eclipse/plugins/{}" \; \
+		)
+		
 .include <bsd.port.mk>
