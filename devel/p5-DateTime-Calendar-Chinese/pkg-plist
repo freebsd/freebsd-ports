@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Chinese/.packlist
+%%SITE_PERL%%/DateTime/Calendar/Chinese.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Chinese
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
+@dirrmtry %%SITE_PERL%%/DateTime/Calendar
+@dirrmtry %%SITE_PERL%%/DateTime
