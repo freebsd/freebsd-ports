@@ -16490,6 +16490,7 @@ wmapm		ports/sysutils/wmapm
 wmapmload	ports/sysutils/wmapmload
 wmapp		ports/x11-toolkits/wmapp
 wmappl		ports/x11/wmappl
+wmauda		ports/audio/wmauda
 wmavgload	ports/sysutils/wmavgload
 wmbattery	ports/sysutils/wmbattery
 wmbday		ports/x11-clocks/wmbday
