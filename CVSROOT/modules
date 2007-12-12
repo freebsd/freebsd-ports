@@ -1230,6 +1230,7 @@ cdplayer.app	ports/audio/cdplayer.app
 cdpr		ports/net-mgmt/cdpr
 cdr_read	ports/comms/cdr_read
 cdrdao		ports/sysutils/cdrdao
+cdrkit		ports/sysutils/cdrkit
 cdroot		ports/sysutils/cdroot
 cdrtools	ports/sysutils/cdrtools
 cdrtools-cjk	ports/sysutils/cdrtools-cjk
