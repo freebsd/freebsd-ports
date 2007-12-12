@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	usermin
-PORTVERSION=	1.300
+PORTVERSION=	1.310
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	webadmin/:sf \
 			olgeni/:up
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sf ${USERMIN_MODULES:S/gz$/gz:up/}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+FETCH_CMD?=	/usr/bin/fetch -pRr
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Web-based interface for performing some user tasks
@@ -27,7 +28,8 @@ USE_PERL5=	yes
 USE_RC_SUBR=	usermin.sh
 SUB_LIST=	PERL5=${PERL}
 
-USERMIN_MODULES=
+USERMIN_MODULES=gnupg-1.310-1.wbm.gz \
+		spam-1.310-2.wbm.gz
 
 post-extract:
 	@if [ "${USERMIN_MODULES}" != "" ]; then \
