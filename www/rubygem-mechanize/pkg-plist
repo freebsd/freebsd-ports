@@ -142,6 +142,7 @@
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/files/CHANGELOG_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/EXAMPLES_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/FAQ_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/GUIDE_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/LICENSE_txt.html
 %%GEM_DOC_DIR%%/rdoc/files/Manifest_txt.html
@@ -171,6 +172,7 @@
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
 %%GEM_LIB_DIR%%/CHANGELOG.txt
 %%GEM_LIB_DIR%%/EXAMPLES.txt
+%%GEM_LIB_DIR%%/FAQ.txt
 %%GEM_LIB_DIR%%/GUIDE.txt
 %%GEM_LIB_DIR%%/LICENSE.txt
 %%GEM_LIB_DIR%%/Manifest.txt
