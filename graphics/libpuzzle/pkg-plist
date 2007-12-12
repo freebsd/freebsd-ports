@@ -1,0 +1,6 @@
+bin/puzzle-diff
+include/puzzle.h
+lib/libpuzzle.a
+lib/libpuzzle.la
+lib/libpuzzle.so
+lib/libpuzzle.so.1
