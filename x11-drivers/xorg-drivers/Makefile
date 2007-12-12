@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-drivers
 PORTVERSION=	7.3
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -25,8 +26,9 @@ ARCH!=  /usr/bin/uname -p
 .endif
 
 VIDEO_ON=	ati \
-		i810 \
+		intel \
 		nv \
+		radeonhd \
 		vesa vga via
 
 .if ${ARCH} == "sparc64"
@@ -38,7 +40,7 @@ VIDEO_OFF=	apm ark \
 		dummy \
 		fbdev \
 		glint \
-		i128 i740 imstt	intel \
+		i128 i740 i810 imstt \
 		mga \
 		neomagic newport nsc \
 		openchrome \
@@ -47,7 +49,7 @@ VIDEO_OFF=	apm ark \
 		tdfx tga trident tseng \
 		vmware voodoo
 
-VIDEO_EXCL=	i810:intel via:openchrome
+VIDEO_EXCL=	intel:i810 via:openchrome
 
 INPUT_ON=	mouse \
 		keyboard
