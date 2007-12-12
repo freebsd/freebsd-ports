@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bbcode
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.4
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -23,7 +23,6 @@ USE_PHPEXT=	yes
 CONFIGURE_ARGS=	--enable-bbcode
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/#include <malloc.h>/\/\/#include <malloc.h>/g' ${WRKSRC}/lib/stacklib.c
-	@${REINPLACE_CMD} -e 's/#include <malloc.h>/\/\/#include <malloc.h>/g' ${WRKSRC}/lib/bbcode.c
+	@${REINPLACE_CMD} -e 's/#include <malloc.h>/\/\/#include <malloc.h>/g' ${WRKSRC}/lib/bbcode2.c
 
 .include <bsd.port.mk>
