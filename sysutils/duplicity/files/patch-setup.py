@@ -1,38 +1,22 @@
-*** /tmp/duplicity-0.4.0/setup.py	Sat Nov 30 23:41:29 2002
---- setup.py	Wed Jun 11 20:31:32 2003
-***************
-*** 9,14 ****
---- 9,18 ----
-  	print "Sorry, duplicity requires version 2.2 or later of python"
-  	sys.exit(1)
-  
-+ LOCALBASE = os.environ.get("LOCALBASE", "/usr/local")
-+ include_dirs = ['%s/include' % LOCALBASE]
-+ library_dirs = ['%s/lib/' % LOCALBASE]
-+ 
-  setup(name="duplicity",
-  	  version=version_string,
-  	  description="Untrusted backup using rsync algorithm",
-***************
-*** 19,28 ****
-  	  package_dir = {"duplicity": "src"},
-  	  ext_modules = [Extension("duplicity._librsync",
-  							   ["_librsyncmodule.c"],
-! 							   libraries=["rsync"])],
-! 	  scripts = ['rdiffdir', 'duplicity'],
-! 	  data_files = [('share/man/man1', ['duplicity.1', 'rdiffdir.1']),
-! 					('share/doc/duplicity-%s' % version_string,
-! 					 ['COPYING', 'README', 'CHANGELOG'])])
-  
-  
---- 23,32 ----
-  	  package_dir = {"duplicity": "src"},
-  	  ext_modules = [Extension("duplicity._librsync",
-  							   ["_librsyncmodule.c"],
-! 							   libraries=["rsync"],
-!                                                            include_dirs=include_dirs,
-!                                                            library_dirs=library_dirs)],
-! 	  scripts = ['rdiffdir', 'duplicity']
-! )
-  
-  
+--- setup.py.orig	Wed Nov 28 19:09:07 2007
++++ setup.py	Thu Nov 29 20:00:05 2007
+@@ -21,6 +21,10 @@
+ 
+ incdir_list = libdir_list = None 
+ 
++LOCALBASE = os.environ.get("LOCALBASE", "/usr/local")
++incdir_list = ['%s/include' % LOCALBASE]
++libdir_list = ['%s/lib/' % LOCALBASE]
++
+ if os.name == 'posix':
+ 	LIBRSYNC_DIR = os.environ.get('LIBRSYNC_DIR', '')
+ 	args = sys.argv[:]
+@@ -49,7 +53,7 @@
+ 							   libraries=["rsync"])],
+ 	  scripts = ['rdiffdir', 'duplicity'],
+ 	  data_files = [('share/man/man1', ['duplicity.1', 'rdiffdir.1']),
+-					('share/doc/duplicity-%s' % version_string,
++					('share/doc/duplicity',
+ 					 ['COPYING', 'README', 'CHANGELOG'])])
+ 
+ 
