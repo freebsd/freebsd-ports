@@ -2,22 +2,6 @@
 etc/dbmail.conf-dist
 @exec if [ ! -f %D/etc/dbmail.conf ] ; then cp -p %D/%F %B/dbmail.conf; fi
 @exec mkdir -p %D/lib/dbmail
-%%MYSQL%%lib/dbmail/libmysql.a
-%%MYSQL%%lib/dbmail/libmysql.la
-%%MYSQL%%lib/dbmail/libmysql.so
-%%MYSQL%%lib/dbmail/libmysql.so.0
-%%PGSQL%%lib/dbmail/libpgsql.a
-%%PGSQL%%lib/dbmail/libpgsql.la
-%%PGSQL%%lib/dbmail/libpgsql.so
-%%PGSQL%%lib/dbmail/libpgsql.so.0
-%%SQLITE%%lib/dbmail/libsqlite.a
-%%SQLITE%%lib/dbmail/libsqlite.la
-%%SQLITE%%lib/dbmail/libsqlite.so
-%%SQLITE%%lib/dbmail/libsqlite.so.0
-%%SIEVE%%lib/dbmail/libsort_sieve.a
-%%SIEVE%%lib/dbmail/libsort_sieve.la
-%%SIEVE%%lib/dbmail/libsort_sieve.so
-%%SIEVE%%lib/dbmail/libsort_sieve.so.0
 %%LDAP%%lib/dbmail/libauth_ldap.a
 %%LDAP%%lib/dbmail/libauth_ldap.la
 %%LDAP%%lib/dbmail/libauth_ldap.so
@@ -30,16 +14,32 @@ lib/dbmail/libdbmail.a
 lib/dbmail/libdbmail.la
 lib/dbmail/libdbmail.so
 lib/dbmail/libdbmail.so.0
+%%MYSQL%%lib/dbmail/libmysql.a
+%%MYSQL%%lib/dbmail/libmysql.la
+%%MYSQL%%lib/dbmail/libmysql.so
+%%MYSQL%%lib/dbmail/libmysql.so.0
+%%PGSQL%%lib/dbmail/libpgsql.a
+%%PGSQL%%lib/dbmail/libpgsql.la
+%%PGSQL%%lib/dbmail/libpgsql.so
+%%PGSQL%%lib/dbmail/libpgsql.so.0
+%%SIEVE%%lib/dbmail/libsort_sieve.a
+%%SIEVE%%lib/dbmail/libsort_sieve.la
+%%SIEVE%%lib/dbmail/libsort_sieve.so
+%%SIEVE%%lib/dbmail/libsort_sieve.so.0
+%%SQLITE%%lib/dbmail/libsqlite.a
+%%SQLITE%%lib/dbmail/libsqlite.la
+%%SQLITE%%lib/dbmail/libsqlite.so
+%%SQLITE%%lib/dbmail/libsqlite.so.0
 @dirrm lib/dbmail
-sbin/dbmail-smtp
-sbin/dbmail-pop3d
-sbin/dbmail-imapd
-sbin/dbmail-util
-sbin/dbmail-users
 sbin/dbmail-export
+sbin/dbmail-imapd
 sbin/dbmail-lmtpd
+sbin/dbmail-pop3d
 %%SIEVE%%sbin/dbmail-sievecmd
+sbin/dbmail-smtp
 %%SIEVE%%sbin/dbmail-timsieved
+sbin/dbmail-users
+sbin/dbmail-util
 @exec mkdir -p %D/share/%%PORTNAME%%
 %%MYSQL%%@exec mkdir -p %D/share/PORTNAME/%%PORTNAME%%/mysql
 %%MYSQL%%share/%%PORTNAME%%/mysql/2_1_7-2_2_0.mysql
