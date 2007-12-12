@@ -1,5 +1,5 @@
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer-plugins/Makefile.common,v 1.63 2006/09/29 23:22:28 ahze Exp $
+#    $MCom: ports-stable/multimedia/gstreamer-plugins/Makefile.common,v 1.1 2007/12/02 17:08:48 ahze Exp $
 # base
 BASE_GST_ALL_PLUGINS= \
 		alsa \

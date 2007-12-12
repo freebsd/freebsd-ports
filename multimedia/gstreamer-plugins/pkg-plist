@@ -11,6 +11,11 @@ include/gstreamer-%%VERSION%%/gst/audio/mixerutils.h
 include/gstreamer-%%VERSION%%/gst/audio/multichannel-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/audio/multichannel.h
 include/gstreamer-%%VERSION%%/gst/cdda/gstcddabasesrc.h
+include/gstreamer-%%VERSION%%/gst/fft/gstfft.h
+include/gstreamer-%%VERSION%%/gst/fft/gstfftf32.h
+include/gstreamer-%%VERSION%%/gst/fft/gstfftf64.h
+include/gstreamer-%%VERSION%%/gst/fft/gstffts16.h
+include/gstreamer-%%VERSION%%/gst/fft/gstffts32.h
 include/gstreamer-%%VERSION%%/gst/floatcast/floatcast.h
 include/gstreamer-%%VERSION%%/gst/interfaces/colorbalance.h
 include/gstreamer-%%VERSION%%/gst/interfaces/colorbalancechannel.h
@@ -38,6 +43,7 @@ include/gstreamer-%%VERSION%%/gst/rtp/gstbasertpdepayload.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstbasertppayload.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtcpbuffer.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtpbuffer.h
+include/gstreamer-%%VERSION%%/gst/rtp/gstrtppayloads.h
 include/gstreamer-%%VERSION%%/gst/rtsp/gstrtsp-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspbase64.h
 include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspconnection.h
@@ -49,6 +55,7 @@ include/gstreamer-%%VERSION%%/gst/rtsp/gstrtsptransport.h
 include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspurl.h
 include/gstreamer-%%VERSION%%/gst/sdp/gstsdp.h
 include/gstreamer-%%VERSION%%/gst/sdp/gstsdpmessage.h
+include/gstreamer-%%VERSION%%/gst/tag/gsttagdemux.h
 include/gstreamer-%%VERSION%%/gst/tag/tag.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideofilter.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideosink.h
@@ -127,6 +134,10 @@ lib/libgstcdda-%%VERSION%%.a
 lib/libgstcdda-%%VERSION%%.la
 lib/libgstcdda-%%VERSION%%.so
 lib/libgstcdda-%%VERSION%%.so.0
+lib/libgstfft-%%VERSION%%.a
+lib/libgstfft-%%VERSION%%.la
+lib/libgstfft-%%VERSION%%.so
+lib/libgstfft-%%VERSION%%.so.0
 lib/libgstinterfaces-%%VERSION%%.a
 lib/libgstinterfaces-%%VERSION%%.la
 lib/libgstinterfaces-%%VERSION%%.so
@@ -166,19 +177,25 @@ lib/libgstvideo-%%VERSION%%.so.0
 libdata/pkgconfig/gstreamer-plugins-base-%%VERSION%%.pc
 share/locale/af/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/bg/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/da/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/es/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/fi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/or/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/pl/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/zh_CN/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/video
 @dirrm include/gstreamer-%%VERSION%%/gst/tag
 @dirrm include/gstreamer-%%VERSION%%/gst/sdp
@@ -189,5 +206,6 @@ share/locale/vi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/netbuffer
 @dirrm include/gstreamer-%%VERSION%%/gst/interfaces
 @dirrm include/gstreamer-%%VERSION%%/gst/floatcast
+@dirrm include/gstreamer-%%VERSION%%/gst/fft
 @dirrm include/gstreamer-%%VERSION%%/gst/cdda
 @dirrm include/gstreamer-%%VERSION%%/gst/audio

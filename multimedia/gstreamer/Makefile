@@ -3,12 +3,11 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/gstreamer/Makefile,v 1.52 2006/09/14 20:51:42 ahze Exp $
+#    $MCom: ports-stable/multimedia/gstreamer/Makefile,v 1.1 2007/12/02 16:39:58 ahze Exp $
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.14
-PORTREVISION=	1
+PORTVERSION=	0.10.15
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		${MASTER_SITE_LOCAL}
