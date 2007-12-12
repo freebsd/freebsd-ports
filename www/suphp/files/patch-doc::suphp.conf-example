@@ -1,5 +1,5 @@
 --- doc/suphp.conf-example.orig	2005-11-26 11:29:02.000000000 -0800
-+++ doc/suphp.conf-example	2007-11-11 02:36:02.000000000 -0800
++++ doc/suphp.conf-example	2007-12-12 09:21:02.000000000 -0800
 @@ -6,7 +6,7 @@
  loglevel=info
  
@@ -24,7 +24,7 @@
  [handlers]
  ;Handler for php-scripts
 -x-httpd-php=php:/usr/bin/php
-+x-httpd-php=php:/usr/local/bin/php-cgi
++application/x-httpd-php=php:/usr/local/bin/php-cgi
  
  ;Handler for CGI-scripts
  x-suphp-cgi=execute:!self

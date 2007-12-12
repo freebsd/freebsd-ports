@@ -38,8 +38,8 @@ you used the following Apache directives:
 In suPHP 0.6.x, you should use the following:
 
 	suPHP_Engine on
-        AddType x-httpd-php .php
-        suPHP_AddHandler x-httpd-php
+        AddType application/x-httpd-php .php
+        suPHP_AddHandler application/x-httpd-php
 
 Otherwise, Apache will begin serving PHP files as downloadable
 content, rather than parse them with the PHP interpreter.
