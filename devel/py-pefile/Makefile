@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pefile
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	devel python
 MASTER_SITES=	http://pefile.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
