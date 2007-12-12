@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-perftools
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	devel
 MASTER_SITES=	http://google-perftools.googlecode.com/files/ \
 		${MASTER_SITE_LOCAL}
@@ -31,11 +31,11 @@ post-patch:
 
 post-build:
 	@${ECHO}
-	@${ECHO} "Be aware that one of the self tests is known to fail."
+	@${ECHO} "Be aware that some of the self tests are known to fail."
 	@${ECHO} "Run 'make check' and try to fix that. Thanks!"
 	@${ECHO}
 
-# one of the tests is known to fail, uncomment this as soon as it is fixed
+# four of the tests are known to fail on 7.0, uncomment this as soon as this is fixed
 #regression-test: check
 
 check: build
