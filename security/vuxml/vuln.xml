@@ -44,7 +44,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A Secunia reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/27014/">
 	  <p>Format string vulnerability in the SMBDirList function in dirlist.c
 	    in SmbFTPD 0.96 allows remote attackers to execute arbitrary code via
