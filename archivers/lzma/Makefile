@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzma
-PORTVERSION=	4.54
+PORTVERSION=	4.57
 CATEGORIES=	archivers
 MASTER_SITES=	SFE/sevenzip
 DISTNAME=	7z${PORTVERSION:S/.//g}
@@ -26,7 +26,7 @@ MAKE_ENV+=	CXX="${CXX}"
 PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt history.txt lzma.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|4\.49|${DISTVERSION}|' \
+	@${REINPLACE_CMD} -e 's|4\.56|${DISTVERSION}|' \
 		${BUILD_WRKSRC}/LzmaAlone.cpp
 	@${REINPLACE_CMD} -e '/bool Open(LPCTSTR fileName, DWORD creationDisposition)/,/}/d'\
 		${WRKSRC}/CPP/7zip/Common/FileStreams.h
