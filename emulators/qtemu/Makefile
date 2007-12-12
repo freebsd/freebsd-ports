@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtemu
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ COMMENT=	A Qt4 front-end to Qemu
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui xml uic moc qmake rcc
+QT_COMPONENTS=	gui xml uic_build moc_build qmake_build rcc_build
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 
@@ -47,7 +47,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qtemu ${PREFIX}/bin/qtemu
 .if !defined(WITHOUT_NLS)
 	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations)
+	(cd ${WRKSRC}/translations/ && ${COPYTREE_SHARE} 'qtemu*.qm' ${DATADIR}/translations)
 .endif
 .if !defined(NOPORTDOCS)
 	(cd ${WRKSRC}/help/ && ${COPYTREE_SHARE} \* ${DOCSDIR})

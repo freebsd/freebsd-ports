@@ -38,6 +38,8 @@ bin/qtemu
 %%NLS%%%%DATADIR%%/translations/qtemu_es.qm
 %%NLS%%%%DATADIR%%/translations/qtemu_fr.qm
 %%NLS%%%%DATADIR%%/translations/qtemu_it.qm
+%%NLS%%%%DATADIR%%/translations/qtemu_pl.qm
+%%NLS%%%%DATADIR%%/translations/qtemu_pt-BR.qm
 %%NLS%%%%DATADIR%%/translations/qtemu_ru.qm
 %%NLS%%%%DATADIR%%/translations/qtemu_tr.qm
 %%NLS%%@dirrm %%DATADIR%%/translations
