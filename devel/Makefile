@@ -1078,6 +1078,7 @@
     SUBDIR += p5-DateTime-Event-Cron
     SUBDIR += p5-DateTime-Event-Easter
     SUBDIR += p5-DateTime-Event-ICal
+    SUBDIR += p5-DateTime-Event-Lunar
     SUBDIR += p5-DateTime-Event-NameDay
     SUBDIR += p5-DateTime-Event-Random
     SUBDIR += p5-DateTime-Event-Recurrence

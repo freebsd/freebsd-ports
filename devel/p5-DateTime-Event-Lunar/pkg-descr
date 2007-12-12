@@ -1,0 +1,5 @@
+This module calculates the time and date of certain recurring lunar events,
+including new moons and specific lunar phases.
+
+Author:	Daisuke Maki <dmaki@cpan.org>
+WWW:	http://search.cpan.org/~DMAKI/DateTime-Event-Lunar/
