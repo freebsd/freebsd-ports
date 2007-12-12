@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtorrent
-DISTVERSION=	0.13svn.r1615
+DISTVERSION=	0.13svn.r1806b
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/qbittorrent
 PKGNAMEPREFIX=	rb
@@ -36,5 +36,7 @@ BROKEN=		does not build on FreeBSD 5.x
 post-install:
 	@cd ${PREFIX}/lib && ${MV} libtorrent-0.13.so libtorrent.so.1 && \
 		${LN} -sf libtorrent.so.1 libtorrent.so
+	@${REINPLACE_CMD} -i '' -e 's|libtorrent-0.13.so|libtorrent.so.1|g' \
+		${PREFIX}/lib/libtorrent.la
 
 .include <bsd.port.post.mk>
