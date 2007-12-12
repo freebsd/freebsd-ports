@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tuxpaint
-PORTVERSION=	0.9.17
+PORTVERSION=	0.9.18
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -18,9 +18,9 @@ LIB_DEPENDS=	paper.2:${PORTSDIR}/print/libpaper \
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_SDL=	image mixer sdl ttf
+USE_SDL=	image mixer sdl ttf pango
 
-MAN1=		tuxpaint.1 tuxpaint-import.1
+MAN1=		tp-magic-config.1 tuxpaint.1 tuxpaint-import.1
 MANCOMPRESSED=	yes
 
 post-patch:
