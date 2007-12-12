@@ -1,0 +1,4 @@
+pkg_search queries the appropriate database file of FreeBSD, DragonFlyBSD or
+NetBSD for a given package name.
+
+WWW: http://www.mathematik.uni-marburg.de/~schmidtm/pkg_search/
