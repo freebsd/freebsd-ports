@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	swfmill
-PORTVERSION=	0.2.11
+PORTVERSION=	0.2.12
 CATEGORIES=	graphics
-MASTER_SITES=	http://iterative.org/swfmill/releases/
+MASTER_SITES=	http://swfmill.org/releases/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	xml2swf and swf2xml processor with import functionalities
