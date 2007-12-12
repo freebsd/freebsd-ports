@@ -2,10 +2,16 @@ bin/warzone2100
 %%DATADIR%%/mp.wz
 %%DATADIR%%/warzone.wz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/Readme.de
+%%PORTDOCS%%%%DOCSDIR%%/Readme.de.xhtml
+%%PORTDOCS%%%%DOCSDIR%%/Readme.en
+%%PORTDOCS%%%%DOCSDIR%%/Readme.en.xhtml
+%%PORTDOCS%%%%DOCSDIR%%/styles/readme.print.css
+%%PORTDOCS%%%%DOCSDIR%%/styles/readme.screen.css
 share/icons/warzone2100.png
 share/applications/warzone2100.desktop
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/styles
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrmtry share/icons
