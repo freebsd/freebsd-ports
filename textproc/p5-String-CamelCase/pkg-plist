@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/CamelCase/.packlist
+%%SITE_PERL%%/String/CamelCase.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/CamelCase
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
+@dirrmtry %%SITE_PERL%%/String
