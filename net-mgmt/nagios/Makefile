@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	2.9
-PORTREVISION=	2
+PORTVERSION=	2.10
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
@@ -23,6 +22,8 @@ USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 USE_AUTOTOOLS=	autoconf:261
 USE_RC_SUBR=	nagios.sh
+
+CONFLICTS=	nagios-[13].*
 
 OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8+]" OFF \
 		NANOSLEEP "Use nanosleep in event timing" OFF

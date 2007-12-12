@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Nov 28 12:59:04 2006
-+++ Makefile.in	Sat Dec  9 08:04:47 2006
+--- Makefile.in.orig	Tue Apr 24 01:14:25 2007
++++ Makefile.in	Thu Nov  1 20:08:40 2007
 @@ -186,7 +186,7 @@
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(LOGDIR)/archives
@@ -14,11 +14,11 @@
  
  install-config:
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
--	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/nagios.cfg $(DESTDIR)$(CFGDIR)/nagios.cfg-sample
--	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg-sample
--	$(INSTALL) -m 660 $(INSTALL_OPTS) sample-config/resource.cfg $(DESTDIR)$(CFGDIR)/resource.cfg-sample
--	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-object/localhost.cfg $(DESTDIR)$(CFGDIR)/localhost.cfg-sample
--	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-object/commands.cfg $(DESTDIR)$(CFGDIR)/commands.cfg-sample
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/nagios.cfg $(DESTDIR)$(CFGDIR)/nagios.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg
+-	$(INSTALL) -b -m 660 $(INSTALL_OPTS) sample-config/resource.cfg $(DESTDIR)$(CFGDIR)/resource.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/localhost.cfg $(DESTDIR)$(CFGDIR)/localhost.cfg
+-	$(INSTALL) -b -m 664 $(INSTALL_OPTS) sample-config/template-object/commands.cfg $(DESTDIR)$(CFGDIR)/commands.cfg
 +	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
 +	$(INSTALL) -m 644 $(INSTALL_OPTS) sample-config/nagios.cfg $(DESTDIR)$(CFGDIR)/nagios.cfg-sample
 +	$(INSTALL) -m 644 $(INSTALL_OPTS) sample-config/cgi.cfg $(DESTDIR)$(CFGDIR)/cgi.cfg-sample
