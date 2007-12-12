@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	inline
-PORTVERSION=	3.6.4
+PORTVERSION=	3.6.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	ruby${PORTNAME}
@@ -15,8 +15,8 @@ DISTNAME=	RubyInline-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Inline::C allows you to embed C/Ruby directly in ruby scripts
 
-BUILD_DEPENDS=  sow:${PORTSDIR}/devel/rubygem-hoe
-RUN_DEPENDS=    ${BUILD_DEPENDS}
+BUILD_DEPENDS=	sow:${PORTSDIR}/devel/rubygem-hoe
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GEM_NAME=	${DISTNAME}
 
