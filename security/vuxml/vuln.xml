@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ffcbd42d-a8c5-11dc-bec2-02e0185f8d72">
+    <topic>samba -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>samba</name>
+	<name>samba3</name>
+	<name>ja-samba</name>
+	<range><lt>3.0.28,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secuna Research reports:</p>
+	<blockquote cite="http://secunia.com/advisories/27760/">
+	  <p>Secunia Research has discovered a vulnerability in Samba, which
+	    can be exploited by malicious people to compromise a vulnerable
+	    system.  The vulnerability is caused due to a boundary error within
+	    the "send_mailslot()" function.  This can be exploited to cause a
+	    stack-based buffer overflow with zero bytes via a specially crafted
+	    "SAMLOGON" domain logon packet containing a username string placed
+	    at an odd offset followed by an overly long GETDC string.
+	    Successful exploitation allows execution of arbitrary code, but
+	    requires that the "domain logons" option is enabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-6015</cvename>
+      <url>http://secunia.com/advisories/27760/</url>
+    </references>
+    <dates>
+      <discovery>2007-12-10</discovery>
+      <entry>2007-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2571f88-a867-11dc-a6f0-00a0cce0781e">
     <topic>smbftpd -- format string vulnerability </topic>
     <affects>
