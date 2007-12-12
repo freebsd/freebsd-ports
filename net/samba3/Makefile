@@ -17,7 +17,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-FORBIDDEN=		"Remote Code Execution Vulnerability - CVE-2007-6015"
+FORBIDDEN=		http://vuxml.freebsd.org/ffcbd42d-a8c5-11dc-bec2-02e0185f8d72.html
 
 CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.*
 
