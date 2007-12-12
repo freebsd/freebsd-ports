@@ -1,0 +1,20 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/BuzzurlAPI/.packlist
+%%SITE_PERL%%/WebService/BuzzurlAPI.pm
+%%SITE_PERL%%/WebService/BuzzurlAPI/Util.pm
+%%SITE_PERL%%/WebService/BuzzurlAPI/Response.pm
+%%SITE_PERL%%/WebService/BuzzurlAPI/Request.pm
+%%SITE_PERL%%/WebService/BuzzurlAPI/Request
+%%SITE_PERL%%/WebService/BuzzurlAPI/Request/KeywordArticles.pm
+%%SITE_PERL%%/WebService/BuzzurlAPI/Request/BookmarkCount.pm
+%%SITE_PERL%%/WebService/BuzzurlAPI/Request/UserArticles.pm
+%%SITE_PERL%%/WebService/BuzzurlAPI/Request/RecentArticles.pm
+%%SITE_PERL%%/WebService/BuzzurlAPI/Request/Favorites.pm
+%%SITE_PERL%%/WebService/BuzzurlAPI/Request/Base.pm
+%%SITE_PERL%%/WebService/BuzzurlAPI/Request/Readers.pm
+%%SITE_PERL%%/WebService/BuzzurlAPI/Request/Add.pm
+%%SITE_PERL%%/WebService/BuzzurlAPI/Request/UrlInfo.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/BuzzurlAPI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
+@dirrmtry %%SITE_PERL%%/WebService/BuzzurlAPI/Request
+@dirrmtry %%SITE_PERL%%/WebService/BuzzurlAPI
+@dirrmtry %%SITE_PERL%%/WebService
