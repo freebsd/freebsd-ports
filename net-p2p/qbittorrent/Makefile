@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qbittorrent
-DISTVERSION=	1.0.0rc3
+DISTVERSION=	1.0.0rc10
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
@@ -14,6 +14,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Bittorrent client written in C++ / Qt4 using libtorrent
 
 LIB_DEPENDS=	ccext2-1.5.0:${PORTSDIR}/devel/commoncpp \
+		curl.4:${PORTSDIR}/ftp/curl \
 		torrent.1:${PORTSDIR}/net-p2p/rblibtorrent-devel
 
 USE_PYTHON=	2.3+
