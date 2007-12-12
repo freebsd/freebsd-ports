@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Report
-PORTVERSION=	0.09
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
@@ -30,5 +30,6 @@ MAN3=	Log::Report.3 Log::Report::Die.3 \
 	Log::Report::Message.3 Log::Report::Translator.3 \
 	Log::Report::Translator::Gettext.3 \
 	Log::Report::Translator::POT.3 Log::Report::Util.3 \
+	Log::Report::Win32Locale.3
 
 .include <bsd.port.mk>
