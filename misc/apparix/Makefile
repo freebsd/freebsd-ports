@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	apparix
-PORTVERSION=	20061110
+PORTVERSION=	20070918
 CATEGORIES=	misc
 MASTER_SITES=	http://micans.org/apparix/src/
-DISTNAME=	${PORTNAME}-06-314
+DISTNAME=	${PORTNAME}-07-261
 
 MAINTAINER=	steinex@nognu.de
 COMMENT=	Bookmark directories and apparate inside them
