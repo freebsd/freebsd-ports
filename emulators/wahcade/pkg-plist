@@ -10,13 +10,8 @@ share/pixmaps/wahcade.png
 %%DATADIR%%/config.dist/files/.dir
 %%DATADIR%%/config.dist/histview.ini
 %%DATADIR%%/config.dist/ini/.dir
-%%DATADIR%%/config.dist/ini/genesis-0.ini
-%%DATADIR%%/config.dist/ini/genesis.ini
 %%DATADIR%%/config.dist/ini/mame-0.ini
-%%DATADIR%%/config.dist/ini/mame-1.ini
 %%DATADIR%%/config.dist/ini/mame.ini
-%%DATADIR%%/config.dist/ini/zsnes-0.ini
-%%DATADIR%%/config.dist/ini/zsnes.ini
 %%DATADIR%%/config.dist/layouts/.dir
 %%DATADIR%%/config.dist/layouts/classic_1024x768/layout.lay
 %%DATADIR%%/config.dist/layouts/classic_640x480/layout.lay
@@ -26,6 +21,7 @@ share/pixmaps/wahcade.png
 %%DATADIR%%/config.dist/layouts/histview/example.lay
 %%DATADIR%%/config.dist/wahcade.ini
 %%DATADIR%%/constants.py
+%%DATADIR%%/de.po
 %%DATADIR%%/doc/CHANGELOG
 %%DATADIR%%/doc/COPYING
 %%DATADIR%%/doc/INI_FILES
@@ -39,6 +35,8 @@ share/pixmaps/wahcade.png
 %%DATADIR%%/doc/file_formats/filter_format.txt
 %%DATADIR%%/doc/file_formats/gamelist_format.txt
 %%DATADIR%%/doc/file_formats/layout_format.txt
+%%DATADIR%%/doc/samples/run_emu.bat
+%%DATADIR%%/doc/samples/run_mess.sh
 %%DATADIR%%/doc/xmame/xmame-x11rc
 %%DATADIR%%/doc/xmame/xmame-x11rc.pre88
 %%DATADIR%%/doc/xmame/xmamerc
@@ -47,6 +45,7 @@ share/pixmaps/wahcade.png
 %%DATADIR%%/en.po
 %%DATADIR%%/en_GB.po
 %%DATADIR%%/es.po
+%%DATADIR%%/exception.py
 %%DATADIR%%/filters.py
 %%DATADIR%%/fr.po
 %%DATADIR%%/glade/layout_editor.glade
@@ -58,7 +57,7 @@ share/pixmaps/wahcade.png
 %%DATADIR%%/glade/win_options.png
 %%DATADIR%%/glade/win_scrsave.png
 %%DATADIR%%/glade2.py
-%%DATADIR%%/gst_video.py
+%%DATADIR%%/gst_media.py
 %%DATADIR%%/key_consts.py
 %%DATADIR%%/layout_editor.py
 %%DATADIR%%/layout_props.py
@@ -81,13 +80,17 @@ share/pixmaps/wahcade.png
 %%DATADIR%%/pixmaps/win_msg.png
 %%DATADIR%%/pixmaps/win_options.png
 %%DATADIR%%/pixmaps/win_scrsave.png
-%%DATADIR%%/run_emu.bat
 %%DATADIR%%/scrolled_list.py
 %%DATADIR%%/setup.py
 %%DATADIR%%/sv.po
-%%DATADIR%%/templates/new_emulator-0.ini
-%%DATADIR%%/templates/new_emulator-1.ini
-%%DATADIR%%/templates/new_emulator.ini
+%%DATADIR%%/templates/default-0.ini
+%%DATADIR%%/templates/default-1.ini
+%%DATADIR%%/templates/default.ini
+%%DATADIR%%/templates/dgen.ini
+%%DATADIR%%/templates/mame.ini
+%%DATADIR%%/templates/stella.ini
+%%DATADIR%%/templates/videos.ini
+%%DATADIR%%/templates/zsnes.ini
 %%DATADIR%%/wahcade-layout-editor.py
 %%DATADIR%%/wahcade-setup.py
 %%DATADIR%%/wahcade.py
@@ -117,6 +120,7 @@ share/pixmaps/wahcade.png
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/doc/xmame
+@dirrm %%DATADIR%%/doc/samples
 @dirrm %%DATADIR%%/doc/file_formats
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/config.dist/layouts/histview
