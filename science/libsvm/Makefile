@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsvm
-PORTVERSION=	2.84
+PORTVERSION=	2.85
 PORTEPOCH=	1
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
@@ -35,7 +35,7 @@ BUILD_WRKSRC=	${WRKSRC}/python
 .else
 TXT_DOCS=	COPYRIGHT README FAQ.html README.tools
 
-TOOLS=		tools/grid.py tools/easy.py tools/subset.py
+TOOLS=		tools/checkdata.py tools/easy.py tools/grid.py tools/subset.py
 
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR}
