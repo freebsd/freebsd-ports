@@ -9506,6 +9506,7 @@ p5-Date-Set	ports/devel/p5-Date-Set
 p5-Date-Simple	ports/devel/p5-Date-Simple
 p5-DateConvert	ports/devel/p5-DateConvert
 p5-DateTime	ports/devel/p5-DateTime
+p5-DateTime-Calendar-Chinese	ports/devel/p5-DateTime-Calendar-Chinese
 p5-DateTime-Calendar-Christian	ports/devel/p5-DateTime-Calendar-Christian
 p5-DateTime-Calendar-Discordian	ports/devel/p5-DateTime-Calendar-Discordian
 p5-DateTime-Calendar-FrenchRevolutionary	ports/devel/p5-DateTime-Calendar-FrenchRevolutionary
