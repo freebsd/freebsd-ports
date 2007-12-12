@@ -3,7 +3,7 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/multimedia/gstreamer-plugins/Makefile,v 1.100 2006/09/14 21:02:22 ahze Exp $
+#   $MCom: ports-stable/multimedia/gstreamer-plugins/Makefile,v 1.1 2007/12/02 17:08:48 ahze Exp $
 #
 
 PORTNAME=	gstreamer
@@ -31,7 +31,7 @@ LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
 
 CFLAGS:=	${CFLAGS} -O2
 
-BASE_PORTVERSION=	0.10.14
+BASE_PORTVERSION=	0.10.15
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
 BAD_PORTVERSION=	0.10.5
