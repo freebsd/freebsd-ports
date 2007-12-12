@@ -10469,6 +10469,7 @@ p5-Net-Google	ports/net/p5-Net-Google
 p5-Net-Google-Calendar	ports/net/p5-Net-Google-Calendar
 p5-Net-Gopher	ports/net/p5-Net-Gopher
 p5-Net-Growl	ports/net/p5-Net-Growl
+p5-Net-GrowlClient	ports/net/p5-Net-GrowlClient
 p5-Net-HL7	ports/net/p5-Net-HL7
 p5-Net-ICQ2000	ports/net-im/p5-Net-ICQ2000
 p5-Net-IMAP-Simple	ports/mail/p5-Net-IMAP-Simple
