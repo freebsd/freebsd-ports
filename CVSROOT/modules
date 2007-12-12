@@ -11148,6 +11148,7 @@ p5-Test-TAP-HTMLMatrix	ports/devel/p5-Test-TAP-HTMLMatrix
 p5-Test-TAP-Model	ports/devel/p5-Test-TAP-Model
 p5-Test-Tester	ports/devel/p5-Test-Tester
 p5-Test-Unit	ports/devel/p5-Test-Unit
+p5-Test-UseAllModules	ports/devel/p5-Test-UseAllModules
 p5-Test-WWW-Mechanize	ports/devel/p5-Test-WWW-Mechanize
 p5-Test-WWW-Mechanize-Catalyst	ports/devel/p5-Test-WWW-Mechanize-Catalyst
 p5-Test-Warn		ports/devel/p5-Test-Warn
