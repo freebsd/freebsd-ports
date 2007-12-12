@@ -97,8 +97,6 @@
     SUBDIR += jcommon
     SUBDIR += jdbcpool
     SUBDIR += jde
-    SUBDIR += jdk11
-    SUBDIR += jdk12
     SUBDIR += jdk13
     SUBDIR += jdk13-doc
     SUBDIR += jdk14
@@ -108,7 +106,6 @@
     SUBDIR += jdk16
     SUBDIR += jdk16-doc
     SUBDIR += jdom
-    SUBDIR += jfc
     SUBDIR += jflex
     SUBDIR += jfreechart
     SUBDIR += jgraph
@@ -120,16 +117,13 @@
     SUBDIR += jmp
     SUBDIR += jode
     SUBDIR += jomp
-    SUBDIR += jre
     SUBDIR += jsdk
     SUBDIR += jump
     SUBDIR += junit
     SUBDIR += kaffe
     SUBDIR += langspec
-    SUBDIR += linux-blackdown-jdk12
     SUBDIR += linux-blackdown-jdk14
     SUBDIR += linux-blackdown-jre11
-    SUBDIR += linux-sun-jdk12
     SUBDIR += linux-sun-jdk13
     SUBDIR += linux-sun-jdk14
     SUBDIR += linux-sun-jdk15
