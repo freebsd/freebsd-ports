@@ -1,11 +1,15 @@
---- bakery/Makefile.in.orig	Fri Nov 12 01:48:47 2004
-+++ bakery/Makefile.in	Fri Nov 12 01:49:10 2004
-@@ -251,7 +251,7 @@
+--- bakery/Makefile.in.orig	2007-12-02 01:51:18.000000000 -0500
++++ bakery/Makefile.in	2007-12-02 01:55:39.000000000 -0500
+@@ -279,10 +279,10 @@ libbakery_2_4_la_LIBADD = App/libbakery_
                        View/libbakery_view.la \
                        $(BAKERY_LIBS)
  
 -libbakery_2_4_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION) -release $(GENERIC_RELEASE)
 +libbakery_2_4_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION)
- all: all-recursive
  
- .SUFFIXES:
+ # Install the headers:
+-library_configdir = $(libdir)/bakery-2.4/include
++library_configdir = $(library_includedir)
+ library_config_DATA = bakeryconfig.h
+ all: bakeryconfig.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
