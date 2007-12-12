@@ -207,6 +207,14 @@ Local/Library/Libraries/libEncore.so.%%LIBVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfiguration/ECLoggingConfiguration.html
 %%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfiguration/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfiguration/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfigurationFactory/Classes/ECLoggingConfigurationFactory/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfigurationFactory/Classes/ECLoggingConfigurationFactory/ECLoggingConfigurationFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfigurationFactory/Classes/ECLoggingConfigurationFactory/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfigurationFactory/Classes/ECLoggingConfigurationFactory/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfigurationFactory/CompositePage.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfigurationFactory/ECLoggingConfigurationFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfigurationFactory/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ECLoggingConfigurationFactory/toc.html
 %%PORTDOCS%%%%DOCSDIR%%/ECLoggingFormatter/CompositePage.html
 %%PORTDOCS%%%%DOCSDIR%%/ECLoggingFormatter/ECLoggingFormatter.html
 %%PORTDOCS%%%%DOCSDIR%%/ECLoggingFormatter/Protocols/ECLoggingFormatter/CompositePage.html
@@ -276,7 +284,6 @@ Local/Library/Libraries/libEncore.so.%%LIBVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Classes/ECParameterString/toc.html
 %%PORTDOCS%%%%DOCSDIR%%/ECParameterString/CompositePage.html
 %%PORTDOCS%%%%DOCSDIR%%/ECParameterString/ECParameterString.html
-%%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Methods/Methods.html
 %%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Protocols/ECParameterEvaluater/CompositePage.html
 %%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Protocols/ECParameterEvaluater/ECParameterString.html
 %%PORTDOCS%%%%DOCSDIR%%/ECParameterString/Protocols/ECParameterEvaluater/Methods/Methods.html
@@ -441,12 +448,6 @@ Local/Library/Libraries/libEncore.so.%%LIBVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/ECXMLEventHandler/ECXMLEventHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/ECXMLEventHandler/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ECXMLEventHandler/toc.html
-%%PORTDOCS%%%%DOCSDIR%%/Encore/CompositePage.html
-%%PORTDOCS%%%%DOCSDIR%%/Encore/Encore.html
-%%PORTDOCS%%%%DOCSDIR%%/Encore/index.html
-%%PORTDOCS%%%%DOCSDIR%%/Encore/toc.html
-%%PORTDOCS%%%%DOCSDIR%%/MasterTOC.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Encore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLEventHandler
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlState/Classes/ECXMLControlState/Methods
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECXMLControlState/Classes/ECXMLControlState
@@ -518,7 +519,6 @@ Local/Library/Libraries/libEncore.so.%%LIBVERSION%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Protocols/ECParameterEvaluater/Methods
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Protocols/ECParameterEvaluater
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Protocols
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Methods
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Classes/ECParameterString/Methods
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Classes/ECParameterString
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECParameterString/Classes/ECDefaultParameterEvaluaterImpl/Methods
@@ -549,6 +549,9 @@ Local/Library/Libraries/libEncore.so.%%LIBVERSION%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingFormatter/Protocols/ECLoggingFormatter
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingFormatter/Protocols
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingFormatter
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingConfigurationFactory/Classes/ECLoggingConfigurationFactory
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingConfigurationFactory/Classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingConfigurationFactory
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingConfiguration/Classes/ECLoggingConfiguration/Methods
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingConfiguration/Classes/ECLoggingConfiguration
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ECLoggingConfiguration/Classes
