@@ -19,6 +19,7 @@ include/vala-1.0/ccode/valaccodedostatement.h
 include/vala-1.0/ccode/valaccodeelementaccess.h
 include/vala-1.0/ccode/valaccodeemptystatement.h
 include/vala-1.0/ccode/valaccodeenum.h
+include/vala-1.0/ccode/valaccodeenumvalue.h
 include/vala-1.0/ccode/valaccodeexpression.h
 include/vala-1.0/ccode/valaccodeexpressionstatement.h
 include/vala-1.0/ccode/valaccodeformalparameter.h
@@ -244,6 +245,8 @@ share/devhelp/books/vala/vala.devhelp2
 %%DATADIR%%/vapi/libxml-2.0.vapi
 %%DATADIR%%/vapi/pango.deps
 %%DATADIR%%/vapi/pango.vapi
+%%DATADIR%%/vapi/pangocairo.deps
+%%DATADIR%%/vapi/pangocairo.vapi
 %%DATADIR%%/vapi/poppler-glib.deps
 %%DATADIR%%/vapi/poppler-glib.vapi
 %%DATADIR%%/vapi/sqlite3.vapi
