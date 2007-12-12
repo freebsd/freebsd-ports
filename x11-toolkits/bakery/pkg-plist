@@ -4,14 +4,7 @@ include/bakery-%%API_VERSION%%/bakery/App/App_Gtk.h
 include/bakery-%%API_VERSION%%/bakery/App/App_WithDoc.h
 include/bakery-%%API_VERSION%%/bakery/App/App_WithDoc_Gtk.h
 include/bakery-%%API_VERSION%%/bakery/App/Dialog_OfferSave.h
-include/bakery-%%API_VERSION%%/bakery/App/Dialog_OverwriteFile.h
 include/bakery-%%API_VERSION%%/bakery/App/GtkDialogs.h
-include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files/egg-recent-item.h
-include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files/egg-recent-model.h
-include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files/egg-recent-util.h
-include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files/egg-recent-view-gtk.h
-include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files/egg-recent-view.h
-include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files/egg-recent.h
 include/bakery-%%API_VERSION%%/bakery/Configuration/Association.h
 include/bakery-%%API_VERSION%%/bakery/Configuration/AssociationBase.h
 include/bakery-%%API_VERSION%%/bakery/Configuration/Client.h
@@ -24,6 +17,7 @@ include/bakery-%%API_VERSION%%/bakery/View/View.h
 include/bakery-%%API_VERSION%%/bakery/View/ViewBase.h
 include/bakery-%%API_VERSION%%/bakery/View/View_Composite.h
 include/bakery-%%API_VERSION%%/bakery/bakery.h
+include/bakery-%%API_VERSION%%/bakery/bakeryconfig.h
 include/bakery-%%API_VERSION%%/bakery/init.h
 lib/libbakery-%%VERSION%%.a
 lib/libbakery-%%VERSION%%.la
@@ -34,22 +28,29 @@ share/locale/ar/LC_MESSAGES/bakery.mo
 share/locale/bg/LC_MESSAGES/bakery.mo
 share/locale/ca/LC_MESSAGES/bakery.mo
 share/locale/de/LC_MESSAGES/bakery.mo
+share/locale/dz/LC_MESSAGES/bakery.mo
 share/locale/el/LC_MESSAGES/bakery.mo
 share/locale/en_CA/LC_MESSAGES/bakery.mo
 share/locale/en_GB/LC_MESSAGES/bakery.mo
 share/locale/es/LC_MESSAGES/bakery.mo
 share/locale/fi/LC_MESSAGES/bakery.mo
 share/locale/fr/LC_MESSAGES/bakery.mo
+share/locale/gl/LC_MESSAGES/bakery.mo
 share/locale/hu/LC_MESSAGES/bakery.mo
 share/locale/ja/LC_MESSAGES/bakery.mo
+share/locale/lt/LC_MESSAGES/bakery.mo
 share/locale/mk/LC_MESSAGES/bakery.mo
 share/locale/nb/LC_MESSAGES/bakery.mo
 share/locale/ne/LC_MESSAGES/bakery.mo
+share/locale/oc/LC_MESSAGES/bakery.mo
 share/locale/nl/LC_MESSAGES/bakery.mo
+share/locale/pl/LC_MESSAGES/bakery.mo
 share/locale/pt_BR/LC_MESSAGES/bakery.mo
 share/locale/ru/LC_MESSAGES/bakery.mo
 share/locale/rw/LC_MESSAGES/bakery.mo
 share/locale/sk/LC_MESSAGES/bakery.mo
+share/locale/sl/LC_MESSAGES/bakery.mo
+share/locale/sq/LC_MESSAGES/bakery.mo
 share/locale/sv/LC_MESSAGES/bakery.mo
 share/locale/vi/LC_MESSAGES/bakery.mo
 share/locale/uk/LC_MESSAGES/bakery.mo
@@ -59,10 +60,12 @@ share/locale/zh_TW/LC_MESSAGES/bakery.mo
 @dirrm include/bakery-%%API_VERSION%%/bakery/Utilities
 @dirrm include/bakery-%%API_VERSION%%/bakery/Document
 @dirrm include/bakery-%%API_VERSION%%/bakery/Configuration
-@dirrm include/bakery-%%API_VERSION%%/bakery/App/libegg/recent-files
-@dirrm include/bakery-%%API_VERSION%%/bakery/App/libegg
 @dirrm include/bakery-%%API_VERSION%%/bakery/App
 @dirrm include/bakery-%%API_VERSION%%/bakery
 @dirrm include/bakery-%%API_VERSION%%
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz

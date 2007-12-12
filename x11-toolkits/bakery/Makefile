@@ -3,12 +3,11 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/bakery/Makefile,v 1.8 2006/09/10 00:51:16 mezz Exp $
+#   $MCom: ports-stable/x11-toolkits/bakery/Makefile,v 1.5 2007/12/02 07:02:19 marcus Exp $
 #
 
 PORTNAME=	bakery
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.4.3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.4
@@ -24,7 +23,7 @@ LIB_DEPENDS=	gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
 USE_GNOME=	gnomehack gnomeprefix gnometarget intltool ltverhack
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4
+USE_GCC=	3.4+
 USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15
