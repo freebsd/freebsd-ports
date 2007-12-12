@@ -12274,6 +12274,7 @@ phpmyfaq	ports/www/phpmyfaq
 phpmyid		ports/security/phpmyid
 phppdflib	ports/print/phppdflib
 phppgadmin	ports/databases/phppgadmin
+phprecipebook	ports/www/phprecipebook
 phprojekt	ports/deskutils/phprojekt
 phproxy		ports/www/phproxy
 phpsecinfo	ports/security/phpsecinfo
