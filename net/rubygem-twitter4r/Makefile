@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	twitter4r
-PORTVERSION=	0.2.5
+PORTVERSION=	0.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RF
 

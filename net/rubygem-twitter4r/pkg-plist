@@ -27,6 +27,10 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000044.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000045.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/Client.src/M000050.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Config.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Config.src/M000026.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RailsPatch.html
@@ -50,7 +54,7 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTInterfaceSpec.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTMethodSpec.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTParameterSpec.html
-%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTParameterSpec.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/Twitter/RESTParameterSpec.src/M000051.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.src/M000020.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/Status.src/M000021.html
@@ -64,7 +68,9 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000031.html
 %%GEM_DOC_DIR%%/rdoc/classes/Twitter/User.src/M000032.html
 %%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/lib/twitter/client/auth_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/twitter/client/base_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/twitter/client/favorites_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/twitter/client/friendship_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/twitter/client/messaging_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/twitter/client/status_rb.html
@@ -90,7 +96,9 @@
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
 %%GEM_LIB_DIR%%/lib/twitter.rb
 %%GEM_LIB_DIR%%/lib/twitter/client.rb
+%%GEM_LIB_DIR%%/lib/twitter/client/auth.rb
 %%GEM_LIB_DIR%%/lib/twitter/client/base.rb
+%%GEM_LIB_DIR%%/lib/twitter/client/favorites.rb
 %%GEM_LIB_DIR%%/lib/twitter/client/friendship.rb
 %%GEM_LIB_DIR%%/lib/twitter/client/messaging.rb
 %%GEM_LIB_DIR%%/lib/twitter/client/status.rb
@@ -106,7 +114,9 @@
 %%GEM_LIB_DIR%%/lib/twitter/model.rb
 %%GEM_LIB_DIR%%/lib/twitter/rails.rb
 %%GEM_LIB_DIR%%/lib/twitter/version.rb
+%%GEM_LIB_DIR%%/spec/twitter/client/auth_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/client/base_spec.rb
+%%GEM_LIB_DIR%%/spec/twitter/client/favorites_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/client/friendship_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/client/messaging_spec.rb
 %%GEM_LIB_DIR%%/spec/twitter/client/status_spec.rb
