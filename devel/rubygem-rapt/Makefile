@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	rapt
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rails Plugin Tool
 
 .include <bsd.port.pre.mk>
