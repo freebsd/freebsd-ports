@@ -127,6 +127,7 @@
     SUBDIR += drupal5-adsense
     SUBDIR += drupal5-bluebreeze
     SUBDIR += drupal5-bookreview
+    SUBDIR += drupal5-disknode
     SUBDIR += drupal5-google_analytics
     SUBDIR += drupal5-gsitemap
     SUBDIR += drupal5-i18n
