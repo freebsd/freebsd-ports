@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	4.21
+PORTVERSION=	4.24
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -23,11 +23,19 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
 
+GMPL_H= 	glpavl.h glpdmp.h glplib.h glpmpl.h glprng.h glpstd.h
+GMPLDIR=	${LOCALBASE}/include/gmpl
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	bench.txt bench1.txt glpk.ps glpk_faq.txt gmpl.ps opb.txt
 .endif
 
 post-install:
+	@${MKDIR} ${GMPLDIR}
+	for incfile in ${GMPL_H} ; do \
+		${INSTALL_DATA} ${WRKSRC}/include/$${incfile} ${GMPLDIR} ; \
+	done
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	for docfile in ${PORTDOCS} ; do \
@@ -35,10 +43,4 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

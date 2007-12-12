@@ -1,6 +1,13 @@
 bin/glpsol
 include/glpk.h
+include/gmpl/glpavl.h
+include/gmpl/glpdmp.h
+include/gmpl/glplib.h
+include/gmpl/glpmpl.h
+include/gmpl/glprng.h
+include/gmpl/glpstd.h
+@dirrm include/gmpl
 lib/libglpk.a
 lib/libglpk.la
 lib/libglpk.so
-lib/libglpk.so.6
+lib/libglpk.so.9
