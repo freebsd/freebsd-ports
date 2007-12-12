@@ -25,6 +25,7 @@ share/gnome/help/fdl/C/fdl.xml
 share/gnome/help/fdl/ar/fdl.xml
 share/gnome/help/fdl/es/fdl.xml
 share/gnome/help/fdl/fr/fdl.xml
+share/gnome/help/fdl/hu/fdl.xml
 share/gnome/help/fdl/ko/fdl.xml
 share/gnome/help/fdl/oc/fdl.xml
 share/gnome/help/fdl/sv/fdl.xml
@@ -36,6 +37,7 @@ share/gnome/help/gpl/ca/gpl.xml
 share/gnome/help/gpl/es/gpl.xml
 share/gnome/help/gpl/fi/gpl.xml
 share/gnome/help/gpl/fr/gpl.xml
+share/gnome/help/gpl/hu/gpl.xml
 share/gnome/help/gpl/ko/gpl.xml
 share/gnome/help/gpl/oc/gpl.xml
 share/gnome/help/gpl/pa/gpl.xml
@@ -47,6 +49,7 @@ share/gnome/help/lgpl/C/lgpl.xml
 share/gnome/help/lgpl/ar/lgpl.xml
 share/gnome/help/lgpl/es/lgpl.xml
 share/gnome/help/lgpl/fr/lgpl.xml
+share/gnome/help/lgpl/hu/lgpl.xml
 share/gnome/help/lgpl/ko/lgpl.xml
 share/gnome/help/lgpl/oc/lgpl.xml
 share/gnome/help/lgpl/pa/lgpl.xml
@@ -151,6 +154,7 @@ share/omf/fdl/fdl-C.omf
 share/omf/fdl/fdl-ar.omf
 share/omf/fdl/fdl-es.omf
 share/omf/fdl/fdl-fr.omf
+share/omf/fdl/fdl-hu.omf
 share/omf/fdl/fdl-ko.omf
 share/omf/fdl/fdl-oc.omf
 share/omf/fdl/fdl-sv.omf
@@ -162,6 +166,7 @@ share/omf/gpl/gpl-ca.omf
 share/omf/gpl/gpl-es.omf
 share/omf/gpl/gpl-fi.omf
 share/omf/gpl/gpl-fr.omf
+share/omf/gpl/gpl-hu.omf
 share/omf/gpl/gpl-ko.omf
 share/omf/gpl/gpl-oc.omf
 share/omf/gpl/gpl-pa.omf
@@ -173,6 +178,7 @@ share/omf/lgpl/lgpl-C.omf
 share/omf/lgpl/lgpl-ar.omf
 share/omf/lgpl/lgpl-es.omf
 share/omf/lgpl/lgpl-fr.omf
+share/omf/lgpl/lgpl-hu.omf
 share/omf/lgpl/lgpl-ko.omf
 share/omf/lgpl/lgpl-oc.omf
 share/omf/lgpl/lgpl-pa.omf

@@ -85,6 +85,9 @@ share/gnome/help/clock/oc/legal.xml
 share/gnome/help/clock/pa/clock.xml
 share/gnome/help/clock/pa/figures/clock_applet.png
 share/gnome/help/clock/pa/legal.xml
+share/gnome/help/clock/pt_BR/clock.xml
+share/gnome/help/clock/pt_BR/figures/clock_applet.png
+share/gnome/help/clock/pt_BR/legal.xml
 share/gnome/help/clock/ru/clock.xml
 share/gnome/help/clock/ru/figures/clock_applet.png
 share/gnome/help/clock/ru/legal.xml
@@ -362,6 +365,7 @@ share/omf/clock/clock-ko.omf
 share/omf/clock/clock-nl.omf
 share/omf/clock/clock-oc.omf
 share/omf/clock/clock-pa.omf
+share/omf/clock/clock-pt_BR.omf
 share/omf/clock/clock-ru.omf
 share/omf/clock/clock-sr.omf
 share/omf/clock/clock-sv.omf
@@ -509,6 +513,8 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrm share/gnome/help/clock/sr
 @dirrm share/gnome/help/clock/ru/figures
 @dirrm share/gnome/help/clock/ru
+@dirrm share/gnome/help/clock/pt_BR/figures
+@dirrm share/gnome/help/clock/pt_BR
 @dirrm share/gnome/help/clock/pa/figures
 @dirrm share/gnome/help/clock/pa
 @dirrm share/gnome/help/clock/oc/figures
