@@ -28,6 +28,8 @@ include/libtorrent/asio/detail/call_stack.hpp
 include/libtorrent/asio/detail/const_buffers_iterator.hpp
 include/libtorrent/asio/detail/consuming_buffers.hpp
 include/libtorrent/asio/detail/deadline_timer_service.hpp
+include/libtorrent/asio/detail/dev_poll_reactor.hpp
+include/libtorrent/asio/detail/dev_poll_reactor_fwd.hpp
 include/libtorrent/asio/detail/epoll_reactor.hpp
 include/libtorrent/asio/detail/epoll_reactor_fwd.hpp
 include/libtorrent/asio/detail/event.hpp
@@ -93,6 +95,7 @@ include/libtorrent/asio/detail/win_mutex.hpp
 include/libtorrent/asio/detail/win_signal_blocker.hpp
 include/libtorrent/asio/detail/win_thread.hpp
 include/libtorrent/asio/detail/win_tss_ptr.hpp
+include/libtorrent/asio/detail/wince_thread.hpp
 include/libtorrent/asio/detail/winsock_init.hpp
 include/libtorrent/asio/detail/wrapped_handler.hpp
 include/libtorrent/asio/error.hpp
@@ -226,6 +229,7 @@ include/libtorrent/torrent_handle.hpp
 include/libtorrent/torrent_info.hpp
 include/libtorrent/tracker_manager.hpp
 include/libtorrent/udp_tracker_connection.hpp
+include/libtorrent/upnp.hpp
 include/libtorrent/utf8.hpp
 include/libtorrent/variant_stream.hpp
 include/libtorrent/version.hpp
