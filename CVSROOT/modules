@@ -5598,8 +5598,6 @@ jdic		ports/x11-toolkits/jdic
 jdictionary	ports/textproc/jdictionary
 jdictionary-int-eng	ports/textproc/jdictionary-int-eng
 jdiskreport	ports/sysutils/jdiskreport
-jdk11		ports/java/jdk11
-jdk12		ports/java/jdk12
 jdk13		ports/java/jdk13
 jdk13-doc	ports/java/jdk13-doc
 jdk14		ports/java/jdk14
@@ -5622,7 +5620,6 @@ jetspeed	ports/www/jetspeed
 jetty		ports/www/jetty
 jewel		ports/x11-wm/jewel
 jext		ports/editors/jext
-jfc		ports/java/jfc
 jfconv		ports/palm/jfconv
 jfduke3d	ports/games/jfduke3d
 jffnms		ports/net-mgmt/jffnms
@@ -5677,7 +5674,6 @@ jpgtn		ports/graphics/jpgtn
 jpilot		ports/palm/jpilot
 jpilot-db	ports/palm/jpilot-db
 jps		ports/sysutils/jps
-jre		ports/java/jre
 jrefentry	ports/textproc/jrefentry
 jrobin		ports/databases/jrobin
 jrtplib		ports/devel/jrtplib
@@ -6918,7 +6914,6 @@ linux-americasarmy	ports/games/linux-americasarmy
 linux-arts	ports/audio/linux-arts
 linux-aspell	ports/textproc/linux-aspell
 linux-atk	ports/accessibility/linux-atk
-linux-blackdown-jdk12	ports/java/linux-blackdown-jdk12
 linux-blackdown-jdk14	ports/java/linux-blackdown-jdk14
 linux-blackdown-jre11	ports/java/linux-blackdown-jre11
 linux-curl		ports/ftp/linux-curl
@@ -7032,7 +7027,6 @@ linux-seamonkey-devel	ports/www/linux-seamonkey-devel
 linux-shoutcast	ports/audio/linux-shoutcast
 linux-spheresofchaos-demo	ports/games/linux-spheresofchaos-demo
 linux-steam	ports/games/linux-steam
-linux-sun-jdk12	ports/java/linux-sun-jdk12
 linux-sun-jdk13	ports/java/linux-sun-jdk13
 linux-sun-jdk14	ports/java/linux-sun-jdk14
 linux-sun-jdk15	ports/java/linux-sun-jdk15
