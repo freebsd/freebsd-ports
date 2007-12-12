@@ -10,29 +10,29 @@ apps/ROX-Filer/Help/README
 apps/ROX-Filer/Help/README-es
 apps/ROX-Filer/Help/TODO
 apps/ROX-Filer/Messages/README
-apps/ROX-Filer/Messages/cs.gmo
-apps/ROX-Filer/Messages/da.gmo
-apps/ROX-Filer/Messages/de.gmo
-apps/ROX-Filer/Messages/es.gmo
-apps/ROX-Filer/Messages/et_EE.gmo
-apps/ROX-Filer/Messages/eu.gmo
-apps/ROX-Filer/Messages/fi.gmo
-apps/ROX-Filer/Messages/fr.gmo
-apps/ROX-Filer/Messages/hu.gmo
-apps/ROX-Filer/Messages/it.gmo
-apps/ROX-Filer/Messages/ja.gmo
-apps/ROX-Filer/Messages/nl.gmo
-apps/ROX-Filer/Messages/no.gmo
-apps/ROX-Filer/Messages/pl.gmo
-apps/ROX-Filer/Messages/pt_BR.gmo
-apps/ROX-Filer/Messages/pt_PT.gmo
-apps/ROX-Filer/Messages/ro.gmo
-apps/ROX-Filer/Messages/ru.gmo
-apps/ROX-Filer/Messages/sv.gmo
-apps/ROX-Filer/Messages/uk.gmo
-apps/ROX-Filer/Messages/vi_VN.gmo
-apps/ROX-Filer/Messages/zh_CN.gmo
-apps/ROX-Filer/Messages/zh_TW.gmo
+apps/ROX-Filer/Messages/cs/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/da/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/de/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/es/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/et_EE/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/eu/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/fi/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/fr/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/hu/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/it/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/ja/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/nl/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/no/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/pl/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/pt_BR/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/pt_PT/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/ro/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/ru/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/sv/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/uk/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/vi_VN/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/zh_CN/LC_MESSAGES/ROX-Filer.mo
+apps/ROX-Filer/Messages/zh_TW/LC_MESSAGES/ROX-Filer.mo
 apps/ROX-Filer/Options.xml
 apps/ROX-Filer/ROX-Filer
 apps/ROX-Filer/ROX/MIME/mime-application.png
@@ -144,11 +144,55 @@ share/Choices/MIME-types/application_postscript
 share/Choices/MIME-types/text
 share/Choices/MIME-types/text_html
 share/mime/packages/rox.xml
-@dirrm share/Choices/MIME-types
-@dirrm share/Choices
 @dirrm apps/ROX-Filer/images
 @dirrm apps/ROX-Filer/ROX/MIME
 @dirrm apps/ROX-Filer/ROX
+@dirrm apps/ROX-Filer/Messages/zh_TW/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/zh_TW
+@dirrm apps/ROX-Filer/Messages/zh_CN/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/zh_CN
+@dirrm apps/ROX-Filer/Messages/vi_VN/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/vi_VN
+@dirrm apps/ROX-Filer/Messages/uk/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/uk
+@dirrm apps/ROX-Filer/Messages/sv/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/sv
+@dirrm apps/ROX-Filer/Messages/ru/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/ru
+@dirrm apps/ROX-Filer/Messages/ro/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/ro
+@dirrm apps/ROX-Filer/Messages/pt_PT/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/pt_PT
+@dirrm apps/ROX-Filer/Messages/pt_BR/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/pt_BR
+@dirrm apps/ROX-Filer/Messages/pl/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/pl
+@dirrm apps/ROX-Filer/Messages/no/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/no
+@dirrm apps/ROX-Filer/Messages/nl/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/nl
+@dirrm apps/ROX-Filer/Messages/ja/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/ja
+@dirrm apps/ROX-Filer/Messages/it/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/it
+@dirrm apps/ROX-Filer/Messages/hu/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/hu
+@dirrm apps/ROX-Filer/Messages/fr/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/fr
+@dirrm apps/ROX-Filer/Messages/fi/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/fi
+@dirrm apps/ROX-Filer/Messages/eu/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/eu
+@dirrm apps/ROX-Filer/Messages/et_EE/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/et_EE
+@dirrm apps/ROX-Filer/Messages/es/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/es
+@dirrm apps/ROX-Filer/Messages/de/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/de
+@dirrm apps/ROX-Filer/Messages/da/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/da
+@dirrm apps/ROX-Filer/Messages/cs/LC_MESSAGES
+@dirrm apps/ROX-Filer/Messages/cs
 @dirrm apps/ROX-Filer/Messages
 @dirrm apps/ROX-Filer/Help
 @dirrm apps/ROX-Filer
