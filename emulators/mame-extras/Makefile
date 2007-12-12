@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mame
-PORTVERSION=	0.114
+PORTVERSION=	0.121
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.mame.net/:mame \
 		http://www.mameworld.net/mameinfo/update/:mameinfo \
@@ -71,16 +71,16 @@ PLIST_SUB+=	ARTWORK="@comment "
 .endif
 
 .if !defined(WITHOUT_CHEATS)
-DISTFILES+=	cheat${PORTVERSION:S/0.//}${EXTRACT_SUFX}:cheats
-EXTRACT_ONLY+=	cheat${PORTVERSION:S/0.//}${EXTRACT_SUFX}
+DISTFILES+=	cheat117${EXTRACT_SUFX}:cheats
+EXTRACT_ONLY+=	cheat117${EXTRACT_SUFX}
 PLIST_SUB+=	CHEATS=""
 .else
 PLIST_SUB+=	CHEATS="@comment "
 .endif
 
 .if !defined(WITHOUT_HISCORE)
-DISTFILES+=	uhsdat0105${EXTRACT_SUFX}:hiscore
-EXTRACT_ONLY+=	uhsdat0105${EXTRACT_SUFX}
+DISTFILES+=	hs17032007${EXTRACT_SUFX}:hiscore
+EXTRACT_ONLY+=	hs17032007${EXTRACT_SUFX}
 PLIST_SUB+=	HISCORE=""
 .else
 PLIST_SUB+=	HISCORE="@comment "
