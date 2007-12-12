@@ -1,0 +1,11 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/TW/TSIB/VirtualAccount/.packlist
+%%SITE_PERL%%/Business/TW/TSIB/VirtualAccount.pm
+%%SITE_PERL%%/Business/TW/TSIB/VirtualAccount/Entry.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/TW/TSIB/VirtualAccount
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/TW/TSIB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/TW
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
+@dirrmtry %%SITE_PERL%%/Business/TW/TSIB/VirtualAccount
+@dirrmtry %%SITE_PERL%%/Business/TW/TSIB
+@dirrmtry %%SITE_PERL%%/Business/TW
+@dirrmtry %%SITE_PERL%%/Business
