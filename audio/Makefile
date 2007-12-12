@@ -660,6 +660,7 @@
     SUBDIR += wavplay
     SUBDIR += whysynth
     SUBDIR += wmalbum
+    SUBDIR += wmauda
     SUBDIR += wmcdplay
     SUBDIR += wmfmixer
     SUBDIR += wmix
