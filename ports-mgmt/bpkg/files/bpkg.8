@@ -23,7 +23,7 @@
 .\" SUCH DAMAGE.
 .\"
 .\"
-.Dd September 22, 2007
+.Dd November 14, 2007
 .Dt BPKG 8
 .Os
 .Sh NAME
@@ -31,7 +31,7 @@
 .Nd a simple tool for managing FreeBSD packages/ports.
 .Sh SYNOPSIS
 .Nm
-.Op Fl bBdDeEfFgiIkLmMnoOpqQrsSwz
+.Op Fl bBdDeEfFgiIjkLmMnoOpqQrsSwz
 .Ar pkg-name ...
 .Nm
 .Op Fl aAcChltvZ
@@ -90,6 +90,8 @@ display help. [no arguments]
 display info about the package/port (priority - installed packages). 
 .It Fl I
 display short info about the package/port (priority - installed packages).
+.It Fl j
+search the ports tree according to ports' descriptions.
 .It Fl k
 show the deinstall script (if any) for the installed package.
 .It Fl l
