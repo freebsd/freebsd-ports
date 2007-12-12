@@ -1,5 +1,5 @@
---- ../Makefile.orig	Fri May 25 01:00:34 2007
-+++ ../Makefile	Sat Jul 21 13:39:48 2007
+--- ./Makefile.orig	Fri May 25 01:00:34 2007
++++ ./Makefile	Sat Jul 21 13:39:48 2007
 @@ -22,6 +22,10 @@
  # Build binary that uses SDL for sound when "1".
  SDLSOUND?=1

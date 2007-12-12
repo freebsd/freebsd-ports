@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007.605
+PORTVERSION=	2007.610
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/alienarena/files/ \
-		http://distfiles.gentoo.org/distfiles/
+MASTER_SITES=	ftp://ftp.simtel.com/pub/gamezone/31/5/17/
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}2007-20070613-linux
+DISTNAME=	${PORTNAME}2007-20071011-linux
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (data)
@@ -24,14 +23,15 @@ WRKSRC=		${WRKDIR}/${PORTNAME}2007
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@cd ${WRKSRC}/arena && ${RM} *.dll *.so
-	@cd ${WRKSRC}/data1 && ${RM} *.dll *.so
+	@cd ${WRKSRC} && ${RM} arena/*.so data1/*.so
 
 do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${CP} -R arena botinfo data1 ${DATADIR}
 	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
 	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	${INSTALL_DATA} ${WRKSRC}/aa.png \
+		${PREFIX}/share/pixmaps/${PORTNAME}.png
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
