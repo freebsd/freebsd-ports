@@ -3,6 +3,7 @@ bin/secpanel
 %%DATADIR%%/convert_profile.tcl
 %%DATADIR%%/default.config
 %%DATADIR%%/default.profile
+%%DATADIR%%/dppw.tcl
 %%DATADIR%%/export_profiles.tcl
 %%DATADIR%%/gui.tcl
 %%DATADIR%%/images/arrow_left.gif
@@ -20,6 +21,7 @@ bin/secpanel
 %%DATADIR%%/listserver.tcl
 %%DATADIR%%/secpanel.dist
 %%DATADIR%%/secpanel.wait
+%%DATADIR%%/secpanel_remoteconf.sh
 %%DATADIR%%/sp_scp.tcl
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
