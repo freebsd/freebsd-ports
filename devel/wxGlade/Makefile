@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxglade
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	devel x11-toolkits python
 MASTER_SITES=	SF
 DISTNAME=	wxGlade-${PORTVERSION}
