@@ -394,6 +394,7 @@
     SUBDIR += linplasma
     SUBDIR += linux-ac3d
     SUBDIR += linux-adobesvg
+    SUBDIR += linux-cairo
     SUBDIR += linux-gdk-pixbuf
     SUBDIR += linux-imlib
     SUBDIR += linux-jpeg
