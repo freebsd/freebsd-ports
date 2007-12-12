@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	rtorrent
-PORTVERSION?=	0.7.7
+PORTVERSION?=	0.7.9
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
@@ -18,8 +18,8 @@ COMMENT?=	BitTorrent Client written in C++
 
 LIB_DEPENDS?=	# empty
 
-BUILD_DEPENDS?=	libtorrent=0.11.7:${PORTSDIR}/net-p2p/libtorrent
-RUN_DEPENDS?=	libtorrent=0.11.7:${PORTSDIR}/net-p2p/libtorrent
+BUILD_DEPENDS?=	libtorrent=0.11.9:${PORTSDIR}/net-p2p/libtorrent
+RUN_DEPENDS?=	libtorrent=0.11.9:${PORTSDIR}/net-p2p/libtorrent
 LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
 
 CONFLICTS?=	rtorrent-devel-[0-9]*
@@ -36,6 +36,17 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	README
 
+#OPTIONS=	XMLRPC "Compile with xmlrpc-c support" on
+
+.include <bsd.port.pre.mk>
+
+#.if !defined(WITHOUT_XMLRPC)
+#CONFIGURE_ARGS+=	--with-xmlrpc-c
+#LIB_DEPENDS+=	xmlrpc.7:${PORTSDIR}/net/xmlrpc-c
+#.else
+#CONFIGURE_ARGS+=	--with-xmlrpc-c=no
+#.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/configure
 
@@ -46,4 +57,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/rtorrent.rc ${EXAMPLESDIR}/
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
