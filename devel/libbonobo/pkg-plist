@@ -15,9 +15,9 @@ include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-shlib.h
 include/bonobo-activation-2.0/bonobo-activation/bonobo-activation-version.h
 include/bonobo-activation-2.0/bonobo-activation/bonobo-activation.h
 include/libbonobo-2.0/bonobo/Bonobo.h
-include/libbonobo-2.0/bonobo/bonobo-arg.h
 include/libbonobo-2.0/bonobo/bonobo-app-client.h
 include/libbonobo-2.0/bonobo/bonobo-application.h
+include/libbonobo-2.0/bonobo/bonobo-arg.h
 include/libbonobo-2.0/bonobo/bonobo-context.h
 include/libbonobo-2.0/bonobo/bonobo-event-source.h
 include/libbonobo-2.0/bonobo/bonobo-exception.h
