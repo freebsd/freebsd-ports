@@ -67,6 +67,12 @@ bin/rdiffdir
 %%PYTHON_SITELIBDIR%%/duplicity/tarfile.py
 %%PYTHON_SITELIBDIR%%/duplicity/tarfile.pyc
 %%PYTHON_SITELIBDIR%%/duplicity/tarfile.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/tempdir.py
+%%PYTHON_SITELIBDIR%%/duplicity/tempdir.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/tempdir.pyo
+%%PYTHON_SITELIBDIR%%/duplicity/urlparse_2_5.py
+%%PYTHON_SITELIBDIR%%/duplicity/urlparse_2_5.pyc
+%%PYTHON_SITELIBDIR%%/duplicity/urlparse_2_5.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/duplicity
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
