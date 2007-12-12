@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	1.20.0
+PORTVERSION=	1.20.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.rsyslog.com/rsyslog/ CENKES
 
@@ -32,6 +32,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^rfc3195d_LDADD =/s|$$| -llogging|;s|-ldl||'\
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|ifndef.NDEBUG|if 1|' ${WRKSRC}/sync.h
 	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
 		${WRKSRC}/Makefile.in ${WRKSRC}/syslogd.c
 	@${GREP} -rl '/etc/rsyslog.conf' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} -e\
