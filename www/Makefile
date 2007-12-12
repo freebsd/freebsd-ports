@@ -1120,6 +1120,7 @@
     SUBDIR += rubygem-rubyfulsoup
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-scrubyt
+    SUBDIR += rubygem-staticmatic
     SUBDIR += rubygem-taggable
     SUBDIR += sams
     SUBDIR += sarg
