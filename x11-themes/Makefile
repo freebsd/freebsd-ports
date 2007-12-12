@@ -150,6 +150,7 @@
     SUBDIR += kde-icons-sky
     SUBDIR += kde-icons-steel
     SUBDIR += kde-icons-umicons
+    SUBDIR += kde-icons-vista-inspirate
     SUBDIR += kde-style-comix
     SUBDIR += kde-style-lipstik
     SUBDIR += kde-style-polyester
