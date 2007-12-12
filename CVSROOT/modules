@@ -9513,6 +9513,7 @@ p5-DateTime-Calendar-Hebrew	ports/devel/p5-DateTime-Calendar-Hebrew
 p5-DateTime-Calendar-Julian	ports/devel/p5-DateTime-Calendar-Julian
 p5-DateTime-Calendar-Mayan	ports/devel/p5-DateTime-Calendar-Mayan
 p5-DateTime-Calendar-Pataphysical	ports/devel/p5-DateTime-Calendar-Pataphysical
+p5-DateTime-Event-Chinese	ports/devel/p5-DateTime-Event-Chinese
 p5-DateTime-Event-Cron	ports/devel/p5-DateTime-Event-Cron
 p5-DateTime-Event-Easter	ports/devel/p5-DateTime-Event-Easter
 p5-DateTime-Event-ICal	ports/devel/p5-DateTime-Event-ICal
