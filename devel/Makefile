@@ -1068,6 +1068,7 @@
     SUBDIR += p5-Date-Simple
     SUBDIR += p5-DateConvert
     SUBDIR += p5-DateTime
+    SUBDIR += p5-DateTime-Calendar-Chinese
     SUBDIR += p5-DateTime-Calendar-Christian
     SUBDIR += p5-DateTime-Calendar-Discordian
     SUBDIR += p5-DateTime-Calendar-FrenchRevolutionary
