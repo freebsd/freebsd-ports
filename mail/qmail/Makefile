@@ -98,8 +98,6 @@ PATCHFILES+=	qmail-1.03-tls-${TLS_PATCH_DATE}-renato.patch:tls
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,localtime,qmtpc_outgoingip
 
-RESTRICTED=	djb's packaging license does not allow non-standard qmail binary distributions
-
 PREFIX?=		${QMAIL_PREFIX}
 QMAIL_VERSION?=		1.03
 
