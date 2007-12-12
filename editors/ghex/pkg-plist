@@ -30,6 +30,9 @@ share/gnome/help/ghex2/ja/ghex2.xml
 share/gnome/help/ghex2/ko/figures/ghex_window_empty.png
 share/gnome/help/ghex2/ko/figures/ghex_window_open.png
 share/gnome/help/ghex2/ko/ghex2.xml
+share/gnome/help/ghex2/oc/figures/ghex_window_empty.png
+share/gnome/help/ghex2/oc/figures/ghex_window_open.png
+share/gnome/help/ghex2/oc/ghex2.xml
 share/gnome/help/ghex2/sv/figures/ghex_window_empty.png
 share/gnome/help/ghex2/sv/figures/ghex_window_open.png
 share/gnome/help/ghex2/sv/ghex2.xml
@@ -105,6 +108,8 @@ share/locale/zh_TW/LC_MESSAGES/ghex-2.0.mo
 @dirrm share/gnome/help/ghex2/zh_CN
 @dirrm share/gnome/help/ghex2/sv/figures
 @dirrm share/gnome/help/ghex2/sv
+@dirrm share/gnome/help/ghex2/oc/figures
+@dirrm share/gnome/help/ghex2/oc
 @dirrm share/gnome/help/ghex2/ko/figures
 @dirrm share/gnome/help/ghex2/ko
 @dirrm share/gnome/help/ghex2/ja/figures
