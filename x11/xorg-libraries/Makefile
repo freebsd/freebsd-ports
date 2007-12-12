@@ -77,7 +77,7 @@ pre-everything::
 	    /usr/bin/false; \
 	fi
 .elif !exists(/usr/X11R6) && !defined(WITHOUT_X11R6_SYMLINK)
-pre-everything::
+pre-install::
 	${LN} -s ${X11BASE} /usr/X11R6 || ${TRUE}
 .endif
 
