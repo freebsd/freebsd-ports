@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.zeroc.com/download/Ice/3.2/
 PKGNAMEPREFIX=	py-
 DISTNAME=	IcePy-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dirk.ye@gmail.com
 COMMENT=	An Ice (Internet Communications Engine) language mapping for Python
 
 LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
@@ -20,7 +20,7 @@ LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 
-LIB_VRS=	${PORTVERSION:S|.||g:C|0$||}
+LIB_VRS=	${PORTVERSION:S|.||g:C|1$||}
 PLIST_SUB=	LIB_VERSION="${PORTVERSION}" LIB_VRS="${LIB_VRS}"
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
