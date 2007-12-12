@@ -1,7 +1,10 @@
 bin/uuid
 bin/uuid-config
 include/uuid.h
+include/uuid++.hh
 lib/libuuid.a
+lib/libuuid++.a
+lib/libuuid++.la
 libdata/pkgconfig/uuid.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/OSSP/uuid.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/OSSP/uuid.pod
