@@ -6,42 +6,23 @@
 #
 
 PORTNAME=	tuxtype
-PORTVERSION=	1.0.3
-PORTREVISION=	4
+PORTVERSION=	1.5.16
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/2209/
+DISTNAME=	${PORTNAME}_w_fonts-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An educational typing tutor starring Tux the Linux Penguin
 
-USE_SDL=	image mixer sdl
-USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_SDL=	image mixer sdl ttf pango
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--program-transform-name=""
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-pthread"
 
-pre-patch:
-.for dirs in data images sounds
-	@${PERL} -pi.orig -e \
-		's|\$$\(prefix\)/tuxtype/README_IMAGES.TXT|${DOCSDIR}/README_IMAGES.TXT|; \
-		s|\$$\(prefix\)/tuxtype/README_SOUNDS.TXT|${DOCSDIR}/README_SOUNDS.TXT|; \
-		s|\$$\(prefix\)/tuxtype|${DATADIR}|' \
-		${WRKSRC}/tuxtype/${dirs}/Makefile.am
-.endfor
-.for docs in docs/en ..
-	@${PERL} -pi.orig -e 's|\$$\(prefix\)/tuxtype|${DOCSDIR}|' \
-		${WRKSRC}/tuxtype/${docs}/Makefile.am
-.endfor
-.for files in graphics playgame
-	@${PERL} -pi.orig -e 's|/usr/local/share/tuxtype|${DATADIR}|' \
-		${WRKSRC}/tuxtype/${files}.h
-.endfor
-
-post-install:
-.if defined(NOPORTDOCS)
-	@${RM} -Rf ${DOCSDIR}
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(prefix)/doc/$$(PACKAGE)|$$(docdir)|' \
+		${WRKSRC}/Makefile.in ${WRKSRC}/tuxtype/docs/en/Makefile.in
 
 .include <bsd.port.mk>
