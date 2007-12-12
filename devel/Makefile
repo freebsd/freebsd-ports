@@ -1075,6 +1075,7 @@
     SUBDIR += p5-DateTime-Calendar-Julian
     SUBDIR += p5-DateTime-Calendar-Mayan
     SUBDIR += p5-DateTime-Calendar-Pataphysical
+    SUBDIR += p5-DateTime-Event-Chinese
     SUBDIR += p5-DateTime-Event-Cron
     SUBDIR += p5-DateTime-Event-Easter
     SUBDIR += p5-DateTime-Event-ICal
