@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	spectools
-PORTVERSION=	200710.r1
+PORTVERSION=	200710.r2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/
-DISTNAME=	spectools-2007-10-R1
+DISTNAME=	spectools-2007-10-R2
 
-MAINTAINER=	henrik@brixandersen.dk
+MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Tools for the 2.4GHz Wi-Spy spectrum analyzers from MetaGeek LLC
 
 LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
