@@ -6,35 +6,27 @@
 #
 
 PORTNAME=	awesome
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
-COMMENT=	A tiling window manager initialy based on a dwm code rewriting
+COMMENT=	A tiling window manager initially based on a dwm code rewriting
 
-LIB_DEPENDS=	config.4:${PORTSDIR}/devel/libconfig
+BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
+		xmlto:${PORTSDIR}/textproc/xmlto
+LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
+		cairo.2:${PORTSDIR}/graphics/cairo \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_XLIB=	yes
 
-MAN1=		awesome.1
-PLIST_FILES=	bin/awesome
+MAN1=		awesome.1 \
+		awesome-client.1
+PLIST_FILES=	bin/awesome \
+		bin/awesome-client
 PORTDOCS=	AUTHORS LICENSE README
 PORTEXAMPLES=	awesomerc
-
-OPTIONS=	LWRFLT "Support lowering of floating windows" on \
-		WARP "Support mouse warping" on
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_LWRFLT)
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-lowerfloat
-.endif
-
-.if defined(WITH_WARP)
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-warp
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -50,4 +42,4 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/awesomerc ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
