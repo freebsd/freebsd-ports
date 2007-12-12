@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcheck
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://hald.dnsalias.net/projects/memcheck/
 
@@ -15,6 +15,6 @@ COMMENT=	Memory Allocation Checker
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
