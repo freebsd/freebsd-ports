@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	crossfade
-PORTVERSION=	0.3.12
-PORTREVISION=	1
+PORTVERSION=	0.3.14
 CATEGORIES=	audio
 MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/ CENKES
 PKGNAMEPREFIX=	${APP}-
@@ -18,11 +17,11 @@ COMMENT=	A Crossfading/Gapless Plugin
 
 LIB_DEPENDS?=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-USE_GCC=	3.4+
 HAS_CONFIGURE=	yes
 APP?=		xmms
-.if ${APP} != audacious
-USE_X_PREFIX=	yes
+.if ${APP} == bmp
+PORTVERSION=	0.3.12
+PORTREVISION=	1
 .endif
 PLUGDIR?=	lib/${APP}/Output
 PORTDOCS=	README
@@ -44,8 +43,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libcrossfade.so ${PREFIX}/${PLUGDIR}/
 .ifndef NOPORTDOCS
-	${INSTALL} -d ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	@${INSTALL} -d ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
