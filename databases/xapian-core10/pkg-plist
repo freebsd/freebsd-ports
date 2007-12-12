@@ -36,7 +36,7 @@ include/xapian.h
 lib/libxapian.a
 lib/libxapian.la
 lib/libxapian.so
-lib/libxapian.so.17
+lib/libxapian.so.18
 share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/admin_notes.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc.pdf
