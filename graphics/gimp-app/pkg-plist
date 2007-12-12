@@ -1535,7 +1535,6 @@ share/gimp/scripts/guides-from-selection.scm
 share/gimp/scripts/guides-new-percent.scm
 share/gimp/scripts/guides-new.scm
 share/gimp/scripts/guides-remove-all.scm
-share/gimp/scripts/hsv-graph.scm
 share/gimp/scripts/i26-gunya2.scm
 share/gimp/scripts/images/beavis.jpg
 share/gimp/scripts/images/texture.jpg
