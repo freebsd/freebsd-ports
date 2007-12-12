@@ -1,4 +1,5 @@
 bin/vavoom
+%%LAUNCHER%%bin/vlaunch
 %%EDITING%%libexec/vavoom/acc
 %%EDITING%%libexec/vavoom/fixmd2
 %%EDITING%%libexec/vavoom/glvis

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.24
-PORTREVISION=	1
+PORTVERSION=	1.25
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -26,6 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 OPTIONS=	ALLEGRO "Use Allegro for hardware API" off \
 		EDITING "Install Doom and Vavoom editing tools" off \
 		FLAC "Enable FLAC support" off \
+		LAUNCHER "Build GUI launcher" on \
 		LIBMAD "Enable MP3 support" off \
 		MIKMOD "Enable MikMod support" off \
 		OPENAL "Enable OpenAL support" off \
@@ -70,6 +70,16 @@ LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--with-flac
 .else
 CONFIGURE_ARGS+=--without-flac
+.endif
+
+.if defined(WITH_LAUNCHER)
+USE_WX=		2.4+
+WX_CONF_ARGS=	absolute
+CONFIGURE_ARGS+=--enable-launcher
+PLIST_SUB+=	LAUNCHER=""
+.else
+CONFIGURE_ARGS+=--disable-launcher
+PLIST_SUB+=	LAUNCHER="@comment "
 .endif
 
 .if defined(WITH_LIBMAD)

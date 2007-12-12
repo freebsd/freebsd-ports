@@ -1,11 +1,11 @@
---- ./source/Makefile.in.orig	Sun Aug 13 05:01:36 2006
-+++ ./source/Makefile.in	Fri Sep  8 22:22:35 2006
-@@ -847,14 +847,14 @@
+--- source/Makefile.in.orig	Thu Oct  4 15:27:31 2007
++++ source/Makefile.in	Mon Nov 19 04:25:26 2007
+@@ -937,14 +937,14 @@
  	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
  install-binPROGRAMS: $(bin_PROGRAMS)
  	@$(NORMAL_INSTALL)
--	test -z "$(bindir)" || $(mkdir_p) "$(DESTDIR)$(bindir)"
-+	test -z "$(libexecdir)/vavoom" || $(mkdir_p) "$(DESTDIR)$(libexecdir)/vavoom"
+-	test -z "$(bindir)" || $(MKDIR_P) "$(DESTDIR)$(bindir)"
++	test -z "$(libexecdir)/vavoom" || $(MKDIR_P) "$(DESTDIR)$(libexecdir)/vavoom"
  	@list='$(bin_PROGRAMS)'; for p in $$list; do \
  	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
  	  if test -f $$p \
@@ -18,12 +18,12 @@
  	  else :; fi; \
  	done
  
-@@ -4038,7 +4038,7 @@
+@@ -5162,7 +5162,7 @@
  
- install-data-am: install-dist_baseDATA
+ install-dvi: install-dvi-recursive
  
 -install-exec-am: install-binPROGRAMS install-binSCRIPTS
 +install-exec-am: install-binPROGRAMS
  
- install-info: install-info-recursive
+ install-html: install-html-recursive
  
