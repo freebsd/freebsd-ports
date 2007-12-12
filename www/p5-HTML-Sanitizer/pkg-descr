@@ -1,0 +1,6 @@
+This module acts as a filter for HTML. It is not a validator, though
+it might be possible to write a validator-like tool with it. It's
+intended to strip out unwanted HTML elements and attributes and leave
+you with non-dangerous HTML code that you should be able to trust.
+
+WWW:	http://search.cpan.org/dist/HTML-Sanitizer/
