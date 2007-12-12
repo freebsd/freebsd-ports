@@ -15,15 +15,14 @@ MASTER_SITES=	http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 		http://ftp.belnet.be/packages/mozilla/%SUBDIR%/ \
 		ftp://ftp.belnet.be/packages/mozilla/%SUBDIR%/ \
 		CENKES/myports/${DIST_SUBDIR}
-MASTER_SITE_SUBDIR=	${PORTNAME}/nightly/${SNAPDATE}-01-trunk
+MASTER_SITE_SUBDIR=	${PORTNAME}/nightly/${SNAPDATE}-02-trunk
 PKGNAMESUFFIX=		-devel
 DIST_SUBDIR=		${PORTNAME}-${SNAPDATE}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-FORBIDDEN=	multiple vulnerabilities
-SNAPDATE=	2007-06-26
+SNAPDATE=	2007-12-12
 USE_BZIP2=	yes
 
 .include "${.CURDIR}/../linux-seamonkey/Makefile.common"
