@@ -1796,6 +1796,7 @@
     SUBDIR += pecl-inclued
     SUBDIR += pecl-json
     SUBDIR += pecl-operator
+    SUBDIR += pecl-params
     SUBDIR += pecl-runkit
     SUBDIR += pecl-shape
     SUBDIR += pecl-statgrab
