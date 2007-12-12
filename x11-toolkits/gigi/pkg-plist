@@ -56,6 +56,8 @@ include/GG/ltdl.h
 include/GG/ltdl_config.h
 lib/libGiGi.so
 lib/libGiGi.so.0
+%%OGRE%%lib/libGiGiOgre.so
+%%OGRE%%lib/libGiGiOgre.so.0
 lib/libGiGiSDL.so
 lib/libGiGiSDL.so.0
 libdata/pkgconfig/GiGi.pc
