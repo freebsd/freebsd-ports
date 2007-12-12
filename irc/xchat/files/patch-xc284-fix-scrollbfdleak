@@ -1,0 +1,14 @@
+#
+# Scrollback shrinking code forgets to close().
+#
+--- src/common/text.c	2007-06-13 19:59:56.000000000 +1000
++++ src/common/text.c	2007-11-02 23:52:57.000000000 +1100
+@@ -141,6 +146,7 @@
+ 	}
+ 
+ 	*len = st.st_size;
++	close (fh);
+ 	return buf;
+ }
+ 
+
