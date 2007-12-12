@@ -9520,6 +9520,7 @@ p5-DateTime-Event-Lunar	ports/devel/p5-DateTime-Event-Lunar
 p5-DateTime-Event-NameDay	ports/devel/p5-DateTime-Event-NameDay
 p5-DateTime-Event-Random	ports/devel/p5-DateTime-Event-Random
 p5-DateTime-Event-Recurrence	ports/devel/p5-DateTime-Event-Recurrence
+p5-DateTime-Event-SolarTerm	ports/devel/p5-DateTime-Event-SolarTerm
 p5-DateTime-Event-Sunrise	ports/devel/p5-DateTime-Event-Sunrise
 p5-DateTime-Fiscal-Year	ports/devel/p5-DateTime-Fiscal-Year
 p5-DateTime-Format-Baby	ports/devel/p5-DateTime-Format-Baby
