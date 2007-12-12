@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/URI/.packlist
+%%SITE_PERL%%/Test/URI.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/URI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
