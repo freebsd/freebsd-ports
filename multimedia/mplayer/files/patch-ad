@@ -1,27 +1,37 @@
---- configure.orig	Tue Apr  3 13:35:43 2007
-+++ configure	Tue Apr  3 13:35:51 2007
-@@ -59,9 +59,9 @@
+--- configure.orig	2007-10-08 03:49:33.000000000 +0800
++++ configure	2007-11-11 13:09:59.000000000 +0800
+@@ -62,9 +62,9 @@
    echo >> "$TMPLOG"
    cat "$1" >> "$TMPLOG"
    echo >> "$TMPLOG"
--  echo "$_cc $CFLAGS $_inc_extra $_ld_static $_ld_extra -o $TMPO $@" >> "$TMPLOG"
-+  echo "$_cc $CFLAGS -fno-fast-math $_inc_extra $_ld_static $_ld_extra -o $TMPO $@" >> "$TMPLOG"
-   rm -f "$TMPO"
--  $_cc $CFLAGS $_inc_extra $_ld_static $_ld_extra -o "$TMPO" "$@" >> "$TMPLOG" 2>&1
-+  $_cc $CFLAGS -fno-fast-math $_inc_extra $_ld_static $_ld_extra -o "$TMPO" "$@" >> "$TMPLOG" 2>&1
+-  echo "$_cc $CFLAGS $_inc_extra $_ld_static $_ld_extra $_libs_mplayer $_libs_mencoder -o $TMPEXE $@" >> "$TMPLOG"
++  echo "$_cc $CFLAGS -fno-fast-math $_inc_extra $_ld_static $_ld_extra $_libs_mplayer $_libs_mencoder -o $TMPEXE $@" >> "$TMPLOG"
+   rm -f "$TMPEXE"
+-  $_cc $CFLAGS $_inc_extra $_ld_static $_ld_extra $_libs_mplayer $_libs_mencoder -o "$TMPEXE" "$@" >> "$TMPLOG" 2>&1
++  $_cc $CFLAGS -fno-fast-math $_inc_extra $_ld_static $_ld_extra $_libs_mplayer $_libs_mencoder -o "$TMPEXE" "$@" >> "$TMPLOG" 2>&1
    TMP="$?"
    echo >> "$TMPLOG"
-   echo "ldd $TMPO" >> "$TMPLOG"
-@@ -474,7 +474,7 @@
- _armv5te=auto
+   echo >> "$TMPLOG"
+@@ -484,7 +484,7 @@
  _iwmmxt=auto
  _mtrr=auto
+ _altivec=auto
 -_install=install
 +_install=@${BSD_INSTALL_PROGRAM}
  _ranlib=ranlib
+ _ldconfig=ldconfig
  _cc=cc
- test "$CC" && _cc="$CC"
-@@ -599,14 +599,7 @@
+@@ -1188,8 +1188,7 @@
+         _3dnow=no _3dnowext=no _mmx=no _mmxext=no ;;
+ 
+   *)
+-    echo "Unknown parameter: $ac_option"
+-    exit 1
++    echo "Unknown parameter: $ac_option (ignoring)"
+     ;;
+ 
+   esac
+@@ -1248,14 +1247,7 @@
        case "`uname -m 2>&1`" in
        i[3-9]86*|x86|x86pc|k5|k6|k6_2|k6_3|k6-2|k6-3|pentium*|athlon*|i586_i686|i586-i686|BePC) host_arch=i386 ;;
        ia64) host_arch=ia64 ;;
@@ -37,52 +47,42 @@
        macppc|ppc|ppc64) host_arch=ppc ;;
        alpha) host_arch=alpha ;;
        sparc) host_arch=sparc ;;
-@@ -831,25 +824,10 @@
- _cpuinfo="echo"
+@@ -1524,25 +1516,10 @@
+ 
  # Cygwin has /proc/cpuinfo, but only supports Intel CPUs
  # FIXME: Remove the cygwin check once AMD CPUs are supported
 -if test -r /proc/cpuinfo && not cygwin; then
 -  # Linux with /proc mounted, extract CPU information from it
 -  _cpuinfo="cat /proc/cpuinfo"
--elif test -r /compat/linux/proc/cpuinfo && not x86 ; then
+-elif test -r /compat/linux/proc/cpuinfo && not x86_32 ; then
 -  # FreeBSD with Linux emulation /proc mounted,
 -  # extract CPU information from it
 -  _cpuinfo="cat /compat/linux/proc/cpuinfo"
--elif darwin && not x86 ; then
+-elif darwin && not x86_32 ; then
 -  # use hostinfo on Darwin
 -  _cpuinfo="hostinfo"
 -elif aix; then
 -  # use 'lsattr' on AIX
 -  _cpuinfo="lsattr -E -l proc0 -a type"
--elif x86 || x86_64; then
+-elif x86; then
    # all other OSes try to extract CPU information from a small helper
-   # program TOOLS/cpuinfo instead
-   $_cc -o TOOLS/cpuinfo TOOLS/cpuinfo.c
-   _cpuinfo="TOOLS/cpuinfo"
+   # program cpuinfo instead
+   $_cc -o cpuinfo$_exesuf cpuinfo.c
+   _cpuinfo="./cpuinfo$_exesuf"
 -fi
  
- if x86 || x86_64 ; then
+ if x86 ; then
    # gather more CPU information
-@@ -1539,7 +1517,7 @@
+@@ -2331,7 +2308,7 @@
+   elif test "$cc_vendor" != "gnu" ; then
+     CFLAGS="-O2 $_march $_mcpu $_pipe"
+   else
+-    CFLAGS="-Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O4 $_march $_mcpu $_pipe -ffast-math -fomit-frame-pointer"
++    CFLAGS="-Wall -Wno-switch -Wpointer-arith -Wredundant-decls -O $_pipe"
    fi
-   _stripbinaries=no
- elif test -z "$CFLAGS" ; then
--    CFLAGS="-O4 $_march $_mcpu $_pipe -ffast-math -fomit-frame-pointer"
-+    CFLAGS="-O $_pipe"
  else
    _warn_CFLAGS=yes
- fi
-@@ -2204,8 +2182,7 @@
-     ;;
- 
-   *)
--    echo "Unknown parameter: $ac_option"
--    exit 1
-+    echo "Unknown parameter: $ac_option (ignoring)..."
-     ;;
- 
-   esac
-@@ -2898,13 +2875,7 @@
+@@ -2965,13 +2942,7 @@
  
  
  echocheck "memalign()"
@@ -96,7 +96,7 @@
  if test "$_memalign" = yes ; then
   _def_memalign='#define HAVE_MEMALIGN 1'
  else
-@@ -3005,20 +2976,8 @@
+@@ -3057,20 +3028,8 @@
  _def_threads='#undef HAVE_THREADS'
  
  echocheck "pthread"
@@ -119,51 +119,42 @@
  if test "$_pthreads" = yes ; then
    _res_comment="using $_ld_pthread"
    _def_pthreads='#define HAVE_PTHREADS 1'
-@@ -6555,7 +6514,8 @@
- #endif
- int main(void) { x264_encoder_open((void*)0); return 0; }
- EOF
--  _ld_x264="$_ld_x264 -lx264 $_ld_pthread"
-+  _ld_x264pc=`pkg-config x264 --libs 2>/dev/null`
-+  _ld_x264="$_ld_x264 $_ld_x264pc $_ld_pthread"
-   _x264=no
-   if cc_check $_ld_x264 $_ld_lm ; then 
-     _x264=yes
-@@ -6685,8 +6645,11 @@
-  if test "$_tv" = yes ; then
+@@ -6722,12 +6681,12 @@
+ if bsd; then
+   echocheck "*BSD BT848 bt8xx header"
+   _ioctl_bt848_h=no
+-  for file in "machine/ioctl_bt848.h" \
+-            "dev/bktr/ioctl_bt848.h" \
+-            "dev/video/bktr/ioctl_bt848.h" \
+-            "dev/ic/bt8xx.h" ; do
++  for file in "dev/bktr/ioctl_bt848.h" \
++              "machine/ioctl_bt848.h" ; do
      cat > $TMPC <<EOF
  #include <sys/types.h>
 +#include <sys/param.h>
- #if defined(__NetBSD__)
- #include <dev/ic/bt8xx.h>
-+#elif(__FreeBSD_version >= 502100)
-+#include <dev/bktr/ioctl_bt848.h>
- #else
- #include <machine/ioctl_bt848.h>
- #endif
-@@ -7218,7 +7181,7 @@
++#include <sys/ioctl.h>
+ #include <$file>
+ int main(void) {
+  ioctl(0, TVTUNER_GETFREQ, 0);
+@@ -7343,12 +7302,8 @@
+ echocheck "joystick"
+ _def_joystick='#undef HAVE_JOYSTICK'
+ if test "$_joystick" = yes ; then
+-  if linux ; then
+     # TODO add some check
+     _def_joystick='#define HAVE_JOYSTICK 1'
+-  else
+-    _joystick="no (unsupported under $system_name)"
+-  fi
+ fi
+ echores "$_joystick"
+ 
+@@ -7448,7 +7403,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es
 -  CFLAGS="$CFLAGS -D_THREAD_SAFE"
 +  CFLAGS="$CFLAGS ${PTHREAD_CFLAGS}"
  fi
- # 64 bit file offsets?
- if test "$_largefiles" = yes || freebsd ; then
-@@ -7362,12 +7325,12 @@
- echocheck "joystick"
- _def_joystick='#undef HAVE_JOYSTICK'
- if test "$_joystick" = yes ; then
--  if linux ; then
-+#  if linux ; then
-     # TODO add some check
-     _def_joystick='#define HAVE_JOYSTICK 1'
--  else
--    _joystick="no (unsupported under $system_name)"
--  fi
-+#  else
-+#    _joystick="no (unsupported under $system_name)"
-+#  fi
- fi
- echores "$_joystick"
- 
+ if cygwin ; then
+   CFLAGS="$CFLAGS -D__CYGWIN__"

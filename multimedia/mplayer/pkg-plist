@@ -1,5 +1,6 @@
 bin/mplayer
 %%GMPLAYER%%bin/gmplayer
+%%PORTDOCS%%%%DOCSDIR%%/aalib.html
 %%PORTDOCS%%%%DOCSDIR%%/advaudio.html
 %%PORTDOCS%%%%DOCSDIR%%/aspect.html
 %%PORTDOCS%%%%DOCSDIR%%/audio-codecs.html
@@ -17,6 +18,7 @@ bin/mplayer
 %%PORTDOCS%%%%DOCSDIR%%/bugs-audio.html
 %%PORTDOCS%%%%DOCSDIR%%/bugs-special.html
 %%PORTDOCS%%%%DOCSDIR%%/bugs.html
+%%PORTDOCS%%%%DOCSDIR%%/caca.html
 %%PORTDOCS%%%%DOCSDIR%%/cd-dvd.html
 %%PORTDOCS%%%%DOCSDIR%%/codec-importing.html
 %%PORTDOCS%%%%DOCSDIR%%/codecs.html
@@ -24,12 +26,16 @@ bin/mplayer
 %%PORTDOCS%%%%DOCSDIR%%/containers.html
 %%PORTDOCS%%%%DOCSDIR%%/control.html
 %%PORTDOCS%%%%DOCSDIR%%/default.css
+%%PORTDOCS%%%%DOCSDIR%%/directfb.html
+%%PORTDOCS%%%%DOCSDIR%%/dfbmga.html
+%%PORTDOCS%%%%DOCSDIR%%/dga.html
 %%PORTDOCS%%%%DOCSDIR%%/drives.html
 %%PORTDOCS%%%%DOCSDIR%%/dvd.html
 %%PORTDOCS%%%%DOCSDIR%%/edl.html
 %%PORTDOCS%%%%DOCSDIR%%/encoding-guide.html
 %%PORTDOCS%%%%DOCSDIR%%/exotic_platforms.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/fbdev.html
 %%PORTDOCS%%%%DOCSDIR%%/features.html
 %%PORTDOCS%%%%DOCSDIR%%/fonts-osd.html
 %%PORTDOCS%%%%DOCSDIR%%/gui.html
@@ -47,6 +53,7 @@ bin/mplayer
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-handheld-psp.html
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-mpeg.html
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-mpeg4.html
+%%PORTDOCS%%%%DOCSDIR%%/menc-feat-quicktime-7.html
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-rescale.html
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-selecting-codec.html
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-selecting-input.html
@@ -57,15 +64,17 @@ bin/mplayer
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-x264.html
 %%PORTDOCS%%%%DOCSDIR%%/menc-feat-xvid.html
 %%PORTDOCS%%%%DOCSDIR%%/mencoder.html
+%%PORTDOCS%%%%DOCSDIR%%/mga_vid.html
 %%PORTDOCS%%%%DOCSDIR%%/mpeg_decoders.html
-%%PORTDOCS%%%%DOCSDIR%%/mpst.html
 %%PORTDOCS%%%%DOCSDIR%%/mtrr.html
+%%PORTDOCS%%%%DOCSDIR%%/opengl.html
 %%PORTDOCS%%%%DOCSDIR%%/other.html
-%%PORTDOCS%%%%DOCSDIR%%/output-trad.html
 %%PORTDOCS%%%%DOCSDIR%%/ports.html
 %%PORTDOCS%%%%DOCSDIR%%/radio-input.html
 %%PORTDOCS%%%%DOCSDIR%%/radio.html
 %%PORTDOCS%%%%DOCSDIR%%/rtc.html
+%%PORTDOCS%%%%DOCSDIR%%/sdl.html
+%%PORTDOCS%%%%DOCSDIR%%/svgalib.html
 %%PORTDOCS%%%%DOCSDIR%%/skin-file.html
 %%PORTDOCS%%%%DOCSDIR%%/skin-fonts.html
 %%PORTDOCS%%%%DOCSDIR%%/skin-gui.html
@@ -73,35 +82,27 @@ bin/mplayer
 %%PORTDOCS%%%%DOCSDIR%%/skin-quality.html
 %%PORTDOCS%%%%DOCSDIR%%/skin.html
 %%PORTDOCS%%%%DOCSDIR%%/softreq.html
-%%PORTDOCS%%%%DOCSDIR%%/sound-cards.html
 %%PORTDOCS%%%%DOCSDIR%%/streaming.html
 %%PORTDOCS%%%%DOCSDIR%%/subosd.html
 %%PORTDOCS%%%%DOCSDIR%%/sync.html
+%%PORTDOCS%%%%DOCSDIR%%/tdfx_vid.html
+%%PORTDOCS%%%%DOCSDIR%%/tdfxfb.html
 %%PORTDOCS%%%%DOCSDIR%%/troubleshooting.html
-%%PORTDOCS%%%%DOCSDIR%%/tv-input.html
 %%PORTDOCS%%%%DOCSDIR%%/tv.html
+%%PORTDOCS%%%%DOCSDIR%%/tv-input.html
+%%PORTDOCS%%%%DOCSDIR%%/tv-teletext.html
 %%PORTDOCS%%%%DOCSDIR%%/tvout.html
 %%PORTDOCS%%%%DOCSDIR%%/unix.html
 %%PORTDOCS%%%%DOCSDIR%%/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/vcd.html
-%%PORTDOCS%%%%DOCSDIR%%/video-cards.html
+%%PORTDOCS%%%%DOCSDIR%%/vesa.html
 %%PORTDOCS%%%%DOCSDIR%%/video-codecs.html
 %%PORTDOCS%%%%DOCSDIR%%/video-formats.html
 %%PORTDOCS%%%%DOCSDIR%%/video.html
+%%PORTDOCS%%%%DOCSDIR%%/vidix.html
 %%PORTDOCS%%%%DOCSDIR%%/windows.html
-%%VIDIX%%lib/libdha.so.1
-%%VIDIX%%lib/libdha-1.so.0
-%%VIDIX%%lib/mplayer/vidix/cyberblade_vid.so
-%%VIDIX%%lib/mplayer/vidix/mach64_vid.so
-%%VIDIX%%lib/mplayer/vidix/mga_crtc2_vid.so
-%%VIDIX%%lib/mplayer/vidix/mga_vid.so
-%%VIDIX%%lib/mplayer/vidix/nvidia_vid.so
-%%VIDIX%%lib/mplayer/vidix/pm3_vid.so
-%%VIDIX%%lib/mplayer/vidix/radeon_vid.so
-%%VIDIX%%lib/mplayer/vidix/rage128_vid.so
-%%VIDIX%%lib/mplayer/vidix/savage_vid.so
-%%VIDIX%%lib/mplayer/vidix/sis_vid.so
-%%VIDIX%%lib/mplayer/vidix/unichrome_vid.so
+%%PORTDOCS%%%%DOCSDIR%%/x11.html
+%%PORTDOCS%%%%DOCSDIR%%/xv.html
 %%DATADIR%%/examples/etc/example.conf
 %%DATADIR%%/examples/etc/input.conf
 %%DATADIR%%/examples/etc/menu.conf
@@ -110,5 +111,3 @@ bin/mplayer
 @dirrm %%DATADIR%%/examples
 @dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%VIDIX%%@dirrm lib/mplayer/vidix
-%%VIDIX%%@dirrm lib/mplayer

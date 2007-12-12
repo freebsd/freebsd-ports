@@ -1,8 +1,8 @@
---- bswap.h.orig	Sun Jun 11 20:35:47 2006
-+++ bswap.h	Thu Jun 15 10:31:42 2006
-@@ -1,8 +1,17 @@
- #ifndef __BSWAP_H__
- #define __BSWAP_H__
+--- libavutil/bswap.h.orig	2007-10-08 03:49:34.000000000 +0800
++++ libavutil/bswap.h	2007-10-20 15:54:54.000000000 +0800
+@@ -29,8 +29,17 @@
+ #include <stdint.h>
+ #include "common.h"
  
 +#if (defined(__unix__) || defined(unix)) && !defined(USG)
 +#include <sys/param.h>
@@ -17,4 +17,4 @@
 +#define bswap_64(x) bswap64(x)
  #else
  
- #include <inttypes.h>
+ #ifdef ARCH_X86_64

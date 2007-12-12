@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	14
+
 COMMENT=	High performance media player supporting many formats
 
 .include "${.CURDIR}/Makefile.shared"
@@ -40,12 +40,13 @@ OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
 OPTIONS+=	DTS "Enable DTS audio codec support" on
 OPTIONS+=	LIBMPCDEC "Enable libmpcdec support" off
 OPTIONS+=	LADSPA "Enable LADSPA plugin support" off
-OPTIONS+=	SPEEX "Enable speex audio codec support" off
+OPTIONS+=	SPEEX "Enable speex audio codec support" on
 OPTIONS+=	TREMOR "Use built-in tremor instead of libvorbis" off
 OPTIONS+=	XMMS "Enable XMMS plugin support" off
 OPTIONS+=	THEORA "Enable ogg theora video support" off
 .if !defined(PACKAGE_BUILDING)
 OPTIONS+=	WIN32 "Enable win32 codec set on the IA32 arch" on
+OPTIONS+=	AMR "Enable AMR audio codec support" off
 .endif
 OPTIONS+=	X264 "Enable x264 (H.264) video codec support" off
 OPTIONS+=	XANIM "Enable xanim DLL support" off
@@ -69,7 +70,8 @@ CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	--disable-faac \
+CONFIGURE_ARGS+=	--disable-ssse3 \
+			--disable-faac \
 			--disable-twolame \
 			--disable-mencoder
 
@@ -78,16 +80,11 @@ CONFIGURE_ARGS+=	--disable-faac \
 #Building of vidix dependent shared libs is only possible
 #on i386 and amd64 at the moment.
 .if !defined(WITHOUT_VIDIX)
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
-USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/mplayer/vidix
-PLIST_SUB+=	VIDIX=""
-.else
+.if !(${ARCH} == "i386" || ${ARCH} == "amd64")
 CONFIGURE_ARGS+=--disable-vidix-internal
-PLIST_SUB+=	VIDIX="@comment "
 .endif
 .else
 CONFIGURE_ARGS+=--disable-vidix-internal
-PLIST_SUB+=	VIDIX="@comment "
 .endif
 
 .if !defined(WITHOUT_GUI)
@@ -121,7 +118,6 @@ CONFIGURE_ARGS+=	--disable-freetype
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
-CONFIGURE_ARGS+=--with-x11libdir="${LOCALBASE}/lib"
 .else
 WITHOUT_GUI=	yes
 CONFIGURE_ARGS+=--disable-x11 \
