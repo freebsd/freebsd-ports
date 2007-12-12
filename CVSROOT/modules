@@ -11995,6 +11995,7 @@ pecl-mailparse	ports/mail/pecl-mailparse
 pecl-memcache	ports/databases/pecl-memcache
 pecl-mnogosearch	ports/www/pecl-mnogosearch
 pecl-operator	ports/devel/pecl-operator
+pecl-params	ports/devel/pecl-params
 pecl-pdflib	ports/print/pecl-pdflib
 pecl-pecl_http	ports/www/pecl-pecl_http
 pecl-perl	ports/lang/pecl-perl
