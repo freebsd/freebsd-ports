@@ -62,6 +62,7 @@ bin/zabbix_server
 %%DATADIR%%/php/images/general/sortup.gif
 %%DATADIR%%/php/images/general/sortup_off.gif
 %%DATADIR%%/php/images/general/tick.png
+%%DATADIR%%/php/images/general/zabbix.ico
 %%DATADIR%%/php/images/general/tree/I.gif
 %%DATADIR%%/php/images/general/tree/L.gif
 %%DATADIR%%/php/images/general/tree/O.gif
@@ -159,10 +160,12 @@ bin/zabbix_server
 %%DATADIR%%/php/include/locales/de_de.inc.php
 %%DATADIR%%/php/include/locales/en_gb.inc.php
 %%DATADIR%%/php/include/locales/fr_fr.inc.php
+%%DATADIR%%/php/include/locales/hu_hu.inc.php
 %%DATADIR%%/php/include/locales/it_it.inc.php
 %%DATADIR%%/php/include/locales/ja_jp.inc.php
 %%DATADIR%%/php/include/locales/lv_lv.inc.php
 %%DATADIR%%/php/include/locales/nl_nl.inc.php
+%%DATADIR%%/php/include/locales/pt_br.inc.php
 %%DATADIR%%/php/include/locales/ru_ru.inc.php
 %%DATADIR%%/php/include/locales/sp_sp.inc.php
 %%DATADIR%%/php/include/locales/sv_se.inc.php
@@ -183,6 +186,7 @@ bin/zabbix_server
 %%DATADIR%%/php/index.php
 %%DATADIR%%/php/instal.php
 %%DATADIR%%/php/items.php
+%%DATADIR%%/php/js/blink.js
 %%DATADIR%%/php/js/common.js
 %%DATADIR%%/php/js/cookies.js
 %%DATADIR%%/php/js/menu.js
