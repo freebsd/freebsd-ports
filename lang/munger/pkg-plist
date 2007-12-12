@@ -1,5 +1,7 @@
 bin/munger
 lib/libmunger.so.33
+lib/libminimunger.a
+include/minimunger.h
 %%DKNS_BIN%%
 %%DATADIR%%/ipdatabase.munger
 %%DATADIR%%/compiler.munger
@@ -33,4 +35,10 @@ lib/libmunger.so.33
 %%DATADIR%%/tk.munger
 %%DATADIR%%/cal.munger
 %%DATADIR%%/xml2buffer.munger
++%%DATADIR%%/mm.munger
++%%DATADIR%%/options.mm
++%%DATADIR%%/fmt.mm
++%%DATADIR%%/grep.mm
++%%DATADIR%%/stacks.mm
++%%DATADIR%%/cgi.mm
 @dirrm %%DATADIR%%
