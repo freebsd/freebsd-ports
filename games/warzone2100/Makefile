@@ -6,13 +6,9 @@
 #
 
 PORTNAME=	warzone2100
-PORTVERSION=	2.0.7
-PORTREVISION=	2
+PORTVERSION=	2.0.9
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}_hotfix1.patch
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Innovative 3D real-time strategy game
@@ -41,8 +37,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 post-patch:
 	@${REINPLACE_CMD} -e 's|-m32||' ${WRKSRC}/configure
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -Ee 's|^(dist_doc_Data =) .*|\1|' \
+	@${REINPLACE_CMD} -Ee 's|^(dist_doc_DATA =) .*|\1|' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^install: install-am|install|' \
+		${WRKSRC}/doc/Makefile.in
 .else
 	@${REINPLACE_CMD} -e 's|AUTHORS||; s|COPYING COPYING\.README||' \
 		${WRKSRC}/Makefile.in
