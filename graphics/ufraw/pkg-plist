@@ -3,8 +3,11 @@ bin/ufraw-batch
 %%GIMP%%libexec/gimp/2.2/plug-ins/ufraw-gimp
 share/applications/ufraw.desktop
 share/locale/da/LC_MESSAGES/ufraw.mo
+share/locale/es/LC_MESSAGES/ufraw.mo
 share/locale/fr/LC_MESSAGES/ufraw.mo
 share/locale/ja/LC_MESSAGES/ufraw.mo
+share/locale/ko/LC_MESSAGES/ufraw.mo
+share/locale/pl/LC_MESSAGES/ufraw.mo
 share/locale/pt/LC_MESSAGES/ufraw.mo
 share/locale/ru/LC_MESSAGES/ufraw.mo
 share/pixmaps/ufraw.png
