@@ -11945,6 +11945,7 @@ pear-Validate	ports/devel/pear-Validate
 pear-Validate_Finance	ports/devel/pear-Validate_Finance
 pear-Validate_Finance_CreditCard	ports/devel/pear-Validate_Finance_CreditCard
 pear-Var_Dump	ports/devel/pear-Var_Dump
+pear-VersionControl_SVN	ports/devel/pear-VersionControl_SVN
 pear-XML_Beautifier	ports/textproc/pear-XML_Beautifier
 pear-XML_DTD	ports/textproc/pear-XML_DTD
 pear-XML_Feed_Parser	ports/textproc/pear-XML_Feed_Parser
