@@ -11419,6 +11419,7 @@ p5-Weather-Underground	ports/astro/p5-Weather-Underground
 p5-Web-Scraper	ports/www/p5-Web-Scraper
 p5-WebService-Basecamp	ports/www/p5-WebService-Basecamp
 p5-WebService-Bloglines	ports/www/p5-WebService-Bloglines
+p5-WebService-BuzzurlAPI	ports/www/p5-WebService-BuzzurlAPI
 p5-WebService-CIA	ports/www/p5-WebService-CIA
 p5-WebService-ISBNDB	ports/www/p5-WebService-ISBNDB
 p5-WebService-NoPaste	ports/www/p5-WebService-NoPaste
