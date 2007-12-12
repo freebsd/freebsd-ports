@@ -1,6 +1,8 @@
 bin/minicpan
-%%SITE_PERL%%/CPAN/Mini.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Mini/.packlist
+%%SITE_PERL%%/CPAN/Mini.pm
+%%SITE_PERL%%/CPAN/Mini/App.pm
+@dirrmtry %%SITE_PERL%%/CPAN/Mini
+@dirrmtry %%SITE_PERL%%/CPAN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Mini
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
-@dirrmtry %%SITE_PERL%%/CPAN
