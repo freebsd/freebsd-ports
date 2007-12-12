@@ -1777,6 +1777,7 @@
     SUBDIR += pear-Validate_Finance
     SUBDIR += pear-Validate_Finance_CreditCard
     SUBDIR += pear-Var_Dump
+    SUBDIR += pear-VersionControl_SVN
     SUBDIR += pear-XML_NITF
     SUBDIR += pear-XML_Parser
     SUBDIR += pear-XML_RSS
