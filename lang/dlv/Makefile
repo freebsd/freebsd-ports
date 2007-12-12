@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dlv
-PORTVERSION=	20060714
+PORTVERSION=	20071011
 CATEGORIES=	lang
 MASTER_SITES=	http://www.dbai.tuwien.ac.at/proj/dlv/
 DISTNAME=	dlv.i386-linux-elf-static.bin
@@ -18,7 +18,6 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/dlv
 ONLY_FOR_ARCHS=	i386 amd64
 RESTRICTED=	Not sure if we can redistribute it
-BROKEN=		Size mismatch
 
 do-extract:
 	${RM} -rf ${WRKDIR}
