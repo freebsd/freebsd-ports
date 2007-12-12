@@ -17,6 +17,7 @@ cyrus/bin/ctl_mboxlist
 cyrus/bin/cvt_cyrusdb
 cyrus/bin/cyr_dbtool
 cyrus/bin/cyr_expire
+cyrus/bin/cyr_synclog
 cyrus/bin/cyrdump
 cyrus/bin/deliver
 %%NNTP%%cyrus/bin/fetchnews
@@ -27,6 +28,7 @@ cyrus/bin/ipurge
 cyrus/bin/lmtpd
 cyrus/bin/lmtpproxyd
 %%REPLICATION%%cyrus/bin/make_md5
+%%REPLICATION%%cyrus/bin/make_sha1
 cyrus/bin/masssievec
 cyrus/bin/master
 cyrus/bin/mbexamine
@@ -74,7 +76,6 @@ include/cyrus/lock.h
 include/cyrus/lsort.h
 include/cyrus/map.h
 include/cyrus/md5.h
-include/cyrus/message_uuid.h
 include/cyrus/mkgmtime.h
 include/cyrus/mpool.h
 include/cyrus/nonblock.h
