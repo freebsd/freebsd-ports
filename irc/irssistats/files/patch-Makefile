@@ -1,11 +1,12 @@
---- Makefile.orig	Mon Feb  7 16:57:05 2005
-+++ Makefile	Mon Jul  3 00:01:52 2006
-@@ -1,20 +1,26 @@
+--- Makefile.orig	Fri Sep 21 00:30:00 2007
++++ Makefile	Wed Dec 12 09:47:26 2007
+@@ -1,21 +1,26 @@
 -PRE = /usr/local
 -BIN = $(PRE)/bin
 -DAT = $(PRE)/share/irssistats/data
 -DOC = $(PRE)/share/doc/irssistats
 -MAN = $(PRE)/share/man/man1
+-CFLAGS ?= -O2
 +PRE = $(PREFIX)
 +BIN = $(PREFIX)/bin
 +DAT = $(DATADIR)
@@ -14,7 +15,7 @@
 +MAN = $(PREFIX)/man/man1
  
  irssistats:irssistats.c
--	gcc -O2 -o irssistats irssistats.c
+-	gcc $(CFLAGS) -o irssistats irssistats.c
 +	${CC} ${CFLAGS} -o irssistats irssistats.c
  
  clean:
@@ -23,15 +24,15 @@
  install:irssistats
 -	mkdir -p $(BIN) $(DAT) $(DOC) $(MAN)
 +	mkdir -p $(BIN) $(DAT) $(MAN) $(SMP)
-+
  	cp -f irssistats $(BIN)
  	cp -f data/* $(DAT)
 -	cp -f COPYING README sample.nickfile sample.configfile irssistats.sgml $(DOC)
-+	cp -f sample.nickfile sample.configfile $(SMP)
++	cp -f sample.nickfile sample.configfile sample.photofile $(SMP)
 +.ifndef NOPORTDOCS
 +	mkdir -p $(DOC)
 +	cp -f COPYING README $(DOC)
 +.endif
++
  	cp -f irssistats.1 $(MAN)
  
  uninstall:

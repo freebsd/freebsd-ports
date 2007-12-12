@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irssistats
-PORTVERSION=	0.73
+PORTVERSION=	0.75
 CATEGORIES=	irc
 MASTER_SITES=	http://royale.zerezo.com/irssistats/
 
