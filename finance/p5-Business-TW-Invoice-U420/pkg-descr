@@ -1,0 +1,11 @@
+This module generates commands for the Epson RP-U420 invoice printer for
+printing the Unified Invoice in Taiwan.
+
+You must install the driver and printer processor properly before you can
+use the module.
+
+You can define multiple lines of headers that will appear on each page of
+the printed invoices, and when you do println the module does all the
+necessary paging and stamping for you.
+
+WWW: http://search.cpan.org/dist/Business-TW-Invoice-U420/
