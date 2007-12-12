@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-dmx
 PORTVERSION=	1.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 
@@ -35,4 +36,15 @@ MAN1=		Xdmx.1 dmxtodmx.1 vdltodmx.1 xdmxconfig.1
 do-install:
 	cd ${WRKSRC}/hw/dmx; ${MAKE} install
 
-.include <bsd.port.mk>
+OPTIONS=        HAL     "Compile with HAL config support" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_HAL)
+LIB_DEPENDS+=   hal.1:${PORTSDIR}/sysutils/hal
+CONFIGURE_ARGS+=	--enable-config-hal=yes
+.else
+CONFIGURE_ARGS+=	--enable-config-hal=no
+.endif
+
+.include <bsd.port.post.mk>
