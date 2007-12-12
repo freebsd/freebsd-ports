@@ -1,6 +1,14 @@
---- stream/tvi_bsdbt848.c.orig	Mon Oct 23 00:32:25 2006
-+++ stream/tvi_bsdbt848.c	Tue Oct 24 21:54:45 2006
-@@ -297,11 +297,11 @@
+--- stream/tvi_bsdbt848.c.orig	2007-10-08 03:49:26.000000000 +0800
++++ stream/tvi_bsdbt848.c	2007-11-11 15:24:05.000000000 +0800
+@@ -26,6 +26,7 @@
+ #define NTSC_HEIGHT 480
+ #define NTSC_FPS    29.97
+ 
++#include <errno.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+@@ -351,11 +352,11 @@
          int req_mode = *(int *)arg;
  	u_short tmp_fps;
  
@@ -14,7 +22,7 @@
              priv->maxheight = PAL_HEIGHT;
              priv->maxwidth = PAL_WIDTH;
              priv->maxfps = PAL_FPS;
-@@ -322,7 +322,7 @@
+@@ -376,7 +377,7 @@
  
          if(req_mode == TV_NORM_NTSC) 
              {
@@ -23,7 +31,7 @@
              priv->maxheight = NTSC_HEIGHT;
              priv->maxwidth = NTSC_WIDTH;
              priv->maxfps = NTSC_FPS;
-@@ -346,9 +346,28 @@
+@@ -400,9 +401,28 @@
                  }
              }
  
@@ -52,23 +60,23 @@
 -        if(ioctl(priv->btfd, METEORSFMT, &priv->iformat) < 0) 
 +        if(ioctl(priv->btfd, BT848SFMT, &priv->iformat) < 0) 
              {
-             perror("format:ioctl");
+             mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848IoctlFailed, "METEORSFMT", strerror(errno));
              return(TVI_CONTROL_FALSE);
-@@ -479,7 +498,7 @@
+@@ -532,7 +552,7 @@
+ 
  priv->videoready = TRUE;
- priv->btdev = strdup("/dev/bktr0");
  priv->immediatemode = FALSE;
 -priv->iformat = METEOR_FMT_PAL;
 +priv->iformat = BT848_IFORM_F_PALBDGHI;
  priv->maxheight = PAL_HEIGHT;
  priv->maxwidth = PAL_WIDTH;
  priv->maxfps = PAL_FPS;
-@@ -504,7 +523,7 @@
+@@ -557,7 +577,7 @@
      }
  
  if(priv->videoready == TRUE && 
 -   ioctl(priv->btfd, METEORSFMT, &priv->iformat) < 0) 
 +   ioctl(priv->btfd, BT848SFMT, &priv->iformat) < 0) 
      {
-     perror("FMT:ioctl");
+     mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848IoctlFailed, "SETEORSFMT", strerror(errno));
      }

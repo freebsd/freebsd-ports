@@ -6,7 +6,6 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
 COMMENT=	Convenient video file and movie encoder
 RESTRICTED=	Port has restricted dependencies
 
@@ -34,6 +33,9 @@ OPTIONS+=	TREMOR "Use built-in tremor instead of libvorbis" off
 OPTIONS+=	XMMS "Enable XMMS plugin support" off
 OPTIONS+=	WIN32 "Enable win32 codec set on the IA32 arch" on
 OPTIONS+=	THEORA "Enable ogg theora video support" off
+.if !defined(PACKAGE_BUILDING)
+OPTIONS+=	AMR "Enable AMR audio codec support" off
+.endif
 OPTIONS+=	X264 "Enable x264 (H.264) video codec support" off
 OPTIONS+=	XANIM "Enable xanim DLL support" off
 OPTIONS+=	XVID "Enable XVID video codec support" on
@@ -50,9 +52,11 @@ MLINKS=		mplayer.1 mencoder.1
 PATCHDIR=	${.CURDIR}/../mplayer/files
 DATADIR=	${PREFIX}/share/mplayer
 
-TOOLFILES=	calcbpp.pl countquant.pl dvd2divxscript.pl \
-		menc2pass mencvcd mp.pl subedit.pl subsearch.sh \
-		sws-test w32codec_dl.pl wma2ogg.pl x2mpsub.sh
+TOOLFILES=	calcbpp.pl checktree.sh countquant.pl \
+		dvd2divxscript.pl mencvcd \
+		mplmult.sh plotpsnr.pl psnr-video.sh \
+		qepdvcd.sh subedit.pl subsearch.sh \
+		w32codec_dl.pl wma2ogg.pl
 
 .include <bsd.port.pre.mk>
 
@@ -72,7 +76,8 @@ CONFIGURE_ARGS+=	--disable-vidix-internal \
 			--disable-sdl \
 			--disable-svga \
 			--disable-aa \
-			--disable-joystick
+			--disable-joystick \
+			--disable-ssse3
 
 .include "${.CURDIR}/../mplayer/Makefile.options"
 

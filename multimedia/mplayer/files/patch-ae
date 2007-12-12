@@ -1,27 +1,32 @@
---- Makefile.orig	Mon Oct 23 00:32:31 2006
-+++ Makefile	Tue Oct 24 21:35:42 2006
-@@ -414,43 +414,11 @@
- 	$(MAKE) -C libdha install
- 	$(MAKE) -C vidix install
- endif
+--- Makefile.orig	2007-10-08 03:49:33.000000000 +0800
++++ Makefile	2007-10-20 15:44:28.000000000 +0800
+@@ -246,44 +246,17 @@
+ install: install-dirs $(INSTALL_TARGETS)
+ 
+ install-dirs:
 -	$(INSTALL) -d $(BINDIR)
--	$(INSTALL) -m 755 $(INSTALLSTRIP) $(PRG) $(BINDIR)/$(PRG)
--ifeq ($(GUI),yes)
--	-ln -sf $(PRG) $(BINDIR)/gmplayer
--endif
+-	$(INSTALL) -d $(DATADIR)
 -	$(INSTALL) -d $(MANDIR)/man1
+-	$(INSTALL) -d $(CONFDIR)
+-	if test -f $(CONFDIR)/codecs.conf ; then mv -f $(CONFDIR)/codecs.conf $(CONFDIR)/codecs.conf.old ; fi
+ 
+ install-mplayer: mplayer$(EXESUF)
+-	$(INSTALL) -m 755 $(INSTALLSTRIP) mplayer$(EXESUF) $(BINDIR)
++	@${BSD_INSTALL_PROGRAM} mplayer$(EXESUF) $(BINDIR)
+ 
+ install-mplayer-man:
 -	for i in $(MAN_LANG); do \
 -		if test "$$i" = en ; then \
--			$(INSTALL) -c -m 644 DOCS/man/en/mplayer.1 $(MANDIR)/man1/mplayer.1 ; \
+-			$(INSTALL) -c -m 644 DOCS/man/en/mplayer.1 $(MANDIR)/man1/ ; \
 -		else \
 -			$(INSTALL) -d $(MANDIR)/$$i/man1 ; \
--			$(INSTALL) -c -m 644 DOCS/man/$$i/mplayer.1 $(MANDIR)/$$i/man1/mplayer.1 ; \
+-			$(INSTALL) -c -m 644 DOCS/man/$$i/mplayer.1 $(MANDIR)/$$i/man1/ ; \
 -		fi ; \
 -	done
-+	@${BSD_INSTALL_PROGRAM} $(PRG) $(BINDIR)/$(PRG)
 +	@${BSD_INSTALL_MAN} DOCS/man/en/mplayer.1 $(MANDIR)/man1/mplayer.1
- ifeq ($(MENCODER),yes)
--	$(INSTALL) -m 755 $(INSTALLSTRIP) $(PRG_MENCODER) $(BINDIR)/$(PRG_MENCODER)
+ 
+ install-mencoder: mencoder$(EXESUF)
+-	$(INSTALL) -m 755 $(INSTALLSTRIP) mencoder$(EXESUF) $(BINDIR)
 -	for i in $(MAN_LANG); do \
 -		if test "$$i" = en ; then \
 -			cd $(MANDIR)/man1 && ln -sf mplayer.1 mencoder.1 ; \
@@ -29,21 +34,17 @@
 -			cd $(MANDIR)/$$i/man1 && ln -sf mplayer.1 mencoder.1 ; \
 -		fi ; \
 -	done
--endif
--	@$(INSTALL) -d $(DATADIR)
--	@$(INSTALL) -d $(DATADIR)/font
--ifeq ($(GUI),yes)
--	@$(INSTALL) -d $(DATADIR)/skins
--	@echo "*** Download skin(s) at http://www.mplayerhq.hu/dload.html"
++	@${BSD_INSTALL_PROGRAM} mencoder$(EXESUF) $(BINDIR)
+ 
+ install-gui:
+-	-ln -sf mplayer$(EXESUF) $(BINDIR)/gmplayer$(EXESUF)
+-	$(INSTALL) -d $(DATADIR)/skins
+-	@echo "*** Download skin(s) at http://www.mplayerhq.hu/design7/dload.html"
 -	@echo "*** for GUI, and extract to $(DATADIR)/skins/"
--	@$(INSTALL) -d $(prefix)/share/pixmaps
--	$(INSTALL) -m 644 etc/mplayer.xpm $(prefix)/share/pixmaps/mplayer.xpm
--	@$(INSTALL) -d $(prefix)/share/applications
--	$(INSTALL) -m 644 etc/mplayer.desktop $(prefix)/share/applications/mplayer.desktop
-+	@${BSD_INSTALL_PROGRAM} $(PRG_MENCODER) $(BINDIR)/$(PRG_MENCODER)
- endif
--	@$(INSTALL) -d $(CONFDIR)
--	@if test -f $(CONFDIR)/codecs.conf ; then mv -f $(CONFDIR)/codecs.conf $(CONFDIR)/codecs.conf.old ; fi
+-	$(INSTALL) -d $(prefix)/share/pixmaps
+-	$(INSTALL) -m 644 etc/mplayer.xpm $(prefix)/share/pixmaps/
+-	$(INSTALL) -d $(prefix)/share/applications
+-	$(INSTALL) -m 644 etc/mplayer.desktop $(prefix)/share/applications/
  
  uninstall:
- 	-rm -f $(BINDIR)/$(PRG) $(BINDIR)/gmplayer $(MANDIR)/man1/mplayer.1
+ 	-rm -f $(BINDIR)/mplayer$(EXESUF) $(BINDIR)/gmplayer$(EXESUF)

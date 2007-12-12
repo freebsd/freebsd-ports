@@ -1,5 +1,5 @@
---- input/joystick.c.orig	Sat Mar 31 05:10:08 2007
-+++ input/joystick.c	Sat Mar 31 05:09:30 2007
+--- input/joystick.c.orig	2007-10-08 03:49:26.000000000 +0800
++++ input/joystick.c	2007-10-20 16:00:20.000000000 +0800
 @@ -24,8 +24,6 @@
  #define JS_DEV "/dev/input/js0"
  #endif
@@ -9,11 +9,12 @@
  #include <linux/joystick.h>
  
  int axis[256];
-@@ -147,17 +145,3 @@
+@@ -145,18 +143,3 @@
+ 
    return MP_INPUT_NOTHING;
  }
- 
--#else
+-
+-#else /* TARGET_LINUX */
 -
 -// dummy function
 -
@@ -26,4 +27,4 @@
 -  return MP_INPUT_NOTHING;
 -}
 -
--#endif
+-#endif /* TARGET_LINUX */
