@@ -14,6 +14,9 @@ DISTNAME=	wxGlade-${PORTVERSION}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	GUI builder for wxPython/wxWindows written in Python
 
+DEPRECATED=	has been the same version as wxGlade for a long time; use it instead
+EXPIRATION_DATE=2008-01-12
+
 CONFLICTS=	wxglade-[0-9]*
 
 WRKSRC=		${WRKDIR}/wxGlade-${PORTVERSION}
