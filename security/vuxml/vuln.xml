@@ -44,7 +44,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>SO-AND-SO reports:</p>
+	<p>Secunia reports:</p>
 	<blockquote cite="http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-5184">
 	  <p>Format string vulnerability in the SMBDirList function in dirlist.c in 
 		SmbFTPD 0.96 allows remote attackers to execute arbitrary code via 
