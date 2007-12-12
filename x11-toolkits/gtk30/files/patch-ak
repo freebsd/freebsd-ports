@@ -1,6 +1,6 @@
 
 $FreeBSD$
-  $MCom: ports/x11-toolkits/gtk20/files/patch-ak,v 1.21 2007/04/26 17:22:32 marcus Exp $
+  $MCom: ports-stable/x11-toolkits/gtk20/files/patch-ak,v 1.8 2007/12/01 05:56:33 marcus Exp $
 
 --- gdk/Makefile.in.orig	Thu Feb 14 12:38:26 2002
 +++ gdk/Makefile.in	Thu Feb 14 12:45:37 2002
