@@ -248,6 +248,7 @@
     SUBDIR += p5-Date-Japanese-Era
     SUBDIR += p5-Date-Japanese-Holiday
     SUBDIR += p5-DateTime-Calendar-Japanese-Era
+    SUBDIR += p5-DateTime-Format-Japanese
     SUBDIR += p5-Encode-EUCJPMS
     SUBDIR += p5-FormValidator-Simple-Plugin-Number-Phone-JP
     SUBDIR += p5-Jcode
