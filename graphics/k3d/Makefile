@@ -7,54 +7,55 @@
 #
 
 PORTNAME=	k3d
-PORTVERSION=	0.4.4.0
-PORTREVISION=	12
+PORTVERSION=	0.6.7.0
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	SF
 
 MAINTAINER=	dyeske@gmail.com
-COMMENT=	A free 3D modeling, animation, and rendering system
+COMMENT=	3D modeling, animation, and rendering system
 
 BUILD_DEPENDS=	${X11BASE}/lib/libplibul.a:${PORTSDIR}/x11-toolkits/plib
-#		${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
-LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++ \
+LIB_DEPENDS=	sigc-2:${PORTSDIR}/devel/libsigc++20 \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		Magick++.10:${PORTSDIR}/graphics/ImageMagick \
 		netpbm.1:${PORTSDIR}/graphics/netpbm \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		gts.5:${PORTSDIR}/graphics/gts
+		gts.5:${PORTSDIR}/graphics/gts \
+		glibmm-2.4:${PORTSDIR}/devel/glibmm \
+		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
+		boost_signals.4:${PORTSDIR}/devel/boost \
+		execinfo:${PORTSDIR}/devel/libexecinfo
 
-CONFLICTS=	atlas-3* superlu-3*
+WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 USE_GL=		yes
-USE_GNOME=	gnometarget gtk12 libxslt
+USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	\
 	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--without-docbook --without-graphviz \
-		--with-openexr --with-plib --with-gts
-#		--with-ode
+CONFIGURE_ARGS+=	--without-docbook --without-graphviz \
+		--with-truetype=freetype2 --with-imagemagick --with-jpeg \
+		--with-python=${PREFIX}  --with-tiff --with-openexr --with-plib \
+		--with-png --with-external-boost --with-libxml2
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
-
+USE_GNOME+=	gnometarget gtk12 libxslt
+USE_LDCONFIG=	yes
 MAN1=	k3d.1
+
+OPTIONS=	GNOME "Build for Gnome" off
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
+.if defined(WITH_GNOME)
+CONFIGURE_ARGS+=	--with-gnome
+PLIST_SUB+=	GNOME=""
+.else
+CONFIGURE_ARGS+=	--without-gnome
+PLIST_SUB+=	GNOME="@comment "
 .endif
-
-post-install:
-.for dir in ${PREFIX}/include/k3d ${PREFIX}/share/k3d ${PREFIX}/lib/k3d
-	@${FIND} ${dir} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${dir} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endfor
 
 .include <bsd.port.post.mk>
