@@ -7,7 +7,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.6.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/ \
@@ -24,8 +24,8 @@ USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-6
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
-		--enable-nsl-fork --enable-persistent-cookies --with-ssl \
-		--with-curses-dir=/usr
+		--enable-nsl-fork --enable-persistent-cookies \
+		--with-ssl="${OPENSSLBASE}"
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
@@ -55,10 +55,10 @@ MAN1=		lynx.1
 L_LIB=		${PREFIX}/etc
 L_HELP=		${PREFIX}/share/lynx_help
 
+SUB_FILES=	pkg-message
+
 post-patch:
 	@${RM} -f ${WRKSRC}/CHANGES.orig
-	@${REINPLACE_CMD} -e 's|-lssl -lcrypto|-L${OPENSSLLIB} &|g' \
-		${WRKSRC}/configure
 
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}

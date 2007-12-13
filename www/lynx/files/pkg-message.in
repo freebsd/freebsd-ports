@@ -1,0 +1,13 @@
+To enable certificate handling for SSL connnections, set
+SSL_CERT_DIR and SSL_CERT_FILE in your environment to the
+proper values (depending upon which SSL library
+%%PREFIX%%/bin/lynx uses), as described in:
+
+%%DOCSDIR%%/docs/README.sslcerts
+
+and:
+
+%%DOCSDIR%%/docs/README.rootcerts.
+
+You may also need to generate keys and certificates as
+described in the latter document and your SSL documentation.
