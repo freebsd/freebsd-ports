@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 
-MAINTAINER=	serge.gagnon@b2b2c.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast tool to backup Video DVDs 'on the fly'
 
 LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
