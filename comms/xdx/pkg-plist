@@ -5,6 +5,7 @@ share/applications/Xdx.desktop
 %%DATADIR%%/MANUAL.fr
 %%DATADIR%%/MANUAL.nl
 %%DATADIR%%/MANUAL.pl
+%%DATADIR%%/cty.dat
 %%DATADIR%%/pixmaps/bigsmile.png
 %%DATADIR%%/pixmaps/cry.png
 %%DATADIR%%/pixmaps/sad.png
@@ -18,11 +19,12 @@ share/applications/Xdx.desktop
 %%DATADIR%%/sounds/attention.wav
 %%DATADIR%%/wwv.gnuplot
 %%DATADIR%%/wwv.gnuplot~
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
 share/locale/es/LC_MESSAGES/xdx.mo
 share/locale/fr/LC_MESSAGES/xdx.mo
 share/locale/nl/LC_MESSAGES/xdx.mo
 share/locale/pl/LC_MESSAGES/xdx.mo
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
+share/locale/pt/LC_MESSAGES/xdx.mo
 @dirrmtry share/applications
