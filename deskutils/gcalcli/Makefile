@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	gcalcli
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://gcalcli.googlecode.com/files/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Google Calendar Command Line Interface
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gdata/__init__.py:${PORTSDIR}/devel/py-gdata \
