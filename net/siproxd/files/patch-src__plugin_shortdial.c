@@ -1,5 +1,5 @@
---- src/plugin_shortdial.c.orig	Sat May 20 13:48:30 2006
-+++ src/plugin_shortdial.c	Wed Jun 21 09:08:19 2006
+--- src/plugin_shortdial.c.orig	Fri Jun  8 21:42:57 2007
++++ src/plugin_shortdial.c	Wed Nov 14 12:26:19 2007
 @@ -22,6 +22,7 @@
  
  #include <stdio.h>
