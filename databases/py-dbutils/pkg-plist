@@ -73,6 +73,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.9.1.html
 %%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.9.2.html
 %%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.9.3.html
+%%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.9.4.html
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.de.html
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.de.txt
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.html
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.txt
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.zh.html
