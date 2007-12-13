@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	${APP_TITLE:L}
-PORTVERSION=	4.2.1.GA
+PORTVERSION=	4.2.2.GA
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,7 +18,7 @@ COMMENT=	Open-source J2EE application server (4.x family)
 
 LATEST_LINK=	jboss4
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.5
 USE_ANT=	yes
 MAKE_ARGS=	-buildfile build/build.xml
 
