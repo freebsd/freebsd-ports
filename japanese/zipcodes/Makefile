@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20071001
+PORTVERSION=	20071130
 CATEGORIES=	japanese
 MASTER_SITES=	http://dist.bsdlab.org/
 DISTFILES=	ken_all-${PORTVERSION_K}.lzh jigyosyo-${PORTVERSION_J}.lzh
