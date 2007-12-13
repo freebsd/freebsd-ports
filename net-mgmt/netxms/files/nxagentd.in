@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: nxagentd
-# REQUIRE: LOGIN
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
 #

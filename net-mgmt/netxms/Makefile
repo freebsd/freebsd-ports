@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netxms
-PORTVERSION=	0.2.18.2
+PORTVERSION=	0.2.19
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/
 
@@ -16,21 +16,20 @@ COMMENT=	NetXMS - network monitoring system
 NO_PACKAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-USE_GCC=	3.4
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 
 OPTIONS=	SERVER "Install NetXMS server & agent" off\
 		CLIENT "Install NetXMS client" off \
 		AGENT "Install NetXMS agent" off \
 		NXHTTPD "Install web-interface" off \
 		MYSQL "Enable MySQL support" off \
-		PGSQL "Enable PostgreSQL support" off
+		PGSQL "Enable PostgreSQL support" off \
+		SQLITE "Enable SQLITE support" off \
+		ODBC "Enable ODBC support" off
 
 NETXMS_OWN=	netxms
 NETXMS_GRP=	netxms
@@ -39,21 +38,36 @@ NETXMS_GRP=	netxms
 
 SUB_FILES=	pkg-install	pkg-deinstall
 
-.if !defined(WITH_SERVER)
-.if defined(WITH_MYSQL) || !defined(WITHOUT_PGSQL)
-IGNORE=	is useless database support without a SERVER. Please (re)run 'make config' and choose SERVER with database
-.endif
+.if defined(WITH_SERVER) || defined(WITH_CLIENT) || defined(WITH_NXHTTPD)
+PLIST_SUB+=	NXMAP=""
+.else
+PLIST_SUB+=	NXMAP="@comment "
 .endif
 
-.if defined(WITH_SERVER)
-.if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL)
-IGNORE=	is useless without a database. Please (re)run 'make config' and choose one of PGSQL and MYSQL
+.if defined(WITH_CLIENT) || defined(WITH_NXHTTPD)
+PLIST_SUB+=	NXCL=""
+.else
+PLIST_SUB+=	NXCL="@comment "
 .endif
-USE_RC_SUBR+=	netxmsd	nxagentd
+
+.if !defined(WITH_SERVER)
+PLIST_SUB+=	SERVER="@comment "
+.if defined(WITH_MYSQL) || !defined(WITHOUT_PGSQL) || !defined(WITHOUT_SQLITE) || !defined(WITHOUT_ODBC)
+IGNORE=	is useless database support without a SERVER. Please (re)run 'make config' and choose SERVER with database
+.endif
+.else
 CONFIGURE_ARGS+=	--with-server
 PLIST_SUB+=	SERVER=""
+.if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE) && !defined(WITH_ODBC)
+IGNORE=	is useless without a database. Please (re)run 'make config' and choose database support
 .else
-PLIST_SUB+=	SERVER="@comment "	AGENT="@comment "
+USE_RC_SUBR+=	netxmsd
+.if defined(WITH_AGENT)
+PLIST_SUB+=	AGENT="@comment "
+.else
+USE_RC_SUBR+=	nxagentd
+.endif
+.endif
 .endif
 
 .if defined(WITH_CLIENT)
@@ -64,9 +78,6 @@ PLIST_SUB+=	CLIENT="@comment "
 .endif
 
 .if defined(WITH_AGENT)
-.if defined(WITH_SERVER)
-IGNORE=	is useles AGENT or SERVER. Please (re)run 'make config' and choose one of AGENT and SERVER (server already include agent)
-.endif
 USE_RC_SUBR+=	nxagentd
 CONFIGURE_ARGS+=	--with-agent
 PLIST_SUB+=	AGENT=""
@@ -78,7 +89,7 @@ PLIST_SUB+=	AGENT="@comment "
 USE_RC_SUBR+=	nxhttpd
 CONFIGURE_ARGS+=	--with-nxhttpd
 PLIST_SUB+=	NXHTTPD=""
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 .else
 PLIST_SUB+=	NXHTTPD="@comment "
 .endif
@@ -97,6 +108,22 @@ PLIST_SUB+=	PGSQL=""
 USE_PGSQL=	yes
 .else
 PLIST_SUB+=	PGSQL="@comment "
+.endif
+
+.if defined(WITH_SQLITE)
+CONFIGURE_ARGS+=	--with-sqlite
+PLIST_SUB+=	SQLITE=""
+USE_SQLITE=	yes
+.else
+PLIST_SUB+=	SQLITE="@comment "
+.endif
+
+.if defined(WITH_ODBC)
+CONFIGURE_ARGS+=	--with-odbc
+PLIST_SUB+=	ODBC=""
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+.else
+PLIST_SUB+=	ODBC="@comment "
 .endif
 
 pre-install:
