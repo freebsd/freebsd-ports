@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_security2
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
 DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
@@ -30,16 +30,14 @@ SUB_LIST+=	APACHEETCDIR="${APACHEETCDIR}"
 .if !defined(SKIP_RULES)
 SUB_FILES+=	pkg-message.rules
 
-PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2/blocking
+PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules
 PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2
 
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/CHANGELOG
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/LICENSE
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/README
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/blocking/modsecurity_crs_20_protocol_violations.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/blocking/modsecurity_crs_21_protocol_anomalies.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/blocking/modsecurity_crs_40_generic_attacks.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_23_request_limits.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_10_config.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_20_protocol_violations.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_21_protocol_anomalies.conf
@@ -48,7 +46,11 @@ PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_35_bad_robo
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_40_generic_attacks.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_45_trojans.conf
 PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_50_outbound.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_55_marketing.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_20_protocol_violations.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_21_protocol_anomalies.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_40_generic_attacks.conf
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_55_marketing.conf
+
 .endif
 
 .if defined(WITH_LIBXML2)
