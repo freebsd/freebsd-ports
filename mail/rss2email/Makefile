@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rss2email
-PORTVERSION=	2.60
+PORTVERSION=	2.61
 CATEGORIES=	mail python
 MASTER_SITES=	CENKES
 # http://rss2email.infogami.com/rss2email.py
