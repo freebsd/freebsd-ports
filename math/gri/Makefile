@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gri
-PORTVERSION=	2.12.15
+PORTVERSION=	2.12.16
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,16 +30,17 @@ MAKE_ENV+=	MAKEINFOFLAGS=--no-split
 MAN1=	gri.1 gri_merge.1 gri_unpage.1
 INFO=	gri
 
-post-patch:
 .if defined(NOPORTDOCS)
+post-patch:
 	${REINPLACE_CMD} -e '/^(DIST_)?SUBDIRS/s/doc//' ${WRKSRC}/Makefile.in
 .endif
 
-post-install:
 .if defined(NOPORTDOCS)
+post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/gri-manpage.1 ${MANPREFIX}/man/man1/gri.1
 	${INSTALL_MAN} ${WRKSRC}/doc/gri_merge.1-skel ${MANPREFIX}/man/man1/gri_merge.1
 	${INSTALL_MAN} ${WRKSRC}/doc/gri_unpage.1-skel ${MANPREFIX}/man/man1/gri_unpage.1
+	cd ${WRKSRC}/doc && makeinfo gri.texi
 	${INSTALL_DATA} ${WRKSRC}/doc/gri.info* ${PREFIX}/info
 .endif
 
