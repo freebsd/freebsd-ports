@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	IO-Compress-Zlib
-PORTVERSION=	2.006
+PORTVERSION=	2.008
 CATEGORIES=	archivers perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	IO
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Perl5 interface for reading and writing of (g)zip files
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
