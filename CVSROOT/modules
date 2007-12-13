@@ -865,6 +865,7 @@ bind9-dlz	ports/dns/bind9-dlz
 bind9-sdb-ldap	ports/dns/bind9-sdb-ldap
 bind94		ports/dns/bind94
 binder		ports/x11-fm/binder
+bindgraph	ports/dns/bindgraph
 bindtest	ports/net/bindtest
 bing		ports/net/bing
 binkd		ports/net/binkd
