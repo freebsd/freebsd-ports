@@ -13,11 +13,12 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Pidgin multi-protocol messaging client (GTK+ UI)
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-    		purple.2:${PORTSDIR}/net-im/libpurple
+		purple.3:${PORTSDIR}/net-im/libpurple
 
 MASTERDIR=	${.CURDIR}/../libpurple
 BUILD_WRKSRC=	${WRKSRC}/pidgin
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
+INSTALLS_ICONS=	yes
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
