@@ -18,7 +18,7 @@ MAINTAINER=	perlfu@gmail.com
 COMMENT=	Encryption Plugin for the Pidgin instant messenger client
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
-LIB_DEPENDS=	purple.2:${PORTSDIR}/net-im/libpurple \
+LIB_DEPENDS=	purple.3:${PORTSDIR}/net-im/libpurple \
 		nss3:${PORTSDIR}/security/nss
 
 USE_XLIB=	yes

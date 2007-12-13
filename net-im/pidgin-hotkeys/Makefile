@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A pidgin plugin that allows user to assign global hotkeys
 
-LIB_DEPENDS=	purple.2:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	purple.3:${PORTSDIR}/net-im/libpurple
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
