@@ -5932,6 +5932,7 @@ kfreerings	ports/games/kfreerings
 kftpgrabber	ports/ftp/kftpgrabber
 kgpg		ports/security/kgpg
 khacc		ports/finance/khacc
+khtml2png	ports/www/khtml2png
 kiax		ports/net/kiax
 kicad		ports/cad/kicad
 kicker-applets	ports/misc/kicker-applets
