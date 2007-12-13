@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbutils
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	databases python
 MASTER_SITES=	http://www.w4py.org/downloads/DBUtils/ \
 		CHEESESHOP
