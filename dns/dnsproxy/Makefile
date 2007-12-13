@@ -7,7 +7,7 @@
 
 PORTNAME=	dnsproxy
 PORTVERSION=	1.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.wolfermann.org/
 
@@ -22,6 +22,7 @@ USE_RC_SUBR=	dnsproxy
 MAN1=		dnsproxy.1
 PLIST_FILES=	sbin/dnsproxy etc/${PORTNAME}/dnsproxy.conf.sample
 SUB_FILES=	pkg-message
+PLIST_DIRS=	%%ETCDIR%%
 
 .include <bsd.port.pre.mk>
 
