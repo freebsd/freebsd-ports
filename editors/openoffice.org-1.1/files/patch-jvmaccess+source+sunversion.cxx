@@ -10,8 +10,19 @@ it is not a good habit. in this patch we eleminate this.
 in the system. We add 100 as micro version number, so that we treat FreeBSD's version of
 java 1.4.1-p10 for example to 1.4.1_110.
 
+3. Java version of 1.5.0_13-p7 will be treated as 1.5.0_13. -p part will be ignored.
+
 --- jvmaccess/source/sunversion.cxx	Thu Jun 16 21:45:26 2005
 +++ jvmaccess/source/sunversion.cxx	Sat Oct 22 16:42:01 2005
+@@ -193,7 +193,7 @@
+                     pCur ++;
+                 //   nPartPos ++;
+             }
+-            else if (nUpdatePart == 0 && (pCur == pEnd || isalpha(*pCur)))
++            else if (nUpdatePart == 0 && (pCur == pEnd || isalpha(*pCur) || (*pCur)=='-' ))
+             {
+                 int len = pCur - pLast;
+                 if (len >= 127) 
 @@ -246,30 +247,22 @@
              m_preRelease = Rel_RC2;
  #if defined FREEBSD || defined NETBSD

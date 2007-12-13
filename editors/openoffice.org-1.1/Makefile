@@ -47,6 +47,9 @@ JAVA_VENDOR=	freebsd bsdjava
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
+.if ${OSVERSION} >= 700042
+BROKEN=		fails to install; consider upgrading to editors/openoffice.org-2
+.endif
 
 LANG_EXT?=	01
 LANG_CONFIGURE_ARG?=	ENUS
@@ -102,8 +105,7 @@ OOOCXX=		${CXX}
 .endif
 CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"           \
 		CPPFLAGS="-I${LOCALBASE}/include"       \
-		LDFLAGS="-L${LOCALBASE}/lib" 		\
-		PATH="${WRKDIR}/bin:${PATH}"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
@@ -168,13 +170,12 @@ post-extract:
 	@cd ${WRKSRC} ; ${MV} moz moz.runtime ; ${MV} moz.old moz
 .endif
 
-pre-build:
-	@${RM} -rf ${WRKDIR}/bin
-	@${MKDIR} ${WRKDIR}/bin
-	@${LN} -s `which ${CC}` ${WRKDIR}/bin/gcc
-	@${LN} -s `which ${CC}` ${WRKDIR}/bin/cc
-	@${LN} -s `which ${CXX}` ${WRKDIR}/bin/g++
-	@${LN} -s `which ${CXX}` ${WRKDIR}/bin/c++
+pre-configure:
+#Workaround for moz project, it uses gcc directly.
+	@${LN} -sf `which ${CC}` ${WRKSRC}/solenv/bin/gcc
+	@${LN} -sf `which ${CC}` ${WRKSRC}/solenv/bin/cc
+	@${LN} -sf `which ${CXX}` ${WRKSRC}/solenv/bin/g++
+	@${LN} -sf `which ${CXX}` ${WRKSRC}/solenv/bin/c++
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
