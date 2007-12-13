@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	IO-Compress-Bzip2
-PORTVERSION=	2.006
+PORTVERSION=	2.008
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	An interface to allow writing bzip2 compressed data to files or buffer
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Bzip2.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2 \
