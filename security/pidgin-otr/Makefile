@@ -8,7 +8,7 @@
 
 PORTNAME=	otr
 PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
 PKGNAMEPREFIX=	pidgin-

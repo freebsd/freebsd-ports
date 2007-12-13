@@ -43,6 +43,7 @@ include/libpurple/prefs.h
 include/libpurple/privacy.h
 include/libpurple/proxy.h
 include/libpurple/prpl.h
+include/libpurple/purple.h
 include/libpurple/request.h
 include/libpurple/roomlist.h
 include/libpurple/savedstatuses.h
@@ -130,10 +131,10 @@ lib/purple-2/statenotify.so
 %%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/Purple.pm
 %%DBUS%%lib/libpurple-client.la
 %%DBUS%%lib/libpurple-client.so
-%%DBUS%%lib/libpurple-client.so.2
+%%DBUS%%lib/libpurple-client.so.3
 lib/libpurple.la
 lib/libpurple.so
-lib/libpurple.so.2
+lib/libpurple.so.3
 libdata/pkgconfig/purple.pc
 share/aclocal/purple.m4
 share/applications/pidgin.desktop
@@ -210,6 +211,7 @@ share/locale/te/LC_MESSAGES/pidgin.mo
 share/locale/th/LC_MESSAGES/pidgin.mo
 share/locale/tr/LC_MESSAGES/pidgin.mo
 share/locale/uk/LC_MESSAGES/pidgin.mo
+share/locale/ur/LC_MESSAGES/pidgin.mo
 share/locale/vi/LC_MESSAGES/pidgin.mo
 share/locale/xh/LC_MESSAGES/pidgin.mo
 share/locale/zh_CN/LC_MESSAGES/pidgin.mo
@@ -219,6 +221,8 @@ share/locale/zh_TW/LC_MESSAGES/pidgin.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
