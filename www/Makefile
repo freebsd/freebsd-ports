@@ -258,6 +258,7 @@
     SUBDIR += kazehakase
     SUBDIR += kdedict
     SUBDIR += kdewebdev
+    SUBDIR += khtml2png
     SUBDIR += knowledgekit
     SUBDIR += kompozer
     SUBDIR += larbin
