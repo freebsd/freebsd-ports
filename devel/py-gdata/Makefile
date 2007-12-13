@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdata
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	devel python
 MASTER_SITES=	http://gdata-python-client.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
