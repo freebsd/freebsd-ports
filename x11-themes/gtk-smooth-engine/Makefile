@@ -20,6 +20,9 @@ USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 CONFIGURE_ENV=	X11BASE="${X11BASE}"
 
+DEPRECATED=	Redundant port (now included in gtk-engines), no release since 2005
+EXPIRATION_DATE=2008-01-14
+
 CONFLICTS=	gtk-engines2-[0-9]*
 
 .include <bsd.port.pre.mk>
