@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	7.9.5
+PORTVERSION=	7.9.8
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.planscalendar.com/addons/:addons \
@@ -27,43 +27,37 @@ EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A Good Web Calendar
 
-BUILD_DEPENDS=	${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session
+BUILD_DEPENDS=	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_ZIP=	yes
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-WWWDOCROOT?=	www
-PLANSSUBDIR?=	plans
-PLANSDIR?=	${WWWDOCROOT}/${PLANSSUBDIR}
-PLIST_SUB+=	DIR=${PLANSDIR}
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
-DIR=		${PREFIX}/${PLANSDIR}
-SUB_LIST+=	DIR=${DIR}
-
-.include <bsd.port.pre.mk> # Need to exists() work
 
 post-extract:
 	@${CP} ${_DISTDIR}/powerani.gif ${WRKSRC}/theme/graphics/freebsd.gif
 	@${CP} ${_DISTDIR}/*.pl ${WRKSRC}/
-	@for i in ${WRKSRC}/data/*xml ${WRKSRC}/*config.pl; do ${MV} $$i $$i.default; done
-	@${SED} -e 's/iso-8859-1/utf-8/' ${WRKSRC}/us_english.pl > ${WRKSRC}/us_english_utf8.pl
+	@${RM} -rf ${WRKSRC}/theme/us_english.pl
+	@for i in ${WRKSRC}/data/*xml ${WRKSRC}/*config.pl;\
+		do ${MV} $$i $$i.default; done
+	@${SED} -e 's/iso-8859-1/utf-8/' ${WRKSRC}/us_english.pl >\
+		${WRKSRC}/us_english_utf8.pl
+	@${TOUCH} ${WRKSRC}/theme/ical/.keep_me
 
 post-patch:
 	@${RM} -f ${WRKSRC}/theme/plans.template.orig
 
 do-install:
-	@${INSTALL} -d ${DIR}
-	@${CP} -nR ${WRKSRC}/ ${DIR}/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DIR}/
-	@${FIND} ${DIR} -type f -exec ${CHMOD} 644 {} \;
-	@${FIND} ${DIR} -name '*.cgi' -exec ${CHMOD} 755 {} \;
-	@${FIND} ${DIR} -name '*.xml' -exec ${CHMOD} 664 {} \;
-
-post-install:
-	@for i in ${DIR}/data/*default ${DIR}/*default; do ${CP} -np $$i $${i%.default}; done
+	@${INSTALL} -d ${WWWDIR}/
+	@${CP} -nR ${WRKSRC}/ ${WWWDIR}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
+	@${FIND} ${WWWDIR} -type f -exec ${CHMOD} 644 {} \;
+	@${FIND} ${WWWDIR} -name '*.cgi' -exec ${CHMOD} 755 {} \;
+	@${FIND} ${WWWDIR} -name '*.xml' -exec ${CHMOD} 664 {} \;
+	@for i in ${WWWDIR}/data/*default ${WWWDIR}/*default; do\
+		${CP} -np $$i $${i%.default}; done
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
