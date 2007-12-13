@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	imdbpy
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	www python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,9 +20,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	IMDbPY
 
-.if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-.endif
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-install:
@@ -30,7 +28,9 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
 .endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/bin/ ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
