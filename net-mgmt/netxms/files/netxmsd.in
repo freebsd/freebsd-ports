@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: netxmsd
-# REQUIRE: mysql postgresql
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
 #

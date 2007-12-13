@@ -38,6 +38,9 @@ lib/libnetxms.so.0
 %%SERVER%%lib/libnsm_skeleton.la
 %%SERVER%%lib/libnsm_skeleton.so
 %%SERVER%%lib/libnsm_skeleton.so.0
+%%SERVER%%lib/libnsm_sms.la
+%%SERVER%%lib/libnsm_sms.so
+%%SERVER%%lib/libnsm_sms.so.0
 %%SERVER%%lib/libnsm_ups.la
 %%SERVER%%lib/libnsm_ups.so
 %%SERVER%%lib/libnsm_ups.so.0
@@ -56,30 +59,42 @@ lib/libnetxms.so.0
 %%AGENT%%lib/libnsm_skeleton.la
 %%AGENT%%lib/libnsm_skeleton.so
 %%AGENT%%lib/libnsm_skeleton.so.0
+%%AGENT%%lib/libnsm_sms.la
+%%AGENT%%lib/libnsm_sms.so
+%%AGENT%%lib/libnsm_sms.so.0
 %%AGENT%%lib/libnsm_ups.la
 %%AGENT%%lib/libnsm_ups.so
 %%AGENT%%lib/libnsm_ups.so.0
-%%CLIENT%%lib/libnxcl.la
-%%CLIENT%%lib/libnxcl.so
-%%CLIENT%%lib/libnxcl.so.0
+%%NXCL%%lib/libnxcl.la
+%%NXCL%%lib/libnxcl.so
+%%NXCL%%lib/libnxcl.so.0
 %%SERVER%%lib/libnxcore.la
 %%SERVER%%lib/libnxcore.so
 %%SERVER%%lib/libnxcore.so.0
 %%MYSQL%%lib/libnxddr_mysql.la
 %%MYSQL%%lib/libnxddr_mysql.so
 %%MYSQL%%lib/libnxddr_mysql.so.0
+%%ODBC%%lib/libnxddr_odbc.la
+%%ODBC%%lib/libnxddr_odbc.so
+%%ODBC%%lib/libnxddr_odbc.so.0
 %%PGSQL%%lib/libnxddr_pgsql.la
 %%PGSQL%%lib/libnxddr_pgsql.so
 %%PGSQL%%lib/libnxddr_pgsql.so.0
-%%SERVER%%lib/libnxmap.la
-%%SERVER%%lib/libnxmap.so
-%%SERVER%%lib/libnxmap.so.0
+%%SQLITE%%lib/libnxddr_sqlite.la
+%%SQLITE%%lib/libnxddr_sqlite.so
+%%SQLITE%%lib/libnxddr_sqlite.so.0
+%%NXMAP%%lib/libnxmap.la
+%%NXMAP%%lib/libnxmap.so
+%%NXMAP%%lib/libnxmap.so.0
 %%SERVER%%lib/libnxsl.la
 %%SERVER%%lib/libnxsl.so
 %%SERVER%%lib/libnxsl.so.0
 %%SERVER%%lib/libnxsms_generic.la
 %%SERVER%%lib/libnxsms_generic.so
 %%SERVER%%lib/libnxsms_generic.so.0
+%%SERVER%%lib/libnxsms_nxagent.la
+%%SERVER%%lib/libnxsms_nxagent.so
+%%SERVER%%lib/libnxsms_nxagent.so.0
 %%SERVER%%lib/libnxsnmp.la
 %%SERVER%%lib/libnxsnmp.so
 %%SERVER%%lib/libnxsnmp.so.0
@@ -324,5 +339,3 @@ lib/libnetxms.so.0
 %%SERVER%%@dirrmtry %%DATADIR%%/images
 %%SERVER%%@dirrmtry %%DATADIR%%/backgrounds
 @dirrmtry %%DATADIR%%
-share/nls/POSIX
-share/nls/en_US.US-ASCII

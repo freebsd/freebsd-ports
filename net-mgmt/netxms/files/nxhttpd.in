@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: nxhttpd
-# REQUIRE: LOGIN
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
 #
