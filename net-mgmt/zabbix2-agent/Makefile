@@ -7,6 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -20,6 +21,9 @@ USE_RC_SUBR=	zabbix_agentd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-agent --disable-server
 MAKE_ARGS=	ARCH=freebsd
+.ifndef WITHOUT_IPV6
+CONFIGURE_ARGS+=--enable-ipv6
+.endif
 
 ZABBIX_BIN=	agent agentd get sender
 ZABBIX_CFG=	agent agentd
