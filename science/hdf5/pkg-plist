@@ -8,7 +8,6 @@ bin/h5dump
 bin/h5import
 bin/h5jam
 bin/h5ls
-bin/h5perf
 bin/h5redeploy
 bin/h5repack
 bin/h5repart
@@ -78,6 +77,7 @@ include/H5Tpublic.h
 include/H5VarLenType.h
 include/H5Zpublic.h
 include/H5api_adpt.h
+include/H5cxx_pubconf.h
 include/H5pubconf.h
 include/H5public.h
 include/hdf5.h
@@ -88,7 +88,6 @@ lib/libhdf5.so
 lib/libhdf5.so.0
 lib/libhdf5_cpp.a
 lib/libhdf5_cpp.la
-lib/libhdf5_cpp.settings
 lib/libhdf5_hl.a
 lib/libhdf5_hl.la
 lib/libhdf5_hl.so
@@ -105,12 +104,30 @@ lib/libhdf5_hl.so.0
 %%EXAMPLESDIR%%/c/h5_select.c
 %%EXAMPLESDIR%%/c/h5_write.c
 %%EXAMPLESDIR%%/c/ph5example.c
+%%EXAMPLESDIR%%/c/ex_lite1.c
+%%EXAMPLESDIR%%/c/ex_lite2.c
+%%EXAMPLESDIR%%/c/ex_lite3.c
+%%EXAMPLESDIR%%/c/ex_image1.c
+%%EXAMPLESDIR%%/c/ex_image2.c
+%%EXAMPLESDIR%%/c/ex_table_01.c
+%%EXAMPLESDIR%%/c/ex_table_02.c
+%%EXAMPLESDIR%%/c/ex_table_03.c
+%%EXAMPLESDIR%%/c/ex_table_04.c
+%%EXAMPLESDIR%%/c/ex_table_05.c
+%%EXAMPLESDIR%%/c/ex_table_06.c
+%%EXAMPLESDIR%%/c/ex_table_07.c
+%%EXAMPLESDIR%%/c/ex_table_08.c
+%%EXAMPLESDIR%%/c/ex_table_09.c
+%%EXAMPLESDIR%%/c/ex_table_10.c
+%%EXAMPLESDIR%%/c/ex_table_11.c
+%%EXAMPLESDIR%%/c/ex_table_12.c
 %%EXAMPLESDIR%%/c++/chunks.cpp
 %%EXAMPLESDIR%%/c++/compound.cpp
 %%EXAMPLESDIR%%/c++/create.cpp
 %%EXAMPLESDIR%%/c++/extend_ds.cpp
 %%EXAMPLESDIR%%/c++/h5group.cpp
 %%EXAMPLESDIR%%/c++/readdata.cpp
+%%EXAMPLESDIR%%/c++/strtype.cpp
 %%EXAMPLESDIR%%/c++/writedata.cpp
 @dirrm %%EXAMPLESDIR%%/c
 @dirrm %%EXAMPLESDIR%%/c++
