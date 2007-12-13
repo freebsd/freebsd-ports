@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	pyproj
-PORTVERSION=	1.8.2
-CATEGORIES=	graphics python
+PORTVERSION=	1.8.3
+CATEGORIES=	graphics python geography
 MASTER_SITES=	http://pyproj.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,8 +21,10 @@ USE_PYDISTUTILS=	yes
 PORTDOCS=	Changelog README README.html LICENSE_proj4
 
 post-install:
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/test/* ${EXAMPLESDIR}
+.endif
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
