@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.porcupine.org/forensics/
 MAINTAINER=	onatan@gmail.com
 COMMENT=	Forensic utility for memory-dumping
 
-.include <bsd.port.pre.mk>
-
 ALL_TARGET=	what
 
 PLIST_FILES=	bin/memdump
@@ -30,4 +28,4 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 .	endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

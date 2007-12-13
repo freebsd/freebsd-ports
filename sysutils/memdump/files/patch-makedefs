@@ -1,0 +1,11 @@
+--- ./makedefs.orig	2005-08-30 23:03:40.000000000 +0000
++++ ./makedefs	2007-11-30 18:54:11.000000000 +0000
+@@ -14,6 +14,8 @@
+                 ;;
+   FreeBSD.7*)   DEFS="-DFREEBSD7"
+                 ;;
++  FreeBSD.8*)   DEFS="-DFREEBSD8"
++                ;;
+   OpenBSD.2*)   DEFS="-DOPENBSD2"
+                 ;;
+   OpenBSD.3*)   DEFS="-DOPENBSD3"
