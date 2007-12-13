@@ -12,7 +12,7 @@ CATEGORIES=	editors plan9
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	serge.gagnon@b2b2c.ca
+MAINTAINER=	serge.gagnon.1@ulaval.ca
 COMMENT=	A clone of the Plan9 editor `acme'
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rc:${PORTSDIR}/shells/rc \
