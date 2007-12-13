@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Compress-Raw-Bzip2
-PORTVERSION=	2.006
+PORTVERSION=	2.008
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Low-Level Interface to bzip2 compression library
 
 PERL_CONFIGURE=	YES
