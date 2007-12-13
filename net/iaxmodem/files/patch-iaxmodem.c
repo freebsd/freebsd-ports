@@ -1,29 +1,51 @@
---- iaxmodem.c.orig	Mon Jul 31 15:29:29 2006
-+++ iaxmodem.c	Fri Aug 11 20:23:50 2006
-@@ -17,12 +17,14 @@
-  */
- #include <stdio.h>
+--- iaxmodem.c.orig	2007-10-06 12:22:04.000000000 -0400
++++ iaxmodem.c	2007-11-06 23:54:40.000000000 -0500
+@@ -21,17 +21,18 @@
  #include <string.h>
+ #include <strings.h>
+ 
 -#ifndef __OpenBSD__
 +#if !defined(__OpenBSD__) && !defined(__FreeBSD__)
- #include <pty.h>
+ # ifndef USE_UNIX98_PTY
+ #  include <pty.h>
+ # endif /* !USE_UNIX98_PTY */
  #else
- #include <termios.h>
++#include <termios.h>
 +#if !defined(__FreeBSD__)
- #include <util.h>
+ # include <util.h>
  #endif
 +#endif
+ 
+ 
+-#include <termios.h>
+-
  #include <stdlib.h>
  #include <unistd.h>
  #include <dirent.h>
-@@ -44,6 +46,10 @@
+@@ -53,6 +54,26 @@
  #include <math.h>
  
  #include <stdint.h>
 +
 +#ifdef __FreeBSD__
 +#include <libutil.h>
++char* strndup(const char* string, size_t n)
++{
++        char* copy_string = 0;
++
++        if(0 == string || 0 == n)
++                return 0;
++
++        copy_string = (char*) malloc(n + 1);
++        if(0 == copy_string)
++                return 0;
++
++        memcpy(copy_string, string, n);
++        *(copy_string + n) = '\0';
++
++        return copy_string;
++}
 +#endif
  #include <tiffio.h>
  
- #include <spandsp.h>
+ #ifndef O_LARGEFILE

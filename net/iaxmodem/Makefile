@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iaxmodem
-PORTVERSION=	0.1.14
+PORTVERSION=	0.3.2
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,8 +29,6 @@ GNU_CONFIGURE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/etc|${PREFIX}/etc|g" ${WRKSRC}/iaxmodem.1
 	@${REINPLACE_CMD} -e "s|/etc/iaxmodem|${PREFIX}/etc/iaxmodem|g" ${WRKSRC}/iaxmodem.c
-	@${CP} ${FILESDIR}/configure ${FILESDIR}/Makefile.in ${WRKSRC}/
-	@${CHMOD} a+x ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iaxmodem ${PREFIX}/sbin/ && \
