@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	namefix
-DISTVERSION=	4.0_RC5
+DISTVERSION=	4.0-RC8
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}.pl_${DISTVERSION}
+MASTER_SITES=	CENKES #SF
+#DISTNAME=	${PORTNAME}.pl_${DISTVERSION}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Batch renamer
@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag \
 		p5-Tk-JComboBox>=0:${PORTSDIR}/x11-toolkits/p5-Tk-JComboBox \
 		p5-Tk-DynaTabFrame>=0:${PORTSDIR}/x11-toolkits/p5-Tk-DynaTabFrame
 
-WRKSRC=		${WRKDIR}/usr/local/namefix.pl
+WRKSRC=		${WRKDIR}/namefix.pl
 NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -28,7 +28,8 @@ post-extract:
 	@${FIND} ${WRKSRC} -name '*~' -delete
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$prog_dir/libs/|${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/|'\
+	@${REINPLACE_CMD} -e\
+	's|$$prog_dir/libs/|${PREFIX}/${SITE_PERL_REL}/${PORTNAME}/|'\
 		${WRKSRC}/${PORTNAME}.pl
 
 do-install:

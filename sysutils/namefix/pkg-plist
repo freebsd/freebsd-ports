@@ -1,5 +1,6 @@
 bin/namefix.pl
 %%SITE_PERL%%/namefix/about.pm
+%%SITE_PERL%%/namefix/blockrename.pm
 %%SITE_PERL%%/namefix/bookmarks.pm
 %%SITE_PERL%%/namefix/changelog.pm
 %%SITE_PERL%%/namefix/config.pm
