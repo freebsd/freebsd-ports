@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pp
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.parallelpython.com/downloads/pp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,11 +16,5 @@ COMMENT=	Parallel python execution server
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-
-post-patch:
-	${REINPLACE_CMD} -e 's,^#!/usr/bin/python,#!${PYTHON_CMD},' ${WRKSRC}/ppserver.py
-
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ppserver.py ${PREFIX}/bin/
 
 .include <bsd.port.mk>
