@@ -20,7 +20,7 @@ COMMENT=	This plugin adds a libnotify interface to Pidgin
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin \
     		${LOCALBASE}/libdata/pkgconfig/libnotify.pc:${PORTSDIR}/devel/libnotify
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
-    		purple.2:${PORTSDIR}/net-im/libpurple
+		purple.3:${PORTSDIR}/net-im/libpurple
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

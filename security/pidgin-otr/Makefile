@@ -22,7 +22,7 @@ COMMENT=	Allows deniable private conversations using Pidgin
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
 LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
-		purple.2:${PORTSDIR}/net-im/libpurple
+		purple.3:${PORTSDIR}/net-im/libpurple
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
