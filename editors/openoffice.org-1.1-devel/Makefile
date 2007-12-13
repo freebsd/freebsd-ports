@@ -50,10 +50,7 @@ JAVA_VENDOR=	freebsd bsdjava
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
-
 .if ${OSVERSION} >= 700042
-BROKEN=		does not compile with GCC 4.2; consider upgrading to editors/openoffice.org-2
-.else
 BROKEN=		fails to install; consider upgrading to editors/openoffice.org-2
 .endif
 
@@ -101,16 +98,20 @@ PKGNAMEPREFIX=          ${LANG_PKGNAME}-
 PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .endif
 
-BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
-# FIXME (correctly add ccache before gcc and g++)
+USE_GCC=	3.3 #3.3 is the best
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
-CC=	ccache gcc32
-CXX=	ccache g++32
+CCACHE_PREFIX=	ccache
+OOOCC=		${CCACHE_PREFIX} ${CC}
+OOOCXX=		${CCACHE_PREFIX} ${CXX}
 .else
-CC=	gcc32
-CXX=	g++32
+OOOCC=		${CC}
+OOOCXX=		${CXX}
 .endif
+CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"           \
+		CPPFLAGS="-I${LOCALBASE}/include"       \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
@@ -128,7 +129,7 @@ TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
 
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-pasf #--enable-crashdump --enable-symbols=SMALL #gcc3.2.3 is broken with -g1
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-pasf --enable-crashdump --enable-symbols=SMALL #gcc3.2.3 is broken with -g1
 
 .include <${FILESDIR}/Makefile.knobs>
 
@@ -174,6 +175,13 @@ post-extract:
 	@cd ${WRKSRC} ; ${MV} moz moz.runtime ; ${MV} moz.old moz
 .endif
 
+pre-configure:
+#Workaround for moz project, it uses gcc directly.
+	@${LN} -sf `which ${CC}` ${WRKSRC}/solenv/bin/gcc
+	@${LN} -sf `which ${CC}` ${WRKSRC}/solenv/bin/cc
+	@${LN} -sf `which ${CXX}` ${WRKSRC}/solenv/bin/g++
+	@${LN} -sf `which ${CXX}` ${WRKSRC}/solenv/bin/c++
+
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
 .if !defined(WITHOUT_MOZILLA)
@@ -183,9 +191,9 @@ do-build:
 	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/pck
 # PR:84786
 .if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ; ${SETENV} "LC_ALL=C" "LANG=C" ${TCSH} -c "source FreeBSDEnv.Set ; cd instsetoo ; build.pl -P${NUMOFPROCESSES} --all"
+	@cd ${WRKSRC} ; ${SETENV} "LC_ALL=C" "LANG=C" ${TCSH} -c "source FreeBSDEnv.Set ; setenv TMP ${WRKSRC} ; cd instsetoo ; build.pl -P${NUMOFPROCESSES} --all"
 .else
-	@cd ${WRKSRC} ; ${SETENV} "LC_ALL=C" "LANG=C" ${TCSH} -c "source FreeBSDEnv.Set ; dmake"
+	@cd ${WRKSRC} ; ${SETENV} "LC_ALL=C" "LANG=C" ${TCSH} -c "source FreeBSDEnv.Set ; setenv TMP ${WRKSRC} ; dmake"
 .endif
 
 do-install:
