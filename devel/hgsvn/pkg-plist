@@ -1,0 +1,3 @@
+bin/hgimportsvn
+bin/hgpullsvn
+%%PYTHON_SITELIBDIR%%/hgsvn-%%VERSION%%-py%%PYVER%%.egg

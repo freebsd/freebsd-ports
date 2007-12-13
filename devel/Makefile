@@ -440,6 +440,7 @@
     SUBDIR += happydoc
     SUBDIR += hapy
     SUBDIR += hc12mem
+    SUBDIR += hgsvn
     SUBDIR += highlighterkit
     SUBDIR += horde-chora
     SUBDIR += hp48cc
