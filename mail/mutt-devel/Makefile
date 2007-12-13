@@ -109,8 +109,8 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.16
-PORTREVISION?=	3
+PORTVERSION=	1.5.17
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -174,6 +174,7 @@ CD_PATCH_VERSION=	1.5.5.1
 CD_IFDEF_PATCH_VERSION=	1.5.4
 DW_PATCH_VERSION=	1.5.6
 AC_PATCH_VERSION=	1.5.9
+VC_PATCH_VERSION=	1.5.16
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -403,21 +404,21 @@ CONFIGURE_ARGS+=	--disable-smtp
 PATCH_DIST_STRIP=	-p1
 
 .if ! defined (WITHOUT_MUTT_COMPRESSED_FOLDERS)
-DISTFILES+=	patch-${RR_PATCH_VERSION}.rr.compressed.2.gz:vvv
+DISTFILES+=	patch-${RR_PATCH_VERSION}.rr.compressed.gz:vvv
 CONFIGURE_ARGS+=	--enable-compressed
 XML_NEEDED=	yes
 pre-patch::
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${RR_PATCH_VERSION}.rr.compressed.2.gz > ${WRKDIR}/patch-compressed
+	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${RR_PATCH_VERSION}.rr.compressed.gz > ${WRKDIR}/patch-compressed
 	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
 		 ${WRKDIR}/patch-compressed
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-compressed
 .endif
 .if defined(WITH_MUTT_NNTP)
-DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.3.gz:vvv
+DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 XML_NEEDED=	yes
 pre-patch::
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${VVV_PATCH_VERSION}.vvv.nntp.3.gz > ${WRKDIR}/patch-nntp
+	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${VVV_PATCH_VERSION}.vvv.nntp.gz > ${WRKDIR}/patch-nntp
 	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
 		${WRKDIR}/patch-nntp
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-nntp
@@ -440,7 +441,7 @@ pre-patch::
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.16.sidebar.20070704.txt
+SIDEBAR_PATCH=	patch-1.5.17.sidebar.20071102.txt
 DISTFILES+=	${SIDEBAR_PATCH}:tchan
 XML_NEEDED=	yes
 pre-patch::
