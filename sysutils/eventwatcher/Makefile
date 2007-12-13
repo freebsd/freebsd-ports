@@ -23,6 +23,9 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
+DEPRECATED=		no active development
+EXPIRATION_DATE=	2008-02-01
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700042
