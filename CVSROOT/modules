@@ -14073,6 +14073,7 @@ rsyncbackup	ports/sysutils/rsyncbackup
 rsyncmanager	ports/sysutils/rsyncmanager
 rsynth		ports/audio/rsynth
 rsyslog		ports/sysutils/rsyslog
+rsyslog-mysql	ports/sysutils/rsyslog-mysql
 rt2		ports/www/rt2
 rt2-demo	ports/games/rt2-demo
 rt3		ports/www/rt3
