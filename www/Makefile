@@ -1117,6 +1117,7 @@
     SUBDIR += rubygem-mechanize
     SUBDIR += rubygem-mongrel
     SUBDIR += rubygem-mongrel_cluster
+    SUBDIR += rubygem-rack
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-rails-app-installer
     SUBDIR += rubygem-redcloth
