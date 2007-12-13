@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	IO-Compress-Base
-PORTVERSION=	2.006
+PORTVERSION=	2.008
 CATEGORIES=	archivers perl5
-MASTER_SITES=	CPAN \
-		http://cpan.sunsite.ualberta.ca/authors/id/P/PM/PMQS/
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Base Class for IO::Uncompress modules
 
 PERL_CONFIGURE=	YES
