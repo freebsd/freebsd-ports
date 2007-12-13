@@ -11,20 +11,22 @@ CATEGORIES=	sysutils
 MASTER_SITES=	CENKES # http://download.rsyslog.com/rsyslog/
 
 MAINTAINER=	infofarmer@FreeBSD.org
-COMMENT=	Enhanced syslog daemon
+COMMENT?=	Enhanced syslog daemon
 
+.ifndef PKGNAMESUFFIX
 LIB_DEPENDS=	logging.0:${PORTSDIR}/devel/liblogging
-
 USE_RC_SUBR=	${PORTNAME}d
+SUB_FILES=	pkg-message
+MAN8=	rfc3195d.8 rklogd.8 rsyslogd.8
+MAN5=	rsyslog.conf.5
+.endif
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-klogd --disable-static
+CONFIGURE_ARGS+=--disable-klogd --disable-static
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-SUB_FILES=	pkg-message
 
-MAN8=	rfc3195d.8 rklogd.8 rsyslogd.8
-MAN5=	rsyslog.conf.5
 PORT_VERBS=	rfc3195d rklogd ${PORTNAME}
 
 post-patch:
@@ -45,11 +47,13 @@ post-configure:
 	@${ECHO_CMD} '#define FEATURE_RFC3195 1' >> ${WRKSRC}/config.h
 	@${ECHO_CMD} '#define PATCHLEVEL "0"' >> ${WRKSRC}/config.h
 
+.ifndef PKGNAMESUFFIX
 post-install:
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/doc/*html ${DOCSDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>

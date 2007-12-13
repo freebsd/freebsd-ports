@@ -566,6 +566,8 @@
     SUBDIR += rsyncbackup
     SUBDIR += rsyncmanager
     SUBDIR += rsyslog
+    SUBDIR += rsyslog-mysql
+    SUBDIR += rsyslog-pgsql
     SUBDIR += rtty
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
