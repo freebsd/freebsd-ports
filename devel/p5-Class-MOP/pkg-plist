@@ -13,7 +13,8 @@
 %%SITE_PERL%%/Class/MOP/Package.pm
 %%SITE_PERL%%/metaclass.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MOP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MOP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MOP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 %%PORTDOCS%%%%EXAMPLESDIR%%/ArrayBasedStorage.pod
 %%PORTDOCS%%%%EXAMPLESDIR%%/AttributesWithHistory.pod
 %%PORTDOCS%%%%EXAMPLESDIR%%/C3MethodDispatchOrder.pod
