@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -214,7 +214,7 @@ MODULES:=${MODULES}:mod_quotatab_sql
 
 .if defined(WITH_CLAMAV)
 #http://www.uglyboxindustries.com/mod_clamav_new.c
-DISTFILES+=	mod_clamav-0.5.tar.bz2:clam
+DISTFILES+=	mod_clamav-0.5.1.tar.bz2:clam
 USE_CLAMAV=	yes
 MODULES:=${MODULES}:mod_clamav
 LIB_DEPENDS+=	clamav.2:${PORTSDIR}/security/clamav
