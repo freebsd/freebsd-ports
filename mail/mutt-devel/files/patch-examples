@@ -77,27 +77,45 @@
  
  into your system's global Muttrc, which normally resides in /etc or
  /usr/local/etc.
---- doc/manual.txt.orig	Fri Feb 23 18:15:51 2007
-+++ doc/manual.txt	Wed Feb 28 14:30:48 2007
-@@ -6219,8 +6219,8 @@
+--- doc/manual.txt.orig	Thu Nov  1 22:07:09 2007
++++ doc/manual.txt	Sun Nov  4 13:55:21 2007
+@@ -2617,9 +2617,10 @@
+ shows that arguments can be quoted: the script will receive the expanded string
+ between the single quotes as the only argument.
  
-    For examples on how to configure these formats for the various
-    versions of PGP which are floating around, see the pgp*.rc and gpg.rc
--   files in the samples/ subdirectory which has been installed on your
--   system alongside the documentation. (PGP only)
-+   files in the share/examples/mutt/ subdirectory which has been installed
-+   on your system alongside the documentation. (PGP only)
+-A practical example is the mutt_xtitle script installed in the samples
+-subdirectory of the mutt documentation: it can be used as filter for
+-$status_format to set the current terminal's title, if supported.
++A practical example is the mutt_xtitle script installed in the
++share/examples/mutt/ subdirectory of the mutt documentation: it can be used as
++filter for $status_format to set the current terminal's title, if supported.
++
  
- 3.163. pgp_getkeys_command
+ Chapter 4. Advanced Usage
  
-@@ -6418,8 +6418,8 @@
-           $$ssmmiimmee__ccaa__llooccaattiioonn" or "-CAfile $$ssmmiimmee__ccaa__llooccaattiioonn".
+@@ -6957,9 +6958,9 @@
+     One or more key IDs.
  
-    For examples on how to configure these formats, see the smime.rc in
--   the samples/ subdirectory which has been installed on your system
--   alongside the documentation. (S/MIME only)
-+   the share/examples/mutt/ subdirectory which has been installed on your
-+   system alongside the documentation. (S/MIME only)
+ For examples on how to configure these formats for the various versions of PGP
+-which are floating around, see the pgp*.rc and gpg.rc files in the samples/
+-subdirectory which has been installed on your system alongside the
+-documentation. (PGP only)
++which are floating around, see the pgp*.rc and gpg.rc files in the
++share/examples/mutt/ subdirectory which has been installed on your system
++alongside the documentation. (PGP only)
  
- 3.182. smime_verify_command
+ 3.169. pgp_getkeys_command
+ 
+@@ -7155,9 +7156,9 @@
+     or file, this expands to "-CApath $smime_ca_location" or "-CAfile
+     $smime_ca_location".
+ 
+-For examples on how to configure these formats, see the smime.rc in the samples
+-/ subdirectory which has been installed on your system alongside the
+-documentation. (S/MIME only)
++For examples on how to configure these formats, see the smime.rc in the 
++share/examples/mutt/ subdirectory which has been installed on your system
++alongside the documentation. (S/MIME only)
+ 
+ 3.188. smime_verify_command
  
