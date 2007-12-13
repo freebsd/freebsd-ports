@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flex
-PORTVERSION=	2.5.33
-PORTREVISION=	1
+PORTVERSION=	2.5.34
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -23,7 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
 USE_GMAKE=	yes
 MAN1=		flex.1
-PLIST_FILES=	bin/flex include/FlexLexer.h lib/libfl.a
+PLIST_FILES=	bin/flex include/FlexLexer.h lib/libfl.a lib/libfl_pic.a
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/install-info-recursive//g;s/info-recursive//g' \
