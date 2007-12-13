@@ -4563,6 +4563,7 @@ hffzip		ports/archivers/hffzip
 hfs		ports/emulators/hfs
 hfsutils	ports/emulators/hfsutils
 hgrep		ports/textproc/hgrep
+hgsvn		ports/devel/hgsvn
 hhm		ports/textproc/hhm
 hi-aspell	ports/textproc/hi-aspell
 hiawatha	ports/www/hiawatha
