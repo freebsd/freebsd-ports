@@ -139,6 +139,8 @@
 %%SITE_PERL%%/IkiWiki/UserInfo.pm
 %%SITE_PERL%%/IkiWiki/Wrapper.pm
 bin/ikiwiki
+bin/ikiwiki-makerepo
+bin/ikiwiki-update-wikilist
 lib/ikiwiki/plugins/externaldemo
 lib/ikiwiki/plugins/rst
 %%W3M%%libexec/w3m/cgi-bin/ikiwiki-w3m.cgi
