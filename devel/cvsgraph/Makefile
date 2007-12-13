@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 
-MAINTAINER=	serge.gagnon@b2b2c.ca
+MAINTAINER=	serge.gagnon.1@ulaval.ca
 COMMENT=	Graph the life story of a file under CVS or RCS
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
