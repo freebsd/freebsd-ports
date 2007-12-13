@@ -1,0 +1,12 @@
+To get bindgraph working, you have to set querylog for bind. An example
+named.conf will be
+
+  logging {
+    channel "querylog" {
+      file "/var/log/query.log" versions 50 size 20m;
+      print-time yes;
+    };
+    category queries { querylog; };
+  };
+
+Make sure BINDGRAPH_USER (default www) can read this log file.

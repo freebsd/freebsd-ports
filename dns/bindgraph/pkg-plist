@@ -1,0 +1,3 @@
+%%CGIDIR%%/bindgraph.cgi
+sbin/bindgraph.pl
+@dirrmtry %%CGIDIR%%
