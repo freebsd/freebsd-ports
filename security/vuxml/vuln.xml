@@ -416,6 +416,19 @@ Note:  Please add new entries to the beginning of this file.
 	<name>linux-seamonkey</name>
 	<range><lt>1.1.7</lt></range>
       </package>
+      <package>
+	<name>flock</name>
+	<name>linux-flock</name>
+	<range><lt>1.0.2</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<range><lt>3.0.a2007.12.12</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey-devel</name>
+	<range><lt>2.0.a2007.12.12</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -436,6 +449,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-11-26</discovery>
       <entry>2007-11-27</entry>
+      <modified>2007-12-14</modified>
     </dates>
   </vuln>
 
@@ -2132,11 +2146,11 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-firefox-devel</name>
-	<range><gt>0</gt></range>
+	<range><lt>3.0.a2007.12.12</lt></range>
       </package>
       <package>
 	<name>linux-seamonkey-devel</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.0.a2007.12.12</lt></range>
       </package>
       <!-- Deprecated/old names -->
       <package>
@@ -2167,7 +2181,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-09-18</discovery>
       <entry>2007-09-19</entry>
-      <modified>2007-10-31</modified>
+      <modified>2007-12-14</modified>
     </dates>
   </vuln>
 
@@ -3242,11 +3256,11 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-firefox-devel</name>
-	<range><gt>0</gt></range>
+	<range><lt>3.0.a2007.12.12</lt></range>
       </package>
       <package>
 	<name>linux-seamonkey-devel</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.0.a2007.12.12</lt></range>
       </package>
       <!-- Deprecated/old names -->
       <package>
@@ -3294,7 +3308,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-07-17</discovery>
       <entry>2007-07-19</entry>
-      <modified>2007-07-31</modified>    
+      <modified>2007-12-14</modified>    
     </dates>
   </vuln>
 
