@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xabacus
-PORTVERSION=	7.3.1
+PORTVERSION=	7.3.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.tux.org/~bagleyd/abacus/ \
 		http://ftp.tux.org/pub/tux/bagleyd/xabacus/ \
@@ -17,10 +17,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abacus for X Window System
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	xpm
+USE_XLIB=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget
-USE_XPM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-nas
 
