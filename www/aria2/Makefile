@@ -18,15 +18,19 @@ COMMENT=	Yet another download tool
 #CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 #MAKE_ENV=	DONTSTRIP=
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-openssl \
-		--with-libxml2 --without-gnutls --without-libares --without-libcares \
-		--program-transform-name=""
+		--with-libxml2 --without-gnutls --without-libares \
+		--without-libcares --program-transform-name=""
 
 USE_GCC=	3.4+
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack libxml2
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+.ifdef WITHOUT_NLS
+CONFIGURE_ARGS+=	--disable-nls
+.else
 LINGUAS=	ca de es fr it ja nl pt_BR ru sv
+.endif
 PLIST_FILES=	bin/aria2c \
 		${LINGUAS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2c.mo|}
 MAN1=		aria2c.1
