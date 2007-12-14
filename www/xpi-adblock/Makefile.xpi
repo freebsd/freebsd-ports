@@ -84,12 +84,14 @@ USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 XPI_DISTNAME?=	${PORTNAME}
-XPI_APPS_ALL_WC=	*firefox* *thunderbird* *flock* *sunbird*
+XPI_APPS_ALL_WC=	*firefox* *thunderbird* *flock* *sunbird* \
+					*netscape-navigator* *netscape-messenger*
 # *nvu*
 XPI_APPS_ALL=	firefox firefox-devel linux-firefox linux-firefox-devel \
 				thunderbird linux-thunderbird flock linux-flock \
+				linux-netscape-navigator linux-netscape-messenger \
 				sunbird linux-sunbird
-# nvu linux-nvu 
+# nvu linux-nvu kompozer linux-kompozer
 # Other apps: mango
 
 # === Let's process WITH_XPI into WITH_XPI_APPS
