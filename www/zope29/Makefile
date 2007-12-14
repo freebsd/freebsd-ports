@@ -81,7 +81,9 @@ post-install:
 	${CP} ${FILESDIR}/Products_00readme-freebsd.txt \
 		${ZOPEBASEDIR}/Products/00readme-freebsd.txt
 
-	${FIND} ${ZOPEBASEDIR} -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w+r
+.for d in lib bin doc skel Products
+	${FIND} ${ZOPEBASEDIR}/$d -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w+r
+.endfor
 
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
