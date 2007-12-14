@@ -1,6 +1,6 @@
---- config.mk.orig	2007-10-25 20:24:37.000000000 +0200
-+++ config.mk	2007-10-27 00:42:50.000000000 +0200
-@@ -4,21 +4,21 @@
+--- config.mk.orig	2007-11-21 21:18:41.000000000 +0100
++++ config.mk	2007-11-22 16:49:20.000000000 +0100
+@@ -4,19 +4,19 @@
  # Customize below to fit your system
  
  # paths
@@ -21,15 +21,11 @@
  # flags
 -CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
 -LDFLAGS = -s ${LIBS}
--CFLAGS = -g -std=c99 -pedantic -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
--LDFLAGS = -g ${LIBS}
 +CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
 +LDFLAGS+= ${LIBS}
-+#CFLAGS = -g -std=c99 -pedantic -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
-+#LDFLAGS = -g ${LIBS}
+ #CFLAGS = -g -std=c99 -pedantic -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
+ #LDFLAGS = -g ${LIBS}
  
- # Solaris
- #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
 @@ -26,4 +26,4 @@
  #CFLAGS += -xtarget=ultra
  
