@@ -7,6 +7,7 @@
 
 PORTNAME=	frox
 PORTVERSION=	0.7.18
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.hollo.org/frox/download/ \
 		http://frox.sourceforge.net/download/ \
@@ -38,6 +39,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ARGS=	--enable-configfile=${PREFIX}/etc/frox.conf
 
 OPTIONS=	IPFILTER "Use ipfilter instead of ipfw" off \
+		PF "Build with pf(4) support" off \
 		VIRUS_SCAN "Run external virus scaner on each download" off \
 		HTTP_CACHE "Enable use of external cache" on \
 		LOCAL_CACHE "Enable use of local cache" off \
@@ -55,6 +57,9 @@ WITH_CCP=	yes
 
 .if defined(WITH_IPFILTER)
 CONFIGURE_ARGS+=	--enable-ipfilter
+.endif
+.if defined(WITH_PF)
+CONFIGURE_ENV+=		"CPPFLAGS=-DPF"
 .endif
 .if defined(WITH_VIRUS_SCAN)
 CONFIGURE_ARGS+=	--enable-virus-scan
