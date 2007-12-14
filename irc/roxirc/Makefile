@@ -11,12 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	irc tk
 MASTER_SITES=	http://roxirc.lighter.net/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	A tcl/tk irc client
-
-BROKEN=		unfetchable
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=	2007-11-18
 
 USE_TK=		yes
 NO_BUILD=	yes
