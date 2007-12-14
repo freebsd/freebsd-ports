@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fmit
-PORTVERSION=	0.97.6
+PORTVERSION=	0.97.7
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/fmit/
 
