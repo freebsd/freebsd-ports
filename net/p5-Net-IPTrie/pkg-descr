@@ -1,0 +1,7 @@
+This module uses a radix tree (or trie) to quickly build the hierarchy of a
+given address space (both IPv4 and IPv6).  This allows the user to perform
+fast subnet or routing lookups.
+
+It is implemented exclusively in Perl.
+
+WWW: http://search.cpan.org/dist/Net-IPTrie/

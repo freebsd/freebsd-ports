@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Net/IPTrie.pm
+%%SITE_PERL%%/Net/IPTrie/Node.pm
+@dirrm %%SITE_PERL%%/Net/IPTrie
+@dirrmtry %%SITE_PERL%%/Net
