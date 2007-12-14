@@ -7,7 +7,7 @@
 
 PORTNAME=	eroaster
 PORTVERSION=	2.2.0.0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	eroaster
@@ -41,5 +41,7 @@ post-patch::
 	@cd ${WRKSRC} && ${RM} process.py.orig
 	@${REINPLACE_CMD} -e 's|share/applets/Utility|share/gnome/apps/Utilities|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's| --activate-goad-server=eroaster||' ${WRKSRC}/eroaster.desktop
+	@${REINPLACE_CMD} -e 's|whrandom|random|' ${WRKSRC}/gnometools.py
+	@${RM} ${WRKSRC}/gnometools.py.bak
 
 .include <bsd.port.mk>
