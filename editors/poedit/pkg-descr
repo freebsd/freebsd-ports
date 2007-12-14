@@ -1,4 +1,4 @@
-poEdit is cross-platform gettext catalogs (.po files) editor. It is built
+Poedit is cross-platform gettext catalogs (.po files) editor. It is built
 with wxWindows toolkit and can run on any platform supported by it (although
 it was tested only on Unix with GTK+ and Windows). It aims to provide more
 convenient approach to editing catalogs than launching vi and editing the
@@ -16,7 +16,7 @@ Here is a brief features list:
    - Automatic compilation of .mo files (optional) 
    - Automatic headers update 
    - References browser lets you see where in what context the string is used 
-   - You can use poEdit to scan source code for translatable strings 
+   - You can use Poedit to scan source code for translatable strings 
    - Integration with KDE and GNOME desktops 
 
 WWW: http://www.poedit.net/
