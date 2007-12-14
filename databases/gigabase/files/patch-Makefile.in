@@ -1,11 +1,11 @@
---- Makefile.in.orig	Wed Jun 15 12:21:14 2005
-+++ Makefile.in	Wed Jun 15 12:23:48 2005
+--- Makefile.in.orig	Fri May  4 23:46:57 2007
++++ Makefile.in	Sun Oct 21 03:00:51 2007
 @@ -5,8 +5,10 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
  VPATH = @srcdir@
 -LIBTOOL = ./libtool
-+LIBTOOL? = ./libtool
++LIBTOOL = @LIBTOOL@
  INSTALL = @INSTALL@
 +INSTALL_PROGRAM = @INSTALL_PROGRAM@
 +INSTALL_DATA = @INSTALL_DATA@
@@ -30,6 +30,24 @@
  CXXFLAGS = @CXXFLAGS@ $(DEFS)
  CFLAGS = @CFLAGS@ $(DEFS)
  LD = $(CXX)
+@@ -70,7 +72,7 @@
+ 
+ $(GB_LIB): $(OBJS)
+ # Coment this for AIX/xlC 5.0
+-	$(LIBTOOL) --mode=link $(CXX) -o $@ $(OBJS) $(LDFLAGS) @LTHREADSLIB@ -rpath $(libdir) -version-info $(VERSION)
++	$(LIBTOOL) --mode=link $(CXX) -o $@ $(OBJS) $(LDFLAGS) -rpath $(libdir) -version-info $(VERSION)
+ # Uncoment this for AIX/xlC 5.0
+ #	mkdir .libs
+ #	xlC_r -qmkshrobj=-10 -o .libs/gigabase.so $(OBJS)
+@@ -80,7 +82,7 @@
+ 
+ $(CLI_LIB): $(CLI_OBJS)
+ # Coment this for AIX/xlC 5.0
+-	$(LIBTOOL) --mode=link $(CXX) -o $@ $(CLI_OBJS) $(LDFLAGS) @LTHREADSLIB@ -rpath $(libdir) -version-info $(VERSION)
++	$(LIBTOOL) --mode=link $(CXX) -o $@ $(CLI_OBJS) $(LDFLAGS) -rpath $(libdir) -version-info $(VERSION)
+ # Uncoment this for AIX/xlC 5.0
+ #	xlC_r -qmkshrobj=-10 -o .libs/cli.so $(CLI_OBJS)
+ #	ar rv .libs/libcli_r.a .libs/cli.so
 @@ -146,14 +148,14 @@
  
  install: subsql $(GB_LIB) $(CLI_LIB)
