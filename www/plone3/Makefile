@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	plone3
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.4
 CATEGORIES=	www zope
-MASTER_SITES=	http://plone.googlecode.com/files/:src
-DISTFILES=	Plone-${PORTVERSION}.tar.gz:src
+MASTER_SITES=	https://launchpad.net/plone/3.0/${PORTVERSION}/+download/
+DISTFILES=	Plone-${PORTVERSION}.tar.gz
 #DIST_SUBDIR=	zope
 
 MAINTAINER=	nakaji@jp.FreeBSD.org
@@ -77,12 +77,16 @@ do-install:
 	@${CP} -R ${WRKSRC}/Products/$m ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}
 	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/$m -type f -print0 \
 		| ${XARGS} -0 -- ${CHMOD} a-w
+	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/$m -name .svn -print0 \
+		| ${XARGS} -0 -- ${RM} -rf
 .endfor
 	@${MKDIR} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python
 .for m in ${_PY_MODULES}
 	@${CP} -R ${WRKSRC}/lib/python/$m ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python
 	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python/$m -type f -print0 \
 		| ${XARGS} -0 -- ${CHMOD} a-w
+	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python/$m -name .svn -print0 \
+		| ${XARGS} -0 -- ${RM} -rf
 .endfor
 
 post-install:
