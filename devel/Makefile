@@ -2000,6 +2000,7 @@
     SUBDIR += py-tconfpy
     SUBDIR += py-testgears
     SUBDIR += py-testoob
+    SUBDIR += py-thrift
     SUBDIR += py-trace2html
     SUBDIR += py-turbocheetah
     SUBDIR += py-turbojson

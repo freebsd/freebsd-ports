@@ -1,0 +1,55 @@
+%%PYTHON_SITELIBDIR%%/thrift/TSCons.py
+%%PYTHON_SITELIBDIR%%/thrift/TSCons.pyc
+%%PYTHON_SITELIBDIR%%/thrift/TSCons.pyo
+%%PYTHON_SITELIBDIR%%/thrift/Thrift.py
+%%PYTHON_SITELIBDIR%%/thrift/Thrift.pyc
+%%PYTHON_SITELIBDIR%%/thrift/Thrift.pyo
+%%PYTHON_SITELIBDIR%%/thrift/__init__.py
+%%PYTHON_SITELIBDIR%%/thrift/__init__.pyc
+%%PYTHON_SITELIBDIR%%/thrift/__init__.pyo
+%%PYTHON_SITELIBDIR%%/thrift/protocol/TBinaryProtocol.py
+%%PYTHON_SITELIBDIR%%/thrift/protocol/TBinaryProtocol.pyc
+%%PYTHON_SITELIBDIR%%/thrift/protocol/TBinaryProtocol.pyo
+%%PYTHON_SITELIBDIR%%/thrift/protocol/TProtocol.py
+%%PYTHON_SITELIBDIR%%/thrift/protocol/TProtocol.pyc
+%%PYTHON_SITELIBDIR%%/thrift/protocol/TProtocol.pyo
+%%PYTHON_SITELIBDIR%%/thrift/protocol/__init__.py
+%%PYTHON_SITELIBDIR%%/thrift/protocol/__init__.pyc
+%%PYTHON_SITELIBDIR%%/thrift/protocol/__init__.pyo
+%%PYTHON_SITELIBDIR%%/thrift/protocol/fastbinary.so
+%%PYTHON_SITELIBDIR%%/thrift/reflection/__init__.py
+%%PYTHON_SITELIBDIR%%/thrift/reflection/__init__.pyc
+%%PYTHON_SITELIBDIR%%/thrift/reflection/__init__.pyo
+%%PYTHON_SITELIBDIR%%/thrift/reflection/limited/__init__.py
+%%PYTHON_SITELIBDIR%%/thrift/reflection/limited/__init__.pyc
+%%PYTHON_SITELIBDIR%%/thrift/reflection/limited/__init__.pyo
+%%PYTHON_SITELIBDIR%%/thrift/reflection/limited/constants.py
+%%PYTHON_SITELIBDIR%%/thrift/reflection/limited/constants.pyc
+%%PYTHON_SITELIBDIR%%/thrift/reflection/limited/constants.pyo
+%%PYTHON_SITELIBDIR%%/thrift/reflection/limited/ttypes.py
+%%PYTHON_SITELIBDIR%%/thrift/reflection/limited/ttypes.pyc
+%%PYTHON_SITELIBDIR%%/thrift/reflection/limited/ttypes.pyo
+%%PYTHON_SITELIBDIR%%/thrift/server/TServer.py
+%%PYTHON_SITELIBDIR%%/thrift/server/TServer.pyc
+%%PYTHON_SITELIBDIR%%/thrift/server/TServer.pyo
+%%PYTHON_SITELIBDIR%%/thrift/server/__init__.py
+%%PYTHON_SITELIBDIR%%/thrift/server/__init__.pyc
+%%PYTHON_SITELIBDIR%%/thrift/server/__init__.pyo
+%%PYTHON_SITELIBDIR%%/thrift/transport/THttpClient.py
+%%PYTHON_SITELIBDIR%%/thrift/transport/THttpClient.pyc
+%%PYTHON_SITELIBDIR%%/thrift/transport/THttpClient.pyo
+%%PYTHON_SITELIBDIR%%/thrift/transport/TSocket.py
+%%PYTHON_SITELIBDIR%%/thrift/transport/TSocket.pyc
+%%PYTHON_SITELIBDIR%%/thrift/transport/TSocket.pyo
+%%PYTHON_SITELIBDIR%%/thrift/transport/TTransport.py
+%%PYTHON_SITELIBDIR%%/thrift/transport/TTransport.pyc
+%%PYTHON_SITELIBDIR%%/thrift/transport/TTransport.pyo
+%%PYTHON_SITELIBDIR%%/thrift/transport/__init__.py
+%%PYTHON_SITELIBDIR%%/thrift/transport/__init__.pyc
+%%PYTHON_SITELIBDIR%%/thrift/transport/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/thrift/transport
+@dirrm %%PYTHON_SITELIBDIR%%/thrift/server
+@dirrm %%PYTHON_SITELIBDIR%%/thrift/reflection/limited
+@dirrm %%PYTHON_SITELIBDIR%%/thrift/reflection
+@dirrm %%PYTHON_SITELIBDIR%%/thrift/protocol
+@dirrm %%PYTHON_SITELIBDIR%%/thrift
