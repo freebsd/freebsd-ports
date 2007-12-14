@@ -3,4 +3,4 @@
 # $FreeBSD$
 
 cd "%%DATADIR%%"
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar robocode.jar "$@"
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar libs/robocode.jar "$@"

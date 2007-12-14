@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	robocode
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	games java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=robocode
-DISTNAME=	${PORTNAME}-setup-${PORTVERSION}A
+DISTNAME=	${PORTNAME}-setup-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	nemoliu@FreeBSD.org
@@ -30,7 +29,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 INSTFILES=	battles javadoc license robocode.ico \
-		robocode.jar robots templates versions.txt
+		libs robots templates versions.txt
 
 SUB_FILES=	robocode.sh
 
