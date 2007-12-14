@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftp-proxy
-PORTVERSION=	4.2p1
+PORTVERSION=	4.2p2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.chrissicool.net/projects/ftp-proxy/distfiles/
 
@@ -29,8 +29,8 @@ CFLAGS+=	-I${PREFIX}/include
 IGNORE=		is a part of base for 7.0 and above
 .endif
 
-.if ${OSVERSION} < 600105
-BROKEN=	does not build on 5.x
+.if ${OSVERSION} < 502106
+IGNORE=		only for 5.3 and above
 .endif
 
 do-install:
