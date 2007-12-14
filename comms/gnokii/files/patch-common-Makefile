@@ -1,13 +1,13 @@
---- common/Makefile.orig	Sun Feb  1 16:59:32 2004
-+++ common/Makefile	Fri Feb 13 20:02:19 2004
-@@ -89,8 +89,8 @@
- install:
- 	$(INSTALL) -d $(DESTDIR)$(libdir)
- 	$(LIBTOOL) --mode=install $(INSTALL) libgnokii.la $(DESTDIR)$(libdir)
+--- common/Makefile.orig	2007-11-24 12:31:01.000000000 +0100
++++ common/Makefile	2007-12-06 12:02:39.000000000 +0100
+@@ -107,8 +107,8 @@
+ 	@echo "done"
+ 
+ install-devel: install
 -	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
 -	$(INSTALL_DATA) gnokii.pc $(DESTDIR)$(libdir)/pkgconfig
 +	$(INSTALL) -d $(DESTDIR)$(prefix)/libdata/pkgconfig
 +	$(INSTALL_DATA) gnokii.pc $(DESTDIR)$(prefix)/libdata/pkgconfig
- 	@echo
+ 	@echo "done"
  
- install-strip: install
+ depend dep:

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnokii
-PORTVERSION=	0.6.18
-PORTREVISION=	1
+PORTVERSION=	0.6.22
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
@@ -32,7 +31,7 @@ MAN1=		gnokii.1 sendsms.1
 MAN8=		gnokiid.8 mgnokiidev.8
 PORTDOCS=	*
 
-INSTALL_TARGET=	install-suid
+INSTALL_TARGET=	install-binaries install-docs install-includes
 PKGDEINSTALL=	${PKGINSTALL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
