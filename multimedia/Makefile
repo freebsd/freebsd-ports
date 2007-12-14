@@ -53,6 +53,7 @@
     SUBDIR += gopchop
     SUBDIR += gpac-libgpac
     SUBDIR += gpac-mp4box
+    SUBDIR += gpodder
     SUBDIR += grpplaylist
     SUBDIR += gstreamer
     SUBDIR += gstreamer-ffmpeg
