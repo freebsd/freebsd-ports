@@ -1,45 +1,4 @@
-NOTE: 
-Due to the name change the product releases will work as follows:
-
-o  3.2.x series: these releases will continue to use the Wildfire name so
-   that critical bug fixes can be delivered with minimal hassle to existing
-   users. 
-   (net-im/wildfire)
-
-o  3.3.x series: starting with 3.3.0, the server is called Openfire. 
-   There will be a small amount of upgrade pain associated with this release
-   since configuration files like wildfire.xml will now be openfire.xml, etc.
-   (net-im/openfire)
-
-WARNING:
-===========================================================================
-This is an upgrade procedure from wildfire 3.2.4 to openfire 3.3.0:
-
-1) Stop the wildfire server if it still running.
-2) Back up setup.
-3) Go to %%ETCDIR%% and copy configuration from old setup
-   a) Copy wildfire.xml and rename it to openfire.xml.
-   b) Search for org.jivesoftware.wildfire. and replace with
-      org.jivesoftware.openfire. in openfire.xml
-   c) Change owner for configurations files:
-      chown -R openfire:openfire %%ETCDIR%%
-4) If using embedded database:
-   a) Copy and rename files:
-      /var/db/wildfire/wildfire* files to /var/db/openfire/openfire*
-   b) Change owner for the database files:
-      chown -R openfire:openfire /var/db/openfire
-5) Copy old certificates from resources/security directory to same 
-   location in openfire. If you are using self-signed certificates then 
-   regenerate them after start up.
-6) Start up the server using new rc script:
-   a) Add openfire_enable="YES" into rc.conf file.
-   b) %%PREFIX%%/etc/rc.d/openfire start
-7) Reinstall the plugins.
-8) If at that point you want to downgrade to wildfire 3.2.4 for some
-   reason please be sure to reinstall the wildfire port.
-===========================================================================
-
-You can find the documentation files for this package in the 
-directory %%DOCSDIR%%.
-To enable openfire startup script please add openfire_enable="YES" 
-in your rc.conf
+You can find the documentation files for this package in
+%%DOCSDIR%%.
+To enable openfire startup script please add openfire_enable="YES" in 
+your rc.conf file.
