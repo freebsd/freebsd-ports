@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drupal4
-PORTVERSION=	4.7.8
+PORTVERSION=	4.7.10
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
