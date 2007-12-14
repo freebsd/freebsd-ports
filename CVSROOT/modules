@@ -12076,6 +12076,7 @@ pflogstats	ports/mail/pflogstats
 pflogsumm	ports/mail/pflogsumm
 pflogx		ports/sysutils/pflogx
 pfqueue		ports/mail/pfqueue
+pfscalibration	ports/graphics/pfscalibration
 pfstat		ports/sysutils/pfstat
 pfstmo		ports/graphics/pfstmo
 pfstools	ports/graphics/pfstools
