@@ -1,0 +1,96 @@
+diff -ur usbctl.c usbctl.c
+--- usbctl.c	Mon Feb 25 01:50:55 2002
++++ usbctl.c	Thu Mar 27 14:47:09 2003
+@@ -26,6 +26,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <sys/ioctl.h>
+ #include <sys/types.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+@@ -33,15 +34,6 @@
+ #include <errno.h>
+ #include <dev/usb/usb.h>
+ #include <dev/usb/usbhid.h>
+-
+-#ifndef USB_STACK_VERSION
+-#define ucr_addr addr
+-#define ucr_request request
+-#define ucr_data data
+-#define ucr_flags flags
+-#define udi_addr addr
+-#define udi_class class
+-#endif
+ 
+ #ifndef UICLASS_HID
+ #define UICLASS_HID UCLASS_HID
+diff -ur usbdebug.c usbdebug.c
+--- usbdebug.c	Wed May 19 01:47:45 1999
++++ usbdebug.c	Sun Mar 23 15:29:31 2003
+@@ -25,6 +25,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <sys/ioctl.h>
+ #include <sys/types.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+diff -ur usbgen.c usbgen.c
+--- usbgen.c	Mon Feb 25 01:55:12 2002
++++ usbgen.c	Thu Mar 27 14:47:40 2003
+@@ -26,6 +26,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <sys/ioctl.h>
+ #include <sys/types.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+@@ -38,25 +39,6 @@
+ #define UE_GET_DIR(a)	((a) & 0x80)
+ #define UE_DIR_IN	0x80
+ #define UE_DIR_OUT	0x00
+-#endif
+-
+-#ifndef USB_STACK_VERSION
+-#define uid_config_index config_index
+-#define uid_interface_index interface_index
+-#define uid_alt_index alt_index
+-#define uid_desc desc
+-#define ued_config_index config_index
+-#define ued_interface_index interface_index
+-#define ued_alt_index alt_index
+-#define ued_endpoint_index endpoint_index
+-#define ued_desc desc
+-#define ucd_config_index config_index
+-#define ucd_desc desc
+-#define uai_config_index config_index
+-#define uai_interface_index interface_index
+-#define udi_product product
+-#define udi_vendor vendor
+-#define udi_addr addr
+ #endif
+ 
+ int verbose;
+diff -ur usbstats.c usbstats.c
+--- usbstats.c	Mon Feb 25 01:55:56 2002
++++ usbstats.c	Thu Mar 27 14:47:44 2003
+@@ -25,15 +25,13 @@
+  */
+ 
+ #include <stdio.h>
++#include <sys/ioctl.h>
+ #include <sys/types.h>
+ #include <fcntl.h>
+ #include <unistd.h>
++#include <stdlib.h>
+ #include <err.h>
+ #include <dev/usb/usb.h>
+-
+-#ifndef USB_STACK_VERSION
+-#define uds_requests requests
+-#endif
+ 
+ #define USBDEV "/dev/usb"
+ 
