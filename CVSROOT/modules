@@ -7939,6 +7939,7 @@ multisync-backup	ports/deskutils/multisync-backup
 multisync-syncml	ports/deskutils/multisync-syncml
 multitail	ports/sysutils/multitail
 multivideo	ports/graphics/multivideo
+mummer		ports/biology/mummer
 mumps		ports/math/mumps
 mumps-mpich	ports/math/mumps-mpich
 munger		ports/lang/munger
