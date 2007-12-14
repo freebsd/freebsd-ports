@@ -24,13 +24,9 @@ CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 # Add library patch when using -ljpeg
