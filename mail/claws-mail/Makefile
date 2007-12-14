@@ -7,6 +7,7 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -166,7 +167,7 @@ PLIST_SUB+=	DILLO="@comment "
 CONFIGURE_ARGS+=	--disable-dillo-viewer-plugin
 .endif
 
-.if defined(WITHOUT_IPV6) || defined(WITH_ALL)
+.if !defined(WITHOUT_IPV6) || defined(WITH_ALL)
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
