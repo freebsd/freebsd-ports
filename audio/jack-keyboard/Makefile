@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jack-keyboard
-PORTVERSION=	1.7
+DISTVERSION=	2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://pin.if.uz.zgora.pl/~trasz/jack-keyboard/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -14,7 +14,8 @@ MASTER_SITES=	http://pin.if.uz.zgora.pl/~trasz/jack-keyboard/ \
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Virtual keyboard for JACK MIDI
 
-LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
+		lash.2:${PORTSDIR}/audio/lash
 
 PLIST_FILES=	bin/jack-keyboard
 PORTDOCS=	README NEWS
