@@ -12,13 +12,14 @@ PORTREVISION=	3
 CATEGORIES=	games devel
 MASTER_SITES=	http://adgali.apiou.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	An open source game library useful for 2D game development
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
@@ -28,18 +29,14 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 CONFIGURE_ARGS=	--enable-compile-optim=no
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		"Does not build with gcc 4.2"
-.endif
-
 .if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-BROKEN=		"Configure fails"
+BROKEN=		Configure fails
 .endif
 
 post-install:
