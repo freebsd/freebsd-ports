@@ -14,14 +14,14 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	perky
 PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Not Erik's Windowing Toolkit:  console I/O handling library#'
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		popt.0:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 SOVERSION=	51
 TCL_VERSION?=	tcl8.3
 TCL_NODOT=	${TCL_VERSION:S/.//}
