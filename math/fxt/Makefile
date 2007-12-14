@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fxt
-PORTVERSION=	2006.12.17
+PORTVERSION=	2007.11.02
 CATEGORIES=	math
 MASTER_SITES=	http://www.jjj.de/fxt/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -18,16 +18,11 @@ COMMENT=	FFT code and related stuff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	CXX="${CXX}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -41,7 +36,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/00*.txt ${DOCSDIR}/
-
+.endif
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/demo && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
 .endif
