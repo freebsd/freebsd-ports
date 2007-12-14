@@ -7,21 +7,16 @@
 #
 
 PORTNAME=	oregano
-PORTVERSION=	0.60.0
-PORTREVISION=	4
+PORTVERSION=	0.69.0
 CATEGORIES=	cad gnome
-MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/84/
+MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/86/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Schematic capture and simulation of electrical circuits
 
-BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
-
-USE_BZIP2=	yes
-USE_XLIB=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gtksourceview intlhack libglade2 \
-		libgnomeprintui libgnomeui
+		libgnomeui
+USE_GETTEXT=	yes
 USE_SCONS=	yes
 INSTALLS_OMF=	yes
 
@@ -40,7 +35,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/help/${lang}/*.omf \
 		${PREFIX}/share/omf/oregano
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/gnome-oregano.svg \
-		${PREFIX}/share/pixmaps/gnome-oregano.svg
 
 .include <bsd.port.post.mk>

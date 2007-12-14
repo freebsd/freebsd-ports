@@ -11,48 +11,48 @@ share/mime-info/oregano.mime
 share/omf/oregano/oregano-C.omf
 share/omf/oregano/oregano-es.omf
 share/omf/oregano/oregano-fr.omf
-share/oregano/dialogs/clamp-properties-dialog.glade2
-share/oregano/dialogs/log-window.glade2
-share/oregano/dialogs/page-properties.glade2
-share/oregano/dialogs/part-browser.glade2
-share/oregano/dialogs/part-properties-dialog.glade2
-share/oregano/dialogs/plot-add-function.glade2
-share/oregano/dialogs/plot-export.glade2
-share/oregano/dialogs/plot-window.glade2
-share/oregano/dialogs/properties.glade2
-share/oregano/dialogs/settings.glade2
-share/oregano/dialogs/sim-settings.glade2
-share/oregano/dialogs/simulation.glade2
-share/oregano/dialogs/splash.glade2
-share/oregano/dialogs/splash.xpm
-share/oregano/dialogs/textbox-properties-dialog.glade2
-share/oregano/dialogs/view-netlist.glade2
-share/oregano/examples/Full-wave bridge rectifier.oregano
-share/oregano/examples/carga_capacitor.oregano
-share/oregano/examples/opamp.oregano
-share/oregano/examples/opamp_ideal.oregano
-share/oregano/examples/pasa_altos.oregano
-share/oregano/examples/simple.oregano
-share/oregano/examples/simple2.oregano
-share/oregano/libraries/cmos.oreglib
-share/oregano/libraries/cpu.oreglib
-share/oregano/libraries/default.oreglib
-share/oregano/libraries/interface.oreglib
-share/oregano/libraries/linear.oreglib
-share/oregano/libraries/memory.oreglib
-share/oregano/libraries/miscellaneous.oreglib
-share/oregano/libraries/opamplib.oreglib
-share/oregano/libraries/peripheral.oreglib
-share/oregano/libraries/power.oreglib
-share/oregano/libraries/ttl.oreglib
-share/oregano/models/12AX7A.model
-share/oregano/models/1N750.model
-share/oregano/models/DiodeBridge.model
-share/oregano/models/NPN.model
-share/oregano/models/PNP.model
-share/oregano/models/TLC555.model
-share/oregano/models/UA741.model
-share/pixmaps/gnome-oregano.svg
+%%DATADIR%%/dialogs/clamp-properties-dialog.glade2
+%%DATADIR%%/dialogs/export.glade2
+%%DATADIR%%/dialogs/log-window.glade2
+%%DATADIR%%/dialogs/part-browser.glade2
+%%DATADIR%%/dialogs/part-properties-dialog.glade2
+%%DATADIR%%/dialogs/plot-add-function.glade2
+%%DATADIR%%/dialogs/plot-window.glade2
+%%DATADIR%%/dialogs/print-options.glade2
+%%DATADIR%%/dialogs/properties.glade2
+%%DATADIR%%/dialogs/settings.glade2
+%%DATADIR%%/dialogs/sim-settings.glade2
+%%DATADIR%%/dialogs/simulation.glade2
+%%DATADIR%%/dialogs/splash.glade2
+%%DATADIR%%/dialogs/splash.xpm
+%%DATADIR%%/dialogs/textbox-properties-dialog.glade2
+%%DATADIR%%/dialogs/view-netlist.glade2
+%%DATADIR%%/examples/Full-wave bridge rectifier.oregano
+%%DATADIR%%/examples/carga_capacitor.oregano
+%%DATADIR%%/examples/opamp.oregano
+%%DATADIR%%/examples/opamp_ideal.oregano
+%%DATADIR%%/examples/pasa_altos.oregano
+%%DATADIR%%/examples/simple.oregano
+%%DATADIR%%/examples/simple2.oregano
+%%DATADIR%%/libraries/cmos.oreglib
+%%DATADIR%%/libraries/cpu.oreglib
+%%DATADIR%%/libraries/default.oreglib
+%%DATADIR%%/libraries/interface.oreglib
+%%DATADIR%%/libraries/linear.oreglib
+%%DATADIR%%/libraries/memory.oreglib
+%%DATADIR%%/libraries/miscellaneous.oreglib
+%%DATADIR%%/libraries/opamplib.oreglib
+%%DATADIR%%/libraries/peripheral.oreglib
+%%DATADIR%%/libraries/power.oreglib
+%%DATADIR%%/libraries/ttl.oreglib
+%%DATADIR%%/models/12AX7A.model
+%%DATADIR%%/models/1N4148.model
+%%DATADIR%%/models/1N750.model
+%%DATADIR%%/models/DiodeBridge.model
+%%DATADIR%%/models/NPN.model
+%%DATADIR%%/models/PNP.model
+%%DATADIR%%/models/TLC555.model
+%%DATADIR%%/models/UA741.model
 share/locale/ca/LC_MESSAGES/oregano.mo
 share/locale/de/LC_MESSAGES/oregano.mo
 share/locale/es/LC_MESSAGES/oregano.mo
@@ -65,11 +65,12 @@ share/locale/ro/LC_MESSAGES/oregano.mo
 share/locale/ru/LC_MESSAGES/oregano.mo
 share/locale/sv/LC_MESSAGES/oregano.mo
 share/mime/packages/oregano.xml
-@dirrm share/oregano/models
-@dirrm share/oregano/libraries
-@dirrm share/oregano/examples
-@dirrm share/oregano/dialogs
-@dirrm share/oregano
+share/pixmaps/gnome-oregano.svg
+@dirrm %%DATADIR%%/models
+@dirrm %%DATADIR%%/libraries
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/dialogs
+@dirrm %%DATADIR%%
 @dirrm share/omf/oregano
 @dirrm share/gnome/help/oregano/fr
 @dirrm share/gnome/help/oregano/es
