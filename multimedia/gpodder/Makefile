@@ -1,0 +1,85 @@
+# New ports collection makefile for:	gpodder
+# Date created:		20 October 2007
+# Whom:			Chess Griffin <chess@chessgriffin.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gpodder
+PORTVERSION=	0.10.1
+CATEGORIES=	multimedia
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	gpodder
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+
+MAINTAINER=	chess@chessgriffin.com
+COMMENT=	A GTK2 podcast aggregrator written in Python
+
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
+		convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
+		wget:${PORTSDIR}/ftp/wget
+
+USE_GMAKE=	yes
+USE_GNOME=	pygtk2 libglade2
+USE_GETTEXT=	yes
+USE_PYTHON=	yes
+USE_PYTHONDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	gPodder
+INSTALLS_ICONS=	yes
+
+MANCOMPRESSED=	no
+MAN1=		${PORTNAME}.1
+
+PORTDOCS=	AUTHORS COPYING ChangeLog PKG-INFO README TODO
+
+OPTIONS=	IPOD "iPod synchronization support" off \
+		VIDEO "Video media support using mplayer" off \
+		MP3TAG "MP3 ID3 tag update support" off \
+		OGGTAG "Ogg Vorbis ID3 tag update support" off \
+		OGG2MP3 "Ogg Vorbis conversion to MP3 support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITH_IPOD)
+RUN_DEPENDS+=	gpod.2:${PORTSDIR}/audio/libgpod \
+		${PYTHON_SITELIBDIR}/py-mad:${PORTSDIR}/audio/py-mad
+.endif
+
+.if defined(WITH_VIDEO)
+RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer \
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ID3.py:${PORTSDIR}/audio/py-id3
+.endif
+
+.if defined(WITH_MP3TAG)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/eyeD3/__init__.py:${PORTSDIR}/audio/py-eyed3
+.endif
+
+.if defined(WITH_OGGTAG)
+RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
+.endif
+
+.if defined(WITH_OGG2MP3)
+RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools \
+		lame:${PORTSDIR}/audio/lame
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/setup.py
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>

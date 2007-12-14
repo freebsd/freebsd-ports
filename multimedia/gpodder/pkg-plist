@@ -1,0 +1,66 @@
+bin/gpodder
+%%PYTHON_SITELIBDIR%%/gpodder-0.10.1-py2.5.egg-info
+%%PYTHON_SITELIBDIR%%/gpodder/SimpleGladeApp.py
+%%PYTHON_SITELIBDIR%%/gpodder/SimpleGladeApp.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/__init__.py
+%%PYTHON_SITELIBDIR%%/gpodder/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/cache.py
+%%PYTHON_SITELIBDIR%%/gpodder/cache.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/console.py
+%%PYTHON_SITELIBDIR%%/gpodder/console.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/download.py
+%%PYTHON_SITELIBDIR%%/gpodder/download.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/gui.py
+%%PYTHON_SITELIBDIR%%/gpodder/gui.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/libconverter.py
+%%PYTHON_SITELIBDIR%%/gpodder/libconverter.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/libgpodder.py
+%%PYTHON_SITELIBDIR%%/gpodder/libgpodder.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/libipodsync.py
+%%PYTHON_SITELIBDIR%%/gpodder/libipodsync.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/liblogger.py
+%%PYTHON_SITELIBDIR%%/gpodder/liblogger.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/libplayers.py
+%%PYTHON_SITELIBDIR%%/gpodder/libplayers.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/libpodcasts.py
+%%PYTHON_SITELIBDIR%%/gpodder/libpodcasts.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/libtagupdate.py
+%%PYTHON_SITELIBDIR%%/gpodder/libtagupdate.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/opml.py
+%%PYTHON_SITELIBDIR%%/gpodder/opml.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/services.py
+%%PYTHON_SITELIBDIR%%/gpodder/services.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/util.py
+%%PYTHON_SITELIBDIR%%/gpodder/util.pyc
+share/applications/gpodder.desktop
+share/gpodder/gpodder.glade
+share/icons/hicolor/16x16/apps/gpodder.png
+share/icons/hicolor/22x22/apps/gpodder.png
+share/icons/hicolor/24x24/apps/gpodder.png
+share/icons/hicolor/48x48/apps/gpodder.png
+share/icons/hicolor/scalable/apps/gpodder.svg
+%%NLS%%share/locale/de/LC_MESSAGES/gpodder.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gpodder.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gpodder.mo
+%%NLS%%share/locale/it/LC_MESSAGES/gpodder.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gpodder.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/gpodder.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gpodder.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gpodder.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/gpodder.mo
+share/pixmaps/gpodder.png
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm share/gpodder
+@dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/gpodder
