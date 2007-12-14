@@ -5,16 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	mongrel_cluster
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.0.5
 CATEGORIES=	www rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	mongrel
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Manages multiple Mongrel processes
 
-BUILD_DEPENDS=	rubygem-mongrel>=1.0.1:${PORTSDIR}/www/rubygem-mongrel
+BUILD_DEPENDS=	rubygem-mongrel>=1.0.2:${PORTSDIR}/www/rubygem-mongrel
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RC_SUBR=	mongrel_cluster
