@@ -81,7 +81,7 @@ lib/libptypesn.a
 %%PORTDOCS%%%%DOCSDIR%%/doc/time.datetime.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/time.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/time.time.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/title-20.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/title-21.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/unit.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/unknown.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/variant.arrays.html
@@ -91,10 +91,9 @@ lib/libptypesn.a
 %%PORTDOCS%%%%DOCSDIR%%/doc/variant.utils.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/wshare.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/wshare/Makefile.BSD_OS
-%%PORTDOCS%%%%EXAMPLESDIR%%/wshare/Makefile.CYGWIN_NT
 %%PORTDOCS%%%%EXAMPLESDIR%%/wshare/Makefile.Darwin
 %%PORTDOCS%%%%EXAMPLESDIR%%/wshare/Makefile.FreeBSD
+%%PORTDOCS%%%%EXAMPLESDIR%%/wshare/Makefile.HP-UX
 %%PORTDOCS%%%%EXAMPLESDIR%%/wshare/Makefile.Linux
 %%PORTDOCS%%%%EXAMPLESDIR%%/wshare/Makefile.SunOS
 %%PORTDOCS%%%%EXAMPLESDIR%%/wshare/Makefile.common
@@ -121,7 +120,6 @@ lib/libptypesn.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/wshare/utils.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/wshare/wshare
 %%PORTDOCS%%%%EXAMPLESDIR%%/wshare/wshare.cxx
-%%PORTDOCS%%%%EXAMPLESDIR%%/wshare/wshare.mak
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/wshare
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/include
