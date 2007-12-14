@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.9.17
+PORTVERSION=	0.9.19
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
@@ -14,6 +14,7 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
 
 RUN_DEPENDS=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
+		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 		scanimage:${PORTSDIR}/graphics/sane-backends \
 		scanadf:${PORTSDIR}/graphics/sane-frontends \
 		cjb2:${PORTSDIR}/graphics/djvulibre \
