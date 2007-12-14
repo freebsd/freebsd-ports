@@ -5,27 +5,24 @@
 #
 
 PORTNAME=	xmakemol
-PORTVERSION=	5.15
-PORTREVISION=	2
+PORTVERSION=	5.16
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Molecule Viewer Program Based on Motif Widget
 
-USE_XLIB=	yes
+USE_XORG=	xpm
 USE_GL=		glut glw
+USE_GNOME=	gnometarget
 USE_MOTIF=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		xmakemol.1
-
-pre-configure:
-	cd ${WRKSRC}; ${CHMOD} 755 config.guess config.sub configure install-sh missing mkinstalldirs
-
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/xmakemol
+PLIST_FILES=	bin/xmake_anim.pl \
+		bin/xmakemol \
+		%%DATADIR%%/elements
+PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.mk>
