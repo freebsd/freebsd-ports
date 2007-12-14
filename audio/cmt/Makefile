@@ -5,31 +5,34 @@
 # $FreeBSD$
 
 PORTNAME=	cmt
-PORTVERSION=	1.15
-PORTREVISION=	1
+PORTVERSION=	1.16
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ladspa.org/download/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Computer Music Toolkit (CMT) is a collection of LADSPA plugins
+COMMENT=	The Computer Music Toolkit - a collection of LADSPA plugins
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
-WRKSRC=		${WRKDIR}/cmt
+WRKSRC=		${WRKDIR}/${PORTNAME}
+BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}/src
+
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
+MAKEFILE=	makefile
+MAKE_ARGS=	CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS} -fPIC -I${LOCALBASE}/include"
+ALL_TARGET=	targets
+
 PLIST_FILES=	lib/ladspa/cmt.so
 
-pre-patch:
-	@${FIND} ${WRKSRC} -name '*.cpp' | ${XARGS} \
+post-patch:
+	@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} \
 		${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
 
-do-build:
-	cd ${WRKSRC}/src; ${GMAKE} -f makefile targets
-
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/plugins/cmt.so ${LOCALBASE}/lib/ladspa/
+	${INSTALL_DATA} ${WRKSRC}/plugins/cmt.so ${PREFIX}/lib/ladspa/
 
 .include <bsd.port.mk>
