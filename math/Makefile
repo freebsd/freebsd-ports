@@ -141,6 +141,7 @@
     SUBDIR += linux-relview
     SUBDIR += lp_solve
     SUBDIR += ltl
+    SUBDIR += lybniz
     SUBDIR += matharray
     SUBDIR += mathomatic
     SUBDIR += matrices
