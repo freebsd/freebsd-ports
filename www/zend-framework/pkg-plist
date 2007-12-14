@@ -6,9 +6,15 @@
 %%DATADIR%%/demos/Zend/Feeds/consume-feed.php
 %%DATADIR%%/demos/Zend/Gdata/Blogger.php
 %%DATADIR%%/demos/Zend/Gdata/Calendar.php
+%%DATADIR%%/demos/Zend/Gdata/Docs.php
 %%DATADIR%%/demos/Zend/Gdata/Gapps.php
 %%DATADIR%%/demos/Zend/Gdata/Gbase.php
+%%DATADIR%%/demos/Zend/Gdata/Photos.php
 %%DATADIR%%/demos/Zend/Gdata/Spreadsheet-ClientLogin.php
+%%DATADIR%%/demos/Zend/Gdata/YouTubeVideoBrowser/index.php
+%%DATADIR%%/demos/Zend/Gdata/YouTubeVideoBrowser/interface.html
+%%DATADIR%%/demos/Zend/Gdata/YouTubeVideoBrowser/video_browser.css
+%%DATADIR%%/demos/Zend/Gdata/YouTubeVideoBrowser/video_browser.js
 %%DATADIR%%/demos/Zend/Mail/SimpleMailer.php
 %%DATADIR%%/demos/Zend/Mail/maildir/maildir.tar
 %%DATADIR%%/demos/Zend/Mail/mbox/INBOX
@@ -203,6 +209,7 @@
 %%DATADIR%%/library/Zend/Gdata/App/AuthException.php
 %%DATADIR%%/library/Zend/Gdata/App/BadMethodCallException.php
 %%DATADIR%%/library/Zend/Gdata/App/Base.php
+%%DATADIR%%/library/Zend/Gdata/App/BaseMediaSource.php
 %%DATADIR%%/library/Zend/Gdata/App/CaptchaRequiredException.php
 %%DATADIR%%/library/Zend/Gdata/App/Entry.php
 %%DATADIR%%/library/Zend/Gdata/App/Exception.php
@@ -235,7 +242,11 @@
 %%DATADIR%%/library/Zend/Gdata/App/FeedEntryParent.php
 %%DATADIR%%/library/Zend/Gdata/App/FeedSourceParent.php
 %%DATADIR%%/library/Zend/Gdata/App/HttpException.php
+%%DATADIR%%/library/Zend/Gdata/App/IOException.php
 %%DATADIR%%/library/Zend/Gdata/App/InvalidArgumentException.php
+%%DATADIR%%/library/Zend/Gdata/App/MediaEntry.php
+%%DATADIR%%/library/Zend/Gdata/App/MediaFileSource.php
+%%DATADIR%%/library/Zend/Gdata/App/MediaSource.php
 %%DATADIR%%/library/Zend/Gdata/App/Util.php
 %%DATADIR%%/library/Zend/Gdata/AuthSub.php
 %%DATADIR%%/library/Zend/Gdata/Calendar.php
@@ -254,7 +265,25 @@
 %%DATADIR%%/library/Zend/Gdata/Calendar/ListEntry.php
 %%DATADIR%%/library/Zend/Gdata/Calendar/ListFeed.php
 %%DATADIR%%/library/Zend/Gdata/ClientLogin.php
+%%DATADIR%%/library/Zend/Gdata/Docs.php
+%%DATADIR%%/library/Zend/Gdata/Docs/DocumentListEntry.php
+%%DATADIR%%/library/Zend/Gdata/Docs/DocumentListFeed.php
+%%DATADIR%%/library/Zend/Gdata/Docs/Query.php
 %%DATADIR%%/library/Zend/Gdata/Entry.php
+%%DATADIR%%/library/Zend/Gdata/Exif.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Entry.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Extension/Distance.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Extension/Exposure.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Extension/FStop.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Extension/Flash.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Extension/FocalLength.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Extension/ImageUniqueId.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Extension/Iso.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Extension/Make.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Extension/Model.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Extension/Tags.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Extension/Time.php
+%%DATADIR%%/library/Zend/Gdata/Exif/Feed.php
 %%DATADIR%%/library/Zend/Gdata/Extension.php
 %%DATADIR%%/library/Zend/Gdata/Extension/AttendeeStatus.php
 %%DATADIR%%/library/Zend/Gdata/Extension/AttendeeType.php
@@ -267,6 +296,7 @@
 %%DATADIR%%/library/Zend/Gdata/Extension/OpenSearchStartIndex.php
 %%DATADIR%%/library/Zend/Gdata/Extension/OpenSearchTotalResults.php
 %%DATADIR%%/library/Zend/Gdata/Extension/OriginalEvent.php
+%%DATADIR%%/library/Zend/Gdata/Extension/Rating.php
 %%DATADIR%%/library/Zend/Gdata/Extension/Recurrence.php
 %%DATADIR%%/library/Zend/Gdata/Extension/RecurrenceException.php
 %%DATADIR%%/library/Zend/Gdata/Extension/Reminder.php
@@ -308,7 +338,69 @@
 %%DATADIR%%/library/Zend/Gdata/Gbase/SnippetEntry.php
 %%DATADIR%%/library/Zend/Gdata/Gbase/SnippetFeed.php
 %%DATADIR%%/library/Zend/Gdata/Gbase/SnippetQuery.php
+%%DATADIR%%/library/Zend/Gdata/Geo.php
+%%DATADIR%%/library/Zend/Gdata/Geo/Entry.php
+%%DATADIR%%/library/Zend/Gdata/Geo/Extension/GeoRssWhere.php
+%%DATADIR%%/library/Zend/Gdata/Geo/Extension/GmlPoint.php
+%%DATADIR%%/library/Zend/Gdata/Geo/Extension/GmlPos.php
+%%DATADIR%%/library/Zend/Gdata/Geo/Feed.php
 %%DATADIR%%/library/Zend/Gdata/Kind/EventEntry.php
+%%DATADIR%%/library/Zend/Gdata/Media.php
+%%DATADIR%%/library/Zend/Gdata/Media/Entry.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaCategory.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaContent.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaCopyright.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaCredit.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaDescription.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaGroup.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaHash.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaKeywords.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaPlayer.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaRating.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaRestriction.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaText.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaThumbnail.php
+%%DATADIR%%/library/Zend/Gdata/Media/Extension/MediaTitle.php
+%%DATADIR%%/library/Zend/Gdata/Media/Feed.php
+%%DATADIR%%/library/Zend/Gdata/Photos.php
+%%DATADIR%%/library/Zend/Gdata/Photos/AlbumEntry.php
+%%DATADIR%%/library/Zend/Gdata/Photos/AlbumFeed.php
+%%DATADIR%%/library/Zend/Gdata/Photos/AlbumQuery.php
+%%DATADIR%%/library/Zend/Gdata/Photos/CommentEntry.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Access.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/AlbumId.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/BytesUsed.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Checksum.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Client.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/CommentCount.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/CommentingEnabled.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Height.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Id.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Location.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/MaxPhotosPerAlbum.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Name.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Nickname.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/NumPhotos.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/NumPhotosRemaining.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/PhotoId.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Position.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/QuotaCurrent.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/QuotaLimit.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Rotation.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Size.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Thumbnail.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Timestamp.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/User.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Version.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Weight.php
+%%DATADIR%%/library/Zend/Gdata/Photos/Extension/Width.php
+%%DATADIR%%/library/Zend/Gdata/Photos/PhotoEntry.php
+%%DATADIR%%/library/Zend/Gdata/Photos/PhotoFeed.php
+%%DATADIR%%/library/Zend/Gdata/Photos/PhotoQuery.php
+%%DATADIR%%/library/Zend/Gdata/Photos/TagEntry.php
+%%DATADIR%%/library/Zend/Gdata/Photos/UserEntry.php
+%%DATADIR%%/library/Zend/Gdata/Photos/UserFeed.php
+%%DATADIR%%/library/Zend/Gdata/Photos/UserQuery.php
 %%DATADIR%%/library/Zend/Gdata/Query.php
 %%DATADIR%%/library/Zend/Gdata/Spreadsheets.php
 %%DATADIR%%/library/Zend/Gdata/Spreadsheets/CellEntry.php
@@ -326,6 +418,45 @@
 %%DATADIR%%/library/Zend/Gdata/Spreadsheets/SpreadsheetFeed.php
 %%DATADIR%%/library/Zend/Gdata/Spreadsheets/WorksheetEntry.php
 %%DATADIR%%/library/Zend/Gdata/Spreadsheets/WorksheetFeed.php
+%%DATADIR%%/library/Zend/Gdata/YouTube.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/CommentEntry.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/CommentFeed.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/ContactEntry.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/ContactFeed.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Age.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Books.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Company.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Description.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Duration.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Gender.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Hobbies.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Hometown.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Location.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/MediaContent.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/MediaGroup.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Movies.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Music.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/NoEmbed.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Occupation.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Position.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Racy.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Relationship.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/ReleaseDate.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/School.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Statistics.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Status.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Username.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/MediaEntry.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/PlaylistListEntry.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/PlaylistListFeed.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/PlaylistVideoEntry.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/PlaylistVideoFeed.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/SubscriptionEntry.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/SubscriptionFeed.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/UserProfileEntry.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/VideoEntry.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/VideoFeed.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/VideoQuery.php
 %%DATADIR%%/library/Zend/Http/Client.php
 %%DATADIR%%/library/Zend/Http/Client/Adapter/Exception.php
 %%DATADIR%%/library/Zend/Http/Client/Adapter/Interface.php
@@ -1119,8 +1250,10 @@
 %%DATADIR%%/library/Zend/Translate/Adapter/Csv.php
 %%DATADIR%%/library/Zend/Translate/Adapter/Gettext.php
 %%DATADIR%%/library/Zend/Translate/Adapter/Qt.php
+%%DATADIR%%/library/Zend/Translate/Adapter/Tbx.php
 %%DATADIR%%/library/Zend/Translate/Adapter/Tmx.php
 %%DATADIR%%/library/Zend/Translate/Adapter/Xliff.php
+%%DATADIR%%/library/Zend/Translate/Adapter/XmlTm.php
 %%DATADIR%%/library/Zend/Translate/Exception.php
 %%DATADIR%%/library/Zend/Uri.php
 %%DATADIR%%/library/Zend/Uri/Exception.php
@@ -1257,11 +1390,14 @@
 %%DATADIR%%/tests/Zend/Config/_files/config.ini
 %%DATADIR%%/tests/Zend/Config/_files/config.xml
 %%DATADIR%%/tests/Zend/Config/_files/multipleinheritance.ini
+%%DATADIR%%/tests/Zend/Config/_files/onetoplevelstring.xml
 %%DATADIR%%/tests/Zend/Config/_files/separator.ini
+%%DATADIR%%/tests/Zend/Config/_files/toplevelstring.xml
 %%DATADIR%%/tests/Zend/ConfigTest.php
 %%DATADIR%%/tests/Zend/Console/GetoptTest.php
 %%DATADIR%%/tests/Zend/Controller/Action/Helper/FlashMessengerTest.php
 %%DATADIR%%/tests/Zend/Controller/Action/Helper/RedirectorTest.php
+%%DATADIR%%/tests/Zend/Controller/Action/Helper/UrlTest.php
 %%DATADIR%%/tests/Zend/Controller/Action/Helper/ViewRendererTest.php
 %%DATADIR%%/tests/Zend/Controller/Action/HelperBrokerTest.php
 %%DATADIR%%/tests/Zend/Controller/ActionTest.php
@@ -1293,9 +1429,17 @@
 %%DATADIR%%/tests/Zend/Controller/_files/ObController.php
 %%DATADIR%%/tests/Zend/Controller/_files/ViewController.php
 %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/controllers/IndexController.php
+%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/index/test.phtml
+%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/test.phtml
+%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/test/foo.php
 %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/controllers/Admin/IndexController.php
 %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/controllers/IndexController.php
 %%DATADIR%%/tests/Zend/Controller/_files/routes.ini
+%%DATADIR%%/tests/Zend/Controller/views/scripts/custom/renderScript.php
+%%DATADIR%%/tests/Zend/Controller/views/scripts/foo-bar/baz-bat.phtml
+%%DATADIR%%/tests/Zend/Controller/views/scripts/site.phtml
+%%DATADIR%%/tests/Zend/Controller/views/scripts/view/index.phtml
+%%DATADIR%%/tests/Zend/Controller/views/scripts/view/name.phtml
 %%DATADIR%%/tests/Zend/CurrencyTest.php
 %%DATADIR%%/tests/Zend/Date/AllTests.php
 %%DATADIR%%/tests/Zend/Date/DateObjectTest.php
@@ -1532,6 +1676,13 @@
 %%DATADIR%%/tests/Zend/Gdata/CalendarOnlineTest.php
 %%DATADIR%%/tests/Zend/Gdata/CalendarTest.php
 %%DATADIR%%/tests/Zend/Gdata/CommentsTest.php
+%%DATADIR%%/tests/Zend/Gdata/Docs/DocumentListEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Docs/DocumentListFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/Docs/QueryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Docs/_files/TestDataDocumentListEntrySample.xml
+%%DATADIR%%/tests/Zend/Gdata/Docs/_files/TestDataDocumentListFeedSample.xml
+%%DATADIR%%/tests/Zend/Gdata/DocsOnlineTest.php
+%%DATADIR%%/tests/Zend/Gdata/DocsTest.php
 %%DATADIR%%/tests/Zend/Gdata/EntryLinkTest.php
 %%DATADIR%%/tests/Zend/Gdata/EventStatusTest.php
 %%DATADIR%%/tests/Zend/Gdata/ExtendedPropertyTest.php
@@ -1587,6 +1738,27 @@
 %%DATADIR%%/tests/Zend/Gdata/OpenSearchStartIndexTest.php
 %%DATADIR%%/tests/Zend/Gdata/OpenSearchTotalResultsTest.php
 %%DATADIR%%/tests/Zend/Gdata/OriginalEventTest.php
+%%DATADIR%%/tests/Zend/Gdata/Photos/PhotosAlbumEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Photos/PhotosAlbumFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/Photos/PhotosAlbumQueryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Photos/PhotosCommentEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Photos/PhotosPhotoEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Photos/PhotosPhotoFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/Photos/PhotosPhotoQueryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Photos/PhotosTagEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Photos/PhotosUserEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Photos/PhotosUserFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/Photos/PhotosUserQueryTest.php
+%%DATADIR%%/tests/Zend/Gdata/Photos/_files/TestAlbumEntry.xml
+%%DATADIR%%/tests/Zend/Gdata/Photos/_files/TestAlbumFeed.xml
+%%DATADIR%%/tests/Zend/Gdata/Photos/_files/TestCommentEntry.xml
+%%DATADIR%%/tests/Zend/Gdata/Photos/_files/TestPhotoEntry.xml
+%%DATADIR%%/tests/Zend/Gdata/Photos/_files/TestPhotoFeed.xml
+%%DATADIR%%/tests/Zend/Gdata/Photos/_files/TestTagEntry.xml
+%%DATADIR%%/tests/Zend/Gdata/Photos/_files/TestUserEntry.xml
+%%DATADIR%%/tests/Zend/Gdata/Photos/_files/TestUserFeed.xml
+%%DATADIR%%/tests/Zend/Gdata/Photos/_files/test.jpg
+%%DATADIR%%/tests/Zend/Gdata/PhotosOnlineTest.php
 %%DATADIR%%/tests/Zend/Gdata/QueryTest.php
 %%DATADIR%%/tests/Zend/Gdata/RecurrenceExceptionTest.php
 %%DATADIR%%/tests/Zend/Gdata/RecurrenceTest.php
@@ -1617,9 +1789,38 @@
 %%DATADIR%%/tests/Zend/Gdata/WhenTest.php
 %%DATADIR%%/tests/Zend/Gdata/WhereTest.php
 %%DATADIR%%/tests/Zend/Gdata/WhoTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/CommentEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/CommentFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/ContactEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/ContactFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/PlaylistListEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/PlaylistListFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/PlaylistVideoEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/PlaylistVideoFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/SubscriptionEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/SubscriptionFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/UserProfileEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/VideoEntryTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/VideoFeedTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/CommentEntryDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/CommentFeedDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/ContactEntryDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/ContactFeedDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/PlaylistListEntryDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/PlaylistListFeedDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/PlaylistVideoEntryDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/PlaylistVideoFeedDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/SubscriptionEntryDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/SubscriptionFeedDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/UserProfileEntryDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/VideoEntryDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/VideoFeedDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTubeOnlineTest.php
+%%DATADIR%%/tests/Zend/Gdata/YouTubeTest.php
 %%DATADIR%%/tests/Zend/Gdata/_files/AttendeeStatusElementSample1.xml
 %%DATADIR%%/tests/Zend/Gdata/_files/AttendeeTypeElementSample1.xml
 %%DATADIR%%/tests/Zend/Gdata/_files/CommentsElementSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/_files/DocsTest.csv
 %%DATADIR%%/tests/Zend/Gdata/_files/EntryLinkElementSample1.xml
 %%DATADIR%%/tests/Zend/Gdata/_files/EventStatusElementSample1.xml
 %%DATADIR%%/tests/Zend/Gdata/_files/ExtendedPropertyElementSample1.xml
@@ -1636,6 +1837,7 @@
 %%DATADIR%%/tests/Zend/Gdata/_files/WhenElementSample1.xml
 %%DATADIR%%/tests/Zend/Gdata/_files/WhereElementSample1.xml
 %%DATADIR%%/tests/Zend/Gdata/_files/WhoElementSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/_files/testImage.jpg
 %%DATADIR%%/tests/Zend/Http/AllTests.php
 %%DATADIR%%/tests/Zend/Http/Client/AllTests.php
 %%DATADIR%%/tests/Zend/Http/Client/CurlTest.php
@@ -1912,8 +2114,12 @@
 %%DATADIR%%/tests/Zend/Translate/CsvTest.php
 %%DATADIR%%/tests/Zend/Translate/GettextTest.php
 %%DATADIR%%/tests/Zend/Translate/QtTest.php
+%%DATADIR%%/tests/Zend/Translate/TbxTest.php
 %%DATADIR%%/tests/Zend/Translate/TmxTest.php
 %%DATADIR%%/tests/Zend/Translate/XliffTest.php
+%%DATADIR%%/tests/Zend/Translate/XmlTmTest.php
+%%DATADIR%%/tests/Zend/Translate/_files/XmlTm_test_de.xml
+%%DATADIR%%/tests/Zend/Translate/_files/XmlTm_test_en.xml
 %%DATADIR%%/tests/Zend/Translate/_files/failed.tmx
 %%DATADIR%%/tests/Zend/Translate/_files/failed.xliff
 %%DATADIR%%/tests/Zend/Translate/_files/test_fileerror.mo
@@ -1924,9 +2130,11 @@
 %%DATADIR%%/tests/Zend/Translate/_files/translate_bigendian.mo
 %%DATADIR%%/tests/Zend/Translate/_files/translation_de.ts
 %%DATADIR%%/tests/Zend/Translate/_files/translation_en.csv
+%%DATADIR%%/tests/Zend/Translate/_files/translation_en.tbx
 %%DATADIR%%/tests/Zend/Translate/_files/translation_en.tmx
 %%DATADIR%%/tests/Zend/Translate/_files/translation_en.xliff
 %%DATADIR%%/tests/Zend/Translate/_files/translation_en2.csv
+%%DATADIR%%/tests/Zend/Translate/_files/translation_en2.tbx
 %%DATADIR%%/tests/Zend/Translate/_files/translation_en2.tmx
 %%DATADIR%%/tests/Zend/Translate/_files/translation_en2.xliff
 %%DATADIR%%/tests/Zend/TranslateTest.php
@@ -1959,8 +2167,10 @@
 %%DATADIR%%/tests/Zend/View/Helper/DeclareVarsTest.php
 %%DATADIR%%/tests/Zend/View/Helper/FormCheckboxTest.php
 %%DATADIR%%/tests/Zend/View/Helper/FormLabelTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FormSelectTest.php
 %%DATADIR%%/tests/Zend/View/Helper/FormTextTest.php
 %%DATADIR%%/tests/Zend/View/Helper/HtmlListTest.php
+%%DATADIR%%/tests/Zend/View/Helper/UrlTest.php
 %%DATADIR%%/tests/Zend/View/_stubs/FilterDir1/Foo.php
 %%DATADIR%%/tests/Zend/View/_stubs/HelperDir1/StubEmpty.php
 %%DATADIR%%/tests/Zend/View/_stubs/HelperDir2/Stub1.php
@@ -1993,6 +2203,7 @@
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/helpers
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/default/controllers
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/helpers
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/scripts
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/views/filters
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/views/helpers
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Db/Table/_files
@@ -2071,12 +2282,18 @@
 @dirrm %%DATADIR%%/tests/Zend/Http/Client
 @dirrm %%DATADIR%%/tests/Zend/Http
 @dirrm %%DATADIR%%/tests/Zend/Gdata/_files
+@dirrm %%DATADIR%%/tests/Zend/Gdata/YouTube/_files
+@dirrm %%DATADIR%%/tests/Zend/Gdata/YouTube
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Spreadsheets/_files
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Spreadsheets
+@dirrm %%DATADIR%%/tests/Zend/Gdata/Photos/_files
+@dirrm %%DATADIR%%/tests/Zend/Gdata/Photos
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Gbase/_files
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Gbase
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Gapps/_files
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Gapps
+@dirrm %%DATADIR%%/tests/Zend/Gdata/Docs/_files
+@dirrm %%DATADIR%%/tests/Zend/Gdata/Docs
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Calendar/_files
 @dirrm %%DATADIR%%/tests/Zend/Gdata/Calendar
 @dirrm %%DATADIR%%/tests/Zend/Gdata/App/_files
@@ -2110,9 +2327,14 @@
 @dirrm %%DATADIR%%/tests/Zend/Db/Adapter
 @dirrm %%DATADIR%%/tests/Zend/Db
 @dirrm %%DATADIR%%/tests/Zend/Date
+@dirrm %%DATADIR%%/tests/Zend/Controller/views/scripts/view
+@dirrm %%DATADIR%%/tests/Zend/Controller/views/scripts/foo-bar
+@dirrm %%DATADIR%%/tests/Zend/Controller/views/scripts/custom
+@dirrm %%DATADIR%%/tests/Zend/Controller/views/scripts
 @dirrm %%DATADIR%%/tests/Zend/Controller/views/helpers
 @dirrm %%DATADIR%%/tests/Zend/Controller/views/filters
 @dirrm %%DATADIR%%/tests/Zend/Controller/views
+@dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/scripts
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/helpers
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/controllers/Admin
@@ -2120,6 +2342,9 @@
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/default/controllers
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/default
+@dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/test
+@dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/index
+@dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/helpers
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/filters
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views
@@ -2252,14 +2477,25 @@
 @dirrm %%DATADIR%%/library/Zend/Http/Client/Adapter
 @dirrm %%DATADIR%%/library/Zend/Http/Client
 @dirrm %%DATADIR%%/library/Zend/Http
+@dirrm %%DATADIR%%/library/Zend/Gdata/YouTube/Extension
+@dirrm %%DATADIR%%/library/Zend/Gdata/YouTube
 @dirrm %%DATADIR%%/library/Zend/Gdata/Spreadsheets/Extension
 @dirrm %%DATADIR%%/library/Zend/Gdata/Spreadsheets
+@dirrm %%DATADIR%%/library/Zend/Gdata/Photos/Extension
+@dirrm %%DATADIR%%/library/Zend/Gdata/Photos
+@dirrm %%DATADIR%%/library/Zend/Gdata/Media/Extension
+@dirrm %%DATADIR%%/library/Zend/Gdata/Media
 @dirrm %%DATADIR%%/library/Zend/Gdata/Kind
+@dirrm %%DATADIR%%/library/Zend/Gdata/Geo/Extension
+@dirrm %%DATADIR%%/library/Zend/Gdata/Geo
 @dirrm %%DATADIR%%/library/Zend/Gdata/Gbase/Extension
 @dirrm %%DATADIR%%/library/Zend/Gdata/Gbase
 @dirrm %%DATADIR%%/library/Zend/Gdata/Gapps/Extension
 @dirrm %%DATADIR%%/library/Zend/Gdata/Gapps
 @dirrm %%DATADIR%%/library/Zend/Gdata/Extension
+@dirrm %%DATADIR%%/library/Zend/Gdata/Exif/Extension
+@dirrm %%DATADIR%%/library/Zend/Gdata/Exif
+@dirrm %%DATADIR%%/library/Zend/Gdata/Docs
 @dirrm %%DATADIR%%/library/Zend/Gdata/Calendar/Extension
 @dirrm %%DATADIR%%/library/Zend/Gdata/Calendar
 @dirrm %%DATADIR%%/library/Zend/Gdata/App/Extension
@@ -2330,6 +2566,7 @@
 @dirrm %%DATADIR%%/demos/Zend/Mail/mbox
 @dirrm %%DATADIR%%/demos/Zend/Mail/maildir
 @dirrm %%DATADIR%%/demos/Zend/Mail
+@dirrm %%DATADIR%%/demos/Zend/Gdata/YouTubeVideoBrowser
 @dirrm %%DATADIR%%/demos/Zend/Gdata
 @dirrm %%DATADIR%%/demos/Zend/Feeds
 @dirrm %%DATADIR%%/demos/Zend
