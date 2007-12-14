@@ -26,8 +26,9 @@ USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 USE_MYSQL=	yes
+USE_PERL5_BUILD=yes
 CONFIGURE_ARGS+=--with-qtdir=${X11BASE} --with-id3-libs=${LOCALBASE}\
-	 	--with-ogg-libs=${LOCALBASE} --with-vorbis-libs=${LOCALBASE} \
+		--with-ogg-libs=${LOCALBASE} --with-vorbis-libs=${LOCALBASE} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include \
@@ -45,7 +46,9 @@ PLIST_FILES+=	bin/prokburn
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-g -O2|${CFLAGS}|; s|-lqt-mt|-lqt-mt ${PTHREAD_LIBS}|' ${WRKSRC}/configure
-.if !defined(WITH_BURN)
+.if defined(WITH_BURN)
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/prokburn
+.else
 	@${REINPLACE_CMD} -e 's|prokburn||' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|prokburn||' ${WRKSRC}/Makefile.in
 .endif
