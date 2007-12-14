@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsoap
-PORTVERSION=	2.7.9e
+PORTVERSION=	2.7.9l
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gsoap2
@@ -34,9 +34,16 @@ CONST=	const
 IGNORE=	does not compile: needs gethostbyname_r()
 .endif
 
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/> FD_SETSIZE/>= (int)FD_SETSIZE/g' ${WRKSRC}/soapcpp2/stdsoap2.c
 	@${REINPLACE_CMD} -e 's/> FD_SETSIZE/>= (int)FD_SETSIZE/g' ${WRKSRC}/soapcpp2/stdsoap2.cpp
 	@${REINPLACE_CMD} -e 's/%%CONST%%/${CONST}/' ${WRKSRC}/soapcpp2/stdsoap2.cpp
+
+pre-build:
+	@${RM} ${WRKDIR}/gsoap-2.7/soapcpp2/stdsoap2_cpp.cpp
 
 .include <bsd.port.post.mk>
