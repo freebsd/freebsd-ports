@@ -58,13 +58,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <url>http://www.securityfocus.com/archive/1/484429</url>
       <bid>26666</bid>
       <cvename>CVE-2007-6227</cvename>
+      <url>http://www.securityfocus.com/archive/1/484429</url>
     </references>
     <dates>
       <discovery>2007-11-30</discovery>
       <entry>2007-12-12</entry>
+      <modified>2007-12-14</modified>
     </dates>
   </vuln>
 
