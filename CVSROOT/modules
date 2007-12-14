@@ -14448,6 +14448,7 @@ rubygem-railroad	ports/graphics/rubygem-railroad
 rubygem-rails	ports/www/rubygem-rails
 rubygem-rails-app-installer	ports/www/rubygem-rails-app-installer
 rubygem-railsbench	ports/benchmarks/rubygem-railsbench
+rubygem-rak	ports/textproc/rubygem-rak
 rubygem-rake	ports/devel/rubygem-rake
 rubygem-rapt	ports/devel/rubygem-rapt
 rubygem-redcloth	ports/www/rubygem-redcloth
