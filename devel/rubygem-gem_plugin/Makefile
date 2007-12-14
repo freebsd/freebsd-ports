@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	gem_plugin
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=     mongrel
 
 MAINTAINER=	ports@logvinov.com
