@@ -1,20 +1,20 @@
-%%SITE_PERL%%/Class/MOP.pm
-%%SITE_PERL%%/Class/MOP/Attribute.pm
-%%SITE_PERL%%/Class/MOP/Class.pm
-%%SITE_PERL%%/Class/MOP/Immutable.pm
-%%SITE_PERL%%/Class/MOP/Instance.pm
-%%SITE_PERL%%/Class/MOP/Method.pm
-%%SITE_PERL%%/Class/MOP/Method/Accessor.pm
-%%SITE_PERL%%/Class/MOP/Method/Constructor.pm
-%%SITE_PERL%%/Class/MOP/Method/Generated.pm
-%%SITE_PERL%%/Class/MOP/Method/Wrapped.pm
-%%SITE_PERL%%/Class/MOP/Module.pm
-%%SITE_PERL%%/Class/MOP/Object.pm
-%%SITE_PERL%%/Class/MOP/Package.pm
-%%SITE_PERL%%/metaclass.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MOP/MOP.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MOP/MOP.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Attribute.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Immutable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Instance.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Accessor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Constructor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Generated.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Wrapped.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Module.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Object.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Package.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/metaclass.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MOP/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MOP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 %%PORTDOCS%%%%EXAMPLESDIR%%/ArrayBasedStorage.pod
 %%PORTDOCS%%%%EXAMPLESDIR%%/AttributesWithHistory.pod
 %%PORTDOCS%%%%EXAMPLESDIR%%/C3MethodDispatchOrder.pod
@@ -24,6 +24,8 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/LazyClass.pod
 %%PORTDOCS%%%%EXAMPLESDIR%%/Perl6Attribute.pod
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/Class/MOP/Method
-@dirrmtry %%SITE_PERL%%/Class/MOP
-@dirrmtry %%SITE_PERL%%/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MOP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class
