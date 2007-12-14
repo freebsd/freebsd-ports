@@ -283,6 +283,7 @@
     SUBDIR += linux-flock
     SUBDIR += linux-mozilla
     SUBDIR += linux-mplayer-plugin
+    SUBDIR += linux-netscape-navigator
     SUBDIR += linux-nvu
     SUBDIR += linux-opera
     SUBDIR += linux-seamonkey
