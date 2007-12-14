@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	2.3
-PORTREVISION=	2
+PORTVERSION=	2.3.5
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
@@ -15,8 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
-BUILD_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -179,7 +178,7 @@ CONFIGURE_ARGS+=--with-wx
 .endif
 
 .if defined(WITH_X11)
-USE_XLIB=	yes
+USE_XORG=	xext xt
 CONFIGURE_ARGS+=--with-x11
 .endif
 
@@ -229,7 +228,8 @@ post-patch:
 		 s|^parport1: .+|#&|' \
 		 ${WRKSRC}/.bochsrc
 	@${REINPLACE_CMD} -Ee \
-		's|(^sharedir.+=).+|\1 ${DATADIR}|; \
+		's|install_share install_doc|install_share|; \
+		 s|(^sharedir.+=).+|\1 ${DATADIR}|; \
 		 s|(^docdir.+=).+|\1 ${DOCSDIR}|' \
 		 ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
