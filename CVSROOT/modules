@@ -4103,6 +4103,7 @@ gplbp		ports/misc/gplbp
 gplcver		ports/cad/gplcver
 gplink		ports/misc/gplink
 gplot		ports/graphics/gplot
+gpodder		ports/multimedia/gpodder
 gpp		ports/textproc/gpp
 gpredict	ports/comms/gpredict
 gprename	ports/x11-fm/gprename
