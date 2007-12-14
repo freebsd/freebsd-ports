@@ -1,4 +1,5 @@
 %%SITE_PERL%%/IO/CaptureOutput.pm
+%%SITE_PERL%%/IO/CaptureOutput.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/CaptureOutput/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/CaptureOutput
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
