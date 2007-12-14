@@ -1,4 +1,12 @@
 bin/kshowmail
+lib/kde3/kcm_kshowmailconfigaccounts.la
+lib/kde3/kcm_kshowmailconfigaccounts.so
+lib/kde3/kcm_kshowmailconfigactions.la
+lib/kde3/kcm_kshowmailconfigactions.so
+lib/kde3/kcm_kshowmailconfigdisplay.la
+lib/kde3/kcm_kshowmailconfigdisplay.so
+lib/kde3/kcm_kshowmailconfiggeneral.la
+lib/kde3/kcm_kshowmailconfiggeneral.so
 share/applnk/Internet/kshowmail.desktop
 share/apps/kshowmail/kshowmailui.rc
 share/apps/kshowmail/pics/eraser.png
@@ -7,7 +15,6 @@ share/apps/kshowmail/pics/kshowmail24.png
 share/apps/kshowmail/pics/letter-closed.png
 share/apps/kshowmail/pics/letter-open.png
 share/apps/kshowmail/pics/ok.png
-share/apps/kshowmail/pics/spam.png
 share/apps/kshowmail/pics/tool.png
 share/apps/kshowmail/sounds/neuepost.wav
 share/apps/kshowmail/sounds/newmail.wav
@@ -26,21 +33,34 @@ share/doc/HTML/fr/kshowmail/index.docbook
 share/doc/HTML/hu/kshowmail/common
 share/doc/HTML/hu/kshowmail/index.cache.bz2
 share/doc/HTML/hu/kshowmail/index.docbook
+share/doc/HTML/it/kshowmail/common
+share/doc/HTML/it/kshowmail/index.cache.bz2
+share/doc/HTML/it/kshowmail/index.docbook
+share/doc/HTML/ru/kshowmail/common
+share/doc/HTML/ru/kshowmail/index.cache.bz2
+share/doc/HTML/ru/kshowmail/index.docbook
 share/doc/HTML/sv/kshowmail/common
 share/doc/HTML/sv/kshowmail/index.cache.bz2
 share/doc/HTML/sv/kshowmail/index.docbook
-share/icons/hicolor/16x16/apps/kshowmail.png
+share/locale/cs/LC_MESSAGES/kshowmail.mo
 share/locale/de/LC_MESSAGES/kshowmail.mo
 share/locale/es/LC_MESSAGES/kshowmail.mo
 share/locale/fr/LC_MESSAGES/kshowmail.mo
 share/locale/hu/LC_MESSAGES/kshowmail.mo
+share/locale/it/LC_MESSAGES/kshowmail.mo
+share/locale/ru/LC_MESSAGES/kshowmail.mo
 share/locale/sv/LC_MESSAGES/kshowmail.mo
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
+share/services/kshowmailconfigaccounts.desktop
+share/services/kshowmailconfigactions.desktop
+share/services/kshowmailconfigdisplay.desktop
+share/services/kshowmailconfiggeneral.desktop
+@dirrmtry share/services
 @dirrm share/doc/HTML/sv/kshowmail
 @dirrmtry share/doc/HTML/sv
+@dirrm share/doc/HTML/ru/kshowmail
+@dirrmtry share/doc/HTML/ru
+@dirrm share/doc/HTML/it/kshowmail
+@dirrmtry share/doc/HTML/it
 @dirrm share/doc/HTML/hu/kshowmail
 @dirrmtry share/doc/HTML/hu
 @dirrm share/doc/HTML/fr/kshowmail
@@ -58,3 +78,4 @@ share/locale/sv/LC_MESSAGES/kshowmail.mo
 @dirrmtry share/apps
 @dirrmtry share/applnk/Internet
 @dirrmtry share/applnk
+@dirrmtry lib/kde3
