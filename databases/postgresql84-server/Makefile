@@ -18,6 +18,8 @@ DISTFILES?=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	BETA VERSION of the PostgreSQL server, only for testing
 
+BROKEN=		Unfetchable
+
 CONFLICTS?=	${PORTNAME}-client-7.* \
 		${PORTNAME}${PKGNAMESUFFIX}-7.* \
 		${PORTNAME}-client-8.[0-24-9]* \
