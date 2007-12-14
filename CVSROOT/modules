@@ -13521,6 +13521,7 @@ pycount		ports/devel/pycount
 pydance		ports/games/pydance
 pydbdesigner	ports/databases/pydbdesigner
 pydbx		ports/databases/pydbx
+pydf		ports/sysutils/pydf
 pyephem		ports/astro/pyephem
 pygmy		ports/mail/pygmy
 pygopherd	ports/net/pygopherd
