@@ -6,16 +6,23 @@
 #
 
 PORTNAME=	gpaint
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.3
 DISTVERSIONPREFIX=	2-
 CATEGORIES=	graphics gnome
-MASTER_SITES=	ftp://alpha.gnu.org/gnu/gpaint/ CENKES
+MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small-scale painting program for GNOME
 
-USE_GNOME=	libgnomeprint libgnomeprintui
+USE_GNOME=	gnometarget libgnomeprint libgnomeprintui
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/${PORTNAME}-2
+
+PLIST_FILES=	bin/gpaint-2 %%DATADIR%%/glade/gpaint.glade
+PLIST_DIRS=	%%DATADIR%%/glade %%DATADIR%%
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|_RESPONSE_DISCARD|_RESPONSE_NO|g' ${WRKSRC}/src/drawing.c
 
 .include <bsd.port.mk>
