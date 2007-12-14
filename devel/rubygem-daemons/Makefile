@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	daemons
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	A toolkit to convert your script to a controllable daemon
