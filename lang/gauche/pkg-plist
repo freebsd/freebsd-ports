@@ -55,6 +55,7 @@ lib/gauche/%%VERSION%%/include/gauche/collection.h
 lib/gauche/%%VERSION%%/include/gauche/config.h
 lib/gauche/%%VERSION%%/include/gauche/exception.h
 lib/gauche/%%VERSION%%/include/gauche/extend.h
+lib/gauche/%%VERSION%%/include/gauche/extern.h
 lib/gauche/%%VERSION%%/include/gauche/float.h
 lib/gauche/%%VERSION%%/include/gauche/gloc.h
 lib/gauche/%%VERSION%%/include/gauche/hash.h
