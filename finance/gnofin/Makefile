@@ -12,15 +12,23 @@ CATEGORIES=	finance deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	Light-weight GNOME based financial management program
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=yes
+PLIST_SUB=	NLS=""
+.else
+CONFIGURE_ARGS=	--disable-nls
+PLIST_SUB=	NLS="@comment "
+.endif
 
 MAN1=		gnofin.1
 
@@ -32,11 +40,9 @@ post-patch:
 			${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|_la_LDFLAGS =|_la_LDFLAGS = -avoid-version|g'
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%%GNOFIN_LIBDIR%%%|${PREFIX}/lib/gnofin/plugins|g' \
+		${WRKSRC}/src/Makefile.am
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700029
-BROKEN=		Incorrect pkg-plist (bad objformat handling)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

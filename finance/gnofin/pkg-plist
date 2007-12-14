@@ -24,8 +24,8 @@ lib/gnofin/plugins/libtext.a
 lib/gnofin/plugins/libtext.la
 lib/gnofin/plugins/libtext.so
 share/gnome/apps/Applications/gnofin.desktop
-share/locale/cs/LC_MESSAGES/gnofin.mo
-share/locale/fr/LC_MESSAGES/gnofin.mo
-share/locale/pt_BR/LC_MESSAGES/gnofin.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/gnofin.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gnofin.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gnofin.mo
 @dirrm lib/gnofin/plugins
 @dirrm lib/gnofin
