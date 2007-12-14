@@ -7,6 +7,7 @@
 
 PORTNAME=	SNMP-Simple
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,10 +18,5 @@ COMMENT=	Shortcuts for when using p5-SNMP
 PERL_CONFIGURE=	yes
 
 MAN3=		SNMP::Simple.3
-
-PLIST_FILES=	%%SITE_PERL%%/SNMP/Simple.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Simple/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Simple \
-		%%SITE_PERL%%/SNMP
 
 .include <bsd.port.mk>
