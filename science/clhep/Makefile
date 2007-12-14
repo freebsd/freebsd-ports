@@ -6,20 +6,28 @@
 #
 
 PORTNAME=	clhep
-PORTVERSION=	1.8.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.3.2
 CATEGORIES=	science
-MASTER_SITES=	http://wwwasd.web.cern.ch/wwwasd/lhc++/export/share/CLHEP/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/distributions/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-oriented toolkit for particle physics applications by CERN
 
-WRKSRC=		${WRKDIR}/CLHEP
+WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:U}
 
+USE_GNOME=	gnometarget
+USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-PLIST_SUB=	TARGET=${CONFIGURE_TARGET} VERSION=${PORTVERSION}
+CONFIGURE_ARGS=	--enable-gmake
+USE_LDCONFIG=	yes
+
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
+		 '/AM_CXXFLAGS=/s|-O ||g'
 
 .include <bsd.port.mk>
