@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_SDL=	mixer net sdl
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--disable-cpu-opt
 
