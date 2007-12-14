@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.3.2
+PORTVERSION=	2.4.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -42,16 +42,18 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix
 SUB_FILES=	milter-dkim.sh
 WCONF=		${WRKSRC}/devtools/Site
 MAN5=		dkim-filter.conf.5
-MAN8=		dkim-filter.8
-PLIST_FILES=	libexec/dkim-filter sbin/gentxt-dkim \
-		etc/mail/dkim-filter.conf.sample \
-		%%STATS%%libexec/dkim-stats
+MAN8=		dkim-filter.8 dkim-genkey.8 dkim-testkey.8 dkim-testssp.8
+PLIST_FILES=	etc/mail/dkim-filter.conf.sample \
+		libexec/dkim-filter libexec/dkim-genkey \
+		%%STATS%%libexec/dkim-stats \
+		libexec/dkim-testkey libexec/dkim-testssp
 PLIST_DIRS=	etc/mail
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
-		draft-hoffman-dac-vbr-01.txt draft-ietf-dkim-overview-05.txt \
-		draft-ietf-dkim-ssp-01.txt draft-ietf-dkim-ssp-requirements-05.txt \
-		draft-kucherawy-sender-auth-header-08.txt rfc4686.txt rfc4871.txt
+		draft-hoffman-dac-vbr-02.txt draft-ietf-dkim-deployment-00.txt \
+		draft-ietf-dkim-overview-07.txt draft-ietf-dkim-ssp-01.txt \
+		draft-kucherawy-sender-auth-header-09.txt \
+		rfc4686.txt rfc4871.txt rfc5016.txt
 .if !defined(NOPORTDOCS)
 LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/overview.html \
@@ -63,10 +65,15 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_close.html \
 		${DOCSDIR_REL}/libdkim/dkim_eoh.html \
 		${DOCSDIR_REL}/libdkim/dkim_eom.html \
+		${DOCSDIR_REL}/libdkim/dkim_flush_cache.html \
 		${DOCSDIR_REL}/libdkim/dkim_free.html \
 		${DOCSDIR_REL}/libdkim/dkim_get_user_context.html \
+		${DOCSDIR_REL}/libdkim/dkim_getcachestats.html \
+		${DOCSDIR_REL}/libdkim/dkim_getdomain.html \
 		${DOCSDIR_REL}/libdkim/dkim_geterror.html \
+		${DOCSDIR_REL}/libdkim/dkim_gethandlingstr.html \
 		${DOCSDIR_REL}/libdkim/dkim_getmode.html \
+		${DOCSDIR_REL}/libdkim/dkim_getpolicystr.html \
 		${DOCSDIR_REL}/libdkim/dkim_getpresult.html \
 		${DOCSDIR_REL}/libdkim/dkim_getpresultstr.html \
 		${DOCSDIR_REL}/libdkim/dkim_getresultstr.html \
@@ -77,6 +84,7 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_header.html \
 		${DOCSDIR_REL}/libdkim/dkim_init.html \
 		${DOCSDIR_REL}/libdkim/dkim_lib.html \
+		${DOCSDIR_REL}/libdkim/dkim_minbody.html \
 		${DOCSDIR_REL}/libdkim/dkim_ohdrs.html \
 		${DOCSDIR_REL}/libdkim/dkim_options.html \
 		${DOCSDIR_REL}/libdkim/dkim_param_t.html \
@@ -140,6 +148,12 @@ SITE_SUB+=	-e '\|-static|s|%%STATIC%%|dnl |g'
 
 SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}${RC_SUBR_SUFFIX}"
 
+.if defined(WITH_LIBDKIM_SHARED)
+.if ${ARCH} == "amd64"
+BROKEN=		The devtools do not support the feature
+.endif
+SITE_SUB+=	-e '\|bld_LIBDKIM_SHARED|s/^dnl //g'
+.endif
 .if defined(WITH_DEBUG)
 SITE_SUB+=	-e '\|confOPTIMIZE.*-g|s/^dnl //g'
 .endif
@@ -148,6 +162,9 @@ SITE_SUB+=	-e '\|bld_USE_ARLIB|s/^dnl //g'
 .endif
 .if defined(WITH_POPAUTH) && !defined(WITHOUT_POPAUTH)
 SITE_SUB+=	-e '/-DPOPAUTH/s/^dnl //g'
+.endif
+.if defined(WITH_QUERY_CACHE) && !defined(WITHOUT_QUERY_CACHE)
+SITE_SUB+=	-e '/-DQUERY_CACHE/s/^dnl //g'
 .endif
 
 .if defined(WITH_VERIFY_DOMAINKEYS) && !defined(WITHOUT_VERIFY_DOMAINKEYS)
@@ -204,8 +221,9 @@ pre-fetch:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "dkim-milter has the following tunable option(s):"
 	@${ECHO_MSG} " WITH_POPAUTH=yes		Query POP-before-SMTP authentication database"
+	@${ECHO_MSG} " WITH_QUERY_CACHE=yes		Cache DNS Query"
 	@${ECHO_MSG} " WITH_VERIFY_DOMAINKEYS=yes	Verify DomainKeys using dk-milter's libdk"
-	@${ECHO_MSG} " WITH_SENDMAIL_BASE=yes	Build to run with base sendmail"
+	@${ECHO_MSG} " WITH_SENDMAIL_BASE=yes		Build to run with base sendmail"
 	@${ECHO_MSG} " WITH_POSTFIX=yes		Build to run with postfix port"
 	@${ECHO_MSG}
 	@sleep 5
@@ -233,8 +251,6 @@ post-install:
 .if !defined(WITH_DEBUG)
 	@${STRIP_CMD} ${PREFIX}/libexec/dkim-filter
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/dkim-filter/gentxt.csh \
-		${PREFIX}/sbin/gentxt-dkim
 	@${MKDIR} ${PREFIX}/etc/mail
 	${INSTALL_DATA} ${WRKSRC}/dkim-filter/dkim-filter.conf.sample ${PREFIX}/etc/mail/
 .for i in ${MAN5}
