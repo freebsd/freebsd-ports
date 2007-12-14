@@ -1,0 +1,77 @@
+.\" Man page for portupdate-scan
+.\"
+.\" Copyright (c) 2007 Alex Stangl <alex@stangl.us>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.Dd November 5, 2007
+.Os
+.Dt PORTUPDATE-SCAN 8
+.Sh NAME
+.Nm portupdate-scan
+.Nd scan /usr/ports/UPDATING, showing sections for installed ports
+.Sh SYNOPSIS
+.Nm
+.Op Fl dhmuVv
+.Op Fl D Ar portdir
+.Op Fl -help
+.Op Fl -version
+.Sh DESCRIPTION
+Reads port-related files, including /usr/ports/UPDATING, and outputs
+those sections of UPDATING that might be pertinent to this system.
+Only sections that apply to recognize ports that are known, and not
+installed are omitted.
+.Pp
+The following options are available:
+.Bl -tag -width indent
+.It Fl D Ar portsdir
+use portsdir as ports directory instead of /usr/ports
+.It Fl d
+output additional debugging information
+.It Fl h , -help
+output command usage information and exit
+.It Fl m
+for MIXED sections, show breakdown of which ports are installed and not installed. The verbose information from the v flag is a superset of this.
+.It Fl u
+output information on uninstalled ports (default: off)
+.It Fl v
+output more verbose information
+.It Fl V , -version
+output version information and exit
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh FILES
+.Bl -tag -width /usr/ports/UPDATING -compact
+.It Pa /usr/ports/UPDATING
+port update news
+.It Pa /usr/ports/INDEX
+port index file
+.It Pa /usr/ports/MOVED
+record of port renames and deletions
+.Sh EXAMPLES
+.Pp
+Basic normal operation:
+.Pp
+.Dl portupdate-scan
+.Pp
+To include details of installed/uninstalled ports for MIXED sections:
+.Pp
+.Dl portupdate-scan -m
+.Sh SEE ALSO
+.Xr ports 7
+.Sh AUTHORS
+.An "Alex Stangl" Aq alex@stangl.us
+.Sh BUGS
+The concept of machine-interpreting the APPLIES: line in /usr/ports/UPDATING,
+which were intended for human consumption, is dubious. It would be nice to
+evolve some more robust method for communicating this information.
