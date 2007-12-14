@@ -3,11 +3,11 @@ libexec/bubblemon-gnome2
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/PROFILING
-%%PORTDOCS%%%%DOCSDIR%%/TRANSLATIONS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PROFILING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/TRANSLATIONS
 share/gnome-2.0/ui/GNOME_BubblemonApplet.xml
 share/pixmaps/bubblemon.png
 share/locale/ca/LC_MESSAGES/bubblemon.mo
@@ -23,6 +23,7 @@ share/locale/ko/LC_MESSAGES/bubblemon.mo
 share/locale/no/LC_MESSAGES/bubblemon.mo
 share/locale/pl/LC_MESSAGES/bubblemon.mo
 share/locale/pt/LC_MESSAGES/bubblemon.mo
+share/locale/pt_BR/LC_MESSAGES/bubblemon.mo
 share/locale/ro/LC_MESSAGES/bubblemon.mo
 share/locale/ru/LC_MESSAGES/bubblemon.mo
 share/locale/sh/LC_MESSAGES/bubblemon.mo
