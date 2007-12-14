@@ -1,84 +1,86 @@
 bin/gerbv
 %%PORTDOCS%%%%DOCSDIR%%/PNG-print/PNGPrintMiniHowto.txt
 %%PORTDOCS%%%%DOCSDIR%%/PNG-print/gimp-window.jpg
+%%PORTDOCS%%%%DOCSDIR%%/aperturemacro.txt
 %%PORTDOCS%%%%DOCSDIR%%/eagle/eagle2exc.pl
 %%PORTDOCS%%%%DOCSDIR%%/eagle/eagle2exc.txt
-%%PORTDOCS%%%%DOCSDIR%%/aperturemacro.txt
 %%PORTDOCS%%%%DOCSDIR%%/image2pixmap.fig
 %%PORTDOCS%%%%DOCSDIR%%/projectfiles.txt
 %%PORTDOCS%%%%DOCSDIR%%/sources.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/Mentor-BoardStation/README.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/Mentor-BoardStation/artwork_1.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/am-test/am-test.gbx
-%%PORTDOCS%%%%EXAMPLESDIR%%/cslk/README.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/cslk/cslk.gbx
-%%PORTDOCS%%%%EXAMPLESDIR%%/cslk/cslk.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/dan/README.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/dan/top.gbx
-%%PORTDOCS%%%%EXAMPLESDIR%%/eaglecad1/top-cop.gbx
-%%PORTDOCS%%%%EXAMPLESDIR%%/eaglecad1/top-cop.pdf
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/README.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/d1.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/drill0.exc
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/drill1.exc
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/drill20.exc
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/drill30.exc
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/gnd.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/l0.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/l1.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/l2.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/l3.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/l4.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/l5.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/pow.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/pow3.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/resplan.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/sieb0.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/sieb1.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/stp0.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/ekf2/stp1.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/jj/README.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/jj/l1-1.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/jj/l1-2.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/jj/l1-3.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/jj/l1-orig.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/nollezappare/AssemblyTop.gdo
-%%PORTDOCS%%%%EXAMPLESDIR%%/nollezappare/EtchLayer2Bottom.gdo
-%%PORTDOCS%%%%EXAMPLESDIR%%/nollezappare/ThruHolePlated.ncd
-%%PORTDOCS%%%%EXAMPLESDIR%%/numpres/numpres.pcb
-%%PORTDOCS%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_componentmask.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_componentsilk.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_group1.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_group2.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_plated-drill.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_soldermask.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_unplated-drill.grb
-%%PORTDOCS%%%%EXAMPLESDIR%%/orcad/README.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/orcad/ast.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/orcad/rs232_cm.asb
-%%PORTDOCS%%%%EXAMPLESDIR%%/orcad/rs232_cm.ast
-%%PORTDOCS%%%%EXAMPLESDIR%%/orcad/rs232_cm.bot
-%%PORTDOCS%%%%EXAMPLESDIR%%/orcad/rs232_cm.drd
-%%PORTDOCS%%%%EXAMPLESDIR%%/orcad/rs232_cm.smb
-%%PORTDOCS%%%%EXAMPLESDIR%%/orcad/rs232_cm.smt
-%%PORTDOCS%%%%EXAMPLESDIR%%/orcad/rs232_cm.ssb
-%%PORTDOCS%%%%EXAMPLESDIR%%/orcad/rs232_cm.sst
-%%PORTDOCS%%%%EXAMPLESDIR%%/orcad/rs232_cm.top
-%%PORTDOCS%%%%EXAMPLESDIR%%/orcad/thruhole.tap
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Mentor-BoardStation/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Mentor-BoardStation/artwork_1.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/am-test/am-test.gbx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cslk/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cslk/cslk.gbx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cslk/cslk.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dan/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dan/top.gbx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eaglecad1/top-cop.gbx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eaglecad1/top-cop.pdf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/d1.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/drill0.exc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/drill1.exc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/drill20.exc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/drill30.exc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/gnd.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/l0.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/l1.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/l2.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/l3.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/l4.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/l5.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/pow.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/pow3.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/resplan.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/sieb0.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/sieb1.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/stp0.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/stp1.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jj/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jj/l1-1.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jj/l1-2.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jj/l1-3.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/jj/l1-orig.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nollezappare/AssemblyTop.gdo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nollezappare/EtchLayer2Bottom.gdo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nollezappare/ThruHolePlated.ncd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/numpres/numpres.pcb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_componentmask.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_componentsilk.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_group1.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_group2.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_plated-drill.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_soldermask.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/numpres/numpres.pcb.output_unplated-drill.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/ast.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/rs232_cm.asb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/rs232_cm.ast
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/rs232_cm.bot
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/rs232_cm.drd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/rs232_cm.smb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/rs232_cm.smt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/rs232_cm.ssb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/rs232_cm.sst
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/rs232_cm.top
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/thruhole.tap
+%%DATADIR%%/scheme/gerb-debug.scm
+%%DATADIR%%/scheme/gerb-ps.scm
 %%DATADIR%%/scheme/init.scm
 @dirrm %%DATADIR%%/scheme
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/orcad
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/numpres
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/nollezappare
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/jj
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ekf2
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/eaglecad1
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/dan
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cslk
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/am-test
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Mentor-BoardStation
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/PNG-print
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/orcad
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/numpres
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nollezappare
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/jj
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ekf2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/eaglecad1
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dan
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cslk
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/am-test
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Mentor-BoardStation
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/eagle
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/PNG-print
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
