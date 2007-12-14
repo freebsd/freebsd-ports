@@ -12739,6 +12739,7 @@ portsman	ports/ports-mgmt/portsman
 portsnap	ports/ports-mgmt/portsnap
 portsopt	ports/ports-mgmt/portsopt
 porttools	ports/ports-mgmt/porttools
+portupdate-scan	ports/ports-mgmt/portupdate-scan
 portupgrade	ports/ports-mgmt/portupgrade
 portupgrade-devel	ports/ports-mgmt/portupgrade-devel
 posadis		ports/dns/posadis
