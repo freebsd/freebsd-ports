@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	eventmachine
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	A fast, simple event-processing library for Ruby programs
