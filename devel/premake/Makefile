@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	premake
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -16,13 +16,22 @@ COMMENT=	Writes build scripts
 
 WRKSRC=		${WRKDIR}/Premake-${PORTVERSION}
 
+USE_DOS2UNIX=	yes
 USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	bin/premake
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/premake ${PREFIX}/bin
+PORTDOCS=	CHANGES.txt LICENSE.txt README.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+do-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/premake ${PREFIX}/bin
+
+.include <bsd.port.post.mk>
