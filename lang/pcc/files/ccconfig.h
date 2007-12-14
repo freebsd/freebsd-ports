@@ -41,7 +41,7 @@
 #define	ENDFILES { "/usr/lib/crtend.o", "/usr/lib/crtn.o", NULL }
 #define STARTLABEL "_start"
 
-#if defined(mach_x86)
+#if defined(mach_i386) || defined(mach_x86)
 #define	CPPMDADD { "-D__i386__", "-D__i386", NULL, }
 #else
 #error defines for arch missing
