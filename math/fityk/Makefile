@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	fityk
-PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTVERSION=	0.8.2
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -21,32 +20,20 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gtk20
-USE_WX=		2.6
+USE_WX=		2.6+
 WX_CONF_ARGS=	absolute
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-3rdparty
 USE_LDCONFIG=	yes
 
 MAN1=		fityk.1
-PLIST_FILES=	bin/cfityk \
-		bin/fityk \
-		include/fityk.h \
-		lib/libfityk.a \
-		lib/libfityk.la \
-		lib/libfityk.so \
-		lib/libfityk.so.0 \
-		%%DATADIR%%/fitykhelp.htb \
-		%%DATADIR%%/tips.txt
-PLIST_DIRS=	%%DATADIR%%
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|^CPPFLAGS=|#CPPFLAGS=|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|config 3rdparty|config|g ; \
-		 s|^install-data-am:|install-data-am:#|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|fityk_tips|tips|g' ${WRKSRC}/src/wxgui/gui.cpp
+post-install:
+	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.mk>
