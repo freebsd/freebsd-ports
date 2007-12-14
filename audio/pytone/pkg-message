@@ -1,7 +1,7 @@
 
 ###############################################################
 
-To use pytone, you should copy ${LOCALBASE}/etc/pytonerc to:
+To use pytone, you should copy ${LOCALBASE}/etc/pytonerc.sample to:
 
 ~/.pytone/pytonerc
 
