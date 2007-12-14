@@ -34,6 +34,7 @@
 %%SITE_PERL%%/Moose/Util.pm
 %%SITE_PERL%%/Moose/Util/TypeConstraints.pm
 %%SITE_PERL%%/Test/Moose.pm
+%%SITE_PERL%%/oose.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose
 @dirrmtry %%SITE_PERL%%/Test

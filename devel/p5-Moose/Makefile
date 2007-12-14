@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
@@ -17,9 +17,10 @@ COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
-	p5-Class-MOP>=0.48:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.49:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-Sub-Name>=0.02:${PORTSDIR}/devel/p5-Sub-Name \
-	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter
+	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter \
+	p5-Filter-Simple>=0:${PORTSDIR}/textproc/p5-Filter-Simple
 
 PERL_CONFIGURE=	5.8.0+
 
@@ -58,7 +59,8 @@ MAN3=	Moose.3 \
 	Moose::Spec::Role.3 \
 	Moose::Util.3 \
 	Moose::Util::TypeConstraints.3 \
-	Test::Moose.3
+	Test::Moose.3 \
+	oose.3
 
 post-extract:
 	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
