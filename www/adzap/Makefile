@@ -6,6 +6,7 @@
 
 PORTNAME=	adzap
 PORTVERSION=	20071023
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://adzapper.sourceforge.net/ LOCAL/kris
 
@@ -21,7 +22,7 @@ SUB_FILES=	adzap.conf pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-configure:
-.for FILE in squid_redirect wrapzap
+.for FILE in squid_redirect wrapzap zapchain
 	${REINPLACE_CMD} -e "s:/usr/bin/perl:${PERL5}:g" \
 			-e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/scripts/${FILE}
 .endfor
@@ -29,6 +30,7 @@ do-configure:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/squid_redirect ${PREFIX}/libexec/
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/wrapzap ${PREFIX}/libexec/adzap
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/zapchain ${PREFIX}/libexec/
 	${INSTALL} -d ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/zaps ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/rc ${EXAMPLESDIR}
