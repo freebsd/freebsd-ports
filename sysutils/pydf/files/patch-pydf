@@ -1,0 +1,47 @@
+--- pydf.original	Tue Dec  4 23:02:26 2007
++++ pydf	Tue Dec  4 23:02:14 2007
+@@ -1,4 +1,4 @@
+-#! /usr/bin/python
++#! %%PYTHON_CMD%%
+
+ import sys, os, string, types, commands, struct
+ from optparse import OptionParser
+@@ -166,7 +166,7 @@
+ #end of default definitions
+
+ # read configuration file
+-for i in ["/etc/pydfrc", os.environ['HOME']+"/.pydfrc"]:
++for i in ["%%PREFIX%%/etc/pydfrc", os.environ['HOME']+"/.pydfrc"]:
+     if os.path.isfile(i):
+         execfile(i)
+
+@@ -336,9 +336,9 @@
+         except OSError, IOError:
+             status = 10*[0]
+
+-        fs_blocksize = status[F_BSIZE]
++        fs_blocksize = status[F_FRSIZE]
+         if fs_blocksize == 0:
+-            fs_blocksize = status[F_FRSIZE]
++            fs_blocksize = status[F_BSIZE]
+         free = status[F_BFREE]
+         used = long(status[F_BLOCKS]-free)
+         size = status[F_BLOCKS]
+@@ -351,7 +351,7 @@
+         avail_f = myformat(avail, sizeformat, fs_blocksize)
+
+         try:
+-            perc = round(100.*used/size, 1)
++            perc = round(100.*used/(avail+used), 1)
+         except ZeroDivisionError:
+             perc = 0
+         perc_f = str(perc)
+@@ -419,7 +419,7 @@
+     "test if fs (as type) is a special one"
+     "in addition, a filesystem is special if it has number of blocks equal to 0"
+     fs = fs.lower()
+-    return fs in [ "tmpfs", "devpts", "proc", "sysfs", "usbfs" ]
++    return fs in [ "tmpfs", "devpts", "proc", "sysfs", "usbfs", "procfs", "devfs" ]
+
+
+
