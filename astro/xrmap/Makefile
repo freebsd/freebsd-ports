@@ -15,7 +15,7 @@ DISTFILES=	${SRCFILE}:src ${DATAFILES:S|$|:data|} ${CIAFILE}:data ${POPFILE}:dat
 DIST_SUBDIR=	xrmap
 EXTRACT_ONLY=	${SRCFILE} ${DATAFILES}
 
-MAINTAINER=	serge.gagnon@b2b2c.ca
+MAINTAINER=	serge.gagnon.1@ulaval.ca
 COMMENT=	Map portions of the earth from a given longitude/latitude
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
