@@ -6993,6 +6993,7 @@ linux-mikmod	ports/audio/linux-mikmod
 linux-mozilla	ports/www/linux-mozilla
 linux-mplayer-plugin	ports/www/linux-mplayer-plugin
 linux-nero	ports/sysutils/linux-nero
+linux-nerodigitalaudio	ports/audio/linux-nerodigitalaudio
 linux-nerogame	ports/games/linux-nerogame
 linux-netscape-messenger	ports/mail/linux-netscape-messenger
 linux-netscape-navigator	ports/www/linux-netscape-navigator
