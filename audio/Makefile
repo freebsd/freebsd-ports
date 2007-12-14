@@ -356,6 +356,7 @@
     SUBDIR += linux-libvorbis
     SUBDIR += linux-mbrola
     SUBDIR += linux-mikmod
+    SUBDIR += linux-nerodigitalaudio
     SUBDIR += linux-openal
     SUBDIR += linux-sdl_mixer
     SUBDIR += linux-shoutcast
