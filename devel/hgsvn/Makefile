@@ -7,6 +7,7 @@
 
 PORTNAME=	hgsvn
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,9 @@ COMMENT=	A set of scripts to work locally on Subversion checkouts using Mercuria
 
 DIST_SUBDIR=	python
 USE_PYTHON=	2.5+
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=easy_install
 PLIST_SUB=	VERSION=${PORTVERSION} PYVER=${PYTHON_VERSION:S/python//}
+RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion \
+		hg:${PORTSDIR}/devel/mercurial
 
 .include <bsd.port.mk>
