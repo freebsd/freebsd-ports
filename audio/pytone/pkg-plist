@@ -1,10 +1,10 @@
 bin/pytone
 bin/pytonectl
-etc/pytonerc
+etc/pytonerc.sample
 lib/%%PYTHON_VERSION%%/site-packages/pytone/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/config.py
-lib/%%PYTHON_VERSION%%/site-packages/pytone/dbitem.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/decoder.py
+lib/%%PYTHON_VERSION%%/site-packages/pytone/encoding.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/errors.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/events.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/filelist.py
@@ -18,11 +18,11 @@ lib/%%PYTHON_VERSION%%/site-packages/pytone/item.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/iteminfowin.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/log.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/logwin.py
+lib/%%PYTHON_VERSION%%/site-packages/pytone/lyricswin.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/mainscreen.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/messagewin.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/metadata.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/mixerwin.py
-lib/%%PYTHON_VERSION%%/site-packages/pytone/MP3Info.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/network.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/playerwin.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/playlist.py
@@ -59,14 +59,14 @@ lib/%%PYTHON_VERSION%%/site-packages/pytone/services/players/mpg123.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/services/players/remote.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/services/players/xmmsplayer.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs/local.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs/remote.py
+lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs/sqlite.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs/local.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs/remote.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs/sqlite.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs/local.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs/remote.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs/sqlite.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/services/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/services/player.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/services/playlist.pyc
@@ -102,26 +102,26 @@ lib/%%PYTHON_VERSION%%/site-packages/pytone/pcm.so
 lib/%%PYTHON_VERSION%%/site-packages/pytone/bufferedao.so
 lib/%%PYTHON_VERSION%%/site-packages/pytone/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/config.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pytone/dbitem.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/decoder.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pytone/encoding.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/errors.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/events.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/filelist.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pytone/hub.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/filelistwin.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/help.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/helper.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/helpwin.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pytone/hub.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/inputwin.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/item.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/iteminfowin.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/log.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/logwin.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pytone/lyricswin.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/mainscreen.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/messagewin.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/metadata.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/mixerwin.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pytone/MP3Info.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/network.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/playerwin.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/playlist.pyc
@@ -139,8 +139,8 @@ lib/%%PYTHON_VERSION%%/site-packages/pytone/version.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/window.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/config.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pytone/dbitem.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/decoder.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pytone/encoding.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/errors.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/events.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/filelist.pyo
@@ -154,11 +154,11 @@ lib/%%PYTHON_VERSION%%/site-packages/pytone/item.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/iteminfowin.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/log.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/logwin.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pytone/lyricswin.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/mainscreen.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/messagewin.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/metadata.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/mixerwin.pyo
-lib/%%PYTHON_VERSION%%/site-packages/pytone/MP3Info.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/network.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/playerwin.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/playlist.pyo
@@ -175,9 +175,9 @@ lib/%%PYTHON_VERSION%%/site-packages/pytone/statusbar.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/version.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pytone/window.pyo
 share/locale/de/LC_MESSAGES/PyTone.mo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/pytone/services/players
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/pytone/services
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/pytone/plugins/audioscrobbler
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/pytone/plugins
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/pytone
+@dirrmtry lib/%%PYTHON_VERSION%%/site-packages/pytone/services/songdbs
+@dirrmtry lib/%%PYTHON_VERSION%%/site-packages/pytone/services/players
+@dirrmtry lib/%%PYTHON_VERSION%%/site-packages/pytone/services
+@dirrmtry lib/%%PYTHON_VERSION%%/site-packages/pytone/plugins/audioscrobbler
+@dirrmtry lib/%%PYTHON_VERSION%%/site-packages/pytone/plugins
+@dirrmtry lib/%%PYTHON_VERSION%%/site-packages/pytone

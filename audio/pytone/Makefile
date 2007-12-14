@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pytone
-PORTVERSION=	2.3.1
+PORTVERSION=	3.0.1
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.luga.de/pytone/download/ \
 		http://redundancy.redundancy.org/mirror/
@@ -16,7 +16,8 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A music jukebox written in Python with a curses GUI
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite.so:${PORTSDIR}/databases/py-pysqlite23 \
+		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -68,6 +69,7 @@ post-patch:
 		${WRKSRC}/pytonectl
 
 post-install:
+	@${CP} ${WRKSRC}/conf/pytonerc ${PREFIX}/etc/pytonerc.sample
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
