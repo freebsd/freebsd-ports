@@ -237,6 +237,7 @@
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test-html-title.html
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test-link.txt
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test-news-item.txt
+%%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test-xhtml-title.html
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test.gif
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test.sxw
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test.zip
@@ -2180,6 +2181,7 @@
 %%ZOPEPRODUCTDIR%%/CMFEditions/tests/images/Image2_v3.gif
 %%ZOPEPRODUCTDIR%%/CMFEditions/tests/images/img1.png
 %%ZOPEPRODUCTDIR%%/CMFEditions/tests/images/img2.png
+%%ZOPEPRODUCTDIR%%/CMFEditions/tests/large_file_modifiers.txt
 %%ZOPEPRODUCTDIR%%/CMFEditions/tests/test_ATContentTypes.py
 %%ZOPEPRODUCTDIR%%/CMFEditions/tests/test_ATContentTypes.pyc
 %%ZOPEPRODUCTDIR%%/CMFEditions/tests/test_ATReferences.py
@@ -2200,10 +2202,13 @@
 %%ZOPEPRODUCTDIR%%/CMFEditions/tests/test_ModifierRegistryTool.pyc
 %%ZOPEPRODUCTDIR%%/CMFEditions/tests/test_ZVCStorageTool.py
 %%ZOPEPRODUCTDIR%%/CMFEditions/tests/test_ZVCStorageTool.pyc
+%%ZOPEPRODUCTDIR%%/CMFEditions/tests/test_doctests.py
+%%ZOPEPRODUCTDIR%%/CMFEditions/tests/test_doctests.pyc
 %%ZOPEPRODUCTDIR%%/CMFEditions/tool.gif
 %%ZOPEPRODUCTDIR%%/CMFEditions/utilities.py
 %%ZOPEPRODUCTDIR%%/CMFEditions/utilities.pyc
 %%ZOPEPRODUCTDIR%%/CMFEditions/version.txt
+%%ZOPEPRODUCTDIR%%/CMFEditions/www/AbortVersioningOfLargeFilesAndImagesAddForm.pt
 %%ZOPEPRODUCTDIR%%/CMFEditions/www/NotRetainATRefsModifierAddForm.pt
 %%ZOPEPRODUCTDIR%%/CMFEditions/www/OMInsideChildrensModifierAddForm.pt
 %%ZOPEPRODUCTDIR%%/CMFEditions/www/OMOutsideChildrensModifierAddForm.pt
@@ -2214,6 +2219,8 @@
 %%ZOPEPRODUCTDIR%%/CMFEditions/www/SaveFileDataInFileTypeByReferenceModifierAddForm.pt
 %%ZOPEPRODUCTDIR%%/CMFEditions/www/SillyDemoRetrieveModifier.pt
 %%ZOPEPRODUCTDIR%%/CMFEditions/www/SillyDemoRetrieveModifierAddForm.pt
+%%ZOPEPRODUCTDIR%%/CMFEditions/www/SkipVersioningOfLargeFilesAndImagesAddForm.pt
+%%ZOPEPRODUCTDIR%%/CMFEditions/www/fieldModifierEditForm.pt
 %%ZOPEPRODUCTDIR%%/CMFEditions/www/modifier.gif
 %%ZOPEPRODUCTDIR%%/CMFEditions/www/modifierAddForm.pt
 %%ZOPEPRODUCTDIR%%/CMFEditions/www/modifierEditForm.pt
@@ -2325,6 +2332,7 @@
 %%ZOPEPRODUCTDIR%%/CMFPlacefulWorkflow/LICENSE
 %%ZOPEPRODUCTDIR%%/CMFPlacefulWorkflow/Log.py
 %%ZOPEPRODUCTDIR%%/CMFPlacefulWorkflow/Log.pyc
+%%ZOPEPRODUCTDIR%%/CMFPlacefulWorkflow/MAINTENANCE_BRANCH.txt
 %%ZOPEPRODUCTDIR%%/CMFPlacefulWorkflow/PlacefulWorkflowTool.py
 %%ZOPEPRODUCTDIR%%/CMFPlacefulWorkflow/PlacefulWorkflowTool.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlacefulWorkflow/README.txt
@@ -2669,6 +2677,7 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/cssregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/jsregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/rolemap.xml
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three03_three04/diff_tool.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/final_three0x.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/final_three0x.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/rcs.py
@@ -2980,7 +2989,6 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_deprecated/folder_localrole_set.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_deprecated/folder_localrole_set.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_deprecated/footer.pt
-%%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_deprecated/fullscreenmode.js
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_deprecated/getActionIconList.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_deprecated/getActionIconList.py.metadata
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_deprecated/getAddableTypesInMenu.py
@@ -3049,6 +3057,7 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_ecmascript/formUnload.js
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_ecmascript/form_tabbing.js
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_ecmascript/formsubmithelpers.js
+%%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_ecmascript/fullscreenmode.js
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_ecmascript/highlightsearchterms.js
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_ecmascript/ie5fixes.js
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_ecmascript/input-label.js
@@ -3831,6 +3840,7 @@
 %%ZOPEPRODUCTDIR%%/CMFQuickInstallerTool/interfaces/portal_quickinstaller.py
 %%ZOPEPRODUCTDIR%%/CMFQuickInstallerTool/interfaces/portal_quickinstaller.pyc
 %%ZOPEPRODUCTDIR%%/CMFQuickInstallerTool/profiles.zcml
+%%ZOPEPRODUCTDIR%%/CMFQuickInstallerTool/profiles/default/metadata.xml
 %%ZOPEPRODUCTDIR%%/CMFQuickInstallerTool/profiles/default/toolset.xml
 %%ZOPEPRODUCTDIR%%/CMFQuickInstallerTool/profiles/test/actions.xml
 %%ZOPEPRODUCTDIR%%/CMFQuickInstallerTool/tests/__init__.py
@@ -4893,6 +4903,8 @@
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/configure.zcml
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/interfaces.py
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/interfaces.pyc
+%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/lazycatalog.py
+%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/lazycatalog.pyc
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/PlacelessTranslationService.pot
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/cs/LC_MESSAGES/PlacelessTranslationService.po
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/de/LC_MESSAGES/PlacelessTranslationService.po
@@ -5598,6 +5610,7 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ar/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/bg/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/bn/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ca/LC_MESSAGES/plonefrontpage-ca.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ca/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/cs/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/cs/LC_MESSAGES/plonelocales.po
@@ -5644,6 +5657,7 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pl/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/plonefrontpage.pot
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/plonelocales.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt_BR/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/rm/LC_MESSAGES/plonelocales.po
@@ -6686,6 +6700,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-it.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-ja.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-nl.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-pl.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-pt-br.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-pt.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sk.po
@@ -6704,6 +6719,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-fr.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-it.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-ja.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-pl.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-pt.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-sk.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-tr.po
@@ -6723,6 +6739,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-it.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-ja.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-nl.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-pl.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-pt-br.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-pt.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-sk.po
@@ -6828,6 +6845,8 @@
 %%ZOPEPRODUCTDIR%%/kupu/plone/beforeunload.kupu
 %%ZOPEPRODUCTDIR%%/kupu/plone/body.kupu
 %%ZOPEPRODUCTDIR%%/kupu/plone/colorchooser.kupu
+%%ZOPEPRODUCTDIR%%/kupu/plone/config.py
+%%ZOPEPRODUCTDIR%%/kupu/plone/config.pyc
 %%ZOPEPRODUCTDIR%%/kupu/plone/configure.zcml
 %%ZOPEPRODUCTDIR%%/kupu/plone/drawers.kupu
 %%ZOPEPRODUCTDIR%%/kupu/plone/exportimport.py
@@ -6969,12 +6988,15 @@
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/__init__.pyc
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/framework.py
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/framework.pyc
+%%ZOPEPRODUCTDIR%%/kupu/plone/tests/image.jpg
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/input/baduid.in
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/input/linked.in
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/input/minimal.in
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/input/notcaptioned.in
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/input/notquoted.in
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/input/simple.in
+%%ZOPEPRODUCTDIR%%/kupu/plone/tests/kuputestcase.py
+%%ZOPEPRODUCTDIR%%/kupu/plone/tests/kuputestcase.pyc
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/output/baduid.out
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/output/linked.out
 %%ZOPEPRODUCTDIR%%/kupu/plone/tests/output/minimal.out
@@ -7087,6 +7109,8 @@
 %%ZOPEPRODUCTDIR%%/statusmessages/tests/test_adapter.pyc
 %%ZOPEPRODUCTDIR%%/statusmessages/tests/test_doctests.py
 %%ZOPEPRODUCTDIR%%/statusmessages/tests/test_doctests.pyc
+%%ZOPEPRODUCTDIR%%/statusmessages/tests/test_encoding.py
+%%ZOPEPRODUCTDIR%%/statusmessages/tests/test_encoding.pyc
 %%ZOPEPRODUCTDIR%%/statusmessages/version.txt
 %%ZOPEPRODUCTDIR%%/validation/ChangeLog
 %%ZOPEPRODUCTDIR%%/validation/HISTORY.txt
@@ -7245,7 +7269,13 @@
 %%ZOPELIBPYTHONDIR%%/kss/core/configure.zcml
 %%ZOPELIBPYTHONDIR%%/kss/core/deprecated.py
 %%ZOPELIBPYTHONDIR%%/kss/core/deprecated.pyc
-%%ZOPELIBPYTHONDIR%%/kss/core/doc/tutorial_part2.rst
+%%ZOPELIBPYTHONDIR%%/kss/core/docs/CREDITS.txt
+%%ZOPELIBPYTHONDIR%%/kss/core/docs/HISTORY.txt
+%%ZOPELIBPYTHONDIR%%/kss/core/docs/INSTALL.txt
+%%ZOPELIBPYTHONDIR%%/kss/core/docs/LICENSE.GPL
+%%ZOPELIBPYTHONDIR%%/kss/core/docs/LICENSE.txt
+%%ZOPELIBPYTHONDIR%%/kss/core/docs/TODO.txt
+%%ZOPELIBPYTHONDIR%%/kss/core/docs/tutorial_part2.rst
 %%ZOPELIBPYTHONDIR%%/kss/core/dtds/xhtml-lat1.ent
 %%ZOPELIBPYTHONDIR%%/kss/core/dtds/xhtml-special.ent
 %%ZOPELIBPYTHONDIR%%/kss/core/dtds/xhtml-symbol.ent
@@ -7999,6 +8029,13 @@
 %%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/__init__.py
 %%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/__init__.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/configure.zcml
+%%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/tests/__init__.py
+%%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/tests/__init__.pyc
+%%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/tests/analytics.txt
+%%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/tests/base.py
+%%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/tests/base.pyc
+%%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/tests/test_doctests.py
+%%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/tests/test_doctests.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/view.py
 %%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/view.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/layout/configure.zcml
@@ -8122,6 +8159,8 @@
 %%ZOPELIBPYTHONDIR%%/plone/app/layout/viewlets/tests/base.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/layout/viewlets/tests/test_content.py
 %%ZOPELIBPYTHONDIR%%/plone/app/layout/viewlets/tests/test_content.pyc
+%%ZOPELIBPYTHONDIR%%/plone/app/layout/viewlets/tests/test_history.py
+%%ZOPELIBPYTHONDIR%%/plone/app/layout/viewlets/tests/test_history.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/layout/viewlets/toc.pt
 %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/NOTES.txt
 %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/README.txt
@@ -8292,6 +8331,9 @@
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/portlets/events.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/portlets/feedparser.py
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/portlets/feedparser.pyc
+%%ZOPELIBPYTHONDIR%%/plone/app/portlets/portlets/language.pt
+%%ZOPELIBPYTHONDIR%%/plone/app/portlets/portlets/language.py
+%%ZOPELIBPYTHONDIR%%/plone/app/portlets/portlets/language.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/portlets/login.pt
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/portlets/login.py
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/portlets/login.pyc
@@ -8845,8 +8887,11 @@
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tests/test_normalizer.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tr.py
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tr.pyc
+%%ZOPELIBPYTHONDIR%%/plone/intelligenttext/README.txt
 %%ZOPELIBPYTHONDIR%%/plone/intelligenttext/__init__.py
 %%ZOPELIBPYTHONDIR%%/plone/intelligenttext/__init__.pyc
+%%ZOPELIBPYTHONDIR%%/plone/intelligenttext/tests.py
+%%ZOPELIBPYTHONDIR%%/plone/intelligenttext/tests.pyc
 %%ZOPELIBPYTHONDIR%%/plone/intelligenttext/transforms.py
 %%ZOPELIBPYTHONDIR%%/plone/intelligenttext/transforms.pyc
 %%ZOPELIBPYTHONDIR%%/plone/locking/README.txt
@@ -9573,6 +9618,7 @@
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/profiles/default
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/profiles
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/patches
+@dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three03_three04
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/rc2_final
@@ -9861,6 +9907,7 @@
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/globals/tests
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/globals
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/dashboard
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/tests
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/alias
 @dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout
@@ -9933,7 +9980,7 @@
 @dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/3rd_party
 @dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit
 @dirrm %%ZOPELIBPYTHONDIR%%/kss/core/dtds
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/doc
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/docs
 @dirrm %%ZOPELIBPYTHONDIR%%/kss/core/browser
 @dirrm %%ZOPELIBPYTHONDIR%%/kss/core
 @dirrm %%ZOPELIBPYTHONDIR%%/kss
