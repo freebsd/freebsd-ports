@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	bbmail
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bbtools
+MASTER_SITES=	SF/bbtools
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool intended for Blackbox that checks for new mail
 
-USE_X_PREFIX=	yes
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libbt.pc:${PORTSDIR}/x11-wm/blackbox
+
+USE_XORG=	xext
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		bbmail.1
-PLIST_FILES=	bin/bbmail share/bbtools/bbmail.bb
+PLIST_FILES=	bin/bbmail share/bbtools/bbmail.rc
 
 post-install:
 	@${ECHO_CMD} "@unexec rmdir %D/share/bbtools 2>/dev/null || true" \
