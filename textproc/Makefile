@@ -106,6 +106,7 @@
     SUBDIR += docbook-xsd
     SUBDIR += docbook-xsl
     SUBDIR += docbookide.el
+    SUBDIR += docdiff
     SUBDIR += doclifter
     SUBDIR += docproj
     SUBDIR += docproj-jadetex
