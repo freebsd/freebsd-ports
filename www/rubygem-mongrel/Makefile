@@ -5,22 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	mongrel
-PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTVERSION=	1.1.1
 CATEGORIES=	www rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 DISTFILES=	${PATCHNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Fast HTTP 1.1 library and server for Ruby web applications
 
 BUILD_DEPENDS=	gpgen:${PORTSDIR}/devel/rubygem-gem_plugin \
-		rubygem-daemons>=0.4.4:${PORTSDIR}/devel/rubygem-daemons \
-		rubygem-fastthread>=0.6.2:${PORTSDIR}/devel/rubygem-fastthread
+		rubygem-daemons>=1.0.3:${PORTSDIR}/devel/rubygem-daemons \
+		rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PATCHNAME=	cgi_multipart_eof_fix-2.3
+PATCHNAME=	cgi_multipart_eof_fix-2.5.0
 PLIST_SUB=	CGIFIX="${PATCHNAME}"
 
 post-install:
