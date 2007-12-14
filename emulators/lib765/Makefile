@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lib765
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4.1
 CATEGORIES=	emulators devel
 MASTER_SITES=	http://www.seasip.demon.co.uk/Unix/LibDsk/
 
@@ -14,11 +14,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulation of uPD765a Floppy Disc Controller
 
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog doc/765.txt ${DOCSDIR}
 .endif
