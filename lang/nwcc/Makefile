@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nwcc
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -23,15 +23,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--installprefix=${PREFIX}
 ALL_TARGET=
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
-.else
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-.endif
-
 post-build:
 	cd ${WRKSRC} ; ${MAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
