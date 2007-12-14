@@ -12,6 +12,11 @@ share/locale/fi/LC_MESSAGES/ristretto.mo
 share/locale/fr/LC_MESSAGES/ristretto.mo
 share/locale/nb_NO/LC_MESSAGES/ristretto.mo
 share/locale/nl/LC_MESSAGES/ristretto.mo
+share/locale/cs/LC_MESSAGES/ristretto.mo
+share/locale/hu/LC_MESSAGES/ristretto.mo
+share/locale/lv/LC_MESSAGES/ristretto.mo
+share/locale/pt_BR/LC_MESSAGES/ristretto.mo
+share/locale/ur/LC_MESSAGES/ristretto.mo
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
 @dirrmtry share/applications
