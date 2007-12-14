@@ -1,4 +1,0 @@
-bin/xmake_anim.pl
-bin/xmakemol
-%%DATADIR%%/elements
-@dirrm %%DATADIR%%
