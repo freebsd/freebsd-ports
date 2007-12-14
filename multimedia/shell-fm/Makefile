@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	shell-fm
-PORTVERSION=	20061229
-PORTREVISION=	2
+PORTVERSION=	0.4
+PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ntarmos.dyndns.org/Software/FreeBSD/
 
@@ -23,22 +23,29 @@ ACLOCAL_ARGS=	-I m4
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-USE_GCC=	3.4+
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && \
 	${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})
 
 post-install:
-	@(${MKDIR} ${PREFIX}/share/examples/shell-fm && \
-	${INSTALL} -m 444 ${WRKSRC}/src/shell-fm.rc-example \
-		${PREFIX}/share/examples/shell-fm)
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/AUTHORS ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/COPYING ${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${ECHO_MSG} "installing example config file to ${EXAMPLESDIR}"
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_MAN} ${WRKSRC}/shell-fm.rc-example ${EXAMPLESDIR}
+.endif
 
 MAN1=		shell-fm.1
 MANCOMPRESSED=	no
-
-PLIST_FILES=	bin/shell-fm \
-		share/examples/shell-fm/shell-fm.rc-example
-PLIST_DIRS=	share/examples/shell-fm
+PLIST_FILES=	bin/shell-fm
+PORTDOCS=	AUTHORS COPYING README
+PORTEXAMPLES=	shell-fm.rc-example
 
 .include <bsd.port.mk>
