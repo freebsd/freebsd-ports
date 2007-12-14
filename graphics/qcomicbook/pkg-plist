@@ -5,11 +5,6 @@ bin/qcomicbook
 %%DATADIR%%/fforward.png
 %%DATADIR%%/fitheight.png
 %%DATADIR%%/fitwidth.png
-%%DATADIR%%/help/en/index.html
-%%DATADIR%%/help/en/internals.html
-%%DATADIR%%/help/en/intro.html
-%%DATADIR%%/help/en/keyboard.html
-%%DATADIR%%/help/en/menu.html
 %%DATADIR%%/info.png
 %%DATADIR%%/japanese.png
 %%DATADIR%%/nextpage.png
@@ -27,6 +22,4 @@ bin/qcomicbook
 %%DATADIR%%/thumbnails.png
 %%DATADIR%%/twopages.png
 %%DATADIR%%/wholepage.png
-@dirrm %%DATADIR%%/help/en
-@dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
