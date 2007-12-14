@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aacplusenc
-PORTVERSION=	0.8
+PORTVERSION=	0.12
 CATEGORIES=	audio
 MASTER_SITES=	http://teknoraver.campuslife.it/software/mp4tools/
 
@@ -23,7 +23,14 @@ ONLY_FOR_ARCHS=	i386
 
 PLIST_FILES=	bin/aacplusenc
 
+.if defined(WITHOUT_FFTW3)
+MAKE_ARGS+=	NOFFTW3=1
+.else
+LIB_DEPENDS+=	fftw3f.4:${PORTSDIR}/math/fftw3-float
+CFLAGS+=	-I${LOCALBASE}/include
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O3 -ftree-vectorize|${CFLAGS}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-O3 -ftree-vectorize|${CFLAGS}| ; s|-lfftw3f|-L${LOCALBASE}/lib -lfftw3f|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
