@@ -13,7 +13,6 @@ bin/aoi
 %%DATADIR%%/Plugins/Help/pircbot.jar
 %%DATADIR%%/Plugins/HelpPlugin.jar
 %%DATADIR%%/Plugins/OSSpecific.jar
-%%DATADIR%%/Plugins/PluginRegistry.jar
 %%DATADIR%%/Plugins/PostInstall.jar
 %%DATADIR%%/Plugins/Renderers.jar
 %%DATADIR%%/Plugins/SPManager.jar
