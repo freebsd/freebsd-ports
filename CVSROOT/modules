@@ -6994,6 +6994,7 @@ linux-mozilla	ports/www/linux-mozilla
 linux-mplayer-plugin	ports/www/linux-mplayer-plugin
 linux-nero	ports/sysutils/linux-nero
 linux-nerogame	ports/games/linux-nerogame
+linux-netscape-messenger	ports/mail/linux-netscape-messenger
 linux-nvu	ports/www/linux-nvu
 linux-nwnclient	ports/games/linux-nwnclient
 linux-nwserver	ports/games/linux-nwserver
