@@ -1,5 +1,91 @@
 bin/ftjava
 %%DATADIR%%/FTJava.jar
+%%DATADIR%%/Images/Bodies/asteroid1/asteroid1_1.gif
+%%DATADIR%%/Images/Bodies/asteroid1/asteroid1_10.gif
+%%DATADIR%%/Images/Bodies/asteroid1/asteroid1_20.gif
+%%DATADIR%%/Images/Bodies/asteroid1/asteroid1_2_5.gif
+%%DATADIR%%/Images/Bodies/asteroid1/asteroid1_40.gif
+%%DATADIR%%/Images/Bodies/asteroid1/asteroid1_5.gif
+%%DATADIR%%/Images/Bodies/asteroid1/asteroid1_80.gif
+%%DATADIR%%/Images/Bodies/asteroid2/asteroid2_1.gif
+%%DATADIR%%/Images/Bodies/asteroid2/asteroid2_10.gif
+%%DATADIR%%/Images/Bodies/asteroid2/asteroid2_20.gif
+%%DATADIR%%/Images/Bodies/asteroid2/asteroid2_2_5.gif
+%%DATADIR%%/Images/Bodies/asteroid2/asteroid2_40.gif
+%%DATADIR%%/Images/Bodies/asteroid2/asteroid2_5.gif
+%%DATADIR%%/Images/Bodies/asteroid2/asteroid2_80.gif
+%%DATADIR%%/Images/Bodies/asteroid3/asteroid3_1.gif
+%%DATADIR%%/Images/Bodies/asteroid3/asteroid3_10.gif
+%%DATADIR%%/Images/Bodies/asteroid3/asteroid3_20.gif
+%%DATADIR%%/Images/Bodies/asteroid3/asteroid3_2_5.gif
+%%DATADIR%%/Images/Bodies/asteroid3/asteroid3_40.gif
+%%DATADIR%%/Images/Bodies/asteroid3/asteroid3_5.gif
+%%DATADIR%%/Images/Bodies/asteroid3/asteroid3_80.gif
+%%DATADIR%%/Images/Bodies/planet1/planet1_1.gif
+%%DATADIR%%/Images/Bodies/planet1/planet1_10.gif
+%%DATADIR%%/Images/Bodies/planet1/planet1_20.gif
+%%DATADIR%%/Images/Bodies/planet1/planet1_2_5.gif
+%%DATADIR%%/Images/Bodies/planet1/planet1_40.gif
+%%DATADIR%%/Images/Bodies/planet1/planet1_5.gif
+%%DATADIR%%/Images/Bodies/planet1/planet1_80.gif
+%%DATADIR%%/Images/Bodies/planet2/planet2_1.gif
+%%DATADIR%%/Images/Bodies/planet2/planet2_10.gif
+%%DATADIR%%/Images/Bodies/planet2/planet2_20.gif
+%%DATADIR%%/Images/Bodies/planet2/planet2_2_5.gif
+%%DATADIR%%/Images/Bodies/planet2/planet2_40.gif
+%%DATADIR%%/Images/Bodies/planet2/planet2_5.gif
+%%DATADIR%%/Images/Bodies/planet2/planet2_80.gif
+%%DATADIR%%/Images/Bodies/planet3/planet3_1.gif
+%%DATADIR%%/Images/Bodies/planet3/planet3_10.gif
+%%DATADIR%%/Images/Bodies/planet3/planet3_20.gif
+%%DATADIR%%/Images/Bodies/planet3/planet3_2_5.gif
+%%DATADIR%%/Images/Bodies/planet3/planet3_40.gif
+%%DATADIR%%/Images/Bodies/planet3/planet3_5.gif
+%%DATADIR%%/Images/Bodies/planet3/planet3_80.gif
+%%DATADIR%%/Images/Bodies/planet4/planet4_1.gif
+%%DATADIR%%/Images/Bodies/planet4/planet4_10.gif
+%%DATADIR%%/Images/Bodies/planet4/planet4_20.gif
+%%DATADIR%%/Images/Bodies/planet4/planet4_2_5.gif
+%%DATADIR%%/Images/Bodies/planet4/planet4_40.gif
+%%DATADIR%%/Images/Bodies/planet4/planet4_5.gif
+%%DATADIR%%/Images/Bodies/planet4/planet4_80.gif
+%%DATADIR%%/Images/Bodies/planet5/planet5_1.gif
+%%DATADIR%%/Images/Bodies/planet5/planet5_10.gif
+%%DATADIR%%/Images/Bodies/planet5/planet5_20.gif
+%%DATADIR%%/Images/Bodies/planet5/planet5_2_5.gif
+%%DATADIR%%/Images/Bodies/planet5/planet5_40.gif
+%%DATADIR%%/Images/Bodies/planet5/planet5_5.gif
+%%DATADIR%%/Images/Bodies/planet5/planet5_80.gif
+%%DATADIR%%/Images/Bodies/planet6/planet6_1.gif
+%%DATADIR%%/Images/Bodies/planet6/planet6_10.gif
+%%DATADIR%%/Images/Bodies/planet6/planet6_20.gif
+%%DATADIR%%/Images/Bodies/planet6/planet6_2_5.gif
+%%DATADIR%%/Images/Bodies/planet6/planet6_40.gif
+%%DATADIR%%/Images/Bodies/planet6/planet6_5.gif
+%%DATADIR%%/Images/Bodies/planet6/planet6_80.gif
+%%DATADIR%%/Images/Bodies/planet7/planet7_1.gif
+%%DATADIR%%/Images/Bodies/planet7/planet7_10.gif
+%%DATADIR%%/Images/Bodies/planet7/planet7_20.gif
+%%DATADIR%%/Images/Bodies/planet7/planet7_2_5.gif
+%%DATADIR%%/Images/Bodies/planet7/planet7_40.gif
+%%DATADIR%%/Images/Bodies/planet7/planet7_5.gif
+%%DATADIR%%/Images/Bodies/planet7/planet7_80.gif
+%%DATADIR%%/Images/Bodies/star1/star1_0_2.gif
+%%DATADIR%%/Images/Bodies/star1/star1_1.gif
+%%DATADIR%%/Images/Bodies/star1/star1_10.gif
+%%DATADIR%%/Images/Bodies/star1/star1_20.gif
+%%DATADIR%%/Images/Bodies/star1/star1_2_5.gif
+%%DATADIR%%/Images/Bodies/star1/star1_40.gif
+%%DATADIR%%/Images/Bodies/star1/star1_5.gif
+%%DATADIR%%/Images/Bodies/star1/star1_80.gif
+%%DATADIR%%/Images/Bodies/star2/star2_0_2.gif
+%%DATADIR%%/Images/Bodies/star2/star2_1.gif
+%%DATADIR%%/Images/Bodies/star2/star2_10.gif
+%%DATADIR%%/Images/Bodies/star2/star2_20.gif
+%%DATADIR%%/Images/Bodies/star2/star2_2_5.gif
+%%DATADIR%%/Images/Bodies/star2/star2_40.gif
+%%DATADIR%%/Images/Bodies/star2/star2_5.gif
+%%DATADIR%%/Images/Bodies/star2/star2_80.gif
 %%DATADIR%%/Images/FTJava.ico
 %%DATADIR%%/Images/Flags/esuIcon.gif
 %%DATADIR%%/Images/Flags/fseIcon.gif
@@ -11,6 +97,7 @@ bin/ftjava
 %%DATADIR%%/Images/Flags/phIcon.gif
 %%DATADIR%%/Images/Flags/unscIcon.gif
 %%DATADIR%%/Images/Logo.gif
+%%DATADIR%%/Images/Logo.png
 %%DATADIR%%/Images/Logo_ESU.gif
 %%DATADIR%%/Images/Logo_FSE.gif
 %%DATADIR%%/Images/Logo_NAC.gif
@@ -18,8 +105,139 @@ bin/ftjava
 %%DATADIR%%/Images/Logo_Valiant1.gif
 %%DATADIR%%/Images/Logo_Valiant2.gif
 %%DATADIR%%/Images/Logo_Valiant3.gif
+%%DATADIR%%/Images/Logo_Valiant4.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/BB.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/BC.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/BDN.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/CE.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/CH.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/CL.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/CT.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/DD.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/DH.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/DN.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/F1.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/F2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/F3.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/F4.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/F5.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/F6.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/FF.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/JJ.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/JJ2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/Primus.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/SC.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/SDN.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic/VorChan.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/AE.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/AKH.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/AL.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/AO.GIF
 %%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/BB.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/BC.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/BDN.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/CE.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/CH.gif
 %%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/CL.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/CT.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/Condor.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/Cotton.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/DD.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/DH.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/DN.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/Explorer.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/F1.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/F2.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/F3.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/F4.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/F5.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/F6.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/FF.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/H1.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/H2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/H3.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/H4.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/H5.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/H6.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/Hyperion.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/JJ2.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/JJJ.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/LargeCargo.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/Nova.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/Olympus.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/Omega.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/Porcupine.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/Raider.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/SC.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/SDN.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/SDN2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/SDN3.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/SDN4.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/SS2.gif
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/STN.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/STN2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/Shepherd.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance/Starliner.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/CE.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/F1.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/F2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/F3.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/F4.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/F5.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/F6.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/H1.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/H2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/H3.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/H4.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/H5.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance/H6.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/MinbariFederation/CE.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/MinbariFederation/DD.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/MinbariFederation/F1.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/MinbariFederation/F2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/MinbariFederation/F3.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/MinbariFederation/F4.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/MinbariFederation/F5.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/MinbariFederation/F6.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/MinbariFederation/JJ2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/MinbariFederation/JJJ.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/MinbariFederation/Sharlin.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/BB.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/BC.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/BDN.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/CE.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/CH.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/CL.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/CT.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/DD.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/DH.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/DN.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/F1.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/F2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/F3.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/F4.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/F5.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/F6.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/FF.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/Fighter_master.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/GQuan.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/JJ2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/JJJ.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/Narn_master_escort.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/SC.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/SDN.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime/ThNon.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/Shadows/BC.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/Shadows/F1.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/Shadows/F2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/Shadows/F3.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/Shadows/F4.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/Shadows/F5.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/Shadows/F6.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/Shadows/SC.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/Vorlon/JJ2.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/Vorlon/JJJ.GIF
+%%DATADIR%%/Images/ShipIcons/EFSB/Vorlon/Vorlon_DD.GIF
 %%DATADIR%%/Images/ShipIcons/Generic/AFH.gif
 %%DATADIR%%/Images/ShipIcons/Generic/AFL.gif
 %%DATADIR%%/Images/ShipIcons/Generic/AFM.gif
@@ -798,6 +1016,70 @@ bin/ftjava
 %%DATADIR%%/Images/tag_skull.gif
 %%DATADIR%%/Images/tag_white.gif
 %%DATADIR%%/Images/tag_yellow.gif
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_BB_BB.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_BC_Vorchan.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_BDN_BDN.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_CE_EscortCruiser.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_CH_HeavyCruiser.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_CLM_MissileCruiser.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_CL_LightCruiser.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_DD_Juzari.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_DH_Parassi.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_DN_DN.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_FF_Chokar.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_SDN_Primus.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/CentaurRepublic_STN_Brushari.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/JumpGate_Incoming.xml
+%%DATADIR%%/Ships/EFSB/CentauriRepublic/JumpGate_Outgoing.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EFSB_EarthAlliance.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_AE_Explorer.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_AKH_LargeFreighter.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_AL_Starliner.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_AO_Cotton.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_BB_Raider.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_BC_Hyperion.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_BC_Roosevelt.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_BDN_Repulse.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_CE_Eiger.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_CE_Olympus.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_CE_Olympus_M.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_CL_Vigilant.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_DD_Arion.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_DD_JCreek.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_DH_Chippewa.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_DH_LosAngeles.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_DN_Nova.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_FF_Porcupine.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_JJ2_Jumpgate.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_JJJ_Jumpgate.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_SDN4_Warlock.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_SDN_Omega.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_STN_Babylon5_Civilian.xml
+%%DATADIR%%/Ships/EFSB/EarthAlliance/EarthAlliance_STN_Babylon5_Military.xml
+%%DATADIR%%/Ships/EFSB/InterstellarAlliance/InterstellarAlliance_CE_WhiteStar.xml
+%%DATADIR%%/Ships/EFSB/MinbariFederation/MinbariFederation_CE_WhiteStar.xml
+%%DATADIR%%/Ships/EFSB/MinbariFederation/MinbariFederation_DD_Destroyer.xml
+%%DATADIR%%/Ships/EFSB/MinbariFederation/MinbariFederation_SDN_SharlinWarCruiser.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/JumpGate_Incoming.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/JumpGate_Outgoing.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_BB_GBak.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_BC_KhaSoo.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_BDN_ThNorHeavyCruiser.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_CE_NaDath.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_CH_ShoKar.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_CL_SLon.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_CL_SLon_M.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_CT_TaYekLancer.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_DD_HRufesh.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_DH_TLoth.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_DN_MakAroon.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_FF_RiLan.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_SC_SEth.xml
+%%DATADIR%%/Ships/EFSB/NarnRegime/NarnRegime_SDN_GQuanBDN.xml
+%%DATADIR%%/Ships/EFSB/Planet.xml
+%%DATADIR%%/Ships/EFSB/Shadows/Shadows_BC_Battlecrab.xml
+%%DATADIR%%/Ships/EFSB/Shadows/Shadows_CL_Scoutship.xml
+%%DATADIR%%/Ships/EFSB/Shadows/Shadows_SDN_Battlecrab.xml
 %%DATADIR%%/Ships/FleetBook1/Eurasian Solar Union/Eurasian_BB_Kamchutka.xml
 %%DATADIR%%/Ships/FleetBook1/Eurasian Solar Union/Eurasian_BB_Petrograd.xml
 %%DATADIR%%/Ships/FleetBook1/Eurasian Solar Union/Eurasian_BC_Manchuria.xml
@@ -1187,6 +1469,7 @@ bin/ftjava
 %%DATADIR%%/log4j-1.2.7.jar
 %%DATADIR%%/mail.jar
 %%DATADIR%%/mailapi.jar
+%%DATADIR%%/skeetutil.jar
 %%DATADIR%%/png.jar
 %%DATADIR%%/pop3.jar
 %%DATADIR%%/smtp.jar
@@ -1228,6 +1511,14 @@ bin/ftjava
 @dirrm %%DATADIR%%/Ships/FleetBook1/Federal Stats Europa
 @dirrm %%DATADIR%%/Ships/FleetBook1/Eurasian Solar Union
 @dirrm %%DATADIR%%/Ships/FleetBook1
+@dirrm %%DATADIR%%/Ships/EFSB/Shadows
+@dirrm %%DATADIR%%/Ships/EFSB/NonAligned
+@dirrm %%DATADIR%%/Ships/EFSB/NarnRegime
+@dirrm %%DATADIR%%/Ships/EFSB/MinbariFederation
+@dirrm %%DATADIR%%/Ships/EFSB/InterstellarAlliance
+@dirrm %%DATADIR%%/Ships/EFSB/EarthAlliance
+@dirrm %%DATADIR%%/Ships/EFSB/CentauriRepublic
+@dirrm %%DATADIR%%/Ships/EFSB
 @dirrm %%DATADIR%%/Ships
 @dirrm %%DATADIR%%/OutgoingGames
 @dirrm %%DATADIR%%/IncomingGames
@@ -1285,7 +1576,13 @@ bin/ftjava
 @dirrm %%DATADIR%%/Images/ShipIcons/Generic/Alpha
 @dirrm %%DATADIR%%/Images/ShipIcons/Generic
 @dirrm %%DATADIR%%/Images/ShipIcons/FullThrust
+@dirrm %%DATADIR%%/Images/ShipIcons/EFSB/Vorlon
+@dirrm %%DATADIR%%/Images/ShipIcons/EFSB/Shadows
+@dirrm %%DATADIR%%/Images/ShipIcons/EFSB/NarnRegime
+@dirrm %%DATADIR%%/Images/ShipIcons/EFSB/MinbariFederation
+@dirrm %%DATADIR%%/Images/ShipIcons/EFSB/InterstellarAlliance
 @dirrm %%DATADIR%%/Images/ShipIcons/EFSB/EarthAlliance
+@dirrm %%DATADIR%%/Images/ShipIcons/EFSB/CentauriRepublic
 @dirrm %%DATADIR%%/Images/ShipIcons/EFSB
 @dirrm %%DATADIR%%/Images/ShipIcons
 @dirrm %%DATADIR%%/Images/FullThrust/Sylvian
@@ -1293,6 +1590,8 @@ bin/ftjava
 @dirrm %%DATADIR%%/Images/FullThrust/Eurasian
 @dirrm %%DATADIR%%/Images/FullThrust
 @dirrm %%DATADIR%%/Images/Flags
+@dirrm %%DATADIR%%/Images/Bodies/star2
+@dirrm %%DATADIR%%/Images/Bodies/star1
 @dirrm %%DATADIR%%/Images/Bodies/planet7
 @dirrm %%DATADIR%%/Images/Bodies/planet6
 @dirrm %%DATADIR%%/Images/Bodies/planet5
@@ -1300,6 +1599,9 @@ bin/ftjava
 @dirrm %%DATADIR%%/Images/Bodies/planet3
 @dirrm %%DATADIR%%/Images/Bodies/planet2
 @dirrm %%DATADIR%%/Images/Bodies/planet1
+@dirrm %%DATADIR%%/Images/Bodies/asteroid3
+@dirrm %%DATADIR%%/Images/Bodies/asteroid2
+@dirrm %%DATADIR%%/Images/Bodies/asteroid1
 @dirrm %%DATADIR%%/Images/Bodies
 @dirrm %%DATADIR%%/Images
 @dirrm %%DATADIR%%

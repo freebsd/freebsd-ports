@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ftjava
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 CATEGORIES=	games java
 MASTER_SITES=	http://www.warpfish.com/davisje/:file1 \
 		http://home.nycap.rr.com/davisje/ftjava/:doc1
@@ -28,7 +28,7 @@ IGNOREFILES=	FTJava_Documentation.html faq.html FTJava_Linux.html
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	Images IncomingGames OutgoingGames Ships FTJava.jar \
 		activation.jar imap.jar log4j-1.2.7.jar mail.jar \
-		mailapi.jar png.jar pop3.jar smtp.jar xerces.jar \
+		mailapi.jar png.jar pop3.jar skeetutil.jar smtp.jar xerces.jar \
 		xercesImpl.jar xmlParserAPIs.jar
 
 .if !defined(NOPORTDOCS)
