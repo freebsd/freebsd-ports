@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stalonetray
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.5
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	STAnd-aLONE system tray
 
 USE_BZIP2=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-native-kde \
