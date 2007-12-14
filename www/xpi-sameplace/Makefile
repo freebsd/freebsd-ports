@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	sameplace
-PORTVERSION=	0.7.2.2007092509
+PORTVERSION=	0.7.9.2007113020
 DISTVERSIONSUFFIX=	-fx+tb+fl
 CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Jabber client
 
-RUN_DEPENDS=	xpi-xmpp4moz>=0.5.1:${PORTSDIR}/www/xpi-xmpp4moz
+RUN_DEPENDS=	xpi-xmpp4moz>=0.5.2:${PORTSDIR}/www/xpi-xmpp4moz
 
 XPI_NUM=	3633
 XPI_ID=		sameplace@hyperstruct.net

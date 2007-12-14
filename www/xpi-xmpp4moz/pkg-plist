@@ -4,6 +4,15 @@
 %%XPI_XPIDIR%%/components/XMPPClientService.js
 %%XPI_XPIDIR%%/components/XMPPClientSession.js
 %%XPI_XPIDIR%%/components/XMPPTransport.js
+%%XPI_XPIDIR%%/components/nsISAXAttributes.xpt
+%%XPI_XPIDIR%%/components/nsISAXContentHandler.xpt
+%%XPI_XPIDIR%%/components/nsISAXDTDHandler.xpt
+%%XPI_XPIDIR%%/components/nsISAXErrorHandler.xpt
+%%XPI_XPIDIR%%/components/nsISAXLexicalHandler.xpt
+%%XPI_XPIDIR%%/components/nsISAXLocator.xpt
+%%XPI_XPIDIR%%/components/nsISAXMutableAttributes.xpt
+%%XPI_XPIDIR%%/components/nsISAXXMLFilter.xpt
+%%XPI_XPIDIR%%/components/nsISAXXMLReader.xpt
 %%XPI_XPIDIR%%/components/nsIXMPPClientService.idl
 %%XPI_XPIDIR%%/components/nsIXMPPClientService.xpt
 %%XPI_XPIDIR%%/components/nsIXMPPClientSession.idl
