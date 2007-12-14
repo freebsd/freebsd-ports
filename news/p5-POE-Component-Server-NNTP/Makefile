@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	POE-Component-Server-NNTP
-PORTVERSION=	0.98
+PORTVERSION=	0.99
 CATEGORIES=	news perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A component that provides NNTP server functionality
 
 RUN_DEPENDS=	p5-POE>=0.38:${PORTSDIR}/devel/p5-POE \
