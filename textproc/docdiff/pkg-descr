@@ -1,0 +1,6 @@
+DocDiff compares two files and shows the difference. It can compare
+files word by word, char by char, or line by line. It has several
+output formats such as HTML, tty, Manued, or user-defined markup.
+
+WWW: http://www.kt.rim.or.jp/~hisashim/docdiff/
+Author: Hisashi MORITA <hisashim at kt dot rim dot or dot jp>
