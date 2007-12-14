@@ -1,0 +1,37 @@
+--- configure.ac.orig
++++ configure.ac
+@@ -212,7 +212,6 @@
+    doc/Makefile
+    Makefile
+    sql/Makefile
+-   sql/updates/Makefile
+    src/Makefile
+    src/framework/Makefile
+    src/shared/Makefile
+--- sql/Makefile.am.orig
++++ sql/Makefile.am
+@@ -17,7 +17,6 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+ ## Sub-directories to parse
+-SUBDIRS = updates
+ 
+ ## Change installation location
+ #  datadir = mangos/sql
+@@ -30,7 +29,8 @@
+ 	realmd.sql \
+ 	characters.sql \
+ 	create_mysql.sql \
+-	drop_mysql.sql
++	drop_mysql.sql \
++	updates.tar.gz
+ 
+ ## Additional files to include when running 'make dist'
+ #  SQL files for MaNGOS database
+@@ -39,4 +39,5 @@
+ 	drop_mysql.sql \
+ 	characters.sql \
+ 	mangos.sql \
+-	realmd.sql
++	realmd.sql \
++	updates.tar.gz
