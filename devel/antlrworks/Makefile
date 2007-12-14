@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	antlrworks
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.4
 PORTEPOCH=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/
@@ -45,7 +45,7 @@ post-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/antlrworks ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/dist/antlrworks-1.0.2.jar ${DATADIR}/antlrworks.jar
+	${INSTALL_DATA} ${WRKSRC}/dist/antlrworks-${PORTVERSION}.jar ${DATADIR}/antlrworks.jar
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/src/aw/org/antlr/works/icons/app_32x32.png ${PREFIX}/share/pixmaps/antlrworks.png
 
