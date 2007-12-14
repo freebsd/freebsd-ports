@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdadminscripts
-PORTVERSION=	3.0
+PORTVERSION=	4.0
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +14,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lon_kamikaze@gmx.de
 COMMENT=	A small collection of administration scripts
 
-OPTIONS+=	RCSTART "Use rc scripts based on PROVIDE" On
-OPTIONS+=	PORTCONFIG "Depends on portupgrade" On
 OPTIONS+=	BUILDFLAGS "Build configuration system" On
+OPTIONS+=	PKG_LIBCHK "Check for links against missing libraries" On
 OPTIONS+=	PKG_VALIDATE "Check for broken and missing files" On
+OPTIONS+=	PORTCONFIG "Depends on portupgrade" On
+OPTIONS+=	RCSTART "Use rc scripts based on PROVIDE" On
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 NO_BUILD=	yes
@@ -58,6 +59,11 @@ PLIST_FILES+=	sbin/pkg_validate
 MAN1+=		pkg_validate.1
 .endif
 
+.if !defined(WITHOUT_PKG_VALIDATE)
+PLIST_FILES+=	sbin/pkg_libchk
+MAN1+=		pkg_libchk.1
+.endif
+
 PLIST_FILES+=	${ETC_FILES:S,^,etc/,}
 
 do-install:
@@ -85,6 +91,10 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${_file} ${DATADIR}
 .endfor
 .endif
+.if !defined(WITHOUT_PKG_LIBCHK)
+	@${ECHO_MSG} "===>  Installing pkg_libchk."
+	@${INSTALL_SCRIPT} ${WRKSRC}/pkg_libchk ${PREFIX}/sbin/
+.endif
 .if !defined(WITHOUT_PKG_VALIDATE)
 	@${ECHO_MSG} "===>  Installing pkg_validate."
 	@${INSTALL_SCRIPT} ${WRKSRC}/pkg_validate ${PREFIX}/sbin/
@@ -95,10 +105,14 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${_conf} ${PREFIX}/etc
 .endfor
 .endif
+.if defined(NOPORTDOCS)
+.undef MAN1
+.else
 	@${ECHO_MSG} "===>  Installing man pages."
 .for _manpage in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/${_manpage} ${MANPREFIX}/man/man1/
 .endfor
+.endif
 
 message:
 	@${CAT} ${PKGMESSAGE}
