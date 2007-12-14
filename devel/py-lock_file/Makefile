@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	lock_file
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://martin.horcicka.eu/python/lock_file/
+MASTER_SITES=	http://martin.horcicka.eu/python/lock_file/ \
+		http://pypi.python.org/packages/source/l/lock_file/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	martin@horcicka.eu

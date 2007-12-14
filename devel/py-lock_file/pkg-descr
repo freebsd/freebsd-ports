@@ -1,9 +1,7 @@
-Lock files are used on Unix-like systems as a means of synchronization among
-processes. Only one process can hold a lock file. Other processes that want to
-acquire it have to wait until it is released by the holder.
-
-In this module the lock file is implemented as an empty regular file,
-exclusively locked using fcntl.flock. The file is removed when it is to be
-released.
+Lock file is a traditional means of synchronization among processes. In this
+module it is implemented as an empty regular file exclusively locked using
+fcntl.lockf. When it is to be released it is removed by default. However, if
+all cooperating processes turn off the removal, they get a guaranteed order of
+acquisitions and better scalability.
 
 WWW: http://martin.horcicka.eu/python/lock_file/
