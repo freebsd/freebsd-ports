@@ -1,5 +1,5 @@
---- platform/gtk-x11/setup.py.orig	2007-10-31 17:05:49.000000000 +0100
-+++ platform/gtk-x11/setup.py	2007-11-01 12:44:27.000000000 +0100
+--- platform/gtk-x11/setup.py.orig	2007-11-13 02:22:57.000000000 +0100
++++ platform/gtk-x11/setup.py	2007-12-14 21:26:14.000000000 +0100
 @@ -46,6 +46,7 @@
  ###############################################################################
  
@@ -26,26 +26,32 @@
      )
  
  #### MozillaBrowser Extension ####
-@@ -219,12 +224,15 @@
- if re.search("^xulrunner-xpcom", packages, re.MULTILINE):
-     xpcom = 'xulrunner-xpcom'
-     gtkmozembed = 'xulrunner-gtkmozembed'
--elif re.search("^mozilla-xpcom", packages, re.MULTILINE):
--    xpcom = 'mozilla-xpcom'
--    gtkmozembed = 'mozilla-gtkmozembed'
- elif re.search("^firefox-xpcom", packages, re.MULTILINE):
-     xpcom = 'firefox-xpcom'
-     gtkmozembed = 'firefox-gtkmozembed'
+@@ -216,17 +221,17 @@
+     packages = getCommandOutput("pkg-config --list-all")
+ except RuntimeError, error:
+     sys.exit("Package config error:\n%s" % (error,))
+-if re.search("^xulrunner-xpcom", packages, re.MULTILINE):
+-    xpcom = 'xulrunner-xpcom'
+-    gtkmozembed = 'xulrunner-gtkmozembed'
++if re.search("^firefox-xpcom", packages, re.MULTILINE):
++    xpcom = 'firefox-xpcom'
++    gtkmozembed = 'firefox-gtkmozembed'
 +elif re.search("^seamonkey-xpcom", packages, re.MULTILINE):
 +    xpcom = 'seamonkey-xpcom'
 +    gtkmozembed = 'seamonkey-gtkmozembed'
-+elif re.search("^mozilla-xpcom", packages, re.MULTILINE):
-+    xpcom = 'mozilla-xpcom'
-+    gtkmozembed = 'mozilla-gtkmozembed'
+ elif re.search("^mozilla-xpcom", packages, re.MULTILINE):
+     xpcom = 'mozilla-xpcom'
+     gtkmozembed = 'mozilla-gtkmozembed'
+-elif re.search("^firefox-xpcom", packages, re.MULTILINE):
+-    xpcom = 'firefox-xpcom'
+-    gtkmozembed = 'firefox-gtkmozembed'
  else:
-     sys.exit("Can't find xulrunner-xpcom, mozilla-xpcom or firefox-xpcom")
+-    sys.exit("Can't find xulrunner-xpcom, mozilla-xpcom or firefox-xpcom")
++    sys.exit("Can't find seamonkey-xpcom, mozilla-xpcom or firefox-xpcom")
  
-@@ -334,7 +342,7 @@
+ # build a miro script that wraps the miro.real script with an LD_LIBRARY_PATH
+ # environment variable to pick up the xpcom we decided to use.
+@@ -334,7 +339,7 @@
      data_files.append((dest_dir, listfiles(source_dir)))
  # add the desktop file, icons, mime data, and man page.
  
@@ -54,7 +60,7 @@
  
  if rv != 0:
      raise RuntimeError("xine_extractor compilation failed.  Possibly missing libxine, gdk-pixbuf-2.0, or glib-2.0.")
-@@ -342,11 +350,11 @@
+@@ -342,11 +347,11 @@
  data_files += [
      ('/usr/share/pixmaps', 
       glob(os.path.join(platform_dir, 'miro-*.png'))),
