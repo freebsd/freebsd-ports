@@ -1,0 +1,6 @@
+MUMmer is a modular system for the rapid whole genome alignment of finished
+or draft sequence. This package provides an efficient suffix tree library,
+seed-and-extend alignment, SNP detection, repeat detection, and
+visualization tools.
+
+WWW:	http://mummer.sourceforge.net/

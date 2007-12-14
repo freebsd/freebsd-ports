@@ -1,0 +1,26 @@
+bin/annotate
+bin/combineMUMs
+bin/delta-filter
+bin/dnadiff
+bin/exact-tandems
+bin/gaps
+bin/mapview
+bin/mgaps
+bin/mummer
+bin/mummerplot
+bin/nucmer
+bin/nucmer2xfig
+bin/promer
+bin/repeat-match
+bin/run-mummer1
+bin/run-mummer3
+bin/show-aligns
+bin/show-coords
+bin/show-diff
+bin/show-snps
+bin/show-tiling
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
