@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	contact
-PORTVERSION=	0.14
-PORTREVISION=	3
+PORTVERSION=	0.16
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.burtonini.com/computing/
 PKGNAMESUFFIX=	-lookup-applet
@@ -17,17 +16,11 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome panel applet for easy Evolution contact book access
 
-USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_GNOME=	evolutiondataserver gnomehack gnomepanel gnomeprefix gnometarget
 USE_GETTEXT=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehier gnomeprefix gnomehack gnomepanel \
-		evolutiondataserver gal2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|mkdir}"|mkdir} -p"|g' \
-		${WRKSRC}/install-sh
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

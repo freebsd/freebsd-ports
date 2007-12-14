@@ -2,26 +2,34 @@ libdata/bonobo/servers/GNOME_ContactLookupApplet.server
 libexec/contact-lookup-applet
 share/lookup-applet/GNOME_ContactLookupApplet.xml
 share/lookup-applet/contact-lookup-applet.glade
+share/locale/ar/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/bg/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/ca/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/cs/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/de/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/dz/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/el/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/en_CA/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/en_GB/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/es/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/eu/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/fi/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/fr/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/hu/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/it/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/ja/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/lt/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/mk/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/nb/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/ne/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/pa/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/pl/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/pt/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/pt_BR/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/ru/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/rw/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/sk/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/sl/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/sq/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/sr/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/sr@Latn/LC_MESSAGES/contact-lookup-applet.mo
@@ -30,8 +38,14 @@ share/locale/uk/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/vi/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/xh/LC_MESSAGES/contact-lookup-applet.mo
 share/locale/zh_CN/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/zh_HK/LC_MESSAGES/contact-lookup-applet.mo
+share/locale/zh_TW/LC_MESSAGES/contact-lookup-applet.mo
 @dirrm share/lookup-applet
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
