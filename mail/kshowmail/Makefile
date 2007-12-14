@@ -4,25 +4,24 @@
 #
 # $FreeBSD$
 
-PORTNAME=		kshowmail
-PORTVERSION=		3.1.0
-PORTREVISION=		6
-CATEGORIES=		mail kde
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+PORTNAME=	kshowmail
+PORTVERSION=	3.2.1
+CATEGORIES=	mail kde
+MASTER_SITES=	SF
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		POP3 mail checker for KDE
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	POP3 mail checker for KDE
 
-LIB_DEPENDS=		mimelib.1:${PORTSDIR}/deskutils/kdepim3
+LIB_DEPENDS=	mimelib.1:${PORTSDIR}/deskutils/kdepim3
 
 USE_KDELIBS_VER=	3
-USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
+GNU_CONFIGURE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${RM} ${WRKSRC}/kshowmail/OptionDlg.h ${WRKSRC}/kshowmail/OptionDlg.cpp
+pre-configure:
+	@cd ${WRKSRC}/admin && ${RM} -f ltmain.sh && ${CP} -f ${LTMAIN} .
+	@cd ${WRKSRC}/admin && ${RM} -f libtool.m4.in && ${CP} -f ${LIBTOOL_M4} libtool.m4.in
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} -f admin/Makefile.common
 
 .include <bsd.port.mk>
