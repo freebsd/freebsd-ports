@@ -1,5 +1,5 @@
---- stats.sh.orig	Fri Aug  3 23:48:56 2007
-+++ stats.sh	Fri Aug  3 23:49:15 2007
+--- stats.sh.orig	Thu Nov  8 10:30:36 2007
++++ stats.sh	Thu Nov  8 10:43:14 2007
 @@ -1,15 +1,23 @@
  #!/bin/sh
  
@@ -43,7 +43,7 @@
  #
  # I got the idea for this script from Mark Constable. He submitted
  #  a similar script to follow the Courier-MTA /var/log/maillog
-@@ -46,91 +47,279 @@
+@@ -46,91 +47,283 @@
  # Some fields are truncated (with a hard-coded length value, usually 40)
  #   to keep each line more or less intact on your screen as things scroll by
  # Colors are coded with ANSI Color coding, your mileage may vary ...
@@ -241,7 +241,7 @@
 +        $(p+8) )
 +    next
 +  }
-+  /Unknown Sender with Local Domain/ {
++  /Unknown Sender (with|from) Local Domain/ {
 +    printf("%s %s \033[1;34m%-15s IS  %s\033[0m\n",
 +        $1,
 +        $2,
@@ -253,11 +253,11 @@
 +    # suppress
 +    next
 +  }
-+  /((DNS|URI)BL )?Received-(R|DNS|URI)BL: (pass|neutral|fail)/ {
++  /((DNS|URI)BL )?Received-(R|DNS|URI)BL: (pass|neutral|fail)|URIBL fail|Bayesian Check URIBL/ {
 +    # suppress
 +    next
 +  }
-+  /failed DNSBL|failed (R|URI)BL checks|Received-RBL: fail|\[DNSBL].* rejected by / {
++  /failed (DNS|URI)BL|failed (R|URI)BL checks|Received-RBL: fail|\[DNSBL].* rejected by / {
 +    printf("%s %s \033[1;35m%-15s BL  %s -> %s\033[0m\n",
 +        $1,
 +        $2,
@@ -266,7 +266,7 @@
 +        $(p+7) )
 +    next
 +  }
-+  /Received-SPF: (pass|neutral)| SPF: fail/ {
++  /Received-SPF: (pass|neutral)| SPF: (soft)?fail|SPFstrict/ {
 +    # suppress
 +    next
 +  }
@@ -376,6 +376,10 @@
 +	$(p+4),
 +	$(p+8), $(p+9), $(p+10), $(p+11),
 +	substr($(p+12),8,40) )
++    next
++  }
++  /PBextreme:monitoring|([ValidHelo]|[InvalidHelo]|[PTRmissing])[scoring]/ {
++    # suppress
 +    next
 +  }
 +  /Message Limit/ {

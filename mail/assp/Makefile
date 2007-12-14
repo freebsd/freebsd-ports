@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.3.3.1
+PORTVERSION=	1.3.3.8
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
 
 MAINTAINER=	fbsd@opal.com
@@ -19,9 +18,11 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-USE_DOS2UNIX=	addservice.pl \
+USE_DOS2UNIX=	\
+		../Install.txt \
+		../changelog.txt \
+		addservice.pl \
 		assp.pl \
-		changelog.txt \
 		files/URIBLCCTLDS.txt \
 		files/blackdomains.txt \
 		files/bombre.txt \
@@ -33,6 +34,7 @@ USE_DOS2UNIX=	addservice.pl \
 		files/redre.txt \
 		files/whitedomains.txt \
 		move2num.pl \
+		rc/readme.txt \
 		rebuildspamdb.pl \
 		repair.pl \
 		reports/helpreport.txt \
