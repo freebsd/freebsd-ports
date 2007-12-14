@@ -526,6 +526,7 @@
     SUBDIR += pecl-qrencode
     SUBDIR += pecomato
     SUBDIR += peps
+    SUBDIR += pfstmo
     SUBDIR += pfstools
     SUBDIR += pgperl
     SUBDIR += pgplot
