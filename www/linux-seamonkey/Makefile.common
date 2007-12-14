@@ -22,8 +22,9 @@ RUN_DEPENDS?=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 APP_NAME=	${PKGBASE}
+BIN_NAME?=	${PORTNAME}
 USE_LINUX=	yes
-WRKSRC?=	${WRKDIR}/${PORTNAME}
+WRKSRC?=	${WRKDIR}/${BIN_NAME}
 FDIR=		${PREFIX}/lib/${APP_NAME}
 COMMON_DIR=	${.CURDIR}/../../www/linux-seamonkey
 
@@ -59,7 +60,7 @@ do-install:
 	@${CP} -pR ${WRKSRC}/ ${FDIR}/
 	@${CHOWN} -R ${BINOWN}:${BINGRP} ${FDIR}/
 	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/${APP_NAME}-run
-	@${ECHO_CMD} 'exec ${FDIR}/${PORTNAME} "$$@"' >> ${WRKDIR}/${APP_NAME}-run
+	@${ECHO_CMD} 'exec ${FDIR}/${BIN_NAME} "$$@"' >> ${WRKDIR}/${APP_NAME}-run
 	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}-run ${PREFIX}/bin/${APP_NAME}
 	@${CP} -R ${LOCALBASE}/lib/npapi/symlinks/${APP_NAME}/ \
 		${FDIR}/plugins/ ${_Q}
