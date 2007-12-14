@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ts
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/ts/ CENKES
 
