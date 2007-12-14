@@ -334,6 +334,16 @@ share/locale/sr/LC_MESSAGES/wesnoth-tsg.mo
 share/locale/sr/LC_MESSAGES/wesnoth-tutorial.mo
 share/locale/sr/LC_MESSAGES/wesnoth-utbs.mo
 share/locale/sr/LC_MESSAGES/wesnoth.mo
+share/locale/sr@latin/LC_MESSAGES/wesnoth.mo
+share/locale/sr@latin/LC_MESSAGES/wesnoth-editor.mo
+share/locale/sr@latin/LC_MESSAGES/wesnoth-lib.mo
+share/locale/sr@latin/LC_MESSAGES/wesnoth-tutorial.mo
+share/locale/sr@latin/LC_MESSAGES/wesnoth-httt.mo
+share/locale/sr@latin/LC_MESSAGES/wesnoth-ei.mo
+share/locale/sr@latin/LC_MESSAGES/wesnoth-trow.mo
+share/locale/sr@latin/LC_MESSAGES/wesnoth-tb.mo
+share/locale/sr@latin/LC_MESSAGES/wesnoth-tsg.mo
+share/locale/sr@latin/LC_MESSAGES/wesnoth-utbs.mo
 share/locale/sv/LC_MESSAGES/wesnoth-editor.mo
 share/locale/sv/LC_MESSAGES/wesnoth-ei.mo
 share/locale/sv/LC_MESSAGES/wesnoth-httt.mo
@@ -1574,7 +1584,8 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/languages/ru_RU.cfg
 %%DATADIR%%/data/languages/sk_SK.cfg
 %%DATADIR%%/data/languages/sl_SI.cfg
-%%DATADIR%%/data/languages/sr_CS.cfg
+%%DATADIR%%/data/languages/sr_RS@latin.cfg
+%%DATADIR%%/data/languages/sr_RS.cfg
 %%DATADIR%%/data/languages/sv_SE.cfg
 %%DATADIR%%/data/languages/tl_PH.cfg
 %%DATADIR%%/data/languages/tr_TR.cfg
@@ -1702,6 +1713,18 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/tools/exploder/wall-convex.cfg
 %%DATADIR%%/data/tools/exploder/wall-exploded-concave.cfg
 %%DATADIR%%/data/tools/exploder/wall-exploded-convex.cfg
+%%DATADIR%%/data/tools/unit_tree/index_languages.html
+%%DATADIR%%/data/tools/unit_tree/units.pl
+%%DATADIR%%/data/tools/unit_tree/tree_footer.html
+%%DATADIR%%/data/tools/unit_tree/unit.html
+%%DATADIR%%/data/tools/unit_tree/index.html
+%%DATADIR%%/data/tools/unit_tree/TeamColorizer.pl
+%%DATADIR%%/data/tools/unit_tree/tree_race_header.html
+%%DATADIR%%/data/tools/unit_tree/units.css
+%%DATADIR%%/data/tools/unit_tree/anim_header.html
+%%DATADIR%%/data/tools/unit_tree/index_base.html
+%%DATADIR%%/data/tools/unit_tree/tree_fact_header.html
+%%DATADIR%%/data/tools/unit_tree/tree_header.html
 %%DATADIR%%/data/traits.cfg
 %%DATADIR%%/data/tutorial/images/portraits/delfador.png
 %%DATADIR%%/data/tutorial/images/portraits/konrad.png
@@ -1921,6 +1944,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/fonts/COPYING
 %%DATADIR%%/fonts/DejaVuSans.ttf
 %%DATADIR%%/fonts/FreeSans.ttf
+%%DATADIR%%/fonts/sazanami-gothic.ttf
 %%DATADIR%%/images/attacks/axe.png
 %%DATADIR%%/images/attacks/axe-deathblade.png
 %%DATADIR%%/images/attacks/axe-undead.png
@@ -5934,6 +5958,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @dirrm %%DATADIR%%/data/themes
 @dirrm %%DATADIR%%/data/tools/exploder/models
 @dirrm %%DATADIR%%/data/tools/exploder
+@dirrm %%DATADIR%%/data/tools/unit_tree
 @dirrm %%DATADIR%%/data/tools
 @dirrm %%DATADIR%%/data/tutorial/images/portraits
 @dirrm %%DATADIR%%/data/tutorial/images/units
@@ -6026,6 +6051,8 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 @dirrmtry share/locale/la
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/tl/LC_MESSAGES
 @dirrmtry share/locale/tl
 @dirrmtry share/applications
