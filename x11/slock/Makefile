@@ -6,8 +6,7 @@
 #
 
 PORTNAME=       slock
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	x11
 MASTER_SITES=	http://www.suckless.org/download/ CENKES
 
