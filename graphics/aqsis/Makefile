@@ -7,41 +7,42 @@
 #
 
 PORTNAME=	aqsis
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.0
 PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	A photorealistic rendering system
 
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk
+BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
+   		bjam:${PORTSDIR}/devel/boost \
+		bison:${PORTSDIR}/devel/bison \
+		xsltproc:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+   		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
-USE_GCC=	3.4+
-USE_GNOME=	gnometarget
-USE_BISON=	build
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-static
 USE_LDCONFIG=	yes
 
-MAN1=		aqsis.1
-
-CFLAGS+=	-fPIC
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+SCONS_FLAGS=	boost_include_path='${LOCALBASE}/include' \
+		install_prefix='${PREFIX}'
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|PLUGIN_FLAGS=|#PLUGIN_FLAGS=|g' ${WRKSRC}/configure
+	${REINPLACE_CMD} \
+	   -e 's|/usr/lib|${LOCALBASE}/lib|g' \
+	   -e 's|/usr/include|${LOCALBASE}/include|g' \
+	   -e 's|dl|c|g' \
+	   ${WRKSRC}/platform/default/SConscript
+	${REINPLACE_CMD} \
+	   -e 's|/usr/bin/bison|${LOCALBASE}/bin/bison|g' \
+	   ${WRKSRC}/platform/default/Options.py
 
-.include <bsd.port.pre.mk>
+do-build:
+	cd ${WRKSRC} && scons ${SCONS_FLAGS} build
 
-.if ${OSVERSION} >= 700029
-BROKEN=		Incorrect pkg-plist (bad objformat handling)
-.endif
+do-install:
+	cd ${WRKSRC} && scons ${SCONS_FLAGS} install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
