@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	skribe
-PORTVERSION=	1.0a
-PORTREVISION=	2
+PORTVERSION=	1.2g
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp-sop.inria.fr/mimosa/fp/Skribe/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,26 +15,31 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A highly programmable document processing system
 
 BUILD_DEPENDS=	bigloo:${PORTSDIR}/lang/bigloo
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	bigloo:${PORTSDIR}/lang/bigloo
 
+USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bigloo --prefix=${PREFIX} --docdir=${DOCSDIR}
-USE_GMAKE=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
+
+.SILENT:
+
+post-extract:
+	${CHMOD} -R a+r ${WRKSRC}/doc
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^function ||' ${WRKSRC}/etc/skribe-config.in
-	${REINPLACE_CMD} -e 's|$$prefix/doc/skribe-$$release|${DOCSDIR}|' \
-		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|.*prcs.*|beta=|' ${WRKSRC}/etc/bigloo/configure
-.if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's/= doc/=/' ${WRKSRC}/Makefile
-.endif
+	${REINPLACE_CMD} -e '/doc/d' ${WRKSRC}/Makefile
 
 post-build:
-	${CHMOD} a+r ${WRKSRC}/doc/html/img/*.gif
+.if !defined(NOPORTDOCS)
+	(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE})
+.endif
 
 post-install:
 	${TOUCH} ${DATADIR}/extensions/.keep_me
+.if !defined(NOPORTDOCS)
+	(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} install)
+.endif
 
 .include <bsd.port.mk>
