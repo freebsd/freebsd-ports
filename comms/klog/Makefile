@@ -5,26 +5,29 @@
 # $FreeBSD$
 
 PORTNAME=	klog
-PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTVERSION=	0.4.2
 CATEGORIES=	comms hamradio
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	klog
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	ADIF compatible logging application
+COMMENT=	A ham radio logging application for KDE
 
-LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib
+LIB_DEPENDS=	hamlib.2:${PORTSDIR}/comms/hamlib
 
-USE_AUTOTOOLS=	libtool:15
-INSTALLS_ICONS=	yes
+USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
-USE_KDELIBS_VER=3
+USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 
-DOCSDIR=share/doc/HTML
+post-extract:
+	@${RM} -f ${WRKSRC}/po/gl.po
 
-post-install:
-	@${INSTALL_DATA}	${WRKSRC}/src/klog.desktop \
-		 ${PREFIX}/share/applnk/Applications/klog.desktop
+pre-configure:
+	@cd ${WRKSRC} \
+		&& ${RM} -f admin/libtool.m4.in admin/ltmain.sh \
+		&& ${CP} -f ${LIBTOOL_M4} admin/libtool.m4.in \
+		&& ${CP} -f ${LTMAIN} admin/ltmain.sh \
+		&& ${SETENV} ${MAKE_ENV} ${GMAKE} -f admin/Makefile.common
 
 .include <bsd.port.mk>
