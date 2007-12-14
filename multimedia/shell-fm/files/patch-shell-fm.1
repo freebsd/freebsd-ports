@@ -1,7 +1,6 @@
-diff -urNbB src/shell-fm.1.orig shell-fm/src/shell-fm.1
---- src/shell-fm.1.orig	Thu Jan  1 02:00:00 1970
-+++ src/shell-fm.1	Sat Dec 16 00:59:11 2006
-@@ -0,0 +1,179 @@
+--- /dev/null	2007-11-19 22:27:41.000000000 +0200
++++ src/shell-fm.1	2007-11-19 22:27:20.000000000 +0200
+@@ -0,0 +1,223 @@
 +.\"
 +.\" $Id$
 +.\"
@@ -13,11 +12,13 @@ diff -urNbB src/shell-fm.1.orig shell-fm/src/shell-fm.1
 +.Nd command-line Last.FM client
 +.Sh SYNOPSIS
 +.Nm shell-fm
-+.Op Fl d Ar daemon mode
++.Op Fl d
 +.Op Fl i Ar address to listen on
-+.Op Fl W Ar port to listen on
++.Op Fl p Ar port to listen on
 +.Op Fl D Ar device to play on
++.Op Fl y Ar http://proxy-server
 +.Op Fl h
++.Op lastfm://...
 +.Sh DESCRIPTION
 +.Nm shell-fm
 +is a console based player for the streams provided by Last.FM. It's
@@ -27,9 +28,9 @@ diff -urNbB src/shell-fm.1.orig shell-fm/src/shell-fm.1
 +is Open Source and published under the terms of the GNU General Public
 +License, so feel free to modify and/or redistribute it.
 +.Sh RUNNINF SHELL-FM
-+Usage of 
++Usage of
 +.Nm shell-fm
-+is pretty simple. To tell 
++is pretty simple. To tell
 +.Nm shell-fm
 +what to play, you simply give it the direct link to a Last.FM stream (a
 +URL starting with lastfm://). The URLs are very clear and easy to
@@ -42,11 +43,11 @@ diff -urNbB src/shell-fm.1.orig shell-fm/src/shell-fm.1
 +                                              Blood
 +    lastfm://artist/The Distillers/fans     - The Distillers fan radio
 +    lastfm://globaltags/punk rock           - songs that have been
-+                                              tagged as "punk rock" 
++                                              tagged as "punk rock"
 +.fi
-+.Pp 
++.Pp
 +Radios can be specified in three ways. First you can give a stream URL
-+as command line argument to 
++as command line argument to
 +.Nm shell-fm
 +:
 +.Pp
@@ -54,13 +55,13 @@ diff -urNbB src/shell-fm.1.orig shell-fm/src/shell-fm.1
 +.Pp
 +Note that you need to quote the URL, if it contains white spaces.
 +.br
-+Next you can enter a new URL while 
++Next you can enter a new URL while
 +.Nm shell-fm
 +is already running by pressing the r key.
 +.Nm shell-fm
 +then will prompt you for a new URL. Note that you don't need / may not
-+quote the URL here like in the command line. 
-+.Nm shell-fm 
++quote the URL here like in the command line.
++.Nm shell-fm
 +will take care of whitespaces for you.  Finally, you can name a default
 +stream in your configuration file, which is started by default if you
 +run
@@ -72,69 +73,102 @@ diff -urNbB src/shell-fm.1.orig shell-fm/src/shell-fm.1
 +keys are known at the moment (may/will be more in future).
 +.br
 +.nf
-+  username       - your Last.FM nick
-+  password       - your Last.FM password; if password and username or
-+                   only the password are missing here, shell-fm will
-+                   prompt you for it on startup.
-+  default-radio  - the default radio which shell-fm will play on startup
-+                   if you called it without an command line argument.
-+  np-file        - the (absolute) path to a file in which you want
-+                   shell-fm to save information about the currently
-+                   played track in.
-+  np-file-format - the format in which shell-fm will write the song
-+                   information to your np-file. Note that both, np-file
-+                   and np-file-format need to be specified to make
-+                   shell-fm write to the np-file. The format may contain
-+                   any character plus some placeholders shell-fm will
-+                   replace. They are: 
-+                        %a - artist
-+                        %t - title
-+                        %A - album
-+                        %d - duration in seconds
-+                        %s - station name
-+                        %u - station URL
-+                        %U - artist URL
-+                        %T - track URL
++  username = YourLogin        - your Last.FM username.
++  password = YourPass         - your Last.FM password.
++  np-file = /path/to/np-file  - the (absolute) path to a file in which
++                                you want shell-fm to save information
++                                about the currently played track in.
++  np-file-format = format     - the format in which shell-fm will write
++                                the song information to your np-file.
++                                Note that both, np-file and
++                                np-file-format need to be specified to
++                                make shell-fm write to the np-file. The
++                                format may contain any character plus
++                                some placeholders shell-fm will replace.
++                                They are:
++                                   %a - artist
++                                   %t - track
++                                   %A - album
++                                   %d - track duration
++                                   %s - station name
++                                   %u - station URL
++                                   %U - artist URL
++                                   %X - album URL
++                                   %T - track URL
++                                   %R - remaining seconds of the played
++                                        track
++  np-cmd = command            - if defined, this command will be
++                                executed every time a new track is
++                                played. Accepts the sape format flast as
++                                np-file-format.
++  default-radio = lastfm://.. - the default radio which shell-fm will
++                                play on startup if you called it without
++                                an command line argument.
++  key0x?? = command           - bind an external command to the key with
++                                the hexadecimal, UPPERCASE (!),
++                                zero-padded ASCII code "??". Keys that
++                                are already bound to an action (as
++                                listed here) can't be overwritten.
++                                Again, you can use all the variables as
++                                in "np-file-format" and "np-cmp". Please
++                                note that future versions may use
++                                further keys, so you might need to
++                                change your configuration then.
++  ?-color = color-code        - (where ? is one of the meta tag
++                                variables (see list above). This allows
++                                you to color every kind of tag with a
++                                different color (e.g. paint track titles
++                                red, artists green and so on). This is
++                                the list of valid color codes:
++                                   0;30 = black (not very useful)
++                                   1;30 = dark gray
++                                   0;31 = red
++                                   1;31 = light red
++                                   0;32 = green
++                                   1;32 = light green
++                                   0;33 = dark yellow/brown
++                                   1;33 = yellow
++                                   0;34 = blue
++                                   1;34 = light blue
++                                   0;35 = violet
++                                   1;35 = pink
++                                   0;36 = turquoise
++                                   1;36 = cyan
++                                   0;37 = gray
++                                   1;37 = white
++  bind = ip/host              - binds a socket to the given host so you
++                                can send simple commands to Shell.FM
++                                over a network to control it. For now,
++                                only the most common commands are
++                                supported: "skip", "love", "ban",
++                                "quit", "play" and "info". "play" takes
++                                a radio statio URI as paramater. "info"
++                                takes a format string as parameter (same
++                                as for np-file-format) and returns the
++                                string (formatted).
++  port = 123                  - if defined, the socket interface will be
++                                bound to this port instead of the
++                                default, 54311.
++  extern = command            - on some platforms, Shell.FM is still
++                                unable to play streams properly. This
++                                option enables you to use Shell.FM for
++                                stream control, but use another player
++                                for the playback. The stream will be
++                                written to STDIN of the external player.
++                                For example, extern = /usr/bin/madplay
++                                -Q - should work find on Mac OS X (if
++                                you have madplay installed).
++  extern-restart = anything   - if defined (no matter what value),
++                                Shell.FM will stop and restart the
++                                external player whenever the track
++                                changes.
++  proxy = http://proxy-server - use proxy server for HTTP requests.
++  expiry = 86400              - TTL of cached files in seconds.
 +.fi
 +.Pp
-+There may and will be more placeholders available in future releases. 
-+.br
-+.nf
-+    np-cmd  - command that's executed whenever the track changes. Allows
-+              the same format placeholders as the "np-file-format"
-+              option. 
-+    key0x?? - bind an external command to the key with the hexadecimal,
-+              UPPERCASE (!), zero-padded ASCII code "??". Keys that are
-+              already bound to an action (as listed here) can't be
-+              overwritten. Again, you can use all the variables as in
-+              "np-file-format" and "np-cmp". Please note that future
-+              versions may use further keys, so you might need to change
-+              your configuration then. 
-+    ?-color - (where ? is one of the meta tag variables (see list
-+              above). This allows you to color every kind of tag with a
-+              different color (e.g. paint track titles red, artists
-+              green and so on). This is the list of valid color codes:
-+                   0;30 = black (not very useful)
-+                   1;30 = dark gray
-+                   0;31 = red
-+                   1;31 = light red
-+                   0;32 = green
-+                   1;32 = light green
-+                   0;33 = dark yellow/brown
-+                   1;33 = yellow
-+                   0;34 = blue
-+                   1;34 = light blue
-+                   0;35 = violet
-+                   1;35 = pink
-+                   0;36 = turquoise
-+                   1;36 = cyan
-+                   0;37 = gray
-+                   1;37 = white
-+.fi
-+.Pp
-+This is what your configuration file for 
-+.Nm shell-fm 
-+could look like: 
++This is what your configuration file for
++.Nm shell-fm
++could look like:
 +.nf
 +    [~]$ cat ~/.shell-fm/shell-fm.rc
 +    username = shell-monkey
@@ -146,7 +180,7 @@ diff -urNbB src/shell-fm.1.orig shell-fm/src/shell-fm.1
 +    t-color = 1;32
 +    a-color = 0;32
 +    s-color = 1;37
-+    [~]$ 
++    [~]$
 +.fi
 +.Sh CONTROLS
 +These keys are available from within
@@ -154,23 +188,32 @@ diff -urNbB src/shell-fm.1.orig shell-fm/src/shell-fm.1
 +to control it's behaviour:
 +.br
 +.nf
-+    r - prompt for a new station URL.
-+    l - love the currently played track.
-+    B - (uppercase!) ban the currently played track.
-+    n - skip the currently played track.
-+    Q - (uppercase!) quit.
-+    d - enable/disable discovery mode. 
-+    A - ban the artist of the currently played track (whenever another
-+        track of this artist is streamed again, it will be banned
-+        automatically).
-+    R - toggle RTP on/off (RTP = record tracks to profile)
-+    f - listen to the fan radio of the currently played tracks artist
-+    s - listen to the similar-artists radio of the currently played
-+        tracks artist
++        l - love the currently played track.
++        B - (uppercase!) ban the currently played track.
++        n - skip the currently played track.
++        Q - (uppercase!) quit.
++        r - prompt for a new station URL.
++        i - display some information about the currently played track.
++        d - enable/disable discovery mode.
++        A - ban the artist of the currently played track (whenever another
++            track of this artist is streamed again, it will be banned
++            automatically).
++        R - recommend currently played track/artist/album to someone.
++        f - jump to the currently played tracks artists fan radio.
++        s - jump to the currently played tracks artists similar artists
++            radio.
++        H - bookmark the currently played stream.
++        h - list bookmarks.
++    [0-9] - jump to a previously bookmarked stream.
++        p - pause (experimental - after a while the stream will be
++            closed)
++        S - stop playing
++        T - tag the currently played track/artist/album.
++        ? - show a list of available keys.
 +.fi
 +.br
 +Note that the radio URL prompt provides a simple history (use up/down
-+arrow keys to browse it). By default, 
++arrow keys to browse it). By default,
 +.Nm Shell.FM
 +will remember only the URLs you entered in the current session. If you
 +want the history to survive, you need to create an empty file name
@@ -178,7 +221,7 @@ diff -urNbB src/shell-fm.1.orig shell-fm/src/shell-fm.1
 +.Sh SEE ALSO
 +http://nex.scrapping.cc/shell-fm/
 +.Sh CREDITS
-+Jonas Kramer <jonas.kramer@gmx.net> wrote the actual code.
++Read the AUTHORS file in the port's doc directory.
 +.Sh AUTHOR
 +Nikos Ntarmos <ntarmos@ceid.upatras.gr>
 --- src/Makefile.am.orig	Sat Dec 16 04:37:00 2006
@@ -191,3 +234,4 @@ diff -urNbB src/shell-fm.1.orig shell-fm/src/shell-fm.1
 +EXTRA_DIST = ${man_MANS}
  
  ## vim: noet ts=8 sw=8
+
