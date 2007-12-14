@@ -20,7 +20,7 @@ include/gnokii/wappush.h
 lib/libgnokii.a
 lib/libgnokii.la
 lib/libgnokii.so
-lib/libgnokii.so.6
+lib/libgnokii.so.9
 libdata/pkgconfig/gnokii.pc
 libdata/pkgconfig/xgnokii.pc
 sbin/gnokiid
@@ -34,6 +34,7 @@ sbin/mgnokiidev
 %%NLS%%share/locale/it/LC_MESSAGES/gnokii.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gnokii.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gnokii.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/gnokii.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gnokii.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/gnokii.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnokii.mo
@@ -53,6 +54,7 @@ sbin/mgnokiidev
 %%PGM%%share/smsd/sms.tables.pq.sql
 %%SMSD%%@dirrm lib/smsd
 %%SMSD%%@dirrm share/smsd
+%%X11%%share/applications/xgnokii.desktop
 %%X11%%share/xgnokii/help/C
 %%X11%%share/xgnokii/help/POSIX
 %%X11%%share/xgnokii/help/en_US/COPYING
@@ -129,6 +131,15 @@ sbin/mgnokiidev
 %%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/cables
 %%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/irda
 %%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/calendar
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/contacts
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/dtmf
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/main
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/netmon
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/sms
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/speeddial
+%%X11%%@exec mkdir -p %D/share/xgnokii/help/en_US/windows/xkeyb
+%%X11%%@exec mkdir -p %D/share/doc/gnokii/sample/vCard
 %%X11%%@dirrm share/xgnokii/help/en_US/cables
 %%X11%%@dirrm share/xgnokii/help/en_US/calendar
 %%X11%%@dirrm share/xgnokii/help/en_US/contacts
@@ -157,3 +168,4 @@ sbin/mgnokiidev
 %%X11%%@dirrm share/xgnokii/help/pl_PL
 %%X11%%@dirrm share/xgnokii/help
 %%X11%%@dirrm share/xgnokii
+%%X11%%@dirrmtry share/applications
