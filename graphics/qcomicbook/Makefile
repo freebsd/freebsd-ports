@@ -6,30 +6,28 @@
 #
 
 PORTNAME=	qcomicbook
-PORTVERSION=	0.3.4
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://linux.bydg.org/~yogin/
+MASTER_SITES=	http://linux.bydg.org/~yogin/qcomicbook/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QT-based comic book archive viewer
 
-LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		unrar:${PORTSDIR}/archivers/unrar
 
-USE_X_PREFIX=	yes
-USE_QT_VER=	3
+USE_QT_VER=	4
+QT_COMPONENTS=	gui moc
+USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-Qt-dir="${QT_PREFIX}"
+CONFIGURE_ENV=	QtGui_CFLAGS="${QtGui_CFLAGS}"
 
 MAN1=		qcomicbook.1
 
-# Luckily, QT apps on FreeBSD don't compile against
-# pthread by default. That might *gasp* make them work!
-QTCPPFLAGS+=	${PTHREAD_CFLAGS}
-QTCFGLIBS+=	${PTHREAD_LIBS}
+QtGui_CFLAGS=	-DQT_SHARED \
+		-I${QT_PREFIX}/include/QtGui \
+		-I${QT_PREFIX}/include/QtCore \
+		-I${QT_PREFIX}/include
 
 .include <bsd.port.mk>
