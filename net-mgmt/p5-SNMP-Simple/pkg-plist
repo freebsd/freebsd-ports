@@ -1,0 +1,5 @@
+%%SITE_PERL%%/SNMP/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Simple/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP
+@dirrm %%SITE_PERL%%/SNMP
