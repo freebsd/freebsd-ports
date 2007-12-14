@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20071002
+PORTVERSION=	20071210
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -29,7 +29,9 @@ EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
 .endif
 
 .if !defined(NOPORTDOCS)
-DOC_VERSION=	${PORTVERSION}
+#DOC_VERSION=	${PORTVERSION}
+# This version of Fontforge has a different version number for the docs as opposed to the actual source
+DOC_VERSION=	20071211
 DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
 .endif
 
@@ -41,16 +43,19 @@ USE_XLIB=	yes
 PATCH_STRIP=	-l
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
 .if !defined(FONTFORGE_NO_MULTILAYER)
 WITH_MULTILAYER=	--with-multilayer
 .endif
+
 .if !defined(WITHOUT_TTF_BYTECODE_ENABLED) && defined(FONTFORGE_WITH_TTF_DEBUGGER)
 WITH_FREETYPE_SRC=	--with-freetype-src=${WRKDIR}/freetype-${FREETYPE_VERSION}
 .else
 WITH_FREETYPE_SRC=	--without-freetype-src
 .endif
+
 CONFIGURE_ARGS=	${WITH_MULTILAYER} --with-devicetables ${WITH_FREETYPE_SRC}
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CFLAGS="${CFLAGS} \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lutil" CFLAGS="${CFLAGS} \
 		-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
 
@@ -67,13 +72,21 @@ PLIST_SUB+=	NO_PLUGINS="@comment "
 PLIST_SUB+=	NO_PLUGINS=""
 .endif
 
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	Python on non-i386 systems doesn't link with Fontforge (issues with use of Python's .a file)
+.else
+CONFIGURE_ARGS+=	--without-python
+.endif
+
 pre-everything::
 .if !defined(WITHOUT_TTF_BYTECODE_ENABLED) && !defined(FONTFORGE_WITH_TTF_DEBUGGER)
 	@${ECHO_MSG} "If you have built freetype2 port with bytecode interpreter enabled,"
 	@${ECHO_MSG} "You can use TTF instruction debugger by compiling fontforge port"
 	@${ECHO_MSG} "with FONTFORGE_WITH_TTF_DEBUGGER defined."
 	@${ECHO_MSG} "Note that you must put the source archive of FreeType in ${DISTDIR}."
-	@${ECHO_MSG} "If you have installed freetype2 from a package, chdir to ${PORTSDIR}/print/"
+	@${ECHO_MSG} "If you have installed freetype2 from a package, chdir to ${PORTSDIR}/print/freetype2"
 	@${ECHO_MSG} "and execute 'make fetch' before building this port".
 	@${ECHO_MSG} ""
 .endif
@@ -84,6 +97,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 
+.if !defined(NOPORTDOCS)
 post-extract:
 	${MKDIR} ${WRKDIR}/html ${WRKSRC}/cidmap
 	for doc in ${DOCFILES} ; \
@@ -91,6 +105,7 @@ post-extract:
 	done
 	${TAR} -xzC ${WRKSRC}/cidmap -f ${WRKDIR}/html/cidmaps.tgz
 	${RM} ${WRKDIR}/html/cidmaps.tgz
+.endif
 
 .if !defined(FONTFORGE_NO_PLUGINS)
 post-build:
