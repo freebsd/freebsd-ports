@@ -446,6 +446,7 @@ share/xsessions/e16-kde.desktop
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/en_US/LC_MESSAGES
 @dirrmtry share/locale/en_US
+@dirrm lib/e16
 @dirrmtry etc/X11/dm/Sessions
 @dirrmtry etc/X11/dm
 @dirrmtry etc/X11
