@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	frost
-PORTVERSION=	1.2.0.20070719
+PORTVERSION=	1.2.0.20071211
 PORTEPOCH=	2
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	jtcfrost
-DISTNAME=	${PORTNAME}-19-Jul-2007
+DISTNAME=	${PORTNAME}-11-Dec-2007
 
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	Frost is a Freenet client that provides messenger and file services
@@ -34,19 +34,16 @@ JAR_FILES=	frost.jar lib/fecImpl.jar \
 		lib/fec-native.jar \
 		lib/genChkImpl.jar lib/gnu-regexp-1.1.4.jar \
 		lib/xercesImpl.jar \
-		lib/joda-time.jar lib/mckoidb.jar \
-		lib/perst15.jar lib/skinlf.jar \
-		lib/skinlfFix.jar lib/xml-apis.jar
+		lib/joda-time.jar \
+		lib/perst15.jar \
+		lib/xml-apis.jar
 
 DOC_FILES=	doc/Frost.tex doc/authors.txt doc/gpl.txt \
-		doc/SkinLFLicense.txt \
-		doc/hypersonic_lic.txt doc/HISTORY.txt
+		doc/SkinLFLicense.txt
 PORTDOCS=	${DOC_FILES:C,^.*/,,}
 
-DATA_FILES=	config/boards.xml.default \
+DATA_FILES=	config/boards.xml.default07 \
 		jtc.ico \
-		store/applayerdb.conf \
-		themes/themepack.zip
 
 PLIST_FILES=	bin/${PORTNAME}
 
