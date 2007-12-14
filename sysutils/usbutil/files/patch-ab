@@ -1,0 +1,28 @@
+--- Makefile	Wed May 19 23:05:31 1999
++++ Makefile	Thu Mar 27 19:21:15 2003
+@@ -1,5 +1,4 @@
+-PROGS = usbctl usbdebug usbstats usbgen 
+-CFLAGS = -Wall -s
++PROGS = usbctl usbstats usbgen 
+ 
+ all:	$(PROGS)
+ 
+@@ -9,9 +8,6 @@
+ usbctl:		usbctl.c
+ 	cc $(CFLAGS) usbctl.c -o usbctl
+ 
+-usbdebug:	usbdebug.c
+-	cc $(CFLAGS) usbdebug.c -o usbdebug
+-
+ usbstats:	usbstats.c
+ 	cc $(CFLAGS) usbstats.c -o usbstats
+ 
+@@ -19,7 +15,7 @@
+ 	cc $(CFLAGS) usbgen.c -o usbgen
+ 
+ install: $(PROGS)
+-	install usbctl usbdebug usbstats usbgen $(PREFIX)/sbin
++	install usbctl usbstats usbgen $(PREFIX)/sbin
+ 
+ clean:
+ 	rm -f $(PROGS)
