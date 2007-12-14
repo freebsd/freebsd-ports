@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	2.2.48
+PORTVERSION=	2.2.52
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small emacs-like text editor
 
-USE_GETOPT_LONG=yes
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LIBS="-lgnuregex"
 
 MAN1=		zile.1
