@@ -1,0 +1,15 @@
+bin/cfityk
+bin/fityk
+include/fityk.h
+lib/libfityk.a
+lib/libfityk.la
+lib/libfityk.so
+lib/libfityk.so.0
+share/applications/fityk.desktop
+%%DATADIR%%/fitykhelp.htb
+share/mime/packages/fityk.xml
+share/pixmaps/fityk.png
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
