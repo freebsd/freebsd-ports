@@ -98,7 +98,9 @@ lib/abyssws/lang/ar.lng
 lib/abyssws/lang/fr.lng
 lib/abyssws/license.txt
 lib/abyssws/htdocs/pwrabyss.gif
-lib/abyssws/htdocs/index.html
+@unexec if cmp -s %D/lib/abyssws/htdocs/index.html-dist %D/lib/abyssws/htdocs/index.html; then rm -f %D/lib/abyssws/htdocs/index.html; fi
+lib/abyssws/htdocs/index.html-dist
+@exec if [ ! -f %D/lib/abyssws/htdocs/index.html ] ; then cp -p %D/%F %B/index.html; fi
 @dirrm lib/abyssws/console
 @dirrm lib/abyssws/doc
 @dirrmtry lib/abyssws/htdocs
