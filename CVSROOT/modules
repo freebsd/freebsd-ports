@@ -11730,6 +11730,7 @@ pathload	ports/benchmarks/pathload
 pathneck	ports/net/pathneck
 pathological	ports/games/pathological
 pathrate	ports/benchmarks/pathrate
+pauker		ports/misc/pauker
 pavucontrol	ports/audio/pavucontrol
 pavuk		ports/ftp/pavuk
 pavumeter	ports/audio/pavumeter
