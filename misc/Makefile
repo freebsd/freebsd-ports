@@ -381,6 +381,7 @@
     SUBDIR += pantry
     SUBDIR += patanjali
     SUBDIR += patchutils
+    SUBDIR += pauker
     SUBDIR += pciids
     SUBDIR += pdfmap
     SUBDIR += pdmenu
