@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Rose-DB
-PORTVERSION=	0.735
+PORTVERSION=	0.736
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
@@ -31,6 +31,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Rose::DB.3 \
+	Rose::DB::Cache.3 \
+	Rose::DB::Cache::Entry.3 \
 	Rose::DB::Constants.3 \
 	Rose::DB::Generic.3 \
 	Rose::DB::Informix.3 \
