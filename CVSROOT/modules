@@ -10495,6 +10495,7 @@ p5-Net-IP	ports/net-mgmt/p5-Net-IP
 p5-Net-IP-Match-Regexp	ports/net-mgmt/p5-Net-IP-Match-Regexp
 p5-Net-IP-Match-XS	ports/net-mgmt/p5-Net-IP-Match-XS
 p5-Net-IP-Resolver	ports/net-mgmt/p5-Net-IP-Resolver
+p5-Net-IPTrie	ports/net/p5-Net-IPTrie
 p5-Net-IPv4Addr	ports/net-mgmt/p5-Net-IPv4Addr
 p5-Net-IPv6Addr	ports/net-mgmt/p5-Net-IPv6Addr
 p5-Net-Ident	ports/net/p5-Net-Ident
