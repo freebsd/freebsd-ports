@@ -7,6 +7,7 @@
 
 PORTNAME=	gozerbot
 PORTVERSION=	0.7.1.1
+PORTREVISION=	1
 CATEGORIES=	irc python
 MASTER_SITES=	http://gozerbot.org/media/tarball/ http://gozerbot.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,6 +30,8 @@ MAN1=		gozerbot.1
 DOCS=BASIC COLLECTIVE FAQ FLEET FLOW JABBER \
 	OPER PROGRAMPLUGIN RELAY RSS \
 	THNX TOURDECODE UDP UPGRADE USER WEBSERVER
+
+RUN_DEPENDS+=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 
 post-install:
 .if !defined(BATCH)
