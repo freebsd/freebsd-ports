@@ -5,14 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	phpSysInfo
-PORTVERSION=	2.5.3
-PORTREVISION=	1
+DISTVERSION=	3.0-RC3
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME:L}
-DISTNAME=	${PORTNAME:L}-${PORTVERSION}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	A php script that displays info about the host being accessed
 
 USE_PHP=	pcre xml
