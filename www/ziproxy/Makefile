@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		ziproxy
-PORTVERSION=		2.3.0
+PORTVERSION=		2.4.2
 CATEGORIES=		www
 MASTER_SITES=		SF
 
@@ -14,8 +14,7 @@ COMMENT=		A forwarding, non-caching, compressing proxy server
 
 LIB_DEPENDS=		ungif.5:${PORTSDIR}/graphics/libungif \
 			png.5:${PORTSDIR}/graphics/png \
-			jpeg.9:${PORTSDIR}/graphics/jpeg \
-			confuse.0:${PORTSDIR}/devel/libconfuse
+			jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=		yes
 USE_GCC=		3.2+
@@ -27,7 +26,7 @@ ERRORFILES=		400.html 404.html 408.html 500.html 503.html
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--enable-shared-confuse --with-cfgfile="${PREFIX}/etc/ziproxy.conf"
+CONFIGURE_ARGS+=	--with-cfgfile="${PREFIX}/etc/ziproxy.conf"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=		README
@@ -72,9 +71,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_JPEG2000)
-CONFIGURE_ARGS+=	--without-jasper
-.else
+.if !defined(WITHOUT_JPEG2000)
 CONFIGURE_ARGS+=	--with-jasper
 LIB_DEPENDS+=		jasper.4:${PORTSDIR}/graphics/jasper
 .endif
