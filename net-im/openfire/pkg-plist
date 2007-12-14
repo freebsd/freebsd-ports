@@ -37,6 +37,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/translator-guide.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/wildfire-ent-3_2_0-upgrade.html
+%%PORTDOCS%%%%DOCSDIR%%/wildfire-openfire-upgrade.html
 %%JAVAJARDIR%%/activation.jar
 %%JAVAJARDIR%%/bouncycastle.jar
 %%JAVAJARDIR%%/commons-el.jar
@@ -57,11 +59,10 @@
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/dwr.xml
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/admin-jsp.jar
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/dwr.jar
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/commons-io.jar
+%%DATADIR%%/plugins/admin/webapp/WEB-INF/lib/commons-fileupload.jar
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/sitemesh.xml
 %%DATADIR%%/plugins/admin/webapp/WEB-INF/web.xml
-%%DATADIR%%/plugins/admin/webapp/images/clearspace.gif
-%%DATADIR%%/plugins/admin/webapp/images/certificate_warning-16x16.png
-%%DATADIR%%/plugins/admin/webapp/images/certificate_ok-16x16.png
 %%DATADIR%%/plugins/admin/webapp/images/add-16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/aim.gif
 %%DATADIR%%/plugins/admin/webapp/images/arrow_right_blue.gif
@@ -72,7 +73,11 @@
 %%DATADIR%%/plugins/admin/webapp/images/bullet-yellow-14x14.gif
 %%DATADIR%%/plugins/admin/webapp/images/bullet.gif
 %%DATADIR%%/plugins/admin/webapp/images/cache-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/certificate_warning-16x16.png
+%%DATADIR%%/plugins/admin/webapp/images/certificate_ok-16x16.png
 %%DATADIR%%/plugins/admin/webapp/images/check.gif
+%%DATADIR%%/plugins/admin/webapp/images/check-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/clearspace.gif
 %%DATADIR%%/plugins/admin/webapp/images/connection-manager_16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/delete-16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/doc-changelog-16x16.gif
@@ -80,6 +85,7 @@
 %%DATADIR%%/plugins/admin/webapp/images/doc-readme-16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/edit-16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/error-16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/feed-icon-16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/forbidden-16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/greenlight-24x24.gif
 %%DATADIR%%/plugins/admin/webapp/images/header-background_new.gif
@@ -111,6 +117,7 @@
 %%DATADIR%%/plugins/admin/webapp/images/redlight-24x24.gif
 %%DATADIR%%/plugins/admin/webapp/images/refresh-16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/server_16x16.gif
+%%DATADIR%%/plugins/admin/webapp/images/server-network-24x24.gif
 %%DATADIR%%/plugins/admin/webapp/images/setup-header.png
 %%DATADIR%%/plugins/admin/webapp/images/setup-sidebar-bottom.gif
 %%DATADIR%%/plugins/admin/webapp/images/setup-sidebar-top.gif
@@ -210,6 +217,20 @@
 %%DATADIR%%/resources/database/upgrade/11/openfire_hsqldb.sql
 %%DATADIR%%/resources/database/upgrade/11/openfire_oracle.sql
 %%DATADIR%%/resources/database/upgrade/11/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/12/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/12/openfire_sybase.sql
+%%DATADIR%%/resources/database/upgrade/12/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/12/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/12/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/12/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/12/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/13/openfire_db2.sql
+%%DATADIR%%/resources/database/upgrade/13/openfire_sqlserver.sql
+%%DATADIR%%/resources/database/upgrade/13/openfire_postgresql.sql
+%%DATADIR%%/resources/database/upgrade/13/openfire_hsqldb.sql
+%%DATADIR%%/resources/database/upgrade/13/openfire_oracle.sql
+%%DATADIR%%/resources/database/upgrade/13/openfire_mysql.sql
+%%DATADIR%%/resources/database/upgrade/13/openfire_sybase.sql
 %%DATADIR%%/resources/database/upgrade/2/openfire_db2.sql
 %%DATADIR%%/resources/database/upgrade/2/openfire_hsqldb.sql
 %%DATADIR%%/resources/database/upgrade/2/openfire_mysql.sql
@@ -293,6 +314,8 @@
 @dirrm %%DATADIR%%/resources/database/upgrade/2
 @dirrm %%DATADIR%%/resources/database/upgrade/10
 @dirrm %%DATADIR%%/resources/database/upgrade/11
+@dirrm %%DATADIR%%/resources/database/upgrade/12
+@dirrm %%DATADIR%%/resources/database/upgrade/13
 @dirrm %%DATADIR%%/resources/database/upgrade/1
 @dirrm %%DATADIR%%/resources/database/upgrade
 @dirrm %%DATADIR%%/resources/database
