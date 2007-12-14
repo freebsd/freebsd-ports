@@ -1,0 +1,96 @@
+--- src/jpeg2hdrgen.orig	Wed Aug 23 07:25:58 2006
++++ src/jpeg2hdrgen	Thu Jun 21 14:34:33 2007
+@@ -28,18 +28,25 @@
+ export LC_ALL
+ 
+ 
+-JHEAD="jhead"                   # program for extracting exif info from jpegs
+-
+-TEST_JHEAD=`which jhead`;
+-if [ "$TEST_JHEAD" = "" ]; then
+-    echo "Program 'jhead' is required to run this script."
+-    echo "Install appropriate software, for example from:"
+-    echo "http://www.sentex.net/~mwandel/jhead/"
++JHEAD='jhead'                   # program for extracting exif info from jpegs
++EXIF='exif'                     # another one
++EXIV2='exiv2'                   # and one more
++
++CMD=`which ${JHEAD}`
++[ -n "${CMD}" ] || CMD=`which ${EXIF}`
++[ -n "${CMD}" ] || CMD=`which ${EXIV2}`
++if [ -z "${CMD}" ]
++then
++    cat <<MSG
++One of the following commands are required to run this script:
++ '${JHEAD}' - stand-alone program (http://www.sentex.net/~mwandel/jhead/)
++ '${EXIF}'  - part of libexif project (http://sf.net/projects/libexif/)
++ '${EXIV2}' - part of exiv2 project (http://www.exiv2.org/)
++MSG
+     exit 1;
+ fi
+ 
+-#Note: Double backslash MUST be put in front of each $ sign
+-AWK_PROGRAM=`cat <<EOF
++AWK_PROGRAM='
+ BEGIN {
+   exposure="";
+   aperture="";
+@@ -58,23 +65,49 @@
+     print exposure " " aperture " " iso_speed " 0";
+ }
+ 
++## jhead output
+ /^Exposure time: ([0-9]*\.[0-9]) */ {
+-  exposure = 1/\\$3;
++  exposure = 1/$3;
+ }
+-
+ /^Aperture *: f\/([0-9]*\.[0-9]*)/ {
+-  aperture = substr(\\$3,3);
++  aperture = substr($3,3);
+ }
+-
+ /^ISO equiv. *: ([0-9]*\.?[0-9]*)/ {
+-  iso_speed = \\$4;
++  iso_speed = $4;
+ }
+ 
+-EOF`
++## exif output
++/^Exposure Time *\|.+ sec\./ {
++  if (split(substr($3,2),a,"/") == 2)
++    exposure = a[2];
++  else
++    exposure = 1/a[1];
++}
++/^FNumber *\|f\/.+/ {
++    aperture = substr($2,4);
++}
++/^ISO Speed Ratings *\|.+/ {
++    iso_speed = substr($4,2);
++}
+ 
+-while [ "$1" != "" ]; do
+-    EXPOSURE_INFO=`$JHEAD $1 | awk "$AWK_PROGRAM"`
+-    echo $1 $EXPOSURE_INFO
++## exiv2 output
++/^Exposure time *: .+ s/ {
++  if (split($4,a,"/") == 2)
++    exposure = a[2];
++  else
++    exposure = 1/a[1];
++}
++/^Aperture *: F.+/ {
++    aperture = substr($3,2);
++}
++/^ISO speed *: .+/ {
++    iso_speed = $4;
++}
++'
+ 
++while [ ${#} -ne 0 ]
++do
++    printf "${1} "
++    ${CMD} "${1}" | awk "${AWK_PROGRAM}"
+     shift
+ done 

@@ -1,0 +1,4 @@
+bin/pfshdrcalibrate
+bin/jpeg2hdrgen
+bin/dcraw2hdrgen
+bin/pfsinhdrgen
