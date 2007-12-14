@@ -1,4 +1,4 @@
-aria2 has segmented downloading engine in its core. It therefore, it
+aria2 has a segmented downloading engine in its core. Therefore, it
 can download files a lot faster than ordinary browsers. Currently it
 has following features:
 * HTTP/HTTPS GET support
