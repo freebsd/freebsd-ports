@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fortune-mod-the-godfather
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	misc
 MASTER_SITES=	http://izb.knu.ac.kr/~bh/fortune/
 
