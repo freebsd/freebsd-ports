@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fv
-PORTVERSION=	1.01
-PORTREVISION=	2
+PORTVERSION=	1.02
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.eaflux.com/fv/sources/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -15,25 +14,21 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer of hdr/pfm images
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
-		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
-USE_GCC=	3.3+
-USE_GETOPT_LONG=yes
-USE_GL=		yes
-USE_X_PREFIX=	yes
+USE_GL=		glut
 
-PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
+PLIST_FILES=	bin/${PORTNAME}
 
 do-build:
-	${CXX} ${CXXFLAGS} -DNDEBUG -DHAVE_DECL_GETOPT -I${X11BASE}/include \
-		-I${LOCALBASE}/include -I${WRKSRC} ${CPPFLAGS} \
-		${PTHREAD_CFLAGS} ${LDFLAGS} -L${X11BASE}/lib \
-		-L${LOCALBASE}/lib -lpng -lz -lbz2 -lglut -lGLU -lGL -lXi \
-		-lXmu -lX11 -lXext -lSM -lm ${PTHREAD_LIBS} \
-		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/*.c
+	cd ${BUILD_WRKSRC} \
+		&& ${CXX} ${CXXFLAGS} -DNDEBUG -I${WRKSRC} \
+		-I${LOCALBASE}/include ${CPPFLAGS} ${PTHREAD_CFLAGS} \
+		${LDFLAGS} -L${LOCALBASE}/lib -lpng -lz -lbz2 -lglut \
+		-lGLU -lGL -lXi -lXmu -lX11 -lXext -lSM -lm ${PTHREAD_LIBS} \
+		-o ${PORTNAME} *.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
