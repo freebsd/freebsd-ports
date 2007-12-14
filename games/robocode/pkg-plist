@@ -41,9 +41,6 @@ bin/robocode
 %%DATADIR%%/javadoc/robocode/TeamRobot.html
 %%DATADIR%%/javadoc/robocode/TurnCompleteCondition.html
 %%DATADIR%%/javadoc/robocode/WinEvent.html
-%%DATADIR%%/javadoc/robocode/_AdvancedRadiansRobot.html
-%%DATADIR%%/javadoc/robocode/_AdvancedRobot.html
-%%DATADIR%%/javadoc/robocode/_Robot.html
 %%DATADIR%%/javadoc/robocode/control/BattleSpecification.html
 %%DATADIR%%/javadoc/robocode/control/BattlefieldSpecification.html
 %%DATADIR%%/javadoc/robocode/control/RobocodeEngine.html
@@ -56,14 +53,27 @@ bin/robocode
 %%DATADIR%%/javadoc/robocode/package-frame.html
 %%DATADIR%%/javadoc/robocode/package-summary.html
 %%DATADIR%%/javadoc/robocode/package-tree.html
+%%DATADIR%%/javadoc/robocode/JuniorRobot.html
+%%DATADIR%%/javadoc/robocode/RobotStatus.html
+%%DATADIR%%/javadoc/robocode/StatusEvent.html
+%%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/robocode/util/Utils.html
 %%DATADIR%%/javadoc/robocode/util/package-frame.html
 %%DATADIR%%/javadoc/robocode/util/package-summary.html
 %%DATADIR%%/javadoc/robocode/util/package-tree.html
 %%DATADIR%%/javadoc/stylesheet.css
+%%DATADIR%%/libs/cachecleaner.jar
+%%DATADIR%%/libs/codesize.jar
+%%DATADIR%%/libs/robocode.jar
+%%DATADIR%%/libs/roborumble.jar
 %%DATADIR%%/license/cpl-v10.html
 %%DATADIR%%/robocode.ico
-%%DATADIR%%/robocode.jar
+%%DATADIR%%/robots/sample/Interactive.java
+%%DATADIR%%/robots/sample/Interactive.properties
+%%DATADIR%%/robots/sample/MyFirstJuniorRobot.java
+%%DATADIR%%/robots/sample/MyFirstJuniorRobot.properties
+%%DATADIR%%/robots/sample/Interactive.class
+%%DATADIR%%/robots/sample/MyFirstJuniorRobot.class
 %%DATADIR%%/robots/sample/Corners.class
 %%DATADIR%%/robots/sample/Corners.java
 %%DATADIR%%/robots/sample/Corners.properties
@@ -115,6 +125,7 @@ bin/robocode
 @dirrm %%DATADIR%%/robots/sampleteam
 @dirrm %%DATADIR%%/robots/sample
 @dirrm %%DATADIR%%/robots
+@dirrm %%DATADIR%%/libs
 @dirrm %%DATADIR%%/license
 @dirrm %%DATADIR%%/javadoc/robocode/util
 @dirrm %%DATADIR%%/javadoc/robocode/control
