@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ogmrip
-PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTVERSION=	0.11.1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -21,20 +20,21 @@ BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		${LOCALBASE}/sbin/eject:${PORTSDIR}/sysutils/eject \
 		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS=	enca.5:${PORTSDIR}/converters/enca \
+		notify.1:${PORTSDIR}/devel/libnotify \
 		dvdread.5:${PORTSDIR}/multimedia/libdvdread \
 		x264:${PORTSDIR}/multimedia/x264
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
-		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
-		${LOCALBASE}/sbin/eject:${PORTSDIR}/sysutils/eject
+		ogmmerge:${PORTSDIR}/multimedia/ogmtools
 
-USE_GNOME=	glib20 libxml2 gnomehack
+USE_GNOME=	glib20 gnomehack libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_path_EJECT_PROG="/usr/sbin/cdcontrol"
 USE_LDCONFIG=	yes
 
 MAN1=		dvdcpy.1
