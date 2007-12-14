@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgres
+PORTNAME=	ruby-postgres
 PORTVERSION=	0.7.1.2006.04.06
 PORTREVISION=	1
 CATEGORIES=	databases rubygems
