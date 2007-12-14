@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.11.2
+PORTVERSION=	0.11.4
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/ \
 		http://ports.internal.vlink.ru/distfiles/
@@ -27,7 +27,7 @@ USE_PYTHON=	2.4+
 USE_XLIB=	yes
 
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I ${X11BASE}/include" \
-		LDFLAGS="-L ${PREFIX}/lib" PYTHON=${PYTHON_CMD}
+		LDFLAGS="-L ${LOCALBASE}/lib" PYTHON=${PYTHON_CMD}
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

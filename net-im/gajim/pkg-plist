@@ -11,6 +11,7 @@ lib/gajim/trayicon.so
 %%NLS%%share/locale/bg/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/br/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/da/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/el/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/gajim.mo
