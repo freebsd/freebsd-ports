@@ -18,6 +18,7 @@ MAINTAINER=	yuanjue@yuanjue.net
 COMMENT=	QTerm is a BBS client for BSD/Linux
 
 USE_BZIP2=	yes
+USE_PERL5_BUILD=yes
 USE_QT_VER=	3
 HAS_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -43,10 +44,4 @@ post-install:
 	@${CHMOD} +w ${DATADIR}/address.cfg
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500016
-BROKEN=	Does not build on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
