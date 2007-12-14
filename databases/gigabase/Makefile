@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gigabase
-PORTVERSION=	3.58
+PORTVERSION=	3.61
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -15,12 +15,18 @@ COMMENT=	Object-Relational Database Management System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS?=--prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${OSVERSION} < 601103
+	@${REINPLACE_CMD} -e \
+		'/GETHOSTBYNAME_R/s|^#define|// #define|g' ${WRKSRC}/config.h
+.endif
+
+.include <bsd.port.post.mk>

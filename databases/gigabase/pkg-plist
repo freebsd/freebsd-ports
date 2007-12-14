@@ -4,7 +4,6 @@ include/gigabase/blob.h
 include/gigabase/btree.h
 include/gigabase/class.h
 include/gigabase/cli.h
-include/gigabase/confdefs.h
 include/gigabase/config.h
 include/gigabase/container.h
 include/gigabase/cursor.h
