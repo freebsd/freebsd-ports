@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ristretto
-PORTVERSION=	0.0.9
-CATEGORIES=	graphics
+PORTVERSION=	0.0.15
+CATEGORIES=	graphics xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 
 MAINTAINER=	miwi@FreeBSD.org
