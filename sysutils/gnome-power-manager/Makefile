@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-power-manager
-PORTVERSION=	2.20.1
+PORTVERSION=	2.20.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -39,7 +39,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	gnome-power-manager.schemas
 
-MAN1=		gnome-power-manager.1 gnome-power-preferences.1
+MAN1=		gnome-power-manager.1 gnome-power-preferences.1 \
+		gnome-power-statistics.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lresolv|| ; s|-Werror||g' \
