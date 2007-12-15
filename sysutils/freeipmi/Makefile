@@ -10,7 +10,7 @@
 #
 
 PORTNAME=	freeipmi
-PORTVERSION=	0.4.3
+PORTVERSION=	0.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/ \
 	ftp://ftp.riss-telecom.ru/pub/mirrors/ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/
@@ -28,7 +28,7 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 	PTHREAD_LIBS=-pthread
 CONFIGURE_ARGS+=	--disable-init-scripts --disable-logrotate-config \
-	--localstatedir=/var \
+	--disable-logdir --localstatedir=/var \
 	--with-ipmipower-config-file=${PREFIX}/etc/ipmipower.conf \
 	--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache \
 	--with-ipmi-monitoring-sensor-config-file=${PREFIX}/etc/ipmi_monitoring_sensors.conf \
@@ -46,20 +46,19 @@ MAN5+=	ipmipower.conf.5 bmc-config.conf.5 ipmiconsole.conf.5 \
 	ipmidetect.conf.5 ipmidetectd.conf.5
 MAN8+=	bmc-watchdog.8 ipmipower.8 ipmi-raw.8 ipmi-sel.8 \
 	ipmi-sensors.8 ipmi-locate.8 bmc-info.8 ipmiping.8 \
-	rmcpping.8 bmc-autoconfig.8 bmc-config.8 ipmiconsole.8 \
+	rmcpping.8 bmc-config.8 ipmiconsole.8 \
 	ipmi-fru.8 pef-config.8 ipmimonitoring.8 ipmi-chassis.8 \
 	ipmidetect.8 ipmidetectd.8
 INFO+=		freeipmi-faq
 PORTDOCS=	*
-PORTEXAMPLES=	*
 
 CACHE_DIR?=	/var/db/${PORTNAME}
 LOG_DIR=	/var/log/${PORTNAME}
 RUN_DIR=	/var/lib/${PORTNAME}
-FREEIPMI_SHLIBVER=	4
-IPMICONSOLE_SHLIBVER=	1
+FREEIPMI_SHLIBVER=	5
+IPMICONSOLE_SHLIBVER=	2
 IPMIDETECT_SHLIBVER=	0
-IPMIMONITORING_SHLIBVER=	0
+IPMIMONITORING_SHLIBVER=	1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
