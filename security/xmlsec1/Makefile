@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmlsec1
-PORTVERSION=	1.2.10
-PORTREVISION=	2
+PORTVERSION=	1.2.11
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -27,7 +26,8 @@ USE_OPENSSL=	yes
 USE_GNOME=	gnomehack lthack libxslt gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-PLIST_FILES=	bin/xmlsec1 bin/xmlsec1-config etc/xmlsec1Conf.sh
+PLIST_FILES=	bin/xmlsec1 bin/xmlsec1-config etc/xmlsec1Conf.sh \
+		share/aclocal/xmlsec1.m4
 
 MAN1=	xmlsec1.1 xmlsec1-config.1
 # The software comes with its own tests, but it is nauseating to sort,
@@ -69,7 +69,10 @@ post-patch:
 	    -e 's|^confexecdir =.*$$|confexecdir = \$$(sysconfdir)|g' \
 	    -e 's|/tmp/\*\.log|${WRKSRC}/*.log|g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/objformat=/s|=[`/a-z]*|=elf|' \
+	    -e '/^XMLSEC_SHLIBSFX="/s|"[^"]*"|".so"|' \
+	    -e 's|openssl_exlibs=-ldl|openssl_exlibs=|' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-ldl"|"|' \
 	    -e 's,with_nspr/include,with_nspr/include/nspr ${PTHREAD_CFLAGS},' \
 	    -e 's,with_nss/include,with_nss/include/nss/nss,' \
