@@ -6259,6 +6259,7 @@ latexmk		ports/print/latexmk
 latrine		ports/games/latrine
 latte		ports/textproc/latte
 laudio		ports/audio/laudio
+laughingman	ports/games/laughingman
 lavaps		ports/sysutils/lavaps
 lazarus		ports/editors/lazarus
 lbdb		ports/mail/lbdb
