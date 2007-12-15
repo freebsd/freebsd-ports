@@ -6,6 +6,36 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20071215:
+  AFFECTS: users of www/suphp
+  AUTHOR: koitsu@FreeBSD.org
+
+  The suPHP port has been upgraded to 0.6.2.  This update requires
+  modifications to your Apache httpd.conf, as the new version of suPHP does
+  things differently than the previous version -- particularly in regards
+  to how AddHandler is used.
+
+  Previously, enabling suPHP was as simple as:
+
+	suPHP_Engine on
+	AddType application/x-httpd-php .php
+	AddHandler x-httpd-php .php
+
+  With suPHP 0.6.2, these should be changed to:
+
+	suPHP_Engine on
+	AddType application/x-httpd-php .php
+	suPHP_AddHandler application/x-httpd-php
+
+  If you forget this change, your PHP content will likely be offered as
+  downloadable content and not parsed by the PHP interpreter!
+
+  Additionally, the new version uses a configuration file vs. compile-time
+  settings.  The configuration file is /usr/local/etc/suphp.conf, and a
+  working example installed as /usr/local/etc/suphp.conf-example.  It's
+  important that the MIME type under the [handlers] section matches what
+  the type passed to suPHP_AddHandler in your Apache configuration.
+
 20071101:
   AFFECTS: users of x11/nvidia-driver
   AUTHOR: danfe@FreeBSD.org
