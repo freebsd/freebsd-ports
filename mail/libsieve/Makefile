@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libsieve
-PORTVERSION=	2.2.5
-PORTREVISION=	1
+PORTVERSION=	2.2.6
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libsieve
@@ -24,7 +23,5 @@ BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/src
 USE_BISON=	build
 USE_LDCONFIG=	yes
-# get rid of the `size_t' problem in header.y
-USE_GCC=	3.2+
 
 .include <bsd.port.mk>
