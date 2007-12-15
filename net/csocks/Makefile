@@ -4,10 +4,10 @@
 # $FreeBSD$
 
 PORTNAME=	csocks
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net security
-MASTER_SITES=	http://csocks.virtuale.org/download/ \
-		http://csocks.altervista.org/download/
+MASTER_SITES=	http://csocks.altervista.org/download/ \
+		http://csocks.virtuale.org/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	raffaele.delorenzo@libero.it
