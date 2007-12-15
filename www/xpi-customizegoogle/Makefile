@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	customizegoogle
-PORTVERSION=	0.66
-DISTVERSIONSUFFIX=	-fx+sm+fl
+PORTVERSION=	0.67
+DISTVERSIONSUFFIX=	.en-US
+#DISTVERSIONSUFFIX=	-fx+sm+fl
 CATEGORIES=	www
+MASTER_SITES=	http://www.updatecg.com/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Enhance and tweak Google services
