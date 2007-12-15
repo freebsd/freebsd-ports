@@ -61,10 +61,6 @@ PORT_DOCDIR=	${LOCALBASE}/share/doc/ja-onew${INPUT_METHOD}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-patch:
 	${SED}	-e 's,%LOCALBASE%,${LOCALBASE},g' \
 		-e 's,%X11BASE%,${X11BASE},g' \
