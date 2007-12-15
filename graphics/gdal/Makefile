@@ -6,47 +6,47 @@
 #
 
 PORTNAME=	gdal
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.4.4
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://www.gdal.org/dl/ \
-		http://dl.maptools.org/dl/gdal/
+		http://dl.maptools.org/dl/gdal/ \
+		http://sunpoet.net/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	A translator library for geospatial data formats
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=	jasper.4:${PORTSDIR}/graphics/jasper \
-		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		geotiff.1:${PORTSDIR}/graphics/libgeotiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		ungif.5:${PORTSDIR}/graphics/libungif
+		geotiff.1:${PORTSDIR}/graphics/libgeotiff \
+		ungif.5:${PORTSDIR}/graphics/libungif \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_AUTOTOOLS=	libtool:15
-USE_PYTHON=	yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libz=/usr \
-		--with-png=${LOCALBASE} \
-		--with-libtiff=${LOCALBASE} \
-		--with-libgeotiff=${LOCALBASE} \
-		--with-libjpeg=${LOCALBASE} \
-		--with-libgif=${LOCALBASE} \
 		--with-jasper=${LOCALBASE} \
+		--with-libgeotiff=${LOCALBASE} \
+		--with-libgif=${LOCALBASE} \
+		--with-libjpeg=${LOCALBASE} \
+		--with-libtiff=${LOCALBASE} \
+		--with-png=${LOCALBASE} \
 		--with-python
 MAKEFILE=	GNUmakefile
-USE_LDCONFIG=	yes
 
-MAN1=		gdal-config.1 gdal_utilities.1 gdalwarp.1 ogrtindex.1 \
-		gdal_contour.1 gdaladdo.1 ogr2ogr.1 pct2rgb.py.1 \
-		gdal_merge.py.1 gdalinfo.1 ogr_utilities.1 rgb2pct.py.1 \
-		gdal_translate.1 gdaltindex.1 ogrinfo.1
+MAN1=		gdal-config.1 gdal_contour.1 gdal_translate.1 \
+		gdal_utilities.1 gdaladdo.1 gdalinfo.1 gdaltindex.1 \
+		gdalwarp.1 ogr2ogr.1 ogr_utilities.1 ogrinfo.1 ogrtindex.1 \
+		gdal_merge.1 gdal_rasterize.1 pct2rgb.1 rgb2pct.1
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|6LIBZ|6|;;s|lgif|lungif|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|lgif|lungif|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

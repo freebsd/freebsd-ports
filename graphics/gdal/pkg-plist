@@ -5,6 +5,7 @@ bin/gdal-config
 bin/gdal2xyz.py
 bin/gdal_contour
 bin/gdal_merge.py
+bin/gdal_rasterize
 bin/gdal_translate
 bin/gdaladdo
 bin/gdalchksum.py
@@ -28,7 +29,9 @@ include/cpl_odbc.h
 include/cpl_port.h
 include/cpl_string.h
 include/cpl_vsi.h
-include/cpl_vsi_private.h
+include/cpl_vsi_virtual.h
+include/cpl_win32ce_api.h
+include/cpl_wince.h
 include/gdal.h
 include/gdal_alg.h
 include/gdal_frmts.h
@@ -55,7 +58,10 @@ include/vrtdataset.h
 lib/libgdal.a
 lib/libgdal.la
 lib/libgdal.so
-lib/libgdal.so.10
+lib/libgdal.so.12
+%%DATADIR%%/GDALLogoBW.svg
+%%DATADIR%%/GDALLogoColor.svg
+%%DATADIR%%/GDALLogoGS.svg
 %%DATADIR%%/cubewerx_extra.wkt
 %%DATADIR%%/ecw_cs.dat
 %%DATADIR%%/ellipsoid.csv
@@ -67,6 +73,7 @@ lib/libgdal.so.10
 %%DATADIR%%/pcs.csv
 %%DATADIR%%/prime_meridian.csv
 %%DATADIR%%/projop_wparm.csv
+%%DATADIR%%/s57agencies.csv
 %%DATADIR%%/s57attributes.csv
 %%DATADIR%%/s57attributes_aml.csv
 %%DATADIR%%/s57attributes_iw.csv
@@ -78,12 +85,12 @@ lib/libgdal.so.10
 %%DATADIR%%/seed_3d.dgn
 %%DATADIR%%/stateplane.csv
 %%DATADIR%%/unit_of_measure.csv
-%%PYTHON_SITELIBDIR%%/_gdalmodule.so
-%%PYTHON_SITELIBDIR%%/_gdalmodule.la
 %%PYTHON_SITELIBDIR%%/_gdalmodule.a
+%%PYTHON_SITELIBDIR%%/_gdalmodule.la
+%%PYTHON_SITELIBDIR%%/_gdalmodule.so
 %%PYTHON_SITELIBDIR%%/gdal.py
-%%PYTHON_SITELIBDIR%%/ogr.py
-%%PYTHON_SITELIBDIR%%/osr.py
 %%PYTHON_SITELIBDIR%%/gdalconst.py
 %%PYTHON_SITELIBDIR%%/gdalnumeric.py
+%%PYTHON_SITELIBDIR%%/ogr.py
+%%PYTHON_SITELIBDIR%%/osr.py
 @dirrm %%DATADIR%%
