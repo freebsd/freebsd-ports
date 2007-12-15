@@ -21,6 +21,9 @@ lib/xemacs-%%XEMACS_VER%%/etc/COPYING.LIB
 lib/xemacs-%%XEMACS_VER%%/etc/DEBUG
 lib/xemacs-%%XEMACS_VER%%/etc/DISTRIB
 lib/xemacs-%%XEMACS_VER%%/etc/Emacs.ad
+lib/xemacs-%%XEMACS_VER%%/etc/ETAGS.ChangeLog
+lib/xemacs-%%XEMACS_VER%%/etc/ETAGS.EBNF
+lib/xemacs-%%XEMACS_VER%%/etc/ETAGS.README
 lib/xemacs-%%XEMACS_VER%%/etc/FTP
 lib/xemacs-%%XEMACS_VER%%/etc/GNU
 lib/xemacs-%%XEMACS_VER%%/etc/HELLO
@@ -146,6 +149,7 @@ lib/xemacs-%%XEMACS_VER%%/etc/photos/bw.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/bwm.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/cthomp.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/cthompm.png
+lib/xemacs-%%XEMACS_VER%%/etc/photos/didier.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/dkindred.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/dkindredm.png
 lib/xemacs-%%XEMACS_VER%%/etc/photos/dmoore.png
