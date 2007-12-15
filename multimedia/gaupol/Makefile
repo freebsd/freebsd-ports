@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gaupol
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.12.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/gaupol/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ CENKES
 
@@ -24,5 +23,10 @@ USE_PYDISTUTILS=yes
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
+MAN1=	${PORTNAME}.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|share/man|man|g;s|share/gaupol|${DATADIR_REL}|g;\
+		/data_dir =/s|=.*|= "${DATADIR}"|' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
