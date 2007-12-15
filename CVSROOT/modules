@@ -3011,6 +3011,7 @@ flux-art	ports/x11-themes/flux-art
 fluxbg		ports/x11/fluxbg
 fluxbox		ports/x11-wm/fluxbox
 fluxbox-sid-pack	ports/x11-themes/fluxbox-sid-pack
+fluxbox-tenr-styles-pack	ports/x11-themes/fluxbox-tenr-styles-pack
 fluxcms		ports/www/fluxcms
 fluxconf	ports/x11-wm/fluxconf
 fluxspace	ports/x11-wm/fluxspace
