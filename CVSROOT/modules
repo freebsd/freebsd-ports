@@ -1343,6 +1343,7 @@ cint		ports/lang/cint
 circuslinux	ports/games/circuslinux
 cisco_conf	ports/net-mgmt/cisco_conf
 ciscoconf	ports/net-mgmt/ciscoconf
+ciso		ports/sysutils/ciso
 citrix_ica	ports/net/citrix_ica
 cjc		ports/net-im/cjc
 cjk-lyx		ports/print/cjk-lyx
