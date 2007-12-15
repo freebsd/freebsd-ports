@@ -7,9 +7,9 @@
 
 PORTNAME=	xfig
 PORTVERSION=	3.2.5
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION}/ \
-		ftp://www-epb.lbl.gov/xfig/
+MASTER_SITES=	http://files.xfig.org/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 
 MAINTAINER=	ports@FreeBSD.org
