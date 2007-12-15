@@ -616,6 +616,7 @@
     SUBDIR += swhplugins
     SUBDIR += tagger
     SUBDIR += taglib
+    SUBDIR += taglookup
     SUBDIR += tagtool
     SUBDIR += tap-plugins
     SUBDIR += tclmidi
