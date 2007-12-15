@@ -85,11 +85,11 @@ CONFIGURE_ARGS+=	--redundant no
 CONFIGURE_ARGS+=	--normalize no
 .endif
 
-.if !defined(QS_USER)
+.if defined(QS_USER)
 CONFIGURE_ARGS+=	--qs-user "${QS_USER}"
 .endif
 
-.if !defined(QS_ADMIN)
+.if defined(QS_ADMIN)
 CONFIGURE_ARGS+=	--admin "${QS_ADMIN}"
 .endif
 
@@ -105,7 +105,9 @@ CONFIGURE_ARGS+=	--scanners "${QS_SCANNERS}"
 CONFIGURE_ARGS+=	--skip-text-msgs "${QS_SKIP_MSGS}"
 .endif
 
-.if !defined(QS_NOTIFY)
+.if defined(QS_NOTIFY)
+CONFIGURE_ARGS+=	--notify "${QS_NOTIFY}"
+.else
 CONFIGURE_ARGS+=	--notify psender,precips
 .endif
 
