@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkgsearch
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://dl.sharesource.org/${PORTNAME}/ \
 		http://andsux.homeip.net/~diego/stable/
@@ -17,12 +17,10 @@ COMMENT=	Find your packages in ports and installed packages
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost
 
-BROKEN=		Creates /usr/local/etc/pkgsearch directory during configure phase
-
 USE_PGSQL=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-build
-PLIST_FILES=	sbin/pkgsearch etc/pkgsearch/pkgsearch.conf
+PLIST_FILES=	sbin/pkgsearch etc/pkgsearch.conf
 
 MAN1=		pkgsearch.1
 MAN5=		pkgsearch.conf.5
