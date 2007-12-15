@@ -54,6 +54,7 @@
     SUBDIR += etoile-wildmenus
     SUBDIR += flux-art
     SUBDIR += fluxbox-sid-pack
+    SUBDIR += fluxbox-tenr-styles-pack
     SUBDIR += fvwm-themes
     SUBDIR += geramik
     SUBDIR += gnome-art
