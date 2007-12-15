@@ -70,6 +70,7 @@
     SUBDIR += ewipe
     SUBDIR += exmh2
     SUBDIR += expect
+    SUBDIR += flex-sdk
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw
     SUBDIR += freepwing
