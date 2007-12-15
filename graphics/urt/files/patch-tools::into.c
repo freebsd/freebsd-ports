@@ -1,6 +1,6 @@
---- tools/into.c.orig	Thu Apr 30 23:10:15 1992
-+++ tools/into.c	Fri Dec 27 23:23:48 2002
-@@ -41,7 +41,10 @@
+--- tools/into.c.orig	Thu Apr 30 09:10:15 1992
++++ tools/into.c	Thu Nov 29 16:17:55 2007
+@@ -41,9 +41,12 @@
  short forceflg;				/* overwrite an unwritable file? */
  
  extern int errno;
@@ -9,5 +9,17 @@
  extern char *sys_errlist[];
 +#endif
  
- void
+-void
++int
  main(argc, argv)
+ int argc;
+ char **argv;
+@@ -82,7 +85,7 @@
+     }
+     else
+ 	strcpy( buf, temp );
+-    mktemp( buf );
++    mkstemp( buf );
+ 
+     if ( (outf = fopen( buf, "w" )) == NULL )
+     {
