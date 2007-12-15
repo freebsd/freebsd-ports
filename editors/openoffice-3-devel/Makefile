@@ -71,10 +71,10 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
 CODELINE=		680
-MILESTONE?=		234
+MILESTONE?=		239
 OOOTAG?=		SRC680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
-SNAPDATE=		20071018
+SNAPDATE=		20071213
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
@@ -190,9 +190,9 @@ do-build:
 	@cd ${WRKSRC} ; ./bootstrap
 # PR:84786 #i53289#
 .if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
 .else
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; dmake"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; dmake"
 .endif
 .if ${LOCALIZED_LANG} == "all"
 	@${MAKE} languagepack
