@@ -268,6 +268,7 @@ share/pixmaps/vnterm.xpm
 @dirrm share/gnome/help/lgpl/pa
 @dirrm share/gnome/help/lgpl/oc
 @dirrm share/gnome/help/lgpl/ko
+@dirrm share/gnome/help/lgpl/hu
 @dirrm share/gnome/help/lgpl/fr
 @dirrm share/gnome/help/lgpl/es
 @dirrm share/gnome/help/lgpl/ar
@@ -278,6 +279,7 @@ share/pixmaps/vnterm.xpm
 @dirrm share/gnome/help/gpl/pa
 @dirrm share/gnome/help/gpl/oc
 @dirrm share/gnome/help/gpl/ko
+@dirrm share/gnome/help/gpl/hu
 @dirrm share/gnome/help/gpl/fr
 @dirrm share/gnome/help/gpl/fi
 @dirrm share/gnome/help/gpl/es
@@ -288,6 +290,7 @@ share/pixmaps/vnterm.xpm
 @dirrm share/gnome/help/fdl/sv
 @dirrm share/gnome/help/fdl/oc
 @dirrm share/gnome/help/fdl/ko
+@dirrm share/gnome/help/fdl/hu
 @dirrm share/gnome/help/fdl/fr
 @dirrm share/gnome/help/fdl/es
 @dirrm share/gnome/help/fdl/ar
