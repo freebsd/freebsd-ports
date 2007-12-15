@@ -1,11 +1,11 @@
---- lib/Sys/Filesystem.pm.orig	Fri May 26 12:06:39 2006
-+++ lib/Sys/Filesystem.pm	Fri May 26 12:06:40 2006
-@@ -108,7 +108,7 @@
- 	# Invert logic for regular
- 	if (exists $params->{regular}) {
- 		delete $params->{regular};
--		$params->{regular} = undef;
-+		$params->{special} = undef;
- 	}
+--- ./lib/Sys/Filesystem.pm.orig	Thu Jun  1 14:10:48 2006
++++ ./lib/Sys/Filesystem.pm	Fri Nov 30 11:39:17 2007
+@@ -30,6 +30,8 @@
+ use vars qw($VERSION $AUTOLOAD);
+ $VERSION = '1.22' || sprintf('%d', q$Revision: 574 $ =~ /(\d+)/g);
  
- 	my @filesystems = ();
++our @special_fs = qw(swap proc tmpfs nfs autofs);
++
+ sub new {
+ 	# Check we're being called correctly with a class name
+ 	ref(my $class = shift) && croak 'Class name required';

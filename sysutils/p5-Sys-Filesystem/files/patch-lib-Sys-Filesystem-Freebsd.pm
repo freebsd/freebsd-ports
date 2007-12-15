@@ -1,6 +1,6 @@
---- ./lib/Sys/Filesystem/Freebsd.pm.orig	Mon Sep 18 11:07:46 2006
-+++ ./lib/Sys/Filesystem/Freebsd.pm	Mon Sep 18 11:10:30 2006
-@@ -26,20 +26,33 @@
+--- ./lib/Sys/Filesystem/Freebsd.pm.orig	Thu Jun  1 14:10:48 2006
++++ ./lib/Sys/Filesystem/Freebsd.pm	Fri Nov 30 11:53:45 2007
+@@ -26,32 +26,46 @@
  use FileHandle;
  use Carp qw(croak);
  
@@ -24,6 +24,7 @@
  	ref(my $class = shift) && croak 'Class name required';
  	my %args = @_;
  	my $self = { };
++	my (@vals, $i);
  
  	$args{fstab} ||= '/etc/fstab';
 -	$args{mtab} ||= '/etc/mtab';
@@ -33,11 +34,26 @@
  
  	my @keys = qw(fs_spec fs_file fs_vfstype fs_mntops fs_freq fs_passno);
 -	my @special_fs = qw(swap proc devpts tmpfs);
-+	my @special_fs = qw(swap procfs devpts devfs tmpfs);
++	push (@Sys::Filesystem::special_fs, qw(procfs devpts devfs));
  
  	# Read the fstab
  	my $fstab = new FileHandle;
-@@ -60,24 +73,42 @@
+ 	if ($fstab->open($args{fstab})) {
+ 		while (<$fstab>) {
+ 			next if (/^\s*#/ || /^\s*$/);
+-			my @vals = split(/\s+/, $_);
++			@vals = split(/\s+/, $_);
+ 			$self->{$vals[1]}->{mount_point} = $vals[1];
+ 			$self->{$vals[1]}->{device} = $vals[0];
+ 			$self->{$vals[1]}->{unmounted} = 1;
+-			$self->{$vals[1]}->{special} = 1 if grep(/^$vals[2]$/,@special_fs);
+-			for (my $i = 0; $i < @keys; $i++) {
++			$self->{$vals[1]}->{special} = 1 if grep(/^$vals[2]$/,@Sys::Filesystem::special_fs);
++			for ($i = 0; $i < @keys; $i++) {
+ 				$self->{$vals[1]}->{$keys[$i]} = $vals[$i];
+ 			}
+ 		}
+@@ -60,24 +74,42 @@
  		croak "Unable to open fstab file ($args{fstab})\n";
  	}
  
@@ -66,16 +82,16 @@
 +	$buf = ' ' x ( $sizeof * $cnt );
 +
 +	if ( ($cnt=syscall(&SYS_getfsstat, $buf, length $buf, &MNT_NOWAIT)) ) {
-+		for (my ($i) = 0; $i < $cnt; $i++) {
++		for (($i) = 0; $i < $cnt; $i++) {
 +
 +			my $offset = ($i)? 'x' . ($i * $sizeof): '';
-+			my @vals = unpack ( $offset . $format, $buf);
++			@vals = unpack ( $offset . $format, $buf);
 +
 +			delete $self->{$vals[3]}->{unmounted} if exists $self->{$vals[3]}->{unmounted};
 +			$self->{$vals[3]}->{mounted} = 1;
 +			$self->{$vals[3]}->{mount_point} = $vals[3];
 +			$self->{$vals[3]}->{device} = $vals[2];
-+			$self->{$vals[3]}->{special} = 1 if grep(/^$vals[1]$/,@special_fs);
++			$self->{$vals[3]}->{special} = 1 if grep(/^$vals[1]$/,@Sys::Filesystem::special_fs);
 +
 +			$self->{$vals[3]}->{fs_spec} = $vals[2];
 +			$self->{$vals[3]}->{fs_file} = $vals[3];
