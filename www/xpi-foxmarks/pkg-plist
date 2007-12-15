@@ -1,29 +1,36 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-bookmarkconflict.xul
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-bookmarkset.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-clobber.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-clobber.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-command.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-conflicts.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-core.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-dialog.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-dialog.xul
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-folderconflict.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-json.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-log.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-manageroverlay.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-manageroverlay.xul
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-merge.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-orderconflict.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-network.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-nodes.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-overlay.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-overlay.xul
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-parentconflict.xul
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-progress.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-progress.xul
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-remote.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-separatorconflict.xul
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-rdf.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-server.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-settings.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-setup.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-setup.xul
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-sync.js
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-tree.css
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-statusbar.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-statusbar.xul
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-update.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-utils.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/da-DK/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/da-DK/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/da-DK/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/da-DK/setup.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/conflicts.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/foxmarks.properties
@@ -60,6 +67,10 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/foxmarks.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pl-PL/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pl-PL/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pl-PL/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pl-PL/setup.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/conflicts.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/foxmarks.properties
@@ -88,8 +99,26 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/foxmarks.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-TW/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/foxmarks.css
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/Thumbs.db
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/dirty.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/error.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/foxmarks-active.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/foxmarks-default.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/foxmarks-hover.png
 %%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/foxmarks.ico
 %%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/foxmarks.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/foxmarks_bug.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/pane-selector-advanced.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/pane-selector-bg-hover.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/pane-selector-bg-selected.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/pane-selector-bg.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/pane-selector-general.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/pane-selector-icons.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/pane-selector-macosx-bg-sel.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/pane-selector-macosx-bg.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/ready.png
+%%XPI_XPIDIR%%/chrome/chromeFiles/skin/modern/images/working.gif
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/components/foxmarks-service.idl
 %%XPI_XPIDIR%%/components/foxmarks-service.js
@@ -97,6 +126,7 @@
 %%XPI_XPIDIR%%/defaults/preferences/prefs.js
 %%XPI_XPIDIR%%/install.rdf
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/content
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/da-DK
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/el-GR
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US
@@ -106,6 +136,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ko-KR
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pl-PL
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-PT
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU
