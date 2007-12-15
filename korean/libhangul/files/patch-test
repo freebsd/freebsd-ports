@@ -1,23 +1,34 @@
-diff -ruN libhangul-0.0.4_orig/test/Makefile.in libhangul-0.0.4/test/Makefile.in
---- test/Makefile.in.orig	Sat Jan  6 15:06:17 2007
-+++ test/Makefile.in	Wed Jan 31 14:25:46 2007
-@@ -153,11 +153,11 @@
- am_hangul_OBJECTS = hangul-hangul.$(OBJEXT)
- hangul_OBJECTS = $(am_hangul_OBJECTS)
- hangul_DEPENDENCIES = ../hangul/libhangul.la
--hangul_LDFLAGS =
+diff -urN ../libhangul-0.0.6_orig/test/Makefile.in test/Makefile.in
+--- ../libhangul-0.0.6_orig/test/Makefile.in	2007-07-10 22:09:15.000000000 +0900
++++ test/Makefile.in	2007-11-02 23:07:29.000000000 +0900
+@@ -183,9 +183,11 @@
+ hangul_CFLAGS = 
+ hangul_SOURCES = hangul.c
+ hangul_LDADD = ../hangul/libhangul.la
 +hangul_LDFLAGS = -liconv
- am_hanja_OBJECTS = hanja-hanja.$(OBJEXT)
- hanja_OBJECTS = $(am_hanja_OBJECTS)
- hanja_DEPENDENCIES = ../hangul/libhangul.la
--hanja_LDFLAGS =
+ hanja_CFLAGS = 
+ hanja_SOURCES = hanja.c
+ hanja_LDADD = ../hangul/libhangul.la
 +hanja_LDFLAGS = -liconv
+ all: all-am
  
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
- depcomp = $(SHELL) $(top_srcdir)/depcomp
-diff -ruN libhangul-0.0.4_orig/test/hangul.c libhangul-0.0.4/test/hangul.c
---- test/hangul.c.orig	Thu Jan  4 22:37:09 2007
-+++ test/hangul.c	Wed Jan 31 14:25:53 2007
+ .SUFFIXES:
+@@ -228,10 +230,10 @@
+ 	done
+ hangul$(EXEEXT): $(hangul_OBJECTS) $(hangul_DEPENDENCIES) 
+ 	@rm -f hangul$(EXEEXT)
+-	$(hangul_LINK) $(hangul_OBJECTS) $(hangul_LDADD) $(LIBS)
++	$(hangul_LINK) $(hangul_OBJECTS) $(hangul_LDADD) $(hangul_LDFLAGS) $(LIBS)
+ hanja$(EXEEXT): $(hanja_OBJECTS) $(hanja_DEPENDENCIES) 
+ 	@rm -f hanja$(EXEEXT)
+-	$(hanja_LINK) $(hanja_OBJECTS) $(hanja_LDADD) $(LIBS)
++	$(hanja_LINK) $(hanja_OBJECTS) $(hanja_LDADD) $(hanja_LDFLAGS) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+diff -urN ../libhangul-0.0.6_orig/test/hangul.c test/hangul.c
+--- ../libhangul-0.0.6_orig/test/hangul.c	2007-03-21 22:21:29.000000000 +0900
++++ test/hangul.c	2007-11-02 23:00:02.000000000 +0900
 @@ -2,7 +2,7 @@
  #include <stdlib.h>
  #include <string.h>

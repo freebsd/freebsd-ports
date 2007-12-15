@@ -3,7 +3,7 @@ include/hangul-1.0/hangul.h
 lib/libhangul.a
 lib/libhangul.la
 lib/libhangul.so
-lib/libhangul.so.0
+lib/libhangul.so.1
 libdata/pkgconfig/libhangul.pc
 @dirrm %%DATADIR%%/hanja
 @dirrm %%DATADIR%%
