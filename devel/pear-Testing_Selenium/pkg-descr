@@ -1,0 +1,13 @@
+PHP Client for the Selenium Remote Control test tool
+
+Selenium Remote Control (SRC) is a test tool that allows you to write
+automated web application UI tests in any programming language against
+any HTTP website using any mainstream JavaScript-enabled browser. SRC
+provides a Selenium Server, which can automatically start/stop/control
+any supported browser. It works by using Selenium Core, a pure-HTML+JS
+library that performs automated tasks in JavaScript; the Selenium
+Server communicates directly with the browser using AJAX
+(XmlHttpRequest).
+
+
+WWW: http://pear.php.net/package/Testing_Selenium
