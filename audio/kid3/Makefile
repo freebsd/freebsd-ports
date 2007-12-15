@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kid3
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +18,8 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		FLAC.7:${PORTSDIR}/audio/flac \
 		ogg.5:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		tunepimp.5:${PORTSDIR}/audio/libtunepimp
+		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
+		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes

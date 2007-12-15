@@ -14,6 +14,7 @@ share/icons/hicolor/scalable/apps/kid3.svgz
 share/locale/de/LC_MESSAGES/kid3.mo
 share/locale/es/LC_MESSAGES/kid3.mo
 share/locale/fr/LC_MESSAGES/kid3.mo
+share/locale/it/LC_MESSAGES/kid3.mo
 share/locale/ru/LC_MESSAGES/kid3.mo
 @dirrm share/doc/HTML/en/kid3
 @dirrm share/doc/HTML/de/kid3
