@@ -395,6 +395,7 @@
     SUBDIR += ladder
     SUBDIR += lapispuzzle
     SUBDIR += latrine
+    SUBDIR += laughingman
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
     SUBDIR += ldmud
