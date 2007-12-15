@@ -37,6 +37,7 @@
     SUBDIR += asterisk12-addons
     SUBDIR += asterisk12-app-ldap
     SUBDIR += astfax
+    SUBDIR += astmanproxy
     SUBDIR += atmsupport
     SUBDIR += avahi
     SUBDIR += avahi-app
