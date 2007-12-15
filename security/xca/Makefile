@@ -14,11 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mark@foster.cc
 COMMENT=	Graphical certification authority
 
-BROKEN=		Does not compile
-
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 USE_QT_VER=	4
+QT_COMPONENTS=	gui moc uic qmake rcc linguist
 CC?=		gcc
 CXX?=		g++
 
@@ -28,7 +27,7 @@ MANCOMPRESSED=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I/usr/X11R6/include -I${QT_PREFIX}/include/Qt" > ${WRKSRC}/Local.mak
+	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I${LOCALBASE}/include -I${QT_PREFIX}/include/Qt" > ${WRKSRC}/Local.mak
 	@echo "CFLAGS= ${CFLAGS} -Wall -ggdb" >> ${WRKSRC}/Local.mak
 	@echo "LDFLAGS= ${LDFLAGS} -L${LOCALBASE}/lib" >> ${WRKSRC}/Local.mak
 	@echo "LIBS= -lQtGui -lc_r -lcrypto" >> ${WRKSRC}/Local.mak
