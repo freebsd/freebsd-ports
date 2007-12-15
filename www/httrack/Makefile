@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.41.3
+PORTVERSION=	3.42.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.httrack.com/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
+MASTER_SITES=	http://www.httrack.com/ \
+		http://sunpoet.net/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Easy-to-use offline browser utility and website copier
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-3.41.22
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
