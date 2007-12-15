@@ -1,0 +1,12 @@
+@unexec if cmp -s %%PREFIX%%/etc/asterisk/astmanproxy.conf %%PREFIX%%/etc/asterisk/astmanproxy.conf.sample; then rm %%PREFIX%%/etc/asterisk/astmanproxy.conf; fi
+@unexec if cmp -s %%PREFIX%%/etc/asterisk/astmanproxy.users %%PREFIX%%/etc/asterisk/astmanproxy.users.sample; then rm %%PREFIX%%/etc/asterisk/astmanproxy.users; fi
+etc/asterisk/astmanproxy.conf.sample
+etc/asterisk/astmanproxy.users.sample
+lib/asterisk/modules/csv.so
+lib/asterisk/modules/http.so
+lib/asterisk/modules/standard.so
+lib/asterisk/modules/xml.so
+sbin/astmanproxy
+@dirrm lib/asterisk/modules
+@dirrm lib/asterisk
+@dirrmtry etc/asterisk
