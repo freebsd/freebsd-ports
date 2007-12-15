@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.9.11
-PORTREVISION=	1
+PORTVERSION=	1.9.13
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
@@ -24,16 +23,14 @@ FILES=		Log/composite.php Log/console.php Log/daemon.php \
 		Log/null.php Log/observer.php Log/sql.php Log/sqlite.php \
 		Log/syslog.php Log/win.php Log.php
 DOCS=		guide.txt
-EXAMPLES=	composite.php firebug.php php_error_handler.php \
-		console.php mail.php sql.php display.php null.php \
-		sqlite.php error_log.php observer_mail.php syslog.php \
-		file.php pear_error_handler.php win.php
-TESTS=		composite.phpt extract-zend2.2.phpt priority.phpt \
-		console.phpt factory.phpt singleton.phpt \
-		display.phpt file.phpt sql_ident.phpt \
-		error_log.phpt firebug.phpt sqlite.phpt \
-		extract-zend1.phpt levels.phpt \
-		extract-zend2.0.phpt null.phpt
+EXAMPLES=	composite.php console.php display.php error_log.php \
+		file.php firebug.php mail.php null.php observer_mail.php \
+		pear_error_handler.php php_error_handler.php sql.php \
+		sqlite.php syslog.php win.php
+TESTS=		composite.phpt console.phpt display.phpt error_log.phpt \
+		extract-zend1.phpt extract-zend2.0.phpt extract-zend2.2.phpt \
+		factory.phpt file.phpt firebug.phpt levels.phpt null.phpt \
+		priority.phpt singleton.phpt sqlite.phpt sql_ident.phpt
 SQLS=		log.sql
 
 _EXAMPLESDIR=	docs/examples
