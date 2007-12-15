@@ -48,6 +48,7 @@
    SUBDIR += portsnap
    SUBDIR += portsopt
    SUBDIR += porttools
+   SUBDIR += portupdate-scan
    SUBDIR += portupgrade
    SUBDIR += portupgrade-devel
    SUBDIR += psearch
