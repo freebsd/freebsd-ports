@@ -1,6 +1,6 @@
---- ./qtiplot/qtiplot.pro.orig	2007-09-20 15:55:53.000000000 +0400
-+++ ./qtiplot/qtiplot.pro	2007-09-23 01:11:43.000000000 +0400
-@@ -30,12 +30,8 @@
+--- ./qtiplot/qtiplot.pro.orig	2007-11-14 20:19:55.000000000 +0300
++++ ./qtiplot/qtiplot.pro	2007-11-14 20:19:55.000000000 +0300
+@@ -34,12 +34,8 @@
  #!!! Warning: You must modify these paths according to your computer settings
  #############################################################################
  
@@ -15,7 +15,7 @@
  
  ##################### 3rd PARTY LIBRARIES SECTION ###########################
  #!!! Warning: You must modify these paths according to your computer settings
-@@ -44,17 +40,13 @@
+@@ -48,17 +44,13 @@
  ##################### Linux (Mac OS X) ######################################
  
  # statically link against libraries in 3rdparty
@@ -36,7 +36,7 @@
  
  ##################### Windows ###############################################
  
-@@ -363,6 +355,7 @@
+@@ -400,6 +392,7 @@
  ##################### Default: muParser v1.28 #################
  
  contains(SCRIPTING_LANGS, muParser) {
@@ -44,7 +44,7 @@
    DEFINES += SCRIPTING_MUPARSER
  
    HEADERS += src/muParserScript.h \
-@@ -380,11 +373,11 @@
+@@ -417,11 +410,11 @@
    SOURCES += src/PythonScript.cpp src/PythonScripting.cpp
  
    unix {
