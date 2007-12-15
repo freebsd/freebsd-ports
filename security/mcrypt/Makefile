@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	mcrypt
-PORTVERSION=	2.6.6
+PORTVERSION=	2.6.7
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://argeas.cs-net.gr/pub/unix/mcrypt/attic/ \
