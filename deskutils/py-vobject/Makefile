@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vobject
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.9
 CATEGORIES=	deskutils
 MASTER_SITES=	http://vobject.skyhouseconsulting.com/ CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
