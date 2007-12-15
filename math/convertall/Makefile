@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	convertall
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	math
 MASTER_SITES=	http://bellz.org/convertall/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another unit converter
 
-BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
-RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
+BUILD_DEPENDS=	pyuic4:${PORTSDIR}/devel/py-qt4-core
+RUN_DEPENDS=	pyuic4:${PORTSDIR}/devel/py-qt4-core
 
 WRKSRC=		${WRKDIR}/ConvertAll
 
