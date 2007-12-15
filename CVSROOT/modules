@@ -14518,6 +14518,7 @@ s5		ports/textproc/s5
 sabbu		ports/multimedia/sabbu
 sabernetdcs-client	ports/finance/sabernetdcs-client
 sablevm		ports/java/sablevm
+sablevm-classpath	ports/java/sablevm-classpath
 sablotron	ports/textproc/sablotron
 sabnzbd		ports/news/sabnzbd
 safecat		ports/sysutils/safecat
