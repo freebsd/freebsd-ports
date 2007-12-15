@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	devel
 MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 
@@ -16,7 +16,6 @@ COMMENT=	A distributed version control system with digital signatures
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 
 SUB_FILES=	pkg-message
-USE_GCC=	3.4+
 USE_PERL5_BUILD=yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
@@ -57,4 +56,10 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+USE_GCC=	4.2+
+.endif
+
+.include <bsd.port.post.mk>
