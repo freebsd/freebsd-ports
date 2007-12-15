@@ -6,7 +6,7 @@
 
 PORTNAME=	netscape-messenger
 DISTVERSION=	9.0a1
-CATEGORIES=	www linux
+CATEGORIES=	mail
 MASTER_SITES=	http://http.netscape.com.edgesuite.net/pub/netscape9/messenger/en-US/9.0a/unix/linux/
 PKGNAMEPREFIX=	linux-
 
