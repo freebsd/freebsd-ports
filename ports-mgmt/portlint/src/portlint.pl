@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.149 2007/12/15 17:39:23 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.150 2007/12/15 17:46:44 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -46,7 +46,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 9;
-my $micro = 6;
+my $micro = 7;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -2281,7 +2281,7 @@ MAINTAINER COMMENT
 		&perror("WARN", $file, -1, "unless this is a master port, COMMENT has to be set by \"=\", ".
 			"not by \"$1=\".") unless ($masterport);
 	} else { # check for correctness
-		if (($makevar{COMMENT} !~ /^["0-9A-Z]/) || ($makevar{COMMENT} =~ m/\.$/)) { #"
+		if (($makevar{COMMENT} !~ /^["\[0-9A-Z]/) || ($makevar{COMMENT} =~ m/\.$/)) { #"
 			&perror("WARN", $file, -1, "COMMENT should begin with a capital, and end without a period");
 		} elsif (length($makevar{COMMENT}) > 70) {
 			&perror("WARN", $file, -1, "COMMENT exceeds 70 characters limit.");
