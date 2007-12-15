@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	flashblock
-PORTVERSION=	1.5.4.1
-DISTVERSIONSUFFIX=	-fx+fl
+PORTVERSION=	1.5.5
+DISTVERSIONSUFFIX=	-fx+ns+fl
 CATEGORIES=	www
 
 MAINTAINER=	simon@olofsson.de
