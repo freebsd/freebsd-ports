@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
 CATEGORIES=	net irc
 
 COMMENT=	SILC plugin for IRSSI
