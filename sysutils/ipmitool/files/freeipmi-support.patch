@@ -1,0 +1,189 @@
+diff -u -ruN ../ipmitool-1.8.9/configure.in ./configure.in
+--- ../ipmitool-1.8.9/configure.in	Wed Mar  7 04:15:35 2007
++++ ./configure.in	Sat Dec 15 19:22:10 2007
+@@ -239,7 +239,7 @@
+ fi
+ if test "x$enable_intf_free" = "xyes"; then
+ dnl Determine if you got the right FreeIPMI version  
+-    AC_MSG_CHECKING([for good libfreeipmi version])
++    AC_MSG_CHECKING([for libfreeipmi version 0.3.0])
+     AC_TRY_COMPILE([
+ #include <sys/types.h>	/* For size_t */
+ #include <stdio.h>	/* For NULL */
+@@ -253,13 +253,65 @@
+                            0,
+                            NULL,
+                            0);
+-    ], ac_free_version_good=yes,ac_free_version_good=no)
+-    AC_MSG_RESULT($ac_free_version_good)
+-    if test "x$ac_free_version_good" = "xyes"; then
++    ], ac_free_version_0_3_0=yes,ac_free_version_0_3_0=no)
++    AC_MSG_RESULT($ac_free_version_0_3_0)
++    AC_MSG_CHECKING([for libfreeipmi version 0.4.0])
++    AC_TRY_COMPILE([
++#include <sys/types.h>	/* For size_t */
++#include <stdio.h>	/* For NULL */
++#include <freeipmi/freeipmi.h>
++#include <freeipmi/udm/ipmi-udm.h>
++    ], [
++    ipmi_device_t dev = NULL;
++    int rv;
++    dev = ipmi_device_create();
++    rv = ipmi_open_inband(dev,
++                          IPMI_DEVICE_KCS,
++                          0,
++                          0,
++                          0,
++                          NULL,
++                          0);
++    ], ac_free_version_0_4_0=yes,ac_free_version_0_4_0=no)
++    AC_MSG_RESULT($ac_free_version_0_4_0)
++
++    AC_MSG_CHECKING([for libfreeipmi version 0.5.0])
++    AC_TRY_COMPILE([
++#include <sys/types.h>	/* For size_t */
++#include <stdio.h>	/* For NULL */
++#include <freeipmi/freeipmi.h>
++#include <freeipmi/udm/ipmi-udm.h>
++    ], [
++    ipmi_device_t dev = NULL;
++    int rv;
++    dev = ipmi_device_create();
++    rv = ipmi_open_inband(dev,
++                          IPMI_DEVICE_KCS,
++                          0,
++                          0,
++                          0,
++                          NULL,
++                          0,
++                          0);
++    ], ac_free_version_0_5_0=yes,ac_free_version_0_5_0=no)
++    AC_MSG_RESULT($ac_free_version_0_5_0)
++
++    if test "x$ac_free_version_0_3_0" = "xyes" \
++       || test "x$ac_free_version_0_4_0" = "xyes" \
++       || test "x$ac_free_version_0_5_0" = "xyes"; then
+        AC_DEFINE(IPMI_INTF_FREE, [1], [Define to 1 to enable FreeIPMI interface.])
+        AC_SUBST(INTF_FREE, [free])
+        AC_SUBST(INTF_FREE_LIB, [libintf_free.la])
+        IPMITOOL_INTF_LIB="$IPMITOOL_INTF_LIB free/libintf_free.la"
++       if test "x$ac_free_version_0_3_0" = "xyes"; then
++          AC_DEFINE(IPMI_INTF_FREE_VERSION_0_3_0, [1], [Define to 1 for FreeIPMI 0.3.0.])
++       fi
++       if test "x$ac_free_version_0_4_0" = "xyes"; then
++          AC_DEFINE(IPMI_INTF_FREE_VERSION_0_4_0, [1], [Define to 1 for FreeIPMI 0.4.0.])
++       fi
++       if test "x$ac_free_version_0_5_0" = "xyes"; then
++          AC_DEFINE(IPMI_INTF_FREE_VERSION_0_5_0, [1], [Define to 1 for FreeIPMI 0.5.0.])
++       fi
+     else
+        enable_intf_free=no
+     fi
+diff -u -ruN ../ipmitool-1.8.9/src/plugins/free/free.c ./src/plugins/free/free.c
+--- ../ipmitool-1.8.9/src/plugins/free/free.c	Fri Feb 23 00:17:46 2007
++++ ./src/plugins/free/free.c	Sat Dec 15 19:22:10 2007
+@@ -58,6 +58,7 @@
+                 return -1;
+         }
+ 
++#if IPMI_INTF_FREE_VERSION_0_3_0
+         if (!(dev = ipmi_open_inband (IPMI_DEVICE_KCS,
+                                       0,
+                                       0,
+@@ -74,19 +75,80 @@
+                         goto cleanup;
+                 }
+         }
++#elif IPMI_INTF_FREE_VERSION_0_4_0
++        if (!(dev = ipmi_device_create())) {
++                perror("ipmi_open_inband()");
++                goto cleanup;
++        }
++        if (ipmi_open_inband (dev,
++                              IPMI_DEVICE_KCS,
++                              0,
++                              0,
++                              0,
++                              NULL,
++                              IPMI_FLAGS_DEFAULT) < 0) {
++                if (ipmi_open_inband (dev,
++                                      IPMI_DEVICE_SSIF,
++                                      0,
++                                      0,
++                                      0,
++                                      NULL,
++                                      IPMI_FLAGS_DEFAULT) < 0) {
++                       fprintf(stderr, 
++                               "ipmi_open_inband(): %s\n",
++                               ipmi_device_strerror(ipmi_device_errnum(dev)));
++                       goto cleanup;
++                }
++        }
++#elif IPMI_INTF_FREE_VERSION_0_5_0
++        if (!(dev = ipmi_device_create())) {
++                perror("ipmi_open_inband()");
++                goto cleanup;
++        }
++        if (ipmi_open_inband (dev,
++                              IPMI_DEVICE_KCS,
++                              0,
++                              0,
++                              0,
++                              NULL,
++                              0,
++                              IPMI_FLAGS_DEFAULT) < 0) {
++                if (ipmi_open_inband (dev,
++                                      IPMI_DEVICE_SSIF,
++                                      0,
++                                      0,
++                                      0,
++                                      NULL,
++                                      0,
++                                      IPMI_FLAGS_DEFAULT) < 0) {
++                       fprintf(stderr, 
++                               "ipmi_open_inband(): %s\n",
++                               ipmi_device_strerror(ipmi_device_errnum(dev)));
++                       goto cleanup;
++                }
++        }
++#endif
+ 
+ 	intf->opened = 1;
+ 	return 0;
+  cleanup:
+-        if (dev)
++        if (dev) {
+                 ipmi_close_device(dev);
++#if IPMI_INTF_FREE_VERSION_0_4_0
++                ipmi_device_destroy(dev);
++#endif
++        }
+         return -1;
+ }
+ 
+ static void ipmi_free_close(struct ipmi_intf * intf)
+ {
+-        if (dev)
++        if (dev) {
+                 ipmi_close_device(dev);
++#if IPMI_INTF_FREE_VERSION_0_4_0
++                ipmi_device_destroy(dev);
++#endif
++        }
+ 	intf->opened = 0;
+ }
+ 
+@@ -132,7 +194,13 @@
+                                    req->msg.data_len + 1,
+                                    rs_buf, 
+                                    rs_buf_len)) < 0) {
++#if IPMI_INTF_FREE_VERSION_0_3_0
+                 perror("ipmi_cmd_raw");
++#elif IPMI_INTF_FREE_VERSION_0_4_0
++                fprintf(stderr,
++                        "ipmi_cmd_raw: %s\n",
++                        ipmi_device_strerror(ipmi_device_errnum(dev)));
++#endif
+                 return NULL;
+         }
+ 
