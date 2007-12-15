@@ -1775,6 +1775,7 @@
     SUBDIR += pear-PhpDocumentor
     SUBDIR += pear-Structures_DataGrid
     SUBDIR += pear-System_Command
+    SUBDIR += pear-Testing_Selenium
     SUBDIR += pear-Text_Diff
     SUBDIR += pear-VFS
     SUBDIR += pear-Validate
