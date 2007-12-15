@@ -2967,6 +2967,7 @@ flawfinder	ports/security/flawfinder
 fldiff		ports/textproc/fldiff
 fldigi		ports/comms/fldigi
 flex		ports/textproc/flex
+flex-sdk	ports/devel/flex-sdk
 flexbackup	ports/sysutils/flexbackup
 flexjson	ports/devel/flexjson
 fli2gif		ports/graphics/fli2gif
