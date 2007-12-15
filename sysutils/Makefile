@@ -82,6 +82,7 @@
     SUBDIR += cfvers
     SUBDIR += checkservice
     SUBDIR += chgrep
+    SUBDIR += ciso
     SUBDIR += ck4up
     SUBDIR += clean
     SUBDIR += clockspeed
