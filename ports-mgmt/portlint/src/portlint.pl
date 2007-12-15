@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.143 2007/08/17 17:04:56 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.149 2007/12/15 17:39:23 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -46,7 +46,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 9;
-my $micro = 5;
+my $micro = 6;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -744,7 +744,7 @@ sub checkplist {
 				$rcsidseen++ if (/\$$rcsidstr[:\$]/);
 			} elsif ($_ =~ /^\@(owner|group|mode)\s/) {
 				&perror("WARN", $file, $., "\@$1 should not be needed");
-			} elsif ($_ =~ /^\@(dirrm|option)/) {
+			} elsif ($_ =~ /^\@(dirrm|option|stopdaemon)/) {
 				; # no check made
 			} elsif ($_ eq "\@cwd") {
 				; # @cwd by itself means change directory back to the original
@@ -833,32 +833,35 @@ sub checkplist {
 		}
 
 		if ($_ =~ /^(\%\%PORTDOCS\%\%)?share\/doc\//) {
-			&perror("WARN", $file, $., "IFF your port is DOCSDIR-safe ".
-					"(that is, a user can override EXAMPLESDIR when building ".
-					"this port and the port will still work correctly) ".
-					"consider using DOCSDIR macro; if you are unsure if this ".
-					"this port is DOCSDIR-safe, then ignore this warning");
+			&perror("WARN", $file, $., "If and only if your port is ".
+					"DOCSDIR-safe (that is, a user can override DOCSDIR ".
+					"when building this port and the port will still work ".
+					"correctly) consider using DOCSDIR macro; if you are ".
+					"unsure if this this port is DOCSDIR-safe, then ignore ".
+					"this warning");
 			$sharedocused++;
 		} elsif ($_ =~ /^(\%\%PORTDOCS\%\%)?\%\%DOCSDIR\%\%/) {
 			$sharedocused++;
 		}
 
 		if ($_ =~ /^share\/examples\//) {
-			&perror("WARN", $file, $., "IFF your port is EXAMPLESDIR-safe ".
-				"(that is, a user can override EXAMPLESDIR when building ".
-				"this port and the port will still work correctly) consider ".
-				"using EXAMPLESDIR macro; if you are unsure if this port is ".
-				"EXAMPLESDIR-safe, then ignore this warning");
+			&perror("WARN", $file, $., "If and only if your port is ".
+				"EXAMPLESDIR-safe (that is, a user can override EXAMPLESDIR ".
+				"when building this port and the port will still work ".
+				"correctly) consider using EXAMPLESDIR macro; if you are ".
+				"unsure if this port is EXAMPLESDIR-safe, then ignore this ".
+				"warning");
 		}
 
 		{
 			my $tmpportname = quotemeta($makevar{PORTNAME});
 			if ($_ =~ /^share\/$tmpportname\//) {
-				&perror("WARN", $file, $., "IFF your port is DATADIR-safe ".
-					"(that is, a user can override DATADIR when building ".
-					"this port and the port will still work correctly) ".
-					"consider using DATADIR macro; if you are unsure if ".
-					"this port is DATADIR-safe, then ignore this warning");
+				&perror("WARN", $file, $., "If and only if your port is ".
+					"DATADIR-safe (that is, a user can override DATADIR when ".
+					"building this port and the port will still work ".
+					"correctly) consider using DATADIR macro; if you are ".
+					"unsure if this port is DATADIR-safe, then ignore this ".
+					"warning");
 			}
 		}
 
@@ -1197,7 +1200,6 @@ sub checkmakefile {
 			BZIP2
 			GNUSTEP
 			IMAKE
-			JAVA
 			KDE(?:BASE|LIBS)_VER
 			(?:LIB)?RUBY
 			LINUX_PREFIX
@@ -2213,21 +2215,21 @@ DISTFILES EXTRACT_ONLY
 	if ($tmp =~ /(PATCH_SITES|PATCH_SITE_SUBDIR|PATCHFILES|PATCH_DIST_STRIP)/) {
 		&checkearlier($file, $tmp, @varnames);
 
-		if ($tmp =~ /^PATCH_SITES=/) {
+		if ($tmp =~ /PATCH_SITES[?+]?=[^\n]+\n/) {
 			print "OK: seen PATCH_SITES.\n" if ($verbose);
-			$tmp =~ s/^[^\n]+\n//;
+			$tmp =~ s/PATCH_SITES[?+]?=[^\n]+\n//;
 		}
-		if ($tmp =~ /^PATCH_SITE_SUBDIR=/) {
+		if ($tmp =~ /PATCH_SITE_SUBDIR[?+]?=[^\n]+\n/) {
 			print "OK: seen PATCH_SITE_SUBDIR.\n" if ($verbose);
-			$tmp =~ s/^[^\n]+\n//;
+			$tmp =~ s/PATCH_SITE_SUBDIR[?+]?=[^\n]+\n//;
 		}
-		if ($tmp =~ /^PATCHFILES=/) {
+		if ($tmp =~ /PATCHFILES[?+]?=[^\n]+\n/) {
 			print "OK: seen PATCHFILES.\n" if ($verbose);
-			$tmp =~ s/^[^\n]+\n//;
+			$tmp =~ s/PATCHFILES[?+]?=[^\n]+\n//;
 		}
-		if ($tmp =~ /^PATCH_DIST_STRIP=/) {
+		if ($tmp =~ /PATCH_DIST_STRIP[?+]?=[^\n]+\n/) {
 			print "OK: seen PATCH_DIST_STRIP.\n" if ($verbose);
-			$tmp =~ s/^[^\n]+\n//;
+			$tmp =~ s/PATCH_DIST_STRIP[?+]?=[^\n]+\n//;
 		}
 
 		&checkextra($tmp, 'PATCH_SITES', $file);
