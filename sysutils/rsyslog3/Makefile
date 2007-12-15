@@ -13,8 +13,8 @@ MASTER_SITES=	CENKES # http://download.rsyslog.com/rsyslog/
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT?=	Enhanced syslog daemon
 
-.ifndef PKGNAMESUFFIX
 LIB_DEPENDS=	logging.0:${PORTSDIR}/devel/liblogging
+.ifndef PKGNAMESUFFIX
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message
 MAN8=	rfc3195d.8 rklogd.8 rsyslogd.8
