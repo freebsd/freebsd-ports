@@ -11,9 +11,9 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gsl/} \
 		http://www.gnu.org/software/${PORTNAME}/manual/:gslref
 MASTER_SITE_SUBDIR=	${PORTNAME}/:gsl
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gsl
 .if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gsl \
-		${GSLREF}:gslref
+DISTFILES+=	${GSLREF}:gslref
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
