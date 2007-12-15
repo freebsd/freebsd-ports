@@ -1,5 +1,5 @@
---- makefile.orig	2007-06-14 19:37:56.000000000 -0500
-+++ makefile	2007-08-21 11:16:18.000000000 -0500
+--- makefile.old	Fri Nov 23 11:14:23 2007
++++ makefile	Fri Nov 23 11:16:22 2007
 @@ -5,7 +5,7 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
@@ -9,23 +9,15 @@
  AR = ar
  
  # If explicit setting of GTK1 or GTK2 then use that else look for
-@@ -26,12 +26,12 @@
+@@ -26,7 +26,7 @@
  CONFIGFLAGS=$(shell pkg-config --cflags gtk+-2.0)
  CONFIGLIB=$(shell pkg-config --libs gtk+-2.0 gthread-2.0)
  CONFIGTHREADS=
 -gnomeprefix:=$(shell pkg-config --variable=prefix gtk+-2.0 2>/dev/null)
 +gnomeprefix:=$(PREFIX)
  else
--CONFIGFLAGS=$(shell gtk-config --cflags)
--CONFIGLIB=$(shell gtk-config --libs)
-+CONFIGFLAGS=$(shell pkg-config --cflags gtk+)
-+CONFIGLIB=$(shell pkg-config --libs gtk+)
- CONFIGTHREADS=$(shell glib-config --libs gthread)
--gnomeprefix:=$(shell gnome-config --prefix 2>/dev/null)
-+gnomeprefix:=$(PREFIX)
- endif
- ifndef prefix
- ifdef gnomeprefix
+ CONFIGFLAGS=$(shell gtk-config --cflags)
+ CONFIGLIB=$(shell gtk-config --libs)
 @@ -76,12 +76,12 @@
  
  INCLUDEDIRS=-I ../../scintilla/include -I ../src -I../lua/include
@@ -45,13 +37,13 @@
  ifeq ($(shell uname), Darwin)
 @@ -102,8 +102,9 @@
  
- $(PROG): SciTEGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
- MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
--	$(COMPLIB) $(LUA_OBJS)
--	$(CC) `$(CONFIGTHREADS)` -DGTK $^ -o $@ $(CONFIGLIB)
-+	$(LUA_OBJS)
+ $(PROG): SciTEGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o StringList.o Exporters.o \
+ PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
+-	JobQueue.o GTKMutex.o $(COMPLIB) $(LUA_OBJS)
+-	$(CC) `$(CONFIGTHREADS)` -rdynamic -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB)
++	JobQueue.o GTKMutex.o $(LUA_OBJS)
 +	$(CC) $(CONFIGLIB) -lscintilla -lscintilla_lexers \
-+	$(CONFIGTHREADS) -DGTK $^ -o $@
++	-rdynamic -Wl,--version-script lua.vers -DGTK $^ -o $@
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak
