@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-hangul
 PORTVERSION=	0.3.1
-#PORTREVISION=	4
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -16,7 +16,7 @@ MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	SCIM IMEngine module for Korean(Hangul) input
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	hangul.0:${PORTSDIR}/korean/libhangul
+LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_ICONV=	yes
