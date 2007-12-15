@@ -144,6 +144,7 @@
     SUBDIR += poseidon
     SUBDIR += proguard
     SUBDIR += sablevm
+    SUBDIR += sablevm-classpath
     SUBDIR += shujit
     SUBDIR += simplicity
     SUBDIR += sun-wtk
