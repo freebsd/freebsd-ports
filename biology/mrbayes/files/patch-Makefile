@@ -1,0 +1,11 @@
+--- Makefile.orig	2005-12-23 01:13:06.000000000 +0900
++++ Makefile	2007-12-11 11:35:36.000000000 +0900
+@@ -19,7 +19,7 @@
+ 
+ # set compiler for the non-MPI version (mpicc will be used for the MPI
+ # version regardless of this setting)
+-CC = gcc
++CC ?= gcc
+ 
+ # set to yes if you want to use the readline library (make sure you have it
+ # installed on your machine)

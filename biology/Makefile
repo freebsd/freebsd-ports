@@ -46,6 +46,7 @@
     SUBDIR += migrate
     SUBDIR += molden
     SUBDIR += mopac
+    SUBDIR += mrbayes
     SUBDIR += mummer
     SUBDIR += nab
     SUBDIR += ncbi-toolkit
