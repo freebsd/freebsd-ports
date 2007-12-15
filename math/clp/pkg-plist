@@ -1,8 +1,12 @@
 bin/clp
+include/CbcOrClpParam.hpp
 include/ClpCholeskyBase.hpp
 include/ClpCholeskyDense.hpp
 include/ClpCholeskyWssmp.hpp
 include/ClpConfig.h
+include/ClpConstraint.hpp
+include/ClpConstraintLinear.hpp
+include/ClpConstraintQuadratic.hpp
 include/ClpDualRowDantzig.hpp
 include/ClpDualRowPivot.hpp
 include/ClpDualRowSteepest.hpp
@@ -75,6 +79,7 @@ include/CoinSearchTree.hpp
 include/CoinShallowPackedVector.hpp
 include/CoinSignal.hpp
 include/CoinSmartPtr.hpp
+include/CoinSnapshot.hpp
 include/CoinSort.hpp
 include/CoinTime.hpp
 include/CoinTypes.hpp
