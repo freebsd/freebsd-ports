@@ -26,7 +26,8 @@ post-patch:
 		${WRKSRC}/${PORTNAME}.rb
 
 do-install:
-	@cd ${WRKSRC}/&&${COPYTREE_SHARE} ${PORTNAME}/ ${RUBY_SITELIBDIR}/
+	@cd ${WRKSRC}/${PORTNAME}/&&\
+		${COPYTREE_SHARE} . ${RUBY_SITELIBDIR}/${PORTNAME}/
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.rb ${PREFIX}/bin/${PORTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.example ${PREFIX}/etc/
 .ifndef NOPORTDOCS
