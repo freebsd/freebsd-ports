@@ -21,6 +21,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/SciTELua.html
 %%DATADIR%%/SciTERegEx.html
 %%DATADIR%%/SciTEWord.jpg
+%%DATADIR%%/abaqus.properties
 %%DATADIR%%/abbrev.properties
 %%DATADIR%%/ada.properties
 %%DATADIR%%/asm.properties
@@ -67,6 +68,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/ps.properties
 %%DATADIR%%/purebasic.properties
 %%DATADIR%%/python.properties
+%%DATADIR%%/r.properties
 %%DATADIR%%/rebol.properties
 %%DATADIR%%/ruby.properties
 %%DATADIR%%/scriptol.properties
