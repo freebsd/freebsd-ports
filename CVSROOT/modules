@@ -7879,6 +7879,7 @@ mprime		ports/math/mprime
 mprof		ports/devel/mprof
 mq4cpp		ports/devel/mq4cpp
 mr-aspell	ports/textproc/mr-aspell
+mrbayes		ports/biology/mrbayes
 mreport		ports/mail/mreport
 mrtg		ports/net-mgmt/mrtg
 mrtg-mysql-load	ports/databases/mrtg-mysql-load
