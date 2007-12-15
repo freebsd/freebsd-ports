@@ -15468,6 +15468,7 @@ tacshell	ports/net/tacshell
 tads		ports/games/tads
 tagger		ports/audio/tagger
 taglib		ports/audio/taglib
+taglookup	ports/audio/taglookup
 tagtool		ports/audio/tagtool
 tagutils	ports/deskutils/tagutils
 tailor		ports/devel/tailor
