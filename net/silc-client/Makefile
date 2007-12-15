@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -36,11 +36,9 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--with-perl=no \
 		--without-libtoolfix
 
-.ifndef(WITH_PTHREADS)
-CONFIGURE_ARGS+=	--without-pthreads
-.else
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
-.endif
+OPTIONS=	PTHREADS "Enable pthreads support" off \
+		IPV6 "Enable IPv6 support" on \
+		OPTIMIZED_ASM "Use assembler optimizations (i386 only)" on
 
 .ifdef(IRSSI_PLUGIN)
 CONFIGURE_ARGS+=	--with-silc-plugin=${PREFIX}/lib/irssi \
@@ -51,17 +49,6 @@ RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-apps__irssi__Makefile.in
 .else
 MAN1=		silc.1
-.endif
-
-pre-everything::
-.ifndef(WITHOUT_IPV6)
-	@${ECHO_MSG} '===> Define WITHOUT_IPV6 to disable IPv6 support'
-.endif
-.ifndef(WITHOUT_OPTIMIZED_ASM)
-	@${ECHO_MSG} '===> Define WITHOUT_OPTIMIZED_ASM to disable assembler optimizations'
-.endif
-.ifndef(WITH_PTHREADS)
-	@${ECHO_MSG} '===> Define WITH_PTHREADS to enable pthreads support'
 .endif
 
 post-patch:
@@ -89,12 +76,18 @@ post-install:
 WITHOUT_OPTIMIZED_ASM=	yes
 .endif
 
-.ifndef(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.ifdef(WITHOUT_OPTIMIZED_ASM)
+.if defined(WITHOUT_OPTIMIZED_ASM)
 CONFIGURE_ARGS+=	--disable-asm
+.endif
+
+.if defined(WITH_PTHREADS)
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
+.else
+CONFIGURE_ARGS+=	--without-pthreads
 .endif
 
 .include <bsd.port.post.mk>
