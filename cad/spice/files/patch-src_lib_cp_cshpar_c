@@ -1,0 +1,10 @@
+--- src/lib/cp/cshpar.c.orig	Mon Nov 12 02:26:08 2007
++++ src/lib/cp/cshpar.c	Mon Nov 12 02:30:46 2007
+@@ -6,6 +6,7 @@
+ /*
+  * The main entry point for cshpar.
+  */
++#include <unistd.h>
+ 
+ #include "spice.h"
+ #include "misc.h"
