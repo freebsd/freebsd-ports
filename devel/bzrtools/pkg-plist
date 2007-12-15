@@ -94,6 +94,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_baz_import.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_baz_import.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_baz_import.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_rspush.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_rspush.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_rspush.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_switch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_switch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_switch.pyo
