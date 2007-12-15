@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	e-uae
-DISTVERSION=	0.8.28
-PORTREVISION=	1
+DISTVERSION=	0.8.29.w4
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.rcdrummond.net/uae/${DISTNAME}/ \
-		http://www.energyhq.es.eu.org/files/
+MASTER_SITES=	http://www.rcdrummond.net/uae/${DISTNAME}/
+DISTNAME=	e-uae-0.8.29-WIP4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	braddo@tranceaddict.net
 COMMENT=	Enhanced version of UAE, the Amiga emulator
 
 CONFLICTS=	uae-[0-9]*
@@ -21,11 +20,13 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_GNOME=	gtk20
-USE_SDL=	sdl
+USE_SDL=	sdl gfx
+CONFIGURE_ARGS=	--with-sdl --with-sdl-gfx
 
 PLIST_FILES=	bin/uae bin/readdisk
-PORTDOCS=	README bsdsocket.txt compiling.txt configuration.txt \
-		floppies.txt keyboard.txt scsi.txt
+PORTDOCS=	ChangeLog README bsdsocket.txt cmd-line.txt \
+		compiling.txt configuration.txt floppies.txt \
+		joystick.txt keyboard.txt scsi.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/uae ${PREFIX}/bin
@@ -33,13 +34,20 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/bsdsocket.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/cmd-line.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/compiling.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/configuration.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/floppies.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/joystick.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/keyboard.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/scsi.txt ${DOCSDIR}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6/lib/X11/xkb/rules|${LOCALBASE}/share/X11/xkb/rules|' \
+	${WRKSRC}/configure
 
 .include <bsd.port.mk>
