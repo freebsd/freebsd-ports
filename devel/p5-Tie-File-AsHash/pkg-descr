@@ -1,0 +1,6 @@
+Tie::File::AsHash represents a regular text file as a Perl hash. Each key/value
+pair in the hash corresponds to a record in the file.
+
+Changes to the hash are reflected in the file immediately.
+
+WWW: http://search.cpan.org/dist/Tie-File-AsHash/

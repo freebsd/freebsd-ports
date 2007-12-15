@@ -1640,6 +1640,7 @@
     SUBDIR += p5-Tie-DB_File-SplitHash
     SUBDIR += p5-Tie-DB_FileLock
     SUBDIR += p5-Tie-File
+    SUBDIR += p5-Tie-File-AsHash
     SUBDIR += p5-Tie-FileLRUCache
     SUBDIR += p5-Tie-Hash-Indexed
     SUBDIR += p5-Tie-Hash-Regex
