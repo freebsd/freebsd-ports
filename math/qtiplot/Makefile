@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9
+DISTVERSION=	0.9.2
 CATEGORIES=	math science
 MASTER_SITES=	http://soft.proindependent.com/src/
 
@@ -21,9 +21,11 @@ LIB_DEPENDS=	gsl.10:${PORTSDIR}/math/gsl \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc qmake opengl svg qt3support network assistantclient
+QT_COMPONENTS=	gui moc_build qmake_build opengl svg qt3support network assistantclient
 HAS_CONFIGURE=	yes
-USE_DOS2UNIX=	qtiplot/qtiplot.pro
+CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
+USE_DOS2UNIX=	*.pro
+MAN1=		qtiplot.1
 
 DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
 		"${DATADIR}/qtiplot.png" \
@@ -42,7 +44,7 @@ USE_PYTHON=	yes
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 PLIST_SUB+=	PYTHON=""
-MAKE_ENV+=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR} \
+CONFIGURE_ENV+=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR} \
 		PYTHON_VERSION=${PYTHON_VERSION}
 .else
 PLIST_SUB+=	PYTHON="@comment "
@@ -60,8 +62,7 @@ PLIST_SUB+=	NLS=""
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-QPRO_DIRS=	. \
-		fitPlugins/fitRational0 \
+QPRO_DIRS=	fitPlugins/fitRational0 \
 		fitPlugins/fitRational1 \
 		qtiplot
 
@@ -70,26 +71,32 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|loadInitFile("qtiplotrc")|loadInitFile("${DATADIR}/qtiplotrc")|' \
 		${WRKSRC}/${PORTNAME}/src/PythonScripting.cpp
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		'/^sys.path.append/s|"\."|"${DATADIR}"|' \
 		${WRKSRC}/${PORTNAME}/qtiplotrc.py
+	@${REINPLACE_CMD} -e \
+		"/^#SCRIPTING_LANGS.*Python/s|^#||" \
+		${WRKSRC}/${PORTNAME}/qtiplot.pro
 .else
-	@${REINPLACE_CMD} \
-		-e "s/^SCRIPTING_LANGS += Python//" \
+	@${REINPLACE_CMD} -e \
+		"s/^SCRIPTING_LANGS.*Python//" \
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
 .endif
 	@${REINPLACE_CMD} -e \
 		's|/usr/share/doc/qtiplot/manual-%1|${DATADIR}/manual|; \
 		 s|/usr/lib/qtiplot/plugins|${DATADIR}/fitPlugins|' \
 		${WRKSRC}/qtiplot/src/ApplicationWindow.cpp
+.if defined(WITH_DEBUG)
+	@${REINPLACE_CMD} -e \
+		"/^CONFIG.*release/s|release|debug|" \
+		${WRKSRC}/${PORTNAME}/qtiplot.pro
+.endif
 
 do-configure:
 .if !defined(WITHOUT_NLS)
-	cd ${WRKSRC}/qtiplot && ${LOCALBASE}/bin/lrelease-qt4 -verbose qtiplot.pro
+	@(cd ${WRKSRC}/qtiplot && ${LOCALBASE}/bin/lrelease-qt4 qtiplot.pro)
 .endif
-.for d in ${QPRO_DIRS}
-	(cd ${WRKSRC}/${d} && ${SETENV} ${MAKE_ENV} ${QMAKE})
-.endfor
+	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} -recursive)
 
 post-configure:
 .for d in ${QPRO_DIRS}
@@ -99,12 +106,13 @@ post-configure:
 		 s|^LINK .*|LINK=${CXX}|' \
 		${WRKSRC}/${d}/Makefile
 .endfor
-	${REINPLACE_CMD} -e 's|^\(INCPATH.*=\)|\1-I../3rdparty/liborigin|' ${WRKSRC}/qtiplot/Makefile
+	@${REINPLACE_CMD} -e 's|^\(INCPATH.*=\)|\1-I../3rdparty/liborigin|' ${WRKSRC}/qtiplot/Makefile
 
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/qtiplot/qtiplot ${DATADIR}/qtiplot
 	${LN} -fs ${DATADIR}/qtiplot ${PREFIX}/bin/qtiplot
+	${INSTALL_MAN} ${WRKSRC}/qtiplot.1 ${PREFIX}/man/man1
 	${MKDIR} ${DATADIR}/fitPlugins
 	${INSTALL_PROGRAM} ${WRKSRC}/fitPlugins/libfitRational0.so.1.0.0 \
 				${DATADIR}/fitPlugins/libfitRational0.so
@@ -114,12 +122,12 @@ do-install:
 .if defined(WITH_PYTHON)
 .for s in qtiplotrc.py qtiUtil.py
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${s} ${DATADIR}/${s}
-	@cd ${WRKSRC}/qtiplot && ${PYTHON_CMD} -c "import py_compile; py_compile.compile('${s}')"
+	@(cd ${WRKSRC}/qtiplot && ${PYTHON_CMD} -c "import py_compile; py_compile.compile('${s}')")
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${s}c ${DATADIR}/${s}c
 .endfor
 .endif
 .if !defined(WITHOUT_NLS)
-	(cd ${WRKSRC}/qtiplot/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations)
+	@(cd ${WRKSRC}/qtiplot/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations)
 .endif
 
 .include <bsd.port.post.mk>
