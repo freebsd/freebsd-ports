@@ -5136,6 +5136,7 @@ ja-eterm	ports/japanese/eterm
 ja-ewipe	ports/japanese/ewipe
 ja-exmh2	ports/japanese/exmh2
 ja-expect	ports/japanese/expect
+ja-flex-sdk	ports/japanese/flex-sdk
 ja-flower-fpw	ports/japanese/flower-fpw
 ja-foldoc-fpw	ports/japanese/foldoc-fpw
 ja-freepwing	ports/japanese/freepwing
