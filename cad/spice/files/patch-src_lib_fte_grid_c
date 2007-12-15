@@ -1,71 +1,76 @@
---- src/lib/fte/grid.c.orig	Sun Apr 25 23:53:11 1993
-+++ src/lib/fte/grid.c	Sat Oct  7 16:00:37 2006
-@@ -26,6 +26,8 @@
+--- src/lib/fte/grid.c.orig	1993-04-25 23:53:11.000000000 +0200
++++ src/lib/fte/grid.c
+@@ -17,11 +17,14 @@ Copyright 1990 Regents of the University
+ #include "suffix.h"
+ 
+ #define RAD_TO_DEG	(180.0 / M_PI)
++#define LABEL_CHARS	20
+ 
+ static double *lingrid(), *loggrid();
+ static void polargrid(), smithgrid();
+ static void drawpolargrid( );
+ static void drawsmithgrid( );
++static void drawlingrid( );
++static void drawloggrid( );
+ 
  static void arcset();
  static double cliparc();
- static void adddeglabel(), addradlabel();
-+static drawloggrid();
-+static drawlingrid();
+@@ -225,7 +228,7 @@ lingrid(graph, lo, hi, delta, type, axis
+     int max;
+     static double dd[2];
+     int mult = 1;
+-    char buf[16], *s;
++    char buf[LABEL_CHARS], *s;
+     int slim, digits;
  
- typedef enum { x_axis, y_axis } Axis;
+     if (axis == y_axis && graph->grid.ysized) {
+@@ -473,11 +476,11 @@ lingrid(graph, lo, hi, delta, type, axis
+     return (dd);
+ }
  
-@@ -1230,7 +1232,10 @@
+-static
++static void
+ drawlingrid(graph, units, spacing, nsp, dst, lmt, hmt, onedec, mult, mag,
+     digits, axis)
+     GRAPH *graph;
+-    char units[16];
++    char *units;
+     bool onedec;
+     int nsp, spacing, mult;
+     double hmt, lmt, dst;
+@@ -488,7 +491,7 @@ drawlingrid(graph, units, spacing, nsp, 
  
-     /* SetLinestyle(1); takes too long */
-     /* Problems with Suns on very large radii && linestyle */
--    SetLinestyle(0);
-+    /* SetLinestyle(0); */
-+    /* linestyle 1 looks better
-+       Guenther Roehrich 22-Jan-99 */
-+    SetLinestyle(1);
+     int i, j;
+     double m, step;
+-    char buf[16];
++    char buf[LABEL_CHARS];
  
-     /* Now plot all the arc sets.  Go as high as 5 times the radius that
-      * will fit on the screen.  The base magnitude is one more than 
-@@ -1409,7 +1414,10 @@
-     /* Let's be lazy and just draw everything -- we won't get called too
-      * much and the circles get clipped anyway...
-      */
--    SetColor(18);
-+    /* SetColor(18); */
-+    /* draw everything in black
-+       Guenther Roehrich 22-Jan-99 */
-+    SetColor(1);
+     /* i counts how many pixels we have drawn, and j counts which unit
+      * we are at.
+@@ -567,7 +570,7 @@ loggrid(graph, lo, hi, type, axis)
+     double k;
+     double decs;
+     double mag, gain;
+-    char buf[32], *s;
++    char buf[LABEL_CHARS], *s;
  
-     cliparc((double) (centx + xoffset + radoff - rad),
- 	    (double) (centy + yoffset), rad, 2*angle,
-@@ -1424,7 +1432,10 @@
-             M_PI - 2 * angle, centx, centy, maxrad, 0);
+     if (axis == x_axis && graph->grid.xsized) {
+       lmt = graph->grid.xaxis.log.lmt;
+@@ -661,7 +664,7 @@ loggrid(graph, lo, hi, type, axis)
  
-     /* Draw the upper and lower circles.  */
--    SetColor(19);
-+    /* SetColor(19); */
-+    /* draw everything in black
-+       Guenther Roehrich 22-Jan-99 */
-+    SetColor(1);
-     aclip = cliparc((double) (centx + xoffset + radoff),
- 	    (double) (centy + yoffset + irad), irad,
- 	    (double) (M_PI * 1.5 + 2 * iangle),
-@@ -1441,7 +1452,10 @@
- 	adddeglabel(graph, ndeg, xlab, ylab,
- 	    gr_xcenter, gr_ycenter, gr_xcenter, gr_ycenter);
-  */
--	SetColor(19);
-+	/* SetColor(19); */
-+	/* draw everything in black
-+	   Guenther Roehrich 22-Jan-99 */
-+	SetColor(1);
- 	}
-     }
-     aclip = cliparc((double) (centx + xoffset + radoff),
-@@ -1455,7 +1469,10 @@
- 	SetColor(1);
- 	adddeglabel(graph, ndeg, xlab, ylab,
- 	    gr_xcenter, gr_ycenter, gr_xcenter, gr_ycenter);
--	SetColor(19);
-+	/* SetColor(19); */
-+	/* draw everything in black
-+	   Guenther Roehrich 22-Jan-99 */
-+	SetColor(1);
-     }
-     
-     /* Now toss the labels on... */
+ }
+ 
+-static
++static void
+ drawloggrid(graph, units, hmt, lmt, decsp, subs, pp, axis)
+     GRAPH *graph;
+     char *units;
+@@ -671,7 +674,7 @@ drawloggrid(graph, units, hmt, lmt, decs
+ {
+     int i, j, k, l, m;
+     double t;
+-    char buf[16];
++    char buf[LABEL_CHARS];
+ 
+     /* Now plot every pp'th decade line, with subs lines between them. */
+     if (subs > 1)
