@@ -7,6 +7,7 @@
 
 PORTNAME=	qstardict
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
@@ -18,7 +19,7 @@ USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui corelib qmake_build uic_build moc_build rcc_build
 
-DICPATH=	${PREFIX}/share/gnome/stardict/dic
+DICPATH=	${PREFIX}/share/stardict/dic
 
 PORTDOCS=	AUTHORS COPYNG ChangeLog INSTALL README THANKS
 
