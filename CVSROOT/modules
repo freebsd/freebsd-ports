@@ -6486,6 +6486,7 @@ libextractor	ports/textproc/libextractor
 libfame		ports/multimedia/libfame
 libfec		ports/comms/libfec
 libffi		ports/devel/libffi
+libffi-devel	ports/devel/libffi-devel
 libflash	ports/graphics/libflash
 libfontenc	ports/x11-fonts/libfontenc
 libfov		ports/games/libfov
