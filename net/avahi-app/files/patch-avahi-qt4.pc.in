@@ -1,0 +1,10 @@
+--- avahi-qt4.pc.in.orig	2006-01-23 07:15:20.000000000 +1000
++++ avahi-qt4.pc.in	2007-10-28 12:10:17.000000000 +1000
+@@ -7,5 +7,5 @@
+ Description: Avahi Multicast DNS Responder (QT4 Support)
+ Version: @PACKAGE_VERSION@
+ Requires.private: QtCore >= 4.0.0
+-Libs: -L${libdir} -lavahi-qt4
+-Cflags: -D_REENTRANT -I${includedir}
++Libs: -L${libdir} -lavahi-qt4 @PTHREAD_LIBS@
++Cflags: -D_REENTRANT @PTHREAD_CFLAGS@ -I${includedir}
