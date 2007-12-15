@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	3.01
+PORTVERSION=	3.02
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	Xnee-${PORTVERSION}
+MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X events recorder and player
@@ -18,14 +16,14 @@ COMMENT=	X events recorder and player
 OPTIONS=	GNEE "Build the GUI frontend" off \
 		PNEE "Build the Gnome Panel frontend" off
 
-USE_XLIB=	yes
+USE_XORG=	xtst
 USE_GNOME=	gnomehack gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cli --disable-doc
 
 MAN1=		cnee.1 xnee.1
-INFO=		cnee
+INFO=		xnee
 PLIST_FILES=	bin/cnee \
 		%%DATADIR%%/example1.xns \
 		%%DATADIR%%/pixmaps/xnee.png \
@@ -35,13 +33,6 @@ PLIST_FILES=	bin/cnee \
 PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-MAKEINFO=	${LOCALBASE}/bin/makeinfo
-.else
-MAKEINFO=	makeinfo
-.endif
 
 .if defined(WITH_GNEE)
 USE_GNOME+=	gtk20
@@ -70,7 +61,8 @@ post-patch:
 		 s|$${libdir}/bonobo/|$${prefix}/libdata/bonobo/|g ; \
 		 s|CCC||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		's|@PIXMAP_DIR@|pixmap|g' ${WRKSRC}/Makefile.in
+		's|@PIXMAP_DIR@|pixmap|g ; \
+		 s|@DOC_DIR@||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|make man|$$(MAKE) man|g' ${WRKSRC}/cnee/Makefile.in
 	@${REINPLACE_CMD} -e \
@@ -80,10 +72,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|cp $$(PNEE)|$$(INSTALL_PROGRAM) $$(PNEE)|g' ${WRKSRC}/pnee/src/Makefile.in
 
-post-build:
-	cd ${WRKSRC}/cnee/src && ${MAKEINFO} --no-split cnee.texi
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/cnee/src/cnee.info ${PREFIX}/${INFO_PATH}
+	${INSTALL_DATA} ${WRKSRC}/doc/xnee.info ${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.post.mk>
