@@ -1,0 +1,4 @@
+etc/periodic/daily/407.status-areca-raid
+sbin/areca-cli
+@dirrmtry etc/periodic/daily
+@dirrmtry etc/periodic

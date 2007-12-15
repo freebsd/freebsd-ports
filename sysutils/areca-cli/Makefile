@@ -7,6 +7,7 @@
 
 PORTNAME=	areca-cli
 PORTVERSION=	${CLI_VER}.${CLI_REV}
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.unnet.nl/pub/areca/RaidCards/AP_Drivers/FreeBSD/CLI/ \
 		ftp://ftp.areca.com.tw/RaidCards/AP_Drivers/FreeBSD/CLI/
@@ -17,7 +18,7 @@ COMMENT=	Command Line Interface for the Areca ARC-xxxx RAID controllers
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-PLIST_FILES=	sbin/areca-cli
+PERIODICSCRIPT=	407.status-areca-raid
 
 USE_ZIP=	yes
 NO_BUILD=	yes
@@ -25,7 +26,11 @@ NO_BUILD=	yes
 CLI_VER=	1.5
 CLI_REV=	50930
 
+SUB_FILES+=	${PERIODICSCRIPT}
+
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/cli32 ${PREFIX}/sbin/areca-cli
+		@${MKDIR} ${PREFIX}/etc/periodic/daily
+		${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} ${PREFIX}/etc/periodic/daily
 
 .include <bsd.port.mk>
