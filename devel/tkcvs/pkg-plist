@@ -28,6 +28,7 @@ lib/tkcvs/bitmaps/delete_red.gif
 lib/tkcvs/bitmaps/diff.gif
 lib/tkcvs/bitmaps/dir.gif
 lib/tkcvs/bitmaps/dir_minus.gif
+lib/tkcvs/bitmaps/dir_new.gif
 lib/tkcvs/bitmaps/dir_ok.gif
 lib/tkcvs/bitmaps/dir_plus.gif
 lib/tkcvs/bitmaps/dir_ques.gif
@@ -99,14 +100,13 @@ lib/tkcvs/modtree.tcl
 lib/tkcvs/modules.tcl
 lib/tkcvs/picklist.tcl
 lib/tkcvs/rcs.tcl
-lib/tkcvs/scrollbindings.tcl
-lib/tkcvs/static.tcl
 lib/tkcvs/svn-import.tcl
 lib/tkcvs/svn.tcl
 lib/tkcvs/tclIndex
 lib/tkcvs/tkcvs.tcl
 lib/tkcvs/tkcvs_def.tcl
 lib/tkcvs/tooltips.tcl
+lib/tkcvs/ui_misc.tcl
 lib/tkcvs/vendor_merge.tcl
 lib/tkcvs/workdir.tcl
 @dirrm lib/tkcvs/bitmaps
