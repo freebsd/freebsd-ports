@@ -1,29 +1,25 @@
-# New ports collection makefile for:	libffi
-# Date created:			14, June, 1998
-# Whom:				Horance Chou <horance@freedom.ie.cycu.edu.tw>
+# New ports collection makefile for:	libffi-devel
+# Date created:			28 Nov 2007
+# Whom:				Björn König <bkoenig@alpha-tierchen.de
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libffi
-PORTVERSION=	1.20
-PORTREVISION=	1
+DISTVERSION=	2.0-20071128
 CATEGORIES=	devel
-MASTER_SITES=	ftp://sources.redhat.com/pub/libffi/
+MASTER_SITES=	ftp://ftp.alpha-tierchen.de/pub/FreeBSD/ports/distfiles/
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	horance@freera.net
+MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Foreign Function Interface
 
-USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	# empty
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-CONFLICTS=	gcc-3*
+GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
+USE_BZIP2=	yes
+USE_LDCONFIG=	yes
+CONFLICTS=	gcc-3* libffi-[0-9]*
 
-.if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		"Configure fails on !i386 and !alpha"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
