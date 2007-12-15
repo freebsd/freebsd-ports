@@ -1,0 +1,8 @@
+SableVM implements the Java virtual machine specification, second edition.
+
+SableVM is a bytecode interpreter. It's goals are to be reasonably small,
+efficient, and fast, as well as providing a well-designed platform for
+doing research into different algorithms for bytecode interpretation,
+garbage collection, memory management, etc.
+
+WWW: http://www.sablevm.org/
