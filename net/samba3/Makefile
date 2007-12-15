@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.26a
-PORTREVISION=		2
+PORTVERSION?=		3.0.28
+PORTREVISION=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -17,9 +17,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-FORBIDDEN=		http://vuxml.freebsd.org/ffcbd42d-a8c5-11dc-bec2-02e0185f8d72.html
-
-CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.*
+CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.* tdb-1.*
 
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
@@ -45,10 +43,6 @@ SAMBA_CONFIG=		smb.conf
 SAMBA_LIB=		lib
 SAMBA_LIBDIR=		${PREFIX}/${SAMBA_LIB}
 SAMBA_MODULEDIR=	${SAMBA_LIBDIR}/samba
-
-PATCH_SITES=	http://us1.samba.org/samba/ftp/patches/security/	
-PATCHFILES=	samba-3.0.26a-CVE-2007-4572.patch samba-3.0.26a-CVE-2007-5398.patch
-PATCH_DIST_STRIP=	-p2
 
 CONFIGURE_TARGET=	--build="${MACHINE_ARCH}-portbld-freebsd${OSREL}"
 
@@ -110,6 +104,11 @@ CONFIGURE_ARGS+=	--with-pam --with-readline --with-sendfile-support \
 			--without-libsmbsharemodes --without-python \
 			--without-libaddns --with-included-iniparser \
 			--enable-largefile
+
+# Sanity checks
+.if exists(${LOCALBASE}/include/tdb.h)
+IGNORE=			doesn't compile when tdb is installed. Uninstall databases/tdb port
+.endif
 
 # Let proccess generate meaningful backtrace on core dump
 LIB_DEPENDS+=		execinfo.1:${PORTSDIR}/devel/libexecinfo
@@ -181,13 +180,7 @@ PLIST_SUB+=		WINBIND="@comment " WINBIND_NSS="@comment "
 SUB_LIST+=		WINBIND="@comment " WINBIND_NSS="@comment "
 .endif
 
-.if defined(WITH_FAM_SUPPORT)
-USE_FAM=		yes
-CONFIGURE_ARGS+=	--enable-fam
-.else
-CONFIGURE_ARGS+=	--disable-fam
-.endif
-
+# Add some shared modules
 .if defined(WITH_EXP_MODULES)
 .	if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
 WANT_EXP_MODULES=	idmap_ad idmap_rid charset_weird
@@ -196,6 +189,17 @@ WANT_EXP_MODULES+=	rpc_echo
 .		endif
 WANT_EXP_MODULES+=	vfs_catia vfs_cacheprime vfs_commit
 .	endif
+.endif
+
+.if defined(WITH_FAM_SUPPORT)
+USE_FAM=		yes
+CONFIGURE_ARGS+=	--enable-fam
+WANT_EXP_MODULES+=	vfs_notify_fam
+.else
+CONFIGURE_ARGS+=	--disable-fam
+.endif
+
+.if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
 USE_EXP_MODULES!=	${ECHO_CMD} ${WANT_EXP_MODULES} | ${SED} -E 's/ +/,/g'
 CONFIGURE_ARGS+=	--with-shared-modules="${USE_EXP_MODULES}"
 .endif
