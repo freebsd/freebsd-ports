@@ -16,13 +16,13 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Programa do Imposto de Renda Pessoa Fisica 2007 versao Java
 
 USE_ZIP=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}2007
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
 
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 PLIST_SUB=	JAR_DIR=${JAR_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
