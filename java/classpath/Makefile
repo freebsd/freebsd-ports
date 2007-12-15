@@ -32,4 +32,6 @@ USE_GMAKE=	yes
 
 INFO=		hacking tools vmintegration
 
+CONFLICTS=	sablevm-classpath-*
+
 .include <bsd.port.mk>
