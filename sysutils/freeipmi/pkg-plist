@@ -57,11 +57,8 @@ include/freeipmi/rmcp.h
 include/freeipmi/udm/ipmi-chassis-cmds-udm.h
 include/freeipmi/udm/ipmi-device-global-cmds-udm.h
 include/freeipmi/udm/ipmi-fru-inventory-device-cmds-udm.h
-include/freeipmi/udm/ipmi-kcs-api-udm.h
 include/freeipmi/udm/ipmi-lan-cmds-udm.h
-include/freeipmi/udm/ipmi-lan-interface-udm.h
 include/freeipmi/udm/ipmi-messaging-support-cmds-udm.h
-include/freeipmi/udm/ipmi-openipmi-api-udm.h
 include/freeipmi/udm/ipmi-pef-and-alerting-cmds-udm.h
 include/freeipmi/udm/ipmi-rmcpplus-support-and-payload-cmds-udm.h
 include/freeipmi/udm/ipmi-sdr-repository-cmds-udm.h
@@ -69,7 +66,6 @@ include/freeipmi/udm/ipmi-sel-cmds-udm.h
 include/freeipmi/udm/ipmi-sensor-cmds-udm.h
 include/freeipmi/udm/ipmi-serial-modem-cmds-udm.h
 include/freeipmi/udm/ipmi-sol-cmds-udm.h
-include/freeipmi/udm/ipmi-ssif-api-udm.h
 include/freeipmi/udm/ipmi-udm.h
 include/freeipmi/udm/udm.h
 include/ipmi_monitoring.h
@@ -91,7 +87,6 @@ lib/libipmimonitoring.a
 lib/libipmimonitoring.la
 lib/libipmimonitoring.so
 lib/libipmimonitoring.so.%%IPMIMONITORING_SHLIBVER%%
-sbin/bmc-autoconfig
 sbin/bmc-config
 sbin/bmc-info
 sbin/bmc-watchdog
