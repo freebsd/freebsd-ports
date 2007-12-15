@@ -47,6 +47,10 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES/foxmarks.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI/setup.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR/conflicts.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR/foxmarks.properties
@@ -83,6 +87,10 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/foxmarks.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sk-SK/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sk-SK/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sk-SK/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/sk-SK/setup.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/tr-TR/conflicts.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/tr-TR/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/tr-TR/foxmarks.properties
@@ -131,6 +139,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/el-GR
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/it-IT
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja
@@ -140,6 +149,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-PT
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/sk-SK
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/tr-TR
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/uk-UA
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/zh-CN
