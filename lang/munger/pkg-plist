@@ -35,10 +35,10 @@ include/minimunger.h
 %%DATADIR%%/tk.munger
 %%DATADIR%%/cal.munger
 %%DATADIR%%/xml2buffer.munger
-+%%DATADIR%%/mm.munger
-+%%DATADIR%%/options.mm
-+%%DATADIR%%/fmt.mm
-+%%DATADIR%%/grep.mm
-+%%DATADIR%%/stacks.mm
-+%%DATADIR%%/cgi.mm
+%%DATADIR%%/mm.munger
+%%DATADIR%%/options.mm
+%%DATADIR%%/fmt.mm
+%%DATADIR%%/grep.mm
+%%DATADIR%%/stacks.mm
+%%DATADIR%%/cgi.mm
 @dirrm %%DATADIR%%
