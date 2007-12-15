@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/
 DISTNAME=	bzr-${PORTVERSION}
