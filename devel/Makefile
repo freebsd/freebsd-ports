@@ -313,6 +313,7 @@
     SUBDIR += fib
     SUBDIR += fistgen
     SUBDIR += flatzebra
+    SUBDIR += flex-sdk
     SUBDIR += flexjson
     SUBDIR += flick
     SUBDIR += florist
