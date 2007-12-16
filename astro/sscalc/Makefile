@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	astro
 MASTER_SITES=	http://www.icehouse.net/kew/
 
-MAINTAINER=	kew@icehouse.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sunrise/sunset time calculator
 
 MAN1=		sscalc.1
