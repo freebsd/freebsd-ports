@@ -17,18 +17,23 @@ COMMENT=	Sid themes pack for fluxbox
 
 RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 
-BROKEN=		Changes ownership on installed file
+INSTALL_DIR=	${LOCALBASE}/share/fluxbox/
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-do-install:
+do-patch:
 .for i in aleczapka_combination.tar.bz2 aleczapka_digitalshe.tar.bz2 \
 	aleczapka_fluxcarnation.tar.bz2 aleczapka_minime.tar.bz2 \
 	aleczapka_posthuman.tar.bz2
-	@${TAR} jxvf ${WRKDIR}/${i} -C ${PREFIX}/share/fluxbox/
+	${TAR} jxvf ${WRKDIR}/${i} -C ${WRKDIR}
 .endfor
+
+do-install:
+	@${MKDIR} ${INSTALL_DIR}
+	cd ${WRKSRC}/styles; ${COPYTREE_SHARE} \* ${INSTALL_DIR}/styles
+	cd ${WRKSRC}/backgrounds; ${COPYTREE_SHARE} \* ${INSTALL_DIR}/backgrounds
 
 .include <bsd.port.mk>
