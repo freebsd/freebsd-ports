@@ -748,6 +748,7 @@
     SUBDIR += pear-XML_HTMLSax
     SUBDIR += pear-XML_Wddx
     SUBDIR += pecl-ctemplate
+    SUBDIR += pecl-doublemetaphone
     SUBDIR += pecl-stem
     SUBDIR += pecl-syck
     SUBDIR += pecl-xdiff
