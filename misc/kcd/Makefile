@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kcd
-PORTVERSION=	7.6.2
+PORTVERSION=	7.14.0
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF
@@ -17,13 +17,12 @@ COMMENT=	Change directory in full-screen visual mode
 USE_GETTEXT=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+			--sysconfdir=${PREFIX}/etc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN1=		kcd.1
-
-BROKEN=		Attempts to allocate all of memory during configure
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/kcd-inst ${PREFIX}/bin
