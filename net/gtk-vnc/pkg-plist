@@ -1,0 +1,13 @@
+include/gtk-vnc-1.0/continuation.h
+include/gtk-vnc-1.0/coroutine.h
+include/gtk-vnc-1.0/gvnc.h
+include/gtk-vnc-1.0/vncdisplay.h
+lib/libgtk-vnc-1.0.a
+lib/libgtk-vnc-1.0.la
+lib/libgtk-vnc-1.0.so
+lib/libgtk-vnc-1.0.so.0
+%%PYTHON_SITELIBDIR%%/gtkvnc.a
+%%PYTHON_SITELIBDIR%%/gtkvnc.la
+%%PYTHON_SITELIBDIR%%/gtkvnc.so
+libdata/pkgconfig/gtk-vnc-1.0.pc
+@dirrm include/gtk-vnc-1.0
