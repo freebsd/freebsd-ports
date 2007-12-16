@@ -1,6 +1,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/baz_helper.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/baz_helper.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/baz_helper.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/baz_import.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/baz_import.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/baz_import.pyo
@@ -31,9 +34,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/errors.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/errors.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/errors.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/fai.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/fai.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/fai.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/fetch_ghosts.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/fetch_ghosts.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/fetch_ghosts.pyo
@@ -67,9 +67,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/show_paths.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/show_paths.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/show_paths.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/switch.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/switch.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/switch.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/terminal.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/terminal.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/terminal.pyo
@@ -97,9 +94,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_rspush.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_rspush.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_rspush.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_switch.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_switch.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_switch.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/upstream_import.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/upstream_import.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/upstream_import.pyo
