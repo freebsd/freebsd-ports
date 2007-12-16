@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	mod_fastcgi
-PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTVERSION=	2.4.6
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
-		http://www.fastcgi.com/dist/
+MASTER_SITES=	http://www.fastcgi.com/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast-cgi module for Apache
