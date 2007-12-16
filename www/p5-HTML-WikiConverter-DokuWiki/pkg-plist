@@ -2,3 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/DokuWiki/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter/DokuWiki
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/WikiConverter
+@dirrmtry %%SITE_PERL%%/HTML/WikiConverter
