@@ -8,7 +8,7 @@
 
 PORTNAME=	sfs
 PORTVERSION=	0.7.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security net
 MASTER_SITES=	http://www.fs.net/sfswww/dist/
 
@@ -18,6 +18,8 @@ COMMENT=	Self-Certifying File System: A secure global network file system
 PLIST_SUB=	SFS_VERSION=${PORTVERSION}
 
 INFO=		sfs
+
+USE_RC_SUBR=	sfscd sfssd
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -65,8 +67,6 @@ MAN8=	\
 		vidb.8
 
 post-extract:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/sfscd.sh > ${WRKSRC}/sfscd.sh
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/sfssd.sh > ${WRKSRC}/sfssd.sh
 	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(C|h)" -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/template get/get/'
 
@@ -115,8 +115,6 @@ pre-install:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sfsauthd/upgradedb.pl ${PREFIX}/lib/sfs-${PORTVERSION}/upgradedb.pl
-	${INSTALL_SCRIPT} ${WRKSRC}/sfscd.sh ${PREFIX}/etc/rc.d/sfscd.sh.sample
-	${INSTALL_SCRIPT} ${WRKSRC}/sfssd.sh ${PREFIX}/etc/rc.d/sfssd.sh.sample
 	${MKDIR} ${PREFIX}/etc/sfs
 	${INSTALL_DATA} ${FILESDIR}/etc-sfsrwsd_config.sample ${PREFIX}/etc/sfs/sfsrwsd_config.sample
 	${MKDIR} ${PREFIX}/share/doc/sfs
