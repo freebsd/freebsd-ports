@@ -16,7 +16,7 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A music jukebox written in Python with a curses GUI
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite.so:${PORTSDIR}/databases/py-pysqlite23 \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/py-pysqlite23 \
 		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
 USE_PYTHON=	yes
