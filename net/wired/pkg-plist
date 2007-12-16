@@ -22,7 +22,6 @@ wired/news.sample
 @unexec if cmp -s %D/wired/users.sample %D/wired/users; then rm -f %D/wired/users; fi
 wired/users.sample
 @exec if [ ! -f %D/wired/users ] ; then cp -p %D/%F %B/users; fi
-sbin/hl2wired
 sbin/wired
 bin/wiredctl
 @exec mkdir -p %D/wired/tmp
