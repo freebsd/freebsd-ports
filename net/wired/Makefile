@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wired
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.zankasoftware.com/dist/
 
@@ -18,7 +17,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	wired.sh
 
-MAN1=		hl2wired.1 wiredctl.1
+MAN1=		wiredctl.1
 MAN5=		wired.conf.5
 MAN8=		wired.8
 
