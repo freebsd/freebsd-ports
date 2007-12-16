@@ -330,6 +330,7 @@
     SUBDIR += kdeadmin3
     SUBDIR += kdirstat
     SUBDIR += keep
+    SUBDIR += kgtk
     SUBDIR += kkbswitch
     SUBDIR += kkeyled
     SUBDIR += klaptopdaemon
