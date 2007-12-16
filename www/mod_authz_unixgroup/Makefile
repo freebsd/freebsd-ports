@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_authz_unixgroup
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/
 
@@ -16,6 +17,6 @@ COMMENT=	A unix group access control module for Apache 2.1 and later
 USE_APACHE=	22+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
-SHORTMODNAME=	mod_authz_unixgroup
+SHORTMODNAME=	authz_unixgroup
 
 .include <bsd.port.mk>
