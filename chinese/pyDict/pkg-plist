@@ -29,8 +29,8 @@ lib/X11/pyDict/x.lib
 lib/X11/pyDict/y.lib
 lib/X11/pyDict/yaba.xpm
 lib/X11/pyDict/z.lib
-share/doc/pyDict/CHANGELOG
-share/doc/pyDict/COPYING
-share/doc/pyDict/README
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/X11/pyDict
-@dirrm share/doc/pyDict
