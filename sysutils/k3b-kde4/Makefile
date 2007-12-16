@@ -16,7 +16,6 @@ COMMENT=	A CD/DVD recording GUI for KDE
 
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
-		dvdcss:${PORTSDIR}/multimedia/libdvdcss \
 		samplerate:${PORTSDIR}/audio/libsamplerate
 
 USE_BZIP2=	yes
