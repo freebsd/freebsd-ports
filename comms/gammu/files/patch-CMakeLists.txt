@@ -9,12 +9,3 @@
  mark_as_advanced (INSTALL_MAN_DIR)
  
  # Generate pkgconfig file
-@@ -662,7 +665,7 @@
- 
- install (
-     FILES "${Gammu_BINARY_DIR}/cfg/gammu.pc"
--    DESTINATION "${INSTALL_LIB_DIR}/pkgconfig"
-+    DESTINATION "libdata/pkgconfig"
-     COMPONENT "development"
-     )
- 

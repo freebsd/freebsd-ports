@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	1.13.0
+PORTVERSION=	1.16.0
 CATEGORIES=	comms
 MASTER_SITES=	ftp://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com/gammu/releases/
@@ -17,24 +17,27 @@ COMMENT=	GNU All Mobile Management Utilities
 BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
 
 CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
-		-DCMAKE_INSTALL_PREFIX=${PREFIX}
+		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
+		-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 
-MAN1=		gammu.1 gammu-config.1
 USE_GNOME=	pkgconfig
 
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES=files/extra-patch-CMakeLists.txt
+.else
+MAN1=		gammu.1 gammu-config.1
 PORTDOCS=	*
+.endif
 
 do-configure:
 	@(cd ${WRKSRC}; \
 	${LOCALBASE}/bin/cmake ${CMAKE_ARGS})
 
 .include <bsd.port.pre.mk>
+
 post-patch:
 .if ${OSVERSION} < 700042
 	@${REINPLACE_CMD} -e 's@ -Wno-pointer-sign@@g' ${WRKSRC}/CMakeLists.txt
-.endif
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES=files/extra-patch-CMakeLists.txt
 .endif
 
 .include <bsd.port.post.mk>

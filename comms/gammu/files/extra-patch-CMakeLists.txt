@@ -1,18 +1,17 @@
---- CMakeLists.txt.orig	2007-08-11 19:35:06.000000000 +0400
-+++ CMakeLists.txt	2007-08-11 19:35:43.000000000 +0400
-@@ -693,36 +693,6 @@
+--- CMakeLists.txt.orig	2007-12-16 23:09:38.185441426 +0300
++++ CMakeLists.txt	2007-12-16 23:12:28.043527300 +0300
+@@ -768,37 +768,6 @@
+     DESTINATION "${INSTALL_LIBDATA_DIR}/pkgconfig"
      )
  
- install (
+-install (
 -    FILES ${DOCS}
 -    DESTINATION "${INSTALL_DOC_DIR}"
--    COMPONENT "basic-documentation"
 -    )
 -
 -install (
 -    FILES ${SYMBIAN_FILES}
 -    DESTINATION "${INSTALL_DOC_DIR}/symbian"
--    COMPONENT "gnapplet"
 -    )
 -
 -foreach (DOC ${DEVELDOCS})
@@ -20,7 +19,6 @@
 -    install (
 -        FILES ${DOC}
 -        DESTINATION "${INSTALL_DOC_DIR}/devel/${DIRNAME}"
--        COMPONENT "developer-documentation"
 -        )
 -endforeach (DOC)
 -
@@ -29,11 +27,14 @@
 -    install (
 -        FILES ${EXAMPLE}
 -        DESTINATION "${INSTALL_DOC_DIR}/examples/${DIRNAME}"
--        COMPONENT "developer-documentation"
 -        )
 -endforeach (EXAMPLE)
 -
 -install (
-     FILES ${MAN1_PAGES}
-     DESTINATION "${INSTALL_MAN_DIR}/man1"
-     COMPONENT "basic-documentation"
+-    FILES ${MAN1_PAGES}
+-    DESTINATION "${INSTALL_MAN_DIR}/man1"
+-    )
+-
+ add_subdirectory(common)
+ 
+ # Include tests, we build them also when cross compiling
