@@ -190,6 +190,7 @@
     SUBDIR += gspoof
     SUBDIR += gstreamer-plugins-libmms
     SUBDIR += gtic
+    SUBDIR += gtk-vnc
     SUBDIR += gutenfetch
     SUBDIR += gwhois
     SUBDIR += haproxy
