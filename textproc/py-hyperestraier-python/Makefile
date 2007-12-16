@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyperestraier
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.4
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP \
 		http://www.liris.org/tech/program/hyperestraier-purepython/
@@ -19,5 +19,14 @@ COMMENT=	Pure Python HyperEstraier library
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+
+PORTEXAMPLES=	example.py
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}${PKGNAMESUFFIX}
+
+post-install:
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/exapmle.py ${EXAMPLESDIR}/example.py
+.endif
 
 .include <bsd.port.mk>
