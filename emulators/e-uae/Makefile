@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_GNOME=	gtk20
-USE_SDL=	sdl gfx
+USE_SDL=	sdl
 CONFIGURE_ARGS=	--with-sdl --with-sdl-gfx
 
 PLIST_FILES=	bin/uae bin/readdisk
