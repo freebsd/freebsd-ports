@@ -30,6 +30,7 @@ USE_GNOME=	gnometarget libartlgpl2 libxml2
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 USE_LDCONFIG=	yes
