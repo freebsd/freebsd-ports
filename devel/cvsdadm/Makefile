@@ -1,6 +1,6 @@
 # New ports collection makefile for:	cvsdadm
 # Date Created:				Sat Jan 21 22:05:06 EST 2006
-# Whom:					Serge Gagnon <serge.gagnon@b2b2c.ca>
+# Whom:					Serge Gagnon <serge.gagnon@ulaval.ca>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/ \
     		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	serge.gagnon@b2b2c.ca
+MAINTAINER=	serge.gagnon@ulaval.ca
 COMMENT=	Tool for CVSd pserver user administration
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
