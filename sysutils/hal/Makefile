@@ -8,7 +8,7 @@
 
 PORTNAME=	hal
 PORTVERSION=	${HALVERSION}.${SNAPVERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	http://www.marcuscom.com/downloads/
 
@@ -19,7 +19,6 @@ COMMENT?=	Hardware Abstraction Layer for simplifying device access
 LIB_DEPENDS=	polkit.0:${PORTSDIR}/sysutils/policykit \
 		volume_id.0:${PORTSDIR}/devel/libvolume_id
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
-USE_CDRTOOLS=	yes
 .endif
 
 USE_BZIP2=	yes
