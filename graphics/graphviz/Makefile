@@ -182,7 +182,7 @@ IGNORE=			option WITH_GTK is required for option WITH_GNOMEUI
 CONFIGURE_ARGS+=	--without-gnomeui
 .endif
 
-.if defined(WITH_GTK)
+.if defined(USE_GNOME)
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
 .endif
 .if defined(USE_XORG)
