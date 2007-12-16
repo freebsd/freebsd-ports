@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2007-12-16 14:18:35.000000000 -0500
++++ Makefile.in	2007-12-16 14:19:09.000000000 -0500
+@@ -667,7 +667,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-vinagredocDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-recursive
+ 
