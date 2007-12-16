@@ -20,96 +20,61 @@ lib/genius/libtestplugin.so
 libexec/genius-readline-helper-fifo
 share/application-registry/genius.applications
 share/applications/gnome-genius.desktop
-share/genius/gel/calculus/differentiation.gel
-share/genius/gel/calculus/integration.gel
-share/genius/gel/calculus/limits.gel
-share/genius/gel/calculus/loader.gel
-share/genius/gel/calculus/sums_products.gel
-share/genius/gel/combinatorics/factorial.gel
-share/genius/gel/combinatorics/loader.gel
-share/genius/gel/combinatorics/misc.gel
-share/genius/gel/combinatorics/recursive_sequences.gel
-share/genius/gel/equation_solving/diffeqs.gel
-share/genius/gel/equation_solving/find_root.gel
-share/genius/gel/equation_solving/formulas.gel
-share/genius/gel/equation_solving/loader.gel
-share/genius/gel/functions/complex_numbers.gel
-share/genius/gel/functions/delta.gel
-share/genius/gel/functions/elementary.gel
-share/genius/gel/functions/kernels.gel
-share/genius/gel/functions/loader.gel
-share/genius/gel/functions/numerical.gel
-share/genius/gel/functions/orthogonal_polynomials.gel
-share/genius/gel/lib.cgel
-share/genius/gel/linear_algebra/bilinear_forms.gel
-share/genius/gel/linear_algebra/linear_algebra.gel
-share/genius/gel/linear_algebra/loader.gel
-share/genius/gel/linear_algebra/misc.gel
-share/genius/gel/linear_algebra/special_matrices.gel
-share/genius/gel/linear_algebra/subspaces.gel
-share/genius/gel/loader.gel
-share/genius/gel/misc/loader.gel
-share/genius/gel/misc/misc.gel
-share/genius/gel/number_theory/factoring.gel
-share/genius/gel/number_theory/loader.gel
-share/genius/gel/number_theory/misc.gel
-share/genius/gel/number_theory/modulus.gel
-share/genius/gel/number_theory/primes.gel
-share/genius/gel/number_theory/quadratic.gel
-share/genius/gel/sets/basic.gel
-share/genius/gel/sets/loader.gel
-share/genius/gel/statistics/basic.gel
-share/genius/gel/statistics/loader.gel
-share/genius/gel/symbolic/differentiation.gel
-share/genius/gel/symbolic/loader.gel
-share/genius/genius.txt
-share/genius/gtksourceview/genius.lang
-share/genius/plugins/test.plugin
-share/gnome/help/genius/C/about.xml
-share/gnome/help/genius/C/examples.xml
+%%DATADIR%%/gel/calculus/differentiation.gel
+%%DATADIR%%/gel/calculus/integration.gel
+%%DATADIR%%/gel/calculus/limits.gel
+%%DATADIR%%/gel/calculus/loader.gel
+%%DATADIR%%/gel/calculus/sums_products.gel
+%%DATADIR%%/gel/combinatorics/factorial.gel
+%%DATADIR%%/gel/combinatorics/loader.gel
+%%DATADIR%%/gel/combinatorics/misc.gel
+%%DATADIR%%/gel/combinatorics/recursive_sequences.gel
+%%DATADIR%%/gel/equation_solving/diffeqs.gel
+%%DATADIR%%/gel/equation_solving/find_root.gel
+%%DATADIR%%/gel/equation_solving/formulas.gel
+%%DATADIR%%/gel/equation_solving/loader.gel
+%%DATADIR%%/gel/functions/complex_numbers.gel
+%%DATADIR%%/gel/functions/delta.gel
+%%DATADIR%%/gel/functions/elementary.gel
+%%DATADIR%%/gel/functions/kernels.gel
+%%DATADIR%%/gel/functions/loader.gel
+%%DATADIR%%/gel/functions/numerical.gel
+%%DATADIR%%/gel/functions/orthogonal_polynomials.gel
+%%DATADIR%%/gel/lib.cgel
+%%DATADIR%%/gel/linear_algebra/bilinear_forms.gel
+%%DATADIR%%/gel/linear_algebra/linear_algebra.gel
+%%DATADIR%%/gel/linear_algebra/loader.gel
+%%DATADIR%%/gel/linear_algebra/misc.gel
+%%DATADIR%%/gel/linear_algebra/special_matrices.gel
+%%DATADIR%%/gel/linear_algebra/subspaces.gel
+%%DATADIR%%/gel/loader.gel
+%%DATADIR%%/gel/misc/loader.gel
+%%DATADIR%%/gel/misc/misc.gel
+%%DATADIR%%/gel/number_theory/factoring.gel
+%%DATADIR%%/gel/number_theory/loader.gel
+%%DATADIR%%/gel/number_theory/misc.gel
+%%DATADIR%%/gel/number_theory/modulus.gel
+%%DATADIR%%/gel/number_theory/primes.gel
+%%DATADIR%%/gel/number_theory/quadratic.gel
+%%DATADIR%%/gel/sets/basic.gel
+%%DATADIR%%/gel/sets/loader.gel
+%%DATADIR%%/gel/statistics/basic.gel
+%%DATADIR%%/gel/statistics/loader.gel
+%%DATADIR%%/gel/symbolic/differentiation.gel
+%%DATADIR%%/gel/symbolic/loader.gel
+%%DATADIR%%/genius-graph.png
+%%DATADIR%%/genius.txt
+%%DATADIR%%/gtksourceview/genius.lang
+%%DATADIR%%/plugins/test.plugin
 share/gnome/help/genius/C/figures/genius_window.png
 share/gnome/help/genius/C/figures/line_plot.png
 share/gnome/help/genius/C/figures/line_plot_graph.png
 share/gnome/help/genius/C/figures/parametric.png
 share/gnome/help/genius/C/figures/parametric_graph.png
 share/gnome/help/genius/C/figures/surface_graph.png
-share/gnome/help/genius/C/gel-absolute-value-modulus.xml
-share/gnome/help/genius/C/gel-comparison-operators.xml
-share/gnome/help/genius/C/gel-conditionals.xml
-share/gnome/help/genius/C/gel-error-handling.xml
 share/gnome/help/genius/C/gel-function-list.xml
-share/gnome/help/genius/C/gel-functions.xml
-share/gnome/help/genius/C/gel-loading-programs.xml
-share/gnome/help/genius/C/gel-loops.xml
-share/gnome/help/genius/C/gel-lvalues.xml
-share/gnome/help/genius/C/gel-matrix-linalg.xml
-share/gnome/help/genius/C/gel-matrix-support.xml
-share/gnome/help/genius/C/gel-matrix-transpose.xml
-share/gnome/help/genius/C/gel-modular-evaluation.xml
-share/gnome/help/genius/C/gel-operator-list.xml
-share/gnome/help/genius/C/gel-plotting.xml
-share/gnome/help/genius/C/gel-polynomials.xml
-share/gnome/help/genius/C/gel-previous-result.xml
-share/gnome/help/genius/C/gel-references.xml
-share/gnome/help/genius/C/gel-returning.xml
-share/gnome/help/genius/C/gel-separator.xml
-share/gnome/help/genius/C/gel-startup-procedure.xml
-share/gnome/help/genius/C/gel-sums-products.xml
-share/gnome/help/genius/C/gel-values.xml
-share/gnome/help/genius/C/gel-variables.xml
 share/gnome/help/genius/C/genius.xml
 share/gnome/help/genius/C/legal.xml
-share/gnome/help/genius/C/prefs-display.xml
-share/gnome/help/genius/C/prefs-precision.xml
-share/gnome/help/genius/C/prefs-terminal.xml
-share/gnome/help/genius/C/starting-to-start.xml
-share/gnome/help/genius/C/starting-when-start.xml
-share/gnome/help/genius/C/usage-create-program.xml
-share/gnome/help/genius/C/usage-open-program.xml
-share/gnome/help/genius/C/usage-workarea.xml
-share/mime-info/genius.keys
-share/mime-info/genius.mime
-share/omf/genius/genius-C.omf
 share/icons/hicolor/32x32/apps/gnome-genius.png
 share/icons/hicolor/48x48/apps/gnome-genius.png
 share/locale/ar/LC_MESSAGES/genius.mo
@@ -129,9 +94,13 @@ share/locale/hr/LC_MESSAGES/genius.mo
 share/locale/it/LC_MESSAGES/genius.mo
 share/locale/ja/LC_MESSAGES/genius.mo
 share/locale/ko/LC_MESSAGES/genius.mo
+share/locale/lv/LC_MESSAGES/genius.mo
+share/locale/mk/LC_MESSAGES/genius.mo
+share/locale/ml/LC_MESSAGES/genius.mo
 share/locale/nb/LC_MESSAGES/genius.mo
 share/locale/ne/LC_MESSAGES/genius.mo
 share/locale/nl/LC_MESSAGES/genius.mo
+share/locale/oc/LC_MESSAGES/genius.mo
 share/locale/pa/LC_MESSAGES/genius.mo
 share/locale/pl/LC_MESSAGES/genius.mo
 share/locale/pt/LC_MESSAGES/genius.mo
@@ -143,26 +112,34 @@ share/locale/sr@Latn/LC_MESSAGES/genius.mo
 share/locale/sv/LC_MESSAGES/genius.mo
 share/locale/zh_CN/LC_MESSAGES/genius.mo
 share/locale/zh_TW/LC_MESSAGES/genius.mo
+share/mime/packages/genius.xml
+share/mime-info/genius.keys
+share/mime-info/genius.mime
+share/omf/genius/genius-C.omf
 @dirrm share/omf/genius
 @dirrm share/gnome/help/genius/C/figures
 @dirrm share/gnome/help/genius/C
 @dirrm share/gnome/help/genius
-@dirrm share/genius/gtksourceview
-@dirrm share/genius/plugins
-@dirrm share/genius/gel/symbolic
-@dirrm share/genius/gel/statistics
-@dirrm share/genius/gel/sets
-@dirrm share/genius/gel/number_theory
-@dirrm share/genius/gel/misc
-@dirrm share/genius/gel/linear_algebra
-@dirrm share/genius/gel/functions
-@dirrm share/genius/gel/equation_solving
-@dirrm share/genius/gel/combinatorics
-@dirrm share/genius/gel/calculus
-@dirrm share/genius/gel
-@dirrm share/genius
+@dirrm %%DATADIR%%/gtksourceview
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/gel/symbolic
+@dirrm %%DATADIR%%/gel/statistics
+@dirrm %%DATADIR%%/gel/sets
+@dirrm %%DATADIR%%/gel/number_theory
+@dirrm %%DATADIR%%/gel/misc
+@dirrm %%DATADIR%%/gel/linear_algebra
+@dirrm %%DATADIR%%/gel/functions
+@dirrm %%DATADIR%%/gel/equation_solving
+@dirrm %%DATADIR%%/gel/combinatorics
+@dirrm %%DATADIR%%/gel/calculus
+@dirrm %%DATADIR%%/gel
+@dirrm %%DATADIR%%
 @dirrm lib/genius
 @dirrm include/genius
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

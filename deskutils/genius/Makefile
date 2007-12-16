@@ -6,30 +6,28 @@
 #
 
 PORTNAME=	genius
-PORTVERSION=	0.7.7
-PORTREVISION=	3
+PORTVERSION=	1.0.2
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	${MASTER_SITE_GNOME} \
+MASTER_SITES=	GNOME \
 		http://ftp.5z.com/pub/genius/
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9].[0-9]).*/\1/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
 
 LIB_DEPENDS=	mpfr.2:${PORTSDIR}/math/mpfr
 
-USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview intlhack \
+USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview2 intlhack \
 		libgnomeui vte
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-LIBTOOLFILES=	configure mpfr/configure
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-extra-gcc-optimization
-INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
+INSTALLS_OMF=	yes
 
 .include <bsd.port.pre.mk>
 
