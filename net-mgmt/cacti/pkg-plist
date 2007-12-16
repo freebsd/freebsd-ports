@@ -5,9 +5,18 @@
 %%CACTIDIR%%/auth_login.php
 %%CACTIDIR%%/cacti.sql
 %%CACTIDIR%%/cdef.php
+%%CACTIDIR%%/cli/.htaccess
+%%CACTIDIR%%/cli/add_device.php
+%%CACTIDIR%%/cli/add_graphs.php
+%%CACTIDIR%%/cli/add_perms.php
+%%CACTIDIR%%/cli/add_tree.php
+%%CACTIDIR%%/cli/copy_user.php
+%%CACTIDIR%%/cli/poller_graphs_reapply_names.php
+%%CACTIDIR%%/cli/poller_output_empty.php
+%%CACTIDIR%%/cli/poller_reindex_hosts.php
+%%CACTIDIR%%/cli/rebuild_poller_cache.php
 %%CACTIDIR%%/cmd.php
 %%CACTIDIR%%/color.php
-%%CACTIDIR%%/copy_cacti_user.php
 %%CACTIDIR%%/data_input.php
 %%CACTIDIR%%/data_queries.php
 %%CACTIDIR%%/data_sources.php
@@ -21,26 +30,67 @@
 %%CACTIDIR%%/docs/html/LICENSE.html
 %%CACTIDIR%%/docs/html/advanced_topics.html
 %%CACTIDIR%%/docs/html/basics.html
+%%CACTIDIR%%/docs/html/batch_copy_users.html
+%%CACTIDIR%%/docs/html/bsd_ports.html
+%%CACTIDIR%%/docs/html/cacti_help.html
 %%CACTIDIR%%/docs/html/cdefs.html
+%%CACTIDIR%%/docs/html/check_cacti_poller.html
+%%CACTIDIR%%/docs/html/check_data_gathering.html
+%%CACTIDIR%%/docs/html/check_mysql_updating.html
+%%CACTIDIR%%/docs/html/check_rrd_graph.html
+%%CACTIDIR%%/docs/html/check_rrd_numbers.html
+%%CACTIDIR%%/docs/html/check_rrd_owner.html
+%%CACTIDIR%%/docs/html/check_rrd_updating.html
+%%CACTIDIR%%/docs/html/check_zero_values.html
+%%CACTIDIR%%/docs/html/cli_add_device.html
+%%CACTIDIR%%/docs/html/cli_add_graphs.html
+%%CACTIDIR%%/docs/html/cli_add_perms.html
+%%CACTIDIR%%/docs/html/cli_add_tree.html
+%%CACTIDIR%%/docs/html/cli_copy_user.html
+%%CACTIDIR%%/docs/html/cli_poller_graphs_reapply_names.html
+%%CACTIDIR%%/docs/html/cli_poller_output_empty.html
+%%CACTIDIR%%/docs/html/cli_poller_reindex_hosts.html
+%%CACTIDIR%%/docs/html/copying_user.html
+%%CACTIDIR%%/docs/html/create_new_user.html
 %%CACTIDIR%%/docs/html/data_input_methods.html
+%%CACTIDIR%%/docs/html/data_presentation.html
 %%CACTIDIR%%/docs/html/data_queries.html
-%%CACTIDIR%%/docs/html/data_templates.html
+%%CACTIDIR%%/docs/html/data_storage.html
+%%CACTIDIR%%/docs/html/debug_miscellaneous.html
+%%CACTIDIR%%/docs/html/debug_rpm_installation.html
+%%CACTIDIR%%/docs/html/debugging.html
+%%CACTIDIR%%/docs/html/delete_users.html
+%%CACTIDIR%%/docs/html/enable_disable_users.html
 %%CACTIDIR%%/docs/html/faq.html
 %%CACTIDIR%%/docs/html/graph_howto.html
 %%CACTIDIR%%/docs/html/graph_overview.html
-%%CACTIDIR%%/docs/html/graph_permissions.html
-%%CACTIDIR%%/docs/html/graph_settings.html
+%%CACTIDIR%%/docs/html/graph_snmp_oid.html
+%%CACTIDIR%%/docs/html/graph_templates.html
 %%CACTIDIR%%/docs/html/graph_viewing.html
+%%CACTIDIR%%/docs/html/guest_access.html
 %%CACTIDIR%%/docs/html/host_templates.html
 %%CACTIDIR%%/docs/html/host_variables.html
 %%CACTIDIR%%/docs/html/how_to.html
 %%CACTIDIR%%/docs/html/images/data_template.png
+%%CACTIDIR%%/docs/html/images/export_template.png
 %%CACTIDIR%%/docs/html/images/graph_template.png
 %%CACTIDIR%%/docs/html/images/graph_tree.png
 %%CACTIDIR%%/docs/html/images/host_template.png
+%%CACTIDIR%%/docs/html/images/import_template.png
 %%CACTIDIR%%/docs/html/images/new_device.png
 %%CACTIDIR%%/docs/html/images/new_graphs.png
-%%CACTIDIR%%/docs/html/images/user_management.png
+%%CACTIDIR%%/docs/html/images/principles_of_operation.png
+%%CACTIDIR%%/docs/html/images/user_management_batch_copy_1.png
+%%CACTIDIR%%/docs/html/images/user_management_batch_copy_2.png
+%%CACTIDIR%%/docs/html/images/user_management_copy_1.png
+%%CACTIDIR%%/docs/html/images/user_management_copy_2.png
+%%CACTIDIR%%/docs/html/images/user_management_delete_1.png
+%%CACTIDIR%%/docs/html/images/user_management_delete_2.png
+%%CACTIDIR%%/docs/html/images/user_management_edit.png
+%%CACTIDIR%%/docs/html/images/user_management_enable_disable_1.png
+%%CACTIDIR%%/docs/html/images/user_management_enable_disable_2.png
+%%CACTIDIR%%/docs/html/images/user_management_list.png
+%%CACTIDIR%%/docs/html/images/user_management_new.png
 %%CACTIDIR%%/docs/html/index.html
 %%CACTIDIR%%/docs/html/install_unix.html
 %%CACTIDIR%%/docs/html/install_windows.html
@@ -49,22 +99,29 @@
 %%CACTIDIR%%/docs/html/manual.css
 %%CACTIDIR%%/docs/html/migration_php_scripts_to_script_server.html
 %%CACTIDIR%%/docs/html/new_graphs.html
+%%CACTIDIR%%/docs/html/operating_principles.html
 %%CACTIDIR%%/docs/html/php_script_server.html
-%%CACTIDIR%%/docs/html/realm_permissions.html
 %%CACTIDIR%%/docs/html/reference.html
 %%CACTIDIR%%/docs/html/requirements.html
 %%CACTIDIR%%/docs/html/rrdtool_features.html
 %%CACTIDIR%%/docs/html/script_query_xml.html
-%%CACTIDIR%%/docs/html/script_to_graph.html
+%%CACTIDIR%%/docs/html/scripts.html
 %%CACTIDIR%%/docs/html/snmp_query_xml.html
+%%CACTIDIR%%/docs/html/template_export.html
+%%CACTIDIR%%/docs/html/template_import.html
 %%CACTIDIR%%/docs/html/templates.html
 %%CACTIDIR%%/docs/html/testing_script_in_script_server.html
+%%CACTIDIR%%/docs/html/unix_apply_patches.html
+%%CACTIDIR%%/docs/html/unix_configure_cacti.html
+%%CACTIDIR%%/docs/html/unix_configure_httpd.html
+%%CACTIDIR%%/docs/html/unix_configure_mysql.html
+%%CACTIDIR%%/docs/html/unix_configure_php.html
+%%CACTIDIR%%/docs/html/unix_configure_spine.html
 %%CACTIDIR%%/docs/html/upgrade.html
 %%CACTIDIR%%/docs/html/upgrade_using_hostmib_data_queries.html
 %%CACTIDIR%%/docs/html/user_management.html
-%%CACTIDIR%%/docs/html/using_cacti.html
+%%CACTIDIR%%/docs/html/using_spine.html
 %%CACTIDIR%%/docs/html/variables.html
-%%CACTIDIR%%/docs/pdf/README
 %%CACTIDIR%%/docs/text/manual.txt
 %%CACTIDIR%%/gprint_presets.php
 %%CACTIDIR%%/graph.php
@@ -74,6 +131,7 @@
 %%CACTIDIR%%/graph_templates_inputs.php
 %%CACTIDIR%%/graph_templates_items.php
 %%CACTIDIR%%/graph_view.php
+%%CACTIDIR%%/graph_xport.php
 %%CACTIDIR%%/graphs.php
 %%CACTIDIR%%/graphs_items.php
 %%CACTIDIR%%/graphs_new.php
@@ -82,6 +140,7 @@
 %%CACTIDIR%%/images/arrow.gif
 %%CACTIDIR%%/images/auth_deny.gif
 %%CACTIDIR%%/images/auth_login.gif
+%%CACTIDIR%%/images/auth_logout.gif
 %%CACTIDIR%%/images/button_add.gif
 %%CACTIDIR%%/images/button_cancel.gif
 %%CACTIDIR%%/images/button_cancel2.gif
@@ -108,13 +167,18 @@
 %%CACTIDIR%%/images/calendar.gif
 %%CACTIDIR%%/images/delete_icon.gif
 %%CACTIDIR%%/images/delete_icon_large.gif
+%%CACTIDIR%%/images/favicon.ico
+%%CACTIDIR%%/images/graph_page_top.gif
 %%CACTIDIR%%/images/graph_properties.gif
+%%CACTIDIR%%/images/graph_query.png
 %%CACTIDIR%%/images/graph_zoom.gif
 %%CACTIDIR%%/images/hide.gif
 %%CACTIDIR%%/images/left_border.gif
 %%CACTIDIR%%/images/menu_line.gif
 %%CACTIDIR%%/images/menuarrow.gif
 %%CACTIDIR%%/images/move_down.gif
+%%CACTIDIR%%/images/move_left.gif
+%%CACTIDIR%%/images/move_right.gif
 %%CACTIDIR%%/images/move_up.gif
 %%CACTIDIR%%/images/reload_icon_small.gif
 %%CACTIDIR%%/images/shadow.gif
@@ -122,7 +186,9 @@
 %%CACTIDIR%%/images/show.gif
 %%CACTIDIR%%/images/tab_cacti.gif
 %%CACTIDIR%%/images/tab_console.gif
+%%CACTIDIR%%/images/tab_console_down.gif
 %%CACTIDIR%%/images/tab_graphs.gif
+%%CACTIDIR%%/images/tab_graphs_down.gif
 %%CACTIDIR%%/images/tab_mode_list.gif
 %%CACTIDIR%%/images/tab_mode_list_down.gif
 %%CACTIDIR%%/images/tab_mode_preview.gif
@@ -137,26 +203,26 @@
 @unexec cmp -s %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php && rm -f %D/%%CACTIDIR%%/include/config.php || true
 %%CACTIDIR%%/include/config.php.orig
 @exec [ -f %D/%%CACTIDIR%%/include/config.php ] || cp %D/%%CACTIDIR%%/include/config.php.orig %D/%%CACTIDIR%%/include/config.php
-%%CACTIDIR%%/include/config_arrays.php
-%%CACTIDIR%%/include/config_constants.php
-%%CACTIDIR%%/include/config_form.php
-%%CACTIDIR%%/include/config_settings.php
-@unexec cmp -s %D/%%CACTIDIR%%/include/db-settings.php.orig %D/%%CACTIDIR%%/include/db-settings.php && rm -f %D/%%CACTIDIR%%/include/db-settings.php || true
-%%CACTIDIR%%/include/db-settings.php.orig
-@exec [ -f %D/%%CACTIDIR%%/include/db-settings.php ] || cp %D/%%CACTIDIR%%/include/db-settings.php.orig %D/%%CACTIDIR%%/include/db-settings.php
-%%PLUGIN%%%%CACTIDIR%%/include/plugins.php
-%%PLUGIN%%%%CACTIDIR%%/plugins/index.php
+%%CACTIDIR%%/include/global_form.php
+%%CACTIDIR%%/include/global.php
+%%CACTIDIR%%/include/global_arrays.php
+%%CACTIDIR%%/include/global_settings.php
+%%CACTIDIR%%/include/global_constants.php
 %%CACTIDIR%%/include/html/inc_data_source_filter_table.php
 %%CACTIDIR%%/include/html/inc_data_template_filter_table.php
 %%CACTIDIR%%/include/html/inc_device_filter_table.php
+%%CACTIDIR%%/include/html/inc_dq_view_filter_table.php
+%%CACTIDIR%%/include/html/inc_dt_view_filter_table.php
 %%CACTIDIR%%/include/html/inc_graph_filter_table.php
 %%CACTIDIR%%/include/html/inc_graph_items_filter_table.php
 %%CACTIDIR%%/include/html/inc_graph_template_filter_table.php
 %%CACTIDIR%%/include/html/inc_graph_view_filter_table.php
+%%CACTIDIR%%/include/html/inc_host_template_filter_table.php
 %%CACTIDIR%%/include/html/inc_poller_item_filter_table.php
 %%CACTIDIR%%/include/html/inc_snmp_cache_filter_table.php
 %%CACTIDIR%%/include/html/inc_timespan_selector.php
 %%CACTIDIR%%/include/html/inc_timespan_settings.php
+%%CACTIDIR%%/include/html/inc_user_admin_filter_table.php
 %%CACTIDIR%%/include/html/inc_user_log_filter_table.php
 %%CACTIDIR%%/include/html/inc_view_logfile_table.php
 %%CACTIDIR%%/include/jscalendar/calendar-setup.js
@@ -233,6 +299,8 @@
 %%CACTIDIR%%/install/0_8_6f_to_0_8_6g.php
 %%CACTIDIR%%/install/0_8_6g_to_0_8_6h.php
 %%CACTIDIR%%/install/0_8_6h_to_0_8_6i.php
+%%CACTIDIR%%/install/0_8_6j_to_0_8_7.php
+%%CACTIDIR%%/install/0_8_7_to_0_8_7a.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
@@ -324,6 +392,7 @@
 %%CACTIDIR%%/lib/adodb/license.txt
 %%CACTIDIR%%/lib/adodb/toexport.inc.php
 %%CACTIDIR%%/lib/adodb/tohtml.inc.php
+%%CACTIDIR%%/lib/api_automation_tools.php
 %%CACTIDIR%%/lib/api_data_source.php
 %%CACTIDIR%%/lib/api_device.php
 %%CACTIDIR%%/lib/api_graph.php
@@ -344,23 +413,24 @@
 %%CACTIDIR%%/lib/html_utility.php
 %%CACTIDIR%%/lib/html_validate.php
 %%CACTIDIR%%/lib/import.php
+%%CACTIDIR%%/lib/ldap.php
 %%CACTIDIR%%/lib/ping.php
 %%CACTIDIR%%/lib/poller.php
 %%CACTIDIR%%/lib/rrd.php
 %%CACTIDIR%%/lib/snmp.php
 %%CACTIDIR%%/lib/sort.php
 %%CACTIDIR%%/lib/template.php
+%%CACTIDIR%%/lib/time.php
 %%CACTIDIR%%/lib/tree.php
 %%CACTIDIR%%/lib/utility.php
 %%CACTIDIR%%/lib/variables.php
 %%CACTIDIR%%/lib/xml.php
+%%CACTIDIR%%/log/.htaccess
 @unexec [ ! -s %%PREFIX%%/%%CACTIDIR%%/log/cacti.log ] && rm -f %%PREFIX%%/%%CACTIDIR%%/log/cacti.log
 %%CACTIDIR%%/logout.php
 %%CACTIDIR%%/poller.php
 %%CACTIDIR%%/poller_commands.php
 %%CACTIDIR%%/poller_export.php
-%%CACTIDIR%%/poller_reindex_hosts.php
-%%CACTIDIR%%/rebuild_poller_cache.php
 %%CACTIDIR%%/resource/script_queries/host_cpu.xml
 %%CACTIDIR%%/resource/script_queries/host_disk.xml
 %%CACTIDIR%%/resource/script_queries/unix_disk.xml
@@ -420,11 +490,10 @@
 @dirrm %%CACTIDIR%%/include/jscalendar
 @dirrm %%CACTIDIR%%/include/html
 @dirrmtry %%CACTIDIR%%/include
-%%PLUGIN%%@dirrmtry %%CACTIDIR%%/plugins
 @dirrm %%CACTIDIR%%/images
 @dirrm %%CACTIDIR%%/docs/text
-@dirrm %%CACTIDIR%%/docs/pdf
 @dirrm %%CACTIDIR%%/docs/html/images
 @dirrm %%CACTIDIR%%/docs/html
 @dirrm %%CACTIDIR%%/docs
+@dirrm %%CACTIDIR%%/cli
 @dirrmtry %%CACTIDIR%%

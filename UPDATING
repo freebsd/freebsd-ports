@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20071216:
+  AFFECTS: users of net-mgmt/cacti
+  AUTHOR: sem@FreeBSD.org
+
+  From 0.8.7a version database settings has moved to config.php file.
+  You have to copy your setting from db-settings.php to config.php and
+  remove db-settings.php file after updating.
+
+  Plugin support is dropped again and will not revive anymore in the port.
+  A reason for that is the patch is unofficial and there are long time lags
+  betwen a new cacti version released and time when the patch is addapted.
+
 20071215:
   AFFECTS: users of www/suphp
   AUTHOR: koitsu@FreeBSD.org
