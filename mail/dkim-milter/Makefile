@@ -14,6 +14,7 @@
 
 PORTNAME=	dkim-milter
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -44,9 +45,8 @@ WCONF=		${WRKSRC}/devtools/Site
 MAN5=		dkim-filter.conf.5
 MAN8=		dkim-filter.8 dkim-genkey.8 dkim-testkey.8 dkim-testssp.8
 PLIST_FILES=	etc/mail/dkim-filter.conf.sample \
-		libexec/dkim-filter libexec/dkim-genkey \
-		%%STATS%%libexec/dkim-stats \
-		libexec/dkim-testkey libexec/dkim-testssp
+		bin/dkim-genkey %%STATS%%bin/dkim-stats bin/dkim-testkey \
+		bin/dkim-testssp libexec/dkim-filter
 PLIST_DIRS=	etc/mail
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
