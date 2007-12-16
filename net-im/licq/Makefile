@@ -7,7 +7,7 @@
 
 PORTNAME=	base
 PORTVERSION=	${LICQ_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	${SOCKS_SUFFIX}${PKGNAMESUFFIX2}
 
@@ -56,6 +56,8 @@ pre-configure:
 	${REINPLACE_CMD} -e 's=/usr/share/licq=${PREFIX}/share/licq=' \
 		${WRKSRC}/src/licq.conf.h
 	@${ECHO_MSG} Ignoring existing libgnugetopt
+	${REINPLACE_CMD} -e 's=!/bin/bash=!${LOCALBASE}/bin/bash=' \
+		${WRKSRC}/bin/sidclean.sh
 	${REINPLACE_CMD} -e 's=getopt.h==' \
 		-e 's=FLAGS -D_THREAD_SAFE=FLAGS ${PTHREAD_CFLAGS}=' \
 		-e 's=FLAGS -pthread=FLAGS ${PTHREAD_CFLAGS}=' \
@@ -66,6 +68,7 @@ pre-configure:
 post-install:
 	@${MKDIR} ${PREFIX}/lib/licq
 	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/sidclean.sh ${PREFIX}/bin/sidclean.bash
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"
