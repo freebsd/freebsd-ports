@@ -14,6 +14,12 @@ share/pixmaps/geany.png
 %%PORTDOCS%%%%DOCSDIR%%/html/apbs02.html
 %%PORTDOCS%%%%DOCSDIR%%/html/apbs03.html
 %%PORTDOCS%%%%DOCSDIR%%/html/apc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/apcs02.html
+%%PORTDOCS%%%%DOCSDIR%%/html/apcs03.html
+%%PORTDOCS%%%%DOCSDIR%%/html/apd.html
+%%PORTDOCS%%%%DOCSDIR%%/html/apds02.html
+%%PORTDOCS%%%%DOCSDIR%%/html/apds03.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ape.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch01s02.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch01s03.html
@@ -30,6 +36,9 @@ share/pixmaps/geany.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ch03s07.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch03s08.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch03s09.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s10.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s11.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s12.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch04.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch04s02.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch04s03.html
@@ -62,9 +71,12 @@ share/pixmaps/geany.png
 %%DATADIR%%/filetypes.docbook
 %%DATADIR%%/filetypes.ferite
 %%DATADIR%%/filetypes.fortran
+%%DATADIR%%/filetypes.haskell
 %%DATADIR%%/filetypes.html
 %%DATADIR%%/filetypes.java
+%%DATADIR%%/filetypes.javascript
 %%DATADIR%%/filetypes.latex
+%%DATADIR%%/filetypes.lua
 %%DATADIR%%/filetypes.makefile
 %%DATADIR%%/filetypes.oms
 %%DATADIR%%/filetypes.pascal
@@ -83,6 +95,7 @@ share/pixmaps/geany.png
 %%DATADIR%%/pascal.tags
 %%DATADIR%%/php.tags
 %%NLS%%share/locale/be/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/de/LC_MESSAGES/geany.mo
@@ -99,7 +112,7 @@ share/pixmaps/geany.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/geany.mo
 @dirrm %%DATADIR%%
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/html/images
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/html
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
