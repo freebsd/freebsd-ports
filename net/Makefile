@@ -926,6 +926,7 @@
     SUBDIR += vde
     SUBDIR += vde2
     SUBDIR += versuch
+    SUBDIR += vinagre
     SUBDIR += vino
     SUBDIR += vls
     SUBDIR += vnc
