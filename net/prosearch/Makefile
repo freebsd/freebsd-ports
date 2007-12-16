@@ -51,7 +51,7 @@ USE_MYSQL=	YES
 .if defined(WITH_CRAWLER) || defined(WITH_WEB)
 USE_PERL5_RUN=	YES
 RUN_DEPENDS+=\
-${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
 .endif
 
 .if defined(WITH_CRAWLER)
