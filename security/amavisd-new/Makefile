@@ -7,7 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -225,6 +225,8 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/amavisd-agent
 	@${REINPLACE_CMD} "s|/var/amavis/db|${AMAVISDIR}/db|" ${WRKSRC}/amavisd-nanny
+	@${REINPLACE_CMD} "s|/var/amavis/amavisd.sock|${AMAVISDIR}/amavisd.sock|" \
+			${WRKSRC}/amavisd-release
 	@${REINPLACE_CMD} "s|#define HAVE_MKTEMP|#undef HAVE_MKTEMP|" \
 			${WRKSRC}/helper-progs/config.h.in
 	@${REINPLACE_CMD} "s|/etc/amavisd.conf|${PREFIX}/etc/amavisd.conf|" \
