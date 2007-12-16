@@ -7,10 +7,6 @@ bin/sfsdeclog
 bin/sfskey
 bin/sfsproac
 bin/ssu
-@unexec if [ -f %D/etc/rc.d/sfscd.sh ]; then cmp -s %D/etc/rc.d/sfscd.sh.sample %D/etc/rc.d/sfscd.sh && rm -f %D/etc/rc.d/sfscd.sh || echo "${PKG_PREFIX}/etc/rc.d/sfscd.sh is different than distribution sample, leaving for manual cleanup." | fmt; fi
-etc/rc.d/sfscd.sh.sample
-@unexec if [ -f %D/etc/rc.d/sfssd.sh ]; then cmp -s %D/etc/rc.d/sfssd.sh.sample %D/etc/rc.d/sfssd.sh && rm -f %D/etc/rc.d/sfssd.sh || echo "${PKG_PREFIX}/etc/rc.d/sfssd.sh is different than distribution sample, leaving for manual cleanup." | fmt; fi
-etc/rc.d/sfssd.sh.sample
 etc/sfs/sfsrwsd_config.sample
 include/sfs
 include/sfs-%%SFS_VERSION%%/aclnt.h
