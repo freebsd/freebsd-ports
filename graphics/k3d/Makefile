@@ -50,6 +50,10 @@ OPTIONS=	GNOME "Build for Gnome" off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile on FreeBSD 5.x
+.endif
+
 .if defined(WITH_GNOME)
 CONFIGURE_ARGS+=	--with-gnome
 PLIST_SUB+=	GNOME=""
