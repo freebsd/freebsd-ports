@@ -129,8 +129,8 @@ post-patch:
 .endfor
 	@ ${CP} ${FILESDIR}/xscreensaver.pam ${WRKSRC}/driver/xscreensaver.pam
 .else
-	${CP} ${WRKSRC}/driver/Makefile.in ${WRKSRC}/driver/Makefile.in.post
-	${SED} -e "s#install-xml install-pam#install-xml#" \
+	@ ${CP} ${WRKSRC}/driver/Makefile.in ${WRKSRC}/driver/Makefile.in.post
+	@ ${SED} -e "s#install-xml install-pam#install-xml#" \
 	    ${WRKSRC}/driver/Makefile.in.post > ${WRKSRC}/driver/Makefile.in
 .endif
 
