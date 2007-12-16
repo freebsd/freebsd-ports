@@ -5939,6 +5939,7 @@ kfile-plugins	ports/misc/kfile-plugins
 kfreerings	ports/games/kfreerings
 kftpgrabber	ports/ftp/kftpgrabber
 kgpg		ports/security/kgpg
+kgtk		ports/sysutils/kgtk
 khacc		ports/finance/khacc
 khtml2png	ports/www/khtml2png
 kiax		ports/net/kiax
