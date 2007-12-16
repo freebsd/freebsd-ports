@@ -12000,6 +12000,7 @@ pecl-bz2	ports/archivers/pecl-bz2
 pecl-crack	ports/security/pecl-crack
 pecl-ctemplate	ports/textproc/pecl-ctemplate
 pecl-cvsclient	ports/net/pecl-cvsclient
+pecl-doublemetaphone	ports/textproc/pecl-doublemetaphone
 pecl-esmtp	ports/mail/pecl-esmtp
 pecl-expect	ports/devel/pecl-expect
 pecl-fileinfo	ports/sysutils/pecl-fileinfo
