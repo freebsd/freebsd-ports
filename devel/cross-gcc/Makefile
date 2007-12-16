@@ -134,6 +134,12 @@ OPTIONS=	CXX	"Enable C++ language support" on \
 
 .include <bsd.port.pre.mk>
 
+.if defined(TGTARCH)
+.if ${TGTARCH} == "i386" && ${ARCH} == "amd64"
+BROKEN=		Does not link
+.endif
+.endif
+
 PKG_ARGS=	-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${PORTSDIR}/devel/cross-binutils && ${MAKE} ${DEPENDS_ARGS} -V PKGNAME`:devel/cross-binutils" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS} -m ${MTREE_FILE} -o ${PKGORIGIN}
 
 .if !defined(WITHOUT_CXX)

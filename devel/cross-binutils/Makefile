@@ -82,6 +82,18 @@ FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 		-e "s,(@file)\{$$0\},\1\{${OURTARGET}-$$0\},g" \
 		-e "s,\($$0\),\(${OURTARGET}-$$0\),g" $$*' --
 
+.include <bsd.port.pre.mk>
+
+.if defined(TGTARCH)
+.if ${TGTARCH} == "sparc" && ${ARCH} == "amd64"
+BROKEN=		Does not link
+.endif
+
+.if ${TGTARCH} == "m68k" && ${ARCH} == "amd64" && ${OSVERSION} < 600000
+BROKEN=		Does not compile
+.endif
+.endif
+
 post-patch:
 #
 # Patch and rename info files
@@ -122,4 +134,4 @@ post-install:
 	@${FIND} -ds ${PREFIX}/${OURTARGET} -type d | \
 		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
