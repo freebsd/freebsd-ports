@@ -7,11 +7,8 @@
 
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
-PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	http://www.padl.com/download/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sem
+MASTER_SITES=	http://www.padl.com/download/
 DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}
 
 MAINTAINER=	kazakov@gmail.com
@@ -49,10 +46,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${MAN5PREFIX}/man/man5
 	${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500112
-IGNORE=		this NSS modules only supported on FreeBSD 5.1 or later
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
