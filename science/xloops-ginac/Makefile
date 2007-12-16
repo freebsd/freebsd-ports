@@ -17,6 +17,10 @@ COMMENT=	A program calculating Feynman diagrams
 
 LIB_DEPENDS=	ginac-1.3.8:${PORTSDIR}/math/GiNaC
 
+BROKEN=		Does not configure (cannot find GiNaC)
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2008-03-17
+
 USE_GCC=	3.4
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
@@ -29,10 +33,4 @@ CFLAGS+=	-fpermissive
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2, does not compile with GCC 3.4 against GiNaC compiled with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
