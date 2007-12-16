@@ -1,4 +1,5 @@
 bin/licq
+bin/sidclean.bash
 bin/viewurl-firefox.sh
 bin/viewurl-lynx.sh
 bin/viewurl-mozilla.sh
