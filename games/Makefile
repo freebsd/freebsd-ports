@@ -400,6 +400,7 @@
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
     SUBDIR += ldmud
+    SUBDIR += legends
     SUBDIR += lexter
     SUBDIR += lgeneral
     SUBDIR += lgeneral-data
