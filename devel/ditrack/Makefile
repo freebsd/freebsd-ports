@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ditrack
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ditrack.org/files/
 EXTRACT_SUFX=	.tgz
