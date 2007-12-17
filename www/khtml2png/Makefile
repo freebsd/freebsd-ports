@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	khtml2png
-DISTVERSION=	2.6.7a
+DISTVERSION=	2.7.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,6 +29,10 @@ CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
 PLIST_FILES=	bin/khtml2png2
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,QT_QT_LIBRARY,QT_LIBRARIES,g' \
+		${WRKSRC}/CMakeLists.txt
 
 do-configure:
 	@cd ${WRKSRC} && ${CMAKE} ${CMAKE_ARGS} -G KDevelop3 ${WRKSRC} && \
