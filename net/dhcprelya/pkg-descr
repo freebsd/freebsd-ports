@@ -1,0 +1,21 @@
+dhcprelya is a light DHCP relay agent written for Yandex company for
+high loaded routers with tens interfaces and thousands hosts behind them.
+
+It's fast and does not depend on any side library. Some ideas was
+taken from Edwin's dhcprelay (net/dhcprelay) which has some shortages.
+
+It's distributed under BSD license.
+
+How to run:
+
+dhcprelya [-d] [-p<pidfile>] -i<if1>... -i<ifN> <server1>... <serverN>
+
+-d	- do not demonize and output debugging info onto terminal.
+-p	- use not default pid file. You can run more than one copy of
+	  dhcprelya.
+-i	- an interfaces list these should be listened.
+server	- a servers list where request will be forward to.
+
+Any questions, bug reports and feature requests are welcome.
+
+Sergey Matveychuk <sem@FreeBSD.org>

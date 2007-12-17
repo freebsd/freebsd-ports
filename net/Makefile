@@ -111,6 +111,7 @@
     SUBDIR += dhcperf
     SUBDIR += dhcping
     SUBDIR += dhcprelay
+    SUBDIR += dhcprelya
     SUBDIR += dictd
     SUBDIR += dictd-database
     SUBDIR += dimes
