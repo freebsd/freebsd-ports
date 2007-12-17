@@ -221,7 +221,9 @@ lib/libefltk_net.so
 lib/libefltk_net.so.2
 lib/libefltk_xml.so
 lib/libefltk_xml.so.2
+share/locale/de/LC_MESSAGES/efltk.mo
 share/locale/fi/LC_MESSAGES/efltk.mo
+share/locale/fr/LC_MESSAGES/efltk.mo
 share/locale/hu/LC_MESSAGES/efltk.mo
 share/locale/id/LC_MESSAGES/efltk.mo
 share/locale/sk/LC_MESSAGES/efltk.mo

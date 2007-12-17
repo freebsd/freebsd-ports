@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	efltk
-PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTVERSION=	2.0.7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ede
@@ -17,8 +16,6 @@ COMMENT=	Extended Fast Light Toolkit
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
-
-USE_BZIP2=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
