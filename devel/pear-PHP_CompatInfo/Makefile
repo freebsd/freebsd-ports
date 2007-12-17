@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_CompatInfo
-PORTVERSION=	1.4.3
+PORTVERSION=	1.5.0
 CATEGORIES=	devel pear
 
 MAINTAINER=	chinsan@FreeBSD.org
@@ -19,7 +19,7 @@ USE_PHP=	tokenizer
 
 CATEGORY=	PHP
 FILES=		CompatInfo/Cli.php CompatInfo/const_array.php \
-		CompatInfo/func_array.php CompatInfo/pcicmd.php CompatInfo.php
+		CompatInfo/func_array.php CompatInfo.php
 DOCS=		TDG/img/admons/caution.png TDG/img/admons/important.png \
 		TDG/img/admons/note.png TDG/img/admons/tip.png \
 		TDG/img/admons/warning.png TDG/img/created-with-docbook.png \
