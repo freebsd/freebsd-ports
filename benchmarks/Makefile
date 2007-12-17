@@ -49,6 +49,7 @@
     SUBDIR += scimark2
     SUBDIR += scimark2c
     SUBDIR += siege
+    SUBDIR += sipp
     SUBDIR += stream
     SUBDIR += super-smack
     SUBDIR += sysbench

@@ -804,7 +804,6 @@
     SUBDIR += silc-server
     SUBDIR += silky
     SUBDIR += sip_scenario
-    SUBDIR += sipp
     SUBDIR += siproxd
     SUBDIR += sipsak
     SUBDIR += sipxcalllib
