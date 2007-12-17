@@ -181,6 +181,7 @@
     SUBDIR += p5-CDB_File-Generator
     SUBDIR += p5-Cache-BDB
     SUBDIR += p5-Cache-Memcached
+    SUBDIR += p5-Cache-Memcached-Fast
     SUBDIR += p5-Cache-Memcached-Managed
     SUBDIR += p5-Cache-Memcached-XS
     SUBDIR += p5-Class-DBI
