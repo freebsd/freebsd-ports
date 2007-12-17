@@ -1,0 +1,28 @@
+--- ./Makefile.orig	2004-09-29 22:12:16.000000000 +0000
++++ ./Makefile	2007-11-24 19:55:15.000000000 +0000
+@@ -36,6 +36,25 @@
+ 	strip m
+ 	rm *.o m.cxx m.h
+ 
++# Regular "make" is what you want for the FreeBSD version
++
++all: m.fl Bargraph.cxx Bargraph.h Codebox.cxx Codebox.h Cw.cxx Cw.h \
++    Knob.cxx Knob.h Help.h m.fl
++	fluid -c m.fl
++	g++ -c -Os `fltk-config --cxxflags` m.cxx
++	g++ -c -Os `fltk-config --cxxflags` Bargraph.cxx
++	g++ -c -Os `fltk-config --cxxflags` Codebox.cxx
++	g++ -c -Os `fltk-config --cxxflags` Knob.cxx
++	g++ -c -Os `sdl-config    --cflags` Cw.cxx
++	g++ -om m.o Bargraph.o Codebox.o Cw.o Knob.o \
++          `sdl-config --static-libs` \
++          `fltk-config --ldstaticflags`
++	strip m
++	rm *.o m.cxx m.h
++
++install: m
++	${INSTALL} -o root -g wheel -m 0555 m ${PREFIX}/bin/xmorse
++
+ # Besemer's Python extension version
+ 
+ cw.so: cw.pyx Cw.cxx Cw.h

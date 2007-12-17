@@ -1,0 +1,8 @@
+A fully automatic Morse code teaching machine. Teaches you to receive
+Morse code. It starts with a few letters and adds more when it sees that
+you are ready. The program won't teach you to send code. It runs in X Window.
+Built with the Fast Light ToolKit(fltk) and the Simple Directmedia Layer(SDL).
+
+It need to be compiled on X Window term for the reason fluid(fltk) need to.
+
+WWW: http://c2.com/morse

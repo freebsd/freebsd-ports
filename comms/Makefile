@@ -134,6 +134,7 @@
     SUBDIR += xcept
     SUBDIR += xdx
     SUBDIR += xlog
+    SUBDIR += xmorse
     SUBDIR += xnecview
     SUBDIR += xwota
     SUBDIR += yagiuda
