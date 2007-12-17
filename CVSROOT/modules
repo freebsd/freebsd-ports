@@ -6305,6 +6305,7 @@ led		ports/editors/led
 ledger		ports/finance/ledger
 ledgersmb	ports/finance/ledgersmb
 ledit		ports/sysutils/ledit
+legends		ports/games/legends
 legoctl		ports/devel/legoctl
 leim21		ports/editors/leim21
 lemmatizer	ports/textproc/lemmatizer
