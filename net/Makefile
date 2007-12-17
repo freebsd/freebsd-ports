@@ -50,6 +50,7 @@
     SUBDIR += b2bua
     SUBDIR += balance
     SUBDIR += bbsnet
+    SUBDIR += bcusdk-eibd
     SUBDIR += beacon
     SUBDIR += bfilter
     SUBDIR += bindtest
