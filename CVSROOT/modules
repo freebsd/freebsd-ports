@@ -14866,7 +14866,7 @@ sing		ports/net-mgmt/sing
 siod		ports/lang/siod
 sip_scenario	ports/net/sip_scenario
 sipcalc		ports/net-mgmt/sipcalc
-sipp		ports/net/sipp
+sipp		ports/benchmarks/sipp
 siproxd		ports/net/siproxd
 sipsak		ports/net/sipsak
 sipxcalllib	ports/net/sipxcalllib
