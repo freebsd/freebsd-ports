@@ -4,6 +4,7 @@
     COMMENT = Internet Relay Chat utilities
 
     SUBDIR += anope
+    SUBDIR += bip
     SUBDIR += bitchx
     SUBDIR += bitlbee
     SUBDIR += blackened
