@@ -9061,6 +9061,7 @@ p5-Cache-BDB	ports/databases/p5-Cache-BDB
 p5-Cache-Cache	ports/devel/p5-Cache-Cache
 p5-Cache-FastMmap	ports/devel/p5-Cache-FastMmap
 p5-Cache-Memcached	ports/databases/p5-Cache-Memcached
+p5-Cache-Memcached-Fast	ports/databases/p5-Cache-Memcached-Fast
 p5-Cache-Memcached-Managed	ports/databases/p5-Cache-Memcached-Managed
 p5-Cache-Memcached-XS	ports/databases/p5-Cache-Memcached-XS
 p5-Cache-Mmap	ports/devel/p5-Cache-Mmap
