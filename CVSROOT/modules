@@ -2412,6 +2412,7 @@ ed2k		ports/net-p2p/ed2k
 edb		ports/databases/edb
 ede		ports/x11-wm/ede
 edenmath	ports/math/edenmath
+edge		ports/games/edge
 edith		ports/editors/edith
 editors-bitmap		ports/editors/bitmap
 editres		ports/x11/editres
