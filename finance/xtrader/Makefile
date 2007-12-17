@@ -7,7 +7,7 @@
 
 PORTNAME=	xtrader
 PORTVERSION=	0.99.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Technical analysis program for financial instruments
 
-LIB_DEPENDS=	ptypes.20:${PORTSDIR}/devel/ptypes \
+LIB_DEPENDS=	ptypes.21:${PORTSDIR}/devel/ptypes \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
