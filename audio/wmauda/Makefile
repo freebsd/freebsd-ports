@@ -7,12 +7,14 @@
 
 PORTNAME=	wmauda
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.netswarm.net/misc/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A port of wmxmms to GTK 2.x and Audacious
 
+BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 
 USE_GMAKE=	yes
