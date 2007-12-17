@@ -1,0 +1,19 @@
+XORSearch is a program to search for a given string in an XOR or
+ROL encoded binary file. An XOR encoded binary file is a file where
+some (or all) bytes have been XORed with a constant value (the key).
+A ROL (or ROR) encoded file has it bytes rotated by a certain number
+of bits (the key). XOR and ROL/ROR encoding is used by malware
+programmers to obfuscate strings like URLs.
+
+XORSearch will try all XOR keys (0 to 255) and ROL keys (1 to 7)
+when searching. I programmed XORSearch to include key 0, because
+this allows to search in an unencoded binary file (X XOR 0 equals
+X).
+
+If the search string is found, XORSearch will print it until the 0
+(byte zero) is encountered or until 50 characters have been printed,
+which ever comes first. 50 is the default value, it can be changed
+with option -l. Unprintable characters are replaced by a dot.
+
+WWW: http://blog.didierstevens.com/programs/xorsearch/
+Author: Didier Stevens
