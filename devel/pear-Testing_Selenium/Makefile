@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Testing_Selenium
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
