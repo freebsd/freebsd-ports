@@ -1,0 +1,17 @@
+--- ./SConstruct.orig	Wed Jun  6 10:07:47 2007
++++ ./SConstruct	Wed Dec  5 23:19:09 2007
+@@ -27,6 +27,14 @@
+ if build_info['cross']:
+   base_env.Tool('crossmingw', toolpath=['build'])
+ 
++# Respect CC, CXX, CCFLAGS, CPPPATH and LIBPATH command-line parameters.
++for key in ['CC', 'CXX']:
++  if key in ARGUMENTS:
++    base_env[key] = ARGUMENTS[key]
++for key in ['CCFLAGS', 'CPPPATH', 'LIBPATH']:
++  if key in ARGUMENTS:
++    base_env[key] = Split(ARGUMENTS[key])
++
+ # warnings
+ base_env.Append(CCFLAGS = ['-Wall'])
+ 

@@ -178,6 +178,7 @@
     SUBDIR += dungeoncrawl
     SUBDIR += easysok
     SUBDIR += eboard
+    SUBDIR += edge
     SUBDIR += editss
     SUBDIR += eduke32
     SUBDIR += egl

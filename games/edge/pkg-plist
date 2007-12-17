@@ -1,0 +1,5 @@
+bin/edge
+%%DMDIR%%/edge.wad
+%%PORTDOCS%%%%DOCSDIR%%/Changelog-129.txt
+%%PORTDOCS%%%%DOCSDIR%%/Edge-Readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
