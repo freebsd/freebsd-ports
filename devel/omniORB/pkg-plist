@@ -155,9 +155,9 @@ include/omniORB4/omniutilities.h
 include/omniORB4/optionalFeatures.h
 include/omniORB4/poa.h
 include/omniORB4/poa_defs.h
-include/omniORB4/poa_enums_defs.h
-include/omniORB4/poa_enums_operators.h
-include/omniORB4/poa_operators.h
+include/omniORB4/poa_enums_defs.hh
+include/omniORB4/poa_enums_operators.hh
+include/omniORB4/poa_enums_poa.hh
 include/omniORB4/poa_poa.h
 include/omniORB4/proxyFactory.h
 include/omniORB4/seqTemplatedecls.h
@@ -199,7 +199,6 @@ include/omnithread/solaris.h
 %%STATIC%%lib/libomniConnectionMgmt4.a
 %%STATIC%%lib/libomniDynamic4.a
 %%STATIC%%lib/libomniORB4.a
-%%STATIC%%lib/libomnisslTP4.a
 %%STATIC%%lib/libomnithread.a
 lib/libCOS4.so
 lib/libCOS4.so.1
@@ -219,9 +218,10 @@ lib/libomniDynamic4.so.1.%%SONUM%%
 lib/libomniORB4.so
 lib/libomniORB4.so.1
 lib/libomniORB4.so.1.%%SONUM%%
+lib/libomnisslTP4.a
 lib/libomnisslTP4.so
 lib/libomnisslTP4.so.1
-lib/libomnisslTP4.so.1.0
+lib/libomnisslTP4.so.1.1
 lib/libomnithread.so
 lib/libomnithread.so.3
 lib/libomnithread.so.3.3
@@ -336,6 +336,9 @@ libdata/pkgconfig/omnithread3.pc
 %%PORTDOCS%%%%DOCSDIR%%/README.FIRST.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.unix
 %%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes.txt
+%%PORTDOCS%%%%DOCSDIR%%/omniNames.html
+%%PORTDOCS%%%%DOCSDIR%%/omniNames.pdf
+%%PORTDOCS%%%%DOCSDIR%%/omniNames.ps
 %%PORTDOCS%%%%DOCSDIR%%/omniORB.pdf
 %%PORTDOCS%%%%DOCSDIR%%/omniORB.ps
 %%PORTDOCS%%%%DOCSDIR%%/omniORB/contents_motif.gif
