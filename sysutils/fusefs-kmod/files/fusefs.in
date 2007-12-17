@@ -25,13 +25,31 @@ stop_cmd="fusefs_stop"
 
 fusefs_start()
 {
+	if kldstat | grep -q fuse\\.ko; then
+		echo "${name} is already running."
+		return 0
+	fi
 	echo "Starting ${name}."
 	kldload $kmod
 }
 
 fusefs_stop()
 {
+	if ! kldstat | grep -q fuse\\.ko; then
+		echo "${name} is not running."
+		return 1
+	fi
 	echo "Stopping ${name}."
+# Unmount FUSE filesystems in reverse order (in case they are nested) with
+# a delay of one second after, to allow 'umount' finish.
+	mount | sed -e '1!G;h;$!d' | while read dev d1 mountpoint d2; do
+		case "$dev" in
+		/dev/fuse[0-9]*)
+			echo "fusefs: unmounting ${mountpoint}."
+			umount $mountpoint ; sleep 1
+			;;
+		esac
+	done
 	kldunload $kmod
 }
 load_rc_config $name

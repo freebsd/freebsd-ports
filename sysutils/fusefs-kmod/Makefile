@@ -7,7 +7,7 @@
 
 PORTNAME=	fusefs
 DISTVERSION=	0.3.9-pre1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://fuse4bsd.creo.hu/downloads/ \
 		http://am-productions.biz/docs/
