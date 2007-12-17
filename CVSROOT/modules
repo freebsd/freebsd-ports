@@ -8500,6 +8500,7 @@ ocsinventory-ng	ports/net-mgmt/ocsinventory-ng
 octave		ports/math/octave
 octave-devel	ports/math/octave-devel
 octave-forge	ports/math/octave-forge
+odamex		ports/games/odamex
 ode		ports/devel/ode
 ode-devel	ports/devel/ode-devel
 ods2		ports/sysutils/ods2
