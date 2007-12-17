@@ -106,6 +106,9 @@
 %%PYTHON_SITELIBDIR%%/DITrack/Util/Misc.py
 %%PYTHON_SITELIBDIR%%/DITrack/Util/Misc.pyc
 %%PYTHON_SITELIBDIR%%/DITrack/Util/Misc.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/XML.py
+%%PYTHON_SITELIBDIR%%/DITrack/XML.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/XML.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/__init__.py
 %%PYTHON_SITELIBDIR%%/DITrack/__init__.pyc
 %%PYTHON_SITELIBDIR%%/DITrack/__init__.pyo
