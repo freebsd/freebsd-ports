@@ -1,4 +1,6 @@
 bin/ntfs-3g
+@exec ln -fs %D/%F /usr/sbin/mount_ntfs-3g
+@unexec rm -f /usr/sbin/mount_ntfs-3g
 include/ntfs-3g/attrib.h
 include/ntfs-3g/attrlist.h
 include/ntfs-3g/bitmap.h
@@ -30,7 +32,5 @@ include/ntfs-3g/volume.h
 lib/libntfs-3g.a
 lib/libntfs-3g.la
 lib/libntfs-3g.so
-lib/libntfs-3g.so.13
+lib/libntfs-3g.so.16
 @dirrm include/ntfs-3g
-@cwd /usr
-sbin/mount_ntfs-3g

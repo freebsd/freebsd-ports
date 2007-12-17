@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	ntfs
-PORTVERSION=	1.1004
+PORTVERSION=	1.1120
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ntfs-3g.org/
 PKGNAMEPREFIX=	fusefs-
@@ -55,8 +55,5 @@ pre-everything::
 	@${ECHO_MSG} "WARNING: FreeBSD does not have cache support for block devices. This will considerably reduce the performance of this application, please consider enabling the UBLIO option and following the indications in the post-installation message." | ${FMT}
 	@${ECHO_MSG}
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|,nonempty||' ${WRKSRC}/src/ntfs-3g.c
 
 .include <bsd.port.post.mk>
