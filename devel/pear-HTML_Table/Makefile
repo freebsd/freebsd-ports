@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Table
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	gerrit.beine@gmx.de
