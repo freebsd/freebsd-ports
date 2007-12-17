@@ -1,0 +1,8 @@
+==============================================================================
+
+Open Dylan needs the process filesystem to be mounted under /proc to work
+correctly, see procfs(5) for an example /etc/fstab entry.
+
+Otherwise the program will terminate with a segmentation fault.
+
+==============================================================================

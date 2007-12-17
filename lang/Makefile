@@ -185,6 +185,7 @@
     SUBDIR += oo2c
     SUBDIR += oorexx
     SUBDIR += open-cobol
+    SUBDIR += opendylan
     SUBDIR += osb-jscore
     SUBDIR += otcl
     SUBDIR += p2c
