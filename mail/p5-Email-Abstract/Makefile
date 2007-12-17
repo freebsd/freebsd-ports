@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Abstract
-PORTVERSION=	2.132
+PORTVERSION=	2.134
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Email
@@ -27,6 +27,7 @@ MAN3=		Email::Abstract.3 \
 		Email::Abstract::EmailSimple.3 \
 		Email::Abstract::MIMEEntity.3 \
 		Email::Abstract::MailInternet.3 \
-		Email::Abstract::MailMessage.3
+		Email::Abstract::MailMessage.3 \
+		Email::Abstract::Plugin.3
 
 .include <bsd.port.mk>
