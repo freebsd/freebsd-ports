@@ -32,10 +32,7 @@ For example (improves performance over large files, but read below):
 Alternatively these variables could be set in the shell startup file. For
 example if you are using it in /etc/fstab add them to /etc/profile. In that
 case, use "ntfs-3g" as the type and add the "late" parameter. Note that this
-requires the "fuse" module to be loaded, that can be done either with:
-
-- Adding fusefs_enable="YES" to /etc/rc.conf.
-- Adding fuse_load="YES" to /boot/loader.conf.
+requires fusefs_enable="YES" to be present in /etc/rc.conf.
 
 It is also possible to enforce block aligned I/O on regular files by setting
 the FORCE_ALIGNED_IO variable (it will be set to 512 bytes), but this is only
@@ -44,11 +41,12 @@ useful for testing purposes and in practice has no use.
 Note that higher values for UBLIO_BLOCKSIZE and UBLIO_ITEMS increase the
 memory usage by their product in bytes. For example, if you set it to 1MB it
 would consume 64MB. To decrease it to 16MB you could set UBLIO_BLOCKSIZE to
-256KB (currently this is the default).
+256KB (currently this is the default). Small values like 4096 can be used and
+also perform fine.
 
-When doing many simultaneous file operations sometimes one of them fails. For
-example, read(2) returns -1 and sets errno to EAGAIN. The greater
-UBLIO_BLOCKSIZE is, more chances this has to happen. Small values like 4096
-can be used and also perform fine. This still has to be checked.
+When doing many simultaneous file operations on FUSE and native (not FUSE)
+filesystems sometimes one of them fails: read(2) returns -1 and sets errno to
+EAGAIN. The greater UBLIO_BLOCKSIZE is, more chances this has to happen (this
+still has to be clarified).
 
 ==============================================================================
