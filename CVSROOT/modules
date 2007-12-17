@@ -790,6 +790,7 @@ bchunk		ports/sysutils/bchunk
 bclock		ports/x11-clocks/bclock
 bcpp		ports/devel/bcpp
 bcrypt		ports/security/bcrypt
+bcusdk-eibd	ports/net/bcusdk-eibd
 bcwipe		ports/security/bcwipe
 bdc		ports/security/bdc
 bdelta		ports/misc/bdelta
