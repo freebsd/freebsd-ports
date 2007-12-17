@@ -12966,6 +12966,7 @@ pt-webalizer-pt_BR	ports/portuguese/webalizer-pt_BR
 pt-webalizer-pt_PT	ports/portuguese/webalizer-pt_PT
 pth		ports/devel/pth
 pth-hard	ports/devel/pth-hard
+pthsem		ports/devel/pthsem
 ptiger		ports/astro/ptiger
 ptkei		ports/games/ptkei
 ptlink-ircd	ports/irc/ptlink-ircd
