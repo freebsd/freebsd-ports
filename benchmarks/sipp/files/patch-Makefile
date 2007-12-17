@@ -54,24 +54,6 @@
  
  #Linker Flags
  LFLAGS_hpux=-AA -mt
-@@ -138,7 +136,7 @@
- LIBS_linux= -ldl -lpthread -lncurses -lstdc++ -lm -L /usr/local/lib -L /usr/lib -L /usr/lib64
- LIBS_hpux= -lcurses -lpthread -L /opt/openssl/lib -L /usr/local/lib
- LIBS_tru64= -lcurses -lpthread
--LIBS_freebsd= -lcurses -pthread
-+LIBS_freebsd= -lcurses -pthread -L /usr/local/lib
- LIBS_SunOS= -lcurses -lpthread -lnsl -lsocket -lstdc++ -lm -ldl -L /usr/local/ssl/lib/
- LIBS_Cygwin= -lcurses -lpthread -lstdc++ -L /usr/lib/WpdPack/Lib
- LIBS_Darwin= -lcurses
-@@ -146,7 +144,7 @@
- 
- # Include directories
- INCDIR_linux=-I. -I/usr/include/openssl
--INCDIR_freebsd=-I. -I/opt/openssl/include
-+INCDIR_freebsd=-I. -I/usr/local/include
- INCDIR_hpux=-I. -I/usr/local/include -I/opt/openssl/include
- INCDIR_tru64=-I. -I/opt/openssl/include
- INCDIR_SunOS=-I. -I/usr/local/ssl/include/
 @@ -154,8 +152,6 @@
  INCDIR_Darwin=-I. -I/usr/local/ssl/include
  INCDIR=$(INCDIR_$(SYSTEM)) 
