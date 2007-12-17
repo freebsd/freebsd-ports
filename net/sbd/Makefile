@@ -8,9 +8,10 @@
 PORTNAME=	sbd
 PORTVERSION=	1.37
 CATEGORIES=	net security
-MASTER_SITES=	http://tigerteam.se/dl/sbd/
+MASTER_SITES=	http://tigerteam.se/dl/sbd/ \
+		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A netcat clone with more features and crypto
 
 ALL_TARGET=	unix
