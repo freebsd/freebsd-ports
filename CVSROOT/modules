@@ -17333,6 +17333,7 @@ xmonad		ports/x11-wm/xmonad
 xmoontool	ports/astro/xmoontool
 xmore		ports/x11/xmore
 xmorph		ports/graphics/xmorph
+xmorse		ports/comms/xmorse
 xmotd		ports/x11/xmotd
 xmoto		ports/games/xmoto
 xmountains	ports/graphics/xmountains
