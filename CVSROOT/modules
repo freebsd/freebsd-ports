@@ -1976,6 +1976,7 @@ dhcpdump	ports/net/dhcpdump
 dhcperf		ports/net/dhcperf
 dhcping		ports/net/dhcping
 dhcprelay	ports/net/dhcprelay
+dhcprelya	ports/net/dhcprelya
 dhid		ports/dns/dhid
 dhisd		ports/dns/dhisd
 dhttpd		ports/www/dhttpd
