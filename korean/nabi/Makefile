@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	nabi
-PORTVERSION=	0.15
-PORTREVISION=	4
+PORTVERSION=	0.19
 CATEGORIES=	korean gnome
-MASTER_SITES=	http://kldp.net/frs/download.php/1651/
+MASTER_SITES=	http://kldp.net/frs/download.php/4095/
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Hangul X Input Method for Everywhere
+
+LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
