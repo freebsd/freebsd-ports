@@ -520,6 +520,7 @@
     SUBDIR += nonsense
     SUBDIR += nuclearchess
     SUBDIR += nwndata
+    SUBDIR += odamex
     SUBDIR += oilwar
     SUBDIR += omega
     SUBDIR += oneko
