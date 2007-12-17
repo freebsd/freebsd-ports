@@ -1,0 +1,14 @@
+The EDGE project is a programming project to develop a DOOM style engine aimed
+at the Total Conversion developer, but still able to play the original DOOM
+games. This project started with the DOOM source released by id software.
+
+Note that it currently does not support playing the original MIDI music, but
+supports OGG Vorbis audio files.
+
+For Total Conversions using Edge see:
+http://www.wadsinprogress.info/
+
+For high resolution textures see:
+http://forums.yaa.dk/viewtopic.php?f=32&t=69
+
+WWW:	http://edge.sourceforge.net/
