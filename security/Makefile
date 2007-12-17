@@ -771,6 +771,7 @@
     SUBDIR += xinetd
     SUBDIR += xmlsec
     SUBDIR += xmlsec1
+    SUBDIR += xorsearch
     SUBDIR += xspy
     SUBDIR += xyssl
     SUBDIR += yafic
