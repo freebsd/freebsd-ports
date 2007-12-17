@@ -1,0 +1,7 @@
+bin/pthsem-config
+include/pthsem.h
+lib/libpthsem.a
+lib/libpthsem.la
+lib/libpthsem.so
+lib/libpthsem.so.20
+share/aclocal/pthsem.m4

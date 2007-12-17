@@ -1882,6 +1882,7 @@
     SUBDIR += psvn
     SUBDIR += pth
     SUBDIR += pth-hard
+    SUBDIR += pthsem
     SUBDIR += ptmalloc
     SUBDIR += pty
     SUBDIR += ptypes
