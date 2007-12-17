@@ -8,10 +8,10 @@
 PORTNAME=	bubblegum
 PORTVERSION=	1.12
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	bjk
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Watch a file for changes
 
 GNU_CONFIGURE=	yes
