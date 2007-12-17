@@ -18,10 +18,6 @@ PLIST_FILES=	sbin/makefs
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 do-build:
 	cd ${WRKSRC} && ${SH} -xe build.sh
 
