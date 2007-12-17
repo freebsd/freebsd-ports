@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 CATEGORIES=	sysutils converters
 MASTER_SITES=	http://www.iceb.vc.ukrtel.net/download/
 
-MAINTAINER=	bsam@ipt.ru
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Implementation of the utility "mapchan" from SCO Unix
 
 USE_BZIP2=	yes
