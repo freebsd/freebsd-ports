@@ -23,6 +23,10 @@ OPTIONS=	PTHREAD "Build pthread safe module" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700017
+IGNORE=		not supported on your system, as it does not have IPv6 ipfw firewall
+.endif
+
 .if defined(WITH_PTHREAD)
 MAKE_ENV+=	WITH_PTHREAD=yes
 CFLAGS+=	${PTHREAD_CFLAGS}
