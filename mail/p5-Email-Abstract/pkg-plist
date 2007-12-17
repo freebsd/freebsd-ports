@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Email/Abstract/MIMEEntity.pm
 %%SITE_PERL%%/Email/Abstract/MailInternet.pm
 %%SITE_PERL%%/Email/Abstract/MailMessage.pm
+%%SITE_PERL%%/Email/Abstract/Plugin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Abstract/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Abstract
 @dirrmtry %%SITE_PERL%%/Email/Abstract
