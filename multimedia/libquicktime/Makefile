@@ -78,6 +78,8 @@ post-patch:
 		${WRKSRC}/plugins/audiocodec/* \
 		${WRKSRC}/plugins/videocodec/*
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-DG.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure*
 
 post-install:
 .if !defined(NOPORTDOCS)
