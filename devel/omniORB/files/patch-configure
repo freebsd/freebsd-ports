@@ -1,0 +1,10 @@
+--- configure.orig	2007-12-16 23:01:48.000000000 +0300
++++ configure	2007-12-16 23:01:59.000000000 +0300
+@@ -12609,6 +12609,7 @@
+   *-*-freebsd5*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="5";;
+   *-*-freebsd6*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="6";;
+   *-*-freebsd7*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="7";;
++  *-*-freebsd8*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="8";;
+   *-*-kfreebsd5*) plat_name="kFreeBSD";  plat_def="__FreeBSD_kernel__";  os_v="5";;
+   *-*-kfreebsd6*) plat_name="kFreeBSD";  plat_def="__FreeBSD_kernel__";  os_v="6";;
+   *-*-netbsd*)   plat_name="NetBSD";   plat_def="__netbsd__";   os_v="1";;
