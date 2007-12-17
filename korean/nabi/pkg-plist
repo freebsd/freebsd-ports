@@ -1,54 +1,47 @@
 bin/nabi
-share/nabi/candidate/nabi.txt
-share/nabi/compose/default
-share/nabi/compose/full
-share/nabi/keyboard/2qwerty
-share/nabi/keyboard/32qwerty
-share/nabi/keyboard/39qwerty
-share/nabi/keyboard/3fqwerty
-share/nabi/keyboard/3sqwerty
-share/nabi/nabi-about.png
-share/nabi/nabi.png
-share/nabi/nabi.svg
-share/nabi/themes/KingSejong/README
-share/nabi/themes/KingSejong/english.png
-share/nabi/themes/KingSejong/hangul.png
-share/nabi/themes/KingSejong/none.png
-share/nabi/themes/MSWindows/english.png
-share/nabi/themes/MSWindows/hangul.png
-share/nabi/themes/MSWindows/none.png
-share/nabi/themes/MSWindowsXP/english.png
-share/nabi/themes/MSWindowsXP/hangul.png
-share/nabi/themes/MSWindowsXP/none.png
-share/nabi/themes/Mac/README
-share/nabi/themes/Mac/english.png
-share/nabi/themes/Mac/hangul.png
-share/nabi/themes/Mac/none.png
-share/nabi/themes/Onion/README
-share/nabi/themes/Onion/english.png
-share/nabi/themes/Onion/hangul.png
-share/nabi/themes/Onion/none.png
-share/nabi/themes/SimplyRed/english.png
-share/nabi/themes/SimplyRed/hangul.png
-share/nabi/themes/SimplyRed/none.png
-share/nabi/themes/Tux/english.png
-share/nabi/themes/Tux/hangul.png
-share/nabi/themes/Tux/none.png
-share/nabi/themes/keyboard/README
-share/nabi/themes/keyboard/english.png
-share/nabi/themes/keyboard/hangul.png
-share/nabi/themes/keyboard/none.png
+%%DATADIR%%/keyboard_layouts
+%%DATADIR%%/nabi-about.png
+%%DATADIR%%/nabi.png
+%%DATADIR%%/nabi.svg
+%%DATADIR%%/symbol.txt
+%%DATADIR%%/themes/Jini/README
+%%DATADIR%%/themes/Jini/english.png
+%%DATADIR%%/themes/Jini/english.svg
+%%DATADIR%%/themes/Jini/hangul.png
+%%DATADIR%%/themes/Jini/hangul.svg
+%%DATADIR%%/themes/Jini/none.png
+%%DATADIR%%/themes/Jini/none.svg
+%%DATADIR%%/themes/KingSejong/README
+%%DATADIR%%/themes/KingSejong/english.png
+%%DATADIR%%/themes/KingSejong/hangul.png
+%%DATADIR%%/themes/KingSejong/none.png
+%%DATADIR%%/themes/KingSejong2/README
+%%DATADIR%%/themes/KingSejong2/english.png
+%%DATADIR%%/themes/KingSejong2/hangul.png
+%%DATADIR%%/themes/KingSejong2/none.png
+%%DATADIR%%/themes/Onion/README
+%%DATADIR%%/themes/Onion/english.png
+%%DATADIR%%/themes/Onion/hangul.png
+%%DATADIR%%/themes/Onion/none.png
+%%DATADIR%%/themes/SimplyRed/english.png
+%%DATADIR%%/themes/SimplyRed/hangul.png
+%%DATADIR%%/themes/SimplyRed/none.png
+%%DATADIR%%/themes/Tux/README
+%%DATADIR%%/themes/Tux/english.png
+%%DATADIR%%/themes/Tux/hangul.png
+%%DATADIR%%/themes/Tux/none.png
+%%DATADIR%%/themes/keyboard/README
+%%DATADIR%%/themes/keyboard/english.png
+%%DATADIR%%/themes/keyboard/hangul.png
+%%DATADIR%%/themes/keyboard/none.png
+share/locale/de/LC_MESSAGES/nabi.mo
 share/locale/ko/LC_MESSAGES/nabi.mo
-@dirrm share/nabi/themes/KingSejong
-@dirrm share/nabi/themes/MSWindows
-@dirrm share/nabi/themes/MSWindowsXP
-@dirrm share/nabi/themes/Mac
-@dirrm share/nabi/themes/Onion
-@dirrm share/nabi/themes/SimplyRed
-@dirrm share/nabi/themes/Tux
-@dirrm share/nabi/themes/keyboard
-@dirrm share/nabi/candidate
-@dirrm share/nabi/compose
-@dirrm share/nabi/keyboard
-@dirrm share/nabi/themes
-@dirrm share/nabi
+@dirrm %%DATADIR%%/themes/keyboard
+@dirrm %%DATADIR%%/themes/Tux
+@dirrm %%DATADIR%%/themes/SimplyRed
+@dirrm %%DATADIR%%/themes/Onion
+@dirrm %%DATADIR%%/themes/KingSejong2
+@dirrm %%DATADIR%%/themes/KingSejong
+@dirrm %%DATADIR%%/themes/Jini
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%
