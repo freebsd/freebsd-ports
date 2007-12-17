@@ -880,6 +880,7 @@ biology-blast	ports/biology/blast
 biorythm	ports/games/biorythm
 biosfont	ports/sysutils/biosfont
 biosfont-demos	ports/misc/biosfont-demos
+bip		ports/irc/bip
 bird		ports/net/bird
 birda		ports/comms/birda
 birthday	ports/misc/birthday
