@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freebsd-snapshot
-DISTVERSION=	20050402.1
-PORTREVISION=	1
+DISTVERSION=	20071207.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freebsd.org/~rse/dist/
 
@@ -29,7 +28,7 @@ PKGDEINSTALLL=	${WRKDIR}/pkg-deinstall
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/amd.map.snap ${WRKSRC}/snapshot \
-		${WRKSRC}/periodic-snapshot ${WRKSRC}/snapshot.8 
+		${WRKSRC}/periodic-snapshot ${WRKSRC}/snapshot.8
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/snapshot ${PREFIX}/sbin/
