@@ -143,6 +143,7 @@ lib/sbcl/sb-posix/posix-tests.fasl
 lib/sbcl/sb-posix/posix-tests.lisp
 lib/sbcl/sb-posix/sb-posix.asd
 lib/sbcl/sb-posix/sb-posix.fasl
+lib/sbcl/sb-posix/sb-posix.texinfo
 lib/sbcl/sb-posix/test-passed
 lib/sbcl/sb-rotate-byte/.cvsignore
 lib/sbcl/sb-rotate-byte/Makefile
