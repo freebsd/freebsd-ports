@@ -67,6 +67,7 @@ include/sword/osisredletterwords.h
 include/sword/osisrtf.h
 include/sword/osisscripref.h
 include/sword/osisstrongs.h
+include/sword/osisvariants.h
 include/sword/osiswebif.h
 include/sword/osiswordjs.h
 include/sword/papyriplain.h
@@ -156,11 +157,10 @@ include/sword/zcom.h
 include/sword/zconf.h
 include/sword/zipcomprs.h
 include/sword/zld.h
-include/sword/zlib.h
 include/sword/zstr.h
 include/sword/ztext.h
 include/sword/zverse.h
-lib/libsword-1.5.9.so
+lib/libsword-1.5.10.so
 lib/libsword.a
 lib/libsword.la
 lib/libsword.so
@@ -187,6 +187,7 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/et.conf
 %%DATADIR%%/locales.d/et_abbr-utf8.conf
 %%DATADIR%%/locales.d/et_abbr.conf
+%%DATADIR%%/locales.d/fa-utf8.conf
 %%DATADIR%%/locales.d/fi-utf8.conf
 %%DATADIR%%/locales.d/fi.conf
 %%DATADIR%%/locales.d/fr-utf8.conf
@@ -225,6 +226,7 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/uk_UA-cp1251.conf
 %%DATADIR%%/locales.d/uk_UA-koi8-u.conf
 %%DATADIR%%/locales.d/uk_UA-utf8.conf
+%%DATADIR%%/locales.d/vi-utf8.conf
 @dirrm %%DATADIR%%/mods.d
 @dirrm %%DATADIR%%/locales.d
 @dirrm %%DATADIR%%
