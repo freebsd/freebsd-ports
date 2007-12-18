@@ -8455,6 +8455,7 @@ ocaml-cfg	ports/devel/ocaml-cfg
 ocaml-classes	ports/devel/ocaml-classes
 ocaml-cryptgps	ports/security/ocaml-cryptgps
 ocaml-cryptokit	ports/security/ocaml-cryptokit
+ocaml-csv	ports/textproc/ocaml-csv
 ocaml-doc	ports/lang/ocaml-doc
 ocaml-equeue	ports/devel/ocaml-equeue
 ocaml-event	ports/devel/ocaml-event
