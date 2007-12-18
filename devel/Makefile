@@ -572,6 +572,7 @@
     SUBDIR += libedit
     SUBDIR += libelf
     SUBDIR += libepp-nicbr
+    SUBDIR += libev
     SUBDIR += libevent
     SUBDIR += libevocosm
     SUBDIR += libexecinfo
