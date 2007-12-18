@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_LDAP
-DISTVERSION=	1.0.0RC4
+DISTVERSION=	1.0.0
 CATEGORIES=	net pear
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -22,7 +22,10 @@ FILES=		LDAP.php \
 		LDAP/Schema.php LDAP/Search.php LDAP/Util.php
 DOCS=		README.txt RootDSE.txt Schema.txt utf8.txt manual.html
 _DOCSDIR=	doc
-TESTS=		tests.php
+TESTS=		AllTests.php Net_LDAPTest.php \
+		Net_LDAP_EntryTest.php Net_LDAP_FilterTest.php \
+		Net_LDAP_RootDSETest.php Net_LDAP_SearchTest.php \
+		Net_LDAP_UtilTest.php
 EXAMPLES=	add_entry.php connecting.php fetch_entry.php \
 		modify_entry.php modify_entry2.php search_entries.php
 _EXAMPLESDIR=	doc/examples
