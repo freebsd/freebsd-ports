@@ -31,8 +31,12 @@ share/icons/crystalsvg/128x128/apps/kooldock.png
 share/icons/crystalsvg/16x16/apps/kooldock.png
 share/icons/crystalsvg/32x32/apps/kooldock.png
 share/icons/crystalsvg/64x64/apps/kooldock.png
+share/locale/cs/LC_MESSAGES/kooldock.mo
+share/locale/de/LC_MESSAGES/kooldock.mo
 share/locale/es/LC_MESSAGES/kooldock.mo
 share/locale/fr/LC_MESSAGES/kooldock.mo
+share/locale/it/LC_MESSAGES/kooldock.mo
+share/locale/nl/LC_MESSAGES/kooldock.mo
 share/locale/pl/LC_MESSAGES/kooldock.mo
 share/locale/sv/LC_MESSAGES/kooldock.mo
 @dirrm share/icons/crystalsvg/64x64/apps
