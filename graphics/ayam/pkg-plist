@@ -43,6 +43,7 @@ lib/ayam/tcl/light.tcl
 lib/ayam/tcl/material.tcl
 lib/ayam/tcl/mmenu.tcl
 lib/ayam/tcl/ms.tcl
+lib/ayam/tcl/ncircle.tcl
 lib/ayam/tcl/ncurve.tcl
 lib/ayam/tcl/npatch.tcl
 lib/ayam/tcl/objbar.tcl
@@ -184,16 +185,21 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/birail2vc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/cap.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/clampnc.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/clampnp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/clone.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/concatnc.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/coarsen.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/csgex.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/elevate.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/extrude.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/gordoncap.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/gordon-hood.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/icurves.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/inskn.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/insknnp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/listbox.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/main.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/makecomp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/meta.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/multip.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/ncircle.gif
@@ -202,6 +208,7 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/primitives.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/propgui.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/refine.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/remkn.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/revolve.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/shiftclsbsp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/sgordon.gif
@@ -213,7 +220,9 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/text-ayam.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/tgui.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/tools.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/toxy.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/treeview.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/trimnc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/view.gif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/pics
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html

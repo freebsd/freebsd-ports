@@ -6,24 +6,20 @@
 #
 
 PORTNAME=	ayam
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.13
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	3D modeling environment for the RenderMan interface
 
-LIB_DEPENDS=	aqsis.0:${PORTSDIR}/graphics/aqsis \
-		tcl82.1:${PORTSDIR}/lang/tcl82 \
-		tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
+LIB_DEPENDS=	aqsis.1:${PORTSDIR}/graphics/aqsis \
+		tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-USE_GCC=	3.4
 USE_GL=		yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	Makefile.shared
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -34,7 +30,7 @@ PLUGINS_DIR=	${PREFIX}/lib/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not build on alpha"
+BROKEN=		Does not build on alpha
 .endif
 
 post-patch:
