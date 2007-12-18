@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	makehuman
-DISTVERSION=	0.9
-PORTREVISION=	1
+DISTVERSION=	0.9.1-rc1a
 CATEGORIES=	graphics
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Application for parametrical modeling of 3D humanoid characters
@@ -27,8 +25,14 @@ USE_GL=		yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|makehuman/|.&|g' ${WRKSRC}/src/util.cpp
+	@${REINPLACE_CMD} -e 's,find . \(-name .*\) -exec cp --parents {} \(.*\) \\;,find -d . \1 | ${CPIO} -dumpl \2,g' \
+		${WRKSRC}/pixmaps/Makefile.in ${WRKSRC}/data/Makefile.in
+	@${REINPLACE_CMD} -e '/getUserWorkDir/ s|"makehuman"|".makehuman"|g' ${WRKSRC}/src/util.cpp
 	@${REINPLACE_CMD} -e '/^makehuman_pixmapsdir =/ s|pixmaps/makehuman|makehuman/pixmaps|' ${WRKSRC}/pixmaps/Makefile.in
 	@${REINPLACE_CMD} -e '/^packagepixmapsdir=/ s|pixmaps/\$${PACKAGE}|$${PACKAGE}/pixmaps|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^makehumandocdir =/ s|doc/|share/doc/|' ${WRKSRC}/Makefile.in
