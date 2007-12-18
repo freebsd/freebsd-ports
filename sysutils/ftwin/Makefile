@@ -1,0 +1,44 @@
+# New ports collection makefile for:	ftwin
+# Date created:		2007-12-05
+# Whom:			Bapt <baptiste.daroussin@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ftwin
+PORTVERSION=	0.8.0
+CATEGORIES=	sysutils
+MASTER_SITES=	http://meroware.com/~joke/sources/ftwin/
+
+MAINTAINER=	baptiste.daroussin@gmail.com
+COMMENT=	A useful tool to find duplicate files
+
+LIB_DEPENDS=	puzzle.1:${PORTSDIR}/graphics/libpuzzle \
+		apr-1.2:${PORTSDIR}/devel/apr \
+		pcre.0:${PORTSDIR}/devel/pcre
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:261 aclocal:110 automake:110 autoheader:261
+CONFIGURE_ARGS+=	--with-check=${LOCALBASE} --with-puzzle=${LOCALBASE}
+PLIST_FILES=	bin/ftwin
+
+PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION LICENSE README
+
+MAN8=		ftwin.8
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 600000
+LIB_DEPENDS+=	archive.5:${PORTSDIR}/archivers/libarchive
+CONFIGURE_ARGS+=	--with-archive=${LOCALBASE}
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>

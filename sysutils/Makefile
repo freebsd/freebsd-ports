@@ -215,6 +215,7 @@
     SUBDIR += freqsdwn
     SUBDIR += fsbackup
     SUBDIR += ftrace
+    SUBDIR += ftwin
     SUBDIR += fusefs-curlftpfs
     SUBDIR += fusefs-encfs
     SUBDIR += fusefs-funionfs
