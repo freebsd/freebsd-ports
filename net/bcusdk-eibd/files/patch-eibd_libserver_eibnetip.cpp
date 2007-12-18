@@ -1,5 +1,5 @@
 --- eibd/libserver/eibnetip.cpp.orig	Thu Nov  8 16:31:33 2007
-+++ eibd/libserver/eibnetip.cpp	Tue Dec 11 10:11:47 2007
++++ eibd/libserver/eibnetip.cpp	Tue Dec 18 14:36:10 2007
 @@ -17,11 +17,9 @@
      Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
@@ -32,7 +32,7 @@
    sock->sin_family = h->h_addrtype;
    sock->sin_addr.s_addr = (*((unsigned long *) h->h_addr_list[0]));
    return 1;
-@@ -144,6 +148,53 @@
+@@ -144,6 +148,54 @@
  }
  #endif
  
@@ -73,6 +73,7 @@
 +      struct sockaddr *sa = (struct sockaddr *) cp;                                                       
 +      if (i == RTA_IFA)                                                                                   
 +      {                                                                                                   
++        src->sin_len = sizeof (*src);
 +        src->sin_family = AF_INET;                                                                        
 +        src->sin_addr.s_addr = ((struct sockaddr_in *)sa)->sin_addr.s_addr;                               
 +        return 1;
@@ -86,7 +87,7 @@
  EIBNetIPPacket::EIBNetIPPacket ()
  {
    service = 0;
-@@ -208,6 +259,7 @@
+@@ -208,6 +260,7 @@
      return 1;
    ip = (buf[2] << 24) | (buf[3] << 16) | (buf[4] << 8) | (buf[5]);
    port = (buf[6] << 8) | (buf[7]);
@@ -94,7 +95,7 @@
    a->sin_family = AF_INET;
    a->sin_port = htons (port);
    a->sin_addr.s_addr = htonl (ip);
-@@ -254,7 +306,7 @@
+@@ -254,7 +307,7 @@
    if (fd != -1)
      {
        if (multicast)
@@ -103,7 +104,7 @@
        close (fd);
      }
  }
-@@ -265,7 +317,7 @@
+@@ -265,7 +318,7 @@
    if (multicast)
      throw Exception (DEV_OPEN_FAIL);
    maddr = multicastaddr;
