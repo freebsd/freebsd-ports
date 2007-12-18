@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	allacrost
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	allacrost_demo_source_${PORTVERSION}
@@ -16,12 +16,15 @@ COMMENT=	A single player 2D role-playing game
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libluabind.a:${PORTSDIR}/devel/luabind
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png \
+		openal.0:${PORTSDIR}/audio/openal \
+		ogg.5:${PORTSDIR}/audio/libogg \
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LUA=	5.0
-USE_SDL=	sdl mixer ttf net
+USE_SDL=	sdl ttf net
 USE_GL=		yes
 USE_GCC=	4.2+
 
@@ -35,6 +38,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	MANUAL
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|-I/usr/include/|-I${LOCALBASE}/include/|g' \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|exit -1|exit 1|; /CXXFLAGS=/ d; \
 		s|-lSDL |`${SDL_CONFIG} --libs` |' ${WRKSRC}/configure
 

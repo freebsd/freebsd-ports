@@ -1,216 +1,255 @@
 bin/allacrost
-%%DATADIR%%/dat/actors/characters.lua
-%%DATADIR%%/dat/actors/enemies_set_01.lua
-%%DATADIR%%/dat/actors/enemies_set_02.lua
-%%DATADIR%%/dat/config/boot.lua
-%%DATADIR%%/dat/config/settings.lua
-%%DATADIR%%/dat/credits.lua
-%%DATADIR%%/dat/maps/demo_cave.lua
-%%DATADIR%%/dat/maps/demo_town.lua
-%%DATADIR%%/dat/objects/armor.lua
-%%DATADIR%%/dat/objects/items.lua
-%%DATADIR%%/dat/objects/weapons.lua
-%%DATADIR%%/dat/skills/attack.lua
-%%DATADIR%%/dat/skills/defense.lua
-%%DATADIR%%/dat/skills/support.lua
-%%DATADIR%%/dat/tilesets/desert_cave.lua
-%%DATADIR%%/dat/tilesets/desert_cave_ground.lua
-%%DATADIR%%/dat/tilesets/desert_cave_walls.lua
-%%DATADIR%%/dat/tilesets/desert_cave_walls2.lua
-%%DATADIR%%/dat/tilesets/desert_cave_water.lua
-%%DATADIR%%/dat/tilesets/mountain_house_exterior.lua
-%%DATADIR%%/dat/tilesets/mountain_house_exterior2.lua
-%%DATADIR%%/dat/tilesets/mountain_house_interior.lua
-%%DATADIR%%/dat/tilesets/mountain_landscape.lua
-%%DATADIR%%/dat/tilesets/test.lua
-%%DATADIR%%/img/backdrops/battle/desert_cave.png
-%%DATADIR%%/img/backdrops/battle/desert_cave_anim.png
-%%DATADIR%%/img/backdrops/battle/mountain_village.png
-%%DATADIR%%/img/backdrops/boot_screen00.jpg
-%%DATADIR%%/img/fonts/COPYING
-%%DATADIR%%/img/fonts/tarnhalo.ttf
-%%DATADIR%%/img/fonts/vtc_switchblade_romance.ttf
-%%DATADIR%%/img/icons/actors/characters/claudius.png
-%%DATADIR%%/img/icons/actors/enemies/aerocephal.png
-%%DATADIR%%/img/icons/actors/enemies/arcana_drake.png
-%%DATADIR%%/img/icons/actors/enemies/aurum-drakueli.png
-%%DATADIR%%/img/icons/actors/enemies/daemarbora.png
-%%DATADIR%%/img/icons/actors/enemies/deceleon.png
-%%DATADIR%%/img/icons/actors/enemies/green_slime.png
-%%DATADIR%%/img/icons/actors/enemies/nagaruda.png
-%%DATADIR%%/img/icons/actors/enemies/scorpion.png
-%%DATADIR%%/img/icons/actors/enemies/skeleton.png
-%%DATADIR%%/img/icons/actors/enemies/snake.png
-%%DATADIR%%/img/icons/actors/enemies/spider.png
-%%DATADIR%%/img/icons/armor/cobalt_helm.png
-%%DATADIR%%/img/icons/armor/karlate_breastplate.png
-%%DATADIR%%/img/icons/armor/karlate_greaves.png
-%%DATADIR%%/img/icons/armor/karlate_helmet.png
-%%DATADIR%%/img/icons/armor/karlate_shield.png
-%%DATADIR%%/img/icons/armor/leather_chain_mail.png
-%%DATADIR%%/img/icons/armor/phoenix_shield.png
-%%DATADIR%%/img/icons/battle/ap_indicator_fr0.png
-%%DATADIR%%/img/icons/battle/ap_indicator_fr1.png
-%%DATADIR%%/img/icons/battle/ap_indicator_fr2.png
-%%DATADIR%%/img/icons/battle/ap_indicator_fr3.png
-%%DATADIR%%/img/icons/battle/attack.png
-%%DATADIR%%/img/icons/battle/character_selector.png
-%%DATADIR%%/img/icons/battle/defend.png
-%%DATADIR%%/img/icons/battle/item.png
-%%DATADIR%%/img/icons/battle/support.png
-%%DATADIR%%/img/icons/battle/swap_card.png
-%%DATADIR%%/img/icons/battle/swap_icon.png
-%%DATADIR%%/img/icons/items/health_potion.png
-%%DATADIR%%/img/icons/items/health_potion_large.png
-%%DATADIR%%/img/icons/weapons/iron_sword.png
-%%DATADIR%%/img/icons/weapons/karlate_sword.png
-%%DATADIR%%/img/logos/mac_logo.icns
-%%DATADIR%%/img/logos/main_logo_background.png
-%%DATADIR%%/img/logos/main_logo_sword.png
-%%DATADIR%%/img/logos/main_logo_text.png
-%%DATADIR%%/img/logos/program_icon.bmp
-%%DATADIR%%/img/logos/program_icon.ico
-%%DATADIR%%/img/menus/bar_cover.png
-%%DATADIR%%/img/menus/battle_bottom_menu.png
-%%DATADIR%%/img/menus/battle_character_menu.png
-%%DATADIR%%/img/menus/black_sleet_b.png
-%%DATADIR%%/img/menus/black_sleet_bl.png
-%%DATADIR%%/img/menus/black_sleet_br.png
-%%DATADIR%%/img/menus/black_sleet_l.png
-%%DATADIR%%/img/menus/black_sleet_parch.png
-%%DATADIR%%/img/menus/black_sleet_quad.png
-%%DATADIR%%/img/menus/black_sleet_r.png
-%%DATADIR%%/img/menus/black_sleet_skin.png
-%%DATADIR%%/img/menus/black_sleet_t.png
-%%DATADIR%%/img/menus/black_sleet_texture.png
-%%DATADIR%%/img/menus/black_sleet_tl.png
-%%DATADIR%%/img/menus/black_sleet_tr.png
-%%DATADIR%%/img/menus/black_sleet_tri_b.png
-%%DATADIR%%/img/menus/black_sleet_tri_l.png
-%%DATADIR%%/img/menus/black_sleet_tri_r.png
-%%DATADIR%%/img/menus/black_sleet_tri_t.png
-%%DATADIR%%/img/menus/cursor.png
-%%DATADIR%%/img/menus/dialogue_box.png
-%%DATADIR%%/img/menus/dialogue_nameplate.png
-%%DATADIR%%/img/menus/locations/desert_cave.png
-%%DATADIR%%/img/menus/locations/mountain_village.png
-%%DATADIR%%/img/menus/stamina_bar.png
-%%DATADIR%%/img/menus/stamina_icon.png
-%%DATADIR%%/img/menus/stamina_icon_selected.png
-%%DATADIR%%/img/menus/status_icons.png
-%%DATADIR%%/img/misc/category_icons.png
-%%DATADIR%%/img/misc/dialogue_icon.png
-%%DATADIR%%/img/misc/torch_light_mask.png
-%%DATADIR%%/img/portraits/battle/claudius_damage.png
-%%DATADIR%%/img/portraits/map/claudius.png
-%%DATADIR%%/img/portraits/map/claudius_small.png
-%%DATADIR%%/img/portraits/map/laila.png
-%%DATADIR%%/img/portraits/map/laila_small.png
-%%DATADIR%%/img/portraits/map/marcus.png
-%%DATADIR%%/img/portraits/map/marcus_small.png
-%%DATADIR%%/img/portraits/map/vanica.png
-%%DATADIR%%/img/portraits/map/vanica_small.png
-%%DATADIR%%/img/portraits/menu/claudius.png
-%%DATADIR%%/img/portraits/menu/claudius_large.png
-%%DATADIR%%/img/sprites/battle/characters/claudius_idle.png
-%%DATADIR%%/img/sprites/battle/enemies/aerocephal.png
-%%DATADIR%%/img/sprites/battle/enemies/arcana_drake.png
-%%DATADIR%%/img/sprites/battle/enemies/aurum-drakueli.png
-%%DATADIR%%/img/sprites/battle/enemies/daemarbora.png
-%%DATADIR%%/img/sprites/battle/enemies/deceleon.png
-%%DATADIR%%/img/sprites/battle/enemies/green_slime.png
-%%DATADIR%%/img/sprites/battle/enemies/nagaruda.png
-%%DATADIR%%/img/sprites/battle/enemies/scorpion.png
-%%DATADIR%%/img/sprites/battle/enemies/skeleton.png
-%%DATADIR%%/img/sprites/battle/enemies/snake.png
-%%DATADIR%%/img/sprites/battle/enemies/spider.png
-%%DATADIR%%/img/sprites/map/boy_npc01_walk.png
-%%DATADIR%%/img/sprites/map/claudius_frightened.png
-%%DATADIR%%/img/sprites/map/claudius_walk.png
-%%DATADIR%%/img/sprites/map/gigas_walk.png
-%%DATADIR%%/img/sprites/map/girl_npc02_walk.png
-%%DATADIR%%/img/sprites/map/laila_walk.png
-%%DATADIR%%/img/sprites/map/man_npc01_walk.png
-%%DATADIR%%/img/sprites/map/man_npc02_walk.png
-%%DATADIR%%/img/sprites/map/marcus_walk.png
-%%DATADIR%%/img/sprites/map/naga_walk.png
-%%DATADIR%%/img/sprites/map/scorpion_walk.png
-%%DATADIR%%/img/sprites/map/slime_walk.png
-%%DATADIR%%/img/sprites/map/snake_walk.png
-%%DATADIR%%/img/sprites/map/soldier_npc01_walk.png
-%%DATADIR%%/img/sprites/map/vanica_walk.png
-%%DATADIR%%/img/sprites/map/woman_npc01_walk.png
-%%DATADIR%%/img/sprites/map/woman_npc02_walk.png
-%%DATADIR%%/img/tilesets/desert_cave.png
-%%DATADIR%%/img/tilesets/desert_cave_ground.png
-%%DATADIR%%/img/tilesets/desert_cave_walls.png
-%%DATADIR%%/img/tilesets/desert_cave_walls2.png
-%%DATADIR%%/img/tilesets/desert_cave_water.png
-%%DATADIR%%/img/tilesets/mountain_house_exterior.png
-%%DATADIR%%/img/tilesets/mountain_house_exterior2.png
-%%DATADIR%%/img/tilesets/mountain_house_interior.png
-%%DATADIR%%/img/tilesets/mountain_landscape.png
-%%DATADIR%%/img/tilesets/test.png
-%%DATADIR%%/mus/Allacrost_Fanfare.ogg
-%%DATADIR%%/mus/Allacrost_Intermission.ogg
-%%DATADIR%%/mus/Allacrost_Opening_Theme.ogg
-%%DATADIR%%/mus/Confrontation.ogg
-%%DATADIR%%/mus/Opening_Effect.ogg
-%%DATADIR%%/mus/Seeking_New_Worlds.ogg
-%%DATADIR%%/mus/The_Creature_Awakens.ogg
-%%DATADIR%%/mus/Town_Folk.ogg
-%%DATADIR%%/mus/Venturing_Dragons_in_the_Dark.ogg
-%%DATADIR%%/snd/battle_encounter_01.ogg
-%%DATADIR%%/snd/battle_encounter_02.ogg
-%%DATADIR%%/snd/battle_encounter_03.ogg
-%%DATADIR%%/snd/bump.wav
-%%DATADIR%%/snd/cancel.wav
-%%DATADIR%%/snd/coins.wav
-%%DATADIR%%/snd/confirm.wav
-%%DATADIR%%/snd/level_up.wav
-%%DATADIR%%/snd/obtain.wav
-%%DATADIR%%/snd/potion_drink.wav
-%%DATADIR%%/snd/rumble.wav
-%%DATADIR%%/snd/skeleton_attack.wav
-%%DATADIR%%/snd/slime_attack.wav
-%%DATADIR%%/snd/snake_attack.wav
-%%DATADIR%%/snd/spider_attack.wav
-%%DATADIR%%/snd/sword_swipe.wav
-%%DATADIR%%/snd/volume_test.wav
-@dirrm %%DATADIR%%/snd
-@dirrm %%DATADIR%%/mus
-@dirrm %%DATADIR%%/img/tilesets
-@dirrm %%DATADIR%%/img/temp
-@dirrm %%DATADIR%%/img/sprites/map
-@dirrm %%DATADIR%%/img/sprites/battle/enemies
-@dirrm %%DATADIR%%/img/sprites/battle/characters
-@dirrm %%DATADIR%%/img/sprites/battle
-@dirrm %%DATADIR%%/img/sprites
-@dirrm %%DATADIR%%/img/portraits/menu
-@dirrm %%DATADIR%%/img/portraits/map
-@dirrm %%DATADIR%%/img/portraits/battle
-@dirrm %%DATADIR%%/img/portraits
-@dirrm %%DATADIR%%/img/misc
-@dirrm %%DATADIR%%/img/menus/locations
-@dirrm %%DATADIR%%/img/menus
-@dirrm %%DATADIR%%/img/logos
-@dirrm %%DATADIR%%/img/icons/weapons
-@dirrm %%DATADIR%%/img/icons/items
-@dirrm %%DATADIR%%/img/icons/battle
-@dirrm %%DATADIR%%/img/icons/armor
-@dirrm %%DATADIR%%/img/icons/actors/enemies
-@dirrm %%DATADIR%%/img/icons/actors/characters
-@dirrm %%DATADIR%%/img/icons/actors
-@dirrm %%DATADIR%%/img/icons
-@dirrm %%DATADIR%%/img/fonts
-@dirrm %%DATADIR%%/img/backdrops/battle
-@dirrm %%DATADIR%%/img/backdrops
-@dirrm %%DATADIR%%/img
-@dirrm %%DATADIR%%/dat/tilesets
-@dirrm %%DATADIR%%/dat/skills
-@dirrm %%DATADIR%%/dat/objects
-@dirrm %%DATADIR%%/dat/maps
-@dirrm %%DATADIR%%/dat/config
-@dirrm %%DATADIR%%/dat/actors
-@dirrm %%DATADIR%%/dat
+%%DATADIR%%/allacrost/dat/actors/characters.lua
+%%DATADIR%%/allacrost/dat/actors/enemies_set_01.lua
+%%DATADIR%%/allacrost/dat/actors/enemies_set_02.lua
+%%DATADIR%%/allacrost/dat/config/boot.lua
+%%DATADIR%%/allacrost/dat/config/restore_settings.lua
+%%DATADIR%%/allacrost/dat/config/settings.lua
+%%DATADIR%%/allacrost/dat/credits.lua
+%%DATADIR%%/allacrost/dat/maps/demo_cave.lua
+%%DATADIR%%/allacrost/dat/maps/demo_town.lua
+%%DATADIR%%/allacrost/dat/objects/arm_armor.lua
+%%DATADIR%%/allacrost/dat/objects/head_armor.lua
+%%DATADIR%%/allacrost/dat/objects/items.lua
+%%DATADIR%%/allacrost/dat/objects/leg_armor.lua
+%%DATADIR%%/allacrost/dat/objects/torso_armor.lua
+%%DATADIR%%/allacrost/dat/objects/weapons.lua
+%%DATADIR%%/allacrost/dat/skills/attack.lua
+%%DATADIR%%/allacrost/dat/skills/defense.lua
+%%DATADIR%%/allacrost/dat/skills/support.lua
+%%DATADIR%%/allacrost/dat/tilesets/autotiling.lua
+%%DATADIR%%/allacrost/dat/tilesets/desert_cave.lua
+%%DATADIR%%/allacrost/dat/tilesets/desert_cave_ground.lua
+%%DATADIR%%/allacrost/dat/tilesets/desert_cave_walls.lua
+%%DATADIR%%/allacrost/dat/tilesets/desert_cave_walls2.lua
+%%DATADIR%%/allacrost/dat/tilesets/desert_cave_water.lua
+%%DATADIR%%/allacrost/dat/tilesets/mountain_house_exterior.lua
+%%DATADIR%%/allacrost/dat/tilesets/mountain_house_exterior2.lua
+%%DATADIR%%/allacrost/dat/tilesets/mountain_house_interior.lua
+%%DATADIR%%/allacrost/dat/tilesets/mountain_landscape.lua
+%%DATADIR%%/allacrost/img/backdrops/battle/desert_cave.png
+%%DATADIR%%/allacrost/img/backdrops/battle/desert_cave_anim.png
+%%DATADIR%%/allacrost/img/backdrops/battle/mountain_village.png
+%%DATADIR%%/allacrost/img/backdrops/boot_screen00.jpg
+%%DATADIR%%/allacrost/img/fonts/COPYING
+%%DATADIR%%/allacrost/img/fonts/junicode_regular.ttf
+%%DATADIR%%/allacrost/img/fonts/libertine.ttf
+%%DATADIR%%/allacrost/img/fonts/tarnhalo.ttf
+%%DATADIR%%/allacrost/img/fonts/vtc_switchblade_romance.ttf
+%%DATADIR%%/allacrost/img/icons/actors/characters/claudius.png
+%%DATADIR%%/allacrost/img/icons/actors/characters/laila.png
+%%DATADIR%%/allacrost/img/icons/actors/enemies/aerocephal.png
+%%DATADIR%%/allacrost/img/icons/actors/enemies/arcana_drake.png
+%%DATADIR%%/allacrost/img/icons/actors/enemies/aurum-drakueli.png
+%%DATADIR%%/allacrost/img/icons/actors/enemies/daemarbora.png
+%%DATADIR%%/allacrost/img/icons/actors/enemies/deceleon.png
+%%DATADIR%%/allacrost/img/icons/actors/enemies/green_slime.png
+%%DATADIR%%/allacrost/img/icons/actors/enemies/nagaruda.png
+%%DATADIR%%/allacrost/img/icons/actors/enemies/scorpion.png
+%%DATADIR%%/allacrost/img/icons/actors/enemies/skeleton.png
+%%DATADIR%%/allacrost/img/icons/actors/enemies/snake.png
+%%DATADIR%%/allacrost/img/icons/actors/enemies/spider.png
+%%DATADIR%%/allacrost/img/icons/armor/butterfly_pins.png
+%%DATADIR%%/allacrost/img/icons/armor/cobalt_helm.png
+%%DATADIR%%/allacrost/img/icons/armor/karlate_breastplate.png
+%%DATADIR%%/allacrost/img/icons/armor/karlate_greaves.png
+%%DATADIR%%/allacrost/img/icons/armor/karlate_helmet.png
+%%DATADIR%%/allacrost/img/icons/armor/karlate_shield.png
+%%DATADIR%%/allacrost/img/icons/armor/leather_boots.png
+%%DATADIR%%/allacrost/img/icons/armor/leather_chain_mail.png
+%%DATADIR%%/allacrost/img/icons/armor/leather_sandals.png
+%%DATADIR%%/allacrost/img/icons/armor/phoenix_shield.png
+%%DATADIR%%/allacrost/img/icons/armor/stone_bracelet.png
+%%DATADIR%%/allacrost/img/icons/armor/willow_dress.png
+%%DATADIR%%/allacrost/img/icons/armor/winged_circlet.png
+%%DATADIR%%/allacrost/img/icons/battle/attack.png
+%%DATADIR%%/allacrost/img/icons/battle/attack_point_target.png
+%%DATADIR%%/allacrost/img/icons/battle/character_selector.png
+%%DATADIR%%/allacrost/img/icons/battle/defend.png
+%%DATADIR%%/allacrost/img/icons/battle/item.png
+%%DATADIR%%/allacrost/img/icons/battle/support.png
+%%DATADIR%%/allacrost/img/icons/battle/swap_card.png
+%%DATADIR%%/allacrost/img/icons/battle/swap_icon.png
+%%DATADIR%%/allacrost/img/icons/items/health_potion.png
+%%DATADIR%%/allacrost/img/icons/items/health_potion_large.png
+%%DATADIR%%/allacrost/img/icons/weapons/arbalest.png
+%%DATADIR%%/allacrost/img/icons/weapons/iron_sword.png
+%%DATADIR%%/allacrost/img/icons/weapons/karlate_sword.png
+%%DATADIR%%/allacrost/img/icons/weapons/quick_crossbow.png
+%%DATADIR%%/allacrost/img/icons/weapons/reinforced_crossbow.png
+%%DATADIR%%/allacrost/img/icons/weapons/standard_crossbow.png
+%%DATADIR%%/allacrost/img/logos/mac_logo.icns
+%%DATADIR%%/allacrost/img/logos/main_logo_background.png
+%%DATADIR%%/allacrost/img/logos/main_logo_sword.png
+%%DATADIR%%/allacrost/img/logos/main_logo_text.png
+%%DATADIR%%/allacrost/img/logos/program_icon.bmp
+%%DATADIR%%/allacrost/img/logos/program_icon.ico
+%%DATADIR%%/allacrost/img/menus/battle_bottom_menu.png
+%%DATADIR%%/allacrost/img/menus/battle_character_bars.png
+%%DATADIR%%/allacrost/img/menus/battle_character_selection.png
+%%DATADIR%%/allacrost/img/menus/black_sleet_parch.png
+%%DATADIR%%/allacrost/img/menus/black_sleet_skin.png
+%%DATADIR%%/allacrost/img/menus/black_sleet_texture.png
+%%DATADIR%%/allacrost/img/menus/cursor.png
+%%DATADIR%%/allacrost/img/menus/dialogue_box.png
+%%DATADIR%%/allacrost/img/menus/dialogue_nameplate.png
+%%DATADIR%%/allacrost/img/menus/locations/desert_cave.png
+%%DATADIR%%/allacrost/img/menus/locations/mountain_village.png
+%%DATADIR%%/allacrost/img/menus/stamina_bar.png
+%%DATADIR%%/allacrost/img/menus/stamina_icon.png
+%%DATADIR%%/allacrost/img/menus/stamina_icon_selected.png
+%%DATADIR%%/allacrost/img/menus/status_icons.png
+%%DATADIR%%/allacrost/img/misc/category_icons.png
+%%DATADIR%%/allacrost/img/misc/chest1.png
+%%DATADIR%%/allacrost/img/misc/dialogue_icon.png
+%%DATADIR%%/allacrost/img/misc/editor-tools/stock-tool-bucket-fill-22.png
+%%DATADIR%%/allacrost/img/misc/editor-tools/stock-tool-color-picker-22.png
+%%DATADIR%%/allacrost/img/misc/editor-tools/stock-tool-eraser-22.png
+%%DATADIR%%/allacrost/img/misc/editor-tools/stock-tool-pencil-22.png
+%%DATADIR%%/allacrost/img/misc/editor-tools/stock-tool-rect-select-22.png
+%%DATADIR%%/allacrost/img/misc/stamina_bar_background.png
+%%DATADIR%%/allacrost/img/misc/stamina_bar_infinite_overlay.png
+%%DATADIR%%/allacrost/img/misc/torch_light_mask.png
+%%DATADIR%%/allacrost/img/portraits/battle/claudius_damage.png
+%%DATADIR%%/allacrost/img/portraits/battle/laila_damage.png
+%%DATADIR%%/allacrost/img/portraits/map/claudius.png
+%%DATADIR%%/allacrost/img/portraits/map/laila.png
+%%DATADIR%%/allacrost/img/portraits/map/marcus.png
+%%DATADIR%%/allacrost/img/portraits/map/vanica.png
+%%DATADIR%%/allacrost/img/portraits/menu/claudius.png
+%%DATADIR%%/allacrost/img/portraits/menu/claudius_large.png
+%%DATADIR%%/allacrost/img/portraits/menu/claudius_small.png
+%%DATADIR%%/allacrost/img/portraits/menu/laila.png
+%%DATADIR%%/allacrost/img/portraits/menu/laila_large.png
+%%DATADIR%%/allacrost/img/portraits/menu/laila_small.png
+%%DATADIR%%/allacrost/img/portraits/menu/marcus_small.png
+%%DATADIR%%/allacrost/img/portraits/menu/vanica_small.png
+%%DATADIR%%/allacrost/img/sprites/battle/characters/claudius_idle.png
+%%DATADIR%%/allacrost/img/sprites/battle/characters/laila_idle.png
+%%DATADIR%%/allacrost/img/sprites/battle/enemies/aerocephal.png
+%%DATADIR%%/allacrost/img/sprites/battle/enemies/arcana_drake.png
+%%DATADIR%%/allacrost/img/sprites/battle/enemies/aurum-drakueli.png
+%%DATADIR%%/allacrost/img/sprites/battle/enemies/daemarbora.png
+%%DATADIR%%/allacrost/img/sprites/battle/enemies/deceleon.png
+%%DATADIR%%/allacrost/img/sprites/battle/enemies/green_slime.png
+%%DATADIR%%/allacrost/img/sprites/battle/enemies/nagaruda.png
+%%DATADIR%%/allacrost/img/sprites/battle/enemies/scorpion.png
+%%DATADIR%%/allacrost/img/sprites/battle/enemies/skeleton.png
+%%DATADIR%%/allacrost/img/sprites/battle/enemies/snake.png
+%%DATADIR%%/allacrost/img/sprites/battle/enemies/spider.png
+%%DATADIR%%/allacrost/img/sprites/map/boy_npc01_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/claudius_frightened.png
+%%DATADIR%%/allacrost/img/sprites/map/claudius_herostance.png
+%%DATADIR%%/allacrost/img/sprites/map/claudius_run.png
+%%DATADIR%%/allacrost/img/sprites/map/claudius_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/gigas_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/girl_npc02_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/laila_run.png
+%%DATADIR%%/allacrost/img/sprites/map/laila_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/man_npc01_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/man_npc02_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/marcus_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/naga_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/old_woman_npc01_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/scorpion_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/slime_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/snake_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/soldier_npc01_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/vanica_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/woman_npc01_walk.png
+%%DATADIR%%/allacrost/img/sprites/map/woman_npc02_walk.png
+%%DATADIR%%/allacrost/img/tilesets/desert_cave.png
+%%DATADIR%%/allacrost/img/tilesets/desert_cave_ground.png
+%%DATADIR%%/allacrost/img/tilesets/desert_cave_walls.png
+%%DATADIR%%/allacrost/img/tilesets/desert_cave_walls2.png
+%%DATADIR%%/allacrost/img/tilesets/desert_cave_water.png
+%%DATADIR%%/allacrost/img/tilesets/mountain_house_exterior.png
+%%DATADIR%%/allacrost/img/tilesets/mountain_house_exterior2.png
+%%DATADIR%%/allacrost/img/tilesets/mountain_house_interior.png
+%%DATADIR%%/allacrost/img/tilesets/mountain_landscape.png
+%%DATADIR%%/allacrost/mus/Allacrost_Fanfare.ogg
+%%DATADIR%%/allacrost/mus/Allacrost_Intermission.ogg
+%%DATADIR%%/allacrost/mus/Allacrost_Opening_Theme.ogg
+%%DATADIR%%/allacrost/mus/Confrontation.ogg
+%%DATADIR%%/allacrost/mus/Opening_Effect.ogg
+%%DATADIR%%/allacrost/mus/Seeking_New_Worlds.ogg
+%%DATADIR%%/allacrost/mus/The_Creature_Awakens.ogg
+%%DATADIR%%/allacrost/mus/Town_Folk.ogg
+%%DATADIR%%/allacrost/mus/Venturing_Dragons_in_the_Dark.ogg
+%%DATADIR%%/allacrost/snd/battle_encounter_01.ogg
+%%DATADIR%%/allacrost/snd/battle_encounter_02.ogg
+%%DATADIR%%/allacrost/snd/battle_encounter_03.ogg
+%%DATADIR%%/allacrost/snd/bump.wav
+%%DATADIR%%/allacrost/snd/cancel.wav
+%%DATADIR%%/allacrost/snd/chestclose1.wav
+%%DATADIR%%/allacrost/snd/chestclose2.wav
+%%DATADIR%%/allacrost/snd/chestclose3.wav
+%%DATADIR%%/allacrost/snd/chestopen1.wav
+%%DATADIR%%/allacrost/snd/chestopen2.wav
+%%DATADIR%%/allacrost/snd/chestopen3.wav
+%%DATADIR%%/allacrost/snd/coins.wav
+%%DATADIR%%/allacrost/snd/confirm.wav
+%%DATADIR%%/allacrost/snd/crossbow.ogg
+%%DATADIR%%/allacrost/snd/crossbow_miss.ogg
+%%DATADIR%%/allacrost/snd/door_close.wav
+%%DATADIR%%/allacrost/snd/door_open1.wav
+%%DATADIR%%/allacrost/snd/door_open2.wav
+%%DATADIR%%/allacrost/snd/footstep_concrete1.wav
+%%DATADIR%%/allacrost/snd/footstep_concrete2.wav
+%%DATADIR%%/allacrost/snd/footstep_grass1.wav
+%%DATADIR%%/allacrost/snd/footstep_grass2.wav
+%%DATADIR%%/allacrost/snd/gong.wav
+%%DATADIR%%/allacrost/snd/gong2.wav
+%%DATADIR%%/allacrost/snd/heal.wav
+%%DATADIR%%/allacrost/snd/heal_spell.wav
+%%DATADIR%%/allacrost/snd/obtain.wav
+%%DATADIR%%/allacrost/snd/potion_drink.wav
+%%DATADIR%%/allacrost/snd/rumble.wav
+%%DATADIR%%/allacrost/snd/skeleton_attack.wav
+%%DATADIR%%/allacrost/snd/slime_attack.wav
+%%DATADIR%%/allacrost/snd/snake_attack.wav
+%%DATADIR%%/allacrost/snd/spider_attack.wav
+%%DATADIR%%/allacrost/snd/sword_swipe.wav
+%%DATADIR%%/allacrost/snd/swordslice1.wav
+%%DATADIR%%/allacrost/snd/swordslice2.wav
+%%DATADIR%%/allacrost/snd/swordslice3.wav
+%%DATADIR%%/allacrost/snd/volume_test.wav
+@dirrm %%DATADIR%%/allacrost/snd
+@dirrm %%DATADIR%%/allacrost/mus
+@dirrm %%DATADIR%%/allacrost/img/tilesets
+@dirrm %%DATADIR%%/allacrost/img/temp
+@dirrm %%DATADIR%%/allacrost/img/sprites/map
+@dirrm %%DATADIR%%/allacrost/img/sprites/battle/enemies
+@dirrm %%DATADIR%%/allacrost/img/sprites/battle/characters
+@dirrm %%DATADIR%%/allacrost/img/sprites/battle
+@dirrm %%DATADIR%%/allacrost/img/sprites
+@dirrm %%DATADIR%%/allacrost/img/portraits/menu
+@dirrm %%DATADIR%%/allacrost/img/portraits/map
+@dirrm %%DATADIR%%/allacrost/img/portraits/battle
+@dirrm %%DATADIR%%/allacrost/img/portraits
+@dirrm %%DATADIR%%/allacrost/img/misc/editor-tools
+@dirrm %%DATADIR%%/allacrost/img/misc
+@dirrm %%DATADIR%%/allacrost/img/menus/locations
+@dirrm %%DATADIR%%/allacrost/img/menus
+@dirrm %%DATADIR%%/allacrost/img/logos
+@dirrm %%DATADIR%%/allacrost/img/icons/weapons
+@dirrm %%DATADIR%%/allacrost/img/icons/items
+@dirrm %%DATADIR%%/allacrost/img/icons/battle
+@dirrm %%DATADIR%%/allacrost/img/icons/armor
+@dirrm %%DATADIR%%/allacrost/img/icons/actors/enemies
+@dirrm %%DATADIR%%/allacrost/img/icons/actors/characters
+@dirrm %%DATADIR%%/allacrost/img/icons/actors
+@dirrm %%DATADIR%%/allacrost/img/icons
+@dirrm %%DATADIR%%/allacrost/img/fonts
+@dirrm %%DATADIR%%/allacrost/img/backdrops/battle
+@dirrm %%DATADIR%%/allacrost/img/backdrops
+@dirrm %%DATADIR%%/allacrost/img
+@dirrm %%DATADIR%%/allacrost/dat/tilesets
+@dirrm %%DATADIR%%/allacrost/dat/skills
+@dirrm %%DATADIR%%/allacrost/dat/objects
+@dirrm %%DATADIR%%/allacrost/dat/maps
+@dirrm %%DATADIR%%/allacrost/dat/config
+@dirrm %%DATADIR%%/allacrost/dat/actors
+@dirrm %%DATADIR%%/allacrost/dat
+@dirrm %%DATADIR%%/allacrost
 @dirrm %%DATADIR%%
