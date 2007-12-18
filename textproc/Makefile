@@ -331,6 +331,7 @@
     SUBDIR += nunnimcax
     SUBDIR += nux
     SUBDIR += ny-aspell
+    SUBDIR += ocaml-csv
     SUBDIR += ocaml-expat
     SUBDIR += ocaml-pxp
     SUBDIR += ocaml-yaxpo
