@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Net_FTP
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	ftp www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR OO interface to the PHP FTP functions plus some additions
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 USE_PHP=	ftp
 
