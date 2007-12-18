@@ -1,0 +1,9 @@
+include/netembryo/url.h
+include/netembryo/rtsp_errors.h
+include/netembryo/wsocket.h
+lib/libnetembryo.a
+lib/libnetembryo.la
+lib/libnetembryo.so
+lib/libnetembryo.so.4
+libdata/pkgconfig/libnetembryo.pc
+@dirrm include/netembryo
