@@ -6,18 +6,13 @@
 #
 
 PORTNAME=		kooldock
-PORTVERSION=		0.4.6
-PORTREVISION=		2
+PORTVERSION=		0.4.7
 CATEGORIES=		deskutils
-MASTER_SITES=		http://www.kde-apps.org/CONTENT/content-files/ \
-			http://www.kde-look.org/CONTENT/content-files/ \
-			http://freebsd.unixfreunde.de/sources/
-DISTNAME=		${KDELOOKITEM}-${PORTNAME}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		gustau.perez@gmail.com
 COMMENT=		OS-X dock-like for KDE
-
-KDELOOKITEM=		50910
 
 WRKSRC=			${WRKDIR}/kooldock
 
@@ -25,13 +20,14 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:15 automake:19:env autoconf:261:env
+USE_AUTOTOOLS=		libtool:15
 INSTALLS_ICONS=		yes
 USE_GETTEXT=		yes
 USE_KDELIBS_VER=	3
+USE_BZIP2=		yes
 
 pre-configure:
-	cd ${WRKSRC} && ${MAKE} -f Makefile.dist
+	@cd ${WRKSRC}/admin && ${RM} -f ltmain.sh && ${CP} -f ${LTMAIN} .
 
 MANCOMPRESSED=		yes
 
