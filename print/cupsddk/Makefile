@@ -3,10 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports-stable/print/cupsddk/Makefile,v 1.1 2007/12/02 18:35:31 ahze Exp $
 
 PORTNAME=	cupsddk
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	print devel
 MASTER_SITES=	EASYSW
 MASTER_SITE_SUBDIR=	${PORTNAME}/${DISTVERSION}
