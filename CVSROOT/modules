@@ -1080,6 +1080,7 @@ bubblemon2	ports/sysutils/bubblemon2
 bubbros		ports/games/bubbros
 buddy		ports/science/buddy
 buffer		ports/misc/buffer
+bufferpool	ports/devel/bufferpool
 buffy		ports/x11-themes/buffy
 bug-buddy	ports/devel/bug-buddy
 bugle		ports/graphics/bugle
