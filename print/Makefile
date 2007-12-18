@@ -138,6 +138,7 @@
     SUBDIR += latex-mathabx
     SUBDIR += latex-msc
     SUBDIR += latex-pgf
+    SUBDIR += latex-prettyref
     SUBDIR += latex-resume
     SUBDIR += latex-subfloat
     SUBDIR += latex-svninfo

@@ -1,0 +1,8 @@
+Prettyref provides a command \newrefformat, which specifies the way in
+which a reference is typeset, according to a label "identification".
+The identification is set in the \label command, by using prefixed label
+names; so instead of \label{mysection}, one uses \label{sec:mysection},
+and prettyref interprets the "sec:" part.  The package is compatible
+with hyperref and with other packages.
+
+WWW: http://www.ctan.org/tex-archive/macros/latex/contrib/prettyref/
