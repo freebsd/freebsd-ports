@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	daemonlogger
-PORTVERSION=	0.91
+PORTVERSION=	1.0.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.snort.org/dl/daemonlogger/
+MASTER_SITES=	http://www.snort.org/users/roesch/code/
 
 MAINTAINER=	wxs@atarininja.org
 COMMENT=	A packet sniffer capable of running as a daemon and as a software tap
