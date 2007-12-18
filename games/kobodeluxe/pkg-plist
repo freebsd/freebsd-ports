@@ -1,55 +1,55 @@
 bin/kobodl
-%%DATADIR%%/gfx/bigship.pcx
+%%DATADIR%%/gfx/bigship.png
+%%DATADIR%%/gfx/bolt.png
 %%DATADIR%%/gfx/brushes.png
-%%DATADIR%%/gfx/bullets.pcx
+%%DATADIR%%/gfx/bullets.png
 %%DATADIR%%/gfx/counter.png
+%%DATADIR%%/gfx/deluxe.png
+%%DATADIR%%/gfx/explo1b.png
+%%DATADIR%%/gfx/explo2b.png
+%%DATADIR%%/gfx/focusfx.png
 %%DATADIR%%/gfx/font2b.png
 %%DATADIR%%/gfx/font3b.png
 %%DATADIR%%/gfx/font4b.png
+%%DATADIR%%/gfx/hitnoise.png
 %%DATADIR%%/gfx/loading.png
-%%DATADIR%%/gfx/logo3.png
-%%DATADIR%%/gfx/noise.pcx
+%%DATADIR%%/gfx/logo.png
+%%DATADIR%%/gfx/logomask.png
+%%DATADIR%%/gfx/microfont.png
+%%DATADIR%%/gfx/noise.png
 %%DATADIR%%/gfx/screen.png
-%%DATADIR%%/gfx/sprites.pcx
-%%DATADIR%%/gfx/tiles.pcx
-%%DATADIR%%/gfx/tube1.png
-%%DATADIR%%/gfx/tube2.png
+%%DATADIR%%/gfx/sprites.png
+%%DATADIR%%/gfx/tiles.png
 %%DATADIR%%/sfx/aguitar1.agw
-%%DATADIR%%/sfx/ballad1.agw
-%%DATADIR%%/sfx/ballad1.mid
-%%DATADIR%%/sfx/bassdrum3.agw
 %%DATADIR%%/sfx/bassdrum5.agw
 %%DATADIR%%/sfx/beam.raw
 %%DATADIR%%/sfx/bomb.raw
-%%DATADIR%%/sfx/bongo1.agw
 %%DATADIR%%/sfx/brass2.agw
+%%DATADIR%%/sfx/breakdown1.agw
 %%DATADIR%%/sfx/bubble.raw
 %%DATADIR%%/sfx/bzzzt1.agw
 %%DATADIR%%/sfx/claps1.agw
 %%DATADIR%%/sfx/edge2.agw
-%%DATADIR%%/sfx/elecbass2.agw
 %%DATADIR%%/sfx/enemym.raw
 %%DATADIR%%/sfx/expl.raw
 %%DATADIR%%/sfx/expl2.raw
-%%DATADIR%%/sfx/expl3.raw
-%%DATADIR%%/sfx/fine.raw
 %%DATADIR%%/sfx/gameover1.agw
 %%DATADIR%%/sfx/hardsync1.agw
 %%DATADIR%%/sfx/kobosfx.h
 %%DATADIR%%/sfx/launch.agw
 %%DATADIR%%/sfx/launch2.agw
-%%DATADIR%%/sfx/marimba2.agw
 %%DATADIR%%/sfx/metallic.raw
+%%DATADIR%%/sfx/missile1.agw
 %%DATADIR%%/sfx/music.agw
-%%DATADIR%%/sfx/noiseburst1.agw
+%%DATADIR%%/sfx/music_c.agw
 %%DATADIR%%/sfx/noiseburst2.agw
 %%DATADIR%%/sfx/oneup.raw
-%%DATADIR%%/sfx/phattpad1.agw
 %%DATADIR%%/sfx/phattpad2.agw
 %%DATADIR%%/sfx/ready1.agw
 %%DATADIR%%/sfx/ring.raw
+%%DATADIR%%/sfx/save_waves.agw
 %%DATADIR%%/sfx/sfx.agw
-%%DATADIR%%/sfx/shot.raw
+%%DATADIR%%/sfx/sfx_c.agw
 %%DATADIR%%/sfx/sine.agw
 %%DATADIR%%/sfx/snare1.agw
 %%DATADIR%%/sfx/synbass1.agw
@@ -58,8 +58,9 @@ bin/kobodl
 %%DATADIR%%/sfx/thunder1.agw
 %%DATADIR%%/sfx/trance1.agw
 %%DATADIR%%/sfx/trance1.mid
-@exec install -d -o root -g games -m 775 %%SCOREDIR%%
-@unexec rmdir %%SCOREDIR%% 2>/dev/null || true
+%%DATADIR%%/sfx/trance1_c.agw
 @dirrm %%DATADIR%%/sfx
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
+@exec install -d -o root -g games -m 775 %%SCOREDIR%%
+@dirrmtry %%SCOREDIR%%
