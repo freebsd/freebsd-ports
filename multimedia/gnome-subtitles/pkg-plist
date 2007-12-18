@@ -1,23 +1,36 @@
 bin/gnome-subtitles
+lib/gnome-subtitles/GStreamerPlaybin.dll
 lib/gnome-subtitles/gnome-subtitles.exe
+lib/gnome-subtitles/libgstreamer_playbin.so
 lib/gnome-subtitles/sublib.dll
 share/applications/gnome-subtitles.desktop
-share/gnome/help/gnome-subtitles/C/legal.xml
 share/gnome/help/gnome-subtitles/C/gnome-subtitles.xml
+share/gnome/help/gnome-subtitles/C/legal.xml
 share/gnome/help/gnome-subtitles/ca/gnome-subtitles.xml
+share/gnome/help/gnome-subtitles/el/gnome-subtitles.xml
+share/gnome/help/gnome-subtitles/oc/gnome-subtitles.xml
 share/gnome/help/gnome-subtitles/sv/gnome-subtitles.xml
 share/omf/gnome-subtitles/gnome-subtitles-C.omf
 share/omf/gnome-subtitles/gnome-subtitles-ca.omf
+share/omf/gnome-subtitles/gnome-subtitles-el.omf
+share/omf/gnome-subtitles/gnome-subtitles-oc.omf
 share/omf/gnome-subtitles/gnome-subtitles-sv.omf
 share/pixmaps/gnome-subtitles.png
 share/locale/ca/LC_MESSAGES/gnome-subtitles.mo
-share/locale/es/LC_MESSAGES/gnome-subtitles.mo
-share/locale/sv/LC_MESSAGES/gnome-subtitles.mo
 share/locale/dz/LC_MESSAGES/gnome-subtitles.mo
+share/locale/el/LC_MESSAGES/gnome-subtitles.mo
+share/locale/es/LC_MESSAGES/gnome-subtitles.mo
+share/locale/fi/LC_MESSAGES/gnome-subtitles.mo
+share/locale/oc/LC_MESSAGES/gnome-subtitles.mo
+share/locale/pl/LC_MESSAGES/gnome-subtitles.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-subtitles.mo
+share/locale/sv/LC_MESSAGES/gnome-subtitles.mo
 @dirrmtry lib/gnome-subtitles
 @dirrmtry share/omf/gnome-subtitles
 @dirrmtry share/gnome/help/gnome-subtitles/C
 @dirrmtry share/gnome/help/gnome-subtitles/sv
+@dirrmtry share/gnome/help/gnome-subtitles/oc
+@dirrmtry share/gnome/help/gnome-subtitles/el
 @dirrmtry share/gnome/help/gnome-subtitles/ca
 @dirrmtry share/gnome/help/gnome-subtitles
 @dirrmtry locale
