@@ -1,0 +1,29 @@
+@comment $FreeBSD$
+bin/urlgrabber
+%%PYTHON_SITELIBDIR%%/urlgrabber/__init__.py
+%%PYTHON_SITELIBDIR%%/urlgrabber/__init__.pyc
+%%PYTHON_SITELIBDIR%%/urlgrabber/__init__.pyo
+%%PYTHON_SITELIBDIR%%/urlgrabber/byterange.py
+%%PYTHON_SITELIBDIR%%/urlgrabber/byterange.pyc
+%%PYTHON_SITELIBDIR%%/urlgrabber/byterange.pyo
+%%PYTHON_SITELIBDIR%%/urlgrabber/grabber.py
+%%PYTHON_SITELIBDIR%%/urlgrabber/grabber.pyc
+%%PYTHON_SITELIBDIR%%/urlgrabber/grabber.pyo
+%%PYTHON_SITELIBDIR%%/urlgrabber/keepalive.py
+%%PYTHON_SITELIBDIR%%/urlgrabber/keepalive.pyc
+%%PYTHON_SITELIBDIR%%/urlgrabber/keepalive.pyo
+%%PYTHON_SITELIBDIR%%/urlgrabber/mirror.py
+%%PYTHON_SITELIBDIR%%/urlgrabber/mirror.pyc
+%%PYTHON_SITELIBDIR%%/urlgrabber/mirror.pyo
+%%PYTHON_SITELIBDIR%%/urlgrabber/progress.py
+%%PYTHON_SITELIBDIR%%/urlgrabber/progress.pyc
+%%PYTHON_SITELIBDIR%%/urlgrabber/progress.pyo
+%%PYTHON_SITELIBDIR%%/urlgrabber/sslfactory.py
+%%PYTHON_SITELIBDIR%%/urlgrabber/sslfactory.pyc
+%%PYTHON_SITELIBDIR%%/urlgrabber/sslfactory.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/urlgrabber
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
