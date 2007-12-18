@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gtk-send-pr
-PORTVERSION=	0.4.8
-PORTREVISION=	1
+PORTVERSION=	0.4.9
 CATEGORIES=	sysutils
-MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mmendez@energyhq.be
 COMMENT=	GTK2 send-pr tool
 
 LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
