@@ -54,11 +54,12 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <url>http://sourceforge.net/mailarchive/message.php?msg_name=d4c731da0712101044l7245cba9l34974008879f47a3%40mail.gmail.com</url>
-      <url>http://sourceforge.net/mailarchive/forum.php?thread_name=d4c731da0712101044l7245cba9l34974008879f47a3%40mail.gmail.com&forum_name=ganglia-developers</url>
+      <url>http://sourceforge.net/mailarchive/forum.php?thread_name=d4c731da0712101044l7245cba9l34974008879f47a3%40mail.gmail.com&amp;forum_name=ganglia-developers</url>
     </references>
     <dates>
       <discovery>2007-12-10</discovery>
       <entry>2007-12-17</entry>
+      <modified>2007-12-18</modified>
     </dates>
   </vuln>
 
