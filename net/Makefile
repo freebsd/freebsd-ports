@@ -363,6 +363,7 @@
     SUBDIR += netcat
     SUBDIR += netclasses
     SUBDIR += netdude
+    SUBDIR += netembryo
     SUBDIR += netmap
     SUBDIR += netpipes
     SUBDIR += netscript
