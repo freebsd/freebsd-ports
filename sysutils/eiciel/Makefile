@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	eiciel
-PORTVERSION=	0.9.4
-PORTREVISION=	3
+PORTVERSION=	0.9.5.1
 CATEGORIES=	sysutils security
-MASTER_SITES=	http://rofi.pinchito.com/eiciel/download/
+MASTER_SITES=	http://rofi.roger-ferrer.org/eiciel/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME-based ACL editor, with integration into Nautilus
@@ -17,23 +16,14 @@ COMMENT=	A GNOME-based ACL editor, with integration into Nautilus
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2
-USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack gnomeprefix intlhack nautilus2
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-
-MAN1=		eiciel.1
-
-.if defined(WITHOUT_NLS)
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=	--disable-nls
-.else
-PLIST_SUB+=	NLS=""
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-.endif
 
-.include <bsd.port.pre.mk>
+MAN1=		eiciel.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^libeiciel_nautilus_la_LDFLAGS/ s|= |= -avoid-version -module |' \
@@ -42,4 +32,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
