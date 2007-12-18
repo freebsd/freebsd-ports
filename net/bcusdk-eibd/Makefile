@@ -25,9 +25,9 @@ CONFIGURE_ARGS+=--enable-onlyeibd \
 		--enable-eibnetip \
 		--enable-eibnetipserver \
 		--enable-eibnetiptunnel \
-		--enable-groupcache
-CPPFLAGS=	"-I${LOCALBASE}/include -L${LOCALBASE}/lib"
-CFLAGS=		"-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS}"
+		--enable-groupcache \
+		CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
+		CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS}"
 
 OPTIONS=	JAVA "Install Java client library" off \
 		EXAMPLES "Install example client applications" on
