@@ -1,4 +1,5 @@
 bin/qrq
+bin/qrqscore
 %%DATADIR%%/callbase
 %%DATADIR%%/qrqrc
 %%DATADIR%%/toplist
