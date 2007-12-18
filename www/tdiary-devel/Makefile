@@ -21,6 +21,8 @@ PATCHFILES=	tdiary.20061126.patch tdiary.20061210.patch
 MAINTAINER=	tota@rtfm.jp
 COMMENT=	A Web-based diary system (like weblog) written in Ruby
 
+FORBIDDEN=	contains a vulnerability: http://www.tdiary.org/20071215.html written in Japanese
+
 NO_BUILD=	yes
 CONFLICTS?=	tdiary-[0-9]* \
 		ja-tdiary-[0-9]* \
