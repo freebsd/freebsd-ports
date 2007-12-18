@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	thefish
-PORTVERSION=	0.6.5
-PORTREVISION=	2
+PORTVERSION=	0.6.6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.energyhq.es.eu.org/files/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mmendez@energyhq.be
 COMMENT=	Qt/Gtk+/ncurses rc.conf editor/management tool
 
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
