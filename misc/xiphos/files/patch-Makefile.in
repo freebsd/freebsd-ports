@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Apr 24 13:34:53 2007
-+++ Makefile.in	Tue Apr 24 13:39:06 2007
-@@ -69,8 +69,7 @@
+--- Makefile.in.orig	2007-12-18 09:55:52.000000000 -0500
++++ Makefile.in	2007-12-18 09:55:52.000000000 -0500
+@@ -66,8 +66,7 @@
      *) f=$$p;; \
    esac;
  am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
@@ -16,7 +16,7 @@
  installdirs-am:
 -	for dir in "$(DESTDIR)$(gnomemenudir)" "$(DESTDIR)$(gnomesworddocdir)"; do \
 +	for dir in "$(DESTDIR)$(gnomemenudir)" do \
- 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-recursive
 @@ -738,8 +737,7 @@
@@ -27,5 +27,5 @@
 -	install-gnomesworddocDATA
 +install-data-am: install-data-local install-gnomemenuDATA
  
- install-exec-am:
+ install-dvi: install-dvi-recursive
  
