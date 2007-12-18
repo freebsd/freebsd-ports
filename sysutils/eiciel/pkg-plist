@@ -3,50 +3,50 @@ lib/nautilus/extensions-1.0/libeiciel-nautilus.a
 lib/nautilus/extensions-1.0/libeiciel-nautilus.la
 lib/nautilus/extensions-1.0/libeiciel-nautilus.so
 share/applications/eiciel.desktop
-share/eiciel/doc/C/eiciel.xml
-share/eiciel/doc/C/figures/altres-default.png
-share/eiciel/doc/C/figures/altres.png
-share/eiciel/doc/C/figures/detall_mascara.png
-share/eiciel/doc/C/figures/entrada_acl.png
-share/eiciel/doc/C/figures/grup-acl-default.png
-share/eiciel/doc/C/figures/grup-acl.png
-share/eiciel/doc/C/figures/grup-default.png
-share/eiciel/doc/C/figures/grup.png
-share/eiciel/doc/C/figures/mascara-default.png
-share/eiciel/doc/C/figures/mascara.png
-share/eiciel/doc/C/figures/obrir_fitxer.png
-share/eiciel/doc/C/figures/obrir_fitxer_nautilus.png
-share/eiciel/doc/C/figures/pantalla_ea.png
-share/eiciel/doc/C/figures/permisos_acl.png
-share/eiciel/doc/C/figures/permisos_ugo.png
-share/eiciel/doc/C/figures/usuari-acl-default.png
-share/eiciel/doc/C/figures/usuari-acl.png
-share/eiciel/doc/C/figures/usuari-default.png
-share/eiciel/doc/C/figures/usuari.png
-share/eiciel/img/altres-default.png
-share/eiciel/img/altres.png
-share/eiciel/img/grup-acl-default.png
-share/eiciel/img/grup-acl.png
-share/eiciel/img/grup-default.png
-share/eiciel/img/grup.png
-share/eiciel/img/icona_eiciel_16.png
-share/eiciel/img/icona_eiciel_24.png
-share/eiciel/img/icona_eiciel_32.png
-share/eiciel/img/icona_eiciel_48.png
-share/eiciel/img/icona_eiciel_64.png
-share/eiciel/img/mascara-default.png
-share/eiciel/img/mascara.png
-share/eiciel/img/usuari-acl-default.png
-share/eiciel/img/usuari-acl.png
-share/eiciel/img/usuari-default.png
-share/eiciel/img/usuari.png
-%%NLS%%share/locale/ca/LC_MESSAGES/eiciel.mo
-%%NLS%%share/locale/de/LC_MESSAGES/eiciel.mo
-%%NLS%%share/locale/es/LC_MESSAGES/eiciel.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/eiciel.mo
-@dirrm share/eiciel/img
-@dirrm share/eiciel/doc/C/figures
-@dirrm share/eiciel/doc/C
-@dirrm share/eiciel/doc
-@dirrm share/eiciel
+%%DATADIR%%/img/altres-default.png
+%%DATADIR%%/img/altres.png
+%%DATADIR%%/img/grup-acl-default.png
+%%DATADIR%%/img/grup-acl.png
+%%DATADIR%%/img/grup-default.png
+%%DATADIR%%/img/grup.png
+%%DATADIR%%/img/icona_eiciel_16.png
+%%DATADIR%%/img/icona_eiciel_24.png
+%%DATADIR%%/img/icona_eiciel_32.png
+%%DATADIR%%/img/icona_eiciel_48.png
+%%DATADIR%%/img/icona_eiciel_64.png
+%%DATADIR%%/img/mascara-default.png
+%%DATADIR%%/img/mascara.png
+%%DATADIR%%/img/usuari-acl-default.png
+%%DATADIR%%/img/usuari-acl.png
+%%DATADIR%%/img/usuari-default.png
+%%DATADIR%%/img/usuari.png
+share/gnome/help/eiciel/C/eiciel.xml
+share/gnome/help/eiciel/C/figures/altres-default.png
+share/gnome/help/eiciel/C/figures/altres.png
+share/gnome/help/eiciel/C/figures/detall_mascara.png
+share/gnome/help/eiciel/C/figures/entrada_acl.png
+share/gnome/help/eiciel/C/figures/grup-acl-default.png
+share/gnome/help/eiciel/C/figures/grup-acl.png
+share/gnome/help/eiciel/C/figures/grup-default.png
+share/gnome/help/eiciel/C/figures/grup.png
+share/gnome/help/eiciel/C/figures/mascara-default.png
+share/gnome/help/eiciel/C/figures/mascara.png
+share/gnome/help/eiciel/C/figures/obrir_fitxer.png
+share/gnome/help/eiciel/C/figures/obrir_fitxer_nautilus.png
+share/gnome/help/eiciel/C/figures/pantalla_ea.png
+share/gnome/help/eiciel/C/figures/permisos_acl.png
+share/gnome/help/eiciel/C/figures/permisos_ugo.png
+share/gnome/help/eiciel/C/figures/usuari-acl-default.png
+share/gnome/help/eiciel/C/figures/usuari-acl.png
+share/gnome/help/eiciel/C/figures/usuari-default.png
+share/gnome/help/eiciel/C/figures/usuari.png
+share/locale/ca/LC_MESSAGES/eiciel.mo
+share/locale/de/LC_MESSAGES/eiciel.mo
+share/locale/es/LC_MESSAGES/eiciel.mo
+share/locale/sv/LC_MESSAGES/eiciel.mo
+@dirrm %%DATADIR%%/img
+@dirrm %%DATADIR%%
+@dirrm share/gnome/help/eiciel/C/figures
+@dirrm share/gnome/help/eiciel/C
+@dirrm share/gnome/help/eiciel
 @dirrmtry share/applications
