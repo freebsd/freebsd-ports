@@ -7986,6 +7986,7 @@ murrine-configurator	ports/x11-themes/murrine-configurator
 muse		ports/sysutils/muse
 museekplus	ports/net-p2p/museekplus
 musepack	ports/audio/musepack
+musica		ports/audio/musica
 musicbox-tag-editor	ports/audio/musicbox-tag-editor
 musiccontrol	ports/audio/musiccontrol
 musicpd		ports/audio/musicpd
