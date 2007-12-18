@@ -35,4 +35,10 @@ INSTALLS_OMF=	yes
 
 MAN1=		gnome-commander.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
+BROKEN=		Does not compile
+.endif
+
+.include <bsd.port.post.mk>
