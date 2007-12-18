@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qrq
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/qrq/ \
 		${MASTER_SITE_LOCAL}
@@ -26,6 +26,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/qrqscore ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 	${MKDIR} ${DATADIR}
 .for f in callbase qrqrc toplist
