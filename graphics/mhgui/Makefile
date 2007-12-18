@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mhgui
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	makehuman
@@ -27,6 +26,10 @@ USE_GL=		yes
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^libmhguidocdir =/ s|doc/|share/doc/|' ${WRKSRC}/Makefile.in
