@@ -3337,6 +3337,7 @@ ftptool		ports/ftp/ftptool
 ftrace		ports/sysutils/ftrace
 ftrack		ports/mail/ftrack
 ftree		ports/misc/ftree
+ftwin		ports/sysutils/ftwin
 fudgit		ports/math/fudgit
 fugu		ports/net-im/fugu
 fuhquake	ports/games/fuhquake
