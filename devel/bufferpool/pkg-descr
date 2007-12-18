@@ -1,0 +1,5 @@
+Bufferpool is a memory management library used in feng, libnemesi, felix.
+It provides a nice way to store rtp packets efficiently and share
+them across applications.
+
+WWW: http://live.polito.it/bufferpool

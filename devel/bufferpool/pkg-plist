@@ -1,0 +1,7 @@
+include/bufferpool/bufferpool.h
+lib/libbufferpool.a
+lib/libbufferpool.la
+lib/libbufferpool.so
+lib/libbufferpool.so.1
+libdata/pkgconfig/libbufferpool.pc
+@dirrm include/bufferpool

@@ -107,6 +107,7 @@
     SUBDIR += boost
     SUBDIR += boost-python
     SUBDIR += bouml
+    SUBDIR += bufferpool
     SUBDIR += bug-buddy
     SUBDIR += bugzilla
     SUBDIR += bugzilla2
