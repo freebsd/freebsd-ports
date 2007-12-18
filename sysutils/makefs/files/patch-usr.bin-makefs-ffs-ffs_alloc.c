@@ -8,7 +8,7 @@
 +		if (ip->i_fs->fs_magic == FS_UFS1_MAGIC)
 +			ip->i_ffs1_blocks += size / DEV_BSIZE;
 +		else
-+			ip->i_ffs1_blocks += size / DEV_BSIZE;
++			ip->i_ffs2_blocks += size / DEV_BSIZE;
  		*bnp = bno;
  		return (0);
  	}
