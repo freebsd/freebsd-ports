@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openmovieeditor
-PORTVERSION=	0.0.20071010
+PORTVERSION=	0.0.20071118
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -23,6 +23,8 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GL=		yes
+CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include"
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
