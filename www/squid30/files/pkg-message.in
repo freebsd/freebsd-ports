@@ -30,6 +30,3 @@
      Additionally, you should check your configuration by calling
      'squid -f /path/to/squid.conf -k parse' before starting Squid.
 
-     Keep in mind that this version of Squid is a development version and
-     is probably noticeably slower and less stable than Squid 2.
-
