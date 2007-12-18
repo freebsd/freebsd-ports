@@ -69,7 +69,6 @@ share/icons/hicolor/22x22/apps/swfdec.png
 share/icons/hicolor/24x24/apps/swfdec.png
 share/icons/hicolor/32x32/apps/swfdec.png
 share/icons/hicolor/48x48/apps/swfdec.png
-share/icons/hicolor/icon-theme.cache
 share/icons/hicolor/scalable/apps/swfdec.svg
 @dirrm share/gtk-doc/html/swfdec
 @dirrm include/swfdec-%%VERSION%%/libswfdec-gtk
