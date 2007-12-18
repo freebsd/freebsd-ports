@@ -6483,6 +6483,7 @@ liberation-fonts-ttf	ports/x11-fonts/liberation-fonts-ttf
 liberator	ports/net-p2p/liberator
 libesmtp	ports/mail/libesmtp
 libetpan	ports/mail/libetpan
+libev		ports/devel/libev
 libevent	ports/devel/libevent
 libevnet	ports/net/libevnet
 libevocosm	ports/devel/libevocosm
