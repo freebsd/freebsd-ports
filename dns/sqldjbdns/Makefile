@@ -27,7 +27,7 @@ PLIST_FILES=	bin/dnsbench bin/pgsqldns bin/pgsqldns-conf bin/pgsqldnscache \
 		share/examples/${PORTNAME}/create.sql
 PLIST_DIRS=	share/examples/${PORTNAME}
 
-pre-build:
+post-configure:
 		${CP} -R ${DJ_SRC} ${WRKSRC}/djbdns-1.05
 		${PATCH} < ${WRKSRC}/djbdns-1.05.patch -d ${WRKSRC}/djbdns-1.05
 		${MV} ${WRKSRC}/sqldns-schema.html ${WRKSRC}/pgsqldns-schema.html
@@ -42,10 +42,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
