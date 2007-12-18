@@ -1,0 +1,16 @@
+Terminal mixer can start processes inside a pseudo-terminal, which can
+be accessed through a Unix socket, TCP or even raw ethernet (not yet
+ported to FreeBSD). The programs can be linked to the current
+terminal, or they can be unlinked like in nohup. But even in this
+latter case you can connect to them using the mentioned protocols.
+
+tm can also start programs as if they communicate through pipes
+instead of terminals, and this can be quite useful for
+remote-controlling applications.
+
+More than one client can connect to the served pseudo-terminal, either
+using tm as a client or telnet for TCP. You can choose if they are
+only allowed to read, or they can also contribute on input.
+
+WWW: http://vicerveza.homeunix.net/~viric/soft/tm/
+Author: Lluis Batlle i Rossell <viric_at_vicerveza_dot_homeunix_dot_net>

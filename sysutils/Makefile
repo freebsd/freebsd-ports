@@ -644,6 +644,7 @@
     SUBDIR += timemon
     SUBDIR += tinybsd
     SUBDIR += titlefix
+    SUBDIR += tm
     SUBDIR += tmpreaper
     SUBDIR += tmpwatch
     SUBDIR += topless
