@@ -205,7 +205,6 @@ lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
 lib/%%APP_NAME%%/defaults/messenger/US/mailViews.dat
 lib/%%APP_NAME%%/defaults/messenger/mailViews.dat
 lib/%%APP_NAME%%/defaults/pref/all-l10n.js
-lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
 lib/%%APP_NAME%%/defaults/pref/channel-prefs.js
 lib/%%APP_NAME%%/defaults/pref/mail-branding.js
 lib/%%APP_NAME%%/defaults/pref/mail-prefs.js
