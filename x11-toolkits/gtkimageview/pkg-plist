@@ -4,6 +4,7 @@ include/gtkimageview/gtkiimagetool.h
 include/gtkimageview/gtkimagenav.h
 include/gtkimageview/gtkimagescrollwin.h
 include/gtkimageview/gtkimagetooldragger.h
+include/gtkimageview/gtkimagetoolpainter.h
 include/gtkimageview/gtkimagetoolselector.h
 include/gtkimageview/gtkimageview.h
 include/gtkimageview/gtkzooms.h
