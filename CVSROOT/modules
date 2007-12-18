@@ -15794,6 +15794,7 @@ tla		ports/devel/tla
 tlb		ports/mail/tlb
 tlf		ports/comms/tlf
 tlswrap		ports/security/tlswrap
+tm		ports/sysutils/tm
 tmake		ports/devel/tmake
 tmda		ports/mail/tmda
 tme		ports/emulators/tme
