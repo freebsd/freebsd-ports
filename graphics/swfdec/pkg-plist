@@ -19,18 +19,18 @@ include/swfdec-%%VERSION%%/libswfdec/swfdec_file_loader.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_keys.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_loader.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_player.h
-include/swfdec-%%VERSION%%/libswfdec/swfdec_script.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_rectangle.h
+include/swfdec-%%VERSION%%/libswfdec/swfdec_script.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_system.h
 include/swfdec-%%VERSION%%/libswfdec/swfdec_url.h
 lib/libswfdec-%%VERSION%%.a
 lib/libswfdec-%%VERSION%%.la
 lib/libswfdec-%%VERSION%%.so
-lib/libswfdec-%%VERSION%%.so.3
+lib/libswfdec-%%VERSION%%.so.5
 lib/libswfdec-gtk-%%VERSION%%.a
 lib/libswfdec-gtk-%%VERSION%%.la
 lib/libswfdec-gtk-%%VERSION%%.so
-lib/libswfdec-gtk-%%VERSION%%.so.3
+lib/libswfdec-gtk-%%VERSION%%.so.5
 libdata/pkgconfig/swfdec-%%VERSION%%.pc
 libdata/pkgconfig/swfdec-gtk-%%VERSION%%.pc
 share/gtk-doc/html/swfdec/SwfdecAsContext.html
@@ -38,10 +38,10 @@ share/gtk-doc/html/swfdec/SwfdecAsDebugger.html
 share/gtk-doc/html/swfdec/SwfdecAudio.html
 share/gtk-doc/html/swfdec/SwfdecGtkLoader.html
 share/gtk-doc/html/swfdec/SwfdecGtkPlayer.html
-share/gtk-doc/html/swfdec/SwfdecSystem.html
 share/gtk-doc/html/swfdec/SwfdecGtkWidget.html
 share/gtk-doc/html/swfdec/SwfdecLoader.html
 share/gtk-doc/html/swfdec/SwfdecPlayer.html
+share/gtk-doc/html/swfdec/SwfdecSystem.html
 share/gtk-doc/html/swfdec/ch01.html
 share/gtk-doc/html/swfdec/ch02.html
 share/gtk-doc/html/swfdec/ch03.html
@@ -64,6 +64,13 @@ share/gtk-doc/html/swfdec/swfdec-SwfdecURL.html
 share/gtk-doc/html/swfdec/swfdec.devhelp
 share/gtk-doc/html/swfdec/swfdec.devhelp2
 share/gtk-doc/html/swfdec/up.png
+share/icons/hicolor/16x16/apps/swfdec.png
+share/icons/hicolor/22x22/apps/swfdec.png
+share/icons/hicolor/24x24/apps/swfdec.png
+share/icons/hicolor/32x32/apps/swfdec.png
+share/icons/hicolor/48x48/apps/swfdec.png
+share/icons/hicolor/icon-theme.cache
+share/icons/hicolor/scalable/apps/swfdec.svg
 @dirrm share/gtk-doc/html/swfdec
 @dirrm include/swfdec-%%VERSION%%/libswfdec-gtk
 @dirrm include/swfdec-%%VERSION%%/libswfdec

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	swfdec
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.5/
 
@@ -28,6 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-Wl,-Bsymbolic -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-audio=oss
 USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
 OPTIONS=	GSTREAMER "Support for decoding some codecs with GStreamer" off
 
