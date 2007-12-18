@@ -7,7 +7,7 @@
 
 PORTNAME=	libcaca
 DISTVERSION=	0.99.beta11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://libcaca.zoy.org/files/
 
@@ -41,9 +41,15 @@ LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SLANG) || exists(${LOCALBASE}/lib/libslang.so.2)
+.if defined(WITH_SLANG)
+.  if exists(${LOCALBASE}/lib/libslang.so.1)
+LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
+.  else
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
+.  endif
 CONFIGURE_ARGS+=--enable-slang
+.else
+CONFIGURE_ARGS+=--disable-slang
 .endif
 
 post-patch:
