@@ -8179,6 +8179,7 @@ netcomponents	ports/java/netcomponents
 netdisco	ports/net-mgmt/netdisco
 netdude		ports/net/netdude
 netdump-server	ports/sysutils/netdump-server
+netembryo	ports/net/netembryo
 netgen		ports/cad/netgen
 nethack32	ports/games/nethack32
 nethack33	ports/games/nethack33
