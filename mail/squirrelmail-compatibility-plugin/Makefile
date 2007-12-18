@@ -6,6 +6,7 @@
 
 PORTNAME=	compatibility
 PORTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=	squirrelmail-
@@ -16,7 +17,7 @@ DIST_SUBDIR=	squirrelmail
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Required by many plugins for compatibility with SquirrelMail
 
-RUN_DEPENDS=	squirrelmail>=1.4.10:${PORTSDIR}/mail/squirrelmail
+RUN_DEPENDS=	squirrelmail>=1.4.11:${PORTSDIR}/mail/squirrelmail
 
 CONFLICTS=	squirrelmail-compatibility-plugin-1.*
 
@@ -65,7 +66,7 @@ do-install:
 post-install:
 	@${ECHO} "Patching SquirrelMail for compatibility plugin"
 	@${ECHO} ""
-	${PATCH} -sN -p0 -d ${SQUIRRELDIR}/plugins/compatibility < ${SQUIRRELDIR}/plugins/compatibility/patches/compatibility_patch-1.4.10.diff
+	${PATCH} -sN -p0 -d ${SQUIRRELDIR}/plugins/compatibility < ${SQUIRRELDIR}/plugins/compatibility/patches/compatibility_patch-1.4.11.diff
 	@${ECHO} ""
 
 .ifndef WITHOUT_ACTIVATE
