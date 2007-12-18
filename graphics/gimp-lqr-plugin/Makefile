@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gimp-lqr-plugin
-PORTVERSION=	0.2.1
+DISTVERSION=	0.3.0-6
 CATEGORIES=	graphics
-MASTER_SITES=	http://web.tiscali.it/carlobaldassi/GimpLqrPlugin/ \
+MASTER_SITES=	http://liquidrescale.wikidot.com/local--files/en:download-page/ \
 		http://www.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@amdmi3.ru
@@ -22,6 +22,8 @@ USE_GNOME=	gtk20
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLIST_SUB=	PLUGIN_DIR=${PLUGIN_DIR}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.3.0
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
