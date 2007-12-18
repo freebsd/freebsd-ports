@@ -43,8 +43,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.96.3
-PORTREVISION=	6
+PORTVERSION=	0.96.4
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -113,8 +112,9 @@ CONFIGURE_ARGS+=	-U d_gnutls
 .endif
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	-U d_enablenls
+CONFIGURE_ARGS+=	-U d_nls
 .else
+CONFIGURE_ARGS+=	-D d_nls
 LIB_DEPENDS+=		intl:${PORTSDIR}/devel/gettext
 PLIST_FILES=		share/locale/de/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/el/LC_MESSAGES/gtk-gnutella.mo \

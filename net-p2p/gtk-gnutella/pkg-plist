@@ -3,9 +3,10 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/bogons.txt
 %%DATADIR%%/favicon.png
 %%DATADIR%%/geo-ip.txt
-%%DATADIR%%/gwcache.boot
 %%DATADIR%%/hostiles.txt
 %%DATADIR%%/robots.txt
+%%DATADIR%%/spam.txt
+%%DATADIR%%/spam_sha1.txt
 %%DATADIR%%/en/FAQ
 %%DATADIR%%/el/FAQ
 %%DATADIR%%/ja/FAQ
@@ -14,6 +15,7 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/pixmaps/booklib.xpm
 %%DATADIR%%/pixmaps/booksha.xpm
 %%DATADIR%%/pixmaps/bookshav.xpm
+%%DATADIR%%/pixmaps/booktth.xpm
 %%DATADIR%%/pixmaps/chip.xpm
 %%DATADIR%%/pixmaps/clanbomber_red.xpm
 %%DATADIR%%/pixmaps/clanbomber_yellow.xpm
@@ -27,6 +29,8 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/pixmaps/firewall_udp_punchable.xpm
 %%DATADIR%%/pixmaps/freeze.xpm
 %%DATADIR%%/pixmaps/icon.xpm
+%%DATADIR%%/pixmaps/icon.16x16.xpm
+%%DATADIR%%/pixmaps/icon.32x32.xpm
 %%DATADIR%%/pixmaps/leaf.xpm
 %%DATADIR%%/pixmaps/legacy.xpm
 %%DATADIR%%/pixmaps/magnet.16x16.png
