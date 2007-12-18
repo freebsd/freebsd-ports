@@ -52,6 +52,7 @@
     SUBDIR += p5-Business-TW-TSIB-CStorePayment
     SUBDIR += p5-Business-TW-TSIB-VirtualAccount
     SUBDIR += p5-Business-WorldPay-Junior
+    SUBDIR += p5-Data-Currency
     SUBDIR += p5-Finance-Amortization
     SUBDIR += p5-Finance-Currency-Convert
     SUBDIR += p5-Finance-Currency-Convert-WebserviceX
