@@ -26,9 +26,9 @@ if [ "$2" = "POST-INSTALL" ]; then
     pw useradd ${EUSER} -u ${UID} -g ${EGROUP} -s /nonexistent -c "Night Light IRC Proxy"
   fi
 
-  sed -i -e "s:^IRCPROXYBINFILE=.*:IRCPROXYBINFILE=${PKG_PREFIX}/sbin/${BINFILE}:" ${PKG_PREFIX}/sbin/ircproxy.sh || exit 1
-  sed -i -e "s:^IRCPROXYPIDFILE=.*:IRCPROXYPIDFILE=${PIDFILE}:" ${PKG_PREFIX}/sbin/ircproxy.sh || exit 1
-  rm -f ${PKG_PREFIX}/sbin/ircproxy.sh-e
+  #sed -i -e "s:^IRCPROXYBINFILE=.*:IRCPROXYBINFILE=${PKG_PREFIX}/sbin/${BINFILE}:" ${PKG_PREFIX}/sbin/ircproxy.sh || exit 1
+  #sed -i -e "s:^IRCPROXYPIDFILE=.*:IRCPROXYPIDFILE=${PIDFILE}:" ${PKG_PREFIX}/sbin/ircproxy.sh || exit 1
+  #rm -f ${PKG_PREFIX}/sbin/ircproxy.sh-e
 
   #grep -q "^[^#]*${PKG_PREFIX}/sbin/ircproxy\.sh" /etc/crontab >/dev/null 2>&1
   #if [ ! $? -eq 0 ] ; then

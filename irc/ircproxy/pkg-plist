@@ -1,8 +1,9 @@
-sbin/ircproxyd
-sbin/mkpasswd
-sbin/ircproxy.sh
-etc/ircproxy/ircproxy-listen.conf
-etc/ircproxy/ircproxy-access.conf
-etc/ircproxy/ircproxy-user.conf
-etc/ircproxy/ircproxy-conn.conf
-@dirrm etc/ircproxy
+bin/ircproxyd
+bin/imkpasswd
+share/ircproxy/ircproxyd.conf
+share/ircproxy/ircproxyd-listen.conf
+share/ircproxy/ircproxyd-access.conf
+share/ircproxy/ircproxyd-user.conf
+share/ircproxy/ircproxyd-conn.conf
+share/ircproxy/ircproxyd-autoop.conf
+@dirrm share/ircproxy
