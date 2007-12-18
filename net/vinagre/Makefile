@@ -7,6 +7,7 @@
 
 PORTNAME=	vinagre
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -15,7 +16,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC client for the GNOME Desktop
 
 LIB_DEPENDS=	gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc \
-    		avahi-core.5:${PORTSDIR}/net/avahi
+    		avahi-core.5:${PORTSDIR}/net/avahi \
+		avahi-ui.0:${PORTSDIR}/net/avahi-gtk
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
