@@ -6,30 +6,45 @@
 #
 
 PORTNAME=	ircproxy
-DISTVERSION=	1.2.42d.pre3
+PORTVERSION=	1.3.1b
 CATEGORIES=	irc
-MASTER_SITES=	http://www.ircproxy.night-light.net/files/
+MASTER_SITES=	http://filearchive.night-light.net/packages/sources/ircproxy/
 
 MAINTAINER=	jonas@night-light.net
 COMMENT=	An IRC proxy/bouncer daemon
 
-GNU_CONFIGURE=		yes
-CONFIGURE_WRKSRC=	${WRKSRC}/config
+LIB_DEPENDS=	cares.1:${PORTSDIR}/dns/c-ares
 
-#
-# Copy the freebsd port setup file to automatically generate setup.h
-# So we dont need to do make config, I think this might be the best
-# solution.
-#
-pre-build:
-	@if [ ! -f ${WRKSRC}/config/setup-file ]; then ( \
-		if [ ! -f ${WRKSRC}/setup/setup-freebsd ]; then ( ${ECHO} "Missing the setup-freebsd file!"; exit 1; ) fi; \
-		${CP} ${WRKSRC}/setup/setup-freebsd ${WRKSRC}/setup/setup-file || exit 1; \
-		cd ${WRKSRC}/setup; SETUP_BATCH=y SETUP_QUIET=y ${SH} ./setup || exit 1; \
-		cd ${WRKSRC}/setup; ${SH} ./setup-makefile || exit 1; \
-	) \
-	fi;
-	${CHMOD} u+x ${WRKSRC}/pkg-install || exit 1
-	${CHMOD} u+x ${WRKSRC}/pkg-deinstall || exit 1
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${LOCALBASE}
 
-.include <bsd.port.mk>
+OPTIONS=	SSL "Enable SSL support" on \
+		IPV6 "Enable IPv6 support" on \
+		MEMDEBUG "Enable memory debugging" on \
+		FDDEBUG "Enable file descriptor debugging" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+.else
+CONFIGURE_ARGS+=	--disable-ssl
+.endif
+
+.if !defined(WITH_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
+.endif
+
+.if defined(WITH_MEMDEBUG)
+CONFIGURE_ARGS+=	--enable-memdebug
+.else
+CONFIGURE_ARGS+=	--disable-memdebug
+.endif
+
+.if defined(WITH_FDDEBUG)
+CONFIGURE_ARGS+=	--enable-fddebug
+.else
+CONFIGURE_ARGS+=	--disable-fddebug
+.endif
+
+.include <bsd.port.post.mk>
