@@ -8,7 +8,8 @@
 PORTNAME=	Clp
 PORTVERSION=	1.6.0
 CATEGORIES=	math
-MASTER_SITES=	http://www.coin-or.org/download/source/Clp/
+MASTER_SITES=	http://www.coin-or.org/download/source/Clp/ \
+		http://www.mavetju.org/download/adopted/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	co9co9@gmail.com
