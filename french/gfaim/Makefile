@@ -9,13 +9,14 @@ PORTNAME=	gfaim
 PORTVERSION=	0.30
 PORTREVISION=	3
 CATEGORIES=	french
-MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
+MASTER_SITES=	http://freeperso.free.fr/ \
+		http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	Gfaim est un logiciel de recherche de recettes de cuisine
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gtk12
 
 DATADIR?=	${PREFIX}/lib/gfaim
@@ -29,10 +30,4 @@ PORTDOCS=	legal.txt lisezmoi.txt
 MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
