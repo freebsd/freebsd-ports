@@ -9486,6 +9486,7 @@ p5-Data-Alias	ports/devel/p5-Data-Alias
 p5-Data-Bind	ports/devel/p5-Data-Bind
 p5-Data-Buffer	ports/misc/p5-Data-Buffer
 p5-Data-Compare	ports/devel/p5-Data-Compare
+p5-Data-Currency	ports/finance/p5-Data-Currency
 p5-Data-Dump	ports/devel/p5-Data-Dump
 p5-Data-Dump-Streamer	ports/devel/p5-Data-Dump-Streamer
 p5-Data-DumpXML	ports/devel/p5-Data-DumpXML
