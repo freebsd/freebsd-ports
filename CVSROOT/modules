@@ -13489,6 +13489,7 @@ py-twistedWords	ports/net-im/py-twistedWords
 py-twitter	ports/net/py-twitter
 py-twofish	ports/security/py-twofish
 py-unit		ports/devel/py-unit
+py-urlgrabber	ports/www/py-urlgrabber
 py-urlimport	ports/devel/py-urlimport
 py-urljr	ports/www/py-urljr
 py-urwid	ports/devel/py-urwid
