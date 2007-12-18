@@ -22,6 +22,8 @@ EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
 
+BROKEN=		Depends on math/atlas which is problematic, and waiting for SDPA7
+
 .if defined(WITH_ICC)
 BUILD_DEPENDS+=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
