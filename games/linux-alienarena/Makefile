@@ -15,10 +15,9 @@ DISTNAME=	${PORTNAME}2007-20071011-linux
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (Linux version)
 
-DEPRECATED=	needs missing/outdated Linux dependencies; use native instead
-BROKEN=		${DEPRECATED}
-
 RUN_DEPENDS=	${DATADIR}/arena/default.cfg:${PORTSDIR}/games/alienarena-data
+
+BROKEN=		needs missing/outdated Linux dependencies (need new linux_compat port and FreeBSD 7); use native instead for now
 
 USE_ZIP=	yes
 USE_LINUX=	yes
