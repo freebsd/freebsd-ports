@@ -6255,6 +6255,7 @@ latex-mathabx	ports/print/latex-mathabx
 latex-mk	ports/misc/latex-mk
 latex-msc	ports/print/latex-msc
 latex-pgf	ports/print/latex-pgf
+latex-prettyref	ports/print/latex-prettyref
 latex-resume	ports/print/latex-resume
 latex-service	ports/textproc/latex-service
 latex-subfloat	ports/print/latex-subfloat
