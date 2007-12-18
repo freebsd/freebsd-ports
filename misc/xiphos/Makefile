@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	gnomesword
-PORTVERSION=	2.2.3
-PORTREVISION=	2
+PORTVERSION=	2.3.1
 CATEGORIES=	misc gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A bible interface utilizing the sword framework
 
 RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnome-spell \
-		${LOCALBASE}/lib/libsword.so:${PORTSDIR}/misc/sword
+		${LOCALBASE}/lib/libsword-1.5.10.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GETTEXT=	yes
@@ -27,6 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--enable-gtkhtml
 
 post-install:
 .if !defined(NOPORTDOCS)

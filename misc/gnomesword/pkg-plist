@@ -1,21 +1,14 @@
 bin/gnomesword2
+share/applications/gnomesword.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-share/applications/gnomesword.desktop
-share/gnomesword/bookmarks.glade
-share/gnomesword/editor_note.xml
-share/gnomesword/editor_studypad.xml
-share/gnomesword/logo.png
-share/gnomesword/module-manager.glade
-share/gnomesword/prefs.glade
-share/gnomesword/search-dialog.glade
-share/gnomesword/sword3.png
 share/gnome/help/gnomesword/C/authors.xml
 share/gnome/help/gnomesword/C/figures/first_start.png
+share/gnome/help/gnomesword/C/figures/gtkhtml3-vs-mozembed.png
 share/gnome/help/gnomesword/C/figures/interface.png
 share/gnome/help/gnomesword/C/figures/interface_biblepane-options.png
 share/gnome/help/gnomesword/C/figures/interface_biblepane.png
@@ -60,6 +53,7 @@ share/gnome/help/gnomesword/C/start.xml
 share/gnome/help/gnomesword/C/studypad.xml
 share/gnome/help/gnomesword/de/authors.xml
 share/gnome/help/gnomesword/de/figures/first_start.png
+share/gnome/help/gnomesword/de/figures/gtkhtml3-vs-mozembed.png
 share/gnome/help/gnomesword/de/figures/interface.png
 share/gnome/help/gnomesword/de/figures/interface_biblepane-options.png
 share/gnome/help/gnomesword/de/figures/interface_biblepane.png
@@ -103,6 +97,7 @@ share/gnome/help/gnomesword/de/start.xml
 share/gnome/help/gnomesword/de/studypad.xml
 share/gnome/help/gnomesword/fr/authors.xml
 share/gnome/help/gnomesword/fr/figures/first_start.png
+share/gnome/help/gnomesword/fr/figures/gtkhtml3-vs-mozembed.png
 share/gnome/help/gnomesword/fr/figures/interface.png
 share/gnome/help/gnomesword/fr/figures/interface_biblepane-options.png
 share/gnome/help/gnomesword/fr/figures/interface_biblepane.png
@@ -144,7 +139,34 @@ share/gnome/help/gnomesword/fr/preferences.xml
 share/gnome/help/gnomesword/fr/search.xml
 share/gnome/help/gnomesword/fr/start.xml
 share/gnome/help/gnomesword/fr/studypad.xml
+%%DATADIR%%/arrow_down.png
+%%DATADIR%%/arrow_down_box.png
+%%DATADIR%%/arrow_up.png
+%%DATADIR%%/arrow_up_box.png
+%%DATADIR%%/bookmarks.glade
+%%DATADIR%%/editor_note.xml
+%%DATADIR%%/editor_studypad.xml
+%%DATADIR%%/logo.png
+%%DATADIR%%/module-manager.glade
+%%DATADIR%%/navbar_versekey.glade
+%%DATADIR%%/prefs.glade
+%%DATADIR%%/search-dialog.glade
+%%DATADIR%%/sword3.png
+share/locale/bg/LC_MESSAGES/gnomesword.mo
+share/locale/cs/LC_MESSAGES/gnomesword.mo
+share/locale/de/LC_MESSAGES/gnomesword.mo
+share/locale/en_GB/LC_MESSAGES/gnomesword.mo
+share/locale/es/LC_MESSAGES/gnomesword.mo
+share/locale/fi/LC_MESSAGES/gnomesword.mo
+share/locale/fr/LC_MESSAGES/gnomesword.mo
+share/locale/nb_NO/LC_MESSAGES/gnomesword.mo
+share/locale/nl/LC_MESSAGES/gnomesword.mo
+share/locale/pt/LC_MESSAGES/gnomesword.mo
+share/locale/ru/LC_MESSAGES/gnomesword.mo
+share/locale/sk/LC_MESSAGES/gnomesword.mo
+share/locale/uk/LC_MESSAGES/gnomesword.mo
 share/pixmaps/gnomesword/about.png
+share/pixmaps/gnomesword/dlg-un-16.png
 share/pixmaps/gnomesword/dlg-un.png
 share/pixmaps/gnomesword/epiphany-bookmark-page.png
 share/pixmaps/gnomesword/epiphany-bookmarks.png
@@ -157,24 +179,14 @@ share/pixmaps/gnomesword/gs2-48x48.ico
 share/pixmaps/gnomesword/gs2-48x48.png
 share/pixmaps/gnomesword/init-settings.png
 share/pixmaps/gnomesword/logo.png
+share/pixmaps/gnomesword/mozilla-icon.png
 share/pixmaps/gnomesword/new_tab_button.png
 share/pixmaps/gnomesword/splash.png
 share/pixmaps/gnomesword/splash2.png
 share/pixmaps/gnomesword/sword.png
 share/pixmaps/gnomesword/sword3.png
 share/pixmaps/gnomesword/tt.png
-share/locale/bg/LC_MESSAGES/gnomesword.mo
-share/locale/cs/LC_MESSAGES/gnomesword.mo
-share/locale/de/LC_MESSAGES/gnomesword.mo
-share/locale/en_GB/LC_MESSAGES/gnomesword.mo
-share/locale/es/LC_MESSAGES/gnomesword.mo
-share/locale/fi/LC_MESSAGES/gnomesword.mo
-share/locale/fr/LC_MESSAGES/gnomesword.mo
-share/locale/nl/LC_MESSAGES/gnomesword.mo
-share/locale/ru/LC_MESSAGES/gnomesword.mo
-share/locale/sk/LC_MESSAGES/gnomesword.mo
-share/locale/uk/LC_MESSAGES/gnomesword.mo
-@dirrm share/pixmaps/gnomesword
+@dirrm %%DATADIR%%
 @dirrm share/gnome/help/gnomesword/fr/figures
 @dirrm share/gnome/help/gnomesword/fr
 @dirrm share/gnome/help/gnomesword/de/figures
@@ -182,6 +194,7 @@ share/locale/uk/LC_MESSAGES/gnomesword.mo
 @dirrm share/gnome/help/gnomesword/C/figures
 @dirrm share/gnome/help/gnomesword/C
 @dirrm share/gnome/help/gnomesword
-@dirrm share/gnomesword
-@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
+@dirrm share/locale/nb_NO/LC_MESSAGES
+@dirrm share/locale/nb_NO
+@dirrm share/pixmaps/gnomesword
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
