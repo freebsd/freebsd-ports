@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	FSM
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR Finite State Machine
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 FILES=		FSM.php
 DOCS=		guide.txt
-TESTS=		001.phpt addTransitionsArray.phpt
+TESTS=		addTransitionsArray.phpt transitions.phpt
 EXAMPLES=	rpn.php
 _EXAMPLESDIR=	docs/examples
 
