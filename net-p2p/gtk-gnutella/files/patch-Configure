@@ -1,0 +1,14 @@
+--- Configure	Thu Oct 18 17:02:36 2007
++++ Configure	Thu Oct 18 17:03:04 2007
+@@ -8678,11 +8678,6 @@
+ 	$aptget 'ADVICE: Run "apt-get install zlib1g-dev".' >&4
+ fi
+ 
+-if [ "$iconv" != yes ]; then
+-	bailout=yes
+-	echo 'ERROR: Cannot find iconv(). Library or header files might be missing.' >&4
+-fi
+-
+ if [ "$frontend" != none ]; then
+ case "$d_gtk" in
+ "$undef")
