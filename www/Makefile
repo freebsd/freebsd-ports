@@ -1065,6 +1065,7 @@
     SUBDIR += py-turbosetup
     SUBDIR += py-twistedWeb
     SUBDIR += py-twistedWeb2
+    SUBDIR += py-urlgrabber
     SUBDIR += py-urljr
     SUBDIR += py-utidy
     SUBDIR += py-webhelpers
