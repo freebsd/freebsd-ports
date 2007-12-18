@@ -12,7 +12,7 @@ CATEGORIES=	mail security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lippe@freebsdbrasil.com.br
+MAINTAINER=	lippemail@gmail.com
 COMMENT=	Content/Anti-virus Scanner for qmail
 
 RUN_DEPENDS+=	reformime:${PORTSDIR}/mail/maildrop \

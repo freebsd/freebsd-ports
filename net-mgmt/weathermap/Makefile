@@ -10,7 +10,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://netmon.grnet.gr/weathermap/dist/
 
-MAINTAINER=	lippe@freebsdbrasil.com.br
+MAINTAINER=	lippemail@gmail.com
 COMMENT=	This tool displays the utilization of the network links
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
