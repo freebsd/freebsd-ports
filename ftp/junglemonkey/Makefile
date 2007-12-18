@@ -17,11 +17,10 @@ COMMENT=	A distributed file sharing program for GNOME
 
 LIB_DEPENDS=	gnet.7:${PORTSDIR}/net/gnet
 
-BROKEN=		Does not build
-
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gnome=yes --enable-debug=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
