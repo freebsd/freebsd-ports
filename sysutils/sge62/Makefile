@@ -16,6 +16,7 @@ DISTNAME=	sge-V60u11_TAG-src
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
 
+# MASTER_SITE requires cookies, which fetch does not support
 FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 # We have to use wget because the master site required cookies to
@@ -24,8 +25,8 @@ DISABLE_SIZE=	yes
 FETCH_CMD=	wget -c
 
 OPTIONS=	BDB "Use DB based spooler" on \
-		DRMAA "Support the Java DRMAA API (requires native Java)" on \
-		QMON "Qmon support (requires X and Motif)" on
+		JAVA "Support Java DRMAA API" on \
+		X11 "Qmon X11 GUI" on
 
 CONFLICTS=	sge-5* sgeee-[0-9]* sge-0.*
 
@@ -101,7 +102,7 @@ AIMK_ARGS+=	-spool-classic
 PLIST_SUB+=	BDB_SPOOL="@comment "
 .endif
 
-.if defined(WITH_DRMAA)
+.if defined(WITH_JAVA)
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
@@ -117,7 +118,7 @@ AIMK_ARGS+=	-no-java -no-jni
 PLIST_SUB+=	DRMAA="@comment "
 .endif
 
-.if defined(WITH_QMON)
+.if defined(WITH_X11)
 USE_MOTIF=	yes
 PLIST_SUB+=	QMON=
 QMON=		qmon
@@ -161,26 +162,33 @@ post-patch:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    -e 's|%%OPENSSLBASE%%|${OPENSSLBASE}|g' < \
 	    ${FILESDIR}/distinst.private > ${WRKSRC}/distinst.private
+.if !defined(WITH_X11)
+	@${REINPLACE_CMD} -e 's/qmon//' ${WRKSRC}/dist/util/setfileperm.sh
+.endif
 
 do-build:
-	cd ${WRKSRC} && ${AIMK_CMD} -only-depend
-	cd ${WRKSRC} && ./scripts/zerodepend
-	cd ${WRKSRC} && ${AIMK_CMD} depend
-	cd ${WRKSRC} && \
+	@cd ${WRKSRC} && ${AIMK_CMD} -only-depend
+	@cd ${WRKSRC} && ./scripts/zerodepend
+	@cd ${WRKSRC} && ${AIMK_CMD} depend
+	@cd ${WRKSRC} && \
 	    ${AIMK_CMD} -debug && \
 	    ${AIMK_CMD} -man ${SGE_PRODUCT} &&
-	${MKDIR} ${TMP_SGE_ROOT}
-	cd ${WRKSRC} && ${SETENV} SGE_ROOT=${TMP_SGE_ROOT} \
+	@${MKDIR} ${TMP_SGE_ROOT}
+	@cd ${WRKSRC} && ${SETENV} SGE_ROOT=${TMP_SGE_ROOT} \
 	    ./scripts/distinst -local -libs ${SGE_ARCH} -- ${INST_PROGS}
+.if !defined(WITH_X11)
+	@${RM} ${TMP_SGE_ROOT}/catman/cat/cat1/qmon.1
+	@${RM} -r ${TMP_SGE_ROOT}/3rd_party/qmon
+.endif
 
 do-install:
-	${MKDIR} ${SGE_ROOT}
-	cd ${TMP_SGE_ROOT} && \
+	@${MKDIR} ${SGE_ROOT}
+	@cd ${TMP_SGE_ROOT} && \
 	    ${FIND} . | ${TAR} cTf - - | ${TAR} xUCf ${SGE_ROOT} -
-	cd ${SGE_ROOT} && ${SETENV} SGE_ROOT=${SGE_ROOT} util/setfileperm.sh -auto ${SGE_ROOT}
+	@cd ${SGE_ROOT} && ${SETENV} SGE_ROOT=${SGE_ROOT} util/setfileperm.sh -auto ${SGE_ROOT}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/../doc && ${FIND} * \( -name CVS \
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/../doc && ${FIND} * \( -name CVS \
 	    ${EXCEPTFILES:S/^/-o -name /} \) -a -prune -o -type f -print \
 	    | ${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR} -
 .endif
@@ -204,7 +212,7 @@ release-tar: build
 
 # Build a pkg-plist and Makefile.man
 build-plist: build
-#.if defined(WITHOUT_BDB) || defined(WITHOUT_JAVA) || defined(WITHOUT_QMON)
+#.if defined(WITHOUT_BDB) || defined(WITHOUT_JAVA) || defined(WITHOUT_X11)
 #	@echo "ERROR: All OPTIONS must be enabled to build plist!" && ${FALSE}
 #.endif
 	@${FIND} ${TMP_SGE_ROOT}/* -name man -prune -o \
