@@ -14,9 +14,7 @@ MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.5/
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
-LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		oil-0.3.1:${PORTSDIR}/devel/liboil \
+LIB_DEPENDS=	 oil-0.3.1:${PORTSDIR}/devel/liboil \
 		soup-2.2.8:${PORTSDIR}/devel/libsoup
 
 USE_XLIB=	yes
@@ -37,7 +35,9 @@ PLIST_SUB=	VERSION=${PORTVERSION:R}
 .if defined(WITH_GSTREAMER)
 USE_GSTREAMER=	yes
 .else
-CONFIGURE_ARGS+=	--disable-gstreamer
+LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
+		mad.2:${PORTSDIR}/audio/libmad
+CONFIGURE_ARGS+=	--disable-gstreamer --enable-ffmpeg --enable-mad
 .endif
 
 post-patch:
