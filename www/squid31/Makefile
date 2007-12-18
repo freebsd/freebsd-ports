@@ -62,8 +62,7 @@
 #     requests.
 
 PORTNAME=	squid
-PORTVERSION=	3.0.r1.${PATCHSET_DATE}
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -81,8 +80,8 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.uk.squid-cache.org/Versions/v3/3.0/ \
 		http://www1.jp.squid-cache.org/Versions/v3/3.0/ \
 		http://www2.tw.squid-cache.org/Versions/v3/3.0/
-MASTER_SITE_SUBDIR=	squid-3/DEVEL
-DISTNAME=	squid-3.0.RC1
+MASTER_SITE_SUBDIR=	squid-3/STABLE
+DISTNAME=	squid-3.0.STABLE1
 DIST_SUBDIR=	squid3.0
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -95,27 +94,18 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www1.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.0/changesets
-# Inspired by editors/vim:
-# (I know that portlint is not happy with this, but putting this code at any
-# other location makes it even unhappier.)
-PATCHSET_DATE=		20071001
-FIRST_PATCHSET=		11149
-LAST_PATCHSET=		11149
-IGNORE_PATCHSETS=
-PATCHFILES!=	jot -w "%d.patch" - ${FIRST_PATCHSET} ${LAST_PATCHSET} 1
-.for ps in ${IGNORE_PATCHSETS}
-PATCHFILES:=	${PATCHFILES:N${ps}\.patch}
-.endfor
+PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	tmseck@netcologne.de
-COMMENT=	HTTP Caching Proxy (development version)
+MAINTAINER=	tmseck@web.de
+COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid30
 
 CONFLICTS=	squid-2.[0-9].*
 GNU_CONFIGURE=	yes
-# disable autotools bootstrapping for now, RC1 does not currently require it:
+# disable autotools bootstrapping for now, 3.0.STABLE does not currently
+# require it:
 #USE_AUTOTOOLS=	autoconf:261 automake:19 libtool:15
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -124,7 +114,7 @@ USE_RC_SUBR=	squid
 SQUID_UID?=	squid
 SQUID_GID?=	squid
 
-MAN8=		cachemgr.cgi.8 squid.8
+MAN8=		cachemgr.cgi.8 squid.8 squid_radius_auth.8
 docs=		QUICKSTART README RELEASENOTES.html doc/debug-sections.txt
 PORTDOCS=	${docs:T}
 PORTEXAMPLES=	*
@@ -189,8 +179,8 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 
 libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
 		msnt_auth ncsa_auth ntlm_auth pam_auth smb_auth \
-		smb_auth.sh squid_db_auth squid_session squid_unix_group \
-		wbinfo_group.pl
+		smb_auth.sh squid_db_auth squid_radius_auth squid_session \
+		squid_unix_group wbinfo_group.pl
 .if !defined(SQUID_CONFIGURE_ARGS) || ${SQUID_CONFIGURE_ARGS:M*--disable-unlinkd*} == ""
 libexec+=	unlinkd
 .endif
@@ -213,7 +203,7 @@ CONFIGURE_ARGS=	--with-default-user=${SQUID_UID} \
 
 # Authentication methods and modules:
 
-basic_auth=	DB NCSA PAM MSNT SMB
+basic_auth=	DB NCSA PAM MSNT SMB squid_radius_auth
 digest_auth=	password
 external_acl=	ip_user session unix_group wbinfo_group
 MAN8+=		ncsa_auth.8 pam_auth.8 squid_db_auth.8 squid_session.8 \
@@ -411,9 +401,6 @@ PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
 PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
 
 post-patch:
-# add this version's datestamp so that Squid identifies itself as patched-up:
-	@${REINPLACE_CMD} -e 's|3.0.RC1|&+PatchSets-${PATCHSET_DATE}|' \
-	    ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	    ${WRKSRC}/src/cf.data.pre
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
