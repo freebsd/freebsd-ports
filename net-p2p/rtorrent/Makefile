@@ -7,7 +7,7 @@
 
 PORTNAME?=	rtorrent
 PORTVERSION?=	0.7.9
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -36,16 +36,16 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	README
 
-#OPTIONS=	XMLRPC "Compile with xmlrpc-c support" on
+OPTIONS=	XMLRPC "Compile with xmlrpc-c support" on
 
 .include <bsd.port.pre.mk>
 
-#.if !defined(WITHOUT_XMLRPC)
-#CONFIGURE_ARGS+=	--with-xmlrpc-c
-#LIB_DEPENDS+=	xmlrpc.7:${PORTSDIR}/net/xmlrpc-c
-#.else
-#CONFIGURE_ARGS+=	--with-xmlrpc-c=no
-#.endif
+.if !defined(WITHOUT_XMLRPC)
+CONFIGURE_ARGS+=	--with-xmlrpc-c
+LIB_DEPENDS+=	xmlrpc.9:${PORTSDIR}/net/xmlrpc-c
+.else
+CONFIGURE_ARGS+=	--with-xmlrpc-c=no
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/configure
