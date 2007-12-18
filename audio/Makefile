@@ -422,6 +422,7 @@
     SUBDIR += muine
     SUBDIR += muse
     SUBDIR += musepack
+    SUBDIR += musica
     SUBDIR += musicbox-tag-editor
     SUBDIR += musiccontrol
     SUBDIR += musicpd

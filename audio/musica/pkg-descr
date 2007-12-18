@@ -1,0 +1,10 @@
+Musica is a GTK based MIDI player.
+
+- Plays MIDI files on Linux machines with an OSS sound card interface.
+- GTK based user interface supporting drag-and-drop for easy file
+  selection. Drag a MIDI file from the GNOME-ified Midnight Commander
+  to Musica's drop pocket and it automatically loads the file.
+- Tempo adjustment, Play a MIDI file up to four times faster or slower.
+- Fast forward. Skip those dull passages in a MIDI file.
+
+WWW: http://www-ict.its.tudelft.nl/~erik/open-source/musica
