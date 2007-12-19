@@ -16,78 +16,34 @@ bin/etded-omni-bot
 %%DATADIR%%/omni-bot/et/scripts/health_goal.gm
 %%DATADIR%%/omni-bot/et/scripts/makemapgm.gm
 %%DATADIR%%/omni-bot/et/scripts/mountvehicle_goal.gm
+%%DATADIR%%/omni-bot/et/scripts/poisoned.gm
 %%DATADIR%%/omni-bot/et/scripts/ridevehicle_goal.gm
 %%DATADIR%%/omni-bot/et/scripts/sample.gm
 %%DATADIR%%/omni-bot/et/scripts/testbot.gm
 %%DATADIR%%/omni-bot/et/scripts/testmap.gm
 %%DATADIR%%/omni-bot/et/scripts/useswitch_goal.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/et_weapons.ppr
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_adrenaline.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_akimbo_colt.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_akimbo_luger.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_akimbo_silenced_colt.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_akimbo_silenced_luger.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_ammopack.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_binoculars.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_carbine.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_colt.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_defaults.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_dynamite.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_fg42.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_fg42_scoped.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_flamethrower.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_garand.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_garand_scope.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_gpg40.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_grenade_allies.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_grenade_axis.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_jaymod_adrenalineshare.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_jaymod_landmine_bbetty.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_jaymod_landmine_poisongas.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_jaymod_m97shotgun.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_jaymod_poisongas.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_jaymod_poisonsyringe.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_k43.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_k43_scoped.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_kar98.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_knife.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_landmine.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_luger.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_m7.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_medkit.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_mobile_mg42.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_mobile_mg42_set.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_mortar.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_mortar_set.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_mp40.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_panzerfaust.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_pliers.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_satchel.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_satchel_det.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_silenced_colt.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_silenced_luger.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_smoke_grenade.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_smoke_marker.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_sten.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_syringe.gm
-%%DATADIR%%/omni-bot/et/scripts/weapons/weapon_thompson.gm
+%%DATADIR%%/omni-bot/et/scripts/weapons/weapons.zip
+%%DATADIR%%/omni-bot/global_scripts/commands.gm
+%%DATADIR%%/omni-bot/global_scripts/config.gm
+%%DATADIR%%/omni-bot/global_scripts/testdebugger.gm
+%%DATADIR%%/omni-bot/global_scripts/testdebugwindows.gm
+%%DATADIR%%/omni-bot/global_scripts/testfilesystem.gm
+%%DATADIR%%/omni-bot/global_scripts/testmath.gm
+%%DATADIR%%/omni-bot/global_scripts/testmisc.gm
+%%DATADIR%%/omni-bot/global_scripts/testrequire.gm
+%%DATADIR%%/omni-bot/global_scripts/utilities.gm
+%%DATADIR%%/omni-bot/global_scripts/weapons/weapon_sample.gm
 %%DATADIR%%/omni-bot/omnibot_et.pk3
 %%DATADIR%%/omni-bot/omnibot_et.so
 %%DATADIR%%/omni-bot/qagame.mp.i386.so
 %%PORTDOCS%%%%DOCSDIR%%/credits.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/Omni-Bot Kommandos und grundlegende Funktionen.pdf
-%%PORTDOCS%%%%DOCSDIR%%/docs/Omni-Bot Quick Start Guide for ET.pdf
-%%PORTDOCS%%%%DOCSDIR%%/docs/Omni-bot Commands and Basic Usage.pdf
-%%PORTDOCS%%%%DOCSDIR%%/docs/The Not-So-Quick start guide.pdf
-%%PORTDOCS%%%%DOCSDIR%%/docs/Waypointing Tips.pdf
-%%PORTDOCS%%%%DOCSDIR%%/docs/Waypointing Tutorial.pdf
-%%PORTDOCS%%%%DOCSDIR%%/docs/Wegpunkte Tutorial.pdf
-%%PORTDOCS%%%%DOCSDIR%%/docs_changelog.txt
-%%PORTDOCS%%%%DOCSDIR%%/et_changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/Omni-bot Wiki.pdf
 %%PORTDOCS%%%%DOCSDIR%%/install.de.txt
 %%PORTDOCS%%%%DOCSDIR%%/install.en.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/omni-bot/global_scripts/weapons
+@dirrm %%DATADIR%%/omni-bot/global_scripts
 @dirrm %%DATADIR%%/omni-bot/et/scripts/weapons
 @dirrm %%DATADIR%%/omni-bot/et/scripts
 @dirrm %%DATADIR%%/omni-bot/et/nav

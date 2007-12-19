@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	omni-bot
-PORTVERSION=	0.6
+PORTVERSION=	0.66
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -27,7 +27,7 @@ DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
 do-build:
 .for f in et etded
 	@(${ECHO} "#!/bin/sh"; \
-	${ECHO} 'exec ${PREFIX}/bin/${f} +set fs_game ${PORTNAME} "$$@"') > \
+	${ECHO} 'exec ${PREFIX}/bin/${f} +set fs_game ${PORTNAME} +set omnibot_path "${DATADIR}/omni-bot" "$$@"') > \
 		${WRKSRC}/${f}-${PORTNAME}
 .endfor
 
@@ -36,9 +36,12 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${DATADIR}/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/omni-bot/omnibot_et.so ${DATADIR}/${PORTNAME}
-	${CP} -R ${WRKSRC}/omni-bot/et ${DATADIR}/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/omnibot/qagame.mp.i386.so ${DATADIR}/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/omni-bot/omnibot_et.so \
+		${DATADIR}/${PORTNAME}
+	cd ${WRKSRC}/omni-bot && ${CP} -R et global_scripts \
+		${DATADIR}/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/omnibot/qagame.mp.i386.so \
+		${DATADIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/omnibot/omnibot_et.pk3 ${DATADIR}/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
