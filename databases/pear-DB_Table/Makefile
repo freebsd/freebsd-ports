@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	DB_Table
-PORTVERSION=	1.5.0r2
+PORTVERSION=	1.5.0
+PORTEPOCH=	1
 CATEGORIES=	databases www pear
-DISTNAME=	DB_Table-1.5.0RC2
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR object-oriented interface to a database table
