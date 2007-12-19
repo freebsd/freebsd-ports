@@ -12,6 +12,7 @@ lib/libverbiste-0.1.so
 lib/libverbiste-0.1.so.0
 libdata/pkgconfig/verbiste-0.1.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/LISEZMOI
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -23,6 +24,7 @@ libdata/pkgconfig/verbiste-0.1.pc
 %%EXAMPLESDIR%%/deconjugator.c
 %%EXAMPLESDIR%%/test-french-deconjugator.pl
 %%EXAMPLESDIR%%/trans-tenses.pl
+%%EXAMPLESDIR%%/generate-all-forms.pl
 %%DATADIR%%-0.1/COPYING
 %%DATADIR%%-0.1/conjugation-fr.xml
 %%DATADIR%%-0.1/verbs-fr.xml
