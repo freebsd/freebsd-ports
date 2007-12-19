@@ -9,26 +9,26 @@ ALLTESTS_PT =	xsl3blastst_pt xdl3blastst_pt xcl3blastst_pt xzl3blastst_pt \
 		xslutst_pt xslutstF_pt xdlutst_pt xdlutstF_pt xclutst_pt xclutstF_pt \
 		xzlutst_pt xzlutstF_pt xsllttst_pt xsllttstF_pt xdllttst_pt \
 		xdllttstF_pt xcllttst_pt xcllttstF_pt xzllttst_pt xzllttstF_pt
-#builderrors?
-#		xsl1blastst_pt xdl1blastst_pt xcl1blastst_pt xzl1blastst_pt \
+#build errors?
 #		xsl2blastst_pt xdl2blastst_pt xcl2blastst_pt xzl2blastst_pt \
-
-test:
-	for i in ${ALLTESTS} ; do \
+#		xsl1blastst_pt xdl1blastst_pt xcl1blastst_pt xzl1blastst_pt \
+#Failed tests
+do-test:
+	@for i in ${ALLTESTS} ; do \
 		${ECHO_CMD} "Making $${i}" ; \
-		cd ${WRKDIR}/ATLAS/bin/NON_THREADED_PIC/ ; ${MAKE} ${.MAKEFLAGS} "ARCH=NON_THREADED_PIC" $${i} ; \
+		cd ${WRKDIR}/ATLAS/NON_THREADED_PIC/bin ; ${MAKE} $${i} ; \
 	done
-	for i in ${ALLTESTS_PT} ; do \
+	@for i in ${ALLTESTS_PT} ; do \
 		${ECHO_CMD} "Making $${i}" ; \
-		cd ${WRKDIR}/ATLAS/bin/THREADED_PIC ; ${MAKE} ${.MAKEFLAGS} "ARCH=THREADED_PIC" $${i} ; \
+		cd ${WRKDIR}/ATLAS/THREADED_PIC/bin ; ${MAKE} $${i} ; \
 	done
-	for i in ${ALLTESTS} ; do \
+	@for i in ${ALLTESTS} ; do \
 		${ECHO_CMD} "Benchmarking $${i}" ; \
-		cd ${WRKDIR}/ATLAS/bin/NON_THREADED_PIC ; ./$${i} ; \
+		cd ${WRKDIR}/ATLAS/NON_THREADED_PIC/bin ; ./$${i} ; \
 	done
-	for i in ${ALLTESTS_PT} ; do \
+	@for i in ${ALLTESTS_PT} ; do \
 		${ECHO_CMD} "Benchmarking $${i}" ; \
-		cd ${WRKDIR}/ATLAS/bin/THREADED_PIC ; ./$${i} ; \
+		cd ${WRKDIR}/ATLAS/THREADED_PIC/bin ; ./$${i} ; \
 	done
 		
 

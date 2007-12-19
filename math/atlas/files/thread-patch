@@ -1,11 +1,12 @@
---- config.c.orig	Tue Jul  1 12:35:09 2003
-+++ config.c	Tue Jul  1 12:35:44 2003
-@@ -79,7 +79,7 @@
- char *usermmnam[2] = {"", "GOTO"};
- enum USERGEMM {UG_None=0, UG_GOTO};
- 
--int XCOMP=0, THREADS=0, USEWINF77=0, NLINES=0, ISWIN=0;
-+int XCOMP=0, THREADS=1, USEWINF77=0, NLINES=0, ISWIN=0; // force threading for single processor
- char TARGNAM[512];
- enum MACHTYPE mach=MACHOther;
- 
+--- CONFIG/src/SpewMakeInc.c~	Fri Feb 16 11:40:19 2007
++++ CONFIG/src/SpewMakeInc.c	Fri Feb 16 11:41:06 2007
+@@ -332,7 +332,8 @@
+             &mhz, &ptrbits, &ncpu, comps, &gccflags, &outfile, &srcdir,
+             &blddir, &USEDEFL1, &USEARCHDEF, &nof77, &f2cdefs, &cdefs, &pmake,
+             &flapack, &smaflags, &dmaflags, &f77lib, &l2size, &targ);
+-   if (ncpu > 1) THREADS = 1;
++ /*   if (ncpu > 1) THREADS = 1; */
++    THREADS = 1;
+    if (!outfile)
+       fpout = stdout;
+    else
