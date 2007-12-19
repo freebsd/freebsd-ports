@@ -341,6 +341,7 @@
     SUBDIR += pear-Structures_DataGrid_DataSource_CSV
     SUBDIR += pear-Structures_DataGrid_DataSource_DBQuery
     SUBDIR += pear-Structures_DataGrid_DataSource_DBTable
+    SUBDIR += pear-Structures_DataGrid_DataSource_MDB2
     SUBDIR += pecl-memcache
     SUBDIR += pecl-sqlite
     SUBDIR += pgaccess
