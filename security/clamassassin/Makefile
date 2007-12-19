@@ -7,6 +7,7 @@
 
 PORTNAME=	clamassassin
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://jameslick.com/clamassassin/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
