@@ -155,6 +155,7 @@
     SUBDIR += gnumail
     SUBDIR += gotmail
     SUBDIR += grepmail
+    SUBDIR += greylite
     SUBDIR += gtray
     SUBDIR += gubby
     SUBDIR += hashcash
