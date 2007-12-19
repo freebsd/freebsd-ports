@@ -231,6 +231,9 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
+show-options:
+	@${MAKE} -DWITH_OPTIONS showconfig
+
 cklatest:
 	@-ncftpls \
 	    ftp://ftp.vim.org/pub/vim/patches/${PORTVERSION:C/\.[0-9a-z]*$//}/ \
