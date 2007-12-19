@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	iso-codes
-DISTVERSION=	1.5
+DISTVERSION=	1.6
 CATEGORIES=	misc
-MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/ \
-		http://freebsd.powered.net/distfiles/
+MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Lists of the country, language and currency iso names
