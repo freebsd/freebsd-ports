@@ -9,7 +9,8 @@ PORTNAME=	jack-keyboard
 DISTVERSION=	2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://pin.if.uz.zgora.pl/~trasz/jack-keyboard/ \
-		http://freebsd.unixfreunde.de/sources/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	trasz
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Virtual keyboard for JACK MIDI
