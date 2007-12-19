@@ -338,6 +338,7 @@
     SUBDIR += pear-MDB2_Schema
     SUBDIR += pear-MDB_QueryTool
     SUBDIR += pear-Structures_DataGrid_DataSource_Array
+    SUBDIR += pear-Structures_DataGrid_DataSource_DBQuery
     SUBDIR += pear-Structures_DataGrid_DataSource_DBTable
     SUBDIR += pecl-memcache
     SUBDIR += pecl-sqlite
