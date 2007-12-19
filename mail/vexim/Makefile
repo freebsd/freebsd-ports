@@ -11,7 +11,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	http://silverwraith.com/vexim/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	john@yoafrica.com
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A web interface for managing virtual domains for exim
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
