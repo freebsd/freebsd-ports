@@ -96,6 +96,7 @@ checkpassword-*.tar.gz	security/checkpassword	Unsure of djb's license
 citrix_ica-*		german/citrix_ica	License prohibits redistribution
 citrix_ica-*		japanese/citrix_ica	License prohibits redistribution
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
+cli_freebsd*		sysutils/arcconf	May not be redistributed
 cfs-*			security/cfs		Crypto; export-controlled
 code2000-*/CODE2000.ZIP	x11-fonts/code2000	Only unmodified original
 						package can be distributed

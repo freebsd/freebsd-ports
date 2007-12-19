@@ -26,6 +26,7 @@
     SUBDIR += apcpwr
     SUBDIR += apcupsd
     SUBDIR += apt
+    SUBDIR += arcconf
     SUBDIR += areca-cli
     SUBDIR += asapm
     SUBDIR += ascpu
