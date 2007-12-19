@@ -59,8 +59,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-BROKEN=		Does not build on 7.x
+.if ${OSVERSION} >= 800000
+BROKEN=		Does not build on 8.x
 .endif
 
 .include <bsd.port.post.mk>
