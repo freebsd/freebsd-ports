@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|DATADIR|"${DATADIR}"|' ${WRKSRC}/src/main.cpp
+	@${REINPLACE_CMD} -e 's|__linux__|__FreeBSD__|; s|\[30\]|[PATH_MAX]|' \
+		${WRKSRC}/src/main.cpp
 
 .include <bsd.port.mk>
