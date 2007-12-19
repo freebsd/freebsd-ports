@@ -2,17 +2,23 @@ The ATLAS (Automatically Tuned Linear Algebra Software) project is
 an ongoing research effort focusing on applying empirical techniques
 in order to provide portable performance. 
 
-At present, it provides C and Fortran77 interfaces to a
-portably efficient BLAS implementation, as well as a few routines from LAPACK.
+At present, it provides C and Fortran77 interfaces to a portable,
+efficient BLAS implementation, as well as enhanced versions of 
+a few routines from LAPACK.
 
-If you use blas, you can simply change flags when linking,
-from -lblas to -lf77blas -latlas (order is important).
+If you want to link software to ATLAS rather than the standard BLAS, simply 
+use -lf77blas -latlas (order is important), or -lptf77blas -latlas for the 
+threaded library (which is primarily useful on SMP machines), in place of 
+the usual -lblas.  Corresponding pure C versions of the ATLAS libraries are 
+also included, in libcblas and libptcblas.
 
-A few routines from LAPACK are merged into one library as libalapack.
-It requres both C and Fortran77 interfaces, and thus that link line would be:
--lalapack -lf77blas -lcblas -latlas -lg2c -lm .
-
-Other choice of CC and CFLAGS are *NOT* recommended.
-They are already optimized for this platform and automatically searched.
+The ATLAS-enhanced LAPACK routines are also provided.
+To link software with this library instead of the standard LAPACK, use 
+-L/usr/local/lib/gcc-4.2.3 -L/usr/local/lib/gcc-4.2.3/gcc/i386-portbld-freebsd7.0/4.2.3 -lalapack -lf77blas -lcblas -latlas -lgfortranbegin -lgfortran -lm, or 
+-L/usr/local/lib/gcc-4.2.3 -L/usr/local/lib/gcc-4.2.3/gcc/i386-portbld-freebsd7.0/4.2.3 -lalapack_r -lptf77blas -lptcblas -latlas -lgfortranbegin -lgfortran
+-lm for the threaded library, in place of the usual -llapack.
+Note that
+-L/usr/local/lib/gcc-4.2.3 -L/usr/local/lib/gcc-4.2.3/gcc/i386-portbld-freebsd7.0/4.2.3
+depends on your environment.
 
 WWW: http://math-atlas.sourceforge.net/
