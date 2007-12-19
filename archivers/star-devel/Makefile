@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	star
-DISTVERSION=	1.5a86
+DISTVERSION=	1.5a87
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/alpha/
 
