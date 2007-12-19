@@ -12984,6 +12984,7 @@ ptlink-ircd	ports/irc/ptlink-ircd
 ptlink-services	ports/irc/ptlink-services
 ptmalloc	ports/devel/ptmalloc
 ptoc		ports/lang/ptoc
+ptop		ports/databases/ptop
 ptunnel		ports/net/ptunnel
 pty		ports/devel/pty
 ptypes		ports/devel/ptypes
