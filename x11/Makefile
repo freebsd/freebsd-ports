@@ -260,6 +260,7 @@
     SUBDIR += scripts
     SUBDIR += scrnsaverproto
     SUBDIR += sessreg
+    SUBDIR += setlayout
     SUBDIR += settitle
     SUBDIR += setxkbmap
     SUBDIR += silo

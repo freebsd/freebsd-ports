@@ -1,0 +1,34 @@
+# New ports collection makefile for:	setlayout
+# Date created:	17 December 2007
+# Whom:	oleg@bsdpower.com
+#
+# $FreeBSD$
+#
+
+PORTNAME=	setlayout
+DISTVERSION=	20071217
+CATEGORIES=	x11
+MASTER_SITES=	http://icculus.org/openbox/tools/
+DISTFILES=	${PORTNAME}.c
+EXTRACT_ONLY=	#none
+
+MAINTAINER=	oleg@bsdpower.com
+COMMENT=	Arrange desktops in an MxN grid layout
+
+USE_XORG=	x11
+NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+do-extract:
+	${MKDIR} ${WRKSRC}
+	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
+
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} -I ${PREFIX}/include -L ${PREFIX}/lib -lX11 ${DISTFILES}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+
+.include <bsd.port.post.mk>

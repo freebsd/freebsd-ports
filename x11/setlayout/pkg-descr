@@ -1,0 +1,6 @@
+setlayout is a small program that arranges desktops in an MxN grid.
+It should work with any EWHM-compliant window manager, such as Openbox.
+
+Example usage: setlayout 0 2 2 0 for a 2x2 grid.
+
+WWW: http://icculus.org/openbox/index.php
