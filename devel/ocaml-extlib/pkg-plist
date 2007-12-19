@@ -42,3 +42,4 @@ lib/ocaml/site-lib/extlib/extLib.cmxa
 lib/ocaml/site-lib/extlib/extLib.a
 lib/ocaml/site-lib/extlib/META
 @dirrm lib/ocaml/site-lib/extlib
+@dirrmtry lib/ocaml/site-lib
