@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	netbeans
-PORTVERSION=	5.5.1
+PORTVERSION=	6.0
 CATEGORIES=	java devel
-MASTER_SITES=	http://dlc.sun.com/netbeans/download/5_5_1/fcs/200704122300/ \
-		http://us1.mirror.netbeans.org/download/5_5_1/fcs/200704122300/ \
-		http://us2.mirror.netbeans.org/download/5_5_1/fcs/200704122300/
+MASTER_SITES=	http://download.netbeans.org/netbeans/6.0/final/zip/
 
-DISTNAME=	netbeans-5_5_1
+DISTNAME=	netbeans-6.0-200711261600
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
 
-USE_BZIP2=	yes
+USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
