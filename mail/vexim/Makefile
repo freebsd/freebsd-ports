@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vexim
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	mail www
 MASTER_SITES=	http://silverwraith.com/vexim/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -44,18 +43,21 @@ post-patch:
 do-install:
 	@${ECHO} "Installing in ${VEXIMDIR}"
 	${MKDIR} ${PREFIX}/${VEXIMDIR}
-	cd ${WRKSRC}/vexim && ${FIND} . \
+	cd ${WRKSRC}/vexim && ${FIND} . \! -path '*.svn*' \
 		-type d -exec ${MKDIR} ${PREFIX}/${VEXIMDIR}/{} \;  \
-		-o -type f -exec ${INSTALL_DATA} {} ${PREFIX}/${VEXIMDIR}/{} \;
+		-o \! -path '*.svn*' -type f \
+		-exec ${INSTALL_DATA} {} ${PREFIX}/${VEXIMDIR}/{} \;
 	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/setup && ${FIND} . \
+	cd ${WRKSRC}/setup && ${FIND} . \! -path '*.svn*' \
 		-type d -exec ${MKDIR} ${DATADIR}/{} \; \
-		-o -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+		-o \! -path '*.svn*' -type f \
+		-exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${FIND} docs \
+	cd ${WRKSRC} && ${FIND} docs \! -path '*.svn*' \
 		-type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-		-o -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+		-o \! -path '*.svn*' -type f \
+		-exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 .for i in INSTALL LICENSE README TODO
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
