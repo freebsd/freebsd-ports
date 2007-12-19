@@ -61,6 +61,7 @@ WITH_PERL=	yes
 WITH_PYTHON=	yes
 WITH_CSCOPE=	yes
 WITH_EXUBERANT_CTAGS=yes
+WITH_LANG=	yes
 .endif
 
 .if defined(WITH_TCL)
