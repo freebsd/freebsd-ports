@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A peer-to-peer network for broadcasting and listening to streams
 
+FORBIDDEN=	http://vuxml.FreeBSD.org/31435fbc-ae73-11dc-a5f9-001a4d49522b.html
+EXPIRATION_DATE=2008-02-19
+
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
