@@ -34,6 +34,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="31b045e7-ae75-11dc-a5f9-001a4d49522b">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><lt>9.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera Software ASA reports about multiple security
+	  fixes:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/freebsd/925/">
+	  <ul>
+	    <li>Fixed an issue where plug-ins could be used to allow
+	      cross domain scripting, as reported by David
+	      Bloom. Details will be disclosed at a later date.</li>
+	    <li>Fixed an issue with TLS certificates that could be
+	      used to execute arbitrary code, as reported by Alexander
+	      Klink (Cynops GmbH). Details will be disclosed at a
+	      later date.</li>
+	    <li>Rich text editing can no longer be used to allow cross
+	      domain scripting, as reported by David Bloom. See our
+	      advisory.</li>
+	    <li>Prevented bitmaps from revealing random data from
+	      memory, as reported by Gynvael Coldwind. Details will be
+	      disclosed at a later date.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/docs/changelogs/freebsd/925/</url>
+      <url>http://www.opera.com/support/search/view/875/</url>
+    </references>
+    <dates>
+      <discovery>2007-12-19</discovery>
+      <entry>2007-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31435fbc-ae73-11dc-a5f9-001a4d49522b">
     <topic>peercast -- buffer overflow vulnerability</topic>
     <affects>
