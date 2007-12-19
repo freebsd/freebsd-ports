@@ -56,16 +56,12 @@ MANLANG=	"" ru.KOI8-R ru.UTF-8 pl.ISO8859-2 pl.UTF-8 pl fr.ISO8859-1 \
 		fr.UTF-8 fr it.ISO8859-1 it.UTF-8 it
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
-#WITH_TCL=	yes
+WITH_TCL=	yes
 WITH_PERL=	yes
 WITH_PYTHON=	yes
 WITH_CSCOPE=	yes
 WITH_EXUBERANT_CTAGS=yes
 WITH_LANG=	yes
-.endif
-
-.if defined(WITH_TCL)
-BROKEN=		Does not compile
 .endif
 
 .if defined(WITH_PYTHON)
@@ -76,6 +72,11 @@ MAKE_ARGS+=	CONF_OPT_PYTHON="--enable-pythoninterp"
 .if defined(WITH_RUBY)
 USE_RUBY=	yes
 MAKE_ARGS+=	CONF_OPT_RUBY="--enable-rubyinterp"
+.endif
+
+.if defined(WITH_TCL)
+USE_TCL=	80+
+USE_TCL_NO_THREADS=	yes
 .endif
 
 .if defined(WITH_PERL)
@@ -111,9 +112,7 @@ MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp"
 .endif
 
 .if defined(WITH_TCL)
-BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
-MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp"
+MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp --with-tclsh="${TCLSH:S/${LOCALBASE}\/bin\///g}""
 .endif
 
 .if !defined(WITHOUT_X11)
