@@ -26,6 +26,9 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/NSP1P2.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/P2b.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/SegmentationFault.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/a.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/a0.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/aa.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/b.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bb.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bug-arg-string.edp
