@@ -743,6 +743,7 @@
     SUBDIR += pear-Numbers_Roman
     SUBDIR += pear-Numbers_Words
     SUBDIR += pear-Spreadsheet_Excel_Writer
+    SUBDIR += pear-Structures_DataGrid_DataSource_RSS
     SUBDIR += pear-XML_Beautifier
     SUBDIR += pear-XML_DTD
     SUBDIR += pear-XML_Feed_Parser
