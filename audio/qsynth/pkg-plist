@@ -1,0 +1,4 @@
+bin/qsynth
+share/pixmaps/qsynth.png
+share/applications/qsynth.desktop
+@dirrmtry share/applications
