@@ -337,6 +337,7 @@
     SUBDIR += pear-MDB2_Driver_sqlite
     SUBDIR += pear-MDB2_Schema
     SUBDIR += pear-MDB_QueryTool
+    SUBDIR += pear-Structures_DataGrid_DataSource_Array
     SUBDIR += pecl-memcache
     SUBDIR += pecl-sqlite
     SUBDIR += pgaccess
