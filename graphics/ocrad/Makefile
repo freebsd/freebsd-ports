@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ocrad
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	lippemail@gmail.com
 COMMENT=	OCR program implemented as filter
 
 USE_BZIP2=	yes
@@ -23,33 +23,25 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		CXX="${CXX}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-USE_GCC=	3.4+
-post-patch:
-. for f in main.cc rational.cc
-	@${REINPLACE_CMD} 's/std::snprintf/snprintf/g' ${WRKSRC}/$f
-. endfor
-.endif
-
-.if ${OSVERSION} < 500041
-MAKE_ENV+=	CPPFLAGS="${CPPFLAGS} -DHAVE_DECL_GETOPT"
-.endif
-
-PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
-PLIST_FILES=	bin/ocrad
-.if !defined(NOPORTDOCS)
+PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO INSTALL
+EXAMPLES=	test.pbm test.txt
 INFO=		ocrad
 MAN1=		ocrad.1
-.endif
+
+PLIST_FILES=	bin/ocrad ${EXAMPLES:S,^,%%EXAMPLESDIR%%/,}
+PLIST_DIRS=	%%EXAMPLESDIR%%
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ocrad ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ocrad ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR} && cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/doc/ocrad.1 ${PREFIX}/man/man1
-	@${INSTALL_DATA} ${WRKSRC}/doc/ocrad.info ${PREFIX}/info
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/ocrad.info ${PREFIX}/info/
+	${INSTALL_MAN} ${WRKSRC}/doc/ocrad.1 ${MAN1PREFIX}/man/man1/
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/examples/,} ${EXAMPLESDIR}/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
