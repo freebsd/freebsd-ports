@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_FTP
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	ftp www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -21,6 +21,9 @@ CATEGORY=	Net
 FILES=		FTP.php FTP/Observer.php FTP/Socket.php
 EXAMPLES=	extensions.ini index.php observer.php socket.php
 _EXAMPLESDIR=	example
+
+TESTS=		AllTests.php Net_FTPTest.php config.php.dist extensions.ini\
+		testfile.dat
 
 post-extract:
 	@${MV} ${WRKSRC}/Net/* ${WRKSRC}
