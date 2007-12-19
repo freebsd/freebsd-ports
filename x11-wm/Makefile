@@ -89,6 +89,7 @@
     SUBDIR += nickleby
     SUBDIR += novawm
     SUBDIR += obconf
+    SUBDIR += obmenu
     SUBDIR += olvwm
     SUBDIR += openbox
     SUBDIR += orion
