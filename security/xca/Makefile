@@ -30,7 +30,7 @@ post-patch:
 	@echo "CPPFLAGS=-I. -I.. -I${WRKSRC}/ui -I${LOCALBASE}/include -I${QT_PREFIX}/include/Qt" > ${WRKSRC}/Local.mak
 	@echo "CFLAGS= ${CFLAGS} -Wall -ggdb" >> ${WRKSRC}/Local.mak
 	@echo "LDFLAGS= ${LDFLAGS} -L${LOCALBASE}/lib" >> ${WRKSRC}/Local.mak
-	@echo "LIBS= -lQtGui -lc_r -lcrypto" >> ${WRKSRC}/Local.mak
+	@echo "LIBS= -lQtGui ${PTHREAD_LIBS} -lcrypto" >> ${WRKSRC}/Local.mak
 	@echo "MOC=${MOC}" >> ${WRKSRC}/Local.mak
 	@echo "UIC=${QT_PREFIX}/bin/uic-qt4" >> ${WRKSRC}/Local.mak
 	@echo "RCC=${LOCALBASE}/bin/rcc"  >> ${WRKSRC}/Local.mak
