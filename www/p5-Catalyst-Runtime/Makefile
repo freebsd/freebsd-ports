@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.7011
+PORTVERSION=	5.7012
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -71,6 +71,7 @@ MAN3=	Catalyst.3 \
 	Catalyst::Request::Upload.3 \
 	Catalyst::Response.3 \
 	Catalyst::Runtime.3 \
+	Catalyst::Stats.3 \
 	Catalyst::Test.3 \
 	Catalyst::Utils.3 \
 	Catalyst::View.3

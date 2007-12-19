@@ -31,6 +31,7 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Request/Upload.pm
 %%SITE_PERL%%/Catalyst/Response.pm
 %%SITE_PERL%%/Catalyst/Runtime.pm
+%%SITE_PERL%%/Catalyst/Stats.pm
 %%SITE_PERL%%/Catalyst/Test.pm
 %%SITE_PERL%%/Catalyst/Utils.pm
 %%SITE_PERL%%/Catalyst/View.pm
