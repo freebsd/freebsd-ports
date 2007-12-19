@@ -14768,6 +14768,7 @@ session2	ports/www/session2
 sessreg		ports/x11/sessreg
 setcdboot	ports/sysutils/setcdboot
 setedit		ports/editors/setedit
+setlayout	ports/x11/setlayout
 setquota	ports/sysutils/setquota
 settitle	ports/x11/settitle
 setxkbmap	ports/x11/setxkbmap
