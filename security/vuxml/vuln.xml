@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="31435fbc-ae73-11dc-a5f9-001a4d49522b">
+    <topic>peercast -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>peercast</name>
+	<range><lt>0.1218</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Luigi Auriemma reports that peercast is vulnerable to a
+	  buffer overflow which could lead to a DoS or potentially
+	  remote code execution:</p>
+	<blockquote cite="http://aluigi.altervista.org/adv/peercasthof-adv.txt">
+	  <p>The handshakeHTTP function which handles all the requests
+	    received by the other clients is vulnerable to a heap
+	    overflow which allows an attacker to fill the
+	    loginPassword and loginMount buffers located in the
+	    Servent class with how much data he wants.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://aluigi.altervista.org/adv/peercasthof-adv.txt</url>
+      <url>http://secunia.com/advisories/28120/</url>
+    </references>
+    <dates>
+      <discovery>2007-12-17</discovery>
+      <entry>2007-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fee7e059-acec-11dc-807f-001b246e4fdf">
     <topic>ganglia-webfrontend -- XSS vulnerabilities</topic>
     <affects>
