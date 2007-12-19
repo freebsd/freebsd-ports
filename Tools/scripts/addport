@@ -341,7 +341,7 @@ foreach my $thisdir (@dirs) {
 	}
 
 	# figure out where the port name belongs in category Makefile
-	my @ports = &lsports;
+	my ($spaces, @ports) = &lsports;
 	errx(1, "Error: $portname already exists in $category\'s Makefile") if (&contains($portname, @ports));
 	my $port = "";
 	foreach my $tmp (sort(@ports)) {
@@ -364,16 +364,16 @@ foreach my $thisdir (@dirs) {
 			# there were previous SUBDIR lines, but none was greater than we are,
 			# means, we're the last port, so, add ourselves after the last port
 			$port = $ports[$#ports];
-			$cmd = "/^    SUBDIR += $port/\na\n";
+			$cmd = "/^" . $spaces . "SUBDIR += $port/\na\n";
 		} else {
 			# OK, append ourselves in the right place, so things *stay* sorted.
-			$cmd = "/^    SUBDIR += $port/\ni\n";
+			$cmd = "/^" . $spaces . "SUBDIR += $port/\ni\n";
 		}
 	}
 	print "Inserting new port into $category/Makefile...\n";
 	open(ED, "|ed Makefile") || die "Cannot start ed to actually insert module\n";
-	print ED "$cmd    SUBDIR += $portname\n.\nw\nq\n";
-	close(ED);
+	print ED "$cmd" . $spaces . "SUBDIR += $portname\n.\nw\nq\n";
+		close(ED);
 
 	# commit the actual port.
 	chdir "$tmpdir/$category" or err(1, "$tmpdir/$category");
@@ -499,18 +499,25 @@ sub contains($@) {
 
 sub lsports() {
     my @rv = ();
+    my $spaces;
 
     open(F, "Makefile") || die "can't open Makefile: $!";
     while(<F>) {
 	chomp;
 	chomp;
 	next if $_ !~ m/SUBDIR/;
+
+	if ( !defined($spaces) ) {
+		m/^([\s\t]+)[^\s\t]/;
+		$spaces = $1;
+	}
+
 	s/^[ \t]+SUBDIR[ \t]+\+?=[\ \t]+//;
 	push(@rv, $_);
     }
     close(F);
 
-    return @rv;
+    return ($spaces, @rv);
 }
 
 # this finds the last comment in the Makefile
