@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -43,21 +44,17 @@ USE_LDCONFIG=	${PREFIX}/lib/gnash
 
 MAN1=		gnash.1
 
-# WITH_KDE option is untested - please uncomment related .if's below
-# build gnash -DWITH_KDE -DWITH_PLUGIN. Check whether the plugin works
-# and then contact the maintainer: plist and depends should be corrected
 OPTIONS=	PLUGIN		"Enable browser plugin" on \
 		CYGNAL		"Enable Cygnal media server" off \
 		GTK		"GUI: GTK (required for FF plugin)" on \
-		AGG		"Renderer: AGG" off \
-		OPENGL		"Renderer: OpenGL" on \
+		KDE		"GUI: KDE (required for Konqueror plugin)" off \
+		AGG		"Renderer: AGG" on \
+		OPENGL		"Renderer: OpenGL" off \
 		CAIRO		"Renderer: Cairo (experimental)" off \
 		FFMPEG		"Media handler: ffmpeg (+SDL sound output)" on \
 		GSTREAMER	"Media handler: GStreamer" off \
 		MAD		"Media handler: MAD (+SDL sound output)" off  \
 		DEBUGLOG	"Leave logfile in current directory on every run" off
-
-#		KDE		"GUI: KDE (required for Konqueror plugin)" off \
 
 .include <bsd.port.pre.mk>
 
@@ -69,12 +66,12 @@ PLIST_SUB+=	FFPLUGIN="@comment "
 CONFIGURE_ARGS+=	--disable-nsapi
 .endif
 
-#.if defined(WITH_KDE) && !defined(WITHOUT_PLUGIN)
-#PLIST_SUB+=	KONQPLUGIN=""
-#.else
-#PLIST_SUB+=	KONQPLUGIN="@comment "
+.if defined(WITH_KDE) && !defined(WITHOUT_PLUGIN)
+PLIST_SUB+=	KONQPLUGIN=""
+.else
+PLIST_SUB+=	KONQPLUGIN="@comment "
 CONFIGURE_ARGS+=	--disable-kparts
-#.endif
+.endif
 
 # Cygnal option processing
 .if defined(WITH_CYGNAL)
@@ -107,12 +104,19 @@ PLIST_SUB+=	GTK=""
 PLIST_SUB+=	GTK="@comment "
 .endif
 
-#.if defined(WITH_KDE)
-#GNASH_GUIS+=	kde
-#PLIST_SUB+=	KDE=""
-#.else
+.if defined(WITH_KDE)
+GNASH_GUIS+=	kde
+PLIST_SUB+=	KDE=""
+# We have to use this lame way to depend on kdelibs, as USE_KDELIBS_VER won't
+# work after bsd.port.pre.mk, and bsd.port.options.mk is unavailable until
+# 5.5/6.2 EOL. We could also include bsd.kde.mk here, but that's much more
+# likely to bring more trouble
+LIB_DEPENDS+=	kimproxy:${PORTSDIR}/x11/kdelibs3
+CONFIGURE_ARGS+=--with-qt-incl="${LOCALBASE}/include" \
+		--with-qt-lib="${LOCALBASE}/lib"
+.else
 PLIST_SUB+=	KDE="@comment "
-#.endif
+.endif
 
 CONFIGURE_ARGS+=	--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
 
@@ -129,6 +133,9 @@ LIB_DEPENDS+=		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 .	endif
 CONFIGURE_ARGS+=	--enable-renderer=ogl
 .elif !defined(WITH_AGG) && !defined(WITH_OPENGL) && defined(WITH_CAIRO)
+.	if defined(WITH_KDE)
+IGNORE=			doesn't support Cairo renderer with KDE gui. Please rerun 'make config' and select different renderer or disable KDE GUI
+.	endif
 LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
 CONFIGURE_ARGS+=	--enable-renderer=cairo
 .else
