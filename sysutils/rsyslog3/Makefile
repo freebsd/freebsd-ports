@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	1.20.2
+PORTVERSION=	1.21.0
 CATEGORIES=	sysutils
 MASTER_SITES=	CENKES http://download.rsyslog.com/rsyslog/
 
@@ -24,7 +24,7 @@ MAN5=	rsyslog.conf.5
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-klogd --disable-static
+CONFIGURE_ARGS+=--disable-klogd --disable-static --enable-gssapi-krb5
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PORT_VERBS=	rfc3195d rklogd ${PORTNAME}
