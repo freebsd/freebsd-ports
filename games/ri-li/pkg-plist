@@ -1,6 +1,6 @@
 bin/Ri_li
 %%DATADIR%%/COPYING.Music
-%%DATADIR%%/Ri-li-2.0.0-r1.ebuild
+%%DATADIR%%/Ri-li-2.0.1-r1.ebuild
 %%DATADIR%%/Ri-li-icon-16x16.png
 %%DATADIR%%/Ri-li-icon-32x32.png
 %%DATADIR%%/Ri-li-icon-48x48.png
@@ -28,6 +28,7 @@ bin/Ri_li
 %%DATADIR%%/language.Hu
 %%DATADIR%%/language.It
 %%DATADIR%%/language.Jp
+%%DATADIR%%/language.Ko
 %%DATADIR%%/language.Pl
 %%DATADIR%%/language.Po
 %%DATADIR%%/language.Ru

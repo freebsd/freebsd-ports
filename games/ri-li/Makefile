@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Ri-li
+# New ports collection makefile for:	ri-li
 # Date created:		03 Jul 2006
 # Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
 #
@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	Ri-li
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ri-li
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Drive a toy wood train in many levels - snake-like arcade game
 
+USE_AUTOTOOLS=	automake:19
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
