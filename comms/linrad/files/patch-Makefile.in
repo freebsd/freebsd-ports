@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Sep  4 18:14:34 2007
-+++ Makefile.in	Thu Sep 27 21:10:12 2007
+--- Makefile.in.orig	2007-11-05 15:40:27.000000000 -0500
++++ Makefile.in	2007-12-18 15:43:58.000000000 -0500
 @@ -4,7 +4,7 @@
  # Name the output files *.ol instead of *.o 
  # so we definitely know it is for Linux. 

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	linrad
-PORTVERSION=	2.38
+PORTVERSION=	2.40
 CATEGORIES=	comms
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
 		http://g7rau.demon.co.uk/sm5bsz/linuxdsp/archive/\
 		http://www.sm5bsz.com/linuxdsp/archive/
-DISTNAME=	lir02-38
+DISTNAME=	lir02-40
 EXTRACT_SUFX=	.tbz
 DIST_SUBDIR=	${PORTNAME}
 
