@@ -1,0 +1,11 @@
+--- utilities/Makefile.in.orig	2007-08-29 15:03:59.000000000 +0000
++++ utilities/Makefile.in	2007-11-07 20:37:02.000000000 +0000
+@@ -365,7 +365,7 @@
+ 	$(top_builddir)/libbase/libgnashbase.la \
+ 	$(top_builddir)/backend/libgnashbackend.la \
+ 	$(top_builddir)/libamf/libgnashamf.la $(am__append_2) \
+-	$(am__append_4) $(GLIB_LIBS) $(GSTREAMER_LIBS)
++	$(am__append_4) $(GLIB_LIBS) $(GSTREAMER_LIBS) $(INTLLIBS)
+ AM_LDFLAGS = \
+ 	$(LIBADD_DL) \
+ 	$(LIBLTDL) \

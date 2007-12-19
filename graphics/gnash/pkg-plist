@@ -2,8 +2,12 @@ bin/gnash
 bin/gparser
 bin/gprocessor
 %%GTK%%bin/gtk-gnash
+%%KDE%%bin/kde-gnash
 %%CYGNAL%%bin/cygnal
 %%FFPLUGIN%%lib/browser_plugins/libgnashplugin.so
+%%KONQPLUGIN%%lib/kde3/libklashpart.so
+%%KONQPLUGIN%%lib/kde3/libklashpart.a
+%%KONQPLUGIN%%lib/kde3/libklashpart.la
 lib/gnash/libgnashamf-0.8.1.so
 lib/gnash/libgnashamf.a
 lib/gnash/libgnashamf.la
@@ -26,6 +30,9 @@ lib/gnash/libgnashserver.la
 lib/gnash/libgnashserver.so
 %%DATADIR%%/GnashG.png
 %%DATADIR%%/gnash_128_96.ico
+%%KONQPLUGIN%%share/apps/klash/pluginsinfo
+%%KONQPLUGIN%%share/apps/klash/klashpartui.rc
+%%KONQPLUGIN%%share/services/klash_part.desktop
 share/locale/cs/gnash.mo
 share/locale/de/gnash.mo
 share/locale/es/gnash.mo
