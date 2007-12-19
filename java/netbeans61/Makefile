@@ -28,6 +28,9 @@ SUB_FILES=	pkg-install pkg-deinstall
 
 post-patch:
 	@${RM} ${WRKSRC}/etc/netbeans.conf.orig
+	@${REINPLACE_CMD} -e "s@%%GREP%%@${GREP}@" \
+		-e "s@%%GCONFTOOL%%@${LOCALBASE}/bin/gconftool-2@" \
+		${WRKSRC}/platform7/lib/nbexec
 
 do-configure:
 	@${REINPLACE_CMD} 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/etc/netbeans.conf
