@@ -5,21 +5,32 @@
 # $FreeBSD$
 
 PORTNAME=	empty
-PORTVERSION=	0.6.12b
+PORTVERSION=	0.6.14b
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zmey20000@yahoo.com
 COMMENT=	Expect-like tool for pure shell
 
 MAN1=		empty.1
+DOCS=		CHANGELOG COPYRIGHT README README.CYGWIN
+EXAMPLES=	README em_ssh.sh em_ssh_2.sh em_sh.sh \
+		em_telnet.sh em_telnet_2.sh emsu.sh runtests.sh
 
-PLIST_FILES=	bin/empty
+PLIST_FILES=	bin/empty ${EXAMPLES:S,^,%%EXAMPLESDIR%%/,} ${DOCS:S,^,%%DOCSDIR%%/,}
+PLIST_DIRS=	%%EXAMPLESDIR%% %%DOCSDIR%%
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/empty ${PREFIX}/bin/empty
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1/
+	@${INSTALL_PROGRAM} ${WRKSRC}/empty ${PREFIX}/bin/
+	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/,} ${MAN1PREFIX}/man/man1/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/examples/,} ${EXAMPLESDIR}/
+.endif
 
 .include <bsd.port.mk>
