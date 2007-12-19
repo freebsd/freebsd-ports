@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpd
-DISTVERSION=	5.0b1
+DISTVERSION=	5.0rc1
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	mpd
@@ -51,7 +51,7 @@ MTREE_FILE=	${FILESDIR}/mpd5.mtree
 MAN8=		mpd5.8
 MANCOMPRESSED=	maybe
 USE_RC_SUBR=	mpd5.sh
-HTMLNUM!=	jot 65 1
+HTMLNUM!=	jot 69 1
 CONFSUF=	conf secret script
 DOCSDIR=	${PREFIX}/share/doc/mpd5
 PORTDOCS=	${HTMLNUM:S/^/mpd/:S/$/.html/} mpd.html mpd.ps README	\
