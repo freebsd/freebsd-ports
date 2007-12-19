@@ -1,0 +1,10 @@
+Greylite is an implementation of a modified greylisting technology for fighting
+SPAM on mailservers running qmail.
+
+Greylite does not require patching qmail, it is self-contained because it uses
+sqlite, it uses a technology that minimizes delivery delays and enables suspect
+senders to be multiply rejected and never whitelisted.
+
+Greylite is easy to setup and maintain, and it is small and fast. 
+
+WWW: http://mij.oltrelinux.com/net/greylite/
