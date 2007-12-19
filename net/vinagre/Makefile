@@ -7,7 +7,7 @@
 
 PORTNAME=	vinagre
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,12 +17,13 @@ COMMENT=	VNC client for the GNOME Desktop
 
 LIB_DEPENDS=	gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc \
     		avahi-core.5:${PORTSDIR}/net/avahi \
-		avahi-ui.0:${PORTSDIR}/net/avahi-gtk
+		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
+		gnome-keyring:${PORTSDIR}/security/gnome-keyring
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libglade2 gconf2
+USE_GNOME=	gnomeprefix intlhack gnomehack libglade2 gconf2 gnomevfs2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
