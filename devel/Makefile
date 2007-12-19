@@ -2278,6 +2278,7 @@
     SUBDIR += thrift
     SUBDIR += tide
     SUBDIR += tigcc
+    SUBDIR += tijmp
     SUBDIR += tinylaf
     SUBDIR += tinyq
     SUBDIR += titano
