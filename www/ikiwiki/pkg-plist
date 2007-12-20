@@ -2,6 +2,16 @@
 %%DATADIR%%/basewiki/favicon.ico
 %%DATADIR%%/basewiki/helponformatting.mdwn
 %%DATADIR%%/basewiki/index.mdwn
+%%DATADIR%%/basewiki/ikiwiki.mdwn
+%%DATADIR%%/basewiki/ikiwiki/blog.mdwn
+%%DATADIR%%/basewiki/ikiwiki/formatting.mdwn
+%%DATADIR%%/basewiki/ikiwiki/markdown.mdwn
+%%DATADIR%%/basewiki/ikiwiki/openid.mdwn
+%%DATADIR%%/basewiki/ikiwiki/pagespec.mdwn
+%%DATADIR%%/basewiki/ikiwiki/preprocessordirective.mdwn
+%%DATADIR%%/basewiki/ikiwiki/subpage.mdwn
+%%DATADIR%%/basewiki/ikiwiki/subpage/linkingrules.mdwn
+%%DATADIR%%/basewiki/ikiwiki/wikilink.mdwn
 %%DATADIR%%/basewiki/local.css
 %%DATADIR%%/basewiki/markdown.mdwn
 %%DATADIR%%/basewiki/openid.mdwn
@@ -11,7 +21,6 @@
 %%DATADIR%%/basewiki/shortcuts.mdwn
 %%DATADIR%%/basewiki/style.css
 %%DATADIR%%/basewiki/subpage.mdwn
-%%DATADIR%%/basewiki/subpage/linkingrules.mdwn
 %%DATADIR%%/basewiki/templates.mdwn
 %%DATADIR%%/basewiki/templates/note.mdwn
 %%DATADIR%%/basewiki/templates/popup.mdwn
@@ -75,6 +84,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/conditional.pm
 %%SITE_PERL%%/IkiWiki/Plugin/ddate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/editdiff.pm
+%%SITE_PERL%%/IkiWiki/Plugin/edittemplate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/embed.pm
 %%SITE_PERL%%/IkiWiki/Plugin/external.pm
 %%SITE_PERL%%/IkiWiki/Plugin/favicon.pm
@@ -126,6 +136,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/toc.pm
 %%SITE_PERL%%/IkiWiki/Plugin/toggle.pm
 %%SITE_PERL%%/IkiWiki/Plugin/typography.pm
+%%SITE_PERL%%/IkiWiki/Plugin/version.pm
 %%SITE_PERL%%/IkiWiki/Plugin/wikitext.pm
 %%SITE_PERL%%/IkiWiki/Rcs/Stub.pm
 %%SITE_PERL%%/IkiWiki/Rcs/git.pm
@@ -157,7 +168,8 @@ share/locale/vi/LC_MESSAGES/ikiwiki.mo
 @dirrm lib/ikiwiki/plugins
 @dirrm lib/ikiwiki
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki
-@dirrm %%DATADIR%%/basewiki/subpage
+@dirrm %%DATADIR%%/basewiki/ikiwiki/subpage
+@dirrm %%DATADIR%%/basewiki/ikiwiki
 @dirrm %%DATADIR%%/basewiki/templates
 @dirrm %%DATADIR%%/basewiki/wikiicons
 @dirrm %%DATADIR%%/basewiki
