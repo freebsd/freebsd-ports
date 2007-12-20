@@ -3,9 +3,5 @@
 %%SITE_PERL%%/Graphics/ColorNames/Netscape.pm
 %%SITE_PERL%%/Graphics/ColorNames/Windows.pm
 %%SITE_PERL%%/Graphics/ColorNames/X.pm
-%%SITE_PERL%%/Graphics/ColourNames.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/ColorNames/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics/ColorNames
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Graphics
 @dirrm %%SITE_PERL%%/Graphics/ColorNames
 @dirrmtry %%SITE_PERL%%/Graphics
