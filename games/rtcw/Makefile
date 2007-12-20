@@ -7,68 +7,54 @@
 
 PORTNAME=	rtcw
 PORTVERSION=	1.41b
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_IDSOFTWARE}
 MASTER_SITE_SUBDIR=	wolf/linux
 DISTNAME=	wolf-linux-${PORTVERSION}.x86
-EXTRACT_SUFX=	.run
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
 
-REINPLACE_ARGS=	-i ""
+USE_MAKESELF=	yes
 USE_LINUX=	yes
 USE_GL=		linux
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 
 SUB_FILES=	pkg-message
-PROGS=		wolf wolfded wolfsp
+WRAPPERS=	wolf wolfded wolfsp
 
 # Ignore older version which seems to be newer.
 PORTSCOUT=	skipv:1.41-3
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && tail +376 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
-		${TAR} zxf -
+# Should be in bsd.commands.mk. Remove when ports/118749 is committed.
+UNMAKESELF_CMD?=	${LOCALBASE}/bin/unmakeself
 
 post-extract:
 	@${MV} ${WRKSRC}/pb/PB_EULA.txt ${WRKSRC}
 
-# Remove trailing ^M.
-pre-patch:
-	@${FIND} -E ${WRKSRC} -type f \
-		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt|url)" \
-		-exec ${REINPLACE_CMD} -e "s|`${ECHO_CMD} -e '\r'`$$||" {} \;
-
 do-build:
-.for f in ${PROGS}
+.for f in ${WRAPPERS}
 	@(${ECHO_CMD} "#!${SH}"; \
 	  ${ECHO_CMD} "cd ${DATADIR} || exit 1"; \
-	  ${ECHO_CMD} "exec ./${f}") > ${WRKDIR}/${f}
+	  ${ECHO_CMD} 'exec ./${f} "$$@"') > ${WRKDIR}/${f}
 .endfor
 
 do-install:
 	${MKDIR} ${DATADIR}
-.for f in ${PROGS}
+.for f in ${WRAPPERS}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/Linux/x86/${f}.x86 ${DATADIR}/${f}
 	${INSTALL_SCRIPT} ${WRKDIR}/${f} ${PREFIX}/bin
 .endfor
-.for f in main pb
-	${CP} -R ${WRKSRC}/${f} ${DATADIR}
-.endfor
+	${CP} -r ${WRKSRC}/main ${WRKSRC}/pb ${DATADIR}
 	${MKDIR} ${PREFIX}/share/pixmaps
-.for f in WolfMP.xpm WolfSP.xpm
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/pixmaps
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/Wolf[MS]P.xpm ${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.   for f in CHANGES INSTALL PB_EULA.txt QUICKSTART RTCW-README-1.4.txt
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.   endfor
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} CHANGES INSTALL QUICKSTART *.txt ${DOCSDIR}
 	${CP} -R ${WRKSRC}/Docs ${DOCSDIR}
 .endif
 
