@@ -18,7 +18,7 @@ COMMENT=	Easy-to-use password manager compatible with Password Safe
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_GMAKE=	yes
-USE_KDELIBS_VER=3
+USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 		QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"
 
