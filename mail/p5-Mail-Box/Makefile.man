@@ -68,6 +68,7 @@ MAN3+=	Mail::Message::Construct::Rebuild.3
 MAN3+=	Mail::Message::Construct::Reply.3
 MAN3+=	Mail::Message::Construct::Text.3
 MAN3+=	Mail::Message::Convert.3
+MAN3+=	Mail::Message::Convert::EmailSimple.3
 MAN3+=	Mail::Message::Convert::Html.3
 MAN3+=	Mail::Message::Convert::HtmlFormatPS.3
 MAN3+=	Mail::Message::Convert::HtmlFormatText.3

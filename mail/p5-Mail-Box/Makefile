@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Box
-PORTVERSION=	2.071
+PORTVERSION=	2.079
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -33,10 +33,11 @@ BUILD_DEPENDS=	\
 	p5-Time-HiRes>=1.51:${PORTSDIR}/devel/p5-Time-HiRes \
 	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 	p5-URI>=1.23:${PORTSDIR}/net/p5-URI \
-	p5-User-Identity>=0.90:${PORTSDIR}/devel/p5-User-Identity
+	p5-User-Identity>=0.90:${PORTSDIR}/devel/p5-User-Identity \
+	p5-Test-Harness>=3.00:${PORTSDIR}/devel/p5-Test-Harness
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.0+
 CONFIGURE_ARGS=	</dev/null
 CONFIGURE_ENV+=	MAILBOX_INSTALL_OPTIONALS=n
 
