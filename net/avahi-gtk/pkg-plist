@@ -1,4 +1,5 @@
 bin/avahi-discover-standalone
+bin/bshell
 bin/bssh
 bin/bvnc
 include/avahi-ui/avahi-ui.h
