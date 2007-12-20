@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	YAML-Syck
-PORTVERSION=	0.91
+PORTVERSION=	1.00
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	YAML
@@ -23,7 +23,8 @@ MAN3=		JSON::Syck.3 YAML::Syck.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500700
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+		p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 .endif
 
