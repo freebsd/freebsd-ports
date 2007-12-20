@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libowfat
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://dl.fefe.de/
 
-MAINTAINER=	tmseck@netcologne.de
+MAINTAINER=	tmseck@web.de
 COMMENT=	A general purpose library based on code by D. J. Bernstein
 
 USE_BZIP2=	yes
