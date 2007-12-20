@@ -19,8 +19,8 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
 
 REINPLACE_ARGS=	-i ""
-IA32_BINARY_PORT=	yes
 USE_LINUX=	yes
+USE_GL=		linux
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 
