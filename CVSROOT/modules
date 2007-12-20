@@ -14152,6 +14152,7 @@ rtfm		ports/misc/rtfm
 rtfreader	ports/textproc/rtfreader
 rtfx		ports/textproc/rtfx
 rtg		ports/net/rtg
+rtgui		ports/net-p2p/rtgui
 rth		ports/devel/rth
 rtorrent	ports/net-p2p/rtorrent
 rtorrent-devel	ports/net-p2p/rtorrent-devel
