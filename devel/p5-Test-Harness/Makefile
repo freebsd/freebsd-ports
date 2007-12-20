@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Harness
-PORTVERSION=	2.64
+PORTVERSION=	3.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -19,11 +19,37 @@ PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
 
 MAN1=		prove.1
-MAN3=		Test::Harness.3 Test::Harness::Assert.3 \
-		Test::Harness::Iterator.3 Test::Harness::Point.3 \
-		Test::Harness::Results.3 \
-		Test::Harness::Straps.3 Test::Harness::TAP.3 \
-		Test::Harness::Util.3
+MAN3=		\
+		App::Prove.3 \
+		App::Prove::State.3 \
+		TAP::Base.3 \
+		TAP::Formatter::Color.3 \
+		TAP::Formatter::Console.3 \
+		TAP::Formatter::Console::ParallelSession.3 \
+		TAP::Formatter::Console::Session.3 \
+		TAP::Harness.3 \
+		TAP::Parser.3 \
+		TAP::Parser::Aggregator.3 \
+		TAP::Parser::Grammar.3 \
+		TAP::Parser::Iterator.3 \
+		TAP::Parser::Iterator::Array.3 \
+		TAP::Parser::Iterator::Process.3 \
+		TAP::Parser::Iterator::Stream.3 \
+		TAP::Parser::Multiplexer.3 \
+		TAP::Parser::Result.3 \
+		TAP::Parser::Result::Bailout.3 \
+		TAP::Parser::Result::Comment.3 \
+		TAP::Parser::Result::Plan.3 \
+		TAP::Parser::Result::Test.3 \
+		TAP::Parser::Result::Unknown.3 \
+		TAP::Parser::Result::Version.3 \
+		TAP::Parser::Result::YAML.3 \
+		TAP::Parser::Source.3 \
+		TAP::Parser::Source::Perl.3 \
+		TAP::Parser::YAMLish::Reader.3 \
+		TAP::Parser::YAMLish::Writer.3 \
+		Test::HACKING.3 \
+		Test::Harness.3
 
 .include <bsd.port.pre.mk>
 
