@@ -1847,6 +1847,7 @@ dbmail20	ports/mail/dbmail20
 dbmail21	ports/mail/dbmail21
 dbmetrix	ports/databases/dbmetrix
 dbow		ports/databases/dbow
+dboxfe		ports/emulators/dboxfe
 dbs		ports/benchmarks/dbs
 dbtool		ports/databases/dbtool
 dbus		ports/devel/dbus
