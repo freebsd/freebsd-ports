@@ -19,6 +19,10 @@ COMMENT=	Gekko's modules
 
 RUN_DEPENDS=	${LOCALBASE}/www/gekko/conf.php:${PORTSDIR}/www/gekko
 
+DEPRECATED=	This port is not being developed anymore. This was replaced by textmotion \
+		http://code.google.com/p/textmotion/
+EXPIRATION_DATE=2008-01-20
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 GEKKODIR=	www/gekko

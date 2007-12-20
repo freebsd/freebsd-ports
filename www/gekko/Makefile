@@ -22,6 +22,10 @@ GEKKODIR=	www/${PORTNAME}
 SUB_FILES=	pkg-message
 PLIST_SUB=	GEKKODIR=${GEKKODIR}
 
+DEPRECATED=	This port is not being developed anymore. This was replaced by textmotion \
+		http://code.google.com/p/textmotion/
+EXPIRATION_DATE=2008-01-20
+
 do-install:
 	${MKDIR} ${PREFIX}/${GEKKODIR}
 	cd ${WRKSRC}/src && \
