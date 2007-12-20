@@ -82,6 +82,7 @@ share/liferea/opml/feedlist_eu.opml
 share/liferea/opml/feedlist_fr.opml
 share/liferea/opml/feedlist_nl.opml
 share/liferea/opml/feedlist_pl.opml
+share/liferea/opml/feedlist_pt.opml
 share/liferea/opml/feedlist_pt_BR.opml
 share/liferea/opml/feedlist_ru.opml
 share/liferea/opml/feedlist_sk.opml
@@ -137,6 +138,7 @@ share/locale/fr/LC_MESSAGES/liferea.mo
 share/locale/it/LC_MESSAGES/liferea.mo
 share/locale/ja/LC_MESSAGES/liferea.mo
 share/locale/pl/LC_MESSAGES/liferea.mo
+share/locale/pt/LC_MESSAGES/liferea.mo
 share/locale/pt_BR/LC_MESSAGES/liferea.mo
 share/locale/ru/LC_MESSAGES/liferea.mo
 share/locale/sv/LC_MESSAGES/liferea.mo
