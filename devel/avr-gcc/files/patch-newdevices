@@ -1,15 +1,40 @@
 --- gcc/config/avr/avr.c.orig	Sat Sep  1 17:28:30 2007
-+++ gcc/config/avr/avr.c	Sun Oct 28 00:00:51 2007
-@@ -204,6 +204,8 @@
++++ gcc/config/avr/avr.c	Wed Dec 19 14:02:11 2007
+@@ -143,6 +143,7 @@
+   { 0, 0, 0, 0, "__AVR_ARCH__=2" },
+   { 0, 0, 0, 1, "__AVR_ARCH__=25"},
+   { 0, 0, 1, 0, "__AVR_ARCH__=3" },
++  { 0, 0, 1, 1, "__AVR_ARCH__=35"},
+   { 0, 1, 0, 1, "__AVR_ARCH__=4" },
+   { 0, 1, 1, 1, "__AVR_ARCH__=5" }
+ };
+@@ -157,6 +158,7 @@
+   ARCH_AVR2,
+   ARCH_AVR25,
+   ARCH_AVR3,
++  ARCH_AVR35,
+   ARCH_AVR4,
+   ARCH_AVR5
+ };
+@@ -204,6 +206,9 @@
    { "attiny261",    ARCH_AVR25, "__AVR_ATtiny261__" },
    { "attiny461",    ARCH_AVR25, "__AVR_ATtiny461__" },
    { "attiny861",    ARCH_AVR25, "__AVR_ATtiny861__" },
 +  { "attiny43u",    ARCH_AVR25, "__AVR_ATtiny43U__" },
 +  { "attiny48",     ARCH_AVR25, "__AVR_ATtiny48__" },
++  { "attiny88",     ARCH_AVR25, "__AVR_ATtiny88__" },
    { "at86rf401",    ARCH_AVR25, "__AVR_AT86RF401__" },
      /* Classic, > 8K.  */
    { "avr3",         ARCH_AVR3, NULL },
-@@ -216,13 +218,17 @@
+@@ -212,17 +217,25 @@
+   { "at43usb320",   ARCH_AVR3, "__AVR_AT43USB320__" },
+   { "at43usb355",   ARCH_AVR3, "__AVR_AT43USB355__" },
+   { "at76c711",     ARCH_AVR3, "__AVR_AT76C711__" },
++  /* Classic + MOVW + JMP/CALL.  */
++  { "avr35",        ARCH_AVR35, NULL },
++  { "at90usb82",    ARCH_AVR35, "__AVR_AT90USB82__" },
++  { "at90usb162",   ARCH_AVR35, "__AVR_AT90USB162__" },
+     /* Enhanced, <= 8K.  */
    { "avr4",         ARCH_AVR4, NULL },
    { "atmega8",      ARCH_AVR4, "__AVR_ATmega8__" },
    { "atmega48",     ARCH_AVR4, "__AVR_ATmega48__" },
@@ -27,7 +52,7 @@
      /* Enhanced, > 8K.  */
    { "avr5",         ARCH_AVR5, NULL },
    { "atmega16",     ARCH_AVR5, "__AVR_ATmega16__" },
-@@ -233,6 +239,7 @@
+@@ -233,6 +246,7 @@
    { "atmega165",    ARCH_AVR5, "__AVR_ATmega165__" },
    { "atmega165p",   ARCH_AVR5, "__AVR_ATmega165P__" },
    { "atmega168",    ARCH_AVR5, "__AVR_ATmega168__" },
@@ -35,7 +60,7 @@
    { "atmega169",    ARCH_AVR5, "__AVR_ATmega169__" },
    { "atmega169p",   ARCH_AVR5, "__AVR_ATmega169P__" },
    { "atmega32",     ARCH_AVR5, "__AVR_ATmega32__" },
-@@ -242,6 +249,7 @@
+@@ -242,10 +256,12 @@
    { "atmega325p",   ARCH_AVR5, "__AVR_ATmega325P__" },
    { "atmega3250",   ARCH_AVR5, "__AVR_ATmega3250__" },
    { "atmega3250p",  ARCH_AVR5, "__AVR_ATmega3250P__" },
@@ -43,29 +68,55 @@
    { "atmega329",    ARCH_AVR5, "__AVR_ATmega329__" },
    { "atmega329p",   ARCH_AVR5, "__AVR_ATmega329P__" },
    { "atmega3290",   ARCH_AVR5, "__AVR_ATmega3290__" },
-@@ -262,6 +270,8 @@
+   { "atmega3290p",  ARCH_AVR5, "__AVR_ATmega3290P__" },
++  { "atmega32hvb",  ARCH_AVR5, "__AVR_ATmega32HVB__" },
+   { "atmega406",    ARCH_AVR5, "__AVR_ATmega406__" },
+   { "atmega64",     ARCH_AVR5, "__AVR_ATmega64__" },
+   { "atmega640",    ARCH_AVR5, "__AVR_ATmega640__" },
+@@ -258,12 +274,13 @@
+   { "atmega128",    ARCH_AVR5, "__AVR_ATmega128__" },
+   { "atmega1280",   ARCH_AVR5, "__AVR_ATmega1280__" },
+   { "atmega1281",   ARCH_AVR5, "__AVR_ATmega1281__" },
++  { "atmega1284p",  ARCH_AVR5, "__AVR_ATmega1284P__" },
+   { "atmega16hva",  ARCH_AVR5, "__AVR_ATmega16HVA__" },
    { "at90can32",    ARCH_AVR5, "__AVR_AT90CAN32__" },
    { "at90can64",    ARCH_AVR5, "__AVR_AT90CAN64__" },
    { "at90can128",   ARCH_AVR5, "__AVR_AT90CAN128__" },
+-  { "at90usb82",    ARCH_AVR5, "__AVR_AT90USB82__" },
+-  { "at90usb162",   ARCH_AVR5, "__AVR_AT90USB162__" },
 +  { "at90pwm216",   ARCH_AVR5, "__AVR_AT90PWM216__" },
 +  { "at90pwm316",   ARCH_AVR5, "__AVR_AT90PWM316__" },
-   { "at90usb82",    ARCH_AVR5, "__AVR_AT90USB82__" },
-   { "at90usb162",   ARCH_AVR5, "__AVR_AT90USB162__" },
    { "at90usb646",   ARCH_AVR5, "__AVR_AT90USB646__" },
+   { "at90usb647",   ARCH_AVR5, "__AVR_AT90USB647__" },
+   { "at90usb1286",  ARCH_AVR5, "__AVR_AT90USB1286__" },
 --- gcc/config/avr/t-avr.orig	Fri Apr 27 22:53:57 2007
-+++ gcc/config/avr/t-avr	Sun Oct 28 00:00:47 2007
-@@ -53,6 +53,8 @@
++++ gcc/config/avr/t-avr	Wed Dec 19 14:01:08 2007
+@@ -37,8 +37,8 @@
+ 
+ FPBIT = fp-bit.c
+ 
+-MULTILIB_OPTIONS = mmcu=avr2/mmcu=avr25/mmcu=avr3/mmcu=avr4/mmcu=avr5
+-MULTILIB_DIRNAMES = avr2 avr25 avr3 avr4 avr5
++MULTILIB_OPTIONS = mmcu=avr2/mmcu=avr25/mmcu=avr3/mmcu=avr35/mmcu=avr4/mmcu=avr5
++MULTILIB_DIRNAMES = avr2 avr25 avr3 avr35 avr4 avr5
+ 
+ # The many avr2 matches are not listed here - this is the default.
+ MULTILIB_MATCHES = \
+@@ -53,21 +53,30 @@
  	mmcu?avr25=mmcu?attiny261 \
  	mmcu?avr25=mmcu?attiny461 \
  	mmcu?avr25=mmcu?attiny861 \
 +	mmcu?avr25=mmcu?attiny43u \
 +	mmcu?avr25=mmcu?attiny48 \
++	mmcu?avr25=mmcu?attiny88 \
  	mmcu?avr25=mmcu?at86rf401 \
  	mmcu?avr3=mmcu?atmega103 \
  	mmcu?avr3=mmcu?atmega603 \
-@@ -60,14 +62,18 @@
+ 	mmcu?avr3=mmcu?at43usb320 \
  	mmcu?avr3=mmcu?at43usb355 \
  	mmcu?avr3=mmcu?at76c711 \
++	mmcu?avr35=mmcu?at90usb82 \
++	mmcu?avr35=mmcu?at90usb162 \
  	mmcu?avr4=mmcu?atmega48 \
 +	mmcu?avr4=mmcu?atmega48p \
  	mmcu?avr4=mmcu?atmega8 \
@@ -82,7 +133,7 @@
  	mmcu?avr5=mmcu?atmega16 \
  	mmcu?avr5=mmcu?atmega161 \
  	mmcu?avr5=mmcu?atmega162 \
-@@ -76,6 +82,7 @@
+@@ -76,6 +85,7 @@
  	mmcu?avr5=mmcu?atmega165 \
  	mmcu?avr5=mmcu?atmega165p \
  	mmcu?avr5=mmcu?atmega168 \
@@ -90,7 +141,7 @@
  	mmcu?avr5=mmcu?atmega169 \
  	mmcu?avr5=mmcu?atmega169p \
  	mmcu?avr5=mmcu?atmega32 \
-@@ -85,6 +92,7 @@
+@@ -85,10 +95,12 @@
  	mmcu?avr5=mmcu?atmega325p \
  	mmcu?avr5=mmcu?atmega3250 \
  	mmcu?avr5=mmcu?atmega3250p \
@@ -98,20 +149,46 @@
  	mmcu?avr5=mmcu?atmega329 \
  	mmcu?avr5=mmcu?atmega329p \
  	mmcu?avr5=mmcu?atmega3290 \
-@@ -105,6 +113,8 @@
+ 	mmcu?avr5=mmcu?atmega3290p \
++	mmcu?avr5=mmcu?atmega32hvb \
+ 	mmcu?avr5=mmcu?atmega406 \
+ 	mmcu?avr5=mmcu?atmega64  \
+ 	mmcu?avr5=mmcu?atmega640 \
+@@ -101,12 +113,13 @@
+ 	mmcu?avr5=mmcu?atmega128 \
+ 	mmcu?avr5=mmcu?atmega1280 \
+ 	mmcu?avr5=mmcu?atmega1281 \
++	mmcu?avr5=mmcu?atmega1284p \
+ 	mmcu?avr5=mmcu?atmega16hva \
  	mmcu?avr5=mmcu?at90can32 \
  	mmcu?avr5=mmcu?at90can64 \
  	mmcu?avr5=mmcu?at90can128 \
+-	mmcu?avr5=mmcu?at90usb82 \
+-	mmcu?avr5=mmcu?at90usb162 \
 +	mmcu?avr5=mmcu?at90pwm216 \
 +	mmcu?avr5=mmcu?at90pwm316 \
- 	mmcu?avr5=mmcu?at90usb82 \
- 	mmcu?avr5=mmcu?at90usb162 \
  	mmcu?avr5=mmcu?at90usb646 \
---- gcc/config/avr/avr.h.orig	Sat Oct 27 23:39:36 2007
-+++ gcc/config/avr/avr.h	Sun Oct 28 00:00:34 2007
-@@ -763,22 +763,29 @@
+ 	mmcu?avr5=mmcu?at90usb647 \
+ 	mmcu?avr5=mmcu?at90usb1286 \
+--- gcc/config/avr/avr.h.orig	Wed Dec 19 13:39:10 2007
++++ gcc/config/avr/avr.h	Wed Dec 19 14:02:06 2007
+@@ -733,7 +733,7 @@
+ /* A C string constant that tells the GCC drvier program options to
+    pass to `cc1plus'.  */
+ 
+-#define ASM_SPEC "%{mmcu=avr25:-mmcu=avr2;\
++#define ASM_SPEC "%{mmcu=avr25:-mmcu=avr2;mmcu=avr35:-mmcu=avr3;\
+ mmcu=*:-mmcu=%*}"
+ 
+ #define LINK_SPEC " %{!mmcu*:-m avr2}\
+@@ -759,36 +759,50 @@
+ %{mmcu=atmega103|\
+   mmcu=atmega603|\
    mmcu=at43*|\
-   mmcu=at76*:-m avr3}\
+-  mmcu=at76*:-m avr3}\
++  mmcu=at76*:|\
++  mmcu=at90usb82|\
++  mmcu=at90usb162:-m avr3}	  \
  %{mmcu=atmega8*|\
 -  mmcu=atmega48|\
 -  mmcu=at90pwm*:-m avr4}\
@@ -127,9 +204,11 @@
    mmcu=atmega64*|\
    mmcu=atmega128*|\
    mmcu=at90can*|\
+-  mmcu=at90usb*|\
 +  mmcu=at90pwm216|\
 +  mmcu=at90pwm316|\
-   mmcu=at90usb*|\
++  mmcu=at90usb6*|\
++  mmcu=at90usb12*|\
    mmcu=at94k:-m avr5}\
  %{mmcu=atmega324*|\
    mmcu=atmega325*|\
@@ -143,7 +222,9 @@
    mmcu=atmega64|\
    mmcu=atmega644*|\
    mmcu=atmega645*|\
-@@ -787,10 +794,11 @@
+   mmcu=atmega649*|\
+   mmcu=atmega128|\
++  mmcu=atmega1284p|\
    mmcu=atmega162|\
    mmcu=atmega164*|\
    mmcu=atmega165*|\
@@ -152,20 +233,23 @@
    mmcu=atmega169*|\
    mmcu=atmega8hva|\
    mmcu=atmega16hva|\
++  mmcu=atmega32hvb|\
 +  mmcu=attiny48|\
++  mmcu=attiny88|\
    mmcu=at90can*|\
    mmcu=at90pwm*|\
    mmcu=at90usb*: -Tdata 0x800100}\
-@@ -841,6 +849,8 @@
+@@ -839,6 +853,9 @@
  %{mmcu=attiny261:crttn261.o%s} \
  %{mmcu=attiny461:crttn461.o%s} \
  %{mmcu=attiny861:crttn861.o%s} \
 +%{mmcu=attiny43u:crttn43u.o%s} \
 +%{mmcu=attiny48:crttn48.o%s} \
++%{mmcu=attiny88:crttn88.o%s} \
  %{mmcu=atmega103|mmcu=avr3:crtm103.o%s} \
  %{mmcu=atmega603:crtm603.o%s} \
  %{mmcu=at43usb320:crt43320.o%s} \
-@@ -848,12 +858,16 @@
+@@ -846,12 +863,16 @@
  %{mmcu=at76c711:crt76711.o%s} \
  %{mmcu=atmega8|mmcu=avr4:crtm8.o%s} \
  %{mmcu=atmega48:crtm48.o%s} \
@@ -182,7 +266,7 @@
  %{mmcu=atmega16:crtm16.o%s} \
  %{mmcu=atmega161|mmcu=avr5:crtm161.o%s} \
  %{mmcu=atmega162:crtm162.o%s} \
-@@ -862,6 +876,7 @@
+@@ -860,6 +881,7 @@
  %{mmcu=atmega165:crtm165.o%s} \
  %{mmcu=atmega165p:crtm165p.o%s} \
  %{mmcu=atmega168:crtm168.o%s} \
@@ -190,7 +274,7 @@
  %{mmcu=atmega169:crtm169.o%s} \
  %{mmcu=atmega169p:crtm169p.o%s} \
  %{mmcu=atmega32:crtm32.o%s} \
-@@ -871,6 +886,7 @@
+@@ -869,10 +891,12 @@
  %{mmcu=atmega325p:crtm325p.o%s} \
  %{mmcu=atmega3250:crtm3250.o%s} \
  %{mmcu=atmega3250p:crtm3250p.o%s} \
@@ -198,7 +282,18 @@
  %{mmcu=atmega329:crtm329.o%s} \
  %{mmcu=atmega329p:crtm329p.o%s} \
  %{mmcu=atmega3290:crtm3290.o%s} \
-@@ -892,6 +908,8 @@
+ %{mmcu=atmega3290p:crtm3290p.o%s} \
++%{mmcu=atmega32hvb:crtm32hvb.o%s} \
+ %{mmcu=atmega406:crtm406.o%s} \
+ %{mmcu=atmega64:crtm64.o%s} \
+ %{mmcu=atmega640:crtm640.o%s} \
+@@ -885,11 +909,14 @@
+ %{mmcu=atmega128:crtm128.o%s} \
+ %{mmcu=atmega1280:crtm1280.o%s} \
+ %{mmcu=atmega1281:crtm1281.o%s} \
++%{mmcu=atmega1284p:crtm1284p.o%s} \
+ %{mmcu=atmega8hva:crtm8hva.o%s} \
+ %{mmcu=atmega16hva:crtm16hva.o%s} \
  %{mmcu=at90can32:crtcan32.o%s} \
  %{mmcu=at90can64:crtcan64.o%s} \
  %{mmcu=at90can128:crtcan128.o%s} \
