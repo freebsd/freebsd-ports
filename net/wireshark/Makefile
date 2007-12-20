@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	wireshark
-PORTVERSION=	0.99.6
+PORTVERSION=	0.99.7
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/
@@ -26,12 +26,10 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
-CONFIGURE_ENV=	MIBDIRS="/dev/null" \
-		LIBS="${WIRESHARK_LIBS}"
+CONFIGURE_ENV= 	LIBS="${WIRESHARK_LIBS}"
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--with-ssl=${OPENSSLBASE} \
 			--disable-warnings-as-errors
-MAKE_ENV=	MIBDIRS="/dev/null"
 USE_LDCONFIG=	yes
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -129,12 +127,11 @@ WIRESHARK_LIBS+=${PTHREAD_LIBS}
 CONFIGURE_ARGS+=--without-portaudio
 .endif
 
-.if !defined(WITHOUT_SNMP) && !defined(LITE)
-LIB_DEPENDS+=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
-CONFIGURE_ARGS+=	--with-net-snmp=${LOCALBASE}/bin/net-snmp-config \
-			--without-ucd-snmp
+.if !defined(WITHOUT_SMI) && !defined(LITE)
+LIB_DEPENDS+=		smi.2:${PORTSDIR}/net-mgmt/libsmi
+CONFIGURE_ARGS+=	--with-libsmi=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--with-ucd-snmp=no --with-net-snmp=no
+CONFIGURE_ARGS+=	--with-libsmi=no
 .endif
 
 .if !defined(WITHOUT_ADNS) && !defined(LITE)
@@ -159,7 +156,6 @@ MAN4+=	wireshark-filter.4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|lua5\.1|lua${LUA_VER_STR}|g ; \
-	    	s|NETSNMPCNFIG|NETSNMPCONFIG| ; \
 	    	s|-llua${LUA_VER_STR}|${LUA_LIBDIR}/liblua.a|g' \
 		${WRKSRC}/configure
 

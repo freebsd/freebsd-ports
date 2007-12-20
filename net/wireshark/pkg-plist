@@ -24,10 +24,10 @@ lib/wireshark/plugins/%%PORTVERSION%%/docsis.la
 lib/wireshark/plugins/%%PORTVERSION%%/docsis.so
 lib/wireshark/plugins/%%PORTVERSION%%/enttec.la
 lib/wireshark/plugins/%%PORTVERSION%%/enttec.so
+lib/wireshark/plugins/%%PORTVERSION%%/ethercat.la
+lib/wireshark/plugins/%%PORTVERSION%%/ethercat.so
 lib/wireshark/plugins/%%PORTVERSION%%/gryphon.la
 lib/wireshark/plugins/%%PORTVERSION%%/gryphon.so
-lib/wireshark/plugins/%%PORTVERSION%%/h223.la
-lib/wireshark/plugins/%%PORTVERSION%%/h223.so
 lib/wireshark/plugins/%%PORTVERSION%%/irda.la
 lib/wireshark/plugins/%%PORTVERSION%%/irda.so
 lib/wireshark/plugins/%%PORTVERSION%%/lwres.la
@@ -36,8 +36,6 @@ lib/wireshark/plugins/%%PORTVERSION%%/m2m.la
 lib/wireshark/plugins/%%PORTVERSION%%/m2m.so
 lib/wireshark/plugins/%%PORTVERSION%%/mate.la
 lib/wireshark/plugins/%%PORTVERSION%%/mate.so
-lib/wireshark/plugins/%%PORTVERSION%%/mgcp.la
-lib/wireshark/plugins/%%PORTVERSION%%/mgcp.so
 lib/wireshark/plugins/%%PORTVERSION%%/opcua.la
 lib/wireshark/plugins/%%PORTVERSION%%/opcua.so
 lib/wireshark/plugins/%%PORTVERSION%%/opsi.la
@@ -60,10 +58,14 @@ lib/wireshark/plugins/%%PORTVERSION%%/stats_tree.la
 lib/wireshark/plugins/%%PORTVERSION%%/stats_tree.so
 lib/wireshark/plugins/%%PORTVERSION%%/tango.la
 lib/wireshark/plugins/%%PORTVERSION%%/tango.so
+lib/wireshark/plugins/%%PORTVERSION%%/unistim.la
+lib/wireshark/plugins/%%PORTVERSION%%/unistim.so
 lib/wireshark/plugins/%%PORTVERSION%%/v5ua.la
 lib/wireshark/plugins/%%PORTVERSION%%/v5ua.so
 lib/wireshark/plugins/%%PORTVERSION%%/wimax.la
 lib/wireshark/plugins/%%PORTVERSION%%/wimax.so
+lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.la
+lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 lib/libwireshark.la
 lib/libwireshark.so
 lib/libwireshark.so.0
@@ -77,10 +79,12 @@ lib/libwiretap.so.0
 %%DATADIR%%/colorfilters
 %%DATADIR%%/dfilters
 %%DATADIR%%/dumpcap.html
+%%DATADIR%%/diameter/Ericsson.xml
 %%DATADIR%%/diameter/TGPPSh.xml
 %%DATADIR%%/diameter/chargecontrol.xml
 %%DATADIR%%/diameter/dictionary.dtd
 %%DATADIR%%/diameter/dictionary.xml
+%%DATADIR%%/diameter/etsie2e4.xml
 %%DATADIR%%/diameter/gqpolicy.xml
 %%DATADIR%%/diameter/imscxdx.xml
 %%DATADIR%%/diameter/mobileipv4.xml
@@ -98,7 +102,13 @@ lib/libwiretap.so.0
 %%DATADIR%%/dtds/smil.dtd
 %%DATADIR%%/dtds/watcherinfo.dtd
 %%DATADIR%%/dtds/xcap-caps.dtd
+%%DATADIR%%/dtds/xcap-error.dtd
 %%DATADIR%%/editcap.html
+%%DATADIR%%/services
+%%DATADIR%%/smi_modules
+%%DATADIR%%/tpncp/tpncp.dat
+%%DATADIR%%/wimaxasncp/dictionary.dtd
+%%DATADIR%%/wimaxasncp/dictionary.xml
 %%DATADIR%%/wireshark-filter.html
 %%DATADIR%%/wireshark.html
 %%DATADIR%%/help/capture_filters.txt
@@ -178,6 +188,8 @@ lib/libwiretap.so.0
 @dirrm lib/wireshark/plugins/%%PORTVERSION%%
 @dirrm lib/wireshark/plugins
 @dirrm lib/wireshark
+@dirrm %%DATADIR%%/wimaxasncp
+@dirrm %%DATADIR%%/tpncp
 @dirrm %%DATADIR%%/radius
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/dtds
