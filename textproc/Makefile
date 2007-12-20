@@ -46,6 +46,7 @@
     SUBDIR += cbedic
     SUBDIR += cdif
     SUBDIR += cdiff
+    SUBDIR += chm2pdf
     SUBDIR += chpp
     SUBDIR += cl-meta
     SUBDIR += cl-meta-clisp
