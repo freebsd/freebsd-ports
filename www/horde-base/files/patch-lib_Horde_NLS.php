@@ -4,10 +4,10 @@
                  setlocale(LC_ALL, $lang_charset);
              }
          }
-+        /* avoid FreeBSD issapce(3) bug */
-+        if(NLS::getCharset() == "UTF-8"){
-+            setlocale(LC_CTYPE,"C");
-+        }
++	/* avoid FreeBSD issapce(3) bug */
++	if(NLS::getCharset() == "UTF-8"){
++		setlocale(LC_CTYPE,"C");
++	}
          @putenv('LANG=' . $lang_charset);
          @putenv('LANGUAGE=' . $lang_charset);
      }
