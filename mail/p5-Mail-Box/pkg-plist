@@ -133,6 +133,8 @@
 %%SITE_PERL%%/Mail/Message/Construct/Text.pod
 %%SITE_PERL%%/Mail/Message/Convert.pm
 %%SITE_PERL%%/Mail/Message/Convert.pod
+%%SITE_PERL%%/Mail/Message/Convert/EmailSimple.pm
+%%SITE_PERL%%/Mail/Message/Convert/EmailSimple.pod
 %%SITE_PERL%%/Mail/Message/Convert/Html.pm
 %%SITE_PERL%%/Mail/Message/Convert/Html.pod
 %%SITE_PERL%%/Mail/Message/Convert/HtmlFormatPS.pm
