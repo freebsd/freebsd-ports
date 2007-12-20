@@ -1,8 +1,15 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Declare/.packlist
 %%SITE_PERL%%/Template/Declare.pm
 %%SITE_PERL%%/Template/Declare/Buffer.pm
+%%SITE_PERL%%/Template/Declare/TagSet.pm
+%%SITE_PERL%%/Template/Declare/TagSet/HTML.pm
+%%SITE_PERL%%/Template/Declare/TagSet/RDF.pm
+%%SITE_PERL%%/Template/Declare/TagSet/RDF/EM.pm
+%%SITE_PERL%%/Template/Declare/TagSet/XUL.pm
 %%SITE_PERL%%/Template/Declare/Tags.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Declare/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Declare
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Declare/TagSet/RDF
+@dirrmtry %%SITE_PERL%%/Template/Declare/TagSet
 @dirrmtry %%SITE_PERL%%/Template/Declare
 @dirrmtry %%SITE_PERL%%/Template
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Declare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
