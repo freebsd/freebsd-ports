@@ -35,7 +35,7 @@ PLIST_SUB=	VERSION=${PORTVERSION:R}
 .if defined(WITH_GSTREAMER)
 USE_GSTREAMER=	yes
 .else
-LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		mad.2:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=	--disable-gstreamer --enable-ffmpeg --enable-mad
 .endif
