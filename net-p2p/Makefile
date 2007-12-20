@@ -110,6 +110,7 @@
     SUBDIR += qtorrent
     SUBDIR += rblibtorrent
     SUBDIR += rblibtorrent-devel
+    SUBDIR += rtgui
     SUBDIR += rtorrent
     SUBDIR += rtorrent-devel
     SUBDIR += sharktorrent

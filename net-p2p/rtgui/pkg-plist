@@ -1,0 +1,34 @@
+%%WWWDIR%%/config.php
+%%WWWDIR%%/control.php
+%%WWWDIR%%/favicon.ico
+%%WWWDIR%%/functions.php
+%%WWWDIR%%/images/completeactive.gif
+%%WWWDIR%%/images/completeinactive.gif
+%%WWWDIR%%/images/delete.gif
+%%WWWDIR%%/images/downarrow.gif
+%%WWWDIR%%/images/hashcheck.gif
+%%WWWDIR%%/images/incompleteactive.gif
+%%WWWDIR%%/images/incompleteinactive.gif
+%%WWWDIR%%/images/percentbar.gif
+%%WWWDIR%%/images/refresh.gif
+%%WWWDIR%%/images/start.gif
+%%WWWDIR%%/images/stop.gif
+%%WWWDIR%%/images/uparrow.gif
+%%WWWDIR%%/images/view.gif
+%%WWWDIR%%/index.php
+%%WWWDIR%%/readme.txt
+%%WWWDIR%%/style.css
+%%WWWDIR%%/submodal/CHANGELOG
+%%WWWDIR%%/submodal/close.gif
+%%WWWDIR%%/submodal/common.js
+%%WWWDIR%%/submodal/index.html
+%%WWWDIR%%/submodal/loading.html
+%%WWWDIR%%/submodal/maskBG.png
+%%WWWDIR%%/submodal/modalContent.html
+%%WWWDIR%%/submodal/style.css
+%%WWWDIR%%/submodal/subModal.css
+%%WWWDIR%%/submodal/subModal.js
+%%WWWDIR%%/view.php
+@dirrm %%WWWDIR%%/submodal
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%

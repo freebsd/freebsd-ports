@@ -1,0 +1,49 @@
+---------------------------------------------------------------------------
+
+Browse http://your.host.tld/%%PORTNAME%%/
+
+---------------------------------------------------------------------------
+To make rtgui available through your web site, I suggest
+that you add something like the following to httpd.conf:
+
+SCGIMount /RPC2 127.0.0.1:5000
+
+    Alias /rtgui/ "%%WWWDIR%%/"
+
+    <Directory "%%WWWDIR%%/">
+        Options none
+        AllowOverride Limit
+        Order Deny,Allow
+        Allow from all
+    </Directory>
+
+with in .rtorrent.rc:
+scgi_port = localhost:5000
+
+or in your lighttpd:
+scgi.server = (
+                "/RPC2" =>
+                  ( "127.0.0.1" =>
+                    (
+                      "socket" => "/home/user/rtorrent/rpc.socket",
+                      "check-local" => "disable",
+                      "disable-time" => 0,  # don't disable scgi if connection fails
+                    )
+                  )
+              )
+with .rtorrent.rc:
+scgi_local = /home/user/rtorrent/rpc.socket
+
+
+---------------------------------------------------------------------------
+
+Security considerations
+
+---------------------------------------------------------------------------
+
+Absolutely no thought whatsoever has been given to security in rtGui -
+do not run this on a publicly available website. rtGui is intended for
+'home' use where users can be considered as trusted. A basic
+authentication mechanism is planned for future releases. At the very
+least, you should password protect your webserver using .htaccess or
+similar (see http://en.wikipedia.org/wiki/Htaccess for more info).
