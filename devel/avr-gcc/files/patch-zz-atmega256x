@@ -1,8 +1,6 @@
-Index: gcc/config/avr/avr.c
-===================================================================
---- gcc/config/avr/avr.c	(revision 124356)
-+++ gcc/config/avr/avr.c	(working copy)
-@@ -129,22 +129,27 @@
+--- gcc/config/avr/avr.c.orig	Wed Dec 19 14:18:09 2007
++++ gcc/config/avr/avr.c	Wed Dec 19 14:34:15 2007
+@@ -131,23 +131,28 @@
  /* Core have 'MOVW' and 'LPM Rx,Z' instructions.  */
  int avr_have_movw_lpmx_p = 0;
  
@@ -24,6 +22,7 @@ Index: gcc/config/avr/avr.c
 -  { 0, 0, 0, 0, "__AVR_ARCH__=2" },
 -  { 0, 0, 0, 1, "__AVR_ARCH__=25"},
 -  { 0, 0, 1, 0, "__AVR_ARCH__=3" },
+-  { 0, 0, 1, 1, "__AVR_ARCH__=35"},
 -  { 0, 1, 0, 1, "__AVR_ARCH__=4" },
 -  { 0, 1, 1, 1, "__AVR_ARCH__=5" }
 +  { 1, 0, 0, 0, 0,  NULL },  /* unknown device specified */
@@ -31,15 +30,16 @@ Index: gcc/config/avr/avr.c
 +  { 0, 0, 0, 0, 0, "__AVR_ARCH__=2" },
 +  { 0, 0, 0, 1, 0, "__AVR_ARCH__=25"},
 +  { 0, 0, 1, 0, 0, "__AVR_ARCH__=3" },
++  { 0, 0, 1, 1, 0, "__AVR_ARCH__=35" },
 +  { 0, 1, 0, 1, 0, "__AVR_ARCH__=4" },
 +  { 0, 1, 1, 1, 0, "__AVR_ARCH__=5" },
 +  { 0, 1, 1, 1, 1, "__AVR_ARCH__=6" }
  };
  
  /* These names are used as the index into the avr_arch_types[] table 
-@@ -158,7 +163,8 @@
-   ARCH_AVR25,
+@@ -162,7 +167,8 @@
    ARCH_AVR3,
+   ARCH_AVR35,
    ARCH_AVR4,
 -  ARCH_AVR5
 +  ARCH_AVR5,
@@ -47,7 +47,7 @@ Index: gcc/config/avr/avr.c
  };
  
  struct mcu_type_s {
-@@ -269,6 +275,10 @@
+@@ -288,6 +294,10 @@
    { "at90usb1286",  ARCH_AVR5, "__AVR_AT90USB1286__" },
    { "at90usb1287",  ARCH_AVR5, "__AVR_AT90USB1287__" },
    { "at94k",        ARCH_AVR5, "__AVR_AT94K__" },
@@ -58,7 +58,7 @@ Index: gcc/config/avr/avr.c
      /* Assembler only.  */
    { "avr1",         ARCH_AVR1, NULL },
    { "at90s1200",    ARCH_AVR1, "__AVR_AT90S1200__" },
-@@ -351,6 +361,7 @@
+@@ -370,6 +380,7 @@
    avr_enhanced_p = base->enhanced;
    avr_mega_p = base->mega;
    avr_have_movw_lpmx_p = base->have_movw_lpmx;
@@ -66,7 +66,7 @@ Index: gcc/config/avr/avr.c
    avr_base_arch_macro = base->macro;
    avr_extra_arch_macro = t->macro;
  
-@@ -480,9 +491,10 @@
+@@ -529,9 +540,10 @@
    else
      {
        int offset = frame_pointer_needed ? 2 : 0;
@@ -78,7 +78,7 @@ Index: gcc/config/avr/avr.c
      }
  }
  
-@@ -1103,7 +1115,7 @@
+@@ -1139,7 +1151,7 @@
  	  && ((GET_CODE (addr) == SYMBOL_REF && SYMBOL_REF_FUNCTION_P (addr))
  	      || GET_CODE (addr) == LABEL_REF))
  	{
@@ -87,7 +87,7 @@ Index: gcc/config/avr/avr.c
  	  output_addr_const (file,addr);
  	  fprintf (file ,")");
  	}
-@@ -1128,6 +1140,11 @@
+@@ -1164,6 +1176,11 @@
        if (!AVR_MEGA)
  	fputc ('r', file);
      }
@@ -99,7 +99,7 @@ Index: gcc/config/avr/avr.c
    else if (REG_P (x))
      {
        if (x == zero_reg_rtx)
-@@ -4524,7 +4541,7 @@
+@@ -4560,7 +4577,7 @@
        && ((GET_CODE (x) == SYMBOL_REF && SYMBOL_REF_FUNCTION_P (x))
  	  || GET_CODE (x) == LABEL_REF))
      {
@@ -108,7 +108,7 @@ Index: gcc/config/avr/avr.c
        output_addr_const (asm_out_file, x);
        fputs (")\n", asm_out_file);
        return true;
-@@ -5898,7 +5915,7 @@
+@@ -5954,7 +5971,7 @@
  {
    switch_to_section (progmem_section);
    if (AVR_MEGA)
@@ -117,8 +117,8 @@ Index: gcc/config/avr/avr.c
    else
      fprintf (stream, "\trjmp .L%d\n", value);
  
---- gcc/config/avr/avr.h.orig	Sun Oct 28 00:13:49 2007
-+++ gcc/config/avr/avr.h	Sun Oct 28 00:15:29 2007
+--- gcc/config/avr/avr.h.orig	Wed Dec 19 14:18:09 2007
++++ gcc/config/avr/avr.h	Wed Dec 19 14:44:32 2007
 @@ -36,6 +36,12 @@
  	builtin_define ("__AVR_HAVE_LPMX__");	\
        if (avr_asm_only_p)			\
@@ -149,7 +149,7 @@ Index: gcc/config/avr/avr.c
  
  #define TARGET_VERSION fprintf (stderr, " (GNU assembler syntax)");
  
-@@ -633,7 +642,7 @@
+@@ -631,7 +640,7 @@
  
  #define PRINT_OPERAND(STREAM, X, CODE) print_operand (STREAM, X, CODE)
  
@@ -158,15 +158,15 @@ Index: gcc/config/avr/avr.c
  
  #define PRINT_OPERAND_ADDRESS(STREAM, X) print_operand_address(STREAM, X)
  
-@@ -779,6 +788,7 @@
-   mmcu=at90pwm316|\
-   mmcu=at90usb*|\
+@@ -780,6 +789,7 @@
+   mmcu=at90usb6*|\
+   mmcu=at90usb12*|\
    mmcu=at94k:-m avr5}\
 +%{mmcu=atmega256*:-m avr6}\
  %{mmcu=atmega324*|\
    mmcu=atmega325*|\
    mmcu=atmega328p|\
-@@ -804,7 +814,8 @@
+@@ -808,7 +818,8 @@
    mmcu=at90usb*: -Tdata 0x800100}\
  %{mmcu=atmega640|\
    mmcu=atmega1280|\
@@ -176,20 +176,18 @@ Index: gcc/config/avr/avr.c
  
  #define LIB_SPEC \
    "%{!mmcu=at90s1*:%{!mmcu=attiny11:%{!mmcu=attiny12:%{!mmcu=attiny15:%{!mmcu=attiny28: -lc }}}}}"
-@@ -903,6 +914,8 @@
- %{mmcu=atmega128:crtm128.o%s} \
+@@ -910,6 +921,8 @@
  %{mmcu=atmega1280:crtm1280.o%s} \
  %{mmcu=atmega1281:crtm1281.o%s} \
+ %{mmcu=atmega1284p:crtm1284p.o%s} \
 +%{mmcu=atmega2560:crtm2560.o%s} \
 +%{mmcu=atmega2561:crtm2561.o%s} \
  %{mmcu=atmega8hva:crtm8hva.o%s} \
  %{mmcu=atmega16hva:crtm16hva.o%s} \
  %{mmcu=at90can32:crtcan32.o%s} \
-Index: gcc/config/avr/avr.md
-===================================================================
---- gcc/config/avr/avr.md	(revision 124356)
-+++ gcc/config/avr/avr.md	(working copy)
-@@ -33,6 +33,7 @@
+--- gcc/config/avr/avr.md.orig	Wed Dec 19 14:18:10 2007
++++ gcc/config/avr/avr.md	Wed Dec 19 14:18:10 2007
+@@ -32,6 +32,7 @@
  ;;  p  POST_INC or PRE_DEC address as a pointer (X, Y, Z)
  ;;  r  POST_INC or PRE_DEC address as a register (r26, r28, r30)
  ;;  ~  Output 'r' if not AVR_MEGA.
@@ -197,7 +195,7 @@ Index: gcc/config/avr/avr.md
  
  ;; UNSPEC usage:
  ;;  0  Length of a string, see "strlenhi".
-@@ -2100,22 +2101,22 @@
+@@ -2340,22 +2341,22 @@
    "(register_operand (operands[0], HImode) || CONSTANT_P (operands[0]))"
    "*{
    if (which_alternative==0)
@@ -224,7 +222,7 @@ Index: gcc/config/avr/avr.md
  }"
    [(set_attr "cc" "clobber,clobber,clobber,clobber")
     (set_attr_alternative "length"
-@@ -2137,22 +2138,22 @@
+@@ -2377,22 +2378,22 @@
    "(register_operand (operands[0], VOIDmode) || CONSTANT_P (operands[0]))"
    "*{
    if (which_alternative==0)
@@ -251,7 +249,7 @@ Index: gcc/config/avr/avr.md
  }"
    [(set_attr "cc" "clobber,clobber,clobber,clobber")
     (set_attr_alternative "length"
-@@ -2182,13 +2183,20 @@
+@@ -2422,13 +2423,20 @@
  ; indirect jump
  (define_insn "indirect_jump"
    [(set (pc) (match_operand:HI 0 "register_operand" "!z,*r"))]
@@ -273,7 +271,7 @@ Index: gcc/config/avr/avr.md
  ;; table jump
  
  ;; Table made from "rjmp" instructions for <=8K devices.
-@@ -2197,7 +2205,7 @@
+@@ -2437,7 +2445,7 @@
  			UNSPEC_INDEX_JMP))
     (use (label_ref (match_operand 1 "" "")))
     (clobber (match_dup 0))]
@@ -282,7 +280,7 @@ Index: gcc/config/avr/avr.md
    "@
  	ijmp
  	push %A0\;push %B0\;ret"
-@@ -2226,7 +2234,7 @@
+@@ -2466,7 +2474,7 @@
  	lpm __tmp_reg__,Z+
  	lpm r31,Z
  	mov r30,__tmp_reg__
@@ -291,7 +289,7 @@ Index: gcc/config/avr/avr.md
    [(set_attr "length" "6")
     (set_attr "cc" "clobber")])
  
-@@ -2235,7 +2243,7 @@
+@@ -2475,7 +2483,7 @@
  			UNSPEC_INDEX_JMP))
     (use (label_ref (match_operand 1 "" "")))
     (clobber (match_dup 0))]
@@ -300,10 +298,8 @@ Index: gcc/config/avr/avr.md
    "lsl r30
  	rol r31
  	lpm
-Index: gcc/config/avr/libgcc.S
-===================================================================
---- gcc/config/avr/libgcc.S	(revision 124356)
-+++ gcc/config/avr/libgcc.S	(working copy)
+--- gcc/config/avr/libgcc.S.orig	Mon Jun 19 17:04:27 2006
++++ gcc/config/avr/libgcc.S	Wed Dec 19 14:18:10 2007
 @@ -593,7 +593,12 @@
  	out	__SP_H__,r29
  	out	__SREG__,__tmp_reg__
@@ -340,22 +336,20 @@ Index: gcc/config/avr/libgcc.S
  	ret
  #endif
  	.endfunc
-Index: gcc/config/avr/t-avr
-===================================================================
---- gcc/config/avr/t-avr	(revision 124356)
-+++ gcc/config/avr/t-avr	(working copy)
+--- gcc/config/avr/t-avr.orig	Wed Dec 19 14:18:09 2007
++++ gcc/config/avr/t-avr	Wed Dec 19 14:30:07 2007
 @@ -37,8 +37,8 @@
  
  FPBIT = fp-bit.c
  
--MULTILIB_OPTIONS = mmcu=avr2/mmcu=avr25/mmcu=avr3/mmcu=avr4/mmcu=avr5
--MULTILIB_DIRNAMES = avr2 avr25 avr3 avr4 avr5
-+MULTILIB_OPTIONS = mmcu=avr2/mmcu=avr25/mmcu=avr3/mmcu=avr4/mmcu=avr5/mmcu=avr6
-+MULTILIB_DIRNAMES = avr2 avr25 avr3 avr4 avr5 avr6
+-MULTILIB_OPTIONS = mmcu=avr2/mmcu=avr25/mmcu=avr3/mmcu=avr35/mmcu=avr4/mmcu=avr5
+-MULTILIB_DIRNAMES = avr2 avr25 avr3 avr35 avr4 avr5
++MULTILIB_OPTIONS = mmcu=avr2/mmcu=avr25/mmcu=avr3/mmcu=avr35/mmcu=avr4/mmcu=avr5/mmcu=avr6
++MULTILIB_DIRNAMES = avr2 avr25 avr3 avr35 avr4 avr5 avr6
  
  # The many avr2 matches are not listed here - this is the default.
  MULTILIB_MATCHES = \
-@@ -111,7 +111,9 @@
+@@ -124,7 +124,9 @@
  	mmcu?avr5=mmcu?at90usb647 \
  	mmcu?avr5=mmcu?at90usb1286 \
  	mmcu?avr5=mmcu?at90usb1287 \
@@ -365,4 +359,3 @@ Index: gcc/config/avr/t-avr
 +	mmcu?avr6=mmcu?atmega2561
  
  MULTILIB_EXCEPTIONS =
- 
