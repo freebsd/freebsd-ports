@@ -7,7 +7,11 @@ include/utdatabaseup.h
 include/utmem.h
 include/utpersist.h
 include/uttypes.h
+lib/libddutil-dbg.a
 lib/libddutil.a
+lib/libddutilp-dbg.a
 lib/libddutilp.a
+lib/libddutilu-dbg.a
 lib/libddutilu.a
+lib/libddutilup-dbg.a
 lib/libddutilup.a
