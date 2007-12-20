@@ -8,6 +8,7 @@
 
 PORTNAME=	chmlib
 PORTVERSION=	0.39
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.jedrea.com/chmlib/
 
@@ -16,7 +17,7 @@ COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-io64 --disable-pread --exec-prefix=${PREFIX} --disable-static
+CONFIGURE_ARGS=	--disable-io64 --disable-pread --exec-prefix=${PREFIX} --disable-static --enable-examples
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
