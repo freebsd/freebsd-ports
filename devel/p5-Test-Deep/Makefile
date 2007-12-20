@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	Test-Deep
-PORTVERSION=	0.096
+PORTVERSION=	0.099
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Test
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Test data structures for differences deeply
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/NoWarnings.pm:${PORTSDIR}/devel/p5-Test-NoWarnings \
-		${SITE_PERL}/Test/Tester.pm:${PORTSDIR}/devel/p5-Test-Tester \
-		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+		${SITE_PERL}/Test/Tester.pm:${PORTSDIR}/devel/p5-Test-Tester
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-INSTALL_TARGET=	pure_install
 
-MAN3=		Test::Deep.3
+.include <bsd.port.pre.mk>
 
-post-patch:
-	@${PERL} -i -pe 'm/INSTALLDIRS\s+=>/ and $$_ = ""' \
-			${WRKSRC}/Makefile.PL
+.if ${PERL_LEVEL} < 500703
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
 
-.include <bsd.port.mk>
+MAN3=		Test::Deep.3 Test::Deep::NoTest.3
+
+.include <bsd.port.post.mk>
+
