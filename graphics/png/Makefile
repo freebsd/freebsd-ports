@@ -7,6 +7,7 @@
 
 PORTNAME=	png
 PORTVERSION=	1.2.23
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lib${PORTNAME}
@@ -49,5 +50,6 @@ post-install:
 		> ${WRKSRC}/scripts/libpng.pc
 	${INSTALL_DATA} ${WRKSRC}/scripts/libpng.pc \
 		${PREFIX}/libdata/pkgconfig/libpng12.pc
+	${LN} -sf libpng12.pc ${PREFIX}/libdata/pkgconfig/libpng.pc
 
 .include <bsd.port.post.mk>
