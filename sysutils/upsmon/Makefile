@@ -8,7 +8,8 @@
 PORTNAME=	upsmon
 PORTVERSION=	2.1.3
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://newcorridor.com/pub/upsmon/
+MASTER_SITES=	ftp://ftp.dinoex.de/pub/experiment/ \
+		ftp://newcorridor.com/pub/upsmon/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic UPS monitor for the APC SmartUPS devices
