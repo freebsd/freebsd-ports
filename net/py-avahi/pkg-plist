@@ -1,15 +1,20 @@
 bin/avahi-bookmarks
 bin/avahi-discover
-lib/%%PYTHON_VERSION%%/site-packages/avahi/ServiceTypeDatabase.py
-lib/%%PYTHON_VERSION%%/site-packages/avahi/ServiceTypeDatabase.pyc
-lib/%%PYTHON_VERSION%%/site-packages/avahi/ServiceTypeDatabase.pyo
-lib/%%PYTHON_VERSION%%/site-packages/avahi/SimpleGladeApp.py
-lib/%%PYTHON_VERSION%%/site-packages/avahi/SimpleGladeApp.pyc
-lib/%%PYTHON_VERSION%%/site-packages/avahi/SimpleGladeApp.pyo
-lib/%%PYTHON_VERSION%%/site-packages/avahi/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/avahi/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/avahi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/avahi/ServiceTypeDatabase.py
+%%PYTHON_SITELIBDIR%%/avahi/ServiceTypeDatabase.pyc
+%%PYTHON_SITELIBDIR%%/avahi/ServiceTypeDatabase.pyo
+%%PYTHON_SITELIBDIR%%/avahi/__init__.py
+%%PYTHON_SITELIBDIR%%/avahi/__init__.pyc
+%%PYTHON_SITELIBDIR%%/avahi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/avahi_discover/SimpleGladeApp.py
+%%PYTHON_SITELIBDIR%%/avahi_discover/SimpleGladeApp.pyc
+%%PYTHON_SITELIBDIR%%/avahi_discover/SimpleGladeApp.pyo
+%%PYTHON_SITELIBDIR%%/avahi_discover/__init__.py
+%%PYTHON_SITELIBDIR%%/avahi_discover/__init__.pyc
+%%PYTHON_SITELIBDIR%%/avahi_discover/__init__.pyo
 share/applications/avahi-discover.desktop
 %%DATADIR%%/service-types.db
 @dirrmtry share/applications
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/avahi
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/avahi_discover
+@dirrm %%PYTHON_SITELIBDIR%%/avahi

@@ -1,0 +1,23 @@
+--- avahi-utils/Makefile.in.orig	2007-12-19 14:37:00.000000000 +0000
++++ avahi-utils/Makefile.in	2007-12-19 14:38:01.000000000 +0000
+@@ -570,16 +570,16 @@
+ 	done
+ avahi-browse$(EXEEXT): $(avahi_browse_OBJECTS) $(avahi_browse_DEPENDENCIES) 
+ 	@rm -f avahi-browse$(EXEEXT)
+-	$(LINK) $(avahi_browse_LDFLAGS) $(avahi_browse_OBJECTS) $(avahi_browse_LDADD) $(LIBS)
++	$(LINK) $(avahi_browse_LDFLAGS) $(avahi_browse_OBJECTS) $(avahi_browse_LDADD) $(LIBS) $(INTLLIBS)
+ avahi-publish$(EXEEXT): $(avahi_publish_OBJECTS) $(avahi_publish_DEPENDENCIES) 
+ 	@rm -f avahi-publish$(EXEEXT)
+-	$(LINK) $(avahi_publish_LDFLAGS) $(avahi_publish_OBJECTS) $(avahi_publish_LDADD) $(LIBS)
++	$(LINK) $(avahi_publish_LDFLAGS) $(avahi_publish_OBJECTS) $(avahi_publish_LDADD) $(LIBS) $(INTLLIBS)
+ avahi-resolve$(EXEEXT): $(avahi_resolve_OBJECTS) $(avahi_resolve_DEPENDENCIES) 
+ 	@rm -f avahi-resolve$(EXEEXT)
+-	$(LINK) $(avahi_resolve_LDFLAGS) $(avahi_resolve_OBJECTS) $(avahi_resolve_LDADD) $(LIBS)
++	$(LINK) $(avahi_resolve_LDFLAGS) $(avahi_resolve_OBJECTS) $(avahi_resolve_LDADD) $(LIBS) $(INTLLIBS)
+ avahi-set-host-name$(EXEEXT): $(avahi_set_host_name_OBJECTS) $(avahi_set_host_name_DEPENDENCIES) 
+ 	@rm -f avahi-set-host-name$(EXEEXT)
+-	$(LINK) $(avahi_set_host_name_LDFLAGS) $(avahi_set_host_name_OBJECTS) $(avahi_set_host_name_LDADD) $(LIBS)
++	$(LINK) $(avahi_set_host_name_LDFLAGS) $(avahi_set_host_name_OBJECTS) $(avahi_set_host_name_LDADD) $(LIBS) $(INTLLIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)

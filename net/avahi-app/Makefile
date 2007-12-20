@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.21
-PORTREVISION?=	1
+PORTVERSION=	0.6.22
+PORTREVISION?=	0
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app
@@ -22,6 +22,7 @@ LIB_DEPENDS?=	expat.6:${PORTSDIR}/textproc/expat2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_GNOME?=	gnomehack ltverhack glib20
+USE_GETTEXT=	yes
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -121,6 +122,14 @@ avahi-post-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${f}
 .endfor
+
+pre-install: avahi-pre-install
+
+avahi-pre-install:
+.if ${AVAHI_SLAVE}=="no"
+	@${MKDIR} ${PREFIX}/lib/avahi
+	@${TOUCH} -f ${PREFIX}/lib/avahi/.keep
+.endif
 
 post-install: avahi-post-install
 

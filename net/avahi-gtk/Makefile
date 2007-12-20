@@ -24,7 +24,8 @@ AVAHI_SLAVE=	gtk
 AVAHI_PKGCONFIG=avahi-ui.pc
 
 MAN1+=		bssh.1
-MLINKS+=	bssh.1 bvnc.1
+MLINKS+=	bssh.1 bvnc.1 \
+		bssh.1 bshell.1
 USE_GNOME=	gnomehack gnometarget ltverhack libglade2
 
 post-build:
