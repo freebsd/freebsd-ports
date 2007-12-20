@@ -2,6 +2,7 @@
 #
 # pkg-install : based off ${PORTSDIR}/mail/courier/files/pkg-install.in
 #
+LOCALBASE=${LOCALBASE:=/usr/local}
 
 ask() {
     local question default answer
