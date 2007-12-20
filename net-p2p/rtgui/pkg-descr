@@ -1,0 +1,16 @@
+rtGui is a web based front end for rTorrent - a command line
+BitTorrent client. It's written in PHP and uses XML-RPC to communicate
+with the rTorrent client.
+Features
+
+    * List all torrent downloads or by
+    * started/stopped/complete/incomplete/seeding status.
+    * Sort view by any of the displayed columns.
+    * View detailed torrent information.
+    * Stop/start/hash-check torrent.
+    * Set upload/download speed cap.
+    * Add torrents by URL.
+    * Does not require mySQL or any other database.
+    * Set priority per torrent or file.
+
+WWW: http://code.google.com/p/rtgui/
