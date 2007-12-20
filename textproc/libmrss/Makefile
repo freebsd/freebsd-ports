@@ -7,7 +7,7 @@
 
 PORTNAME=	libmrss
 PORTVERSION=	0.18.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www5.autistici.org/bakunin/libmrss/ GENTOO/distfiles
 
