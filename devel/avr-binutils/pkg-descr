@@ -11,9 +11,11 @@ In addition to the stock binutils-2.18 distribution, support for the
 following AVR devices has been added by a private patch:
 
   ATtiny43U
-  ATtiny48
+  ATtiny48/88
   AT90PWM2B/PWM3B
   AT90PWM216/PWM316
   ATmega48P/88P/168P/328P
+  ATmega32HVB
+  ATmega1284P
 
 WWW: http://www.sourceware.org/binutils/
