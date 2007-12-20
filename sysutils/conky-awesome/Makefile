@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.9
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=	--disable-xft
 .if !defined(WITHOUT_OWN_WINDOW)
 CONFIGURE_ARGS+=	--enable-own-window
 .else
-CONFIGURE_ARGS+=	--disable-own-widnow
+CONFIGURE_ARGS+=	--disable-own-window
 .endif
 
 .if defined(WITH_MPD)
