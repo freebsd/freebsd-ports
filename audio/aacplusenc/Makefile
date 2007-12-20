@@ -26,7 +26,8 @@ PLIST_FILES=	bin/aacplusenc
 .if defined(WITHOUT_FFTW3)
 MAKE_ARGS+=	NOFFTW3=1
 .else
-LIB_DEPENDS+=	fftw3f.4:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	fftw3f.4:${PORTSDIR}/math/fftw3-float \
+		fftw3.4:${PORTSDIR}/math/fftw3
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
