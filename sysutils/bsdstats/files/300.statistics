@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.39 2007-10-16 04:34:49 scrappy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/Attic/300.statistics,v 1.40 2007-12-20 04:36:39 scrappy Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -22,7 +22,7 @@ fi
 oldmask=$(umask)
 umask 066
 
-version="5.2"
+version="5.4"
 checkin_server=${monthly_statistics_checkin_server:-"rpt.bsdstats.org"}
 bsdstats_log=${monthly_statistics_logfile:-"/var/log/bsdstats"}
 id_token_file='/var/db/bsdstats'
@@ -397,7 +397,6 @@ report_cpu () {
 case "$monthly_statistics_enable" in
     [Yy][Ee][Ss])
       check_dns
-      HN=`/bin/hostname`
       REL=`/usr/bin/uname -r`
       ARCH=`/usr/bin/uname -m`
       OS=`/usr/bin/uname -s`
