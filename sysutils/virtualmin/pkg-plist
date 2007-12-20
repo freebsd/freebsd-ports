@@ -1,6 +1,7 @@
 lib/webmin/virtual-server/CHANGELOG
 lib/webmin/virtual-server/RELEASE
 lib/webmin/virtual-server/acl_security.pl
+lib/webmin/virtual-server/admins-lib.pl
 lib/webmin/virtual-server/all_webmin.cgi
 lib/webmin/virtual-server/backup-domain.pl
 lib/webmin/virtual-server/backup.cgi
@@ -41,6 +42,7 @@ lib/webmin/virtual-server/domain_form.cgi
 lib/webmin/virtual-server/domain_setup.cgi
 lib/webmin/virtual-server/dynip-lib.pl
 lib/webmin/virtual-server/dynip.pl
+lib/webmin/virtual-server/edit_admin.cgi
 lib/webmin/virtual-server/edit_afile.cgi
 lib/webmin/virtual-server/edit_alias.cgi
 lib/webmin/virtual-server/edit_database.cgi
@@ -55,6 +57,7 @@ lib/webmin/virtual-server/edit_newfields.cgi
 lib/webmin/virtual-server/edit_newlocal.cgi
 lib/webmin/virtual-server/edit_newquotacheck.cgi
 lib/webmin/virtual-server/edit_newsharedips.cgi
+lib/webmin/virtual-server/edit_newshells.cgi
 lib/webmin/virtual-server/edit_newtmpl.cgi
 lib/webmin/virtual-server/edit_newupdate.cgi
 lib/webmin/virtual-server/edit_newupgrade.cgi
@@ -208,6 +211,7 @@ lib/webmin/virtual-server/images/newreseller.gif
 lib/webmin/virtual-server/images/newresels.gif
 lib/webmin/virtual-server/images/newscripts.gif
 lib/webmin/virtual-server/images/newsharedips.gif
+lib/webmin/virtual-server/images/newshells.gif
 lib/webmin/virtual-server/images/newspamvirus.gif
 lib/webmin/virtual-server/images/newsubdom.gif
 lib/webmin/virtual-server/images/newtmpl.gif
@@ -247,6 +251,7 @@ lib/webmin/virtual-server/lang/zh_CN.UTF-8
 lib/webmin/virtual-server/lang/zh_TW.Big5
 lib/webmin/virtual-server/lang/zh_TW.UTF-8
 lib/webmin/virtual-server/list-features.pl
+lib/webmin/virtual-server/list_admins.cgi
 lib/webmin/virtual-server/list_aliases.cgi
 lib/webmin/virtual-server/list_databases.cgi
 lib/webmin/virtual-server/list_users.cgi
@@ -273,6 +278,7 @@ lib/webmin/virtual-server/restart_feature.cgi
 lib/webmin/virtual-server/restore-domain.pl
 lib/webmin/virtual-server/restore.cgi
 lib/webmin/virtual-server/restore_form.cgi
+lib/webmin/virtual-server/save_admin.cgi
 lib/webmin/virtual-server/save_afile.cgi
 lib/webmin/virtual-server/save_alias.cgi
 lib/webmin/virtual-server/save_database.cgi
@@ -289,6 +295,7 @@ lib/webmin/virtual-server/save_newfeatures.cgi
 lib/webmin/virtual-server/save_newfields.cgi
 lib/webmin/virtual-server/save_newlocal.cgi
 lib/webmin/virtual-server/save_newsharedips.cgi
+lib/webmin/virtual-server/save_newshells.cgi
 lib/webmin/virtual-server/save_newupdate.cgi
 lib/webmin/virtual-server/save_newuser.cgi
 lib/webmin/virtual-server/save_pass.cgi
