@@ -1,6 +1,6 @@
---- setupext.py.orig	Sun Mar 11 16:20:42 2007
-+++ setupext.py	Sun Mar 11 16:22:14 2007
-@@ -50,9 +50,10 @@
+--- setupext.py.orig	2007-02-01 04:32:51.000000000 -0500
++++ setupext.py	2007-12-19 21:26:33.000000000 -0500
+@@ -50,9 +50,11 @@
      'cygwin' : ['/usr/local', '/usr',],
      'darwin' : ['/sw/lib/freetype2', '/sw/lib/freetype219', '/usr/local',
                  '/usr', '/sw'],
@@ -11,10 +11,11 @@
 +    'freebsd5' : ['%%LOCALBASE%%', '/usr'],
 +    'freebsd6' : ['%%LOCALBASE%%', '/usr'],
 +    'freebsd7' : ['%%LOCALBASE%%', '/usr'],
++    'freebsd8' : ['%%LOCALBASE%%', '/usr'],
      'sunos5' : [os.getenv('MPLIB_BASE') or '/usr/local',],
      'gnukfreebsd5' : ['/usr/local', '/usr'],
      'gnukfreebsd6' : ['/usr/local', '/usr'],
-@@ -455,9 +456,9 @@
+@@ -455,9 +457,9 @@
  
      # you're still here? ok we'll try it this way
      o = find_tcltk() # todo: try/except

@@ -1,5 +1,5 @@
---- Make	Wed Nov  1 10:04:27 2000
-+++ Make.new	Tue Sep 25 09:15:11 2001
+--- Make.orig	2002-02-26 07:29:20.000000000 -0500
++++ Make	2007-12-19 21:18:32.000000000 -0500
 @@ -18,7 +18,7 @@
  LD=ld                      # linker for shared objects
  COMPILEFLAG=""             # general compilation flags for cc
@@ -19,7 +19,7 @@
          *|unknown)
              PREFIX="/usr/local"
              ;;
-@@ -384,14 +387,14 @@
+@@ -386,14 +389,14 @@
          esac
          egrep -q tm_gmtoff /usr/include/time.h && CCFLAG="$CCFLAG -DHAS_GMTOFF"
          ;;
@@ -36,14 +36,10 @@
  #       Uncomment above line if you have problems with LD_LIBRARY_PATH
          case $CC in
              gcc)
-@@ -401,6 +404,48 @@
-             *)  echo "Warning: I don't know the options for $CC"\
-                       "- trying the gcc ones" >&2
-                 CCFLAG="-DHAS_TTYCOM -D_REQUIRED -DRENAME_UNDELETE -DHAS_GMTOFF"
-+                PIC="-fPIC"
-+                ;;
-+        esac
-+        ;;
+@@ -407,6 +410,48 @@
+                 ;;
+         esac
+         ;;
 +    FreeBSD:4.*)
 +        REXXLIB="librexx.so"
 +	SOLINK="librexx.so"
@@ -65,7 +61,7 @@
 +                ;;
 +        esac
 +        ;;
-+    FreeBSD:5.*|FreeBSD:6.*|FreeBSD:7.*)
++    FreeBSD:5.*|FreeBSD:6.*|FreeBSD:7.*|FreeBSD:8.*)
 +        REXXLIB="librexx.so"
 +	SOLINK="librexx.so"
 +        RANLIB=ranlib
@@ -82,6 +78,10 @@
 +            *)  echo "Warning: I don't know the options for $CC"\
 +                      "- trying the gcc ones" >&2
 +                CCFLAG="${CFLAGS} -DHAS_TTYCOM -DRENAME_UNDELETE -DHAS_GMTOFF"
-                 PIC="-fPIC"
-                 ;;
-         esac
++                PIC="-fPIC"
++                ;;
++        esac
++        ;;
+     unknown:*|*:*)
+         echo "I am not configured for this platform - guessing some options" >&2
+         echo "(You will not be able to use shared libraries)" >&2
