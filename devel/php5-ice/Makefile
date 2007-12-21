@@ -7,6 +7,7 @@
 
 PORTNAME=	Ice
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zeroc.com/download/Ice/3.2/ \
 		http://www.dirk.sh/dirk/php/Ice/
@@ -16,7 +17,7 @@ DISTNAME=	IcePHP-${PORTVERSION}
 MAINTAINER=	dirk.ye@gmail.com
 COMMENT=	An Ice (Internet Communications Engine) language mapping for PHP
 
-LIB_DEPENDS=	Ice.32:${PORTSDIR}/devel/ice
+LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
 
 USE_GMAKE=	yes
 MAKE_ARGS+=	PHP_EXT_DIR=${PHP_EXT_DIR}
@@ -25,7 +26,7 @@ IGNORE_WITH_PHP=4
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 
-LIB_VRS=	${PORTVERSION:S|.||g:C|0$||}
+LIB_VRS=	${PORTVERSION:S|.||g:C|1$||}
 PHP_MODNAME?=	IcePHP
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
@@ -55,8 +56,25 @@ post-patch:
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/config/Make.rules
 post-install:
+	@${MKDIR} ${PREFIX}/etc/php
 	@${ECHO_CMD} extension=${PHP_MODNAME}.so \
 		>> ${PREFIX}/etc/php/extensions.ini
+
+add-plist-info:
+	@${ECHO_CMD} "@exec mkdir -p %D/etc/php" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@exec echo extension=${PHP_MODNAME}.so >> %D/etc/php/extensions.ini" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec cp %D/etc/php/extensions.ini %D/etc/php/extensions.ini.orig" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec grep -v extension=${PHP_MODNAME}\\\.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rm %D/etc/php/extensions.ini.orig" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec [ -s %D/etc/php/extensions.ini ] || rm %D/etc/php/extensions.ini" \
+		>> ${TMPPLIST}
+
+security-check:
 	@${ECHO_CMD} "****************************************************************************"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "The following line has been added to your ${PREFIX}/etc/php/extensions.ini"
