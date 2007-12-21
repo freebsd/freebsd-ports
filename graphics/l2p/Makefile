@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	l2p
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 #PORTREVISION=	0
 CATEGORIES=	graphics print perl5
 MASTER_SITES=	http://www.redsymbol.net/software/l2p/dist/ \
