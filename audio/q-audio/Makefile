@@ -33,5 +33,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${GREP} -l "^examplesdir" | ${XARGS} ${REINPLACE_CMD} -e \
 		"s;[(]pkgdatadir[)]/examples;(datadir)/examples/q;"
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
