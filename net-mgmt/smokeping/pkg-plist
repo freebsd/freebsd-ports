@@ -110,10 +110,17 @@ etc/smokeping/tmail.dist
 %%PORTDOCS%%%%EXAMPLESDIR%%/config.template
 smokeping/htdocs/smokeping.cgi
 smokeping/lib/Config/Grammar.pm
+smokeping/lib/Config/Grammar/Document.pm
+smokeping/lib/Config/Grammar/Dynamic.pm
 smokeping/lib/Smokeping.pm
 smokeping/lib/Smokeping/Colorspace.pm
+smokeping/lib/Smokeping/Config.pm
 smokeping/lib/Smokeping/Examples.pm
+smokeping/lib/Smokeping/Graphs.pm
+smokeping/lib/Smokeping/Master.pm
+smokeping/lib/Smokeping/RRDhelpers.pm
 smokeping/lib/Smokeping/RRDtools.pm
+smokeping/lib/Smokeping/Slave.pm
 smokeping/lib/Smokeping/ciscoRttMonMIB.pm
 smokeping/lib/Smokeping/matchers/Avgratio.pm
 smokeping/lib/Smokeping/matchers/CheckLatency.pm
@@ -168,17 +175,17 @@ smokeping/lib/Smokeping/sorters/base.pm
 @exec chown smokeping:smokeping %D/var/smokeping
 @dirrmtry var/smokeping
 @dirrmtry var
-@dirrm smokeping/htdocs
-@dirrm smokeping/lib/Config
-@dirrm smokeping/lib/Smokeping/matchers
-@dirrm smokeping/lib/Smokeping/probes
 @dirrm smokeping/lib/Smokeping/sorters
+@dirrm smokeping/lib/Smokeping/probes
+@dirrm smokeping/lib/Smokeping/matchers
 @dirrm smokeping/lib/Smokeping
+@dirrm smokeping/lib/Config/Grammar
+@dirrm smokeping/lib/Config
 @dirrm smokeping/lib
+@dirrm smokeping/htdocs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Config
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping/matchers
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping/probes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping/sorters
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
