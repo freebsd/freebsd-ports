@@ -16915,7 +16915,7 @@ xd		ports/misc/xd
 xd3d		ports/graphics/xd3d
 xdaliclock	ports/x11-clocks/xdaliclock
 xdbedizzy	ports/x11/xdbedizzy
-xdd		ports/sysutils/xdd
+xdd		ports/benchmarks/xdd
 xdeblock	ports/games/xdeblock
 xdelta		ports/misc/xdelta
 xdelta3		ports/misc/xdelta3

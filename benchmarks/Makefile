@@ -61,6 +61,7 @@
     SUBDIR += ubench
     SUBDIR += unixbench
     SUBDIR += webbench
+    SUBDIR += xdd
     SUBDIR += xengine
 
 .include <bsd.port.subdir.mk>

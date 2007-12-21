@@ -744,7 +744,6 @@
     SUBDIR += xbattbar
     SUBDIR += xcdroast
     SUBDIR += xcpustate
-    SUBDIR += xdd
     SUBDIR += xdu
     SUBDIR += xfce4-battery-plugin
     SUBDIR += xfce4-cpugraph-plugin
