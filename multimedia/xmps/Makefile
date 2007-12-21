@@ -39,5 +39,6 @@ post-patch:
 		${WRKSRC}/codecs/video/mpeg3/mmx.h
 	@${REINPLACE_CMD} -e '42,44s|^static ||' \
 		${WRKSRC}/codecs/video/mpeg3/slice.c
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
 
 .include <bsd.port.post.mk>
