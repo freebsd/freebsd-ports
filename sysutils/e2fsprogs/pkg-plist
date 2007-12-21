@@ -25,6 +25,7 @@ sbin/mkfs.ext3
 sbin/mklost+found
 sbin/resize2fs
 sbin/tune2fs
+%%NLS%%share/locale/ca/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/de/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/es/LC_MESSAGES/e2fsprogs.mo
