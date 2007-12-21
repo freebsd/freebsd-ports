@@ -5,7 +5,7 @@
  case @host@ in
  
 -	*-linux-*|*-irix6*|*-freebsd3*|*-freebsd4*|*-freebsd5*|*solaris2*)
-+	*-linux-*|*-irix6*|*-freebsd3*|*-freebsd4*|*-freebsd5*|*-freebsd6*|*-freebsd7*|*solaris2*)
++	*-linux-*|*-irix6*|*-freebsd*|*solaris2*)
  		echo @CXX@ -o $dest -shared -Wl,-soname,"$dest" $*
  		@CXX@ -o $dest -shared -Wl,-soname,"$dest" $* || die
  		;;
