@@ -16,6 +16,9 @@ PKGNAMEPREFIX=	gnu-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU version of finger
 
+DEPRECATED=	no active development and known security vulnerabilities, http://www.vuxml.org/freebsd/610bc692-a2ad-11dc-900c-000bcdc1757a.html
+EXPIRATION_DATE=	2008-01-04
+
 CONFLICTS=	pfinger-0.*
 
 post-patch:
