@@ -11799,6 +11799,7 @@ pdbc		ports/palm/pdbc
 pdcurses	ports/devel/pdcurses
 pdfcrack	ports/security/pdfcrack
 pdfcube		ports/print/pdfcube
+pdfedit		ports/editors/pdfedit
 pdfjam		ports/print/pdfjam
 pdflib		ports/print/pdflib
 pdflib-perl	ports/print/pdflib-perl
