@@ -1,6 +1,7 @@
 lib/sml-fxp/src/config.orig.sml
 lib/sml-fxp/src/genRandom.sml
 lib/sml-fxp/src/fxlib.cm
+lib/sml-fxp/src/fxlib.mlb
 lib/sml-fxp/src/config.cm
 lib/sml-fxp/src/config.sml
 lib/sml-fxp/src/Util/util.cm
