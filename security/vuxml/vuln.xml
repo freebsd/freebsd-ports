@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="299e3f81-aee7-11dc-b781-0016179b2dd5">
+    <topic>e2fsprogs -- heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>e2fsprogs</name>
+	<range><lt>1.40.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Theodore Y. Ts'o reports:</p>
+	<blockquote cite="http://sourceforge.net/project/shownotes.php?group_id=2406&amp;release_id=560230">
+	  <p>Fix a potential security vulnerability where an untrusted
+	    filesystem can be corrupted in such a way that a program using
+	    libext2fs will allocate a buffer which is far too small.  This
+	    can lead to either a crash or potentially a heap-based buffer
+	    overflow crash.  No known exploits exist, but main concern is
+	    where an untrusted user who possesses privileged access in a
+	    guest Xen environment could corrupt a filesystem which is then
+	    accessed by thus allowing the untrusted user to gain privileged
+	    access in the host OS.  Thanks to the McAfee AVERT Research group
+	    for reporting this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>26772</bid>
+      <cvename>CVE-2007-5497</cvename>
+      <url>http://secunia.com/advisories/27889/</url>
+      <url>http://sourceforge.net/project/shownotes.php?group_id=2406&amp;release_id=560230</url>
+    </references>
+    <dates>
+      <discovery>2007-12-07</discovery>
+      <entry>2007-12-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8a835235-ae84-11dc-a5f9-001a4d49522b">
     <topic>wireshark -- multiple vulnerabilities</topic>
     <affects>
