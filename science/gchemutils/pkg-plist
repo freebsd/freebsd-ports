@@ -329,7 +329,6 @@ share/locale/es/LC_MESSAGES/gchemutils.mo
 share/locale/fr/LC_MESSAGES/gchemutils.mo
 share/locale/it/LC_MESSAGES/gchemutils.mo
 share/locale/pl/LC_MESSAGES/gchemutils.mo
-share/locale/pt_BR/LC_MESSAGES/gchemutils.mo
 share/locale/ru/LC_MESSAGES/gchemutils.mo
 share/mime/chemical/x-mdl-molfile.xml
 share/mime/chemical/x-pdb.xml
