@@ -116,6 +116,7 @@
     SUBDIR += openoffice.org-2-devel
     SUBDIR += pdfedit
     SUBDIR += pico
+    SUBDIR += pico-alpine
     SUBDIR += poedit
     SUBDIR += psgml
     SUBDIR += puff
