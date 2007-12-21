@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=	--without-nls
 CONFIGURE_ARGS+=--with-spellcheck-prog="${LOCALBASE}/bin/aspell --dont-backup --mode=email check"
 RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 .else
-CONFIGURE_ARGS+=	--with-spellcheck-prog="${LOCALBASE}/bin/ispell
+CONFIGURE_ARGS+=	--with-spellcheck-prog="${LOCALBASE}/bin/ispell"
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 .endif
