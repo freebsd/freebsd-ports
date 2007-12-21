@@ -1,0 +1,8 @@
+kb is now installed.
+If you want the speaker bell to work, make sure you add
+speaker_load="YES" to /boot/loader.conf if your kernel
+does not have speaker support. You will also need to modify
+/etc/devfs.conf to add permission for users to use the speaker.
+...
+perm   speaker 0660
+...

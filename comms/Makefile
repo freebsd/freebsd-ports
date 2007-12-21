@@ -48,6 +48,7 @@
     SUBDIR += java-commapi-freebsd
     SUBDIR += jerm
     SUBDIR += kallers
+    SUBDIR += kb
     SUBDIR += kermit
     SUBDIR += klog
     SUBDIR += kmobiletools
