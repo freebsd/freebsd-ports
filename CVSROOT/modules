@@ -1503,6 +1503,7 @@ comconsole	ports/sysutils/comconsole
 comical		ports/graphics/comical
 comiccron	ports/sysutils/comiccron
 comix		ports/graphics/comix
+commonclipse	ports/java/commonclipse
 commoncpp	ports/devel/commoncpp
 compaq-cc	ports/lang/compaq-cc
 compat3x	ports/misc/compat3x
