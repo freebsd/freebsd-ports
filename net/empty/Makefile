@@ -6,6 +6,7 @@
 
 PORTNAME=	empty
 PORTVERSION=	0.6.14b
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -17,9 +18,6 @@ MAN1=		empty.1
 DOCS=		CHANGELOG COPYRIGHT README README.CYGWIN
 EXAMPLES=	README em_ssh.sh em_ssh_2.sh em_sh.sh \
 		em_telnet.sh em_telnet_2.sh emsu.sh runtests.sh
-
-PLIST_FILES=	bin/empty ${EXAMPLES:S,^,%%EXAMPLESDIR%%/,} ${DOCS:S,^,%%DOCSDIR%%/,}
-PLIST_DIRS=	%%EXAMPLESDIR%% %%DOCSDIR%%
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/empty ${PREFIX}/bin/
