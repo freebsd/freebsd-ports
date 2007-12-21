@@ -7,12 +7,14 @@
 #
 
 PORTNAME=	rlwrap
-PORTVERSION=	0.28
-PORTREVISION=	1
+PORTVERSION=	0.29
 CATEGORIES=	devel
-MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/
+MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/ \
+		${MASTER_SITE_LOCAL} \
+		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITE_SUBDIR=	dryice
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Readline wrapper
 
 USE_GETOPT_LONG=	yes
