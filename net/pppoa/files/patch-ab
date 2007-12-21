@@ -5,7 +5,7 @@
  
  		;;
 -	*-freebsd5*)
-+	*-freebsd[567]*)
++	*-freebsd[5678]*)
  		st_compile="modem_run pppoa2 pppoa3"
  		THREAD_LIBS="-pthread"
  		if test "${ac_cv_header_semaphore_h+set}" = set; then

@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- configure.in.orig
-+++ configure.in
+--- configure.in.orig	2004-11-23 00:20:04.000000000 -0500
++++ configure.in	2007-12-20 15:36:18.000000000 -0500
 @@ -328,14 +328,17 @@
            rel=`uname -r`
            case "$rel" in
@@ -19,7 +16,7 @@ $FreeBSD$
 + 	    5.[[012]]*)
 + 	      LIBS="$PTHREAD_LIBS $LEXLIB $LIBS"
 + 	      ;;
-+ 	    [[567]]*)
++ 	    [[5678]]*)
 + 	      CFLAGS="$CFLAGS $PTHREAD_CFLAGS $PTHREAD_LIBS"
 + 	      ;;
 +              *)
