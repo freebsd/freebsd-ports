@@ -11,6 +11,8 @@ lib/gcc/avr/4.2.2/avr25/libgcc.a
 lib/gcc/avr/4.2.2/avr25/libgcov.a
 lib/gcc/avr/4.2.2/avr3/libgcc.a
 lib/gcc/avr/4.2.2/avr3/libgcov.a
+lib/gcc/avr/4.2.2/avr35/libgcc.a
+lib/gcc/avr/4.2.2/avr35/libgcov.a
 lib/gcc/avr/4.2.2/avr4/libgcc.a
 lib/gcc/avr/4.2.2/avr4/libgcov.a
 lib/gcc/avr/4.2.2/avr5/libgcc.a
@@ -88,6 +90,7 @@ share/locale/zh_TW/LC_MESSAGES/gcc.mo
 @dirrmtry share/locale/rw
 @dirrm lib/gcc/avr/4.2.2/avr25
 @dirrm lib/gcc/avr/4.2.2/avr3
+@dirrm lib/gcc/avr/4.2.2/avr35
 @dirrm lib/gcc/avr/4.2.2/avr4
 @dirrm lib/gcc/avr/4.2.2/avr5
 @dirrm lib/gcc/avr/4.2.2/avr6
