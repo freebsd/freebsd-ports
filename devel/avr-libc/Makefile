@@ -1,12 +1,12 @@
-# New ports collection makefile for:	avr-libc
-# Date created:		04 Dec 2000
+# New ports collection makefile for:   avr-libc
+# Date created:                04 Dec 2000
 # Whom:			Joerg Wunsch <joerg@freebsd.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	1.4.7
+PORTVERSION=	1.6.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}

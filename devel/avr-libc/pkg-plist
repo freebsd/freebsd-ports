@@ -1,8 +1,8 @@
 avr/include/alloca.h
 avr/include/assert.h
 avr/include/avr/boot.h
-avr/include/avr/crc16.h
 avr/include/avr/common.h
+avr/include/avr/crc16.h
 avr/include/avr/delay.h
 avr/include/avr/eeprom.h
 avr/include/avr/fuse.h
@@ -38,6 +38,7 @@ avr/include/avr/iom103.h
 avr/include/avr/iom128.h
 avr/include/avr/iom1280.h
 avr/include/avr/iom1281.h
+avr/include/avr/iom1284p.h
 avr/include/avr/iom16.h
 avr/include/avr/iom161.h
 avr/include/avr/iom162.h
@@ -60,6 +61,7 @@ avr/include/avr/iom3250.h
 avr/include/avr/iom328p.h
 avr/include/avr/iom329.h
 avr/include/avr/iom3290.h
+avr/include/avr/iom32hvb.h
 avr/include/avr/iom406.h
 avr/include/avr/iom48.h
 avr/include/avr/iom48p.h
@@ -77,7 +79,6 @@ avr/include/avr/iom88.h
 avr/include/avr/iom88p.h
 avr/include/avr/iom8hva.h
 avr/include/avr/iomx8.h
-avr/include/avr/iomx8p.h
 avr/include/avr/iomxx0_1.h
 avr/include/avr/iomxx4.h
 avr/include/avr/iomxxhva.h
@@ -100,6 +101,7 @@ avr/include/avr/iotn48.h
 avr/include/avr/iotn84.h
 avr/include/avr/iotn85.h
 avr/include/avr/iotn861.h
+avr/include/avr/iotn88.h
 avr/include/avr/iotnx4.h
 avr/include/avr/iotnx5.h
 avr/include/avr/iotnx61.h
@@ -133,10 +135,12 @@ avr/include/stdint.h
 avr/include/stdio.h
 avr/include/stdlib.h
 avr/include/string.h
+avr/include/util/atomic.h
 avr/include/util/crc16.h
 avr/include/util/delay.h
 avr/include/util/delay_basic.h
 avr/include/util/parity.h
+avr/include/util/setbaud.h
 avr/include/util/twi.h
 avr/lib/avr25/crt86401.o
 avr/lib/avr25/crttn13.o
@@ -152,6 +156,7 @@ avr/lib/avr25/crttn48.o
 avr/lib/avr25/crttn84.o
 avr/lib/avr25/crttn85.o
 avr/lib/avr25/crttn861.o
+avr/lib/avr25/crttn88.o
 avr/lib/avr25/libc.a
 avr/lib/avr25/libm.a
 avr/lib/avr25/libprintf_flt.a
@@ -173,13 +178,13 @@ avr/lib/avr4/crt90pwm2.o
 avr/lib/avr4/crt90pwm2b.o
 avr/lib/avr4/crt90pwm3.o
 avr/lib/avr4/crt90pwm3b.o
-avr/lib/avr4/crtm48p.o
-avr/lib/avr4/crtm88p.o
 avr/lib/avr4/crtm48.o
+avr/lib/avr4/crtm48p.o
 avr/lib/avr4/crtm8.o
 avr/lib/avr4/crtm8515.o
 avr/lib/avr4/crtm8535.o
 avr/lib/avr4/crtm88.o
+avr/lib/avr4/crtm88p.o
 avr/lib/avr4/crtm8hva.o
 avr/lib/avr4/libc.a
 avr/lib/avr4/libm.a
@@ -196,6 +201,7 @@ avr/lib/avr5/crtcan64.o
 avr/lib/avr5/crtm128.o
 avr/lib/avr5/crtm1280.o
 avr/lib/avr5/crtm1281.o
+avr/lib/avr5/crtm1284p.o
 avr/lib/avr5/crtm16.o
 avr/lib/avr5/crtm161.o
 avr/lib/avr5/crtm162.o
@@ -212,14 +218,15 @@ avr/lib/avr5/crtm32.o
 avr/lib/avr5/crtm323.o
 avr/lib/avr5/crtm324p.o
 avr/lib/avr5/crtm325.o
-avr/lib/avr5/crtm325p.o
 avr/lib/avr5/crtm3250.o
 avr/lib/avr5/crtm3250p.o
+avr/lib/avr5/crtm325p.o
 avr/lib/avr5/crtm328p.o
 avr/lib/avr5/crtm329.o
-avr/lib/avr5/crtm329p.o
 avr/lib/avr5/crtm3290.o
 avr/lib/avr5/crtm3290p.o
+avr/lib/avr5/crtm329p.o
+avr/lib/avr5/crtm32hvb.o
 avr/lib/avr5/crtm406.o
 avr/lib/avr5/crtm64.o
 avr/lib/avr5/crtm640.o
