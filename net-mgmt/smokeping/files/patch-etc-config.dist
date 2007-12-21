@@ -1,22 +1,22 @@
 --- etc/config.dist.orig	Thu Jun  2 15:47:39 2005
 +++ etc/config.dist	Sun Sep 18 18:14:12 2005
 @@ -7,14 +7,14 @@
- owner    = Joe Random
- contact  = joe@some.place.xyz
- mailhost = smtp.mailhost.abc
+ owner    = Peter Random
+ contact  = some@address.nowhere
+ mailhost = my.mail.host
 -sendmail = /usr/lib/sendmail
--imgcache = /home/oetiker/public_html/.simg
--imgurl   = ../.simg
--datadir  = /home/oetiker/data/projects/AADJ-smokeping/dist/var
--piddir  = /home/oetiker/data/projects/AADJ-smokeping/dist/var
+-imgcache = /home/oetiker/public_html/smokeping-ms/cache
+-imgurl   = cache
+-datadir  = /tmp/smokeping-ms/data
+-piddir  = /tmp/smokeping-ms/var
 +sendmail = /usr/sbin/sendmail
 +imgcache = %%PREFIX%%/smokeping/htdocs/img
 +imgurl   = /smokeimg
 +datadir  = %%PREFIX%%/var/smokeping
 +piddir  = %%PREFIX%%/var/smokeping
- cgiurl   = http://people.ee.ethz.ch/~oetiker/smokeping/smokeping.cgi
--smokemail = /home/oetiker/data/projects/AADJ-smokeping/dist/etc/smokemail.dist
--tmail = /home/oetiker/data/projects/AADJ-smokeping/dist/etc/tmail.dist
+ cgiurl   = http://some.url/smokeping.cgi
+-smokemail = /home/oetiker/checkouts/smokeping/trunk/software/etc/smokemail.dist
+-tmail = /home/oetiker/checkouts/smokeping/trunk/software/etc/tmail.dist
 +smokemail = %%PREFIX%%/etc/smokeping/smokemail
 +tmail = %%PREFIX%%/etc/smokeping/tmail
  # specify this to get syslog logging
@@ -26,7 +26,7 @@
  
  *** Presentation ***
  
--template = /home/oetiker/data/projects/AADJ-smokeping/dist/etc/basepage.html.dist
+-template = /home/oetiker/checkouts/smokeping/trunk/software/etc/basepage.html.dist
 +template = %%PREFIX%%/etc/smokeping/basepage.html
  
  + overview 
@@ -35,7 +35,7 @@
  
  + FPing
  
--binary = /usr/sepp/bin/fping
+-binary = /usr/sbin/fping
 +binary = %%PREFIX%%/sbin/fping
  
  *** Targets ***

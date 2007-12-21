@@ -1,17 +1,18 @@
 --- bin/smokeping.dist.orig	Mon Sep 26 22:15:57 2005
 +++ bin/smokeping.dist	Thu Oct  6 10:37:31 2005
-@@ -1,12 +1,11 @@
+@@ -1,12 +1,12 @@
 -#!/usr/sepp/bin/perl-5.8.4 -w
 +#!%%PERL%% -w
  # -*-perl-*-
  
--use lib qw(/usr/pack/rrdtool-1.0.49-to/lib/perl);
+-use lib qw(/usr/pack/rrdtool-1.2.23-mo/lib/perl);
 -use lib qw(lib);
 +use lib qw(%%PREFIX%%/smokeping/lib);
  
- use Smokeping 2.001000;
+ use Smokeping 2.002007;
   
 -Smokeping::main("etc/config.dist");
++$0 = "%%PREFIX%%/bin/smokeping";
 +Smokeping::main("%%PREFIX%%/etc/smokeping/config");
  
  =head1 NAME

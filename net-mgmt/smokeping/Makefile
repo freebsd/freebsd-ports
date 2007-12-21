@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.7
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -15,12 +15,15 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Latency logging and graphing system
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
-		${SITE_PERL}/CGI/SpeedyCGI.pm:${PORTSDIR}/www/p5-CGI-SpeedyCGI \
-		${SITE_PERL}/BER.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser \
-		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
+		p5-CGI-SpeedyCGI>0:${PORTSDIR}/www/p5-CGI-SpeedyCGI \
+		p5-SNMP_Session>0:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
+		p5-CGI.pm>0:${PORTSDIR}/www/p5-CGI.pm \
+		p5-Digest-MD5>0:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-Pod-Parser>0:${PORTSDIR}/textproc/p5-Pod-Parser \
+		p5-Net>0:${PORTSDIR}/net/p5-Net
+
+NO_BUILD=	yes
+USE_PERL5=	yes
 
 NO_BUILD=	yes
 USE_PERL5=	yes
@@ -185,13 +188,11 @@ ETC1=		basepage.html config smokemail tmail
 
 # Things that shouldn't have been in the tarball in the first place
 post-extract:
-	@${RM} ${WRKSRC}/lib/BER.pm
-	@${RM} ${WRKSRC}/lib/SNMP_*.pm
-	@${RM} ${WRKSRC}/lib/Smokeping/svn-commit.tmp
-	@${RM} ${WRKSRC}/lib/svn-commit.tmp
+	${RM} ${WRKSRC}/lib/BER.pm
+	${RM} ${WRKSRC}/lib/SNMP_*.pm
 
 pre-patch:
-	@${REINPLACE_CMD} -e s!/usr/bin/!%%PREFIX%%/bin/! \
+	${REINPLACE_CMD} -e s!/usr/bin/!%%PREFIX%%/bin/! \
 		${WRKSRC}/lib/Smokeping.pm \
 		${WRKSRC}/lib/Smokeping/Examples.pm \
 		${WRKSRC}/lib/Smokeping/probes/Curl.pm \
@@ -202,14 +203,14 @@ pre-patch:
 		${WRKSRC}/lib/Smokeping/probes/FPing6.pm \
 		${WRKSRC}/lib/Smokeping/probes/EchoPing.pm \
 		${WRKSRC}/lib/Smokeping/probes/FPing.pm
-	@${REINPLACE_CMD} -e s!/usr/share/smokeping/etc/!%%PREFIX%%/etc/smokeping/! \
+	${REINPLACE_CMD} -e s!/usr/share/smokeping/etc/!%%PREFIX%%/etc/smokeping/! \
 		${WRKSRC}/lib/Smokeping/probes/passwordchecker.pm
 
 post-patch:
-	@${FIND} ${WRKSRC} -name \*.orig -delete
+	${FIND} ${WRKSRC} -name \*.orig -delete
 
 pre-configure:
-	@${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/lib/Smokeping.pm \
 		${WRKSRC}/lib/Smokeping/Examples.pm \
 		${WRKSRC}/bin/smokeping.dist \
@@ -217,64 +218,64 @@ pre-configure:
 		${WRKSRC}/htdocs/smokeping.cgi.dist \
 		${WRKSRC}/etc/config.dist \
 		${WRKSRC}/lib/Smokeping/probes/*.pm
-	@${FIND} ${WRKSRC} -name \*.bak -delete
-	@${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	${FIND} ${WRKSRC} -name \*.bak -delete
+	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${PKGDIR}/pkg-message > ${PKGMESSAGE}
-	@${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${PKGDIR}/pkg-install > ${PKGINSTALL}
-	@${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${PKGDIR}/pkg-deinstall > ${PKGDEINSTALL}
-	@${MV} ${WRKSRC}/bin/smokeping.dist ${WRKSRC}/bin/smokeping
-	@${MV} ${WRKSRC}/bin/tSmoke.dist ${WRKSRC}/bin/tSmoke
-	@${MV} ${WRKSRC}/htdocs/smokeping.cgi.dist ${WRKSRC}/htdocs/smokeping.cgi
+	${MV} ${WRKSRC}/bin/smokeping.dist ${WRKSRC}/bin/smokeping
+	${MV} ${WRKSRC}/bin/tSmoke.dist ${WRKSRC}/bin/tSmoke
+	${MV} ${WRKSRC}/htdocs/smokeping.cgi.dist ${WRKSRC}/htdocs/smokeping.cgi
 
 pre-su-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/smokeping ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/tSmoke ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/smokeping ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/tSmoke ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1)
-	@(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN5} ${PREFIX}/man/man5)
-	@(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN7} ${PREFIX}/man/man7)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN5} ${PREFIX}/man/man5)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN7} ${PREFIX}/man/man7)
 .for FILE in ${MAN3}
-	@${INSTALL_MAN} `${FIND} ${WRKSRC}/doc -name ${FILE}` ${PREFIX}/man/man3
+	${INSTALL_MAN} `${FIND} ${WRKSRC}/doc -name ${FILE}` ${PREFIX}/man/man3
 .endfor
-	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/Config
-	@${MKDIR} ${DOCSDIR}/Smokeping/matchers
-	@${MKDIR} ${DOCSDIR}/Smokeping/probes
-	@(cd ${WRKSRC} && ${INSTALL_DATA} ${DOC1} ${DOCSDIR})
+	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/Config
+	${MKDIR} ${DOCSDIR}/Smokeping/matchers
+	${MKDIR} ${DOCSDIR}/Smokeping/probes
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOC1} ${DOCSDIR})
 .for FILE in ${DOC2}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE}.html ${DOCSDIR}/${FILE}.html
-	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE}.txt  ${DOCSDIR}/${FILE}.txt
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE}.html ${DOCSDIR}/${FILE}.html
+	${INSTALL_DATA} ${WRKSRC}/doc/${FILE}.txt  ${DOCSDIR}/${FILE}.txt
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/doc/examples && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR})
+	${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/doc/examples && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR})
 .endif
-	@${MKDIR} ${PREFIX}/etc/smokeping
+	${MKDIR} ${PREFIX}/etc/smokeping
 .for FILE in ${ETC1}
-	@${INSTALL_DATA} ${WRKSRC}/etc/${FILE}.dist ${PREFIX}/etc/smokeping
-	@if [ ! -f ${PREFIX}/etc/smokeping/${FILE} ]; then \
+	${INSTALL_DATA} ${WRKSRC}/etc/${FILE}.dist ${PREFIX}/etc/smokeping
+	if [ ! -f ${PREFIX}/etc/smokeping/${FILE} ]; then \
 		${INSTALL_DATA} ${WRKSRC}/etc/${FILE}.dist ${PREFIX}/etc/smokeping/${FILE} ; \
 	fi
 .endfor
-	@${MKDIR} ${PREFIX}/smokeping/htdocs
-	@${INSTALL_SCRIPT} ${WRKSRC}/htdocs/smokeping.cgi ${PREFIX}/smokeping/htdocs/smokeping.cgi
-	@${CP} -R ${WRKSRC}/lib ${PREFIX}/smokeping/
-	@${MKDIR} ${PREFIX}/var/smokeping
-	@${CHOWN} -R ${USER}:${GROUP} ${PREFIX}/var/smokeping
-	@${MKDIR} ${PREFIX}/smokeping/htdocs/img
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/smokeping/htdocs/img
+	${MKDIR} ${PREFIX}/smokeping/htdocs
+	${INSTALL_SCRIPT} ${WRKSRC}/htdocs/smokeping.cgi ${PREFIX}/smokeping/htdocs/smokeping.cgi
+	${CP} -R ${WRKSRC}/lib ${PREFIX}/smokeping/
+	${MKDIR} ${PREFIX}/var/smokeping
+	${CHOWN} -R ${USER}:${GROUP} ${PREFIX}/var/smokeping
+	${MKDIR} ${PREFIX}/smokeping/htdocs/img
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/smokeping/htdocs/img
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
+	${CAT} ${PKGMESSAGE}
 .endif
 
 post-deinstall:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
 
 .include <bsd.port.post.mk>
