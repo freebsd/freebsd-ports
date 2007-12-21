@@ -1,0 +1,24 @@
+@unexec %D/bin/alpine -conf >%D/etc/alpine.conf.tmp
+@unexec if cmp -s %D/etc/alpine.conf %D/etc/alpine.conf.tmp; then rm -f %D/etc/alpine.conf; fi
+@unexec rm -f %D/etc/alpine.conf.tmp
+bin/alpine
+bin/rpdump
+bin/rpload
+@exec %D/bin/alpine -P %D/etc/alpine.conf -conf >%D/etc/alpine.conf.tmp
+@exec /bin/mv %D/etc/alpine.conf.tmp %D/etc/alpine.conf
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NOTICE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/brochure.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech-notes.txt
+%%PORTDOCS%%%%DOCSDIR%%/tech-notes/background.html
+%%PORTDOCS%%%%DOCSDIR%%/tech-notes/cmd-line.html
+%%PORTDOCS%%%%DOCSDIR%%/tech-notes/config-notes.html
+%%PORTDOCS%%%%DOCSDIR%%/tech-notes/config.html
+%%PORTDOCS%%%%DOCSDIR%%/tech-notes/index.html
+%%PORTDOCS%%%%DOCSDIR%%/tech-notes/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/tech-notes/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/tech-notes/low-level.html
+%%PORTDOCS%%%%DOCSDIR%%/tech-notes/porting.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech-notes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

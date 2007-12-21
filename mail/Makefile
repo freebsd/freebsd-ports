@@ -8,6 +8,7 @@
     SUBDIR += addresses
     SUBDIR += addresses-goodies
     SUBDIR += akpop3d
+    SUBDIR += alpine
     SUBDIR += altermime
     SUBDIR += althea
     SUBDIR += annoyance-filter
