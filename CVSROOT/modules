@@ -354,6 +354,7 @@ alloywm		ports/x11-wm/alloywm
 alltraxclock	ports/x11-clocks/alltraxclock
 alltray		ports/x11/alltray
 alphabet_sounds_fr	ports/french/alphabet_sounds_fr
+alpine		ports/mail/alpine
 altermime	ports/mail/altermime
 althea		ports/mail/althea
 altivore	ports/security/altivore
@@ -12387,6 +12388,7 @@ pic2fig		ports/print/pic2fig
 picard		ports/audio/picard
 picasm		ports/devel/picasm
 pico		ports/editors/pico
+pico-alpine	ports/editors/pico-alpine
 picp		ports/devel/picp
 picprog		ports/devel/picprog
 picturebook	ports/graphics/picturebook
