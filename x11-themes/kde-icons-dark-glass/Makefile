@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dark-glass
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 MASTER_SITES=	http://www.mentalrey.it/icon_set/
 DISTNAME=	Dark-Glass-scripted
 
