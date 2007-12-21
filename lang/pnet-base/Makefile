@@ -61,6 +61,10 @@ CONFIGURE_ARGS+=	--without-libffi \
 PLIST_SUB=	I386="@comment "
 .else
 PLIST_SUB=	I386=""
+
+.if ${OSVERSION} >= 700000
+BROKEN=		Bad plist
+.endif
 .endif
 
 post-everything::
