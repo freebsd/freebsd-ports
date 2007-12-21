@@ -11832,6 +11832,7 @@ pear-Cache	ports/sysutils/pear-Cache
 pear-Cache_Lite	ports/sysutils/pear-Cache_Lite
 pear-Config	ports/devel/pear-Config
 pear-Console_Color	ports/devel/pear-Console_Color
+pear-Console_CommandLine	ports/devel/pear-Console_CommandLine
 pear-Console_Getargs	ports/devel/pear-Console_Getargs
 pear-Console_Table	ports/devel/pear-Console_Table
 pear-Contact_Vcard_Build	ports/mail/pear-Contact_Vcard_Build
