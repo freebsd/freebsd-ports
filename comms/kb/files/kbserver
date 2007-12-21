@@ -1,0 +1,34 @@
+#! /bin/sh
+#
+# PROVIDE: kbserver
+# REQUIRE: NETWORKING
+#
+# Add the following lines to /etc/rc.conf to enable kb_server
+#
+#kbserver_enable="YES"
+
+. /etc/rc.subr
+
+name=kbserver
+rcvar=`set_rcvar`
+load_rc_config $name
+kbserver_enable=${kbserver_enable-"NO"}
+
+command=/usr/local/sbin/kb_server
+start_cmd=kbserver_start
+stop_cmd=kbserver_stop
+
+kbserver_start()
+{
+	echo "Starting kb_server: "
+	${command} 
+	return 0
+}
+kbserver_stop()
+{
+	echo "Stopping kb_server: "
+	killall kb_server
+	return 0
+}
+
+run_rc_command "$1"

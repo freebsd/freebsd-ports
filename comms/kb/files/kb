@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ ! -e ~/.kb ] ; then
+	mkdir ~/.kb
+fi
+cp -f /usr/local/share/kb/* ~/.kb
+cd ~/.kb
+exec kb_bin
