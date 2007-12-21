@@ -21,7 +21,7 @@ LIB_DEPENDS?=	expat.6:${PORTSDIR}/textproc/expat2 \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
-USE_GNOME?=	gnomehack ltverhack glib20
+USE_GNOME?=	gnomehack ltverhack glib20 intltool
 USE_GETTEXT=	yes
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
