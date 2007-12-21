@@ -24,6 +24,12 @@ DOCS=		AUTHORS Changelog README etc/wb0/wb0.config.README
 PORTDOCS=	${DOCS:T}
 ONLY_FOR_ARCHS=	i386
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/wb0|${LOCALBASE}/etc|g ; \
 		s|/usr/local/src/wb0/font/bit|${LOCALBASE}/share/wb0/|g ; \
@@ -37,4 +43,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
