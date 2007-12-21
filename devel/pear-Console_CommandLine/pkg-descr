@@ -1,0 +1,13 @@
+Console_CommandLine is a full featured package for managing command-line
+options and arguments highly inspired from python optparse module, it allows
+the developer to easily build complex command line interfaces.
+
+Main features:
+* handles sub commands (ie. $ myscript.php -q subcommand -f file),
+* can be completely built from an xml definition file,
+* generate --help and --version options automatically,
+* can be completely customized,
+* builtin support for i18n,
+* and much more...
+
+WWW: http://pear.php.net/package/Console_CommandLine
