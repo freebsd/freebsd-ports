@@ -14,8 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parse routine arguments
 
-BUILD_DEPENDS=	p5-Log-Agent>=0.105:${PORTSDIR}/devel/p5-Log-Agent
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Log-Agent>=0.105:${PORTSDIR}/devel/p5-Log-Agent \
+		${SITE_PERL}/Module/Install.pm:${PORTSDIR}/devel/p5-Module-Install
+RUN_DEPENDS=	p5-Log-Agent>=0.105:${PORTSDIR}/devel/p5-Log-Agent
 
 PERL_CONFIGURE=	yes
 
