@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 MASTER_SITE_SUBDIR=	versuch
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	warlock@elcat.kg
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H323 voice&video proxy
 
 LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib \
@@ -30,9 +30,7 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64"
 BROKEN=		Does not compile with GCC 4.2
-.endif
 .endif
 
 .include <bsd.port.post.mk>
