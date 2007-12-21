@@ -8,7 +8,7 @@
 
 PORTNAME=	chmlib
 PORTVERSION=	0.39
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.jedrea.com/chmlib/
 
