@@ -7,7 +7,7 @@
 
 PORTNAME=	xdd
 PORTVERSION=	65
-CATEGORIES=	sysutils
+CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.ioperformance.com/xddversions/
 DISTNAME=	xdd65.013007
 EXTRACT_SUFX=	.tgz
