@@ -1,0 +1,5 @@
+eclipse/features/%%DISTNAME%%.jar
+eclipse/plugins/%%DISTNAME%%.jar
+@dirrmtry eclipse/plugins
+@dirrmtry eclipse/features
+@dirrmtry eclipse

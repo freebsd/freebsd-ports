@@ -1,0 +1,6 @@
+Commonclipse is an eclipse plugin for jakarta commons-lang users.
+It features automatic generation of the following methods using
+commons-lang builders: toString(), hashCode(), equals(Object),
+compareTo(Object).
+
+WWW: http://sourceforge.net/projects/commonclipse/
