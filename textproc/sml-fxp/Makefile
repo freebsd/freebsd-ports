@@ -7,6 +7,7 @@
 
 PORTNAME=	sml-fxp
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www2.informatik.tu-muenchen.de/~berlea/Fxp/ \
 		http://www.cse.unsw.edu.au/~tbourke/distfiles/

@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Jun 26 02:43:06 2004
-+++ Makefile	Sun Sep 16 17:09:45 2007
++++ Makefile	Wed Oct 31 13:51:36 2007
 @@ -6,25 +6,33 @@
  ##############################################################################
  # These are the locations for executables, heap images and library files
@@ -126,7 +126,7 @@
  
  inst.fxp:
  	@make inst.prog PROG_NAME=fxp PROG_CM=Apps/Null/null.cm PROG_FUN=Null.null
-@@ -116,13 +137,38 @@
+@@ -116,13 +137,39 @@
  	    ${MKDIRHIER} ${FXP_LIBDIR}/$${dir}; \
  	done
  	for file in `${FIND} ${SRC} ${FXLIB_PRUNE} -prune -o -name '*.sml' -print`; do \
@@ -137,6 +137,7 @@
 +	    ${BSD_INSTALL_DATA} $${file} ${FXP_LIBDIR}/$${file}; \
 +	done
 +	${BSD_INSTALL_DATA} ${SRC}/fxlib.cm ${FXP_LIBDIR}/${SRC}/
++	${BSD_INSTALL_DATA} ${SRC}/fxlib.mlb ${FXP_LIBDIR}/${SRC}/
 +.if defined(STABILIZE)
 +.if defined(SMLNJ) && ${SMLNJ} == "yes"
 +	# Stabilizing in place seems to be the only reliable way for old sml-nj
