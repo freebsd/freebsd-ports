@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
 USE_SQLITE=	yes
+MAKE_ENV=	CXX="${CXX}"
 
 MAN1=	newsbeuter.1 podbeuter.1
 
