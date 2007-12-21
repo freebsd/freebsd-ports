@@ -1,0 +1,12 @@
+--- configure.orig	2006-03-31 03:19:07.000000000 +0200
++++ configure	2007-12-21 21:37:27.000000000 +0100
+@@ -5352,7 +5352,8 @@
+ UNAME_REDUX=`uname -r -s | sed 's/\..*//' 2> /dev/null`
+ if test "$UNAME_REDUX" != 'FreeBSD 5' && \
+    test "$UNAME_REDUX" != 'FreeBSD 6' && \
+-   test "$UNAME_REDUX" != 'FreeBSD 7'
++   test "$UNAME_REDUX" != 'FreeBSD 7' && \
++   test "$UNAME_REDUX" != 'FreeBSD 8'
+ then
+ 
+ cat >>confdefs.h <<\_ACEOF
