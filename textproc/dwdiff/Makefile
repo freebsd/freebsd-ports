@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dwdiff
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://os.ghalkes.nl/dist/
 EXTRACT_SUFX=	.tgz
