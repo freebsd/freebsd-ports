@@ -8,13 +8,15 @@
 
 PORTNAME=	opencv
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	opencvlibrary
 
 MAINTAINER=	msabramo@yahoo.com
 COMMENT=	Open Source Computer Vision Library from Intel
+
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 
 CFLAGS+=	-I${LOCALBASE}/include/OpenEXR
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/OpenEXR
@@ -24,7 +26,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--without-v4l --without-quicktime --without-carbon \
+CONFIGURE_ARGS=	--with-v4l --without-quicktime --without-carbon \
 				--without-1394libs \
 				--without-swig # I don't know anything about swig ...
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
