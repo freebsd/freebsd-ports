@@ -695,7 +695,6 @@ avr-gcc		ports/devel/avr-gcc
 avr-gcc-3	ports/devel/avr-gcc-3
 avr-gdb		ports/devel/avr-gdb
 avr-libc	ports/devel/avr-libc
-avr-libc-devel	ports/devel/avr-libc-devel
 avra		ports/devel/avra
 avrdude		ports/devel/avrdude
 awale		ports/games/awale
