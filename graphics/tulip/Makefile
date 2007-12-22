@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	A system dedicated to the visualization of huge graphs
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
@@ -24,6 +24,7 @@ QT_NONSTANDARD=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	MOC="${MOC}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" GLDIR="${X11BASE}"
 CONFIGURE_ARGS=	--with-qt-includes=${QT_PREFIX}/include \
@@ -48,15 +49,18 @@ LDFLAGS=	-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib \
 CFLAGS+=	-fPIC
 .endif
 
-.if ${OSVERSION} >= 700029
-BROKEN=		Does not compile
-.endif
-
 post-extract:
 	@${FIND} ${WRKSRC} -name "moc_*" -delete
 
+pre-configure:
+	@if [ -z "`pkg-config --variable qt_config qt-mt | ${GREP} opengl`" ]; then \
+	   echo "Please reinstall x11-toolkits/qt33 with OpenGL supportsd"; \
+	   exit 1; \
+	fi
+
 post-patch:
-	@${REINPLACE_CMD} -e 's| -O2 -pipe||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| -O2 -pipe||g; \
+	   s|echo aout|echo elf|g' ${WRKSRC}/configure ${WRKSRC}/thirdparty/gle/configure
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
