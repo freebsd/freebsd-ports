@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bookreader
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://kbookreader.org/system/files/
 
