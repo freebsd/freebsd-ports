@@ -85,7 +85,6 @@
     SUBDIR += avr-gcc-3
     SUBDIR += avr-gdb
     SUBDIR += avr-libc
-    SUBDIR += avr-libc-devel
     SUBDIR += avra
     SUBDIR += avrdude
     SUBDIR += bazaar
