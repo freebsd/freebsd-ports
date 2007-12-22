@@ -7,6 +7,7 @@
 
 PORTNAME=	gchempaint
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/0.8
@@ -32,6 +33,5 @@ CONFIGURE_ARGS=	--with-help-dir=${PREFIX}/share/gnome/help --with-omf-dir=${PREF
 post-patch:
 	@${REINPLACE_CMD} -e 's|-release $$(VERSION)|-version @GCP_VERSION_INFO@|' \
 		${WRKSRC}/lib/Makefile.in ${WRKSRC}/libgcpcanvas/Makefile.in
-	@${REINPLACE_CMD} -e 's|pt_BR||' ${WRKSRC}/po/LINGUAS
 
 .include <bsd.port.mk>
