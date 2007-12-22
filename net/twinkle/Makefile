@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	twinkle
-PORTVERSION=	1.0
-PORTREVISION=	4
+PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~mfnboer/twinkle/download/
 
@@ -15,20 +14,21 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Soft phone for your VoIP communcations using the SIP protocol
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	ccgnu2-1.5.0:${PORTSDIR}/devel/commoncpp \
-		ccrtp1-1.5.1:${PORTSDIR}/devel/ccrtp \
+LIB_DEPENDS=	ccgnu2-1.6.0:${PORTSDIR}/devel/commoncpp \
+		ccrtp1-1.6.0:${PORTSDIR}/devel/ccrtp \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		boost_regex.4:${PORTSDIR}/devel/boost \
 		speex.1:${PORTSDIR}/audio/speex \
 		ilbc.0:${PORTSDIR}/net/ilbc \
-		zrtpcpp-0.9.0:${PORTSDIR}/devel/libzrtpcpp
+		zrtpcpp.0:${PORTSDIR}/devel/libzrtpcpp
 
-USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_BISON=	build
 USE_GMAKE=	yes
+USE_GNOME=	libxml2
+USE_PERL5=	yes
 USE_XLIB=	yes
-USE_AUTOTOOLS=	libtool:15
 USE_QT_VER=	3
 
 CONFIGURE_ARGS=	--with-qt-dir=${QT_PREFIX} QTDIR=${LOCALBASE}
@@ -36,15 +36,19 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}" \
 		CFLAGS="${CFLAGS}"
 MAKE_ENV=	QTDIR=${QT_PREFIX}
+SUB_FILES=	pkg-message
 
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-lresolv||g' -e 's|-lbind||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-lresolv||g' -e 's|-lbind||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
-	${REINPLACE_CMD} -e 's|-lresolv||g' ${WRKSRC}/src/gui/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|-lresolv||g' ${WRKSRC}/src/gui/${MAKEFILE}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
