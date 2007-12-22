@@ -1,7 +1,4 @@
 bin/aqualung
-share/locale/hu/LC_MESSAGES/aqualung.mo
-share/locale/de/LC_MESSAGES/aqualung.mo
-share/locale/uk/LC_MESSAGES/aqualung.mo
 %%DATADIR%%/appearance.png
 %%DATADIR%%/cdda.png
 %%DATADIR%%/cddb.png
@@ -13,12 +10,15 @@ share/locale/uk/LC_MESSAGES/aqualung.mo
 %%DATADIR%%/icon_32.png
 %%DATADIR%%/icon_48.png
 %%DATADIR%%/icon_64.png
+%%DATADIR%%/inet.png
 %%DATADIR%%/logo.png
 %%DATADIR%%/metadata.png
 %%DATADIR%%/ms-artist.png
-%%DATADIR%%/ms-cdda.png
 %%DATADIR%%/ms-cdda-disk.png
 %%DATADIR%%/ms-cdda-nodisk.png
+%%DATADIR%%/ms-cdda.png
+%%DATADIR%%/ms-feed.png
+%%DATADIR%%/ms-podcast.png
 %%DATADIR%%/ms-record.png
 %%DATADIR%%/ms-store.png
 %%DATADIR%%/ms-track.png
@@ -60,8 +60,6 @@ share/locale/uk/LC_MESSAGES/aqualung.mo
 %%DATADIR%%/skin/metal/bg4.png
 %%DATADIR%%/skin/metal/bg5.png
 %%DATADIR%%/skin/metal/bg6.png
-%%DATADIR%%/skin/metal/bg7.png
-%%DATADIR%%/skin/metal/bg8.png
 %%DATADIR%%/skin/metal/next.png
 %%DATADIR%%/skin/metal/pause.png
 %%DATADIR%%/skin/metal/play.png
@@ -72,6 +70,15 @@ share/locale/uk/LC_MESSAGES/aqualung.mo
 %%DATADIR%%/skin/metal/scale_bg.png
 %%DATADIR%%/skin/metal/shuffle.png
 %%DATADIR%%/skin/metal/stop.png
+%%DATADIR%%/skin/no_skin/next.png
+%%DATADIR%%/skin/no_skin/pause.png
+%%DATADIR%%/skin/no_skin/play.png
+%%DATADIR%%/skin/no_skin/prev.png
+%%DATADIR%%/skin/no_skin/rc
+%%DATADIR%%/skin/no_skin/repeat.png
+%%DATADIR%%/skin/no_skin/repeat_all.png
+%%DATADIR%%/skin/no_skin/shuffle.png
+%%DATADIR%%/skin/no_skin/stop.png
 %%DATADIR%%/skin/ocean/bg.png
 %%DATADIR%%/skin/ocean/bg2.png
 %%DATADIR%%/skin/ocean/bg3.png
@@ -114,9 +121,15 @@ share/locale/uk/LC_MESSAGES/aqualung.mo
 %%DATADIR%%/skin/woody/wood4.png
 %%DATADIR%%/skin/woody/wood5.png
 %%DATADIR%%/skin/woody/wood6.png
+%%DATADIR%%/tab-close.png
+share/locale/de/LC_MESSAGES/aqualung.mo
+share/locale/hu/LC_MESSAGES/aqualung.mo
+share/locale/it/LC_MESSAGES/aqualung.mo
+share/locale/uk/LC_MESSAGES/aqualung.mo
 @dirrm %%DATADIR%%/skin/dark
 @dirrm %%DATADIR%%/skin/default
 @dirrm %%DATADIR%%/skin/metal
+@dirrm %%DATADIR%%/skin/no_skin
 @dirrm %%DATADIR%%/skin/ocean
 @dirrm %%DATADIR%%/skin/plain
 @dirrm %%DATADIR%%/skin/woody
