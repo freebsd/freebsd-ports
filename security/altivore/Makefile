@@ -19,6 +19,8 @@ COMMENT=	A publically disclosed (neither GPL nor open-source) ala Carnivore src
 RESTRICTED=	License does not allow redistribution in any form\
 		(source, code or otherwise)
 BROKEN=		distfile unavailable
+EXPIRATION_DATE=	2008-01-06
+DEPRECATED=	${BROKEN}
 
 SUB_FILES=	pkg-message
 
