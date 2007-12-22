@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	2.9.3
-PORTREVISION=	2
+PORTVERSION=	2.9.4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -55,7 +54,7 @@ PLIST_SUB+=	UIM="@comment "
 .if defined(WITH_M17NLIB)
 CONFIGURE_ARGS+=	--enable-m17nlib
 MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
-LIB_DEPENDS+=	m17n.1:${PORTSDIR}/devel/m17n-lib
+LIB_DEPENDS+=	m17n.2:${PORTSDIR}/devel/m17n-lib
 PLIST_SUB+=	M17NLIB=""
 .else
 CONFIGURE_ARGS+=	--disable-m17nlib
@@ -86,7 +85,8 @@ CONFIGURE_ARGS+=	--disable-scim
 PLIST_SUB+=	SCIM="@comment "
 .endif
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
 
 MAN1=	mlterm.1 mlclient.1
 
