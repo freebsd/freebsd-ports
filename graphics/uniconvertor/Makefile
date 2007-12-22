@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	uniconvertor
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	graphics python
-MASTER_SITES=	http://sk1project.org/downloads/uniconvertor/
+MASTER_SITES=	http://sk1project.org/downloads/uniconvertor/v1.1.0/ \
+		http://www.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Universal vector graphics translator

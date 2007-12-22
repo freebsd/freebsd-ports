@@ -186,11 +186,11 @@ bin/uniconv
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/managers/colormanager.py
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/managers/colormanager.pyc
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/managers/colormanager.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/_sketchmodule.so
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/_type1module.so
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/_sketch.so
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/_type1.so
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/descr.txt
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/pstokenize.so
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/skreadmodule.so
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/skread.so
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/streamfilter.so
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/ailoader.py
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/ailoader.pyc
@@ -327,10 +327,10 @@ bin/uniconv
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/utils/output.py
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/utils/output.pyc
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/utils/output.pyo
+%%PYTHON_SITELIBDIR%%/uniconvertor/share/fonts/descr.txt
 %%PYTHON_SITELIBDIR%%/uniconvertor/share/icc/GenericCMYK.icm
 %%PYTHON_SITELIBDIR%%/uniconvertor/share/icc/sRGB.icm
 %%PYTHON_SITELIBDIR%%/uniconvertor/share/icc/sRGB_Color_Space_Profile.icm
-%%PYTHON_SITELIBDIR%%/uniconvertor/share/fonts/descr.txt
 %%PYTHON_SITELIBDIR%%/uniconvertor/share/ps_templates/sk1-proc.ps
 %%PYTHON_SITELIBDIR%%/uniconvertor/share/ps_templates/sketch-proc.ps
 @dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/share/ps_templates
