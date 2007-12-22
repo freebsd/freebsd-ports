@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	1.1.5
-PORTREVISION?=	2
+PORTVERSION=	1.1.6
+PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -75,7 +75,7 @@ post-install::
 .for i in html programmer xml
 	@${MKDIR} ${DOCSDIR}/${i}
 .endfor
-.for i in AUTHORS COPYING INSTALL NEWS README README.cvs \
+.for i in AUTHORS COPYING INSTALL NEWS README README.svn \
 	doc/README.validation TODO GETTING.STARTED \
 	RELEASE.NOTES doc/README.db doc/README.sqlite \
 	doc/integrating-with-postfix doc/integrating-with-qmail \
