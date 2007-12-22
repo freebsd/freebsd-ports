@@ -36,6 +36,8 @@ OPTIONS=	SSL "Enable SSL proxying (not scanned, only forwarded!)" on \
 			CLAMAV "Enable libclamav support" on \
 			TROPHIE "Enable Trend Micro (Trophie) support" off
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_SSL)
 CONFIGURE_ARGS+=	--enable-ssl-tunnel
 .else
@@ -66,4 +68,4 @@ post-install:
 	@${CP} ${WRKSRC}/etc/havp/whitelist ${EXAMPLESDIR}/whitelist.sample
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
