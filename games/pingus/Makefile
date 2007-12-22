@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pingus
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	games
 MASTER_SITES=	http://pingus.seul.org/files/
 
@@ -21,9 +20,11 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_SCONS=	yes
+SCONS_ARGS=	with_linuxusbmouse=0 \
+		with_linuxevdev=0
 USE_SDL=	sdl image mixer
 
-PLIST=          ${WRKDIR}/pkg-plist
+PLIST=		${WRKDIR}/pkg-plist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|add_path("data")|add_path("${DATADIR}")|g' \
