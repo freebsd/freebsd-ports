@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commoncpp
-PORTVERSION=	1.5.7
+PORTVERSION=	1.6.1
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
@@ -22,19 +22,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_DOXYGEN=no
 
-OPTIONS=	LIBXML2 "Enable libxml2 support" on
-
 INFO=		commoncpp2
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_LIBXML2)
-USE_GNOME+=	libxml2
-.else
-CONFIGURE_ARGS+=--without-libxml2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
