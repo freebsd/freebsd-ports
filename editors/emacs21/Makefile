@@ -12,6 +12,12 @@ CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU:C/\/gnu\//\/old-gnu\//g}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
+.if defined(WITH_MENUBAR_FONTSET)
+PATCH_SITES=		http://nijino.homelinux.net/emacs/
+PATCHFILES=		emacs-21.1-fontset.patch emacs-21.2-menu-encode.patch
+PATCH_DIST_STRIP=	-p1
+.endif
+
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	GNU editing macros
 
@@ -27,12 +33,6 @@ LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		png.5:${PORTSDIR}/graphics/png
 USE_XLIB=	yes
 USE_XPM=	yes
-.endif
-
-.if defined(WITH_MENUBAR_FONTSET)
-PATCH_SITES=		http://nijino.homelinux.net/emacs/
-PATCHFILES=		emacs-21.1-fontset.patch emacs-21.2-menu-encode.patch
-PATCH_DIST_STRIP=	-p1
 .endif
 
 USE_AUTOTOOLS=	autoconf:213
@@ -55,7 +55,7 @@ TEXIFILES=	ada-mode autotype cc-mode cl dired-x ebrowse ediff \
 INFO=		ada-mode autotype ccmode cl dired-x ebrowse ediff \
 		efaq emacs emacs-mime eshell eudc forms gnus idlwave \
 		info message mh-e pcl-cvs reftex sc speedbar vip \
-		viper widget woman 
+		viper widget woman
 
 LATEST_LINK=	emacs21
 
