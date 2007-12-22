@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-DesktopEntry
-PORTVERSION=	0.02
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/P/PA/PARDUS/${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	Object to handle desktop files
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=	File::DesktopEntry.3
 
