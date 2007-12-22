@@ -1,5 +1,5 @@
---- ./include/cc++/address.h.orig	Tue Jan 23 14:15:02 2007
-+++ ./include/cc++/address.h	Tue Sep 11 11:58:17 2007
+--- inc/cc++/address.h	Tue Jan 23 14:15:02 2007
++++ inc/cc++/address.h	Tue Sep 11 11:58:17 2007
 @@ -236,10 +236,10 @@
  	bool isMember(const struct in_addr &inaddr) const;
  
