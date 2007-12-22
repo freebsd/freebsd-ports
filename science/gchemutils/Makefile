@@ -7,6 +7,7 @@
 
 PORTNAME=	gchemutils
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/0.8
@@ -51,8 +52,5 @@ PLIST_SUB=	MOZILLA=""
 CONFIGURE_ARGS+=--disable-mozilla-plugin
 PLIST_SUB=	MOZILLA="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|pt_BR||' ${WRKSRC}/po/LINGUAS
 
 .include <bsd.port.post.mk>
