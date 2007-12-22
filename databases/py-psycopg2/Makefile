@@ -17,8 +17,6 @@ DISTNAME=	psycopg2-${PORTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	The high performance Python adapter for PostgreSQL
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/DateTime:${PORTSDIR}/lang/py-mx-base
-
 USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	2.4+
