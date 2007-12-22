@@ -31,6 +31,7 @@ PORT_VERBS=	civ
 MAN6=		civserver.6 civclient.6
 
 .ifndef WITHOUT_X11
+PORTREVISION=	1
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		ggz.5:${PORTSDIR}/games/libggz \
@@ -58,5 +59,10 @@ post-patch:
 	@${REINPLACE_CMD} -e '/test.*==/s|==|=|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in|${XARGS} ${REINPLACE_CMD} -e\
 		'/pkgdatadir/s|$$[(]datadir[)]/@PACKAGE@|${DATADIR}|'
+
+.ifndef WITHOUT_X11
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/data/civclient.dsc ${DATADIR}/
+.endif
 
 .include <bsd.port.mk>
