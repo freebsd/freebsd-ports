@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	A feature rich persistent database generator
 
+USE_BISON=	build
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
