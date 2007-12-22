@@ -344,6 +344,7 @@
     SUBDIR += pear-Structures_DataGrid_DataSource_DataObject
     SUBDIR += pear-Structures_DataGrid_DataSource_MDB2
     SUBDIR += pear-Structures_DataGrid_DataSource_PDO
+    SUBDIR += pecl-mdbtools
     SUBDIR += pecl-memcache
     SUBDIR += pecl-sqlite
     SUBDIR += pgaccess

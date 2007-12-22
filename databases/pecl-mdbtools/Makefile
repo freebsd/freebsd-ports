@@ -1,0 +1,27 @@
+# New ports collection makefile for:	pecl-mdbtools
+# Date created:			22 December 2007
+# Whom:				Ditesh Shashikant Gathani <ditesh@gathani.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mdbtools
+PORTVERSION=	1.0.0
+CATEGORIES=	databases pear
+MASTER_SITES=	http://pecl.php.net/get/
+PKGNAMEPREFIX=	pecl-
+EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	PECL
+
+MAINTAINER=	ditesh@gathani.org
+COMMENT=	A PECL extension for the mdbtools library
+
+USE_PHP=	yes
+USE_PHPEXT=	yes
+USE_PHP_BUILD=	yes
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmdb.a:${PORTSDIR}/databases/mdbtools
+RUN_DEPENDS=	${LOCALBASE}/lib/libmdb.a:${PORTSDIR}/databases/mdbtools
+
+CONFIGURE_ARGS=	--enable-mdbtools
+
+.include <bsd.port.mk>
