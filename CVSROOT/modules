@@ -12056,6 +12056,7 @@ pecl-inclued	ports/devel/pecl-inclued
 pecl-json	ports/devel/pecl-json
 pecl-lzf	ports/archivers/pecl-lzf
 pecl-mailparse	ports/mail/pecl-mailparse
+pecl-mdbtools	ports/databases/pecl-mdbtools
 pecl-memcache	ports/databases/pecl-memcache
 pecl-mnogosearch	ports/www/pecl-mnogosearch
 pecl-operator	ports/devel/pecl-operator
