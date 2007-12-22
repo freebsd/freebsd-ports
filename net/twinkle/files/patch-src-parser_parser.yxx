@@ -1,5 +1,5 @@
---- src/parser/parser.yxx	Tue Jan  9 14:09:49 2007
-+++ src/parser/parser.yxx	Sun Feb  4 17:44:31 2007
+--- src/parser/parser.yxx	2007-11-11 13:43:28.000000000 -0500
++++ src/parser/parser.yxx	2007-11-11 13:44:00.000000000 -0500
 @@ -48,7 +48,7 @@
  
  %union {
@@ -9,12 +9,3 @@
  	float			yyt_float;
  	string			*yyt_str;
  	t_parameter		*yyt_param;
-@@ -1520,6 +1520,8 @@
- 			MSG->hdr_refer_sub.set_extensions(*$2);
- 			MEMMAN_DELETE($1); delete $1;
- 			MEMMAN_DELETE($2); delete $2; }
-+
-+;
- 
- %%
- 
