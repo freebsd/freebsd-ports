@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Object-Tiny
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Object
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class building as simple as it gets
 
 PERL_CONFIGURE=	yes
