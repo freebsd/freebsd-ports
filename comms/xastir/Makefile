@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xastir
-PORTVERSION=	1.8.4
-PORTREVISION=	2
+PORTVERSION=	1.9.2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xastir
@@ -30,6 +29,7 @@ MAN1=		xastir.1
 SUB_FILES=	pkg-message
 
 OPTIONS=	SHAPELIB "Include Shapelib support" On \
+		INCSHAPE "Use Shapelib included with Xastir" On \
 		PCRE "Include Perl Compat Regular Expression Support" On \
 		DBFAWK "Include DBFAWK Support" On \
 		MAGICK "Include ImageMagick Support" On \
@@ -48,16 +48,22 @@ OPTIONS=	SHAPELIB "Include Shapelib support" On \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_SHAPELIB)
-CONFIGURE_ARGS+=	--without-shapelib
+# Split this way to keep portlint happy.
+.if defined(WITH_SHAPELIB)
+.if defined(WITH_INCSHAPE)
+CONFIGURE_ARGS+=	--with-internal-shapelib
 .else
 LIB_DEPENDS+=	shp.1:${PORTSDIR}/devel/shapelib
 .endif
+.else
+CONFIGURE_ARGS+=	--without-shapelib
+.endif
 
 .if defined(WITHOUT_MAGICK)
-CONFIGURE_ARGS+=	--without-imagemagick
+CONFIGURE_ARGS+=	--without-imagemagick --without-graphicsmagick
 .else
 LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
+CONFIGURE_ARGS+=	--without-graphicsmagick
 .endif
 
 .if defined(WITHOUT_DBFAWK)
@@ -136,9 +142,6 @@ WITH_OPTCFLAGS=	true
 .if defined(WITH_OPTCFLAGS)
 CFLAGS+=	-O2 -pipe
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||' ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
