@@ -1,11 +1,11 @@
---- Makefile.PL.orig	Sat Sep  8 11:45:48 2001
-+++ Makefile.PL	Sat Sep  8 11:46:03 2001
-@@ -10,8 +10,6 @@
- );
+--- Makefile.PL.orig	Sat Dec 22 13:35:43 2007
++++ Makefile.PL	Sat Dec 22 13:35:56 2007
+@@ -26,8 +26,6 @@
+  , clean        => { FILES => 'test.txt' }
+  );
  
- 
--&set_test_data;
+-set_test_data();
 -
  sub set_test_data {
- 	unless (-f "./IMAPClient.pm") { warn "ERROR: not in installation directory\n"; return }
- 	return if -f "./test.txt";
+     unless(-f "lib/Mail/IMAPClient.pm")
+     {   warn "ERROR: not in installation directory\n";
