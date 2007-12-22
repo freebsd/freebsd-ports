@@ -92,6 +92,9 @@ share/applications/freeciv.desktop
 %%DATADIR%%/civ2/terrain.ruleset
 %%DATADIR%%/civ2/units.ruleset
 %%DATADIR%%/civ2.serv
+@unexec ggz-config --remove --modfile %D/%%DATADIR%%/civclient.dsc
+%%DATADIR%%/civclient.dsc
+@exec ggz-config --install --modfile %D/%%DATADIR%%/civclient.dsc
 %%DATADIR%%/default/buildings.ruleset
 %%DATADIR%%/default/cities.ruleset
 %%DATADIR%%/default/effects.ruleset
