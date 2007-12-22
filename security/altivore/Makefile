@@ -18,6 +18,7 @@ COMMENT=	A publically disclosed (neither GPL nor open-source) ala Carnivore src
 
 RESTRICTED=	License does not allow redistribution in any form\
 		(source, code or otherwise)
+BROKEN=		distfile unavailable
 
 SUB_FILES=	pkg-message
 
