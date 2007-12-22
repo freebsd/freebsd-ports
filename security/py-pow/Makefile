@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	Python OpenSSL Wrappers
 
 USE_PYTHON=	yes
@@ -24,11 +24,8 @@ USE_OPENSSL=	yes
 
 PORTDOCS=	POW.pdf
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
+post-patch:
+	${REINPLACE_CMD} -e 's|licence|license|' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -38,4 +35,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
