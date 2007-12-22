@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	ccrtp
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.0
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Implementation of the real-time transport protocol
 
-LIB_DEPENDS=	ccgnu2-1.5.0:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccgnu2-1.6.0:${PORTSDIR}/devel/commoncpp
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
-USE_GCC=	3.4+
 USE_LDCONFIG=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
