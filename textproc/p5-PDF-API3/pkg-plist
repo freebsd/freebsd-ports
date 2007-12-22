@@ -141,6 +141,7 @@
 %%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont/timesitalic.pm
 %%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont/webdings.pm
 %%SITE_PERL%%/PDF/API2/Resource/Font/CoreFont/verdanaitalic.pm
+%%SITE_PERL%%/PDF/API2/Resource/Font/neTrueType.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Form.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Image.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/Hybrid.pm
