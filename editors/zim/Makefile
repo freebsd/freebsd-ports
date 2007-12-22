@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zim
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	editors perl5
 MASTER_SITES=	http://pardus-larus.student.utwente.nl/~pardus/downloads/Zim/
 DISTNAME=	Zim-${PORTVERSION}
@@ -40,12 +40,12 @@ MAN3=		Gtk2::Ex::DesktopEntryMenu.3 \
 		Zim::GUI::EquationEditor.3 \
 		Zim::GUI::ExportDialog.3 \
 		Zim::GUI::FindReplaceDialog.3 \
+		Zim::GUI::NotebookDialog.3 \
 		Zim::GUI::PreferencesDialog.3 \
 		Zim::GUI::PropertiesDialog.3 \
 		Zim::GUI::SearchDialog.3 \
 		Zim::GUI.3 \
 		Zim::GUI::PageView.3 \
-		Zim::GUI::RepositoriesDialog.3 \
 		Zim::GUI::TrayIcon.3 \
 		Zim::GUI::TreeView.3 \
 		Zim::GUI::PathBar.3 \
@@ -74,8 +74,5 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2/TrayIcon.pm:${PORTSDIR}/x11-toolk
 .if !defined(WITHOUT_SPELL)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2/Spell.pm:${PORTSDIR}/devel/p5-Gtk2-Spell
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 83,84d ${WRKSRC}/Build.PL
 
 .include <bsd.port.post.mk>

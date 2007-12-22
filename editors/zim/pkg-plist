@@ -16,11 +16,11 @@ bin/zim
 %%SITE_PERL%%/Zim/GUI/EquationEditor.pm
 %%SITE_PERL%%/Zim/GUI/ExportDialog.pm
 %%SITE_PERL%%/Zim/GUI/FindReplaceDialog.pm
+%%SITE_PERL%%/Zim/GUI/NotebookDialog.pm
 %%SITE_PERL%%/Zim/GUI/PageView.pm
 %%SITE_PERL%%/Zim/GUI/PathBar.pm
 %%SITE_PERL%%/Zim/GUI/PreferencesDialog.pm
 %%SITE_PERL%%/Zim/GUI/PropertiesDialog.pm
-%%SITE_PERL%%/Zim/GUI/RepositoriesDialog.pm
 %%SITE_PERL%%/Zim/GUI/SearchDialog.pm
 %%SITE_PERL%%/Zim/GUI/Spell.pm
 %%SITE_PERL%%/Zim/GUI/TrayIcon.pm
@@ -36,6 +36,37 @@ bin/zim
 %%SITE_PERL%%/Zim/Template.pm
 %%SITE_PERL%%/Zim/TextBuffer.pm
 %%SITE_PERL%%/Zim/Utils.pm
+%%DATADIR%%/doc/globe_banner.png
+%%DATADIR%%/doc/Zim/About.txt
+%%DATADIR%%/doc/Zim/Install.txt
+%%DATADIR%%/doc/Zim/Translations.txt
+%%DATADIR%%/doc/Zim/Usage.txt
+%%DATADIR%%/doc/Zim/Bugs.txt
+%%DATADIR%%/doc/Zim/Features.txt
+%%DATADIR%%/doc/Zim/FAQ.txt
+%%DATADIR%%/doc/Zim/Contributing.txt
+%%DATADIR%%/doc/Zim/changelog.txt
+%%DATADIR%%/doc/Zim/Usage/strategies.txt
+%%DATADIR%%/doc/Zim/Usage/config.txt
+%%DATADIR%%/doc/Zim/Usage/preferences.txt
+%%DATADIR%%/doc/Zim/Usage/exporting.txt
+%%DATADIR%%/doc/Zim/Usage/styles.txt
+%%DATADIR%%/doc/Zim/Usage/commandline.txt
+%%DATADIR%%/doc/Zim/Usage/plugins.txt
+%%DATADIR%%/doc/Zim/Usage/searching.txt
+%%DATADIR%%/doc/Zim/Usage/notebooks.txt
+%%DATADIR%%/doc/Zim/Usage/autoformat.txt
+%%DATADIR%%/doc/Zim/Usage/properties.txt
+%%DATADIR%%/doc/Zim/Usage/syntax.txt
+%%DATADIR%%/doc/Zim/Usage/html_entities.txt
+%%DATADIR%%/doc/Zim/Usage/templates.txt
+%%DATADIR%%/doc/Zim/Usage/keybindings.txt
+%%DATADIR%%/doc/Zim/Usage/getting_started.txt
+%%DATADIR%%/doc/Zim/Usage/linking.txt
+%%DATADIR%%/doc/Zim/Usage/plugins/EquationEditor.txt
+%%DATADIR%%/doc/Zim/Usage/plugins/equation_01.png
+%%DATADIR%%/doc/Zim/Install/Windows.txt
+%%DATADIR%%/doc/Zim/Install/Unix.txt
 share/applications/zim.desktop
 share/pixmaps/zim.png
 share/pixmaps/zim/gtk-connect.png
@@ -44,36 +75,14 @@ share/pixmaps/zim/stock_calendar-view-month.png
 %%DATADIR%%/default.conf
 %%DATADIR%%/entities.list
 %%DATADIR%%/doc/.zim.config
-%%DATADIR%%/doc/invade_your_desktop.png
 %%DATADIR%%/doc/Help.txt
-%%DATADIR%%/doc/zim/about.txt
-%%DATADIR%%/doc/zim/bugs.txt
-%%DATADIR%%/doc/zim/changelog.txt
-%%DATADIR%%/doc/zim/faq.txt
-%%DATADIR%%/doc/zim/features.txt
-%%DATADIR%%/doc/zim/install.txt
-%%DATADIR%%/doc/zim/install/unix.txt
-%%DATADIR%%/doc/zim/usage.txt
-%%DATADIR%%/doc/zim/usage/autoformat.txt
-%%DATADIR%%/doc/zim/usage/commandline.txt
-%%DATADIR%%/doc/zim/usage/config.txt
-%%DATADIR%%/doc/zim/usage/exporting.txt
-%%DATADIR%%/doc/zim/usage/getting_started.txt
-%%DATADIR%%/doc/zim/usage/html_entities.txt
-%%DATADIR%%/doc/zim/usage/keybindings.txt
-%%DATADIR%%/doc/zim/usage/linking.txt
-%%DATADIR%%/doc/zim/usage/plugins.txt
-%%DATADIR%%/doc/zim/usage/plugins/equation_01.png
-%%DATADIR%%/doc/zim/usage/plugins/EquationEditor.txt
-%%DATADIR%%/doc/zim/usage/preferences.txt
-%%DATADIR%%/doc/zim/usage/properties.txt
-%%DATADIR%%/doc/zim/usage/repositories.txt
-%%DATADIR%%/doc/zim/usage/searching.txt
-%%DATADIR%%/doc/zim/usage/strategies.txt
-%%DATADIR%%/doc/zim/usage/styles.txt
-%%DATADIR%%/doc/zim/usage/syntax.txt
-%%DATADIR%%/doc/zim/usage/templates.txt
-%%DATADIR%%/doc/zim/install/windows.txt
+%%DATADIR%%/lingua/cs.pl
+%%DATADIR%%/lingua/es.pl
+%%DATADIR%%/lingua/fr.pl
+%%DATADIR%%/lingua/it.pl
+%%DATADIR%%/lingua/nl.pl
+%%DATADIR%%/lingua/pt.pl
+%%DATADIR%%/lingua/sv.pl
 %%DATADIR%%/plugins/EquationEditor.pl
 %%DATADIR%%/plugins/InsertScreenshot.pl
 %%DATADIR%%/plugins/PrintToBrowser.pl
@@ -100,10 +109,11 @@ share/pixmaps/zim/stock_calendar-view-month.png
 @dirrm %%SITE_PERL%%/Zim/Formats
 @dirrm %%SITE_PERL%%/Zim
 @dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/doc/zim/usage/plugins
-@dirrm %%DATADIR%%/doc/zim/usage
-@dirrm %%DATADIR%%/doc/zim/install
-@dirrm %%DATADIR%%/doc/zim
+@dirrm %%DATADIR%%/lingua
+@dirrm %%DATADIR%%/doc/Zim/Usage/plugins
+@dirrm %%DATADIR%%/doc/Zim/Usage
+@dirrm %%DATADIR%%/doc/Zim/Install
+@dirrm %%DATADIR%%/doc/Zim
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/templates/wiki
 @dirrm %%DATADIR%%/templates/txt2tags
