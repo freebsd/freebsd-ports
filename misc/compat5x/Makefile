@@ -11,7 +11,7 @@
 
 PORTNAME=	compat5x
 PORTVERSION=	5.4.0.8
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lesi/compat5x
@@ -68,6 +68,9 @@ PLIST_SUB+=	SPARC64=""
 PLIST_SUB+=	SPARC64="@comment "
 .endif
 
+post-extract:
+	@chflags -R noschg ${WRKSRC} || ${TRUE}
+
 do-install:
 	@${MKDIR} ${TARGET_DIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} *.so.* ${TARGET_DIR})
@@ -84,8 +87,5 @@ post-install:	install-ldconfig-file
 	@${LDCONFIG} -32 -m ${TARGET32_DIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
-
-pre-clean:
-	@[ -w ${WRKSRC} ] && chflags -R noschg ${WRKSRC} || ${TRUE}
 
 .include <bsd.port.post.mk>
