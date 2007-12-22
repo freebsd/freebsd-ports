@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.2.10
-PORTREVISION=	10
+PORTVERSION=	1.2.11
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -42,19 +41,6 @@ PLIST_SUB=	DATADIR="share"
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--enable-ipv6
-
-.if defined(WITH_ENCODING_PATCH) || defined(WITH_ID3V2_PATCH)
-ENC_PATCHLEVEL=	28.1
-DISTFILES+=	${PORTNAME}-${PORTVERSION}-recode-csa${ENC_PATCHLEVEL}${EXTRACT_SUFX}:enc
-MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:enc/}
-MASTER_SITE_SUBDIR+=	rusxmms/:enc
-.endif
-
-.if defined(WITH_ENCODING_PATCH)
-PLIST_SUB+=	ENCODING=""
-.else
-PLIST_SUB+=	ENCODING="@comment "
-.endif
 
 .if defined(WITH_EXTENDED_VORBIS_FILEINFO)
 CFLAGS+=	-DALL_VORBIS_TAGS
@@ -124,14 +110,6 @@ pre-extract:
 .endif
 
 post-patch:
-.if defined(WITH_ID3V2_PATCH)
-	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/recode.3rdparty/id3v2.patch
-.endif
-.if defined(WITH_ENCODING_PATCH) && defined(WITH_ID3V2_PATCH)
-	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/xmms_id3v2-ds-recode.patch
-.elif defined(WITH_ENCODING_PATCH)
-	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/xmms-ds-recode.patch
-.endif
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|\(datadir\)/aclocal|(prefix)/share/aclocal|g'
 	@${REINPLACE_CMD} -e 's|{datadir}/locale|{prefix}/share/locale|g' \
