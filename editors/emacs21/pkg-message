@@ -4,7 +4,7 @@
 *     LEIM: Libraries of Emacs Input Method                        *
 *   package.                                                       *
 *   You can find leim port in the following directory:             *
-*     /usr/ports/editors/leim21                                    *
+*     ${PORTSDIR}/editors/leim21                                    *
 *                                                                  *
 *   If you want to use multibyte characters in the menubar,        *
 *     make WITH_MENUBAR_FONTSET=yes install                        *
