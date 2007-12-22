@@ -21,6 +21,7 @@
     SUBDIR += ecj-bootstrap
     SUBDIR += eclipse
     SUBDIR += eclipse-EPIC
+    SUBDIR += eclipse-aptana
     SUBDIR += eclipse-cdt
     SUBDIR += eclipse-checkstyle
     SUBDIR += eclipse-clay-core
