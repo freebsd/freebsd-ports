@@ -29,6 +29,20 @@ lib/xastir/update_langfile.pl
 lib/xastir/waypoint-get.pl
 lib/xastir/xastir-fixcfg.sh
 lib/xastir/xastir-migrate.sh
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/COPYING.LIB.LESSTIF
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/FAQ
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.CVS
+%%DOCSDIR%%/README.Contributing
+%%DOCSDIR%%/README.Getting-Started
+%%DOCSDIR%%/README.MAPS
+%%DOCSDIR%%/README.win32
+%%DOCSDIR%%/UPGRADE
 %%DATADIR%%/Counties/placeholder
 %%DATADIR%%/GNIS/placeholder
 %%DATADIR%%/config/24kgrid.dbfawk
@@ -49,8 +63,10 @@ lib/xastir/xastir-migrate.sh
 %%DATADIR%%/config/nwszoddmmyy.dbfawk
 %%DATADIR%%/config/predefined_EVENT.sys
 %%DATADIR%%/config/predefined_SAR.sys
+%%DATADIR%%/config/stored_track.dbfawk
 %%DATADIR%%/config/tgr2shp.dbfawk
 %%DATADIR%%/config/tgr2shppoly.dbfawk
+%%DATADIR%%/config/tgr2shppoly_2006.dbfawk
 %%DATADIR%%/config/tgrcty.dbfawk
 %%DATADIR%%/config/tgrkgl.dbfawk
 %%DATADIR%%/config/tgrlk.dbfawk
@@ -75,19 +91,6 @@ lib/xastir/xastir-migrate.sh
 %%DATADIR%%/config/tnc-stop.thd7
 %%DATADIR%%/config/tnc-stop.tnc2-ui
 %%DATADIR%%/config/xastir.rgb
-%%DATADIR%%/doc/AUTHORS
-%%DATADIR%%/doc/COPYING
-%%DATADIR%%/doc/ChangeLog
-%%DATADIR%%/doc/FAQ
-%%DATADIR%%/doc/INSTALL
-%%DATADIR%%/doc/LICENSE
-%%DATADIR%%/doc/README
-%%DATADIR%%/doc/README.CVS
-%%DATADIR%%/doc/README.Contributing
-%%DATADIR%%/doc/README.Getting-Started
-%%DATADIR%%/doc/README.MAPS
-%%DATADIR%%/doc/README.win32
-%%DATADIR%%/doc/UPGRADE
 %%DATADIR%%/fcc/placeholder
 %%DATADIR%%/help/help-Dutch.dat
 %%DATADIR%%/help/help-English.dat
@@ -107,6 +110,7 @@ lib/xastir/xastir-migrate.sh
 %%DATADIR%%/maps/Online/terraserver-urban.geo
 %%DATADIR%%/maps/Online/terraserver.geo
 %%DATADIR%%/maps/Online/tigermap.geo
+%%DATADIR%%/maps/worldhi.map
 %%DATADIR%%/sounds/placeholder
 %%DATADIR%%/symbols/13pct.xbm
 %%DATADIR%%/symbols/25pct.xbm
@@ -127,9 +131,9 @@ lib/xastir/xastir-migrate.sh
 @dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/fcc
-@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%/GNIS
 @dirrm %%DATADIR%%/Counties
 @dirrm %%DATADIR%%
+@dirrm share/doc/xastir
 @dirrm lib/xastir
