@@ -11,19 +11,19 @@ share/doc/HTML/en/bookreader/index.cache.bz2
 share/doc/HTML/en/bookreader/index.docbook
 share/icons/hicolor/16x16/apps/bookreader.png
 share/icons/hicolor/32x32/apps/bookreader.png
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm share/doc/HTML/en/bookreader
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/config.kcfg
+@dirrmtry share/doc/HTML/en
+@dirrmtry share/doc/HTML
+@dirrmtry share/config.kcfg
 @dirrm share/apps/bookreader/themes/default
 @dirrm share/apps/bookreader/themes
 @dirrm share/apps/bookreader
-@dirrm share/apps
-@dirrm share/applnk/Utilities
-@dirrm share/applnk
+@dirrmtry share/apps
+@dirrmtry share/applnk/Utilities
+@dirrmtry share/applnk
