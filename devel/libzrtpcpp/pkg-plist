@@ -23,8 +23,7 @@ include/libzrtpcpp/ZrtpPacketHelloAck.h
 include/libzrtpcpp/ZrtpUserCallback.h
 include/libzrtpcpp/TimeoutProvider.h
 include/libzrtpcpp/zrtpccrtp.h
-lib/libzrtpcpp-0.9.so.0
-lib/libzrtpcpp-0.9.so
+lib/libzrtpcpp.so.0
 lib/libzrtpcpp.so
 lib/libzrtpcpp.la
 lib/libzrtpcpp.a

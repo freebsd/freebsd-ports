@@ -1,0 +1,11 @@
+--- src/Makefile.in	2007-12-20 09:29:04.000000000 -0500
++++ src/Makefile.in	2007-12-20 09:29:22.000000000 -0500
+@@ -248,7 +248,7 @@
+ RELEASE = $(LT_VERSION) -release $(LT_RELEASE)
+ lib_LTLIBRARIES = libzrtpcpp.la
+ # libzrtpcpp_la_LIBADD = @LIBS@
+-libzrtpcpp_la_LDFLAGS = $(RELEASE)
++# libzrtpcpp_la_LDFLAGS = $(RELEASE)
+ 
+ # http://www.gnu.org/software/libtool/manual.html
+ @ZRTP_OPENSSL_TRUE@zrtp_src_o = libzrtpcpp/crypto/openssl/ZrtpDH.cxx \
