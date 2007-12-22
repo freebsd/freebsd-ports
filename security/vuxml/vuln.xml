@@ -132,18 +132,17 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2007-6112</cvename>
+      <cvename>CVE-2007-6113</cvename>
+      <cvename>CVE-2007-6114</cvename>
+      <cvename>CVE-2007-6115</cvename>
+      <cvename>CVE-2007-6117</cvename>
+      <cvename>CVE-2007-6118</cvename>
+      <cvename>CVE-2007-6120</cvename>
+      <cvename>CVE-2007-6121</cvename>
       <cvename>CVE-2007-6438</cvename>
       <cvename>CVE-2007-6439</cvename>
-      <cvename>CVE-2007-6440</cvename>
       <cvename>CVE-2007-6441</cvename>
-      <cvename>CVE-2007-6442</cvename>
-      <cvename>CVE-2007-6443</cvename>
-      <cvename>CVE-2007-6444</cvename>
-      <cvename>CVE-2007-6445</cvename>
-      <cvename>CVE-2007-6446</cvename>
-      <cvename>CVE-2007-6447</cvename>
-      <cvename>CVE-2007-6448</cvename>
-      <cvename>CVE-2007-6449</cvename>
       <cvename>CVE-2007-6450</cvename>
       <cvename>CVE-2007-6451</cvename>
       <url>http://www.wireshark.org/security/wnpa-sec-2007-03.html</url>
@@ -151,6 +150,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-12-19</discovery>
       <entry>2007-12-19</entry>
+      <modified>2007-12-22</modified>
     </dates>
   </vuln>
 
