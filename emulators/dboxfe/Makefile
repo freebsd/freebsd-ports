@@ -21,7 +21,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui network xml uic_build moc_build qmake_build rcc_build
 HAS_CONFIGURE=	yes
 
-PLIST_FILES=	dboxfe dboxfetray
+PLIST_FILES=	bin/dboxfe bin/dboxfetray
 
 .include <bsd.port.pre.mk>
 
