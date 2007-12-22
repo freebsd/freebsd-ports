@@ -17,7 +17,7 @@ etc/mlterm/xim
 lib/libkik.a
 lib/libkik.la
 lib/libkik.so
-lib/libkik.so.10
+lib/libkik.so.11
 lib/libmkf.a
 lib/libmkf.la
 lib/libmkf.so
@@ -60,6 +60,7 @@ libexec/mlterm-menu
 libexec/w3mmlconfig/mlconfig-data.pl
 libexec/w3mmlconfig/mlconfig.cgi
 %%PORTDOCS%%share/doc/ja/mlterm/README.ja
+share/locale/ar/LC_MESSAGES/mlconfig.mo
 share/locale/de/LC_MESSAGES/mlconfig.mo
 share/locale/ja/LC_MESSAGES/mlconfig.mo
 share/locale/vi/LC_MESSAGES/mlconfig.mo
