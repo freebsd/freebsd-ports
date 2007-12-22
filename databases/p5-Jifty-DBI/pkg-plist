@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/DBI/.packlist
 %%SITE_PERL%%/Jifty/DBI.pm
-%%SITE_PERL%%/Jifty/DBI/Class/Trigger.pm
 %%SITE_PERL%%/Jifty/DBI/Collection.pm
 %%SITE_PERL%%/Jifty/DBI/Collection/Union.pm
 %%SITE_PERL%%/Jifty/DBI/Collection/Unique.pm
