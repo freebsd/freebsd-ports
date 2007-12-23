@@ -8,7 +8,9 @@
 PORTNAME=	bip
 PORTVERSION=	0.6.1
 CATEGORIES=	irc
-MASTER_SITES=	http://bip.t1r.net/downloads/
+MASTER_SITES=	http://bip.t1r.net/downloads/ \
+		http://distfiles.gentoo.org/distfiles/ \
+		LOCAL/beech
 
 MAINTAINER=	chess@chessgriffin.com
 COMMENT=	A simple IRC proxy with SSL support
@@ -21,9 +23,7 @@ USE_OPENSSL=	yes
 
 PLIST_FILES=	bin/bip bin/bipmkpw
 SUB_FILES=	pkg-message
-SUB_LIST=	EXAMPLESDIR=${EXAMPLESDIR}
 MAN1=		bip.1 bip.conf.1 bipmkpw.1
-MANCOMPRESSED=	no
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README README.floodcontrol TODO
 PORTEXAMPLES=	bip.conf bip.vim
