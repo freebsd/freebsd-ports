@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	digikam-doc
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+DISTVERSION=	0.9.3-beta3
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	digikam
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Documentation for Digikam
 
 USE_BZIP2=	yes
@@ -20,10 +19,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

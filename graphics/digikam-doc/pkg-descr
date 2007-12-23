@@ -1,7 +1,6 @@
-This port provides documentation in several languages for the photo management
-application Digikam (graphics/digikam).
+This port provides documentation for DigiKam.
 
-WWW: http://digikam.sourceforge.net/
+WWW: http://www.digikam.org/
 
-- Arjan
-avleeuwen@piwebs.com
+- Alex Dupre
+ale@FreeBSD.org
