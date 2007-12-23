@@ -29,5 +29,5 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-		
+
 .include <bsd.port.mk>
