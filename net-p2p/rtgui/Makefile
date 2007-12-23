@@ -21,6 +21,8 @@ BUILD_DEPENDS+=	libtorrent=0.11.9:${PORTSDIR}/net-p2p/libtorrent \
 		xmlrpc-c-config:${PORTSDIR}/net/xmlrpc-c
 RUN_DEPENDS+=	rtorrent:${PORTSDIR}/net-p2p/rtorrent
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_APACHE)
 USE_APACHE=	1.3+
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_scgi.so:${PORTSDIR}/www/mod_scgi
@@ -47,4 +49,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
