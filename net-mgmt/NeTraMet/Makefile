@@ -16,7 +16,7 @@ DISTFILES+=	NeTraMet${PORTVERSION:S/.//}${EXTRACT_SUFX} \
 DIST_SUBDIR=	netramet
 EXTRACT_ONLY=	NeTraMet${PORTVERSION:S/.//}${EXTRACT_SUFX}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the Internet Accounting Architecture
 
 NETRAMET_DOCS=	usguide.pdf srlguide.pdf ntmref.pdf nm_rc.pdf \
