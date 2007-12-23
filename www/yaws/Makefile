@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	yaws
-PORTVERSION=	1.68
-PORTREVISION=	1
+PORTVERSION=	1.73
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
 
@@ -35,7 +34,6 @@ BROKEN=		Does not compile on !i386
 .endif
 
 post-extract:
-	@${RM} -r ${WRKSRC}/www/.xvpics ${WRKSRC}/www/testdir
 	@${FIND} ${WRKSRC} -name .empty | ${XARGS} ${RM}
 
 post-patch:
@@ -50,10 +48,14 @@ do-install:
 	@${MKDIR} ${APPDIR}/ebin
 	@${MKDIR} ${APPDIR}/include
 	@${MKDIR} ${APPDIR}/priv
+	@${MKDIR} ${APPDIR}/priv/lib
 	@${MKDIR} ${APPDIR}/src
 	@${MKDIR} ${PREFIX}/www/yaws
 	@${INSTALL_DATA} ${WRKSRC}/ebin/* ${APPDIR}/ebin
-	@${INSTALL_DATA} ${WRKSRC}/priv/* ${APPDIR}/priv
+.for FILE in envelope.xsd mime.types soap.xsd wsdl.xsd epam
+	@${INSTALL_DATA} ${WRKSRC}/priv/${FILE} ${APPDIR}/priv
+.endfor
+	@${INSTALL_DATA} ${WRKSRC}/priv/lib/* ${APPDIR}/priv/lib
 	@${INSTALL_DATA} ${WRKSRC}/include/* ${APPDIR}/include
 	@${INSTALL_DATA} ${WRKSRC}/src/*.?rl ${APPDIR}/src
 	@cd ${WRKSRC}/www && (${FIND} * | ${CPIO} -pu ${PREFIX}/www/yaws)
