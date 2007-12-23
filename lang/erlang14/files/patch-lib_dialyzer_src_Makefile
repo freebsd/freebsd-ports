@@ -3,16 +3,16 @@ $FreeBSD$
 
 --- lib/dialyzer/src/Makefile.orig
 +++ lib/dialyzer/src/Makefile
-@@ -66,8 +66,6 @@
- 	dialyzer_succ_typings \
- 	dialyzer_typesig
+@@ -68,8 +68,6 @@
+ 	dialyzer_typesig \
+ 	dialyzer_utils
  
 -EXTRA_FILES=  ../plt/dialyzer_init_plt	## automatically generated
 -
- HRL_FILES= dialyzer.hrl
+ HRL_FILES= dialyzer.hrl dialyzer_callgraph.hrl
  ERL_FILES= $(MODULES:%=%.erl)
  INSTALL_FILES= $(MODULES:%=$(EBIN)/%.$(EMULATOR)) $(APP_TARGET) $(APPUP_TARGET)
-@@ -91,13 +89,12 @@
+@@ -92,13 +90,12 @@
  # Targets
  # ----------------------------------------------------
  
@@ -27,7 +27,7 @@ $FreeBSD$
  	rm -f core
  
  # ----------------------------------------------------
-@@ -149,11 +146,10 @@
+@@ -153,11 +150,10 @@
  
  release_spec: opt
  	$(INSTALL_DIR) $(RELSYSDIR)/src
