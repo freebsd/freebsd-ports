@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	parrot
-PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTVERSION=	0.5.1
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/L/LT/LTOETSCH
+MASTER_SITE_SUBDIR=	../../authors/id/J/JO/JONATHAN/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+		bison:${PORTSDIR}/devel/bison \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		icudata.36:${PORTSDIR}/devel/icu
@@ -25,7 +25,8 @@ USE_GCC=	3.4+
 USE_PERL5=	5.8.0+
 USE_GMAKE=	yes
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+INSTALL_TARGET=	reallyinstall
 
 CONFIGURE_SCRIPT=	Configure.pl
 CONFIGURE_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
@@ -36,7 +37,6 @@ CONFIGURE_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
 		--yacc=${LOCALBASE}/bin/bison \
 		--verbose \
 		--prefix=${PREFIX}
-
 
 PARROT_SHARE_DIR=	share/doc/${PORTNAME}
 PARROT_DOCS=		${PARROT_SHARE_DIR}/docs
@@ -68,7 +68,7 @@ x-generate-plist:
 .include <bsd.port.pre.mk>
 
 # JIT only works on x86
-.if ${ARCH} == "i386"
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--jitcapable
 PLIST_SUB+=	JIT=""
 .else
