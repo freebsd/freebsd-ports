@@ -3593,6 +3593,7 @@ gensig		ports/mail/gensig
 gentium		ports/x11-fonts/gentium
 gentoo		ports/x11-fm/gentoo
 geogebra-i18n	ports/math/geogebra-i18n
+geoid		ports/comms/geoid
 geolizer	ports/www/geolizer
 geomgui		ports/sysutils/geomgui
 geomorph	ports/graphics/geomorph
