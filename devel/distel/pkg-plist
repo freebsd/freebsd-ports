@@ -1,9 +1,9 @@
-lib/erlang/lib/distel-%%VERSION%%/ebin/distel.beam
-lib/erlang/lib/distel-%%VERSION%%/ebin/distel_ie.beam
-lib/erlang/lib/distel-%%VERSION%%/ebin/fdoc.beam
-lib/erlang/lib/distel-%%VERSION%%/src/distel.erl
-lib/erlang/lib/distel-%%VERSION%%/src/distel_ie.erl
-lib/erlang/lib/distel-%%VERSION%%/src/fdoc.erl
+%%LIB32DIR%%/erlang/lib/distel-2007.11.03/ebin/distel.beam
+%%LIB32DIR%%/erlang/lib/distel-2007.11.03/ebin/distel_ie.beam
+%%LIB32DIR%%/erlang/lib/distel-2007.11.03/ebin/fdoc.beam
+%%LIB32DIR%%/erlang/lib/distel-2007.11.03/src/distel.erl
+%%LIB32DIR%%/erlang/lib/distel-2007.11.03/src/distel_ie.erl
+%%LIB32DIR%%/erlang/lib/distel-2007.11.03/src/fdoc.erl
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/INSTALL
@@ -28,10 +28,10 @@ lib/erlang/lib/distel-%%VERSION%%/src/fdoc.erl
 %%EMACS_SITE_LISPDIR%%/distel/erlext.el
 %%EMACS_SITE_LISPDIR%%/distel/net-fsm.el
 %%EMACS_SITE_LISPDIR%%/distel/patmatch.el
-@dirrm lib/erlang/lib/distel-%%VERSION%%/src
-@dirrm lib/erlang/lib/distel-%%VERSION%%/ebin
-@dirrm lib/erlang/lib/distel-%%VERSION%%
 @dirrm %%EMACS_SITE_LISPDIR%%/distel
 @dirrm %%DOCSDIR%%
-@exec ln -sf distel-%%VERSION%% %D/lib/erlang/lib/distel
-@unexec rm -f %D/lib/erlang/lib/distel
+@dirrm %%LIB32DIR%%/erlang/lib/distel-2007.11.03/src
+@dirrm %%LIB32DIR%%/erlang/lib/distel-2007.11.03/ebin
+@dirrm %%LIB32DIR%%/erlang/lib/distel-2007.11.03
+@exec ln -sf distel-%%VERSION%% %D/%%LIB32DIR%%/erlang/lib/distel
+@unexec rm -f %D/%%LIB32DIR%%/erlang/lib/distel
