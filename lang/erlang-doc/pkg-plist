@@ -1,6 +1,7 @@
 share/doc/erlang/appmon.pdf
 share/doc/erlang/armstrong_thesis_2003.pdf
 share/doc/erlang/asn1.pdf
+share/doc/erlang/common_test.pdf
 share/doc/erlang/compiler.pdf
 share/doc/erlang/cosEvent.pdf
 share/doc/erlang/cosEventDomain.pdf
@@ -32,9 +33,7 @@ share/doc/erlang/jinterface.pdf
 share/doc/erlang/kernel.pdf
 share/doc/erlang/master_thesis_patterns.pdf
 share/doc/erlang/megaco.pdf
-share/doc/erlang/mnemosyne.pdf
 share/doc/erlang/mnesia.pdf
-share/doc/erlang/mnesia_session.pdf
 share/doc/erlang/oam.pdf
 share/doc/erlang/observer.pdf
 share/doc/erlang/odbc.pdf
@@ -42,6 +41,7 @@ share/doc/erlang/orber.pdf
 share/doc/erlang/os_mon.pdf
 share/doc/erlang/otp_mibs.pdf
 share/doc/erlang/parsetools.pdf
+share/doc/erlang/percept.pdf
 share/doc/erlang/pman.pdf
 share/doc/erlang/programming_examples.pdf
 share/doc/erlang/programming_rules.pdf
@@ -55,6 +55,7 @@ share/doc/erlang/stdlib.pdf
 share/doc/erlang/syntax_tools.pdf
 share/doc/erlang/system_architecture_intro.pdf
 share/doc/erlang/system_principles.pdf
+share/doc/erlang/test_server.pdf
 share/doc/erlang/toolbar.pdf
 share/doc/erlang/tools.pdf
 share/doc/erlang/tutorial.pdf

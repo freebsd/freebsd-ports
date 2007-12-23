@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	erlang-doc
-PORTVERSION=	r11b5
+PORTVERSION=	r12b0
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://erlang.org/doc/pdf/:release \
@@ -18,6 +18,7 @@ MASTER_SITES=	http://erlang.org/doc/pdf/:release \
 MASTER_SITE_SUBDIR=     olgeni/:local
 DISTFILES=	appmon.pdf:release \
 		asn1.pdf:release \
+		common_test.pdf:release \
 		compiler.pdf:release \
 		cosEvent.pdf:release \
 		cosEventDomain.pdf:release \
@@ -46,9 +47,7 @@ DISTFILES=	appmon.pdf:release \
 		jinterface.pdf:release \
 		kernel.pdf:release \
 		megaco.pdf:release \
-		mnemosyne.pdf:release \
 		mnesia.pdf:release \
-		mnesia_session.pdf:release \
 		oam.pdf:release \
 		observer.pdf:release \
 		odbc.pdf:release \
@@ -56,6 +55,7 @@ DISTFILES=	appmon.pdf:release \
 		os_mon.pdf:release \
 		otp_mibs.pdf:release \
 		parsetools.pdf:release \
+		percept.pdf:release \
 		pman.pdf:release \
 		programming_examples.pdf:release \
 		reference_manual.pdf:release \
@@ -68,6 +68,7 @@ DISTFILES=	appmon.pdf:release \
 		syntax_tools.pdf:release \
 		system_architecture_intro.pdf:release \
 		system_principles.pdf:release \
+		test_server.pdf:release \
 		toolbar.pdf:release \
 		tools.pdf:release \
 		tutorial.pdf:release \
