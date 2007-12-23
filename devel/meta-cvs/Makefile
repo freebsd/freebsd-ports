@@ -15,6 +15,8 @@ DISTNAME=	mcvs-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A more capable version control system than CVS, built around CVS
 
+BROKEN=		does not build
+
 BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp \
 		${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv
 
