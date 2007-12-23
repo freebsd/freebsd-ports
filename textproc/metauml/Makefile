@@ -7,19 +7,19 @@
 
 PORTNAME=	metauml
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_lib_${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}_lib_${PORTVERSION}.tgz ${PORTNAME}_manual_${PORTVERSION}.pdf lop-release.tgz
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${PORTNAME}_lib_${PORTVERSION}.tgz lop-release.tgz
 
 MAINTAINER=	tota@rtfm.jp
 COMMENT=	A MetaPost library for typesetting UML diagrams
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
-
-WRKSRC=	${WRKDIR}/${PORTNAME}_lib
 
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR} MPDIR=${MPDIR}
 
@@ -28,10 +28,20 @@ MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 MPDIR=		${TEXMFDIR}/metapost/${PORTNAME}
 
 NO_BUILD=	yes
+WRKSRC=	${WRKDIR}/${PORTNAME}_lib
+EXAMPLES=	*.1 *.jpg *.mp lop lop.html lop.pdf lop.tex
 
 do-install:
 	${MKDIR} ${PREFIX}/${MPDIR}
 	${INSTALL_DATA} ${WRKSRC}/thrunk/*.mp ${PREFIX}/${MPDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}_manual_${PORTVERSION}.pdf ${DOCSDIR}
+	${MKDIR} ${EXAMPLESDIR}
+.for example in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKDIR}/${example} ${EXAMPLESDIR}
+.endfor
+.endif
 
 post-install:
 	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
