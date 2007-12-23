@@ -7,7 +7,7 @@
 
 PORTNAME=	abacus
 PORTVERSION=	0.9.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://tahoe.inesc.pt/~aml/abacus/
 
@@ -21,8 +21,8 @@ COMMENT=	Spread sheet for X Window System
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_XORG=	x11
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -Wno-deprecated" LDFLAGS="${LDFLAGS}"
 CFLAGS+=	-I$(X11BASE)/include \
 		-I$(LOCALBASE)/include/tcl8.2 \
