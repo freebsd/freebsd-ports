@@ -7,7 +7,7 @@
 
 PORTNAME=	wqy
 PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -58,7 +58,7 @@ post-install:
 	@${CP} ${PREFIX}/${FONTSDIR}/fonts.dir ${PREFIX}/${FONTSDIR}/fonts.scale || true
 	@command fc-cache -v ${PREFIX}/${FONTSDIR} || true
 .if defined(WITH_ALIAS)
-	${INSTALL_DATA} ${WRKSRC}/fonts.alias ${PREFIX}/${CONFAVAILDIR}
+	${INSTALL_DATA} ${WRKSRC}/fonts.alias ${PREFIX}/${FONTSDIR}
 .endif
 
 .if !defined(NOPORTDOCS)
