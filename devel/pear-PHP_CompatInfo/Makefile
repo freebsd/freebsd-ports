@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_CompatInfo
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	devel pear
 
 MAINTAINER=	chinsan@FreeBSD.org
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	tokenizer
+USE_DOS2UNIX=	yes
 
 CATEGORY=	PHP
 FILES=		CompatInfo/Cli.php CompatInfo/const_array.php \
@@ -25,15 +26,18 @@ DOCS=		TDG/img/admons/caution.png TDG/img/admons/important.png \
 		TDG/img/admons/warning.png TDG/img/created-with-docbook.png \
 		TDG/img/external-link.gif TDG/img/pearsmall.gif TDG/book.css \
 		TDG/ch01.html TDG/ch01s02.html TDG/ch01s03.html TDG/ch02.html \
-		TDG/ch03.html TDG/ch03s02.html TDG/ch04.html TDG/ch04s02.html \
-		TDG/ch05.html TDG/ch05s02.html TDG/ch06.html TDG/ch06s02.html \
-		TDG/ch07.html TDG/index.html TDG/pr01.html TDG/pr01s02.html \
+		TDG/ch02s02.html TDG/ch02s03.html TDG/ch02s04.html \
+		TDG/ch02s05.html TDG/ch02s06.html TDG/ch02s07.html \
+		TDG/ch02s08.html TDG/ch03.html TDG/ch03s02.html \
+		TDG/ch04.html TDG/ch04s02.html TDG/ch05.html TDG/ch05s02.html \
+		TDG/ch06.html TDG/ch06s02.html TDG/ch07.html TDG/ch07s02.html \
+		TDG/ch08.html TDG/index.html TDG/pr01.html TDG/pr01s02.html \
 		TDG/pt01.html TDG/pt02.html TDG/pt03.html TDG/re01.html \
 		TDG/re02.html TDG/re03.html TDG/re04.html TDG/re05.html
-EXAMPLES=	checkConstants.php checkPHP5.php ci_frontend.php cliCustom.php \
-		cliOutput.txt ignorePHP5implements.php \
-		parseArray.php parseDir.php parseFile.php \
-		parseString.php
+EXAMPLES=	checkConstants.php checkExtensions.php checkPHP5.php \
+		ci_frontend.php cliCustom.php cliOutput.txt \
+		ignorePHP5implements.php parseArray.php parseDir.php \
+		parseFile.php parseString.php
 TESTS=		checkMax.php sample_req6056.php
 _EXAMPLESDIR=	docs/examples
 
