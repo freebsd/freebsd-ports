@@ -1,0 +1,33 @@
+--- glade/preferences_dialog.glade.orig	2007-12-23 15:53:01.000000000 -0600
++++ glade/preferences_dialog.glade	2007-12-23 15:53:35.000000000 -0600
+@@ -2738,7 +2738,7 @@
+                 </child>
+                 <child>
+                   <widget class="GtkFrame" id="frame4">
+-                    <property name="visible">True</property>
++                    <property name="visible">False</property>
+                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                     <property name="label_xalign">0</property>
+                     <property name="shadow_type">GTK_SHADOW_NONE</property>
+--- src/interface.py.orig	2007-12-23 15:53:04.000000000 -0600
++++ src/interface.py	2007-12-23 15:54:45.000000000 -0600
+@@ -112,9 +112,6 @@
+         # Boolean set to true if window is not minimized and is "visible"
+         self.update_interface = True
+ 
+-        def new_release_check():
+-            common.new_release_check()
+-
+         def send_info():
+             import time
+             
+@@ -130,9 +127,6 @@
+             else:
+                 _run_script()        
+ 
+-        if self.config.get("new_releases"):
+-            new_release_check()
+-
+         if self.config.get("send_info"):
+             send_info()
+ 
