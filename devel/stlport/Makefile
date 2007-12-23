@@ -7,86 +7,80 @@
 #
 
 PORTNAME=	stlport
-PORTVERSION=	4.6.2
-PORTREVISION?=	0
+PORTVERSION=	5.1.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.stlport.com/archive/ \
-		SF
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${COMPILER}
 DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	Adaptation of SGI's Standard Template Library
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Adaptation of SGI\'s Standard Template Library
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" 
-BROKEN=		"Segfault during build on alpha"
-.endif
+USE_BZIP2=	yes
 
 .if !exists(/usr/include/wchar.h)
-BROKEN=		"Requires /usr/include/wchar.h for compilation"
+BROKEN=		Requires /usr/include/wchar.h for compilation
 .endif
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/src
+WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/build/lib
 PATCH_WRKSRC=	${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}
 USE_GMAKE=	yes
 COMPILER?=	gcc
-MAKEFILE=	${COMPILER}-freebsd.mak
+MAKEFILE=	${COMPILER}.mak
+ALL_TARGET=	install
 MAKE_ENV+=	CC=${CC} CXX=${CXX}
-MAKE_ARGS+=	INSTALLDIR=${PREFIX} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
+MAKE_ARGS+=	INSTALLDIR=${PREFIX} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} 		\
 		PTHREAD_LIBS=${PTHREAD_LIBS}
-PLIST_SUB+=	COMPILER=${COMPILER}
+PLIST_SUB+=	COMPILER=${COMPILER} VER=${PORTVERSION} V2=${PORTVERSION:R}	\
+		V1=${PORTVERSION:R:R}
 
-INSTALL_TARGET=	install_unix
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-lib-motif=${COMPILER}
 USE_LDCONFIG=	yes
+PORTDOCS=	*
 
-.if ${COMPILER} == icc
-CC=		icc
-CXX=		icpc
-CFLAGS=		-O -ip -axiMKW
-CXXFLAGS=	${CFLAGS}
-.else
-# There's segfault on -current if you use non default CFLAGS.
-CFLAGS=		-O -pipe
-CXXFLAGS=	${CFLAGS}
+OPTIONS=	SHORT_STRING_OPTIM "Enable short string optimization." on 	\
+		PTR_SPECIALIZATIONS "Use pointer types specializations." off 	\
+		TEMPLATE_EXPRESSION "Use template expressions for string." off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_SHORT_STRING_OPTIM)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-no-short-string-optim-user_config.h.diff
 .endif
 
-.if ${COMPILER} == gcc && ${OSVERSION} >= 502126
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you have encounted a compiler internal error"
-	@${ECHO_MSG} "during building, do NOT 'make clean', simply continue"
-	@${ECHO_MSG} "building by type 'make ${.TARGET}' again."
-	@${ECHO_MSG}
+.if defined(WITH_PTR_SPECIALIZATIONS)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ptr_spec-user_config.h.diff
 .endif
 
-post-patch:
-	@${CP} ${FILESDIR}/src::icc-freebsd.mak ${WRKSRC}/icc-freebsd.mak
-	@${CP} ${FILESDIR}/stlport::stl_icc.h \
-		${WRKSRC}/../stlport/config/stl_icc.h
-	@${CP} ${FILESDIR}/test::eh::icc-freebsd.mak \
-		${WRKSRC}/../test/eh/icc-freebsd.mak
+.if defined(WITH_TEMPLATE_EXPRESSION)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-templ-expr-user_config.h.diff
+.endif
 
-post-install:
+pre-configure:
+	${REINPLACE_CMD} -e 's|gcc|${COMPILER}|' ${WRKSRC}/gcc.mak      \
+	${WRKSRC}/../test/unit/gcc.mak
+.for lib in stlport stlportg stlportstlg
+	${REINPLACE_CMD} -e 's|-l${lib}$$|-l${lib}_${COMPILER}|'        \
+	${PATCH_WRKSRC}/build/Makefiles/gmake/app/gcc.mak
+.endfor
+
+do-install:
+	${MKDIR} "${PREFIX}/include/stlport/"
+	(cd ${PATCH_WRKSRC}/stlport/ && ${COPYTREE_SHARE} \* ${PREFIX}/include/stlport/)
+	(cd ${PATCH_WRKSRC}/lib; ${TAR} cf - *) | (cd ${PREFIX}/lib; ${TAR} xf -)
+	${CHOWN} -h ${BINOWN}:${BINGRP} ${PREFIX}/lib/libstlport*
 	${FIND} ${PREFIX}/include/stlport -name \*.orig -delete
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/../doc/*.css ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/images/* ${DOCSDIR}/images
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PATCH_WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.if ${COMPILER} == icc
-post-build:	test
-.endif
-
-test:	do-build
-	@cd ${WRKSRC}/../test/eh && ${SETENV} ${MAKE_ENV} \
-		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check_d
+regression-test:
+	(cd ${WRKSRC}/../test/unit &&	\
+	${SETENV} STLPORT_LIB_DIR="${PATCH_WRKSRC}/lib"	\
+	${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} && \
+	(../../../bin/stl_unit_test || ${TRUE}) &&	\
+	(../../../bin-g/stl_unit_test  || ${TRUE}) )
 
 .include <bsd.port.post.mk>
