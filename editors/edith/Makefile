@@ -20,6 +20,7 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 
+BROKEN=		unfetchable
 RESTRICTED=	"Redistribution not allowed"
 NO_BUILD=	yes
 
