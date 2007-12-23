@@ -63,10 +63,10 @@ write_row () {
     # work around the fact that 5-exp is really 6-exp-prime
     if [ ! -f $indexfile ]; then
       if [ -d $directory/ports ]; then
-          indexfile=$directory/ports/`cd $directory/ports&&ls INDEX* | head -1`
+          indexfile=$directory/ports/`cd $directory/ports&&ls INDEX* 2> /dev/null | head -1`
         else
           # work around the fact that 4 is EOL and thus has no ports/ directory
-         indexfile=$directory/logs/`cd $directory/logs&&ls INDEX* | head -1`
+         indexfile=$directory/logs/`cd $directory/logs&&ls INDEX* 2> /dev/null | head -1`
         fi
     fi
 
