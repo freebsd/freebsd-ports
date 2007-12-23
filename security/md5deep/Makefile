@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	md5deep
-PORTVERSION=	1.12
+PORTVERSION=	2.0.1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${PORTVERSION}-001
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Program to compute various message digests recursively
 
-ALL_TARGET=	unix
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN1=		md5deep.1
@@ -23,9 +23,5 @@ MLINKS=		md5deep.1 sha1deep.1 md5deep.1 sha256deep.1 \
 
 PLIST_FILES=	bin/md5deep bin/sha1deep bin/sha256deep \
 		bin/whirlpooldeep bin/tigerdeep
-
-post-patch:
-	@${REINPLACE_CMD} -e 's!/usr/local!${PREFIX}!' \
-	-e 's!-Wall -W -O3!${CFLAGS}!' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
