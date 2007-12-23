@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	r11b5
-PORTREVISION=	1
+PORTVERSION=	r12b0.1
 PORTEPOCH=	1
-CATEGORIES=	lang parallel
+CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/        \
 		ftp://ftp.erlang.org/pub/download/     \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R11B-5
+DISTNAME=	otp_src_R12B-0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	http://www.erlang.org/download/
+PATCHFILES=	otp_src_R12B-0-osp1.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
@@ -71,9 +74,9 @@ LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
 .endif
 
-ERLANG_MAN=	otp_doc_man_R11B-5.tar.gz
+ERLANG_MAN=	otp_doc_man_R12B-0.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_doc_html_R11B-5.tar.gz
+ERLANG_DOCS=	otp_doc_html_R12B-0.tar.gz
 .endif
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
