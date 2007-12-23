@@ -23,7 +23,7 @@ PLIST=		${.CURDIR}/pkg-plist
 AVAHI_SLAVE=	autoipd
 
 MAN8=		avahi-autoipd.8
-USE_GNOME=	gnomehack gnometarget ltverhack
+USE_GNOME=	gnomehack gnometarget ltverhack intltool
 PKGINSTALL=	${.CURDIR}/pkg-install
 
 .include "${MASTERDIR}/Makefile"
