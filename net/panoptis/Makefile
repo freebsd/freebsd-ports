@@ -7,6 +7,7 @@
 
 PORTNAME=	panoptis
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Detect and block DoS/DDoS attacks
 
-LIB_DEPENDS=	ccgnu2-1.5.0:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccgnu2-1.6.0:${PORTSDIR}/devel/commoncpp
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
