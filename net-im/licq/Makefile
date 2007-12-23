@@ -35,6 +35,7 @@ CONFIGURE_ARGS+=--enable-socks5
 CONFIGURE_ARGS+=--with-socks5-inc=${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFLICTS?=	licq-base-1.*
+BROKEN=		does not compile
 .else
 CONFLICTS?=	licq-base-socks-1.*
 .endif
