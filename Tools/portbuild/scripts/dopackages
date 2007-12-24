@@ -253,6 +253,8 @@ fi
 branch=$1
 date=$2
 
+echo | mail -s "$(basename $0) started for ${arch}-${branch} ${date} at $(date)" ${mailto}
+
 if [ "x$branch" != x5 -a "x$branch" != x5-exp -a "x$branch" != x6 -a "x$branch" != x6-exp -a "x$branch" != "x6-exp2" -a "x$branch" != x7 -a "x$branch" != x7-exp -a "x$branch" != x8 ]; then
   usage
 fi
@@ -382,6 +384,8 @@ if [ "$skipstart" = 0 ]; then
   echo "error logs in ${newerrors}"
   cp -p ${pb}/${arch}/${branch}/cvsdone ${newerrors}/cvsdone
   cp -p ${pb}/${arch}/${branch}/cvsdone ${newlogs}/cvsdone
+  cp -p ${pb}/${arch}/${branch}/duds ${newerrors}/duds
+  cp -p ${pb}/${arch}/${branch}/duds ${newlogs}/duds
   cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${newerrors}/INDEX
   cp -p ${pb}/${arch}/${branch}/ports/${INDEXFILE} ${newlogs}/INDEX
 
@@ -617,3 +621,6 @@ echo "================================================"
 echo "all done at $(date)"
 echo "entire process took $(date -u -j -r $(($endtime - $starttime)) | awk '{print $4}')"
 echo "================================================"
+
+sleep 1
+echo | mail -s "$(basename $0) ended for ${arch}-${branch} ${date} at $(date)" ${mailto}
