@@ -1,0 +1,61 @@
+bin/thistest
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/Assert.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/Result.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/Settings.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/Test.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/TestCase.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/TestEvent.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/TestEventListener.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/TestEventType.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/TestException.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/TestRunner.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/TestSet.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/TestSuite.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/TestSuiteLoader.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/TestType.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/core/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/cmdline/Main.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/cmdline/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/cmdline/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/cmdline/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/swing/LabelGroup.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/swing/LabeledRadioGroup.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/swing/LabeledTextArea.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/swing/Main.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/swing/SwingControler.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/swing/SwingDisplay.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/swing/TestTypeListener.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/swing/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/swing/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/dev/utest/ui/swing/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/overview-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/overview-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/package-list
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/stylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/legal/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/thisTest/UserGuide.doc
+%%PORTDOCS%%%%DOCSDIR%%/thisTest/UserGuide.pdf
+%%JAVAJARDIR%%/thisTest.jar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/thisTest
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/legal
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/dev/utest/ui/swing
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/dev/utest/ui/cmdline
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/dev/utest/ui
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/dev/utest/core
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/dev/utest
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
