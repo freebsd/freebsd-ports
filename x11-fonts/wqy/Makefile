@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	wqy
 DISTNAME=	${PORTNAME}-bitmapfont-pcf-${PORTVERSION}-6
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	intron@intron.ac
 COMMENT=	A font which includes all the CJK characters covered by Unicode 4.0
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-bitmapfont
