@@ -8,7 +8,8 @@
 PORTNAME=	convertall
 PORTVERSION=	0.4.0
 CATEGORIES=	math
-MASTER_SITES=	http://bellz.org/convertall/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	convertall
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another unit converter
