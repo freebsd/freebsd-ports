@@ -123,9 +123,9 @@ avahi-post-build:
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${f}
 .endfor
 
-pre-install: avahi-pre-install
+pre-su-install: avahi-pre-su-install
 
-avahi-pre-install:
+avahi-pre-su-install:
 .if ${AVAHI_SLAVE}=="no"
 	@${MKDIR} ${PREFIX}/lib/avahi
 	@${TOUCH} -f ${PREFIX}/lib/avahi/.keep
