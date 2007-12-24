@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dirmngr
-PORTVERSION=	0.9.7
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
-MASTER_SITE_SUBDIR=	alpha/dirmngr
+MASTER_SITE_SUBDIR=	dirmngr
 
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A client for managing and downloading certificate revocation lists
