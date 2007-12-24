@@ -3345,3 +3345,6 @@ x11-wm/ion-3||2007-12-12|Removed by insistence of software author
 net/sipp|benchmarks/sipp|2007-12-16|new category
 sysutils/xdd|benchmarks/xdd|2007-12-21|Moved to a better category
 graphics/digikamimageplugins-doc|graphics/digikam-doc|2007-12-23|Projects merged
+net-im/jabber-conference||2007-12-24|Has expired: Development stalled
+net-im/jabber-jud||2007-12-24|Has expired: development stalled
+net-im/jabber-yahoo||2007-12-24|Has expired: development stalled
