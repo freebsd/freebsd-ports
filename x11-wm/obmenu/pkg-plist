@@ -3,6 +3,7 @@ bin/obm-moz
 bin/obm-nav
 bin/obm-xdg
 bin/obmenu
+%%PYTHON_SITELIBDIR%%/obxml.py
 %%PYTHON_SITELIBDIR%%/obxml.pyc
 %%PYTHON_SITELIBDIR%%/obxml.pyo
 %%DATADIR%%/mnu16.png
