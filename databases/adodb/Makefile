@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	4.93a
+PORTVERSION=	4.96a
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	adodb
@@ -18,6 +18,8 @@ COMMENT=	Database library for PHP
 
 USE_PHP=	pcre
 
+CONFLICTS=	adodb-5.*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
 
@@ -26,9 +28,7 @@ PLIST_SUB=	ADODB_DIR=${ADODB_DIR}
 
 ADODB_SUBDIRS=	contrib datadict drivers lang pear perf session xsl
 
-.if !defined (WITHOUT_ADODB_OPTIONS)
 OPTIONS=	TESTS "Install tests" off
-.endif
 
 .include <bsd.port.pre.mk>
 
