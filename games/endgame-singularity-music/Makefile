@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	endgame-singularity-music
-PORTVERSION=	001
+PORTVERSION=	005
 CATEGORIES=	games
-MASTER_SITES=	http://emhsoft.com/singularity/ CENKES
+MASTER_SITES=	http://endgame-singularity.googlecode.com/files/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Music pack for endgame-singularity
