@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Log-Report
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Report a problem, pluggable handlers and language support
 
 PERL_CONFIGURE=	yes
