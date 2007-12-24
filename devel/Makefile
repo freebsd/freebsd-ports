@@ -2275,6 +2275,7 @@
     SUBDIR += tdl
     SUBDIR += templ
     SUBDIR += terminality
+    SUBDIR += thistest
     SUBDIR += thrift
     SUBDIR += tide
     SUBDIR += tigcc
