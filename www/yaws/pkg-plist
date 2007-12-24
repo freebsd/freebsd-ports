@@ -83,7 +83,7 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_xmlrpc.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_zlib.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/ymnesia.erl
-%%DOCSDIR%%/yaws.pdf
+%%PORTDOCS%%%%DOCSDIR%%/yaws.pdf
 %%WWWDIR%%/END
 %%WWWDIR%%/END2
 %%WWWDIR%%/HEAD
@@ -306,7 +306,7 @@ etc/yaws.conf.sample
 @dirrm %%WWWDIR%%/icons
 @dirrm %%WWWDIR%%/code
 @dirrm %%WWWDIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/lib
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv
