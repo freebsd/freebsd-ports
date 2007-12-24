@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ctrlproxy
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.5
 CATEGORIES=	irc
 MASTER_SITES=	http://ctrlproxy.vernstok.nl/releases/
 
@@ -32,9 +32,10 @@ LDFLAGS=	-L${LOCALBASE}/lib
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/ctrlproxy_config.5 ${MANPREFIX}/man/man5
+	${INSTALL_DATA} ${WRKSRC}/doc/help.txt ${DATADIR}/help
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS BUGS HACKING NEWS README UPGRADING
+.for file in AUTHORS HACKING NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/user-guide.html ${DOCSDIR}

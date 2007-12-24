@@ -1,25 +1,24 @@
 --- Makefile.orig	Sun Apr 15 14:17:58 2007
 +++ Makefile	Sat Jun 16 12:00:33 2007
-@@ -90,7 +90,7 @@
+@@ -108,7 +108,7 @@
  ctrlproxy.pc Makefile.settings: configure Makefile.settings.in ctrlproxy.pc.in
  	./$<
  
--install: all install-dirs install-bin install-header install-mods install-data install-pkgconfig $(EXTRA_INSTALL_TARGETS)
-+install: all install-dirs install-bin install-mods install-data install-pkgconfig $(EXTRA_INSTALL_TARGETS)
+-install: all install-dirs install-bin install-header install-data install-pkgconfig $(EXTRA_INSTALL_TARGETS)
++install: all install-dirs install-bin install-data install-pkgconfig $(EXTRA_INSTALL_TARGETS)
  install-dirs:
  	$(INSTALL) -d $(DESTDIR)$(modulesdir)
  
-@@ -113,8 +113,6 @@
+@@ -133,7 +133,6 @@
  
  install-doc:: doc
  	$(INSTALL) -d $(DESTDIR)$(docdir)
--	$(INSTALL) -m 0644 UPGRADING $(DESTDIR)$(docdir)
 -	$(MAKE) -C doc install PACKAGE_VERSION=$(PACKAGE_VERSION)
  
  uninstall-doc: 
  	$(MAKE) -C doc uninstall
-@@ -146,8 +144,8 @@
- 	-rmdir $(DESTDIR)$(modulesdir)
+@@ -156,8 +154,8 @@
+	$(INSTALL) -m 0644 config.admin $(DESTDIR)$(DEFAULT_CONFIG_DIR)/networks/admin
  
  install-pkgconfig:
 -	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig
