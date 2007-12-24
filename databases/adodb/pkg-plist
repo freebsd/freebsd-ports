@@ -51,6 +51,7 @@
 %%ADODB_DIR%%/drivers/adodb-informix72.inc.php
 %%ADODB_DIR%%/drivers/adodb-ldap.inc.php
 %%ADODB_DIR%%/drivers/adodb-mssql.inc.php
+%%ADODB_DIR%%/drivers/adodb-mssql_n.inc.php
 %%ADODB_DIR%%/drivers/adodb-mssqlpo.inc.php
 %%ADODB_DIR%%/drivers/adodb-mysql.inc.php
 %%ADODB_DIR%%/drivers/adodb-mysqli.inc.php
@@ -103,6 +104,7 @@
 %%ADODB_DIR%%/lang/adodb-ro.inc.php
 %%ADODB_DIR%%/lang/adodb-ru1251.inc.php
 %%ADODB_DIR%%/lang/adodb-sv.inc.php
+%%ADODB_DIR%%/lang/adodb_th.inc.php
 %%ADODB_DIR%%/lang/adodb-uk1251.inc.php
 %%ADODB_DIR%%/pear/readme.Auth.txt
 %%ADODB_DIR%%/pear/Auth/Container/ADOdb.php
@@ -144,7 +146,6 @@
 %%TESTS%%%%ADODB_DIR%%/tests/benchmark.php
 %%TESTS%%%%ADODB_DIR%%/tests/client.php
 %%TESTS%%%%ADODB_DIR%%/tests/pdo.php
-%%TESTS%%%%ADODB_DIR%%/tests/rr.htm
 %%TESTS%%%%ADODB_DIR%%/tests/test-active-record.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-active-recs2.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-datadict.php

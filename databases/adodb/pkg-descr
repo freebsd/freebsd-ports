@@ -1,16 +1,14 @@
-From the Introduction:
+ADOdb stands for Active Data Objects Data Base.
 
-PHP is a wonderful language for building dynamic web pages.
-Unfortunately, PHP's database access functions are not standardised.
-Every database extension uses a different and incompatibile API.
-This creates a need for a database class library to hide the differences
-between the different databases (encapsulate the differences) so we can
-easily switch databases. 
+ADOdb is a database abstraction library for PHP.
 
-ADODB stands for Active Data Objects Data Base.
+The PHP version currently supports an amazing number of databases,
+thanks to the wonderful ADOdb community: 
+MySQL, PostgreSQL, Interbase, Firebird, Informix, Oracle, MS SQL, Foxpro, 
+Access, ADO, Sybase, FrontBase, DB2, SAP DB, SQLite, Netezza, LDAP, and generic 
+ODBC, ODBTP. 
 
-ADODB currently supports:
-	MySQL, PostgreSQL, Interbase, Oracle, MS SQL 7
-	Foxpro, Access, ADO, Sybase, DB2 and generic ODBC.
+The Sybase, Informix, FrontBase and PostgreSQL, Netezza, LDAP, ODBTP drivers 
+are community contributions.
 
 WWW: http://adodb.sourceforge.net
