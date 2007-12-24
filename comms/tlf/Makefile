@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	tlf
-PORTVERSION=	0.9.30
-PORTREVISION=	2
+PORTVERSION=	0.9.31
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.wwns.com/tlf/ \
-		http://sharon.esrac.ele.tue.nl/pub/linux/ham/tlf/
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://sharon.esrac.ele.tue.nl/pub/linux/ham/tlf/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
+DISTNAME=	tlf-0.9.31-2
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_AUTOTOOLS=	autoconf:261 libtool:15 aclocal:19 automake:19
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
