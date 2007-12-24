@@ -1,0 +1,20 @@
+[ excerpt from developer's www site with modifications ]
+
+Hibernate Tools is an entirely new toolset for Hibernate3 implemented
+as an integrated suite of Eclipse plugins, together with a unified
+Ant task for integration into the build cycle. The following features
+are available:
+
++ Mapping Editor: An editor for Hibernate XML mapping files
++ Console: Allows you to configure database connections, provides
+  visualization of classes and their relationships and allows you
+  to execute HQL queries interactively against your database and
+  browse the query results.
++ Reverse Engineering: Database reverse engineering tool that can
+  generate domain model classes and Hibernate mapping files, annotated
+  EJB3 entity beans, HTML documentation or even an entire JBoss
+  Seam application in seconds!
++ Wizards
++ Ant task
+
+WWW: http://www.hibernate.org/

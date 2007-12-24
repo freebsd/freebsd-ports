@@ -33,6 +33,7 @@
     SUBDIR += eclipse-findbugs
     SUBDIR += eclipse-gef
     SUBDIR += eclipse-gef-examples
+    SUBDIR += eclipse-hibernatetools
     SUBDIR += eclipse-jad
     SUBDIR += eclipse-langpack
     SUBDIR += eclipse-log4e
