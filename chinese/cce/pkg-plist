@@ -4,7 +4,7 @@ bin/cceconv
 bin/ccegbk
 bin/ccejis
 bin/cceksc
-etc/cce.cfg
+share/cce/cce.cfg
 share/cce/8x16.bin
 share/cce/all/ciyin.tab
 share/cce/all/ciyingb.tab
