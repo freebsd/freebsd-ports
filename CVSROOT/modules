@@ -2391,6 +2391,7 @@ eclipse-examples	ports/java/eclipse-examples
 eclipse-findbugs	ports/java/eclipse-findbugs
 eclipse-gef	ports/java/eclipse-gef
 eclipse-gef-examples	ports/java/eclipse-gef-examples
+eclipse-hibernatetools	ports/java/eclipse-hibernatetools
 eclipse-jad	ports/java/eclipse-jad
 eclipse-langpack	ports/java/eclipse-langpack
 eclipse-log4e	ports/java/eclipse-log4e
