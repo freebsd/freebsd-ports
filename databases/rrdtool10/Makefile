@@ -9,7 +9,7 @@ PORTNAME=	rrdtool
 PORTVERSION=	1.0.50
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/rrdtool-1.0.x/
+MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/rrdtool-1.0.x/
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Round Robin Database Tools
