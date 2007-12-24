@@ -44,13 +44,10 @@
     SUBDIR += imcom
     SUBDIR += iserverd
     SUBDIR += jabber
-    SUBDIR += jabber-conference
-    SUBDIR += jabber-jud
     SUBDIR += jabber-pyaim
     SUBDIR += jabber-pyicq
     SUBDIR += jabber-pymsn
     SUBDIR += jabber-users-agent
-    SUBDIR += jabber-yahoo
     SUBDIR += jabber.el
     SUBDIR += jabberd
     SUBDIR += jarl
