@@ -7,6 +7,7 @@
 
 PORTNAME=	ccscript
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	GNU
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME:S/$/3/}-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	State-event driven class extendible C++ script interpreter
 
-LIB_DEPENDS=	ccgnu2-1.5.0:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccgnu2-1.6.0:${PORTSDIR}/devel/commoncpp
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
