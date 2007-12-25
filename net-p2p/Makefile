@@ -70,10 +70,7 @@
     SUBDIR += minder
     SUBDIR += mldonkey
     SUBDIR += mldonkey-core
-    SUBDIR += mldonkey-core-devel
-    SUBDIR += mldonkey-devel
     SUBDIR += mldonkey-gui
-    SUBDIR += mldonkey-gui-devel
     SUBDIR += mldonkey-perlreactor
     SUBDIR += mldonkey-serverspy
     SUBDIR += mldonkey-urlslave
