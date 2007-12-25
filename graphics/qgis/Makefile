@@ -23,6 +23,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_FREETYPE=	yes
+USE_PERL5_BUILD=yes
 USE_QT_VER=	3
 USE_SQLITE=	yes
 MAN1=		qgis.1
