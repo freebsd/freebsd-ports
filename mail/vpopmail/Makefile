@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.4.20
+PORTVERSION=	5.4.26
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -73,6 +73,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 #
 # RELAYCLEAR    - time in minutes before clearing relay hole (requires roaming)
 # SPAM_THRESHOLD - minimum score required to delete spam messages (requires spamassassin)
+# WITH_SPAMFOLDER - move spam messages into Junk folder (requires spamassassin)
 # DEFAULT_DOMAIN - default domain for non-vhost lookups
 # WITH_SINGLE_DOMAIN - optimize for a site with many users in a single domain
 # LOGLEVEL	- n - no logging, y - log all,
@@ -320,6 +321,9 @@ BUILD_DEPENDS+=		spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 CONFIGURE_ARGS+=	--enable-spamassassin \
 			--enable-spamc-prog=${LOCALBASE}/bin/spamc \
 			--enable-spam-threshold=${SPAM_THRESHOLD}
+.if defined(WITH_SPAMFOLDER)
+CONFIGURE_ARGS+=       --enable-spam-junkfolder
+.endif
 .endif
 
 DOCS=		README README.activedirectory README.filelocking \
