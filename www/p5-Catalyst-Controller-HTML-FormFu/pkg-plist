@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Catalyst/Controller/HTML/FormFu/Action/Form.pm
+%%SITE_PERL%%/Catalyst/Controller/HTML/FormFu/Action/Config.pm
+%%SITE_PERL%%/Catalyst/Controller/HTML/FormFu/Action/Method.pm
+%%SITE_PERL%%/Catalyst/Controller/HTML/FormFu.pm
+%%SITE_PERL%%/Catalyst/Helper/HTML/FormFu.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller/HTML/FormFu/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller/HTML/FormFu
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/HTML
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst/Controller/HTML/FormFu/Action
+@dirrmtry %%SITE_PERL%%/Catalyst/Controller/HTML/FormFu
+@dirrmtry %%SITE_PERL%%/Catalyst/Controller/HTML
+@dirrmtry %%SITE_PERL%%/Catalyst/Controller
+@dirrmtry %%SITE_PERL%%/Catalyst
