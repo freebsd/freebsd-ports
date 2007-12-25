@@ -1,0 +1,9 @@
+
+*** ATTENTION ***
+
+This port includes only the server part of NSCA ("nsca").
+If you need the "send_nsca" utility install the net-mgmt/nsca-client port.
+
+The default configuration file is installed at:
+%%PREFIX%%/etc/nagios/nsca.cfg-sample
+

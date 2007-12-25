@@ -4,7 +4,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%SERVER%%etc/nsca.cfg-sample
+%%SERVER%%etc/nagios/nsca.cfg-sample
 %%SERVER%%sbin/nsca
-%%CLIENT%%etc/send_nsca.cfg-sample
+%%CLIENT%%etc/nagios/send_nsca.cfg-sample
 %%CLIENT%%sbin/send_nsca
+@dirrmtry etc/nagios
