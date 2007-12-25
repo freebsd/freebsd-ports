@@ -9959,6 +9959,7 @@ p5-HTML-Entities-Numbered	ports/textproc/p5-HTML-Entities-Numbered
 p5-HTML-EscapeEvil	ports/textproc/p5-HTML-EscapeEvil
 p5-HTML-FillInForm	ports/www/p5-HTML-FillInForm
 p5-HTML-FillInForm-ForceUTF8	ports/www/p5-HTML-FillInForm-ForceUTF8
+p5-HTML-FormFu	ports/www/p5-HTML-FormFu
 p5-HTML-Format	ports/textproc/p5-HTML-Format
 p5-HTML-FormatText-WithLinks	ports/textproc/p5-HTML-FormatText-WithLinks
 p5-HTML-Fraction	ports/textproc/p5-HTML-Fraction
