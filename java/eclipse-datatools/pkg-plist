@@ -1,0 +1,500 @@
+eclipse/features/org.eclipse.datatools.connectivity.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.connectivity.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.connectivity.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.connectivity.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.connectivity.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.doc.user_1.5.1.200710161/eclipse32.png
+eclipse/features/org.eclipse.datatools.doc.user_1.5.1.200710161/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.doc.user_1.5.1.200710161/feature.properties
+eclipse/features/org.eclipse.datatools.doc.user_1.5.1.200710161/feature.xml
+eclipse/features/org.eclipse.datatools.doc.user_1.5.1.200710161/license.html
+eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.enablement.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.intro_1.5.1.200709261/eclipse32.png
+eclipse/features/org.eclipse.datatools.intro_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.intro_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.intro_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.intro_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.intro_1.5.1.200709261/feature.xml.bak
+eclipse/features/org.eclipse.datatools.intro_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.modelbase.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.modelbase.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.modelbase.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.modelbase.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.modelbase.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.sdk.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.sdk.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.sdk.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.sdk.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.sdk.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.5.1.200709261/license.html
+eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.5.1.200709261/eclipse_update_120.jpg
+eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.5.1.200709261/epl-v10.html
+eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.5.1.200709261/feature.properties
+eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.5.1.200709261/feature.xml
+eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.5.1.200709261/license.html
+eclipse/plugins/javax.wsdl_1.4.0.v200706111329.jar
+eclipse/plugins/org.apache.xerces_2.8.0.v200705301630.jar
+eclipse/plugins/org.apache.xml.resolver_1.1.0.v200705310020.jar
+eclipse/plugins/org.dbunit_2.2.0.200706071/.classpath
+eclipse/plugins/org.dbunit_2.2.0.200706071/META-INF/MANIFEST.MF
+eclipse/plugins/org.dbunit_2.2.0.200706071/README.txt
+eclipse/plugins/org.dbunit_2.2.0.200706071/about.html
+eclipse/plugins/org.dbunit_2.2.0.200706071/fetch-lib.xml
+eclipse/plugins/org.dbunit_2.2.0.200706071/libs/readme.txt
+eclipse/plugins/org.dbunit_2.2.0.200706071/plugin.properties
+eclipse/plugins/org.eclipse.datatools.connectivity.db.derby_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.db.generic.ui_1.0.1.200708201.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.db.generic_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.dbdefinition.derby_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.dbdefinition.genericJDBC_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.derby.ui_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.derby_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.oda.consumer_3.1.1.200708221.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.oda.design.ui_3.0.5.200709071.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.oda.design_3.0.5.200709071.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.oda.flatfile.ui_3.0.5.200707301.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.oda.flatfile_3.0.4.200706071.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.oda.profile_3.0.5.200708131.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.oda.template.ui_3.0.5.200707301.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.oda_3.1.0.200708161.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.sqm.core.ui_1.0.1.200708201.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.sqm.core_1.0.1.200709071.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.sqm.fe.ui.actions_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.sqm.fe.ui_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.sqm.server.ui_1.0.0.200709141.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.ui.dse_1.0.1.200709171.jar
+eclipse/plugins/org.eclipse.datatools.connectivity.ui_1.0.1.200708231.jar
+eclipse/plugins/org.eclipse.datatools.connectivity_1.0.1.200709061.jar
+eclipse/plugins/org.eclipse.datatools.doc.isv_1.5.1.200709211.jar
+eclipse/plugins/org.eclipse.datatools.doc.user_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.finfo_1.5.1.200708161.jar
+eclipse/plugins/org.eclipse.datatools.enablement.hsqldb_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.iseries.dbdefinition_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.iseries.profile_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.luw.dbdefinition_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.luw.profile_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.zseries.dbdefinition_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.zseries.profile_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.ibm.informix.dbdefinition_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.ibm.informix.profile_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.jdt.classpath_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.jdt.dbunit_1.0.0.200706072.jar
+eclipse/plugins/org.eclipse.datatools.enablement.msft.sqlserver.dbdefinition_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.msft.sqlserver.profile_1.0.1.200709041.jar
+eclipse/plugins/org.eclipse.datatools.enablement.mysql.dbdefinition_1.0.1.200709181.jar
+eclipse/plugins/org.eclipse.datatools.enablement.mysql.profile_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.mysql_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.oda.ws.ui_1.0.1.200709111.jar
+eclipse/plugins/org.eclipse.datatools.enablement.oda.ws_1.0.1.200709111.jar
+eclipse/plugins/org.eclipse.datatools.enablement.oda.xml.ui_1.0.2.200709071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.oda.xml_1.0.2.200709101.jar
+eclipse/plugins/org.eclipse.datatools.enablement.oracle.dbdefinition_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.oracle.profile_1.0.0.200706151.jar
+eclipse/plugins/org.eclipse.datatools.enablement.postgresql.dbdefinition_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.postgresql.profile_1.0.1.200709061.jar
+eclipse/plugins/org.eclipse.datatools.enablement.sybase.asa.models_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.sybase.asa_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.sybase.ase.dbdefinition_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.sybase.ase.profile_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.enablement.sybase_1.0.1.200707131.jar
+eclipse/plugins/org.eclipse.datatools.help_1.5.0.200706181.jar
+eclipse/plugins/org.eclipse.datatools.intro_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.lpg_1.0.0.200706071/META-INF/MANIFEST.MF
+eclipse/plugins/org.eclipse.datatools.lpg_1.0.0.200706071/README.txt
+eclipse/plugins/org.eclipse.datatools.lpg_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.lpg_1.0.0.200706071/fetch-lib.xml
+eclipse/plugins/org.eclipse.datatools.lpg_1.0.0.200706071/lpg/.keep_me
+eclipse/plugins/org.eclipse.datatools.modelbase.dbdefinition_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.modelbase.derby_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.modelbase.sql.edit_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.modelbase.sql.query_1.0.0.200706151.jar
+eclipse/plugins/org.eclipse.datatools.modelbase.sql.xml.query_1.0.0.200706151.jar
+eclipse/plugins/org.eclipse.datatools.modelbase.sql_1.0.0.200708161.jar
+eclipse/plugins/org.eclipse.datatools.oda.cshelp_1.0.0.200708161.jar
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/META-INF/MANIFEST.MF
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/about.ini
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/about.mappings
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/about.properties
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/eclipse32.gif
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/eclipse32.png
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/plugin.properties
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/plugin.xml
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.db.derby_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.db.derby_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.db.generic.ui_1.0.1.200708201/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.db.generic.ui_1.0.1.200708201/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.db.generic_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.db.generic_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.derby.ui_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.derby.ui_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.derby_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.derby_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.consumer_3.1.1.200708221/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.consumer_3.1.1.200708221/schema/org_eclipse_datatools_connectivity_oda_consumer_driverBridge.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.consumer_3.1.1.200708221/schema/org_eclipse_datatools_connectivity_oda_consumer_propertyProvider.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.consumer_3.1.1.200708221/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.design.ui_3.0.5.200709071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.design.ui_3.0.5.200709071/schema/org_eclipse_datatools_connectivity_oda_design_ui_datasource.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.design.ui_3.0.5.200709071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.design_3.0.5.200709071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.design_3.0.5.200709071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.flatfile.ui_3.0.5.200707301/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.flatfile.ui_3.0.5.200707301/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.flatfile_3.0.4.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.flatfile_3.0.4.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.profile_3.0.5.200708131/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.profile_3.0.5.200708131/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.template.ui_3.0.5.200707301/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.template.ui_3.0.5.200707301/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda_3.1.0.200708161/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda_3.1.0.200708161/schema/org_eclipse_datatools_connectivity_oda_datasource.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda_3.1.0.200708161/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core.ui_1.0.1.200708201/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core.ui_1.0.1.200708201/schema/org_eclipse_datatools_connectivity_sqm_core_ui_elementID.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core.ui_1.0.1.200708201/schema/org_eclipse_datatools_connectivity_sqm_core_ui_labelService.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core.ui_1.0.1.200708201/schema/org_eclipse_datatools_connectivity_sqm_core_ui_markerNavigationProvider.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core.ui_1.0.1.200708201/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core_1.0.1.200709071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core_1.0.1.200709071/schema/org_eclipse_datatools_connectivity_sqm_core_catalog.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core_1.0.1.200709071/schema/org_eclipse_datatools_connectivity_sqm_core_dataModelElementFactory.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core_1.0.1.200709071/schema/org_eclipse_datatools_connectivity_sqm_core_databaseDefinition.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core_1.0.1.200709071/schema/org_eclipse_datatools_connectivity_sqm_core_databaseRecognition.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core_1.0.1.200709071/schema/org_eclipse_datatools_connectivity_sqm_core_ddlGeneration.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core_1.0.1.200709071/schema/org_eclipse_datatools_connectivity_sqm_core_ddlParser.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core_1.0.1.200709071/schema/org_eclipse_datatools_connectivity_sqm_core_logicalContainment.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core_1.0.1.200709071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.fe.ui.actions_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.fe.ui.actions_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.fe.ui_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.fe.ui_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.server.ui_1.0.0.200709141/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.server.ui_1.0.0.200709141/schema/org_eclipse_datatools_connectivity_sqm_server_ui_ServerExplorerInitializationProvider.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.server.ui_1.0.0.200709141/schema/org_eclipse_datatools_connectivity_sqm_server_ui_serverExplorerLayout.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.server.ui_1.0.0.200709141/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.ui.dse_1.0.1.200709171/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.ui.dse_1.0.1.200709171/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.ui_1.0.1.200708231/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.ui_1.0.1.200708231/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity_1.0.1.200709061/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity_1.0.1.200709061/schema/org_eclipse_datatools_connectivity_connectionProfile.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity_1.0.1.200709061/schema/org_eclipse_datatools_connectivity_driverExtension.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity_1.0.1.200709061/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.hsqldb_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.hsqldb_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.ibm.db2.luw.profile_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.ibm.db2.luw.profile_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.jdt.classpath_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.jdt.classpath_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.jdt.dbunit_1.0.0.200706072/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.jdt.dbunit_1.0.0.200706072/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.msft.sqlserver.profile_1.0.1.200709041/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.msft.sqlserver.profile_1.0.1.200709041/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.mysql.profile_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.mysql.profile_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.mysql_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.mysql_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oda.ws.ui_1.0.1.200709111/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oda.ws.ui_1.0.1.200709111/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oda.ws_1.0.1.200709111/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oda.ws_1.0.1.200709111/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oda.xml.ui_1.0.2.200709071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oda.xml.ui_1.0.2.200709071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oda.xml_1.0.2.200709101/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oda.xml_1.0.2.200709101/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oracle.profile_1.0.0.200706151/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oracle.profile_1.0.0.200706151/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.postgresql.profile_1.0.1.200709061/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.postgresql.profile_1.0.1.200709061/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.sybase.asa.models_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.sybase.asa.models_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.sybase.asa_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.sybase.asa_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.sybase.ase.profile_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.sybase.ase.profile_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.sybase_1.0.1.200707131/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.sybase_1.0.1.200707131/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.help_1.5.0.200706181/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.help_1.5.0.200706181/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.dbdefinition_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.dbdefinition_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.derby_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.derby_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql.edit_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql.edit_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql.query_1.0.0.200706151/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql.query_1.0.0.200706151/schema/org_eclipse_datatools_modelbase_sql_query_sourceWriterExtension.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql.query_1.0.0.200706151/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql.xml.query_1.0.0.200706151/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql.xml.query_1.0.0.200706151/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql_1.0.0.200708161/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql_1.0.0.200708161/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.common.ui_1.0.0.200708161/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.common.ui_1.0.0.200708161/schema/org_eclipse_datatools_sqltools_common_ui_preferenceSections.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.common.ui_1.0.0.200708161/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.data.core_1.0.0.200706151/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.data.core_1.0.0.200706151/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.data.ui_1.0.0.200706151/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.data.ui_1.0.0.200706151/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.db.derby_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.db.derby_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.db.generic_1.0.0.200706131/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.db.generic_1.0.0.200706131/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.debugger.core_1.0.0.200709251/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.debugger.core_1.0.0.200709251/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.editor.core_1.0.0.200709251/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.editor.core_1.0.0.200709251/schema/org_eclipse_datatools_sqltools_editor_core_dbConfigurations.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.editor.core_1.0.0.200709251/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.parsers.sql.lexer_1.0.0.200706161/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.parsers.sql.lexer_1.0.0.200706161/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.parsers.sql.query_1.0.0.200706162/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.parsers.sql.query_1.0.0.200706162/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.parsers.sql.xml.query_1.0.0.200706151/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.parsers.sql.xml.query_1.0.0.200706151/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.parsers.sql_1.0.0.200706161/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.parsers.sql_1.0.0.200706161/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.plan_1.0.0.200709061/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.plan_1.0.0.200709061/schema/org_eclipse_datatools_sqltools_plan_planService.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.plan_1.0.0.200709061/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.result_1.0.0.200709061/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.result_1.0.0.200709061/schema/org_eclipse_datatools_sqltools_result_reExecuteScript.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.result_1.0.0.200709061/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.routineeditor_1.0.0.200708161/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.routineeditor_1.0.0.200708161/schema/org_eclipse_datatools_sqltools_routineeditor_documentprovider.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.routineeditor_1.0.0.200708161/schema/org_eclipse_datatools_sqltools_routineeditor_launchConfigurationTypes.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.routineeditor_1.0.0.200708161/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.sql_1.0.0.200706111/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.sql_1.0.0.200706111/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.sqleditor_1.0.0.200709061/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.sqleditor_1.0.0.200709061/schema/org_eclipse_datatools_sqltools_sqleditor_texthover.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.sqleditor_1.0.0.200709061/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.sqlscrapbook_1.0.0.200709141/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.sqlscrapbook_1.0.0.200709141/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.tabledataeditor_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.tabledataeditor_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.tablewizard_1.0.0.200706071/about.html
+eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.tablewizard_1.0.0.200706071/src.zip
+eclipse/plugins/org.eclipse.datatools.sqltools.common.ui_1.0.0.200708161.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.data.core_1.0.0.200706151.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.data.ui_1.0.0.200706151.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.db.derby_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.db.generic_1.0.0.200706131.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.debugger.core_1.0.0.200709251.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.editor.core_1.0.0.200709261.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.parsers.sql.lexer_1.0.0.200706161.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.parsers.sql.query_1.0.0.200706162.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.parsers.sql.xml.query_1.0.0.200706151.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.parsers.sql_1.0.0.200706161.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.plan_1.0.0.200709061.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.result_1.0.0.200709061.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.routineeditor_1.0.0.200708161.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.sql_1.0.0.200706111.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.sqleditor_1.0.0.200709061.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.sqlscrapbook_1.0.0.200709141.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.tabledataeditor_1.0.0.200706071.jar
+eclipse/plugins/org.eclipse.datatools.sqltools.tablewizard_1.0.0.200706071.jar
+@dirrm eclipse/features/org.eclipse.datatools.connectivity.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.doc.user_1.5.1.200710161
+@dirrm eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.enablement.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.intro_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.modelbase.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.sdk.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.5.1.200709261
+@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.5.1.200709261
+@dirrm eclipse/plugins/org.dbunit_2.2.0.200706071/META-INF
+@dirrm eclipse/plugins/org.dbunit_2.2.0.200706071/libs
+@dirrm eclipse/plugins/org.dbunit_2.2.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.lpg_1.0.0.200706071/META-INF
+@dirrm eclipse/plugins/org.eclipse.datatools.lpg_1.0.0.200706071/lpg
+@dirrm eclipse/plugins/org.eclipse.datatools.lpg_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/META-INF
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.db.derby_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.db.generic.ui_1.0.1.200708201
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.db.generic_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.derby.ui_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.derby_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.consumer_3.1.1.200708221/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.consumer_3.1.1.200708221
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.design.ui_3.0.5.200709071/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.design.ui_3.0.5.200709071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.design_3.0.5.200709071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.flatfile.ui_3.0.5.200707301
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.flatfile_3.0.4.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.profile_3.0.5.200708131
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda.template.ui_3.0.5.200707301
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda_3.1.0.200708161/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.oda_3.1.0.200708161
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core.ui_1.0.1.200708201/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core.ui_1.0.1.200708201
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core_1.0.1.200709071/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.core_1.0.1.200709071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.fe.ui.actions_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.fe.ui_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.server.ui_1.0.0.200709141/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.sqm.server.ui_1.0.0.200709141
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.ui.dse_1.0.1.200709171
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity.ui_1.0.1.200708231
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity_1.0.1.200709061/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.connectivity_1.0.1.200709061
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.hsqldb_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.ibm.db2.luw.profile_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.jdt.classpath_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.jdt.dbunit_1.0.0.200706072
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.msft.sqlserver.profile_1.0.1.200709041
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.mysql.profile_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.mysql_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oda.ws.ui_1.0.1.200709111
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oda.ws_1.0.1.200709111
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oda.xml.ui_1.0.2.200709071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oda.xml_1.0.2.200709101
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.oracle.profile_1.0.0.200706151
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.postgresql.profile_1.0.1.200709061
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.sybase.asa.models_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.sybase.asa_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.sybase.ase.profile_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.enablement.sybase_1.0.1.200707131
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.help_1.5.0.200706181
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.dbdefinition_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.derby_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql.edit_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql.query_1.0.0.200706151/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql.query_1.0.0.200706151
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql.xml.query_1.0.0.200706151
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.modelbase.sql_1.0.0.200708161
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.common.ui_1.0.0.200708161/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.common.ui_1.0.0.200708161
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.data.core_1.0.0.200706151
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.data.ui_1.0.0.200706151
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.db.derby_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.db.generic_1.0.0.200706131
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.debugger.core_1.0.0.200709251
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.editor.core_1.0.0.200709251/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.editor.core_1.0.0.200709251
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.parsers.sql.lexer_1.0.0.200706161
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.parsers.sql.query_1.0.0.200706162
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.parsers.sql.xml.query_1.0.0.200706151
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.parsers.sql_1.0.0.200706161
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.plan_1.0.0.200709061/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.plan_1.0.0.200709061
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.result_1.0.0.200709061/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.result_1.0.0.200709061
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.routineeditor_1.0.0.200708161/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.routineeditor_1.0.0.200708161
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.sql_1.0.0.200706111
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.sqleditor_1.0.0.200709061/schema
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.sqleditor_1.0.0.200709061
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.sqlscrapbook_1.0.0.200709141
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.tabledataeditor_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src/org.eclipse.datatools.sqltools.tablewizard_1.0.0.200706071
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251/src
+@dirrm eclipse/plugins/org.eclipse.datatools.source_1.5.1.200709251

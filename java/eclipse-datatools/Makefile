@@ -42,12 +42,16 @@ do-install:
 			${FIND} -s features plugins -not -type d \
 				-exec ${INSTALL_DATA} "{}" "${PREFIX}/eclipse/{}" \; \
 		)
+
+# used to manually generate the plist files
+generate-plist-locally: build
 # annotate installation files
-		@(cd ${WRKSRC} && ${FIND} -s eclipse/features eclipse/plugins -not -type d) >> ${TMPPLIST}
+	@(cd ${WRKSRC}/eclipse && ${FIND} -s features plugins -not -type d) \
+		| ${SED} -ne 's,^,eclipse/,p' > ${PLIST}
 # annotate installation directories
-		@(cd ${WRKSRC} && ${FIND} -s -d eclipse/features eclipse/plugins -type d) \
-			| ${GREP} -vE 'eclipse/plugins$$|eclipse/features$$' \
-			| ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
+	@(cd ${WRKSRC}/eclipse && ${FIND} -s -d features plugins -type d) \
+		| ${GREP} -vE '^plugins$$|^features$$' \
+		| ${SED} -ne 's,^,@dirrm eclipse/,p' >> ${PLIST}
 
 .include <bsd.port.pre.mk>
 
