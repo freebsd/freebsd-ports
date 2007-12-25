@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	octave
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Many additional features to math/octave
 
+IGNORE=		work in progress
+
 BUILD_DEPENDS+=	qhull:${PORTSDIR}/math/qhull \
 		octave:${PORTSDIR}/math/octave \
 		gcsplit:${PORTSDIR}/sysutils/coreutils \
