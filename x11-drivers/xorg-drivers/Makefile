@@ -29,10 +29,12 @@ VIDEO_ON=	ati \
 		intel \
 		nv \
 		radeonhd \
-		vesa vga via
+		vesa vga
 
 .if ${ARCH} == "sparc64"
 VIDEO_ON+=	sunffb
+.else
+VIDEO_ON+=	via
 .endif
 
 VIDEO_OFF=	apm ark \
