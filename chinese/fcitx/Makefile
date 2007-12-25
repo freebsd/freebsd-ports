@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	fcitx
-PORTVERSION=	3.4.2
-PORTREVISION=	1
+PORTVERSION=	3.5
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://www.fcitx.org/download/ \
+		ftp://mirrors.redv.com/pub/fcitx/ \
 		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	dryice
+DISTNAME= fcitx-3.5-BlackFri
 
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	A simple and fast GBK Chinese XIM server
@@ -24,6 +25,7 @@ USE_XLIB=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+WRKSRC= 	${WRKDIR}/fcitx-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#zh_CN.GB2312#zh_CN.eucCN#g' ${WRKSRC}/src/xim.c

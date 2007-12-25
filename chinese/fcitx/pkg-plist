@@ -8,6 +8,7 @@ bin/readPYBase
 bin/readPYMB
 bin/txt2mb
 bin/win2fcitx
+%%DATADIR%%/data/AutoEng.dat
 %%DATADIR%%/data/cj.mb
 %%DATADIR%%/data/config
 %%DATADIR%%/data/erbi.mb
@@ -16,9 +17,12 @@ bin/win2fcitx
 %%DATADIR%%/data/pySym.mb
 %%DATADIR%%/data/pybase.mb
 %%DATADIR%%/data/pyphrase.mb
+%%DATADIR%%/data/qxm.mb
 %%DATADIR%%/data/sp.dat
 %%DATADIR%%/data/tables.conf
 %%DATADIR%%/data/vk.conf
+%%DATADIR%%/data/wanfeng.mb
+%%DATADIR%%/data/wbpy.mb
 %%DATADIR%%/data/wbx.mb
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
