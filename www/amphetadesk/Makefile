@@ -7,7 +7,7 @@
 
 PORTNAME=	amphetadesk
 PORTVERSION=	0.93.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,8 +30,14 @@ RUN_DEPENDS=	\
 		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI
 
 USE_PERL5=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	${PORTNAME}
 NO_BUILD=	yes
+
+# Add PERL substitution to SUB_LIST only if there is not already
+# one listed
+.if !defined(SUB_LIST) || ( defined(SUB_LIST) && !${SUB_LIST:MPERL} )
+SUB_LIST+=	PERL="${PERL}"
+.endif
 
 .ifndef(NOPORTDOCS)
 PORTDOCS=	\
@@ -51,11 +57,6 @@ post-patch:
 		-e 's|%%DATADIR%%|${DATADIR}|' \
 		-e 's|%%DOCSDIR%%|${DOCSDIR}|' \
 		${WRKSRC}/lib/AmphetaDesk/Settings.pm
-# rc.d
-	@${SED}  \
-		-e 's|%%PREFIX%%|${PREFIX}|' \
-		-e "s|%%PERL%%|${PERL}|" \
-		${FILESDIR}/${PORTNAME}.sh > ${WRKDIR}/${PORTNAME}.sh
 
 post-configure:
 	@${REINPLACE_CMD} -E \
@@ -115,7 +116,5 @@ do-install:
 		${XARGS} -0 -x -n 10 -I {} \
 		${INSTALL_DATA} {} ${DATADIR}/{}
 .endfor
-# rc.d
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 bin/AmphetaDesk
 bin/AmphetaDesk-real
-etc/rc.d/amphetadesk.sh
 %%SITE_PERL%%/AmphetaDesk/AmphetaDesk.pm
 %%SITE_PERL%%/AmphetaDesk/AmphetaDesk/Channels.pm
 %%SITE_PERL%%/AmphetaDesk/AmphetaDesk/ChannelsList.pm

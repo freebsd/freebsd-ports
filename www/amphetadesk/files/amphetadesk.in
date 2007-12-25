@@ -16,7 +16,7 @@
 #amphetadesk_pidfile=""
 #
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name="amphetadesk"
 rcvar=`set_rcvar`
