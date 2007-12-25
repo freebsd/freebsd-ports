@@ -7,7 +7,7 @@
 
 PORTNAME=	Ice
 PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zeroc.com/download/Ice/3.2/ \
 		http://www.dirk.sh/dirk/php/Ice/
@@ -72,6 +72,8 @@ add-plist-info:
 	@${ECHO_CMD} "@unexec rm %D/etc/php/extensions.ini.orig" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec [ -s %D/etc/php/extensions.ini ] || rm %D/etc/php/extensions.ini" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/etc/php 2> /dev/null || true" \
 		>> ${TMPPLIST}
 
 security-check:
