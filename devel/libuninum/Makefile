@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libuninum
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	devel
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
