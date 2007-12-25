@@ -533,6 +533,7 @@
     SUBDIR += tcl-Mysql
     SUBDIR += tdb
     SUBDIR += tinycdb
+    SUBDIR += tokyocabinet
     SUBDIR += tora
     SUBDIR += typhoon
     SUBDIR += unixODBC

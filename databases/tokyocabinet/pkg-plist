@@ -1,0 +1,32 @@
+@comment $FreeBSD$
+%%DATADIR%%/COPYING
+%%DATADIR%%/ChangeLog
+%%DATADIR%%/THANKS
+%%DATADIR%%/doc/benchmark.pdf
+%%DATADIR%%/doc/common.css
+%%DATADIR%%/doc/icon16.png
+%%DATADIR%%/doc/index.html
+%%DATADIR%%/doc/index.ja.html
+%%DATADIR%%/doc/logo-ja.png
+%%DATADIR%%/doc/logo.png
+%%DATADIR%%/doc/spex-en.html
+%%DATADIR%%/doc/spex-ja.html
+bin/tcbmgr
+bin/tcbmttest
+bin/tcbtest
+bin/tchmgr
+bin/tchmttest
+bin/tchtest
+bin/tcucodec
+bin/tcumttest
+bin/tcutest
+include/tcbdb.h
+include/tchdb.h
+include/tcutil.h
+lib/libtokyocabinet.a
+lib/libtokyocabinet.so
+lib/libtokyocabinet.so.1
+lib/libtokyocabinet.so.1.25.0
+libdata/pkgconfig/tokyocabinet.pc
+@dirrmtry %%DATADIR%%/doc
+@dirrmtry %%DATADIR%%
