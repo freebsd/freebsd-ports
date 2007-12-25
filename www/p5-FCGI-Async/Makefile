@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	FCGI-Async
-PORTVERSION=	0.10
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	FCGI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module to allow use of FastCGI asynchronously
 
 RUN_DEPENDS=	${SITE_PERL}/IO/Async/Buffer.pm:${PORTSDIR}/devel/p5-IO-Async
