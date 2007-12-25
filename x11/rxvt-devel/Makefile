@@ -19,7 +19,7 @@ MASTER_SITE_SUBDIR=	. old devel
 PKGNAMESUFFIX=	-devel
 DISTNAME=	rxvt-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low memory usage xterm replacement that supports color
 
 FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget

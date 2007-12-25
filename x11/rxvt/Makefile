@@ -18,7 +18,7 @@ MASTER_SITES=	\
 		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old devel
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low memory usage xterm replacement that supports color
 
 FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
