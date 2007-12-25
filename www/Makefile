@@ -607,6 +607,7 @@
     SUBDIR += p5-Catalyst-Component-ACCEPT_CONTEXT
     SUBDIR += p5-Catalyst-Controller-BindLex
     SUBDIR += p5-Catalyst-Controller-FormBuilder
+    SUBDIR += p5-Catalyst-Controller-HTML-FormFu
     SUBDIR += p5-Catalyst-Devel
     SUBDIR += p5-Catalyst-Engine-Apache
     SUBDIR += p5-Catalyst-Engine-HTTP-POE
