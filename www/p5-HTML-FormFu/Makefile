@@ -1,0 +1,128 @@
+# New ports collection makefile for:	p5-HTML-FormFu
+# Date created:		2007-12-24
+# Whom:			Andrej Zverev <andrey.zverev@electro-com.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	HTML-FormFu
+PORTVERSION=	0.02003
+CATEGORIES=	www perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../by-authors/id/C/CF/CFRANKS
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	az@FreeBSD.org
+COMMENT=	HTML Form Creation, Rendering and Validation Framework
+
+BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
+		p5-Class-C3>=0.19:${PORTSDIR}/devel/p5-Class-C3 \
+		p5-Config-Any>=0.10:${PORTSDIR}/devel/p5-Config-Any \
+		p5-Data-Visitor>=0.02:${PORTSDIR}/devel/p5-Data-Visitor \
+		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc \
+		p5-DateTime-Format-Builder>=0.79.01:${PORTSDIR}/devel/p5-DateTime-Format-Builder \
+		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-DateTime-Locale>=0:${PORTSDIR}/devel/p5-DateTime-Locale \
+		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
+		p5-File-ShareDir>=0.04:${PORTSDIR}/devel/p5-File-ShareDir \
+		p5-HTML-Scrubber>=0:${PORTSDIR}/www/p5-HTML-Scrubber \
+		p5-HTML-TokeParser-Simple>=3.14:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
+		p5-List-MoreUtils>=0.16:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+		p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable \
+		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
+		p5-Regexp-Copy>=0:${PORTSDIR}/textproc/p5-Regexp-Copy \
+		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
+		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Test-NoWarnings>=0.083:${PORTSDIR}/devel/p5-Test-NoWarnings \
+		p5-YAML-Syck>=0:${PORTSDIR}/textproc/p5-YAML-Syck \
+		p5-ExtUtils-MakeMaker>=6.11:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	5.8.1+
+
+MAN3=	HTML::FormFu::Inflator.3 \
+	HTML::FormFu::Processor.3 \
+	HTML::FormFu::Constraint::Integer.3 \
+	HTML::FormFu::Constraint::AutoSet.3 \
+	HTML::FormFu::Manual::Cookbook.3 \
+	HTML::FormFu::Filter::UpperCase.3 \
+	HTML::FormFu::Element::Radio.3 \
+	HTML::FormFu::Element::SimpleTable.3 \
+	HTML::FormFu::Element::Block.3 \
+	HTML::FormFu::Element::_DateSelect.3 \
+	HTML::FormFu::Element::Button.3 \
+	HTML::FormFu.3 \
+	HTML::FormFu::Validator::Callback.3 \
+	HTML::FormFu::Element::_Input.3 \
+	HTML::FormFu::Filter::HTMLEscape.3 \
+	HTML::FormFu::Element.3 \
+	HTML::FormFu::Element::Multi.3 \
+	HTML::FormFu::Filter::CopyValue.3 \
+	HTML::FormFu::OutputProcessor::StripWhitespace.3 \
+	HTML::FormFu::Constraint::Word.3 \
+	HTML::FormFu::Element::Submit.3 \
+	HTML::FormFu::OutputProcessor.3 \
+	HTML::FormFu::Validator.3 \
+	HTML::FormFu::Constraint::Number.3 \
+	HTML::FormFu::Transformer.3 \
+	HTML::FormFu::Filter::Encode.3 \
+	HTML::FormFu::Element::Hidden.3 \
+	HTML::FormFu::Element::Date.3 \
+	HTML::FormFu::Constraint::Email.3 \
+	HTML::FormFu::Constraint::Length.3 \
+	HTML::FormFu::Constraint::CallbackOnce.3 \
+	HTML::FormFu::Attribute.3 \
+	HTML::FormFu::Filter::Whitespace.3 \
+	HTML::FormFu::Element::Image.3 \
+	HTML::FormFu::Inflator::DateTime.3 \
+	HTML::FormFu::Constraint::MinMaxFields.3 \
+	HTML::FormFu::Deflator.3 \
+	HTML::FormFu::Filter::TrimEdges.3 \
+	HTML::FormFu::Element::Radiogroup.3 \
+	HTML::FormFu::Filter.3 \
+	HTML::FormFu::Manual::Unicode.3 \
+	HTML::FormFu::Deflator::Strftime.3 \
+	HTML::FormFu::Element::Select.3 \
+	HTML::FormFu::Filter::LowerCase.3 \
+	HTML::FormFu::Filter::Callback.3 \
+	HTML::FormFu::Element::Password.3 \
+	HTML::FormFu::Constraint::MaxLength.3 \
+	HTML::FormFu::Element::_NonBlock.3 \
+	HTML::FormFu::Element::Blank.3 \
+	HTML::FormFu::Element::_Field.3 \
+	HTML::FormFu::Transformer::Callback.3 \
+	HTML::FormFu::Constraint::Regex.3 \
+	HTML::FormFu::Constraint::DependOn.3 \
+	HTML::FormFu::Element::Reset.3 \
+	HTML::FormFu::Element::_Group.3 \
+	HTML::FormFu::Constraint::Bool.3 \
+	HTML::FormFu::Element::Textarea.3 \
+	HTML::FormFu::Constraint::MinLength.3 \
+	HTML::FormFu::OutputProcessor::Indent.3 \
+	HTML::FormFu::Element::Checkboxgroup.3 \
+	HTML::FormFu::Constraint::Range.3 \
+	HTML::FormFu::Element::Checkbox.3 \
+	HTML::FormFu::Element::Repeatable.3 \
+	HTML::FormFu::Element::Src.3 \
+	HTML::FormFu::Model::DBIC.3 \
+	HTML::FormFu::Element::Fieldset.3 \
+	HTML::FormFu::Constraint::Printable.3 \
+	HTML::FormFu::Element::Text.3 \
+	HTML::FormFu::Constraint::AllOrNone.3 \
+	HTML::FormFu::Constraint.3 \
+	HTML::FormFu::Element::File.3 \
+	HTML::FormFu::Filter::NonNumeric.3 \
+	HTML::FormFu::Constraint::ASCII.3 \
+	HTML::FormFu::Constraint::Required.3 \
+	HTML::FormFu::Constraint::SingleValue.3 \
+	HTML::FormFu::Constraint::Equal.3 \
+	HTML::FormFu::Element::Hr.3 \
+	HTML::FormFu::Constraint::Callback.3 \
+	HTML::FormFu::Constraint::_others.3 \
+	HTML::FormFu::Element::ContentButton.3 \
+	HTML::FormFu::Filter::Regex.3 \
+	HTML::FormFu::Filter::HTMLScrubber.3 \
+	HTML::FormFu::Constraint::Set.3
+
+.include <bsd.port.mk>
