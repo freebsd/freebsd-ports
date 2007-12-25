@@ -3348,3 +3348,6 @@ graphics/digikamimageplugins-doc|graphics/digikam-doc|2007-12-23|Projects merged
 net-im/jabber-conference||2007-12-24|Has expired: Development stalled
 net-im/jabber-jud||2007-12-24|Has expired: development stalled
 net-im/jabber-yahoo||2007-12-24|Has expired: development stalled
+net-p2p/mldonkey-core-devel||2007-12-25|Development version no longer necessary
+net-p2p/mldonkey-gui-devel||2007-12-25|Development version no longer necessary
+net-p2p/mldonkey-devel||2007-12-25|Development version no longer necessary
