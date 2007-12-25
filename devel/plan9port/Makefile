@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20070223
-PORTREVISION=	1
+PORTVERSION=	20071208
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	serge.gagnon@b2b2c.ca
+MAINTAINER=	serge.gagnon.1@ulaval.ca
 COMMENT=	Port of the bulk of the Plan9 software build environment to Unix
 
 USE_XLIB=	YES
@@ -44,7 +43,7 @@ MAN1=		9term.1 acmeevent.1 ascii.1 acme.1 9p.1 basename.1 cal.1 \
 		web.1 wintext.1 ndb.1 passwd.1 secstored.1 tar.1 pem.1 \
 		readcons.1 rsa.1 ssh-agent.1 netfiles.1 sftpcache.1 \
 		hist.1 venti.1 yesterday.1 hget.1 snarfer.1 htmlroff.1 \
-		resample.1 devdraw.1 mount.1
+		resample.1 devdraw.1 mount.1 hg.1
 
 MAN3=		ioproc.3 bio.3 fmtinstall.3 isalpharune.3 print.3 rune.3 \
 		runestrcat.3 thread.3 9p.3 matrix.3 arith3.3 ctime.3 \
