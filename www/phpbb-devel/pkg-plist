@@ -151,6 +151,7 @@
 %%PHPBBDIR%%/docs/site_logo.gif
 %%PHPBBDIR%%/docs/stylesheet.css
 %%PHPBBDIR%%/download/file.php
+%%PHPBBDIR%%/download/index.htm
 %%PHPBBDIR%%/faq.php
 %%PHPBBDIR%%/files/.htaccess
 %%PHPBBDIR%%/files/index.htm

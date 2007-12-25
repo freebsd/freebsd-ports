@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	3.0r7
+PORTVERSION=	3.0.0
+PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	phpbb
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
-DISTNAME=	phpBB-3.0.RC7
+DISTNAME=	phpBB-${PORTVERSION}
 
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
-CONFLICTS=	phpbb-tw-[0-9]* phpbb-[0-9]*
+CONFLICTS=	phpbb-tw-[0-9]* phpbb-[0-9]* phpbb3-[0-9]
 
 USE_BZIP2=	yes
 
@@ -32,7 +32,7 @@ WRKSRC=		${WRKDIR}/phpBB3
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PHPBBURL="${PHPBBURL}" \
-		PHPBBDIR="${PHPBBDIR}" \
+		PHPBBDIR="${PHPBBDIR}"
 
 PLIST_SUB+=	PHPBBDIR=${PHPBBDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
@@ -54,10 +54,12 @@ pre-everything::
 .endif
 
 do-install:
-	@ ${MKDIR} -m 0775 ${PREFIX}/${PHPBBDIR}
 	@ cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${PHPBBDIR} "! -name config.php"
 	@ [ -f ${PREFIX}/${PHPBBDIR}/config.php ] || ${TOUCH} ${PREFIX}/${PHPBBDIR}/config.php
 	@ ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPBBDIR}
+	@ ${CHMOD} -R 0755 ${PREFIX}/${PHPBBDIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
+		${PHPBBDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 
 post-install:
 .if !defined(NOPORTDOCS)
