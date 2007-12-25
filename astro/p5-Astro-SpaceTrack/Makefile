@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Astro-SpaceTrack
-PORTVERSION=	0.030
+PORTVERSION=	0.031
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,6 @@ RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
 
-MAN1=		SpaceTrack.1
 MAN3=		Astro::SpaceTrack.3
 
 .include <bsd.port.mk>
