@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipython.scipy.org/dist/ \
 		${MASTER_SITE_LOCAL} \
