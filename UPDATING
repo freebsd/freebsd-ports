@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20071225:
+  AFFECTS: users of www/amphetadesk
+  AUTHOR: lioux@FreeBSD.org
+
+  www/amphetadesk has been updated to use the USE_RC_SUBR framework
+  for rc.d scripts. The rc.d script has been renamed from ampetadesk.sh
+  to amphetadesk for consistency with other ports.
+
 20071216:
   AFFECTS: users of net-mgmt/cacti
   AUTHOR: sem@FreeBSD.org
