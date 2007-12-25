@@ -5,6 +5,7 @@
 
     SUBDIR += WWWdb
     SUBDIR += adodb
+    SUBDIR += adodb5
     SUBDIR += adstudio
     SUBDIR += animenfo-client
     SUBDIR += animenfo-client-gtk
