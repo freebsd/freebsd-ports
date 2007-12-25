@@ -5,18 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=      Unix-Mknod
-PORTVERSION=   0.03
-CATEGORIES=    sysutils perl5
-MASTER_SITES=  ${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=    Unix
-PKGNAMEPREFIX= p5-
+PORTNAME=	Unix-Mknod
+PORTVERSION=	0.04
+CATEGORIES=	sysutils perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Unix
+PKGNAMEPREFIX=	p5-
 
-MAINTAINER=    pirzyk@FreeBSD.org
-COMMENT=       Perl5 module to create special files
+MAINTAINER=	pirzyk@FreeBSD.org
+COMMENT=	Perl5 module to create special files
 
-PERL_CONFIGURE=        yes
+PERL_CONFIGURE=	yes
 
-MAN3=          Unix::Mknod.3
+MAN3=	Unix::Mknod.3
 
 .include <bsd.port.mk>
