@@ -7,7 +7,9 @@
 %%SITE_PERL%%/WWW/Facebook/API/Feed.pm
 %%SITE_PERL%%/WWW/Facebook/API/Friends.pm
 %%SITE_PERL%%/WWW/Facebook/API/Groups.pm
+%%SITE_PERL%%/WWW/Facebook/API/Marketplace.pm
 %%SITE_PERL%%/WWW/Facebook/API/Notifications.pm
+%%SITE_PERL%%/WWW/Facebook/API/Pages.pm
 %%SITE_PERL%%/WWW/Facebook/API/Photos.pm
 %%SITE_PERL%%/WWW/Facebook/API/Profile.pm
 %%SITE_PERL%%/WWW/Facebook/API/Users.pm

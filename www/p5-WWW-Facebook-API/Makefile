@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Facebook-API
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,7 +33,9 @@ MAN3=		WWW::Facebook::API.3 \
 		WWW::Facebook::API::Feed.3 \
 		WWW::Facebook::API::Friends.3 \
 		WWW::Facebook::API::Groups.3 \
+		WWW::Facebook::API::Marketplace.3 \
 		WWW::Facebook::API::Notifications.3 \
+		WWW::Facebook::API::Pages.3 \
 		WWW::Facebook::API::Photos.3 \
 		WWW::Facebook::API::Profile.3 \
 		WWW::Facebook::API::Users.3
