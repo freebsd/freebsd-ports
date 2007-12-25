@@ -43,6 +43,7 @@ CONFIGURE_ARGS+=	--disable-avifile
 CONFIGURE_ARGS+=	--disable-zip
 .endif
 USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
 USE_XLIB=	yes
 
 post-patch:
