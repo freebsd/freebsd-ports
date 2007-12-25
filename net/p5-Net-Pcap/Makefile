@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Net-Pcap
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -21,6 +20,9 @@ PERL_CONFIGURE=	yes
 
 MAN1=		pcapinfo.1
 MAN3=		Net::Pcap.3
+
+pre-patch:
+		${FIND} ${WRKSRC} -name "._Pcap.pm" -delete
 
 do-patch:
 		@${REINPLACE_CMD} -e "s#cc_r =>#cc => '-o', cc_r =>#" \
