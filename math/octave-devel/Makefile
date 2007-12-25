@@ -16,6 +16,8 @@ PKGNAMESUFFIX=  -devel
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Developer's version of math/octave
 
+IGNORE=		Please use math/octave instead.
+
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		${LOCALBASE}/lib/libglpk.a:${PORTSDIR}/math/glpk \
