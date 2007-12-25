@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ode
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,11 +19,10 @@ COMMENT=	Articulated rigid body dynamics library
 CONFLICTS=	ode-devel-[0-9].*
 
 USE_ZIP=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
@@ -58,8 +57,9 @@ CONFIGURE_ARGS+=	--enable-double-precision
 post-patch:
 	@${REINPLACE_CMD} -e '/if test/ s|==|=|' -e 's|^\( *CFLAGS=\)|#\1|;' \
 		-e 's|^\( *CPPFLAGS=\)|#\1|' -e 's|^\( *CXXFLAGS=\)|#\1|' \
-		-e 's|__isnanf||g; s|__isnan||g' -e 's|-lpthread|-pthread|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|__isnanf||g; s|__isnan||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e '/^traplib_PROGRAMS / d' ${WRKSRC}/ode/src/Makefile.in
 	@${FIND} ${WRKSRC} -type f -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-e '/^DEFAULT_INCLUDES/ s|$$| -I$$(top_builddir)/include|' \
