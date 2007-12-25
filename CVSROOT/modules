@@ -12350,6 +12350,7 @@ phpadsnew	ports/www/phpadsnew
 phpbb		ports/www/phpbb
 phpbb-devel	ports/www/phpbb-devel
 phpbt		ports/devel/phpbt
+phpdeadlock	ports/security/phpdeadlock
 phpeclipse	ports/java/phpeclipse
 phpgedview	ports/www/phpgedview
 phpgroupware	ports/deskutils/phpgroupware
