@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irrlicht
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
-USE_DOS2UNIX=	yes
+USE_DOS2UNIX=	Makefile *.cpp *.h *.txt
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_XLIB=	yes
@@ -29,13 +29,14 @@ PLIST_SUB+=	SHARED_LIB_VER=${SHARED_LIB_VER}
 SUB_FILES=	pkg-message
 BUILD_WRKSRC=	${WRKSRC}/source/Irrlicht
 
-SHARED_LIB_VER=	1.3.0
+SHARED_LIB_VER=	1.4
 EXAMPLEDIRS=	01.HelloWorld 02.Quake3Map 03.CustomSceneNode 04.Movement 05.UserInterface \
 		06.2DGraphics 07.Collision 08.SpecialFX 09.Meshviewer 10.Shaders \
 		11.PerPixelLighting 12.TerrainRendering 13.RenderToTexture 15.LoadIrrFile \
 		Demo
 
-OPTIONS=	EXAMPLES	"Install example files"	on
+OPTIONS=	DEBUG	"Compile with debugging simbols" off \
+		EXAMPLES	"Install example files"	on
 
 .include <bsd.port.pre.mk>
 
@@ -47,6 +48,10 @@ CFLAGS+=	-fPIC
 PLIST_SUB+=	EXAMPLES=""
 .else
 PLIST_SUB+=	EXAMPLES="@comment "
+.endif
+
+.if !defined(WITH_DEBUG)
+MAKE_ENV+=	NDEBUG=1
 .endif
 
 do-install:
