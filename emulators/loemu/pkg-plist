@@ -23,9 +23,11 @@ bin/loemu-builder
 %%DATADIR%%/config/sdlmame.conf
 %%DATADIR%%/config/snes9x.conf
 %%DATADIR%%/config/xmame.conf
+%%DATADIR%%/config/zsnes.conf
 %%DATADIR%%/glade/Loemu.glade
 %%DATADIR%%/glade/Preferences.glade
 %%DATADIR%%/glade/penguin-revolt-128.png
+share/locale/fr/LC_MESSAGES/loemu.mo
 share/locale/ca/LC_MESSAGES/loemu.mo
 share/locale/sv/LC_MESSAGES/loemu.mo
 @dirrm %%DATADIR%%/snaps
