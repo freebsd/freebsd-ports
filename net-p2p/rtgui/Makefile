@@ -7,6 +7,7 @@
 
 PORTNAME=	rtgui
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p www
 MASTER_SITES=	http://rtgui.googlecode.com/files/
 EXTRACT_SUFX=	.tgz
@@ -30,7 +31,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_scgi.so:${PORTSDIR}/www/mod_scg
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
-USE_PHP=	xmlrpc
+USE_PHP=	xmlrpc session
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
