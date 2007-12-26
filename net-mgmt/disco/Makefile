@@ -7,10 +7,12 @@
 
 PORTNAME=	disco
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://voodoo.bawue.com/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	discoipd
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	IP discovery and fingerprinting utility
 
 GNU_CONFIGURE=	yes
