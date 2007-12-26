@@ -54,6 +54,7 @@
 %%SITE_PERL%%/Font/TTF/Prop.pm
 %%SITE_PERL%%/Font/TTF/Segarr.pm
 %%SITE_PERL%%/Font/TTF/Table.pm
+%%SITE_PERL%%/Font/TTF/Tags.pm
 %%SITE_PERL%%/Font/TTF/Ttc.pm
 %%SITE_PERL%%/Font/TTF/Ttopen.pm
 %%SITE_PERL%%/Font/TTF/Useall.pm
