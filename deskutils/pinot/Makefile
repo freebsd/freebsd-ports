@@ -7,7 +7,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	0.81
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -67,7 +67,7 @@ INSTALLS_ICONS=	yes
 SUB_FILES=	pkg-message
 PLIST_SUB=	DESKBAR_MOD="${LDESKBAR_MOD}"
 
-MAN1=		pinot-dbus-daemon.1 pinot-index.1 pinot-search.1 pinot.1
+MAN1=		pinot-dbus-daemon.1 pinot-index.1 pinot-label pinot-search.1 pinot.1
 
 PORTDOCS=	AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
@@ -79,6 +79,10 @@ LDESKBAR_MOD=	lib/deskbar-applet/modules-2.20-compatible
 DESKBAR_MOD=	${PREFIX}/${LDESKBAR_MOD}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		does not build on ${OPSYS}-${OSREL}
+.endif
 
 .if ${OSVERSION} < 700041
 PKGMESSAGE=	${WRKDIR}/pkg-message

@@ -1,6 +1,7 @@
 bin/pinot
 bin/pinot-dbus-daemon
 bin/pinot-index
+bin/pinot-label
 bin/pinot-search
 etc/pinot/external-filters.xml
 etc/pinot/globalconfig.xml
