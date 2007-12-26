@@ -7,6 +7,7 @@
 
 PORTNAME=	gems
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	ruby${PORTNAME}
@@ -28,10 +29,5 @@ PLIST_SUB+=	DISTNAME="${DISTNAME}"
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} ${RUBY_SETUP}
-
-post-install:
-		@${MKDIR} -p ${PREFIX}/lib/ruby/gems/${RUBY_VER}/cache \
-		    ${PREFIX}/lib/ruby/gems/${RUBY_VER}/gems \
-		    ${PREFIX}/lib/ruby/gems/${RUBY_VER}/specifications
 
 .include <bsd.port.mk>
