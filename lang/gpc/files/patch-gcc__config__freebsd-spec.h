@@ -9,7 +9,7 @@
 +	  builtin_define ("__FreeBSD__=9");			       	\
 +	else if (FBSD_MAJOR == 8)					\
 +	  builtin_define ("__FreeBSD__=8");			       	\
-+	if (FBSD_MAJOR == 7)						\
++	else if (FBSD_MAJOR == 7)					\
 +	  builtin_define ("__FreeBSD__=7");			       	\
 +	else if (FBSD_MAJOR == 6)					\
  	  builtin_define ("__FreeBSD__=6");			       	\
