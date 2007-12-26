@@ -8,7 +8,7 @@
 PORTNAME=	perlconsole
 PORTVERSION=	0.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.sukria.net/
+MASTER_SITES=	http://www.cpan.org/modules/by-module/Test/SUKRIA/
 
 MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	A light program that lets you evaluate Perl code interactively
