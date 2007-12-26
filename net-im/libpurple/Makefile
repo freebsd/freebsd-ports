@@ -8,7 +8,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.3.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pidgin
@@ -135,7 +135,7 @@ PLIST_SUB+=		SILC="@comment not installed: "
 .endif
 
 .if !defined(WITHOUT_BONJOUR)
-LIB_DEPENDS+=	avahi-core.5:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=	avahi-core.5:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	BONJOUR=""
 PRPL_MODULES:=	${PRPL_MODULES},bonjour
 .else
