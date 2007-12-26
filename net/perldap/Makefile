@@ -9,10 +9,9 @@ PORTNAME=	perldap
 PORTVERSION=	1.4.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	directory/perldap
-EXTRACT_SUFX=	.tar.gz
+MASTER_SITE_SUBDIR=	directory/perldap/ancient
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Perl interface to LDAP
 
 LIB_DEPENDS=	mozldap.1:${PORTSDIR}/net/ldapsdk
