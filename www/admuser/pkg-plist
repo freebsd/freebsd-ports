@@ -1,5 +1,5 @@
-etc/admuser/admuser.conf
-etc/admuser/admuser.log
+%%ETCDIR%%/admuser.conf
+%%ETCDIR%%/admuser.log
 www/cgi-bin/admuser.cgi
-@dirrm etc/admuser
+@dirrm %%ETCDIR%%
 @dirrmtry www/cgi-bin
