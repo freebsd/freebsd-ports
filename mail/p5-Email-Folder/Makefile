@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	Email-Folder
-PORTVERSION=	0.85.3
+PORTVERSION=	0.85.4
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.853
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Read all the messages from a folder as Email::Simple objects
