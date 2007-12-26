@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	tunapie
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 #PORTREVISION=	0
 CATEGORIES=	multimedia audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${PORTVERSION:S,.r,rc,}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Tuner for streaming internet radio and TV
@@ -21,18 +20,17 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
-USE_WX=	2.6
+USE_WX=	2.6+
 WX_COMPS=	python:run
 
 OPTIONS=	ADULT	"non-censored TV listings" off \
+		VLC	"use vlc instead of mplayer" off \
 		XINE	"use xine instead of mplayer" off \
 		AUDACIOUS	"use audacious instead of xmms" off \
 		BEEP_MEDIA_PLAYER	"use beep-media-player instead of xmms" off
 
 MAN1=	tunapie.1
 PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,^${PREFIX}/,,}"
-
-WRKSRC=	${WRKDIR}/${DISTNAME:C/-rc4-3$/_rc4/}
 
 FIND_FILES=	-type f -and \( -name "install.sh" -or -name "*.py" \)
 
@@ -43,9 +41,8 @@ post-patch:
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%MANPREFIX%%|${MANPREFIX}|g' \
 		-e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%AUDIOPLAYER%%|${AUDIOPLAYER}|g' \
-		-e 's|%%VIDEOPLAYER%%|${VIDEOPLAYER}|g' \
-		-e 's|%%X11BASE%%|${X11BASE}|g' {} ";"
+		-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
+		-e 's|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g' {} ";" \
 
 do-install:
 	@${MKDIR} ${DESKTOPDIR}
@@ -60,22 +57,19 @@ ADULT_TVLIST=	--adult
 # default VIDEOPLAYER
 .if defined(WITH_XINE)
 RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
-VIDEOPLAYER=	${X11BASE}/bin/xine
+.elif defined(WITH_VLC)
+RUN_DEPENDS+=	vlc:${PORTSDIR}/multimedia/vlc
 .else
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
-VIDEOPLAYER=	${LOCALBASE}/bin/mplayer
 .endif
 
 # default AUDIOPLAYER
 .if defined(WITH_AUDACIOUS)
 RUN_DEPENDS+=	${PREFIX}/lib/audacious/Container/libpls.so:${PORTSDIR}/multimedia/audacious-plugins
-AUDIOPLAYER=	${LOCALBASE}/bin/audacious
 .elifdef(WITH_BEEP_MEDIA_PLAYER)
 RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
-AUDIOPLAYER=	${LOCALBASE}/bin/beep-media-player
 .else
 RUN_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
-AUDIOPLAYER=	${X11BASE}/bin/xmms
 .endif
 
 .include <bsd.port.post.mk>
