@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httperf
-PORTVERSION=	0.8
+PORTVERSION=	0.9.0
 CATEGORIES=	benchmarks www
 MASTER_SITES=	ftp://ftp.hpl.hp.com/pub/httperf/
 
@@ -33,5 +33,9 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
+
+do-install:
+	@${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
 
 .include <bsd.port.mk>
