@@ -8,7 +8,7 @@
 PORTNAME=	xmlrpclib
 PORTVERSION=	1.0.1
 CATEGORIES=	net python
-MASTER_SITES=	http://effbot.org/downloads/
+MASTER_SITES=	http://effbot.org/media/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
