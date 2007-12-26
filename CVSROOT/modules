@@ -1016,6 +1016,7 @@ boswars		ports/games/boswars
 botan		ports/security/botan
 bottlerocket	ports/misc/bottlerocket
 bouml		ports/devel/bouml
+bouml_doc	ports/devel/bouml_doc
 bounce		ports/net/bounce
 bouncycastle	ports/java/bouncycastle
 boxbackup	ports/sysutils/boxbackup
