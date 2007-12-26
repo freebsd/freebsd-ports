@@ -7,12 +7,13 @@
 
 PORTNAME=	bouml
 PORTVERSION=	3.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
 		http://bouml.free.fr/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	BOUML, a free UML 2 modeler
@@ -30,12 +31,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
-.if !defined(NOPORTDOCS)
-DOC_VER=	3.0
-DISTFILES+=	doc${DOC_VER}${EXTRACT_SUFX}
-PORTDOCS=	*
-.endif
-
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'	\
 		-e 's|%%DESKTOPDIR%%|${DESKTOPDIR}|' ${WRKSRC}/${MAKEFILE}
@@ -46,10 +41,8 @@ post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	${CHMOD} -R ${SHAREMODE} ${DATADIR}/xmi/*
 	${FIND} ${DATADIR} -type f -perm 755 | ${XARGS} ${STRIP_CMD}
-.if !defined(NOPORTDOCS)
-	cd ${WRKDIR}/doc && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
-	cd ${WRKDIR}/doc && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
