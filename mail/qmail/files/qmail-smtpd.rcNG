@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+# PROVIDE: qmailsmtpd
+# REQUIRE: LOGIN cleanvar
+#
+# To use the checkpassword interface to qmail-smtpd, set
+# qmailsmtpd_checkpassword to the full path to the checkpassword program (e.g.
+# security/checkpassword or security checkpassword-pam).
+#
+# Note: tcpserver can be found in the sysutils/ucspi-tcp package.
+
+. /etc/rc.subr
+
+name="qmailsmtpd"
+rcvar=`set_rcvar`
+load_rc_config $name
+
+: ${qmailsmtpd_tcpserver="/usr/local/bin/tcpserver"}
+: ${qmailsmtpd_tcprules="/usr/local/bin/tcprules"}
+: ${qmailsmtpd_enable="NO"}
+: ${qmailsmtpd_cdb="/etc/tcp.smtp"}
+: ${qmailsmtpd_flags="-R -H -u 82 -g 81"}
+: ${qmailsmtpd_host="0"}
+: ${qmailsmtpd_port="smtp"}
+: ${qmailsmtpd_smtpd="/var/qmail/bin/qmail-smtpd"}
+: ${qmailsmtpd_fqdn=`hostname`}
+: ${qmailsmtpd_checkpassword=""} # e.g. /usr/local/bin/checkpassword-pam
+: ${qmailsmtpd_checksubprogram="/usr/bin/true"}
+
+qmailsmtpd_start() {
+	$qmailsmtpd_tcprules $qmailsmtpd_cdb.cdb $qmailsmtpd_cdb.tmp < $qmailsmtpd_cdb \
+		|| return 1
+
+	if [ "x$qmailsmtpd_checkpassword" != "x" ]; then
+		qmailsmtpd_usercheck="$qmailsmtpd_fqdn $qmailsmtpd_checkpassword $qmailsmtpd_checksubprogram"
+	fi
+
+	echo "Starting qmail-smtpd."
+
+	$qmailsmtpd_tcpserver -x $qmailsmtpd_cdb.cdb $qmailsmtpd_flags $qmailsmtpd_host $qmailsmtpd_port \
+	$qmailsmtpd_smtpd $qmailsmtpd_usercheck &
+	echo $! > /var/run/qmailsmtpd.pid
+}
+
+qmailsmtpd_stop() {
+	echo "Stopping qmail-smtpd"
+	kill `cat /var/run/qmailsmtpd.pid`
+}
+
+start_cmd="qmailsmtpd_start"
+stop_cmd="qmailsmtpd_stop"
+run_rc_command "$1"

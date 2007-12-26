@@ -77,6 +77,7 @@ bin/tcp-env
 %%NOT_LDAP%%boot/maildir
 %%NOT_LDAP%%boot/proc
 %%NOT_LDAP%%boot/proc+df
+%%NOT_LDAP%%boot/qmail-smtpd.rcNG
 %%LDAP%%boot/qmail/log/run
 %%LDAP%%boot/qmail/run
 %%LDAP%%boot/qmail-smtpd/log/run

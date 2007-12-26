@@ -7,7 +7,7 @@
 
 PORTNAME=	qmail
 PORTVERSION?=	${QMAIL_VERSION}
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES=	mail
 MASTER_SITES+=	${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
@@ -659,6 +659,10 @@ post-patch:
 			   s!QUEUE_EXTRALEN 0!QUEUE_EXTRALEN 5!g' \
 			   ${WRKSRC}/extra.h
 .endif
+.if ( ${ARCH} == "amd64" || ${ARCH} == "ia64" ) && \
+    ( !defined(SLAVE_SPAMCONTROL) && !defined(SLAVE_LDAP) )
+	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-amd64
+.endif
 
 do-configure:
 	@${SED} -e 's,%%RCDLINK%%,${RCDLINK},g; s,%%LOCALBASE%%,${LOCALBASE},g' \
@@ -694,6 +698,9 @@ do-install:
 .for i in ${BOOTFILES}
 	${INSTALL_SCRIPT} ${WRKDIR}/${i:T} ${PREFIX}/boot
 .endfor
+.if !defined(SLAVE_LDAP)
+	${INSTALL_SCRIPT} ${FILESDIR}/qmail-smtpd.rcNG ${PREFIX}/boot
+.endif
 .for i in 1 5 7 8
 	@${MKDIR} ${PREFIX}/man/man$i
 . for j in ${MAN${i}}
@@ -750,6 +757,8 @@ certificate:
 			-out ${WRKDIR}/servercert.pem -days 366 \
 			-keyout ${WRKDIR}/servercert.pem ; \
 		${INSTALL} -o qmaild -g qmail -m 0640 ${WRKDIR}/servercert.pem ${PREFIX}/control/servercert.pem ; \
+		${OPENSSLBASE}/bin/openssl ciphers > ${QMAIL_PREFIX}/control/tlsclientciphers
+		${OPENSSLBASE}/bin/openssl ciphers > ${QMAIL_PREFIX}/control/tlsserverciphers
 		${ECHO_MSG} "===> Do not forget to do 'make clean' to clean up temporary files" ; \
 	else \
 		${ECHO_MSG} "===> You must create the file ${OPENSSLDIR}/openssl.cnf first." ; \
