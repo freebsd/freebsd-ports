@@ -1,5 +1,8 @@
 bin/gem18
 bin/update_rubygems18
+lib/ruby/gems/%%RUBY_VER%%/cache/sources-0.0.2.gem
+lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.2/lib/sources.rb
+lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rbconfig/datadir.rb
 %%RUBY_SITELIBDIR%%/rubygems.rb
 %%RUBY_SITELIBDIR%%/rubygems/builder.rb
@@ -1390,6 +1393,8 @@ lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/created.rid
 @dirrm %%RUBY_SITELIBDIR%%/rbconfig
 @dirrmtry lib/ruby/gems/%%RUBY_VER%%/source_cache
 @dirrmtry lib/ruby/gems/%%RUBY_VER%%/specifications
+@dirrm lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.2/lib
+@dirrm lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.2
 @dirrmtry lib/ruby/gems/%%RUBY_VER%%/gems
 @dirrmtry lib/ruby/gems/%%RUBY_VER%%/cache
 @dirrm lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/OpenSSL/X509/Certificate
