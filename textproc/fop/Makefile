@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fop
-PORTVERSION=	0.93
-PORTREVISION=	1
+PORTVERSION=	0.94
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:fop/} \
 	${MASTER_SITE_SOURCEFORGE:S/$/:hyph/}
@@ -17,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}.tar.gz:fop offo-hyphenation.zip:hyph
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Print formatter driven by XSL formatting
 
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
