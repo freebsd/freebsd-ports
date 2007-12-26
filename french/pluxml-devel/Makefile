@@ -1,19 +1,23 @@
 # New ports collection makefile for:   pluxml
-# Date created:                7 August 2007
+# Date created:                14 December 2007
 # Whom:                        Philippe Audeoud <jadawin@tuxaco.net>
 # $FreeBSD$
 
 PORTNAME=	pluxml
-PORTVERSION=	0.3.1
+PORTVERSION=	3
 CATEGORIES=	french www
 MASTER_SITES=	http://pluxml.org/download/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-blog-beta${PORTVERSION}
 
 MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Small weblog in php and xml
 
+USE_ZIP=	yes
 USE_PHP=	xml pcre
 WANT_PHP_WEB=	yes
+
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -27,7 +31,7 @@ PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 do-install:
 	${MKDIR} ${WWWDIR}
-.for  data in images pluxml version
+.for  data in core images version
 	${CP} -R ${WRKSRC}/${data} ${WWWDIR}
 .endfor
 	${CP} ${WRKSRC}/*.php ${WWWDIR}
