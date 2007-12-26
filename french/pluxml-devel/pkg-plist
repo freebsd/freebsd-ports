@@ -1,43 +1,56 @@
-%%WWWDIR%%/version
+%%WWWDIR%%/core/admin/admin.css
+%%WWWDIR%%/core/admin/articles.php
+%%WWWDIR%%/core/admin/auth.php
+%%WWWDIR%%/core/admin/categories.php
+%%WWWDIR%%/core/admin/commentaires.php
+%%WWWDIR%%/core/admin/foot.php
+%%WWWDIR%%/core/admin/images.php
+%%WWWDIR%%/core/admin/img/article-new.png
+%%WWWDIR%%/core/admin/img/article.png
+%%WWWDIR%%/core/admin/img/categorie.png
+%%WWWDIR%%/core/admin/img/go.png
+%%WWWDIR%%/core/admin/img/images.png
+%%WWWDIR%%/core/admin/img/pluxml.png
+%%WWWDIR%%/core/admin/img/puce.png
+%%WWWDIR%%/core/admin/img/reglage.png
+%%WWWDIR%%/core/admin/index.php
+%%WWWDIR%%/core/admin/parametres.php
+%%WWWDIR%%/core/admin/prepend.php
+%%WWWDIR%%/core/admin/top.php
+%%WWWDIR%%/core/atom.php
+%%WWWDIR%%/core/conf/.htaccess
+%%WWWDIR%%/core/conf/index.htm
+%%WWWDIR%%/core/lib/class.admin.php
+%%WWWDIR%%/core/lib/class.capcha.php
+%%WWWDIR%%/core/lib/class.glob.php
+%%WWWDIR%%/core/lib/class.pluxml.php
+%%WWWDIR%%/core/lib/class.recordset.php
+%%WWWDIR%%/core/lib/functions.js
+%%WWWDIR%%/core/lib/functions.php
+%%WWWDIR%%/core/lib/lib.util.php
+%%WWWDIR%%/core/rss.php
+%%WWWDIR%%/core/templates/defaut/img/feed-icon-14x14-2.gif
+%%WWWDIR%%/core/templates/defaut/img/feed-icon-14x14.gif
+%%WWWDIR%%/core/templates/defaut/style.css
+%%WWWDIR%%/core/templates/defaut/template.php
+%%WWWDIR%%/core/xml/.htaccess
+%%WWWDIR%%/core/xml/index.htm
+%%WWWDIR%%/core/xmlcom/.htaccess
+%%WWWDIR%%/core/xmlcom/index.htm
+%%WWWDIR%%/images/index.htm
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install.php
-%%WWWDIR%%/maj.php
-%%WWWDIR%%/images/index.htm
-%%WWWDIR%%/pluxml/atom.php
-%%WWWDIR%%/pluxml/rss.php
-%%WWWDIR%%/pluxml/admin/admin.css
-%%WWWDIR%%/pluxml/admin/articles.php
-%%WWWDIR%%/pluxml/admin/auth.php
-%%WWWDIR%%/pluxml/admin/categories.php
-%%WWWDIR%%/pluxml/admin/foot.php
-%%WWWDIR%%/pluxml/admin/images.php
-%%WWWDIR%%/pluxml/admin/include.php
-%%WWWDIR%%/pluxml/admin/index.php
-%%WWWDIR%%/pluxml/admin/informations.php
-%%WWWDIR%%/pluxml/admin/parametres.php
-%%WWWDIR%%/pluxml/admin/top.php
-%%WWWDIR%%/pluxml/admin/img/icon.png
-%%WWWDIR%%/pluxml/admin/img/puce.png
-%%WWWDIR%%/pluxml/lib/class.admin.php
-%%WWWDIR%%/pluxml/lib/class.pluxml.php
-%%WWWDIR%%/pluxml/lib/functions.js
-%%WWWDIR%%/pluxml/lib/functions.php
-%%WWWDIR%%/pluxml/lib/lib.util.php
-%%WWWDIR%%/pluxml/templates/default/style.css
-%%WWWDIR%%/pluxml/templates/default/template.php
-%%WWWDIR%%/pluxml/templates/default/img/fond.jpg
-%%WWWDIR%%/pluxml/templates/default/img/header.jpg
-%%WWWDIR%%/pluxml/xml/.htaccess
-%%WWWDIR%%/pluxml/conf/.htaccess
-@dirrm %%WWWDIR%%/pluxml/templates/default/img
-@dirrm %%WWWDIR%%/pluxml/templates/default
-@dirrm %%WWWDIR%%/pluxml/templates
+%%WWWDIR%%/version
 @dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/pluxml/lib
-@dirrm %%WWWDIR%%/pluxml/admin/img
-@dirrm %%WWWDIR%%/pluxml/admin
-@dirrmtry %%WWWDIR%%/pluxml/xml
-@dirrmtry %%WWWDIR%%/pluxml/conf
-@dirrmtry %%WWWDIR%%/pluxml
-@dirrmtry %%WWWDIR%%
+@dirrm %%WWWDIR%%/core/xmlcom
+@dirrm %%WWWDIR%%/core/xml
+@dirrm %%WWWDIR%%/core/templates/defaut/img
+@dirrm %%WWWDIR%%/core/templates/defaut
+@dirrm %%WWWDIR%%/core/templates
+@dirrm %%WWWDIR%%/core/lib
+@dirrm %%WWWDIR%%/core/conf
+@dirrm %%WWWDIR%%/core/admin/img
+@dirrm %%WWWDIR%%/core/admin
+@dirrm %%WWWDIR%%/core
+@dirrm %%WWWDIR%%
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%
