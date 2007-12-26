@@ -10,10 +10,11 @@ PORTVERSION=	1.8
 PORTREVISION=	1
 CATEGORIES=	x11 plan9
 MASTER_SITES=	ftp://freefriends.org/arnold/Source/ \
+		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/ \
 		${MASTER_SITE_NETBSD}
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	serge.gagnon@b2b2c.ca
+MAINTAINER=	serge.gagnon.1@ulaval.ca
 COMMENT=	A simple menu patterened after plan9
 
 PLIST_FILES=		bin/9menu
