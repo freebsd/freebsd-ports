@@ -8,11 +8,11 @@
 PORTNAME=	memtest86
 PORTVERSION=	3.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.memtest86.com/download/
+MASTER_SITES=	http://www.memtest86.com/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.iso.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Stand alone memory test for x86 architecture computers
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
