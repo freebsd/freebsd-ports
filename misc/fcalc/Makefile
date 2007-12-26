@@ -9,10 +9,10 @@ PORTNAME=	fcalc
 PORTVERSION=	1
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://tangentsoft.net/fcalc/
+MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 DISTNAME=	${PORTNAME}-tcl
 
-MAINTAINER=	serge.gagnon@b2b2c.ca
+MAINTAINER=	serge.gagnon.1@ulaval.ca
 COMMENT=	F/Calc is a calculator for photographic formulas
 
 RUN_DEPENDS=	${LOCALBASE}/lib/tix8.1/Tix.tcl:${PORTSDIR}/x11-toolkits/tix
