@@ -1,6 +1,6 @@
---- httperf.c.orig	Wed Nov  1 05:20:00 2000
-+++ httperf.c	Wed Nov 13 06:19:41 2002
-@@ -68,6 +68,10 @@
+--- src/httperf.c.orig	2007-12-11 10:48:02.000000000 +0000
++++ src/httperf.c	2007-12-11 10:48:48.000000000 +0000
+@@ -78,6 +78,10 @@
  #include <conn.h>
  #include <timer.h>
  
