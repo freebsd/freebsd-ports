@@ -7,19 +7,14 @@
 
 PORTNAME=	samba-vscan
 PORTVERSION=	0.3.6c
-PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openantivirus.org/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-beta4
+DISTNAME=	${PORTNAME}-${PORTVERSION}-beta5
 
 MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	On-access virus scanning with Samba
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/${VSCAN_SAMBA_PORT}:configure
-
-BROKEN=		fails to install
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=	2007-11-30
 
 OPTIONS=	VSCAN_ANTIVIR "for use with AntiVir" off \
 		VSCAN_CLAMAV "for use with Clam AntiVirus Daemon" off \
