@@ -1,11 +1,11 @@
-# New ports collection makefile for:	bouml_doc
+# New ports collection makefile for:	bouml-doc
 # Date created:		23 December 2007
 # Whom:			Thierry Thomas <thierry@pompo.net>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	bouml_doc
+PORTNAME=	bouml-doc
 PORTVERSION=	3.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
