@@ -12,6 +12,11 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Small weblog in php and xml
 
+FORBIDDEN=	${DEPRECATED}
+DEPRECATED=	no active development and known security vulnerabilities,\
+		see http://www.securityfocus.com/bid/24607/info for details
+EXPIRATION_DATE=	2008-01-14
+
 USE_PHP=	xml pcre
 WANT_PHP_WEB=	yes
 

@@ -17,6 +17,9 @@ COMMENT=	Theme for pluxml > 0.3.0
 
 RUN_DEPENDS=	${WWWDIR}/pluxml:${PORTSDIR}/french/pluxml
 
+DEPRECATED=	pluxml is marked as deprecated
+EXPIRATION_DATE=	2008-01-14
+
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
