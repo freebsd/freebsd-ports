@@ -1,6 +1,9 @@
---- zaptel/zaptel.c.orig	Sun Jun 25 14:21:49 2006
-+++ zaptel/zaptel.c	Fri Aug 11 11:56:20 2006
-@@ -397,7 +397,7 @@
+
+$FreeBSD$
+
+--- zaptel/zaptel.c.orig
++++ zaptel/zaptel.c
+@@ -396,7 +396,7 @@
  
  int schluffen(void *q)
  {
@@ -9,3 +12,15 @@
  	switch(rc)
  	{
  		case EINTR:
+@@ -675,7 +675,11 @@
+ 	/* Free dev_info, if exist */
+ 	if(dev->si_drv2) free(dev->si_drv2, M_ZAP);
+ 	dev->si_drv2 = NULL;
++#if (__FreeBSD_version >= 700050)
++	destroy_dev_sched(dev);
++#else
+ 	destroy_dev(dev);	
++#endif
+ 	return res;
+ }
+ 
