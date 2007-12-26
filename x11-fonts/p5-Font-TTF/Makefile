@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Font-TTF
-PORTVERSION=	0.41
+PORTVERSION=	0.43
 CATEGORIES=	x11-fonts perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Font
@@ -37,8 +37,8 @@ MAN3=	Font::TTF.3 Font::TTF::AATKern.3 Font::TTF::Anchor.3 \
 	Font::TTF::Name.3 Font::TTF::OS_2.3 Font::TTF::OldCmap.3 \
 	Font::TTF::OldMort.3 Font::TTF::PCLT.3 Font::TTF::PSNames.3 \
 	Font::TTF::Post.3 Font::TTF::Prep.3 Font::TTF::Prop.3 \
-	Font::TTF::Segarr.3 Font::TTF::Table.3 Font::TTF::Ttc.3 \
-	Font::TTF::Ttopen.3 Font::TTF::Utils.3 Font::TTF::Vhea.3 \
-	Font::TTF::Vmtx.3 Font::TTF::XMLparse.3
+	Font::TTF::Segarr.3 Font::TTF::Table.3 Font::TTF::Tags.3 \
+	Font::TTF::Ttc.3 Font::TTF::Ttopen.3 Font::TTF::Utils.3 \
+	Font::TTF::Vhea.3 Font::TTF::Vmtx.3 Font::TTF::XMLparse.3
 
 .include <bsd.port.mk>
