@@ -39,7 +39,9 @@ lib/compat/libkadm5srv.so.7
 lib/compat/libkafs5.so.7
 lib/compat/libkiconv.so.1
 lib/compat/libkrb5.so.7
+%%ALPHA%%@unexec chflags noschg %D/lib/compat/libkse.so.1
 %%ALPHA%%lib/compat/libkse.so.1
+%%SPARC64%%@unexec chflags noschg %D/lib/compat/libkse.so.1
 %%SPARC64%%lib/compat/libkse.so.1
 lib/compat/libkvm.so.2
 lib/compat/libm.so.3
