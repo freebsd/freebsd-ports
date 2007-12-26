@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iscsi-target
-PORTVERSION=	20071205
+PORTVERSION=	20071221
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/ \
 		http://www.magnesium.net/~mdf/distfiles/
