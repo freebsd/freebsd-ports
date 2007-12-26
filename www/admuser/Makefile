@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	admuser
-PORTVERSION=	2.3.1
-PORTREVISION=	2
+PORTVERSION=	2.3.2
 CATEGORIES=	www
 MASTER_SITES=	http://sarg.sourceforge.net/
 
@@ -21,10 +20,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/admuser \
 		--enable-cgidir=${PREFIX}/www/cgi-bin \
 
 .include <bsd.port.pre.mk>
-
-.if (${OSVERSION} >= 700000)
-BROKEN=		Does not compile on 7.X
-.endif
 
 pre-install:
 	@${MKDIR} ${PREFIX}/www/cgi-bin
