@@ -44,10 +44,16 @@ INFO=	gcl-si gcl-tk
 
 PLIST_SUB=	GCL_VER=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Gcl compiled with gcc42 dumps core
+.endif
+
 pre-configure:
 	${SED} -i '' \
 		-e 's|@@CFLAGS@@|${CFLAGS} -I${LOCALBASE}/include|' \
 		-e 's|@@LOCALLIBS@@|-L${LOCALBASE}/lib -lgmp -lm -lreadline|' \
 		${WRKSRC}/h/FreeBSD.defs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
