@@ -7,12 +7,12 @@
 
 PORTNAME=	vrfy
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	# disappeared
+MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Verify mail address
 
 WRKSRC=		${WRKDIR}
