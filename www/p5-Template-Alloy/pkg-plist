@@ -9,6 +9,7 @@
 %%SITE_PERL%%/Template/Alloy/Operator.pm
 %%SITE_PERL%%/Template/Alloy/Parse.pm
 %%SITE_PERL%%/Template/Alloy/Play.pm
+%%SITE_PERL%%/Template/Alloy/Stream.pm
 %%SITE_PERL%%/Template/Alloy/TT.pm
 %%SITE_PERL%%/Template/Alloy/Tmpl.pm
 %%SITE_PERL%%/Template/Alloy/VMethod.pm
