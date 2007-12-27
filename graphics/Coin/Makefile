@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Coin
-PORTVERSION=	2.4.6
-PORTREVISION=	1
+PORTVERSION=	2.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/ \
 		ftp://ftp.coin3d.org/pub/coin/src/all/
@@ -21,8 +20,9 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe \
-		--enable-3ds-import --enable-sound
+CONFIGURE_ARGS=	--with-pthread=yes --enable-threadsafe	\
+		--enable-3ds-import --enable-sound	\
+		--enable-javascript-api
 USE_LDCONFIG=	yes
 MAKE_ENV=	LANG=C
 
