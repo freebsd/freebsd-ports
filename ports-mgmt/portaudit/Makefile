@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portaudit
-PORTVERSION=	0.5.11
+PORTVERSION=	0.5.12
 CATEGORIES=	ports-mgmt security
 DISTFILES=
 
@@ -36,22 +36,6 @@ SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e "s|%%REQPKGVER%%|${REQPKGVER}|g" \
 		-e "s|%%BZIP2_CMD%%|${BZIP2_CMD}|g" \
 
-.include <bsd.port.pre.mk>
-
-.if !defined(DFOSVERSION)
-.if ${OSVERSION} < 491101 || ${OSVERSION} >= 500000 && ${OSVERSION} < 502120
-RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/ports-mgmt/pkg_install-devel
-.endif
-.else
-.if ${DFOSVERSION} < 110000
-RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/ports-mgmt/pkg_install-devel
-.endif
-.endif
-
-.if defined(BZIP2DEPENDS)
-RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
-.endif
-
 do-build:
 .for f in portaudit-cmd.sh portaudit.sh portaudit.1 portaudit.conf
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/${f} >${WRKDIR}/${f}
@@ -79,4 +63,4 @@ do-install:
 post-install:
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
