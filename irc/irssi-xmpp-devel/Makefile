@@ -1,32 +1,36 @@
 # New ports collection makefile for:   irssi-xmpp
-# Date created:                11 September 2007
+# Date created:                14 December 2007
 # Whom:                        Philippe Audeoud <jadawin@tuxaco.net>
 # $FreeBSD$
 
 PORTNAME=	irssi-xmpp
-PORTVERSION=	0.13
+PORTVERSION=	20071214
 CATEGORIES=	irc
-MASTER_SITES=	http://cybione.org/src/irssi-xmpp/
+MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/irssi-xmpp-snapshot/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION}
 
 MAINTAINER=	jadawin@tuxaco.net
-COMMENT=	Irssi-xmpp is an irssi plugin to connect to the Jabber network
+COMMENT=	Irssi-xmpp-snaposhot is the irssi-xmmp cvs snapshot
 
 BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 LIB_DEPENDS=	loudmouth:${PORTSDIR}/net-im/loudmouth
+
+WRKSRC=	${WRKDIR}/${DISTNAME}
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_ENV=	IRSSI_INCLUDE="${LOCALBASE}/include/irssi/"
 
 PLIST_FILES=	lib/irssi/modules/libfe_xmpp.so \
-		lib/irssi/modules/libxmpp_core.so
-PORTDOCS=	README
+		lib/irssi/modules/libxmpp_core.so \
+		lib/irssi/modules/libtext_xmpp.so
 
-IGNORE=		Does not work with irc/irssi-0.8.12
+PORTDOCS=	README FAQ GENERAL MUC STARTUP XEP
 
 do-install:
-.for data in core fe-common
+.for data in core fe-common fe-text
 	${MKDIR} ${PREFIX}/lib/irssi/modules
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${data}/*.so \
 		${PREFIX}/lib/irssi/modules
@@ -34,6 +38,9 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for i in FAQ GENERAL MUC STARTUP XEP
+	${INSTALL_DATA} ${WRKSRC}/docs/$i ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>

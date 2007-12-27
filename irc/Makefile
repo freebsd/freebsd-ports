@@ -58,6 +58,7 @@
     SUBDIR += irssi-fish
     SUBDIR += irssi-scripts
     SUBDIR += irssi-xmpp
+    SUBDIR += irssi-xmpp-devel
     SUBDIR += irssistats
     SUBDIR += keitairc
     SUBDIR += kmyirc
