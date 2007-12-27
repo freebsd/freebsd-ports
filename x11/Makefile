@@ -122,6 +122,7 @@
     SUBDIR += gsynaptics
     SUBDIR += gtk-launch
     SUBDIR += gtk-theme-switch
+    SUBDIR += gtk-theme-switch2
     SUBDIR += gtk-themepreview
     SUBDIR += gtkchtheme
     SUBDIR += gtkterm2
