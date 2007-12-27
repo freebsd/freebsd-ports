@@ -7,7 +7,7 @@
 
 PORTNAME=	megacli
 PORTVERSION=	1.01.09
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils linux
 MASTER_SITES=	http://lsi.com/files/support/rsa/MR_SAS_1.0/
 PKGNAMEPREFIX=	linux-
@@ -28,7 +28,6 @@ SUB_FILES+=	407.status-mfi-raid
 RPM2CPIO?=			${LOCALBASE}/bin/rpm2cpio
 EXTRACT_DEPENDS+=		${RPM2CPIO}:${PORTSDIR}/archivers/rpm
 
-
 post-extract:
 	@cd ${WRKSRC} && \
 		${UNZIP_CMD} MegaCliLin.zip && \
@@ -39,7 +38,7 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/megacli.sh ${PREFIX}/sbin/megacli
-	${MKDIR} -p ${PREFIX}/etc/periodic/daily
+	${MKDIR} ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKSRC}/407.status-mfi-raid ${PREFIX}/etc/periodic/daily
 	${INSTALL_PROGRAM} ${WRKSRC}/usr/sbin/MegaCli ${PREFIX}/libexec
 

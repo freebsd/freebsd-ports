@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 The output of periodic/daily/407.status-mfi-raid uses several
-abbreviations. This documents maps the abbreviations to the
+abbreviations. This document maps the abbreviations to the
 names MegaCli uses, which were just too long for summary mails.
 
 Section 'Physical Drive Information:'

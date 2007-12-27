@@ -13,12 +13,12 @@ if ! [ `sysctl -n compat.linux.osrelease` = "2.6.12" ]; then
 	exit 1
 fi
 
-lpfs=`mount -t linprocfs | wc -l | awk '{ print $1 }'`
+lpfs=`mount -t linprocfs | awk 'END{ print NR }'`
 if [ ${lpfs} -le 0 ]; then
 	echo "You need to mount linprocfs to run `basename $0`." >&2
 	exit 1
 fi
-lsfs=`mount -t linsysfs | wc -l | awk '{ print $1 }'`
+lsfs=`mount -t linsysfs | awk 'END{ print NR }'`
 if [ ${lsfs} -le 0 ]; then
 	echo "You need to mount linsysfs to run `basename $0`." >&2
 	exit 1
