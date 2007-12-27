@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openmsx
-DISTVERSION=	0.6.2
-PORTREVISION=	1
+DISTVERSION=	0.6.3
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +16,7 @@ COMMENT=	Open source MSX emulator
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		jack:${PORTSDIR}/audio/jack \
+		GLEW:${PORTSDIR}/graphics/glew \
 		png:${PORTSDIR}/graphics/png
 
 MAKE_ARGS+=	INSTALL_BINARY_DIR=${PREFIX}/bin \
