@@ -75,8 +75,8 @@ main() {
 				n) ;;
 				*) 
 				if [ ! -z "$e_installed" ]; then
-					echo -n "Creating backup package in /usr/tmp/$e_installed.tbz... "
-					cd /usr/tmp/ && pkg_create -b $e_installed
+					echo -n "Creating backup package in /usr/obj/$e_installed.tbz... "
+					cd /usr/obj/ && pkg_create -b $e_installed
 					echo "Done."
 				fi
 
@@ -84,6 +84,7 @@ main() {
 
 				echo ""
 				if [ ! -z "$e_installed" ]; then
+					touch /root/ports.lst
 					if [ ! -z "`grep $e /root/ports.lst`" ]; then
 						echo "It seems you installed this package using ports."
 						echo "It is strongly recommended to upgrade it using also ports."
@@ -92,7 +93,7 @@ main() {
 						case $key in
 							n) 
 							sed -i '' s,$e,,g /root/ports.lst 1>/dev/null 2>&1;;
-							*) exit 0;;
+							*) ;;
 						esac
 					fi
 
@@ -100,14 +101,11 @@ main() {
 					pkg_delete -f $e_installed 1>/dev/null 2>&1
 					if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
 						echo "*** cannot proceed without first removing the package ***"
-						exit 0
 					fi
 					pkg_add -r $e_stripped
-					exit 0
 				else
 					echo "Installing new package:"
 					pkg_add -r $e_stripped
-					exit 0
 				fi;;
 			esac
 		done
@@ -146,8 +144,8 @@ pkg_latest() {
 				setenv PACKAGESITE ftp://ftp.freebsd.org/pub/FreeBSD/ports/$arch/packages-stable/Latest/
 
 				if [ ! -z "$e_installed" ]; then
-					echo -n "Creating backup package in /usr/tmp/$e_installed.tbz... "
-					cd /usr/tmp/ && pkg_create -b $e_installed
+					echo -n "Creating backup package in /usr/obj/$e_installed.tbz... "
+					cd /usr/obj/ && pkg_create -b $e_installed
 					echo "Done."
 				fi
 
@@ -155,6 +153,7 @@ pkg_latest() {
 
 				echo ""
 				if [ ! -z "$e_installed" ]; then
+					touch /root/ports.lst
 					if [ ! -z "`grep $e /root/ports.lst`" ]; then
 						echo "It seems you installed this package using ports."
 						echo "It is strongly recommended to upgrade it using also ports."
@@ -164,8 +163,7 @@ pkg_latest() {
 							n) 
 							sed -i '' s,$e,,g /root/ports.lst 1>/dev/null 2>&1;;
 							*)
-							unsetenv PACKAGESITE
-							exit 0;;
+							unsetenv PACKAGESITE;;
 						esac
 					fi
 
@@ -173,16 +171,13 @@ pkg_latest() {
 					pkg_delete -f $e_installed 1>/dev/null 2>&1
 					if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
 						echo "*** cannot proceed without first removing the package ***"
-						exit 0
 					fi
 					pkg_add -r $e_stripped
 					unsetenv PACKAGESITE
-					exit 0
 				else
 					echo "Installing new package:"
 					pkg_add -r $e_stripped
 					unsetenv PACKAGESITE
-					exit 0
 				fi;;
 			esac
 		done
@@ -218,8 +213,8 @@ simulation() {
 				n) ;;
 				*) 
 				if [ ! -z "$e_installed" ]; then
-					echo -n "Creating backup package in /usr/tmp/$e_installed.tbz... "
-					cd /usr/tmp/ && pkg_create -b $e_installed
+					echo -n "Creating backup package in /usr/obj/$e_installed.tbz... "
+					cd /usr/obj/ && pkg_create -b $e_installed
 					echo "Done."
 				fi
 
@@ -230,11 +225,9 @@ simulation() {
 					echo "Upgrading installed package:"
 					pkg_delete -n $e_installed 1>/dev/null 2>&1
 					pkg_add -rn $e_stripped
-					exit 0
 				else
 					echo "Installing new package:"
 					pkg_add -rn $e_stripped
-					exit 0
 				fi;;
 			esac
 		done
@@ -270,8 +263,8 @@ build_port() {
 				n) ;;
 				*)
 				if [ ! -z "$e_installed" ]; then
-					echo -n "Creating backup package in /usr/tmp/$e_installed.tbz... "
-					cd /usr/tmp/ && pkg_create -b $e_installed
+					echo -n "Creating backup package in /usr/obj/$e_installed.tbz... "
+					cd /usr/obj/ && pkg_create -b $e_installed
 					echo "Done."
 				fi
 
@@ -280,14 +273,15 @@ build_port() {
 				echo ""
 				if [ ! -z "$e_installed" ]; then
 					echo "Upgrading installed port:"
+					touch /root/ports.lst
 					[ -z "`grep $e /root/ports.lst`" ] && echo $e >> /root/ports.lst
 					pkg_delete -f $e_installed 1>/dev/null 2>&1
 					if [ ! -z `pkg_info -oq $e_installed 2>/dev/null` ]; then
 						echo "*** cannot proceed without first removing the package ***"
-						exit 0
 					fi
 				else
 					echo "Installing new port:"
+					touch /root/ports.lst
 					echo $e >> /root/ports.lst
 				fi
 
@@ -298,18 +292,13 @@ build_port() {
 					read key
 					case $key in
 						y) cd /usr/ports/$e && make config-recursive
-						cd /usr/ports/$e && make install clean
-						exit 0;;
+						cd /usr/ports/$e && make install clean;;
 						*) cd /usr/ports/$e && make config
-						cd /usr/ports/$e && make install clean
-						exit 0;;
+						cd /usr/ports/$e && make install clean;;
 					esac;;
 
-					*) cd /usr/ports/$e && make install clean
-					exit 0;;
-				esac
-	   			exit 0;;
-
+					*) cd /usr/ports/$e && make install clean;;
+				esac;;
 			esac
 		done
 	done
@@ -650,6 +639,7 @@ pkg_delete-xr() {
 
 	echo -e "\033[33m*** installed ***\033[0m"
 	pkg_info -xoQ $pkg | awk -F: '{OFS=": " ; print $2, $1}'
+	touch /root/ports.lst
 	for e in $pkg; do 
 		sed -i '' s,.*$e,,g /root/ports.lst 1>/dev/null 2>&1
 	done
@@ -710,9 +700,9 @@ pkg_backup() {
 	fi
 
 	pkg_install=`pkg_info -xoQ $pkg | cut -d: -f1 | awk '{ORS=" " ; print}'`
-	echo "Creating backup package(s) "$pkg_install"in /usr/tmp/"
+	echo "Creating backup package(s) "$pkg_install"in /usr/obj/"
 	for e in `pkg_info -xoq $pkg`; do
-		cd /usr/tmp/ && pkg_create -xb $e
+		cd /usr/obj/ && pkg_create -xb $e
 	done
 	echo "Done."
 	exit 0
@@ -865,8 +855,8 @@ make_depends() {
 				n) ;;
 				*) 
 				if [ ! -z "$e_installed" ]; then
-					echo -n "Creating backup package in /usr/tmp/$e_installed.tbz... "
-					cd /usr/tmp/ && pkg_create -b $e_installed
+					echo -n "Creating backup package in /usr/obj/$e_installed.tbz... "
+					cd /usr/obj/ && pkg_create -b $e_installed
 					echo "Done."
 				fi
 
