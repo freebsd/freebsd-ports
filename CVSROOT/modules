@@ -14517,6 +14517,7 @@ rubygem-railsbench	ports/benchmarks/rubygem-railsbench
 rubygem-rak	ports/textproc/rubygem-rak
 rubygem-rake	ports/devel/rubygem-rake
 rubygem-rapt	ports/devel/rubygem-rapt
+rubygem-rascut	ports/devel/rubygem-rascut
 rubygem-redcloth	ports/www/rubygem-redcloth
 rubygem-rgl	ports/devel/rubygem-rgl
 rubygem-rrdtool	ports/databases/rubygem-rrdtool
