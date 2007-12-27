@@ -43,7 +43,7 @@ CONFLICTS=	sol-1.0.* glchess-[0-9]* gnomesudoku-[0-9]*
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libavahi-client.a) || defined(WITH_MDNS)
-LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
 .endif
 
 post-patch:
