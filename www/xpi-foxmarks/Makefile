@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foxmarks
-PORTVERSION=	2.0.34
+PORTVERSION=	2.0.36
 #DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 MASTER_SITES=	http://jezebel.foxmarks.com/ CENKES
