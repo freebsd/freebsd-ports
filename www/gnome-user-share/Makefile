@@ -3,7 +3,8 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/www/gnome-user-share/Makefile,v 1.5 2007/05/19 21:36:26 marcus Exp $
+#   $MCom: ports/www/gnome-user-share/Makefile,v 1.5 2007/05/19 21:36:26 marcus Exp $
+#
 
 PORTNAME=	gnome-user-share
 PORTVERSION=	0.11
@@ -16,7 +17,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Personal file-sharing service for the GNOME Desktop
 
-LIB_DEPENDS=	avahi-client:${PORTSDIR}/net/avahi
+LIB_DEPENDS=	avahi-client:${PORTSDIR}/net/avahi-app
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
