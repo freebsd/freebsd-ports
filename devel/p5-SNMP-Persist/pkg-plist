@@ -1,0 +1,5 @@
+%%SITE_PERL%%/SNMP/Persist.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Persist/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Persist/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/
+@dirrmtry %%SITE_PERL%%/SNMP
