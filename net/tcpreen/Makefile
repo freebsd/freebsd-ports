@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tcpreen
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	net ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://www.remlab.net/files/tcpreen/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A simple TCP session re-engineering tool
