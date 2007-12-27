@@ -1,0 +1,13 @@
+The SNMP-Persist module is a backend for pass_persist feature of
+net-snmp.
+
+It simplifies the process of sharing user-specified data via SNMP and
+development of persistent net-snmp applications controlling a chosen MIB
+subtree.
+
+It is particularly useful if data gathering process takes too long. The
+responder is a separate thread, which is not influenced by updates of
+MIB subtree data. The answer to a snmp request is fast and doesn't rely
+on potentially slow source of data.
+
+WWW: http://search.cpan.org/~anias/SNMP-Persist-0.05/
