@@ -5,6 +5,7 @@ bin/pcp_node_count
 bin/pcp_node_info
 bin/pcp_proc_count
 bin/pcp_proc_info
+bin/pcp_recovery_node
 bin/pcp_stop_pgpool
 bin/pcp_systemdb_info
 bin/pg_md5
