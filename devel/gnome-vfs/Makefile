@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=--disable-samba
 .endif
 
 .if !defined(WITHOUT_MDNS)
-LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=--disable-avahi
 .endif
