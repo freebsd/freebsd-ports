@@ -14,7 +14,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Link-local Connection Manager for Telepathy Framework
 
 LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
-		avahi-glib.pc:${PORTSDIR}/net/avahi \
+		avahi-glib.pc:${PORTSDIR}/net/avahi-app \
 		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
