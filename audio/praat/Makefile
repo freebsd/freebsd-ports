@@ -6,22 +6,27 @@
 #
 
 PORTNAME=	praat
-PORTVERSION=	4.4.10
-PORTREVISION=	1
+PORTVERSION=	4.6.39
 CATEGORIES=	audio science
-MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/Praat/4410/
-DISTNAME=	praat4410_sources
+MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/Praat/4639/ \
+		http://www.fon.hum.uva.nl/praat/
+DISTNAME=	praat4639_sources
 
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	Phonetics by Computer
 
-USE_X_PREFIX=	yes
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*Makefile
+USE_XLIB=	yes
 USE_MOTIF=	yes
-WRKSRC=		${WRKDIR}/sources_4410
+WRKSRC=		${WRKDIR}/sources_4639
 MAKEFILE=	makefile
 PLIST_FILES=	bin/praat
 
+MAN1=		praat.1
+
 post-patch:
+	@${REINPLACE_CMD} -e 's/ log2/ NUMlog2/' ${WRKSRC}/dwtools/Sound_extensions.c
 	@${FIND} ${WRKSRC} -name Makefile -exec \
 		${REINPLACE_CMD} -e 's|^CFLAGS =|CFLAGS +=|' "{}" \;
 	@${CP} ${WRKSRC}/makefiles/makefile.defs.freebsd.dynamic \
@@ -29,5 +34,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/praat ${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/praat.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
