@@ -16,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC client for the GNOME Desktop
 
 LIB_DEPENDS=	gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc \
-    		avahi-core.5:${PORTSDIR}/net/avahi \
+    		avahi-core.5:${PORTSDIR}/net/avahi-app \
 		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
 		gnome-keyring:${PORTSDIR}/security/gnome-keyring
 
