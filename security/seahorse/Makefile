@@ -113,7 +113,7 @@ CONFIGURE_ARGS+=--disable-gnome-keyring
 .endif
 
 .if !defined(WITHOUT_MDNS)
-LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=--disable-sharing
 .endif
