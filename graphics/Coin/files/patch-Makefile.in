@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2007-12-25 21:33:49.000000000 -0500
++++ Makefile.in	2007-12-25 21:37:23.000000000 -0500
+@@ -284,7 +284,7 @@
+ 
+ SUBDIRS = . bin include $(SRCDIRS) $(DOCDIRS) $(JAVADIR)
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(exec_prefix)/libdata/pkgconfig
+ pkgconfig_DATA = Coin.pc
+ 
+ BUILT_SOURCES = \
