@@ -3,6 +3,12 @@ bin/openmsx
 %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK/roms/SHA1SUMS
 %%DATADIR%%/extensions/DDX_3.0/hardwareconfig.xml
 %%DATADIR%%/extensions/DDX_3.0/roms/SHA1SUMS
+%%DATADIR%%/extensions/ESE_MEGA-SCSI/hardwareconfig.xml
+%%DATADIR%%/extensions/ESE_Ramdisk/hardwareconfig.xml
+%%DATADIR%%/extensions/ESE_SCC/hardwareconfig.xml
+%%DATADIR%%/extensions/ESE_WAVE-SCSI/hardwareconfig.xml
+%%DATADIR%%/extensions/Gouda_SCSI/hardwareconfig.xml
+%%DATADIR%%/extensions/Gouda_SCSI/roms/SHA1SUMS
 %%DATADIR%%/extensions/Konami_EC-702/hardwareconfig.xml
 %%DATADIR%%/extensions/Konami_EC-702/roms/SHA1SUMS
 %%DATADIR%%/extensions/Konami_SD-Snatcher_Sound_Cartridge/hardwareconfig.xml
@@ -15,6 +21,7 @@ bin/openmsx
 %%DATADIR%%/extensions/Panasonic_FS-CA1/roms/SHA1SUMS
 %%DATADIR%%/extensions/Panasonic_FS-FD1A/hardwareconfig.xml
 %%DATADIR%%/extensions/Panasonic_FS-FD1A/roms/SHA1SUMS
+%%DATADIR%%/extensions/Password_Cartridge/hardwareconfig.xml
 %%DATADIR%%/extensions/Philips_NMS_1205/hardwareconfig.xml
 %%DATADIR%%/extensions/Philips_NMS_1205/roms/SHA1SUMS
 %%DATADIR%%/extensions/Philips_VY_0010/hardwareconfig.xml
@@ -28,6 +35,8 @@ bin/openmsx
 %%DATADIR%%/extensions/Sony_HBK-30/roms/SHA1SUMS
 %%DATADIR%%/extensions/Toshiba_HX-MU900/hardwareconfig.xml
 %%DATADIR%%/extensions/Toshiba_HX-MU900/roms/SHA1SUMS
+%%DATADIR%%/extensions/Yamaha_SFG-05/hardwareconfig.xml
+%%DATADIR%%/extensions/Yamaha_SFG-05/roms/SHA1SUMS
 %%DATADIR%%/extensions/advram/hardwareconfig.xml
 %%DATADIR%%/extensions/audio/hardwareconfig.xml
 %%DATADIR%%/extensions/audio2/hardwareconfig.xml
@@ -192,6 +201,8 @@ bin/openmsx
 %%DATADIR%%/machines/Sony_HB-F1II/roms/SHA1SUMS
 %%DATADIR%%/machines/Sony_HB-F1XD/hardwareconfig.xml
 %%DATADIR%%/machines/Sony_HB-F1XD/roms/SHA1SUMS
+%%DATADIR%%/machines/Sony_HB-F1XDJ/hardwareconfig.xml
+%%DATADIR%%/machines/Sony_HB-F1XDJ/roms/SHA1SUMS
 %%DATADIR%%/machines/Sony_HB-F500P/hardwareconfig.xml
 %%DATADIR%%/machines/Sony_HB-F500P/roms/SHA1SUMS
 %%DATADIR%%/machines/Sony_HB-F700D/hardwareconfig.xml
@@ -210,6 +221,8 @@ bin/openmsx
 %%DATADIR%%/machines/Toshiba_HX-10/roms/SHA1SUMS
 %%DATADIR%%/machines/Yamaha_AX350II/hardwareconfig.xml
 %%DATADIR%%/machines/Yamaha_AX350II/roms/SHA1SUMS
+%%DATADIR%%/machines/Yamaha_CX5MII-128/hardwareconfig.xml
+%%DATADIR%%/machines/Yamaha_CX5MII-128/roms/SHA1SUMS
 %%DATADIR%%/machines/Yashica_YC-64/hardwareconfig.xml
 %%DATADIR%%/machines/Yashica_YC-64/roms/SHA1SUMS
 %%DATADIR%%/machines/msx1
@@ -231,6 +244,8 @@ bin/openmsx
 %%DATADIR%%/scripts/monitor.tcl
 %%DATADIR%%/scripts/multi_screenshot.tcl
 %%DATADIR%%/scripts/psg_log.tcl
+%%DATADIR%%/scripts/psg_profile.tcl
+%%DATADIR%%/scripts/record_channels.tcl
 %%DATADIR%%/scripts/reg_log.tcl
 %%DATADIR%%/scripts/save_debuggable.tcl
 %%DATADIR%%/scripts/showdebuggable.tcl
@@ -258,6 +273,10 @@ bin/openmsx
 %%DATADIR%%/shaders/hq.vert
 %%DATADIR%%/shaders/hqlite.frag
 %%DATADIR%%/shaders/hqlite.vert
+%%DATADIR%%/shaders/rgb.frag
+%%DATADIR%%/shaders/rgb.vert
+%%DATADIR%%/shaders/sai.frag
+%%DATADIR%%/shaders/sai.vert
 %%DATADIR%%/shaders/scale2x.frag
 %%DATADIR%%/shaders/scale2x.vert
 %%DATADIR%%/shaders/simple.frag
@@ -330,6 +349,12 @@ bin/openmsx
 @dirrm %%DATADIR%%/extensions/Checkmark_FM_Stereo_PAK
 @dirrm %%DATADIR%%/extensions/DDX_3.0/roms
 @dirrm %%DATADIR%%/extensions/DDX_3.0
+@dirrm %%DATADIR%%/extensions/ESE_MEGA-SCSI
+@dirrm %%DATADIR%%/extensions/ESE_Ramdisk
+@dirrm %%DATADIR%%/extensions/ESE_SCC
+@dirrm %%DATADIR%%/extensions/ESE_WAVE-SCSI
+@dirrm %%DATADIR%%/extensions/Gouda_SCSI/roms
+@dirrm %%DATADIR%%/extensions/Gouda_SCSI
 @dirrm %%DATADIR%%/extensions/Konami_EC-702/roms
 @dirrm %%DATADIR%%/extensions/Konami_EC-702
 @dirrm %%DATADIR%%/extensions/Konami_SD-Snatcher_Sound_Cartridge
@@ -342,6 +367,7 @@ bin/openmsx
 @dirrm %%DATADIR%%/extensions/Panasonic_FS-CA1
 @dirrm %%DATADIR%%/extensions/Panasonic_FS-FD1A/roms
 @dirrm %%DATADIR%%/extensions/Panasonic_FS-FD1A
+@dirrm %%DATADIR%%/extensions/Password_Cartridge
 @dirrm %%DATADIR%%/extensions/Philips_NMS_1205/roms
 @dirrm %%DATADIR%%/extensions/Philips_NMS_1205
 @dirrm %%DATADIR%%/extensions/Philips_VY_0010/roms
@@ -355,6 +381,8 @@ bin/openmsx
 @dirrm %%DATADIR%%/extensions/Sony_HBK-30
 @dirrm %%DATADIR%%/extensions/Toshiba_HX-MU900/roms
 @dirrm %%DATADIR%%/extensions/Toshiba_HX-MU900
+@dirrm %%DATADIR%%/extensions/Yamaha_SFG-05/roms
+@dirrm %%DATADIR%%/extensions/Yamaha_SFG-05
 @dirrm %%DATADIR%%/extensions/advram
 @dirrm %%DATADIR%%/extensions/audio
 @dirrm %%DATADIR%%/extensions/audio2
@@ -503,6 +531,8 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/Sony_HB-F1II
 @dirrm %%DATADIR%%/machines/Sony_HB-F1XD/roms
 @dirrm %%DATADIR%%/machines/Sony_HB-F1XD
+@dirrm %%DATADIR%%/machines/Sony_HB-F1XDJ/roms
+@dirrm %%DATADIR%%/machines/Sony_HB-F1XDJ
 @dirrm %%DATADIR%%/machines/Sony_HB-F500P/roms
 @dirrm %%DATADIR%%/machines/Sony_HB-F500P
 @dirrm %%DATADIR%%/machines/Sony_HB-F700D/roms
@@ -521,6 +551,8 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/Toshiba_HX-10
 @dirrm %%DATADIR%%/machines/Yamaha_AX350II/roms
 @dirrm %%DATADIR%%/machines/Yamaha_AX350II
+@dirrm %%DATADIR%%/machines/Yamaha_CX5MII-128/roms
+@dirrm %%DATADIR%%/machines/Yamaha_CX5MII-128
 @dirrm %%DATADIR%%/machines/Yashica_YC-64/roms
 @dirrm %%DATADIR%%/machines/Yashica_YC-64
 @dirrm %%DATADIR%%/machines/C-BIOS_MSX1/roms
@@ -554,9 +586,9 @@ bin/openmsx
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-purple.css
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
 %%PORTDOCS%%%%DOCSDIR%%/manual/nocartfound021.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/openmsx-control.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/setup.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/user.html
-%%PORTDOCS%%%%DOCSDIR%%/openmsx-control-xml.txt
 %%PORTDOCS%%%%DOCSDIR%%/release-history.txt
 %%PORTDOCS%%%%DOCSDIR%%/release-notes.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
