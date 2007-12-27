@@ -21,10 +21,6 @@ PORTDOCS=	README README-LIB README-PGP
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/deMime ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/enMime ${PREFIX}/bin
