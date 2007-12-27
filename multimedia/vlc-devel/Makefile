@@ -212,7 +212,7 @@ CONFIGURE_ARGS+=	--disable-arts
 .endif
 
 .if !defined(WITHOUT_AVAHI)
-LIB_DEPENDS+=	avahi-common.3:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=	avahi-common.3:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--enable-bonjour
 .else
 CONFIGUE_ARGS+=		--disable-bonjour
