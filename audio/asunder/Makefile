@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	asunder
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
@@ -20,6 +19,7 @@ OPTIONS=	LAME "lame support" on \
 		OGG "ogg-vorbis support" on \
 		FLAC "FLAC support" on
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_GNOME=	gtk20
