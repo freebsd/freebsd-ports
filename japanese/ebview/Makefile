@@ -33,10 +33,6 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 pre-build:
 .for file in src/dictheading.c
 	cd ${WRKSRC} && ${MV} ${file} ${file}.pre_iconv \
