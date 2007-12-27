@@ -22,6 +22,8 @@ logdir=${logdir:-/var/log}
 
 case "$daily_status_mfi_raid_enable" in
     [Yy][Ee][Ss])
+	echo
+	echo 'Checking status of MFI RAID controllers:'
 	;;
     *)
 	exit 0
@@ -58,12 +60,12 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 	# Print summary information.
 	echo "------------------------------------------------------------------------"
 	echo "Physical Drive Information:"
+	echo "ENC SLO DEV SEQ MEC OEC PFC LPF STATE"
 	${megacli} -PDList -a${ctrl} | \
 	awk '
 		BEGIN {
 			E=-1; S=-1; D=-1; s=-1; mec=-1; oec=-1; pfc=-1; lpfeqn=-1;
 			state="";
-			printf "ENC SLO DEV SEQ MEC OEC PFC LPF STATE\n";
 		}
 		/^Enclosure Number:/ { E=$3; }
 		/^Slot Number:/ { S=$3; }
@@ -199,7 +201,7 @@ for ctrl in `jot ${ADPCOUNT} ${ADPMINIDX} ${ADPMAXIDX}`; do
 	# Now show the differences or the entire log.
 	case "$daily_status_mfi_raid_persist_logs" in
 	[Yy][Ee][Ss])
-		cmp -zs ${ctrl_log}.yesterday ${ctrl_log}.today
+		cmp -s ${ctrl_log}.yesterday ${ctrl_log}.today
 		raid_rc=$?
 		if test $raid_rc -ne 0; then
 			diff -u ${ctrl_log}.yesterday ${ctrl_log}.today | \
