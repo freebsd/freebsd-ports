@@ -370,7 +370,7 @@ USE_PHP+=	pdo
 .endif
 
 .if defined(WITH_PDO_MYSQL)
-RUN_DEPENDS+=	${PREFIX}/lib/php/${PHP_EXT_DIR}/pdo_mysql.so:${PORTSDIR}/databases/php5-pdo_mysql
+USE_PHP+=	pdo_mysql
 .endif
 
 .if defined(WITH_PDO_SQLITE)
