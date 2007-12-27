@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeciv
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -31,7 +31,6 @@ PORT_VERBS=	civ
 MAN6=		civserver.6 civclient.6
 
 .ifndef WITHOUT_X11
-PORTREVISION=	1
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		ggz.5:${PORTSDIR}/games/libggz \
