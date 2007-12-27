@@ -7,7 +7,7 @@
 
 PORTNAME=	climm
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.climm.org/source/ \
 		http://http.bg.climm.org/source/
@@ -34,7 +34,7 @@ OPTIONS=	LIBICONV "Iconv character set conversion" on \
 		REMOTE "Remote control fifo support" on
 #		XMPP "XMPP Jabber support" on
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 # XMPP support is currently broken - forcefully turn this off
 WITHOUT_XMPP=		true
@@ -67,6 +67,7 @@ CONFIGURE_ARGS+=	--disable-peer2peer --disable-ssl
 CONFIGURE_ARGS+=	--disable-tcl
 .else
 USE_TCL=		yes
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 .endif
 
 .if defined(WITHOUT_REMOTE)
@@ -95,4 +96,4 @@ post-install:
 . endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
