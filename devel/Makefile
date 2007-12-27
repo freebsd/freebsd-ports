@@ -2166,6 +2166,7 @@
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rapt
+    SUBDIR += rubygem-rascut
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rscm
     SUBDIR += rubygem-rspec
