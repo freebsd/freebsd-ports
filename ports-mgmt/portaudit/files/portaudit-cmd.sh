@@ -389,6 +389,10 @@ if $opt_version; then
 fi
 
 if $opt_fetch; then
+	if $opt_quiet ; then
+		portaudit_fetch_cmd="${portaudit_fetch_cmd} -q"
+	fi
+
 	if ! fetch_auditfile; then
 		echo "portaudit: Download failed." >&2
 		exit 2
