@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.planetmirror.com/pub/lyx/stable/ \
@@ -22,6 +22,7 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG) (stable)
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
+		${LOCALBASE}/share/texmf/tex/latex/prettyref/prettyref.sty:${PORTSDIR}/print/latex-prettyref \
 		${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost
 
@@ -31,10 +32,9 @@ CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
 
 OPTIONS=	ASPELL	"Utilize ASPELL library"	on	\
 		AIKSAUR	"Build Aiksaurus support (English thesaurus)"	on	\
-		NLS     "Native language support"	On	\
-		INCGT	"Use the included Gettext library"	off
+		NLS     "Native language support"	On
 
-ALL_TARGET=	all check
+ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget lthack
 USE_PERL5=	yes
@@ -46,18 +46,22 @@ QT_COMPONENTS=	gui corelib moc uic
 
 CONFLICTS=	lyx-1.4.*
 
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude ${PORTNAME}-${PORTVERSION}/intl/*.[ch] --exclude ${PORTNAME}-${PORTVERSION}/boost
-CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
-		--with-extra-inc="${LOCALBASE}/include/Qt* ${LOCALBASE}/include" \
+EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude ${PORTNAME}-${PORTVERSION}/intl/*.[ch]	\
+	--exclude ${PORTNAME}-${PORTVERSION}/boost --exclude ${PORTNAME}-${PORTVERSION}/intl
+CONFIGURE_ARGS=	--with-frontend=qt4 \
 		--without-included-boost \
-		--with-frontend=qt4
+		--without-included-gettext \
+		--with-libiconv-prefix=${LOCALBASE}
+
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 MAN1=		lyx.1 tex2lyx.1 lyxclient.1
 
 post-patch:
 	# Removing mention of the bundled boost
-	${REINPLACE_CMD} -e 's, boost/[^ ]*Makefile,,g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's, boost/[^ ]*Makefile,,g' -e 's, intl/Makefile,,g'	\
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's, intl , ,' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's,detail/nullstream,utils/nullstream,' \
 	    ${WRKSRC}/src/pch.h ${WRKSRC}/src/support/pch.h \
 	    ${WRKSRC}/src/support/debugstream.h
@@ -75,6 +79,10 @@ pre-configure:
 post-configure:
 	# Removing explicit linking with -lc
 	${REINPLACE_CMD} -e 's,-lc ,,' ${WRKSRC}/*/Makefile
+
+post-build check test:
+	# Running vendor's self-tests:
+	${GMAKE} -C ${WRKSRC} check
 
 .include <bsd.port.pre.mk>
 
@@ -100,15 +108,17 @@ CONFIGURE_ARGS+=--without-aspell --without-pspell
 .endif
 
 .if !defined(WITHOUT_NLS)
-.if defined(WITH_INCGT)
-CONFIGURE_ARGS+=	--with-included-gettext
-.else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
-.endif
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+# includes of qt4 must be found earlier than those of qt3
+CONFIGURE_ENV+=	QT4_CORE_CFLAGS="-DQT_SHARED -I${LOCALBASE}/include/QtCore \
+		-I${LOCALBASE}/include" \
+	QT4_FRONTEND_CFLAGS="-DQT_SHARED -I${LOCALBASE}/include/QtCore \
+		-I${LOCALBASE}/include/QtGui -I${LOCALBASE}/include"
 
 .include <bsd.port.post.mk>
