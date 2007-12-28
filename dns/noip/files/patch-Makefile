@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Oct 18 11:13:47 2006
-+++ Makefile	Wed Oct 18 11:16:45 2006
+--- Makefile.orig	2007-08-11 20:35:34.000000000 +0200
++++ Makefile	2007-12-24 12:18:38.000000000 +0100
 @@ -1,13 +1,13 @@
  TGT=noip2
 -CC=gcc
@@ -9,8 +9,8 @@
 -CONFDIR=${PREFIX}/etc
 -BINDIR=${PREFIX}/bin
 +MYPREFIX=${PREFIX}
-+CONFDIR=${MYPREFIX}/etc
-+BINDIR=${MYPREFIX}/bin
++MYCONFDIR=${PREFIX}/etc
++MYBINDIR=${PREFIX}/bin
  
  # these defines are for Linux
 -LIBS=
