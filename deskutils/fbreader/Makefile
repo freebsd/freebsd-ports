@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	fbreader
-PORTVERSION=	0.8.8.4
+PORTVERSION=	0.8.9
 DISTVERSIONPREFIX=	sources-
-DISTVERSION=	0.8.8d
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/ CENKES
 EXTRACT_SUFX=	.tgz
@@ -38,6 +37,7 @@ MAKE_ARGS+=	MAKE=gmake LIBDIR=${PREFIX}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 INSTALL_TARGET=	do_install
 PLIST_SUB=	UI=${UI}
+PORT_VERBS=	FBReader zlibrary libzl
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^LDFLAGS/s|=|+=|' ${WRKSRC}/makefiles/arch/*mk
@@ -52,7 +52,5 @@ post-patch:
 		s|/usr/local|%%PREFIX%%|g;s|/usr|%%PREFIX%%|g;s|%%PREFIX%%|${PREFIX}|g;\
 		/^CC =/d;/^LD =/d;s|-pipe||;s|-O3|${CFLAGS}|'
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
-
-# fuzpath: FBReader zlibrary libzl
 
 .include <bsd.port.mk>
