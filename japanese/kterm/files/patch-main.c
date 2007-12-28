@@ -10,6 +10,15 @@
  #include <sys/resource.h>
  #endif
  #ifdef sco
+@@ -236,7 +238,7 @@
+ #define HAS_UTMP_UT_HOST
+ #endif
+ #else /* } !SYSV { */			/* BSD systems */
+-#ifndef linux
++#if !defined(linux) && !defined(USE_POSIX_TERMIOS)
+ #include <sgtty.h>
+ #endif
+ #include <sys/resource.h>
 @@ -1355,6 +1357,8 @@
  	d_tio.c_cc[VDISCARD] = CFLUSH;
  	d_tio.c_cc[VWERASE] = CWERASE;
