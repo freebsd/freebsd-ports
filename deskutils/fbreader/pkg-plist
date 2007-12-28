@@ -6,6 +6,7 @@ share/FBReader/default/config.xml
 share/FBReader/default/external.xml
 share/FBReader/default/keymap.xml
 share/FBReader/default/styles.xml
+share/FBReader/default/toolbar.xml
 share/FBReader/formats/html/html.ent
 share/FBReader/formats/xhtml/xhtml-lat1.ent
 share/FBReader/formats/xhtml/xhtml-special.ent
