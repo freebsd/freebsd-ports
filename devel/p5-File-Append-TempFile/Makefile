@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Append-TempFile
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -23,7 +23,15 @@ PERL_CONFIGURE=	yes
 
 MAN3=		File::Append::TempFile.3
 
+PORTDOCS=	Changes README
+
 test:		build
 		@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
+
+.if !defined(NOPORTDOCS)
+post-install:
+		${MKDIR} ${DOCSDIR}
+		${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
