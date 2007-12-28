@@ -7,12 +7,15 @@
 
 PORTNAME=	astmanproxy
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.popvox.com/
 DISTFILES=	astmanproxy-latest.tgz
 
 MAINTAINER=	ditesh@gathani.org
 COMMENT=	A multi-threaded proxy server for Asterisk
+
+RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
@@ -28,6 +31,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|LOGDIR=/var/log/asterisk|LOGDIR=/var/log|' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|-ldl ||' ${WRKSRC}/Makefile
 
+pre-install:
+	@${MKDIR} ${PREFIX}/etc/asterisk
+
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/configs/astmanproxy.conf ${PREFIX}/etc/asterisk/astmanproxy.conf.sample
 	@[ -f ${PREFIX}/etc/asterisk/astmanproxy.conf ] || \
@@ -35,5 +41,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/configs/astmanproxy.users ${PREFIX}/etc/asterisk/astmanproxy.users.sample
 	@[ -f ${PREFIX}/etc/asterisk/astmanproxy.users ] || \
 	 ${INSTALL_DATA} ${WRKSRC}/configs/astmanproxy.users ${PREFIX}/etc/asterisk/astmanproxy.users
+	@${INSTALL_DATA} ${WRKSRC}/configs/ssl.conf ${PREFIX}/etc/asterisk/proxy-ssl.conf.sample
+	@[ -f ${PREFIX}/etc/asterisk/proxy-ssl.conf ] || \
+	 ${INSTALL_DATA} ${WRKSRC}/configs/ssl.conf ${PREFIX}/etc/asterisk/proxy-ssl.conf
 
 .include <bsd.port.mk>
