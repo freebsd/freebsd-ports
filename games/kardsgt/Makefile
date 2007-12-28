@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kardsgt
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH CENKES
 
@@ -23,8 +23,8 @@ QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 MAN6=	${PORTNAME}.6
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${datadir}/kardsgt-$${VERSION}|$${DATADIR}|;\
-		s|$${docdir}/kardsgt-$${VERSION}|$${DOCSDIR}|;\
+	@${REINPLACE_CMD} -e 's|$${datadir}/kardsgt|$${DATADIR}|;\
+		s|$${docdir}/kardsgt|$${DOCSDIR}|;\
 		s|qmake|${SETENV} ${MAKE_ENV} qmake -spec ${QMAKESPEC}|;\
 		s|--parents|-p|' ${WRKSRC}/Makefile
 
