@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION}
 
 MAINTAINER=	jadawin@tuxaco.net
-COMMENT=	Irssi-xmpp-snaposhot is the irssi-xmmp cvs snapshot
+COMMENT=	Irssi-xmpp-snapshot is the irssi-xmmp cvs snapshot
 
 BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
