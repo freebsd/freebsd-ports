@@ -163,7 +163,6 @@ www/syscp/templates/misc/configfiles/debian_sarge/postfix/etc_postfix_sasl_smtpd
 www/syscp/templates/misc/configfiles/debian_sarge/proftpd/etc_proftpd.conf
 www/syscp/templates/misc/configfiles/freebsd_release/bind/etc_bind_default.zone
 www/syscp/templates/misc/configfiles/freebsd_release/cron/etc_cron.d_syscp
-www/syscp/templates/misc/configfiles/freebsd_release/cron/etc_php4_syscpcron_php.ini
 www/syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot_conf
 www/syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot_sql
 www/syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf

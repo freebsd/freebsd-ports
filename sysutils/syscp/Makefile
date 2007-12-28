@@ -9,9 +9,9 @@ PORTNAME=	syscp
 PORTVERSION=	1.2.16
 PORTREVISION=	1
 CATEGORIES=	sysutils www
-MASTER_SITES=	http://canada.syscp.org/releases/tgz/ \
-		http://france.syscp.org/releases/tgz/ \
-		http://nuernburg.files.syscp.org/releases/tgz/
+MASTER_SITES=	http://nuernburg.files.syscp.org/releases/tgz/ \
+		http://canada.files.syscp.org/releases/tgz/ \
+		http://france.files.syscp.org/releases/tgz/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 PATCH_DIST_STRIP=	-p0

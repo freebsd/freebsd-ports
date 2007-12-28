@@ -1,7 +1,8 @@
 #!/bin/sh
-
-/bin/echo ""
-/bin/echo "To delete SysCP permanently: rm -rf /usr/local/www/syscp"
-/bin/echo ""
-
-exit 0
+if [ "$2" = DEINSTALL ]; then
+	echo "==============================================================================="
+	echo "If you are permanently removing this port, run:"
+	echo ""
+	echo "rm -rf /usr/local/www/syscp"
+	echo "==============================================================================="
+fi

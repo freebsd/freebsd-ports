@@ -20,3 +20,9 @@ Create and put the following lines into your
 
 ------------------------------------------------------
 
+Make sure Apache+PHP is properly configured and running 
+then visit:
+
+http://your-domain.tld/syscp/
+
+And enjoy!
