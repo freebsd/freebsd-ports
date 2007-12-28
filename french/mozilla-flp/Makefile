@@ -37,16 +37,16 @@ FICHIERS=	chrome/FR.jar chrome/fr-FR.jar chrome/fr-unix.jar			\
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozex/Makefile.xpi"
 
-.if ${GECKO} == seamonkey
-MOZVERSION=	1.1.7
-DISTURL=	/SeaMonkey
-MD5_FILE=	${MASTERDIR}/distinfo.seamonkey
-PLIST_SUB+=	MOZ="@comment "
-.else
+.if ${GECKO} == mozilla
 MOZVERSION=	1.7.13
 DISTURL=	# No subdir
 FICHIERS+=	defaults/isp/FR/gmail.rdf
 PLIST_SUB+=	MOZ=""
+.else
+MOZVERSION=	1.1.7
+DISTURL=	/SeaMonkey
+MD5_FILE=	${MASTERDIR}/distinfo.seamonkey
+PLIST_SUB+=	MOZ="@comment "
 .endif
 
 do-install:
