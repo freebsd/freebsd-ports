@@ -272,7 +272,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/win32|${LOCALBASE}/lib/win32|' \
 		${WRKSRC}/loader/module.c
 .endif
-	@${REINPLACE_CMD} -e 's|dts_free|dca_free|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|dts_free|dca_free|g ; s|-ldts|-ldca|g' ${WRKSRC}/configure
 
 pre-build:
 	@${REINPLACE_CMD} -e 's|/intl/libintl.a|${WRKSRC}/intl/libintl.a|' \
