@@ -34,9 +34,8 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-
   <vuln vid="4aab7bcd-b294-11dc-a6f0-00a0cce0781e">
-    <topic> gallery2--Multiple vulnerabilities </topic>
+    <topic>gallery2 -- multiple vulnerabilities</topic>
     <affects>
       <package>
         <name>gallery2</name>
@@ -45,18 +44,54 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>gallery.menalto.com:</p>
+        <p>The Gallery team reports:</p>
         <blockquote cite="http://gallery.menalto.com/gallery_2.2.4_released">
-          <p>Multiple vulnerabilities, see references for details.</p>
+	  <p>Gallery 2.2.4 addresses the following security
+	    vulnerabilities:</p>
+	  <ul>
+	    <li>Publish XP module - Fixed unauthorized album creation
+	      and file uploads.</li>
+	    <li>URL rewrite module - Fixed local file inclusion
+	      vulnerability in unsecured admin controller and
+	      information disclosure in hotlink protection.</li>
+	    <li>Core / add-item modules - Fixed Cross Site Scripting
+	      (XSS) vulnerabilities through malicious file names.</li>
+	    <li>Installation (Gallery application) - Update
+	      web-accessibility protection of the storage folder for
+	      Apache 2.2.</li>
+	    <li>Core (Gallery application) / MIME module - Fixed
+	      vulnerability in checks for disallowed file extensions
+	      in file uploads.</li>
+	    <li>Gallery Remote module - Added missing permissions
+	      checks for some GR commands.</li>
+	    <li>WebDAV module - Fixed Cross Site Scripting (XSS)
+	      vulnerability through HTTP PROPPATCH.</li>
+	    <li>WebDAV module - Fixed information (item data)
+	      disclosure in a WebDAV view.</li>
+	    <li>Comment module - Fixed information (item data)
+	      disclosure in comment views.</li>
+	    <li>Core module (Gallery application) - Improved
+	      resilience against item information disclosure
+	      attacks.</li>
+	    <li>Slideshow module - Fixed information (item data)
+	      disclosure in the slideshow.</li>
+	    <li>Print modules - Fixed information (item data)
+	      disclosure in several print modules.</li>
+	    <li>Core / print modules - Fixed arbitrary URL redirection
+	      (phishing attacks) in the core module and several print
+	      modules.</li>
+	    <li>WebCam module - Fixed proxied request weakness.</li>
+	  </ul>
         </blockquote>
       </body>
     </description>
     <references>
-    <url>http://gallery.menalto.com/gallery_2.2.4_released</url>
+      <url>http://gallery.menalto.com/gallery_2.2.4_released</url>
     </references>
     <dates>
       <discovery>2007-12-24</discovery>
       <entry>2007-12-25</entry>
+      <modified>2007-12-29</modified>
     </dates>
   </vuln>
 
