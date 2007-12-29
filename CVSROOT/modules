@@ -17793,6 +17793,7 @@ zebra-server	ports/net/zebra-server
 zed		ports/editors/zed
 zend-framework	ports/www/zend-framework
 zenity		ports/x11/zenity
+zenphoto	ports/www/zenphoto
 zephulor	ports/games/zephulor
 zeroer		ports/sysutils/zeroer
 zeroinstall-injector	ports/devel/zeroinstall-injector
