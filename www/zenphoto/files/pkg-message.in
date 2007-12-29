@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------
+
+Browse http://your.host.tld/%%PORTNAME%%/ to configure your gallery
+
+---------------------------------------------------------------------------
+To make zenphoto available through your web site, I suggest
+that you add something like the following to httpd.conf:
+
+    Alias /zenphoto/ "%%WWWDIR%%/"
+
+    <Directory "%%WWWDIR%%/">
+        Options none
+        AllowOverride Limit
+        Order Deny,Allow
+        Allow from all
+    </Directory>
