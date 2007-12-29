@@ -1,0 +1,231 @@
+%%WWWDIR%%/index.php
+%%WWWDIR%%/rss-comments.php
+%%WWWDIR%%/rss.php
+%%WWWDIR%%/themes/default/album.php
+%%WWWDIR%%/themes/default/archive.php
+%%WWWDIR%%/themes/default/image.php
+%%WWWDIR%%/themes/default/images/img-bg.gif
+%%WWWDIR%%/themes/default/images/tag.png
+%%WWWDIR%%/themes/default/index.php
+%%WWWDIR%%/themes/default/search.php
+%%WWWDIR%%/themes/default/styles/dark.css
+%%WWWDIR%%/themes/default/styles/light.css
+%%WWWDIR%%/themes/default/styles/sterile-dark.css
+%%WWWDIR%%/themes/default/styles/sterile-light.css
+%%WWWDIR%%/themes/default/theme.png
+%%WWWDIR%%/themes/default/theme.txt
+%%WWWDIR%%/themes/default/themeoptions.php
+%%WWWDIR%%/themes/effervescence_plus/album.php
+%%WWWDIR%%/themes/effervescence_plus/archive.php
+%%WWWDIR%%/themes/effervescence_plus/customfunctions.php
+%%WWWDIR%%/themes/effervescence_plus/image.php
+%%WWWDIR%%/themes/effervescence_plus/images/slimbox/closelabel.gif
+%%WWWDIR%%/themes/effervescence_plus/images/slimbox/loading.gif
+%%WWWDIR%%/themes/effervescence_plus/images/slimbox/nextlabel.gif
+%%WWWDIR%%/themes/effervescence_plus/images/slimbox/prevlabel.gif
+%%WWWDIR%%/themes/effervescence_plus/images/smooth/carrow1.gif
+%%WWWDIR%%/themes/effervescence_plus/images/smooth/carrow2.gif
+%%WWWDIR%%/themes/effervescence_plus/images/smooth/fleche1.gif
+%%WWWDIR%%/themes/effervescence_plus/images/smooth/fleche1.png
+%%WWWDIR%%/themes/effervescence_plus/images/smooth/fleche2.gif
+%%WWWDIR%%/themes/effervescence_plus/images/smooth/fleche2.png
+%%WWWDIR%%/themes/effervescence_plus/images/smooth/loading-bar-black.gif
+%%WWWDIR%%/themes/effervescence_plus/images/smooth/open.gif
+%%WWWDIR%%/themes/effervescence_plus/images/smooth/open.png
+%%WWWDIR%%/themes/effervescence_plus/index.php
+%%WWWDIR%%/themes/effervescence_plus/jd.gallery.css
+%%WWWDIR%%/themes/effervescence_plus/scripts/bluranchors.js
+%%WWWDIR%%/themes/effervescence_plus/scripts/jd.gallery.js
+%%WWWDIR%%/themes/effervescence_plus/scripts/jd.gallery.set.js
+%%WWWDIR%%/themes/effervescence_plus/scripts/jd.gallery.transitions.js
+%%WWWDIR%%/themes/effervescence_plus/scripts/mootools.v1.11.js
+%%WWWDIR%%/themes/effervescence_plus/scripts/slimbox.js
+%%WWWDIR%%/themes/effervescence_plus/scripts/swfobject.js
+%%WWWDIR%%/themes/effervescence_plus/search.php
+%%WWWDIR%%/themes/effervescence_plus/simpleviewer.swf
+%%WWWDIR%%/themes/effervescence_plus/slimbox.css
+%%WWWDIR%%/themes/effervescence_plus/styles/blue and green play.css
+%%WWWDIR%%/themes/effervescence_plus/styles/effervescence.css
+%%WWWDIR%%/themes/effervescence_plus/styles/free chocolates.css
+%%WWWDIR%%/themes/effervescence_plus/styles/kish-my father.css
+%%WWWDIR%%/themes/effervescence_plus/styles/machu picchu.css
+%%WWWDIR%%/themes/effervescence_plus/styles/oktoberfest.css
+%%WWWDIR%%/themes/effervescence_plus/styles/poolside.css
+%%WWWDIR%%/themes/effervescence_plus/styles/see you again.css
+%%WWWDIR%%/themes/effervescence_plus/theme.jpg
+%%WWWDIR%%/themes/effervescence_plus/theme.txt
+%%WWWDIR%%/themes/effervescence_plus/themeoptions.php
+%%WWWDIR%%/themes/example/album.php
+%%WWWDIR%%/themes/example/archive.php
+%%WWWDIR%%/themes/example/image.php
+%%WWWDIR%%/themes/example/index.php
+%%WWWDIR%%/themes/example/search.php
+%%WWWDIR%%/themes/example/tag.png
+%%WWWDIR%%/themes/example/theme.png
+%%WWWDIR%%/themes/example/theme.txt
+%%WWWDIR%%/themes/example/themeoptions.php
+%%WWWDIR%%/themes/example/zen.css
+%%WWWDIR%%/themes/stopdesign/album.php
+%%WWWDIR%%/themes/stopdesign/albumarchive.php
+%%WWWDIR%%/themes/stopdesign/css/comments-hide.css
+%%WWWDIR%%/themes/stopdesign/css/comments-show.css
+%%WWWDIR%%/themes/stopdesign/css/custom.css
+%%WWWDIR%%/themes/stopdesign/css/master.css
+%%WWWDIR%%/themes/stopdesign/css/photos.css
+%%WWWDIR%%/themes/stopdesign/image.php
+%%WWWDIR%%/themes/stopdesign/img/bg_gal.gif
+%%WWWDIR%%/themes/stopdesign/img/bg_gal.png
+%%WWWDIR%%/themes/stopdesign/img/bg_page.jpg
+%%WWWDIR%%/themes/stopdesign/img/bg_path.gif
+%%WWWDIR%%/themes/stopdesign/img/bg_shadow.png
+%%WWWDIR%%/themes/stopdesign/img/bg_slide.gif
+%%WWWDIR%%/themes/stopdesign/img/bg_slide.png
+%%WWWDIR%%/themes/stopdesign/img/bg_slide_sm.gif
+%%WWWDIR%%/themes/stopdesign/img/bg_slide_sm.png
+%%WWWDIR%%/themes/stopdesign/img/btn_add_a_comment.gif
+%%WWWDIR%%/themes/stopdesign/img/btn_all_favorites.gif
+%%WWWDIR%%/themes/stopdesign/img/btn_gallery_archive.gif
+%%WWWDIR%%/themes/stopdesign/img/btn_go.gif
+%%WWWDIR%%/themes/stopdesign/img/btn_hide.gif
+%%WWWDIR%%/themes/stopdesign/img/btn_preview.gif
+%%WWWDIR%%/themes/stopdesign/img/btn_rss.gif
+%%WWWDIR%%/themes/stopdesign/img/btn_save.gif
+%%WWWDIR%%/themes/stopdesign/img/btn_show.gif
+%%WWWDIR%%/themes/stopdesign/img/btn_submit.gif
+%%WWWDIR%%/themes/stopdesign/img/btn_view_gallery.gif
+%%WWWDIR%%/themes/stopdesign/img/bullet_white.gif
+%%WWWDIR%%/themes/stopdesign/img/canon_sd10.jpg
+%%WWWDIR%%/themes/stopdesign/img/divider_l.gif
+%%WWWDIR%%/themes/stopdesign/img/divider_l.png
+%%WWWDIR%%/themes/stopdesign/img/divider_r.gif
+%%WWWDIR%%/themes/stopdesign/img/divider_r.png
+%%WWWDIR%%/themes/stopdesign/img/icon_pushpin.gif
+%%WWWDIR%%/themes/stopdesign/img/moreslide_next.gif
+%%WWWDIR%%/themes/stopdesign/img/moreslide_prev.gif
+%%WWWDIR%%/themes/stopdesign/img/photonav_next.gif
+%%WWWDIR%%/themes/stopdesign/img/photonav_next.png
+%%WWWDIR%%/themes/stopdesign/img/photonav_prev.gif
+%%WWWDIR%%/themes/stopdesign/img/photonav_prev.png
+%%WWWDIR%%/themes/stopdesign/img/slide_minis.gif
+%%WWWDIR%%/themes/stopdesign/img/txt_backward.gif
+%%WWWDIR%%/themes/stopdesign/img/txt_forward.gif
+%%WWWDIR%%/themes/stopdesign/index.php
+%%WWWDIR%%/themes/stopdesign/js/comments.js
+%%WWWDIR%%/themes/stopdesign/js/rememberMe.js
+%%WWWDIR%%/themes/stopdesign/search.php
+%%WWWDIR%%/themes/stopdesign/theme.png
+%%WWWDIR%%/themes/stopdesign/theme.txt
+%%WWWDIR%%/themes/stopdesign/themeoptions.php
+%%WWWDIR%%/zp-core/Sajax.php
+%%WWWDIR%%/zp-core/admin-functions.php
+%%WWWDIR%%/zp-core/admin.css
+%%WWWDIR%%/zp-core/admin.php
+%%WWWDIR%%/zp-core/albumsort.php
+%%WWWDIR%%/zp-core/auth_zp.php
+%%WWWDIR%%/zp-core/cache-images.php
+%%WWWDIR%%/zp-core/changelog.html
+%%WWWDIR%%/zp-core/class-album.php
+%%WWWDIR%%/zp-core/class-gallery.php
+%%WWWDIR%%/zp-core/class-image.php
+%%WWWDIR%%/zp-core/class-search.php
+%%WWWDIR%%/zp-core/classes.php
+%%WWWDIR%%/zp-core/controller.php
+%%WWWDIR%%/zp-core/exif/exif.php
+%%WWWDIR%%/zp-core/exif/makers/canon.php
+%%WWWDIR%%/zp-core/exif/makers/fujifilm.php
+%%WWWDIR%%/zp-core/exif/makers/gps.php
+%%WWWDIR%%/zp-core/exif/makers/nikon.php
+%%WWWDIR%%/zp-core/exif/makers/olympus.php
+%%WWWDIR%%/zp-core/exif/makers/panasonic.php
+%%WWWDIR%%/zp-core/exif/makers/sanyo.php
+%%WWWDIR%%/zp-core/flvplayer.swf
+%%WWWDIR%%/zp-core/full-image.php
+%%WWWDIR%%/zp-core/functions-controller.php
+%%WWWDIR%%/zp-core/functions-db.php
+%%WWWDIR%%/zp-core/functions-image.php
+%%WWWDIR%%/zp-core/functions.php
+%%WWWDIR%%/zp-core/i.php
+%%WWWDIR%%/zp-core/images/cache.png
+%%WWWDIR%%/zp-core/images/err-cachewrite.gif
+%%WWWDIR%%/zp-core/images/err-imagegeneral.gif
+%%WWWDIR%%/zp-core/images/err-imagenotfound.gif
+%%WWWDIR%%/zp-core/images/err-nogd.gif
+%%WWWDIR%%/zp-core/images/fail.png
+%%WWWDIR%%/zp-core/images/movie.jpg
+%%WWWDIR%%/zp-core/images/pass.png
+%%WWWDIR%%/zp-core/images/rss.gif
+%%WWWDIR%%/zp-core/images/videoDefault.png
+%%WWWDIR%%/zp-core/images/warn.png
+%%WWWDIR%%/zp-core/images/watermark-video.png
+%%WWWDIR%%/zp-core/images/watermark.png
+%%WWWDIR%%/zp-core/images/zen-logo.gif
+%%WWWDIR%%/zp-core/images/zen-logo.jpg
+%%WWWDIR%%/zp-core/images/zenphoto.gif
+%%WWWDIR%%/zp-core/index.php
+%%WWWDIR%%/zp-core/js/admin.js
+%%WWWDIR%%/zp-core/js/ajax.js
+%%WWWDIR%%/zp-core/js/flvplayer.js
+%%WWWDIR%%/zp-core/js/jquery.js
+%%WWWDIR%%/zp-core/js/prototype.js
+%%WWWDIR%%/zp-core/js/scriptaculous/builder.js
+%%WWWDIR%%/zp-core/js/scriptaculous/controls.js
+%%WWWDIR%%/zp-core/js/scriptaculous/dragdrop.js
+%%WWWDIR%%/zp-core/js/scriptaculous/effects.js
+%%WWWDIR%%/zp-core/js/scriptaculous/scriptaculous.js
+%%WWWDIR%%/zp-core/js/scriptaculous/slider.js
+%%WWWDIR%%/zp-core/js/scriptaculous/unittest.js
+%%WWWDIR%%/zp-core/js/scriptaculous/util.js
+%%WWWDIR%%/zp-core/js/scripts-common.js
+%%WWWDIR%%/zp-core/js/thickbox.css
+%%WWWDIR%%/zp-core/js/thickbox.js
+%%WWWDIR%%/zp-core/kses.php
+%%WWWDIR%%/zp-core/option-defaults.php
+%%WWWDIR%%/zp-core/pclzip.lib.php
+%%WWWDIR%%/zp-core/plugins/exifimagerotate.php
+%%WWWDIR%%/zp-core/plugins/flip_image.php
+%%WWWDIR%%/zp-core/plugins/image_mirror.php
+%%WWWDIR%%/zp-core/plugins/image_rotate.php
+%%WWWDIR%%/zp-core/plugins/imagerating/rating.js
+%%WWWDIR%%/zp-core/plugins/imagerating/update.php
+%%WWWDIR%%/zp-core/plugins/phooglelite.php
+%%WWWDIR%%/zp-core/plugins/print_album_menu.php
+%%WWWDIR%%/zp-core/plugins/spamfilters/akismet.php
+%%WWWDIR%%/zp-core/plugins/spamfilters/none.php
+%%WWWDIR%%/zp-core/plugins/spamfilters/simple.php
+%%WWWDIR%%/zp-core/plugins/spamfilters/spamassassin.php
+%%WWWDIR%%/zp-core/plugins/zipfile.php
+%%WWWDIR%%/zp-core/refresh-metadata.php
+%%WWWDIR%%/zp-core/setup.php
+%%WWWDIR%%/zp-core/sortable.php
+%%WWWDIR%%/zp-core/template-functions.php
+%%WWWDIR%%/zp-core/upgrade.php
+%%WWWDIR%%/zp-core/utf8.php
+%%WWWDIR%%/zp-core/zp-config.php.example
+@dirrm %%WWWDIR%%/zp-core/plugins/spamfilters
+@dirrm %%WWWDIR%%/zp-core/plugins/imagerating
+@dirrm %%WWWDIR%%/zp-core/plugins
+@dirrm %%WWWDIR%%/zp-core/js/scriptaculous
+@dirrm %%WWWDIR%%/zp-core/js
+@dirrm %%WWWDIR%%/zp-core/images
+@dirrm %%WWWDIR%%/zp-core/exif/makers
+@dirrm %%WWWDIR%%/zp-core/exif
+@dirrmtry %%WWWDIR%%/zp-core
+@dirrm %%WWWDIR%%/themes/stopdesign/js
+@dirrm %%WWWDIR%%/themes/stopdesign/img
+@dirrm %%WWWDIR%%/themes/stopdesign/css
+@dirrm %%WWWDIR%%/themes/stopdesign
+@dirrm %%WWWDIR%%/themes/example
+@dirrm %%WWWDIR%%/themes/effervescence_plus/styles
+@dirrm %%WWWDIR%%/themes/effervescence_plus/scripts
+@dirrm %%WWWDIR%%/themes/effervescence_plus/images/smooth
+@dirrm %%WWWDIR%%/themes/effervescence_plus/images/slimbox
+@dirrm %%WWWDIR%%/themes/effervescence_plus/images
+@dirrm %%WWWDIR%%/themes/effervescence_plus
+@dirrm %%WWWDIR%%/themes/default/styles
+@dirrm %%WWWDIR%%/themes/default/images
+@dirrm %%WWWDIR%%/themes/default
+@dirrm %%WWWDIR%%/themes
+@dirrm %%WWWDIR%%/cache
+@dirrmtry %%WWWDIR%%/albums
+@dirrmtry %%WWWDIR%%
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%

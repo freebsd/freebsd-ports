@@ -1380,6 +1380,7 @@
     SUBDIR += yaws
     SUBDIR += youtube_dl
     SUBDIR += zend-framework
+    SUBDIR += zenphoto
     SUBDIR += zerowait-httpd
     SUBDIR += ziproxy
     SUBDIR += znavigator
