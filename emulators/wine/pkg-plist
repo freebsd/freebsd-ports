@@ -1024,7 +1024,6 @@ share/applications/wine.desktop
 @dirrm include/wine/msvcrt/sys
 @dirrm include/wine/msvcrt
 @dirrm include/wine
-@dirrmtry man/man3w
 @dirrm %%DATADIR%%/wine/fonts
 @dirrm %%DATADIR%%/wine
 @dirrmtry %%DATADIR%%/aclocal
