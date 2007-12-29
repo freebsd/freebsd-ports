@@ -7,6 +7,7 @@
 
 PORTNAME=	tsclient
 PORTVERSION=	0.150
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	SF
 
@@ -34,7 +35,7 @@ PORTDOCS=	COPYING NEWS README
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNOME)
-USE_GNOME+=	gnomeprefix gnomehack libgnomeui
+USE_GNOME+=	gnomeprefix gnomehack gnomepanel libgnomeui 
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
@@ -48,10 +49,7 @@ RUN_DEPENDS+=	Xnest:${X_NESTSERVER_PORT}
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/applet/d' \
-		${WRKSRC}/configure.in
-	@${REINPLACE_CMD} -e '/^SUBDIRS/ s,applet ,,g' \
-			  -e '/^man1dir *=/ s,datadir,prefix,g' \
+	@${REINPLACE_CMD} -e '/^man1dir *=/ s,datadir,prefix,g' \
 		${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|g' \
 		${WRKSRC}/aclocal.m4
