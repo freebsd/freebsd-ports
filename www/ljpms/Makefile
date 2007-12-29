@@ -9,7 +9,7 @@ PORTNAME=	ljpms
 PORTVERSION=	1.4
 CATEGORIES=	www perl5 deskutils
 MASTER_SITES=	http://www.offtopia.net/ljsm/
-DISTFILES=	ljpms-1.4.zip
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ache@freebsd.org
 COMMENT=	Livejournal.com postings mass-restore and permissions utility
