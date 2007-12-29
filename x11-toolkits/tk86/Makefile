@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.5.b.1
+PORTVERSION=	8.5.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
 PKGNAMESUFFIX?=	${THREADS_SUFFIX}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.b./b/}-src
+DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
@@ -36,7 +36,8 @@ SUB_FILES=	pkgIndex.tcl
 USE_TCL=	${SHORT_TK_VER}
 
 OPTIONS=	TK85_MAN "Install tk 8.5 manpages" off \
-		XFT "Use Xft fonts" on
+		XFT "Use Xft fonts" on \
+		DEMOS "Install demos" off
 .else
 USE_TK=		${SHORT_TK_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
@@ -66,6 +67,13 @@ CONFIGURE_ARGS+=	--disable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 			ac_cv_path_tclsh="${TCLSH}"
 
 SUB_LIST+=		TK_PROVIDE=""
+
+.if defined(WITH_DEMOS)
+INSTALL_TARGET+=	install install-demos
+PLIST_SUB+=	DEMOS=""
+.else
+PLIST_SUB+=	DEMOS="@comment "
+.endif
 
 .if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK85_MAN)
 

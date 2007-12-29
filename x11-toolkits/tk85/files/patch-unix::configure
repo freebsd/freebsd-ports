@@ -1,6 +1,6 @@
---- configure.orig	2007-09-24 18:09:13.000000000 +0200
-+++ configure	2007-09-27 20:50:38.000000000 +0200
-@@ -3535,6 +3535,7 @@
+--- configure.orig	2007-12-17 18:57:25.000000000 +0100
++++ configure	2007-12-29 14:17:55.000000000 +0100
+@@ -3536,6 +3536,7 @@
  # Threads support - this auto-enables if Tcl was compiled threaded
  #------------------------------------------------------------------------
  
@@ -8,22 +8,26 @@
  
      # Check whether --enable-threads or --disable-threads was given.
  if test "${enable_threads+set}" = set; then
-@@ -5694,20 +5695,20 @@
+@@ -5828,7 +5829,7 @@
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
  	    DL_LIBS=""
 -	    LDFLAGS="$LDFLAGS -export-dynamic"
 +	    LDFLAGS=""
- 	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
- 	    LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
- 	    if test "${TCL_THREADS}" = "1" ; then
+ 	    if test $doRpath = yes; then
+ 
+ 		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+@@ -5839,16 +5840,16 @@
+ 
  		# The -pthread needs to go in the CFLAGS, not LIBS
  		LIBS=`echo $LIBS | sed s/-pthread//`
 -		CFLAGS="$CFLAGS -pthread"
 -	    	LDFLAGS="$LDFLAGS -pthread"
 +		CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
 +	    	LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
- 	    fi
+ 
+ fi
+ 
  	    case $system in
 -	    FreeBSD-3.*)
 +	    FreeBSD-*)
