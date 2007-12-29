@@ -12,17 +12,11 @@ PORTNAME=	rxvt
 PORTVERSION=	2.7.10
 PORTREVISION=	2
 CATEGORIES+=	x11
-MASTER_SITES=	\
-		http://slackware.osuosl.org/slackware_source/xap/rxvt/ \
-		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old devel
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
-DISTNAME=	rxvt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low memory usage xterm replacement that supports color
-
-FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_AUTOTOOLS=	libtool:15
 USE_PERL5_BUILD=yes
@@ -33,16 +27,8 @@ CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-languages \
 		--with-xpm --enable-xpm-background --enable-transparency \
 		--enable-shared
 INSTALLS_SHLIB=	yes
-USE_BZIP2=	yes
 
 MAN1=		rxvt.1
-
-# fetch(1) is misbehaving with these MASTER_SITES
-FETCH_CMD=	${LOCALBASE}/bin/wget
-FETCH_REGET=	0
-DISABLE_SIZE=	yes
-FETCH_BEFORE_ARGS=
-FETCH_AFTER_ARGS=
 
 # disable backspace key
 .if defined(WITHOUT_BACKSPACE_KEY)

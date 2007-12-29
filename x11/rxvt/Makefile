@@ -12,16 +12,10 @@ PORTNAME=	rxvt
 PORTVERSION=	2.6.4
 PORTREVISION=	3
 CATEGORIES+=	x11
-MASTER_SITES=	\
-		http://public.planetmirror.com/pub/rxvt/%SUBDIR%/ \
-		http://slackware.osuosl.org/slackware-8.1/source/xap/rxvt/ \
-		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old devel
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low memory usage xterm replacement that supports color
-
-FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -30,16 +24,8 @@ CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
 		--with-xpm --enable-xpm-background --enable-transparency \
 		--with-xpm-includes=${X11BASE}/include/X11 \
 		--with-xpm-library=${X11BASE}/lib
-USE_BZIP2=	yes
 MAN1=		rxvt.1
 PLIST_FILES=	bin/rxvt
-
-# fetch(1) is misbehaving with these MASTER_SITES
-FETCH_CMD=	${LOCALBASE}/bin/wget
-FETCH_REGET=	0
-DISABLE_SIZE=	yes
-FETCH_BEFORE_ARGS=
-FETCH_AFTER_ARGS=
 
 # enable big5 support
 .if defined(WITH_BIG5)
