@@ -1,14 +1,6 @@
---- ljpms.pl.orig	Fri Nov 17 17:12:34 2006
-+++ ljpms.pl	Sat Mar 24 22:53:07 2007
-@@ -217,7 +217,6 @@
- 
- sub post_event {
- 	my ($entry) = @_;
--	my ($year, $month, $day, $hour, $min) = split(/\D+/, my_encode($entry->{'eventtime'}));
- 
- 	my $soap_message = &make_message($entry);
- 	$soap_message->{'props'}->{'opt_backdated'} = 1;
-@@ -243,7 +242,7 @@
+--- ljpms.pl.bak	2007-10-02 19:33:33.000000000 +0400
++++ ljpms.pl	2007-12-29 20:39:00.000000000 +0300
+@@ -330,7 +330,7 @@
  
  sub make_message {
  	my ($entry) = @_;
