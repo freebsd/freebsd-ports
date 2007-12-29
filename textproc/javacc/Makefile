@@ -15,13 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java parser generator and lexical analyzer
 
-FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
-
 USE_JAVA=	yes
 USE_ANT=	yes
 DISABLE_SIZE=	yes
-FETCH_CMD=	${LOCALBASE}/bin/wget
-FETCH_BEFORE_ARGS=	--no-check-certificate
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
