@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.48
+PORTVERSION=	0.9.52
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
@@ -57,6 +57,7 @@ pre-build:
 	cd ${WRKSRC} && make depend
 
 post-install:
+	${RM} -f ${MAN1PREFIX}/man/de.UTF-8/man1/wine.1
 	${MV} -f ${PREFIX}/lib/libwine.so.1.0 ${PREFIX}/lib/libwine.so.1
 	${LN} -sf libwine.so.1 ${PREFIX}/lib/libwine.so
 .if !defined(NOPORTDOCS)
@@ -65,11 +66,13 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .for i in progman uninstaller winedbg winemine
-	${INSTALL_DATA} ${WRKSRC}/programs/${i}/README ${DOCSDIR}/README.${i}
+	@${INSTALL_DATA} ${WRKSRC}/programs/${i}/README ${DOCSDIR}/README.${i}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
+	@${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl ${PREFIX}/lib/wine
+	@${MKDIR} ${DESKTOPDIR}
+	@${MV} ${DATADIR}/applications/wine.desktop ${DESKTOPDIR}/
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
