@@ -4,7 +4,14 @@ for your environment.  All the files related to %%PORTNAME%% have been installed
 
 For information on proper configuration, see http://www.ossec.net/.
 
-To enable the startup script, add ossec-hids_enable="YES" to /etc/rc.conf.
+To enable the startup script, add ossechids_enable="YES" to /etc/rc.conf.
+To enable database output, execute:
+
+%%PREFIX%%/%%PORTNAME%%/bin/ossec-control enable database
+
+Then check this tutorial:
+
+http://www.ossec.net/wiki/index.php/Know_How:DatabaseOutput
 
 When you deinstall this port after starting the daemons once, many directories that are
 created by the daemons will remain.  To fully remove the port you need to delete those

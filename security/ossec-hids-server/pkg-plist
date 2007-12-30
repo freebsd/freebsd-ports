@@ -1,12 +1,16 @@
 %%PORTNAME%%/active-response/bin/disable-account.sh
 %%PORTNAME%%/active-response/bin/firewall-drop.sh
 %%PORTNAME%%/active-response/bin/host-deny.sh
+%%PORTNAME%%/active-response/bin/ipfw_mac.sh
+%%PORTNAME%%/active-response/bin/ipfw.sh
+%%PORTNAME%%/active-response/bin/pf.sh
 %%PORTNAME%%/active-response/bin/route-null.sh
 %%PORTNAME%%/bin/clear_stats
 %%PORTNAME%%/bin/list_agents
 %%PORTNAME%%/bin/manage_agents
 %%PORTNAME%%/bin/ossec-agentd
 %%PORTNAME%%/bin/ossec-analysisd
+%%PORTNAME%%/bin/ossec-dbd
 %%PORTNAME%%/bin/ossec-control
 %%PORTNAME%%/bin/ossec-execd
 %%PORTNAME%%/bin/ossec-logcollector
@@ -21,6 +25,7 @@
 %%PORTNAME%%/etc/ossec.conf.sample
 %%PORTNAME%%/etc/shared/rootkit_files.txt
 %%PORTNAME%%/etc/shared/rootkit_trojans.txt
+%%PORTNAME%%/etc/shared/system_audit_rcl.txt
 %%PORTNAME%%/etc/shared/win_applications_rcl.txt
 %%PORTNAME%%/etc/shared/win_audit_rcl.txt
 %%PORTNAME%%/etc/shared/win_malware_rcl.txt
@@ -40,6 +45,7 @@
 %%PORTNAME%%/rules/ms-exchange_rules.xml
 %%PORTNAME%%/rules/ms_ftpd_rules.xml
 %%PORTNAME%%/rules/msauth_rules.xml
+%%PORTNAME%%/rules/mysql_rules.xml
 %%PORTNAME%%/rules/named_rules.xml
 %%PORTNAME%%/rules/netscreenfw_rules.xml
 %%PORTNAME%%/rules/ossec_rules.xml
@@ -47,12 +53,14 @@
 %%PORTNAME%%/rules/pix_rules.xml
 %%PORTNAME%%/rules/policy_rules.xml
 %%PORTNAME%%/rules/postfix_rules.xml
+%%PORTNAME%%/rules/postgresql_rules.xml
 %%PORTNAME%%/rules/proftpd_rules.xml
 %%PORTNAME%%/rules/pure-ftpd_rules.xml
 %%PORTNAME%%/rules/racoon_rules.xml
 %%PORTNAME%%/rules/rules_config.xml
 %%PORTNAME%%/rules/sendmail_rules.xml
 %%PORTNAME%%/rules/smbd_rules.xml
+%%PORTNAME%%/rules/sonicwall_rules.xml
 %%PORTNAME%%/rules/spamd_rules.xml
 %%PORTNAME%%/rules/squid_rules.xml
 %%PORTNAME%%/rules/sshd_rules.xml
