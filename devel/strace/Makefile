@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	strace
-PORTVERSION=	4.5.6
+PORTVERSION=	4.5.7
 CATEGORIES=	devel sysutils
 MASTER_SITES=	SF
 
