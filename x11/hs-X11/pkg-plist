@@ -1,3 +1,6 @@
+%%SUBDIR%%/Graphics/X11/Xinerama.hi
+%%SUBDIR%%/Graphics/X11/Xlib/Extras.hi
+%%SUBDIR%%/include/XlibExtras.h
 %%SUBDIR%%/Graphics/X11/Xlib/Atom.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Color.hi
 %%SUBDIR%%/Graphics/X11/Xlib/Context.hi
@@ -17,6 +20,8 @@
 %%SUBDIR%%/HSX11-%%PORTVERSION%%.o
 %%SUBDIR%%/include/HsXlib.h
 %%SUBDIR%%/%%PORTNAME%%-register.sh
+share/doc/X11-1.4.1/LICENSE
+@dirrm share/doc/X11-1.4.1
 @dirrm %%SUBDIR%%/Graphics/X11/Xlib
 @dirrm %%SUBDIR%%/Graphics/X11
 @dirrmtry %%SUBDIR%%/Graphics
