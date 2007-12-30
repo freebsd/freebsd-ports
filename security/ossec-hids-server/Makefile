@@ -6,17 +6,23 @@
 #
 
 PORTNAME=	ossec-hids
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.ossec.net/files/ \
 		http://www.ossec.net/files/old/
-PKGNAMESUFFIX?=	-server
+PKGNAMESUFFIX=	-server
 
 MAINTAINER=	valerio.daelli@gmail.com
-COMMENT=	A security tool to monitor and check logs and intrusions
+COMMENT?=	A security tool to monitor and check logs and intrusions
 
 USE_RC_SUBR=	ossec-hids
+
+.if defined(WITH_DB)
+USE_MYSQL=	yes
+USE_PGSQL=	yes
+USE_BDB=	yes
+.endif
 
 SUB_LIST=	PORTNAME=${PORTNAME}
 SUB_FILES=	pkg-message
@@ -40,7 +46,19 @@ post-patch:
 	@${REINPLACE_CMD} 's|PREFIX|${PREFIX}/${PORTNAME}|' ${WRKSRC}/src/headers/defs.h
 
 do-build:
+.if defined(WITH_DB)
+.if defined(CLIENT_ONLY)
+	@cd ${WRKSRC}/src;${MAKE} setagent;${MAKE} all;${MAKE} build
+.else
+	@cd ${WRKSRC}/src;${MAKE} setdb;${MAKE} all;${MAKE} build
+.endif
+.else
+.if defined(CLIENT_ONLY)
+	@cd ${WRKSRC}/src;${MAKE} setagent;${MAKE} all;${MAKE} build
+.else
 	@cd ${WRKSRC}/src;${MAKE} all;${MAKE} build
+.endif
+.endif
 
 .if defined(CLIENT_ONLY)
 do-install:
