@@ -1,25 +1,33 @@
---- ./Makefile.PL.orig	Thu Mar 22 20:26:42 2007
-+++ ./Makefile.PL	Thu Mar 22 20:27:01 2007
-@@ -17,22 +17,4 @@
+--- ./Makefile.PL.orig	Wed Dec 26 15:47:34 2007
++++ ./Makefile.PL	Wed Dec 26 15:49:41 2007
+@@ -17,30 +17,4 @@
  requires    'HTTP::Request'    =>    0;
  requires    'HTTP::Response'   =>    0;
  
--build_requires   'Test::More'                   =>    0;
--build_requires   'POE::Component::Client::HTTP' =>    0;
+-build_requires   'Test::More'                   => 0.47;
+-build_requires   'LWP::UserAgent'               =>    0;
+-build_requires   'LWP::ConnCache'               =>    0;
+-
+-my $value = prompt( 'Do you want to test streaming ( requires POE::Component::Client::HTTP ) [y/N]?', 'N' );
+-build_requires   'POE::Component::Client::HTTP' =>    0 if $value =~ /^Y$/i;
 -
 -# Ask users if they want SSL support
--my $value = prompt( 'Do you want SSL support ( requires POE::Component::SSLify ) [Y/n]?', 'N' );
+-$value = prompt( 'Do you want SSL support ( requires POE::Component::SSLify ) [y/N]?', 'N' );
 -
 -# Add to the prereqs PoCo::SSLify?
--if ( $value =~ /^Y$/i ) {
--    requires 'POE::Component::SSLify' => '0.04';
--}
+-requires 'POE::Component::SSLify' => '0.04' if $value =~ /^Y$/i;
 -
 -# Ask users if they want PreFork support
--$value = prompt( 'Do you want PreFork support ( requires IPC::Shareable ) [Y/n]?', 'N' );
+-$value = prompt( 'Do you want PreFork support ( requires IPC::Shareable ) [y/N]?', 'N' );
 -
 -# Add to the prereqs IPC::Shareable?
 -if ( $value =~ /^Y$/i ) {
--    requires 'IPC::Shareable' => '0';
+-   requires 'IPC::Shareable' => '0';
+-   build_requires   'POE::Component::Client::HTTP' =>    0;
 -}
+-
+-# Sanity check
+-eval { require IPC::Shareable; };
+-build_requires 'POE::Component::Client::HTTP' =>    0 unless $@;
+-
  WriteAll();
