@@ -1,42 +1,17 @@
-bin/ghc
 bin/ghc-%%GHC_VERSION%%
-bin/ghci
-bin/ghci-%%GHC_VERSION%%
-bin/ghc-pkg
 bin/ghc-pkg-%%GHC_VERSION%%
-bin/hasktags
-bin/hsc2hs
-bin/hp2ps
+bin/ghci-%%GHC_VERSION%%
 bin/ghcprof
+bin/hasktags
+bin/hp2ps
+bin/hsc2hs
+bin/hsc2hs-ghc-%%GHC_VERSION%%
 bin/runghc
 bin/runhaskell
-lib/ghc-%%GHC_VERSION%%/HSCabal.o
-lib/ghc-%%GHC_VERSION%%/HSHUnit.o
-lib/ghc-%%GHC_VERSION%%/HSQuickCheck.o
-lib/ghc-%%GHC_VERSION%%/HSbase.o
-lib/ghc-%%GHC_VERSION%%/HSbase_cbits.o
-lib/ghc-%%GHC_VERSION%%/HScgi.o
-lib/ghc-%%GHC_VERSION%%/HSfgl.o
-lib/ghc-%%GHC_VERSION%%/HSfilepath.o
 lib/ghc-%%GHC_VERSION%%/HSghc.o
-lib/ghc-%%GHC_VERSION%%/HShaskell-src.o
-lib/ghc-%%GHC_VERSION%%/HShaskell98.o
-lib/ghc-%%GHC_VERSION%%/HShtml.o
-lib/ghc-%%GHC_VERSION%%/HSmtl.o
-lib/ghc-%%GHC_VERSION%%/HSnetwork.o
-lib/ghc-%%GHC_VERSION%%/HSparsec.o
-lib/ghc-%%GHC_VERSION%%/HSreadline.o
-lib/ghc-%%GHC_VERSION%%/HSregex-base.o
-lib/ghc-%%GHC_VERSION%%/HSregex-compat.o
-lib/ghc-%%GHC_VERSION%%/HSregex-posix.o
 lib/ghc-%%GHC_VERSION%%/HSrts.o
-lib/ghc-%%GHC_VERSION%%/HSstm.o
-lib/ghc-%%GHC_VERSION%%/HStemplate-haskell.o
-lib/ghc-%%GHC_VERSION%%/HStime.o
-lib/ghc-%%GHC_VERSION%%/HSunix.o
-lib/ghc-%%GHC_VERSION%%/HSunix_cbits.o
-lib/ghc-%%GHC_VERSION%%/HSxhtml.o
 lib/ghc-%%GHC_VERSION%%/cgprof
+lib/ghc-%%GHC_VERSION%%/extra-gcc-opts
 lib/ghc-%%GHC_VERSION%%/ghc-%%GHC_VERSION%%
 lib/ghc-%%GHC_VERSION%%/ghc-asm
 lib/ghc-%%GHC_VERSION%%/ghc-pkg.bin
@@ -44,826 +19,13 @@ lib/ghc-%%GHC_VERSION%%/ghc-split
 lib/ghc-%%GHC_VERSION%%/ghc-usage.txt
 lib/ghc-%%GHC_VERSION%%/ghci-usage.txt
 lib/ghc-%%GHC_VERSION%%/hsc2hs-bin
-lib/ghc-%%GHC_VERSION%%/icons/absdelta.xbm
-lib/ghc-%%GHC_VERSION%%/icons/absolute.xbm
-lib/ghc-%%GHC_VERSION%%/icons/comm.xbm
-lib/ghc-%%GHC_VERSION%%/icons/commslack.xbm
-lib/ghc-%%GHC_VERSION%%/icons/comp.xbm
-lib/ghc-%%GHC_VERSION%%/icons/compress.xbm
-lib/ghc-%%GHC_VERSION%%/icons/compslack.xbm
-lib/ghc-%%GHC_VERSION%%/icons/delete.xbm
-lib/ghc-%%GHC_VERSION%%/icons/help.xbm
-lib/ghc-%%GHC_VERSION%%/icons/hrel.xbm
-lib/ghc-%%GHC_VERSION%%/icons/hrelslack.xbm
-lib/ghc-%%GHC_VERSION%%/icons/jump.xbm
-lib/ghc-%%GHC_VERSION%%/icons/mycomm.xbm
-lib/ghc-%%GHC_VERSION%%/icons/oxpara.xbm
-lib/ghc-%%GHC_VERSION%%/icons/percent.xbm
-lib/ghc-%%GHC_VERSION%%/icons/reldelta.xbm
-lib/ghc-%%GHC_VERSION%%/icons/sync.xbm
-lib/ghc-%%GHC_VERSION%%/icons/time.xbm
-lib/ghc-%%GHC_VERSION%%/icons/time1.xbm
-lib/ghc-%%GHC_VERSION%%/icons/uncompress.xbm
-lib/ghc-%%GHC_VERSION%%/icons/undo.xbm
-lib/ghc-%%GHC_VERSION%%/icons/wait.xbm
-lib/ghc-%%GHC_VERSION%%/icons/weightdelta.xbm
-lib/ghc-%%GHC_VERSION%%/imports/Array.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Array.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Bits.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Bits.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/CError.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/CError.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/CForeign.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/CForeign.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/CPUTime.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/CPUTime.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/CString.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/CString.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/CTypes.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/CTypes.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Char.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Char.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Complex.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Complex.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Applicative.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Applicative.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Arrow.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Arrow.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/Chan.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/Chan.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/MVar.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/MVar.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/QSem.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/QSem.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/QSemN.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/QSemN.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TArray.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TArray.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TChan.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TChan.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TMVar.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TMVar.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TVar.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM/TVar.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/SampleVar.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/SampleVar.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Exception.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Exception.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Cont.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Cont.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Cont/Class.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Cont/Class.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Error.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Error.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Error/Class.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Error/Class.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Fix.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Fix.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Identity.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Identity.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Instances.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Instances.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/List.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/List.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS/Class.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS/Class.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS/Lazy.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS/Lazy.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS/Strict.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS/Strict.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Reader.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Reader.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Reader/Class.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Reader/Class.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/ST.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/ST.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/ST/Lazy.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/ST/Lazy.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/ST/Strict.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/ST/Strict.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/STM.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/STM.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State/Class.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State/Class.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State/Lazy.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State/Lazy.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State/Strict.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State/Strict.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Trans.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Trans.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer/Class.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer/Class.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer/Lazy.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer/Lazy.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer/Strict.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer/Strict.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Parallel.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Parallel.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Control/Parallel/Strategies.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Control/Parallel/Strategies.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Array.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Array.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Array/Base.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Array/Base.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Array/Diff.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Array/Diff.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Array/IArray.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Array/IArray.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Array/IO.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Array/IO.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Array/IO/Internals.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Array/IO/Internals.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Array/MArray.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Array/MArray.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Array/ST.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Array/ST.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Array/Storable.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Array/Storable.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Array/Unboxed.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Array/Unboxed.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Bits.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Bits.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Bool.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Bool.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString/Base.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString/Base.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString/Char8.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString/Char8.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString/Fusion.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString/Fusion.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString/Lazy.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString/Lazy.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString/Lazy/Char8.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString/Lazy/Char8.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Char.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Char.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Complex.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Complex.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Dynamic.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Dynamic.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Either.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Either.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Eq.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Eq.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Fixed.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Fixed.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Foldable.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Foldable.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/FunctorM.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/FunctorM.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Generics.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Aliases.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Aliases.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Basics.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Basics.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Instances.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Instances.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Schemes.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Schemes.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Text.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Text.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Twins.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Twins.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Basic.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Basic.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Example.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Example.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Graph.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Graph.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Graphviz.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Graphviz.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/FiniteMap.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/FiniteMap.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/Heap.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/Heap.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/Queue.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/Queue.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/RootPath.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/RootPath.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/Thread.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal/Thread.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Monad.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Monad.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Monad/IOArray.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Monad/IOArray.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/NodeMap.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/NodeMap.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/ArtPoint.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/ArtPoint.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/BCC.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/BCC.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/BFS.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/BFS.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/DFS.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/DFS.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/Dominators.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/Dominators.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/GVD.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/GVD.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/Indep.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/Indep.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/MST.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/MST.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/MaxFlow.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/MaxFlow.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/MaxFlow2.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/MaxFlow2.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/Monad.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/Monad.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/SP.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/SP.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/TransClos.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query/TransClos.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Tree.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Tree.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/HashTable.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/HashTable.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/IORef.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/IORef.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Int.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Int.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/IntMap.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/IntMap.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/IntSet.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/IntSet.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Ix.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Ix.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/List.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/List.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Map.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Map.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Maybe.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Maybe.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Monoid.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Monoid.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Ord.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Ord.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/PackedString.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/PackedString.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Queue.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Queue.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Ratio.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Ratio.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/STRef.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/STRef.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/STRef/Lazy.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/STRef/Lazy.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/STRef/Strict.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/STRef/Strict.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Sequence.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Sequence.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Set.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Set.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/Days.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/Days.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/Easter.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/Easter.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/Gregorian.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/Gregorian.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/Julian.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/Julian.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/JulianYearDay.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/JulianYearDay.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/MonthDay.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/MonthDay.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/OrdinalDate.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/OrdinalDate.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/Private.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/Private.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/WeekDate.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar/WeekDate.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/CTimeval.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/CTimeval.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/POSIX.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/POSIX.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/Scale.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/Scale.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/TAI.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/TAI.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/UTC.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/UTC.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/UTCDiff.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock/UTCDiff.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Format/Parse.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Format/Parse.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Format.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Format.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime/LocalTime.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime/LocalTime.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime/TimeOfDay.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime/TimeOfDay.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime/TimeZone.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime/TimeZone.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Traversable.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Traversable.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Tree.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Tree.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Tuple.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Tuple.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Typeable.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Typeable.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Unique.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Unique.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Version.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Version.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Data/Word.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Word.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Debug/QuickCheck.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Debug/QuickCheck.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Debug/QuickCheck/Batch.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Debug/QuickCheck/Batch.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Debug/QuickCheck/Poly.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Debug/QuickCheck/Poly.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Debug/QuickCheck/Utils.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Debug/QuickCheck/Utils.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Debug/Trace.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Debug/Trace.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Directory.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Directory.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/Directory.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/Directory.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/Exception.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/Exception.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/FilePath.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/FilePath.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/Map.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/Map.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/RawSystem.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/RawSystem.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/ReadP.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat/ReadP.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compiler.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compiler.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Extension.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Extension.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/GetOpt.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/GetOpt.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/InstalledPackageInfo.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/InstalledPackageInfo.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/License.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/License.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Make.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Make.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Package.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Package.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/PackageDescription.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/PackageDescription.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/ParseUtils.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/ParseUtils.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess/Unlit.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess/Unlit.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Program.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Program.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Setup.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Setup.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Build.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Build.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Configure.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Configure.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/GHC.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/GHC.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/GHCPackageConfig.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/GHCPackageConfig.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Hugs.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Hugs.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Install.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Install.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/JHC.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/JHC.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/LocalBuildInfo.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/LocalBuildInfo.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/NHC.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/NHC.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Register.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Register.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/SrcDist.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/SrcDist.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Utils.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple/Utils.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Distribution/Version.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Distribution/Version.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/C.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/C.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/C/Error.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/C/Error.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/C/String.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/C/String.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/C/Types.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/C/Types.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/Concurrent.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/Concurrent.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/ForeignPtr.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/ForeignPtr.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal/Alloc.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal/Alloc.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal/Array.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal/Array.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal/Error.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal/Error.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal/Pool.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal/Pool.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal/Utils.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal/Utils.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/Ptr.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/Ptr.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/StablePtr.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/StablePtr.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/Storable.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/Storable.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/ForeignPtr.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/ForeignPtr.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Arr.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Arr.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Base.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Base.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Conc.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Conc.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/ConsoleHandler.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/ConsoleHandler.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Dotnet.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Dotnet.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Dynamic.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Dynamic.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Enum.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Enum.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Err.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Err.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Exception.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Exception.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Exts.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Exts.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Float.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Float.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/ForeignPtr.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/ForeignPtr.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Handle.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Handle.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/IO.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/IO.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/IOBase.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/IOBase.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Int.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Int.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/List.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/List.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Num.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Num.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/PArr.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/PArr.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Pack.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Pack.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/PrimopWrappers.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/PrimopWrappers.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Ptr.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Ptr.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Read.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Read.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Real.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Real.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/ST.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/ST.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/STRef.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/STRef.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Show.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Show.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Stable.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Stable.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Storable.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Storable.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/TopHandler.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/TopHandler.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Unicode.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Unicode.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Weak.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Weak.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/GHC/Word.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Word.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/IO.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/IO.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Int.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Int.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Ix.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Ix.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Extension.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Extension.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Lexer.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Lexer.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/ParseMonad.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/ParseMonad.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/ParseUtils.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/ParseUtils.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Parser.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Parser.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Pretty.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Pretty.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Syntax.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/Syntax.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Lib.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Lib.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Ppr.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Ppr.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/PprLib.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/PprLib.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Syntax.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH/Syntax.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/List.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/List.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Locale.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Locale.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/MarshalAlloc.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/MarshalAlloc.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/MarshalArray.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/MarshalArray.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/MarshalError.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/MarshalError.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/MarshalUtils.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/MarshalUtils.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Maybe.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Maybe.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Monad.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Monad.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Network.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Network/BSD.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/BSD.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Network/CGI.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/CGI.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Cookie.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Cookie.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Monad.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Monad.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Multipart.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Multipart.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Protocol.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/Protocol.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/RFC822Headers.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/CGI/RFC822Headers.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Network/Socket.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/Socket.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Network/URI.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Network/URI.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Numeric.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Numeric.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Prelude.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Prelude.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Ptr.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Ptr.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Random.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Random.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Ratio.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Ratio.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/StablePtr.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/StablePtr.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Storable.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Storable.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/CPUTime.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/CPUTime.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Cmd.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Cmd.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Console/GetOpt.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Console/GetOpt.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Console/Readline.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Console/Readline.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Console/SimpleLineEditor.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Console/SimpleLineEditor.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Directory.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Directory.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Directory/Internals.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Directory/Internals.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Environment.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Environment.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Exit.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Exit.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/FilePath/Posix.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/FilePath/Posix.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/FilePath/Windows.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/FilePath/Windows.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/FilePath.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/FilePath.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/IO.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/IO.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/IO/Error.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/IO/Error.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/IO/Unsafe.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/IO/Unsafe.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Info.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Info.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Locale.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Locale.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Mem.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Mem.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Mem/StableName.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Mem/StableName.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Mem/Weak.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Mem/Weak.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Directory.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Directory.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/DynamicLinker.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/DynamicLinker.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/DynamicLinker/Module.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/DynamicLinker/Module.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/DynamicLinker/Prim.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/DynamicLinker/Prim.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Env.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Env.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Error.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Error.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Files.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Files.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/IO.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/IO.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Internals.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Internals.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Process.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Process.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Resource.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Resource.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Signals.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Signals.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Signals/Exts.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Signals/Exts.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Temp.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Temp.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Terminal.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Terminal.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Time.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Time.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Types.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Types.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Unistd.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Unistd.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Posix/User.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/User.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Process.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Process.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Process/Internals.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Process/Internals.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Random.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Random.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Time.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Time.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Base.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Base.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Lang.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Lang.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Terminal.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Terminal.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Text.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit/Text.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck/Batch.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck/Batch.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck/Poly.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck/Poly.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck/Utils.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck/Utils.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Html.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Html.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Html/BlockTable.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Html/BlockTable.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Char.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Char.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Combinator.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Combinator.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Error.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Error.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Expr.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Expr.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Language.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Language.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Perm.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Perm.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Pos.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Pos.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Prim.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Prim.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Token.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec/Token.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/ReadP.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/ReadP.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/ReadPrec.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/ReadPrec.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/PrettyPrint.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/PrettyPrint.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/PrettyPrint/HughesPJ.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/PrettyPrint/HughesPJ.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Printf.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Printf.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Read.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Read.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Read/Lex.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Read/Lex.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Regex.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Regex.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Base.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Base.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Base/Context.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Base/Context.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Base/Impl.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Base/Impl.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Base/RegexLike.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Base/RegexLike.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Posix.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Posix.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Posix/ByteString.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Posix/ByteString.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Posix/String.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Posix/String.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Posix/Wrap.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Posix/Wrap.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Show.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Show.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/Show/Functions.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/Show/Functions.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/BlockTable.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/BlockTable.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Debug.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Debug.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Extras.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Extras.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Frameset.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Frameset.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Frameset/Attributes.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Frameset/Attributes.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Frameset/Elements.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Frameset/Elements.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Internals.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Internals.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Strict.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Strict.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Strict/Attributes.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Strict/Attributes.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Strict/Elements.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Strict/Elements.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Table.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Table.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Transitional.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Transitional.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Transitional/Attributes.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Transitional/Attributes.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Transitional/Elements.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Transitional/Elements.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Time.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Time.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Word.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Word.p_hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/AsmCodeGen.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Bag.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/BasicTypes.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/BinIface.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Binary.hi
-lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/BitSet.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Bitmap.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/BreakArray.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/BufWrite.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/BuildTyCl.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/ByteCodeAsm.hi
@@ -882,6 +44,7 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CgCon.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CgExpr.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CgForeignCall.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CgHeapery.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CgHpc.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CgInfoTbls.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CgLetNoEscape.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CgMonad.hi
@@ -897,13 +60,21 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Class.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/ClosureInfo.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmdLineParser.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Cmm.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmmBrokenBlock.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmmCPS.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmmCPSGen.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmmCallConv.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmmInfo.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmmLex.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmmLint.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmmLive.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmmOpt.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmmParse.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmmProcPoint.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CmmUtils.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CodeGen.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CodeOutput.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Coercion.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Config.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Constants.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Convert.hi
@@ -917,9 +88,12 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CoreToStg.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CoreUnfold.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CoreUtils.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CostCentre.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Coverage.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/CprAnalyse.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Ctype.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/DataCon.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Dataflow.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Debugger.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Demand.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Desugar.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Digraph.hi
@@ -941,6 +115,8 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/DynFlags.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Encoding.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/ErrUtils.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/ExternalCore.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/FamInst.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/FamInstEnv.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/FastMutInt.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/FastString.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/FastTypes.hi
@@ -955,9 +131,19 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/ForeignCall.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/FunDeps.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/GHC.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Generics.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/GhciMonad.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/GhciTags.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/GraphBase.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/GraphColor.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/GraphOps.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/GraphPpr.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/HaddockLex.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/HaddockParse.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/HaddockUtils.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/HeaderInfo.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/HsBinds.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/HsDecls.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/HsDoc.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/HsExpr.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/HsImpExp.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/HsLit.hi
@@ -976,8 +162,8 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/IfaceSyn.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/IfaceType.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Inst.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/InstEnv.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/InteractiveEval.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/InteractiveUI.hi
-lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Kind.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/LexCore.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Lexer.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/LiberateCase.hi
@@ -1031,15 +217,26 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Pretty.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/PrimOp.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RdrHsSyn.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RdrName.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RegAllocColor.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RegAllocInfo.hi
-lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RegisterAlloc.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RegAllocLinear.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RegAllocStats.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RegArchBase.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RegArchX86.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RegCoalesce.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RegLiveness.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RegSpill.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RegSpillClean.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RegSpillCost.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RnBinds.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RnEnv.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RnExpr.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RnHsDoc.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RnHsSyn.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RnNames.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RnSource.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RnTypes.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/RtClosureInspect.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Rules.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/SAT.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/SATMonad.hi
@@ -1058,6 +255,7 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Simplify.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/SpecConstr.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Specialise.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/SrcLoc.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/State.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/StaticFlags.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/StgLint.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/StgStats.hi
@@ -1073,6 +271,7 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcDeriv.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcEnv.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcExpr.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcForeign.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcGadt.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcGenDeriv.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcHsSyn.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcHsType.hi
@@ -1089,6 +288,7 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcSimplify.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcSplice.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcTyClsDecls.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcTyDecls.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcTyFuns.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcType.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TcUnify.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/TidyPgm.hi
@@ -1106,11 +306,39 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Util.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Var.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/VarEnv.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/VarSet.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/VectBuiltIn.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/VectCore.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/VectMonad.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/VectType.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/VectUtils.hi
+lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/Vectorise.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/WorkWrap.hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc/WwLib.hi
+lib/ghc-%%GHC_VERSION%%/icons/absdelta.xbm
+lib/ghc-%%GHC_VERSION%%/icons/absolute.xbm
+lib/ghc-%%GHC_VERSION%%/icons/comm.xbm
+lib/ghc-%%GHC_VERSION%%/icons/commslack.xbm
+lib/ghc-%%GHC_VERSION%%/icons/comp.xbm
+lib/ghc-%%GHC_VERSION%%/icons/compress.xbm
+lib/ghc-%%GHC_VERSION%%/icons/compslack.xbm
+lib/ghc-%%GHC_VERSION%%/icons/delete.xbm
+lib/ghc-%%GHC_VERSION%%/icons/help.xbm
+lib/ghc-%%GHC_VERSION%%/icons/hrel.xbm
+lib/ghc-%%GHC_VERSION%%/icons/hrelslack.xbm
+lib/ghc-%%GHC_VERSION%%/icons/jump.xbm
+lib/ghc-%%GHC_VERSION%%/icons/mycomm.xbm
+lib/ghc-%%GHC_VERSION%%/icons/oxpara.xbm
+lib/ghc-%%GHC_VERSION%%/icons/percent.xbm
+lib/ghc-%%GHC_VERSION%%/icons/reldelta.xbm
+lib/ghc-%%GHC_VERSION%%/icons/sync.xbm
+lib/ghc-%%GHC_VERSION%%/icons/time.xbm
+lib/ghc-%%GHC_VERSION%%/icons/time1.xbm
+lib/ghc-%%GHC_VERSION%%/icons/uncompress.xbm
+lib/ghc-%%GHC_VERSION%%/icons/undo.xbm
+lib/ghc-%%GHC_VERSION%%/icons/wait.xbm
+lib/ghc-%%GHC_VERSION%%/icons/weightdelta.xbm
 lib/ghc-%%GHC_VERSION%%/include/Block.h
 lib/ghc-%%GHC_VERSION%%/include/Bytecodes.h
-lib/ghc-%%GHC_VERSION%%/include/CTypes.h
 lib/ghc-%%GHC_VERSION%%/include/ClosureMacros.h
 lib/ghc-%%GHC_VERSION%%/include/ClosureTypes.h
 lib/ghc-%%GHC_VERSION%%/include/Closures.h
@@ -1119,20 +347,11 @@ lib/ghc-%%GHC_VERSION%%/include/Constants.h
 lib/ghc-%%GHC_VERSION%%/include/DNInvoke.h
 lib/ghc-%%GHC_VERSION%%/include/DerivedConstants.h
 lib/ghc-%%GHC_VERSION%%/include/Dotnet.h
+lib/ghc-%%GHC_VERSION%%/include/FileLock.h
 lib/ghc-%%GHC_VERSION%%/include/GHCConstants.h
 lib/ghc-%%GHC_VERSION%%/include/GranSim.h
 lib/ghc-%%GHC_VERSION%%/include/Hooks.h
-lib/ghc-%%GHC_VERSION%%/include/HsBase.h
-lib/ghc-%%GHC_VERSION%%/include/HsBaseConfig.h
 lib/ghc-%%GHC_VERSION%%/include/HsFFI.h
-lib/ghc-%%GHC_VERSION%%/include/HsNet.h
-lib/ghc-%%GHC_VERSION%%/include/HsNetworkConfig.h
-lib/ghc-%%GHC_VERSION%%/include/HsReadline.h
-lib/ghc-%%GHC_VERSION%%/include/HsReadlineConfig.h
-lib/ghc-%%GHC_VERSION%%/include/HsTime.h
-lib/ghc-%%GHC_VERSION%%/include/HsTimeConfig.h
-lib/ghc-%%GHC_VERSION%%/include/HsUnix.h
-lib/ghc-%%GHC_VERSION%%/include/HsUnixConfig.h
 lib/ghc-%%GHC_VERSION%%/include/InfoTables.h
 lib/ghc-%%GHC_VERSION%%/include/Linker.h
 lib/ghc-%%GHC_VERSION%%/include/Liveness.h
@@ -1160,157 +379,1145 @@ lib/ghc-%%GHC_VERSION%%/include/StgFun.h
 lib/ghc-%%GHC_VERSION%%/include/StgLdvProf.h
 lib/ghc-%%GHC_VERSION%%/include/StgMiscClosures.h
 lib/ghc-%%GHC_VERSION%%/include/StgProf.h
-lib/ghc-%%GHC_VERSION%%/include/StgTicky.h
 lib/ghc-%%GHC_VERSION%%/include/StgTypes.h
 lib/ghc-%%GHC_VERSION%%/include/Storage.h
 lib/ghc-%%GHC_VERSION%%/include/TSO.h
 lib/ghc-%%GHC_VERSION%%/include/TailCalls.h
-lib/ghc-%%GHC_VERSION%%/include/Typeable.h
-lib/ghc-%%GHC_VERSION%%/include/WCsubst.h
+lib/ghc-%%GHC_VERSION%%/include/TickyCounters.h
 lib/ghc-%%GHC_VERSION%%/include/config.h
-lib/ghc-%%GHC_VERSION%%/include/consUtils.h
-lib/ghc-%%GHC_VERSION%%/include/dirUtils.h
-lib/ghc-%%GHC_VERSION%%/include/fpstring.h
 lib/ghc-%%GHC_VERSION%%/include/ghcautoconf.h
 lib/ghc-%%GHC_VERSION%%/include/ghcconfig.h
 lib/ghc-%%GHC_VERSION%%/include/ghcplatform.h
 lib/ghc-%%GHC_VERSION%%/include/gmp.h
 lib/ghc-%%GHC_VERSION%%/include/ieee-flpt.h
-lib/ghc-%%GHC_VERSION%%/include/lockFile.h
-lib/ghc-%%GHC_VERSION%%/include/runProcess.h
-lib/ghc-%%GHC_VERSION%%/include/timeUtils.h
-lib/ghc-%%GHC_VERSION%%/libHSCabal.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSCabal_p.a
-lib/ghc-%%GHC_VERSION%%/libHSHUnit.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSHUnit_p.a
-lib/ghc-%%GHC_VERSION%%/libHSQuickCheck.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSQuickCheck_p.a
-lib/ghc-%%GHC_VERSION%%/libHSbase.a
-lib/ghc-%%GHC_VERSION%%/libHSbase_cbits.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSbase_p.a
-lib/ghc-%%GHC_VERSION%%/libHScgi.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHScgi_p.a
-lib/ghc-%%GHC_VERSION%%/libHSfilepath.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSfilepath_p.a
-lib/ghc-%%GHC_VERSION%%/libHSfgl.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSfgl_p.a
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/Directory.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/Directory.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/Exception.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/Exception.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/Map.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/Map.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/RawSystem.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/RawSystem.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/ReadP.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/ReadP.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/TempFile.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/TempFile.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compiler.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compiler.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Configuration.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Configuration.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Extension.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Extension.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/GetOpt.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/GetOpt.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/InstalledPackageInfo.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/InstalledPackageInfo.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/License.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/License.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Make.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Make.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Package.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Package.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/PackageDescription.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/PackageDescription.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/ParseUtils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/ParseUtils.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Setup.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Setup.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Build.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Build.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Compiler.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Compiler.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Configure.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Configure.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC/Makefile.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC/Makefile.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC/PackageConfig.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC/PackageConfig.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Haddock.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Haddock.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Hugs.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Hugs.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Install.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Install.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/InstallDirs.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/InstallDirs.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/JHC.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/JHC.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/LocalBuildInfo.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/LocalBuildInfo.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/NHC.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/NHC.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/PreProcess/Unlit.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/PreProcess/Unlit.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/PreProcess.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/PreProcess.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Program.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Program.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Register.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Register.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Setup.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Setup.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/SetupWrapper.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/SetupWrapper.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/SrcDist.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/SrcDist.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Utils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/Utils.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/System.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/System.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Verbosity.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Verbosity.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Version.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Version.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/HSCabal-1.2.3.0.o
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Language/Haskell/Extension.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Language/Haskell/Extension.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/libHSCabal-1.2.3.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/libHSCabal-1.2.3.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/HSHUnit-1.2.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/Test/HUnit/Base.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/Test/HUnit/Base.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/Test/HUnit/Lang.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/Test/HUnit/Lang.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/Test/HUnit/Terminal.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/Test/HUnit/Terminal.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/Test/HUnit/Text.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/Test/HUnit/Text.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/Test/HUnit.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/Test/HUnit.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/libHSHUnit-1.2.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/libHSHUnit-1.2.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Debug/QuickCheck/Batch.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Debug/QuickCheck/Batch.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Debug/QuickCheck/Poly.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Debug/QuickCheck/Poly.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Debug/QuickCheck/Utils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Debug/QuickCheck/Utils.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Debug/QuickCheck.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Debug/QuickCheck.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/HSQuickCheck-1.1.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Test/QuickCheck/Batch.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Test/QuickCheck/Batch.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Test/QuickCheck/Poly.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Test/QuickCheck/Poly.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Test/QuickCheck/Utils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Test/QuickCheck/Utils.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Test/QuickCheck.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Test/QuickCheck.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/libHSQuickCheck-1.1.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/libHSQuickCheck-1.1.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/Base.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/Base.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/Diff.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/Diff.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/IArray.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/IArray.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/IO/Internals.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/IO/Internals.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/IO.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/IO.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/MArray.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/MArray.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/ST.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/ST.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/Storable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/Storable.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/Unboxed.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/Unboxed.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/HSarray-0.1.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/libHSarray-0.1.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/libHSarray-0.1.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Applicative.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Applicative.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Arrow.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Arrow.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent/Chan.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent/Chan.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent/MVar.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent/MVar.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent/QSem.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent/QSem.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent/QSemN.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent/QSemN.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent/SampleVar.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent/SampleVar.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Exception.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Exception.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad/Fix.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad/Fix.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad/Instances.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad/Instances.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad/ST/Lazy.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad/ST/Lazy.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad/ST/Strict.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad/ST/Strict.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad/ST.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad/ST.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Bits.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Bits.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Bool.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Bool.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Char.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Char.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Complex.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Complex.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Dynamic.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Dynamic.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Either.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Either.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Eq.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Eq.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Fixed.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Fixed.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Foldable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Foldable.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Function.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Function.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics/Aliases.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics/Aliases.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics/Basics.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics/Basics.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics/Instances.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics/Instances.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics/Schemes.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics/Schemes.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics/Text.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics/Text.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics/Twins.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics/Twins.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/HashTable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/HashTable.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/IORef.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/IORef.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Int.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Int.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Ix.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Ix.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/List.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/List.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Maybe.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Maybe.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Monoid.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Monoid.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Ord.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Ord.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Ratio.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Ratio.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/STRef/Lazy.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/STRef/Lazy.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/STRef/Strict.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/STRef/Strict.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/STRef.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/STRef.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/String.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/String.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Traversable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Traversable.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Tuple.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Tuple.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Typeable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Typeable.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Unique.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Unique.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Version.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Version.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Word.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Word.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Debug/Trace.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Debug/Trace.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/C/Error.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/C/Error.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/C/String.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/C/String.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/C/Types.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/C/Types.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/C.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/C.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Concurrent.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Concurrent.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/ForeignPtr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/ForeignPtr.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal/Alloc.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal/Alloc.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal/Array.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal/Array.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal/Error.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal/Error.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal/Pool.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal/Pool.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal/Utils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal/Utils.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Ptr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Ptr.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/StablePtr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/StablePtr.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Storable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Storable.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Arr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Arr.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Base.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Base.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Conc.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Conc.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/ConsoleHandler.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/ConsoleHandler.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Dotnet.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Dotnet.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Enum.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Enum.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Environment.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Environment.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Err.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Err.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Exception.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Exception.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Exts.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Exts.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Float.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Float.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/ForeignPtr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/ForeignPtr.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Handle.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Handle.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/IO.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/IO.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/IOBase.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/IOBase.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Int.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Int.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/List.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/List.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Num.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Num.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/PArr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/PArr.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Pack.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Pack.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/PrimopWrappers.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/PrimopWrappers.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Ptr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Ptr.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Read.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Read.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Real.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Real.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/ST.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/ST.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/STRef.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/STRef.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Show.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Show.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Stable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Stable.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Storable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Storable.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/TopHandler.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/TopHandler.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Unicode.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Unicode.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Weak.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Weak.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Word.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC/Word.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/HSbase-3.0.1.0.o
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Numeric.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Numeric.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Prelude.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Prelude.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/CPUTime.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/CPUTime.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Console/GetOpt.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Console/GetOpt.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Environment.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Environment.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Exit.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Exit.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/IO/Error.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/IO/Error.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/IO/Unsafe.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/IO/Unsafe.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/IO.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/IO.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Info.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Info.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Mem/StableName.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Mem/StableName.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Mem/Weak.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Mem/Weak.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Mem.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Mem.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Posix/Internals.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Posix/Internals.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Posix/Types.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Posix/Types.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Timeout.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Timeout.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/ParserCombinators/ReadP.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/ParserCombinators/ReadP.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/ParserCombinators/ReadPrec.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/ParserCombinators/ReadPrec.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/Printf.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/Printf.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/Read/Lex.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/Read/Lex.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/Read.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/Read.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/Show/Functions.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/Show/Functions.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/Show.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/Show.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Unsafe/Coerce.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Unsafe/Coerce.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/include/HsBase.h
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/include/HsBaseConfig.h
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/include/Typeable.h
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/include/WCsubst.h
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/include/consUtils.h
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/include/dirUtils.h
+lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/libHSbase-3.0.1.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/libHSbase-3.0.1.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Char8.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Char8.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Fusion.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Fusion.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Internal.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Internal.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy/Char8.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy/Char8.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy/Internal.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy/Internal.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Unsafe.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Unsafe.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/HSbytestring-0.9.0.1.o
+lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/include/fpstring.h
+lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/libHSbytestring-0.9.0.1.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/libHSbytestring-0.9.0.1_p.a
+lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/HScgi-3001.1.5.1.o
+lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI/Cookie.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI/Cookie.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI/Monad.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI/Monad.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI/Multipart.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI/Multipart.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI/Protocol.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI/Protocol.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI/RFC822Headers.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI/RFC822Headers.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/libHScgi-3001.1.5.1.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/libHScgi-3001.1.5.1_p.a
+lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/Graph.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/Graph.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/IntMap.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/IntMap.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/IntSet.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/IntSet.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/Map.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/Map.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/Sequence.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/Sequence.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/Set.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/Set.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/Tree.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data/Tree.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/HScontainers-0.1.0.1.o
+lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/libHScontainers-0.1.0.1.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/libHScontainers-0.1.0.1_p.a
+lib/ghc-%%GHC_VERSION%%/lib/directory-1.0.0.0/HSdirectory-1.0.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/directory-1.0.0.0/System/Directory.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/directory-1.0.0.0/System/Directory.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/directory-1.0.0.0/include/HsDirectory.h
+lib/ghc-%%GHC_VERSION%%/lib/directory-1.0.0.0/include/HsDirectoryConfig.h
+lib/ghc-%%GHC_VERSION%%/lib/directory-1.0.0.0/libHSdirectory-1.0.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/directory-1.0.0.0/libHSdirectory-1.0.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Basic.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Basic.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Example.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Example.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Graph.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Graph.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Graphviz.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Graphviz.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/FiniteMap.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/FiniteMap.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/Heap.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/Heap.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/Queue.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/Queue.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/RootPath.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/RootPath.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/Thread.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal/Thread.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Monad/IOArray.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Monad/IOArray.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Monad.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Monad.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/NodeMap.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/NodeMap.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/ArtPoint.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/ArtPoint.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/BCC.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/BCC.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/BFS.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/BFS.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/DFS.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/DFS.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/Dominators.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/Dominators.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/GVD.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/GVD.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/Indep.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/Indep.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/MST.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/MST.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/MaxFlow.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/MaxFlow.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/MaxFlow2.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/MaxFlow2.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/Monad.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/Monad.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/SP.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/SP.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/TransClos.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query/TransClos.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Tree.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Tree.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/HSfgl-5.4.1.1.o
+lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/libHSfgl-5.4.1.1.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/libHSfgl-5.4.1.1_p.a
+lib/ghc-%%GHC_VERSION%%/lib/filepath-1.1.0.0/HSfilepath-1.1.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/filepath-1.1.0.0/System/FilePath/Posix.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/filepath-1.1.0.0/System/FilePath/Posix.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/filepath-1.1.0.0/System/FilePath/Windows.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/filepath-1.1.0.0/System/FilePath/Windows.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/filepath-1.1.0.0/System/FilePath.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/filepath-1.1.0.0/System/FilePath.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/filepath-1.1.0.0/libHSfilepath-1.1.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/filepath-1.1.0.0/libHSfilepath-1.1.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/HShaskell-src-1.0.1.1.o
+lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell/Lexer.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell/Lexer.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell/ParseMonad.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell/ParseMonad.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell/ParseUtils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell/ParseUtils.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell/Parser.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell/Parser.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell/Pretty.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell/Pretty.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell/Syntax.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell/Syntax.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/libHShaskell-src-1.0.1.1.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/libHShaskell-src-1.0.1.1_p.a
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Array.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Array.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Bits.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Bits.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/CError.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/CError.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/CForeign.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/CForeign.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/CPUTime.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/CPUTime.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/CString.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/CString.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/CTypes.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/CTypes.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Char.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Char.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Complex.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Complex.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Directory.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Directory.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/ForeignPtr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/ForeignPtr.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/HShaskell98-1.0.1.0.o
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/IO.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/IO.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Int.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Int.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Ix.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Ix.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/List.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/List.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Locale.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Locale.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/MarshalAlloc.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/MarshalAlloc.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/MarshalArray.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/MarshalArray.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/MarshalError.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/MarshalError.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/MarshalUtils.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/MarshalUtils.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Maybe.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Maybe.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Monad.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Monad.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Ptr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Ptr.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Random.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Random.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Ratio.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Ratio.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/StablePtr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/StablePtr.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Storable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Storable.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/System.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/System.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Time.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Time.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Word.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/Word.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/libHShaskell98-1.0.1.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0/libHShaskell98-1.0.1.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/HShpc-0.5.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/Trace/Hpc/Mix.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/Trace/Hpc/Mix.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/Trace/Hpc/Reflect.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/Trace/Hpc/Reflect.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/Trace/Hpc/Tix.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/Trace/Hpc/Tix.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/Trace/Hpc/Util.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/Trace/Hpc/Util.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/libHShpc-0.5.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/libHShpc-0.5.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/html-1.0.1.1/HShtml-1.0.1.1.o
+lib/ghc-%%GHC_VERSION%%/lib/html-1.0.1.1/Text/Html/BlockTable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/html-1.0.1.1/Text/Html/BlockTable.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/html-1.0.1.1/Text/Html.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/html-1.0.1.1/Text/Html.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/html-1.0.1.1/libHShtml-1.0.1.1.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/html-1.0.1.1/libHShtml-1.0.1.1_p.a
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Cont/Class.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Cont/Class.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Cont.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Cont.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Error/Class.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Error/Class.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Error.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Error.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Identity.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Identity.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/List.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/List.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/RWS/Class.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/RWS/Class.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/RWS/Lazy.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/RWS/Lazy.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/RWS/Strict.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/RWS/Strict.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/RWS.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/RWS.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Reader/Class.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Reader/Class.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Reader.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Reader.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/State/Class.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/State/Class.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/State/Lazy.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/State/Lazy.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/State/Strict.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/State/Strict.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/State.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/State.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Trans.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Trans.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Writer/Class.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Writer/Class.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Writer/Lazy.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Writer/Lazy.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Writer/Strict.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Writer/Strict.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Writer.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Writer.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/HSmtl-1.1.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/libHSmtl-1.1.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/libHSmtl-1.1.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/HSnetwork-2.1.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/Network/BSD.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/Network/BSD.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/Network/Socket.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/Network/Socket.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/Network/URI.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/Network/URI.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/Network.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/Network.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/include/HsNet.h
+lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/include/HsNetworkConfig.h
+lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/libHSnetwork-2.1.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/libHSnetwork-2.1.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/old-locale-1.0.0.0/HSold-locale-1.0.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/old-locale-1.0.0.0/System/Locale.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/old-locale-1.0.0.0/System/Locale.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/old-locale-1.0.0.0/libHSold-locale-1.0.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/old-locale-1.0.0.0/libHSold-locale-1.0.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/old-time-1.0.0.0/HSold-time-1.0.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/old-time-1.0.0.0/System/Time.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/old-time-1.0.0.0/System/Time.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/old-time-1.0.0.0/include/HsTime.h
+lib/ghc-%%GHC_VERSION%%/lib/old-time-1.0.0.0/include/HsTimeConfig.h
+lib/ghc-%%GHC_VERSION%%/lib/old-time-1.0.0.0/libHSold-time-1.0.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/old-time-1.0.0.0/libHSold-time-1.0.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/packedstring-0.1.0.0/Data/PackedString.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/packedstring-0.1.0.0/Data/PackedString.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/packedstring-0.1.0.0/HSpackedstring-0.1.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/packedstring-0.1.0.0/libHSpackedstring-0.1.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/packedstring-0.1.0.0/libHSpackedstring-0.1.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/parallel-1.0.0.0/Control/Parallel/Strategies.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parallel-1.0.0.0/Control/Parallel/Strategies.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/parallel-1.0.0.0/Control/Parallel.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parallel-1.0.0.0/Control/Parallel.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/parallel-1.0.0.0/HSparallel-1.0.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/parallel-1.0.0.0/libHSparallel-1.0.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parallel-1.0.0.0/libHSparallel-1.0.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/HSparsec-2.1.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Char.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Char.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Combinator.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Combinator.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Error.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Error.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Expr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Expr.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Language.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Language.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Perm.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Perm.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Pos.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Pos.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Prim.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Prim.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Token.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec/Token.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/libHSparsec-2.1.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/libHSparsec-2.1.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/pretty-1.0.0.0/HSpretty-1.0.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/pretty-1.0.0.0/Text/PrettyPrint/HughesPJ.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/pretty-1.0.0.0/Text/PrettyPrint/HughesPJ.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/pretty-1.0.0.0/Text/PrettyPrint.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/pretty-1.0.0.0/Text/PrettyPrint.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/pretty-1.0.0.0/libHSpretty-1.0.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/pretty-1.0.0.0/libHSpretty-1.0.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/HSprocess-1.0.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/System/Cmd.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/System/Cmd.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/System/Process/Internals.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/System/Process/Internals.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/System/Process.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/System/Process.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/include/HsProcessConfig.h
+lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/include/runProcess.h
+lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/libHSprocess-1.0.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/libHSprocess-1.0.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/random-1.0.0.0/HSrandom-1.0.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/random-1.0.0.0/System/Random.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/random-1.0.0.0/System/Random.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/random-1.0.0.0/libHSrandom-1.0.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/random-1.0.0.0/libHSrandom-1.0.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0/HSreadline-1.0.1.0.o
+lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0/System/Console/Readline.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0/System/Console/Readline.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0/System/Console/SimpleLineEditor.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0/System/Console/SimpleLineEditor.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0/include/HsReadline.h
+lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0/include/HsReadlineConfig.h
+lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0/libHSreadline-1.0.1.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0/libHSreadline-1.0.1.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/HSregex-base-0.72.0.1.o
+lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/Text/Regex/Base/Context.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/Text/Regex/Base/Context.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/Text/Regex/Base/Impl.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/Text/Regex/Base/Impl.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/Text/Regex/Base/RegexLike.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/Text/Regex/Base/RegexLike.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/Text/Regex/Base.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/Text/Regex/Base.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/libHSregex-base-0.72.0.1.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/libHSregex-base-0.72.0.1_p.a
+lib/ghc-%%GHC_VERSION%%/lib/regex-compat-0.71.0.1/HSregex-compat-0.71.0.1.o
+lib/ghc-%%GHC_VERSION%%/lib/regex-compat-0.71.0.1/Text/Regex.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/regex-compat-0.71.0.1/Text/Regex.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/regex-compat-0.71.0.1/libHSregex-compat-0.71.0.1.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/regex-compat-0.71.0.1/libHSregex-compat-0.71.0.1_p.a
+lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/HSregex-posix-0.72.0.2.o
+lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/Text/Regex/Posix/ByteString.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/Text/Regex/Posix/ByteString.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/Text/Regex/Posix/String.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/Text/Regex/Posix/String.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/Text/Regex/Posix/Wrap.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/Text/Regex/Posix/Wrap.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/Text/Regex/Posix.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/Text/Regex/Posix.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/libHSregex-posix-0.72.0.2.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/libHSregex-posix-0.72.0.2_p.a
+lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TArray.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TArray.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TChan.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TChan.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TMVar.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TMVar.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TVar.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Concurrent/STM/TVar.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Concurrent/STM.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Concurrent/STM.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Monad/STM.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Monad/STM.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Sequential/STM.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Sequential/STM.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/HSstm-2.1.1.0.o
+lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/libHSstm-2.1.1.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/libHSstm-2.1.1.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/HStemplate-haskell-2.2.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH/Lib.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH/Lib.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH/Ppr.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH/Ppr.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH/PprLib.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH/PprLib.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH/Syntax.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH/Syntax.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/libHStemplate-haskell-2.2.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/libHStemplate-haskell-2.2.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/Days.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/Days.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/Easter.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/Easter.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/Gregorian.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/Gregorian.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/Julian.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/Julian.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/JulianYearDay.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/JulianYearDay.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/MonthDay.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/MonthDay.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/OrdinalDate.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/OrdinalDate.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/Private.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/Private.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/WeekDate.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar/WeekDate.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock/CTimeval.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock/CTimeval.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock/POSIX.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock/POSIX.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock/Scale.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock/Scale.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock/TAI.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock/TAI.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock/UTC.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock/UTC.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock/UTCDiff.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock/UTCDiff.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Format/Parse.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Format/Parse.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Format.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Format.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/LocalTime/LocalTime.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/LocalTime/LocalTime.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/LocalTime/TimeOfDay.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/LocalTime/TimeOfDay.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/LocalTime/TimeZone.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/LocalTime/TimeZone.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/LocalTime.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/LocalTime.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/HStime-1.1.2.0.o
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/include/HsTime.h
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/include/HsTimeConfig.h
+lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/libHStime-1.1.2.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/libHStime-1.1.2.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/HSunix-2.3.0.0.o
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Directory.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Directory.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker/Module.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker/Module.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker/Prim.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker/Prim.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Env.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Env.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Error.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Error.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Files.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Files.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/IO.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/IO.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Process/Internals.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Process/Internals.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Process.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Process.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Resource.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Resource.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Semaphore.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Semaphore.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/SharedMem.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/SharedMem.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Signals/Exts.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Signals/Exts.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Signals.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Signals.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Temp.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Temp.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Terminal.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Terminal.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Time.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Time.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Unistd.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Unistd.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/User.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/User.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/include/HsUnix.h
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/include/HsUnixConfig.h
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/include/execvpe.h
+lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/libHSunix-2.3.0.0.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/libHSunix-2.3.0.0_p.a
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/HSxhtml-3000.0.2.1.o
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/BlockTable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/BlockTable.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Debug.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Debug.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Extras.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Extras.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset/Attributes.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset/Attributes.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset/Elements.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset/Elements.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Internals.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Internals.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict/Attributes.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict/Attributes.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict/Elements.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict/Elements.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Table.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Table.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional/Attributes.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional/Attributes.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional/Elements.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional/Elements.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml.p_hi
+lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/libHSxhtml-3000.0.2.1.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/libHSxhtml-3000.0.2.1_p.a
 lib/ghc-%%GHC_VERSION%%/libHSghc.a
-lib/ghc-%%GHC_VERSION%%/libHShaskell-src.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHShaskell-src_p.a
-lib/ghc-%%GHC_VERSION%%/libHShaskell98.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHShaskell98_p.a
-lib/ghc-%%GHC_VERSION%%/libHShtml.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHShtml_p.a
-lib/ghc-%%GHC_VERSION%%/libHSmtl.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSmtl_p.a
-lib/ghc-%%GHC_VERSION%%/libHSnetwork.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSnetwork_p.a
-lib/ghc-%%GHC_VERSION%%/libHSparsec.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSparsec_p.a
-lib/ghc-%%GHC_VERSION%%/libHSreadline.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSreadline_p.a
-lib/ghc-%%GHC_VERSION%%/libHSregex-base.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSregex-base_p.a
-lib/ghc-%%GHC_VERSION%%/libHSregex-compat.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSregex-compat_p.a
-lib/ghc-%%GHC_VERSION%%/libHSregex-posix.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSregex-posix_p.a
 lib/ghc-%%GHC_VERSION%%/libHSrts.a
 lib/ghc-%%GHC_VERSION%%/libHSrts_debug.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSrts_p.a
 lib/ghc-%%GHC_VERSION%%/libHSrts_thr.a
 lib/ghc-%%GHC_VERSION%%/libHSrts_thr_debug.a
-lib/ghc-%%GHC_VERSION%%/libHSrts_thr_p.a
-lib/ghc-%%GHC_VERSION%%/libHSstm.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSstm_p.a
-lib/ghc-%%GHC_VERSION%%/libHStemplate-haskell.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHStemplate-haskell_p.a
-lib/ghc-%%GHC_VERSION%%/libHStime.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHStime_p.a
-lib/ghc-%%GHC_VERSION%%/libHSunix.a
-lib/ghc-%%GHC_VERSION%%/libHSunix_cbits.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSunix_p.a
-lib/ghc-%%GHC_VERSION%%/libHSxhtml.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSxhtml_p.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSrts_thr_p.a
+lib/ghc-%%GHC_VERSION%%/libgmp.a
 lib/ghc-%%GHC_VERSION%%/package.conf
+lib/ghc-%%GHC_VERSION%%/package.conf.old
 lib/ghc-%%GHC_VERSION%%/template-hsc.h
 lib/ghc-%%GHC_VERSION%%/unlit
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Transitional
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Strict
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml/Frameset
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text/XHtml
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1/Text
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/xhtml-3000.0.2.1
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/include
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Signals
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/Process
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix/DynamicLinker
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System/Posix
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0/System
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/unix-2.3.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/include
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/LocalTime
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Format
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Clock
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time/Calendar
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data/Time
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0/Data
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/time-1.1.2.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language/Haskell/TH
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language/Haskell
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0/Language
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/template-haskell-2.2.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Sequential
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Monad
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Concurrent/STM
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control/Concurrent
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0/Control
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/stm-2.1.1.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/Text/Regex/Posix
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/Text/Regex
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2/Text
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/regex-posix-0.72.0.2
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/regex-compat-0.71.0.1/Text
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/regex-compat-0.71.0.1
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/Text/Regex/Base
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/Text/Regex
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1/Text
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/regex-base-0.72.0.1
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0/include
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0/System/Console
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0/System
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/readline-1.0.1.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/random-1.0.0.0/System
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/random-1.0.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/include
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/System/Process
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0/System
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/process-1.0.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/pretty-1.0.0.0/Text/PrettyPrint
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/pretty-1.0.0.0/Text
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/pretty-1.0.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators/Parsec
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text/ParserCombinators
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0/Text
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/parsec-2.1.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/parallel-1.0.0.0/Control/Parallel
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/parallel-1.0.0.0/Control
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/parallel-1.0.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/packedstring-0.1.0.0/Data
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/packedstring-0.1.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/old-time-1.0.0.0/include
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/old-time-1.0.0.0/System
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/old-time-1.0.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/old-locale-1.0.0.0/System
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/old-locale-1.0.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/include
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0/Network
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/network-2.1.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Writer
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/State
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Reader
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/RWS
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Error
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad/Cont
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control/Monad
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0/Control
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/mtl-1.1.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/html-1.0.1.1/Text/Html
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/html-1.0.1.1/Text
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/html-1.0.1.1
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/Trace/Hpc
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0/Trace
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/hpc-0.5.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/haskell98-1.0.1.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language/Haskell
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1/Language
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/haskell-src-1.0.1.1
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/filepath-1.1.0.0/System/FilePath
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/filepath-1.1.0.0/System
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/filepath-1.1.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Query
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Monad
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive/Internal
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph/Inductive
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data/Graph
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1/Data
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/fgl-5.4.1.1
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/directory-1.0.0.0/include
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/directory-1.0.0.0/System
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/directory-1.0.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1/Data
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/containers-0.1.0.1
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network/CGI
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1/Network
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/cgi-3001.1.5.1
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/include
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString/Lazy
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data/ByteString
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1/Data
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/bytestring-0.9.0.1
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/include
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Unsafe
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/Show
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/Read
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text/ParserCombinators
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Text
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Posix
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Mem
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/IO
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System/Console
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/System
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/GHC
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/Marshal
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign/C
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Foreign
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Debug
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/STRef
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data/Generics
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Data
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad/ST
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Monad
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control/Concurrent
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0/Control
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/base-3.0.1.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array/IO
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data/Array
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0/Data
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/array-0.1.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Test/QuickCheck
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Test
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Debug/QuickCheck
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0/Debug
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/QuickCheck-1.1.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/Test/HUnit
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0/Test
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/HUnit-1.2.0.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Language/Haskell
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Language
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/PreProcess
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple/GHC
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Simple
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution
+@dirrm lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0
+@dirrm lib/ghc-%%GHC_VERSION%%/lib
 @dirrm lib/ghc-%%GHC_VERSION%%/include
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Transitional
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Strict
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml/Frameset
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/XHtml
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/Show
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Posix
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/Regex/Base
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/Regex
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/Read
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/PrettyPrint
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators/Parsec
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/ParserCombinators
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text/Html
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Text
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Test/QuickCheck
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Test/HUnit
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Test
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Process
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Signals
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Posix/DynamicLinker
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Posix
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Mem
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/System/IO
-@dirrm lib/ghc-6.6.1/imports/System/FilePath
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Directory
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/System/Console
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/System
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Network/CGI
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Network
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell/TH
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Language/Haskell
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Language
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/GHC
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Foreign/Marshal
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Foreign/C
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Foreign
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Distribution/Simple
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Distribution/PreProcess
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Distribution/Compat
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Distribution
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Debug/QuickCheck
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Debug
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Time/LocalTime
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Format
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Clock
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Time/Calendar
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Time
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/STRef
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Query
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Monad
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive/Internal
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Graph/Inductive
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Graph
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Generics
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString/Lazy
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/ByteString
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Array/IO
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Array
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Parallel
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Writer
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/ST
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/State
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Reader
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/RWS
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Error
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad/Cont
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Monad
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent/STM
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control/Concurrent
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Control
-@dirrm lib/ghc-%%GHC_VERSION%%/imports
+@dirrm lib/ghc-%%GHC_VERSION%%/icons
 @dirrm lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc
 @dirrm lib/ghc-%%GHC_VERSION%%/hslibs-imports
-@dirrm lib/ghc-%%GHC_VERSION%%/icons
 @exec mkdir -p %D/lib/ghc-%%GHC_VERSION%%/cabal
 @dirrm lib/ghc-%%GHC_VERSION%%/cabal
 @dirrm lib/ghc-%%GHC_VERSION%%
