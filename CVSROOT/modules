@@ -622,6 +622,7 @@ atr3d		ports/games/atr3d
 atris		ports/games/atris
 atris-sounds	ports/games/atris-sounds
 atslog		ports/comms/atslog
+atunes		ports/audio/atunes
 aub		ports/news/aub
 aube		ports/audio/aube
 auctex		ports/print/auctex
