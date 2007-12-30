@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+COMMENT=	The client port of ossec-hids
+
 CLIENT_ONLY=	yes
 
 MASTERDIR=	${.CURDIR}/../ossec-hids-server
