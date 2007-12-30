@@ -38,6 +38,7 @@
     SUBDIR += asmix
     SUBDIR += asmixer
     SUBDIR += asunder
+    SUBDIR += atunes
     SUBDIR += aube
     SUBDIR += audacious-crossfade
     SUBDIR += audacious-dumb
