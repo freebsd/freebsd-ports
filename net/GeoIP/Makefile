@@ -11,7 +11,7 @@ CATEGORIES=	net geography
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find the country that any IP address or hostname originates from
 
 USE_AUTOTOOLS=	libtool:15
