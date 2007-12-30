@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wyvern
-PORTVERSION=	2.2.10
+PORTVERSION=	2.2.10.1
 PORTREVISION=	0
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.MysticWALL.COM/download/
@@ -36,10 +36,6 @@ OPTIONS=	OPENSSL "OpenSSL support" off \
 		STRICT_PARSING "Parse request/response headers strictly" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=		Does not compile: MNT_NODEV undeclared
-.endif
 
 .if defined(WITH_OPENSSL)
 CONFIGURE_ARGS+=	--with-openssl=yes
