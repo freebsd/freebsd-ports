@@ -24,7 +24,7 @@ upgrades.
 
   Plugin support is dropped again and will not revive anymore in the port.
   A reason for that is the patch is unofficial and there are long time lags
-  betwen a new cacti version released and time when the patch is addapted.
+  between a new cacti version released and time when the patch is adapted.
 
 20071215:
   AFFECTS: users of www/suphp
@@ -105,7 +105,7 @@ upgrades.
   - the stunnel binary is in ${PREFIX}/bin/, no longer in ${PREFIX}/sbin/;
   - the libstunnel library is in ${PREFIX}/lib/stunnel/ instead of lib/.
 
-  You may need to adjust your PATH settings or your scripts to accomodate
+  You may need to adjust your PATH settings or your scripts to accommodate
   the new location of the stunnel executable (and library, if there is
   actually anything using it).
 
@@ -132,7 +132,7 @@ upgrades.
         # portmaster -a
 
   If some of icons, applets, themes or other customized items have
-  disappered from your desktop in this upgrade, you will need to
+  disappeared from your desktop in this upgrade, you will need to
   remove and re-add these items to make them appear again due to the
   DATADIR change.
 
