@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cf484358-b5d6-11dc-8de0-001c2514716c">
+    <topic>dovecot -- Specific LDAP + auth cache configuration may mix up user logins</topic>
+    <affects>
+      <package>
+	<name>dovecot</name>
+	<range><lt>1.0.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dovecot reports:</p>
+	<blockquote cite="http://www.dovecot.org/list/dovecot-news/2007-December/000057.html">
+	  <p>If two users with the same password and same pass_filter
+	    variables log in within auth_cache_ttl seconds (1h by default),
+	    the second user may get logged in with the first user's cached
+	    pass_attrs. For example if pass_attrs contained the user's
+	    home/mail directory, this would mean that the second user will
+	    be accessing the first user's mails.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.dovecot.org/list/dovecot-news/2007-December/000057.html</url>
+    </references>
+    <dates>
+      <discovery>2007-12-21</discovery>
+      <entry>2007-12-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4aab7bcd-b294-11dc-a6f0-00a0cce0781e">
     <topic>gallery2 -- multiple vulnerabilities</topic>
     <affects>
