@@ -82,6 +82,7 @@ share/locale/el/LC_MESSAGES/iso_4217.mo
 share/locale/el/LC_MESSAGES/iso_639.mo
 share/locale/el/LC_MESSAGES/iso_639_3.mo
 share/locale/en/LC_MESSAGES/iso_3166_2.mo
+share/locale/eo/LC_MESSAGES/iso_15924.mo
 share/locale/eo/LC_MESSAGES/iso_3166.mo
 share/locale/eo/LC_MESSAGES/iso_3166_2.mo
 share/locale/eo/LC_MESSAGES/iso_639.mo
