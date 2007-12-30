@@ -5,13 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	6.6.1
-PORTREVISION=	2
+PORTVERSION=	6.8.2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot \
 		${MASTER_SITE_LOCAL:S/$/:boot/}
-MASTER_SITE_SUBDIR=vs/ghcdist/${PORTVERSION}/:boot
 DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source \
 		ghc-${PORTVERSION}-src-extralibs${EXTRACT_SUFX}:source
 
@@ -20,13 +18,11 @@ COMMENT=	A Compiler for the functional language Haskell
 
 ONLY_FOR_ARCHS=	i386
 
-BOOT_DIST4=	ghc-${PORTVERSION}-i386-unknown-freebsd4-boot${EXTRACT_SUFX}:boot
-BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}:boot
 BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
 
 USE_AUTOTOOLS=	autoconf:261:env
 USE_BZIP2=	yes
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+#LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -55,13 +51,15 @@ PLIST_SUB+=	PROFILE=""
 # This port builds by downloading a minimal binary distribution of GHC and
 # using that to bootstrap.
 BOOT_DIR=	${WRKDIR}/ghc-${PORTVERSION}-boot
-BOOT_GHC=	${BOOT_DIR}/bin/i386-unknown-freebsd/ghc-${PORTVERSION}
+BOOT_GHC=	${BOOT_DIR}/bin/ghc-${PORTVERSION}
 
-CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}  --with-gcc=${CC}
+CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}  --with-gcc=${CC}# \
+#	--with-gmp-includes=${LOCALBASE}/include --with-gmp-libraries=${LOCALBASE}/lib 
 # specifying CONFIGURE_TARGET doesn't work for some reason.
 CONFIGURE_TARGET=
 # libgmp:
-CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+#CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CFLAGS= #empty
 
 # override TMPDIR because /tmp often doesn't have enough space
 # to build some of the larger libraries.
@@ -78,18 +76,15 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} s+%%LOCALBASE%%+${LOCALBASE}+ \
 		${WRKSRC}/rts/package.conf.in
-	${REINPLACE_CMD} s+/usr/local/lib/ghc-6.6+${BOOT_DIR}/lib/i386-unknown-freebsd+ \
-		${BOOT_DIR}/bin/i386-unknown-freebsd/*.sh
 
 pre-configure:
-	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
-	@(cd ${BOOT_DIR} && ${MAKE} in-place)
+	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS} --prefix=${BOOT_DIR})
+	@(cd ${BOOT_DIR} && ${GMAKE} install)
 
 pre-build:
 	@${MKDIR} ${TMPDIR}
 
 post-install:
-	@${RMDIR} ${PREFIX}/lib/ghc-${PORTVERSION}/imports/cbits	# empty/unused
 	@${MKDIR} ${PREFIX}/lib/ghc-${PORTVERSION}/cabal		# cabalised hs-foo-ghc ports
 
 .include <bsd.port.post.mk>
