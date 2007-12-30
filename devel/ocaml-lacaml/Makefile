@@ -36,9 +36,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64"
 BROKEN=		Does not install with GCC 4.2
-.endif
 .endif
 
 post-extract:
