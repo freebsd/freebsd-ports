@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.6
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
@@ -30,6 +30,8 @@ OPTIONS=	CDROM "Enable CDROM support" on \
 		FPU "Enable FPU emulator" on \
 		IDLE_HACK "Keep Bochs from using all CPU time" off \
 		IGNORE_BAD_MSR "Ignore unknown MSR references (don't panic)" off \
+		MTRR "Enable MTRR emulation (CPU level >= 6)" off \
+		MWAIT "Enable experimental MONITOR/MWAIT support" off \
 		NE2000 "Enable limited ne2000 support" on \
 		NEW_PIT "Enable use of the new PIT model" on \
 		OPTIMIZATIONS "Enable all safe speeed optimizations" on \
@@ -39,12 +41,13 @@ OPTIONS=	CDROM "Enable CDROM support" on \
 		PORT_E9_HACK "Writes to port e9 go to console" on \
 		READLINE "Enable readline support in debugger" off \
 		RFB "Enable VNC server support in display" off \
-		SAVE_RESTORE "Enable limited save/restore support" off \
 		SB16 "Enable Sound Blaster 16 emulation" on \
 		SDL "Enable SDL display interface" off \
 		SHOW_IPS "Enable logging of measured IPS" off \
 		SMP "Enable SMP simulation support (CPU level 6)" off \
+		SSE4 "Enable emulation of SSE4.2 instruction set" off \
 		SVGA "Enable SVGAlib support" off \
+		TCACHE "Enable trace cache" on \
 		TERM "Use text only, console based interface" off \
 		USB "Enable limited i440FX PCI USB support" off \
 		VBE "Enable VGA BIOS Extensions" on \
@@ -95,6 +98,14 @@ CONFIGURE_ARGS+=--enable-idle-hack
 CONFIGURE_ARGS+=--enable-ignore-bad-msr
 .endif
 
+.if defined(WITH_MTRR)
+CONFIGURE_ARGS+=--enable-mtrr
+.endif
+
+.if defined(WITH_MWAIT)
+CONFIGURE_ARGS+=--enable-monitor-mwait
+.endif
+
 .if defined(WITH_NE2000)
 CONFIGURE_ARGS+=--enable-ne2000
 .endif
@@ -142,10 +153,6 @@ CONFIGURE_ARGS+=--enable-smp
 WITH_CPU_LEVEL=	6
 .endif
 
-.if defined(WITH_SAVE_RESTORE)
-CONFIGURE_ARGS+=--enable-save-restore
-.endif
-
 .if defined(WITH_SDL)
 USE_SDL=	sdl
 CONFIGURE_ARGS+=--with-sdl
@@ -155,6 +162,10 @@ CONFIGURE_ARGS+=--with-sdl
 CONFIGURE_ARGS+=--enable-show-ips
 .endif
 
+.if defined(WITH_SSE4)
+CONFIGURE_ARGS+=--enable-sse=4 --enable-sse-extension
+.endif
+
 .if defined(WITH_SVGA)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--with-svga
@@ -162,6 +173,12 @@ CONFIGURE_ARGS+=--with-svga
 
 .if defined(WITH_TERM)
 CONFIGURE_ARGS+=--with-term
+.endif
+
+.if defined(WITHOUT_TCACHE)
+CONFIGURE_ARGS+=--disable-trace-cache
+.else
+CONFIGURE_ARGS+=--enable-trace-cache
 .endif
 
 .if defined(WITH_USB)
