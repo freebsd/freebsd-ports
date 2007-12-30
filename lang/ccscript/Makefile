@@ -19,7 +19,7 @@ COMMENT=	State-event driven class extendible C++ script interpreter
 LIB_DEPENDS=	ccgnu2-1.6.0:${PORTSDIR}/devel/commoncpp
 
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnometarget
+USE_GNOME=	pkgconfig gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
