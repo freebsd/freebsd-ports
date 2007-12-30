@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	2.3.5
+PORTVERSION=	2.4.10
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
@@ -16,7 +16,7 @@ COMMENT=	Library to create and read several streaming archive formats
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-OPTIONS=	BSDCPIO		"Enable bsdcpio"	off
+OPTIONS=	BSDCPIO		"Enable bsdcpio"	on
 
 PLIST_FILES=	bin/bsdtar \
 		include/archive.h \
@@ -24,7 +24,7 @@ PLIST_FILES=	bin/bsdtar \
 		lib/libarchive.a \
 		lib/libarchive.la \
 		lib/libarchive.so \
-		lib/libarchive.so.5
+		lib/libarchive.so.6
 
 MANCOMPRESSED=	no
 MAN1=		bsdtar.1
