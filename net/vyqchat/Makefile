@@ -39,8 +39,12 @@ LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's,Settings::getUUID,getUUID,' \
+		${WRKSRC}/src/settings.h
+	@${REINPLACE_CMD} -e 's,Sound::error,error,' \
+		${WRKSRC}/src/sound.h
+	@${REINPLACE_CMD} -e 's,User::setStatus,setStatus,' \
+		${WRKSRC}/src/user.h
 
 .include <bsd.port.post.mk>
