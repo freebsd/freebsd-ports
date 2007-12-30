@@ -93,6 +93,9 @@ lib/jabberd/mod_privacy.so.0
 lib/jabberd/mod_roster.la
 lib/jabberd/mod_roster.so
 lib/jabberd/mod_roster.so.0
+lib/jabberd/mod_roster-publish.la
+lib/jabberd/mod_roster-publish.so
+lib/jabberd/mod_roster-publish.so.0
 lib/jabberd/mod_session.la
 lib/jabberd/mod_session.so
 lib/jabberd/mod_session.so.0
