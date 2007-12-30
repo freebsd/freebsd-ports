@@ -67,7 +67,7 @@ INSTALLS_ICONS=	yes
 SUB_FILES=	pkg-message
 PLIST_SUB=	DESKBAR_MOD="${LDESKBAR_MOD}"
 
-MAN1=		pinot-dbus-daemon.1 pinot-index.1 pinot-label pinot-search.1 pinot.1
+MAN1=		pinot-dbus-daemon.1 pinot-index.1 pinot-label.1 pinot-search.1 pinot.1
 
 PORTDOCS=	AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
