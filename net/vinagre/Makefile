@@ -7,7 +7,7 @@
 
 PORTNAME=	vinagre
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -32,7 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-	@-update-desktop-database
+	@-update-desktop-database > /dev/null
+	@-update-mime-database ${PREFIX}/share/mime > /dev/null
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in AUTHORS COPYING ChangeLog INSTALL MAINTAINERS NEWS README
