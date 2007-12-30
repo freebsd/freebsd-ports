@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.1.18
+PORTVERSION=	2.1.20
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
