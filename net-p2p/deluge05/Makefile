@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	deluge
-PORTVERSION=	0.5.7.1
-PORTREVISION=	2
+PORTVERSION=	0.5.8
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/tarball/${PORTVERSION}/
 
@@ -18,7 +17,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
+		${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-torrent-${PORTVERSION}
 USE_GNOME=	pygtk2 desktopfileutils librsvg2
@@ -32,7 +32,14 @@ MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 DOCS=		LICENSE README
 
+# Internal anonymizing browser needs gecko stuff in py-gnome-extras.
+.if !defined(WITHOUT_GECKO)
+RUN_DEPENDS+=	${pygnomeextras_DETECT}:${PORTSDIR}/x11-toolkits/py-gnome-extras
+USE_GECKO=	firefox seamonkey xulrunner mozilla
+.endif
+
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
 CFLAGS+=	-DAMD64
@@ -41,6 +48,9 @@ CFLAGS+=	-DAMD64
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
+		s|%%GECKO_LIB%%|${LOCALBASE}/lib/${GECKO}|g' \
+			${WRKSRC}/scripts/deluge
 
 post-install:
 	@-update-desktop-database

@@ -1,6 +1,6 @@
---- glade/preferences_dialog.glade.orig	2007-12-23 15:53:01.000000000 -0600
-+++ glade/preferences_dialog.glade	2007-12-23 15:53:35.000000000 -0600
-@@ -2738,7 +2738,7 @@
+--- glade/preferences_dialog.glade.orig	2007-12-29 23:31:48.000000000 -0600
++++ glade/preferences_dialog.glade	2007-12-29 23:32:18.000000000 -0600
+@@ -2755,7 +2755,7 @@
                  </child>
                  <child>
                    <widget class="GtkFrame" id="frame4">
@@ -9,25 +9,48 @@
                      <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                      <property name="label_xalign">0</property>
                      <property name="shadow_type">GTK_SHADOW_NONE</property>
---- src/interface.py.orig	2007-12-23 15:53:04.000000000 -0600
-+++ src/interface.py	2007-12-23 15:54:45.000000000 -0600
-@@ -112,9 +112,6 @@
-         # Boolean set to true if window is not minimized and is "visible"
-         self.update_interface = True
+--- src/interface.py.orig	2007-12-29 23:31:52.000000000 -0600
++++ src/interface.py	2007-12-29 23:33:20.000000000 -0600
+@@ -1061,7 +1061,6 @@
+         # Load plugins after we showed main window (if not started in tray)
+         self.load_plugins()
+         self.load_tabs_order()
+-        self.new_release_check()
  
--        def new_release_check():
--            common.new_release_check()
+         try:
+             gobject.threads_init()
+@@ -1071,34 +1070,6 @@
+         except KeyboardInterrupt:
+             self.manager.quit()
+ 
+-    def new_release_check(self):
+-        import socket
+-        import urllib
+-        timeout = 5
+-        socket.setdefaulttimeout(timeout)
+-        try:
+-            gtk.gdk.threads_enter()
+-        except:
+-            pass
+-        try:
+-            new_release = urllib.urlopen("http://download.deluge-torrent.org/version").read().strip()
+-        except IOError:
+-            print "Network error while trying to check for a newer version of \
+-Deluge"
+-            new_release = ""
 -
-         def send_info():
-             import time
-             
-@@ -130,9 +127,6 @@
-             else:
-                 _run_script()        
- 
--        if self.config.get("new_releases"):
--            new_release_check()
+-        if new_release > common.PROGRAM_VERSION:
+-            result = dialogs.show_popup_question(None, _("There is a newer version \
+-of Deluge.  Would you like to be taken to our download site?"))
+-            if result:
+-                common.open_url_in_browser('http://download.deluge-torrent.org/')
+-            else:
+-                pass
+-        try:
+-            gtk.gdk.threads_leave()
+-        except:
+-            pass
 -
-         if self.config.get("send_info"):
-             send_info()
- 
+     def load_plugins(self):
+         enable_plugins = self.config.get('enabled_plugins').split(':')
+         for plugin in enable_plugins:
