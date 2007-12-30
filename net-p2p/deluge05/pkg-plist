@@ -5,6 +5,12 @@ bin/deluge
 %%PYTHON_SITELIBDIR%%/deluge/_dbus.py
 %%PYTHON_SITELIBDIR%%/deluge/_dbus.pyc
 %%PYTHON_SITELIBDIR%%/deluge/_dbus.pyo
+%%PYTHON_SITELIBDIR%%/deluge/bookmark.py
+%%PYTHON_SITELIBDIR%%/deluge/bookmark.pyc
+%%PYTHON_SITELIBDIR%%/deluge/bookmark.pyo
+%%PYTHON_SITELIBDIR%%/deluge/browser.py
+%%PYTHON_SITELIBDIR%%/deluge/browser.pyc
+%%PYTHON_SITELIBDIR%%/deluge/browser.pyo
 %%PYTHON_SITELIBDIR%%/deluge/common.py
 %%PYTHON_SITELIBDIR%%/deluge/common.pyc
 %%PYTHON_SITELIBDIR%%/deluge/common.pyo
@@ -36,6 +42,9 @@ bin/deluge
 %%PYTHON_SITELIBDIR%%/deluge/pref.py
 %%PYTHON_SITELIBDIR%%/deluge/pref.pyc
 %%PYTHON_SITELIBDIR%%/deluge/pref.pyo
+%%PYTHON_SITELIBDIR%%/deluge/search.py
+%%PYTHON_SITELIBDIR%%/deluge/search.pyc
+%%PYTHON_SITELIBDIR%%/deluge/search.pyo
 %%PYTHON_SITELIBDIR%%/deluge/tab_details.py
 %%PYTHON_SITELIBDIR%%/deluge/tab_details.pyc
 %%PYTHON_SITELIBDIR%%/deluge/tab_details.pyo
@@ -44,17 +53,22 @@ bin/deluge
 %%PYTHON_SITELIBDIR%%/deluge/wizard.pyo
 share/applications/deluge.desktop
 %%DATADIR%%/glade/aboutdialog.glade
+%%DATADIR%%/glade/browser.glade
+%%DATADIR%%/glade/browserwin.glade
 %%DATADIR%%/glade/delugegtk.glade
 %%DATADIR%%/glade/dgtkpopups.glade
 %%DATADIR%%/glade/edit_trackers.glade
 %%DATADIR%%/glade/file_tab_menu.glade
 %%DATADIR%%/glade/files_dialog.glade
+%%DATADIR%%/glade/list_bookmarks.glade
 %%DATADIR%%/glade/merge_dialog.glade
 %%DATADIR%%/glade/preferences_dialog.glade
+%%DATADIR%%/glade/searchdlg.glade
 %%DATADIR%%/glade/torrent_menu.glade
 %%DATADIR%%/glade/tray_menu.glade
 %%DATADIR%%/glade/wizard.glade
 %%DATADIR%%/icons/scalable/apps/deluge.svg
+%%DATADIR%%/pixmaps/browser.png
 %%DATADIR%%/pixmaps/deluge-about.png
 %%DATADIR%%/pixmaps/deluge.png
 %%DATADIR%%/pixmaps/deluge.svg
@@ -598,19 +612,36 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/TorrentPeers/__init__.py
 %%DATADIR%%/plugins/TorrentPeers/peers_preferences.glade
 %%DATADIR%%/plugins/TorrentPeers/tab_peers.py
-%%DATADIR%%/plugins/TorrentSearch/__init__.py
-%%DATADIR%%/plugins/TorrentSearch/plugin.py
-%%DATADIR%%/plugins/TorrentSearch/searchdlg.glade
 %%DATADIR%%/plugins/WebSeed/__init__.py
 %%DATADIR%%/plugins/WebSeed/webseed.glade
 %%DATADIR%%/plugins/WebUi/LICENSE
 %%DATADIR%%/plugins/WebUi/TODO
 %%DATADIR%%/plugins/WebUi/__init__.py
 %%DATADIR%%/plugins/WebUi/dbus_interface.py
-%%DATADIR%%/plugins/WebUi/dbus_pythonize.py
 %%DATADIR%%/plugins/WebUi/debugerror.py
 %%DATADIR%%/plugins/WebUi/deluge_webserver.py
-%%DATADIR%%/plugins/WebUi/gtk_cherrypy_wsgiserver.py
+%%DATADIR%%/plugins/WebUi/json_api.py
+%%DATADIR%%/plugins/WebUi/lib/__init__.py
+%%DATADIR%%/plugins/WebUi/lib/gtk_cherrypy_wsgiserver.py
+%%DATADIR%%/plugins/WebUi/lib/pythonize.py
+%%DATADIR%%/plugins/WebUi/lib/readme.txt
+%%DATADIR%%/plugins/WebUi/lib/static_handler.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/Dependency-not-really part of webui.txt
+%%DATADIR%%/plugins/WebUi/lib/webpy022/__init__.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/changes.txt
+%%DATADIR%%/plugins/WebUi/lib/webpy022/cheetah.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/db.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/debugerror.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/form.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/http.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/httpserver.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/net.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/request.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/template.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/utils.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/webapi.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/wsgi.py
+%%DATADIR%%/plugins/WebUi/lib/webpy022/wsgiserver/__init__.py
 %%DATADIR%%/plugins/WebUi/revno
 %%DATADIR%%/plugins/WebUi/run_webserver
 %%DATADIR%%/plugins/WebUi/scripts/add_torrent_to_deluge_webui
@@ -632,8 +663,6 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/WebUi/static/images/tango/down.png
 %%DATADIR%%/plugins/WebUi/static/images/tango/list-add.png
 %%DATADIR%%/plugins/WebUi/static/images/tango/list-remove.png
-%%DATADIR%%/plugins/WebUi/static/images/tango/media-playback-pause.png
-%%DATADIR%%/plugins/WebUi/static/images/tango/media-playback-start.png
 %%DATADIR%%/plugins/WebUi/static/images/tango/pause.png
 %%DATADIR%%/plugins/WebUi/static/images/tango/preferences-system.png
 %%DATADIR%%/plugins/WebUi/static/images/tango/process-stop.png
@@ -646,7 +675,6 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/WebUi/static/images/tango/user-trash.png
 %%DATADIR%%/plugins/WebUi/static/images/tango/view-refresh.png
 %%DATADIR%%/plugins/WebUi/static/simple_site_style.css
-%%DATADIR%%/plugins/WebUi/static_handler.py
 %%DATADIR%%/plugins/WebUi/templates/advanced/header.html
 %%DATADIR%%/plugins/WebUi/templates/advanced/index.html
 %%DATADIR%%/plugins/WebUi/templates/advanced/part_categories.html
@@ -665,7 +693,6 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/WebUi/templates/deluge/index.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/login.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/part_button.html
-%%DATADIR%%/plugins/WebUi/templates/deluge/part_refresh.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/part_stats.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/refresh_form.html
 %%DATADIR%%/plugins/WebUi/templates/deluge/sort_column_head.html
@@ -676,22 +703,6 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/WebUi/templates/hacking-templates.txt
 %%DATADIR%%/plugins/WebUi/tests/test_all.py
 %%DATADIR%%/plugins/WebUi/version
-%%DATADIR%%/plugins/WebUi/webpy022/Dependency-not-really part of webui.txt
-%%DATADIR%%/plugins/WebUi/webpy022/__init__.py
-%%DATADIR%%/plugins/WebUi/webpy022/changes.txt
-%%DATADIR%%/plugins/WebUi/webpy022/cheetah.py
-%%DATADIR%%/plugins/WebUi/webpy022/db.py
-%%DATADIR%%/plugins/WebUi/webpy022/debugerror.py
-%%DATADIR%%/plugins/WebUi/webpy022/form.py
-%%DATADIR%%/plugins/WebUi/webpy022/http.py
-%%DATADIR%%/plugins/WebUi/webpy022/httpserver.py
-%%DATADIR%%/plugins/WebUi/webpy022/net.py
-%%DATADIR%%/plugins/WebUi/webpy022/request.py
-%%DATADIR%%/plugins/WebUi/webpy022/template.py
-%%DATADIR%%/plugins/WebUi/webpy022/utils.py
-%%DATADIR%%/plugins/WebUi/webpy022/webapi.py
-%%DATADIR%%/plugins/WebUi/webpy022/wsgi.py
-%%DATADIR%%/plugins/WebUi/webpy022/wsgiserver/__init__.py
 %%DATADIR%%/plugins/WebUi/webserver_common.py
 %%DATADIR%%/plugins/WebUi/webserver_framework.py
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -779,22 +790,21 @@ share/pixmaps/deluge.png
 @dirrmtry share/icons/hicolor/256x256/apps
 @dirrmtry share/icons/hicolor/256x256
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/plugins/WebUi/webpy022/wsgiserver
-@dirrm %%DATADIR%%/plugins/WebUi/webpy022
 @dirrm %%DATADIR%%/plugins/WebUi/tests
 @dirrm %%DATADIR%%/plugins/WebUi/templates/deluge
 @dirrm %%DATADIR%%/plugins/WebUi/templates/advanced/static
 @dirrm %%DATADIR%%/plugins/WebUi/templates/advanced
 @dirrm %%DATADIR%%/plugins/WebUi/templates
-@dirrm %%DATADIR%%/plugins/WebUi/static/xul
 @dirrm %%DATADIR%%/plugins/WebUi/static/images/tango
 @dirrm %%DATADIR%%/plugins/WebUi/static/images
 @dirrm %%DATADIR%%/plugins/WebUi/static
 @dirrm %%DATADIR%%/plugins/WebUi/ssl
 @dirrm %%DATADIR%%/plugins/WebUi/scripts
+@dirrm %%DATADIR%%/plugins/WebUi/lib/webpy022/wsgiserver
+@dirrm %%DATADIR%%/plugins/WebUi/lib/webpy022
+@dirrm %%DATADIR%%/plugins/WebUi/lib
 @dirrm %%DATADIR%%/plugins/WebUi
 @dirrm %%DATADIR%%/plugins/WebSeed
-@dirrm %%DATADIR%%/plugins/TorrentSearch
 @dirrm %%DATADIR%%/plugins/TorrentPeers
 @dirrm %%DATADIR%%/plugins/TorrentNotification
 @dirrm %%DATADIR%%/plugins/TorrentFiles
