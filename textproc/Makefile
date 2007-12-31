@@ -597,6 +597,7 @@
     SUBDIR += p5-Text-Textile
     SUBDIR += p5-Text-Tmpl
     SUBDIR += p5-Text-Trac
+    SUBDIR += p5-Text-Trim
     SUBDIR += p5-Text-Unaccent
     SUBDIR += p5-Text-VimColor
     SUBDIR += p5-Text-WikiFormat
