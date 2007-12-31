@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpi
-DISTVERSION=	0.68.3-2
+DISTVERSION=	0.70
 CATEGORIES=	www
 MASTER_SITES=	http://glpi-project.org/IMG/gz/ \
 		http://download.gna.org/kanicule/freebsd/distfiles/
@@ -36,7 +36,7 @@ post-configure:
 do-install:
 	@${MKDIR} -m 0755 ${PREFIX}/${GLPIDIR}
 	@cd ${WRKSRC} && ${FIND} * -print | ${CPIO} ${CPIOARGS} ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIDIR}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${GLPIDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
