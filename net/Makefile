@@ -108,6 +108,7 @@
     SUBDIR += dgd-net
     SUBDIR += dhcp-agent
     SUBDIR += dhcp6
+    SUBDIR += dhcpcd
     SUBDIR += dhcpdump
     SUBDIR += dhcperf
     SUBDIR += dhcping
