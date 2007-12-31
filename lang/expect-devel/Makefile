@@ -23,6 +23,7 @@ EXPECT_VER=	${PORTVERSION}
 .if !defined(WITHOUT_X11)
 USE_TK=		84+
 .else
+PKGNAMESUFFIX=	-nox11
 USE_TCL=	84+
 .endif
 
@@ -54,12 +55,23 @@ CFLAGS+=	-I${TCL_INCLUDEDIR} -I${TCL_INCLUDEDIR}/generic
 
 .if !defined(NO_MAN_INSTALL)
 MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
-		expect.1 kibitz.1 mkpasswd.1 multixterm.1 passmass.1 \
-		tknewsbiff.1 unbuffer.1 xkibitz.1
+		expect.1 kibitz.1 mkpasswd.1 passmass.1 unbuffer.1 xkibitz.1
 .if !defined(WITHOUT_X11)
-MAN1+=		expectk.1
+MAN1+=		expectk.1 multixterm.1 tknewsbiff.1
 .endif
 MAN3=		libexpect.3
+.endif
+
+post-patch:
+.if defined(WITHOUT_X11)
+	@${REINPLACE_CMD} -e 's/TEA_PATH_TKCONFIG//g' \
+		-e 's/TEA_LOAD_TKCONFIG//g' -e 's/TEA_PUBLIC_TK_HEADERS//g' \
+		${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's/expect expectk/expect/g' \
+		-e 's/multixterm//g' -e 's/tknewsbiff//g' -e 's/tkpasswd//g' \
+		-e 's/xpstat//g' -e 's/@TK_INCLUDES@//g' \
+		-e 's|$$(INSTALL_DATA) $$(srcdir)/expectk.man|#|g' \
+		${WRKSRC}/Makefile.in
 .endif
 
 pre-configure:
