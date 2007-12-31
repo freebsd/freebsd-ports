@@ -82,10 +82,12 @@
 %%SUBDIR%%/Graphics/Rendering/OpenGL/GL.hi
 %%SUBDIR%%/Graphics/Rendering/OpenGL/GLU.hi
 %%SUBDIR%%/Graphics/Rendering/OpenGL.hi
-%%SUBDIR%%/libHSOpenGL-2.2.1.a
-%%SUBDIR%%/HSOpenGL-2.2.1.o
+%%SUBDIR%%/libHSOpenGL-%%PORTVERSION%%.a
+%%SUBDIR%%/HSOpenGL-%%PORTVERSION%%.o
 %%SUBDIR%%/include/HsOpenGL.h
 %%SUBDIR%%/%%PORTNAME%%-register.sh
+share/doc/OpenGL-%%PORTVERSION%%/LICENSE
+@dirrm share/doc/OpenGL-%%PORTVERSION%%
 @dirrm %%SUBDIR%%/include
 @dirrm %%SUBDIR%%/Graphics/Rendering/OpenGL/GLU
 @dirrm %%SUBDIR%%/Graphics/Rendering/OpenGL/GL/Texturing

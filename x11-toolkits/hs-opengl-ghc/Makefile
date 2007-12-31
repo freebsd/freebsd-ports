@@ -5,15 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	opengl
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.1.1
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${GHC_VERSION}/
 PKGNAMEPREFIX=	hs-
 PKGNAMESUFFIX=	-ghc
 DISTNAME=	ghc-${GHC_VERSION}-src-extralibs
 
-PATCH_SITES=	http://lambda.foldr.org/~vs/FreeBSD/ghc-cabal-${GHC_VERSION}/
-PATCHFILES=	patch-cabal-${GHC_VERSION}-Setup.hs
+#PATCH_SITES=	http://lambda.foldr.org/~vs/FreeBSD/ghc-cabal-${GHC_VERSION}/
+#PATCHFILES=	patch-cabal-${GHC_VERSION}-Setup.hs
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	OpenGL bindings for Haskell programs
@@ -21,7 +21,7 @@ COMMENT=	OpenGL bindings for Haskell programs
 USE_BZIP2=	yes
 USE_GL=		yes
 
-GHC_VERSION=	6.6.1
+GHC_VERSION=	6.8.2
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \
 		PORTVERSION=${PORTVERSION} \
 		PORTNAME=${PORTNAME} \
