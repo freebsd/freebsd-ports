@@ -28,6 +28,7 @@
     SUBDIR += amarok-fs
     SUBDIR += amb-plugins
     SUBDIR += amp
+    SUBDIR += ampache
     SUBDIR += ample
     SUBDIR += amrcoder
     SUBDIR += aqualung

@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------
+
+Browse http://localhost/%%PORTNAME%%/ to configure your ampache
+
+---------------------------------------------------------------------------
+To make ampache available through your web site, I suggest
+that you add something like the following to httpd.conf:
+
+    Alias /ampache/ "%%WWWDIR%%/"
+
+    <Directory "%%WWWDIR%%/">
+        Options none
+        AllowOverride Limit
+        Order Deny,Allow
+        Allow from all
+    </Directory>
