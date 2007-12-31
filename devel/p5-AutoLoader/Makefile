@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AutoLoader
-PORTVERSION=	5.63
+PORTVERSION=	5.64
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,6 @@ COMMENT=	Load subroutines only on demand
 
 PERL_CONFIGURE=	yes
 
-MAN3=		AutoLoader.3
+MAN3=		AutoLoader.3 AutoSplit.3
 
 .include <bsd.port.mk>
