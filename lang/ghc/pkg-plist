@@ -388,7 +388,6 @@ lib/ghc-%%GHC_VERSION%%/include/config.h
 lib/ghc-%%GHC_VERSION%%/include/ghcautoconf.h
 lib/ghc-%%GHC_VERSION%%/include/ghcconfig.h
 lib/ghc-%%GHC_VERSION%%/include/ghcplatform.h
-lib/ghc-%%GHC_VERSION%%/include/gmp.h
 lib/ghc-%%GHC_VERSION%%/include/ieee-flpt.h
 lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/Directory.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/lib/Cabal-1.2.3.0/Distribution/Compat/Directory.p_hi
@@ -1350,8 +1349,7 @@ lib/ghc-%%GHC_VERSION%%/libHSrts_debug.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSrts_p.a
 lib/ghc-%%GHC_VERSION%%/libHSrts_thr.a
 lib/ghc-%%GHC_VERSION%%/libHSrts_thr_debug.a
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSrts_thr_p.a
-lib/ghc-%%GHC_VERSION%%/libgmp.a
+lib/ghc-%%GHC_VERSION%%/libHSrts_thr_p.a
 lib/ghc-%%GHC_VERSION%%/package.conf
 lib/ghc-%%GHC_VERSION%%/package.conf.old
 lib/ghc-%%GHC_VERSION%%/template-hsc.h

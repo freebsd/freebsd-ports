@@ -22,7 +22,7 @@ BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
 
 USE_AUTOTOOLS=	autoconf:261:env
 USE_BZIP2=	yes
-#LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -53,13 +53,12 @@ PLIST_SUB+=	PROFILE=""
 BOOT_DIR=	${WRKDIR}/ghc-${PORTVERSION}-boot
 BOOT_GHC=	${BOOT_DIR}/bin/ghc-${PORTVERSION}
 
-CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}  --with-gcc=${CC}# \
-#	--with-gmp-includes=${LOCALBASE}/include --with-gmp-libraries=${LOCALBASE}/lib 
+CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}  --with-gcc=${CC} \
+	--with-gmp-includes=${LOCALBASE}/include --with-gmp-libraries=${LOCALBASE}/lib 
 # specifying CONFIGURE_TARGET doesn't work for some reason.
 CONFIGURE_TARGET=
 # libgmp:
-#CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CFLAGS= #empty
+CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
 # override TMPDIR because /tmp often doesn't have enough space
 # to build some of the larger libraries.
