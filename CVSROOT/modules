@@ -1982,6 +1982,7 @@ dgpsip		ports/astro/dgpsip
 dgs		ports/x11/dgs
 dhcp-agent	ports/net/dhcp-agent
 dhcp6		ports/net/dhcp6
+dhcpcd		ports/net/dhcpcd
 dhcpdump	ports/net/dhcpdump
 dhcperf		ports/net/dhcperf
 dhcping		ports/net/dhcping
