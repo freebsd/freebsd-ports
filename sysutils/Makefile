@@ -571,6 +571,7 @@
     SUBDIR += rsyncbackup
     SUBDIR += rsyncmanager
     SUBDIR += rsyslog
+    SUBDIR += rsyslog-gssapi
     SUBDIR += rsyslog-mysql
     SUBDIR += rsyslog-pgsql
     SUBDIR += rtty
