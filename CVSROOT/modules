@@ -13270,6 +13270,7 @@ py-libgmail	ports/mail/py-libgmail
 py-libgsf	ports/devel/py-libgsf
 py-libmpdclient	ports/audio/py-libmpdclient
 py-libnet	ports/net/py-libnet
+py-libtre	ports/textproc/py-libtre
 py-libtunepimp	ports/audio/py-libtunepimp
 py-libxml2	ports/textproc/py-libxml2
 py-libxslt	ports/textproc/py-libxslt
