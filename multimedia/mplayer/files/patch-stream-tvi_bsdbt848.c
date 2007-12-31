@@ -1,5 +1,5 @@
---- stream/tvi_bsdbt848.c.orig	2007-10-08 03:49:26.000000000 +0800
-+++ stream/tvi_bsdbt848.c	2007-11-11 15:24:05.000000000 +0800
+--- stream/tvi_bsdbt848.c.orig	2007-10-07 21:49:26.000000000 +0200
++++ stream/tvi_bsdbt848.c	2007-12-26 12:28:21.000000000 +0100
 @@ -26,6 +26,7 @@
  #define NTSC_HEIGHT 480
  #define NTSC_FPS    29.97
@@ -62,16 +62,18 @@
              {
              mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848IoctlFailed, "METEORSFMT", strerror(errno));
              return(TVI_CONTROL_FALSE);
-@@ -532,7 +552,7 @@
+@@ -531,8 +551,9 @@
+ /* Video Configuration */
  
  priv->videoready = TRUE;
++priv->btdev = strdup("/dev/bktr0");
  priv->immediatemode = FALSE;
 -priv->iformat = METEOR_FMT_PAL;
 +priv->iformat = BT848_IFORM_F_PALBDGHI;
  priv->maxheight = PAL_HEIGHT;
  priv->maxwidth = PAL_WIDTH;
  priv->maxfps = PAL_FPS;
-@@ -557,7 +577,7 @@
+@@ -557,7 +578,7 @@
      }
  
  if(priv->videoready == TRUE && 
