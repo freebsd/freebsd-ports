@@ -1,0 +1,19 @@
+z80asm is an assembler for the Z80 microprcessor. The assembler aims to be
+portable and complete. Of course it assembles all official mnemonics, but it
+also aims to assemble the unofficial mnemonics.
+
+The assembler features the output of listing files which show the source with
+the assembled codes and address next to it.
+
+It also allows outputting of label files, in a format which can be included by
+other assembler source files.
+
+Other noteworthy features are complete calculation capabilities, conditional
+assembling of parts of the code, and inclusion of other source files.
+
+The assembler was written with the MSX computer in mind as the target platform,
+but it can be used for any system with a Z80 in it. The original idea was to
+make header files with labels of MSX specific addresses (BIOS, BDOS, system
+variables), but nothing like this has been done yet.
+
+WWW: http://savannah.nongnu.org/projects/z80asm/

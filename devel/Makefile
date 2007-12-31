@@ -2338,6 +2338,7 @@
     SUBDIR += xxl
     SUBDIR += yasm
     SUBDIR += z80-asm
+    SUBDIR += z80asm
     SUBDIR += zeroinstall-injector
     SUBDIR += ztcl
     SUBDIR += zthread

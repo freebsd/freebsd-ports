@@ -1,0 +1,15 @@
+--- Makefile	2007-12-29 18:53:32.000000000 -0800
++++ Makefile-mod	2007-12-29 18:53:14.000000000 -0800
+@@ -16,9 +16,9 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+-CC = gcc
+-CFLAGS = -O0 -Wall -Wwrite-strings -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wnested-externs -Winline -pedantic -ansi -Wshadow -ggdb3 -W -Ignulib
+-SHELL = /bin/bash
++CC?= gcc
++CFLAGS+= -Wall -Wwrite-strings -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wnested-externs -Winline -pedantic -ansi -Wshadow -ggdb3 -W -Ignulib
++SHELL = /bin/sh
+ VERSION ?= $(shell echo -n `cat VERSION | cut -d. -f1`. ; echo $$[`cat VERSION | cut -d. -f2` + 1])
+ 
+ all:z80asm
