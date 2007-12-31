@@ -62,8 +62,15 @@ pre-configure:
 	${WRKSRC}/../test/unit/gcc.mak
 .for lib in stlport stlportg stlportstlg
 	${REINPLACE_CMD} -e 's|-l${lib}$$|-l${lib}_${COMPILER}|'        \
-	${PATCH_WRKSRC}/build/Makefiles/gmake/app/gcc.mak
+		${PATCH_WRKSRC}/build/Makefiles/gmake/app/gcc.mak
 .endfor
+.if ${ARCH} != i386
+. for sdir in app lib
+	# Cannot build a shared object with libsupc++
+	${REINPLACE_CMD} -e 's|-lsupc++|-lstdc++|'		\
+		${PATCH_WRKSRC}/build/Makefiles/gmake/${sdir}/gcc.mak
+. endfor
+.endif
 
 do-install:
 	${MKDIR} "${PREFIX}/include/stlport/"
