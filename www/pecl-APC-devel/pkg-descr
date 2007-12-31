@@ -1,6 +1,0 @@
-APC is the Alternative PHP Cache.
-
-It was conceived of to provide a free, open, and robust framework for
-caching and optimizing PHP intermediate code.
-
-WWW: http://pecl.php.net/package/APC

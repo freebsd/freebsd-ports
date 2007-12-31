@@ -1,6 +1,0 @@
-mysqltoolkit is a collection of command-line utilities that provide missing
-functionality for MySQL. Some of the tools implement lacking server
-functionality, such as online consistency checks for master/slave replication;
-others are client-side utilities such as a query profiler.
-
-WWW:	http://mysqltoolkit.sourceforge.net

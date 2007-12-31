@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.91.2
-PORTREVISION=	1
+PORTVERSION=	0.92
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -19,6 +18,8 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 OPTIONS=	ARC "Enable arch archives support" On \
 		ARJ "Enable arj archives support" On \
 		LHA "Enable lha archives support" On \
+		UNZOO "Enable zoo archives support" On \
+		UNRAR "Enable rar archives support" On \
 		MILTER "Compile the milter interface" Off \
 		LDAP "libmilter was built with LDAP" Off \
 		STDERR "Print logs to stderr instead of stdout" Off \
@@ -107,14 +108,23 @@ CONFIGURE_ARGS+=	--enable-gethostbyname_r
 PTHREAD_LIBS=	-lthr
 .endif
 
-.if !defined(WITHOUT_ARC)
+.if defined(WITH_ARC)
 RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
 .endif
-.if !defined(WITHOUT_ARJ)
+.if defined(WITH_ARJ)
 RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
 .endif
-.if !defined(WITHOUT_LHA)
+.if defined(WITH_LHA)
 RUN_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
+.endif
+.if defined(WITH_UNZOO)
+RUN_DEPENDS+=	unzoo:${PORTSDIR}/archivers/unzoo
+.endif
+.if defined(WITH_UNRAR)
+PLIST_SUB+=	UNRAR=""
+.else
+PLIST_SUB+=	UNRAR="@comment "
+CONFIGURE_ARGS+=	--disable-unrar
 .endif
 
 .if defined(WITH_MILTER)
@@ -148,11 +158,11 @@ post-patch:
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,g' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
-		${WRKSRC}/libclamav/unrar/unrar.c
 	@${REINPLACE_CMD} ${SED_CONF} \
 		${WRKSRC}/etc/clamd.conf \
 		${WRKSRC}/etc/freshclam.conf
+	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
+		${WRKSRC}/libclamunrar/unrar.c
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL

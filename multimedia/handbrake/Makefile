@@ -6,63 +6,119 @@
 #
 
 PORTNAME=	handbrake
-PORTVERSION=	0.7.1
-PORTREVISION=	5
+PORTVERSION=	0.9.1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.m0k.org/${PORTNAME}/ \
-		http://www.mirrors.ausmac.net/ftp/AudioVisual-SW/HandBrake/ \
-		http://apple.doit.wisc.edu/mirrors/ausmac/Audio-SW/HandBrake/
-DISTNAME=	HandBrake-${PORTVERSION}
+MASTER_SITES=	http://saintdevelopment.com/mirror/handbrake/:main \
+		http://junk.phantomgorilla.com/hb/:main \
+		http://daigertech.com/handbrake/:main \
+		http://www.mirrors.ausmac.net/ftp/Audio-SW/HandBrake/testing/:main \
+		http://asshatandi.com/:main \
+		http://download.m0k.org/handbrake/testing/:main \
+		http://download.m0k.org/handbrake/contrib/:contrib
+DISTFILES=	HandBrake-${PORTVERSION}.tar.gz:main \
+		faac-1.24.tar.gz:contrib \
+		lame-3.96.1.tar.gz:contrib \
+		libdca-r81-strapped.tar.gz:contrib \
+		libdvdcss-1.2.9.tar.gz:contrib \
+		libdvdread-0.9.7.tar.gz:contrib \
+		libmkv-0.6.1.2.tar.gz:contrib \
+		libogg-1.1.2.tar.gz:contrib \
+		libvorbis-aotuv_b5.tar.gz:contrib \
+		mpeg2dec-0.4.1.tar.gz:contrib \
+		mpeg4ip-1.3.tar.gz:contrib \
+		xvidcore-1.1.2.tar.gz:contrib \
+		ffmpeg-9816.tar.gz:contrib \
+		x264-r665.tar.gz:contrib \
+		a52dec-0.7.4.tar.gz:contrib \
+		libsamplerate-0.1.2.tar.gz:contrib
+DIST_SUBDIR=	handbrake
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	jaj@hcl-club.lu
 COMMENT=	A DVD to MPEG-4 ripper and encoder
 
-BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
-		dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
-		dvdread.5:${PORTSDIR}/multimedia/libdvdread \
-		faac.0:${PORTSDIR}/audio/faac \
-		mp3lame.0:${PORTSDIR}/audio/lame \
-		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
-		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2 \
-		ogg.5:${PORTSDIR}/audio/libogg \
-		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		xvidcore.4:${PORTSDIR}/multimedia/xvid \
-		x264.50:${PORTSDIR}/multimedia/x264 \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
+		pkg-config:${PORTSDIR}/devel/pkg-config
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-BROKEN=		Does not compile
+NO_CDROM=	CSS code may violate the DMCA
 
-WRKSRC=		${WRKDIR}/HandBrake-${PORTVERSION}
+USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
+LIBTOOLFILES=	${WRKSRC}/contrib/a52dec/configure \
+		${WRKSRC}/contrib/libdvdcss/configure \
+		${WRKSRC}/contrib/libdvdread/configure \
+		${WRKSRC}/contrib/faac/configure \
+		${WRKSRC}/contrib/lame/configure \
+		${WRKSRC}/contrib/mpeg4ip/configure \
+		${WRKSRC}/contrib/mpeg2dec/configure \
+		${WRKSRC}/contrib/libogg/configure \
+		${WRKSRC}/contrib/libsamplerate/configure \
+		${WRKSRC}/contrib/libvorbis/configure
+
+WRKSRC=		${WRKDIR}/HandBrake
 PLIST_FILES=	bin/handbrake
 
 JAM?=		${LOCALBASE}/bin/jam
-SYSCTL_CMD?=	/sbin/sysctl
-WITH_DVD_DEVICE?=	acd0
+APPLY?=		/usr/bin/apply
 
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude beos \
-			--exclude contrib \
-			--exclude gtk2 \
-			--exclude macosx \
-			--exclude wx
+.include <bsd.port.pre.mk>
+
+# nasm/yasm needed by x264
+.if ${ARCH}=="i386"
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+.else
+BUILD_DEPENDS+=	yasm>=0.6.0:${PORTSDIR}/devel/yasm
+.endif
+
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${WRKSRC}/contrib/lib/pkgconfig
+MAKE_ENV+=	ARCH=${ARCH} MAKE=${GMAKE}
+
+post-extract:
+	@${APPLY} "${MV} %1 ${WRKSRC}/contrib/" \
+		${WRKDIR}/a52dec \
+		${WRKDIR}/faac \
+		${WRKDIR}/ffmpeg \
+		${WRKDIR}/lame \
+		${WRKDIR}/libdca \
+		${WRKDIR}/libdvdcss \
+		${WRKDIR}/libdvdread \
+		${WRKDIR}/libmkv \
+		${WRKDIR}/libogg \
+		${WRKDIR}/libsamplerate \
+		${WRKDIR}/libvorbis \
+		${WRKDIR}/mpeg2dec \
+		${WRKDIR}/mpeg4ip \
+		${WRKDIR}/x264 \
+		${WRKDIR}/xvidcore
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g ; s|HBTest|${PORTNAME}|g' \
-			${WRKSRC}/configure ${WRKSRC}/Jamfile \
-			${WRKSRC}/libhb/Jamfile ${WRKSRC}/test/test.c
-	@${REINPLACE_CMD} -e 's|/usr/sbin/sysctl|${SYSCTL_CMD}|g' \
-		${WRKSRC}/libhb/ports.c
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
-		${WRKSRC}/libhb/fifo.c
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g ; \
+		s|%%CONTRIB%%|${WRKSRC}/contrib|g ; \
+		s|./bootstrap|${SETENV} CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" ${CONFIGURE_ENV} ./bootstrap|g ; \
+		s|./configure|${SETENV} CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" ${CONFIGURE_ENV} ./configure|g' \
+			${WRKSRC}/contrib/Jamfile
+	@${REINPLACE_CMD} -e 's|-O3||g ; s|-O20||g ; s|-O4 -ffast-math||g ; \
+		s| -mtune=.*"|"|g ; s| -mcpu=.*"|"|g ; \
+		s|-fomit-frame-pointer||g ; s|-pthread|${PTHREAD_LIBS}|g ; \
+		s|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|=`echo \".*$$CFLAGS\".*sed.*`|=`echo \"$$OPT_CFLAGS $$CFLAGS\"`|g' \
+			${WRKSRC}/contrib/*/configure
+	@${REINPLACE_CMD} -e 's|>&/|>/|g' \
+		${WRKSRC}/contrib/mpeg4ip/configure
+	@${REINPLACE_CMD} -e 's|\\$$(PREFIX)|${WRKSRC}/contrib|g ; \
+		s|$$(PREFIX)|${WRKSRC}/contrib|g ; \
+		s|$$PREFIX|${WRKSRC}/contrib|g' \
+			${WRKSRC}/contrib/ffmpeg/configure
 
 # jam -dx, it will giving a verbose of build.
 do-build:
 	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${JAM} -dx)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/HandBrakeCLI ${PREFIX}/bin/handbrake
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

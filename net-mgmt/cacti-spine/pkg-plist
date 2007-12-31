@@ -1,5 +1,0 @@
-bin/cactid
-@unexec if cmp -s %D/etc/cactid.conf %D/%%EXAMPLESDIR%%/cactid.conf; then rm -f %D/etc/cactid.conf; fi
-%%EXAMPLESDIR%%/cactid.conf
-@exec [ -f %D/etc/cactid.conf ] || cp %D/%%EXAMPLESDIR%%/cactid.conf %D/etc/cactid.conf
-@dirrm %%EXAMPLESDIR%%

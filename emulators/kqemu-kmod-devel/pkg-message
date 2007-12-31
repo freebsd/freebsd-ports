@@ -1,7 +1,0 @@
-====
-Notice:
-If you installed this from a package and your kernel configuration
-differs from the one on the package build machine (or your kernel source
-is newer than the package), then the kld may not work, or even panic.
-Consider building it from ports in that case.
-====

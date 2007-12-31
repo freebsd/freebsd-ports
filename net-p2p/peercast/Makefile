@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	peercast
-PORTVERSION=	0.1217
+PORTVERSION=	0.1218
 CATEGORIES=	net-p2p multimedia
 MASTER_SITES=	http://www.peercast.org/
 DISTNAME=	peercast-linux
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	A peer-to-peer network for broadcasting and listening to streams
 
 USE_LINUX=	yes
@@ -28,7 +28,11 @@ do-install:
 	${MKDIR} ${DATADIR}/html/${lang}
 	${INSTALL_DATA} ${WRKSRC}/html/${lang}/*.* ${DATADIR}/html/${lang}
 	${MKDIR} ${DATADIR}/html/${lang}/images
-	${INSTALL_DATA} ${WRKSRC}/html/${lang}/images/*.* ${DATADIR}/html/${lang}/images
+	${INSTALL_DATA} ${WRKSRC}/html/${lang}/images/*.* \
+		${DATADIR}/html/${lang}/images
 .endfor
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
