@@ -6,6 +6,7 @@
 
 PORTNAME=	pfscalibration
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	pfstools
@@ -30,4 +31,11 @@ MAN1=		jpeg2hdrgen.1 \
 		pfsinhdrgen.1 \
 		pfshdrcalibrate.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,#!/bin/bash,#!/bin/sh," \
+		${WRKSRC}/src/dcraw2hdrgen \
+		${WRKSRC}/src/jpeg2hdrgen
+
+.include <bsd.port.post.mk>
