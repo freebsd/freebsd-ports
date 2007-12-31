@@ -7,6 +7,7 @@
 
 PORTNAME=	z80asm
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.savannah.nongnu.org/releases/z80asm/
 
@@ -17,23 +18,22 @@ USE_GMAKE=	yes
 MAN1=		z80asm.1
 
 post-patch:
-	${ECHO} ${PATCHDIR}
 	@${REINPLACE_CMD} -e 's#/bin/bash#/bin/sh#' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/z80asm.1 ${PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/z80asm ${PREFIX}/bin
 
-.if !defined(NOEXAMPLES)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_MAN} -m 444 ${WRKSRC}/examples/hello.asm ${EXAMPLESDIR}
-	${INSTALL_MAN} -m 444 ${WRKSRC}/examples/macro.asm ${EXAMPLESDIR}
-	${INSTALL_MAN} -m 444 ${WRKSRC}/examples/seek.asm ${EXAMPLESDIR}
-	${INSTALL_MAN} -m 444 ${WRKSRC}/headers/msx-bios.asm ${EXAMPLESDIR}
-	${INSTALL_MAN} -m 444 ${WRKSRC}/headers/msx2+-bios.asm ${EXAMPLESDIR}
-	${INSTALL_MAN} -m 444 ${WRKSRC}/headers/msx2-bios.asm ${EXAMPLESDIR}
-	${INSTALL_MAN} -m 444 ${WRKSRC}/headers/msx2-subrom.asm ${EXAMPLESDIR}
-	${INSTALL_MAN} -m 444 ${WRKSRC}/headers/msxturbor-bios.asm ${EXAMPLESDIR}
+	${INSTALL_DATA} -m 444 ${WRKSRC}/examples/hello.asm ${EXAMPLESDIR}
+	${INSTALL_DATA} -m 444 ${WRKSRC}/examples/macro.asm ${EXAMPLESDIR}
+	${INSTALL_DATA} -m 444 ${WRKSRC}/examples/seek.asm ${EXAMPLESDIR}
+	${INSTALL_DATA} -m 444 ${WRKSRC}/headers/msx-bios.asm ${EXAMPLESDIR}
+	${INSTALL_DATA} -m 444 ${WRKSRC}/headers/msx2+-bios.asm ${EXAMPLESDIR}
+	${INSTALL_DATA} -m 444 ${WRKSRC}/headers/msx2-bios.asm ${EXAMPLESDIR}
+	${INSTALL_DATA} -m 444 ${WRKSRC}/headers/msx2-subrom.asm ${EXAMPLESDIR}
+	${INSTALL_DATA} -m 444 ${WRKSRC}/headers/msxturbor-bios.asm ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
