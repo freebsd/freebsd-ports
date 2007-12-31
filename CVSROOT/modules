@@ -16432,6 +16432,7 @@ vqcc-gtk	ports/net-im/vqcc-gtk
 vqregister	ports/mail/vqregister
 vrflash		ports/comms/vrflash
 vrfy		ports/mail/vrfy
+vrml2pov	ports/graphics/vrml2pov
 vscan		ports/security/vscan
 vserver		ports/net/vserver
 vsftpd		ports/ftp/vsftpd
