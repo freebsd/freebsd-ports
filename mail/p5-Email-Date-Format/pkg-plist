@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Date/Format/.packlist
+%%SITE_PERL%%/Email/Date/Format.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Date/Format
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Date
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
+@dirrmtry %%SITE_PERL%%/Email/Date
+@dirrmtry %%SITE_PERL%%/Email
