@@ -8,7 +8,9 @@
 PORTNAME=	iso-codes
 DISTVERSION=	1.7
 CATEGORIES=	misc
-MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/
+MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/ \
+		LOCAL
+MASTER_SITE_SUBDIR=	tabthorpe
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Lists of the country, language and currency iso names
