@@ -1987,12 +1987,14 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>tcl</name>
 	<name>tcl-threads</name>
-	<range><lt>8.4.16,1</lt></range>
+	<range><lt>8.4.16</lt></range>
+	<range><gt>8.4.*,1</gt><lt>8.4.16,1</lt></range>
       </package>
       <package>
 	<name>tk</name>
 	<name>tk-threads</name>
-	<range><lt>8.4.16,2</lt></range>
+	<range><lt>8.4.16</lt></range>
+	<range><gt>8.4.*,2</gt><lt>8.4.16,2</lt></range>
       </package>
     </affects>
     <description>
@@ -2011,6 +2013,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-09-27</discovery>
       <entry>2007-10-05</entry>
+      <modified>2007-12-31</modified>
     </dates>
   </vuln>
 
