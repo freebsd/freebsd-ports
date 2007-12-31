@@ -1,18 +1,19 @@
 bin/qd-config
+include/qd/bits.h
 include/qd/c_dd.h
 include/qd/c_qd.h
-include/qd/dd_real.h
 include/qd/dd_inline.h
+include/qd/dd_real.h
 include/qd/fpu.h
 include/qd/inline.h
-include/qd/qd_real.h
-include/qd/qd_inline.h
-include/qd/bits.h
 include/qd/qd_config.h
+include/qd/qd_inline.h
+include/qd/qd_real.h
 lib/libqd.a
 lib/libqdmod.a
-lib/qd/qdmodule.mod
+lib/qd/ddext.mod
 lib/qd/ddmodule.mod
+lib/qd/qdmodule.mod
 share/doc/qd/README
 share/doc/qd/qd.pdf
 @dirrm include/qd
