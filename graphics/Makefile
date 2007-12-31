@@ -730,6 +730,7 @@
     SUBDIR += visionegg
     SUBDIR += visprint
     SUBDIR += vp
+    SUBDIR += vrml2pov
     SUBDIR += vvv
     SUBDIR += whirlgif
     SUBDIR += white_dune
