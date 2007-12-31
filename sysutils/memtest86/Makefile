@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	memtest86
-PORTVERSION=	3.3
+PORTVERSION=	3.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.memtest86.com/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.iso.zip
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}a.iso.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jadawin@tuxaco.net
@@ -28,7 +28,7 @@ PLIST_DIRS=	%%DATADIR%%
 SUB_FILES=	pkg-message
 
 post-extract:
-	@${UNZIP_CMD} -qo ${DISTDIR}/${DISTNAME}.iso.zip -d ${WRKSRC}
+	@${UNZIP_CMD} -qo ${DISTDIR}/${DISTNAME}a.iso.zip -d ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${DATADIR}
