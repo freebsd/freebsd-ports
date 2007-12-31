@@ -802,6 +802,7 @@
     SUBDIR += py-hyperestraier
     SUBDIR += py-hyperestraier-python
     SUBDIR += py-jaxml
+    SUBDIR += py-libtre
     SUBDIR += py-libxml2
     SUBDIR += py-libxslt
     SUBDIR += py-ltxml

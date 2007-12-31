@@ -1,0 +1,14 @@
+Libtre is an attempt to create a lightweight, robust, and efficient fully
+POSIX compliant regexp matching library. There is still some work left, but
+the results so far are promising.
+
+At the core of Libtre is a new algorithm for regular expression matching with
+submatch addressing. The algorithm uses linear worst-case time in the length
+of the text being searched, and quadratic worst-case time in the length of the
+used regular expression. In other words, the time complexity of the algorithm
+is O(M2N), where M is the length of the regular expression and N is the length
+of the text. The used space is also quadratic on the length of the regex, but
+does not depend on the searched string. This quadratic behaviour occurs only
+on pathological cases which are probably very rare in practice.
+
+WWW: http://laurikari.net/tre/
