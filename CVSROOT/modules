@@ -14155,6 +14155,7 @@ rsyncbackup	ports/sysutils/rsyncbackup
 rsyncmanager	ports/sysutils/rsyncmanager
 rsynth		ports/audio/rsynth
 rsyslog		ports/sysutils/rsyslog
+rsyslog-gssapi	ports/sysutils/rsyslog-gssapi
 rsyslog-mysql	ports/sysutils/rsyslog-mysql
 rsyslog-pgsql	ports/sysutils/rsyslog-pgsql
 rt2		ports/www/rt2
