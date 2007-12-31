@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mtpaint
-PORTVERSION=	3.11
-PORTREVISION=	1
+PORTVERSION=	3.20
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -17,7 +16,9 @@ COMMENT=	Simple painting program
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		openjpeg.2:${PORTSDIR}/graphics/openjpeg \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
