@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncs
-DISTVERSION=	1.3.f
+PORTVERSION=	1.3.1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://www.edf.fr/html/RetD/livraison_saturne_${REL_DATE}/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	fvm.0:${PORTSDIR}/science/fvm
 RUN_DEPENDS=	xmgrace:${PORTSDIR}/math/grace	\
 		ecs:${PORTSDIR}/science/ecs
 
-REL_DATE=	070305
+REL_DATE=	20071218
 
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
@@ -50,8 +50,8 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 SUB_DIRS=	data include src users
-BIN_SCRIPTS=	autovalid compiler_version cree_sat gracehst grp info_cs	\
-		lance_install rang_mpi.sh verifmail
+BIN_SCRIPTS=	autovalid check_mesh compiler_version cree_sat cs.exe gracehst	\
+		grp info_cs lance_install rang_mpi.sh
 BIN_DATAS=	Makefile SaturneGUI autovalid.xml cs_profile lance lance.help	\
 		macros_FreeBSD.mk
 
@@ -116,7 +116,6 @@ pre-patch:
 	${CP} -p ${WRKSRC}/bin/macros_Linux.mk ${WRKSRC}/bin/macros_FreeBSD.mk
 
 do-configure:
-	${RM} ${WRKSRC}/src/base_1/gradco.F.orig
 	${REINPLACE_CMD} -e 's|%%PATHCS%%|${PATHCS}|'		\
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|'		\
 		-e 's|%%FC%%|${FC}|'				\
@@ -127,10 +126,13 @@ do-configure:
 	${REINPLACE_CMD}	\
 	-e 's|/home/saturne/opt/python/arch/$${NOM_ARCH}/bin/python|${PYTHON_CMD}|'	\
 		${BUILD_WRKSRC}/SaturneGUI
-.if !defined(WITHOUT_BLAS) && !defined(WITHOUT_ATLAS)
+.if defined(WITH_ATLAS)
 	${REINPLACE_CMD} -e 's|BLAS            =0|BLAS            =1|'			\
+		${BUILD_WRKSRC}/macros_FreeBSD.mk
+.endif
+.if !defined(WITHOUT_BLAS) && !defined(WITHOUT_ATLAS)
+	${REINPLACE_CMD} -e 's|BLAS_LDFLAGS    =|BLAS_LDFLAGS    =${BLAS_LIB}|'		\
 		-e 's|BLAS_INC        =|BLAS_INC        =-I${LOCALBASE}/include|'	\
-		-e 's|BLAS_LDFLAGS    =|BLAS_LDFLAGS    =${BLAS_LIB}|'			\
 		${BUILD_WRKSRC}/macros_FreeBSD.mk
 .endif
 
@@ -151,7 +153,8 @@ do-build:
 do-install:
 	${FIND} ${WRKSRC}/arch/${OPSYS}/lib -name "libsaturne*" -exec	\
 		${INSTALL_DATA} {} ${PREFIX}/lib \;
-	${MKDIR} ${CS_HOME}/bin ${CS_HOME}/arch/${OPSYS}/lib ${ECS_HOME}/bin
+	${MKDIR} ${CS_HOME}/bin ${CS_HOME}/arch/${OPSYS}/bin	\
+		${CS_HOME}/arch/${OPSYS}/lib ${ECS_HOME}/bin
 	${LN} -sf ${PREFIX}/lib/libsaturne*.a ${CS_HOME}/arch/${OPSYS}/lib/
 .for sd in ${SUB_DIRS}
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} ${sd} ${CS_HOME})
@@ -164,12 +167,16 @@ do-install:
 	${LN} -sf ${LOCALBASE}/bin/ecs ${ECS_HOME}/bin/
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${CS_HOME}/bin/Autovalidation
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${CS_HOME}/bin/Autovalidation
+	${INSTALL_PROGRAM} ${WRKSRC}/arch/${OPSYS}/bin/cs13.exe	\
+		${CS_HOME}/arch/${OPSYS}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${CS_HOME}/doc/NOYAU/ ${CS_HOME}/doc/UTILISATION/
-	${INSTALL_DATA} ${WRKSRC}/doc/NOYAU/noyau.pdf ${CS_HOME}/doc/NOYAU/
-	${INSTALL_DATA} ${WRKSRC}/doc/UTILISATION/saturne.pdf ${CS_HOME}/doc/UTILISATION/
-	${LN} -sf ${CS_HOME}/doc/NOYAU/noyau.pdf ${CS_HOME}/doc/UTILISATION/saturne.pdf	\
-		${DOCSDIR}/
+	${MKDIR} ${DOCSDIR} ${CS_HOME}/doc/THEORY/ ${CS_HOME}/doc/USER/	\
+		${CS_HOME}/doc/TUTORIAL/
+	${INSTALL_DATA} ${WRKSRC}/doc/THEORY/theory.pdf ${CS_HOME}/doc/THEORY/
+	${INSTALL_DATA} ${WRKSRC}/doc/TUTORIAL/tutorial.pdf ${CS_HOME}/doc/TUTORIAL/
+	${INSTALL_DATA} ${WRKSRC}/doc/USER/user.pdf ${CS_HOME}/doc/USER/
+	${LN} -sf ${CS_HOME}/doc/THEORY/theory.pdf ${CS_HOME}/doc/TUTORIAL/tutorial.pdf	\
+		${CS_HOME}/doc/USER/user.pdf ${DOCSDIR}/
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	${LN} -sf ${LOCALBASE}/share/doc/ecs/ ${ECS_HOME}/doc
 .endif
