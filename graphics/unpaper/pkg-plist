@@ -1,3 +1,6 @@
+bin/unpaper
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/img/_after.png
 %%PORTDOCS%%%%DOCSDIR%%/img/_arrow.png
 %%PORTDOCS%%%%DOCSDIR%%/img/_before.png
@@ -28,7 +31,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/img/style.css
 %%PORTDOCS%%%%DOCSDIR%%/img/x-click-but04.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/unpaper.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
