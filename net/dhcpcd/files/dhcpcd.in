@@ -4,12 +4,12 @@
 # KEYWORD: nojail nostart
 #
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 . /etc/network.subr
 
 name="dhcpcd"
 ifn="$2"
-command="/usr/local/sbin/dhcpcd"
+command="%%PREFIX%%/sbin/dhcpcd"
 command_args="$ifn"
 pidfile="/var/run/dhcpcd-$ifn.pid"
 start_precmd="dhcpcd_precmd"
@@ -23,7 +23,7 @@ dhcpcd_precmd()
 	fi
 
 	# dhcpcd may need local binaries
-	export PATH=${PATH}:/usr/local/sbin
+	export PATH=${PATH}:%%PREFIX%%/sbin
 }
 
 load_rc_config $name
