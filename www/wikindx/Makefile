@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wikindx
-PORTVERSION=	3.7
+PORTVERSION=	3.8.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikindx
@@ -24,7 +24,7 @@ ROOTFILES=	config.php index.php rss.php
 ROOTDIRS=	attachments core docs files languages modules \
 		papers styles templates update
 DOCFILES=	CHANGELOG CUSTOMIZATION DISCLAIMER INSTALL \
-		LICENSE README README_RSS UPDATEWIKINDX
+		LICENSE README README_CMS README_RSS UPGRADE
 
 pre-install:
 	@${ECHO} ${WWWDIR}
