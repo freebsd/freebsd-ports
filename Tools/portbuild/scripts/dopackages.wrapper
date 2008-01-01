@@ -1,14 +1,5 @@
 #!/bin/sh
 
-cleanup() {
-  lock=$1
-  error=$2
-
-  rm -f ${lock}
-
-  exit ${error}
-}
-
 # configurable variables
 pb=/var/portbuild
 arch=$1
@@ -27,11 +18,10 @@ if [ -e ${lock} ]; then
   exit 1
 fi
 
-touch ${lock}
 rm -f ${status}
 mkdir -p ${pb}/${arch}/archive/buildlogs
 
-trap "cleanup ${lock} 1" 1 2 3 9 10 11 15
+trap "exit 1" 1 2 3 9 10 11 15
 
 dorun() {
   branch=$1
@@ -39,11 +29,11 @@ dorun() {
 
   ln -sf ${pb}/${arch}/archive/buildlogs/log.${branch}.${date} ${pb}/${arch}/${branch}/build.log
   ln -sf log.${branch}.${date} ${pb}/${arch}/archive/buildlogs/log.${branch}.${shortdate}
-  ${pb}/scripts/dopackages ${arch} $@ ${branch} ${date} 2>&1 \
+  lockf -t 0 ${lock} ${pb}/scripts/dopackages ${arch} $@ ${branch} ${date} 2>&1 \
     > ${pb}/${arch}/archive/buildlogs/log.${branch}.${date}
   if [ -f ${status} ]; then
     error=$(cat ${status})
-    cleanup ${lock} ${error}
+    exit ${error}
   fi
 
 }
@@ -51,4 +41,4 @@ dorun() {
 dorun ${branch} $@ &
 wait
 
-cleanup ${lock} 0
+exit 0
