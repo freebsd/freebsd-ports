@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsutils
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.red-bean.com/cvsutils/releases/
