@@ -6,29 +6,23 @@
 #
 
 PORTNAME=	unpaper
-DISTVERSION=	0_2
+PORTVERSION=	0.3
 CATEGORIES=	graphics
 MASTER_SITES=	CENKES BERLIOS
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Post-processing tool for scanned sheets of paper
 
-NO_WRKSUBDIR=	yes
-PLIST_FILES=	bin/${PORTNAME}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|doc/||g' ${WRKSRC}/unpaper.html
-
 do-build:
-	@${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/src/${PORTNAME}.c -lm
+	@${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} \
+		${WRKSRC}/src/${PORTNAME}.c -lm
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/unpaper.html ${WRKSRC}/readme.txt ${DOCSDIR}/
-	@${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}/
+	@cd ${WRKSRC}/&&${INSTALL_DATA} CHANGELOG README ${DOCSDIR}/
+	@cd ${WRKSRC}/doc/&&${COPYTREE_SHARE} . ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
