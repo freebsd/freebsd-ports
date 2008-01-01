@@ -1,20 +1,19 @@
---- bin/cs_profile.orig	Thu Mar  1 12:23:39 2007
-+++ bin/cs_profile	Tue May  8 15:34:20 2007
-@@ -48,18 +48,33 @@
+--- bin/cs_profile.orig	2007-11-23 18:35:59.000000000 +0100
++++ bin/cs_profile	2007-12-30 22:01:54.000000000 +0100
+@@ -58,18 +58,33 @@
  
-   if [ "$NOM_ARCH" = "OSF1" -o "$NOM_ARCH" = "Linux_CCRT" ] ; then 
+   if [ "$NOM_ARCH" = "OSF1" -o "$NOM_ARCH" = "Linux_CCRT" -o "$NOM_ARCH" = "Linux_IA64" ] ; then 
      PATHCS=/home/saturne/Saturne
--  elif [ "$NOM_ARCH" = "Blue_Gene_L" ] ; then 
 +  elif [ "$NOM_ARCH" = "FreeBSD" ] ; then
 +    PATHCS=%%LOCALBASE%%/Saturne
-+  elif [ "$NOM_ARCH" = "Blue_Gene_L" ] ; then
+   elif [ "$NOM_ARCH" = "Blue_Gene_L" ] ; then 
      PATHCS=/gpfs2/home/saturne
    else
      PATHCS=/home/saturne
    fi
--  CS_HOME=${PATHCS}/Noyau/ncs-1.3.f
--  ECS_HOME=${PATHCS}/Enveloppe/ecs-1.3.c
--  CSGUI_HOME=${PATHCS}/Interface/ics-1.1.l
+-  CS_HOME=${PATHCS}/Noyau/ncs-1.3.1
+-  ECS_HOME=${PATHCS}/Enveloppe/ecs-1.3.1
+-  CSGUI_HOME=${PATHCS}/Interface/ics-1.3.1
 -  SYRCS_HOME=${PATHCS}/opt/syr_cs-2.0.1
 +  if [ "$NOM_ARCH" = "FreeBSD" ] ; then
 +    CS_HOME=${PATHCS}/Noyau/ncs
@@ -26,9 +25,9 @@
 +    FC=%%FC%% ; export FC
 +    PTHREAD_LIBS=%%PTHREAD_LIBS%% ; export PTHREAD_LIBS
 +  else
-+    CS_HOME=${PATHCS}/Noyau/ncs-1.3.f
-+    ECS_HOME=${PATHCS}/Enveloppe/ecs-1.3.c
-+    CSGUI_HOME=${PATHCS}/Interface/ics-1.1.l
++    CS_HOME=${PATHCS}/Noyau/ncs-1.3.1
++    ECS_HOME=${PATHCS}/Enveloppe/ecs-1.3.1
++    CSGUI_HOME=${PATHCS}/Interface/ics-1.3.l
 +    SYRCS_HOME=${PATHCS}/opt/syr_cs-2.0.1
 +  fi
  #
@@ -39,17 +38,8 @@
    else
      CSHOMARD_HOME=
    fi
-@@ -70,7 +85,7 @@
- # Librairies pour l'interface
-   if [ "$NOM_ARCH" = "OSF1" -o "$NOM_ARCH" = "Linux_CCRT" ] ; then
-     LD_LIBRARY_PATH=.:/home/saturne/Saturne/opt/tcl8.3/arch/$NOM_ARCH/lib:/home/saturne/Saturne/opt/libxml2-2.6.19/arch/$NOM_ARCH/lib:$LD_LIBRARY_PATH
--  else
-+  elif [ "$NOM_ARCH" != "FreeBSD" ] ; then
-     LD_LIBRARY_PATH=.:/home/saturne/opt/tcl8.3/arch/$NOM_ARCH/lib:/home/saturne/opt/libxml2-2.6.19/arch/$NOM_ARCH/lib:$LD_LIBRARY_PATH
-   fi
- 
-@@ -83,6 +98,10 @@
-     CS_MPI_PATH=/home/saturne/opt/openmpi-1.1.1/arch/Linux/bin
+@@ -93,6 +108,10 @@
+     CS_MPI_PATH=/home/saturne/opt/openmpi-1.2.4/arch/Linux/bin
    elif [ "$NOM_ARCH" = "Linux_Ch" ] ; then
      CS_MPI_PATH=/usr/local/mpichgm-1.2.6.14b-64b/bin
 +  elif [ "$NOM_ARCH" = "FreeBSD" ] ; then
