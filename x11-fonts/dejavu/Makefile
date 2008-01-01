@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	dejavu
-DISTVERSION=	2.21
+DISTVERSION=	2.22
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-ttf-${DISTVERSION}
+DISTNAME=	${PORTNAME}-fonts-ttf-${DISTVERSION}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Bitstream Vera Fonts clone with a wider range of characters
@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 PORTDOCS=	README status.txt unicover.txt langcover.txt
-PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
+PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}/"
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 FONTNAME=	${PORTNAME}
@@ -33,7 +33,7 @@ post-patch:
 
 do-install:
 	${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${FONTSDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
