@@ -16,5 +16,9 @@ COMMENT=	Mail and news client from AOL Netscape
 RESTRICTED=	redistribution not allowed
 BIN_NAME=	messenger
 
+DEPRECATED=	End of support by AOL on 2008-02-01: \
+http://blog.netscape.com/2007/12/28/end-of-support-for-netscape-web-browsers/
+EXPIRATION_DATE=	2007-01-31
+
 .include "${.CURDIR}/../../www/linux-seamonkey/Makefile.common"
 .include <bsd.port.mk>
