@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	bft
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	science parallel
 MASTER_SITES=	http://www.edf.fr/html/RetD/livraison_saturne_${REL_DATE}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Base Functions and Types library
 
-REL_DATE=	070305
+REL_DATE=	20071218
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
