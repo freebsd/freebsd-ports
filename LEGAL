@@ -624,6 +624,7 @@ VMware-workstation-*	emulators/vmware3	Not sure if we can redistribute this
 VTK-*			math/vtk		Portions contain patented algorithms
 						and may require a license for
 						commercial use
+vrml2pov-src*		graphics/vrml2pov	Redistribution is not allowed
 waeijiro-fpw-*		japanese/waeijiro-fpw	The original dictionary is not free
 warsow/*		games/linux-warsow	Redistribution is limited, art
 						is copyrighted
