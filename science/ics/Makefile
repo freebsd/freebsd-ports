@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ics
-PORTVERSION=	1.1.l
+PORTVERSION=	1.3.1
 CATEGORIES=	science
-MASTER_SITES=	http://www.edf.fr/html/RetD/livraison_saturne_${REL_DATE}/
+MASTER_SITES=	http://www.edf.com/html/RetD/livraison_saturne_${REL_DATE}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Saturne Graphical User Interface
@@ -17,7 +17,7 @@ LIB_DEPENDS=	tix8184:${PORTSDIR}/x11-toolkits/tix
 RUN_DEPENDS=	${CS_HOME}/bin/info_cs:${PORTSDIR}/science/ncs	\
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-REL_DATE=	070305
+REL_DATE=	20071218
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
