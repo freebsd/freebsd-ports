@@ -1,9 +1,0 @@
---- libpulse.pc.in.orig	Sat Sep  2 10:57:19 2006
-+++ libpulse.pc.in	Sun Jul  8 17:40:02 2007
-@@ -7,5 +7,5 @@ Name: libpulse
- Description: Client Interface to PulseAudio
- Version: @PACKAGE_VERSION@
- Libs: -L${libdir} -lpulse @PTHREAD_LIBS@
--Cflags: -D_REENTRANT -I${includedir}
-+Cflags: -D_REENTRANT -I${includedir} @PTHREAD_CFLAGS@
- Requires:
