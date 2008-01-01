@@ -21,7 +21,6 @@ MAN8=		dnstracer.8
 PLIST_FILES=	bin/dnstracer
 
 OPTIONS=	IPV6 "With IPv6 support" on
-USE_PERL5=	5.8.9+
 
 .include <bsd.port.pre.mk>
 
