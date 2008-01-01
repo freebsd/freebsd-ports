@@ -1,0 +1,10 @@
+interface __INTERFACE__ {
+	send ia-pd 0;
+};
+
+id-assoc pd 0 {
+	prefix-interface __PD_INTERFACE__ {
+		sla-id 0;
+		sla-len 0;
+	};
+};

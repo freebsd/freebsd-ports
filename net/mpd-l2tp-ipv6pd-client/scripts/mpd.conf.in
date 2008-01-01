@@ -1,0 +1,25 @@
+startup:
+
+default:
+	load l2tp
+
+l2tp:
+	new -i %%INTERFACE%% l2tp L2TP0
+	set auth authname %%PPP_ID%%
+	set iface disable on-demand
+	set iface idle 0
+	set bundle no multilink
+	set bundle no ipcp
+	set bundle enable ipv6cp
+	set bundle disable noretry
+	set link no acfcomp protocomp
+	set link disable pap chap
+	set link accept chap
+	set link keep-alive 15 60
+	set link max-redial 0
+	set link mtu 1390
+	set link mru 1390
+	set iface up-script %%PREFIX%%/%%CONF_DIR%%/linkup.sh
+	set iface down-script %%PREFIX%%/%%CONF_DIR%%/linkdown.sh
+	#set iface route ::/0
+	open

@@ -1,0 +1,15 @@
+mpd_confdir="%%PREFIX%%/%%CONF_DIR%%"
+mpd_interfaces="%%INTERFACE%%"
+
+mpd_enable="YES"
+mpd_flags="-b -d ${mpd_confdir}"
+
+stop_precmd="mpd_prestop"
+
+mpd_prestop()
+{
+	for iface in ${mpd_interfaces}; do
+		${mpd_confdir}/dhcp6c_pd.sh stop ${iface}
+	done
+	sleep 2
+}
