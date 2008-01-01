@@ -1,14 +1,12 @@
---- src/pulse/thread-mainloop.c.orig	Thu Jul 12 00:01:48 2007
-+++ src/pulse/thread-mainloop.c	Thu Jul 12 00:03:32 2007
-@@ -30,6 +30,11 @@
+--- src/pulse/thread-mainloop.c.orig	2008-01-01 17:23:28.000000000 -0500
++++ src/pulse/thread-mainloop.c	2008-01-01 17:25:00.000000000 -0500
+@@ -27,6 +27,9 @@
+ #endif
+ 
  #include <signal.h>
++#ifndef OS_IS_WIN32
++#include <pthread.h>
++#endif
  #include <stdio.h>
  
-+#ifdef HAVE_PTHREAD
-+#include <pthread.h>
-+#include <signal.h>
-+#endif
-+
- #ifdef HAVE_SYS_POLL_H
- #include <sys/poll.h>
- #else
+ #ifdef HAVE_POLL_H
