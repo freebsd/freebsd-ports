@@ -1,0 +1,16 @@
+The heart of the package is 'libcw'.  This is a library which, when built,
+offers the following basic CW services to a caller program:
+
+  o Morse code character translation tables, and lookup functions
+  o Morse code low-level timing calculations
+  o A 'sidetone' generation and queueing system, using either the system sound
+    card, the console speaker, or both
+  o Optional keying control for an external device, say a transmitter, or an
+    oscillator
+  o CW character and string send routines, tied in with the character lookup
+  o CW receive routines, also tied in to the character lookup
+  o Adaptive speed tracking of received CW
+  o An iambic keyer, with both Curtis 8044 types A and B timing
+  o Straight key emulation
+
+WWW: http://www.ibiblio.org/pub/linux/apps/ham/morse/

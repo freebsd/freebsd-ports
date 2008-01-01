@@ -126,6 +126,7 @@
     SUBDIR += trustedqsl
     SUBDIR += twpsk
     SUBDIR += uird
+    SUBDIR += unixcw
     SUBDIR += uticom
     SUBDIR += viewfax
     SUBDIR += vrflash
