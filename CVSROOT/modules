@@ -7864,6 +7864,7 @@ mpatrol		ports/devel/mpatrol
 mpb		ports/science/mpb
 mpc		ports/audio/mpc
 mpd		ports/net/mpd
+mpd-l2tp-ipv6pd-client	ports/net/mpd-l2tp-ipv6pd-client
 mpd4		ports/net/mpd4
 mpd5		ports/net/mpd5
 mpdcon		ports/audio/mpdcon
