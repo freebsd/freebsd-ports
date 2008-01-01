@@ -19,7 +19,6 @@
     SUBDIR += akode-plugins-mpc
     SUBDIR += akode-plugins-mpeg
     SUBDIR += akode-plugins-oss
-    SUBDIR += akode-plugins-polypaudio
     SUBDIR += akode-plugins-resampler
     SUBDIR += akode-plugins-xiph
     SUBDIR += alac
@@ -483,7 +482,6 @@
     SUBDIR += p5-xmms2
     SUBDIR += pacpl
     SUBDIR += padevchooser
-    SUBDIR += paman
     SUBDIR += paprefs
     SUBDIR += pavucontrol
     SUBDIR += pavumeter
@@ -496,7 +494,6 @@
     SUBDIR += play
     SUBDIR += playgsf
     SUBDIR += playmidi
-    SUBDIR += polypaudio
     SUBDIR += portaudio
     SUBDIR += portaudio2
     SUBDIR += praat
