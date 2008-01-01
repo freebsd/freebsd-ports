@@ -8,10 +8,11 @@
 
 PORTNAME=	distcc
 PORTVERSION=	2.18.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
-PATCH_SITES=	http://0pointer.de/public/
+#PATCH_SITES=	http://0pointer.de/public/
+PATCH_SITES=	LOCAL/ahze
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
@@ -37,10 +38,11 @@ OPTIONS=	AVAHI   "Enable Avahi Zeroconf/mDNS/Bonjour support" Off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_AVAHI)
-PATCHFILES+=	distcc-avahi.patch
-LIB_DEPENDS+=	avahi-glib.1:${PORTSDIR}/net/avahi
+PATCHFILES+=	distcc-avahi-080101.patch
+LIB_DEPENDS+=	avahi-glib.1:${PORTSDIR}/net/avahi-app
 PATCH_DIST_STRIP=	-p1
 USE_AUTOTOOLS+=	autoconf:261
+AUTOCONF_ARGS+=	-I${LOCALBASE}/share/libtool/libltdl/
 CFLAGS+=	-DHAVE_AVAHI
 .endif
 
