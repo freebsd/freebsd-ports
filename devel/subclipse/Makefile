@@ -16,7 +16,6 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A subversion plugin for the Eclipse IDE Framework
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
-FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 CONFLICTS=	phpeclipse-[0-9]*
 
@@ -33,14 +32,7 @@ SUBCLIPSEFILES=	features/${SUBCLIPSE}_${PORTVERSION} \
 		plugins/${SUBCLIPSE}.mylyn_2.0.0 \
 		plugins/${SUBCLIPSE}.ui_${PORTVERSION}
 
-WGET?=		${LOCALBASE}/bin/wget
-
 .include <bsd.port.pre.mk>
-
-do-fetch:
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.zip)
-	${WGET} -P${DISTDIR}/${DIST_SUBDIR} ${MASTER_SITES}/${DISTNAME}.zip
-.endif
 
 post-extract:
 .for f in ${SUBCLIPSEFILES}
