@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	abcm2ps
-PORTVERSION=	5.5.2
+PORTVERSION=	5.7.1
 CATEGORIES=	print audio
 MASTER_SITES=	http://moinejf.free.fr/
 
@@ -24,15 +24,12 @@ PLIST_FILES=	bin/abcm2ps %%DATADIR%%/fbook.fmt %%DATADIR%%/fonts.fmt \
 PLIST_DIRS=	%%DATADIR%%
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/abcm2ps ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/abcm2ps ${PREFIX}/bin/
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.fmt ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.fmt ${DATADIR}/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
