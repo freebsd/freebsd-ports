@@ -319,7 +319,6 @@ akode-plugins-jack	ports/audio/akode-plugins-jack
 akode-plugins-mpc	ports/audio/akode-plugins-mpc
 akode-plugins-mpeg	ports/audio/akode-plugins-mpeg
 akode-plugins-oss	ports/audio/akode-plugins-oss
-akode-plugins-polypaudio	ports/audio/akode-plugins-polypaudio
 akode-plugins-resampler	ports/audio/akode-plugins-resampler
 akode-plugins-xiph	ports/audio/akode-plugins-xiph
 akpop3d		ports/mail/akpop3d
@@ -11729,7 +11728,6 @@ pam_pseudo	ports/security/pam_pseudo
 pam_pwdfile	ports/security/pam_pwdfile
 pam_require	ports/security/pam_require
 pam_smb		ports/security/pam_smb
-paman		ports/audio/paman
 paml		ports/biology/paml
 pamsfs		ports/security/pamsfs
 pamtester	ports/security/pamtester
@@ -12628,7 +12626,6 @@ polygraph	ports/benchmarks/polygraph
 polymake	ports/math/polymake
 polymer		ports/x11-themes/polymer
 polyml		ports/lang/polyml
-polypaudio	ports/audio/polypaudio
 polypuzzle	ports/games/polypuzzle
 pongix		ports/games/pongix
 pop-before-smtp	ports/mail/pop-before-smtp
