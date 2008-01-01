@@ -3351,3 +3351,6 @@ net-im/jabber-yahoo||2007-12-24|Has expired: development stalled
 net-p2p/mldonkey-core-devel||2007-12-25|Development version no longer necessary
 net-p2p/mldonkey-gui-devel||2007-12-25|Development version no longer necessary
 net-p2p/mldonkey-devel||2007-12-25|Development version no longer necessary
+audio/polypaudio|audio/pulseaudio|2008-01-01|Project renamed
+audio/paman|audio/pavucontrol|2008-01-01|New tool to work with pulseaudio
+audio/akode-plugins-polypaudio||2008-01-01|Polypaudio is obsolete in favor of pulseaudio
