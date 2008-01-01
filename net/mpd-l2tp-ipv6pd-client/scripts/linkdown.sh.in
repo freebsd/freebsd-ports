@@ -1,0 +1,15 @@
+#!/bin/sh
+
+iface=$1
+family=$2
+
+case ${family} in
+inet6)
+	%%PREFIX%%/%%CONF_DIR%%/dhcp6c_pd.sh stop ${iface}
+	case ${iface} in
+	*)
+		/sbin/route delete -inet6 default
+		;;
+	esac
+	;;
+esac

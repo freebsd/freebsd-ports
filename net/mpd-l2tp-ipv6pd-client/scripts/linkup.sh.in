@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# link up
+#linkup.sh <interface> <family> <local address> <remote address> <authname>
+#
+
+iface=$1
+family=$2
+myaddr=$3
+hisaddr=$4
+
+case ${family} in
+inet6)
+	(
+		sleep $(($(sysctl -n net.inet6.ip6.dad_count) + 1))
+		%%PREFIX%%/%%CONF_DIR%%/dhcp6c_pd.sh start ${iface}
+	) &
+	case ${iface} in
+	*)
+		/sbin/route delete -inet6 default
+		/sbin/route add -inet6 default ::1 -ifp ${iface}
+		;;
+	esac
+	;;
+esac
