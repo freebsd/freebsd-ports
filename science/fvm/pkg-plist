@@ -2,6 +2,8 @@ bin/fvm-config
 include/fvm_config.h
 include/fvm_config_priv.h
 include/fvm_defs.h
+include/fvm_file.h
+include/fvm_group.h
 include/fvm_interface.h
 include/fvm_io_num.h
 include/fvm_locator.h
@@ -15,6 +17,8 @@ include/fvm_nodal_project.h
 include/fvm_nodal_triangulate.h
 include/fvm_order.h
 include/fvm_parall.h
+include/fvm_periodicity.h
+include/fvm_selector.h
 include/fvm_triangulate.h
 include/fvm_writer.h
 lib/libfvm.a

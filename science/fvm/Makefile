@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fvm
-PORTVERSION=	0.6.3
+PORTVERSION=	0.9.0
 CATEGORIES=	science parallel
 MASTER_SITES=	http://www.edf.fr/html/RetD/livraison_saturne_${REL_DATE}/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	med.2:${PORTSDIR}/french/med		\
 		hdf5.0:${PORTSDIR}/science/hdf5		\
 		cgns.0:${PORTSDIR}/science/cgnslib
 
-REL_DATE=	070305
+REL_DATE=	20071218
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -47,8 +47,15 @@ CONFIGURE_ARGS+=	--with-mpi-prefix=${LOCALBASE}/mpich2
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+TESTSBIN=	fvm_file_test fvm_interface_test fvm_selector_postfix_test fvm_selector_test
+
 pre-configure:
 	# No useful doc there
 	${REINPLACE_CMD} -e 's|tests doc|tests|' ${WRKSRC}/Makefile.in
+
+regression-test:
+.for pg in ${TESTSBIN}
+	@(cd ${WRKSRC}/tests; ./${pg})
+.endfor
 
 .include <bsd.port.mk>
