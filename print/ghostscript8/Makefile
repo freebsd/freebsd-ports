@@ -295,5 +295,8 @@ post-install:
 .endfor
 .endif
 	${ECHO_MSG} "> post-installation tasks completed."
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
