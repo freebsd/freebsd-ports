@@ -7,6 +7,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -15,6 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT=	Network UPS Tools
 
+USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
@@ -24,6 +26,7 @@ STATEDIR?=	/var/db/nut
 
 OPTIONS=	USB		"USB support"	on \
 		SNMP		"SNMP support"	on \
+		IPV6		"IPV6 support"  on \
 		LIBUPSCLIENT	"Include the libupsclient library"	off \
 		CGI		"Web CGI interface"	off \
 
@@ -100,6 +103,12 @@ PLIST_SUB+=	NUT_SNMP=""
 .else
 CONFIGURE_ARGS+=	--without-snmp
 PLIST_SUB+=	NUT_SNMP="@comment "
+.endif
+
+.if !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--with-ipv6
+.else
+CONFIGURE_ARGS+=	--without-ipv6
 .endif
 
 .if defined(WITH_LIBUPSCLIENT)
