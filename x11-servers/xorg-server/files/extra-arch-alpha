@@ -1,0 +1,11 @@
+--- configure.orig	2008-01-02 12:40:11.000000000 +0000
++++ configure	2008-01-02 12:41:09.000000000 +0000
+@@ -32222,7 +32222,7 @@
+ 
+ if test "x$XORG" = xyes -o "x$XGL" = xyes; then
+ 	XORG_DDXINCS='-I$(top_srcdir)/hw/xfree86 -I$(top_srcdir)/hw/xfree86/include -I$(top_srcdir)/hw/xfree86/common'
+-	XORG_OSINCS='-I$(top_srcdir)/hw/xfree86/os-support -I$(top_srcdir)/hw/xfree86/os-support/bus -I$(top_srcdir)/os'
++	XORG_OSINCS='-I$(top_srcdir)/hw/xfree86/os-support -I$(top_srcdir)/hw/xfree86/os-support/bus -I$(top_srcdir)/hw/xfree86/os-support/shared -I$(top_srcdir)/os'
+ 	XORG_INCS="$XORG_DDXINCS $XORG_OSINCS"
+ 	XORG_CFLAGS="$XORGSERVER_CFLAGS -DHAVE_XORG_CONFIG_H"
+ 	XORG_LIBS="$COMPOSITE_LIB $MI_LIB $FIXES_LIB $XEXTXORG_LIB $GLX_LIBS $RENDER_LIB $RANDR_LIB $DAMAGE_LIB $MIEXT_DAMAGE_LIB $MIEXT_SHADOW_LIB $XI_LIB $XKB_LIB $XPSTUBS_LIB $OS_LIB"

@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=	--enable-aiglx=yes
 CONFIGURE_ARGS+=	--enable-aiglx=no
 .endif
 
-.if !defined(WITHOUT_SUID) || !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
+.if !defined(WITHOUT_SUID) && (!defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO)
 CONFIGURE_ARGS+=--enable-install-setuid=yes
 .else
 CONFIGURE_ARGS+=--enable-install-setuid=no
@@ -79,6 +79,7 @@ CONFIGURE_ARGS+=--enable-install-setuid=no
 
 .if ${ARCH} == alpha
 PLIST_SUB+=	ALPHA_NA="@comment "
+EXTRA_PATCHES=	${.CURDIR}/files/extra-arch-alpha
 .else
 PLIST_SUB+=	ALPHA_NA=""
 .endif
@@ -86,6 +87,7 @@ PLIST_SUB+=	ALPHA_NA=""
 .if ${ARCH} == powerpc
 PLIST_SUB+=	PPC_NA="@comment "
 MAN4+=		nv.4x
+EXTRA_PATCHES=	${.CURDIR}/files/extra-arch-powerpc
 .else
 PLIST_SUB+=	PPC_NA=""
 .endif
@@ -105,7 +107,7 @@ MAN1+=		scanpci.1
 PLIST_SUB+=	AMD64_I386_SPARC64="@comment "
 .endif
 
-.if !defined(WITHOUT_SUID) || !defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO
+.if !defined(WITHOUT_SUID) && (!defined(NO_SUID_XSERVER) || ${NO_SUID_XSERVER} == NO)
 pre-everything::
 	@${ECHO_MSG} "By default, the X Server installs as a set-user-id root binary. When run by"
 	@${ECHO_MSG} "a normal user, it checks arguments and environment as done in the x11/wrapper"
