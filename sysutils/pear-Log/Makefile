@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.9.13
+PORTVERSION=	1.9.14
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
