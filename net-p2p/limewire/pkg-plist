@@ -1,44 +1,43 @@
 bin/limewire
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%DATADIR%%/LimeWire.ico
-%%DATADIR%%/LimeWire.jar
-%%DATADIR%%/MessagesBundle.properties
-%%DATADIR%%/MessagesBundles.jar
-%%DATADIR%%/ProgressTabs.jar
-%%DATADIR%%/clink.jar
-%%DATADIR%%/commons-httpclient.jar
-%%DATADIR%%/commons-logging.jar
-%%DATADIR%%/commons-net.jar
-%%DATADIR%%/daap.jar
-%%DATADIR%%/data.ser
-%%DATADIR%%/donotremove.htm
-%%DATADIR%%/hashes
-%%DATADIR%%/i18n.jar
-%%DATADIR%%/icu4j.jar
-%%DATADIR%%/id3v2.jar
-%%DATADIR%%/jcraft.jar
-%%DATADIR%%/jdic.jar
-%%DATADIR%%/jl011.jar
-%%DATADIR%%/jmdns.jar
-%%DATADIR%%/log4j.jar
-%%DATADIR%%/log4j.properties
-%%DATADIR%%/looks.jar
-%%DATADIR%%/mp3sp14.jar
-%%DATADIR%%/pmf.ico
-%%DATADIR%%/root/magnet10/badge.img
-%%DATADIR%%/root/magnet10/canHandle.img
-%%DATADIR%%/root/magnet10/limewire.gif
-%%DATADIR%%/root/magnet10/options.js
-%%DATADIR%%/root/magnet10/silentdetect.js
-%%DATADIR%%/spacer.gif
-%%DATADIR%%/themes.jar
-%%DATADIR%%/tritonus.jar
-%%DATADIR%%/update.ver
-%%DATADIR%%/vorbis.jar
-%%DATADIR%%/xerces.jar
-%%DATADIR%%/xml-apis.jar
-%%DATADIR%%/xml.war
-@dirrm %%DATADIR%%/root/magnet10
-@dirrm %%DATADIR%%/root
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/README.txt
+%%JAVASHAREDIR%%/limewire/root/magnet10/badge.img
+%%JAVASHAREDIR%%/limewire/root/magnet10/canHandle.img
+%%JAVASHAREDIR%%/limewire/root/magnet10/limewire.gif
+%%JAVASHAREDIR%%/limewire/root/magnet10/options.js
+%%JAVASHAREDIR%%/limewire/root/magnet10/silentdetect.js
+%%JAVASHAREDIR%%/limewire/vorbis.jar
+%%JAVASHAREDIR%%/limewire/tritonus.jar
+%%JAVASHAREDIR%%/limewire/themes.jar
+%%JAVASHAREDIR%%/limewire/spacer.gif
+%%JAVASHAREDIR%%/limewire/mp3sp14.jar
+%%JAVASHAREDIR%%/limewire/magnet.protocol
+%%JAVASHAREDIR%%/limewire/looks.jar
+%%JAVASHAREDIR%%/limewire/log4j.properties
+%%JAVASHAREDIR%%/limewire/log4j.jar
+%%JAVASHAREDIR%%/limewire/limewire.js
+%%JAVASHAREDIR%%/limewire/jmdns.jar
+%%JAVASHAREDIR%%/limewire/jl011.jar
+%%JAVASHAREDIR%%/limewire/jdic_stub.jar
+%%JAVASHAREDIR%%/limewire/jdic.jar
+%%JAVASHAREDIR%%/limewire/jcraft.jar
+%%JAVASHAREDIR%%/limewire/id3v2.jar
+%%JAVASHAREDIR%%/limewire/icu4j.jar
+%%JAVASHAREDIR%%/limewire/httpcore.jar
+%%JAVASHAREDIR%%/limewire/httpcore-nio.jar
+%%JAVASHAREDIR%%/limewire/hashes
+%%JAVASHAREDIR%%/limewire/foxtrot.jar
+%%JAVASHAREDIR%%/limewire/data.ser
+%%JAVASHAREDIR%%/limewire/daap.jar
+%%JAVASHAREDIR%%/limewire/commons-pool.jar
+%%JAVASHAREDIR%%/limewire/commons-net.jar
+%%JAVASHAREDIR%%/limewire/commons-logging.jar
+%%JAVASHAREDIR%%/limewire/commons-httpclient.jar
+%%JAVASHAREDIR%%/limewire/clink.jar
+%%JAVASHAREDIR%%/limewire/ProgressTabs.jar
+%%JAVASHAREDIR%%/limewire/MessagesBundles.jar
+%%JAVASHAREDIR%%/limewire/xml.war
+%%JAVASHAREDIR%%/limewire/LimeWire.jar
+@dirrm %%JAVASHAREDIR%%/limewire/root/magnet10
+@dirrm %%JAVASHAREDIR%%/limewire/root
+@dirrm %%JAVASHAREDIR%%/limewire
+@dirrm %%DOCSDIR%%
