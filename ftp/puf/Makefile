@@ -7,15 +7,15 @@
 #
 
 PORTNAME=	puf
-PORTVERSION=	0.93.3
+PORTVERSION=	1.0.0
 CATEGORIES=	ftp www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	A parallel HTTP downloader similar to wget
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		puf.1
 PLIST_FILES=	bin/puf
