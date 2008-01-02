@@ -7,6 +7,7 @@
 
 PORTNAME=	prboom
 PORTVERSION=	2.4.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,11 +21,10 @@ USE_GMAKE=	yes
 USE_SDL=	mixer net sdl
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--disable-cpu-opt
 
-OPTIONS=	GL "Enable OpenGL support" off
+OPTIONS=	GL "Enable OpenGL support" on
 
 MAN5=		boom.cfg.5
 MAN6=		prboom.6 prboom-game-server.6
