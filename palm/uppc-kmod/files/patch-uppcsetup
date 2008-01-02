@@ -1,0 +1,10 @@
+--- uppcsetup.orig	2008-01-02 14:09:25.000000000 +0000
++++ uppcsetup	2008-01-02 14:09:57.000000000 +0000
+@@ -132,6 +132,7 @@
+ dialog --msgbox "If your Pocket PC is physically connected to your computer, please disconnect it now and wait 60 seconds before continuing or your machine may PANIC." 8 65
+ 
+ cp ${INSTALLDIR}/uppc.ko ${MODDIR}/uppc.ko 
++kldxref ${MODDIR}
+ 
+ echo 'uppc_load="YES"' >> /boot/loader.conf
+ 
