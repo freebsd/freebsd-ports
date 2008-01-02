@@ -7,13 +7,14 @@
 
 PORTNAME=	memcachedb
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://memcachedb.googlecode.com/files/
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Distributed storage system designed for persistent
 
-LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
 
 USE_BDB=	42+
 USE_DOS2UNIX=	YES
