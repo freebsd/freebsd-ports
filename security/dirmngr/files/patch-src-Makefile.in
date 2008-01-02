@@ -1,0 +1,27 @@
+--- src/Makefile.in.orig	Wed Jan  2 20:27:19 2008
++++ src/Makefile.in	Wed Jan  2 20:27:57 2008
+@@ -267,7 +267,7 @@
+ 	validate.c validate.h exechelp.h exechelp.c get-path.c
+ 
+ dirmngr_LDADD = ../jnlib/libjnlib.a $(LIBOBJS) $(LIBASSUAN_PTH_LIBS)  \
+-	$(LIBGCRYPT_LIBS) $(KSBA_LIBS) $(PTH_LIBS) $(LIBINTL)
++	$(LIBGCRYPT_LIBS) $(KSBA_LIBS) $(PTH_LIBS) $(LIBINTL) $(LIBICONV)
+ 
+ @HAVE_W32_SYSTEM_FALSE@ldap_url = 
+ @HAVE_W32_SYSTEM_TRUE@ldap_url = ldap-url.h ldap-url.c
+@@ -277,13 +277,13 @@
+ dirmngr_ldap_CFLAGS = $(GPG_ERROR_CFLAGS)
+ dirmngr_ldap_LDFLAGS = 
+ dirmngr_ldap_LDADD = $(ldap_ldadd) ../jnlib/libjnlib.a $(LIBOBJS) \
+-		     $(GPG_ERROR_LIBS) $(LDAPLIBS) $(LIBINTL)
++		     $(GPG_ERROR_LIBS) $(LDAPLIBS) $(LIBINTL) $(LIBICONV)
+ 
+ dirmngr_client_SOURCES = dirmngr-client.c i18n.h util.h b64enc.c \
+                          get-path.c no-libgcrypt.c no-libgcrypt.h 
+ 
+ dirmngr_client_LDADD = ../jnlib/libjnlib.a $(LIBOBJS) $(LIBASSUAN_LIBS) \
+-	               $(GPG_ERROR_LIBS) $(LIBINTL)
++	               $(GPG_ERROR_LIBS) $(LIBINTL) $(LIBICONV)
+ 
+ all: all-am
+ 
