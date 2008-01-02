@@ -176,7 +176,6 @@ MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1 sa-update.1 \
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/spamassassin
-DOCS=		BUGS CREDITS Changes INSTALL LICENSE NOTICE PACKAGING README STATUS TRADEMARK UPGRADE USAGE procmailrc.example
 DOCS=		CREDITS Changes INSTALL LICENSE NOTICE PACKAGING README TRADEMARK UPGRADE USAGE procmailrc.example
 DOCSSQL=	README README.awl README.bayes awl_mysql.sql awl_pg.sql bayes_mysql.sql bayes_pg.sql userpref_mysql.sql userpref_pg.sql
 DOCSLDAP=	README README.testing sa_test.ldif
