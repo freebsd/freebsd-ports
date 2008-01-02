@@ -7,7 +7,7 @@
 
 PORTNAME=	uppc
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	palm kld
 MASTER_SITES=	http://www.people.tecnik93.com/~sam/ports/
 PKGNAMESUFFIX=	-kmod
@@ -23,10 +23,6 @@ IGNORE=		Requires kernel source (/usr/src/sys) to build
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 post-build:
 	@${REINPLACE_CMD} -e 's|%%INITIAL_INSTALLDIR%%|${PREFIX}/lib|g' ${BUILD_WRKSRC}/uppcsetup
