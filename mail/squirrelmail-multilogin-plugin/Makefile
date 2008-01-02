@@ -4,20 +4,22 @@
 #
 # $FreeBSD$
 
-PORTNAME=		squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
-PORTVERSION=		2.3.2
-CATEGORIES=		mail www
-MASTER_SITES=		http://www.squirrelmail.org/plugins/
-DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.2
-DIST_SUBDIR=		squirrelmail
+PORTNAME=	multilogin
+PORTVERSION=	2.3.4
+CATEGORIES=	mail www
+MASTER_SITES=	http://www.squirrelmail.org/plugins/
+PKGNAMEPREFIX=	squirrelmail-
+PKGNAMESUFFIX=	-plugin
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1.2.9
+DIST_SUBDIR=	squirrelmail
 
-MAINTAINER=		gerrit.beine@gmx.de
-COMMENT=		Allows manual selection of login server on login page
+MAINTAINER=	gerrit.beine@gmx.de
+COMMENT=	Allows manual selection of login server on login page
 
-RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
-			${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
+RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
+		${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
 
-SQUIRREL_PLUGIN_NAME=	multilogin
+SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
 .ifdef SQUIRRELDIR
 PLIST_SUB+=		SQUIRRELDIR=${SQUIRRELDIR}
@@ -64,7 +66,7 @@ post-install:
 .if exists( ${SQUIRRELDIR}/config/config.php )
 	@${ECHO} "Activating plug-in in SquirrelMail"
 	${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}
-	cd ${SQUIRRELDIR} && ${PATCH} -p0 < plugins/multilogin/patches/multilogin-squirrelmail-1.4.6.diff
+	cd ${SQUIRRELDIR} && ${PATCH} -p0 < plugins/${SQUIRREL_PLUGIN_NAME}/patches/multilogin-squirrelmail-1.4.12.diff
 .endif
 .else
 	@${ECHO} "To activate the plug-in in SquirrelMail use"
