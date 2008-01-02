@@ -7,6 +7,7 @@
 
 PORTNAME=	angband
 PORTVERSION=	3.0.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://rephial.org/downloads/3.0/ \
 		http://angband.oook.cz/download/
@@ -18,7 +19,7 @@ COMMENT=	Rogue-like game with color, X11 support
 USE_GMAKE=	yes
 ALL_TARGET=	#
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-setgid=games
+CONFIGURE_ARGS=	--with-setgid=games --disable-sdl --disable-sdl-mixer
 .if !defined(WITHOUT_X11)
 USE_XORG=	sm x11
 CONFIGURE_ARGS+=	--with-x

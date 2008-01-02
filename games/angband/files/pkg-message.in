@@ -1,5 +1,7 @@
 
  =======================================================================
+ Make sure you're a member of group "games".
+
  To reduce the number of term windows opened, use -n:
    angband -- -n2
 
