@@ -9,17 +9,6 @@
  
  # if your system lacks strrchr() or strdup(), edit this line
  STR_CFLAGS = # -DNEED_STRRCHR -DNEED_STRDUP
-@@ -9,8 +9,8 @@
- # if you would like support for TCP wrappers (and have libwrap.a
- # installed), remove these comments.
- 
--WRAP_CFLAGS = # -DUSE_TCP_WRAPPERS 
--WRAP_LIBS = # -lwrap
-+WRAP_CFLAGS = -DUSE_TCP_WRAPPERS 
-+WRAP_LIBS = -lwrap
- 
- # if your system needs any additional libraries (solaris, for example, 
- # needs the ones commented out below), edit this line.
 @@ -27,12 +27,11 @@
  ### end of user configuration section
  
