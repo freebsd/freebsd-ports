@@ -7,14 +7,14 @@
 
 PORTNAME=	vomit
 PORTVERSION=	0.2c
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net security
 MASTER_SITES=	http://vomit.xtdnet.nl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voice over misconfigured internet telephones
 
-LIB_DEPENDS=	event-1.3d:${PORTSDIR}/devel/libevent \
+LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent \
 		dnet.1:${PORTSDIR}/net/libdnet
 
 GNU_CONFIGURE=	yes
