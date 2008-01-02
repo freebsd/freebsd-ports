@@ -125,6 +125,8 @@ share/angband/xtra/sound/shutdoor.wav
 share/angband/xtra/sound/sound.cfg
 share/angband/xtra/sound/thump.wav
 share/angband/xtra/sound/vomit.wav
+@exec chmod g+w %D/share/angband/apex %D/share/angband/bone %D/share/angband/data %D/share/angband/save
+@exec chgrp games %D/share/angband/apex %D/share/angband/bone %D/share/angband/data %D/share/angband/save
 @dirrm share/angband/apex
 @dirrm share/angband/bone
 @dirrm share/angband/data
