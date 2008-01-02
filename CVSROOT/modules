@@ -17280,6 +17280,7 @@ xmlada-gcc	ports/textproc/xmlada-gcc
 xmlada-gps	ports/textproc/xmlada-gps
 xmlcatmgr	ports/textproc/xmlcatmgr
 xmlcharent	ports/textproc/xmlcharent
+xmlcopyeditor	ports/editors/xmlcopyeditor
 xmldiff		ports/textproc/xmldiff
 xmleditor	ports/editors/xmleditor
 xmlenc		ports/textproc/xmlenc
