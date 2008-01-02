@@ -19,7 +19,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 
 USE_GNOME=	gnometarget pkgconfig
-USE_WX=		2.6+
+USE_WX=		2.8+
 WX_CONF_ARGS=	absolute
 WX_UNICODE=	yes
 USE_BDB=	yes
