@@ -1,9 +1,9 @@
 bin/ircproxyd
 bin/imkpasswd
-share/ircproxy/ircproxyd.conf
-share/ircproxy/ircproxyd-listen.conf
-share/ircproxy/ircproxyd-access.conf
-share/ircproxy/ircproxyd-user.conf
-share/ircproxy/ircproxyd-conn.conf
-share/ircproxy/ircproxyd-autoop.conf
-@dirrm share/ircproxy
+%%DATADIR%%/ircproxyd.conf
+%%DATADIR%%/ircproxyd-listen.conf
+%%DATADIR%%/ircproxyd-access.conf
+%%DATADIR%%/ircproxyd-user.conf
+%%DATADIR%%/ircproxyd-conn.conf
+%%DATADIR%%/ircproxyd-autoop.conf
+@dirrm %%DATADIR%%

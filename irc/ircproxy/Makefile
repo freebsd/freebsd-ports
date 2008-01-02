@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ircproxy
-PORTVERSION=	1.3.1b
+PORTVERSION=	1.3.3c
 CATEGORIES=	irc
-MASTER_SITES=	http://filearchive.night-light.net/packages/sources/ircproxy/
+MASTER_SITES=	SF
 
 MAINTAINER=	jonas@night-light.net
 COMMENT=	An IRC proxy/bouncer daemon
