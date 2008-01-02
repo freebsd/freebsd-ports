@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cwdaemon
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://pg4i.chronos.org.uk/download/ \
 		http://www.qsl.net/pg4i/download/
@@ -15,10 +15,12 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio cw (morse code) keyer daemon
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-exec
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
+LIB_DEPENDS=	cw:${PORTSDIR}/comms/unixcw
 
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc
+INSTALL_TARGET=	install-exec
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/doc
 MAN8=		cwdaemon.8
 
 post-install:
