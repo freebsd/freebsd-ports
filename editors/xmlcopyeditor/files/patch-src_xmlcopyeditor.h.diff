@@ -1,0 +1,10 @@
+--- src/xmlcopyeditor.h.orig	Thu Dec 20 19:39:44 2007
++++ src/xmlcopyeditor.h	Thu Dec 20 19:40:47 2007
+@@ -21,6 +21,7 @@
+ #define XMLCOPYEDITOR_H
+ 
+ #define NEWFINDREPLACE 1
++#define ICONV_CHAR_CAST(x)  ((ICONV_CONST char **)(x))
+ 
+ #include <wx/wx.h>
+ #include <wx/fdrepdlg.h>

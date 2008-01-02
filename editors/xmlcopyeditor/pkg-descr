@@ -1,0 +1,17 @@
+XML Copy Editor is a fast validating XML editor.
+
+Features:
+
+    * DTD/XML Schema/RELAX NG validation
+    * XSLT
+    * XPath
+    * Pretty-printing
+    * Syntax highlighting
+    * Folding
+    * Tag completion
+    * Tag locking
+    * Tag-free editing
+    * Spelling and style check
+    * Built-in support for XHTML, XSL, DocBook and TEI
+
+WWW: http://xml-copy-editor.sourceforge.net/

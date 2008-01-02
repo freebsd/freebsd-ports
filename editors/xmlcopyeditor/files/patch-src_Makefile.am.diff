@@ -1,0 +1,45 @@
+--- src/Makefile.am.orig	Tue Jan  1 12:20:45 2008
++++ src/Makefile.am	Tue Jan  1 12:21:28 2008
+@@ -9,8 +9,8 @@
+ bin_PROGRAMS = xmlcopyeditor
+ bindir = ${prefix}/bin
+ xmlcopyeditordir = ${prefix}/share/xmlcopyeditor
+-pixmapdir = /usr/share/pixmaps
+-applicationsdir = /usr/share/applications
++pixmapdir = ${prefix}/share/pixmaps
++applicationsdir = ${prefix}/share/applications
+ 
+ # the application source, library search path, and link libraries
+ xmlcopyeditor_SOURCES = xmlcopyeditor.cpp associatedialog.cpp casehandler.cpp \
+@@ -41,15 +41,13 @@
+ 	xpm/*.xpm \
+ 	templates/*.* \
+ 	help/*.* help/html/*.* \
+-	copying/*.txt copying/boost_shared_ptr/* \
+-	copying/Expat/* copying/libxml2/* copying/libxslt/* \
+-	copying/PCRE/* copying/Scintilla/* \
+-	copying/scowl/* \
+-	copying/wxStyledTextCtrl/* copying/ximian/* \
+-	copying/wxStEditor/* \
+-	copying/xmlcopyeditor/* \
+-	copying/Apache/LICENSE-2.0 \
+-	copying/Apache/LICENSE-2_files/* \
++	copying/boost_license_1_0.txt copying/boost_shared_ptr/* \
++	copying/scowl/copying.txt \
++	copying/mit.txt \
++	copying/libxslt/libxslt-lic.txt \
++	copying/libxml2/libxml2-lic.txt \
++	copying/Scintilla/scintilla-lic.txt \
++	copying/Expat/copying.txt \
+ 	po/sk/messages.mo \
+ 	po/sv/messages.mo \
+ 	po/fr/messages.mo \
+@@ -58,7 +56,7 @@
+         po/zh_TW/messages.mo \
+ 	po/uk_UA/messages.mo \
+         po/uk_UA/messages.mo \
+-        po/en_us/messages.po \
++        po/en_us/messages.po
+ 
+ pixmap_DATA = xmlcopyeditor.png
+ 
