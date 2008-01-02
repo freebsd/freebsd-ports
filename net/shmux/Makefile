@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shmux
-DISTVERSION=	1.0b6
+DISTVERSION=	1.0b10
 CATEGORIES=	net
 MASTER_SITES=	http://web.taranis.org/shmux/dist/
 EXTRACT_SUFX=	.tgz
@@ -19,6 +19,7 @@ OPTIONS=	FPING "Use fping utility" on	\
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/examples
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 ALL_TARGET=	${PORTNAME}
 
