@@ -7,6 +7,7 @@
 
 PORTNAME=	assp
 PORTVERSION=	1.3.3.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
@@ -70,7 +71,8 @@ OPTIONS=	EMVALID	"RFC822 recipient address validator" on \
 		ZLIB	"HTTP Header Compression on Admin Interface" on \
 		CLAMAV	"ClamAV virus scanner" on \
 		DNSBL	"DNS block list checking" on \
-		MYSQL	"Use MySQL db to store white/red/delaylists" off
+		MYSQL	"Use MySQL db to store white/red/delaylists" off \
+		SIMPLE	"Use procedural Web Page interfaces" on
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME:U}_${PORTVERSION}-Install/${PORTNAME:U}
 
@@ -116,6 +118,10 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 
 .if !defined(WITHOUT_MYSQL)
 RUN_DEPENDS+=	${SITE_PERL}/Tie/RDBM.pm:${PORTSDIR}/databases/p5-Tie-DBI
+.endif
+
+.if !defined(WITHOUT_SIMPLE)
+RUN_DEPENDS+=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
 .endif
 
 EXTRACT_AFTER_ARGS=	-d ${PORTNAME}-${PORTVERSION}
