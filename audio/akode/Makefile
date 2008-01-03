@@ -23,7 +23,6 @@ OPTIONS=	JACK "Jack output plugin" off \
 		MPC "Monkey's Audio decoder plugin" on \
 		MPEG "MPEG Audio (including mp3) plugin" on \
 		OSS "OSS output plugin" on \
-		POLYPAUDIO "Polypaudio output plugin" off \
 		RESAMPLER "Resampler processing plugin" on \
 		XIPH "FLAC/Speex/Vorbis decoder plugin" on
 
@@ -56,10 +55,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_mpeg_decoder.so:${PORTSDIR}/audio/akode-
 
 .if !defined(WITHOUT_OSS)
 RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_oss_sink.so:${PORTSDIR}/audio/akode-plugins-oss
-.endif
-
-.if defined(WITH_POLYPAUDIO)
-RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_polyp_sink.so:${PORTSDIR}/audio/akode-plugins-polypaudio
 .endif
 
 .if !defined(WITHOUT_RESAMPLER)
