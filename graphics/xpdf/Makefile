@@ -17,7 +17,7 @@ PATCH_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 PATCHFILES=	xpdf-3.02pl1.patch xpdf-3.02pl2.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display PDF files, and convert them to other formats
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
