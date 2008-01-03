@@ -7,6 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.1.20
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://ftp.xiaoka.com/jabberd2/releases/
 DIST_SUBDIR=	jabber
@@ -15,6 +16,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		gsasl.11:${PORTSDIR}/security/gsasl \
 		idn.16:${PORTSDIR}/dns/libidn
 
 OPTIONS=	MYSQL "Support MySQL (storage/auth/reg)" on \
@@ -26,9 +28,8 @@ OPTIONS=	MYSQL "Support MySQL (storage/auth/reg)" on \
 		PIPE "Enable pipe (auth/reg)" off \
 		ANON "Enable anonymous (auth/reg)" off \
 		FS "Filesystem storage (only for testing)" off \
-		GSASL "Authenticate via GNU SASL" on \
-		CYRUS_SASL "Authenticate via Cyrus SASL" off \
-		DEBUG "Compile with debug messages" on
+		DEBUG "Compile with debug messages" on \
+		REQUIRES "Add backend requires to startup script" off
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
@@ -37,7 +38,7 @@ USE_RC_SUBR=	jabberd
 USE_LDCONFIG=	${PREFIX}/lib/jabberd
 CONFIGURE_ARGS+=	--localstatedir=/var \
 		--sysconfdir=${PREFIX}/etc/jabberd \
-		--enable-ssl --enable-mio=poll \
+		--enable-ssl --enable-mio=poll --enable-sasl=gsasl \
 		--with-extra-include-path="${LOCALBASE}/include ${EIP}" \
 		--with-extra-library-path="${LOCALBASE}/lib ${ELP}"
 
@@ -60,6 +61,8 @@ PORTDOCS=	*
 DOCFILES=	AUTHORS COPYING ChangeLog INSTALL NEWS PROTOCOL README \
 		TODO UPGRADE
 
+_REQUIRE=	LOGIN
+
 .include <bsd.port.pre.mk>
 
 ELP+=	${OPENSSLLIB}
@@ -73,6 +76,7 @@ CONFIGURE_ARGS+=--enable-debug
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-pgsql
 PLIST_SUB+=	SUB_PGSQL=""
+_REQUIRE+=	postgresql
 .else
 CONFIGURE_ARGS+=--disable-pgsql
 PLIST_SUB+=	SUB_PGSQL="@comment "
@@ -94,6 +98,7 @@ CONFIGURE_ARGS+=--enable-mysql
 EIP+=:${LOCALBASE}/include/mysql
 ELP+=:${LOCALBASE}/lib/mysql
 PLIST_SUB+=	SUB_MYSQL=""
+_REQUIRE+=	mysql
 .else
 CONFIGURE_ARGS+=--disable-mysql
 PLIST_SUB+=	SUB_MYSQL="@comment "
@@ -115,6 +120,7 @@ PLIST_SUB+=	SUB_BDB="@comment "
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--enable-ldap
 PLIST_SUB+=	SUB_LDAP=""
+_REQUIRE+=	slapd
 .else
 CONFIGURE_ARGS+=--disable-ldap
 PLIST_SUB+=	SUB_LDAP="@comment "
@@ -150,16 +156,10 @@ PLIST_SUB+=	SUB_ANON=""
 PLIST_SUB+=	SUB_ANON="@comment "
 .endif
 
-.if defined(WITH_GSASL) && defined(WITH_CYRUS_SASL)
-IGNORE=	cannot be compiled with both, gsasl and cyrus-sasl. Please (re)run 'make config' and deselect either GSASL or CYRUS_SASL
-.elif defined(WITHOUT_GSASL) && !defined(WITH_CYRUS_SASL)
-IGNORE=	is useless without a sasl library. Please (re)run 'make config' and choose either GSASL or CYRUS_SASL
-.elif defined(WITH_GSASL)
-CONFIGURE_ARGS+=	--enable-sasl=gsasl
-LIB_DEPENDS+=		gsasl.11:${PORTSDIR}/security/gsasl
-.elif defined(WITH_CYRUS_SASL)
-CONFIGURE_ARGS+=	--enable-sasl=cyrus
-LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+.if defined(WITH_REQUIRES)
+SUB_LIST+=	REQUIRE="${_REQUIRE}"
+.else
+SUB_LIST+=	REQUIRE="LOGIN"
 .endif
 
 MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
