@@ -7,7 +7,7 @@
 
 PORTNAME=	sharpconstruct
 PORTVERSION=	0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sharp3d
@@ -26,7 +26,12 @@ GNU_CONFIGURE=	yes
 
 MAN1=		sharpconstruct.1
 
+.include <bsd.port.pre.mk>
+
 post-patch:
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+	@${REINPLACE_CMD} -e 's|-msse||' ${WRKSRC}/src/Makefile*
+.endif
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/include/Align.hh
 	@${REINPLACE_CMD} -e 's|"/sharpconstruct|"|' ${WRKSRC}/src/MainWindow.cc
 	@${REINPLACE_CMD} -e 's|/usr/share/sharpconstruct|${DATADIR}|' ${WRKSRC}/src/MainWindow.cc
@@ -35,4 +40,4 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e '/^DEFS / s|$$| -DDATADIR=\\"${DATADIR}\\"|'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
