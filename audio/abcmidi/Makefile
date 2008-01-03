@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	abcmidi
-PORTVERSION=	2007.03.18
+PORTVERSION=	2007.12.09
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	abc
+MASTER_SITES=	SF/abc
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -36,7 +35,9 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/CHANGES ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/programming
+	${INSTALL_DATA} ${WRKSRC}/doc/programming/*.abc ${DOCSDIR}/programming
 	${INSTALL_DATA} ${WRKSRC}/doc/programming/*.txt ${DOCSDIR}/programming
 .endif
 
