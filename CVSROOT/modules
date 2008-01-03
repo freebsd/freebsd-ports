@@ -14735,6 +14735,7 @@ sdl_pango	ports/x11-toolkits/sdl_pango
 sdl_sge		ports/devel/sdl_sge
 sdl_sound	ports/audio/sdl_sound
 sdl_ttf		ports/graphics/sdl_ttf
+sdlCC		ports/games/sdlCC
 sdlmame		ports/emulators/sdlmame
 sdlmess		ports/emulators/sdlmess
 sdlmm		ports/devel/sdlmm
