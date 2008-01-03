@@ -7,7 +7,7 @@
 
 PORTNAME=	nss_mdns
 PORTVERSION=	0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://0pointer.de/lennart/projects/nss-mdns/
 DISTNAME=	nss-mdns-${PORTVERSION}
@@ -19,7 +19,7 @@ USE_AUTOTOOLS=	autoconf:261 automake:19 libtool:15
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
 
 OPTIONS=			\
 	SEARCH_DOMAINS "Honour search domains in resolv.conf" Off
