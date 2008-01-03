@@ -7,6 +7,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.2.7
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -20,7 +21,8 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		p5-CGI.pm>0:${PORTSDIR}/www/p5-CGI.pm \
 		p5-Digest-MD5>0:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Pod-Parser>0:${PORTSDIR}/textproc/p5-Pod-Parser \
-		p5-Net>0:${PORTSDIR}/net/p5-Net
+		p5-Net>0:${PORTSDIR}/net/p5-Net \
+		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
 USE_PERL5=	yes
