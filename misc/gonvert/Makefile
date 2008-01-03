@@ -7,18 +7,16 @@
 #
 
 PORTNAME=	gonvert
-PORTVERSION=	0.2.17
-PORTREVISION=	1
+PORTVERSION=	0.2.19
 CATEGORIES=	misc python gnome
 MASTER_SITES=	http://www.unihedron.com/projects/gonvert/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A conversion utility that allows conversion between many units
 
-USE_X_PREFIX=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
+USE_GETTEXT=	yes
 NO_BUILD=	yes
 
 post-patch:
