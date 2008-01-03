@@ -68,9 +68,6 @@ CONFIGURE_ARGS+=	--disable-savewindows
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
-BROKEN=		Does not install on i386 (core dump)
-.endif
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not build on sparc64
 .endif
