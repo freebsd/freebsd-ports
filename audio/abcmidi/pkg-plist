@@ -5,6 +5,7 @@ bin/mftext
 bin/midi2abc
 bin/midicopy
 bin/yaps
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/abcguide.txt
 %%PORTDOCS%%%%DOCSDIR%%/abcmatch.txt
 %%PORTDOCS%%%%DOCSDIR%%/gpl.txt
@@ -12,6 +13,7 @@ bin/yaps
 %%PORTDOCS%%%%DOCSDIR%%/programming/abc2midi.txt
 %%PORTDOCS%%%%DOCSDIR%%/programming/coding.txt
 %%PORTDOCS%%%%DOCSDIR%%/programming/midi2abc.txt
+%%PORTDOCS%%%%DOCSDIR%%/programming/split.abc
 %%PORTDOCS%%%%DOCSDIR%%/programming/yaps.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/yapshelp.txt
