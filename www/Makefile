@@ -989,6 +989,7 @@
     SUBDIR += phpadsnew
     SUBDIR += phpbb
     SUBDIR += phpbb-devel
+    SUBDIR += phpbb3
     SUBDIR += phpgedview
     SUBDIR += phpmp
     SUBDIR += phpmyfaq
