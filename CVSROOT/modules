@@ -12183,7 +12183,7 @@ pharmacy	ports/devel/pharmacy
 phase		ports/x11-themes/phase
 phat		ports/x11-toolkits/phat
 phatbeat	ports/audio/phatbeat
-phbb3		ports/www/phbb3
+phpbb3		ports/www/phpbb3
 phc		ports/lang/phc
 phex		ports/net-p2p/phex
 phluid		ports/x11-wm/phluid
