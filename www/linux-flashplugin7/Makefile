@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	7.0r70
+PORTVERSION=	7.0r73
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/installers/archive/
 PKGNAMEPREFIX=	linux-
@@ -24,7 +24,7 @@ USE_ZIP=	yes
 RESTRICTED=	Redistribution not allowed
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/fp7_archive/r70/install_flash_player_7_linux
+WRKSRC=		${WRKDIR}/fp7_archive/r73/install_flash_player_7_linux
 
 USE_NPAPI=	linux-*
 NPAPI_FILES=	libflashplayer.so flashplayer.xpt
@@ -41,6 +41,6 @@ RUN_DEPENDS+=	nspluginwrapper:${PORTSDIR}/www/nspluginwrapper
 .endif
 
 post-patch:
-	(cd ${WRKDIR}/fp7_archive/r70 && ${TAR} -xzf install_flash_player_7_linux_r70.tar.gz)
+	(cd ${WRKDIR}/fp7_archive/r73 && ${TAR} -xzf install_flash_player_7_linux_r73.tar.gz)
 
 .include <bsd.port.post.mk>
