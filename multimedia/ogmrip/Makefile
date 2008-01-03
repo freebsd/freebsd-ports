@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogmrip
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -17,7 +17,6 @@ BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
-		${LOCALBASE}/sbin/eject:${PORTSDIR}/sysutils/eject \
 		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS=	enca.5:${PORTSDIR}/converters/enca \
 		notify.1:${PORTSDIR}/devel/libnotify \
@@ -132,9 +131,9 @@ LAVF_SUPPORT!=		${LOCALBASE}/bin/mencoder -of help 2> /dev/null | \
 PLIST_SUB+=		LAVF_SUPPORT="${LAVF_SUPPORT}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-I/usr/local/include||g ; \
-		 s|-L/usr/local/lib||g ; \
-		 s|-L/usr/pkg/lib||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
+		 s|^CPPFLAGS=|#CPPFLAGS=|g ; \
+		 s|^LDFLAGS=|#LDFLAGS|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^SUBDIRS|#SUBDIRS|g' ${WRKSRC}/docs/Makefile.in
 
 pre-configure:
