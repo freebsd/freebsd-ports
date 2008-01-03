@@ -34,6 +34,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="562cf6c4-b9f1-11dc-a302-000102cc8983">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><lt>9.0r115</lt></range>
+	<range><lt>7.0r73</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Security bulletin:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb07-20.html">
+	  <p>Critical vulnerabilities have been identified in Adobe Flash
+	    Player that could allow an attacker who successfully exploits these
+	    potential vulnerabilities to take control of the affected system. A
+	    malicious SWF must be loaded in Flash Player by the user for an
+	    attacker to exploit these potential vulnerabilities. Users are
+	    recommended to update to the most current version of Flash Player
+	    available for their platform.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-6242</cvename>
+      <cvename>CVE-2007-4768</cvename>
+      <cvename>CVE-2007-5275</cvename>
+      <cvename>CVE-2007-6243</cvename>
+      <cvename>CVE-2007-6244</cvename>
+      <cvename>CVE-2007-6245</cvename>
+      <cvename>CVE-2007-4324</cvename>
+      <cvename>CVE-2007-6246</cvename>
+      <cvename>CVE-2007-5476</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb07-20.html</url>
+      <url>http://secunia.com/advisories/28161/</url>
+    </references>
+    <dates>
+      <discovery>2007-12-18</discovery>
+      <entry>2008-01-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cf484358-b5d6-11dc-8de0-001c2514716c">
     <topic>dovecot -- Specific LDAP + auth cache configuration may mix up user logins</topic>
     <affects>
