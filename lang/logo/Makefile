@@ -7,7 +7,7 @@
 
 PORTNAME=	ucblogo
 PORTVERSION=	5.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.berkeley.edu/~bh/downloads/
 DISTNAME=	${PORTNAME}
@@ -27,7 +27,7 @@ BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
-USE_AUTOTOOLS=  autoconf:261
+USE_AUTOTOOLS=	autoconf:261
 MAKEFILE=	makefile
 HAS_CONFIGURE=	yes
 
