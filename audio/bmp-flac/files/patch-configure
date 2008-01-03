@@ -1,5 +1,14 @@
---- configure.orig	Mon Apr 12 20:29:48 2004
-+++ configure	Sun May 22 00:46:57 2005
+--- configure.orig	2004-04-12 20:29:48.000000000 +0900
++++ configure	2008-01-04 02:52:42.000000000 +0900
+@@ -7763,7 +7763,7 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
 @@ -19040,6 +19040,7 @@
  
  # This can be used to rebuild libtool when needed
