@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	cproto
-PORTVERSION=	4.7e
+PORTVERSION=	4.7f
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/cproto/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thomas@bsdunix.ch
