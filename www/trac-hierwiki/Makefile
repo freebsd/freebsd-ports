@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	hierwiki
-PORTVERSION=	0.1r1
+PORTVERSION=	1.0
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
-DISTNAME=	${PORTNAME}plugin-${PORTVERSION:S/r/-r/}
+DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Dealing with the trac wiki as a hierarchy
@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 NO_BUILD=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
-PLIST_SUB+=	PORTVERSION=${PORTVERSION:S/r/_r/} PYTHONVERSION=${_PYTHON_VERSION}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHONVERSION=${_PYTHON_VERSION}
 PYDISTUTILS_NOEGGINFO=	yes
 
 .include <bsd.port.mk>
