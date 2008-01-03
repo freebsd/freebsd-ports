@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	lisaem
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.6
 CATEGORIES=	emulators
-MASTER_SITES=	http://lisa.sunder.net/20070923/
+MASTER_SITES=	http://lisaem.sunder.net/downloads/
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Apple Lisa 2 Emulator
@@ -26,8 +26,11 @@ do-build:
 		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/bash build.sh build
 
 do-install:
+		@# This file is a symlink to itself; result of mistyped command?
+		${RM} -f ${WRKSRC}/resources/resources
 		${INSTALL_PROGRAM} ${WRKSRC}/bin/lisaem ${PREFIX}/bin
-		${MKDIR} ${PREFIX}/share/LisaEm
-		${INSTALL_DATA} ${WRKSRC}/resources/* ${PREFIX}/share/LisaEm/
+		${MKDIR} ${PREFIX}/share/lisaem
+		${INSTALL_DATA} ${WRKSRC}/resources/* ${PREFIX}/share/lisaem/
+		${LN} -sf ${PREFIX}/share/lisaem ${PREFIX}/share/LisaEm
 
 .include <bsd.port.mk>
