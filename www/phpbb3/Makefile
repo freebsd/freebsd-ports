@@ -1,5 +1,5 @@
-# New ports collection makefile for:	phpbb-devel
-# Date created:		1 Jun 2007
+# New ports collection makefile for:	phpbb3
+# Date created:		20 Dec 2007
 # Whom:	      		Zhen REN <bg1tpt@gmail.com>
 #
 # $FreeBSD$
@@ -7,16 +7,14 @@
 
 PORTNAME=	phpbb
 PORTVERSION=	3.0.0
-PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
-PKGNAMESUFFIX=	-devel
 DISTNAME=	phpBB-${PORTVERSION}
 
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
-CONFLICTS=	phpbb-tw-[0-9]* phpbb-[0-9]* phpbb3-[0-9]
+CONFLICTS=	phpbb-tw-[0-9]* phpbb-devel-[0-9]*
 
 USE_BZIP2=	yes
 
@@ -28,6 +26,7 @@ PHPBBURL?=	phpBB3
 #
 # End of user-configurable variables.
 
+LATEST_LINK?=	phpbb3
 WRKSRC=		${WRKDIR}/phpBB3
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
