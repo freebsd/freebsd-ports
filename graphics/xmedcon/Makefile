@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmedcon
-PORTVERSION=	0.9.10
+PORTVERSION=	0.10.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -46,13 +46,15 @@ MAN4=	m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
 CONFIGURE_ARGS+=	--disable-gui
 PLIST_SUB+=	X11="@comment "
 .else
-USE_GNOME+=	gtk12 gdkpixbuf
+USE_GNOME+=	gtk20
 PLIST_SUB+=	X11=""
 MAN1+=		xmedcon.1
 .endif
 
 .if defined(WITHOUT_GLIB)
 CONFIGURE_ARGS+=	--disable-glib
+.else
+USE_GNOME+=	glib20
 .endif
 
 .if defined(WITHOUT_ACR_NEMA) || defined(WITHOUT_DICOM)
@@ -95,6 +97,22 @@ CONFIGURE_ARGS+=	--disable-ljpg
 CONFIGURE_ARGS+=	--disable-png
 .else
 LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|etc||g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^configheadersdir/s|=.*$$|= $$(includedir)|g' \
+		${WRKSRC}/source/Makefile.in
+	@${REINPLACE_CMD} -e '/xmedcon.1/d' \
+		${WRKSRC}/man/Makefile.in
+
+post-install:
+.if !defined(WITHOUT_X11)
+.for file in xmedcon.png xmedconrc xmedconrc.linux
+	${INSTALL_DATA} ${WRKSRC}/etc/${file} ${PREFIX}/etc
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/man/xmedcon.1 ${MANPREFIX}/man/man1
 .endif
 
 .include <bsd.port.post.mk>
