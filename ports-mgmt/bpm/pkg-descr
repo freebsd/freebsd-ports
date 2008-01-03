@@ -1,4 +1,4 @@
-BSD Ports Manipuator (BPM) is a graphical ports collection manager for
+BSD Ports Manipulator (BPM) is a graphical ports collection manager for
 FreeBSD.  It has a GTK+ 2.0 interface and allows you to add, remove, or
 upgrade software packages on your system without requiring you to use a
 command-line. In addition, it can display details about available,
