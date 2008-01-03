@@ -7,7 +7,7 @@
 
 PORTNAME=	webfrontend
 PORTVERSION=	3.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net parallel www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -30,7 +30,7 @@ PLIST_SUB+=	WEBFRONTDIR="${WEBFRONTDIR}"
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 
-USE_PHP=	gd pcre xml
+USE_PHP=	gd pcre xml ctype
 WANT_PHP_MOD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/web
 
@@ -47,7 +47,8 @@ EXCEPTFILES=	AUTHORS \
 		COPYING \
 		Makefile.am \
 		addons \
-		webfrontend.spec
+		webfrontend.spec \
+		version.php.in
 CPIOARGS=	--quiet -pdum -R
 TMP_WEBFRONTDIR=	${WRKDIR}/webfrontend
 
