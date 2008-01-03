@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p4v
-PORTVERSION=	2007.2.128166
+PORTVERSION=	2007.2.141782
 CATEGORIES=	devel
 MASTER_SITES=	http://filehost.perforce.com/perforce/r07.2/bin.freebsd60x86/
 DISTNAME=	${PORTNAME}
