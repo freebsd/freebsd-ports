@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PhpDocumentor
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -36,7 +36,6 @@ FILES=		HTML_TreeMenu-1.1.2/TreeMenu.php \
 		phpDocumentor/Converters/XML/DocBook/peardoc2/XMLDocBookpeardoc2Converter.inc \
 		phpDocumentor/Converters/XML/DocBook/XMLDocBookConverter.inc \
 		phpDocumentor/Converters/.peardummy \
-		phpDocumentor/DocBlock/Lexer.inc \
 		phpDocumentor/Smarty-2.6.0/libs/core/core.assign_smarty_interface.php \
 		phpDocumentor/Smarty-2.6.0/libs/core/core.create_dir_structure.php \
 		phpDocumentor/Smarty-2.6.0/libs/core/core.display_debug_console.php \
@@ -177,6 +176,7 @@ DOCS=		Documentation/Release-old/Release-0.2.4 \
 		Documentation/Release-old/Release-1.4.0alpha2 \
 		Documentation/Release-old/Release-1.4.0rc1 \
 		Documentation/Release-old/Release-1.4.0rc2 \
+		Documentation/Release-old/Release-1.4.0 \
 		Documentation/TODO \
 		Documentation/RoadMap \
 		tutorials/Converters/CHMdefault/CHMdefaultConverter.cls \
@@ -254,24 +254,9 @@ DOCS=		Documentation/Release-old/Release-0.2.4 \
 		INSTALL \
 		LICENSE \
 		README \
-		Release-1.4.0 \
+		Release-1.4.1 \
 		Authors
 TESTS=		Documentation/tests/bug-557861/bug-557861.php \
-		Documentation/tests/DocBlock_Lexer/test_br.phpt \
-		Documentation/tests/DocBlock_Lexer/test_code.phpt \
-		Documentation/tests/DocBlock_Lexer/test_empty.phpt \
-		Documentation/tests/DocBlock_Lexer/test_eschtml.phpt \
-		Documentation/tests/DocBlock_Lexer/test_html.phpt \
-		Documentation/tests/DocBlock_Lexer/test_inlinetags.phpt \
-		Documentation/tests/DocBlock_Lexer/test_internal.phpt \
-		Documentation/tests/DocBlock_Lexer/test_kbd.phpt \
-		Documentation/tests/DocBlock_Lexer/test_pre.phpt \
-		Documentation/tests/DocBlock_Lexer/test_samp.phpt \
-		Documentation/tests/DocBlock_Lexer/test_simplelist.phpt \
-		Documentation/tests/DocBlock_Lexer/test_singleline.phpt \
-		Documentation/tests/DocBlock_Lexer/test_tags.phpt \
-		Documentation/tests/DocBlock_Lexer/test_twoline.phpt \
-		Documentation/tests/DocBlock_Lexer/setup.php.inc \
 		Documentation/tests/bug-441278.php \
 		Documentation/tests/bug-441287.php \
 		Documentation/tests/bug-441289.php \
@@ -327,20 +312,20 @@ TESTS=		Documentation/tests/bug-557861/bug-557861.php \
 		Documentation/tests/bug-pageleveldocsblocks.php \
 		Documentation/tests/bug-quote_new_parser.php \
 		Documentation/tests/bug-shortdesc.php \
-		Documentation/tests/phpt_test.php.inc \
-		Documentation/tests/HighlightParserGetInlineTagsTests.php \
-		Documentation/tests/HighlightParserTests.php \
-		Documentation/tests/IntermediateParserAddPrivatePageTests.php \
-		Documentation/tests/IntermediateParserTests.php \
-		Documentation/tests/ParserClassGetSourceLocationTests.php \
-		Documentation/tests/ParserClassTests.php \
-		Documentation/tests/ParserPageGetSourceLocationTests.php \
-		Documentation/tests/ParserPageTests.php \
-		Documentation/tests/phpDocumentorSetupCleanConverterNamePieceTests.php \
-		Documentation/tests/phpDocumentorSetupDecideOnOrOffTests.php \
-		Documentation/tests/phpDocumentorSetupTests.php \
-		Documentation/tests/phpDocumentorTParserGetInlineTagsTests.php \
-		Documentation/tests/phpDocumentorTParserTests.php \
+		tests/AllTests.php \
+		tests/HighlightParserGetInlineTagsTests.php \
+		tests/HighlightParserTests.php \
+		tests/IntermediateParserAddPrivatePageTests.php \
+		tests/IntermediateParserTests.php \
+		tests/ParserClassGetSourceLocationTests.php \
+		tests/ParserClassTests.php \
+		tests/ParserPageGetSourceLocationTests.php \
+		tests/ParserPageTests.php \
+		tests/phpDocumentorSetupCleanConverterNamePieceTests.php \
+		tests/phpDocumentorSetupDecideOnOrOffTests.php \
+		tests/phpDocumentorSetupTests.php \
+		tests/phpDocumentorTParserGetInlineTagsTests.php \
+		tests/phpDocumentorTParserTests.php \
 		Documentation/.peardummy
 DATA=		docbuilder/images/ss_CHM_default_default.png \
 		docbuilder/images/ss_HTML_frames_default.png \
@@ -546,7 +531,7 @@ DATA=		docbuilder/images/ss_CHM_default_default.png \
 		phpDocumentor/Converters/HTML/frames/templates/DOM/earthli/templates/media/images/Global.png \
 		phpDocumentor/Converters/HTML/frames/templates/DOM/earthli/templates/media/images/I.png \
 		phpDocumentor/Converters/HTML/frames/templates/DOM/earthli/templates/media/images/Index.png \
-		phpDocumentor/Converters/HTML/frames/templates/DOM/earthli/templates/media/images/Interface.PNG \
+		phpDocumentor/Converters/HTML/frames/templates/DOM/earthli/templates/media/images/Interface.png \
 		phpDocumentor/Converters/HTML/frames/templates/DOM/earthli/templates/media/images/Interface_logo.png \
 		phpDocumentor/Converters/HTML/frames/templates/DOM/earthli/templates/media/images/L.png \
 		phpDocumentor/Converters/HTML/frames/templates/DOM/earthli/templates/media/images/Lminus.png \
