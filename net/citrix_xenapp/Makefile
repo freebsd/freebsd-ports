@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
-RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
@@ -65,7 +65,6 @@ pre-fetch:
 .endif
 .endfor
 .endif
-
 
 do-install:
 	@if (test -d "${CDIR}") ; \
