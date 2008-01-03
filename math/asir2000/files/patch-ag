@@ -1,6 +1,6 @@
 --- parse/glob.c.orig	Thu Jan  4 00:48:08 2007
 +++ parse/glob.c	Wed Jul 18 12:25:46 2007
-@@ -51,6 +51,7 @@
+@@ -51,10 +51,11 @@
  #include "al.h"
  #include "parse.h"
  #include "ox.h"
@@ -8,6 +8,11 @@
  #if defined(PARI)
  #include "genpari.h"
  #endif
+-#if !defined(VISUAL) && !defined(_PA_RISC1_1) && !defined(linux) && !defined(SYSV) && !defined(__CYGWIN__) && !defined(__INTERIX)
++#if !defined(VISUAL) && !defined(_PA_RISC1_1) && !defined(linux) && !defined(SYSV) && !defined(__CYGWIN__) && !defined(__INTERIX) && !defined(__FreeBSD__)
+ #include <sgtty.h>
+ #endif
+ 
 @@ -765,7 +766,7 @@
  char *get_pariversion() 
  {
