@@ -29,7 +29,7 @@ MAN8=		ftwin.8
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 600000
-LIB_DEPENDS+=	archive.5:${PORTSDIR}/archivers/libarchive
+LIB_DEPENDS+=	archive.6:${PORTSDIR}/archivers/libarchive
 CONFIGURE_ARGS+=	--with-archive=${LOCALBASE}
 .endif
 
