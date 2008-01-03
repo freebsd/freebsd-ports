@@ -12426,6 +12426,7 @@ piewm		ports/x11-wm/piewm
 pikdev		ports/devel/pikdev
 pike72		ports/lang/pike72
 pike76		ports/lang/pike76
+piklab		ports/devel/piklab
 pilot-link	ports/palm/pilot-link
 pilot_makedoc	ports/palm/pilot_makedoc
 pilrc		ports/palm/pilrc
