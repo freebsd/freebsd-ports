@@ -33,5 +33,8 @@ post-install:
 BROKEN=		Does not configure
 .endif
 .endif
+.if ${OSVERSION} >= 800000
+BROKEN=		Does not build
+.endif
 
 .include <bsd.port.post.mk>
