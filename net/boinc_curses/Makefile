@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	boinc_curses
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.oook.cz/bsd/boinc_curses/
 
