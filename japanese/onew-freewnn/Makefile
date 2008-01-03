@@ -7,6 +7,7 @@
 
 PORTNAME=	onew
 PORTVERSION?=	2.2.10
+PORTREVISION=	1
 PKGNAMESUFFIX=	${INPUT_METHOD}
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
