@@ -1,12 +1,18 @@
 --- apple.h.orig	Tue Jan  9 13:00:03 1996
 +++ apple.h	Tue Aug 15 20:34:22 2000
-@@ -18,8 +18,7 @@
+@@ -17,15 +17,6 @@
+ #include <ctype.h>
  #endif
  
- #ifndef CBREAK
+-#ifndef CBREAK
 -/*#include <sgtty.h>*/
 -#include <bsd/sgtty.h>
-+#include <sgtty.h>
+-#endif
+-
+-#ifndef TIOCGETP
+-#include <sys/ioctl.h>
+-#endif
+-
+ #ifndef O_NDELAY
+ #include <fcntl.h>
  #endif
- 
- #ifndef TIOCGETP
