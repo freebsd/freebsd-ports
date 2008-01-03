@@ -132,4 +132,4 @@ share/config/kdbgrc
 @dirrm share/apps/kdbg/icons/hicolor
 @dirrm share/apps/kdbg/icons
 @dirrm share/apps/kdbg
-@dirrm share/config
+@dirrmtry share/config
