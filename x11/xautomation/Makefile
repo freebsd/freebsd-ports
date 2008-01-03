@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xautomation
-PORTVERSION=	0.98
+PORTVERSION=	0.99
 CATEGORIES=	x11
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
@@ -23,6 +23,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/pat2ppm bin/patextract bin/png2pat bin/rgb2pat \
-		bin/visgrep bin/xte
+		bin/visgrep bin/xmousepos bin/xte
 
 .include <bsd.port.mk>
