@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.39
+PORTVERSION=	1.40
 CATEGORIES=	databases python
 MASTER_SITES=	ftp://ftp.tummy.com/pub/python-memcached/ \
 		ftp://ftp.tummy.com/pub/python-memcached/old-releases/
@@ -17,7 +17,7 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Python API for memcached, a distributed memory cache daemon
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	python-memcached
 
 .include <bsd.port.mk>
