@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	typetools
-PORTVERSION=	2.64
+PORTVERSION=	2.66
 CATEGORIES=	print
 MASTER_SITES=	http://www.lcdf.org/type/
 DISTNAME=	lcdf-${PORTNAME}-${PORTVERSION}
