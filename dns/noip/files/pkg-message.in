@@ -1,8 +1,12 @@
-##################################################################
+###########################################################
 You need to generate the noip config file 'no-ip2.conf' in
 %%PREFIX%%/etc/no-ip2.conf.  To do this automatically, run:
 
 	make conf
 
 You need to register with www.no-ip.com to use this port.
-##################################################################
+
+You also need to add the following line to your
+/etc/rc.conf or /etc/rc.conf.local file:
+noip_enable="YES"
+###########################################################

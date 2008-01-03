@@ -1,5 +1,4 @@
 bin/noip2
-etc/rc.d/noip.sh
 %%PORTDOCS%%%%DOCSDIR%%/README.FIRST
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
