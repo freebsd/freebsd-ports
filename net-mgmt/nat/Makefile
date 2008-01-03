@@ -16,7 +16,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}.freebsd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBIOS auditing tool
 
-BROKEN=		does not fetch
 RESTRICTED=	Redistribution prohibited by the license
 
 NO_BUILD=	yes
