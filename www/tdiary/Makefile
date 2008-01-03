@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	2.0.4
+PORTVERSION=	2.2.0
 CATEGORIES?=	www ruby
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://www.tdiary.org/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
 MAINTAINER=	tota@rtfm.jp
@@ -23,13 +22,11 @@ CONFLICTS?=	tdiary-devel-[0-9]* \
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_RUBY=	yes
 
-.if !defined(WITHOUT_RUBY_FEATURES)
-USE_RUBY_FEATURES=	fileutils
-.endif
-
-RUBY_SHEBANG_FILES=	index.rb update.rb misc/convert2.rb misc/plugin/squeeze.rb \
-			misc/plugin/windex.rb \
-			misc/plugin/trackback/tb.rb misc/style/etdiary/etdiary_test.rb
+RUBY_SHEBANG_FILES=	index.rb update.rb misc/convert2.rb \
+			misc/plugin/amazon/amazonimg.rb misc/plugin/pingback/pb.rb \
+			misc/plugin/squeeze.rb misc/plugin/trackback/tb.rb \
+			misc/plugin/xmlrpc/xmlrpc.rb misc/style/etdiary/etdiary_test.rb \
+			tdiary/wiki_style_test.rb
 
 PLIST_FILES=	${TDIARYDIR:S|${LOCALBASE}/||}/tdiaryinst.rb
 TDIARYDIR=	${EXAMPLESDIR}
@@ -43,14 +40,8 @@ TDIARY_LANG=	en
 .if defined(WITH_TDIARY_UCONV)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 .endif
-.if defined(WITH_TDIARY_NORA)
+.if !defined(WITHOUT_TDIARY_NORA)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VERSION_CODE} < 167
-IGNORE=		only works with Ruby 1.6.7 or later
 .endif
 
 do-install:
@@ -74,4 +65,4 @@ post-install:
 	@${SED}	-e 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|' < ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
