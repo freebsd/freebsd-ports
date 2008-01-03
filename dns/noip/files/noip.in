@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# PROVIDE: noip
+# REQUIRE: NETWORKING SYSLOG DAEMON 
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# noip_enable (bool): Set to NO by default.
+#                     Set it to YES to enable noip.
+# noip_config (path): Set to %%PREFIX%%/etc/no-ip2.conf by default.
+# noip_flags:         Set to -c %%PREFIX%%/etc/no-ip2.conf by default.
+#
+
+. %%RC_SUBR%%
+
+name="noip"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/${name}"
+
+load_rc_config $name
+
+: ${noip_enable="NO"}
+: ${noip_config="%%PREFIX%%/etc/no-ip2.conf"}
+: ${noip_flags="-c $noip_config"}
+: ${noip_user="noip"}
+: ${noip_group="noip"}
+
+required_files=${noip_config}
+
+run_rc_command "$1"

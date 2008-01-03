@@ -7,6 +7,7 @@
 
 PORTNAME=	noip
 PORTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.no-ip.com/client/linux/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -17,9 +18,7 @@ COMMENT=	No-IP.com's dynamic DNS update client
 ALL_TARGET=	noip2
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-post-build:
-	${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/noip.sh > ${WRKSRC}/noip.sh
+USE_RC_SUBR=	noip
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
@@ -27,7 +26,6 @@ pre-install:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/noip2 ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/noip.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README.FIRST ${DOCSDIR}
