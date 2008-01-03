@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.11
-PORTREVISION=	1
+PORTVERSION=	1.4.14
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
@@ -29,7 +28,8 @@ PLIST_FILES=	bin/mhwaveedit \
 		share/locale/es/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/fr/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/ru/LC_MESSAGES/mhwaveedit.mo \
-		share/locale/sv/LC_MESSAGES/mhwaveedit.mo
+		share/locale/sv/LC_MESSAGES/mhwaveedit.mo \
+		share/locale/zh_CN/LC_MESSAGES/mhwaveedit.mo
 
 OPTIONS=	DOUBLE_SAMPLES "increase quality for 24/32-bit samplerates" off \
 		SNDFILE "libsndfile support" on \
@@ -100,6 +100,9 @@ RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 .else
 CONFIGURE_ENV+=	ac_cv_header_ladspa_h=no
 .endif
+
+post-extract:
+	@${CHMOD} +x ${WRKSRC}/install-sh
 
 post-patch:
 	@${REINPLACE_CMD} -e '/AM_CFLAGS=/s|-g||g' ${WRKSRC}/configure
