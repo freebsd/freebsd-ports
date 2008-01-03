@@ -3902,6 +3902,7 @@ gnome-doc-utils	ports/textproc/gnome-doc-utils
 gnome-font-sampler	ports/x11-fonts/gnome-font-sampler
 gnome-games	ports/games/gnome-games
 gnome-games-extra-data	ports/games/gnome-games-extra-data
+gnome-gmail-notifier	ports/mail/gnome-gmail-notifier
 gnome-gpg	ports/security/gnome-gpg
 gnome-icon-theme	ports/misc/gnome-icon-theme
 gnome-icons	ports/x11-themes/gnome-icons
