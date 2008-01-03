@@ -1,0 +1,6 @@
+This module provides a simple interface for monitoring
+one or more files or directories and reporting any changes
+that are made to them.
+
+Author:	Andy Armstrong <andy@hexten.net>
+WWW:	http://search.cpan.org/~andya/File-Monitor/
