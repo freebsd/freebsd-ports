@@ -1,11 +1,11 @@
---- HarmonicsPath.cc.orig	Mon Feb 26 07:51:38 2007
-+++ HarmonicsPath.cc	Fri Mar 23 02:32:10 2007
-@@ -30,7 +30,7 @@
-   Dstr hfile_path (getenv ("HFILE_PATH"));
-   if (hfile_path.isNull()) {
-     FILE *configfile;
--    if ((configfile = fopen ("/etc/xtide.conf", "r"))) {
-+    if ((configfile = fopen ("%%PREFIX%%/etc/xtide.conf", "r"))) {
-       hfile_path.getline (configfile);
-       fclose (configfile);
-     }
+--- HarmonicsPath.cc.orig	Fri Dec  7 08:13:13 2007
++++ HarmonicsPath.cc	Sun Dec 23 00:41:28 2007
+@@ -31,7 +31,7 @@
+ #ifdef UseLocalFiles
+ static const char confFile[] = "xtide.conf";
+ #else
+-static const char confFile[] = "/etc/xtide.conf";
++static const char confFile[] = "%%PREFIX%%/etc/xtide.conf";
+ #endif
+ 
+ 
