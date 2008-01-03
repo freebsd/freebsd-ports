@@ -1,0 +1,29 @@
+# New ports collection makefile for:	gnome-gmail-notifier
+# Date created:				Nov 16 2007
+# Whom:					Florent Thoumie <flz@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnome-gmail-notifier
+PORTVERSION=	0.9.1
+CATEGORIES=	mail deskutils
+MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/
+
+MAINTAINER=	flz@FreeBSD.org
+COMMENT=	A Gmail Inbox Monitor for the GNOME2 desktop
+
+LIB_PC_DEPENDS=	libnotify:devel/libnotify	\
+		libsoup-2.2:devel/libsoup	\
+		gnutls:security:/gnutls
+
+BUILD_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|:C|:|.pc:${PORTSDIR}/|}
+RUN_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|:C|:|.pc:${PORTSDIR}/|}
+
+GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	glib20 gtk20 libgnome libgnomeui libxml2 libglade2
+
+.include <bsd.port.mk>
+

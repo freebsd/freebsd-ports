@@ -1,0 +1,15 @@
+bin/gnome-gmail-notifier
+share/applications/gnome-gmail-notifier.desktop
+share/gnome-gmail-notifier/ggn-about.glade
+share/gnome-gmail-notifier/ggn-edit.glade
+share/gnome-gmail-notifier/ggn-error.svg
+share/gnome-gmail-notifier/ggn-menu.glade
+share/gnome-gmail-notifier/ggn-new.svg
+share/gnome-gmail-notifier/ggn-normal.svg
+share/gnome-gmail-notifier/ggn-prefs.glade
+share/gnome-gmail-notifier/ggn-wait.svg
+share/gnome-gmail-notifier/welcome-logo.png
+share/gnome-gmail-notifier/welcome-shot.png
+share/gnome-gmail-notifier/welcome.css
+share/gnome-gmail-notifier/welcome.html
+@dirrm share/gnome-gmail-notifier
