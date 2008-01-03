@@ -15,7 +15,7 @@ COMMENT=	A Gmail Inbox Monitor for the GNOME2 desktop
 
 LIB_PC_DEPENDS=	libnotify:devel/libnotify	\
 		libsoup-2.2:devel/libsoup	\
-		gnutls:security:/gnutls
+		gnutls:security/gnutls
 
 BUILD_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|:C|:|.pc:${PORTSDIR}/|}
 RUN_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|:C|:|.pc:${PORTSDIR}/|}
