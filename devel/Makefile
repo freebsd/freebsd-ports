@@ -2163,6 +2163,7 @@
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-json
     SUBDIR += rubygem-needle
+    SUBDIR += rubygem-open4
     SUBDIR += rubygem-parsetree
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-rake
