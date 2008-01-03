@@ -1,5 +1,5 @@
 bin/qfsm
-bin/qfsm.exec
+share/applications/qfsm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/addstate.png
 %%PORTDOCS%%%%DOCSDIR%%/addtrans.png
 %%PORTDOCS%%%%DOCSDIR%%/copy.png
@@ -30,13 +30,32 @@ bin/qfsm.exec
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii_example.fsm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ascii_example2.fsm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bin_example.fsm
-%%DATADIR%%/po/English.qm
-%%DATADIR%%/po/English.ts
-%%DATADIR%%/po/French.qm
-%%DATADIR%%/po/French.ts
-%%DATADIR%%/po/German.qm
-%%DATADIR%%/po/German.ts
-@dirrm %%DATADIR%%/po
+share/icons/hicolor/32x32/apps/qfsm.png
+share/icons/hicolor/32x32/mimetypes/x-qfsm.png
+share/icons/hicolor/48x48/apps/qfsm.png
+share/icons/hicolor/48x48/mimetypes/x-qfsm.png
+share/icons/hicolor/64x64/apps/qfsm.png
+share/icons/hicolor/64x64/mimetypes/x-qfsm.png
+share/mimelnk/application/x-qfsm.desktop
+%%DATADIR%%/English.qm
+%%DATADIR%%/French.qm
+%%DATADIR%%/German.qm
 @dirrm %%DATADIR%%
+@dirrm share/mimelnk/application
+@dirrm share/mimelnk
+@dirrm share/icons/hicolor/64x64/mimetypes
+@dirrm share/icons/hicolor/64x64/apps
+@dirrm share/icons/hicolor/64x64
+@dirrm share/icons/hicolor/48x48/mimetypes
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/mimetypes
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor
+@dirrm share/icons
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
