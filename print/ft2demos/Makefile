@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTVERSION=	2.3.5
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -23,18 +22,21 @@ COMMENT=	Demo programs for FreeType2
 BUILD_DEPENDS+=	${FREETYPE_WRKSRC}/config.mk:${PORTSDIR}/print/freetype2:build
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-USE_XLIB=	yes
-USE_AUTOTOOLS=	libtool:15:env
 USE_BZIP2=	yes
+USE_XORG=	xext
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15:env
 MAKE_ENV=	TOP_DIR="${FREETYPE_WRKSRC}"
 MAKE_ARGS=	X11_PATH="${X11BASE}"
+
+PLIST_FILES=	${FT_PROGRAMS:S,^,bin/,}
+
+FT_PROGRAMS=	ftbench ftchkwd ftdiff ftdump ftgamma ftgrid ftlint ftmemchk \
+		ftmulti ftpatchk ftstring fttimer ftvalid ftview
 
 .include <bsd.port.pre.mk>
 
 FREETYPE_WRKSRC!=	cd ${PORTSDIR}/print/freetype2; ${MAKE} -V WRKSRC
-
-FT_PROGRAMS=	ftbench ftchkwd ftdump ftgamma ftlint ftmemchk ftmulti ftstring fttimer ftvalid ftview
 
 do-install:
 	@(cd ${WRKSRC}/bin/.libs/; ${INSTALL_PROGRAM} ${FT_PROGRAMS} ${PREFIX}/bin)
