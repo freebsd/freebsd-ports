@@ -1,9 +1,11 @@
 --- lib/libxview/misc/expandname.c.orig	Tue Jun 29 07:16:30 1993
 +++ lib/libxview/misc/expandname.c	Fri Aug 19 15:53:44 2005
-@@ -23,14 +23,6 @@
+@@ -21,15 +21,6 @@
+ #include <sys/wait.h>
+ #include <stdio.h>
  #include <string.h>
- #include <sgtty.h>
- 
+-#include <sgtty.h>
+-
 -#ifdef sparc
 -#ifdef SVR4
 -#include <unistd.h>
@@ -11,11 +13,10 @@
 -#include <vfork.h>
 -#endif SVR4
 -#endif
--
+ 
  #ifdef SVR4
  #include <sys/signal.h>
- #endif SVR4
-@@ -120,7 +112,9 @@
+@@ -120,7 +111,9 @@
      }
      (void) close(pivec[0]);
  #ifndef SVR4
