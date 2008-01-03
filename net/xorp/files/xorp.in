@@ -23,9 +23,8 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 : ${xorp_enable="NO"}
-: ${xorp_config_boot="%%PREFIX%%/etc/xorp.conf.sample"}
+: ${xorp_config_boot="%%PREFIX%%/etc/xorp.conf"}
 : ${xorp_flags=""}
-: ${xorp_rtrmgr_pidfile="/var/run/xorp_rtrmgr.pid"}
 
 required_files=${xorp_config_boot}
 command=%%PREFIX%%/bin/xorp_rtrmgr
