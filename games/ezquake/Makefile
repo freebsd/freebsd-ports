@@ -6,35 +6,31 @@
 #
 
 PORTNAME=	ezquake
-PORTVERSION=	1754
-PORTREVISION=	2
+PORTVERSION=	1.8.2
+PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}_source_${PORTVERSION}
-DISTFILES=	${DISTNAME}.7z \
-		${PORTNAME}_linux_${PORTVERSION}${EXTRACT_SUFX}
-DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${PORTNAME}_linux_${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	SF:ezquake \
+		http://www.winimage.com/zLibDll/:minizip
+DISTFILES=	${PORTNAME}_source_${PORTVERSION}${EXTRACT_SUFX}:ezquake \
+		${PORTNAME}_win32_${PORTVERSION}${EXTRACT_SUFX}:ezquake \
+		unzip101e.zip:minizip
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Modern QuakeWorld client
 
-EXTRACT_DEPENDS=p7zip:${PORTSDIR}/archivers/p7zip
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		png.5:${PORTSDIR}/graphics/png \
-		xmms.4:${PORTSDIR}/multimedia/xmms
+		png.5:${PORTSDIR}/graphics/png
 
+USE_ZIP=	yes
 USE_DOS2UNIX=	*.[ch] Makefile*
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_TCL=	yes
-USE_TCL_BUILD=	yes
 MAKE_ENV=	TCL_SUFX="${TCL_VER:S/.//}"
-.for v in TCL_INCLUDEDIR TCL_LIBDIR PTHREAD_LIBS
+.for v in TCL_INCLUDEDIR TCL_LIBDIR
 MAKE_ENV+=	${v}="${${v}}"
 .endfor
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}_18-2_stable
 
 OPTIONS=	GLX "Build GLX client" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
@@ -71,19 +67,13 @@ MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=YES
 MAKE_ENV+=	USE_OPTIMIZED_CFLAGS=NO
 .endif
 
-post-extract:
-	@cd ${WRKDIR} && 7z x -y ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.7z \
-		>/dev/null
-	@${FIND} ${WRKDIR} -type d -name CVS -print0 | ${XARGS} -0 ${RM} -rf
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|libtcl\.so|libtcl${TCL_VER:S/.//}|' \
 		${WRKSRC}/embed_tcl.h
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|' ${WRKSRC}/mp3_player.c
 
 do-install:
 	${MKDIR} ${Q1DIR}/${PORTNAME}
-	${CP} -R ${WRKSRC}/ezquake/* ${WRKSRC}/qw/* ${Q1DIR}/${PORTNAME}
+	${CP} -R ${WRKDIR}/ezquake/* ${WRKDIR}/qw/* ${Q1DIR}/${PORTNAME}
 .if !defined(WITHOUT_GLX)
 	${INSTALL_PROGRAM} ${WRKSRC}/release/ezquake-gl.glx \
 		${PREFIX}/bin/ezquake-glx

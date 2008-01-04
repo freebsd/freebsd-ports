@@ -1,7 +1,17 @@
---- Makefile.list.orig	Sat Nov 25 15:28:35 2006
-+++ Makefile.list	Tue Dec 19 20:02:43 2006
-@@ -156,7 +156,6 @@
- 	cd_linux \
+--- Makefile.list.orig	Fri Jan  4 11:28:34 2008
++++ Makefile.list	Fri Jan  4 11:28:47 2008
+@@ -109,7 +109,8 @@
+ 	net_chan \
+ 	q_shared \
+ 	version \
+-	zone
++	zone \
++	../unzip ../ioapi
+ 
+ GL_C_FILES := \
+ 	collision \
+@@ -167,7 +168,6 @@
+ 	in_linux \
  	keymap_x11 \
  	localtime_linux \
 -	snd_alsa \
