@@ -1,0 +1,26 @@
+.TH PKG_CLEANUP 1 "October 2007" FreeBSD
+.SH NAME
+pkg_cleanup \- deinstall 'leaf' packages
+.SH SYNOPSIS
+.B pkg_cleanup
+.SH DESCRIPTION
+.B pkg_rmleaves
+Finds packages that are not required by any other installed
+package and lets you decide (in a dialog interface) for each one
+if you want to delete it. The package comment is shown at the top
+of the screen and F1 will display the full package description.
+.P Once the packages marked for removal have been deleted,
+you'll be asked if you want to do another run (to see packages that have
+become 'leaves' now because you've deinstalled the package(s) that
+depended on them). In every run you will be shown only packages that you
+haven't marked for keeping, yet.
+.P This program was heavily based on the pkg_rmleaves script. The only
+functional difference is that this version shows the package comment and
+F1 will show the package description.
+.SH BUGS
+pkg_cleanup does not display the help line for the first selected
+package
+.SH AUTHOR
+Stephen Hurd <shurd@sasktel.net>
+.SH SEE ALSO
+pkg_delete(1), pkg_info(1)

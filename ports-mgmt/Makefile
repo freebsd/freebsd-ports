@@ -16,6 +16,7 @@
    SUBDIR += p5-FreeBSD-Ports
    SUBDIR += pib
    SUBDIR += pkg-orphan
+   SUBDIR += pkg_cleanup
    SUBDIR += pkg_cutleaves
    SUBDIR += pkg_install
    SUBDIR += pkg_install-devel
