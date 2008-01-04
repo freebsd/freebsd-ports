@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_GCC=	3.4+
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}Src
-MAKE_ENV+=	HOME="${WRKSRC}/${BINDIR}"
+MAKE_ENV+=	HOME="${WRKSRC}/${BINDIR}" MACHTYPE="${ARCH}"
 
 SUB_FILES=	pkg-message
 
@@ -28,14 +28,14 @@ EXECUTABLES=	blat faToNib faToTwoBit gfClient gfServer nibFrag \
 		pslPretty pslReps pslSort twoBitInfo twoBitToFa
 
 post-patch:
-	@${MKDIR} ${WRKSRC}/bin/${MACHTYPE}
-	@${MKDIR} ${WRKSRC}/lib/${MACHTYPE}
-	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS)=,\1 ?=,g' \
+	@${MKDIR} ${WRKSRC}/bin/${ARCH}
+	@${MKDIR} ${WRKSRC}/lib/${ARCH}
+	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS)=,\1 ?=,g;s,-Werror,,g' \
 		${WRKSRC}/inc/common.mk
 
 do-install:
 .for exe in ${EXECUTABLES}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${MACHTYPE}/${exe} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${ARCH}/${exe} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${DATADIR}/webBlat
 	${INSTALL_PROGRAM} ${WRKSRC}/webBlat/webBlat ${DATADIR}/webBlat
@@ -52,10 +52,6 @@ post-install:
 
 .if ${OSVERSION} >= 700042
 BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile
 .endif
 
 .include <bsd.port.post.mk>
