@@ -12514,6 +12514,7 @@ pkfonts400	ports/print/pkfonts400
 pkfonts600	ports/print/pkfonts600
 pkg-config	ports/devel/pkg-config
 pkg-orphan	ports/ports-mgmt/pkg-orphan
+pkg_cleanup	ports/ports-mgmt/pkg_cleanup
 pkg_cutleaves	ports/ports-mgmt/pkg_cutleaves
 pkg_remove	ports/ports-mgmt/pkg_remove
 pkg_replace	ports/ports-mgmt/pkg_replace
