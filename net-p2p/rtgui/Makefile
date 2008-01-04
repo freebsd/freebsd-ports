@@ -7,7 +7,7 @@
 
 PORTNAME=	rtgui
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p www
 MASTER_SITES=	http://rtgui.googlecode.com/files/
 EXTRACT_SUFX=	.tgz
@@ -18,9 +18,7 @@ COMMENT=	A web based front end for rTorrent
 OPTIONS=	APACHE "Use Apache for web interface" On \
 		LIGHTTPD "Use LightHTTPD for web interface" Off
 
-BUILD_DEPENDS+=	libtorrent=0.11.9:${PORTSDIR}/net-p2p/libtorrent \
-		xmlrpc-c-config:${PORTSDIR}/net/xmlrpc-c
-RUN_DEPENDS+=	rtorrent:${PORTSDIR}/net-p2p/rtorrent
+BUILD_DEPENDS+=	xmlrpc-c-config:${PORTSDIR}/net/xmlrpc-c
 
 .include <bsd.port.pre.mk>
 
