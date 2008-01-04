@@ -1,9 +1,11 @@
 bin/haddock
-share/haddock-%%HADDOCK_VERSION%%/html/haddock.css
+share/doc/haddock-%%HADDOCK_VERSION%%/LICENSE
 share/haddock-%%HADDOCK_VERSION%%/html/haddock-DEBUG.css
-share/haddock-%%HADDOCK_VERSION%%/html/haddock.js
+share/haddock-%%HADDOCK_VERSION%%/html/haddock-util.js
+share/haddock-%%HADDOCK_VERSION%%/html/haddock.css
 share/haddock-%%HADDOCK_VERSION%%/html/haskell_icon.gif
 share/haddock-%%HADDOCK_VERSION%%/html/minus.gif
 share/haddock-%%HADDOCK_VERSION%%/html/plus.gif
+@dirrm share/doc/haddock-%%HADDOCK_VERSION%%
 @dirrm share/haddock-%%HADDOCK_VERSION%%/html
 @dirrm share/haddock-%%HADDOCK_VERSION%%
