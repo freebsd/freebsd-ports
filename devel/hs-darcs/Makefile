@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	darcs darcs.1
 INSTALL_TARGET=	installbin
+USE_AUTOTOOLS=	autoconf:261:env
 
 .include <bsd.port.pre.mk>
 
@@ -55,6 +56,9 @@ post-patch:
 		s|darcs/cgi.conf|darcs/cgi.conf.sample|' \
 		${WRKSRC}/${MAKEFILE}
 .endif
+
+pre-configure:
+	@(cd ${WRKSRC} && ${AUTORECONF})
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|$${prefix}|${PREFIX}|' ${WRKSRC}/cgi/darcs.cgi
