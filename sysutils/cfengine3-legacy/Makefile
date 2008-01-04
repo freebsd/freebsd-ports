@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.3
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
-		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://ftp.osuosl.org/pub/cfengine/ \
+		ftp://ftp.iu.hio.no/pub/cfengine/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A systems administration tool for networks
 
 USE_RC_SUBR=	cfexecd cfservd
 
-USE_BDB?=	44
+USE_BDB?=	46
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
