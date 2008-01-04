@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Jul 15 20:58:44 2007
-+++ Makefile	Mon Jul 23 06:06:32 2007
+--- Makefile.orig	Fri Dec 21 14:43:29 2007
++++ Makefile	Thu Jan  3 20:55:16 2008
 @@ -36,9 +36,6 @@
  # you want to compile a specific OS's code branch or if the "uname"
  # command doesn't tell the correct OS name of your system (see also OSREL and
@@ -10,7 +10,7 @@
  
  # OSREL: target system's OS-release - please only change this if you know what
  # you are doing :).
-@@ -77,9 +74,9 @@
+@@ -82,9 +79,9 @@
  # commands are platform/distribution-specific
  include arch/default.cfg
  ifeq '$(OSCFG)' '1'
@@ -23,12 +23,13 @@
  endif
  endif
  ifeq '$(DISTCFG)' '1'
-@@ -204,15 +201,16 @@
+@@ -211,16 +208,17 @@
  
  install: bin lang
  	@echo "Installing QMC2 v$(VERSION)"
 -	@$(MKDIR) $(DESTDIR)/$(PREFIX)/bin $(DESTDIR)/$(PREFIX)/share/$(PROJECT) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)
 -	@$(RSYNC) --exclude '*svn*' ./$(PROJECT) $(DESTDIR)/$(PREFIX)/bin
+-	@$(RSYNC) --exclude '*svn*' ./scripts/romalyzer.pl $(DESTDIR)/$(PREFIX)/bin
 -	@$(RSYNC) --exclude '*svn*' ./data/lng/*.qm $(DESTDIR)/$(DATADIR)/$(PROJECT)/lng/
 -	@$(RSYNC) --exclude '*svn*' ./data/opt $(DESTDIR)/$(DATADIR)/$(PROJECT)/
 -	@$(RSYNC) --exclude '*svn*' ./data/img $(DESTDIR)/$(DATADIR)/$(PROJECT)/
@@ -38,6 +39,7 @@
 -	@$(SED) -e "s_DATADIR_$(DATADIR)_g" < ./inst/$(PROJECT).ini.template > $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini
 +	@$(MKDIR) $(DESTDIR)/$(PREFIX)/bin $(DESTDIR)/$(PREFIX)/share/$(PROJECT) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT) $(DESTDIR)/$(PREFIX)/share/$(PROJECT)/lng
 +	@$(CP) -r ./$(PROJECT) $(DESTDIR)/$(PREFIX)/bin
++	@$(CP) -r ./scripts/romalyzer.pl $(DESTDIR)/$(DATADIR)/$(PROJECT)/
 +	@$(CP) -r ./data/lng/*.qm $(DESTDIR)/$(DATADIR)/$(PROJECT)/lng/
 +	@$(CP) -r ./data/opt $(DESTDIR)/$(DATADIR)/$(PROJECT)/
 +	@$(CP) -r ./data/img $(DESTDIR)/$(DATADIR)/$(PROJECT)/

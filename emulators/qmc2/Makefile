@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmc2
-PORTVERSION=	0.1.b10
+PORTVERSION=	0.1.b11
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ USE_QT_VER=	4
 MAKE_ENV=	QTDIR="${QTDIR}" QMAKE="${QMAKE}" SYSCONFDIR="${PREFIX}/etc"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	XMAME "Enable support for XMAME instead of SDLMAME" off
+OPTIONS=	XMAME "Use XMAME (old) instead of SDLMAME (new) as emulator" off
 
 .include <bsd.port.pre.mk>
 
