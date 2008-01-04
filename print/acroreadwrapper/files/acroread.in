@@ -1,6 +1,19 @@
 #!%%LINUXBASE%%/bin/sh
 # $FreeBSD$
 
+# environment variables:
+#
+# ADOBE_LANG:
+#     Set this if you want to invoke a specific localized version.
+#     If $LANG is set, this will be set automatically based on it.
+#
+# ADOBE_VER:
+#     Set this if you want to invoke a specific version of
+#     Adobe Reader by "acroread".  Currently "7" and "8" are valid.
+#     When this script is invoked as "acroread7" and "acroread8",
+#     ADOBE_VER is automatically set.
+#
+
 ADOBE_LANG=`echo "${ADOBE_LANG}" | tr a-z A-Z`
 
 case ${LANG} in
@@ -54,12 +67,39 @@ JPN) : ${GTK_IM_MODULE:=xim}; export GTK_IM_MODULE ;;
 KOR) : ${GDK_USE_XFT:=0}; export GDK_USE_XFT ;;
 esac
 
+case ${ADOBE_VER} in
+"")
+	BN=${0##*/}
+	VN=${BN#????????}
+	case ${VN} in
+	[78])	ADOBE_VER=${VN} ;;
+	*)
+		if [ -d %%PREFIX%%/%%ACROBASE7%% ]; then ADOBE_VER=7; fi
+		if [ -d %%PREFIX%%/%%ACROBASE8%% ]; then ADOBE_VER=8; fi
+	;;
+	esac
+;;
+esac
+
+case ${ADOBE_VER} in
+7)
+	ACROBASE=%%ACROBASE7%%
+	BINPREFIX=bin
+;;
+8)
+	ACROBASE=%%ACROBASE8%%
+	BINPREFIX=Adobe/Reader8/bin
+	MOZILLA_COMP_PATH=/../%%PREFIX%%/lib/linux-nvu
+	export MOZILLA_COMP_PATH
+;;
+esac
+
 case $1 in
 --install-plugin)
 	echo "installing PDF plugin..."
-	echo "%%PREFIX%%/%%ACROBASE%%/${ADOBE_LANG}/Browser/intellinux/nppdf.so -> %%PREFIX%%/%%PLUGINDIR%%/nppdf.so"
+	echo "%%PREFIX%%/${ACROBASE}/${ADOBE_LANG}/Browser/intellinux/nppdf.so -> %%PREFIX%%/%%PLUGINDIR%%/nppdf.so"
 	mkdir -p /../%%PREFIX%%/%%PLUGINDIR%%
-	ln -s -f %%PREFIX%%/%%ACROBASE%%/${ADOBE_LANG}/Browser/intellinux/nppdf.so \
+	ln -s -f %%PREFIX%%/${ACROBASE}/${ADOBE_LANG}/Browser/intellinux/nppdf.so \
 	/../%%PREFIX%%/%%PLUGINDIR%%/nppdf.so
 	exit 0
 ;;
@@ -72,13 +112,14 @@ case $1 in
 esac
 
 UNAME_s=Linux; export UNAME_s
-if [ -x %%PREFIX%%/%%ACROBASE%%/${ADOBE_LANG}/bin/acroread ]; then
-	exec %%LINUXSH%% %%PREFIX%%/%%ACROBASE%%/${ADOBE_LANG}/bin/acroread "$@"
+
+if [ -x %%PREFIX%%/${ACROBASE}/${ADOBE_LANG}/${BINPREFIX}/acroread ]; then
+	exec %%LINUXSH%% %%PREFIX%%/${ACROBASE}/${ADOBE_LANG}/${BINPREFIX}/acroread "$@"
 else
 	echo "?warning: localized acroread (${ADOBE_LANG}) not found." 1>&2
-	if [ -x %%PREFIX%%/%%ACROBASE%%/ENU/bin/acroread ]; then
+	if [ -x %%PREFIX%%/${ACROBASE}/ENU/${BINPREFIX}/acroread ]; then
 		echo "Trying to invoke English version..." 1>&2
-		exec %%LINUXSH%% %%PREFIX%%/%%ACROBASE%%/ENU/bin/acroread "$@"
+		exec %%LINUXSH%% %%PREFIX%%/${ACROBASE}/ENU/${BINPREFIX}/acroread "$@"
 	fi
 fi
 echo "!fatal: No acroread binary found.  Check \$LANG or \$ADOBE_LANG, and installed acroread packages." 1>&2
