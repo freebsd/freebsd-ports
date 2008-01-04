@@ -1,0 +1,5 @@
+WWW::Mechanize::DecodedContent is a plugin to add
+decoded_content utility method to WWW::Mechanize.
+
+Author:	Tatsuhiko Miyagawa <miyagawa@bulknews.net>
+WWW:	http://search.cpan.org/~miyagawa/WWW-Mechanize-DecodedContent/
