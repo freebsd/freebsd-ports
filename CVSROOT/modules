@@ -227,6 +227,7 @@ acroread-sv	ports/print/sv-acroread
 acroread-zhcn	ports/chinese/acroread-zh_CN
 acroread-zhtw	ports/chinese/acroread-zh_TW
 acroread7	ports/print/acroread7
+acroread8	ports/print/acroread8
 acroreadwrapper	ports/print/acroreadwrapper
 activitymail	ports/devel/activitymail
 actx		ports/games/actx
@@ -1887,6 +1888,7 @@ ddd		ports/devel/ddd
 ddos_scan	ports/security/ddos_scan
 ddrescue	ports/sysutils/ddrescue
 de-BBBike	ports/german/BBBike
+de-acroread8	ports/german/acroread8
 de-alt-aspell	ports/german/alt-aspell
 de-aspell	ports/german/aspell
 de-bsdforen-firefox-searchplugin	ports/german/bsdforen-firefox-searchplugin
@@ -2069,6 +2071,7 @@ djgpp-gcc	ports/devel/djgpp-gcc
 djview4		ports/graphics/djview4
 djvulibre	ports/graphics/djvulibre
 djvulibre-nox11	ports/graphics/djvulibre-nox11
+dk-acroread8	ports/print/dk-acroread8
 dk-milter	ports/mail/dk-milter
 dkfilter	ports/mail/dkfilter
 dkftpbench	ports/benchmarks/dkftpbench
@@ -2619,6 +2622,7 @@ eruby		ports/textproc/eruby
 erun		ports/x11/erun
 erwn		ports/www/erwn
 es		ports/shells/es
+es-acroread8	ports/print/es-acroread8
 es-aspell	ports/textproc/es-aspell
 esdl		ports/devel/esdl
 esh		ports/shells/esh
@@ -2909,6 +2913,7 @@ fgsd		ports/games/fgsd
 fhist		ports/devel/fhist
 fhourstones	ports/benchmarks/fhourstones
 fhttpd		ports/www/fhttpd
+fi-acroread8	ports/print/fi-acroread8
 fi-aspell	ports/textproc/fi-aspell
 fib		ports/devel/fib
 ficl-devel	ports/lang/ficl-devel
@@ -3203,6 +3208,7 @@ fpkg		ports/sysutils/fpkg
 fpm		ports/security/fpm
 fpp		ports/devel/fpp
 fprobe		ports/net-mgmt/fprobe
+fr-acroread8	ports/french/acroread8
 fr-aspell	ports/french/aspell
 fr-aster	ports/french/aster
 fr-dico		ports/french/dico
@@ -5072,6 +5078,7 @@ isreal		ports/graphics/isreal
 isync		ports/mail/isync
 it++		ports/math/it++
 it-acroread	ports/print/it-acroread
+it-acroread8	ports/print/it-acroread8
 it-aspell	ports/textproc/it-aspell
 itcl		ports/lang/itcl
 itext		ports/devel/itext
@@ -5109,6 +5116,7 @@ ja-Wnn7-lib	ports/japanese/Wnn7-lib
 ja-a2ps		ports/japanese/a2ps
 ja-ack		ports/japanese/ack
 ja-acroread	ports/japanese/acroread
+ja-acroread8	ports/japanese/acroread8
 ja-alias-fonts	ports/japanese/alias-fonts
 ja-another-htmllint	ports/japanese/another-htmllint
 ja-anthy	ports/japanese/anthy
@@ -6035,6 +6043,7 @@ knutclient	ports/sysutils/knutclient
 ko-FreeWnn-lib	ports/korean/FreeWnn-lib
 ko-FreeWnn-server	ports/korean/FreeWnn-server
 ko-a2ps		ports/korean/a2ps
+ko-acroread8	ports/korean/acroread8
 ko-aleefonts-ttf	ports/korean/aleefonts-ttf
 ko-ami		ports/korean/ami
 ko-baekmukfonts-bdf	ports/korean/baekmukfonts-bdf
@@ -8313,6 +8322,7 @@ nitpicker	ports/net-mgmt/nitpicker
 nitrogen	ports/sysutils/nitrogen
 njam		ports/games/njam
 njs		ports/lang/njs
+nl-acroread8	ports/print/nl-acroread8
 nl-aspell	ports/textproc/nl-aspell
 nl-ispell	ports/textproc/nl-ispell
 nload		ports/net/nload
@@ -8331,6 +8341,7 @@ nntp		ports/news/nntp
 nntpbtr		ports/news/nntpbtr
 nntpcache	ports/news/nntpcache
 nntpswitch	ports/news/nntpswitch
+no-acroread8	ports/print/no-acroread8
 no-login	ports/sysutils/no-login
 noattach	ports/mail/noattach
 noatun-plugins	ports/multimedia/noatun-plugins
@@ -12188,7 +12199,6 @@ pharmacy	ports/devel/pharmacy
 phase		ports/x11-themes/phase
 phat		ports/x11-toolkits/phat
 phatbeat	ports/audio/phatbeat
-phpbb3		ports/www/phpbb3
 phc		ports/lang/phc
 phex		ports/net-p2p/phex
 phluid		ports/x11-wm/phluid
@@ -12363,6 +12373,7 @@ php_doc-zh	ports/chinese/php_doc-zh
 phpadsnew	ports/www/phpadsnew
 phpbb		ports/www/phpbb
 phpbb-devel	ports/www/phpbb-devel
+phpbb3		ports/www/phpbb3
 phpbt		ports/devel/phpbt
 phpdeadlock	ports/security/phpdeadlock
 phpeclipse	ports/java/phpeclipse
@@ -13001,6 +13012,7 @@ psutils-a4	ports/print/psutils-a4
 psutils-letter	ports/print/psutils-letter
 psvn		ports/devel/psvn
 psybnc		ports/irc/psybnc
+pt-acroread8	ports/portuguese/acroread8
 pt-aspell	ports/portuguese/aspell
 pt-aspell-pt_BR	ports/portuguese/aspell-pt_BR
 pt-irpf-pt_BR	ports/portuguese/irpf-pt_BR
@@ -14734,6 +14746,7 @@ sdd		ports/sysutils/sdd
 sdf		ports/textproc/sdf
 sdig		ports/net-mgmt/sdig
 sdl12		ports/devel/sdl12
+sdlCC		ports/games/sdlCC
 sdl_gfx		ports/graphics/sdl_gfx
 sdl_gui		ports/x11-toolkits/sdl_gui
 sdl_image	ports/graphics/sdl_image
@@ -14743,7 +14756,6 @@ sdl_pango	ports/x11-toolkits/sdl_pango
 sdl_sge		ports/devel/sdl_sge
 sdl_sound	ports/audio/sdl_sound
 sdl_ttf		ports/graphics/sdl_ttf
-sdlCC		ports/games/sdlCC
 sdlmame		ports/emulators/sdlmame
 sdlmess		ports/emulators/sdlmess
 sdlmm		ports/devel/sdlmm
@@ -15437,6 +15449,7 @@ surfraw		ports/www/surfraw
 susv2		ports/misc/susv2
 susv3		ports/misc/susv3
 suxus		ports/x11-fonts/suxus
+sv-acroread8	ports/print/sv-acroread8
 sv-aspell	ports/textproc/sv-aspell
 svg2pdf		ports/graphics/svg2pdf
 svg2png		ports/graphics/svg2png
@@ -17824,6 +17837,8 @@ zh-BBMan	ports/chinese/BBMan
 zh-CJKUnifonts	ports/chinese/CJKUnifonts
 zh-FreeWnn-lib	ports/chinese/FreeWnn-lib
 zh-FreeWnn-server	ports/chinese/FreeWnn-server
+zh-acroread8-zhcn	ports/chinese/acroread8-zh_CN
+zh-acroread8-zhtw	ports/chinese/acroread8-zh_TW
 zh-arphicttf	ports/chinese/arphicttf
 zh-aterm	ports/chinese/aterm
 zh-auto-cn-l10n	ports/chinese/auto-cn-l10n
