@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	warzone2100
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
 
@@ -29,7 +29,7 @@ USE_BZIP2=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_SDL=	net sdl
-CONFIGURE_ARGS=	--program-transform-name=""
+CONFIGURE_ARGS=	--program-transform-name="" --with-distributor="FreeBSD ports"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="${PTHREAD_LIBS}"
