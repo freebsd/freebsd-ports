@@ -21,7 +21,6 @@ share/bomberclone/tileset/tricked/stone.png
 share/bomberclone/tileset/tricked/dead.wav
 share/bomberclone/tileset/tricked/block.png
 share/bomberclone/tileset/tricked/background.png
-share/bomberclone/tileset/supermario/stonebackup.png
 share/bomberclone/tileset/supermario/stone.png
 share/bomberclone/tileset/supermario/block.png
 share/bomberclone/tileset/supermario/background.png
@@ -81,10 +80,10 @@ share/bomberclone/tileset/cucumber/background.png
 share/bomberclone/tileset/classic/stone.png
 share/bomberclone/tileset/classic/block.png
 share/bomberclone/tileset/classic/background.png
-share/bomberclone/tileset/cemetery/stone96.png
-share/bomberclone/tileset/cemetery/map.nfo
-share/bomberclone/tileset/cemetery/block96.png
-share/bomberclone/tileset/cemetery/background.png
+share/bomberclone/tileset/cementery/stone96.png
+share/bomberclone/tileset/cementery/map.nfo
+share/bomberclone/tileset/cementery/block96.png
+share/bomberclone/tileset/cementery/background.png
 share/bomberclone/player/respawn.png
 share/bomberclone/player/playersick.png
 share/bomberclone/player/player7.png
@@ -176,7 +175,7 @@ share/bomberclone/gfx/font0.png
 @dirrm share/bomberclone/tileset/default
 @dirrm share/bomberclone/tileset/cucumber
 @dirrm share/bomberclone/tileset/classic
-@dirrm share/bomberclone/tileset/cemetery
+@dirrm share/bomberclone/tileset/cementery
 @dirrm share/bomberclone/tileset
 @dirrm share/bomberclone/player
 @dirrm share/bomberclone/pixmaps
