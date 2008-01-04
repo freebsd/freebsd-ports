@@ -7,7 +7,7 @@
 
 PORTNAME=	barnyard
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	barnyard
@@ -17,7 +17,7 @@ COMMENT?=	An output system for Snort
 
 RUN_DEPENDS+=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
 
-OPTIONS=	MYSQL "Enable MySQL support" off \
+OPTIONS=	MYSQL "Enable MySQL support" on \
 		POSTGRESQL "Enable PostgreSQL support" off
 
 USE_AUTOTOOLS=	autoheader:261 aclocal:19
@@ -41,6 +41,14 @@ CONFIGURE_ARGS+=	--enable-mysql
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--enable-postgres
+.endif
+
+.if ${ARCH} == "amd64" || ${ARCH} =="ia64" || ${ARCH} == "sparc64"
+EXTRA_PATCHES+=	${FILESDIR}/64-bit-barnyard.h \
+		${FILESDIR}/64-bit-input-plugins-dp-alert.h \
+		${FILESDIR}/64-bit-util.h \
+		${FILESDIR}/64-bit-event.h \
+		${FILESDIR}/64-bit-util.c
 .endif
 
 post-install:
