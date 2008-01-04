@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Image-IPTCInfo
-PORTVERSION=	1.94
+PORTVERSION=	1.95
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Image
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for extracting IPTC image meta-data
 
 PERL_CONFIGURE=	yes
