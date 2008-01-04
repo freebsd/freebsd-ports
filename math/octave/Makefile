@@ -19,7 +19,8 @@ BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/lib/libglpk.a:${PORTSDIR}/math/glpk \
 		gsed:${PORTSDIR}/textproc/gsed \
 		dvips:${PORTSDIR}/print/dvipsk-tetex
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
+		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		hdf5:${PORTSDIR}/science/hdf5 \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
