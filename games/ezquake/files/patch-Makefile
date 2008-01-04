@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Nov 25 15:28:35 2006
-+++ Makefile	Tue Dec 19 20:41:59 2006
+--- Makefile.orig	Fri Jan  4 11:28:34 2008
++++ Makefile	Fri Jan  4 11:29:06 2008
 @@ -6,7 +6,7 @@
  
  # compilation tool and detection of targets/achitecture
@@ -9,38 +9,25 @@
  CC_BASEVERSION = $(shell $(CC) -dumpversion | sed -e 's/\..*//g')
  
  # TYPE = release debug
-@@ -16,25 +16,18 @@
- 
- # ARCH = x86 ppc
- # OS = linux darwin
--ARCH = $(shell uname -m | sed -e 's/i.86/x86/g' -e 's/Power Macintosh/ppc/g')
-+ARCH ?= $(shell uname -m | sed -e 's/i.86/x86/g' -e 's/Power Macintosh/ppc/g')
+@@ -19,17 +19,6 @@
+ ARCH = $(shell uname -m | sed -e 's/i.86/x86/g' -e 's/Power Macintosh/ppc/g')
  OS = $(shell uname -s | tr A-Z a-z)
  
 -# add special architecture based flags
 -ifeq ($(ARCH),x86_64)
--	ARCH_CFLAGS = -march=k8 -D__LITTLE_ENDIAN__Q__
+-	ARCH_CFLAGS = -mtune=nocona -mmmx -msse -msse2 -m64
 -endif
 -ifeq ($(ARCH),x86)
--	ARCH_CFLAGS = -march=i686 -D__LITTLE_ENDIAN__Q__ -Did386
+-	ARCH_CFLAGS = -march=i686 -mtune=generic -mmmx -Did386
 -endif
 -ifeq ($(ARCH),ppc)
--	ARCH_CFLAGS = -arch ppc -faltivec -maltivec -mcpu=7450 -mtune=7450 -mpowerpc -mpowerpc-gfxopt -D__BIG_ENDIAN__Q__
+-	ARCH_CFLAGS = -arch i686 -arch ppc -msse2
 -endif
 -
- # TODO: LIB_PREFIX must be $(OS)-$(ARCH)
  ifeq ($(OS),linux)
  	DEFAULT_TARGET = glx
  	OS_GL_CFLAGS = -DWITH_DGA -DWITH_EVDEV -DWITH_VMODE
- endif
-+ifeq ($(OS),freebsd)
-+	DEFAULT_TARGET = glx
-+	OS_GL_CFLAGS = -DWITH_DGA -DWITH_VMODE -I$(X11BASE)/include
-+endif
- ifeq ($(OS),darwin)
- 	DEFAULT_TARGET = mac
- 	OS_GL_CFLAGS = -I/opt/local/include/ -I/Developer/Headers/FlatCarbon -I/sw/include -FOpenGL -FAGL
-@@ -50,19 +43,19 @@
+@@ -53,19 +42,19 @@
  # Directories for object files #
  ################################
  
@@ -68,30 +55,33 @@
  
  ################
  
-@@ -78,9 +71,12 @@
+@@ -81,9 +70,11 @@
  
  # compiler flags
- PRJ_CFLAGS = -DWITH_ZLIB -DWITH_PNG -DEMBED_TCL -DJSS_CAM
--BASE_CFLAGS = -Wall -funsigned-char $(ARCH_CFLAGS) $(PRJ_CFLAGS) -I ./libs
-+XMMS_CFLAGS= -DWITH_XMMS `xmms-config --cflags` `glib-config --cflags`
-+BASE_CFLAGS := $(CFLAGS) -I$(LOCALBASE)/include `pcre-config --cflags` -I$(TCL_INCLUDEDIR) -DDATADIR='"$(Q1DIR)"' -Wall -funsigned-char $(PRJ_CFLAGS) $(XMMS_CFLAGS)
+ PRJ_CFLAGS = -DWITH_ZLIB -DWITH_PNG -DEMBED_TCL -DJSS_CAM -DWITH_ZIP #-DWITH_FTE_VFS
+-BASE_CFLAGS = -pipe -Wall -funsigned-char $(ARCH_CFLAGS) $(PRJ_CFLAGS) -I ./libs
++BASE_CFLAGS := $(CFLAGS) -pipe -Wall -funsigned-char $(ARCH_CFLAGS) $(PRJ_CFLAGS) `pcre-config --cflags` -I$(TCL_INCLUDEDIR) -I.. -DDATADIR='"$(Q1DIR)"'
  
 +ifeq ($(USE_OPTIMIZED_CFLAGS),YES)
- RELEASE_CFLAGS = -pipe -O2 -fno-strict-aliasing -ffast-math -fomit-frame-pointer -fexpensive-optimizations -funroll-loops
+ RELEASE_CFLAGS = -O2 -fno-strict-aliasing -ffast-math -funroll-loops
 +endif
  DEBUG_CFLAGS = -ggdb
  
  # opengl builds
-@@ -92,9 +88,9 @@
- CFLAGS = $(BASE_CFLAGS) $(DEBUG_CFLAGS) -D_DEBUG
+@@ -96,13 +87,13 @@
  endif
  
+ ifeq ($(TYPE),release)
 -LDFLAGS = -lm -lpthread
--COMMON_LIBS = libs/$(LIB_PREFIX)/libpng.a libs/$(LIB_PREFIX)/libz.a libs/$(LIB_PREFIX)/libpcre.a libs/$(LIB_PREFIX)/libexpat.a libs/$(LIB_PREFIX)/libtcl8.4.a
++LDFLAGS = -lm -pthread
+ else
+ LDFLAGS = -ggdb -lm -lpthread
+ endif
+ 
+-COMMON_LIBS = libs/$(LIB_PREFIX)/minizip.a libs/$(LIB_PREFIX)/libpng.a libs/$(LIB_PREFIX)/libz.a libs/$(LIB_PREFIX)/libpcre.a libs/$(LIB_PREFIX)/libexpat.a libs/$(LIB_PREFIX)/libtcl8.4.a
 -GL_LIBS = libs/$(LIB_PREFIX)/libjpeg.a
-+LDFLAGS = -L$(LOCALBASE)/lib -L$(X11BASE)/lib
-+COMMON_LIBS = -lm -lpng -lz `pcre-config --libs` `glib-config --libs` -lexpat -ltcl$(TCL_SUFX) $(PTHREAD_LIBS)
++COMMON_LIBS = -lm -lpng -lz `pcre-config --libs` `glib-config --libs` -lexpat -ltcl$(TCL_SUFX)
 +GL_LIBS = -ljpeg
  
- include Makefile.list
- 
+ ifeq ($(OS),freebsd)
+ X11BASE ?= /usr/X11R6
