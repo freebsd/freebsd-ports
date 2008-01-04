@@ -1,14 +1,14 @@
 bin/gtkhx
-share/locale/fr/LC_MESSAGES/gtkhx.mo
-share/gtkhx/sounds/chatinvite.aiff
-share/gtkhx/sounds/chatpost.aiff
-share/gtkhx/sounds/error.aiff
-share/gtkhx/sounds/filedone.aiff
-share/gtkhx/sounds/join.aiff
-share/gtkhx/sounds/logged-in.aiff
-share/gtkhx/sounds/message.aiff
-share/gtkhx/sounds/newspost.aiff
-share/gtkhx/sounds/part.aiff
-share/gtkhx/icons.rsrc
-@dirrm share/gtkhx/sounds
-@dirrm share/gtkhx
+%%DATADIR%%/sounds/chatinvite.aiff
+%%DATADIR%%/sounds/chatpost.aiff
+%%DATADIR%%/sounds/error.aiff
+%%DATADIR%%/sounds/filedone.aiff
+%%DATADIR%%/sounds/join.aiff
+%%DATADIR%%/sounds/logged-in.aiff
+%%DATADIR%%/sounds/message.aiff
+%%DATADIR%%/sounds/newspost.aiff
+%%DATADIR%%/sounds/part.aiff
+%%DATADIR%%/icons.rsrc
+%%NLS%%share/locale/fr/LC_MESSAGES/gtkhx.mo
+@dirrm %%DATADIR%%/sounds
+@dirrm	%%DATADIR%%
