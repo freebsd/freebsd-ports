@@ -34,6 +34,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f762ccbb-baed-11dc-a302-000102cc8983">
+    <topic>linux-realplayer -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-realplayer</name>
+	<range><ge>10.0.5</ge><lt>10.0.9.809-20070726</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/27361">
+	  <p>Multiple vulnerabilities have been reported in
+	    RealPlayer/RealOne/HelixPlayer, which can be exploited by malicious
+	    people to compromise a user's system.</p>
+	  <p>An input validation error when processing .RA/.RAM files can be
+	    exploited to cause a heap corruption via a specially crafted
+	    .RA/.RAM file with an overly large size field in the header.</p>
+	  <p>An error in the processing of .PLS files can be exploited to cause
+	    a memory corruption and execute arbitrary code via a specially
+	    crafted .PLS file.</p>
+	  <p>An input validation error when parsing .SWF files can be exploited
+	    to cause a buffer overflow via a specially crafted .SWF file with
+	    malformed record headers.</p>
+	  <p>A boundary error when processing rm files can be exploited to
+	    cause a buffer overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-5081</cvename>
+      <cvename>CVE-2007-3410</cvename>
+      <cvename>CVE-2007-2263</cvename>
+      <cvename>CVE-2007-2264</cvename>
+      <url>http://secunia.com/advisories/27361</url>
+      <url>http://service.real.com/realplayer/security/10252007_player/en/</url>
+      <url>http://www.zerodayinitiative.com/advisories/ZDI-07-063.html</url>
+      <url>http://www.zerodayinitiative.com/advisories/ZDI-07-062.html</url>
+      <url>http://www.zerodayinitiative.com/advisories/ZDI-07-061.html</url>
+      <url>http://secunia.com/advisories/25819/</url>
+      <certvu>759385</certvu>
+    </references>
+    <dates>
+      <discovery>2007-10-25</discovery>
+      <entry>2008-01-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="562cf6c4-b9f1-11dc-a302-000102cc8983">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
