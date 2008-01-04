@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	oss
-DISTVERSION=	4.0-build1009
+DISTVERSION=	4.0-build1012
 CATEGORIES=	audio kld
-MASTER_SITES=	http://developer.opensound.com/sources/stable/
-DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-cddl
+MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
+DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Open Sound System
@@ -66,8 +66,8 @@ do-install:
 	-@${MKDIR} ${PREFIX}/lib/oss/logs 2>/dev/null
 	@${MKDIR} ${PREFIX}/lib/oss/modules
 	${INSTALL_KLD} ${WRKSRC}/prototype/usr/lib/oss/modules/*.ko ${PREFIX}/lib/oss/modules/
-	${INSTALL_MAN} ${WRKSRC}/prototype/usr/man/man1/*.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/prototype/usr/man/man8/*.8 ${PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/prototype/usr/share/man/man1/*.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/prototype/usr/share/man/man8/*.8 ${PREFIX}/man/man8/
 	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/sbin/ossdetect ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/sbin/ossdevlinks ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/prototype/usr/sbin/savemixer ${PREFIX}/sbin/
