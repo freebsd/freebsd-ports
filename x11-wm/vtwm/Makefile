@@ -7,36 +7,35 @@
 
 PORTNAME=	vtwm
 PORTVERSION=	5.4.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.vtwm.org/downloads/
 
 MAINTAINER=	spam@rm-rf.kiev.ua
 COMMENT=	Twm with a virtual desktop and optional Motif-like features
 
-USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xpm xmu
+
+ETCDIR?=	${PREFIX}/etc
+
+MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 MAN1=		vtwm.1
 
 OPTIONS=	SOUND "Sound support" on \
-			NLS "Native language support" on
+		NLS "Native language support" on
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-.if defined(WITHOUT_SOUND)
-	@${REINPLACE_CMD} -i "" -e \
-		's:^XCOMM NO_SOUND_SUPPORT: NO_SOUND_SUPPORT:; \
-		s:^SOUNDLIB:XCOMM SOUNDLIB:; \
-		s:^SOUNDINC:XCOMM SOUNDINC: ' ${WRKSRC}/Imakefile
-.else
+.if defined(WITH_SOUND)
 LIB_DEPENDS+=	rplay.1:${PORTSDIR}/audio/rplay
+MAKE_ENV+=	SOUND=yes
+.else
+MAKE_ENV+=	SOUND=no
 .endif
 
 .if defined(WITHOUT_NLS)
-	@${REINPLACE_CMD} -i "" -e \
-		's:^XCOMM  NO_I18N_SUPPORT: NO_I18N_SUPPORT:' ${WRKSRC}/Imakefile
+CFLAGS+=	-DNO_I18N_SUPPORT
 .endif
 
 .include <bsd.port.post.mk>
