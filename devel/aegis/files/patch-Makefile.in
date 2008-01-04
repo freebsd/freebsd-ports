@@ -1,0 +1,30 @@
+--- ./Makefile.in.orig	Wed Mar 29 06:07:48 2006
++++ ./Makefile.in	Fri Dec 21 03:23:09 2007
+@@ -25500,8 +25500,7 @@
+ 
+ LibFiles =
+ 
+-DataFiles = $(RPM_BUILD_ROOT)$(sysconfdir)/profile.d/aegis.sh \
+-		$(RPM_BUILD_ROOT)$(sysconfdir)/profile.d/aegis.csh \
++DataFiles = \
+ 		$(RPM_BUILD_ROOT)$(datadir)/aedefault.css \
+ 		$(RPM_BUILD_ROOT)$(datadir)/aegis.icon \
+ 		$(RPM_BUILD_ROOT)$(datadir)/aegis.mask \
+@@ -25563,8 +25562,6 @@
+ 		$(RPM_BUILD_ROOT)$(datadir)/if.sh \
+ 		$(RPM_BUILD_ROOT)$(datadir)/ip.inews.sh \
+ 		$(RPM_BUILD_ROOT)$(datadir)/ip.sh \
+-		$(RPM_BUILD_ROOT)$(datadir)/man1/en/ae_c.1 \
+-		$(RPM_BUILD_ROOT)$(datadir)/man1/en/ae_p.1 \
+ 		$(RPM_BUILD_ROOT)$(datadir)/profile \
+ 		$(RPM_BUILD_ROOT)$(datadir)/remind/awt_dvlp.sh \
+ 		$(RPM_BUILD_ROOT)$(datadir)/remind/awt_intgrtn.sh \
+@@ -28305,7 +28302,7 @@
+ 
+ install-man: install-man-$(HAVE_GROFF)
+ 
+-install-doc: install-doc-$(HAVE_GROFF)
++install-doc:
+ 
+ install: install-bin install-lib install-po install-man install-doc
+ 
