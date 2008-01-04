@@ -272,6 +272,7 @@
     SUBDIR += gnomebaker
     SUBDIR += gnomefind
     SUBDIR += googlog
+    SUBDIR += gosa
     SUBDIR += gpart
     SUBDIR += gpkgdep
     SUBDIR += gpte
