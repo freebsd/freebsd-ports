@@ -11460,6 +11460,7 @@ p5-WWW-Hotmail	ports/mail/p5-WWW-Hotmail
 p5-WWW-IMDb	ports/www/p5-WWW-IMDb
 p5-WWW-Link	ports/www/p5-WWW-Link
 p5-WWW-Mechanize	ports/www/p5-WWW-Mechanize
+p5-WWW-Mechanize-DecodedContent	ports/www/p5-WWW-Mechanize-DecodedContent
 p5-WWW-Mechanize-FormFiller	ports/www/p5-WWW-Mechanize-FormFiller
 p5-WWW-Mechanize-Pluggable	ports/www/p5-WWW-Mechanize-Pluggable
 p5-WWW-Mechanize-Plugin-phpBB	ports/www/p5-WWW-Mechanize-Plugin-phpBB
