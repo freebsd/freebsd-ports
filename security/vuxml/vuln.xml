@@ -2608,7 +2608,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>php4</name>
-	<range><gt>0</gt></range>
+	<range><gt>4.4.8</gt></range>
       </package>
     </affects>
     <description>
@@ -2666,13 +2666,14 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2007-4662</cvename>
       <cvename>CVE-2007-4663</cvename>
       <cvename>CVE-2007-4670</cvename>
+      <url>http://www.php.net/releases/4_4_8.php</url>
       <url>http://www.php.net/releases/5_2_4.php</url>
       <url>http://secunia.com/advisories/26642</url>
     </references>
     <dates>
       <discovery>2007-08-30</discovery>
       <entry>2007-09-11</entry>
-      <modified>2007-09-22</modified>
+      <modified>2008-01-04</modified>
     </dates>
   </vuln>
 
