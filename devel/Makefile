@@ -26,6 +26,7 @@
     SUBDIR += adasdl
     SUBDIR += adime
     SUBDIR += adocman
+    SUBDIR += aegis
     SUBDIR += afay
     SUBDIR += agide
     SUBDIR += aifad
