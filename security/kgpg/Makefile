@@ -16,7 +16,7 @@ COMMENT=		A simple KDE frontend for GnuPG
 
 RUN_DEPENDS=		gpgv:${PORTSDIR}/security/gnupg1
 
-CONFLICTS=		kdeutils-3.[2-4].*
+CONFLICTS=		kdeutils-3.[2-6].*
 
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
