@@ -18,7 +18,8 @@ COMMENT=	A Compiler for the functional language Haskell
 
 ONLY_FOR_ARCHS=	i386
 
-BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
+BOOT_DIST6=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
+BOOT_DIST7=	ghc-${PORTVERSION}-i386-unknown-freebsd7-boot${EXTRACT_SUFX}:boot
 
 USE_AUTOTOOLS=	autoconf:261:env
 USE_BZIP2=	yes
@@ -33,9 +34,9 @@ OPTIONS=	PROFILE "Compile for profiling as well" on
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700000
-IGNORE=		unsupported at the moment
+DISTFILES+=	${BOOT_DIST7}
 .elif ${OSVERSION} >= 600000
-DISTFILES+=	${BOOT_DIST}
+DISTFILES+=	${BOOT_DIST6}
 .else
 IGNORE=		unsupported at the moment
 #DISTFILES+=	${BOOT_DIST5}
