@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	urbanterror
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	games
-MASTER_SITES=	http://mirrormaid.yi.org/ \
+MASTER_SITES=	ftp://ftp.snt.utwente.nl/pub/games/urbanterror/ \
+		http://mirror.kickassctf.com/ \
 		http://mrsentry.net/release/ \
-		http://outlands.quaddown.org/files/ \
-		ftp://ftp.snt.utwente.nl/pub/games/urbanterror/ \
-		ftp://ftp.vectranet.pl/pub/gry/UrbanTerror/
+		http://www.iourt.com/urt${PORTVERSION:S/.//}/
 PKGNAMESUFFIX=	-data
-DISTNAME=	UrbanTerror${PORTVERSION:S/.//}_full
+DISTNAME=	UrbanTerror_${PORTVERSION:S/.//}_FULL
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Standalone realism based mod originally for Quake III Arena
@@ -22,7 +21,7 @@ COMMENT=	Standalone realism based mod originally for Quake III Arena
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Package will be 560MB; set FORCE_PACKAGE if you really want it
-WRKSRC=		${WRKDIR}/q3ut4
+WRKSRC=		${WRKDIR}/UrbanTerror
 
 DATADIR=	${Q3DIR}
 
@@ -31,14 +30,14 @@ DATADIR=	${Q3DIR}
 Q3DIR!=		cd ${PORTSDIR}/games/quake3-data && ${MAKE} -V Q3DIR
 
 post-extract:
-	@cd ${WRKSRC} && ${MV} readme40.txt ..
+	@cd ${WRKSRC}/q3ut4 && ${MV} readme${PORTVERSION:S/.//}.txt ..
 
 do-install:
 	${MKDIR} ${DATADIR}/q3ut4
-	${CP} -r ${WRKSRC}/* ${DATADIR}/q3ut4
+	${CP} -r ${WRKSRC}/q3ut4/* ${DATADIR}/q3ut4
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/readme40.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme${PORTVERSION:S/.//}.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
