@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iourbanterror
-DISTVERSION=	2007_04_02
+DISTVERSION=	2007_12_20
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.snt.utwente.nl/pub/games/urbanterror/iourbanterror/source/complete/
 DISTNAME=	ioUrbanTerrorSource_${DISTVERSION}
@@ -18,7 +18,8 @@ RUN_DEPENDS=	${Q3DIR}/q3ut4:${PORTSDIR}/games/urbanterror-data
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:C/_.*//}
+ALL_TARGET=	release
+WRKSRC=		${WRKDIR}/ioUrbanTerrorClientSource
 
 OPTIONS=	CLIENT "Build client" on \
 		CELLSHADING "Enable Cell Shading effect" off \
@@ -146,10 +147,6 @@ post-patch:
 # There are new variables in the config files, so keep them in another dir.
 	@${REINPLACE_CMD} -E 's|/\.q3a|/.ioUrbanTerror|' \
 		${WRKSRC}/code/unix/unix_shared.c
-# BattlEye development has stopped, and UT website recommends to disable it,
-# also it's binary only, so it won't work anyways.
-	@${REINPLACE_CMD} -Ee 's|("sv_battleye",) "1"|\1 "0"|' \
-		${WRKSRC}/code/server/sv_init.c
 
 do-install:
 .for bin in ${Q3BIN}
