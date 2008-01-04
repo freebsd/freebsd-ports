@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	spandsp
-DISTVERSION=	0.0.4pre3
+PORTVERSION=	0.0.4.p15
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/ \
 		ftp://ftp.rewt.org.uk/pub/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	spandsp-${DISTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	joe@joeholden.co.uk
-COMMENT=	Fax DSP library
+COMMENT=	A DSP library and software FAX machine
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
-WRKSRC=		${WRKDIR}/spandsp-0.0.4/
-USE_AUTOTOOLS=	libtool:15
+WRKSRC=		${WRKDIR}/spandsp-${PORTVERSION:S/.p15//}
+USE_AUTOTOOLS=	libtool15
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes

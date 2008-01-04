@@ -12,6 +12,7 @@ include/spandsp/bitstream.h
 include/spandsp/complex.h
 include/spandsp/complex_filters.h
 include/spandsp/complex_vector_float.h
+include/spandsp/crc.h
 include/spandsp/dc_restore.h
 include/spandsp/dds.h
 include/spandsp/dtmf.h
