@@ -1,3 +1,11 @@
-******************************************************************
-* Note: Run 'rott' from directory, containing original game data *
-******************************************************************
+==============================================================================
+
+Rise of the Triad DC has been installed.
+
+There are two binaries: "rott" and "rott-sw", to play the full and shareware
+versions respectively. The game data must reside in the current directory.
+
+The shareware game data is available here:
+http://filesingularity.timedoctor.org/swdata.zip
+
+==============================================================================
