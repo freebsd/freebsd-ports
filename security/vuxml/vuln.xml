@@ -87,8 +87,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>linux-flashplugin</name>
-	<range><lt>9.0r115</lt></range>
-	<range><lt>7.0r73</lt></range>
+	<range><ge>9.0</ge><lt>9.0r115</lt></range>
+	<range><ge>7.0</ge><lt>7.0r73</lt></range>
       </package>
     </affects>
     <description>
