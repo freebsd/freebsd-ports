@@ -235,6 +235,7 @@ include/libtorrent/variant_stream.hpp
 include/libtorrent/version.hpp
 include/libtorrent/web_peer_connection.hpp
 include/libtorrent/xml_parse.hpp
+lib/libtorrent-0.13.so
 lib/libtorrent.a
 lib/libtorrent.la
 lib/libtorrent.so
