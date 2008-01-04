@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>linux-realplayer</name>
-	<range><ge>10.0.5</ge><lt>10.0.9.809-20070726</lt></range>
+	<range><ge>10.0.5</ge><lt>10.0.9.809.20070726</lt></range>
       </package>
     </affects>
     <description>
