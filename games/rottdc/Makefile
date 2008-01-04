@@ -7,35 +7,37 @@
 
 PORTNAME=	rottdc
 DISTVERSION=	1.0-2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sdl-dc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Apogee's Rise Of The Triad source port
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer
-USE_XLIB=	yes
+PATCH_WRKSRC=	${WRKSRC}/rott
+# Crashes when compiling with -O2 or greater, so downgrade to -O1.
+CFLAGS:=	${CFLAGS:C/-O[2-9]/-O1/}
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/rott
-
-post-patch:
-	@${REINPLACE_CMD} -e '433s,^static ,,' ${WRKSRC}/rt_actor.c
+post-extract:
+	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rott ${PREFIX}/bin
+.for f in rott rott-sw
+	${INSTALL_PROGRAM} ${WRKSRC}/${f}/rott ${PREFIX}/bin/${f}
+.endfor
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA}	${WRKDIR}/${DISTNAME}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .for i in cheats cmdline
-	${INSTALL_DATA} ${WRKSRC}/${i}.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/rott/${i}.txt ${DOCSDIR}
 .endfor
 .endif
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>
