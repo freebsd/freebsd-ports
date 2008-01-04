@@ -1,0 +1,11 @@
+--- autoconf.mk.in.orig	2007-06-16 19:12:11.000000000 +0200
++++ autoconf.mk.in	2008-01-04 19:37:47.000000000 +0100
+@@ -19,7 +19,7 @@
+ OPTCCFLAGS      := $(addprefix -optc,$(CFLAGS) $(CPPFLAGS))
+ LDFLAGS		:= @LDFLAGS@ @LIBS@
+ OPTLLDFLAGS     := $(addprefix -optl,$(LDFLAGS))
+-GHCFLAGS	:= -cpp @GHCFLAGS@
++GHCFLAGS	:= -package containers -cpp @GHCFLAGS@
+ HAVE_CURSES     := @HAVE_CURSES@
+ HAVE_LIBCURL    := @HAVE_LIBCURL@
+ HAVE_MAPI       := @HAVE_MAPI@
