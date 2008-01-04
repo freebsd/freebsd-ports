@@ -9,6 +9,8 @@
     SUBDIR += FreeWnn-server
     SUBDIR += acroread-zh_CN
     SUBDIR += acroread-zh_TW
+    SUBDIR += acroread8-zh_CN
+    SUBDIR += acroread8-zh_TW
     SUBDIR += arphicttf
     SUBDIR += aterm
     SUBDIR += auto-cn-l10n

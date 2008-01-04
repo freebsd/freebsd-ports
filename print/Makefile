@@ -12,6 +12,7 @@
     SUBDIR += abntex
     SUBDIR += acrobatviewer
     SUBDIR += acroread7
+    SUBDIR += acroread8
     SUBDIR += acroreadwrapper
     SUBDIR += adobe-cmaps
     SUBDIR += advi
@@ -52,6 +53,7 @@
     SUBDIR += cupsddk
     SUBDIR += detex
     SUBDIR += dk-acroread
+    SUBDIR += dk-acroread8
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx
     SUBDIR += dvipdfmx
@@ -69,7 +71,9 @@
     SUBDIR += epsmerge
     SUBDIR += epsonepl
     SUBDIR += es-acroread
+    SUBDIR += es-acroread8
     SUBDIR += fi-acroread
+    SUBDIR += fi-acroread8
     SUBDIR += flpsed
     SUBDIR += font2svg
     SUBDIR += fontforge
@@ -117,6 +121,7 @@
     SUBDIR += hyperlatex
     SUBDIR += ifhp
     SUBDIR += it-acroread
+    SUBDIR += it-acroread8
     SUBDIR += jabref
     SUBDIR += jadetex
     SUBDIR += kaspaliste
@@ -180,7 +185,9 @@
     SUBDIR += muttprint
     SUBDIR += nenscript
     SUBDIR += nl-acroread
+    SUBDIR += nl-acroread8
     SUBDIR += no-acroread
+    SUBDIR += no-acroread8
     SUBDIR += p5-Net-Printer
     SUBDIR += p5-PDF-Template
     SUBDIR += p5-PDFLib
@@ -283,6 +290,7 @@
     SUBDIR += sgf2tex
     SUBDIR += splix
     SUBDIR += sv-acroread
+    SUBDIR += sv-acroread8
     SUBDIR += t1utils
     SUBDIR += teTeX
     SUBDIR += teTeX-base
