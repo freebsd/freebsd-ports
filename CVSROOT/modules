@@ -269,6 +269,7 @@ advancemess	ports/emulators/advancemess
 advi		ports/print/advi
 adzap		ports/www/adzap
 aee		ports/editors/aee
+aegis		ports/devel/aegis
 aescrypt	ports/security/aescrypt
 aespipe		ports/security/aespipe
 aestats		ports/games/aestats
