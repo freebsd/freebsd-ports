@@ -9,14 +9,11 @@ PORTNAME=	looks
 PORTVERSION=	2.0.4
 PORTREVISION=	1
 CATEGORIES=	devel java
-MASTER_SITES=	https://looks.dev.java.net/files/documents/31/${DISTREP}/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}-${DISTDATE}
+MASTER_SITES=	http://www.jgoodies.com/download/libraries/${PORTNAME}/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The JGoodies Looks improve the appearance of your Java applications
-
-DISTDATE=	20060626
-DISTREP=	36434
 
 USE_ZIP=	yes
 USE_JAVA=	yes
