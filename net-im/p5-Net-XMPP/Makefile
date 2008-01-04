@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	Net-XMPP
-PORTVERSION=	1.0
+PORTVERSION=	1.02
 CATEGORIES=	net-im perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lars.eggert@gmx.net
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Net::XMPP provides Perl Developer access to the XMPP protocol
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/Stream.pm:${PORTSDIR}/textproc/p5-XML-Stream \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+BUILD_DEPENDS=	p5-XML-Stream>=1.22:${PORTSDIR}/textproc/p5-XML-Stream \
+		p5-Digest-SHA1>=1.02:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+	# Require perl 5.8.x due to XML::Stream
+USE_PERL5=	5.8.0+	# Require perl 5.8.x due to XML::Stream
+PERL_MODBUILD=	yes
 
 MAN3=		Net::XMPP.3 Net::XMPP::Client.3 Net::XMPP::Connection.3 \
 		Net::XMPP::Debug.3 Net::XMPP::IQ.3 Net::XMPP::JID.3 \
