@@ -4100,6 +4100,7 @@ gopher		ports/net/gopher
 gopod		ports/misc/gopod
 gorilla		ports/security/gorilla
 gorm		ports/devel/gorm
+gosa		ports/sysutils/gosa
 gossip		ports/net-im/gossip
 gotmail		ports/mail/gotmail
 gotoblas	ports/math/gotoblas
