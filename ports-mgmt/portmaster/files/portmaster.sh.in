@@ -1773,9 +1773,17 @@ fi
 # In case we went elsewhere to create a backup package
 cd $pd/$portdir
 
-# Do the install here in case a run dependency has a build dependency on us.
+if [ -z "$RECURSE_THOROUGH" -a ! -e "$NO_DEP_UPDATES" ]; then
+	echo ''
+	echo "===>>> Starting check for runtime dependencies"
+	dependency_check run-depends-list
+fi
+
+# In case we went elsewhere in the dependency check
+cd $pd/$portdir
+
 # Defining NO_DEPENDS ensures that we will control the installation of the
-# run depends, not bsd.port.mk.
+# depends, not bsd.port.mk.
 make -DNO_DEPENDS $PM_MAKE_ARGS install || {
     if [ -z "$NO_BACKUP" -a -n "$upg_port" ]; then
 	echo ''
@@ -1811,15 +1819,6 @@ if [ ! "$allfiles" = ' ' ]; then
 		echo "DISTFILE:${ds}${file}:SIZE=${size}:SHA256=${sha256}:MD5=${md5}" >> $dist_list
 	done
 fi
-
-if [ -z "$RECURSE_THOROUGH" -a ! -e "$NO_DEP_UPDATES" ]; then
-	echo ''
-	echo "===>>> Starting check for runtime dependencies"
-	dependency_check run-depends-list
-fi
-
-# In case we went elsewhere in the dependency check
-cd $pd/$portdir
 
 if [ -n "$MAKE_PACKAGE" ]; then
 	echo "===>>> Creating a package for new version $new_port"
