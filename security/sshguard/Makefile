@@ -22,6 +22,7 @@ PLIST_FILES=	sbin/sshguard
 MAN8=		sshguard.8
 MANCOMPRESSED=	no
 USE_BZIP2=	yes
+MAKE_ARGS+=     ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}"
 HAS_CONFIGURE=	yes
 
 # sublist will be set afterward
