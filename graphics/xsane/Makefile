@@ -1,19 +1,18 @@
 # New ports collection makefile for:	xsane
 # Date created:			Fri Apr  8 00:18:29 MET DST 1999
-# Whom:				Dominik Brettnacher <domi@saargate.de>
+# Whom:				Dominik Brettnacher <domi@nonsensss.de>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	xsane
-PORTVERSION=	0.991
-PORTREVISION=	3
+PORTVERSION=	0.995
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/ \
 		http://gd.tuwien.ac.at/hci/sane/xsane/ \
 		ftp://ftp.mostang.com/pub/sane/xsane/
 
-MAINTAINER=	domi@saargate.de
+MAINTAINER=	domi@nonsensss.de
 COMMENT=	Gtk-based X11 frontend for SANE (Scanner Access Now Easy)
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
