@@ -7,6 +7,7 @@
 
 PORTNAME=	aegis
 PORTVERSION=	4.22
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -14,9 +15,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Transaction-based software configuration management system
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	cook:${PORTSDIR}/devel/cook \
-		fhist:${PORTSDIR}/devel/fhist \
-		tkdiff:${PORTSDIR}/textproc/tkdiff
+RUN_DEPENDS=	tkdiff:${PORTSDIR}/textproc/tkdiff
 
 USE_GETTEXT=	yes
 USE_GNOME=	libxml2
@@ -70,5 +69,7 @@ post-install:
 # Fails to reinstall because keeps track of created directories, so make it
 # forget that, by recreating them on each install.
 	@${FIND} ${WRKSRC} -type f -name ".*dir" -delete
+# Information.
+	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>
