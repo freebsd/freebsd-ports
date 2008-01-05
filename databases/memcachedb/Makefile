@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	memcachedb
-PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTVERSION=	0.1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://memcachedb.googlecode.com/files/
 
@@ -16,7 +15,7 @@ COMMENT=	Distributed storage system designed for persistent
 
 LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
 
-USE_BDB=	42+
+USE_BDB=	46+
 USE_DOS2UNIX=	YES
 USE_RC_SUBR=	${PORTNAME}
 

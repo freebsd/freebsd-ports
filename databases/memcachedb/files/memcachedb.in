@@ -18,18 +18,9 @@ rcvar=`set_rcvar`
 
 load_rc_config $name
 
-: ${memcachedb_bind="127.0.0.1"}
-: ${memcachedb_dbfile="/var/db/memcachedb/default.db"}
-: ${memcachedb_dbpath="/var/db/memcachedb"}
-: ${memcachedb_enable="NO"}
-: ${memcachedb_pidfile="/var/run/memcachedb.pid"}
-: ${memcachedb_port="11211"}
-: ${memcachedb_user="nobody"}
+command="%%PREFIX%%/sbin/${name}"
 
-command=%%PREFIX%%/sbin/${name}
-command_args="-p ${memcachedb_port} -l ${memcachedb_bind} -d -u ${memcachedb_user} -f ${memcachedb_dbfile} -H ${memcachedb_dbpath} -P ${memcachedb_pidfile}"
-
-unset memcachedb_user
+: ${memcachedb_flags="-p11211 -l 127.0.0.1 -d -u nobody -f /var/db/memcachedb/default.db -H /var/db/memcachedb -P /var/run/memcachedb.pid"}
 
 run_rc_command "$1"
 
