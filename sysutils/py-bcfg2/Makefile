@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bcfg2
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5.2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/bcfg/ \
 		http://mirror.opensysadmin.com/bcfg/
@@ -24,7 +24,8 @@ USE_PYDISTUTILS=	yes
 
 MAN1=	bcfg2.1
 MAN5=	bcfg2.conf.5
-MAN8=	bcfg2-admin.8 bcfg2-build-reports.8 bcfg2-repo-validate.8 bcfg2-server.8 bcfg2-info.8
+MAN8=	bcfg2-admin.8 bcfg2-build-reports.8 bcfg2-repo-validate.8 \
+	bcfg2-server.8 bcfg2-info.8 bcfg2-remote.8 bcfg2-query.8
 
 PORTDOCS=	AUTHORS COPYRIGHT ChangeLog README
 
