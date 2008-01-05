@@ -84,6 +84,10 @@ PLIST_SUB+=	GCONF="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/daemon/default.pa.in
+.if ${OSVERSION} < 700042
+	@${REINPLACE_CMD} -e 's|-Wl,-no-undefined||' \
+	    	${WRKSRC}/Makefile.in
+.endif
 
 post-install:
 .for ii in default.pa daemon.conf client.conf
