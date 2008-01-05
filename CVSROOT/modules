@@ -15275,6 +15275,7 @@ squirrelmail-newuser_wiz-plugin	ports/mail/squirrelmail-newuser_wiz-plugin
 squirrelmail-notes-plugin	ports/mail/squirrelmail-notes-plugin
 squirrelmail-notify-plugin	ports/mail/squirrelmail-notify-plugin
 squirrelmail-password_forget-plugin	ports/mail/squirrelmail-password_forget-plugin
+squirrelmail-plugins	ports/mail/squirrelmail-plugins
 squirrelmail-pupdate-plugin	ports/mail/squirrelmail-pupdate-plugin
 squirrelmail-qmailadmin_login-plugin	ports/mail/squirrelmail-qmailadmin_login-plugin
 squirrelmail-quota_usage-plugin	ports/mail/squirrelmail-quota_usage-plugin
