@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	AnyEvent
-PORTVERSION=	2.5.4
-DISTVERSION=	${PORTVERSION:C/\.(.)$/\1/}
+PORTVERSION=	2.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/ML/MLEHMANN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Provide framework for multiple event loops
 
 PERL_CONFIGURE=	5.8.0+
 
-MAN3=		AnyEvent.3
+MAN3=		AnyEvent.3 AnyEvent::Impl::EV.3
 
 .include <bsd.port.mk>
