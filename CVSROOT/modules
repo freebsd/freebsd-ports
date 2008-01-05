@@ -16241,6 +16241,7 @@ uqm		ports/games/uqm
 urbanterror-data	ports/games/urbanterror-data
 urelay		ports/net/urelay
 uriparser	ports/net/uriparser
+urjtag		ports/devel/urjtag
 urlendec	ports/net/urlendec
 urlgfe		ports/ftp/urlgfe
 urlview		ports/textproc/urlview
