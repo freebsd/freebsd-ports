@@ -15,5 +15,4 @@ for rapid access to plotting data in files. kst can read data from stdin.
 It provides a DCOP interface for remote manipulation, and supports several
 file formats in use in scientific projects around the world.
 
-WWW: http://omega.astro.utoronto.ca/kst/
-WWW: http://extragear.kde.org/apps/kst/
+WWW: http://kst.kde.org/
