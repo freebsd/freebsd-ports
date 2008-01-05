@@ -24,19 +24,19 @@ command="%%PREFIX%%/bin/netdisco"
 required_files="%%PREFIX%%/etc/netdisco.conf"
 
 netdisco_start() {
-	%%PREFIX%%/bin/netdisco -p start
+	$command -p start
 }
 
 netdisco_stop() {
-	%%PREFIX%%/bin/netdisco -p stop
+	$command -p stop
 }
 
 netdisco_restart() {
-	%%PREFIX%%/bin/netdisco -p restart
+	$command -p restart
 }
 
 netdisco_status() {
-	%%PREFIX%%/bin/netdisco -p status
+	$command -p status
 }
 
 run_rc_command "$1"

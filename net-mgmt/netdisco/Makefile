@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netdisco
-PORTVERSION=	0.94
-PORTREVISION=	1
+PORTVERSION=	0.95
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,7 +35,7 @@ USE_PERL5=	yes
 USE_PGSQL=	yes
 USE_APACHE=	1.3+
 
-USE_RC_SUBR=	netdisco.sh
+USE_RC_SUBR=	netdisco
 
 NO_BUILD=	yes
 
@@ -117,10 +116,8 @@ do-install:
 
 	${MKDIR} ${DATADIR}/sql
 
-	${INSTALL_DATA} ${WRKSRC}/oui.txt ${DATADIR}
-
 	cd ${WRKSRC}/sql && \
-	   ${INSTALL_DATA} *.sql pg_all pg_back pg_init pg_run ${DATADIR}/sql
+	   ${INSTALL_DATA} *.sql pg ${DATADIR}/sql
 
 	${MKDIR} ${DATADIR}/mibs
 
