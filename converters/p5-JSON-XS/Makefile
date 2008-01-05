@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	JSON-XS
-PORTVERSION=	1.52
+PORTVERSION=	2.01
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/ML/MLEHMANN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	JSON serialising/deserialising, done correctly and fast
