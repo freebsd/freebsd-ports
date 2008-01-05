@@ -88,6 +88,7 @@
     SUBDIR += guile-gnome
     SUBDIR += guile-gtk
     SUBDIR += hs-frantk
+    SUBDIR += hs-glut-ghc
     SUBDIR += hs-gtk2hs
     SUBDIR += hs-opengl-ghc
     SUBDIR += inti
