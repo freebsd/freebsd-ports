@@ -15280,6 +15280,7 @@ squirrelmail-qmailadmin_login-plugin	ports/mail/squirrelmail-qmailadmin_login-pl
 squirrelmail-quota_usage-plugin	ports/mail/squirrelmail-quota_usage-plugin
 squirrelmail-sasql-plugin	ports/mail/squirrelmail-sasql-plugin
 squirrelmail-secure_login-plugin	ports/mail/squirrelmail-secure_login-plugin
+squirrelmail-shared_calendars-plugin	ports/mail/squirrelmail-shared_calendars-plugin
 squirrelmail-timeout_user-plugin	ports/mail/squirrelmail-timeout_user-plugin
 squirrelmail-tmda-plugin	ports/mail/squirrelmail-tmda-plugin
 squirrelmail-vlogin-plugin	ports/mail/squirrelmail-vlogin-plugin
