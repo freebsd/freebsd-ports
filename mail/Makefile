@@ -583,6 +583,7 @@
     SUBDIR += squirrelmail
     SUBDIR += squirrelmail-avelsieve-plugin
     SUBDIR += squirrelmail-calendar_file_backend-plugin
+    SUBDIR += squirrelmail-calendar_sql_backend-plugin
     SUBDIR += squirrelmail-change_ldappass-plugin
     SUBDIR += squirrelmail-compatibility-plugin
     SUBDIR += squirrelmail-compatibility-plugin1
