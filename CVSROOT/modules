@@ -4679,6 +4679,7 @@ hs-cpphs	ports/devel/hs-cpphs
 hs-drift	ports/devel/hs-drift
 hs-fps		ports/devel/hs-fps
 hs-frantk	ports/x11-toolkits/hs-frantk
+hs-glut-ghc	ports/x11-toolkits/hs-glut-ghc
 hs-gtk2hs	ports/x11-toolkits/hs-gtk2hs
 hs-haddock	ports/devel/hs-haddock
 hs-happy	ports/devel/hs-happy
