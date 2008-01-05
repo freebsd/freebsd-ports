@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IPC-Mmap
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,6 @@ COMMENT=	Provides a minimal mmap() interface for both POSIX and Win32
 
 PERL_CONFIGURE=	5.8.0+
 
-MAN3=		IPC::Mmap.3
+#MAN3=		IPC::Mmap.3
 
 .include <bsd.port.mk>
