@@ -1,15 +1,13 @@
---- ./examples/Makefile.orig	2007-11-27 14:35:39.000000000 +0100
-+++ ./examples/Makefile	2007-11-27 21:34:26.000000000 +0100
-@@ -40,11 +40,11 @@
- #---------------------------------
+--- ./examples/Makefile.orig	2008-01-04 11:24:33.000000000 +0100
++++ ./examples/Makefile	2008-01-04 23:22:20.000000000 +0100
+@@ -42,10 +42,10 @@
  # Set correct variables and paths
  #---------------------------------
--CIMG_VERSION = 1.24
+ CIMG_VERSION = 1.26
 -CC           = g++
 -X11PATH      = /usr/X11R6
 -CFLAGS       = -Wall -W -ansi -pedantic -ffast-math
 -LDFLAGS      = -lm -lpthread
-+CIMG_VERSION = 1.25
 +CC           = $(CXX)
 +#X11PATH      = /usr/X11R6
 +#CFLAGS       = -Wall -W -ansi -pedantic -ffast-math
@@ -17,7 +15,7 @@
  
  #--------------------------------------------------
  # Set compilation flags allowing to customize CImg
-@@ -79,7 +79,7 @@
+@@ -80,7 +80,7 @@
  CIMG_FFTW3_FLAGS = -Dcimg_use_fftw3 -lfftw3
  
  # Flags to enable the use of LAPACK routines for matrix computation
@@ -26,7 +24,7 @@
  
  # Flags to enable the use of the Board library
  CIMG_BOARD_FLAGS = -Dcimg_use_board -lboard
-@@ -87,6 +87,9 @@
+@@ -88,6 +88,9 @@
  # Flags to compile on Solaris
  CIMG_SOLARIS_FLAGS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  
@@ -36,7 +34,7 @@
  # Set default compilation flags.
  # Uncomment lines here, if you want to customize your default configuration
  CIMG_DEFAULT_FLAGS = $(CIMG_X11_FLAGS) \
-@@ -143,7 +146,7 @@
+@@ -144,7 +147,7 @@
  all: $(CIMG_FILES)
  
  clean:
@@ -45,7 +43,7 @@
  
  greycstoration4gimp: greycstoration4gimp.cpp
  	@echo
-@@ -163,6 +166,12 @@
+@@ -164,6 +167,12 @@
  Mlinux:
  	make "ARCHFLAGS=-O3 $(CIMG_ALL_FLAGS)" all jpeg_buffer greycstoration4gimp
  
