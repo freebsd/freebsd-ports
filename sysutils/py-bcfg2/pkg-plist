@@ -3,12 +3,16 @@ bin/bcfg2-info
 bin/bcfg2-build-reports
 bin/bcfg2-server
 bin/bcfg2-repo-validate
+bin/bcfg2-remote
 bin/bcfg2-admin
 bin/bcfg2
 bin/bcfg2-query
 %%PYTHON_SITELIBDIR%%/Bcfg2/__init__.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bcfg2/Component.py
+%%PYTHON_SITELIBDIR%%/Bcfg2/Component.pyc
+%%PYTHON_SITELIBDIR%%/Bcfg2/Component.pyo
 %%PYTHON_SITELIBDIR%%/Bcfg2/Logging.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/Logging.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/Logging.pyo
@@ -21,9 +25,6 @@ bin/bcfg2-query
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Core.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Core.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Core.pyo
-%%PYTHON_SITELIBDIR%%/Bcfg2/Server/Component.py
-%%PYTHON_SITELIBDIR%%/Bcfg2/Server/Component.pyc
-%%PYTHON_SITELIBDIR%%/Bcfg2/Server/Component.pyo
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugin.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugin.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugin.pyo
@@ -39,6 +40,9 @@ bin/bcfg2-query
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/TCheetah.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/TCheetah.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/TCheetah.pyo
+%%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/TGenshi.py
+%%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/TGenshi.pyc
+%%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/TGenshi.pyo
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/Metadata.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/Metadata.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/Metadata.pyo
@@ -54,6 +58,9 @@ bin/bcfg2-query
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/Deps.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/Deps.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/Deps.pyo
+%%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/SGenshi.py
+%%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/SGenshi.pyc
+%%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/SGenshi.pyo
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/SSHbase.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/SSHbase.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/Server/Plugins/SSHbase.pyo
@@ -297,6 +304,9 @@ bin/bcfg2-query
 %%PYTHON_SITELIBDIR%%/Bcfg2/tlslite/utils/keyfactory.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/tlslite/utils/keyfactory.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/tlslite/utils/keyfactory.pyo
+%%PYTHON_SITELIBDIR%%/Bcfg2/tlslite/utils/prngd.py
+%%PYTHON_SITELIBDIR%%/Bcfg2/tlslite/utils/prngd.pyc
+%%PYTHON_SITELIBDIR%%/Bcfg2/tlslite/utils/prngd.pyo
 %%PYTHON_SITELIBDIR%%/Bcfg2/tlslite/utils/rijndael.py
 %%PYTHON_SITELIBDIR%%/Bcfg2/tlslite/utils/rijndael.pyc
 %%PYTHON_SITELIBDIR%%/Bcfg2/tlslite/utils/rijndael.pyo
@@ -447,14 +457,17 @@ bin/bcfg2-query
 %%DATADIR%%/Reports/templates/clients/detail.html
 %%DATADIR%%/Reports/templates/clients/index.html
 %%DATADIR%%/Reports/templates/clients/client-nodebox.html
+%%DATADIR%%/Reports/templates/clients/manage.html
 %%DATADIR%%/Reports/templates/config_items/listing.html
 %%DATADIR%%/Reports/templates/config_items/index.html
 %%DATADIR%%/Hostbase/templates/remove.html
 %%DATADIR%%/Hostbase/templates/dnsedit.html
 %%DATADIR%%/Hostbase/templates/new.html
 %%DATADIR%%/Hostbase/templates/confirm.html
+%%DATADIR%%/Hostbase/templates/copy.html
 %%DATADIR%%/Hostbase/templates/search.html
 %%DATADIR%%/Hostbase/templates/logout
+%%DATADIR%%/Hostbase/templates/logviewer.html
 %%DATADIR%%/Hostbase/templates/navbar
 %%DATADIR%%/Hostbase/templates/dns.html
 %%DATADIR%%/Hostbase/templates/zones.html
@@ -476,6 +489,7 @@ bin/bcfg2-query
 %%DATADIR%%/Hostbase/repo/reverseappend.tmpl
 %%DATADIR%%/Hostbase/repo/hostsappend.tmpl
 %%DATADIR%%/Hostbase/repo/named.tmpl
+%%DATADIR%%/Hostbase/repo/namedviews.tmpl
 %%DATADIR%%/Hostbase/repo/zone.tmpl
 %%DATADIR%%/Hostbase/repo/dhcpd.tmpl
 @dirrm %%DATADIR%%/Hostbase/repo
