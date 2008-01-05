@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	PyLucene
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	textproc devel python
 MASTER_SITES=	http://downloads.osafoundation.org/PyLucene/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}${PATCHSET}
 
-MAINTAINER=	laszlof@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A GCJ-compiled version of Java Lucene integrated with Python
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/gcj41:${PORTSDIR}/lang/gcc41
