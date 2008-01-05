@@ -86,7 +86,7 @@ post-patch:
 		${WRKSRC}/src/daemon/default.pa.in
 .if ${OSVERSION} < 700042
 	@${REINPLACE_CMD} -e 's|-Wl,-no-undefined||' \
-	    	${WRKSRC}/Makefile.in
+	    	${WRKSRC}/src/Makefile.in
 .endif
 
 post-install:
