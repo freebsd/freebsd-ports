@@ -30,6 +30,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard4.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard5.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard6.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/postcard7.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/project-support.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/screenshots_item.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_blobs.jpg
@@ -183,6 +184,7 @@ include/CImg.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/dtmri_view.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/edge_explorer.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/fade_images.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/generate_loop_macros.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/greycstoration.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/greycstoration4gimp.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/greycstoration4integration.cpp
