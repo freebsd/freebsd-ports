@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	science kde
-MASTER_SITES=	${MASTER_SITE_KDE} \
-		http://omega.astro.utoronto.ca/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/scientific
 
-MAINTAINER=	kay_lehmann@web.de
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	Data viewing program for KDE
 
 LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
@@ -19,7 +18,8 @@ LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+USE_PERL5_BUILD=yes
+USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
@@ -41,7 +41,6 @@ PLIST_SUB+=	NETCDF="@comment "
 
 .if defined(WITH_CDF)
 CONFIGURE_ARGS+=LDFLAGS="-lm"
-MAKE_ARGS+=	AUTOMAKE="${TRUE}"
 LIB_DEPENDS+=	cdf.0:${PORTSDIR}/science/cdf
 PLIST_SUB+=	CDF=""
 .else
@@ -49,9 +48,10 @@ CONFIGURE_ARGS+=	--without-cdf
 PLIST_SUB+=	CDF="@comment "
 .endif
 
-post-patch:
-#	@${TOUCH} ${WRKSRC}/kst/kst/ksttimers.h.in
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+pre-configure:
+	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${SH} admin/cvs.sh dist)
+	@${REINPLACE_CMD} -e 's|@kde_widgetdir@|@prefix@/lib/kde3/plugins/designer|' \
+		${WRKSRC}/kst/src/widgets/Makefile.in
 .if !defined(WITH_NETCDF)
 	@${REINPLACE_CMD} -e 's| netcdf||g' ${WRKSRC}/kst/src/datasources/Makefile.in
 .endif
