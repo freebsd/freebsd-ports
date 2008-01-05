@@ -1,0 +1,75 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
+%%SQUIRRELDIR%%/plugins/shared_calendars/classes/calendar.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/classes/event.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/classes/property.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/data/.htaccess
+%%SQUIRRELDIR%%/plugins/shared_calendars/data/config.php.sample
+%%SQUIRRELDIR%%/plugins/shared_calendars/data/index.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/doc/rfc2234.txt
+%%SQUIRRELDIR%%/plugins/shared_calendars/doc/rfc2445.txt
+%%SQUIRRELDIR%%/plugins/shared_calendars/doc/vcal-10.rtf
+%%SQUIRRELDIR%%/plugins/shared_calendars/doc/vcal-10.txt
+%%SQUIRRELDIR%%/plugins/shared_calendars/images/colortable.gif
+%%SQUIRRELDIR%%/plugins/shared_calendars/images/colortable.png
+%%SQUIRRELDIR%%/plugins/shared_calendars/images/delete_icon.png
+%%SQUIRRELDIR%%/plugins/shared_calendars/images/delete_icon2.png
+%%SQUIRRELDIR%%/plugins/shared_calendars/images/delete_icon3.png
+%%SQUIRRELDIR%%/plugins/shared_calendars/images/new.gif
+%%SQUIRRELDIR%%/plugins/shared_calendars/images/new.png
+%%SQUIRRELDIR%%/plugins/shared_calendars/images/tinycal.png
+%%SQUIRRELDIR%%/plugins/shared_calendars/images/tinyclock.png
+%%SQUIRRELDIR%%/plugins/shared_calendars/images/tinyclock2.png
+%%SQUIRRELDIR%%/plugins/shared_calendars/images/tinyclock3.png
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/.htaccess
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/add_new_personal_calendar.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/admin_interface.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/calendar.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/calendar_options.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/color.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/day.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/edit_calendar.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/event.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/helper_month.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/helper_time.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/index.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/list_calendars.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/interface/month.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/scripts/convert_cal_data.sh
+%%SQUIRRELDIR%%/plugins/shared_calendars/scripts/convert_cal_to_ical.pl
+%%SQUIRRELDIR%%/plugins/shared_calendars/scripts/fix_calIDs.sh
+%%SQUIRRELDIR%%/plugins/shared_calendars/scripts/fix_rrules.sh
+%%SQUIRRELDIR%%/plugins/shared_calendars/COPYING
+%%SQUIRRELDIR%%/plugins/shared_calendars/INSTALL
+%%SQUIRRELDIR%%/plugins/shared_calendars/README
+%%SQUIRRELDIR%%/plugins/shared_calendars/TODO
+%%SQUIRRELDIR%%/plugins/shared_calendars/admin_options.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/backend_functions.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/calendar.pot
+%%SQUIRRELDIR%%/plugins/shared_calendars/calendar_options.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/constants.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/day.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/download.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/event_manage.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/functions.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/getpot
+%%SQUIRRELDIR%%/plugins/shared_calendars/helper_month.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/helper_time.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/index.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/list_calendars.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/load_prefs.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/make_release.sh
+%%SQUIRRELDIR%%/plugins/shared_calendars/month.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/setup.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/small_calendar.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/timezone_offsets.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/url_validator.php
+%%SQUIRRELDIR%%/plugins/shared_calendars/version
+%%SQUIRRELDIR%%/plugins/shared_calendars/year.php
+@dirrm %%SQUIRRELDIR%%/plugins/shared_calendars/classes
+@dirrmtry %%SQUIRRELDIR%%/plugins/shared_calendars/data
+@dirrm %%SQUIRRELDIR%%/plugins/shared_calendars/doc
+@dirrm %%SQUIRRELDIR%%/plugins/shared_calendars/images
+@dirrm %%SQUIRRELDIR%%/plugins/shared_calendars/interface
+@dirrm %%SQUIRRELDIR%%/plugins/shared_calendars/scripts
+@dirrmtry %%SQUIRRELDIR%%/plugins/shared_calendars
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
