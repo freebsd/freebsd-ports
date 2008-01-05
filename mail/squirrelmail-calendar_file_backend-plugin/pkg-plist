@@ -1,0 +1,14 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
+%%SQUIRRELDIR%%/plugins/calendar_file_backend/COPYING
+%%SQUIRRELDIR%%/plugins/calendar_file_backend/INSTALL
+%%SQUIRRELDIR%%/plugins/calendar_file_backend/README
+%%SQUIRRELDIR%%/plugins/calendar_file_backend/calendar_functions.php
+%%SQUIRRELDIR%%/plugins/calendar_file_backend/constants.php
+%%SQUIRRELDIR%%/plugins/calendar_file_backend/event_functions.php
+%%SQUIRRELDIR%%/plugins/calendar_file_backend/functions.php
+%%SQUIRRELDIR%%/plugins/calendar_file_backend/holiday_functions.php
+%%SQUIRRELDIR%%/plugins/calendar_file_backend/index.php
+%%SQUIRRELDIR%%/plugins/calendar_file_backend/setup.php
+%%SQUIRRELDIR%%/plugins/calendar_file_backend/version
+@dirrmtry %%SQUIRRELDIR%%/plugins/calendar_file_backend/
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
