@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_geoip2
-PORTVERSION=	1.1.8
+PORTVERSION=	1.2.0
 CATEGORIES=	www geography
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip2/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,7 +14,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	jau@iki.fi
 COMMENT=	An Apache module that provides the country code of the client's IP
 
-LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP
+BUILD_DEPENDS=	GeoIP>=1.4.3:${PORTSDIR}/net/GeoIP
+RUN_DEPENDS=	GeoIP>=1.4.3:${PORTSDIR}/net/GeoIP
 
 CONFLICTS=	mod_geoip-[0-9]*
 
