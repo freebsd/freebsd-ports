@@ -1,13 +1,16 @@
 bin/xsane
+%%NLS%%share/locale/ca/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/da/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/de/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xsane.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xsane.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/xsane.mo
@@ -20,6 +23,7 @@ bin/xsane
 %%NLS%%share/locale/tr/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/xsane.mo
 %%NLS%%share/locale/zh/LC_MESSAGES/xsane.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xsane.mo
 share/sane/xsane/Mustek-logo.xpm
 share/sane/xsane/Plustek-logo.xpm
 share/sane/xsane/UMAX-logo.xpm
@@ -30,6 +34,7 @@ share/sane/xsane/doc/sane-scantips-doc.html
 share/sane/xsane/doc/sane-xsane-advanced-doc.html
 share/sane/xsane/doc/sane-xsane-batch-scan-doc.html
 share/sane/xsane/doc/sane-xsane-color-correction-doc.html
+share/sane/xsane/doc/sane-xsane-color-management-doc.html
 share/sane/xsane/doc/sane-xsane-copy-doc.html
 share/sane/xsane/doc/sane-xsane-doc.html
 share/sane/xsane/doc/sane-xsane-empty-doc.html
@@ -39,6 +44,7 @@ share/sane/xsane/doc/sane-xsane-histogram-doc.html
 share/sane/xsane/doc/sane-xsane-medium-definition-doc.html
 share/sane/xsane/doc/sane-xsane-preview-doc.html
 share/sane/xsane/doc/sane-xsane-save-doc.html
+share/sane/xsane/doc/sane-xsane-setup-color-management-doc.html
 share/sane/xsane/doc/sane-xsane-setup-copy-doc.html
 share/sane/xsane/doc/sane-xsane-setup-display-doc.html
 share/sane/xsane/doc/sane-xsane-setup-enhancement-doc.html
@@ -57,6 +63,9 @@ share/sane/xsane/doc/xsane-batch-scan.jpg
 share/sane/xsane/doc/xsane-blur.jpg
 share/sane/xsane/doc/xsane-brightness.jpg
 share/sane/xsane/doc/xsane-clone.jpg
+share/sane/xsane/doc/xsane-cms-function.jpg
+share/sane/xsane/doc/xsane-color-correction-rgb-default.jpg
+share/sane/xsane/doc/xsane-color-management-main-window.jpg
 share/sane/xsane/doc/xsane-colormode.jpg
 share/sane/xsane/doc/xsane-contrast.jpg
 share/sane/xsane/doc/xsane-copy.jpg
@@ -65,6 +74,7 @@ share/sane/xsane/doc/xsane-delete-preview-cache.jpg
 share/sane/xsane/doc/xsane-despeckle.jpg
 share/sane/xsane/doc/xsane-disk.jpg
 share/sane/xsane/doc/xsane-edit-medium.jpg
+share/sane/xsane/doc/xsane-enable-color-management.jpg
 share/sane/xsane/doc/xsane-fax-project.jpg
 share/sane/xsane/doc/xsane-fax.jpg
 share/sane/xsane/doc/xsane-gamma.jpg
@@ -112,6 +122,7 @@ share/sane/xsane/doc/xsane-scale.jpg
 share/sane/xsane/doc/xsane-scansource.jpg
 share/sane/xsane/doc/xsane-setup-copy.jpg
 share/sane/xsane/doc/xsane-setup-display.jpg
+share/sane/xsane/doc/xsane-setup-color-management.jpg
 share/sane/xsane/doc/xsane-setup-enhancement.jpg
 share/sane/xsane/doc/xsane-setup-fax.jpg
 share/sane/xsane/doc/xsane-setup-ocr.jpg
