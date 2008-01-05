@@ -19,4 +19,6 @@ USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget ltverhack libxml2 pkgconfig
 USE_LDCONFIG=	yes
 
+MAN1=		flickrdf.1 flickcurl.1 flickcurl-config.1
+
 .include <bsd.port.mk>
