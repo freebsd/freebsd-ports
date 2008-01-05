@@ -10,8 +10,7 @@ PORTNAME=	centericq
 PORTVERSION=	4.21.0
 PORTREVISION=	8
 CATEGORIES=	net-im
-MASTER_SITES=	http://centericq.de/archive/source/releases/ \
-		http://thekonst.net/download/
+MASTER_SITES=	http://thekonst.net/download/
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A text mode menu- and window-driven IM interface
