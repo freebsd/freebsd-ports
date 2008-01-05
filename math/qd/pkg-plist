@@ -10,6 +10,7 @@ include/qd/qd_config.h
 include/qd/qd_inline.h
 include/qd/qd_real.h
 lib/libqd.a
+lib/libqd_f_main.a
 lib/libqdmod.a
 lib/qd/ddext.mod
 lib/qd/ddmodule.mod
