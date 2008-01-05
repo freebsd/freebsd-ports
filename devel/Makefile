@@ -2313,6 +2313,7 @@
     SUBDIR += upnp
     SUBDIR += upp
     SUBDIR += uppaal
+    SUBDIR += urjtag
     SUBDIR += ustl
     SUBDIR += valgrind
     SUBDIR += valgrind-snapshot
