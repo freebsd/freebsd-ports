@@ -1,38 +1,53 @@
-bin/lookat
-bin/lookat.sh
+bin/openvrml-player
+include/openvrml/openvrml-common.h
+include/openvrml/openvrml-config.h
+include/openvrml/openvrml-gl-common.h
+include/openvrml/openvrml-gl-config.h
 include/openvrml/openvrml/basetypes.h
 include/openvrml/openvrml/bounding_volume.h
 include/openvrml/openvrml/browser.h
-include/openvrml/openvrml/common.h
 include/openvrml/openvrml/event.h
 include/openvrml/openvrml/exposedfield.h
 include/openvrml/openvrml/field_value.h
 include/openvrml/openvrml/frustum.h
 include/openvrml/openvrml/gl/viewer.h
-include/openvrml/openvrml/img.h
 include/openvrml/openvrml/node.h
-include/openvrml/openvrml/node_ptr.h
+include/openvrml/openvrml/node_impl_util.h
+include/openvrml/openvrml/read_write_mutex.h
 include/openvrml/openvrml/rendering_context.h
 include/openvrml/openvrml/scope.h
 include/openvrml/openvrml/script.h
-include/openvrml/openvrml/system.h
 include/openvrml/openvrml/viewer.h
+include/openvrml/openvrml/vrml97_grammar.h
 include/openvrml/openvrml/vrml97node.h
+include/openvrml/openvrml/x3d_cad_geometry.h
+include/openvrml/openvrml/x3d_core.h
+include/openvrml/openvrml/x3d_dis.h
+include/openvrml/openvrml/x3d_environmental_effects.h
+include/openvrml/openvrml/x3d_event_utilities.h
+include/openvrml/openvrml/x3d_geometry2d.h
+include/openvrml/openvrml/x3d_geospatial.h
+include/openvrml/openvrml/x3d_grouping.h
+include/openvrml/openvrml/x3d_hanim.h
+include/openvrml/openvrml/x3d_interpolation.h
+include/openvrml/openvrml/x3d_key_device_sensor.h
+include/openvrml/openvrml/x3d_networking.h
+include/openvrml/openvrml/x3d_nurbs.h
+include/openvrml/openvrml/x3d_rendering.h
+include/openvrml/openvrml/x3d_shape.h
+include/openvrml/openvrml/x3d_texturing.h
+include/openvrml/openvrml/x3d_vrml_grammar.h
 lib/libopenvrml-gl.a
-lib/libopenvrml-gl.la
 lib/libopenvrml-gl.so
-lib/libopenvrml-gl.so.6
+lib/libopenvrml-gl.so.7
 lib/libopenvrml.a
-lib/libopenvrml.la
 lib/libopenvrml.so
-lib/libopenvrml.so.5
+lib/libopenvrml.so.8
+%%PLUGINS_DIR%%/openvrml.la
+%%PLUGINS_DIR%%/openvrml.so
 libdata/pkgconfig/openvrml-gl.pc
 libdata/pkgconfig/openvrml.pc
-libexec/openvrml-player
-share/idl/openvrml-%%VER%%/openvrml.idl
-share/pixmaps/lookat.xpm
-lib/mozilla/plugins/openvrml.so
-lib/mozilla/plugins/openvrml.xpt
+libexec/openvrml-xembed
 %%PORTDOCS%%%%EXAMPLESDIR%%/Anchor.wrl
 %%PORTDOCS%%%%EXAMPLESDIR%%/Click.wrl
 %%PORTDOCS%%%%EXAMPLESDIR%%/EventPROTO.wrl
@@ -51,10 +66,12 @@ lib/mozilla/plugins/openvrml.xpt
 %%PORTDOCS%%%%EXAMPLESDIR%%/scale.wrl
 %%PORTDOCS%%%%EXAMPLESDIR%%/snoman.wrl
 %%PORTDOCS%%%%EXAMPLESDIR%%/warbird.wrl
+share/openvrml-player/glade/openvrml-player.glade
+@dirrm share/openvrml-player/glade
+@dirrm share/openvrml-player
 @dirrm include/openvrml/openvrml/gl
 @dirrm include/openvrml/openvrml
 @dirrm include/openvrml
-@dirrm share/idl/openvrml-%%VER%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry share/gtk-doc/html/gtkglext
 @dirrmtry share/gtk-doc/html

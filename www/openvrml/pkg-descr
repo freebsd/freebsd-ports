@@ -1,8 +1,6 @@
-OpenVRML is a free cross-platform runtime for VRML97 available under
-the GNU Lesser General Public License.
-
-The basic OpenVRML distribution includes libraries you can use to
-add VRML support to an application, and  "Lookat", a simple
-stand-alone VRML browser. A plug-in for mozilla is included.
+OpenVRML is a free cross-platform runtime for VRML and X3D available under the
+GNU Lesser General Public License. The OpenVRML distribution includes libraries
+you can use to add VRML/X3D support to an application.  OpenVRML also provides a
+plug-in to render VRML/X3D worlds in Web browsers.
 
 WWW: http://openvrml.sourceforge.net/

@@ -1,0 +1,11 @@
+--- configure.orig	2007-12-15 03:20:29.000000000 +0100
++++ configure	2008-01-02 19:25:59.000000000 +0100
+@@ -25326,7 +25326,7 @@
+ #
+ 
+ if test -n "${openvrml_run_path}"; then
+-  OPENVRML_RPATH="-rpath ${openvrml_run_path}"
++  OPENVRML_RPATH="${openvrml_run_path}"
+ fi
+ 
+ 
