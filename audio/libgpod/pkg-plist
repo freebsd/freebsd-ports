@@ -1,7 +1,7 @@
 include/gpod-1.0/gpod/itdb.h
 @dirrm include/gpod-1.0/gpod
 @dirrm include/gpod-1.0
-lib/libgpod.so.2
+lib/libgpod.so.3
 lib/libgpod.so
 lib/libgpod.la
 lib/libgpod.a
@@ -12,6 +12,7 @@ share/locale/fr/LC_MESSAGES/libgpod.mo
 share/locale/he/LC_MESSAGES/libgpod.mo
 share/locale/it/LC_MESSAGES/libgpod.mo
 share/locale/ja/LC_MESSAGES/libgpod.mo
+share/locale/ro/LC_MESSAGES/libgpod.mo
 share/locale/sv/LC_MESSAGES/libgpod.mo
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png

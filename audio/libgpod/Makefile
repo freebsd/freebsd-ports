@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgpod
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkpod
@@ -28,14 +28,18 @@ CONFIGURE_ARGS=	--without-python
 CONFIGURE_ARGS+=	--with-html-dir="${PREFIX}/share/doc"
 .endif
 
-post-extract: .SILENT
+pre-patch: .SILENT
+# Adjust pkgconfigdir to the FreeBSD world
 	${REINPLACE_CMD} -e \
 		's,libdir)/pkgconfig,prefix)/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile.in
+# Stop configure script want Perl and XML::Parser (delete 22 lines)
+	${REINPLACE_CMD} '19785,19807d' ${WRKSRC}/configure
+# Fix bogus test(1) syntax to get rid of annoying warnings
+	${REINPLACE_CMD} -E 's,(if test [[:graph:]]+ )==,\1=,' \
+		${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's, docs,,' ${WRKSRC}/Makefile.in
 .endif
-	# Stop configure script want Perl and XML::Parser
-	${REINPLACE_CMD} '19568,19590d' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
