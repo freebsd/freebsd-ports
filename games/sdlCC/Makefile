@@ -17,7 +17,8 @@ COMMENT=	An extensible chinese checkers game using SDL
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure ${WRKSRC}/libltdl/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -26,4 +27,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/players/README ${DOCSDIR}/README.players
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
