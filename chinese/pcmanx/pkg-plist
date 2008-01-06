@@ -1,7 +1,7 @@
 bin/pcmanx
 lib/libpcmanx_core.la
 lib/libpcmanx_core.so
-lib/libpcmanx_core.so.0
+lib/libpcmanx_core.so.3
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanx.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pcmanx.mo
 %%DATADIR%%/emoticons
