@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	openoffice.org
-PORTVERSION?=	2.3.${SNAPDATE}
+PORTVERSION?=	2.4.${SNAPDATE}
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://openoffice.lunarshells.com/sources/ \
@@ -24,8 +24,6 @@ EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
-
-IGNORE=         please use openoffice.org-2 port instead
 
 .if defined(WITH_CWS)
 PORTNAME:=	openoffice.org-${WITH_CWS}
@@ -73,10 +71,10 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
 CODELINE=		680
-MILESTONE?=		9
-OOOTAG?=		OOG680_m${MILESTONE}
+MILESTONE?=		1
+OOOTAG?=		OOH680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
-SNAPDATE=		20071115
+SNAPDATE=		20080105
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
@@ -103,6 +101,10 @@ PKGNAMESUFFIX=		-${LANG_SUFFIX}
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_GCC=	4.2
+#following part should sync with ports/Mk/bsd.gcc.mk
+.if (${OSVERSION} >= 700042)
+CONFIGURE_ARGS+=	--with-system-stdlibs
+.endif
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 CCACHE_PREFIX=	ccache
@@ -192,9 +194,9 @@ do-build:
 	@cd ${WRKSRC} ; ./bootstrap
 # PR:84786 #i53289#
 .if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
 .else
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; dmake"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; dmake"
 .endif
 .if ${LOCALIZED_LANG} == "all"
 	@${MAKE} languagepack
