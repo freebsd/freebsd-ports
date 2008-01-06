@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-commander
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-commander/1.2
@@ -37,8 +37,8 @@ MAN1=		gnome-commander.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
-BROKEN=		Does not compile
+.if ${OSVERSION} >= 700000 && ${ARCH} == "amd64"
+BROKEN=		Does not run on amd64 and 7.X or greater
 .endif
 
 .include <bsd.port.post.mk>
