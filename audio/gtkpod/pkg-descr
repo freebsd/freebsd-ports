@@ -15,7 +15,7 @@ mini, iPod photo, iPod shuffle, iPod nano, and iPod video.  It allows you to:
     * Modify/Refresh ID3 tags, optionally updating the original file
     * Synchronize directories
     * Normalize the volume of your tracks (via mp3gain or the replay-gain tag)
-    * Write the updated iTunesDB and added songs to your iPod
+    * Download and display of Album Art from the Internet
     * Work offline and synchronize your new playlists/songs with the iPod later
     * Export your korganizer/kaddressbook/thunderbird/evocalendar/evolution/
       webcalendar/... data to the iPod (scripts for other programs can be
