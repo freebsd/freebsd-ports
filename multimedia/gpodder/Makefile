@@ -49,7 +49,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITH_IPOD)
-RUN_DEPENDS+=	gpod.2:${PORTSDIR}/audio/libgpod \
+RUN_DEPENDS+=	gpod.3:${PORTSDIR}/audio/libgpod \
 		${PYTHON_SITELIBDIR}/py-mad:${PORTSDIR}/audio/py-mad
 .endif
 
