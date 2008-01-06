@@ -161,7 +161,7 @@ include/afnix/std/Pathname.hpp
 include/afnix/std/Plist.hpp
 include/afnix/std/PrintTable.hpp
 include/afnix/std/Property.hpp
-include/afnix/std/Qarray.hpp
+include/afnix/std/QuarkArray.hpp
 include/afnix/std/QuarkTable.hpp
 include/afnix/std/QuarkZone.hpp
 include/afnix/std/Queue.hpp
@@ -242,6 +242,7 @@ include/afnix/wax/XhtmlTxti.hpp
 include/afnix/wax/XhtmlTxtt.hpp
 include/afnix/wax/XhtmlUl.hpp
 include/afnix/wax/XmlMime.hpp
+include/afnix/wax/XsmHtml.hpp
 include/afnix/xml/Libxml.hpp
 include/afnix/xml/Predxml.hpp
 include/afnix/xml/XmlAttlist.hpp
@@ -276,6 +277,7 @@ include/afnix/xml/XsmBuffer.hpp
 include/afnix/xml/XsmDocument.hpp
 include/afnix/xml/XsmNode.hpp
 include/afnix/xml/XsmReader.hpp
+include/afnix/xml/XsmTree.hpp
 include/afnix/xml/XsoBuffer.hpp
 include/afnix/xml/XsoInfo.hpp
 include/afnix/xml/XsoStream.hpp
@@ -284,6 +286,8 @@ include/afnix/xpe/Predxpe.hpp
 include/afnix/xpe/XmlContent.hpp
 include/afnix/xpe/XmlFeature.hpp
 include/afnix/xpe/XmlInclude.hpp
+include/afnix/xpe/XmlPlist.hpp
+include/afnix/xpe/XmlPrintTable.hpp
 include/afnix/xpe/XmlProcessor.hpp
 lib/afnix/afnix-adp.axl
 lib/afnix/afnix-amd.axl
