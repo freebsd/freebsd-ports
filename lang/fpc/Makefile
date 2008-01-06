@@ -7,7 +7,7 @@
 
 PORTNAME=	fpc
 PORTVERSION=	2.2.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/source-${PORTVERSION}/:source \
 		ftp://planetmirror.com/pub/fpc/dist/source-${PORTVERSION}/:source \
@@ -107,6 +107,9 @@ post-install:
 	if [ -e "${PREFIX}/bin/ppc386" ]; then ${RM} -f "${PREFIX}/bin/ppc386"; fi
 	${LN} -s "${PREFIX}/lib/fpc/${PORTVERSION}/ppc386" "${PREFIX}/bin"
 	${SH} "${PREFIX}/lib/fpc/${PORTVERSION}/samplecfg" "${PREFIX}/lib/fpc/${PORTVERSION}" "${PREFIX}/etc"
+	@if [ ! -f ${PREFIX}/etc/fpc.cfg ]; then \
+		${CP} ${PREFIX}/etc/fpc.cfg.sample ${PREFIX}/etc/fpc.cfg; \
+	fi
 	@${CAT} ${PKGMESSAGE}
 
 .else
