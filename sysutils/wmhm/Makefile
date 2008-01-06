@@ -7,7 +7,7 @@
 
 PORTNAME=	wmhm
 PORTVERSION=	1.46
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
@@ -25,6 +25,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"requires speaker(4)"
+ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 CONFIGURE_ARGS+=--with-xpm-includes=${X11BASE}/include \
 		--with-xpm-library=${X11BASE}/lib

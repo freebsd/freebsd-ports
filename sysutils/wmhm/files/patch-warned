@@ -1,0 +1,126 @@
+--- operations.h	2001-07-22 01:01:02.000000000 -0400
++++ operations.h	2008-01-06 12:08:15.000000000 -0500
+@@ -7,3 +7,3 @@
+ int ReadByte(u_char *return_value, int addr);
+ int WriteByte(int addr, int value);
+-int PlaySpeaker(char *tune_array);
++int PlaySpeaker(const char *tune_array);
+--- operations.c	2001-07-22 01:00:55.000000000 -0400
++++ operations.c	2008-01-06 12:07:11.000000000 -0500
+@@ -35,6 +35,8 @@
+ #include "config.h"
+ 
++#include <errno.h>
+ #include <fcntl.h>
+ #include <stdio.h>
++#include <sysexits.h>
+ #include <unistd.h>
+ #include <math.h>
+@@ -60,12 +62,14 @@
+ 
+ int 
+-PlaySpeaker(char *tune_array)
++PlaySpeaker(const char *tune_array)
+ {
+     int i;
+     int open_spkr;
++    static int warned;
+     if ((open_spkr=open("/dev/speaker", O_WRONLY)) < 0) {
+-        fprintf(stderr, "Failed to open /dev/speaker for writing.\n"
+-                        "No Permission?\n"
+-        );
++        if (errno != warned) {
++            warn("Failed to open /dev/speaker for writing");
++            warned = errno;
++        }
+         return(1);
+     }
+@@ -83,6 +87,10 @@
+ 
+     if (ioctl(open_spkr, SPKRTUNE, tone_array) == -1) {
+-        perror("ioctl");
+-        exit(-1);
++	if (errno != warned) {
++            warn("Could not play a tune on spkr");
++            warned = errno;
++        }
++        close(open_spkr);
++        return(2);
+     }
+ 
+@@ -102,10 +110,6 @@
+         cmd.data.byte_ptr=&smb_return;
+         if ((open_smb=open("/dev/smb0", 000)) < 0) {
+-            fprintf(stderr, "Failed to open /dev/smb0.\nPossible reasons:\n"
+-                            "- Your kernel does not support SMBUS.\n"
+-                            "- You are not running wmhm suid root.\n"
+-                            "- WMHM is already running.\n"
+-            );
+-            exit(1);
++            err(errno == EACCES ? EX_NOPERM : EX_UNAVAILABLE,
++                "Failed to open /dev/smb0.");
+         }
+         cmd.cmd=0x47;
+@@ -116,21 +120,13 @@
+         return(0);
+     } 
+-    else {
++    else
++#endif
++    {
+         if ((io_file=open("/dev/io", 000)) < 0) {
+-            fprintf(stderr, "Failed to open /dev/io.\n"
+-                            "Possible reasons:\n"
+-                            "- You are not running wmhm suid root.\n"
+-                            "- WMHM is already running\n");
+-	  		exit (-1);
+-		}
++            err(errno == EACCES ? EX_NOPERM : EX_UNAVAILABLE,
++                "Failed to open /dev/io.");
++	}
+         return(0);
+     }
+-#else
+-    if((io_file=open("/dev/io",000))<0) {
+-        fprintf(stderr, "Failed to open /dev/io.\n");
+-        exit (1);
+-    }
+-    return(0);
+-#endif
+ }
+ 
+@@ -151,14 +147,11 @@
+         return(0);
+     } 
+-    else {
++    else
++#endif
++    {
+         outb(WBIO1,addr);
+         *return_value = inb(WBIO2);
+         return(0);
+     }
+-#else 
+-    outb(WBIO1,addr);
+-    *return_value = inb(WBIO2);
+-    return(0);
+-#endif
+ }
+ 
+@@ -178,13 +171,10 @@
+         }
+     } 
+-    else {
++    else
++#endif
++    {
+         outb(WBIO1,addr);
+         outb(WBIO2,value);
+     }
+-#else 
+-    outb(WBIO1,addr);
+-    outb(WBIO2,value);
+-#endif
+     return(0);
+ }
+-
