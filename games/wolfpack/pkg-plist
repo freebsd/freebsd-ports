@@ -18,7 +18,7 @@ etc/wolfpack/schedule
 %%DATADIR%%/builtin/sect.config
 %%DATADIR%%/builtin/ship.config
 %%DATADIR%%/info.nr/Attacking
-%%DATADIR%%/info.nr/Autofeed
+%%DATADIR%%/info.nr/Autofish
 %%DATADIR%%/info.nr/Autonav
 %%DATADIR%%/info.nr/BTU
 %%DATADIR%%/info.nr/Basics
