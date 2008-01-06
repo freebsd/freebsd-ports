@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openvrml
-PORTVERSION=	0.15.10
-PORTREVISION=	7
+PORTVERSION=	0.17.0
 CATEGORIES=	www graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,38 +14,37 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VRML97 runtime and browser ("lookat")
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mozilla-js.pc:${PORTSDIR}/www/mozilla	\
-		${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone	\
+BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone	\
 		pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mozilla-js.pc:${PORTSDIR}/www/mozilla
+LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig		\
+		js.1:${PORTSDIR}/lang/spidermonkey			\
+		jpeg.9:${PORTSDIR}/graphics/jpeg			\
+		png.5:${PORTSDIR}/graphics/png				\
+		curl.4:${PORTSDIR}/ftp/curl
 
 USE_GL=		yes
-USE_GNOME=	gnomehack gtk20
+USE_GNOME=	gnomehack libglade2 libgnomeui
 USE_SDL=	sdl
-USE_GCC=	3.4
-USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -largp -Wl,--rpath -Wl,${LOCALBASE}/lib/mozilla -L${X11BASE}/lib -lXext" \
-		XPIDLFLAGS="-I${LOCALBASE}/share/idl/mozilla"
+USE_JAVA=	yes
+GNU_CONFIGURE=	yes
+LIBTOOLFILES=	configure mozilla-plugin/configure lib/gtkglext/configure
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OPSYS:L}"	\
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client ${PTHREAD_LIBS}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"	\
+		LIBS="-lm"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_GECKO=	firefox seamonkey
 
-PLIST_SUB=	VER=${PORTVERSION}
-SUB_FILES=	lookat.sh
+PLIST_SUB=	PLUGINS_DIR=${BROWSER_PLUGINS_DIR:S|^${LOCALBASE}/||}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700029
-BROKEN=		Incorrect objformat handling
-.endif
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Gets internal gcc error on ${ARCH}
@@ -58,26 +56,43 @@ LIB_DEPENDS+=	boost_python.4:${PORTSDIR}/devel/boost-python
 LIB_DEPENDS+=	boost_regex.4:${PORTSDIR}/devel/boost
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" \
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Warning: building this port eats up to 1.5 GB of RAM (32 bits) or 3 GB (64 bits)"
+	@${ECHO_MSG} "of RAM; do not try to build it on a small configuration!"
+	@${ECHO_MSG}
+
+pre-configure:
+	${REINPLACE_CMD} -e	\
+		's|JNI_LIBS="|JNI_LIBS="-L${JAVA_HOME}/jre/lib/${ARCH}/client -Wl,-rpath,${JAVA_HOME}/jre/lib/${ARCH}/client |'	\
 		${WRKSRC}/configure
+	${REINPLACE_CMD} -e	\
+		's|-rpath $$(libdir)|-rpath $$(libdir) -rpath ${JAVA_HOME}/jre/lib/${ARCH}/client|'	\
+		${WRKSRC}/src/Makefile.in
+.for cfg in ${LIBTOOLFILES}
+	${REINPLACE_CMD} -e	\
+		"/hardcode_libdir_flag_spec/s|\(=.\)\(.*\)\(\$$libdir\)|& \2${JAVA_HOME}/jre/lib/${ARCH}/client|"	\
+		${WRKSRC}/${cfg}
+.endfor
+	${REINPLACE_CMD} -e 's|$$(libdir)/mozilla/plugins|${BROWSER_PLUGINS_DIR}|'	\
+		${WRKSRC}/mozilla-plugin/src/Makefile.in
+.if ${GECKO} != "firefox"
+	${REINPLACE_CMD} -e "s|FIREFOX_JS|${GECKO:U}_JS|g;s|firefox-js|${GECKO}-js|"	\
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s|firefox-plugin|${GECKO}-plugin|g"	\
+		${WRKSRC}/mozilla-plugin/configure
+.endif
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${SUB_FILES} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/manual/ ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/models/*.wrl ${EXAMPLESDIR}
 .endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
-.if defined(MAINTAINER_MODE)
-test:	build
-	(cd ${WRKSRC}/tests ;	\
-	./testsuite )
-.endif
+regression-test:
+	(cd ${BUILD_WRKSRC}/tests ;	\
+	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check-TESTS)
 
 .include <bsd.port.post.mk>

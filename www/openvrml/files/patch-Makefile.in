@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon Jul  4 01:29:49 2005
-+++ Makefile.in	Fri Jul 22 16:32:32 2005
-@@ -236,7 +236,7 @@
- target_cpu = @target_cpu@
- target_os = @target_os@
+--- Makefile.in.orig	Sat Jul 21 14:49:12 2007
++++ Makefile.in	Sat Jul 21 14:52:07 2007
+@@ -252,7 +252,7 @@
  target_vendor = @target_vendor@
--SUBDIRS = doc ide-projects m4 models lib java src mozilla-plugin tests
-+SUBDIRS = ide-projects m4 models lib java src mozilla-plugin tests
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = doc ide-projects models lib java src mozilla-plugin examples tests
++SUBDIRS = ide-projects models lib java src mozilla-plugin examples tests
  ACLOCAL_AMFLAGS = -I m4
  EXTRA_DIST = \
          openvrml.pc.in \

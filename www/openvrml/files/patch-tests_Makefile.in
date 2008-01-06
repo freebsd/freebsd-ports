@@ -1,0 +1,11 @@
+--- tests/Makefile.in.orig	Fri Jun  1 08:56:46 2007
++++ tests/Makefile.in	Sun Jun  3 09:34:02 2007
+@@ -184,7 +184,7 @@
+ JS_LIBS = @JS_LIBS@
+ LDFLAGS = @LDFLAGS@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ @JNI_LIBS@
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
