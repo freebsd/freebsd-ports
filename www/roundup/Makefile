@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	www python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/r/roundup/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	An Issue-Tracking System for Knowledge Workers
 
 USE_PYTHON=	2.3+
@@ -21,7 +20,6 @@ USE_PYDISTUTILS=	yes
 USE_GETTEXT=	yes
 
 OPTIONS=	SQLITE	"Support Sqlite as backend" on
-OPTIONS+=	METAKIT	"Support metakit as backend" off
 OPTIONS+=	PGSQL	"Support posggresql as backend" off
 OPTIONS+=	MYSQL	"Support mysql as backend" off
 
@@ -29,10 +27,6 @@ OPTIONS+=	MYSQL	"Support mysql as backend" off
 
 .if !defined(WITHOUT_SQLITE)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/sqlite/__init__.py:${PORTSDIR}/databases/py-PySQLite11
-.endif
-
-.if defined(WITH_METAKIT)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/metakit.py:${PORTSDIR}/databases/metakit
 .endif
 
 .if defined(WITH_PGSQL)
