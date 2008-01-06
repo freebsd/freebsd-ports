@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lazarus
-PORTVERSION=	0.9.22
-PORTREVISION=	3
+PORTVERSION=	0.9.24
 CATEGORIES=	editors devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-0/}
@@ -118,8 +117,8 @@ LCL_PLATFORM=	gtk
 LAZARUS_TARGET=	bigide lazbuilder
 .endif
 
-.for OPT in ${ALL_UNITS}
-BUILD_DEPENDS+=	${UNITSDIR}/${OPT:L:S/httpd/httpd-1.3/}/Package.fpc:${PORTSDIR}/${${OPT:S/-/_/}_UNIT}
+.for OPTUNIT in ${ALL_UNITS}
+BUILD_DEPENDS+=	${UNITSDIR}/${OPTUNIT:L:S/httpd/httpd-1.3/}/Package.fpc:${PORTSDIR}/${${OPTUNIT:S/-/_/}_UNIT}
 .endfor
 
 post-depends:
@@ -145,7 +144,7 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} && \
-		${GMAKE} ${MAKE_ENV} ${LAZARUS_TARGET}
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${LAZARUS_TARGET}
 
 post-build:
 	@cd ${WRKSRC} && \
@@ -184,7 +183,7 @@ pre-install:
 	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 
 do-install:
-.for DIRE in components converter debugger designer doceditor ide ideintf images install languages lcl \
+.for DIRE in components converter debugger designer doceditor ide ideintf images install languages lazarus.app lcl \
 	packager tools units
 		@${MKDIR} ${DATADIR}/${DIRE}
 		@cd ${WRKSRC}/${DIRE} && \
