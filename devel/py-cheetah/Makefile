@@ -18,10 +18,6 @@ COMMENT=	HTML template engine for Python
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.if defined(PACKAGE_BUILDING)
-IGNORE=		cannot package: will depend on 2 pythons until py-cheetah is converted to easy_install support
-.endif
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	Cheetah
