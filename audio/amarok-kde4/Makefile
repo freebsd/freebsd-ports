@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=--without-exscalibar \
 PLIST_SUB+=	GPOD="@comment "
 CONFIGURE_ARGS+=--without-libgpod
 .else
-LIB_DEPENDS+=	gpod.2:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS+=	gpod.3:${PORTSDIR}/audio/libgpod
 CONFIGURE_ARGS+=--with-libgpod
 PLIST_SUB+=	GPOD=""
 .endif

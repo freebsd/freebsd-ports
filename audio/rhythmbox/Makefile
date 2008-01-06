@@ -111,7 +111,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if !defined(WITHOUT_IPOD)
-LIB_DEPENDS+=	gpod.2:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS+=	gpod.3:${PORTSDIR}/audio/libgpod
 CONFIGURE_ARGS+=--with-ipod
 PLIST_SUB+=	IPOD=""
 .else
