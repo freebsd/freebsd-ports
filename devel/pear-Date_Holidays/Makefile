@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date_Holidays
-PORTVERSION=	0.17.1
+PORTVERSION=	0.17.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
@@ -27,6 +27,8 @@ FILES=		Holidays.php \
 		Holidays/Driver/Germany.php \
 		Holidays/Driver/Ireland.php \
 		Holidays/Driver/Jewish.php \
+		Holidays/Driver/Netherlands.php \
+		Holidays/Driver/Norway.php \
 		Holidays/Driver/PHPdotNet.php \
 		Holidays/Driver/Slovenia.php \
 		Holidays/Driver/Sweden.php \
@@ -50,6 +52,7 @@ FILES=		Holidays.php \
 		Holidays/Filter/Germany/SchleswigHolstein.php \
 		Holidays/Filter/Germany/Thuringia.php \
 		Holidays/Filter/Ireland/Official.php \
+		Holidays/Filter/Netherlands/Official.php \
 		Holidays/Filter/Blacklist.php \
 		Holidays/Filter/Composite.php \
 		Holidays/Filter/Whitelist.php \
@@ -88,6 +91,7 @@ EXAMPLES=	addingTranslations.php creating_drivers.php \
 		usingCompositeDriver.php usingStandaloneDriver.php
 
 TESTS=		AllTests.php AllTestsUndeployed.php \
+		Date_Holidays_Bugfix_Retests_TestSuite.php \
 		Date_Holidays_Driver_Austria_TestSuite.php \
 		Date_Holidays_Driver_Christian_TestSuite.php \
 		Date_Holidays_Driver_EnglandWales_TestSuite.php \
