@@ -49,6 +49,9 @@
 %%PYTHON_SITELIBDIR%%/quixote/html/_py_htmltext.py
 %%PYTHON_SITELIBDIR%%/quixote/html/_py_htmltext.pyc
 %%PYTHON_SITELIBDIR%%/quixote/html/_py_htmltext.pyo
+%%PYTHON_SITELIBDIR%%/quixote/html/qpy_templateio.py
+%%PYTHON_SITELIBDIR%%/quixote/html/qpy_templateio.pyc
+%%PYTHON_SITELIBDIR%%/quixote/html/qpy_templateio.pyo
 %%PYTHON_SITELIBDIR%%/quixote/http_request.py
 %%PYTHON_SITELIBDIR%%/quixote/http_request.pyc
 %%PYTHON_SITELIBDIR%%/quixote/http_request.pyo
@@ -122,15 +125,20 @@
 %%PYTHON_SITELIBDIR%%/quixote/util.py
 %%PYTHON_SITELIBDIR%%/quixote/util.pyc
 %%PYTHON_SITELIBDIR%%/quixote/util.pyo
-%%PORTDOCS%%%%DOCSDIR%%/ACKS
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PYTHON_SITELIBDIR%%/quixote/wsgi.py
+%%PYTHON_SITELIBDIR%%/quixote/wsgi.pyc
+%%PYTHON_SITELIBDIR%%/quixote/wsgi.pyo
+%%PORTDOCS%%%%DOCSDIR%%/ACKS.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES_24.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.html
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_24.txt
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/PTL.html
 %%PORTDOCS%%%%DOCSDIR%%/PTL.txt
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/default.css
 %%PORTDOCS%%%%DOCSDIR%%/demo.html
@@ -154,6 +162,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/widgets.html
 %%PORTDOCS%%%%DOCSDIR%%/widgets.txt
 %%PORTDOCS%%%%DOCSDIR%%/win32.txt
+%%PORTDOCS%%%%DOCSDIR%%/wsgi.html
+%%PORTDOCS%%%%DOCSDIR%%/wsgi.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/quixote/server
 @dirrm %%PYTHON_SITELIBDIR%%/quixote/ptl
