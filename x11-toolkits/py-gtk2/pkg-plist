@@ -159,6 +159,7 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTDOCS%%%%EXAMPLESDIR%%/ide/return.xpm
 %%PORTDOCS%%%%EXAMPLESDIR%%/ide/run.xpm
 %%PORTDOCS%%%%EXAMPLESDIR%%/ide/step.xpm
+%%PORTDOCS%%%%EXAMPLESDIR%%/pango/extentdemo.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pango/pangocairo-simple.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pango/utf8-demo.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pygtk-demo/demos/__init__.py
@@ -264,6 +265,7 @@ share/pygtk/2.0/defs/gtk-2.12-types.defs
 share/pygtk/2.0/defs/gtk-2.12.defs
 share/pygtk/2.0/defs/gtk-base-types.defs
 share/pygtk/2.0/defs/gtk-base.defs
+share/pygtk/2.0/defs/gtk-extrafuncs.defs
 share/pygtk/2.0/defs/gtk-types.defs
 share/pygtk/2.0/defs/gtk.defs
 share/pygtk/2.0/defs/gtkunixprint.defs
