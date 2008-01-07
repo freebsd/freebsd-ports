@@ -1,6 +1,6 @@
---- setup/FreeBSD/make.local.orig	Fri Jun 15 22:52:47 2007
-+++ setup/FreeBSD/make.local	Fri Jun 15 22:53:15 2007
-@@ -2,14 +2,9 @@
+--- setup/FreeBSD/make.local.orig	2008-01-05 18:38:18.000000000 -0500
++++ setup/FreeBSD/make.local	2008-01-07 11:52:17.000000000 -0500
+@@ -2,10 +2,9 @@
  	sh build.sh
  
  copy:	build
@@ -11,8 +11,4 @@
  
  install:	copy
 -		cd /usr/lib/oss/build && sh install.sh
--		sync
--		soundoff
--		sync
--		soundon
 +		cd prototype/usr/lib/oss/build && sh install.sh
