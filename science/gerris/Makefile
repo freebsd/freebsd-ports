@@ -35,15 +35,21 @@ CONFIGURE_ARGS+=	--disable-dx
 USE_GMAKE=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 USE_GNOME=		pkgconfig
 USE_GETOPT_LONG=	yes
 
 CONFIGURE_ARGS+=	--disable-mpi
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=	does not compile
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|'	\
 		${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
