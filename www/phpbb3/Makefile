@@ -7,6 +7,7 @@
 
 PORTNAME=	phpbb
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	phpBB-${PORTVERSION}
@@ -14,7 +15,8 @@ DISTNAME=	phpBB-${PORTVERSION}
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
-CONFLICTS=	phpbb-tw-[0-9]* phpbb-devel-[0-9]*
+CONFLICTS=	phpbb-tw-[0-9]* phpbb-devel-[0-9]* \
+		phpbb-[0-2]*
 
 USE_BZIP2=	yes
 
