@@ -286,6 +286,7 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Maceio.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Managua.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Manaus.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Marigot.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Martinique.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Mazatlan.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Mendoza.rb
@@ -326,6 +327,7 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Sao_Paulo.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Scoresbysund.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/Shiprock.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/St_Barthelemy.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/St_Johns.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/St_Kitts.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/America/St_Lucia.rb
