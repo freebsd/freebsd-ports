@@ -1,3 +1,4 @@
+bin/gem
 bin/gem18
 bin/update_rubygems18
 lib/ruby/gems/%%RUBY_VER%%/cache/sources-0.0.2.gem
@@ -1391,7 +1392,6 @@ lib/ruby/gems/%%RUBY_VER%%/doc/%%DISTNAME%%/ri/created.rid
 @dirrm %%RUBY_SITELIBDIR%%/rubygems/commands
 @dirrm %%RUBY_SITELIBDIR%%/rubygems
 @dirrm %%RUBY_SITELIBDIR%%/rbconfig
-@dirrmtry lib/ruby/gems/%%RUBY_VER%%/source_cache
 @dirrmtry lib/ruby/gems/%%RUBY_VER%%/specifications
 @dirrm lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.2/lib
 @dirrm lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.2

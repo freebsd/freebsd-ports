@@ -7,7 +7,7 @@
 
 PORTNAME=	gems
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	ruby${PORTNAME}
@@ -29,5 +29,8 @@ PLIST_SUB+=	DISTNAME="${DISTNAME}"
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} ${RUBY_SETUP}
+
+post-install:
+	@${LN} -sf ${PREFIX}/bin/gem${RUBY_VER:E} ${PREFIX}/bin/gem
 
 .include <bsd.port.mk>
