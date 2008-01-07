@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/${PORTVERSION:R}.x/
 
@@ -29,8 +29,6 @@ LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr-svn \
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
@@ -38,8 +36,8 @@ INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
+EXTRA_PATCHES=	${FILESDIR}/nls-patch-CMakeLists.txt
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}

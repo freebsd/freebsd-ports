@@ -24,6 +24,7 @@ include/svnqt/smart_pointer.hpp
 include/svnqt/status.hpp
 include/svnqt/svnfilestream.hpp
 include/svnqt/svnqt_defines.hpp
+include/svnqt/svnqttypes.hpp
 include/svnqt/svnstream.hpp
 include/svnqt/targets.hpp
 include/svnqt/url.hpp
@@ -35,11 +36,12 @@ lib/kde3/kio_ksvn.la
 lib/kde3/kio_ksvn.so
 lib/kde3/libkdesvnpart.la
 lib/kde3/libkdesvnpart.so
-lib/libsvnqt.la
 lib/libsvnqt.so
-lib/libsvnqt.so.3
-lib/libsvnqt.so.3.2.0
+lib/libsvnqt.so.4
+lib/libsvnqt.so.4.0.0
 share/applications/kde/kdesvn.desktop
+share/apps/kconf_update/kdesvnpartrc-use-external.upd
+share/apps/kconf_update/kdesvn-use-external-update.sh
 share/apps/kdesvn/kdesvnui.rc
 share/apps/kdesvnpart/kdesvn_part.rc
 share/apps/konqueror/servicemenus/kdesvn_subversion.desktop
