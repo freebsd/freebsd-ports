@@ -1,6 +1,6 @@
 MD5 (postgresql/postgresql-8.0.15.tar.bz2) = 3ee548b3643e0a0a4b76493e81b336f3
 SHA256 (postgresql/postgresql-8.0.15.tar.bz2) = 59408a00db1c73e638a11af10438a827507b7a72b53916d58f2d44c477718714
-SIZE (postgresql/postgresql-8.0.15.tar.bz2) = 14011109
+SIZE (postgresql/postgresql-8.0.15.tar.bz2) = 11253897
 MD5 (postgresql/hier-Pg8.0.3-0.5.5.diff.gz) = 9fa75cd7b3f1cb913d2e6d310582a4bc
 SHA256 (postgresql/hier-Pg8.0.3-0.5.5.diff.gz) = f3a1849f2d527759ef721502cb445a435e072cc9be820c2e489c9e4a71c7adbe
 SIZE (postgresql/hier-Pg8.0.3-0.5.5.diff.gz) = 30555
