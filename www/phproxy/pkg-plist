@@ -2,8 +2,8 @@
 %%DOCSDIR%%/LICENSE.txt
 %%DOCSDIR%%/README.txt
 %%DOCSDIR%%/TODO.txt
-%%PHPROXY%%/index.inc.php
-%%PHPROXY%%/index.php
-%%PHPROXY%%/style.css
-@dirrm %%PHPROXY%%
+%%WWWDIR%%/index.inc.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/style.css
+@dirrm %%WWWDIR%%
 @dirrm %%DOCSDIR%%
