@@ -276,6 +276,7 @@ share/postgresql/timezone/America/Louisville
 share/postgresql/timezone/America/Maceio
 share/postgresql/timezone/America/Managua
 share/postgresql/timezone/America/Manaus
+share/postgresql/timezone/America/Marigot
 share/postgresql/timezone/America/Martinique
 share/postgresql/timezone/America/Mazatlan
 share/postgresql/timezone/America/Mendoza
@@ -316,6 +317,7 @@ share/postgresql/timezone/America/Santo_Domingo
 share/postgresql/timezone/America/Sao_Paulo
 share/postgresql/timezone/America/Scoresbysund
 share/postgresql/timezone/America/Shiprock
+share/postgresql/timezone/America/St_Barthelemy
 share/postgresql/timezone/America/St_Johns
 share/postgresql/timezone/America/St_Kitts
 share/postgresql/timezone/America/St_Lucia

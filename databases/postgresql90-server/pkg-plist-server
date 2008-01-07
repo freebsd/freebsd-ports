@@ -118,6 +118,9 @@ share/postgresql/system_views.sql
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/ta/LC_MESSAGES/initdb.mo
+%%GETTEXT%%share/locale/ta/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/ta/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/ta/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/initdb.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_ctl.mo
@@ -279,6 +282,7 @@ share/postgresql/timezone/America/Louisville
 share/postgresql/timezone/America/Maceio
 share/postgresql/timezone/America/Managua
 share/postgresql/timezone/America/Manaus
+share/postgresql/timezone/America/Marigot
 share/postgresql/timezone/America/Martinique
 share/postgresql/timezone/America/Mazatlan
 share/postgresql/timezone/America/Mendoza
@@ -319,6 +323,7 @@ share/postgresql/timezone/America/Santo_Domingo
 share/postgresql/timezone/America/Sao_Paulo
 share/postgresql/timezone/America/Scoresbysund
 share/postgresql/timezone/America/Shiprock
+share/postgresql/timezone/America/St_Barthelemy
 share/postgresql/timezone/America/St_Johns
 share/postgresql/timezone/America/St_Kitts
 share/postgresql/timezone/America/St_Lucia
@@ -750,16 +755,6 @@ share/postgresql/tsearch_data/ispell_sample.dict
 share/postgresql/tsearch_data/synonym_sample.syn
 share/postgresql/tsearch_data/thesaurus_sample.ths
 @dirrm share/postgresql/tsearch_data
-@unexec if cmp -s ~pgsql/.profile %D/share/postgresql/dot.profile.dist; then rm -f ~pgsql/.profile; fi
-@unexec if cmp -s ~pgsql/.cshrc %D/share/postgresql/dot.cshrc.dist; then rm -f ~pgsql/.cshrc; fi
-@unexec [ -f ~pgsql/dot.profile.dist ] && rm ~pgsql/dot.profile.dist
-@unexec [ -f ~pgsql/dot.cshrc.dist ] && rm ~pgsql/dot.cshrc.dist
-share/postgresql/dot.profile.dist
-share/postgresql/dot.cshrc.dist
-@exec [ -f %D/share/postgresql/dot.profile.dist ] && cp %D/share/postgresql/dot.profile.dist ~pgsql/.
-@exec [ -f %D/share/postgresql/dot.cshrc.dist ] && cp %D/share/postgresql/dot.cshrc.dist ~pgsql/.
-@exec [ -f ~pgsql/.profile ] || (cp %D/share/postgresql/dot.profile.dist ~pgsql/.profile && chown pgsql:pgsql ~pgsql/.profile)
-@exec [ -f ~pgsql/.cshrc ] || (cp %D/share/postgresql/dot.cshrc.dist ~pgsql/.cshrc && chown pgsql:pgsql ~pgsql/.cshrc)
 @unexec echo "Warning: If you will *NOT* use this package anymore, please remove the pgsql user manually."
 @dirrmtry share/postgresql
 @dirrmtry etc/periodic/daily

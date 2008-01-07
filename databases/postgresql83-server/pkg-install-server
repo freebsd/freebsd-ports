@@ -2,8 +2,7 @@
 
 # $FreeBSD$
 
-PATH=/bin:/usr/sbin
-PGUSER=pgsql
+PATH=/bin:/usr/bin:/usr/sbin
 DB_DIR=${PKG_PREFIX}/${PGUSER}
 
 backupwarning() { echo "
@@ -27,9 +26,9 @@ case $2 in
 PRE-INSTALL)
 	backupwarning
 	USER=${PGUSER}
-	GROUP=${USER}
+	GROUP=${PGGROUP}
 	UID=70
-	GID=${UID}
+	GID=70
 
 	if pw group show "${GROUP}" 2>/dev/null; then
 		echo "You already have a group \"${GROUP}\", so I will use it."
@@ -56,8 +55,7 @@ PRE-INSTALL)
 	fi
 
 	if ! [ -x ~${PGUSER} ] ; then 
-		mkdir -p ${DB_DIR}
-		chown pgsql:pgsql ${DB_DIR}
+		install -m 755 -o ${PGUSER} -g ${PGGROUP} -d ${DB_DIR}
 	fi
 	;;
 

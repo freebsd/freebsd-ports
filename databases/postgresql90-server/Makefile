@@ -6,19 +6,16 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.3beta2
+PORTVERSION?=	8.3RC1
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION:C/[0-9]$//}
 PKGNAMESUFFIX?=	-server
-DISTFILES?=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
-		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES?=	postgresql-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	BETA VERSION of the PostgreSQL server, only for testing
-
-BROKEN=		Unfetchable
 
 CONFLICTS?=	${PORTNAME}-client-7.* \
 		${PORTNAME}${PKGNAMESUFFIX}-7.* \
@@ -40,6 +37,9 @@ GNU_CONFIGURE=	YES
 .undef GNU_CONFIGURE
 .endif
 
+PGUSER=		pgsql
+PGGROUP=	pgsql
+
 CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include \
 		--with-docdir=${DOCSDIR}
@@ -58,13 +58,17 @@ INSTALL_DIRS?=	${BUILD_DIRS}
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
 SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
-SUB_FILES+=	dot.cshrc dot.profile
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
 .endif
 
 .if !defined(SLAVE_ONLY)
 OPTIONS=	NLS "Use internationalized messages" on
+.endif
+
+.if !defined(CLIENT_ONLY)
+MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
+CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .endif
 
 # Cannot check this with standard OPTION due to a catch-22.
@@ -120,10 +124,6 @@ OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 # .  endif
 
 PATCH_DIST_STRIP=-p1
-
-.  ifmake makesum
-DISTFILES+=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
-.  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
@@ -183,13 +183,9 @@ CONFIGURE_ARGS+=--with-krb5
 # Postgresql apps will not link properly when libpq is linked with base heimdal in /usr,
 # so we always use the heimdal port. See
 # http://lists.freebsd.org/pipermail/freebsd-stable/2005-October/018809.html
-LIB_DEPENDS+=	krb5.21:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	krb5.23:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=--with-krb5
 .    endif
-.  endif
-
-.  if (defined(SERVER_ONLY) && defined(WITH_TESTS)) || defined(WITH_THREADSAFE) || make(makesum)
-DISTFILES+=	postgresql-test-${PORTVERSION}${EXTRACT_SUFX}
 .  endif
 
 .  if defined(WITH_THREADSAFE)
@@ -290,7 +286,7 @@ PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 
 .if defined(SERVER_ONLY)
 pre-su-install:
-	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+	@ ${SETENV} PKG_PREFIX=${PREFIX} PGUSER=${PGUSER} PGGROUP=${PGGROUP} \
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
@@ -301,15 +297,7 @@ do-install:
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}; \
 	done
 .  if defined(SERVER_ONLY)
-	@ ${MKDIR} ${PREFIX}/share/postgresql
-.    for i in profile cshrc
-	${INSTALL_DATA} ${WRKDIR}/dot.$i ${PREFIX}/share/postgresql/dot.$i.dist; \
-	${INSTALL_DATA} -o pgsql -g pgsql ${WRKDIR}/dot.$i ~pgsql/dot.$i.dist ; \
-	if [ ! -f ~pgsql/.$i ]; then \
-		${CP} -p ~pgsql/dot.$i.dist ~pgsql/.$i; \
-	fi
-.    endfor
-	@ ${CHOWN} -R pgsql:pgsql ~pgsql/. ;\
+	@ ${MKDIR} ${PREFIX}/share/postgresql ;\
 	${MKDIR} ${PREFIX}/etc/periodic/daily ;\
 	${INSTALL_SCRIPT} ${FILESDIR}/502.pgsql \
 			${PREFIX}/etc/periodic/daily
