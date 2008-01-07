@@ -1,10 +1,10 @@
---- texi/Makefile.orig	Tue Jun 19 09:33:34 2007
-+++ texi/Makefile	Tue Jun 19 09:33:54 2007
-@@ -22,5 +22,5 @@
+--- texi/Makefile.orig	2008-01-07 17:34:47.000000000 +0800
++++ texi/Makefile	2008-01-07 17:35:24.000000000 +0800
+@@ -25,5 +25,5 @@
  
  install: $(MANUAL).info
  	[ -d $(INFODIR) ] || install -d $(INFODIR)
 -	install -m 0644 $(MANUAL).info $(INFODIR)/$(MANUAL)
--	$(INSTALLINFO) $(INFODIR)/$(MANUAL)
+-	$(call install_info,$(MANUAL))
 +	install -m 0644 $(MANUAL).info $(INFODIR)/$(MANUAL).info
-+	$(INSTALLINFO) $(INFODIR)/$(MANUAL).info
++	$(call install_info,$(MANUAL).info)

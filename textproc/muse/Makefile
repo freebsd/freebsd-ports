@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	muse
-PORTVERSION=	3.03
+PORTVERSION=	3.11
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://download.gna.org/muse-el/ \
 		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MASTER_SITE_SUBDIR=	dryice
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	An authoring and publishing environment for Emacs
 
 USE_EMACS=	yes
 USE_GMAKE=	yes
-EMACS_PORT_NAME?=	emacs21
+EMACS_PORT_NAME?=	emacs22
 
 INFO=		muse
 
-.if ${EMACS_PORT_NAME} != "emacs21"
+.if ${EMACS_PORT_NAME} != "emacs22"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
 

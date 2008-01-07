@@ -3,9 +3,12 @@
 %%EMACS_SITE_LISPDIR%%/muse/contrib/httpd.el
 %%EMACS_SITE_LISPDIR%%/muse/contrib/httpd.elc
 %%EMACS_SITE_LISPDIR%%/muse/contrib/Makefile
+%%EMACS_SITE_LISPDIR%%/muse/contrib/blosxom/getstamps.pl
+%%EMACS_SITE_LISPDIR%%/muse/contrib/blosxom/metadate_0_0_3
 %%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom/getstamps.py
 %%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom/hardcodedates.py
 %%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom/make-blog
+%%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom/metadate.py
 %%EMACS_SITE_LISPDIR%%/muse/experimental/Makefile
 %%EMACS_SITE_LISPDIR%%/muse/experimental/muse-cite.el
 %%EMACS_SITE_LISPDIR%%/muse/experimental/muse-mathml.el
@@ -21,6 +24,8 @@
 %%EMACS_SITE_LISPDIR%%/muse/muse-book.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-colors.el
 %%EMACS_SITE_LISPDIR%%/muse/muse-colors.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-context.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-context.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-docbook.el
 %%EMACS_SITE_LISPDIR%%/muse/muse-docbook.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-groff.el
@@ -86,6 +91,7 @@
 @dirrm %%EXAMPLESDIR%%/johnw
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%EMACS_SITE_LISPDIR%%/muse/experimental
+@dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/blosxom
 @dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom
 @dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib
 @dirrm %%EMACS_SITE_LISPDIR%%/muse
