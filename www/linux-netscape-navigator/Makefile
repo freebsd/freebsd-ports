@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	linux-
 MAINTAINER=	gahr@gahr.ch
 COMMENT=	Web browser from AOL Netscape
 
+DEPRECATED=	End of support by AOL on 2008-02-01: \
+http://blog.netscape.com/2007/12/28/end-of-support-for-netscape-web-browsers/
+EXPIRATION_DATE=	2008-01-31
 RESTRICTED=	redistribution not allowed
 BIN_NAME=	navigator
 
