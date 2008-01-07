@@ -11482,6 +11482,7 @@ p5-WWW-Mechanize-Plugin-phpBB	ports/www/p5-WWW-Mechanize-Plugin-phpBB
 p5-WWW-Mechanize-Shell	ports/www/p5-WWW-Mechanize-Shell
 p5-WWW-Mediawiki-Client	ports/www/p5-WWW-Mediawiki-Client
 p5-WWW-Mixi	ports/www/p5-WWW-Mixi
+p5-WWW-Mixi-Scraper	ports/www/p5-WWW-Mixi-Scraper
 p5-WWW-Myspace	ports/www/p5-WWW-Myspace
 p5-WWW-OpenSVN	ports/www/p5-WWW-OpenSVN
 p5-WWW-OpenSearch	ports/www/p5-WWW-OpenSearch
