@@ -912,6 +912,7 @@
     SUBDIR += p5-WWW-Mechanize-Shell
     SUBDIR += p5-WWW-Mediawiki-Client
     SUBDIR += p5-WWW-Mixi
+    SUBDIR += p5-WWW-Mixi-Scraper
     SUBDIR += p5-WWW-Myspace
     SUBDIR += p5-WWW-OpenSVN
     SUBDIR += p5-WWW-OpenSearch
