@@ -1258,21 +1258,21 @@ bin/port_control
 %%WWWDIR%%/traceroute.html
 %%WWWDIR%%/valid-html401.png
 %%WWWDIR%%/vcss.gif
+@unexec d="%D/etc/netdisco"; f="netdisco.conf";            if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
 etc/netdisco/netdisco.conf.sample
 @exec if [ ! -f %D/etc/netdisco/netdisco.conf ] ; then cp -p %D/etc/netdisco/netdisco.conf.sample %D/etc/netdisco/netdisco.conf; fi
-@unexec d="%D/etc/netdisco"; f="netdisco.conf";            if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
+@unexec d="%D/etc/netdisco"; f="netdisco-topology.txt";    if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
 etc/netdisco/netdisco-topology.txt.sample
 @exec if [ ! -f %D/etc/netdisco/netdisco-topology.txt ] ; then cp -p %D/etc/netdisco/netdisco-topology.txt.sample %D/etc/netdisco/netdisco-topology.txt; fi
-@unexec d="%D/etc/netdisco"; f="netdisco-topology.txt";    if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
+@unexec d="%D/etc/netdisco"; f="netdisco.crontab";         if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
 etc/netdisco/netdisco.crontab.sample
 @exec if [ ! -f %D/etc/netdisco/netdisco.crontab ] ; then cp -p %D/etc/netdisco/netdisco.crontab.sample %D/etc/netdisco/netdisco.crontab; fi
-@unexec d="%D/etc/netdisco"; f="netdisco.crontab";         if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
+@unexec d="%D/etc/netdisco"; f="netdisco_apache.conf";     if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
 etc/netdisco/netdisco_apache.conf.sample
 @exec if [ ! -f %D/etc/netdisco/netdisco_apache.conf ] ; then cp -p %D/etc/netdisco/netdisco_apache.conf.sample %D/etc/netdisco/netdisco_apache.conf; fi
-@unexec d="%D/etc/netdisco"; f="netdisco_apache.conf";     if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
+@unexec d="%D/etc/netdisco"; f="netdisco_apache_dir.conf"; if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
 etc/netdisco/netdisco_apache_dir.conf.sample
 @exec if [ ! -f %D/etc/netdisco/netdisco_apache_dir.conf ] ; then cp -p %D/etc/netdisco/netdisco_apache_dir.conf.sample %D/etc/netdisco/netdisco_apache_dir.conf; fi
-@unexec d="%D/etc/netdisco"; f="netdisco_apache_dir.conf"; if cmp -s ${d}/${f}.sample ${d}/${f}; then rm -f ${d}/${f}; fi;
 @dirrm %%WWWDIR%%/doc
 @exec mkdir -p %D/%%WWWDIR%%/mason
 @dirrm %%WWWDIR%%/mason

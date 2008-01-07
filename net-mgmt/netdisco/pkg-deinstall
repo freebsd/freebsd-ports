@@ -10,11 +10,19 @@ GROUP=${USER}
 echo ""
 
 if pw usershow "${USER}" 2>/dev/null 1>&2; then
-	echo "To delete the netdisco user permanently, use 'pw userdel ${USER}'."
+	if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
+		echo "To delete the netdisco user permanently, use 'pw userdel ${USER}'."
+	else
+		pw userdel ${USER}
+	fi
 fi
 
 if pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
-	echo "To delete the netdisco group permanently, use 'pw groupdel ${GROUP}'."
+	if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
+		echo "To delete the netdisco group permanently, use 'pw groupdel ${GROUP}'."
+	else
+		pw groupdel ${USER}
+	fi
 fi
 
 TMPDIR=${TMPDIR:=/tmp}
