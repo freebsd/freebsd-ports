@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -187,9 +187,9 @@ PLIST_FILES+=	include/proftpd/mod_sql.h
 .endif
 
 .if defined(WITH_OPENSSL)
-CFLAGS+=	-DHAVE_OPENSSL
 .include <${PORTSDIR}/Mk/bsd.openssl.mk>
-PROFTPD_LIBS+=	-lssl -lcrypto -L${LOCALBASE}/lib
+CFLAGS+=	-DHAVE_OPENSSL -I${OPENSSLINC}
+PROFTPD_LIBS+=	-lssl -lcrypto -L${OPENSSLLIB}
 MODULES:=${MODULES}:mod_tls
 .endif
 
