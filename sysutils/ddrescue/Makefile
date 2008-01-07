@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ddrescue
-DISTVERSION=	1.6
+DISTVERSION=	1.7
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -23,7 +23,8 @@ INFO=	${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|LONG_LONG|LLONG|' ${WRKSRC}/main.cc
+	@${REINPLACE_CMD} -e 's|LONG_LONG|LLONG|' \
+		${WRKSRC}/main.cc ${WRKSRC}/rescuebook.cc
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
