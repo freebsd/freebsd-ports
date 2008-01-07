@@ -1,0 +1,27 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi/Scraper/.packlist
+%%SITE_PERL%%/WWW/Mixi/Scraper.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Utils.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Mech.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/NewMusic.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/NewBBS.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ListComment.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ListMessage.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ShowFriend.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ViewEvent.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ShowLog.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ListDiary.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ShowCalendar.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ViewMessage.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/NewFriendDiary.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ViewDiary.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ViewBBS.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/NewVideo.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi/Scraper
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Mixi/Scraper/Plugin
+@dirrmtry %%SITE_PERL%%/WWW/Mixi/Scraper
+@dirrmtry %%SITE_PERL%%/WWW/Mixi
+@dirrmtry %%SITE_PERL%%/WWW
