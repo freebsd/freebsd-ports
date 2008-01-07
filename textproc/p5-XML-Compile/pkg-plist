@@ -2,8 +2,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/.packlist
 %%SITE_PERL%%/XML/Compile.pm
 %%SITE_PERL%%/XML/Compile.pod
-%%SITE_PERL%%/XML/Compile/Dumper.pm
-%%SITE_PERL%%/XML/Compile/Dumper.pod
 %%SITE_PERL%%/XML/Compile/Iterator.pm
 %%SITE_PERL%%/XML/Compile/Iterator.pod
 %%SITE_PERL%%/XML/Compile/Schema.pm
@@ -32,6 +30,7 @@
 %%SITE_PERL%%/XML/Compile/xsd/1999-XMLSchema-part2.xsd
 %%SITE_PERL%%/XML/Compile/xsd/1999-XMLSchema.xsd
 %%SITE_PERL%%/XML/Compile/xsd/2000-XMLSchema.xsd
+%%SITE_PERL%%/XML/Compile/xsd/2001-XMLSchema-instance.xsd
 %%SITE_PERL%%/XML/Compile/xsd/2001-XMLSchema.dtd
 %%SITE_PERL%%/XML/Compile/xsd/2001-XMLSchema.xsd
 %%SITE_PERL%%/XML/Compile/xsd/2001-datatypes.dtd
