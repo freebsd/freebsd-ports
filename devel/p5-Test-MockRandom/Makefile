@@ -4,16 +4,15 @@
 # $FreeBSD$
 
 PORTNAME=	Test-MockRandom
-PORTVERSION=	0.99
+PORTVERSION=	1.00
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Test
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Replaces random number generation with non-random number generation
 
-BUILD_DEPENDS=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
+PERL_MODBUILD=	yes
 
 PERL_CONFIGURE=	yes
 
