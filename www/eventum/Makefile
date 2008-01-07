@@ -7,6 +7,7 @@
 
 PORTNAME=	eventum
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	eventum
@@ -17,6 +18,9 @@ COMMENT=	Eventum issue tracking system
 NO_BUILD=	YES
 USE_PHP=	pcre session mysql gd gettext
 WANT_PHP_WEB=	YES
+
+pre-install:
+	@${MV} ${WRKSRC}/setup/config.php ${WRKSRC}/setup/config.php-dist
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%WWWOWN%%|${WWWOWN}|g' ${WRKSRC}/misc/monitor.php
