@@ -1,6 +1,14 @@
---- src/lib/fclock.c.orig	Sat Jan  5 00:50:24 2008
-+++ src/lib/fclock.c	Sat Jan  5 00:51:05 2008
-@@ -66,7 +66,7 @@
+--- src/lib/fclock.c.orig	Sun Dec 23 15:10:22 2007
++++ src/lib/fclock.c	Mon Jan  7 00:46:01 2008
+@@ -26,6 +26,7 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <time.h>
++#include <sys/time.h>
+ #include <sys/times.h>
+ #include <math.h>
+ #include <assert.h>
+@@ -66,7 +67,7 @@
      }
      result = (long double)c/CLK_TCK;
  #endif
