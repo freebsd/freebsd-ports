@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fbreader
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.10
 DISTVERSIONPREFIX=	sources-
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/ CENKES
