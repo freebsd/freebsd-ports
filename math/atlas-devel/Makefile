@@ -19,8 +19,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Development version of math/atlas
 
-IGNORE=		Please use math/atlas instead. atlas is newer.
-NO_PACKAGE=	Optimizes for the local machine, so a package is not generally useful.  Set FORCE_PACKAGE to override
+IGNORE=		please use math/atlas instead. atlas is newer
+MANUAL_PACKAGE_BUILD=	Optimizes for the local machine
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
