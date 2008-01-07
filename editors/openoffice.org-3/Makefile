@@ -7,6 +7,7 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
+PORTREVISION?=	1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://openoffice.lunarshells.com/sources/ \
@@ -52,9 +53,9 @@ WITHOUT_CPU_CFLAGS=	true
 
 .include <bsd.port.pre.mk>
 
+USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	freebsd bsdjava
-USE_JAVA=	yes
 .if (${OSVERSION} >= 700000)
 JAVA_VERSION=	1.5
 .else
@@ -101,6 +102,10 @@ PKGNAMESUFFIX=		-${LANG_SUFFIX}
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_GCC=	4.2
+#following part should sync with ports/Mk/bsd.gcc.mk
+.if (${OSVERSION} >= 700042)
+CONFIGURE_ARGS+=	--with-system-stdlibs
+.endif
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 CCACHE_PREFIX=	ccache
@@ -190,9 +195,9 @@ do-build:
 	@cd ${WRKSRC} ; ./bootstrap
 # PR:84786 #i53289#
 .if (${NUMOFPROCESSES}>1)
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; cd instsetoo_native ; build.pl -P${NUMOFPROCESSES} --all"
 .else
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; dmake"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; setenv TMP ${WRKSRC} ; dmake"
 .endif
 .if ${LOCALIZED_LANG} == "all"
 	@${MAKE} languagepack
