@@ -13,7 +13,7 @@
 
     amavisd_enable="YES"
 
- Optionally enable amavisd tmp ram disk with: (example 512k)
+ Optionally enable amavisd tmp ram disk with: (example 512m)
 
     amavisd_ram="512m"
 
