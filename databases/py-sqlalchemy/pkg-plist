@@ -5,6 +5,9 @@
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/access.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/access.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/access.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/firebird.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/firebird.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/firebird.pyo
@@ -14,9 +17,15 @@
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/informix.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/informix.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/informix.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/maxdb.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/maxdb.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/maxdb.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/mssql.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/mssql.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/mssql.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/mxODBC.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/mxODBC.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/mxODBC.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/mysql.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/mysql.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/mysql.pyo
@@ -29,6 +38,9 @@
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/sqlite.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/sqlite.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/sqlite.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/sybase.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/sybase.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/sybase.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/__init__.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/__init__.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/databases/__init__.pyo
@@ -62,9 +74,6 @@
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/orderinglist.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/orderinglist.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/orderinglist.pyo
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/proxy.py
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/proxy.pyc
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/proxy.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/selectresults.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/selectresults.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/selectresults.pyo
@@ -77,24 +86,24 @@
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/__init__.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/__init__.pyo
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods/legacy_session.py
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods/legacy_session.pyc
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods/legacy_session.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods/selectresults.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods/selectresults.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods/selectresults.pyo
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods/threadlocal.py
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods/threadlocal.pyc
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods/threadlocal.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods/__init__.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods/__init__.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods/__init__.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/attributes.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/attributes.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/attributes.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/collections.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/collections.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/collections.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/dependency.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/dependency.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/dependency.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/dynamic.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/dynamic.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/dynamic.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/interfaces.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/interfaces.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/interfaces.pyo
@@ -107,9 +116,15 @@
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/query.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/query.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/query.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/scoping.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/scoping.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/scoping.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/session.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/session.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/session.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/shard.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/shard.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/shard.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/strategies.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/strategies.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/strategies.pyo
@@ -128,12 +143,12 @@
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/__init__.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/__init__.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm/__init__.pyo
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ansisql.py
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ansisql.pyc
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ansisql.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/exceptions.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/interfaces.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/interfaces.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/interfaces.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/logging.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/logging.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/logging.pyo
@@ -146,12 +161,27 @@
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/schema.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/schema.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/schema.pyo
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql.py
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql.pyc
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql.pyo
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql_util.py
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql_util.pyc
-%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql_util.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/compiler.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/compiler.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/compiler.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/expression.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/expression.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/expression.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/functions.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/functions.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/functions.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/operators.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/operators.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/operators.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/util.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/util.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/util.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/visitors.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/visitors.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/visitors.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/__init__.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql/__init__.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/topological.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/topological.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/topological.pyo
@@ -170,6 +200,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext
 @dirrm %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/mods
 @dirrm %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/orm
+@dirrm %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/sql
 @dirrm %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/
 @dirrm %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg
 @exec %%PREFIX%%/bin/easy_install -q -N  -S %%PREFIX%%/%%PYTHON_SITELIBDIR%% %%EGG%%

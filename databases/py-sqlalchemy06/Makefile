@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.3.10
+PORTVERSION=	0.4.2a
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://cheeseshop.python.org/packages/source/S/SQLAlchemy/ \
@@ -41,17 +41,12 @@ OPTIONS+=	POSTGRE "support PostGreSQL" on
 OPTIONS+=	SQLITE "support Sqlite" on
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	adv_datamapping.html alphaapi.html \
-		alphaimplementation.html datamapping.html \
-		dbengine.html docs.css docstrings.html \
-		documentation.html index.html metadata.html \
-		plugins.html pooling.html scripts.js \
-		sqlconstruction.html style.css syntaxhighlight.css \
-		tutorial.html types.html unitofwork.html
+PORTDOCS=	*.html *.css *.js
 .endif
 
-PORTEXAMPLES=	adjacencytree association backref collections graphs \
-	pickle polymorph poly_assoc vertical
+PORTEXAMPLES=	adjacencytree association collections \
+		derived_attributes elementtree graphs pickle polymorph \
+		poly_assoc sharding vertical
 
 .include <bsd.port.pre.mk>
 
