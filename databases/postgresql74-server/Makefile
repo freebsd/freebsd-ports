@@ -6,14 +6,13 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.18
-PORTREVISION?=	1
+PORTVERSION?=	7.4.19
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 PKGNAMESUFFIX?=	-server
-DISTFILES?=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
-		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES?=	postgresql-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
@@ -149,18 +148,13 @@ CONFIGURE_ARGS+=--with-krb5=${HEIMDAL_HOME}
 # Postgresql apps will not link properly when libpq is linked with base heimdal in /usr,
 # so we always use the heimdal port. See
 # http://lists.freebsd.org/pipermail/freebsd-stable/2005-October/018809.html
-LIB_DEPENDS+=	krb5.21:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	krb5.23:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=--with-krb5=${LOCALBASE}
 .    endif
 .  endif
 
 .  if (defined(SERVER_ONLY) && defined(WITH_TESTS)) || make(makesum)
-DISTFILES+=	postgresql-test-${PORTVERSION}${EXTRACT_SUFX}
 EXTRA_PATCHES=	${FILESDIR}/regresspatch-src-test-regress-pgregress-sh
-.  endif
-
-.  ifmake makesum
-DISTFILES+=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
 .  endif
 
 PATCH_DIST_STRIP=-p1

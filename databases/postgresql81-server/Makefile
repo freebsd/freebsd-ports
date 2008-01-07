@@ -6,14 +6,13 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.1.10
-PORTREVISION?=	2
+PORTVERSION?=	8.1.11
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 PKGNAMESUFFIX?=	-server
-DISTFILES?=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
-		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES?=	postgresql-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
@@ -113,14 +112,10 @@ USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-814-icu-xx-2006-09-25.diff.gz:icu
+PATCHFILES+=	pg-8111-icu-xx-2008-01-07.diff.gz:icu
 .  endif
 
 PATCH_DIST_STRIP=-p1
-
-.  ifmake makesum
-DISTFILES+=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
-.  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
@@ -175,13 +170,12 @@ CONFIGURE_ARGS+=--with-krb5
 # Postgresql apps will not link properly when libpq is linked with base heimdal in /usr,
 # so we always use the heimdal port. See
 # http://lists.freebsd.org/pipermail/freebsd-stable/2005-October/018809.html
-LIB_DEPENDS+=	krb5.21:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	krb5.23:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=--with-krb5
 .    endif
 .  endif
 
 .  if (defined(SERVER_ONLY) && defined(WITH_TESTS)) || make(makesum)
-DISTFILES+=	postgresql-test-${PORTVERSION}${EXTRACT_SUFX}
 EXTRA_PATCHES=	${FILESDIR}/regresspatch-src-test-regress-pgregress-sh
 .  endif
 

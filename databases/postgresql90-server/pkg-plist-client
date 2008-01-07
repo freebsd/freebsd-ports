@@ -592,6 +592,8 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/ta/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/ta/LC_MESSAGES/pg_config.mo
+%%GETTEXT%%share/locale/ta/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_config.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_dump.mo

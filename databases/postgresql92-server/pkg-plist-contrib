@@ -32,38 +32,6 @@ lib/postgresql/tablefunc.so
 lib/postgresql/timetravel.so
 %%DOCSDIR%%/README-contrib
 %%DOCSDIR%%/contrib/README
-%%DOCSDIR%%/contrib/README.adminpack
-%%DOCSDIR%%/contrib/README.btree_gist
-%%DOCSDIR%%/contrib/README.chkpass
-%%DOCSDIR%%/contrib/README.cube
-%%DOCSDIR%%/contrib/README.dblink
-%%DOCSDIR%%/contrib/README.earthdistance
-%%DOCSDIR%%/contrib/README.fuzzystrmatch
-%%DOCSDIR%%/contrib/README.hstore
-%%DOCSDIR%%/contrib/README.int_aggregate
-%%DOCSDIR%%/contrib/README.intarray
-%%DOCSDIR%%/contrib/README.isn
-%%DOCSDIR%%/contrib/README.lo
-%%DOCSDIR%%/contrib/README.ltree
-%%DOCSDIR%%/contrib/README.oid2name
-%%DOCSDIR%%/contrib/README.pageinspect
-%%DOCSDIR%%/contrib/README.pg_buffercache
-%%DOCSDIR%%/contrib/README.pg_freespacemap
-%%DOCSDIR%%/contrib/README.pg_standby
-%%DOCSDIR%%/contrib/README.pg_trgm
-%%DOCSDIR%%/contrib/README.pgbench
-%%DOCSDIR%%/contrib/README.pgbench_jis
-%%DOCSDIR%%/contrib/README.pgcrypto
-%%DOCSDIR%%/contrib/README.pgrowlocks
-%%DOCSDIR%%/contrib/README.pgrowlocks.euc_jp
-%%DOCSDIR%%/contrib/README.pgstattuple
-%%DOCSDIR%%/contrib/README.pgstattuple.euc_jp
-%%DOCSDIR%%/contrib/README.seg
-%%DOCSDIR%%/contrib/README.soundex
-%%DOCSDIR%%/contrib/README.spi
-%%DOCSDIR%%/contrib/README.sslinfo
-%%DOCSDIR%%/contrib/README.tablefunc
-%%DOCSDIR%%/contrib/README.vacuumlo
 %%DOCSDIR%%/contrib/autoinc.example
 %%DOCSDIR%%/contrib/insert_username.example
 %%DOCSDIR%%/contrib/moddatetime.example
@@ -120,6 +88,8 @@ share/postgresql/contrib/uninstall_pgstattuple.sql
 share/postgresql/contrib/uninstall_seg.sql
 share/postgresql/contrib/uninstall_sslinfo.sql
 share/postgresql/contrib/uninstall_tablefunc.sql
+share/postgresql/tsearch_data/xsyn_sample.rules
+@dirrmtry share/postgresql/tsearch_data >&2
 @dirrmtry share/postgresql/contrib >&2
 @dirrmtry share/postgresql >&2
 @dirrmtry %%DOCSDIR%%/contrib >&2
