@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Automatically Tuned Linear Algebra Software (ATLAS)
 
-NO_PACKAGE=	Optimizes for the local machine, so a package is not generally useful.  Set FORCE_PACKAGE to override
+MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
