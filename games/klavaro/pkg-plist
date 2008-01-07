@@ -37,15 +37,15 @@ bin/klavaro
 %%DATADIR%%/dvorak_us_br.kbd
 %%DATADIR%%/dvorak_us_es.kbd
 %%DATADIR%%/dvorak_us_se.kbd
-%%DATADIR%%/eo_XX.paragraphs
-%%DATADIR%%/eo_XX.words
-%%DATADIR%%/eo_XX_about.txt
-%%DATADIR%%/eo_XX_adapt_intro.txt
-%%DATADIR%%/eo_XX_basic_intro.txt
-%%DATADIR%%/eo_XX_fluid_intro.txt
-%%DATADIR%%/eo_XX_help.txt
-%%DATADIR%%/eo_XX_intro.txt
-%%DATADIR%%/eo_XX_velo_intro.txt
+%%DATADIR%%/eo.paragraphs
+%%DATADIR%%/eo.words
+%%DATADIR%%/eo_about.txt
+%%DATADIR%%/eo_adapt_intro.txt
+%%DATADIR%%/eo_basic_intro.txt
+%%DATADIR%%/eo_fluid_intro.txt
+%%DATADIR%%/eo_help.txt
+%%DATADIR%%/eo_intro.txt
+%%DATADIR%%/eo_velo_intro.txt
 %%DATADIR%%/es_ES.paragraphs
 %%DATADIR%%/es_ES.words
 %%DATADIR%%/es_ES_about.txt
@@ -142,7 +142,7 @@ bin/klavaro
 %%DATADIR%%/sv_SE_velo_intro.txt
 share/locale/cs_CZ/LC_MESSAGES/klavaro.mo
 share/locale/de_DE/LC_MESSAGES/klavaro.mo
-share/locale/eo_XX/LC_MESSAGES/klavaro.mo
+share/locale/eo/LC_MESSAGES/klavaro.mo
 share/locale/es_ES/LC_MESSAGES/klavaro.mo
 share/locale/fr_FR/LC_MESSAGES/klavaro.mo
 share/locale/hu_HU/LC_MESSAGES/klavaro.mo
@@ -157,8 +157,6 @@ share/locale/sv_SE/LC_MESSAGES/klavaro.mo
 @dirrmtry share/locale/cs_CZ
 @dirrmtry share/locale/de_DE/LC_MESSAGES
 @dirrmtry share/locale/de_DE
-@dirrmtry share/locale/eo_XX/LC_MESSAGES
-@dirrmtry share/locale/eo_XX
 @dirrmtry share/locale/hu_HU/LC_MESSAGES
 @dirrmtry share/locale/hu_HU
 @dirrmtry share/locale/nl_BE/LC_MESSAGES
