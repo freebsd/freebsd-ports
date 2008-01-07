@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ekiga
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.0.11
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
@@ -33,6 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_ARGS=	--with-pwlib-dir=${LOCALBASE} \
 		--with-opal-dir=${LOCALBASE}
+ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 GCONF_SCHEMAS=	ekiga.schemas
 MAN1=		ekiga.1
@@ -48,7 +48,7 @@ pre-configure:
 .include <bsd.port.pre.mk>
 
 .ifndef (WITHOUT_AVAHI)
-LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=--enable-avahi
 .else
 CONFIGURE_ARGS+=--disable-avahi
