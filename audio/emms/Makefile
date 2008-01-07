@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	emms
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	audio elisp
-MASTER_SITES=	http://www.gnu.org/software/emms/releases/ \
+MASTER_SITES=	http://www.gnu.org/software/emms/download/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	EMMS is the Emacs Multi-Media System
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
+EMACS_PORT_NAME?=	emacs22
 
-.if ${EMACS_PORT_NAME} != "emacs21"
+.if ${EMACS_PORT_NAME} != "emacs22"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
 
