@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	makeself
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.megastep.org/makeself/
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	A neat script to make self-extracting archives
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
