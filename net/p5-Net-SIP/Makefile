@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-SIP
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Framework SIP (Voice Over IP, RFC3261)
 
 RUN_DEPENDS=	p5-Net-DNS>=0.56:${PORTSDIR}/dns/p5-Net-DNS
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.2+
 
 MAN3=		Net::SIP.3 Net::SIP::Debug.3 \
 		Net::SIP::Dispatcher.3 Net::SIP::Dispatcher::Eventloop.3 \
