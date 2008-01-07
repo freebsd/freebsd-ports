@@ -199,7 +199,7 @@ pre-configure:
 
 #	Clean up junk files to keep them from being installed.
 pre-install:
-	@${RM} -f ${WRKSRC}/../runtime/macros/maze/*.orig
+	@${FIND} ${WRKSRC:H} -type f -name '*.orig' -delete
 
 post-install:
 	[ -e ${PREFIX}/bin/gvim ] || (cd ${PREFIX}/bin ; ${LN} -sf vim gvim)
