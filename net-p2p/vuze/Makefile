@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	azureus
-PORTVERSION=	3.0.3.4
+PORTVERSION=	3.0.4.2
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
 DISTNAME=	Azureus_${PORTVERSION}_source
@@ -51,7 +51,7 @@ DESKTOP_ENTRIES=	"Azureus" \
 			"A full feature BitTorrent client" \
 			"${PORTNAME}.png" \
 			"${PORTNAME}" \
-			"" \
+			"Application;Network;P2P;" \
 			true
 
 INSTALLS_ICONS=		yes
@@ -91,12 +91,16 @@ do-install:
 	${MKDIR} ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/dist/lib/${JARFILE} ${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${PREFIX}/share/icons/hicolor/16x16/apps
 	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a16.png \
 		${PREFIX}/share/icons/hicolor/16x16/apps/${PORTNAME}.png
+	${MKDIR} ${PREFIX}/share/icons/hicolor/32x32/apps
 	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a32.png \
 		${PREFIX}/share/icons/hicolor/32x32/apps/${PORTNAME}.png
+	${MKDIR} ${PREFIX}/share/icons/hicolor/64x64/apps
 	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a64.png \
 		${PREFIX}/share/icons/hicolor/64x64/apps/${PORTNAME}.png
+	${MKDIR} ${PREFIX}/share/icons/hicolor/128x128/apps
 	${INSTALL_DATA} ${WRKDIR}/org/gudy/azureus2/ui/icons/a128.png \
 		${PREFIX}/share/icons/hicolor/128x128/apps/${PORTNAME}.png
 
