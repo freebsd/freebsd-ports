@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tikiwiki
-PORTVERSION=	1.9.8.3
+PORTVERSION=	1.9.9
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -17,14 +17,10 @@ USE_PHP=	gettext pcre posix session xml zlib
 
 NO_BUILD=	YES
 USE_BZIP2=	YES
-TIKIWIKI?=	www/tikiwiki
-PLIST_SUB+=	TIKIWIKI=${TIKIWIKI}
 
 do-install:
-	${MKDIR} ${PREFIX}/${TIKIWIKI}
-	@${CHMOD} 755 ${PREFIX}/${TIKIWIKI}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${TIKIWIKI}
-	# set the correct permissions
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TIKIWIKI}
+	@-${MKDIR} ${WWWDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR})
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 .include <bsd.port.mk>
