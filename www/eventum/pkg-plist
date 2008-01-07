@@ -60,6 +60,8 @@
 %%WWWDIR%%/images/dtree/question.gif
 %%WWWDIR%%/images/dtree/trash.gif
 %%WWWDIR%%/images/dynCalendar.gif
+%%WWWDIR%%/images/eventum.gif
+%%WWWDIR%%/images/eventum_high_quality.tiff
 %%WWWDIR%%/images/excel.jpg
 %%WWWDIR%%/images/file.gif
 %%WWWDIR%%/images/gantt.jpg
@@ -107,6 +109,28 @@
 %%WWWDIR%%/include/Smarty/core/core.write_compiled_resource.php
 %%WWWDIR%%/include/Smarty/core/core.write_file.php
 %%WWWDIR%%/include/Smarty/debug.tpl
+%%WWWDIR%%/include/Smarty/internals/core.assemble_plugin_filepath.php
+%%WWWDIR%%/include/Smarty/internals/core.assign_smarty_interface.php
+%%WWWDIR%%/include/Smarty/internals/core.create_dir_structure.php
+%%WWWDIR%%/include/Smarty/internals/core.display_debug_console.php
+%%WWWDIR%%/include/Smarty/internals/core.get_include_path.php
+%%WWWDIR%%/include/Smarty/internals/core.get_microtime.php
+%%WWWDIR%%/include/Smarty/internals/core.get_php_resource.php
+%%WWWDIR%%/include/Smarty/internals/core.is_secure.php
+%%WWWDIR%%/include/Smarty/internals/core.is_trusted.php
+%%WWWDIR%%/include/Smarty/internals/core.load_plugins.php
+%%WWWDIR%%/include/Smarty/internals/core.load_resource_plugin.php
+%%WWWDIR%%/include/Smarty/internals/core.process_cached_inserts.php
+%%WWWDIR%%/include/Smarty/internals/core.process_compiled_include.php
+%%WWWDIR%%/include/Smarty/internals/core.read_cache_file.php
+%%WWWDIR%%/include/Smarty/internals/core.rm_auto.php
+%%WWWDIR%%/include/Smarty/internals/core.rmdir.php
+%%WWWDIR%%/include/Smarty/internals/core.run_insert_handler.php
+%%WWWDIR%%/include/Smarty/internals/core.smarty_include_php.php
+%%WWWDIR%%/include/Smarty/internals/core.write_cache_file.php
+%%WWWDIR%%/include/Smarty/internals/core.write_compiled_include.php
+%%WWWDIR%%/include/Smarty/internals/core.write_compiled_resource.php
+%%WWWDIR%%/include/Smarty/internals/core.write_file.php
 %%WWWDIR%%/include/Smarty/plugins/block.t.php
 %%WWWDIR%%/include/Smarty/plugins/block.textformat.php
 %%WWWDIR%%/include/Smarty/plugins/compiler.assign.php
@@ -123,6 +147,7 @@
 %%WWWDIR%%/include/Smarty/plugins/function.get_textarea_size.php
 %%WWWDIR%%/include/Smarty/plugins/function.html_checkboxes.php
 %%WWWDIR%%/include/Smarty/plugins/function.html_image.php
+%%WWWDIR%%/include/Smarty/plugins/function.html_input_image.php
 %%WWWDIR%%/include/Smarty/plugins/function.html_options.php
 %%WWWDIR%%/include/Smarty/plugins/function.html_radios.php
 %%WWWDIR%%/include/Smarty/plugins/function.html_select_date.php
@@ -252,10 +277,9 @@
 %%WWWDIR%%/include/pear/Date/Human.php
 %%WWWDIR%%/include/pear/Date/Span.php
 %%WWWDIR%%/include/pear/Date/TimeZone.php
-%%WWWDIR%%/include/pear/Detect.php
 %%WWWDIR%%/include/pear/File.php
 %%WWWDIR%%/include/pear/File/Util.php
-%%WWWDIR%%/include/pear/HTTP/HTTP.php
+%%WWWDIR%%/include/pear/HTTP.php
 %%WWWDIR%%/include/pear/HTTP/Request.php
 %%WWWDIR%%/include/pear/Mail.php
 %%WWWDIR%%/include/pear/Mail/RFC822.php
@@ -278,12 +302,12 @@
 %%WWWDIR%%/include/pear/Net/URL.php
 %%WWWDIR%%/include/pear/Net/UserAgent/Detect.php
 %%WWWDIR%%/include/pear/PEAR.php
-%%WWWDIR%%/include/pear/Text_Diff/Diff.php
-%%WWWDIR%%/include/pear/Text_Diff/Diff/Renderer.php
-%%WWWDIR%%/include/pear/Text_Diff/Diff/Renderer/inline.php
-%%WWWDIR%%/include/pear/Text_Diff/Diff/Renderer/unified.php
-%%WWWDIR%%/include/pear/XML_RPC/RPC.php
-%%WWWDIR%%/include/pear/XML_RPC/Server.php
+%%WWWDIR%%/include/pear/Text/Diff.php
+%%WWWDIR%%/include/pear/Text/Diff/Renderer.php
+%%WWWDIR%%/include/pear/Text/Diff/Renderer/inline.php
+%%WWWDIR%%/include/pear/Text/Diff/Renderer/unified.php
+%%WWWDIR%%/include/pear/XML/RPC.php
+%%WWWDIR%%/include/pear/XML/RPC/Server.php
 %%WWWDIR%%/include/php-gettext/AUTHORS
 %%WWWDIR%%/include/php-gettext/COPYING
 %%WWWDIR%%/include/php-gettext/ChangeLog
@@ -306,6 +330,7 @@
 %%WWWDIR%%/js/overlib.js
 %%WWWDIR%%/js/overlib_mini.js
 %%WWWDIR%%/js/post_load.js
+%%WWWDIR%%/js/prototype.js
 %%WWWDIR%%/js/validation.js
 %%WWWDIR%%/list.php
 %%WWWDIR%%/login.php
@@ -359,21 +384,19 @@
 %%WWWDIR%%/misc/download_emails.php
 %%WWWDIR%%/misc/irc/bot.php
 %%WWWDIR%%/misc/irc/restart.php
-%%WWWDIR%%/misc/localization/de_DE/LC_MESSAGES/eventum.po
-%%WWWDIR%%/misc/localization/en_US/LC_MESSAGES/eventum.po
-%%WWWDIR%%/misc/localization/es_ES/LC_MESSAGES/eventum.po
+%%WWWDIR%%/misc/localization/Makefile
 %%WWWDIR%%/misc/localization/eventum.c
-%%WWWDIR%%/misc/localization/eventum.po
-%%WWWDIR%%/misc/localization/fi_FI/LC_MESSAGES/eventum.mo
-%%WWWDIR%%/misc/localization/fi_FI/LC_MESSAGES/eventum.po
-%%WWWDIR%%/misc/localization/fr_FR/LC_MESSAGES/eventum.po
-%%WWWDIR%%/misc/localization/it_IT/LC_MESSAGES/eventum.mo
-%%WWWDIR%%/misc/localization/it_IT/LC_MESSAGES/eventum.po
-%%WWWDIR%%/misc/localization/nl_NL/LC_MESSAGES/eventum.po
-%%WWWDIR%%/misc/localization/pl/LC_MESSAGES/eventum.po
-%%WWWDIR%%/misc/localization/ru_RU/LC_MESSAGES/eventum.po
-%%WWWDIR%%/misc/localization/sv_SE/LC_MESSAGES/eventum.mo
-%%WWWDIR%%/misc/localization/sv_SE/LC_MESSAGES/eventum.po
+%%WWWDIR%%/misc/localization/eventum.pot
+%%WWWDIR%%/misc/localization/fi.po
+%%WWWDIR%%/misc/localization/fi/LC_MESSAGES/eventum.mo
+%%WWWDIR%%/misc/localization/it.po
+%%WWWDIR%%/misc/localization/it/LC_MESSAGES/eventum.mo
+%%WWWDIR%%/misc/localization/pl.po
+%%WWWDIR%%/misc/localization/pl/LC_MESSAGES/eventum.mo
+%%WWWDIR%%/misc/localization/ru.po
+%%WWWDIR%%/misc/localization/ru/LC_MESSAGES/eventum.mo
+%%WWWDIR%%/misc/localization/sv.po
+%%WWWDIR%%/misc/localization/sv/LC_MESSAGES/eventum.mo
 %%WWWDIR%%/misc/monitor.php
 %%WWWDIR%%/misc/process_mail_queue.php
 %%WWWDIR%%/misc/route_drafts.php
@@ -441,6 +464,9 @@
 %%WWWDIR%%/misc/upgrade/v1.7.1_to_v2.0/upgrade_config.php
 %%WWWDIR%%/misc/upgrade/v2.0-beta_to_v2.0/database_changes.php
 %%WWWDIR%%/misc/upgrade/v2.0-beta_to_v2.0/index.html
+%%WWWDIR%%/misc/upgrade/v2.0_to_v2.1/database_changes.php
+%%WWWDIR%%/misc/upgrade/v2.0_to_v2.1/index.html
+%%WWWDIR%%/misc/upgrade/v2.0_to_v2.1/update_custom_field_by_type.php
 %%WWWDIR%%/new.php
 %%WWWDIR%%/news.php
 %%WWWDIR%%/notification.php
@@ -478,9 +504,12 @@
 %%WWWDIR%%/select_project.php
 %%WWWDIR%%/self_assign.php
 %%WWWDIR%%/send.php
+%%WWWDIR%%/setup/acl.sql
 %%WWWDIR%%/setup/changes.sql
 %%WWWDIR%%/setup/check_permissions.php
-%%WWWDIR%%/setup/config.php
+@unexec if cmp -s %D/%%WWWDIR%%/setup/config.php-dist %D/%%WWWDIR%%/setup/config.php; then rm -f %D/%%WWWDIR%%/setup/config.php; fi
+%%WWWDIR%%/setup/config.php-dist
+@exec if [ ! -f %D/%%WWWDIR%%/setup/config.php ] ; then cp -p %D/%F %B/%%WWWDIR%%/setup/config.php; fi
 %%WWWDIR%%/setup/index.php
 %%WWWDIR%%/setup/irc_config.php
 %%WWWDIR%%/setup/schema.sql
@@ -618,6 +647,7 @@
 %%WWWDIR%%/templates/notifications/updated_password.tpl.text
 %%WWWDIR%%/templates/notifications/visitor_account.tpl.text
 %%WWWDIR%%/templates/offline.tpl.html
+%%WWWDIR%%/templates/offline.tpl.text
 %%WWWDIR%%/templates/permission_denied.tpl.html
 %%WWWDIR%%/templates/phone_support.tpl.html
 %%WWWDIR%%/templates/popup.tpl.html
@@ -670,11 +700,11 @@
 %%WWWDIR%%/templates/yellow_note.tpl.html
 %%WWWDIR%%/time_tracking.php
 %%WWWDIR%%/update.php
+%%WWWDIR%%/validate.php
 %%WWWDIR%%/view.php
 %%WWWDIR%%/view_email.php
 %%WWWDIR%%/view_headers.php
 %%WWWDIR%%/view_note.php
-@dirrm %%WWWDIR%%/templates_c
 @dirrm %%WWWDIR%%/templates/tips
 @dirrm %%WWWDIR%%/templates/reports
 @dirrm %%WWWDIR%%/templates/reminders
@@ -685,10 +715,10 @@
 @dirrm %%WWWDIR%%/templates/expandable_cell
 @dirrm %%WWWDIR%%/templates/customer/example
 @dirrm %%WWWDIR%%/templates/customer
-@dirrm %%WWWDIR%%/templates
 @dirrm %%WWWDIR%%/setup
 @dirrm %%WWWDIR%%/rpc
 @dirrm %%WWWDIR%%/reports
+@dirrm %%WWWDIR%%/misc/upgrade/v2.0_to_v2.1
 @dirrm %%WWWDIR%%/misc/upgrade/v2.0-beta_to_v2.0
 @dirrm %%WWWDIR%%/misc/upgrade/v1.7.1_to_v2.0
 @dirrm %%WWWDIR%%/misc/upgrade/v1.7.0_to_v1.7.1
@@ -712,26 +742,26 @@
 @dirrm %%WWWDIR%%/misc/routed_notes
 @dirrm %%WWWDIR%%/misc/routed_emails
 @dirrm %%WWWDIR%%/misc/routed_drafts
-@dirrm %%WWWDIR%%/misc/localization/sv_SE/LC_MESSAGES
-@dirrm %%WWWDIR%%/misc/localization/sv_SE
-@dirrm %%WWWDIR%%/misc/localization/ru_RU/LC_MESSAGES
-@dirrm %%WWWDIR%%/misc/localization/ru_RU
+@dirrm %%WWWDIR%%/misc/localization/sv/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/sv
+@dirrm %%WWWDIR%%/misc/localization/ru/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/ru
 @dirrm %%WWWDIR%%/misc/localization/pl/LC_MESSAGES
 @dirrm %%WWWDIR%%/misc/localization/pl
-@dirrm %%WWWDIR%%/misc/localization/nl_NL/LC_MESSAGES
-@dirrm %%WWWDIR%%/misc/localization/nl_NL
-@dirrm %%WWWDIR%%/misc/localization/it_IT/LC_MESSAGES
-@dirrm %%WWWDIR%%/misc/localization/it_IT
-@dirrm %%WWWDIR%%/misc/localization/fr_FR/LC_MESSAGES
-@dirrm %%WWWDIR%%/misc/localization/fr_FR
-@dirrm %%WWWDIR%%/misc/localization/fi_FI/LC_MESSAGES
-@dirrm %%WWWDIR%%/misc/localization/fi_FI
-@dirrm %%WWWDIR%%/misc/localization/es_ES/LC_MESSAGES
-@dirrm %%WWWDIR%%/misc/localization/es_ES
-@dirrm %%WWWDIR%%/misc/localization/en_US/LC_MESSAGES
-@dirrm %%WWWDIR%%/misc/localization/en_US
-@dirrm %%WWWDIR%%/misc/localization/de_DE/LC_MESSAGES
-@dirrm %%WWWDIR%%/misc/localization/de_DE
+@dirrm %%WWWDIR%%/misc/localization/nl/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/nl
+@dirrm %%WWWDIR%%/misc/localization/it/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/it
+@dirrm %%WWWDIR%%/misc/localization/fr/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/fr
+@dirrm %%WWWDIR%%/misc/localization/fi/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/fi
+@dirrm %%WWWDIR%%/misc/localization/es/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/es
+@dirrm %%WWWDIR%%/misc/localization/en/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/en
+@dirrm %%WWWDIR%%/misc/localization/de/LC_MESSAGES
+@dirrm %%WWWDIR%%/misc/localization/de
 @dirrm %%WWWDIR%%/misc/localization
 @dirrm %%WWWDIR%%/misc/irc
 @dirrm %%WWWDIR%%/misc/cli/include/pear/XML_RPC
@@ -740,15 +770,15 @@
 @dirrm %%WWWDIR%%/misc/cli
 @dirrm %%WWWDIR%%/misc
 @dirrm %%WWWDIR%%/manage
-@dirrm %%WWWDIR%%/logs
 @dirrm %%WWWDIR%%/locks
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/include/workflow
 @dirrm %%WWWDIR%%/include/php-gettext
-@dirrm %%WWWDIR%%/include/pear/XML_RPC
-@dirrm %%WWWDIR%%/include/pear/Text_Diff/Diff/Renderer
-@dirrm %%WWWDIR%%/include/pear/Text_Diff/Diff
-@dirrm %%WWWDIR%%/include/pear/Text_Diff
+@dirrm %%WWWDIR%%/include/pear/XML/RPC
+@dirrm %%WWWDIR%%/include/pear/XML
+@dirrm %%WWWDIR%%/include/pear/Text/Diff/Renderer
+@dirrm %%WWWDIR%%/include/pear/Text/Diff
+@dirrm %%WWWDIR%%/include/pear/Text
 @dirrm %%WWWDIR%%/include/pear/Net/UserAgent
 @dirrm %%WWWDIR%%/include/pear/Net/SmartIRC
 @dirrm %%WWWDIR%%/include/pear/Net
@@ -766,6 +796,7 @@
 @dirrm %%WWWDIR%%/include/customer
 @dirrm %%WWWDIR%%/include/custom_field
 @dirrm %%WWWDIR%%/include/Smarty/plugins
+@dirrm %%WWWDIR%%/include/Smarty/internals
 @dirrm %%WWWDIR%%/include/Smarty/core
 @dirrm %%WWWDIR%%/include/Smarty
 @dirrm %%WWWDIR%%/include
@@ -776,5 +807,8 @@
 @dirrm %%WWWDIR%%/customer/example
 @dirrm %%WWWDIR%%/customer
 @dirrm %%WWWDIR%%/css
-@dirrm %%WWWDIR%%/config
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%/templates_c
+@dirrmtry %%WWWDIR%%/templates
+@dirrmtry %%WWWDIR%%/logs
+@dirrmtry %%WWWDIR%%/config
+@dirrmtry %%WWWDIR%%

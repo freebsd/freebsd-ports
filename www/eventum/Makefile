@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eventum
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	eventum
@@ -18,14 +18,19 @@ NO_BUILD=	YES
 USE_PHP=	pcre session mysql gd gettext
 WANT_PHP_WEB=	YES
 
-pre-configure:
-	@${RM} ${WRKSRC}/misc/monitor.php.orig
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%WWWOWN%%|${WWWOWN}|g' ${WRKSRC}/misc/monitor.php
+	@${REINPLACE_CMD} -e 's|%%WWWGRP%%|${WWWGRP}|g' ${WRKSRC}/misc/monitor.php
+	@${RM} ${WRKSRC}/misc/monitor.php.*
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@ cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
+	-${MKDIR} ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@if [ ! -f ${WWWDIR}/setup/config.php ]; then \
+	    ${CP} -p ${WWWDIR}/setup/config.php-dist ${WWWDIR}/setup/config.php ; \
+	fi
 
 .include <bsd.port.mk>
