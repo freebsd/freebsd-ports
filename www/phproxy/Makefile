@@ -7,9 +7,9 @@
 
 PORTNAME=	phproxy
 PORTVERSION=	0.5b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	poxy
 DISTNAME=	poxy-${DISTVERSION}
 
@@ -19,19 +19,12 @@ COMMENT=	PHP based web proxy
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 USE_ZIP=	YES
-USE_PHP=	ctype
-PLIST_SUB+=	PHPROXY=${PHPROXY}
-PHPROXY=	www/${PORTNAME}
+USE_PHP=	ctype pcre
 EXTRACT_AFTER_ARGS+=	-d ${WRKSRC}
 
 DOCFILES=	ChangeLog.txt LICENSE.txt README.txt TODO.txt
-ROOTFILES=	index.inc.php index.php style.css
 
 do-install:
-	-${MKDIR} ${PREFIX}/${PHPROXY}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${PHPROXY}
-	@(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${PREFIX}/${PHPROXY}/)
-	@${CHMOD} 755 ${PREFIX}/${PHPROXY}
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -39,6 +32,11 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
 .endif
+
+	@${RM} ${WRKSRC}/*.txt
+	${MKDIR} ${WWWDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}/)
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
