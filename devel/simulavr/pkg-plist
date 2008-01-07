@@ -28,7 +28,8 @@ share/doc/simulavr/html/simulavr_10.html
 share/doc/simulavr/html/simulavr_11.html
 share/doc/simulavr/html/simulavr_abt.html
 share/doc/simulavr/html/simulavr_toc.html
-share/doc/simulavr/simulavr.ps
+share/doc/simulavr/simulavr.pdf
+share/doc/simulavr/simulavr-internals.pdf
 @dirrm share/doc/simulavr/html
 @dirrm share/doc/simulavr/internals_html
 @dirrm share/doc/simulavr
