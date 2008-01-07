@@ -79,7 +79,8 @@ CONFIGURE_ENV+=	GPERF="${LOCALBASE}/bin/gperf" \
 		F77="${FC}" \
 		FFLAGS="${FFLAGS}" \
 		CC="${CC}" \
-		CXX="${CXX}"
+		CXX="${CXX}" \
+		TERMIOS_H="termios.h"
 CONFIGURE_ARGS=	--host=${GNU_HOST} \
 		--with-blas="-L${LOCALBASE}/lib ${BLAS}" \
 		--with-lapack="${LAPACK}" \
