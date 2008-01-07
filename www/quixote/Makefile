@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	quixote
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	www python
-MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/ \
+MASTER_SITES=	http://quixote.ca/releases/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 DISTNAME=	Quixote-${PORTVERSION}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.ORg
 COMMENT=	A framework for developing web applications in Python
 
-USE_PYTHON=	2.3-2.4
+RUN_DEPENDS+=	qpcheck.py:${PORTSDIR}/www/py-qpy
+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Quixote
 
@@ -28,7 +30,7 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-.for docfile in ACKS CHANGES LICENSE README TODO doc/*
+.for docfile in ACKS.txt CHANGES.txt LICENSE.txt README.txt TODO doc/*
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
