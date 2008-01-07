@@ -2793,7 +2793,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>lsh</name>
-	<range><ge>0</ge></range>
+	<range><lt>2.0.1</lt></range>
       </package>
     </affects>
     <description>
@@ -2814,7 +2814,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-03-17</discovery>
       <entry>2007-09-05</entry>
-      <modified>2007-09-11</modified>
+      <modified>2008-01-07</modified>
     </dates>
   </vuln>
 
