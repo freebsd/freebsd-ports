@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	lifetype
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lifetype
+MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${CONTRIBE_VERSION}__all_plugins${EXTRACT_SUFX} \
 		${CONTRIBE_VERSION}__all_templates${EXTRACT_SUFX}
@@ -26,7 +25,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 PLOGDIR?=	${WWWDOCROOT}/${PLOGURL}
 PLOGURL?=	lifetype
-USE_PHP=	ctype mysql pcre session xml
+USE_PHP=	ctype mysql pcre session xml tokenizer
 USE_ZIP=	YES
 WANT_PHP_WEB=	YES
 WWWDOCROOT?=	www
