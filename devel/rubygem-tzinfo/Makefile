@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tzinfo
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
