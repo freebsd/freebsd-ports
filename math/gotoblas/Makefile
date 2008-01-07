@@ -17,6 +17,7 @@ COMMENT=	The fastest implementation of the Basic Linear Algebra Subroutines
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 RESTRICTED=	Redistribution not permitted
+MANUAL_PACKAGE_BUILD=	Please obtain the source code manyally from http://www.tacc.utexas.edu/resources/software/
 WRKSRC=		${WRKDIR}/GotoBLAS
 PLIST_FILES=	lib/libgoto.a \
 		lib/libgoto.so \
