@@ -7,6 +7,7 @@
 
 PORTNAME=	acroread8
 PORTVERSION?=	8.1.1
+PORTREVISION=	1
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/8.x/${PORTVERSION}/${ADOBE_LANG:L}/
@@ -33,9 +34,11 @@ PLIST_SUB=	ACRODIR=${ACRODIR} \
 		PLUGINDIR=${PLUGINDIR} \
 		ADOBE_LANG=${ADOBE_LANG:U} \
 		LOCALE_NAME=${LOCALE_NAME}
-SUB_FILES=	ln mv rm pkg-message
-SUB_LIST=	ADOBE_LANG=${ADOBE_LANG:U}
+SUB_FILES=	ln mv rm pkg-message pkg-deinstall
+SUB_LIST=	ADOBE_LANG=${ADOBE_LANG:U} \
+		ACROBASE=${ACROBASE}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 WRKSRC=		${WRKDIR}/AdobeReader
 
 LANGCODE=	chs:zh_CN cht:zh_TW dan:da_DK deu:de_DE enu:en_US \
