@@ -19,7 +19,7 @@ case "$daily_rkhunter_update_enable" in
 
 	echo ""
 	echo "Updating the rkhunter database..."
-	%%PREFIX%%/bin/rkhunter --update
+	%%PREFIX%%/bin/rkhunter --update --nocolors
 	;;
 esac
 
@@ -28,6 +28,6 @@ case "$daily_rkhunter_check_enable" in
 
 	echo ""
 	echo "Running rkhunter..."
-	%%PREFIX%%/bin/rkhunter --checkall --cronjob --skip-keypress
+	%%PREFIX%%/bin/rkhunter --checkall --nocolors --skip-keypress
 	;;
 esac
