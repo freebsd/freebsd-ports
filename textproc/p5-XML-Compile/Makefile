@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Compile
-PORTVERSION=	0.55
+PORTVERSION=	0.63
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=	XML::Compile.3 \
-	XML::Compile::Dumper.3 XML::Compile::Schema.3 \
+	XML::Compile::Schema.3 \
 	XML::Compile::Iterator.3 XML::Compile::Util.3 \
 	XML::Compile::Schema::BuiltInFacets.3 \
 	XML::Compile::Schema::BuiltInTypes.3 \
