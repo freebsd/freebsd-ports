@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	Finance-Currency-Convert
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	finance perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Finance
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert currencies and fetch their exchange rates
 
 PERL_CONFIGURE=	yes
