@@ -16,28 +16,23 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:S/.${SNAPSHOT}//}-${SNAPSHOT}${EXTRACT_SUFX
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 
-SNAPSHOT=	20070902
+SNAPSHOT=	20080104
 
 WRKSRC=		${WRKDIR}/${PORTNAME}mail
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
-RCUBEDIR?=	www/${PORTNAME}
-
-RCUBEROOT=	${PREFIX}/${RCUBEDIR}
-RCUBECOMP=	SQL config index.php logs program skins temp
+RCUBECOMP=	SQL bin config index.php logs program skins temp
 PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADING
 
-PLIST_SUB=	RCUBEDIR=${RCUBEDIR}
 SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
 		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} \
-		RCUBEROOT=${RCUBEROOT}
+		WWWDIR=${WWWDIR}
 
 WANT_PHP_WEB=	yes
 USE_PHP=	pcre mbstring session iconv
 
 SUB_FILES=	pkg-install
-SUB_LIST=	RCUBEROOT=${RCUBEROOT}
 PKGDEINSTALL=	${PKGINSTALL}
 
 .if defined(WITH_REPLACE_MAIL_URL) && !empty(WITH_REPLACE_MAIL_URL)
@@ -53,8 +48,6 @@ OPTIONS=	MYSQL "Use MySQL backend" on \
 		SQLITE "Use SQLite backend (php5 only)" off \
 		SPELLCHECK "Enable spellchecking" off \
 		LOCALCHECK "Install internal spellchecker" off
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE)
 IGNORE=		needs a database backend
@@ -115,15 +108,15 @@ post-patch:
 .endif
 
 do-install:
-	${MKDIR} ${RCUBEROOT}
+	-${MKDIR} ${WWWDIR}
 .for i in ${RCUBECOMP}
-	${CP} -Rp ${WRKSRC}/${i} ${RCUBEROOT}/
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${WWWDIR}
 .endfor
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/UPGRADING ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/UPGRADING ${DOCSDIR}/
 .if !defined(NOPORTDOCS)
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
 .endif
 
@@ -131,4 +124,4 @@ post-install:
 	@${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
