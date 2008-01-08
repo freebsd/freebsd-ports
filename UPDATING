@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080108:
+  AFFECTS: users of irc/bitlbee
+  AUTHOR: brix@FreeBSD.org
+
+  irc/bitlbee now stores saved user settings in /var/db/bitlbee/, not
+  $PREFIX/etc/bitlbee/.  You will have to manually move any existing
+  user settings to the new location (or override the user settings
+  directory using -d if you wish to keep the old behavior).  Other
+  configuration files are still kept in $PREFIX/etc/bitlbee/ by
+  default.
+
+  The default installation is now configured for running bitlbee as
+  user 'nobody' by default.  Make sure any existing configuration
+  files are readable by that user.
+
 20071225:
   AFFECTS: users of www/amphetadesk
   AUTHOR: lioux@FreeBSD.org
