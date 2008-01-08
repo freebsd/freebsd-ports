@@ -450,6 +450,11 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/prehistorik/fond.jpg
 %%DATADIR%%/map/prehistorik/prehistorik.png
 %%DATADIR%%/map/prehistorik/preview.jpg
+%%DATADIR%%/map/pumpkins/config.xml
+%%DATADIR%%/map/pumpkins/feuille.png
+%%DATADIR%%/map/pumpkins/map.png
+%%DATADIR%%/map/pumpkins/preview.jpg
+%%DATADIR%%/map/pumpkins/sky.jpg
 %%DATADIR%%/map/qingqong/config.xml
 %%DATADIR%%/map/qingqong/preview.jpg
 %%DATADIR%%/map/qingqong/qingqong.png
@@ -612,6 +617,37 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/sound/share/profile.xml
 %%DATADIR%%/sound/share/step.ogg
 %%DATADIR%%/sound/share/victory.ogg
+%%DATADIR%%/sound/share/weapon/aircraft_bomb_falling.ogg
+%%DATADIR%%/sound/share/weapon/aircraft_flying.ogg
+%%DATADIR%%/sound/share/weapon/airhammer_selected.ogg
+%%DATADIR%%/sound/share/weapon/airhammer_used.ogg
+%%DATADIR%%/sound/share/weapon/alleluia.ogg
+%%DATADIR%%/sound/share/weapon/anvil_collision.ogg
+%%DATADIR%%/sound/share/weapon/anvil_fall.ogg
+%%DATADIR%%/sound/share/weapon/baseball.ogg
+%%DATADIR%%/sound/share/weapon/commit_suicide.ogg
+%%DATADIR%%/sound/share/weapon/disco_grenade_music.ogg
+%%DATADIR%%/sound/share/weapon/dynamite.ogg
+%%DATADIR%%/sound/share/weapon/dynamite_exp.ogg
+%%DATADIR%%/sound/share/weapon/dynamite_fuze.ogg
+%%DATADIR%%/sound/share/weapon/flame.ogg
+%%DATADIR%%/sound/share/weapon/gnu_bounce.ogg
+%%DATADIR%%/sound/share/weapon/grenade_bounce.ogg
+%%DATADIR%%/sound/share/weapon/gun.ogg
+%%DATADIR%%/sound/share/weapon/holly_grenade_bounce.ogg
+%%DATADIR%%/sound/share/weapon/jetpack.ogg
+%%DATADIR%%/sound/share/weapon/load.ogg
+%%DATADIR%%/sound/share/weapon/m16.ogg
+%%DATADIR%%/sound/share/weapon/mine_beep.ogg
+%%DATADIR%%/sound/share/weapon/pistolet.ogg
+%%DATADIR%%/sound/share/weapon/ricoche1.ogg
+%%DATADIR%%/sound/share/weapon/ricoche2.ogg
+%%DATADIR%%/sound/share/weapon/ricoche3.ogg
+%%DATADIR%%/sound/share/weapon/riot_bomb_exp.ogg
+%%DATADIR%%/sound/share/weapon/shotgun.ogg
+%%DATADIR%%/sound/share/weapon/supertux_flying.ogg
+%%DATADIR%%/sound/share/weapon/teleport_land.ogg
+%%DATADIR%%/sound/share/weapon/teleport_start.ogg
 %%DATADIR%%/team/beastieteam/dead.png
 %%DATADIR%%/team/beastieteam/flag.png
 %%DATADIR%%/team/beastieteam/flag64.png
@@ -703,6 +739,9 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/weapon/dynamite/dynamite.png
 %%DATADIR%%/weapon/dynamite/dynamite_ani.png
 %%DATADIR%%/weapon/dynamite/dynamite_ico.png
+%%DATADIR%%/weapon/flamethrower/flame.png
+%%DATADIR%%/weapon/flamethrower/flame_bullet.png
+%%DATADIR%%/weapon/flamethrower/flame_ico.png
 %%DATADIR%%/weapon/gnu/gnu.png
 %%DATADIR%%/weapon/gnu/gnu_ico.png
 %%DATADIR%%/weapon/gnu/gnulauncher.png
@@ -741,34 +780,6 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/weapon/snipe_rifle/snipe_rifle.png
 %%DATADIR%%/weapon/snipe_rifle/snipe_rifle_ico.png
 %%DATADIR%%/weapon/snipe_rifle/snipe_rifle_laser.png
-%%DATADIR%%/weapon/sound/aircraft_bomb_falling.ogg
-%%DATADIR%%/weapon/sound/aircraft_flying.ogg
-%%DATADIR%%/weapon/sound/airhammer_selected.ogg
-%%DATADIR%%/weapon/sound/airhammer_used.ogg
-%%DATADIR%%/weapon/sound/alleluia.ogg
-%%DATADIR%%/weapon/sound/anvil_collision.ogg
-%%DATADIR%%/weapon/sound/anvil_fall.ogg
-%%DATADIR%%/weapon/sound/baseball.ogg
-%%DATADIR%%/weapon/sound/commit_suicide.ogg
-%%DATADIR%%/weapon/sound/dynamite.ogg
-%%DATADIR%%/weapon/sound/dynamite_exp.ogg
-%%DATADIR%%/weapon/sound/dynamite_fuze.ogg
-%%DATADIR%%/weapon/sound/grenade_bounce.ogg
-%%DATADIR%%/weapon/sound/gun.ogg
-%%DATADIR%%/weapon/sound/holly_grenade_bounce.ogg
-%%DATADIR%%/weapon/sound/jetpack.ogg
-%%DATADIR%%/weapon/sound/load.ogg
-%%DATADIR%%/weapon/sound/m16.ogg
-%%DATADIR%%/weapon/sound/mine_beep.ogg
-%%DATADIR%%/weapon/sound/pistolet.ogg
-%%DATADIR%%/weapon/sound/ricoche1.ogg
-%%DATADIR%%/weapon/sound/ricoche2.ogg
-%%DATADIR%%/weapon/sound/ricoche3.ogg
-%%DATADIR%%/weapon/sound/riot_bomb_exp.ogg
-%%DATADIR%%/weapon/sound/shotgun.ogg
-%%DATADIR%%/weapon/sound/supertux_flying.ogg
-%%DATADIR%%/weapon/sound/teleport_land.ogg
-%%DATADIR%%/weapon/sound/teleport_start.ogg
 %%DATADIR%%/weapon/suicide/suicide.png
 %%DATADIR%%/weapon/suicide/suicide_ico.png
 %%DATADIR%%/weapon/supertux/superman.png
@@ -791,7 +802,6 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/weapon/syringe
 @dirrm %%DATADIR%%/weapon/supertux
 @dirrm %%DATADIR%%/weapon/suicide
-@dirrm %%DATADIR%%/weapon/sound
 @dirrm %%DATADIR%%/weapon/snipe_rifle
 @dirrm %%DATADIR%%/weapon/skip_turn
 @dirrm %%DATADIR%%/weapon/shotgun
@@ -806,6 +816,7 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/weapon/grenade
 @dirrm %%DATADIR%%/weapon/grapple
 @dirrm %%DATADIR%%/weapon/gnu
+@dirrm %%DATADIR%%/weapon/flamethrower
 @dirrm %%DATADIR%%/weapon/dynamite
 @dirrm %%DATADIR%%/weapon/disco_grenade
 @dirrm %%DATADIR%%/weapon/construct
@@ -832,6 +843,7 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/team/firefoxteam
 @dirrm %%DATADIR%%/team/beastieteam
 @dirrm %%DATADIR%%/team
+@dirrm %%DATADIR%%/sound/share/weapon
 @dirrm %%DATADIR%%/sound/share/menu
 @dirrm %%DATADIR%%/sound/share
 @dirrm %%DATADIR%%/sound/francais
@@ -851,6 +863,7 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/map/randomamoebas
 @dirrm %%DATADIR%%/map/random
 @dirrm %%DATADIR%%/map/qingqong
+@dirrm %%DATADIR%%/map/pumpkins
 @dirrm %%DATADIR%%/map/prehistorik
 @dirrm %%DATADIR%%/map/pirates
 @dirrm %%DATADIR%%/map/pillars
