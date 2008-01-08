@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.61
+PORTVERSION=	0.62
 CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -51,20 +51,9 @@ OPTIONS=	IPV6 "Enable functionality over IPv6 transport" on
 RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 .endif
 
-.if ${PERL_LEVEL} < 500800
-PLIST_SUB+=	BYTES_INSTALL=""
-.else
-PLIST_SUB+=	BYTES_INSTALL="@comment "
-.endif
-
 DOCSDIR=	${PREFIX}/share/doc/p5-Net-DNS
 
 post-install:
-.if ${PERL_LEVEL} < 500800
-.for file in bytes.pm bytes_heavy.pl
-	${INSTALL_DATA} ${FILESDIR}/${file} ${SITE_PERL}
-.endfor
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in Changes README TODO
