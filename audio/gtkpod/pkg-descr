@@ -2,23 +2,23 @@ gtkpod is a platform independent graphical user interface for Apple's iPod
 using GTK2.  It supports the first to fifth generation, including the iPod
 mini, iPod photo, iPod shuffle, iPod nano, and iPod video.  It allows you to:
 
-    * Read your existing iTunesDB (i.e. import the existing contents of
-      your iPod including playcounts, ratings, and on-the-go playlists)
-    * Add MP3, WAV, M4A (non-protected AAC), M4B (audio book), and podcast
-      files (single files, directories or existing playlists) to the iPod
-    * Browse the contents of your local harddisk by album/artist/genre
-    * Create and modify playlists, including smart playlists
-    * Choose the charset the ID3 tags are encoded in from within gtkpod
-    * Extract tag information (artist, album, title, etc.) from the filename
-    * Detect duplicates when adding songs (optional)
-    * Remove and export tracks from your iPod
-    * Modify/Refresh ID3 tags, optionally updating the original file
-    * Synchronize directories
-    * Normalize the volume of your tracks (via mp3gain or the replay-gain tag)
-    * Download and display of Album Art from the Internet
-    * Work offline and synchronize your new playlists/songs with the iPod later
-    * Export your korganizer/kaddressbook/thunderbird/evocalendar/evolution/
-      webcalendar/... data to the iPod (scripts for other programs can be
-      easily added)
+  * Read your existing iTunesDB (i.e. import the existing contents of
+    your iPod including playcounts, ratings, and on-the-go playlists)
+  * Add MP3, WAV, M4A (non-protected AAC), M4B (audio book), and podcast
+    files (single files, directories or existing playlists) to the iPod
+  * Browse the contents of your local harddisk by album/artist/genre
+  * Create and modify playlists, including smart playlists
+  * Choose the charset the ID3 tags are encoded in from within gtkpod
+  * Extract tag information (artist, album, title, etc.) from the filename
+  * Detect duplicates when adding songs (optional)
+  * Remove and export tracks from your iPod
+  * Modify/Refresh ID3 tags, optionally updating the original file
+  * Synchronize directories
+  * Normalize the volume of your tracks (via mp3gain or the replay-gain tag)
+  * Download and display of Album Art from the Internet
+  * Work offline and synchronize your new playlists/songs with the iPod later
+  * Export your korganizer/kaddressbook/thunderbird/evocalendar/evolution/
+    webcalendar/... data to the iPod (scripts for other programs can be
+    easily added)
 
 WWW: http://www.gtkpod.org/
