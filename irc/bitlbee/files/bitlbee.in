@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: bitlbee
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. %%RC_SUBR%%
+
+name="bitlbee"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${bitlbee_enable="NO"}
+: ${bitlbee_user="nobody"}
+: ${bitlbee_config="%%PREFIX%%/etc/bitlbee/bitlbee.conf"}
+: ${bitlbee_flags=""}
+
+required_files="${bitlbee_config}"
+command="%%PREFIX%%/sbin/bitlbee"
+start_cmd="bitlbee_start"
+
+bitlbee_start()
+{
+	echo "Starting ${name}."
+	su -m ${bitlbee_user} -c "${command} -D -c ${bitlbee_config} ${bitlbee_flags}"
+}
+
+run_rc_command "$1"
