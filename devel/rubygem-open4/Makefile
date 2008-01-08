@@ -6,6 +6,7 @@
 
 PORTNAME=	open4
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	http://codeforpeople.com/lib/ruby/open4/${DISTNAME}/
 

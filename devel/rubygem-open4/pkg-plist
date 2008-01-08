@@ -9,6 +9,8 @@
 %%GEM_LIB_DIR%%/sample/stdin_timeout.rb
 %%GEM_LIB_DIR%%/sample/timeout.rb
 %%GEM_LIB_DIR%%/white_box/leak.rb
+%%GEM_LIB_DIR%%/gemspec.rb
+%%GEM_LIB_DIR%%/install.rb
 %%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/lib/
 @dirrm %%GEM_LIB_DIR%%/sample
