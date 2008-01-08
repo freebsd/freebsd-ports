@@ -1,4 +1,6 @@
 @comment $FreeBSD$
+lib/libcfengine.la
+lib/libcfengine.a
 sbin/cfagent
 sbin/cfdoc
 sbin/cfenvd
