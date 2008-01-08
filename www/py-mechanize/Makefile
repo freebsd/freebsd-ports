@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mechanize
-PORTVERSION=	0.1.6.b
+PORTVERSION=	0.1.7.b
 CATEGORIES=	www python
 MASTER_SITES=	http://wwwsearch.sourceforge.net/mechanize/src/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
