@@ -1,5 +1,5 @@
---- configure.in.orig	Thu Mar  8 04:52:54 2007
-+++ configure.in	Sun Mar 18 00:00:50 2007
+--- configure.in.orig	2007-12-10 07:13:36.000000000 +0100
++++ configure.in	2008-01-09 00:07:34.000000000 +0100
 @@ -40,32 +40,32 @@
  AC_SUBST(LIBDV_CFLAGS)
  AC_SUBST(LIBDV_LIBS)
@@ -70,3 +70,14 @@
  		fi
  	fi
  ])
+@@ -342,8 +342,8 @@
+ # This is a feature of the GNU libc that is documented at e.g.
+ # http://www.gnu.org/software/libc/manual/html_node/Backtraces.html
+ # ######################################################################
+-AC_CHECK_HEADER(execinfo.h, [AC_DEFINE(HAVE_EXECINFO_H, 1, Wheter or not execinfo.h is present)
+-	EXTRA_LIBS="$EXTRA_LIBS -rdynamic"])
++#AC_CHECK_HEADER(execinfo.h, [AC_DEFINE(HAVE_EXECINFO_H, 1, Wheter or not execinfo.h is present)
++#	EXTRA_LIBS="$EXTRA_LIBS -rdynamic"])
+ 
+ # ######################################################################
+ # libsamplerate
