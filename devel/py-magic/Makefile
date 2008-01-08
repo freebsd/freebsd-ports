@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	magic
-PORTVERSION=	4.21
+PORTVERSION=	4.23
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
