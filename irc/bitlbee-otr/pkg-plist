@@ -1,7 +1,8 @@
 sbin/bitlbee
 %%DATADIR%%/help.txt
-@exec mkdir -p -m 700 %D/etc/bitlbee
-etc/bitlbee/bitlbee.conf.orig
-etc/bitlbee/motd.txt.orig
 @dirrm %%DATADIR%%
 @dirrmtry etc/bitlbee
+@exec mkdir -p %D/etc/bitlbee
+@exec mkdir -m 0700 -p /var/db/bitlbee
+@exec chown nobody:nobody /var/db/bitlbee
+@unexec rmdir /var/db/bitlbee 2>/dev/null || true
