@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-system-monitor
-PORTVERSION=	2.20.1
+PORTVERSION=	2.20.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-system-monitor/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
