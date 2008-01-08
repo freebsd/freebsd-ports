@@ -44,18 +44,6 @@ post-patch:
 		 s|-g -O2||g' ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e 's|linux-hotplug ||' ${WRKSRC}/packaging/Makefile.in
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-	@${MKDIR} ${PREFIX}/share/doc/libgphoto2_port
-.for file in AUTHORS NEWS README
-	${INSTALL_DATA} ${WRKSRC}/libgphoto2_port/${file} \
-		${PREFIX}/share/doc/libgphoto2_port
-.endfor
-.endif
+	@${REINPLACE_CMD} -e 's|@HAVE_DOXYGEN_TRUE@|#| ; s|@HAVE_DOXYGEN_FALSE@||' ${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>

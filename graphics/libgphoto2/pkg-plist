@@ -215,49 +215,49 @@ lib/udev/check-mtp-device
 lib/udev/check-ptp-camera
 libdata/pkgconfig/libgphoto2.pc
 libdata/pkgconfig/libgphoto2_port.pc
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.adc65
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.agfa-cl20
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.aox
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.canon
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.clicksmart310
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.digigr8
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.enigma13
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.gsmart300
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.iclick
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.jamcam
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.konica
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.largan-lmini
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.lg_gsm
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.mars
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.minolta-dimagev
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.mustek
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.panasonic
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.panasonic-coolshot
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.panasonic-l859
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.pccam300
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.pccam600
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.ptp2
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.smal
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.sonix
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.sonydscf1
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.soundvision
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.spca50x
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.sq905
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.toshiba-pdrm11
-%%PORTDOCS%%%%DOCSDIR%%/camlibs/README.913C
-%%PORTDOCS%%share/doc/libgphoto2_port/AUTHORS
-%%PORTDOCS%%share/doc/libgphoto2_port/NEWS
-%%PORTDOCS%%share/doc/libgphoto2_port/README
-%%DATADIR%%/%%VERSION%%/konica/english
-%%DATADIR%%/%%VERSION%%/konica/french
-%%DATADIR%%/%%VERSION%%/konica/german
-%%DATADIR%%/%%VERSION%%/konica/japanese
-%%DATADIR%%/%%VERSION%%/konica/korean
-%%DATADIR%%/%%VERSION%%/konica/spanish
+share/doc/libgphoto2/AUTHORS
+share/doc/libgphoto2/COPYING
+share/doc/libgphoto2/NEWS
+share/doc/libgphoto2/README
+share/doc/libgphoto2/camlibs/README.adc65
+share/doc/libgphoto2/camlibs/README.agfa-cl20
+share/doc/libgphoto2/camlibs/README.aox
+share/doc/libgphoto2/camlibs/README.canon
+share/doc/libgphoto2/camlibs/README.clicksmart310
+share/doc/libgphoto2/camlibs/README.digigr8
+share/doc/libgphoto2/camlibs/README.enigma13
+share/doc/libgphoto2/camlibs/README.gsmart300
+share/doc/libgphoto2/camlibs/README.iclick
+share/doc/libgphoto2/camlibs/README.jamcam
+share/doc/libgphoto2/camlibs/README.konica
+share/doc/libgphoto2/camlibs/README.largan-lmini
+share/doc/libgphoto2/camlibs/README.lg_gsm
+share/doc/libgphoto2/camlibs/README.mars
+share/doc/libgphoto2/camlibs/README.minolta-dimagev
+share/doc/libgphoto2/camlibs/README.mustek
+share/doc/libgphoto2/camlibs/README.panasonic
+share/doc/libgphoto2/camlibs/README.panasonic-coolshot
+share/doc/libgphoto2/camlibs/README.panasonic-l859
+share/doc/libgphoto2/camlibs/README.pccam300
+share/doc/libgphoto2/camlibs/README.pccam600
+share/doc/libgphoto2/camlibs/README.ptp2
+share/doc/libgphoto2/camlibs/README.smal
+share/doc/libgphoto2/camlibs/README.sonix
+share/doc/libgphoto2/camlibs/README.sonydscf1
+share/doc/libgphoto2/camlibs/README.soundvision
+share/doc/libgphoto2/camlibs/README.spca50x
+share/doc/libgphoto2/camlibs/README.sq905
+share/doc/libgphoto2/camlibs/README.toshiba-pdrm11
+share/doc/libgphoto2/camlibs/README.913C
+share/doc/libgphoto2_port/AUTHORS
+share/doc/libgphoto2_port/NEWS
+share/doc/libgphoto2_port/README
+share/libgphoto2/%%VERSION%%/konica/english
+share/libgphoto2/%%VERSION%%/konica/french
+share/libgphoto2/%%VERSION%%/konica/german
+share/libgphoto2/%%VERSION%%/konica/japanese
+share/libgphoto2/%%VERSION%%/konica/korean
+share/libgphoto2/%%VERSION%%/konica/spanish
 %%NLS%%share/locale/cs/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/da/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/da/LC_MESSAGES/libgphoto2_port-0.mo
@@ -293,12 +293,12 @@ libdata/pkgconfig/libgphoto2_port.pc
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libgphoto2_port-0.mo
-@dirrm %%DATADIR%%/%%VERSION%%/konica
-@dirrm %%DATADIR%%/%%VERSION%%
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm share/doc/libgphoto2_port
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/camlibs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/libgphoto2/%%VERSION%%/konica
+@dirrm share/libgphoto2/%%VERSION%%
+@dirrm share/libgphoto2
+@dirrm share/doc/libgphoto2_port
+@dirrm share/doc/libgphoto2/camlibs
+@dirrm share/doc/libgphoto2
 @dirrmtry lib/udev
 @dirrm lib/libgphoto2_port/%%VERSION_PORT%%
 @dirrm lib/libgphoto2_port
