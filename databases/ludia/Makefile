@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PGSQL_PORT} \
 		senna-cfg:${PORTSDIR}/textproc/senna
 
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.pre.mk>
 
