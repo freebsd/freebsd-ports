@@ -330,6 +330,7 @@ share/kino/scripts/exports/ffmpeg_dvd_dual.sh
 share/kino/scripts/exports/ffmpeg_flv.sh
 share/kino/scripts/exports/ffmpeg_h264.sh
 share/kino/scripts/exports/ffmpeg_h264_dual.sh
+share/kino/scripts/exports/ffmpeg_mov.sh
 share/kino/scripts/exports/ffmpeg_mp3.sh
 share/kino/scripts/exports/ffmpeg_mp4.sh
 share/kino/scripts/exports/ffmpeg_mp4_dual.sh
@@ -337,6 +338,7 @@ share/kino/scripts/exports/ffmpeg_utils.sh
 share/kino/scripts/exports/ffmpeg_vcd.sh
 share/kino/scripts/exports/ffmpeg_xvid.sh
 share/kino/scripts/exports/ffmpeg_xvid_dual.sh
+share/kino/scripts/exports/gstreamer_theora.sh
 share/kino/scripts/exports/mencoder.sh
 share/kino/scripts/exports/rawplay.sh
 share/kino/scripts/import/audio.sh
@@ -388,6 +390,7 @@ share/locale/da/LC_MESSAGES/kino.mo
 share/locale/de/LC_MESSAGES/kino.mo
 share/locale/es/LC_MESSAGES/kino.mo
 share/locale/eu/LC_MESSAGES/kino.mo
+share/locale/fi/LC_MESSAGES/kino.mo
 share/locale/fr/LC_MESSAGES/kino.mo
 share/locale/hu/LC_MESSAGES/kino.mo
 share/locale/it/LC_MESSAGES/kino.mo
