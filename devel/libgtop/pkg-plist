@@ -1,7 +1,6 @@
 bin/libgtop_daemon2
 bin/libgtop_server2
 include/libgtop-2.0/glibtop.h
-include/libgtop-2.0/glibtop_private.h
 include/libgtop-2.0/glibtop/close.h
 include/libgtop-2.0/glibtop/command.h
 include/libgtop-2.0/glibtop/cpu.h
@@ -39,6 +38,7 @@ include/libgtop-2.0/glibtop/union.h
 include/libgtop-2.0/glibtop/uptime.h
 include/libgtop-2.0/glibtop/version.h
 include/libgtop-2.0/glibtop_machine.h
+include/libgtop-2.0/glibtop_private.h
 include/libgtop-2.0/glibtop_server.h
 include/libgtop-2.0/glibtop_suid.h
 include/libgtop-2.0/libgtopconfig.h
@@ -169,9 +169,9 @@ share/locale/xh/LC_MESSAGES/libgtop-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgtop-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/libgtop-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
+@dirrm %%DOCSDIR%%
 @dirrm include/libgtop-2.0/glibtop
 @dirrm include/libgtop-2.0
-@dirrm %%DOCSDIR%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
