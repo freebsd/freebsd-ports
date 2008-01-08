@@ -3,193 +3,495 @@
 %%WWWDIR%%/_lighttpd.conf
 %%WWWDIR%%/add.php
 %%WWWDIR%%/admin/adminlog.php
+%%WWWDIR%%/admin/ajax.config_list.php
+%%WWWDIR%%/admin/ajax.group_list.php
+%%WWWDIR%%/admin/ajax.ondemandurl.php
+%%WWWDIR%%/admin/ajax.tags_list.php
+%%WWWDIR%%/admin/ajax.user_list.php
+%%WWWDIR%%/admin/ajax.verifyurl.php
 %%WWWDIR%%/admin/attachment.php
 %%WWWDIR%%/admin/backup.import.php
 %%WWWDIR%%/admin/backup.main.php
 %%WWWDIR%%/admin/category.add.php
-%%WWWDIR%%/admin/category.change.php
 %%WWWDIR%%/admin/category.cut.php
 %%WWWDIR%%/admin/category.delete.php
 %%WWWDIR%%/admin/category.edit.php
 %%WWWDIR%%/admin/category.main.php
 %%WWWDIR%%/admin/category.move.php
-%%WWWDIR%%/admin/category.paste.php
-%%WWWDIR%%/admin/config.edit.php
-%%WWWDIR%%/admin/config.save.php
-%%WWWDIR%%/admin/cookie.check.php
-%%WWWDIR%%/admin/editor/dialog.js
-%%WWWDIR%%/admin/editor/htmlarea.css
-%%WWWDIR%%/admin/editor/htmlarea.js
-%%WWWDIR%%/admin/editor/images/ed_about.gif
-%%WWWDIR%%/admin/editor/images/ed_align_center.gif
-%%WWWDIR%%/admin/editor/images/ed_align_justify.gif
-%%WWWDIR%%/admin/editor/images/ed_align_left.gif
-%%WWWDIR%%/admin/editor/images/ed_align_right.gif
-%%WWWDIR%%/admin/editor/images/ed_blank.gif
-%%WWWDIR%%/admin/editor/images/ed_charmap.gif
-%%WWWDIR%%/admin/editor/images/ed_color_bg.gif
-%%WWWDIR%%/admin/editor/images/ed_color_fg.gif
-%%WWWDIR%%/admin/editor/images/ed_copy.gif
-%%WWWDIR%%/admin/editor/images/ed_custom.gif
-%%WWWDIR%%/admin/editor/images/ed_cut.gif
-%%WWWDIR%%/admin/editor/images/ed_delete.gif
-%%WWWDIR%%/admin/editor/images/ed_format_bold.gif
-%%WWWDIR%%/admin/editor/images/ed_format_italic.gif
-%%WWWDIR%%/admin/editor/images/ed_format_strike.gif
-%%WWWDIR%%/admin/editor/images/ed_format_sub.gif
-%%WWWDIR%%/admin/editor/images/ed_format_sup.gif
-%%WWWDIR%%/admin/editor/images/ed_format_underline.gif
-%%WWWDIR%%/admin/editor/images/ed_help.gif
-%%WWWDIR%%/admin/editor/images/ed_hr.gif
-%%WWWDIR%%/admin/editor/images/ed_html.gif
-%%WWWDIR%%/admin/editor/images/ed_image.gif
-%%WWWDIR%%/admin/editor/images/ed_indent_less.gif
-%%WWWDIR%%/admin/editor/images/ed_indent_more.gif
-%%WWWDIR%%/admin/editor/images/ed_killword.gif
-%%WWWDIR%%/admin/editor/images/ed_left_to_right.gif
-%%WWWDIR%%/admin/editor/images/ed_link.gif
-%%WWWDIR%%/admin/editor/images/ed_list_bullet.gif
-%%WWWDIR%%/admin/editor/images/ed_list_num.gif
-%%WWWDIR%%/admin/editor/images/ed_paste.gif
-%%WWWDIR%%/admin/editor/images/ed_print.gif
-%%WWWDIR%%/admin/editor/images/ed_redo.gif
-%%WWWDIR%%/admin/editor/images/ed_right_to_left.gif
-%%WWWDIR%%/admin/editor/images/ed_rmformat.gif
-%%WWWDIR%%/admin/editor/images/ed_save.gif
-%%WWWDIR%%/admin/editor/images/ed_show_border.gif
-%%WWWDIR%%/admin/editor/images/ed_splitcel.gif
-%%WWWDIR%%/admin/editor/images/ed_undo.gif
-%%WWWDIR%%/admin/editor/images/fullscreen_maximize.gif
-%%WWWDIR%%/admin/editor/images/fullscreen_minimize.gif
-%%WWWDIR%%/admin/editor/images/insert_table.gif
-%%WWWDIR%%/admin/editor/lang/b5.js
-%%WWWDIR%%/admin/editor/lang/ch.js
-%%WWWDIR%%/admin/editor/lang/cz.js
-%%WWWDIR%%/admin/editor/lang/da.js
-%%WWWDIR%%/admin/editor/lang/de.js
-%%WWWDIR%%/admin/editor/lang/ee.js
-%%WWWDIR%%/admin/editor/lang/el.js
-%%WWWDIR%%/admin/editor/lang/en.js
-%%WWWDIR%%/admin/editor/lang/es.js
-%%WWWDIR%%/admin/editor/lang/fi.js
-%%WWWDIR%%/admin/editor/lang/fr.js
-%%WWWDIR%%/admin/editor/lang/gb.js
-%%WWWDIR%%/admin/editor/lang/he.js
-%%WWWDIR%%/admin/editor/lang/hu.js
-%%WWWDIR%%/admin/editor/lang/it.js
-%%WWWDIR%%/admin/editor/lang/ja-euc.js
-%%WWWDIR%%/admin/editor/lang/ja-jis.js
-%%WWWDIR%%/admin/editor/lang/ja-sjis.js
-%%WWWDIR%%/admin/editor/lang/ja-utf8.js
-%%WWWDIR%%/admin/editor/lang/ko-euc.js
-%%WWWDIR%%/admin/editor/lang/ko-utf8.js
-%%WWWDIR%%/admin/editor/lang/lt.js
-%%WWWDIR%%/admin/editor/lang/lv.js
-%%WWWDIR%%/admin/editor/lang/nb.js
-%%WWWDIR%%/admin/editor/lang/nl.js
-%%WWWDIR%%/admin/editor/lang/no.js
-%%WWWDIR%%/admin/editor/lang/pl.js
-%%WWWDIR%%/admin/editor/lang/pt_br.js
-%%WWWDIR%%/admin/editor/lang/ro.js
-%%WWWDIR%%/admin/editor/lang/ru.js
-%%WWWDIR%%/admin/editor/lang/se.js
-%%WWWDIR%%/admin/editor/lang/si.js
-%%WWWDIR%%/admin/editor/lang/vn.js
-%%WWWDIR%%/admin/editor/license.txt
-%%WWWDIR%%/admin/editor/plugins/ImageManager/Classes/Files.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/Classes/GD.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/Classes/IM.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/Classes/ImageEditor.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/Classes/ImageManager.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/Classes/NetPBM.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/Classes/Thumbnail.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/Classes/Transform.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/README.txt
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/EditorContent.js
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/ImageEditor.css
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/dialog.js
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/editor.css
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/editor.js
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/editorFrame.css
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/editorFrame.js
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/hover.htc
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/imagelist.css
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/images.js
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/manager.css
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/manager.js
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/popup.js
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/slider.js
-%%WWWDIR%%/admin/editor/plugins/ImageManager/assets/wz_jsgraphics.js
-%%WWWDIR%%/admin/editor/plugins/ImageManager/config.inc.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/editor.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/editorFrame.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/image-manager.js
-%%WWWDIR%%/admin/editor/plugins/ImageManager/images.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/2x2.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/2x2_w.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/btnFolderNew.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/btnFolderUp.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/btn_cancel.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/btn_ok.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/crop.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/default.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/div.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/dots.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/edit_active.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/edit_pencil.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/edit_trash.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/folder.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/hand.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/islocked2.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/locked.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/measure.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/noimages.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/rotate.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/save.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/scale.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/spacer.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/t_black.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/t_white.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/unlocked.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/img/unlocked2.gif
-%%WWWDIR%%/admin/editor/plugins/ImageManager/lang/en.js
-%%WWWDIR%%/admin/editor/plugins/ImageManager/manager.php
-%%WWWDIR%%/admin/editor/plugins/ImageManager/newFolder.html
-%%WWWDIR%%/admin/editor/plugins/ImageManager/thumbs.php
-%%WWWDIR%%/admin/editor/popupdiv.js
-%%WWWDIR%%/admin/editor/popups/about.html
-%%WWWDIR%%/admin/editor/popups/blank.html
-%%WWWDIR%%/admin/editor/popups/custom2.html
-%%WWWDIR%%/admin/editor/popups/editor_help.html
-%%WWWDIR%%/admin/editor/popups/fullscreen.html
-%%WWWDIR%%/admin/editor/popups/insert_image.html
-%%WWWDIR%%/admin/editor/popups/insert_table.html
-%%WWWDIR%%/admin/editor/popups/link.html
-%%WWWDIR%%/admin/editor/popups/old-fullscreen.html
-%%WWWDIR%%/admin/editor/popups/old_insert_image.html
-%%WWWDIR%%/admin/editor/popups/popup.js
-%%WWWDIR%%/admin/editor/popups/select_color.html
-%%WWWDIR%%/admin/editor/popupwin.js
+%%WWWDIR%%/admin/category.showstructure.php
+%%WWWDIR%%/admin/category.translate.php
+%%WWWDIR%%/admin/configuration.php
+%%WWWDIR%%/admin/editor/CHANGELOG
+%%WWWDIR%%/admin/editor/COPYING
+%%WWWDIR%%/admin/editor/README
+%%WWWDIR%%/admin/editor/blank.htm
+%%WWWDIR%%/admin/editor/fckblank.html
+%%WWWDIR%%/admin/editor/filemanager/browser.css
+%%WWWDIR%%/admin/editor/filemanager/browser.html
+%%WWWDIR%%/admin/editor/filemanager/connectors/php/basexml.php
+%%WWWDIR%%/admin/editor/filemanager/connectors/php/commands.php
+%%WWWDIR%%/admin/editor/filemanager/connectors/php/config.php
+%%WWWDIR%%/admin/editor/filemanager/connectors/php/connector.php
+%%WWWDIR%%/admin/editor/filemanager/connectors/php/io.php
+%%WWWDIR%%/admin/editor/filemanager/connectors/php/util.php
+%%WWWDIR%%/admin/editor/filemanager/frmactualfolder.html
+%%WWWDIR%%/admin/editor/filemanager/frmcreatefolder.html
+%%WWWDIR%%/admin/editor/filemanager/frmfolders.html
+%%WWWDIR%%/admin/editor/filemanager/frmresourceslist.html
+%%WWWDIR%%/admin/editor/filemanager/frmresourcetype.html
+%%WWWDIR%%/admin/editor/filemanager/frmupload.html
+%%WWWDIR%%/admin/editor/filemanager/images/ButtonArrow.gif
+%%WWWDIR%%/admin/editor/filemanager/images/Folder.gif
+%%WWWDIR%%/admin/editor/filemanager/images/Folder32.gif
+%%WWWDIR%%/admin/editor/filemanager/images/FolderOpened.gif
+%%WWWDIR%%/admin/editor/filemanager/images/FolderOpened32.gif
+%%WWWDIR%%/admin/editor/filemanager/images/FolderUp.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/ai.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/avi.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/bmp.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/cs.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/default.icon.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/dll.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/doc.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/exe.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/fla.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/gif.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/htm.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/html.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/jpg.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/js.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/mdb.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/mp3.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/pdf.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/ppt.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/rdp.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/swf.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/swt.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/txt.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/vsd.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/xls.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/xml.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/32/zip.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/ai.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/avi.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/bmp.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/cs.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/default.icon.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/dll.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/doc.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/exe.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/fla.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/gif.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/htm.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/html.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/jpg.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/js.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/mdb.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/mp3.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/pdf.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/ppt.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/rdp.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/swf.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/swt.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/txt.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/vsd.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/xls.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/xml.gif
+%%WWWDIR%%/admin/editor/filemanager/images/icons/zip.gif
+%%WWWDIR%%/admin/editor/filemanager/images/spacer.gif
+%%WWWDIR%%/admin/editor/filemanager/js/common.js
+%%WWWDIR%%/admin/editor/filemanager/js/fckxml.js
+%%WWWDIR%%/admin/editor/index.html
+%%WWWDIR%%/admin/editor/langs/en.js
+%%WWWDIR%%/admin/editor/langs/readme.txt
+%%WWWDIR%%/admin/editor/plugins/_template/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/_template/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/_template/images/template.gif
+%%WWWDIR%%/admin/editor/plugins/_template/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/_template/popup.htm
+%%WWWDIR%%/admin/editor/plugins/_template/readme.txt
+%%WWWDIR%%/admin/editor/plugins/advhr/css/advhr.css
+%%WWWDIR%%/admin/editor/plugins/advhr/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/advhr/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/advhr/images/advhr.gif
+%%WWWDIR%%/admin/editor/plugins/advhr/jscripts/rule.js
+%%WWWDIR%%/admin/editor/plugins/advhr/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/advhr/readme.txt
+%%WWWDIR%%/admin/editor/plugins/advhr/rule.htm
+%%WWWDIR%%/admin/editor/plugins/advimage/css/advimage.css
+%%WWWDIR%%/admin/editor/plugins/advimage/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/advimage/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/advimage/image.htm
+%%WWWDIR%%/admin/editor/plugins/advimage/images/sample.gif
+%%WWWDIR%%/admin/editor/plugins/advimage/jscripts/functions.js
+%%WWWDIR%%/admin/editor/plugins/advimage/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/advimage/readme.txt
+%%WWWDIR%%/admin/editor/plugins/advlink/css/advlink.css
+%%WWWDIR%%/admin/editor/plugins/advlink/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/advlink/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/advlink/jscripts/functions.js
+%%WWWDIR%%/admin/editor/plugins/advlink/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/advlink/link.htm
+%%WWWDIR%%/admin/editor/plugins/advlink/readme.txt
+%%WWWDIR%%/admin/editor/plugins/autosave/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/autosave/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/autosave/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/autosave/readme.txt
+%%WWWDIR%%/admin/editor/plugins/cleanup/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/cleanup/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/cleanup/readme.txt
+%%WWWDIR%%/admin/editor/plugins/contextmenu/css/contextmenu.css
+%%WWWDIR%%/admin/editor/plugins/contextmenu/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/contextmenu/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/contextmenu/images/spacer.gif
+%%WWWDIR%%/admin/editor/plugins/contextmenu/readme.txt
+%%WWWDIR%%/admin/editor/plugins/directionality/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/directionality/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/directionality/images/ltr.gif
+%%WWWDIR%%/admin/editor/plugins/directionality/images/rtl.gif
+%%WWWDIR%%/admin/editor/plugins/directionality/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/directionality/readme.txt
+%%WWWDIR%%/admin/editor/plugins/emotions/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/emotions/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/emotions/emotions.htm
+%%WWWDIR%%/admin/editor/plugins/emotions/images/emotions.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/readme.txt
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-cool.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-cry.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-embarassed.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-foot-in-mouth.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-frown.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-innocent.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-kiss.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-laughing.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-money-mouth.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-sealed.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-smile.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-surprised.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-tongue-out.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-undecided.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-wink.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/images/smiley-yell.gif
+%%WWWDIR%%/admin/editor/plugins/emotions/jscripts/functions.js
+%%WWWDIR%%/admin/editor/plugins/emotions/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/emotions/readme.txt
+%%WWWDIR%%/admin/editor/plugins/flash/css/content.css
+%%WWWDIR%%/admin/editor/plugins/flash/css/flash.css
+%%WWWDIR%%/admin/editor/plugins/flash/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/flash/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/flash/flash.htm
+%%WWWDIR%%/admin/editor/plugins/flash/images/flash.gif
+%%WWWDIR%%/admin/editor/plugins/flash/jscripts/flash.js
+%%WWWDIR%%/admin/editor/plugins/flash/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/flash/readme.txt
+%%WWWDIR%%/admin/editor/plugins/fullpage/blank.htm
+%%WWWDIR%%/admin/editor/plugins/fullpage/css/fullpage.css
+%%WWWDIR%%/admin/editor/plugins/fullpage/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/fullpage/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/fullpage/fullpage.htm
+%%WWWDIR%%/admin/editor/plugins/fullpage/images/add.gif
+%%WWWDIR%%/admin/editor/plugins/fullpage/images/fullpage.gif
+%%WWWDIR%%/admin/editor/plugins/fullpage/images/move_down.gif
+%%WWWDIR%%/admin/editor/plugins/fullpage/images/move_up.gif
+%%WWWDIR%%/admin/editor/plugins/fullpage/images/remove.gif
+%%WWWDIR%%/admin/editor/plugins/fullpage/jscripts/fullpage.js
+%%WWWDIR%%/admin/editor/plugins/fullpage/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/fullscreen/css/content.css
+%%WWWDIR%%/admin/editor/plugins/fullscreen/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/fullscreen/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/fullscreen/fullscreen.htm
+%%WWWDIR%%/admin/editor/plugins/fullscreen/images/fullscreen.gif
+%%WWWDIR%%/admin/editor/plugins/fullscreen/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/fullscreen/readme.txt
+%%WWWDIR%%/admin/editor/plugins/iespell/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/iespell/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/iespell/images/iespell.gif
+%%WWWDIR%%/admin/editor/plugins/iespell/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/iespell/readme.txt
+%%WWWDIR%%/admin/editor/plugins/inlinepopups/css/inlinepopup.css
+%%WWWDIR%%/admin/editor/plugins/inlinepopups/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/inlinepopups/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/inlinepopups/images/spacer.gif
+%%WWWDIR%%/admin/editor/plugins/inlinepopups/images/window_close.gif
+%%WWWDIR%%/admin/editor/plugins/inlinepopups/images/window_maximize.gif
+%%WWWDIR%%/admin/editor/plugins/inlinepopups/images/window_minimize.gif
+%%WWWDIR%%/admin/editor/plugins/inlinepopups/images/window_resize.gif
+%%WWWDIR%%/admin/editor/plugins/inlinepopups/jscripts/mcwindows.js
+%%WWWDIR%%/admin/editor/plugins/inlinepopups/readme.txt
+%%WWWDIR%%/admin/editor/plugins/insertdatetime/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/insertdatetime/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/insertdatetime/images/insertdate.gif
+%%WWWDIR%%/admin/editor/plugins/insertdatetime/images/inserttime.gif
+%%WWWDIR%%/admin/editor/plugins/insertdatetime/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/insertdatetime/readme.txt
+%%WWWDIR%%/admin/editor/plugins/layer/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/layer/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/layer/images/absolute.gif
+%%WWWDIR%%/admin/editor/plugins/layer/images/backward.gif
+%%WWWDIR%%/admin/editor/plugins/layer/images/forward.gif
+%%WWWDIR%%/admin/editor/plugins/layer/images/insert_layer.gif
+%%WWWDIR%%/admin/editor/plugins/layer/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/layer/readme.txt
+%%WWWDIR%%/admin/editor/plugins/noneditable/css/noneditable.css
+%%WWWDIR%%/admin/editor/plugins/noneditable/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/noneditable/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/noneditable/readme.txt
+%%WWWDIR%%/admin/editor/plugins/paste/blank.htm
+%%WWWDIR%%/admin/editor/plugins/paste/css/blank.css
+%%WWWDIR%%/admin/editor/plugins/paste/css/pasteword.css
+%%WWWDIR%%/admin/editor/plugins/paste/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/paste/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/paste/images/pastetext.gif
+%%WWWDIR%%/admin/editor/plugins/paste/images/pasteword.gif
+%%WWWDIR%%/admin/editor/plugins/paste/images/selectall.gif
+%%WWWDIR%%/admin/editor/plugins/paste/jscripts/pastetext.js
+%%WWWDIR%%/admin/editor/plugins/paste/jscripts/pasteword.js
+%%WWWDIR%%/admin/editor/plugins/paste/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/paste/pastetext.htm
+%%WWWDIR%%/admin/editor/plugins/paste/pasteword.htm
+%%WWWDIR%%/admin/editor/plugins/paste/readme.txt
+%%WWWDIR%%/admin/editor/plugins/preview/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/preview/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/preview/example.html
+%%WWWDIR%%/admin/editor/plugins/preview/images/preview.gif
+%%WWWDIR%%/admin/editor/plugins/preview/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/preview/readme.txt
+%%WWWDIR%%/admin/editor/plugins/print/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/print/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/print/images/print.gif
+%%WWWDIR%%/admin/editor/plugins/print/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/print/readme.txt
+%%WWWDIR%%/admin/editor/plugins/readme.txt
+%%WWWDIR%%/admin/editor/plugins/save/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/save/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/save/images/save.gif
+%%WWWDIR%%/admin/editor/plugins/save/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/save/readme.txt
+%%WWWDIR%%/admin/editor/plugins/searchreplace/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/searchreplace/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/searchreplace/images/replace.gif
+%%WWWDIR%%/admin/editor/plugins/searchreplace/images/search.gif
+%%WWWDIR%%/admin/editor/plugins/searchreplace/jscripts/replace.js
+%%WWWDIR%%/admin/editor/plugins/searchreplace/jscripts/search.js
+%%WWWDIR%%/admin/editor/plugins/searchreplace/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/searchreplace/readme.txt
+%%WWWDIR%%/admin/editor/plugins/searchreplace/replace.htm
+%%WWWDIR%%/admin/editor/plugins/searchreplace/search.htm
+%%WWWDIR%%/admin/editor/plugins/style/css/props.css
+%%WWWDIR%%/admin/editor/plugins/style/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/style/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/style/images/apply_button_bg.gif
+%%WWWDIR%%/admin/editor/plugins/style/images/style_info.gif
+%%WWWDIR%%/admin/editor/plugins/style/jscripts/props.js
+%%WWWDIR%%/admin/editor/plugins/style/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/style/props.htm
+%%WWWDIR%%/admin/editor/plugins/style/readme.txt
+%%WWWDIR%%/admin/editor/plugins/table/cell.htm
+%%WWWDIR%%/admin/editor/plugins/table/css/cell.css
+%%WWWDIR%%/admin/editor/plugins/table/css/row.css
+%%WWWDIR%%/admin/editor/plugins/table/css/table.css
+%%WWWDIR%%/admin/editor/plugins/table/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/table/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/table/images/buttons.gif
+%%WWWDIR%%/admin/editor/plugins/table/images/table.gif
+%%WWWDIR%%/admin/editor/plugins/table/images/table_cell_props.gif
+%%WWWDIR%%/admin/editor/plugins/table/images/table_delete.gif
+%%WWWDIR%%/admin/editor/plugins/table/images/table_delete_col.gif
+%%WWWDIR%%/admin/editor/plugins/table/images/table_delete_row.gif
+%%WWWDIR%%/admin/editor/plugins/table/images/table_insert_col_after.gif
+%%WWWDIR%%/admin/editor/plugins/table/images/table_insert_col_before.gif
+%%WWWDIR%%/admin/editor/plugins/table/images/table_insert_row_after.gif
+%%WWWDIR%%/admin/editor/plugins/table/images/table_insert_row_before.gif
+%%WWWDIR%%/admin/editor/plugins/table/images/table_merge_cells.gif
+%%WWWDIR%%/admin/editor/plugins/table/images/table_row_props.gif
+%%WWWDIR%%/admin/editor/plugins/table/images/table_split_cells.gif
+%%WWWDIR%%/admin/editor/plugins/table/jscripts/cell.js
+%%WWWDIR%%/admin/editor/plugins/table/jscripts/merge_cells.js
+%%WWWDIR%%/admin/editor/plugins/table/jscripts/row.js
+%%WWWDIR%%/admin/editor/plugins/table/jscripts/table.js
+%%WWWDIR%%/admin/editor/plugins/table/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/table/merge_cells.htm
+%%WWWDIR%%/admin/editor/plugins/table/readme.txt
+%%WWWDIR%%/admin/editor/plugins/table/row.htm
+%%WWWDIR%%/admin/editor/plugins/table/table.htm
+%%WWWDIR%%/admin/editor/plugins/zoom/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/zoom/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/zoom/readme.txt
+%%WWWDIR%%/admin/editor/themes/advanced/about.htm
+%%WWWDIR%%/admin/editor/themes/advanced/anchor.htm
+%%WWWDIR%%/admin/editor/themes/advanced/charmap.htm
+%%WWWDIR%%/admin/editor/themes/advanced/color_picker.htm
+%%WWWDIR%%/admin/editor/themes/advanced/css/editor_content.css
+%%WWWDIR%%/admin/editor/themes/advanced/css/editor_popup.css
+%%WWWDIR%%/admin/editor/themes/advanced/css/editor_ui.css
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/about.htm
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/common_buttons.htm
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/create_accessible_content.htm
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/images/insert_anchor_window.gif
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/images/insert_image_window.gif
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/images/insert_link_window.gif
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/images/insert_table_window.gif
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/index.htm
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/insert_anchor_button.htm
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/insert_image_button.htm
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/insert_link_button.htm
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/insert_table_button.htm
+%%WWWDIR%%/admin/editor/themes/advanced/docs/en/style.css
+%%WWWDIR%%/admin/editor/themes/advanced/editor_template.js
+%%WWWDIR%%/admin/editor/themes/advanced/editor_template_src.js
+%%WWWDIR%%/admin/editor/themes/advanced/image.htm
+%%WWWDIR%%/admin/editor/themes/advanced/images/anchor.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/anchor_symbol.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/backcolor.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/bold.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/bold_de_se.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/bold_es.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/bold_fr.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/bold_ru.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/bold_tw.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/browse.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/bullist.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/button_menu.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/buttons.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/cancel_button_bg.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/charmap.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/cleanup.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/close.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/code.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/color.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/copy.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/custom_1.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/cut.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/forecolor.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/help.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/hr.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/image.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/indent.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/insert_button_bg.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/italic.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/italic_de_se.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/italic_es.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/italic_ru.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/italic_tw.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/justifycenter.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/justifyfull.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/justifyleft.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/justifyright.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/link.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/menu_check.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/newdocument.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/numlist.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/opacity.png
+%%WWWDIR%%/admin/editor/themes/advanced/images/outdent.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/paste.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/redo.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/removeformat.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/separator.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/spacer.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/statusbar_resize.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/strikethrough.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/sub.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/sup.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/underline.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/underline_es.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/underline_fr.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/underline_ru.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/underline_tw.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/undo.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/unlink.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/visualaid.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/xp/tab_bg.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/xp/tab_end.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/xp/tab_sel_bg.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/xp/tab_sel_end.gif
+%%WWWDIR%%/admin/editor/themes/advanced/images/xp/tabs_bg.gif
+%%WWWDIR%%/admin/editor/themes/advanced/jscripts/about.js
+%%WWWDIR%%/admin/editor/themes/advanced/jscripts/anchor.js
+%%WWWDIR%%/admin/editor/themes/advanced/jscripts/charmap.js
+%%WWWDIR%%/admin/editor/themes/advanced/jscripts/color_picker.js
+%%WWWDIR%%/admin/editor/themes/advanced/jscripts/image.js
+%%WWWDIR%%/admin/editor/themes/advanced/jscripts/link.js
+%%WWWDIR%%/admin/editor/themes/advanced/jscripts/source_editor.js
+%%WWWDIR%%/admin/editor/themes/advanced/langs/en.js
+%%WWWDIR%%/admin/editor/themes/advanced/link.htm
+%%WWWDIR%%/admin/editor/themes/advanced/source_editor.htm
+%%WWWDIR%%/admin/editor/themes/simple/css/editor_content.css
+%%WWWDIR%%/admin/editor/themes/simple/css/editor_popup.css
+%%WWWDIR%%/admin/editor/themes/simple/css/editor_ui.css
+%%WWWDIR%%/admin/editor/themes/simple/editor_template.js
+%%WWWDIR%%/admin/editor/themes/simple/editor_template_src.js
+%%WWWDIR%%/admin/editor/themes/simple/images/bold.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/bold_de_se.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/bold_fr.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/bold_ru.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/bold_tw.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/bullist.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/buttons.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/cleanup.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/italic.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/italic_de_se.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/italic_ru.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/italic_tw.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/numlist.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/redo.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/separator.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/spacer.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/strikethrough.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/underline.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/underline_fr.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/underline_ru.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/underline_tw.gif
+%%WWWDIR%%/admin/editor/themes/simple/images/undo.gif
+%%WWWDIR%%/admin/editor/tiny_mce.js
+%%WWWDIR%%/admin/editor/tiny_mce_popup.js
+%%WWWDIR%%/admin/editor/tiny_mce_src.js
+%%WWWDIR%%/admin/editor/utils/editable_selects.js
+%%WWWDIR%%/admin/editor/utils/form_utils.js
+%%WWWDIR%%/admin/editor/utils/mclayer.js
+%%WWWDIR%%/admin/editor/utils/mctabs.js
+%%WWWDIR%%/admin/editor/utils/validate.js
+%%WWWDIR%%/admin/export.file.php
 %%WWWDIR%%/admin/export.main.php
 %%WWWDIR%%/admin/footer.php
+%%WWWDIR%%/admin/glossary.add.php
+%%WWWDIR%%/admin/glossary.edit.php
+%%WWWDIR%%/admin/glossary.main.php
+%%WWWDIR%%/admin/group.php
 %%WWWDIR%%/admin/header.php
 %%WWWDIR%%/admin/images/add.gif
 %%WWWDIR%%/admin/images/arrow.gif
+%%WWWDIR%%/admin/images/chown.png
 %%WWWDIR%%/admin/images/cut.gif
 %%WWWDIR%%/admin/images/delete.gif
 %%WWWDIR%%/admin/images/edit.gif
+%%WWWDIR%%/admin/images/indicator.gif
+%%WWWDIR%%/admin/images/locked.png
 %%WWWDIR%%/admin/images/move.gif
+%%WWWDIR%%/admin/images/null.gif
+%%WWWDIR%%/admin/images/ok.gif
 %%WWWDIR%%/admin/images/paste.gif
+%%WWWDIR%%/admin/images/translate.gif
+%%WWWDIR%%/admin/images/translate2.gif
+%%WWWDIR%%/admin/images/url-batch1.png
+%%WWWDIR%%/admin/images/url-batch2.png
+%%WWWDIR%%/admin/images/url-batch3.png
+%%WWWDIR%%/admin/images/url-checking.png
+%%WWWDIR%%/admin/images/url-disabled.png
+%%WWWDIR%%/admin/images/url-linkbad.png
+%%WWWDIR%%/admin/images/url-linkok.png
+%%WWWDIR%%/admin/images/url-noaccess.png
+%%WWWDIR%%/admin/images/url-noajax.png
+%%WWWDIR%%/admin/images/url-nolinks.png
+%%WWWDIR%%/admin/images/url-noscript.png
 %%WWWDIR%%/admin/index.php
+%%WWWDIR%%/admin/linkconfig.main.php
 %%WWWDIR%%/admin/menue.php
 %%WWWDIR%%/admin/news.php
 %%WWWDIR%%/admin/password.php
-%%WWWDIR%%/admin/plugins.firefoxsearch.php
-%%WWWDIR%%/admin/plugins.main.php
-%%WWWDIR%%/admin/plugins.msiesearch.php
 %%WWWDIR%%/admin/pwd.change.php
 %%WWWDIR%%/admin/pwd.save.php
 %%WWWDIR%%/admin/record.add.php
+%%WWWDIR%%/admin/record.comments.php
 %%WWWDIR%%/admin/record.delatt.php
 %%WWWDIR%%/admin/record.delcomment.php
 %%WWWDIR%%/admin/record.delcommentform.php
@@ -203,25 +505,23 @@
 %%WWWDIR%%/admin/stat.browser.php
 %%WWWDIR%%/admin/stat.form.php
 %%WWWDIR%%/admin/stat.main.php
-%%WWWDIR%%/admin/stat.query.php
 %%WWWDIR%%/admin/stat.ratings.php
 %%WWWDIR%%/admin/stat.show.php
-%%WWWDIR%%/admin/user.add.php
-%%WWWDIR%%/admin/user.edit.php
-%%WWWDIR%%/admin/user.list.php
-%%WWWDIR%%/admin/user.question.php
+%%WWWDIR%%/admin/user.php
+%%WWWDIR%%/ajaxresponse.php
 %%WWWDIR%%/artikel.php
 %%WWWDIR%%/ask.php
 %%WWWDIR%%/contact.php
+%%WWWDIR%%/cron.verifyurls.php
 %%WWWDIR%%/docs/CHANGEDFILES.txt
 %%WWWDIR%%/docs/INSTALL.txt
+%%WWWDIR%%/docs/KNOWNBUGS.txt
 %%WWWDIR%%/docs/LICENSE.txt
 %%WWWDIR%%/docs/README.txt
 %%WWWDIR%%/docs/TODO.txt
 %%WWWDIR%%/docs/UPDATE.txt
-%%WWWDIR%%/docs/documentation.de.html
 %%WWWDIR%%/docs/documentation.en.html
-%%WWWDIR%%/docs/documentation.fr.html
+%%WWWDIR%%/fckblank.html
 %%WWWDIR%%/feed/latest/rss.php
 %%WWWDIR%%/feed/news/rss.php
 %%WWWDIR%%/feed/openquestions/rss.php
@@ -264,55 +564,108 @@
 %%WWWDIR%%/help.php
 %%WWWDIR%%/images/arrow.gif
 %%WWWDIR%%/images/break.gif
+%%WWWDIR%%/images/digg.gif
 %%WWWDIR%%/images/email.gif
 %%WWWDIR%%/images/logo.png
 %%WWWDIR%%/images/more.gif
 %%WWWDIR%%/images/pdf.gif
-%%WWWDIR%%/images/pmfsearch.ico
 %%WWWDIR%%/images/pmfsearch.png
 %%WWWDIR%%/images/print.gif
 %%WWWDIR%%/images/rss.png
+%%WWWDIR%%/images/translate.gif
 %%WWWDIR%%/images/xml.gif
+%%WWWDIR%%/inc/Captcha.php
+%%WWWDIR%%/inc/Category.php
+%%WWWDIR%%/inc/Comment.php
+%%WWWDIR%%/inc/Configuration.php
+%%WWWDIR%%/inc/Db.php
+%%WWWDIR%%/inc/Export.php
+%%WWWDIR%%/inc/Faq.php
+%%WWWDIR%%/inc/Glossary.php
+%%WWWDIR%%/inc/HttpStreamer.php
+%%WWWDIR%%/inc/Init.php
+%%WWWDIR%%/inc/Ldap.php
+%%WWWDIR%%/inc/Link.php
+%%WWWDIR%%/inc/Linkverifier.php
+%%WWWDIR%%/inc/Logging.php
+%%WWWDIR%%/inc/News.php
+%%WWWDIR%%/inc/PMF_DB/Ibase.php
+%%WWWDIR%%/inc/PMF_DB/Ibm_db2.php
+%%WWWDIR%%/inc/PMF_DB/Maxdb.php
+%%WWWDIR%%/inc/PMF_DB/Mssql.php
+%%WWWDIR%%/inc/PMF_DB/Mysql.php
+%%WWWDIR%%/inc/PMF_DB/Mysqli.php
+%%WWWDIR%%/inc/PMF_DB/Oracle.php
+%%WWWDIR%%/inc/PMF_DB/Pgsql.php
+%%WWWDIR%%/inc/PMF_DB/Sqlite.php
+%%WWWDIR%%/inc/PMF_DB/Sybase.php
+%%WWWDIR%%/inc/PMF_Export/Docbook.php
+%%WWWDIR%%/inc/PMF_Export/Pdf.php
+%%WWWDIR%%/inc/PMF_User/Auth.php
+%%WWWDIR%%/inc/PMF_User/AuthDb.php
+%%WWWDIR%%/inc/PMF_User/CurrentUser.php
+%%WWWDIR%%/inc/PMF_User/Enc.php
+%%WWWDIR%%/inc/PMF_User/EncCrypt.php
+%%WWWDIR%%/inc/PMF_User/EncMd5.php
+%%WWWDIR%%/inc/PMF_User/EncSha.php
+%%WWWDIR%%/inc/PMF_User/Perm.php
+%%WWWDIR%%/inc/PMF_User/PermBasic.php
+%%WWWDIR%%/inc/PMF_User/PermLarge.php
+%%WWWDIR%%/inc/PMF_User/PermMedium.php
+%%WWWDIR%%/inc/PMF_User/User.php
+%%WWWDIR%%/inc/PMF_User/UserData.php
+%%WWWDIR%%/inc/Rating.php
+%%WWWDIR%%/inc/Relation.php
+%%WWWDIR%%/inc/Session.php
+%%WWWDIR%%/inc/Sitemap.php
+%%WWWDIR%%/inc/Tags.php
+%%WWWDIR%%/inc/Template.php
+%%WWWDIR%%/inc/Utils.php
 %%WWWDIR%%/inc/blockedwords.txt
-%%WWWDIR%%/inc/captcha.php
-%%WWWDIR%%/inc/category.php
-%%WWWDIR%%/inc/config.php.original
 %%WWWDIR%%/inc/constants.php
 %%WWWDIR%%/inc/data.php.original
-%%WWWDIR%%/inc/db.php
-%%WWWDIR%%/inc/docbook.php
-%%WWWDIR%%/inc/fpdf.php
-%%WWWDIR%%/inc/functions.js
 %%WWWDIR%%/inc/functions.php
-%%WWWDIR%%/inc/ibm_db2.php
-%%WWWDIR%%/inc/idna_convert.class.php
-%%WWWDIR%%/inc/init.php
-%%WWWDIR%%/inc/ldap.php
-%%WWWDIR%%/inc/maxdb.php
-%%WWWDIR%%/inc/mssql.php
-%%WWWDIR%%/inc/mysql.php
-%%WWWDIR%%/inc/mysqli.php
-%%WWWDIR%%/inc/npdata.ser
-%%WWWDIR%%/inc/parser.php
-%%WWWDIR%%/inc/pdf.php
-%%WWWDIR%%/inc/pgsql.php
-%%WWWDIR%%/inc/sqlite.php
-%%WWWDIR%%/inc/sybase.php
-%%WWWDIR%%/inc/xmlrpc.php
-%%WWWDIR%%/inc/xmlrpcs.php
+%%WWWDIR%%/inc/js/functions.js
+%%WWWDIR%%/inc/js/prototype.js
+%%WWWDIR%%/inc/js/scriptaculous/CHANGELOG
+%%WWWDIR%%/inc/js/scriptaculous/MIT-LICENSE
+%%WWWDIR%%/inc/js/scriptaculous/builder.js
+%%WWWDIR%%/inc/js/scriptaculous/controls.js
+%%WWWDIR%%/inc/js/scriptaculous/dragdrop.js
+%%WWWDIR%%/inc/js/scriptaculous/effects.js
+%%WWWDIR%%/inc/js/scriptaculous/readme
+%%WWWDIR%%/inc/js/scriptaculous/scriptaculous.js
+%%WWWDIR%%/inc/js/scriptaculous/slider.js
+%%WWWDIR%%/inc/libs/fpdf.php
+%%WWWDIR%%/inc/libs/idna_convert.class.php
+%%WWWDIR%%/inc/libs/npdata.ser
+%%WWWDIR%%/inc/libs/xmlrpc.php
+%%WWWDIR%%/inc/libs/xmlrpcs.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/install/bbcode2xhtml.php
+%%WWWDIR%%/install/config.sql.php
+%%WWWDIR%%/install/ibase.sql.php
 %%WWWDIR%%/install/ibm_db2.sql.php
+%%WWWDIR%%/install/ibm_db2.update.sql.php
 %%WWWDIR%%/install/index.html
 %%WWWDIR%%/install/installer.php
 %%WWWDIR%%/install/maxdb.sql.php
+%%WWWDIR%%/install/maxdb.update.sql.php
 %%WWWDIR%%/install/mssql.sql.php
+%%WWWDIR%%/install/mssql.update.sql.php
 %%WWWDIR%%/install/mysql.sql.php
+%%WWWDIR%%/install/mysql.update.sql.php
 %%WWWDIR%%/install/mysqli.sql.php
+%%WWWDIR%%/install/mysqli.update.sql.php
+%%WWWDIR%%/install/oracle.sql.php
 %%WWWDIR%%/install/pgsql.sql.php
+%%WWWDIR%%/install/pgsql.update.sql.php
+%%WWWDIR%%/install/questionnaire.php
 %%WWWDIR%%/install/sqlite.sql.php
+%%WWWDIR%%/install/sqlite.update.sql.php
 %%WWWDIR%%/install/sybase.sql.php
+%%WWWDIR%%/install/sybase.update.sql.php
 %%WWWDIR%%/install/update.php
+%%WWWDIR%%/instantresponse.php
 %%WWWDIR%%/lang/language_ar.php
 %%WWWDIR%%/lang/language_cs.php
 %%WWWDIR%%/lang/language_cy.php
@@ -342,36 +695,50 @@
 %%WWWDIR%%/lang/language_sl.php
 %%WWWDIR%%/lang/language_sr.php
 %%WWWDIR%%/lang/language_sv.php
+%%WWWDIR%%/lang/language_th.php
 %%WWWDIR%%/lang/language_tr.php
 %%WWWDIR%%/lang/language_tw.php
 %%WWWDIR%%/lang/language_vi.php
 %%WWWDIR%%/lang/language_zh.php
 %%WWWDIR%%/mailsend2friend.php
 %%WWWDIR%%/main.php
+%%WWWDIR%%/microsummary.php
+%%WWWDIR%%/news.php
 %%WWWDIR%%/open.php
+%%WWWDIR%%/opensearch.php
 %%WWWDIR%%/pdf.php
 %%WWWDIR%%/phpmyfaq.spec
 %%WWWDIR%%/save.php
 %%WWWDIR%%/savecomment.php
 %%WWWDIR%%/savequestion.php
 %%WWWDIR%%/savevoting.php
+%%WWWDIR%%/scripts/cvs2package.sh
 %%WWWDIR%%/search.php
 %%WWWDIR%%/send2friend.php
 %%WWWDIR%%/sendmail.php
 %%WWWDIR%%/show.php
+%%WWWDIR%%/sitemap.google.php
 %%WWWDIR%%/sitemap.php
+%%WWWDIR%%/sitemap.yahoo.php
 %%WWWDIR%%/template/add.tpl
 %%WWWDIR%%/template/admin.css
+%%WWWDIR%%/template/admin.rtl.css
 %%WWWDIR%%/template/artikel.tpl
 %%WWWDIR%%/template/ask.tpl
 %%WWWDIR%%/template/asksearch.tpl
+%%WWWDIR%%/template/catandtag.tpl
 %%WWWDIR%%/template/colors.css
 %%WWWDIR%%/template/contact.tpl
 %%WWWDIR%%/template/favicon.ico
 %%WWWDIR%%/template/help.tpl
+%%WWWDIR%%/template/htmlexport.tpl
 %%WWWDIR%%/template/index.tpl
+%%WWWDIR%%/template/instantresponse.tpl
+%%WWWDIR%%/template/loggedin.tpl
+%%WWWDIR%%/template/loginbox.tpl
 %%WWWDIR%%/template/mailsend2friend.tpl
 %%WWWDIR%%/template/main.tpl
+%%WWWDIR%%/template/news.tpl
 %%WWWDIR%%/template/open.tpl
 %%WWWDIR%%/template/print.css
 %%WWWDIR%%/template/save.tpl
@@ -383,17 +750,27 @@
 %%WWWDIR%%/template/sendmail.tpl
 %%WWWDIR%%/template/show.tpl
 %%WWWDIR%%/template/sitemap.tpl
+%%WWWDIR%%/template/startpage.tpl
 %%WWWDIR%%/template/style.css
+%%WWWDIR%%/template/style.rtl.css
+%%WWWDIR%%/template/tagcloud.tpl
+%%WWWDIR%%/template/translate.tpl
 %%WWWDIR%%/template/writecomment.tpl
-%%WWWDIR%%/template/xml.tpl
+%%WWWDIR%%/translate.php
 %%WWWDIR%%/writecomment.php
-%%WWWDIR%%/xml.php
 %%WWWDIR%%/xmlrpc.php
 @dirrm %%WWWDIR%%/xml
 @dirrm %%WWWDIR%%/template
+@dirrm %%WWWDIR%%/scripts
 @dirrm %%WWWDIR%%/pdf
 @dirrm %%WWWDIR%%/lang
 @dirrm %%WWWDIR%%/install
+@dirrm %%WWWDIR%%/inc/libs
+@dirrm %%WWWDIR%%/inc/js/scriptaculous
+@dirrm %%WWWDIR%%/inc/js
+@dirrm %%WWWDIR%%/inc/PMF_User
+@dirrm %%WWWDIR%%/inc/PMF_Export
+@dirrm %%WWWDIR%%/inc/PMF_DB
 @dirrm %%WWWDIR%%/inc
 @dirrm %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/font/makefont
@@ -407,15 +784,117 @@
 @dirrm %%WWWDIR%%/data
 @dirrm %%WWWDIR%%/attachments
 @dirrm %%WWWDIR%%/admin/images
-@dirrm %%WWWDIR%%/admin/editor/popups
-@dirrm %%WWWDIR%%/admin/editor/plugins/ImageManager/lang
-@dirrm %%WWWDIR%%/admin/editor/plugins/ImageManager/img
-@dirrm %%WWWDIR%%/admin/editor/plugins/ImageManager/assets
-@dirrm %%WWWDIR%%/admin/editor/plugins/ImageManager/Classes
-@dirrm %%WWWDIR%%/admin/editor/plugins/ImageManager
+@dirrm %%WWWDIR%%/admin/editor/utils
+@dirrm %%WWWDIR%%/admin/editor/themes/simple/images
+@dirrm %%WWWDIR%%/admin/editor/themes/simple/css
+@dirrm %%WWWDIR%%/admin/editor/themes/simple
+@dirrm %%WWWDIR%%/admin/editor/themes/advanced/langs
+@dirrm %%WWWDIR%%/admin/editor/themes/advanced/jscripts
+@dirrm %%WWWDIR%%/admin/editor/themes/advanced/images/xp
+@dirrm %%WWWDIR%%/admin/editor/themes/advanced/images
+@dirrm %%WWWDIR%%/admin/editor/themes/advanced/docs/en/images
+@dirrm %%WWWDIR%%/admin/editor/themes/advanced/docs/en
+@dirrm %%WWWDIR%%/admin/editor/themes/advanced/docs
+@dirrm %%WWWDIR%%/admin/editor/themes/advanced/css
+@dirrm %%WWWDIR%%/admin/editor/themes/advanced
+@dirrm %%WWWDIR%%/admin/editor/themes
+@dirrm %%WWWDIR%%/admin/editor/plugins/zoom
+@dirrm %%WWWDIR%%/admin/editor/plugins/table/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/table/jscripts
+@dirrm %%WWWDIR%%/admin/editor/plugins/table/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/table/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/table
+@dirrm %%WWWDIR%%/admin/editor/plugins/style/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/style/jscripts
+@dirrm %%WWWDIR%%/admin/editor/plugins/style/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/style/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/style
+@dirrm %%WWWDIR%%/admin/editor/plugins/searchreplace/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/searchreplace/jscripts
+@dirrm %%WWWDIR%%/admin/editor/plugins/searchreplace/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/searchreplace
+@dirrm %%WWWDIR%%/admin/editor/plugins/save/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/save/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/save
+@dirrm %%WWWDIR%%/admin/editor/plugins/print/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/print/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/print
+@dirrm %%WWWDIR%%/admin/editor/plugins/preview/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/preview/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/preview
+@dirrm %%WWWDIR%%/admin/editor/plugins/paste/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/paste/jscripts
+@dirrm %%WWWDIR%%/admin/editor/plugins/paste/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/paste/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/paste
+@dirrm %%WWWDIR%%/admin/editor/plugins/noneditable/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/noneditable
+@dirrm %%WWWDIR%%/admin/editor/plugins/layer/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/layer/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/layer
+@dirrm %%WWWDIR%%/admin/editor/plugins/insertdatetime/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/insertdatetime/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/insertdatetime
+@dirrm %%WWWDIR%%/admin/editor/plugins/inlinepopups/jscripts
+@dirrm %%WWWDIR%%/admin/editor/plugins/inlinepopups/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/inlinepopups/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/inlinepopups
+@dirrm %%WWWDIR%%/admin/editor/plugins/iespell/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/iespell/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/iespell
+@dirrm %%WWWDIR%%/admin/editor/plugins/fullscreen/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/fullscreen/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/fullscreen/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/fullscreen
+@dirrm %%WWWDIR%%/admin/editor/plugins/fullpage/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/fullpage/jscripts
+@dirrm %%WWWDIR%%/admin/editor/plugins/fullpage/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/fullpage/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/fullpage
+@dirrm %%WWWDIR%%/admin/editor/plugins/flash/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/flash/jscripts
+@dirrm %%WWWDIR%%/admin/editor/plugins/flash/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/flash/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/flash
+@dirrm %%WWWDIR%%/admin/editor/plugins/emotions/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/emotions/jscripts
+@dirrm %%WWWDIR%%/admin/editor/plugins/emotions/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/emotions
+@dirrm %%WWWDIR%%/admin/editor/plugins/directionality/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/directionality/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/directionality
+@dirrm %%WWWDIR%%/admin/editor/plugins/contextmenu/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/contextmenu/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/contextmenu
+@dirrm %%WWWDIR%%/admin/editor/plugins/cleanup
+@dirrm %%WWWDIR%%/admin/editor/plugins/autosave/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/autosave
+@dirrm %%WWWDIR%%/admin/editor/plugins/advlink/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/advlink/jscripts
+@dirrm %%WWWDIR%%/admin/editor/plugins/advlink/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/advlink
+@dirrm %%WWWDIR%%/admin/editor/plugins/advimage/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/advimage/jscripts
+@dirrm %%WWWDIR%%/admin/editor/plugins/advimage/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/advimage/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/advimage
+@dirrm %%WWWDIR%%/admin/editor/plugins/advhr/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/advhr/jscripts
+@dirrm %%WWWDIR%%/admin/editor/plugins/advhr/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/advhr/css
+@dirrm %%WWWDIR%%/admin/editor/plugins/advhr
+@dirrm %%WWWDIR%%/admin/editor/plugins/_template/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/_template/images
+@dirrm %%WWWDIR%%/admin/editor/plugins/_template
 @dirrm %%WWWDIR%%/admin/editor/plugins
-@dirrm %%WWWDIR%%/admin/editor/lang
-@dirrm %%WWWDIR%%/admin/editor/images
+@dirrm %%WWWDIR%%/admin/editor/langs
+@dirrm %%WWWDIR%%/admin/editor/filemanager/js
+@dirrm %%WWWDIR%%/admin/editor/filemanager/images/icons/32
+@dirrm %%WWWDIR%%/admin/editor/filemanager/images/icons
+@dirrm %%WWWDIR%%/admin/editor/filemanager/images
+@dirrm %%WWWDIR%%/admin/editor/filemanager/connectors/php
+@dirrm %%WWWDIR%%/admin/editor/filemanager/connectors
+@dirrm %%WWWDIR%%/admin/editor/filemanager
 @dirrm %%WWWDIR%%/admin/editor
 @dirrm %%WWWDIR%%/admin
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%
