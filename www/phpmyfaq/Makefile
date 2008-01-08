@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpmyfaq
-PORTVERSION=	1.6.12
+PORTVERSION=	2.0.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpmyfaq.de/download/
 
@@ -22,10 +22,9 @@ WANT_PHP_WEB=	YES
 
 do-install:
 	-${MKDIR} ${WWWDIR}
-	@${CHMOD} 755 ${WWWDIR}
-	@${CP} -R ${WRKSRC}/ ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}
 .for i in ${FAQ_DIR}
-	@${MKDIR} ${WWWDIR}/${i}
+	-@${MKDIR} ${WWWDIR}/${i}
 	@${CHMOD} 777 ${WWWDIR}/${i}
 .endfor
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
