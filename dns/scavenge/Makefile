@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	scavenge
-PORTVERSION=	1.3
+PORTVERSION=	2.0
 CATEGORIES=	dns
 MASTER_SITES=	http://mark.foster.cc/pub/scavenge/
 
@@ -21,6 +21,6 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/scavenge ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/src/scavenge ${PREFIX}/bin
 
 .include <bsd.port.mk>
