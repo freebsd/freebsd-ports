@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	howm
-PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTVERSION=	1.3.5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://howm.sourceforge.jp/a/
 
@@ -16,7 +15,7 @@ COMMENT=	Write fragmentarily and read collectively
 
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
+EMACS_PORT_NAME?=	emacs22
 ELISP=		action-lock.el bcomp.el cheat-font-lock.el \
 		howm-common.el howm-date.el howm-menu.el howm-misc.el \
 		howm-mode.el howm-reminder.el \
