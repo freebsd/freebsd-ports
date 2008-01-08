@@ -1,6 +1,6 @@
---- usrp/host/swig/Makefile.in.orig	Wed Feb 28 12:42:15 2007
-+++ usrp/host/swig/Makefile.in	Sat Apr 14 12:31:37 2007
-@@ -445,7 +445,6 @@
+--- usrp/host/swig/Makefile.in.orig	2007-11-05 20:04:16.000000000 -0500
++++ usrp/host/swig/Makefile.in	2008-01-03 13:19:58.000000000 -0500
+@@ -455,7 +455,6 @@
  	usrp_prims.py
  
  ourpython_PYTHON = \

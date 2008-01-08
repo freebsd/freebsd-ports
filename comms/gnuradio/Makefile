@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnuradio
-PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnuradio
@@ -27,8 +26,6 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/ephem.so:${PORTSDIR}/astro/pyephem
 
-GNU_CONFIGURE=	yes
-MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}"
 USE_PYTHON=	2.4+
 USE_WX=		2.6
 WX_COMPS=	wx wx:build wx:run python:build python:run
@@ -38,6 +35,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
 CONFIGURE_ARGS=	--with-boost-include-dir="${LOCALBASE}/include/" \
 		--enable-usrp \
 		--enable-gr-usrp \
@@ -53,8 +51,13 @@ CONFIGURE_ARGS=	--with-boost-include-dir="${LOCALBASE}/include/" \
 PLIST_SUB+=	RELEASE="${MACHINE_ARCH}-portbld-freebsd${OSREL}"
 
 post-patch:
+	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
+		-n 10 ${REINPLACE_CMD} -E -e \
+		's!^(ACLOCAL|AUTOCONF|AUTOMAKE|AUTOHEADER).+$$!\1=${TRUE}!' \
+		-e 's|/gnuradio/examples|/examples/gnuradio|'
 	@${REINPLACE_CMD} -e 's|%%LIBDATA%%|${PREFIX}/libdata|' \
-	    ${WRKSRC}/gnuradio-core/Makefile.in ${WRKSRC}/usrp/Makefile.in
+	    ${WRKSRC}/gnuradio-core/Makefile.in ${WRKSRC}/usrp/Makefile.in \
+	    ${WRKSRC}/omnithread/Makefile.in ${WRKSRC}/gr-atsc/Makefile.in
 pre-install:
 	@${CP}	${FILESDIR}/wxgui_src_python_init.py \
 		${WRKSRC}/gr-wxgui/src/python/__init__.py
@@ -65,10 +68,6 @@ post-install:
 	    ${PREFIX}/etc/gnuradio/gr-audio-oss.conf.sample
 	@${INSTALL_DATA}	${WRKSRC}/gr-wxgui/gr-wxgui.conf \
 	    ${PREFIX}/etc/gnuradio/gr-wxgui.conf.sample
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/gnuradio-examples && \
-	    ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/ "! -regex .*Makefile.*")
-	@${ECHO}
 .if	!defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

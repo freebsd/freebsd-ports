@@ -1,12 +1,12 @@
---- gr-audio-oss/Makefile.in.orig	Thu Sep 13 10:00:34 2007
-+++ gr-audio-oss/Makefile.in	Thu Sep 13 10:00:51 2007
-@@ -408,12 +408,11 @@
- # Fix for BSD make not defining $(RM).  We define it now in configure.ac
- # using AM_PATH_PROG, but now here have to add a -f to be like GNU make
- RM = $(RM_PROG) -f
+--- gr-audio-oss/Makefile.in.orig	2007-11-05 20:04:10.000000000 -0500
++++ gr-audio-oss/Makefile.in	2008-01-03 13:11:36.000000000 -0500
+@@ -421,12 +421,11 @@
+ 
+ # Base directory for example applications
+ exampledir = $(datadir)/gnuradio/examples
 -EXTRA_DIST = \
 -	gr-audio-oss.conf
-+EXTRA_DIST = 
++EXTRA_DIST =
  
  SUBDIRS = src
  etcdir = $(sysconfdir)/gnuradio/conf.d

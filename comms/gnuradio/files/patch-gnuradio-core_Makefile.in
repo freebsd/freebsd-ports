@@ -1,8 +1,8 @@
---- gnuradio-core/Makefile.in.orig	Wed Feb 28 12:41:58 2007
-+++ gnuradio-core/Makefile.in	Fri Sep 14 12:21:48 2007
-@@ -411,14 +411,13 @@
- # using AM_PATH_PROG, but now here have to add a -f to be like GNU make
- RM = $(RM_PROG) -f
+--- gnuradio-core/Makefile.in.orig	2007-11-05 20:04:06.000000000 -0500
++++ gnuradio-core/Makefile.in	2008-01-03 13:07:03.000000000 -0500
+@@ -424,14 +424,13 @@
+ # Base directory for example applications
+ exampledir = $(datadir)/gnuradio/examples
  EXTRA_DIST = \
 -	gnuradio-core.conf		\
  	gnuradio-core.pc.in
@@ -18,7 +18,7 @@
  all: all-recursive
  
  .SUFFIXES:
-@@ -431,9 +430,9 @@
+@@ -444,9 +443,9 @@
  	      exit 1;; \
  	  esac; \
  	done; \

@@ -1,6 +1,6 @@
---- config.h.in.orig	Mon May  7 11:00:18 2007
-+++ config.h.in	Mon May  7 11:01:20 2007
-@@ -97,6 +97,9 @@
+--- config.h.in.orig	2007-11-05 20:04:06.000000000 -0500
++++ config.h.in	2008-01-03 13:06:14.000000000 -0500
+@@ -94,6 +94,9 @@
  /* Define to 1 if you have the <linux/ppdev.h> header file. */
  #undef HAVE_LINUX_PPDEV_H
  
