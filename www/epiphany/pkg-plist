@@ -40,6 +40,32 @@ share/aclocal/epiphany.m4
 share/applications/bme.desktop
 share/applications/epiphany.desktop
 share/dbus-1/services/org.gnome.Epiphany.service
+%%DOCSDIR%%/EphyCommandManager.html
+%%DOCSDIR%%/EphyEmbed.html
+%%DOCSDIR%%/EphyNodeDb.html
+%%DOCSDIR%%/EphyTab.html
+%%DOCSDIR%%/EphyWindow.html
+%%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/ch02.html
+%%DOCSDIR%%/epiphany-EphyEmbedFactory.html
+%%DOCSDIR%%/epiphany-EphyEmbedPersist.html
+%%DOCSDIR%%/epiphany-EphyEmbedSingle.html
+%%DOCSDIR%%/epiphany-EphyExtensionsManager.html
+%%DOCSDIR%%/epiphany-EphyGlade.html
+%%DOCSDIR%%/epiphany-EphyPermissionManager.html
+%%DOCSDIR%%/epiphany-ephy-cookie-manager.html
+%%DOCSDIR%%/epiphany-ephy-password-manager.html
+%%DOCSDIR%%/epiphany-ephy-session.html
+%%DOCSDIR%%/epiphany-ephy-shell.html
+%%DOCSDIR%%/epiphany.devhelp
+%%DOCSDIR%%/epiphany.devhelp2
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
 %%DATADIR%%/about.ini
 %%DATADIR%%/chrome/branding/brand.dtd
 %%DATADIR%%/chrome/branding/brand.properties
@@ -266,6 +292,8 @@ share/locale/th/LC_MESSAGES/epiphany.mo
 share/locale/tk/LC_MESSAGES/epiphany.mo
 share/locale/tr/LC_MESSAGES/epiphany.mo
 share/locale/uk/LC_MESSAGES/epiphany.mo
+share/locale/uz/LC_MESSAGES/epiphany.mo
+share/locale/uz@cyrillic/LC_MESSAGES/epiphany.mo
 share/locale/vi/LC_MESSAGES/epiphany.mo
 share/locale/wa/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
@@ -364,6 +392,8 @@ share/pygtk/2.0/defs/epiphany.defs
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/si/LC_MESSAGES
