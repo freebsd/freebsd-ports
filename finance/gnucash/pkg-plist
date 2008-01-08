@@ -430,6 +430,22 @@ share/gnucash/accounts/it/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/it/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/it/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/it/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_brokerage.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_business.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_carloan.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_checkbook.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_childcare.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_common.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_eduloan.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_fixedassets.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_otherloan.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_renter.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_retiremt.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_spouseinc.gnucash-xea
+share/gnucash/accounts/ja/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/nb/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/nb/acctchrt_business.gnucash-xea
 share/gnucash/accounts/nb/acctchrt_carloan.gnucash-xea
@@ -499,6 +515,22 @@ share/gnucash/accounts/tr_TR/acctchrt_checkbook.gnucash-xea
 share/gnucash/accounts/tr_TR/acctchrt_common.gnucash-xea
 share/gnucash/accounts/tr_TR/acctchrt_fixedassets.gnucash-xea
 share/gnucash/accounts/tr_TR/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_brokerage.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_business.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_carloan.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_checkbook.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_childcare.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_common.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_eduloan.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_fixedassets.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_otherloan.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_renter.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_retiremt.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_spouseinc.gnucash-xea
+share/gnucash/accounts/zh_CN/acctchrt_spouseretire.gnucash-xea
 share/gnucash/checks/deluxe.chk
 share/gnucash/checks/quicken.chk
 share/gnucash/checks/quicken_wallet.chk
@@ -832,11 +864,13 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnucash/doc/examples
 @dirrm share/gnucash/doc
 @dirrm share/gnucash/checks
+@dirrm share/gnucash/accounts/zh_CN
 @dirrm share/gnucash/accounts/tr_TR
 @dirrm share/gnucash/accounts/sk
 @dirrm share/gnucash/accounts/pt_PT
 @dirrm share/gnucash/accounts/pt_BR
 @dirrm share/gnucash/accounts/nb
+@dirrm share/gnucash/accounts/ja
 @dirrm share/gnucash/accounts/it
 @dirrm share/gnucash/accounts/hu_HU
 @dirrm share/gnucash/accounts/fr_FR
