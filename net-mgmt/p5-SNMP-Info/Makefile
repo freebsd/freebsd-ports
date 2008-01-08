@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	SNMP-Info
-PORTVERSION=	1.04
-PORTREVISION=	1
+PORTVERSION=	1.07
 CATEGORIES=	net-mgmt perl5
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	snmp-info
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	A perl5 module for gathering information from network devices
 
 LIB_DEPENDS=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
@@ -42,6 +41,13 @@ MAN3=	SNMP::Info.3 SNMP::Info::Airespace.3 SNMP::Info::Bridge.3 \
 	SNMP::Info::Layer3::Extreme.3 SNMP::Info::Layer3::Foundry.3 \
 	SNMP::Info::Layer3::N1600.3 SNMP::Info::Layer3::Passport.3 \
 	SNMP::Info::MAU.3 SNMP::Info::NortelStack.3 SNMP::Info::RapidCity.3 \
-	SNMP::Info::SONMP.3 SNMP::Info::Layer3::Juniper.3
+	SNMP::Info::SONMP.3 SNMP::Info::Layer3::Juniper.3 \
+	SNMP::Info::CiscoConfig.3 SNMP::Info::CiscoPortSecurity.3 \
+	SNMP::Info::CiscoPower.3 SNMP::Info::IEEE802dot11.3 SNMP::Info::LLDP.3 \
+	SNMP::Info::Layer1::Cyclades.3 SNMP::Info::Layer2::Airespace.3 \
+	SNMP::Info::Layer2::Netgear.3 SNMP::Info::Layer3::Dell.3 \
+	SNMP::Info::Layer3::Enterasys.3 SNMP::Info::Layer3::Microsoft.3 \
+	SNMP::Info::Layer3::NetSNMP.3 SNMP::Info::Layer3::Netscreen.3\
+	SNMP::Info::Layer3::Sun.3 SNMP::Info::PowerEthernet.3
 
 .include <bsd.port.mk>
