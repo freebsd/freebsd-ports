@@ -23,7 +23,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Test::DatabaseRow.3
 
-post-configure:
-	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
-
 .include <bsd.port.mk>
