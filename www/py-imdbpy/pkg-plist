@@ -1,3 +1,4 @@
+bin/characters4local.py
 bin/get_first_movie.py
 bin/get_first_person.py
 bin/get_movie.py
@@ -60,6 +61,9 @@ bin/search_person.py
 %%PYTHON_SITELIBDIR%%/imdb/parser/local/__init__.py
 %%PYTHON_SITELIBDIR%%/imdb/parser/local/__init__.pyc
 %%PYTHON_SITELIBDIR%%/imdb/parser/local/__init__.pyo
+%%PYTHON_SITELIBDIR%%/imdb/parser/local/characterParser.py
+%%PYTHON_SITELIBDIR%%/imdb/parser/local/characterParser.pyc
+%%PYTHON_SITELIBDIR%%/imdb/parser/local/characterParser.pyo
 %%PYTHON_SITELIBDIR%%/imdb/parser/local/movieParser.py
 %%PYTHON_SITELIBDIR%%/imdb/parser/local/movieParser.pyc
 %%PYTHON_SITELIBDIR%%/imdb/parser/local/movieParser.pyo
@@ -88,6 +92,7 @@ bin/search_person.py
 @dirrm %%PYTHON_SITELIBDIR%%/imdb/parser/common
 @dirrm %%PYTHON_SITELIBDIR%%/imdb/parser
 @dirrm %%PYTHON_SITELIBDIR%%/imdb
+%%EXAMPLESDIR%%/characters4local.py
 %%EXAMPLESDIR%%/get_character.py
 %%EXAMPLESDIR%%/get_first_character.py
 %%EXAMPLESDIR%%/get_first_movie.py
@@ -120,6 +125,7 @@ bin/search_person.py
 %%PORTDOCS%%%%DOCSDIR%%/README.users
 %%PORTDOCS%%%%DOCSDIR%%/README.utf8
 %%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/imdbpy.cfg
 %%PORTDOCS%%%%DOCSDIR%%/imdbpyPowered.png
 %%PORTDOCS%%%%DOCSDIR%%/imdbpyico.png
 %%PORTDOCS%%%%DOCSDIR%%/imdbpyico.xpm
