@@ -46,9 +46,9 @@ share/gnome/help/gucharmap/it/legal.xml
 share/gnome/help/gucharmap/ja/figures/gucharmap_window.png
 share/gnome/help/gucharmap/ja/gucharmap.xml
 share/gnome/help/gucharmap/ja/legal.xml
+share/gnome/help/gucharmap/ko/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/ko/figures/gucharmap_window.png
 share/gnome/help/gucharmap/ko/gucharmap.xml
-share/gnome/help/gucharmap/ko/legal.xml
 share/gnome/help/gucharmap/oc/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/oc/figures/gucharmap_window.png
 share/gnome/help/gucharmap/oc/gucharmap.xml
