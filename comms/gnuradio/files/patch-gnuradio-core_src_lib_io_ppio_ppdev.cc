@@ -1,5 +1,5 @@
---- gnuradio-core/src/lib/io/ppio_ppdev.cc.orig	Wed Sep 13 17:30:04 2006
-+++ gnuradio-core/src/lib/io/ppio_ppdev.cc	Mon May  7 11:10:18 2007
+--- gnuradio-core/src/lib/io/ppio_ppdev.cc.orig	2007-11-05 19:55:38.000000000 -0500
++++ gnuradio-core/src/lib/io/ppio_ppdev.cc	2008-01-03 13:07:44.000000000 -0500
 @@ -32,11 +32,16 @@
  #include <errno.h>
  #include <stdio.h>

@@ -1,13 +1,13 @@
---- usrp/Makefile.in.orig	Wed Feb 28 12:42:12 2007
-+++ usrp/Makefile.in	Fri Sep 14 12:22:28 2007
-@@ -336,8 +336,8 @@
- target_os = @target_os@
- target_vendor = @target_vendor@
- EXTRA_DIST = usrp.pc.in usrp.iss.in usrp.inf
+--- usrp/Makefile.in.orig	2007-11-05 20:04:14.000000000 -0500
++++ usrp/Makefile.in	2008-01-03 13:19:26.000000000 -0500
+@@ -333,8 +333,8 @@
+ 	usrp.iss.in \
+ 	usrp.inf
+ 
 -SUBDIRS = host firmware fpga doc
 -pkgconfigdir = $(libdir)/pkgconfig
-+SUBDIRS = host firmware fpga 
++SUBDIRS = host firmware fpga
 +pkgconfigdir = %%LIBDATA%%/pkgconfig
- pkgconfig_DATA = usrp.pc
- all: all-recursive
+ pkgconfig_DATA = \
+ 	usrp.pc
  
