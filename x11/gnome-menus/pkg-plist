@@ -34,6 +34,7 @@ share/desktop-directories/Settings.directory
 share/desktop-directories/System-Settings.directory
 share/desktop-directories/System-Tools.directory
 share/desktop-directories/System.directory
+share/locale/af/LC_MESSAGES/gnome-menus.mo
 share/locale/ar/LC_MESSAGES/gnome-menus.mo
 share/locale/as/LC_MESSAGES/gnome-menus.mo
 share/locale/be/LC_MESSAGES/gnome-menus.mo
