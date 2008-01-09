@@ -12,6 +12,9 @@ bin/igraph
 %%PYTHON_SITELIBDIR%%/igraph/clustering.pyc
 %%PYTHON_SITELIBDIR%%/igraph/clustering.pyo
 %%PYTHON_SITELIBDIR%%/igraph/core.so
+%%PYTHON_SITELIBDIR%%/igraph/layout.py
+%%PYTHON_SITELIBDIR%%/igraph/layout.pyc
+%%PYTHON_SITELIBDIR%%/igraph/layout.pyo
 %%PYTHON_SITELIBDIR%%/igraph/statistics.py
 %%PYTHON_SITELIBDIR%%/igraph/statistics.pyc
 %%PYTHON_SITELIBDIR%%/igraph/statistics.pyo
@@ -39,6 +42,9 @@ bin/igraph
 %%PYTHON_SITELIBDIR%%/igraph/test/games.py
 %%PYTHON_SITELIBDIR%%/igraph/test/games.pyc
 %%PYTHON_SITELIBDIR%%/igraph/test/games.pyo
+%%PYTHON_SITELIBDIR%%/igraph/test/layouts.py
+%%PYTHON_SITELIBDIR%%/igraph/test/layouts.pyc
+%%PYTHON_SITELIBDIR%%/igraph/test/layouts.pyo
 %%PYTHON_SITELIBDIR%%/igraph/test/operators.py
 %%PYTHON_SITELIBDIR%%/igraph/test/operators.pyc
 %%PYTHON_SITELIBDIR%%/igraph/test/operators.pyo
