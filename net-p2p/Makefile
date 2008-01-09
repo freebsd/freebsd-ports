@@ -112,6 +112,7 @@
     SUBDIR += rtorrent-devel
     SUBDIR += sharktorrent
     SUBDIR += squall
+    SUBDIR += teknap
     SUBDIR += torrent_swapper
     SUBDIR += torrentflux
     SUBDIR += torrentsniff
