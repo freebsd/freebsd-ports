@@ -1,8 +1,8 @@
-	VTK - the Visualization Toolkit is an object oriented, high
+VTK - the Visualization Toolkit is an object oriented, high
 level library that allows one to easily write programs in C++, Tcl,
 Python and Java that do 3D visualization. 
 
-        VTK enables users to concentrate on their work by providing a
+VTK enables users to concentrate on their work by providing a
 large number of excellent and feature packed high level functions that
 do visualization.  The library needs OpenGL to render the graphics and
 for FreeBSD machines Mesa is necessary. 
