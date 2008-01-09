@@ -2027,6 +2027,7 @@
     SUBDIR += py-urwid
     SUBDIR += py-usb
     SUBDIR += py-utils
+    SUBDIR += py-virtualenv
     SUBDIR += py-vmaps
     SUBDIR += py-wsgiutils
     SUBDIR += py-xdg

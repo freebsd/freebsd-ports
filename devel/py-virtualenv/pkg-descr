@@ -1,0 +1,9 @@
+``virtualenv`` is a tool to create isolated Python environments.
+        
+It creates an environment that has its own installation directories,
+that doesn't share libraries with other virtualenv environments
+(and optionally doesn't use the globally installed libraries either).
+
+Usage: virtualenv YOUR_NEW_PYTHON_ENV
+
+WWW:	http://pypi.python.org/pypi/virtualenv
