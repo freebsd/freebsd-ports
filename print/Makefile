@@ -195,6 +195,7 @@
     SUBDIR += p5-Text-PDF
     SUBDIR += p5-XML-ApacheFOP
     SUBDIR += panda
+    SUBDIR += paps
     SUBDIR += passivetex
     SUBDIR += pcal
     SUBDIR += pclprint
