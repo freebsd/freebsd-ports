@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# $FreeBSD$
+
+if [ ! -d ${NEWPYTHONENV} ]; then
+	%%PYTHON_CMD%% %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.py ${NEWPYTHONENV}
+fi
+
+if [ -f ${NEWPYTHONENV}/bin/activate ]; then
+	source ${NEWPYTHONENV}/bin/activate
+fi
+

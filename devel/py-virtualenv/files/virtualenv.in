@@ -1,0 +1,8 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$1" = "" ]; then
+    echo "usage: $0 ENVIRONMENT_NAME"
+else
+    exec env NEWPYTHONENV="$1" %%PREFIX%%/bin/bash --init-file %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/support-files/virtualenv.bash
+fi
