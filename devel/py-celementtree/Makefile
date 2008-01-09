@@ -9,7 +9,8 @@ PORTNAME=	cElementTree
 PORTVERSION=	1.0.5
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://effbot.org/downloads/
+MASTER_SITES=	http://effbot.org/media/downloads/ \
+		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-20051216
 
