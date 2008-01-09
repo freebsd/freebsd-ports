@@ -154,6 +154,7 @@ share/gnome/help/control-center/fr/control-center.xml
 share/gnome/help/control-center/ja/control-center.xml
 share/gnome/help/control-center/oc/control-center.xml
 share/gnome/help/control-center/pa/control-center.xml
+share/gnome/help/control-center/pt/control-center.xml
 share/gnome/help/control-center/pt_BR/control-center.xml
 share/gnome/help/control-center/ru/control-center.xml
 share/gnome/help/control-center/sv/control-center.xml
@@ -251,6 +252,8 @@ share/locale/te/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/uz/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/uz@cyrillic/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/xh/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -268,6 +271,7 @@ share/omf/control-center/control-center-fr.omf
 share/omf/control-center/control-center-ja.omf
 share/omf/control-center/control-center-oc.omf
 share/omf/control-center/control-center-pa.omf
+share/omf/control-center/control-center-pt.omf
 share/omf/control-center/control-center-pt_BR.omf
 share/omf/control-center/control-center-ru.omf
 share/omf/control-center/control-center-sv.omf
@@ -281,6 +285,7 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrm share/gnome/help/control-center/sv
 @dirrm share/gnome/help/control-center/ru
 @dirrm share/gnome/help/control-center/pt_BR
+@dirrm share/gnome/help/control-center/pt
 @dirrm share/gnome/help/control-center/pa
 @dirrm share/gnome/help/control-center/oc
 @dirrm share/gnome/help/control-center/ja
@@ -309,6 +314,8 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/si/LC_MESSAGES
