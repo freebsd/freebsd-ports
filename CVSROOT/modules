@@ -16490,6 +16490,7 @@ vtk-java	ports/math/vtk-java
 vtk-python	ports/math/vtk-python
 vtk-tcl		ports/math/vtk-tcl
 vtk5		ports/math/vtk5
+vtkmpeg2encode	ports/multimedia/vtkmpeg2encode
 vttest		ports/sysutils/vttest
 vtun		ports/net/vtun
 vtwm		ports/x11-wm/vtwm
