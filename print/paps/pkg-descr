@@ -1,0 +1,4 @@
+Paps is a UTF-8 to PostScript converter that makes use of pango.
+It provides both a stand alone command line tool as well as a library.
+
+WWW: http://paps.sourceforge.net/
