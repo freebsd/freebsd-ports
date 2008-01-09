@@ -13559,6 +13559,7 @@ py-usb		ports/devel/py-usb
 py-utidy	ports/www/py-utidy
 py-utils	ports/devel/py-utils
 py-vertex	ports/net-p2p/py-vertex
+py-virtualenv	ports/devel/py-virtualenv
 py-visual	ports/graphics/py-visual
 py-vmaps	ports/devel/py-vmaps
 py-vobject	ports/deskutils/py-vobject
