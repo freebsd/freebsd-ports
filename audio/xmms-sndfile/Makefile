@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xmms-sndfile
+PORTNAME=	xmms
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/xmms_sndfile/
+PKGNAMESUFFIX=	-sndfile
 DISTNAME=	xmms_sndfile-${PORTVERSION}
 
 MAINTAINER=	dyeske@gmail.com
@@ -20,15 +21,14 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
-PLIST_FILES=	lib/xmms/Input/libxmms_sndfile.so
+PLIST_FILES=	lib/xmms/Input/libxmms_sndfile.so \
+		lib/xmms/Input/libxmms_sndfile.a \
+		lib/xmms/Input/libxmms_sndfile.la
+
 USE_GNOME=	gtk12
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext xmu xi
+USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700029
-BROKEN=		Incorrect pkg-plist (broken objformat handling)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
