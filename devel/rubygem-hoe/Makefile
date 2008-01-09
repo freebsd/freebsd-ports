@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	hoe
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	seattlerb
 
 MAINTAINER=	jw@innerewut.de
-COMMENT=	hoe - a tool to help rake
+COMMENT=	A simple rake/rubygems helper for project Rakefiles
 
 BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
 		rubyforge:${PORTSDIR}/devel/rubygem-rubyforge
