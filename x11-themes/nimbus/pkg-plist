@@ -286,6 +286,7 @@ share/icons/nimbus/16x16/devices/3floppy_unmount.png
 share/icons/nimbus/16x16/devices/audio-card.png
 share/icons/nimbus/16x16/devices/drive-harddisk.png
 share/icons/nimbus/16x16/devices/drive-removable-media.png
+share/icons/nimbus/16x16/devices/gnome-dev-ethernet.png
 share/icons/nimbus/16x16/devices/gnome-dev-floppy.png
 share/icons/nimbus/16x16/devices/gnome-dev-harddisk-1394.png
 share/icons/nimbus/16x16/devices/gnome-dev-harddisk-usb.png
@@ -295,6 +296,7 @@ share/icons/nimbus/16x16/devices/gnome-dev-printer.png
 share/icons/nimbus/16x16/devices/gnome-dev-removable-1394.png
 share/icons/nimbus/16x16/devices/gnome-dev-removable-usb.png
 share/icons/nimbus/16x16/devices/gnome-dev-removable.png
+share/icons/nimbus/16x16/devices/gnome-dev-wavelan.png
 share/icons/nimbus/16x16/devices/gnome-dev-zipdisk.png
 share/icons/nimbus/16x16/devices/gtk-floppy.png
 share/icons/nimbus/16x16/devices/gtk-harddisk.png
@@ -310,6 +312,8 @@ share/icons/nimbus/16x16/devices/media-dvd.png
 share/icons/nimbus/16x16/devices/media-floppy.png
 share/icons/nimbus/16x16/devices/media-zip.png
 share/icons/nimbus/16x16/devices/memory.png
+share/icons/nimbus/16x16/devices/network-wired.png
+share/icons/nimbus/16x16/devices/network-wireless.png
 share/icons/nimbus/16x16/devices/printer-new.png
 share/icons/nimbus/16x16/devices/printer-remote.png
 share/icons/nimbus/16x16/devices/printer.png
@@ -1260,6 +1264,7 @@ share/icons/nimbus/24x24/devices/drive-harddisk.png
 share/icons/nimbus/24x24/devices/drive-removable-media.png
 share/icons/nimbus/24x24/devices/gnome-dev-battery.png
 share/icons/nimbus/24x24/devices/gnome-dev-computer.png
+share/icons/nimbus/24x24/devices/gnome-dev-ethernet.png
 share/icons/nimbus/24x24/devices/gnome-dev-floppy.png
 share/icons/nimbus/24x24/devices/gnome-dev-harddisk-1394.png
 share/icons/nimbus/24x24/devices/gnome-dev-harddisk-usb.png
@@ -1270,6 +1275,7 @@ share/icons/nimbus/24x24/devices/gnome-dev-printer.png
 share/icons/nimbus/24x24/devices/gnome-dev-removable-1394.png
 share/icons/nimbus/24x24/devices/gnome-dev-removable-usb.png
 share/icons/nimbus/24x24/devices/gnome-dev-removable.png
+share/icons/nimbus/24x24/devices/gnome-dev-wavelan.png
 share/icons/nimbus/24x24/devices/gnome-dev-zipdisk.png
 share/icons/nimbus/24x24/devices/gnome-fs-client.png
 share/icons/nimbus/24x24/devices/gnome-modem.png
@@ -1288,6 +1294,8 @@ share/icons/nimbus/24x24/devices/memory.png
 share/icons/nimbus/24x24/devices/modem.png
 share/icons/nimbus/24x24/devices/mouse-ball.png
 share/icons/nimbus/24x24/devices/mouse.png
+share/icons/nimbus/24x24/devices/network-wired.png
+share/icons/nimbus/24x24/devices/network-wireless.png
 share/icons/nimbus/24x24/devices/printer-networked.png
 share/icons/nimbus/24x24/devices/printer-new.png
 share/icons/nimbus/24x24/devices/printer-remote.png
@@ -1494,12 +1502,16 @@ share/icons/nimbus/32x32/categories/stock_internet.png
 share/icons/nimbus/32x32/categories/xfce-internet.png
 share/icons/nimbus/32x32/categories/xfce-utils.png
 share/icons/nimbus/32x32/devices/audio-card.png
+share/icons/nimbus/32x32/devices/gnome-dev-ethernet.png
 share/icons/nimbus/32x32/devices/gnome-dev-keyboard.png
 share/icons/nimbus/32x32/devices/gnome-dev-printer.png
+share/icons/nimbus/32x32/devices/gnome-dev-wavelan.png
 share/icons/nimbus/32x32/devices/input-keyboard.png
 share/icons/nimbus/32x32/devices/keyboard.png
 share/icons/nimbus/32x32/devices/kjobviewer.png
 share/icons/nimbus/32x32/devices/kxkb.png
+share/icons/nimbus/32x32/devices/network-wired.png
+share/icons/nimbus/32x32/devices/network-wireless.png
 share/icons/nimbus/32x32/devices/printer-networked.png
 share/icons/nimbus/32x32/devices/printer-new.png
 share/icons/nimbus/32x32/devices/printer-remote.png
@@ -1960,6 +1972,7 @@ share/icons/nimbus/48x48/devices/drive-harddisk.png
 share/icons/nimbus/48x48/devices/drive-removable-media.png
 share/icons/nimbus/48x48/devices/gnome-dev-battery.png
 share/icons/nimbus/48x48/devices/gnome-dev-computer.png
+share/icons/nimbus/48x48/devices/gnome-dev-ethernet.png
 share/icons/nimbus/48x48/devices/gnome-dev-floppy.png
 share/icons/nimbus/48x48/devices/gnome-dev-harddisk-1394.png
 share/icons/nimbus/48x48/devices/gnome-dev-harddisk-usb.png
@@ -1971,6 +1984,7 @@ share/icons/nimbus/48x48/devices/gnome-dev-printer.png
 share/icons/nimbus/48x48/devices/gnome-dev-removable-1394.png
 share/icons/nimbus/48x48/devices/gnome-dev-removable-usb.png
 share/icons/nimbus/48x48/devices/gnome-dev-removable.png
+share/icons/nimbus/48x48/devices/gnome-dev-wavelan.png
 share/icons/nimbus/48x48/devices/gnome-dev-zipdisk.png
 share/icons/nimbus/48x48/devices/gnome-fs-client.png
 share/icons/nimbus/48x48/devices/gnome-modem.png
@@ -1992,6 +2006,8 @@ share/icons/nimbus/48x48/devices/memory.png
 share/icons/nimbus/48x48/devices/modem.png
 share/icons/nimbus/48x48/devices/mouse-ball.png
 share/icons/nimbus/48x48/devices/mouse.png
+share/icons/nimbus/48x48/devices/network-wired.png
+share/icons/nimbus/48x48/devices/network-wireless.png
 share/icons/nimbus/48x48/devices/printer-networked.png
 share/icons/nimbus/48x48/devices/printer-new.png
 share/icons/nimbus/48x48/devices/printer-remote.png
