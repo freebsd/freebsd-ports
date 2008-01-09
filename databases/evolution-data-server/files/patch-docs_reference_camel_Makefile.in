@@ -1,11 +1,14 @@
---- docs/reference/camel/Makefile.in.orig	2007-10-15 09:28:28.000000000 -0400
-+++ docs/reference/camel/Makefile.in	2007-10-15 09:29:49.000000000 -0400
-@@ -123,7 +123,7 @@
- GOBJECT_QUERY = @GOBJECT_QUERY@
- GREP = @GREP@
- HAVE_JW = @HAVE_JW@
--HTML_DIR = $(datadir)/gtk-doc/html
-+HTML_DIR = $(prefix)/share/doc
- ICONV_CFLAGS = @ICONV_CFLAGS@
- ICONV_LIBS = @ICONV_LIBS@
- IDL_INCLUDES = @IDL_INCLUDES@
+diff -ur evolution-data-server-1.12.3.orig/docs/reference/camel/Makefile.in evolution-data-server-1.12.3/docs/reference/camel/Makefile.in
+--- docs/reference/camel/Makefile.in	2008-01-08 15:11:02.000000000 +0000
++++ docs/reference/camel/Makefile.in	2008-01-08 15:13:15.000000000 +0000
+@@ -684,8 +684,9 @@
+ 	  done; \
+ 	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
+ 	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR) || :; \
+-	  which gtkdoc-rebase >/dev/null && \
++	  if which gtkdoc-rebase >/dev/null; then \
+ 	    gtkdoc-rebase --relative --dest-dir=$(DESTDIR) --html-dir=$(DESTDIR)$(TARGET_DIR) ; \
++	  fi ; \
+ 	fi
+ 
+ uninstall-local:
