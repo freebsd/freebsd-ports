@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	httplib2
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	www python
-MASTER_SITES=	http://bitworking.org/projects/httplib2/dist/
+MASTER_SITES=	http://httplib2.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
