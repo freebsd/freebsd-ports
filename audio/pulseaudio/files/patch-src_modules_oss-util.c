@@ -1,5 +1,5 @@
---- modules/oss-util.c.orig	2007-11-08 21:45:25.000000000 -0500
-+++ modules/oss-util.c	2008-01-09 17:00:45.000000000 -0500
+--- src/modules/oss-util.c.orig	2007-11-08 21:45:25.000000000 -0500
++++ src/modules/oss-util.c	2008-01-09 17:00:45.000000000 -0500
 @@ -44,6 +44,22 @@
  
  #include "oss-util.h"
