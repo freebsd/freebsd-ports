@@ -1,15 +1,17 @@
-# New ports collection makefile for:	cakephp
-# Date created:        19 January 2007
+# New ports collection makefile for:	cakephp-devel
+# Date created:        20 December 2007
 # Whom:                Greg Larkin <glarkin@sourcehosting.net>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	cakephp
-PORTVERSION=	1.1.19.6305
+# http://cakeforge.org/frs/download.php/554/cake_1.2.0.5875-pre-beta.tar.gz
+
+PORTNAME=	cakephp-devel
+PORTVERSION=	1.2.0.6311
 CATEGORIES=	www
-MASTER_SITES=	http://cakeforge.org/frs/download.php/591/
-DISTNAME=	cake_${PORTVERSION}
+MASTER_SITES=	http://cakeforge.org/frs/download.php/595/
+DISTNAME=	cake_${PORTVERSION}-beta
 
 MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	A framework for developing PHP web applications
@@ -19,16 +21,23 @@ DISTFILE_SUFFIX=/donation=complete
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${TARGET_DISTFILE}
 TARGET_DISTFILE=${DISTNAME}${EXTRACT_SUFX}
 
+WWWDIR=		${PREFIX}/www/cakephp
+DOCSDIR=	${PREFIX}/share/doc/cakephp
+
 USE_APACHE=	2.0+
 SLAVE_PORT_MODULES=	rewrite
+
+CONFLICTS=	cakephp-[0-9]*
 
 NO_BUILD=	yes
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message pkg-install
+SUB_LIST+=	FIND=${FIND} CHOWN=${CHOWN} CHMOD=${CHMOD} XARGS=${XARGS} \
+		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-WRKSRC=		${WRKDIR}/cake_${DISTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 OPTIONS=	PROD "Install for production server (see: make confighelp)" Off \
 		MYSQL "Check for/install MySQL support in PHP" Off \

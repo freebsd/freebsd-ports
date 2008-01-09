@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# Fix up the permissions on directories and files when pkg_add is
+# used to install the port
+#
+# Borrowed from the www/resin2 port
+#
+
+set -e
+
+# Set up utilities
+CHOWN=%%CHOWN%%
+CHMOD=%%CHMOD%%
+FIND=%%FIND%%
+XARGS=%%XARGS%%
+
+# Set up variables
+WWWOWN=%%WWWOWN%%
+WWWGRP=%%WWWGRP%%
+WWWDIR=%%WWWDIR%%
+
+if [ "$2" = "POST-INSTALL" ]; then
+    # We're called after the 'make install' process
+    ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+    ${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+    ${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+fi
+
+exit 0
