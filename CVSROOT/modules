@@ -11766,6 +11766,7 @@ pantry		ports/misc/pantry
 papercut	ports/news/papercut
 papi		ports/devel/papi
 paprefs		ports/audio/paprefs
+paps		ports/print/paps
 paq		ports/archivers/paq
 par		ports/textproc/par
 par2cmdline	ports/archivers/par2cmdline
