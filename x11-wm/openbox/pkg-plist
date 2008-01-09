@@ -102,6 +102,7 @@ share/xsessions/openbox-kde.desktop
 %%NLS%%share/locale/et/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/it/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/openbox.mo
@@ -152,5 +153,5 @@ share/xsessions/openbox-kde.desktop
 @dirrm include/openbox/3.4
 @dirrm include/openbox
 @dirrm etc/xdg/openbox
-@dirrm etc/xdg
+@dirrmtry etc/xdg
 @dirrmtry share/xsessions
