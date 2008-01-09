@@ -3353,3 +3353,4 @@ net-p2p/mldonkey-devel||2007-12-25|Development version no longer necessary
 audio/polypaudio|audio/pulseaudio|2008-01-01|Project renamed
 audio/paman|audio/pavucontrol|2008-01-01|New tool to work with pulseaudio
 audio/akode-plugins-polypaudio||2008-01-01|Polypaudio is obsolete in favor of pulseaudio
+audio/teknap|net-p2p/teknap|2008-01-09|moved to net-p2p category
