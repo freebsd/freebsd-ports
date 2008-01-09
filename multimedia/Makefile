@@ -232,6 +232,7 @@
     SUBDIR += vlc-devel
     SUBDIR += vodcatcher
     SUBDIR += vstream-client
+    SUBDIR += vtkmpeg2encode
     SUBDIR += win32-codecs
     SUBDIR += x264
     SUBDIR += x264-gtk

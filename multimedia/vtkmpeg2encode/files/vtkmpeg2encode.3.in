@@ -1,0 +1,50 @@
+.TH VTKMPEG2ENCODE 3
+.SH NAME    \" Section header
+.PP
+ 
+vtkmpeg2encode - VTK MPEG encoder library
+
+.SH SYNOPSIS
+.PP
+.nf 
+.na 
+#include <mpeg2enc.h>
+
+-I%%PREFIX%%/include
+
+-L%%PREFIX%%/lib -lvtkMPEG2Encode
+.ad
+.fi
+
+\" Optional sections
+.SH "DESCRIPTION"
+
+This is the VTK MPEG2 encoder library for the Visualization Tool Kit.
+
+vtkmpeg2encode has been removed from VTK due to patent issues with the
+MPEG format.
+
+For those who don't mind dealing with the issues related to patented code,
+vtkmpeg2encode is now available as a separate download. Go to
+http://www.vtk.org and click on the "Download" link and look for links to
+archives of the vtkmpeg2encode source tree. It is buildable with CMake. See
+the comments in vtkMPEG2Writer class documentation or in VTK's
+CMakeLists.txt near the VTK_USE_MPEG2_ENCODER option for more info.
+
+FreeBSD ports users can simply install the vtkmpeg2encode port and read
+the license terms.
+
+Those of you using vtkMPEG2Writer will have to build vtkmpeg2encode
+separately and link it in to VTK to keep using it... assuming the
+responsibility for using patented code properly yourselves. Otherwise, you
+will have to discontinue use of the vtkMPEG2Writer class.
+
+.SH "SEE ALSO"
+vtk(3)
+
+.SH AUTHOR
+.nf
+.na
+Kitware, Inc.
+http://vtk.org
+
