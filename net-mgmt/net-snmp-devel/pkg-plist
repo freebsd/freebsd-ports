@@ -58,6 +58,8 @@ include/net-snmp/agent/serialize.h
 include/net-snmp/agent/set_helper.h
 include/net-snmp/agent/snmp_agent.h
 include/net-snmp/agent/snmp_vars.h
+include/net-snmp/agent/stash_cache.h
+include/net-snmp/agent/stash_to_next.h
 include/net-snmp/agent/table.h
 include/net-snmp/agent/table_array.h
 include/net-snmp/agent/table_container.h

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	snmp
-PORTVERSION=	5.3.1
-PORTREVISION=	7
+PORTVERSION=	5.3.2
+PORTREVISION=	0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -111,11 +111,13 @@ PLIST_SUB+=	WITH_${module1:C|.*/||:U}="@comment "
 . endif
 .endfor
 
-MAN1=		mib2c.1 \
+MAN1=		encode_keychange.1 fixproc.1 mib2c.1 mib2c-update.1 \
+		net-snmp-config.1 \
 		snmpbulkget.1 snmpbulkwalk.1 snmpcmd.1 snmpconf.1 \
 		snmpdelta.1 snmpdf.1 snmpget.1 snmpgetnext.1 snmpinform.1 \
 		snmpnetstat.1 snmpset.1 snmpstatus.1 snmptable.1 snmptest.1 \
-		snmptranslate.1 snmptrap.1 snmpusm.1 snmpvacm.1 snmpwalk.1
+		snmptranslate.1 snmptrap.1 snmpusm.1 snmpvacm.1 snmpwalk.1 \
+		tkmib.1 traptoemail.1
 MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		get_module_node.3 init_mib.3 init_mib_internals.3 mib_api.3 \
 		netsnmp_agent.3 netsnmp_bulk_to_next.3 netsnmp_debug.3 \

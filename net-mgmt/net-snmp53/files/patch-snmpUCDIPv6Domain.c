@@ -1,14 +1,14 @@
---- snmplib/snmpUDPIPv6Domain.c.orig	Sat Oct 16 03:52:29 2004
-+++ snmplib/snmpUDPIPv6Domain.c	Mon Oct 25 09:28:10 2004
-@@ -104,13 +104,21 @@
+--- snmplib/snmpUDPIPv6Domain.c.orig	2007-08-20 17:06:42.000000000 +0900
++++ snmplib/snmpUDPIPv6Domain.c	2007-12-21 09:58:31.316414938 +0900
+@@ -103,13 +103,21 @@
      if (to == NULL) {
          return strdup("UDP/IPv6: unknown");
      } else {
 -        char addr[INET6_ADDRSTRLEN];
--        char tmp[INET6_ADDRSTRLEN + 8];
+-        char tmp[INET6_ADDRSTRLEN + 18];
 +        char tmp[NI_MAXHOST];
  
--        sprintf(tmp, "UDP/IPv6: [%s]:%hd",
+-        sprintf(tmp, "UDP/IPv6: [%s]:%hu",
 -                inet_ntop(AF_INET6, (void *) &(to->sin6_addr), addr,
 -                          INET6_ADDRSTRLEN), ntohs(to->sin6_port));
 -        return strdup(tmp);
