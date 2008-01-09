@@ -14982,6 +14982,7 @@ sk-ispell	ports/textproc/sk-ispell
 skadns		ports/dns/skadns
 skalibs		ports/devel/skalibs
 skencil		ports/graphics/skencil
+sketch		ports/graphics/sketch
 sketchy		ports/lang/sketchy
 ski		ports/emulators/ski
 skill		ports/sysutils/skill
