@@ -1,0 +1,10 @@
+Sketch is a small, simple system for producing line drawings of two- or
+three-dimensional solid objects and scenes. It began as a way to make
+illustrations for a textbook after we could find no suitable tool for
+this purpose. Existing scene processors emphasized GUIs and/or
+photo-realism, both un-useful to us. We wanted to produce finely wrought,
+mathematically-based illustrations with no extraneous detail. The input
+language is reminiscent of PSTricks, so will be easy to learn for current
+PSTricks users.
+
+WWW: http://www.frontiernet.net/~eugene.ressler/
