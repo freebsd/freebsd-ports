@@ -1,67 +1,70 @@
-# New ports collection makefile for:    vtk
+# New ports collection makefile for:	vtk5
 # Date created:         10 Oct 2003
 # Whom:                 Mykola Khotyaintsev <ko@irfu.se>
+# Repocopied from math/vtk by:	Jason W. Bacon <bacon@smithers.neuro.mcw.edu>
 #
 # $FreeBSD$
 #
-# By default
-#
-# There are some options to tune VTK towards your specific needs.
-# You can activate a feature by typing something like
-# "make -DKNOB" or "make KNOB=yes" instead of just "make"
-#
-# WITH_TESTING		build the testing binaries (only for vtk and vtk-java port)
-#
 
 PORTNAME=	vtk
-PORTVERSION=	4.4
-PORTREVISION=	2
+PORTVERSION=	5.0.3
 CATEGORIES=	math graphics
-MASTER_SITES=	http://ovt.irfu.se/vtk/files/
-DISTFILES?=	VTK-${PORTVERSION}-LatestRelease.tar.gz
+MASTER_SITES=	http://www.vtk.org/files/release/5.0/ \
+		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
+DISTNAME?=	vtk-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT?=	The Visualization Toolkit shared libs
+MAINTAINER=	bacon@smithers.neuro.mcw.edu
+COMMENT=	The Visualization Toolkit
 
-LIBVER=		1
-VTKSRCDIR=	${WRKDIR}/VTK
-TESTINGDIR=	${EXAMPLESDIR}/Testing
-VTKDATAROOT=	${EXAMPLESDIR}/VTKData
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-PLIST=		${.CURDIR}/pkg-plist
-FILESDIR=	${.CURDIR}/files
-
-VTK_KITS=	Common Filtering Graphics Hybrid IO Imaging Rendering Parallel Patented
-
-PLIST_SUB+=	LIBVER=${LIBVER} PKGNAME=${PKGNAME}
-
-.include <bsd.port.pre.mk>
-
-.if defined(WRAP) || !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX}=="-headers"
-
-PATCH_WRKSRC=	${WRKDIR}/VTK
-WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-build
-
-BUILD_DEPENDS+=	${CMAKE}:${PORTSDIR}/devel/cmake
-
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2 \
+BUILD_DEPENDS=	cmake>=2.2:${PORTSDIR}/devel/cmake
+LIB_DEPENDS=	expat.[5-6]:${PORTSDIR}/textproc/expat2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-.if defined(WITH_TESTING) && (!defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX}=="-java")
-RUN_DEPENDS+=	${VTKDATAROOT}/VTKData.readme:${PORTSDIR}/math/vtk-data
-BUILD_DEPENDS+=	${VTKDATAROOT}/VTKData.readme:${PORTSDIR}/math/vtk-data
-.endif
+LATEST_LINK=	vtk5
+
+USE_QT_VER=	3
+USE_TCL=	yes
+USE_TK=		yes
+USE_PYTHON=	yes
+INSTALLS_EGGINFO=	yes
+
+VTKSRCDIR=	${WRKDIR}/VTK
+VTKDATAROOT=	${EXAMPLESDIR}/VTKData
+PYDISTUTILS_PKGNAME=	VTK
+
+CONFLICTS=	vtk-4* vtk-5.0.[012456789]*
+NO_FILTER_SHLIBS=	yes
+
+VTK_KITS=	Common Filtering GenericFiltering Graphics \
+		Hybrid IO Imaging Parallel Rendering VolumeRendering \
+		Widgets
+
+SUB_FILES=	pkg-message vtk.3
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+PATCH_WRKSRC=	${WRKDIR}/VTK
+WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-build
 
 USE_GMAKE=	yes
 USE_GL=		yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+
+OPTIONS=	VTKMPEG2	"Install patented MPEG2 encoder module" Off
+
+PLIST_SUB=	VER=${PORTVERSION} VER1=${PORTVERSION:R} VER2=${PORTVERSION:R:R}
+
+MAN3=		vtk.3
+
+.include <bsd.port.pre.mk>
 
 CMAKE?=		${LOCALBASE}/bin/cmake
 CXXFLAGS+=	-Wno-deprecated
 CMAKE_DEFS+=	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 		-DBUILD_SHARED_LIBS:BOOL=ON \
+		-DBUILD_DOCUMENTATION:BOOL=ON \
+		-DBUILD_TESTING:BOOL=OFF \
 		-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DCMAKE_SHARED_LINKER_FLAGS:STRING="${LINKERFLAGS}" \
 		-DCMAKE_EXE_LINKER_FLAGS:STRING="${LINKERFLAGS} ${PTHREAD_LIBS}" \
@@ -71,150 +74,67 @@ CMAKE_DEFS+=	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 		-DCMAKE_CXX_COMPILER:STRING=${CXX} \
 		-DCMAKE_C_FLAGS:STRING="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
+		-DCMAKE_VERBOSE_MAKEFILE:BOOL=OFF \
 		-DVTK_USE_RENDERING:BOOL=ON \
 		-DVTK_USE_HYBRID:BOOL=ON \
 		-DVTK_USE_PARALLEL:BOOL=ON \
-		-DVTK_USE_PATENTED:BOOL=ON \
 		-DVTK_USE_SYSTEM_EXPAT:BOOL=ON \
 		-DVTK_USE_SYSTEM_JPEG:BOOL=ON \
 		-DVTK_USE_SYSTEM_PNG:BOOL=ON \
 		-DVTK_USE_SYSTEM_TIFF:BOOL=ON \
 		-DVTK_USE_SYSTEM_ZLIB:BOOL=ON \
+		-DVTK_USE_GUISUPPORT:BOOL=ON \
+		-DVTK_USE_QVTK:BOOL=ON \
+		-DVTK_WRAP_PYTHON:BOOL=ON \
+		-DVTK_WRAP_TCL:BOOL=ON \
+		-DTCL_INCLUDE_PATH=${TCL_INCLUDEDIR} \
+		-DTK_INCLUDE_PATH=${TK_INCLUDEDIR} \
+		-DDESIRED_QT_VERSION:STRING=3 \
+		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T:BOOL=ON \
 		-DVTK_DATA_ROOT:PATH=${VTKDATAROOT}
 
-.if defined(WITH_TESTING)
-CMAKE_DEFS+=	-DBUILD_TESTING:BOOL=ON
-PLIST_SUB+=	TESTING_ONLY=""
-.else
-CMAKE_DEFS+=	-DBUILD_TESTING:BOOL=OFF
-PLIST_SUB+=	TESTING_ONLY="@comment "
+.if defined(WITH_VTKMPEG2)
+LIB_DEPENDS+=	vtkMPEG2Encode.5:${PORTSDIR}/math/vtkmpeg2encode
+PLIST_FILES+=	include/vtk-5.0/vtkMPEG2Writer.h
+CMAKE_DEFS+=	-DvtkMPEG2Encode_INCLUDE_PATH=${LOCALBASE}/include/vtk-5.0 \
+		-DvtkMPEG2Encode_LIBRARIES=vtkMPEG2Encode \
+		-DVTK_USE_PATENTED:BOOL=ON \
+		-DVTK_USE_MPEG2_ENCODER:BOOL=ON
 .endif
 
-################################# vtk port start #############################################
-
-.ifndef(PKGNAMESUFFIX)
-
-EXTRA_LIBS=	DICOMParser freetype ftgl
-
-.if defined(WITH_TESTING)
-BINARIES=	${VTK_KITS:C/Parallel//:C/Patented//:S/$/CxxTests/}
-BINARIES+=	TestCxxFeatures TestInstantiator TimeRenderer TimeRenderer2 ParallelIsoTest
-BINARIES+=	SocketClient SocketServer GenericCommunicator ThreadedCommunicator TestPStream
-.endif
-
-.ifndef(WITH_TESTING)
-pre-everything::
-	@${ECHO_MSG} "---------------------- N   O   T   E ------------------------"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you want to build C++ Testing binaries press Ctrl-C now"
-	@${ECHO_MSG} "and execute \"make WITH_TESTING=yes\""
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "-------------------------------------------------------------"
-.endif
-
-post-patch: patch-common
-
-do-install: install-cnotice install-binaries install-libs
-
-.endif
-
-################################# vtk port end #############################################
-
-pre-configure:
-	${MKDIR} ${WRKSRC}
+post-extract:
+	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
+		${VTKSRCDIR}/Hybrid/vtkVRMLImporter.cxx
 
 do-configure:
+	${MKDIR} ${WRKSRC}
 	cd ${WRKSRC} && ${CMAKE} ${VTKSRCDIR} ${CMAKE_DEFS}
 
-patch-common:
-	@${FIND} ${VTKSRCDIR} -name "*.cxx" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|malloc.h|stdlib.h|g'
-	@${REINPLACE_CMD} -E 's|lib/vtk\)|lib\)|g' \
-		${VTKSRCDIR}/vtkGenerateVTKConfig.cmake
-.if defined(WRAP)
-# No need to build many libs, such as: vtkCommon,... Better link to those ones installed by vtk port.
-# Patch (MAIN_KIT_LIB = [Common_LIB Filtering_LIB ...]:
-# ${VTKSRCDIR}/CMakeLists.txt :
-#       -SUBDIRS(Wrapping Utilities)
-#       +SUBDIRS(Wrapping)
-#
-# ${VTKSRCDIR}/[Common Filtering IO ...]/CMakeLists.txt :
-#       -ADD_LIBRARY(vtk${KIT} ...
-#       +FIND_LIBRARY(MAIN_KIT_LIB NAMES vtk${KIT} PATHS ${PREFIX}/lib)
-#
-#       -TARGET_LINK_LIBRARIES(vtk${KIT}Python vtk${KIT} ...
-#       +TARGET_LINK_LIBRARIES(vtk${KIT}Python ${MAIN_KIT_LIB} ...
-#
-#	Sometimes 	TARGET_LINK_LIBRARIES(vtk${KIT}Python vtk${KIT} can be separated to two lines:
-#			TARGET_LINK_LIBRARIES(vtk${KIT}Python
-#						vtk${KIT}
-#	-^[spaces or tabs]vtk${KIT}[spaces or tabs]$
-#	+[space]${MAIN_KIT_LIB}
-#
-#       -TARGET_LINK_LIBRARIES(vtk${KIT} ${KIT_LIBS})
-#
-#       -INSTALL_TARGETS(/lib/vtk vtk${KIT})
-#
-# ${VTKSRCDIR}/[Common Filtering IO ...]/Tests/CMakeLists.txt :
-#       -SUBDIRS(Cxx)
-#
-	@${REINPLACE_CMD} -E 's|SUBDIRS\(Wrapping Utilities\)|SUBDIRS\(Wrapping\)|g' \
-		${VTKSRCDIR}/CMakeLists.txt
+# FSL links directly to libQVTKWidgetPlugin.so, so put it in a standard
+# library directory.
+pre-install:
+	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${PREFIX}/lib/vtk-5.0
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${VTKSRCDIR}/README.html ${DOCSDIR}
+.endif
+	${INSTALL_DATA} ${WRKSRC}/bin/libQVTKWidgetPlugin.so ${PREFIX}/lib
+	${INSTALL_MAN} ${WRKDIR}/vtk.3 ${MANPREFIX}/man/man3
 
-	@for dir in ${VTK_KITS} ; do \
-		${ECHO_MSG} "Patching ${WRKDIR}/${VTKSRCDIR}/$$dir/CMakeLists.txt ..." ; \
-		${REINPLACE_CMD} -E 's|ADD_LIBRARY *\(vtk\$$\{KIT\} .*$$|FIND_LIBRARY\('$$dir'_LIB NAMES vtk\$$\{KIT\} PATHS ${PREFIX}/lib\)|g ; s|TARGET_LINK_LIBRARIES *\(vtk\$$\{KIT\}${WRAP} vtk\$$\{KIT\}|TARGET_LINK_LIBRARIES\(vtk\$$\{KIT\}${WRAP} \$$\{'$$dir'_LIB\}|g ; s|^[ \t]*vtk\$$\{KIT\}[ \t]*$$| \$$\{'$$dir'_LIB\}|g ; s|TARGET_LINK_LIBRARIES *\(vtk\$$\{KIT\} .*$$||g ; s|INSTALL_TARGETS *\(.* vtk\$$\{KIT\}\)||g' \
-			${VTKSRCDIR}/$$dir/CMakeLists.txt ; \
+# Ports system wants us to conform to lib.so.x format, but VTK5
+# only installs lib.so.x.y and lib.so.5.x.y.z.
+post-install:
+	@for lib in ${PREFIX}/lib/libvtk*.so ${PREFIX}/lib/libQVTK*.so; do \
+		${RM} -f $$lib; \
+		${LN} -sf $$lib.${PORTVERSION} $$lib; \
+		${LN} -sf $$lib.${PORTVERSION} $$lib.5; \
 	done
-
-.if defined(WITH_TESTING)
-	@for dir in ${VTK_KITS} ; do \
-		${ECHO_MSG} "Patching ${VTKSRCDIR}/$$dir/Testing/CMakeLists.txt ..." ; \
-		${REINPLACE_CMD} -E 's|SUBDIRS *\(Cxx\).*$$||g' \
-			${VTKSRCDIR}/$$dir/Testing/CMakeLists.txt ; \
-	done
-.endif
-.endif	#end of patch-common
-
-install-binaries:
-.if defined(BINARIES)
-	@${ECHO_MSG} "Installing binaries to ${PREFIX}/bin :"
-.for i in ${BINARIES}
-	@${ECHO_MSG} "Installing ${i} ..."
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/${i} ${PREFIX}/bin
-.endfor
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
+.if defined(WITH_VTKMPEG2)
+	@${ECHO_CMD} "This port uses the patented MPEG2 encoder."
+	@${ECHO_CMD}
 .endif
 
-install-libs:
-	@${ECHO_MSG} "Installing shared libraries to ${PREFIX}/lib ..."
-.for i in ${VTK_KITS:S/$/${WRAP}/} ${EXTRA_LIBS}
-	@${ECHO_MSG} "Installing libvtk${i}.so ..."
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/libvtk${i}.so \
-			${PREFIX}/lib/libvtk${i}.so.${LIBVER}
-	@${LN} -sf ${PREFIX}/lib/libvtk${i}.so.${LIBVER} \
-			${PREFIX}/lib/libvtk${i}.so
-.endfor
-
-.endif
-
-install-cnotice:
-	@${ECHO_MSG} "Installing copyright notice to ${DOCSDIR} ..."
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${VTKSRCDIR}/README.html ${DOCSDIR}
-	@${INSTALL_DATA} ${VTKSRCDIR}/vtkLogo.jpg ${DOCSDIR}
-	@${ECHO_MSG} -e "A list of the patented classes.\n\n" > ${WRKDIR}/README.patented-classes
-	@cd ${VTKSRCDIR} ; ${LS} Patented/*.h >> ${WRKDIR}/README.patented-classes
-	@${INSTALL_DATA} ${WRKDIR}/README.patented-classes ${DOCSDIR}
-
-print-pkg-message:
-	@if ${TEST} -f ${PKGMESSAGE} ; then \
-	${ECHO_MSG} -e "-- V T K - N O T E ----------------------------------------------------\n\n" ; \
-	${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|' ; \
-	${ECHO_MSG} -e "\n\n-----------------------------------------------------------------------" ; \
-	fi
-
-post-install: print-pkg-message
-
-.ifndef(PKGNAMESUFFIX)
 .include <bsd.port.post.mk>
-.endif
