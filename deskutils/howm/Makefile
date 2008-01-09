@@ -15,7 +15,6 @@ COMMENT=	Write fragmentarily and read collectively
 
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs22
 ELISP=		action-lock.el bcomp.el cheat-font-lock.el \
 		howm-common.el howm-date.el howm-menu.el howm-misc.el \
 		howm-mode.el howm-reminder.el \
