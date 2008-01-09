@@ -682,6 +682,7 @@
     SUBDIR += showimg
     SUBDIR += simage
     SUBDIR += skencil
+    SUBDIR += sketch
     SUBDIR += sng
     SUBDIR += snx101util
     SUBDIR += sodipodi

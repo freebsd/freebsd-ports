@@ -1,0 +1,21 @@
+--- makefile.orig	Tue Sep 25 06:24:08 2007
++++ makefile	Wed Jan  9 14:44:25 2008
+@@ -5,8 +5,7 @@
+ #
+ # makefile v0.03
+ #
+-CC = gcc -O1 -g
+-YACC = bison --defines --debug --report=all --yacc
++YACC = yacc
+ LEX = flex
+ 
+ verdata=$(shell cat version.dat)
+@@ -38,7 +37,7 @@
+ 	version.h y.tab.h
+ 
+ $(EXE) : $(OBJECTS)
+-	$(CC) -o $(EXE) $(OBJECTS) -lm
++	$(CC) $(CFLAGS) -o $(EXE) $(OBJECTS) -lm
+ 
+ y.tab.c y.tab.h : sketch.y
+ 	$(YACC) $<
