@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	maven2
-DISTVERSION=	2.0.7
+DISTVERSION=	2.0.8
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	maven/binaries
-DISTNAME=	maven-${DISTVERSION}-bin
+DISTNAME=	apache-maven-${DISTVERSION}-bin
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java project management tool, 2.0 branch
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	m2.sh
 SUB_LIST=	CLASSWORLDS_JAR=classworlds-1.1.jar
-WRKSRC=		${WRKDIR}/maven-${DISTVERSION}
+WRKSRC=		${WRKDIR}/apache-maven-${DISTVERSION}
 
 post-extract:
 	${RM} -f ${WRKSRC}/bin/m2.bat
