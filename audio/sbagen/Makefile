@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	sbagen
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sequenced binaural wave generator
 
-PORTDOCS=	COPYING.txt ChangeLog.txt README.txt SBAGEN.txt \
-		focus.txt holosync.txt mk-msvc.txt readme-windows.txt \
-		theory.txt theory2.txt wave.txt
+DOC_FILES=	ChangeLog.txt README.txt SBAGEN.txt TODO.txt focus.txt \
+		focus2.txt holosync.txt theory.txt theory2.txt wave.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,linux/soundcard.h,sys/soundcard.h,g' \
@@ -28,13 +26,15 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sbagen ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/*.sbg ${DATADIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for D in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/$D ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
