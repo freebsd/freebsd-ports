@@ -204,6 +204,7 @@
     SUBDIR += p5-Math-Calc-Units
     SUBDIR += p5-Math-Cephes
     SUBDIR += p5-Math-Combinatorics
+    SUBDIR += p5-Math-Complex
     SUBDIR += p5-Math-ConvexHull
     SUBDIR += p5-Math-Currency
     SUBDIR += p5-Math-Derivative

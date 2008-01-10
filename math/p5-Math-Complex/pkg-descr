@@ -1,0 +1,6 @@
+This package lets you create and manipulate complex numbers. By default, Perl
+limits itself to real numbers, but an extra use statement brings full complex
+support, along with a full set of mathematical functions typically associated
+with and/or extended to complex numbers.
+
+WWW:	http://search.cpan.org/dist/Math-Complex/
