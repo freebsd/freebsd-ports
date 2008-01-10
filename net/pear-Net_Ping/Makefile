@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Ping
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	net pear
 
 MAINTAINER=	bg1tpt@gmail.com
@@ -17,7 +17,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
 FILES=		Ping.php
-TESTS=		test_result_parsers.php
 EXAMPLES=	example.php
 _EXAMPLESDIR=	docs/examples
 
