@@ -5,11 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	unrtf
-PORTVERSION=	0.20.4
+PORTVERSION=	0.20.5
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A converter from RTF to several formats, including HTML and LaTeX
@@ -19,9 +17,5 @@ GNU_CONFIGURE=	yes
 
 MAN1=		unrtf.1
 PLIST_FILES=	bin/unrtf
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/unrtf ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/unrtf.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
