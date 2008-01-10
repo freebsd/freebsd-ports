@@ -16565,6 +16565,7 @@ web2ldap	ports/www/web2ldap
 webalizer	ports/www/webalizer
 webbench	ports/benchmarks/webbench
 webcalendar	ports/www/webcalendar
+webcalendar-devel	ports/www/webcalendar-devel
 webcheck	ports/www/webcheck
 webcopy		ports/www/webcopy
 webcpp		ports/textproc/webcpp
