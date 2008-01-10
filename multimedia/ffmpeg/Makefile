@@ -98,6 +98,17 @@ LIB_DEPENDS+=		faad.0:${PORTSDIR}/audio/faad
 CONFIGURE_ARGS+=	--enable-libfaad \
 			--enable-libfaadbin
 .endif
+## amr
+.ifdef(WITH_AMR_NB) || exists($LOCALBASE}/lib/libamrnb.so)
+LIB_DEPENDS+=		amrnb.3:${PORTSDIR}/audio/libamrnb
+
+CONFIGURE_ARGS+=	--enable-libamr-nb
+.endif
+.ifdef(WITH_AMR_WB) || exists($LOCALBASE}/lib/libamrwb.so)
+LIB_DEPENDS+=		amrwb.3:${PORTSDIR}/audio/libamrwb
+
+CONFIGURE_ARGS+=	--enable-libamr-wb
+.endif
 USE_RC_SUBR=		ffserver
 
 .if ${MACHINE_CPU:Mmmx}==""
