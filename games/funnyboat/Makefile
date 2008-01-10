@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	funnyboat
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A side scrolling shooter game starring a steamboat on the sea
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
-		${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_ZIP=	yes
 USE_PYTHON=	2.4+
 NO_BUILD=	yes
 
