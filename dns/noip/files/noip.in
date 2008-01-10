@@ -17,7 +17,7 @@
 name="noip"
 rcvar=`set_rcvar`
 
-command="%%PREFIX%%/bin/${name}"
+command="%%PREFIX%%/bin/noip2"
 
 load_rc_config $name
 
