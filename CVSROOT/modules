@@ -7230,6 +7230,7 @@ ltrace		ports/sysutils/ltrace
 ltris		ports/games/ltris
 ltxml		ports/textproc/ltxml
 lua		ports/lang/lua
+lua-bitlib	ports/devel/lua-bitlib
 lua-filename	ports/devel/lua-filename
 lua-gettext	ports/devel/lua-gettext
 lua-mode.el	ports/lang/lua-mode.el
