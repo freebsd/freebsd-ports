@@ -21,7 +21,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ofx.3:${PORTSDIR}/finance/libofx \
 		gwrap-core-runtime.0:${PORTSDIR}/devel/g-wrap \
 		gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38 \
-		goffice-0.4:${PORTSDIR}/devel/goffice
+		goffice-0.4:${PORTSDIR}/devel/goffice04
 RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
 		${LOCALBASE}/share/guile/1.6/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
