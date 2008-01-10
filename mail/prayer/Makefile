@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	prayer
-PORTVERSION=	1.0.16
-PORTREVISION=	2
+PORTVERSION=	1.0.18
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 
@@ -27,8 +26,8 @@ MAKE_ENV+=	PORTCFLAGS="${CFLAGS}"
 BERKELEYDB_PORT?=	databases/db42
 BERKELEYDB_LIB?=		db-4.2
 
-DOCS=	ACCOUNTD CMD_LINE DESIGN DONE DONE-OLD FEATURES ICONLIST \
-	INSTALL LOGS NOTICE README ROADMAP SECURITY TODO URL_OPTIONS
+PORTDOCS=	ACCOUNTD CMD_LINE DESIGN DONE DONE-OLD FEATURES ICONLIST \
+		INSTALL LOGS NOTICE README ROADMAP SECURITY TODO URL_OPTIONS
 
 pre-patch:
 	${CP} ${WRKSRC}/defaults/Config ${WRKSRC}/Config
@@ -50,11 +49,11 @@ pre-install:
 	${MKDIR} ${PREFIX}/prayer
 	${INSTALL_SCRIPT} ${WRKSRC}/prayer.sh \
 		${LOCALBASE}/etc/rc.d/prayer.sh.sample
+
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}/
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
