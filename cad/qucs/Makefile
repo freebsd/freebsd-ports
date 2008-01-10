@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	qucs
-PORTVERSION=	0.0.12
+PORTVERSION=	0.0.13
 CATEGORIES=	cad science
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Graphical circuit design and simulation tool
 
 USE_QT_VER=	3
-USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		ps2sp.1 qucs.1 qucsator.1 qucsattenuator.1 qucsconv.1 \
 		qucsdigi.1 qucsedit.1 qucsfilter.1 qucshelp.1 qucslib.1 \
