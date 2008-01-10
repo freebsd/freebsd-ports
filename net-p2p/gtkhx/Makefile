@@ -6,28 +6,22 @@
 #
 
 PORTNAME=	gtkhx
-PORTVERSION=	0.9.3
-PORTREVISION=	6
+PORTVERSION=	0.9.4
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtkhx
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ version of Hx, a UNIX Hotline Client
 
-USE_XLIB=	yes
-USE_GNOME=	gdkpixbuf
+USE_GNOME=	gdkpixbuf gnomehack gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gtkhx.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 .if !defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS=""
@@ -36,5 +30,15 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=--disable-nls
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-I/usr/local/include||g ; \
+		 s|-L/usr/local/lib||g ; \
+		 s|^mandir =.*$$|mandir = $${prefix}/man/man1|g'
+	@${REINPLACE_CMD} -e 's|^CC =|#CC =|g' ${WRKSRC}/plugins/eliza/Makefile
+	@${REINPLACE_CMD} -e 's|^CC=|#CC=|g ; \
+		 s|$$CFLAGS -O2|$$CFLAGS|g ; \
+		 s|-g -Wall|$$CFLAGS -Wall|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
