@@ -14885,6 +14885,7 @@ shelldap	ports/net/shelldap
 shftool		ports/converters/shftool
 shibboleth-sp	ports/security/shibboleth-sp
 shim		ports/graphics/shim
+shimmer		ports/security/shimmer
 shishi		ports/security/shishi
 shlock		ports/sysutils/shlock
 shmap		ports/devel/shmap
