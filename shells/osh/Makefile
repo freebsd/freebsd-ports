@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osh
-DISTVERSION=	20070707
+DISTVERSION=	20080109
 CATEGORIES=	shells
 MASTER_SITES=	http://jneitzel.sdf1.org/osh/src/
 
