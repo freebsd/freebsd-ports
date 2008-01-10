@@ -416,6 +416,7 @@
     SUBDIR += gnustep-make
     SUBDIR += gob2
     SUBDIR += goffice
+    SUBDIR += goffice04
     SUBDIR += goffice1
     SUBDIR += gonzui
     SUBDIR += google-perftools

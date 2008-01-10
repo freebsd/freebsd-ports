@@ -9,7 +9,7 @@
 
 PORTNAME=	goffice
 PORTVERSION=	0.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	 sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -18,6 +18,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib/GTK+ set of document centric objects and utilities
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
+NO_LATEST_LINK=	yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

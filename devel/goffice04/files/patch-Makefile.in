@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2008-01-10 00:57:40.000000000 -0500
++++ Makefile.in	2008-01-10 00:57:58.000000000 -0500
+@@ -286,7 +286,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = goffice tests pixmaps plugins po docs
++SUBDIRS = goffice pixmaps plugins po
+ EXTRA_DIST = README NEWS BUGS MAINTAINERS AUTHORS \
+ 	goffice.mk \
+ 	goffice-plugins.mk \
