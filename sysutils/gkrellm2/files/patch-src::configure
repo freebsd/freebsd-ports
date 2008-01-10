@@ -2,14 +2,6 @@ Index: src/configure
 diff -u src/configure.orig src/configure
 --- src/configure.orig	Mon May  7 08:45:55 2007
 +++ src/configure	Sun Jul 22 03:01:53 2007
-@@ -41,6 +41,7 @@
- 
- cat << EOF > test.c
- #include <gnutls/openssl.h>
-+#include <gcrypt.h>
- #include <errno.h>
- #include <pthread.h>
- 
 @@ -61,8 +62,8 @@
  	}
  EOF
