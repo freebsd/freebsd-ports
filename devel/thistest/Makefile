@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thistest
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	devel java
 MASTER_SITES=	#
 DISTNAME=	thisTest
@@ -16,9 +16,12 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A Java unit testing framework
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6
+JAVA_VERSION=	1.5+
+USE_ANT=	yes
 NO_WRKSUBDIR=	yes
 RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
+
+JARFILE=	${DISTNAME}${EXTRACT_SUFX}
 
 .include <bsd.port.pre.mk>
 
@@ -26,17 +29,18 @@ RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
 IGNORE=		needs you to download ${DISTNAME}${EXTRACT_SUFX} manually from "http://www.flosoft-systems.com" and place it under ${DISTDIR}
 .endif
 
-do-build:
+post-build:
 	@(${ECHO_CMD} '#!${SH}'; \
-	  ${ECHO_CMD} 'exec ${JAVA} -jar ${JAVAJARDIR}/${DISTNAME}${EXTRACT_SUFX} "$$@"') \
+	  ${ECHO_CMD} 'exec ${JAVA} -jar ${JAVAJARDIR}/${JARFILE} "$$@"') \
 	  > ${WRKSRC}/${PORTNAME}
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} && jar fx ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	@${CP} ${FILESDIR}/build.xml ${WRKDIR}
 
 do-install:
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
