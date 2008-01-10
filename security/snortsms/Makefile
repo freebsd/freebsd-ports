@@ -6,32 +6,30 @@
 #
 
 PORTNAME=	snortsms
-PORTVERSION=	1.2.2
+PORTVERSION=	1.7.8
 CATEGORIES=	security www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	snortsms
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	A remote management and monitoring interface for Snort based IDS
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \
 		${LOCALBASE}/bin/curl:${PORTSDIR}/ftp/curl
 
-USE_PHP=	mysql pcre pcntl session
+USE_PHP=	mysql pcre pcntl session curl
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_LIST=	PORTNAME=${PORTNAME} \
+		WRKSRC=${WRKSRC} \
+		PORTSDIR=${PORTSDIR}
 
 do-install:
-# Create directory structure
-	@${MKDIR} ${PREFIX}/www/snortsms
-# copy files
-	${CP} -R ${WRKSRC}/* ${PREFIX}/www/snortsms
-	${RM} ${PREFIX}/www/snortsms/COPYING
-# correct permissions
-	${CHMOD} 775 ${PREFIX}/www/snortsms/conf
-	${CHOWN} :${WWWGRP} ${PREFIX}/www/snortsms/conf
+	${MKDIR} ${WWWDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR})
+	${CHMOD} 775 ${WWWDIR}/conf
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
