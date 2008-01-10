@@ -384,6 +384,7 @@
     SUBDIR += vtk-java
     SUBDIR += vtk-python
     SUBDIR += vtk-tcl
+    SUBDIR += vtk5
     SUBDIR += wcalc
     SUBDIR += wfmath
     SUBDIR += wingz
