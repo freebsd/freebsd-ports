@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bcfg2
-PORTVERSION=	0.9.5.2
+PORTVERSION=	0.9.5.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/bcfg/ \
 		http://mirror.opensysadmin.com/bcfg/
