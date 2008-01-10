@@ -1151,6 +1151,7 @@ cairo-reference	ports/graphics/cairo-reference
 cairomm		ports/graphics/cairomm
 cake		ports/games/cake
 cakephp		ports/www/cakephp
+cakephp		ports/www/cakephp-devel
 cal3d		ports/graphics/cal3d
 cal3d-devel	ports/graphics/cal3d-devel
 calamaris	ports/www/calamaris
@@ -15679,7 +15680,7 @@ tei-guidelines-p4	ports/textproc/tei-guidelines-p4
 tei-lite	ports/textproc/tei-lite
 tei-p3		ports/textproc/tei-p3
 tei-p4		ports/textproc/tei-p4
-teknap		ports/audio/teknap
+teknap		ports/net-p2p/teknap
 tel		ports/deskutils/tel
 telak		ports/graphics/telak
 telbook		ports/misc/telbook
