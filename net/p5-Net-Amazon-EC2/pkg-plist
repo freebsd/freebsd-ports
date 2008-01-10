@@ -1,5 +1,32 @@
 %%SITE_PERL%%/Net/Amazon/EC2.pm
+%%SITE_PERL%%/Net/Amazon/EC2/ConfirmProductInstanceResponse.pm
+%%SITE_PERL%%/Net/Amazon/EC2/ConsoleOutput.pm
+%%SITE_PERL%%/Net/Amazon/EC2/DescribeImageAttribute.pm
+%%SITE_PERL%%/Net/Amazon/EC2/DescribeImagesResponse.pm
+%%SITE_PERL%%/Net/Amazon/EC2/DescribeKeyPairsResponse.pm
+%%SITE_PERL%%/Net/Amazon/EC2/Error.pm
+%%SITE_PERL%%/Net/Amazon/EC2/Errors.pm
+%%SITE_PERL%%/Net/Amazon/EC2/GroupSet.pm
+%%SITE_PERL%%/Net/Amazon/EC2/InstanceState.pm
+%%SITE_PERL%%/Net/Amazon/EC2/IpPermission.pm
+%%SITE_PERL%%/Net/Amazon/EC2/IpRange.pm
+%%SITE_PERL%%/Net/Amazon/EC2/KeyPair.pm
+%%SITE_PERL%%/Net/Amazon/EC2/LaunchPermission.pm
+%%SITE_PERL%%/Net/Amazon/EC2/LaunchPermissionOperation.pm
+%%SITE_PERL%%/Net/Amazon/EC2/ProductCode.pm
+%%SITE_PERL%%/Net/Amazon/EC2/ProductInstanceResponse.pm
+%%SITE_PERL%%/Net/Amazon/EC2/ReservationInfo.pm
+%%SITE_PERL%%/Net/Amazon/EC2/RunInstance.pm
+%%SITE_PERL%%/Net/Amazon/EC2/RunningInstances.pm
+%%SITE_PERL%%/Net/Amazon/EC2/SecurityGroup.pm
+%%SITE_PERL%%/Net/Amazon/EC2/TerminateInstancesResponse.pm
+%%SITE_PERL%%/Net/Amazon/EC2/UserData.pm
+%%SITE_PERL%%/Net/Amazon/EC2/UserIdGroupPair.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/EC2/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/EC2
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
-@dirrm %%SITE_PERL%%/Net/Amazon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrm %%SITE_PERL%%/Net/Amazon/EC2
+@dirrmtry %%SITE_PERL%%/Net/Amazon
