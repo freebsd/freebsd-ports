@@ -817,6 +817,7 @@
     SUBDIR += py-rss2gen
     SUBDIR += py-rxp
     SUBDIR += py-sgrep
+    SUBDIR += py-stripogram
     SUBDIR += py-syck
     SUBDIR += py-texttable
     SUBDIR += py-tvgrab
