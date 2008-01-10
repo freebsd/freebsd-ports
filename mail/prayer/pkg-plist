@@ -4,6 +4,7 @@ etc/rc.d/prayer.sh.sample
 prayer/help/CVS/Root
 prayer/help/CVS/Repository
 prayer/help/CVS/Entries
+prayer/help/CVS/Entries.Log
 prayer/help/compose/CVS/Root
 prayer/help/compose/CVS/Repository
 prayer/help/compose/CVS/Entries
@@ -52,12 +53,9 @@ prayer/help/prefs/CVS/Repository
 prayer/help/prefs/CVS/Entries
 prayer/help/prefs/compose1.html
 prayer/help/prefs/compose2.html
-prayer/help/prefs/compose2.html.~1.2.~
 prayer/help/prefs/display1.html
-prayer/help/prefs/display1.html.~1.2.~
 prayer/help/prefs/folder.html
 prayer/help/prefs/general.html
-prayer/help/prefs/general.html.~1.2.~
 prayer/icons/CVS/Root
 prayer/icons/CVS/Repository
 prayer/icons/CVS/Entries
@@ -106,6 +104,7 @@ prayer/sbin/prayer-session
 prayer/sbin/prayer-ssl-prune
 prayer/sbin/prayer-sem-prune
 prayer/sbin/prayer-cyclog
+prayer/sbin/prayer-chroot
 @dirrm prayer/help/CVS
 @dirrm prayer/help/compose/CVS
 @dirrm prayer/help/compose
@@ -118,22 +117,6 @@ prayer/sbin/prayer-cyclog
 @dirrm prayer/certs
 @dirrm prayer/sbin
 @dirrm prayer
-%%PORTDOCS%%%%DOCSDIR%%/ACCOUNTD
-%%PORTDOCS%%%%DOCSDIR%%/CMD_LINE
-%%PORTDOCS%%%%DOCSDIR%%/DESIGN
-%%PORTDOCS%%%%DOCSDIR%%/DONE
-%%PORTDOCS%%%%DOCSDIR%%/DONE-OLD
-%%PORTDOCS%%%%DOCSDIR%%/FEATURES
-%%PORTDOCS%%%%DOCSDIR%%/ICONLIST
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LOGS
-%%PORTDOCS%%%%DOCSDIR%%/NOTICE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ROADMAP
-%%PORTDOCS%%%%DOCSDIR%%/SECURITY
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/URL_OPTIONS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p /var/spool/prayer
 @exec chown -R prayer:prayer /var/spool/prayer
 @dirrmtry /var/spool/prayer

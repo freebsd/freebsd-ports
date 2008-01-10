@@ -1,5 +1,5 @@
---- Config.orig	Tue Feb  7 12:38:13 2006
-+++ Config	Tue Feb  7 12:38:46 2006
+--- Config.orig	2006-04-05 13:35:35.000000000 +0100
++++ Config	2008-01-09 16:25:14.000000000 +0000
 @@ -28,7 +28,7 @@
  
  ############################################################################
@@ -25,10 +25,10 @@
  #
 -CCLIENT_DIR=./c-client
 -CCLIENT_INCLUDE=-I $(CCLIENT_DIR)
--CCLIENT_LIB=./$(CCLIENT_DIR)/c-client.a
+-CCLIENT_LIBS=./$(CCLIENT_DIR)/c-client.a
 +#CCLIENT_DIR=./c-client
 +#CCLIENT_INCLUDE=-I $(CCLIENT_DIR)
-+#CCLIENT_LIB=./$(CCLIENT_DIR)/c-client.a
++#CCLIENT_LIBS=./$(CCLIENT_DIR)/c-client.a
  CCLIENT_SSL_ENABLE  = true
  
  #
@@ -37,8 +37,8 @@
  #
  #CCLIENT_INCLUDE = -I/usr/local/include/c-client
 +CCLIENT_INCLUDE = -I${LOCALBASE}/include/c-client
- #CCLIENT_LIB     = -L/usr/local/lib -lc-client4
-+CCLIENT_LIB     = -L${LOCALBASE}/lib -lc-client4
+ #CCLIENT_LIBS    = -L/usr/local/lib -lc-client4
++CCLIENT_LIBS     = -L${LOCALBASE}/lib -lc-client4
  #
  # Complication:
  #   The FreeBSD port uses PAM and optionally SSL if built WITH_SSL=yes.
@@ -49,12 +49,12 @@
  
  ############################################################################
 @@ -99,7 +102,7 @@
- Z_LIB     = -lz
+ Z_LIBS    = -lz
  
  # LDAP (required if LDAP_ENABLE set)
 -LDAP_INCLUDE =
 +LDAP_INCLUDE = -I${LOCALBASE}/include
- LDAP_LIB     = -lldap
+ LDAP_LIBS    = -lldap
  
  # Pam (required if CCLIENT_PAM_ENABLE set)
 @@ -128,12 +131,12 @@
