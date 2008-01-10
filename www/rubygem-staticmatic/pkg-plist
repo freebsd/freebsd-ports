@@ -1,5 +1,5 @@
 bin/staticmatic
-%%CACHE_DIR%%/staticmatic-0.9.0.gem
+%%GEM_CACHE%%
 %%GEM_LIB_DIR%%/CHANGELOG
 %%GEM_LIB_DIR%%/LICENSE
 %%GEM_LIB_DIR%%/README
@@ -11,6 +11,7 @@ bin/staticmatic
 %%GEM_LIB_DIR%%/example/src/layouts/application.haml
 %%GEM_LIB_DIR%%/example/src/pages/contact.haml
 %%GEM_LIB_DIR%%/example/src/pages/index.haml
+%%GEM_LIB_DIR%%/example/src/pages/test test/blah.haml
 %%GEM_LIB_DIR%%/example/src/stylesheets/application.sass
 %%GEM_LIB_DIR%%/lib/staticmatic.rb
 %%GEM_LIB_DIR%%/lib/staticmatic/base.rb
@@ -41,6 +42,7 @@ bin/staticmatic
 %%GEM_LIB_DIR%%/test/version_test.rb
 %%GEM_LIB_DIR%%/website/site/download.html
 %%GEM_LIB_DIR%%/website/site/faq.html
+%%GEM_LIB_DIR%%/website/site/helper_central/index.html
 %%GEM_LIB_DIR%%/website/site/how_to_use.html
 %%GEM_LIB_DIR%%/website/site/images/bycurve21.gif
 %%GEM_LIB_DIR%%/website/site/images/curve21.jpg
@@ -56,8 +58,11 @@ bin/staticmatic
 %%GEM_LIB_DIR%%/website/src/helpers/application_helper.rb
 %%GEM_LIB_DIR%%/website/src/layouts/application.haml
 %%GEM_LIB_DIR%%/website/src/layouts/test.haml
+%%GEM_LIB_DIR%%/website/src/pages/_qa.haml
 %%GEM_LIB_DIR%%/website/src/pages/download.haml
 %%GEM_LIB_DIR%%/website/src/pages/faq.haml
+%%GEM_LIB_DIR%%/website/src/pages/helper_central/_helper.haml
+%%GEM_LIB_DIR%%/website/src/pages/helper_central/index.haml
 %%GEM_LIB_DIR%%/website/src/pages/how_to_use.haml
 %%GEM_LIB_DIR%%/website/src/pages/index.haml
 %%GEM_LIB_DIR%%/website/src/pages/releases/0_8_10.haml
@@ -65,9 +70,10 @@ bin/staticmatic
 %%GEM_LIB_DIR%%/website/src/pages/releases/0_8_8.haml
 %%GEM_LIB_DIR%%/website/src/pages/releases/0_9_0.haml
 %%GEM_LIB_DIR%%/website/src/partials/news.haml
-%%SPEC_DIR%%/staticmatic-0.9.0.gemspec
+%%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/website/src/partials
 @dirrm %%GEM_LIB_DIR%%/website/src/pages/releases
+@dirrm %%GEM_LIB_DIR%%/website/src/pages/helper_central
 @dirrm %%GEM_LIB_DIR%%/website/src/pages
 @dirrm %%GEM_LIB_DIR%%/website/src/layouts
 @dirrm %%GEM_LIB_DIR%%/website/src/helpers
@@ -75,6 +81,7 @@ bin/staticmatic
 @dirrm %%GEM_LIB_DIR%%/website/site/stylesheets
 @dirrm %%GEM_LIB_DIR%%/website/site/releases
 @dirrm %%GEM_LIB_DIR%%/website/site/images
+@dirrm %%GEM_LIB_DIR%%/website/site/helper_central
 @dirrm %%GEM_LIB_DIR%%/website/site
 @dirrm %%GEM_LIB_DIR%%/website
 @dirrm %%GEM_LIB_DIR%%/test/sandbox/test_site/src/stylesheets
@@ -92,6 +99,7 @@ bin/staticmatic
 @dirrm %%GEM_LIB_DIR%%/lib/staticmatic
 @dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%/example/src/stylesheets
+@dirrm %%GEM_LIB_DIR%%/example/src/pages/test test
 @dirrm %%GEM_LIB_DIR%%/example/src/pages
 @dirrm %%GEM_LIB_DIR%%/example/src/layouts
 @dirrm %%GEM_LIB_DIR%%/example/src
