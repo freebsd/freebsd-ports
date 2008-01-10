@@ -1,11 +1,12 @@
+bin/handel.pl
 %%SITE_PERL%%/Handel/Iterator.pm
-%%SITE_PERL%%/Handel/DBI.pm
 %%SITE_PERL%%/Template/Plugin/Handel/Checkout.pm
 %%SITE_PERL%%/Template/Plugin/Handel/Order.pm
 %%SITE_PERL%%/Catalyst/Helper/Controller/Handel/Checkout.pm
 %%SITE_PERL%%/AxKit/XSP/Handel/Checkout.pm
 %%SITE_PERL%%/Handel/Checkout.pm
 %%SITE_PERL%%/Handel/Constants.pm
+%%SITE_PERL%%/Handel/L10N/bg.pm
 %%SITE_PERL%%/Handel/L10N/fr.pm
 %%SITE_PERL%%/Handel/L10N/en_us.pm
 %%SITE_PERL%%/Handel/Checkout/Message.pm
@@ -18,7 +19,6 @@
 %%SITE_PERL%%/Catalyst/Helper/Model/Handel/Order.pm
 %%SITE_PERL%%/Catalyst/Helper/Controller/Handel/Order.pm
 %%SITE_PERL%%/Handel/Checkout/Plugin/AssignOrderNumber.pm
-%%SITE_PERL%%/Handel/L10N/zh_tw.pm
 %%SITE_PERL%%/Catalyst/Helper/Controller/Handel/Cart.pm
 %%SITE_PERL%%/Template/Plugin/Handel/Cart.pm
 %%SITE_PERL%%/Handel/Exception.pm
@@ -34,6 +34,47 @@
 %%SITE_PERL%%/Handel/Currency.pm
 %%SITE_PERL%%/Handel/Cart/Item.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Handel/.packlist
+%%SITE_PERL%%/Handel/Manual.pod
+%%SITE_PERL%%/Handel/Compat.pm
+%%SITE_PERL%%/Handel/Base.pm
+%%SITE_PERL%%/Handel/Storage.pm
+%%SITE_PERL%%/Handel/Schema.pm
+%%SITE_PERL%%/Handel/Storage/DBIC.pm
+%%SITE_PERL%%/Handel/Storage/Result.pm
+%%SITE_PERL%%/Handel/Storage/DBIC/Cart.pm
+%%SITE_PERL%%/Handel/Storage/DBIC/Result.pm
+%%SITE_PERL%%/Handel/Storage/DBIC/Order.pm
+%%SITE_PERL%%/Handel/Storage/DBIC/Cart/Item.pm
+%%SITE_PERL%%/Handel/Storage/DBIC/Order/Item.pm
+%%SITE_PERL%%/Handel/Components/DefaultValues.pm
+%%SITE_PERL%%/Handel/Components/Validation.pm
+%%SITE_PERL%%/Handel/Components/Constraints.pm
+%%SITE_PERL%%/Handel/Schema/DBIC/Order.pm
+%%SITE_PERL%%/Handel/Schema/DBIC/Cart.pm
+%%SITE_PERL%%/Handel/Schema/DBIC/Cart/Item.pm
+%%SITE_PERL%%/Handel/Schema/DBIC/Order/Item.pm
+%%SITE_PERL%%/Handel/Cart/Schema.pm
+%%SITE_PERL%%/Handel/Manual/QuickStart.pod
+%%SITE_PERL%%/Handel/Manual/Intro.pod
+%%SITE_PERL%%/Handel/Manual/Cookbook.pod
+%%SITE_PERL%%/Handel/Manual/Requirements.pod
+%%SITE_PERL%%/Handel/Manual/Storage.pod
+%%SITE_PERL%%/Handel/Manual/Schema.pod
+%%SITE_PERL%%/Handel/Manual/KnownIssues.pod
+%%SITE_PERL%%/Handel/Manual/Upgrading.pod
+%%SITE_PERL%%/Handel/Manual/About.pod
+%%SITE_PERL%%/Handel/Manual/Storage/DBIC.pod
+%%SITE_PERL%%/Handel/Manual/Cookbook/AddingColumns.pod
+%%SITE_PERL%%/Handel/Manual/Cookbook/WritingCustomStorage.pod
+%%SITE_PERL%%/Handel/Compat/Currency.pm
+%%SITE_PERL%%/Handel/Iterator/Results.pm
+%%SITE_PERL%%/Handel/Iterator/List.pm
+%%SITE_PERL%%/Handel/Iterator/DBIC.pm
+%%SITE_PERL%%/Handel/Order/Schema.pm
+%%SITE_PERL%%/Catalyst/Helper/Handel.pm
+%%SITE_PERL%%/Catalyst/Model/Handel/Cart.pm
+%%SITE_PERL%%/Catalyst/Model/Handel/Order.pm
+%%SITE_PERL%%/Module/Starter/Handel.pm
 @dirrm %%SITE_PERL%%/Template/Plugin/Handel
 @dirrm %%SITE_PERL%%/Catalyst/Helper/Controller/Handel
 @dirrm %%SITE_PERL%%/AxKit/XSP/Handel
@@ -44,8 +85,25 @@
 @dirrm %%SITE_PERL%%/Handel/Checkout
 @dirrm %%SITE_PERL%%/Handel/L10N
 @dirrm %%SITE_PERL%%/Handel/Order
-@dirrm %%SITE_PERL%%/Handel
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Handel
+@dirrm %%SITE_PERL%%/Module/Starter
+@dirrm %%SITE_PERL%%/Handel/Storage/DBIC/Order
+@dirrm %%SITE_PERL%%/Handel/Storage/DBIC/Cart
+@dirrm %%SITE_PERL%%/Handel/Storage/DBIC
+@dirrm %%SITE_PERL%%/Handel/Storage
+@dirrm %%SITE_PERL%%/Handel/Schema/DBIC/Order
+@dirrm %%SITE_PERL%%/Handel/Schema/DBIC/Cart
+@dirrm %%SITE_PERL%%/Handel/Schema/DBIC
+@dirrm %%SITE_PERL%%/Handel/Schema
+@dirrm %%SITE_PERL%%/Handel/Manual/Storage
+@dirrm %%SITE_PERL%%/Handel/Manual/Cookbook
+@dirrm %%SITE_PERL%%/Handel/Manual
+@dirrm %%SITE_PERL%%/Handel/Iterator
+@dirrm %%SITE_PERL%%/Handel/Components
+@dirrm %%SITE_PERL%%/Handel/Compat
+@dirrm %%SITE_PERL%%/Handel
+@dirrm %%SITE_PERL%%/Catalyst/Model/Handel
+@dirrmtry %%SITE_PERL%%/Catalyst/Model
 @dirrmtry %%SITE_PERL%%/Template/Plugin
 @dirrmtry %%SITE_PERL%%/Template
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/Controller
