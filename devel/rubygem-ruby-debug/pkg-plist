@@ -5,6 +5,13 @@ bin/rdebug
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger.src/M000002.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger.src/M000003.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/ColumnizeFunctions.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/ColumnizeFunctions.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/ParseFunctions.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/ParseFunctions.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/ParseFunctions.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/ParseFunctions.src/M000009.html
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/files/README.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/command_rb.html
@@ -12,20 +19,24 @@ bin/rdebug
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/catchpoint_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/control_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/display_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/enable_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/eval_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/frame_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/help_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/info_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/irb_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/list_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/method_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/script_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/settings_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/show_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/stepping_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/threads_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/tmate_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/trace_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/commands/variables_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/debugger_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/helper_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/interface_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug/processor_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug_rb.html
@@ -36,8 +47,10 @@ bin/rdebug
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
 %%GEM_LIB_DIR%%/AUTHORS
 %%GEM_LIB_DIR%%/CHANGES
+%%GEM_LIB_DIR%%/ChangeLog
 %%GEM_LIB_DIR%%/LICENSE
 %%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/Rakefile
 %%GEM_LIB_DIR%%/bin/rdebug
 %%GEM_LIB_DIR%%/cli/ruby-debug.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/command.rb
@@ -45,23 +58,64 @@ bin/rdebug
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/catchpoint.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/control.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/display.rb
+%%GEM_LIB_DIR%%/cli/ruby-debug/commands/enable.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/eval.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/frame.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/help.rb
+%%GEM_LIB_DIR%%/cli/ruby-debug/commands/info.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/irb.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/list.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/method.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/script.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/settings.rb
+%%GEM_LIB_DIR%%/cli/ruby-debug/commands/show.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/stepping.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/threads.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/tmate.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/trace.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/commands/variables.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/debugger.rb
+%%GEM_LIB_DIR%%/cli/ruby-debug/helper.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/interface.rb
 %%GEM_LIB_DIR%%/cli/ruby-debug/processor.rb
+%%GEM_LIB_DIR%%/doc/rdebug.1
+%%GEM_LIB_DIR%%/runner.sh
+%%GEM_LIB_DIR%%/test/breakpoints.cmd
+%%GEM_LIB_DIR%%/test/breakpoints.right
+%%GEM_LIB_DIR%%/test/display.cmd
+%%GEM_LIB_DIR%%/test/display.right
+%%GEM_LIB_DIR%%/test/frame.cmd
+%%GEM_LIB_DIR%%/test/frame.right
+%%GEM_LIB_DIR%%/test/gcd.rb
+%%GEM_LIB_DIR%%/test/help.cmd
+%%GEM_LIB_DIR%%/test/help.right
+%%GEM_LIB_DIR%%/test/helper.rb
+%%GEM_LIB_DIR%%/test/info-var-bug.rb
+%%GEM_LIB_DIR%%/test/info-var.cmd
+%%GEM_LIB_DIR%%/test/info-var.right
+%%GEM_LIB_DIR%%/test/info.cmd
+%%GEM_LIB_DIR%%/test/info.right
+%%GEM_LIB_DIR%%/test/quit.cmd
+%%GEM_LIB_DIR%%/test/quit.right
+%%GEM_LIB_DIR%%/test/setshow.cmd
+%%GEM_LIB_DIR%%/test/setshow.right
+%%GEM_LIB_DIR%%/test/stepping.cmd
+%%GEM_LIB_DIR%%/test/stepping.right
+%%GEM_LIB_DIR%%/test/tdebug.rb
+%%GEM_LIB_DIR%%/test/test-breakpoints.rb
+%%GEM_LIB_DIR%%/test/test-columnize.rb
+%%GEM_LIB_DIR%%/test/test-display.rb
+%%GEM_LIB_DIR%%/test/test-frame.rb
+%%GEM_LIB_DIR%%/test/test-help.rb
+%%GEM_LIB_DIR%%/test/test-info-var.rb
+%%GEM_LIB_DIR%%/test/test-info.rb
+%%GEM_LIB_DIR%%/test/test-quit.rb
+%%GEM_LIB_DIR%%/test/test-ruby-debug-base.rb
+%%GEM_LIB_DIR%%/test/test-setshow.rb
+%%GEM_LIB_DIR%%/test/test-stepping.rb
 %%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/doc
 @dirrm %%GEM_LIB_DIR%%/cli/ruby-debug/commands
 @dirrm %%GEM_LIB_DIR%%/cli/ruby-debug
 @dirrm %%GEM_LIB_DIR%%/cli
@@ -71,7 +125,10 @@ bin/rdebug
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/cli/ruby-debug
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/cli
 @dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Debugger/ParseFunctions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Debugger/ColumnizeFunctions.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Debugger.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Debugger
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
