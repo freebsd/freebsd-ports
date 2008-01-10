@@ -706,6 +706,7 @@
     SUBDIR += loki
     SUBDIR += looks
     SUBDIR += lrmi
+    SUBDIR += lua-bitlib
     SUBDIR += lua-filename
     SUBDIR += lua-gettext
     SUBDIR += lua-posix
