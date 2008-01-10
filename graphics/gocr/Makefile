@@ -6,37 +6,33 @@
 #
 
 PORTNAME=	gocr
-PORTVERSION=	0.44
-PORTREVISION=	1
+PORTVERSION=	0.45
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	jocr
+MASTER_SITES=	SF/jocr
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GOCR/JOCR is an OCR (Optical Character Recognition) program
+COMMENT=	An OCR (Optical Character Recognition) program
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
+USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-netpbm=${LOCALBASE}
 MAKE_ARGS=	prefix=${PREFIX} exec_prefix=${PREFIX} DESTDIR=${DESTDIR}
 
+MAN1=		gocr.1
+PORTDOCS=	examples.txt gocr.html unicode.txt
+PLIST_FILES=	bin/gocr include/gocr.h lib/libPgm2asc.a
+
 .if !defined(WITHOUT_X11)
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+USE_TK_WRAPPER=	yes
 PLIST_FILES+=	bin/gocr.tcl
 .endif
-
-MAN1=		gocr.1
-
-PORTDOCS=	examples.txt gocr.html unicode.txt
-PLIST_FILES+=	bin/gocr include/gocr.h lib/libPgm2asc.a
 
 post-patch:
 .if defined(WITHOUT_X11)
 	@${REINPLACE_CMD} -e '/gocr.tcl/d' ${WRKSRC}/src/Makefile.in
-.else
-	@${REINPLACE_CMD} -e 's/exec wish/exec wish8.4/' ${WRKSRC}/bin/gocr.tcl
 .endif
 
 post-install:
