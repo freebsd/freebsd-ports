@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	openvrml
-PORTVERSION=	0.17.1
+PORTVERSION=	0.17.2
 CATEGORIES=	www graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	VRML97 runtime and browser ("lookat")
+COMMENT=	VRML97 runtime and browser
 
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone	\
 		pkg-config:${PORTSDIR}/devel/pkg-config
