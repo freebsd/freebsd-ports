@@ -1975,6 +1975,7 @@
     SUBDIR += py-plex
     SUBDIR += py-ply
     SUBDIR += py-pmock
+    SUBDIR += py-polib
     SUBDIR += py-pp
     SUBDIR += py-pqueue
     SUBDIR += py-protocols

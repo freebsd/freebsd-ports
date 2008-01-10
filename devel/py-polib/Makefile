@@ -1,0 +1,20 @@
+# New ports collection makefile for:   py-polib
+# Date created:        10 January 2008
+# Whom:                Oleg Ukraincev <oleg@ht-systems.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	polib
+PORTVERSION=	0.3.1
+CATEGORIES=	devel python
+MASTER_SITES=	http://polib.googlecode.com/files/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=     oleg@ht-systems.ru
+COMMENT=	A python library to parse and manage gettext catalogs
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
+
+.include <bsd.port.mk>
