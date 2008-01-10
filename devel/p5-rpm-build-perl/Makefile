@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AT/ATOURBIN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This module is required to build Perl RPM packages
 
 PERL_CONFIGURE=	yes
