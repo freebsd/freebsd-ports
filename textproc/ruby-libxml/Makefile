@@ -6,30 +6,38 @@
 #
 
 PORTNAME=	libxml
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.8.4
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.rubynet.org/modules/xml/libxml/
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	libxml
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DIST_SUBDIR=	ruby
+DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	A friendly API to libxml for Ruby
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/xml2-config:${PORTSDIR}/textproc/libxml2
+BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
+					xml2-config:${PORTSDIR}/textproc/libxml2 \
+
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/xml/libxml.so
-PLIST_DIRS=	%%RUBY_SITEARCHLIBDIR%%/xml
-USE_BZIP2=	yes
+PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/xml/libxml_so.so \
+					%%RUBY_SITELIBDIR%%/xml/libxml.rb
+PLIST_DIRS=	%%RUBY_SITEARCHLIBDIR%%/xml \
+				%%RUBY_SITELIBDIR%%/xml
+
 USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
+USE_ICONV=	yes
+USE_LDCONFIG=	yes
 
-INSTALL_TARGET=	site-install
+post-patch:
+	${REINPLACE_CMD} -e 's|%%%PREFIX%%%|${PREFIX}|g' \
+		${WRKSRC}/ext/xml/extconf.rb
 
-.include <bsd.port.pre.mk>
+do-build:
+	cd ${WRKSRC} && rake test
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
+do-install:
+	cd ${WRKSRC} && rake install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
