@@ -1,20 +1,32 @@
-%%PYTHON_SITELIBDIR%%/fltk.py
-%%PYTHON_SITELIBDIR%%/fltk.pyc
-%%PYTHON_SITELIBDIR%%/fltk.pyo
-%%PYTHON_SITELIBDIR%%/_fltk.so
+%%PYTHON_SITELIBDIR%%/fltk/_fltk.so
+%%PYTHON_SITELIBDIR%%/fltk/__init__.py
+%%PYTHON_SITELIBDIR%%/fltk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/fltk/__init__.pyo
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/html/Fl.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Fl_Group.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Fl_Menu_.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Fl_Table.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Fl_Table_Row.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Fl_Widget.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Fl_Window.html
-%%PORTDOCS%%%%DOCSDIR%%/html/Polymorphisms.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CH0_Preface.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CH1_Intro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CH2_Basics.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CH3_Common.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CH4_Editor.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CH5_Drawing.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CH6_Events.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CH7_Subclassing.html
+%%PORTDOCS%%%%DOCSDIR%%/html/CH8_Opengl.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Hello.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/HowToAddNewWidgets.html
+%%PORTDOCS%%%%DOCSDIR%%/html/boxtype.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/buttons.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/editor-replace.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/fltk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pyFltk.html
-%%PORTDOCS%%%%DOCSDIR%%/html/setMenus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/symbols.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/valuators.jpg
+%%PORTDOCS%%%%EXAMPLESDIR%%/DragAndDrop.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/DraggableBox.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/GlobalHandler.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/HelpDialog.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/TextEditor.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/adjuster.py
@@ -39,7 +51,10 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/dials.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/doublebuffer.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/draw.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/editor.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/file_browser.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/file_chooser.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/fltk_threads.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/formsbitmap.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/group.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/handle_events.py
@@ -57,10 +72,13 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/pack.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/pixmap.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/postioner.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/preferences.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/radio.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/shapeGL.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple_table.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/sliders.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/subwindow.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/sudoku.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/symbols.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/table.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/tabs.py
@@ -68,9 +86,11 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/testhelp.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/tile.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/timeout.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/tree.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/valuators.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/widgets.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/window.py
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/fltk
