@@ -12,7 +12,7 @@ CATEGORIES=	comms kld
 MASTER_SITES=	http://www.dons.net.au/~darius/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for the Lucent LT Winmodem chipset
 
 DEVDIR=		/dev
