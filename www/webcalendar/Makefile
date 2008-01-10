@@ -7,9 +7,10 @@
 
 PORTNAME=	WebCalendar
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	webcalendar
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	glarkin@sourcehosting.net
@@ -18,23 +19,24 @@ COMMENT=	A web-based calendar application
 USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
+CONFLICTS=	WebCalendar-devel-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-WCURL?=		${PORTNAME:L}
+WCURL?=		${MASTER_SITE_SUBDIR}
 WCDIR?=		www/${WCURL}
 PLIST=		${WRKDIR}/pkg-plist
 
 SUB_FILES=	pkg-message
 SUB_LIST=	WCURL=${WCURL} WCDIR=${WCDIR}
 
-DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}
-DOCS=		docs/README \
-		docs/WebCalendar-Database.html \
-		docs/WebCalendar-DeveloperGuide.html \
-		docs/WebCalendar-Styling.html \
-		docs/WebCalendar-SysAdmin.html \
-		docs/newwin.gif
+DOCSDIR=	${PREFIX}/share/doc/${MASTER_SITE_SUBDIR}
+PORTDOCS=	README \
+		WebCalendar-Database.html \
+		WebCalendar-DeveloperGuide.html \
+		WebCalendar-Styling.html \
+		WebCalendar-SysAdmin.html \
+		newwin.gif
 
 OPTIONS=	MYSQL "Use MySQL database backend (default)" On \
 		PGSQL "Use PostgreSQL database backend" Off \
@@ -92,22 +94,20 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${WCDIR}/|' >> ${PLIST} \
 		&& ${ECHO_CMD} @dirrm ${WCDIR} >> ${PLIST}
-	@${CAT} pkg-plist >> ${PLIST}
 	@${ECHO_CMD} @dirrmtry www/data-dist >> ${PLIST}
 	@${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${PREFIX}/${WCDIR}
-	${CP} -R ${WRKSRC}/* ${PREFIX}/${WCDIR}
-	${CHOWN} -R www:www ${PREFIX}/${WCDIR}
-	${FIND} ${PREFIX}/${WCDIR} -type f | ${XARGS} ${CHMOD} 644
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${WCDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${WCDIR}
+	@${FIND} ${PREFIX}/${WCDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
+		${WCDIR:S|^|%D/|}' >> ${TMPPLIST}
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
