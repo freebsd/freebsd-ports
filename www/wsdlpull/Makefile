@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wsdlpull
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -28,8 +28,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|: install-docsDATA|:|g'
-	@${REINPLACE_CMD} -e '/-O2 -Wall/d ; \
-		 s|echo aout|echo elf|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/-O2 -Wall/d' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
