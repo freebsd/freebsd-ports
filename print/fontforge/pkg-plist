@@ -2,6 +2,7 @@ bin/fontforge
 bin/fontimage
 bin/fontlint
 bin/sfddiff
+include/fontforge/PfEd.h
 include/fontforge/autowidth.h
 include/fontforge/baseviews.h
 include/fontforge/basics.h
@@ -34,6 +35,7 @@ include/fontforge/gwidget.h
 include/fontforge/gwwiconv.h
 include/fontforge/import.h
 include/fontforge/intl.h
+include/fontforge/libffstamp.h
 include/fontforge/lookups.h
 include/fontforge/mm.h
 include/fontforge/nonlineartrans.h
@@ -399,6 +401,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/ffi-refs.png
 %%PORTDOCS%%%%DOCSDIR%%/ffi-rmoverlap.png
 %%PORTDOCS%%%%DOCSDIR%%/ffi-unlink.png
+%%PORTDOCS%%%%DOCSDIR%%/ffsplash2008.png
 %%PORTDOCS%%%%DOCSDIR%%/fi.png
 %%PORTDOCS%%%%DOCSDIR%%/filemenu.html
 %%PORTDOCS%%%%DOCSDIR%%/files.html

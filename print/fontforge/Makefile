@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20071210
+PORTVERSION=	20080109
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -24,14 +24,12 @@ LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 .if defined(FONTFORGE_WITH_TTF_DEBUGGER)
-FREETYPE_VERSION=	2.1.10
+FREETYPE_VERSION=	2.3.5
 EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
 .endif
 
 .if !defined(NOPORTDOCS)
-#DOC_VERSION=	${PORTVERSION}
-# This version of Fontforge has a different version number for the docs as opposed to the actual source
-DOC_VERSION=	20071211
+DOC_VERSION=	${PORTVERSION}
 DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
 .endif
 
@@ -41,8 +39,6 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_XLIB=	yes
 PATCH_STRIP=	-l
-
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(FONTFORGE_NO_MULTILAYER)
 WITH_MULTILAYER=	--with-multilayer
