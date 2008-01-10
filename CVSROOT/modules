@@ -1151,7 +1151,7 @@ cairo-reference	ports/graphics/cairo-reference
 cairomm		ports/graphics/cairomm
 cake		ports/games/cake
 cakephp		ports/www/cakephp
-cakephp		ports/www/cakephp-devel
+cakephp-devel	ports/www/cakephp-devel
 cal3d		ports/graphics/cal3d
 cal3d-devel	ports/graphics/cal3d-devel
 calamaris	ports/www/calamaris
