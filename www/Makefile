@@ -1270,6 +1270,7 @@
     SUBDIR += web2ldap
     SUBDIR += webalizer
     SUBDIR += webcalendar
+    SUBDIR += webcalendar-devel
     SUBDIR += webcheck
     SUBDIR += webcopy
     SUBDIR += webcrawl
