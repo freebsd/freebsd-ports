@@ -105,6 +105,7 @@ post-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}/chrome/icons/default
 	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default.xpm
 	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/share/pixmaps/${FIREFOX_ICON}
+	@${CAT} ${PKGMESSAGE}
 
 .include "${PORTSDIR}/www/mozilla/Makefile.common"
 .include <bsd.port.post.mk>
