@@ -1,6 +1,18 @@
 @unexec killall mugshot 2>/dev/null >/dev/null || exit 0
 bin/mugshot
 bin/mugshot-uri-handler
+include/ddm-1/ddm/ddm-data-fetch.h
+include/ddm-1/ddm/ddm-data-model-backend.h
+include/ddm-1/ddm/ddm-data-model-dbus.h
+include/ddm-1/ddm/ddm-data-model.h
+include/ddm-1/ddm/ddm-data-query.h
+include/ddm-1/ddm/ddm-data-resource.h
+include/ddm-1/ddm/ddm-notification-set.h
+include/ddm-1/ddm/ddm-qname.h
+include/ddm-1/ddm/ddm.h
+lib/libddm-1.la
+lib/libddm-1.so
+lib/libddm-1.so.0
 lib/mugshot/firefox/chrome.manifest
 lib/mugshot/firefox/chrome/content/chatWindow.js
 lib/mugshot/firefox/chrome/content/chatWindow.xul
@@ -23,12 +35,14 @@ lib/mugshot/firefox/components/libhippofirefox.la
 lib/mugshot/firefox/components/libhippofirefox.so
 lib/mugshot/firefox/defaults/preferences/prefs.js
 lib/mugshot/firefox/install.rdf
+libdata/pkgconfig/ddm-1.pc
 share/applications/mugshot.desktop
-share/gnome/autostart/mugshot.desktop
+share/gnome/autostart/mugshot-autostart.desktop
 @unexec %%PREFIX%%/share/mugshot/firefox-update.sh remove
 %%DATADIR%%/firefox-update.sh
 %%DATADIR%%/version
-share/dbus-1/services/org.mugshot.Mugshot.service
+share/dbus-1/services/com.dumbhippo.Client.service
+share/dbus-1/services/org.freedesktop.od.Engine.service
 share/icons/hicolor/128x128/apps/mugshot.png
 share/icons/hicolor/16x16/apps/mugshot.png
 share/icons/hicolor/16x16/apps/mugshot_note_off.png
@@ -52,3 +66,5 @@ share/icons/hicolor/48x48/apps/mugshot.png
 @dirrm lib/mugshot/firefox/chrome
 @dirrm lib/mugshot/firefox
 @dirrm lib/mugshot
+@dirrm include/ddm-1/ddm
+@dirrm include/ddm-1
