@@ -17,13 +17,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Pythonic binding for the libxml2 and libxslt libraries
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
-RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 
 USE_PYTHON=	2.4+
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
+USE_PYDISTUTILS=	easy_install
+PYEASYINSTALL_INSTALLARGS=	-N ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}
+PYEASYINSTALL_UNINSTALLARGS=	-q -m -N ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}
+PYEASYINSTALL_ARCHDEP=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
@@ -33,13 +33,7 @@ BASEDOCS=	CHANGES.txt \
 		TODO.txt \
 		README.txt
 
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-
-PYLXML_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}-${OPSYS:L}-${OSRELEASE}-${ARCH}.egg
-
-PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYLXML_EGG=${PYLXML_EGG} \
-		PYLXML_EGG_VER="${PORTNAME}==${PORTVERSION}"
+PYLXML_EGG=     ${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}${PYEASYINSTALL_OSARCH}.egg
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -51,8 +45,4 @@ post-install:
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}/doc
 .endif
 
-.include <bsd.port.pre.mk>
-
-OSRELEASE!=	/usr/bin/uname -r
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
