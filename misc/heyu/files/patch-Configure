@@ -1,0 +1,13 @@
+Add the following patch to the files directory:
+
+--- Configure	2007-12-28 16:59:27.000000000 +0100
++++ Configure	2007-12-28 16:59:42.000000000 +0100
+@@ -86,7 +86,7 @@
+ 		CC ?= gcc
+ 		CFLAGS += -g -O \$(DFLAGS) -Wall
+ 		LIBS = -lm -lc
+-		DFLAGS= -DHASSELECT -DNEEDGTIME -DFREEBSD
++		DFLAGS= -DPOSIX -DHASSELECT -DNEEDGTIME -DFREEBSD
+ EoF
+ 	;;
+     sco*)
