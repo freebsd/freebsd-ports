@@ -680,6 +680,7 @@
     SUBDIR += sguil-server
     SUBDIR += sha
     SUBDIR += shibboleth-sp
+    SUBDIR += shimmer
     SUBDIR += shishi
     SUBDIR += shttpscanner
     SUBDIR += sig2dot

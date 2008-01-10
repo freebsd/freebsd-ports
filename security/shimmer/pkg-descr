@@ -1,0 +1,5 @@
+shimmer is a pair of small programs (a client and a server) that provide an
+alternative to port knocking program such as tumbler and are used to hide a
+valuable port (such as a hidden web server or SSH) on a public IP address.
+
+WWW:	http:/shimmer.sourceforge.net/
