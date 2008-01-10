@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bftpd
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 
@@ -32,8 +32,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${MAN8PREFIX}/man/man8/
 	${INSTALL_DATA} ${WRKSRC}/bftpd.conf ${PREFIX}/etc/bftpd.conf.sample
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d ${DOCSDIR}/
-	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}/
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
