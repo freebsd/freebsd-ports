@@ -3,61 +3,62 @@ lib/libapollon.a
 lib/libapollon.la
 lib/libapollon.so
 lib/libapollon.so.0
+share/applnk/Applications/Apollon.desktop
+share/doc/HTML/en/apollon/commands.docbook
+share/doc/HTML/en/apollon/common
+share/doc/HTML/en/apollon/credits.docbook
+share/doc/HTML/en/apollon/index.cache.bz2
+share/doc/HTML/en/apollon/index.docbook
+share/icons/crystalsvg/128x128/apps/apollon.png
+share/icons/crystalsvg/128x128/filesystems/folder_apollon.png
+share/icons/crystalsvg/16x16/apps/apollon.png
+share/icons/crystalsvg/16x16/filesystems/folder_apollon.png
+share/icons/crystalsvg/22x22/apps/apollon.png
+share/icons/crystalsvg/32x32/apps/apollon.png
+share/icons/crystalsvg/32x32/filesystems/folder_apollon.png
+share/icons/crystalsvg/48x48/apps/apollon.png
+share/icons/crystalsvg/48x48/filesystems/folder_apollon.png
+share/icons/crystalsvg/64x64/apps/apollon.png
+share/icons/crystalsvg/64x64/filesystems/folder_apollon.png
+share/icons/hicolor/16x16/actions/aresdown.png
+share/icons/hicolor/16x16/actions/aresup.png
+share/icons/hicolor/16x16/actions/gnutelladown.png
+share/icons/hicolor/16x16/actions/gnutellaup.png
+share/icons/hicolor/16x16/actions/kazaadown.png
+share/icons/hicolor/16x16/actions/kazaaup.png
+share/icons/hicolor/16x16/actions/napsterdown.png
+share/icons/hicolor/16x16/actions/napsterup.png
+share/icons/hicolor/16x16/actions/openftdown.png
+share/icons/hicolor/16x16/actions/openftup.png
+share/icons/hicolor/16x16/actions/soulseekdown.png
+share/icons/hicolor/16x16/actions/soulseekup.png
+share/icons/hicolor/16x16/apps/ares.png
+share/icons/hicolor/16x16/apps/gnutella.png
+share/icons/hicolor/16x16/apps/kazaa.png
+share/icons/hicolor/16x16/apps/napster.png
+share/icons/hicolor/16x16/apps/openft.png
+share/icons/hicolor/16x16/apps/soulseek.png
+share/icons/hicolor/32x32/apps/ares.png
+share/icons/hicolor/32x32/apps/gnutella.png
+share/icons/hicolor/32x32/apps/kazaa.png
+share/icons/hicolor/32x32/apps/napster.png
+share/icons/hicolor/32x32/apps/openft.png
+share/icons/hicolor/32x32/apps/soulseek.png
+share/locale/da/LC_MESSAGES/apollon.mo
 share/locale/de/LC_MESSAGES/apollon.mo
+share/locale/el/LC_MESSAGES/apollon.mo
 share/locale/es/LC_MESSAGES/apollon.mo
+share/locale/fi/LC_MESSAGES/apollon.mo
 share/locale/fr/LC_MESSAGES/apollon.mo
 share/locale/he/LC_MESSAGES/apollon.mo
 share/locale/it/LC_MESSAGES/apollon.mo
-share/locale/el/LC_MESSAGES/apollon.mo
-share/locale/dk/LC_MESSAGES/apollon.mo
-share/locale/fi/LC_MESSAGES/apollon.mo
+share/locale/nb/LC_MESSAGES/apollon.mo
 share/locale/nl/LC_MESSAGES/apollon.mo
 share/locale/pl/LC_MESSAGES/apollon.mo
+share/locale/pt_BR/LC_MESSAGES/apollon.mo
 share/locale/ru/LC_MESSAGES/apollon.mo
 share/locale/sr/LC_MESSAGES/apollon.mo
-share/locale/pt_br/LC_MESSAGES/apollon.mo
-share/locale/nb_NO/LC_MESSAGES/apollon.mo
-share/icons/hicolor/16x16/apps/kazaa.png
-share/icons/hicolor/16x16/apps/gnutella.png
-share/icons/hicolor/16x16/apps/openft.png
-share/icons/hicolor/16x16/apps/soulseek.png
-share/icons/hicolor/16x16/apps/napster.png
-share/icons/hicolor/16x16/actions/openftdown.png
-share/icons/hicolor/16x16/actions/openftup.png
-share/icons/hicolor/16x16/actions/gnutellaup.png
-share/icons/hicolor/16x16/actions/soulseekup.png
-share/icons/hicolor/16x16/actions/napsterdown.png
-share/icons/hicolor/16x16/actions/soulseekdown.png
-share/icons/hicolor/16x16/actions/napsterup.png
-share/icons/hicolor/16x16/actions/kazaaup.png
-share/icons/hicolor/16x16/actions/kazaadown.png
-share/icons/hicolor/16x16/actions/gnutelladown.png
-share/icons/hicolor/32x32/apps/gnutella.png
-share/icons/hicolor/32x32/apps/napster.png
-share/icons/hicolor/32x32/apps/soulseek.png
-share/icons/hicolor/32x32/apps/openft.png
-share/icons/hicolor/32x32/apps/kazaa.png
-share/icons/crystalsvg/32x32/filesystems/folder_apollon.png
-share/icons/crystalsvg/32x32/apps/apollon.png
-share/icons/crystalsvg/22x22/apps/apollon.png
-share/icons/crystalsvg/16x16/filesystems/folder_apollon.png
-share/icons/crystalsvg/16x16/apps/apollon.png
-share/icons/crystalsvg/48x48/filesystems/folder_apollon.png
-share/icons/crystalsvg/48x48/apps/apollon.png
-share/icons/crystalsvg/64x64/filesystems/folder_apollon.png
-share/icons/crystalsvg/64x64/apps/apollon.png
-share/icons/crystalsvg/128x128/filesystems/folder_apollon.png
-share/icons/crystalsvg/128x128/apps/apollon.png
-share/applnk/Applications/Apollon.desktop
-%%PORTDOCS%%share/doc/HTML/en/apollon/commands.docbook
-%%PORTDOCS%%share/doc/HTML/en/apollon/index.docbook
-%%PORTDOCS%%share/doc/HTML/en/apollon/credits.docbook
-%%PORTDOCS%%share/doc/HTML/en/apollon/index.cache.bz2
-%%PORTDOCS%%share/doc/HTML/en/apollon/common
-@dirrmtry share/locale/pt_br/LC_MESSAGES
-@dirrmtry share/locale/pt_br
-@dirrmtry share/locale/nb_NO/LC_MESSAGES
-@dirrmtry share/locale/nb_NO
+share/locale/tr/LC_MESSAGES/apollon.mo
 @dirrmtry share/icons/hicolor/32x32/apps
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16/actions
@@ -72,6 +73,6 @@ share/applnk/Applications/Apollon.desktop
 @dirrmtry share/icons/crystalsvg/16x16/apps
 @dirrmtry share/icons/crystalsvg/128x128/filesystems
 @dirrmtry share/icons/crystalsvg/128x128/apps
+@dirrm share/doc/HTML/en/apollon
+@dirrmtry share/doc/HTML/en
 @dirrmtry share/applnk/Applications
-%%PORTDOCS%%@unexec rmdir %D/share/doc/HTML/en/apollon
-%%PORTDOCS%%@dirrmtry share/doc/HTML/en

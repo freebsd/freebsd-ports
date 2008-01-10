@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apollon
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	1.0.2.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
@@ -20,11 +19,6 @@ USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-
-post-patch:
-.ifdef(NOPORTDOCS)
-	@${REINPLACE_CMD} -E -e 's/^(all:)[[:space:]]+docs-am/\1/; s/^(SUBDIRS.+)doc/\1/' \
-		${WRKSRC}/Makefile.in
-.endif
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
