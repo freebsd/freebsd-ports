@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paprefs
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -18,7 +18,16 @@ LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gnomeprefix gnomehack intltool
 
 CONFIGURE_ARGS=	--disable-lynx
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>
