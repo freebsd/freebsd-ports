@@ -1,0 +1,18 @@
+<?xml version="1.0"?> 
+<project name="thisTest" default="compile" basedir=".">
+     <property name="src" value="${basedir}/src/dev"/>
+     <property name="build" value="build"/>
+
+     <target name="init">
+          <mkdir dir="${build}"/>
+     </target>
+
+     <target name="compile" depends="init">
+          <javac srcdir="${src}" destdir="${build}"/>
+          <jar jarfile="thisTest.jar" basedir="${build}">
+               <manifest>
+                    <attribute name="Main-Class" value="dev.thistest.ui.swing.Main"/>
+               </manifest>
+          </jar>
+     </target>
+</project>
