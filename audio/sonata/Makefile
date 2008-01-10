@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sonata
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3
 #PORTREVISION=	0
 CATEGORIES=	audio python
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
@@ -24,12 +24,16 @@ PYDISTUTILS_PKGNAME=	Sonata
 
 OPTIONS=	MPD	"Install Music Player Daemon" on \
 		TAGLIB	"Install support for editing metadata" off \
-		SOAPPY	"Install support for automatic lyrics fetching" off
+		ZSI	"Install support for automatic lyrics fetching" off
 
 REINPLACE_ARGS=	-i.bak -e 's,%%DOCSDIR%%,${DOCSDIR},'
 
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=	${PORTNAME}.1
+.endif
+
 post-patch:
-	${REINPLACE_CMD} ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} ${WRKSRC}/${PYSETUP}
 
 .include <bsd.port.pre.mk>
 
@@ -41,8 +45,8 @@ RUN_DEPENDS+=	mpd:${PORTSDIR}/audio/musicpd
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/tagpy/__init__.py:${PORTSDIR}/audio/py-tagpy
 .endif
 
-.if defined (WITH_SOAPPY)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/SOAPpy/__init__.py:${PORTSDIR}/net/py-soappy
+.if defined (WITH_ZSI)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ZSI/ServiceProxy.py:${PORTSDIR}/net/py-zsi
 .endif
 
 .include <bsd.port.post.mk>
