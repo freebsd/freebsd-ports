@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualenv
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 #PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
@@ -31,7 +31,7 @@ pre-build:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} setopt -c easy_install -o exclude-scripts -s 1
 
 post-install:
-	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.bash ${PYTHON_SITELIBDIR}/${PYEASYINSTALL_EGG}/support-files/
+	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.bash ${PYTHONPREFIX_SITELIBDIR}/${PYEASYINSTALL_EGG}/support-files/
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
