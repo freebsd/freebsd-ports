@@ -27,11 +27,9 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger.src/M000027.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger.src/M000028.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger.src/M000031.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.html
-%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000057.html
-%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000058.html
-%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000059.html
-%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000060.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000061.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000062.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000063.html
@@ -40,9 +38,13 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000066.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000067.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Breakpoint.src/M000074.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.html
-%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.src/M000030.html
-%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.src/M000031.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.src/M000032.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.src/M000033.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.src/M000034.html
@@ -68,9 +70,13 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.src/M000054.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.src/M000055.html
 %%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/Debugger/Context.src/M000060.html
 %%GEM_DOC_DIR%%/rdoc/classes/Kernel.html
-%%GEM_DOC_DIR%%/rdoc/classes/Kernel.src/M000069.html
-%%GEM_DOC_DIR%%/rdoc/classes/Kernel.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/Kernel.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/Kernel.src/M000077.html
 %%GEM_DOC_DIR%%/rdoc/classes/Module.html
 %%GEM_DOC_DIR%%/rdoc/classes/Module.src/M000001.html
 %%GEM_DOC_DIR%%/rdoc/classes/Module.src/M000002.html
@@ -87,15 +93,19 @@
 %%GEM_LIB_DIR%%/CHANGES
 %%GEM_LIB_DIR%%/LICENSE
 %%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/ext/ChangeLog
+%%GEM_LIB_DIR%%/ext/Makefile
 %%GEM_LIB_DIR%%/ext/extconf.rb
 %%GEM_LIB_DIR%%/ext/ruby_debug.c
-%%GEM_LIB_DIR%%/ext/tags
-%%GEM_LIB_DIR%%/ext/Makefile
 %%GEM_LIB_DIR%%/ext/ruby_debug.o
 %%GEM_LIB_DIR%%/ext/ruby_debug.so
+%%GEM_LIB_DIR%%/lib/ChangeLog
 %%GEM_LIB_DIR%%/lib/ruby-debug-base.rb
 %%GEM_LIB_DIR%%/lib/ruby_debug.so
+%%GEM_LIB_DIR%%/test/test-ruby-debug-base.rb
 %%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%/ext
 @dirrm %%GEM_LIB_DIR%%
