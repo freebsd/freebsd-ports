@@ -22,14 +22,14 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-.if !defined (NO_INSTALL_MAN)
+.if !defined (NO_INSTALL_MANPAGES)
 MAN1=	${PORTNAME}.1
 .endif
 
 .include <bsd.port.pre.mk>
 
 post-install:
-.if !defined (NO_INSTALL_MAN)
+.if !defined (NO_INSTALL_MANPAGES)
 	@${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.1 ${MANPREFIX}/man/man1/${PORTNAME}.1
 .endif
 .if !defined (NOPORTEXAMPLES)
