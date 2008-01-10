@@ -77,6 +77,7 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/hb.png
 %%DATADIR%%/bitmaps/home.png
 %%DATADIR%%/bitmaps/iexp.png
+%%DATADIR%%/bitmaps/ifile.png
 %%DATADIR%%/bitmaps/inductor.png
 %%DATADIR%%/bitmaps/inverter.png
 %%DATADIR%%/bitmaps/iprobe.png
@@ -89,6 +90,7 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/microstrip.png
 %%DATADIR%%/bitmaps/mirror.png
 %%DATADIR%%/bitmaps/mirrory.png
+%%DATADIR%%/bitmaps/mod_amp.png
 %%DATADIR%%/bitmaps/mscorner.png
 %%DATADIR%%/bitmaps/mscoupled.png
 %%DATADIR%%/bitmaps/mscross.png
@@ -175,6 +177,7 @@ bin/qucsveri
 %%DATADIR%%/bitmaps/vccs.png
 %%DATADIR%%/bitmaps/vcvs.png
 %%DATADIR%%/bitmaps/vexp.png
+%%DATADIR%%/bitmaps/vfile.png
 %%DATADIR%%/bitmaps/vhdlfile.png
 %%DATADIR%%/bitmaps/viewmag+.png
 %%DATADIR%%/bitmaps/viewmag-.png
