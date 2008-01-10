@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	uptimed
-PORTVERSION=	0.3.11
+PORTVERSION=	0.3.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://podgorny.cz/uptimed/releases/
 
 MAINTAINER=	andy@athame.co.uk
-COMMENT=	Rob Kaper's uptime daemon
+COMMENT=	uptime daemon
 
 USE_RC_SUBR=	${PORTNAME}
 USE_LDCONFIG=	yes
