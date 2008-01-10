@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Complex/.packlist
+%%SITE_PERL%%/Math/Complex.pm
+%%SITE_PERL%%/Math/Trig.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Complex
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math
