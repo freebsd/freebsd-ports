@@ -1,18 +1,18 @@
 # New ports collection makefile for:   portcheck
 # Date created:        01 January 2007
-# Whom:                Kim Naim Lesmer <kim@usebsd.com>
+# Whom:                Kim Naim Lesmer <kim@bitflop.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	portcheck
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://www.usebsd.com/pub/portcheck/files/
+MASTER_SITES=	http://www.bitflop.com/pub/sh/portcheck/
 EXTRACT_SUFX=	.tbz
 DIST_SUBDIR=	rerolled
 
-MAINTAINER=	kim@usebsd.com
+MAINTAINER=	kim@bitflop.com
 COMMENT=	Maintains the ports tree and checks up the installed packages
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/portaudit:${PORTSDIR}/ports-mgmt/portaudit
@@ -29,10 +29,4 @@ do-install:
 	@${ECHO} "See 'man portcheck' for information about usage."
 	@${ECHO} ""
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 504104
-IGNORE=	doesn't work on your system, it needs portsnap, please update your system to at least 5-STABLE
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
