@@ -1,0 +1,25 @@
+# New ports collection makefile for:   py-stripogram
+# Date created:        10 January 2008
+# Whom:                Oleg Ukraincev <oleg@ht-systems.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	stripogram
+PORTVERSION=	1.4
+CATEGORIES=	textproc python
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	squishdot
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	stripogram-1-4
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	oleg@ht-systems.ru
+COMMENT=	Converting HTML to Plain Text and stripping specified tags from HTML
+
+WRKSRC=		${WRKDIR}/stripogram
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+
+.include <bsd.port.mk>
