@@ -13507,6 +13507,7 @@ py-sqlite3	ports/databases/py-sqlite3
 py-sqlobject	ports/databases/py-sqlobject
 py-sqlrelay	ports/databases/py-sqlrelay
 py-statgrab	ports/devel/py-statgrab
+py-stripogram	ports/textproc/py-stripogram
 py-supybot	ports/irc/py-supybot
 py-supybot-plugins	ports/irc/py-supybot-plugins
 py-sybase	ports/databases/py-sybase
