@@ -6,7 +6,7 @@
 #   $MCom: ports/mail/lightning/Makefile,v 1.1 2006/10/14 03:49:20 ahze Exp $
 
 PORTNAME=	lightning
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	mail deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	calendar/${PORTNAME}/releases/${DISTVERSION}/source
