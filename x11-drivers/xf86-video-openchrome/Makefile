@@ -6,28 +6,19 @@
 #
 
 PORTNAME=	xf86-video-openchrome
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.901
 CATEGORIES=	x11-drivers
-MASTER_SITES=	http://archive.ubuntu.com/ubuntu/pool/main/x/xserver-xorg-video-openchrome/
-DISTFILES=	xserver-xorg-video-openchrome_${PORTVERSION}+svn357.orig.tar.gz
+MASTER_SITES=	http://www.openchrome.org/releases/
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X.Org openchrome display driver
+COMMENT=	X.Org openChrome display driver
 
-CONFLICTS=	xf86-video-via-[0-9]*
-
-USE_TGZ=	yes
-WRKSRC=		${WRKDIR}/xserver-xorg-video-openchrome
-NOMANCOMPRESS=	yes
-
-USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
+USE_GL=		gl
 
 XORG_CAT=	driver
-USE_GL=		gl
-USE_XORG=	xvmc xf86driproto glproto
-MAN4=		via.4x
+USE_XORG=	videoproto xf86driproto xextproto xvmc
+MAN4=		openchrome.4x
 
-pre-configure:
-	@(cd ${WRKSRC} && ${SH} ./autogen.sh)
+MAKE_ARGS+=	drivermandir=${LOCALBASE}/man/man4
 
 .include <bsd.port.mk>

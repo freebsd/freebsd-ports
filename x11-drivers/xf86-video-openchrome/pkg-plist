@@ -1,11 +1,11 @@
-lib/libviaXvMC.la
-lib/libviaXvMC.so
-lib/libviaXvMC.so.1
-lib/libviaXvMCPro.la
-lib/libviaXvMCPro.so
-lib/libviaXvMCPro.so.1
-lib/xorg/modules/drivers/via_drv.la
-lib/xorg/modules/drivers/via_drv.so
+lib/libchromeXvMC.la
+lib/libchromeXvMC.so
+lib/libchromeXvMC.so.1
+lib/libchromeXvMCPro.la
+lib/libchromeXvMCPro.so
+lib/libchromeXvMCPro.so.1
+lib/xorg/modules/drivers/openchrome_drv.la
+lib/xorg/modules/drivers/openchrome_drv.so
 @dirrmtry lib/xorg/modules/drivers
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

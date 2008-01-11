@@ -1,0 +1,11 @@
+--- configure.orig	2008-01-02 15:05:04.000000000 -0500
++++ configure	2008-01-10 20:48:21.000000000 -0500
+@@ -21484,7 +21484,7 @@
+ _ACEOF
+ 
+ 
+-DRIVER_MAN_SUFFIX="4"
++DRIVER_MAN_SUFFIX="4x"
+ 
+ 
+ 
