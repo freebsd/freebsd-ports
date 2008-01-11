@@ -1,6 +1,15 @@
---- agent/mibgroup/host/hr_storage.c.orig	Fri Oct  7 07:55:23 2005
-+++ agent/mibgroup/host/hr_storage.c	Wed Nov 30 12:01:05 2005
-@@ -233,6 +233,10 @@
+--- agent/mibgroup/host/hr_storage.c.orig	2007-06-08 19:33:58.000000000 +0900
++++ agent/mibgroup/host/hr_storage.c	2008-01-11 21:37:48.767962726 +0900
+@@ -229,7 +229,7 @@
+ mach_port_t myHost;
+ #endif
+ 
+-static int      physmem, pagesize;
++static u_long      physmem, pagesize;
+ static void parse_storage_config(const char *, char *);
+ 
+         /*********************
+@@ -252,6 +252,10 @@
  void            sol_get_swapinfo(int *, int *);
  #endif
  
@@ -11,7 +20,7 @@
  #define	HRSTORE_MEMSIZE		1
  #define	HRSTORE_INDEX		2
  #define	HRSTORE_TYPE		3
-@@ -472,7 +476,8 @@
+@@ -499,7 +503,8 @@
      NULL,
      "Memory Buffers",           /* HRS_TYPE_MBUF */
      "Real Memory",              /* HRS_TYPE_MEM */
@@ -21,7 +30,7 @@
  };
  
  
-@@ -611,6 +616,7 @@
+@@ -647,6 +652,7 @@
                  storage_type_id[storage_type_len - 1] = 3;      /* Virtual Mem */
                  break;
              case HRS_TYPE_MBUF:
@@ -29,7 +38,7 @@
                  storage_type_id[storage_type_len - 1] = 1;      /* Other */
                  break;
              default:
-@@ -704,7 +710,7 @@
+@@ -752,7 +758,7 @@
                  long_return = memory_totals.t_vm;
  #endif
                  break;
@@ -38,7 +47,7 @@
              case HRS_TYPE_MEM:
                  long_return = physmem;
                  break;
-@@ -726,13 +732,45 @@
+@@ -774,13 +780,45 @@
                       i++)
                      long_return += mbstat.m_mtypes[i];
  #elif defined(MBSTAT_SYMBOL) && defined(STRUCT_MBSTAT_HAS_M_MBUFS)
@@ -84,7 +93,7 @@
              default:
  #if NO_DUMMY_VALUES
                  goto try_next;
-@@ -796,6 +834,12 @@
+@@ -856,6 +894,12 @@
  #endif
  #elif defined(MBSTAT_SYMBOL) && defined(STRUCT_MBSTAT_HAS_M_CLUSTERS)
                  long_return = mbstat.m_clusters - mbstat.m_clfree;      /* unlikely, but... */
@@ -97,7 +106,7 @@
  #elif defined(NO_DUMMY_VALUES)
                  goto try_next;
  #else
-@@ -803,6 +847,11 @@
+@@ -863,6 +907,11 @@
  #endif
                  break;
  #endif                      /* !linux && !solaris2 && !hpux10 && !hpux11 && ... */
@@ -109,7 +118,7 @@
              default:
  #if NO_DUMMY_VALUES
                  goto try_next;
-@@ -829,7 +878,11 @@
+@@ -889,7 +938,11 @@
                  break;
  #if !defined(linux) && !defined(solaris2) && !defined(hpux10) && !defined(hpux11)  && defined(MBSTAT_SYMBOL)
              case HRS_TYPE_MBUF:
@@ -121,11 +130,10 @@
                  break;
  #endif                          /* !linux && !solaris2 && !hpux10 && !hpux11 && MBSTAT_SYMBOL */
              default:
-@@ -955,3 +1008,97 @@
-     *usedP = ainfo.ani_resv;
+@@ -1015,6 +1068,100 @@
  }
  #endif                          /* solaris2 */
-+
+ 
 +#if defined(__FreeBSD__) && __FreeBSD_version >= 500102
 +void
 +collect_mbuf(long *long_mbuf, long *long_mbufc)
@@ -219,3 +227,7 @@
 +#endif
 +}
 +#endif
++
+ #ifdef WIN32
+ char *win_realpath(const char *file_name, char *resolved_name)
+ {
