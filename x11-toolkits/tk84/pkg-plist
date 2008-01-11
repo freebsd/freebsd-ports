@@ -134,6 +134,7 @@ lib/tk%%TK_VER%%/msgs/en_gb.msg
 lib/tk%%TK_VER%%/msgs/eo.msg
 lib/tk%%TK_VER%%/msgs/es.msg
 lib/tk%%TK_VER%%/msgs/fr.msg
+lib/tk%%TK_VER%%/msgs/hu.msg
 lib/tk%%TK_VER%%/msgs/it.msg
 lib/tk%%TK_VER%%/msgs/nl.msg
 lib/tk%%TK_VER%%/msgs/pl.msg
