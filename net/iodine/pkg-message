@@ -1,19 +1,25 @@
+To start iodined at boot, put these lines to your rc.conf:
 
-=== Quick Start ===
+  iodined_enable="YES"
+  iodined_password="Passw0rd"         # tunnel password
+  iodined_domain="t.example.net"      # tunnel domain
 
-Server:
+Note that the password is visible from process list. The default ip
+on the tunnel interface is set to 172.16.0.1. You can change it with
+the ``iodined_addr'' variable in rc.conf.
 
-iodined -f -u nobody 10.0.0.1 tunnelhost.example.net
+You need to delegate the tunnel domain for iodined use. Add things
+like these to the DNS zone file:
 
-Client:
+  iodined	IN	A	192.0.2.1
+  t		IN	NS	iodined.example.net.
 
-iodine -f -u nobody 192.168.1.1 tunnelhost.example.net
+Replace 192.0.2.1 with your server's (the one you run iodined) IP.
 
-You need add these lines to the DNS zone file:
+To run the client,
 
-tunnelhost	IN	A	192.168.1.1
-tunnel		IN	NS	tunnelhost.example.net
+  iodine -f -u _iodined -t /var/empty 192.168.1.1 t.example.net
 
-The server side of the tunnel is 10.0.0.1.
+Replace 192.168.1.1 with your DNS server.
 
-Please check README for details.
+See iodine(1) for more information.
