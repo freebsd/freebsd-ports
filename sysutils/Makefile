@@ -315,6 +315,7 @@
     SUBDIR += ipmitool
     SUBDIR += ipsc
     SUBDIR += isomaster
+    SUBDIR += ispman
     SUBDIR += jailadmin
     SUBDIR += jailctl
     SUBDIR += jailer
