@@ -15,6 +15,8 @@ DISTNAME=	q3cel-${PORTVERSION}-src
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake III engine with Cell Shading capabilities
 
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	does not run properly; try games/ioquake3 with option
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
