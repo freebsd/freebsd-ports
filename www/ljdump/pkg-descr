@@ -1,0 +1,11 @@
+ljdump reads the journal entries from a LiveJournal (or compatible) blog
+site and archives them in a subdirectory named after the journal name.
+Both the journal entries and journal comments are downloaded.
+
+The program may be run as often as needed to bring the backup copy up to
+date.  Both new and updated items are downloaded.
+
+ljdump uses only standard Python libraries, so it will work wherever
+Python itself does (Windows, Linux, FreeBSD, Mac OS X, etc).
+
+WWW: http://hewgill.com/software/ljdump/

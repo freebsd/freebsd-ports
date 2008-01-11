@@ -293,6 +293,7 @@
     SUBDIR += linux-seamonkey-devel
     SUBDIR += linuxpluginwrapper
     SUBDIR += ljdeps
+    SUBDIR += ljdump
     SUBDIR += ljpms
     SUBDIR += ljsm
     SUBDIR += llgal
