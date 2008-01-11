@@ -89,6 +89,7 @@
     SUBDIR += clearsilver
     SUBDIR += clearsilver-python
     SUBDIR += cocoon
+    SUBDIR += codeigniter
     SUBDIR += comclear
     SUBDIR += conkeror
     SUBDIR += coppermine
