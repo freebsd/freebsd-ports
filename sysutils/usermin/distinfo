@@ -1,3 +1,6 @@
 MD5 (usermin-1.320.tar.gz) = 9fee9d1c27c9680a01cad1c52735dca4
 SHA256 (usermin-1.320.tar.gz) = b8aca074cb376816bf689b159b8a85da15d5431a192462028050f212b8dbc4a8
 SIZE (usermin-1.320.tar.gz) = 5392835
+MD5 (mysql-1.320-3.wbm.gz) = bc85c3dba185394bdf47d801adce9b35
+SHA256 (mysql-1.320-3.wbm.gz) = cbacfc6e9468069aef3e5ff4aee4bd1de75b61121c5753507a420544e46dbb9f
+SIZE (mysql-1.320-3.wbm.gz) = 204983
