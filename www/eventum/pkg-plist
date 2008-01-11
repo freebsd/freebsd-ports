@@ -303,9 +303,17 @@
 %%WWWDIR%%/include/pear/Net/UserAgent/Detect.php
 %%WWWDIR%%/include/pear/PEAR.php
 %%WWWDIR%%/include/pear/Text/Diff.php
+%%WWWDIR%%/include/pear/Text/Diff/Engine/native.php
+%%WWWDIR%%/include/pear/Text/Diff/Engine/shell.php
+%%WWWDIR%%/include/pear/Text/Diff/Engine/string.php
+%%WWWDIR%%/include/pear/Text/Diff/Engine/xdiff.php
+%%WWWDIR%%/include/pear/Text/Diff/Mapped.php
 %%WWWDIR%%/include/pear/Text/Diff/Renderer.php
+%%WWWDIR%%/include/pear/Text/Diff/Renderer/context.php
 %%WWWDIR%%/include/pear/Text/Diff/Renderer/inline.php
 %%WWWDIR%%/include/pear/Text/Diff/Renderer/unified.php
+%%WWWDIR%%/include/pear/Text/Diff/ThreeWay.php
+%%WWWDIR%%/include/pear/Text/Diff3.php
 %%WWWDIR%%/include/pear/XML/RPC.php
 %%WWWDIR%%/include/pear/XML/RPC/Server.php
 %%WWWDIR%%/include/php-gettext/AUTHORS
@@ -405,6 +413,7 @@
 %%WWWDIR%%/misc/scm/process_cvs_commits.php
 %%WWWDIR%%/misc/scm/process_svn_commits.php
 %%WWWDIR%%/misc/upgrade/flush_compiled_templates.php
+%%WWWDIR%%/misc/upgrade/index.html
 %%WWWDIR%%/misc/upgrade/snapshot_to_v1.1/fix_system_account.php
 %%WWWDIR%%/misc/upgrade/snapshot_to_v1.1/set_history_type.php
 %%WWWDIR%%/misc/upgrade/v1.1_to_v1.2/database_changes.php
@@ -467,6 +476,7 @@
 %%WWWDIR%%/misc/upgrade/v2.0_to_v2.1/database_changes.php
 %%WWWDIR%%/misc/upgrade/v2.0_to_v2.1/index.html
 %%WWWDIR%%/misc/upgrade/v2.0_to_v2.1/update_custom_field_by_type.php
+%%WWWDIR%%/misc/upgrade/v2.1_to_v2.1.1/index.html
 %%WWWDIR%%/new.php
 %%WWWDIR%%/news.php
 %%WWWDIR%%/notification.php
@@ -507,9 +517,8 @@
 %%WWWDIR%%/setup/acl.sql
 %%WWWDIR%%/setup/changes.sql
 %%WWWDIR%%/setup/check_permissions.php
-@unexec if cmp -s %D/%%WWWDIR%%/setup/config.php-dist %D/%%WWWDIR%%/setup/config.php; then rm -f %D/%%WWWDIR%%/setup/config.php; fi
+%%WWWDIR%%/setup/config.php
 %%WWWDIR%%/setup/config.php-dist
-@exec if [ ! -f %D/%%WWWDIR%%/setup/config.php ] ; then cp -p %D/%F %B/%%WWWDIR%%/setup/config.php; fi
 %%WWWDIR%%/setup/index.php
 %%WWWDIR%%/setup/irc_config.php
 %%WWWDIR%%/setup/schema.sql
@@ -705,6 +714,7 @@
 %%WWWDIR%%/view_email.php
 %%WWWDIR%%/view_headers.php
 %%WWWDIR%%/view_note.php
+@dirrmtry %%WWWDIR%%/templates_c
 @dirrm %%WWWDIR%%/templates/tips
 @dirrm %%WWWDIR%%/templates/reports
 @dirrm %%WWWDIR%%/templates/reminders
@@ -715,9 +725,11 @@
 @dirrm %%WWWDIR%%/templates/expandable_cell
 @dirrm %%WWWDIR%%/templates/customer/example
 @dirrm %%WWWDIR%%/templates/customer
+@dirrmtry %%WWWDIR%%/templates
 @dirrm %%WWWDIR%%/setup
 @dirrm %%WWWDIR%%/rpc
 @dirrm %%WWWDIR%%/reports
+@dirrm %%WWWDIR%%/misc/upgrade/v2.1_to_v2.1.1
 @dirrm %%WWWDIR%%/misc/upgrade/v2.0_to_v2.1
 @dirrm %%WWWDIR%%/misc/upgrade/v2.0-beta_to_v2.0
 @dirrm %%WWWDIR%%/misc/upgrade/v1.7.1_to_v2.0
@@ -768,8 +780,9 @@
 @dirrm %%WWWDIR%%/misc/cli/include/pear
 @dirrm %%WWWDIR%%/misc/cli/include
 @dirrm %%WWWDIR%%/misc/cli
-@dirrm %%WWWDIR%%/misc
+@dirrmtry %%WWWDIR%%/misc
 @dirrm %%WWWDIR%%/manage
+@dirrmtry %%WWWDIR%%/logs
 @dirrm %%WWWDIR%%/locks
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/include/workflow
@@ -777,6 +790,7 @@
 @dirrm %%WWWDIR%%/include/pear/XML/RPC
 @dirrm %%WWWDIR%%/include/pear/XML
 @dirrm %%WWWDIR%%/include/pear/Text/Diff/Renderer
+@dirrm %%WWWDIR%%/include/pear/Text/Diff/Engine
 @dirrm %%WWWDIR%%/include/pear/Text/Diff
 @dirrm %%WWWDIR%%/include/pear/Text
 @dirrm %%WWWDIR%%/include/pear/Net/UserAgent
@@ -807,8 +821,5 @@
 @dirrm %%WWWDIR%%/customer/example
 @dirrm %%WWWDIR%%/customer
 @dirrm %%WWWDIR%%/css
-@dirrmtry %%WWWDIR%%/templates_c
-@dirrmtry %%WWWDIR%%/templates
-@dirrmtry %%WWWDIR%%/logs
 @dirrmtry %%WWWDIR%%/config
 @dirrmtry %%WWWDIR%%
