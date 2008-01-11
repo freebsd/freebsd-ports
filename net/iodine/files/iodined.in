@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# PROVIDE: iodined
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# iodined_enable (bool):       Set to NO by default.
+#               Set it to YES to enable iodined.
+# iodined_password (string):   Not set by default, mandatory.
+#               Password used for client authentication.
+#               Note that the password will be visible to ps(1) et al.
+# iodined_domain (string):     Not set by default, mandatory.
+#               Tunnel domain delegated to iodined, e.g. "t.example.net".
+# iodined_addr (string):       Set to 172.16.0.1 by default.
+#               IPv4 address used for the daemon end of the tunnel.
+# iodined_flags (string):      Set to "-u _iodined -t /var/empty" by default.
+#               Additional flags to iodined, see manual page.
+#
+
+. %%RC_SUBR%%
+
+name="iodined"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/${name}
+
+load_rc_config $name
+
+: ${iodined_enable="NO"}
+: ${iodined_password=""}
+: ${iodined_domain=""}
+: ${iodined_addr="172.16.0.1"}
+: ${iodined_flags="-u _iodined -t /var/empty"}
+
+command_args="-P $iodined_password $iodined_addr $iodined_domain"
+
+start_precmd="iodined_precmd"
+
+iodined_precmd()
+{
+	if checkyesno iodined_enable; then
+		if [ -z "$iodined_password" ]; then
+			err 1 'Must set $iodined_password in rc.conf or rc.conf.local'
+		fi
+		if [ -z "$iodined_domain" ]; then
+			err 1 'Must set $iodined_domain in rc.conf or rc.conf.local'
+		fi
+		if [ -z "$iodined_addr" ]; then
+			err 1 'Must set $iodined_addr in rc.conf or rc.conf.local'
+		fi
+	fi
+}
+
+run_rc_command "$1"

@@ -7,6 +7,7 @@
 
 PORTNAME=	iodine
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://code.kryo.se/iodine/
 
@@ -18,6 +19,9 @@ PLIST_FILES=	bin/iodine sbin/iodined
 PORTDOCS=	CHANGELOG README TODO
 
 MAN8=		iodine.8
+MLINKS=		iodine.8 iodined.8
+
+USE_RC_SUBR=	iodined
 
 .include <bsd.port.pre.mk>
 
@@ -36,5 +40,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
+
+post-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
