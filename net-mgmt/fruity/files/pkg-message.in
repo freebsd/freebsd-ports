@@ -24,7 +24,7 @@ to %%PREFIX%%/etc/fruity.config.inc and modify appropriately.
 You will probably want to add an alias to your httpd.conf file, something
 like this:
 
-   Alias /fruity/ /usr/local/etc/fruity/fruity/
+   Alias /fruity/ %%PREFIX%%/www/fruity/
 
 And restart Apache.
 
