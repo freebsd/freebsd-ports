@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diffmark
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.mangrove.cz/diffmark/
 
@@ -23,10 +23,4 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
