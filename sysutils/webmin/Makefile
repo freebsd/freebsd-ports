@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.390
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
@@ -28,7 +28,10 @@ USE_PERL5=	yes
 USE_RC_SUBR=    webmin.sh
 SUB_LIST=	PERL5=${PERL}
 
-WEBMIN_MODULES=	useradmin-1.390-1.wbm.gz
+WEBMIN_MODULES= apache-1.390-2.wbm.gz \
+		mysql-1.390-3.wbm.gz \
+		quota-1.390-1.wbm.gz \
+		useradmin-1.390-1.wbm.gz
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
