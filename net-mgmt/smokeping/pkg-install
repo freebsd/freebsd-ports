@@ -16,7 +16,8 @@ PRE-INSTALL)
 
 	if ! pw usershow %%USER%% 2>/dev/null 1>&2; then
                 if pw useradd %%USER%% -u %%UID%% -g %%GROUP%% -h - \
-			-s /nonexistent -c "SmokePing Daemon"; \
+			-s "/sbin/nologin" -d "/nonexistent" \
+			-c "SmokePing Daemon"; \
 		then
 			echo 'Added user "%%USER%%".'
 		else

@@ -7,7 +7,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -264,7 +264,7 @@ do-install:
 	fi
 .endfor
 	${MKDIR} ${PREFIX}/smokeping/htdocs
-	${INSTALL_SCRIPT} ${WRKSRC}/htdocs/smokeping.cgi ${PREFIX}/smokeping/htdocs/smokeping.cgi
+	${CP} -R ${WRKSRC}/htdocs ${PREFIX}/smokeping/
 	${CP} -R ${WRKSRC}/lib ${PREFIX}/smokeping/
 	${MKDIR} ${PREFIX}/var/smokeping
 	${CHOWN} -R ${USER}:${GROUP} ${PREFIX}/var/smokeping
