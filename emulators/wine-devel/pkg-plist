@@ -130,6 +130,7 @@ include/wine/windows/d3dx8core.h
 include/wine/windows/d3dx8math.h
 include/wine/windows/d3dx8math.inl
 include/wine/windows/d3dx9.h
+include/wine/windows/d3dx9core.h
 include/wine/windows/d3dx9math.h
 include/wine/windows/d3dx9math.inl
 include/wine/windows/dbghelp.h
@@ -767,6 +768,7 @@ lib/wine/mlang.dll.so
 lib/wine/mmdevldr.vxd.so
 lib/wine/mmsystem.dll16
 lib/wine/monodebg.vxd.so
+lib/wine/mountmgr.sys.so
 lib/wine/mouse.drv16
 lib/wine/mpr.dll.so
 lib/wine/mprapi.dll.so
