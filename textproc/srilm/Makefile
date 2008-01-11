@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	srilm
-PORTVERSION=	1.4.6
+PORTVERSION=	1.5.6
 CATEGORIES=	textproc
 DISTNAME=	srilm
 EXTRACT_SUFX?=	.tgz
@@ -21,7 +21,7 @@ DOWNLOAD_URL?=	http://www.speech.sri.com/projects/srilm/download.html
 USE_GMAKE=	yes
 MAKE_ENV+=	SRILM=${WRKSRC}
 ALL_TARGET=	World
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 NO_PACKAGE=	not yet
 
 PROGRAMS=	ngram ngram-count ngram-merge ngram-class disambig anti-ngram \
