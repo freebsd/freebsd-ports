@@ -5079,6 +5079,7 @@ isomaster	ports/sysutils/isomaster
 isoqlog		ports/mail/isoqlog
 ispell		ports/textproc/ispell
 ispell-ukrainian	ports/ukrainian/ispell
+ispman		ports/sysutils/ispman
 isql-viewer	ports/databases/isql-viewer
 isreal		ports/graphics/isreal
 isync		ports/mail/isync
