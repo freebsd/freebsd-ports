@@ -29,6 +29,7 @@ To enable Apache web access, add the following to your
 
   ScriptAlias /smokeping.cgi %%PREFIX%%/smokeping/htdocs/smokeping.cgi
   Alias /smokeimg/ %%PREFIX%%/smokeping/htdocs/img/
+  Alias /cropper/ %%PREFIX%%/smokeping/htdocs/cropper/
 
 Enjoy!
 

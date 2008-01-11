@@ -108,6 +108,22 @@ etc/smokeping/tmail.dist
 %%PORTDOCS%%%%EXAMPLESDIR%%/config.simple
 %%PORTDOCS%%%%EXAMPLESDIR%%/config.targetvars-with-Curl
 %%PORTDOCS%%%%EXAMPLESDIR%%/config.template
+smokeping/htdocs/cropper/cropper.css
+smokeping/htdocs/cropper/cropper.js
+smokeping/htdocs/cropper/cropper.uncompressed.js
+smokeping/htdocs/cropper/lib/builder.js
+smokeping/htdocs/cropper/lib/controls.js
+smokeping/htdocs/cropper/lib/dragdrop.js
+smokeping/htdocs/cropper/lib/effects.js
+smokeping/htdocs/cropper/lib/prototype.js
+smokeping/htdocs/cropper/lib/prototype.js.LICENSE
+smokeping/htdocs/cropper/lib/scriptaculous.js
+smokeping/htdocs/cropper/lib/slider.js
+smokeping/htdocs/cropper/lib/unittest.js
+smokeping/htdocs/cropper/licence.txt
+smokeping/htdocs/cropper/marqueeHoriz.gif
+smokeping/htdocs/cropper/marqueeVert.gif
+smokeping/htdocs/cropper/smokeping-zoom.js
 smokeping/htdocs/smokeping.cgi
 smokeping/lib/Config/Grammar.pm
 smokeping/lib/Config/Grammar/Document.pm
@@ -182,6 +198,8 @@ smokeping/lib/Smokeping/sorters/base.pm
 @dirrm smokeping/lib/Config/Grammar
 @dirrm smokeping/lib/Config
 @dirrm smokeping/lib
+@dirrm smokeping/htdocs/cropper/lib
+@dirrm smokeping/htdocs/cropper
 @dirrm smokeping/htdocs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Config
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping/matchers
