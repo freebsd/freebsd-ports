@@ -7154,6 +7154,7 @@ lives		ports/multimedia/lives
 ljcharm		ports/deskutils/ljcharm
 ljclive		ports/deskutils/ljclive
 ljdeps		ports/www/ljdeps
+ljdump		ports/www/ljdump
 ljit		ports/deskutils/ljit
 ljpms		ports/www/ljpms
 ljsm		ports/www/ljsm
