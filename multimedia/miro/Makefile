@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Miro
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -30,12 +29,15 @@ USE_GETTEXT=	yes
 USE_GNOME=	glib20 gtk20 pygnomeextras
 USE_GECKO=	firefox seamonkey mozilla
 USE_GSTREAMER=	python
+INSTALLS_EGGINFO=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/platform/gtk-x11
 MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}"
 
 DATADIR=	${PREFIX}/share/${PORTNAME:L}
-PLIST_SUB=	VER=${PORTVERSION} PYTHON_VER=${_PYTHON_VERSION}
+PLIST_SUB=	VER=${PORTVERSION} PYTHON_VER=${_PYTHON_VERSION}	\
+		DESKTOPDIR=share/applications
+PYDISTUTILS_PKGNAME=	${PORTNAME:L}
 
 MAN1=		miro.1
 MANCOMPRESSED=	yes
@@ -52,6 +54,8 @@ pre-configure:
 		-e 's|${LOCALBASE}/man|${MANPREFIX}/man|'		\
 		${BUILD_WRKSRC}/${pyscr}
 .endfor
+	${REINPLACE_CMD} -e 's|BOOST_LIB_PATH|${LOCALBASE}/lib|'	\
+		${WRKSRC}/portable/setup_portable.py
 
 do-build:
 	(cd ${BUILD_WRKSRC} &&	\

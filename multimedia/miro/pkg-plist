@@ -1,85 +1,6 @@
 bin/miro
 bin/miro.real
 libexec/xine_extractor
-%%PYTHON_SITELIBDIR%%/miro-%%VER%%-py%%PYTHON_VER%%.egg-info
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Choker.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Choker.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Choker.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Connecter.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Connecter.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Connecter.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/CurrentRateMeasure.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/CurrentRateMeasure.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/CurrentRateMeasure.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Downloader.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Downloader.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Downloader.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/DownloaderFeedback.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/DownloaderFeedback.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/DownloaderFeedback.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Encrypter.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Encrypter.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Encrypter.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/HTTPHandler.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/HTTPHandler.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/HTTPHandler.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/NatCheck.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/NatCheck.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/NatCheck.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/PiecePicker.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/PiecePicker.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/PiecePicker.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/RateMeasure.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/RateMeasure.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/RateMeasure.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/RawServer.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/RawServer.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/RawServer.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Rerequester.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Rerequester.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Rerequester.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Storage.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Storage.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Storage.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/StorageWrapper.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/StorageWrapper.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/StorageWrapper.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Uploader.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Uploader.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/Uploader.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/__init__.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/__init__.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/__init__.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/bencode.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/bencode.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/bencode.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/bitfield.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/bitfield.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/bitfield.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/btformats.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/btformats.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/btformats.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/download.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/download.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/download.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/fakeopen.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/fakeopen.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/fakeopen.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/parseargs.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/parseargs.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/parseargs.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/selectpoll.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/selectpoll.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/selectpoll.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/testtest.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/testtest.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/testtest.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/track.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/track.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/track.pyo
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/zurllib.py
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/zurllib.pyc
-%%PYTHON_SITELIBDIR%%/miro/BitTorrent/zurllib.pyo
 %%PYTHON_SITELIBDIR%%/miro/MozillaBrowser.so
 %%PYTHON_SITELIBDIR%%/miro/__init__.py
 %%PYTHON_SITELIBDIR%%/miro/__init__.pyc
@@ -262,12 +183,6 @@ libexec/xine_extractor
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/__init__.py
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/__init__.pyc
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/__init__.pyo
-%%PYTHON_SITELIBDIR%%/miro/dl_daemon/bittornadoinit.py
-%%PYTHON_SITELIBDIR%%/miro/dl_daemon/bittornadoinit.pyc
-%%PYTHON_SITELIBDIR%%/miro/dl_daemon/bittornadoinit.pyo
-%%PYTHON_SITELIBDIR%%/miro/dl_daemon/bittorrentdtv.py
-%%PYTHON_SITELIBDIR%%/miro/dl_daemon/bittorrentdtv.pyc
-%%PYTHON_SITELIBDIR%%/miro/dl_daemon/bittorrentdtv.pyo
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/command.py
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/command.pyc
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/command.pyo
@@ -277,9 +192,6 @@ libexec/xine_extractor
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/download.py
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/download.pyc
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/download.pyo
-%%PYTHON_SITELIBDIR%%/miro/dl_daemon/natpunch.py
-%%PYTHON_SITELIBDIR%%/miro/dl_daemon/natpunch.pyc
-%%PYTHON_SITELIBDIR%%/miro/dl_daemon/natpunch.pyo
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/private/__init__.py
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/private/__init__.pyc
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/private/__init__.pyo
@@ -292,9 +204,6 @@ libexec/xine_extractor
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/private/resources.py
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/private/resources.pyc
 %%PYTHON_SITELIBDIR%%/miro/dl_daemon/private/resources.pyo
-%%PYTHON_SITELIBDIR%%/miro/dl_daemon/subnetparse.py
-%%PYTHON_SITELIBDIR%%/miro/dl_daemon/subnetparse.pyc
-%%PYTHON_SITELIBDIR%%/miro/dl_daemon/subnetparse.pyo
 %%PYTHON_SITELIBDIR%%/miro/download_utils.py
 %%PYTHON_SITELIBDIR%%/miro/download_utils.pyc
 %%PYTHON_SITELIBDIR%%/miro/download_utils.pyo
@@ -407,6 +316,10 @@ libexec/xine_extractor
 %%PYTHON_SITELIBDIR%%/miro/keyboard.py
 %%PYTHON_SITELIBDIR%%/miro/keyboard.pyc
 %%PYTHON_SITELIBDIR%%/miro/keyboard.pyo
+%%PYTHON_SITELIBDIR%%/miro/libtorrent.so
+%%PYTHON_SITELIBDIR%%/miro/license.py
+%%PYTHON_SITELIBDIR%%/miro/license.pyc
+%%PYTHON_SITELIBDIR%%/miro/license.pyo
 %%PYTHON_SITELIBDIR%%/miro/maps.py
 %%PYTHON_SITELIBDIR%%/miro/maps.pyc
 %%PYTHON_SITELIBDIR%%/miro/maps.pyo
@@ -443,6 +356,9 @@ libexec/xine_extractor
 %%PYTHON_SITELIBDIR%%/miro/prefs.py
 %%PYTHON_SITELIBDIR%%/miro/prefs.pyc
 %%PYTHON_SITELIBDIR%%/miro/prefs.pyo
+%%PYTHON_SITELIBDIR%%/miro/rdfa.py
+%%PYTHON_SITELIBDIR%%/miro/rdfa.pyc
+%%PYTHON_SITELIBDIR%%/miro/rdfa.pyo
 %%PYTHON_SITELIBDIR%%/miro/readwritelock.py
 %%PYTHON_SITELIBDIR%%/miro/readwritelock.pyc
 %%PYTHON_SITELIBDIR%%/miro/readwritelock.pyo
@@ -461,6 +377,9 @@ libexec/xine_extractor
 %%PYTHON_SITELIBDIR%%/miro/selection.py
 %%PYTHON_SITELIBDIR%%/miro/selection.pyc
 %%PYTHON_SITELIBDIR%%/miro/selection.pyo
+%%PYTHON_SITELIBDIR%%/miro/setup_portable.py
+%%PYTHON_SITELIBDIR%%/miro/setup_portable.pyc
+%%PYTHON_SITELIBDIR%%/miro/setup_portable.pyo
 %%PYTHON_SITELIBDIR%%/miro/singleclick.py
 %%PYTHON_SITELIBDIR%%/miro/singleclick.pyc
 %%PYTHON_SITELIBDIR%%/miro/singleclick.pyo
@@ -569,13 +488,14 @@ libexec/xine_extractor
 %%PYTHON_SITELIBDIR%%/miro/xhtmltools.pyo
 %%PYTHON_SITELIBDIR%%/miro/xine.so
 %%PYTHON_SITELIBDIR%%/miro/xlibhelper.so
-share/applications/miro.desktop
+%%DESKTOPDIR%%/miro.desktop
 %%DATADIR%%/resources/app.config
 %%DATADIR%%/resources/channels.png
 %%DATADIR%%/resources/css/download.css
 %%DATADIR%%/resources/css/external.css
 %%DATADIR%%/resources/css/intro.css
 %%DATADIR%%/resources/css/main.css
+%%DATADIR%%/resources/css/nav-bar.css
 %%DATADIR%%/resources/css/style.css
 %%DATADIR%%/resources/css/video-info.css
 %%DATADIR%%/resources/disk-space.png
@@ -583,6 +503,7 @@ share/applications/miro.desktop
 %%DATADIR%%/resources/dtvapi.js
 %%DATADIR%%/resources/folders.png
 %%DATADIR%%/resources/general.png
+%%DATADIR%%/resources/html/guide-navigation.html
 %%DATADIR%%/resources/images/active_channel_bg.png
 %%DATADIR%%/resources/images/auto-select-box-left.png
 %%DATADIR%%/resources/images/auto-select-box-mid.png
@@ -652,11 +573,15 @@ share/applications/miro.desktop
 %%DATADIR%%/resources/images/graybutton-left.png
 %%DATADIR%%/resources/images/graybutton-mid.png
 %%DATADIR%%/resources/images/graybutton-right.png
+%%DATADIR%%/resources/images/home-button-left.png
+%%DATADIR%%/resources/images/home-button-middle.png
+%%DATADIR%%/resources/images/home-button-right.png
 %%DATADIR%%/resources/images/inactive_channel_bg.png
 %%DATADIR%%/resources/images/intro-circles.png
 %%DATADIR%%/resources/images/intro-expiration.png
 %%DATADIR%%/resources/images/intro-fullscreen_button.png
 %%DATADIR%%/resources/images/intro-go_to_channel_guide.png
+%%DATADIR%%/resources/images/load-indicator.gif
 %%DATADIR%%/resources/images/loader.gif
 %%DATADIR%%/resources/images/loader_small.gif
 %%DATADIR%%/resources/images/loading.gif
@@ -692,16 +617,19 @@ share/applications/miro.desktop
 %%DATADIR%%/resources/images/mini-star.png
 %%DATADIR%%/resources/images/more-info-button-close.png
 %%DATADIR%%/resources/images/more-info-button.png
+%%DATADIR%%/resources/images/nav-bar.png
 %%DATADIR%%/resources/images/navigation_back.png
 %%DATADIR%%/resources/images/new.png
 %%DATADIR%%/resources/images/newstar.png
 %%DATADIR%%/resources/images/newvideos-icon-tablist.png
 %%DATADIR%%/resources/images/newvideos-icon.png
+%%DATADIR%%/resources/images/next.png
 %%DATADIR%%/resources/images/orange_filler.png
 %%DATADIR%%/resources/images/pause-all-downloads.png
 %%DATADIR%%/resources/images/play.png
 %%DATADIR%%/resources/images/playlist-icon-tablist.png
 %%DATADIR%%/resources/images/playlist-icon.png
+%%DATADIR%%/resources/images/previous.png
 %%DATADIR%%/resources/images/progress-bar-bg.png
 %%DATADIR%%/resources/images/progress-bar.png
 %%DATADIR%%/resources/images/progress-throbber-bg.png
@@ -716,6 +644,7 @@ share/applications/miro.desktop
 %%DATADIR%%/resources/images/scraping-indicator-right.gif
 %%DATADIR%%/resources/images/search-icon-tablist.png
 %%DATADIR%%/resources/images/search-icon.png
+%%DATADIR%%/resources/images/search_icon_all.png
 %%DATADIR%%/resources/images/search_icon_bliptv.png
 %%DATADIR%%/resources/images/search_icon_blogdigger.png
 %%DATADIR%%/resources/images/search_icon_dailymotion.png
@@ -730,6 +659,7 @@ share/applications/miro.desktop
 %%DATADIR%%/resources/images/selected_dqueue_back.png
 %%DATADIR%%/resources/images/selectedback.png
 %%DATADIR%%/resources/images/selectedbackgrey.png
+%%DATADIR%%/resources/images/separator.png
 %%DATADIR%%/resources/images/settings-shadow.png
 %%DATADIR%%/resources/images/share-right.png
 %%DATADIR%%/resources/images/sidebar-downloadtab-fade.png
@@ -921,16 +851,17 @@ share/pixmaps/miro-72x72.png
 @dirrm %%DATADIR%%/resources/templates
 @dirrm %%DATADIR%%/resources/searchengines
 @dirrm %%DATADIR%%/resources/images
+@dirrm %%DATADIR%%/resources/html
 @dirrm %%DATADIR%%/resources/css
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%
+@dirrmtry %%DESKTOPDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/miro/test
 @dirrm %%PYTHON_SITELIBDIR%%/miro/frontend_implementation
 @dirrm %%PYTHON_SITELIBDIR%%/miro/dl_daemon/private
 @dirrm %%PYTHON_SITELIBDIR%%/miro/dl_daemon
 @dirrm %%PYTHON_SITELIBDIR%%/miro/compiled_templates/unittest
 @dirrm %%PYTHON_SITELIBDIR%%/miro/compiled_templates
-@dirrm %%PYTHON_SITELIBDIR%%/miro/BitTorrent
 @dirrm %%PYTHON_SITELIBDIR%%/miro
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
