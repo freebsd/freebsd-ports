@@ -1,6 +1,6 @@
---- products.py.orig	Tue Jan  2 17:13:15 2007
-+++ products.py	Fri Feb  2 23:13:35 2007
-@@ -833,16 +833,18 @@
+--- products.py.orig	2007-12-21 17:08:17.000000000 +0100
++++ products.py	2008-01-08 14:20:12.000000000 +0100
+@@ -863,16 +863,18 @@
             'HOME_PYTHON', 'PYTHON_EXE', 'PYTHONLIB', 'PYMODULES_PREFIX',
             'HOME_MUMPS', 'HOME_ZMAT', 'HOME_MPI',
             'HOME_MED', 'HOME_HDF', 'HOME_CRPCRS',
@@ -25,7 +25,7 @@
             'NOBUILD', ],
     )
     cfg['ENV_SH']   = cfg.get('ENV_SH', '')
-@@ -885,6 +887,18 @@
+@@ -911,6 +913,18 @@
        cxxlibs.extend(['stdc++', 'supc++'])
        zmat_platform='Linux'
        mpilibs.extend(['mpich'])
@@ -44,7 +44,7 @@
     elif cfg['IFDEF'] == 'LINUX64':
        opt['MATH_LIST']  = ['lapack', 'blas', 'g2c']
        opt['SYSLIB']     = '-Wl,--allow-multiple-definition -Wl,--export-dynamic -lieee -ldl -lpthread -lutil -lm'
-@@ -939,8 +953,8 @@
+@@ -965,8 +979,8 @@
        opt['FINCLUDE']   = ''
  
     # ----- F90
@@ -55,7 +55,7 @@
     opt['F90INCLUDE']=''
  
     # ----- check for MED and HDF5 libraries, and HDF5 includes
-@@ -973,11 +987,14 @@
+@@ -999,11 +1013,14 @@
  
     # ----- MUMPS
     if cfg['HOME_MUMPS'] != '':
@@ -72,10 +72,10 @@
 +               kargs['libdirs'], cfg['HOME_MUMPS'],
 +               err=False, append=True)
 +            ftools.CheckFromLastFound(cfg, 'HOME_MUMPS', 'lib')
-       opt['F90INCLUDE'] += ' -I%s' % os.path.join(cfg['ASTER_ROOT'],cfg['ASTER_VERSION'],'bibf90','include_mumps')
+       opt['F90INCLUDE'] += ' -I%s' % os.path.join(cfg['ASTER_ROOT'],cfg['ASTER_VERSION'],'bibf90',cfg['INCLUDE_MUMPS'])
     else:
        opt['MUMPSLIB'] = ''
-@@ -1033,7 +1050,7 @@
+@@ -1059,7 +1076,7 @@
           ftools.findlib_and_set(cfg, 'SCOTCHLIB', lib,
              kargs['libdirs'], cfg['HOME_SCOTCH'],
              err=True, append=True)

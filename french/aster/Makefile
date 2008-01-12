@@ -7,11 +7,10 @@
 
 PORTNAME=		aster
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=		9.1.0-1
+DISTVERSION=		9.2.0-2
 DISTVERSIONSUFFIX=	.noarch
-PORTREVISION=		1
-CATEGORIES=		french cad python
-MASTER_SITES=		http://www.code-aster.org/FICHIERS/
+CATEGORIES=		french cad
+MASTER_SITES=		http://www.code-aster.org/V2/IMG/gz/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Aster finite element method solver
@@ -72,6 +71,8 @@ FFLAGARCH=
 FLAGARCH=	-DLINUX64
 FFLAGARCH=	-fdefault-integer-8 -fdefault-real-8
 .endif
+# Avoid renaming .f into .F
+#F90FLAGS=	-x f77-cpp-input ${FFLAGS}
 
 .if ${OSVERSION} < 600022
 BROKEN=	Does not compile on this version, and cannot be patched easily.
@@ -182,9 +183,17 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/emacs:${PORTSDIR}/editors/emacs
 . elif exists(${LOCALBASE}/bin/xemacs)
 WITH_ED=	xemacs
 RUN_DEPENDS+=	${LOCALBASE}/bin/xemacs:${PORTSDIR}/editors/xemacs
-. else
+. elif exists(${LOCALBASE}/bin/gedit)
+WITH_ED=	gedit
+RUN_DEPENDS+=	${LOCALBASE}/bin/gedit:${PORTSDIR}/editors/gedit
+. elif exists(${LOCALBASE}/bin/kwrite)
+WITH_ED=	kwrite
+RUN_DEPENDS+=	${X11BASE}/bin/kwrite:${PORTSDIR}/x11/kdebase3
+. elif exists(${LOCALBASE}/bin/xedit)
 WITH_ED=	xedit
-RUN_DEPENDS+=	${X11BASE}/bin/xedit:${X_CLIENTS_PORT}
+RUN_DEPENDS+=	${X11BASE}/bin/xedit:${PORTSDIR}/x11/xedit
+. else
+WITH_ED=	vi
 . endif
 .endif
 
