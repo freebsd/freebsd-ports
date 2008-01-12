@@ -1,0 +1,6 @@
+El-Kabong is a high-speed, forgiving, sax-style HTML parser.
+Its aim is to provide consumers with a very fast, clean,
+lightweight library which parses HTML quickly, while forgiving
+syntactically incorrect tags.
+
+WWW: http://ekhtml.sourceforge.net/

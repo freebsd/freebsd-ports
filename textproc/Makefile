@@ -124,6 +124,7 @@
     SUBDIR += dwdiff
     SUBDIR += easydiff
     SUBDIR += ecromedos
+    SUBDIR += ekhtml
     SUBDIR += el-aspell
     SUBDIR += emacs-wiki
     SUBDIR += en-aspell
