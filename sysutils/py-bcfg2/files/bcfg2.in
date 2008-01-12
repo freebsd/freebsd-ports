@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: bcfg2
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable bcfg2-server:
+# bcfg2_enable (bool):  Set it to "YES" to enable bcfg2.
+#                       Default is "NO".
+# bcfg2_flags (str):    Flags passed to bcfg2 on startup.
+#                       Default is "".
+
+. %%RC_SUBR%%
+
+name="bcfg2"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${bcfg2_enable="NO"}
+: ${bcfg2_pidfile="/var/run/$name.pid"}
+: ${bcfg2_flags="-D ${bcfg2_pidfile}"}
+
+pidfile=${bcfg2_pidfile}
+command=%%PREFIX%%/bin/${name}-server
+command_interpreter=%%PYTHON_CMD%%
+
+run_rc_command "$1"
