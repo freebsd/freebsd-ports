@@ -1,0 +1,808 @@
+bin/gcstar
+lib/gcstar/GCBackend/GCBackendLibXml.pm
+lib/gcstar/GCBackend/GCBackendXmlCommon.pm
+lib/gcstar/GCBackend/GCBackendXmlParser.pm
+lib/gcstar/GCBookmarks.pm
+lib/gcstar/GCBorrowings.pm
+lib/gcstar/GCCommandLine.pm
+lib/gcstar/GCData.pm
+lib/gcstar/GCDialogs.pm
+lib/gcstar/GCDisplay.pm
+lib/gcstar/GCExport.pm
+lib/gcstar/GCExport/GCExportBase.pm
+lib/gcstar/GCExport/GCExportCSV.pm
+lib/gcstar/GCExport/GCExportHTML.pm
+lib/gcstar/GCExport/GCExportLatex.pm
+lib/gcstar/GCExport/GCExportSQL.pm
+lib/gcstar/GCExport/GCExportTarGz.pm
+lib/gcstar/GCExport/GCExportTellico.pm
+lib/gcstar/GCExport/GCExportXML.pm
+lib/gcstar/GCExportImport.pm
+lib/gcstar/GCExtract.pm
+lib/gcstar/GCExtract/GCExtractFilms.pm
+lib/gcstar/GCExtract/GCExtractMusics.pm
+lib/gcstar/GCGenres.pm
+lib/gcstar/GCGraphicComponents.pm
+lib/gcstar/GCImport.pm
+lib/gcstar/GCImport/GCImportAMC.pm
+lib/gcstar/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCImport/GCImportBase.pm
+lib/gcstar/GCImport/GCImportCSV.pm
+lib/gcstar/GCImport/GCImportDVDProfiler.pm
+lib/gcstar/GCImport/GCImportGCfilms.pm
+lib/gcstar/GCImport/GCImportGCstar.pm
+lib/gcstar/GCImport/GCImportList.pm
+lib/gcstar/GCImport/GCImportTarGz.pm
+lib/gcstar/GCImport/GCImportTellico.pm
+lib/gcstar/GCItemsLists.pm
+lib/gcstar/GCLang.pm
+lib/gcstar/GCLang/AR/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/AR/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/AR/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/AR/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/AR/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/AR/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/AR/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/AR/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/AR/GCImport/GCImportList.pm
+lib/gcstar/GCLang/AR/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/AR/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/AR/GCModels/GCbooks.pm
+lib/gcstar/GCLang/AR/GCModels/GCcoins.pm
+lib/gcstar/GCLang/AR/GCModels/GCfilms.pm
+lib/gcstar/GCLang/AR/GCModels/GCgames.pm
+lib/gcstar/GCLang/AR/GCModels/GCmusics.pm
+lib/gcstar/GCLang/AR/GCModels/GCwines.pm
+lib/gcstar/GCLang/AR/GCstar.pm
+lib/gcstar/GCLang/BG/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/BG/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/BG/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/BG/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/BG/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/BG/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/BG/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/BG/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/BG/GCImport/GCImportList.pm
+lib/gcstar/GCLang/BG/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/BG/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/BG/GCModels/GCbooks.pm
+lib/gcstar/GCLang/BG/GCModels/GCcoins.pm
+lib/gcstar/GCLang/BG/GCModels/GCfilms.pm
+lib/gcstar/GCLang/BG/GCModels/GCgames.pm
+lib/gcstar/GCLang/BG/GCModels/GCmusics.pm
+lib/gcstar/GCLang/BG/GCModels/GCwines.pm
+lib/gcstar/GCLang/BG/GCstar.pm
+lib/gcstar/GCLang/CA/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/CA/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/CA/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/CA/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/CA/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/CA/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/CA/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/CA/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/CA/GCImport/GCImportList.pm
+lib/gcstar/GCLang/CA/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/CA/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/CA/GCModels/GCbooks.pm
+lib/gcstar/GCLang/CA/GCModels/GCcoins.pm
+lib/gcstar/GCLang/CA/GCModels/GCfilms.pm
+lib/gcstar/GCLang/CA/GCModels/GCgames.pm
+lib/gcstar/GCLang/CA/GCModels/GCmusics.pm
+lib/gcstar/GCLang/CA/GCModels/GCwines.pm
+lib/gcstar/GCLang/CA/GCstar.pm
+lib/gcstar/GCLang/CS/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/CS/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/CS/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/CS/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/CS/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/CS/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/CS/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/CS/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/CS/GCImport/GCImportList.pm
+lib/gcstar/GCLang/CS/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/CS/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/CS/GCModels/GCbooks.pm
+lib/gcstar/GCLang/CS/GCModels/GCcoins.pm
+lib/gcstar/GCLang/CS/GCModels/GCfilms.pm
+lib/gcstar/GCLang/CS/GCModels/GCgames.pm
+lib/gcstar/GCLang/CS/GCModels/GCmusics.pm
+lib/gcstar/GCLang/CS/GCModels/GCwines.pm
+lib/gcstar/GCLang/CS/GCstar.pm
+lib/gcstar/GCLang/DE/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/DE/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/DE/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/DE/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/DE/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/DE/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/DE/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/DE/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/DE/GCImport/GCImportList.pm
+lib/gcstar/GCLang/DE/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/DE/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/DE/GCModels/GCbooks.pm
+lib/gcstar/GCLang/DE/GCModels/GCcoins.pm
+lib/gcstar/GCLang/DE/GCModels/GCfilms.pm
+lib/gcstar/GCLang/DE/GCModels/GCgames.pm
+lib/gcstar/GCLang/DE/GCModels/GCmusics.pm
+lib/gcstar/GCLang/DE/GCModels/GCwines.pm
+lib/gcstar/GCLang/DE/GCstar.pm
+lib/gcstar/GCLang/EN/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/EN/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/EN/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/EN/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/EN/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/EN/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/EN/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/EN/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/EN/GCImport/GCImportList.pm
+lib/gcstar/GCLang/EN/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/EN/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/EN/GCModels/GCbooks.pm
+lib/gcstar/GCLang/EN/GCModels/GCcoins.pm
+lib/gcstar/GCLang/EN/GCModels/GCfilms.pm
+lib/gcstar/GCLang/EN/GCModels/GCgames.pm
+lib/gcstar/GCLang/EN/GCModels/GCmusics.pm
+lib/gcstar/GCLang/EN/GCModels/GCwines.pm
+lib/gcstar/GCLang/EN/GCstar.pm
+lib/gcstar/GCLang/ES/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/ES/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/ES/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/ES/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/ES/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/ES/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/ES/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/ES/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/ES/GCImport/GCImportList.pm
+lib/gcstar/GCLang/ES/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/ES/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/ES/GCModels/GCbooks.pm
+lib/gcstar/GCLang/ES/GCModels/GCcoins.pm
+lib/gcstar/GCLang/ES/GCModels/GCfilms.pm
+lib/gcstar/GCLang/ES/GCModels/GCgames.pm
+lib/gcstar/GCLang/ES/GCModels/GCmusics.pm
+lib/gcstar/GCLang/ES/GCModels/GCwines.pm
+lib/gcstar/GCLang/ES/GCstar.pm
+lib/gcstar/GCLang/FR/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/FR/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/FR/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/FR/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/FR/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/FR/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/FR/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/FR/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/FR/GCImport/GCImportList.pm
+lib/gcstar/GCLang/FR/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/FR/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/FR/GCModels/GCbooks.pm
+lib/gcstar/GCLang/FR/GCModels/GCcoins.pm
+lib/gcstar/GCLang/FR/GCModels/GCfilms.pm
+lib/gcstar/GCLang/FR/GCModels/GCgames.pm
+lib/gcstar/GCLang/FR/GCModels/GCmusics.pm
+lib/gcstar/GCLang/FR/GCModels/GCwines.pm
+lib/gcstar/GCLang/FR/GCstar.pm
+lib/gcstar/GCLang/ID/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/ID/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/ID/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/ID/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/ID/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/ID/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/ID/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/ID/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/ID/GCImport/GCImportList.pm
+lib/gcstar/GCLang/ID/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/ID/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/ID/GCModels/GCbooks.pm
+lib/gcstar/GCLang/ID/GCModels/GCcoins.pm
+lib/gcstar/GCLang/ID/GCModels/GCfilms.pm
+lib/gcstar/GCLang/ID/GCModels/GCgames.pm
+lib/gcstar/GCLang/ID/GCModels/GCmusics.pm
+lib/gcstar/GCLang/ID/GCModels/GCwines.pm
+lib/gcstar/GCLang/ID/GCstar.pm
+lib/gcstar/GCLang/IT/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/IT/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/IT/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/IT/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/IT/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/IT/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/IT/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/IT/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/IT/GCImport/GCImportList.pm
+lib/gcstar/GCLang/IT/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/IT/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/IT/GCModels/GCbooks.pm
+lib/gcstar/GCLang/IT/GCModels/GCcoins.pm
+lib/gcstar/GCLang/IT/GCModels/GCfilms.pm
+lib/gcstar/GCLang/IT/GCModels/GCgames.pm
+lib/gcstar/GCLang/IT/GCModels/GCmusics.pm
+lib/gcstar/GCLang/IT/GCModels/GCwines.pm
+lib/gcstar/GCLang/IT/GCstar.pm
+lib/gcstar/GCLang/IT/README.txt
+lib/gcstar/GCLang/PL/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/PL/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/PL/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/PL/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/PL/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/PL/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/PL/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/PL/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/PL/GCImport/GCImportList.pm
+lib/gcstar/GCLang/PL/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/PL/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/PL/GCModels/GCbooks.pm
+lib/gcstar/GCLang/PL/GCModels/GCcoins.pm
+lib/gcstar/GCLang/PL/GCModels/GCfilms.pm
+lib/gcstar/GCLang/PL/GCModels/GCgames.pm
+lib/gcstar/GCLang/PL/GCModels/GCmusics.pm
+lib/gcstar/GCLang/PL/GCModels/GCwines.pm
+lib/gcstar/GCLang/PL/GCstar.pm
+lib/gcstar/GCLang/PT/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/PT/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/PT/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/PT/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/PT/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/PT/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/PT/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/PT/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/PT/GCImport/GCImportList.pm
+lib/gcstar/GCLang/PT/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/PT/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/PT/GCModels/GCbooks.pm
+lib/gcstar/GCLang/PT/GCModels/GCcoins.pm
+lib/gcstar/GCLang/PT/GCModels/GCfilms.pm
+lib/gcstar/GCLang/PT/GCModels/GCgames.pm
+lib/gcstar/GCLang/PT/GCModels/GCmusics.pm
+lib/gcstar/GCLang/PT/GCModels/GCwines.pm
+lib/gcstar/GCLang/PT/GCstar.pm
+lib/gcstar/GCLang/RO/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/RO/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/RO/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/RO/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/RO/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/RO/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/RO/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/RO/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/RO/GCImport/GCImportList.pm
+lib/gcstar/GCLang/RO/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/RO/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/RO/GCModels/GCbooks.pm
+lib/gcstar/GCLang/RO/GCModels/GCcoins.pm
+lib/gcstar/GCLang/RO/GCModels/GCfilms.pm
+lib/gcstar/GCLang/RO/GCModels/GCgames.pm
+lib/gcstar/GCLang/RO/GCModels/GCmusics.pm
+lib/gcstar/GCLang/RO/GCModels/GCwines.pm
+lib/gcstar/GCLang/RO/GCstar.pm
+lib/gcstar/GCLang/RU/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/RU/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/RU/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/RU/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/RU/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/RU/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/RU/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/RU/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/RU/GCImport/GCImportList.pm
+lib/gcstar/GCLang/RU/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/RU/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/RU/GCModels/GCbooks.pm
+lib/gcstar/GCLang/RU/GCModels/GCcoins.pm
+lib/gcstar/GCLang/RU/GCModels/GCfilms.pm
+lib/gcstar/GCLang/RU/GCModels/GCgames.pm
+lib/gcstar/GCLang/RU/GCModels/GCmusics.pm
+lib/gcstar/GCLang/RU/GCModels/GCwines.pm
+lib/gcstar/GCLang/RU/GCstar.pm
+lib/gcstar/GCLang/SR/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/SR/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/SR/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/SR/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/SR/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/SR/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/SR/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/SR/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/SR/GCImport/GCImportList.pm
+lib/gcstar/GCLang/SR/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/SR/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/SR/GCModels/GCbooks.pm
+lib/gcstar/GCLang/SR/GCModels/GCcoins.pm
+lib/gcstar/GCLang/SR/GCModels/GCfilms.pm
+lib/gcstar/GCLang/SR/GCModels/GCgames.pm
+lib/gcstar/GCLang/SR/GCModels/GCmusics.pm
+lib/gcstar/GCLang/SR/GCModels/GCwines.pm
+lib/gcstar/GCLang/SR/GCstar.pm
+lib/gcstar/GCLang/SV/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/SV/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/SV/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/SV/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/SV/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/SV/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/SV/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/SV/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/SV/GCImport/GCImportList.pm
+lib/gcstar/GCLang/SV/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/SV/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/SV/GCModels/GCbooks.pm
+lib/gcstar/GCLang/SV/GCModels/GCcoins.pm
+lib/gcstar/GCLang/SV/GCModels/GCfilms.pm
+lib/gcstar/GCLang/SV/GCModels/GCgames.pm
+lib/gcstar/GCLang/SV/GCModels/GCmusics.pm
+lib/gcstar/GCLang/SV/GCModels/GCwines.pm
+lib/gcstar/GCLang/SV/GCstar.pm
+lib/gcstar/GCLang/TR/GCExport/GCExportCSV.pm
+lib/gcstar/GCLang/TR/GCExport/GCExportHTML.pm
+lib/gcstar/GCLang/TR/GCExport/GCExportSQL.pm
+lib/gcstar/GCLang/TR/GCExport/GCExportTarGz.pm
+lib/gcstar/GCLang/TR/GCExport/GCExportXML.pm
+lib/gcstar/GCLang/TR/GCImport/GCImportAlexandria.pm
+lib/gcstar/GCLang/TR/GCImport/GCImportCSV.pm
+lib/gcstar/GCLang/TR/GCImport/GCImportGCstar.pm
+lib/gcstar/GCLang/TR/GCImport/GCImportList.pm
+lib/gcstar/GCLang/TR/GCImport/GCImportTellico.pm
+lib/gcstar/GCLang/TR/GCModels/GCboardgames.pm
+lib/gcstar/GCLang/TR/GCModels/GCbooks.pm
+lib/gcstar/GCLang/TR/GCModels/GCcoins.pm
+lib/gcstar/GCLang/TR/GCModels/GCfilms.pm
+lib/gcstar/GCLang/TR/GCModels/GCgames.pm
+lib/gcstar/GCLang/TR/GCModels/GCmusics.pm
+lib/gcstar/GCLang/TR/GCModels/GCwines.pm
+lib/gcstar/GCLang/TR/GCstar.pm
+lib/gcstar/GCMail.pm
+lib/gcstar/GCMainWindow.pm
+lib/gcstar/GCMenu.pm
+lib/gcstar/GCModel.pm
+lib/gcstar/GCModels/GCboardgames.gcm
+lib/gcstar/GCModels/GCbooks.gcm
+lib/gcstar/GCModels/GCcoins.gcm
+lib/gcstar/GCModels/GCfilms.gcm
+lib/gcstar/GCModels/GCgames.gcm
+lib/gcstar/GCModels/GCmusics.gcm
+lib/gcstar/GCModels/GCwines.gcm
+lib/gcstar/GCOptions.pm
+lib/gcstar/GCPanel.pm
+lib/gcstar/GCPlugins.pm
+lib/gcstar/GCPlugins/GCPluginsBase.pm
+lib/gcstar/GCPlugins/GCboardgames/GCReservoirJeux.pm
+lib/gcstar/GCPlugins/GCboardgames/GCboardgamegeek.pm
+lib/gcstar/GCPlugins/GCboardgames/GCboardgamesCommon.pm
+lib/gcstar/GCPlugins/GCboardgames/GCtrictrac.pm
+lib/gcstar/GCPlugins/GCbooks/GCAdlibrisFI.pm
+lib/gcstar/GCPlugins/GCbooks/GCAdlibrisSV.pm
+lib/gcstar/GCPlugins/GCbooks/GCAlapage.pm
+lib/gcstar/GCPlugins/GCbooks/GCAmazon.pm
+lib/gcstar/GCPlugins/GCbooks/GCAmazonDE.pm
+lib/gcstar/GCPlugins/GCbooks/GCAmazonFR.pm
+lib/gcstar/GCPlugins/GCbooks/GCAmazonUK.pm
+lib/gcstar/GCPlugins/GCbooks/GCBDGest.pm
+lib/gcstar/GCPlugins/GCbooks/GCBibliotekaNarodowa.pm
+lib/gcstar/GCPlugins/GCbooks/GCBokkilden.pm
+lib/gcstar/GCPlugins/GCbooks/GCBol.pm
+lib/gcstar/GCPlugins/GCbooks/GCCasadelibro.pm
+lib/gcstar/GCPlugins/GCbooks/GCFnac.pm
+lib/gcstar/GCPlugins/GCbooks/GCFnacPT.pm
+lib/gcstar/GCPlugins/GCbooks/GCInternetBokHandeln.pm
+lib/gcstar/GCPlugins/GCbooks/GCInternetBookShop.pm
+lib/gcstar/GCPlugins/GCbooks/GCMareno.pm
+lib/gcstar/GCPlugins/GCbooks/GCMediabooks.pm
+lib/gcstar/GCPlugins/GCbooks/GCMerlin.pm
+lib/gcstar/GCPlugins/GCbooks/GCNUKat.pm
+lib/gcstar/GCPlugins/GCbooks/GCbooksAdlibrisCommon.pm
+lib/gcstar/GCPlugins/GCbooks/GCbooksAmazonCommon.pm
+lib/gcstar/GCPlugins/GCbooks/GCbooksCommon.pm
+lib/gcstar/GCPlugins/GCfilms/GCAlapage.pm
+lib/gcstar/GCPlugins/GCfilms/GCAllmovie.pm
+lib/gcstar/GCPlugins/GCfilms/GCAllocine.pm
+lib/gcstar/GCPlugins/GCfilms/GCAmazon.pm
+lib/gcstar/GCPlugins/GCfilms/GCAmazonDE.pm
+lib/gcstar/GCPlugins/GCfilms/GCAmazonFR.pm
+lib/gcstar/GCPlugins/GCfilms/GCAniDB.pm
+lib/gcstar/GCPlugins/GCfilms/GCAnimator.pm
+lib/gcstar/GCPlugins/GCfilms/GCAnimeNfoA.pm
+lib/gcstar/GCPlugins/GCfilms/GCAnimeka.pm
+lib/gcstar/GCPlugins/GCfilms/GCBeyazPerde.pm
+lib/gcstar/GCPlugins/GCfilms/GCCinemaClock.pm
+lib/gcstar/GCPlugins/GCfilms/GCCinemotions.pm
+lib/gcstar/GCPlugins/GCfilms/GCCsfd.pm
+lib/gcstar/GCPlugins/GCfilms/GCCulturalia.pm
+lib/gcstar/GCPlugins/GCfilms/GCDVDFr.pm
+lib/gcstar/GCPlugins/GCfilms/GCDVDPost.pm
+lib/gcstar/GCPlugins/GCfilms/GCDVDSpot.pm
+lib/gcstar/GCPlugins/GCfilms/GCDicshop.pm
+lib/gcstar/GCPlugins/GCfilms/GCFilmAffinityEN.pm
+lib/gcstar/GCPlugins/GCfilms/GCFilmAffinityES.pm
+lib/gcstar/GCPlugins/GCfilms/GCFilmUP.pm
+lib/gcstar/GCPlugins/GCfilms/GCFilmWeb.pm
+lib/gcstar/GCPlugins/GCfilms/GCImdb.pm
+lib/gcstar/GCPlugins/GCfilms/GCMediadis.pm
+lib/gcstar/GCPlugins/GCfilms/GCMonsieurCinema.pm
+lib/gcstar/GCPlugins/GCfilms/GCMovieClubFR.pm
+lib/gcstar/GCPlugins/GCfilms/GCMovieClubNL.pm
+lib/gcstar/GCPlugins/GCfilms/GCMovieMeter.pm
+lib/gcstar/GCPlugins/GCfilms/GCMoviecovers.pm
+lib/gcstar/GCPlugins/GCfilms/GCNasheKino.pm
+lib/gcstar/GCPlugins/GCfilms/GCOFDb.pm
+lib/gcstar/GCPlugins/GCfilms/GCOdeonHU.pm
+lib/gcstar/GCPlugins/GCfilms/GCPortHU.pm
+lib/gcstar/GCPlugins/GCfilms/GCfilmsAmazonCommon.pm
+lib/gcstar/GCPlugins/GCfilms/GCfilmsCommon.pm
+lib/gcstar/GCPlugins/GCgames/GCAlapage.pm
+lib/gcstar/GCPlugins/GCgames/GCAmazon.pm
+lib/gcstar/GCPlugins/GCgames/GCAmazonDE.pm
+lib/gcstar/GCPlugins/GCgames/GCAmazonFR.pm
+lib/gcstar/GCPlugins/GCgames/GCAmazonUK.pm
+lib/gcstar/GCPlugins/GCgames/GCDicoDuNet.pm
+lib/gcstar/GCPlugins/GCgames/GCGameSpot.pm
+lib/gcstar/GCPlugins/GCgames/GCJeuxVideoCom.pm
+lib/gcstar/GCPlugins/GCgames/GCJeuxVideoFr.pm
+lib/gcstar/GCPlugins/GCgames/GCMobyGames.pm
+lib/gcstar/GCPlugins/GCgames/GCgamesAmazonCommon.pm
+lib/gcstar/GCPlugins/GCgames/GCgamesCommon.pm
+lib/gcstar/GCPlugins/GCmusics/GCMusicBrainz.pm
+lib/gcstar/GCPlugins/GCmusics/GCmusicsCommon.pm
+lib/gcstar/GCPlugins/GCstar/GCAmazonCommon.pm
+lib/gcstar/GCSplash.pm
+lib/gcstar/GCStyle.pm
+lib/gcstar/GCUpdater.pm
+lib/gcstar/GCUtils.pm
+%%DATADIR%%/LICENSE
+%%DATADIR%%/genres/EN.genres
+%%DATADIR%%/genres/ES.genres
+%%DATADIR%%/genres/FR.genres
+%%DATADIR%%/helpers/xdg-open
+%%DATADIR%%/html_models/GCbooks/FloFred
+%%DATADIR%%/html_models/GCbooks/FloFred.png
+%%DATADIR%%/html_models/GCbooks/Shelf
+%%DATADIR%%/html_models/GCbooks/Shelf.png
+%%DATADIR%%/html_models/GCbooks/Simple
+%%DATADIR%%/html_models/GCbooks/Simple.png
+%%DATADIR%%/html_models/GCcoins/Simple
+%%DATADIR%%/html_models/GCcoins/Simple.png
+%%DATADIR%%/html_models/GCfilms/Flat
+%%DATADIR%%/html_models/GCfilms/Flat.png
+%%DATADIR%%/html_models/GCfilms/Shelf
+%%DATADIR%%/html_models/GCfilms/Shelf.png
+%%DATADIR%%/html_models/GCfilms/Simple
+%%DATADIR%%/html_models/GCfilms/Simple.png
+%%DATADIR%%/html_models/GCfilms/Tabs
+%%DATADIR%%/html_models/GCfilms/Tabs.png
+%%DATADIR%%/html_models/GCfilms/Tian
+%%DATADIR%%/html_models/GCfilms/Tian-Mario
+%%DATADIR%%/html_models/GCfilms/Tian-Mario.png
+%%DATADIR%%/html_models/GCfilms/Tian.png
+%%DATADIR%%/html_models/GCfilms/rootII_design
+%%DATADIR%%/html_models/GCfilms/rootII_design.png
+%%DATADIR%%/html_models/GCgames/Flat
+%%DATADIR%%/html_models/GCgames/Flat.png
+%%DATADIR%%/html_models/GCgames/Simple
+%%DATADIR%%/html_models/GCgames/Simple.png
+%%DATADIR%%/html_models/GCgames/Tabs
+%%DATADIR%%/html_models/GCgames/Tabs.png
+%%DATADIR%%/html_models/GCmusics/Shelf
+%%DATADIR%%/html_models/GCmusics/Shelf.png
+%%DATADIR%%/html_models/GCmusics/Simple
+%%DATADIR%%/html_models/GCmusics/Simple.png
+%%DATADIR%%/html_models/GCstar/Shelf
+%%DATADIR%%/html_models/GCstar/Shelf.png
+%%DATADIR%%/html_models/GCstar/Simple
+%%DATADIR%%/html_models/GCstar/Simple.png
+%%DATADIR%%/icons/GCstar.ico
+%%DATADIR%%/icons/gcstar_16x16.png
+%%DATADIR%%/icons/gcstar_24x24.png
+%%DATADIR%%/icons/gcstar_32x32.png
+%%DATADIR%%/icons/gcstar_48x48.png
+%%DATADIR%%/icons/gcstar_64x64.png
+%%DATADIR%%/icons/icon_install.ico
+%%DATADIR%%/icons/web.ico
+%%DATADIR%%/list_bg/Box/list_bg.png
+%%DATADIR%%/list_bg/Dark_Glass/list_bg.png
+%%DATADIR%%/list_bg/Dark_Glass/list_fg.png
+%%DATADIR%%/list_bg/Glass/list_bg.png
+%%DATADIR%%/list_bg/Glass/list_fg.png
+%%DATADIR%%/list_bg/Marble/list_bg.png
+%%DATADIR%%/list_bg/Wood/list_bg.png
+%%DATADIR%%/list_bg/Wood2/list_bg.png
+%%DATADIR%%/logos/Peri.png
+%%DATADIR%%/logos/Peri_main_logo.png
+%%DATADIR%%/logos/Peri_main_logo.svg
+%%DATADIR%%/logos/about.png
+%%DATADIR%%/logos/button.png
+%%DATADIR%%/logos/cd_no.png
+%%DATADIR%%/logos/find.png
+%%DATADIR%%/logos/install.png
+%%DATADIR%%/logos/no.png
+%%DATADIR%%/logos/periscope_main_logo.svg
+%%DATADIR%%/logos/splash.png
+%%DATADIR%%/overlays/cd.png
+%%DATADIR%%/overlays/dvd.png
+%%DATADIR%%/overlays/favourite_large.png
+%%DATADIR%%/overlays/favourite_med.png
+%%DATADIR%%/overlays/favourite_small.png
+%%DATADIR%%/overlays/favourite_verysmall.png
+%%DATADIR%%/overlays/favourite_xlarge.png
+%%DATADIR%%/overlays/lend_large.png
+%%DATADIR%%/overlays/lend_med.png
+%%DATADIR%%/overlays/lend_small.png
+%%DATADIR%%/overlays/lend_verysmall.png
+%%DATADIR%%/overlays/lend_xlarge.png
+%%DATADIR%%/overlays/subtle.png
+%%DATADIR%%/panels/Classic
+%%DATADIR%%/panels/Dark
+%%DATADIR%%/panels/WebSite
+%%DATADIR%%/schemas/gcm.xsd
+%%DATADIR%%/style/GCstar/gtkrc
+%%DATADIR%%/style/GCstar/icons/about/16x16.png
+%%DATADIR%%/style/GCstar/icons/about/64x64.png
+%%DATADIR%%/style/GCstar/icons/add/16x16.png
+%%DATADIR%%/style/GCstar/icons/add/24x24.png
+%%DATADIR%%/style/GCstar/icons/add/32x32.png
+%%DATADIR%%/style/GCstar/icons/cancel/24x24.png
+%%DATADIR%%/style/GCstar/icons/cancel/32x32.png
+%%DATADIR%%/style/GCstar/icons/clear/24x24.png
+%%DATADIR%%/style/GCstar/icons/clear/32x32.png
+%%DATADIR%%/style/GCstar/icons/convert/16x16.png
+%%DATADIR%%/style/GCstar/icons/convert/24x24.png
+%%DATADIR%%/style/GCstar/icons/convert/32x32.png
+%%DATADIR%%/style/GCstar/icons/delete/16x16.png
+%%DATADIR%%/style/GCstar/icons/delete/24x24.png
+%%DATADIR%%/style/GCstar/icons/delete/32x32.png
+%%DATADIR%%/style/GCstar/icons/directory/32x32.png
+%%DATADIR%%/style/GCstar/icons/dnd/16x16.png
+%%DATADIR%%/style/GCstar/icons/error/64x64.png
+%%DATADIR%%/style/GCstar/icons/execute/16x16.png
+%%DATADIR%%/style/GCstar/icons/execute/24x24.png
+%%DATADIR%%/style/GCstar/icons/execute/32x32.png
+%%DATADIR%%/style/GCstar/icons/find/16x16.png
+%%DATADIR%%/style/GCstar/icons/find/24x24.png
+%%DATADIR%%/style/GCstar/icons/find/32x32.png
+%%DATADIR%%/style/GCstar/icons/go-back/16x16.png
+%%DATADIR%%/style/GCstar/icons/go-back/24x24.png
+%%DATADIR%%/style/GCstar/icons/go-down/16x16.png
+%%DATADIR%%/style/GCstar/icons/go-down/24x24.png
+%%DATADIR%%/style/GCstar/icons/go-forward/16x16.png
+%%DATADIR%%/style/GCstar/icons/go-forward/24x24.png
+%%DATADIR%%/style/GCstar/icons/go-up/16x16.png
+%%DATADIR%%/style/GCstar/icons/go-up/24x24.png
+%%DATADIR%%/style/GCstar/icons/help/16x16.png
+%%DATADIR%%/style/GCstar/icons/help/32x32.png
+%%DATADIR%%/style/GCstar/icons/help/64x64.png
+%%DATADIR%%/style/GCstar/icons/home/32x32.png
+%%DATADIR%%/style/GCstar/icons/jump-to/24x24.png
+%%DATADIR%%/style/GCstar/icons/jump-to/32x32.png
+%%DATADIR%%/style/GCstar/icons/media-next/24x24.png
+%%DATADIR%%/style/GCstar/icons/media-next/32x32.png
+%%DATADIR%%/style/GCstar/icons/media-play/16x16.png
+%%DATADIR%%/style/GCstar/icons/media-play/24x24.png
+%%DATADIR%%/style/GCstar/icons/media-play/32x32.png
+%%DATADIR%%/style/GCstar/icons/network/32x32.png
+%%DATADIR%%/style/GCstar/icons/new/16x16.png
+%%DATADIR%%/style/GCstar/icons/new/24x24.png
+%%DATADIR%%/style/GCstar/icons/new/32x32.png
+%%DATADIR%%/style/GCstar/icons/ok/24x24.png
+%%DATADIR%%/style/GCstar/icons/ok/32x32.png
+%%DATADIR%%/style/GCstar/icons/open/16x16.png
+%%DATADIR%%/style/GCstar/icons/open/24x24.png
+%%DATADIR%%/style/GCstar/icons/open/32x32.png
+%%DATADIR%%/style/GCstar/icons/preferences/16x16.png
+%%DATADIR%%/style/GCstar/icons/preferences/24x24.png
+%%DATADIR%%/style/GCstar/icons/preferences/32x32.png
+%%DATADIR%%/style/GCstar/icons/properties/24x24.png
+%%DATADIR%%/style/GCstar/icons/properties/32x32.png
+%%DATADIR%%/style/GCstar/icons/quit/16x16.png
+%%DATADIR%%/style/GCstar/icons/quit/32x32.png
+%%DATADIR%%/style/GCstar/icons/refresh/16x16.png
+%%DATADIR%%/style/GCstar/icons/refresh/24x24.png
+%%DATADIR%%/style/GCstar/icons/refresh/32x32.png
+%%DATADIR%%/style/GCstar/icons/remove/24x24.png
+%%DATADIR%%/style/GCstar/icons/remove/32x32.png
+%%DATADIR%%/style/GCstar/icons/revert-to-saved/16x16.png
+%%DATADIR%%/style/GCstar/icons/revert-to-saved/24x24.png
+%%DATADIR%%/style/GCstar/icons/revert-to-saved/32x32.png
+%%DATADIR%%/style/GCstar/icons/save-as/16x16.png
+%%DATADIR%%/style/GCstar/icons/save-as/24x24.png
+%%DATADIR%%/style/GCstar/icons/save-as/32x32.png
+%%DATADIR%%/style/GCstar/icons/save/16x16.png
+%%DATADIR%%/style/GCstar/icons/save/24x24.png
+%%DATADIR%%/style/GCstar/icons/save/32x32.png
+%%DATADIR%%/style/GCstar/icons/select-color/32x32.png
+%%DATADIR%%/style/GCstar/lend.png
+%%DATADIR%%/style/Gtk/gtkrc
+%%DATADIR%%/style/Gtk/lend.png
+%%DATADIR%%/style/kde/active.png
+%%DATADIR%%/style/kde/active2.png
+%%DATADIR%%/style/kde/add.png
+%%DATADIR%%/style/kde/arrowdown.png
+%%DATADIR%%/style/kde/arrowleft.png
+%%DATADIR%%/style/kde/arrowright.png
+%%DATADIR%%/style/kde/arrowup.png
+%%DATADIR%%/style/kde/bghonrizontalscroll.png
+%%DATADIR%%/style/kde/bgverticalscroll.png
+%%DATADIR%%/style/kde/box.png
+%%DATADIR%%/style/kde/box2.png
+%%DATADIR%%/style/kde/box3.png
+%%DATADIR%%/style/kde/cancel.png
+%%DATADIR%%/style/kde/cdrom.png
+%%DATADIR%%/style/kde/checked.png
+%%DATADIR%%/style/kde/clear.png
+%%DATADIR%%/style/kde/delete.png
+%%DATADIR%%/style/kde/display.png
+%%DATADIR%%/style/kde/exec.png
+%%DATADIR%%/style/kde/export.png
+%%DATADIR%%/style/kde/find.png
+%%DATADIR%%/style/kde/gtkrc
+%%DATADIR%%/style/kde/gtkrcold
+%%DATADIR%%/style/kde/harddisk.png
+%%DATADIR%%/style/kde/help.png
+%%DATADIR%%/style/kde/home.png
+%%DATADIR%%/style/kde/horizontal.png
+%%DATADIR%%/style/kde/horizontal_hover.png
+%%DATADIR%%/style/kde/import.png
+%%DATADIR%%/style/kde/internet.png
+%%DATADIR%%/style/kde/khelpcenter.png
+%%DATADIR%%/style/kde/lend.png
+%%DATADIR%%/style/kde/new.png
+%%DATADIR%%/style/kde/ok.png
+%%DATADIR%%/style/kde/open.png
+%%DATADIR%%/style/kde/paths.png
+%%DATADIR%%/style/kde/preferences.png
+%%DATADIR%%/style/kde/properties.png
+%%DATADIR%%/style/kde/quit.png
+%%DATADIR%%/style/kde/radiochecked.png
+%%DATADIR%%/style/kde/radiounchecked.png
+%%DATADIR%%/style/kde/refresh.png
+%%DATADIR%%/style/kde/remove.png
+%%DATADIR%%/style/kde/save.png
+%%DATADIR%%/style/kde/saveas.png
+%%DATADIR%%/style/kde/sortdown.png
+%%DATADIR%%/style/kde/sortup.png
+%%DATADIR%%/style/kde/spindown.png
+%%DATADIR%%/style/kde/spinup.png
+%%DATADIR%%/style/kde/tab_corner.png
+%%DATADIR%%/style/kde/tonight.png
+%%DATADIR%%/style/kde/unchecked.png
+%%DATADIR%%/style/kde/vertical.png
+%%DATADIR%%/style/kde/vertical_hover.png
+%%DATADIR%%/xml_models/GCfilms/Ant_Movie_Catalog
+%%DATADIR%%/xml_models/GCfilms/DVDProfiler
+%%DATADIR%%/xslt/applyXSLT.pl
+%%DATADIR%%/xslt/createGCSValidator.xsl
+@dirrm %%DATADIR%%/xslt
+@dirrm %%DATADIR%%/xml_models/GCfilms
+@dirrm %%DATADIR%%/xml_models
+@dirrm %%DATADIR%%/style/kde
+@dirrm %%DATADIR%%/style/Gtk
+@dirrm %%DATADIR%%/style/GCstar/icons/select-color
+@dirrm %%DATADIR%%/style/GCstar/icons/save-as
+@dirrm %%DATADIR%%/style/GCstar/icons/save
+@dirrm %%DATADIR%%/style/GCstar/icons/revert-to-saved
+@dirrm %%DATADIR%%/style/GCstar/icons/remove
+@dirrm %%DATADIR%%/style/GCstar/icons/refresh
+@dirrm %%DATADIR%%/style/GCstar/icons/quit
+@dirrm %%DATADIR%%/style/GCstar/icons/properties
+@dirrm %%DATADIR%%/style/GCstar/icons/preferences
+@dirrm %%DATADIR%%/style/GCstar/icons/open
+@dirrm %%DATADIR%%/style/GCstar/icons/ok
+@dirrm %%DATADIR%%/style/GCstar/icons/new
+@dirrm %%DATADIR%%/style/GCstar/icons/network
+@dirrm %%DATADIR%%/style/GCstar/icons/media-play
+@dirrm %%DATADIR%%/style/GCstar/icons/media-next
+@dirrm %%DATADIR%%/style/GCstar/icons/jump-to
+@dirrm %%DATADIR%%/style/GCstar/icons/home
+@dirrm %%DATADIR%%/style/GCstar/icons/help
+@dirrm %%DATADIR%%/style/GCstar/icons/go-up
+@dirrm %%DATADIR%%/style/GCstar/icons/go-forward
+@dirrm %%DATADIR%%/style/GCstar/icons/go-down
+@dirrm %%DATADIR%%/style/GCstar/icons/go-back
+@dirrm %%DATADIR%%/style/GCstar/icons/find
+@dirrm %%DATADIR%%/style/GCstar/icons/execute
+@dirrm %%DATADIR%%/style/GCstar/icons/error
+@dirrm %%DATADIR%%/style/GCstar/icons/dnd
+@dirrm %%DATADIR%%/style/GCstar/icons/directory
+@dirrm %%DATADIR%%/style/GCstar/icons/delete
+@dirrm %%DATADIR%%/style/GCstar/icons/convert
+@dirrm %%DATADIR%%/style/GCstar/icons/clear
+@dirrm %%DATADIR%%/style/GCstar/icons/cancel
+@dirrm %%DATADIR%%/style/GCstar/icons/add
+@dirrm %%DATADIR%%/style/GCstar/icons/about
+@dirrm %%DATADIR%%/style/GCstar/icons
+@dirrm %%DATADIR%%/style/GCstar
+@dirrm %%DATADIR%%/style
+@dirrm %%DATADIR%%/schemas
+@dirrm %%DATADIR%%/panels
+@dirrm %%DATADIR%%/overlays
+@dirrm %%DATADIR%%/logos
+@dirrm %%DATADIR%%/list_bg/Wood2
+@dirrm %%DATADIR%%/list_bg/Wood
+@dirrm %%DATADIR%%/list_bg/Marble
+@dirrm %%DATADIR%%/list_bg/Glass
+@dirrm %%DATADIR%%/list_bg/Dark_Glass
+@dirrm %%DATADIR%%/list_bg/Box
+@dirrm %%DATADIR%%/list_bg
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/html_models/GCstar
+@dirrm %%DATADIR%%/html_models/GCmusics
+@dirrm %%DATADIR%%/html_models/GCgames
+@dirrm %%DATADIR%%/html_models/GCfilms
+@dirrm %%DATADIR%%/html_models/GCcoins
+@dirrm %%DATADIR%%/html_models/GCbooks
+@dirrm %%DATADIR%%/html_models
+@dirrm %%DATADIR%%/helpers
+@dirrm %%DATADIR%%/genres
+@dirrm %%DATADIR%%
+@dirrm lib/gcstar/GCPlugins/GCstar
+@dirrm lib/gcstar/GCPlugins/GCmusics
+@dirrm lib/gcstar/GCPlugins/GCgames
+@dirrm lib/gcstar/GCPlugins/GCfilms
+@dirrm lib/gcstar/GCPlugins/GCbooks
+@dirrm lib/gcstar/GCPlugins/GCboardgames
+@dirrm lib/gcstar/GCPlugins
+@dirrm lib/gcstar/GCModels
+@dirrm lib/gcstar/GCLang/TR/GCModels
+@dirrm lib/gcstar/GCLang/TR/GCImport
+@dirrm lib/gcstar/GCLang/TR/GCExport
+@dirrm lib/gcstar/GCLang/TR
+@dirrm lib/gcstar/GCLang/SV/GCModels
+@dirrm lib/gcstar/GCLang/SV/GCImport
+@dirrm lib/gcstar/GCLang/SV/GCExport
+@dirrm lib/gcstar/GCLang/SV
+@dirrm lib/gcstar/GCLang/SR/GCModels
+@dirrm lib/gcstar/GCLang/SR/GCImport
+@dirrm lib/gcstar/GCLang/SR/GCExport
+@dirrm lib/gcstar/GCLang/SR
+@dirrm lib/gcstar/GCLang/RU/GCModels
+@dirrm lib/gcstar/GCLang/RU/GCImport
+@dirrm lib/gcstar/GCLang/RU/GCExport
+@dirrm lib/gcstar/GCLang/RU
+@dirrm lib/gcstar/GCLang/RO/GCModels
+@dirrm lib/gcstar/GCLang/RO/GCImport
+@dirrm lib/gcstar/GCLang/RO/GCExport
+@dirrm lib/gcstar/GCLang/RO
+@dirrm lib/gcstar/GCLang/PT/GCModels
+@dirrm lib/gcstar/GCLang/PT/GCImport
+@dirrm lib/gcstar/GCLang/PT/GCExport
+@dirrm lib/gcstar/GCLang/PT
+@dirrm lib/gcstar/GCLang/PL/GCModels
+@dirrm lib/gcstar/GCLang/PL/GCImport
+@dirrm lib/gcstar/GCLang/PL/GCExport
+@dirrm lib/gcstar/GCLang/PL
+@dirrm lib/gcstar/GCLang/IT/GCModels
+@dirrm lib/gcstar/GCLang/IT/GCImport
+@dirrm lib/gcstar/GCLang/IT/GCExport
+@dirrm lib/gcstar/GCLang/IT
+@dirrm lib/gcstar/GCLang/ID/GCModels
+@dirrm lib/gcstar/GCLang/ID/GCImport
+@dirrm lib/gcstar/GCLang/ID/GCExport
+@dirrm lib/gcstar/GCLang/ID
+@dirrm lib/gcstar/GCLang/FR/GCModels
+@dirrm lib/gcstar/GCLang/FR/GCImport
+@dirrm lib/gcstar/GCLang/FR/GCExport
+@dirrm lib/gcstar/GCLang/FR
+@dirrm lib/gcstar/GCLang/ES/GCModels
+@dirrm lib/gcstar/GCLang/ES/GCImport
+@dirrm lib/gcstar/GCLang/ES/GCExport
+@dirrm lib/gcstar/GCLang/ES
+@dirrm lib/gcstar/GCLang/EN/GCModels
+@dirrm lib/gcstar/GCLang/EN/GCImport
+@dirrm lib/gcstar/GCLang/EN/GCExport
+@dirrm lib/gcstar/GCLang/EN
+@dirrm lib/gcstar/GCLang/DE/GCModels
+@dirrm lib/gcstar/GCLang/DE/GCImport
+@dirrm lib/gcstar/GCLang/DE/GCExport
+@dirrm lib/gcstar/GCLang/DE
+@dirrm lib/gcstar/GCLang/CS/GCModels
+@dirrm lib/gcstar/GCLang/CS/GCImport
+@dirrm lib/gcstar/GCLang/CS/GCExport
+@dirrm lib/gcstar/GCLang/CS
+@dirrm lib/gcstar/GCLang/CA/GCModels
+@dirrm lib/gcstar/GCLang/CA/GCImport
+@dirrm lib/gcstar/GCLang/CA/GCExport
+@dirrm lib/gcstar/GCLang/CA
+@dirrm lib/gcstar/GCLang/BG/GCModels
+@dirrm lib/gcstar/GCLang/BG/GCImport
+@dirrm lib/gcstar/GCLang/BG/GCExport
+@dirrm lib/gcstar/GCLang/BG
+@dirrm lib/gcstar/GCLang/AR/GCModels
+@dirrm lib/gcstar/GCLang/AR/GCImport
+@dirrm lib/gcstar/GCLang/AR/GCExport
+@dirrm lib/gcstar/GCLang/AR
+@dirrm lib/gcstar/GCLang
+@dirrm lib/gcstar/GCImport
+@dirrm lib/gcstar/GCExtract
+@dirrm lib/gcstar/GCExport
+@dirrm lib/gcstar/GCBackend
+@dirrm lib/gcstar
