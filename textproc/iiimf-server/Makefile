@@ -20,7 +20,7 @@ LIB_DEPENDS=	iiimp.1:${PORTSDIR}/textproc/iiimf-protocol-lib
 
 ONLY_FOR_ARCHS=	i386
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	iiimd.sh
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -35,10 +35,6 @@ BUILDDIR=	${WRKSRC}/iiimsf
 
 .if ${OSVERSION} < 503000
 IGNORE=	is supported on FreeBSD 5.3 and later only
-.endif
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .if defined(WITH_DEBUG)
