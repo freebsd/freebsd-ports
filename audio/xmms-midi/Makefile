@@ -6,10 +6,10 @@
 
 PORTNAME=	xmms-midi
 PORTVERSION=	0.03
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://dl.fkb.wormulon.net/xmms-midi/ \
-				http://dl.kel.wormulon.net/xmms-midi/
+		http://dl.kel.wormulon.net/xmms-midi/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin to play midi files
@@ -19,10 +19,16 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
+USE_AUTOTOOLS=	libtool:15
+USE_GMAKE=	yes
 
 PLIST_FILES=	lib/xmms/Input/libmid.a \
 		lib/xmms/Input/libmid.la \
 		lib/xmms/Input/libmid.so
+
+post-patch:
+	${REINPLACE_CMD} -e "s,/xmms/Input,/lib/xmms/Input,; \
+	s,_LDFLAGS =,_LDFLAGS = -module -export-dynamic -avoid-version," \
+	${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
