@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MDB_QueryTool
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
