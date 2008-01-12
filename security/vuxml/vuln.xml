@@ -34,6 +34,122 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4451a4c9-c05e-11dc-982e-001372fd0af2">
+    <topic>drupal -- cross site request forgery</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.6</lt></range>
+      </package>
+      <package>
+	<name>drupal4</name>
+	<range><lt>4.7.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/208562">
+	  <p>The aggregator module fetches items from RSS feeds and makes
+	    them available on the site. The module provides an option to
+	    remove items from a particular feed. This has been implemented
+	    as a simple GET request and is therefore vulnerable to cross
+	    site request forgeries. For example: Should a privileged user
+	    view a page containing an &lt;img&gt; tag with a specially
+	    constructed src pointing to a remove items URL, the items would
+	    be removed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/208562</url>
+      <url>http://secunia.com/advisories/28422/</url>
+    </references>
+    <dates>
+      <discovery>2008-01-10</discovery>
+      <entry>2008-01-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6f736456-c060-11dc-982e-001372fd0af2">
+    <topic>drupal -- cross site scripting (utf8)</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.6</lt></range>
+      </package>
+      <package>
+	<name>drupal4</name>
+	<range><lt>4.7.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/208564">
+	  <p>When outputting plaintext Drupal strips potentially dangerous
+	    HTML tags and attributes from HTML, and escapes characters which
+	    have a special meaning in HTML. This output filtering secures
+	    the site against cross site scripting attacks via user input.</p>
+	  <p>Certain byte sequences that are invalid in the UTF8
+	    specification are not handled properly by Internet Explorer 6
+	    and may lead it to see a multibyte start character where none is
+	    present. Internet Explorer 6 then consumes a number of
+	    subsequent UTF-8 characters. This may lead to unsafe attributes
+	    that were outside a tag for the filter to appear inside a tag
+	    for Internet Explorer 6. This behaviour can then be used to
+	    insert and execute javascript in the context of the website.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/208564</url>
+      <url>http://secunia.com/advisories/28422/</url>
+    </references>
+    <dates>
+      <discovery>2008-01-10</discovery>
+      <entry>2008-01-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f0fa19dd-c060-11dc-982e-001372fd0af2">
+    <topic>drupal -- cross site scripting (register_globals)</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.6</lt></range>
+      </package>
+      <package>
+	<name>drupal4</name>
+	<range><lt>4.7.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/208565">
+	  <p>When theme .tpl.php files are accessible via the web and the PHP
+	    setting register_globals is set to enabled, anonymous users are
+	    able to execute cross site scripting attacks via specially
+	    crafted links.</p>
+	  <p>Drupal's .htaccess attempts to set register_globals to disabled
+	    and also prevents access to .tpl.php files. Only when both these
+	    measures are not effective and your PHP interpreter is
+	    configured with register_globals set to enabled, will this issue
+	    affect you.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/208565</url>
+      <url>http://secunia.com/advisories/28422/</url>
+    </references>
+    <dates>
+      <discovery>2008-01-10</discovery>
+      <entry>2008-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f358de71-bf64-11dc-928b-0016179b2dd5">
     <topic>maradns -- CNAME record resource rotation denial of service</topic>
     <affects>
