@@ -75,7 +75,7 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.17
+PORTVERSION=	2.6.18
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -94,7 +94,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/Versions/v2/2.6/ \
 		http://www2.tw.squid-cache.org/Versions/v2/2.6/
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE17
+DISTNAME=	squid-2.6.STABLE18
 DIST_SUBDIR=	squid2.6
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -393,7 +393,8 @@ CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
 			CPPFLAGS="${CPPFLAGS}"\
-			LDFLAGS="${LDFLAGS}"
+			LDFLAGS="${LDFLAGS}" \
+			GREP="${GREP}"
 
 PLIST_DIRS=	etc/squid/icons libexec/squid
 PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,etc/squid/icons/,} \
