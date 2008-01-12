@@ -21,7 +21,7 @@ if pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
 	if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
 		echo "To delete the netdisco group permanently, use 'pw groupdel ${GROUP}'."
 	else
-		pw groupdel ${USER}
+		pw groupdel ${GROUP}
 	fi
 fi
 
