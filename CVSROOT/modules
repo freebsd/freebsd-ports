@@ -14077,6 +14077,7 @@ resin2		ports/www/resin2
 resin3		ports/www/resin3
 resourceext	ports/x11/resourceext
 resourceproto	ports/x11/resourceproto
+respond	ports/sysutils/respond
 resume		ports/textproc/resume
 resume-extensions	ports/textproc/resume-extensions
 retawq		ports/www/retawq
