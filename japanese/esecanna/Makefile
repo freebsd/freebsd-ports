@@ -7,7 +7,7 @@
 
 PORTNAME=	esecanna
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}
@@ -20,7 +20,7 @@ COMMENT=	Pseudo cannaserver which wraps some other input engines
 
 USE_RC_SUBR=	yes
 
-USE_AUTOTOOLS=	autoconf:213
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-piddir="${PIDDIR}"
 
