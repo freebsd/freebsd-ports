@@ -11554,6 +11554,7 @@ p5-XML-Canonical	ports/textproc/p5-XML-Canonical
 p5-XML-Catalog	ports/textproc/p5-XML-Catalog
 p5-XML-Clean	ports/textproc/p5-XML-Clean
 p5-XML-Compile	ports/textproc/p5-XML-Compile
+p5-XML-Compile-SOAP	ports/net/p5-XML-Compile-SOAP
 p5-XML-DBMS	ports/textproc/p5-XML-DBMS
 p5-XML-DOM	ports/textproc/p5-XML-DOM
 p5-XML-DOM-Lite	ports/textproc/p5-XML-DOM-Lite
