@@ -1,0 +1,36 @@
+# New ports collection makefile for:	p5-XML-Compile-SOAP
+# Date created:		2008-01-07
+# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	XML-Compile-SOAP
+PORTVERSION=	0.65
+CATEGORIES=	net
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+COMMENT=	Base-class for SOAP implementations
+
+RUN_DEPENDS=	p5-XML-Compile>=0.61:${PORTSDIR}/textproc/p5-XML-Compile \
+		p5-Log-Report>=0.11:${PORTSDIR}/devel/p5-Log-Report \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+BUILD_DEPENDS=	p5-XML-Compile>=0.61:${PORTSDIR}/textproc/p5-XML-Compile \
+		p5-Log-Report>=0.11:${PORTSDIR}/devel/p5-Log-Report \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+
+PERL_CONFIGURE=	yes
+
+MAN3=		XML::Compile::SOAP.3 \
+		XML::Compile::SOAP11.3 XML::Compile::SOAP11::Client.3 \
+		XML::Compile::SOAP11::Server.3 XML::Compile::SOAP12.3 \
+		XML::Compile::SOAP12::Client.3 XML::Compile::SOAP12::Server.3 \
+		XML::Compile::SOAP::Client.3 XML::Compile::SOAP::Encoding.3 \
+		XML::Compile::SOAP::Server.3 XML::Compile::SOAP::Tester.3 \
+		XML::Compile::SOAP::Util.3 XML::Compile::Transport.3 \
+		XML::Compile::Transport::SOAPHTTP.3 XML::Compile::WSDL11.3 \
+		XML::Compile::WSDL11::Operation.3
+
+.include <bsd.port.mk>
