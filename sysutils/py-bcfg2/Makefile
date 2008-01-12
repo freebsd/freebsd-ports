@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bcfg2
-PORTVERSION=	0.9.5.3
+PORTVERSION=	0.9.5.5
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/bcfg/ \
 		http://mirror.opensysadmin.com/bcfg/
@@ -21,6 +21,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gamin.py:${PORTSDIR}/devel/py-gamin
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	Bcfg2
 
 MAN1=	bcfg2.1
 MAN5=	bcfg2.conf.5
