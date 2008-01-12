@@ -1,0 +1,6 @@
+Respond listens on stdin or on a specified named pipe and matches
+each line it reads to the regular expressions it finds in the
+specified actionscript. If a line matches, respond executes a
+rewritten command defined in the actionscript.
+
+WWW:   http://respond.sf.net
