@@ -99,7 +99,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 .	if !defined(WITHOUT_X11)
-USE_XPM=	yes
+USE_XORG=	xpm
 .	endif
 
 CONFIGURE_ARGS+=--with-gd \
