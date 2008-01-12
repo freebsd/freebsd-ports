@@ -7,10 +7,10 @@ ICAP patchset.
 
 Please see icap-2.6-core.patch for further information.
 
-Patch last updated: 2007-11-26
+Patch last updated: 2008-01-11
 
---- configure.orig	Mon Nov 26 14:39:31 2007
-+++ configure	Mon Nov 26 19:46:14 2007
+--- configure.orig	Thu Jan 10 13:34:23 2008
++++ configure	Fri Jan 11 14:21:16 2008
 @@ -728,6 +728,8 @@
  ENABLE_PINGER_FALSE
  USE_DELAY_POOLS_TRUE
@@ -43,8 +43,8 @@ Patch last updated: 2007-11-26
  
  # Define the identity of the package.
   PACKAGE='squid'
-- VERSION='2.6.STABLE17'
-+ VERSION='2.6.STABLE17+ICAP'
+- VERSION='2.6.STABLE18'
++ VERSION='2.6.STABLE18+ICAP'
  
  
  cat >>confdefs.h <<_ACEOF
@@ -207,7 +207,7 @@ Patch last updated: 2007-11-26
  if test -z "${NEED_OWN_STRSEP_TRUE}" && test -z "${NEED_OWN_STRSEP_FALSE}"; then
    { { echo "$as_me:$LINENO: error: conditional \"NEED_OWN_STRSEP\" was never defined.
  Usually this means the macro was only invoked conditionally." >&5
-@@ -27707,6 +27838,8 @@
+@@ -27708,6 +27839,8 @@
  ENABLE_PINGER_FALSE!$ENABLE_PINGER_FALSE$ac_delim
  USE_DELAY_POOLS_TRUE!$USE_DELAY_POOLS_TRUE$ac_delim
  USE_DELAY_POOLS_FALSE!$USE_DELAY_POOLS_FALSE$ac_delim
@@ -216,7 +216,7 @@ Patch last updated: 2007-11-26
  USE_SNMP_TRUE!$USE_SNMP_TRUE$ac_delim
  USE_SNMP_FALSE!$USE_SNMP_FALSE$ac_delim
  SNMPLIB!$SNMPLIB$ac_delim
-@@ -27773,6 +27906,10 @@
+@@ -27774,6 +27907,10 @@
  USE_DEVPOLL_FALSE!$USE_DEVPOLL_FALSE$ac_delim
  NEED_OWN_SNPRINTF_TRUE!$NEED_OWN_SNPRINTF_TRUE$ac_delim
  NEED_OWN_SNPRINTF_FALSE!$NEED_OWN_SNPRINTF_FALSE$ac_delim
@@ -227,7 +227,7 @@ Patch last updated: 2007-11-26
  NEED_OWN_STRSEP_TRUE!$NEED_OWN_STRSEP_TRUE$ac_delim
  NEED_OWN_STRSEP_FALSE!$NEED_OWN_STRSEP_FALSE$ac_delim
  REGEXLIB!$REGEXLIB$ac_delim
-@@ -27783,7 +27920,7 @@
+@@ -27784,7 +27921,7 @@
  LTLIBOBJS!$LTLIBOBJS$ac_delim
  _ACEOF
  
