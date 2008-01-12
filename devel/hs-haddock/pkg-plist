@@ -1,4 +1,10 @@
 bin/haddock
+lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/Distribution/Haddock.hi
+lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/HShaddock-%%HADDOCK_VERSION%%.o
+lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/Haddock/Exception.hi
+lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/Haddock/InterfaceFile.hi
+lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/Haddock/Types.hi
+lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/libHShaddock-%%HADDOCK_VERSION%%.a
 share/doc/haddock-%%HADDOCK_VERSION%%/LICENSE
 share/haddock-%%HADDOCK_VERSION%%/html/haddock-DEBUG.css
 share/haddock-%%HADDOCK_VERSION%%/html/haddock-util.js
@@ -6,6 +12,12 @@ share/haddock-%%HADDOCK_VERSION%%/html/haddock.css
 share/haddock-%%HADDOCK_VERSION%%/html/haskell_icon.gif
 share/haddock-%%HADDOCK_VERSION%%/html/minus.gif
 share/haddock-%%HADDOCK_VERSION%%/html/plus.gif
+@dirrm lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/Haddock
+@dirrm lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/Distribution
+@dirrm lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%
+@dirrm lib/haddock-%%HADDOCK_VERSION%%
 @dirrm share/doc/haddock-%%HADDOCK_VERSION%%
 @dirrm share/haddock-%%HADDOCK_VERSION%%/html
 @dirrm share/haddock-%%HADDOCK_VERSION%%
+@exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
