@@ -101,6 +101,7 @@
     SUBDIR += freshmeat-submit
     SUBDIR += ftdi-eeprom
     SUBDIR += ftree
+    SUBDIR += gcstar
     SUBDIR += gctpc
     SUBDIR += geekcode
     SUBDIR += getopt
