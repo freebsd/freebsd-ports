@@ -1244,6 +1244,7 @@
     SUBDIR += trac-wikinotification
     SUBDIR += trac-wikirename
     SUBDIR += trac-wikitemplates
+    SUBDIR += trac-wysiwyg
     SUBDIR += trac-xmlrpc
     SUBDIR += transproxy
     SUBDIR += twhttpd
