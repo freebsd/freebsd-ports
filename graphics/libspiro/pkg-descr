@@ -1,0 +1,21 @@
+Spiro is the creation of Raph Levien. It simplifies the drawing of beautiful
+curves.
+
+Using bezier splines an artist can easily draw curves with the same slope on
+either side of an on-curve point. Spiros, on the other hand, are based on
+clothoid splines which make it easy to maintain constant curvature as well as
+constant slope. Such curves will simply look nicer.
+
+Raph Levien's spiro splines only use on-curve points and so are easier to use
+and more intuitive to the artist.
+
+This library will take an array of spiro control points and convert them into a
+series of bezier splines which can then be used in the myriad of ways the world
+has come to use beziers.
+
+(Above taken from Introduction on the library's website)
+
+WWW: http://libspiro.sourceforge.net/
+
+- Naram Qashat
+cyberbotx@cyberbotx.com
