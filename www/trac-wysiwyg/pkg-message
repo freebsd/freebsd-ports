@@ -1,0 +1,8 @@
+**************************************************
+To complete the installation, please add:
+
+[components]
+tracwysiwyg.* = enabled
+
+to your trac.ini to enable the WYSIWYG editor.
+**************************************************
