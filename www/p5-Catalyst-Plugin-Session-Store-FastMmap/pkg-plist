@@ -1,4 +1,10 @@
 %%SITE_PERL%%/Catalyst/Plugin/Session/Store/FastMmap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/Store/FastMmap/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/Store/FastMmap
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session/Store
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Session
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/Store
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
