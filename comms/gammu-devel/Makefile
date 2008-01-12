@@ -7,6 +7,7 @@
 
 PORTNAME=	gammu
 PORTVERSION=	1.17.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com/gammu/releases/
@@ -15,6 +16,7 @@ MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	GNU All Mobile Management Utilities
 
 BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
+RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 
 CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
@@ -32,6 +34,7 @@ PORTDOCS=	*
 do-configure:
 	@(cd ${WRKSRC}; \
 	${LOCALBASE}/bin/cmake ${CMAKE_ARGS})
+	@{REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
 
 .include <bsd.port.pre.mk>
 
