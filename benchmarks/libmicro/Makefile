@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libmicro
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://opensolaris.org/os/community/performance/libmicro/
+MASTER_SITES=	http://opensolaris.org/os/project/libmicro/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of utilities to benchmark productivity of system calls

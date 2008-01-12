@@ -28,10 +28,10 @@
  }
  
  	{ 
-@@ -128,7 +128,7 @@
+@@ -136,7 +136,7 @@
  				
  			for (j = 2; j < ARGC; j++) 
- 				printf("<td align=\"right\">%25s</td>\n", "not computed");
+ 				printf("<td>%s</td>\n", "not computed");
 -			continue;
 +			next;
  		}
