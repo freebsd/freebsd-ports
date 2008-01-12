@@ -748,6 +748,7 @@
     SUBDIR += pear-Spreadsheet_Excel_Writer
     SUBDIR += pear-Structures_DataGrid_DataSource_RSS
     SUBDIR += pear-Structures_DataGrid_DataSource_XML
+    SUBDIR += pear-Structures_DataGrid_Renderer_CSV
     SUBDIR += pear-Structures_DataGrid_Renderer_XLS
     SUBDIR += pear-Text_Highlighter
     SUBDIR += pear-XML_Beautifier
