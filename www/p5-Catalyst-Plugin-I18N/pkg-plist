@@ -1,7 +1,9 @@
+%%SITE_PERL%%/Catalyst/Plugin/I18N/Manual.pod
 %%SITE_PERL%%/Catalyst/Plugin/I18N.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/I18N/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/I18N
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/I18N
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/Catalyst
