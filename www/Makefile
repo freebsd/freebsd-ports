@@ -1017,6 +1017,7 @@
     SUBDIR += polipo
     SUBDIR += postnuke
     SUBDIR += pound
+    SUBDIR += prado
     SUBDIR += preferential
     SUBDIR += privoxy
     SUBDIR += privoxy+ipv6
