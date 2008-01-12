@@ -7,7 +7,7 @@
 
 PORTNAME=	esecanna-module-vje25
 PORTVERSION=	0.14.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}
@@ -19,7 +19,7 @@ COMMENT=	Esecanna module for VJE-Delta 2.5
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
-USE_AUTOTOOLS=	autoconf:213
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 DIST_SUBDIR=    esecanna

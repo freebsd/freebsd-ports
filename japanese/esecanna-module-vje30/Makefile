@@ -7,7 +7,7 @@
 
 PORTNAME=	esecanna-module-vje30
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}
@@ -20,7 +20,7 @@ COMMENT=	Esecanna module for VJE-Delta 3.0
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
 USE_PERL5=	yes
-USE_AUTOTOOLS=	autoconf:213
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 # VJE-Delta 3.0 is installed under /usr/local fixedly
 CONFIGURE_ARGS=	--with-vjecfgfile="/usr/local/etc/vje30/vje.cfg"
