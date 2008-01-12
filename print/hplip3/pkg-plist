@@ -179,6 +179,7 @@ share/applications/hplip.desktop
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/images/yast_printer_model.png
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/index.html
+%%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/installtree.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/install/index.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/configure.html
 %%PORTDOCS%%%%DOCSDIR%%-%%PORTVERSION%%/install/manual/distros/centos.html
@@ -317,6 +318,7 @@ share/foomatic/db/source/PPD/HP/HP_Color_LaserJet_CM1015.ppd.gz
 share/foomatic/db/source/PPD/HP/HP_Color_LaserJet_CM4730_MFP.ppd.gz
 share/foomatic/db/source/PPD/HP/HP_Color_LaserJet_CP3505.ppd.gz
 share/foomatic/db/source/PPD/HP/HP_Color_LaserJet_CP4005.ppd.gz
+share/foomatic/db/source/PPD/HP/HP_CM8050_CM8060_MFP.ppd.gz
 share/foomatic/db/source/PPD/HP/HP_LaserJet_1200.ppd.gz
 share/foomatic/db/source/PPD/HP/HP_LaserJet_1220.ppd.gz
 share/foomatic/db/source/PPD/HP/HP_LaserJet_1320_Series.ppd.gz
@@ -362,6 +364,7 @@ share/foomatic/db/source/PPD/HP/HP_LaserJet_9040.ppd.gz
 share/foomatic/db/source/PPD/HP/HP_LaserJet_9040_9050_MFP.ppd.gz
 share/foomatic/db/source/PPD/HP/HP_LaserJet_9050.ppd.gz
 share/foomatic/db/source/PPD/HP/HP_LaserJet_9055_9065_MFP.ppd.gz
+share/foomatic/db/source/PPD/HP/HP_LaserJet_M2727_MFP.ppd.gz
 share/foomatic/db/source/PPD/HP/HP_LaserJet_M3027_MFP.ppd.gz
 share/foomatic/db/source/PPD/HP/HP_LaserJet_M3035_MFP.ppd.gz
 share/foomatic/db/source/PPD/HP/HP_LaserJet_M4345_MFP.ppd.gz
@@ -655,6 +658,7 @@ share/foomatic/db/source/printer/HP-LaserJet_9050.xml
 share/foomatic/db/source/printer/HP-LaserJet_9050_MFP.xml
 share/foomatic/db/source/printer/HP-LaserJet_9055_MFP.xml
 share/foomatic/db/source/printer/HP-LaserJet_9065_MFP.xml
+share/foomatic/db/source/printer/HP-LaserJet_M2727.xml
 share/foomatic/db/source/printer/HP-LaserJet_M3027_MFP.xml
 share/foomatic/db/source/printer/HP-LaserJet_M3035_MFP.xml
 share/foomatic/db/source/printer/HP-LaserJet_M4345_MFP.xml
@@ -730,6 +734,7 @@ share/foomatic/db/source/printer/HP-OfficeJet_Pro_K5300.xml
 share/foomatic/db/source/printer/HP-OfficeJet_Pro_K5400.xml
 share/foomatic/db/source/printer/HP-OfficeJet_Pro_K550.xml
 share/foomatic/db/source/printer/HP-OfficeJet_Pro_K850.xml
+share/foomatic/db/source/printer/HP-OfficeJet_Pro_K8600.xml
 share/foomatic/db/source/printer/HP-OfficeJet_Pro_L7300.xml
 share/foomatic/db/source/printer/HP-OfficeJet_Pro_L7500.xml
 share/foomatic/db/source/printer/HP-OfficeJet_Pro_L7600.xml
@@ -814,6 +819,7 @@ share/foomatic/db/source/printer/HP-PhotoSmart_A820.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_C3100.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_C4100.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_C4200.xml
+share/foomatic/db/source/printer/HP-PhotoSmart_C4380.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_C5100.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_C5200.xml
 share/foomatic/db/source/printer/HP-PhotoSmart_C6100.xml
@@ -1042,6 +1048,7 @@ share/foomatic/db/source/printer/HP-e-printer_e20.xml
 %%DATADIR%%/data/images/hp_color_LaserJet_9500.png
 %%DATADIR%%/data/images/hp_deskjet_9300.png
 %%DATADIR%%/data/images/hp_laserjet_3050.png
+%%DATADIR%%/data/images/hp_laserjet_m2727_mfp.png
 %%DATADIR%%/data/images/hp_laserjet_p2015.png
 %%DATADIR%%/data/images/icon_align.png
 %%DATADIR%%/data/images/icon_battery.png
@@ -1080,6 +1087,8 @@ share/foomatic/db/source/printer/HP-e-printer_e20.xml
 %%DATADIR%%/data/images/officejet_500.png
 %%DATADIR%%/data/images/officejet_5500_series.png
 %%DATADIR%%/data/images/officejet_5600.png
+%%DATADIR%%/data/images/officejet_j3600_series.png
+%%DATADIR%%/data/images/officejet_j5500_series.png
 %%DATADIR%%/data/images/officejet_k550.png
 %%DATADIR%%/data/images/officejet_k80.png
 %%DATADIR%%/data/images/ok.png
@@ -1169,6 +1178,7 @@ share/foomatic/db/source/printer/HP-e-printer_e20.xml
 %%DATADIR%%/fax/__init__.py
 %%DATADIR%%/fax/coverpages.py
 %%DATADIR%%/fax/fax.py
+%%DATADIR%%/fax/pmlfax.py
 %%DATADIR%%/firmware.py
 %%DATADIR%%/hpaio.desc
 %%DATADIR%%/hplip-install
@@ -1540,6 +1550,7 @@ share/ppd/HP/HP-LaserJet_9050-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_9050_MFP-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_9055_MFP-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_9065_MFP-hpijs.ppd.gz
+share/ppd/HP/HP-LaserJet_M2727-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_M3027_MFP-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_M3035_MFP-hpijs.ppd.gz
 share/ppd/HP/HP-LaserJet_M4345_MFP-hpijs.ppd.gz
@@ -1615,6 +1626,7 @@ share/ppd/HP/HP-OfficeJet_Pro_K5300-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_Pro_K5400-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_Pro_K550-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_Pro_K850-hpijs.ppd.gz
+share/ppd/HP/HP-OfficeJet_Pro_K8600-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_Pro_L7300-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_Pro_L7500-hpijs.ppd.gz
 share/ppd/HP/HP-OfficeJet_Pro_L7600-hpijs.ppd.gz
@@ -1699,6 +1711,7 @@ share/ppd/HP/HP-PhotoSmart_A820-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_C3100-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_C4100-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_C4200-hpijs.ppd.gz
+share/ppd/HP/HP-PhotoSmart_C4380-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_C5100-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_C5200-hpijs.ppd.gz
 share/ppd/HP/HP-PhotoSmart_C6100-hpijs.ppd.gz
@@ -1730,6 +1743,7 @@ share/ppd/HP/HP_Business_Inkjet_2280.ppd.gz
 share/ppd/HP/HP_Business_Inkjet_2600.ppd.gz
 share/ppd/HP/HP_Business_Inkjet_2800.ppd.gz
 share/ppd/HP/HP_Business_Inkjet_3000.ppd.gz
+share/ppd/HP/HP_CM8050_CM8060_MFP.ppd.gz
 share/ppd/HP/HP_Color_LaserJet.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_2550.ppd.gz
 share/ppd/HP/HP_Color_LaserJet_2605.ppd.gz
@@ -1794,6 +1808,7 @@ share/ppd/HP/HP_LaserJet_9040.ppd.gz
 share/ppd/HP/HP_LaserJet_9040_9050_MFP.ppd.gz
 share/ppd/HP/HP_LaserJet_9050.ppd.gz
 share/ppd/HP/HP_LaserJet_9055_9065_MFP.ppd.gz
+share/ppd/HP/HP_LaserJet_M2727_MFP.ppd.gz
 share/ppd/HP/HP_LaserJet_M3027_MFP.ppd.gz
 share/ppd/HP/HP_LaserJet_M3035_MFP.ppd.gz
 share/ppd/HP/HP_LaserJet_M4345_MFP.ppd.gz

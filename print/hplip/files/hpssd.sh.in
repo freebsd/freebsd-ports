@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # PROVIDE: hpssd
-# REQUIRE: hpiod
 # BEFORE:  cupsd
 # KEYWORD: shutdown
 
