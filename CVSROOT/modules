@@ -9779,6 +9779,7 @@ p5-F77		ports/lang/p5-F77
 p5-FAQ-OMatic	ports/www/p5-FAQ-OMatic
 p5-FCGI-Async	ports/www/p5-FCGI-Async
 p5-FCGI-ProcManager	ports/www/p5-FCGI-ProcManager
+p5-FCGI-Spawn	ports/www/p5-FCGI-Spawn
 p5-FEAR-API	ports/www/p5-FEAR-API
 p5-FFmpeg-Command	ports/multimedia/p5-FFmpeg-Command
 p5-FLV-Info	ports/multimedia/p5-FLV-Info
