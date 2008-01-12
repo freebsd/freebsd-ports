@@ -7,7 +7,7 @@
 
 PORTNAME=	esecanna-module-wnn6
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}
@@ -20,7 +20,7 @@ COMMENT=	Esecanna module for Wnn6
 LIB_DEPENDS=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 RUN_DEPENDS=	${LOCALBASE}/sbin/esecannaserver:${PORTSDIR}/japanese/esecanna
 
-USE_AUTOTOOLS=	autoconf:213
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${PREFIX}/include/wnn6" \
 		LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
