@@ -565,6 +565,7 @@
     SUBDIR += relaxconf
     SUBDIR += rename
     SUBDIR += reoback
+    SUBDIR += respond
     SUBDIR += rfstool
     SUBDIR += rmonitor
     SUBDIR += roottail
