@@ -1,0 +1,52 @@
+# New ports collection makefile for:	apricots
+# Date created:		07 Jan 2008
+# Whom:			Dmitry Marakasov <amdmi3@amdmi3.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	apricots
+PORTVERSION=	0.2.6
+CATEGORIES=	games
+MASTER_SITES=	http://www.fishies.org.uk/ \
+		http://www.amdmi3.ru/distfiles/
+
+MAINTAINER=	amdmi3@amdmi3.ru
+COMMENT=	Fly a little plane around and shoot things and drop bombs
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_SDL=	sdl
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+
+PORTDOCS=	README
+
+OPTIONS=	OPENAL	"Enable OpenAL audio" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_OPENAL)
+LIB_DEPENDS+=	openal.0:${PORTSDIR}/audio/openal \
+		alut.1:${PORTSDIR}/audio/freealut
+.endif
+
+post-patch:
+.if defined(WITHOUT_OPENAL)
+	@${REINPLACE_CMD} -e 's|-DAP_AUDIO_OPENAL||' ${WRKSRC}/configure
+.else
+	@${REINPLACE_CMD} -e '/^LIBS = / s|$$| -lopenal -lalut|' \
+		${WRKSRC}/apricots/Makefile.in
+.endif
+	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
+
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>
