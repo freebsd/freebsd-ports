@@ -6806,6 +6806,7 @@ libspf-alt	ports/mail/libspf-alt
 libspf2		ports/mail/libspf2
 libspf2-10	ports/mail/libspf2-10
 libspiff	ports/multimedia/libspiff
+libspiro	ports/graphics/libspiro
 libsrs		ports/mail/libsrs
 libsrs2		ports/mail/libsrs2
 libsrs_alt	ports/mail/libsrs_alt
