@@ -462,6 +462,7 @@ appres		ports/x11/appres
 appwrapper	ports/deskutils/appwrapper
 apr		ports/devel/apr
 apr-svn		ports/devel/apr-svn
+apricots	ports/games/apricots
 apsfilter	ports/print/apsfilter
 apt		ports/sysutils/apt
 apwal		ports/x11/apwal
