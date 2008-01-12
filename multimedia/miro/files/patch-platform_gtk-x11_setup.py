@@ -1,5 +1,5 @@
---- platform/gtk-x11/setup.py.orig	2007-11-13 02:22:57.000000000 +0100
-+++ platform/gtk-x11/setup.py	2007-12-14 21:26:14.000000000 +0100
+--- platform/gtk-x11/setup.py.orig	2008-01-10 20:55:46.000000000 +0100
++++ platform/gtk-x11/setup.py	2008-01-11 21:26:05.000000000 +0100
 @@ -46,6 +46,7 @@
  ###############################################################################
  
@@ -25,8 +25,8 @@
 +        library_dirs = [BOOST_LIB_PATH],
      )
  
- #### MozillaBrowser Extension ####
-@@ -216,17 +221,17 @@
+ ##### The libtorrent extension ####
+@@ -219,17 +224,17 @@
      packages = getCommandOutput("pkg-config --list-all")
  except RuntimeError, error:
      sys.exit("Package config error:\n%s" % (error,))
@@ -49,18 +49,18 @@
 -    sys.exit("Can't find xulrunner-xpcom, mozilla-xpcom or firefox-xpcom")
 +    sys.exit("Can't find seamonkey-xpcom, mozilla-xpcom or firefox-xpcom")
  
- # build a miro script that wraps the miro.real script with an LD_LIBRARY_PATH
- # environment variable to pick up the xpcom we decided to use.
-@@ -334,7 +339,7 @@
-     data_files.append((dest_dir, listfiles(source_dir)))
- # add the desktop file, icons, mime data, and man page.
+ # do this so that it doesn't execute when doing python setup.py clean
+ if not "clean" in sys.argv:
+@@ -341,7 +346,7 @@
  
--rv = os.system ("gcc %s -o %s `pkg-config --libs --cflags gdk-pixbuf-2.0 glib-2.0 libxine`" % (os.path.join(platform_dir, "xine/xine_extractor.c"), os.path.join(platform_dir, "xine/xine_extractor")))
-+rv = os.system ("gcc %s -o %s `pkg-config --libs --cflags gdk-pixbuf-2.0 glib-2.0 libxine` %%PTHREAD_LIBS%%" % (os.path.join(platform_dir, "xine/xine_extractor.c"), os.path.join(platform_dir, "xine/xine_extractor")))
+ # do this so that it doesn't execute when doing python setup.py clean
+ if not "clean" in sys.argv:
+-    rv = os.system ("gcc %s -o %s `pkg-config --libs --cflags gdk-pixbuf-2.0 glib-2.0 libxine`" % (os.path.join(platform_dir, "xine/xine_extractor.c"), os.path.join(platform_dir, "xine/xine_extractor")))
++    rv = os.system ("gcc %s -o %s `pkg-config --libs --cflags gdk-pixbuf-2.0 glib-2.0 libxine` %%PTHREAD_LIBS%%" % (os.path.join(platform_dir, "xine/xine_extractor.c"), os.path.join(platform_dir, "xine/xine_extractor")))
  
- if rv != 0:
-     raise RuntimeError("xine_extractor compilation failed.  Possibly missing libxine, gdk-pixbuf-2.0, or glib-2.0.")
-@@ -342,11 +347,11 @@
+     if rv != 0:
+         raise RuntimeError("xine_extractor compilation failed.  Possibly missing libxine, gdk-pixbuf-2.0, or glib-2.0.")
+@@ -349,11 +354,11 @@
  data_files += [
      ('/usr/share/pixmaps', 
       glob(os.path.join(platform_dir, 'miro-*.png'))),
