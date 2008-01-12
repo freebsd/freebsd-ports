@@ -9,6 +9,7 @@ share/locale/cy/LC_MESSAGES/shared-mime-info.mo
 share/locale/da/LC_MESSAGES/shared-mime-info.mo
 share/locale/de/LC_MESSAGES/shared-mime-info.mo
 share/locale/el/LC_MESSAGES/shared-mime-info.mo
+share/locale/en_GB/LC_MESSAGES/shared-mime-info.mo
 share/locale/eo/LC_MESSAGES/shared-mime-info.mo
 share/locale/es/LC_MESSAGES/shared-mime-info.mo
 share/locale/eu/LC_MESSAGES/shared-mime-info.mo
@@ -36,6 +37,7 @@ share/locale/vi/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_CN/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_TW/LC_MESSAGES/shared-mime-info.mo
 share/mime/application/andrew-inset.xml
+share/mime/application/atom+xml.xml
 share/mime/application/dicom.xml
 share/mime/application/docbook+xml.xml
 share/mime/application/ecmascript.xml
@@ -60,6 +62,7 @@ share/mime/application/prs.plucker.xml
 share/mime/application/ram.xml
 share/mime/application/rss+xml.xml
 share/mime/application/rtf.xml
+share/mime/application/sdp.xml
 share/mime/application/sieve.xml
 share/mime/application/smil.xml
 share/mime/application/stuffit.xml
@@ -183,7 +186,6 @@ share/mime/application/x-gnumeric.xml
 share/mime/application/x-gnuplot.xml
 share/mime/application/x-go-sgf.xml
 share/mime/application/x-graphite.xml
-share/mime/application/x-gtar.xml
 share/mime/application/x-gtktalog.xml
 share/mime/application/x-gz-font-linux-psf.xml
 share/mime/application/x-gzdvi.xml
@@ -233,6 +235,7 @@ share/mime/application/x-n64-rom.xml
 share/mime/application/x-nautilus-link.xml
 share/mime/application/x-nes-rom.xml
 share/mime/application/x-netcdf.xml
+share/mime/application/x-netshow-channel.xml
 share/mime/application/x-nintendo-ds-rom.xml
 share/mime/application/x-object.xml
 share/mime/application/x-ole-storage.xml
@@ -255,6 +258,7 @@ share/mime/application/x-rar.xml
 share/mime/application/x-reject.xml
 share/mime/application/x-rpm.xml
 share/mime/application/x-ruby.xml
+share/mime/application/x-sami.xml
 share/mime/application/x-sc.xml
 share/mime/application/x-shar.xml
 share/mime/application/x-shared-library-la.xml
@@ -268,8 +272,8 @@ share/mime/application/x-sms-rom.xml
 share/mime/application/x-snes-rom.xml
 share/mime/application/x-sqlite2.xml
 share/mime/application/x-sqlite3.xml
-share/mime/application/x-srt.xml
 share/mime/application/x-stuffit.xml
+share/mime/application/x-subrip.xml
 share/mime/application/x-sv4cpio.xml
 share/mime/application/x-sv4crc.xml
 share/mime/application/x-t602.xml
@@ -318,6 +322,7 @@ share/mime/audio/x-flac+ogg.xml
 share/mime/audio/x-flac.xml
 share/mime/audio/x-iriver-pla.xml
 share/mime/audio/x-it.xml
+share/mime/audio/x-m4b.xml
 share/mime/audio/x-matroska.xml
 share/mime/audio/x-minipsf.xml
 share/mime/audio/x-mod.xml
@@ -350,8 +355,8 @@ share/mime/image/fax-g3.xml
 share/mime/image/g3fax.xml
 share/mime/image/gif.xml
 share/mime/image/ief.xml
+share/mime/image/jp2.xml
 share/mime/image/jpeg.xml
-share/mime/image/jpeg2000.xml
 share/mime/image/png.xml
 share/mime/image/rle.xml
 share/mime/image/svg+xml.xml
@@ -405,6 +410,7 @@ share/mime/image/x-portable-bitmap.xml
 share/mime/image/x-portable-graymap.xml
 share/mime/image/x-portable-pixmap.xml
 share/mime/image/x-psd.xml
+share/mime/image/x-quicktime.xml
 share/mime/image/x-rgb.xml
 share/mime/image/x-sgi.xml
 share/mime/image/x-sigma-x3f.xml
@@ -502,11 +508,14 @@ share/mime/text/x-log.xml
 share/mime/text/x-lua.xml
 share/mime/text/x-makefile.xml
 share/mime/text/x-matlab.xml
+share/mime/text/x-microdvd.xml
 share/mime/text/x-moc.xml
+share/mime/text/x-mpsub.xml
 share/mime/text/x-mup.xml
 share/mime/text/x-objcsrc.xml
 share/mime/text/x-ocaml.xml
 share/mime/text/x-ocl.xml
+share/mime/text/x-opml+xml.xml
 share/mime/text/x-pascal.xml
 share/mime/text/x-patch.xml
 share/mime/text/x-python.xml
@@ -516,6 +525,7 @@ share/mime/text/x-scheme.xml
 share/mime/text/x-setext.xml
 share/mime/text/x-speech.xml
 share/mime/text/x-sql.xml
+share/mime/text/x-ssa.xml
 share/mime/text/x-tcl.xml
 share/mime/text/x-tex.xml
 share/mime/text/x-texinfo.xml
@@ -525,6 +535,7 @@ share/mime/text/x-troff-ms.xml
 share/mime/text/x-txt2tags.xml
 share/mime/text/x-uil.xml
 share/mime/text/x-uri.xml
+share/mime/text/x-vala.xml
 share/mime/text/x-vhdl.xml
 share/mime/text/x-xmi.xml
 share/mime/text/x-xslfo.xml
