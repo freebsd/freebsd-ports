@@ -199,6 +199,7 @@
     SUBDIR += taskstep
     SUBDIR += teapot
     SUBDIR += tel
+    SUBDIR += thinkingrock
     SUBDIR += timer-applet
     SUBDIR += todo
     SUBDIR += tomboy

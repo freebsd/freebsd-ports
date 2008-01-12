@@ -1,0 +1,8 @@
+--- bin/thinkingrock.orig	Wed Jan  2 12:29:07 2008
++++ bin/thinkingrock	Wed Jan  2 12:29:15 2008
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ #
+ # resolve symlinks
