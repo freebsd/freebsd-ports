@@ -3526,6 +3526,7 @@ gconf2		ports/devel/gconf2
 gconf2-reference	ports/devel/gconf2-reference
 gconfmm		ports/devel/gconfmm
 gconfmm26	ports/devel/gconfmm26
+gcstar		ports/misc/gcstar
 gctpc		ports/misc/gctpc
 gcube		ports/emulators/gcube
 gcursor		ports/x11/gcursor
