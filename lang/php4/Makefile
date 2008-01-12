@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.4.7
-PORTREVISION?=	2
+PORTVERSION=	4.4.8
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -58,7 +58,7 @@ PATCH_DIST_STRIP=	-p1
 
 .if !defined(WITHOUT_SUHOSIN)
 PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.6.patch.gz:suhosin
-PATCH_SITES+=	http://www.hardened-php.net/suhosin/_media/:suhosin
+PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
 PLIST_SUB+=	SUHOSIN="@comment "
