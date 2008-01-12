@@ -206,6 +206,7 @@
     SUBDIR += streamanalyze
     SUBDIR += streamdvd
     SUBDIR += subconv
+    SUBDIR += subtitlecomposer
     SUBDIR += subtitleeditor
     SUBDIR += subtitleripper
     SUBDIR += subtools
