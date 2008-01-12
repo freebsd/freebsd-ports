@@ -530,6 +530,7 @@
     SUBDIR += oonsoo
     SUBDIR += openarena
     SUBDIR += openastromenace
+    SUBDIR += opencity
     SUBDIR += openglad
     SUBDIR += openmortal
     SUBDIR += openttd
