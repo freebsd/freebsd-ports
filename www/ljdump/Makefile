@@ -7,7 +7,7 @@
 
 PORTNAME=	ljdump
 PORTVERSION=	1.2
-CATEGORIES=	www
+CATEGORIES=	www python
 MASTER_SITES=	http://hewgill.com/software/ljdump/ \
 		http://freebsd.nsu.ru/distfiles/
 
