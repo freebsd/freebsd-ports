@@ -1,0 +1,17 @@
+bin/connect-tunnel
+bin/sslh
+%%SITE_PERL%%/Net/Proxy.pm
+%%SITE_PERL%%/Net/Proxy/Connector.pm
+%%SITE_PERL%%/Net/Proxy/Connector/connect.pm
+%%SITE_PERL%%/Net/Proxy/Connector/connect_ssl.pm
+%%SITE_PERL%%/Net/Proxy/Connector/dual.pm
+%%SITE_PERL%%/Net/Proxy/Connector/dummy.pm
+%%SITE_PERL%%/Net/Proxy/Connector/ssl.pm
+%%SITE_PERL%%/Net/Proxy/Connector/tcp.pm
+%%SITE_PERL%%/Net/Proxy/Tutorial.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Proxy/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Proxy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/Net/Proxy/Connector
+@dirrm %%SITE_PERL%%/Net/Proxy
+@dirrmtry %%SITE_PERL%%/Net
