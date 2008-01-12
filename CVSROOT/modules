@@ -8620,6 +8620,7 @@ openbsm		ports/security/openbsm
 opencascade	ports/cad/opencascade
 opencascade-tutorial	ports/cad/opencascade-tutorial
 opencdk		ports/security/opencdk
+opencity	ports/games/opencity
 openclipart	ports/graphics/openclipart
 openct		ports/security/openct
 opencv		ports/graphics/opencv
