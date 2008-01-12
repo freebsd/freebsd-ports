@@ -1,0 +1,18 @@
+World of Padman (WoP) is an open source first-person shooter computer game
+available in both English and German. Originally it was a modification for the
+game Quake III Arena titled PadMod created in the year 2004. After the source
+code for Quake III Arena was released, the game became standalone. The idea is
+based on the Padman comic strip for the magazine PlayStation Games created by
+the professional cartoon artist Andreas 'ENTE' Endres, who is also the man who
+made many of the maps included with the game in 1998. The current version runs
+on an enhanced version of the ioquake3 engine, which is based on the Quake III
+Arena engine. Most of the maps in the game are lilliput style, and have a
+commercial-quality level of graphic complexity. Because it was originally a
+mod for Quake III Arena, most of the gameplay is similar. However, there is no
+Capture the Flag mode in World of Padman. World of Padman fully supports bots
+with a variety of skill levels in both online and offline play for all of the
+game types included. A single-player mode has not yet been implemented.
+Players can also record audio and video as they play. The game fully supports
+modifications, and custom maps can be created.
+
+WWW:	http://www.worldofpadman.com/
