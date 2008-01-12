@@ -30,6 +30,7 @@ include/fltk/compat/FL/Fl_Menu_Button.H
 include/fltk/compat/FL/Fl_Menu_Item.H
 include/fltk/compat/FL/Fl_Output.H
 include/fltk/compat/FL/Fl_Overlay_Window.H
+include/fltk/compat/FL/Fl_Pack.H
 include/fltk/compat/FL/Fl_Pixmap.H
 include/fltk/compat/FL/Fl_Return_Button.H
 include/fltk/compat/FL/Fl_Roller.H
