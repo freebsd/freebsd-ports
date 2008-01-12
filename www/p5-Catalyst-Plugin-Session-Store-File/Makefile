@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session-Store-File
-PORTVERSION=	0.10
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/E/ES/ESSKAR
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
@@ -23,7 +22,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-Data-Inheritable>=0.04:${PORTSDIR}/devel/p5-Class-Data-Inheritable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Catalyst::Plugin::Session::Store::File.3
 
