@@ -1,0 +1,20 @@
+Despite the name, it has nothing to do with apricots. It's a game
+where you fly a little plane around the screen and shoot things and
+drop bombs on enemy targets, and it's meant to be quick and fun.
+
+There can be up to 6 planes, at most two human-controlled. All
+others will be computer-controlled. Network support is in to do
+list.
+
+You must shoot at another's planes, destroy others' base and try
+to keep alive. You may return to your base to refill your ammo. The
+scenery is randomly generated.
+
+Currently the game has no menus. You run it, play it, and it exits
+at end. To fix this is also in to do list.
+
+Please take a look at apricots.cfg file. You will found some good
+options there. (currently this is the only way of changing game
+options)
+
+WWW: http://www.fishies.org.uk/apricots.html
