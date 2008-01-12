@@ -1217,6 +1217,7 @@
     SUBDIR += trac-calendar
     SUBDIR += trac-codetags
     SUBDIR += trac-ctxtnavadd
+    SUBDIR += trac-customfieldadmin
     SUBDIR += trac-down
     SUBDIR += trac-email2trac
     SUBDIR += trac-gantt
