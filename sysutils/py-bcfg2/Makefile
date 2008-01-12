@@ -7,6 +7,7 @@
 
 PORTNAME=	bcfg2
 PORTVERSION=	0.9.5.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/bcfg/ \
 		http://mirror.opensysadmin.com/bcfg/
@@ -23,6 +24,9 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Bcfg2
 
+USE_RC_SUBR=	bcfg2
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
+
 MAN1=	bcfg2.1
 MAN5=	bcfg2.conf.5
 MAN8=	bcfg2-admin.8 bcfg2-build-reports.8 bcfg2-repo-validate.8 \
@@ -32,6 +36,9 @@ PORTDOCS=	AUTHORS COPYRIGHT ChangeLog README
 
 post-patch:
 	    @${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/setup.py
+.for f in bcfg2 bcfg2-admin bcfg2-build-reports bcfg2-info bcfg2-repo-validate bcfg2-server bcfg2-ping-sweep bcfg2-query bcfg2-remote
+	@${REINPLACE_CMD} -i '' -e 's|/etc/bcfg2.conf|${PREFIX}/etc/bcfg2.conf|g' ${WRKSRC}/src/sbin/$f
+.endfor
 
 .if !defined(NOPORTDOCS)
 post-install:
