@@ -12035,6 +12035,7 @@ pear-Structures_DataGrid_DataSource_MDB2	ports/databases/pear-Structures_DataGri
 pear-Structures_DataGrid_DataSource_PDO	ports/databases/pear-Structures_DataGrid_DataSource_PDO
 pear-Structures_DataGrid_DataSource_RSS	ports/textproc/pear-Structures_DataGrid_DataSource_RSS
 pear-Structures_DataGrid_DataSource_XML	ports/textproc/pear-Structures_DataGrid_DataSource_XML
+pear-Structures_DataGrid_Renderer_XLS	ports/textproc/pear-Structures_DataGrid_Renderer_XLS
 pear-System_Command	ports/devel/pear-System_Command
 pear-Testing_Selenium	ports/devel/pear-Testing_Selenium
 pear-Text_Diff	ports/devel/pear-Text_Diff
