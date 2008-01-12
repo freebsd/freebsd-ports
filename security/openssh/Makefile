@@ -22,6 +22,9 @@ PATCHFILES=	openbsd28_${PORTVERSION}.patch
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenBSD's secure shell client and server (remote login program)
 
+DEPRECATED=	Long out of date with multiple security issues.
+EXPIRATION_DATE=	2008-02-11
+
 CONFLICTS?=	openssh-portable-* openssh-gssapi-* ssh-1.* ssh2-3.*
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/ssh
