@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	homard
-DISTVERSION=	8.7-1
+DISTVERSION=	8.11-1
 DISTVERSIONSUFFIX=	.${ARCH}
-CATEGORIES=	french cad linux python
-MASTER_SITES=	http://www.code-aster.org/FICHIERS/
+CATEGORIES=	french cad linux
+MASTER_SITES=	http://www.code-aster.org/V2/IMG/gz/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A refinement and de-refinement mesh tool
@@ -31,7 +31,7 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 LHOMARDDIR?=	apps/${PORTNAME}
-ASTER_VER=	9.1
+ASTER_VER=	9.2
 vaster=		STA${ASTER_VER}
 ASTER_TOOLS=	${LOCALBASE}/aster/${vaster}/outils
 HOMARDDIR=	${PREFIX}/${LHOMARDDIR}
@@ -44,8 +44,8 @@ HOMARDPG=	${PORTNAME:U}_V${PORTVERSION:R}.out
 HOMARDWDIR=	${PORTNAME:U}
 
 DIR2RM=		sfr_mix_2d_zzzz121d_d1 qua_2d_24x36_d2 mix_qua_tri_d1_equ		\
-		med_3d_tet_tri_d2_man med_3d_cube_d2 med_2d_carre_d1 med_2d_6xtri_d2	\
-		sfr_2d_rugby_d2 hex_d2
+		med_3d_tet_tri_d2_man med_2d_carre_d1 med_2d_6xtri_d2 sfr_2d_rugby_d2	\
+		hex_d2 sau_qua_tri_d1
 
 DOCS=		A_Lire.txt Readme.txt
 
@@ -54,29 +54,32 @@ PLIST_SUB=	HOMARDDIR=${LHOMARDDIR} AHPY=${LHOMARDDIR}/${AHPY}			\
 		UNAMES=${OPSYS} HOMARDPG=${HOMARDPG} ASTER_TOOLS=${ASTER_TOOLS}
 
 pre-configure:
-	@${REINPLACE_CMD} -e "s#/logiciels/HOMARD/HOMARD_PUBLIC#${PREFIX}/bin#"		\
+	${REINPLACE_CMD} -e "s#/logiciels/HOMARD/HOMARD_PUBLIC#${PREFIX}/bin#"		\
 		${WRKSRC}/${HOMARDWDIR}/${HOMARDSCRIPT}
 
 do-install:
-	@${MKDIR} ${HOMARDDIR}
-	@${MKDIR} ${PREFIX}/bin/${OPSYS}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${HOMARDWDIR}/${HOMARDPG} ${PREFIX}/bin/${OPSYS}
-	@${BRANDELF} -t Linux ${PREFIX}/bin/${OPSYS}/${HOMARDPG}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${HOMARDWDIR}/${HOMARDSCRIPT} ${HOMARDDIR}/${PORTNAME}
-	@${CP} -R ${WRKSRC}/${HOMARDWDIR}/ASTER_HOMARD/${AHPY} ${HOMARDDIR}
-	@${CP} -R ${WRKSRC}/${HOMARDWDIR}/ASTER_HOMARD/${AHPY5} ${HOMARDDIR}
-	@${CP} -R ${WRKSRC}/${HOMARDWDIR}/ASTER_HOMARD/${AHPY6} ${HOMARDDIR}
+	${MKDIR} ${HOMARDDIR}
+	${MKDIR} ${PREFIX}/bin/${OPSYS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${HOMARDWDIR}/${HOMARDPG} ${PREFIX}/bin/${OPSYS}
+	${BRANDELF} -t Linux ${PREFIX}/bin/${OPSYS}/${HOMARDPG}
+	${INSTALL_SCRIPT} ${WRKSRC}/${HOMARDWDIR}/${HOMARDSCRIPT} ${HOMARDDIR}/${PORTNAME}
+	${CP} -R ${WRKSRC}/${HOMARDWDIR}/ASTER_HOMARD/${AHPY} ${HOMARDDIR}
+	${CP} -R ${WRKSRC}/${HOMARDWDIR}/ASTER_HOMARD/${AHPY5} ${HOMARDDIR}
+	${CP} -R ${WRKSRC}/${HOMARDWDIR}/ASTER_HOMARD/${AHPY6} ${HOMARDDIR}
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${HOMARDDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${HOMARDDIR}
-	@${LN} -fs ${HOMARDDIR}/homard ${ASTER_TOOLS}/
-	@${LN} -fs ${HOMARDDIR}/aster_homard_py ${ASTER_TOOLS}/
+	${LN} -fs ${HOMARDDIR}/homard ${ASTER_TOOLS}/
+	${LN} -fs ${HOMARDDIR}/aster_homard_py ${ASTER_TOOLS}/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 	@${CP} -R ${WRKSRC}/${HOMARDWDIR}/Intranet ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
 	@${CP} -R ${WRKSRC}/${HOMARDWDIR}/CAS_TESTS/* ${EXAMPLESDIR}
 	@${TOUCH} ${DIR2RM:S|^|${EXAMPLESDIR}/|:S|$|/resultats/.keepme|}
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
