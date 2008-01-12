@@ -1,6 +1,7 @@
-<?xml version="1.0"?> 
+<?xml version="1.0"?>
+<!-- Ant build description file for the FreeBSD port, not official -->
 <project name="thisTest" default="compile" basedir=".">
-     <property name="src" value="${basedir}/src/dev"/>
+     <property name="src" value="${basedir}/src"/>
      <property name="build" value="build"/>
 
      <target name="init">
