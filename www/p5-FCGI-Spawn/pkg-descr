@@ -1,0 +1,10 @@
+FCGI::Spawn is used to serve as a FastCGI process manager. Besides
+the features the FCGI::ProcManager posess itself, the FCGI::Spawn
+is targeted as web server admin understandable instance for building
+the own fastcgi server with copy-on-write memory sharing among forks
+and with single input parameters like socket path and processes number.
+Another thing to mention is that it is able to execute any file pointed
+by Web server. So we have the daemon that is hot ready for hosting
+providing.
+
+WWW:	http://search.cpan.org/dist/FCGI-ProcManager/

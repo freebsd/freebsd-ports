@@ -699,6 +699,7 @@
     SUBDIR += p5-FAQ-OMatic
     SUBDIR += p5-FCGI-Async
     SUBDIR += p5-FCGI-ProcManager
+    SUBDIR += p5-FCGI-Spawn
     SUBDIR += p5-FEAR-API
     SUBDIR += p5-FastCGI
     SUBDIR += p5-FastCGI-ProcManager
