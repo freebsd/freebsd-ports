@@ -30,6 +30,7 @@ lib/libproj.so.5
 %%DATADIR%%/nad83
 %%DATADIR%%/ntv1_can.dat
 %%DATADIR%%/null
+%%DATADIR%%/nzgd2kgrid0005.gsb
 %%DATADIR%%/other.extra
 %%DATADIR%%/proj_def.dat
 %%DATADIR%%/prvi
