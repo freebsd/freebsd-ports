@@ -196,6 +196,9 @@
 %%SERV%%%%ASTKDIR%%/lib/as_config.py
 %%SERV%%%%ASTKDIR%%/lib/as_config.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_config.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_devtools.py
+%%SERV%%%%ASTKDIR%%/lib/as_devtools.pyc
+%%SERV%%%%ASTKDIR%%/lib/as_devtools.pyo
 %%SERV%%%%ASTKDIR%%/lib/as_etude.py
 %%SERV%%%%ASTKDIR%%/lib/as_etude.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_etude.pyo
@@ -220,6 +223,7 @@
 %%SERV%%%%ASTKDIR%%/lib/as_rex.py
 %%SERV%%%%ASTKDIR%%/lib/as_rex.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_rex.pyo
+%%SERV%%%%ASTKDIR%%/lib/as_run.extensions
 %%SERV%%%%ASTKDIR%%/lib/as_run.py
 %%SERV%%%%ASTKDIR%%/lib/as_run.pyc
 %%SERV%%%%ASTKDIR%%/lib/as_run.pyo
@@ -249,6 +253,9 @@
 %%SERV%%%%ASTKDIR%%/lib/progress.py
 %%SERV%%%%ASTKDIR%%/lib/progress.pyc
 %%SERV%%%%ASTKDIR%%/lib/progress.pyo
+%%SERV%%%%ASTKDIR%%/lib/sample_extension.py
+%%SERV%%%%ASTKDIR%%/lib/sample_extension.pyc
+%%SERV%%%%ASTKDIR%%/lib/sample_extension.pyo
 %%SERV%%%%ASTKDIR%%/lib/schema.py
 %%SERV%%%%ASTKDIR%%/lib/schema.pyc
 %%SERV%%%%ASTKDIR%%/lib/schema.pyo
