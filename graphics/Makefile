@@ -381,6 +381,7 @@
     SUBDIR += libqrencode
     SUBDIR += librsvg
     SUBDIR += librsvg2
+    SUBDIR += libspiro
     SUBDIR += libsvg
     SUBDIR += libsvg-cairo
     SUBDIR += libungif
