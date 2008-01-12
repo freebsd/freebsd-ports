@@ -39,7 +39,8 @@ general-patch:
 	@${REINPLACE_CMD} -e 's|@SUBDIRS = . sample.*|@SUBDIRS = .|g' \
 		${WRKSRC}/third-party/libevent/Makefile.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(OPENSSL_CFLAGS)||g ; s|$$(OPENSSL_LIBS)||g'
+		's|$$(OPENSSL_CFLAGS)||g ; s|$$(OPENSSL_LIBS)||g ; \
+		s|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
 
 post-patch: general-patch
 
