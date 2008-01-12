@@ -750,6 +750,7 @@
     SUBDIR += pear-Structures_DataGrid_DataSource_XML
     SUBDIR += pear-Structures_DataGrid_Renderer_CSV
     SUBDIR += pear-Structures_DataGrid_Renderer_XLS
+    SUBDIR += pear-Structures_DataGrid_Renderer_XML
     SUBDIR += pear-Text_Highlighter
     SUBDIR += pear-XML_Beautifier
     SUBDIR += pear-XML_DTD
