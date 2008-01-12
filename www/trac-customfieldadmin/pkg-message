@@ -1,0 +1,9 @@
+**************************************************
+To complete the installation, please add:
+
+[components]
+customfieldadmin.* = enabled
+
+to your trac.ini to enable the ticket custom field
+administrator.
+**************************************************
