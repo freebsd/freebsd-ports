@@ -1,0 +1,5 @@
+%%SITE_PERL%%/FCGI/Spawn.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Spawn/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Spawn
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI
+@dirrmtry %%SITE_PERL%%/FCGI
