@@ -7,7 +7,7 @@
 
 PORTNAME=	BitchX
 PORTVERSION=	1.0c16
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	korean irc
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/
 
@@ -22,7 +22,7 @@ COMMENT=	An alternative ircII color client support patched for korean
 
 WRKSRC=		${WRKDIR}/BitchX
 
-USE_AUTOTOOLS=	autoconf:213
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--without-plugins \
 		--exec-prefix="${PREFIX}/share"	\
@@ -44,6 +44,9 @@ CONFIGURE_ARGS+=--without-gtk
 USE_ESOUND=	yes
 CONFIGURE_ARGS+=--enable-sound
 .endif
+
+post-patch:
+	${TOUCH} ${WRKSRC}/configure
 
 post-install:
 	@(${LN} -sf ${PREFIX}/bin/BitchX ${PREFIX}/bin/bx)
