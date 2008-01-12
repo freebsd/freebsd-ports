@@ -12038,6 +12038,7 @@ pear-Structures_DataGrid_DataSource_RSS	ports/textproc/pear-Structures_DataGrid_
 pear-Structures_DataGrid_DataSource_XML	ports/textproc/pear-Structures_DataGrid_DataSource_XML
 pear-Structures_DataGrid_Renderer_CSV	ports/textproc/pear-Structures_DataGrid_Renderer_CSV
 pear-Structures_DataGrid_Renderer_XLS	ports/textproc/pear-Structures_DataGrid_Renderer_XLS
+pear-Structures_DataGrid_Renderer_XML	ports/textproc/pear-Structures_DataGrid_Renderer_XML
 pear-System_Command	ports/devel/pear-System_Command
 pear-Testing_Selenium	ports/devel/pear-Testing_Selenium
 pear-Text_Diff	ports/devel/pear-Text_Diff
