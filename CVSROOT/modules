@@ -16802,6 +16802,7 @@ worker		ports/x11-fm/worker
 workman		ports/audio/workman
 workplace	ports/x11-fm/workplace
 workrave	ports/x11/workrave
+worldofpadman	ports/games/worldofpadman
 worldtools	ports/sysutils/worldtools
 wormux		ports/games/wormux
 wormux-devel	ports/games/wormux-devel
