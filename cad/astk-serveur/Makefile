@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	astk
-DISTVERSION=	1.5.2-1
+DISTVERSIONPREFIX=	full-src-
+DISTVERSION=	1.5.5-1
 DISTVERSIONSUFFIX=	.noarch
 CATEGORIES=	cad
-MASTER_SITES=	http://www.code-aster.org/FICHIERS/
+MASTER_SITES=	http://www.code-aster.org/V2/IMG/gz/
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
 .else
 PKGNAMESUFFIX=	-client
 .endif
+DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Graphical interface for Code_Aster (server side)
@@ -37,12 +39,15 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
 
+ASTER_DISTVERSION=	${ASTER_VER}-2
+EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION:S/-/./:R}/SRC
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 LINSTDIR=	aster/ASTK
 inst_dir=	${PREFIX}/${LINSTDIR}
 aster_dir=	${LOCALBASE}/aster/${vaster}
 S_SCRIPTS=	bin/as_exec bin/as_run bin/as_serv bin/as_exec_special lib/sub_script
-S_PYLIBS=	alamain.py as_timer.py
+S_PYLIBS=	alamain.py as_config.py as_timer.py as_devtools.py user_filter.py
 C_SCRIPTS=	bin/astk bin/bsf
 tools_dir=	${aster_dir}/outils
 conf_dir=	${WRKSRC}/lib/ASTK/astkrc
@@ -80,7 +85,7 @@ TCL_VER?=	${TK_VER}
 SHORT_TK_VER=	${TK_VER:S/.//}
 BWidget_VER=	1.7.0
 
-ASTER_VER=	9.1.0
+ASTER_VER=	9.2.0
 vaster=		STA${ASTER_VER:R}
 
 GIBI=		gibi2003
@@ -115,9 +120,17 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/emacs:${PORTSDIR}/editors/emacs
 . elif exists(${LOCALBASE}/bin/xemacs)
 WITH_ED=	xemacs
 RUN_DEPENDS+=	${LOCALBASE}/bin/xemacs:${PORTSDIR}/editors/xemacs
-. else
+. elif exists(${LOCALBASE}/bin/gedit)
+WITH_ED=	gedit
+RUN_DEPENDS+=	${LOCALBASE}/bin/gedit:${PORTSDIR}/editors/gedit
+. elif exists(${LOCALBASE}/bin/kwrite)
+WITH_ED=	kwrite
+RUN_DEPENDS+=	${X11BASE}/bin/kwrite:${PORTSDIR}/x11/kdebase3
+. elif exists(${LOCALBASE}/bin/xedit)
 WITH_ED=	xedit
-RUN_DEPENDS+=	${X11BASE}/bin/xedit:${X_CLIENTS_PORT}
+RUN_DEPENDS+=	${X11BASE}/bin/xedit:${PORTSDIR}/x11/xedit
+. else
+WITH_ED=	vi
 . endif
 .endif
 
@@ -141,23 +154,27 @@ ASTK_LANG=	FR
 ASTK_LANG=	ENG
 .endif
 
+post-extract:
+	(cd ${WRKDIR} &&	\
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKSRC}/${PORTNAME}-${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
+
 pre-configure:
 	${RM} ${PATCH2RM:C|^|${WRKSRC}/|:C|$|.orig|}
 
 do-configure:
 .if !defined(CLIENT_SEUL)
 . if ${SHIA} == "zsh"
-	@${REINPLACE_CMD} -e 's|#set -o SH_WORD_SPLIT|set -o SH_WORD_SPLIT|'	\
+	${REINPLACE_CMD} -e 's|#set -o SH_WORD_SPLIT|set -o SH_WORD_SPLIT|'	\
 		${WRKSRC}/bin/as_serv
 . endif
-	@${REINPLACE_CMD} -e 's#?PYTHON_EXE?#${PYTHON_CMD}#'			\
+	${REINPLACE_CMD} -e 's#?PYTHON_EXE?#${PYTHON_CMD}#'			\
 		-e 's#?MAXCMDLEN?#16384#' ${WRKSRC}/bin/as_run
 . for scripts in ${S_SCRIPTS}
-	@${REINPLACE_CMD} -e "s#?SHELL_EXECUTION?#${SHELL_INSTALL_ASTER}#"	\
+	${REINPLACE_CMD} -e "s#?SHELL_EXECUTION?#${SHELL_INSTALL_ASTER}#"	\
 	-e "s#?ASTER_ROOT?#${PREFIX}/aster#;s#?HOME_ASTK?#${inst_dir}#"		\
 		${WRKSRC}/${scripts}
 . endfor
-	@${REINPLACE_CMD} -e "s#?IFDEF?#${v_ifdef}#g"				\
+	${REINPLACE_CMD} -e "s#?IFDEF?#${v_ifdef}#g"				\
 	-e "s#?ASTER_ROOT?#${LOCALBASE}/aster#g"				\
 	-e "s#?EDITOR?#${WITH_ED}#g"						\
 	-e "s#?NODE?#${HOST_NAME}#"						\
@@ -166,41 +183,42 @@ do-configure:
 	-e "s#LOCALBASE#${LOCALBASE}#"						\
 	-e "s#%%v_ifdef%%#${v_ifdef}#" ${WRKSRC}/conf/config
 .for libs in ${S_PYLIBS}
-	@${REINPLACE_CMD} -e "s#/opt/aster/NEW8#${aster_dir}#"			\
+	${REINPLACE_CMD} -e "s#/opt/aster/NEW9#${aster_dir}#"			\
+		-e "s#/opt/aster#${aster_dir}#"					\
 		-e "s#/opt/aster/ASTK#${inst_dir}#" ${WRKSRC}/lib/${libs}
 . endfor
 . if defined(WITH_PBS)
-	@${REINPLACE_CMD} -e "s|batch : non|batch : oui|"			\
+	${REINPLACE_CMD} -e "s|batch : non|batch : oui|"			\
 		${WRKSRC}/conf/config
 . endif
-	@${REINPLACE_CMD} -e 's|?HOME_PYTHON?|${PYTHONBASE}|'			\
+	${REINPLACE_CMD} -e 's|?HOME_PYTHON?|${PYTHONBASE}|'			\
 		-e 's|?ASTER_ROOT?|${aster_dir}|'				\
 		-e 's|?HOME_MED?|${LOCALBASE}|'					\
 		-e 's|?HOME_HDF?|${LOCALBASE}|' ${WRKSRC}/conf/aster_profile.sh
 .else
 # CLIENT_SEUL
 . for scripts in ${C_SCRIPTS}
-	@${REINPLACE_CMD} -e "s#?SHELL_EXECUTION?#${SHELL_INSTALL_ASTER}#"	\
+	${REINPLACE_CMD} -e "s#?SHELL_EXECUTION?#${SHELL_INSTALL_ASTER}#"	\
 	-e "s#?HOME_ASTK?#${inst_dir}#;s#?ASTER_ROOT?#${PREFIX}/aster#"		\
 	-e "s#?WISH_EXE?#wish${TK_VER}#" ${WRKSRC}/${scripts}
 . endfor
-	@${REINPLACE_CMD} -e "s#GIBI#${GIBI}#"					\
+	${REINPLACE_CMD} -e "s#GIBI#${GIBI}#"					\
 		-e "s#?vaster?#${vaster}#"					\
 		-e "s#?TOOLS_DIR?#${tools_dir}#" ${conf_dir}/outils
-	@${REINPLACE_CMD} -e "s#?HOME_ASTK?#${inst_dir}#"			\
+	${REINPLACE_CMD} -e "s#?HOME_ASTK?#${inst_dir}#"			\
 		-e "s#?XTERM?#${X11BASE}/bin/xterm#"				\
 		-e "s#?FULL_SERVER_NAME?#${SERVER_NAME}#"			\
 		-e "s#?SERVER_NAME?#${HOST_NAME}#"				\
 		-e "s#?ASTER_ROOT?#${PREFIX}/aster#"				\
 		-e "s#?EDITOR?#${WITH_ED}#" ${conf_dir}/config_serveurs
-	@${REINPLACE_CMD} -e "s#?XTERM?#${X11BASE}/bin/xterm#"			\
+	${REINPLACE_CMD} -e "s#?XTERM?#${X11BASE}/bin/xterm#"			\
 		-e "s#?ASTER_VERSION?#${ASTER_VER}#"				\
 		-e "s#langue : ENG#langue : ${ASTK_LANG}#"			\
 		-e "s#?DOMAIN_NAME?#${DOMAIN_NAME}#"				\
 		-e "s#?EDITOR?#${WITH_ED}#" ${conf_dir}/prefs
-	@${REINPLACE_CMD} -e "s#%%LOCALBASE%%#${LOCALBASE}#g"			\
+	${REINPLACE_CMD} -e "s#%%LOCALBASE%%#${LOCALBASE}#g"			\
 		${WRKSRC}/share/tkselecteur.tcl
-	@${REINPLACE_CMD} -e "s#%%unamesm%%#${unamesm}#"			\
+	${REINPLACE_CMD} -e "s#%%unamesm%%#${unamesm}#"			\
 		${WRKSRC}/lib/ASTK/init.tcl
 .endif
 
