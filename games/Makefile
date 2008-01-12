@@ -827,6 +827,7 @@
     SUBDIR += wolfpack
     SUBDIR += wop
     SUBDIR += wordplay
+    SUBDIR += worldofpadman
     SUBDIR += wormux
     SUBDIR += wormux-devel
     SUBDIR += wrogue

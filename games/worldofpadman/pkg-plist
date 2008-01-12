@@ -1,0 +1,104 @@
+%%CLIENT%%bin/wop
+%%SMP%%bin/wop-smp
+%%DEDICATED%%bin/wopded
+%%PORTDOCS%%%%DOCSDIR%%/banner.html
+%%PORTDOCS%%%%DOCSDIR%%/copyright_de.html
+%%PORTDOCS%%%%DOCSDIR%%/copyright_en.html
+%%PORTDOCS%%%%DOCSDIR%%/credits_de.html
+%%PORTDOCS%%%%DOCSDIR%%/credits_en.html
+%%PORTDOCS%%%%DOCSDIR%%/hud_de.html
+%%PORTDOCS%%%%DOCSDIR%%/hud_en.html
+%%PORTDOCS%%%%DOCSDIR%%/index_de.html
+%%PORTDOCS%%%%DOCSDIR%%/index_en.html
+%%PORTDOCS%%%%DOCSDIR%%/main_de.html
+%%PORTDOCS%%%%DOCSDIR%%/main_en.html
+%%PORTDOCS%%%%DOCSDIR%%/menu_de.html
+%%PORTDOCS%%%%DOCSDIR%%/menu_en.html
+%%PORTDOCS%%%%DOCSDIR%%/modes_de.html
+%%PORTDOCS%%%%DOCSDIR%%/modes_en.html
+%%PORTDOCS%%%%DOCSDIR%%/navigation_de.html
+%%PORTDOCS%%%%DOCSDIR%%/navigation_en.html
+%%PORTDOCS%%%%DOCSDIR%%/pictures/dvd_thumb.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/english.gif
+%%PORTDOCS%%%%DOCSDIR%%/pictures/german.gif
+%%PORTDOCS%%%%DOCSDIR%%/pictures/hud/centerhud.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/hud/lefthud.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/hud/righthudbb.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/hud/righthudsyc.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/menu/bot_kl.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/menu/callvote.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/menu/main_kl.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/menu/musik.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/menu/options_kl.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/menu/player_kl.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/menu/server_kl.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/misc/balloon.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/misc/health.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/misc/server_hud_kl.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/misc/teleporter.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/powerups/floater.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/powerups/health.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/powerups/jumper.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/powerups/killerducks.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/powerups/padpower.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/powerups/puppetmaster.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/powerups/revival.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/powerups/shard.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/powerups/shield.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/powerups/speedy.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/powerups/teleporter.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/powerups/visionless.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/readme01.gif
+%%PORTDOCS%%%%DOCSDIR%%/pictures/readme02.gif
+%%PORTDOCS%%%%DOCSDIR%%/pictures/readme03.gif
+%%PORTDOCS%%%%DOCSDIR%%/pictures/readme04.gif
+%%PORTDOCS%%%%DOCSDIR%%/pictures/readme05.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/readme_back.png
+%%PORTDOCS%%%%DOCSDIR%%/pictures/readme_header.gif
+%%PORTDOCS%%%%DOCSDIR%%/pictures/weapons/balloony.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/weapons/betty.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/weapons/boaster.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/weapons/bubbleg.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/weapons/imperius.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/weapons/nipper.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/weapons/pumper.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/weapons/punchy.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pictures/weapons/splasher.jpg
+%%PORTDOCS%%%%DOCSDIR%%/powerups_de.html
+%%PORTDOCS%%%%DOCSDIR%%/powerups_en.html
+%%PORTDOCS%%%%DOCSDIR%%/readme.css
+%%PORTDOCS%%%%DOCSDIR%%/start_de.html
+%%PORTDOCS%%%%DOCSDIR%%/start_en.html
+%%PORTDOCS%%%%DOCSDIR%%/weapons_de.html
+%%PORTDOCS%%%%DOCSDIR%%/weapons_en.html
+%%GAMELIBS%%%%DATADIR%%/missionpack/cgame.so
+%%GAMELIBS%%%%DATADIR%%/missionpack/qagame.so
+%%GAMELIBS%%%%DATADIR%%/missionpack/ui.so
+%%DATADIR%%/wop/server-allgametypes.cfg
+%%DATADIR%%/wop/server-bigballoon.cfg
+%%DATADIR%%/wop/server-lastpadstanding.cfg
+%%DATADIR%%/wop/server-sprayyourcolour.cfg
+%%DATADIR%%/wop/server-wop_kickchat.cfg
+%%DATADIR%%/wop/server-wop_padpack.cfg
+%%DATADIR%%/wop/wop_001.pk3
+%%DATADIR%%/wop/wop_002.pk3
+%%DATADIR%%/wop/wop_003.pk3
+%%DATADIR%%/wop/wop_004.pk3
+%%DATADIR%%/wop/wop_005.pk3
+%%DATADIR%%/wop/wop_006.pk3
+%%DATADIR%%/wop/wop_padpack02.pk3
+%%DATADIR%%/wop/wop_vms.pk3
+%%DATADIR%%/wop/wop_vms12.pk3
+%%GAMELIBS%%%%DATADIR%%/wop/cgame.so
+%%GAMELIBS%%%%DATADIR%%/wop/qagame.so
+%%GAMELIBS%%%%DATADIR%%/wop/ui.so
+@dirrm %%DATADIR%%/wop
+%%GAMELIBS%%@dirrm %%DATADIR%%/missionpack
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pictures/weapons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pictures/powerups
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pictures/misc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pictures/menu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pictures/hud
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pictures
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
