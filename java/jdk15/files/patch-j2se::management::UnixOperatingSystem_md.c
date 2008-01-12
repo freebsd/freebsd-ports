@@ -1,7 +1,7 @@
 $FreeBSD$
 
 --- ../../j2se/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	8 Mar 2007 08:40:23 -0000	1.7
-+++ ../../j2se/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	31 Dec 2007 17:45:30 -0000
++++ ../../j2se/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	4 Jan 2008 05:12:56 -0000
 @@ -16,6 +16,10 @@
  #include <sys/stat.h>
  #if defined(_ALLBSD_SOURCE)
@@ -13,7 +13,7 @@ $FreeBSD$
  #else
  #include <sys/swap.h>
  #endif
-@@ -133,6 +137,30 @@
+@@ -133,11 +137,35 @@
  
      return available ? avail : total;
  #else /* _ALLBSD_SOURCE */
@@ -44,6 +44,12 @@ $FreeBSD$
      /*
       * XXXBSD: there's no way available to get swap info in
       *         FreeBSD.  Usage of libkvm is not an option here
+      */
+-    // throw_internal_error(env, "Unimplemented in FreeBSD");
++    // throw_internal_error(env, "Unimplemented in this version of BSD");
+     return (0);
+ #endif
+ }   
 @@ -225,17 +253,25 @@
  Java_com_sun_management_UnixOperatingSystem_getProcessCpuTime
    (JNIEnv *env, jobject mbean)
@@ -84,7 +90,7 @@ $FreeBSD$
      return cpu_time_ns;
  }
  
-@@ -256,6 +293,16 @@
+@@ -256,10 +293,20 @@
    (JNIEnv *env, jobject mbean)
  {
  #ifdef _ALLBSD_SOURCE
@@ -101,6 +107,11 @@ $FreeBSD$
      /*
       * XXXBSD: there's no way available to do it in FreeBSD, AFAIK.
       */
+-    // throw_internal_error(env, "Unimplemented in FreeBSD");
++    // throw_internal_error(env, "Unimplemented in this version of BSD");
+     return (128 * MB);
+ #else
+     jlong num_avail_physical_pages = sysconf(_SC_AVPHYS_PAGES);
 @@ -272,7 +319,7 @@
    (JNIEnv *env, jobject mbean)
  {
@@ -119,3 +130,44 @@ $FreeBSD$
  #else
      jlong num_physical_pages = sysconf(_SC_PHYS_PAGES);
      return (num_physical_pages * page_size);
+@@ -294,20 +341,18 @@
+   (JNIEnv *env, jobject mbean)
+ {
+ #ifdef _ALLBSD_SOURCE
+-    /*
+-     * XXXBSD: there's no way available to do it in FreeBSD, AFAIK.
+-     */
+-    // throw_internal_error(env, "Unimplemented in FreeBSD");
+-    return (100);
+-#else /* solaris/linux */
++#define FD_DIR "/dev/fd"
++#else
++#define FD_DIR "/proc/self/fd"
++#endif
+     DIR *dirp;
+     struct dirent dbuf;
+     struct dirent* dentp;
+     jlong fds = 0;
+    
+-    dirp = opendir("/proc/self/fd");
++    dirp = opendir(FD_DIR);
+     if (dirp == NULL) {
+-        throw_internal_error(env, "Unable to open directory /proc/self/fd");
++        throw_internal_error(env, "Unable to open directory " FD_DIR);
+         return -1;
+     }
+   
+@@ -320,6 +365,13 @@
+     }
+   
+     closedir(dirp);
++#ifdef _ALLBSD_SOURCE
++    /*
++     * Empirically this doesn't add an extra fd on BSD.
++     * I suspect this is a property of fdescfs(5).
++     */
++    return fds;
++#else
+     // subtract by 1 which was the fd open for this implementation
+     return (fds - 1);
+ #endif
