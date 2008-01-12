@@ -12933,6 +12933,7 @@ ppracer		ports/games/ppracer
 pptpclient	ports/net/pptpclient
 ppunpack	ports/archivers/ppunpack
 praat		ports/audio/praat
+prado		ports/www/prado
 prayer		ports/mail/prayer
 prboom		ports/games/prboom
 prc-tools	ports/palm/prc-tools
