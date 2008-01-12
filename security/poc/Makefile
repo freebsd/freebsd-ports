@@ -7,7 +7,7 @@
 
 PORTNAME=	poc
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=poc
@@ -20,8 +20,13 @@ LIB_DEPENDS=	towitoko.2:${PORTSDIR}/devel/towitoko
 PLIST_FILES=	bin/poc
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:213
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,; \
+		s,^CPPFLAGS =,CPPFLAGS = ${CPPFLAGS} -I${LOCALBASE}/include," \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
