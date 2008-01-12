@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aegis
-PORTVERSION=	4.22
-PORTREVISION=	1
+PORTVERSION=	4.22.2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -52,7 +51,7 @@ post-patch:
 	@${REINPLACE_CMD} -Ee 's|(MANPATH_PROG) 2>/dev/null|\1|' \
 		${WRKSRC}/configure
 # Fix path to Tk interpreter.
-	@cd ${WRKSRC}/script && ${REINPLACE_CMD} -e 's|wish $$0|${WISH} $$0|' \
+	@cd ${WRKSRC}/script && ${REINPLACE_CMD} -e 's|wish |${WISH} |' \
 		aebuffy.in aecomp.in aexver.in tkaeca.in tkaegis.in tkaenc.in \
 		tkaepa.in tkaer.in xaegis.in
 # Import global variable "datadir" inside function (not found otherwise).
