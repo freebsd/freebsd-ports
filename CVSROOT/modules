@@ -15974,6 +15974,7 @@ trac-bzr	ports/www/trac-bzr
 trac-calendar	ports/www/trac-calendar
 trac-codetags	ports/www/trac-codetags
 trac-ctxtnavadd	ports/www/trac-ctxtnavadd
+trac-customfieldadmin	ports/www/trac-customfieldadmin
 trac-down	ports/www/trac-down
 trac-email2trac	ports/www/trac-email2trac
 trac-gantt	ports/www/trac-gantt
