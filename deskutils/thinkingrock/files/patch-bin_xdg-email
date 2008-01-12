@@ -1,0 +1,8 @@
+--- bin/xdg-email.orig	Wed Jan  2 12:29:26 2008
++++ bin/xdg-email	Wed Jan  2 12:29:47 2008
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #---------------------------------------------
+ #   xdg-email
+ #
