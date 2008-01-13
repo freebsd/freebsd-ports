@@ -1076,7 +1076,7 @@
 %%T%%/jre/lib/zi/Africa/Accra
 %%T%%/jre/lib/zi/Africa/Addis_Ababa
 %%T%%/jre/lib/zi/Africa/Algiers
-%%T%%/jre/lib/zi/Africa/Asmera
+%%T%%/jre/lib/zi/Africa/Asmara
 %%T%%/jre/lib/zi/Africa/Bamako
 %%T%%/jre/lib/zi/Africa/Bangui
 %%T%%/jre/lib/zi/Africa/Banjul
@@ -1140,10 +1140,12 @@
 %%T%%/jre/lib/zi/America/Argentina/Ushuaia
 %%T%%/jre/lib/zi/America/Aruba
 %%T%%/jre/lib/zi/America/Asuncion
+%%T%%/jre/lib/zi/America/Atikokan
 %%T%%/jre/lib/zi/America/Bahia
 %%T%%/jre/lib/zi/America/Barbados
 %%T%%/jre/lib/zi/America/Belem
 %%T%%/jre/lib/zi/America/Belize
+%%T%%/jre/lib/zi/America/Blanc-Sablon
 %%T%%/jre/lib/zi/America/Boa_Vista
 %%T%%/jre/lib/zi/America/Bogota
 %%T%%/jre/lib/zi/America/Boise
@@ -1155,7 +1157,6 @@
 %%T%%/jre/lib/zi/America/Cayman
 %%T%%/jre/lib/zi/America/Chicago
 %%T%%/jre/lib/zi/America/Chihuahua
-%%T%%/jre/lib/zi/America/Coral_Harbour
 %%T%%/jre/lib/zi/America/Costa_Rica
 %%T%%/jre/lib/zi/America/Cuiaba
 %%T%%/jre/lib/zi/America/Curacao
@@ -1187,6 +1188,7 @@
 %%T%%/jre/lib/zi/America/Indiana/Petersburg
 %%T%%/jre/lib/zi/America/Indiana/Vevay
 %%T%%/jre/lib/zi/America/Indiana/Vincennes
+%%T%%/jre/lib/zi/America/Indiana/Winamac
 %%T%%/jre/lib/zi/America/Inuvik
 %%T%%/jre/lib/zi/America/Iqaluit
 %%T%%/jre/lib/zi/America/Jamaica
@@ -1229,6 +1231,7 @@
 %%T%%/jre/lib/zi/America/Rankin_Inlet
 %%T%%/jre/lib/zi/America/Recife
 %%T%%/jre/lib/zi/America/Regina
+%%T%%/jre/lib/zi/America/Resolute
 %%T%%/jre/lib/zi/America/Rio_Branco
 %%T%%/jre/lib/zi/America/Santiago
 %%T%%/jre/lib/zi/America/Santo_Domingo
@@ -1342,7 +1345,7 @@
 %%T%%/jre/lib/zi/Atlantic/Bermuda
 %%T%%/jre/lib/zi/Atlantic/Canary
 %%T%%/jre/lib/zi/Atlantic/Cape_Verde
-%%T%%/jre/lib/zi/Atlantic/Faeroe
+%%T%%/jre/lib/zi/Atlantic/Faroe
 %%T%%/jre/lib/zi/Atlantic/Madeira
 %%T%%/jre/lib/zi/Atlantic/Reykjavik
 %%T%%/jre/lib/zi/Atlantic/South_Georgia
@@ -1353,6 +1356,7 @@
 %%T%%/jre/lib/zi/Australia/Broken_Hill
 %%T%%/jre/lib/zi/Australia/Currie
 %%T%%/jre/lib/zi/Australia/Darwin
+%%T%%/jre/lib/zi/Australia/Eucla
 %%T%%/jre/lib/zi/Australia/Hobart
 %%T%%/jre/lib/zi/Australia/Lindeman
 %%T%%/jre/lib/zi/Australia/Lord_Howe
@@ -1432,6 +1436,7 @@
 %%T%%/jre/lib/zi/Europe/Vaduz
 %%T%%/jre/lib/zi/Europe/Vienna
 %%T%%/jre/lib/zi/Europe/Vilnius
+%%T%%/jre/lib/zi/Europe/Volgograd
 %%T%%/jre/lib/zi/Europe/Warsaw
 %%T%%/jre/lib/zi/Europe/Zaporozhye
 %%T%%/jre/lib/zi/Europe/Zurich
