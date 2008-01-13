@@ -8,10 +8,10 @@
 -$AWSTATS_CSS_PATH='/usr/local/awstats/wwwroot/css';
 -$AWSTATS_CLASSES_PATH='/usr/local/awstats/wwwroot/classes';
 -$AWSTATS_CGI_PATH='/usr/local/awstats/wwwroot/cgi-bin';
-+$AWSTATS_ICON_PATH='%%PREFIX%%/www/awstats/icon';
-+$AWSTATS_CSS_PATH='%%PREFIX%%/www/awstats/css';
-+$AWSTATS_CLASSES_PATH='%%PREFIX%%/www/awstats/classes';
-+$AWSTATS_CGI_PATH='%%PREFIX%%/www/awstats/cgi-bin';
++$AWSTATS_ICON_PATH='%%WWWDIR%%/icon';
++$AWSTATS_CSS_PATH='%%WWWDIR%%/css';
++$AWSTATS_CLASSES_PATH='%%WWWDIR%%/classes';
++$AWSTATS_CGI_PATH='%%WWWDIR%%/cgi-bin';
  $AWSTATS_MODEL_CONFIG='/etc/awstats/awstats.model.conf';		# Used only when configure ran on linux
  $AWSTATS_DIRDATA_PATH='/var/lib/awstats';						# Used only when configure ran on linux
 

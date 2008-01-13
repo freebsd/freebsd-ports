@@ -6,8 +6,8 @@
  	if (-s "$Awstats") { $AwstatsFound=1; }
 -	elsif (-s "/usr/local/awstats/wwwroot/cgi-bin/awstats.pl") {
 -		$Awstats="/usr/local/awstats/wwwroot/cgi-bin/awstats.pl";
-+	elsif (-s "%%PREFIX%%/awstats/wwwroot/cgi-bin/awstats.pl") {
-+		$Awstats="%%PREFIX%%/awstats/wwwroot/cgi-bin/awstats.pl";
++	elsif (-s "%%WWWDIR%%/wwwroot/cgi-bin/awstats.pl") {
++		$Awstats="%%WWWDIR%%/wwwroot/cgi-bin/awstats.pl";
  		$AwstatsFound=1;
  	}
  	if (! $AwstatsFound) {
