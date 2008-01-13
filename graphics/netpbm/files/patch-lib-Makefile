@@ -1,5 +1,5 @@
---- lib/Makefile.orig	Sat Oct 16 19:29:23 2004
-+++ lib/Makefile	Sun Nov 14 06:55:14 2004
+--- lib/Makefile.orig	2007-12-13 17:23:52.000000000 +0100
++++ lib/Makefile	2008-01-13 16:43:41.000000000 +0100
 @@ -35,6 +35,8 @@
  # Library objects to be linked but not built by Makefile.common:
  LIBOBJECTS_X = util/shhopt.o util/nstring.o
@@ -37,10 +37,10 @@
 -	$(SYMLINK) $< $@
 -libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBOBJECTS_X)
 -	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
--          $(SHLIB_CLIB) $(LADD)
+-          $(SHLIB_CLIB) -lm $(LADD)
 +$(SONAME): $(SHLIBOBJECTS) $(LIBOBJECTS_X)
 +	$(LD) $(LDSHLIB) -o $@ $(SHLIBOBJECTS) $(LIBOBJECTS_X) \
-+          $(SHLIB_CLIB) $(MATHLIB) $(LADD)
++	  $(SHLIB_CLIB) $(MATHLIB) $(LADD)
  endif
  
  ifeq ($(NETPBMLIBTYPE),dll)
