@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	awstats-devel
-PORTVERSION=	6.6
-PORTREVISION=	1
+PORTNAME=	awstats
+PORTVERSION=	6.8
 CATEGORIES=	www
 MASTER_SITES=	http://awstats.sourceforge.net/files/
-DISTNAME=	awstats-${PORTVERSION}
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Free real-time logfile analyzer to get advanced web statistics
@@ -22,8 +22,6 @@ USE_PERL5_RUN=	yes
 USE_DOS2UNIX=	tools/logresolvemerge.pl
 
 SUB_FILES=	pkg-message
-AWSTATS?=	www/awstats
-PLIST_SUB=	AWSTATS=${AWSTATS}
 
 CONFLICTS=	awstats-6.*
 LATEST_LINK=	awstats-devel
@@ -42,22 +40,23 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storabl
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_buildstaticpages.pl
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_configure.pl
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/tools/awstats_updateall.pl
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/wwwroot/cgi-bin/awstats.pl
+	@${REINPLACE_CMD} -e 's|%%WWWDIR%%|${WWWDIR}|g' ${WRKSRC}/tools/awstats_buildstaticpages.pl
+	@${REINPLACE_CMD} -e 's|%%WWWDIR%%|${WWWDIR}|g' ${WRKSRC}/tools/awstats_configure.pl
+	@${REINPLACE_CMD} -e 's|%%WWWDIR%%|${WWWDIR}|g' ${WRKSRC}/tools/awstats_updateall.pl
+	@${REINPLACE_CMD} -e 's|%%WWWDIR%%|${WWWDIR}|g' ${WRKSRC}/wwwroot/cgi-bin/awstats.pl
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
+	@${FIND} ${WRKSRC} -name '.cvsignore' -delete
 
 do-install:
-	@${MKDIR} ${PREFIX}/${AWSTATS}
-	@${MKDIR} ${PREFIX}/${AWSTATS}/tools
+	-@${MKDIR} ${WWWDIR}
+	@${MKDIR} ${WWWDIR}/tools
 	@${MV} ${WRKSRC}/wwwroot/icon ${WRKSRC}/wwwroot/icons
-	@${CP} -R ${WRKSRC}/wwwroot/* ${PREFIX}/${AWSTATS}
-	@${CP} -R ${WRKSRC}/tools/* ${PREFIX}/${AWSTATS}/tools
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${AWSTATS}
+	@cd ${WRKSRC}/wwwroot && ${COPYTREE_SHARE} \* ${WWWDIR}
+	@cd ${WRKSRC}/tools && ${COPYTREE_SHARE}  \* ${WWWDIR}/tools
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} "* Rename ${PREFIX}/www/awstats/cgi-bin/awstats.model.conf to awstats.site.conf to setup awstats"
+	@${ECHO_CMD} "* Rename ${WWWDIR}/cgi-bin/awstats.model.conf to awstats.site.conf to setup awstats"
 	@${ECHO_CMD} "* Documentation has been installed in ${PREFIX}/share/doc/awstats"
 	@${ECHO_CMD} ""
 

@@ -5,7 +5,7 @@
  	# Redhat :                                  "/usr/local/awstats/wwwroot/cgi-bin/plugins"
  	# Debian package :                    		"/usr/share/awstats/plugins"
 -	my @PossiblePluginsDir=("$DIR/plugins","/usr/local/awstats/wwwroot/cgi-bin/plugins","/usr/share/awstats/plugins");
-+	my @PossiblePluginsDir=("$DIR/plugins","%%PREFIX%%/www/awstats/cgi-bin/plugins","/usr/share/awstats/plugins");
++	my @PossiblePluginsDir=("$DIR/plugins","%%WWWDIR%%/cgi-bin/plugins","/usr/share/awstats/plugins");
   	my %DirAddedInINC=();
  
  	#Removed for security reason
