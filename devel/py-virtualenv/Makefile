@@ -9,7 +9,7 @@ PORTNAME=	virtualenv
 PORTVERSION=	1.0
 #PORTREVISION=	0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	http://pypi.python.org/packages/source/v/virtualenv/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
