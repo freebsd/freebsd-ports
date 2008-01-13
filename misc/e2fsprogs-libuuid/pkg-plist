@@ -1,7 +1,12 @@
+@unexec %D/etc/rc.d/uuidd stop  >/dev/null 2>&1 || true
+@unexec rm -rf /var/run/libuuid >/dev/null 2>&1 || true
+bin/uuidgen
 include/uuid/uuid.h
 lib/libuuid.so.1.2
 lib/libuuid.so.1
 lib/libuuid.so
 lib/libuuid.a
 libdata/pkgconfig/uuid.pc
+sbin/uuidd
 @dirrm include/uuid
+@exec mkdir -p /var/run/libuuid
