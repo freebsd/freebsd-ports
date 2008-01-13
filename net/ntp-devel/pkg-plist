@@ -12,6 +12,7 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/assoc.html
 %%PORTDOCS%%%%DOCSDIR%%/audio.html
 %%PORTDOCS%%%%DOCSDIR%%/authopt.html
+%%PORTDOCS%%%%DOCSDIR%%/bugs.html
 %%PORTDOCS%%%%DOCSDIR%%/build/build.html
 %%PORTDOCS%%%%DOCSDIR%%/build/config.html
 %%PORTDOCS%%%%DOCSDIR%%/build/hints.html
