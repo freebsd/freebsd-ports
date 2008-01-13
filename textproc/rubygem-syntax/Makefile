@@ -37,7 +37,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 		SPEC_DIR="${GEMS_BASE_DIR}/specifications" \
 		PORT="${PORTNAME}-${PORTVERSION}"
 
-RUBYGEMBIN=	${LOCALBASE}/bin/gem
+RUBYGEMBIN=	${LOCALBASE}/bin/gem18
 
 do-build:
 	cd ${WRKSRC} && ${RUBYGEMBIN} build syntax.gemspec
