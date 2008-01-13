@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_FTP
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	ftp www pear
 
 MAINTAINER=	miwi@FreeBSD.org
