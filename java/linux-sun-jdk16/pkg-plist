@@ -49,7 +49,7 @@
 %%T%%/bin/wsimport
 %%T%%/bin/xjc
 %%T%%/db/3RDPARTY
-%%T%%/db/CHANGES
+%%T%%/db/CHANGES.html
 %%T%%/db/LICENSE
 %%T%%/db/NOTICE
 %%T%%/db/RELEASE-NOTES.html
@@ -157,6 +157,21 @@
 %%T%%/db/demo/databases/toursdb/service.properties
 %%T%%/db/demo/programs/csfull.css
 %%T%%/db/demo/programs/demo.html
+%%T%%/db/demo/programs/localcal/README
+%%T%%/db/demo/programs/localcal/src/AddEventRequest.java
+%%T%%/db/demo/programs/localcal/src/CalEvent.java
+%%T%%/db/demo/programs/localcal/src/CalendarController.java
+%%T%%/db/demo/programs/localcal/src/DatabaseManager.java
+%%T%%/db/demo/programs/localcal/src/DeleteEventRequest.java
+%%T%%/db/demo/programs/localcal/src/EventManager.java
+%%T%%/db/demo/programs/localcal/src/GCalendar.java
+%%T%%/db/demo/programs/localcal/src/GCalendarRequest.java
+%%T%%/db/demo/programs/localcal/src/NetworkDownException.java
+%%T%%/db/demo/programs/localcal/src/RequestManager.java
+%%T%%/db/demo/programs/localcal/src/UpdateEventRequest.java
+%%T%%/db/demo/programs/localcal/src/images/delete.gif
+%%T%%/db/demo/programs/localcal/src/index.html
+%%T%%/db/demo/programs/localcal/src/localcal.js
 %%T%%/db/demo/programs/navbar.html
 %%T%%/db/demo/programs/nserverdemo/NetworkServerUtil.class
 %%T%%/db/demo/programs/nserverdemo/NetworkServerUtil.java
@@ -173,6 +188,15 @@
 %%T%%/db/demo/programs/nserverdemo/readme.html
 %%T%%/db/demo/programs/nserverdemo/simpleserversample.html
 %%T%%/db/demo/programs/readme.html
+%%T%%/db/demo/programs/scores/README
+%%T%%/db/demo/programs/scores/customizeMe.properties
+%%T%%/db/demo/programs/scores/java/client/org/apache/derbyDemo/scores/app/Scores.java
+%%T%%/db/demo/programs/scores/java/client/org/apache/derbyDemo/scores/data/Data.java
+%%T%%/db/demo/programs/scores/java/client/org/apache/derbyDemo/scores/data/Database.java
+%%T%%/db/demo/programs/scores/java/common/org/apache/derbyDemo/scores/util/Logger.java
+%%T%%/db/demo/programs/scores/java/common/org/apache/derbyDemo/scores/util/Utils.java
+%%T%%/db/demo/programs/scores/java/server/org/apache/derbyDemo/scores/proc/Functions.java
+%%T%%/db/demo/programs/scores/java/server/org/apache/derbyDemo/scores/proc/Procedures.java
 %%T%%/db/demo/programs/simple/SimpleApp.class
 %%T%%/db/demo/programs/simple/SimpleApp.java
 %%T%%/db/demo/programs/simple/derby.properties
@@ -200,7 +224,7 @@
 %%T%%/db/demo/programs/workingwithderby/WwdUtils.class
 %%T%%/db/demo/programs/workingwithderby/WwdUtils.java
 %%T%%/db/demo/programs/workingwithderby/readme.html
-%%T%%/db/docs/html/adminguide/adminconrefs.html
+%%T%%/db/demo/templates/server.policy
 %%T%%/db/docs/html/adminguide/adminguide-single.html
 %%T%%/db/docs/html/adminguide/cadminadvtops.html
 %%T%%/db/docs/html/adminguide/cadminapps.html
@@ -210,11 +234,13 @@
 %%T%%/db/docs/html/adminguide/cadminapps811478.html
 %%T%%/db/docs/html/adminguide/cadminapps811631.html
 %%T%%/db/docs/html/adminguide/cadminapps811656.html
+%%T%%/db/docs/html/adminguide/cadminapps811695.html
 %%T%%/db/docs/html/adminguide/cadminappsclient.html
 %%T%%/db/docs/html/adminguide/cadminappsclientdiffs.html
 %%T%%/db/docs/html/adminguide/cadminappsclientsecurity.html
 %%T%%/db/docs/html/adminguide/cadminappsclienttracing.html
 %%T%%/db/docs/html/adminguide/cadminappsdiffsreadonly.html
+%%T%%/db/docs/html/adminguide/cadminappsjdbcdiffs.html
 %%T%%/db/docs/html/adminguide/cadminappsthenetworkserverandjvms.html
 %%T%%/db/docs/html/adminguide/cadminappsusingthederbytoolswiththene.html
 %%T%%/db/docs/html/adminguide/cadminappsxawthdriver.html
@@ -260,9 +286,11 @@
 %%T%%/db/docs/html/adminguide/cadminrollforward.html
 %%T%%/db/docs/html/adminguide/cadminservlet98430.html
 %%T%%/db/docs/html/adminguide/cadminspace21579.html
-%%T%%/db/docs/html/adminguide/common.css
-%%T%%/db/docs/html/adminguide/commonltr.css
-%%T%%/db/docs/html/adminguide/commonrtl.css
+%%T%%/db/docs/html/adminguide/cadminssl.html
+%%T%%/db/docs/html/adminguide/cadminssladmin.html
+%%T%%/db/docs/html/adminguide/cadminsslclient.html
+%%T%%/db/docs/html/adminguide/cadminsslkeys.html
+%%T%%/db/docs/html/adminguide/cadminsslserver.html
 %%T%%/db/docs/html/adminguide/index.html
 %%T%%/db/docs/html/adminguide/radminapps810699.html
 %%T%%/db/docs/html/adminguide/radminapps811974.html
@@ -283,8 +311,10 @@
 %%T%%/db/docs/html/adminguide/radmindrdamaxthreads.html
 %%T%%/db/docs/html/adminguide/radmindrdaminthreads.html
 %%T%%/db/docs/html/adminguide/radmindrdasecmechanism.html
+%%T%%/db/docs/html/adminguide/radmindrdasslmode.html
 %%T%%/db/docs/html/adminguide/radmindrdatimeslice.html
 %%T%%/db/docs/html/adminguide/radminembeddedserverex.html
+%%T%%/db/docs/html/adminguide/radminlicense.html
 %%T%%/db/docs/html/adminguide/radminlog800241.html
 %%T%%/db/docs/html/adminguide/radminlog800279.html
 %%T%%/db/docs/html/adminguide/radminnsdatasourcexmp.html
@@ -300,20 +330,17 @@
 %%T%%/db/docs/html/adminguide/tadminadv804451.html
 %%T%%/db/docs/html/adminguide/tadminapps811302.html
 %%T%%/db/docs/html/adminguide/tadminapps811345.html
-%%T%%/db/docs/html/adminguide/tadminapps811695.html
 %%T%%/db/docs/html/adminguide/tadminappschangingyourclasspath.html
 %%T%%/db/docs/html/adminguide/tadminappsruntimeinfo.html
 %%T%%/db/docs/html/adminguide/tadminappssettingportnumbers.html
 %%T%%/db/docs/html/adminguide/tadmincbdjhhfd.html
 %%T%%/db/docs/html/adminguide/tadminconfig813694.html
-%%T%%/db/docs/html/adminguide/tadminconfig814934.html
 %%T%%/db/docs/html/adminguide/tadminconfig814963.html
 %%T%%/db/docs/html/adminguide/tadminconfig815333.html
 %%T%%/db/docs/html/adminguide/tadminconfig815357.html
 %%T%%/db/docs/html/adminguide/tadminconfig815768.html
 %%T%%/db/docs/html/adminguide/tadminconfig815822.html
 %%T%%/db/docs/html/adminguide/tadminconfig815853.html
-%%T%%/db/docs/html/adminguide/tadminconfigalteringthestartnetworkserverscr.html
 %%T%%/db/docs/html/adminguide/tadminconfigipx.html
 %%T%%/db/docs/html/adminguide/tadminconfigsettingnetwrokserverproperties.html
 %%T%%/db/docs/html/adminguide/tadminconfigshuttingdownthenetworkserver.html
@@ -324,6 +351,9 @@
 %%T%%/db/docs/html/adminguide/tadminhubbkup44.html
 %%T%%/db/docs/html/adminguide/tadminlog800206.html
 %%T%%/db/docs/html/adminguide/tadminlogfile.html
+%%T%%/db/docs/html/adminguide/tadminnetservbasic.html
+%%T%%/db/docs/html/adminguide/tadminnetservcustom.html
+%%T%%/db/docs/html/adminguide/tadminnetservopen.html
 %%T%%/db/docs/html/adminguide/tadminnetservrun.html
 %%T%%/db/docs/html/adminguide/tadminovclirun.html
 %%T%%/db/docs/html/adminguide/tadminovnsrundemo.html
@@ -340,6 +370,7 @@
 %%T%%/db/docs/html/devguide/cdevadvjdbc41138.html
 %%T%%/db/docs/html/devguide/cdevbabejgjd.html
 %%T%%/db/docs/html/devguide/cdevcbabejdfj.html
+%%T%%/db/docs/html/devguide/cdevcollation.html
 %%T%%/db/docs/html/devguide/cdevconcepts10914.html
 %%T%%/db/docs/html/devguide/cdevconcepts14433.html
 %%T%%/db/docs/html/devguide/cdevconcepts15366.html
@@ -418,6 +449,7 @@
 %%T%%/db/docs/html/devguide/cdevcsecure90988.html
 %%T%%/db/docs/html/devguide/cdevcsecure96815.html
 %%T%%/db/docs/html/devguide/cdevcsecure97760.html
+%%T%%/db/docs/html/devguide/cdevcsecureDbOwner.html
 %%T%%/db/docs/html/devguide/cdevcsecuree.html
 %%T%%/db/docs/html/devguide/cdevcsecuregrantrevokeaccess.html
 %%T%%/db/docs/html/devguide/cdevdeploy11201.html
@@ -500,18 +532,6 @@
 %%T%%/db/docs/html/devguide/cdevspecial76763.html
 %%T%%/db/docs/html/devguide/cdevspecial847513.html
 %%T%%/db/docs/html/devguide/cdevspecial93497.html
-%%T%%/db/docs/html/devguide/cdevstandards805644.html
-%%T%%/db/docs/html/devguide/cdevstandards805664.html
-%%T%%/db/docs/html/devguide/cdevstandards805690.html
-%%T%%/db/docs/html/devguide/cdevstandards805716.html
-%%T%%/db/docs/html/devguide/cdevstandards805742.html
-%%T%%/db/docs/html/devguide/cdevstandards805768.html
-%%T%%/db/docs/html/devguide/cdevstandards805841.html
-%%T%%/db/docs/html/devguide/cdevstandards805893.html
-%%T%%/db/docs/html/devguide/cdevstandards805949.html
-%%T%%/db/docs/html/devguide/cdevstandards805975.html
-%%T%%/db/docs/html/devguide/cdevstandards806001.html
-%%T%%/db/docs/html/devguide/cdevstandards806027.html
 %%T%%/db/docs/html/devguide/cdevstandards806118.html
 %%T%%/db/docs/html/devguide/cdevstandardsxml.html
 %%T%%/db/docs/html/devguide/cdevstart16043.html
@@ -532,14 +552,10 @@
 %%T%%/db/docs/html/devguide/cdevtricks807365.html
 %%T%%/db/docs/html/devguide/cdevtricks807400.html
 %%T%%/db/docs/html/devguide/cdevupgrades.html
-%%T%%/db/docs/html/devguide/common.css
-%%T%%/db/docs/html/devguide/commonltr.css
-%%T%%/db/docs/html/devguide/commonrtl.css
 %%T%%/db/docs/html/devguide/dbcont.gif
 %%T%%/db/docs/html/devguide/dbcont.jpg
 %%T%%/db/docs/html/devguide/dead.gif
 %%T%%/db/docs/html/devguide/dead.jpg
-%%T%%/db/docs/html/devguide/devconrefs.html
 %%T%%/db/docs/html/devguide/devguide-single.html
 %%T%%/db/docs/html/devguide/edeploy_os.gif
 %%T%%/db/docs/html/devguide/edeploy_os.jpg
@@ -589,6 +605,7 @@
 %%T%%/db/docs/html/devguide/rdevdvlp38881.html
 %%T%%/db/docs/html/devguide/rdevdvlp847152.html
 %%T%%/db/docs/html/devguide/rdevexudclass.html
+%%T%%/db/docs/html/devguide/rdevlicense.html
 %%T%%/db/docs/html/devguide/rdevprocsqle.html
 %%T%%/db/docs/html/devguide/rdevresman79556.html
 %%T%%/db/docs/html/devguide/rdevtrademderby.html
@@ -618,6 +635,7 @@
 %%T%%/db/docs/html/devguide/tdevdvlp39090.html
 %%T%%/db/docs/html/devguide/tdevdvlp40140.html
 %%T%%/db/docs/html/devguide/tdevdvlp40464.html
+%%T%%/db/docs/html/devguide/tdevdvlpcollation.html
 %%T%%/db/docs/html/devguide/tdevdvlpcreateencryptdbextkey.html
 %%T%%/db/docs/html/devguide/tdevpreupgrade.html
 %%T%%/db/docs/html/devguide/tdevupgradedb.html
@@ -634,15 +652,14 @@
 %%T%%/db/docs/html/getstart/cgsquck19524.html
 %%T%%/db/docs/html/getstart/cgsquck35643.html
 %%T%%/db/docs/html/getstart/cgsquck70629.html
-%%T%%/db/docs/html/getstart/cgsusingsysinfo.html
+%%T%%/db/docs/html/getstart/cgstutorialintro.html
 %%T%%/db/docs/html/getstart/cgsusingtoolsutils.html
-%%T%%/db/docs/html/getstart/common.css
-%%T%%/db/docs/html/getstart/commonltr.css
-%%T%%/db/docs/html/getstart/commonrtl.css
+%%T%%/db/docs/html/getstart/cwwdactivities.html
+%%T%%/db/docs/html/getstart/cwwdsummary.html
 %%T%%/db/docs/html/getstart/getstart-single.html
-%%T%%/db/docs/html/getstart/gsconrefs.html
 %%T%%/db/docs/html/getstart/index.html
 %%T%%/db/docs/html/getstart/rgscopyright.html
+%%T%%/db/docs/html/getstart/rgsderbyrunjarsyntax.html
 %%T%%/db/docs/html/getstart/rgsdocs10012.html
 %%T%%/db/docs/html/getstart/rgsdocs17307.html
 %%T%%/db/docs/html/getstart/rgsdocs18277.html
@@ -650,19 +667,30 @@
 %%T%%/db/docs/html/getstart/rgsdocs99397.html
 %%T%%/db/docs/html/getstart/rgslib27507.html
 %%T%%/db/docs/html/getstart/rgslib46043.html
-%%T%%/db/docs/html/getstart/rgslib56653.html
+%%T%%/db/docs/html/getstart/rgslicense.html
 %%T%%/db/docs/html/getstart/rgsquck30197.html
 %%T%%/db/docs/html/getstart/rgsquck35368.html
 %%T%%/db/docs/html/getstart/rgstrademderby.html
+%%T%%/db/docs/html/getstart/rwwdactivity3.html
 %%T%%/db/docs/html/getstart/tgs26250.html
+%%T%%/db/docs/html/getstart/tgsrunningdblook.html
 %%T%%/db/docs/html/getstart/tgsrunningij.html
+%%T%%/db/docs/html/getstart/tgsrunningsysinfo.html
+%%T%%/db/docs/html/getstart/tgsruntoolsutils.html
+%%T%%/db/docs/html/getstart/tgssetupenvironment.html
 %%T%%/db/docs/html/getstart/tgssetupjavaenvir.html
+%%T%%/db/docs/html/getstart/tgssetupverify.html
 %%T%%/db/docs/html/getstart/toc.html
+%%T%%/db/docs/html/getstart/twwdactivity1.html
+%%T%%/db/docs/html/getstart/twwdactivity1_Setup.html
+%%T%%/db/docs/html/getstart/twwdactivity1_overview.html
+%%T%%/db/docs/html/getstart/twwdactivity2.html
+%%T%%/db/docs/html/getstart/twwdactivity3_Setup.html
+%%T%%/db/docs/html/getstart/twwdactivity4.html
+%%T%%/db/docs/html/images/java_db_type.gif
 %%T%%/db/docs/html/images/java_db_type.jpg
+%%T%%/db/docs/html/images/javadb.jpg
 %%T%%/db/docs/html/images/logowithtext.jpg
-%%T%%/db/docs/html/ref/common.css
-%%T%%/db/docs/html/ref/commonltr.css
-%%T%%/db/docs/html/ref/commonrtl.css
 %%T%%/db/docs/html/ref/crefjavadb.html
 %%T%%/db/docs/html/ref/crefjavbclobnot.html
 %%T%%/db/docs/html/ref/crefjavccns.html
@@ -697,7 +725,6 @@
 %%T%%/db/docs/html/ref/crefsqljrenamestatements.html
 %%T%%/db/docs/html/ref/index.html
 %%T%%/db/docs/html/ref/ref-single.html
-%%T%%/db/docs/html/ref/refconrefs.html
 %%T%%/db/docs/html/ref/rrefaltertablecompress.html
 %%T%%/db/docs/html/ref/rrefapi1003363.html
 %%T%%/db/docs/html/ref/rrefapi1005026.html
@@ -718,9 +745,12 @@
 %%T%%/db/docs/html/ref/rrefattrib60346.html
 %%T%%/db/docs/html/ref/rrefattrib72457.html
 %%T%%/db/docs/html/ref/rrefattrib88843.html
+%%T%%/db/docs/html/ref/rrefattribcollation.html
 %%T%%/db/docs/html/ref/rrefattribencryptkey.html
 %%T%%/db/docs/html/ref/rrefattribnewbootpw.html
 %%T%%/db/docs/html/ref/rrefattribnewencryptkey.html
+%%T%%/db/docs/html/ref/rrefattribsecmech.html
+%%T%%/db/docs/html/ref/rrefattribssl.html
 %%T%%/db/docs/html/ref/rrefbackupdbenablelognowaitproc.html
 %%T%%/db/docs/html/ref/rrefbackupdbenablelogproc.html
 %%T%%/db/docs/html/ref/rrefbackupdbnowaitproc.html
@@ -733,8 +763,10 @@
 %%T%%/db/docs/html/ref/rrefbuiltsmallint.html
 %%T%%/db/docs/html/ref/rrefbuiltvarchar.html
 %%T%%/db/docs/html/ref/rrefcallprocedure.html
+%%T%%/db/docs/html/ref/rrefcase.html
 %%T%%/db/docs/html/ref/rrefcasenullif.html
 %%T%%/db/docs/html/ref/rrefcheckpointdbproc.html
+%%T%%/db/docs/html/ref/rrefclauses.html
 %%T%%/db/docs/html/ref/rrefclob.html
 %%T%%/db/docs/html/ref/rrefcolumnname.html
 %%T%%/db/docs/html/ref/rrefconstraintname.html
@@ -759,7 +791,9 @@
 %%T%%/db/docs/html/ref/rrefexcept16677.html
 %%T%%/db/docs/html/ref/rrefexcept71493.html
 %%T%%/db/docs/html/ref/rrefexportproc.html
+%%T%%/db/docs/html/ref/rrefexportproctablelobs.html
 %%T%%/db/docs/html/ref/rrefexportselectionproc.html
+%%T%%/db/docs/html/ref/rrefexportselectionproclobs.html
 %%T%%/db/docs/html/ref/rreffreezedbproc.html
 %%T%%/db/docs/html/ref/rreffuncacos.html
 %%T%%/db/docs/html/ref/rreffuncasin.html
@@ -785,7 +819,9 @@
 %%T%%/db/docs/html/ref/rrefidentityvallocal.html
 %%T%%/db/docs/html/ref/rrefidlengthlimits.html
 %%T%%/db/docs/html/ref/rrefimportdataproc.html
+%%T%%/db/docs/html/ref/rrefimportdataproclobs.html
 %%T%%/db/docs/html/ref/rrefimportproc.html
+%%T%%/db/docs/html/ref/rrefimporttableproclobs.html
 %%T%%/db/docs/html/ref/rrefindexname.html
 %%T%%/db/docs/html/ref/rrefjavcallstatout.html
 %%T%%/db/docs/html/ref/rrefjavciro.html
@@ -807,6 +843,7 @@
 %%T%%/db/docs/html/ref/rrefjdbc27768.html
 %%T%%/db/docs/html/ref/rrefjdbc28456.html
 %%T%%/db/docs/html/ref/rrefjdbc29874.html
+%%T%%/db/docs/html/ref/rrefjdbc2_0summary.html
 %%T%%/db/docs/html/ref/rrefjdbc30469.html
 %%T%%/db/docs/html/ref/rrefjdbc32052.html
 %%T%%/db/docs/html/ref/rrefjdbc32593.html
@@ -850,8 +887,8 @@
 %%T%%/db/docs/html/ref/rrefjta16677.html
 %%T%%/db/docs/html/ref/rrefjta18596.html
 %%T%%/db/docs/html/ref/rrefjta51021.html
-%%T%%/db/docs/html/ref/rrefjta94396.html
 %%T%%/db/docs/html/ref/rrefkeywords29722.html
+%%T%%/db/docs/html/ref/rreflicense.html
 %%T%%/db/docs/html/ref/rreflimits.html
 %%T%%/db/docs/html/ref/rreflimitsxml.html
 %%T%%/db/docs/html/ref/rrefminutefunc.html
@@ -860,7 +897,9 @@
 %%T%%/db/docs/html/ref/rrefnumericlimits.html
 %%T%%/db/docs/html/ref/rrefpgc1.html
 %%T%%/db/docs/html/ref/rrefproceduresinplacecompress.html
+%%T%%/db/docs/html/ref/rrefqueries.html
 %%T%%/db/docs/html/ref/rrefrauthid.html
+%%T%%/db/docs/html/ref/rrefreloadpolicyproc.html
 %%T%%/db/docs/html/ref/rrefrestorefrom.html
 %%T%%/db/docs/html/ref/rrefrollforward.html
 %%T%%/db/docs/html/ref/rrefscalarsubquery.html
@@ -894,7 +933,6 @@
 %%T%%/db/docs/html/ref/rrefsqlj1055824.html
 %%T%%/db/docs/html/ref/rrefsqlj10696.html
 %%T%%/db/docs/html/ref/rrefsqlj1080779.html
-%%T%%/db/docs/html/ref/rrefsqlj1080962.html
 %%T%%/db/docs/html/ref/rrefsqlj1082953.html
 %%T%%/db/docs/html/ref/rrefsqlj1083019.html
 %%T%%/db/docs/html/ref/rrefsqlj11277.html
@@ -982,9 +1020,7 @@
 %%T%%/db/docs/html/ref/rrefsqlj66113.html
 %%T%%/db/docs/html/ref/rrefsqlj73147.html
 %%T%%/db/docs/html/ref/rrefsqlj75638.html
-%%T%%/db/docs/html/ref/rrefsqlj76354.html
 %%T%%/db/docs/html/ref/rrefsqlj81859.html
-%%T%%/db/docs/html/ref/rrefsqlj87167.html
 %%T%%/db/docs/html/ref/rrefsqlj89752.html
 %%T%%/db/docs/html/ref/rrefsqlj91438.html
 %%T%%/db/docs/html/ref/rrefsqlj93082.html
@@ -999,12 +1035,14 @@
 %%T%%/db/docs/html/ref/rrefsqljdropsynonym.html
 %%T%%/db/docs/html/ref/rrefsqljgrant.html
 %%T%%/db/docs/html/ref/rrefsqljmod.html
+%%T%%/db/docs/html/ref/rrefsqljrenamecolumnstatement.html
 %%T%%/db/docs/html/ref/rrefsqljrenametablestatement.html
 %%T%%/db/docs/html/ref/rrefsqljrevoke.html
 %%T%%/db/docs/html/ref/rrefsqljtypexml.html
 %%T%%/db/docs/html/ref/rrefstringlimits.html
 %%T%%/db/docs/html/ref/rrefsynonymname.html
 %%T%%/db/docs/html/ref/rrefsyscschecktablefunc.html
+%%T%%/db/docs/html/ref/rrefsyscsdiagtables.html
 %%T%%/db/docs/html/ref/rrefsyscsruntimestatsfunc.html
 %%T%%/db/docs/html/ref/rreftableexpression.html
 %%T%%/db/docs/html/ref/rreftablename.html
@@ -1013,13 +1051,11 @@
 %%T%%/db/docs/html/ref/rreftimestampfunc.html
 %%T%%/db/docs/html/ref/rreftrademderby.html
 %%T%%/db/docs/html/ref/rreftriggername.html
+%%T%%/db/docs/html/ref/rreftrimfunc.html
 %%T%%/db/docs/html/ref/rrefunfreezedbproc.html
 %%T%%/db/docs/html/ref/rrefviewname.html
 %%T%%/db/docs/html/ref/rrefyearfunc.html
 %%T%%/db/docs/html/ref/toc.html
-%%T%%/db/docs/html/tools/common.css
-%%T%%/db/docs/html/tools/commonltr.css
-%%T%%/db/docs/html/tools/commonrtl.css
 %%T%%/db/docs/html/tools/ctools1003034.html
 %%T%%/db/docs/html/tools/ctools1004764.html
 %%T%%/db/docs/html/tools/ctoolsdblook.html
@@ -1046,14 +1082,13 @@
 %%T%%/db/docs/html/tools/ctoolsijtools45180.html
 %%T%%/db/docs/html/tools/ctoolsijtools70959.html
 %%T%%/db/docs/html/tools/ctoolsijtools90477.html
-%%T%%/db/docs/html/tools/ctoolsimport12925.html
-%%T%%/db/docs/html/tools/ctoolsimport13648.html
 %%T%%/db/docs/html/tools/ctoolsimport16245.html
 %%T%%/db/docs/html/tools/ctoolsimport27052.html
 %%T%%/db/docs/html/tools/ctoolsimport98264.html
 %%T%%/db/docs/html/tools/ctoolsimportdefaultformat.html
 %%T%%/db/docs/html/tools/ctoolsimportidentitycol.html
 %%T%%/db/docs/html/tools/ctoolsimportjdbc.html
+%%T%%/db/docs/html/tools/ctoolsimportlobs.html
 %%T%%/db/docs/html/tools/ctoolsimportnulls.html
 %%T%%/db/docs/html/tools/ctoolsjavadb.html
 %%T%%/db/docs/html/tools/ctoolspre11181.html
@@ -1121,31 +1156,32 @@
 %%T%%/db/docs/html/tools/rtoolsijpropref41073.html
 %%T%%/db/docs/html/tools/rtoolsijpropref97949.html
 %%T%%/db/docs/html/tools/rtoolsijproprefdatasource.html
+%%T%%/db/docs/html/tools/rtoolsijproprefexceptiontrace.html
 %%T%%/db/docs/html/tools/rtoolsijproprefpassword.html
+%%T%%/db/docs/html/tools/rtoolsijproprefshownoconn.html
+%%T%%/db/docs/html/tools/rtoolsijproprefshownoselectcount.html
 %%T%%/db/docs/html/tools/rtoolsijproprefuser.html
 %%T%%/db/docs/html/tools/rtoolsijtools16879.html
-%%T%%/db/docs/html/tools/rtoolsimport57005.html
 %%T%%/db/docs/html/tools/rtoolsimport64241.html
 %%T%%/db/docs/html/tools/rtoolsimport91458.html
-%%T%%/db/docs/html/tools/rtoolsimport92876.html
 %%T%%/db/docs/html/tools/rtoolsimportcodeset.html
 %%T%%/db/docs/html/tools/rtoolsjarload3284.html
+%%T%%/db/docs/html/tools/rtoolslicense.html
 %%T%%/db/docs/html/tools/rtoolssysinfo1002629.html
 %%T%%/db/docs/html/tools/rtoolssysinfo41288.html
 %%T%%/db/docs/html/tools/rtoolstrademderby.html
 %%T%%/db/docs/html/tools/toc.html
 %%T%%/db/docs/html/tools/tools-single.html
-%%T%%/db/docs/html/tools/toolsconrefs.html
+%%T%%/db/docs/html/tools/ttoolsexporting.html
 %%T%%/db/docs/html/tools/ttoolsij11815.html
 %%T%%/db/docs/html/tools/ttoolsij30600.html
 %%T%%/db/docs/html/tools/ttoolsij97656.html
 %%T%%/db/docs/html/tools/ttoolsij98878.html
+%%T%%/db/docs/html/tools/ttoolsijcreatedatabase.html
+%%T%%/db/docs/html/tools/ttoolsimporting.html
 %%T%%/db/docs/html/tools/ttoolsjarload1002986.html
 %%T%%/db/docs/html/tools/ttoolsjarload1003059.html
 %%T%%/db/docs/html/tools/ttoolsjarload1003120.html
-%%T%%/db/docs/html/tuning/common.css
-%%T%%/db/docs/html/tuning/commonltr.css
-%%T%%/db/docs/html/tuning/commonrtl.css
 %%T%%/db/docs/html/tuning/ctundepth1002853.html
 %%T%%/db/docs/html/tuning/ctundepth1003116.html
 %%T%%/db/docs/html/tuning/ctundepth1003209.html
@@ -1279,6 +1315,7 @@
 %%T%%/db/docs/html/tuning/pstmt_os.gif
 %%T%%/db/docs/html/tuning/pstmt_os.jpg
 %%T%%/db/docs/html/tuning/rtuncopyright.html
+%%T%%/db/docs/html/tuning/rtunlicense.html
 %%T%%/db/docs/html/tuning/rtunoptimz1004602.html
 %%T%%/db/docs/html/tuning/rtunoptimz1004810.html
 %%T%%/db/docs/html/tuning/rtunproper10607.html
@@ -1314,6 +1351,7 @@
 %%T%%/db/docs/html/tuning/rtunpropercachedn.html
 %%T%%/db/docs/html/tuning/rtunproperdurability.html
 %%T%%/db/docs/html/tuning/rtunpropersqlauth.html
+%%T%%/db/docs/html/tuning/rtunproperxatrantimeout.html
 %%T%%/db/docs/html/tuning/rtunsearchauthdn.html
 %%T%%/db/docs/html/tuning/rtunsearchauthpw.html
 %%T%%/db/docs/html/tuning/rtunstorminrecsize.html
@@ -1334,33 +1372,14 @@
 %%T%%/db/docs/html/tuning/toc.html
 %%T%%/db/docs/html/tuning/ttundepth33391.html
 %%T%%/db/docs/html/tuning/ttundepth34375.html
-%%T%%/db/docs/html/tuning/tunconrefs.html
 %%T%%/db/docs/html/tuning/tuning-single.html
-%%T%%/db/docs/html/workingwithderby/common.css
-%%T%%/db/docs/html/workingwithderby/commonltr.css
-%%T%%/db/docs/html/workingwithderby/commonrtl.css
-%%T%%/db/docs/html/workingwithderby/cwwdactivities.html
-%%T%%/db/docs/html/workingwithderby/cwwdjavadb.html
-%%T%%/db/docs/html/workingwithderby/cwwdsummary.html
-%%T%%/db/docs/html/workingwithderby/index.html
-%%T%%/db/docs/html/workingwithderby/rwwdactivity3.html
-%%T%%/db/docs/html/workingwithderby/rwwdcopyright.html
-%%T%%/db/docs/html/workingwithderby/toc.html
-%%T%%/db/docs/html/workingwithderby/twwdIntro.html
-%%T%%/db/docs/html/workingwithderby/twwdactivity1.html
-%%T%%/db/docs/html/workingwithderby/twwdactivity1_Setup.html
-%%T%%/db/docs/html/workingwithderby/twwdactivity2.html
-%%T%%/db/docs/html/workingwithderby/twwdactivity3_Setup.html
-%%T%%/db/docs/html/workingwithderby/twwdactivity4.html
-%%T%%/db/docs/html/workingwithderby/workingwithderby-single.html
-%%T%%/db/docs/html/workingwithderby/wwdconrefs.html
 %%T%%/db/docs/pdf/adminguide/derbyadmin.pdf
 %%T%%/db/docs/pdf/devguide/derbydev.pdf
 %%T%%/db/docs/pdf/getstart/getstartderby.pdf
 %%T%%/db/docs/pdf/ref/refderby.pdf
 %%T%%/db/docs/pdf/tools/derbytools.pdf
 %%T%%/db/docs/pdf/tuning/tuningderby.pdf
-%%T%%/db/docs/pdf/workingwithderby/WorkingWithDerby.pdf
+%%T%%/db/frameworks.DEPRECATED.txt
 %%T%%/db/frameworks/NetworkServer/bin/NetworkServerControl.bat
 %%T%%/db/frameworks/NetworkServer/bin/NetworkServerControl.ksh
 %%T%%/db/frameworks/NetworkServer/bin/dblook.bat
@@ -3142,6 +3161,8 @@
 %%T%%/jre/lib/fontconfig.RedHat.2.1.properties.src
 %%T%%/jre/lib/fontconfig.RedHat.3.bfc
 %%T%%/jre/lib/fontconfig.RedHat.3.properties.src
+%%T%%/jre/lib/fontconfig.RedHat.4.bfc
+%%T%%/jre/lib/fontconfig.RedHat.4.properties.src
 %%T%%/jre/lib/fontconfig.RedHat.bfc
 %%T%%/jre/lib/fontconfig.RedHat.properties.src
 %%T%%/jre/lib/fontconfig.SuSE.bfc
@@ -4571,7 +4592,6 @@
 @dirrm %%T%%/db/frameworks/NetworkServer/bin
 @dirrm %%T%%/db/frameworks/NetworkServer
 @dirrm %%T%%/db/frameworks
-@dirrm %%T%%/db/docs/pdf/workingwithderby
 @dirrm %%T%%/db/docs/pdf/tuning
 @dirrm %%T%%/db/docs/pdf/tools
 @dirrm %%T%%/db/docs/pdf/ref
@@ -4579,7 +4599,6 @@
 @dirrm %%T%%/db/docs/pdf/devguide
 @dirrm %%T%%/db/docs/pdf/adminguide
 @dirrm %%T%%/db/docs/pdf
-@dirrm %%T%%/db/docs/html/workingwithderby
 @dirrm %%T%%/db/docs/html/tuning
 @dirrm %%T%%/db/docs/html/tools
 @dirrm %%T%%/db/docs/html/ref
@@ -4589,10 +4608,36 @@
 @dirrm %%T%%/db/docs/html/adminguide
 @dirrm %%T%%/db/docs/html
 @dirrm %%T%%/db/docs
+@dirrm %%T%%/db/demo/templates
 @dirrm %%T%%/db/demo/programs/workingwithderby
 @dirrm %%T%%/db/demo/programs/toursdb
 @dirrm %%T%%/db/demo/programs/simple
+@dirrm %%T%%/db/demo/programs/scores/java/server/org/apache/derbyDemo/scores/proc
+@dirrm %%T%%/db/demo/programs/scores/java/server/org/apache/derbyDemo/scores
+@dirrm %%T%%/db/demo/programs/scores/java/server/org/apache/derbyDemo
+@dirrm %%T%%/db/demo/programs/scores/java/server/org/apache
+@dirrm %%T%%/db/demo/programs/scores/java/server/org
+@dirrm %%T%%/db/demo/programs/scores/java/server
+@dirrm %%T%%/db/demo/programs/scores/java/common/org/apache/derbyDemo/scores/util
+@dirrm %%T%%/db/demo/programs/scores/java/common/org/apache/derbyDemo/scores
+@dirrm %%T%%/db/demo/programs/scores/java/common/org/apache/derbyDemo
+@dirrm %%T%%/db/demo/programs/scores/java/common/org/apache
+@dirrm %%T%%/db/demo/programs/scores/java/common/org
+@dirrm %%T%%/db/demo/programs/scores/java/common
+@dirrm %%T%%/db/demo/programs/scores/java/client/org/apache/derbyDemo/scores/data
+@dirrm %%T%%/db/demo/programs/scores/java/client/org/apache/derbyDemo/scores/app
+@dirrm %%T%%/db/demo/programs/scores/java/client/org/apache/derbyDemo/scores
+@dirrm %%T%%/db/demo/programs/scores/java/client/org/apache/derbyDemo
+@dirrm %%T%%/db/demo/programs/scores/java/client/org/apache
+@dirrm %%T%%/db/demo/programs/scores/java/client/org
+@dirrm %%T%%/db/demo/programs/scores/java/client
+@dirrm %%T%%/db/demo/programs/scores/java
+@dirrm %%T%%/db/demo/programs/scores
 @dirrm %%T%%/db/demo/programs/nserverdemo
+@dirrm %%T%%/db/demo/programs/localcal/src/images
+@dirrm %%T%%/db/demo/programs/localcal/src
+@dirrm %%T%%/db/demo/programs/localcal/lib
+@dirrm %%T%%/db/demo/programs/localcal
 @dirrm %%T%%/db/demo/programs
 @dirrm %%T%%/db/demo/databases/toursdb/seg0
 @dirrm %%T%%/db/demo/databases/toursdb/log
