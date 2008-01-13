@@ -43,6 +43,43 @@ lib/libgladeui-1.so
 lib/libgladeui-1.so.7
 libdata/pkgconfig/gladeui-1.0.pc
 share/applications/glade-3.desktop
+%%DOCSDIR%%/GladeApp.html
+%%DOCSDIR%%/GladeClipboard.html
+%%DOCSDIR%%/GladeClipboardView.html
+%%DOCSDIR%%/GladeCommand.html
+%%DOCSDIR%%/GladeEditor.html
+%%DOCSDIR%%/GladeEditorProperty.html
+%%DOCSDIR%%/GladeFixed.html
+%%DOCSDIR%%/GladeInspector.html
+%%DOCSDIR%%/GladePalette.html
+%%DOCSDIR%%/GladePlaceholder.html
+%%DOCSDIR%%/GladeProject.html
+%%DOCSDIR%%/GladeWidget.html
+%%DOCSDIR%%/catalog.html
+%%DOCSDIR%%/catalogintro.html
+%%DOCSDIR%%/children.html
+%%DOCSDIR%%/core.html
+%%DOCSDIR%%/dockables.html
+%%DOCSDIR%%/gladeui-GladeBaseEditor.html
+%%DOCSDIR%%/gladeui-GladePropertyClass.html
+%%DOCSDIR%%/gladeui-GladeWidgetAdaptor.html
+%%DOCSDIR%%/gladeui-glade-parameter.html
+%%DOCSDIR%%/gladeui-glade-property.html
+%%DOCSDIR%%/gladeui-glade-signal-editor.html
+%%DOCSDIR%%/gladeui-glade-utils.html
+%%DOCSDIR%%/gladeui.devhelp
+%%DOCSDIR%%/gladeui.devhelp2
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/ix01.html
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/misc.html
+%%DOCSDIR%%/properties.html
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
+%%DOCSDIR%%/widgetclasses.html
 %%GNOME:%%%%DATADIR%%/catalogs/bonobo.xml
 %%GNOME:%%%%DATADIR%%/catalogs/bonobo.xml.in
 %%GNOME:%%%%DATADIR%%/catalogs/canvas.xml
@@ -390,6 +427,7 @@ share/omf/glade/glade-sv.omf
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/catalogs
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
 @dirrm lib/glade3/modules
 @dirrm lib/glade3/bindings
 @dirrm lib/glade3
