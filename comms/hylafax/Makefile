@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hylafax
-PORTVERSION=	4.3.4
+PORTVERSION=	4.4.4
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=/usr/include \
 		--with-DIR_HTML="${DOCSDIR}"
 
+PORTDOCS=	RELEASENOTES-4.3.txt RELEASENOTES-4.4.txt
 SUB_FILES=	pkg-message hylafax.sh.sample
 
 # Defaults to "North American Letter".  Use "ISO A4" for A4.
@@ -110,6 +111,10 @@ post-install:
 .for f in hfaxd.conf pagesizes typerules
 	if [ ! -f ${PREFIX}/lib/fax/${f} ]; then ${CP} -p ${PREFIX}/lib/fax/${f}-dist ${PREFIX}/lib/fax/${f}; fi
 .endfor
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
