@@ -58,120 +58,6 @@ sbin/probemodem
 sbin/lockname
 sbin/ondelay
 sbin/hylafax
-%%PORTDOCS%%%%DOCSDIR%%/icons/at_work_icon.gif
-%%PORTDOCS%%%%DOCSDIR%%/icons/ball_blue_icon.gif
-%%PORTDOCS%%%%DOCSDIR%%/icons/button.excl.gif
-%%PORTDOCS%%%%DOCSDIR%%/icons/back.gif
-%%PORTDOCS%%%%DOCSDIR%%/icons/frog.gif
-%%PORTDOCS%%%%DOCSDIR%%/icons/improved.gif
-%%PORTDOCS%%%%DOCSDIR%%/icons/info_icon.gif
-%%PORTDOCS%%%%DOCSDIR%%/icons/new.gif
-%%PORTDOCS%%%%DOCSDIR%%/icons/next.gif
-%%PORTDOCS%%%%DOCSDIR%%/icons/smiley.gif
-%%PORTDOCS%%%%DOCSDIR%%/icons/warning_icon.gif
-%%PORTDOCS%%%%DOCSDIR%%/icons/contents.gif
-%%PORTDOCS%%%%DOCSDIR%%/Modems/Telebit/faxcmds.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/Supra/class1.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/Supra/class2.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/ZyXEL/autodetect.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/ZyXEL/codes.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/ZyXEL/commands.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/ZyXEL/compression.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/ZyXEL/examples.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/ZyXEL/voice.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/Hayes/hayes.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/att-dataport.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/digicom-scout.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/everex-2496d.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/hayes-optima2400.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/index.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/multitech-1432.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/multitech-1932.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/nuvo-96424pfx.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/ppi-pm14400fxmt.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/supra-v32bis.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/telebit-t3000.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/twincom-144df.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/ucom-traveller96.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/usr-courier.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/usr-sportster.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/zyxel-1496.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/zyxel-elite.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/zyxel-omni.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/rockwell-56k.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/multitech-2834.html
-%%PORTDOCS%%%%DOCSDIR%%/Modems/hayes-accura288.html
-%%PORTDOCS%%%%DOCSDIR%%/Majordomo/help.html
-%%PORTDOCS%%%%DOCSDIR%%/acknowledge.html
-%%PORTDOCS%%%%DOCSDIR%%/binary.html
-%%PORTDOCS%%%%DOCSDIR%%/building.html
-%%PORTDOCS%%%%DOCSDIR%%/class1.html
-%%PORTDOCS%%%%DOCSDIR%%/class2.0.html
-%%PORTDOCS%%%%DOCSDIR%%/class2.html
-%%PORTDOCS%%%%DOCSDIR%%/contrib.html
-%%PORTDOCS%%%%DOCSDIR%%/copyright.html
-%%PORTDOCS%%%%DOCSDIR%%/documentation.html
-%%PORTDOCS%%%%DOCSDIR%%/faxgateway.html
-%%PORTDOCS%%%%DOCSDIR%%/ftpmail-help.html
-%%PORTDOCS%%%%DOCSDIR%%/ghostscript.html
-%%PORTDOCS%%%%DOCSDIR%%/HOWTO.html
-%%PORTDOCS%%%%DOCSDIR%%/hylafax3.0.html
-%%PORTDOCS%%%%DOCSDIR%%/hylafax4.0.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/install-source.html
-%%PORTDOCS%%%%DOCSDIR%%/ixotap.html
-%%PORTDOCS%%%%DOCSDIR%%/mailing-lists.html
-%%PORTDOCS%%%%DOCSDIR%%/modems.html
-%%PORTDOCS%%%%DOCSDIR%%/namechange.html
-%%PORTDOCS%%%%DOCSDIR%%/operation.html
-%%PORTDOCS%%%%DOCSDIR%%/overview.html
-%%PORTDOCS%%%%DOCSDIR%%/sam.html
-%%PORTDOCS%%%%DOCSDIR%%/matthias.html
-%%PORTDOCS%%%%DOCSDIR%%/setup-advanced.html
-%%PORTDOCS%%%%DOCSDIR%%/setup-client.html
-%%PORTDOCS%%%%DOCSDIR%%/setup.html
-%%PORTDOCS%%%%DOCSDIR%%/source.html
-%%PORTDOCS%%%%DOCSDIR%%/toc.html
-%%PORTDOCS%%%%DOCSDIR%%/troubleshooting.html
-%%PORTDOCS%%%%DOCSDIR%%/upgrade4.0.html
-%%PORTDOCS%%%%DOCSDIR%%/v2.3beta036.html
-%%PORTDOCS%%%%DOCSDIR%%/v2.3beta036special.html
-%%PORTDOCS%%%%DOCSDIR%%/v3.0beta096.html
-%%PORTDOCS%%%%DOCSDIR%%/v3.0beta100.html
-%%PORTDOCS%%%%DOCSDIR%%/v3.0beta108.html
-%%PORTDOCS%%%%DOCSDIR%%/v3.0beta110.html
-%%PORTDOCS%%%%DOCSDIR%%/v3.0beta111.html
-%%PORTDOCS%%%%DOCSDIR%%/v3.0beta112.html
-%%PORTDOCS%%%%DOCSDIR%%/v3.0beta113.html
-%%PORTDOCS%%%%DOCSDIR%%/v3.0beta114.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta005.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta006.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta007.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta008.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta009.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta010.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta011.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta012.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta013.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta014.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta015.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta018.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta020.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta021.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta022.html
-%%PORTDOCS%%%%DOCSDIR%%/v4.0beta023.html
-%%PORTDOCS%%%%DOCSDIR%%/version.html
-%%PORTDOCS%%%%DOCSDIR%%/sam.gif
-%%PORTDOCS%%%%DOCSDIR%%/matthias.gif
-%%PORTDOCS%%%%DOCSDIR%%/hylafax.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Modems/ZyXEL
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Modems/Telebit
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Modems/Supra
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Modems/Hayes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Modems
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Majordomo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @cwd /var/spool
 hylafax/COPYRIGHT
 @exec mkfifo %D/hylafax/FIFO
@@ -193,6 +79,7 @@ hylafax/bin/notify-4.1
 hylafax/bin/notify-4.2
 hylafax/bin/archive
 hylafax/bin/common-functions
+hylafax/bin/common-functions.O
 hylafax/bin/dictionary
 hylafax/bin/notify.awk
 hylafax/bin/qp-encode.awk
@@ -212,8 +99,6 @@ hylafax/config/class2
 hylafax/config/class2.0
 hylafax/config/class2.1
 hylafax/config/skel
-hylafax/config/agere-mp-2
-hylafax/config/agere-mp-21
 hylafax/config/att-dataport-2
 hylafax/config/att-dataport-2.0
 hylafax/config/att-dataport
@@ -236,6 +121,7 @@ hylafax/config/gvc-288-2
 hylafax/config/hayes
 hylafax/config/iaxmodem
 hylafax/config/intel-400e
+hylafax/config/ip568x
 hylafax/config/linux-isdn-2
 hylafax/config/lucent
 hylafax/config/lucent-isa
@@ -243,6 +129,8 @@ hylafax/config/lucent-mt-2
 hylafax/config/lucent-mt-20
 hylafax/config/lucent-mt-21
 hylafax/config/lucent-mt-10
+hylafax/config/mainpine-2
+hylafax/config/mainpine-21
 hylafax/config/moto-288
 hylafax/config/mt-1432
 hylafax/config/nuvo-voyager
