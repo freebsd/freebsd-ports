@@ -26,7 +26,7 @@ DIST_SUBDIR=	zope
 
 WRKSRC=		${WRKDIR}/CMFQuickInstallerTool
 
-CONFLICTS=	plone-[0-9]*
+CONFLICTS=	plone[0-9]*-[0-9]*
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/interfaces/
