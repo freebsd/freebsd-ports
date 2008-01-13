@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.40.3
+PORTVERSION=	1.40.4
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -57,17 +57,10 @@ MAKE_ARGS+=	STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
 PLIST_SUB=	NLS=""
 .endif
 
-post-patch:
+post-patch::
 	${REINPLACE_CMD} -E -e \
 		's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
 		${WRKSRC}/lib/*/Makefile.in
-	@: # disable uuidgen and filefrag
-	${REINPLACE_CMD} -E -e \
-		's/^(UPROGS.*) uuidgen(.*)/\1\2/; \
-		 s/^(UMANPAGES.*) uuidgen.1(.*)/\1\2/; \
-		 s/^(USPROGS.*) filefrag(.*)/\1\2/; \
-		 s/filefrag\.8 //' \
-		${WRKSRC}/misc/Makefile.in
 	@: # don't build/install libext2fs.info
 	${REINPLACE_CMD} -e 's/ install-doc-libs$$//' ${WRKSRC}/Makefile.in
 
@@ -89,7 +82,7 @@ post-build:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${PREFIX}/sbin/
-	@: # install into /sbin since we might need e2fsck early on
+	@: # stuff into /sbin since we might need e2fsck early on
 	${LN} ${PREFIX}/sbin/fsck_ext2fs /sbin/ 2>/dev/null || \
 		${INSTALL_PROGRAM} ${PREFIX}/sbin/fsck_ext2fs /sbin/
 	${LN} ${PREFIX}/sbin/e2fsck /sbin/ 2>/dev/null || \
