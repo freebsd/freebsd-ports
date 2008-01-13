@@ -13346,6 +13346,7 @@ py-mhash	ports/security/py-mhash
 py-migrate	ports/databases/py-migrate
 py-milter	ports/mail/py-milter
 py-ming		ports/graphics/py-ming
+py-mnemosyne	ports/games/py-mnemosyne
 py-mp-random	ports/net/py-mp-random
 py-mpz		ports/math/py-mpz
 py-msnp		ports/net-im/py-msnp
