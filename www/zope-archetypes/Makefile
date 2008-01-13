@@ -30,7 +30,7 @@ USE_ZOPE=	yes
 USE_PYTHON=	yes
 PLIST=	${WRKDIR}/pkg-plist
 
-CONFLICTS=	plone-[0-9]*
+CONFLICTS=	plone[0-9]*-[0-9]*
 
 do-build:
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
