@@ -3,10 +3,11 @@ bin/ganttproject
 %%DATADIR%%/HouseBuildingSample.gan
 %%DATADIR%%/eclipsito.jar
 %%DATADIR%%/ganttproject-eclipsito-config.xml
-%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/colombia_calendar.patch
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/keyboard.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_de.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_en_canada.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_en_england.calendar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_es_AR.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_es.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_es_colombia.calendar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/calendar/i18n_fr.calendar
@@ -424,7 +425,6 @@ bin/ganttproject
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/zoomp_16.gif
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/zoomp_24.gif
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons/zoomp_32.gif
-%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/keyboard.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_bg.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_cs.properties
@@ -454,6 +454,7 @@ bin/ganttproject
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_ro_RO.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_ru.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_sk.properties
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_sl.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_sv.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_tr.properties
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language/i18n_zh.properties
@@ -485,6 +486,7 @@ bin/ganttproject
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/label01.png
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/label02.png
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos/splash.png
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logs/README
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslfo/ganttproject.xsl
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslt/gantt-chart.xsl
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslt/gantt-resources.xsl
@@ -492,6 +494,7 @@ bin/ganttproject
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslt/gantt-utils.xsl
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslt/gantt.xsl
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/ganttproject.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/AppleJavaExtensions.jar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/commons-httpclient-contrib.jar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/commons-httpclient.jar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/commons-logging.jar
@@ -502,6 +505,7 @@ bin/ganttproject
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/jdnc-modifBen.jar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/jdom-1.0.jar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/jgoodies-looks-1.2.2.jar
+%%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/apple.LICENSE
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/commons-httpclient.LICENSE
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/commons-logging.LICENSE
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/helpgui.LICENSE
@@ -512,7 +516,7 @@ bin/ganttproject
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/licenses/xml-im-exporter.LICENSE
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib/core/xml-im-exporter1.1.jar
 %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/plugin.xml
-%%DATADIR%%/plugins/org.ganttproject.chart.pert_2.0.0/org.ganttproject.chart.pert.jar
+%%DATADIR%%/plugins/org.ganttproject.chart.pert_2.0.0/pert.jar
 %%DATADIR%%/plugins/org.ganttproject.chart.pert_2.0.0/plugin.xml
 %%DATADIR%%/plugins/org.ganttproject.chart.pert_2.0.0/resources/icons/pert_16.gif
 %%DATADIR%%/plugins/org.ganttproject.chart.pert_2.0.0/resources/icons/pert_24.gif
@@ -527,6 +531,11 @@ bin/ganttproject
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/default/gantt-tasks.xsl
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/default/gantt-utils.xsl
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/default/gantt.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/samara/gantt-resources.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/samara/gantt-utils.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/samara/gantt-tasks.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/samara/gantt-chart.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/samara/gantt.xsl
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/COPYING
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/README
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/gantt-chart.xsl
@@ -538,6 +547,12 @@ bin/ganttproject
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/images/menu.jpg
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/images/top.jpg
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/basic_landscape/ganttproject.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/basic_landscape/L-ganttproject.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/layout/a4-landscape.xml
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/layout/a4-portrait.xml
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/samara/samara-landscape.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/samara/samara-portrait.xsl
+%%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/samara/samara-generic.xml
 %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/ganttproject.xsl
 %%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/ganttproject-msproject.jar
 %%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj/jakarta-poi-2.5.jar
@@ -553,10 +568,13 @@ bin/ganttproject
 @dirrm %%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib/mpxj
 @dirrm %%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0/lib
 @dirrm %%DATADIR%%/plugins/org.ganttproject.impex.msproject_2.0.0
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/samara
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/layout
 @dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes/basic_landscape
 @dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/pdf-export-themes
 @dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue/images
 @dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/striped_blue
+@dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/samara
 @dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes/default
 @dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource/html-export-themes
 @dirrm %%DATADIR%%/plugins/org.ganttproject.impex.htmlpdf_2.0.0/resource
@@ -570,6 +588,7 @@ bin/ganttproject
 @dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/lib
 @dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslt
 @dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/xslfo
+@dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logs
 @dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/logos
 @dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/language
 @dirrm %%DATADIR%%/plugins/net.sourceforge.ganttproject_2.0.0/data/resources/icons
