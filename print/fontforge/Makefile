@@ -7,6 +7,7 @@
 
 PORTNAME=	fontforge
 PORTVERSION=	20080109
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -21,7 +22,8 @@ LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
 		png.5:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		spiro.0:${PORTSDIR}/graphics/libspiro
 
 .if defined(FONTFORGE_WITH_TTF_DEBUGGER)
 FREETYPE_VERSION=	2.3.5
@@ -41,16 +43,18 @@ USE_XLIB=	yes
 PATCH_STRIP=	-l
 
 .if !defined(FONTFORGE_NO_MULTILAYER)
-WITH_MULTILAYER=	--with-multilayer
+WITH_MULTILAYER=	--enable-multilayer
+.else
+WITH_MULTILAYER=	--disable-multilayer
 .endif
 
 .if !defined(WITHOUT_TTF_BYTECODE_ENABLED) && defined(FONTFORGE_WITH_TTF_DEBUGGER)
-WITH_FREETYPE_SRC=	--with-freetype-src=${WRKDIR}/freetype-${FREETYPE_VERSION}
+WITH_FREETYPE_SRC=	--with-freetype-bytecode --with-freetype-src=${WRKDIR}/freetype-${FREETYPE_VERSION}
 .else
-WITH_FREETYPE_SRC=	--without-freetype-src
+WITH_FREETYPE_SRC=	--without-freetype-bytecode --without-freetype-src
 .endif
 
-CONFIGURE_ARGS=	${WITH_MULTILAYER} --with-devicetables ${WITH_FREETYPE_SRC}
+CONFIGURE_ARGS=	${WITH_MULTILAYER} --enable-devicetables ${WITH_FREETYPE_SRC}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lutil" CFLAGS="${CFLAGS} \
 		-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
@@ -72,6 +76,7 @@ PLIST_SUB+=	NO_PLUGINS=""
 USE_PYTHON=	yes
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	Python on non-i386 systems doesn't link with Fontforge (issues with use of Python's .a file)
+CONFIGURE_ARGS+=	--with-python
 .else
 CONFIGURE_ARGS+=	--without-python
 .endif
