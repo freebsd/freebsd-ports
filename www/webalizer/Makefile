@@ -7,7 +7,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.1.10
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
@@ -108,6 +108,10 @@ CFLAGS+=		-I${LOCALBASE}/include
 
 .if !defined(WITHOUT_WEBALIZER_FULLREFS)
 EXTRA_PATCHES+=		${FILESDIR}/webalizer-fullrefs.patch
+.endif
+
+.if defined(WITH_WEBALIZER_LOWERCASE_SEARCH)
+CFLAGS+=	-DWEBALIZER_LOWERCASE_SEARCH
 .endif
 
 do-extract:
