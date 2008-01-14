@@ -7,6 +7,7 @@
 
 PORTNAME=	cups
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
@@ -41,6 +42,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--with-system-groups=${CUPSSYSGRP}	\
 			--with-docdir=${DOCSDIR}		\
 			--with-icondir=${PREFIX}/share/icons	\
+			--with-menudir=${DESKTOPDIR}		\
 			--with-domainsocket=${CUPS_SOCKET}
 
 OPTIONS=	GNUTLS		"Build with GNUTLS library" on \
