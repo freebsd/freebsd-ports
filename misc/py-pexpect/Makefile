@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	pexpect
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	misc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	A Pure Python Expect-like module
 
 USE_PYTHON=	yes
