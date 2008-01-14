@@ -1,0 +1,5 @@
+libopkele is a c++ implementation of an OpenID decentralized identity
+system. It provides OpenID protocol handling, leaving authentication
+and user interaction to the implementor.
+
+WWW: http://kin.klever.net/libopkele/
