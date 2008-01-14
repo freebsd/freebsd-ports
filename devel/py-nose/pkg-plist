@@ -5,27 +5,60 @@ bin/nosetests
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/ext/dtcompat.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/ext/dtcompat.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/ext/dtcompat.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/ext/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/ext/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/ext/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/attrib.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/attrib.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/attrib.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/base.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/base.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/builtin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/builtin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/builtin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/capture.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/capture.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/capture.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/cover.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/cover.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/cover.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/debug.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/debug.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/debug.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/deprecated.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/deprecated.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/deprecated.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/doctests.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/doctests.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/doctests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/errorclass.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/errorclass.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/errorclass.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/failuredetail.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/failuredetail.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/failuredetail.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/isolate.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/isolate.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/isolate.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/missed.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/missed.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/missed.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/manager.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/manager.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/manager.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/plugintest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/plugintest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/plugintest.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/prof.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/prof.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/prof.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/skip.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/skip.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/skip.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/testid.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/testid.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/testid.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins/__init__.pyo
@@ -78,6 +111,7 @@ bin/nosetests
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/__init__.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/ext
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nose
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
