@@ -2391,6 +2391,7 @@ ecl		ports/lang/ecl
 eclair		ports/multimedia/eclair
 eclipse		ports/java/eclipse
 eclipse-EPIC	ports/java/eclipse-EPIC
+eclipse-RDT	ports/java/eclipse-RDT
 eclipse-aptana	ports/java/eclipse-aptana
 eclipse-cdt	ports/java/eclipse-cdt
 eclipse-checkstyle	ports/java/eclipse-checkstyle
