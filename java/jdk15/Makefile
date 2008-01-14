@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/tiger/
@@ -253,6 +253,24 @@ do-extract:
 			fi; \
 		fi \
 	done
+
+post-extract:
+	cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		j2se/make/tools/crypto/pkcs11/sunpkcs11_src.zip \
+		${EXTRACT_AFTER_ARGS}
+	-${MKDIR} ${WRKDIR}/j2se/make/sun/security
+	-${MKDIR} ${WRKDIR}/j2se/src/share/classes/sun/security
+	-${MKDIR} ${WRKDIR}/j2se/src/share/native/sun/security
+	-${MKDIR} ${WRKDIR}/j2se/src/solaris/native/sun/security
+	${MV} ${WRKDIR}/make/sun/security/pkcs11 \
+		${WRKDIR}/j2se/make/sun/security/pkcs11
+	${MV} ${WRKDIR}/src/share/classes/sun/security/pkcs11 \
+		${WRKDIR}/j2se/src/share/classes/sun/security/pkcs11
+	${MV} ${WRKDIR}/src/share/native/sun/security/pkcs11 \
+		${WRKDIR}/j2se/src/share/native/sun/security/pkcs11
+	${MV} ${WRKDIR}/src/solaris/native/sun/security/pkcs11 \
+		${WRKDIR}/j2se/src/solaris/native/sun/security/pkcs11
+	cd ${WRKDIR} && ${RM} -rf src
 
 pre-patch:
 	@cd ${WRKDIR} &&  \

@@ -1,0 +1,22 @@
+$FreeBSD$
+
+--- ../../j2se/make/sun/security/pkcs11/Makefile.orig	Sun Jan 13 11:11:15 2008
++++ ../../j2se/make/sun/security/pkcs11/Makefile	Sun Jan 13 13:12:48 2008
+@@ -47,7 +47,7 @@
+ #
+ # Libraries to link
+ #
+-ifeq ($(PLATFORM), windows)
++ifneq (,$(findstring $(PLATFORM), windows bsd))
+   OTHER_LDLIBS = $(JVMLIB)
+ else
+   OTHER_LDLIBS = -ldl $(JVMLIB)
+@@ -62,7 +62,7 @@
+ 
+ jar: classes
+ 	-$(RM) $(PKCS11_JAR)
+-	$(JAR) cf $(PKCS11_JAR) -C $(CLASSDESTDIR) sun/security/pkcs11 || exit 1
++	$(CP) $(BUILDDIR)/tools/crypto/pkcs11/sunpkcs11.jar $(PKCS11_JAR) || exit 1
+ 
+ # testing only
+ KEY_LOCATION = /security/ws/JCE-tiger/src
