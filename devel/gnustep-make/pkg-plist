@@ -1,4 +1,10 @@
 GNUstep.conf
+System/Library/Documentation/man/man1/debugapp.1.gz
+System/Library/Documentation/man/man1/openapp.1.gz
+System/Library/Documentation/man/man1/gnustep-config.1.gz
+System/Library/Documentation/man/man1/opentool.1.gz
+System/Library/Documentation/man/man7/GNUstep.7.gz
+System/Library/Documentation/man/man7/library-combo.7.gz
 System/Library/Makefiles/GNUstep-reset.sh
 System/Library/Makefiles/GNUstep.csh
 System/Library/Makefiles/GNUstep.sh
@@ -46,6 +52,7 @@ System/Library/Makefiles/Master/gswbundle.make
 System/Library/Makefiles/Master/java-tool.make
 System/Library/Makefiles/Master/java.make
 System/Library/Makefiles/Master/library.make
+System/Library/Makefiles/Master/nsis.make
 System/Library/Makefiles/Master/objc.make
 System/Library/Makefiles/Master/palette.make
 System/Library/Makefiles/Master/resource-set.make
@@ -97,6 +104,7 @@ System/Library/Makefiles/messages.make
 System/Library/Makefiles/mkinstalldirs
 System/Library/Makefiles/names.make
 System/Library/Makefiles/native-library.make
+System/Library/Makefiles/nsi-app.template
 System/Library/Makefiles/objc.make
 System/Library/Makefiles/os.sh
 System/Library/Makefiles/palette.make
@@ -143,6 +151,8 @@ System/Tools/opentool
 @dirrm System/Library/Headers
 @dirrm System/Library/Frameworks
 @dirrm System/Library/Fonts
+@dirrm System/Library/Documentation/man/man7
+@dirrm System/Library/Documentation/man/man1
 @dirrm System/Library/Documentation/man
 @dirrm System/Library/Documentation/info
 @dirrm System/Library/Documentation/User
