@@ -1,0 +1,11 @@
+bin/schwartzmon
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/TheSchwartz/.packlist
+%%SITE_PERL%%/TheSchwartz.pm
+%%SITE_PERL%%/TheSchwartz/Error.pm
+%%SITE_PERL%%/TheSchwartz/ExitStatus.pm
+%%SITE_PERL%%/TheSchwartz/FuncMap.pm
+%%SITE_PERL%%/TheSchwartz/Job.pm
+%%SITE_PERL%%/TheSchwartz/JobHandle.pm
+%%SITE_PERL%%/TheSchwartz/Worker.pm
+@dirrmtry %%SITE_PERL%%/TheSchwartz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/TheSchwartz

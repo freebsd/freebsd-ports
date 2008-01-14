@@ -1639,6 +1639,7 @@
     SUBDIR += p5-Test-use-ok
     SUBDIR += p5-Text-LevenshteinXS
     SUBDIR += p5-Text-vFile-asData
+    SUBDIR += p5-TheSchwartz
     SUBDIR += p5-Thread-Apartment
     SUBDIR += p5-Thread-Pool-Simple
     SUBDIR += p5-Thread-Queue-Duplex
