@@ -51,6 +51,7 @@ lib/libcdialog.a
 %%EXAMPLESDIR%%/editbox
 %%EXAMPLESDIR%%/editbox-utf8
 %%EXAMPLESDIR%%/editbox2
+%%EXAMPLESDIR%%/editbox3
 %%EXAMPLESDIR%%/form1
 %%EXAMPLESDIR%%/form1-both
 %%EXAMPLESDIR%%/form1-extra
