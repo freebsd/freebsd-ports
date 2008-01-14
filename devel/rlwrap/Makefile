@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rlwrap
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	devel
 MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/ \
 		${MASTER_SITE_LOCAL} \
