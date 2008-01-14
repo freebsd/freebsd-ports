@@ -12,9 +12,6 @@ buildenv () {
 	export INDEXFILE=INDEX-5
 	export USE_NONDEFAULT_X11BASE=1
 	    ;;
-	x5-exp)
-	export INDEXFILE=INDEX-6
-	    ;;
 	x6)
 	export INDEXFILE=INDEX-6
 	    ;;
@@ -31,6 +28,15 @@ buildenv () {
 	export INDEXFILE=INDEX-7
 	    ;;
 	x8)
+	export INDEXFILE=INDEX-8
+	    ;;
+	x7-exp)
+	export INDEXFILE=INDEX-7
+	    ;;
+	x8)
+	export INDEXFILE=INDEX-8
+	    ;;
+	x8-exp)
 	export INDEXFILE=INDEX-8
 	    ;;
 	*)

@@ -30,10 +30,6 @@ case "x$1" in
     branch=5
     INDEXFILE=INDEX-5
     ;;
-  x5-exp)
-    branch=5-exp
-    INDEXFILE=INDEX-5
-    ;;
   x6)
     branch=6
     INDEXFILE=INDEX-6
@@ -56,6 +52,10 @@ case "x$1" in
     ;;
   x8)
     branch=8
+    INDEXFILE=INDEX-8
+    ;;
+  x8-exp)
+    branch=8-exp
     INDEXFILE=INDEX-8
     ;;
   *)
