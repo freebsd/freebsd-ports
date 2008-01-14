@@ -696,6 +696,7 @@
     SUBDIR += p5-Compress-LeadingBlankSpaces
     SUBDIR += p5-DBIx-Class-HTMLWidget
     SUBDIR += p5-Data-TreeDumper-Renderer-DHTML
+    SUBDIR += p5-Data-Validate-URI
     SUBDIR += p5-FAQ-OMatic
     SUBDIR += p5-FCGI-Async
     SUBDIR += p5-FCGI-ProcManager

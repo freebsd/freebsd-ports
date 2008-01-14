@@ -1,0 +1,17 @@
+%%SITE_PERL%%/Data/Validate/URI.pm
+%%SITE_PERL%%/auto/Data/Validate/URI/new.al
+%%SITE_PERL%%/auto/Data/Validate/URI/is_uri.al
+%%SITE_PERL%%/auto/Data/Validate/URI/is_http_uri.al
+%%SITE_PERL%%/auto/Data/Validate/URI/is_https_uri.al
+%%SITE_PERL%%/auto/Data/Validate/URI/is_web_uri.al
+%%SITE_PERL%%/auto/Data/Validate/URI/_split_uri.al
+%%SITE_PERL%%/auto/Data/Validate/URI/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/URI/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/URI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/auto/Data/Validate/URI
+@dirrmtry %%SITE_PERL%%/auto/Data/Validate
+@dirrmtry %%SITE_PERL%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data
