@@ -11892,6 +11892,7 @@ pear-Contact_Vcard_Parse	ports/mail/pear-Contact_Vcard_Parse
 pear-Crypt_Blowfish	ports/security/pear-Crypt_Blowfish
 pear-Crypt_CBC	ports/security/pear-Crypt_CBC
 pear-Crypt_CHAP	ports/security/pear-Crypt_CHAP
+pear-Crypt_GPG	ports/security/pear-Crypt_GPG
 pear-Crypt_HMAC	ports/security/pear-Crypt_HMAC
 pear-Crypt_RC4	ports/security/pear-Crypt_RC4
 pear-Crypt_RSA	ports/security/pear-Crypt_RSA
