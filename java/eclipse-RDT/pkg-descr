@@ -1,0 +1,8 @@
+RDT is an open source Ruby IDE for the Eclipse platform.
+Features supported are syntax highlighting, on the fly syntax check, graphical
+outline, Test::Unit view/runner, Ruby application launching, content assist,
+source formatter, Ruby debugging, Type Hierarchy view, Ruby specific Search,
+Refactoring, and much, much more.
+A regular expression plugin is also available (Thanks to the EPIC project).
+
+WWW: http://sourceforge.net/projects/rubyeclipse/
