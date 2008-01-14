@@ -2061,6 +2061,7 @@
     SUBDIR += qscintilla2
     SUBDIR += qscintilla2-designerplugin
     SUBDIR += qssl
+    SUBDIR += qsvn
     SUBDIR += qt4
     SUBDIR += qt4-assistant
     SUBDIR += qt4-corelib

@@ -1,0 +1,10 @@
+--- ./src/CMakeLists.txt.orig	2007-11-16 21:56:31.000000000 +0300
++++ ./src/CMakeLists.txt	2008-01-13 23:03:26.000000000 +0300
+@@ -157,5 +157,5 @@
+ ENDIF ( WIN32 )
+ 
+ # Unit-Tests
+-ENABLE_TESTING()
+-ADD_SUBDIRECTORY( tests )
++# ENABLE_TESTING()
++# ADD_SUBDIRECTORY( tests )
