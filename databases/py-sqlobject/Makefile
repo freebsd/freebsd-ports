@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlobject
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	databases python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/S/SQLObject/ \
 		${MASTER_SITE_LOCAL} \
