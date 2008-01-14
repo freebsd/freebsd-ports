@@ -1,0 +1,10 @@
+This module collects ip validation routines to make input validation, and
+untainting easier and more readable.
+
+All functions return an untainted value if the test passes, and undef if it
+fails. This means that you should always check for a defined status
+explicitly. Don't assume the return will be true. (e.g. is_username('0'))
+
+The value to test is always the first (and often only) argument.
+
+WWW: http://search.cpan.org/dist/Data-Validate-IP/
