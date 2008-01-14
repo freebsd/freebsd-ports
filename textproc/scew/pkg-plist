@@ -1,0 +1,15 @@
+bin/scew_print
+bin/scew_stream
+bin/scew_write
+libdata/pkgconfig/scew.pc
+lib/libscew.a
+include/scew/scew.h
+include/scew/attribute.h
+include/scew/element.h
+include/scew/error.h
+include/scew/parser.h
+include/scew/str.h
+include/scew/tree.h
+include/scew/types.h
+include/scew/writer.h
+@dirrm include/scew

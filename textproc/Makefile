@@ -920,6 +920,7 @@
     SUBDIR += saxon
     SUBDIR += saxon-devel
     SUBDIR += sc-aspell
+    SUBDIR += scew
     SUBDIR += scim
     SUBDIR += scim-input-pad
     SUBDIR += scim-kmfl-imengine
