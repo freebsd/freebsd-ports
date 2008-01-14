@@ -1,14 +1,5 @@
---- configure.orig	Thu Jan 18 01:17:34 2007
-+++ configure	Sat Mar 17 10:48:49 2007
-@@ -3942,7 +3942,7 @@
- 
- # Either a space-separated list of allowable Neon versions, or "any" to
- # mean allow anything.
--NEON_ALLOWED_LIST="0.24.7 0.25.0 0.25.1 0.25.2 0.25.3 0.25.4 0.25.5 0.26.0 0.26.1 0.26.2"
-+NEON_ALLOWED_LIST="0.24.7 0.25.0 0.25.1 0.25.2 0.25.3 0.25.4 0.25.5 0.26.0 0.26.1 0.26.2 0.26.3 0.26.4"
- NEON_LATEST_WORKING_VER=0.25.5
- NEON_URL="http://www.webdav.org/neon/neon-${NEON_LATEST_WORKING_VER}.tar.gz"
- # Check whether --enable-neon-version-check or --disable-neon-version-check was given.
+--- configure.orig	2007-12-17 23:01:31.000000000 +0100
++++ configure	2007-12-30 11:12:10.000000000 +0100
 @@ -4004,7 +4004,7 @@
             test "$svn_allowed_neon" = "any"; then
              svn_allowed_neon_on_system="yes"

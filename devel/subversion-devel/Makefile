@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.2/:bookhtml \
@@ -21,7 +20,7 @@ COMMENT=	Version control system
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -41,9 +40,20 @@ TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
 PORTDOCS=	${TXT_DOCS}
 .endif
 
-.if defined(WITH_ASVN)
-RUN_DEPENDS= ${LOCALBASE}/bin/gfind:${PORTSDIR}/misc/findutils:install
-.endif
+OPTIONS=	PERL		"Perl bindings" off \
+		PYTHON		"Python bindings" off \
+		RUBY		"Ruby bindings" off \
+		JAVA		"Java (JavaHL) bindings" off \
+		MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
+		APACHE2_APR	"Use APR from Apache 2.X" off \
+		NEON		"WebDAV/Delta-V repository access module" on \
+		BDB		"db4 repository backend" on \
+		ASVN		"Build and install Archive SVN (asvn)" off \
+		MAINTAINER_DEBUG	"Build debug version" off \
+		SVNSERVE_WRAPPER	"Enable svnserve wrapper" off \
+		BOOK		"Install the Subversion Book" off
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
@@ -52,8 +62,6 @@ PLIST_SUB+=		WITHOUT_GETTEXT=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		WITHOUT_GETTEXT="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fpic -DPIC
@@ -216,6 +224,7 @@ DISTFILES+=	svn-book.html:bookhtml \
 .endif
 
 .if defined(WITH_ASVN)
+RUN_DEPENDS=	${LOCALBASE}/bin/gfind:${PORTSDIR}/misc/findutils:install
 PLIST_SUB+=	ASVN=""
 .else
 PLIST_SUB+=	ASVN="@comment "
