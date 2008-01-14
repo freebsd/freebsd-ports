@@ -18,7 +18,9 @@ COMMENT=	CD/DVD mastering tool for the GNOME desktop
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
 		totem-plparser.7:${PORTSDIR}/multimedia/totem
 
-IGNORE=	does not build and broke in runtime if you fix the build anyway
+IGNORE=		does not build and broke in runtime if you fix the build anyway
+DEPRECATED=	Lacking interest, need someone to update and port CAM in this port
+EXPIRATION_DATE=2008-03-01
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
