@@ -24,9 +24,4 @@ PLIST_SUB+=	PYVER=${PYTHON_VERSION}
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
-post-install:
-	@${INSTALL} -d ${PREFIX}/share/applications
-	@cd ${WRKSRC} && ${CP} mnemosyne.desktop ${PREFIX}/share/applications/
-	@cd ${WRKSRC}/pixmaps && ${CP} mnemosyne.png ${PREFIX}/share/pixmaps/
-
 .include <bsd.port.mk>
