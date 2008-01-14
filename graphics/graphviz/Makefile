@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.16
+PORTVERSION=	2.16.1
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -24,6 +24,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl:15 libtool:15
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 CPPFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
@@ -87,6 +88,7 @@ OPTIONS=	TK "Build with TK support" on \
 
 CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--enable-dependency-tracking \
+		--enable-r=no \
 		--with-libgd \
 		--with-fontconfigincludedir=${X11BASE}/include \
 		--with-fontconfiglibdir=${X11BASE}/lib \

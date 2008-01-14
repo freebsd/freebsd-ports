@@ -178,6 +178,7 @@ lib/graphviz/python25/_gv.so
 %%WITH_PYTHON%%lib/graphviz/python/libgv_python.a
 %%WITH_PYTHON%%lib/graphviz/python/libgv_python.la
 %%WITH_PYTHON%%lib/graphviz/python/libgv_python.so
+lib/graphviz/r/gv.so
 lib/graphviz/ruby/gv.so
 %%WITH_RUBY%%lib/graphviz/ruby/libgv_ruby.a
 %%WITH_RUBY%%lib/graphviz/ruby/libgv_ruby.la
@@ -456,6 +457,7 @@ libdata/pkgconfig/libgvc_builtins.pc
 @dirrm lib/graphviz/python24
 @dirrm lib/graphviz/python23
 @dirrm lib/graphviz/python
+@dirrm lib/graphviz/r
 @dirrm lib/graphviz/ruby
 @dirrm lib/graphviz/sharp
 @dirrm lib/graphviz/tcl
