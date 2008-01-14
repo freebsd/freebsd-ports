@@ -14712,6 +14712,7 @@ sccmilter	ports/mail/sccmilter
 scdp		ports/net-mgmt/scdp
 sced		ports/graphics/sced
 sceptre		ports/cad/sceptre
+scew		ports/textproc/scew
 scheme48	ports/lang/scheme48
 schemetoc	ports/lang/schemetoc
 schism		ports/audio/schism
