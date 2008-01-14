@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	routes
-PORTVERSION=	1.7
+PORTVERSION=	1.7.1
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP} \
 		http://dryice.name/computer/FreeBSD/distfiles/
