@@ -1,5 +1,6 @@
 @unexec %D/etc/rc.d/sa-spamd.sh stop > /dev/null 2>&1 || true
 @unexec %D/etc/rc.d/sa-spamd stop > /dev/null 2>&1 || true
+bin/sa-compile
 bin/sa-learn
 bin/sa-update
 bin/spamassassin
@@ -24,9 +25,13 @@ etc/mail/spamassassin/v310.pre.sample
 @unexec if cmp -s %B/v312.pre.sample %B/v312.pre; then rm -f %B/v312.pre; fi
 etc/mail/spamassassin/v312.pre.sample
 @exec [ -f %B/v312.pre ] || cp %B/%f %B/v312.pre
+@unexec if cmp -s %B/v320.pre.sample %B/v320.pre; then rm -f %B/v320.pre; fi
+etc/mail/spamassassin/v320.pre.sample
+@exec [ -f %B/v320.pre ] || cp %B/%f %B/v320.pre
 %%SITE_PERL%%/Mail/SpamAssassin.pm
 %%SITE_PERL%%/Mail/SpamAssassin/AICache.pm
 %%SITE_PERL%%/Mail/SpamAssassin/ArchiveIterator.pm
+%%SITE_PERL%%/Mail/SpamAssassin/AsyncLoop.pm
 %%SITE_PERL%%/Mail/SpamAssassin/AutoWhitelist.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Bayes.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Bayes/CombineChi.pm
@@ -46,7 +51,6 @@ etc/mail/spamassassin/v312.pre.sample
 %%SITE_PERL%%/Mail/SpamAssassin/DBBasedAddrList.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Dns.pm
 %%SITE_PERL%%/Mail/SpamAssassin/DnsResolver.pm
-%%SITE_PERL%%/Mail/SpamAssassin/EvalTests.pm
 %%SITE_PERL%%/Mail/SpamAssassin/HTML.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Locales.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Locker.pm
@@ -68,19 +72,34 @@ etc/mail/spamassassin/v312.pre.sample
 %%SITE_PERL%%/Mail/SpamAssassin/PersistentAddrList.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/AWL.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/ASN.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/AccessDB.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/AntiVirus.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/AutoLearnThreshold.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Bayes.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/BodyEval.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/BodyRuleBaseExtractor.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Check.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/DCC.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/DKIM.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/DNSEval.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/DomainKeys.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/HTMLEval.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/HTTPSMismatch.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Hashcash.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/HeaderEval.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/ImageInfo.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/MIMEEval.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/MIMEHeader.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/OneLineBodyRuleType.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Pyzor.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Razor2.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/RelayEval.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/RelayCountry.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/ReplaceTags.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Rule2XSBody.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/SPF.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Shortcircuit.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/SpamCop.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Test.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/TextCat.pm
@@ -88,6 +107,10 @@ etc/mail/spamassassin/v312.pre.sample
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/URIDNSBL.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/URIDetail.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/URIEval.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/VBounce.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Plugin/WLBLEval.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Plugin/WhiteListSubject.pm
 %%SITE_PERL%%/Mail/SpamAssassin/PluginHandler.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Reporter.pm
@@ -100,29 +123,31 @@ etc/mail/spamassassin/v312.pre.sample
 %%SITE_PERL%%/Mail/SpamAssassin/Util/DependencyInfo.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/Progress.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Util/RegistrarBoundaries.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Util/TieOneStringHash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin/.packlist
 %%SITE_PERL%%/spamassassin-run.pod
-%%DATADIR%%/10_misc.cf
+%%DATADIR%%/10_default_prefs.cf
 %%DATADIR%%/20_advance_fee.cf
-%%DATADIR%%/20_anti_ratware.cf
 %%DATADIR%%/20_body_tests.cf
 %%DATADIR%%/20_compensate.cf
 %%DATADIR%%/20_dnsbl_tests.cf
 %%DATADIR%%/20_drugs.cf
+%%DATADIR%%/20_dynrdns.cf
 %%DATADIR%%/20_fake_helo_tests.cf
 %%DATADIR%%/20_head_tests.cf
 %%DATADIR%%/20_html_tests.cf
+%%DATADIR%%/20_imageinfo.cf
 %%DATADIR%%/20_meta_tests.cf
 %%DATADIR%%/20_net_tests.cf
 %%DATADIR%%/20_phrases.cf
 %%DATADIR%%/20_porn.cf
 %%DATADIR%%/20_ratware.cf
 %%DATADIR%%/20_uri_tests.cf
+%%DATADIR%%/20_vbounce.cf
 %%DATADIR%%/23_bayes.cf
 %%DATADIR%%/25_accessdb.cf
 %%DATADIR%%/25_antivirus.cf
-%%DATADIR%%/25_body_tests_es.cf
-%%DATADIR%%/25_body_tests_pl.cf
+%%DATADIR%%/25_asn.cf
 %%DATADIR%%/25_dcc.cf
 %%DATADIR%%/25_dkim.cf
 %%DATADIR%%/25_domainkeys.cf
@@ -141,18 +166,21 @@ etc/mail/spamassassin/v312.pre.sample
 %%DATADIR%%/30_text_pt_br.cf
 %%DATADIR%%/50_scores.cf
 %%DATADIR%%/60_awl.cf
+%%DATADIR%%/60_shortcircuit.cf
 %%DATADIR%%/60_whitelist.cf
 %%DATADIR%%/60_whitelist_dk.cf
 %%DATADIR%%/60_whitelist_dkim.cf
 %%DATADIR%%/60_whitelist_spf.cf
 %%DATADIR%%/60_whitelist_subject.cf
+%%DATADIR%%/72_active.cf
 %%DATADIR%%/languages
-%%DATADIR%%/triplets.txt
 %%DATADIR%%/sa-update-pubkey.txt
 %%DATADIR%%/user_prefs.template
 @unexec rm -rf /var/lib/spamassassin/2* || true
 @unexec rmdir /var/lib/spamassassin 2>/dev/null  || true
 @unexec rmdir /var/lib 2>/dev/null || true
+@unexec rmdir /var/db/spamassassin || true
+@unexec rmdir /var/db || true
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
