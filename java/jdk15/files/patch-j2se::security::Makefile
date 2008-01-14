@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../j2se/make/sun/security/Makefile.orig	Sat Jan 12 21:33:28 2008
++++ ../../j2se/make/sun/security/Makefile	Sat Jan 12 21:33:51 2008
+@@ -27,7 +27,7 @@
+ endif  # solaris
+ endif
+ 
+-SUBDIRS = acl action util x509 pkcs provider tools keytool jgss validator jca rsa timestamp $(TOOLS_SUBDIRS)
++SUBDIRS = acl action util x509 pkcs pkcs11 provider tools keytool jgss validator jca rsa timestamp $(TOOLS_SUBDIRS)
+ 
+ all optimized debug clean clobber ::
+ 	@for i in $(SUBDIRS) ; do \
