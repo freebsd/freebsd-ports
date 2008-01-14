@@ -118,7 +118,7 @@ MASTER_SITE_CENKES+=	\
 
 .if !defined(IGNORE_MASTER_SITE_CHEESESHOP)
 MASTER_SITE_CHEESESHOP+=	\
-	http://cheeseshop.python.org/packages/%SUBDIR%/
+	http://pypi.python.org/packages/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
