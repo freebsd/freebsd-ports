@@ -11343,6 +11343,7 @@ p5-Text-WordDiff	ports/textproc/p5-Text-WordDiff
 p5-Text-Wrapper	ports/textproc/p5-Text-Wrapper
 p5-Text-vCard	ports/textproc/p5-Text-vCard
 p5-Text-vFile-asData	ports/devel/p5-Text-vFile-asData
+p5-TheSchwartz	ports/devel/p5-TheSchwartz
 p5-Thread-Apartment	ports/devel/p5-Thread-Apartment
 p5-Thread-Pool-Simple	ports/devel/p5-Thread-Pool-Simple
 p5-Thread-Queue-Duplex	ports/devel/p5-Thread-Queue-Duplex
