@@ -32,11 +32,10 @@ ARCH!=	/usr/bin/uname -p
 ARCH?=	i386
 
 .if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == sparc64
-VERSION=	06.2
-REVISION=	3
+VERSION=	07.3
 BIN_FILES=	p4
 SBIN_FILES=	p4d p4ftpd p4p p4web
-REL_NOTES=	http://www.perforce.com/perforce/doc.062/user/relnotes.txt
+REL_NOTES=	http://www.perforce.com/perforce/doc.073/user/relnotes.txt
 .elif ${ARCH} == alpha
 VERSION=	99.1
 REVISION=	1
@@ -59,27 +58,29 @@ PLIST_FILES=	${BIN_FILES:S+^+bin/+g} \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == sparc64 && ${OSVERSION} > 700017
-BROKEN=		requires compat6x, which has not yet been relased
-.endif
-
 # Figure out what to install
 .if ${ARCH} == alpha
 PLATFORM=	freebsdaxp
 .elif ${ARCH} == amd64
+.if ${OSVERSION} >= 504000 && ${OSVERSION} < 600000
 PLATFORM=	freebsd54x86_64
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c_r.5:${PORTSDIR}/misc/compat5x
+.elif ${OSVERSION} >= 600000
+PLATFORM=	freebsd60x86_64
 .endif
 .elif ${ARCH} == i386
+.if ${OSVERSION} >= 504000 && ${OSVERSION} < 600000
 PLATFORM=	freebsd54x86
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c_r.5:${PORTSDIR}/misc/compat5x
+.elif ${OSVERSION} >= 600000
+PLATFORM=	freebsd60x86
 .endif
 .elif ${ARCH} == sparc64 && ${OSVERSION} >= 601000
 PLATFORM=	freebsd61sparc64
 .else
 IGNORE=		unsupported OS release, sorry
+.endif
+
+.if ${OSVERSION} >= 700043
+LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
 .endif
 
 # These variables are all configurable.

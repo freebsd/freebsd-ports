@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080114:
+  AFFECTS: users of devel/perforce
+  AUTHOR: lth@FreeBSD.org
+
+  Perforce has been updated to version 2007.3. Upgrading is fairly
+  straightforward, but it is still highly recommended to follow the
+  upgrading instructions in the release notes:
+
+    http://www.perforce.com/perforce/doc.073/user/relnotes.txt
+
 20080108:
   AFFECTS: users of irc/bitlbee
   AUTHOR: brix@FreeBSD.org
