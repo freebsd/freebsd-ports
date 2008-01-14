@@ -9,11 +9,11 @@ home=${pb}/errorlogs
 scripts=${pb}/scripts
 
 for ver in latest full; do
-  for num in 5 5-exp 6 6-exp 6-exp2 7 7-exp 8; do
+  for num in 5 6 6-exp 6-exp2 7 7-exp 8 8-exp; do
     cd $home/$arch-$num-$ver && ${scripts}/processlogs ${arch}
     cd ${pb}/${arch}/${num} && ${scripts}/processfail ${arch} ${num}
   done
-  for num in 5 5-exp 6 6-exp 6-exp2 7 7-exp 8; do
+  for num in 5 6 6-exp 6-exp2 7 7-exp 8 8-exp; do
     cd $home/$arch-$num-$ver-logs && ${scripts}/processlogs2
   done
 #  for num in 5 6 6-exp 7; do

@@ -10,7 +10,7 @@ fi
 
 arch=$1
 branch=$2
-if [ "x$branch" != x5 -a "x$branch" != x5-exp -a "x$branch" != x6-exp -a "x$branch" != x6-exp2 -a "x$branch" != x6 -a "x$branch" != x7 -a "x$branch" != x7-exp -a "x$branch" != x8 ]; then
+if [ "x$branch" != x5 -a "x$branch" != x6-exp -a "x$branch" != x6-exp2 -a "x$branch" != x6 -a "x$branch" != x7 -a "x$branch" != x7-exp -a "x$branch" != x8 -a "x$branch" != x8-exp ]; then
   usage
 fi
 
