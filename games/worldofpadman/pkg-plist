@@ -1,6 +1,6 @@
-%%CLIENT%%bin/wop
-%%SMP%%bin/wop-smp
-%%DEDICATED%%bin/wopded
+%%CLIENT%%bin/worldofpadman
+%%SMP%%bin/worldofpadman-smp
+%%DEDICATED%%bin/worldofpadmanded
 %%PORTDOCS%%%%DOCSDIR%%/banner.html
 %%PORTDOCS%%%%DOCSDIR%%/copyright_de.html
 %%PORTDOCS%%%%DOCSDIR%%/copyright_en.html
@@ -71,6 +71,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/start_en.html
 %%PORTDOCS%%%%DOCSDIR%%/weapons_de.html
 %%PORTDOCS%%%%DOCSDIR%%/weapons_en.html
+share/pixmaps/worldofpadman.png
 %%GAMELIBS%%%%DATADIR%%/missionpack/cgame.so
 %%GAMELIBS%%%%DATADIR%%/missionpack/qagame.so
 %%GAMELIBS%%%%DATADIR%%/missionpack/ui.so

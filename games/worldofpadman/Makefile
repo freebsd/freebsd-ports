@@ -7,6 +7,7 @@
 
 PORTNAME=	worldofpadman
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://thilo.kickchat.com/download/:full \
 		http://btc3x6.che.uni-bayreuth.de/~tl/wop_final/:full \
@@ -165,8 +166,12 @@ post-build:
 do-install:
 	${MKDIR} ${DATADIR}
 	${CP} -r ${WRKDIR}/wop ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/wop.png \
+		${PREFIX}/share/pixmaps/${PORTNAME}.png
 .for bin in ${Q3BIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/build/release/${bin} ${PREFIX}/bin
+# Rename wop* -> worldofpadman* to avoid conflicts with games/wop.
+	${INSTALL_PROGRAM} ${WRKSRC}/build/release/${bin} \
+		${PREFIX}/bin/${bin:S/wop/${PORTNAME}/}
 .endfor
 .if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
 . for dir in wop missionpack
