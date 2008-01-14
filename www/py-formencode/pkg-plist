@@ -37,12 +37,23 @@
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/FormEncode.pot
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/big5/LC_MESSAGES/FormEncode.mo
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/big5/LC_MESSAGES/FormEncode.po
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/cs/LC_MESSAGES/FormEncode.mo
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/cs/LC_MESSAGES/FormEncode.po
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/de/LC_MESSAGES/FormEncode.mo
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/de/LC_MESSAGES/FormEncode.po
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/el/LC_MESSAGES/FormEncode.mo
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/el/LC_MESSAGES/FormEncode.po
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/es/LC_MESSAGES/FormEncode.mo
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/es/LC_MESSAGES/FormEncode.po
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/fr/LC_MESSAGES/FormEncode.mo
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/fr/LC_MESSAGES/FormEncode.po
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/msgfmt.py
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/msgfmt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/msgfmt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/nl/LC_MESSAGES/FormEncode.mo
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/nl/LC_MESSAGES/FormEncode.po
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/pl/LC_MESSAGES/FormEncode.mo
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/pl/LC_MESSAGES/FormEncode.po
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/pt_BR/LC_MESSAGES/FormEncode.mo
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/pt_BR/LC_MESSAGES/FormEncode.po
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/pt_PT/LC_MESSAGES/FormEncode.mo
@@ -53,6 +64,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/sk/LC_MESSAGES/FormEncode.po
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/sl/LC_MESSAGES/FormEncode.mo
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/sl/LC_MESSAGES/FormEncode.po
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/zh_CN/LC_MESSAGES/FormEncode.mo
+%%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/zh_CN/LC_MESSAGES/FormEncode.po
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/javascript/ordering.js
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/api.pyc
@@ -104,12 +117,20 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/javascript
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/big5/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/big5
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/cs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/de/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/el/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/el
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/es/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/es
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/fr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/nl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/pl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/pt_BR/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/pt_BR
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/pt_PT/LC_MESSAGES
@@ -120,6 +141,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/sk
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/sl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/sl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n/zh_CN
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%/formencode
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYFORMENCODE_EGG%%
