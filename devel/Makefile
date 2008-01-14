@@ -630,6 +630,7 @@
     SUBDIR += libopendaap
     SUBDIR += libopensync
     SUBDIR += libopensync022
+    SUBDIR += libopkele
     SUBDIR += libowfat
     SUBDIR += libpasori
     SUBDIR += libpci

@@ -1,0 +1,18 @@
+include/opkele/acconfig.h
+include/opkele/association.h
+include/opkele/consumer.h
+include/opkele/exception.h
+include/opkele/extension.h
+include/opkele/extension_chain.h
+include/opkele/opkele-config.h
+include/opkele/server.h
+include/opkele/sreg.h
+include/opkele/types.h
+include/opkele/xconsumer.h
+include/opkele/xserver.h
+lib/libopkele.a
+lib/libopkele.la
+lib/libopkele.so
+lib/libopkele.so.2
+libdata/pkgconfig/libopkele.pc
+@dirrm include/opkele
