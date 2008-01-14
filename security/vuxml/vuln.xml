@@ -2757,7 +2757,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>php4</name>
-	<range><gt>4.4.8</gt></range>
+	<range><lt>4.4.8</lt></range>
       </package>
     </affects>
     <description>
@@ -2822,7 +2822,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-08-30</discovery>
       <entry>2007-09-11</entry>
-      <modified>2008-01-04</modified>
+      <modified>2008-01-14</modified>
     </dates>
   </vuln>
 
