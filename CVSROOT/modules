@@ -13812,6 +13812,7 @@ qssl		ports/devel/qssl
 qsstv		ports/comms/qsstv
 qstardict	ports/textproc/qstardict
 qstat		ports/games/qstat
+qsvn		ports/devel/qsvn
 qsynth		ports/audio/qsynth
 qt-bluecurve-theme	ports/x11-themes/qt-bluecurve-theme
 qt-ibase-plugin	ports/databases/qt-ibase-plugin
