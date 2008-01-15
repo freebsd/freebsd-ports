@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -50,7 +50,7 @@ JARFILES=	JasperBabylon-1.0.0.jar LICENSE.asm-attr.txt LICENSE.asm.txt	\
 		saaj-api-1.3.jar servlet.jar spring-2.0-m2.jar			\
 		spring-context-2.0-m2.jar spring-hibernate3-2.0-m2.jar		\
 		sqleonardo-2007.03.jar swingx-2007_05_13.jar toniclf.jar
-BASEFILES=	Changelog.txt notice.txt relnotes${PORTVERSION}.html
+BASEFILES=	Changelog.txt notice.txt
 SUBDIRS=	fonts plugins templates
 
 # Jarfiles to be included in classpath

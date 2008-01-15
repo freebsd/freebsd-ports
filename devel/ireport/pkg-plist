@@ -32,7 +32,6 @@ bin/iReport
 %%DATADIR%%/plugins/register.xml
 %%DATADIR%%/plugins/text_wizard.xml
 %%DATADIR%%/plugins/translationStatus.xml
-%%DATADIR%%/relnotes%%VER%%.html
 %%DATADIR%%/templates/YBC.gif
 %%DATADIR%%/templates/YBC.xml
 %%DATADIR%%/templates/classicC.gif
