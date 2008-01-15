@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-IMAPClient
-PORTVERSION=	3.02
+PORTVERSION=	3.03
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-Parse-RecDescent>=1.94:${PORTSDIR}/devel/p5-Parse-RecDescent \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=</dev/null
 
 INSTALL_TARGET=	pure_site_install
 
