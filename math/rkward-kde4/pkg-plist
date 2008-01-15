@@ -1,6 +1,6 @@
 bin/rkward
 bin/rkward.bin
-share/applnk/Applications/rkward.desktop
+share/applications/kde/rkward.desktop
 share/apps/katepart/syntax/rkward.xml
 share/apps/rkward/00saveload/import/import_csv.php
 share/apps/rkward/00saveload/import/import_csv.rkh
@@ -96,6 +96,9 @@ share/apps/rkward/analysis/variances/bartlett_test.xml
 share/apps/rkward/analysis/variances/fligner_test.php
 share/apps/rkward/analysis/variances/fligner_test.rkh
 share/apps/rkward/analysis/variances/fligner_test.xml
+share/apps/rkward/analysis/variances/levene_test.php
+share/apps/rkward/analysis/variances/levene_test.rkh
+share/apps/rkward/analysis/variances/levene_test.xml
 share/apps/rkward/analysis/wilcoxon/wilcoxon_exact_test.php
 share/apps/rkward/analysis/wilcoxon/wilcoxon_exact_test.xml
 share/apps/rkward/analysis/wilcoxon/wilcoxon_test.php
@@ -288,6 +291,9 @@ share/apps/rkward/distributions/tests/ad_test.php
 share/apps/rkward/distributions/tests/ad_test.xml
 share/apps/rkward/distributions/tests/cvm_test.php
 share/apps/rkward/distributions/tests/cvm_test.xml
+share/apps/rkward/distributions/tests/jb_test.php
+share/apps/rkward/distributions/tests/jb_test.rkh
+share/apps/rkward/distributions/tests/jb_test.xml
 share/apps/rkward/distributions/tests/lillie_test.php
 share/apps/rkward/distributions/tests/lillie_test.xml
 share/apps/rkward/distributions/tests/pearson_test.php
