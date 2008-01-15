@@ -29,6 +29,7 @@ bin/rnano
 %%NLS%%share/locale/tr/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/nano.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/nano.mo
 %%EXAMPLESDIR%%/nanorc.sample
 share/nano/asm.nanorc
