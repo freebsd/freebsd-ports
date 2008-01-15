@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	scotch
-PORTVERSION=	5.0.4
+PORTVERSION=	5.0.5
 CATEGORIES=	cad science
-MASTER_SITES=	http://gforge.inria.fr/frs/download.php/3720/
+MASTER_SITES=	http://gforge.inria.fr/frs/download.php/3795/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -53,7 +53,7 @@ PLIST_SUB+=	MPI=""
 PLIST_SUB+=	MPI="@comment "
 .endif
 
-pre-evrything::
+pre-everything::
 .if !defined(WITHOUT_MPI)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Define WITHOUT_MPI if PT-Scotch is not wanted."
