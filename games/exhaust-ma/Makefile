@@ -8,8 +8,7 @@
 PORTNAME=	exhaust-ma
 PORTVERSION=	1.9
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
+MASTER_SITES=	http://corewar.co.uk/ankerl/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	alepulver@FreeBSD.org
