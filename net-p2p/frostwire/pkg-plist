@@ -1,5 +1,6 @@
 bin/frostwire
 %%PORTDOCS%%%%DOCSDIR%%/changelog
+%%DATADIR%%/EULA.txt
 %%DATADIR%%/FrostWire.icns
 %%DATADIR%%/FrostWire.jar
 %%DATADIR%%/MessagesBundle.properties
@@ -16,11 +17,13 @@ bin/frostwire
 %%DATADIR%%/icu4j.jar
 %%DATADIR%%/id3v2.jar
 %%DATADIR%%/irc.jar
+%%DATADIR%%/jarbundler-1.9.jar
 %%DATADIR%%/jcraft.jar
 %%DATADIR%%/jdic.jar
 %%DATADIR%%/jdic_stub.jar
 %%DATADIR%%/jl011.jar
 %%DATADIR%%/jmdns.jar
+%%DATADIR%%/jython.jar
 %%DATADIR%%/log4j.jar
 %%DATADIR%%/log4j.properties
 %%DATADIR%%/looks.jar
