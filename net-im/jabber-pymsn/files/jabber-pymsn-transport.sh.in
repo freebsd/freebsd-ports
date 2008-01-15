@@ -4,7 +4,6 @@
 #
 # PROVIDE: jabber_pymsn
 # REQUIRE: DAEMON %%JABBER_REQUIRE%%
-# BEFORE: LOGIN
 # KEYWORD: shutdown
 #
 # Define these jabber_pymsn_* variables in one of these files:
