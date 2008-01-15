@@ -659,8 +659,7 @@ post-patch:
 			   s!QUEUE_EXTRALEN 0!QUEUE_EXTRALEN 5!g' \
 			   ${WRKSRC}/extra.h
 .endif
-.if ( ${ARCH} == "amd64" || ${ARCH} == "ia64" ) && \
-    ( !defined(SLAVE_SPAMCONTROL) && !defined(SLAVE_LDAP) )
+.if ( ${ARCH} == "amd64" || ${ARCH} == "ia64" ) && !defined(SLAVE_LDAP)
 	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-amd64
 .endif
 
