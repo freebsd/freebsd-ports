@@ -38,7 +38,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>geeklog xss vulnerability</topic>
     <affects>
       <package>
-	<name>geeklog xss vulnerability</name>
+	<name>geeklog</name>
 	<range><lt>1.4.1</lt></range>
       </package>
     </affects>
