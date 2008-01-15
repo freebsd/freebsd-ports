@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	frostwire
-PORTVERSION=	4.13.1.7
-PORTREVISION=	1
+PORTVERSION=	4.13.4
 CATEGORIES=	net-p2p java
-MASTER_SITES=	http://station1.peercommons.com/frostwire/4.13.1/
+MASTER_SITES=	http://www.frostwire.com/frostwire/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.noarch
 
 MAINTAINER=	alepulver@FreeBSD.org
@@ -18,7 +17,7 @@ COMMENT=	A Java based Gnutella and Bittorrent client
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.7/.6/}
 
