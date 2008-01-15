@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		resin
-PORTVERSION=		3.1.3
+PORTVERSION=		3.1.4
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME} \
 LDFLAGS+=		-L${OPENSSLLIB} -lcrypto -lssl
 # We need to link with cc instead of ld for the FreeBSD specific options used
 # by threading libraries
-CONFIGURE_ENV=		LD=${CC} PTHREAD_LIBS=${PTHREAD_LIBS} LDFLAGS="${LDFLAGS}" LIBTOOL=${LIBTOOL}
+CONFIGURE_ENV=		LD=${CC} PTHREAD_LIBS="${PTHREAD_LIBS}" LDFLAGS="${LDFLAGS}" LIBTOOL=${LIBTOOL}
 
 # Install the Apache plugin if needed
 .if defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES)
