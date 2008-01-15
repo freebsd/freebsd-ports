@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>geeklog xss vulnerability</name>
-	<range><eq>1.4.0</eq></range>
+	<range><lt>1.4.1</lt></range>
       </package>
     </affects>
     <description>
@@ -55,6 +55,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2006-3756</cvename>
       <url>http://www.geeklog.net/article.php/geeklog-1.4.0sr6</url>
     </references>
     <dates>
