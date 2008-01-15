@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="60e1792b-c380-11dc-821a-000bcdc1757a">
+    <topic>geeklog xss vulnerability</topic>
+    <affects>
+      <package>
+	<name>geeklog xss vulnerability</name>
+	<range><eq>1.4.0</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Geeklog reports:</p>
+	<blockquote cite="http://www.geeklog.net/article.php/geeklog-1.4.0sr6">
+	  <p>MustLive pointed out a possible XSS in the form to email an
+	    article to a friend that we're fixing with this release.</p>
+	  <p>Please note that this problem only exists in Geeklog 1.4.0
+	    - neither Geeklog 1.4.1 nor any older versions (1.3.x series)
+	    have that problem.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.geeklog.net/article.php/geeklog-1.4.0sr6</url>
+    </references>
+    <dates>
+      <discovery>2008-01-08</discovery>
+      <entry>2008-01-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4451a4c9-c05e-11dc-982e-001372fd0af2">
     <topic>drupal -- cross site request forgery</topic>
     <affects>
