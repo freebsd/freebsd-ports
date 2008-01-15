@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.gna.org/xtla-el/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	An Emacs front-end to tla
 
 BUILD_DEPENDS+=	tla:${PORTSDIR}/devel/tla \
@@ -22,9 +22,9 @@ BUILD_DEPENDS+=	tla:${PORTSDIR}/devel/tla \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
+EMACS_PORT_NAME?=	emacs22
 
-.if ${EMACS_PORT_NAME} != "emacs21"
+.if ${EMACS_PORT_NAME} != "emacs22"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
 
