@@ -7,7 +7,7 @@
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${SPAMCONTROL_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES+=	http://www.fehcom.de/qmail/spamcontrol/:spamcontrol \
 		${MASTER_SITE_LOCAL:S/$/:spamcontrol/}
