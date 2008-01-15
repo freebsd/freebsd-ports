@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%APP_NAME%%/lib/activation.jar
 %%APP_NAME%%/lib/ejb-15.jar
+%%APP_NAME%%/lib/hessian.jar
 %%APP_NAME%%/lib/j2ee-deploy-10.jar
 %%APP_NAME%%/lib/j2ee-management-10.jar
 %%APP_NAME%%/lib/jsf-12.jar
@@ -19,6 +20,7 @@
 %%APP_NAME%%/lib/resin.jar
 %%APP_NAME%%/lib/saaj.jar
 %%APP_NAME%%/lib/script-10.jar
+%%APP_NAME%%/lib/webbeans-16.jar
 %%APP_NAME%%/lib/webutil.jar
 %%APP_NAME%%/webapps/ROOT/index.jsp
 %%APP_NAME%%/webapps/resin-doc.war

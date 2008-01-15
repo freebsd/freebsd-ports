@@ -1,6 +1,6 @@
---- configure.orig	Thu Feb 23 00:59:58 2006
-+++ configure	Wed Apr  5 11:03:16 2006
-@@ -8193,37 +8193,12 @@
+--- configure.orig	Wed Dec  5 12:06:55 2007
++++ configure	Mon Jan 14 11:22:05 2008
+@@ -19096,55 +19096,9 @@
  
  
  
@@ -13,9 +13,27 @@
 -# Prevent multiple expansion
 -
 -
- #
- # libtool stuff
- #
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-#
+-# libtool stuff
+-#
 -if test -z "${LTFLAGS}"; then
 -  LTFLAGS="--silent"
 -fi
@@ -41,7 +59,7 @@
  
  
  
-@@ -9026,33 +9001,8 @@
+@@ -19903,33 +19857,8 @@
  	PROXY_LIBS='-lnsl -lsocket -lthread'
  	;;
  
