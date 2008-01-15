@@ -172,6 +172,7 @@ etc/mail/spamassassin/v320.pre.sample
 @unexec rm -rf /var/lib/spamassassin/2* || true
 @unexec rmdir /var/lib/spamassassin 2>/dev/null  || true
 @unexec rmdir /var/lib 2>/dev/null || true
+@unexec rmdir /var/db/spamassassin || true
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
