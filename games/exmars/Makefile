@@ -9,8 +9,7 @@ PORTNAME=	exmars
 PORTVERSION=	0.01
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
+MASTER_SITES=	http://corewar.co.uk/ankerl/
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Memory Array Redcode Simulator, just like exhaust and pMARS
