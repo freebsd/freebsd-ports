@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.07.8
+PORTVERSION=	1.08.0
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,6 +36,21 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Defaults.3 \
 	Perl::Critic::Document.3 \
 	Perl::Critic::Policy.3 \
+	Perl::Critic::Exception.3 \
+	Perl::Critic::Exception::AggregateConfiguration.3 \
+	Perl::Critic::Exception::Configuration.3 \
+	Perl::Critic::Exception::Configuration::Generic.3 \
+	Perl::Critic::Exception::Configuration::Option.3 \
+	Perl::Critic::Exception::Configuration::Option::Global.3 \
+	Perl::Critic::Exception::Configuration::Option::Global::ExtraParameter.3 \
+	Perl::Critic::Exception::Configuration::Option::Global::ParameterValue.3 \
+	Perl::Critic::Exception::Configuration::Option::Policy.3 \
+	Perl::Critic::Exception::Configuration::Option::Policy::ExtraParameter.3 \
+	Perl::Critic::Exception::Configuration::Option::Policy::ParameterValue.3 \
+	Perl::Critic::Exception::Fatal.3 \
+	Perl::Critic::Exception::Fatal::Generic.3 \
+	Perl::Critic::Exception::Fatal::Internal.3 \
+	Perl::Critic::Exception::Fatal::PolicyDefinition.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitBooleanGrep.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitComplexMappings.3 \
 	Perl::Critic::Policy::BuiltinFunctions::ProhibitLvalueSubstr.3 \
@@ -65,6 +80,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitCascadingIfElse.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitDeepNests.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitMutatingListFunctions.3 \
+	Perl::Critic::Policy::ControlStructures::ProhibitNegativeExpressionsInUnlessAndUntilConditions.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitPostfixControls.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUnlessBlocks.3 \
 	Perl::Critic::Policy::ControlStructures::ProhibitUnreachableCode.3 \
@@ -75,14 +91,17 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ErrorHandling::RequireCarping.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBacktickOperators.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitBarewordFileHandles.3 \
+	Perl::Critic::Policy::InputOutput::ProhibitExplicitStdin.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitInteractiveTest.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitJoinedReadline.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitOneArgSelect.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitReadlineInForLoop.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitTwoArgOpen.3 \
 	Perl::Critic::Policy::InputOutput::RequireBracedFileHandleWithPrint.3 \
+	Perl::Critic::Policy::InputOutput::RequireBriefOpen.3 \
 	Perl::Critic::Policy::InputOutput::RequireCheckedClose.3 \
 	Perl::Critic::Policy::InputOutput::RequireCheckedOpen.3 \
+	Perl::Critic::Policy::InputOutput::RequireCheckedSyscalls.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitFormats.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitTies.3 \
 	Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3 \
@@ -100,6 +119,14 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::NamingConventions::ProhibitMixedCaseVars.3 \
 	Perl::Critic::Policy::References::ProhibitDoubleSigils.3 \
 	Perl::Critic::Policy::RegularExpressions::ProhibitCaptureWithoutTest.3 \
+	Perl::Critic::Policy::RegularExpressions::ProhibitComplexRegexes.3 \
+	Perl::Critic::Policy::RegularExpressions::ProhibitEnumeratedClasses.3 \
+	Perl::Critic::Policy::RegularExpressions::ProhibitEscapedMetacharacters.3 \
+	Perl::Critic::Policy::RegularExpressions::ProhibitFixedStringMatches.3 \
+	Perl::Critic::Policy::RegularExpressions::ProhibitSingleCharAlternation.3 \
+	Perl::Critic::Policy::RegularExpressions::ProhibitUnusedCapture.3 \
+	Perl::Critic::Policy::RegularExpressions::ProhibitUnusualDelimiters.3 \
+	Perl::Critic::Policy::RegularExpressions::RequireBracesForMultiline.3 \
 	Perl::Critic::Policy::RegularExpressions::RequireExtendedFormatting.3 \
 	Perl::Critic::Policy::RegularExpressions::RequireLineBoundaryMatching.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitAmpersandSigils.3 \
@@ -153,6 +180,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Statistics.3 \
 	Perl::Critic::TestUtils.3 \
 	Perl::Critic::Theme.3 \
+	Perl::Critic::Utils::PPIRegexp.3 \
 	Perl::Critic::UserProfile.3 \
 	Perl::Critic::Utils.3 \
 	Perl::Critic::Utils::Constants.3 \

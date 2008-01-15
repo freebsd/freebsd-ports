@@ -5,6 +5,21 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/DEVELOPER.pod
 %%SITE_PERL%%/Perl/Critic/Defaults.pm
 %%SITE_PERL%%/Perl/Critic/Document.pm
+%%SITE_PERL%%/Perl/Critic/Exception.pm
+%%SITE_PERL%%/Perl/Critic/Exception/AggregateConfiguration.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Configuration.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Configuration/Generic.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Global.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Global/ExtraParameter.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Global/ParameterValue.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Policy.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Policy/ExtraParameter.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Policy/ParameterValue.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Fatal.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Fatal/Generic.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Fatal/Internal.pm
+%%SITE_PERL%%/Perl/Critic/Exception/Fatal/PolicyDefinition.pm
 %%SITE_PERL%%/Perl/Critic/Policy.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitBooleanGrep.pm
 %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions/ProhibitComplexMappings.pm
@@ -35,6 +50,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitCascadingIfElse.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitDeepNests.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitMutatingListFunctions.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitNegativeExpressionsInUnlessAndUntilConditions.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitPostfixControls.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitUnlessBlocks.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures/ProhibitUnreachableCode.pm
@@ -45,14 +61,17 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCarping.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitBacktickOperators.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitBarewordFileHandles.pm
+%%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitExplicitStdin.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitInteractiveTest.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitJoinedReadline.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitOneArgSelect.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitReadlineInForLoop.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitTwoArgOpen.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireBracedFileHandleWithPrint.pm
+%%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireBriefOpen.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireCheckedClose.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireCheckedOpen.pm
+%%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireCheckedSyscalls.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/ProhibitFormats.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/ProhibitTies.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/RequireRcsKeywords.pm
@@ -70,6 +89,14 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/NamingConventions/ProhibitMixedCaseVars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/References/ProhibitDoubleSigils.pm
 %%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/ProhibitCaptureWithoutTest.pm
+%%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/ProhibitComplexRegexes.pm
+%%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/ProhibitEnumeratedClasses.pm
+%%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/ProhibitEscapedMetacharacters.pm
+%%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/ProhibitFixedStringMatches.pm
+%%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/ProhibitSingleCharAlternation.pm
+%%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/ProhibitUnusedCapture.pm
+%%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/ProhibitUnusualDelimiters.pm
+%%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/RequireBracesForMultiline.pm
 %%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/RequireExtendedFormatting.pm
 %%SITE_PERL%%/Perl/Critic/Policy/RegularExpressions/RequireLineBoundaryMatching.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Subroutines/ProhibitAmpersandSigils.pm
@@ -128,6 +155,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Utils/Constants.pm
 %%SITE_PERL%%/Perl/Critic/Utils/McCabe.pm
 %%SITE_PERL%%/Perl/Critic/Utils/PPI.pm
+%%SITE_PERL%%/Perl/Critic/Utils/PPIRegexp.pm
 %%SITE_PERL%%/Perl/Critic/Violation.pm
 @dirrm %%SITE_PERL%%/Perl/Critic/Utils
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/Variables
@@ -139,13 +167,19 @@ bin/perlcritic
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/NamingConventions
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/Modules
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea
-@dirrm %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/InputOutput
+@dirrm %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/Documentation
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/ControlStructures
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/ClassHierarchies
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy/BuiltinFunctions
 @dirrm %%SITE_PERL%%/Perl/Critic/Policy
+@dirrm %%SITE_PERL%%/Perl/Critic/Exception/Fatal
+@dirrm %%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Policy
+@dirrm %%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option/Global
+@dirrm %%SITE_PERL%%/Perl/Critic/Exception/Configuration/Option
+@dirrm %%SITE_PERL%%/Perl/Critic/Exception/Configuration
+@dirrm %%SITE_PERL%%/Perl/Critic/Exception
 @dirrm %%SITE_PERL%%/Perl/Critic
 @dirrmtry %%SITE_PERL%%/Perl
