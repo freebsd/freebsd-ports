@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-Pcap
-PORTVERSION=	0.15
-PORTREVISION=	1
+PORTVERSION=	0.16
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +20,5 @@ PERL_CONFIGURE=	yes
 
 MAN1=		pcapinfo.1
 MAN3=		Net::Pcap.3
-
-pre-patch:
-		${FIND} ${WRKSRC} -name "._Pcap.pm" -delete
 
 .include <bsd.port.mk>
