@@ -14,14 +14,14 @@ MASTER_SITES=	http://download.gna.org/planner-el/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	planner-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	PlannerMode is an organizer and day planner for Emacs
 
 USE_EMACS=	yes
 USE_GMAKE=	yes
-EMACS_PORT_NAME?=	emacs21
+EMACS_PORT_NAME?=	emacs22
 
-.if ${EMACS_PORT_NAME} != "emacs21"
+.if ${EMACS_PORT_NAME} != "emacs22"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
 
@@ -38,6 +38,12 @@ OPTIONS+=	XTLA "XTLA support" off
 
 .include <bsd.port.pre.mk>
 
+.if (${EMACS_PORT_NAME} == "emacs21")
+PLIST_SUB+=	HAS_ICAL="@comment "
+.else
+PLIST_SUB+=	HAS_ICAL=""
+.endif
+
 .if defined(WITH_BBDB)
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/bbdb/bbdb-com.el:${PORTSDIR}/databases/bbdb
 PLIST_SUB+=	HAS_BBDB=""
@@ -45,11 +51,16 @@ PLIST_SUB+=	HAS_BBDB=""
 PLIST_SUB+=	HAS_BBDB="@comment "
 .endif
 
+.if (${EMACS_PORT_NAME} == "emacs21")
 .if defined(WITH_ERC)
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/erc/erc.el:${PORTSDIR}/irc/erc
 PLIST_SUB+=	HAS_ERC=""
 .else
 PLIST_SUB+=	HAS_ERC="@comment "
+.endif
+.else
+# emacs 22 and above has ERC build in
+PLIST_SUB+=	HAS_ERC=""
 .endif
 
 .if defined(WITH_GNATS)

@@ -31,6 +31,7 @@ info/planner-el
 %%EMACS_SITE_LISPDIR%%/planner/planner-gnus.el
 %%EMACS_SITE_LISPDIR%%/planner/planner-gnus.elc
 %%EMACS_SITE_LISPDIR%%/planner/planner-ical.el
+%%HAS_ICAL%%%%EMACS_SITE_LISPDIR%%/planner/planner-ical.elc
 %%EMACS_SITE_LISPDIR%%/planner/planner-id.el
 %%EMACS_SITE_LISPDIR%%/planner/planner-id.elc
 %%EMACS_SITE_LISPDIR%%/planner/planner-ledger.el
