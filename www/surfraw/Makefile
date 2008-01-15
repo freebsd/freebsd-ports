@@ -5,14 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	surfraw
-PORTVERSION=	1.0.7
+PORTVERSION=	2.2.0
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_NETBSD}
+MASTER_SITES=	http://surfraw.alioth.debian.org/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	Command line interface to popular WWW search engines
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_PERL5=	yes
+
+MAN1=	surfraw-update-path.1 \
+	surfraw.1 \
+	elvi.1sr \
+	opensearch-discover.1 \
+	opensearch-genquery.1
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/surfraw
