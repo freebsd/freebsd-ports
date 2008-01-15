@@ -57,7 +57,7 @@ PATCH_DIST_STRIP=	-p1
 
 .if !defined(WITHOUT_SUHOSIN)
 PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.6.2.patch.gz:suhosin
-PATCH_SITES+=	http://www.hardened-php.net/suhosin/_media/:suhosin
+PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
 PLIST_SUB+=	SUHOSIN="@comment "
