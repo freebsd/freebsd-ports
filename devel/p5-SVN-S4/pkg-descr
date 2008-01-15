@@ -1,0 +1,6 @@
+S4 provides a wrapper to subversion that extends several of the commands
+(for example, "fixprop", "scrub", "snapshot").  It understands all svn
+commands; you may simply use "s4" whereever you would normally type
+"svn".
+
+WWW: http://search.cpan.org/dist/SVN-S4/

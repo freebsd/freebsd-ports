@@ -1,0 +1,31 @@
+# New ports collection makefile for:	SVN-S4
+# Date created:	   16 January 2008
+# Whom:		   Sergey Skvortsov <skv@protey.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	SVN-S4
+PORTVERSION=	1.022
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	SVN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Wrapper for subversion program
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Client.pm:${PORTSDIR}/devel/subversion-perl \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/${PERL_ARCH}/IO/AIO.pm:${PORTSDIR}/devel/p5-IO-AIO
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		SVN::S4.3 SVN::S4::FixProp.3 SVN::S4::Getopt.3 \
+		SVN::S4::Info.3 SVN::S4::Path.3 SVN::S4::QuickCommit.3 \
+		SVN::S4::Snapshot.3 SVN::S4::StrongRevert.3 SVN::S4::Update.3 \
+		SVN::S4::ViewSpec.3
+
+.include <bsd.port.mk>
