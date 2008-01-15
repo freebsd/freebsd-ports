@@ -10,16 +10,14 @@ PORTVERSION=	${BINUTILVERSION}
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	binutils/snapshots
+MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	mingw32-
 DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 
 MAINTAINER=	lev@FreeBSD.org
-COMMENT=	FSF binutils-2.17 for Windows cross-development
+COMMENT=	GNU Binutils for Windows cross-development
 
-BROKEN=		Size mismatch
-
-BINUTILVERSION=	2.17.50
+BINUTILVERSION=	2.18
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
