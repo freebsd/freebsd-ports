@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	suhosin
-PORTVERSION=	0.9.22
+PORTVERSION=	0.9.23
 CATEGORIES=	security
-MASTER_SITES=	http://www.hardened-php.net/suhosin/_media/
+MASTER_SITES=	http://download.suhosin.org/
 PKGNAMEPREFIX=	php-
 EXTRACT_SUFX=	.tgz
 
