@@ -7,6 +7,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	4.7p1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
@@ -139,7 +140,7 @@ BROKEN=			HPN and LPK patches are incompatible
 .if defined(WITH_HPN)
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-4.7p1-hpn12v19.diff.gz
+PATCHFILES+=		openssh-4.7p1-hpn12v20.diff.gz
 .endif
 
 # See http://dev.inversepath.com/trac/openssh-lpk
