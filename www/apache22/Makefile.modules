@@ -121,6 +121,14 @@ CONFIGURE_ARGS+=	--with-dbm=db43 \
 LIB_DEPENDS+=		db-4.4:${PORTSDIR}/databases/db44
 CONFIGURE_ARGS+=	--with-dbm=db44 \
 			--with-berkeley-db=${LOCALBASE}/include:${LOCALBASE}/lib/db44
+.       elif ${WITH_BERKELEYDB} == "db45"
+LIB_DEPENDS+=		db-4.5:${PORTSDIR}/databases/db45
+CONFIGURE_ARGS+=	--with-dbm=db45 \
+			--with-berkeley-db=${LOCALBASE}/include:${LOCALBASE}/lib/db45
+.       elif ${WITH_BERKELEYDB} == "db46"
+LIB_DEPENDS+=		db-4.6:${PORTSDIR}/databases/db46
+CONFIGURE_ARGS+=	--with-dbm=db46 \
+			--with-berkeley-db=${LOCALBASE}/include:${LOCALBASE}/lib/db46
 .       else
 IGNORE=		"Unknown Berkeley DB version"
 .       endif
