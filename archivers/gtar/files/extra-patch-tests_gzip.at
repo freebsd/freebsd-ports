@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- tests/gzip.at.orig
++++ tests/gzip.at
+@@ -32,8 +32,7 @@
+ ],
+ [0],
+ [],
+-[
+-gzip: stdin: unexpected end of file
++[gzip: (stdin): unexpected end of file
+ tar: Child returned status 1
+ tar: Error exit delayed from previous errors
+ ],
