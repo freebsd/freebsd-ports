@@ -31,7 +31,7 @@ RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
 		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/finance/p5-Finance-QuoteHist \
 		${LOCALBASE}/share/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
 
-#OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off
+OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
