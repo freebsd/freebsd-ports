@@ -10979,6 +10979,7 @@ p5-SOAP-MySOAP	ports/net/p5-SOAP-MySOAP
 p5-SPOPS	ports/devel/p5-SPOPS
 p5-SQL-Abstract	ports/databases/p5-SQL-Abstract
 p5-SQL-Abstract-Limit	ports/databases/p5-SQL-Abstract-Limit
+p5-SQL-Interp	ports/databases/p5-SQL-Interp
 p5-SQL-ReservedWords	ports/databases/p5-SQL-ReservedWords
 p5-SQL-Statement	ports/databases/p5-SQL-Statement
 p5-SQL-Translator	ports/databases/p5-SQL-Translator
