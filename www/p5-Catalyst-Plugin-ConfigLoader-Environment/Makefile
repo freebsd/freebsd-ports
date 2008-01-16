@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Catalyst-Plugin-ConfigLoader-Environment
-PORTVERSION=	0.01
+PORTVERSION=	0.04
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Catalyst
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Configure your application with environment variables
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any
 
 PERL_CONFIGURE=	5.8.1+
 
