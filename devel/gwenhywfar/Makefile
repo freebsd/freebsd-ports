@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	1.13.2
-PORTREVISION=	2
+PORTVERSION=	2.6.2
 CATEGORIES=	devel net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,49 +23,51 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/gwenhywfar/plugins/17/dbio
-ALL_TARGET=	all
+USE_LDCONFIG=	${PREFIX}/lib \
+		${PREFIX}/lib/gwenhywfar/plugins/38/crypttoken \
+		${PREFIX}/lib/gwenhywfar/plugins/38/dbio \
+		${PREFIX}/lib/gwenhywfar/plugins/38/storage
 
+.if !defined(NOPORTEXAMPLES)
 # Examples to be installed from ${WRKSRC}/doc
-EXAMPLE_FILES=	STYLE \
+PORTEXAMPLES=	STYLE \
 		apidoc.h \
 		db2.png \
 		plugindescr.xml \
 		plugindescr.xsd \
 		plugindescr.xsd.in \
 		testdialog.xml
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SSLDEBUG)
-# Enable appending of SSL connection in/output to /tmp/{read|written}.bin.
-CFLAGS+=	-DGWEN_SSL_DEBUG
-.endif
-
 # Enable printing of memory debugger statistic at runtime.
 .if defined(WITH_MEMDEBUG)
-CFLAGS+=	-DGWEN_MEMORY_DEBUG
+CONFIGURE_ARGS+= --enable-memtrace
 .endif
 
 .if defined(WITH_PORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-ALL_TARGET+=	srcdoc
+CONFIGURE_ARGS+= --enable-full-doc
 PORTDOCS=*
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${ECHO_CMD} Installing documentation...
-	${MKDIR} ${EXAMPLESDIR}
-.for file in ${EXAMPLE_FILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${EXAMPLESDIR}
-.endfor
 .if defined(WITH_PORTDOCS)
+	@${ECHO_CMD} Installing documentation...
 	${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${FIND} apidoc -mindepth 1 \! -type d \
 		-exec ${ECHO_CMD} "{} -> ${DOCSDIR}/{}" \; \
 		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DOCSDIR} \;
 .endif
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${ECHO_CMD} Installing examples...
+	${MKDIR} ${EXAMPLESDIR}
+.for file in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${EXAMPLESDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
