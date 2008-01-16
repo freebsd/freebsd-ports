@@ -28,6 +28,7 @@ lib/webmin/virtual-server/createvirtualminmodule.sh
 lib/webmin/virtual-server/csr.cgi
 lib/webmin/virtual-server/defaultacl
 lib/webmin/virtual-server/delete-domain.pl
+lib/webmin/virtual-server/delete_admins.cgi
 lib/webmin/virtual-server/delete_aliases.cgi
 lib/webmin/virtual-server/delete_databases.cgi
 lib/webmin/virtual-server/delete_domain.cgi
@@ -50,6 +51,7 @@ lib/webmin/virtual-server/edit_domain.cgi
 lib/webmin/virtual-server/edit_exclude.cgi
 lib/webmin/virtual-server/edit_ffile.cgi
 lib/webmin/virtual-server/edit_limits.cgi
+lib/webmin/virtual-server/edit_mail.cgi
 lib/webmin/virtual-server/edit_newbw.cgi
 lib/webmin/virtual-server/edit_newdynip.cgi
 lib/webmin/virtual-server/edit_newfeatures.cgi
@@ -266,6 +268,7 @@ lib/webmin/virtual-server/migration-ensim.pl
 lib/webmin/virtual-server/migration-plesk.pl
 lib/webmin/virtual-server/modify-domain.pl
 lib/webmin/virtual-server/module.info
+lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
 lib/webmin/virtual-server/postinstall.pl
 lib/webmin/virtual-server/postsave.cgi
@@ -289,10 +292,12 @@ lib/webmin/virtual-server/save_expframe.cgi
 lib/webmin/virtual-server/save_ffile.cgi
 lib/webmin/virtual-server/save_frame.cgi
 lib/webmin/virtual-server/save_limits.cgi
+lib/webmin/virtual-server/save_mail.cgi
 lib/webmin/virtual-server/save_newbw.cgi
 lib/webmin/virtual-server/save_newdynip.cgi
 lib/webmin/virtual-server/save_newfeatures.cgi
 lib/webmin/virtual-server/save_newfields.cgi
+lib/webmin/virtual-server/save_newip.cgi
 lib/webmin/virtual-server/save_newlocal.cgi
 lib/webmin/virtual-server/save_newsharedips.cgi
 lib/webmin/virtual-server/save_newshells.cgi
