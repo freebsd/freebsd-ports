@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mhash
-PORTVERSION=	0.9.7.1
+PORTVERSION=	0.9.9
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -22,7 +22,10 @@ CONFIGURE_ARGS+=	--with-LDFLAGS="${PTHREAD_LIBS}" --enable-static \
 
 MAN3=		mhash.3
 
-PORTDOCS=	example.c md5-rfc1321.txt skid2-authentication
+PORTDOCS=	example.c skid2-authentication
+
+test:	build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check
 
 post-install:
 .if !defined(NOPORTDOCS)
