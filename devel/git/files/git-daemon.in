@@ -1,0 +1,29 @@
+#! /bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: git_daemon
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable git_daemon:
+#
+#git_daemon_enable="YES"
+
+. %%RC_SUBR%%
+
+name="git_daemon"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${git_daemon_enable:=NO}
+: ${git_daemon_directory:=%%PREFIX%%/git}
+: ${git_daemon_flags:="--syslog"}
+
+command="%%PREFIX%%/bin/git-daemon"
+command_args="${git_daemon_directory} &"
+
+run_rc_command "$1"

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.5.3.2
+PORTVERSION=	1.5.3.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -60,11 +60,12 @@ MAN1=		git-add.1 \
 		git-fast-import.1 \
 		git-fetch-pack.1 \
 		git-fetch.1 \
+		git-filter-branch.1 \
 		git-fmt-merge-msg.1 \
-		git-format-patch.1 \
 		git-for-each-ref.1 \
-		git-fsck.1 \
+		git-format-patch.1 \
 		git-fsck-objects.1 \
+		git-fsck.1 \
 		git-gc.1 \
 		git-get-tar-commit-id.1 \
 		git-grep.1 \
@@ -73,8 +74,8 @@ MAN1=		git-add.1 \
 		git-http-push.1 \
 		git-imap-send.1 \
 		git-index-pack.1 \
-		git-init.1 \
 		git-init-db.1 \
+		git-init.1 \
 		git-instaweb.1 \
 		git-local-fetch.1 \
 		git-log.1 \
@@ -84,12 +85,12 @@ MAN1=		git-add.1 \
 		git-ls-tree.1 \
 		git-mailinfo.1 \
 		git-mailsplit.1 \
-		git-merge.1 \
 		git-merge-base.1 \
 		git-merge-file.1 \
 		git-merge-index.1 \
 		git-merge-one-file.1 \
 		git-merge-tree.1 \
+		git-merge.1 \
 		git-mergetool.1 \
 		git-mktag.1 \
 		git-mktree.1 \
@@ -133,10 +134,12 @@ MAN1=		git-add.1 \
 		git-show.1 \
 		git-ssh-fetch.1 \
 		git-ssh-upload.1 \
+		git-stash.1 \
 		git-status.1 \
 		git-stripspace.1 \
-		git-svnimport.1 \
+		git-submodule.1 \
 		git-svn.1 \
+		git-svnimport.1 \
 		git-symbolic-ref.1 \
 		git-tag.1 \
 		git-tar-tree.1 \
@@ -151,10 +154,11 @@ MAN1=		git-add.1 \
 		git-verify-pack.1 \
 		git-verify-tag.1 \
 		git-whatchanged.1 \
-		git-write-tree.1 \
-		gitk.1
+		git-write-tree.1
 MAN3=		Git.3
-MAN5=		gitattributes.5 gitignore.5
+MAN5=		gitattributes.5 \
+		gitignore.5 \
+		gitmodules.5
 MAN7=		git.7
 
 USE_BZIP2=	yes
@@ -171,13 +175,19 @@ MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		LIBMD_SHA1=yes
 MAKE_ARGS+=	prefix="${PREFIX}"
 USE_OPENSSL=	yes
+USE_RC_SUBR=	git-daemon
+
+SHELLS=		/etc/shells
 
 OPTIONS=	GUI "Enable building of GUI tools" on \
 		SVN "Enable required dependencies for SVN tools" off
 
 .include <bsd.port.pre.mk>
 
-.ifdef WITH_GUI
+.ifndef WITHOUT_GUI
+MAN1+=		git-citool.1 \
+		git-gui.1 \
+		gitk.1
 PLIST_SUB+=	GUI=""
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 MAKE_ENV+=	TCL_PATH=tclsh8.4 TCLTK_PATH=wish8.4
@@ -192,13 +202,13 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Ter
 .endif
 
 pre-patch:
-	${REINPLACE_CMD} -e 's|OPENSSLDIR|OPENSSLBASE|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|OPENSSLDIR|OPENSSLBASE|g' ${WRKSRC}/Makefile
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man3|man/man3|' ${WRKSRC}/perl/Makefile.PL
 
 post-build:
-	${SED} -e'1s|#!/usr/bin/python|#!${PYTHON_CMD}|' \
+	@${SED} -e'1s|#!/usr/bin/python|#!${PYTHON_CMD}|' \
 		${WRKSRC}/contrib/p4import/git-p4import.py > \
 		${WRKSRC}/contrib/p4import/git-p4import
 
@@ -229,5 +239,11 @@ post-install:
 		${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/fast-import/git-p4 \
 		${PREFIX}/bin/
+
+	@${ECHO_MSG} "===> Updating ${SHELLS}"
+	@${CP} ${SHELLS} ${SHELLS}.bak
+	@(${GREP} -v ${PREFIX}/bin/git-shell ${SHELLS}.bak; \
+	  ${ECHO_CMD} ${PREFIX}/bin/git-shell) > ${SHELLS}
+	@${RM} ${SHELLS}.bak
 
 .include <bsd.port.post.mk>
