@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	eclipse
+PORTNAME=	eclipse-devel
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200709211145
-DISTNAME=	${PORTNAME}-sourceBuild-srcIncluded-${PORTVERSION}
+DISTNAME=	eclipse-sourceBuild-srcIncluded-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
@@ -20,8 +21,7 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	${EXTRACT_DEPENDS}
 
-ECLIPSE_SUFX=	-devel
-ECLIPSE=	${PORTNAME}${ECLIPSE_SUFX}
+ECLIPSE=	${PORTNAME}
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
@@ -61,6 +61,10 @@ MAKE_CAIRO=	make_cairo
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+JAVA_VENDOR=	bsdjava
+.endif
 
 .if !defined(WITHOUT_MOZILLA)
 MAKE_MOZILLA=	make_mozilla
@@ -128,6 +132,15 @@ do-install:
 	  -e "s,%%JAVA_VERSION%%,${JAVA_VERSION},g" \
 	  -e "s+%%JAVA_OS%%+${JAVA_OS}+g" \
 	${FILESDIR}/eclipse.in > ${WRKSRC}/eclipse.tmp
+.if defined(JAVA_VENDOR)
+	${REINPLACE_CMD} \
+	  -e "s+%%JAVA_VENDOR_SPECIFICATION%%+JAVA_VENDOR=\"${JAVA_VENDOR}\"+g" \
+	  ${WRKSRC}/eclipse.tmp
+.else
+	${REINPLACE_CMD} \
+	  -e "s+%%JAVA_VENDOR_SPECIFICATION%%++g" \
+	  ${WRKSRC}/eclipse.tmp
+.endif
 	${INSTALL_SCRIPT} ${WRKSRC}/eclipse.tmp ${PREFIX}/bin/${ECLIPSE}
 	@${SED} \
 	  -e "s+%%ECLIPSE_HOME%%+${PORTDESTDIR}+g" \
