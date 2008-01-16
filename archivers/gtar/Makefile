@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	1.18
-PORTREVISION=	1
+PORTVERSION=	1.19
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,6 +40,15 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+# after the GNU gzip implementation was replaced with a BSD licensed version
+.if (${OSVERSION} >= 602105) && \
+    (${OSVERSION} < 700000 || ${OSVERSION} >= 700029)
+USE_AUTOTOOLS=	autoconf:261:env	# autom4te
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tests_gzip.at
+.endif
+
 # avoid triggering auto framework rebuilds
 # FreeBSD 5.5 makeinfo can't rebuild tar.info
 post-patch:
@@ -50,4 +58,4 @@ post-patch:
 test: build
 	@cd ${WRKSRC} && ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
