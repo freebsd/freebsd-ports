@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	srecord
-PORTVERSION=	1.36
+PORTVERSION=	1.38
 CATEGORIES=	devel
 MASTER_SITES=	SF \
 		http://srecord.sourceforge.net/
