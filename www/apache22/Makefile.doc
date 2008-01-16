@@ -38,8 +38,8 @@
 ##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or
 ##                                ndbm (default)
 ##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3,
-##                                db4, db41, db42, db43, db44 or FreeBSD 
-##                                (1.85, default)
+##                                db4, db41, db42, db43, db44, db45, db46 
+##                                or FreeBSD (1.85, default)
 ##      WITH_STATIC_SUPPORT:      Build statically linked support binaries
 ##      WITH_STATIC_APACHE:       Build a static version of httpd (implies 
 ##                                WITH_STATIC_MODULES)
