@@ -8,6 +8,7 @@
 
 PORTNAME=	libafterimage
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	afterstep
@@ -21,6 +22,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
+
+USE_GNOME=	librsvg2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
