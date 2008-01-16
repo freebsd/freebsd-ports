@@ -70,14 +70,14 @@ GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
 .include <bsd.port.pre.mk>
 
 # WITH_OPENHBCI is old synonym for aqbanking option
-#.if defined(WITH_AQBANKING) || defined(WITH_OPENHBCI)
-#LIB_DEPENDS+=	aqbanking.5:${PORTSDIR}/finance/aqbanking \
-#		ktoblzcheck.5:${PORTSDIR}/finance/ktoblzcheck
-#CONFIGURE_ARGS+=--enable-hbci
-#PLIST_SUB+=	AQBANKING=""
-#.else
+.if defined(WITH_AQBANKING) || defined(WITH_OPENHBCI)
+LIB_DEPENDS+=	aqbanking.21:${PORTSDIR}/finance/aqbanking \
+		ktoblzcheck.6:${PORTSDIR}/finance/ktoblzcheck
+CONFIGURE_ARGS+=--enable-hbci
+PLIST_SUB+=	AQBANKING=""
+.else
 CONFIGURE_ARGS+=--disable-hbci
 PLIST_SUB+=	AQBANKING="@comment "
-#.endif
+.endif
 
 .include <bsd.port.post.mk>
