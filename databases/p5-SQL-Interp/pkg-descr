@@ -1,0 +1,15 @@
+SQL::Interp converts a list of intermixed SQL fragments and
+variable references into a conventional SQL string and list
+of bind values suitable for passing onto DBI. This simple
+technique creates database calls that are simpler to create
+and easier to read, while still giving you full access to
+custom SQL.
+
+SQL::Interp properly binds or escapes variables. This recommended
+practice safeguards against "SQL injection" attacks. The DBI
+documentation has several links on the topic.
+
+Besides the simple techniques shown above, The SQL-Interpolate
+distribution includes the optional DBIx::Interp module.
+
+WWW: http://search.cpan.org/dist/SQL-Interp/
