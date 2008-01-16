@@ -113,6 +113,7 @@ WANT_OPENLDAP_VER=	24
 .if defined(WITH_SASL) && !defined(WITHOUT_SASL)
 WANT_OPENLDAP_SASL=	yes
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.*
+PKGNAMESUFFIX=		-sasl-server
 .else
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 .endif
