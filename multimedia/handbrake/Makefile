@@ -64,6 +64,10 @@ APPLY?=		/usr/bin/apply
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile
+.endif
+
 # nasm/yasm needed by x264
 .if ${ARCH}=="i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
