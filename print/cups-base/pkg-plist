@@ -1566,6 +1566,7 @@ sbin/reject
 %%DOCSDIR%%/zh_TW/images/button-view-page-log.gif
 %%DOCSDIR%%/zh_TW/images/button-view-printable-version.gif
 %%DOCSDIR%%/zh_TW/index.html
+%%EXAMPLESDIR%%/lpt-cupsd.conf
 share/applications/cups.desktop
 share/icons/hicolor/16x16/apps/cups.png
 share/icons/hicolor/32x32/apps/cups.png
@@ -1651,6 +1652,7 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrm %%DOCSDIR%%/da/images
 @dirrm %%DOCSDIR%%/da
 @dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
 @exec mkdir -p %D/%%DATADIR%%/templates/da
 @exec mkdir -p %D/%%DATADIR%%/templates/fi
 @exec mkdir -p %D/%%DATADIR%%/templates/ko
