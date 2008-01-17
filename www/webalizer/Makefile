@@ -93,6 +93,8 @@ CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
 #	see http://tyche.pu-toyama.ac.jp/~a-urasim/webalizer/
 .if ${WEBALIZER_LANG} == japanese
 EXTRA_PATCHES+=		${FILESDIR}/ja-webalizer.conf-dist.patch
+.else
+EXTRA_PATCHES+=		${FILESDIR}/sample.conf.patch
 .endif
 .endif
 
@@ -117,25 +119,25 @@ CFLAGS+=	-DWEBALIZER_LOWERCASE_SEARCH
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@for file in ${EXTRACT_ONLY}; do \
-                case $$file in \
+	@for f in ${EXTRACT_ONLY}; do \
+                case $$f in \
 		*.Z|*.gz) \
 			if ! (cd ${WRKDIR} && \
-				${GZCAT} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+				${GZCAT} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$f ${EXTRACT_AFTER_ARGS});\
 			then \
 				exit 1; \
 			fi \
 			;; \
 		*.bz2) \
 			if ! (cd ${WRKDIR} && \
-				${BZCAT} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+				${BZCAT} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$f ${EXTRACT_AFTER_ARGS});\
 			then \
 				exit 1; \
 			fi \
 			;; \
 		*.zip) \
 			if ! (cd ${WRKDIR} && \
-				${UNZIP_CMD} -qo ${_DISTDIR}/$$file -d ${WRKDIR});\
+				${UNZIP_CMD} -qo ${_DISTDIR}/$$f -d ${WRKDIR});\
 			then \
 				exit 1; \
 			fi \
@@ -143,7 +145,7 @@ do-extract:
 		*) \
 			exit 1; \
 			;; \
-                esac; \
+		esac; \
 	done
 .if !defined(EXTRACT_PRESERVE_OWNERSHIP)
 	@if [ `${ID} -u` = 0 ]; then \
