@@ -7,6 +7,7 @@
 
 PORTNAME=	opensc
 DISTVERSION=	0.11.4
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
