@@ -12,6 +12,7 @@ bin/sonata
 %%PYTHON_SITELIBDIR%%/sonata.pyo
 share/applications/sonata.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/be@latin/LC_MESSAGES/sonata.mo
 share/locale/cs/LC_MESSAGES/sonata.mo
 share/locale/da/LC_MESSAGES/sonata.mo
 share/locale/de/LC_MESSAGES/sonata.mo
