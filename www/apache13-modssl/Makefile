@@ -43,7 +43,11 @@ VERSION_MODACCEL=	1.0.34
 VERSION_MODDEFLATE=	1.0.21
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
+.if defined(WITH_PERL)
+USE_PERL5_RUN=	yes
+.else
 USE_PERL5_BUILD=	yes
+.endif
 MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		ftp://ftp.modssl.org/source/ \
 		ftp://ftp.blatzheim.com/pub/mod_ssl/ \
