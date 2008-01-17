@@ -20,12 +20,6 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		does not compile on sparc64
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,test x"\$$libcwd_config_alloc" = x"yes",false,g' \
 		-E -e 's,^(DEFS=)(.*),\1"\2 -D__GNU_LIBRARY__=yes",g' \
@@ -42,4 +36,4 @@ post-patch:
 pre-configure:
 	@${CP} ${LTMAIN} ${WRKSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
