@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.2.24
-PORTREVISION=	1
+PORTVERSION=	1.2.26.1
 PKGNAMESUFFIX=	12
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
 
-PATCHFILES=	asterisk-1.2.23-codec-negotiation-20070730.diff.gz
-PATCH_SITES=	http://sobomax.homeunix.org/~sobomax/
+PATCHFILES=	asterisk-1.2.26-codec-negotiation-20080117.diff.gz
+PATCH_SITES=	http://b2bua.org/chrome/site/
 
 #		${PORTNAME}-1.2.4-${BRIVER}.patch.gz:bristuff
 #		${MASTER_SITE_LOCAL:S,$,:bristuff,}
