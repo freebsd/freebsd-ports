@@ -86,6 +86,8 @@ EXTRACT_ONLY=
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Documentation (PDF) for the Erlang/OTP system
 
+BROKEN=		Checksum mismatch
+
 NO_BUILD=	yes
 
 do-install:
