@@ -31,6 +31,9 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		jbig.1:${PORTSDIR}/graphics/jbigkit
 #		jasper.4:${PORTSDIR}/graphics/jasper
+.if defined(WITH_NETPBM_DEVEL)
+LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+.endif
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -46,22 +49,19 @@ PORTSCOUT=	limit:^10\.26\.
 MAN1=		netpbm.1
 
 DEVEL_PORTVERSION=	10.31
+.if defined(WITH_NETPBM_DEVEL)
+PATCHDIR?=	${MASTERDIR}/../netpbm-devel/files
+CFLAGS+=	-Iutil
+PLIST_SUB+=	DEVEL=""
+.else
+PLIST_SUB+=	DEVEL="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 # -O causes an ICE in converter/other/exif.c with gcc 3.3.3 on sparc64.
 CFLAGS+=	-O0
-.endif
-
-.if defined(WITH_NETPBM_DEVEL)
-EXTRA_PATCHES+=	${FILESDIR}/editor-pnmquant-devel.patch
-EXTRA_PATCHES+=	${FILESDIR}/converter-other-cameratopam-identify.patch
-PLIST_SUB+=	DEVEL=""
-.else
-EXTRA_PATCHES+=	${FILESDIR}/editor-pnmquant-stable.patch
-EXTRA_PATCHES+=	${FILESDIR}/converter-other-pstopnm.patch
-PLIST_SUB+=	DEVEL="@comment "
 .endif
 
 pre-configure:
