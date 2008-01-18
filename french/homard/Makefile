@@ -9,7 +9,7 @@ PORTNAME=	homard
 DISTVERSION=	8.11-1
 DISTVERSIONSUFFIX=	.${ARCH}
 CATEGORIES=	french cad linux
-MASTER_SITES=	http://www.code-aster.org/V2/IMG/gz/
+MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A refinement and de-refinement mesh tool

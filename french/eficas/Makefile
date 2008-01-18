@@ -8,7 +8,7 @@
 PORTNAME=	eficas
 DISTVERSION=	1.13.0-1
 CATEGORIES=	french cad
-MASTER_SITES=	http://www.code-aster.org/V2/IMG/gz/
+MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASter Command FIle Editor
