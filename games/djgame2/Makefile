@@ -27,6 +27,12 @@ MAKE_ENV=	QMAKESPEC="{QMAKESPEC}"
 WRKSRC=		${WRKDIR}/${DISTNAME}
 DATADIR=	${PREFIX}/share/djgame2
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000 && ${ARCH} == "amd64"
+BROKEN=		libLandLord does not compile
+.endif
+
 post-patch:
 	${RM} -f ${WRKSRC}/Hall/HallRes/platform/x11/install
 	@${SED} -e 's|%%DATADIR%%|${DATADIR}|' \
@@ -56,4 +62,4 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/djgame2.desktop ${PREFIX}/share/applications
 	${INSTALL_SCRIPT} ${WRKDIR}/startdjg ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
