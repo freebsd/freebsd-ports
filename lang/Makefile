@@ -135,6 +135,7 @@
     SUBDIR += lafontaine
     SUBDIR += libjit
     SUBDIR += librep
+    SUBDIR += libstdc++_stldoc_3.4.0
     SUBDIR += libutils
     SUBDIR += linux-j
     SUBDIR += linux-libg2c
