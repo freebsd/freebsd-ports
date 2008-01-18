@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Yahoo/Lifestyle/.packlist
+%%SITE_PERL%%/Yahoo/Lifestyle.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Yahoo/Lifestyle
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Yahoo
+@dirrmtry %%SITE_PERL%%/Yahoo
