@@ -11672,6 +11672,7 @@ p5-YAPE-Regex	ports/textproc/p5-YAPE-Regex
 p5-YAPE-Regex-Explain	ports/textproc/p5-YAPE-Regex-Explain
 p5-Yada-Yada-Yada	ports/devel/p5-Yada-Yada-Yada
 p5-Yahoo-BBAuth	ports/security/p5-Yahoo-BBAuth
+p5-Yahoo-Lifestyle	ports/www/p5-Yahoo-Lifestyle
 p5-Yahoo-Search	ports/www/p5-Yahoo-Search
 p5-Zen-Koans	ports/misc/p5-Zen-Koans
 p5-accessors	ports/devel/p5-accessors
