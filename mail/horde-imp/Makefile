@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	4.1.5
+PORTVERSION=	4.1.6
 CATEGORIES=	mail www
 
 MAINTAINER=	beech@FreeBSD.org
