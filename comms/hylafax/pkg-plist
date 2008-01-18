@@ -79,7 +79,6 @@ hylafax/bin/notify-4.1
 hylafax/bin/notify-4.2
 hylafax/bin/archive
 hylafax/bin/common-functions
-hylafax/bin/common-functions.O
 hylafax/bin/dictionary
 hylafax/bin/notify.awk
 hylafax/bin/qp-encode.awk
