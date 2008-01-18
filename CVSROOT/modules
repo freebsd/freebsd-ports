@@ -9214,6 +9214,7 @@ p5-Catalyst-View-Jemplate	ports/www/p5-Catalyst-View-Jemplate
 p5-Catalyst-View-Mason	ports/www/p5-Catalyst-View-Mason
 p5-Catalyst-View-TT	ports/www/p5-Catalyst-View-TT
 p5-Catalyst-View-TT-ControllerLocal	ports/www/p5-Catalyst-View-TT-ControllerLocal
+p5-Catalyst-View-Templated	ports/www/p5-Catalyst-View-Templated
 p5-Cdk		ports/devel/p5-Cdk
 p5-Cflow	ports/net-mgmt/p5-Cflow
 p5-Chart-Clicker	ports/graphics/p5-Chart-Clicker
