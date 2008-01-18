@@ -1,0 +1,22 @@
+--- /data/image/usr/ports/current/meta-cvs/work/mcvs-1.0.13/code/unix-bindings/Makefile.orig	2003-01-16 06:06:09.000000000 +0100
++++ /data/image/usr/ports/current/meta-cvs/work/mcvs-1.0.13/code/unix-bindings/Makefile	2008-01-18 15:35:17.000000000 +0100
+@@ -1,18 +1,12 @@
+ # Makefile for CLISP module set unix-bindings
+ 
+-CC =
+-CFLAGS =
+-INCLUDES=
+-
+-CLISP =
+-
+ SHELL = /bin/sh
+ 
+ unix.c : unix.lisp
+ 	clisp -c unix.lisp
+ 
+ unix.o : unix.c
+-	$(CC) $(CFLAGS) -I$(INCLUDES) -c unix.c
++	$(CC) $(CFLAGS) -I$(INCLUDES) -I${LOCALBASE}/include -c unix.c
+ 
+ wrap.o : wrap.c
+ 	$(CC) $(CFLAGS) -I$(INCLUDES) -c wrap.c

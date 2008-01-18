@@ -15,14 +15,13 @@ DISTNAME=	mcvs-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A more capable version control system than CVS, built around CVS
 
-BROKEN=		does not build
-
 BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp \
 		${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv
 
 USE_GCC=	2.95
+USE_GETTEXT=	yes
 
-pre-build:
+post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
 	${CP} ${FILESDIR}/build.sh ${WRKSRC}/code
 
