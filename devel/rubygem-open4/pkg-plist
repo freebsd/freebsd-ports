@@ -15,3 +15,5 @@
 @dirrm %%GEM_LIB_DIR%%/lib/
 @dirrm %%GEM_LIB_DIR%%/sample
 @dirrm %%GEM_LIB_DIR%%/white_box
+@dirrm %%GEM_LIB_DIR%%
+@dirrmtry %%GEM_DOC_DIR%%
