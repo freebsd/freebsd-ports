@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
 
-PATCHFILES=	asterisk-1.2.26-codec-negotiation-20080117.diff.gz
+PATCHFILES=	asterisk-1.2.26.1-codec-negotiation-20080118.diff.gz
 PATCH_SITES=	http://b2bua.org/chrome/site/
 
 #		${PORTNAME}-1.2.4-${BRIVER}.patch.gz:bristuff
