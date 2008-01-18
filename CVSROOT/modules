@@ -2003,6 +2003,7 @@ diablo		ports/news/diablo
 diablo-jdk15	ports/java/diablo-jdk15
 diablo-jre15	ports/java/diablo-jre15
 diacanvas2	ports/graphics/diacanvas2
+diamanda	ports/www/diamanda
 diameter	ports/games/diameter
 diary-hercules	ports/misc/diary-hercules
 dice		ports/lang/dice
