@@ -31,8 +31,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 test check:	build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
-.if defined(PACKAGE_BUILDING)
+.include <bsd.port.pre.mk>
+
+.if defined(PACKAGE_BUILDING) && ${ARCH} != sparc64
 pre-install:	test
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
