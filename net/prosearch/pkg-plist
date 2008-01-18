@@ -1,11 +1,3 @@
-@comment @unexec if diff -q %D/%%SEARCHDIR%%/config.pl %D/%%SEARCHDIR%%/config.pl.dist; then rm %D/%%SEARCHDIR%%/config.pl; fi
-@comment #@exec  if [ ! -f %B/%%SEARCHDIR%%/config.pl ]; then cp %B/%%SEARCHDIR%%/config.pl.dist %B/%%SEARCHDIR%%/config.pl; fi
-@comment #@unexec if diff -q %%PREFIX%%/etc/apache%%APACHE_VERSION%%/Includes/search.conf %D/%%SEARCHDIR%%/tools/search.conf; then rm %%PREFIX%%/etc/apache%%APACHE_VERSION%%/Includes/search.conf; fi
-@comment #@exec  if [ ! -f %%PREFIX%%/etc/apache%%APACHE_VERSION%%/Includes/search.conf ]; then cp %B/%%SEARCHDIR%%/tools/search.conf %%PREFIX%%/etc/apache%%APACHE_VERSION%%/Includes/search.conf; fi
-@comment #@unexec rm  %%PREFIX%%/www/apache%%APACHE_VERSION%%/data/search
-@comment #@exec touch %%PREFIX%%/www/apache%%APACHE_VERSION%%/data/search
-@comment @unexec rmdir %%SEARCHDIR%%/tmp 2>/dev/null || true
-@comment @unexec rmdir %%SEARCHDIR%%/var 2>/dev/null || true
 %%SEARCHDIR%%/010.search.purge
 %%SEARCHDIR%%/AUTHORS
 %%SEARCHDIR%%/confdef.pl
@@ -13,8 +5,6 @@
 %%SEARCHDIR%%/COPYING
 %%SEARCHDIR%%/crawler.pl
 %%SEARCHDIR%%/search.sh.dist
-%%SEARCHDIR%%/showactive
-%%SEARCHDIR%%/showalive
 %%SEARCHDIR%%/TODO
 %%SEARCHDIR%%/WHATSNEW
 %%SEARCHDIR%%/dcppp/dcppp.pm
@@ -33,21 +23,21 @@
 %%SEARCHDIR%%/lib/psmisc.pm
 %%SEARCHDIR%%/lib/lib.js
 %%SEARCHDIR%%/lib/player.js
+%%SEARCHDIR%%/lib/search1.js
 %%SEARCHDIR%%/lib/psconn.pm
 %%SEARCHDIR%%/lib/pssql.pm
 %%SEARCHDIR%%/lib/psweb.pm
-%%SEARCHDIR%%/modules/chat/chatdef.pl
 %%SEARCHDIR%%/tools/cp_auto_gen.pl
 %%SEARCHDIR%%/tools/grant.sql
 %%SEARCHDIR%%/tools/search.conf
 %%SEARCHDIR%%/tools/size.sh
 %%SEARCHDIR%%/tools/test
 %%SEARCHDIR%%/tools/test.zip
-%%SEARCHDIR%%/tools/tidy
-%%SEARCHDIR%%/tools/pro-search/Makefile
-%%SEARCHDIR%%/tools/pro-search/pkg-descr
-%%SEARCHDIR%%/tools/pro-search/pkg-plist
-%%SEARCHDIR%%/tools/pro-search/files/pkg-message.in
+%%SEARCHDIR%%/tools/tidy.pl
+%%SEARCHDIR%%/tools/prosearch/Makefile
+%%SEARCHDIR%%/tools/prosearch/pkg-descr
+%%SEARCHDIR%%/tools/prosearch/pkg-plist
+%%SEARCHDIR%%/tools/prosearch/files/pkg-message.in
 %%SEARCHDIR%%/web/.htaccess.dist
 %%SEARCHDIR%%/web/about.htm
 %%SEARCHDIR%%/web/base.css
@@ -65,7 +55,6 @@
 %%SEARCHDIR%%/web/robots.txt.dist
 %%SEARCHDIR%%/web/search.css
 %%SEARCHDIR%%/web/search1.css
-%%SEARCHDIR%%/web/search1.js
 %%SEARCHDIR%%/web/search2.css
 %%SEARCHDIR%%/web/dcppp/dcppp.pm
 %%SEARCHDIR%%/web/dcppp/dcppp/clicli.pm
@@ -73,10 +62,12 @@
 %%SEARCHDIR%%/web/dcppp/dcppp/hubcli.pm
 %%SEARCHDIR%%/web/dcppp/dcppp/hubhub.pm
 %%SEARCHDIR%%/web/img/archive.png
+%%SEARCHDIR%%/web/img/apache.png
 %%SEARCHDIR%%/web/img/audio.png
 %%SEARCHDIR%%/web/img/bat.png
 %%SEARCHDIR%%/web/img/cd.png
 %%SEARCHDIR%%/web/img/chm.png
+%%SEARCHDIR%%/web/img/css.png
 %%SEARCHDIR%%/web/img/dchub.png
 %%SEARCHDIR%%/web/img/dcuser.png
 %%SEARCHDIR%%/web/img/dir.png
@@ -90,12 +81,17 @@
 %%SEARCHDIR%%/web/img/image.png
 %%SEARCHDIR%%/web/img/ini.png
 %%SEARCHDIR%%/web/img/mov.png
+%%SEARCHDIR%%/web/img/mysql.png
 %%SEARCHDIR%%/web/img/nrg.png
 %%SEARCHDIR%%/web/img/opera.png
 %%SEARCHDIR%%/web/img/pdf.png
+%%SEARCHDIR%%/web/img/perl.png
 %%SEARCHDIR%%/web/img/ppt.png
+%%SEARCHDIR%%/web/img/postgres.png
 %%SEARCHDIR%%/web/img/psd.png
 %%SEARCHDIR%%/web/img/res.png
+%%SEARCHDIR%%/web/img/rss.png
+%%SEARCHDIR%%/web/img/sqlite.png
 %%SEARCHDIR%%/web/img/swf.png
 %%SEARCHDIR%%/web/img/text.png
 %%SEARCHDIR%%/web/img/unk.png
@@ -103,17 +99,18 @@
 %%SEARCHDIR%%/web/img/video.png
 %%SEARCHDIR%%/web/img/wmv.png
 %%SEARCHDIR%%/web/img/xls.png
+%%SEARCHDIR%%/web/img/xhtml11.png
 %%SEARCHDIR%%/web/img/xml.png
 %%SEARCHDIR%%/web/lib/psmisc.pm
 %%SEARCHDIR%%/web/lib/lib.js
 %%SEARCHDIR%%/web/lib/player.js
+%%SEARCHDIR%%/web/lib/search1.js
 %%SEARCHDIR%%/web/lib/psconn.pm
 %%SEARCHDIR%%/web/lib/pssql.pm
 %%SEARCHDIR%%/web/lib/psweb.pm
 @dirrm %%SEARCHDIR%%/dcppp/dcppp
-@dirrm %%SEARCHDIR%%/modules/chat
-@dirrm %%SEARCHDIR%%/tools/pro-search/files
-@dirrm %%SEARCHDIR%%/tools/pro-search
+@dirrm %%SEARCHDIR%%/tools/prosearch/files
+@dirrm %%SEARCHDIR%%/tools/prosearch
 @dirrm %%SEARCHDIR%%/web/dcppp/dcppp
 @dirrm %%SEARCHDIR%%/web/dcppp
 @dirrm %%SEARCHDIR%%/web/img
@@ -122,7 +119,6 @@
 @dirrm %%SEARCHDIR%%/doc
 @dirrm %%SEARCHDIR%%/example
 @dirrm %%SEARCHDIR%%/lib
-@dirrm %%SEARCHDIR%%/modules
 @dirrm %%SEARCHDIR%%/tools
 @dirrmtry %%SEARCHDIR%%/tmp
 @dirrmtry %%SEARCHDIR%%/var
