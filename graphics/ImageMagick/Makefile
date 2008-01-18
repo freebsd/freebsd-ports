@@ -303,6 +303,10 @@ RUN_DEPENDS+=		mpeg2encode:${PORTSDIR}/multimedia/mpeg2codec
 .endif
 .endif
 
+.if ${ARCH} == sparc64 && ${OSVERSION} < 700000
+USE_GCC=	4.2+
+.endif
+
 .if defined(NOPORTDOCS)
 INSTALL_TARGET=	install
 .else
