@@ -7,7 +7,7 @@
 
 PORTNAME=	loudmouth
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im gnome
 MASTER_SITES=	http://ftp.imendio.com/pub/imendio/loudmouth/src/ \
 		${MASTER_SITE_GNOME}
@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight Jabber client library
+
+LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
