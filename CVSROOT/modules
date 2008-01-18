@@ -6819,6 +6819,7 @@ libsrs_alt	ports/mail/libsrs_alt
 libssh2		ports/security/libssh2
 libstatgrab	ports/devel/libstatgrab
 libstdc++_stldoc_3.4.0	ports/lang/libstdc++_stldoc_3.4.0
+libstdc++_stldoc_4.2.2	ports/lang/libstdc++_stldoc_4.2.2
 libstocks	ports/finance/libstocks
 libstree	ports/textproc/libstree
 libstrfunc	ports/devel/libstrfunc
