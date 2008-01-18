@@ -189,6 +189,10 @@ LDFLAGS+=	${PTHREAD_LIBS}
 .  endif
 .endif # !SLAVE_ONLY
 
+.if ${ARCH} == sparc64 && ${OSVERSION} < 700000
+USE_GCC=	4.2+
+.endif
+
 .if defined(CLIENT_ONLY)
 MAN1=		clusterdb.1 createdb.1 createlang.1 createuser.1   \
 		dropdb.1 droplang.1 dropuser.1 ecpg.1 initdb.1	   \
