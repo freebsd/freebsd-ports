@@ -4,6 +4,7 @@
 %%HORDIR%%/data.php
 %%HORDIR%%/index.php
 %%HORDIR%%/js/fixUnstyledOptions.js
+%%HORDIR%%/js/prototype.js
 %%HORDIR%%/js/tables.js
 %%HORDIR%%/lib/Block/summary.php
 %%HORDIR%%/lib/Driver/kolab.php
@@ -81,6 +82,7 @@
 %%HORDIR%%/po/sv_SE.po
 %%HORDIR%%/po/zh_CN.po
 %%HORDIR%%/po/zh_TW.po
+%%HORDIR%%/pref_api.php
 %%HORDIR%%/scripts/.htaccess
 %%HORDIR%%/scripts/import_vnotes.php
 %%HORDIR%%/scripts/sql/mnemo.mssql.sql
