@@ -16,4 +16,7 @@ Alias /search "%%PREFIX%%/%%SEARCHDIR%%/web"
 or 
 # cp %%PREFIX%%/%%SEARCHDIR%%/tools/search.conf %%PREFIX%%/etc/apache22/Includes/
 # ee %%PREFIX%%/etc/apache22/Includes/search.conf
+8. scan your resources
+# perl crawler.pl 10.0.0.0/24 ftp://files.net 
+9. enjoy: http://your.site/search/ or cd web && perl index.cgi q=test
 =======================================================================

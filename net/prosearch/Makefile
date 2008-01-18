@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	prosearch
-PORTVERSION=	0.17.2
+PORTVERSION=	0.18.1
 CATEGORIES=	net www
-MASTER_SITES=	SF
+MASTER_SITES=	http://pro.setun.net/search/download/ SF
 MASTER_SITE_SUBDIR=	pro-search
-DISTNAME=	pro-search-0.17.2.tar
-EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	proler@gmail.com
 COMMENT=	Powerful file search
@@ -25,15 +23,33 @@ PLIST_SUB+=	SEARCHDIR=${SEARCHDIR}
 
 #todo
 # user and group for crawler
-OPTIONS=	\
-		CRAWLER        	"With crawler deps "	on	\
-		SAMBA        	" crawler with SAMBA "	on	\
-		RSYNC        	" crawler with RSYNC "	off	\
-		DB        	"With database deps "	on	\
-		WEB         	"With web deps "	on	\
-		MOD_PERL2	"  With MOD_PERL2 "	on
+OPTIONS=\
+		CRAWLER "With crawler deps" on \
+		SAMBA "crawler with SAMBA (file://)" on \
+		RSYNC " crawler with RSYNC " off \
+		WEB "With web deps (APACHE)" on \
+		MOD_PERL2 "With MOD_PERL2" off \
+		DB "With database server deps" on \
+		MYSQL "mysql" on \
+		PGSQL "postgres" off \
+		PGPP "postgres pure perl connection" off \
+		SQLITE "sqlite" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_CRAWLER)
+RUN_DEPENDS+=\
+${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+nmap:${PORTSDIR}/security/nmap
+.endif
+
+.if defined(WITH_SAMBA)
+RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba3
+.endif
+
+.if defined(WITH_RSYNC)
+RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
+.endif
 
 .if defined(WITH_WEB)
 USE_APACHE=	2.0+
@@ -44,34 +60,39 @@ RUN_DEPENDS+=\
  ${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
 .endif
 
-.if defined(WITH_CRAWLER) || defined(WITH_WEB) || defined(WITH_DB)
+.if defined(WITH_MYSQL)
 USE_MYSQL=	YES
-.endif
-
-.if defined(WITH_CRAWLER) || defined(WITH_WEB)
 USE_PERL5_RUN=	YES
 RUN_DEPENDS+=\
 ${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
 .endif
 
-.if defined(WITH_CRAWLER)
-RUN_DEPENDS+=\
-${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-nmap:${PORTSDIR}/security/nmap
-
-.endif
-.if defined(WITH_SAMBA)
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba3
-.endif
-
-.if defined(WITH_RSYNC)
-RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
-.endif
-
-.if defined(WITH_DB)
+.if defined(WITH_DB) && defined(WITH_MYSQL)
 RUN_DEPENDS+=\
 ${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server \
 mysqlhotcopy:${PORTSDIR}/databases/mysql${MYSQL_VER}-scripts
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+RUN_DEPENDS+=\
+${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.endif
+
+.if  defined(WITH_PGPP)
+RUN_DEPENDS+=\
+${SITE_PERL}/DBD/PgPP.pm:${PORTSDIR}/databases/p5-DBD-PgPP
+.endif
+
+.if (defined(WITH_PGSQL) || defined(WITH_PGPP)) && defined(WITH_DB)
+RUN_DEPENDS+=\
+${LOCALBASE}/bin/postgres:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+.endif
+
+.if defined(WITH_SQLITE)
+USE_SQLITE=	yes
+RUN_DEPENDS+=\
+${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 
 WRKSRC=	${WRKDIR}/search
