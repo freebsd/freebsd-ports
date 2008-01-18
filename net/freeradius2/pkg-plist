@@ -2,7 +2,7 @@
 bin/radclient
 bin/radeapclient
 bin/radlast
-bin/radrelay
+bin/radsniff
 bin/radsqlrelay
 bin/radtest
 bin/radwho
@@ -11,34 +11,29 @@ bin/rlm_dbm_cat
 bin/rlm_dbm_parser
 bin/rlm_ippool_tool
 bin/smbencrypt
-@unexec for i in `find %D/%%EXAMPLESDIR%%/raddb/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ -f %D/%%EXAMPLESDIR%%/raddb/${i} ]; then if cmp -s %D/%%EXAMPLESDIR%%/raddb/${i} %D/etc/raddb/${i}; then rm -f %D/etc/raddb/${i}; fi; fi; done
+@unexec for i in `find -P %D/%%EXAMPLESDIR%%/raddb/ \( -type f -or -type l \) -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ -f %D/%%EXAMPLESDIR%%/raddb/${i} ]; then if cmp -hsz %D/%%EXAMPLESDIR%%/raddb/${i} %D/etc/raddb/${i}; then rm -f %D/etc/raddb/${i}; fi; fi; done
 @unexec for i in `find -d %D/%%EXAMPLESDIR%%/raddb/ -type d -mindepth 1 -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ -d %D/etc/raddb/${i} ]; then rmdir %D/etc/raddb/${i} 2>/dev/null || true; fi; done
-@dirrmtry etc/raddb/certs/demoCA
 @dirrmtry etc/raddb/certs
+@dirrmtry etc/raddb/sql/mssql
+@dirrmtry etc/raddb/sql/mysql
+@dirrmtry etc/raddb/sql/oracle
+@dirrmtry etc/raddb/sql/postgresql
+@dirrmtry etc/raddb/sql
+@dirrmtry etc/raddb/sites-available
 @dirrmtry etc/raddb
 @unexec if [ -d %D/etc/raddb ]; then echo "You should remove %D/etc/raddb if you don't need it any more."; fi
 %%EXAMPLESDIR%%/raddb/acct_users
 %%EXAMPLESDIR%%/raddb/attrs
+%%EXAMPLESDIR%%/raddb/attrs.access_reject
+%%EXAMPLESDIR%%/raddb/attrs.accounting_response
+%%EXAMPLESDIR%%/raddb/attrs.pre-proxy
+%%EXAMPLESDIR%%/raddb/certs/Makefile
 %%EXAMPLESDIR%%/raddb/certs/README
-%%EXAMPLESDIR%%/raddb/certs/cert-clt.der
-%%EXAMPLESDIR%%/raddb/certs/cert-clt.p12
-%%EXAMPLESDIR%%/raddb/certs/cert-clt.pem
-%%EXAMPLESDIR%%/raddb/certs/cert-srv.der
-%%EXAMPLESDIR%%/raddb/certs/cert-srv.p12
-%%EXAMPLESDIR%%/raddb/certs/cert-srv.pem
-%%EXAMPLESDIR%%/raddb/certs/demoCA/cacert.pem
-%%EXAMPLESDIR%%/raddb/certs/demoCA/index.txt
-%%EXAMPLESDIR%%/raddb/certs/demoCA/index.txt.old
-%%EXAMPLESDIR%%/raddb/certs/demoCA/serial
-%%EXAMPLESDIR%%/raddb/certs/demoCA/serial.old
-%%EXAMPLESDIR%%/raddb/certs/dh
-%%EXAMPLESDIR%%/raddb/certs/newcert.pem
-%%EXAMPLESDIR%%/raddb/certs/newreq.pem
-%%EXAMPLESDIR%%/raddb/certs/random
-%%EXAMPLESDIR%%/raddb/certs/root.der
-%%EXAMPLESDIR%%/raddb/certs/root.p12
-%%EXAMPLESDIR%%/raddb/certs/root.pem
-%%EXAMPLESDIR%%/raddb/clients
+%%EXAMPLESDIR%%/raddb/certs/bootstrap
+%%EXAMPLESDIR%%/raddb/certs/ca.cnf
+%%EXAMPLESDIR%%/raddb/certs/client.cnf
+%%EXAMPLESDIR%%/raddb/certs/server.cnf
+%%EXAMPLESDIR%%/raddb/certs/xpextensions
 %%EXAMPLESDIR%%/raddb/clients.conf
 %%EXAMPLESDIR%%/raddb/dictionary
 %%EXAMPLESDIR%%/raddb/eap.conf
@@ -46,44 +41,76 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/hints
 %%EXAMPLESDIR%%/raddb/huntgroups
 %%EXAMPLESDIR%%/raddb/ldap.attrmap
-%%EXAMPLESDIR%%/raddb/mssql.conf
-%%EXAMPLESDIR%%/raddb/naslist
-%%EXAMPLESDIR%%/raddb/naspasswd
-%%EXAMPLESDIR%%/raddb/oraclesql.conf
 %%EXAMPLESDIR%%/raddb/otp.conf
-%%EXAMPLESDIR%%/raddb/postgresql.conf
-%%EXAMPLESDIR%%/raddb/postgresqlippool.conf
+%%EXAMPLESDIR%%/raddb/policy.conf
+%%EXAMPLESDIR%%/raddb/policy.txt
 %%EXAMPLESDIR%%/raddb/preproxy_users
 %%EXAMPLESDIR%%/raddb/proxy.conf
 %%EXAMPLESDIR%%/raddb/radiusd.conf
-%%EXAMPLESDIR%%/raddb/realms
+%%EXAMPLESDIR%%/raddb/sites-available/README
+%%EXAMPLESDIR%%/raddb/sites-available/default
+%%EXAMPLESDIR%%/raddb/sites-available/example
+%%EXAMPLESDIR%%/raddb/sites-enabled/default
 %%EXAMPLESDIR%%/raddb/snmp.conf
 %%EXAMPLESDIR%%/raddb/sql.conf
+%%EXAMPLESDIR%%/raddb/sql/mssql/dialup.conf
+%%EXAMPLESDIR%%/raddb/sql/mssql/schema.sql
+%%EXAMPLESDIR%%/raddb/sql/mysql/counter.conf
+%%EXAMPLESDIR%%/raddb/sql/mysql/dialup.conf
+%%EXAMPLESDIR%%/raddb/sql/mysql/ippool.conf
+%%EXAMPLESDIR%%/raddb/sql/mysql/ippool.sql
+%%EXAMPLESDIR%%/raddb/sql/mysql/nas.sql
+%%EXAMPLESDIR%%/raddb/sql/mysql/schema.sql
+%%EXAMPLESDIR%%/raddb/sql/oracle/dialup.conf
+%%EXAMPLESDIR%%/raddb/sql/oracle/ippool.sql
+%%EXAMPLESDIR%%/raddb/sql/oracle/nas.sql
+%%EXAMPLESDIR%%/raddb/sql/oracle/schema.sql
+%%EXAMPLESDIR%%/raddb/sql/postgresql/cisco_h323_db_schema.sql
+%%EXAMPLESDIR%%/raddb/sql/postgresql/counter.conf
+%%EXAMPLESDIR%%/raddb/sql/postgresql/dialup.conf
+%%EXAMPLESDIR%%/raddb/sql/postgresql/ippool.conf
+%%EXAMPLESDIR%%/raddb/sql/postgresql/ippool.sql
+%%EXAMPLESDIR%%/raddb/sql/postgresql/nas.sql
+%%EXAMPLESDIR%%/raddb/sql/postgresql/schema.sql
+%%EXAMPLESDIR%%/raddb/sql/postgresql/update_radacct_group_trigger.sql
+%%EXAMPLESDIR%%/raddb/sql/postgresql/voip-postpaid.conf
 %%EXAMPLESDIR%%/raddb/sqlippool.conf
+%%EXAMPLESDIR%%/raddb/templates.conf
 %%EXAMPLESDIR%%/raddb/users
 %%EXAMPLESDIR%%/raddb/example.pl
 @exec for i in `find %D/%%EXAMPLESDIR%%/raddb/ -type d -mindepth 1 -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ ! -d %D/etc/raddb/${i} ]; then mkdir -p %D/etc/raddb/${i}; fi; done
-@exec for i in `find %D/%%EXAMPLESDIR%%/raddb/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ ! -f %D/etc/raddb/${i} ]; then cp %D/%%EXAMPLESDIR%%/raddb/${i} %D/etc/raddb/${i}; fi; done
+@exec for i in `find -P %D/%%EXAMPLESDIR%%/raddb/ \( -type f -or -type l \) -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ ! -f %D/etc/raddb/${i} ]; then cp -RP %D/%%EXAMPLESDIR%%/raddb/${i} %D/etc/raddb/${i}; fi; done
 @exec chmod -R g-w,o-rwx %D/etc/raddb
-@dirrm %%EXAMPLESDIR%%/raddb/certs/demoCA
+@dirrm %%EXAMPLESDIR%%/raddb/sites-enabled
 @dirrm %%EXAMPLESDIR%%/raddb/certs
+@dirrm %%EXAMPLESDIR%%/raddb/sql/mssql
+@dirrm %%EXAMPLESDIR%%/raddb/sql/mysql
+@dirrm %%EXAMPLESDIR%%/raddb/sql/oracle
+@dirrm %%EXAMPLESDIR%%/raddb/sql/postgresql
+@dirrm %%EXAMPLESDIR%%/raddb/sql
+@dirrm %%EXAMPLESDIR%%/raddb/sites-available
 @dirrm %%EXAMPLESDIR%%/raddb
 @dirrm %%EXAMPLESDIR%%
-lib/libeap-%%PORTVERSION%%.la
-lib/libeap-%%PORTVERSION%%.so
-lib/libeap.a
-lib/libeap.la
-lib/libeap.so
-lib/libradius-%%PORTVERSION%%.la
-lib/libradius-%%PORTVERSION%%.so
-lib/libradius.a
-lib/libradius.la
-lib/libradius.so
+lib/libfreeradius-eap-%%PORTVERSION%%.la
+lib/libfreeradius-eap-%%PORTVERSION%%.so
+lib/libfreeradius-eap.a
+lib/libfreeradius-eap.la
+lib/libfreeradius-eap.so
+lib/libfreeradius-radius-%%PORTVERSION%%.la
+lib/libfreeradius-radius-%%PORTVERSION%%.so
+lib/libfreeradius-radius.a
+lib/libfreeradius-radius.la
+lib/libfreeradius-radius.so
 lib/rlm_acct_unique-%%PORTVERSION%%.la
 lib/rlm_acct_unique-%%PORTVERSION%%.so
 lib/rlm_acct_unique.a
 lib/rlm_acct_unique.la
 lib/rlm_acct_unique.so
+lib/rlm_acctlog-%%PORTVERSION%%.la
+lib/rlm_acctlog-%%PORTVERSION%%.so
+lib/rlm_acctlog.a
+lib/rlm_acctlog.la
+lib/rlm_acctlog.so
 lib/rlm_always-%%PORTVERSION%%.la
 lib/rlm_always-%%PORTVERSION%%.so
 lib/rlm_always.a
@@ -109,6 +136,11 @@ lib/rlm_checkval-%%PORTVERSION%%.so
 lib/rlm_checkval.a
 lib/rlm_checkval.la
 lib/rlm_checkval.so
+lib/rlm_copy_packet-%%PORTVERSION%%.la
+lib/rlm_copy_packet-%%PORTVERSION%%.so
+lib/rlm_copy_packet.a
+lib/rlm_copy_packet.la
+lib/rlm_copy_packet.so
 lib/rlm_counter-%%PORTVERSION%%.la
 lib/rlm_counter-%%PORTVERSION%%.so
 lib/rlm_counter.a
@@ -174,6 +206,11 @@ lib/rlm_eap_tls-%%PORTVERSION%%.so
 lib/rlm_eap_tls.a
 lib/rlm_eap_tls.la
 lib/rlm_eap_tls.so
+lib/rlm_eap_tnc-%%PORTVERSION%%.la
+lib/rlm_eap_tnc-%%PORTVERSION%%.so
+lib/rlm_eap_tnc.a
+lib/rlm_eap_tnc.la
+lib/rlm_eap_tnc.so
 lib/rlm_eap_ttls-%%PORTVERSION%%.la
 lib/rlm_eap_ttls-%%PORTVERSION%%.so
 lib/rlm_eap_ttls.a
@@ -189,6 +226,11 @@ lib/rlm_exec-%%PORTVERSION%%.so
 lib/rlm_exec.a
 lib/rlm_exec.la
 lib/rlm_exec.so
+lib/rlm_expiration-%%PORTVERSION%%.la
+lib/rlm_expiration-%%PORTVERSION%%.so
+lib/rlm_expiration.a
+lib/rlm_expiration.la
+lib/rlm_expiration.so
 lib/rlm_expr-%%PORTVERSION%%.la
 lib/rlm_expr-%%PORTVERSION%%.so
 lib/rlm_expr.a
@@ -209,6 +251,11 @@ lib/rlm_ippool-%%PORTVERSION%%.so
 lib/rlm_ippool.a
 lib/rlm_ippool.la
 lib/rlm_ippool.so
+%%EXPM%%lib/rlm_jradius-%%PORTVERSION%%.la
+%%EXPM%%lib/rlm_jradius-%%PORTVERSION%%.so
+%%EXPM%%lib/rlm_jradius.a
+%%EXPM%%lib/rlm_jradius.la
+%%EXPM%%lib/rlm_jradius.so
 %%KRB5%%lib/rlm_krb5-%%PORTVERSION%%.la
 %%KRB5%%lib/rlm_krb5-%%PORTVERSION%%.so
 %%KRB5%%lib/rlm_krb5.a
@@ -219,16 +266,21 @@ lib/rlm_ippool.so
 %%LDAP%%lib/rlm_ldap.a
 %%LDAP%%lib/rlm_ldap.la
 %%LDAP%%lib/rlm_ldap.so
+%%EXPM%%lib/rlm_linelog-%%PORTVERSION%%.la
+%%EXPM%%lib/rlm_linelog-%%PORTVERSION%%.so
+%%EXPM%%lib/rlm_linelog.a
+%%EXPM%%lib/rlm_linelog.la
+%%EXPM%%lib/rlm_linelog.so
+lib/rlm_logintime-%%PORTVERSION%%.la
+lib/rlm_logintime-%%PORTVERSION%%.so
+lib/rlm_logintime.a
+lib/rlm_logintime.la
+lib/rlm_logintime.so
 lib/rlm_mschap-%%PORTVERSION%%.la
 lib/rlm_mschap-%%PORTVERSION%%.so
 lib/rlm_mschap.a
 lib/rlm_mschap.la
 lib/rlm_mschap.so
-lib/rlm_ns_mta_md5-%%PORTVERSION%%.la
-lib/rlm_ns_mta_md5-%%PORTVERSION%%.so
-lib/rlm_ns_mta_md5.a
-lib/rlm_ns_mta_md5.la
-lib/rlm_ns_mta_md5.so
 lib/rlm_otp-%%PORTVERSION%%.la
 lib/rlm_otp-%%PORTVERSION%%.so
 lib/rlm_otp.a
@@ -254,16 +306,26 @@ lib/rlm_passwd.so
 %%RLMPERL%%lib/rlm_perl.a
 %%RLMPERL%%lib/rlm_perl.la
 %%RLMPERL%%lib/rlm_perl.so
+lib/rlm_policy-%%PORTVERSION%%.la
+lib/rlm_policy-%%PORTVERSION%%.so
+lib/rlm_policy.a
+lib/rlm_policy.la
+lib/rlm_policy.so
 lib/rlm_preprocess-%%PORTVERSION%%.la
 lib/rlm_preprocess-%%PORTVERSION%%.so
 lib/rlm_preprocess.a
 lib/rlm_preprocess.la
 lib/rlm_preprocess.so
-%%EXPM%%lib/rlm_python-%%PORTVERSION%%.la
-%%EXPM%%lib/rlm_python-%%PORTVERSION%%.so
-%%EXPM%%lib/rlm_python.a
-%%EXPM%%lib/rlm_python.la
-%%EXPM%%lib/rlm_python.so
+%%EXPM%%lib/rlm_protocol_filter-%%PORTVERSION%%.la
+%%EXPM%%lib/rlm_protocol_filter-%%PORTVERSION%%.so
+%%EXPM%%lib/rlm_protocol_filter.a
+%%EXPM%%lib/rlm_protocol_filter.la
+%%EXPM%%lib/rlm_protocol_filter.so
+lib/rlm_python-%%PORTVERSION%%.la
+lib/rlm_python-%%PORTVERSION%%.so
+lib/rlm_python.a
+lib/rlm_python.la
+lib/rlm_python.so
 lib/rlm_radutmp-%%PORTVERSION%%.la
 lib/rlm_radutmp-%%PORTVERSION%%.so
 lib/rlm_radutmp.a
@@ -289,6 +351,7 @@ lib/rlm_sql-%%PORTVERSION%%.so
 lib/rlm_sql.a
 lib/rlm_sql.la
 lib/rlm_sql.so
+%%FIREBIRD%%lib/rlm_sql_firebird-%%PORTVERSION%%.la
 %%FIREBIRD%%lib/rlm_sql_firebird-%%PORTVERSION%%.so
 %%FIREBIRD%%lib/rlm_sql_firebird.a
 %%FIREBIRD%%lib/rlm_sql_firebird.la
@@ -298,10 +361,12 @@ lib/rlm_sql_log-%%PORTVERSION%%.so
 lib/rlm_sql_log.a
 lib/rlm_sql_log.la
 lib/rlm_sql_log.so
+%%MYSQL%%lib/rlm_sql_mysql-%%PORTVERSION%%.la
 %%MYSQL%%lib/rlm_sql_mysql-%%PORTVERSION%%.so
 %%MYSQL%%lib/rlm_sql_mysql.a
 %%MYSQL%%lib/rlm_sql_mysql.la
 %%MYSQL%%lib/rlm_sql_mysql.so
+%%PGSQL%%lib/rlm_sql_postgresql-%%PORTVERSION%%.la
 %%PGSQL%%lib/rlm_sql_postgresql-%%PORTVERSION%%.so
 %%PGSQL%%lib/rlm_sql_postgresql.a
 %%PGSQL%%lib/rlm_sql_postgresql.la
@@ -331,6 +396,20 @@ sbin/checkrad
 sbin/radiusd
 sbin/radwatch
 sbin/rc.radiusd
+include/freeradius/hash.h
+include/freeradius/ident.h
+include/freeradius/libradius.h
+include/freeradius/md4.h
+include/freeradius/md5.h
+include/freeradius/missing.h
+include/freeradius/packet.h
+include/freeradius/radius.h
+include/freeradius/radpaths.h
+include/freeradius/sha1.h
+include/freeradius/token.h
+include/freeradius/udpfromto.h
+include/freeradius/vqp.h
+@dirrm include/freeradius
 %%PORTDOCS%%%%DOCSDIR%%/Acct-Type
 %%PORTDOCS%%%%DOCSDIR%%/Autz-Type
 %%PORTDOCS%%%%DOCSDIR%%/CYGWIN
@@ -351,15 +430,10 @@ sbin/rc.radiusd
 %%PORTDOCS%%%%DOCSDIR%%/cisco
 %%PORTDOCS%%%%DOCSDIR%%/coding-methods.txt
 %%PORTDOCS%%%%DOCSDIR%%/configurable_failover
-%%PORTDOCS%%%%DOCSDIR%%/duplicate-users
 %%PORTDOCS%%%%DOCSDIR%%/examples/iplanet.ldif
 %%PORTDOCS%%%%DOCSDIR%%/examples/iplanet.schema
-%%PORTDOCS%%%%DOCSDIR%%/examples/mssql.sql
-%%PORTDOCS%%%%DOCSDIR%%/examples/mysql.sql
 %%PORTDOCS%%%%DOCSDIR%%/examples/openldap.schema
-%%PORTDOCS%%%%DOCSDIR%%/examples/oracle.sql
-%%PORTDOCS%%%%DOCSDIR%%/examples/postgresql.sql
-%%PORTDOCS%%%%DOCSDIR%%/examples/postgresql.sql.extra
+%%PORTDOCS%%%%DOCSDIR%%/examples/postgresql_update_radacct_group_trigger.sql
 %%PORTDOCS%%%%DOCSDIR%%/ldap_howto.txt
 %%PORTDOCS%%%%DOCSDIR%%/load-balance.txt
 %%PORTDOCS%%%%DOCSDIR%%/misc-nas
@@ -368,7 +442,6 @@ sbin/rc.radiusd
 %%PORTDOCS%%%%DOCSDIR%%/performance-testing
 %%PORTDOCS%%%%DOCSDIR%%/processing_users_file
 %%PORTDOCS%%%%DOCSDIR%%/proxy
-%%PORTDOCS%%%%DOCSDIR%%/radrelay
 %%PORTDOCS%%%%DOCSDIR%%/release-method.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/attributes.html
 %%PORTDOCS%%%%DOCSDIR%%/rfc/draft-kamath-pppext-eap-mschapv2-00.txt
@@ -380,14 +453,11 @@ sbin/rc.radiusd
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc1448.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc1901.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc1905.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2058.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2059.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2138.txt
-%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2139.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2243.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2289.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2433.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2548.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2607.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2618.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2619.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2620.txt
@@ -407,11 +477,19 @@ sbin/rc.radiusd
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc3576.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc3579.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc3580.txt
-%%PORTDOCS%%%%DOCSDIR%%/rlm_attr_filter
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc3748.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4372.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4590.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4675.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4679.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4818.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4849.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5080.txt
 %%PORTDOCS%%%%DOCSDIR%%/rlm_dbm
-%%PORTDOCS%%%%DOCSDIR%%/rlm_digest
 %%PORTDOCS%%%%DOCSDIR%%/rlm_eap
+%%PORTDOCS%%%%DOCSDIR%%/rlm_expiration
 %%PORTDOCS%%%%DOCSDIR%%/rlm_fastusers
+%%PORTDOCS%%%%DOCSDIR%%/rlm_jradius
 %%PORTDOCS%%%%DOCSDIR%%/rlm_krb5
 %%PORTDOCS%%%%DOCSDIR%%/rlm_ldap
 %%PORTDOCS%%%%DOCSDIR%%/rlm_pam
@@ -421,6 +499,7 @@ sbin/rc.radiusd
 %%PORTDOCS%%%%DOCSDIR%%/rlm_sql
 %%PORTDOCS%%%%DOCSDIR%%/rlm_sqlcounter
 %%PORTDOCS%%%%DOCSDIR%%/rlm_sqlippool
+%%PORTDOCS%%%%DOCSDIR%%/snmp
 %%PORTDOCS%%%%DOCSDIR%%/supervise-radiusd.txt
 %%PORTDOCS%%%%DOCSDIR%%/tuning_guide
 %%PORTDOCS%%%%DOCSDIR%%/variables.txt
@@ -442,11 +521,13 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.ascend
 %%DATADIR%%/dictionary.asn
 %%DATADIR%%/dictionary.avaya
+%%DATADIR%%/dictionary.azaire
 %%DATADIR%%/dictionary.bay
 %%DATADIR%%/dictionary.bintec
 %%DATADIR%%/dictionary.bristol
 %%DATADIR%%/dictionary.cablelabs
 %%DATADIR%%/dictionary.cabletron
+%%DATADIR%%/dictionary.chillispot
 %%DATADIR%%/dictionary.cisco
 %%DATADIR%%/dictionary.cisco.bbsm
 %%DATADIR%%/dictionary.cisco.vpn3000
@@ -467,28 +548,37 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.gandalf
 %%DATADIR%%/dictionary.garderos
 %%DATADIR%%/dictionary.gemtek
+%%DATADIR%%/dictionary.h3c
 %%DATADIR%%/dictionary.hp
+%%DATADIR%%/dictionary.huawei
 %%DATADIR%%/dictionary.ipunplugged
 %%DATADIR%%/dictionary.issanni
 %%DATADIR%%/dictionary.itk
+%%DATADIR%%/dictionary.jradius
 %%DATADIR%%/dictionary.juniper
 %%DATADIR%%/dictionary.karlnet
 %%DATADIR%%/dictionary.livingston
 %%DATADIR%%/dictionary.localweb
 %%DATADIR%%/dictionary.lucent
+%%DATADIR%%/dictionary.manzara
 %%DATADIR%%/dictionary.merit
 %%DATADIR%%/dictionary.microsoft
 %%DATADIR%%/dictionary.mikrotik
 %%DATADIR%%/dictionary.motorola
 %%DATADIR%%/dictionary.navini
 %%DATADIR%%/dictionary.netscreen
+%%DATADIR%%/dictionary.nexans
 %%DATADIR%%/dictionary.nokia
+%%DATADIR%%/dictionary.nokia.conflict
 %%DATADIR%%/dictionary.nomadix
 %%DATADIR%%/dictionary.nortel
 %%DATADIR%%/dictionary.ntua
+%%DATADIR%%/dictionary.openser
 %%DATADIR%%/dictionary.packeteer
 %%DATADIR%%/dictionary.patton
 %%DATADIR%%/dictionary.propel
+%%DATADIR%%/dictionary.prosoft
+%%DATADIR%%/dictionary.quiconnect
 %%DATADIR%%/dictionary.quintum
 %%DATADIR%%/dictionary.redback
 %%DATADIR%%/dictionary.redcreek
@@ -500,27 +590,31 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.rfc3162
 %%DATADIR%%/dictionary.rfc3576
 %%DATADIR%%/dictionary.rfc3580
+%%DATADIR%%/dictionary.rfc4072
 %%DATADIR%%/dictionary.rfc4372
-%%DATADIR%%/dictionary.rfc4590
 %%DATADIR%%/dictionary.rfc4675
 %%DATADIR%%/dictionary.rfc4679
+%%DATADIR%%/dictionary.rfc4818
+%%DATADIR%%/dictionary.rfc4849
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
-%%DATADIR%%/dictionary.schulzrinne-sipping
 %%DATADIR%%/dictionary.shasta
 %%DATADIR%%/dictionary.shiva
+%%DATADIR%%/dictionary.slipstream
 %%DATADIR%%/dictionary.sofaware
 %%DATADIR%%/dictionary.sonicwall
 %%DATADIR%%/dictionary.springtide
 %%DATADIR%%/dictionary.starent
 %%DATADIR%%/dictionary.t_systems_nova
 %%DATADIR%%/dictionary.telebit
+%%DATADIR%%/dictionary.telkom
 %%DATADIR%%/dictionary.trapeze
 %%DATADIR%%/dictionary.tropos
 %%DATADIR%%/dictionary.unix
 %%DATADIR%%/dictionary.usr
 %%DATADIR%%/dictionary.valemount
 %%DATADIR%%/dictionary.versanet
+%%DATADIR%%/dictionary.vqp
 %%DATADIR%%/dictionary.walabi
 %%DATADIR%%/dictionary.waverider
 %%DATADIR%%/dictionary.wispr

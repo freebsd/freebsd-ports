@@ -6,67 +6,53 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION?=	1.1.7
-PORTREVISION?=	2
+DISTVERSION=	2.0.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
+MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/ \
 		ftp://ftp.uk.freeradius.org/pub/radius/ \
-		ftp://ftp.us.freeradius.org/pub/radius/ \
+		http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
 		http://freeradius.portal-to-web.de/
 MASTER_SITE_SUBDIR=	. old
+DISTNAME=	freeradius-server-${DISTVERSION}
 
-MAINTAINER?=	david@wood2.org.uk
-COMMENT?=	A free RADIUS server implementation
+MAINTAINER=	david@wood2.org.uk
+COMMENT=	A free RADIUS server implementation
+
+RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 WANT_PERL=	yes
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
-
 LOGDIR?=	/var/log
 
-# If FREERADIUS_SLAVE_MYSQL is defined, we want to build the
-# freeradius-mysql slave port
-
-CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].*
-.ifdef(FREERADIUS_SLAVE_MYSQL)
-CONFLICTS+=	freeradius-[0-9].* freeradius-mysql-[02-9].*
-PKGNAMESUFFIX=	-mysql
-.else
-CONFLICTS+=	freeradius-mysql-[0-9].* freeradius-[02-9].*
-.endif
+CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].* \
+		freeradius-mysql-[0-9].* freeradius-[013-9].*
 
 USE_RC_SUBR=	radiusd.sh
 USE_AUTOTOOLS=	libltdl:15 libtool:15 autoconf:261
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
+USE_PYTHON=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	PORTVERSION=${DISTVERSION}
 
 OPTIONS=	KERBEROS	"With Kerberos support" off \
 		HEIMDAL		"With Heimdal Kerberos support" off \
-		LDAP		"With LDAP database support" off
-.ifndef(FREERADIUS_SLAVE_MYSQL)
-OPTIONS+=	MYSQL		"With MySQL database support" off
-.endif
-OPTIONS+=	PGSQL		"With PostgreSQL database support" off \
+		LDAP		"With LDAP database support" off \
+		MYSQL		"With MySQL database support" off \
+		PGSQL		"With PostgreSQL database support" off \
 		FIREBIRD	"With Firebird database support (EXPERIMENTAL)" off \
 		SNMP		"With SNMP support" off \
-		EDIR		"With Novell eDirectory support" off \
-		NOPERL		"Do not require perl (use only if necessary)" off \
 		EXPERIMENTAL	"Build experimental modules" off
 
 .include <bsd.port.pre.mk>
 
 # Default requirements for rc script
 _REQUIRE=	NETWORKING SERVERS
-
-.ifdef(FREERADIUS_SLAVE_MYSQL)
-WITH_MYSQL=	yes
-.endif
 
 CONFIGURE_ARGS=	--quiet \
 		--prefix=${PREFIX} \
@@ -80,19 +66,23 @@ CONFIGURE_ARGS+=--with-docdir=${DOCSDIR}
 PLIST_SUB+=	PORTDOCS=""
 .endif
 CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
-		--with-large-files \
 		--with-openssl-includes=${OPENSSLINC}
 # This conditionality avoids -L/usr/lib in the radiusd build step when
 # building with base system OpenSSL
 .if ${OPENSSLLIB} != "/usr/lib"
 CONFIGURE_ARGS+=--with-openssl-libraries=${OPENSSLLIB}
 .endif
-CONFIGURE_ARGS+=--without-rlm_sql_db2 \
-		--without-rlm_sql_freetds \
+CONFIGURE_ARGS+=--with-rlm-python-lib-dir=${PYTHON_LIBDIR} \
+		--with-rlm-python-include-dir=${PYTHON_INCLUDEDIR} \
+		--without-rlm_eap_ikev2 \
+		--without-rlm_eap2 \
+		--without-rlm_opendirectory \
+		--without-rlm_sql_db2 \
 		--without-rlm_sql_iodbc \
 		--without-rlm_sql_oracle \
 		--without-rlm_sql_sybase \
-		--without-rlm_sql_unixodbc
+		--without-rlm_sql_unixodbc \
+		--with-vmps
 
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=	--with-pic
@@ -117,10 +107,6 @@ CONFIGURE_ARGS+=--without-rlm_krb5
 PLIST_SUB+=	KRB5="@comment "
 .endif
 
-.if defined(WITH_EDIR) && !defined(WITH_LDAP)
-WITH_LDAP=	yes
-.endif
-
 .ifdef(WITH_LDAP)
 USE_OPENLDAP=	YES
 PLIST_SUB+=	LDAP=""
@@ -128,10 +114,6 @@ _REQUIRE+=	slapd
 .else
 CONFIGURE_ARGS+=--without-rlm_ldap
 PLIST_SUB+=	LDAP="@comment "
-.endif
-
-.ifdef(WITH_EDIR)
-CONFIGURE_ARGS+=--with-edir
 .endif
 
 .ifdef(WITH_MYSQL)
@@ -175,9 +157,6 @@ CONFIGURE_ARGS+=--without-snmp
 .endif
 
 .ifdef(WITH_EXPERIMENTAL)
-USE_PYTHON=	yes
-# hack to get the dependency
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ARGS+=--with-experimental-modules
 PLIST_SUB+=	EXPM=""
 .else
@@ -188,6 +167,14 @@ PLIST_SUB+=	EXPM="@comment "
 CONFIGURE_ARGS+=--enable-developer
 .endif
 
+# NOPERL has been removed from OPTIONS. It is a nasty hack as it doesn't
+# properly remove the dependency on perl. The main configure.in should be
+# patched so that the perl detection test fails to make this work properly,
+# though that configure run (at least in 2.0.0) only looks for perl to issue
+# a warning about Simultaneous-Use and checkrad.pl maybe not working without
+# perl.
+# Leave WITH_NOPERL as a knob for anyone that really wants it - or for
+# a proper fix in the future.
 .ifdef(WITH_NOPERL)
 CONFIGURE_ARGS+=--without-rlm_perl
 PLIST_SUB+=	RLMPERL="@comment "
@@ -201,13 +188,14 @@ USE_LDCONFIG=	yes
 
 MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
 		radzap.1
-MAN5=		acct_users.5 clients.5 clients.conf.5 dictionary.5 naslist.5 \
-		radiusd.conf.5 rlm_acct_unique.5 rlm_always.5 \
+MAN5=		acct_users.5 clients.conf.5 dictionary.5 radiusd.conf.5 \
+		radrelay.conf.5 rlm_acct_unique.5 rlm_always.5 \
 		rlm_attr_filter.5 rlm_attr_rewrite.5 rlm_chap.5 rlm_counter.5 \
-		rlm_detail.5 rlm_expr.5 rlm_files.5 rlm_mschap.5 rlm_pap.5 \
-		rlm_passwd.5 rlm_realm.5 rlm_sql.5 rlm_sql_log.5 rlm_unix.5 \
-		users.5
-MAN8=		radiusd.8 radrelay.8 radsqlrelay.8 radwatch.8 rlm_ippool_tool.8
+		rlm_detail.5 rlm_digest.5 rlm_expr.5 rlm_files.5 rlm_mschap.5 \
+		rlm_pap.5 rlm_passwd.5 rlm_policy.5 rlm_realm.5 rlm_sql.5 \
+		rlm_sql_log.5 rlm_unix.5 unlang.5 users.5
+MAN8=		radiusd.8 radrelay.8 radsqlrelay.8 radwatch.8 \
+		rlm_ippool_tool.8
 
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
@@ -218,6 +206,12 @@ post-patch:
 		${REINPLACE_CMD} -e "s:\$$(R)\$$(raddbdir):${EXAMPLESDIR}/raddb:g" {} \;
 # Clean up after the last operation (so as not to get unwanted files when installing doc/)
 	@${FIND} -E ${WRKSRC} -regex '.*/Makefile(\.in)?\.(orig|bak)$$' -delete
+# Patch raddb/certs/bootstrap to use gmake instead of make
+	@${REINPLACE_CMD} -Ee "s:^make:${PREFIX}/bin/gmake:" \
+		${WRKSRC}/raddb/certs/bootstrap
+# Clean up after the last operation (so as not to get unwanted files in raddb)
+	@${FIND} -E ${WRKSRC}/raddb/certs -regex '.*/bootstrap\.(orig|bak)$$' \
+		-delete
 
 pre-configure:
 # Replace -pthread with ${PTHREAD_LIBS} in configure(.in) files
@@ -243,10 +237,11 @@ post-install:
 	done
 # Copy all files from ${EXAMPLESDIR}/raddb to ${PREFIX}/etc/raddb if they
 # don't already exist in the destination location
-	@for i in `${FIND} ${EXAMPLESDIR}/raddb/ -type f -print \
+	@for i in `${FIND} -P ${EXAMPLESDIR}/raddb/ \( -type f -or -type l \) \
+	-print \
 	| ${SED} -e 's:^${EXAMPLESDIR}/raddb/::g'`; do \
 		if [ ! -f ${PREFIX}/etc/raddb/$${i} ]; then \
-			${CP} ${EXAMPLESDIR}/raddb/$${i} ${PREFIX}/etc/raddb/$${i}; \
+			${CP} -RP ${EXAMPLESDIR}/raddb/$${i} ${PREFIX}/etc/raddb/$${i}; \
 		fi; \
 	done
 # Set ${PREFIX}/etc/raddb and all the files and folders in it to g-w,o-rwx
