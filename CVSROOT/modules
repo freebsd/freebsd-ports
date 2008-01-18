@@ -1054,6 +1054,7 @@ bruteforceblocker	ports/security/bruteforceblocker
 bsd-airtools	ports/net-mgmt/bsd-airtools
 bsd-splash-changer	ports/sysutils/bsd-splash-changer
 bsdadminscripts	ports/sysutils/bsdadminscripts
+bsdar		ports/archivers/bsdar
 bsdbktr_tvtune	ports/multimedia/bsdbktr_tvtune
 bsddiff		ports/textproc/bsddiff
 bsdftpd-ssl	ports/ftp/bsdftpd-ssl
