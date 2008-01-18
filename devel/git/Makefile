@@ -175,7 +175,7 @@ MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		LIBMD_SHA1=yes
 MAKE_ARGS+=	prefix="${PREFIX}"
 USE_OPENSSL=	yes
-USE_RC_SUBR=	git-daemon
+USE_RC_SUBR=	git_daemon
 
 SHELLS=		/etc/shells
 
