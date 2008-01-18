@@ -1,0 +1,416 @@
+%%WWWDIR%%/__init__.py
+%%WWWDIR%%/__init__.pyc
+%%WWWDIR%%/__init__.pyo
+%%WWWDIR%%/diamanda
+%%WWWDIR%%/diamandas/baldur/URLconf.py
+%%WWWDIR%%/diamandas/baldur/URLconf.pyc
+%%WWWDIR%%/diamandas/baldur/__init__.py
+%%WWWDIR%%/diamandas/baldur/__init__.pyc
+%%WWWDIR%%/diamandas/baldur/locale/pl/LC_MESSAGES/django.mo
+%%WWWDIR%%/diamandas/baldur/locale/pl/LC_MESSAGES/django.po
+%%WWWDIR%%/diamandas/baldur/make-messages.py
+%%WWWDIR%%/diamandas/baldur/models.py
+%%WWWDIR%%/diamandas/baldur/models.pyc
+%%WWWDIR%%/diamandas/baldur/templates/baldur/add_file.html
+%%WWWDIR%%/diamandas/baldur/templates/baldur/add_file2.html
+%%WWWDIR%%/diamandas/baldur/templates/baldur/chr.html
+%%WWWDIR%%/diamandas/baldur/templates/baldur/chr_list.html
+%%WWWDIR%%/diamandas/baldur/templates/baldur/chr_show.html
+%%WWWDIR%%/diamandas/baldur/views.py
+%%WWWDIR%%/diamandas/baldur/views.pyc
+%%WWWDIR%%/diamandas/boxcomments/URLconf.py
+%%WWWDIR%%/diamandas/boxcomments/URLconf.pyc
+%%WWWDIR%%/diamandas/boxcomments/__init__.py
+%%WWWDIR%%/diamandas/boxcomments/__init__.pyc
+%%WWWDIR%%/diamandas/boxcomments/__init__.pyo
+%%WWWDIR%%/diamandas/boxcomments/locale/pl/LC_MESSAGES/django.mo
+%%WWWDIR%%/diamandas/boxcomments/locale/pl/LC_MESSAGES/django.po
+%%WWWDIR%%/diamandas/boxcomments/make-messages.py
+%%WWWDIR%%/diamandas/boxcomments/models.py
+%%WWWDIR%%/diamandas/boxcomments/models.pyc
+%%WWWDIR%%/diamandas/boxcomments/models.pyo
+%%WWWDIR%%/diamandas/boxcomments/templates/boxcomments/comments.html
+%%WWWDIR%%/diamandas/boxcomments/templatetags/__init__.py
+%%WWWDIR%%/diamandas/boxcomments/templatetags/__init__.pyc
+%%WWWDIR%%/diamandas/boxcomments/templatetags/cbc.py
+%%WWWDIR%%/diamandas/boxcomments/templatetags/cbc.pyc
+%%WWWDIR%%/diamandas/boxcomments/views.py
+%%WWWDIR%%/diamandas/boxcomments/views.pyc
+%%WWWDIR%%/diamandas/boxcomments/views.pyo
+%%WWWDIR%%/diamandas/cbcplugins/__init__.py
+%%WWWDIR%%/diamandas/cbcplugins/__init__.pyc
+%%WWWDIR%%/diamandas/cbcplugins/cbcparser.py
+%%WWWDIR%%/diamandas/cbcplugins/cbcparser.pyc
+%%WWWDIR%%/diamandas/cbcplugins/cbcplugins/art.py
+%%WWWDIR%%/diamandas/cbcplugins/cbcplugins/art.pyc
+%%WWWDIR%%/diamandas/cbcplugins/cbcplugins/h.py
+%%WWWDIR%%/diamandas/cbcplugins/cbcplugins/h.pyc
+%%WWWDIR%%/diamandas/cbcplugins/cbcplugins/link.py
+%%WWWDIR%%/diamandas/cbcplugins/cbcplugins/link.pyc
+%%WWWDIR%%/diamandas/cbcplugins/cbcplugins/syntax.py
+%%WWWDIR%%/diamandas/cbcplugins/cbcplugins/syntax.pyc
+%%WWWDIR%%/diamandas/cbcplugins/cbcplugins/thumb.py
+%%WWWDIR%%/diamandas/cbcplugins/cbcplugins/thumb.pyc
+%%WWWDIR%%/diamandas/myghtyboard/URLconf.py
+%%WWWDIR%%/diamandas/myghtyboard/URLconf.pyc
+%%WWWDIR%%/diamandas/myghtyboard/__init__.py
+%%WWWDIR%%/diamandas/myghtyboard/__init__.pyc
+%%WWWDIR%%/diamandas/myghtyboard/locale/pl/LC_MESSAGES/django.mo
+%%WWWDIR%%/diamandas/myghtyboard/locale/pl/LC_MESSAGES/django.po
+%%WWWDIR%%/diamandas/myghtyboard/make-messages.py
+%%WWWDIR%%/diamandas/myghtyboard/models.py
+%%WWWDIR%%/diamandas/myghtyboard/models.pyc
+%%WWWDIR%%/diamandas/myghtyboard/templates/myghtyboard/add_post.html
+%%WWWDIR%%/diamandas/myghtyboard/templates/myghtyboard/add_topic.html
+%%WWWDIR%%/diamandas/myghtyboard/templates/myghtyboard/category_list.html
+%%WWWDIR%%/diamandas/myghtyboard/templates/myghtyboard/edit_post.html
+%%WWWDIR%%/diamandas/myghtyboard/templates/myghtyboard/move_topic.html
+%%WWWDIR%%/diamandas/myghtyboard/templates/myghtyboard/mytopics_list.html
+%%WWWDIR%%/diamandas/myghtyboard/templates/myghtyboard/post_list.html
+%%WWWDIR%%/diamandas/myghtyboard/templates/myghtyboard/topics_list.html
+%%WWWDIR%%/diamandas/myghtyboard/templatetags/__init__.py
+%%WWWDIR%%/diamandas/myghtyboard/templatetags/__init__.pyc
+%%WWWDIR%%/diamandas/myghtyboard/templatetags/fbc.py
+%%WWWDIR%%/diamandas/myghtyboard/templatetags/fbc.pyc
+%%WWWDIR%%/diamandas/myghtyboard/views.py
+%%WWWDIR%%/diamandas/myghtyboard/views.pyc
+%%WWWDIR%%/diamandas/news/URLconf.py
+%%WWWDIR%%/diamandas/news/URLconf.pyc
+%%WWWDIR%%/diamandas/news/__init__.py
+%%WWWDIR%%/diamandas/news/__init__.pyc
+%%WWWDIR%%/diamandas/news/locale/pl/LC_MESSAGES/django.mo
+%%WWWDIR%%/diamandas/news/locale/pl/LC_MESSAGES/django.po
+%%WWWDIR%%/diamandas/news/make-messages.py
+%%WWWDIR%%/diamandas/news/models.py
+%%WWWDIR%%/diamandas/news/models.pyc
+%%WWWDIR%%/diamandas/news/templates/news/cat_list.html
+%%WWWDIR%%/diamandas/news/templates/news/cat_news_list.html
+%%WWWDIR%%/diamandas/news/templates/news/news_list.html
+%%WWWDIR%%/diamandas/news/templates/news/news_show.html
+%%WWWDIR%%/diamandas/news/templates/news/rss_news.html
+%%WWWDIR%%/diamandas/news/views.py
+%%WWWDIR%%/diamandas/news/views.pyc
+%%WWWDIR%%/diamandas/pages/URLconf.py
+%%WWWDIR%%/diamandas/pages/URLconf.pyc
+%%WWWDIR%%/diamandas/pages/__init__.py
+%%WWWDIR%%/diamandas/pages/__init__.pyc
+%%WWWDIR%%/diamandas/pages/__init__.pyo
+%%WWWDIR%%/diamandas/pages/bib.py
+%%WWWDIR%%/diamandas/pages/bib.pyc
+%%WWWDIR%%/diamandas/pages/locale/pl/LC_MESSAGES/django.mo
+%%WWWDIR%%/diamandas/pages/locale/pl/LC_MESSAGES/django.po
+%%WWWDIR%%/diamandas/pages/make-messages.py
+%%WWWDIR%%/diamandas/pages/models.py
+%%WWWDIR%%/diamandas/pages/models.pyc
+%%WWWDIR%%/diamandas/pages/models.pyo
+%%WWWDIR%%/diamandas/pages/templates/404.html
+%%WWWDIR%%/diamandas/pages/templates/500.html
+%%WWWDIR%%/diamandas/pages/templates/pages/autor.html
+%%WWWDIR%%/diamandas/pages/templates/pages/biblioteki.html
+%%WWWDIR%%/diamandas/pages/templates/pages/body.html
+%%WWWDIR%%/diamandas/pages/templates/pages/bug.html
+%%WWWDIR%%/diamandas/pages/templates/pages/rss2.html
+%%WWWDIR%%/diamandas/pages/templates/pages/search.html
+%%WWWDIR%%/diamandas/pages/templates/pages/show.html
+%%WWWDIR%%/diamandas/pages/templates/pages/show_index.html
+%%WWWDIR%%/diamandas/pages/templates/pages/sitemap.html
+%%WWWDIR%%/diamandas/pages/templatetags/__init__.py
+%%WWWDIR%%/diamandas/pages/templatetags/__init__.pyc
+%%WWWDIR%%/diamandas/pages/templatetags/cbc.py
+%%WWWDIR%%/diamandas/pages/templatetags/cbc.pyc
+%%WWWDIR%%/diamandas/pages/views.py
+%%WWWDIR%%/diamandas/pages/views.pyc
+%%WWWDIR%%/diamandas/pages/views.pyo
+%%WWWDIR%%/diamandas/stats/URLconf.py
+%%WWWDIR%%/diamandas/stats/URLconf.pyc
+%%WWWDIR%%/diamandas/stats/__init__.py
+%%WWWDIR%%/diamandas/stats/__init__.pyc
+%%WWWDIR%%/diamandas/stats/locale/pl/LC_MESSAGES/django.mo
+%%WWWDIR%%/diamandas/stats/locale/pl/LC_MESSAGES/django.po
+%%WWWDIR%%/diamandas/stats/make-messages.py
+%%WWWDIR%%/diamandas/stats/models.py
+%%WWWDIR%%/diamandas/stats/models.pyc
+%%WWWDIR%%/diamandas/stats/statsMiddleware.py
+%%WWWDIR%%/diamandas/stats/statsMiddleware.pyc
+%%WWWDIR%%/diamandas/stats/templates/stats/entries.html
+%%WWWDIR%%/diamandas/stats/templates/stats/google.html
+%%WWWDIR%%/diamandas/stats/templates/stats/mainpage.html
+%%WWWDIR%%/diamandas/stats/templates/stats/noperm.html
+%%WWWDIR%%/diamandas/stats/templates/stats/refs.html
+%%WWWDIR%%/diamandas/stats/views.py
+%%WWWDIR%%/diamandas/stats/views.pyc
+%%WWWDIR%%/diamandas/tasks/URLconf.py
+%%WWWDIR%%/diamandas/tasks/URLconf.pyc
+%%WWWDIR%%/diamandas/tasks/__init__.py
+%%WWWDIR%%/diamandas/tasks/__init__.pyc
+%%WWWDIR%%/diamandas/tasks/locale/pl/LC_MESSAGES/django.mo
+%%WWWDIR%%/diamandas/tasks/locale/pl/LC_MESSAGES/django.po
+%%WWWDIR%%/diamandas/tasks/make-messages.py
+%%WWWDIR%%/diamandas/tasks/models.py
+%%WWWDIR%%/diamandas/tasks/models.pyc
+%%WWWDIR%%/diamandas/tasks/templates/tasks/com_task_add.html
+%%WWWDIR%%/diamandas/tasks/templates/tasks/task_add.html
+%%WWWDIR%%/diamandas/tasks/templates/tasks/task_list.html
+%%WWWDIR%%/diamandas/tasks/templates/tasks/task_show.html
+%%WWWDIR%%/diamandas/tasks/templates/tasks/zadania.html
+%%WWWDIR%%/diamandas/tasks/views.py
+%%WWWDIR%%/diamandas/tasks/views.pyc
+%%WWWDIR%%/diamandas/translator/URLconf.py
+%%WWWDIR%%/diamandas/translator/URLconf.pyc
+%%WWWDIR%%/diamandas/translator/__init__.py
+%%WWWDIR%%/diamandas/translator/__init__.pyc
+%%WWWDIR%%/diamandas/translator/locale/pl/LC_MESSAGES/django.mo
+%%WWWDIR%%/diamandas/translator/locale/pl/LC_MESSAGES/django.po
+%%WWWDIR%%/diamandas/translator/make-messages.py
+%%WWWDIR%%/diamandas/translator/models.py
+%%WWWDIR%%/diamandas/translator/models.pyc
+%%WWWDIR%%/diamandas/translator/templates/translator/tra.html
+%%WWWDIR%%/diamandas/translator/templates/translator/tra_list.html
+%%WWWDIR%%/diamandas/translator/templates/translator/tra_show.html
+%%WWWDIR%%/diamandas/translator/views.py
+%%WWWDIR%%/diamandas/translator/views.pyc
+%%WWWDIR%%/diamandas/userpanel/URLconf.py
+%%WWWDIR%%/diamandas/userpanel/URLconf.pyc
+%%WWWDIR%%/diamandas/userpanel/__init__.py
+%%WWWDIR%%/diamandas/userpanel/__init__.pyc
+%%WWWDIR%%/diamandas/userpanel/locale/pl/LC_MESSAGES/django.mo
+%%WWWDIR%%/diamandas/userpanel/locale/pl/LC_MESSAGES/django.po
+%%WWWDIR%%/diamandas/userpanel/make-messages.py
+%%WWWDIR%%/diamandas/userpanel/models.py
+%%WWWDIR%%/diamandas/userpanel/models.pyc
+%%WWWDIR%%/diamandas/userpanel/templates/userpanel/hmessage.html
+%%WWWDIR%%/diamandas/userpanel/templates/userpanel/login.html
+%%WWWDIR%%/diamandas/userpanel/templates/userpanel/panel.html
+%%WWWDIR%%/diamandas/userpanel/templates/userpanel/pmessage.html
+%%WWWDIR%%/diamandas/userpanel/templates/userpanel/profile_pmessage.html
+%%WWWDIR%%/diamandas/userpanel/templates/userpanel/register.html
+%%WWWDIR%%/diamandas/userpanel/templates/userpanel/userlist.html
+%%WWWDIR%%/diamandas/userpanel/templates/userpanel/zmessage.html
+%%WWWDIR%%/diamandas/userpanel/userMiddleware.py
+%%WWWDIR%%/diamandas/userpanel/userMiddleware.pyc
+%%WWWDIR%%/diamandas/userpanel/views.py
+%%WWWDIR%%/diamandas/userpanel/views.pyc
+%%WWWDIR%%/install.py
+%%WWWDIR%%/manage.py
+%%WWWDIR%%/manage.pyo
+%%WWWDIR%%/readme.txt
+%%WWWDIR%%/settings.py
+%%WWWDIR%%/settings.pyc
+%%WWWDIR%%/settings.pyo
+%%WWWDIR%%/site_media/SHERWOOD.TTF
+%%WWWDIR%%/site_media/bg.jpg
+%%WWWDIR%%/site_media/bgate_av/AJANTISS.jpg
+%%WWWDIR%%/site_media/bgate_av/ALORAS.jpg
+%%WWWDIR%%/site_media/bgate_av/BRANWES.jpg
+%%WWWDIR%%/site_media/bgate_av/CORANS.jpg
+%%WWWDIR%%/site_media/bgate_av/DYNAHEIS.jpg
+%%WWWDIR%%/site_media/bgate_av/EDWINS.jpg
+%%WWWDIR%%/site_media/bgate_av/ELDOTHS.jpg
+%%WWWDIR%%/site_media/bgate_av/FALDORNS.jpg
+%%WWWDIR%%/site_media/bgate_av/GARRICKS.jpg
+%%WWWDIR%%/site_media/bgate_av/GENDWRFS.jpg
+%%WWWDIR%%/site_media/bgate_av/GENMELFS.jpg
+%%WWWDIR%%/site_media/bgate_av/GENMHLFS.jpg
+%%WWWDIR%%/site_media/bgate_av/IMOENS.jpg
+%%WWWDIR%%/site_media/bgate_av/JAHEIRAS.jpg
+%%WWWDIR%%/site_media/bgate_av/KAGAINS.jpg
+%%WWWDIR%%/site_media/bgate_av/KHALIDS.jpg
+%%WWWDIR%%/site_media/bgate_av/KIVANS.jpg
+%%WWWDIR%%/site_media/bgate_av/MAN1S.jpg
+%%WWWDIR%%/site_media/bgate_av/MAN2S.jpg
+%%WWWDIR%%/site_media/bgate_av/MINSCS.jpg
+%%WWWDIR%%/site_media/bgate_av/MONTARS.jpg
+%%WWWDIR%%/site_media/bgate_av/NAERIES.jpg
+%%WWWDIR%%/site_media/bgate_av/NANOMENS.jpg
+%%WWWDIR%%/site_media/bgate_av/NCERNDS.jpg
+%%WWWDIR%%/site_media/bgate_av/NEDWINS.jpg
+%%WWWDIR%%/site_media/bgate_av/NHAERS.jpg
+%%WWWDIR%%/site_media/bgate_av/NHORCS.jpg
+%%WWWDIR%%/site_media/bgate_av/NIMOENS.jpg
+%%WWWDIR%%/site_media/bgate_av/NJAHEIRS.jpg
+%%WWWDIR%%/site_media/bgate_av/NJANS.jpg
+%%WWWDIR%%/site_media/bgate_av/NKELDORS.jpg
+%%WWWDIR%%/site_media/bgate_av/NKORGANS.jpg
+%%WWWDIR%%/site_media/bgate_av/NMAZZYS.jpg
+%%WWWDIR%%/site_media/bgate_av/NMINSCS.jpg
+%%WWWDIR%%/site_media/bgate_av/NNALIAS.jpg
+%%WWWDIR%%/site_media/bgate_av/NOPORTSM.jpg
+%%WWWDIR%%/site_media/bgate_av/NVALYGAS.jpg
+%%WWWDIR%%/site_media/bgate_av/NVICONS.jpg
+%%WWWDIR%%/site_media/bgate_av/NYOSHIMS.jpg
+%%WWWDIR%%/site_media/bgate_av/QUAYLES.jpg
+%%WWWDIR%%/site_media/bgate_av/SAFANAS.jpg
+%%WWWDIR%%/site_media/bgate_av/SHARTELS.jpg
+%%WWWDIR%%/site_media/bgate_av/SKIES.jpg
+%%WWWDIR%%/site_media/bgate_av/TIAXS.jpg
+%%WWWDIR%%/site_media/bgate_av/VICONIAS.jpg
+%%WWWDIR%%/site_media/bgate_av/WOMAN1S.jpg
+%%WWWDIR%%/site_media/bgate_av/WOMAN2S.jpg
+%%WWWDIR%%/site_media/bgate_av/XANS.jpg
+%%WWWDIR%%/site_media/bgate_av/XZARS.jpg
+%%WWWDIR%%/site_media/bgate_av/YESLICKS.jpg
+%%WWWDIR%%/site_media/bgate_av/dd856b062f77cf7e55fcd8d27ecd71a85fd5d3d8.jpg
+%%WWWDIR%%/site_media/biblioteka/biblioteka.css
+%%WWWDIR%%/site_media/biblioteka/biblioteka.js
+%%WWWDIR%%/site_media/biblioteka/chromebg.gif
+%%WWWDIR%%/site_media/biblioteka/chromebg2.gif
+%%WWWDIR%%/site_media/biblioteka/comment.png
+%%WWWDIR%%/site_media/biblioteka/computer.png
+%%WWWDIR%%/site_media/biblioteka/docs.gif
+%%WWWDIR%%/site_media/biblioteka/docs1.png
+%%WWWDIR%%/site_media/biblioteka/document.png
+%%WWWDIR%%/site_media/biblioteka/download.png
+%%WWWDIR%%/site_media/biblioteka/favicon.ico
+%%WWWDIR%%/site_media/biblioteka/feed.png
+%%WWWDIR%%/site_media/biblioteka/forum.png
+%%WWWDIR%%/site_media/biblioteka/glob.png
+%%WWWDIR%%/site_media/biblioteka/help.png
+%%WWWDIR%%/site_media/biblioteka/loading.gif
+%%WWWDIR%%/site_media/biblioteka/lock.png
+%%WWWDIR%%/site_media/biblioteka/network.png
+%%WWWDIR%%/site_media/biblioteka/none.png
+%%WWWDIR%%/site_media/biblioteka/normal.png
+%%WWWDIR%%/site_media/biblioteka/print.gif
+%%WWWDIR%%/site_media/biblioteka/stick.png
+%%WWWDIR%%/site_media/biblioteka/task.png
+%%WWWDIR%%/site_media/biblioteka/tux.png
+%%WWWDIR%%/site_media/biblioteka/user.png
+%%WWWDIR%%/site_media/biblioteka/z1.png
+%%WWWDIR%%/site_media/wiki/editor/block.png
+%%WWWDIR%%/site_media/wiki/editor/bold.png
+%%WWWDIR%%/site_media/wiki/editor/center.png
+%%WWWDIR%%/site_media/wiki/editor/code.png
+%%WWWDIR%%/site_media/wiki/editor/fonth1.png
+%%WWWDIR%%/site_media/wiki/editor/fonth2.png
+%%WWWDIR%%/site_media/wiki/editor/fonth3.png
+%%WWWDIR%%/site_media/wiki/editor/fonth4.png
+%%WWWDIR%%/site_media/wiki/editor/image.png
+%%WWWDIR%%/site_media/wiki/editor/italic.png
+%%WWWDIR%%/site_media/wiki/editor/justify.png
+%%WWWDIR%%/site_media/wiki/editor/left.png
+%%WWWDIR%%/site_media/wiki/editor/link.png
+%%WWWDIR%%/site_media/wiki/editor/list.png
+%%WWWDIR%%/site_media/wiki/editor/list_1.png
+%%WWWDIR%%/site_media/wiki/editor/right.png
+%%WWWDIR%%/site_media/wiki/editor/rule.png
+%%WWWDIR%%/site_media/wiki/editor/sub.png
+%%WWWDIR%%/site_media/wiki/editor/sup.png
+%%WWWDIR%%/site_media/wiki/editor/underline.png
+%%WWWDIR%%/site_media/wiki/greybox/AJS.js
+%%WWWDIR%%/site_media/wiki/greybox/AJS_fx.js
+%%WWWDIR%%/site_media/wiki/greybox/g_close.gif
+%%WWWDIR%%/site_media/wiki/greybox/gb_scripts.js
+%%WWWDIR%%/site_media/wiki/greybox/gb_scripts_tmp.js
+%%WWWDIR%%/site_media/wiki/greybox/gb_styles.css
+%%WWWDIR%%/site_media/wiki/greybox/header_bg.gif
+%%WWWDIR%%/site_media/wiki/greybox/indicator.gif
+%%WWWDIR%%/site_media/wiki/greybox/loader_frame.html
+%%WWWDIR%%/site_media/wiki/greybox/next.gif
+%%WWWDIR%%/site_media/wiki/greybox/prev.gif
+%%WWWDIR%%/site_media/wiki/greybox/w_close.gif
+%%WWWDIR%%/site_media/wiki/img/1.png
+%%WWWDIR%%/site_media/wiki/img/2.png
+%%WWWDIR%%/site_media/wiki/img/3.png
+%%WWWDIR%%/site_media/wiki/img/4.png
+%%WWWDIR%%/site_media/wiki/img/browser.png
+%%WWWDIR%%/site_media/wiki/img/category.png
+%%WWWDIR%%/site_media/wiki/img/new_1.gif
+%%WWWDIR%%/site_media/wiki/img/new_3.gif
+%%WWWDIR%%/site_media/wiki/img/new_7.gif
+%%WWWDIR%%/site_media/wiki/img/rss.png
+%%WWWDIR%%/site_media/wiki/smilies/icon_arrow.gif
+%%WWWDIR%%/site_media/wiki/smilies/icon_biggrin.gif
+%%WWWDIR%%/site_media/wiki/smilies/icon_cheesygrin.gif
+%%WWWDIR%%/site_media/wiki/smilies/icon_cool.gif
+%%WWWDIR%%/site_media/wiki/smilies/icon_eek.gif
+%%WWWDIR%%/site_media/wiki/smilies/icon_evil.gif
+%%WWWDIR%%/site_media/wiki/smilies/icon_idea.gif
+%%WWWDIR%%/site_media/wiki/smilies/icon_neutral.gif
+%%WWWDIR%%/site_media/wiki/smilies/icon_question.gif
+%%WWWDIR%%/site_media/wiki/smilies/icon_twisted.gif
+%%WWWDIR%%/urls.py
+%%WWWDIR%%/urls.pyc
+%%WWWDIR%%/urls.pyo
+@dirrm %%WWWDIR%%/site_media/wiki/smilies
+@dirrm %%WWWDIR%%/site_media/wiki/img
+@dirrm %%WWWDIR%%/site_media/wiki/greybox
+@dirrm %%WWWDIR%%/site_media/wiki/editor
+@dirrm %%WWWDIR%%/site_media/wiki
+@exec mkdir -p %D/%%WWWDIR%%/site_media/translations
+@dirrm %%WWWDIR%%/site_media/translations
+@exec mkdir -p %D/%%WWWDIR%%/site_media/resources/example.com
+@dirrm %%WWWDIR%%/site_media/resources/example.com
+@exec mkdir -p %D/%%WWWDIR%%/site_media/resources
+@dirrm %%WWWDIR%%/site_media/resources
+@exec mkdir -p %D/%%WWWDIR%%/site_media/nicon
+@dirrm %%WWWDIR%%/site_media/nicon
+@exec mkdir -p %D/%%WWWDIR%%/site_media/lang_icon
+@dirrm %%WWWDIR%%/site_media/lang_icon
+@exec mkdir -p %D/%%WWWDIR%%/site_media/captcha
+@dirrm %%WWWDIR%%/site_media/captcha
+@dirrm %%WWWDIR%%/site_media/biblioteka
+@dirrm %%WWWDIR%%/site_media/bgate_av
+@exec mkdir -p %D/%%WWWDIR%%/site_media/bgate
+@dirrm %%WWWDIR%%/site_media/bgate
+@dirrm %%WWWDIR%%/site_media
+@dirrm %%WWWDIR%%/diamandas/userpanel/templates/userpanel
+@dirrm %%WWWDIR%%/diamandas/userpanel/templates
+@dirrm %%WWWDIR%%/diamandas/userpanel/locale/pl/LC_MESSAGES
+@dirrm %%WWWDIR%%/diamandas/userpanel/locale/pl
+@dirrm %%WWWDIR%%/diamandas/userpanel/locale
+@dirrm %%WWWDIR%%/diamandas/userpanel
+@dirrm %%WWWDIR%%/diamandas/translator/templates/translator
+@dirrm %%WWWDIR%%/diamandas/translator/templates
+@dirrm %%WWWDIR%%/diamandas/translator/locale/pl/LC_MESSAGES
+@dirrm %%WWWDIR%%/diamandas/translator/locale/pl
+@dirrm %%WWWDIR%%/diamandas/translator/locale
+@dirrm %%WWWDIR%%/diamandas/translator
+@dirrm %%WWWDIR%%/diamandas/tasks/templates/tasks
+@dirrm %%WWWDIR%%/diamandas/tasks/templates
+@dirrm %%WWWDIR%%/diamandas/tasks/locale/pl/LC_MESSAGES
+@dirrm %%WWWDIR%%/diamandas/tasks/locale/pl
+@dirrm %%WWWDIR%%/diamandas/tasks/locale
+@dirrm %%WWWDIR%%/diamandas/tasks
+@dirrm %%WWWDIR%%/diamandas/stats/templates/stats
+@dirrm %%WWWDIR%%/diamandas/stats/templates
+@dirrm %%WWWDIR%%/diamandas/stats/locale/pl/LC_MESSAGES
+@dirrm %%WWWDIR%%/diamandas/stats/locale/pl
+@dirrm %%WWWDIR%%/diamandas/stats/locale
+@dirrm %%WWWDIR%%/diamandas/stats
+@dirrm %%WWWDIR%%/diamandas/pages/templatetags
+@dirrm %%WWWDIR%%/diamandas/pages/templates/pages
+@dirrm %%WWWDIR%%/diamandas/pages/templates
+@dirrm %%WWWDIR%%/diamandas/pages/locale/pl/LC_MESSAGES
+@dirrm %%WWWDIR%%/diamandas/pages/locale/pl
+@dirrm %%WWWDIR%%/diamandas/pages/locale
+@dirrm %%WWWDIR%%/diamandas/pages
+@dirrm %%WWWDIR%%/diamandas/news/templates/news
+@dirrm %%WWWDIR%%/diamandas/news/templates
+@dirrm %%WWWDIR%%/diamandas/news/locale/pl/LC_MESSAGES
+@dirrm %%WWWDIR%%/diamandas/news/locale/pl
+@dirrm %%WWWDIR%%/diamandas/news/locale
+@dirrm %%WWWDIR%%/diamandas/news
+@dirrm %%WWWDIR%%/diamandas/myghtyboard/templatetags
+@dirrm %%WWWDIR%%/diamandas/myghtyboard/templates/myghtyboard
+@dirrm %%WWWDIR%%/diamandas/myghtyboard/templates
+@dirrm %%WWWDIR%%/diamandas/myghtyboard/locale/pl/LC_MESSAGES
+@dirrm %%WWWDIR%%/diamandas/myghtyboard/locale/pl
+@dirrm %%WWWDIR%%/diamandas/myghtyboard/locale
+@dirrm %%WWWDIR%%/diamandas/myghtyboard
+@dirrm %%WWWDIR%%/diamandas/cbcplugins/cbcplugins
+@dirrm %%WWWDIR%%/diamandas/cbcplugins
+@dirrm %%WWWDIR%%/diamandas/boxcomments/templatetags
+@dirrm %%WWWDIR%%/diamandas/boxcomments/templates/boxcomments
+@dirrm %%WWWDIR%%/diamandas/boxcomments/templates
+@dirrm %%WWWDIR%%/diamandas/boxcomments/locale/pl/LC_MESSAGES
+@dirrm %%WWWDIR%%/diamandas/boxcomments/locale/pl
+@dirrm %%WWWDIR%%/diamandas/boxcomments/locale
+@dirrm %%WWWDIR%%/diamandas/boxcomments
+@dirrm %%WWWDIR%%/diamandas/baldur/templates/baldur
+@dirrm %%WWWDIR%%/diamandas/baldur/templates
+@dirrm %%WWWDIR%%/diamandas/baldur/locale/pl/LC_MESSAGES
+@dirrm %%WWWDIR%%/diamandas/baldur/locale/pl
+@dirrm %%WWWDIR%%/diamandas/baldur/locale
+@dirrm %%WWWDIR%%/diamandas/baldur
+@dirrm %%WWWDIR%%/diamandas
+@dirrm %%WWWDIR%%

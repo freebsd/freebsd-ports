@@ -1,0 +1,22 @@
+
+	**** NOTE ****
+Remember to check
+
+%%WWWDIR%%/readme.txt
+
+for details
+
+If you'd use Diamanda in directory other
+than %%WWWDIR%% , edit urls.py and
+settings.py to point correct site_media dir.
+
+After installation:
+1. edit settings.py to setup database settings
+2. run
+python manage.py syncdb
+python install.py
+3. Diamanda is ready to run:
+python manage.py runserver 8080
+or via web server or something
+
+        **** NOTE ****
