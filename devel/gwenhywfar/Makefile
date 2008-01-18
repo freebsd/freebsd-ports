@@ -7,6 +7,7 @@
 
 PORTNAME=	gwenhywfar
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	devel net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform helper library for networking and security applications
 
-OPTIONS=	SSLDEBUG "Enable gwenhywfar SSL debug (if SSL enabled)" off \
-		MEMDEBUG "Enable memory debugger statistic" off \
+OPTIONS=	MEMDEBUG "Enable memory debugger statistic" off \
 		PORTDOCS "Install documentation (requires doxygen)" off
 
 USE_AUTOTOOLS=	libtool:15
