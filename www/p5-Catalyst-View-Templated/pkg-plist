@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Catalyst/View/Templated.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Templated/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Templated
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View
+@dirrmtry %%SITE_PERL%%/Catalyst/View

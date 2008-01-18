@@ -692,6 +692,7 @@
     SUBDIR += p5-Catalyst-View-Mason
     SUBDIR += p5-Catalyst-View-TT
     SUBDIR += p5-Catalyst-View-TT-ControllerLocal
+    SUBDIR += p5-Catalyst-View-Templated
     SUBDIR += p5-Class-DBI-FromForm
     SUBDIR += p5-ClearSilver
     SUBDIR += p5-Compress-LeadingBlankSpaces
