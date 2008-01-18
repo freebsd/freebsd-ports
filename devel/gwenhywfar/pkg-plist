@@ -108,7 +108,7 @@ lib/libgwenhywfar.a
 lib/libgwenhywfar.la
 lib/libgwenhywfar.so
 lib/libgwenhywfar.so.48
-lib/pkgconfig/gwenhywfar.pc
+libdata/pkgconfig/gwenhywfar.pc
 lib/gwenhywfar/plugins/38/crypttoken/ohbci.a
 lib/gwenhywfar/plugins/38/crypttoken/ohbci.la
 lib/gwenhywfar/plugins/38/crypttoken/ohbci.so
