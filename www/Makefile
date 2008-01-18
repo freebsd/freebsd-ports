@@ -953,6 +953,7 @@
     SUBDIR += p5-WebService-Technorati
     SUBDIR += p5-WebService-YouTube
     SUBDIR += p5-Xango
+    SUBDIR += p5-Yahoo-Lifestyle
     SUBDIR += p5-Yahoo-Search
     SUBDIR += p5-chklinks
     SUBDIR += p5-libapreq
