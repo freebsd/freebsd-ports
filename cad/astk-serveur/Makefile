@@ -10,7 +10,7 @@ DISTVERSIONPREFIX=	full-src-
 DISTVERSION=	1.5.5-1
 DISTVERSIONSUFFIX=	.noarch
 CATEGORIES=	cad
-MASTER_SITES=	http://www.code-aster.org/V2/IMG/gz/
+MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
 .else

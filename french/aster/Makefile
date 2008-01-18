@@ -10,7 +10,7 @@ DISTVERSIONPREFIX=	full-src-
 DISTVERSION=		9.2.0-2
 DISTVERSIONSUFFIX=	.noarch
 CATEGORIES=		french cad
-MASTER_SITES=		http://www.code-aster.org/V2/IMG/gz/
+MASTER_SITES=		http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Aster finite element method solver
