@@ -21,7 +21,8 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS+= --without-libusb --without-libftdi --without-ftd2xx
+CONFIGURE_ARGS+= --without-libusb --without-libftdi --without-ftd2xx \
+		 --disable-nls
 CONFIGURE_ENV+=	CFLAGS=--std=c99
 
 OPENWINCE_INCLUDE=${LOCALBASE}/include/openwince
