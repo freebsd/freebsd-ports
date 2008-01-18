@@ -8,6 +8,7 @@
 
 PORTNAME=	ggz-client-libs
 PORTVERSION=	${GGZ_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
@@ -44,6 +45,9 @@ PLIST_SUB+=	NLS=""
 post-patch:
 	@${REINPLACE_CMD} -e 's|libggz.la|libggz.so|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' ${WRKSRC}/ggz-wrapper/ggz
+
+post-install:
+	@${TOUCH} ${PREFIX}/etc/ggz.modules
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/games/libggz/bsd.ggz.mk"

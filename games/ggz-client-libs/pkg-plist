@@ -23,3 +23,5 @@ share/desktop-directories/ggz.directory
 @dirrmtry etc/xdg/menus/applications-merged
 @dirrmtry etc/xdg/menus
 @dirrmtry etc/xdg
+@exec touch %D/etc/ggz.modules
+@unexec [ "`wc -l<%D/etc/ggz.modules`" -gt 1 ]||rm -f %D/etc/ggz.modules
