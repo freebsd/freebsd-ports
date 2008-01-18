@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	mail www
 
 MAINTAINER=	beech@FreeBSD.org
