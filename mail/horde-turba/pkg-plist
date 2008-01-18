@@ -131,12 +131,12 @@
 %%HORDIR%%/scripts/ldap/addou.pl
 %%HORDIR%%/scripts/ldap/core.schema.patch
 %%HORDIR%%/scripts/ldap/rfc2739.schema
+%%HORDIR%%/scripts/sql/turba.oci8.sql
 %%HORDIR%%/scripts/sql/turba.xml
-%%HORDIR%%/scripts/sql/turba_objects.mssql.sql
-%%HORDIR%%/scripts/sql/turba_objects.mysql.sql
-%%HORDIR%%/scripts/sql/turba_objects.oci8.sql
-%%HORDIR%%/scripts/sql/turba_objects.pgsql.sql
-%%HORDIR%%/scripts/sql/turba_objects.sql
+%%HORDIR%%/scripts/sql/turba.mssql.sql
+%%HORDIR%%/scripts/sql/turba.sql
+%%HORDIR%%/scripts/sql/turba.pgsql.sql
+%%HORDIR%%/scripts/sql/turba.mysql.sql
 %%HORDIR%%/scripts/sql/turba_weddingguests.sql
 %%HORDIR%%/scripts/upgrades/1.1_to_1.2.sql
 %%HORDIR%%/scripts/upgrades/1.2_to_2.0.oci8.sql
