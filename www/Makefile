@@ -107,6 +107,7 @@
     SUBDIR += demoroniser
     SUBDIR += dfileserver
     SUBDIR += dhttpd
+    SUBDIR += diamanda
     SUBDIR += dillo
     SUBDIR += dillo-i18n
     SUBDIR += dokeos
