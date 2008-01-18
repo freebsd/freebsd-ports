@@ -16,7 +16,7 @@ COMMENT=	X.Org openChrome display driver
 USE_GL=		gl
 
 XORG_CAT=	driver
-USE_XORG=	videoproto xf86driproto xextproto xvmc
+USE_XORG=	videoproto xf86driproto xextproto xvmc glproto
 MAN4=		openchrome.4x
 
 MAKE_ARGS+=	drivermandir=${LOCALBASE}/man/man4
