@@ -15251,6 +15251,7 @@ speyes		ports/games/speyes
 spfval		ports/mail/spfval
 sphinx		ports/audio/sphinx
 sphinxsearch	ports/textproc/sphinxsearch
+sphinxsearch-devel	ports/textproc/sphinxsearch-devel
 spice		ports/cad/spice
 spicetrade	ports/games/spicetrade
 spider		ports/games/spider
