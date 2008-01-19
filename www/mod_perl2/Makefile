@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_perl
 PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
@@ -36,7 +36,7 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		APR::Date.3 APR::Error.3 APR::Finfo.3 APR::IpSubnet.3 \
 		APR::OS.3 APR::PerlIO.3 APR::Pool.3 APR::SockAddr.3 \
 		APR::Socket.3 APR::Status.3 APR::String.3 APR::Table.3 \
-		APR::ThreadMutex.3 APR::URI.3 APR::UUID.3 APR::Util.3 \
+		APR::URI.3 APR::UUID.3 APR::Util.3 \
 		Apache2::Access.3 Apache2::Build.3 Apache2::CmdParms.3 \
 		Apache2::Command.3 Apache2::Connection.3 Apache2::Const.3 \
 		Apache2::Directive.3 Apache2::Filter.3 Apache2::FilterRec.3 \
@@ -63,7 +63,20 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${APACHE_VERSION} >= 21
+.if exists(${LOCALBASE}/include/apr-1/apr.h)
+APR_H=		${LOCALBASE}/include/apr-1/apr.h
+.elif exists(${LOCALBASE}/include/apr/apr.h)
+APR_H=		${LOCALBASE}/include/apr/apr.h
+.endif
+
+.if defined(APR_H)
+APR_HAS_THREADS!=	${ECHO_CMD} `${GREP} -c 'APR_HAS_THREADS *1' ${APR_H}`
+.else
+APR_HAS_THREADS=	0
+.endif
+
+.if ${APR_HAS_THREADS} == 1
+MAN3+=		APR::ThreadMutex.3
 PLIST_SUB+=	THREADMUTEX=""
 .else
 PLIST_SUB+=	THREADMUTEX="@comment "
