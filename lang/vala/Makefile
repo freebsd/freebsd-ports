@@ -7,14 +7,12 @@
 #
 
 PORTNAME=	vala
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Programming language and compiler that converts Vala code into C code
-
-LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
 
 OPTIONS=	VAPIGEN "Enable VAPI generator" Off
 USE_BZIP2=	yes
