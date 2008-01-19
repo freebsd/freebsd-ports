@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plone3
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	www zope
 MASTER_SITES=	https://launchpad.net/plone/3.0/${PORTVERSION}/+download/
 DISTFILES=	Plone-${PORTVERSION}.tar.gz
@@ -21,6 +21,7 @@ WRKSRC=	${WRKDIR}/Plone-${PORTVERSION}
 USE_ZOPE=	yes
 ZOPE_VERSION=	2.10
 USE_PYTHON=	2.4
+USE_GETTEXT=	yes
 CONFLICTS=	zope-archetypes-[0-9]* \
 		zope-btreefolder2-[0-9]* \
 		zope-cmf-[0-9]* \
@@ -54,6 +55,11 @@ _MODULES=	ATContentTypes ATReferenceBrowserWidget AdvancedQuery \
 
 _PY_MODULES=	archetypes five kss plone wicked
 
+PLONE_PODIRS=	PlacelessTranslationService/locales PloneTranslations \
+		kupu/i18n kupu/mmbase/i18n
+
+MSGFMTPY=	${PYTHON_CMD} ${PYTHONBASE}/share/${PYTHON_VERSION}/Tools/i18n/msgfmt.py
+
 pre-everything::
 .if !defined(BATCH)
 	@${ECHO_MSG} ""
@@ -70,6 +76,12 @@ do-build:
 .for m in ${_PY_MODULES}
 	-${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/lib/python/$m
 .endfor
+	cd ${WRKSRC}/Products; \
+		${FIND} ${PLONE_PODIRS} -xdev -type f -name '*.po' -print | \
+		while read f; do \
+			mo=`${ECHO} $$f | ${SED} -e 's|\.po$$|.mo|'`; \
+			${MSGFMTPY} -o $$mo $$f; \
+		done
 
 do-install:
 	@${MKDIR} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}
@@ -77,7 +89,7 @@ do-install:
 	@${CP} -R ${WRKSRC}/Products/$m ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}
 	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/$m -type f -print0 \
 		| ${XARGS} -0 -- ${CHMOD} a-w
-	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/$m -name .svn -print0 \
+	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/$m -name '._*' -print0 \
 		| ${XARGS} -0 -- ${RM} -rf
 .endfor
 	@${MKDIR} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python
@@ -85,7 +97,7 @@ do-install:
 	@${CP} -R ${WRKSRC}/lib/python/$m ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python
 	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python/$m -type f -print0 \
 		| ${XARGS} -0 -- ${CHMOD} a-w
-	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python/$m -name .svn -print0 \
+	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python/$m -name '._*' -print0 \
 		| ${XARGS} -0 -- ${RM} -rf
 .endfor
 
