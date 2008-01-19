@@ -1,0 +1,22 @@
+include/librcc.h
+include/librccui.h
+lib/librcc.a
+lib/librcc.la
+lib/librcc.so
+lib/librcc.so.2
+lib/librccgtk.a
+lib/librccgtk.la
+lib/librccgtk.so
+lib/librccgtk.so.2
+lib/librccui.a
+lib/librccui.la
+lib/librccui.so
+lib/librccui.so.2
+lib/rcc/engines/librcd_engine.a
+lib/rcc/engines/librcd_engine.la
+lib/rcc/engines/librcd_engine.so
+lib/rcc/engines/western_engine.a
+lib/rcc/engines/western_engine.la
+lib/rcc/engines/western_engine.so
+@dirrm lib/rcc/engines
+@dirrm lib/rcc

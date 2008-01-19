@@ -1,0 +1,19 @@
+The Abilities of LibRCC Library
+===============================
+
+    * Language Autodetection
+    * On the fly translation between languages, using online-services!
+    * Encoding Autodetection for most of European Languages1
+    * Support for encoding detection plugins (besides Enca and LibRCD)
+    * Recoding/translation of multi-language playlists!
+    * Cache to speed-up re-recoding.
+    * Possibility to configure new languages and encodings.
+    * Shared configuration file. For example mentioned TagLib and LibID3 patches
+    do not have their own user interface, but will utilize the same recoding
+    configuration as XMMS.
+    * As well the separate program for configuration adjustment is available.
+    * GTK/GTK2 UI Library: you can add properties page to your GTK application
+    with 3 lines of code.
+    * Menu localization opportunity
+
+WWW: http://rusxmms.sourceforge.net
