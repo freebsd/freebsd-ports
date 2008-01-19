@@ -23,7 +23,6 @@ RUN_DEPENDS=	${UCS_CLASSDIR}/ucs.sty:${PORTSDIR}/print/latex-ucs
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 libxml2
 
