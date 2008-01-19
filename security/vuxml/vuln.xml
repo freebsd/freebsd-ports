@@ -2291,7 +2291,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>firebird-server</name>
-	<range><lt>2.0.3</lt></range>
+	<range><ge>1.*</ge><lt>1.5.5</lt></range>
+	<range><ge>2.0.*</ge><lt>2.0.3</lt></range>
       </package>
     </affects>
     <description>
