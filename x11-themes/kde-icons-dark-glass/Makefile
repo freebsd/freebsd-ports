@@ -12,6 +12,8 @@ DISTNAME=	Dark-Glass-scripted
 
 COMMENT=	KDE Dark Glass iconset
 
+BROKEN=		Checksum mismatch
+
 PLIST_FILE_PATTERN_EXTRA=	-v "^\./(buildset|README)"
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
