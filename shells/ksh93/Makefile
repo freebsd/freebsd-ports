@@ -28,7 +28,7 @@ COMMENT=	Official AT&T release of KornShell 93
 
 MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
 
-VERSION=	2007-06-28
+VERSION=	2007-11-05
 RESTRICTED=	Source recipient must acknowledge license
 
 FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
@@ -44,10 +44,6 @@ MAN1=		ksh93.1
 .include <bsd.port.pre.mk>
 
 INSTALLROOT=	${WRKSRC}/arch/freebsd${OSREL:R}.${ARCH}
-
-.if ${ARCH} == "sparc64"
-BROKEN=	Does not compile on sparc64
-.endif
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package make
