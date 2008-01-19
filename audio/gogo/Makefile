@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very fast MP3 encoder using recent x86 processors' features
 
+BROKEN=		does not fetch
+
 OPTIONS=	THREADS "Use linuxthreads for increased SMP performance" off
 
 # More than version 0.98
