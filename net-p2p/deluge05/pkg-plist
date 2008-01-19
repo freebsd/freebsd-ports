@@ -601,6 +601,8 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/NetworkHealth/plugin.py
 %%DATADIR%%/plugins/Scheduler/__init__.py
 %%DATADIR%%/plugins/Scheduler/plugin.py
+%%DATADIR%%/plugins/Search/__init__.py
+%%DATADIR%%/plugins/Search/searchdlg.glade
 %%DATADIR%%/plugins/SpeedLimiter/__init__.py
 %%DATADIR%%/plugins/TorrentCreator/__init__.py
 %%DATADIR%%/plugins/TorrentCreator/torrentcreator.glade
@@ -789,6 +791,8 @@ share/pixmaps/deluge.png
 @dirrmtry share/locale/ast
 @dirrmtry share/icons/hicolor/256x256/apps
 @dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/plugins/WebUi/tests
 @dirrm %%DATADIR%%/plugins/WebUi/templates/deluge
@@ -810,6 +814,7 @@ share/pixmaps/deluge.png
 @dirrm %%DATADIR%%/plugins/TorrentFiles
 @dirrm %%DATADIR%%/plugins/TorrentCreator
 @dirrm %%DATADIR%%/plugins/SpeedLimiter
+@dirrm %%DATADIR%%/plugins/Search
 @dirrm %%DATADIR%%/plugins/Scheduler
 @dirrm %%DATADIR%%/plugins/NetworkHealth
 @dirrm %%DATADIR%%/plugins/NetworkGraph

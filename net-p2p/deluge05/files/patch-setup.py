@@ -1,5 +1,5 @@
---- setup.py.orig	2007-11-28 11:49:38.000000000 -0600
-+++ setup.py	2007-11-28 11:53:44.000000000 -0600
+--- setup.py.orig	2008-01-19 12:43:31.000000000 -0600
++++ setup.py	2008-01-19 12:45:24.000000000 -0600
 @@ -103,13 +103,13 @@
                  "-DHAVE_INCLUDE_LIBTORRENT_ASIO_SSL_STREAM_HPP=1", 
                  "-DHAVE_INCLUDE_LIBTORRENT_ASIO_IP_TCP_HPP=1", 
@@ -20,12 +20,12 @@
          boost_thread = "boost_thread-mt"
  
      librariestype = [boost_filesystem, boost_date_time,
--            boost_thread, 'z', 'pthread', 'ssl']
-+            boost_thread, 'z', 'ssl']
+-            boost_thread, 'z', 'pthread', 'ssl', 'rt', 'crypto']
++            boost_thread, 'z', 'ssl', 'rt', 'crypto']
      
      removals = ['-g', '-Wstrict-prototypes']
  
-@@ -198,8 +198,10 @@
+@@ -202,8 +202,10 @@
      sources.remove('libtorrent/src/file_win.cpp')
      deluge_core = Extension('deluge_core',
                      include_dirs = includedirs,
