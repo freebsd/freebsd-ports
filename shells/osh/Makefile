@@ -8,7 +8,7 @@
 PORTNAME=	osh
 DISTVERSION=	20080109
 CATEGORIES=	shells
-MASTER_SITES=	http://jneitzel.sdf1.org/osh/src/
+MASTER_SITES=	http://www.v6shell.org/src/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An implementation of the UNIX 6th Edition shell
