@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.7
-PORTREVISION=	3
+PORTVERSION=	1.1.9.1
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,6 +31,7 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		mad.2:${PORTSDIR}/audio/libmad \
 		dca.0:${PORTSDIR}/multimedia/libdca
 
+USE_BZIP2=	yes
 USE_GCC=	3.4+
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -64,7 +64,7 @@ OPTIONS=	ARTS "Enable aRts support" off \
 		AALIB "Enable aalib support" off \
 		IMAGEMAGICK "Enable ImageMagick support" off \
 		GTK2 "Enable gdkpixbuf support" off \
-		WAVPACK "Enable WavPack support" on \
+		WAVPACK "Enable WavPack support" on
 
 MAN1=	xine-config.1
 MAN5=	xine.5

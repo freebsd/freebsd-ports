@@ -1,10 +1,10 @@
---- src/libreal/real_common.c.orig	Sun Jul  1 14:29:20 2007
-+++ src/libreal/real_common.c	Sun Jul  1 14:29:55 2007
-@@ -91,6 +91,7 @@
-   else try_real_subpath("lib/codecs")
-   else try_real_subpath("lib64/RealPlayer10/codecs")
-   else try_real_subpath("lib/RealPlayer10/codecs")
-+  else try_real_subpath("lib/RealPlayer/codecs")
-   else try_real_subpath("lib64/RealPlayer9/users/Real/Codecs")
-   else try_real_subpath("lib/RealPlayer9/users/Real/Codecs")
-   else try_real_subpath("lib/RealPlayer8/Codecs")
+--- src/libreal/real_common.c.orig	2008-01-01 22:30:08.000000000 +0900
++++ src/libreal/real_common.c	2008-01-13 04:05:14.000000000 +0900
+@@ -97,6 +97,7 @@
+     { O | UL,			"codecs" },
+     { O | UL | UL64,		"real" },
+     { O,			"real/RealPlayer/codecs" },
++    { OL | OL64 | UL | UL64,	"RealPlayer/codecs" },
+     { OL | OL64 | UL | UL64,	"RealPlayer10GOLD/codecs" },
+     { OL | OL64 | UL | UL64,	"RealPlayer10/codecs" },
+     { OL | OL64 | UL | UL64,	"RealPlayer9/users/Real/Codecs" },
