@@ -1,0 +1,70 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable %%PORTNAME%%:
+#
+# %%PORTNAME%%_enable="YES"
+#
+# Other rc.conf variables:
+#
+# %%PORTNAME%%_conffile="%%CFGFILE%%"
+#                          -- path to config file
+# %%PORTNAME%%_pidfile="%%SPHINX_RUN%%/searchd.pid"
+#                          -- location of pidfile: must match setting
+#                             in ${%%PORTNAME%%_conffile}
+# %%PORTNAME%%_user="%%SPHINX_USR%%"
+#                          -- user to run searchd as
+# %%PORTNAME%%_group="%%SPHINX_GRP%%"
+#                          -- group to run searchd as
+# %%PORTNAME%%_logdir="%%SPHINX_LOG%%"
+#                          -- directory searchd writes logs to
+#
+. /etc/rc.subr
+
+name=%%PORTNAME%%
+rcvar=`set_rcvar`
+
+load_rc_config ${name}
+
+: ${%%PORTNAME%%_enable="NO"}
+: ${%%PORTNAME%%_conffile="%%CFGFILE%%"}
+: ${%%PORTNAME%%_pidfile="%%SPHINX_RUN%%/searchd.pid"}
+: ${%%PORTNAME%%_user="%%SPHINX_USR%%"}
+: ${%%PORTNAME%%_group="%%SPHINX_GRP%%"}
+: ${%%PORTNAME%%_logdir="%%SPHINX_LOG%%"}
+
+command=%%PREFIX%%/sbin/searchd
+pidfile=${%%PORTNAME%%_pidfile}
+required_files=${%%PORTNAME%%_conffile}
+
+%%PORTNAME%%_precmd ()
+{
+    piddir=$(dirname ${%%PORTNAME%%_pidfile})
+    if [ ! -d ${piddir} ]; then
+	mkdir -m 755 -p ${piddir}
+	chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} ${piddir}
+    fi
+    if [ ! -d ${%%PORTNAME%%_logdir} ]; then
+	mkdir -m 755 -p ${%%PORTNAME%%_logdir}
+	chown -R ${%%PORTNAME%%_user}:${%%PORTNAME%%_group} \
+	    ${%%PORTNAME%%_logdir}
+    fi
+}
+
+case "${%%PORTNAME%%_flags}" in
+    *--config\ *)
+    echo "Warning \$%%PORTNAME%%_flags includes --config option." \
+	"Please use \$%%PORTNAME%%_conffile instead."
+    ;;
+    *)
+    %%PORTNAME%%_flags="--config ${%%PORTNAME%%_conffile} ${%%PORTNAME%%_flags}"
+    ;;
+esac
+
+run_rc_command "$1"
