@@ -639,6 +639,7 @@
     SUBDIR += libphish
     SUBDIR += libpperl
     SUBDIR += libpthread-stubs
+    SUBDIR += librcd
     SUBDIR += libredblack
     SUBDIR += libruin
     SUBDIR += libs11n
