@@ -132,3 +132,4 @@ share/icons/mnemosyne.png
 @dirrm lib/%%PYVER%%/site-packages/mnemosyne/core
 @dirrm lib/%%PYVER%%/site-packages/mnemosyne
 @dirrmtry share/applications
+@dirrmtry share/icons
