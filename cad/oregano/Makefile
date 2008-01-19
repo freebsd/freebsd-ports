@@ -22,6 +22,8 @@ INSTALLS_OMF=	yes
 
 .include <bsd.port.pre.mk>
 
+BROKEN=	does not fetch
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|-Wall|${CFLAGS}|g" ${WRKSRC}/SConstruct
 
