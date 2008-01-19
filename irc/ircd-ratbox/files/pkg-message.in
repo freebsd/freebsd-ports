@@ -12,5 +12,10 @@ server can be started by running:
 
 	%%PREFIX%%/etc/rc.d/ircd-ratbox start
 
+If you specified options for ircd-shortcut commands, these will have
+been added and the module included in the contrib module directory.
+You may wish to add an entry to your ircd.conf file for this module to
+be loaded when your IRCD starts.
+
 Be sure to check out 'ratbox-services' if you need a services package.
 ------------------------------------------------------------------------

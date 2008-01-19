@@ -1,12 +1,11 @@
---- contrib/Makefile.in.orig	Thu Jun 17 23:19:00 2004
-+++ contrib/Makefile.in	Mon Jan 23 17:17:00 2006
-@@ -43,8 +43,7 @@
+--- contrib/Makefile.in.orig	Sun Jan 13 02:35:03 2008
++++ contrib/Makefile.in	Sun Jan 13 02:38:59 2008
+@@ -44,7 +44,7 @@
    spy_stats_p_notice.c		\
-   spy_trace_notice.c		\
    spy_whois_notice.c            \
--  spy_whois_notice_global.c	\
+   spy_whois_notice_global.c	\
 -  example_module.c
-+  spy_whois_notice_global.c
++  m_rsshortcut.c
  
  OBJS = ${SRCS:.c=.so}
  

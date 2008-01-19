@@ -61,6 +61,7 @@ lib/ircd-ratbox/modules/autoload/m_who.so
 lib/ircd-ratbox/modules/autoload/m_whois.so
 lib/ircd-ratbox/modules/autoload/m_whowas.so
 lib/ircd-ratbox/modules/autoload/m_xline.so
+@unexec f="%D/lib/ircd-ratbox/modules/autoload/m_services.so"; if [ -f "$f" ]; then rm -f "$f"; fi
 lib/ircd-ratbox/modules/contrib/m_clearchan.so
 lib/ircd-ratbox/modules/contrib/m_flags.so
 lib/ircd-ratbox/modules/contrib/m_force.so
@@ -78,6 +79,7 @@ lib/ircd-ratbox/modules/contrib/spy_stats_notice.so
 lib/ircd-ratbox/modules/contrib/spy_stats_p_notice.so
 lib/ircd-ratbox/modules/contrib/spy_whois_notice.so
 lib/ircd-ratbox/modules/contrib/spy_whois_notice_global.so
+lib/ircd-ratbox/modules/contrib/m_rsshortcut.so
 lib/ircd-ratbox/modules/m_die.so
 lib/ircd-ratbox/modules/m_error.so
 lib/ircd-ratbox/modules/m_join.so
