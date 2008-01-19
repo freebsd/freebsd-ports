@@ -70,7 +70,7 @@ navcron:*:127:127:Network Administration Visualized:/usr/local/nav:/usr/sbin/nol
 vchat:*:128:128:VChat Conferencing System:/nonexistent:/usr/sbin/nologin
 _bgpd:*:130:130:BGP Daemon:/var/empty:/usr/sbin/nologin
 _ospfd:*:131:131:OSPF Daemon:/var/empty:/usr/sbin/nologin
-_spamd:*:132:132::0:0:Spam Daemon:/var/empty:/usr/sbin/nologin
+_spamd:*:132:132:Spam Daemon:/var/empty:/usr/sbin/nologin
 dovecot:*:143:143:Dovecot User:/var/empty:/usr/sbin/nologin
 rbldns:*:153:153:rbldnsd pseudo-user:/nonexistent:/usr/sbin/nologin
 sfs:*:171:171:Self-Certifying File System:/nonexistent:/usr/sbin/nologin
@@ -98,10 +98,10 @@ meta1:*:264:264: X other:/nonexistent:/usr/sbin/nologin
 hacluster:*:275:275:Heartbeat cluster user:/nonexistent:/usr/sbin/nologin
 mrtg:*:279:279:MRTG daemon:/nonexistent:/usr/sbin/nologin
 prelude:*:281:281:Prelude user:/nonexistent:/usr/sbin/nologin
-_sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
+_sphinx:*:312:312:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 dkfilter:*:325:325:DK Filter Owner:/nonexistent:/usr/sbin/nologin
-wildfire:*:340:340::0:0:Wildfire Daemon:/nonexistent:/usr/sbin/nologin
-stunnel:*:341:341::0:0:Stunnel Daemon:/nonexistent:/usr/sbin/nologin
+wildfire:*:340:340:Wildfire Daemon:/nonexistent:/usr/sbin/nologin
+stunnel:*:341:341:Stunnel Daemon:/nonexistent:/usr/sbin/nologin
 _iodined:*:353:353:Iodine Daemon:/nonexistent:/usr/sbin/nologin
 ldap:*:389:389:OpenLDAP Server:/nonexistent:/usr/sbin/nologin
 tiarra:*:398:398:Tiarra IRC Proxy:/nonexistent:/usr/sbin/nologin
