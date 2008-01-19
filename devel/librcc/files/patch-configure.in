@@ -1,0 +1,146 @@
+--- configure.in.orig	2007-06-26 21:50:57.000000000 +0200
++++ configure.in	2007-12-30 13:45:21.995543476 +0100
+@@ -60,8 +60,8 @@
+ 
+ CFLAGS="$CFLAGS -Wall -Wpointer-arith"
+ if test ! -f /usr/include/iconv.h  -a -f /usr/local/include/iconv.h ; then
+-    CFLAGS+=" -I/usr/local/include"
+-    LIBS+=" -L/usr/local/lib"
++    CFLAGS="$CFLAGS -I/usr/local/include"
++    LIBS="$LIBS -L/usr/local/lib"
+ fi
+ 
+ dnl Checks for programs.
+@@ -103,7 +103,33 @@
+ AC_SUBST(GTK1_LIBS)
+ AC_SUBST(GTK1_INCLUDES)
+ 
+-PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.0.0, HAVE_GTK2=yes, HAVE_GTK2=no)
++dnl ***
++dnl *** GLIB 2.0
++dnl ***
++AC_ARG_ENABLE(glib2,
++	      [  --disable-glib2        disable glib2 [default=enabled]],,
++	      enable_glib2="yes")
++
++if test "x$enable_glib2" = "xyes"; then
++	PKG_CHECK_MODULES(GLIB2, glib-2.0 >= 2.0.0, HAVE_GLIB2=yes, HAVE_GLIB2=no)
++else
++        HAVE_GLIB2=no
++fi
++AM_CONDITIONAL(HAVE_GLIB2, [ test $HAVE_GLIB2 = yes ])
++
++
++dnl ***
++dnl *** GTK 2.0
++dnl ***
++AC_ARG_ENABLE(gtk2,
++	      [  --disable-gtk2        disable gtk2 [default=enabled]],,
++	      enable_gtk2="yes")
++
++if test "x$enable_gtk2" = "xyes"; then
++	PKG_CHECK_MODULES(GTK2, gtk+-2.0 >= 2.0.0, HAVE_GTK2=yes, HAVE_GTK2=no)
++else
++        HAVE_GTK2=no
++fi
+ AM_CONDITIONAL(HAVE_GTK2, [ test $HAVE_GTK2 = yes ])
+ 
+ AC_CHECK_HEADER(dlfcn.h, [AC_CHECK_LIB(dl, dlopen, [
+@@ -130,12 +156,12 @@
+ if test "x$enable_force_system_iconv" != "xyes"; then
+ AC_CHECK_LIB(iconv, iconv_open, [
+     EXTERNAL_ICONV=yes
+-    EXTRA_LIBS+=" -liconv"
++    EXTRA_LIBS="$EXTRA_LIBS -liconv"
+ ])
+ AC_CHECK_HEADER(libcharset.h, [AC_CHECK_LIB(charset, locale_charset, [
+ 	AC_DEFINE(HAVE_LIBCHARSET,1,[Defines if libRCD is available])
+ 	HAVE_LIBCHARSET=yes
+-	EXTRA_LIBS+=" -lcharset"
++	EXTRA_LIBS="$EXTRA_LIBS -lcharset"
+ ])])
+ fi
+ AM_CONDITIONAL(HAVE_LIBCHARSET, [ test "x$HAVE_LIBCHARSET" = "xyes" ])
+@@ -210,23 +236,20 @@
+     BDB_INCLUDES=""
+     HAVE_BDB=no
+ else
+-    AX_PATH_BDB([4],[
+-	BDB_LIBS="$BDB_LDFLAGS $BDB_LIBS"
+-	BDB_INCLUDES="$BDB_CPPFLAGS"
+-	HAVE_BDB=yes
+-    ],[
+-	BDB_LIBS=""
+-	BDB_INCLUDES=""
+-	HAVE_BDB=no
+-    ])
++# Not working on FreeBSD either
++#    AX_PATH_BDB([4],[
++#	BDB_LIBS="$BDB_LDFLAGS $BDB_LIBS"
++#	BDB_INCLUDES="$BDB_CPPFLAGS"
++#	HAVE_BDB=yes
++#    ],[
++#	BDB_LIBS=""
++#	BDB_INCLUDES=""
++#	HAVE_BDB=no
++#    ])
+ fi
+ AC_SUBST(BDB_LIBS)
+ AC_SUBST(BDB_INCLUDES)
+ 
+-PKG_CHECK_MODULES(GLIB2, glib-2.0 >= 2.0.0, HAVE_GLIB2=yes, HAVE_GLIB2=no)
+-AM_CONDITIONAL(HAVE_GLIB2, [ test $HAVE_GLIB2 = yes ])
+-
+-
+ if test "x$disable_libtranslate" != "xyes"; then
+     HAVE_LIBTRANSLATE=no
+     HAVE_LIBTRANSLATE_TIMED_TRANSLATE=no
+@@ -254,15 +277,25 @@
+ fi
+ fi
+ 
+-AM_PATH_ASPELL([
+-    AC_DEFINE(HAVE_ASPELL,1,[Defines if aspell is available])
+-    HAVE_ASPELL=yes
+-],[
++# Not available on FreeBSD? breaks autom4te run
++#AM_PATH_ASPELL([
++#    AC_DEFINE(HAVE_ASPELL,1,[Defines if aspell is available])
++#    HAVE_ASPELL=yes
++#],[
+     HAVE_ASPELL=no
+-])
++    AC_SUBST(ASPELL_CFLAGS)
++    AC_SUBST(ASPELL_LIBS)
++#])
+ 
+ 
+-PTHREAD_LIBS=error
++AC_MSG_CHECKING([for PTHREAD_LIBS])
++if test "x$PTHREAD_LIBS" = "x"; then
++  PTHREAD_LIBS=error
++else
++  AC_MSG_RESULT([$PTHREAD_LIBS])
++fi
++
++if test "x$PTHREAD_LIBS" = "xerror"; then
+ AC_EGREP_CPP(yes,[
+ #if (defined(__FreeBSD_cc_version) && __FreeBSD_cc_version <= 500001) || defined(__OpenBSD__)
+ 	  yes
+@@ -271,6 +304,7 @@
+ 	PTHREAD_CFLAGS="-D_THREAD_SAFE" 
+ 	PTHREAD_LIBS="-pthread"
+ )
++fi
+ if test "x$PTHREAD_LIBS" = "xerror"; then
+ 	AC_CHECK_LIB(pthread, pthread_mutex_lock, PTHREAD_LIBS="-lpthread")
+ fi
+@@ -309,7 +343,7 @@
+ AC_OUTPUT(src/Makefile engines/Makefile external/Makefile ui/Makefile examples/Makefile Makefile librcc.spec)
+ 
+ rccdir=${pkgdatadir}
+-while expr ${rccdir:0:1} == '$' &>/dev/null; do
++while expr "${rccdir}" : "\\\$" >/dev/null; do
+     rccdir=`eval echo $rccdir`
+ done
+ 
