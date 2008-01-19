@@ -1,5 +1,5 @@
---- native/src/pkcs11wrapper.c.orig	2008-01-17 12:49:35.000000000 +0100
-+++ native/src/pkcs11wrapper.c	2008-01-17 12:53:51.000000000 +0100
+--- ../../src/pkcs11wrapper.c.orig	2008-01-17 12:49:35.000000000 +0100
++++ ../../src/pkcs11wrapper.c	2008-01-17 12:53:51.000000000 +0100
 @@ -3965,11 +3965,12 @@
  	jpTemp = (jchar*) malloc((*ckpLength) * sizeof(jchar));
    if (jpTemp == NULL) { *ckpArray = NULL_PTR; throwOutOfMemoryError(env); return 1; }
