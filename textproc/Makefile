@@ -957,6 +957,7 @@
     SUBDIR += sp
     SUBDIR += spellutils
     SUBDIR += sphinxsearch
+    SUBDIR += sphinxsearch-devel
     SUBDIR += sr-aspell
     SUBDIR += srilm
     SUBDIR += ssddiff
