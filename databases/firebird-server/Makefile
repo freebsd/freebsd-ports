@@ -6,13 +6,12 @@
 #
 
 PORTNAME?=	firebird
-PORTVERSION=	1.5.4
-PORTREVISION=	2
+PORTVERSION=	1.5.5
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
 PKGNAMESUFFIX?=	-server
-DISTNAME=	firebird-1.5.4.4910
+DISTNAME=	firebird-1.5.5.4926
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT?=	The open-source InterBase(tm) 6.0 spin-off (Classic version)

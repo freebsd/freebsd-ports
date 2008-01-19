@@ -5,7 +5,7 @@
  bool ResolveDatabaseAlias(const char* alias, char* database)
  {
 -	TEXT alias_filename[MAXPATHLEN];
--	gds__prefix(alias_filename, const_cast<char*>(ALIAS_FILE));
+-	gds__prefix(alias_filename, ALIAS_FILE);
 +	TEXT alias_filename[MAXPATHLEN] = FB_CONF_PREFIX "/";
 +	strlcat(alias_filename, ALIAS_FILE, MAXPATHLEN);
  	ConfigFile aliasConfig(false);
