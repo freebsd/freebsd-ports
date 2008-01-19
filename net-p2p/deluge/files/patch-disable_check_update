@@ -1,6 +1,6 @@
---- glade/preferences_dialog.glade.orig	2007-12-29 23:31:48.000000000 -0600
-+++ glade/preferences_dialog.glade	2007-12-29 23:32:18.000000000 -0600
-@@ -2755,7 +2755,7 @@
+--- glade/preferences_dialog.glade.orig	2008-01-19 12:40:55.000000000 -0600
++++ glade/preferences_dialog.glade	2008-01-19 12:41:35.000000000 -0600
+@@ -2673,7 +2673,7 @@
                  </child>
                  <child>
                    <widget class="GtkFrame" id="frame4">
@@ -9,17 +9,18 @@
                      <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                      <property name="label_xalign">0</property>
                      <property name="shadow_type">GTK_SHADOW_NONE</property>
---- src/interface.py.orig	2007-12-29 23:31:52.000000000 -0600
-+++ src/interface.py	2007-12-29 23:33:20.000000000 -0600
-@@ -1061,7 +1061,6 @@
+--- src/interface.py.orig	2008-01-19 12:41:04.000000000 -0600
++++ src/interface.py	2008-01-19 12:42:26.000000000 -0600
+@@ -1037,8 +1037,6 @@
          # Load plugins after we showed main window (if not started in tray)
          self.load_plugins()
          self.load_tabs_order()
--        self.new_release_check()
+-        if self.config.get("new_releases"):
+-            self.new_release_check()
  
          try:
              gobject.threads_init()
-@@ -1071,34 +1070,6 @@
+@@ -1048,34 +1046,6 @@
          except KeyboardInterrupt:
              self.manager.quit()
  
