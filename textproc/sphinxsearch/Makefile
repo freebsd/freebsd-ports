@@ -17,6 +17,8 @@ DISTNAME=	sphinx-${PORTVERSION}
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	Sphinx Full-Text Search Engine
 
+CONFLICTS=	sphinxsearch-devel-[0-9]*
+
 OPTIONS=	MYSQL            "MySQL support"                   on  \
 		PGSQL            "PostgreSQL support"              off \
 		OPTIMIZED_CFLAGS "Use compiler optimization (-O3)" off
