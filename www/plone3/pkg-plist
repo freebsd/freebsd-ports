@@ -243,6 +243,7 @@
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test.zip
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/tidy1-in.html
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/tidy1-out.html
+%%ZOPEPRODUCTDIR%%/ATContentTypes/tests/portaltype_criterion.txt
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/test_adapters.py
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/test_adapters.pyc
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/test_archive.py
@@ -2640,6 +2641,8 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/alphas.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/betas.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/betas.pyc
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/final_three0x.py
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/final_three0x.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/beta1_beta2/actionicons.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/beta1_beta2/actions.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/beta1_beta2/catalog.xml
@@ -2666,20 +2669,18 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/beta3_beta4/jsregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/beta3_beta4/propertiestool.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/beta3_beta4/viewlets.xml
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01/componentregistry.xml
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01/rolemap.xml
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01/toolset.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/rc2_final/actions.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/rc2_final/cssregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/rc2_final/jsregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/rc2_final/rolemap.xml
-%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01/toolset.xml
-%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01/rolemap.xml
-%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01/componentregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/controlpanel.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/cssregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/jsregistry.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02/rolemap.xml
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three03_three04/diff_tool.xml
-%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/final_three0x.py
-%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/final_three0x.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/rcs.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/rcs.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/overrides.zcml
@@ -4910,6 +4911,10 @@
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/de/LC_MESSAGES/PlacelessTranslationService.po
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/el/LC_MESSAGES/PlacelessTranslationService.po
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/pt_BR/LC_MESSAGES/PlacelessTranslationService.po
+%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/cs/LC_MESSAGES/PlacelessTranslationService.mo
+%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/de/LC_MESSAGES/PlacelessTranslationService.mo
+%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/el/LC_MESSAGES/PlacelessTranslationService.mo
+%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/pt_BR/LC_MESSAGES/PlacelessTranslationService.mo
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/memoize.py
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/memoize.pyc
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/msgfmt.py
@@ -5130,557 +5135,1090 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/__init__.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/__init__.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/configure.zcml
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-af.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-af.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ar.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ar.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-bg.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-bg.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-bn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-bn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ca.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ca.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-cs.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-cs.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-cy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-cy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-da.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-da.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-de.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-de.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-el.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-el.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-eo.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-eo.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-es.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-es.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-et.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-et.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-eu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-eu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-fa.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-fa.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-fi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-fi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-fr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-fr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-fu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-fu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-he.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-he.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-hi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-hi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-hr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-hr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-hu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-hu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-hy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-hy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-id.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-id.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-it.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-it.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ja.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ja.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ka.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ka.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-kn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-kn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ko.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ko.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-lt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-lt.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-manual.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-mi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-mi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-my.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-my.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-nl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-nl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-nn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-nn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-no.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-no.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-pl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-pl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-pt-br.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-pt-br.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-pt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-pt.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ro.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ro.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ru.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ru.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sm.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sm.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sq.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sq.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sr-Latn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sr-Latn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sv.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-sv.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ta.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ta.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-te.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-te.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-to.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-to.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-tr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-tr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-uk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-uk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-vi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-vi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-zh-cn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-zh-cn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-zh-hk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-zh-hk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-zh-tw.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-zh-tw.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-zh.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-zh.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-af.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-af.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ar.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ar.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-bg.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-bg.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-bn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-bn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ca.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ca.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-cs.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-cs.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-cy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-cy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-da.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-da.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-de.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-de.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-el.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-el.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-eo.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-eo.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-es.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-es.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-et.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-et.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-eu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-eu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-fa.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-fa.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-fi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-fi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-fr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-fr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-fu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-fu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-he.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-he.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-hi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-hi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-hr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-hr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-hu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-hu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-hy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-hy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-id.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-id.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-it.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-it.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ja.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ja.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ka.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ka.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-kn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-kn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ko.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ko.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-lt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-lt.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-manual.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-mi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-mi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-my.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-my.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-nl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-nl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-nn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-nn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-no.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-no.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-pl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-pl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-pt-br.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-pt-br.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-pt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-pt.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ro.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ro.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ru.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ru.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sm.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sm.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sq.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sq.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sr-Latn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sr-Latn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sv.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-sv.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ta.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-ta.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-te.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-te.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-to.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-to.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-tr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-tr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-uk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-uk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-vi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-vi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-zh-cn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-zh-cn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-zh-hk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-zh-hk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-zh-tw.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-zh-tw.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-zh.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget-zh.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atreferencebrowserwidget.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-af.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-af.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ar.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ar.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-bg.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-bg.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-bn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-bn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ca.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ca.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-cs.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-cs.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-cy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-cy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-da.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-da.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-de.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-de.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-el.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-el.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-eo.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-eo.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-es.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-es.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-et.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-et.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-eu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-eu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-fa.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-fa.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-fi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-fi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-fr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-fr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-fu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-fu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-he.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-he.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-hi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-hi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-hr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-hr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-hu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-hu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-hy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-hy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-id.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-id.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-it.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-it.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ja.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ja.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ka.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ka.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-kn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-kn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ko.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ko.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-lt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-lt.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-manual.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-mi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-mi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-my.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-my.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-nl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-nl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-nn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-nn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-no.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-no.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-pl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-pl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-pt-br.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-pt-br.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-pt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-pt.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-rm.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-rm.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ro.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ro.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ru.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ru.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sm.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sm.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sq.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sq.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sr-Latn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sr-Latn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sv.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-sv.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ta.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-ta.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-te.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-te.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-to.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-to.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-tr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-tr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-uk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-uk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-vi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-vi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-zh-cn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-zh-cn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-zh-hk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-zh-hk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-zh-tw.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-zh-tw.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-zh.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions-zh.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfeditions.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-af.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-af.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ar.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ar.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-bg.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-bg.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-bn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-bn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ca.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ca.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-cs.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-cs.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-cy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-cy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-da.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-da.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-de.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-de.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-el.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-el.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-eo.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-eo.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-es.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-es.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-et.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-et.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-eu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-eu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-fa.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-fa.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-fi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-fi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-fr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-fr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-fu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-fu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-he.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-he.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-hi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-hi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-hr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-hr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-hu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-hu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-hy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-hy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-id.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-id.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-it.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-it.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ja.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ja.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ka.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ka.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-kn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-kn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ko.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ko.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-lt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-lt.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-manual.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-mi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-mi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-my.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-my.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-nl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-nl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-nn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-nn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-no.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-no.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-pl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-pl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-pt-br.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-pt-br.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-pt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-pt.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ro.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ro.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ru.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ru.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sm.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sm.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sq.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sq.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sr-Latn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sr-Latn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sv.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-sv.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ta.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-ta.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-te.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-te.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-to.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-to.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-tr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-tr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-uk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-uk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-vi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-vi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-zh-cn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-zh-cn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-zh-hk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-zh-hk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-zh-tw.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-zh-tw.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-zh.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow-zh.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/cmfplacefulworkflow.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-af.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-af.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ar.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ar.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-bg.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-bg.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-bn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-bn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ca.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ca.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-cs.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-cs.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-da.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-da.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-de.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-de.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-el.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-el.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-eo.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-eo.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-es.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-es.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-et.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-et.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-eu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-eu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-fa.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-fa.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-fi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-fi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-fr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-fr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-fu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-fu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-he.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-he.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-hi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-hi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-hr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-hr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-hu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-hu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-hy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-hy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-id.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-id.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-it.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-it.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ja.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ja.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ka.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ka.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-kn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-kn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ko.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ko.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-lt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-lt.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-manual.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-mi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-mi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-my.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-my.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-nl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-nl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-nn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-nn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-no.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-no.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-pl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-pl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-pt-br.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-pt-br.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-pt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-pt.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-rm.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-rm.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ro.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ro.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ru.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ru.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sm.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sm.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sq.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sq.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sr-Latn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sr-Latn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sv.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-sv.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ta.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-ta.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-te.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-te.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-to.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-to.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-tr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-tr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-uk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-uk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-vi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-vi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-zh-cn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-zh-cn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-zh-hk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-zh-hk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-zh-tw.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-zh-tw.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-zh.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone-zh.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/linguaplone.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-af.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-af.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ar.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ar.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-bg.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-bg.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-bn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-bn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ca.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ca.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-cs.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-cs.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-cy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-cy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-da.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-da.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-de.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-de.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-el.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-el.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-eo.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-eo.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-es.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-es.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-et.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-et.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-eu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-eu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-fa.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-fa.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-fi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-fi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-fr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-fr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-fu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-fu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-he.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-he.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-hi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-hi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-hr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-hr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-hu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-hu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-hy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-hy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-id.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-id.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-it.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-it.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ja.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ja.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ka.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ka.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-kn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-kn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ko.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ko.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-lt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-lt.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-manual.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-mi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-mi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-my.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-my.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-nl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-nl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-nn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-nn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-no.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-no.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-pl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-pl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-pt-br.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-pt-br.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-pt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-pt.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ro.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ro.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ru.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ru.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sm.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sm.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sq.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sq.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sr-Latn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sr-Latn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sv.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-sv.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ta.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-ta.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-te.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-te.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-to.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-to.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-tr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-tr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-uk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-uk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-vi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-vi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-zh-cn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-zh-cn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-zh-hk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-zh-hk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-zh-tw.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-zh-tw.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-zh.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool-zh.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/passwordresettool.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-af.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-af.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ar.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ar.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-bg.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-bg.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-bn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-bn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ca.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ca.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-cs.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-cs.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-cy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-cy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-da.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-da.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-de.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-de.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-el.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-el.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-en.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-en.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-eo.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-eo.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-es.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-es.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-et.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-et.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-eu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-eu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-fa.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-fa.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-fi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-fi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-fr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-fr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-fu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-fu.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-generated.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-he.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-he.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-hi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-hi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-hr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-hr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-hu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-hu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-hy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-hy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-id.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-id.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-it.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-it.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ja.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ja.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ka.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ka.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-kn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-kn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ko.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ko.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-lt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-lt.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-manual.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-mi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-mi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-my.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-my.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-nl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-nl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-nn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-nn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-no.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-no.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-pl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-pl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-pt-br.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-pt-br.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-pt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-pt.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-rm.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-rm.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ro.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ro.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ru.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ru.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sm.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sm.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sq.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sq.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sr-Latn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sr-Latn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sv.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-sv.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ta.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ta.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-te.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-te.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-to.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-to.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-tr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-tr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-uk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-uk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-vi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-vi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-zh-cn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-zh-cn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-zh-hk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-zh-hk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-zh-tw.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-zh-tw.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-zh.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-zh.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-af.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-af.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ar.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ar.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-bg.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-bg.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-bn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-bn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ca.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ca.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-cs.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-cs.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-cy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-cy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-da.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-da.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-de.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-de.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-el.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-el.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-eo.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-eo.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-es.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-es.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-et.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-et.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-eu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-eu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-fa.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-fa.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-fi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-fi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-fr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-fr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-fu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-fu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-he.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-he.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-hi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-hi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-hr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-hr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-hu.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-hu.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-hy.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-hy.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-id.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-id.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-it.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-it.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ja.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ja.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ka.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ka.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-kn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-kn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ko.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ko.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-lt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-lt.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-manual.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-mi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-mi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-my.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-my.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-nl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-nl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-nn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-nn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-no.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-no.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-pl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-pl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-pt-br.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-pt-br.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-pt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-pt.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ro.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ro.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ru.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ru.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sl.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sl.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sm.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sm.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sq.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sq.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sr-Latn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sr-Latn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sv.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-sv.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ta.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-ta.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-te.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-te.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-to.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-to.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-tr.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-tr.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-uk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-uk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-vi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-vi.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-zh-cn.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-zh-cn.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-zh-hk.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-zh-hk.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-zh-tw.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-zh-tw.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-zh.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool-zh.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plonelanguagetool.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/af/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/af/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ar/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ar/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/bg/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/bg/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/bn/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/bn/LC_MESSAGES/plonelocales.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ca/LC_MESSAGES/plonefrontpage-ca.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ca/LC_MESSAGES/plonefrontpage.mo
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ca/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ca/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ca/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/cs/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/cs/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/cs/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/cs/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/cy/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/cy/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/da/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/da/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/de/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/de/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/de/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/de/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/el/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/el/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/en/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/en/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/eo/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/eo/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/eo/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/eo/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/es/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/es/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/es/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/es/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/et/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/et/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/eu/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/eu/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/eu/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/eu/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fa/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fa/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fi/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fi/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fr/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fr/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fr/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fr/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fu/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fu/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/he/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/he/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/he/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/he/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/hi/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/hi/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/hr/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/hr/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/hu/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/hu/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/hy/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/hy/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/id/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/id/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/it/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/it/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/it/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/it/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ja/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ja/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ja/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ja/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ka/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ka/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/kn/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/kn/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ko/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ko/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lt/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lt/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/mi/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/mi/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/my/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/my/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/nl/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/nl/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/nl/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/nl/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/nn/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/nn/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/no/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/no/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/no/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/no/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pl/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pl/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/plonefrontpage.pot
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/plonelocales.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt_BR/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt_BR/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/rm/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/rm/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ro/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ro/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ru/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ru/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sk/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sk/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sk/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sk/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sl/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sl/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sm/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sm/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sq/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sq/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sr/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sr/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sr_Latn/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sr_Latn/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sv/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/sv/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ta/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ta/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/te/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/te/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/to/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/to/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/tr/LC_MESSAGES/plonefrontpage.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/tr/LC_MESSAGES/plonefrontpage.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/tr/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/tr/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/uk/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/uk/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/vi/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/vi/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_CN/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_CN/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_HK/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_HK/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_TW/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_TW/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/tests/README.txt
 %%ZOPEPRODUCTDIR%%/PloneTranslations/tests/__init__.py
@@ -6686,69 +7224,143 @@
 %%ZOPEPRODUCTDIR%%/kupu/form/save.kupu
 %%ZOPEPRODUCTDIR%%/kupu/i18n.bat
 %%ZOPEPRODUCTDIR%%/kupu/i18n/README.txt
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-ca.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-ca.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-cs.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-cs.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-da.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-da.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-de.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-de.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-el.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-el.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-eo.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-eo.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-es.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-es.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-eu.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-eu.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-fi.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-fi.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-fr.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-fr.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-he.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-he.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-hu.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-hu.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-it.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-it.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-ja.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-ja.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-nl.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-nl.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-pl.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-pl.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-pt-br.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-pt-br.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-pt.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-pt.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sk.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sk.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sl.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sl.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sr-Latn.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sr-Latn.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sr.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-sr.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-tr.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-tr.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-vi.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-vi.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-zh-cn.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-zh-cn.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-zh-tw.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-zh-tw.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-zh.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu-zh.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupu.pot
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-ca.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-ca.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-cs.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-cs.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-da.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-da.po
-%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-eu.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-es.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-es.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-eu.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-eu.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-fr.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-fr.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-it.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-it.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-ja.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-ja.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-pl.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-pl.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-pt-br.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-pt-br.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-pt.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-pt.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-sk.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-sk.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-tr.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-tr.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-vi.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-vi.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-zh-tw.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig-zh-tw.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupuconfig.pot
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-ca.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-ca.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-cs.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-cs.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-da.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-da.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-de.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-de.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-el.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-el.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-eo.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-eo.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-es.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-es.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-eu.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-eu.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-fi.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-fi.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-fr.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-fr.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-he.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-he.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-it.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-it.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-ja.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-ja.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-nl.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-nl.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-pl.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-pl.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-pt-br.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-pt-br.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-pt.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-pt.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-sk.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-sk.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-sl.mo
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-sl.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-sr-Latn.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-sr-Latn.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-sr.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-sr.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-tr.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-tr.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-vi.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-vi.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-zh-cn.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-zh-cn.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-zh-tw.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-zh-tw.po
+%%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-zh.mo
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox-zh.po
 %%ZOPEPRODUCTDIR%%/kupu/i18n/kupupox.pot
 %%ZOPEPRODUCTDIR%%/kupu/include.kupu
@@ -6790,11 +7402,17 @@
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/head-mmbase.kupu
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/head.kupu
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/html.kupu
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/de.mo
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/de.po
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/en.mo
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/en.po
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/eo.mo
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/eo.po
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/fr.mo
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/fr.po
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/it.mo
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/it.po
+%%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/nl.mo
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/i18n/nl.po
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/icons/map-open.gif
 %%ZOPEPRODUCTDIR%%/kupu/mmbase/icons/map.gif
@@ -6974,6 +7592,7 @@
 %%ZOPEPRODUCTDIR%%/kupu/plone/profiles/default/import_steps.xml
 %%ZOPEPRODUCTDIR%%/kupu/plone/profiles/default/jsregistry.xml
 %%ZOPEPRODUCTDIR%%/kupu/plone/profiles/default/kupu.xml
+%%ZOPEPRODUCTDIR%%/kupu/plone/profiles/default/metadata.xml
 %%ZOPEPRODUCTDIR%%/kupu/plone/profiles/default/skins.xml
 %%ZOPEPRODUCTDIR%%/kupu/plone/profiles/default/toolset.xml
 %%ZOPEPRODUCTDIR%%/kupu/plone/resource_types.pt
@@ -8378,6 +8997,8 @@
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/tests/test_manage_views.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/tests/test_mapping.py
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/tests/test_mapping.pyc
+%%ZOPELIBPYTHONDIR%%/plone/app/portlets/tests/test_namechooser.py
+%%ZOPELIBPYTHONDIR%%/plone/app/portlets/tests/test_namechooser.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/tests/test_navigation_portlet.py
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/tests/test_navigation_portlet.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/tests/test_news_portlet.py
@@ -8398,7 +9019,6 @@
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/tests/utils.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/utils.py
 %%ZOPELIBPYTHONDIR%%/plone/app/portlets/utils.pyc
-%%ZOPELIBPYTHONDIR%%/plone/app/redirector/README.txt
 %%ZOPELIBPYTHONDIR%%/plone/app/redirector/__init__.py
 %%ZOPELIBPYTHONDIR%%/plone/app/redirector/__init__.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/redirector/browser.py
@@ -9190,6 +9810,171 @@
 %%ZOPELIBPYTHONDIR%%/wicked/utils.pyc
 %%ZOPELIBPYTHONDIR%%/wicked/vocabularies.zcml
 %%ZOPELIBPYTHONDIR%%/wicked/wicked_link.pt
+@dirrm %%ZOPELIBPYTHONDIR%%/wicked/testing
+@dirrm %%ZOPELIBPYTHONDIR%%/wicked/plone
+@dirrm %%ZOPELIBPYTHONDIR%%/wicked/fieldevent
+@dirrm %%ZOPELIBPYTHONDIR%%/wicked/atcontent/migration
+@dirrm %%ZOPELIBPYTHONDIR%%/wicked/atcontent/Extensions
+@dirrm %%ZOPELIBPYTHONDIR%%/wicked/atcontent
+@dirrm %%ZOPELIBPYTHONDIR%%/wicked/at/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/wicked/at/Extensions
+@dirrm %%ZOPELIBPYTHONDIR%%/wicked/at
+@dirrm %%ZOPELIBPYTHONDIR%%/wicked
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/theme/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/theme
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/session/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/session/sources
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/session/plugins
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/session
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/portlets
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/openid/www
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/openid/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/openid/plugins
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/openid
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/memoize
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/locking/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/locking
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/intelligenttext
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/unknown-flags
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/language-flags
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/country-flags
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/locales
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/fieldsets
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/contentrules/rule
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/contentrules/engine
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/contentrules
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/workflow/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/workflow/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/workflow
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/vocabularies
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/viewletmanager/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/viewletmanager/exportimport
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/viewletmanager
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/redirector/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/redirector
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/portlets/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/portlets/portlets
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/portlets/exportimport
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/portlets/browser/templates
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/portlets/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/portlets
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid/skins/ploneopenid
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid/skins
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid/profiles/default
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid/profiles
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid/portlets
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/docs
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/viewlets/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/viewlets
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/sitemap/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/sitemap
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/presentation
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/nextprevious
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/navigation
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/links
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/icons
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/globals/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/globals
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/dashboard
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/alias
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/tests/selenium_tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/plugins/plone
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/plugins/legacy/reload
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/plugins/legacy
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/plugins
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/exportimport
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/doc
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/commands
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate/subscribers
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate/profiles/default
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate/profiles
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate/docs
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/i18n
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/form/widgets
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/form/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/form
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/customerize/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/customerize/docs
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/customerize
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/controlpanel/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/controlpanel
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentrules/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentrules/conditions
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentrules/browser/templates
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentrules/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentrules/actions
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentrules
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentmenu
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/content/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/content/browser/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/content/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/content
+@dirrm %%ZOPELIBPYTHONDIR%%/plone/app
+@dirrm %%ZOPELIBPYTHONDIR%%/plone
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/effects/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/effects/3rd_party
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/effects
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/draganddrop/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/draganddrop/3rd_party
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/draganddrop
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/core
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/json/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/json
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/deprecated
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/_concatresource/test
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/_concatresource/compression/thirdparty
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/_concatresource/compression
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/_concatresource
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/utils
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/kukit
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/doc
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/3rd_party/firebuglite
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/3rd_party
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/dtds
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/docs
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/kss/core
+@dirrm %%ZOPELIBPYTHONDIR%%/kss
+@dirrm %%ZOPELIBPYTHONDIR%%/five/localsitemanager
+@dirrm %%ZOPELIBPYTHONDIR%%/five/customerize
+@dirrm %%ZOPELIBPYTHONDIR%%/five
+@dirrm %%ZOPELIBPYTHONDIR%%/archetypes/kss/tests/selenium_tests
+@dirrm %%ZOPELIBPYTHONDIR%%/archetypes/kss/tests
+@dirrm %%ZOPELIBPYTHONDIR%%/archetypes/kss/commands
+@dirrm %%ZOPELIBPYTHONDIR%%/archetypes/kss/browser
+@dirrm %%ZOPELIBPYTHONDIR%%/archetypes/kss
+@dirrm %%ZOPELIBPYTHONDIR%%/archetypes
 @dirrm %%ZOPEPRODUCTDIR%%/validation/validators
 @dirrm %%ZOPEPRODUCTDIR%%/validation/tests
 @dirrm %%ZOPEPRODUCTDIR%%/validation/interfaces
@@ -9620,8 +10405,8 @@
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/patches
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three03_three04
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/three01_three02
-@dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/rc2_final
+@dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/final_three01
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/beta3_beta4
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/beta2_beta3
 @dirrm %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v3_0/profiles/beta1_beta2
@@ -9828,168 +10613,3 @@
 @dirrm %%ZOPEPRODUCTDIR%%/ATContentTypes/browser
 @dirrm %%ZOPEPRODUCTDIR%%/ATContentTypes/adapters
 @dirrm %%ZOPEPRODUCTDIR%%/ATContentTypes
-@dirrm %%ZOPELIBPYTHONDIR%%/wicked/testing
-@dirrm %%ZOPELIBPYTHONDIR%%/wicked/plone
-@dirrm %%ZOPELIBPYTHONDIR%%/wicked/fieldevent
-@dirrm %%ZOPELIBPYTHONDIR%%/wicked/atcontent/migration
-@dirrm %%ZOPELIBPYTHONDIR%%/wicked/atcontent/Extensions
-@dirrm %%ZOPELIBPYTHONDIR%%/wicked/atcontent
-@dirrm %%ZOPELIBPYTHONDIR%%/wicked/at/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/wicked/at/Extensions
-@dirrm %%ZOPELIBPYTHONDIR%%/wicked/at
-@dirrm %%ZOPELIBPYTHONDIR%%/wicked
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/theme/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/theme
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/session/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/session/sources
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/session/plugins
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/session
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/portlets
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/openid/www
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/openid/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/openid/plugins
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/openid
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/memoize
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/locking/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/locking
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/intelligenttext
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/negotiator
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/unknown-flags
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/language-flags
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/country-flags
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n/locales
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/i18n
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/fieldsets
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/contentrules/rule
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/contentrules/engine
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/contentrules
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/workflow/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/workflow/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/workflow
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/vocabularies
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/viewletmanager/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/viewletmanager/exportimport
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/viewletmanager
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/redirector/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/redirector
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/portlets/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/portlets/portlets
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/portlets/exportimport
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/portlets/browser/templates
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/portlets/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/portlets
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid/skins/ploneopenid
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid/skins
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid/profiles/default
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid/profiles
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid/portlets
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/openid
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/docs
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/linkintegrity
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/viewlets/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/viewlets
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/sitemap/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/sitemap
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/presentation
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/nextprevious
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/navigation
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/links
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/icons
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/globals/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/globals
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/dashboard
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/analytics
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout/alias
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/layout
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/tests/selenium_tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/plugins/plone
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/plugins/legacy/reload
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/plugins/legacy
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/plugins
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/exportimport
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/doc
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/commands
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/kss
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate/subscribers
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate/profiles/default
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate/profiles
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate/docs
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/iterate
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/i18n
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/form/widgets
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/form/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/form
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/customerize/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/customerize/docs
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/customerize
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/controlpanel/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/controlpanel
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentrules/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentrules/conditions
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentrules/browser/templates
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentrules/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentrules/actions
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentrules
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/contentmenu
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/content/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/content/browser/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/content/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app/content
-@dirrm %%ZOPELIBPYTHONDIR%%/plone/app
-@dirrm %%ZOPELIBPYTHONDIR%%/plone
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/effects/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/effects/3rd_party
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/effects
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/draganddrop/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/draganddrop/3rd_party
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/draganddrop
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins/core
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/plugins
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/json/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/json
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/deprecated
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/_concatresource/test
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/_concatresource/compression/thirdparty
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/_concatresource/compression
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry/_concatresource
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/pluginregistry
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/utils
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/kukit
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/doc
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/3rd_party/firebuglite
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit/3rd_party
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/kukit
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/dtds
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/docs
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/kss/core
-@dirrm %%ZOPELIBPYTHONDIR%%/kss
-@dirrm %%ZOPELIBPYTHONDIR%%/five/localsitemanager
-@dirrm %%ZOPELIBPYTHONDIR%%/five/customerize
-@dirrm %%ZOPELIBPYTHONDIR%%/five
-@dirrm %%ZOPELIBPYTHONDIR%%/archetypes/kss/tests/selenium_tests
-@dirrm %%ZOPELIBPYTHONDIR%%/archetypes/kss/tests
-@dirrm %%ZOPELIBPYTHONDIR%%/archetypes/kss/commands
-@dirrm %%ZOPELIBPYTHONDIR%%/archetypes/kss/browser
-@dirrm %%ZOPELIBPYTHONDIR%%/archetypes/kss
-@dirrm %%ZOPELIBPYTHONDIR%%/archetypes
