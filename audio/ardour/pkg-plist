@@ -9,6 +9,9 @@ lib/ardour2/libardour.so
 %%VST%%lib/ardour2/libardourgtk.so
 lib/ardour2/libgtkmm2ext.so
 lib/ardour2/libardour_cp.so
+lib/ardour2/libvampsdk.so
+lib/ardour2/libsoundtouch.so
+lib/ardour2/librubberband.so
 lib/ardour2/surfaces/libardour_genericmidi.so
 lib/ardour2/surfaces/libardour_mackie.so
 lib/ardour2/surfaces/libardour_tranzport.so
@@ -22,6 +25,9 @@ etc/ardour2/ardour_system.rc
 etc/ardour2/ardour2_ui_dark.rc
 etc/ardour2/ardour2_ui_light.rc
 etc/ardour2/ardour2_ui_default.conf
+etc/ardour2/ardour-sae.menus
+etc/ardour2/ardour-sae-ansi.bindings
+etc/ardour2/ardour-sae-de.bindings
 @dirrmtry etc/ardour2
 share/ardour2/splash.png
 share/ardour2/pixmaps/hslider00.xpm
@@ -103,6 +109,10 @@ share/ardour2/icons/ardour_icon_48px.png
 share/ardour2/icons/ardour_icon_32px.png
 share/ardour2/icons/ardour_icon_16px.png
 share/ardour2/icons/saelogo.png
+share/ardour2/icons/saebig.png
+share/ardour2/icons/saelogo2.png
+share/ardour2/icons/saeoldlogo.png
+share/ardour2/icons/sae.png
 @dirrm share/ardour2/icons
 share/ardour2/templates/16 Tracks.template
 share/ardour2/templates/2 Track.template
@@ -128,6 +138,7 @@ share/locale/it_IT/LC_MESSAGES/gtk2_ardour.mo
 share/locale/sv_SE/LC_MESSAGES/libardour2.mo
 share/locale/sv_SE/LC_MESSAGES/gtk2_ardour.mo
 share/locale/de_DE/LC_MESSAGES/gtk2_ardour.mo
+share/locale/de_DE/LC_MESSAGES/libardour2.mo
 @dirrmtry share/locale/it_IT/LC_MESSAGES
 @dirrmtry share/locale/it_IT
 @dirrmtry share/locale/sv_SE/LC_MESSAGES

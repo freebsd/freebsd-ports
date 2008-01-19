@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ardour
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	audio
 MASTER_SITES=	http://ardour.org/files/releases/
 DISTFILES=	ardour-${DISTVERSION}.tar.bz2
@@ -25,7 +25,9 @@ LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		lo.6:${PORTSDIR}/audio/liblo \
 		SoundTouch.0:${PORTSDIR}/audio/soundtouch \
-		usb:${PORTSDIR}/devel/libusb
+		usb:${PORTSDIR}/devel/libusb \
+		fftw3f:${PORTSDIR}/math/fftw3-float \
+		fftw3:${PORTSDIR}/math/fftw3
 
 USE_SCONS=	yes
 SCONS_ENV+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes

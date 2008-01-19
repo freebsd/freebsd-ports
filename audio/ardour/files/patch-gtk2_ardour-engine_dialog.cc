@@ -1,6 +1,6 @@
---- gtk2_ardour/engine_dialog.cc.orig	2007-09-20 20:05:43.000000000 +0200
-+++ gtk2_ardour/engine_dialog.cc	2007-09-29 23:55:29.000000000 +0200
-@@ -10,7 +10,7 @@
+--- gtk2_ardour/engine_dialog.cc.orig	2008-01-15 03:58:38.000000000 +0100
++++ gtk2_ardour/engine_dialog.cc	2008-01-15 22:30:06.000000000 +0100
+@@ -12,7 +12,7 @@
  #include <CoreFoundation/CFString.h>
  #include <sys/param.h>
  #include <mach-o/dyld.h>
@@ -9,7 +9,7 @@
  #include <alsa/asoundlib.h>
  #endif
  
-@@ -110,7 +110,9 @@
+@@ -113,7 +113,9 @@
  #ifdef __APPLE__
  	strings.push_back (X_("CoreAudio"));
  #else
@@ -64,7 +64,7 @@
  	label = manage (new Label (_("Input device")));
  	label->set_alignment (1.0, 0.5);
  	device_packer.attach (*label, 0, 1, row, row+1, FILL|EXPAND, (AttachOptions) 0);
-@@ -573,7 +575,7 @@
+@@ -568,7 +570,7 @@
  void
  EngineControl::realtime_changed ()
  {
@@ -73,17 +73,18 @@
  	priority_spinner.set_sensitive (realtime_button.get_active());
  #endif
  }
-@@ -586,7 +588,9 @@
- #ifdef __APPLE__
- 	devices["CoreAudio"] = enumerate_coreaudio_devices ();
- #else
+@@ -584,8 +586,10 @@
+ #endif
+ 
+ #ifndef __APPLE__
 +#ifndef __FreeBSD__
- 	devices["ALSA"] = enumerate_alsa_devices ();
+ 	} else if (driver == "ALSA") {
+ 		devices[driver] = enumerate_alsa_devices ();
 +#endif
- 	devices["FFADO"] = enumerate_ffado_devices ();
- 	devices["OSS"] = enumerate_oss_devices ();
- 	devices["Dummy"] = enumerate_dummy_devices ();
-@@ -665,6 +669,7 @@
+ 	} else if (driver == "FFADO") {
+ 		devices[driver] = enumerate_ffado_devices ();
+ 	} else if (driver == "OSS") {
+@@ -712,6 +716,7 @@
  	return devs;
  }
  #else
@@ -91,7 +92,7 @@
  vector<string>
  EngineControl::enumerate_alsa_devices ()
  {
-@@ -725,6 +730,7 @@
+@@ -772,6 +777,7 @@
  
  	return devs;
  }
@@ -99,7 +100,7 @@
  
  vector<string>
  EngineControl::enumerate_ffado_devices ()
-@@ -803,7 +809,7 @@
+@@ -860,7 +866,7 @@
  EngineControl::redisplay_latency ()
  {
  	uint32_t rate = get_rate();
