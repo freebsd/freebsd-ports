@@ -6772,6 +6772,7 @@ libqglviewer	ports/graphics/libqglviewer
 libqrencode	ports/graphics/libqrencode
 libquicktime	ports/multimedia/libquicktime
 libranlib	ports/math/libranlib
+librcd		ports/devel/librcd
 libredblack	ports/devel/libredblack
 librep		ports/lang/librep
 libretto-config	ports/sysutils/libretto-config
