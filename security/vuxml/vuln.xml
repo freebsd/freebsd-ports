@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="02eedd3c-c6b5-11dc-93b6-000e35248ad7">
+    <topic>libxine -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.1.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>xine project reports:</p>
+	<blockquote cite="http://xinehq.de/index.php/news">
+	  <p>A new xine-lib version is now available. This release contains
+	    a security fix (remotely-expoitable buffer overflow, CVE-2008-0225).
+	    It also contains a read-past-end fix for an internal library
+	    function which is only used if the OS does not supply it and a
+	    rendering fix for Darwin/PPC.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-0225</cvename>
+      <url>http://aluigi.altervista.org/adv/xinermffhof-adv.txt</url>
+      <url>http://secunia.com/advisories/28384</url>
+    </references>
+    <dates>
+      <discovery>2008-01-08</discovery>
+      <entry>2008-01-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="60e1792b-c380-11dc-821a-000bcdc1757a">
     <topic>geeklog xss vulnerability</topic>
     <affects>
