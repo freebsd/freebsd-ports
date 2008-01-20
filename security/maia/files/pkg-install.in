@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+USER=%%MAIAUSER%%
+GROUP=%%MAIAGROUP%%
+DIR=%%MAIADIR%%
+QUARANTINE=%%MAIAQUARANTINE%%
+
+if [ "$2" = "PRE-INSTALL" ]; then
+
+    if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
+	echo "You already have a group \"${GROUP}\", so I will use it."
+    else
+	if /usr/sbin/pw groupadd ${GROUP} -h - -g 110
+	then
+	    echo "Added group \"${GROUP}\"."
+	else
+	    echo "Adding group \"${GROUP}\" failed..."
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+
+    if /usr/sbin/pw user show "${USER}" 2>/dev/null; then
+	echo "You already have a user \"${USER}\", so I will use it."
+    else
+	if /usr/sbin/pw useradd ${USER} -g ${GROUP} -h - \
+	   -d ${DIR} \
+	   -s /bin/sh \
+	   -c "Scanning Virus Account" \
+	   -u 110
+	then
+	    echo "Added user \"${USER}\"."
+	else
+	    echo "Adding user \"${USER}\" failed..."
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}
+    echo "Created \"${DIR}\" directory."
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}/db
+    echo "Created \"${DIR}/db\" directory."
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}/tmp
+    echo "Created \"${DIR}/tmp\" directory."
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}/var
+    echo "Created \"${DIR}/var\" directory."
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}/maia
+    echo "Created \"${DIR}/maia\" directory."
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}/maia/scripts
+    echo "Created \"${DIR}/maia/scripts\" directory."
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}/maia/templates
+    echo "Created \"${DIR}/maia/templates\" directory."
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${QUARANTINE}
+    echo "Created \"${QUARANTINE}\" directory."
+fi

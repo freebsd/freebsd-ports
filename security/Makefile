@@ -265,6 +265,7 @@
     SUBDIR += lsh
     SUBDIR += lxnb
     SUBDIR += mac-robber
+    SUBDIR += maia
     SUBDIR += makepasswd
     SUBDIR += manipulate_data
     SUBDIR += matrixssl
