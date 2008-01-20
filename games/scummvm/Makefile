@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scummvm
-PORTVERSION=	0.10.0a
-PORTREVISION=	1
+PORTVERSION=	0.11.0
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 
@@ -83,7 +82,7 @@ CONFIGURE_ARGS+=--disable-fluidsynth
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O//' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's/-lfluidsynth/& -pthread/' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/-lfluidsynth/& ${PTHREAD_LIBS}/' ${WRKSRC}/configure
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
