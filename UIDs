@@ -127,3 +127,4 @@ netdisco:*:840:840:netdisco daemon:/nonexistent:/usr/sbin/nologin
 bacula:*:910:910:Bacula Daemon:/var/db/bacula:/usr/sbin/nologin
 iserv:*:911:911:Iserv Daemon:/nonexistent:/usr/sbin/nologin
 _sj3:*:912:912:SJ3 Daemon:/nonexistent:/usr/sbin/nologin
+_relayd:*:913:913:Relay Daemon:/var/empty:/usr/sbin/nologin
