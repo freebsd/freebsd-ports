@@ -1,17 +1,9 @@
 **********************************************************************
-If LPRng is not activated at installation time,
-to activate the LPRng printing system do the following:
 
-On FreeBSD:
-  set'lpd_enable=NO' and 'lprng_enable=YES' in /etc/rc.conf.
-  The LPRng startup script is in /usr/local/etc/rc.d/lprng.sh
+To enable LPRng, put the following lines in /etc/rc.conf
 
-  If lprng_enable != NO then the LPRng lpd will run.
-
-- run 'checkpc -f' to make sure that necessary files have been created
-
-- reboot or kill the old lpd using 'killall lpd' and
-  start the new one using '%%PREFIX%%/etc/rc.d/lprng.sh start'.
+lpd_enable="NO"
+lprng_enable="YES"
 
 LPRng uses the printcap, lpd.conf, and lpd.perms configuration files
 

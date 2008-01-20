@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# PROVIDE: lprng
+# REQUIRE: LOGIN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# lprng_enable (bool): Set to NO by default.
+#                      Set it to YES to enable lprng.
+#
+
+. %%RC_SUBR%%
+
+name="lprng"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/lpd
+
+required_files="/etc/printcap %%SYSCONFDIR%%/lpd.conf %%SYSCONFDIR%%/lpd.perms"
+
+start_precmd=start_precmd
+
+start_precmd()
+{
+	if checkyesno lpd_enable; then
+		warn "lpd must be disabled"
+		return 1
+	fi
+
+	%%PREFIX%%/sbin/checkpc -f
+}
+
+load_rc_config $name
+
+: ${lprng_enable="NO"}
+
+run_rc_command "$1"
