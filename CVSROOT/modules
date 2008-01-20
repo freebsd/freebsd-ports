@@ -12139,6 +12139,7 @@ pecl-pdflib	ports/print/pecl-pdflib
 pecl-pecl_http	ports/www/pecl-pecl_http
 pecl-perl	ports/lang/pecl-perl
 pecl-phar	ports/archivers/pecl-phar
+pecl-phk	ports/archivers/pecl-phk
 pecl-pop3	ports/mail/pecl-pop3
 pecl-ps		ports/print/pecl-ps
 pecl-qrencode	ports/graphics/pecl-qrencode
