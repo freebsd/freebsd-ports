@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: maia
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable maia:
+# maia_enable (bool):		Set it to "YES" to enable maia.
+#				Default is "NO".
+#
+
+. %%RC_SUBR%%
+
+name="maia"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${maia_enable="NO"}
+: ${maia_pidfile="%%MAIADIR%%/amavisd.pid"}
+
+required_files=%%PREFIX%%/etc/amavisd.conf
+
+start_cmd=${name}_start
+stop_cmd=${name}_stop
+
+pidfile=${maia_pidfile}
+procname=${maia_procname}
+
+start_precmd=${name}_prestart
+
+maia_prestart() {
+	rm -rf %%MAIADIR%%/tmp/* %%MAIADIR%%/tmp/.* 2>/dev/null || true
+}
+
+maia_start() {
+	%%PREFIX%%/sbin/amavisd-maia start
+}
+
+maia_stop() {
+	%%PREFIX%%/sbin/amavisd-maia stop
+}
+
+run_rc_command "$1"

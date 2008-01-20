@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+USER=%%MAIAUSER%%
+GROUP=%%MAIAGROUP%%
+DIR=%%MAIADIR%%
+QUARANTINE=%%MAIAQUARANTINE%%
+MAIAWEB=%%PREFIX%%/www/maia
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+
+    if /usr/sbin/pw group show "${GROUP}" 2>&1 >/dev/null; then
+	echo "You should manually remove the \"${GROUP}\" group."
+    fi
+
+    if /usr/sbin/pw user show "${USER}" 2>&1 >/dev/null; then
+	echo "You should manually remove the \"${USER}\" user."
+    fi
+
+    if [ -e ${DIR} ]; then
+	echo "You should manually remove the \"${DIR}\" directory."
+    fi
+    
+    if [ -e ${QUARANTINE} ]; then
+      echo "You should manually remove the \"${QUARANTINE}\" directory."
+    fi
+    if [ -e ${MAIAWEB} ]; then
+      echo "You should manually remove the \"${MAIAWEB}\" directory."
+    fi
+fi
