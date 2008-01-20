@@ -975,6 +975,7 @@
     SUBDIR += pear-HTTP_Server
     SUBDIR += pear-HTTP_Session
     SUBDIR += pear-HTTP_Upload
+    SUBDIR += pear-Services_Compete
     SUBDIR += pear-Services_Delicious
     SUBDIR += pear-Services_Digg
     SUBDIR += pear-Services_W3C_HTMLValidator
