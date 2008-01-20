@@ -1,0 +1,28 @@
+bin/showvconfig
+bin/checkvpw
+bin/vauthenticate
+bin/dumpvuser
+bin/listvdomain
+bin/vadduser
+bin/vaddusers
+bin/vchattr
+bin/vchforwards
+bin/vdeliver
+bin/vdeluser
+bin/vpasswd
+bin/vpasswds
+bin/vrehash
+bin/vsetup
+bin/vupgrade
+bin/vaddalias
+bin/vconf2dir
+libexec/vmailmgr/cgi-bin/vpasswd
+libexec/vmailmgr/cgi-bin/vadduser
+libexec/vmailmgr/cgi-bin/vdeluser
+libexec/vmailmgr/cgi-bin/vaddalias
+libexec/vmailmgr/cgi-bin/vchattr
+libexec/vmailmgr/cgi-bin/vchforwards
+libexec/vmailmgr/cgi-bin/listvdomain
+sbin/vmailmgrd
+@dirrmtry libexec/vmailmgr/cgi-bin
+@dirrmtry libexec/vmailmgr

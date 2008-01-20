@@ -1,0 +1,23 @@
+VMailMgr (short for Virtual MAIL ManaGeR) is a package of programs designed to
+manage multiple domains of mail addresses and mailboxes on a single host. It
+co-operates with qmail for mail delivery and program control. It features:
+
+    * A password checking interface between qmail-popup and qmail-pop3d which
+    replaces the usual checkpassword, as well as an authentication module for
+    Courier IMAP, that provide access to the virtual mailboxes by one of three
+    methods:
+          o IP-based virtual server access (invisible to the POP3 user)
+          o username-based access (username-virtualuser)
+          o hostname-based access (virtualuser@virtual.host or
+            virtualuser:virtual.host) 
+    * CDB-based password tables to speed up access for domains of any size.
+    * Tools to setup a virtual domain, add and delete individual virtual users
+      and aliases, and to change passwords.  CGI programs to accomplish the
+    * above tasks from a set of web pages.
+    * A native PHP library to compliment or replace the CGIs.
+    * A daemon process that securely directs the operation of the CGIs and PHP
+      code.
+    * A separate delivery agent that automatically deals with any address
+      inside a virtual domain from a single .qmail-default file. 
+
+WWW: http://www.vmailmgr.org
