@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bashburn
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 DISTNAME=	BashBurn-${PORTVERSION}
@@ -66,7 +66,7 @@ post-patch:
 		${WRKSRC}/bashburnrc
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${DATADIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/BashBurn.sh ${PREFIX}/bin/bashburn
 	${INSTALL_DATA} ${WRKSRC}/bashburnrc ${PREFIX}/etc/bashburnrc.sample
 	cd ${WRKSRC} && ${CP} -Rfp \
