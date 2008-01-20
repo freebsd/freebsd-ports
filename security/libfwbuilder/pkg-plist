@@ -67,12 +67,6 @@ lib/libfwcompiler.so
 lib/libfwbuilder.so.7.3.0
 lib/libfwbuilder.so.7
 lib/libfwbuilder.so
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/Credits
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/PatchAcceptancePolicy.txt
 share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_0.9.5.xslt
 share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_0.9.4.xslt
 share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_0.9.3.xslt
@@ -126,10 +120,11 @@ share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.10.xslt
 share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.11.xslt
 share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.12.xslt
 share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.13.xslt
+share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.14.xslt
+share/libfwbuilder%%BUILD_VERSION%%/migration/FWObjectDatabase_2.1.15.xslt
 share/libfwbuilder%%BUILD_VERSION%%/fwbuilder.dtd
 @dirrm share/libfwbuilder%%BUILD_VERSION%%/migration
 @dirrm share/libfwbuilder%%BUILD_VERSION%%
-@dirrm %%DOCSDIR%%
 @dirrm include/fwb-2.1/fwcompiler
 @dirrm include/fwb-2.1/fwbuilder
 @dirrm include/fwb-2.1
