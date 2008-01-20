@@ -978,6 +978,7 @@
     SUBDIR += pear-Services_Delicious
     SUBDIR += pear-Services_Digg
     SUBDIR += pear-Services_W3C_HTMLValidator
+    SUBDIR += pear-Services_urlTea
     SUBDIR += pear-Text_Wiki
     SUBDIR += pear-UDDI
     SUBDIR += pecl-APC
