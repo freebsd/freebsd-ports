@@ -1820,6 +1820,7 @@
     SUBDIR += pecl-params
     SUBDIR += pecl-runkit
     SUBDIR += pecl-shape
+    SUBDIR += pecl-spl_types
     SUBDIR += pecl-statgrab
     SUBDIR += pecl-svn
     SUBDIR += pecl-uploadprogress
