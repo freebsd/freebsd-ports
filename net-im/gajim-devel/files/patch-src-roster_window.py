@@ -1,14 +1,6 @@
---- src/roster_window.py.orig	Wed Nov 22 03:01:11 2006
-+++ src/roster_window.py	Sun Nov 26 17:01:25 2006
-@@ -18,6 +18,7 @@
- import gtk
- import gobject
- import os
-+import sys
- import time
- import urllib
- 
-@@ -744,9 +745,9 @@
+--- src/roster_window.py.orig	2007-10-02 03:05:04.000000000 +0400
++++ src/roster_window.py	2007-10-02 18:51:50.000000000 +0400
+@@ -846,9 +846,9 @@
  			if os.path.exists('history_manager.exe'): # user is running stable
  				helpers.exec_command('history_manager.exe')
  			else: # user is running svn
