@@ -14069,6 +14069,7 @@ relate		ports/mbone/relate
 relaxconf	ports/sysutils/relaxconf
 relay		ports/net/relay
 relay-ctrl	ports/mail/relay-ctrl
+relayd		ports/net/relayd
 relaydb		ports/mail/relaydb
 remarp		ports/net-mgmt/remarp
 remember.el	ports/deskutils/remember.el
