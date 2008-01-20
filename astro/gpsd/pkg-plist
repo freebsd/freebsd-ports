@@ -3,6 +3,8 @@
 sbin/gpsd
 bin/cgps
 bin/cgpxlogger
+bin/gpscat
+bin/gpsctl
 bin/gpsflash
 bin/gpsprof
 bin/sirfmon
@@ -15,4 +17,13 @@ include/libgpsmm.h
 lib/libgps.a
 lib/libgps.la
 lib/libgps.so
-lib/libgps.so.15
+lib/libgps.so.17
+libdata/pkgconfig/libgps.pc
+libdata/pkgconfig/libgpsd.pc
+%%PYTHON_SITELIBDIR%%/gps.py
+%%PYTHON_SITELIBDIR%%/gps.pyc
+%%PYTHON_SITELIBDIR%%/gps.pyo
+%%PYTHON_SITELIBDIR%%/gpsfake.py
+%%PYTHON_SITELIBDIR%%/gpsfake.pyc
+%%PYTHON_SITELIBDIR%%/gpsfake.pyo
+%%PYTHON_SITELIBDIR%%/gpspacket.so
