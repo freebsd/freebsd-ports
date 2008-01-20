@@ -1,5 +1,5 @@
---- src/coroutine.c.orig	2007-12-16 13:59:13.000000000 -0500
-+++ src/coroutine.c	2007-12-16 13:59:21.000000000 -0500
+--- src/coroutine_ucontext.c.orig	2007-12-16 13:59:13.000000000 -0500
++++ src/coroutine_ucontext.c	2007-12-16 13:59:21.000000000 -0500
 @@ -48,7 +48,7 @@ int coroutine_init(struct coroutine *co)
  	co->cc.stack_size = co->stack_size;
  	co->cc.stack = mmap(0, co->stack_size,
