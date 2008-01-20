@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	jep
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	devel java python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	jepp
 
 MAINTAINER=	araujo@FreeBSD.org
@@ -28,6 +27,6 @@ USE_LDCONFIG=	yes
 MAN1=	jep.1
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/jep.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/jep.jar ${JAVAJARDIR}/
 
 .include <bsd.port.mk>
