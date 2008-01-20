@@ -7325,6 +7325,7 @@ magicpoint	ports/misc/magicpoint
 magicrescue	ports/sysutils/magicrescue
 mahjong		ports/games/mahjong
 mahogany	ports/mail/mahogany
+maia		ports/security/maia
 mail-notification	ports/mail/mail-notification
 mail2procmailrc	ports/mail/mail2procmailrc
 mail2sms	ports/mail/mail2sms
