@@ -4,6 +4,15 @@
 %%PYTHON_SITELIBDIR%%/boto/connection.py
 %%PYTHON_SITELIBDIR%%/boto/connection.pyc
 %%PYTHON_SITELIBDIR%%/boto/connection.pyo
+%%PYTHON_SITELIBDIR%%/boto/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/boto/contrib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/boto/contrib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/boto/contrib/m2helpers.py
+%%PYTHON_SITELIBDIR%%/boto/contrib/m2helpers.pyc
+%%PYTHON_SITELIBDIR%%/boto/contrib/m2helpers.pyo
+%%PYTHON_SITELIBDIR%%/boto/contrib/ymlmessage.py
+%%PYTHON_SITELIBDIR%%/boto/contrib/ymlmessage.pyc
+%%PYTHON_SITELIBDIR%%/boto/contrib/ymlmessage.pyo
 %%PYTHON_SITELIBDIR%%/boto/ec2/__init__.py
 %%PYTHON_SITELIBDIR%%/boto/ec2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/boto/ec2/__init__.pyo
@@ -73,6 +82,27 @@
 %%PYTHON_SITELIBDIR%%/boto/s3/user.py
 %%PYTHON_SITELIBDIR%%/boto/s3/user.pyc
 %%PYTHON_SITELIBDIR%%/boto/s3/user.pyo
+%%PYTHON_SITELIBDIR%%/boto/sdb/__init__.py
+%%PYTHON_SITELIBDIR%%/boto/sdb/__init__.pyc
+%%PYTHON_SITELIBDIR%%/boto/sdb/__init__.pyo
+%%PYTHON_SITELIBDIR%%/boto/sdb/attribute.py
+%%PYTHON_SITELIBDIR%%/boto/sdb/attribute.pyc
+%%PYTHON_SITELIBDIR%%/boto/sdb/attribute.pyo
+%%PYTHON_SITELIBDIR%%/boto/sdb/connection.py
+%%PYTHON_SITELIBDIR%%/boto/sdb/connection.pyc
+%%PYTHON_SITELIBDIR%%/boto/sdb/connection.pyo
+%%PYTHON_SITELIBDIR%%/boto/sdb/domain.py
+%%PYTHON_SITELIBDIR%%/boto/sdb/domain.pyc
+%%PYTHON_SITELIBDIR%%/boto/sdb/domain.pyo
+%%PYTHON_SITELIBDIR%%/boto/sdb/item.py
+%%PYTHON_SITELIBDIR%%/boto/sdb/item.pyc
+%%PYTHON_SITELIBDIR%%/boto/sdb/item.pyo
+%%PYTHON_SITELIBDIR%%/boto/sdb/item_orig.py
+%%PYTHON_SITELIBDIR%%/boto/sdb/item_orig.pyc
+%%PYTHON_SITELIBDIR%%/boto/sdb/item_orig.pyo
+%%PYTHON_SITELIBDIR%%/boto/sdb/queryresultset.py
+%%PYTHON_SITELIBDIR%%/boto/sdb/queryresultset.pyc
+%%PYTHON_SITELIBDIR%%/boto/sdb/queryresultset.pyo
 %%PYTHON_SITELIBDIR%%/boto/sqs/__init__.py
 %%PYTHON_SITELIBDIR%%/boto/sqs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/boto/sqs/__init__.pyo
@@ -91,21 +121,10 @@
 %%PYTHON_SITELIBDIR%%/boto/utils.py
 %%PYTHON_SITELIBDIR%%/boto/utils.pyc
 %%PYTHON_SITELIBDIR%%/boto/utils.pyo
-%%PYTHON_SITELIBDIR%%/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/tests/__init__.pyc
-%%PYTHON_SITELIBDIR%%/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/tests/test_ec2connection.py
-%%PYTHON_SITELIBDIR%%/tests/test_ec2connection.pyc
-%%PYTHON_SITELIBDIR%%/tests/test_ec2connection.pyo
-%%PYTHON_SITELIBDIR%%/tests/test_s3connection.py
-%%PYTHON_SITELIBDIR%%/tests/test_s3connection.pyc
-%%PYTHON_SITELIBDIR%%/tests/test_s3connection.pyo
-%%PYTHON_SITELIBDIR%%/tests/test_sqsconnection.py
-%%PYTHON_SITELIBDIR%%/tests/test_sqsconnection.pyc
-%%PYTHON_SITELIBDIR%%/tests/test_sqsconnection.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/boto/ec2
 @dirrm %%PYTHON_SITELIBDIR%%/boto/mturk
 @dirrm %%PYTHON_SITELIBDIR%%/boto/s3
 @dirrm %%PYTHON_SITELIBDIR%%/boto/sqs
+@dirrm %%PYTHON_SITELIBDIR%%/boto/contrib
+@dirrm %%PYTHON_SITELIBDIR%%/boto/sdb
 @dirrm %%PYTHON_SITELIBDIR%%/boto
-@dirrm %%PYTHON_SITELIBDIR%%/tests
