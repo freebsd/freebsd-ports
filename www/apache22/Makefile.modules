@@ -76,11 +76,18 @@ PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " EVENT="@comment "
 
 # xDBM section
 #
-.if !defined(WITH_DBM) && defined(WITH_BERKELEYDB)
+.if !defined(WITH_DBM)
+.   if defined(WITH_BDB) || defined(WITH_BDB_BASE) || defined(WITH_BERKELEYDB)
 WITH_DBM=bdb
+.   endif
 .endif
-.if defined(WITH_DBM) && !defined(WITH_BERKELEYDB)
-WITH_BERKELEYDB=	FreeBSD
+
+.if defined(WITH_BERKELEYDB)
+.   if ${WITH_BERKELEYDB} == "FreeBSD"
+       WITH_BDB_BASE=YES
+.   else
+      WITH_BDB_VER=${WITH_BERKELEYDB:S/db//} 
+.   endif
 .endif
 
 .if defined(WITH_DBM)
@@ -90,47 +97,13 @@ CONFIGURE_ARGS+=	--with-dbm=sdbm
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-gdbm=${LOCALBASE}
 .   elif ${WITH_DBM:L} == "db" || ${WITH_DBM:L} == "bdb"
-.       if ${WITH_BERKELEYDB} == "FreeBSD"
+.	if defined(WITH_BDB_BASE)
 CONFIGURE_ARGS+=	--with-dbm=db185 \
 			--with-berkeley-db=/usr
-.       elif ${WITH_BERKELEYDB} == "db2"
-LIB_DEPENDS+=		db2:${PORTSDIR}/databases/db2
-CONFIGURE_ARGS+=	--with-dbm=db2 \
+.	else
+USE_BDB=		yes
+CONFIGURE_ARGS+=	--with-dbm=db${BDB_VER:S/40/4/} \
 			--with-berkeley-db=${LOCALBASE}
-.       elif ${WITH_BERKELEYDB} == "db3"
-LIB_DEPENDS+=		db3:${PORTSDIR}/databases/db3
-CONFIGURE_ARGS+=	--with-dbm=db3 \
-			--with-berkeley-db=${LOCALBASE}
-.       elif ${WITH_BERKELEYDB} == "db4"
-LIB_DEPENDS+=		db4:${PORTSDIR}/databases/db4
-CONFIGURE_ARGS+=	--with-dbm=db4 \
-			--with-berkeley-db=${LOCALBASE}
-.       elif ${WITH_BERKELEYDB} == "db41"
-LIB_DEPENDS+=		db41:${PORTSDIR}/databases/db41
-CONFIGURE_ARGS+=	--with-dbm=db41 \
-			--with-berkeley-db=${LOCALBASE}
-.       elif ${WITH_BERKELEYDB} == "db42"
-LIB_DEPENDS+=		db-4.2:${PORTSDIR}/databases/db42
-CONFIGURE_ARGS+=	--with-dbm=db42 \
-			--with-berkeley-db=${LOCALBASE}/include:${LOCALBASE}/lib/db42
-.       elif ${WITH_BERKELEYDB} == "db43"
-LIB_DEPENDS+=		db-4.3:${PORTSDIR}/databases/db43
-CONFIGURE_ARGS+=	--with-dbm=db43 \
-			--with-berkeley-db=${LOCALBASE}/include:${LOCALBASE}/lib/db43
-.       elif ${WITH_BERKELEYDB} == "db44"
-LIB_DEPENDS+=		db-4.4:${PORTSDIR}/databases/db44
-CONFIGURE_ARGS+=	--with-dbm=db44 \
-			--with-berkeley-db=${LOCALBASE}/include:${LOCALBASE}/lib/db44
-.       elif ${WITH_BERKELEYDB} == "db45"
-LIB_DEPENDS+=		db-4.5:${PORTSDIR}/databases/db45
-CONFIGURE_ARGS+=	--with-dbm=db45 \
-			--with-berkeley-db=${LOCALBASE}/include:${LOCALBASE}/lib/db45
-.       elif ${WITH_BERKELEYDB} == "db46"
-LIB_DEPENDS+=		db-4.6:${PORTSDIR}/databases/db46
-CONFIGURE_ARGS+=	--with-dbm=db46 \
-			--with-berkeley-db=${LOCALBASE}/include:${LOCALBASE}/lib/db46
-.       else
-IGNORE=		"Unknown Berkeley DB version"
 .       endif
 .   else
 IGNORE=		"Unknown DBM"
