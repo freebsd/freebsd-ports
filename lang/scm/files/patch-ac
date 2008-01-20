@@ -1,9 +1,9 @@
---- build.orig	Mon Sep 13 09:20:04 2004
-+++ build	Wed Jun 29 01:42:24 2005
+--- build.orig	Wed Sep  5 02:55:56 2007
++++ build	Thu Jan 17 00:36:34 2008
 @@ -1,5 +1,5 @@
  #! /bin/sh
 -:;exec ./scmlit -no-init-file -f $0 -e"(bi)" build "$@"
 +:;exec $SCMLIT -no-init-file -f $0 -e"(bi)" build "$@"
- 
- (require 'getopt)
- (require 'getopt-parameters)
+ ;;
+ ;; Copyright (C) 1994-2006 Free Software Foundation, Inc.
+ ;;
