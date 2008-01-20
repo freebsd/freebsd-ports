@@ -151,6 +151,7 @@ lib/scm/slib/solid.scm
 lib/scm/slib/sort.scm
 lib/scm/slib/soundex.scm
 lib/scm/slib/srfi-1.scm
+lib/scm/slib/srfi-11.scm
 lib/scm/slib/srfi-2.scm
 lib/scm/slib/srfi-23.scm
 lib/scm/slib/srfi-61.scm
@@ -182,6 +183,7 @@ lib/scm/slib/withfile.scm
 lib/scm/slib/wttest.scm
 lib/scm/slib/wttree.scm
 lib/scm/slib/yasyn.scm
+lib/scm/slib/xml-parse.scm
 lib/scm/slibcat
 lib/scm/socket.so
 lib/scm/unix.so

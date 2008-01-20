@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	scm
-PORTVERSION=	5e3
+PORTVERSION=	5e4
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/%SUBDIR%/ \
 		ftp://ftp.informatik.uni-hamburg.de/ftpmnt/inf1/pub/soft/lang/scheme/
 MASTER_SITE_SUBDIR=	. OLD
-DISTFILES=	${PORTNAME}${PORTVERSION}.zip slib3a4.zip slib-psd1-3.tar.gz
-EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.zip slib3a4.zip
+DISTFILES=	${PORTNAME}${PORTVERSION}.zip slib3a5.zip slib-psd1-3.tar.gz
+EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.zip slib3a5.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scheme interpreter
