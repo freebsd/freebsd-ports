@@ -6286,6 +6286,7 @@ latex-bytefield	ports/print/latex-bytefield
 latex-caption	ports/print/latex-caption
 latex-circ	ports/print/latex-circ
 latex-cjk		ports/print/latex-cjk
+latex-etoolbox	ports/print/latex-etoolbox
 latex-feynmf	ports/print/latex-feynmf
 latex-keystroke	ports/print/latex-keystroke
 latex-logpap	ports/print/latex-logpap
