@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	jfreechart
-PORTVERSION=	1.0.8a
+PORTVERSION=	1.0.9
 CATEGORIES=	java graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A free Java class library for generating charts
