@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	policyd-weight
-PORTVERSION=	0.1.14.5
-
+PORTVERSION=	0.1.14.14
 CATEGORIES=	mail
 MASTER_SITES=	http://www.policyd-weight.org/releases/
 PKGNAMEPREFIX=	postfix-
@@ -20,7 +19,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample
 
-USE_PERL5=	yes
 USE_RC_SUBR+=	policyd-weight
 
 MAN8+=	policyd-weight.8
