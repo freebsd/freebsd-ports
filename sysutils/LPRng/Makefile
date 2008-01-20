@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	LPRng
-PORTVERSION=	3.8.28
-PORTREVISION=	2
+PORTVERSION=	3.8.32
 CATEGORIES=	sysutils print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \
@@ -20,12 +19,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Enhanced Printer Spooler
 
-CONFLICTS=	cups-base-1.[2-9]*
-
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+
+CONFLICTS=	cups-base-1.[2-9]*
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+USE_RC_SUBR=	${PORTNAME:L}
 
 SUB_FILES=	pkg-message pkg-install
 SUB_LIST=	SYSCONFDIR="${SYSCONFDIR}"
@@ -65,6 +66,14 @@ MAN8=	lpc.8 checkpc.8 lpd.8
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "If you want to replace the default printing system with LPRng, use:"
 	@${ECHO_MSG} "  make PORT_REPLACES_BASE_LPR=yes clean all install"
@@ -82,6 +91,8 @@ pre-everything::
 
 post-patch:
 	@${ECHO} "#! /bin/sh" > ${WRKSRC}/postinstall.freebsd.sh
+	@${REINPLACE_CMD} -e 's,$${INSTALL} $$$$i $${DATADIR}/$$$$i.sample,true &,' \
+		${WRKSRC}/Makefile.in
 
 pre-install: apply-slist
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -90,8 +101,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lpd.conf ${SYSCONFDIR}/lpd.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/lpd.perms ${SYSCONFDIR}/lpd.perms.sample
 	@${INSTALL_DATA} ${WRKSRC}/printcap ${SYSCONFDIR}/printcap.sample
-	@${MKDIR} ${LOCALBASE}/etc/rc.d
-	@${INSTALL_DATA} ${WRKSRC}/init.freebsd ${LOCALBASE}/etc/rc.d/lprng.sh
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}/Reference
