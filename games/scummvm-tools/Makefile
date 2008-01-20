@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scummvm-tools
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scummvm
@@ -30,7 +30,7 @@ do-install:
 		compress_scumm_san compress_scumm_sou compress_sword1 compress_sword2 \
 		compress_touche dekyra descumm desword2 encode_dxa extract_agos \
 		extract_kyra extract_loom_tg16 extract_mm_apple extract_mm_c64 \
-		extract_mm_nes extract_scumm_mac extract_zak_c64
+		extract_mm_nes extract_scumm_mac extract_parallaction extract_zak_c64
 	@${INSTALL_PROGRAM} ${WRKSRC}/$i ${PREFIX}/bin
 .endfor
 
