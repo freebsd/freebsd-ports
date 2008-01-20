@@ -4,13 +4,12 @@ bin/xye
 %%PORTDOCS%%%%DOCSDIR%%/format.txt
 %%PORTDOCS%%%%DOCSDIR%%/template.xye.xml
 %%PORTDOCS%%%%DOCSDIR%%/GAMEINTRO.txt
-%%PORTDOCS%%%%DOCSDIR%%/xyeicon.png
+%%PORTDOCS%%%%DOCSDIR%%/xye.svg
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-
 %%DATADIR%%/levels/5levels.xye
 %%DATADIR%%/levels/kye.xye
 %%DATADIR%%/levels/levels.xye
@@ -25,7 +24,8 @@ bin/xye
 %%DATADIR%%/res/kye.png
 %%DATADIR%%/res/fon.bmp
 %%DATADIR%%/res/fon_bold.bmp
-
+%%DATADIR%%/res/DejaVuSans.ttf
+%%DATADIR%%/res/DejaVuSans-Bold.ttf
 @dirrm share/xye/levels
 @dirrm share/xye/res
 @dirrm share/xye
