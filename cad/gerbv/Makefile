@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gerbv
-PORTVERSION=	1.0.3
+PORTVERSION=	2.0.0
 CATEGORIES=	cad
 MASTER_SITES=	SF
 
@@ -31,8 +31,14 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${FIND} . ! -name "*Makefile*" | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.fig ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/PNG-print
+	${INSTALL_DATA} ${WRKSRC}/doc/PNG-print/*.jpg ${DOCSDIR}/PNG-print
+	${INSTALL_DATA} ${WRKSRC}/doc/PNG-print/*.txt ${DOCSDIR}/PNG-print
+	@${MKDIR} ${DOCSDIR}/eagle
+	${INSTALL_DATA} ${WRKSRC}/doc/eagle/*.pl ${DOCSDIR}/eagle
+	${INSTALL_DATA} ${WRKSRC}/doc/eagle/*.txt ${DOCSDIR}/eagle
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}

@@ -15,6 +15,7 @@ bin/gerbv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cslk/cslk.ps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dan/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dan/top.gbx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dan/top_sr.gbx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eaglecad1/top-cop.gbx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eaglecad1/top-cop.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/README.txt
@@ -37,6 +38,9 @@ bin/gerbv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/sieb1.grb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/stp0.grb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ekf2/stp1.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exposure/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exposure/example.grb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/exposure/example.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/jj/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/jj/l1-1.grb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/jj/l1-2.grb
@@ -65,15 +69,32 @@ bin/gerbv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/rs232_cm.sst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/rs232_cm.top
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/orcad/thruhole.tap
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pick-and-place/LED.frontsilk.gbr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pick-and-place/LED.xy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polarity/6_vbat.gbr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polarity/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/thermal/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/thermal/bpB.GP1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/thermal/bpB.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/thermal/dsp.GP1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/thermal/dsp.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trailing/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trailing/cd1r2.1_sieb0.off
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trailing/cd1r2.1_sieb1.off
 %%DATADIR%%/scheme/gerb-debug.scm
 %%DATADIR%%/scheme/gerb-ps.scm
 %%DATADIR%%/scheme/init.scm
 @dirrm %%DATADIR%%/scheme
 @dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trailing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/thermal
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/polarity
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pick-and-place
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/orcad
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/numpres
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nollezappare
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/jj
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/exposure
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ekf2
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/eaglecad1
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dan
