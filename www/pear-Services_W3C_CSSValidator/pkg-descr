@@ -1,0 +1,11 @@
+This package provides an object oriented interface to the API
+of the W3 CSS Validator application (http://jigsaw.w3.org/css-validator/).
+
+With this package you can connect to a running instance of the validator and
+retrieve the validation results (true|false) as well as the errors and warnings
+for a a style sheet.
+
+WWW: http://pear.php.net/package/Services_W3C_CSSValidator/
+
+- Ditesh Shashikant Gathani
+ditesh@gathani.org
