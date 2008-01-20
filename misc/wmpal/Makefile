@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmpal
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	SF
 
