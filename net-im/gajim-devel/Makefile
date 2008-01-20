@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	20070621
-PORTREVISION=	1
+PORTVERSION=	20080113
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-2007-06-21
+DISTNAME=	${PORTNAME}-2008-01-13
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -25,7 +26,8 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	2.4+
 USE_XLIB=	yes
 
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I ${X11BASE}/include" PYTHON=${PYTHON_CMD}
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I ${X11BASE}/include" \
+		LDFLAGS="-L ${LOCALBASE}/lib" PYTHON=${PYTHON_CMD}
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -35,7 +37,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.11.1.0
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.11.4.1-svn
 
 MAN1=		gajim.1 gajim-remote.1
 
