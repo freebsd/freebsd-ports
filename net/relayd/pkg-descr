@@ -1,0 +1,7 @@
+relayd is a daemon to relay and dynamically redirect incoming
+connections to a target host. Its main purposes are to run as a
+load-balancer, application layer gateway, or transparent proxy. The
+daemon is able to monitor groups of hosts for availability, which is
+determined by checking for a specific service common to a host group.
+
+WWW: http://spootnik.org/relayd/
