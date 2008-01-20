@@ -12045,6 +12045,7 @@ pear-PHP_Shell	ports/shells/pear-PHP_Shell
 pear-Pager	ports/devel/pear-Pager
 pear-PhpDocumentor	ports/devel/pear-PhpDocumentor
 pear-SOAP	ports/net/pear-SOAP
+pear-Services_Compete	ports/www/pear-Services_Compete
 pear-Services_Delicious	ports/www/pear-Services_Delicious
 pear-Services_Digg	ports/www/pear-Services_Digg
 pear-Services_Pingback	ports/net/pear-Services_Pingback
