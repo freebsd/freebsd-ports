@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -43,9 +43,11 @@ SUB_FILES=	milter-dkim.sh
 WCONF=		${WRKSRC}/devtools/Site
 MAN5=		dkim-filter.conf.5
 MAN8=		dkim-filter.8 dkim-genkey.8 dkim-testkey.8 dkim-testssp.8
-PLIST_FILES=	etc/mail/dkim-filter.conf.sample \
+PLIST_FILES=	etc/mail/dkim-filter.conf.sample include/dkim.h \
 		bin/dkim-genkey %%STATS%%bin/dkim-stats bin/dkim-testkey \
-		bin/dkim-testssp libexec/dkim-filter
+		bin/dkim-testssp %%LIBDKIM%%lib/libdkim.a \
+		%%LIBDKIMSHARED%%lib/libdkim.so %%LIBDKIMSHARED%%lib/libdkim.so.0 \
+		libexec/dkim-filter
 PLIST_DIRS=	etc/mail
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
@@ -153,6 +155,20 @@ SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}${RC_SUBR_SUFFIX}
 BROKEN=		The devtools do not support the feature
 .endif
 SITE_SUB+=	-e '\|bld_LIBDKIM_SHARED|s/^dnl //g'
+.else
+.endif
+.if defined(WITH_LIBDKIM_INSTALL)
+SITE_SUB+=	-e '\|bld_LIBDKIM_INSTALL|s/^dnl //g'
+.if defined(WITH_LIBDKIM_SHARED)
+PLIST_SUB+=	LIBDKIM="@comment "
+PLIST_SUB+=	LIBDKIMSHARED=""
+.else
+PLIST_SUB+=	LIBDKIM=""
+PLIST_SUB+=	LIBDKIMSHARED="@comment "
+.endif
+.else
+PLIST_SUB+=	LIBDKIM="@comment "
+PLIST_SUB+=	LIBDKIMSHARED="@comment "
 .endif
 .if defined(WITH_DEBUG)
 SITE_SUB+=	-e '\|confOPTIMIZE.*-g|s/^dnl //g'
@@ -225,6 +241,7 @@ pre-fetch:
 	@${ECHO_MSG} " WITH_VERIFY_DOMAINKEYS=yes	Verify DomainKeys using dk-milter's libdk"
 	@${ECHO_MSG} " WITH_SENDMAIL_BASE=yes		Build to run with base sendmail"
 	@${ECHO_MSG} " WITH_POSTFIX=yes		Build to run with postfix port"
+	@${ECHO_MSG} " WITH_LIBDKIM_INSTALL=yes		Install libdkim library"
 	@${ECHO_MSG}
 	@sleep 5
 
