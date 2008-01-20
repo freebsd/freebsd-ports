@@ -10,7 +10,7 @@ upgrades.
    AFFECTS: users of www/apache22
    AUTHOR: clement@FreeBSD.org
 
-   BDB framework provided by bsd.databases.mk is now used by www/apache22
+   BDB framework provided by bsd.database.mk is now used by www/apache22
    port. WITH_BERKELEYDB knob is deprecated in favor of WITH_BDB and
    WITH_BDB_VER/WITH_BDB_BASE, see documentation for more details.
    ('make show-options').

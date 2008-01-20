@@ -42,7 +42,7 @@
 ##      WITH_THREADS:             Enable threads support
 ##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or
 ##                                ndbm (default)
-##          WITH_BDB:             Define to select bdb via bsd.databases.mk
+##          WITH_BDB:             Define to select bdb via bsd.database.mk
 ##                                desired version may be set with
 ##                                WITH_BDB_VER or APACHE22_WITH_BDB_VER
 ##          WITH_BDB_BASE:        Define to use bdb from base (1.85)
