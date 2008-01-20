@@ -7,6 +7,15 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20080120:
+   AFFECTS: users of www/apache20
+   AUTHOR: clement@FreeBSD.org
+
+   BDB framework provided by bsd.database.mk is now used by www/apache20
+   port. WITH_BERKELEYDB knob is deprecated in favor of WITH_BDB and
+   WITH_BDB_VER/WITH_BDB_BASE, see documentation for more details.
+   ('make show-options').
+
+20080120:
    AFFECTS: users of www/apache22
    AUTHOR: clement@FreeBSD.org
 
