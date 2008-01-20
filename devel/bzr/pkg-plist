@@ -241,9 +241,13 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/help.py
 %%PYTHON_SITELIBDIR%%/bzrlib/help.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/help.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/help_topics.py
-%%PYTHON_SITELIBDIR%%/bzrlib/help_topics.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/help_topics.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/help_topics/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/help_topics/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/help_topics/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en/authentication.txt
+%%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en/configuration.txt
+%%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en/conflicts.txt
+%%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en/hooks.txt
 %%PYTHON_SITELIBDIR%%/bzrlib/hooks.py
 %%PYTHON_SITELIBDIR%%/bzrlib/hooks.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/hooks.pyo
@@ -496,12 +500,6 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/EncodingAdapter.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/EncodingAdapter.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/EncodingAdapter.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/HTTPTestUtil.py
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/HTTPTestUtil.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/HTTPTestUtil.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/HttpServer.py
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/HttpServer.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/tests/HttpServer.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/TestUtil.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/TestUtil.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/TestUtil.pyo
@@ -838,6 +836,12 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/ftp_server.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/ftp_server.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/ftp_server.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/http_server.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/http_server.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/http_server.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/http_utils.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/http_utils.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/http_utils.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/interrepository_implementations/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/interrepository_implementations/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/interrepository_implementations/__init__.pyo
@@ -1057,6 +1061,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http_implementations.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http_implementations.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http_implementations.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http_response.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http_response.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_http_response.pyo
@@ -1650,6 +1657,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/version_info_formats/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/version_info_formats/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/version_info_formats/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/version_info_formats/format_custom.py
+%%PYTHON_SITELIBDIR%%/bzrlib/version_info_formats/format_custom.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/version_info_formats/format_custom.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/version_info_formats/format_python.py
 %%PYTHON_SITELIBDIR%%/bzrlib/version_info_formats/format_python.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/version_info_formats/format_python.pyo
@@ -1699,6 +1709,8 @@ bin/bzr
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc/api
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/export
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/help_topics
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad
 @dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/repofmt
