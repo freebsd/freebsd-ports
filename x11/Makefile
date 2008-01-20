@@ -272,6 +272,7 @@
     SUBDIR += smproxy
     SUBDIR += stalonetray
     SUBDIR += startup-notification
+    SUBDIR += swarp
     SUBDIR += sxpc
     SUBDIR += temperature.app
     SUBDIR += terminal.app
