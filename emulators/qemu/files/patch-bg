@@ -9,11 +9,11 @@ Index: qemu/Makefile.target
  ifndef CONFIG_USER_ONLY
  LIBS+=-lz
 Index: qemu/vl.c
-@@ -89,10 +89,12 @@
- #include "exec-all.h"
+@@ -133,10 +133,12 @@
  
  #define DEFAULT_NETWORK_SCRIPT "/etc/qemu-ifup"
-+#ifndef SMBD_COMMAND
+ #define DEFAULT_NETWORK_DOWN_SCRIPT "/etc/qemu-ifdown"
++#ifndef SMBD_COMMAND 
  #ifdef __sun__
  #define SMBD_COMMAND "/usr/sfw/sbin/smbd"
  #else

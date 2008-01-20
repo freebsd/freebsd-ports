@@ -6,19 +6,12 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.9.0
-PORTREVISION=	4
+PORTVERSION=	0.9.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fabrice.bellard.free.fr/qemu/:release \
 		http://qemu.org/:release \
-		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
-		http://people.fruitsalad.org/nox/qemu/:snapshot \
-		http://www.volny.cz/xnavara/qemu/:snapshot \
-		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma \
-		http://people.freebsd.org/~maho/qemu/:misc \
-		http://people.freebsd.org/~jkim/:bios
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release \
-		qemu-bios.bin:bios
+		http://people.freebsd.org/~maho/qemu/:misc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 DIST_SUBDIR=	qemu
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -30,7 +23,7 @@ USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 USE_PERL5=	yes
 USE_GCC=	3.4
-PATCH_STRIP=	-p1
+PATCH_STRIP=	-lp1
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 MAKE_ENV+=	BSD_MAKE="${MAKE}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
@@ -46,7 +39,14 @@ OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+# 5.x base gcc segfaults in target-mips/op_mem.c
+BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
+CC=	gcc34
+.endif
+
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
+CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 
 .if defined(WITHOUT_SDL)
 CONFIGURE_ARGS+=	--disable-sdl --disable-gfx-check
@@ -64,7 +64,6 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba3
 
 .if defined(WITH_KQEMU)
 BUILD_DEPENDS+=	kqemu-kmod>=1.3.0pre5:${PORTSDIR}/emulators/kqemu-kmod
-CONFIGURE_ARGS+=	--enable-kqemu
 .else
 CONFIGURE_ARGS+=	--disable-kqemu
 .endif
@@ -83,7 +82,6 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/kqemu
 	@${TOUCH} ${WRKSRC}/kqemu/Makefile
 	@${ECHO} all: > ${WRKSRC}/kqemu/Makefile.freebsd
-	@${CP} -p ${_DISTDIR}/qemu-bios.bin ${WRKSRC}/pc-bios/bios.bin
 
 pre-patch:
 	@for A in ${ONLY_FOR_ARCHS}; do \
