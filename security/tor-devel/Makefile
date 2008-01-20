@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.0.15-alpha
+DISTVERSION=	0.2.0.17-alpha
 CATEGORIES=	security net
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://mirror.onionland.org/dist/
@@ -32,7 +32,7 @@ SUB_FILES=	pkg-message
 CONFLICTS=	tor-0.1.[0-9]*
 
 MANCOMPRESSED=	no
-MAN1=		tor.1 tor-resolve.1 torify.1
+MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 
 .include <bsd.port.pre.mk>
 
