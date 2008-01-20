@@ -106,7 +106,7 @@ CONFIGURE_ARGS+=	--disable-x264
 .endif
 
 .if !defined(WITH_TREMOR)
-CONFIGURE_ARGS+=	--disable-tremor-internal
+CONFIGURE_ARGS+=	--disable-tremor-internal --disable-tremor-external
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
