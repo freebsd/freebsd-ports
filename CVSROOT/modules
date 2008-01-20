@@ -12050,6 +12050,7 @@ pear-Services_Digg	ports/www/pear-Services_Digg
 pear-Services_Pingback	ports/net/pear-Services_Pingback
 pear-Services_W3C_HTMLValidator	ports/www/pear-Services_W3C_HTMLValidator
 pear-Services_Weather	ports/misc/pear-Services_Weather
+pear-Services_urlTea	ports/www/pear-Services_urlTea
 pear-Spreadsheet_Excel_Writer	ports/textproc/pear-Spreadsheet_Excel_Writer
 pear-Structures_DataGrid	ports/devel/pear-Structures_DataGrid
 pear-Structures_DataGrid_DataSource_Array	ports/databases/pear-Structures_DataGrid_DataSource_Array
