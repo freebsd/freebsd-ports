@@ -19,6 +19,7 @@ bin/extract_mm_apple
 bin/extract_mm_c64
 bin/extract_mm_nes
 bin/extract_scumm_mac
+bin/extract_parallaction
 bin/extract_zak_c64
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
