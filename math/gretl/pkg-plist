@@ -7,6 +7,7 @@ include/gretl/bootstrap.h
 include/gretl/calendar.h
 include/gretl/compare.h
 include/gretl/compat.h
+include/gretl/csvdata.h
 include/gretl/dataio.h
 include/gretl/dataset.h
 include/gretl/dbread.h
@@ -35,6 +36,7 @@ include/gretl/gretl_win32.h
 include/gretl/gretl_www.h
 include/gretl/gretl_xml.h
 include/gretl/interact.h
+include/gretl/johansen.h
 include/gretl/kalman.h
 include/gretl/libgretl.h
 include/gretl/libset.h
@@ -62,6 +64,7 @@ include/gretl/tsls.h
 include/gretl/usermat.h
 include/gretl/var.h
 include/gretl/varprint.h
+include/gretl/vartest.h
 lib/gretl-gtk2/arbond.a
 lib/gretl-gtk2/arbond.la
 lib/gretl-gtk2/arbond.so
@@ -90,6 +93,9 @@ lib/gretl-gtk2/gnumeric_import.so
 lib/gretl-gtk2/gretlzip.a
 lib/gretl-gtk2/gretlzip.la
 lib/gretl-gtk2/gretlzip.so
+lib/gretl-gtk2/heckit.a
+lib/gretl-gtk2/heckit.la
+lib/gretl-gtk2/heckit.so
 lib/gretl-gtk2/jmulti_import.a
 lib/gretl-gtk2/jmulti_import.la
 lib/gretl-gtk2/jmulti_import.so
@@ -114,6 +120,9 @@ lib/gretl-gtk2/mp_ols.so
 lib/gretl-gtk2/nistcheck.a
 lib/gretl-gtk2/nistcheck.la
 lib/gretl-gtk2/nistcheck.so
+lib/gretl-gtk2/ods_import.a
+lib/gretl-gtk2/ods_import.la
+lib/gretl-gtk2/ods_import.so
 lib/gretl-gtk2/oprobit.a
 lib/gretl-gtk2/oprobit.la
 lib/gretl-gtk2/oprobit.so
@@ -267,9 +276,11 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/greene/greene9_1.gdt
 %%DATADIR%%/data/greene/wg_descriptions
 %%DATADIR%%/data/gretldata.dtd
+%%DATADIR%%/data/misc/AWM.gdt
 %%DATADIR%%/data/misc/abdata.gdt
 %%DATADIR%%/data/misc/anscombe.gdt
 %%DATADIR%%/data/misc/arma.gdt
+%%DATADIR%%/data/misc/australia.gdt
 %%DATADIR%%/data/misc/b-g.gdt
 %%DATADIR%%/data/misc/bjg.gdt
 %%DATADIR%%/data/misc/denmark.gdt
@@ -287,10 +298,11 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/leverage.gdt
 %%DATADIR%%/data/misc/longley.gdt
 %%DATADIR%%/data/misc/mccullagh.gdt
-%%DATADIR%%/data/misc/mroz.gdt
+%%DATADIR%%/data/misc/mroz87.gdt
 %%DATADIR%%/data/misc/mrw.gdt
 %%DATADIR%%/data/misc/np.gdt
 %%DATADIR%%/data/misc/nysewk.gdt
+%%DATADIR%%/data/misc/ooballot.gdt
 %%DATADIR%%/data/misc/penngrow.gdt
 %%DATADIR%%/data/misc/pension.gdt
 %%DATADIR%%/data/misc/poisson.gdt
@@ -385,6 +397,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/leverage.inp
 %%DATADIR%%/scripts/misc/longley.inp
 %%DATADIR%%/scripts/misc/mrw.inp
+%%DATADIR%%/scripts/misc/ooballot.inp
 %%DATADIR%%/scripts/misc/oprobit.inp
 %%DATADIR%%/scripts/misc/penngrow.inp
 %%DATADIR%%/scripts/misc/perron97.inp
