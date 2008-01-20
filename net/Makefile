@@ -753,6 +753,7 @@
     SUBDIR += recvnet
     SUBDIR += redir
     SUBDIR += relay
+    SUBDIR += relayd
     SUBDIR += remotedesk
     SUBDIR += repeater
     SUBDIR += rexx-sock

@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: relayd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# relayd_enable (bool):
+#
+# relayd_flags:
+#
+
+. %%RC_SUBR%%
+
+name=relayd
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${relayd_enable="NO"}
+: ${relayd_flags=""}
+
+command="%%PREFIX%%/sbin/relayd"
+command_args="${relayd_flags}"
+
+run_rc_command "$1"
