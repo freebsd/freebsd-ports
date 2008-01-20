@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	ircservices
-PORTVERSION=	5.0.62
+PORTVERSION=	5.0.63
 CATEGORIES=	irc
-MASTER_SITES=	http://www.ircservices.za.net/download/ \
-	ftp://ftp.esper.net/ircservices/ \
-	ftp://ftp.ircd.com.br/ircservices/ \
-	http://banana.irc.gr/ircservices/ \
-	http://ircservices.swissirc.ch/ \
-	ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/
+MASTER_SITES=	http://www.ircservices.za.net/download/old/ \
+	http://banana.irc.gr/ircservices/old/ \
+	ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/old/
 
 MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	A system of IRC services for IRC networks
