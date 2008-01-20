@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpsd
-PORTVERSION=	2.32
-PORTREVISION=	2
+PORTVERSION=	2.36
 CATEGORIES=	astro geography
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,13 +14,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	toxa@toxahost.ru
 COMMENT=	Daemon that monitors one or more GPSes attached to a host computer
 
+BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
+		xsltproc:${PORTSDIR}/textproc/libxslt
+
 USE_RC_SUBR=	gpsd
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
-MAN1=	gps.1 gpsfake.1 gpsflash.1 gpspipe.1 gpsprof.1 rtcmdecode.1 sirfmon.1
+MAN1=	cgps.1 cgpxlogger.1 gps.1 gpscat.1 gpsctl.1 gpsfake.1 gpsflash.1 \
+	gpspipe.1 gpsprof.1 rtcmdecode.1 sirfmon.1 xgps.1 xgpsspeed.1
 MAN3=	libgps.3 libgpsd.3 libgpsmm.3
 MAN5=	rtcm-104.5 srec.5
 MAN8=	gpsd.8
@@ -42,6 +46,8 @@ OPTIONS=	XGPS "Build xgps and xgpsspeed (require X)" off \
 		NTPSHM "TP time hinting support" on \
 		PPS "PPS time syncing support" off \
 		DBUS "DBUS support" off
+
+USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 
