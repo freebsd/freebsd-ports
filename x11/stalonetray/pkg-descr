@@ -3,4 +3,4 @@ It has minimal build and run-time dependencies: the Xlib only.
 The XEMBED support is planned. Stalonetray runs under virtually
 any window manager.
 
-WWW: http://sourceforge.net/projects/stalonetray
+WWW: http://stalonetray.sourceforge.net
