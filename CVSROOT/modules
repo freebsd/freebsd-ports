@@ -3287,7 +3287,6 @@ freeorion	ports/games/freeorion
 freepops	ports/mail/freepops
 freera		ports/games/freera
 freeradius	ports/net/freeradius
-freeradius-devel	ports/net/freeradius-devel
 freeradius-mysql	ports/net/freeradius-mysql
 freeradius2	ports/net/freeradius2
 freeride	ports/devel/freeride
