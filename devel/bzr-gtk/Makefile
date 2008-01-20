@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bzr-gtk
-PORTVERSION=	0.91.0
+PORTVERSION=	0.93.0
 CATEGORIES=	devel
 MASTER_SITES=	http://phanatic.hu/bzr-gtk/
 
