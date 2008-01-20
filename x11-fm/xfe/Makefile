@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xfe
-PORTVERSION=	0.99
-PORTREVISION=	1
+PORTVERSION=	1.04
 CATEGORIES=	x11-fm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast MS-Explorer like filemanager for X
@@ -18,22 +16,23 @@ COMMENT=	Fast MS-Explorer like filemanager for X
 LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 \
 		png.5:${PORTSDIR}/graphics/png
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib \
-		--with-x
+USE_GNOME=	gnomehack gnometarget
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include \
+		--x-libraries=${LOCALBASE}/lib \
+		--with-x
+
+MAN1=		xfe.1 xfi.1 xfp.1 xfv.1 xfw.1
+
+CPPFLAGS=	`pkg-config --cflags-only-I freetype2` -I${LOCALBASE}/include
+LDFLAGS=	`pkg-config --libs-only-L freetype2` -L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-I/usr/include/fox|-I${LOCALBASE}/include/|g' \
+	@${REINPLACE_CMD} -e 's|^CXXFLAGS="-O2"||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-I/usr/include/fox|# -I/usr/include/fox|g' \
 		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings| ; \
-		s|-lFOX|${PTHREAD_LIBS} &|g' ${WRKSRC}/configure
-
-MAN1=		xfe.1 xfi.1 xfq.1 xfv.1 xfw.1
 
 .include <bsd.port.mk>
