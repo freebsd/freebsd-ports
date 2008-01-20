@@ -137,6 +137,7 @@
     SUBDIR += latex-caption
     SUBDIR += latex-circ
     SUBDIR += latex-cjk
+    SUBDIR += latex-etoolbox
     SUBDIR += latex-feynmf
     SUBDIR += latex-keystroke
     SUBDIR += latex-logpap
