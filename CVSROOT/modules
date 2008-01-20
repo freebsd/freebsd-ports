@@ -15535,6 +15535,7 @@ svr4_base	ports/emulators/svr4_base
 sw-aspell	ports/textproc/sw-aspell
 swaks		ports/mail/swaks
 swami		ports/audio/swami
+swarp		ports/x11/swarp
 swatch		ports/security/swatch
 sweep		ports/audio/sweep
 swfdec		ports/graphics/swfdec
