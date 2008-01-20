@@ -9,11 +9,16 @@
 #
 
 ## Available knobs:
+##   WITHOUT_APACHE_OPTIONS:      Don't use OPTIONS and will allow you to use
+##                                those knobs directly to select modules.
+##                                Knobs with (*) are working only if 
+##                                WITHOUT_APACHE_OPTIONS is defined.
+##
 ## By default, modules are compiled as dynamically loadable modules (DSO).
 ##
 ## Modules knobs philosophy:
 ## Modules are split in categories, "make show-categories" shows you 
-## which modules they contain. You can enable/disable/customize a category:
+## which modules they contain. You can enable/disable/customize a category (*):
 ## - To enable a category: WITH_<CATEGORY>_MODULES=yes
 ##                            [WITH_PROXY_MODULES=yes]
 ## - To disable a category: WITHOUT_<CATEGORY>_MODULES=yes 
@@ -34,24 +39,25 @@
 ##      WITH_IPV6_V6ONLY:         Don't allow IPv6 sockets to handle IPv4 
 ##                                connections
 ##      WITHOUT_SSL:              Disable SSL support
-##      WITH_THREADS:             Enable threads support !! USE IT WITH CARE !!
+##      WITH_THREADS:             Enable threads support
 ##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or
 ##                                ndbm (default)
-##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3,
-##                                db4, db41, db42, db43, db44, db45, db46 
-##                                or FreeBSD (1.85, default)
+##          WITH_BDB:             Define to select bdb via bsd.databases.mk
+##                                desired version may be set with
+##                                WITH_BDB_VER or APACHE22_WITH_BDB_VER
+##          WITH_BDB_BASE:        Define to use bdb from base (1.85)
 ##      WITH_STATIC_SUPPORT:      Build statically linked support binaries
 ##      WITH_STATIC_APACHE:       Build a static version of httpd (implies 
 ##                                WITH_STATIC_MODULES)
 ##      WITH_ALL_STATIC_MODULES:  All modules will be statically linked.
-##      WITH_STATIC_MODULES:      List of modules to build modules statics
+##      WITH_STATIC_MODULES (*):  List of modules to build modules statics
 ##                                (usefull for slave ports)
 ##                                (They must be already enabled (i.e.
 ##                                WITH_MODULES or with default configuration
 ##                                use 'make show-modules', to check if they are
 ##                                enabled)
-##      WITH_MODULES:             List of modules you choose
-##      WITHOUT_MODULES:          Disable selected modules
+##      WITH_MODULES (*):         List of modules you choose
+##      WITHOUT_MODULES (*):      Disable selected modules
 ##      WITH_SUEXEC:              Enable suExec support
 ##            SUEXEC_DOCROOT:     SuExec root directory
 ##            SUEXEC_USERDIR:     User subdirectory (default public_html)
@@ -70,14 +76,14 @@
 ##
 ##  Optionnal patches:  
 ##      WITH_EXPERIMENTAL_PATCHES Add performance patches (generally backported
-##                                from apr/httpd CVS)
+##                                from apr/httpd SVN repositories)
 ##
 ## Available make targets:
 ##      show-options:             prints this message
 ##      show-modules:             prints list of available modules
 ##      show-categories:          prints list of modules sorted by category
 ##
-## Examples:
+## Examples (*):
 ##      make WITH_STATIC_MODULES="ssl rewrite include" WITH_EXPERIMENTAL_MODULES=yes \
 ##           WITH_CUSTOM_AUTH="auth auth_dbm"
 ##      make WITHOUT_MODULES="access speling status" WITH_PROXY_MODULES=yes
