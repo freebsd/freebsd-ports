@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	t1lib
-PORTVERSION=	5.1.1
-PORTREVISION=	2
+PORTVERSION=	5.1.2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
@@ -35,6 +34,10 @@ PLIST_SUB+=	X11="@comment "
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^LIBTOOL[ ]*=.*|LIBTOOL=${LIBTOOL}|g'
+	@${REINPLACE_CMD} -e \
+		'/ALLSUBDIRS/s|$$(DOCSUBDIRS)||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|_LT_CURRENT=.*$$|_LT_CURRENT=5|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
