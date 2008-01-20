@@ -15,6 +15,6 @@ MASTERDIR=	${.CURDIR}/../../multimedia/xmms
 
 CONFLICTS=	xmms-[0-9]*
 
-WITH_ENCODING_PATCH=	yes
+WITH_RUSXMMS_PATCHES=	yes
 
 .include "${MASTERDIR}/Makefile"

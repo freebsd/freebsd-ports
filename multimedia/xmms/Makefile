@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.11
+PORTREVISION=	1
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -17,14 +18,15 @@ COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 USE_BZIP2=	yes
 USE_GL=		gl
 USE_GNOME=	gtk12 gnomehack
-WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoheader:261 autoconf:261 libtool:15
+ACLOCAL_ARGS=	--force
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		INPUT_PLUGINS="${INPUT_PLUGINS}" \
 		OUTPUT_PLUGINS="${OUTPUT_PLUGINS}" \
 		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
@@ -41,6 +43,16 @@ PLIST_SUB=	DATADIR="share"
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--enable-ipv6
+
+.if defined(WITH_RUSXMMS_PATCHES)
+ENC_PATCHLEVEL=	41
+DISTFILES+=	RusXMMS2-csa${ENC_PATCHLEVEL}${EXTRACT_SUFX}:enc
+MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:enc/}
+MASTER_SITE_SUBDIR+=	rusxmms/:enc
+
+LIB_DEPENDS+=	rcc.2:${PORTSDIR}/devel/librcc
+LIB_DEPENDS+=	rcd.1:${PORTSDIR}/devel/librcd
+.endif
 
 .if defined(WITH_EXTENDED_VORBIS_FILEINFO)
 CFLAGS+=	-DALL_VORBIS_TAGS
@@ -92,8 +104,12 @@ post-extract:
 .endif
 
 pre-extract:
-.if !defined(WITHOUT_MIKMOD) || !defined(WITHOUT_VORBIS) || ( !defined(WITHOUT_SIMD) ) || ${HAVE_GNOME:Mesound}!=""
+.if !defined(WITHOUT_MIKMOD) || !defined(WITHOUT_VORBIS) || !defined(WITHOUT_SIMD) \
+  || ${HAVE_GNOME:Mesound}!="" || !defined(WITH_RUSXMMS_PATCHES)
 	@${ECHO_MSG}
+.if !defined(WITH_RUSXMMS_PATCHES)
+	@${ECHO_MSG} "You can enable support for ID3v2 tags and CP1251 encoding by defining WITH_RUSXMMS_PATCHES."
+.endif
 .if !defined(WITHOUT_MIKMOD)
 	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_MIKMOD."
 .endif
@@ -110,14 +126,45 @@ pre-extract:
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		 's|\(datadir\)/aclocal|(prefix)/share/aclocal|g'
-	@${REINPLACE_CMD} -e 's|{datadir}/locale|{prefix}/share/locale|g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/objformat/s|echo aout|echo elf|' \
-		${WRKSRC}/configure ${WRKSRC}/libxmms/configure
+.if defined(WITH_RUSXMMS_PATCHES)
+.  for src in source/rcc.c source/rcc.h source/rcc_langs.h
+	@${INSTALL_DATA} ${WRKDIR}/RusXMMS2/${src} ${WRKSRC}/libxmms
+.  endfor
+	@${CAT} ${WRKDIR}/RusXMMS2/3rdparty/mpg123/*.patch | ${PATCH} -s -p1 -d ${WRKSRC}
+.  for diff in xmms-ds-rusxmms.patch xmms-ds-rusxmms-charset.patch \
+       xmms-ds-playlist.patch xmms-ds-shade.patch xmms-ds-textbox.patch
+	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/RusXMMS2/patches/${diff}
+.  endfor
+.  for diff in xmms-ds-mpg123.patch xmms-ds-mpg123-editor.patch \
+       xmms-ds-mpg123-editor-keys.patch xmms-ds-vorbis-editor.patch \
+       xmms-ds-vorbis-editor-keys.patch
+	@${PATCH} -s -p1 -d ${WRKSRC} < ${WRKDIR}/RusXMMS2/patches/plugins/${diff}
+.  endfor
+.endif
+# If there is no esound installed, the autotools won't find a required macro
+.if !${HAVE_GNOME:Mesound}!=""
+	${REINPLACE_CMD} -e '/AM_PATH_ESD/,/have_esd=no/d' ${WRKSRC}/configure.in
+.endif
+
+# There are patches to configure.in and Makefile.in, recreate configure
+# scripts
+run-autotools:
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
+		${ACLOCAL_ARGS})
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \
+		${AUTOHEADER_ARGS})
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
+		${AUTOCONF_ARGS})
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
+		${AUTOMAKE_ARGS})
+	@(cd ${CONFIGURE_WRKSRC}/libxmms && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
+		${ACLOCAL_ARGS})
+	@(cd ${CONFIGURE_WRKSRC}/libxmms && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \
+		${AUTOHEADER_ARGS})
+	@(cd ${CONFIGURE_WRKSRC}/libxmms && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
+		${AUTOCONF_ARGS})
+	@(cd ${CONFIGURE_WRKSRC}/libxmms && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
+		${AUTOMAKE_ARGS})
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/xmms/Skins
