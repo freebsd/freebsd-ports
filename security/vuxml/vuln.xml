@@ -22084,7 +22084,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>freeradius-devel</name>
-	<range><gt>0</gt></range>
+	<range><le>1.0.2</le></range>
       </package>
     </affects>
     <description>
