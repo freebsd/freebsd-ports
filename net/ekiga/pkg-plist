@@ -220,6 +220,7 @@ share/locale/ms/LC_MESSAGES/ekiga.mo
 share/locale/nb/LC_MESSAGES/ekiga.mo
 share/locale/ne/LC_MESSAGES/ekiga.mo
 share/locale/nl/LC_MESSAGES/ekiga.mo
+share/locale/oc/LC_MESSAGES/ekiga.mo
 share/locale/or/LC_MESSAGES/ekiga.mo
 share/locale/pa/LC_MESSAGES/ekiga.mo
 share/locale/pl/LC_MESSAGES/ekiga.mo
@@ -278,4 +279,6 @@ share/locale/zh_TW/LC_MESSAGES/ekiga.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/applications
