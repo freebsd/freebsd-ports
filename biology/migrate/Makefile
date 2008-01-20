@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	migrate
-PORTVERSION=	2.3
+PORTVERSION=	2.4.1
 CATEGORIES=	biology
-MASTER_SITES=	http://popgen.csit.fsu.edu/currentversion/
+MASTER_SITES=	http://popgen.csit.fsu.edu/%SUBDIR%/
+MASTER_SITE_SUBDIR=	currentversion oldversions/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -42,8 +43,6 @@ ALL_TARGET=	all
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|@CFLAGS@||g ; \
-		 s|make -f|$$(MAKE) -f|g' ${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/migrate-n ${PREFIX}/bin

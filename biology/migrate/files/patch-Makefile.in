@@ -1,0 +1,40 @@
+--- Makefile.in.orig	Thu Jan 10 10:33:23 2008
++++ Makefile.in	Sun Jan 13 04:43:42 2008
+@@ -56,11 +56,11 @@
+ # machines or ./configure --enable-altivec on PowerPC architectures, this will then set the option 
+ # correctly
+ HARDWARECFLAGS    = @HARDWARECFLAGS@
+-COMMONFLAGS       = $(ARCH) -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT) $(HARDWARECFLAGS)
++COMMONFLAGS       = -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT) $(HARDWARECFLAGS)
+ #
+ # combine the common flags with the version number and subversion number
+ COMMONVFLAGS      =  $(COMMONFLAGS)  -DMIGRATESUBVERSION=\"\\\"$(MIGRATESUBVERSION)\\\"\" 
+-CFLAGS            = @CFLAGS@ $(COMMONVFLAGS) -DMIGRATEVERSION=\"\\\"$(MIGRATEVERSION)\\\"\" 
++CFLAGS            = $(COMMONVFLAGS) -DMIGRATEVERSION=\"\\\"$(MIGRATEVERSION)\\\"\" 
+ # IBM xlc compiler
+ # CC              = xlc
+ # CFLAGS_XLC      = -O3 -Q -qunroll -qalloca -qhot -qipa -qthreaded 
+@@ -151,8 +151,8 @@
+ 	@echo "----------------------------------------------------"
+ 	$(MAKE) all
+ 
+-all::   haru
+-	$(MAKE) $(NAME) "CFLAGS = $(CFLAGS)  $(PRETTYCFLAGS)" "LIBS = $(PDFLIB) $(LIBS)" "LDFLAGS = $(LDFLAGS) -fexceptions" 
++all::   
++	$(MAKE) $(NAME) "CFLAGS = $(CFLAGS)" "LIBS = $(LIBS)" "LDFLAGS = $(LDFLAGS) -fexceptions" 
+ 
+ debug::   
+ 	$(MAKE) $(NAME) "CFLAGS = $(DEBUGCFLAGS)"
+@@ -274,10 +274,10 @@
+ 	-/bin/chmod +x $(CONFIGUREEXEC) 	
+ 
+ haru::
+-	(cd ./haru ; make -f makefile.osx "CC=$(CC)" "CPP=$(CC)" "ARCH=$(ARCH)")
++	(cd ./haru ; $(MAKE) -f makefile.osx "CC=$(CC)" "CPP=$(CC)" "ARCH=")
+ 
+ haru-clean::
+-	(cd ./haru ; make -f makefile.osx clean)
++	(cd ./haru ; $(MAKE) -f makefile.osx clean)
+ 
+ distrib::
+ 	$(MAKE) srcdistrib;

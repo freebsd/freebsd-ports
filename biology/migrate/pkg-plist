@@ -9,20 +9,12 @@ bin/migrate-n
 %%PORTDOCS%%%%DOCSDIR%%/graphics/packet.gif
 %%PORTDOCS%%%%DOCSDIR%%/migrate.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bayesfile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/infile.benchmark
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/infile.ep
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/infile.msat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/infile.seq
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/outfile-bayes
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/outfile-bayes-saved
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/outfile-ml-saved
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/outfile.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parmfile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parmfile.benchmark
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parmfile.ep
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parmfile.msat
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parmfile.seq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parmfile.testbayes
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parmfile.testml
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
