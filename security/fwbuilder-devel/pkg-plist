@@ -5,36 +5,6 @@ bin/fwb_pf
 bin/fwbedit
 bin/fwblookup
 bin/fwbuilder
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/Credits
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/README.floppyfw
-%%DOCSDIR%%/README.iosacl
-%%DOCSDIR%%/README.ipf
-%%DOCSDIR%%/README.ipfw
-%%DOCSDIR%%/README.ipt
-%%DOCSDIR%%/README.pf
-%%DOCSDIR%%/README.policy_import
-%%DOCSDIR%%/README.routing
-%%DOCSDIR%%/FWBuilder-Routing-LICENSE.txt
-%%DOCSDIR%%/PatchAcceptancePolicy.txt
-%%DOCSDIR%%/ReleaseNotes_2.1.7.html
-%%DOCSDIR%%/ReleaseNotes_2.1.7.txt
-%%DOCSDIR%%/ReleaseNotes_2.1.8.html
-%%DOCSDIR%%/ReleaseNotes_2.1.8.txt
-%%DOCSDIR%%/ReleaseNotes_2.1.9.html
-%%DOCSDIR%%/ReleaseNotes_2.1.9.txt
-%%DOCSDIR%%/ReleaseNotes_2.1.10.html
-%%DOCSDIR%%/ReleaseNotes_2.1.10.txt
-%%DOCSDIR%%/ReleaseNotes_2.1.11.html
-%%DOCSDIR%%/ReleaseNotes_2.1.11.txt
-%%DOCSDIR%%/ReleaseNotes_2.1.12.html
-%%DOCSDIR%%/ReleaseNotes_2.1.12.txt
-%%DOCSDIR%%/ReleaseNotes_2.1.13.html
-%%DOCSDIR%%/ReleaseNotes_2.1.13.txt
-%%DOCSDIR%%/ReleaseNotes_2.1.14.html
-%%DOCSDIR%%/ReleaseNotes_2.1.14.txt
 share/fwbuilder%%BUILD_VERSION%%/objects_init.xml
 share/fwbuilder%%BUILD_VERSION%%/templates.xml
 share/fwbuilder%%BUILD_VERSION%%/resources.xml
@@ -60,9 +30,9 @@ share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_de.qm
 share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_es.qm
 share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_fr.qm
 share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_ja.qm
+share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_pt_BR.qm
 share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_ru.qm
 share/fwbuilder%%BUILD_VERSION%%/locale/fwbuilder_sv.qm
-@dirrm %%DOCSDIR%%
 @dirrm share/fwbuilder%%BUILD_VERSION%%/platform
 @dirrm share/fwbuilder%%BUILD_VERSION%%/os
 @dirrm share/fwbuilder%%BUILD_VERSION%%/locale

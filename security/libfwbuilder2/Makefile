@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfwbuilder
-PORTVERSION=	2.1.14
+PORTVERSION=	2.1.16
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fwbuilder
@@ -39,5 +39,9 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 post-install:
 	${RM} ${PREFIX}/lib/libfwbuilder.so.7.3
 	${RM} ${PREFIX}/lib/libfwcompiler.so.7.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 .include <bsd.port.mk>
