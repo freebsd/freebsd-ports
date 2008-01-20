@@ -35,9 +35,10 @@
 ##      WITH_THREADS:             Enable threads support !! USE IT WITH CARE !!
 ##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or
 ##                                ndbm (default)
-##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3,
-##                                db4, db41, db42, db43 or FreeBSD (1.85)
-##                                (default)
+##          WITH_BDB:             Define to select bdb via bsd.database.mk
+##                                desired version may be set with
+##                                WITH_BDB_VER or APACHE22_WITH_BDB_VER
+##          WITH_BDB_BASE:        Define to use bdb from base (1.85)
 ##      WITH_STATIC_SUPPORT:      Build statically linked support binaries
 ##      WITH_STATIC_APACHE:       Build a static version of httpd (implies 
 ##                                WITH_STATIC_MODULES)
