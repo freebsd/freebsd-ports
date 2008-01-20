@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	boto
-PORTVERSION=	0.9d
+PORTVERSION=	1.0a
 CATEGORIES=	devel python
 MASTER_SITES=	http://boto.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
