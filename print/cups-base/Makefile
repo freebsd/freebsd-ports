@@ -97,6 +97,13 @@ CONFIGURE_ARGS+=	--enable-libpaper
 LIB_DEPENDS+=		paper.2:${PORTSDIR}/print/libpaper
 .endif
 
+.if defined(WITH_DNSSD)
+CONFIGURE_ARGS+=	--enable-dnssd \
+			--with-dnssd-libs=${LOCALBASE}/lib/ \
+			--with-dnssd-includes=${LOCALBASE}/include/avahi-compat-libdns_sd/
+LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/avahi-libdns
+.endif
+
 MAN1EXT=	1
 MAN5EXT=	5
 MAN7EXT=	7
