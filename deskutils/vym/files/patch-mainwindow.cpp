@@ -1,22 +1,19 @@
---- mainwindow.cpp.orig	Mon Jul 11 21:55:32 2005
-+++ mainwindow.cpp	Sat Aug  6 17:20:39 2005
-@@ -57,6 +57,8 @@
- #include "settings.h"
- #include "options.h"
+--- mainwindow.cpp.orig	Tue Sep  4 15:53:33 2007
++++ mainwindow.cpp	Tue Jan  1 20:35:11 2008
+@@ -140,7 +140,7 @@
+ 			#if defined(Q_OS_MACX)
+ 				s=settings.value (p,"/usr/bin/open").toString();
+ 			#else
+-				s=settings.value (p,"mozilla");
++				s=settings.value (p,"mozilla").toString();
+ 			#endif
+ 		#endif
+ 		settings.setValue( p,s);
+@@ -3637,6 +3637,7 @@
+ 	searchList << "doc/tex";	// Easy testing working on vym.tex
+ 	searchList << "/usr/share/doc/vym";	// Debian
+ 	searchList << "/usr/share/doc/packages";// Knoppix
++	searchList << "/usr/local/share/doc/vym"; //FreeBSD
  
-+#include <unistd.h>
-+
- extern TextEditor *textEditor;
- extern Main *mainWindow;
- extern int statusbarTime;
-@@ -2322,7 +2324,9 @@
- 		docpath="./vym.app/Contents/vym.pdf";
- 	#else
- 		// default path in SUSE LINUX
--		docpath="/usr/share/doc/packages/vym/doc/vym.pdf";
-+//		docpath="/usr/share/doc/packages/vym/doc/vym.pdf";
-+		// default path in FreeBSD
-+		docpath="/usr/local/share/doc/vym/vym.pdf";
- 	#endif
- 
- 	if (!QFile (docpath).exists() )
+ 	bool found=false;
+ 	QFile docfile;

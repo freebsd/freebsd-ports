@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vym
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.10.0
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,38 +14,29 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	VYM  (View Your Mind) is a tool to generate and manipulate maps
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-
-USE_QT_VER=	3
-MAKE_ENV=	QTDIR="${QT_PREFIX}"
-
-.include <bsd.port.pre.mk>
-
-# Add this condititonal while people might still have old versions
-# of qmake, living in X11BASE, installed. This should go away eventually.
-
-.if exists(${X11BASE}/share/qt/mkspecs/freebsd-g++)
-QMAKESPEC=	${X11BASE}/share/qt/mkspecs/freebsd-g++
-.else
-QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-.endif
+USE_BZIP2=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build uic_build moc_build qt3support network xml
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
 		-spec ${QMAKESPEC} vym.pro
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKSRC}/flags ${DATADIR}
-	@${CP} -R ${WRKSRC}/icons ${DATADIR}
-	@${CP} -R ${WRKSRC}/scripts ${DATADIR}
-	@${CP} -R ${WRKSRC}/styles ${DATADIR}
+.for dir in exports flags icons lang macros scripts styles
+	@cd ${WRKSRC} && \
+	    ${FIND} ${dir} -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
+	    ${FIND} ${dir} -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
-	@${CP} -R ${WRKSRC}/demos/* ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/demos/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
