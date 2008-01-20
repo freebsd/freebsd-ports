@@ -1,8 +1,10 @@
 bin/herrie
 etc/herrie.conf.sample
 %%NLS%%share/locale/ca/LC_MESSAGES/herrie.mo
+%%NLS%%share/locale/da/LC_MESSAGES/herrie.mo
 %%NLS%%share/locale/de/LC_MESSAGES/herrie.mo
 %%NLS%%share/locale/es/LC_MESSAGES/herrie.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/herrie.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/herrie.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/herrie.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/herrie.mo
