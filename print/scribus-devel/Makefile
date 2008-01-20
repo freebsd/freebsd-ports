@@ -1,14 +1,13 @@
-# ex:ts=8
 # Ports collection makefile for:	scribus
 # Date created:			Mar 15, 2002
 # Whom:				ijliao
 #
-# $Carpetsmoker: ports/print/scribus/Makefile,v 1.1 2007/07/22 00:53:09 carpetsmoker Exp $
+# $Carpetsmoker: ports/print/scribus/Makefile,v 1.2 2007/09/24 08:06:52 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.3.3.8
+PORTVERSION=	1.3.3.11
 CATEGORIES=	print editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -37,7 +36,9 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB+=	SCRIBUS_VERSION=${PORTVERSION}
 MAN1=		scribus.1
-MANLANG=	"" pl
+MANCOMPRESSED=	no
+MANLANG=	"" pl pl_PL.UTF-8 pl_PL.ISO8859-2 de de_DE.UTF-8 \
+		de_DE.ISO8859-1 de_DE.ISO8859-15
 
 .include <bsd.port.pre.mk>
 
@@ -54,7 +55,7 @@ post-patch:
 		s|python2_3|${PYTHON_VERSION:S/./_/}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/\/share\/pixmaps\//s|^|#|g' \
 		${WRKSRC}/scribus/icons/Makefile.in
-	 @${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	    ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
