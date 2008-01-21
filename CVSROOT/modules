@@ -8102,7 +8102,6 @@ mysqlphp2postgres	ports/www/mysqlphp2postgres
 mysqlreport	ports/databases/mysqlreport
 mysqlsla	ports/databases/mysqlsla
 mysqltcl	ports/databases/mysqltcl
-mysqltoolkit	ports/databases/mysqltoolkit
 mythtv		ports/multimedia/mythtv
 mytop		ports/databases/mytop
 mywiki		ports/deskutils/mywiki

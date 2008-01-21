@@ -167,7 +167,6 @@
     SUBDIR += mysqlreport
     SUBDIR += mysqlsla
     SUBDIR += mysqltcl
-    SUBDIR += mysqltoolkit
     SUBDIR += mytop
     SUBDIR += mywwwatcher
     SUBDIR += namazu2

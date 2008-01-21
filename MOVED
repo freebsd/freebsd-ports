@@ -3356,3 +3356,4 @@ audio/akode-plugins-polypaudio||2008-01-01|Polypaudio is obsolete in favor of pu
 audio/teknap|net-p2p/teknap|2008-01-09|moved to net-p2p category
 net/freeradius-devel|net/freeradius2|2008-01-18|Development version no longer necessary
 devel/p5-gearmand|devel/p5-Gearman-Server|2008-01-20|Replaced by p5-Gearman-Server
+database/mysqltoolkit|database/maatkit|2008-01-21|project was renamed
