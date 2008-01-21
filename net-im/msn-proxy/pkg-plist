@@ -1,0 +1,14 @@
+etc/msn-proxy/mysql/conf
+etc/msn-proxy/mysql/tables/sb
+etc/msn-proxy/mysql/tables/log
+etc/msn-proxy/mysql/tables/users
+etc/msn-proxy/mysql/tables/contacts
+etc/msn-proxy/mysql/tables/defaults
+etc/msn-proxy/mysql/tables/contact_groups
+etc/msn-proxy/msn-proxy.conf
+bin/msn-proxy
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry etc/msn-proxy/mysql/tables
+@dirrmtry etc/msn-proxy/mysql
+@dirrmtry etc/msn-proxy
