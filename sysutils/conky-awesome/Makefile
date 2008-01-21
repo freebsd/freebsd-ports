@@ -64,6 +64,13 @@ CONFIGURE_ARGS+=	--enable-mpd
 CONFIGURE_ARGS+=	--disable-mpd
 .endif
 
+.if defined(WITH_XMMS2)
+LIB_DEPENDS+=		xmmsclient.2:${PORTSDIR}/audio/xmms2
+CONFIGURE_ARGS+=	--enable-xmms2
+.else
+CONFIGURE_ARGS+=	--disable-xmms2
+.endif
+
 .if defined(WITHOUT_DOUBLE_BUFFER)
 CONFIGURE_ARGS+=	--disable-double-buffer
 .endif
@@ -80,6 +87,7 @@ pre-everything::
 	@${ECHO_MSG} "WITH_XFT=yes to enable XFT support"
 	@${ECHO_MSG} "WITHOUT_OWN_WINDOW=yes to disable own window support"
 	@${ECHO_MSG} "WITH_MPD=yes to enable MPD support"
+	@${ECHO_MSG} "WITH_XMMS2=yes to enable XMMS2 support"
 	@${ECHO_MSG} "WITHOUT_DOUBLE_BUFFER=yes to disable double buffer support"
 	@${ECHO_MSG} " "
 
