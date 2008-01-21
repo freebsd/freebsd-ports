@@ -1,3 +1,20 @@
+*****************************************************************************
+
 The MPEG2 format and all software that uses it is subject to patent
 restrictions. Please see http://www.mpegla.com/m2/m2-agreement.cfm
 for more information.
+
+********************************* IMPORTANT *********************************
+
+Installing this port does not enable MPEG2 functionality in math/vtk5.
+If math/vtk5 was built without the VTKMPEG2 option, it must be rebuilt
+and reinstalled with VTKMPEG2 turned on in order to enable the MPEG2
+functionality:
+
+cd /usr/ports/math/vtk5
+make deinstall
+make clean
+make config
+make reinstall
+
+*****************************************************************************
