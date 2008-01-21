@@ -1,0 +1,6 @@
+Joins up multiple wav file sound clips of letters/numbers being spoken,
+optionally adding distortion and echo. This could be use to compliment
+an image-based CAPTCHA to enable people who are unable to read the security
+image hear it read out instead.
+
+WWW: http://pear.php.net/package/Text_Spell_Audio/

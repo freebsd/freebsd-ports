@@ -486,6 +486,7 @@
     SUBDIR += pavucontrol
     SUBDIR += pavumeter
     SUBDIR += pd
+    SUBDIR += pear-Text_Spell_Audio
     SUBDIR += pecl-id3
     SUBDIR += penguinsap
     SUBDIR += phatbeat
