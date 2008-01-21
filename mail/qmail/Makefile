@@ -250,7 +250,6 @@ PKGMESSAGE?=	${WRKDIR}/pkg-message-${PKGMESSAGE_SUFFIX}
 SUB_FILES+=	pkg-message
 .endif
 
-CSH?=		/bin/csh
 WRKDIR_doc=	${WRKDIR}/doc
 
 PORTDOCS=	*
@@ -666,7 +665,7 @@ post-patch:
 do-configure:
 	@${SED} -e 's,%%RCDLINK%%,${RCDLINK},g; s,%%LOCALBASE%%,${LOCALBASE},g' \
 		${FILESDIR}/pkg-install.in > ${WRKDIR}/pkg-install
-	@${SETENV} PKG_PREFIX="${PREFIX}" ${CSH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-qmail
 .if defined(WITH_BIG_CONCURRENCY_PATCH) \
@@ -730,7 +729,7 @@ do-install:
 .for script in ${SCRIPTS}
 	${INSTALL_SCRIPT} ${WRKDIR}/scripts/${script} ${PREFIX}/scripts
 .endfor
-	@${SETENV} PKG_PREFIX="${PREFIX}" ${CSH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}

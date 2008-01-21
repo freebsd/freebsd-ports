@@ -1,114 +1,84 @@
-#!/bin/csh -f
+#!/bin/sh
 #
 # $FreeBSD$
 #
 
-# Author : Marcos Tischer Vallim
-# E-Mail : tischer@gmail.com
-# Date   : Tue Mar 22 00:40:45 BRT 2005
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
-set path = ( /bin /sbin /usr/bin /usr/sbin )
+PREFIX=${PKG_PREFIX:-%%PREFIX%%}
+UID=`id -u ${USER}`
 
-if ($uid != 0) then
-	echo "It is necessary to add missing qmail users/groups at";
-	echo "this stage.  Please either add them manually or retry";
-	echo "as root.";
-	exit 1;
-endif
+addGroup() {
+	NGROUP=$1
+	NGID=$2
 
-if (! -x `which pw`) then
-	echo "This system looks like a pre-2.2 version of FreeBSD.  We see that it";
-	echo "is missing the "pw" utility.  We need this utility.  Please get and";
-	echo "install it, and try again.  You can get the source from:";
-	echo "";
-	echo "  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz";
-	echo "";
-	echo "No pw";
-	exit 1;
-endif
+	if ! pw groupshow ${NGROUP} >/dev/null 2>&1; then
+		if ! pw groupadd ${NGROUP} -g ${NGID} >/dev/null 2>&1; then
+			echo "Failed to add group '${NGROUP}' as gid '${NGID}'"
+			exit 1
+		fi
+	fi
 
-switch ($argv[2])
+	CHECKGID=`pw groupshow ${NGROUP} 2>/dev/null | cut -d: -f3`
+	if [ "${CHECKGID}" != "${NGID}" ]; then
+		echo "Group '$NGROUP' should have gid '$NGID'"
+		exit 1
+	fi
+}
 
-case "PRE-INSTALL":
-	set groups  = (qmail qnofiles);
-	set gids    = (82 81);
-	set users   = (alias qmaild qmaill qmailp qmailq qmailr qmails);
-	set users_g = (qnofiles qnofiles qnofiles qnofiles qmail qmail qmail);
-	set uids    = (81 82 83 84 85 86 87);
+addUser() {
+	NUSER=$1
+	NUID=$2
+	NGROUP=$3
+	NHOME=${4:-${PREFIX}}
 
+	if ! pw usershow ${NUSER} >/dev/null 2>&1; then
+		if ! pw useradd ${NUSER} -g ${NGROUP} -d ${NHOME} -s /nonexistent -u ${NUID} >/dev/null 2>&1; then
+			echo "Failed to add user '${NUSER}' as uid '${NUID}'"
+			exit 1
+		fi
+	fi
 
-	set k = 1;
-	foreach group ($groups)
-		pw groupshow $group >& /dev/null;
-	
-		if ($status) then
-			pw groupadd $group -g $gids[$k];
-	
-			if ($status) then
-				echo "Failed to add group '$group' as gid '$gids[$k]'";
-				exit 1;
-			endif
-		endif
-	
-		set chkgid = (`pw groupshow $group | sed -e "s,:, ,g"`); 
-		if ($chkgid[3] != $gids[$k]) then
-			echo "Group '$group' should have gid '$gids[$k]'";
-			exit 1;
-		endif
-	
-		@ k++;
-	end
-	
-	set k = 1;
-	foreach user ($users)
-		pw usershow $user >& /dev/null;
-	
-		if ($status) then
-			if ($user == "alias") then
-				set home = ${PKG_PREFIX}/alias;
-			else
-				set home = ${PKG_PREFIX};
-			endif
-	
-			pw useradd $user -g $users_g[$k] -d $home -s /nonexistent -u $uids[$k];
-	
-			if ($status) then
-				echo "Failed to add user '$user' as uid '$uids[$k]'";
-				exit 1;
-			endif
-		endif
-	
-		set chkuid = (`pw usershow $user | sed -e "s,:, ,g"`); 
-		if ($chkuid[3] != $uids[$k]) then
-			echo "User '$user' should have uid '$uids[$k]'";
-			exit 1;
-		endif
-	
-		@ k++;
-	end
+	CHECKUID=`pw usershow ${NUSER} 2>/dev/null | cut -d: -f3`
+	if [ "${CHECKUID}" != "${NUID}" ]; then
+		echo "User '$NUSER' should have uid '$NUID'"
+		exit 1
+	fi
+}
 
-	breaksw;
+if [ "$UID" != "0" ]; then
+	echo "It is necessary to add missing qmail users/groups at"
+	echo "this stage.  Please either add them manually or retry"
+	echo "as root."
+	exit 1
+fi
 
-case "POST-INSTALL":
-	${PKG_PREFIX}/configure/install x;
+if [ "$2" = "PRE-INSTALL" ]; then
+	addGroup qmail    82
+	addGroup qnofiles 81
 
-	if ( ! `filetest -e ${PKG_PREFIX}/control/me` ) then
-		cd ${PKG_PREFIX}/configure && ./config;
-	endif
+	addUser alias  81 qnofiles ${PREFIX}/alias
+	addUser qmaild 82 qnofiles
+	addUser qmaill 83 qnofiles
+	addUser qmailp 84 qnofiles
+	addUser qmailq 85 qmail
+	addUser qmailr 86 qmail
+	addUser qmails 87 qmail
 
-	%%RCDLINK%%ln -s ${PKG_PREFIX}/rc %%LOCALBASE%%/etc/rc.d/qmail.sh;
+elif [ "$2" = "POST-INSTALL" ]; then
+	${PREFIX}/configure/install x
 
-	touch ${PKG_PREFIX}/alias/.qmail-{postmaster,root,mailer-daemon};
+	[ -e ${PREFIX}/control/me ] || (cd ${PREFIX}/configure && ./config)
 
-	if ($status) then
-		echo "Failed to create files :";
-		echo "  ${PKG_PREFIX}/alias/.qmail-postmaster";
-		echo "  ${PKG_PREFIX}/alias/.qmail-root";
-		echo "  ${PKG_PREFIX}/alias/.qmail-mailer-daemon";
-		exit 1;
-	endif
+	%%RCDLINK%%ln -s ${PREFIX}/rc %%LOCALBASE%%/etc/rc.d/qmail.sh
 
-	breaksw;
-endsw
+	if ! touch ${PREFIX}/alias/.qmail-{postmaster,root,mailer-daemon}; then
+		echo "Failed to create files :"
+		echo "  ${PREFIX}/alias/.qmail-postmaster"
+		echo "  ${PREFIX}/alias/.qmail-root"
+		echo "  ${PREFIX}/alias/.qmail-mailer-daemon"
+		exit 1
+	fi
+fi
 
-exit 0;
+exit 0
