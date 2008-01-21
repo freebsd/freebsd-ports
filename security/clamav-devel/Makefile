@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20071212
+PORTVERSION=	20080121
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -132,10 +132,10 @@ RUN_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 RUN_DEPENDS+=	unzoo:${PORTSDIR}/archivers/unzoo
 .endif
 .if defined(WITH_UNRAR)
-PATCH_SITES+=	http://www.clamav.net/patches/
-PATCHFILES+=	unrar.diff
-PATCH_DIST_STRIP+=	-p1
-CONFIGURE_ARGS+=	--enable-unrar
+PLIST_SUB+=	UNRAR=""
+.else
+PLIST_SUB+=	UNRAR="@comment "
+CONFIGURE_ARGS+=	--disable-unrar
 .endif
 
 .if defined(WITH_MILTER)
@@ -170,10 +170,8 @@ post-patch:
 	@${REINPLACE_CMD} ${SED_CONF} \
 		${WRKSRC}/etc/clamd.conf \
 		${WRKSRC}/etc/freshclam.conf
-.if defined(WITH_UNRAR)
 	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
 		${WRKSRC}/libclamunrar/unrar.c
-.endif
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
