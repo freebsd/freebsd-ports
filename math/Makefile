@@ -276,6 +276,7 @@
     SUBDIR += p5-Statistics-Lite
     SUBDIR += p5-Statistics-OLS
     SUBDIR += p5-Statistics-Regression
+    SUBDIR += p5-Statistics-TTest
     SUBDIR += p5-Task-Math-Symbolic
     SUBDIR += p5-bignum
     SUBDIR += pari
