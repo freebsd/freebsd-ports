@@ -1,8 +1,27 @@
 bin/contacts
 share/applications/contacts.desktop
-%%DATADIR%%/contacts.glade
+share/icons/hicolor/16x16/apps/contacts.png
+share/icons/hicolor/22x22/apps/contacts.png
+share/icons/hicolor/24x24/apps/contacts.png
+share/icons/hicolor/26x26/apps/contacts.png
+share/icons/hicolor/32x32/apps/contacts.png
+share/icons/hicolor/48x48/apps/contacts.png
+share/icons/hicolor/scalable/apps/contacts.svg
+share/locale/bg/LC_MESSAGES/Contacts.mo
+share/locale/ca/LC_MESSAGES/Contacts.mo
+share/locale/da/LC_MESSAGES/Contacts.mo
+share/locale/de/LC_MESSAGES/Contacts.mo
+share/locale/es/LC_MESSAGES/Contacts.mo
 share/locale/et/LC_MESSAGES/Contacts.mo
+share/locale/fi/LC_MESSAGES/Contacts.mo
 share/locale/fr/LC_MESSAGES/Contacts.mo
-share/pixmaps/oh-contacts.png
+share/locale/it/LC_MESSAGES/Contacts.mo
+share/locale/nb/LC_MESSAGES/Contacts.mo
+share/locale/nl/LC_MESSAGES/Contacts.mo
+share/locale/pl/LC_MESSAGES/Contacts.mo
+share/locale/pt_BR/LC_MESSAGES/Contacts.mo
+share/locale/ru/LC_MESSAGES/Contacts.mo
+share/locale/sv/LC_MESSAGES/Contacts.mo
 @dirrmtry share/applications
-@dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/26x26/apps
+@dirrmtry share/icons/hicolor/26x26
