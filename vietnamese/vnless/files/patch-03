@@ -1,6 +1,14 @@
 --- defines.h.orig	Mon Feb 24 12:45:37 1992
 +++ defines.h	Wed Dec  4 02:33:51 1996
-@@ -47,7 +47,7 @@
+@@ -40,14 +40,14 @@
+  * If TERMIO is 0 your system must have /usr/include/sgtty.h.
+  * This is normally the case for BSD.
+  */
+-/*#define	TERMIO		1*/
++#define	TERMIO		1
+ 
+ /*
+  * SIGSETMASK is 1 if your system has the sigsetmask() call.
   * This is normally the case only for BSD 4.2,
   * not for BSD 4.1 or System 5.
   */
