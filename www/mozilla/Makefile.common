@@ -249,6 +249,11 @@ LIB_BZ2=	-lbz2_p
 LIB_BZ2=	-lbz2
 .endif
 
+.if ${ARCH}=="sparc64"
+# Work around miscompilation/mislinkage of the sCanonicalVTable hacks.
+MOZ_OPTIONS+=	--disable-v1-string-abi
+.endif
+
 post-patch: gecko-post-patch gecko-moz-pis-patch
 
 gecko-post-patch:
