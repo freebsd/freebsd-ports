@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	logilab-common
-PORTVERSION=	0.21.2
+PORTVERSION=	0.26.1
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.fr/pub/common/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common low-level libraries shared among logilab projects
 
 USE_PYTHON=	2.4+
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 
 post-extract:
 	${TOUCH} ${WRKSRC}/test/__init__.py
