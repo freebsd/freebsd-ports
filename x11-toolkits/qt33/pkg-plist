@@ -2382,7 +2382,7 @@ translations/qt_zh-tw.qm
 @dirrm translations
 @dirrm share/qt/templates
 @dirrm share/qt/phrasebooks
-@dirrm share/qt
+@dirrmtry share/qt
 @dirrm share/doc/qt/html
 @dirrm share/doc/qt
 @dirrm lib/plugins/designer
