@@ -1,16 +1,16 @@
 
 %%PKGNAME%% has been installed into:
 
-    %%PREFIX%%/%%MYADMDIR%%
+    %%WWWDIR%%
 
 Please edit config.inc.php to suit your needs.
 
 To make phpMyAdmin available through your web site, I suggest
 that you add something like the following to httpd.conf:
 
-    Alias /phpmyadmin/ "%%PREFIX%%/%%MYADMDIR%%/"
+    Alias /phpmyadmin/ "%%WWWDIR%%/"
 
-    <Directory "%%PREFIX%%/%%MYADMDIR%%/">
+    <Directory "%%WWWDIR%%/">
 	Options none
 	AllowOverride Limit
 	

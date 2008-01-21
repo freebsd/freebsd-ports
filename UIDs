@@ -100,6 +100,7 @@ mrtg:*:279:279:MRTG daemon:/nonexistent:/usr/sbin/nologin
 prelude:*:281:281:Prelude user:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 dkfilter:*:325:325:DK Filter Owner:/nonexistent:/usr/sbin/nologin
+_pma:*:336:80:phpMyAdmin Owner:/nonexistent:/sbin/nologin
 wildfire:*:340:340:Wildfire Daemon:/nonexistent:/usr/sbin/nologin
 stunnel:*:341:341:Stunnel Daemon:/nonexistent:/usr/sbin/nologin
 _iodined:*:353:353:Iodine Daemon:/nonexistent:/usr/sbin/nologin
