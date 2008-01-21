@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	cook
-PORTVERSION=	2.28
+PORTVERSION=	2.30
 CATEGORIES=	devel
-MASTER_SITES=	http://gd.tuwien.ac.at/softeng/Aegis/cook/ \
-		http://miller.emu.id.au/pmiller/software/cook/ \
+MASTER_SITES=	http://miller.emu.id.au/pmiller/software/cook/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=jasone
 
