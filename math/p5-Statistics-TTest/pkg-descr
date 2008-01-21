@@ -1,0 +1,8 @@
+This is the Statistical T-Test module to compare 2 independentsamples.
+It takes 2 array of point measures, compute the confidence intervals
+using the PointEstimation module (which is also included in this package)
+and use the T-statistic to test the null hypothesis. If the null hypothesis
+is rejected, the difference will be given as the lower_clm and upper_clm of
+the TTest object.
+
+WWW:	http://search.cpan.org/dist/Statistics-TTest/
