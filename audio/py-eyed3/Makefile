@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	eyed3
-PORTVERSION=	0.6.11
+PORTVERSION=	0.6.14
 CATEGORIES=	audio python
 MASTER_SITES=	http://eyed3.nicfit.net/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	eyeD3-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@fsck.ch
 COMMENT=	Python module for processing ID3 tags
 
 USE_PYTHON=	2.4-
