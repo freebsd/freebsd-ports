@@ -77,6 +77,7 @@
     SUBDIR += mcabber
     SUBDIR += meanwhile
     SUBDIR += mercury
+    SUBDIR += msn-proxy
     SUBDIR += mu-conference
     SUBDIR += naim
     SUBDIR += newsbot
