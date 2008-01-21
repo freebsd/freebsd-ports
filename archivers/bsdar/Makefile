@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ar
-PORTVERSION=	20080112
+PORTVERSION=	20080117
 CATEGORIES=	archivers
 MASTER_SITES=	http://web.student.chalmers.se/~kaiw/patch/
 PKGNAMEPREFIX=	bsd-
