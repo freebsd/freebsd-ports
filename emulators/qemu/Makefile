@@ -31,7 +31,6 @@ ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS=	qemu-devel-[0-9]*
 
 OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
-		HACKS_CIRRUS "Large display speedup (buggy!)" Off \
 		RTL8139_TIMER "allow use of re(4) nic with FreeBSD guests" Off \
 		SAMBA "samba dependency (for -smb)" Off \
 		SDL "SDL/X dependency (graphical output)" On \
@@ -89,9 +88,6 @@ pre-patch:
 	done
 
 post-patch:
-.if defined(WITH_HACKS_CIRRUS) || defined (WITH_HACKS)
-	@cd ${WRKSRC} ; ${PATCH} --quiet < ${DISTDIR}/${DIST_SUBDIR}/patch3_cirrus
-.endif
 .if defined(WITH_RTL8139_TIMER)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/rtl8139-re-patch
 .endif
