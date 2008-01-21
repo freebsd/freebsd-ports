@@ -45,8 +45,8 @@ $FreeBSD$
  #MAKEDEP = makedepend -f- -s'\# CUT' -- -Y $(CFLAGS) $(EXTRA_CFLAGS) $(INCLUDES) $(EXTRA_INCLUDES) --
  
  # piece together variables
---- viewer_new.c        Mon Aug  7 23:29:16 2006
-+++ viewer.c    Mon Aug  7 23:34:38 2006
+--- viewer.c.orig	2000-04-16 22:40:03.000000000 +0200
++++ viewer.c	2008-01-11 18:08:53.000000000 +0100
 @@ -34,7 +34,7 @@
    if (!file_to_load)
      return;
@@ -83,3 +83,21 @@ $FreeBSD$
      }
    else
      realfile = g_strdup (file);
+@@ -717,7 +717,7 @@
+   if (G_NODE_IS_LEAF (node))
+     {
+       /* It's an entry */
+-      fprintf (fp, "\"%s\"\t%s\texec\t\"%s\"\n",
++      fprintf (fp, "\"%s\"\t\"%s\"\texec\t\"%s\"\n",
+ 	       dat->desc[0] == '\0' ? "NULL" : dat->desc,
+ 	       dat->icon[0] == '\0' ? "NULL" : dat->icon,
+ 	       dat->params[0] == '\0' ? "" : dat->params);
+@@ -725,7 +725,7 @@
+   else
+     {
+       /* It's a submenu */
+-      fprintf (fp, "\"%s\"\t%s\tmenu\t\"%s\"\n",
++      fprintf (fp, "\"%s\"\t\"%s\"\tmenu\t\"%s\"\n",
+ 	       dat->desc[0] == '\0' ? "NULL" : dat->desc,
+ 	       dat->icon[0] == '\0' ? "NULL" : dat->icon,
+ 	       dat->params[0] == '\0' ? "" : dat->params);
