@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	pyicq
-PORTVERSION=	0.8a
-PORTREVISION=	2
+PORTVERSION=	0.8b
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.blathersource.org/download.php/pyicq-t/
+MASTER_SITES=	http://pyicqt.googlecode.com/files/
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
 DISTNAME=	${PORTNAME}-t-${PORTVERSION}
@@ -96,7 +95,6 @@ post-patch:
 		${WRKSRC}/src/main.py
 	@${REINPLACE_CMD} -i "" 's|^#!.*$$|#!${LOCAL_PYTHON}|' \
 		${WRKSRC}/PyICQt.py
-	@${RM} -f ${WRKSRC}/src/main.py.orig ${WRKSRC}/src/legacy/icqt.py.orig
 
 do-install:
 	@${MKDIR} ${INST_DIR}/src ${INST_DIR}/data
