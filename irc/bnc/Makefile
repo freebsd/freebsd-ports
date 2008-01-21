@@ -8,23 +8,32 @@
 PORTNAME=	bnc
 PORTVERSION=	2.9.4
 CATEGORIES=	irc
-MASTER_SITES=	http://www.gotbnc.com/files/
+MASTER_SITES=	http://home.risingnet.net/download/ \
+		http://bnc.acmeshells.com/ \
+		http://www.sourcefiles.org/System/Servers/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	douglas@t2web.com.br
 COMMENT=	A simple IRC relay proxy with support for virtual hosting
 
 GNU_CONFIGURE=	YES
 
+DOCS=		COPYING Changelog README example.conf
+BINS=		bnc mkpasswd
+SCRIPTS=	bncchk bncsetup
+
+.include <bsd.port.pre.mk>
+
 post-patch:
-	${SED} 's,@PREFIX@,${PREFIX},g' ${WRKSRC}/bncsetup > ${WRKSRC}/bncsetup.new
-	${MV} ${WRKSRC}/bncsetup.new ${WRKSRC}/bncsetup
+	${SED} -e 's,@PREFIX@,${PREFIX},g' ${WRKSRC}/bncsetup
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bnc ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bncchk ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bncsetup ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/mkpasswd ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/example.conf ${PREFIX}/etc/bnc.conf.sample
+	@${INSTALL_PROGRAM} ${BINS:S,^,${WRKSRC}/,} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/,} ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/example.conf ${PREFIX}/etc/bnc.conf.sample
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
