@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		libev
-PORTVERSION=	1.86
+PORTVERSION=	2.01
 CATEGORIES=		devel
 MASTER_SITES=	http://dist.schmorp.de/libev/Attic/
 

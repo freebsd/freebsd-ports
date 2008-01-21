@@ -1,19 +1,11 @@
---- Makefile.in.orig	2007-12-18 04:49:11.000000000 +0300
-+++ Makefile.in	2007-12-18 17:18:57.194279648 +0300
-@@ -142,14 +142,14 @@
- VERSION_INFO = 1:0
- 
- EXTRA_DIST = LICENSE libev.m4 autogen.sh \
--	     ev.h ev_vars.h ev_wrap.h event_compat.h ev++.h event.h \
-+	     ev.h ev_vars.h ev_wrap.h event_compat.h ev++.h \
- 	     ev_epoll.c ev_select.c ev_poll.c ev_kqueue.c ev_port.c ev_win32.c \
- 	     ev.3 ev.pod
- 
+--- Makefile.in.orig	2007-12-25 10:11:59.000000000 +0300
++++ Makefile.in	2008-01-21 14:39:26.649768099 +0300
+@@ -149,7 +149,7 @@
  
  man_MANS = ev.3
  
--include_HEADERS = ev.h event_compat.h ev++.h event.h
-+include_HEADERS = ev.h event_compat.h ev++.h 
+-include_HEADERS = ev.h ev++.h event.h
++include_HEADERS = ev.h ev++.h 
  
  lib_LTLIBRARIES = libev.la
  

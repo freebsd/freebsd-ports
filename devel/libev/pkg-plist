@@ -1,7 +1,6 @@
 lib/libev.a
 lib/libev.la
 lib/libev.so
-lib/libev.so.1
+lib/libev.so.2
 include/ev.h
 include/ev++.h
-include/event_compat.h
