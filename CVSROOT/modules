@@ -7958,6 +7958,7 @@ mshell		ports/misc/mshell
 msieve		ports/math/msieve
 msmtp		ports/mail/msmtp
 msmtpqueue	ports/mail/msmtpqueue
+msn-proxy	ports/net-im/msn-proxy
 msntp		ports/net/msntp
 msort		ports/textproc/msort
 msp430-binutils		ports/devel/msp430-binutils
