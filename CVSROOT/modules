@@ -13694,6 +13694,7 @@ pyrad		ports/net/pyrad
 pyrenamer	ports/sysutils/pyrenamer
 pyrex		ports/devel/pyrex
 pyro		ports/graphics/pyro
+pysieved	ports/mail/pysieved
 pyslsk		ports/net-p2p/pyslsk
 pysol		ports/games/pysol
 pysol-cardsets	ports/games/pysol-cardsets
