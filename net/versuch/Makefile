@@ -19,7 +19,7 @@ COMMENT=	H323 voice&video proxy
 
 LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib \
 		h323_r.1:${PORTSDIR}/net/openh323 \
-		pcre++.0:${PORTSDIR}/devel/pcre++
+		pcre\\+\\+.0:${PORTSDIR}/devel/pcre++
 
 WRKSRC=		${WRKDIR}/versuch
 
@@ -27,10 +27,4 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
