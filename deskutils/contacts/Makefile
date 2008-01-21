@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	contacts
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://projects.o-hand.com/sources/contacts/ \
-		http://smyru.petronet.pl/freebsd/
+MASTER_SITES=	http://pimlico-project.org/sources/${PORTNAME}/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	smyru@heron.pl
@@ -22,6 +20,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 gnomehier evolutiondataserver
 USE_AUTOTOOLS=	libtool:15
 GCONF_SCHEMAS=	contacts.schemas
+MAN1=		${PORTNAME}.1
 # CFLAGS+=	-g
 
 .include <bsd.port.mk>
