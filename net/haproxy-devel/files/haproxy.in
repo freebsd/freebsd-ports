@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: 
+# $FreeBSD$
 #
 
 # PROVIDE: haproxy
@@ -46,5 +46,7 @@ haproxy_gracefulstop() {
 	kill -${sig_gracefulstop} ${rc_pid}
 	}
 
-extra_commands="gracefulstop"
+reload_cmd="$command $haproxy_flags -sf $(cat $pidfile)"
+
+extra_commands="reload gracefulstop"
 run_rc_command "$1"

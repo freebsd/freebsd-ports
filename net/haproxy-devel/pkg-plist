@@ -17,6 +17,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/sess_par_sec.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/connection-scale.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/connect-status.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/ebtree
 %%PORTDOCS%%%%DOCSDIR%%/internals/header-parser-speed.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/header-tree.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-docs.txt

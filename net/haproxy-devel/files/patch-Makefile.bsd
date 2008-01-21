@@ -1,12 +1,12 @@
---- Makefile.bsd.orig	Mon Apr 16 00:33:37 2007
-+++ Makefile.bsd	Fri May  4 04:05:12 2007
+--- ./Makefile.bsd.orig	2007-12-05 16:25:44.000000000 -0800
++++ ./Makefile.bsd	2008-01-17 11:26:47.695860700 -0800
 @@ -1,4 +1,4 @@
 -# This makefile is dedicated to OpenBSD (and possibly other BSDs)
 +# This makefile is dedicated to FreeBSD (and possibly other BSDs)
  # You should use it this way :
  #   make TARGET=os CPU=cpu
- 
-@@ -6,31 +6,31 @@
+ #
+@@ -9,31 +9,31 @@
  
  # Select target OS. TARGET must match a system for which COPTS and LIBS are
  # correctly defined below.
@@ -48,7 +48,7 @@
  
  # CPU dependant optimizations
  COPTS.generic = -O2
-@@ -52,7 +52,7 @@
+@@ -55,7 +55,7 @@
  
  # you can enable debug arguments with "DEBUG=-g" or disable them with "DEBUG="
  #DEBUG = -g -DDEBUG_MEMORY -DDEBUG_FULL
@@ -57,7 +57,7 @@
  
  # if small memory footprint is required, you can reduce the buffer size. There
  # are 2 buffers per concurrent session, so 16 kB buffers will eat 32 MB memory
-@@ -60,7 +60,7 @@
+@@ -63,7 +63,7 @@
  # will avoid the additionnal paramters to overflow a page. 8030 bytes is
  # exactly 5.5 TCP segments of 1460 bytes.
  #SMALL_OPTS =
@@ -66,32 +66,31 @@
  
  # redefine this if you want to add some special PATH to include/libs
  ADDINC =
-@@ -69,7 +69,7 @@
+@@ -75,7 +75,7 @@
  # set some defines when needed.
  # Known ones are -DENABLE_POLL
  # - use -DTPROXY to compile with transparent proxy support.
 -DEFINE = -DTPROXY
 +#DEFINE = -DTPROXY
  
- # global options
- TARGET_OPTS=$(COPTS.$(TARGET))
-@@ -79,7 +79,7 @@
- COPTS=-Iinclude $(ADDINC) $(CPU_OPTS) $(TARGET_OPTS) $(REGEX_OPTS) $(SMALL_OPTS) $(DEFINE)
- LIBS=$(LIBS.$(TARGET)) $(LIBS.$(REGEX)) $(ADDLIB)
- 
--CFLAGS = -Wall $(COPTS) $(DEBUG)
-+CFLAGS += -Wall $(COPTS)
+ # May be changed to patch PAGE_SIZE on every platform when using dlmalloc
+ DLMALLOC_THRES=4096
+@@ -95,7 +95,7 @@
+ COPTS   = -Iinclude $(ADDINC) $(CPU_OPTS) $(TARGET_OPTS) $(REGEX_OPTS) \
+           $(SMALL_OPTS) $(VER_OPTS) $(DEFINE)
+ LIBS    = $(LIBS.$(TARGET)) $(LIBS.$(REGEX)) $(ADDLIB)
+-CFLAGS  = -Wall $(COPTS) $(DEBUG)
++CFLAGS  = -Wall $(COPTS)
  LDFLAGS = -g
  
- OBJS = src/haproxy.o src/list.o src/chtbl.o src/hashpjw.o src/base64.o \
-@@ -93,7 +93,9 @@
+ OBJS = src/haproxy.o src/sessionhash.o src/base64.o src/protocols.o \
+@@ -112,7 +112,8 @@
  all: haproxy
  
- haproxy: $(OBJS)
+ haproxy: $(OBJS) $(OPT_OBJS)
 -	$(LD) $(LDFLAGS) -o $@ $> $(LIBS)
 +#	$(LD) $(LDFLAGS) -o $@ $> $(LIBS)
-+	 $(CC) $(CFLAGS) $(LDFLAGS) -o $@ $> $(LIBS)
-+
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $> $(LIBS)
  
  .SUFFIXES: .c.o
  
