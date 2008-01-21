@@ -1,0 +1,168 @@
+@comment $FreeBSD$
+bin/nsm
+%%RUBY_SITELIBDIR%%/nsm-console/commands.rb
+%%RUBY_SITELIBDIR%%/nsm-console/encodelib.rb
+%%RUBY_SITELIBDIR%%/nsm-console/history.rb
+%%RUBY_SITELIBDIR%%/nsm-console/logging.rb
+%%RUBY_SITELIBDIR%%/nsm-console/nsm_category.rb
+%%RUBY_SITELIBDIR%%/nsm-console/nsm_console.rb
+%%RUBY_SITELIBDIR%%/nsm-console/nsm_helper.rb
+%%RUBY_SITELIBDIR%%/nsm-console/nsm_module.rb
+%%RUBY_SITELIBDIR%%/nsm-console/command_manager.rb
+%%DATADIR%%/modules/aimsnarf.module/aimsnarf
+%%DATADIR%%/modules/aimsnarf.module/defaults
+%%DATADIR%%/modules/aimsnarf.module/description
+%%DATADIR%%/modules/aimsnarf.module/info
+%%DATADIR%%/modules/argus-basic.module/argus-basic
+%%DATADIR%%/modules/argus-basic.module/defaults
+%%DATADIR%%/modules/argus-basic.module/description
+%%DATADIR%%/modules/argus-basic.module/info
+%%DATADIR%%/modules/bro-ids.module/bro-ids
+%%DATADIR%%/modules/bro-ids.module/bro.cfg
+%%DATADIR%%/modules/bro-ids.module/defaults
+%%DATADIR%%/modules/bro-ids.module/description
+%%DATADIR%%/modules/bro-ids.module/info
+%%DATADIR%%/modules/capinfos.module/capinfos
+%%DATADIR%%/modules/capinfos.module/defaults
+%%DATADIR%%/modules/capinfos.module/description
+%%DATADIR%%/modules/capinfos.module/info
+%%DATADIR%%/modules/categories/flow
+%%DATADIR%%/modules/categories/forensics
+%%DATADIR%%/modules/categories/nsm
+%%DATADIR%%/modules/categories/statistics
+%%DATADIR%%/modules/chaosreader.module/chaosreader
+%%DATADIR%%/modules/chaosreader.module/defaults
+%%DATADIR%%/modules/chaosreader.module/description
+%%DATADIR%%/modules/chaosreader.module/info
+%%DATADIR%%/modules/fl0p.module/defaults
+%%DATADIR%%/modules/fl0p.module/description
+%%DATADIR%%/modules/fl0p.module/fl0p
+%%DATADIR%%/modules/fl0p.module/info
+%%DATADIR%%/modules/hash.module/defaults
+%%DATADIR%%/modules/hash.module/description
+%%DATADIR%%/modules/hash.module/hash
+%%DATADIR%%/modules/hash.module/info
+%%DATADIR%%/modules/honeysnap.module/defaults
+%%DATADIR%%/modules/honeysnap.module/description
+%%DATADIR%%/modules/honeysnap.module/honeysnap
+%%DATADIR%%/modules/honeysnap.module/honeysnap.cfg
+%%DATADIR%%/modules/honeysnap.module/info
+%%DATADIR%%/modules/iploc.module/defaults
+%%DATADIR%%/modules/iploc.module/description
+%%DATADIR%%/modules/iploc.module/info
+%%DATADIR%%/modules/iploc.module/iploc
+%%DATADIR%%/modules/ngrep.module/description
+%%DATADIR%%/modules/ngrep.module/info
+%%DATADIR%%/modules/ngrep.module/ngrep
+%%DATADIR%%/modules/p0f.module/defaults
+%%DATADIR%%/modules/p0f.module/description
+%%DATADIR%%/modules/p0f.module/info
+%%DATADIR%%/modules/p0f.module/p0f
+%%DATADIR%%/modules/pads.module/defaults
+%%DATADIR%%/modules/pads.module/description
+%%DATADIR%%/modules/pads.module/info
+%%DATADIR%%/modules/pads.module/pads
+%%DATADIR%%/modules/snort.module/rules/bleeding-attack_response.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-botcc-BLOCK.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-botcc.excluded
+%%DATADIR%%/modules/snort.module/rules/bleeding-botcc.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-compromised-BLOCK.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-compromised.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-dos.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-drop-BLOCK.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-drop.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-dshield-BLOCK.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-dshield.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-exploit.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-game.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-inappropriate.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-malware.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-p2p.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-policy.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-rbn-BLOCK.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-rbn.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-scan.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-sid-msg.map
+%%DATADIR%%/modules/snort.module/rules/bleeding-virus.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-voip.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-web.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding-web_sql_injection.rules
+%%DATADIR%%/modules/snort.module/rules/bleeding.conf
+%%DATADIR%%/modules/snort.module/rules/bleeding.rules
+%%DATADIR%%/modules/snort.module/rules/community-bot.rules
+%%DATADIR%%/modules/snort.module/rules/community-deleted.rules
+%%DATADIR%%/modules/snort.module/rules/community-dos.rules
+%%DATADIR%%/modules/snort.module/rules/community-ftp.rules
+%%DATADIR%%/modules/snort.module/rules/community-exploit.rules
+%%DATADIR%%/modules/snort.module/rules/community-game.rules
+%%DATADIR%%/modules/snort.module/rules/community-icmp.rules
+%%DATADIR%%/modules/snort.module/rules/community-imap.rules
+%%DATADIR%%/modules/snort.module/rules/community-inappropriate.rules
+%%DATADIR%%/modules/snort.module/rules/community-mail-client.rules
+%%DATADIR%%/modules/snort.module/rules/community-misc.rules
+%%DATADIR%%/modules/snort.module/rules/community-nntp.rules
+%%DATADIR%%/modules/snort.module/rules/community-oracle.rules
+%%DATADIR%%/modules/snort.module/rules/community-policy.rules
+%%DATADIR%%/modules/snort.module/rules/community-sip.rules
+%%DATADIR%%/modules/snort.module/rules/community-smtp.rules
+%%DATADIR%%/modules/snort.module/rules/community-sql-injection.rules
+%%DATADIR%%/modules/snort.module/rules/community-virus.rules
+%%DATADIR%%/modules/snort.module/rules/community-web-attacks.rules
+%%DATADIR%%/modules/snort.module/rules/community-web-cgi.rules
+%%DATADIR%%/modules/snort.module/rules/community-web-client.rules
+%%DATADIR%%/modules/snort.module/rules/community-web-dos.rules
+%%DATADIR%%/modules/snort.module/rules/community-web-iis.rules
+%%DATADIR%%/modules/snort.module/rules/community-web-misc.rules
+%%DATADIR%%/modules/snort.module/rules/community-web-php.rules
+%%DATADIR%%/modules/snort.module/rules/LICENSE
+%%DATADIR%%/modules/snort.module/classification.config
+%%DATADIR%%/modules/snort.module/defaults
+%%DATADIR%%/modules/snort.module/description
+%%DATADIR%%/modules/snort.module/info
+%%DATADIR%%/modules/snort.module/reference.config
+%%DATADIR%%/modules/snort.module/snort
+%%DATADIR%%/modules/snort.module/snort.conf
+%%DATADIR%%/modules/snort.module/unicode.map
+%%DATADIR%%/modules/tcpdstat.module/defaults
+%%DATADIR%%/modules/tcpdstat.module/description
+%%DATADIR%%/modules/tcpdstat.module/info
+%%DATADIR%%/modules/tcpdstat.module/tcpdstat
+%%DATADIR%%/modules/tcpflow.module/defaults
+%%DATADIR%%/modules/tcpflow.module/description
+%%DATADIR%%/modules/tcpflow.module/info
+%%DATADIR%%/modules/tcpflow.module/tcpflow
+%%DATADIR%%/modules/tcpxtract.module/defaults
+%%DATADIR%%/modules/tcpxtract.module/description
+%%DATADIR%%/modules/tcpxtract.module/info
+%%DATADIR%%/modules/tcpxtract.module/tcpxtract
+%%DATADIR%%/modules/tcpxtract.module/tcpxtract.conf
+%%DATADIR%%/modules/tshark.module/defaults
+%%DATADIR%%/modules/tshark.module/description
+%%DATADIR%%/modules/tshark.module/info
+%%DATADIR%%/modules/tshark.module/tshark
+%%DATADIR%%/modules/README
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/modules/tshark.module
+@dirrmtry %%DATADIR%%/modules/tcpxtract.module
+@dirrmtry %%DATADIR%%/modules/tcpflow.module
+@dirrmtry %%DATADIR%%/modules/tcpdstat.module
+@dirrmtry %%DATADIR%%/modules/snort.module/rules
+@dirrmtry %%DATADIR%%/modules/snort.module
+@dirrmtry %%DATADIR%%/modules/pads.module
+@dirrmtry %%DATADIR%%/modules/p0f.module
+@dirrmtry %%DATADIR%%/modules/ngrep.module
+@dirrmtry %%DATADIR%%/modules/iploc.module
+@dirrmtry %%DATADIR%%/modules/honeysnap.module
+@dirrmtry %%DATADIR%%/modules/hash.module
+@dirrmtry %%DATADIR%%/modules/fl0p.module
+@dirrmtry %%DATADIR%%/modules/chaosreader.module
+@dirrmtry %%DATADIR%%/modules/categories
+@dirrmtry %%DATADIR%%/modules/capinfos.module
+@dirrmtry %%DATADIR%%/modules/bro-ids.module
+@dirrmtry %%DATADIR%%/modules/argus-basic.module
+@dirrmtry %%DATADIR%%/modules/aimsnarf.module
+@dirrmtry %%DATADIR%%/modules
+@dirrmtry %%DATADIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%/nsm-console

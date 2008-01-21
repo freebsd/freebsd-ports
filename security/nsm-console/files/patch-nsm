@@ -1,0 +1,38 @@
+--- nsm.orig	2008-01-09 07:20:10.000000000 +0900
++++ nsm	2008-01-15 20:05:17.000000000 +0900
+@@ -12,8 +12,8 @@
+ include Readline
+ 
+ ## Require commands
+-require 'lib/command_manager'
+-require 'lib/commands'
++require 'nsm-console/command_manager'
++require 'nsm-console/commands'
+ 
+ ## Required for tab completion
+ $tabstrings = CommandManager.get_commands_as_array()
+@@ -23,16 +23,16 @@
+ Readline.completion_proc = lambda{|s| $tabstrings.find_all{|elm| elm =~ /#{s}/}}
+ 
+ ## Require nsm console specific files
+-require 'lib/logging'
+-require 'lib/history'
+-require 'lib/nsm_module'
+-require 'lib/nsm_category'
+-require 'lib/nsm_helper'
+-require 'lib/nsm_console'
+-require 'lib/encodelib'
++require 'nsm-console/logging'
++require 'nsm-console/history'
++require 'nsm-console/nsm_module'
++require 'nsm-console/nsm_category'
++require 'nsm-console/nsm_helper'
++require 'nsm-console/nsm_console'
++require 'nsm-console/encodelib'
+ 
+ ## Default module directory
+-$moduledir = "modules"
++$moduledir = "%%DATADIR%%/modules"
+ ## Default output directory
+ $outputdir = "${PCAP_BASE}-output"
+ 
