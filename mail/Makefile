@@ -483,6 +483,7 @@
     SUBDIR += py-twistedMail
     SUBDIR += pygmy
     SUBDIR += pymsgauth
+    SUBDIR += pysieved
     SUBDIR += pyzor
     SUBDIR += qar-bufo
     SUBDIR += qconfirm
