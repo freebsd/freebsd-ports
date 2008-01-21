@@ -1,23 +1,21 @@
 --- main.c.orig	Thu Mar 25 11:26:53 1999
 +++ main.c	Tue Sep 26 17:27:58 2000
-@@ -18,6 +18,7 @@
- #include <signal.h>
- #include "tintin.h"
- #include <fcntl.h>
-+#include <termios.h>
+@@ -100,12 +100,8 @@
+ extern void term_echo();
  
- #ifndef BADSIG
- #define BADSIG (void (*)())-1
-@@ -109,7 +110,7 @@
+ int last_line_length;
+-#if defined(HAVE_SYS_TERMIO_H) && !defined(BSD_ECHO) || defined(HAVE_TERMIO_H)
+-#if defined(HAVE_SYS_TERMIO_H)
+-#include <sys/termio.h>
+-#else
+-#include <termio.h>
+-#endif
++#if 1
++#include <termios.h>
  tcflag_t c_lflag;
  cc_t c_cc[NCCS];
  #else
--unsigned char c_cc[NCC];
-+unsigned char c_cc[NCCS];
- unsigned short c_lflag;
- #endif
- 
-@@ -580,7 +581,7 @@
+@@ -580,7 +576,7 @@
      if(ses->logfile) {
        if (!OLD_LOG) {
        count=0;
@@ -26,7 +24,7 @@
           if (buffer[n]!='\r') { 
              temp[count]=buffer[n]; 
              count++;
-@@ -750,7 +751,7 @@
+@@ -750,7 +746,7 @@
        sprintf(strng,"%c8%s\n\r%c7%c[%d;%df", E, cptr, E, E, input_row, input_col);
      else
        sprintf(strng,"%s\n\r", cptr);
@@ -35,7 +33,7 @@
      display_col=1;
      if (redraw && term_echoing && !is_split)
        write(1, k_input, strlen(k_input));
-@@ -806,7 +807,7 @@
+@@ -806,7 +802,7 @@
        cptr++;
        sprintf(strng,"%s\n\r", cptr);
      }
@@ -44,7 +42,7 @@
      display_col=1;
    } 
    text_came=TRUE;  
-@@ -876,7 +877,7 @@
+@@ -876,7 +872,7 @@
    input_col=1;  
    sprintf(fn, "%c[2J%c[1;%dr%c[%d;1f", E, E, display_row, E, split_line);
    write(1,fn, strlen(fn));
