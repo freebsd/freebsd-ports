@@ -12076,6 +12076,7 @@ pear-Text_Diff	ports/devel/pear-Text_Diff
 pear-Text_Figlet	ports/misc/pear-Text_Figlet
 pear-Text_Highlighter	ports/textproc/pear-Text_Highlighter
 pear-Text_Password	ports/security/pear-Text_Password
+pear-Text_Spell_Audio	ports/audio/pear-Text_Spell_Audio
 pear-Text_Wiki	ports/www/pear-Text_Wiki
 pear-Translation2	ports/sysutils/pear-Translation2
 pear-UDDI	ports/www/pear-UDDI
