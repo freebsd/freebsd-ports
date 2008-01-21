@@ -1,4 +1,4 @@
-%%OPENSSLFLAG%%bin/couriertls
+bin/couriertls
 bin/deliverquota
 bin/imapd
 bin/maildiracl

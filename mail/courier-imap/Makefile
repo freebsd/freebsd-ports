@@ -7,7 +7,7 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	4.3.0
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -38,8 +38,7 @@ MAKE_ENV:=	${CONFIGURE_ENV}
 # WITH_SYSLOG_FACILITY:         The syslogfacility to use
 #
 
-OPTIONS=	OPENSSL		"Build with OpenSSL support"			on \
-		FAM		"Build in fam support for IDLE command"		off \
+OPTIONS=	FAM		"Build in fam support for IDLE command"		off \
 		DRAC		"Build in DRAC support"				off \
 		TRASHQUOTA	"Include deleted mails in the quota"		off \
 		GDBM		"Use gdbm db instead of system bdb"		off \
@@ -53,7 +52,7 @@ CONFDIR?=	${PREFIX}/etc/${PORTNAME}
 RCDIR?=		${PREFIX}/etc/rc.d
 USERDB?=	${PREFIX}/etc/userdb
 LIBEXECDIR?=	${PREFIX}/libexec/${PORTNAME}
-
+USE_OPENSSL=	yes
 PLIST_SUB=	CONFDIR=${CONFDIR:S,^${PREFIX}/,,} \
 		RCDIR=${RCDIR:S,^${PREFIX}/,,} \
 		LIBEXECDIR=${LIBEXECDIR:S,^${PREFIX}/,,}
@@ -79,16 +78,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
-.endif
-
-.if !defined(WITHOUT_SSL)
-# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-PLIST_SUB+=	OPENSSLFLAG=
-CONFIGURE_ARGS+=--enable-ssl
-.else
-PLIST_SUB+=	OPENSSLFLAG="@comment "
-BROKEN=		"Incomplete pkg-plist"
 .endif
 
 .if defined(WITH_SYSLOG_FACILITY)
