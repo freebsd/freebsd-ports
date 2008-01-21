@@ -1,0 +1,8 @@
+Default log directory is $HOME/logs, which is NOT automatically created.
+
+Execute:
+    > mkdir $HOME/logs
+or change it from nsm console:
+    nsm> logfile path/to/logfile
+
+This will be configurable in the future.
