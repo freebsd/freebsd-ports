@@ -6,7 +6,7 @@
 
 PORTNAME=	pyicq
 PORTVERSION=	0.8a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.blathersource.org/download.php/pyicq-t/
 PKGNAMEPREFIX=	jabber-
@@ -96,7 +96,7 @@ post-patch:
 		${WRKSRC}/src/main.py
 	@${REINPLACE_CMD} -i "" 's|^#!.*$$|#!${LOCAL_PYTHON}|' \
 		${WRKSRC}/PyICQt.py
-	@${RM} -f ${WRKSRC}/src/main.py.orig
+	@${RM} -f ${WRKSRC}/src/main.py.orig ${WRKSRC}/src/legacy/icqt.py.orig
 
 do-install:
 	@${MKDIR} ${INST_DIR}/src ${INST_DIR}/data
