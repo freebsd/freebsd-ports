@@ -8425,6 +8425,7 @@ nsd2		ports/dns/nsd2
 nserver		ports/misc/nserver
 nsf		ports/misc/nsf
 nslint		ports/dns/nslint
+nsm-console	ports/security/nsm-console
 nsping		ports/dns/nsping
 nspluginwrapper	ports/www/nspluginwrapper
 nspmod		ports/audio/nspmod
