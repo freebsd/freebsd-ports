@@ -37,9 +37,10 @@ PHP_Include_MAINTAINER=	ale@FreeBSD.org
 
 _PHPMKINCLUDED=	yes
 
-.if exists(${LOCALBASE}/etc/php.conf)
-.include "${LOCALBASE}/etc/php.conf"
-PHP_EXT_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${LOCALBASE}/lib/php/\(.*\),\1,p'
+PHPBASE?=	${LOCALBASE}
+.if exists(${PHPBASE}/etc/php.conf)
+.include "${PHPBASE}/etc/php.conf"
+PHP_EXT_DIR!=	${PHPBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${PHPBASE}/lib/php/\(.*\),\1,p'
 .else
 DEFAULT_PHP_VER?=	5
 
@@ -138,18 +139,18 @@ check-makevars::
 PHP_PORT=	${PORTSDIR}/lang/php${PHP_VER}
 
 .if defined(USE_PHP_BUILD)
-BUILD_DEPENDS+=	${LOCALBASE}/include/php/main/php.h:${PHP_PORT}
+BUILD_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PHP_PORT}
 .endif
-RUN_DEPENDS+=	${LOCALBASE}/include/php/main/php.h:${PHP_PORT}
+RUN_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PHP_PORT}
 
 PLIST_SUB+=	PHP_EXT_DIR=${PHP_EXT_DIR}
 SUB_LIST+=	PHP_EXT_DIR=${PHP_EXT_DIR}
 
 .if defined(USE_PHPIZE) || defined(USE_PHPEXT)
-BUILD_DEPENDS+=	phpize:${PHP_PORT}
-GNU_CONFIGURE=	YES
+BUILD_DEPENDS+=	${PHPBASE}/bin/phpize:${PHP_PORT}
+GNU_CONFIGURE=	yes
 USE_AUTOTOOLS+=	autoconf:261:env
-CONFIGURE_ARGS+=--with-php-config=${LOCALBASE}/bin/php-config
+CONFIGURE_ARGS+=--with-php-config=${PHPBASE}/bin/php-config
 
 configure-message: phpize-message do-phpize
 
@@ -157,7 +158,7 @@ phpize-message:
 	@${ECHO_MSG} "===>  PHPizing for ${PKGNAME}"
 
 do-phpize:
-	@(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${LOCALBASE}/bin/phpize)
+	@(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${PHPBASE}/bin/phpize)
 .endif
 
 .if defined(USE_PHPEXT)
@@ -336,9 +337,9 @@ zlib_DEPENDS=	archivers/php${PHP_VER}-zlib
 .		if ${_USE_PHP_VER${PHP_VER}:M${extension}} != ""
 .			if ${PHP_EXT_INC:M${extension}} == ""
 .				if defined(USE_PHP_BUILD)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${PORTSDIR}/${${extension}_DEPENDS}
+BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${PORTSDIR}/${${extension}_DEPENDS}
 .				endif
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${PORTSDIR}/${${extension}_DEPENDS}
+RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${PORTSDIR}/${${extension}_DEPENDS}
 .			endif
 .		else
 isyes=		${extension}
