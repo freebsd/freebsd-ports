@@ -7,11 +7,19 @@
 
 PORTNAME=	john
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/f/ \
 		ftp://ftp.ru.openwall.com/pub/projects/john/${PORTVERSION}/ \
 		ftp://ftp.se.openwall.com/pub/projects/john/${PORTVERSION}/ \
 		http://distro.ibiblio.org/pub/linux/distributions/openwall/projects/john/${PORTVERSION}/
+
+PATCH_SITES=	ftp://ftp.openwall.com/pub/projects/john/contrib/ \
+		http://www.mirrorgeek.com/openwall/projects/john/contrib/ \
+		ftp://ftp.cert.dfn.de/pub/tools/net/Openwall/projects/john/contrib/ \
+		http://ftp.sunet.se/pub/security/tools/net/Openwall/projects/john/contrib/
+PATCHFILES=	john-${PORTVERSION}-all-9.diff.gz
+PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
