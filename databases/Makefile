@@ -121,6 +121,7 @@
     SUBDIR += linux-oracle-instantclient-sqlplus
     SUBDIR += lsdb
     SUBDIR += ludia
+    SUBDIR += maatkit
     SUBDIR += mantis
     SUBDIR += mdbtools
     SUBDIR += memcached
