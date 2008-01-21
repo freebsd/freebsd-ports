@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	librcc
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rusxmms
@@ -22,10 +22,6 @@ USE_GNOME=	gtk12 libxml2
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoheader:261 autoconf:261 libtool:15
-ACLOCAL_ARGS=	--force
-AUTOMAKE_ARGS=	-a
 
 CONFIGURE_ARGS=--disable-bdb --disable-gtk2 --disable-glib2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
