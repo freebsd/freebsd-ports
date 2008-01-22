@@ -1,9 +1,9 @@
---- python/tests/Makefile.in.orig	Tue Mar 23 09:22:07 2004
-+++ python/tests/Makefile.in	Tue Mar 23 09:22:39 2004
-@@ -241,7 +241,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
+--- python/tests/Makefile.in.orig	2008-01-22 15:51:51.000000000 -0500
++++ python/tests/Makefile.in	2008-01-22 15:52:12.000000000 -0500
+@@ -259,7 +259,7 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
 -EXAMPLE_DIR = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)/examples
 +EXAMPLE_DIR = $(datadir)/examples/py-libxml2
  PYTESTS = \

@@ -1,15 +1,6 @@
---- python/Makefile.in.orig	Mon Jan 15 19:11:51 2007
-+++ python/Makefile.in	Mon Jan 15 19:14:37 2007
-@@ -56,7 +56,7 @@
- am__installdirs = "$(DESTDIR)$(pythondir)"
- pythonLTLIBRARIES_INSTALL = $(INSTALL)
- LTLIBRARIES = $(python_LTLIBRARIES)
--@WITH_PYTHON_TRUE@am__DEPENDENCIES_1 = $(top_builddir)/libxml2.la
-+@WITH_PYTHON_TRUE@am__DEPENDENCIES_1 =
- @WITH_PYTHON_TRUE@libxml2mod_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
- am__libxml2mod_la_SOURCES_DIST = libxml.c types.c libxml2-py.c
- @WITH_PYTHON_TRUE@am_libxml2mod_la_OBJECTS = libxml.lo types.lo \
-@@ -309,7 +309,7 @@
+--- python/Makefile.in.orig	2008-01-22 15:50:22.000000000 -0500
++++ python/Makefile.in	2008-01-22 15:50:22.000000000 -0500
+@@ -313,7 +313,7 @@ INCLUDES = \
  	-I$(top_builddir)/include \
  	-I$(top_builddir)/$(subdir)
  
@@ -18,7 +9,7 @@
  # libxml2class.txt is generated
  DOCS = ${srcdir}/TODO
  EXTRA_DIST = \
-@@ -326,7 +326,7 @@
+@@ -330,7 +330,7 @@ EXTRA_DIST = \
  
  libxml2mod_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ -module -avoid-version 
  @WITH_PYTHON_TRUE@mylibs = \
