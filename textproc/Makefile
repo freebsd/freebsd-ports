@@ -858,6 +858,7 @@
     SUBDIR += ripole
     SUBDIR += rl
     SUBDIR += rman
+    SUBDIR += rnv
     SUBDIR += ro-aspell
     SUBDIR += roap
     SUBDIR += romdict
