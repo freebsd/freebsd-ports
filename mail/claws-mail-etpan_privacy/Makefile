@@ -23,6 +23,9 @@ USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:261
 
+DEPRECATED=		no longer supported by developers
+EXPIRATION_DATE=	2008-02-15
+
 PLIST_FILES=	lib/claws-mail/plugins/etpan-privacy.a \
 	lib/claws-mail/plugins/etpan-privacy.la \
 	lib/claws-mail/plugins/etpan-privacy.so
