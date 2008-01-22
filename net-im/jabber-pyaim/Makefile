@@ -8,7 +8,7 @@
 PORTNAME=	pyaim
 PORTVERSION=	0.8a
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.blathersource.org/download.php/${PORTNAME}-t/
+MASTER_SITES=	http://pyaimt.googlecode.com/files/
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
 DISTNAME=	${PORTNAME}-t-${PORTVERSION}
