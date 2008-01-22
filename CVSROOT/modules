@@ -14166,6 +14166,7 @@ rmonitor	ports/sysutils/rmonitor
 rmsg		ports/net/rmsg
 rname		ports/misc/rname
 rnews		ports/www/rnews
+rnv		ports/textproc/rnv
 ro-aspell	ports/textproc/ro-aspell
 roadmap		ports/astro/roadmap
 roadrunner	ports/net/roadrunner
