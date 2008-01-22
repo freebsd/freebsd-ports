@@ -27,8 +27,8 @@
 @@ -107,6 +110,7 @@
  
    def reset_cache_data
-     @cache_data = {}
 +    FileUtils.rm @cache_file
+     @cache_data = {}
    end
  
    # The name of the cache file to be read
