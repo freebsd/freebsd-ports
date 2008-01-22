@@ -1,9 +1,9 @@
---- Makefile.in.orig	Mon Jan 17 20:35:00 2005
-+++ Makefile.in	Mon Jan 17 20:36:53 2005
-@@ -417,13 +417,13 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
+--- Makefile.in.orig	2008-01-22 15:47:56.000000000 -0500
++++ Makefile.in	2008-01-22 15:49:21.000000000 -0500
+@@ -486,13 +486,13 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
 -SUBDIRS = include . doc example xstc @PYTHON_SUBDIR@
 +SUBDIRS = include . doc example xstc @WITH_PYTHON_TRUE@ @PYTHON_SUBDIR@
  DIST_SUBDIRS = include . doc example python xstc
@@ -16,7 +16,7 @@
  @WITH_TRIO_SOURCES_FALSE@libxml2_la_SOURCES = SAX.c entities.c encoding.c error.c parserInternals.c  \
  @WITH_TRIO_SOURCES_FALSE@		parser.c tree.c hash.c list.c xmlIO.c xmlmemory.c uri.c  \
  @WITH_TRIO_SOURCES_FALSE@		valid.c xlink.c HTMLparser.c HTMLtree.c debugXML.c xpath.c  \
-@@ -512,7 +512,7 @@
+@@ -590,7 +590,7 @@ testapi_LDFLAGS = 
  testapi_DEPENDENCIES = $(DEPS)
  testapi_LDADD = $(LDADDS)
  CLEANFILES = xml2Conf.sh
@@ -25,7 +25,7 @@
  confexec_DATA = xml2Conf.sh
  CVS_EXTRA_DIST = 
  EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml2.spec \
-@@ -534,8 +534,8 @@
+@@ -613,8 +613,8 @@ pkgconfig_DATA = libxml-2.0.pc
  # Install the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
@@ -36,7 +36,7 @@
  all: config.h
  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
  
-@@ -1246,7 +1246,7 @@
+@@ -1344,7 +1344,7 @@ distcleancheck: distclean
  check-am: all-am
  	$(MAKE) $(AM_MAKEFLAGS) check-local
  check: check-recursive
