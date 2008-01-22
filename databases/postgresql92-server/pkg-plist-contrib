@@ -9,6 +9,8 @@ lib/postgresql/btree_gist.so
 lib/postgresql/chkpass.so
 lib/postgresql/cube.so
 lib/postgresql/dblink.so
+lib/postgresql/dict_int.so
+lib/postgresql/dict_xsyn.so
 lib/postgresql/earthdistance.so
 lib/postgresql/fuzzystrmatch.so
 lib/postgresql/hstore.so
@@ -29,7 +31,9 @@ lib/postgresql/refint.so
 lib/postgresql/seg.so
 lib/postgresql/sslinfo.so
 lib/postgresql/tablefunc.so
+lib/postgresql/test_parser.so
 lib/postgresql/timetravel.so
+lib/postgresql/tsearch2.so
 %%DOCSDIR%%/README-contrib
 %%DOCSDIR%%/contrib/README
 %%DOCSDIR%%/contrib/autoinc.example
@@ -44,6 +48,8 @@ share/postgresql/contrib/btree_gist.sql
 share/postgresql/contrib/chkpass.sql
 share/postgresql/contrib/cube.sql
 share/postgresql/contrib/dblink.sql
+share/postgresql/contrib/dict_int.sql
+share/postgresql/contrib/dict_xsyn.sql
 share/postgresql/contrib/earthdistance.sql
 share/postgresql/contrib/fuzzystrmatch.sql
 share/postgresql/contrib/hstore.sql
@@ -64,13 +70,17 @@ share/postgresql/contrib/refint.sql
 share/postgresql/contrib/seg.sql
 share/postgresql/contrib/sslinfo.sql
 share/postgresql/contrib/tablefunc.sql
+share/postgresql/contrib/test_parser.sql
 share/postgresql/contrib/timetravel.sql
+share/postgresql/contrib/tsearch2.sql
 share/postgresql/contrib/uninstall__int.sql
 share/postgresql/contrib/uninstall_adminpack.sql
 share/postgresql/contrib/uninstall_btree_gist.sql
 share/postgresql/contrib/uninstall_chkpass.sql
 share/postgresql/contrib/uninstall_cube.sql
 share/postgresql/contrib/uninstall_dblink.sql
+share/postgresql/contrib/uninstall_dict_int.sql
+share/postgresql/contrib/uninstall_dict_xsyn.sql
 share/postgresql/contrib/uninstall_earthdistance.sql
 share/postgresql/contrib/uninstall_fuzzystrmatch.sql
 share/postgresql/contrib/uninstall_hstore.sql
@@ -88,6 +98,8 @@ share/postgresql/contrib/uninstall_pgstattuple.sql
 share/postgresql/contrib/uninstall_seg.sql
 share/postgresql/contrib/uninstall_sslinfo.sql
 share/postgresql/contrib/uninstall_tablefunc.sql
+share/postgresql/contrib/uninstall_test_parser.sql
+share/postgresql/contrib/uninstall_tsearch2.sql
 share/postgresql/tsearch_data/xsyn_sample.rules
 @dirrmtry share/postgresql/tsearch_data >&2
 @dirrmtry share/postgresql/contrib >&2

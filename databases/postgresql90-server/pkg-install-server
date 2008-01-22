@@ -3,7 +3,6 @@
 # $FreeBSD$
 
 PATH=/bin:/usr/bin:/usr/sbin
-DB_DIR=${PKG_PREFIX}/${PGUSER}
 
 backupwarning() { echo "
 
@@ -25,31 +24,32 @@ backupwarning() { echo "
 case $2 in
 PRE-INSTALL)
 	backupwarning
-	USER=${PGUSER}
-	GROUP=${PGGROUP}
+	PGUSER=${PGUSER:-pgsql}
+	PGGROUP=${PGGROUP:-pgsql}
+	DB_DIR=${PKG_PREFIX}/${PGUSER}
 	UID=70
 	GID=70
 
-	if pw group show "${GROUP}" 2>/dev/null; then
-		echo "You already have a group \"${GROUP}\", so I will use it."
+	if pw group show "${PGGROUP}" 2>/dev/null; then
+		echo "You already have a group \"${PGGROUP}\", so I will use it."
 	else
-		if pw groupadd ${GROUP} -g ${GID}; then
-			echo "Added group \"${GROUP}\"."
+		if pw groupadd ${PGGROUP} -g ${GID}; then
+			echo "Added group \"${PGGROUP}\"."
 		else
-			echo "Adding group \"${GROUP}\" failed..."
+			echo "Adding group \"${PGGROUP}\" failed..."
 			exit 1
 		fi
 	fi
 
-	if pw user show "${USER}" 2>/dev/null; then
-		echo "You already have a user \"${USER}\", so I will use it."
+	if pw user show "${PGUSER}" 2>/dev/null; then
+		echo "You already have a user \"${PGUSER}\", so I will use it."
 	else
-		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+		if pw useradd ${PGUSER} -u ${UID} -g ${PGGROUP} -h - \
 			-d ${DB_DIR} -c "PostgreSQL Daemon"
 		then
-			echo "Added user \"${USER}\"."
+			echo "Added user \"${PGUSER}\"."
 		else
-			echo "Adding user \"${USER}\" failed..."
+			echo "Adding user \"${PGUSER}\" failed..."
 			exit 1
 		fi
 	fi

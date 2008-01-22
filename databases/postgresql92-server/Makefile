@@ -6,13 +6,12 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.3RC1
+DISTVERSION?=	8.3RC2
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
+MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
 PKGNAMESUFFIX?=	-server
-DISTFILES?=	postgresql-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	BETA VERSION of the PostgreSQL server, only for testing
@@ -22,7 +21,7 @@ CONFLICTS?=	${PORTNAME}-client-7.* \
 		${PORTNAME}-client-8.[0-24-9]* \
 		${PORTNAME}${PKGNAMESUFFIX}-8.[0-24-9]*
 
-WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
+WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
 
 UNIQUENAME?=	${PORTNAME}83
@@ -42,10 +41,14 @@ PGGROUP=	pgsql
 
 CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include \
+		--enable-thread-safety \
 		--with-docdir=${DOCSDIR}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
@@ -93,10 +96,8 @@ OPTIONS+=	LDAP "Build with LDAP authentication support" off
 OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
 OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal kerberos support" off
 OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
-OPTIONS+=	LIBC_R "Link w/ libc_r, used by plpython (server)" off
-OPTIONS+=	THREADSAFE "make libpq thread safe" off
-#  to run regression tests:
-OPTIONS+=	TESTS "Allows the use of a \"check\" target (server)" off
+OPTIONS+=	XML "Build with XML data type (server)" on
+OPTIONS+=	TZDATA "Use internal timezone database (server)" on
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
 
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
@@ -132,6 +133,18 @@ CONFIGURE_ARGS+=--with-pam
 .  if defined(SERVER_ONLY) && defined(WITH_LDAP)
 CONFIGURE_ARGS+=--with-ldap
 USE_OPENLDAP=	YES
+.  endif
+
+.  if defined(SERVER_ONLY) && defined(WITH_XML)
+CONFIGURE_ARGS+=--with-libxml
+LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+.  endif
+
+.  if defined(SERVER_ONLY) && defined(WITH_TZDATA)
+PLIST_SUB+=	TZDATA=""
+.  else
+CONFIGURE_ARGS+=--with-system-tzdata=/usr/share/zoneinfo
+PLIST_SUB+=	TZDATA="@comment "
 .  endif
 
 .  if defined(WITH_INTDATE)
@@ -188,14 +201,6 @@ CONFIGURE_ARGS+=--with-krb5
 .    endif
 .  endif
 
-.  if defined(WITH_THREADSAFE)
-CONFIGURE_ARGS+=--enable-thread-safety
-.  endif
-
-.  if defined(SERVER_ONLY) && defined(WITH_LIBC_R)
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-.  endif
 .endif # !SLAVE_ONLY
 
 .if defined(CLIENT_ONLY)
@@ -314,7 +319,7 @@ do-install:
 	fi
 .endif # !NO_BUILD
 
-.if defined(SERVER_ONLY) && defined(WITH_TESTS)
+.if defined(SERVER_ONLY)
 check:
 	@if [ `id -u` != 0 ] ; then \
 	  ${ECHO} "Running postgresql regressions tests" ;\
