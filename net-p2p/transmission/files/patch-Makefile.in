@@ -1,6 +1,6 @@
---- Makefile.in.orig	2007-10-24 17:35:37.000000000 -0500
-+++ Makefile.in	2007-10-24 17:36:18.000000000 -0500
-@@ -253,14 +253,7 @@
+--- Makefile.in.orig	2008-01-22 16:11:12.000000000 -0600
++++ Makefile.in	2008-01-22 16:11:43.000000000 -0600
+@@ -258,14 +258,7 @@
  @HAVE_DARWIN_TRUE@MAC_DIR = macosx
  @WITH_GTK_TRUE@GTK_DIR = gtk po
  @HAVE_WX_TRUE@WX_DIR = wx
