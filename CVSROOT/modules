@@ -3051,6 +3051,7 @@ flv2mpeg4	ports/multimedia/flv2mpeg4
 flvw		ports/x11-toolkits/flvw
 flwm		ports/x11-wm/flwm
 fly		ports/graphics/fly
+flyback		ports/sysutils/flyback
 flyhard		ports/games/flyhard
 flying		ports/games/flying
 flyspray	ports/devel/flyspray
