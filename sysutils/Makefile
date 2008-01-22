@@ -199,6 +199,7 @@
     SUBDIR += flexbackup
     SUBDIR += flock
     SUBDIR += flog
+    SUBDIR += flyback
     SUBDIR += fontedit
     SUBDIR += fonteditfs
     SUBDIR += foremost
