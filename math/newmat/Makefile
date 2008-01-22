@@ -8,11 +8,12 @@
 
 PORTNAME=	newmat
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.robertnz.net/ftp/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	A C++ matrix library
 
 NO_WRKSUBDIR=	yes
@@ -21,15 +22,9 @@ MAKEFILE=	nm_gnu.mak
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=	everything
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 do-install:
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/libnewmat.a ${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
