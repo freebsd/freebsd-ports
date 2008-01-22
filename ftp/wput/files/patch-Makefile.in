@@ -1,0 +1,24 @@
+--- Makefile.in.orig	2007-12-12 08:30:04.000000000 -0900
++++ Makefile.in	2008-01-17 14:17:36.000000000 -0900
+@@ -9,7 +9,6 @@
+ all clean:
+ 	cd po && $(MAKE) $(MAKEDEFS) $@
+ 	cd src && $(MAKE) $(MAKEDEFS) $@
+-	cd doc && $(MAKE) $(MAKEDEFS) $@
+ 
+ win-clean:
+ 	cd src && $(MAKE) $(MAKEDEFS) $@
+@@ -17,7 +16,6 @@
+ install: all
+ 	cd po && $(MAKE) $(MAKEDEFS) $@
+ 	install -m0755 wput $(bindir)
+-	install -m0644 doc/wput.1.gz $(mandir)
+ 	@echo "----------------"
+ 	@echo "Wput installed. See 'wput -h' or 'man wput' for usage information."
+ 	@echo "Further documentation is located in the doc/USAGE.* files."
+@@ -27,5 +25,4 @@
+ 	@echo "----------------"
+ uninstall:
+ 	rm -f $(bindir)/wput
+-	rm -f $(mandir)/wput.1.gz
+ 	
