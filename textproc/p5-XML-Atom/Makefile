@@ -26,8 +26,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 		p5-XML-LibXML>=1.54:${PORTSDIR}/textproc/p5-XML-LibXML
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
-USE_PERL5=	5.8.5+
+PERL_CONFIGURE=	5.8.5+
 
 MAN3=		XML::Atom.3 \
 		XML::Atom::Client.3 \
