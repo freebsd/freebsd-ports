@@ -61,7 +61,7 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://www.gentoo.org/security/en/glsa/glsa-200801-06.xml</url>
     </references>
     <dates>
-      <discovery>2008-01-FIXME</discovery>
+      <discovery>2008-01-09</discovery>
       <entry>2008-01-22</entry>
     </dates>
   </vuln>
