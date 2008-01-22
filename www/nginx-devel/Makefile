@@ -127,13 +127,13 @@ PLIST_SUB+=	WWWDATA="@comment "
 .if defined(WITH_MAIL_MODULE)
 CONFIGURE_ARGS+=--with-mail
 .if defined(WITHOUT_MAIL_IMAP_MODULE)
-CONFIGURE_ARGS+=--without-mail_proxy_imap_module
+CONFIGURE_ARGS+=--without-mail_imap_module
 .endif
 .if defined(WITHOUT_MAIL_POP3_MODULE)
-CONFIGURE_ARGS+=--without-mail_proxy_pop3_module
+CONFIGURE_ARGS+=--without-mail_pop3_module
 .endif
 .if defined(WITHOUT_MAIL_SMTP_MODULE)
-CONFIGURE_ARGS+=--without-mail_proxy_smtp_module
+CONFIGURE_ARGS+=--without-mail_smtp_module
 .endif
 .if defined(WITH_MAIL_SSL_MODULE)
 NGINX_OPENSSL=	yes
