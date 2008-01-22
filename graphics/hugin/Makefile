@@ -7,6 +7,7 @@
 
 PORTNAME=	hugin
 DISTVERSION=	0.7_beta4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,7 +41,7 @@ CONFIGURE_ARGS+=--with-boost=${LOCALBASE}
 #		--disable-desktop
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_WX=		2.6+
+USE_WX=		2.6
 WX_CONF_ARGS=	absolute
 
 .if defined(WX_UNICODE)
