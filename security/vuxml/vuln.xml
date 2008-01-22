@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a59afa47-c930-11dc-810c-0016179b2dd5">
+    <topic>claws-mail -- insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>claws-mail</name>
+	<range><gt>3.0.2</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nico Golde reports:</p>
+	<blockquote cite="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=454089">
+	  <p>A local attacker could exploit this vulnerability to conduct symlink
+	    attacks to overwrite files with the privileges of the user running
+	    Claws Mail.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>26676</bid>
+      <cvename>CVE-2007-6208</cvename>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200801-03.xml</url>
+      <url>http://security.gentoo.org/glsa/glsa-200801-03.xml</url>
+      <url>http://secunia.com/advisories/27897</url>
+    </references>
+    <dates>
+      <discovery>2007-12-03</discovery>
+      <entry>2008-01-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e5a9de5f-c6bc-11dc-b9f1-00a0cce0781e">
     <topic>IRC Services-- Denial of Service Vulnerability</topic>
     <affects>
