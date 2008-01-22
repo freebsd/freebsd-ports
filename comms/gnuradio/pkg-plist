@@ -1308,6 +1308,9 @@ share/usrp/rev4/usrp_sounder.rbf
 %%PYTHON_SITELIBDIR%%/gnuradio/wxgui/waterfallsink2.py
 %%PYTHON_SITELIBDIR%%/gnuradio/wxgui/waterfallsink2.pyc
 %%PYTHON_SITELIBDIR%%/gnuradio/wxgui/waterfallsink2.pyo
+%%PYTHON_SITELIBDIR%%/usrpm/__init__.py
+%%PYTHON_SITELIBDIR%%/usrpm/__init__.pyc
+%%PYTHON_SITELIBDIR%%/usrpm/__init__.pyo
 %%PYTHON_SITELIBDIR%%/usrpm/usrp_dbid.py
 %%PYTHON_SITELIBDIR%%/usrpm/usrp_dbid.pyc
 %%PYTHON_SITELIBDIR%%/usrpm/usrp_dbid.pyo

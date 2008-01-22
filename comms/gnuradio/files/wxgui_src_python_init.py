@@ -1,2 +1,2 @@
 import wxversion
-wxversion.select('2.6')
+wxversion.ensureMinimal('2.6')

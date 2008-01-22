@@ -7,6 +7,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnuradio
@@ -27,7 +28,7 @@ RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/ephem.so:${PORTSDIR}/astro/pyephem
 
 USE_PYTHON=	2.4+
-USE_WX=		2.6
+USE_WX=		2.6+
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_PERL5=	yes
 USE_AUTOTOOLS=	autoconf:261 libtool:15
