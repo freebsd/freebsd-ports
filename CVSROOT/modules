@@ -6678,6 +6678,7 @@ libmcrypt	ports/security/libmcrypt
 libmcs		ports/devel/libmcs
 libmcve		ports/devel/libmcve
 libmemcache	ports/databases/libmemcache
+libmemcached	ports/databases/libmemcached
 libmicro	ports/benchmarks/libmicro
 libmikmod	ports/audio/libmikmod
 libmimedir	ports/devel/libmimedir
