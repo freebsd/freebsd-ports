@@ -33,6 +33,7 @@ etc/cups/mime.types.N
 etc/cups/snmp.conf.N
 @exec if test ! -f %D/etc/cups/snmp.conf; then cp -p %D/etc/cups/snmp.conf.N %D/etc/cups/snmp.conf; fi
 @exec chgrp cups %D/etc/cups
+%%WITH_PAMD%%etc/pam.d/cups
 bin/cancel
 bin/cups-config
 bin/cupstestdsc

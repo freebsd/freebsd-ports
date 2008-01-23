@@ -34,7 +34,6 @@ DSOFLAGS=	-Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" DSOFLAGS="${DSOFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--localstatedir=/var			\
-			--disable-pam				\
 			--disable-slp				\
 			--disable-gssapi			\
 			--with-cups-user=${CUPSOWN}		\
@@ -48,7 +47,9 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 OPTIONS=	GNUTLS		"Build with GNUTLS library" on \
 		PHP		"Build PHP support" off \
 		PYTHON		"Build PYTHON support" off \
-		LIBPAPER	"Build with libpaper support" off
+		LIBPAPER	"Build with libpaper support" off \
+		DNSSD		"Build with DNS_SD (avahi) support" off \
+		PAM		"Build with PAM support" off
 
 CUPS_ETCDIR=	${PREFIX}/etc/cups
 CUPS_SPOOLDIR=	/var/spool/cups
@@ -102,6 +103,14 @@ CONFIGURE_ARGS+=	--enable-dnssd \
 			--with-dnssd-libs=${LOCALBASE}/lib/ \
 			--with-dnssd-includes=${LOCALBASE}/include/avahi-compat-libdns_sd/
 LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/avahi-libdns
+.endif
+
+.if defined(WITH_PAM)
+CONFIGURE_ARGS+=	--enable-pam
+PLIST_SUB+=		WITH_PAMD=""
+.else
+CONFIGURE_ARGS+=	--disable-pam
+PLIST_SUB+=		WITH_PAMD="@comment "
 .endif
 
 MAN1EXT=	1
@@ -158,6 +167,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/share/s|/usr/share|${PREFIX}/share|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/cups|/usr/local/etc/cups|g' ${WRKSRC}/man/*.man*
 	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g ; s|-lpthreads.*;|${PTHREAD_LIBS};|g' \
+		-e 's|/private/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-su-install:
