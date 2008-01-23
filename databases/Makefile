@@ -111,6 +111,7 @@
     SUBDIR += libgnomedb-reference
     SUBDIR += libiodbc
     SUBDIR += libmemcache
+    SUBDIR += libmemcached
     SUBDIR += libodbc++
     SUBDIR += libpbl
     SUBDIR += libsdb

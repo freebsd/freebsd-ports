@@ -1,0 +1,23 @@
+libmemcached is a C and C++ client library to the memcached server
+(http://danga.com/memcached). It has been designed to be light on memory usage,
+thread safe, and provide full access to server side methods.
+
+A few notes on its design:
+
+# Synchronous and Asynchronous support.
+# TCP and Unix Socket protocols.
+# A half dozen or so different hash algorithms.
+# Implementations of the new cas, replace, and append operators.
+# Man pages written up on entire API.
+# Implements both modulo and consistent hashing solutions.
+
+It also implements several command line tools:
+
+memcat - Copy the value of a key to standard output
+memflush - Flush the contents of your servers.
+memrm - Remove a key(s) from the serrver.
+memcp - Copy files to a memached server.
+memstat - Dump the stats of your servers to standard output
+memslap - Generate testing loads on a memcached cluster 
+
+WWW: http://tangent.org/552/libmemcached.html

@@ -1,0 +1,15 @@
+bin/memcat
+bin/memcp
+bin/memerror
+bin/memflush
+bin/memrm
+bin/memslap
+bin/memstat
+include/libmemcached/memcached.h
+include/libmemcached/memcached.hh
+lib/libmemcached.a
+lib/libmemcached.la
+lib/libmemcached.so
+lib/libmemcached.so.2
+@dirrmtry lib/pkgconfig
+@dirrmtry include/libmemcached
