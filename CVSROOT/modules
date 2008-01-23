@@ -2278,6 +2278,7 @@ duplo		ports/devel/duplo
 durep		ports/sysutils/durep
 dusage		ports/sysutils/dusage
 dv2jpg		ports/multimedia/dv2jpg
+dv2sub		ports/multimedia/dv2sub
 dvbcut		ports/multimedia/dvbcut
 dvd+rw-tools	ports/sysutils/dvd+rw-tools
 dvd-slideshow	ports/multimedia/dvd-slideshow
