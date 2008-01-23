@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2004-10-17 22:05:24.000000000 -0700
++++ Makefile.in	2007-08-24 09:08:55.000000000 -0700
+@@ -35,6 +35,7 @@
+ 	-$(INSTALL) -d $(mandir)/man8
+ 	-$(INSTALL) -d $(mandir)/man5
+ 	$(INSTALL) -m 755 swapd$(EXEEXT) $(sbindir)/swapd$(EXEEXT)
+-	$(INSTALL) -m 644 swapd.conf $(sysconfdir)/swapd.conf
++	$(INSTALL) -m 644 swapd.conf $(sysconfdir)/swapd.conf.sample
++	if [ ! -f "$(sysconfdir)/swapd.conf" ]; then $(INSTALL) -m 644 swapd.conf $(sysconfdir)/swapd.conf; fi
+ 	$(INSTALL) -m 644 swapd.8 $(mandir)/man8/swapd.8
+ 	$(INSTALL) -m 644 swapd.conf.5 $(mandir)/man5/swapd.conf.5
