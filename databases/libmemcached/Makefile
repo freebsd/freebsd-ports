@@ -1,0 +1,76 @@
+# New ports collection makefile for:	libmemcached
+# Date created:				January 22, 2008
+# Whom:					Yen-Ming Lee <leeym@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libmemcached
+PORTVERSION=	0.14
+CATEGORIES=	databases
+MASTER_SITES=	http://download.tangent.org/
+
+MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	A C and C++ client library to the memcached server
+
+USE_PERL5_BUILD=yes # pod2man
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+USE_GNOME=	gnometarget
+
+post-patch:
+	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = libdata/pkgconfig|' \
+			${WRKSRC}/support/Makefile.in
+
+MAN1=		memcat.1 memcp.1 memerror.1 memflush.1 memrm.1 memslap.1 memstat.1
+MAN3=		libmemcached.3 \
+		libmemcached_examples.3 \
+		memcached_add.3 \
+		memcached_add_by_key.3 \
+		memcached_append.3 \
+		memcached_append_by_key.3 \
+		memcached_behavior_get.3 \
+		memcached_behavior_set.3 \
+		memcached_callback_get.3 \
+		memcached_callback_set.3 \
+		memcached_cas.3 \
+		memcached_cas_by_key.3 \
+		memcached_clone.3 \
+		memcached_create.3 \
+		memcached_decrement.3 \
+		memcached_delete.3 \
+		memcached_delete_by_key.3 \
+		memcached_fetch.3 \
+		memcached_fetch_execute.3 \
+		memcached_fetch_result.3 \
+		memcached_free.3 \
+		memcached_get.3 \
+		memcached_get_by_key.3 \
+		memcached_increment.3 \
+		memcached_lib_version.3 \
+		memcached_mget.3 \
+		memcached_mget_by_key.3 \
+		memcached_prepend.3 \
+		memcached_prepend_by_key.3 \
+		memcached_quit.3 \
+		memcached_replace.3 \
+		memcached_replace_by_key.3 \
+		memcached_server_add.3 \
+		memcached_server_count.3 \
+		memcached_server_list.3 \
+		memcached_server_list_append.3 \
+		memcached_server_list_count.3 \
+		memcached_server_list_free.3 \
+		memcached_server_push.3 \
+		memcached_servers_parse.3 \
+		memcached_set.3 \
+		memcached_set_by_key.3 \
+		memcached_stat.3 \
+		memcached_stat_get_keys.3 \
+		memcached_stat_get_value.3 \
+		memcached_stat_servername.3 \
+		memcached_strerror.3 \
+		memcached_verbosity.3 \
+		memcached_version.3
+
+.include <bsd.port.mk>
