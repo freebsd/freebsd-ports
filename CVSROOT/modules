@@ -4977,6 +4977,7 @@ invitation_to_ruby	ports/devel/invitation_to_ruby
 io		ports/lang/io
 iodine		ports/net/iodine
 iog		ports/net-mgmt/iog
+iograph		ports/sysutils/iograph
 ion		ports/x11-wm/ion
 ion-2		ports/x11-wm/ion-2
 ioquake3	ports/games/ioquake3
