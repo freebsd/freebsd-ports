@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	aptana
-PORTVERSION=	004323
+PORTVERSION=	1.1.0.007007
+PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://update.aptana.com/install/${ECLIPSE_VER}/
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	aptana_update_${PORTVERSION}
+DISTNAME=	aptana_update_${PORTVERSION:E}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Aptana Web Development Tools (Eclipse plugin)
