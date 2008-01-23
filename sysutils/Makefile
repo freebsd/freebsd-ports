@@ -311,6 +311,7 @@
     SUBDIR += idled
     SUBDIR += iextract
     SUBDIR += installwatch
+    SUBDIR += iograph
     SUBDIR += ipa
     SUBDIR += ipmi-kmod
     SUBDIR += ipmitool

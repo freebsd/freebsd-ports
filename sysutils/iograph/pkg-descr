@@ -1,0 +1,8 @@
+iograph counts network traffic for one interface and creates an accounting
+statistic by summing up the transfered bytes. Statistics are created hourly,
+daily and monthly and are saved as static HTML files.
+
+It is written in pure C without the need of external libraries, targetted to
+be used in an embedded firewall system. A HTTP server is not included.
+
+WWW: mdolze.gmxhome.de/iograph.shtml
