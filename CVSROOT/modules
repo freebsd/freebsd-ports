@@ -2414,6 +2414,7 @@ eclipse-lomboz	ports/java/eclipse-lomboz
 eclipse-ocl	ports/java/eclipse-ocl
 eclipse-pmd	ports/java/eclipse-pmd
 eclipse-propedit	ports/java/eclipse-propedit
+eclipse-pydev	ports/java/eclipse-pydev
 eclipse-quantum	ports/java/eclipse-quantum
 eclipse-shelled	ports/java/eclipse-shelled
 eclipse-sqlexplorer	ports/java/eclipse-sqlexplorer
