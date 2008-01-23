@@ -9024,6 +9024,7 @@ p5-Business-ISBN	ports/misc/p5-Business-ISBN
 p5-Business-ISBN-Data	ports/misc/p5-Business-ISBN-Data
 p5-Business-ISIN	ports/misc/p5-Business-ISIN
 p5-Business-ISSN	ports/misc/p5-Business-ISSN
+p5-Business-MaxMind-CreditCardFraudDetection	ports/finance/p5-Business-MaxMind-CreditCardFraudDetection
 p5-Business-OCV	ports/finance/p5-Business-OCV
 p5-Business-OnlinePayment	ports/finance/p5-Business-OnlinePayment
 p5-Business-OnlinePayment-2CheckOut	ports/finance/p5-Business-OnlinePayment-2CheckOut
