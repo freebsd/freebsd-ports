@@ -12,7 +12,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	purify
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Management utility for the PureFTPd
 
 USE_GNOME=	pkgconfig gnomehack gnometarget libglade2

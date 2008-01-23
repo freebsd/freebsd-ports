@@ -11,7 +11,7 @@ PORTVERSION=	1.4.2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://cs-people.bu.edu/dbera/activities/projects/mget/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Multithreaded commandline web-download manager
 
 USE_GETOPT_LONG=	yes

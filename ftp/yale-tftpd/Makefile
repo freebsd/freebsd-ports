@@ -10,7 +10,7 @@ PORTVERSION=	3.0
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/net/yale-tftpd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Enhanced tftpd(8) from Yale University and cisco Systems
 
 NO_WRKSUBDIR=

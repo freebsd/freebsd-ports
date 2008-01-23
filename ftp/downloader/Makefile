@@ -14,7 +14,7 @@ MASTER_SITES=	http://d4x.krasu.ru/files/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
 DISTNAME=	d4x-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Program for downloading via FTP or HTTP with GUI
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/smart_ptr.hpp:${PORTSDIR}/devel/boost \

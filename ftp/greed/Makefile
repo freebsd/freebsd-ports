@@ -11,7 +11,7 @@ CATEGORIES=	ftp www
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/$(PORTNAME)/
 DISTNAME=	greed.81p
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	A utility for downloading files with resume capabilities
 
 ALL_TARGET=	freebsd
