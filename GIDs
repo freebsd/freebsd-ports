@@ -76,6 +76,8 @@ sympa:*:200:
 dspam:*:202:
 bs:*:220:
 postgrey:*:225:
+aprsd:*:240:
+tnc:*:241:
 fcron:*:247:
 _tor:*:256:
 _dns-proxy-tor:*:257:
