@@ -982,6 +982,7 @@
     SUBDIR += pear-Services_TinyURL
     SUBDIR += pear-Services_W3C_CSSValidator
     SUBDIR += pear-Services_W3C_HTMLValidator
+    SUBDIR += pear-Services_Yadis
     SUBDIR += pear-Services_urlTea
     SUBDIR += pear-Text_Wiki
     SUBDIR += pear-UDDI
