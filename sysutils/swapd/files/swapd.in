@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# PROVIDE: swapd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable swapd:
+#
+# swapd_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=swapd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/swapd
+
+load_rc_config $name
+
+swapd_enable=${swapd_enable:-"NO"}
+
+run_rc_command "$1"

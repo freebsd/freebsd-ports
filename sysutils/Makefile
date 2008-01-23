@@ -629,6 +629,7 @@
     SUBDIR += stowES
     SUBDIR += stress
     SUBDIR += su2
+    SUBDIR += swapd
     SUBDIR += symlinks
     SUBDIR += symon
     SUBDIR += synergy
