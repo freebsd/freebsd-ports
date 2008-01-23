@@ -42,6 +42,7 @@
     SUBDIR += eclipse-ocl
     SUBDIR += eclipse-pmd
     SUBDIR += eclipse-propedit
+    SUBDIR += eclipse-pydev
     SUBDIR += eclipse-quantum
     SUBDIR += eclipse-shelled
     SUBDIR += eclipse-sqlexplorer
