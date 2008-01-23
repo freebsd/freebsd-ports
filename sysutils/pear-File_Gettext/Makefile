@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Gettext
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils devel pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
