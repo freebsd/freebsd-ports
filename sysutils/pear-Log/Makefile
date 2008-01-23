@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.9.14
+PORTVERSION=	1.9.16
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	tabthorpe@FreeBSD.org
@@ -33,7 +33,6 @@ TESTS=		composite.phpt console.phpt display.phpt error_log.phpt \
 		priority.phpt singleton.phpt sqlite.phpt sql_ident.phpt
 SQLS=		log.sql
 
-_EXAMPLESDIR=	docs/examples
 _SQLSDIR=	misc
 
 LATEST_LINK=	pear-Log
