@@ -1,4 +1,4 @@
-# ex:ts=8
+#
 # Ports collection makefile for:	axelq
 # Date created:			Oct 23, 2002
 # Whom:				ijliao
@@ -17,6 +17,9 @@ COMMENT=	A queue manager for the download accelerator axel
 
 RUN_DEPENDS=	axel:${PORTSDIR}/ftp/axel \
 		bash:${PORTSDIR}/shells/bash
+
+DEPRECATED=	Unmaintained, website disappeared
+EXPIRATION_DATE=	2008-02-23
 
 NO_BUILD=	yes
 
