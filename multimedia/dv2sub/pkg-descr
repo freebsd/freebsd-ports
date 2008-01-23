@@ -1,0 +1,9 @@
+dv2sub is a simple utility that extracts the date and time of recording from
+a dv video file (using libdv) and outputs it as a subtitle file.
+
+It can also display useful information about the dv stream, like video norm
+(PAL/NTSC), aspect ratio normal (4:3) or wide (16:9), interlaced or
+progressive material, number of audio channels, audio sampling frequency,
+number of audio samples, timestamp and recording date & time.
+
+WWW: http://dv2sub.sourceforge.net/
