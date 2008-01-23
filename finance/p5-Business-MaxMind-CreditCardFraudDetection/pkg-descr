@@ -1,0 +1,13 @@
+NAME
+   Business::MaxMind::CreditCardFraudDetection - Access MaxMind minFraud
+   services
+
+ABSTRACT
+   This module queries the MaxMind minFraud service and returns the
+   results.  The service uses a free e-mail database, an IP address geog-
+   raphy database, a bank identification number, and proxy checks to
+   return a risk factor score representing the likelihood that the credit
+   card transaction is fraudulent.
+
+WWW: http://www.maxmind.com/app/ccv_overview
+
