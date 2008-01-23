@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
@@ -46,11 +46,19 @@ MAN3=	Moose.3 \
 	Moose::Meta::Method::Destructor.3 \
 	Moose::Meta::Method::Overriden.3 \
 	Moose::Meta::Role.3 \
+	Moose::Meta::Role::Application.3 \
+	Moose::Meta::Role::Application::RoleSummation.3 \
+	Moose::Meta::Role::Application::ToClass.3 \
+	Moose::Meta::Role::Application::ToInstance.3 \
+	Moose::Meta::Role::Application::ToRole.3 \
+	Moose::Meta::Role::Composite.3 \
 	Moose::Meta::Role::Method.3 \
 	Moose::Meta::Role::Method::Required.3 \
 	Moose::Meta::TypeCoercion.3 \
 	Moose::Meta::TypeCoercion::Union.3 \
 	Moose::Meta::TypeConstraint.3 \
+	Moose::Meta::TypeConstraint::Class.3 \
+	Moose::Meta::TypeConstraint::Parameterizable.3 \
 	Moose::Meta::TypeConstraint::Parameterized.3 \
 	Moose::Meta::TypeConstraint::Registry.3 \
 	Moose::Meta::TypeConstraint::Union.3 \
@@ -59,6 +67,7 @@ MAN3=	Moose.3 \
 	Moose::Spec::Role.3 \
 	Moose::Util.3 \
 	Moose::Util::TypeConstraints.3 \
+	Moose::Util::TypeConstraints::OptimizedConstraints.3 \
 	Test::Moose.3 \
 	oose.3
 
