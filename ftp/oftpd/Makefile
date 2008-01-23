@@ -11,7 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 		http://atreides.freenix.no/~anders/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	A threaded, anonymous only FTP server designed for security
 
 GNU_CONFIGURE=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.bitchx.com/pub/shareware/ \
 		ftp://ftp.mayn.de/pub/unix/network/ftp/ \
 #		ftp://ftp.wxftp.seul.org/pub/wxftp/ # distfile changed there (md5sum)
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	X Window System FTP client, with WSftp-like UI
 
 USE_X_PREFIX=	yes

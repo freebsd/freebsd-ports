@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	rexx${PORTNAME}
 PKGNAMEPREFIX=	rexx-
 DISTNAME=	RexxCURL-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	External function package providing an interface to the cURL package
 
 BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina

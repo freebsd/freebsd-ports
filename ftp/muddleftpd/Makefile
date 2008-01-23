@@ -17,7 +17,7 @@ MASTER_SITES=	http://gnu.rtin.bz/ftp/savannah/files/muddleftpd/ \
 		http://gnu.mirrors.tds.net/pub/gnu/savannah/files/muddleftpd/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	A new ftp server that can perform a variety of ftp tasks
 
 USE_GMAKE=	yes

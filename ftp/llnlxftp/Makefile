@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.llnl.gov/pub/ia/llnlxftp/
 DISTNAME=	latest_xftp
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Motif FTP client
 
 WRKSRC=		${WRKDIR}/llnlxftp2.1/sources

@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://zephilia.dyndns.org/tsuki_yomi/axelq/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	A queue manager for the download accelerator axel
 
 RUN_DEPENDS=	axel:${PORTSDIR}/ftp/axel \
