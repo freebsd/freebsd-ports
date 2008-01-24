@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Motif FTP client
 
+PLIST_FILES=	bin/xftp lib/X11/app-defaults/XFtp
 WRKSRC=		${WRKDIR}/llnlxftp2.1/sources
 USE_MOTIF=	yes
 USE_IMAKE=	yes
