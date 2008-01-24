@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ysmv7
 DISTNAME=	${PORTNAME}v${PORTVERSION:S/./_/g}
 
-MAINTAINER=	aquatique-ports@rambler.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line ICQ client with ICQ2000 and recoding support
 
 USE_ICONV=	yes
