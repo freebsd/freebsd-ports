@@ -7,18 +7,19 @@
 
 PORTNAME=	motion
 PORTVERSION=	3.2.9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
 PATCH_SITES=	http://www.lavrsen.dk/twiki/pub/Motion/FreeBSDPatch/
-PATCHFILES=	motion-3.2.9.port-freebsd.diff.gz
+PATCHFILES=	motion-3.2.9-2.port-freebsd.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ack@telefonica.net
 COMMENT=	A motion detection application
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+		avformat.1:${PORTSDIR}/multimedia/ffmpeg
 
 ONLY_FOR_ARCHS=	i386 amd64
 
