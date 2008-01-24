@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ "x$2" != "xPOST-DEINSTALL" ]; then
+	exit 0;
+fi
+
+echo "Killing aprsd if running"
+kill -9 `cat /var/run/aprsd.pid`
+rm -f /var/run/aprsd.pid
+
+cat<<EOF
+If you really want to remove this package completely
+remove what is left in /usr/local/etc/aprsd /var/log/aprsd.
+Also be sure to remove user and groups aprsd and tnc 
+and remember to remove aprsd from dialer group.
+EOF

@@ -5,6 +5,7 @@
 
     SUBDIR += acfax
     SUBDIR += aldo
+    SUBDIR += aprsd
     SUBDIR += asmodem
     SUBDIR += atslog
     SUBDIR += bfhist
