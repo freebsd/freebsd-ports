@@ -286,6 +286,7 @@
     SUBDIR += p5-Jifty-DBI
     SUBDIR += p5-MLDBM
     SUBDIR += p5-MLDBM-Sync
+    SUBDIR += p5-Memcached-libmemcached
     SUBDIR += p5-Metadata
     SUBDIR += p5-Mysql
     SUBDIR += p5-Mysql-Diff

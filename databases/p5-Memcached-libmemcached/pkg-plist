@@ -1,0 +1,26 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/API.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/const_hash.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/func_hash.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_auto.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_behavior.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_callback.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_create.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_delete.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_flush.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_get.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_quit.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_server_st.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_servers.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_set.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_stats.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_strerror.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_verbosity.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_version.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Memcached/libmemcached/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Memcached/libmemcached/libmemcached.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Memcached/libmemcached/libmemcached.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memcached/libmemcached
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memcached
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Memcached
