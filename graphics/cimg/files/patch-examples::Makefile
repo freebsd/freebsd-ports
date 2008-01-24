@@ -3,7 +3,7 @@
 @@ -42,10 +42,10 @@
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.26
+ CIMG_VERSION = 1.27
 -CC           = g++
 -X11PATH      = /usr/X11R6
 -CFLAGS       = -Wall -W -ansi -pedantic -ffast-math
