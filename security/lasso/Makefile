@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	lasso
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	security
-MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/520/
+MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/594/
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Liberty Alliance Implementation
 
 RUN_DEPENDS=	xmlsec1:${PORTSDIR}/security/xmlsec1
