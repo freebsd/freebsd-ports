@@ -10,7 +10,7 @@ PORTVERSION=	1.06
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	ftp
-MASTER_SITES=	http://tranchant.plus.com/software/
+MASTER_SITES=	http://mark.tranchant.co.uk/software/
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Upload queue manager for non-permanent connections
@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		ftpq.1
 PLIST_SUB+=	SPOOLDIR=${SPOOLDIR}
+PORTDOCS=	CHANGELOG README TODO
 
 # This may be set interactively at install-time:
 SPOOLDIR?=	/var/spool/ftpq
@@ -31,9 +32,7 @@ post-install:
 	@ ${MKDIR} ${SPOOLDIR} && ${CHMOD} 777 ${SPOOLDIR}
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-.for docfile in CHANGELOG README TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
