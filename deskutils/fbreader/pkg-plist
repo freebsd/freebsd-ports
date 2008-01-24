@@ -1,6 +1,8 @@
 bin/FBReader
 lib/libzlcore.so.0
+lib/libzlcore.so.0.9
 lib/libzltext.so.0
+lib/libzltext.so.0.9
 lib/zlibrary/ui/zlui-%%UI%%.so
 share/FBReader/default/config.xml
 share/FBReader/default/external.xml
@@ -26,39 +28,40 @@ share/FBReader/resources/ru.xml
 share/FBReader/resources/sv.xml
 share/FBReader/resources/uk.xml
 share/applications/FBReader.desktop
-share/pixmaps/FBReader/addbook.png
-share/pixmaps/FBReader/bookinfo.png
-share/pixmaps/FBReader/books.png
-share/pixmaps/FBReader/contents.png
+share/pixmaps/FBReader/addBook.png
+share/pixmaps/FBReader/bookInfo.png
 share/pixmaps/FBReader/fb2.png
-share/pixmaps/FBReader/find.png
-share/pixmaps/FBReader/findnext.png
-share/pixmaps/FBReader/findprev.png
+share/pixmaps/FBReader/findNext.png
+share/pixmaps/FBReader/findPrevious.png
 share/pixmaps/FBReader/folder.png
-share/pixmaps/FBReader/help.png
-share/pixmaps/FBReader/history.png
-share/pixmaps/FBReader/home.png
+share/pixmaps/FBReader/gotoHome.png
 share/pixmaps/FBReader/html.png
-share/pixmaps/FBReader/leftarrow.png
 share/pixmaps/FBReader/mobipocket.png
 share/pixmaps/FBReader/oeb.png
 share/pixmaps/FBReader/openreader.png
 share/pixmaps/FBReader/palm.png
 share/pixmaps/FBReader/plucker.png
-share/pixmaps/FBReader/rightarrow.png
-share/pixmaps/FBReader/rotatescreen.png
+share/pixmaps/FBReader/preferences.png
+share/pixmaps/FBReader/redo.png
+share/pixmaps/FBReader/rotate.png
 share/pixmaps/FBReader/rtf.png
-share/pixmaps/FBReader/settings.png
+share/pixmaps/FBReader/search.png
+share/pixmaps/FBReader/showHelp.png
+share/pixmaps/FBReader/showLibrary.png
+share/pixmaps/FBReader/showRecent.png
 share/pixmaps/FBReader/tcr.png
+share/pixmaps/FBReader/toc.png
 share/pixmaps/FBReader/tree-authorinfo.png
 share/pixmaps/FBReader/tree-bookinfo.png
 share/pixmaps/FBReader/tree-order.png
 share/pixmaps/FBReader/tree-remove.png
+share/pixmaps/FBReader/undo.png
 share/pixmaps/FBReader/unknown.png
 share/pixmaps/FBReader/upfolder.png
 share/pixmaps/FBReader/weasel.png
 share/pixmaps/FBReader/zipfolder.png
 share/pixmaps/FBReader.png
+share/zlibrary/default/config.xml
 share/zlibrary/encodings/Big5
 share/zlibrary/encodings/Encodings.xml
 share/zlibrary/encodings/GBK
@@ -101,6 +104,7 @@ share/zlibrary/resources/uk.xml
 @dirrm share/FBReader/resources
 @dirrm share/FBReader
 @dirrm share/pixmaps/FBReader
+@dirrm share/zlibrary/default
 @dirrm share/zlibrary/encodings
 @dirrm share/zlibrary/resources
 @dirrm share/zlibrary
