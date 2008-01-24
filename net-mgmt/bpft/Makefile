@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=bpft4
 DISTNAME=	bpft4-2004-04-14
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	aquatique-ports@rambler.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The BPF Traffic collector
 
 CONFLICTS=	trafd-3.0.*
