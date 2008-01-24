@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.79E
+PORTVERSION=	4.79H
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
@@ -29,7 +29,7 @@ COMMENT=	Lists information about open files (similar to fstat(1))
 
 FIXUP_RELEASE=yes
 .if defined(FIXUP_RELEASE)
-DISTNAME=	${PORTNAME}_4.79E.freebsd
+DISTNAME=	${PORTNAME}_${PORTVERSION}.freebsd
 .else
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 .endif
