@@ -274,7 +274,7 @@ lib/libcbanking.so.21
 lib/libqbanking.la
 lib/libqbanking.so
 lib/libqbanking.so.4
-lib/pkgconfig/aqbanking.pc
+libdata/pkgconfig/aqbanking.pc
 share/aclocal/aqbanking.m4
 share/aclocal/aqdtaus.m4
 share/aclocal/aqhbci.m4
