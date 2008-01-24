@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Motif FTP client with drag-and-drop file transfer
 
+PLIST_FILES=	bin/xdir lib/X11/app-defaults/XDir
 MAN1=	xdir.1
 
 WRKSRC=		${WRKDIR}/llnlxdir2_1_2/sources
