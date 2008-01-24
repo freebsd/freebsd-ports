@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20080121
+PORTVERSION=	20080124
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -26,6 +26,7 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		UNRAR "Enable rar archives support" Off \
 		MILTER "Compile the milter interface" Off \
 		LDAP "libmilter was built with LDAP" Off \
+		ICONV "Enable ICONV support" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
 
 USE_AUTOTOOLS=	libtool:15
@@ -136,6 +137,12 @@ PLIST_SUB+=	UNRAR=""
 .else
 PLIST_SUB+=	UNRAR="@comment "
 CONFIGURE_ARGS+=	--disable-unrar
+.endif
+.if defined(WITH_ICONV)
+CONFIGURE_ARGS+=--with-iconv
+USE_ICONV=	yes
+.else
+CONFIGURE_ARGS+=--without-iconv
 .endif
 
 .if defined(WITH_MILTER)
