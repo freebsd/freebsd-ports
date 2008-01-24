@@ -110,6 +110,9 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4dc.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4dc.o
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4dc.so
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_PkEdge.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_PkEdge.o
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_PkEdge.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/FESpace.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/FQuadTree.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/InitFunct.hpp
@@ -192,12 +195,15 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/strversionnumber.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/testFE-P3.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/testFE-P3dc.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/testFE-PkEdge.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/testFE.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/testFEMorley.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/throwassert.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/versionnumber.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/makeref.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/mpi/essai.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/mpi/mortar-DN-4-mpi.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/mpi/mortar-msh.hdp
 %%PORTDOCS%%%%EXAMPLESDIR%%/mpi/regtests.sh
 %%PORTDOCS%%%%EXAMPLESDIR%%/mpi/schwarz-b.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/mpi/schwarz-c.edp
@@ -253,6 +259,8 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/mat_interpol.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/medit.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/mesh.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/mortar-DN-4.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/mortar-msh.hdp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/movemesh.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/nl-elast-neo-Hookean.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/nolinear-elas.edp
