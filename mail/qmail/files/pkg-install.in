@@ -6,7 +6,7 @@
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 PREFIX=${PKG_PREFIX:-%%PREFIX%%}
-UID=`id -u ${USER}`
+UID=`id -u`
 
 addGroup() {
 	NGROUP=$1
