@@ -148,6 +148,7 @@ bin/sdcpp
 %%MCS51%%%%DATADIR%%/include/mcs51/msc1210.h
 %%MCS51%%%%DATADIR%%/include/mcs51/msm8xc154s.h
 %%MCS51%%%%DATADIR%%/include/mcs51/p89c66x.h
+%%MCS51%%%%DATADIR%%/include/mcs51/p89lpc938.h
 %%MCS51%%%%DATADIR%%/include/mcs51/p89v51rd2.h
 %%MCS51%%%%DATADIR%%/include/mcs51/reg51.h
 %%MCS51%%%%DATADIR%%/include/mcs51/reg764.h
@@ -315,7 +316,6 @@ bin/sdcpp
 %%PIC16%%%%DATADIR%%/include/pic16/sdcc-lib.h
 %%PIC16%%%%DATADIR%%/include/pic16/signal.h
 %%PIC16%%%%DATADIR%%/include/pic16/stdarg.h
-%%PIC16%%%%DATADIR%%/include/pic16/stdbool.h
 %%PIC16%%%%DATADIR%%/include/pic16/stddef.h
 %%PIC16%%%%DATADIR%%/include/pic16/stdint.h
 %%PIC16%%%%DATADIR%%/include/pic16/stdio.h
