@@ -1152,6 +1152,7 @@
     SUBDIR += rubygem-scrubyt
     SUBDIR += rubygem-staticmatic
     SUBDIR += rubygem-taggable
+    SUBDIR += rubygem-thin
     SUBDIR += sams
     SUBDIR += sarg
     SUBDIR += sbox-dtc

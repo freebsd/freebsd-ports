@@ -1,0 +1,13 @@
+Thin is a Ruby web server that glues together 3 of the best
+Ruby libraries in web history:
+
+* the Mongrel parser, the root of Mongrel speed and security
+* Event Machine, a network I/O library with extremely high scalability,
+  performance and stability
+* Rack, a minimal interface between webservers and Ruby frameworks
+
+Which makes it, with all humility, the most secure, stable, fast and
+extensible Ruby web server bundled in an easy to use gem for your own
+pleasure. 
+
+WWW: http://code.macournoyer.com/thin/
