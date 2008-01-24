@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Oct 15 21:48:21 2007
++++ Makefile.in	Thu Jan 24 22:00:17 2008
+@@ -502,7 +502,7 @@
+ 
+ CLEANFILES = aqbanking-config aqbanking-config.in $(am__append_1) \
+ 	$(BUILT_SOURCES)
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(libdir)/../libdata/pkgconfig
+ pkgconfig_DATA = aqbanking.pc
+ 
+ # Rule for using the Inno Setup compiler. The path to iscc.exe is set
