@@ -12272,6 +12272,7 @@ photo_gallery	ports/www/photo_gallery
 photoclip	ports/graphics/photoclip
 photopc		ports/graphics/photopc
 php-Auth_OpenID	ports/security/php-Auth_OpenID
+php-Net_Gearman	ports/devel/php-Net_Gearman
 php-dbg		ports/devel/php-dbg
 php-dbg2	ports/devel/php-dbg2
 php-dyn		ports/www/php-dyn
