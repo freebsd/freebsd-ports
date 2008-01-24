@@ -1,0 +1,11 @@
+Consistent hashing is a scheme that provides hash table functionality
+in a way that the addition or removal of one slot does not
+significantly change the mapping of keys to slots. In contrast, in
+most traditional hash tables, a change in the number of array slots
+causes nearly all keys to be remapped.
+
+Consistent hashing was introduced in 1997 as a way of distributing
+requests among a changing population of web servers. More recently, it
+and similar techniques have been employed in distributed hash tables.
+
+WWW:	http://search.cpan.org/dist/Set-ConsistentHash/
