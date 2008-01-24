@@ -11043,6 +11043,7 @@ p5-Sendmail-AccessDB	ports/mail/p5-Sendmail-AccessDB
 p5-Sendmail-Milter	ports/mail/p5-Sendmail-Milter
 p5-Senna	ports/textproc/p5-Senna
 p5-Set-Array	ports/devel/p5-Set-Array
+p5-Set-ConsistentHash	ports/devel/p5-Set-ConsistentHash
 p5-Set-Crontab	ports/devel/p5-Set-Crontab
 p5-Set-Infinite	ports/devel/p5-Set-Infinite
 p5-Set-IntSpan	ports/math/p5-Set-IntSpan
