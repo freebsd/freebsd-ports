@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+%%DATADIR%%/Net/Gearman/Client.php
+%%DATADIR%%/Net/Gearman/Connection.php
+%%DATADIR%%/Net/Gearman/Exception.php
+%%DATADIR%%/Net/Gearman/Job.php
+%%DATADIR%%/Net/Gearman/Job/Common.php
+%%DATADIR%%/Net/Gearman/Job/Exception.php
+%%DATADIR%%/Net/Gearman/Set.php
+%%DATADIR%%/Net/Gearman/Task.php
+%%DATADIR%%/Net/Gearman/Worker.php
+%%EXAMPLESDIR%%/SQL.php
+%%EXAMPLESDIR%%/Sum.php
+%%EXAMPLESDIR%%/tasks.php
+%%EXAMPLESDIR%%/worker.php
+@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%DATADIR%%/Net/Gearman/Job
+@dirrmtry %%DATADIR%%/Net/Gearman
+@dirrmtry %%DATADIR%%/Net
+@dirrmtry %%DATADIR%%
