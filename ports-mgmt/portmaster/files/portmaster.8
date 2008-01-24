@@ -1,4 +1,4 @@
-.\" Copyright (c) 2006-2007 Doug Barton dougb@FreeBSD.org
+.\" Copyright (c) 2006-2008 Doug Barton dougb@FreeBSD.org
 .\" All rights reserved.
 .\"
 .\" Redistribution and use in source and binary forms, with or without
@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd May 27, 2007
+.Dd January 23, 2008
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -32,7 +32,7 @@
 .Nd manage your ports without external databases or languages
 .Sh SYNOPSIS
 Common Flags:
-.Op Fl -force-config CGgntvw [B|b] [uf|i] [D|d]
+.Op Fl -force-config CGHgntvw [B|b] [uf|i] [D|d]
 .Op Fl m Ar arguments for make
 .Op Fl x Ar glob pattern to exclude from building
 .Nm
@@ -55,8 +55,8 @@ Common Flags:
  . (Use in /usr/ports/foo/bar to build that port)
 .Nm
 .Fl -show-work
-.Op Fl Gv m Ar args for make
-<port, specified as above>
+.Op Fl Gv m Ar args
+<single port, as above>
 .Nm
 .Op Common Flags
 .Fl o Ar <new port dir in /usr/ports> <installed port>
@@ -71,7 +71,7 @@ Common Flags:
 .Fl [l|L]
 .Nm
 .Op Fl b [D|d]
-.Fl e Ar name of port directory in
+.Fl e Ar full name of port directory in
 .Pa /var/db/pkg
 .Nm
 .Op Fl b [D|d]
@@ -81,7 +81,11 @@ Common Flags:
 .Nm
 .Fl -clean-distfiles-all
 .Nm
-.Fl h
+.Fl -check-depends
+.Nm
+.Fl h|--help
+.Nm
+.Fl -version
 .Pp
 .Sh DESCRIPTION
 The
@@ -106,7 +110,7 @@ option exists to accomplish this.
 .Pp
 By default
 .Nm
-will first recurse through the port to update,
+will first recurse through the port to update
 and all of its dependencies (if any) to handle
 any port OPTIONS via the 'make config' interface.
 You will be presented with an OPTIONS dialog if
@@ -124,7 +128,7 @@ correct distfiles are available,
 or start downloading the new ones.
 If you stop
 .Nm
-with ^C, an attempt will be made to kill off all
+with ^C, an attempt will be made to kill off
 the child processes started for this purpose.
 .Pp
 If the recursion through the ports for 'make
@@ -148,7 +152,9 @@ required after the port starts building is to answer
 questions about the deletion of stale distfiles.
 This can be eliminated with the
 .Fl d
-option.
+or
+.Fl D
+options.
 .Pp
 While checking dependencies, if a port has CONFLICTS
 set, the list will be checked against your installed ports,
@@ -162,6 +168,13 @@ option specified when updating an existing port,
 a backup package will be created before
 .Xr pkg_delete 1
 is called.
+If you are using the
+.Fl b
+option, these packages can be found in a directory called
+.Dq portmaster-backup
+in the directory specified by the PACKAGES environment
+variable, usually
+.Pa /usr/ports/packages .
 If there is no
 .Fl b
 option specified, the backup package will be deleted
@@ -178,17 +191,34 @@ by the old port (if any) will be saved to
 After installation if there are any new files with
 the same names as those in
 .Pa /usr/local/compat/pkg
-the old files will be deleted.
+the old files will be deleted,
+and
+.Xr ldconfig 8
+will be run via
+.Pa /etc/rc.d/ldconfig .
 .Pp
 After the new port is built, but before it is installed
 the runtime dependencies will be checked to make sure
 they are up to date.
+If the
+.Fl g
+option is used, a package will be created for the new
+(or newly installed) version.
+.Pp
+When installing a port or using the
+.Fl -check-depends
+option, if there are other ports that depend on this port
+the dependent ports
+.Pa +CONTENTS
+file(s), and the
+.Pa +REQUIRED_BY
+file for the new port will be updated.
 .Pp
 At the conclusion of a successful installation,
 any
 .Pa pkg-message
-files that were installed
-will be displayed.
+files that were installed,
+and a summary of the work performed will be displayed.
 .Sh OPTIONS
 The options are as follows:
 .Bl -tag -width F1
@@ -197,16 +227,18 @@ run 'make config' for all ports (must be the first option)
 .It Fl B
 prevents creation of the backup package for the installed port
 .It Fl C
-prevents 'make clean' being run in port directory
+prevents 'make clean' from being run before building
 .It Fl G
-prevents the recursive 'make config' (unsets
+prevents the recursive 'make config' (overrides
 .Fl -force-config )
+.It Fl H
+hide details of the port build and install in a log file
 .It Fl b
 create and keep a backup package of an installed port
 .It Fl g
 create a package of the new port
 .It Fl n
-do not actually perform any updates
+run through configure, but do not make or install any ports
 .It Fl t
 recurse dependencies thoroughly, using all-depends-list
 .It Fl v
@@ -214,23 +246,21 @@ verbose output
 .It Fl w
 save old shared libraries before deinstall
 .It Fl u
-unattended mode, accepts defaults for all
-.Nm
-dialogues
+unattended mode -- accept defaults for all but 'make config'
 .It [-R] Fl f
 always rebuild ports (overrides
 .Fl i )
 .It Fl i
-interactive update mode
+interactive update mode -- ask whether to rebuild ports
 .It Fl D
-prevents cleaning of distfiles
+no cleaning of distfiles
 .It Fl d
 always clean distfiles
 .It Fl m Ar arguments for make
 any arguments to supply to
 .Xr make 1
 .It Fl x
-avoid building ports as dependencies that match this pattern
+avoid building or updating ports that match this pattern
 .It Fl p Ar port directory in /usr/ports
 specify the full path to a port directory
 .It Fl -show-work
@@ -240,7 +270,7 @@ This flag must come first on the command line.
 .It Fl o Ar <new port dir in /usr/ports> <installed port>
 replace the installed port with a port from a different origin
 .It [-R] Fl r Ar name/glob of port in /var/db/pkg
-rebuild port, and all ports that depend on it
+rebuild the specified port, and all ports that depend on it
 .It Fl R
 restart an update, skipping ports already up to date.
 Used with
@@ -260,11 +290,19 @@ expunge port using
 and optionally remove all distfiles.
 Calls
 .Fl s
-mode after it is done expunging in case removing
+after it is done expunging in case removing
 the port causes a dependency to no longer be
 necessary.
 .It Fl s
 clean out stale ports that used to be depended on
+.It Fl F
+fetch distfiles only.
+Cannot be used with
+.Fl G ,
+but may be used with
+.Fl -force-config
+and
+.Fl [aftv] .
 .It Fl -clean-distfiles
 recurse through the installed ports to get a list
 of distinfo files,
@@ -274,15 +312,32 @@ to make sure that they are still associated with
 an installed port.
 If not, offer to delete the stale file.
 .It Fl -clean-distfiles-all
-do the same as above, but delete all files without prompting.
-.It Fl h
+does the same as above, but deletes all files without prompting.
+.It Fl -check-depends
+cross-check and update dependency information for all ports
+.It Fl h|--help
 display help message
+.It Fl -version
+display the version only.
 .El
 .Sh MAKE ENVIRONMENT
-The directory pointed to by the PKGREPOSITORY
+The directory pointed to by the PACKAGES
 variable (by default
-.Pa /usr/ports/packages/All )
+.Pa /usr/ports/packages )
 will be used to store new and backup packages.
+When using 'make package' for the
+.Fl g
+option, the ports infrastructure will store packages in
+.Pa /usr/ports/packages/All .
+When using the
+.Fl b
+option,
+.Nm
+stores its backup packages in
+.Pa /usr/ports/packages/portmaster-backup
+so that you can create both a backup package and
+a package of the newly installed port even if they
+have the same version.
 .Pp
 The UPGRADE_TOOL variable is set to
 .Dq portmaster ,
@@ -290,17 +345,41 @@ and the UPGRADE_PORT and UPGRADE_PORT_VER variables
 are set to the full package name string and version
 of the existing package being replaced, if any.
 .Sh FILES
-.Bl -tag -width ".Pa $HOME/.portmasterrc" -compact
+.Bl -tag -width "1234" -compact
 .It Pa /etc/portmaster.rc
 .It Pa $HOME/.portmasterrc
 Optional system and user configuration files.
 The variables set in the script's getopts routine
 can be specified in these files to enable those options.
-.It Pa /var/db/pkg/*/+IGNOREME
-If this file exists,
+These files will be read by the parent
 .Nm
-will ignore this port for the purpose of dependency
-updates.
+process, and all variables
+in them will be exported.
+.It Pa /var/db/pkg/*/+IGNOREME
+If this file exists, several things will happen:
+.Bl -tag -width F1
+.It 1. The port will be ignored for all purposes, including
+dependency updates, if there is no directory for it in
+.Pa /usr/ports ,
+and there is no entry for it in
+.Pa /usr/ports/MOVED .
+If the
+.Fl v
+option is used, the fact that the port is being ignored
+will be mentioned.
+.It 2. If using the
+.Fl L
+option, and a new version exists, the existence of the
+.Pa +IGNOREME
+file will be mentioned.
+.It 3. If you do a regular update of the port, or if the
+.Fl a
+option is being used, you will be asked if you want to
+update the port anyway; unless the
+.Fl u
+option is being used, in which case the port will be ignored.
+.El
+.Pp
 .It Pa /var/db/pkg/*/PM_UPGRADE_DONE_FLAG
 Indicates to a subsequent
 .Fl f
@@ -309,12 +388,83 @@ or
 run which includes the
 .Fl R
 option that a port has already been rebuilt,
-so it can be safely ignored.
+so it can be safely ignored if it is up to date.
+.It Pa /tmp/port_log-*
+If the
+.Fl H
+option is used, and the installation or upgrade is not
+successful, the results of the build and install will be
+saved in this file.
+Substitute the value of TMPDIR in your environment as
+appropriate.
 .El
 .Sh EXIT STATUS
 .Ex -std
+.Sh ADVANCED FEATURE: SU_CMD
+The ports infrastructure has limited support for performing
+various operations as an unpriviliged user.
+It does this by defining SU_CMD, which is typically
+.Xr su 1 .
+In order to support complete management of your ports as an
+unprivileged user, escalating to
+.Dq root
+privileges only when necessary,
+.Nm
+can use
+.Xr sudo 1
+to handle the escalated privileges.
+To accomplish this you must have the following directories
+configured so that the unprivileged user can access them:
+.Bl -tag -width F1
+.It 1. WRKDIRPREFIX - This is usually set to Pa /usr/ports/category/port/work ,
+however it is suggested that you configure another
+directory outside your ports tree for access by the
+unprivileged user, and assign this variable
+to that value in your
+.Pa /etc/make.conf .
+.It 2. DISTDIR - This is usually set to Pa /usr/ports/distfiles .
+This directory can be safely set up for access by the unprivileged
+user, or a new directory can be specified as above.
+.It 3. TMPDIR - Usually Pa /tmp ,
+but can also be set to another directory in your shell
+environment if desired.
+.El
+.Pp
+It is further assumed that the following directories will be
+owned by root:
+.Bl -tag -width F1
+.It Pa /var/db/pkg
+.It Pa /var/db/port
+.It LOCALBASE - Usually Pa /usr/local
+.It PACKAGES - Usually Pa /usr/ports/packages
+.It PKGREPOSITORY - Usually Pa ${PACKAGES}/All
+.El
+.Pp
+You will then need to install and configure
+.Xr sudo 1 .
+This can easily be done with
+.Pa /usr/ports/security/sudo .
+Then you will need to define PM_SU_CMD in your
+.Pa /etc/portmaster.rc
+file, or your
+.Pa $HOME/.portmasterrc
+file.
+For example:
+.Pp
+.Dl "PM_SU_CMD=/usr/local/bin/sudo"
+.Pp
+You can optionally define the PM_SU_VERBOSE option as well
+to notify you each time
+.Nm
+uses the PM_SU_CMD.
+This is particularly useful if you are experimenting with
+a tool other than
+.Xr sudo 1
+to handle the privilege escalation, although at this time
+.Xr sudo 1
+is the only supported option.
 .Sh EXAMPLES
-The following is an example of a typical usage
+The following are examples of typical usage
 of the
 .Nm
 command:
@@ -328,14 +478,37 @@ command:
 .Dl "portmaster -o emulators/linux_base-fc4 linux_base-8-8.0_15"
 .Dl "portmaster -x cvsup -f -a"
 .Pp
-.Dl "portmaster -L |"
-.Dl "egrep -B1 'ew version|Aborting|installed|dependencies' |"
-.Dl "grep -v '^--'"
 Print only the ports that have available updates.
+This can be used as an alias in your shell.
+Be sure to fix the line wrapping appropriately.
+.Dl "portmaster -L |"
+.Dl "egrep -B1 '(ew|ort) version|Aborting|installed|dependencies|"
+.Dl "IGNORE|marked|Reason:|MOVED' | grep -v '^--'"
+.Pp
+Using
+.Nm
+to do a complete reinstallation of all your ports:
+.Dl "1. portmaster -l > ~/installed-port-list"
+.Dl "2. Update your ports tree"
+.Dl "3. portmaster --clean-distfiles-all"
+.Dl "4. portmaster -Faf"
+.Dl "5. pkg_delete *"
+.Dl "6. Manually check through /usr/local to make sure it is really"
+.Dl "   empty"
+.Pp
+.Dl "Now look at the list you generated in the first step and install"
+.Dl "all the root and leaf ports that you want to have again. The trunk"
+.Dl "and branch ports are dependencies, and will automatically be"
+.Dl "installed as needed.  You probably want to use the -D option for"
+.Dl "the installations and then run --clean-distfiles-all again when"
+.Dl "you are done."
 .Sh SEE ALSO
 .Xr make 1 ,
 .Xr pkg_delete 1 ,
-.Xr ports 7
+.Xr su 1 ,
+.Xr sudo 1 ,
+.Xr ports 7 ,
+.Xr ldconfig 8
 .Sh AUTHORS
 This
 manual page was written by
