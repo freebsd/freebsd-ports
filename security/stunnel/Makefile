@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.21
-PORTREVISION=	1
+PORTVERSION=	4.22.b2
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
 		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/download/stunnel/src/
+DISTNAME=	${PORTNAME}-4.22b2
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
@@ -20,6 +20,7 @@ COMMENT=	SSL encryption wrapper for standard network daemons
 USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	YES
 USE_RC_SUBR=	YES
+WRKSRC=		${WRKDIR}/${PORTNAME}-4.22
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -77,9 +78,9 @@ post-patch:
 .endif
 
 post-install:
-	${SED} "s+!!PREFIX!!+${PREFIX}+g; s+!!RC_SUBR!!+${RC_SUBR}+g" \
-		< ${FILESDIR}/stunnel.sh > ${WRKDIR}/stunnel.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/stunnel.sh ${PREFIX}/etc/rc.d/
+	${SED} "s+%%PREFIX%%+${PREFIX}+g; s+%%RC_SUBR%%+${RC_SUBR}+g; s+%%ETCDIR%%+${ETCDIR}+g" \
+		< ${FILESDIR}/stunnel.sh > ${WRKDIR}/stunnel
+	${INSTALL_SCRIPT} ${WRKDIR}/stunnel ${PREFIX}/etc/rc.d/
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO} ""
@@ -100,7 +101,7 @@ post-install:
 cert:
 	@${ECHO} ""
 	@${ECHO} "**************************************************************************"
-	@${ECHO} "The new certificate will be saved into ${PREFIX}/etc/stunnel/stunnel.pem"
+	@${ECHO} "The new certificate will be saved into ${ETCDIR}/stunnel.pem"
 	@${ECHO} "**************************************************************************"
 	@${ECHO} ""
 	@(cd ${WRKSRC}/tools/; make install-data-local)

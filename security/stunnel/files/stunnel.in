@@ -12,27 +12,27 @@
 # Add some of the following variables to /etc/rc.conf to configure stunnel:
 # stunnel_enable (bool):	Set to "NO" by default.
 #				Set it to "YES" to enable stunnel.
-# stunnel_config (str):		Default "!!PREFIX!!/etc/stunnel/stunnel.conf"
+# stunnel_config (str):		Default "%%ETCDIR%%/stunnel.conf"
 #				Set it to the full path to the config file
 #				that stunnel will use during the automated
 #				start-up.
-# stunnel_pidfile (str):	Default "!!PREFIX!!/var/stunnel/stunnel.pid"
+# stunnel_pidfile (str):	Default "%%PREFIX%%/var/stunnel/stunnel.pid"
 #				Set it to the value of 'pid' in
 #				the stunnel.conf file.
 #
 
-. !!RC_SUBR!!
+. %%RC_SUBR%%
 
 name="stunnel"
 rcvar=`set_rcvar`
-stunnel_config="!!PREFIX!!/etc/stunnel/${name}.conf"
-stunnel_pidfile="/var/run/${name}.pid"
-command="!!PREFIX!!/bin/stunnel"
-
-[ -z "$stunnel_enable" ]		&& stunnel_enable="NO"
 
 load_rc_config $name
 
+: ${stunnel_enable="NO"}
+: ${stunnel_config="%%ETCDIR%%/${name}.conf"}
+: ${stunnel_pidfile="/var/run/${name}.pid"}
+
+command="%%PREFIX%%/bin/stunnel"
 command_args=${stunnel_config}
 pidfile=${stunnel_pidfile}
 
