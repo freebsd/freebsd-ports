@@ -5406,6 +5406,7 @@ ja-prime-el	ports/japanese/prime-el
 ja-prn		ports/japanese/prn
 ja-ptex-tetex	ports/japanese/ptex
 ja-py-kanjilib	ports/japanese/py-kanjilib
+ja-py-mecab	ports/japanese/py-mecab
 ja-pycodec	ports/japanese/pycodec
 ja-pycodec-zope	ports/japanese/pycodec-zope
 ja-qkc		ports/japanese/qkc
