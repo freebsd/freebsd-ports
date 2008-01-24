@@ -36,6 +36,10 @@ CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
 CFLAGS+=	-DTT_CONFIG_OPTION_BYTECODE_INTERPRETER
 .endif
 
+.if defined(WITH_LCD_FILTERING)
+CFLAGS+=	-DFT_CONFIG_OPTION_SUBPIXEL_RENDERING
+.endif
+
 .if defined(WITH_CJK)
 #PATCH_SITES+=	http://lwj-hinet.myweb.hinet.net/ \
 #		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
@@ -55,6 +59,16 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Note that there are important patent issues related to the"
 	@${ECHO_MSG} "use of the interpreter."
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_LCD_FILTERING)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You may want to enable LCD filtering."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Hit Ctrl-C now and use \"make WITH_LCD_FILTERING=yes\""
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Note that there are possible patent issues related to the"
+	@${ECHO_MSG} "use of the LCD filtering technology."
 	@${ECHO_MSG}
 .endif
 
