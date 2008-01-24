@@ -14646,6 +14646,7 @@ rubygem-staticmatic	ports/www/rubygem-staticmatic
 rubygem-stream	ports/devel/rubygem-stream
 rubygem-syntax	ports/textproc/rubygem-syntax
 rubygem-taggable	ports/www/rubygem-taggable
+rubygem-thin	ports/www/rubygem-thin
 rubygem-tidy	ports/textproc/rubygem-tidy
 rubygem-transactionsimple	ports/devel/rubygem-transactionsimple
 rubygem-turing	ports/graphics/rubygem-turing
