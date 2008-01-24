@@ -120,8 +120,8 @@
 %%WWWDIR_REL%%/changelog_page.php
 %%WWWDIR_REL%%/config_defaults_inc.php
 %%WWWDIR_REL%%/config_inc.php.sample
-%%WWWDIR_REL%%/core.php
 %%WWWDIR_REL%%/core/.htaccess
+%%WWWDIR_REL%%/core.php
 %%WWWDIR_REL%%/core/access_api.php
 %%WWWDIR_REL%%/core/adodb/adodb-active-record.inc.php
 %%WWWDIR_REL%%/core/adodb/adodb-csvlib.inc.php
@@ -392,6 +392,7 @@
 %%WWWDIR_REL%%/doc/ChangeLog
 %%WWWDIR_REL%%/doc/INSTALL
 %%WWWDIR_REL%%/doc/LICENSE
+%%WWWDIR_REL%%/doc/UPGRADING
 %%WWWDIR_REL%%/file_download.php
 %%WWWDIR_REL%%/graphs/graph_assigned_to_me.php
 %%WWWDIR_REL%%/graphs/graph_by_category.php
@@ -632,9 +633,6 @@
 %%WWWDIR_REL%%/news_rss.php
 %%WWWDIR_REL%%/news_update.php
 %%WWWDIR_REL%%/news_view_page.php
-%%WWWDIR_REL%%/packages/.htaccess
-%%WWWDIR_REL%%/packages/mantis-httpd.conf
-%%WWWDIR_REL%%/packages/mantis.spec
 %%WWWDIR_REL%%/permalink_page.php
 %%WWWDIR_REL%%/print_all_bug_options_inc.php
 %%WWWDIR_REL%%/print_all_bug_options_page.php
@@ -700,7 +698,6 @@
 %%WWWDIR_REL%%/view_filters_page.php
 %%WWWDIR_REL%%/wiki.php
 %%WWWDIR_REL%%/xmlhttprequest.php
-@dirrm %%WWWDIR_REL%%/packages
 @dirrm %%WWWDIR_REL%%/lang
 @dirrm %%WWWDIR_REL%%/javascript/projax
 @dirrm %%WWWDIR_REL%%/javascript/jscalendar/lang
