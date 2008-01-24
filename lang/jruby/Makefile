@@ -9,8 +9,8 @@ PORTNAME=	jruby
 PORTVERSION=	1.0.3
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://dist.codehaus.org/jruby/ \
-		http://repo2.maven.org/maven/jruby/misc/ \
-		http://repo1.maven.org/maven/jruby/misc/ \
+		http://repo2.maven.org/maven/jruby/ \
+		http://repo1.maven.org/maven/jruby/ \
 		http://dist.codehaus.org/jruby/previous/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
