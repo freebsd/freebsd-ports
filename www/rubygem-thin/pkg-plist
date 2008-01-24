@@ -1,0 +1,117 @@
+bin/thin
+%%GEM_CACHE%%
+%%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/COPYING
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/benchmark/previous.rb
+%%GEM_LIB_DIR%%/benchmark/simple.rb
+%%GEM_LIB_DIR%%/benchmark/utils.rb
+%%GEM_LIB_DIR%%/bin/thin
+%%GEM_LIB_DIR%%/doc/benchmarks.txt
+%%GEM_LIB_DIR%%/example/config.ru
+%%GEM_LIB_DIR%%/example/thin.god
+%%GEM_LIB_DIR%%/ext/thin_parser/Makefile
+%%GEM_LIB_DIR%%/ext/thin_parser/common.rl
+%%GEM_LIB_DIR%%/ext/thin_parser/ext_help.h
+%%GEM_LIB_DIR%%/ext/thin_parser/extconf.rb
+%%GEM_LIB_DIR%%/ext/thin_parser/mkmf.log
+%%GEM_LIB_DIR%%/ext/thin_parser/parser.c
+%%GEM_LIB_DIR%%/ext/thin_parser/parser.h
+%%GEM_LIB_DIR%%/ext/thin_parser/parser.o
+%%GEM_LIB_DIR%%/ext/thin_parser/parser.rl
+%%GEM_LIB_DIR%%/ext/thin_parser/thin.c
+%%GEM_LIB_DIR%%/ext/thin_parser/thin.o
+%%GEM_LIB_DIR%%/ext/thin_parser/thin_parser.so
+%%GEM_LIB_DIR%%/lib/rack/adapter/rails.rb
+%%GEM_LIB_DIR%%/lib/rack/handler/thin.rb
+%%GEM_LIB_DIR%%/lib/thin.rb
+%%GEM_LIB_DIR%%/lib/thin/cluster.rb
+%%GEM_LIB_DIR%%/lib/thin/connection.rb
+%%GEM_LIB_DIR%%/lib/thin/daemonizing.rb
+%%GEM_LIB_DIR%%/lib/thin/headers.rb
+%%GEM_LIB_DIR%%/lib/thin/logging.rb
+%%GEM_LIB_DIR%%/lib/thin/request.rb
+%%GEM_LIB_DIR%%/lib/thin/response.rb
+%%GEM_LIB_DIR%%/lib/thin/server.rb
+%%GEM_LIB_DIR%%/lib/thin/statuses.rb
+%%GEM_LIB_DIR%%/lib/thin/version.rb
+%%GEM_LIB_DIR%%/lib/thin_parser.so
+%%GEM_LIB_DIR%%/spec/cluster_spec.rb
+%%GEM_LIB_DIR%%/spec/daemonizing_spec.rb
+%%GEM_LIB_DIR%%/spec/headers_spec.rb
+%%GEM_LIB_DIR%%/spec/rack_rails_spec.rb
+%%GEM_LIB_DIR%%/spec/rails_app/app/controllers/application.rb
+%%GEM_LIB_DIR%%/spec/rails_app/app/controllers/simple_controller.rb
+%%GEM_LIB_DIR%%/spec/rails_app/app/helpers/application_helper.rb
+%%GEM_LIB_DIR%%/spec/rails_app/app/views/simple/index.html.erb
+%%GEM_LIB_DIR%%/spec/rails_app/config/boot.rb
+%%GEM_LIB_DIR%%/spec/rails_app/config/environment.rb
+%%GEM_LIB_DIR%%/spec/rails_app/config/environments/development.rb
+%%GEM_LIB_DIR%%/spec/rails_app/config/environments/production.rb
+%%GEM_LIB_DIR%%/spec/rails_app/config/environments/test.rb
+%%GEM_LIB_DIR%%/spec/rails_app/config/initializers/inflections.rb
+%%GEM_LIB_DIR%%/spec/rails_app/config/initializers/mime_types.rb
+%%GEM_LIB_DIR%%/spec/rails_app/config/routes.rb
+%%GEM_LIB_DIR%%/spec/rails_app/public/404.html
+%%GEM_LIB_DIR%%/spec/rails_app/public/422.html
+%%GEM_LIB_DIR%%/spec/rails_app/public/500.html
+%%GEM_LIB_DIR%%/spec/rails_app/public/dispatch.cgi
+%%GEM_LIB_DIR%%/spec/rails_app/public/dispatch.fcgi
+%%GEM_LIB_DIR%%/spec/rails_app/public/dispatch.rb
+%%GEM_LIB_DIR%%/spec/rails_app/public/favicon.ico
+%%GEM_LIB_DIR%%/spec/rails_app/public/images/rails.png
+%%GEM_LIB_DIR%%/spec/rails_app/public/index.html
+%%GEM_LIB_DIR%%/spec/rails_app/public/javascripts/application.js
+%%GEM_LIB_DIR%%/spec/rails_app/public/javascripts/controls.js
+%%GEM_LIB_DIR%%/spec/rails_app/public/javascripts/dragdrop.js
+%%GEM_LIB_DIR%%/spec/rails_app/public/javascripts/effects.js
+%%GEM_LIB_DIR%%/spec/rails_app/public/javascripts/prototype.js
+%%GEM_LIB_DIR%%/spec/rails_app/public/robots.txt
+%%GEM_LIB_DIR%%/spec/rails_app/script/about
+%%GEM_LIB_DIR%%/spec/rails_app/script/console
+%%GEM_LIB_DIR%%/spec/rails_app/script/destroy
+%%GEM_LIB_DIR%%/spec/rails_app/script/generate
+%%GEM_LIB_DIR%%/spec/rails_app/script/performance/benchmarker
+%%GEM_LIB_DIR%%/spec/rails_app/script/performance/profiler
+%%GEM_LIB_DIR%%/spec/rails_app/script/performance/request
+%%GEM_LIB_DIR%%/spec/rails_app/script/plugin
+%%GEM_LIB_DIR%%/spec/rails_app/script/process/inspector
+%%GEM_LIB_DIR%%/spec/rails_app/script/process/reaper
+%%GEM_LIB_DIR%%/spec/rails_app/script/process/spawner
+%%GEM_LIB_DIR%%/spec/rails_app/script/runner
+%%GEM_LIB_DIR%%/spec/rails_app/script/server
+%%GEM_LIB_DIR%%/spec/request_spec.rb
+%%GEM_LIB_DIR%%/spec/response_spec.rb
+%%GEM_LIB_DIR%%/spec/server_spec.rb
+%%GEM_LIB_DIR%%/spec/spec_helper.rb
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/script/process
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/script/performance
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/script
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/public/javascripts
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/public/images
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/public
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/config/initializers
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/config/environments
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/config
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/app/views/simple
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/app/views
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/app/helpers
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/app/controllers
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app/app
+@dirrm %%GEM_LIB_DIR%%/spec/rails_app
+@dirrm %%GEM_LIB_DIR%%/spec
+@dirrm %%GEM_LIB_DIR%%/lib/thin
+@dirrm %%GEM_LIB_DIR%%/lib/rack/handler
+@dirrm %%GEM_LIB_DIR%%/lib/rack/adapter
+@dirrm %%GEM_LIB_DIR%%/lib/rack
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/ext/thin_parser
+@dirrm %%GEM_LIB_DIR%%/ext
+@dirrm %%GEM_LIB_DIR%%/example
+@dirrm %%GEM_LIB_DIR%%/doc
+@dirrm %%GEM_LIB_DIR%%/bin
+@dirrm %%GEM_LIB_DIR%%/benchmark
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%
