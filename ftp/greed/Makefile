@@ -8,12 +8,15 @@
 PORTNAME=	greed
 PORTVERSION=	0.81p
 CATEGORIES=	ftp www
-MASTER_SITES=	http://sheepkiller.nerim.net/ports/$(PORTNAME)/
+MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/
 DISTNAME=	greed.81p
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	A utility for downloading files with resume capabilities
 
+FORBIDDEN=	Insecure GRX file processing
+DEPRECATED=	No longer maintained
+EXPIRATION_DATE=	2008-02-23
 ALL_TARGET=	freebsd
 WRKSRC=		${WRKDIR}/greed.81p
 
