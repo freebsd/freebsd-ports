@@ -1,0 +1,31 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Workflow/.packlist
+%%SITE_PERL%%/Class/Workflow.pm
+%%SITE_PERL%%/Class/Workflow.pmc
+%%SITE_PERL%%/Class/Workflow/Context.pm
+%%SITE_PERL%%/Class/Workflow/Environment.pm
+%%SITE_PERL%%/Class/Workflow/Instance.pm
+%%SITE_PERL%%/Class/Workflow/Instance/Simple.pm
+%%SITE_PERL%%/Class/Workflow/State.pm
+%%SITE_PERL%%/Class/Workflow/State/AcceptHooks.pm
+%%SITE_PERL%%/Class/Workflow/State/AutoApply.pm
+%%SITE_PERL%%/Class/Workflow/State/Simple.pm
+%%SITE_PERL%%/Class/Workflow/State/TransitionHash.pm
+%%SITE_PERL%%/Class/Workflow/State/TransitionSet.pm
+%%SITE_PERL%%/Class/Workflow/Transition.pm
+%%SITE_PERL%%/Class/Workflow/Transition/Deterministic.pm
+%%SITE_PERL%%/Class/Workflow/Transition/Simple.pm
+%%SITE_PERL%%/Class/Workflow/Transition/Strict.pm
+%%SITE_PERL%%/Class/Workflow/Transition/Validate.pm
+%%SITE_PERL%%/Class/Workflow/Transition/Validate/Simple.pm
+%%SITE_PERL%%/Class/Workflow/Util/Delta.pm
+%%SITE_PERL%%/Class/Workflow/YAML.pm
+%%SITE_PERL%%/Class/Workflow/YAML.pmc
+@dirrm %%SITE_PERL%%/Class/Workflow/Transition/Validate
+@dirrm %%SITE_PERL%%/Class/Workflow/Transition
+@dirrm %%SITE_PERL%%/Class/Workflow/State
+@dirrm %%SITE_PERL%%/Class/Workflow/Instance
+@dirrm %%SITE_PERL%%/Class/Workflow/Util
+@dirrm %%SITE_PERL%%/Class/Workflow
+@dirrmtry %%SITE_PERL%%/Class
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Workflow
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

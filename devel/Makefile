@@ -994,6 +994,7 @@
     SUBDIR += p5-Class-Trigger
     SUBDIR += p5-Class-Virtual
     SUBDIR += p5-Class-WhiteHole
+    SUBDIR += p5-Class-Workflow
     SUBDIR += p5-Class-XPath
     SUBDIR += p5-Clone
     SUBDIR += p5-Clone-Fast
