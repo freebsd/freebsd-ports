@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	qdvdauthor
-PORTVERSION=	0.1.5
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
+DISTFILES=	${PORTNAME}-${PORTVERSION}-4${EXTRACT_SUFX}
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	QT graphical frontend for dvdauthor
@@ -23,21 +22,32 @@ BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
 		dvd-slideshow:${PORTSDIR}/multimedia/dvd-slideshow \
+		dv2sub:${PORTSDIR}/multimedia/dv2sub \
 		bash:${PORTSDIR}/shells/bash
 
 DATA_FILES=	silence.mp2 html/en/audio_streams.html html/en/system_register.html \
-		qdvdauthor_de.qm qdvdauthor_es.qm qdvdauthor_fr.qm qdvdauthor_pl.qm \
-		qplayer_de.qm qplayer_es.qm qplayer_fr.qm qslideshow_de.qm \
-		qslideshow_es.qm qslideshow_fr.qm
+		qdvdauthor_ca.qm qdvdauthor_de.qm qdvdauthor_eo.qm \
+		qdvdauthor_es.qm qdvdauthor_fr.qm qdvdauthor_it.qm \
+		qdvdauthor_pl.qm qplayer_ca.qm qplayer_de.qm \
+		qplayer_es.qm qplayer_fr.qm qslideshow_ca.qm \
+		qslideshow_de.qm qslideshow_es.qm qslideshow_fr.qm
 
 PLIST_FILES=	bin/qdvdauthor \
 		bin/qslideshow \
 		bin/qplayer \
+		share/pixmaps/qdvdauthor.png \
 		${DATA_FILES:S,^,%%DATADIR%%/,}
 PLIST_DIRS=	%%DATADIR%%/html/en %%DATADIR%%/html %%DATADIR%%
 
+DESKTOP_ENTRIES="QDVDAuthor" \
+		"DVD Author GUI" \
+		"${PREFIX}/share/pixmaps/qdvdauthor.png" \
+		"QDVDAuthor" \
+		"Application;AudioVideo;Qt;KDE;" \
+		"false"
+
 HAS_CONFIGURE=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_QT_VER=	3
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
@@ -116,16 +126,21 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/qslideshow ${PREFIX}/bin/qslideshow
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/qplayer    ${PREFIX}/bin/qplayer
 
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/qdvdauthor.png ${PREFIX}/share/pixmaps
+
+	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/silence.mp2    ${DATADIR}
 
-	${MKDIR} ${DATADIR}/html/en
+	@${MKDIR} ${DATADIR}/html/en
 	${INSTALL_DATA} ${WRKSRC}/doc/html/en/audio_streams.html   ${DATADIR}/html/en
 	${INSTALL_DATA} ${WRKSRC}/doc/html/en/system_register.html ${DATADIR}/html/en
-.for locale in de es fr
+
+.for locale in ca de eo es fr it pl
 	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qdvdauthor_${locale}.qm  ${DATADIR}
+.endfor
+.for locale in ca de es fr
 	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qplayer_${locale}.qm     ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qslideshow_${locale}.qm  ${DATADIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qdvdauthor_pl.qm  ${DATADIR}
 .include <bsd.port.post.mk>
