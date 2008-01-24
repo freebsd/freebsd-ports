@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qsvn
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	devel
 MASTER_SITES=	http://ar.oszine.de/projects/qsvn/chrome/site/
