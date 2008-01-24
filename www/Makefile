@@ -902,6 +902,7 @@
     SUBDIR += p5-WWW-Baseball-NPB
     SUBDIR += p5-WWW-Comic
     SUBDIR += p5-WWW-Curl
+    SUBDIR += p5-WWW-DHL
     SUBDIR += p5-WWW-Dilbert
     SUBDIR += p5-WWW-Facebook-API
     SUBDIR += p5-WWW-Google-Calculator
