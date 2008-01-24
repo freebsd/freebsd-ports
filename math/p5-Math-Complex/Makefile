@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Math-Complex
-PORTVERSION=	1.42
+PORTVERSION=	1.47
 CATEGORIES=	math
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Complex numbers and associated mathematical functions
 
 PERL_CONFIGURE=	5.8.0+
