@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.9.19
+PORTVERSION=	0.9.20
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
@@ -33,9 +33,10 @@ USE_GMAKE=	yes
 USE_GNOME=	librsvg2
 PERL_CONFIGURE=	yes
 MAN1=		${PORTNAME}.1
+PORT_VERBS=	${PORTNAME} Gscan2pdf
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/--parents/-p/g;s|/usr/share/man|${MANPREFIX}/man|g;s|1p|1|g'\
+	@${REINPLACE_CMD} -e 's/--parents/-p/g;s|$$sharedir/man|${MANPREFIX}/man|g;s|1p|1|g'\
 		-e '/SITEPREFIX/s|/usr|${PREFIX}|' ${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/bin/${PORTNAME}
 

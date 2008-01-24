@@ -1,5 +1,13 @@
 bin/gscan2pdf
+%%SITE_PERL%%/Gscan2pdf.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/gscan2pdf/.packlist
 share/applications/gscan2pdf.desktop
+%%DATADIR%%/gscan2pdf.svg
+%%DATADIR%%/pdf.svg
+%%DATADIR%%/scanner.svg
+%%DATADIR%%/stock-rotate-180.svg
+%%DATADIR%%/stock-rotate-270.svg
+%%DATADIR%%/stock-rotate-90.svg
 share/locale/be/LC_MESSAGES/gscan2pdf.mo
 share/locale/cs/LC_MESSAGES/gscan2pdf.mo
 share/locale/da/LC_MESSAGES/gscan2pdf.mo
@@ -12,17 +20,10 @@ share/locale/it/LC_MESSAGES/gscan2pdf.mo
 share/locale/nl/LC_MESSAGES/gscan2pdf.mo
 share/locale/pl/LC_MESSAGES/gscan2pdf.mo
 share/locale/pt/LC_MESSAGES/gscan2pdf.mo
+share/locale/pt_BR/LC_MESSAGES/gscan2pdf.mo
 share/locale/ru/LC_MESSAGES/gscan2pdf.mo
 share/locale/sv/LC_MESSAGES/gscan2pdf.mo
 share/locale/zh_TW/LC_MESSAGES/gscan2pdf.mo
-%%DATADIR%%/gscan2pdf.png
-%%DATADIR%%/pdf.png
-%%DATADIR%%/stock-rotate-180.svg
-%%DATADIR%%/stock-rotate-270.svg
-%%DATADIR%%/stock-rotate-90.svg
-%%DATADIR%%/scanner.png
-%%SITE_PERL%%/Gscan2pdf.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/gscan2pdf/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/gscan2pdf
 @dirrmtry share/applications
 @dirrmtry %%DATADIR%%
