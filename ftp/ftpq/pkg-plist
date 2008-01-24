@@ -1,7 +1,3 @@
 bin/ftpq
-%%PORTDOCS%%share/doc/ftpq/CHANGELOG
-%%PORTDOCS%%share/doc/ftpq/README
-%%PORTDOCS%%share/doc/ftpq/TODO
-%%PORTDOCS%%@dirrm share/doc/ftpq
-@exec mkdir -p %%SPOOLDIR%% && chmod 777 %%SPOOLDIR%%
-@unexec rmdir %%SPOOLDIR%% 2>/dev/null || true
+@exec mkdir -p %D%%SPOOLDIR%% && chmod 777 %D%%SPOOLDIR%%
+@unexec rmdir %D%%SPOOLDIR%% 2>/dev/null || true
