@@ -290,6 +290,7 @@
     SUBDIR += prn
     SUBDIR += ptex
     SUBDIR += py-kanjilib
+    SUBDIR += py-mecab
     SUBDIR += pycodec
     SUBDIR += pycodec-zope
     SUBDIR += qkc
