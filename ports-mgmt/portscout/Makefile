@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portscout
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
 		http://www.atarininja.org/~wxs/distfiles/		\
