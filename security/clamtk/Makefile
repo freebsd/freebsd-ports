@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamtk
-PORTVERSION=	3.06
+PORTVERSION=	3.07
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	p5-Gtk2>=1.144:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-File-Find-Rule>=0.30:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-Date-Calc>=5.5.1:${PORTSDIR}/devel/p5-Date-Calc \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny \
 		clamscan:${PORTSDIR}/security/clamav
 
 NO_BUILD=	yes
