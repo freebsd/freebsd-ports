@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.7.3.2007.09.28
+PORTVERSION=	2.7.4.2008.01.22
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
 		http://tijl.ulyssis.be/mirror/
-DISTNAME=	${PORTNAME}-src-20070928-4920
+DISTNAME=	${PORTNAME}-src-20080122-4996
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	Small Device C Compiler
@@ -34,9 +34,10 @@ OPTIONS=	MCS51   "Intel mcs51 port" on \
 		UCSIM   "The ucSim simulator" on \
 		PACKIHX "A tool to pack (compress) Intel hex files" on
 
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		--datarootdir=${DATADIR} \
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--docdir=${DOCSDIR} \
 		include_dir_suffix=include \
 		lib_dir_suffix=lib
