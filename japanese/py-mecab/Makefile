@@ -1,0 +1,28 @@
+# New ports collection makefile for:    py-mecab
+# Date created:                         27 August 2007
+# Whom:                                 Junji NAKANISHI <jun-g@daemonfreaks.com>
+#
+# $FreeBSD$
+
+PORTNAME=	mecab
+PORTVERSION=	0.96
+CATEGORIES=	japanese python textproc
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-python-${PORTVERSION}
+
+MAINTAINER=	jun-g@daemonfreaks.com
+COMMENT=	Python bindings for MeCab
+
+BUILD_DEPENDS=	swig>=1.3:${PORTSDIR}/devel/swig13
+LIB_DEPENDS=	mecab.1:${PORTSDIR}/japanese/mecab
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
+PYDISTUTILS_EGGINFO=	${PORTNAME}_python-${PKGVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
+
+.include <bsd.port.pre.mk>
+
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${PYTHON_PKGNAMEPREFIX}
+
+.include <bsd.port.post.mk>
