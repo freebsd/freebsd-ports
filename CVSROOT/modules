@@ -7243,6 +7243,7 @@ lrzsz		ports/comms/lrzsz
 lsdb		ports/databases/lsdb
 lsdvd		ports/multimedia/lsdvd
 lsh		ports/security/lsh
+lsknobs		ports/ports-mgmt/lsknobs
 lsof		ports/sysutils/lsof
 lsysexp		ports/biology/lsysexp
 lt-aspell	ports/textproc/lt-aspell
