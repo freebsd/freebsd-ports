@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	RuleDispatch
-PORTVERSION=	0.5.a0.r2115
+PORTVERSION=	0.5.a0.r2306
 CATEGORIES=	devel python
-MASTER_SITES=	http://harry.turbogears.org/eggs/ \
-		http://dryice.name/computer/FreeBSD/distfiles/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	http://files.turbogears.org/eggs/ \
+		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-0.5a0.dev-r2115
+DISTNAME=	${PORTNAME}-0.5a0.dev-r2306
 
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Rule-based Dispatching and Generic Functions
