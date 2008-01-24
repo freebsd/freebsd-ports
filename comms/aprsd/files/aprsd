@@ -1,0 +1,70 @@
+#!/bin/sh
+#
+# PROVIDE: aprsd
+# REQUIRE: NETWORKING
+#
+# Add the following lines to /etc/rc.conf
+# aprsd_enable="YES"
+# aprsd_root="YES" or aprsd_root="NO"
+
+. /etc/rc.subr
+
+name="aprsd"
+rcvar=`set_rcvar`
+load_rc_config $name
+aprsd_enable=${aprsd_enable-"NO"}
+aprsd_root=${aprsd_root-"NO"}
+
+command="/usr/local/bin/aprsd"
+start_cmd=aprsd_start
+stop_cmd=aprsd_stop
+
+PIDFILE="/var/run/aprsd.pid"
+UID="aprsd"
+GID="aprsd"
+#
+# aprsd.init for version 2.1.5.  starts or stops aprsd server.
+# This file should be placed in /usr/local/etc/rc.d/
+# 
+#
+#
+# Author:      Dale Heatherington <aprsd1@wa4dsy.net>
+# Modified:    Diane Bruce <va3db@amsat.org>
+
+# Source function library.
+#. /etc/rc.d/init.d/functions
+# See how we were called.
+aprsd_start()
+{
+	if [ -s ${PIDFILE} ] ; then
+		kill -0 `cat ${PIDFILE}` >&- 2>&-
+		if [ $? -eq 0 ]; then
+			echo "aprs server is already running."
+			return 0
+		fi 
+	fi
+	if [ ${aprsd_root} != "YES" ]; then
+		echo "Starting aprs server as user ${UID}:${GID}."
+		touch ${PIDFILE}
+		chown ${UID}:${GID} ${PIDFILE}
+		chown ${UID}:${GID} /var/log/aprsd
+		chown ${UID}:${GID} /var/log/aprsd/*
+		su ${UID} -m -c "${command} -d"
+	else   
+		echo "Starting aprs server as root."
+		chown root:wheel ${PIDFILE}
+                chown root:wheel /var/log/aprsd
+                chown root:wheel /var/log/aprsd/*
+
+		${command} -d
+	fi
+	return 0
+}
+aprsd_stop()
+{
+	echo  "Stopping aprs server daemon. "
+	kill -INT `cat ${PIDFILE}`
+	return 0
+}
+
+run_rc_command "$1"
