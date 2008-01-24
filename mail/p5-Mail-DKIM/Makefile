@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.28
+PORTVERSION=	0.30
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -19,7 +19,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/RSA.pm:${PORTSDIR}/security
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA \
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
@@ -29,13 +28,12 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Mail::DKIM.3 \
 		Mail::DKIM::Algorithm::Base.3 \
-		Mail::DKIM::Algorithm::rsa_sha1.3 \
-		Mail::DKIM::Algorithm::rsa_sha256.3 \
 		Mail::DKIM::Canonicalization::Base.3 \
 		Mail::DKIM::Canonicalization::DkimCommon.3 \
 		Mail::DKIM::DkimPolicy.3 \
     		Mail::DKIM::DkSignature.3 \
 		Mail::DKIM::Policy.3 \
+		Mail::DKIM::PrivateKey.3 \
 		Mail::DKIM::Signature.3 \
 		Mail::DKIM::Signer.3 \
 		Mail::DKIM::SignerPolicy.3 \
