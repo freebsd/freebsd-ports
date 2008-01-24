@@ -131,6 +131,15 @@ bin/klavaro
 %%DATADIR%%/qwertz_de.kbd
 %%DATADIR%%/qwertz_hu.kbd
 %%DATADIR%%/qwertz_pl.kbd
+%%DATADIR%%/ru_RU.paragraphs
+%%DATADIR%%/ru_RU.words
+%%DATADIR%%/ru_RU_about.txt
+%%DATADIR%%/ru_RU_adapt_intro.txt
+%%DATADIR%%/ru_RU_basic_intro.txt
+%%DATADIR%%/ru_RU_fluid_intro.txt
+%%DATADIR%%/ru_RU_help.txt
+%%DATADIR%%/ru_RU_intro.txt
+%%DATADIR%%/ru_RU_velo_intro.txt
 %%DATADIR%%/sv_SE.paragraphs
 %%DATADIR%%/sv_SE.words
 %%DATADIR%%/sv_SE_about.txt
@@ -150,6 +159,7 @@ share/locale/nl_BE/LC_MESSAGES/klavaro.mo
 share/locale/nl_NL/LC_MESSAGES/klavaro.mo
 share/locale/pl_PL/LC_MESSAGES/klavaro.mo
 share/locale/pt_BR/LC_MESSAGES/klavaro.mo
+share/locale/ru_RU/LC_MESSAGES/klavaro.mo
 share/locale/sv_SE/LC_MESSAGES/klavaro.mo
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
@@ -165,5 +175,7 @@ share/locale/sv_SE/LC_MESSAGES/klavaro.mo
 @dirrmtry share/locale/nl_NL
 @dirrmtry share/locale/pl_PL/LC_MESSAGES
 @dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/ru_RU/LC_MESSAGES
+@dirrmtry share/locale/ru_RU
 @dirrmtry share/locale/sv_SE/LC_MESSAGES
 @dirrmtry share/locale/sv_SE
