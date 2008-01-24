@@ -463,6 +463,7 @@ appwrapper	ports/deskutils/appwrapper
 apr		ports/devel/apr
 apr-svn		ports/devel/apr-svn
 apricots	ports/games/apricots
+aprsd		ports/comms/aprsd
 apsfilter	ports/print/apsfilter
 apt		ports/sysutils/apt
 apwal		ports/x11/apwal
