@@ -10,6 +10,7 @@
    SUBDIR += instant-tinderbox
    SUBDIR += jailaudit
    SUBDIR += kports
+   SUBDIR += lsknobs
    SUBDIR += managepkg
    SUBDIR += newportsversioncheck
    SUBDIR += p5-FreeBSD-Portindex
