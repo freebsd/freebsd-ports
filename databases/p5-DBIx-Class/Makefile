@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08008
+PORTVERSION=	0.08009
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,7 @@ RUN_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 		p5-Module-Find>=0:${PORTSDIR}/devel/p5-Module-Find \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Class-Accessor-Grouped>=0.05002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
-		p5-JSON>=1.00:${PORTSDIR}/converters/p5-JSON
+		p5-JSON-Any>=1.00:${PORTSDIR}/converters/p5-JSON-Any
 
 PERL_CONFIGURE=	5.8.1+
 
@@ -85,6 +85,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::NoBindVars.3 \
 	DBIx::Class::Storage::DBI::ODBC.3 \
 	DBIx::Class::Storage::DBI::ODBC::DB2_400_SQL.3 \
+	DBIx::Class::Storage::DBI::ODBC::Microsoft_SQL_Server.3 \
 	DBIx::Class::Storage::DBI::Oracle.3 \
 	DBIx::Class::Storage::DBI::Oracle::Generic.3 \
 	DBIx::Class::Storage::DBI::Oracle::WhereJoins.3 \

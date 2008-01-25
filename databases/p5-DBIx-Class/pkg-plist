@@ -86,6 +86,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/NoBindVars.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC/DB2_400_SQL.pm
+%%SITE_PERL%%/DBIx/Class/Storage/DBI/ODBC/Microsoft_SQL_Server.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Oracle.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Oracle/Generic.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Oracle/WhereJoins.pm
