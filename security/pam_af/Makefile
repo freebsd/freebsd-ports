@@ -18,10 +18,10 @@ USE_BZIP2=	yes
 MAN8=		pam_af.8 pam_af_tool.8
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pam_af.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/pam_af.so ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/pam_af_tool/pam_af_tool ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/pam_af.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/pam_af_tool/pam_af_tool.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/pam_af.8 ${MANPREFIX}/man/man8                                                                                                
+	${INSTALL_MAN} ${WRKSRC}/pam_af_tool/pam_af_tool.8 ${MANPREFIX}/man/man8
 
 post-install:
 .if !defined(NOPORTDOCS)
