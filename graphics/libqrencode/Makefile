@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	libqrencode
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	2.0.0
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://megaui.net/fukuchi/works/qrencode/
 DISTNAME=	qrencode-${PORTVERSION}
@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	bin/qrencode \
 		include/qrencode.h \
 		lib/libqrencode.so \
-		lib/libqrencode.so.1 \
+		lib/libqrencode.so.2 \
 		libdata/pkgconfig/libqrencode.pc
 
 .include <bsd.port.mk>
