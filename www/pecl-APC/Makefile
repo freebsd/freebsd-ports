@@ -7,6 +7,7 @@
 
 PORTNAME=	APC
 DISTVERSION=	3.0.16
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -27,6 +28,7 @@ CONFIGURE_ARGS=	--enable-apc
 
 OPTIONS=	MMAP		"Enable mmap memory support (default: IPC shm)"	off \
 		SEMAPHORES	"Enable sysv IPC semaphores (default: fcntl())"	off \
+		FILEHITS	"Enable per request cache info"			off \
 		PHP4_OPT	"Little optimization to PHP4"			off
 
 PORTDOCS=	*
@@ -39,6 +41,10 @@ CONFIGURE_ARGS+=	--enable-apc-mmap
 
 .if defined(WITH_SEMAPHORES)
 CONFIGURE_ARGS+=	--enable-apc-sem
+.endif
+
+.if defined(WITH_FILEHITS)
+CONFIGURE_ARGS+=	--enable-apc-filehits
 .endif
 
 .if defined(WITH_PHP4_OPT)
