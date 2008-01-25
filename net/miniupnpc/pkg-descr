@@ -1,0 +1,8 @@
+UPnP IGD client lightweight library
+
+The usage of the miniUPnP client library is useful whenever an application
+needs to listen for incoming connections.
+Examples : P2P applications, FTP clients for active mode, IRC (for DCC)
+or IM applications, network games, any server.
+
+WWW: http://miniupnp.free.fr/
