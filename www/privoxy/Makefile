@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.6
-PORTREVISION=	2
+PORTVERSION=	3.0.8
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ijbswa
@@ -15,6 +14,8 @@ DISTNAME=	privoxy-${PORTVERSION}-stable-src
 
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Privoxy is a web proxy with advanced filtering capabilities
+
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
 WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 
@@ -31,6 +32,10 @@ MAKEFILE=	GNUmakefile
 CONFLICTS=	privoxy-devel-[0-9]*
 
 MAN1=		privoxy.1
+
+CONFIGURE_ARGS=	--enable-zlib
+CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib \
+		CPPFLAGS=-I${LOCALBASE}/include/
 
 OPTIONS=	FORCE "Allows to optionally bypass blocks" On \
 		TOGGLE "Support for remote toggling" On \
@@ -63,7 +68,7 @@ post-patch:
 	${WRKSRC}/config
 .if !defined(NOPORTDOCS)
 	${REINPLACE_CMD} \
-		-e 's,^#\(user-manual\) http://www.privoxy.org/user-manual/,\1 ${PREFIX}/share/doc/privoxy-manual,' \
+		-e 's,^#\(user-manual\) http://www.privoxy.org/user-manual/,\1 ${DOCSDIR}/user-manual,' \
 	${WRKSRC}/config
 
 .endif
@@ -84,17 +89,17 @@ do-install:
 	@${CHOWN} privoxy:privoxy ${PREFIX}/etc/privoxy/${defaultfile}
 	@${CHMOD} 0640 ${PREFIX}/etc/privoxy/${defaultfile}
 .endfor
-	@${MKDIR} ${PREFIX}/share/examples/privoxy
+	@${MKDIR} ${EXAMPLESDIR}
 .for examplefile in config trust user.action
-	@${INSTALL_DATA} ${WRKSRC}/${examplefile} ${PREFIX}/share/examples/privoxy
-	@${CHOWN} privoxy:privoxy ${PREFIX}/share/examples/privoxy/${examplefile}
-	@${CHMOD} 0640 ${PREFIX}/share/examples/privoxy/${examplefile}
+	@${INSTALL_DATA} ${WRKSRC}/${examplefile} ${EXAMPLESDIR}/
+	@${CHOWN} privoxy:privoxy ${EXAMPLESDIR}/${examplefile}
+	@${CHMOD} 0640 ${EXAMPLESDIR}/${examplefile}
 .endfor
 	@${INSTALL_MAN}  ${WRKSRC}/privoxy.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/privoxy-manual
-	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/user-manual/[a-z]* ${PREFIX}/share/doc/privoxy-manual
-	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/p_doc.css ${PREFIX}/share/doc/privoxy-manual
+	@${MKDIR} ${DOCSDIR}/user-manual
+	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/user-manual/[a-z]* ${DOCSDIR}/user-manual
+	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/p_doc.css ${DOCSDIR}/user-manual
 .endif
 
 post-install:

@@ -1,27 +1,28 @@
 ***********************************************************
-** To start Privoxy on boot, add: privoxy_enable="YES"   **
-** to /etc/rc.conf.                                      **
-**                                                       **
-** To start Privoxy manually, run:                       **
-** %%PREFIX%%/etc/rc.d/privoxy forcestart                **
-** The script understands most of the commands listed    **
-** in rc(8), it also contains a list of other rc         **
-** variables you can use.                                **
-**                                                       **
-** Privoxy example files were copied to:                 **
-** %%PREFIX%%/share/examples/privoxy                     **
-**                                                       **
-** For documentation see:                                **
-** %%PREFIX%%/share/doc/privoxy-manual or 'man privoxy'  **
-**                                                       **
-** Note that default.filter, standard.action and         **
-** default.action get overwritten with each Privoxy      **
-** update. Instead of changing them you should use       **
-** your own action and filter files as described in      **
-** Privoxy's manual.                                     **
-**                                                       **
-** If you installed Privoxy as package and are using the **
-** default configuration, you have to make sure the      **
-** directories /var/log/privoxy and /var/run/privoxy     **
-** exist and are owned by privoxy:privoxy.               **
+  To start Privoxy on boot, add: privoxy_enable="YES"
+  to /etc/rc.conf.
+
+  To start Privoxy manually, run:
+  /usr/local/etc/rc.d/privoxy forcestart
+  The script understands most of the commands listed
+  in rc(8), it also contains a list of other rc
+  variables you can use.
+
+  Privoxy's example files were copied to:
+  %%EXAMPLESDIR%%
+
+  For documentation see:
+  %%DOCSDIR%%/user-manual or 'man privoxy'
+
+  Note that default.filter, standard.action and
+  default.action get overwritten with each Privoxy
+  update. Instead of changing them you should use
+  your own action and filter files as described in
+  Privoxy's manual.
+
+  If you installed Privoxy as package and are using the
+  default configuration, you have to make sure the
+  directories /var/log/privoxy and /var/run/privoxy
+  exist and are owned by privoxy:privoxy.
+
 ***********************************************************

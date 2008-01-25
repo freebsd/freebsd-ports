@@ -22,6 +22,7 @@ etc/privoxy/templates/edit-actions-list-section
 etc/privoxy/templates/edit-actions-list-url
 etc/privoxy/templates/edit-actions-remove-url-form
 etc/privoxy/templates/edit-actions-url-form
+etc/privoxy/templates/forwarding-failed
 etc/privoxy/templates/mod-local-help
 etc/privoxy/templates/mod-support-and-service
 etc/privoxy/templates/mod-title
@@ -35,30 +36,31 @@ etc/privoxy/templates/show-version
 etc/privoxy/templates/toggle
 etc/privoxy/templates/toggle-mini
 etc/privoxy/templates/untrusted
-%%PORTDOCS%%share/doc/privoxy-manual/actions-file.html
-%%PORTDOCS%%share/doc/privoxy-manual/appendix.html
-%%PORTDOCS%%share/doc/privoxy-manual/config.html
-%%PORTDOCS%%share/doc/privoxy-manual/configuration.html
-%%PORTDOCS%%share/doc/privoxy-manual/contact.html
-%%PORTDOCS%%share/doc/privoxy-manual/copyright.html
-%%PORTDOCS%%share/doc/privoxy-manual/files-in-use.jpg
-%%PORTDOCS%%share/doc/privoxy-manual/filter-file.html
-%%PORTDOCS%%share/doc/privoxy-manual/index.html
-%%PORTDOCS%%share/doc/privoxy-manual/installation.html
-%%PORTDOCS%%share/doc/privoxy-manual/introduction.html
-%%PORTDOCS%%share/doc/privoxy-manual/p_doc.css
-%%PORTDOCS%%share/doc/privoxy-manual/proxy2.jpg
-%%PORTDOCS%%share/doc/privoxy-manual/proxy_setup.jpg
-%%PORTDOCS%%share/doc/privoxy-manual/quickstart.html
-%%PORTDOCS%%share/doc/privoxy-manual/seealso.html
-%%PORTDOCS%%share/doc/privoxy-manual/startup.html
-%%PORTDOCS%%share/doc/privoxy-manual/templates.html
-%%PORTDOCS%%share/doc/privoxy-manual/upgradersnote.html
-%%PORTDOCS%%share/doc/privoxy-manual/whatsnew.html
-share/examples/privoxy/config
-share/examples/privoxy/trust
-share/examples/privoxy/user.action
-@dirrm share/examples/privoxy
-%%PORTDOCS%%@dirrm share/doc/privoxy-manual
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/actions-file.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/appendix.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/config.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/contact.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/files-in-use.jpg
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/filter-file.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/index.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/p_doc.css
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/proxy2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/proxy_setup.jpg
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/quickstart.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/seealso.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/startup.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/templates.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/upgradersnote.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/whatsnew.html
+%%EXAMPLESDIR%%/config
+%%EXAMPLESDIR%%/trust
+%%EXAMPLESDIR%%/user.action
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/user-manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/
 @dirrm etc/privoxy/templates
 @dirrm etc/privoxy
