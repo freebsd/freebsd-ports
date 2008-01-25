@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qrencode
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	graphics pear
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vanilla
@@ -16,7 +16,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A PECL extension for generate qrcode
 
-LIB_DEPENDS=	qrencode.1:${PORTSDIR}/graphics/libqrencode
+LIB_DEPENDS=	qrencode.2:${PORTSDIR}/graphics/libqrencode
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
