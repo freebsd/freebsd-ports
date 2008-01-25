@@ -20,6 +20,8 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		icudata.36:${PORTSDIR}/devel/icu
 
+BROKEN=		does not package
+
 USE_BISON=	build
 USE_GCC=	3.4+
 USE_PERL5=	5.8.0+
