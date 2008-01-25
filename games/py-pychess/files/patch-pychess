@@ -1,0 +1,17 @@
+--- pychess	2008-01-18 13:57:53.000000000 +0100
++++ pychess.port	2008-01-23 18:43:20.000000000 +0100
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/env python
+ #
+ # PyChess startup script
+ #
+@@ -34,7 +34,7 @@
+ 
+ # This is an ugly hack needed prior to gtkSourceView2 because of a pygtk bug:
+ # http://bugzilla.gnome.org/show_bug.cgi?id=393483
+-os.environ["XDG_DATA_DIRS"] = getDataPrefix()+":/usr/share/"
++os.environ["XDG_DATA_DIRS"] = getDataPrefix()+":%%PREFIX%%/share/"
+ 
+ # Let's rumble!
+ import pychess.Main
