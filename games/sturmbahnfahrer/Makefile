@@ -18,6 +18,8 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
+BROKEN=		does not build
+
 USE_GL=		yes
 
 MAKE_ENV=	DATADIR="${DATADIR}"
