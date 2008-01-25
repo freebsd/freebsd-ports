@@ -1,26 +1,26 @@
---- src/xmlcopyeditor.cpp.orig	Thu Dec 20 19:39:44 2007
-+++ src/xmlcopyeditor.cpp	Thu Dec 20 19:42:26 2007
-@@ -2977,10 +2977,7 @@
+--- src/xmlcopyeditor.cpp.orig	2008-01-22 18:07:12.000000000 +0100
++++ src/xmlcopyeditor.cpp	2008-01-22 18:15:34.000000000 +0100
+@@ -2984,10 +2984,7 @@
  
-         nconv = iconv (
-                     cd,
+ 		nconv = iconv (
+ 		            cd,
 -#ifdef __WXMSW__
--                    ( const char ** )
+-		            ( const char ** )
 -#endif
--                    &docBuffer,
-+                    ICONV_CHAR_CAST(&docBuffer),
-                     &docBufferLeft,
-                     &iconvBuffer,
-                     &iconvBufferLeft );
-@@ -4685,10 +4682,7 @@
+-		            &docBuffer,
++			    ICONV_CHAR_CAST(&docBuffer),
+ 		            &docBufferLeft,
+ 		            &iconvBuffer,
+ 		            &iconvBufferLeft );
+@@ -4637,10 +4634,7 @@
  
-                     nconv = iconv (
-                                 cd,
+ 					nconv = iconv (
+ 					            cd,
 -#ifdef __WXMSW__
--                                ( const char ** )
+-					            ( const char ** )
 -#endif
--                                &utf8BufferPtr,
-+                                ICONV_CHAR_CAST(&utf8BufferPtr),
-                                 &utf8BufferLeft,
-                                 &iconvBuffer,
-                                 &iconvBufferLeft );
+-					            &utf8BufferPtr,
++						    ICONV_CHAR_CAST(&utf8BufferPtr),
+ 					            &utf8BufferLeft,
+ 					            &iconvBuffer,
+ 					            &iconvBufferLeft );
