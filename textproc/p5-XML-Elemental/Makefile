@@ -5,17 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Elemental
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
+#DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Generic classes for simplistic and perlish handling of XML data
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Task-Weaken>=1.02:${PORTSDIR}/devel/p5-Task-Weaken
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
