@@ -1,12 +1,6 @@
 bin/xmlcopyeditor
-%%DATADIR%%/copying/Expat/copying.txt
-%%DATADIR%%/copying/Scintilla/scintilla-lic.txt
-%%DATADIR%%/copying/boost_license_1_0.txt
-%%DATADIR%%/copying/boost_shared_ptr/copying.txt
-%%DATADIR%%/copying/libxml2/libxml2-lic.txt
-%%DATADIR%%/copying/libxslt/libxslt-lic.txt
-%%DATADIR%%/copying/mit.txt
-%%DATADIR%%/copying/scowl/copying.txt
+share/applications/xmlcopyeditor.desktop
+share/pixmaps/xmlcopyeditor.png
 %%DATADIR%%/filters/OpenDocument.xml
 %%DATADIR%%/filters/WordprocessingML.xml
 %%DATADIR%%/filters/filter.xsd
@@ -40,6 +34,7 @@ bin/xmlcopyeditor
 %%DATADIR%%/help/html/xmlcopyeditor.html
 %%DATADIR%%/help/xmlcopyeditor.chm
 %%DATADIR%%/help/xmlcopyeditor.hhp
+%%DATADIR%%/png/stock_calc-accept-green.png
 %%DATADIR%%/png/stock_calc-accept.png
 %%DATADIR%%/png/stock_close.png
 %%DATADIR%%/png/stock_copy-16.png
@@ -129,8 +124,6 @@ bin/xmlcopyeditor
 %%DATADIR%%/rulesets/American.xml
 %%DATADIR%%/rulesets/Commonwealth.xml
 %%DATADIR%%/rulesets/Contractions.xml
-%%DATADIR%%/rulesets/Default dictionary and style.xml
-%%DATADIR%%/rulesets/Default dictionary.xml
 %%DATADIR%%/rulesets/Default style.xml
 %%DATADIR%%/rulesets/Disability.xml
 %%DATADIR%%/rulesets/Diversity.xml
@@ -198,8 +191,6 @@ bin/xmlcopyeditor
 %%DATADIR%%/xpm/stock_spellcheck.xpm
 %%DATADIR%%/xpm/stock_spellcheck_16.xpm
 %%DATADIR%%/xpm/stock_undo_16.xpm
-share/pixmaps/xmlcopyeditor.png
-share/applications/xmlcopyeditor.desktop
 @dirrm %%DATADIR%%/xpm
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/rulesets
@@ -219,13 +210,6 @@ share/applications/xmlcopyeditor.desktop
 @dirrm %%DATADIR%%/help/html
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/filters
-@dirrm %%DATADIR%%/copying/scowl
-@dirrm %%DATADIR%%/copying/libxslt
-@dirrm %%DATADIR%%/copying/libxml2
-@dirrm %%DATADIR%%/copying/boost_shared_ptr
-@dirrm %%DATADIR%%/copying/Scintilla
-@dirrm %%DATADIR%%/copying/Expat
-@dirrm %%DATADIR%%/copying
 @dirrm %%DATADIR%%
 @dirrmtry share/pixmaps
 @dirrmtry share/applications
