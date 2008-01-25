@@ -566,6 +566,7 @@
     SUBDIR += s3mod
     SUBDIR += sbagen
     SUBDIR += schism
+    SUBDIR += scmpc
     SUBDIR += scrobbler
     SUBDIR += sdl_mixer
     SUBDIR += sdl_sound
