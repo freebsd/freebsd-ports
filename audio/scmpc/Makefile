@@ -1,5 +1,5 @@
 # New ports collection makefile for:	scmpc
-# Date created:				January 16, 2007
+# Date created:				January 16, 2008
 # Whom:					Pavel Motyrev <legioner.r@gmail.com>
 #
 # $FreeBSD$
