@@ -21,7 +21,7 @@
  
      librariestype = [boost_filesystem, boost_date_time,
 -            boost_thread, 'z', 'pthread', 'ssl', 'rt', 'crypto']
-+            boost_thread, 'z', 'ssl', 'rt', 'crypto']
++            boost_thread, 'z', 'ssl', 'crypto']
      
      removals = ['-g', '-Wstrict-prototypes']
  
