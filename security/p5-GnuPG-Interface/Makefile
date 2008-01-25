@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnupg-interface
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	eol1@yahoo.com
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module for interfacing with GnuPG
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
