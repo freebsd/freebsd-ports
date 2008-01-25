@@ -33,6 +33,7 @@ lib/openradius/radclient
 lib/openradius/radlogger
 lib/openradius/radsql
 lib/openradius/unixpasswd
+%%LDAP%%lib/openradius/radldap
 sbin/radiusd
 %%PORTDOCS%%%%DOCSDIR%%/async-iface-notes
 %%PORTDOCS%%%%DOCSDIR%%/language.html
