@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Jan 16 12:48:28 2008
++++ Makefile.in	Sun Dec  3 02:59:18 2006
+@@ -11,7 +11,7 @@
+ .SUFFIXES: .c .o
+ 
+ CC := @CC@
+-CFLAGS := @CFLAGS@
++CFLAGS := @CFLAGS@ @libcurl_CFLAGS@ @confuse_CFLAGS@ @libdaemon_CFLAGS@
+ LDFLAGS := @LDFLAGS@
+ LIBS := @LIBS@ @libcurl_LIBS@ @confuse_LIBS@ @libdaemon_LIBS@
+ LIBOBJS := @LIBOBJS@
