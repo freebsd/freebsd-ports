@@ -11403,6 +11403,7 @@ p5-Tie-Restore	ports/devel/p5-Tie-Restore
 p5-Tie-ShareLite	ports/devel/p5-Tie-ShareLite
 p5-Tie-Simple	ports/devel/p5-Tie-Simple
 p5-Tie-Syslog	ports/sysutils/p5-Tie-Syslog
+p5-Tie-TinyURL	ports/www/p5-Tie-TinyURL
 p5-Tie-Watch	ports/devel/p5-Tie-Watch
 p5-Tie-iCal	ports/devel/p5-Tie-iCal
 p5-Time-Clock	ports/devel/p5-Time-Clock
