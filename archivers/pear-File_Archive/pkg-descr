@@ -1,5 +1,5 @@
 PEAR::File_Archive is strongly object oriented. It makes it very easy to use,
-writing simple code, yet the library is very powerfull.
+writing simple code, yet the library is very powerful.
 
 It lets you easily read or generate tar, gz, tgz, bz2, tbz, zip, ar (or deb)
 archives to files, memory, mail or standard output.

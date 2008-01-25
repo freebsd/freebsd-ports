@@ -1,11 +1,11 @@
 lbrate extracts/decompresses files from the CP/M LBR format. (It can also list
 and test such archives.) It does this in an `unzip'-like manner, mostly hiding
 the details of individually compressed and renamed files, and transparently
-deals with the required decompression/renaming. 
+deals with the required decompression/renaming.
 
 lbrate is also (I believe) the only non-CP/M program to fully support
 decompressing files from all three CP/M compression schemes (Q, Z, Y). With
 this in mind, it can decompress such files directly, treating them as if they
-were single-entry LBRs. 
+were single-entry LBRs.
 
 WWW: http://rus.members.beeb.net/lbrate.html

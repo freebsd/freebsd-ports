@@ -1,7 +1,7 @@
 This is the Red Hat Package Manager.
 
 FYI:
-There is also a rpm2cpio converter written in perl. You don't have to 
+There is also a rpm2cpio converter written in perl.  You don't have to
 install the whole RPM manager to get the files in an RPM.
 
 WWW: http://www.rpm.org/
