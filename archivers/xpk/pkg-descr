@@ -1,14 +1,12 @@
-This the unix port of the Amiga XPK library.
+This the Unix port of the Amiga XPK library.
 
 The XPK system consists of a master library (libxpkmaster.so) and several
 (un)packer sublibraries (libxpkXXXX.so). Application programs only use the
-master library directly: the master library takes care of loading and using 
-the sublibraries. Each sublibrary implements one type of compression. 
+master library directly: the master library takes care of loading and using
+the sublibraries. Each sublibrary implements one type of compression.
 
-There are different libraries for different types of data. When unpacking the 
-applications do not need to know which library was used to pack the data - 
+There are different libraries for different types of data. When unpacking the
+applications do not need to know which library was used to pack the data --
 the appropriate library needs to be installed.
 
 WWW: http://www.jormas.com/~vesuri/xpk/
-
--Adam Weinberger <adamw@FreeBSD.org>
