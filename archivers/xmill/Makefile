@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmill
-DISTVERSION=	0.8
+DISTVERSION=	0-7
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,18 +14,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An efficient compressor for XML
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 
 USE_ZIP=	yes
-USE_DOS2UNIX=	yes
 
 PLIST_FILES=	bin/xmill bin/xdemill bin/xbmill bin/xbdemill
 PORTDOCS=	COPYRIGHT.txt LICENSE.txt MANUAL.txt README.txt xmill.ps.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,friend,& class,' \
-		${WRKSRC}/XMill/*.?pp
+		${WRKSRC}/src/*.?pp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unix/xmill ${PREFIX}/bin
