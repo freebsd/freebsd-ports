@@ -555,6 +555,7 @@ lib/wine/d3d9.dll.so
 lib/wine/d3dim.dll.so
 lib/wine/d3drm.dll.so
 lib/wine/d3dx8.dll.so
+lib/wine/d3dx9_36.dll.so
 lib/wine/d3dxof.dll.so
 lib/wine/dbghelp.dll.so
 lib/wine/dciman32.dll.so
@@ -683,6 +684,7 @@ lib/wine/libmsdmo.def
 lib/wine/libmshtml.def
 lib/wine/libmsi.def
 lib/wine/libmsimg32.def
+lib/wine/libmsvcr71.def
 lib/wine/libmsvcrt.def
 lib/wine/libmsvcrt20.def
 lib/wine/libmsvcrt40.def
@@ -793,6 +795,7 @@ lib/wine/msnet32.dll.so
 lib/wine/msrle32.dll.so
 lib/wine/msvcirt.dll.so
 lib/wine/msvcrt.dll.so
+lib/wine/msvcr71.dll.so
 lib/wine/msvcrt20.dll.so
 lib/wine/msvcrt40.dll.so
 lib/wine/msvcrtd.dll.so
@@ -835,6 +838,7 @@ lib/wine/pdh.dll.so
 lib/wine/powrprof.dll.so
 lib/wine/printui.dll.so
 lib/wine/progman.exe.so
+lib/wine/propsys.dll.so
 lib/wine/psapi.dll.so
 lib/wine/pstorec.dll.so
 lib/wine/qcap.dll.so
@@ -955,6 +959,7 @@ lib/wine/wintab32.dll.so
 lib/wine/wintrust.dll.so
 lib/wine/winver.exe.so
 lib/wine/wldap32.dll.so
+lib/wine/wmi.dll.so
 lib/wine/wnaspi32.dll.so
 lib/wine/wordpad.exe.so
 lib/wine/wow32.dll.so
