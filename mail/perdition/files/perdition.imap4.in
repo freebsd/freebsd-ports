@@ -14,7 +14,7 @@
 #
 
 perdition_imap4_enable=${perdition_imap4_enable-"NO"}
-perdition_imap4_flags=${perditon_imap4_flags-""}
+perdition_imap4_flags=${perdition_imap4_flags-""}
 
 . %%RC_SUBR%%
 

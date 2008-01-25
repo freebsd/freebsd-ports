@@ -14,7 +14,7 @@
 #
 
 perdition_pop3s_enable=${perdition_pop3s_enable-"NO"}
-perdition_pop3s_flags=${perditon_pop3s_flags-""}
+perdition_pop3s_flags=${perdition_pop3s_flags-""}
 
 . %%RC_SUBR%%
 

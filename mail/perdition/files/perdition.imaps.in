@@ -14,7 +14,7 @@
 #
 
 perdition_imaps_enable=${perdition_imaps_enable-"NO"}
-perdition_imaps_flags=${perditon_imaps_flags-""}
+perdition_imaps_flags=${perdition_imaps_flags-""}
 
 . %%RC_SUBR%%
 
