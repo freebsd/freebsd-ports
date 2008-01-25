@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080125:
+   AFFECTS: users of www/mod_security2
+   AUTHOR: araujo@FreeBSD.org
+
+   Update of mod_security2 is a dramatic change, because there is a need
+   to completely rewrite their obsolete rules and migrate for capacity
+   to use new syntax.
+   You need to make a complete backup of your conf files before to do an
+   update.
+
 20080120:
    AFFECTS: users of www/apache20
    AUTHOR: clement@FreeBSD.org
