@@ -7,6 +7,7 @@
 
 PORTNAME=	awstats
 PORTVERSION=	6.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://awstats.sourceforge.net/files/
 PKGNAMESUFFIX=	-devel
