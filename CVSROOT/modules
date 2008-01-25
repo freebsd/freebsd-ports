@@ -14784,6 +14784,7 @@ scli		ports/net-mgmt/scli
 scloader	ports/www/scloader
 scm		ports/lang/scm
 scmail		ports/mail/scmail
+scmpc		ports/audio/scmpc
 scmxx		ports/comms/scmxx
 scons		ports/devel/scons
 scorched3d	ports/games/scorched3d
