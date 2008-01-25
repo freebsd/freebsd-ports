@@ -591,6 +591,7 @@
     SUBDIR += pvpgn
     SUBDIR += py-mnemosyne
     SUBDIR += py-poker-eval
+    SUBDIR += py-pychess
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
     SUBDIR += py-ski
