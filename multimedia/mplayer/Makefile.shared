@@ -29,9 +29,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS} \
 		TMPDIR="${WRKSRC}"
-CONFIGURE_ARGS=	--cc=${CC} \
-		--as=${AS} \
-		--enable-png \
+CONFIGURE_ARGS= --enable-png \
 		--enable-menu \
 		--disable-faad-external \
 		--disable-vidix-external \
