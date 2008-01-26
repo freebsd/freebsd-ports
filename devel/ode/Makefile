@@ -7,6 +7,7 @@
 
 PORTNAME=	ode
 PORTVERSION=	0.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -59,7 +60,7 @@ post-patch:
 		-e 's|^\( *CPPFLAGS=\)|#\1|' -e 's|^\( *CXXFLAGS=\)|#\1|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|__isnanf||g; s|__isnan||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure.in
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^traplib_PROGRAMS / d' ${WRKSRC}/ode/src/Makefile.in
 	@${FIND} ${WRKSRC} -type f -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-e '/^DEFAULT_INCLUDES/ s|$$| -I$$(top_builddir)/include|' \
