@@ -33,6 +33,10 @@ MAKE_ENV=	WITHOUT_DEBUG=yes
 IGNORE=		requires FreeBSD 5.3 or superior
 .endif
 
+.if ${OSVERSION} >= 700000
+IGNORE=		module cannot be loaded on FreeBSD 7.x 
+.endif
+
 .if !exists(/usr/src/sys/Makefile)
 IGNORE=		requires kernel source files
 .endif
