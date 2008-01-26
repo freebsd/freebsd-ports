@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cherrypy
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	www python
 MASTER_SITES=	http://download.cherrypy.org/cherrypy/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,24 +19,17 @@ USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	CherryPy
 
-LN_OPTS=	-sf
-RM_OPTS=	-r
+REINPLACE_ARGS=	-i.bak -e 's,%%DOCSDIR%%,${DOCSDIR},'
 
-EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
-CPEXAMPLES=	${PYTHON_SITELIBDIR}/${PORTNAME}/tutorial
-
-.if !defined(WITH_EXAMPLES)
-PLIST_SUB=	PORTEXAMPLES="@comment "
-.else
-PLIST_SUB=	PORTEXAMPLES=""
+.if defined(NOPORTEXAMPLES)
+MAKE_ENV+=	NOPORTEXAMPLES=${NOPORTEXAMPLES}
 .endif
 
-post-install:
-.if !defined(WITH_EXAMPLES)
-	@${RM} ${RM_OPTS} ${CPEXAMPLES}
-.else
-	@${MV} ${CPEXAMPLES} ${EXAMPLESDIR} && \
-	${LN} ${LN_OPTS} ${EXAMPLESDIR} ${CPEXAMPLES}
+.if defined(NOPORTDOCS)
+MAKE_ENV+=	 NOPORTDOCS=${NOPORTDOCS}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} ${WRKSRC}/${PYSETUP}
 
 .include <bsd.port.mk>
