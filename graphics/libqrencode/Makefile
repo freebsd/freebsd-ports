@@ -25,6 +25,8 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 
+MAN1=		qrencode.1
+
 PLIST_FILES=	bin/qrencode \
 		include/qrencode.h \
 		lib/libqrencode.so \
