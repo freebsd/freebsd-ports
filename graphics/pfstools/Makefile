@@ -19,6 +19,8 @@ RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		Magick++:${PORTSDIR}/graphics/ImageMagick
 
+BROKEN=		does not build
+
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	ltverhack
