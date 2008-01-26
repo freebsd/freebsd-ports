@@ -1,0 +1,11 @@
+--- src/unicon-im/server/TLS_AsciiConvertor.cpp.orig	2008-01-25 14:10:08.000000000 -0800
++++ src/unicon-im/server/TLS_AsciiConvertor.cpp	2008-01-25 15:46:52.000000000 -0800
+@@ -202,7 +202,7 @@
+ 
+ int IsSymbol (unsigned char key)
+ {
+-    char *szSymbol = ";:'\"<,>.?/[{]{";
++    const char *szSymbol = ";:'\"<,>.?/[{]{";
+     int i, len = strlen (szSymbol);
+     for (i = 0; i < len; i++)
+        if (key == szSymbol[i])

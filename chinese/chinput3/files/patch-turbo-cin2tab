@@ -1,0 +1,73 @@
+--- src/unicon-im/ImmModules/turbo/cin2tab.c.orig	2008-01-25 14:10:08.000000000 -0800
++++ src/unicon-im/ImmModules/turbo/cin2tab.c	2008-01-25 14:37:33.000000000 -0800
+@@ -29,6 +29,7 @@
+ #include <sys/types.h>
+ #include <string.h>
+ #include <unistd.h>
++#include <ctype.h> // for tolower
+ #include "xl_hzinput.h"
+ #include "xl_sysphrase.h"
+ #include "xl_phrase.h"
+@@ -194,24 +195,24 @@
+     /************** Now some basic information ************************/
+     strcpy(InpTable.magic_number,MAGIC_NUMBER);
+     cmd_arg(tt, &cmd, &arg);
+-    if (strcmp(cmd,"%ename") || !(*arg) )
++    if (strcmp((const char*)cmd,"%ename") || !(*arg) )
+         print_error("%d:  %%ename english_name  expected", lineno);
+     arg[CIN_ENAME_LENGTH-1]=0;
+     strcpy(InpTable.ename,arg);
+ 
+     cmd_arg(tt, &cmd, &arg);
+-    if (strcmp(cmd,"%prompt") || !(*arg) )
++    if (strcmp((const char*)cmd,"%prompt") || !(*arg) )
+         print_error("%d:  %%prompt prompt_name  expected", lineno);
+     arg [CIN_CNAME_LENGTH-1]=0;
+     strcpy(InpTable.cname, arg);
+ 
+     cmd_arg(tt,&cmd, &arg); 
+-    if (strcmp(cmd,"%selkey") || !(*arg) )
++    if (strcmp((const char*)cmd,"%selkey") || !(*arg) )
+         print_error("%d:  %%selkey select_key_list expected", lineno);
+     strcpy(InpTable.selkey,arg);
+ 
+     cmd_arg(tt,&cmd, &arg);
+-    if (strcmp(cmd,"%last_full") || !(*arg)) 
++    if (strcmp((const char*)cmd,"%last_full") || !(*arg)) 
+         InpTable.last_full = 1;
+     else 
+     {
+@@ -222,21 +223,21 @@
+         cmd_arg(tt, &cmd, &arg);
+     }
+ 
+-    if (strcmp(cmd,"%dupsel") || !(*arg) )
++    if (strcmp((const char*)cmd,"%dupsel") || !(*arg) )
+         print_error("%d:  %%dupsel NO of dup sel keys  expected", lineno);
+     InpTable.MaxDupSel=atoi(arg);
+ 
+     /*************** now the keyname ****************************/
+ 
+     cmd_arg(tt,&cmd, &arg);
+-    if (strcmp(cmd,"%keyname") || strcmp(arg,"begin"))
++    if (strcmp((const char*)cmd,"%keyname") || strcmp((const char*)arg,"begin"))
+         print_error("%d:  %%keyname begin   expected", lineno);
+ 
+     TotalKeyNum=0;
+     while(1) 
+     {
+         cmd_arg(tt,&cmd, &arg);
+-        if (!strcmp(cmd,"%keyname")) break;
++        if (!strcmp((const char*)cmd,"%keyname")) break;
+         k = tolower(cmd[0]);  /* k = char */
+         if (InpTable.KeyMap[k]) 
+             print_error("%d:  key %c is already used",lineno, k);
+@@ -265,7 +266,7 @@
+         cmd_arg(tt,&cmd,&arg);
+         if (!cmd[0] || !arg[0]) 
+             break;
+-        len = strlen(cmd);
++        len = strlen((const char*)cmd);
+         if (len > InpTable.MaxPress) 
+             InpTable.MaxPress=len;
+         if (len > 10) 

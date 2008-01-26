@@ -1,0 +1,13 @@
+--- src/unicon-im/server/TLS_HzConvertTable.h.orig	2008-01-25 14:10:08.000000000 -0800
++++ src/unicon-im/server/TLS_HzConvertTable.h	2008-01-25 15:23:12.000000000 -0800
+@@ -19,8 +19,8 @@
+ */
+ 
+ typedef struct _GB2BIG5 {
+-	char *gb;
+-	char *big5;
++	const char *gb;
++	const char *big5;
+ } GB2BIG5;
+ 
+ #define TABLENUM sizeof(g2b)/sizeof(g2b[0])

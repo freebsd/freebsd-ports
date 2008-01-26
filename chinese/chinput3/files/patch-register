@@ -1,0 +1,11 @@
+--- src/Chinput-3.0.2/src/IMdkit/lib/i18nClbk.c.orig	2008-01-25 14:16:09.000000000 -0800
++++ src/Chinput-3.0.2/src/IMdkit/lib/i18nClbk.c	2008-01-25 14:13:15.000000000 -0800
+@@ -129,7 +129,7 @@
+     XIMPreeditDrawCallbackStruct *draw =
+         (XIMPreeditDrawCallbackStruct *) &preedit_CB->todo.draw;
+     CARD16 connect_id = call_data->any.connect_id;
+-    register int feedback_count;
++    int feedback_count;
+     register int i;
+     BITMASK32 status = 0x0;
+ 

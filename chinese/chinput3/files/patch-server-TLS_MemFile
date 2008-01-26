@@ -1,0 +1,20 @@
+--- src/unicon-im/server/TLS_MemFile.cpp.orig	2008-01-25 14:10:08.000000000 -0800
++++ src/unicon-im/server/TLS_MemFile.cpp	2008-01-25 14:22:31.000000000 -0800
+@@ -23,7 +23,7 @@
+  * Author: see CREDITS
+  */
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <assert.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -32,6 +32,8 @@
+ 
+ #include <TLS_MemFile.hpp>
+ 
++using namespace std;
++
+ TLS_CMemFile::TLS_CMemFile (unsigned long max0)
+ {
+     buf = (char *) malloc (max0);
