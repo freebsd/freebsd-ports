@@ -6672,6 +6672,7 @@ liblrdf		ports/textproc/liblrdf
 libltdl15	ports/devel/libltdl15
 liblug		ports/graphics/liblug
 liblzxcomp	ports/archivers/liblzxcomp
+libmaa		ports/devel/libmaa
 libmad		ports/audio/libmad
 libmaitretarot	ports/games/libmaitretarot
 libmal		ports/palm/libmal
