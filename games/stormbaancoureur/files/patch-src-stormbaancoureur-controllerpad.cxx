@@ -1,5 +1,5 @@
---- src-sturmbahnfahrer/controllerpad.cxx.orig	Mon Jul 17 00:26:08 2006
-+++ src-sturmbahnfahrer/controllerpad.cxx	Mon Jul 17 00:28:23 2006
+--- src-stormbaancoureur/controllerpad.cxx.orig	Mon Jul 17 00:26:08 2006
++++ src-stormbaancoureur/controllerpad.cxx	Mon Jul 17 00:28:23 2006
 @@ -14,7 +14,6 @@
  #include <windows.h>
  #include <mmsystem.h>

@@ -1,64 +1,82 @@
---- src-sturmbahnfahrer/Makefile.orig	Thu May 17 20:02:03 2007
-+++ src-sturmbahnfahrer/Makefile	Thu Aug  9 02:28:39 2007
-@@ -6,19 +6,17 @@
- 
- PLIBPREFIX=$(HOME)
- ODEPREFIX=$(HOME)
+--- src-stormbaancoureur/Makefile.orig	2007-12-29 00:55:42.000000000 +0300
++++ src-stormbaancoureur/Makefile	2007-12-31 16:51:58.000000000 +0300
+@@ -5,7 +5,7 @@
+ GLPREFIX=/usr
+ PLIBPREFIX=/usr
+ ODEPREFIX=/usr
 -CXX=g++
 +CXX?=g++
+ LIBDIRNAME=lib
+ 
+ #PLIBPREFIX=$(HOME)
+@@ -14,17 +14,14 @@
  
  # END OF CUSTOM SETTINGS
  
- CXXFLAGS=\
+-CXXFLAGS=\
+-  -I$(GLPREFIX)/include \
 -  -I$(ODEPREFIX)/include \
 -  -I$(PLIBPREFIX)/include \
++CXXFLAGS+=\
 +  -I$(LOCALBASE)/include \
    -I../src-common \
+   -DGAMEVERSION=$(VERSION) \
 -  -O2 -g -Wall
 +  -g -Wall
  
  LFLAGS=\
--  -L$(PLIBPREFIX)/lib \
--  -L/usr/X11R6/lib
+-  -L$(PLIBPREFIX)/$(LIBDIRNAME) \
+-  -L/usr/X11R6/$(LIBDIRNAME)
 +  -L$(LOCALBASE)/lib
  
  
  OBJS=\
-@@ -37,9 +35,9 @@
+@@ -43,15 +40,15 @@
  
  
  LIBS=\
--  $(ODEPREFIX)/lib/libode.a \
+-  $(ODEPREFIX)/$(LIBDIRNAME)/libode.a \
 +  $(LOCALBASE)/lib/libode.a \
    -lplibssgaux -lplibssg -lplibsg -lplibpu -lplibfnt -lplibul \
 -  -lglut -lGLU -lGL -lasound
 +  -lglut -lGLU -lGL
  
  
- all: sturmbahnfahrer
-@@ -94,44 +92,43 @@
- GAMEDIR=$(DESTDIR)/usr/share/games/sturmbahnfahrer
- install: sturmbahnfahrer
+ all: stormbaancoureur
+ 
+ 
+-stormbaancoureur: $(OBJS) $(ODEPREFIX)/$(LIBDIRNAME)/libode.a
++stormbaancoureur: $(OBJS)
+ 	$(CXX) -o stormbaancoureur $(OBJS) $(LFLAGS) $(LIBS)
+ 
+ staticworldobject.o: ../src-common/staticworldobject.cxx ../src-common/staticworldobject.h ../src-common/worldobject.h
+@@ -102,62 +99,61 @@
+ GAMEDIR=$(DESTDIR)/usr/share/games/stormbaancoureur
+ install: stormbaancoureur
  	# Directories
 -	mkdir -p $(DESTDIR)/usr/games/
 -	mkdir -p $(GAMEDIR)/images/
 -	mkdir -p $(GAMEDIR)/sounds/
+-	mkdir -p $(GAMEDIR)/shaders/
 -	mkdir -p $(GAMEDIR)/models/
 +	mkdir -p $(DATADIR)/images/
 +	mkdir -p $(DATADIR)/sounds/
++	mkdir -p $(DATADIR)/shaders/
 +	mkdir -p $(DATADIR)/models/
  	# Binary
--	install sturmbahnfahrer $(DESTDIR)/usr/games/sturmbahnfahrer
-+	${BSD_INSTALL_PROGRAM} sturmbahnfahrer $(PREFIX)/bin/sturmbahnfahrer
+-	install stormbaancoureur $(DESTDIR)/usr/games/stormbaancoureur
++	${BSD_INSTALL_PROGRAM} stormbaancoureur $(PREFIX)/bin/stormbaancoureur
  	# Images
 -	install -m 644 images/engine.tga $(GAMEDIR)/images/engine.tga
 -	install -m 644 images/info_carpet_smooth.rgb $(GAMEDIR)/images/info_carpet_smooth.rgb
 -	install -m 644 images/info_door_smooth.rgb $(GAMEDIR)/images/info_door_smooth.rgb
 -	install -m 644 images/info_jump_smooth.rgb $(GAMEDIR)/images/info_jump_smooth.rgb
+-	install -m 644 images/spot.tga $(GAMEDIR)/images/spot.tga
 +	${BSD_INSTALL_DATA} -m 644 images/engine.tga $(DATADIR)/images/engine.tga
 +	${BSD_INSTALL_DATA} -m 644 images/info_carpet_smooth.rgb $(DATADIR)/images/info_carpet_smooth.rgb
 +	${BSD_INSTALL_DATA} -m 644 images/info_door_smooth.rgb $(DATADIR)/images/info_door_smooth.rgb
 +	${BSD_INSTALL_DATA} -m 644 images/info_jump_smooth.rgb $(DATADIR)/images/info_jump_smooth.rgb
++	${BSD_INSTALL_DATA} -m 644 images/spot.tga $(DATADIR)/images/spot.tga
  	# Sounds
 -	install -m 644 sounds/rpm_graph.txt $(GAMEDIR)/sounds/rpm_graph.txt
 -	install -m 644 sounds/camaro_s16_le.wav $(GAMEDIR)/sounds/camaro_s16_le.wav
@@ -66,9 +84,33 @@
 +	${BSD_INSTALL_DATA} -m 644 sounds/rpm_graph.txt $(DATADIR)/sounds/rpm_graph.txt
 +	${BSD_INSTALL_DATA} -m 644 sounds/camaro_s16_le.wav $(DATADIR)/sounds/camaro_s16_le.wav
 +	${BSD_INSTALL_DATA} -m 644 sounds/detonationnorm_s16_le.wav $(DATADIR)/sounds/detonationnorm_s16_le.wav
- 	# Models
+         # Shaders
+-	install -m 644 shaders/bramlight.fp $(GAMEDIR)/shaders/bramlight.fp
+-	install -m 644 shaders/bramlight.vp $(GAMEDIR)/shaders/bramlight.vp
++	${BSD_INSTALL_DATA} -m 644 shaders/bramlight.fp $(DATADIR)/shaders/bramlight.fp
++	${BSD_INSTALL_DATA} -m 644 shaders/bramlight.vp $(DATADIR)/shaders/bramlight.vp
+ 	# Models (car parts)
+-	install -m 644 models/coilspring.3ds $(GAMEDIR)/models/coilspring.3ds
+-	install -m 644 models/fivespoke.3ds $(GAMEDIR)/models/fivespoke.3ds
+-	install -m 644 models/frame.3ds $(GAMEDIR)/models/frame.3ds
+-	install -m 644 models/leafspring.3ds $(GAMEDIR)/models/leafspring.3ds
+-	install -m 644 models/rearaxle.3ds $(GAMEDIR)/models/rearaxle.3ds
+-	install -m 644 models/spindle.3ds $(GAMEDIR)/models/spindle.3ds
+-	install -m 644 models/wishbone.3ds $(GAMEDIR)/models/wishbone.3ds
++	${BSD_INSTALL_DATA} -m 644 models/coilspring.3ds $(DATADIR)/models/coilspring.3ds
++	${BSD_INSTALL_DATA} -m 644 models/fivespoke.3ds $(DATADIR)/models/fivespoke.3ds
++	${BSD_INSTALL_DATA} -m 644 models/frame.3ds $(DATADIR)/models/frame.3ds
++	${BSD_INSTALL_DATA} -m 644 models/leafspring.3ds $(DATADIR)/models/leafspring.3ds
++	${BSD_INSTALL_DATA} -m 644 models/rearaxle.3ds $(DATADIR)/models/rearaxle.3ds
++	${BSD_INSTALL_DATA} -m 644 models/spindle.3ds $(DATADIR)/models/spindle.3ds
++	${BSD_INSTALL_DATA} -m 644 models/wishbone.3ds $(DATADIR)/models/wishbone.3ds
+ 	#install -m 644 models/car.3ds $(GAMEDIR)/models/car.3ds
+ 	#install -m 644 models/wheel.3ds $(GAMEDIR)/models/wheel.3ds
+ 	#install -m 644 models/licplate.ac $(GAMEDIR)/models/licplate.ac
+ 	#install -m 644 models/licplate.bmp $(GAMEDIR)/models/licplate.bmp
+ 	#install -m 644 models/truck.3ds $(GAMEDIR)/models/truck.3ds
+ 	# Models (other)
 -	install -m 644 models/baseplate.3ds $(GAMEDIR)/models/baseplate.3ds
--	install -m 644 models/car.3ds $(GAMEDIR)/models/car.3ds
 -	install -m 644 models/carpet.3ds $(GAMEDIR)/models/carpet.3ds
 -	install -m 644 models/crate.3ds $(GAMEDIR)/models/crate.3ds
 -	install -m 644 models/cratejump.3ds $(GAMEDIR)/models/cratejump.3ds
@@ -80,17 +122,17 @@
 -	install -m 644 models/ferriswheelwheel.3ds $(GAMEDIR)/models/ferriswheelwheel.3ds
 -	install -m 644 models/finishdoor.3ds $(GAMEDIR)/models/finishdoor.3ds
 -	install -m 644 models/finishplank.3ds $(GAMEDIR)/models/finishplank.3ds
+-	install -m 644 models/floppy.3ds $(GAMEDIR)/models/floppy.3ds
 -	install -m 644 models/grid.3ds $(GAMEDIR)/models/grid.3ds
+-	install -m 644 models/highjump.3ds $(GAMEDIR)/models/highjump.3ds
 -	install -m 644 models/jumpboard.3ds $(GAMEDIR)/models/jumpboard.3ds
--	install -m 644 models/licplate.ac $(GAMEDIR)/models/licplate.ac
--	install -m 644 models/licplate.bmp $(GAMEDIR)/models/licplate.bmp
 -	install -m 644 models/ramp.3ds $(GAMEDIR)/models/ramp.3ds
 -	install -m 644 models/spikegate.3ds $(GAMEDIR)/models/spikegate.3ds
+-	install -m 644 models/terrain3.3ds $(GAMEDIR)/models/terrain3.3ds
 -	install -m 644 models/track.3ds $(GAMEDIR)/models/track.3ds
--	install -m 644 models/truck.3ds $(GAMEDIR)/models/truck.3ds
--	install -m 644 models/wheel.3ds $(GAMEDIR)/models/wheel.3ds
+-	install -m 644 models/turntable_ramp.3ds $(GAMEDIR)/models/turntable_ramp.3ds
+-	install -m 644 models/turntable_wheel.3ds $(GAMEDIR)/models/turntable_wheel.3ds
 +	${BSD_INSTALL_DATA} -m 644 models/baseplate.3ds $(DATADIR)/models/baseplate.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/car.3ds $(DATADIR)/models/car.3ds
 +	${BSD_INSTALL_DATA} -m 644 models/carpet.3ds $(DATADIR)/models/carpet.3ds
 +	${BSD_INSTALL_DATA} -m 644 models/crate.3ds $(DATADIR)/models/crate.3ds
 +	${BSD_INSTALL_DATA} -m 644 models/cratejump.3ds $(DATADIR)/models/cratejump.3ds
@@ -102,15 +144,16 @@
 +	${BSD_INSTALL_DATA} -m 644 models/ferriswheelwheel.3ds $(DATADIR)/models/ferriswheelwheel.3ds
 +	${BSD_INSTALL_DATA} -m 644 models/finishdoor.3ds $(DATADIR)/models/finishdoor.3ds
 +	${BSD_INSTALL_DATA} -m 644 models/finishplank.3ds $(DATADIR)/models/finishplank.3ds
++	${BSD_INSTALL_DATA} -m 644 models/floppy.3ds $(DATADIR)/models/floppy.3ds
 +	${BSD_INSTALL_DATA} -m 644 models/grid.3ds $(DATADIR)/models/grid.3ds
++	${BSD_INSTALL_DATA} -m 644 models/highjump.3ds $(DATADIR)/models/highjump.3ds
 +	${BSD_INSTALL_DATA} -m 644 models/jumpboard.3ds $(DATADIR)/models/jumpboard.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/licplate.ac $(DATADIR)/models/licplate.ac
-+	${BSD_INSTALL_DATA} -m 644 models/licplate.bmp $(DATADIR)/models/licplate.bmp
 +	${BSD_INSTALL_DATA} -m 644 models/ramp.3ds $(DATADIR)/models/ramp.3ds
 +	${BSD_INSTALL_DATA} -m 644 models/spikegate.3ds $(DATADIR)/models/spikegate.3ds
++	${BSD_INSTALL_DATA} -m 644 models/terrain3.3ds $(DATADIR)/models/terrain3.3ds
 +	${BSD_INSTALL_DATA} -m 644 models/track.3ds $(DATADIR)/models/track.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/truck.3ds $(DATADIR)/models/truck.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/wheel.3ds $(DATADIR)/models/wheel.3ds
- 
++	${BSD_INSTALL_DATA} -m 644 models/turntable_ramp.3ds $(DATADIR)/models/turntable_ramp.3ds
++	${BSD_INSTALL_DATA} -m 644 models/turntable_wheel.3ds $(DATADIR)/models/turntable_wheel.3ds
  
  deb:
+ 	strip stormbaancoureur
