@@ -11778,6 +11778,7 @@ pad		ports/security/pad
 padevchooser	ports/audio/padevchooser
 padkey		ports/x11/padkey
 pads		ports/net-mgmt/pads
+paexec		ports/devel/paexec
 pager		ports/x11-wm/pager
 paicc		ports/sysutils/paicc
 paintlib	ports/graphics/paintlib
