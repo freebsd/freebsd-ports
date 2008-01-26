@@ -1,0 +1,11 @@
+--- mlton/Makefile.orig	2007-12-22 22:09:47.000000000 +0100
++++ mlton/Makefile	2007-12-22 22:09:56.000000000 +0100
+@@ -18,7 +18,7 @@
+ UP := upgrade-basis.sml
+ PATH := $(BIN):$(shell echo $$PATH)
+ 
+-FLAGS := @MLton ram-slop 0.7 gc-summary $(RUNTIME_ARGS) --
++FLAGS := @MLton max-heap 680m gc-summary $(RUNTIME_ARGS) --
+ 
+ ifeq (self, $(shell if [ -x "$(BIN)/mlton" ]; then echo self; fi))
+   # We're compiling MLton with itself, so don't use any stubs.
