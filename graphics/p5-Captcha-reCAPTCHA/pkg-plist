@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Captcha/reCAPTCHA/.packlist
+%%SITE_PERL%%/Captcha/reCAPTCHA.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Captcha/reCAPTCHA
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Captcha
+@dirrmtry %%SITE_PERL%%/Captcha

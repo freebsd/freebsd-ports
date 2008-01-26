@@ -1,0 +1,12 @@
+This is a Perl implementation of the reCAPTCHA API.
+
+From the recaptcha.net web site:
+
+reCAPTCHA improves the process of digitizing books by sending words that
+cannot be read by computers to the Web in the form of CAPTCHAs for
+humans to decipher. More specifically, each word that cannot be read
+correctly by OCR is placed on an image and used as a CAPTCHA. This is
+possible because most OCR programs alert you when a word cannot be read
+correctly.
+
+WWW: http://search.cpan.org/dist/Captcha-reCAPTCHA/
