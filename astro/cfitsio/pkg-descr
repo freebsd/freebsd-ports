@@ -5,6 +5,6 @@ providing an easy to use set of high-level routines that insulate the
 programmer from the internal complexities of the FITS file format. At
 the same time, CFITSIO provides many advanced features that have made
 it the most widely used FITS file programming interface in the
-astronomical community. 
+astronomical community.
 
 WWW: http://heasarc.gsfc.nasa.gov/docs/software/fitsio/

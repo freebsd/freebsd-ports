@@ -1,6 +1,6 @@
 The module is an object orientated interface to the both the first and second
 Digital Sky Surveys at the ESO-ECF online archive. While the first sky survey
-is 100% complete, the second survey covers 98% of the sky in Red, 45% of the 
+is 100% complete, the second survey covers 98% of the sky in Red, 45% of the
 sky in Blue and 27% of the sky in the Infra-red.
 
 WWW: http://www.estar.org.uk/
