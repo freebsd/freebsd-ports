@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://librdf.org/dist/source/
@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	--with-raptor=system \
 		--with-threestore=no
 
 USE_LDCONFIG=	yes
+USE_PERL5_BUILD=	yes
 
 MAN1=		rasqal-config.1 rdfproc.1 redland-config.1 \
 		redland-db-upgrade.1 roqet.1
@@ -46,6 +47,9 @@ OPTIONS+=	MYSQL "Use MySQL instead of BDB" off
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql=yes
+PLIST_SUB+=	MYSQL=""
+.else
+PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 pre-everything::

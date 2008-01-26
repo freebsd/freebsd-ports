@@ -48,10 +48,11 @@ share/gtk-doc/html/rasqal/rasqal-section-query-results.html
 share/gtk-doc/html/rasqal/rasqal-section-query.html
 share/gtk-doc/html/rasqal/rasqal-section-query-results-formatter.html
 share/gtk-doc/html/rasqal/rasqal-section-triple.html
-share/gtk-doc/html/rasqal/rasqal.devhelp
-share/gtk-doc/html/rasqal/rasqal.devhelp2
 share/gtk-doc/html/rasqal/rasqal-section-triples-source.html
 share/gtk-doc/html/rasqal/rasqal-section-variable.html
+share/gtk-doc/html/rasqal/rasqal-section-xsd.html
+share/gtk-doc/html/rasqal/rasqal.devhelp
+share/gtk-doc/html/rasqal/rasqal.devhelp2
 share/gtk-doc/html/rasqal/rasqal.html
 share/gtk-doc/html/rasqal/right.png
 share/gtk-doc/html/rasqal/style.css
@@ -59,12 +60,10 @@ share/gtk-doc/html/rasqal/up.png
 share/gtk-doc/html/redland/home.png
 share/gtk-doc/html/redland/index.html
 share/gtk-doc/html/redland/index.sgml
+share/gtk-doc/html/redland/indexes.html
 share/gtk-doc/html/redland/introduction.html
-share/gtk-doc/html/redland/ix01.html
 share/gtk-doc/html/redland/left.png
 share/gtk-doc/html/redland/objects.html
-share/gtk-doc/html/redland/pt01.html
-share/gtk-doc/html/redland/pt02.html
 share/gtk-doc/html/redland/redland-concepts.html
 share/gtk-doc/html/redland/redland-digest.html
 share/gtk-doc/html/redland/redland-files.html
@@ -81,6 +80,15 @@ share/gtk-doc/html/redland/redland-query.html
 share/gtk-doc/html/redland/redland-serializer.html
 share/gtk-doc/html/redland/redland-statement.html
 share/gtk-doc/html/redland/redland-storage.html
+share/gtk-doc/html/redland/redland-storage-module-file.html
+share/gtk-doc/html/redland/redland-storage-module-hashes.html
+share/gtk-doc/html/redland/redland-storage-module-memory.html
+share/gtk-doc/html/redland/redland-storage-module-mysql.html
+share/gtk-doc/html/redland/redland-storage-module-postgresql.html
+share/gtk-doc/html/redland/redland-storage-module-sqlite.html
+share/gtk-doc/html/redland/redland-storage-module-tstore.html
+share/gtk-doc/html/redland/redland-storage-module-uri.html
+share/gtk-doc/html/redland/redland-storage-modules.html
 share/gtk-doc/html/redland/redland-stream.html
 share/gtk-doc/html/redland/redland-unicode.html
 share/gtk-doc/html/redland/redland-uri.html
@@ -88,10 +96,15 @@ share/gtk-doc/html/redland/redland-world.html
 share/gtk-doc/html/redland/redland.devhelp
 share/gtk-doc/html/redland/redland.devhelp2
 share/gtk-doc/html/redland/redland.html
+share/gtk-doc/html/redland/reference-manual.html
 share/gtk-doc/html/redland/right.png
 share/gtk-doc/html/redland/style.css
+share/gtk-doc/html/redland/tutorial.html
 share/gtk-doc/html/redland/up.png
+%%MYSQL%%share/redland/mysql-v1.ttl
+%%MYSQL%%share/redland/mysql-v2.ttl
 %%DATADIR%%/Redland.i
+@dirrm lib/redland
 @dirrm %%DATADIR%%
 @exec mkdir -p %D/share/gtk-doc/html/rasqal
 @dirrm share/gtk-doc/html/rasqal
