@@ -720,6 +720,7 @@
     SUBDIR += starfighter
     SUBDIR += starlanes
     SUBDIR += stepbill
+    SUBDIR += stormbaancoureur
     SUBDIR += stratagus
     SUBDIR += stroq
     SUBDIR += sturmbahnfahrer

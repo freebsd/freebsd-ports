@@ -15479,6 +15479,7 @@ stlfilt		ports/devel/stlfilt
 stlport		ports/devel/stlport
 stmpclean	ports/sysutils/stmpclean
 stone		ports/net/stone
+stormbaancoureur	ports/games/stormbaancoureur
 stonx		ports/emulators/stonx
 stow		ports/sysutils/stow
 stowES		ports/sysutils/stowES
