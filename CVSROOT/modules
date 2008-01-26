@@ -6288,6 +6288,7 @@ latex		ports/print/latex
 latex-arydshln	ports/print/latex-arydshln
 latex-auto-greek	ports/print/latex-auto-greek
 latex-beamer	ports/print/latex-beamer
+latex-biblatex	ports/print/latex-biblatex
 latex-biblist	ports/print/latex-biblist
 latex-bytefield	ports/print/latex-bytefield
 latex-caption	ports/print/latex-caption
