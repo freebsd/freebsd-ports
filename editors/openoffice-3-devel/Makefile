@@ -71,10 +71,10 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
 CODELINE=		680
-MILESTONE?=		242
+MILESTONE?=		243
 OOOTAG?=		SRC680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
-SNAPDATE=		20080109
+SNAPDATE=		20080122
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
@@ -124,7 +124,9 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		gpatch:${PORTSDIR}/devel/patch \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bash:${PORTSDIR}/shells/bash \
-		imake:${X_IMAKE_PORT}
+		imake:${X_IMAKE_PORT} \
+		gperf:${PORTSDIR}/devel/gperf #i85469#
+
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 .if !defined(WITH_GPC)
 LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
@@ -189,6 +191,9 @@ post-extract:
 .if !defined(WITHOUT_MOZILLA)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
 .endif
+pre-configure:
+#Workaround for gperf. #i85469#
+	@${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/solenv/bin/gperf
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
