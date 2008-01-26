@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080126:
+   AFFECTS: users of net-p2p/deluge
+   AUTHOR: mezz@FreeBSD.org
+
+   Update of deluge to 0.5.8.2, if you are using blocklist plugin. You have
+   to remove blocklist.conf first before you can run it or it will crash in
+   the start up.
+
+   	$ rm -f ~/.config/deluge/blocklist.conf
+
 20080125:
    AFFECTS: users of www/mod_security2
    AUTHOR: araujo@FreeBSD.org
