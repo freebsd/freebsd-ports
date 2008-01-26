@@ -132,6 +132,7 @@
     SUBDIR += latex-arydshln
     SUBDIR += latex-auto-greek
     SUBDIR += latex-beamer
+    SUBDIR += latex-biblatex
     SUBDIR += latex-biblist
     SUBDIR += latex-bytefield
     SUBDIR += latex-caption
