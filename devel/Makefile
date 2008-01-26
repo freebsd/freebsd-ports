@@ -611,6 +611,7 @@
     SUBDIR += libleaftag
     SUBDIR += liblogging
     SUBDIR += libltdl15
+    SUBDIR += libmaa
     SUBDIR += libmatheval
     SUBDIR += libmba
     SUBDIR += libmcs
