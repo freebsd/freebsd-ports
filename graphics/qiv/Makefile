@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qiv
-PORTVERSION=	2.1
+PORTVERSION=	2.1.p12
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.klografx.net/qiv/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-pre12
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/.p12/-pre12/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	carpetsmoker@xs4all.nl
