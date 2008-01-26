@@ -20,11 +20,11 @@ PORTDOCS=	ABOUT-NLS COPYING ChangeLog INSTALL TODO
 PORTEXAMPLES=	USAGE.examples USAGE.resumehandling USAGE.urlhandling \
 		passwordfile wputrc
 
-USE_AUTOTOOLS=    autoconf:261
+USE_GETTEXT=	yes
+USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LIBS="${LDFLAGS}"
-PLIST_FILES=	bin/wput
 
 OPTIONS=	TLS "Enable TLS support" on \
 		MEM_DEBUG "Enable memory debugging" off \
@@ -52,7 +52,7 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}	
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .if !defined(NOPORTEXAMPLES)
