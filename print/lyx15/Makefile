@@ -26,6 +26,8 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost
 
+BROKEN=		does not build
+
 LATEST_LINK=	lyx15
 CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
