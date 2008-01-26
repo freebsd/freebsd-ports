@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pylint
-PORTVERSION=	0.13.2
+PORTVERSION=	0.14.0
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.org/pub/pylint/	\
 		http://ftp.logilab.org/pub/pylint/
@@ -18,7 +18,7 @@ COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab/astng/__init__.py:${PORTSDIR}/devel/py-astng
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 
 OPTIONS=	GUI	"Include Tkinter support for pylint-gui"	Off
 

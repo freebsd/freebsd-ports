@@ -73,9 +73,6 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.py
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.pyc
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.pyo
-%%PYTHON_SITELIBDIR%%/pylint/rlint.py
-%%PYTHON_SITELIBDIR%%/pylint/rlint.pyc
-%%PYTHON_SITELIBDIR%%/pylint/rlint.pyo
 %%PYTHON_SITELIBDIR%%/pylint/test/func_test.py
 %%PYTHON_SITELIBDIR%%/pylint/test/func_test.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/func_test.pyo
@@ -100,6 +97,9 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_attrs_definition_order.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_attrs_definition_order.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_attrs_definition_order.pyo
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_backtick_deprecated.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_backtick_deprecated.pyc
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_backtick_deprecated.pyo
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_bad_assigment_to_exception_var.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_bad_assigment_to_exception_var.pyc
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_bad_assigment_to_exception_var.pyo
@@ -515,6 +515,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func___future___import_not_first_stmt.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func___name___access.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_attrs_definition_order.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_backtick_deprecated.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_bad_assigment_to_exception_var.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_base_stmt_without_effect.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_base_useless_pass.txt
