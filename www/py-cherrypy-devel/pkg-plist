@@ -183,53 +183,53 @@
 %%PYTHON_SITELIBDIR%%/cherrypy/test/webtest.py
 %%PYTHON_SITELIBDIR%%/cherrypy/test/webtest.pyc
 %%PYTHON_SITELIBDIR%%/cherrypy/test/webtest.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/__init__.py
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/__init__.pyc
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/__init__.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/bonus-sqlobject.py
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/bonus-sqlobject.pyc
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/bonus-sqlobject.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut01_helloworld.py
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut01_helloworld.pyc
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut01_helloworld.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut02_expose_methods.py
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut02_expose_methods.pyc
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut02_expose_methods.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut03_get_and_post.py
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut03_get_and_post.pyc
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut03_get_and_post.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut04_complex_site.py
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut04_complex_site.pyc
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut04_complex_site.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut05_derived_objects.py
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut05_derived_objects.pyc
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut05_derived_objects.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut06_default_method.py
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut06_default_method.pyc
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut06_default_method.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut07_sessions.py
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut07_sessions.pyc
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut07_sessions.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut08_generators_and_yield.py
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut08_generators_and_yield.pyc
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut08_generators_and_yield.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut09_files.py
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut09_files.pyc
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut09_files.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut10_http_errors.py
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut10_http_errors.pyc
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tut10_http_errors.pyo
+%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial/tutorial.conf
 %%PYTHON_SITELIBDIR%%/cherrypy/wsgiserver/__init__.py
 %%PYTHON_SITELIBDIR%%/cherrypy/wsgiserver/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cherrypy/wsgiserver/__init__.pyo
-%%PORTEXAMPLES%%%%PYTHON_SITELIBDIR%%/cherrypy/tutorial
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bonus-sqlobject.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bonus-sqlobject.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bonus-sqlobject.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_error.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pdf_file.pdf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut01_helloworld.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut01_helloworld.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut01_helloworld.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut02_expose_methods.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut02_expose_methods.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut02_expose_methods.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut03_get_and_post.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut03_get_and_post.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut03_get_and_post.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut04_complex_site.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut04_complex_site.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut04_complex_site.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut05_derived_objects.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut05_derived_objects.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut05_derived_objects.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut06_default_method.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut06_default_method.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut06_default_method.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut07_sessions.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut07_sessions.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut07_sessions.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut08_generators_and_yield.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut08_generators_and_yield.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut08_generators_and_yield.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut09_files.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut09_files.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut09_files.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut10_http_errors.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut10_http_errors.pyc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tut10_http_errors.pyo
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial.conf
-@dirrm %%PYTHON_SITELIBDIR%%/cherrypy/wsgiserver
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/custom_error.html
+%%PORTDOCS%%%%DOCSDIR%%/pdf_file.pdf
 @dirrm %%PYTHON_SITELIBDIR%%/cherrypy/lib
 @dirrm %%PYTHON_SITELIBDIR%%/cherrypy/test/static
 @dirrm %%PYTHON_SITELIBDIR%%/cherrypy/test
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%PYTHON_SITELIBDIR%%/cherrypy/tutorial
+@dirrm %%PYTHON_SITELIBDIR%%/cherrypy/wsgiserver
 @dirrm %%PYTHON_SITELIBDIR%%/cherrypy
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
