@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.1_rc4
+DISTVERSION=	2.1_rc6
 CATEGORIES=	security net
-MASTER_SITES=	http://openvpn.net/release/
+MASTER_SITES=	http://openvpn.net/beta/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	matthias.andree@gmx.de
@@ -67,15 +67,15 @@ pre-install:
 
 post-install:
 	${MKDIR} ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/plugin/down-root/openvpn-down-root.so ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/plugin/auth-pam/openvpn-auth-pam.so ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/plugin/down-root/openvpn-down-root.so ${PREFIX}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/plugin/auth-pam/openvpn-auth-pam.so ${PREFIX}/lib/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/plugin/down-root/README ${DOCSDIR}/README.openvpn-down-root
 	${INSTALL_DATA} ${WRKSRC}/plugin/auth-pam/README ${DOCSDIR}/README.openvpn-auth-pam
 .for docs in AUTHORS COPYING COPYRIGHT.GPL ChangeLog INSTALL NEWS \
 	PORTS README
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}/
 .endfor
 	( cd ${WRKSRC} \
 	&& ${FIND} easy-rsa sample-config-files sample-scripts -depth \
