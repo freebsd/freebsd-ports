@@ -31,6 +31,9 @@ IGNORE=		this port is for FreeBSD 6 or above
 VER=		5.4
 .else
 VER=		6.0
+.if ${OSVERSION} >= 700043
+LIB_DEPENDS+=	m.4:${PORTSDIR}/misc/compat6x
+.endif
 .endif
 
 .if ${PHP_VER} == 4
