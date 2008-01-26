@@ -7,13 +7,16 @@
 @dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/md5_ftpd.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/throttled_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/unix_ftpd.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/winnt_ftpd.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/adoptions.lnk.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/releasenotes.html
+%%PORTDOCS%%%%DOCSDIR%%/rfcs-compliance.html
 %%PORTDOCS%%%%DOCSDIR%%/roadmap.lnk.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
