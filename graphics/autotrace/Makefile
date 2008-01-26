@@ -9,16 +9,12 @@ PORTNAME=	autotrace
 PORTVERSION=	0.31.1
 PORTREVISION=	9
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert bitmap to vector graphics
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		ming.4:${PORTSDIR}/graphics/ming \
-		Magick.10:${PORTSDIR}/graphics/ImageMagick \
-		pstoedit.0:${PORTSDIR}/graphics/pstoedit
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
@@ -29,12 +25,27 @@ USE_XLIB=	yes
 
 MAN1=		autotrace.1
 
+OPTIONS=	MING "Enable swf interface" on \
+		PSTOEDIT "Convert postscript to other formats" on
+
+.if !defined (WITHOUT_MING)
+LIB_DEPENDS+=	ming.4:${PORTSDIR}/graphics/ming
+CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ming"
+.endif
+
+.if !defined (WITHOUT_PSTOEDIT)
+LIB_DEPENDS+=	pstoedit.0:${PORTSDIR}/graphics/pstoedit
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
+
+.if defined (WITH_PSTOEDIT)
 	@${REINPLACE_CMD} -e '/$$PSTOEDIT_CONFIG/  s|--version|--modversion| ; \
 		s|$$PSTOEDIT_CONFIG $$pstoedit_args|pkg-config pstoedit| ; \
 		/^PSTOEDIT_CONFIG=/ s|=.*$$|=pkg-config| ' ${WRKSRC}/configure
+.endif
 
 .include <bsd.port.mk>
