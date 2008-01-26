@@ -1,0 +1,18 @@
+bin/paexec
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%EXAMPLESDIR%%/toupper/toupper_cmd
+%%EXAMPLESDIR%%/toupper/toupper_run
+%%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_cmd
+%%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_run
+%%EXAMPLESDIR%%/cc_wrapper/func1.c
+%%EXAMPLESDIR%%/cc_wrapper/func2.c
+%%EXAMPLESDIR%%/cc_wrapper/func3.c
+%%EXAMPLESDIR%%/all_substr/all_substr_cmd
+%%EXAMPLESDIR%%/all_substr/all_substr_run
+@dirrm %%EXAMPLESDIR%%/all_substr
+@dirrm %%EXAMPLESDIR%%/cc_wrapper
+@dirrm %%EXAMPLESDIR%%/toupper
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
