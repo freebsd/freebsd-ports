@@ -2036,6 +2036,7 @@ dim		ports/sysutils/dim
 dimes		ports/net/dimes
 dino		ports/audio/dino
 dinotrace	ports/cad/dinotrace
+dir2ogg		ports/audio/dir2ogg
 dirac		ports/multimedia/dirac
 dirac-reference	ports/multimedia/dirac-reference
 diradmin	ports/net/diradmin
