@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redland-bindings
-PORTVERSION=	1.0.5.1
+PORTVERSION=	1.0.7.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://download.librdf.org/source/
@@ -19,7 +19,6 @@ COMMENT=	Language bindings for the Redland package
 #		PHP "Add PHP bindings" off \
 #		PYTHON "Add Python bindings" off \
 #		RUBY "Add Ruby bindings" off \
-#		TCL "Add TCL bindings" off
 LIB_DEPENDS=	rdf.0:${PORTSDIR}/textproc/redland
 
 USE_LDCONFIG=	yes
@@ -75,20 +74,6 @@ PLIST_SUB+=	WITH_RUBY=""
 .else
 PLIST_SUB+=	WITH_RUBY="@comment "
 .endif
-.if defined(WITH_TCL)
-.if defined(WITH_TCL83)
-USE_TCL_RUN=	83
-TCL_LONG_V=	8.3
-.else
-USE_TCL_RUN=	84
-TCL_LONG_V=	8.4
-.endif
-PLIST_SUB+=	WITH_TCL=""
-PLIST_SUB+=	TCL_DIR="lib/tcl${TCL_LONG_V}"
-CONFIGURE_ARGS+=	--with-tcl=${TCLSH}
-.else
-PLIST_SUB+=	WITH_TCL="@comment "
-.endif
 
 GNU_CONFIGURE=	yes
 
@@ -103,12 +88,7 @@ pre-everything::
 	@${ECHO_MSG} "WITH_PHP    - PHP extension"
 	@${ECHO_MSG} "WITH_PYTHON - Python extension"
 	@${ECHO_MSG} "WITH_RUBY   - Ruby bindings"
-	@${ECHO_MSG} "WITH_TCL    - TCL bindings"
 	@${ECHO_MSG} "**********************************************"
 	@${ECHO_MSG} ""
-
-post-patch:
-	${REINPLACE_CMD} 's/^tcllib =.*/tcllib = -ltcl${TCL_SHORT_V}/' \
-		${WRKSRC}/tcl/Makefile.in
 
 .include <bsd.port.mk>
