@@ -684,6 +684,7 @@
     SUBDIR += xcdplayer
     SUBDIR += xfce4-mixer
     SUBDIR += xfce4-mpc-plugin
+    SUBDIR += xfmpc
     SUBDIR += xhippo
     SUBDIR += ximp3
     SUBDIR += xmcd
