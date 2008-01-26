@@ -19,7 +19,7 @@ COMMENT=	SSL encryption wrapper for standard network daemons
 
 USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	YES
-USE_RC_SUBR=	YES
+USE_RC_SUBR=	stunnel
 WRKSRC=		${WRKDIR}/${PORTNAME}-4.22
 
 GNU_CONFIGURE=	yes
@@ -78,9 +78,6 @@ post-patch:
 .endif
 
 post-install:
-	${SED} "s+%%PREFIX%%+${PREFIX}+g; s+%%RC_SUBR%%+${RC_SUBR}+g; s+%%ETCDIR%%+${ETCDIR}+g" \
-		< ${FILESDIR}/stunnel.sh > ${WRKDIR}/stunnel
-	${INSTALL_SCRIPT} ${WRKDIR}/stunnel ${PREFIX}/etc/rc.d/
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO} ""
