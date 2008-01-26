@@ -18,6 +18,7 @@ share/gtk-doc/html/raptor/parser-guess.html
 share/gtk-doc/html/raptor/parser-ntriples.html
 share/gtk-doc/html/raptor/parser-rdfxml.html
 share/gtk-doc/html/raptor/parser-rss-tag-soup.html
+share/gtk-doc/html/raptor/parser-trig.html
 share/gtk-doc/html/raptor/parser-turtle.html
 share/gtk-doc/html/raptor/raptor.devhelp
 share/gtk-doc/html/raptor/raptor.devhelp2
