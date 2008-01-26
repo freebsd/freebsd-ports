@@ -1,0 +1,13 @@
+HTML::Tiny is a simple, dependency free module for generating HTML (and
+XML). It concentrates on generating syntactically correct XHTML using a
+simple Perl notation.
+
+In addition to the HTML generation functions utility functions are provided
+to
+
+    * encode and decode URL encoded strings
+    * entity encode HTML
+    * build query strings
+    * JSON encode data structures
+
+WWW: http://search.cpan.org/dist/HTML-Tiny/
