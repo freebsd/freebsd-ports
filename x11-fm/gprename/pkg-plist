@@ -3,6 +3,7 @@ share/applications/gprename.desktop
 share/pixmaps/gprename/gprename.png
 share/pixmaps/gprename/gprename_debian_menu_icon.xpm
 share/pixmaps/gprename/gprename_nautilus-action.png
+share/locale/ca/LC_MESSAGES/gprename.mo
 share/locale/de/LC_MESSAGES/gprename.mo
 share/locale/es/LC_MESSAGES/gprename.mo
 share/locale/fr/LC_MESSAGES/gprename.mo
