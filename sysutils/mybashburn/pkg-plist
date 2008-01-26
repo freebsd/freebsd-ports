@@ -1,0 +1,141 @@
+bin/mybashburn
+etc/mybashburnrc.sample
+%%DATADIR%%/misc/variables.idx
+%%DATADIR%%/misc/mount.sh
+%%DATADIR%%/misc/commonfunctions.sh
+%%DATADIR%%/misc/datadefine.sh
+%%DATADIR%%/misc/xmmsread.sh
+%%DATADIR%%/misc/check_path.sh
+%%DATADIR%%/misc/colors.idx
+%%DATADIR%%/misc/commands.idx
+%%DATADIR%%/menus/data_menu.sh
+%%DATADIR%%/menus/audio_menu.sh
+%%DATADIR%%/menus/iso_menu.sh
+%%DATADIR%%/lang/German/commonfunctions.lang
+%%DATADIR%%/lang/German/bincue.lang
+%%DATADIR%%/lang/German/datadefine.lang
+%%DATADIR%%/lang/German/iso_menu.lang
+%%DATADIR%%/lang/German/convert_mp3s.lang
+%%DATADIR%%/lang/German/configure.lang
+%%DATADIR%%/lang/German/audio_menu.lang
+%%DATADIR%%/lang/German/convert_oggs.lang
+%%DATADIR%%/lang/German/data_menu.lang
+%%DATADIR%%/lang/German/mount.lang
+%%DATADIR%%/lang/German/MyBashBurn.lang
+%%DATADIR%%/lang/German/check_path.lang
+%%DATADIR%%/lang/German/burning.lang
+%%DATADIR%%/lang/German/multi.lang
+%%DATADIR%%/lang/German/convert_flacs.lang
+%%DATADIR%%/lang/Polish/commonfunctions.lang
+%%DATADIR%%/lang/Polish/bincue.lang
+%%DATADIR%%/lang/Polish/datadefine.lang
+%%DATADIR%%/lang/Polish/iso_menu.lang
+%%DATADIR%%/lang/Polish/convert_mp3s.lang
+%%DATADIR%%/lang/Polish/configure.lang
+%%DATADIR%%/lang/Polish/audio_menu.lang
+%%DATADIR%%/lang/Polish/convert_oggs.lang
+%%DATADIR%%/lang/Polish/data_menu.lang
+%%DATADIR%%/lang/Polish/mount.lang
+%%DATADIR%%/lang/Polish/MyBashBurn.lang
+%%DATADIR%%/lang/Polish/check_path.lang
+%%DATADIR%%/lang/Polish/burning.lang
+%%DATADIR%%/lang/Polish/multi.lang
+%%DATADIR%%/lang/Polish/convert_flacs.lang
+%%DATADIR%%/lang/Swedish/commonfunctions.lang
+%%DATADIR%%/lang/Swedish/bincue.lang
+%%DATADIR%%/lang/Swedish/datadefine.lang
+%%DATADIR%%/lang/Swedish/iso_menu.lang
+%%DATADIR%%/lang/Swedish/convert_mp3s.lang
+%%DATADIR%%/lang/Swedish/configure.lang
+%%DATADIR%%/lang/Swedish/audio_menu.lang
+%%DATADIR%%/lang/Swedish/convert_oggs.lang
+%%DATADIR%%/lang/Swedish/data_menu.lang
+%%DATADIR%%/lang/Swedish/mount.lang
+%%DATADIR%%/lang/Swedish/MyBashBurn.lang
+%%DATADIR%%/lang/Swedish/check_path.lang
+%%DATADIR%%/lang/Swedish/burning.lang
+%%DATADIR%%/lang/Swedish/multi.lang
+%%DATADIR%%/lang/Swedish/convert_flacs.lang
+%%DATADIR%%/lang/English/commonfunctions.lang
+%%DATADIR%%/lang/English/bincue.lang
+%%DATADIR%%/lang/English/datadefine.lang
+%%DATADIR%%/lang/English/iso_menu.lang
+%%DATADIR%%/lang/English/convert_mp3s.lang
+%%DATADIR%%/lang/English/configure.lang
+%%DATADIR%%/lang/English/audio_menu.lang
+%%DATADIR%%/lang/English/convert_oggs.lang
+%%DATADIR%%/lang/English/data_menu.lang
+%%DATADIR%%/lang/English/mount.lang
+%%DATADIR%%/lang/English/MyBashBurn.lang
+%%DATADIR%%/lang/English/check_path.lang
+%%DATADIR%%/lang/English/xmmsread.lang
+%%DATADIR%%/lang/English/burning.lang
+%%DATADIR%%/lang/English/multi.lang
+%%DATADIR%%/lang/English/convert_flacs.lang
+%%DATADIR%%/lang/Czech/multi.lang
+%%DATADIR%%/lang/Czech/bincue.lang
+%%DATADIR%%/lang/Czech/datadefine.lang
+%%DATADIR%%/lang/Czech/iso_menu.lang
+%%DATADIR%%/lang/Czech/convert_mp3s.lang
+%%DATADIR%%/lang/Czech/configure.lang
+%%DATADIR%%/lang/Czech/audio_menu.lang
+%%DATADIR%%/lang/Czech/convert_oggs.lang
+%%DATADIR%%/lang/Czech/data_menu.lang
+%%DATADIR%%/lang/Czech/mount.lang
+%%DATADIR%%/lang/Czech/MyBashBurn.lang
+%%DATADIR%%/lang/Czech/check_path.lang
+%%DATADIR%%/lang/Czech/burning.lang
+%%DATADIR%%/lang/Czech/convert_flacs.lang
+%%DATADIR%%/lang/Spanish/commonfunctions.lang
+%%DATADIR%%/lang/Spanish/bincue.lang
+%%DATADIR%%/lang/Spanish/datadefine.lang
+%%DATADIR%%/lang/Spanish/iso_menu.lang
+%%DATADIR%%/lang/Spanish/convert_mp3s.lang
+%%DATADIR%%/lang/Spanish/configure.lang
+%%DATADIR%%/lang/Spanish/audio_menu.lang
+%%DATADIR%%/lang/Spanish/convert_oggs.lang
+%%DATADIR%%/lang/Spanish/data_menu.lang
+%%DATADIR%%/lang/Spanish/mount.lang
+%%DATADIR%%/lang/Spanish/MyBashBurn.lang
+%%DATADIR%%/lang/Spanish/check_path.lang
+%%DATADIR%%/lang/Spanish/xmmsread.lang
+%%DATADIR%%/lang/Spanish/burning.lang
+%%DATADIR%%/lang/Spanish/multi.lang
+%%DATADIR%%/lang/Spanish/convert_flacs.lang
+%%DATADIR%%/lang/Norwegian/multi.lang
+%%DATADIR%%/lang/Norwegian/bincue.lang
+%%DATADIR%%/lang/Norwegian/datadefine.lang
+%%DATADIR%%/lang/Norwegian/iso_menu.lang
+%%DATADIR%%/lang/Norwegian/convert_mp3s.lang
+%%DATADIR%%/lang/Norwegian/configure.lang
+%%DATADIR%%/lang/Norwegian/audio_menu.lang
+%%DATADIR%%/lang/Norwegian/convert_oggs.lang
+%%DATADIR%%/lang/Norwegian/data_menu.lang
+%%DATADIR%%/lang/Norwegian/mount.lang
+%%DATADIR%%/lang/Norwegian/MyBashBurn.lang
+%%DATADIR%%/lang/Norwegian/check_path.lang
+%%DATADIR%%/lang/Norwegian/burning.lang
+%%DATADIR%%/lang/Norwegian/convert_flacs.lang
+%%DATADIR%%/convert/convert_oggs.sh
+%%DATADIR%%/convert/convert_flacs.sh
+%%DATADIR%%/convert/convert_mp3s.sh
+%%DATADIR%%/config/reset_options.sh
+%%DATADIR%%/config/apply_options.sh
+%%DATADIR%%/config/configure.sh
+%%DATADIR%%/burning/bincue.sh
+%%DATADIR%%/burning/multi.sh
+%%DATADIR%%/burning/burning.sh
+@dirrm %%DATADIR%%/burning
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/convert
+@dirrm %%DATADIR%%/lang/Norwegian
+@dirrm %%DATADIR%%/lang/Spanish
+@dirrm %%DATADIR%%/lang/Czech
+@dirrm %%DATADIR%%/lang/English
+@dirrm %%DATADIR%%/lang/Swedish
+@dirrm %%DATADIR%%/lang/Polish
+@dirrm %%DATADIR%%/lang/German
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/menus
+@dirrm %%DATADIR%%/misc
+@dirrm %%DATADIR%%
