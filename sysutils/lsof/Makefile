@@ -22,7 +22,9 @@ MASTER_SITES=	http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/lsof/ \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/ \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/NEW/ \
-		ftp://ftp.tau.ac.il/pub/unix/admin/
+		ftp://ftp.tau.ac.il/pub/unix/admin/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	wxs
 
 MAINTAINER=	ler@lerctr.org
 COMMENT=	Lists information about open files (similar to fstat(1))
