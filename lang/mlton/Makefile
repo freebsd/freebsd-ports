@@ -11,8 +11,7 @@
 # alread-built version of MLton, BOOT_DIST, to use for bootstrapping.
 
 PORTNAME=	mlton
-PORTVERSION=	20051202
-PORTREVISION=	3
+PORTVERSION=	20070826
 CATEGORIES=	lang
 MASTER_SITES=	http://mlton.org/pages/Download/attachments/ \
 		http://mlton.org/pages/Experimental/attachments/
@@ -20,7 +19,7 @@ DISTFILES=	${BOOT_DIST} ${SRC_DIST}
 EXTRACT_ONLY=	${SRC_DIST}
 
 # Other maintainer is Geoffrey Mainland (mainland@apeiron.net)
-MAINTAINER=	jlouis@mongers.org
+MAINTAINER=	jesper.louis.andersen@gmail.com
 COMMENT=	An optimizing Standard ML compiler
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
@@ -32,8 +31,8 @@ BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed \
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-SRC_DIST=	${DISTNAME}-1.freebsd.src.tgz
-BOOT_DIST=	${PORTNAME}-${BOOT_VER}-1-1.${MACHINE_ARCH}-freebsd.${BOOT_SUF}
+SRC_DIST=	${DISTNAME}-1.src.tgz
+BOOT_DIST=	${PORTNAME}-${BOOT_VER}-1-0.${MACHINE_ARCH}-freebsd.${BOOT_SUF}
 
 ONLY_FOR_ARCHS=	i386
 
@@ -42,7 +41,6 @@ MANCOMPRESSED=	yes
 
 BOOT_WRKSRC=	${WRKDIR}/mlton-bootstrap
 
-USE_GETTEXT=	yes
 ALL_TARGET=	all
 USE_GMAKE=	yes
 MAKE_ARGS=	DESTDIR='' \
@@ -53,29 +51,26 @@ MAKE_ARGS=	DESTDIR='' \
 INSTALL_TARGET=	install-no-docs
 .endif
 
-#MANUAL_PACKAGE_BUILD=	"Requires at least 512MB of dedicated heap to build."
-
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700014
-#BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.6:${PORTSDIR}/misc/compat6x
-BROKEN=		FreeBSD 6.x binary, needs a compat6x port to run
+.if ${ARCH} == "i386"
+MLTON_ARCH=	"x86"
 .endif
 
-.if ${OSVERSION} < 600000
-IGNORE=		cannot bootstrap on FreeBSD < 6.0
+.if ${OSVERSION} < 700000
+IGNORE=		cannot bootstrap on FreeBSD < 7.0
 .endif
 
 BOOT_EXTRACT=	--bzip2
 BOOT_SUF=	tbz
-BOOT_VER=	20051202
+BOOT_VER=	20070826
 
 post-extract:
 	@${MKDIR} ${BOOT_WRKSRC}
 	@${TAR} xf ${DISTDIR}/${BOOT_DIST} ${BOOT_EXTRACT} -C ${BOOT_WRKSRC}
 	@${REINPLACE_CMD} -e \
 		"s|lib=\'${LOCALBASE}/|lib=\'${BOOT_WRKSRC}/|" \
-	${BOOT_WRKSRC}/bin/mlton
+		${BOOT_WRKSRC}/bin/mlton
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -83,7 +78,7 @@ post-patch:
 		${WRKSRC}/runtime/Makefile
 	@${REINPLACE_CMD} -e \
 		"s|CFLAGS += -I/usr/local/include|CFLAGS += -I${LOCALBASE}/include|" \
-		${WRKSRC}/bytecode/Makefile
+		${WRKSRC}/runtime/bytecode/Makefile
 
 post-install:
 .for bin in mllex mlnlffigen mlprof mlton mlyacc
@@ -101,51 +96,5 @@ post-install:
 	${FIND} ${DOCSDIR} -type f -exec ${CHMOD} a+r {} \;
 	${FIND} ${DOCSDIR} -type d -exec ${CHMOD} a+rx {} \;
 .endif
-
-# Stuff below this line is for maintainer use only.
-
-.if defined(MAINTAINER_MODE)
-RELEASE ?=	1
-PORTSLEVEL ?=   1
-
-PKGORIGIN=${PKGCATEGORY}/${PORTNAME}
-
-.PHONY: build-package
-build-package:
-	${MAKE} makesum build
-	${MAKE} pkg-plist
-	portlint .
-	${MAKE} deinstall
-	${MAKE} install
-	${MAKE} package
-	${MAKE} deinstall
-	${PKG_ADD} ${PORTNAME}-${PORTVERSION}_1.tbz
-	${MAKE} deinstall
-	${MAKE} reinstall
-	${MAKE} package
-	${CP} ${PORTNAME}-${PORTVERSION}_1.tbz	\
-		${DISTDIR}/${PORTNAME}-${PORTVERSION}-${RELEASE}-${PORTSLEVEL}.i386-freebsd.tbz
-#	${TAR} -cpf - Makefile distinfo pkg-descr pkg-plist | \
-#		( ${MKDIR} ${PORTDIR} && cd ${PORTDIR} && ${TAR} -xpf - )
-#	shar `find ${PORTDIR}` >/tmp/mlton-${PORTVERSION}-portdir.shar
-
-TMP_PLIST=	tmp-pkg-plist
-PLIST=		${.CURDIR}/pkg-plist
-
-pkg-plist:
-	cd ${WRKSRC} && ${GMAKE} install
-	cd ${WRKSRC}/install/usr && \
-		${FIND} -d * \! -type d | ${GREP} -v man/man | \
-		${SORT} >${PLIST}
-	cd ${WRKSRC}/install/usr && \
-		${FIND} -d * -type d | ${GREP} mlton | \
-			${SED} -e 's/^/@dirrm /' >>${PLIST}
-	${SED} -e 's;@dirrm share/doc/mlton;%%PORTDOCS%%@dirrm %%DOCSDIR%%;' \
-		<${PLIST} >${TMP_PLIST}
-	${SED} -e 's;share/doc/mlton;%%PORTDOCS%%%%DOCSDIR%%;'	\
-		<${TMP_PLIST} >${PLIST}
-	${RM} ${TMP_PLIST}
-
-.endif # MAINTAINER_MODE
 
 .include <bsd.port.post.mk>
