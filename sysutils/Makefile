@@ -430,6 +430,7 @@
     SUBDIR += munin-main
     SUBDIR += munin-node
     SUBDIR += muse
+    SUBDIR += mybashburn
     SUBDIR += nagios-statd
     SUBDIR += namefix
     SUBDIR += nautilus-cd-burner
