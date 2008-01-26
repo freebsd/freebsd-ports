@@ -41,3 +41,7 @@ CXXFLAGS+=	-I${.CURDIR}/$d
 CXXFLAGS+=	-I${LOCALBASE}/include -D_UNIX
 
 .include <bsd.lib.mk>
+
+# Work-around the bug in g++4.2's system header:
+# /usr/include/c++/4.2/bits/basic_ios.h:156: warning: empty body in an if-statement
+CXXFLAGS:=	${CXXFLAGS:N-Wsystem-headers}
