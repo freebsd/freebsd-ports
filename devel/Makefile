@@ -1872,6 +1872,7 @@
     SUBDIR += pikdev
     SUBDIR += piklab
     SUBDIR += pinstall
+    SUBDIR += pipestatus
     SUBDIR += pkg-config
     SUBDIR += plan9port
     SUBDIR += pmake
