@@ -9144,6 +9144,7 @@ p5-Cache-Mmap	ports/devel/p5-Cache-Mmap
 p5-Cache-Simple-TimedExpiry	ports/devel/p5-Cache-Simple-TimedExpiry
 p5-Cairo	ports/graphics/p5-Cairo
 p5-Calendar-Simple	ports/devel/p5-Calendar-Simple
+p5-Captcha-reCAPTCHA	ports/graphics/p5-Captcha-reCAPTCHA
 p5-Carp-Assert	ports/devel/p5-Carp-Assert
 p5-Carp-Assert-More	ports/devel/p5-Carp-Assert-More
 p5-Carp-Clan	ports/devel/p5-Carp-Clan
