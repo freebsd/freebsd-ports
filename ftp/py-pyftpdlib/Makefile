@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pyftpdlib
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	ftp python
 MASTER_SITES=	http://pyftpdlib.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python FTP server library
