@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	qiv
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.klografx.net/qiv/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-pre12
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Small, fast GDK/Imlib image viewer
 
 OPTIONS=	XINERAMA "use multiple monitors" off
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
-USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		qiv.1
 PLIST_FILES=	bin/qiv
@@ -29,28 +26,22 @@ PLIST_FILES=	bin/qiv
 .include <bsd.port.pre.mk>
 
 pre-configure:
-.if defined(WITH_XINERAMA)
-	@${ECHO_MSG} compiling with Xinerama support
-	@${MV} -v ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
-	@${SED} -e 's/\# GTD_XINERAMA/GTD_XINERAMA/' \
-		< ${WRKSRC}/Makefile.orig > ${WRKSRC}/Makefile
+.if ! defined(WITH_XINERAMA)
 .else
-	@${ECHO_MSG} compiling without Xinerama support
+	@${REINPLACE_CMD} 's|GTD.*=|#|' ${WRKSRC}/Makefile
 .endif
 
 do-configure:
-	@ ${MV} ${WRKSRC}/qiv.1 ${WRKSRC}/qiv.1.pre_sed
-	@ ${SED} -e 's#\/usr\/bin#${PREFIX}/bin#g' \
-		${WRKSRC}/qiv.1.pre_sed > ${WRKSRC}/qiv.1
-	@ ${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.pre_sed
-	@ ${SED} -e 's#\/usr\/local#${PREFIX}#' \
-	         -e 's#gcc#${CC}#' \
-	         -e 's#-O2#${CPPFLAGS} ${CFLAGS}#' \
-	         -e 's#libs-gdk`#libs-gdk` ${LDFLAGS}#' \
-		${WRKSRC}/Makefile.pre_sed > ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|/usr/bin|${PREFIX}/bin|g' \
+		${WRKSRC}/qiv.1
+	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|; \
+		s|gcc|${CC}|; \
+		s|-O2|${CFLAGS}|; \
+		s|libs-gdk`|libs-gdk` ${LDFLAGS}|;' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qiv ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/qiv.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/qiv.1 ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.post.mk>
