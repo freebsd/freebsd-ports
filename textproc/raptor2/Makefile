@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	raptor
-PORTVERSION=	1.4.15
+PORTVERSION=	1.4.16
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://download.librdf.org/source/
