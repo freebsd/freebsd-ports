@@ -1,14 +1,54 @@
 bin/ots_gui
+bin/taxsolve_CA_540_2006
+bin/taxsolve_MA_1_2006
+bin/taxsolve_NC_D400_2006
+bin/taxsolve_NJ_1040_2006
+bin/taxsolve_NY_IT201_2006
+bin/taxsolve_OH_IT1040_2006
+bin/taxsolve_PA_40_2006
 bin/taxsolve_US_1040_2006
 bin/taxsolve_US_1040_Sched_C_2006
+bin/taxsolve_VA_760_2006
 share/ots/otslogo.ppm
+share/ots/examples_and_templates/CA_540/CA_540_2006_example.dat
+share/ots/examples_and_templates/CA_540/CA_540_2006_template.dat
+share/ots/examples_and_templates/CA_540/README_CA_540.txt
+share/ots/examples_and_templates/MA_1/README_MA_1.txt
+share/ots/examples_and_templates/MA_1/ma_1_2006_example.dat
+share/ots/examples_and_templates/MA_1/ma_1_2006_template.dat
+share/ots/examples_and_templates/NC_400/NC_400_2006_example.dat
+share/ots/examples_and_templates/NC_400/NC_400_2006_template.dat
+share/ots/examples_and_templates/NC_400/README_NC_400.txt
+share/ots/examples_and_templates/NJ_1040/NJ_1040_2006_example.dat
+share/ots/examples_and_templates/NJ_1040/NJ_1040_2006_template.dat
+share/ots/examples_and_templates/NJ_1040/README_NJ_1040.txt
+share/ots/examples_and_templates/NY_IT201/NY_IT201_2006_example.dat
+share/ots/examples_and_templates/NY_IT201/NY_IT201_2006_template.dat
+share/ots/examples_and_templates/NY_IT201/README_NY_IT201.txt
+share/ots/examples_and_templates/OH_1040/OH_IT1040_2006_example.dat
+share/ots/examples_and_templates/OH_1040/OH_IT1040_2006_template.dat
+share/ots/examples_and_templates/OH_1040/README_OH_IT1040.txt
+share/ots/examples_and_templates/PA_40/PA_40_2006_example.dat
+share/ots/examples_and_templates/PA_40/PA_40_2006_template.dat
+share/ots/examples_and_templates/PA_40/README_PA_40.txt
 share/ots/examples_and_templates/US_1040/README_US_1040.txt
 share/ots/examples_and_templates/US_1040/US_1040_example.dat
 share/ots/examples_and_templates/US_1040/US_1040_template.dat
 share/ots/examples_and_templates/US_1040_Sched_C/README_US_1040_Sched_C.txt
-share/ots/examples_and_templates/US_1040_Sched_C/US_1040Sched_C_2005_example.dat
-share/ots/examples_and_templates/US_1040_Sched_C/US_1040Sched_C_2005_template.dat
+share/ots/examples_and_templates/US_1040_Sched_C/US_1040Sched_C_2006_example.dat
+share/ots/examples_and_templates/US_1040_Sched_C/US_1040Sched_C_2006_template.dat
+share/ots/examples_and_templates/VA_760/README_VA_760.txt
+share/ots/examples_and_templates/VA_760/VA_760_2006_example.dat
+share/ots/examples_and_templates/VA_760/VA_760_2006_template.dat
+@dirrm share/ots/examples_and_templates/VA_760
 @dirrm share/ots/examples_and_templates/US_1040_Sched_C
 @dirrm share/ots/examples_and_templates/US_1040
+@dirrm share/ots/examples_and_templates/PA_40
+@dirrm share/ots/examples_and_templates/OH_1040
+@dirrm share/ots/examples_and_templates/NY_IT201
+@dirrm share/ots/examples_and_templates/NJ_1040
+@dirrm share/ots/examples_and_templates/NC_400
+@dirrm share/ots/examples_and_templates/MA_1
+@dirrm share/ots/examples_and_templates/CA_540
 @dirrm share/ots/examples_and_templates
 @dirrm share/ots

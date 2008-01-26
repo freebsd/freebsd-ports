@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	${UPPORTNAME:L}
-PORTVERSION=	4.01
-PORTREVISION=	1
+PORTVERSION=	4.07
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	opentaxsolver
@@ -25,6 +24,11 @@ post-patch:
 	${WRKSRC}/src/GUI/ots_gui.c
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|' \
 	${WRKSRC}/src/GUI/Makefile.linux
+
+# 4.07 distfile has pre-built (linux) binaries we must whack.
+pre-build:
+	@(cd ${BUILD_WRKSRC}/src && make -f Makefile.unix clean && \
+	cd GUI && make -f Makefile.linux clean)
 
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
