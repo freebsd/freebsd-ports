@@ -583,8 +583,6 @@ share/applications/deluge.desktop
 %%DATADIR%%/plugins/EventLogging/__init__.py
 %%DATADIR%%/plugins/EventLogging/event_logging_preferences.glade
 %%DATADIR%%/plugins/EventLogging/tab_log.py
-%%DATADIR%%/plugins/ExtraStats/__init__.py
-%%DATADIR%%/plugins/ExtraStats/stats_preferences.glade
 %%DATADIR%%/plugins/FlexRSS/CalendarButton.py
 %%DATADIR%%/plugins/FlexRSS/FlexRSS.glade
 %%DATADIR%%/plugins/FlexRSS/FlexRSS.png
@@ -791,8 +789,6 @@ share/pixmaps/deluge.png
 @dirrmtry share/locale/ast
 @dirrmtry share/icons/hicolor/256x256/apps
 @dirrmtry share/icons/hicolor/256x256
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/plugins/WebUi/tests
 @dirrm %%DATADIR%%/plugins/WebUi/templates/deluge
@@ -820,7 +816,6 @@ share/pixmaps/deluge.png
 @dirrm %%DATADIR%%/plugins/NetworkGraph
 @dirrm %%DATADIR%%/plugins/MoveTorrent
 @dirrm %%DATADIR%%/plugins/FlexRSS
-@dirrm %%DATADIR%%/plugins/ExtraStats
 @dirrm %%DATADIR%%/plugins/EventLogging
 @dirrm %%DATADIR%%/plugins/DesiredRatio
 @dirrm %%DATADIR%%/plugins/BlocklistImport
