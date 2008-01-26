@@ -1,0 +1,19 @@
+bin/wput
+share/locale/de/LC_MESSAGES/wput.mo
+share/locale/it/LC_MESSAGES/wput.mo
+share/locale/nl/LC_MESSAGES/wput.mo
+share/locale/ru/LC_MESSAGES/wput.mo
+share/locale/tr/LC_MESSAGES/wput.mo
+share/locale/zh/LC_MESSAGES/wput.mo
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/it
+@dirrmtry share/locale/nl/LC_MESSAGES
+@dirrmtry share/locale/nl
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ru
+@dirrmtry share/locale/tr/LC_MESSAGES
+@dirrmtry share/locale/tr
+@dirrmtry share/locale/zh/LC_MESSAGES
+@dirrmtry share/locale/zh
