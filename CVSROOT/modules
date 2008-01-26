@@ -12539,6 +12539,7 @@ pipebench	ports/benchmarks/pipebench
 pipemeter	ports/sysutils/pipemeter
 pipenightdreams	ports/games/pipenightdreams
 pipepanic	ports/games/pipepanic
+pipestatus	ports/devel/pipestatus
 pips-sc60s	ports/print/pips-sc60s
 pips-sc65_66s	ports/print/pips-sc65_66s
 pips-sc80s	ports/print/pips-sc80s
