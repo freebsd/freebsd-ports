@@ -2,21 +2,20 @@
 # Date created:				2004-03-15
 # Whom:					trevor
 #
-# $Carpetsmoker: ports/x11-fm/gprename/Makefile,v 1.6 2007/07/20 07:31:57 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	gprename
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 PORTEPOCH=	1
 CATEGORIES=	x11-fm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Perl script for renaming multiple files
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
+		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
@@ -37,7 +36,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/COPYING ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
