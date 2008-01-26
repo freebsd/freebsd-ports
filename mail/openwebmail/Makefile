@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	2.52
-PORTREVISION=	3
+PORTVERSION=	2.53
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.acatysmoof.com/download/%SUBDIR%/ \
 		http://openwebmail.org/openwebmail/download/%SUBDIR%/
@@ -179,6 +178,7 @@ pre-install:
 .if !exists(${PLIST})
 	@${ECHO} "@unexec if cmp -s %D/www/cgi-bin/openwebmail/etc/openwebmail.conf %D/www/cgi-bin/openwebmail/etc/openwebmail.conf-dist; then ${RM} -f %D/www/cgi-bin/openwebmail/etc/openwebmail.conf; fi" > ${PLIST}
 	@${FIND} ${WRKSRC}/*/openwebmail -type f -o -type l | \
+		${GREP} -v UTF-8 | \
 		${SED} -e 's,${WRKSRC},www,g' | ${SORT} -u >> ${PLIST}
 	@${ECHO} "www/cgi-bin/openwebmail/etc/dbm.conf" >> ${PLIST}
 .for f in b2g g2b lunar
@@ -190,7 +190,9 @@ pre-install:
 		-e 's,openwebmail/openwebmail,openwebmail/.openwebmail,g' \
 		>> ${PLIST}
 .endif
+	@${ECHO_CMD} "@unexec ${FIND} %D/www/*/openwebmail -name "*.UTF-8" | ${XARGS} ${RM} -fr" >> ${PLIST}
 	@${FIND} ${WRKSRC}/*/openwebmail -type d | ${SORT} -ur | \
+		${GREP} -v UTF-8 | \
 		${SED} -e 's,${WRKSRC},@dirrm www,g' >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry www/cgi-bin" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry www/data" >> ${PLIST}
