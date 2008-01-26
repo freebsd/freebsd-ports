@@ -1,6 +1,5 @@
 bin/stunnel
 bin/stunnel3
-etc/rc.d/stunnel
 %%ETCDIR%%/stunnel.conf-sample
 lib/stunnel/libstunnel.a
 lib/stunnel/libstunnel.la
