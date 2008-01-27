@@ -18,8 +18,6 @@ EXTRACT_ONLY=	#
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A viewer for multiple sequence alignments
 
-BROKEN=		does not fetch
-
 USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 
