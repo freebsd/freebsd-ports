@@ -23,6 +23,8 @@ RUN_DEPENDS+=	cheetah:${PORTSDIR}/devel/py-cheetah
 
 USE_PYTHON=	2.4
 
+BROKEN=		does not install
+
 NO_BUILD=	yes
 
 SUB_FILES+=	pkg-deinstall pkg-install
