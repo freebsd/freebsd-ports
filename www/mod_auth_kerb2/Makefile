@@ -30,10 +30,6 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700014
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
-
 .if exists(${PREFIX}/sbin/apxs)
 APACHE_MODULE_DIR!=${PREFIX}/sbin/apxs -q LIBEXECDIR
 .else
