@@ -7,7 +7,7 @@
 
 PORTNAME=	terminus-font
 PORTVERSION=	4.20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.is-vn.bg/hamster/
 
@@ -15,8 +15,9 @@ MAINTAINER=	vlad@vlad.uz.ua
 COMMENT=	Terminus Font - a clean fixed width font
 
 BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
-		bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
