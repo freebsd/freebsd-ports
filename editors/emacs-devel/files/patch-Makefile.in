@@ -1,7 +1,7 @@
---- ./Makefile.in.orig	Sun Aug 27 04:16:25 2006
-+++ ./Makefile.in	Fri Sep  1 21:10:08 2006
-@@ -409,14 +409,6 @@
- ## That flag is also used in leim/Makefile.in
+--- Makefile.in.orig	2008-01-02 14:45:46.000000000 +0200
++++ Makefile.in	2008-01-02 14:41:21.000000000 +0200
+@@ -431,14 +431,6 @@
+ ## commands to set make variables.
  install-arch-indep: mkdir info
  	-set ${COPYDESTS} ; \
 -	unset CDPATH; \
@@ -15,7 +15,7 @@
  	mkdir ${COPYDESTS} ; \
  	chmod ugo+rx ${COPYDESTS} ; \
  	unset CDPATH; \
-@@ -503,9 +495,9 @@
+@@ -547,9 +539,9 @@
  	   fi; \
  	   cd ${srcdir}/info ; \
  	   for elt in $(INFO_FILES); do \
@@ -28,7 +28,7 @@
  	      done; \
  	   done); \
  	else true; fi
-@@ -515,7 +507,7 @@
+@@ -559,7 +551,7 @@
  	then \
  	  for elt in $(INFO_FILES); do \
  	    (cd $${thisdir}; \
@@ -36,4 +36,4 @@
 +	     ${INSTALL_INFO} --info-dir=$(DESTDIR)${infodir} $(DESTDIR)${infodir}/$$elt.info); \
  	  done; \
  	else true; fi
- 	-chmod -R a+r $(DESTDIR)${datadir}/emacs ${COPYDESTS} $(DESTDIR)${infodir}
+ 	-chmod -R a+r $(DESTDIR)${datadir}/emacs/${version} $(DESTDIR)${datadir}/emacs/site-lisp ${COPYDESTS} $(DESTDIR)${infodir}

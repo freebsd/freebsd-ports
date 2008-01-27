@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	emacs
-PORTVERSION=	${EMACS_VER}
-PORTREVISION=	1
+PORTVERSION=	${EMACS_VER}.${SNAPSHOT}
 CATEGORIES=	editors ipv6
-MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
-MASTER_SITE_SUBDIR=	emacs/pretest
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	keramida
+DISTNAME=	${PORTNAME}-cvs-snapshot-2008.01.01.21.19.17
 
 MAINTAINER=	keramida@ceid.upatras.gr
 COMMENT=	GNU editing macros
@@ -25,11 +25,12 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 .endif
 
-CONFLICTS=	emacs-19.* emacs-21.* \
+CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
-EMACS_VER=	22.0.99
+EMACS_VER=	23.0.50
+SNAPSHOT=	20080101
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	bootfast
@@ -41,6 +42,8 @@ USE_XLIB=	yes
 .endif
 USE_XPM=	yes
 .endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CONFIGURE_TARGET=	${MACHINE_ARCH}-freebsd
 .if defined(WITHOUT_X11)
@@ -60,18 +63,18 @@ PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
 
 MAKE_ENV=	LC_ALL=C
 
-INFO=		ada-mode autotype calc ccmode cl dired-x ebrowse ediff \
+INFO=		ada-mode autotype calc ccmode cl dbus dired-x ebrowse ediff \
 		efaq eintr elisp emacs-mime emacs erc eshell eudc \
 		flymake forms gnus idlwave info message mh-e newsticker \
-		org pcl-cvs pgg rcirc reftex sc ses sieve smtpmail speedbar \
+		nxml-mode org pcl-cvs pgg rcirc reftex remember sc ses sieve smtpmail speedbar \
 		tramp url vip viper widget woman
 
-LATEST_LINK=	emacs22
+LATEST_LINK=	emacs23
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN= Emacs 22.X does not currently build on ia64
+BROKEN=	Emacs 22.X and later does not currently build on ia64
 .endif
 
 pre-everything::

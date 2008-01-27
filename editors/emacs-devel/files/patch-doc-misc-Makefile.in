@@ -1,0 +1,11 @@
+--- doc/misc/Makefile.in.orig	2008-01-02 14:45:47.000000000 +0200
++++ doc/misc/Makefile.in	2008-01-02 14:41:21.000000000 +0200
+@@ -36,7 +36,7 @@
+ 
+ # The makeinfo program is part of the Texinfo distribution.
+ # Use --force so that it generates output even if there are errors.
+-MAKEINFO = makeinfo --force
++MAKEINFO = makeinfo --force --no-split
+ 
+ INFO_TARGETS = \
+ 	$(infodir)/ada-mode \
