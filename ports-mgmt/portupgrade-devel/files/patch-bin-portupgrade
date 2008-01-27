@@ -1,0 +1,32 @@
+Index: bin/portupgrade
+===================================================================
+RCS file: /cvsroot/portupgrade/pkgtools/bin/portupgrade,v
+retrieving revision 1.42
+retrieving revision 1.45
+diff -u -r1.42 -r1.45
+--- bin/portupgrade	26 Jan 2008 16:01:16 -0000	1.42
++++ bin/portupgrade	27 Jan 2008 22:33:51 -0000	1.45
+@@ -614,7 +614,13 @@
+ 	      pkg = PkgInfo.new(task)
+ 	      origin = $pkgdb.origin(task)
+ 	      if !origin.nil?
+-		name = get_pkgname(origin)
++		begin
++		  name = get_pkgname(origin)
++		rescue IgnoreMarkError => e
++		  $results << PkgResult.new(origin, :ignored, e.message)
++		  not_need_upgrade << task
++		  next
++		end
+ 		name =~ /^(.+)-([^-]+)$/
+ 		newversion = PkgVersion.new($2)
+ 		if newversion <= pkg.version && !$force
+@@ -694,7 +700,7 @@
+ 
+ 	    install_tasks << origin
+ 	    # Track all uninstalled
+-	    get_uninstalled_depends(origin).each do |dep|
++	    get_notinstalled_depends(origin).each do |dep|
+ 	      install_tasks << dep
+ 	    end
+ 	  end
