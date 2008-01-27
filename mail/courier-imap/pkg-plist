@@ -22,10 +22,6 @@ bin/pop3d
 %%CONFDIR%%/pop3d.dist
 @exec %%LOCALBASE%%/share/sysconftool/sysconftool %D/%%CONFDIR%%/pop3d.dist
 %%CONFDIR%%/quotawarnmsg.example
-%%RCDIR%%/courier-imap-imapd.sh
-%%RCDIR%%/courier-imap-imapd-ssl.sh
-%%RCDIR%%/courier-imap-pop3d.sh
-%%RCDIR%%/courier-imap-pop3d-ssl.sh
 %%LIBEXECDIR%%/couriertcpd
 %%LIBEXECDIR%%/imapd-ssl.rc
 %%LIBEXECDIR%%/imapd.rc
