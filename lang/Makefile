@@ -260,6 +260,7 @@
     SUBDIR += rexx-imc
     SUBDIR += rexx-regina
     SUBDIR += rexx-wrapper
+    SUBDIR += rhino
     SUBDIR += rscheme
     SUBDIR += ruby-doc-stdlib
     SUBDIR += ruby-extensions
