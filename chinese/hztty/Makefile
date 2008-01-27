@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
 
-MAINTAINER=	ada@bsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A translator between GuoBiao / Big5 and HZ
 
 ALL_TARGET=	bsd
