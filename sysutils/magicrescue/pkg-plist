@@ -14,6 +14,8 @@ bin/magicsort
 %%DATADIR%%/recipes/perl
 %%DATADIR%%/recipes/png
 %%DATADIR%%/recipes/zip
+%%DATADIR%%/recipes/canon-cr2
+%%DATADIR%%/recipes/flac
 %%DATADIR%%/tools/checkrecipe
 %%DATADIR%%/tools/elfextract.pl
 %%DATADIR%%/tools/gimp-resave.pl

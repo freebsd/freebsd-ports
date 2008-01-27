@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	magicrescue
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jbj.rapanden.dk/magicrescue/release/ \
 		http://critical.ch/distfiles/ \
