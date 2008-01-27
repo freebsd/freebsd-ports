@@ -9,13 +9,14 @@ PORTNAME=	apache-contrib
 PORTVERSION=	1.0.8
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://archive.apache.org/dist/httpd/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=	contrib/modules/1.3
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Third-party modules contributed to the Apache HTTP server project
 
 USE_APACHE=	13
+USE_LDCONFIG=	${PREFIX}/libexec/apache
 
 .include <bsd.port.pre.mk>
 
