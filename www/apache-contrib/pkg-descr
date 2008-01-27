@@ -1,5 +1,5 @@
 This is a collection of third-party modules contributed to the Apache HTTP
-server project (http://www.apache.org/).
+server project.
 
 The modules are:
 
@@ -9,3 +9,5 @@ mod_cgisock, mod_urlcount, mod_disallow_id, mod_layout, mod_lock,
 mod_peephole, mod_put, mod_qs2ssi, mod_session, mod_fastcgi, mod_cvs,
 mod_macro, mod_random, mod_roaming, mod_ip_forwarding, mod_ticket, mod_define
 and mod_monitor.
+
+WWW: http://www.apache.org
