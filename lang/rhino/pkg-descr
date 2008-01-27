@@ -1,0 +1,17 @@
+Rhino is an open-source implementation of JavaScript written entirely
+in Java. It is typically embedded into Java applications to provide
+scripting to end users.
+
+Rhino is an implementation of the core language only and doesn't contain
+objects or methods for manipulating HTML documents.
+
+Rhino contains
+
+    * All the features of JavaScript 1.6
+    * Allows direct scripting of Java
+    * A JavaScript shell for executing JavaScript scripts
+    * A JavaScript compiler to transform JavaScript source files
+      into Java class files
+    * A JavaScript debugger for scripts executed with Rhino 
+
+WWW:	http://www.mozilla.org/rhino/

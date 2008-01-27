@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Rhino compiler
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -cp "%%RHINOJAR%%" org.mozilla.javascript.tools.jsc.Main $@
