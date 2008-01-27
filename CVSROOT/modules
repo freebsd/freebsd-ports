@@ -14157,6 +14157,7 @@ rfstool		ports/sysutils/rfstool
 rftp		ports/mail/rftp
 rgb		ports/x11/rgb
 rgbpaint	ports/graphics/rgbpaint
+rhino		ports/lang/rhino
 rhtvision	ports/devel/rhtvision
 rhythmbox	ports/audio/rhythmbox
 ri-li		ports/games/ri-li
