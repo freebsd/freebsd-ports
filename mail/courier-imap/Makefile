@@ -7,6 +7,7 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	4.3.0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -22,7 +23,9 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	courier-imap-imapd courier-imap-imapd-ssl \
+		courier-imap-pop3d courier-imap-pop3d-ssl
+
 
 CPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${PREFIX}/lib
@@ -49,12 +52,10 @@ OPTIONS=	FAM		"Build in fam support for IDLE command"		off \
 .endif
 
 CONFDIR?=	${PREFIX}/etc/${PORTNAME}
-RCDIR?=		${PREFIX}/etc/rc.d
 USERDB?=	${PREFIX}/etc/userdb
 LIBEXECDIR?=	${PREFIX}/libexec/${PORTNAME}
 USE_OPENSSL=	yes
 PLIST_SUB=	CONFDIR=${CONFDIR:S,^${PREFIX}/,,} \
-		RCDIR=${RCDIR:S,^${PREFIX}/,,} \
 		LIBEXECDIR=${LIBEXECDIR:S,^${PREFIX}/,,}
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -101,8 +102,6 @@ CONFIGURE_ARGS+=--without-ipv6
 CONFIGURE_ARGS+=--with-trashquota
 .endif
 
-RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
 .if defined(WITH_FAM)
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}"
@@ -139,11 +138,6 @@ post-patch:
 post-install:
 .for i in imapd pop3d
 	${INSTALL_DATA} ${WRKSRC}/imap/${i}.cnf ${CONFDIR}/${i}.cnf.dist
-.endfor
-.for i in imapd imapd-ssl pop3d pop3d-ssl
-	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/courier-imap-${i}.sh > ${WRKDIR}/courier-imap-${i}.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/courier-imap-${i}.sh ${RCDIR}/courier-imap-${i}.sh
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
