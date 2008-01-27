@@ -406,10 +406,12 @@
 %%DOCSDIR%%/figs/artifactedit7.png
 %%DOCSDIR%%/figs/artifactedit8.png
 %%DOCSDIR%%/figs/artifacteditphp.png
+%%DOCSDIR%%/figs/artifacteditpython.png
 %%DOCSDIR%%/figs/artifactgensettings1.png
 %%DOCSDIR%%/figs/artifactgensettings2.png
 %%DOCSDIR%%/figs/artifactgensettings3.png
 %%DOCSDIR%%/figs/artifactgensettingsphp.png
+%%DOCSDIR%%/figs/artifactgensettingspython.png
 %%DOCSDIR%%/figs/artifactmenu.png
 %%DOCSDIR%%/figs/artifactmenu1.png
 %%DOCSDIR%%/figs/artifactstereotypes.png
@@ -420,6 +422,7 @@
 %%DOCSDIR%%/figs/attributedrawingcppidl.png
 %%DOCSDIR%%/figs/attributedrawingjava.png
 %%DOCSDIR%%/figs/attributedrawingphp.png
+%%DOCSDIR%%/figs/attributedrawingpython.png
 %%DOCSDIR%%/figs/attributeedit1.png
 %%DOCSDIR%%/figs/attributeedit2.png
 %%DOCSDIR%%/figs/attributeedit3.png
@@ -432,6 +435,9 @@
 %%DOCSDIR%%/figs/attributeeditjava2.png
 %%DOCSDIR%%/figs/attributeeditphp1.png
 %%DOCSDIR%%/figs/attributeeditphp2.png
+%%DOCSDIR%%/figs/attributeeditpython1.png
+%%DOCSDIR%%/figs/attributeeditpython2.png
+%%DOCSDIR%%/figs/attributeeditpython3.png
 %%DOCSDIR%%/figs/attributegensettings1.png
 %%DOCSDIR%%/figs/attributegensettings2.png
 %%DOCSDIR%%/figs/attributegensettings3.png
@@ -441,6 +447,8 @@
 %%DOCSDIR%%/figs/attributegensettings6b.png
 %%DOCSDIR%%/figs/attributegensettings7.png
 %%DOCSDIR%%/figs/attributegensettingsphp.png
+%%DOCSDIR%%/figs/attributegensettingspython.png
+%%DOCSDIR%%/figs/attributegensettingspython2.png
 %%DOCSDIR%%/figs/attributemenu1.png
 %%DOCSDIR%%/figs/attributemenu2.png
 %%DOCSDIR%%/figs/attributesettings.png
@@ -496,6 +504,7 @@
 %%DOCSDIR%%/figs/classdrawingcontextcpp.png
 %%DOCSDIR%%/figs/classdrawingcontextidl.png
 %%DOCSDIR%%/figs/classdrawingcontextjava.png
+%%DOCSDIR%%/figs/classdrawingcontextpython.png
 %%DOCSDIR%%/figs/classdrawingcontextuml.png
 %%DOCSDIR%%/figs/classdrawingoperationsdialog.png
 %%DOCSDIR%%/figs/classdrawingsettings.png
@@ -516,6 +525,8 @@
 %%DOCSDIR%%/figs/classeditparametrized.png
 %%DOCSDIR%%/figs/classeditphp1.png
 %%DOCSDIR%%/figs/classeditphp2.png
+%%DOCSDIR%%/figs/classeditpython1.png
+%%DOCSDIR%%/figs/classeditpython2.png
 %%DOCSDIR%%/figs/classgensettings1.png
 %%DOCSDIR%%/figs/classgensettings2.png
 %%DOCSDIR%%/figs/classgensettings3.png
@@ -524,6 +535,7 @@
 %%DOCSDIR%%/figs/classgensettings6.png
 %%DOCSDIR%%/figs/classgensettings7.png
 %%DOCSDIR%%/figs/classgensettingsphp.png
+%%DOCSDIR%%/figs/classgensettingspython.png
 %%DOCSDIR%%/figs/classinstance.png
 %%DOCSDIR%%/figs/classinstanceedit1.png
 %%DOCSDIR%%/figs/classinstanceedit2.png
@@ -654,6 +666,7 @@
 %%DOCSDIR%%/figs/extramemberedit2.png
 %%DOCSDIR%%/figs/extramemberedit3.png
 %%DOCSDIR%%/figs/extramemberedit4.png
+%%DOCSDIR%%/figs/extramembereditpython.png
 %%DOCSDIR%%/figs/extramemberex1.png
 %%DOCSDIR%%/figs/extramemberex2.png
 %%DOCSDIR%%/figs/extramemberex3.png
@@ -742,12 +755,14 @@
 %%DOCSDIR%%/figs/operationedit5.png
 %%DOCSDIR%%/figs/operationedit6.png
 %%DOCSDIR%%/figs/operationeditphp.png
+%%DOCSDIR%%/figs/operationeditpython.png
 %%DOCSDIR%%/figs/operationgensetting1.png
 %%DOCSDIR%%/figs/operationgensetting2.png
 %%DOCSDIR%%/figs/operationgensetting3.png
 %%DOCSDIR%%/figs/operationgensetting4.png
 %%DOCSDIR%%/figs/operationgensetting5.png
 %%DOCSDIR%%/figs/operationgensettingphp.png
+%%DOCSDIR%%/figs/operationgensettingpython.png
 %%DOCSDIR%%/figs/operationmenu.png
 %%DOCSDIR%%/figs/operationmenu1.png
 %%DOCSDIR%%/figs/operationsettings.png
@@ -772,6 +787,7 @@
 %%DOCSDIR%%/figs/packageeditidl.png
 %%DOCSDIR%%/figs/packageeditjava.png
 %%DOCSDIR%%/figs/packageeditphp.png
+%%DOCSDIR%%/figs/packageeditpython.png
 %%DOCSDIR%%/figs/packagegensettings.png
 %%DOCSDIR%%/figs/packagemenu.png
 %%DOCSDIR%%/figs/packagepictmenu.png
@@ -856,6 +872,7 @@
 %%DOCSDIR%%/figs/relationeditidl.png
 %%DOCSDIR%%/figs/relationeditjava.png
 %%DOCSDIR%%/figs/relationeditphp.png
+%%DOCSDIR%%/figs/relationeditpython.png
 %%DOCSDIR%%/figs/relationgensettings1.png
 %%DOCSDIR%%/figs/relationgensettings2.png
 %%DOCSDIR%%/figs/relationgensettings3.png
@@ -864,6 +881,7 @@
 %%DOCSDIR%%/figs/relationgensettings5.png
 %%DOCSDIR%%/figs/relationgensettings6.png
 %%DOCSDIR%%/figs/relationgensettingsphp.png
+%%DOCSDIR%%/figs/relationgensettingspython.png
 %%DOCSDIR%%/figs/relationmenu1.png
 %%DOCSDIR%%/figs/relationpictmenu.png
 %%DOCSDIR%%/figs/relationpictmenu1.png
@@ -955,6 +973,9 @@
 %%DOCSDIR%%/figs/usecasedrawingsettings2.png
 %%DOCSDIR%%/figs/usecasedrawingsettings3.png
 %%DOCSDIR%%/figs/usecasedrawingsettings4.png
+%%DOCSDIR%%/figs/usecasedrawingsettings5.png
+%%DOCSDIR%%/figs/usecasedrawingsettings6.png
+%%DOCSDIR%%/figs/usecasedrawingsettings7.png
 %%DOCSDIR%%/figs/usecaseedit.png
 %%DOCSDIR%%/figs/usecasemenu.png
 %%DOCSDIR%%/figs/usecasepictmenu.png
@@ -1036,7 +1057,6 @@
 %%DOCSDIR%%/javareverse.html
 %%DOCSDIR%%/misc.html
 %%DOCSDIR%%/multiuser.html
-%%DOCSDIR%%/ncrelation.html
 %%DOCSDIR%%/node.html
 %%DOCSDIR%%/objectdiagram.html
 %%DOCSDIR%%/operation.html
@@ -1049,6 +1069,8 @@
 %%DOCSDIR%%/projectfiles.html
 %%DOCSDIR%%/projectsynchro.html
 %%DOCSDIR%%/pseudostate.html
+%%DOCSDIR%%/pythongenerator.html
+%%DOCSDIR%%/pythonreverse.html
 %%DOCSDIR%%/relation.html
 %%DOCSDIR%%/roseimport.html
 %%DOCSDIR%%/roundtripbody.html
