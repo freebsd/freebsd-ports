@@ -1145,7 +1145,6 @@ cabextract	ports/archivers/cabextract
 cacao		ports/java/cacao
 cacti		ports/net-mgmt/cacti
 cacti-spine	ports/net-mgmt/cacti-spine
-cactid		ports/net/cactid
 cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
 cairo		ports/graphics/cairo

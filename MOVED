@@ -3358,3 +3358,4 @@ net/freeradius-devel|net/freeradius2|2008-01-18|Development version no longer ne
 devel/p5-gearmand|devel/p5-Gearman-Server|2008-01-20|Replaced by p5-Gearman-Server
 database/mysqltoolkit|database/maatkit|2008-01-21|project was renamed
 games/sturmbahnfahrer|games/stormbaancoureur|2008-01-27|project was renamed
+net/cactid|net-mgmt/cacti-spine|2008-01-27|project was renamed
