@@ -16,7 +16,6 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Third-party modules contributed to the Apache HTTP server project
 
 USE_APACHE=	13
-USE_LDCONFIG=	${PREFIX}/libexec/apache
 
 .include <bsd.port.pre.mk>
 
