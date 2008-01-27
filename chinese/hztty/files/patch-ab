@@ -9,3 +9,25 @@
  # define	PTYDEV		"/dev/ptyxx"
  # define	TTYDEV		"/dev/ttyxx"
  #endif  /* !hpux */
+@@ -320,7 +320,9 @@
+ #ifdef	  TIOCLSET
+ 	(void) ioctl (tty, TIOCLGET, (char *)&(termptr->lmode));
+ #endif
+-#ifdef	USE_SYSV_TERMIO
++#ifdef USE_TERMIOS
++	tcgetattr(tty,               (char *)&(termptr->tio));
++#elif defined(USE_SYSV_TERMIO)
+ 	(void) ioctl (tty, TCGETA,   (char *)&(termptr->tio));
+ #else	/* USE_SYSV_TERMIO */
+ 	(void) ioctl (tty, TIOCGETP, (char *)&(termptr->sb));
+@@ -339,7 +341,9 @@
+ #ifdef	  TIOCLSET
+ 	(void) ioctl (tty, TIOCLSET, (char *)&(termptr->lmode));
+ #endif
+-#ifdef	USE_SYSV_TERMIO
++#ifdef USE_TERMIOS
++	tcsetattr(tty, TCSANOW,      (char *)&(termptr->tio));
++#elif defined(USE_SYSV_TERMIO)
+ 	(void) ioctl (tty, TCSETA,   (char *)&(termptr->tio));
+ #else	/* USE_SYSV_TERMIO */
+ 	(void) ioctl (tty, TIOCSETP, (char *)&(termptr->sb));

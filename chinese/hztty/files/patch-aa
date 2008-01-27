@@ -17,12 +17,14 @@
  
  PROG = hztty
  LIBS=
-@@ -132,7 +131,7 @@
+@@ -132,8 +131,8 @@
  
  
  bsd:
 -	miniconf.sh $(CPP)
+-	${MAKE} ${MFLAGS} DEFINES='-DBSD' ${PROG}
 +	./miniconf.sh $(CPP)
- 	${MAKE} ${MFLAGS} DEFINES='-DBSD' ${PROG}
++	${MAKE} ${MFLAGS} DEFINES='-DPOSIX' ${PROG}
  
  posix:
+ 	miniconf.sh $(CPP)
