@@ -1,5 +1,5 @@
-bin/cactid
-@unexec if cmp -s %D/etc/cactid.conf %D/%%EXAMPLESDIR%%/cactid.conf; then rm -f %D/etc/cactid.conf; fi
-%%EXAMPLESDIR%%/cactid.conf
-@exec [ -f %D/etc/cactid.conf ] || cp %D/%%EXAMPLESDIR%%/cactid.conf %D/etc/cactid.conf
+bin/spine
+@unexec if cmp -s %D/etc/spine.conf %D/%%EXAMPLESDIR%%/spine.conf; then rm -f %D/etc/spine.conf; fi
+%%EXAMPLESDIR%%/spine.conf
+@exec [ -f %D/etc/spine.conf ] || cp %D/%%EXAMPLESDIR%%/spine.conf %D/etc/spine.conf
 @dirrm %%EXAMPLESDIR%%
