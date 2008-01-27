@@ -69,7 +69,6 @@
     SUBDIR += brutecopy
     SUBDIR += bsdproxy
     SUBDIR += c3270
-    SUBDIR += cactid
     SUBDIR += callgen323
     SUBDIR += cap
     SUBDIR += ccxstream
