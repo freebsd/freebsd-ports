@@ -14,6 +14,8 @@ etc/xdg/autostart/pinot-dbus-daemon.desktop
 lib/deskbar-applet/handlers/pinot-live.py
 lib/deskbar-applet/handlers/pinot-live.pyc
 lib/deskbar-applet/handlers/pinot-live.pyo
+lib/pinot/backends/libxapianbackend.so
+lib/pinot/backends/libxapianbackend.so.0
 lib/pinot/filters/libexternalfilter.so
 lib/pinot/filters/libexternalfilter.so.0
 lib/pinot/filters/libmboxfilter.so
@@ -54,8 +56,9 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/engines/RollYOTopNews.src
 %%DATADIR%%/engines/Topix.src
 %%DATADIR%%/engines/Wikipedia.src
-%%DATADIR%%/engines/WiseNut.src
 %%DATADIR%%/engines/Yahoo.src
+%%DATADIR%%/engines/eric01.src
+%%DATADIR%%/engines/eric02.src
 %%DATADIR%%/metase-gtk2.glade
 %%DATADIR%%/metase-gtk2.gladep
 %%DATADIR%%/pinot-dbus-daemon.xml
@@ -68,6 +71,7 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 @dirrmtry share/icons
 @dirrmtry share/applications
 @dirrm lib/pinot/filters
+@dirrm lib/pinot/backends
 @dirrm lib/pinot
 @dirrmtry lib/deskbar-applet/modules-2.20-compatible
 @dirrmtry lib/deskbar-applet/handlers

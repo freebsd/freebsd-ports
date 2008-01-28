@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pinot
-PORTVERSION=	0.81
-PORTREVISION=	2
+PORTVERSION=	0.82
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -49,7 +48,7 @@ USE_XLIB=	yes
 #USE_SQLITE=	3	# Replaced by sqlite3-threads
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
-USE_LDCONFIG=	${PREFIX}/lib/pinot/filters
+USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
 
 .if defined(WITH_SOAP)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libgsoap.a:${PORTSDIR}/devel/gsoap
@@ -64,7 +63,6 @@ SQ3THOL=	${LOCALBASE}/share/sqlite3/sqlite3_with_threads-override-locks
 
 INSTALLS_ICONS=	yes
 
-SUB_FILES=	pkg-message
 PLIST_SUB=	DESKBAR_MOD="${LDESKBAR_MOD}"
 
 MAN1=		pinot-dbus-daemon.1 pinot-index.1 pinot-label.1 pinot-search.1 pinot.1
@@ -72,7 +70,7 @@ MAN1=		pinot-dbus-daemon.1 pinot-index.1 pinot-label.1 pinot-search.1 pinot.1
 PORTDOCS=	AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
 LM2FIX=		textcat_conf.txt textcat3_conf.txt
-SHR2FIX=	Search/pinot-search.1 README
+SHR2FIX=	IndexSearch/pinot-search.1 README
 UL2FIX=		Utils/xdgmime/xdgmime.c
 
 LDESKBAR_MOD=	lib/deskbar-applet/modules-2.20-compatible
@@ -85,6 +83,7 @@ BROKEN=		does not build on ${OPSYS}-${OSREL}
 .endif
 
 .if ${OSVERSION} < 700041
+SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
 
