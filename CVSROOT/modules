@@ -1106,6 +1106,7 @@ buildtool	ports/devel/buildtool
 buildtool-doc	ports/devel/buildtool-doc
 bulk_mailer	ports/mail/bulk_mailer
 bumprace	ports/games/bumprace
+bunny		ports/devel/bunny
 buoh		ports/deskutils/buoh
 burgerspace	ports/games/burgerspace
 burn		ports/sysutils/burn
