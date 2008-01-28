@@ -1,0 +1,3 @@
+lib/dovecot/imap/lib90_antispam_plugin.so
+@dirrmtry lib/dovecot/imap
+@dirrmtry lib/dovecot
