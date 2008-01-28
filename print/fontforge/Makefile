@@ -7,7 +7,7 @@
 
 PORTNAME=	fontforge
 PORTVERSION=	20080109
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -55,7 +55,7 @@ WITH_FREETYPE_SRC=	--without-freetype-bytecode --without-freetype-src
 .endif
 
 CONFIGURE_ARGS=	${WITH_MULTILAYER} --enable-devicetables ${WITH_FREETYPE_SRC}
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lutil" CFLAGS="${CFLAGS} \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lutil -lpthread" CFLAGS="${CFLAGS} \
 		-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
 
