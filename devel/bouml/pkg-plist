@@ -764,6 +764,7 @@ bin/projectSynchro
 %%DATADIR%%/plug_out_upgrade
 %%DATADIR%%/projectControl
 %%DATADIR%%/projectSynchro
+%%DATADIR%%/python_generator
 %%DATADIR%%/rose/1024.bodies
 %%DATADIR%%/rose/1152.bodies
 %%DATADIR%%/rose/1280.bodies
