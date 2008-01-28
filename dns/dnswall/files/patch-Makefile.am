@@ -1,0 +1,10 @@
+--- ./Makefile.am.orig	2008-01-28 20:28:44.000000000 +0100
++++ ./Makefile.am	2008-01-28 20:28:59.000000000 +0100
+@@ -2,5 +2,5 @@
+ 
+ SUBDIRS = src
+ 
+-docdir = $(prefix)/share/doc/$(PACKAGE)-$(VERSION)
+-dist_doc_DATA = AUTHORS COPYING ChangeLog INSTALL NEWS README
++docdir = $(prefix)/share/doc/$(PACKAGE)
++dist_doc_DATA = README

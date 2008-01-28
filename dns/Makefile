@@ -34,6 +34,7 @@
     SUBDIR += dnstracer
     SUBDIR += dnsutl
     SUBDIR += dnswalk
+    SUBDIR += dnswall
     SUBDIR += doc
     SUBDIR += domtools
     SUBDIR += drill
