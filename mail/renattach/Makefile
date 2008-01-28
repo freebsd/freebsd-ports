@@ -10,7 +10,7 @@ PORTVERSION=	1.2.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.pc-tools.net/files/unix/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Rename or remove certain attachments or kill entire messages
 
 USE_GETOPT_LONG=	yes
