@@ -115,6 +115,7 @@
     SUBDIR += buildbot
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
+    SUBDIR += bunny
     SUBDIR += byaccj
     SUBDIR += bzr-gtk
     SUBDIR += bzrtools
