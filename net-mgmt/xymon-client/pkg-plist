@@ -1,0 +1,49 @@
+@exec if ! pw groupshow %%BBUSER%% 2>/dev/null; then pw groupadd %%BBUSER%% -g 280; fi
+@exec if ! pw usershow %%BBUSER%% 2>/dev/null; then pw useradd %%BBUSER%% -g %%BBUSER%% -u 280 -h - -d /nonexistent -s /usr/sbin/nologin -c "Hobbit Monitor"; fi
+@unexec if pw usershow %%BBUSER%%; then pw userdel %%BBUSER%%; fi
+%%WWWDIR%%/client/bin/bb
+%%WWWDIR%%/client/bin/bbcmd
+%%WWWDIR%%/client/bin/bbdigest
+%%WWWDIR%%/client/bin/bbhostgrep
+%%WWWDIR%%/client/bin/bbhostshow
+%%WWWDIR%%/client/bin/clientupdate
+%%WWWDIR%%/client/bin/freebsd-meminfo
+%%WWWDIR%%/client/bin/hobbitclient-aix.sh
+%%WWWDIR%%/client/bin/hobbitclient-darwin.sh
+%%WWWDIR%%/client/bin/hobbitclient-freebsd.sh
+%%WWWDIR%%/client/bin/hobbitclient-hp-ux.sh
+%%WWWDIR%%/client/bin/hobbitclient-irix.sh
+%%WWWDIR%%/client/bin/hobbitclient-linux.sh
+%%WWWDIR%%/client/bin/hobbitclient-netbsd.sh
+%%WWWDIR%%/client/bin/hobbitclient-openbsd.sh
+%%WWWDIR%%/client/bin/hobbitclient-osf1.sh
+%%WWWDIR%%/client/bin/hobbitclient-sco_sv.sh
+%%WWWDIR%%/client/bin/hobbitclient-sunos.sh
+%%WWWDIR%%/client/bin/hobbitclient.sh
+%%WWWDIR%%/client/bin/hobbitlaunch
+%%WWWDIR%%/client/bin/logfetch
+%%WWWDIR%%/client/bin/msgcache
+%%WWWDIR%%/client/bin/orcahobbit
+@unexec if cmp -s %D/%%WWWDIR%%/client/etc/clientlaunch.cfg %D/%%WWWDIR%%/client/etc/clientlaunch.cfg-dist; then rm -f %D/%%WWWDIR%%/client/etc/clientlaunch.cfg; fi
+@unexec if cmp -s %D/%%WWWDIR%%/client/etc/hobbitclient.cfg %D/%%WWWDIR%%/client/etc/hobbitclient.cfg-dist; then rm -f %D/%%WWWDIR%%/client/etc/hobbitclient.cfg; fi
+@unexec if cmp -s %D/%%WWWDIR%%/client/etc/localclient.cfg %D/%%WWWDIR%%/client/etc/localclient.cfg-dist; then rm -f %D/%%WWWDIR%%/client/etc/localclient.cfg; fi
+%%WWWDIR%%/client/etc/clientlaunch.cfg-dist
+@exec [ ! -f %B/clientlaunch.cfg ] && cp %B/%f %B/clientlaunch.cfg
+%%WWWDIR%%/client/etc/hobbitclient.cfg-dist
+@exec [ ! -f %B/hobbitclient.cfg ] && cp %B/%f %B/hobbitclient.cfg
+%%WWWDIR%%/client/etc/localclient.cfg-dist
+@exec [ ! -f %B/localclient.cfg ] && cp %B/%f %B/localclient.cfg
+%%WWWDIR%%/client/runclient.sh
+@exec mkdir %D/%%WWWDIR%%/client/ext
+@exec mkdir %D/%%WWWDIR%%/client/logs
+@exec mkdir %D/%%WWWDIR%%/client/tmp
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/client/ext
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/client/logs
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/client/tmp
+@dirrm %%WWWDIR%%/client/tmp
+@dirrm %%WWWDIR%%/client/logs
+@dirrm %%WWWDIR%%/client/ext
+@dirrm %%WWWDIR%%/client/etc
+@dirrm %%WWWDIR%%/client/bin
+@dirrm %%WWWDIR%%/client
+@dirrmtry %%WWWDIR%%

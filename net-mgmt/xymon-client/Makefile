@@ -1,0 +1,38 @@
+# New ports collection makefile for:    hobbit-client
+# Date created:         24 Jan 2008
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	hobbit
+PORTVERSION=	4.2.0
+CATEGORIES=	net-mgmt www
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	hobbitmon
+PKGNAMESUFFIX=	-client${PKGNAMESUFFIX2}
+
+MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	System for monitoring servers and networks - Client
+
+# Options
+BBUSER?=	hobbit
+BBHOSTIP?=	127.0.0.1
+
+USE_GMAKE=	yes
+CONFIGURE_ENV=	MAKE=gmake
+MAKE_ENV+=	BBUSER="${BBUSER}"
+MAKE_ENV+=	BBHOSTIP="${BBHOSTIP}"
+USE_RC_SUBR=	hobbit-client.sh
+PLIST_SUB+=	BBUSER="${BBUSER}"
+
+# Configure script is interactive
+do-configure:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
+
+pre-install:
+	if ! pw groupshow ${BBUSER}; then pw groupadd ${BBUSER} -g 280; fi
+	if ! pw usershow ${BBUSER}; then pw useradd ${BBUSER} -g ${BBUSER} -u 280 \
+		-h - -d ${NONEXISTENT} -s /usr/sbin/nologin -c "Hobbit Monitor"; fi
+
+.include <bsd.port.mk>
