@@ -4644,6 +4644,7 @@ hmap		ports/security/hmap
 hmmer		ports/biology/hmmer
 hnb		ports/editors/hnb
 hobbes-icons-xpm	ports/graphics/hobbes-icons-xpm
+hobbit-client	ports/net-mgmt/hobbit-client
 hohlin		ports/games/hohlin
 holotz-castle	ports/games/holotz-castle
 holyshout	ports/audio/holyshout
