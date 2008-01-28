@@ -82,7 +82,7 @@ WITH_DBM=bdb
 .   endif
 .endif
 
-.if defined(WITH_BERKELEYDB)
+.if defined(WITH_BERKELEYDB) && !defined(WITH_BDB_VER)
 .   if ${WITH_BERKELEYDB} == "FreeBSD"
        WITH_BDB_BASE=YES
 .   else
