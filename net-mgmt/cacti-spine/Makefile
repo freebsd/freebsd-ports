@@ -7,7 +7,7 @@
 
 PORTNAME=	spine
 PORTVERSION=	0.8.7.a
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
 DISTNAME=	cacti-${PORTNAME}-0.8.7a
 
