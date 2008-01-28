@@ -1,3 +1,3 @@
-MD5 (condor-6.8.4-freebsd6-x86-dynamic.tar.gz) = 950fa962f2a9b5af20fc572ea506c5c7
-SHA256 (condor-6.8.4-freebsd6-x86-dynamic.tar.gz) = 5e246718ef080564c6c551cc6f8e762f4381bdbd6717ce4f07b189d5e7b6846e
-SIZE (condor-6.8.4-freebsd6-x86-dynamic.tar.gz) = 91225595
+MD5 (condor_src-7.0.0-all-all.tar.gz) = 06eec3ae274b66d233ad050a047f3c91
+SHA256 (condor_src-7.0.0-all-all.tar.gz) = d04ece5e8c3f0cbe376cfe167c80a794284e4e5165b029d9cb49a3ce9f54bfbd
+SIZE (condor_src-7.0.0-all-all.tar.gz) = 185678206

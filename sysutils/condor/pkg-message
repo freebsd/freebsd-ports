@@ -7,9 +7,3 @@ your Condor pool.
 
 See the manual for more information about tuning the HOSTALLOW_* paramters
 in your system's condor_config file.
-
-IMPORTANT:
-You must set the CONDOR_CONFIG environment variable to the value shown
-below before trying to start the master daemon, or submitting jobs to
-Condor. This is will be fixed in future Condor stable series releases.
-It is already fixed in the condor-devel port.
