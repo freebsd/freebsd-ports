@@ -1,4 +1,0 @@
-etc/gps.conf-dist
-libexec/gps
-libexec/gps-maintain.pl
-libexec/gps-db-update.pl
