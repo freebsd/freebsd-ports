@@ -1,0 +1,22 @@
+--- ./condor_scripts/make_final_tarballs.orig	2008-01-24 11:35:58.000000000 -0500
++++ ./condor_scripts/make_final_tarballs	2008-01-24 11:36:37.000000000 -0500
+@@ -262,7 +262,8 @@
+   "ppc_aix52"	  => "aix5.2",
+   "i386_freebsd4" => "freebsd4",
+   "i386_freebsd5" => "freebsd5",
+-  "i386_freebsd6" => "freebsd6"
++  "i386_freebsd6" => "freebsd6",
++  "i386_freebsd7" => "freebsd7"
+ );
+ 
+ my %archname = (
+@@ -308,7 +309,8 @@
+   "ppc_aix52"	  => "aix",
+   "i386_freebsd4" => "x86",
+   "i386_freebsd5" => "x86",
+-  "i386_freebsd6" => "x86"
++  "i386_freebsd6" => "x86",
++  "i386_freebsd7" => "x86"
+ );
+ 
+ 
