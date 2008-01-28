@@ -1,0 +1,5 @@
+dnswall is a daemon that filters out private IP addresses in DNS responses. It
+is designed to be used in conjunction with an existing recursive DNS resolver
+in order to protect networks against DNS rebinding attacks.
+
+WWW: http://code.google.com/p/google-dnswall/
