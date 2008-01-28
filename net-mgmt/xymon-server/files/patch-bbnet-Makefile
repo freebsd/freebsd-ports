@@ -1,0 +1,13 @@
+--- bbnet/Makefile.orig	2006-08-09 22:09:56.000000000 +0200
++++ bbnet/Makefile	2008-01-28 16:08:57.000000000 +0100
+@@ -88,8 +88,8 @@
+ 	cp -fp $(EXTENSIONS) $(INSTALLROOT)$(INSTALLEXTDIR)/
+ 
+ install-config:
+-	../build/convert-bbservices $(INSTALLROOT)$(INSTALLETCDIR)/bb-services
+-	../build/merge-sects bb-services $(INSTALLROOT)$(INSTALLETCDIR)/bb-services
++	../build/convert-bbservices $(INSTALLROOT)$(INSTALLETCDIR)/bb-services-dist
++	../build/merge-sects bb-services $(INSTALLROOT)$(INSTALLETCDIR)/bb-services-dist
+ 
+ install-man:
+ 	mkdir -p $(INSTALLROOT)$(MANROOT)/man1 $(INSTALLROOT)$(MANROOT)/man5
