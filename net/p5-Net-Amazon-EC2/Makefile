@@ -21,19 +21,11 @@ RUN_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Moose.pm:${PORTSDIR}/devel/p5-Moose
-BUILD_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
-		${SITE_PERL}/Digest/HMAC_SHA1.pm:${PORTSDIR}/security/p5-Digest-HMAC \
-		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Moose.pm:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::Amazon::EC2.3
-
-SUB_FILES=	pkg-message
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
