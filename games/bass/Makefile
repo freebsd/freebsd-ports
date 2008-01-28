@@ -9,11 +9,11 @@ PORTNAME=	bass
 PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	scummvm
 DISTNAME=	bass-cd-1.2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Beneath a Steel Sky: a post-apocalyptic futuristic graphical adventure
 
 RUN_DEPENDS=	scummvm:${PORTSDIR}/games/scummvm
