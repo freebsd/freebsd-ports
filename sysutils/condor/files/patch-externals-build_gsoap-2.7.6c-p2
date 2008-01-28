@@ -1,0 +1,17 @@
+--- ../externals/bundles/gsoap/2.7.6c-p2/build_gsoap-2.7.6c-p2.orig	2007-09-19 15:06:58.000000000 -0400
++++ ../externals/bundles/gsoap/2.7.6c-p2/build_gsoap-2.7.6c-p2	2008-01-24 11:58:23.000000000 -0500
+@@ -107,6 +107,14 @@
+ cd ..  && echo Changed directory to `pwd`
+ cd ..  && echo Changed directory to `pwd`
+ 
++##
++## FreeBSD Patch
++## Fixes gethostbyname_r
++##
++if [ `uname` = "FreeBSD" ]; then
++   perl -pi -e 's/host = (gethostbyname_r\(.*, SOAP_BUFLEN,) (&soap->errnum\);)/$1 &host, $2/g' soapcpp2/stdsoap2.c*
++fi
++
+ make
+ if [ $? -ne 0 ]
+ then

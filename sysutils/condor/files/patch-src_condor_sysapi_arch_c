@@ -1,0 +1,16 @@
+--- condor_sysapi/arch.c.orig	2008-01-25 13:36:45.000000000 -0500
++++ condor_sysapi/arch.c	2008-01-25 13:38:45.000000000 -0500
+@@ -201,6 +201,13 @@
+ 	else if( !strcmp(machine, "x86_64") ) {
+ 		sprintf( tmp, "X86_64" );
+ 	}
++	//
++	// FreeBSD 64-bit reports themselves as "amd64"
++	// Andy - 01/25/2008
++	//
++	else if( !strcmp(machine, "amd64") ) {
++		sprintf( tmp, "X86_64" );
++	}
+ 	else if( !strncmp( sysname, "IRIX", 4 ) ) {
+ 		sprintf( tmp, "SGI" );
+ 	} 

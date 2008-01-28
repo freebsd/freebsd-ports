@@ -1,0 +1,12 @@
+--- ../externals/bundles/krb5/1.4.3/build_krb5-1.4.3.orig	Wed Jan 23 16:39:33 2008
++++ ../externals/bundles/krb5/1.4.3/build_krb5-1.4.3	Wed Jan 23 16:42:39 2008
+@@ -24,8 +24,8 @@
+ 
+ # FreeBSD patches
+ if [ `uname` = "FreeBSD" ]; then
+-  patch -p < $PACKAGE_BUILD_DIR/makefile1.freebsd.patch
+   patch -p < $PACKAGE_BUILD_DIR/makefile2.freebsd.patch
++  find ./ -name "Makefile" | xargs perl -pi -e 's/(^CFLAGS = .*$)/$1 \-DEAI_NODATA=EAI_NONAME/g'
+ fi
+ 
+ make

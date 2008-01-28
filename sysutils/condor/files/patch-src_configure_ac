@@ -1,0 +1,32 @@
+--- ./configure.ac.orig	2008-01-22 17:27:40.000000000 -0500
++++ ./configure.ac	2008-01-25 12:13:08.000000000 -0500
+@@ -387,8 +387,14 @@
+       _cv_arch="IA64"
+    elif test $arch = "ppc" -o $arch = "ppc64" ; then
+       _cv_arch="CONDOR_PPC"
+-   elif test $arch = "x86_64" ; then
+-      _cv_arch="X86_64"
++   ##
++   ## Globus does not work on 64-bit
++   ## We will use the i386 build until this gets fixed (hopefully not by me!)
++   ## Andy - 01/25/2008
++   ##
++   elif test $arch = "amd64" -o $arch = "x86_64" ; then
++      _cv_arch="I386"
++      #_cv_arch="X86_64"
+    fi
+ 
+    ##
+@@ -840,6 +846,12 @@
+     CompilerMinor="1"
+     CompilerPatch="2"
+     ;;
++ "4.2.1" )
++    CompilerKind="GCC"
++    CompilerMajor="4"
++    CompilerMinor="2"
++    CompilerPatch="1"
++    ;;
+  * )
+    AC_MSG_RESULT([ERROR])
+    AC_MSG_ERROR([Condor will not compile with gcc version $gcc_vers])
