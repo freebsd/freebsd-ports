@@ -1941,6 +1941,7 @@
     SUBDIR += py-elementtree
     SUBDIR += py-epsilon
     SUBDIR += py-event
+    SUBDIR += py-extremes
     SUBDIR += py-ez_xml
     SUBDIR += py-ezpyinline
     SUBDIR += py-fam
