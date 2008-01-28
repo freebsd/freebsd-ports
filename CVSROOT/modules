@@ -13247,6 +13247,7 @@ py-dateutil	ports/devel/py-dateutil
 py-dbus		ports/devel/py-dbus
 py-dbutils	ports/databases/py-dbutils
 py-decorator	ports/devel/py-decorator
+py-decoratortools	ports/devel/py-decoratortools
 py-dialog	ports/devel/py-dialog
 py-distorm	ports/devel/py-distorm
 py-distutils	ports/misc/py-distutils
