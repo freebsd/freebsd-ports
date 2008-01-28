@@ -2116,6 +2116,7 @@ dnstop		ports/dns/dnstop
 dnstracer	ports/dns/dnstracer
 dnsutl		ports/dns/dnsutl
 dnswalk		ports/dns/dnswalk
+dnswall		ports/dns/dnswall
 docbook		ports/textproc/docbook
 docbook-241	ports/textproc/docbook-241
 docbook-300	ports/textproc/docbook-300
