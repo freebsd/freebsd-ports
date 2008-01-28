@@ -7,10 +7,12 @@
 
 PORTNAME=	BitchX
 PORTVERSION=	1.1.0.1
-CATEGORIES+=	irc
-MASTER_SITES=	ftp://ftp.bitchx.org/pub/BitchX/source/ \
+PORTREVISION=	1
+
+CATEGORIES=	irc
+MASTER_SITES=	http://www.bitchx.com/ \
 		CENKES
-DISTNAME=	ircii-pana-1.1a-final
+DISTNAME=	ircii-pana-1.1-final
 
 MAINTAINER?=	beech@FreeBSD.org
 COMMENT?=	ircII color client with GTK/GNOME support
@@ -80,7 +82,8 @@ CONFIGURE_ARGS+=	--with-socks5=${LOCALBASE}
 .endif
 
 .if defined(WITH_PLUGINS)
-PLUGINS=	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay
+PLUGINS=	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,\
+fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay
 PLIST_SUB+=	PLUGINS=""
 .else
 CONFIGURE_ARGS+=--without-plugins
@@ -94,7 +97,8 @@ PLIST_SUB+=	XMMS=""
 PLIST_SUB+=	XMMS="@comment "
 .endif
 .if (defined(WITH_XMMS) && defined(WITH_PLUGINS))
-PLUGINS=	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay,xmms
+PLUGINS=	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,\
+hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay,xmms
 .endif
 
 .if (defined(WITH_PLUGINS) || defined(WITH_XMMS))
@@ -116,10 +120,12 @@ post-install:
 	${RMDIR} ${PREFIX}/share/bx/help
 .endif
 .if defined(WITH_GNOME)
-	${STRIP_CMD} ${PREFIX}/bin/gtkBitchX-${PORTVERSION}-final
+	${STRIP_CMD} ${PREFIX}/bin/gtkBitchX-1.1-final
 .else
-	${STRIP_CMD} ${PREFIX}/bin/BitchX-${PORTVERSION}-final
+	${STRIP_CMD} ${PREFIX}/bin/BitchX-1.1-final
 	${STRIP_CMD} ${PREFIX}/bin/scr-bx
 .endif
+
+	@cd ${FILESDIR} && ${CP} .placeholder ${PREFIX}/share/bx/plugins/
 
 .include <bsd.port.post.mk>

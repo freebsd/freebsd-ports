@@ -1,0 +1,36 @@
+diff -ru source.orig/ctcp.c source/ctcp.c
+--- source.orig/ctcp.c	2003-05-26 23:00:22.000000000 -0800
++++ source/ctcp.c	2008-01-28 07:31:56.000000000 -0900
+@@ -176,7 +176,7 @@
+ 
+ /* CDE do ops and unban logging */
+ 
+-static char	*ctcp_type[] =
++char	*ctcp_type[] =
+ {
+ 	"PRIVMSG",
+ 	"NOTICE"
+diff -ru source.orig/term.c source/term.c
+--- source.orig/term.c	2003-04-10 17:09:07.000000000 -0800
++++ source/term.c	2008-01-28 07:58:45.000000000 -0900
+@@ -92,7 +92,7 @@
+ #endif
+ 
+ extern  char    *getenv();
+-extern	char	*tparm();
++
+ 
+ /*
+  * The old code assumed termcap. termcap is almost always present, but on
+diff -ru source.orig/timer.c source/timer.c
+--- source.orig/timer.c	2003-04-10 17:09:07.000000000 -0800
++++ source/timer.c	2008-01-28 08:00:29.000000000 -0900
+@@ -148,7 +148,7 @@
+  * This is put here on purpose -- we dont want any of the above functions
+  * to have any knowledge of this struct.
+  */
+-static TimerList *PendingTimers;
++TimerList *PendingTimers;
+ static char *schedule_timer (TimerList *ntimer);
+ 
+ static char *current_exec_timer = empty_string;
