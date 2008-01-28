@@ -25,6 +25,7 @@ MAKE_ENV+=	BBUSER="${BBUSER}"
 MAKE_ENV+=	BBHOSTIP="${BBHOSTIP}"
 USE_RC_SUBR=	hobbit-client.sh
 PLIST_SUB+=	BBUSER="${BBUSER}"
+CONFIG_FILES=	clientlaunch.cfg hobbitclient.cfg localclient.cfg
 
 # Configure script is interactive
 do-configure:
@@ -34,5 +35,11 @@ pre-install:
 	if ! pw groupshow ${BBUSER}; then pw groupadd ${BBUSER} -g 280; fi
 	if ! pw usershow ${BBUSER}; then pw useradd ${BBUSER} -g ${BBUSER} -u 280 \
 		-h - -d ${NONEXISTENT} -s /usr/sbin/nologin -c "Hobbit Monitor"; fi
+
+post-install:
+.for i in ${CONFIG_FILES}
+	${CP} -np ${WWWDIR}/client/etc/${i}-dist \
+		${WWWDIR}/client/etc/${i}
+.endfor
 
 .include <bsd.port.mk>
