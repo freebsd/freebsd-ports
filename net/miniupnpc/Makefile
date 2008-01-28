@@ -19,6 +19,7 @@ MAKE_ENV+=	INSTALLPREFIX=${PREFIX}
 USE_LDCONFIG=	yes
 
 post-configure:
-	${REINPLACE_CMD} -e 's|--mode=|-m |' -e 's|--symbolic|-s|' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|--mode=|-m |' -e 's|--symbolic|-s|' \
+		-e 's| -Wall | -Wall -fPIC |' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
