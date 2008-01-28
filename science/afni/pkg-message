@@ -10,6 +10,8 @@ For AFNI configuration and usage, please visit the AFNI WEB site at
 
 http://afni.nimh.nih.gov.
 
+SUMA requires the nvidia graphics driver or DRI.
+
 For large 3dDeconvolve analyses, you may need to increase the shared
 memory limit on your system.  For instructions, visit
 
