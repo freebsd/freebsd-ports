@@ -33,7 +33,7 @@ USE_GL=		glut
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
 
-# on TIFF
+OPTIONS=	+PPM "Compile programs that use PPM (NetPBM)" off \
 		EXR "Compile programs that use OpenEXR library" off \
 		TIFF "Compile programs that use TIFF library" on \
 		QT "Compile programs that use QT library" off \
