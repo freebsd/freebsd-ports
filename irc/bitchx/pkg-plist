@@ -1,3 +1,4 @@
+@unexec if [ -f %D/share/bx/script/bxglobal.old ]; then rm -f %D/share/bx/script/bxglobal.old; fi
 %%NOGNOME%%bin/BitchX
 %%NOGNOME%%bin/BitchX-1.1-final
 %%GNOME%%bin/gtkBitchX
@@ -936,6 +937,7 @@ share/bx/BitchX.kick
 %%PLUGINS%%share/bx/plugins/cavlink.so
 %%PLUGINS%%share/bx/plugins/identd.so
 %%XMMS%%share/bx/plugins/xmms.so
+share/bx/plugins/.placeholder
 share/bx/script/SCRIPTS
 share/bx/script/actplug.gmz
 share/bx/script/bxglobal
