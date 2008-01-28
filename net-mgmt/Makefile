@@ -67,6 +67,7 @@
     SUBDIR += grepip
     SUBDIR += gsnmp
     SUBDIR += hobbit-client
+    SUBDIR += hobbit-server
     SUBDIR += horde-nic
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery

@@ -1,0 +1,15 @@
+--- build/Makefile.rules.orig	2006-08-09 22:09:57.000000000 +0200
++++ build/Makefile.rules	2008-01-24 14:12:36.000000000 +0100
+@@ -22,9 +22,9 @@
+ 	INSTALLTARGETS = install-client install-clientmsg
+ endif
+ else
+-	BUILDTARGETS = lib-build common-build bbdisplay-build bbnet-build bbproxy-build docs-build build-build hobbitd-build web-build client
+-	CLIENTTARGETS = lib-client common-client build-build
+-	INSTALLTARGETS = install-bbdisplay install-bbnet install-bbproxy install-man install-hobbitd install-web install-docs install-client install-servermsg
++	BUILDTARGETS = lib-build common-build bbdisplay-build bbnet-build bbproxy-build docs-build build-build hobbitd-build web-build
++	CLIENTTARGETS = 
++	INSTALLTARGETS = install-bbdisplay install-bbnet install-bbproxy install-man install-hobbitd install-web install-docs install-servermsg
+ 	CFLAGS += $(PCREINCDIR)
+ endif
+ 

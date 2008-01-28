@@ -1,0 +1,390 @@
+@exec if ! pw groupshow %%BBUSER%% 2>/dev/null; then pw groupadd %%BBUSER%% -g 280; fi
+@exec if ! pw usershow %%BBUSER%% 2>/dev/null; then pw useradd %%BBUSER%% -g %%BBUSER%% -u 280 -h - -d /nonexistent -s /usr/sbin/nologin -c "Hobbit Monitor"; fi
+@unexec if pw usershow %%BBUSER%%; then pw userdel %%BBUSER%%; fi
+%%WWWDIR%%/cgi-bin/bb-csvinfo.sh
+%%WWWDIR%%/cgi-bin/bb-datepage.sh
+%%WWWDIR%%/cgi-bin/bb-eventlog.sh
+%%WWWDIR%%/cgi-bin/bb-findhost.sh
+%%WWWDIR%%/cgi-bin/bb-hist.sh
+%%WWWDIR%%/cgi-bin/bb-histlog.sh
+%%WWWDIR%%/cgi-bin/bb-hostsvc.sh
+%%WWWDIR%%/cgi-bin/bb-rep.sh
+%%WWWDIR%%/cgi-bin/bb-replog.sh
+%%WWWDIR%%/cgi-bin/bb-snapshot.sh
+%%WWWDIR%%/cgi-bin/hobbit-certreport.sh
+%%WWWDIR%%/cgi-bin/hobbit-confreport.sh
+%%WWWDIR%%/cgi-bin/hobbit-ghosts.sh
+%%WWWDIR%%/cgi-bin/hobbit-hostgraphs.sh
+%%WWWDIR%%/cgi-bin/hobbit-nkview.sh
+%%WWWDIR%%/cgi-bin/hobbit-nongreen.sh
+%%WWWDIR%%/cgi-bin/hobbitcolumn.sh
+%%WWWDIR%%/cgi-bin/hobbitgraph.sh
+%%WWWDIR%%/cgi-secure/bb-ack.sh
+%%WWWDIR%%/cgi-secure/hobbit-ackinfo.sh
+%%WWWDIR%%/cgi-secure/hobbit-enadis.sh
+%%WWWDIR%%/cgi-secure/hobbit-nkedit.sh
+%%WWWDIR%%/server/bin/bb
+%%WWWDIR%%/server/bin/bb-ack.cgi
+%%WWWDIR%%/server/bin/bb-csvinfo.cgi
+%%WWWDIR%%/server/bin/bb-datepage.cgi
+%%WWWDIR%%/server/bin/bb-eventlog.cgi
+%%WWWDIR%%/server/bin/bb-findhost.cgi
+%%WWWDIR%%/server/bin/bb-hist.cgi
+%%WWWDIR%%/server/bin/bb-rep.cgi
+%%WWWDIR%%/server/bin/bb-replog.cgi
+%%WWWDIR%%/server/bin/bb-snapshot.cgi
+%%WWWDIR%%/server/bin/bb-webpage
+%%WWWDIR%%/server/bin/bbcmd
+%%WWWDIR%%/server/bin/bbcombotest
+%%WWWDIR%%/server/bin/bbdigest
+%%WWWDIR%%/server/bin/bbgen
+%%WWWDIR%%/server/bin/bbhostgrep
+%%WWWDIR%%/server/bin/bbhostshow
+%%WWWDIR%%/server/bin/bbmessage.cgi
+%%WWWDIR%%/server/bin/bbproxy
+%%WWWDIR%%/server/bin/bbtest-net
+%%WWWDIR%%/server/bin/beastat
+%%WWWDIR%%/server/bin/boilerplate.cgi
+%%WWWDIR%%/server/bin/hobbit-ackinfo.cgi
+%%WWWDIR%%/server/bin/hobbit-confreport.cgi
+%%WWWDIR%%/server/bin/hobbit-enadis.cgi
+%%WWWDIR%%/server/bin/hobbit-ghosts.cgi
+%%WWWDIR%%/server/bin/hobbit-hostgraphs.cgi
+%%WWWDIR%%/server/bin/hobbit-mailack
+%%WWWDIR%%/server/bin/hobbit-nkedit.cgi
+%%WWWDIR%%/server/bin/hobbit-nkview.cgi
+%%WWWDIR%%/server/bin/hobbit-statusreport.cgi
+%%WWWDIR%%/server/bin/hobbit.sh
+%%WWWDIR%%/server/bin/hobbitd
+%%WWWDIR%%/server/bin/hobbitd_alert
+%%WWWDIR%%/server/bin/hobbitd_capture
+%%WWWDIR%%/server/bin/hobbitd_channel
+%%WWWDIR%%/server/bin/hobbitd_client
+%%WWWDIR%%/server/bin/hobbitd_filestore
+%%WWWDIR%%/server/bin/hobbitd_history
+%%WWWDIR%%/server/bin/hobbitd_hostdata
+%%WWWDIR%%/server/bin/hobbitd_larrd
+%%WWWDIR%%/server/bin/hobbitd_rrd
+%%WWWDIR%%/server/bin/hobbitd_sample
+%%WWWDIR%%/server/bin/hobbitfetch
+%%WWWDIR%%/server/bin/hobbitgraph.cgi
+%%WWWDIR%%/server/bin/hobbitlaunch
+%%WWWDIR%%/server/bin/hobbitping
+%%WWWDIR%%/server/bin/hobbitreports.sh
+%%WWWDIR%%/server/bin/hobbitsvc.cgi
+%%WWWDIR%%/server/bin/moverrd.sh
+%%WWWDIR%%/server/bin/trimhistory
+@unexec if cmp -s %D/%%WWWDIR%%/server/etc/bb-hosts %D/%%WWWDIR%%/server/etc/bb-hosts-dist; then rm -f %D/%%WWWDIR%%/server/etc/bb-hosts; fi
+@unexec if cmp -s %D/%%WWWDIR%%/server/etc/bb-services %D/%%WWWDIR%%/server/etc/bb-services-dist; then rm -f %D/%%WWWDIR%%/server/etc/bb-services; fi
+@unexec if cmp -s %D/%%WWWDIR%%/server/etc/bbcombotest.cfg %D/%%WWWDIR%%/server/etc/bbcombotest.cfg-dist; then rm -f %D/%%WWWDIR%%/server/etc/bbcombotest.cfg; fi
+@unexec if cmp -s %D/%%WWWDIR%%/server/etc/client-local.cfg %D/%%WWWDIR%%/server/etc/client-local.cfg-dist; then rm -f %D/%%WWWDIR%%/server/etc/client-local.cfg; fi
+@unexec if cmp -s %D/%%WWWDIR%%/server/etc/columndoc.csv %D/%%WWWDIR%%/server/etc/columndoc.csv-dist; then rm -f %D/%%WWWDIR%%/server/etc/columndoc.csv; fi
+@unexec if cmp -s %D/%%WWWDIR%%/server/etc/hobbit-alerts.cfg %D/%%WWWDIR%%/server/etc/hobbit-alerts.cfg-dist; then rm -f %D/%%WWWDIR%%/server/etc/hobbit-alerts.cfg; fi
+@unexec if cmp -s %D/%%WWWDIR%%/server/etc/hobbit-apache.conf %D/%%WWWDIR%%/server/etc/hobbit-apache.conf-dist; then rm -f %D/%%WWWDIR%%/server/etc/hobbit-apache.conf; fi
+@unexec if cmp -s %D/%%WWWDIR%%/server/etc/hobbit-clients.cfg %D/%%WWWDIR%%/server/etc/hobbit-clients.cfg-dist; then rm -f %D/%%WWWDIR%%/server/etc/hobbit-clients.cfg; fi
+@unexec if cmp -s %D/%%WWWDIR%%/server/etc/hobbitcgi.cfg %D/%%WWWDIR%%/server/etc/hobbitcgi.cfg-dist; then rm -f %D/%%WWWDIR%%/server/etc/hobbitcgi.cfg; fi
+@unexec if cmp -s %D/%%WWWDIR%%/server/etc/hobbitgraph.cfg %D/%%WWWDIR%%/server/etc/hobbitgraph.cfg-dist; then rm -f %D/%%WWWDIR%%/server/etc/hobbitgraph.cfg; fi
+@unexec if cmp -s %D/%%WWWDIR%%/server/etc/hobbitlaunch.cfg %D/%%WWWDIR%%/server/etc/hobbitlaunch.cfg-dist; then rm -f %D/%%WWWDIR%%/server/etc/hobbitlaunch.cfg; fi
+@unexec if cmp -s %D/%%WWWDIR%%/server/etc/hobbitserver.cfg %D/%%WWWDIR%%/server/etc/hobbitserver.cfg-dist; then rm -f %D/%%WWWDIR%%/server/etc/hobbitserver.cfg; fi
+%%WWWDIR%%/server/etc/bb-hosts-dist
+@exec [ ! -f %B/bb-hosts ] && cp %B/%f %B/bb-hosts
+%%WWWDIR%%/server/etc/bb-services-dist
+@exec [ ! -f %B/bb-services ] && cp %B/%f %B/bb-services
+%%WWWDIR%%/server/etc/bbcombotest.cfg-dist
+@exec [ ! -f %B/bbcombotest.cfg ] && cp %B/%f %B/bbcombotest.cfg
+%%WWWDIR%%/server/etc/client-local.cfg-dist
+@exec [ ! -f %B/client-local.cfg ] && cp %B/%f %B/client-local.cfg
+%%WWWDIR%%/server/etc/columndoc.csv-dist
+@exec [ ! -f %B/columndoc.cfg ] && cp %B/%f %B/columndoc.cfg
+%%WWWDIR%%/server/etc/hobbit-alerts.cfg-dist
+@exec [ ! -f %B/hobbit-alerts.cfg ] && cp %B/%f %B/hobbit-alerts.cfg
+%%WWWDIR%%/server/etc/hobbit-apache.conf-dist
+@exec [ ! -f %B/hobbit-apache.cfg ] && cp %B/%f %B/hobbit-apache.cfg
+%%WWWDIR%%/server/etc/hobbit-clients.cfg-dist
+@exec [ ! -f %B/hobbit-clients.cfg ] && cp %B/%f %B/hobbit-clients.cfg
+@unexec if test ! -s %D/%%WWWDIR%%/server/etc/hobbit-nkview.cfg; then rm -f %D/%%WWWDIR%%/server/etc/hobbit-nkview.cfg; fi
+@unexec if test ! -s %D/%%WWWDIR%%/server/etc/hobbit-nkview.cfg.bak; then rm -f %D/%%WWWDIR%%/server/etc/hobbit-nkview.cfg.bak; fi
+@exec touch %D/%%WWWDIR%%/server/etc/hobbit-nkview.cfg %D/%%WWWDIR%%/server/etc/hobbit-nkview.cfg.bak
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/server/etc/hobbit-nkview.cfg %D/%%WWWDIR%%/server/etc/hobbit-nkview.cfg.bak
+%%WWWDIR%%/server/etc/hobbitcgi.cfg-dist
+@exec [ ! -f %B/hobbitcgi.cfg ] && cp %B/%f %B/hobbitcgi.cfg
+%%WWWDIR%%/server/etc/hobbitgraph.cfg-dist
+@exec [ ! -f %B/hobbitgraph.cfg ] && cp %B/%f %B/hobbitgraph.cfg
+%%WWWDIR%%/server/etc/hobbitlaunch.cfg-dist
+@exec [ ! -f %B/hobbitlaunch.cfg ] && cp %B/%f %B/hobbitlaunch.cfg
+%%WWWDIR%%/server/etc/hobbitserver.cfg-dist
+@exec [ ! -f %B/hobbitserver.cfg ] && cp %B/%f %B/hobbitserver.cfg
+%%WWWDIR%%/server/ext/bbretest-net.sh
+%%WWWDIR%%/server/hobbit.sh
+%%WWWDIR%%/server/web/acknowledge_footer
+%%WWWDIR%%/server/web/acknowledge_form
+%%WWWDIR%%/server/web/acknowledge_header
+%%WWWDIR%%/server/web/bb2_footer
+%%WWWDIR%%/server/web/bb2_header
+%%WWWDIR%%/server/web/bb_footer
+%%WWWDIR%%/server/web/bb_header
+%%WWWDIR%%/server/web/bbnk_footer
+%%WWWDIR%%/server/web/bbnk_header
+%%WWWDIR%%/server/web/bbrep_footer
+%%WWWDIR%%/server/web/bbrep_header
+%%WWWDIR%%/server/web/bbsnap2_footer
+%%WWWDIR%%/server/web/bbsnap2_header
+%%WWWDIR%%/server/web/bbsnap_footer
+%%WWWDIR%%/server/web/bbsnap_header
+%%WWWDIR%%/server/web/bbsnapnk_footer
+%%WWWDIR%%/server/web/bbsnapnk_header
+%%WWWDIR%%/server/web/columndoc_footer
+%%WWWDIR%%/server/web/columndoc_header
+%%WWWDIR%%/server/web/confreport_back
+%%WWWDIR%%/server/web/confreport_footer
+%%WWWDIR%%/server/web/confreport_front
+%%WWWDIR%%/server/web/confreport_header
+%%WWWDIR%%/server/web/event_footer
+%%WWWDIR%%/server/web/event_form
+%%WWWDIR%%/server/web/event_header
+%%WWWDIR%%/server/web/findhost_footer
+%%WWWDIR%%/server/web/findhost_form
+%%WWWDIR%%/server/web/findhost_header
+%%WWWDIR%%/server/web/ghosts_footer
+%%WWWDIR%%/server/web/ghosts_header
+%%WWWDIR%%/server/web/graphs_footer
+%%WWWDIR%%/server/web/graphs_header
+%%WWWDIR%%/server/web/hist_footer
+%%WWWDIR%%/server/web/hist_header
+%%WWWDIR%%/server/web/histlog_footer
+%%WWWDIR%%/server/web/histlog_header
+%%WWWDIR%%/server/web/hobbitnk_footer
+%%WWWDIR%%/server/web/hobbitnk_header
+%%WWWDIR%%/server/web/hostgraphs_footer
+%%WWWDIR%%/server/web/hostgraphs_form
+%%WWWDIR%%/server/web/hostgraphs_header
+%%WWWDIR%%/server/web/hostsvc_footer
+%%WWWDIR%%/server/web/hostsvc_header
+%%WWWDIR%%/server/web/info_footer
+%%WWWDIR%%/server/web/info_header
+%%WWWDIR%%/server/web/maint_footer
+%%WWWDIR%%/server/web/maint_form
+%%WWWDIR%%/server/web/maint_header
+%%WWWDIR%%/server/web/maintact_footer
+%%WWWDIR%%/server/web/maintact_header
+%%WWWDIR%%/server/web/nkack_form
+%%WWWDIR%%/server/web/nkedit_footer
+%%WWWDIR%%/server/web/nkedit_form
+%%WWWDIR%%/server/web/nkedit_header
+%%WWWDIR%%/server/web/replog_footer
+%%WWWDIR%%/server/web/replog_header
+%%WWWDIR%%/server/web/report_footer
+%%WWWDIR%%/server/web/report_form
+%%WWWDIR%%/server/web/report_form_daily
+%%WWWDIR%%/server/web/report_form_monthly
+%%WWWDIR%%/server/web/report_form_weekly
+%%WWWDIR%%/server/web/report_header
+%%WWWDIR%%/server/web/snapshot_footer
+%%WWWDIR%%/server/web/snapshot_form
+%%WWWDIR%%/server/web/snapshot_header
+%%WWWDIR%%/server/web/zoom.js
+%%WWWDIR%%/server/www/gifs/README
+%%WWWDIR%%/server/www/gifs/arrow.gif
+%%WWWDIR%%/server/www/gifs/bkg-blue.gif
+%%WWWDIR%%/server/www/gifs/bkg-clear.gif
+%%WWWDIR%%/server/www/gifs/bkg-green.gif
+%%WWWDIR%%/server/www/gifs/bkg-purple.gif
+%%WWWDIR%%/server/www/gifs/bkg-red.gif
+%%WWWDIR%%/server/www/gifs/bkg-yellow.gif
+%%WWWDIR%%/server/www/gifs/blue-ack.gif
+%%WWWDIR%%/server/www/gifs/blue-recent.gif
+%%WWWDIR%%/server/www/gifs/blue.gif
+%%WWWDIR%%/server/www/gifs/clear-recent.gif
+%%WWWDIR%%/server/www/gifs/clear.gif
+%%WWWDIR%%/server/www/gifs/favicon-blue.ico
+%%WWWDIR%%/server/www/gifs/favicon-clear.ico
+%%WWWDIR%%/server/www/gifs/favicon-green.ico
+%%WWWDIR%%/server/www/gifs/favicon-purple.ico
+%%WWWDIR%%/server/www/gifs/favicon-red.ico
+%%WWWDIR%%/server/www/gifs/favicon-unknown.ico
+%%WWWDIR%%/server/www/gifs/favicon-yellow.ico
+%%WWWDIR%%/server/www/gifs/green-recent.gif
+%%WWWDIR%%/server/www/gifs/green.gif
+%%WWWDIR%%/server/www/gifs/purple-ack.gif
+%%WWWDIR%%/server/www/gifs/purple-recent.gif
+%%WWWDIR%%/server/www/gifs/purple.gif
+%%WWWDIR%%/server/www/gifs/red-ack.gif
+%%WWWDIR%%/server/www/gifs/red-recent.gif
+%%WWWDIR%%/server/www/gifs/red.gif
+%%WWWDIR%%/server/www/gifs/unknown-recent.gif
+%%WWWDIR%%/server/www/gifs/unknown.gif
+%%WWWDIR%%/server/www/gifs/yellow-ack.gif
+%%WWWDIR%%/server/www/gifs/yellow-recent.gif
+%%WWWDIR%%/server/www/gifs/yellow.gif
+%%WWWDIR%%/server/www/gifs/zoom.gif
+%%WWWDIR%%/server/www/help/about.html
+%%WWWDIR%%/server/www/help/bb-to-hobbit.html
+%%WWWDIR%%/server/www/help/clonewarn.jpg
+%%WWWDIR%%/server/www/help/configure.txt
+%%WWWDIR%%/server/www/help/criticalsystems.html
+%%WWWDIR%%/server/www/help/critview-detail-acked.jpg
+%%WWWDIR%%/server/www/help/critview-detail-ackform.jpg
+%%WWWDIR%%/server/www/help/critview-detail.jpg
+%%WWWDIR%%/server/www/help/critview-disk.jpg
+%%WWWDIR%%/server/www/help/critview-green.jpg
+%%WWWDIR%%/server/www/help/editor-clonemaster.jpg
+%%WWWDIR%%/server/www/help/editor-diskchanged.jpg
+%%WWWDIR%%/server/www/help/editor-disksetup.jpg
+%%WWWDIR%%/server/www/help/editor-main.jpg
+%%WWWDIR%%/server/www/help/editor-makeclone.jpg
+%%WWWDIR%%/server/www/help/editor-nohost.jpg
+%%WWWDIR%%/server/www/help/editor-showclone.jpg
+%%WWWDIR%%/server/www/help/hobbit-alerts.html
+%%WWWDIR%%/server/www/help/hobbit-apacheconf.txt
+%%WWWDIR%%/server/www/help/hobbit-bbhosts.png
+%%WWWDIR%%/server/www/help/hobbit-clients.png
+%%WWWDIR%%/server/www/help/hobbit-config.html
+%%WWWDIR%%/server/www/help/hobbit-mrtg.html
+%%WWWDIR%%/server/www/help/hobbit-tips.html
+%%WWWDIR%%/server/www/help/hobbitmain.png
+%%WWWDIR%%/server/www/help/hobbitprocs.png
+%%WWWDIR%%/server/www/help/howtograph.html
+%%WWWDIR%%/server/www/help/install.html
+%%WWWDIR%%/server/www/help/known-issues.html
+%%WWWDIR%%/server/www/help/mainview-acked.jpg
+%%WWWDIR%%/server/www/help/mainview.jpg
+%%WWWDIR%%/server/www/help/manpages/index.html
+%%WWWDIR%%/server/www/help/manpages/man1/bb-ack.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bb-csvinfo.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bb-datepage.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bb-eventlog.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bb-findhost.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bb-hist.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bb-rep.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bb-replog.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bb-snapshot.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bb-webpage.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bb.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bbcmd.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bbcombotest.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bbdigest.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bbgen.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bbhostgrep.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bbhostshow.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bbretest-net.sh.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/bbtest-net.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/clientupdate.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/hobbit-ackinfo.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/hobbit-confreport.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/hobbit-ghosts.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/hobbit-hostgraphs.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/hobbit-nkedit.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/hobbit-nkview.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/hobbit-statusreport.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/hobbitgraph.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/hobbitping.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/hobbitsvc.cgi.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/logfetch.1.html
+%%WWWDIR%%/server/www/help/manpages/man1/orcahobbit.1.html
+%%WWWDIR%%/server/www/help/manpages/man5/bb-hosts.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/bb-services.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/bbcombotest.cfg.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/client-local.cfg.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/clientlaunch.cfg.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/hobbit-alerts.cfg.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/hobbit-clients.cfg.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/hobbit-nkview.cfg.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/hobbitcgi.cfg.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/hobbitclient.cfg.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/hobbitgraph.cfg.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/hobbitlaunch.cfg.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/hobbitserver.cfg.5.html
+%%WWWDIR%%/server/www/help/manpages/man5/hobbitweb.5.html
+%%WWWDIR%%/server/www/help/manpages/man7/hobbit.7.html
+%%WWWDIR%%/server/www/help/manpages/man8/bbmessage.cgi.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/bbproxy.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbit-enadis.cgi.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbit-mailack.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbitd.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbitd_alert.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbitd_channel.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbitd_client.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbitd_filestore.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbitd_history.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbitd_hostdata.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbitd_rrd.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbitd_sample.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbitfetch.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/hobbitlaunch.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/msgcache.8.html
+%%WWWDIR%%/server/www/help/manpages/man8/trimhistory.8.html
+%%WWWDIR%%/server/www/help/stdview-detail-acked.jpg
+%%WWWDIR%%/server/www/menu/README
+%%WWWDIR%%/server/www/menu/menu.css
+%%WWWDIR%%/server/www/menu/menu.js
+%%WWWDIR%%/server/www/menu/menu_items.js
+%%WWWDIR%%/server/www/menu/menu_tpl.js
+@exec mkdir %D/%%WWWDIR%%/data
+@exec mkdir %D/%%WWWDIR%%/data/acks
+@exec mkdir %D/%%WWWDIR%%/data/data
+@exec mkdir %D/%%WWWDIR%%/data/disabled
+@exec mkdir %D/%%WWWDIR%%/data/hist
+@exec mkdir %D/%%WWWDIR%%/data/histlogs
+@exec mkdir %D/%%WWWDIR%%/data/hostdata
+@exec mkdir %D/%%WWWDIR%%/data/logs
+@exec mkdir %D/%%WWWDIR%%/data/rrd
+@exec mkdir %D/%%WWWDIR%%/server/download
+@exec mkdir %D/%%WWWDIR%%/server/tmp
+@exec mkdir %D/%%WWWDIR%%/server/www/html
+@exec mkdir %D/%%WWWDIR%%/server/www/notes
+@exec mkdir %D/%%WWWDIR%%/server/www/rep
+@exec mkdir %D/%%WWWDIR%%/server/www/snap
+@exec mkdir %D/%%WWWDIR%%/server/www/wml
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/data
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/data/acks
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/data/data
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/data/disabled
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/data/hist
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/data/histlogs
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/data/hostdata
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/data/logs
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/data/rrd
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/server/download
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/server/tmp
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/server/www/html
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/server/www/notes
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/server/www/rep
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/server/www/snap
+@exec chown %%BBUSER%% %D/%%WWWDIR%%/server/www/wml
+@dirrm %%WWWDIR%%/server/www/wml
+@dirrm %%WWWDIR%%/server/www/snap
+@dirrm %%WWWDIR%%/server/www/rep
+@dirrm %%WWWDIR%%/server/www/notes
+@dirrm %%WWWDIR%%/server/www/menu
+@dirrm %%WWWDIR%%/server/www/html
+@dirrm %%WWWDIR%%/server/www/help/manpages/man8
+@dirrm %%WWWDIR%%/server/www/help/manpages/man7
+@dirrm %%WWWDIR%%/server/www/help/manpages/man5
+@dirrm %%WWWDIR%%/server/www/help/manpages/man1
+@dirrm %%WWWDIR%%/server/www/help/manpages
+@dirrm %%WWWDIR%%/server/www/help
+@dirrm %%WWWDIR%%/server/www/gifs
+@dirrm %%WWWDIR%%/server/www
+@dirrm %%WWWDIR%%/server/web
+@dirrm %%WWWDIR%%/server/tmp
+@dirrm %%WWWDIR%%/server/ext
+@dirrm %%WWWDIR%%/server/etc
+@dirrm %%WWWDIR%%/server/download
+@dirrm %%WWWDIR%%/server/bin
+@dirrm %%WWWDIR%%/server
+@dirrm %%WWWDIR%%/data/rrd
+@dirrm %%WWWDIR%%/data/logs
+@dirrm %%WWWDIR%%/data/hostdata
+@dirrm %%WWWDIR%%/data/histlogs
+@dirrm %%WWWDIR%%/data/hist
+@dirrm %%WWWDIR%%/data/disabled
+@dirrm %%WWWDIR%%/data/data
+@dirrm %%WWWDIR%%/data/acks
+@dirrm %%WWWDIR%%/data
+@dirrm %%WWWDIR%%/cgi-secure
+@dirrm %%WWWDIR%%/cgi-bin
+@dirrmtry %%WWWDIR%%
+@exec mkdir -p %%VARBASE%%/log/hobbit
+@exec chown %%BBUSER%% %%VARBASE%%/log/hobbit
+@cwd %%VARBASE%%
+@dirrmtry log/hobbit

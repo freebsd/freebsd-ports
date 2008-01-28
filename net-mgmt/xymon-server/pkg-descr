@@ -1,0 +1,15 @@
+Hobbit is a system for monitoring servers and networks. It has a great deal
+of inspiration from the Big Brother monitor, but unlike Big Brother it is
+designed to work well whether you need to monitor small network with just
+a handful of hosts, or large networks with thousands of hosts.
+
+Hobbit is the successor to the bbgen toolkit, which has been available as
+an add-on to Big Brother since late 2002. The name change was decided upon
+when Hobbit acquired enough functionality to be a stand-alone product.
+The tools that formed the bbgen toolkit are still present in Hobbit
+and are quite important for it, so if you have used bbgen before,
+Hobbit will seem quite familiar.
+
+This is the server.
+
+WWW: http://hobbitmon.sourceforge.net/
