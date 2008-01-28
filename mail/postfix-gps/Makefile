@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gps
-PORTVERSION=	0.93
-PORTREVISION=	3
+PORTVERSION=	1.005
 CATEGORIES=	mail security
-MASTER_SITES=	http://mimo.gn.apc.org/gps/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=greylist
 PKGNAMEPREFIX=	postfix-
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+DISTNAME=	gps-${PORTVERSION}-bugfix
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Greylist Policy Service for postfix
@@ -21,23 +20,29 @@ LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
 RUN_DEPENDS=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 
 SCRIPT_FILES=	gps-maintain.pl gps-db-update.pl
+PLIST_FILES=	etc/gps.conf-dist libexec/gps libexec/gps-maintain.pl libexec/gps-db-update.pl
+SUB_FILES=	pkg-message
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/release-${PORTVERSION}
 
 USE_AUTOTOOLS=	automake:19 autoconf:261
+AUTOMAKE_ARGS=	--add-missing
 USE_GCC=	3.4+
 CONFIGURE_ARGS=	--bindir=${PREFIX}/libexec --includedir=${PREFIX}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include"	\
-		CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include"	\
-		LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"	\
+		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"	\
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL}
+
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/etc/gps.conf ${PREFIX}/etc/gps.conf-dist
 .for f in ${SCRIPT_FILES}
 	@${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/libexec
 .endfor
+.if !defined(BATCH)
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>

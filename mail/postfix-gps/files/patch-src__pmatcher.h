@@ -1,5 +1,5 @@
---- src/pmatcher.h.orig	Sun Nov 21 05:37:49 2004
-+++ src/pmatcher.h	Sun Jan  9 16:50:54 2005
+--- ./src/pmatcher.h.orig	2007-04-25 05:08:10.000000000 -0700
++++ ./src/pmatcher.h	2008-01-27 23:50:41.973446276 -0800
 @@ -24,6 +24,7 @@
  #include <string>
  //getnameinfo
