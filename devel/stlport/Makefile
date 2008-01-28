@@ -83,11 +83,13 @@ do-install:
 	${INSTALL_DATA} ${PATCH_WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
+.ifndef(PACKAGE_BUILDING)
 regression-test:
 	(cd ${WRKSRC}/../test/unit &&	\
 	${SETENV} STLPORT_LIB_DIR="${PATCH_WRKSRC}/lib"	\
 	${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} && \
 	(../../../bin/stl_unit_test || ${TRUE}) &&	\
 	(../../../bin-g/stl_unit_test  || ${TRUE}) )
+.endif
 
 .include <bsd.port.post.mk>
