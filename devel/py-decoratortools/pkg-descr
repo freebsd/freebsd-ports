@@ -1,0 +1,10 @@
+Want to use decorators, but still need to support Python 2.3?
+Wish you could have class decorators, decorate arbitrary assignments,
+or match decorated function signatures to their original functions?
+Want to get metaclass features without creating metaclasses?
+How about synchronized methods?
+
+"DecoratorTools" gets you all of this and more.
+
+Author: Phillip J. Eby
+WWW:	http://cheeseshop.python.org/pypi/DecoratorTools
