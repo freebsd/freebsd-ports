@@ -99,6 +99,7 @@ meta1m:*:263:263:MeTA1 misc:/nonexistent:/usr/sbin/nologin
 meta1:*:264:264: X other:/nonexistent:/usr/sbin/nologin
 hacluster:*:275:275:Heartbeat cluster user:/nonexistent:/usr/sbin/nologin
 mrtg:*:279:279:MRTG daemon:/nonexistent:/usr/sbin/nologin
+hobbit:*:280:280:Hobbit Monitor:/nonexistent:/usr/sbin/nologin
 prelude:*:281:281:Prelude user:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 dkfilter:*:325:325:DK Filter Owner:/nonexistent:/usr/sbin/nologin
