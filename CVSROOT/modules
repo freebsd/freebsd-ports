@@ -2182,6 +2182,7 @@ dotproject	ports/www/dotproject
 dotproject-devel	ports/www/dotproject-devel
 dotter		ports/biology/dotter
 dovecot		ports/mail/dovecot
+dovecot-antispam	ports/mail/dovecot-antispam
 dovecot-sieve	ports/mail/dovecot-sieve
 downloader	ports/ftp/downloader
 downtime	ports/sysutils/downtime
