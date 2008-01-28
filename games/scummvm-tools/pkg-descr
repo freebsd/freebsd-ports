@@ -5,6 +5,6 @@ graphics and sound. Of special note is the extract utility, which
 uses libmp3lame to compress a monster.sou file to about 25% its
 original size.
 
-WWW: http://scummvm.sourceforge.net/
+WWW: http://www.scummvm.org
 
 -Miguel Mendez <flynn@energyhq.es.eu.org>
