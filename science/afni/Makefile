@@ -1,29 +1,28 @@
 ############################################################################
 # Ports collection Makefile for:   afni
 # Date created:        11 Jan 2005
-# Whom:                bacon@smithers.neuro.mcw.edu
+# Whom:                Jason W. Bacon <jwbacon@tds.net>
 #
 # $FreeBSD$
 #
 
 ############################################################################
-# www.neuro.mcw.edu has the latest source distribution from which this port
-# is built.  It will be updated as time permits.
+# http://www.neuro.mcw.edu/Ports has the latest source distribution from
+#  which this port is built.  It will be updated as time permits.
 #
 # afni.nimh.nih.gov is the ultimate source for AFNI, and will always
 # contain the latest source release.  If this port is not up to date,
-# you can download the latest sources and build manually using
-# Makefile.BSD, which is included in the source distribution.
+# you can download the latest sources and build manually.
 
 PORTNAME=	afni
-PORTVERSION=	2007.06.15.1339
+PORTVERSION=	2008.01.02.1043
 CATEGORIES=	science biology graphics
-MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/AFNI/${PORTVERSION}/ \
+MASTER_SITES=	http://www.neuro.mcw.edu/Ports/distfiles/AFNI/${PORTVERSION}/ \
 		http://afni.nimh.nih.gov/pub/dist/tgz/
-DISTFILES=	afni_src.tgz afni.1 \
-		TTatlas+tlrc.BRIK.gz TTatlas+tlrc.HEAD CA_EZ_v1.3c-May0806.tgz
+DISTFILES=	afni_src.tgz afni.1 3dClustBust.c \
+		TTatlas+tlrc.BRIK.gz TTatlas+tlrc.HEAD CA_EZ_v1.5-July3107.tgz
 DIST_SUBDIR=	AFNI-${PORTVERSION}
-EXTRACT_ONLY=	afni_src.tgz CA_EZ_v1.3c-May0806.tgz
+EXTRACT_ONLY=	afni_src.tgz CA_EZ_v1.5-July3107.tgz
 
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	Advanced Functional Neuro Imaging
@@ -54,7 +53,7 @@ ALL_TARGET=	vastness suma
 ###########################################################################
 # Install parameters
 
-MAN1=	afni.1
+MAN1=		afni.1
 
 INSTALL_WRKSRC=	${WRKSRC}/BSD
 STAGE=		${WRKSRC}/stage
@@ -77,7 +76,9 @@ post-extract:
 .for f in ${X11R6_FILES}
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${X11BASE}|g' ${WRKSRC}/${f}
 .endfor
+	@${REINPLACE_CMD} -e 's|AFNI_2007_05_29_1644|${PORTVERSION}|g' ${WRKSRC}/AFNI_label.h
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/afni.1 ${WRKDIR}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/3dClustBust.c ${WRKSRC}
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKDIR}/afni.1
 
 post-build:
@@ -116,8 +117,8 @@ do-install:
 	${INSTALL_PROGRAM} ${STAGE}/bin/* ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${STAGE}/scripts/* ${PREFIX}/bin
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/TTatlas* ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.3c-May0806/* ${DATADIR}
-	${INSTALL_MAN} ${WRKDIR}/afni.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.5-July3107/* ${DATADIR}
+	${INSTALL_MAN} ${WRKDIR}/afni.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${STAGE}/doc/* ${DOCSDIR}

@@ -1,11 +1,21 @@
---- Makefile.INCLUDE.orig	Fri Apr 27 15:03:08 2007
-+++ Makefile.INCLUDE	Fri Apr 27 15:03:29 2007
+--- Makefile.INCLUDE.orig	Thu Jun  7 13:40:04 2007
++++ Makefile.INCLUDE	Thu Aug 30 14:12:08 2007
 @@ -41,7 +41,7 @@
  ## AFNI package, but included because they are useful.  Some of
  ## them are Open Source programs, not from the AFNI group at all.
  
 -EXTRAS   = cjpeg djpeg whirlgif mpeg_encode myget Xphace rmz aiv $(EXPROGS)
-+EXTRAS   = myget Xphace rmz aiv $(EXPROGS)
++EXTRAS   = myget Xphace rmz aiv 3dClustBust $(EXPROGS)
  
  # mpegtoppm in above list
  
+@@ -234,6 +234,9 @@
+ 
+ 3dbuc2fim:3dbuc2fim.o
+ 	$(CC) -o 3dbuc2fim 3dbuc2fim.o $(LFLAGS) $(LLIBS)
++
++3dClustBust:3dClustBust.c
++	$(CC) -o 3dClustBust 3dClustBust.c $(INFLAGS) $(LFLAGS) $(LLIBS)
+ 
+ mritopgm:mritopgm.c
+ 	$(CC) -o mritopgm mritopgm.c $(INFLAGS) $(LFLAGS) $(LLIBS)
