@@ -65,4 +65,10 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>
