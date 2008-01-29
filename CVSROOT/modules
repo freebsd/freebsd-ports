@@ -695,6 +695,7 @@ aview		ports/graphics/aview
 avifile		ports/multimedia/avifile
 avifonts	ports/x11-fonts/avifonts
 avinfo		ports/multimedia/avinfo
+avis		ports/java/avis
 avltree		ports/devel/avltree
 avr-binutils	ports/devel/avr-binutils
 avr-gcc		ports/devel/avr-gcc
