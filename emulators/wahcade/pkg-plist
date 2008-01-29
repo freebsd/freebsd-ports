@@ -58,6 +58,7 @@ share/pixmaps/wahcade.png
 %%DATADIR%%/glade/win_scrsave.png
 %%DATADIR%%/glade2.py
 %%DATADIR%%/gst_media.py
+%%DATADIR%%/joystick.py
 %%DATADIR%%/key_consts.py
 %%DATADIR%%/layout_editor.py
 %%DATADIR%%/layout_props.py
@@ -99,6 +100,7 @@ share/pixmaps/wahcade.png
 %%DATADIR%%/win_cpviewer.py
 %%DATADIR%%/win_filter.py
 %%DATADIR%%/win_history.py
+%%DATADIR%%/win_list.py
 %%DATADIR%%/win_main.py
 %%DATADIR%%/win_message.py
 %%DATADIR%%/win_options.py
