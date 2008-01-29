@@ -35,7 +35,8 @@ OPTIONS=	GNOMEDESKTOP	"Enable GNOME desktop support"		off \
 		BEASTIE		"Use Beastie'fied startup button"	off \
 		NLS		"Enable National Language Support"	on
 
-PORTSCOUT=	limitw:2,even skipb:yes
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
