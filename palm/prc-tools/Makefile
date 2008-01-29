@@ -68,6 +68,10 @@ CFLAGS:=	${CFLAGS:C/-m[-=0-9a-z]*//g}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+BROKEN=		does not configure
+.endif
+
 post-extract:
 	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS})
 
