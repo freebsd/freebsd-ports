@@ -1,9 +1,0 @@
-WMII is a dynamic window manager for X11.  It supports classic and dynamic
-window management with extended keyboard, mouse, and filesystem based remote
-control.  It replaces the workspace paradigm with a new tagging approach.
-
-Its minimalist philosophy attempts to not exceed 10.000 lines of code
-(including all shipped utilities and libraries), to enforce simplicity and
-clarity.
-
-WWW: http://www.suckless.org/wiki/wmii

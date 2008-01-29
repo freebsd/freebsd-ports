@@ -17,8 +17,6 @@ LIB_DEPENDS=	ixp.1:${PORTSDIR}/devel/libixp
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu \
 		${LOCALBASE}/9/bin/rc:${PORTSDIR}/devel/9base
 
-CONFLICTS=	wmii-3.5.*
-
 USE_ICONV=	yes
 USE_XLIB=	yes
 
