@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fillets-ng
-PORTVERSION=	0.7.4
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	fillets
@@ -24,15 +23,13 @@ USE_LUA=	5.1
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=		CPPFLAGS="-I${LUA_INCDIR}" LDFLAGS="-L${LUA_LIBDIR}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--datadir="${DATADIR}" --with-lua="${LOCALBASE}"
-CPPFLAGS=	-I${LUA_INCDIR}
-LDFLAGS=	-L${LUA_LIBDIR}
 
-OPTIONS=	FRIBIDI		"Enable fribidi support"	off
+OPTIONS=	FRIBIDI	"Enable fribidi support" on
 
-DATAVERSION=	0.7.4
+DATAVERSION=	0.8.0
 
 PORTDOCS=	*
 
@@ -42,7 +39,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_FRIBIDI)
+.if !defined(WITHOUT_FRIBIDI)
 LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 .endif
 
@@ -71,9 +68,7 @@ post-extract:
 		${PORTNAME}-data-${DATAVERSION}/doc
 .endif
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/game/fillets ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/fillets.6 ${PREFIX}/man/man6/fillets.6
+post-install:
 	@cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION}; \
 		${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \; ;\
 		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;

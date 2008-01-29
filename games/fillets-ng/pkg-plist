@@ -2145,6 +2145,22 @@ bin/fillets
 %%DATADIR%%/images/grail/gral_00.png
 %%DATADIR%%/images/grail/gral_01.png
 %%DATADIR%%/images/grail/poster.png
+%%DATADIR%%/images/hanoi/dole.png
+%%DATADIR%%/images/hanoi/dolez.png
+%%DATADIR%%/images/hanoi/nahore.png
+%%DATADIR%%/images/hanoi/nahorez.png
+%%DATADIR%%/images/hanoi/nejnize.png
+%%DATADIR%%/images/hanoi/nejnizez.png
+%%DATADIR%%/images/hanoi/nejvyse.png
+%%DATADIR%%/images/hanoi/nejvysez.png
+%%DATADIR%%/images/hanoi/ocel.png
+%%DATADIR%%/images/hanoi/popredi.png
+%%DATADIR%%/images/hanoi/pozadi.png
+%%DATADIR%%/images/hanoi/styc.png
+%%DATADIR%%/images/hanoi/tyc.png
+%%DATADIR%%/images/hanoi/uprostred.png
+%%DATADIR%%/images/hanoi/uprostredz.png
+%%DATADIR%%/images/hanoi/vocel.png
 %%DATADIR%%/images/hardware/pozadi2.png
 %%DATADIR%%/images/hardware/procesor1.png
 %%DATADIR%%/images/hardware/procesor2.png
@@ -2164,6 +2180,45 @@ bin/fillets
 %%DATADIR%%/images/hardware/val5.png
 %%DATADIR%%/images/hardware/val6.png
 %%DATADIR%%/images/hardware/val7.png
+%%DATADIR%%/images/hole/barva_00.png
+%%DATADIR%%/images/hole/barva_01.png
+%%DATADIR%%/images/hole/barva_02.png
+%%DATADIR%%/images/hole/barva_03.png
+%%DATADIR%%/images/hole/barva_04.png
+%%DATADIR%%/images/hole/barva_05.png
+%%DATADIR%%/images/hole/kreveta.png
+%%DATADIR%%/images/hole/kriz.png
+%%DATADIR%%/images/hole/lebka_00.png
+%%DATADIR%%/images/hole/lebka_01.png
+%%DATADIR%%/images/hole/lebka_02.png
+%%DATADIR%%/images/hole/lebka_03.png
+%%DATADIR%%/images/hole/lebka_04.png
+%%DATADIR%%/images/hole/lebka_05.png
+%%DATADIR%%/images/hole/nindpar.png
+%%DATADIR%%/images/hole/ocel_00.png
+%%DATADIR%%/images/hole/ocel_01.png
+%%DATADIR%%/images/hole/ocel_02.png
+%%DATADIR%%/images/hole/ocel_03.png
+%%DATADIR%%/images/hole/ocel_04.png
+%%DATADIR%%/images/hole/ocel_05.png
+%%DATADIR%%/images/hole/ocel_06.png
+%%DATADIR%%/images/hole/ocel_07.png
+%%DATADIR%%/images/hole/ocel_08.png
+%%DATADIR%%/images/hole/ocel_09.png
+%%DATADIR%%/images/hole/ocel_10.png
+%%DATADIR%%/images/hole/popredi.png
+%%DATADIR%%/images/hole/pozadi.png
+%%DATADIR%%/images/hole/shrimp_00.png
+%%DATADIR%%/images/hole/shrimp_01.png
+%%DATADIR%%/images/hole/shrimp_02.png
+%%DATADIR%%/images/hole/shrimp_03.png
+%%DATADIR%%/images/hole/shrimp_04.png
+%%DATADIR%%/images/hole/zsluch_00.png
+%%DATADIR%%/images/hole/zsluch_01.png
+%%DATADIR%%/images/hole/zsluch_02.png
+%%DATADIR%%/images/hole/zsluch_03.png
+%%DATADIR%%/images/hole/zsluch_04.png
+%%DATADIR%%/images/hole/zsluch_05.png
 %%DATADIR%%/images/icon.png
 %%DATADIR%%/images/imprisoned/coral_cerv.png
 %%DATADIR%%/images/imprisoned/konik_00.png
@@ -2311,6 +2366,9 @@ bin/fillets
 %%DATADIR%%/images/menu/flags/it.png
 %%DATADIR%%/images/menu/flags/nl.png
 %%DATADIR%%/images/menu/flags/pl.png
+%%DATADIR%%/images/menu/flags/pt_br.png
+%%DATADIR%%/images/menu/flags/ru.png
+%%DATADIR%%/images/menu/flags/sl.png
 %%DATADIR%%/images/menu/flags/sv.png
 %%DATADIR%%/images/menu/intro.png
 %%DATADIR%%/images/menu/lang.png
@@ -2394,6 +2452,17 @@ bin/fillets
 %%DATADIR%%/images/noground/noground-w.png
 %%DATADIR%%/images/noground/podkova.png
 %%DATADIR%%/images/noground/pohr.png
+%%DATADIR%%/images/nowall/drak_m_00.png
+%%DATADIR%%/images/nowall/hvezdy2.png
+%%DATADIR%%/images/nowall/krab_00.png
+%%DATADIR%%/images/nowall/matrace.png
+%%DATADIR%%/images/nowall/mocel.png
+%%DATADIR%%/images/nowall/netopejr_00.png
+%%DATADIR%%/images/nowall/perla_00.png
+%%DATADIR%%/images/nowall/plz_00.png
+%%DATADIR%%/images/nowall/pozadi.png
+%%DATADIR%%/images/nowall/vocel.png
+%%DATADIR%%/images/nowall/zlato3.png
 %%DATADIR%%/images/party1/1-ocel.png
 %%DATADIR%%/images/party1/dama_00.png
 %%DATADIR%%/images/party1/dama_01.png
@@ -2907,6 +2976,103 @@ bin/fillets
 %%DATADIR%%/images/reef/plz_06.png
 %%DATADIR%%/images/reef/utes-p.png
 %%DATADIR%%/images/reef/utes-w.png
+%%DATADIR%%/images/rotate/ocel1.png
+%%DATADIR%%/images/rotate/ocel2.png
+%%DATADIR%%/images/rotate/ocel3.png
+%%DATADIR%%/images/rotate/popredi.png
+%%DATADIR%%/images/rotate/pozadi.png
+%%DATADIR%%/images/rotate/svetlo_00.png
+%%DATADIR%%/images/rotate/svetlo_01.png
+%%DATADIR%%/images/rotate/svetlo_02.png
+%%DATADIR%%/images/rotate/svetlo_03.png
+%%DATADIR%%/images/rotate/svetlo_04.png
+%%DATADIR%%/images/rotate/svetlo_05.png
+%%DATADIR%%/images/rotate/svetlo_06.png
+%%DATADIR%%/images/rotate/tma.png
+%%DATADIR%%/images/rotate/tyc_00.png
+%%DATADIR%%/images/rotate/tyc_01.png
+%%DATADIR%%/images/rotate/tyc_02.png
+%%DATADIR%%/images/rotate/tyc_03.png
+%%DATADIR%%/images/rotate/tyc_04.png
+%%DATADIR%%/images/rotate/tyc_05.png
+%%DATADIR%%/images/rotate/tyc_06.png
+%%DATADIR%%/images/rotate/tyc_07.png
+%%DATADIR%%/images/rotate/tyc_08.png
+%%DATADIR%%/images/rotate/tyc_09.png
+%%DATADIR%%/images/rotate/tyc_10.png
+%%DATADIR%%/images/rotate/tyc_11.png
+%%DATADIR%%/images/rotate/tyc_12.png
+%%DATADIR%%/images/rotate/tyc_13.png
+%%DATADIR%%/images/rotate/tyc_14.png
+%%DATADIR%%/images/rotate/valec_00.png
+%%DATADIR%%/images/rotate/valec_01.png
+%%DATADIR%%/images/rotate/valec_02.png
+%%DATADIR%%/images/rotate/valec_03.png
+%%DATADIR%%/images/rotate/valec_04.png
+%%DATADIR%%/images/rotate/valec_05.png
+%%DATADIR%%/images/rotate/valec_06.png
+%%DATADIR%%/images/rotate/valec_07.png
+%%DATADIR%%/images/rotate/valec_08.png
+%%DATADIR%%/images/rotate/valec_09.png
+%%DATADIR%%/images/rotate/valec_10.png
+%%DATADIR%%/images/rotate/valec_11.png
+%%DATADIR%%/images/rotate/valec_12.png
+%%DATADIR%%/images/rotate/valec_13.png
+%%DATADIR%%/images/rotate/valec_14.png
+%%DATADIR%%/images/rotate/valec_15.png
+%%DATADIR%%/images/rotate/valec_16.png
+%%DATADIR%%/images/rotate/valec_17.png
+%%DATADIR%%/images/rotate/valec_18.png
+%%DATADIR%%/images/rotate/valec_19.png
+%%DATADIR%%/images/rotate/valec_20.png
+%%DATADIR%%/images/rotate/valec_21.png
+%%DATADIR%%/images/rotate/valec_22.png
+%%DATADIR%%/images/rotate/valec_23.png
+%%DATADIR%%/images/rotate/valec_24.png
+%%DATADIR%%/images/rotate/valec_25.png
+%%DATADIR%%/images/rotate/valec_26.png
+%%DATADIR%%/images/rotate/valec_27.png
+%%DATADIR%%/images/rotate/valec_28.png
+%%DATADIR%%/images/rotate/valec_29.png
+%%DATADIR%%/images/rotate/valec_30.png
+%%DATADIR%%/images/rush/ceauto_00.png
+%%DATADIR%%/images/rush/ceauto_01.png
+%%DATADIR%%/images/rush/ceauto_02.png
+%%DATADIR%%/images/rush/ceauto_03.png
+%%DATADIR%%/images/rush/ceauto_04.png
+%%DATADIR%%/images/rush/cyauto_00.png
+%%DATADIR%%/images/rush/cyauto_01.png
+%%DATADIR%%/images/rush/cyauto_02.png
+%%DATADIR%%/images/rush/fiauto_00.png
+%%DATADIR%%/images/rush/fiauto_01.png
+%%DATADIR%%/images/rush/fiauto_02.png
+%%DATADIR%%/images/rush/hnauto_00.png
+%%DATADIR%%/images/rush/hnauto_01.png
+%%DATADIR%%/images/rush/hnauto_02.png
+%%DATADIR%%/images/rush/maauto_00.png
+%%DATADIR%%/images/rush/maauto_01.png
+%%DATADIR%%/images/rush/maauto_02.png
+%%DATADIR%%/images/rush/moauto_00.png
+%%DATADIR%%/images/rush/moauto_01.png
+%%DATADIR%%/images/rush/moauto_02.png
+%%DATADIR%%/images/rush/orauto_00.png
+%%DATADIR%%/images/rush/orauto_01.png
+%%DATADIR%%/images/rush/orauto_02.png
+%%DATADIR%%/images/rush/podlozka.png
+%%DATADIR%%/images/rush/popredi.png
+%%DATADIR%%/images/rush/pozadi.png
+%%DATADIR%%/images/rush/ssauto_00.png
+%%DATADIR%%/images/rush/ssauto_01.png
+%%DATADIR%%/images/rush/ssauto_02.png
+%%DATADIR%%/images/rush/tsauto_00.png
+%%DATADIR%%/images/rush/tsauto_01.png
+%%DATADIR%%/images/rush/tsauto_02.png
+%%DATADIR%%/images/rush/zeauto_00.png
+%%DATADIR%%/images/rush/zeauto_01.png
+%%DATADIR%%/images/rush/zeauto_02.png
+%%DATADIR%%/images/rush/zlauto_00.png
+%%DATADIR%%/images/rush/zlauto_01.png
+%%DATADIR%%/images/rush/zlauto_02.png
 %%DATADIR%%/images/snowman/posun-1-tmp.png
 %%DATADIR%%/images/snowman/snehulak_00.png
 %%DATADIR%%/images/snowman/snehulak_01.png
@@ -3389,6 +3555,8 @@ bin/fillets
 %%DATADIR%%/script/airplane/dialogs_it.lua
 %%DATADIR%%/script/airplane/dialogs_nl.lua
 %%DATADIR%%/script/airplane/dialogs_pl.lua
+%%DATADIR%%/script/airplane/dialogs_ru.lua
+%%DATADIR%%/script/airplane/dialogs_sl.lua
 %%DATADIR%%/script/airplane/dialogs_sv.lua
 %%DATADIR%%/script/airplane/init.lua
 %%DATADIR%%/script/airplane/models.lua
@@ -3404,6 +3572,7 @@ bin/fillets
 %%DATADIR%%/script/alibaba/dialogs_it.lua
 %%DATADIR%%/script/alibaba/dialogs_nl.lua
 %%DATADIR%%/script/alibaba/dialogs_pl.lua
+%%DATADIR%%/script/alibaba/dialogs_ru.lua
 %%DATADIR%%/script/alibaba/dialogs_sv.lua
 %%DATADIR%%/script/alibaba/init.lua
 %%DATADIR%%/script/alibaba/models.lua
@@ -3445,6 +3614,7 @@ bin/fillets
 %%DATADIR%%/script/aztec/dialogs_it.lua
 %%DATADIR%%/script/aztec/dialogs_nl.lua
 %%DATADIR%%/script/aztec/dialogs_pl.lua
+%%DATADIR%%/script/aztec/dialogs_ru.lua
 %%DATADIR%%/script/aztec/dialogs_sv.lua
 %%DATADIR%%/script/aztec/init.lua
 %%DATADIR%%/script/aztec/models.lua
@@ -3472,6 +3642,7 @@ bin/fillets
 %%DATADIR%%/script/barrel/dialogs_it.lua
 %%DATADIR%%/script/barrel/dialogs_nl.lua
 %%DATADIR%%/script/barrel/dialogs_pl.lua
+%%DATADIR%%/script/barrel/dialogs_ru.lua
 %%DATADIR%%/script/barrel/dialogs_sv.lua
 %%DATADIR%%/script/barrel/init.lua
 %%DATADIR%%/script/barrel/models.lua
@@ -3487,6 +3658,7 @@ bin/fillets
 %%DATADIR%%/script/bathroom/dialogs_it.lua
 %%DATADIR%%/script/bathroom/dialogs_nl.lua
 %%DATADIR%%/script/bathroom/dialogs_pl.lua
+%%DATADIR%%/script/bathroom/dialogs_ru.lua
 %%DATADIR%%/script/bathroom/dialogs_sv.lua
 %%DATADIR%%/script/bathroom/init.lua
 %%DATADIR%%/script/bathroom/models.lua
@@ -3501,6 +3673,8 @@ bin/fillets
 %%DATADIR%%/script/bathyscaph/dialogs_it.lua
 %%DATADIR%%/script/bathyscaph/dialogs_nl.lua
 %%DATADIR%%/script/bathyscaph/dialogs_pl.lua
+%%DATADIR%%/script/bathyscaph/dialogs_ru.lua
+%%DATADIR%%/script/bathyscaph/dialogs_sl.lua
 %%DATADIR%%/script/bathyscaph/dialogs_sv.lua
 %%DATADIR%%/script/bathyscaph/init.lua
 %%DATADIR%%/script/bathyscaph/models.lua
@@ -3514,6 +3688,8 @@ bin/fillets
 %%DATADIR%%/script/briefcase/brief_dialogs_it.lua
 %%DATADIR%%/script/briefcase/brief_dialogs_nl.lua
 %%DATADIR%%/script/briefcase/brief_dialogs_pl.lua
+%%DATADIR%%/script/briefcase/brief_dialogs_ru.lua
+%%DATADIR%%/script/briefcase/brief_dialogs_sl.lua
 %%DATADIR%%/script/briefcase/brief_dialogs_sv.lua
 %%DATADIR%%/script/briefcase/code.lua
 %%DATADIR%%/script/briefcase/demo_briefcase.lua
@@ -3529,6 +3705,8 @@ bin/fillets
 %%DATADIR%%/script/briefcase/dialogs_it.lua
 %%DATADIR%%/script/briefcase/dialogs_nl.lua
 %%DATADIR%%/script/briefcase/dialogs_pl.lua
+%%DATADIR%%/script/briefcase/dialogs_ru.lua
+%%DATADIR%%/script/briefcase/dialogs_sl.lua
 %%DATADIR%%/script/briefcase/dialogs_sv.lua
 %%DATADIR%%/script/briefcase/init.lua
 %%DATADIR%%/script/briefcase/models.lua
@@ -3544,6 +3722,8 @@ bin/fillets
 %%DATADIR%%/script/broom/dialogs_it.lua
 %%DATADIR%%/script/broom/dialogs_nl.lua
 %%DATADIR%%/script/broom/dialogs_pl.lua
+%%DATADIR%%/script/broom/dialogs_ru.lua
+%%DATADIR%%/script/broom/dialogs_sl.lua
 %%DATADIR%%/script/broom/dialogs_sv.lua
 %%DATADIR%%/script/broom/init.lua
 %%DATADIR%%/script/broom/models.lua
@@ -3588,6 +3768,7 @@ bin/fillets
 %%DATADIR%%/script/cancan/dialogs_it.lua
 %%DATADIR%%/script/cancan/dialogs_nl.lua
 %%DATADIR%%/script/cancan/dialogs_pl.lua
+%%DATADIR%%/script/cancan/dialogs_ru.lua
 %%DATADIR%%/script/cancan/dialogs_sv.lua
 %%DATADIR%%/script/cancan/init.lua
 %%DATADIR%%/script/cancan/models.lua
@@ -3646,6 +3827,8 @@ bin/fillets
 %%DATADIR%%/script/cellar/dialogs_it.lua
 %%DATADIR%%/script/cellar/dialogs_nl.lua
 %%DATADIR%%/script/cellar/dialogs_pl.lua
+%%DATADIR%%/script/cellar/dialogs_ru.lua
+%%DATADIR%%/script/cellar/dialogs_sl.lua
 %%DATADIR%%/script/cellar/dialogs_sv.lua
 %%DATADIR%%/script/cellar/init.lua
 %%DATADIR%%/script/cellar/models.lua
@@ -3690,6 +3873,7 @@ bin/fillets
 %%DATADIR%%/script/columns/dialogs_it.lua
 %%DATADIR%%/script/columns/dialogs_nl.lua
 %%DATADIR%%/script/columns/dialogs_pl.lua
+%%DATADIR%%/script/columns/dialogs_sl.lua
 %%DATADIR%%/script/columns/dialogs_sv.lua
 %%DATADIR%%/script/columns/init.lua
 %%DATADIR%%/script/columns/models.lua
@@ -3705,6 +3889,7 @@ bin/fillets
 %%DATADIR%%/script/computer/dialogs_it.lua
 %%DATADIR%%/script/computer/dialogs_nl.lua
 %%DATADIR%%/script/computer/dialogs_pl.lua
+%%DATADIR%%/script/computer/dialogs_ru.lua
 %%DATADIR%%/script/computer/dialogs_sv.lua
 %%DATADIR%%/script/computer/init.lua
 %%DATADIR%%/script/computer/models.lua
@@ -3719,6 +3904,7 @@ bin/fillets
 %%DATADIR%%/script/corals/dialogs_it.lua
 %%DATADIR%%/script/corals/dialogs_nl.lua
 %%DATADIR%%/script/corals/dialogs_pl.lua
+%%DATADIR%%/script/corals/dialogs_ru.lua
 %%DATADIR%%/script/corals/dialogs_sv.lua
 %%DATADIR%%/script/corals/init.lua
 %%DATADIR%%/script/corals/models.lua
@@ -3764,6 +3950,7 @@ bin/fillets
 %%DATADIR%%/script/creatures/dialogs_it.lua
 %%DATADIR%%/script/creatures/dialogs_nl.lua
 %%DATADIR%%/script/creatures/dialogs_pl.lua
+%%DATADIR%%/script/creatures/dialogs_ru.lua
 %%DATADIR%%/script/creatures/dialogs_sv.lua
 %%DATADIR%%/script/creatures/init.lua
 %%DATADIR%%/script/creatures/models.lua
@@ -3778,6 +3965,7 @@ bin/fillets
 %%DATADIR%%/script/duckie/dialogs_it.lua
 %%DATADIR%%/script/duckie/dialogs_nl.lua
 %%DATADIR%%/script/duckie/dialogs_pl.lua
+%%DATADIR%%/script/duckie/dialogs_ru.lua
 %%DATADIR%%/script/duckie/dialogs_sv.lua
 %%DATADIR%%/script/duckie/init.lua
 %%DATADIR%%/script/duckie/models.lua
@@ -3792,6 +3980,7 @@ bin/fillets
 %%DATADIR%%/script/dump/dialogs_it.lua
 %%DATADIR%%/script/dump/dialogs_nl.lua
 %%DATADIR%%/script/dump/dialogs_pl.lua
+%%DATADIR%%/script/dump/dialogs_ru.lua
 %%DATADIR%%/script/dump/dialogs_sv.lua
 %%DATADIR%%/script/dump/init.lua
 %%DATADIR%%/script/dump/models.lua
@@ -3807,6 +3996,8 @@ bin/fillets
 %%DATADIR%%/script/elevator1/dialogs_it.lua
 %%DATADIR%%/script/elevator1/dialogs_nl.lua
 %%DATADIR%%/script/elevator1/dialogs_pl.lua
+%%DATADIR%%/script/elevator1/dialogs_ru.lua
+%%DATADIR%%/script/elevator1/dialogs_sl.lua
 %%DATADIR%%/script/elevator1/dialogs_sv.lua
 %%DATADIR%%/script/elevator1/init.lua
 %%DATADIR%%/script/elevator1/models.lua
@@ -3836,6 +4027,7 @@ bin/fillets
 %%DATADIR%%/script/elk/dialogs_it.lua
 %%DATADIR%%/script/elk/dialogs_nl.lua
 %%DATADIR%%/script/elk/dialogs_pl.lua
+%%DATADIR%%/script/elk/dialogs_ru.lua
 %%DATADIR%%/script/elk/dialogs_sv.lua
 %%DATADIR%%/script/elk/init.lua
 %%DATADIR%%/script/elk/models.lua
@@ -3851,6 +4043,7 @@ bin/fillets
 %%DATADIR%%/script/emulator/dialogs_it.lua
 %%DATADIR%%/script/emulator/dialogs_nl.lua
 %%DATADIR%%/script/emulator/dialogs_pl.lua
+%%DATADIR%%/script/emulator/dialogs_ru.lua
 %%DATADIR%%/script/emulator/dialogs_sv.lua
 %%DATADIR%%/script/emulator/init.lua
 %%DATADIR%%/script/emulator/models.lua
@@ -3917,9 +4110,6 @@ bin/fillets
 %%DATADIR%%/script/fdto/dialogs_cs.lua
 %%DATADIR%%/script/fdto/dialogs_de.lua
 %%DATADIR%%/script/fdto/dialogs_en.lua
-%%DATADIR%%/script/fdto/dialogs_es.lua
-%%DATADIR%%/script/fdto/dialogs_fr.lua
-%%DATADIR%%/script/fdto/dialogs_it.lua
 %%DATADIR%%/script/fdto/dialogs_nl.lua
 %%DATADIR%%/script/fdto/dialogs_pl.lua
 %%DATADIR%%/script/fdto/dialogs_sv.lua
@@ -3976,6 +4166,7 @@ bin/fillets
 %%DATADIR%%/script/gods/demo_dialogs_it.lua
 %%DATADIR%%/script/gods/demo_dialogs_nl.lua
 %%DATADIR%%/script/gods/demo_dialogs_pl.lua
+%%DATADIR%%/script/gods/demo_dialogs_sl.lua
 %%DATADIR%%/script/gods/demo_dialogs_sv.lua
 %%DATADIR%%/script/gods/demo_poster.lua
 %%DATADIR%%/script/gods/dialogs.lua
@@ -3989,6 +4180,7 @@ bin/fillets
 %%DATADIR%%/script/gods/dialogs_it.lua
 %%DATADIR%%/script/gods/dialogs_nl.lua
 %%DATADIR%%/script/gods/dialogs_pl.lua
+%%DATADIR%%/script/gods/dialogs_sl.lua
 %%DATADIR%%/script/gods/dialogs_sv.lua
 %%DATADIR%%/script/gods/init.lua
 %%DATADIR%%/script/gods/models.lua
@@ -4020,6 +4212,16 @@ bin/fillets
 %%DATADIR%%/script/grail/dialogs_sv.lua
 %%DATADIR%%/script/grail/init.lua
 %%DATADIR%%/script/grail/models.lua
+%%DATADIR%%/script/hanoi/code.lua
+%%DATADIR%%/script/hanoi/dialogs.lua
+%%DATADIR%%/script/hanoi/dialogs_cs.lua
+%%DATADIR%%/script/hanoi/dialogs_de.lua
+%%DATADIR%%/script/hanoi/dialogs_de_CH.lua
+%%DATADIR%%/script/hanoi/dialogs_en.lua
+%%DATADIR%%/script/hanoi/dialogs_nl.lua
+%%DATADIR%%/script/hanoi/dialogs_sv.lua
+%%DATADIR%%/script/hanoi/init.lua
+%%DATADIR%%/script/hanoi/models.lua
 %%DATADIR%%/script/hardware/code.lua
 %%DATADIR%%/script/hardware/dialogs.lua
 %%DATADIR%%/script/hardware/dialogs_bg.lua
@@ -4034,6 +4236,15 @@ bin/fillets
 %%DATADIR%%/script/hardware/dialogs_sv.lua
 %%DATADIR%%/script/hardware/init.lua
 %%DATADIR%%/script/hardware/models.lua
+%%DATADIR%%/script/hole/code.lua
+%%DATADIR%%/script/hole/dialogs.lua
+%%DATADIR%%/script/hole/dialogs_cs.lua
+%%DATADIR%%/script/hole/dialogs_de.lua
+%%DATADIR%%/script/hole/dialogs_en.lua
+%%DATADIR%%/script/hole/dialogs_nl.lua
+%%DATADIR%%/script/hole/dialogs_sv.lua
+%%DATADIR%%/script/hole/init.lua
+%%DATADIR%%/script/hole/models.lua
 %%DATADIR%%/script/imprisoned/code.lua
 %%DATADIR%%/script/imprisoned/dialogs.lua
 %%DATADIR%%/script/imprisoned/dialogs_bg.lua
@@ -4045,6 +4256,7 @@ bin/fillets
 %%DATADIR%%/script/imprisoned/dialogs_it.lua
 %%DATADIR%%/script/imprisoned/dialogs_nl.lua
 %%DATADIR%%/script/imprisoned/dialogs_pl.lua
+%%DATADIR%%/script/imprisoned/dialogs_ru.lua
 %%DATADIR%%/script/imprisoned/dialogs_sv.lua
 %%DATADIR%%/script/imprisoned/init.lua
 %%DATADIR%%/script/imprisoned/models.lua
@@ -4076,6 +4288,7 @@ bin/fillets
 %%DATADIR%%/script/labyrinth/dialogs_it.lua
 %%DATADIR%%/script/labyrinth/dialogs_nl.lua
 %%DATADIR%%/script/labyrinth/dialogs_pl.lua
+%%DATADIR%%/script/labyrinth/dialogs_ru.lua
 %%DATADIR%%/script/labyrinth/dialogs_sv.lua
 %%DATADIR%%/script/labyrinth/init.lua
 %%DATADIR%%/script/labyrinth/models.lua
@@ -4092,6 +4305,7 @@ bin/fillets
 %%DATADIR%%/script/library/dialogs_it.lua
 %%DATADIR%%/script/library/dialogs_nl.lua
 %%DATADIR%%/script/library/dialogs_pl.lua
+%%DATADIR%%/script/library/dialogs_ru.lua
 %%DATADIR%%/script/library/dialogs_sv.lua
 %%DATADIR%%/script/library/init.lua
 %%DATADIR%%/script/library/models.lua
@@ -4159,9 +4373,19 @@ bin/fillets
 %%DATADIR%%/script/noground/dialogs_it.lua
 %%DATADIR%%/script/noground/dialogs_nl.lua
 %%DATADIR%%/script/noground/dialogs_pl.lua
+%%DATADIR%%/script/noground/dialogs_ru.lua
 %%DATADIR%%/script/noground/dialogs_sv.lua
 %%DATADIR%%/script/noground/init.lua
 %%DATADIR%%/script/noground/models.lua
+%%DATADIR%%/script/nowall/code.lua
+%%DATADIR%%/script/nowall/dialogs.lua
+%%DATADIR%%/script/nowall/dialogs_cs.lua
+%%DATADIR%%/script/nowall/dialogs_de.lua
+%%DATADIR%%/script/nowall/dialogs_en.lua
+%%DATADIR%%/script/nowall/dialogs_nl.lua
+%%DATADIR%%/script/nowall/dialogs_sv.lua
+%%DATADIR%%/script/nowall/init.lua
+%%DATADIR%%/script/nowall/models.lua
 %%DATADIR%%/script/party1/code.lua
 %%DATADIR%%/script/party1/dialogs.lua
 %%DATADIR%%/script/party1/dialogs_bg.lua
@@ -4173,6 +4397,8 @@ bin/fillets
 %%DATADIR%%/script/party1/dialogs_it.lua
 %%DATADIR%%/script/party1/dialogs_nl.lua
 %%DATADIR%%/script/party1/dialogs_pl.lua
+%%DATADIR%%/script/party1/dialogs_ru.lua
+%%DATADIR%%/script/party1/dialogs_sl.lua
 %%DATADIR%%/script/party1/dialogs_sv.lua
 %%DATADIR%%/script/party1/init.lua
 %%DATADIR%%/script/party1/models.lua
@@ -4187,6 +4413,7 @@ bin/fillets
 %%DATADIR%%/script/party2/dialogs_it.lua
 %%DATADIR%%/script/party2/dialogs_nl.lua
 %%DATADIR%%/script/party2/dialogs_pl.lua
+%%DATADIR%%/script/party2/dialogs_sl.lua
 %%DATADIR%%/script/party2/dialogs_sv.lua
 %%DATADIR%%/script/party2/init.lua
 %%DATADIR%%/script/party2/models.lua
@@ -4256,6 +4483,7 @@ bin/fillets
 %%DATADIR%%/script/puzzle/dialogs_it.lua
 %%DATADIR%%/script/puzzle/dialogs_nl.lua
 %%DATADIR%%/script/puzzle/dialogs_pl.lua
+%%DATADIR%%/script/puzzle/dialogs_ru.lua
 %%DATADIR%%/script/puzzle/dialogs_sv.lua
 %%DATADIR%%/script/puzzle/init.lua
 %%DATADIR%%/script/puzzle/models.lua
@@ -4300,9 +4528,37 @@ bin/fillets
 %%DATADIR%%/script/reef/dialogs_it.lua
 %%DATADIR%%/script/reef/dialogs_nl.lua
 %%DATADIR%%/script/reef/dialogs_pl.lua
+%%DATADIR%%/script/reef/dialogs_ru.lua
+%%DATADIR%%/script/reef/dialogs_sl.lua
 %%DATADIR%%/script/reef/dialogs_sv.lua
 %%DATADIR%%/script/reef/init.lua
 %%DATADIR%%/script/reef/models.lua
+%%DATADIR%%/script/rotate/code.lua
+%%DATADIR%%/script/rotate/dialogs.lua
+%%DATADIR%%/script/rotate/dialogs_bg.lua
+%%DATADIR%%/script/rotate/dialogs_cs.lua
+%%DATADIR%%/script/rotate/dialogs_de.lua
+%%DATADIR%%/script/rotate/dialogs_en.lua
+%%DATADIR%%/script/rotate/dialogs_es.lua
+%%DATADIR%%/script/rotate/dialogs_fr.lua
+%%DATADIR%%/script/rotate/dialogs_it.lua
+%%DATADIR%%/script/rotate/dialogs_nl.lua
+%%DATADIR%%/script/rotate/dialogs_pl.lua
+%%DATADIR%%/script/rotate/dialogs_ru.lua
+%%DATADIR%%/script/rotate/dialogs_sl.lua
+%%DATADIR%%/script/rotate/dialogs_sv.lua
+%%DATADIR%%/script/rotate/init.lua
+%%DATADIR%%/script/rotate/models.lua
+%%DATADIR%%/script/rush/code.lua
+%%DATADIR%%/script/rush/dialogs.lua
+%%DATADIR%%/script/rush/dialogs_cs.lua
+%%DATADIR%%/script/rush/dialogs_de.lua
+%%DATADIR%%/script/rush/dialogs_de_CH.lua
+%%DATADIR%%/script/rush/dialogs_en.lua
+%%DATADIR%%/script/rush/dialogs_nl.lua
+%%DATADIR%%/script/rush/dialogs_sv.lua
+%%DATADIR%%/script/rush/init.lua
+%%DATADIR%%/script/rush/models.lua
 %%DATADIR%%/script/select_lang.lua
 %%DATADIR%%/script/select_speech.lua
 %%DATADIR%%/script/share/Pickle.lua
@@ -4316,6 +4572,7 @@ bin/fillets
 %%DATADIR%%/script/share/black_dialogs_it.lua
 %%DATADIR%%/script/share/black_dialogs_nl.lua
 %%DATADIR%%/script/share/black_dialogs_pl.lua
+%%DATADIR%%/script/share/black_dialogs_ru.lua
 %%DATADIR%%/script/share/black_dialogs_sv.lua
 %%DATADIR%%/script/share/blackjokes.lua
 %%DATADIR%%/script/share/border_dialogs_bg.lua
@@ -4327,6 +4584,7 @@ bin/fillets
 %%DATADIR%%/script/share/border_dialogs_it.lua
 %%DATADIR%%/script/share/border_dialogs_nl.lua
 %%DATADIR%%/script/share/border_dialogs_pl.lua
+%%DATADIR%%/script/share/border_dialogs_ru.lua
 %%DATADIR%%/script/share/border_dialogs_sv.lua
 %%DATADIR%%/script/share/bordershout.lua
 %%DATADIR%%/script/share/bore_dialogs_bg.lua
@@ -4339,6 +4597,7 @@ bin/fillets
 %%DATADIR%%/script/share/bore_dialogs_it.lua
 %%DATADIR%%/script/share/bore_dialogs_nl.lua
 %%DATADIR%%/script/share/bore_dialogs_pl.lua
+%%DATADIR%%/script/share/bore_dialogs_ru.lua
 %%DATADIR%%/script/share/bore_dialogs_sv.lua
 %%DATADIR%%/script/share/borejokes.lua
 %%DATADIR%%/script/share/bubles.lua
@@ -4352,6 +4611,8 @@ bin/fillets
 %%DATADIR%%/script/share/intro_dialogs_it.lua
 %%DATADIR%%/script/share/intro_dialogs_nl.lua
 %%DATADIR%%/script/share/intro_dialogs_pl.lua
+%%DATADIR%%/script/share/intro_dialogs_ru.lua
+%%DATADIR%%/script/share/intro_dialogs_sl.lua
 %%DATADIR%%/script/share/intro_dialogs_sv.lua
 %%DATADIR%%/script/share/level_creation.lua
 %%DATADIR%%/script/share/level_dialog.lua
@@ -4392,6 +4653,7 @@ bin/fillets
 %%DATADIR%%/script/society/dialogs_it.lua
 %%DATADIR%%/script/society/dialogs_nl.lua
 %%DATADIR%%/script/society/dialogs_pl.lua
+%%DATADIR%%/script/society/dialogs_ru.lua
 %%DATADIR%%/script/society/dialogs_sv.lua
 %%DATADIR%%/script/society/init.lua
 %%DATADIR%%/script/society/models.lua
@@ -4407,6 +4669,8 @@ bin/fillets
 %%DATADIR%%/script/stairs/dialogs_it.lua
 %%DATADIR%%/script/stairs/dialogs_nl.lua
 %%DATADIR%%/script/stairs/dialogs_pl.lua
+%%DATADIR%%/script/stairs/dialogs_ru.lua
+%%DATADIR%%/script/stairs/dialogs_sl.lua
 %%DATADIR%%/script/stairs/dialogs_sv.lua
 %%DATADIR%%/script/stairs/init.lua
 %%DATADIR%%/script/stairs/models.lua
@@ -4422,6 +4686,8 @@ bin/fillets
 %%DATADIR%%/script/start/dialogs_it.lua
 %%DATADIR%%/script/start/dialogs_nl.lua
 %%DATADIR%%/script/start/dialogs_pl.lua
+%%DATADIR%%/script/start/dialogs_ru.lua
+%%DATADIR%%/script/start/dialogs_sl.lua
 %%DATADIR%%/script/start/dialogs_sv.lua
 %%DATADIR%%/script/start/init.lua
 %%DATADIR%%/script/start/models.lua
@@ -4451,6 +4717,8 @@ bin/fillets
 %%DATADIR%%/script/submarine/dialogs_it.lua
 %%DATADIR%%/script/submarine/dialogs_nl.lua
 %%DATADIR%%/script/submarine/dialogs_pl.lua
+%%DATADIR%%/script/submarine/dialogs_ru.lua
+%%DATADIR%%/script/submarine/dialogs_sl.lua
 %%DATADIR%%/script/submarine/dialogs_sv.lua
 %%DATADIR%%/script/submarine/init.lua
 %%DATADIR%%/script/submarine/models.lua
@@ -4523,6 +4791,7 @@ bin/fillets
 %%DATADIR%%/script/ufo/dialogs_it.lua
 %%DATADIR%%/script/ufo/dialogs_nl.lua
 %%DATADIR%%/script/ufo/dialogs_pl.lua
+%%DATADIR%%/script/ufo/dialogs_sl.lua
 %%DATADIR%%/script/ufo/dialogs_sv.lua
 %%DATADIR%%/script/ufo/init.lua
 %%DATADIR%%/script/ufo/models.lua
@@ -4537,6 +4806,7 @@ bin/fillets
 %%DATADIR%%/script/viking1/dialogs_it.lua
 %%DATADIR%%/script/viking1/dialogs_nl.lua
 %%DATADIR%%/script/viking1/dialogs_pl.lua
+%%DATADIR%%/script/viking1/dialogs_ru.lua
 %%DATADIR%%/script/viking1/dialogs_sv.lua
 %%DATADIR%%/script/viking1/init.lua
 %%DATADIR%%/script/viking1/models.lua
@@ -4581,6 +4851,8 @@ bin/fillets
 %%DATADIR%%/script/wc/dialogs_it.lua
 %%DATADIR%%/script/wc/dialogs_nl.lua
 %%DATADIR%%/script/wc/dialogs_pl.lua
+%%DATADIR%%/script/wc/dialogs_ru.lua
+%%DATADIR%%/script/wc/dialogs_sl.lua
 %%DATADIR%%/script/wc/dialogs_sv.lua
 %%DATADIR%%/script/wc/init.lua
 %%DATADIR%%/script/wc/models.lua
@@ -4596,6 +4868,7 @@ bin/fillets
 %%DATADIR%%/script/windoze/dialogs_it.lua
 %%DATADIR%%/script/windoze/dialogs_nl.lua
 %%DATADIR%%/script/windoze/dialogs_pl.lua
+%%DATADIR%%/script/windoze/dialogs_ru.lua
 %%DATADIR%%/script/windoze/dialogs_sv.lua
 %%DATADIR%%/script/windoze/init.lua
 %%DATADIR%%/script/windoze/models.lua
@@ -4614,6 +4887,7 @@ bin/fillets
 %%DATADIR%%/script/wreck/dialogs_it.lua
 %%DATADIR%%/script/wreck/dialogs_nl.lua
 %%DATADIR%%/script/wreck/dialogs_pl.lua
+%%DATADIR%%/script/wreck/dialogs_ru.lua
 %%DATADIR%%/script/wreck/dialogs_sv.lua
 %%DATADIR%%/script/wreck/init.lua
 %%DATADIR%%/script/wreck/models.lua
@@ -5650,6 +5924,33 @@ bin/fillets
 %%DATADIR%%/sound/grail/cs/gr-v-tuseni.ogg
 %%DATADIR%%/sound/grail/cs/gr-v-vsechny0.ogg
 %%DATADIR%%/sound/grail/cs/gr-v-vsechny1.ogg
+%%DATADIR%%/sound/hanoi/cs/m-bude.ogg
+%%DATADIR%%/sound/hanoi/cs/m-citovat.ogg
+%%DATADIR%%/sound/hanoi/cs/m-co.ogg
+%%DATADIR%%/sound/hanoi/cs/m-hazet.ogg
+%%DATADIR%%/sound/hanoi/cs/m-inspiroval.ogg
+%%DATADIR%%/sound/hanoi/cs/m-nepomahas.ogg
+%%DATADIR%%/sound/hanoi/cs/m-predstavujes.ogg
+%%DATADIR%%/sound/hanoi/cs/m-rekurzivni.ogg
+%%DATADIR%%/sound/hanoi/cs/m-restartuj.ogg
+%%DATADIR%%/sound/hanoi/cs/m-tesise.ogg
+%%DATADIR%%/sound/hanoi/cs/m-trikrat.ogg
+%%DATADIR%%/sound/hanoi/cs/m-vicedat.ogg
+%%DATADIR%%/sound/hanoi/cs/m-vyhecoval.ogg
+%%DATADIR%%/sound/hanoi/cs/v-alehrac.ogg
+%%DATADIR%%/sound/hanoi/cs/v-bavit.ogg
+%%DATADIR%%/sound/hanoi/cs/v-budou.ogg
+%%DATADIR%%/sound/hanoi/cs/v-jacity.ogg
+%%DATADIR%%/sound/hanoi/cs/v-jineho.ogg
+%%DATADIR%%/sound/hanoi/cs/v-kopie.ogg
+%%DATADIR%%/sound/hanoi/cs/v-looser.ogg
+%%DATADIR%%/sound/hanoi/cs/v-mamja.ogg
+%%DATADIR%%/sound/hanoi/cs/v-nenifer.ogg
+%%DATADIR%%/sound/hanoi/cs/v-orechove.ogg
+%%DATADIR%%/sound/hanoi/cs/v-plny.ogg
+%%DATADIR%%/sound/hanoi/cs/v-pochvalil.ogg
+%%DATADIR%%/sound/hanoi/cs/v-restartovat.ogg
+%%DATADIR%%/sound/hanoi/cs/v-tady.ogg
 %%DATADIR%%/sound/hardware/cs/pz-m-co.ogg
 %%DATADIR%%/sound/hardware/cs/pz-m-nech.ogg
 %%DATADIR%%/sound/hardware/cs/pz-m-nepasuje.ogg
@@ -5666,6 +5967,26 @@ bin/fillets
 %%DATADIR%%/sound/hardware/cs/pz-v-klice2.ogg
 %%DATADIR%%/sound/hardware/cs/pz-v-zaskladanej.ogg
 %%DATADIR%%/sound/hardware/cs/pz-x-pocitac.ogg
+%%DATADIR%%/sound/hole/cs/l-dejte0.ogg
+%%DATADIR%%/sound/hole/cs/l-dejte1.ogg
+%%DATADIR%%/sound/hole/cs/l-dejte2.ogg
+%%DATADIR%%/sound/hole/cs/l-dejte3.ogg
+%%DATADIR%%/sound/hole/cs/l-halo0.ogg
+%%DATADIR%%/sound/hole/cs/l-halo1.ogg
+%%DATADIR%%/sound/hole/cs/l-halo2.ogg
+%%DATADIR%%/sound/hole/cs/l-vinnetou.ogg
+%%DATADIR%%/sound/hole/cs/m-nedame0.ogg
+%%DATADIR%%/sound/hole/cs/m-nedame1.ogg
+%%DATADIR%%/sound/hole/cs/m-sluchatko.ogg
+%%DATADIR%%/sound/hole/cs/m-strasidelna.ogg
+%%DATADIR%%/sound/hole/cs/m-zmizet.ogg
+%%DATADIR%%/sound/hole/cs/s-prejete.ogg
+%%DATADIR%%/sound/hole/cs/v-bojim.ogg
+%%DATADIR%%/sound/hole/cs/v-neber.ogg
+%%DATADIR%%/sound/hole/cs/v-nedame0.ogg
+%%DATADIR%%/sound/hole/cs/v-nedame1.ogg
+%%DATADIR%%/sound/hole/cs/v-vratte.ogg
+%%DATADIR%%/sound/hole/cs/v-zkus.ogg
 %%DATADIR%%/sound/imprisoned/cs/ncp-m-barvy.ogg
 %%DATADIR%%/sound/imprisoned/cs/ncp-m-komari.ogg
 %%DATADIR%%/sound/imprisoned/cs/ncp-m-koraly.ogg
@@ -5831,6 +6152,22 @@ bin/fillets
 %%DATADIR%%/sound/noground/cs/nog-v-smetiste0.ogg
 %%DATADIR%%/sound/noground/cs/nog-v-smetiste1.ogg
 %%DATADIR%%/sound/noground/cs/nog-v-zvlastni.ogg
+%%DATADIR%%/sound/nowall/cs/m-otazka0.ogg
+%%DATADIR%%/sound/nowall/cs/m-otazka1.ogg
+%%DATADIR%%/sound/nowall/cs/m-otazka2.ogg
+%%DATADIR%%/sound/nowall/cs/m-otazka3.ogg
+%%DATADIR%%/sound/nowall/cs/m-otazka4.ogg
+%%DATADIR%%/sound/nowall/cs/m-predmet.ogg
+%%DATADIR%%/sound/nowall/cs/m-uvedomit.ogg
+%%DATADIR%%/sound/nowall/cs/m-zeme.ogg
+%%DATADIR%%/sound/nowall/cs/m-zvlastni.ogg
+%%DATADIR%%/sound/nowall/cs/v-krehci.ogg
+%%DATADIR%%/sound/nowall/cs/v-nad.ogg
+%%DATADIR%%/sound/nowall/cs/v-odpoved0.ogg
+%%DATADIR%%/sound/nowall/cs/v-odpoved1.ogg
+%%DATADIR%%/sound/nowall/cs/v-odpoved2.ogg
+%%DATADIR%%/sound/nowall/cs/v-odpoved3.ogg
+%%DATADIR%%/sound/nowall/cs/v-zadne.ogg
 %%DATADIR%%/sound/party1/cs/pt1-m-kostlivec.ogg
 %%DATADIR%%/sound/party1/cs/pt1-m-nemuzu.ogg
 %%DATADIR%%/sound/party1/cs/pt1-m-parnicek.ogg
@@ -5989,6 +6326,17 @@ bin/fillets
 %%DATADIR%%/sound/reef/cs/uts-v-projet0.ogg
 %%DATADIR%%/sound/reef/cs/uts-v-projet1.ogg
 %%DATADIR%%/sound/reef/cs/uts-v-sam.ogg
+%%DATADIR%%/sound/rotate/en/tyc-pauau.ogg
+%%DATADIR%%/sound/rush/cs/m-hraje.ogg
+%%DATADIR%%/sound/rush/cs/m-myslis.ogg
+%%DATADIR%%/sound/rush/cs/m-obdivovat.ogg
+%%DATADIR%%/sound/rush/cs/m-silou.ogg
+%%DATADIR%%/sound/rush/cs/m-vysunout.ogg
+%%DATADIR%%/sound/rush/cs/v-chytra.ogg
+%%DATADIR%%/sound/rush/cs/v-codelas.ogg
+%%DATADIR%%/sound/rush/cs/v-ffneni.ogg
+%%DATADIR%%/sound/rush/cs/v-upozornit.ogg
+%%DATADIR%%/sound/rush/cs/v-zopakuje.ogg
 %%DATADIR%%/sound/share/blackjokes/cs/smrt-m-0.ogg
 %%DATADIR%%/sound/share/blackjokes/cs/smrt-m-1.ogg
 %%DATADIR%%/sound/share/blackjokes/cs/smrt-m-2.ogg
@@ -6508,6 +6856,10 @@ bin/fillets
 @dirrm %%DATADIR%%/sound/share/blackjokes/cs
 @dirrm %%DATADIR%%/sound/share/blackjokes
 @dirrm %%DATADIR%%/sound/share
+@dirrm %%DATADIR%%/sound/rush/cs
+@dirrm %%DATADIR%%/sound/rush
+@dirrm %%DATADIR%%/sound/rotate/en
+@dirrm %%DATADIR%%/sound/rotate
 @dirrm %%DATADIR%%/sound/reef/cs
 @dirrm %%DATADIR%%/sound/reef
 @dirrm %%DATADIR%%/sound/reactor/en
@@ -6529,6 +6881,8 @@ bin/fillets
 @dirrm %%DATADIR%%/sound/party2
 @dirrm %%DATADIR%%/sound/party1/cs
 @dirrm %%DATADIR%%/sound/party1
+@dirrm %%DATADIR%%/sound/nowall/cs
+@dirrm %%DATADIR%%/sound/nowall
 @dirrm %%DATADIR%%/sound/noground/cs
 @dirrm %%DATADIR%%/sound/noground
 @dirrm %%DATADIR%%/sound/music/en
@@ -6547,8 +6901,12 @@ bin/fillets
 @dirrm %%DATADIR%%/sound/imprisoned/en
 @dirrm %%DATADIR%%/sound/imprisoned/cs
 @dirrm %%DATADIR%%/sound/imprisoned
+@dirrm %%DATADIR%%/sound/hole/cs
+@dirrm %%DATADIR%%/sound/hole
 @dirrm %%DATADIR%%/sound/hardware/cs
 @dirrm %%DATADIR%%/sound/hardware
+@dirrm %%DATADIR%%/sound/hanoi/cs
+@dirrm %%DATADIR%%/sound/hanoi
 @dirrm %%DATADIR%%/sound/grail/cs
 @dirrm %%DATADIR%%/sound/grail
 @dirrm %%DATADIR%%/sound/gods/cs
@@ -6659,6 +7017,8 @@ bin/fillets
 @dirrm %%DATADIR%%/script/society
 @dirrm %%DATADIR%%/script/snowman
 @dirrm %%DATADIR%%/script/share
+@dirrm %%DATADIR%%/script/rush
+@dirrm %%DATADIR%%/script/rotate
 @dirrm %%DATADIR%%/script/reef
 @dirrm %%DATADIR%%/script/reactor
 @dirrm %%DATADIR%%/script/pyramid
@@ -6668,6 +7028,7 @@ bin/fillets
 @dirrm %%DATADIR%%/script/pavement
 @dirrm %%DATADIR%%/script/party2
 @dirrm %%DATADIR%%/script/party1
+@dirrm %%DATADIR%%/script/nowall
 @dirrm %%DATADIR%%/script/noground
 @dirrm %%DATADIR%%/script/music
 @dirrm %%DATADIR%%/script/map
@@ -6676,7 +7037,9 @@ bin/fillets
 @dirrm %%DATADIR%%/script/labyrinth
 @dirrm %%DATADIR%%/script/kitchen
 @dirrm %%DATADIR%%/script/imprisoned
+@dirrm %%DATADIR%%/script/hole
 @dirrm %%DATADIR%%/script/hardware
+@dirrm %%DATADIR%%/script/hanoi
 @dirrm %%DATADIR%%/script/grail
 @dirrm %%DATADIR%%/script/gods
 @dirrm %%DATADIR%%/script/gems
@@ -6733,6 +7096,8 @@ bin/fillets
 @dirrm %%DATADIR%%/images/stairs
 @dirrm %%DATADIR%%/images/society
 @dirrm %%DATADIR%%/images/snowman
+@dirrm %%DATADIR%%/images/rush
+@dirrm %%DATADIR%%/images/rotate
 @dirrm %%DATADIR%%/images/reef
 @dirrm %%DATADIR%%/images/reactor
 @dirrm %%DATADIR%%/images/pyramid
@@ -6742,6 +7107,7 @@ bin/fillets
 @dirrm %%DATADIR%%/images/pavement
 @dirrm %%DATADIR%%/images/party2
 @dirrm %%DATADIR%%/images/party1
+@dirrm %%DATADIR%%/images/nowall
 @dirrm %%DATADIR%%/images/noground
 @dirrm %%DATADIR%%/images/music
 @dirrm %%DATADIR%%/images/menu/subtitles
@@ -6754,7 +7120,9 @@ bin/fillets
 @dirrm %%DATADIR%%/images/labyrinth
 @dirrm %%DATADIR%%/images/kitchen
 @dirrm %%DATADIR%%/images/imprisoned
+@dirrm %%DATADIR%%/images/hole
 @dirrm %%DATADIR%%/images/hardware
+@dirrm %%DATADIR%%/images/hanoi
 @dirrm %%DATADIR%%/images/grail
 @dirrm %%DATADIR%%/images/gods
 @dirrm %%DATADIR%%/images/gems
