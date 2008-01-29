@@ -45,7 +45,7 @@ PLIST_SUB+=	QT4="@comment "
 .endif
 
 .if exists(${LOCALBASE}/include/avahi-compat-libdns_sd/dns_sd.h)
-LIB_DEPENDS+=	dns_sd.1:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=	dns_sd.1:${PORTSDIR}/net/avahi-libdns
 .elif defined(WITH_DNSSD)
 LIB_DEPENDS+=	dns_sd.1:${PORTSDIR}/net/mDNSResponder
 .endif
