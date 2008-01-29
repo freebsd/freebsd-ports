@@ -61,4 +61,10 @@ post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/d2c-${PORTVERSION}-FreeBSD.gz >${WRKDIR}/d2c
 	${CHMOD} ugo+x ${WRKDIR}/d2c
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=	does not install
+.endif
+
+.include <bsd.port.post.mk>
