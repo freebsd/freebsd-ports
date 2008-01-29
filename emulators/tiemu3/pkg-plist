@@ -7,6 +7,7 @@ share/tiemu/glade/dbg_bkpts-2.glade
 share/tiemu/glade/dbg_cause-2.glade
 share/tiemu/glade/dbg_code-2.glade
 share/tiemu/glade/dbg_data-2.glade
+share/tiemu/glade/dbg_dock-2.glade
 share/tiemu/glade/dbg_entry-2.glade
 share/tiemu/glade/dbg_heap-2.glade
 share/tiemu/glade/dbg_ioports-2.glade
@@ -79,18 +80,20 @@ share/tiemu/misc/memmap_ti92_hw1.txt
 share/tiemu/misc/memmap_ti92p_hw1.txt
 share/tiemu/misc/memmap_ti92p_hw2.txt
 share/tiemu/misc/memmap_v200_hw2.txt
+share/tiemu/misc/romcalls.lst
 share/tiemu/misc/romcalls.txt
+share/tiemu/pedrom/pedrom.txt
 share/tiemu/pedrom/pedrom89.tib
 share/tiemu/pedrom/pedrom89ti.tib
 share/tiemu/pedrom/pedrom9x.tib
 share/tiemu/pedrom/pedromv2.tib
 share/tiemu/pixmaps/bkpt.xpm
-share/tiemu/pixmaps/bkpt_tmp.xpm
 share/tiemu/pixmaps/icon.xpm
 share/tiemu/pixmaps/logo.xpm
 share/tiemu/pixmaps/romdump.ico
 share/tiemu/pixmaps/romdump.xpm
-share/tiemu/pixmaps/run.xpm
+share/tiemu/pixmaps/run_1.xpm
+share/tiemu/pixmaps/run_2.xpm
 share/tiemu/pixmaps/void.xpm
 share/tiemu/skins/ipaq_89.skn
 share/tiemu/skins/ipaq_92.skn
@@ -103,8 +106,6 @@ share/tiemu/skins/ti92.map
 share/tiemu/skins/ti92.skn
 share/tiemu/skins/ti92_fr.map
 share/tiemu/skins/v200plt.skn
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm share/tiemu/skins
 @dirrm share/tiemu/pixmaps
 @dirrm share/tiemu/pedrom
