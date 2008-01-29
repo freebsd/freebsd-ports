@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6ecd0b42-ce77-11dc-89b1-000e35248ad7">
+    <topic>libxine -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.1.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>xine project reports:</p>
+	<blockquote cite="http://xinehq.de/index.php/news">
+	  <p>A new xine-lib version is now available. This release contains
+	    a security fix (remotely-expoitable buffer overflow, CVE-2006-1664).
+	    (This is not the first time that that bug has been fixed...)
+	    It also fixes a few more recent bugs, such as the audio output
+	    problems in 1.1.9.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1664</cvename>
+      <url>http://secunia.com/advisories/19853/</url>
+    </references>
+    <dates>
+      <discovery>2008-01-23</discovery>
+      <entry>2008-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fe2b6597-c9a4-11dc-8da8-0008a18a9961">
     <topic>xorg -- multiple vulnerabilities</topic>
     <affects>
