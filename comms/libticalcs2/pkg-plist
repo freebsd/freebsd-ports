@@ -8,7 +8,7 @@ include/tilp2/ticalcs.h
 lib/libticalcs2.a
 lib/libticalcs2.la
 lib/libticalcs2.so
-lib/libticalcs2.so.6
+lib/libticalcs2.so.7
 libdata/pkgconfig/ticalcs2.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libticalcs2.mo
 @dirrmtry include/tilp2
