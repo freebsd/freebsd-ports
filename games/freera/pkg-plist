@@ -17,6 +17,7 @@ bin/freera
 %%DATADIR%%/settings/ra/internal.ini
 %%DATADIR%%/settings/ra/protofiles.ini
 %%DATADIR%%/settings/ra/sidebar.ini
+%%DATADIR%%/settings/ra/sound.ini
 %%DATADIR%%/settings/ra/structure.ini
 %%DATADIR%%/settings/ra/talkback.ini
 %%DATADIR%%/settings/ra/templates.ini
@@ -28,6 +29,7 @@ bin/freera
 %%DATADIR%%/settings/td/internal.ini
 %%DATADIR%%/settings/td/protofiles.ini
 %%DATADIR%%/settings/td/sidebar.ini
+%%DATADIR%%/settings/td/sound.ini
 %%DATADIR%%/settings/td/structure.ini
 %%DATADIR%%/settings/td/talkback.ini
 %%DATADIR%%/settings/td/templates.ini

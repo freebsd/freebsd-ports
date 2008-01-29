@@ -1,12 +1,12 @@
 ==========================================================================
 
 FreeRA requires original .mix files from Red Alert. Copy those files from
-Red Alert CD's to ${PREFIX}/share/freera/data/mix/ directory:
+Red Alert CD's to %%DATADIR%%/mix/ directory:
 
   main.mix
   redalert.mix
 
-PS. Both files can be found on either Red Alert CD. Both CDs have
-    the maps for both campaigns but only the videos for one.
+PS. Both files can be found on either Red Alert CD. Both CDs have the
+    maps for both campaigns but only the videos for one.
 
 ==========================================================================
