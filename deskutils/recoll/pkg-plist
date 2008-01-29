@@ -13,19 +13,21 @@ share/icons/hicolor/48x48/apps/recoll.png
 %%DATADIR%%/filters/rcldjvu
 %%DATADIR%%/filters/rcldoc
 %%DATADIR%%/filters/rcldvi
+%%DATADIR%%/filters/rclflac
 %%DATADIR%%/filters/rclgaim
 %%DATADIR%%/filters/rclid3
-%%DATADIR%%/filters/rcljpeg
+%%DATADIR%%/filters/rclimg
 %%DATADIR%%/filters/rclkwd
 %%DATADIR%%/filters/rcllyx
 %%DATADIR%%/filters/rclman
-%%DATADIR%%/filters/rclmedia
+%%DATADIR%%/filters/rclogg
 %%DATADIR%%/filters/rclpdf
 %%DATADIR%%/filters/rclppt
 %%DATADIR%%/filters/rclps
 %%DATADIR%%/filters/rclrtf
 %%DATADIR%%/filters/rclscribus
 %%DATADIR%%/filters/rclsoff
+%%DATADIR%%/filters/rcltex
 %%DATADIR%%/filters/rcluncomp
 %%DATADIR%%/filters/rclwpd
 %%DATADIR%%/filters/rclxls
@@ -51,6 +53,8 @@ share/icons/hicolor/48x48/apps/recoll.png
 %%DATADIR%%/translations/recoll_de.qm
 %%DATADIR%%/translations/recoll_uk.qm
 %%DATADIR%%/translations/recoll_ru.qm
+%%DATADIR%%/translations/recoll_tr.qm
+%%DATADIR%%/translations/recoll_xx.qm
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/filters
