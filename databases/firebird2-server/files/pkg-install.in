@@ -64,7 +64,7 @@ do
 done
 
 touch firebird.log
-chown firebird:firebird firebird.log
+chown firebird:firebird firebird.log security2.fdb
 
 ;;
 
