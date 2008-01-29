@@ -1,0 +1,5 @@
+Avis is a multicast event bus server. Providing the ability to publish and
+subscribe to events. The protocol is compatible with the commercial Elvin
+implmentation developed by Mantara Software.
+
+WWW: http://avis.sourceforge.net/
