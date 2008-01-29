@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tuxmath
-PORTVERSION=	1.5.8
+PORTVERSION=	1.6.0
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/2191/
@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
+WRKSRC=		${WRKDIR}/${DISTNAME:S/${PORTVERSION}/1.5.8/}
 
 OPTIONS=	NLS "Enable Native Language Support" on
 
