@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xapian-core
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	databases
 MASTER_SITES=	http://www.oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
