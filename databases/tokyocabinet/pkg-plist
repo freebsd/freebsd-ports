@@ -1,16 +1,6 @@
 @comment $FreeBSD$
-%%DATADIR%%/COPYING
-%%DATADIR%%/ChangeLog
-%%DATADIR%%/THANKS
-%%DATADIR%%/doc/benchmark.pdf
-%%DATADIR%%/doc/common.css
-%%DATADIR%%/doc/icon16.png
-%%DATADIR%%/doc/index.html
-%%DATADIR%%/doc/index.ja.html
-%%DATADIR%%/doc/logo-ja.png
-%%DATADIR%%/doc/logo.png
-%%DATADIR%%/doc/spex-en.html
-%%DATADIR%%/doc/spex-ja.html
+bin/tcamgr
+bin/tcatest
 bin/tcbmgr
 bin/tcbmttest
 bin/tcbtest
@@ -26,7 +16,21 @@ include/tcutil.h
 lib/libtokyocabinet.a
 lib/libtokyocabinet.so
 lib/libtokyocabinet.so.1
-lib/libtokyocabinet.so.1.25.0
+lib/libtokyocabinet.so.1.29.0
 libdata/pkgconfig/tokyocabinet.pc
-@dirrmtry %%DATADIR%%/doc
-@dirrmtry %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%EXAMPLESDIR%%/doc/benchmark.pdf
+%%PORTDOCS%%%%EXAMPLESDIR%%/doc/common.css
+%%PORTDOCS%%%%EXAMPLESDIR%%/doc/icon16.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/doc/index.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/doc/index.ja.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/doc/logo-ja.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/doc/logo.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/doc/spex-en.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/doc/spex-ja.html
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/doc
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
