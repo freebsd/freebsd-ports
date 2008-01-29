@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	-ruby
 
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	Version control system with Ruby bindings
+CONFLICTS=      subversion-[0-9]* subversion-perl-[0-9]* subversion-python-[0-9]*
 
 MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}

@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
 
-CONFLICTS=	subversion-perl-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]*
+CONFLICTS?=	subversion-perl-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]*
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
