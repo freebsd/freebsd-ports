@@ -16809,7 +16809,6 @@ wmgrabimage	ports/graphics/wmgrabimage
 wmhm		ports/sysutils/wmhm
 wmicons		ports/graphics/wmicons
 wmii		ports/x11-wm/wmii
-wmii-devel	ports/x11-wm/wmii-devel
 wminet		ports/sysutils/wminet
 wminfo		ports/misc/wminfo
 wmitime		ports/x11-clocks/wmitime
