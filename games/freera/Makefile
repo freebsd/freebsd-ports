@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freera
-PORTVERSION=	070328
-PORTREVISION=	1
+PORTVERSION=	080108
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTVERSION}_freera++_src
@@ -21,6 +20,8 @@ USE_SCONS=	yes
 SCONS_BUILDENV=	${SCONS_ENV} SDL_CONFIG=${SDL_CONFIG}
 
 WRKSRC=		${WRKDIR}/freera++
+
+SUB_FILES=	pkg-message
 
 post-patch:
 	@${MV} ${WRKSRC}/SConstruct ${WRKSRC}/SConstruct.orig
@@ -38,6 +39,6 @@ do-install:
 		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
 
 post-install:
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
