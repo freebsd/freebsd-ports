@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libticables2
-PORTVERSION=	1.0.8
+PORTVERSION=	1.2.0
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
-DISTFILES=	tilibs2-20070829${EXTRACT_SUFX}
+DISTNAME=	tilibs2-20080110
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator link cables library
@@ -33,12 +33,12 @@ PLIST_SUB=	NLS="@comment "
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-extract:
-	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/tilibs2/${DISTNAME}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
+	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/tilibs2/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 
 post-patch:
-	@${REINPLACE_CMD} 's/linux_check_libusb/bsd_check_libusb/' ${WRKSRC}/src/linux/link_slv.c
+	@${REINPLACE_CMD} 's/linux_check_libusb/bsd_check_libusb/' ${WRKSRC}/src/linux/link_usb.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
