@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kobodeluxe
-DISTVERSION=	0.4.1
+PORTVERSION=	0.5.1
 CATEGORIES=	games
 MASTER_SITES=	http://olofson.net/kobodl/download/ \
 		http://www.amdmi3.ru/distfiles/
@@ -18,8 +18,8 @@ COMMENT=	An SDL port of the scrolling game XKobo
 USE_BZIP2=	yes
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-			--sharedstatedir=${SCOREDIR}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--sharedstatedir=${SCOREDIR} --enable-oss
 
 MAN6=		kobodl.6
 
@@ -28,13 +28,15 @@ PLIST_SUB=	SCOREDIR="${SCOREDIR}"
 
 DATADIR=	${PREFIX}/share/kobo-deluxe
 
-OPTIONS=	OPENGL "OpenGL rendering layer (experimental)" off
+OPTIONS=	OPENGL	"OpenGL rendering layer" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_OPENGL)
+.if !defined(WITHOUT_OPENGL)
 USE_GL=		yes
 CONFIGURE_ARGS+=	--enable-opengl
+.else
+CONFIGURE_ARGS+=	--disable-opengl
 .endif
 
 post-patch:
