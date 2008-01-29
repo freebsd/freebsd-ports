@@ -1,40 +1,47 @@
 # New ports collection makefile for:   see
-# Date created:        22 September 2004
-# Whom:                numisemis@yahoo.com
+# Date created:        29 Oct 2005
+# Whom:                Simun Mikecin <numisemis@yahoo.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	see
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	2.0.1131
 CATEGORIES=	lang devel
-MASTER_SITES=	http://www.powerband.net.au/~david.leonard/
+MASTER_SITES=	http://www.powerband.net.au/~david.leonard/ \
+		http://freshmeat.net/redir/see/45974/url_tgz/
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Simple ECMAScript Engine (SEE)
 
+OPTIONS=	GC "Use Boehm-Weiser garbage collection package" on \
+		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
+		SEE_DEBUG "Internal SEE library debugging" off
+
 CONFLICTS=	see-devel-[0-9]*
 
-OPTIONS=	GC "Use Boehm-Weiser garbage collection pkg" on \
-		OPTIMIZED_CFLAGS "Enable some additional optimizations" off
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_PERL5_BUILD=	yes
 
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITH_SEE_DEBUG)
+CFLAGS+=	-DNDEBUG
+.endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -fomit-frame-pointer
 .endif
 
-.if !defined(WITHOUT_GC)
+.if defined(WITH_GC)
 LIB_DEPENDS+=	gc:${PORTSDIR}/devel/boehm-gc
 .else
 CONFIGURE_ARGS+=	--without-boehm-gc
@@ -49,7 +56,7 @@ post-patch:
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
-.for f in doc/USAGE.html AUTHORS NEWS README TODO
+.for f in doc/USAGE.html AUTHORS NEWS README TODO COPYING
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
