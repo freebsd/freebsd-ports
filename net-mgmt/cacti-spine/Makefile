@@ -23,10 +23,10 @@ USE_OPENSSL=	YES
 USE_AUTOTOOLS=	libtool:15
 
 post-patch:
-.for file in  config.guess config.sub ltmain.sh
-	@${RM} -v ${WRKSRC}/config/${file}
-	@${LN} -fs ${LIBTOOL_SHAREDIR}/${file}  ${WRKSRC}/config/${file}
+.for file in config.guess config.sub ltmain.sh
+	@${LN} -fs ${LIBTOOL_SHAREDIR}/${file} ${WRKSRC}/config/${file}
 .endfor
+	@${LN} -fs ${LIBTOOL} ${WRKSRC}/libtool
 	@${REINPLACE_CMD} 's,#define\ *DEFAULT_CONF_FILE .*,#define DEFAULT_CONF_FILE "${PREFIX}/etc/spine.conf",' ${WRKSRC}/spine.h
 
 do-install:
