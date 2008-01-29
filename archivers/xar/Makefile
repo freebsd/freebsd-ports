@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xar
-DISTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://xar.googlecode.com/files/ \
 		${MASTER_SITE_GENTOO}
