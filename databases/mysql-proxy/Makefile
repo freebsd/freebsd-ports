@@ -27,6 +27,6 @@ USE_GNOME=	gnometarget pkgconfig
 USE_ICONV=	yes
 USE_LUA=	5.1+
 USE_MYSQL=	yes
-IGNORE_WITH_MYSQL=	323 40 41
+IGNORE_WITH_MYSQL=	323 40
 
 .include <bsd.port.mk>
