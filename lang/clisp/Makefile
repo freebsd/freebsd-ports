@@ -58,6 +58,8 @@ SUB_FILES=	pkg-message
 # Semgentation fault in amd64 when using 'mmap(2)'. Also in Linux/ia64.
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=--disable-mmap
+.elif ${OSVERSION} >= 800000
+BROKEN=	dumps core during build
 .endif
 
 MODULES=	BDB CLX_MIT CLX_NEW FASTCGI GDBM GTK2 ORACLE PARI PCRE PGSQL \
