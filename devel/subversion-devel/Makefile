@@ -6,17 +6,18 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.4.6
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
-		http://svnbook.red-bean.com/en/1.2/:bookhtml \
-		http://svnbook.red-bean.com/en/1.2/images/:bookhtmlimg \
-		http://svnbook.red-bean.com/en/1.2/:bookpdf
+		http://svnbook.red-bean.com/en/${PORTVERSION:R}/:book
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
 DIST_SUBDIR=	subversion
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
+
+CONFLICTS=	subversion-perl-[0-9]* subversion-python-[0-9]* subversion-ruby-[0-9]*
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
@@ -33,12 +34,8 @@ USE_RC_SUBR=	svnserve
 MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnsync.1 svnversion.1
 MAN5=		svnserve.conf.5
 MAN8=		svnserve.8
-MANCOMPRESSED=	no
 
 TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
-.if !defined(NOPORTDOCS)
-PORTDOCS=	${TXT_DOCS}
-.endif
 
 OPTIONS=	PERL		"Perl bindings" off \
 		PYTHON		"Python bindings" off \
@@ -211,16 +208,12 @@ SUB_LIST+=	SVNSERVE_BIN_EXT=""
 .endif
 
 .if !defined(NOPORTDOCS) && defined(WITH_BOOK)
-PORTDOCS+=	book
-DISTFILES+=	svn-book.html:bookhtml \
-		ch01dia1.png:bookhtmlimg ch02dia1.png:bookhtmlimg \
-		ch02dia2.png:bookhtmlimg ch02dia3.png:bookhtmlimg \
-		ch02dia5.png:bookhtmlimg ch02dia6.png:bookhtmlimg \
-		ch02dia7.png:bookhtmlimg ch04dia1.png:bookhtmlimg \
-		ch04dia2.png:bookhtmlimg ch04dia3.png:bookhtmlimg \
-		ch04dia4.png:bookhtmlimg ch08dia1.png:bookhtmlimg \
-		ch08dia2.png:bookhtmlimg \
-		svn-book.pdf:bookpdf
+BOOK_HTML=	svn-book-html.tar.bz2
+BOOK_PDF=	svn-book.pdf
+DISTFILES+=	${BOOK_HTML}:book ${BOOK_PDF}:book
+PLIST_SUB+=	BOOK=""
+.else
+PLIST_SUB+=	BOOK="@comment "
 .endif
 
 .if defined(WITH_ASVN)
@@ -336,7 +329,7 @@ pre-everything::
 	@${ECHO_MSG} "You can install asvn from contrib by defining WITH_ASVN"
 .endif
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Many useful scripts will be installed into ${PREFIX}/share/subversion"
+	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}}"
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/neon
@@ -345,8 +338,8 @@ post-extract:
 
 post-patch:
 .if ${PREFIX} != "/usr"
-	@${REINPLACE_CMD} "s#/etc/subversion#${PREFIX}/etc/subversion#g" ${WRKSRC}/subversion/libsvn_subr/config_file.c
-	@${REINPLACE_CMD} "s#/etc/subversion#${PREFIX}/etc/subversion#g" ${WRKSRC}/subversion/libsvn_subr/config_impl.h
+	@${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_file.c
+	@${REINPLACE_CMD} "s#/etc/subversion#${ETCDIR}#g" ${WRKSRC}/subversion/libsvn_subr/config_impl.h
 .endif
 	@${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
@@ -398,21 +391,18 @@ pre-install:
 .endif
 
 post-install:	${MKREPOS_TARGET}
-	@${MKDIR} ${PREFIX}/share/subversion
+	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/tools ; \
-	  tar --exclude '*.in' -cf - * | tar -C ${PREFIX}/share/subversion -xf -
-	@${CHMOD} -R a-st,o+rX ${PREFIX}/share/subversion
+	  ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${DATADIR} -xf -
+	@${CHMOD} -R a-st,o+rX ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	for f in ${TXT_DOCS}; do \
-	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
+	  ${INSTALL_MAN} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
 .if defined(WITH_BOOK)
-	${MKDIR} ${DOCSDIR}/book
-	${MKDIR} ${DOCSDIR}/book/images
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/svn-book.html ${DOCSDIR}/book
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.png         ${DOCSDIR}/book/images
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/svn-book.pdf  ${DOCSDIR}/book
+	${TAR} -xof ${DISTDIR}/${DIST_SUBDIR}/${BOOK_HTML} -C ${DOCSDIR}
+	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/${BOOK_PDF} ${DOCSDIR}
 .endif
 .endif
 .if defined(WITH_ASVN)

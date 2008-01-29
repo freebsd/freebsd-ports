@@ -98,6 +98,33 @@ lib/libsvn_wc-1.a
 lib/libsvn_wc-1.la
 lib/libsvn_wc-1.so
 lib/libsvn_wc-1.so.0
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COMMITTERS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch01dia1.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia1.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia2.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia3.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia4.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia5.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia6.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch02dia7.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia1.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia2.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia3.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch04dia4.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch08dia1.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/ch08dia2.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/note.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/tip.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/images/warning.png
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/styles.css
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book-html/svn-book.html
+%%PORTDOCS%%%%BOOK%%%%DOCSDIR%%/svn-book.pdf
 %%WITHOUT_GETTEXT%%share/locale/de/LC_MESSAGES/subversion.mo
 %%WITHOUT_GETTEXT%%share/locale/es/LC_MESSAGES/subversion.mo
 %%WITHOUT_GETTEXT%%share/locale/fr/LC_MESSAGES/subversion.mo
@@ -225,6 +252,7 @@ lib/libsvn_wc-1.so.0
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dav libexec/%%APACHEDIR%%/mod_dav.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dav_svn libexec/%%APACHEDIR%%/mod_dav_svn.so
 %%WITH_JAVA%%lib/libsvnjavahl-1.a
+%%WITH_JAVA%%lib/libsvnjavahl-1.la
 %%WITH_JAVA%%lib/libsvnjavahl-1.so
 %%WITH_JAVA%%lib/libsvnjavahl-1.so.0
 %%WITH_JAVA%%lib/svn-javahl/svn-javahl.jar
@@ -363,6 +391,9 @@ lib/libsvn_wc-1.so.0
 %%WITH_RUBY%%@dirrm %%RUBY_SITEARCHLIBDIR%%/svn/ext
 %%WITH_RUBY%%@dirrm %%RUBY_SITEARCHLIBDIR%%/svn
 %%WITH_RUBY%%@dirrm %%RUBY_SITELIBDIR%%/svn
+%%PORTDOCS%%%%BOOK%%@dirrm %%DOCSDIR%%/svn-book-html/images
+%%PORTDOCS%%%%BOOK%%@dirrm %%DOCSDIR%%/svn-book-html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/backup
 @dirrm %%DATADIR%%/bdb
 @dirrm %%DATADIR%%/client-side
@@ -381,5 +412,4 @@ lib/libsvn_wc-1.so.0
 @dirrm %%DATADIR%%/test-scripts/svntest
 @dirrm %%DATADIR%%/test-scripts
 @dirrm %%DATADIR%%/xslt
-@dirrm share/subversion
-
+@dirrm %%DATADIR%%
