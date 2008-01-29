@@ -9,8 +9,7 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.2.2
-PORTREVISION=	1
+DISTVERSION=	1.2.5
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.2/downloads/
 
@@ -29,7 +28,9 @@ MPIDIR?=	${MPIBASE}/${UNIQUENAME}
 PLIST_SUB+=	MPIBASE=${MPIBASE}
 PLIST_SUB+=	MPIDIR=${MPIDIR}
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} ${CONFIGURE_TARGET}
+CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
+			--mandir=${PREFIX}/${MPIDIR}/man \
+		 	${CONFIGURE_TARGET}
 
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 		${PREFIX}/${MPIDIR}/lib/openmpi
@@ -56,6 +57,9 @@ PLIST_SUB+=	TORQUE=""
 .else
 PLIST_SUB+=	TORQUE="@comment "
 .endif
+
+post-install:
+	cd ${WRKSRC}/ompi/mpi && make install-man
 
 #######################################################################
 # The following targets are for the port maintainer.  Use at your own #
