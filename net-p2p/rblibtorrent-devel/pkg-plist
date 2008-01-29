@@ -155,7 +155,9 @@ include/libtorrent/asio/version.hpp
 include/libtorrent/asio/write.hpp
 include/libtorrent/assert.hpp
 include/libtorrent/aux_/session_impl.hpp
+include/libtorrent/bandwidth_limit.hpp
 include/libtorrent/bandwidth_manager.hpp
+include/libtorrent/bandwidth_queue_entry.hpp
 include/libtorrent/bencode.hpp
 include/libtorrent/broadcast_socket.hpp
 include/libtorrent/bt_peer_connection.hpp
