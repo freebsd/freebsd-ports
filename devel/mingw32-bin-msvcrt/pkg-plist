@@ -468,6 +468,8 @@ mingw32/lib/libmsvcr71.a
 mingw32/lib/libmsvcr71d.a
 mingw32/lib/libmsvcr80.a
 mingw32/lib/libmsvcr80d.a
+mingw32/lib/libmsvcr90.a
+mingw32/lib/libmsvcr90d.a
 mingw32/lib/libmsvcrt.a
 mingw32/lib/libmsvcrtd.a
 mingw32/lib/libmsvfw32.a
