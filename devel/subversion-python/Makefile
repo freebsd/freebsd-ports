@@ -9,6 +9,7 @@ PKGNAMESUFFIX=	-python
 
 MAINTAINER=	thinker@branda.to
 COMMENT=	Version control system with Python bindings
+CONFLICTS=      subversion-[0-9]* subversion-perl-[0-9]* subversion-ruby-[0-9]*
 
 MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
