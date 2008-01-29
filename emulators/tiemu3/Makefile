@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	tiemu3
-PORTVERSION=	3.01
+PORTVERSION=	3.02
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gtktiemu
-
-PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
-PATCH_SITE_SUBDIR=	gtktiemu
-PATCHFILES=	${PORTNAME}-${PORTVERSION}a.diff.bz2
+DISTNAME=	tiemu-${PORTVERSION}
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	TI89(ti)/92(+)/V200 hand-helds emulator
 
-LIB_DEPENDS=	ticalcs2.6:${PORTSDIR}/comms/libticalcs2 \
+LIB_DEPENDS=	ticalcs2.7:${PORTSDIR}/comms/libticalcs2 \
 		ticables2.1:${PORTSDIR}/comms/libticables2 \
-		tifiles2.4:${PORTSDIR}/devel/libtifiles2
+		tifiles2.5:${PORTSDIR}/devel/libtifiles2
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
@@ -41,7 +38,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
 
-.if defined(WITHOUT_KDE)
+.if !defined(WITH_KDE)
 CONFIGURE_ARGS+=	--without-kde
 .else
 USE_KDELIBS_VER=	3
