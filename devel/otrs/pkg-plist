@@ -223,6 +223,7 @@ otrs/Kernel/Language/pt_BR.pm
 otrs/Kernel/Language/ru.pm
 otrs/Kernel/Language/sk_SK.pm
 otrs/Kernel/Language/sv.pm
+otrs/Kernel/Language/vi_VN.pm
 otrs/Kernel/Language/xx_AgentZoom.pm
 otrs/Kernel/Language/xx_Custom.pm
 otrs/Kernel/Language/zh_CN.pm
