@@ -1,5 +1,7 @@
 bin/xar
 include/xar/xar.h
+lib/libxar.a
+lib/libxar.la
 lib/libxar.so.1
 lib/libxar.so
 @dirrm include/xar
