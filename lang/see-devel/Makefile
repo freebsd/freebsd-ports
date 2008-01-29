@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	see
-PORTVERSION=	2.0.1131
-PORTREVISION=	3
+DISTVERSION=	2.1.1293
 CATEGORIES=	lang devel
-MASTER_SITES=	http://www.powerband.net.au/~david.leonard/ \
-		http://freshmeat.net/redir/see/45974/url_tgz/
+MASTER_SITES=	${MASTER_SITES_LOCAL}
+MASTER_SITE_SUBDIR=	vanilla
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-${DISTVERSION}_snapshot
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Simple ECMAScript Engine (SEE)
@@ -21,9 +21,6 @@ OPTIONS=	GC "Use Boehm-Weiser garbage collection package" on \
 		SEE_DEBUG "Internal SEE library debugging" off
 
 CONFLICTS=	see-[0-9]*
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=yes
