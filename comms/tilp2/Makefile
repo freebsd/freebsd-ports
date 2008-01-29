@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tilp2
-PORTVERSION=	1.07
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
@@ -17,8 +16,8 @@ COMMENT=	TI Linking Program
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	ticables2.1:${PORTSDIR}/comms/libticables2 \
-		tifiles2.4:${PORTSDIR}/devel/libtifiles2 \
-		ticalcs2.6:${PORTSDIR}/comms/libticalcs2 \
+		tifiles2.5:${PORTSDIR}/devel/libtifiles2 \
+		ticalcs2.7:${PORTSDIR}/comms/libticalcs2 \
 		ticonv.3:${PORTSDIR}/converters/libticonv
 
 USE_AUTOTOOLS=	libtool:15
