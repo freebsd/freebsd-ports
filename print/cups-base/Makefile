@@ -49,7 +49,8 @@ OPTIONS=	GNUTLS		"Build with GNUTLS library" on \
 		PYTHON		"Build PYTHON support" off \
 		LIBPAPER	"Build with libpaper support" off \
 		DNSSD		"Build with DNS_SD (avahi) support" off \
-		PAM		"Build with PAM support" off
+		PAM		"Build with PAM support" off \
+		LDAP		"Build with LDAP support" off
 
 CUPS_ETCDIR=	${PREFIX}/etc/cups
 CUPS_SPOOLDIR=	/var/spool/cups
@@ -111,6 +112,13 @@ PLIST_SUB+=		WITH_PAMD=""
 .else
 CONFIGURE_ARGS+=	--disable-pam
 PLIST_SUB+=		WITH_PAMD="@comment "
+.endif
+
+.if defined(WITH_LDAP)
+USE_OPENLDAP=		yes
+CONFIGURE_ARGS+=	--enable-ldap
+.else
+CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
 MAN1EXT=	1
