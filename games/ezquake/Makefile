@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ezquake
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF:ezquake \
@@ -30,7 +30,7 @@ MAKE_ENV=	TCL_SUFX="${TCL_VER:S/.//}"
 .for v in TCL_INCLUDEDIR TCL_LIBDIR
 MAKE_ENV+=	${v}="${${v}}"
 .endfor
-WRKSRC=		${WRKDIR}/${PORTNAME}_18-2_stable
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.//:S/./-/}_stable
 
 OPTIONS=	GLX "Build GLX client" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
