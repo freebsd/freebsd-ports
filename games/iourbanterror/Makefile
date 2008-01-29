@@ -7,7 +7,7 @@
 
 PORTNAME=	iourbanterror
 DISTVERSION=	2007_12_20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.snt.utwente.nl/pub/games/urbanterror/iourbanterror/source/complete/
 DISTNAME=	ioUrbanTerrorSource_${DISTVERSION}
@@ -148,6 +148,11 @@ post-patch:
 # There are new variables in the config files, so keep them in another dir.
 	@${REINPLACE_CMD} -E 's|/\.q3a|/.ioUrbanTerror|' \
 		${WRKSRC}/code/unix/unix_shared.c
+# Fix wrong library version (use general case as only one is installed).
+.if defined(WITH_CURL_DLOPEN)
+	@${REINPLACE_CMD} -e 's|libcurl\.so\.[[:digit:]]|libcurl.so|' \
+		${WRKSRC}/code/client/cl_curl.h
+.endif
 
 do-install:
 .for bin in ${Q3BIN}

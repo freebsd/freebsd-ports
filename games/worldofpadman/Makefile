@@ -7,7 +7,7 @@
 
 PORTNAME=	worldofpadman
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://thilo.kickchat.com/download/:full \
 		http://btc3x6.che.uni-bayreuth.de/~tl/wop_final/:full \
@@ -157,6 +157,13 @@ post-extract:
 	@cd ${WRKDIR} && ${TAR} xf ${f}.tar -C wop
 .endfor
 	@cd ${WRKDIR} && ${TAR} xf readme.tar
+
+.if defined(WITH_CURL_DLOPEN)
+post-patch:
+# Fix wrong library version (use general case as only one is installed).
+	@${REINPLACE_CMD} -e 's|libcurl\.so\.[[:digit:]]|libcurl.so|' \
+		${WRKSRC}/code/client/cl_curl.h
+.endif
 
 .if defined(WITH_GAMELIBS) || !defined(HAVE_VM_COMPILED)
 post-build:
