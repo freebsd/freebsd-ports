@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wahcade
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.anti-particle.com/projects/wahcade/
 
@@ -14,7 +14,8 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A frontend for almost any emulator (MameWAH clone)
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.pth:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
+		${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree \
+		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 USE_PYTHON=	2.4+
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -54,18 +55,14 @@ do-install:
 .endfor
 	${MKDIR} ${DATADIR}
 	${CP} -R ${WRKSRC}/* ${DATADIR}
-	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
-	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+# Needs write permission for the user as they are copied to "~/.wahcade".
+	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 .if !defined(NOPORTDOCS)
 	${LN} -sf ${DATADIR}/doc ${DOCSDIR}
 .endif
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/wahcade.desktop ${PREFIX}/share/applications
 	${LN} -sf ${DATADIR}/pixmaps/wahcade.png ${PREFIX}/share/pixmaps
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
