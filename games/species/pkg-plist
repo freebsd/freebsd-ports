@@ -1,0 +1,120 @@
+bin/species
+%%VISITOOL%%bin/species-visitool
+%%DATADIR%%/bench/Armadillo.red
+%%DATADIR%%/bench/Armadillo.red.rc
+%%DATADIR%%/bench/B-scanner 1.red
+%%DATADIR%%/bench/B-scanner 1.red.rc
+%%DATADIR%%/bench/B-scanner 2.red
+%%DATADIR%%/bench/B-scanner 2.red.rc
+%%DATADIR%%/bench/CMP-scanner 1.red
+%%DATADIR%%/bench/CMP-scanner 1.red.rc
+%%DATADIR%%/bench/CMP-scanner 2.red
+%%DATADIR%%/bench/Cannonade Stone.red
+%%DATADIR%%/bench/Cannonade Stone.red.rc
+%%DATADIR%%/bench/Keystone Stone.red
+%%DATADIR%%/bench/Keystone Stone.red.rc
+%%DATADIR%%/bench/Night Crawler Stone.red
+%%DATADIR%%/bench/Night Crawler Stone.red.rc
+%%DATADIR%%/bench/Winter Werewolf.red
+%%DATADIR%%/bench/Winter Werewolf.red.rc
+%%DATADIR%%/bench/crimp2.red
+%%DATADIR%%/bench/crimp2.red.rc
+%%DATADIR%%/bench/dwarf.red
+%%DATADIR%%/bench/dwarf.red.rc
+%%DATADIR%%/bench/mice.red
+%%DATADIR%%/bench/mice.red.rc
+%%DATADIR%%/bench/notepaper.red
+%%DATADIR%%/bench/notepaper.red.rc
+%%DATADIR%%/bench/paper 2.red
+%%DATADIR%%/bench/paper 2.red.rc
+%%DATADIR%%/bench/paper 3.red
+%%DATADIR%%/bench/paper 3.red.rc
+%%DATADIR%%/bench/paper1.red
+%%DATADIR%%/bench/paper1.red.rc
+%%DATADIR%%/bench/pittrap.red
+%%DATADIR%%/bench/pittrap.red.rc
+%%DATADIR%%/bench/red2rc.bat
+%%DATADIR%%/bench/stone.red
+%%DATADIR%%/bench/stone.red.rc
+%%DATADIR%%/bench/sucker5.red
+%%DATADIR%%/bench/sucker5.red.rc
+%%DATADIR%%/bench/twilight.red
+%%DATADIR%%/bench/twilight.red.rc
+%%DATADIR%%/bench/vampire 1.red
+%%DATADIR%%/bench/vampire 1.red.rc
+%%DATADIR%%/bench/vampire 2.red
+%%DATADIR%%/bench/vampire 2.red.rc
+%%DATADIR%%/evolver_hill/Evolved--1.rc
+%%DATADIR%%/evolver_hill/Evolved--1.red
+%%DATADIR%%/evolver_hill/Evolved--10.rc
+%%DATADIR%%/evolver_hill/Evolved--10.red
+%%DATADIR%%/evolver_hill/Evolved--11.rc
+%%DATADIR%%/evolver_hill/Evolved--11.red
+%%DATADIR%%/evolver_hill/Evolved--12.rc
+%%DATADIR%%/evolver_hill/Evolved--12.red
+%%DATADIR%%/evolver_hill/Evolved--13.rc
+%%DATADIR%%/evolver_hill/Evolved--13.red
+%%DATADIR%%/evolver_hill/Evolved--14.rc
+%%DATADIR%%/evolver_hill/Evolved--14.red
+%%DATADIR%%/evolver_hill/Evolved--15.rc
+%%DATADIR%%/evolver_hill/Evolved--15.red
+%%DATADIR%%/evolver_hill/Evolved--16.rc
+%%DATADIR%%/evolver_hill/Evolved--16.red
+%%DATADIR%%/evolver_hill/Evolved--16.red~
+%%DATADIR%%/evolver_hill/Evolved--17.rc
+%%DATADIR%%/evolver_hill/Evolved--17.red
+%%DATADIR%%/evolver_hill/Evolved--18.rc
+%%DATADIR%%/evolver_hill/Evolved--18.red
+%%DATADIR%%/evolver_hill/Evolved--19.rc
+%%DATADIR%%/evolver_hill/Evolved--19.red
+%%DATADIR%%/evolver_hill/Evolved--2.rc
+%%DATADIR%%/evolver_hill/Evolved--2.red
+%%DATADIR%%/evolver_hill/Evolved--20.rc
+%%DATADIR%%/evolver_hill/Evolved--20.red
+%%DATADIR%%/evolver_hill/Evolved--3.rc
+%%DATADIR%%/evolver_hill/Evolved--3.red
+%%DATADIR%%/evolver_hill/Evolved--4.rc
+%%DATADIR%%/evolver_hill/Evolved--4.red
+%%DATADIR%%/evolver_hill/Evolved--5.rc
+%%DATADIR%%/evolver_hill/Evolved--5.red
+%%DATADIR%%/evolver_hill/Evolved--6.rc
+%%DATADIR%%/evolver_hill/Evolved--6.red
+%%DATADIR%%/evolver_hill/Evolved--7.rc
+%%DATADIR%%/evolver_hill/Evolved--7.red
+%%DATADIR%%/evolver_hill/Evolved--8.rc
+%%DATADIR%%/evolver_hill/Evolved--8.red
+%%DATADIR%%/evolver_hill/Evolved--9.rc
+%%DATADIR%%/evolver_hill/Evolved--9.red
+%%DATADIR%%/evolver_hill/red2rc.bat
+%%DATADIR%%/koen.markov2
+%%DATADIR%%/koen.operands
+%%DATADIR%%/runtest_dummy.rc
+%%DATADIR%%/species.ini
+%%DATADIR%%/wilfiz/behemot.rc
+%%DATADIR%%/wilfiz/behemot.red
+%%DATADIR%%/wilfiz/crazyshot2.rc
+%%DATADIR%%/wilfiz/crazyshot2.red
+%%DATADIR%%/wilfiz/hazylazy.rc
+%%DATADIR%%/wilfiz/hazylazy.red
+%%DATADIR%%/wilfiz/npaper2.rc
+%%DATADIR%%/wilfiz/npaper2.red
+%%DATADIR%%/wilfiz/reepicheep.rc
+%%DATADIR%%/wilfiz/reepicheep.red
+%%DATADIR%%/wilfiz/revengepaper.rc
+%%DATADIR%%/wilfiz/revengepaper.red
+%%DATADIR%%/wilfiz/rotfcopy.rc
+%%DATADIR%%/wilfiz/rotfcopy.red
+%%DATADIR%%/wilfiz/silvertalon12.rc
+%%DATADIR%%/wilfiz/silvertalon12.red
+%%DATADIR%%/wilfiz/sonofvain.rc
+%%DATADIR%%/wilfiz/sonofvain.red
+%%DATADIR%%/wilfiz/uninvited.rc
+%%DATADIR%%/wilfiz/uninvited.red
+%%DATADIR%%/wilfiz/vanquisher2.rc
+%%DATADIR%%/wilfiz/vanquisher2.red
+%%DATADIR%%/wilfiz/willow.rc
+%%DATADIR%%/wilfiz/willow.red
+@dirrm %%DATADIR%%/wilfiz
+@dirrm %%DATADIR%%/evolver_hill
+@dirrm %%DATADIR%%/bench
+@dirrm %%DATADIR%%
