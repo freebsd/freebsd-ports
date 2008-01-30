@@ -588,6 +588,7 @@
     SUBDIR += prboom
     SUBDIR += primateplunge
     SUBDIR += ptkei
+    SUBDIR += ptools
     SUBDIR += pvpgn
     SUBDIR += py-mnemosyne
     SUBDIR += py-poker-eval
