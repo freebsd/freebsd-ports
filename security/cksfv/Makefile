@@ -16,7 +16,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Create or manipulate Simple File Verification (SFV) checksum files
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--manir=${PREFIX}/man --prefix=${PREFIX}
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man --prefix=${PREFIX}
 
 MAN1=		cksfv.1
 PLIST_FILES=	bin/cksfv
