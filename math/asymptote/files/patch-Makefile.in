@@ -1,53 +1,55 @@
---- Makefile.in	Mon Mar  5 10:04:20 2007
-+++ Makefile.in.port	Mon Mar  5 21:44:00 2007
-@@ -22,9 +22,9 @@
+--- Makefile.in	2007-11-28 08:38:48.000000000 +0100
++++ Makefile.in.port	2007-12-27 18:16:24.000000000 +0100
+@@ -24,9 +24,9 @@
  CLEAN = camp.output asy.list
  NAME = asy
- EXTRABIN = x$(NAME)
+ XNAME = x$(NAME)
 -EXTRA = asy-mode.el asy-keywords.el asy-init.el asy.vim asymptote.py
 -KEYWORDS = base $(ASYMPTOTE_SITEDIR)
--LATEXFILES = asymptote.sty asycolors.sty pdfanim_temp.sty
+-LATEXFILES = asymptote.sty asycolors.sty
 +EXTRA = base/asy-mode.el base/asy-keywords.el base/asy-init.el base/asy.vim base/asymptote.py
 +KEYWORDS = base/*.asy
-+LATEXFILES = doc/asymptote.sty doc/asycolors.sty doc/pdfanim_temp.sty
++LATEXFILES = doc/asymptote.sty doc/asycolors.sty
+ ASY = ./asy -dir base -config ""
  
  DEFS = @DEFS@ @OPTIONS@
- CFLAGS = @CPPFLAGS@ @CFLAGS@ 
-@@ -45,7 +45,7 @@
- datadir = $(DESTDIR)@datadir@
+@@ -50,7 +50,7 @@
  asydir = $(datadir)/asymptote
+ GUIdir = $(asydir)/GUI
  docdir = $(DESTDIR)@docdir@
 -exampledir = $(docdir)/examples
 +exampledir = $(datadir)/examples/asymptote
  animationsdir = $(exampledir)/animations
  latexdir = $(DESTDIR)@latexdir@
  INSTALL = @INSTALL@
-@@ -73,7 +73,7 @@
+@@ -81,7 +81,7 @@
  	fi
  	cd $(GC); \
  	./configure $(GCOPTIONS); \
 -	$(MAKE) check
 +	$(MAKE)
  
- html:	asy
- 	cd doc; $(MAKE) doc
-@@ -103,7 +103,7 @@
+ $(GCPPLIB): $(GCLIB)
  
- asy-keywords.el: asy-list.pl 
- 	./asy -l -dir base > asy.list
--	ls $(addsuffix /*.asy,$(KEYWORDS)) | grep -v plain\* | grep -v featpost3D | xargs ./asy -l -dir base >> asy.list
-+	ls $(KEYWORDS) | grep -v plain\* | grep -v featpost3D | xargs ./asy -l -dir base >> asy.list
+@@ -114,7 +114,7 @@
+ 
+ asy-keywords.el: asy asy-list.pl
+ 	$(ASY) -l > asy.list
+-	ls $(addsuffix /*.asy,$(KEYWORDS)) | grep -v plain\* | grep -v featpost3D | xargs $(ASY) -l >> asy.list
++	ls $(KEYWORDS) | grep -v plain\* | grep -v featpost3D | xargs $(ASY) -l >> asy.list
  	./asy-list.pl asy.list @VERSION@
  	ln -sf ../asy-keywords.el base/
  
-@@ -115,11 +115,11 @@
- 	${INSTALL} -d $(bindir) $(asydir) $(exampledir) $(animationsdir)
+@@ -127,13 +127,13 @@
+           $(animationsdir)
  	-${INSTALL} -d $(latexdir)
- 	${INSTALL} -p -m 755 $(NAME) $(EXTRABIN) $(bindir)
+ 	${INSTALL} -p -m 755 $(NAME) $(bindir)
 -	${INSTALL} -p -m 644 base/*.asy $(addprefix base/,$(EXTRA)) $(asydir)
 +	${INSTALL} -p -m 644 base/*.asy $(EXTRA) $(asydir)
- 	${INSTALL} -p -m 644 examples/*.asy examples/piicon.eps \
- 		doc/*.asy doc/*.csv doc/*.dat doc/latexusage.tex $(exampledir)
+ 	${INSTALL} -p -m 755 GUI/*.py $(GUIdir)
+ 	ln -sf @datadir@/asymptote/GUI/xasy.py $(bindir)/$(XNAME)
+ 	${INSTALL} -p -m 644 examples/*.asy examples/piicon.eps doc/*.asy \
+ 	  doc/extra/*.asy doc/*.csv doc/*.dat doc/latexusage.tex $(exampledir)
  	${INSTALL} -p -m 644 examples/animations/*.asy $(animationsdir)
 -	-${INSTALL} -p -m 644 $(addprefix doc/,$(LATEXFILES)) $(latexdir)
 +	-${INSTALL} -p -m 644 $(LATEXFILES) $(latexdir)
