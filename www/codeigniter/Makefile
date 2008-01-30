@@ -8,7 +8,7 @@
 PORTNAME=	codeigniter
 PORTVERSION=	1.5.4
 CATEGORIES=	www
-MASTER_SITES=	http://www.codeigniter.com/download_files/
+MASTER_SITES=	http://codeigniter.com/download_files/
 DISTNAME=	CodeIgniter_${PORTVERSION}
 
 MAINTAINER=	glarkin@sourcehosting.net
