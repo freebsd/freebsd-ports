@@ -25,6 +25,8 @@ post-patch:
 		${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|\./||' ${WRKSRC}/bench.*
 	@${REINPLACE_CMD} -e 's|pmars|&-server|' ${WRKSRC}/bench.pmars
+	@${REINPLACE_CMD} -e 's|Warrior::||' ${WRKSRC}/warrior.hpp
+	@${REINPLACE_CMD} -e 's|Parser::||' ${WRKSRC}/parser.hpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
