@@ -17896,6 +17896,7 @@ yafc		ports/ftp/yafc
 yafic		ports/security/yafic
 yafray		ports/graphics/yafray
 yagiuda		ports/comms/yagiuda
+yahoo-ui	ports/www/yahoo-ui
 yahtzee		ports/games/yahtzee
 yakuake		ports/x11/yakuake
 yale-tftpd	ports/ftp/yale-tftpd
