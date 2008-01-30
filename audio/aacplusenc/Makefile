@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aacplusenc
-PORTVERSION=	0.12
+PORTVERSION=	0.15
 CATEGORIES=	audio
 MASTER_SITES=	http://teknoraver.campuslife.it/software/mp4tools/
 
@@ -33,5 +33,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3 -ftree-vectorize|${CFLAGS}| ; s|-lfftw3f|-L${LOCALBASE}/lib -lfftw3f|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|<endian.h>|<sys/endian.h>| ; s|__BYTE|_BYTE|' ${WRKSRC}/au_channel.h
 
 .include <bsd.port.mk>
