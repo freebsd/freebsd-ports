@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/ \
 		http://www.brueffer.de/distfiles/
@@ -18,6 +18,7 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 CONFLICTS=	ktorrent-devel-[0-9]*
 
+USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
