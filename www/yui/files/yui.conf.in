@@ -1,8 +1,0 @@
-Alias /yui/docs %%DOCSDIR%%
-Alias /yui/examples %%EXAMPLESDIR%%
-Alias /yui %%WWWDIR%%
-
-<Location /yui>
-    Order deny,allow
-    Allow from all
-</Location>
