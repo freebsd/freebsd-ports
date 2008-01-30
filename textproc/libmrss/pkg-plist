@@ -3,7 +3,7 @@ include/mrss.h
 lib/libmrss.a
 lib/libmrss.la
 lib/libmrss.so
-lib/libmrss.so.18
+lib/libmrss.so.19
 libdata/pkgconfig/mrss.pc
 %%PHPMRSS%%lib/php/%%PHP_EXT_DIR%%/mrss.so
 %%PHPMRSS%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
