@@ -2,6 +2,20 @@
 bin/asy
 bin/xasy
 %%DATADIR%%/CAD.asy
+%%DATADIR%%/GUI/CubicBezier.py
+%%DATADIR%%/GUI/UndoRedoStack.py
+%%DATADIR%%/GUI/xasy.py
+%%DATADIR%%/GUI/xasy2asy.py
+%%DATADIR%%/GUI/xasyActions.py
+%%DATADIR%%/GUI/xasyBezierEditor.py
+%%DATADIR%%/GUI/xasyCodeEditor.py
+%%DATADIR%%/GUI/xasyColorPicker.py
+%%DATADIR%%/GUI/xasyFile.py
+%%DATADIR%%/GUI/xasyGUIIcons.py
+%%DATADIR%%/GUI/xasyMainWin.py
+%%DATADIR%%/GUI/xasyOptions.py
+%%DATADIR%%/GUI/xasyOptionsDialog.py
+%%DATADIR%%/GUI/xasyVersion.py
 %%DATADIR%%/animate.asy
 %%DATADIR%%/annotate.asy
 %%DATADIR%%/asy-init.el
@@ -12,6 +26,7 @@ bin/xasy
 %%DATADIR%%/babel.asy
 %%DATADIR%%/binarytree.asy
 %%DATADIR%%/contour.asy
+%%DATADIR%%/contour3.asy
 %%DATADIR%%/drawtree.asy
 %%DATADIR%%/embed.asy
 %%DATADIR%%/external.asy
@@ -33,7 +48,6 @@ bin/xasy
 %%DATADIR%%/metapost.asy
 %%DATADIR%%/palette.asy
 %%DATADIR%%/patterns.asy
-%%DATADIR%%/pdfanim.asy
 %%DATADIR%%/plain.asy
 %%DATADIR%%/plain_Label.asy
 %%DATADIR%%/plain_arcs.asy
@@ -49,12 +63,14 @@ bin/xasy
 %%DATADIR%%/plain_picture.asy
 %%DATADIR%%/plain_shipout.asy
 %%DATADIR%%/plain_strings.asy
+%%DATADIR%%/plain_xasy.asy
 %%DATADIR%%/pstoedit.asy
 %%DATADIR%%/roundedpath.asy
 %%DATADIR%%/simplex.asy
 %%DATADIR%%/slide.asy
 %%DATADIR%%/slopefield.asy
 %%DATADIR%%/solids.asy
+%%DATADIR%%/splinetype.asy
 %%DATADIR%%/stats.asy
 %%DATADIR%%/surface.asy
 %%DATADIR%%/syzygy.asy
@@ -65,7 +81,6 @@ bin/xasy
 %%DATADIR%%/version.asy
 %%DATADIR%%/x11colors.asy
 %%PORTDOCS%%%%DOCSDIR%%/CAD.pdf
-%%PORTDOCS%%%%DOCSDIR%%/PDFAnim_temp_Guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.ascii
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section1.html
@@ -78,7 +93,6 @@ bin/xasy
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section8.html
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section9.html
 %%PORTDOCS%%%%DOCSDIR%%/asymptote.pdf
-%%PORTDOCS%%%%DOCSDIR%%/intro.pdf
 %%EXAMPLESDIR%%/BezierSurface.asy
 %%EXAMPLESDIR%%/Bode.asy
 %%EXAMPLESDIR%%/CAD1.asy
@@ -87,16 +101,22 @@ bin/xasy
 %%EXAMPLESDIR%%/GaussianSurface.asy
 %%EXAMPLESDIR%%/Gouraud.asy
 %%EXAMPLESDIR%%/Gouraudcontour.asy
+%%EXAMPLESDIR%%/HermiteSpline.asy
+%%EXAMPLESDIR%%/Hobbycontrol.asy
+%%EXAMPLESDIR%%/Hobbydir.asy
 %%EXAMPLESDIR%%/Klein.asy
 %%EXAMPLESDIR%%/Pythagoras.asy
 %%EXAMPLESDIR%%/PythagoreanTree.asy
 %%EXAMPLESDIR%%/Sierpinski.asy
 %%EXAMPLESDIR%%/advection.asy
+%%EXAMPLESDIR%%/alignedaxis.asy
 %%EXAMPLESDIR%%/animations/cube.asy
 %%EXAMPLESDIR%%/animations/embeddedmovie.asy
 %%EXAMPLESDIR%%/animations/embeddedu3d.asy
 %%EXAMPLESDIR%%/animations/externalmovie.asy
 %%EXAMPLESDIR%%/animations/pdfmovie.asy
+%%EXAMPLESDIR%%/animations/slidemovies.asy
+%%EXAMPLESDIR%%/animations/sphere.asy
 %%EXAMPLESDIR%%/animations/wavepacket.asy
 %%EXAMPLESDIR%%/animations/wheel.asy
 %%EXAMPLESDIR%%/annotation.asy
@@ -116,9 +136,6 @@ bin/xasy
 %%EXAMPLESDIR%%/colors.asy
 %%EXAMPLESDIR%%/cones.asy
 %%EXAMPLESDIR%%/conicurv.asy
-%%EXAMPLESDIR%%/contour1.asy
-%%EXAMPLESDIR%%/contour2.asy
-%%EXAMPLESDIR%%/contour3.asy
 %%EXAMPLESDIR%%/cos2theta.asy
 %%EXAMPLESDIR%%/cosaddition.asy
 %%EXAMPLESDIR%%/cube.asy
@@ -165,8 +182,10 @@ bin/xasy
 %%EXAMPLESDIR%%/integraltest.asy
 %%EXAMPLESDIR%%/interpolate1.asy
 %%EXAMPLESDIR%%/intro.asy
+%%EXAMPLESDIR%%/irregularcontour.asy
 %%EXAMPLESDIR%%/join.asy
 %%EXAMPLESDIR%%/join3.asy
+%%EXAMPLESDIR%%/jump.asy
 %%EXAMPLESDIR%%/knots.asy
 %%EXAMPLESDIR%%/labelbox.asy
 %%EXAMPLESDIR%%/labelsquare.asy
@@ -191,6 +210,7 @@ bin/xasy
 %%EXAMPLESDIR%%/logticks.asy
 %%EXAMPLESDIR%%/lowint.asy
 %%EXAMPLESDIR%%/lowupint.asy
+%%EXAMPLESDIR%%/magnetic.asy
 %%EXAMPLESDIR%%/makepen.asy
 %%EXAMPLESDIR%%/markers1.asy
 %%EXAMPLESDIR%%/markers2.asy
@@ -198,8 +218,9 @@ bin/xasy
 %%EXAMPLESDIR%%/monthaxis.asy
 %%EXAMPLESDIR%%/mosaic.asy
 %%EXAMPLESDIR%%/mosquito.asy
-%%EXAMPLESDIR%%/mosquito.csv
+%%EXAMPLESDIR%%/multicontour.asy
 %%EXAMPLESDIR%%/near_earth.asy
+%%EXAMPLESDIR%%/onecontour.asy
 %%EXAMPLESDIR%%/orthocenter.asy
 %%EXAMPLESDIR%%/parametricgraph.asy
 %%EXAMPLESDIR%%/parametricsurface.asy
@@ -212,6 +233,7 @@ bin/xasy
 %%EXAMPLESDIR%%/poster.asy
 %%EXAMPLESDIR%%/progrid.asy
 %%EXAMPLESDIR%%/quartercircle.asy
+%%EXAMPLESDIR%%/rainbow.asy
 %%EXAMPLESDIR%%/ring.asy
 %%EXAMPLESDIR%%/roundpath.asy
 %%EXAMPLESDIR%%/sacone.asy
@@ -229,10 +251,10 @@ bin/xasy
 %%EXAMPLESDIR%%/sinc.asy
 %%EXAMPLESDIR%%/sinxlex.asy
 %%EXAMPLESDIR%%/slidedemo.asy
-%%EXAMPLESDIR%%/slidemovies.asy
 %%EXAMPLESDIR%%/slopefield1.asy
 %%EXAMPLESDIR%%/sphere.asy
 %%EXAMPLESDIR%%/spiral.asy
+%%EXAMPLESDIR%%/spline.asy
 %%EXAMPLESDIR%%/spring.asy
 %%EXAMPLESDIR%%/spring0.asy
 %%EXAMPLESDIR%%/spring2.asy
@@ -243,6 +265,7 @@ bin/xasy
 %%EXAMPLESDIR%%/subpictures.asy
 %%EXAMPLESDIR%%/superpath.asy
 %%EXAMPLESDIR%%/tanh.asy
+%%EXAMPLESDIR%%/teapot.asy
 %%EXAMPLESDIR%%/tensor.asy
 %%EXAMPLESDIR%%/thermodynamics.asy
 %%EXAMPLESDIR%%/tile.asy
@@ -266,6 +289,7 @@ bin/xasy
 %%EXAMPLESDIR%%/xxsq01x-1.asy
 %%EXAMPLESDIR%%/xxsq01y.asy
 %%EXAMPLESDIR%%/yingyang.asy
+@dirrm %%DATADIR%%/GUI
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/asy-faq.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -273,7 +297,6 @@ bin/xasy
 @dirrm %%EXAMPLESDIR%%
 share/texmf-local/tex/latex/asymptote/asycolors.sty
 share/texmf-local/tex/latex/asymptote/asymptote.sty
-share/texmf-local/tex/latex/asymptote/pdfanim_temp.sty
 @dirrm share/texmf-local/tex/latex/asymptote
 @unexec %%MKTEXLSR%%
 @exec %%MKTEXLSR%%

@@ -6,22 +6,25 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	1.25
-PORTREVISION=	2
+PORTVERSION=	1.40
+#PORTREVISION=	0
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A powerful script-based vector graphics language
 
 LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3
-BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
+BUILD_DEPENDS=	boehm-gc>=6.8:${PORTSDIR}/devel/boehm-gc \
+		convert:${PORTSDIR}/graphics/ImageMagick \
 		latex:${PORTSDIR}/print/teTeX \
 		makeinfo:${PORTSDIR}/textproc/texi2html \
 		${MKTEXLSR}:${PORTSDIR}/print/teTeX \
 		texi2dvi:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	ggv:${PORTSDIR}/print/ggv \
+RUN_DEPENDS=	boehm-gc>=6.8:${PORTSDIR}/devel/boehm-gc \
+		ggv:${PORTSDIR}/print/ggv \
 		latex:${PORTSDIR}/print/teTeX \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
@@ -33,8 +36,10 @@ USE_GHOSTSCRIPT=yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-latex=${LOCALBASE}/share/texmf-local/tex/latex
+CONFIGURE_ARGS=	--enable-gc=system --with-latex=${LOCALBASE}/share/texmf-local/tex/latex
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include $${CPPFLAGS}" LFLAGS="-L${LOCALBASE}/lib $${LFLAGS}" CFLAGS="-I${LOCALBASE}/include $${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib $${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ENV+=	${CONFIGURE_ENV}
@@ -59,24 +64,7 @@ CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
 INSTALL_TARGET+=	install-doc
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ( ${ARCH} == "amd64" )
-BUILD_DEPENDS+=	boehm-gc=6.8:${PORTSDIR}/devel/boehm-gc
-CONFIGURE_ARGS+=	--enable-gc=system
-.else
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/devel/boehm-gc:fetch
-CONFIGURE_ARGS+=	--enable-gc=${GCVERSION}
-GCVERSION=	6.8
-GC_DISTNAME=	gc${GCVERSION}.tar.gz
-LN_OPTS=	-sf
-
-pre-configure:
-	cd ${WRKSRC}; \
-	${LN} ${LN_OPTS} ${DISTDIR}/${GC_DISTNAME} ${GC_DISTNAME};
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
