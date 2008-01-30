@@ -1,0 +1,10 @@
+bin/ptools-corestep
+bin/ptools-mopt
+bin/ptools-mts
+bin/ptools-p3-2
+bin/ptools-pname
+%%PORTDOCS%%%%DOCSDIR%%/mopt.doc
+%%PORTDOCS%%%%DOCSDIR%%/mts.doc
+%%PORTDOCS%%%%DOCSDIR%%/pname.doc
+%%PORTDOCS%%%%DOCSDIR%%/readme.ptools
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
