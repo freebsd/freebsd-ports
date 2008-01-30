@@ -1627,6 +1627,7 @@ crashecho	ports/mail/crashecho
 crashmail	ports/news/crashmail
 crashme		ports/sysutils/crashme
 crawl		ports/www/crawl
+cre		ports/games/cre
 cream		ports/editors/cream
 createtorrent	ports/net-p2p/createtorrent
 crescendo	ports/net/crescendo
