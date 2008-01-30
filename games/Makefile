@@ -616,6 +616,7 @@
     SUBDIR += qgo
     SUBDIR += qix
     SUBDIR += qkmj
+    SUBDIR += qmars
     SUBDIR += qnetchess
     SUBDIR += qnetwalk
     SUBDIR += qonk
