@@ -16228,6 +16228,7 @@ txt2regex	ports/misc/txt2regex
 txt2tags	ports/textproc/txt2tags
 txtbdf2ps	ports/print/txtbdf2ps
 tya		ports/java/tya
+tycho		ports/games/tycho
 tycoon		ports/x11/tycoon
 typespeed	ports/games/typespeed
 typetools	ports/print/typetools
