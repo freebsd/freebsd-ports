@@ -1,0 +1,5 @@
+Tycho is a program to gather data on Core War warriors. Tycho takes a list of
+warriors and fights each against the other. Execution logs of each instruction
+executed are recorded for all fights. It prints a report in HTML format.
+
+WWW:	http://redcoder.sourceforge.net/?p=tycho
