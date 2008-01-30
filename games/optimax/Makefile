@@ -7,6 +7,7 @@
 
 PORTNAME=	optimax
 PORTVERSION=	0.63
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.corewar.info/optimax/dload/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}_unix
@@ -28,10 +29,11 @@ ALL_TARGET=	exmars
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/fsh94nop0.2
-	@${MV} ${WRKDIR}/fsh* ${WRKSRC}
+	@${MV} ${WRKDIR}/fsh* ${WRKDIR}/optimax/fsh* ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O6|${CFLAGS} -O3|' ${BUILD_WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|-O6|${CFLAGS} -O3|; s|^CCFLAGS +=.*||' \
+		${BUILD_WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -i "" -e 's|^#!/.*|#!${PERL}|' ${WRKSRC}/*.pl
 
 do-install:

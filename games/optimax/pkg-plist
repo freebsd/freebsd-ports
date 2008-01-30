@@ -4,6 +4,57 @@ bin/optimax-remote
 %%SITE_PERL%%/optitools.pm
 %%PORTDOCS%%%%DOCSDIR%%/readme.unix
 %%DATADIR%%/example.red
+%%DATADIR%%/fsh88/cds/blur88.red
+%%DATADIR%%/fsh88/cds/blurstone88.red
+%%DATADIR%%/fsh88/cds/fswamp.red
+%%DATADIR%%/fsh88/cds/november.red
+%%DATADIR%%/fsh88/cds/speed88mph.red
+%%DATADIR%%/fsh88/classes
+%%DATADIR%%/fsh88/clr/88test4.red
+%%DATADIR%%/fsh88/clr/deadend.red
+%%DATADIR%%/fsh88/clr/oshot88.red
+%%DATADIR%%/fsh88/clr/trivial02.red
+%%DATADIR%%/fsh88/clr/vm5.red
+%%DATADIR%%/fsh88/config
+%%DATADIR%%/fsh88/index
+%%DATADIR%%/fsh88/pap/AIP.red
+%%DATADIR%%/fsh88/pap/flashpaper.red
+%%DATADIR%%/fsh88/pap/flypaper2.red
+%%DATADIR%%/fsh88/pap/gymno.red
+%%DATADIR%%/fsh88/pap/lateratnight.red
+%%DATADIR%%/fsh88/pwi/pergament.red
+%%DATADIR%%/fsh88/pwi/unheard88.red
+%%DATADIR%%/fsh88/pws/NEXTST88.RED
+%%DATADIR%%/fsh88/pws/gamma.red
+%%DATADIR%%/fsh88/pws/myherempaper.red
+%%DATADIR%%/fsh88/pws/theseed.red
+%%DATADIR%%/fsh88/pws/vala.red
+%%DATADIR%%/fsh88/sbi/cannonade.red
+%%DATADIR%%/fsh88/sbi/etmp88.red
+%%DATADIR%%/fsh88/sbi/fatexp.red
+%%DATADIR%%/fsh88/sbi/ftrain.red
+%%DATADIR%%/fsh88/sbi/ncdecoy.red
+%%DATADIR%%/fsh88/sbi/pixie88.red
+%%DATADIR%%/fsh88/sbi/pknife.red
+%%DATADIR%%/fsh88/sbi/qsilver88.red
+%%DATADIR%%/fsh88/sbi/simple88.red
+%%DATADIR%%/fsh88/sbi/trident.red
+%%DATADIR%%/fsh88/scn/agony51.red
+%%DATADIR%%/fsh88/scn/beholder17.red
+%%DATADIR%%/fsh88/scn/brazen.red
+%%DATADIR%%/fsh88/scn/careless.red
+%%DATADIR%%/fsh88/scn/charon80.red
+%%DATADIR%%/fsh88/scn/irongate.red
+%%DATADIR%%/fsh88/scn/medusa7x.red
+%%DATADIR%%/fsh88/scn/scanthecan.red
+%%DATADIR%%/fsh88/scn/stasis.red
+%%DATADIR%%/fsh88/scn/vanityII.red
+%%DATADIR%%/fsh88/stn/leapfrog.red
+%%DATADIR%%/fsh88/stn/pacman.red
+%%DATADIR%%/fsh88/stn/stillborn02.red
+%%DATADIR%%/fsh88/stn/ttrap3.red
+%%DATADIR%%/fsh88/stn/twilight.red
+%%DATADIR%%/fsh88/stn/winter3.red
 %%DATADIR%%/fsh94draft0.1/cds/Blade.red
 %%DATADIR%%/fsh94draft0.1/cds/Ikarus.red
 %%DATADIR%%/fsh94draft0.1/cds/boys.red
@@ -317,5 +368,14 @@ bin/optimax-remote
 @dirrm %%DATADIR%%/fsh94draft0.1/clr
 @dirrm %%DATADIR%%/fsh94draft0.1/cds
 @dirrm %%DATADIR%%/fsh94draft0.1
+@dirrm %%DATADIR%%/fsh88/stn
+@dirrm %%DATADIR%%/fsh88/scn
+@dirrm %%DATADIR%%/fsh88/sbi
+@dirrm %%DATADIR%%/fsh88/pws
+@dirrm %%DATADIR%%/fsh88/pwi
+@dirrm %%DATADIR%%/fsh88/pap
+@dirrm %%DATADIR%%/fsh88/clr
+@dirrm %%DATADIR%%/fsh88/cds
+@dirrm %%DATADIR%%/fsh88
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
