@@ -45,6 +45,10 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/OpenGL:${PORTSDIR}/graphics/py-opengl \
 BROKEN=	does not compile
 .endif
 
+.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
+BROKEN=	does not compile
+.endif
+
 .if defined(WITH_LIB3DS)
 LIB_DEPENDS+=	3ds-1.3:${PORTSDIR}/graphics/lib3ds
 .endif
