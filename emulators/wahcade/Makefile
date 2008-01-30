@@ -23,8 +23,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 OPTIONS=	MPLAYER "Install mplayer for movie playback" off \
 		PSYCHO "Enable psycho optimization" on
 
-SUB_FILES=	pkg-message
-
 WRAPPERS=	wahcade wahcade-layout-editor wahcade-setup
 
 .include <bsd.port.pre.mk>
