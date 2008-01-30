@@ -15296,6 +15296,7 @@ spdict		ports/devel/spdict
 spe		ports/editors/spe
 speak		ports/games/speak
 speak_freely	ports/mbone/speak_freely
+species		ports/games/species
 specimen	ports/audio/specimen
 spectools	ports/net-mgmt/spectools
 speedbar	ports/editors/speedbar
