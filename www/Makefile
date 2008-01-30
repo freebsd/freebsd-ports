@@ -1405,6 +1405,7 @@
     SUBDIR += yabb
     SUBDIR += yaws
     SUBDIR += youtube_dl
+    SUBDIR += yui
     SUBDIR += zend-framework
     SUBDIR += zenphoto
     SUBDIR += zerowait-httpd
