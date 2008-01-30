@@ -13,10 +13,14 @@
 %%EXAMPLESDIR%%/tutorial-basic.lua
 %%EXAMPLESDIR%%/tutorial-constants.lua
 %%EXAMPLESDIR%%/tutorial-inject.lua
+%%EXAMPLESDIR%%/tutorial-keepalive.lua
+%%EXAMPLESDIR%%/tutorial-load-multi.lua
 %%EXAMPLESDIR%%/tutorial-packets.lua
 %%EXAMPLESDIR%%/tutorial-query-time.lua
+%%EXAMPLESDIR%%/tutorial-resultset.lua
 %%EXAMPLESDIR%%/tutorial-rewrite.lua
 %%EXAMPLESDIR%%/tutorial-states.lua
+%%EXAMPLESDIR%%/tutorial-tokenize.lua
 %%EXAMPLESDIR%%/tutorial-warnings.lua
 sbin/mysql-proxy
 @dirrmtry %%EXAMPLESDIR%%
