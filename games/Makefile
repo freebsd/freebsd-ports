@@ -787,6 +787,7 @@
     SUBDIR += tuxtype
     SUBDIR += tvp
     SUBDIR += twitch
+    SUBDIR += tycho
     SUBDIR += typespeed
     SUBDIR += tyrquake
     SUBDIR += ufoai
