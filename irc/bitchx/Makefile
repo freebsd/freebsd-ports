@@ -9,7 +9,7 @@ PORTNAME=	BitchX
 PORTVERSION=	1.1.0.1
 PORTREVISION=	1
 
-CATEGORIES=	irc
+CATEGORIES+=	irc
 MASTER_SITES=	http://www.bitchx.com/ \
 		CENKES
 DISTNAME=	ircii-pana-1.1-final
