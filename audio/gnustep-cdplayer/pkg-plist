@@ -60,28 +60,31 @@ Local/Library/Bundles/AudioCD.bundle/AudioCD
 Local/Library/Bundles/AudioCD.bundle/Resources/Info-gnustep.plist
 Local/Library/Bundles/AudioCD.bundle/stamp.make
 Local/Library/Headers/CDPlayer/AudioCDProtocol.h
-Local/Library/Preferences/AudioCD.prefs/AudioCD
-Local/Library/Preferences/AudioCD.prefs/Resources/AudioCD.tiff
-Local/Library/Preferences/AudioCD.prefs/Resources/English.lproj/AudioCD.gorm/data.classes
-Local/Library/Preferences/AudioCD.prefs/Resources/English.lproj/AudioCD.gorm/objects.gorm
-Local/Library/Preferences/AudioCD.prefs/Resources/English.lproj/Localizable.strings
-Local/Library/Preferences/AudioCD.prefs/Resources/French.lproj/AudioCD.gorm/data.classes
-Local/Library/Preferences/AudioCD.prefs/Resources/French.lproj/AudioCD.gorm/objects.gorm
-Local/Library/Preferences/AudioCD.prefs/Resources/French.lproj/Localizable.strings
-Local/Library/Preferences/AudioCD.prefs/Resources/German.lproj/AudioCD.gorm/data.classes
-Local/Library/Preferences/AudioCD.prefs/Resources/German.lproj/AudioCD.gorm/objects.gorm
-Local/Library/Preferences/AudioCD.prefs/Resources/German.lproj/Localizable.strings
-Local/Library/Preferences/AudioCD.prefs/Resources/Info-gnustep.plist
-Local/Library/Preferences/AudioCD.prefs/stamp.make
+Local/Library/Bundles/AudioCD.prefs/AudioCD
+Local/Library/Bundles/AudioCD.prefs/Resources/AudioCD.tiff
+Local/Library/Bundles/AudioCD.prefs/Resources/English.lproj/AudioCD.gorm/data.classes
+Local/Library/Bundles/AudioCD.prefs/Resources/English.lproj/AudioCD.gorm/data.info
+Local/Library/Bundles/AudioCD.prefs/Resources/English.lproj/AudioCD.gorm/objects.gorm
+Local/Library/Bundles/AudioCD.prefs/Resources/English.lproj/Localizable.strings
+Local/Library/Bundles/AudioCD.prefs/Resources/French.lproj/AudioCD.gorm/data.classes
+Local/Library/Bundles/AudioCD.prefs/Resources/French.lproj/AudioCD.gorm/data.info
+Local/Library/Bundles/AudioCD.prefs/Resources/French.lproj/AudioCD.gorm/objects.gorm
+Local/Library/Bundles/AudioCD.prefs/Resources/French.lproj/Localizable.strings
+Local/Library/Bundles/AudioCD.prefs/Resources/German.lproj/AudioCD.gorm/data.classes
+Local/Library/Bundles/AudioCD.prefs/Resources/German.lproj/AudioCD.gorm/data.info
+Local/Library/Bundles/AudioCD.prefs/Resources/German.lproj/AudioCD.gorm/objects.gorm
+Local/Library/Bundles/AudioCD.prefs/Resources/German.lproj/Localizable.strings
+Local/Library/Bundles/AudioCD.prefs/Resources/Info-gnustep.plist
+Local/Library/Bundles/AudioCD.prefs/stamp.make
 Local/Tools/CDPlayer
-@dirrm Local/Library/Preferences/AudioCD.prefs/Resources/German.lproj/AudioCD.gorm
-@dirrm Local/Library/Preferences/AudioCD.prefs/Resources/German.lproj
-@dirrm Local/Library/Preferences/AudioCD.prefs/Resources/French.lproj/AudioCD.gorm
-@dirrm Local/Library/Preferences/AudioCD.prefs/Resources/French.lproj
-@dirrm Local/Library/Preferences/AudioCD.prefs/Resources/English.lproj/AudioCD.gorm
-@dirrm Local/Library/Preferences/AudioCD.prefs/Resources/English.lproj
-@dirrm Local/Library/Preferences/AudioCD.prefs/Resources
-@dirrm Local/Library/Preferences/AudioCD.prefs
+@dirrm Local/Library/Bundles/AudioCD.prefs/Resources/German.lproj/AudioCD.gorm
+@dirrm Local/Library/Bundles/AudioCD.prefs/Resources/German.lproj
+@dirrm Local/Library/Bundles/AudioCD.prefs/Resources/French.lproj/AudioCD.gorm
+@dirrm Local/Library/Bundles/AudioCD.prefs/Resources/French.lproj
+@dirrm Local/Library/Bundles/AudioCD.prefs/Resources/English.lproj/AudioCD.gorm
+@dirrm Local/Library/Bundles/AudioCD.prefs/Resources/English.lproj
+@dirrm Local/Library/Bundles/AudioCD.prefs/Resources
+@dirrm Local/Library/Bundles/AudioCD.prefs
 @dirrm Local/Library/Headers/CDPlayer
 @dirrm Local/Library/Bundles/AudioCD.bundle/Resources
 @dirrm Local/Library/Bundles/AudioCD.bundle
