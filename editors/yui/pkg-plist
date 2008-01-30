@@ -1,0 +1,17 @@
+bin/y
+lib/yui/colormap
+lib/yui/colortrans
+lib/yui/help_eng.html
+lib/yui/help_rus.html
+lib/yui/highlight
+lib/yui/highlight_html
+lib/yui/keymap
+lib/yui/options
+lib/yui/yhelp.html
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.ITK
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/yui
