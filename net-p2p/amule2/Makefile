@@ -20,7 +20,7 @@ MAINTAINER=	boris@tagnet.ru
 COMMENT=	The all-platform eMule p2p client
 
 LATEST_LINK=	aMule2
-CONFLICTS=	aMule-1.* aMule-devel-[0-9]*
+CONFLICTS=	aMule-1.* aMule-devel-[0-9]* ed2k-hash-*
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

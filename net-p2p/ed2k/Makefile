@@ -17,6 +17,7 @@ EXTRACT_ONLY=
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Calculates 'eMule' hashes or producing ed2k:// file links
 
+CONFILTCS=	aMule-*
 WRKSRC=		${WRKDIR}
 MAKEFILE=	/dev/null
 ALL_TARGET=	ed2k
