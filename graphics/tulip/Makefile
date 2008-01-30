@@ -47,6 +47,10 @@ LDFLAGS=	-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib \
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
+
+.if ${OSVERSION} >= 700042
+BROKEN=		tries to link libcompat.a
+.endif
 .endif
 
 post-extract:
