@@ -17,6 +17,8 @@ COMMENT=	A Java based Gnutella client
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+BROKEN=		Checksum mismatch
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
