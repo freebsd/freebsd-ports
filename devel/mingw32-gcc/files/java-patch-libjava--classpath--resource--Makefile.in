@@ -1,0 +1,14 @@
+--- libjava/classpath/resource/Makefile.in.orig	2007-07-22 03:32:38.000000000 +0400
++++ libjava/classpath/resource/Makefile.in	2007-07-22 03:35:10.000000000 +0400
+@@ -294,9 +294,9 @@
+ toolexeclibdir = @toolexeclibdir@
+ vm_classes = @vm_classes@
+ logging_DATA = java/util/logging/logging.properties
+-loggingdir = $(toolexeclibdir)
++loggingdir = $(exec_prefix)/$(target_alias)/lib
+ security_DATA = java/security/classpath.security
+-securitydir = $(toolexeclibdir)/security
++securitydir = $(exec_prefix)/$(target_alias)/lib/security
+ all: all-am
+ 
+ .SUFFIXES:
