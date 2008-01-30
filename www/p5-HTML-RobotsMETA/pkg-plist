@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/RobotsMETA/.packlist
+%%SITE_PERL%%/HTML/RobotsMETA.pm
+%%SITE_PERL%%/HTML/RobotsMETA/Rules.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/RobotsMETA
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/RobotsMETA
+@dirrmtry %%SITE_PERL%%/HTML

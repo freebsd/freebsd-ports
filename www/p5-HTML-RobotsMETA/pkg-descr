@@ -1,0 +1,5 @@
+HTML::RobotsMETA is a simple HTML::Parser subclass
+that extracts robots exclusion information from meta tags.
+
+Author:	Daisuke Maki <dmaki@cpan.org>
+WWW:	http://search.cpan.org/~dmaki/HTML-RobotsMETA/
