@@ -1,0 +1,9 @@
+Species is a corewars evolver. It is a program to generates corewars warriors
+using genetic algorithms. This is the program which generated the best evolved
+warrior in the recent Multi-Manics corewars competition. Contemporaries
+include YACE, RedRace, Red Maker and CCAI.
+
+Species is definitely the most over-engineered, complicated and buggy Corewars
+Evolver on the freeware market today!
+
+WWW:	http://redcoder.sourceforge.net/?p=species

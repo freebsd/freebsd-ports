@@ -1,0 +1,30 @@
+--- ./Makefile.orig	Sun Feb 22 03:54:24 2004
++++ ./Makefile	Wed Jan 16 18:29:09 2008
+@@ -1,8 +1,8 @@
+ # makefile for species
+ 
+-CC = gcc
+-CPP = g++
+-LD = g++
++CC ?= gcc
++CPP = $(CXX)
++LD = $(CXX)
+ 
+ OPT = -O4
+ DBG =
+@@ -11,12 +11,12 @@
+ #OPT += -mcpu=i686 -march=i686
+ #DBG += -W -Wall -pedantic -ansi
+ 
+-CFLAGS = ${OPT} ${DBG}
++CFLAGS += ${OPT} ${DBG} ${WXCFLAGS} -include math.h
+ CPPFLAGS = ${OPT} ${DBG}
+ 
+ #set WXDIR if it isn't a global variable on your system, and you will be making visitool (species itself doesn't need wxWindows)
+-WXCFLAGS = -I${WXDIR}/lib/wx/include/msw-2.4 -I${WXDIR}/include -I${WXDIR}/src/regex -I${WXDIR}/src/zlib -I${WXDIR}/src/png -I${WXDIR}/src/jpeg -I${WXDIR}/src/tiff -D_WIN32_IE=0x400 -D__WXMSW__ -mthreads -DWXUSINGDLL=1 -fno-pcc-struct-return -O4 -MMD -mthreads -Wall
+-WXLD = -L${WXDIR}/lib -lwxmsw240 -Wl,--subsystem,windows -mwindows -mthreads 
++WXCFLAGS = `${WX_CONFIG} --cflags`
++WXLD = `${WX_CONFIG} --libs`
+ 
+ #exhaust files
+ EXHAUST = sim.o asm.o pspace.o

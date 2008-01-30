@@ -714,6 +714,7 @@
     SUBDIR += spacearyarya
     SUBDIR += spacehulk
     SUBDIR += speak
+    SUBDIR += species
     SUBDIR += spellcast
     SUBDIR += speyes
     SUBDIR += spicetrade
