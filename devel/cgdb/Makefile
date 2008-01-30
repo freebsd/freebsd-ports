@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	cgdb
-PORTVERSION=	0.6.3
-PORTREVISION=	3
+PORTVERSION=	0.6.4
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SOURCEFORGE
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A curses-based interface to the GNU Debugger
 
 INFO=		cgdb
 MAN1=		cgdb.1
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=	yes
 
 .include <bsd.port.pre.mk>
 
-# at this time we can not use LIB_DEPENDS please read ports/99327
+# at this time we can not use LIB_DEPENDS, please read ports/99327
 .if ${OSVERSION} < 700016
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
 RUN_DEPENDS=	${BUILD_DEPENDS}
