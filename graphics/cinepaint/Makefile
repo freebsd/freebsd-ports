@@ -45,6 +45,12 @@ PLIST_SUB+=	OPENEXR:=""
 PLIST_SUB+=	OPENEXR:="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's| -Wall||' \
@@ -58,4 +64,4 @@ post-patch:
 		's|static GDrawableType|static GImageType|' \
 		${WRKSRC}/plug-ins/psd/psd.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
