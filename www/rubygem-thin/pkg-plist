@@ -9,6 +9,7 @@ bin/thin
 %%GEM_LIB_DIR%%/benchmark/utils.rb
 %%GEM_LIB_DIR%%/bin/thin
 %%GEM_LIB_DIR%%/doc/benchmarks.txt
+%%GEM_LIB_DIR%%/example/adapter.rb
 %%GEM_LIB_DIR%%/example/config.ru
 %%GEM_LIB_DIR%%/example/thin.god
 %%GEM_LIB_DIR%%/ext/thin_parser/Makefile
@@ -34,8 +35,10 @@ bin/thin
 %%GEM_LIB_DIR%%/lib/thin/request.rb
 %%GEM_LIB_DIR%%/lib/thin/response.rb
 %%GEM_LIB_DIR%%/lib/thin/server.rb
+%%GEM_LIB_DIR%%/lib/thin/stats.rb
 %%GEM_LIB_DIR%%/lib/thin/statuses.rb
 %%GEM_LIB_DIR%%/lib/thin/version.rb
+%%GEM_LIB_DIR%%/lib/thin_parser.bundle
 %%GEM_LIB_DIR%%/lib/thin_parser.so
 %%GEM_LIB_DIR%%/spec/cluster_spec.rb
 %%GEM_LIB_DIR%%/spec/daemonizing_spec.rb
@@ -85,7 +88,17 @@ bin/thin
 %%GEM_LIB_DIR%%/spec/response_spec.rb
 %%GEM_LIB_DIR%%/spec/server_spec.rb
 %%GEM_LIB_DIR%%/spec/spec_helper.rb
+%%GEM_LIB_DIR%%/tasks/announce.rake
+%%GEM_LIB_DIR%%/tasks/deploy.rake
+%%GEM_LIB_DIR%%/tasks/email.erb
+%%GEM_LIB_DIR%%/tasks/ext.rake
+%%GEM_LIB_DIR%%/tasks/gem.rake
+%%GEM_LIB_DIR%%/tasks/rdoc.rake
+%%GEM_LIB_DIR%%/tasks/site.rake
+%%GEM_LIB_DIR%%/tasks/spec.rake
+%%GEM_LIB_DIR%%/tasks/stats.rake
 %%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/tasks
 @dirrm %%GEM_LIB_DIR%%/spec/rails_app/script/process
 @dirrm %%GEM_LIB_DIR%%/spec/rails_app/script/performance
 @dirrm %%GEM_LIB_DIR%%/spec/rails_app/script
