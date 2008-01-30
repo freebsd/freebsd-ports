@@ -537,6 +537,7 @@
     SUBDIR += openmortal
     SUBDIR += openttd
     SUBDIR += openyahtzee
+    SUBDIR += optimax
     SUBDIR += orbital_eunuchs_sniper
     SUBDIR += outerspace
     SUBDIR += p5-Algorithm-Pair-Best
