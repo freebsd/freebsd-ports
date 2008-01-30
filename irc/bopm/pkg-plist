@@ -6,6 +6,7 @@ include/opm.h
 include/opm_error.h
 include/opm_types.h
 include/opm_common.h
+share/bopm.conf.blitzed
 lib/libopm.so.0
 lib/libopm.so
 lib/libopm.la
