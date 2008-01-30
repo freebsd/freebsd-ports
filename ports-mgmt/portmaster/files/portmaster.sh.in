@@ -41,14 +41,14 @@ umask 022
 version () {
 	local rcs cvs
 
-	rcs='$Id: portmaster,v 2.23 2008/01/24 02:01:46 doug Exp $'
+	rcs='$Id: portmaster,v 2.24 2008/01/30 01:40:33 doug Exp $'
 	cvs='$FreeBSD$'
 
 	rcs="${rcs#*,v }" ; rcs="${rcs%% *}"
 	cvs="${cvs#*,v }" ; cvs="${cvs%% *}"
 
 	echo ''
-	[ "$cvs" != '$FreeBSD$' ] &&
+	[ "${cvs#$}" != 'FreeBSD$' ] &&
 		{ echo "===>>> FreeBSD version $cvs" ; return 0; }
 	echo "===>>> Development version $rcs"
 }
@@ -1684,7 +1684,6 @@ all_config () {
 		[ -d "$pdb/$iport" ] || continue
 		case "$CUR_DEPS" in *:${iport}:*) continue ;; esac
 		check_exclude $iport || continue
-		check_interactive $iport || continue
 
 		DEPTH=
 		if [ -n "$FORCE" ]; then
@@ -1699,6 +1698,7 @@ all_config () {
 		fi
 
 		if [ -z "$NO_RECURSIVE_CONFIG" ]; then
+			check_interactive $iport || continue
 			# We got here, so we know we have to build it
 			update_port $iport
 		else
