@@ -1404,6 +1404,7 @@
     SUBDIR += xshttpd-devel
     SUBDIR += xulrunner
     SUBDIR += yabb
+    SUBDIR += yahoo-ui
     SUBDIR += yaws
     SUBDIR += youtube_dl
     SUBDIR += zend-framework
