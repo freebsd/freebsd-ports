@@ -44,4 +44,10 @@ post-patch:
 pre-configure:
 	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I acfiles
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=	does not build
+.endif
+
+.include <bsd.port.post.mk>
