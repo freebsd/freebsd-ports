@@ -7,6 +7,7 @@
 
 PORTNAME=	rsstail
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.vanheusden.com/rsstail/ CENKES
 EXTRACT_SUFX=	.tgz
@@ -14,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Simple rss monitor
 
-LIB_DEPENDS=	mrss.18:${PORTSDIR}/textproc/libmrss
+LIB_DEPENDS=	mrss.19:${PORTSDIR}/textproc/libmrss
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
