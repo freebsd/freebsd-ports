@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd January 23, 2008
+.Dd January 29, 2008
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -47,6 +47,17 @@ Common Flags:
 .Nm
 .Op Common Flags
 .Ar glob pattern from /var/db/pkg
+.Pp
+PLEASE NOTE: Even if there is only one match, and even if you use
+.Fl u ,
+you will still be prompted to confirm what port you want to update.
+This is a feature.
+Thus if you are specifying multiple ports on a command line
+you should specify the full name from
+.Pa /var/db/pkg
+or
+.Pa [/usr/ports/]foo/bar .
+.Pp
 .Nm
 .Op Common Flags
 .Fl p Ar port directory in /usr/ports
@@ -100,7 +111,7 @@ The focus of this tool is to keep the dependency
 tracking information for your ports up to date,
 which allows you to update a specific port without
 having to update all of the ports
-.Dq above
+.Qq above
 it.
 In the rare case where you do need to recompile
 ports which depend on a port you are updating,
@@ -171,9 +182,10 @@ is called.
 If you are using the
 .Fl b
 option, these packages can be found in a directory called
-.Dq portmaster-backup
-in the directory specified by the PACKAGES environment
-variable, usually
+.Qq portmaster-backup
+in the directory specified by the
+.Ev PACKAGES
+environment variable, usually
 .Pa /usr/ports/packages .
 If there is no
 .Fl b
@@ -247,6 +259,12 @@ verbose output
 save old shared libraries before deinstall
 .It Fl u
 unattended mode -- accept defaults for all but 'make config'
+.Pp
+PLEASE NOTE: Under most circumstances this option is not
+necessary, and may produce unwanted results.
+If you experience problems with
+.Nm ,
+please try running it without this option first.
 .It [-R] Fl f
 always rebuild ports (overrides
 .Fl i )
@@ -321,14 +339,17 @@ display help message
 display the version only.
 .El
 .Sh MAKE ENVIRONMENT
-The directory pointed to by the PACKAGES
+The directory pointed to by the
+.Ev PACKAGES
 variable (by default
 .Pa /usr/ports/packages )
 will be used to store new and backup packages.
 When using 'make package' for the
 .Fl g
 option, the ports infrastructure will store packages in
-.Pa /usr/ports/packages/All .
+.Pa /usr/ports/packages/All ,
+aka
+.Ev PKGREPOSITORY .
 When using the
 .Fl b
 option,
@@ -339,9 +360,15 @@ so that you can create both a backup package and
 a package of the newly installed port even if they
 have the same version.
 .Pp
-The UPGRADE_TOOL variable is set to
-.Dq portmaster ,
-and the UPGRADE_PORT and UPGRADE_PORT_VER variables
+The
+.Ev UPGRADE_TOOL
+variable is set to
+.Qq Nm ,
+and the
+.Ev UPGRADE_PORT
+and
+.Ev UPGRADE_PORT_VER
+variables
 are set to the full package name string and version
 of the existing package being replaced, if any.
 .Sh FILES
@@ -395,8 +422,9 @@ If the
 option is used, and the installation or upgrade is not
 successful, the results of the build and install will be
 saved in this file.
-Substitute the value of TMPDIR in your environment as
-appropriate.
+Substitute the value of
+.Ev TMPDIR
+in your environment as appropriate.
 .El
 .Sh EXIT STATUS
 .Ex -std
@@ -407,7 +435,7 @@ It does this by defining SU_CMD, which is typically
 .Xr su 1 .
 In order to support complete management of your ports as an
 unprivileged user, escalating to
-.Dq root
+.Qq root
 privileges only when necessary,
 .Nm
 can use
@@ -434,7 +462,7 @@ It is further assumed that the following directories will be
 owned by root:
 .Bl -tag -width F1
 .It Pa /var/db/pkg
-.It Pa /var/db/port
+.It Pa /var/db/ports
 .It LOCALBASE - Usually Pa /usr/local
 .It PACKAGES - Usually Pa /usr/ports/packages
 .It PKGREPOSITORY - Usually Pa ${PACKAGES}/All
@@ -463,6 +491,10 @@ a tool other than
 to handle the privilege escalation, although at this time
 .Xr sudo 1
 is the only supported option.
+.Pp
+PLEASE NOTE: You cannot upgrade the
+.Xr sudo 1
+port itself using this method.
 .Sh EXAMPLES
 The following are examples of typical usage
 of the
