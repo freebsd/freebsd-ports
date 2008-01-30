@@ -254,6 +254,7 @@ bin/parse_tree_show
 %%GEM_DOC_DIR%%/rdoc/classes/UnifiedRuby.src/M000192.html
 %%GEM_DOC_DIR%%/rdoc/classes/UnifiedRuby.src/M000193.html
 %%GEM_DOC_DIR%%/rdoc/classes/UnifiedRuby.src/M000194.html
+%%GEM_DOC_DIR%%/rdoc/classes/Unifier.html
 %%GEM_DOC_DIR%%/rdoc/classes/Unique.html
 %%GEM_DOC_DIR%%/rdoc/classes/Unique.src/M000169.html
 %%GEM_DOC_DIR%%/rdoc/classes/Unique.src/M000170.html
