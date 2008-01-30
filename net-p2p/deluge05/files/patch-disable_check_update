@@ -1,5 +1,5 @@
---- glade/preferences_dialog.glade.orig	2008-01-19 12:40:55.000000000 -0600
-+++ glade/preferences_dialog.glade	2008-01-19 12:41:35.000000000 -0600
+--- glade/preferences_dialog.glade.orig	2008-01-30 13:03:26.000000000 -0600
++++ glade/preferences_dialog.glade	2008-01-30 13:04:06.000000000 -0600
 @@ -2673,7 +2673,7 @@
                  </child>
                  <child>
@@ -9,8 +9,8 @@
                      <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                      <property name="label_xalign">0</property>
                      <property name="shadow_type">GTK_SHADOW_NONE</property>
---- src/interface.py.orig	2008-01-19 12:41:04.000000000 -0600
-+++ src/interface.py	2008-01-19 12:42:26.000000000 -0600
+--- src/interface.py.orig	2008-01-30 13:03:33.000000000 -0600
++++ src/interface.py	2008-01-30 13:04:38.000000000 -0600
 @@ -1037,8 +1037,6 @@
          # Load plugins after we showed main window (if not started in tray)
          self.load_plugins()
@@ -20,7 +20,7 @@
  
          try:
              gobject.threads_init()
-@@ -1048,34 +1046,6 @@
+@@ -1048,38 +1046,6 @@
          except KeyboardInterrupt:
              self.manager.quit()
  
@@ -38,7 +38,11 @@
 -        except IOError:
 -            print "Network error while trying to check for a newer version of \
 -Deluge"
--            new_release = ""
+-            try:
+-                gtk.gdk.threads_leave()
+-            except:
+-                pass
+-            return
 -
 -        if new_release > common.PROGRAM_VERSION:
 -            result = dialogs.show_popup_question(None, _("There is a newer version \
