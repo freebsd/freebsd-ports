@@ -1,0 +1,84 @@
+bin/yace
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%DATADIR%%/bench/00000000.red
+%%DATADIR%%/bench/00000001.red
+%%DATADIR%%/bench/00000002.red
+%%DATADIR%%/bench/00000003.red
+%%DATADIR%%/bench/00000004.red
+%%DATADIR%%/bench/00000005.red
+%%DATADIR%%/bench/00000006.red
+%%DATADIR%%/bench/00000007.red
+%%DATADIR%%/bench/00000008.red
+%%DATADIR%%/bench/00000009.red
+%%DATADIR%%/bench/readme.txt
+%%DATADIR%%/testset/00000000.red
+%%DATADIR%%/testset/00000001.red
+%%DATADIR%%/testset/00000002.red
+%%DATADIR%%/testset/00000003.red
+%%DATADIR%%/testset/00000004.red
+%%DATADIR%%/testset/00000005.red
+%%DATADIR%%/testset/00000006.red
+%%DATADIR%%/testset/00000007.red
+%%DATADIR%%/testset/00000008.red
+%%DATADIR%%/testset/00000009.red
+%%DATADIR%%/testset/00000010.red
+%%DATADIR%%/testset/00000011.red
+%%DATADIR%%/testset/00000012.red
+%%DATADIR%%/testset/00000013.red
+%%DATADIR%%/testset/00000014.red
+%%DATADIR%%/testset/00000015.red
+%%DATADIR%%/testset/00000016.red
+%%DATADIR%%/testset/00000017.red
+%%DATADIR%%/testset/00000018.red
+%%DATADIR%%/testset/00000019.red
+%%DATADIR%%/testset/franz/00000001.red
+%%DATADIR%%/testset/franz/00000002.red
+%%DATADIR%%/testset/franz/00000003.red
+%%DATADIR%%/testset/franz/00000004.red
+%%DATADIR%%/testset/franz/00000005.red
+%%DATADIR%%/testset/franz/00000006.red
+%%DATADIR%%/testset/franz/00000007.red
+%%DATADIR%%/testset/franz/00000008.red
+%%DATADIR%%/testset/franz/00000009.red
+%%DATADIR%%/testset/franz/00000010.red
+%%DATADIR%%/testset/koenigsstuhl/00000000.red
+%%DATADIR%%/testset/koenigsstuhl/00000001.red
+%%DATADIR%%/testset/koenigsstuhl/00000002.red
+%%DATADIR%%/testset/koenigsstuhl/00000003.red
+%%DATADIR%%/testset/koenigsstuhl/00000004.red
+%%DATADIR%%/testset/koenigsstuhl/00000005.red
+%%DATADIR%%/testset/koenigsstuhl/00000006.red
+%%DATADIR%%/testset/koenigsstuhl/00000007.red
+%%DATADIR%%/testset/koenigsstuhl/00000008.red
+%%DATADIR%%/testset/koenigsstuhl/00000009.red
+%%DATADIR%%/testset/koenigsstuhl/00000010.red
+%%DATADIR%%/testset/koenigsstuhl/00000011.red
+%%DATADIR%%/testset/srcforge/00000000.red
+%%DATADIR%%/testset/srcforge/00000001.red
+%%DATADIR%%/testset/srcforge/00000002.red
+%%DATADIR%%/testset/srcforge/00000003.red
+%%DATADIR%%/testset/srcforge/00000004.red
+%%DATADIR%%/testset/srcforge/00000005.red
+%%DATADIR%%/testset/srcforge/00000006.red
+%%DATADIR%%/testset/srcforge/00000007.red
+%%DATADIR%%/testset/srcforge/00000008.red
+%%DATADIR%%/testset/srcforge/00000009.red
+%%DATADIR%%/testset/srcforge/00000010.red
+%%DATADIR%%/testset/srcforge/00000011.red
+%%DATADIR%%/testset/srcforge/00000012.red
+%%DATADIR%%/testset/srcforge/00000013.red
+%%DATADIR%%/testset/srcforge/00000014.red
+%%DATADIR%%/testset/srcforge/00000015.red
+%%DATADIR%%/testset/srcforge/00000016.red
+%%DATADIR%%/testset/srcforge/00000017.red
+%%DATADIR%%/testset/srcforge/00000018.red
+%%DATADIR%%/testset/srcforge/00000019.red
+%%DATADIR%%/yace.cfg
+@dirrm %%DATADIR%%/testset/srcforge
+@dirrm %%DATADIR%%/testset/koenigsstuhl
+@dirrm %%DATADIR%%/testset/franz
+@dirrm %%DATADIR%%/testset
+@dirrm %%DATADIR%%/bench
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

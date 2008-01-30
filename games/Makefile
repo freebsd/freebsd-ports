@@ -966,6 +966,7 @@
     SUBDIR += xworm
     SUBDIR += xye
     SUBDIR += xzip
+    SUBDIR += yace
     SUBDIR += yadex
     SUBDIR += yahtzee
     SUBDIR += yamsweeper

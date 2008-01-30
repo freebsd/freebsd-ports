@@ -1,0 +1,8 @@
+Here you can find Yace, which is a program that automatically creates
+corewar-warriors, using a genetic algorithm. Yace was a modified version of
+ga_war.c, another corewar evolver (many thanks to Jason Boer), but in the
+latest release there is not much code left from ga_war. I also want to thank M
+Joonas Pihlaja for his Corewar Simulator exhaust, which is released under the
+GPL.
+
+WWW:	http://corewar.co.uk/ankerl/yace.htm
