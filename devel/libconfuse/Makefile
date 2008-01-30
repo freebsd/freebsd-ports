@@ -7,7 +7,7 @@
 
 PORTNAME=	libconfuse
 PORTVERSION=	2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		ftp://ftp.wilbury.sk/pub/FreeBSD/local/distfiles/
@@ -17,8 +17,6 @@ DISTNAME=	confuse-${PORTVERSION}
 MAINTAINER=	otis@freebsd.sk
 COMMENT=	Configuration file parsing library
 
-BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
-
 .if defined(WITH_CHECK)
 LIB_DEPENDS+=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck
 .endif
@@ -26,7 +24,7 @@ LIB_DEPENDS+=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck
 USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack pkgconfig
 CONFIGURE_ARGS+=	--disable-nls
 CFLAGS+=	-I${WRKSRC}/src
 .if defined(WITH_CHECK)
