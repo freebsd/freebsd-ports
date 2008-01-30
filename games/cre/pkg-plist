@@ -1,0 +1,4 @@
+bin/cre
+%%PORTDOCS%%%%DOCSDIR%%/CRE Manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/Exhaust README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
