@@ -25,5 +25,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 libgnome libgnomeui libxml2 libglade2
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|@DATADIRNAME@|share|' ${WRKSRC}/po/Makefile.in.in
 
+.include <bsd.port.mk>
