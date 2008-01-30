@@ -17885,6 +17885,7 @@ yabause		ports/emulators/yabause
 yabb		ports/www/yabb
 yabm		ports/net-mgmt/yabm
 yacas		ports/math/yacas
+yace		ports/games/yace
 yadex		ports/games/yadex
 yafc		ports/ftp/yafc
 yafic		ports/security/yafic
