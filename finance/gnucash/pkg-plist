@@ -541,6 +541,7 @@ share/gnucash/doc/ChangeLog.2003
 share/gnucash/doc/ChangeLog.2004
 share/gnucash/doc/ChangeLog.2005
 share/gnucash/doc/ChangeLog.2006
+share/gnucash/doc/ChangeLog.2007
 share/gnucash/doc/DOCUMENTERS
 share/gnucash/doc/HACKING
 share/gnucash/doc/INSTALL
@@ -800,15 +801,16 @@ share/gnucash/xml/qsf/pilot-qsf-GnuCashInvoice.xml
 share/gnucash/xml/qsf/pilot-qsf-gncCustomer.xml
 share/gnucash/xml/qsf/qsf-map.xsd.xml
 share/gnucash/xml/qsf/qsf-object.xsd.xml
-share/pixmaps/gnucash-icon-16x16.png
-share/pixmaps/gnucash-icon-32x32.png
-share/pixmaps/gnucash-icon-48x48.png
 share/xml/gnucash/xsl/README
 share/xml/gnucash/xsl/date-time.xsl
 share/xml/gnucash/xsl/gnucash-gnccustomer-vcard2.xsl
 share/xml/gnucash/xsl/gnucash-std.xsl
 share/xml/gnucash/xsl/string.xsl
 share/xml/gnucash/xsl/vcard-gnccustomer.pl
+share/icons/hicolor/16x16/apps/gnucash-icon.png
+share/icons/hicolor/32x32/apps/gnucash-icon.png
+share/icons/hicolor/48x48/apps/gnucash-icon.png
+share/icons/hicolor/scalable/apps/gnucash-icon.svg
 share/locale/ca/LC_MESSAGES/gnucash.mo
 share/locale/cs/LC_MESSAGES/gnucash.mo
 share/locale/da/LC_MESSAGES/gnucash.mo
@@ -836,6 +838,7 @@ share/locale/sv/LC_MESSAGES/gnucash.mo
 share/locale/ta/LC_MESSAGES/gnucash.mo
 share/locale/tr/LC_MESSAGES/gnucash.mo
 share/locale/uk/LC_MESSAGES/gnucash.mo
+share/locale/vi/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrmtry share/locale/rw/LC_MESSAGES
