@@ -8744,6 +8744,7 @@ ophoto		ports/graphics/ophoto
 opieprint	ports/security/opieprint
 opmixer		ports/audio/opmixer
 oproute		ports/net-mgmt/oproute
+optimax		ports/games/optimax
 optimfrog	ports/audio/optimfrog
 optipng		ports/graphics/optipng
 oqtencoder	ports/multimedia/oqtencoder
