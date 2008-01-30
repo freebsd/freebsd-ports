@@ -3,18 +3,26 @@
 %%SITE_PERL%%/IO/Async.pod
 %%SITE_PERL%%/IO/Async/Buffer.pm
 %%SITE_PERL%%/IO/Async/ChildManager.pm
+%%SITE_PERL%%/IO/Async/Connector.pm
 %%SITE_PERL%%/IO/Async/DetachedCode.pm
 %%SITE_PERL%%/IO/Async/DetachedCode/FlatMarshaller.pm
 %%SITE_PERL%%/IO/Async/DetachedCode/StorableMarshaller.pm
+%%SITE_PERL%%/IO/Async/Loop.pm
+%%SITE_PERL%%/IO/Async/Loop/Glib.pm
+%%SITE_PERL%%/IO/Async/Loop/IO_Poll.pm
+%%SITE_PERL%%/IO/Async/Loop/Select.pm
 %%SITE_PERL%%/IO/Async/MergePoint.pm
 %%SITE_PERL%%/IO/Async/Notifier.pm
+%%SITE_PERL%%/IO/Async/Resolver.pm
 %%SITE_PERL%%/IO/Async/Set.pm
 %%SITE_PERL%%/IO/Async/Set/GMainLoop.pm
 %%SITE_PERL%%/IO/Async/Set/IO_Poll.pm
 %%SITE_PERL%%/IO/Async/Set/Select.pm
 %%SITE_PERL%%/IO/Async/SignalProxy.pm
+%%SITE_PERL%%/IO/Async/Stream.pm
 %%SITE_PERL%%/IO/Async/TimeQueue.pm
 @dirrmtry %%SITE_PERL%%/IO/Async/Set
+@dirrmtry %%SITE_PERL%%/IO/Async/Loop
 @dirrmtry %%SITE_PERL%%/IO/Async/DetachedCode
 @dirrmtry %%SITE_PERL%%/IO/Async
 @dirrmtry %%SITE_PERL%%/IO
