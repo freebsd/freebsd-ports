@@ -13842,6 +13842,7 @@ qmailanalog	ports/mail/qmailanalog
 qmailmrtg7	ports/mail/qmailmrtg7
 qmake		ports/devel/qmake
 qmake4		ports/devel/qmake4
+qmars		ports/games/qmars
 qmc		ports/misc/qmc
 qmc2		ports/emulators/qmc2
 qmhandle	ports/mail/qmhandle
