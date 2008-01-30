@@ -136,6 +136,7 @@
     SUBDIR += crafty-open-medium
     SUBDIR += crafty-tablebase-no-pawn
     SUBDIR += crafty-tablebase-pawn
+    SUBDIR += cre
     SUBDIR += crimson
     SUBDIR += criticalmass
     SUBDIR += crossfire-client

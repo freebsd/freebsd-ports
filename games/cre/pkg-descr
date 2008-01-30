@@ -1,0 +1,12 @@
+CRE, which stands for Corewars Redcode Evolver, is an open-source program that
+automatically generates programs for the game Corewars by using Charles
+Darwin's theories on natural selection. When you start CRE, here's what
+happens:
+
+1. A population of warriors is created by randomly selecting instructions.
+2. Each warrior's fitness is tested by battling with other warriors in the
+   population.
+3. The fittest warriors reproduce and replace less fit warriors.
+4. The previous two steps are repeated indefinitely.
+
+WWW:	http://cre.sourceforge.net/
