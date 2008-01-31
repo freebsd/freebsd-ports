@@ -1838,14 +1838,14 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="a1ef3fc0-8ad0-11dc-9490-0016179b2dd5">
-    <topic>dirproxy -- remote denial of service</topic>
+    <topic>dircproxy -- remote denial of service</topic>
     <affects>
       <package>
-	<name>dirproxy</name>
+	<name>dircproxy</name>
 	<range><lt>1.0.5_1</lt></range>
       </package>
       <package>
-	<name>dirproxy-devel</name>
+	<name>dircproxy-devel</name>
 	<range><lt>1.2.0.b2_1</lt></range>
       </package>
     </affects>
