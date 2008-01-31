@@ -30,13 +30,13 @@ bin/soapui.sh
 %%DATADIR%%/lib/xalan-2.7.0.jar
 %%DATADIR%%/lib/jetty-util-6.1.5.jar
 %%DATADIR%%/lib/commons-cli-1.0.jar
-%%DATADIR%%/lib/xbean-2.3.0-patched.jar
+%%DATADIR%%/lib/xbean-2.3.0-trunk-patched.jar
 %%DATADIR%%/lib/jsr173_1.0_api-xmlbeans-2.3.0.jar
 %%DATADIR%%/lib/jetty-6.1.5.jar
 %%DATADIR%%/lib/commons-logging-1.1.jar
 %%DATADIR%%/lib/servlet-api-2.5-6.1.5.jar
 %%DATADIR%%/lib/wsdl4j-1.6.2-fixed.jar
-%%DATADIR%%/lib/dtd-xercesImpl-2.9.1.jar
+%%DATADIR%%/lib/xercesImpl-2.9.1.jar
 %%DATADIR%%/lib/opensaml-1.1.jar
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%/lib
