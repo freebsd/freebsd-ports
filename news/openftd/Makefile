@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--with-libcurl-libraries=${LOCALBASE}/lib \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64" || ${OSVERSION} >= 700000
 BROKEN=		Does not install
 .endif
 
