@@ -7,13 +7,13 @@
 
 PORTNAME=	freeradius
 PORTVERSION?=	1.1.7
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
-		ftp://ftp.ntua.gr/pub/net/radius/freeradius/ \
-		ftp://ftp.uk.freeradius.org/pub/radius/ \
-		ftp://ftp.us.freeradius.org/pub/radius/ \
-		http://freeradius.portal-to-web.de/
+MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
+		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
+		ftp://ftp.uk.freeradius.org/pub/radius/%SUBDIR%/ \
+		http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/%SUBDIR%/ \
+		http://freeradius.portal-to-web.de/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER?=	david@wood2.org.uk
