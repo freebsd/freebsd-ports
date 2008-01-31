@@ -3262,6 +3262,7 @@ freebsd-games	ports/games/freebsd-games
 freebsd-sha1	ports/sysutils/freebsd-sha1
 freebsd-sha256	ports/sysutils/freebsd-sha256
 freebsd-snapshot	ports/sysutils/freebsd-snapshot
+freebsd-tftp	ports/net/freebsd-tftp
 freebsd-update	ports/security/freebsd-update
 freebsd-uucp	ports/net/freebsd-uucp
 freecad		ports/cad/freecad
