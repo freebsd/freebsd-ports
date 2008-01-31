@@ -2,3 +2,4 @@ bin/bnbt
 @exec mkdir -p /var/log/bnbt
 @exec mkdir -p %D/etc/bnbt
 @dirrmtry etc/bnbt
+@dirrmtry /var/log/bnbt
