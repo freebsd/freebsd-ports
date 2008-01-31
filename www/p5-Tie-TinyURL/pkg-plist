@@ -1,5 +1,2 @@
 %%SITE_PERL%%/Tie/TinyURL.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/TinyURL/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/TinyURL
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
 @dirrmtry %%SITE_PERL%%/Tie
