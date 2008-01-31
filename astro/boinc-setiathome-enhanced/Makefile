@@ -8,7 +8,7 @@ PORTNAME=	boinc-setiathome-enhanced
 PORTVERSION=	5.27
 PORTREVISION=	2
 CATEGORIES=	astro
-MASTER_SITES=	http://home.tiscali.nl/rladan/distfiles/
+MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
 MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	Setiathome Enhanced for BOINC
