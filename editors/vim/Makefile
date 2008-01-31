@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	211
+PATCHLEVEL=	242
 PORTVERSION=	7.1.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
 PORTREVISION?=	0
@@ -246,5 +246,8 @@ find-bad-patches:
 
 vim-makesum:
 	${MAKE} WITH_LANG=yes makesum
+
+ckp:
+	${MAKE} -DPATCH_DEBUG WITH_LANG=yes clean patch
 
 .include <bsd.port.post.mk>
