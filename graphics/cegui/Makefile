@@ -7,9 +7,9 @@
 
 PORTNAME=	cegui
 PORTVERSION=	0.5.0b
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=crayzedsgui
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
@@ -20,15 +20,24 @@ LIB_DEPENDS=	IL.1:${PORTSDIR}/graphics/devil \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/0b/0/}
-CONFIGURE_ARGS=	--without-xerces-c --enable-toluacegui
-CONFIGURE_ENV+=	Lua_LIBS="-L${PREFIX}/lib/lua50 -llua -llualib -lm" \
-		Lua_CFLAGS="-I${PREFIX}/include/lua50"
-GNU_CONFIGURE=	YES
-INSTALLS_SHLIB=	YES
-USE_GL=		YES
+CONFIGURE_ARGS=	--enable-toluacegui --disable-irrlicht-renderer \
+		--disable-corona --enable-devil --disable-freeimage --disable-silly \
+		--disable-libxml --disable-xerces-c --disable-expat
+
+CONFIGURE_ENV+=	Lua_LIBS="-L${LOCALBASE}/lib/lua50 -llua -llualib -lm" \
+		Lua_CFLAGS="-I${LOCALBASE}/include/lua50" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/lua50" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/lua50"
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USE_GL=		yes
 USE_LUA=	5.0
-USE_XLIB=	YES
+USE_XLIB=	yes
 USE_GNOME=	gnomehack
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README COPYING AUTHORS ChangeLog TODO
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e ' \
@@ -45,11 +54,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|INCLUDES = |&-I${LOCALBASE}/include/lua50 |' \
 		${WRKSRC}/ScriptingModules/CEGUILua/tolua++bin/Makefile.in \
 		${WRKSRC}/ScriptingModules/CEGUILua/LuaScriptModule/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|ILvoid|void|g' \
+		${WRKSRC}/ImageCodecModules/DevILImageCodec/CEGUIDevILImageCodec.cpp
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for docfile in README COPYING AUTHORS ChangeLog TODO
+.for docfile in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif

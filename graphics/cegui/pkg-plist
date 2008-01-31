@@ -1,4 +1,5 @@
 bin/tolua++cegui
+include/CEGUI/CEGUI.h
 include/CEGUI/CEGUIBase.h
 include/CEGUI/CEGUIBoundSlot.h
 include/CEGUI/CEGUIColourRect.h
@@ -76,7 +77,8 @@ include/CEGUI/CEGUIXMLHandler.h
 include/CEGUI/CEGUIXMLParser.h
 include/CEGUI/CEGUIXMLSerializer.h
 include/CEGUI/CEGUIcolour.h
-include/CEGUI/CEGUI.h
+include/CEGUI/ImageCodecModules/DevILImageCodec/CEGUIDevILImageCodec.h
+include/CEGUI/ImageCodecModules/DevILImageCodec/CEGUIDevILImageCodecModule.h
 include/CEGUI/ImageCodecModules/TGAImageCodec/CEGUITGAImageCodec.h
 include/CEGUI/ImageCodecModules/TGAImageCodec/CEGUITGAImageCodecModule.h
 include/CEGUI/RendererModules/OpenGLGUIRenderer/openglrenderer.h
@@ -171,9 +173,15 @@ include/CEGUI/tolua++.h
 lib/libCEGUIBase.la
 lib/libCEGUIBase.so
 lib/libCEGUIBase.so.1
+lib/libCEGUIDevILImageCodec.la
+lib/libCEGUIDevILImageCodec.so
+lib/libCEGUIDevILImageCodec.so.0
 lib/libCEGUIFalagardWRBase.la
 lib/libCEGUIFalagardWRBase.so
 lib/libCEGUIFalagardWRBase.so.1
+lib/libCEGUILuaScriptModule.la
+lib/libCEGUILuaScriptModule.so
+lib/libCEGUILuaScriptModule.so.1
 lib/libCEGUIOpenGLRenderer.la
 lib/libCEGUIOpenGLRenderer.so
 lib/libCEGUIOpenGLRenderer.so.0
@@ -184,25 +192,17 @@ lib/libCEGUITinyXMLParser.la
 lib/libCEGUITinyXMLParser.so
 lib/libCEGUITinyXMLParser.so.0
 lib/libCEGUItoluapp.la
-lib/libCEGUItoluapp.so 
+lib/libCEGUItoluapp.so
 lib/libCEGUItoluapp.so.1
-lib/libCEGUILuaScriptModule.la
-lib/libCEGUILuaScriptModule.so
-lib/libCEGUILuaScriptModule.so.1
 libdata/pkgconfig/CEGUI-OPENGL.pc
 libdata/pkgconfig/CEGUI.pc
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-@dirrm include/CEGUI/ImageCodecModules/TGAImageCodec
-@dirrm include/CEGUI/ImageCodecModules
-@dirrm include/CEGUI/RendererModules/OpenGLGUIRenderer
-@dirrm include/CEGUI/RendererModules
+@dirrm include/CEGUI/falagard
+@dirrm include/CEGUI/elements
 @dirrm include/CEGUI/XMLParserModules/TinyXMLParser
 @dirrm include/CEGUI/XMLParserModules
-@dirrm include/CEGUI/elements
-@dirrm include/CEGUI/falagard
+@dirrm include/CEGUI/RendererModules/OpenGLGUIRenderer
+@dirrm include/CEGUI/RendererModules
+@dirrm include/CEGUI/ImageCodecModules/TGAImageCodec
+@dirrm include/CEGUI/ImageCodecModules/DevILImageCodec
+@dirrm include/CEGUI/ImageCodecModules
 @dirrm include/CEGUI
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
