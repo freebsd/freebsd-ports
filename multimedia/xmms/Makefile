@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 USE_GL=		gl
 USE_GNOME=	gtk12 gnomehack
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal:19 automake:19 autoheader:261 autoconf:261 libtool:15
@@ -38,9 +37,17 @@ INPUT_PLUGINS=	cdaudio mpg123 tonegen wav
 OUTPUT_PLUGINS=	OSS disk_writer
 VISUALIZATION_PLUGINS=	blur_scope sanalyzer opengl_spectrum
 
-PLIST_SUB=	DATADIR="share"
+PLIST_SUB+=	DATADIR="share"
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 CONFIGURE_ARGS+=	--enable-ipv6
 
