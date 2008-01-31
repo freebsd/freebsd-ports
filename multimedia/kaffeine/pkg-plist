@@ -4,7 +4,9 @@ include/kaffeine/mrl.h
 include/kaffeine/kaffeinepart.h
 include/kaffeine/xine_part.h
 include/kaffeine/xine_part_iface.h
+include/kaffeine/kaffeinedvbevents.h
 include/kaffeine/kaffeinedvbplugin.h
+include/kaffeine/kaffeinedvbsection.h
 %%NOGSTREAMER%%lib/kde3/libgstreamerpart.a
 %%NOGSTREAMER%%lib/kde3/libgstreamerpart.so
 %%NOGSTREAMER%%lib/kde3/libgstreamerpart.la
@@ -18,6 +20,10 @@ lib/libkaffeineaudioencoder.a
 lib/libkaffeineaudioencoder.la
 lib/libkaffeineaudioencoder.so
 lib/libkaffeineaudioencoder.so.0
+lib/libkaffeineepgplugin.so.0
+lib/libkaffeineepgplugin.so
+lib/libkaffeineepgplugin.la
+lib/libkaffeineepgplugin.a
 lib/libkaffeinepart.so
 lib/libkaffeinepart.la
 lib/libkaffeinepart.a
@@ -36,6 +42,7 @@ share/apps/kaffeine/kaffeineui.rc
 share/apps/kaffeine/nocover.png
 share/apps/kaffeine/logo
 share/apps/kaffeine/logo.mpg
+share/apps/kaffeine/logo.avi
 share/apps/kaffeine/mms.protocol
 share/apps/kaffeine/rtsp.protocol
 share/apps/kaffeine/dvbdata.tar.gz
@@ -139,6 +146,7 @@ share/services/kaffeineoggvorbis.desktop
 share/services/xine_part.desktop
 share/servicetypes/kaffeineaudioencoder.desktop
 share/servicetypes/kaffeinedvbplugin.desktop
+share/servicetypes/kaffeineepgplugin.desktop
 @dirrm include/kaffeine
 @dirrm share/apps/kaffeine/pics
 @dirrm share/apps/kaffeine

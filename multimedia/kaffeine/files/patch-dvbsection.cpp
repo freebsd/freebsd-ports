@@ -1,16 +1,16 @@
---- kaffeine/src/input/dvb/dvbsection.cpp.orig	2007-07-28 18:45:37.000000000 +0200
-+++ kaffeine/src/input/dvb/dvbsection.cpp	2007-07-29 15:30:30.000000000 +0200
-@@ -157,7 +157,8 @@
- 	int i;
- 	char buffer[1000];
- 	size_t inSize, outSize=sizeof(buffer);
+--- kaffeine/src/input/dvb/plugins/epg/kaffeinedvbsection.cpp.orig	2008-01-30 22:22:36.000000000 +0100
++++ kaffeine/src/input/dvb/plugins/epg/kaffeinedvbsection.cpp	2008-01-30 22:26:23.000000000 +0100
+@@ -134,7 +134,8 @@
+ bool KaffeineDVBsection::doIconv( QCString &s, QCString table, char *buffer, int buflen )
+ {
+ 	size_t inSize, outSize=buflen;
 -	char *inBuf, *outBuf;
 +	const char *inBuf;
 +	char *outBuf;
  	iconv_t cd;
- 	QCString table=defaultCharset;
  
-@@ -232,7 +233,8 @@
+ 	inSize = s.length();
+@@ -230,7 +231,8 @@
  	char c[4];
  	QString s;
  
