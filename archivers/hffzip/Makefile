@@ -8,7 +8,8 @@
 PORTNAME=	hffzip
 PORTVERSION=	1.01
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.di.unipi.it/~scordino/
+MASTER_SITES=	http://utenti.quipo.it/claudioscordino/ \
+		http://ngsoftwareltd.com/freebsd/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
