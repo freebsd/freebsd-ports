@@ -1,5 +1,9 @@
 ************************************************************
-Bnbt has been successfully installed.
+BNBT has been successfully installed.
+
+For more information on how to configure BNBT:
+
+http://wiki.depthstrike.com/index.php/BNBT:Documentation:Configuration
 
 In order to run bnbt, add the following lines to /etc/rc.conf:
   bnbt_enable="YES"

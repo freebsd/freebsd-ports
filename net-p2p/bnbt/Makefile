@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	bnbt
-PORTVERSION=	8.1b3
-PORTREVISION=	1
+PORTVERSION=	8.5
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	bnbt
-DISTNAME=	bnbt81b-3-sf
+MASTER_SITES=	http://opensource.depthstrike.com/${PORTNAME}/
+DISTNAME=	${SNAPSHOT}-${PORTNAME}${PORTVERSION:C/\.//}-src
+SNAPSHOT=	20060727
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A C++ BitTorrent Tracker
 
-USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
-
+USE_BZIP=	yes
 USE_GMAKE=	yes
+USE_DOS2UNIX=	yes
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	bnbt.sh
 
-PORTDOCS=	footer.html header.html lesser.txt readme.txt users.txt
+PORTDOCS=	footer.html header.html
 
 .if defined(WITH_MYSQL)
 ALL_TARGET=	bnbtmysql
@@ -49,7 +47,7 @@ do-install:
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/$i ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 
 post-install:
