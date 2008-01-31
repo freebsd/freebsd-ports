@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	simscan
-PORTVERSION=	1.1
-PORTREVISION=	5
+PORTVERSION=	1.4.0
 CATEGORIES=	mail security
-MASTER_SITES=	http://www.inter7.com/simscan/
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	toxa@toxahost.ru
