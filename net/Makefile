@@ -139,6 +139,7 @@
     SUBDIR += fpc-pcap
     SUBDIR += fping
     SUBDIR += fping+ipv6
+    SUBDIR += freebsd-tftp
     SUBDIR += freebsd-uucp
     SUBDIR += freedbd
     SUBDIR += freenet6
