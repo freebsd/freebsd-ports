@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.1_rc6
+DISTVERSION=	2.1_rc7
 CATEGORIES=	security net
-MASTER_SITES=	http://openvpn.net/beta/
+MASTER_SITES=	http://openvpn.net/release/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	matthias.andree@gmx.de
