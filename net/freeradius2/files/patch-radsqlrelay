@@ -1,0 +1,32 @@
+--- scripts/radsqlrelay	Sat Nov  4 12:58:14 2006
++++ scripts/radsqlrelay	Wed Jan 23 00:54:27 2008
+@@ -43,14 +43,13 @@
+ }
+ 
+ # /!\ OS-dependent structure
+-# Linux struct flock
+-#   short l_type;
+-#   short l_whence;
++# FreeBSD struct flock
+ #   off_t l_start;
+ #   off_t l_len;
+ #   pid_t l_pid;
+-# c2ph says: typedef='s2 l2 i', sizeof=16
+-my $FLOCK_STRUCT = 's2l2i';
++#   short l_type;
++#   short l_whence;
++my $FLOCK_STRUCT = 'q2is2';
+ 
+ sub setlock($;$$)
+ {
+@@ -58,8 +57,8 @@
+     $start = 0 unless defined $start;
+     $len = 0 unless defined $len;
+ 
+-                                    #type     whence    start   till  pid
+-    my $packed = pack($FLOCK_STRUCT, F_WRLCK, SEEK_SET, $start, $len, 0);
++                                    #start   till  pid type    whence
++    my $packed = pack($FLOCK_STRUCT, $start, $len, 0, F_WRLCK, SEEK_SET);
+     if (fcntl($fh, F_SETLKW, $packed)) { return 1 }
+     else { return 0 }
+ }
