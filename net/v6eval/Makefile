@@ -7,6 +7,7 @@
 
 PORTNAME=	v6eval
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tahi.org/release/v6eval/
@@ -19,12 +20,12 @@ RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect \
 
 USE_PERL5=	yes
 USE_OPENSSL=	yes
+MAN1PREFIX=	${PREFIX}/v6eval
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN1=		pktctl.1.gz pktsend.1.gz
+MAN3=		V6evalRemote.3 V6evalTool.3
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-BROKEN=		does not compile with OpenSSL 0.9.8b
-.endif
 
 post-install:
 	@${SED} -e 's#@LOCALBASE@#${LOCALBASE}#' ${PKGMESSAGE}

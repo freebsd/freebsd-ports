@@ -124,8 +124,6 @@ v6eval/include/std.def
 v6eval/include/stdaddr.def
 v6eval/include/stdconst.def
 v6eval/include/stdpacket.def
-v6eval/man/man1/pktctl.1.gz
-v6eval/man/man1/pktsend.1.gz
 @dirrm v6eval/bin/manual
 @dirrm v6eval/bin/unknown
 @dirrm v6eval/bin
@@ -135,8 +133,6 @@ v6eval/man/man1/pktsend.1.gz
 @dirrm v6eval/man
 @dirrmtry v6eval/etc
 @dirrm v6eval
-lib/perl5/%%PERL_VERSION%%/man/man3/V6evalRemote.3
-lib/perl5/%%PERL_VERSION%%/man/man3/V6evalTool.3
 %%SITE_PERL%%/V6evalCommon.pm
 %%SITE_PERL%%/V6evalRemote.pm
 %%SITE_PERL%%/V6evalTool.pm
