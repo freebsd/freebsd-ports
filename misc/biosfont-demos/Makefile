@@ -8,7 +8,7 @@
 PORTNAME=	biosfont-demos
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	http://home.tiscali.nl/rladan/biosfont/
+MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
 MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	Demos for the biosfont kernel module
