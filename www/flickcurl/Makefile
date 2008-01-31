@@ -18,6 +18,7 @@ LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget ltverhack libxml2 pkgconfig
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 
 MAN1=		flickrdf.1 flickcurl.1 flickcurl-config.1
 
