@@ -8,7 +8,7 @@
 PORTNAME=	biosfont
 PORTVERSION=	1.1
 CATEGORIES=	sysutils kld
-MASTER_SITES=	http://home.tiscali.nl/rladan/biosfont/
+MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
 MAINTAINER=	r.c.ladan@gmail.com
 COMMENT=	Kernel module to retrieve bitmap fonts from BIOS memory
