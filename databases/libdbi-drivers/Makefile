@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	libdbi-drivers
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+DISTVERSION=	0.8.2-1
 CATEGORIES=	databases devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Drivers for libdbi
@@ -22,14 +20,12 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-static \
 		--with-dbi-incdir=${LOCALBASE}/include/dbi
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-
 OPTIONS=	MYSQL		"With MySQL Driver" 		on  \
 		MSQL		"With MSQL Driver" 		off \
 		PGSQL		"With PostgreSQL Driver"	on  \
 		SQLITE2		"With SQLite 2 Driver" 		off \
 		SQLITE3		"With SQLite 3 Driver" 		on  \
-		FIREBIRD	"With Firebird Driver" 		off \
+		FIREBIRD	"With Firebird Driver (BROKEN)"	off \
 		FREETDS		"With FreeTDS Driver"		off
 
 .include <bsd.port.pre.mk>
@@ -37,7 +33,7 @@ OPTIONS=	MYSQL		"With MySQL Driver" 		on  \
 .if defined(WITHOUT_MYSQL) && defined(WITHOUT_MSQL) && defined(WITHOUT_PGSQL) \
 	&& defined(WITHOUT_SQLITE2) && defined(WITHOUT_SQLITE3) \
 	&& defined(WITHOUT_FIREBIRD) && defined(WITHOUT_FREETDS)
-IGNORE=		You must choose at least one driver
+#IGNORE=		choose at least one driver
 .endif
 
 .if !defined(WITHOUT_MYSQL)
@@ -81,7 +77,7 @@ PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
 .if defined(WITH_FIREBIRD)
-LIB_DEPENDS+=	gds.1:${PORTSDIR}/databases/firebird-client
+LIB_DEPENDS+=	gds.2:${PORTSDIR}/databases/firebird2-client
 CONFIGURE_ARGS+=	--with-firebird
 PLIST_SUB+=	FIREBIRD=""
 .else
