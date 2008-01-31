@@ -5,6 +5,7 @@
 # $FreeBSD$
 #   $MCom: ports/print/libgnomeprint/Makefile,v 1.71 2007/10/17 21:36:12 mezz Exp $
 #
+# NOTE: Remind to update comms/gfax plist when PORTVERSION change.
 
 PORTNAME=	libgnomeprint
 PORTVERSION=	2.18.3
