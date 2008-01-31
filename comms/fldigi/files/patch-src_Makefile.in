@@ -1,0 +1,21 @@
+--- src/Makefile.in.orig	2008-01-26 07:59:17.000000000 -0500
++++ src/Makefile.in	2008-01-31 11:42:23.000000000 -0500
+@@ -280,15 +280,15 @@
+ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-AM_CPPFLAGS = -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml \
++AM_CPPFLAGS = @PORTAUDIO_CFLAGS@ -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml \
+ 	@BOOST_CPPFLAGS@ $(am__append_1) $(am__append_3) \
+ 	$(am__append_4)
+-AM_CXXFLAGS = @FLTK_CFLAGS@ @PORTAUDIO_CFLAGS@ @SNDFILE_CFLAGS@ \
++AM_CXXFLAGS = @PORTAUDIO_CFLAGS@ @FLTK_CFLAGS@ @SNDFILE_CFLAGS@ \
+ 	@SAMPLERATE_CFLAGS@ @HAMLIB_CFLAGS@ \
+ 	-pipe -Wall -O2 -ffast-math -fexceptions -finline-functions
+ 
+ AM_CFLAGS = $(AM_CXXFLAGS)
+-LDADD = @BOOST_LDFLAGS@ @FLTK_LIBS@ @PORTAUDIO_LIBS@ @SNDFILE_LIBS@ \
++LDADD = @PORTAUDIO_LIBS@ @BOOST_LDFLAGS@ @FLTK_LIBS@ @SNDFILE_LIBS@ \
+ 	@SAMPLERATE_LIBS@ @HAMLIB_LIBS@ @RTLIB@ $(am__append_2)
+ SAMPLERATE_SRC = samplerate/common.h samplerate/fastest_coeffs.h \
+ 	samplerate/float_cast.h samplerate/samplerate.c samplerate/samplerate.h \
