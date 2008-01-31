@@ -16,6 +16,9 @@ COMMENT=	Analysis Console for Intrusion Databases (ACID) with Snort and MySQL
 RUN_DEPENDS=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort \
 		${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb
 
+DEPRECATED=	development has ceased, use security/base
+EXPIRATION_DATE=	2008-02-29
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PHP=	yes
 NO_BUILD=	yes
