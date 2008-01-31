@@ -7,12 +7,12 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	esk@ira.uka.de
+MAINTAINER?=	beech@FreeBSD.org
 COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 
 USE_BZIP2=	yes
@@ -39,17 +39,26 @@ VISUALIZATION_PLUGINS=	blur_scope sanalyzer opengl_spectrum
 
 PLIST_SUB+=	DATADIR="share"
 
+OPTIONS=	NLS 		"Internationalization" on \
+		IPV6		"Use ipv6" on \
+		VFILEINFO	"Extended Vorbis Fileinfo" off \
+		VORBIS		"Vorbis Plugin"	on \
+		MIKMOD		"Mikemod Plugin" on \
+		SIMD		"x86 SIMD (3DNow!/MMX)" on
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
+.if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
+.endif
 
 .if defined(WITH_RUSXMMS_PATCHES)
 ENC_PATCHLEVEL=	41
@@ -61,11 +70,11 @@ LIB_DEPENDS+=	rcc.2:${PORTSDIR}/devel/librcc
 LIB_DEPENDS+=	rcd.1:${PORTSDIR}/devel/librcd
 .endif
 
-.if defined(WITH_EXTENDED_VORBIS_FILEINFO)
+.if defined(WITH_VFILEINFO)
 CFLAGS+=	-DALL_VORBIS_TAGS
 .endif
 
-.if !defined(WITHOUT_MIKMOD)
+.if defined(WITH_MIKMOD)
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 INPUT_PLUGINS+=	mikmod
 PLIST_SUB+=	MIKMODPLUGIN:=""
@@ -74,7 +83,7 @@ CONFIGURE_ARGS+=	--disable-mikmod
 PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 .endif
 
-.if !defined(WITHOUT_VORBIS)
+.if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
 PLIST_SUB+=	VORBISPLUGIN:=""
@@ -93,10 +102,10 @@ PLIST_SUB+=	ESDPLUGIN:="@comment "
 .endif
 
 .if ${ARCH} != "i386"
-WITHOUT_SIMD=	yes
+WITHOUT_SIMD+=	yes
 .endif
 
-.if !defined(WITHOUT_SIMD)
+.if defined(WITH_SIMD)
 CONFIGURE_ARGS+=	--enable-simd
 .endif
 
@@ -111,25 +120,18 @@ post-extract:
 .endif
 
 pre-extract:
-.if !defined(WITHOUT_MIKMOD) || !defined(WITHOUT_VORBIS) || !defined(WITHOUT_SIMD) \
-  || ${HAVE_GNOME:Mesound}!="" || !defined(WITH_RUSXMMS_PATCHES)
-	@${ECHO_MSG}
-.if !defined(WITH_RUSXMMS_PATCHES)
-	@${ECHO_MSG} "You can enable support for ID3v2 tags and CP1251 encoding by defining WITH_RUSXMMS_PATCHES."
-.endif
-.if !defined(WITHOUT_MIKMOD)
-	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_MIKMOD."
-.endif
-.if !defined(WITHOUT_VORBIS)
-	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS."
-.endif
-.if !defined(WITHOUT_SIMD)
-	@${ECHO_MSG} "You can disable x86 SIMD (3DNow!/MMX) optimized decoding routines by defining WITHOUT_SIMD."
-.endif
 .if ${HAVE_GNOME:Mesound}!=""
-	@${ECHO_MSG} "You can disable support for esound by defining WITHOUT_GNOME=esound."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You can disable support for esound by defining"
+	@${ECHO_MSG} "WITHOUT_GNOME=esound."
+	@${ECHO_MSG} ""
 .endif
-	@${ECHO_MSG}
+
+.if !defined(WITH_RUSXMMS_PATCHES)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You can enable support for ID3v2 tags and CP1251"
+	@${ECHO_MSG} "encoding by defining WITH_RUSXMMS_PATCHES."
+	@${ECHO_MSG} ""
 .endif
 
 post-patch:
