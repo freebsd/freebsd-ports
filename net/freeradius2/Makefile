@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	freeradius
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/ \
-		ftp://ftp.ntua.gr/pub/net/radius/freeradius/ \
-		ftp://ftp.uk.freeradius.org/pub/radius/ \
-		http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
-		http://freeradius.portal-to-web.de/
+MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
+		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
+		ftp://ftp.uk.freeradius.org/pub/radius/%SUBDIR%/ \
+		http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/%SUBDIR%/ \
+		http://freeradius.portal-to-web.de/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	freeradius-server-${DISTVERSION}
 
