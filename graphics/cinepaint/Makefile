@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	cinepaint
-PORTVERSION=	0.20
-PORTREVISION=	3
+PORTVERSION=	0.22
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	dyeske@gmail.com
@@ -22,12 +20,11 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk12
-INSTALLS_SHLIB=	yes
+USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		cinepaint.1 cinepainttool.1
 
@@ -35,7 +32,11 @@ PLIST_SUB=	VER=${PORTVERSION}-1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
 
-.if !defined(WITHOUT_OPENEXR)
+OPTIONS=	OPENEXR "Use OpenEXR" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENEXR)
 LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads
 CONFIGURE_ARGS+=	--with-openexr-prefix=${LOCALBASE}
@@ -46,10 +47,6 @@ PLIST_SUB+=	OPENEXR:="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
-BROKEN=		does not compile
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
