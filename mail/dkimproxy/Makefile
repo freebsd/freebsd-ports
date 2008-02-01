@@ -7,14 +7,16 @@
 
 PORTNAME=	dkimproxy
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://jason.long.name/dkimproxy/
+MASTER_SITES=	SF
 
 MAINTAINER=	yanagisawa@csg.is.titech.ac.jp
 COMMENT=	DKIM filter for Postfix
 
 BUILD_DEPENDS=	${SITE_PERL}/Mail/DKIM.pm:${PORTSDIR}/mail/p5-Mail-DKIM \
-		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server
+		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
+		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
