@@ -51,6 +51,10 @@ USE_FIREBIRD=	yes
 
 .include "${PORTSDIR}/Mk/bsd.database.mk"
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
+
 do-configure:
 	@(cd ${WRKSRC}; \
 	${LOCALBASE}/bin/cmake ${CMAKE_ARGS} .)

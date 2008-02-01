@@ -49,6 +49,10 @@ PLIST_SUB+=		WITH_PYTHON="@comment "
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
+
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/api/html/* ${DOCSDIR}
