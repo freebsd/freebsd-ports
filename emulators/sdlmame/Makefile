@@ -52,4 +52,8 @@ post-install:
 USE_GCC=	4.2+
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
+
 .include <bsd.port.post.mk>
