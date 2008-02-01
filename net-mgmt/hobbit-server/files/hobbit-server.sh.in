@@ -14,7 +14,7 @@ rcvar=`set_rcvar`
 load_rc_config "$name"
 : ${hobbit_server_enable:="NO"}
 
-command="su -m %%BBUSER%% -c '%%PREFIX%%/www/hobbit/server/hobbit.sh"
+command="su -m %%BBUSER%% -c '%%PREFIX%%/www/hobbit/server/hobbit.sh'"
 start_cmd="su -m %%BBUSER%% -c '%%PREFIX%%/www/hobbit/server/hobbit.sh start'"
 stop_cmd="su -m %%BBUSER%% -c '%%PREFIX%%/www/hobbit/server/hobbit.sh stop'"
 status_cmd="su -m %%BBUSER%% -c '%%PREFIX%%/www/hobbit/server/hobbit.sh status'"
