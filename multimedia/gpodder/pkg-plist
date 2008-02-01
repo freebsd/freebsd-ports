@@ -43,6 +43,7 @@ share/icons/hicolor/22x22/apps/gpodder.png
 share/icons/hicolor/24x24/apps/gpodder.png
 share/icons/hicolor/48x48/apps/gpodder.png
 share/icons/hicolor/scalable/apps/gpodder.svg
+%%NLS%%share/locale/cs/LC_MESSAGES/gpodder.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gpodder.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gpodder.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gpodder.mo
