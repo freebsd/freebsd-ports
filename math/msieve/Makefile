@@ -55,6 +55,12 @@ ALLTGT=		x86_64
 .endif
 ALL_TARGET=	${ALLTGT}${ALLTGT_SUFX}
 
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile with GCC 4.2
+.endif
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/msieve ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/include/msieve
