@@ -7,7 +7,7 @@
 
 PORTNAME=	tinyproxy
 PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,6 +36,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc/tinyproxy/tinyproxy.conf|${PREFIX}/etc/tinyproxy.conf|' \
 	  ${WRKSRC}/doc/tinyproxy.8
+	@${REINPLACE_CMD} -e 's|/usr/share/tinyproxy|${DATADIR}|' \
+	  ${WRKSRC}/doc/tinyproxy.conf
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/tinyproxy.conf ]; then \
