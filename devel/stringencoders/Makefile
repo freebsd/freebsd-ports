@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stringencoders
-PORTVERSION=	3.4.0
+PORTVERSION=	3.7.0
 CATEGORIES=	devel
 MASTER_SITES=	http://stringencoders.googlecode.com/files/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
