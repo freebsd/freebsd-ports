@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mangos
-PORTVERSION=	4742
+PORTVERSION=	5101
 CATEGORIES=	games
 MASTER_SITES=	CENKES http://mangos-port.by.ru/ \
 		http://wow.omsktele.com/src/ \
 		http://belnetwork.org/mangos/
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
-SCRIPTDEV2REV=	164
+SCRIPTDEV2REV=	245
 
 MAINTAINER=    	neon_cyrex@mail.ru
 COMMENT=	Free dedicated-server for World of Warcraft
@@ -44,7 +44,7 @@ PLIST_SUB+=	SD2="@comment "
 .endif
 .ifdef WITH_DBC
 PLIST_SUB+=	DBC=""
-DISTFILES+=	mangos-dbc2_2_3.tar.gz
+DISTFILES+=	mangos-dbc2_3_0.tar.gz
 .else
 PLIST_SUB+=	DBC="@comment "
 .endif
