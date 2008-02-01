@@ -38,6 +38,10 @@ MAN7=		hypervisor_mode.7
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
+
 .if ${ARCH} == "i386"
 DYNAMIPS_ARCH=	"x86"
 .elif ${ARCH} == "amd64"
