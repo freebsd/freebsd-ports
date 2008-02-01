@@ -67,7 +67,7 @@ MASTER_SITE_APACHE+=	\
 	ftp://ftp.esat.net/mirrors/ftp.apache.org/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/mirrors/www.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.rhnet.is/pub/apache/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/&,} \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/&,} \
 	ftp://ftp.sogang.ac.kr/www/apache/dist/%SUBDIR%/ \
 	ftp://ftp.task.gda.pl/pub/www/apache/dist/%SUBDIR%/ \
 	ftp://sunsite.icm.edu.pl/pub/www/apache/dist/%SUBDIR%/ \
@@ -421,8 +421,7 @@ MASTER_SITE_FREEBSD_ORG+=	\
 	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/FreeBSD/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,FreeBSD/&,}
+	ftp://ftp.dti.ad.jp/pub/FreeBSD/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GCC)
@@ -1388,6 +1387,7 @@ MASTER_SITE_XORG+= \
 	ftp://ftp.cs.cuhk.edu.hk/pub/X11/%SUBDIR%/ \
 	ftp://ftp.unicamp.br/pub/X11/releases/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/X11/X.org/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/&/,} \
 	ftp://ftp.task.gda.pl/mirror/ftp.x.org/pub/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/ftp.x.org/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.x.org/pub/%SUBDIR%/ \
