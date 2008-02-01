@@ -44,6 +44,10 @@ SCONS_ARGS+=	build_ogre_driver=0 build_ogre_ois_plugin=0
 PLIST_SUB+=	OGRE="@comment "
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
+
 post-build:
 	@${REINPLACE_CMD} -Ee 's,^(prefix|(lib|include)dir)=,&${PREFIX},' \
 		${WRKSRC}/*.pc
