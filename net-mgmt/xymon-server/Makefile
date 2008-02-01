@@ -7,6 +7,7 @@
 
 PORTNAME=	hobbit
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hobbitmon
@@ -32,7 +33,7 @@ MAKE_ENV+=	BBUSER="${BBUSER}"
 MAKE_ENV+=	BBHOSTNAME="${BBHOSTNAME}"
 MAKE_ENV+=	BBHOSTIP="${BBHOSTIP}"
 USE_RC_SUBR=	hobbit-server.sh
-SITE_SUB+=	-e 's|%%BBUSER%%|${BBUSER}|g'
+SUB_LIST+=	BBUSER="${BBUSER}"
 PLIST_SUB+=	BBUSER="${BBUSER}" VARBASE="/var"
 
 CONFIG_FILES=	bb-hosts bb-services bbcombotest.cfg client-local.cfg \
