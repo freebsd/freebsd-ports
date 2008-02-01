@@ -40,8 +40,10 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042 && ${ARCH} == amd64
+.if ${OSVERSION} >= 700042
+.if ${ARCH} == amd64 || ${ARCH} == sparc64
 BROKEN=		does not compile
+.endif
 .endif
 
 pre-patch:
