@@ -31,6 +31,10 @@ USE_GCC=	3.4
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64" && ${OSVERSION} >= 700042
+BROKEN=		Does not install: reports Unknown Architecture
+.endif
+
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
 	${LN} -sf ${FILESDIR}/freebsd-uthread.c ${FILESDIR}/kvm-fbsd.c \
