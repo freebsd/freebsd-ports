@@ -72,6 +72,10 @@ Local/Library/StepTalk/Modules/Foundation.bundle/Foundation
 Local/Library/StepTalk/Modules/Foundation.bundle/Resources/Info-gnustep.plist
 Local/Library/StepTalk/Modules/Foundation.bundle/Resources/ScriptingInfo.plist
 Local/Library/StepTalk/Modules/Foundation.bundle/stamp.make
+%%WITH_GDL2%%Local/Library/StepTalk/Modules/GDL2.bundle/GDL2
+%%WITH_GDL2%%Local/Library/StepTalk/Modules/GDL2.bundle/Resources/Info-gnustep.plist
+%%WITH_GDL2%%Local/Library/StepTalk/Modules/GDL2.bundle/Resources/ScriptingInfo.plist
+%%WITH_GDL2%%Local/Library/StepTalk/Modules/GDL2.bundle/stamp.make
 Local/Library/StepTalk/Modules/ObjectiveC.bundle/ObjectiveC
 Local/Library/StepTalk/Modules/ObjectiveC.bundle/Resources/Info-gnustep.plist
 Local/Library/StepTalk/Modules/ObjectiveC.bundle/Resources/ScriptingInfo.plist
@@ -86,6 +90,8 @@ Local/Tools/stexec
 @dirrm Local/Library/StepTalk/Modules/SimpleTranscript.bundle
 @dirrm Local/Library/StepTalk/Modules/ObjectiveC.bundle/Resources
 @dirrm Local/Library/StepTalk/Modules/ObjectiveC.bundle
+%%WITH_GDL2%%@dirrm Local/Library/StepTalk/Modules/GDL2.bundle/Resources
+%%WITH_GDL2%%@dirrm Local/Library/StepTalk/Modules/GDL2.bundle
 @dirrm Local/Library/StepTalk/Modules/Foundation.bundle/Resources
 @dirrm Local/Library/StepTalk/Modules/Foundation.bundle
 @dirrm Local/Library/StepTalk/Modules/AppKit.bundle/Resources
