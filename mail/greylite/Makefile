@@ -5,28 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=		greylite
-DISTVERSION=	2.0
-CATEGORIES=		mail
+PORTNAME=	greylite
+DISTVERSION=	2.2
+CATEGORIES=	mail
 MASTER_SITES=	http://mij.oltrelinux.com/net/greylite/releases/
 
-MAINTAINER=		mij@bitchx.it
-COMMENT=		Modified greylisting for qmail and for any other MDA
+MAINTAINER=	mij@bitchx.it
+COMMENT=	Modified greylisting for qmail and for any other MDA
 
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
-USE_BZIP2=		yes
-USE_SQLITE=		3
+USE_BZIP2=	yes
+USE_SQLITE=	3
 PLIST_FILES=	bin/greylite \
-				%%DNSBLENV%%bin/dnsblenv	\
-				%%UCSPI2SOCKET%%bin/ucspi2socket
+		%%DNSBLENV%%bin/dnsblenv	\
+		%%UCSPI2SOCKET%%bin/ucspi2socket
 
-MAN8=			greylite.8
+MAN8=		greylite.8
 MANCOMPRESSED=	yes
 
 OPTIONS=	GEOIP		"Support for GeoIP in suspicion rules" On \
-			DNSBLENV   	"Module for interfacing with DNS blacklists" On \
-			UCSPI2SOCKET "Module for using greylite as SMTP proxy" On
+		DNSBLENV   	"Module for interfacing with DNS blacklists" On \
+		UCSPI2SOCKET "Module for using greylite as SMTP proxy" On
 
 .include <bsd.port.pre.mk>
 
@@ -37,17 +37,17 @@ MAKE_ARGS+=	WITH_GEOIP=yep
 
 .if !defined(WITHOUT_DNSBLENV)
 LIB_DEPENDS+=	cares:${PORTSDIR}/dns/c-ares
-MAKE_ARGS+=		WITH_DNSBLENV=yep WITH_CARES14=yep
-PLIST_SUB+=		DNSBLENV=""
+MAKE_ARGS+=	WITH_DNSBLENV=yep WITH_CARES14=yep
+PLIST_SUB+=	DNSBLENV=""
 .else
-PLIST_SUB+=		DNSBLENV="@comment "
+PLIST_SUB+=	DNSBLENV="@comment "
 .endif
 
 .if !defined(WITHOUT_UCSPI2SOCKET)
-MAKE_ARGS+=		WITH_UCSPI2SOCKET=yep
-PLIST_SUB+=		UCSPI2SOCKET=""
+MAKE_ARGS+=	WITH_UCSPI2SOCKET=yep
+PLIST_SUB+=	UCSPI2SOCKET=""
 .else
-PLIST_SUB+=		UCSPI2SOCKET="@comment "
+PLIST_SUB+=	UCSPI2SOCKET="@comment "
 .endif
 
 post-patch:
