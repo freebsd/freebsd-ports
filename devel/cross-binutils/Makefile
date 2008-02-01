@@ -85,8 +85,10 @@ FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 .include <bsd.port.pre.mk>
 
 .if defined(TGTARCH)
-.if ${TGTARCH} == "sparc" && ${ARCH} == "amd64"
+.if ${TGTARCH} == "sparc"
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 BROKEN=		Does not link
+.endif
 .endif
 
 .if ${TGTARCH} == "m68k" && ${ARCH} == "amd64" && ${OSVERSION} < 600000
