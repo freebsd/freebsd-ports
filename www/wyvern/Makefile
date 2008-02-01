@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wyvern
-PORTVERSION=	2.2.10.1
+PORTVERSION=	2.2.11
 PORTREVISION=	0
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.MysticWALL.COM/download/
