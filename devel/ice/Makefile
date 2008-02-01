@@ -28,12 +28,12 @@ CFLAGS+=	-DNDEBUG
 .endif
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} < 500028
-BROKEN=		does not compile on systems prior to 5.x
-.endif
-
 .if ${ARCH} == "ia64"
 BROKEN=		does not compile on ia64
+.endif
+
+.if ${ARCH} == "sparc64"
+BROKEN=		fails to link
 .endif
 
 .if ((${ARCH} != i386) && (${ARCH} != powerpc))
