@@ -17,6 +17,7 @@ sbin/popfile.sh
 %%DATADIR%%/Proxy/Proxy.pm
 %%DATADIR%%/Proxy/SMTP.pm
 %%DATADIR%%/Services/IMAP.pm
+%%DATADIR%%/Services/IMAP/Client.pm
 %%DATADIR%%/UI/HTML.pm
 %%DATADIR%%/UI/HTTP.pm
 %%DATADIR%%/UI/XMLRPC.pm
@@ -42,7 +43,6 @@ sbin/popfile.sh
 %%DATADIR%%/languages/Hellenic.msg
 %%DATADIR%%/languages/Hungarian.msg
 %%DATADIR%%/languages/Italiano.msg
-%%DATADIR%%/languages/Klingon.msg
 %%DATADIR%%/languages/Korean.msg
 %%DATADIR%%/languages/Nederlands.msg
 %%DATADIR%%/languages/Nihongo.msg
@@ -108,16 +108,19 @@ sbin/popfile.sh
 %%DATADIR%%/skins/coolblue/style.css
 %%DATADIR%%/skins/coolbrown/style.css
 %%DATADIR%%/skins/coolgreen/style.css
+%%DATADIR%%/skins/coolmint/style.css
 %%DATADIR%%/skins/coolorange/style.css
 %%DATADIR%%/skins/coolyellow/style.css
 %%DATADIR%%/skins/default/advanced-page.thtml
 %%DATADIR%%/skins/default/bar-chart-widget.thtml
 %%DATADIR%%/skins/default/bucket-page.thtml
 %%DATADIR%%/skins/default/common-bottom.thtml
+%%DATADIR%%/skins/default/common-javascript.thtml
 %%DATADIR%%/skins/default/common-middle.thtml
 %%DATADIR%%/skins/default/common-top.thtml
 %%DATADIR%%/skins/default/configuration-page.thtml
 %%DATADIR%%/skins/default/corpus-page.thtml
+%%DATADIR%%/skins/default/history-javascript.thtml
 %%DATADIR%%/skins/default/history-navigator-widget.thtml
 %%DATADIR%%/skins/default/history-page.thtml
 %%DATADIR%%/skins/default/history-search-filter-widget.thtml
@@ -155,7 +158,6 @@ sbin/popfile.sh
 %%DATADIR%%/skins/default/xmlrpc-port.thtml
 %%DATADIR%%/skins/glassblue/style.css
 %%DATADIR%%/skins/green/style.css
-%%DATADIR%%/skins/klingon/style.css
 %%DATADIR%%/skins/lavish/bottom.gif
 %%DATADIR%%/skins/lavish/bottomLeft.gif
 %%DATADIR%%/skins/lavish/bottomRight.gif
@@ -167,7 +169,11 @@ sbin/popfile.sh
 %%DATADIR%%/skins/lavish/top.gif
 %%DATADIR%%/skins/lavish/topLeft.gif
 %%DATADIR%%/skins/lavish/topRight.gif
-%%DATADIR%%/skins/lrclaptop/style.css
+%%DATADIR%%/skins/ocean/common-bottom.thtml
+%%DATADIR%%/skins/ocean/common-middle.thtml
+%%DATADIR%%/skins/ocean/history-page.thtml
+%%DATADIR%%/skins/ocean/style.css
+%%DATADIR%%/skins/ocean/view-page.thtml
 %%DATADIR%%/skins/oceanblue/common-bottom.thtml
 %%DATADIR%%/skins/oceanblue/common-middle.thtml
 %%DATADIR%%/skins/oceanblue/common-top.thtml
@@ -177,10 +183,6 @@ sbin/popfile.sh
 %%DATADIR%%/skins/orangecream/style.css
 %%DATADIR%%/skins/osx/style.css
 %%DATADIR%%/skins/outlook/style.css
-%%DATADIR%%/skins/prjbluegrey/style.css
-%%DATADIR%%/skins/prjsteelbeach/chipped_obsidian.gif
-%%DATADIR%%/skins/prjsteelbeach/metalback.gif
-%%DATADIR%%/skins/prjsteelbeach/style.css
 %%DATADIR%%/skins/simplyblue/style.css
 %%DATADIR%%/skins/sleet-rtl/bottom.gif
 %%DATADIR%%/skins/sleet-rtl/bottomLeft.gif
@@ -211,37 +213,34 @@ sbin/popfile.sh
 %%DATADIR%%/skins/smalldefault/style.css
 %%DATADIR%%/skins/smallgrey/style.css
 %%DATADIR%%/skins/strawberryrose/style.css
-%%DATADIR%%/skins/tinydefault/style.css
 %%DATADIR%%/skins/tinygrey/style.css
 %%DATADIR%%/skins/white/style.css
 %%DATADIR%%/skins/windows/style.css
 %%DATADIR%%/stopwords
 %%DATADIR%%/v%%PORTVERSION%%.change
+%%DATADIR%%/v%%PORTVERSION%%.change.nihongo
 @dirrm %%DATADIR%%/skins/windows
 @dirrm %%DATADIR%%/skins/white
 @dirrm %%DATADIR%%/skins/tinygrey
-@dirrm %%DATADIR%%/skins/tinydefault
 @dirrm %%DATADIR%%/skins/strawberryrose
 @dirrm %%DATADIR%%/skins/smallgrey
 @dirrm %%DATADIR%%/skins/smalldefault
 @dirrm %%DATADIR%%/skins/sleet-rtl
 @dirrm %%DATADIR%%/skins/sleet
 @dirrm %%DATADIR%%/skins/simplyblue
-@dirrm %%DATADIR%%/skins/prjsteelbeach
-@dirrm %%DATADIR%%/skins/prjbluegrey
 @dirrm %%DATADIR%%/skins/outlook
 @dirrm %%DATADIR%%/skins/osx
 @dirrm %%DATADIR%%/skins/orangecream
 @dirrm %%DATADIR%%/skins/orange
 @dirrm %%DATADIR%%/skins/oceanblue
-@dirrm %%DATADIR%%/skins/lrclaptop
+@dirrm %%DATADIR%%/skins/ocean
 @dirrm %%DATADIR%%/skins/lavish
-@dirrm %%DATADIR%%/skins/klingon
 @dirrm %%DATADIR%%/skins/green
 @dirrm %%DATADIR%%/skins/glassblue
 @dirrm %%DATADIR%%/skins/default
 @dirrm %%DATADIR%%/skins/coolyellow
 @dirrm %%DATADIR%%/skins/coolorange
+@dirrm %%DATADIR%%/skins/coolmint
 @dirrm %%DATADIR%%/skins/coolgreen
 @dirrm %%DATADIR%%/skins/coolbrown
 @dirrm %%DATADIR%%/skins/coolblue
@@ -251,6 +250,7 @@ sbin/popfile.sh
 @dirrm %%DATADIR%%/manual
 @dirrm %%DATADIR%%/languages
 @dirrm %%DATADIR%%/UI
+@dirrm %%DATADIR%%/Services/IMAP
 @dirrm %%DATADIR%%/Services
 @dirrm %%DATADIR%%/Proxy
 @dirrm %%DATADIR%%/POPFile
