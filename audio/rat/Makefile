@@ -8,7 +8,7 @@
 PORTNAME=	rat
 PORTVERSION=	4.2.25
 PORTREVISION=	3
-CATEGORIES=	mbone audio ipv6 tk84
+CATEGORIES=	mbone audio ipv6 tk
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/${PORTVERSION}/ \
 		http://www.icir.org/hodson/ucl-mirror/
 
@@ -33,6 +33,10 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--with-tcltk-version=${TK_VER}
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile: missing header
+.endif
 
 .if ${OSVERSION} >= 700011
 EXTRA_PATCHES=	${FILESDIR}/timet.patch
