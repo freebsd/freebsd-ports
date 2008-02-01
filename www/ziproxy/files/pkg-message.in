@@ -1,14 +1,2 @@
 By default ziproxy is configured to accept connections on localhost only.
-Edit %%PREFIX%%/etc/ziproxy.conf to allow remote access.
-
-There is no man page yet, but information can be found in
-%%DOCSDIR%%/README.
-
-ziproxy can be started the following ways:
-o daemon mode:
-    * add ziproxy_enable="YES" to your /etc/rc.conf
-    * use rc(8) script %%PREFIX%%/etc/rc.d/ziproxy.sh
-o inetd mode:
-    * add ``http-proxy      8080/tcp   #HTTP Proxy'' to /etc/services
-    * add ``http-proxy      stream  tcp     nowait  nobody  /usr/local/bin/ziproxy  ziproxy -i'' to your /etc/inetd.conf
-    * reload inetd(8) config files by doing `/etc/rc.d/inetd reload`
+Edit %%PREFIX%%/etc/ziproxy/ziproxy.conf to allow remote access.

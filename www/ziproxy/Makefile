@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		ziproxy
-PORTVERSION=		2.4.3
+PORTVERSION=		2.5.0
 CATEGORIES=		www
 MASTER_SITES=		SF
 
@@ -26,11 +26,14 @@ ERRORFILES=		400.html 404.html 408.html 500.html 503.html
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--with-cfgfile="${PREFIX}/etc/ziproxy.conf"
+CONFIGURE_ARGS+=	--with-cfgfile="${PREFIX}/etc/ziproxy/ziproxy.conf"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=		README
 .endif
+
+MAN1=			ziproxy.1 ziproxylogtool.1
+MANCOMPRESSED=		no
 
 USE_RC_SUBR=		ziproxy
 
@@ -41,16 +44,13 @@ OPTIONS+=		JPEG2000 "Build with JPEG2000 support" on
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	                  -e 's|%%DATADIR%%|${DATADIR}|g' \
-		${WRKSRC}/etc/ziproxy.conf
-
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
+		${WRKSRC}/etc/ziproxy/ziproxy.conf
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy.conf ${PREFIX}/etc/ziproxy.conf.sample
-	@if [ ! -f ${PREFIX}/etc/ziproxy.conf ]; then \
-		${CP} -p ${WRKSRC}/etc/ziproxy.conf ${PREFIX}/etc/ziproxy.conf ; \
+	@${MKDIR} ${PREFIX}/etc/ziproxy
+	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/ziproxy.conf ${PREFIX}/etc/ziproxy/ziproxy.conf.sample
+	@if [ ! -f ${PREFIX}/etc/ziproxy/ziproxy.conf ]; then \
+		${CP} -p ${WRKSRC}/etc/ziproxy/ziproxy.conf ${PREFIX}/etc/ziproxy/ziproxy.conf ; \
 	fi
 
 .if !defined(NOPORTDOCS)
