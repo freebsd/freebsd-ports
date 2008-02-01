@@ -28,6 +28,10 @@ MAN3=		libjit.3
 BROKEN=		Segfault during build
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Fails to compile: internal gcc error
+.endif
+
 post-patch:
 .if ${OSVERSION} >=	502128
 	@${REINPLACE_CMD} -e 's|#undef HAVE_TGMATH_H||' \
