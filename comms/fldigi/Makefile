@@ -30,6 +30,9 @@ MAKE_ENV+=	CXX="${CXX}"
 .if ${ARCH} == "amd64" && ${OSVERSION} < 700000
 USE_GCC=	4.1
 .endif
+.if ${ARCH} == "sparc64"
+BROKEN=		Fails to install
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
