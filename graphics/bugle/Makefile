@@ -65,6 +65,10 @@ CONFIGURE_ARGS+=--with-threads=pthreads
 CONFIGURE_ARGS+=--with-threads=single
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Fails to link
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' ${WRKSRC}/gentokens/find_header.perl
 

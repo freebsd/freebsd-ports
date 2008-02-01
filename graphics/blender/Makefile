@@ -63,6 +63,10 @@ MAKE_ENV+=	WITH_BF_OPENAL="true"
 MAKE_ENV+=	WITH_BF_BLENDERPLAYER="true"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Fails to link
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} -e \
 		's|sdl11-config|${SDL_CONFIG}|; \
