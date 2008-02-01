@@ -25,4 +25,10 @@ USE_OPENSSL=	yes
 post-install:
 	${LN} -s libzxid.so.0.0 ${PREFIX}/lib/libzxid.so.0
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install
+.endif
+
+.include <bsd.port.post.mk>
