@@ -1401,6 +1401,7 @@
     SUBDIR += xpi-wmlbrowser
     SUBDIR += xpi-xmpp4moz
     SUBDIR += xpi-xpcom-component-viewer
+    SUBDIR += xpi-yslow
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
     SUBDIR += xulrunner
