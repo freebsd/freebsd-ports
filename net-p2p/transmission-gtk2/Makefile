@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-gtk2
 
 COMMENT=	A free BitTorrent client written from scratch in C with GTK+2
