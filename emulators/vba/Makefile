@@ -38,6 +38,10 @@ DOC_FILES=	COPYING AUTHORS NEWS README ChangeLog INSTALL
 BROKEN=		Runaway cc1plus process
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Fails to compile: internal gcc error
+.endif
+
 .ifdef(WITH_GTK2)
 PLIST_SUB=	INSTALL_GTK2=""
 USE_GCC=	3.4+
