@@ -33,4 +33,10 @@ post-patch:
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ACLOCAL_ARGS="${ACLOCAL_ARGS}" ${SH} autogen.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
+
+.include <bsd.port.post.mk>
