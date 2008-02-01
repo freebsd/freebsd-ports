@@ -1,0 +1,10 @@
+%%XPI_XPIDIR%%/CHANGELOG
+%%XPI_XPIDIR%%/chrome/torbutton.jar
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/CREDITS
+%%XPI_XPIDIR%%/defaults/preferences/preferences.js
+%%XPI_XPIDIR%%/LICENSE
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
