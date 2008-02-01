@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	benjsc@FreeBSD.org
 COMMENT=	Elvin Publish/Subscribe Message Bus server based on the Elvin protocol
 
+USE_RC_SUBR=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
@@ -63,12 +64,5 @@ do-install:
 	@cd ${WRKSRC}/server/doc && ${FIND} . \
 		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
-
-.if !exists(${WRKDIR}/avisd.sh)
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${FILESDIR}/avisd.sh ${WRKDIR}/avisd.sh
-.endif
-	@${ECHO_CMD} ">> Installing ${PREFIX}/etc/rc.d/avisd.sh startup script."
-	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/avisd.sh ${PREFIX}/etc/rc.d/avisd.sh
 
 .include <bsd.port.post.mk>
