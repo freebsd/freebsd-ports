@@ -138,6 +138,10 @@ PLIST_SUB+=	XVID=""
 PLIST_SUB+=	XVID="@comment "
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@${TOUCH} -f ${WRKSRC}/bootstrapped
 # don't compile or use libmp4v2
