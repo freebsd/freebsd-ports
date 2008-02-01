@@ -7,8 +7,10 @@
 
 PORTNAME=	yahoo
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR= yui
 PKGNAMESUFFIX=	-ui
 DISTNAME=	yui_${PORTVERSION}
 
@@ -19,6 +21,10 @@ USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/yui
 NO_BUILD=	yes
+
+OPTIONS=	APACHE	"Configure for Apache-2.x" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_APACHE)
 USE_APACHE=	2.0+
@@ -31,8 +37,6 @@ SUB_FILES+=	pkg-message ${CONF}
 .else
 PLIST_SUB+=	NOAPACHE="@comment "
 .endif
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "assets build index.html \
