@@ -1,0 +1,24 @@
+%%XPI_XPIDIR%%/chrome/content/yslow/component.js
+%%XPI_XPIDIR%%/chrome/content/yslow/fulljslint.js
+%%XPI_XPIDIR%%/chrome/content/yslow/jslintwrapper.js
+%%XPI_XPIDIR%%/chrome/content/yslow/lint.js
+%%XPI_XPIDIR%%/chrome/content/yslow/logo_16x16.png
+%%XPI_XPIDIR%%/chrome/content/yslow/logo_32x32.png
+%%XPI_XPIDIR%%/chrome/content/yslow/peeler.js
+%%XPI_XPIDIR%%/chrome/content/yslow/tools.js
+%%XPI_XPIDIR%%/chrome/content/yslow/utils.js
+%%XPI_XPIDIR%%/chrome/content/yslow/yahooLogo.gif
+%%XPI_XPIDIR%%/chrome/content/yslow/yslow.css
+%%XPI_XPIDIR%%/chrome/content/yslow/yslow.js
+%%XPI_XPIDIR%%/chrome/content/yslow/yslowFirebug.js
+%%XPI_XPIDIR%%/chrome/content/yslow/yslowOverlay.xul
+%%XPI_XPIDIR%%/chrome/content/yslow/yslowPanel.js
+%%XPI_XPIDIR%%/chrome/content/yslow/yslowcontext.js
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/defaults/preferences/yslow.js
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/chrome/content/yslow
+@dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
