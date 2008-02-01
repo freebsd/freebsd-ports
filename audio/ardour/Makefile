@@ -66,6 +66,10 @@ PLIST_SUB+=	NO_VST=""
 PLIST_SUB+=	VST="@comment "
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install
+.endif
+
 # Upstream uses these flags by default.
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math -fstrength-reduce
