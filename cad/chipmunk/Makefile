@@ -29,7 +29,9 @@ USE_GMAKE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Broken pkg-plist on alpha"
+BROKEN=		Broken pkg-plist on alpha
+.elif ${ARCH} == "sparc64" && ${OSVERSION} >= 700042
+BROKEN=		Fails to install
 .endif
 
 post-extract:
