@@ -121,6 +121,10 @@ OABIN+=		ioquake3-smp
 PLIST_SUB+=	SMP="@comment "
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
+
 post-extract:
 .for f in ${OA_DATA} ${OA_PATCH}
 	@${UNZIP_CMD} -qo ${DISTDIR}/${f} -d ${WRKDIR}
