@@ -17696,6 +17696,7 @@ xpi-web_developer	ports/www/xpi-web_developer
 xpi-wmlbrowser	ports/www/xpi-wmlbrowser
 xpi-xmpp4moz	ports/www/xpi-xmpp4moz
 xpi-xpcom-component-viewer	ports/www/xpi-xpcom-component-viewer
+xpi-yslow	ports/www/xpi-yslow
 xpilot		ports/games/xpilot
 xpilot-ng-client	ports/games/xpilot-ng-client
 xpilot-ng-server	ports/games/xpilot-ng-server
