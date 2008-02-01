@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: avisd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `avisd':
+#
+#avisd_enable  (bool): Set to NO by default
+#              Set to YES to enable avisd
+#avisd_config  (path): Set to %%PREFIX%%/etc/avisd.conf
+#              by default
+#avisd_flags (params): Set to -daemon
+#              by default
+#avisd_pidfile (path): Set to /var/run/avisd.pid
+#              by default
+#avisd_logfile (path): Set to /var/log/avis.log
+#              by default
+#
+
+. %%RC_SUBR%%
+
+name="avisd"
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/avisd
+command_interpreter=/bin/sh
+required_files="%%PREFIX%%/etc/avisd.conf"
+
+# read configuration and set defaults
+load_rc_config "$name"
+
+: ${avisd_enable="NO"}
+: ${avisd_pidfile="/var/run/avisd.pid"}
+: ${avisd_flags="-daemon"}
+: ${avisd_config="%%PREFIX%%/etc/avisd.conf"}
+: ${avisd_logfile="/var/log/avisd.log"}
+
+pidfile="$avisd_pidfile"
+command_args="-c $avisd_config $avisd_flags -pidfile $pidfile -logfile $avisd_logfile"
+
+run_rc_command "$1"
