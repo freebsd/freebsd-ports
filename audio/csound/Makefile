@@ -60,4 +60,10 @@ post-install:
 	${MV} ${PREFIX}/bin/mixer ${PREFIX}/bin/cs_mixer
 	@${CAT} ${WRKDIR}/pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Fails to link
+.endif
+
+.include <bsd.port.post.mk>
