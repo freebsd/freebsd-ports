@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080201:
+   AFFECTS: users of www/ziproxy
+   AUTHOR: pankov_p@mail.ru
+
+   The configuration file was moved from /usr/local/etc to 
+   /usr/local/etc/ziproxy.
+
 20080126:
    AFFECTS: users of net-p2p/deluge
    AUTHOR: mezz@FreeBSD.org
