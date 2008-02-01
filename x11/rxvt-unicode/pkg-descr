@@ -3,4 +3,4 @@ to store text in Unicode (either UCS-2 or UCS-4) and to use locale-correct
 input and output. It also supports mixing multiple fonts at the same time,
 including Xft fonts.
 
-WWW: http://software.schmorp.de/
+WWW: http://software.schmorp.de/pkg/rxvt-unicode.html
