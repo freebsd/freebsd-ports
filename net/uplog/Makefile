@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	uplog
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.nerdlabs.org/downloads/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	UDP-based ping programm
 
 USE_GETOPT_LONG=	yes
