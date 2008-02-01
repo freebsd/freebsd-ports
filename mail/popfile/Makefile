@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	popfile
-PORTVERSION=	0.22.5
+PORTVERSION=	1.0.0
 #PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +26,7 @@ NO_WRKSUBDIR=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 USE_ZIP=	yes
-USE_PERL5_RUN=	yes
+USE_PERL5_RUN=	5.8.0+
 
 START_SCRIPTS_SUB= DATADIR=${DATADIR}
 
@@ -51,17 +51,14 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-B
 .endif
 
 .if defined(WITH_POPFILE_JAPANESE)
+# For backward compatibility; popfile 0.x supports Kakasi only.
+WITH_POPFILE_KAKASI=YES
+.endif
+.if defined(WITH_POPFILE_KAKASI)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Text-Kakasi
 .endif
-
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-.if defined(WITH_POPFILE_JAPANESE)
-RUN_DEPENDS+=	${SITE_PERL}/jcode.pl:${PORTSDIR}/japanese/p5-jcode.pl
-PATCH_SITES+=	http://home.jp.FreeBSD.org/~matusita/distfiles/
-PATCHFILES+=	popfile-${PORTVERSION}-use-jcode.pl.patch
-.endif
+.if defined(WITH_POPFILE_MECAB)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MeCab.pm:${PORTSDIR}/japanese/p5-MeCab
 .endif
 
 pre-fetch:
@@ -77,14 +74,10 @@ pre-fetch:
 	@${ECHO_CMD} "        Depend BerkeleyDB libraries to upgrade old POPFile corpus."
 	@${ECHO_CMD} "        This option is required only for upgrading POPFile 0.20.1 or before."
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} "   * make WITH_POPFILE_JAPANESE=YES"
-	@${ECHO_CMD} "        Depend libraries to handle email that is written in Japanese."
-	@${ECHO_CMD} "        Note that UI menus in Japanese is supported by default."
-.if ${PERL_LEVEL} < 500800
-	@${ECHO_CMD} "        For perl 5.6 users: Since POPFile uses Encode module to convert email"
-	@${ECHO_CMD} "        texts that are not available on perl 5.6, a local patch is"
-	@${ECHO_CMD} "        applied to this ports (uses jcode.pl for conversion)."
-.endif
+	@${ECHO_CMD} "   * make WITH_POPFILE_KAKASI=YES"
+	@${ECHO_CMD} "        Depend Kakasi library to handle Japanese text."
+	@${ECHO_CMD} "   * make WITH_POPFILE_MECAB=YES"
+	@${ECHO_CMD} "        Depend MeCab library to handle Japanese text."
 
 post-patch:
 	${CHMOD} +x ${WRKSRC}/popfile.pl
