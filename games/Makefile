@@ -473,6 +473,7 @@
     SUBDIR += mindguard
     SUBDIR += mirrormagic
     SUBDIR += miscom
+    SUBDIR += mkgichessclub
     SUBDIR += mkhexgrid
     SUBDIR += monkeybubble
     SUBDIR += monopd
