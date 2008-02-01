@@ -30,6 +30,10 @@ FPIC=	-fPIC
 FPIC=	-fpic
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Fails to link
+.endif
+
 WRKSRC_SHARED=${WRKSRC}_shared
 FFLAGS_SHARED=${FPIC}
 WRKSRC_PROFILE=${WRKSRC}_profile
