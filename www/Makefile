@@ -1392,6 +1392,7 @@
     SUBDIR += xpi-tabletools
     SUBDIR += xpi-tabmixplus
     SUBDIR += xpi-togglewordwrap
+    SUBDIR += xpi-torbutton
     SUBDIR += xpi-unplug
     SUBDIR += xpi-urllink
     SUBDIR += xpi-videodownloader
