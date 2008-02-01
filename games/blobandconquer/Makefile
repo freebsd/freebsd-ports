@@ -57,4 +57,10 @@ do-install:
 	${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
+
+.include <bsd.port.post.mk>
