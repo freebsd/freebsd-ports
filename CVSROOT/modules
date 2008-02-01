@@ -7661,6 +7661,7 @@ mkcomposecache	ports/x11/mkcomposecache
 mkfile		ports/sysutils/mkfile
 mkfontdir	ports/x11-fonts/mkfontdir
 mkfontscale	ports/x11-fonts/mkfontscale
+mkgichessclub	ports/games/mkgichessclub
 mkhexgrid	ports/games/mkhexgrid
 mkitalic	ports/x11-fonts/mkitalic
 mkmf		ports/devel/mkmf
