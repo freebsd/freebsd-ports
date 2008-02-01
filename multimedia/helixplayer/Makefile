@@ -21,6 +21,8 @@ LIB_DEPENDS=	theora.0:${PORTSDIR}/multimedia/libtheora		\
 		png:${PORTSDIR}/graphics/png	\
 		jpeg:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		Does not compile
+
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_PYTHON=	yes
@@ -47,10 +49,6 @@ OPTIONS=	PLUGIN	"Build with Gecko browser plug-in" off
 
 .if ${ARCH} == "ia64"
 BROKEN=		coredumps during compilation on ${ARCH}
-.endif
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .if defined(WITH_PLUGIN)
