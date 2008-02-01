@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.5
 CATEGORIES=	www
 MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.9/
 
@@ -14,8 +14,6 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
 
 CONFLICTS=	mediawiki-1.[0-8].* mediawiki-1.1[0-9].*
-DEPRECATED=	No longer supported, please upgrade your wiki installation
-EXPIRES=	2007-12-31
 
 NO_BUILD=	yes
 USE_MYSQL=	yes
