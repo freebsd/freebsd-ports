@@ -31,6 +31,10 @@ DATADIR=	${PREFIX}/share/gSculpt
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|gsculpt.py|${PYTHONPREFIX_SITELIBDIR}/gSculpt/gsculpt.py|" \
 		${WRKSRC}/gsculpt
