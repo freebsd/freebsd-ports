@@ -8,7 +8,6 @@ lib/liferea/liblihtmlg.so
 %%XUL%%lib/liferea/liblihtmlx.so
 %%NOTIFY%%lib/liferea/liblinotiflibnotify.la
 %%NOTIFY%%lib/liferea/liblinotiflibnotify.so
-%%NOTIFY%%lib/liferea/liblinotiflibnotify.so.0
 share/applications/liferea.desktop
 share/liferea/bloglines_source.glade
 share/liferea/google_source.glade
