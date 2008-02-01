@@ -7,17 +7,16 @@
 #
 
 PORTNAME=	pipe
-PORTVERSION=	2.4.5
+PORTVERSION=	2.5
 CATEGORIES=	misc java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	pipe2
-DISTNAME=	PipeV2-45
+DISTNAME=	pipe25_rc5
 
 MAINTAINER=	stefan@fh-mainz.de
 COMMENT=	A tool for creating and analysing Petri nets
 
 USE_ZIP=	yes
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
@@ -32,18 +31,18 @@ PORTDOCS=*
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/pipe.sh ${PREFIX}/bin/pipe
 	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/bin && \
+	cd ${WRKSRC} && \
 		${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \;
-	cd ${WRKSRC}/bin && \
+	cd ${WRKSRC} && \
 		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 	@${FIND} ${DATADIR} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/docs && \
+	cd ${WRKSRC}/Docs && \
 		${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/javadoc/{} \;
-	cd ${WRKSRC}/docs && \
+	cd ${WRKSRC}/Docs && \
 		${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/javadoc/{} \;
 .endif
 
