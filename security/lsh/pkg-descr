@@ -11,4 +11,4 @@ On the other hand, it doesn't require OpenSSL, and doesn't take a lot of
 work to avoid patented algorithms.
 
 Port author's notes on usage and common problems can be found at
-WWW: http://gz.geekazoid.com/lsh/
+WWW: http://www.lysator.liu.se/~nisse/lsh/
