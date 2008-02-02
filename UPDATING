@@ -6,6 +6,26 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080202:
+   AFFECTS: users of www/punbb
+   AUTHOR: beech@FreeBSD.org
+
+   Install paths have changed. Please do the following prior to upgrade:
+	cd /usr/local/www
+	mv punbb punbb.old
+	cp -r punbb.old/upload punbb
+
+   It is now safe to update as usual.
+
+   Notes:
+   * You will probably get uninstall errors regarding files not found. It's
+     safe to ignore them.
+   * Your webserver path has changed from www/punbb/upload to www/punbb, please
+     adjust your webserver configuration and restart it.
+   * When you are satisfied that everything is working properly you may remove
+     the punbb.old directory.
+	rm -r /usr/local/www/punbb.old
+
 20080201:
    AFFECTS: users of www/ziproxy
    AUTHOR: pankov_p@mail.ru
