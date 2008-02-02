@@ -1,0 +1,11 @@
+@exec mkdir -p %D/etc/resolvconf/update-libc.d
+@exec mkdir -p %D/etc/resolvconf/resolv.conf.d
+sbin/resolvconf
+etc/resolvconf/run
+etc/resolvconf/update.d/libc
+etc/resolvconf/update.d/dnsmasq
+etc/resolvconf/update.d/named
+@dirrm etc/resolvconf/update.d
+@dirrm etc/resolvconf/update-libc.d
+@dirrm etc/resolvconf/resolv.conf.d
+@dirrm etc/resolvconf

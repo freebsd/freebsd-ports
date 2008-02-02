@@ -1,0 +1,8 @@
+=================================================
+
+To make sure openresolv runs correctly
+please symlink /etc/resolv.conf to
+%%PREFIX%%/etc/resolvconf/run/resolv.conf
+
+=================================================
+
