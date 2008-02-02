@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	4.01
+PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	www
-DISTNAME=	MT-${PORTVERSION}-en
+MASTER_SITES=	http://www.movabletype.org/downloads/
+DISTNAME=	MTOS-${PORTVERSION}-en
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A web-based personal publishing system for weblogs
@@ -47,18 +49,8 @@ PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR}
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
-RESTRICTED=	License does not permit distribution
 
 .include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	\
-: Because of licensing restrictions, you must fetch the source distribution\
-manually.\
-Goto http://www.movabletype.org/ and download the "Personal Free Edition"\
-Download the tar.gz file into ${DISTDIR}/, and then run make again
-ECHO_MSG=${ECHO_CMD}
-.endif
 
 .if !defined(WITHOUT_OPTIONAL_MODULES)
 .if ${PERL_LEVEL} < 500800
