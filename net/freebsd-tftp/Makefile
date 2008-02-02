@@ -16,7 +16,7 @@ COMMENT=	Upcoming replacement for tftp(1) and tftpd(8)
 PLIST_FILES=	bin/tftp libexec/tftpd
 
 WRKSRC=		${WRKDIR}
-NOPACKAGE=	Installs software in /usr/libexec and /usr/bin
+NO_PACKAGE=	Installs software in /usr/libexec and /usr/bin
 PREFIX=		/usr
 
 MAN8=		tftpd.8
