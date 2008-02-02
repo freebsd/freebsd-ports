@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.bin
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Blackdown Java3D Development Kit ${PORTVERSION} for Linux
 
+BROKEN=		Does not fetch
+
 EXTRACT_CMD=	${TAIL}
 EXTRACT_BEFORE_ARGS=	+367
 EXTRACT_AFTER_ARGS=	| ${BZIP2_CMD} -dc | ${TAR} xf -
