@@ -7,6 +7,7 @@
 
 PORTNAME=	signing-party
 PORTVERSION=	0.4.13.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/s/signing-party
@@ -21,6 +22,7 @@ MAINTAINER=	johans@stack.nl
 COMMENT=	Various OpenPGP related tools
 
 RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1 \
+		${SITE_PERL}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker \
 		${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Interface \
 		${SITE_PERL}/Mail/Util.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
