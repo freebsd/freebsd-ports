@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	greylite
-DISTVERSION=	2.2
+PORTVERSION=	2.2
 CATEGORIES=	mail
 MASTER_SITES=	http://mij.oltrelinux.com/net/greylite/releases/
 
