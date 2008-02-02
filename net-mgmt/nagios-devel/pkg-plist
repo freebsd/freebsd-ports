@@ -274,6 +274,7 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/docs/verifyconfig.html
 %%NAGIOSWWWDIR%%/docs/volatileservices.html
 %%NAGIOSWWWDIR%%/docs/whatsnew.html
+%%NAGIOSWWWDIR%%/images/NagiosEnterprises-whitebg-112x46.png
 %%NAGIOSWWWDIR%%/images/ack.gif
 %%NAGIOSWWWDIR%%/images/action.gif
 %%NAGIOSWWWDIR%%/images/command.png
@@ -290,7 +291,9 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/images/empty.gif
 %%NAGIOSWWWDIR%%/images/enabled.gif
 %%NAGIOSWWWDIR%%/images/extinfo.gif
+%%NAGIOSWWWDIR%%/images/favicon.ico
 %%NAGIOSWWWDIR%%/images/flapping.gif
+%%NAGIOSWWWDIR%%/images/globe-support-150x150.png
 %%NAGIOSWWWDIR%%/images/greendot.gif
 %%NAGIOSWWWDIR%%/images/histogram.png
 %%NAGIOSWWWDIR%%/images/history.gif
@@ -377,7 +380,7 @@ etc/nagios/resource.cfg-sample
 @dirrm %%NAGIOSWWWDIR%%/ssi
 @dirrm %%NAGIOSWWWDIR%%/stylesheets
 @dirrmtry %%NAGIOSWWWDIR%%
-@dirrmtry %%NAGIOSDIR%%/archives
-@dirrmtry %%NAGIOSDIR%%/checkresults
-@dirrmtry %%NAGIOSDIR%%/rw
-@dirrmtry %%NAGIOSDIR%%
+@unexec rmdir %%NAGIOSDIR%%/archives 2>/dev/null || true
+@unexec rmdir %%NAGIOSDIR%%/checkresults 2>/dev/null || true
+@unexec rmdir %%NAGIOSDIR%%/rw 2>/dev/null || true
+@unexec rmdir %%NAGIOSDIR%% 2>/dev/null || true
