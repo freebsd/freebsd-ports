@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phprojekt
-PORTVERSION=	5.2.2
+PORTVERSION=	5.2.3
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.phprojekt.com/download/
 DISTNAME=	${PORTNAME}
@@ -18,7 +18,6 @@ USE_PHP=	session imap mysql
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-install:
 	@${CP} -r ${WRKSRC} ${PREFIX}/www/${PORTNAME}
