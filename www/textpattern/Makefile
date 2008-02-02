@@ -7,6 +7,7 @@
 
 PORTNAME=	textpattern
 PORTVERSION=	4.0.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://textpattern.com/file_download/37/
 
@@ -15,7 +16,7 @@ COMMENT=	A free, flexible, elegant, easy-to-use content management system
 
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
-USE_PHP=	mbstring xml mysql
+USE_PHP=	mbstring xml mysql pcre
 
 SUB_FILES=	pkg-message
 
