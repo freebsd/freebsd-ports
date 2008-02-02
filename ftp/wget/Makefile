@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	wget
-DISTVERSION=	1.10.2
-PORTREVISION=	1
+DISTVERSION=	1.11
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wget
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP and FTP
+
+USE_BZIP2=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
