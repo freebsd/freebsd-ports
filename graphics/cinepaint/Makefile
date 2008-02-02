@@ -46,8 +46,6 @@ PLIST_SUB+=	OPENEXR:=""
 PLIST_SUB+=	OPENEXR:="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's| -Wall||' \
