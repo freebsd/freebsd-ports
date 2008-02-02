@@ -8708,6 +8708,7 @@ openpbx.org	ports/net/openpbx.org
 openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime
 openradius	ports/net/openradius
+openresolv	ports/dns/openresolv
 openrm		ports/graphics/openrm
 opensaml	ports/security/opensaml
 opensc		ports/security/opensc
