@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/rwdedupe
 bin/buildset
 bin/mapsid
 bin/num2dot
@@ -81,6 +82,10 @@ lib/silk/libipport.so.0
 lib/silk/libipport.so
 lib/silk/libipport.la
 lib/silk/libipport.a
+lib/silk/libippair.so.0
+lib/silk/libippair.so
+lib/silk/libippair.la
+lib/silk/libippair.a
 lib/silk/librwslammer.so.0
 lib/silk/librwslammer.so
 lib/silk/librwslammer.la
