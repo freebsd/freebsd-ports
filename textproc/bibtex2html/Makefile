@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bibtex2html
-PORTVERSION=	1.89
+PORTVERSION=	1.90
 CATEGORIES=	textproc print
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/bibtex2html/
 
