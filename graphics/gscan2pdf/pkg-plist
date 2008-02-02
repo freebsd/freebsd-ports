@@ -23,6 +23,7 @@ share/locale/pt/LC_MESSAGES/gscan2pdf.mo
 share/locale/pt_BR/LC_MESSAGES/gscan2pdf.mo
 share/locale/ru/LC_MESSAGES/gscan2pdf.mo
 share/locale/sv/LC_MESSAGES/gscan2pdf.mo
+share/locale/tr/LC_MESSAGES/gscan2pdf.mo
 share/locale/zh_TW/LC_MESSAGES/gscan2pdf.mo
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/gscan2pdf
 @dirrmtry share/applications
