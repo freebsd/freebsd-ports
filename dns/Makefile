@@ -70,6 +70,7 @@
     SUBDIR += nss_resinit
     SUBDIR += odsclient
     SUBDIR += opendd
+    SUBDIR += openresolv
     SUBDIR += p5-BIND-Conf_Parser
     SUBDIR += p5-DNS-Config
     SUBDIR += p5-DNS-EasyDNS
