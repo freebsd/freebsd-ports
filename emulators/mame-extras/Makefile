@@ -22,6 +22,8 @@ EXTRACT_ONLY=	#
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Additional files for MAME (Multi Arcade Machine Emulator)
 
+BROKEN=		Does not fetch
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
