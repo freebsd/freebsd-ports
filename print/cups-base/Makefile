@@ -104,6 +104,8 @@ CONFIGURE_ARGS+=	--enable-dnssd \
 			--with-dnssd-libs=${LOCALBASE}/lib/ \
 			--with-dnssd-includes=${LOCALBASE}/include/avahi-compat-libdns_sd/
 LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/avahi-libdns
+.else
+CONFIGURE_ARGS+=	--disable-dnssd
 .endif
 
 .if defined(WITH_PAM)
