@@ -207,6 +207,9 @@ bin/uniconv
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cdrloader.py
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cdrloader.pyc
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cdrloader.pyo
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cdrziploader.py
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cdrziploader.pyc
+%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cdrziploader.pyo
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cgmloader.py
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cgmloader.pyc
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cgmloader.pyo
