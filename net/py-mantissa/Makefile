@@ -31,6 +31,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/nevow/__init__.py:${PORTSDIR}/www/py-nevow \
 		${PYTHON_SITELIBDIR}/twisted/mail/__init__.py:${PORTSDIR}/mail/py-twistedMail \
 		${PYTHON_SITELIBDIR}/twisted/conch/__init__.py:${PORTSDIR}/security/py-twistedConch
 
+BROKEN=		Leaves files behind after deinstallation
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_TWISTED=	yes
