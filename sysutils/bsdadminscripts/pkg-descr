@@ -1,10 +1,10 @@
 This is a collection of administration scripts. At the moment it
 consists of a script to control rc.d scripts at runtime, a
-script that adds functionality to portupgrade, scripts to set variables
-for make jobs (like portconf, but with more possibilities). And scripts
-to check for broken packages.
+script that runs common make targets on batches of ports, scripts to set
+variables for make jobs (like portconf, but with more possibilities).
+And scripts to check for broken packages and missing libraries.
 
 WWW: http://sourceforge.net/projects/bsdadminscripts/
 
 - Kamikaze
-lon_kamikaze@gmx.de
+kamikaze@bsdforen.de
