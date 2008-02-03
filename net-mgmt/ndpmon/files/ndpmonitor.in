@@ -12,7 +12,7 @@ name="ndpmonitor"
 rcvar=`set_rcvar`
 
 command="%%PREFIX%%/sbin/ndpmon"
-required_files=%%PREFIX%%/etc/config_ndpmon.xml
+required_files=%%PREFIX%%/etc/ndpmon/config_ndpmon.xml
 
 load_rc_config $name
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ndpmon
-PORTVERSION=	1.3a
+PORTVERSION=	1.3d
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ USE_RC_SUBR=	ndpmonitor
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OSTYPE=FreeBSD
-CONFIGURE_ARGS=	--with-var-datadir=${PREFIX}/var
+CONFIGURE_ARGS=	--with-var-datadir=${PREFIX}/var --with-confdir=${PREFIX}/etc
 
 MAN8=		ndpmon.8
 PORTDOCS=	INSTALL README
@@ -29,7 +29,6 @@ PORTDOCS=	INSTALL README
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/ndpmon.8 \
-		${WRKSRC}/config_ndpmon.xml \
 		${WRKSRC}/create_html_table.py \
 		${WRKSRC}/demopipeprogram.pl.sample
 	(cd ${WRKSRC}; ${MAKE} clean)
@@ -46,8 +45,8 @@ do-install:
 		${DATADIR}
 	${MKDIR} ${PREFIX}/etc/ndpmon
 	${INSTALL_DATA} ${WRKSRC}/config_ndpmon.xml ${PREFIX}/etc/ndpmon/config_ndpmon.xml-dist
-	${MKDIR} ${PREFIX}/var
-	${INSTALL_DATA} ${WRKSRC}/neighbor_list.xml ${PREFIX}/var/ndpmon_neighbor_list.xml
+	${MKDIR} ${PREFIX}/var/ndpmon
+	${INSTALL_DATA} ${WRKSRC}/neighbor_list.xml ${PREFIX}/var/ndpmon/neighbor_list.xml
 
 .if !defined(NOPORTDOCS)
 post-install:
