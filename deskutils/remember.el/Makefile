@@ -17,6 +17,8 @@ DISTNAME=	remember-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	A Emacs mode for remembering data
 
+BROKEN=		Conflicting dependencies
+
 USE_EMACS=	yes
 USE_GMAKE=	yes
 EMACS_PORT_NAME?=	emacs21
