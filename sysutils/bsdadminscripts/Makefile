@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	bsdadminscripts
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	lon_kamikaze@gmx.de
+MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	A small collection of administration scripts
 
 OPTIONS+=	BUILDFLAGS "Build configuration system" On
 OPTIONS+=	PKG_LIBCHK "Check for links against missing libraries" On
 OPTIONS+=	PKG_VALIDATE "Check for broken and missing files" On
-OPTIONS+=	PORTCONFIG "Depends on portupgrade" On
+OPTIONS+=	PORTCONFIG "Run common make targets on several ports" On
 OPTIONS+=	RCSTART "Use rc scripts based on PROVIDE" On
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
@@ -41,7 +41,6 @@ MAN1+=		rcstart.1
 .endif
 
 .if !defined(WITHOUT_PORTCONFIG)
-RUN_DEPENDS+=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade
 PLIST_FILES+=	${PORT_SCRIPTS:S,^,sbin/port,}
 MAN1+=		portconfig.1
 .endif
