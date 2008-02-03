@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	multimedia
@@ -25,8 +25,12 @@ CONFLICTS=	clive-[0-9]*
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+.if !defined(NO_INSTALL_MANPAGES)
 MAN1=	${PORTNAME}.1
 MANCOMPRESSED=	yes
+.else
+MAKE_ENV=	NO_INSTALL_MANPAGES=${NO_INSTALL_MANPAGES}
+.endif
 
 OPTIONS=	FFMPEG	"Install ffmpeg for re-encoding" off \
 		MPLAYER	"Install mplayer as video player" off \
