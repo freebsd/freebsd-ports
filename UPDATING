@@ -22,7 +22,7 @@ upgrades.
    Install paths have changed. Please do the following prior to upgrade:
 	cd /usr/local/www
 	mv punbb punbb.old
-	cp -r punbb.old/upload punbb
+	cp -R punbb.old/upload punbb
 
    It is now safe to update as usual.
 
