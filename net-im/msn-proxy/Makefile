@@ -7,9 +7,9 @@
 
 PORTNAME=	msn-proxy
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF
-#DISTNAME=	msn-proxy-${PORTVERSION}
 
 MAINTAINER=	loos.br@gmail.com
 COMMENT=	Messenger proxy/control daemon
@@ -18,15 +18,42 @@ LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
 
 USE_MYSQL=	yes
 
+SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
 DOCS=		INSTALL
+MSNPROXYWWW=	ajax.inc.php al.inc.php bl.inc.php chat-to.php chat.php \
+		conf.php default.array.cmd.inc.php default.array.option.inc.php \
+		default.array.status.inc.php fl.inc.php group.inc.php \
+		header.inc.php index.php mysql.inc.php save_contact_op.php \
+		save_default_op.php save_msg.php save_user_op.php user.php \
+		view-to.php view.php
+MSNPROXYIMG=	ausente.gif notinlist.png ocupado.gif offline.gif online.gif \
+		send_im.gif webcam.png
+
+WANT_PHP_WEB=	yes
+USE_PHP=	mysql
+MAKE_ARGS=	SYSCONFDIR=$(DESTDIR)${PREFIX}/etc/msn-proxy \
+			BINDIR=$(DESTDIR)${PREFIX}/bin
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/config.h
 
 post-install:
+	@${MKDIR} ${WWWDIR}
+.for FILE in ${MSNPROXYWWW}
+	@cd ${WRKSRC}/php && ${INSTALL} -m 644 ${FILE} ${WWWDIR}
+.endfor
+	@${MKDIR} ${WWWDIR}/imagens
+.for FILE in ${MSNPROXYIMG}
+	@cd ${WRKSRC}/php/imagens && ${INSTALL} -m 644 ${FILE} ${WWWDIR}/imagens
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
 .endfor
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
