@@ -25,5 +25,7 @@ load_rc_config $name
 
 pidfile="/var/run/httpd.pid"
 command="%%PREFIX%%/bin/httpd"
+stop_cmd="%%PREFIX%%/bin/httpdc kill"
+restart_cmd="%%PREFIX%%/bin/httpdc restart"
 
 run_rc_command "$1"
