@@ -25,7 +25,6 @@ lib/lcdproc/curses.so
 lib/lcdproc/glk.so
 lib/lcdproc/hd44780.so
 lib/lcdproc/icp_a106.so
-lib/lcdproc/imon.so
 lib/lcdproc/lb216.so
 lib/lcdproc/lcdm001.so
 lib/lcdproc/lcterm.so
