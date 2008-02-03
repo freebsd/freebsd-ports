@@ -94,7 +94,7 @@ CMAKE_DEFS+=	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
 		-DVTK_DATA_ROOT:PATH=${VTKDATAROOT}
 
 .if defined(WITH_VTKMPEG2)
-LIB_DEPENDS+=	vtkMPEG2Encode.5:${PORTSDIR}/math/vtkmpeg2encode
+LIB_DEPENDS+=	vtkMPEG2Encode.5:${PORTSDIR}/multimedia/vtkmpeg2encode
 PLIST_FILES+=	include/vtk-5.0/vtkMPEG2Writer.h
 CMAKE_DEFS+=	-DvtkMPEG2Encode_INCLUDE_PATH=${LOCALBASE}/include/vtk-5.0 \
 		-DvtkMPEG2Encode_LIBRARIES=vtkMPEG2Encode \
