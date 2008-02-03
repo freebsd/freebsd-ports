@@ -7,8 +7,38 @@ etc/msn-proxy/mysql/tables/defaults
 etc/msn-proxy/mysql/tables/contact_groups
 etc/msn-proxy/msn-proxy.conf
 bin/msn-proxy
+%%WWWDIR%%/ajax.inc.php
+%%WWWDIR%%/al.inc.php
+%%WWWDIR%%/bl.inc.php
+%%WWWDIR%%/chat-to.php
+%%WWWDIR%%/chat.php
+%%WWWDIR%%/conf.php
+%%WWWDIR%%/default.array.cmd.inc.php
+%%WWWDIR%%/default.array.option.inc.php
+%%WWWDIR%%/default.array.status.inc.php
+%%WWWDIR%%/fl.inc.php
+%%WWWDIR%%/group.inc.php
+%%WWWDIR%%/header.inc.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/mysql.inc.php
+%%WWWDIR%%/save_contact_op.php
+%%WWWDIR%%/save_default_op.php
+%%WWWDIR%%/save_msg.php
+%%WWWDIR%%/save_user_op.php
+%%WWWDIR%%/user.php
+%%WWWDIR%%/view-to.php
+%%WWWDIR%%/view.php
+%%WWWDIR%%/imagens/ausente.gif
+%%WWWDIR%%/imagens/notinlist.png
+%%WWWDIR%%/imagens/ocupado.gif
+%%WWWDIR%%/imagens/offline.gif
+%%WWWDIR%%/imagens/online.gif
+%%WWWDIR%%/imagens/send_im.gif
+%%WWWDIR%%/imagens/webcam.png
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry etc/msn-proxy/mysql/tables
 @dirrmtry etc/msn-proxy/mysql
 @dirrmtry etc/msn-proxy
+@dirrmtry %%WWWDIR%%/imagens
+@dirrmtry %%WWWDIR%%
