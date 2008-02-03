@@ -15,6 +15,9 @@ bin/clive
 %%PYTHON_SITELIBDIR%%/clive/history.py
 %%PYTHON_SITELIBDIR%%/clive/history.pyc
 %%PYTHON_SITELIBDIR%%/clive/history.pyo
+%%PYTHON_SITELIBDIR%%/clive/main.py
+%%PYTHON_SITELIBDIR%%/clive/main.pyc
+%%PYTHON_SITELIBDIR%%/clive/main.pyo
 %%PYTHON_SITELIBDIR%%/clive/nomad.py
 %%PYTHON_SITELIBDIR%%/clive/nomad.pyc
 %%PYTHON_SITELIBDIR%%/clive/nomad.pyo
