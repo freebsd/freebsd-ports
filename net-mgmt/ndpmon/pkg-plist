@@ -4,7 +4,8 @@ sbin/ndpmon
 %%DATADIR%%/demopipeprogram.pl.sample
 %%DATADIR%%/create_html_table.py
 @dirrmtry %%DATADIR%%
-var/ndpmon_neighbor_list.xml
+var/ndpmon/neighbor_list.xml
+@dirrmtry var/ndpmon
 @dirrmtry var
 etc/ndpmon/config_ndpmon.xml-dist
 @dirrmtry etc/ndpmon
