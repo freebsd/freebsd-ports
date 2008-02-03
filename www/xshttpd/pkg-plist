@@ -8,6 +8,10 @@ bin/xspasswd
 %%WWWDIR%%/cgi-bin/gfxcount
 %%WWWDIR%%/cgi-bin/imagemap
 %%WWWDIR%%/cgi-bin/xschpass
+%%WWWDIR%%/conf/httpd.conf.sample
+%%WWWDIR%%/conf/mime.index
+%%WWWDIR%%/conf/script.methods.sample
+%%WWWDIR%%/conf/compress.methods.sample
 %%WWWDIR%%/contrib/SSL-Makefile
 %%WWWDIR%%/contrib/agentstats.pl
 %%WWWDIR%%/contrib/caroot.pem
@@ -15,7 +19,6 @@ bin/xspasswd
 %%WWWDIR%%/contrib/persistent.pl
 %%WWWDIR%%/contrib/powered-by-xs.gif
 %%WWWDIR%%/contrib/wwwstats.pl
-%%WWWDIR%%/compress.methods.sample
 %%WWWDIR%%/gfxcount/digital0.ppm
 %%WWWDIR%%/gfxcount/digital1.ppm
 %%WWWDIR%%/gfxcount/digital2.ppm
@@ -46,7 +49,6 @@ bin/xspasswd
 %%WWWDIR%%/gfxcount/largecol7.ppm
 %%WWWDIR%%/gfxcount/largecol8.ppm
 %%WWWDIR%%/gfxcount/largecol9.ppm
-%%WWWDIR%%/httpd.conf.sample
 %%WWWDIR%%/icons/xs-audio.gif
 %%WWWDIR%%/icons/xs-back.gif
 %%WWWDIR%%/icons/xs-base.gif
@@ -62,11 +64,12 @@ bin/xspasswd
 %%WWWDIR%%/icons/xs-unknown.gif
 %%WWWDIR%%/icons/xs-video.gif
 %%WWWDIR%%/icons/xs-zip.gif
-%%WWWDIR%%/mime.index
-%%WWWDIR%%/script.methods.sample
+@exec mkdir -p %%WWWDIR%%/htdocs
 @dirrm %%WWWDIR%%/contrib
 @dirrm %%WWWDIR%%/gfxcount
-@dirrm %%WWWDIR%%/icons
 @dirrmtry %%WWWDIR%%/cgi-bin
+@dirrmtry %%WWWDIR%%/conf
 @dirrmtry %%WWWDIR%%/htdocs
+@dirrmtry %%WWWDIR%%/icons
 @dirrmtry %%WWWDIR%%/logs
+@dirrmtry %%WWWDIR%%
