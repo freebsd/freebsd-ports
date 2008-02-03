@@ -1,0 +1,14 @@
+--- misc/libxine.pc.in.orig	2008-02-03 22:02:31.000000000 +0900
++++ misc/libxine.pc.in	2008-02-03 22:03:24.000000000 +0900
+@@ -19,7 +19,7 @@
+ Description: The xine engine library
+ Version: @XINE_MAJOR@.@XINE_MINOR@.@XINE_SUB@@XINE_PATCH@
+ Requires:
+-Libs: -L${libdir} -lxine
+-Libs.private: @ZLIB_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@ @LIBICONV@ @RT_LIBS@
+-Cflags: -I${includedir}
+-Cflags.private: @PTHREAD_CFLAGS@
++Libs: -L${libdir} -lxine @ZLIB_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@ @LIBICONV@ @RT_LIBS@
++Libs.private: 
++Cflags: -I${includedir} @PTHREAD_CFLAGS@
++Cflags.private: 
