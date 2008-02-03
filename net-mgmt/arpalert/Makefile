@@ -21,4 +21,10 @@ CFLAGS+=        -fPIC
 
 MAN8=		arpalert.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile
+.endif
+
+.include <bsd.port.post.mk>
