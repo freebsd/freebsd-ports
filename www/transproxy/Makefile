@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Transparent HTTP proxy for ipfw's fwd rule or IPFILTER's ipnat command
 
+USE_RC_SUBR=	tproxy
+
 MAN8=		tproxy.8
 
 PLIST_FILES=	sbin/tproxy sbin/tproxyrun sbin/tproxywatch
