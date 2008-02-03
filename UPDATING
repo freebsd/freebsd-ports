@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080203:
+  AFFECTS: users of www/xshttpd
+  AUTHOR: johans@FreeBSD.org
+
+  www/xshttpd now uses ${PREFIX}/www/xshttpd/ as a root directory for
+  its data files. The xshttpd configuration files have been moved to
+  ${PREFIX}/www/xshttpd/conf/. Move the appropriate local files
+  manually if you are upgrading from 3.4 or older versions.
+
 20080202:
    AFFECTS: users of www/punbb
    AUTHOR: beech@FreeBSD.org
