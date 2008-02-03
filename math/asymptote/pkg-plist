@@ -17,6 +17,7 @@ bin/xasy
 %%DATADIR%%/GUI/xasyOptionsDialog.py
 %%DATADIR%%/GUI/xasyVersion.py
 %%DATADIR%%/animate.asy
+%%DATADIR%%/animation.asy
 %%DATADIR%%/annotate.asy
 %%DATADIR%%/asy-init.el
 %%DATADIR%%/asy-keywords.el
@@ -166,6 +167,7 @@ bin/xasy
 %%EXAMPLESDIR%%/flow.asy
 %%EXAMPLESDIR%%/flowchartdemo.asy
 %%EXAMPLESDIR%%/fractaltree.asy
+%%EXAMPLESDIR%%/gamma.asy
 %%EXAMPLESDIR%%/generalaxis.asy
 %%EXAMPLESDIR%%/generalaxis3.asy
 %%EXAMPLESDIR%%/grid.asy
