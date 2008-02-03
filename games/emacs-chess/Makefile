@@ -19,6 +19,8 @@ DISTFILES=		chess-${PORTVERSION}.tar.bz2 \
 MAINTAINER=		dryice@dryice.name
 COMMENT=		Play chess with emacs
 
+BROKEN=		Conflicting dependencies
+
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 USE_BZIP2=		yes
