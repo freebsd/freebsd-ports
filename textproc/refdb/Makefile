@@ -54,7 +54,7 @@ IGNORE=		you must choose a back-end database
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
 # If libdbi-drivers has been built without MySQL driver, abort
-.if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libmysql.so)
+.if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdmysql.so)
 IGNORE=		rebuild databases/libdbi-drivers with MySQL support
 .elif !exists(${LOCALBASE}/lib/dbd)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=	--with-db-server=mysql
 .elif defined(WITH_PGSQL)
 USE_PGSQL=	yes
 # If libdbi-drivers has been built without PostgreSQL driver, abort
-.if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libpgsql.so)
+.if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdpgsql.so)
 IGNORE=		rebuild databases/libdbi-drivers with PostgreSQL support
 .elif !exists(${LOCALBASE}/lib/dbd)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=	--with-db-server=pgsql
 .elif defined(WITH_SQLITE)
 LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 # If libdbi-drivers has been built without SQLite driver, abort
-.if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libsqlite.so)
+.if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libdbdsqlite.so)
 IGNORE=		rebuild databases/libdbi-drivers with SQLite support
 .elif !exists(${LOCALBASE}/lib/dbd)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
