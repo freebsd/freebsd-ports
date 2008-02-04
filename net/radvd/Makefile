@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	radvd
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.litech.org/radvd/dist/ CENKES
 
@@ -14,6 +14,7 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A Linux/BSD IPv6 router advertisement daemon
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--program-transform-name=
 USE_GMAKE=	yes
 USE_RC_SUBR=	radvd
 
