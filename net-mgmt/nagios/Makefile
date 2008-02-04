@@ -7,6 +7,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagio
 USE_GETOPT_LONG=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
-USE_AUTOTOOLS=	autoconf:261
+USE_AUTOTOOLS=	autoconf:261 libltdl:15
 USE_RC_SUBR=	nagios.sh
 
 CONFLICTS=	nagios-[13].*
