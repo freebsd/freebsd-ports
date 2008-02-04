@@ -1,6 +1,6 @@
-# New ports collection makefile for:   tta
-# Date created:        10 Aug 2004
-# Whom:                dieringe
+# New ports collection makefile for:	TTA encoder
+# Date created:				10 Aug 2004
+# Whom:			Martin Dieringer <Martin.Dieringer@t-online.de>
 #
 # $FreeBSD$
 #
@@ -11,12 +11,12 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.true-audio.com/ftp/
 DISTNAME=	${PORTNAME}enc-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	"The True Audio Encoder", lossless (de)compressor
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	The True Audio Encoder, lossless (de)compressor
 
 USE_ZIP=	yes
+NO_WRKSUBDIR=	yes
 
-WRKSRC=		${WRKDIR}
 LDFLAGS+=	-lm
 
 PROGRAM=	ttaenc
@@ -32,7 +32,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PROGRAM} ${PREFIX}/bin
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
