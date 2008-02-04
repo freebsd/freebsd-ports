@@ -7,16 +7,12 @@
 
 PORTNAME=	magicfilter
 PORTVERSION=	2.3.h
-PORTREVISION=	1
-PORREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/magicfilter/
 
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Customizable, extensible automatic printer filter
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmagic.so:${PORTSDIR}/sysutils/file
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GHOSTSCRIPT=	yes
 
@@ -30,4 +26,11 @@ CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
 MAN5=		magicfilter.5
 MAN8=		magicfilter.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libmagic.so)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmagic.so:${PORTSDIR}/sysutils/file
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+.endif
+
+.include <bsd.port.post.mk>
