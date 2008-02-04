@@ -2,7 +2,6 @@ bin/munger
 lib/libmunger.so.33
 lib/libminimunger.a
 include/minimunger.h
-%%DKNS_BIN%%
 %%DATADIR%%/ipdatabase.munger
 %%DATADIR%%/compiler.munger
 %%DATADIR%%/httpd.munger
