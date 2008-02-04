@@ -1,74 +1,44 @@
---- youtube-dl.orig	Wed Jan 30 14:18:50 2008
-+++ youtube-dl	Thu Jan 31 21:36:49 2008
-@@ -208,6 +208,7 @@
- cmdl_parser.add_option('-t', '--title', action='store_true', dest='use_title', help='use title in file name')
- cmdl_parser.add_option('-l', '--literal', action='store_true', dest='use_literal', help='use literal title in file name')
- cmdl_parser.add_option('-n', '--netrc', action='store_true', dest='use_netrc', help='use .netrc authentication data')
-+cmdl_parser.add_option('-a', '--avi', action='store_true', dest='use_avi', help='output file in avi format')
- cmdl_parser.add_option('-g', '--get-url', action='store_true', dest='get_url', help='print final video URL only')
- cmdl_parser.add_option('-2', '--title-too', action='store_true', dest='get_title', help='used with -g, print title too')
- (cmdl_opts, cmdl_args) = cmdl_parser.parse_args()
-@@ -382,6 +383,26 @@
- 
- except KeyboardInterrupt:
- 	sys.exit('\n')
-+
-+# Convert to avi if needed
-+if cmdl_opts.use_avi:
-+	if cmdl_opts.outfile is None:
-+		avi_filename = '%s.avi' % video_filename[:-4]
-+	else:
-+		avi_filename = '%s.avi' % video_filename
-+
-+	try:
-+		os.system('%%CONV2AVI_CMD%% "%s" "%s" > %s 2> %s' % (video_filename, avi_filename, os.path.devnull, os.path.devnull))
-+		cond_print('Video file converted to %s\n' % avi_filename)
-+	except OSError:
-+		sys.exit('Error: unable to convert file.\n')
-+	except KeyboardInterrupt:
-+		sys.exit('\n')
-+
-+	try:
-+		os.unlink(video_filename)
-+	except OSError:
-+		sys.exit('Error: unable to remove downloaded file.\n')
- 
- # Finish
- sys.exit()
---- youtube-dl.orig	Wed Jan 30 14:18:50 2008
-+++ youtube-dl	Thu Jan 31 21:36:49 2008
-@@ -208,6 +208,7 @@
- cmdl_parser.add_option('-t', '--title', action='store_true', dest='use_title', help='use title in file name')
- cmdl_parser.add_option('-l', '--literal', action='store_true', dest='use_literal', help='use literal title in file name')
- cmdl_parser.add_option('-n', '--netrc', action='store_true', dest='use_netrc', help='use .netrc authentication data')
-+cmdl_parser.add_option('-a', '--avi', action='store_true', dest='use_avi', help='output file in avi format')
- cmdl_parser.add_option('-g', '--get-url', action='store_true', dest='get_url', help='print final video URL only')
- cmdl_parser.add_option('-2', '--title-too', action='store_true', dest='get_title', help='used with -g, print title too')
- (cmdl_opts, cmdl_args) = cmdl_parser.parse_args()
-@@ -382,6 +383,26 @@
- 
- except KeyboardInterrupt:
- 	sys.exit('\n')
-+
-+# Convert to avi if needed
-+if cmdl_opts.use_avi:
-+	if cmdl_opts.outfile is None:
-+		avi_filename = '%s.avi' % video_filename[:-4]
-+	else:
-+		avi_filename = '%s.avi' % video_filename
-+
-+	try:
-+		os.system('%%CONV2AVI_CMD%% "%s" "%s" > %s 2> %s' % (video_filename, avi_filename, os.path.devnull, os.path.devnull))
-+		cond_print('Video file converted to %s\n' % avi_filename)
-+	except OSError:
-+		sys.exit('Error: unable to convert file.\n')
-+	except KeyboardInterrupt:
-+		sys.exit('\n')
-+
-+	try:
-+		os.unlink(video_filename)
-+	except OSError:
-+		sys.exit('Error: unable to remove downloaded file.\n')
- 
- # Finish
- sys.exit()
+Index: www/youtube_dl/files/conv2avi.patch
+===================================================================
+RCS file: www/youtube_dl/files/conv2avi.patch
+diff -N www/youtube_dl/files/conv2avi.patch
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ www/youtube_dl/files/conv2avi.patch	31 Jan 2008 19:32:45 -0000
+@@ -0,0 +1,37 @@
++--- youtube-dl.orig	Wed Jan 30 14:18:50 2008
+++++ youtube-dl	Thu Jan 31 21:36:49 2008
++@@ -208,6 +208,7 @@
++ cmdl_parser.add_option('-t', '--title', action='store_true', dest='use_title', help='use title in file name')
++ cmdl_parser.add_option('-l', '--literal', action='store_true', dest='use_literal', help='use literal title in file name')
++ cmdl_parser.add_option('-n', '--netrc', action='store_true', dest='use_netrc', help='use .netrc authentication data')
+++cmdl_parser.add_option('-a', '--avi', action='store_true', dest='use_avi', help='output file in avi format')
++ cmdl_parser.add_option('-g', '--get-url', action='store_true', dest='get_url', help='print final video URL only')
++ cmdl_parser.add_option('-2', '--title-too', action='store_true', dest='get_title', help='used with -g, print title too')
++ (cmdl_opts, cmdl_args) = cmdl_parser.parse_args()
++@@ -382,6 +383,26 @@
++ 
++ except KeyboardInterrupt:
++ 	sys.exit('\n')
+++
+++# Convert to avi if needed
+++if cmdl_opts.use_avi:
+++	if cmdl_opts.outfile is None:
+++		avi_filename = '%s.avi' % video_filename[:-4]
+++	else:
+++		avi_filename = '%s.avi' % video_filename
+++
+++	try:
+++		os.system('%%CONV2AVI_CMD%% "%s" "%s" > %s 2> %s' % (video_filename, avi_filename, os.path.devnull, os.path.devnull))
+++		cond_print('Video file converted to %s\n' % avi_filename)
+++	except OSError:
+++		sys.exit('Error: unable to convert file.\n')
+++	except KeyboardInterrupt:
+++		sys.exit('\n')
+++
+++	try:
+++		os.unlink(video_filename)
+++	except OSError:
+++		sys.exit('Error: unable to remove downloaded file.\n')
++ 
++ # Finish
++ sys.exit()
