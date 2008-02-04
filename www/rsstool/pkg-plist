@@ -2,21 +2,26 @@ bin/rsstool
 %%PORTDOCS%%%%DOCSDIR%%/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/contrib.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/images/atom03.png
 %%PORTDOCS%%%%DOCSDIR%%/images/feed.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/icon.png
 %%PORTDOCS%%%%DOCSDIR%%/images/rss.png
+%%PORTDOCS%%%%DOCSDIR%%/images/rss091.png
+%%PORTDOCS%%%%DOCSDIR%%/images/rss10.png
+%%PORTDOCS%%%%DOCSDIR%%/images/rss20.png
 %%PORTDOCS%%%%DOCSDIR%%/images/rss_blue.png
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/license.html
 %%PORTDOCS%%%%DOCSDIR%%/readme.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/config.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/index.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/sql.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/crontab
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/procmailrc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mail/template
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsstool_php_lite/htdocs/config.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsstool_php_lite/htdocs/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rsstool_php_lite/htdocs/sql.php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/htdocs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mail
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rsstool_php_lite/htdocs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rsstool_php_lite
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
