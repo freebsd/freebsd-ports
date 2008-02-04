@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0832ee18-cf77-11dc-8c6a-00304881ac9a ">
+    <topic>jetty -- multiple vulnerability</topic>
+    <affects>
+      <package>
+	<name>jetty</name>
+	<range><lt>6.1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Greg Wilkins reports:</p>
+	<blockquote cite="http://jira.codehaus.org/browse/JETTY-386#action_117699">
+	  <p>jetty allows remote attackers to bypass protection mechanisms and
+	    read the source of files via multiple '/' characters in the URI.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>27117</bid>
+      <cvename>CVE-2007-6672</cvename>
+      <url>http://jira.codehaus.org/browse/JETTY-386#action_117699</url>
+    </references>
+    <dates>
+      <discovery>2007-12-22</discovery>
+      <entry>2008-02-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6ecd0b42-ce77-11dc-89b1-000e35248ad7">
     <topic>libxine -- buffer overflow vulnerability</topic>
     <affects>
