@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-Amazon-AWIS
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use the Amazon Alexa Web Information Service
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
