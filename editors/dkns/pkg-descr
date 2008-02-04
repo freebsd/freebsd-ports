@@ -1,0 +1,14 @@
+Dickens is a simple, one-buffer-in-one-window, console text editor.
+
+Dickens only understands UNIX-style text files expressed in ASCII, and is
+therefore of little or no use to the non-English-speaking world.
+
+Dickens is written in Munger(1).  Features include interactive filename
+completion, tags support, regular-expression search-and-replace, and
+unlimited undo/redo.
+
+WWW: http://www.mammothcheese.ca/munger.html
+
+--
+James Bailie <jimmy@mammothcheese.ca>
+http://www.mammothcheese.ca

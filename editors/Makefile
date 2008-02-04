@@ -32,6 +32,7 @@
     SUBDIR += cooledit
     SUBDIR += cream
     SUBDIR += dedit
+    SUBDIR += dkns
     SUBDIR += doxymacs
     SUBDIR += drjava
     SUBDIR += e3
