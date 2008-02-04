@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mame
-PORTVERSION=	0.121
+PORTVERSION=	0.122u7
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.mame.net/:mame \
 		http://www.mameworld.net/mameinfo/update/:mameinfo \
@@ -21,8 +21,6 @@ EXTRACT_ONLY=	#
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Additional files for MAME (Multi Arcade Machine Emulator)
-
-BROKEN=		Does not fetch
 
 USE_ZIP=	yes
 NO_BUILD=	yes
@@ -89,8 +87,8 @@ PLIST_SUB+=	HISCORE="@comment "
 .endif
 
 .if !defined(WITHOUT_HISTORY)
-DISTFILES+=	mamehistory${PORTVERSION:S/0.//}${EXTRACT_SUFX}:history
-EXTRACT_ONLY+=	mamehistory${PORTVERSION:S/0.//}${EXTRACT_SUFX}
+DISTFILES+=	mamehistory122a${EXTRACT_SUFX}:history
+EXTRACT_ONLY+=	mamehistory122a${EXTRACT_SUFX}
 PLIST_SUB+=	HISTORY=""
 .else
 PLIST_SUB+=	HISTORY="@comment "
