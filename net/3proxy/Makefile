@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	3proxy
-PORTVERSION=	0.5.3j
+PORTVERSION=	0.5.3k
 CATEGORIES=	net
 MASTER_SITES=	http://3proxy.ru/${PORTVERSION}/ \
 		http://security.nnov.ru/soft/3proxy/${PORTVERSION}/
