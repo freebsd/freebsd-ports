@@ -11,6 +11,7 @@ bin/mk-profile-compact
 bin/mk-query-profiler
 bin/mk-show-grants
 bin/mk-slave-delay
+bin/mk-slave-prefetch
 bin/mk-slave-restart
 bin/mk-table-checksum
 bin/mk-table-sync
