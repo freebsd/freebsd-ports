@@ -7,7 +7,7 @@
 
 PORTNAME=	v6eval
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tahi.org/release/v6eval/
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect \
 
 USE_PERL5=	yes
 USE_OPENSSL=	yes
+NOMANCOMPRESS=	yes
 MAN1PREFIX=	${PREFIX}/v6eval
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN1=		pktctl.1.gz pktsend.1.gz
