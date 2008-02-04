@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ordiluc.net/selectwm/
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	A GTK application to let you select a window manager when starting X
 
 MAN1=		selectwm.1

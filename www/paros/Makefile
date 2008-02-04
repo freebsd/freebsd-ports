@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	An HTTP/HTTPS proxy for assessing web application vulnerability
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

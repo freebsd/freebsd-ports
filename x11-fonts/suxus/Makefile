@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 DISTFILES=	${PORTNAME}-iso-8859-1.bdf.gz fonts.alias
 DIST_SUBDIR=	suxus
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	An x11 font designed to be small yet easily read
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT} \

@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	A small, efficient HTTP proxy server
 
 USE_RC_SUBR=	tinyproxy.sh

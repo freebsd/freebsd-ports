@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.semicomplete.com/files/xdotool/ \
 		http://www.atarininja.org/~wxs/distfiles/
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Programatically simulate keyboard input or mouse activity
 
 USE_GNOME=	pkgconfig

@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.semicomplete.com/files/keynav/ \
 		http://www.atarininja.org/~wxs/distfiles/
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Quickly select a portion of the screen using minimal keystrokes
 
 USE_GNOME=	pkgconfig

@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://releases.0x539.de/sobby/ \
 		http://www.atarininja.org/~wxs/distfiles/
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	A standalone obby server
 
 LIB_DEPENDS=	net6:${PORTSDIR}/net/net6 \

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.synacklabs.net/projects/cutlass/
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Encrypted peer-to-peer voice, text, and file transmission protocol
 
 BUILD_DEPENDS=	botan-config:${PORTSDIR}/security/botan \
