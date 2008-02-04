@@ -1702,6 +1702,7 @@ bin/projectSynchro
 %%DATADIR%%/xmi2import/generation_settings
 %%DATADIR%%/xmi2import/idl_includes
 %%DATADIR%%/xmi2import/java_imports
+%%DATADIR%%/xmi2import/python_imports
 %%DATADIR%%/xmi2import/stereotypes
 %%DATADIR%%/xmi2import/tools
 %%DATADIR%%/xmi2import/xmi2import.prj
