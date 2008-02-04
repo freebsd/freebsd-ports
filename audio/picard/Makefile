@@ -6,26 +6,28 @@
 #
 
 PORTNAME=	picard
-DISTVERSION=	0.7.2
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	audio python
-MASTER_SITES=	https://helixcommunity.org/frs/download.php/2252/
+MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
+		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/
 
 MAINTAINER=	alexbl@FreeBSD.org
-COMMENT=	Next generation MusicBrainzTagger
+COMMENT=	Next generation MusicBrainz Tagger
 
 LIB_DEPENDS=	ofa.0:${PORTSDIR}/audio/libofa
-RUN_DEPENDS=	\
-		${PYTHON_SITELIBDIR}/tunepimp/__init__.py:${PORTSDIR}/audio/py-libtunepimp \
-		${PYTHON_SITELIBDIR}/musicbrainz2/__init__.py:${PORTSDIR}/audio/py-musicbrainz2
+RUN_DEPENDS=    py*-mutagen>=0:${PORTSDIR}/audio/py-mutagen \
+		py*-qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
+		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+		py*-qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
+		py*-qt4-xml>=0:${PORTSDIR}/textproc/py-qt4-xml
 
-USE_WX=		2.6
-WX_COMPS=	python
-WX_UNICODE=	yes
-
+USE_FFMPEG=	yes
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-NO_BUILD=	yes
+
+post-patch:
+	@${REINPLACE_CMD} '/with-libofa/s|False|True|;\
+		/with-avcodec/s|False|True|' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
