@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pecl_http
-DISTVERSION=	1.5.5
+DISTVERSION=	1.6.0
 CATEGORIES=	www pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -32,8 +32,9 @@ OPTIONS=	CURL			"Enable cURL HTTP requests"	on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=--with-http-curl-requests=${LOCALBASE}
+LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl \
+		event:${PORTSDIR}/devel/libevent
+CONFIGURE_ARGS+=--with-http-curl-requests=${LOCALBASE} --with-http-curl-libevent=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-http-curl-requests
 .endif
