@@ -56,7 +56,6 @@
 name="tproxy"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/$name"
-pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/sbin/$name"
 
 load_rc_config "$name"
