@@ -155,39 +155,38 @@ bin/pyrexc
 %%PORTDOCS%%%%DOCSDIR%%/Manual/basics.html
 %%PORTDOCS%%%%DOCSDIR%%/Manual/extension_types.html
 %%PORTDOCS%%%%DOCSDIR%%/Manual/external.html
-%%PORTDOCS%%%%DOCSDIR%%/Manual/overview_hacked.html
 %%PORTDOCS%%%%DOCSDIR%%/Manual/sharing.html
 %%PORTDOCS%%%%DOCSDIR%%/Manual/source_files.html
 %%PORTDOCS%%%%DOCSDIR%%/Manual/special_methods.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/primes.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.nodistutils
-%%PORTDOCS%%%%EXAMPLESDIR%%/Setup.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/callback/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/callback/Makefile.nodistutils
-%%PORTDOCS%%%%EXAMPLESDIR%%/callback/README.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/callback/Setup.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/callback/cheese.pyx
-%%PORTDOCS%%%%EXAMPLESDIR%%/callback/cheesefinder.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/callback/cheesefinder.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/callback/run_cheese.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/Makefile
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/Makefile.msc
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/Makefile.msc.static
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/Makefile.unix
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/embedded.pyx
-%%PORTDOCS%%%%EXAMPLESDIR%%/embed/main.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/numeric_demo.pyx
-%%PORTDOCS%%%%EXAMPLESDIR%%/primes.pyx
-%%PORTDOCS%%%%EXAMPLESDIR%%/pyprimes.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/run_numeric_demo.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/run_primes.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/run_spam.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/spam.pyx
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/embed
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/callback
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.nodistutils
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Setup.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callback/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callback/Makefile.nodistutils
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callback/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callback/Setup.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callback/cheese.pyx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callback/cheesefinder.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callback/cheesefinder.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callback/run_cheese.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/Makefile.msc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/Makefile.msc.static
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/Makefile.unix
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/embedded.pyx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embed/main.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/numeric_demo.pyx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/primes.pyx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pyprimes.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_numeric_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_primes.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_spam.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spam.pyx
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/embed
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/callback
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	pyrex
-PORTVERSION=	0.9.6.2
+PORTVERSION=	0.9.6.4
 CATEGORIES=	devel lang python
-MASTER_SITES=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. oldtar
+MASTER_SITES=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/
 PKGNAMEPREFIX=	${PYTHONPKGNAMEPREFIX}
 DISTNAME=	Pyrex-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	Programming Language for writing Python extension modules
 
 USE_PYTHON=	yes
@@ -25,11 +24,12 @@ post-install:
 	@cd ${WRKSRC}/Demos && ${PYTHON_CMD} ${PREFIX}/bin/pyrexc primes.pyx
 
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}/Demos && ${MAKE} clean
-
 	@${MKDIR} ${DOCSDIR}/Manual
 	@cd ${WRKSRC}/Doc && ${INSTALL_DATA} ./[^M]* ${DOCSDIR}
 	@cd ${WRKSRC}/Doc/Manual && ${INSTALL_DATA} ./* ${DOCSDIR}/Manual
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@cd ${WRKSRC}/Demos && ${MAKE} clean
 	@${MKDIR} ${EXAMPLESDIR}
 	@${TAR} -C ${WRKSRC}/Demos -cf - . | \
 	 ${TAR} -C ${EXAMPLESDIR} -xf -
