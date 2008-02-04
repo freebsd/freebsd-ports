@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://download.gna.org/qemulaunch/1.7.x/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	A GTK front-end to Qemu
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2:${PORTSDIR}/x11-toolkits/p5-Gtk2 \

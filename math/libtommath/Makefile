@@ -12,7 +12,7 @@ MASTER_SITES=	http://libtom.org/files/ \
 		http://www.atarininja.org/~wxs/distfiles/
 DISTNAME=	ltm-${PORTVERSION}
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Comprehensive, modular and portable mathematical routines
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
