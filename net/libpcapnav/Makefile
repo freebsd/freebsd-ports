@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	libpcapnav
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netdude
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER=	brenton.chang@gmail.com
 COMMENT=	A libpcap wrapper library
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-
+USE_LDCONFIG=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|DOC_MODULE = pcapnav|DOC_MODULE =|' \
 	${WRKSRC}/docs/Makefile.in
