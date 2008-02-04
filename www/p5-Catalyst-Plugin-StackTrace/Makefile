@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	Catalyst-Plugin-StackTrace
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Catalyst
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Display a stack trace on the debug screen
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Devel-StackTrace>=0:${PORTSDIR}/devel/p5-Devel-StackTrace
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Catalyst::Plugin::StackTrace.3
 
