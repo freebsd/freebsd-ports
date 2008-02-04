@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	flock
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 DISTVERSIONSUFFIX=	.en-US.linux-i686
 CATEGORIES=	www
-MASTER_SITES=	http://victoria.acc.umu.se/mirror/%SUBDIR%/ \
+MASTER_SITES=	http://saimei.acc.umu.se/mirror/%SUBDIR%/ \
 		http://mirrors.ibiblio.org/pub/mirrors/%SUBDIR%/ \
 		http://ftp.osuosl.org/pub/%SUBDIR%/ \
 		http://www.gtlib.gatech.edu/pub/%SUBDIR%/
