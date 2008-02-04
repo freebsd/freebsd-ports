@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ip4r
-PORTVERSION=	1.01
+PORTVERSION=	1.03
 CATEGORIES=	databases net
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1226/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1581/
 
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	IPv4 and IPv4 range index type for PostgreSQL
