@@ -7,7 +7,7 @@
 # This port is self contained in the files directory.
 
 PORTNAME=	portupdate-scan
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
