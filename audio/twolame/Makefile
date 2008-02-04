@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twolame
-PORTVERSION=	0.3.10
+PORTVERSION=	0.3.11
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.ecs.soton.ac.uk/~njh/twolame/
