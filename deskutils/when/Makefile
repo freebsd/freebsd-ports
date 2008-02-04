@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	when
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
 CATEGORIES=	deskutils
 MASTER_SITES=	CENKES
 #http://www.lightandmatter.com/when/when.tar.gz
@@ -28,6 +28,7 @@ make-dist:
 	@${RM} -rf ${WRKDIR};${MKDIR} ${WRKDIR};cd ${WRKDIR};\
 	${FETCH_CMD} http://www.lightandmatter.com/when/when.tar.gz;\
 	${TAR} xf when.tar.gz;${MV} when_dist ${DISTNAME};\
+	${RM} -Rf ${DISTNAME}/debian_stuff/;\
 	${TAR} cjvf ${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}
 
 .include <bsd.port.mk>
