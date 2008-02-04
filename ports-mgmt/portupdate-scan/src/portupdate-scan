@@ -19,7 +19,7 @@
 # Intended to be used prior to upgrading ports
 # Usage: portupdatescan [-dDhmuvV] [--help] [--version]
 # Created:      2006/12/21	Alex Stangl
-# Last updated: 2007/11/09	Alex Stangl
+# Last updated: 2008/02/04	Alex Stangl  INDEX computation change from Tom Doherty
 
 use Text::ParseWords;
 use Getopt::Std;
@@ -54,7 +54,7 @@ VERSION_MESSAGE() && exit if $opt{V};
 
 my $portsdir = $opt{D} || "/usr/ports";     # ports directory
 
-my $portIndexFile = "$portsdir/INDEX";      # port index file
+my $portIndexFile = "$portsdir/" . `make -f $portsdir/Makefile -V INDEXFILE`;      # port index file
 my $movedFile = "$portsdir/MOVED";          # file w/ port renames/deletes
 my $updatingFile = "$portsdir/UPDATING";    # file w/ ports update news
 
