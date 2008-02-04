@@ -1,6 +1,70 @@
 --- machdep.c.orig	Mon Sep 14 14:40:12 1992
 +++ machdep.c	Fri Dec  4 00:22:26 1998
-@@ -397,9 +397,9 @@
+@@ -54,9 +54,10 @@
+ #  include <sys/types.h>
+ #  include <sys/file.h>
+ #  include <sys/stat.h>
++#  include <sys/ioctl.h>
+ #  ifdef UNIX_SYSV
+ #    include <time.h>
+-#    include <termio.h>
++#    include <termios.h>
+ #  endif /* UNIX_SYSV */
+ #  ifdef UNIX_BSD4_2
+ #    include <sys/time.h>
+@@ -268,13 +269,7 @@
+ #ifdef UNIX
+ 	long ln = 0;
+ 
+-#ifdef UNIX_BSD4_2
+ 	ioctl(0, FIONREAD, &ln);
+-#endif /* UNIX_BSD4_2 */
+-#ifdef UNIX_SYSV
+-	ioctl(0, TCFLSH, &ln);
+-	ln = 0;
+-#endif /* UNIX_SYSV */
+ #ifdef UNIX_386BSD
+ 	fpurge(stdin);
+ #else
+@@ -334,8 +329,8 @@
+ 	struct tchars tc_temp;
+ #endif /* UNIX_BSD4_2 */
+ #ifdef UNIX_SYSV
+-	static struct termio _oldtty;
+-	struct termio _tty;
++	static struct termios _oldtty;
++	struct termios _tty;
+ #endif /* UNIX_SYSV */
+ 
+ 	if (!called_before) {
+@@ -345,7 +340,7 @@
+ 		ioctl(0, TIOCGLTC, &ltc_orig);
+ #endif /* UNIX_BSD4_2 */
+ #ifdef UNIX_SYSV
+-		ioctl(0, TCGETA, &_oldtty);
++		tcgetattr(0, &_oldtty);
+ #endif /* UNIX_SYSV */
+ 	}
+ #ifdef UNIX_BSD4_2
+@@ -364,7 +359,7 @@
+ 		tc_temp.t_startc = tc_temp.t_stopc = -1;
+ #endif /* UNIX_BSD4_2 */
+ #ifdef UNIX_SYSV
+-		_tty.c_cc[VSWTCH] = CNSWTCH;
++		_tty.c_cc[VSUSP] = _tty.c_cc[VDSUSP] = 0;
+ #endif /* UNIX_SYSV */
+ 	}
+ #ifdef UNIX_BSD4_2
+@@ -372,7 +367,7 @@
+ 	ioctl(0, TIOCSLTC, &ltc_temp);
+ #endif /* UNIX_BSD4_2 */
+ #ifdef UNIX_SYSV
+-	ioctl(0, TCSETA, &_tty);
++	tcsetattr(0, TCSANOW, &_tty);
+ #endif /* UNIX_SYSV */
+ #endif /* UNIX */
+ }
+@@ -397,9 +392,9 @@
  md_heed_signals()
  {
  #ifdef UNIX
@@ -13,3 +77,30 @@
  #endif /* UNIX */
  
  #ifdef HUMAN
+@@ -907,19 +902,19 @@
+ 	}
+ #endif /* UNIX_BSD4_2 */
+ #ifdef UNIX_SYSV
+-	struct termio tty_buf;
+-	static struct termio tty_save;
++	struct termios tty_buf;
++	static struct termios tty_save;
+ 
+ 	if (on) {
+-		ioctl(0, TCGETA, &tty_buf);
++		tcgetattr(0, &tty_buf);
+ 		tty_save = tty_buf;
+ 		tty_buf.c_lflag &= ~(ICANON | ECHO);
+ 		tty_buf.c_oflag &= ~ONLCR;
+-		tty_buf.c_cc[4] = 1;  /* MIN */
+-		tty_buf.c_cc[5] = 2;  /* TIME */
+-		ioctl(0, TCSETAF, &tty_buf);
++		tty_buf.c_cc[VMIN] = 1;
++		tty_buf.c_cc[VTIME] = 2;
++		tcsetattr(0, TCSAFLUSH, &tty_buf);
+ 	} else {
+-		ioctl(0, TCSETAF, &tty_save);
++		tcsetattr(0, TCSAFLUSH, &tty_save);
+ 	}
+ #endif /* UNIX_SYSV */
+ #endif /* UNIX */
