@@ -341,6 +341,7 @@
 %%WWWDIR%%/theme/upcoming_events.js
 %%WWWDIR%%/us_english.pl
 %%WWWDIR%%/us_english_utf8.pl
+%%WWWDIR%%/cz_czech.pl
 %%WWWDIR%%/danish.pl
 %%WWWDIR%%/de_german.pl
 %%WWWDIR%%/fr_french.pl
