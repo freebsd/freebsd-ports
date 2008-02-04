@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.3RC2
+DISTVERSION?=	8.3.0
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER?=	girgen@FreeBSD.org
-COMMENT?=	BETA VERSION of the PostgreSQL server, only for testing
+COMMENT?=	The most advanced open-source database available anywhere
 
 CONFLICTS?=	${PORTNAME}-client-7.* \
 		${PORTNAME}${PKGNAMESUFFIX}-7.* \
