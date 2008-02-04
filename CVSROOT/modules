@@ -2088,6 +2088,7 @@ dkftpbench	ports/benchmarks/dkftpbench
 dkim-milter	ports/mail/dkim-milter
 dkimap4		ports/mail/dkimap4
 dkimproxy	ports/mail/dkimproxy
+dkns		ports/editors/dkns
 dlint		ports/dns/dlint
 dlume		ports/deskutils/dlume
 dlv		ports/lang/dlv
