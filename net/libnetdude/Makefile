@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	libnetdude
-PORTVERSION=	0.9
+PORTVERSION=	0.10a
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netdude
 
-MAINTAINER=	wxs@atarininja.org
+MAINTAINER=	brenton.chang@gmail.com
 COMMENT=	A library for manipulating libpcap/tcpdump trace files
 
 LIB_DEPENDS=	pcapnav.0:${PORTSDIR}/net/libpcapnav
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib12
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

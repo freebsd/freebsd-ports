@@ -48,12 +48,12 @@ lib/libnetdude.a
 %%PORTDOCS%%%%DOCSDIR%%/images/logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/traceparts1.png
 %%PORTDOCS%%%%DOCSDIR%%/images/traceparts2.png
-%%PORTDOCS%%%%DOCSDIR%%/a8901.html
+%%PORTDOCS%%%%DOCSDIR%%/a8757.html
+%%PORTDOCS%%%%DOCSDIR%%/c24.html
+%%PORTDOCS%%%%DOCSDIR%%/c401.html
+%%PORTDOCS%%%%DOCSDIR%%/c558.html
+%%PORTDOCS%%%%DOCSDIR%%/c89.html
 %%PORTDOCS%%%%DOCSDIR%%/api.html
-%%PORTDOCS%%%%DOCSDIR%%/c23.html
-%%PORTDOCS%%%%DOCSDIR%%/c400.html
-%%PORTDOCS%%%%DOCSDIR%%/c557.html
-%%PORTDOCS%%%%DOCSDIR%%/c88.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-debug.html
 %%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-dumper.html
