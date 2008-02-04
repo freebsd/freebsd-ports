@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.143
-PORTREVISION=	1
+PORTVERSION=	4.144
 CATEGORIES=	lang
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -19,24 +18,13 @@ DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 MAN1=		munger.1 minimunger.1
 MANCOMPRESSED=	yes
 
-OPTIONS=	SQL  "include SQLite interface"  on \
-		DKNS "install Dickens text editor" off
+OPTIONS=	SQL  "include SQLite interface"  on
 
 USE_LDCONFIG=	yes
-
-.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SQL)
 USE_SQLITE=	3
 MAKE_ARGS+=	-DWITH_SQL
 .endif
 
-.if defined(WITH_DKNS)
-MAKE_ARGS+=	-DWITH_DKNS
-MAN1+=		dkns.1
-PLIST_SUB+=	DKNS_BIN="bin/dkns"
-.else
-PLIST_SUB+=	DKNS_BIN="${DATADIR:S,^${PREFIX}/,,}/dkns.munger"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
