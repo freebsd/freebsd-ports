@@ -38,7 +38,7 @@ IGNORE=	cannot use WITH_FFMPEG and WITH_FLV2MPEG4 simultaneously
 .endif
 CONV2AVI_CMD=	${PREFIX}/bin/ffmpeg -y -i
 RUN_DEPENDS=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
-.else
+.elif defined (WITH_FLV2MPEG4)
 CONV2AVI_CMD=	${PREFIX}/bin/flv2mpeg4
 RUN_DEPENDS=	flv2mpeg4:${PORTSDIR}/multimedia/flv2mpeg4
 .endif
