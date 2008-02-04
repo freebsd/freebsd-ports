@@ -7,11 +7,10 @@
 
 PORTNAME=	miniupnpd
 PORTVERSION=	1.0
-PORTREVISION=	13
+PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
 		http://miniupnp.free.fr/files/
-DISTNAME=	${PORTNAME}-1.0-RC13
 
 MAINTAINER=	squat@squat.no
 COMMENT=	A UPnP IGD implementation which uses pf/ipf
