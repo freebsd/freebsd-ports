@@ -64,7 +64,8 @@ USE_XLIB=	yes
 OPTIONS=	RTP "Enable support for playing back RTP streams" off \
 		SNMP "Enable SNMP OID translation support" on \
 		ADNS "Enable asynchronous DNS lookup support" on \
-		PCRE "Enable regular expression matching support" on
+		PCRE "Enable regular expression matching support" on \
+		IPV6 "Enable IPv6 support" on
 .endif
 
 .include <bsd.port.pre.mk>
