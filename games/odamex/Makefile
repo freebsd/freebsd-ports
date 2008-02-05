@@ -18,17 +18,33 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer
 
+OPTIONS=	LAUNCHER "Enable GUI launcher program" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_LAUNCHER)
+USE_WX=		2.6+
+MAKE_ENV+=	WXRC_CMD="${WXRC_CMD}" WITH_LAUNCHER=yes
+PLIST_SUB+=	LAUNCHER=""
+.else
+PLIST_SUB+=	LAUNCHER="@comment "
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|g++|${CXX}|; s|-DUNIX|${CFLAGS} &|; \
-		s|sdl11-config|sdl-config|; s|/usr/X11R6|${LOCALBASE}|' \
-		${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|%%DMDIR%%|${DMDIR}|; \
 		s|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/client/src/d_main.cpp
+.if defined(WITH_LAUNCHER)
+	@${REINPLACE_CMD} -e 's|\./odamex|odamex|' \
+		${WRKSRC}/odalaunch/src/misc.cpp
+.endif
 
 do-install:
 .for f in odamaster odamex odasrv
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
+.if defined(WITH_LAUNCHER)
+	${INSTALL_PROGRAM} ${WRKSRC}/odalaunch/odalaunch ${PREFIX}/bin
+.endif
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/odamex.wad ${DATADIR}
 .if !defined(NOPORTDOCS)
@@ -38,4 +54,4 @@ do-install:
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
