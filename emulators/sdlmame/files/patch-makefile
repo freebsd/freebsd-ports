@@ -1,6 +1,6 @@
---- makefile.orig	Sat Oct 20 16:33:18 2007
-+++ makefile	Wed Nov  7 18:22:11 2007
-@@ -72,11 +72,13 @@
+--- ./makefile.orig	Thu Jan 10 01:29:44 2008
++++ ./makefile	Mon Feb  4 13:08:08 2008
+@@ -99,11 +99,13 @@
  # uncomment next line to include the internal profiler
  # PROFILER = 1
  
@@ -12,10 +12,10 @@
  X86_PPC_DRC = 1
 +endif
  
- # uncomment next line to use DRC Voodoo rasterizers
- # X86_VOODOO_DRC = 1
-@@ -99,7 +101,9 @@
- # CELL = 1
+ # uncomment next line to build using unix-style libsdl on Mac OS X
+ # (vs. the native framework port).  Normal users should not enable this.
+@@ -116,7 +118,9 @@
+ #-------------------------------------------------
  
  # uncomment next line if you are building for a 64-bit target
 -# PTR64 = 1
@@ -23,9 +23,9 @@
 +PTR64 = 1
 +endif
  
- # uncomment next line to build expat as part of MAME build
- BUILD_EXPAT = 1
-@@ -168,8 +172,8 @@
+ # uncomment next line if you are building for a big-endian target
+ # BIGENDIAN = 1
+@@ -189,8 +193,8 @@
  
  # compiler, linker and utilities
  AR = @ar
@@ -36,39 +36,34 @@
  MD = -mkdir$(EXE)
  RM = @rm -f
  
-@@ -248,7 +252,7 @@
+@@ -214,7 +218,7 @@
  endif
  
- # fullname is prefix+name+suffix
--FULLNAME = $(PREFIX)$(NAME)$(SUFFIX)
+ # fullname is prefix+name+suffix+debugsuffix
+-FULLNAME = $(PREFIX)$(NAME)$(SUFFIX)$(DEBUGSUFFIX)
 +FULLNAME = $(NAME)
  
  # add an EXE suffix to get the final emulator name
  EMULATOR = $(FULLNAME)$(EXE)
-@@ -318,7 +322,7 @@
+@@ -279,7 +283,7 @@
  #-------------------------------------------------
  
  # we compile to C89 standard with GNU extensions
 -CFLAGS = -std=gnu89
 +CFLAGS += -std=gnu89
  
- # add -g if we need symbols
- ifdef SYMBOLS
-@@ -352,11 +356,11 @@
+ # this speeds it up a bit by piping between the preprocessor/compiler/assembler
+ CFLAGS += -pipe
+@@ -316,7 +320,7 @@
  # if we are optimizing, include optimization options
  # and make all errors into warnings
  ifneq ($(OPTIMIZE),0)
--CFLAGS += $(ARCH) -fno-strict-aliasing
-+CFLAGS += -fno-strict-aliasing
+-CFLAGS += -Werror $(ARCHOPTS) -fno-strict-aliasing
++CFLAGS += $(ARCHOPTS) -fno-strict-aliasing
+ #CFLAGS += $(ARCHOPTS) -fno-strict-aliasing
+ endif
  
- # only -Werror if not PTR64 and not DEBUG
- ifndef DEBUG
--CFLAGS += $(ARCH) -fno-strict-aliasing
-+CFLAGS += -fno-strict-aliasing
- endif	# !DEBUG
- endif	# neq OPTIMIZE
- 
-@@ -376,6 +380,7 @@
+@@ -342,6 +346,7 @@
  	-I$(SRC)/lib/util \
  	-I$(SRC)/osd \
  	-I$(SRC)/osd/$(OSD) \
@@ -76,12 +71,12 @@
  
  
  
-@@ -385,7 +390,7 @@
- 
+@@ -352,7 +357,7 @@
  # LDFLAGS are used generally; LDFLAGSEMULATOR are additional
  # flags only used when linking the core emulator
--LDFLAGS = 
-+LDFLAGS += -L$(LOCALBASE)/lib
- LDFLAGSEMULATOR =
- 
- # add profiling information for the linker
+ ifneq ($(TARGETOS),macosx)
+-LDFLAGS = -Wl,--warn-common
++LDFLAGS = -Wl,--warn-common $(PTHREAD_LIBS) -L$(LOCALBASE)/lib
+ else
+ LDFLAGS = 
+ endif

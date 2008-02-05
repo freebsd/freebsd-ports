@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdlmame
-PORTVERSION=	0.120u2
+PORTVERSION=	0.122u8
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -17,6 +17,7 @@ COMMENT=	SDL port of the popular MAME (Multi Arcade Machine Emulator)
 USE_ZIP=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_SDL=	sdl
 MAKEFILE=	makefile
 
@@ -25,8 +26,8 @@ SUB_FILES=	${PORTNAME} pkg-message
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/libexec/sdlmame
-.for f in obj/sdl/mame/build/file2str obj/sdl/mame/build/png2bdc mame testkeys romcmp \
-	  chdman jedutil makemeta regrep srcclean
+.for f in obj/sdl/mame/build/file2str obj/sdl/mame/build/png2bdc mame \
+	testkeys romcmp chdman jedutil makemeta regrep srcclean
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/libexec/sdlmame
 .endfor
 	${MKDIR} ${DATADIR}
@@ -50,10 +51,6 @@ post-install:
 # get around bsd.gcc.mk handling, so use a higher version than in base system.
 .if ${OSVERSION} < 600000
 USE_GCC=	4.2+
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile
 .endif
 
 .include <bsd.port.post.mk>
