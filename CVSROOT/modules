@@ -3296,6 +3296,7 @@ freemind	ports/deskutils/freemind
 freenet6	ports/net/freenet6
 freenx		ports/net/freenx
 freeorion	ports/games/freeorion
+freepats	ports/audio/freepats
 freepops	ports/mail/freepops
 freera		ports/games/freera
 freeradius	ports/net/freeradius
