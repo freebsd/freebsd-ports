@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4.0
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://www.amdmi3.ru/distfiles/
@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Challenging 2D motocross platform game
 
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		curl.4:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
@@ -72,6 +71,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/LIBS/ s|-lSDL_mixer|`${SDL_CONFIG} --libs` &|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/mang|/man6|' ${WRKSRC}/Makefile.in
+	@${ECHO_CMD} -n exported > ${WRKSRC}/src/svnVersion
 
 .if !defined(NOPORTDOCS)
 post-install:
