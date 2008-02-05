@@ -9,11 +9,13 @@ sbin/platform-name
 %%DATADIR%%/config/platform-freebsd4.conf
 %%DATADIR%%/config/platform-freebsd5.conf
 %%DATADIR%%/config/platform-freebsd6.conf
+%%DATADIR%%/config/platform-freebsd7.conf
 %%DATADIR%%/config/platform-hpux10.conf
 %%DATADIR%%/config/platform-hpux11.conf
 %%DATADIR%%/config/platform-irix6.conf
 %%DATADIR%%/config/platform-rhel3.conf
 %%DATADIR%%/config/platform-rhel4.conf
+%%DATADIR%%/config/platform-rhel5.conf
 %%DATADIR%%/config/platform-rs6000-aix4.3.3.conf
 %%DATADIR%%/config/platform-rs6000-aix5.1.0.conf
 %%DATADIR%%/config/platform-solaris8.conf
@@ -61,10 +63,13 @@ sbin/platform-name
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/hosts_allow.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/httpd_conf.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/inetd_conf.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/logadm.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/logrotate.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/ld_so_config.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/mime_types.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/named_conf.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/netmasks.pm
+%%SITE_PERL%%/PSGConf/Action/GenerateFile/newsyslog.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/nsswitch_conf.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/ntp_conf.pm
 %%SITE_PERL%%/PSGConf/Action/GenerateFile/pam_conf.pm
@@ -120,6 +125,7 @@ sbin/platform-name
 %%SITE_PERL%%/PSGConf/Control/FreeBSD.pm
 %%SITE_PERL%%/PSGConf/Control/InitScripts.pm
 %%SITE_PERL%%/PSGConf/Control/Inittab.pm
+%%SITE_PERL%%/PSGConf/Control/LogFiles.pm
 %%SITE_PERL%%/PSGConf/Control/NFS_Client.pm
 %%SITE_PERL%%/PSGConf/Control/NFS_Server.pm
 %%SITE_PERL%%/PSGConf/Control/NTP.pm
@@ -144,10 +150,7 @@ sbin/platform-name
 %%SITE_PERL%%/PSGConf/Control/cron.pm
 %%SITE_PERL%%/PSGConf/Control/dtlogin.pm
 %%SITE_PERL%%/PSGConf/Control/inetd.pm
-%%SITE_PERL%%/PSGConf/Control/logadm.pm
-%%SITE_PERL%%/PSGConf/Control/logrotate.pm
 %%SITE_PERL%%/PSGConf/Control/motd.pm
-%%SITE_PERL%%/PSGConf/Control/newsyslog.pm
 %%SITE_PERL%%/PSGConf/Control/qpopper.pm
 %%SITE_PERL%%/PSGConf/Control/sendmail.pm
 %%SITE_PERL%%/PSGConf/Control/sshd.pm
@@ -158,6 +161,7 @@ sbin/platform-name
 %%SITE_PERL%%/PSGConf/Data/Boolean.pm
 %%SITE_PERL%%/PSGConf/Data/ConfigError.pm
 %%SITE_PERL%%/PSGConf/Data/Enum.pm
+%%SITE_PERL%%/PSGConf/Data/FileTest.pm
 %%SITE_PERL%%/PSGConf/Data/Hash.pm
 %%SITE_PERL%%/PSGConf/Data/Integer.pm
 %%SITE_PERL%%/PSGConf/Data/List.pm
@@ -167,13 +171,12 @@ sbin/platform-name
 %%SITE_PERL%%/PSGConf/DataStore/AppConfig.pm
 %%SITE_PERL%%/PSGConf/DataStore/ConfigFile.pm
 %%SITE_PERL%%/PSGConf/DataStore/Storable.pm
-%%SITE_PERL%%/PSGConf/Import/Data/Hash.pm
-%%SITE_PERL%%/PSGConf/Import/Data/List.pm
-%%SITE_PERL%%/PSGConf/Import/Data/Table.pm
+%%SITE_PERL%%/PSGConf/Import/group_info.pm
 %%SITE_PERL%%/PSGConf/Import/inittab.pm
 %%SITE_PERL%%/PSGConf/Import/pkg_default_versions.pm
 %%SITE_PERL%%/PSGConf/Import/ports.pm
 %%SITE_PERL%%/PSGConf/Import/shells.pm
+%%SITE_PERL%%/PSGConf/Import/user_info.pm
 %%SITE_PERL%%/PSGConf/Util.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PSGConf
 @dirrmtry %%SITE_PERL%%/PSGConf/Action/PackageManager/RedHat
@@ -188,7 +191,6 @@ sbin/platform-name
 @dirrmtry %%SITE_PERL%%/PSGConf/Control
 @dirrmtry %%SITE_PERL%%/PSGConf/Data
 @dirrmtry %%SITE_PERL%%/PSGConf/DataStore
-@dirrmtry %%SITE_PERL%%/PSGConf/Import/Data
 @dirrmtry %%SITE_PERL%%/PSGConf/Import
 @dirrmtry %%SITE_PERL%%/PSGConf
 @dirrmtry %%DATADIR%%/config

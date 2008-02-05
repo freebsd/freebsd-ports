@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psgconf
-PORTVERSION=	3.2.4
+PORTVERSION=	3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp-dev.cites.uiuc.edu/pub/psgconf/
 
@@ -18,8 +18,10 @@ BUILD_DEPENDS=	${SITE_PERL}/Config/Objective.pm:${PORTSDIR}/devel/p5-Config-Obje
  	p5-NetAddr-IP>0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 	${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable/Process.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 	${SITE_PERL}/${PERL_ARCH}/Unix/Mknod.pm:${PORTSDIR}/sysutils/p5-Unix-Mknod \
+	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
 	${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
@@ -62,10 +64,13 @@ MAN3=		PSGConf.3 \
 		PSGConf::Action::GenerateFile::hosts_allow.3 \
 		PSGConf::Action::GenerateFile::httpd_conf.3 \
 		PSGConf::Action::GenerateFile::inetd_conf.3 \
+		PSGConf::Action::GenerateFile::logadm.3 \
+		PSGConf::Action::GenerateFile::logrotate.3 \
 		PSGConf::Action::GenerateFile::ld_so_config.3 \
 		PSGConf::Action::GenerateFile::mime_types.3 \
 		PSGConf::Action::GenerateFile::named_conf.3 \
 		PSGConf::Action::GenerateFile::netmasks.3 \
+		PSGConf::Action::GenerateFile::newsyslog.3 \
 		PSGConf::Action::GenerateFile::nsswitch_conf.3 \
 		PSGConf::Action::GenerateFile::ntp_conf.3 \
 		PSGConf::Action::GenerateFile::pam_conf.3 \
@@ -121,6 +126,7 @@ MAN3=		PSGConf.3 \
 		PSGConf::Control::FreeBSD.3 \
 		PSGConf::Control::InitScripts.3 \
 		PSGConf::Control::Inittab.3 \
+		PSGConf::Control::LogFiles.3 \
 		PSGConf::Control::NFS_Client.3 \
 		PSGConf::Control::NFS_Server.3 \
 		PSGConf::Control::NTP.3 \
@@ -145,10 +151,7 @@ MAN3=		PSGConf.3 \
 		PSGConf::Control::cron.3 \
 		PSGConf::Control::dtlogin.3 \
 		PSGConf::Control::inetd.3 \
-		PSGConf::Control::logadm.3 \
-		PSGConf::Control::logrotate.3 \
 		PSGConf::Control::motd.3 \
-		PSGConf::Control::newsyslog.3 \
 		PSGConf::Control::qpopper.3 \
 		PSGConf::Control::sendmail.3 \
 		PSGConf::Control::sshd.3 \
@@ -159,6 +162,7 @@ MAN3=		PSGConf.3 \
 		PSGConf::Data::Boolean.3 \
 		PSGConf::Data::ConfigError.3 \
 		PSGConf::Data::Enum.3 \
+		PSGConf::Data::FileTest.3 \
 		PSGConf::Data::Hash.3 \
 		PSGConf::Data::Integer.3 \
 		PSGConf::Data::List.3 \
@@ -168,13 +172,12 @@ MAN3=		PSGConf.3 \
 		PSGConf::DataStore::AppConfig.3 \
 		PSGConf::DataStore::ConfigFile.3 \
 		PSGConf::DataStore::Storable.3 \
-		PSGConf::Import::Data::Hash.3 \
-		PSGConf::Import::Data::List.3 \
-		PSGConf::Import::Data::Table.3 \
+		PSGConf::Import::group_info.3 \
 		PSGConf::Import::inittab.3 \
 		PSGConf::Import::pkg_default_versions.3 \
 		PSGConf::Import::ports.3 \
 		PSGConf::Import::shells.3 \
+		PSGConf::Import::user_info.3 \
 		PSGConf::Util.3 \
 		psgconf-intro.3
 
@@ -182,8 +185,8 @@ MAN3=		PSGConf.3 \
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 .endif
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PKGINSTALL=	${WRKSRC}/postinstall
 PKGDEINSTALL=	${WRKSRC}/postinstall
@@ -191,11 +194,12 @@ PKGDEINSTALL=	${WRKSRC}/postinstall
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 
-.if ${OSVERSION} > 599999
+#.if ${OSVERSION} > 599999
 # Does not work because Proc::ProcessTable is broken in 5.x
-post-build:
-	cd ${WRKSRC} && ${MAKE} test
-.endif
+#${BUILD_DEPENDS}+=	${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy
+#post-build:
+#	cd ${WRKSRC} && ${MAKE} test
+#.endif
 
 post-install:
 	-@${MKDIR} ${PREFIX}/etc
