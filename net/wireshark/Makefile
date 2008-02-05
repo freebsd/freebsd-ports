@@ -127,7 +127,7 @@ WIRESHARK_LIBS+=${PTHREAD_LIBS}
 CONFIGURE_ARGS+=--without-portaudio
 .endif
 
-.if !defined(WITHOUT_SMI) && !defined(LITE)
+.if !defined(WITHOUT_SNMP) && !defined(LITE)
 LIB_DEPENDS+=		smi.2:${PORTSDIR}/net-mgmt/libsmi
 CONFIGURE_ARGS+=	--with-libsmi=${LOCALBASE}
 .else
