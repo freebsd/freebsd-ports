@@ -36,4 +36,4 @@ sbin/tune2fs
 %%NLS%%share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/e2fsprogs.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/e2fsprogs.mo
-%%NLS%%@unexec for i in cs de es fr it nl pl rw sv tr vi ; do rmdir -p %D/share/locale/$i/LC_MESSAGES 2>/dev/null || true ; done
+%%NLS%%@unexec for i in ca cs de es fr it nl pl sv tr vi ; do rmdir -p %D/share/locale/$i/LC_MESSAGES 2>/dev/null || true ; done
