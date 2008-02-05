@@ -184,6 +184,7 @@
     SUBDIR += fmio
     SUBDIR += fmit
     SUBDIR += freealut
+    SUBDIR += freepats
     SUBDIR += funktrackergold
     SUBDIR += gai-album
     SUBDIR += gai-visual-audio
