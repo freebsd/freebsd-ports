@@ -1,3 +1,4 @@
+%%LAUNCHER%%bin/odalaunch
 bin/odamaster
 bin/odamex
 bin/odasrv

@@ -1,0 +1,56 @@
+--- ./Makefile.orig	Sun Nov  4 12:21:20 2007
++++ ./Makefile	Sun Feb  3 20:48:01 2008
+@@ -3,8 +3,8 @@
+ OBJDIR = obj
+ # denis - fixme - remove mkdir -p
+ MKDIR = mkdir -p
+-CC = g++
+-LD = g++
++CC = $(CXX)
++LD = $(CC)
+ INSTALL = cp
+ DEUTEX = deutex
+ 
+@@ -62,7 +62,7 @@
+ DEUTEX_FLAGS = -rgb 0 255 255 
+ 
+ # Platform and sdl-config flags
+-X11_LFLAGS = -L/usr/X11R6/lib -lX11
++X11_LFLAGS = -L$(LOCALBASE)/lib -lX11
+ 
+ SDL_CFLAGS_COMMAND = sdl-config --cflags
+ SDL_LFLAGS_COMMAND = sdl-config --libs
+@@ -85,8 +85,8 @@
+ 
+ ifeq ($(strip $(freebsd)), true)
+ ifeq ($(SDL_CFLAGS),)
+-SDL_CFLAGS_COMMAND = sdl11-config --cflags
+-SDL_LFLAGS_COMMAND = sdl11-config --libs
++SDL_CFLAGS_COMMAND = $(SDL_CONFIG) --cflags
++SDL_LFLAGS_COMMAND = $(SDL_CONFIG) --libs
+ SDL_CFLAGS = $(shell $(SDL_CFLAGS_COMMAND))
+ SDL_LFLAGS = $(shell $(SDL_LFLAGS_COMMAND)) $(X11_LFLAGS)
+ endif
+@@ -173,7 +173,7 @@
+ TARGETS = $(SERVER_TARGET) $(CLIENT_TARGET) $(MASTER_TARGET) $(WADFILE_TARGET)
+ 
+ # denis - fixme - cflags are quite messy, but removing these is a very delicate act, also use -Wall -Werror
+-CFLAGS = $(CFLAGS_PLATFORM) -DNOASM -Icommon -g -Wall -O2
++CFLAGS += $(CFLAGS_PLATFORM) -DNOASM -Icommon -g -Wall -O2
+ LFLAGS = $(LFLAGS_PLATFORM)
+ 
+ CFLAGS_RELEASE = $(CFLAGS_PLATFORM) -DNOASM -Icommon -O3
+@@ -209,7 +209,12 @@
+ # denis - end fixme
+ 
+ # All
+-all: $(SERVER_TARGET) $(CLIENT_TARGET) $(MASTER_TARGET) $(WADFILE_TARGET)
++all: $(SERVER_TARGET) $(CLIENT_TARGET) $(MASTER_TARGET) $(WADFILE_TARGET) launcher
++
++launcher:
++ifdef WITH_LAUNCHER
++	$(MAKE) -C odalaunch odalaunch
++endif
+ 
+ # Common for server
+ $(OBJDIR)/$(COMMON_DIR)/server_%.o: $(COMMON_DIR)/%.cpp $(COMMON_HEADERS) $(SERVER_HEADERS)

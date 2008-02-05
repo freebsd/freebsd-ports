@@ -1,0 +1,18 @@
+--- ./odalaunch/Makefile.orig	Sun Nov  4 12:21:16 2007
++++ ./odalaunch/Makefile	Sun Feb  3 20:42:50 2008
+@@ -9,11 +9,11 @@
+ 
+ HEADERS = src/*.h
+ 
+-CC = g++
+-LD = g++
++CC = $(CXX)
++LD = $(CC)
+ 
+-WXCONFIG = wx-config
+-WXRC = wxrc
++WXCONFIG = $(WX_CONFIG)
++WXRC = $(WXRC_CMD)
+ CFLAGS = $(shell $(WXCONFIG) --cflags) -g
+ LFLAGS = $(shell $(WXCONFIG) --libs) -g
+ 
