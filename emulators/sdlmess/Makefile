@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdlmess
-PORTVERSION=	0.120
+PORTVERSION=	0.122
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -26,8 +26,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/libexec/sdlmess
 .for f in obj/sdl/mess/build/file2str obj/sdl/mess/build/png2bdc mess \
-	testkeys dat2html messtest messdocs imgtool romcmp chdman jedutil \
-	makemeta regrep srcclean
+	testkeys dat2html messtest imgtool romcmp chdman jedutil makemeta \
+	regrep srcclean src2html
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/libexec/sdlmess
 .endfor
 	${MKDIR} ${DATADIR}
@@ -45,10 +45,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

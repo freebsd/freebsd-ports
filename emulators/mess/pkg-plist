@@ -7,11 +7,11 @@ libexec/sdlmess/imgtool
 libexec/sdlmess/jedutil
 libexec/sdlmess/makemeta
 libexec/sdlmess/mess
-libexec/sdlmess/messdocs
 libexec/sdlmess/messtest
 libexec/sdlmess/regrep
 libexec/sdlmess/romcmp
 libexec/sdlmess/srcclean
+libexec/sdlmess/src2html
 libexec/sdlmess/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/SDLMESS.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
@@ -109,6 +109,7 @@ libexec/sdlmess/testkeys
 %%DATADIR%%/hash/ep128.hsi
 %%DATADIR%%/hash/exidy.hsi
 %%DATADIR%%/hash/gameboy.hsi
+%%DATADIR%%/hash/gamecom.hsi
 %%DATADIR%%/hash/gamegear.hsi
 %%DATADIR%%/hash/genesis.hsi
 %%DATADIR%%/hash/ibmpc.hsi
@@ -151,10 +152,12 @@ libexec/sdlmess/testkeys
 %%DATADIR%%/hash/vectrex.hsi
 %%DATADIR%%/hash/vic20.hsi
 %%DATADIR%%/hash/wswan.hsi
+%%DATADIR%%/keymaps/km-be.txt
 %%DATADIR%%/keymaps/km-ch.txt
 %%DATADIR%%/keymaps/km-de.txt
 %%DATADIR%%/keymaps/km-fr-OSX.txt
 %%DATADIR%%/keymaps/km-fr.txt
+%%DATADIR%%/keymaps/km_it.txt
 %%DATADIR%%/sysinfo.dat
 @dirrm %%DATADIR%%/keymaps
 @dirrm %%DATADIR%%/hash
