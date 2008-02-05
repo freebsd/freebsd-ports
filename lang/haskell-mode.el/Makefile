@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haskell-mode
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://www.iro.umontreal.ca/~monnier/elisp/
 
@@ -15,32 +15,25 @@ COMMENT=	An Emacs lisp mode for editing haskell programs
 
 NO_BUILD=	yes
 
+PORTDOCS=	ChangeLog NEWS fontlock.hs indent.hs README
+
 ELISPDIR=	${PREFIX}/${PLIST_DIRS}
-ELISPFILES=	haskell-cabal.el haskell-decl-scan.el haskell-doc.el \
-		haskell-font-lock.el haskell-ghci.el haskell-hugs.el \
-		haskell-indent.el haskell-mode.el haskell-simple-indent.el \
-		haskell-site-file.el inf-haskell.el
+ELISPFILES=	haskell-c.el haskell-cabal.el haskell-decl-scan.el \
+		haskell-doc.el haskell-font-lock.el haskell-ghci.el \
+		haskell-hugs.el haskell-indent.el haskell-mode.el \
+		haskell-simple-indent.el haskell-site-file.el inf-haskell.el
 
 PLIST_DIRS=	share/emacs/site-lisp/${PORTNAME}/
 PLIST_FILES=	${ELISPFILES:C/^| [^ ]/${PLIST_DIRS}/g}
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	ChangeLog NEWS fontlock.hs indent.hs \
-		README
-.endif
-
 do-install:
-	${MKDIR} ${ELISPDIR}
-.for i in ${ELISPFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${ELISPDIR}
-.endfor
+	@${MKDIR} ${ELISPDIR}
+	@${INSTALL_DATA} ${ELISPFILES:S,^,${WRKSRC}/,} ${ELISPDIR}/
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.  for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.  endfor
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
 
