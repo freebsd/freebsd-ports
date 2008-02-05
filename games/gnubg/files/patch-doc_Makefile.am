@@ -1,0 +1,21 @@
+--- doc/Makefile.am.orig	2008-01-11 08:12:03.000000000 +0100
++++ doc/Makefile.am	2008-01-11 08:13:00.000000000 +0100
+@@ -1,4 +1,5 @@
+ gnubg_helpdir = $(DESTDIR)$(pkgdatadir)/doc
++gnubg_infodir = ${prefix}/info
+ gnubg_help_DATA =  gnubg.html
+ 
+ man_MANS = gnubg.6
+@@ -35,10 +36,11 @@
+ 
+ install-data-local: gnubg.html allabout.html gnubg.info images/*.png
+ 	$(mkinstalldirs) $(gnubg_helpdir)/images
+-	-for file in gnubg.html allabout.html gnubgdb.xml allabout.xml gnubg.info; do \
++	-for file in gnubg.html allabout.html gnubgdb.xml allabout.xml; do \
+ 	basefile=`basename $$file`; \
+ 	$(INSTALL_DATA) $(srcdir)/$$file $(gnubg_helpdir)/$$basefile; \
+ 	done
++	$(INSTALL_DATA) $(srcdir)/gnubg.info $(gnubg_infodir)/
+ 
+ CLEANFILES=*.html
+ DISTCLEANFILES=gnubg.texi gnubg.info gnubg.6
