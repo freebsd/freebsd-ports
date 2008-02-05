@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20080109
-PORTREVISION=	2
+PORTVERSION=	20080203
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -107,6 +106,9 @@ post-extract:
 	${TAR} -xzC ${WRKSRC}/cidmap -f ${WRKDIR}/html/cidmaps.tgz
 	${RM} ${WRKDIR}/html/cidmaps.tgz
 .endif
+
+post-patch:
+	@${CHMOD} +x ${WRKSRC}/configure
 
 .if !defined(FONTFORGE_NO_PLUGINS)
 post-build:
