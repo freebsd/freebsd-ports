@@ -1,6 +1,6 @@
---- src/siproxd.c.orig	Fri Jun  8 21:41:47 2007
-+++ src/siproxd.c	Wed Nov 14 12:26:19 2007
-@@ -181,10 +181,15 @@
+--- src/siproxd.c.orig	Sat Jan 19 17:06:51 2008
++++ src/siproxd.c	Mon Feb  4 16:42:25 2008
+@@ -182,10 +182,15 @@
  /*
   * Init stuff
   */
