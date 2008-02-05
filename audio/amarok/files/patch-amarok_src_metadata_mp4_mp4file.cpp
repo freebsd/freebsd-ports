@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- amarok/src/metadata/mp4/mp4file.cpp.orig
-+++ amarok/src/metadata/mp4/mp4file.cpp
+--- amarok/src/metadata/mp4/mp4file.cpp.orig	Mon Dec 17 16:53:19 2007
++++ amarok/src/metadata/mp4/mp4file.cpp	Thu Jan 31 23:14:42 2008
 @@ -27,9 +27,8 @@
  
  #include "mp4tag.h"
@@ -14,15 +11,10 @@ $FreeBSD$
  
  #define MP4V2_HAS_WRITE_BUG 1
  
-@@ -156,10 +155,8 @@
-     }
+@@ -157,6 +156,7 @@
  #endif
  
--    if(!MP4Close(handle))
--    {
--        fprintf(stderr, "close failed\n");
--    }
-+    MP4Close(handle);
+     MP4Close(handle);
 +    handle=NULL;
  
      mp4file = MP4Read(name());
