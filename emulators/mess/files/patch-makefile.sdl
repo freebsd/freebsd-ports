@@ -1,8 +1,8 @@
---- makefile.sdl.orig	Fri Aug 31 10:41:30 2007
-+++ makefile.sdl	Fri Aug 31 11:22:15 2007
-@@ -66,11 +66,13 @@
- # uncomment next line to include the debugger
- # DEBUG = 1
+--- ./makefile.sdl.orig	Mon Dec 31 13:41:23 2007
++++ ./makefile.sdl	Mon Feb  4 13:15:31 2008
+@@ -99,11 +99,13 @@
+ # uncomment next line to include the internal profiler
+ # PROFILER = 1
  
 +ifeq ($(ARCH),i386)
  # uncomment next line to use DRC MIPS3 engine
@@ -12,10 +12,10 @@
  X86_PPC_DRC = 1
 +endif
  
- # uncomment next line to use DRC Voodoo rasterizers
- # X86_VOODOO_DRC = 1
-@@ -96,7 +98,9 @@
- # CELL = 1
+ 
+ 
+@@ -113,7 +115,9 @@
+ #-------------------------------------------------
  
  # uncomment next line if you are building for a 64-bit target
 -# PTR64 = 1
@@ -23,62 +23,60 @@
 +PTR64 = 1
 +endif
  
- # uncomment next line to build expat as part of MAME build
- BUILD_EXPAT = 1
-@@ -160,8 +164,8 @@
+ # uncomment next line if you are building for a big-endian target
+ # BIGENDIAN = 1
+@@ -186,8 +190,8 @@
  
  # compiler, linker and utilities
  AR = @ar
 -CC = @gcc
 -LD = @gcc
 +CC := @$(CC)
-+LD = @$(CC)
- HHC = @-hhc
++LD := @$(CC)
  MD = -mkdir$(EXE)
  RM = @rm -f
-@@ -258,8 +262,8 @@
+ 
+@@ -211,7 +215,7 @@
  endif
  
- # fullname is prefix+name+suffix
--FULLNAME = $(PREFIX)$(NAME)$(SUFFIX)
--FULLGUINAME = $(PREFIX)$(NAME)gui$(SUFFIX)
+ # fullname is prefix+name+suffix+debugsuffix
+-FULLNAME = $(PREFIX)$(NAME)$(SUFFIX)$(DEBUGSUFFIX)
 +FULLNAME = $(NAME)
-+FULLGUINAME = $(NAME)gui
  
  # add an EXE suffix to get the final emulator name
- EMULATORCLI = $(FULLNAME)$(EXE)
-@@ -325,7 +329,7 @@
+ EMULATOR = $(FULLNAME)$(EXE)
+@@ -276,7 +280,7 @@
  #-------------------------------------------------
  
  # we compile to C89 standard with GNU extensions
 -CFLAGS = -std=gnu89
 +CFLAGS += -std=gnu89
  
- # add -g if we need symbols
- ifdef SYMBOLS
-@@ -356,7 +360,7 @@
+ # this speeds it up a bit by piping between the preprocessor/compiler/assembler
+ CFLAGS += -pipe
+@@ -313,7 +317,7 @@
+ # if we are optimizing, include optimization options
  # and make all errors into warnings
- # but not on 64-bit or debug builds
  ifneq ($(OPTIMIZE),0)
--CFLAGS += $(ARCH) -fno-strict-aliasing
-+CFLAGS += -fno-strict-aliasing
+-CFLAGS += -Werror $(ARCHOPTS) -fno-strict-aliasing
++CFLAGS += $(ARCHOPTS) -fno-strict-aliasing
+ #CFLAGS += $(ARCHOPTS) -fno-strict-aliasing
+ endif
  
- # only -Werror if not PTR64 and not DEBUG
- ifndef PTR64
-@@ -397,6 +401,7 @@
+@@ -339,6 +343,7 @@
  	-I$(SRC)/lib/util \
  	-I$(SRC)/osd \
  	-I$(SRC)/osd/$(OSD) \
 +        -I$(LOCALBASE)/include
  
- ifdef MESS
- CFLAGS += \
-@@ -412,7 +417,7 @@
  
+ 
+@@ -349,7 +354,7 @@
  # LDFLAGS are used generally; LDFLAGSEMULATOR are additional
  # flags only used when linking the core emulator
--LDFLAGS = 
-+LDFLAGS += -L$(LOCALBASE)/lib 
- LDFLAGSEMULATOR =
- 
- # strip symbols and other metadata in non-symbols builds
+ ifneq ($(TARGETOS),macosx)
+-LDFLAGS = -Wl,--warn-common
++LDFLAGS = -Wl,--warn-common -L$(LOCALBASE)/lib
+ else
+ LDFLAGS = 
+ endif
