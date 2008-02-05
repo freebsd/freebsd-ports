@@ -14,6 +14,7 @@ lib/libqd_f_main.a
 lib/libqdmod.a
 lib/qd/ddext.mod
 lib/qd/ddmodule.mod
+lib/qd/qdext.mod
 lib/qd/qdmodule.mod
 share/doc/qd/README
 share/doc/qd/qd.pdf
