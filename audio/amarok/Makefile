@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	1.4.7
-PORTREVISION=	1
+PORTVERSION=	1.4.8
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -25,9 +24,11 @@ USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_GETTEXT=	yes
 USE_SDL=	sdl
 USE_RUBY=	yes
 USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
 OPTIONS=	GPOD "iPod support" on \
 		NJB "Creative Nomad and Dell support" on \
@@ -94,7 +95,7 @@ EXTRA_PATCHES=	${PATCHDIR}/hide-main-menu-bar-feature.patch
 
 .if defined(DEBUG)
 CONFIGURE_ARGS+=--enable-debug=full
-STRIP=          # none
+STRIP=		# none
 .endif
 
 pre-extract:	check-options-version
