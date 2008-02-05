@@ -401,7 +401,6 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/ffi-refs.png
 %%PORTDOCS%%%%DOCSDIR%%/ffi-rmoverlap.png
 %%PORTDOCS%%%%DOCSDIR%%/ffi-unlink.png
-%%PORTDOCS%%%%DOCSDIR%%/ffsplash2008.png
 %%PORTDOCS%%%%DOCSDIR%%/fi.png
 %%PORTDOCS%%%%DOCSDIR%%/filemenu.html
 %%PORTDOCS%%%%DOCSDIR%%/files.html
