@@ -1,16 +1,15 @@
---- ./lib/PSGConf.pm.orig	Sat Sep 23 13:44:35 2006
-+++ ./lib/PSGConf.pm	Thu Jan 11 11:15:45 2007
-@@ -34,8 +34,8 @@
+--- ./lib/PSGConf.pm.orig	Thu Jan 24 15:59:07 2008
++++ ./lib/PSGConf.pm	Fri Feb  1 17:23:53 2008
+@@ -39,7 +39,7 @@
  my %defaults = (
- 	config_dir		=> '/usr/local/share/psgconf/config',
- 	files_dir			=> '/usr/local/share/psgconf/files',
--	modules_file		=> '/etc/psgconf_modules',
-+	modules_file		=> '/usr/local/etc/psgconf_modules',
- 	tmpdir			=> '/var/tmp/' . basename $0 . ".$$",
- 	verbose			=> 0,
- 	do_fix			=> 0,
- 	restart_daemons	=> 1,
-@@ -677,7 +677,7 @@
+     config_dir      => "/usr/local/share/$myname/config",
+     files_dir       => "/usr/local/share/$myname/files",
+-    modules_file    => "/etc/${myname}_modules",
++    modules_file    => "/usr/local/etc/${myname}_modules",
+     myname          => $myname,
+     columns         => 80,
+     verbose         => 0,
+@@ -711,7 +711,7 @@
  =item modules_file
  
  Full path to B<psgconf> modules file.  Default is
