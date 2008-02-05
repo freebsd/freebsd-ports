@@ -114,6 +114,7 @@ prayer/sbin/prayer-chroot
 @dirrm prayer/icons/CVS
 @dirrm prayer/icons
 @dirrm prayer/etc
+@exec mkdir -p %D/prayer/certs
 @dirrm prayer/certs
 @dirrm prayer/sbin
 @dirrm prayer
