@@ -2267,3 +2267,4 @@
 @dirrm %%CGIDIR%%/default_templates
 @dirrmtry %%CGIDIR%%/db
 @dirrmtry %%CGIDIR%%
+@dirrmtry www/cgi-bin

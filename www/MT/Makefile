@@ -7,7 +7,7 @@
 
 PORTNAME=	MT
 PORTVERSION=	4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.movabletype.org/downloads/
 DISTNAME=	MTOS-${PORTVERSION}-en
@@ -102,6 +102,6 @@ do-install:
 
 post-install:
 	@${ECHO_CMD} ""
-	@${ECHO_MSG} "Please read the documentation http://www.movabletype.org/documentation/"
+	@${ECHO_MSG} "Please read the documentation: http://www.movabletype.org/documentation/"
 
 .include <bsd.port.post.mk>
