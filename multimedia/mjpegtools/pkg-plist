@@ -87,6 +87,7 @@ include/mjpegtools/mpeg2enc/synchrolib.h
 include/mjpegtools/mpeg2enc/syntaxconsts.h
 include/mjpegtools/mpegconsts.h
 include/mjpegtools/mpegtimecode.h
+include/mjpegtools/motionsearch.h
 include/mjpegtools/mplex/audiostrm.hpp
 include/mjpegtools/mplex/aunit.hpp
 include/mjpegtools/mplex/aunitbuffer.hpp
