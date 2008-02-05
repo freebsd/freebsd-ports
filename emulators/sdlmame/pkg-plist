@@ -16,12 +16,13 @@ libexec/sdlmame/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
-%%PORTDOCS%%%%DOCSDIR%%/whatsnew_0120u2.txt
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew_0122u8.txt
 %%DATADIR%%/keymaps/km-be.txt
 %%DATADIR%%/keymaps/km-ch.txt
 %%DATADIR%%/keymaps/km-de.txt
 %%DATADIR%%/keymaps/km-fr-OSX.txt
 %%DATADIR%%/keymaps/km-fr.txt
+%%DATADIR%%/keymaps/km_it.txt
 %%DATADIR%%/ui.bdf
 @dirrm %%DATADIR%%/keymaps
 @dirrm %%DATADIR%%
