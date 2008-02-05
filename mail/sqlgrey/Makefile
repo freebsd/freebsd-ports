@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	sqlgrey
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Greylisting policy server for Postfix using an SQL backend
