@@ -32,7 +32,7 @@ CXX:=	g++34
 .endif
 
 .if defined(WITH_3DNOW_GCC40) && ${OSVERSION} < 700042
-USE_GCC=	4.0+
+USE_GCC=	4.1+
 .if ${OSVERSION} < 600000
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 .endif
