@@ -22,28 +22,9 @@
 
 PORTNAME=	zsh
 PORTVERSION=	4.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
-MASTER_SITES=	SF \
-		http://zsh.open-mirror.com/ \
-		http://www.zsh.org/pub/ \
-		ftp://ftp.zsh.org/zsh/ \
-		http://mirrors.dotsrc.org/zsh/ \
-		ftp://mirrors.dotsrc.org/zsh/ \
-		ftp://ftp.funet.fi/pub/unix/shells/zsh/ \
-		ftp://nephtys.lip6.fr/pub/unix/shells/zsh/ \
-		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
-		http://www.cs.elte.hu/pub/zsh/ \
-		ftp://ftp.cs.elte.hu/pub/zsh/ \
-		ftp://ftp.kfki.hu/pub/packages/zsh/ \
-		http://www.math.technion.ac.il/pub/zsh/ \
-		ftp://ftp.math.technion.ac.il/pub/zsh/ \
-		ftp://ftp.demon.nl/pub/mirrors/zsh/ \
-		ftp://sunsite.icm.edu.pl/pub/unix/shells/zsh/ \
-		ftp://ftp.roedu.net/pub/mirrors/ftp.zsh.org/pub/zsh/ \
-		ftp://ftp.kappa.ro/pub/mirrors/ftp.zsh.org/pub/zsh/ \
-		ftp://ftp.lysator.liu.se/pub/unix/zsh/ \
-		ftp://sunsite.org.uk/package/zsh/
+MASTER_SITES=	SF
 .if !defined(NOPORTDOCS)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc${EXTRACT_SUFX}
 .endif
