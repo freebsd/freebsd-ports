@@ -53,7 +53,7 @@
 -	sprintf(subtype_opt, "-osubtype=%s", basename);
 -	res = fuse_opt_add_arg(args, subtype_opt);
 -	free(subtype_opt);
-+	sprintf(fsname_opt, "-osubtype=%s", basename);
++	sprintf(fsname_opt, "-ofsname=%s", basename);
 +	res = fuse_opt_add_arg(args, fsname_opt);
 +	free(fsname_opt);
  	return res;
