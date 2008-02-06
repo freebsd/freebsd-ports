@@ -1,0 +1,22 @@
+--- node/node.d.freebsd/if_.in.orig	2006-10-17 14:27:35.000000000 +0200
++++ node/node.d.freebsd/if_.in	2007-10-26 10:52:46.000000000 +0200
+@@ -63,7 +63,7 @@
+ 
+ if [ "$1" = "suggest" ]; then
+ 	if [ -x /usr/bin/netstat ]; then
+-		netstat -i -b | sed -n -e '/^faith/d' -e '/^lo0/d' -e '/<Link#[0-9]*>/s/\** .*//p'
++		netstat -i -b | sed -n -e '/^faith/d' -e '/^lo[0-9]/d' -e '/^pflog/d' -e '/<Link#[0-9]*>/s/\** .*//p'
+ 		exit 0
+ 	else
+ 		exit 1
+--- node/node.d.freebsd/if_errcoll_.in.orig	2006-10-17 14:27:35.000000000 +0200
++++ node/node.d.freebsd/if_errcoll_.in	2007-10-26 10:53:08.000000000 +0200
+@@ -57,7 +57,7 @@
+ 
+ if [ "$1" = "suggest" ]; then
+ 	if [ -x /usr/bin/netstat ]; then
+-		netstat -i -b | sed -n -e '/^faith/d' -e '/^lo0/d' -e '/<Link#[0-9]*>/s/\** .*//p'
++		netstat -i -b | sed -n -e '/^faith/d' -e '/^lo[0-9]/d' -e '/^pflog/d' -e '/<Link#[0-9]*>/s/\** .*//p'
+ 		exit 0
+ 	else
+ 		exit 1
