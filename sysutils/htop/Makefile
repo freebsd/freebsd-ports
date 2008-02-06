@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	tshadwick@oss-solutions.com
 COMMENT=	A better top(1) - interactive process viewer
 
-ONLY_FOR_ARCHS=	i386
+NOT_FOR_ARCHS=	sparc64
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-proc=/compat/linux/proc
