@@ -499,6 +499,7 @@
     SUBDIR += p5-SAVI-Perl
     SUBDIR += p5-SHA
     SUBDIR += p5-Safe-Hole
+    SUBDIR += p5-Snort-Rule
     SUBDIR += p5-Sudo
     SUBDIR += p5-Text-Password-Pronounceable
     SUBDIR += p5-Tie-EncryptedHash
