@@ -1,0 +1,275 @@
+--- src/Makefile.in.orig	2008-01-24 16:49:38.000000000 -0500
++++ src/Makefile.in	2008-01-24 16:49:47.000000000 -0500
+@@ -45,7 +45,96 @@ CONFIG_CLEAN_FILES =
+ am__installdirs = "$(DESTDIR)$(bindir)"
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(bin_PROGRAMS)
++am__brasero_SOURCES_DIST = brasero-marshal.h brasero-marshal.c main.c \
++	brasero-utils.h brasero-utils.c burn-dbus.h burn-dbus.c \
++	brasero-search-entry.c brasero-search-entry.h \
++	brasero-search-beagle.c brasero-search-beagle.h \
++	brasero-mime-filter.c brasero-mime-filter.h brasero-playlist.c \
++	brasero-playlist.h brasero-player.c brasero-player.h \
++	brasero-menu.h brasero-burn-dialog.c brasero-burn-dialog.h \
++	brasero-disc-copy-dialog.c brasero-disc-copy-dialog.h \
++	brasero-blank-dialog.c brasero-blank-dialog.h inotify.h \
++	brasero-metadata.c brasero-metadata.h inotify-syscalls.h \
++	brasero-filtered-window.c brasero-filtered-window.h \
++	brasero-disc.c brasero-disc.h brasero-data-disc.c \
++	brasero-data-disc.h brasero-audio-disc.c brasero-audio-disc.h \
++	brasero-project.c brasero-project.h \
++	brasero-project-type-chooser.c brasero-project-type-chooser.h \
++	brasero-player-bacon.c brasero-player-bacon.h \
++	brasero-progress.c brasero-progress.h \
++	brasero-song-properties.c brasero-song-properties.h \
++	brasero-tray.c brasero-tray.h burn.c burn.h burn-job.c \
++	burn-job.h burn-process.c burn-process.h burn-basics.h \
++	burn-basics.c burn-caps.c burn-caps.h brasero-session.c \
++	brasero-session.h brasero-app.h brasero-uri-container.c \
++	brasero-uri-container.h brasero-project-manager.c \
++	brasero-project-manager.h brasero-layout.c brasero-layout.h \
++	brasero-file-chooser.c brasero-file-chooser.h \
++	brasero-project-size.c brasero-project-size.h burn-session.h \
++	brasero-sum-dialog.c brasero-sum-dialog.h \
++	brasero-tool-dialog.c brasero-tool-dialog.h brasero-ncb.h \
++	brasero-ncb.c burn-task.c burn-task.h brasero-vfs.c \
++	brasero-vfs.h brasero-async-task-manager.c \
++	brasero-async-task-manager.h eggtreemultidnd.c \
++	eggtreemultidnd.h brasero-multi-dnd.c brasero-multi-dnd.h \
++	brasero-image-option-dialog.c brasero-image-option-dialog.h \
++	brasero-disc-option-dialog.c brasero-disc-option-dialog.h \
++	brasero-image-type-chooser.c brasero-image-type-chooser.h \
++	burn-iso9660.c burn-iso9660.h brasero-layout-object.c \
++	brasero-layout-object.h burn-volume.c burn-volume.h \
++	burn-susp.c burn-susp.h burn-iso-field.c burn-iso-field.h \
++	burn-medium.h cam/cam-cdrom.h cam/freebsd_dvd_rw_utils.h \
++	scsi/scsi-base.h scsi/scsi-command.h scsi/scsi-error.h \
++	scsi/scsi-get-configuration.h scsi/scsi-mmc1.h \
++	scsi/scsi-mmc2.h scsi/scsi-opcodes.h \
++	scsi/scsi-read-disc-info.h scsi/scsi-read-toc-pma-atip.h \
++	scsi/scsi-sense-data.h scsi/scsi-sg.h scsi/scsi-utils.h \
++	scsi/scsi-q-subchannel.h scsi/scsi-read-track-information.h \
++	scsi/scsi-get-performance.h scsi/scsi-mmc3.h \
++	scsi/scsi-mode-pages.h scsi/scsi-status-page.h \
++	scsi/scsi-spc1.h scsi/scsi-read-capacity.h \
++	scsi/scsi-read-disc-structure.h scsi/scsi-dvd-structures.h \
++	scsi/scsi-read-format-capacities.h scsi/scsi-command.c \
++	scsi/scsi-get-configuration.c scsi/scsi-read-disc-info.c \
++	scsi/scsi-read-toc-pma-atip.c scsi/scsi-sense-data.c \
++	scsi/scsi-sg.c scsi/scsi-error.c \
++	scsi/scsi-read-track-information.c scsi/scsi-get-performance.c \
++	scsi/scsi-mode-sense.c scsi/scsi-read-capacity.c \
++	scsi/scsi-read-disc-structure.c \
++	scsi/scsi-read-format-capacities.c burn-medium-scsi.c \
++	cam/cam-cdrom.c cam/freebsd_dvd_rw_utils.c burn-medium-cam.c \
++	burn-debug.c burn-debug.h burn-track.h burn-plugin.h \
++	burn-plugin.c burn-plugin-private.h burn-plugin-manager.c \
++	burn-plugin-manager.h burn-task-ctx.h burn-task-item.c \
++	burn-task-item.h burn-task-ctx.c burn-mkisofs-base.c \
++	burn-mkisofs-base.h brasero-drive-selection.h \
++	brasero-drive-selection.c brasero-src-selection.h \
++	brasero-src-selection.c brasero-dest-selection.h \
++	brasero-dest-selection.c brasero-drive-info.c \
++	brasero-drive-info.h brasero-drive-properties.h \
++	brasero-drive-properties.c brasero-image-properties.h \
++	brasero-image-properties.c brasero-xfer.c brasero-xfer.h \
++	burn-session.c burn-track.c brasero-plugin-manager-ui.c \
++	brasero-plugin-manager-ui.h brasero-pref.h brasero-pref.c \
++	brasero-plugin-option.h brasero-plugin-option.c \
++	brasero-split-dialog.h brasero-split-dialog.c \
++	brasero-time-button.h brasero-time-button.c brasero-preview.h \
++	brasero-preview.c burn-image-format.c burn-image-format.h
+ am__objects_1 = brasero-marshal.$(OBJEXT)
++am__objects_2 = scsi-command.$(OBJEXT) \
++	scsi-get-configuration.$(OBJEXT) scsi-read-disc-info.$(OBJEXT) \
++	scsi-read-toc-pma-atip.$(OBJEXT) scsi-sense-data.$(OBJEXT) \
++	scsi-sg.$(OBJEXT) scsi-error.$(OBJEXT) \
++	scsi-read-track-information.$(OBJEXT) \
++	scsi-get-performance.$(OBJEXT) scsi-mode-sense.$(OBJEXT) \
++	scsi-read-capacity.$(OBJEXT) \
++	scsi-read-disc-structure.$(OBJEXT) \
++	scsi-read-format-capacities.$(OBJEXT) \
++	burn-medium-scsi.$(OBJEXT)
++am__objects_3 = cam-cdrom.$(OBJEXT) freebsd_dvd_rw_utils.$(OBJEXT) \
++	burn-medium-cam.$(OBJEXT)
++@WITH_CAM_FALSE@am__objects_4 = $(am__objects_2)
++@WITH_CAM_TRUE@am__objects_4 = $(am__objects_3)
+ am_brasero_OBJECTS = $(am__objects_1) main.$(OBJEXT) \
+ 	brasero-utils.$(OBJEXT) burn-dbus.$(OBJEXT) \
+ 	brasero-search-entry.$(OBJEXT) brasero-search-beagle.$(OBJEXT) \
+@@ -72,19 +161,11 @@ am_brasero_OBJECTS = $(am__objects_1) ma
+ 	brasero-disc-option-dialog.$(OBJEXT) \
+ 	brasero-image-type-chooser.$(OBJEXT) burn-iso9660.$(OBJEXT) \
+ 	brasero-layout-object.$(OBJEXT) burn-volume.$(OBJEXT) \
+-	burn-susp.$(OBJEXT) burn-iso-field.$(OBJEXT) \
+-	burn-medium.$(OBJEXT) scsi-command.$(OBJEXT) \
+-	scsi-get-configuration.$(OBJEXT) scsi-read-disc-info.$(OBJEXT) \
+-	scsi-read-toc-pma-atip.$(OBJEXT) scsi-sense-data.$(OBJEXT) \
+-	scsi-sg.$(OBJEXT) scsi-error.$(OBJEXT) \
+-	scsi-read-track-information.$(OBJEXT) \
+-	scsi-get-performance.$(OBJEXT) scsi-mode-sense.$(OBJEXT) \
+-	scsi-read-capacity.$(OBJEXT) \
+-	scsi-read-disc-structure.$(OBJEXT) \
+-	scsi-read-format-capacities.$(OBJEXT) burn-debug.$(OBJEXT) \
+-	burn-plugin.$(OBJEXT) burn-plugin-manager.$(OBJEXT) \
+-	burn-task-item.$(OBJEXT) burn-task-ctx.$(OBJEXT) \
+-	burn-mkisofs-base.$(OBJEXT) brasero-drive-selection.$(OBJEXT) \
++	burn-susp.$(OBJEXT) burn-iso-field.$(OBJEXT) $(am__objects_4) \
++	burn-debug.$(OBJEXT) burn-plugin.$(OBJEXT) \
++	burn-plugin-manager.$(OBJEXT) burn-task-item.$(OBJEXT) \
++	burn-task-ctx.$(OBJEXT) burn-mkisofs-base.$(OBJEXT) \
++	brasero-drive-selection.$(OBJEXT) \
+ 	brasero-src-selection.$(OBJEXT) \
+ 	brasero-dest-selection.$(OBJEXT) brasero-drive-info.$(OBJEXT) \
+ 	brasero-drive-properties.$(OBJEXT) \
+@@ -110,7 +191,7 @@ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLF
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+ 	$(LDFLAGS) -o $@
+ SOURCES = $(brasero_SOURCES)
+-DIST_SOURCES = $(brasero_SOURCES)
++DIST_SOURCES = $(am__brasero_SOURCES_DIST)
+ RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
+ 	html-recursive info-recursive install-data-recursive \
+ 	install-dvi-recursive install-exec-recursive \
+@@ -316,6 +397,7 @@ INCLUDES = \
+ 	-I$(top_srcdir)							\
+ 	-I$(top_builddir)						\
+ 	-I./scsi							\
++	-I./cam								\
+ 	-I./md5								\
+ 	-DBRASERO_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" 	\
+ 	-DBRASERO_PREFIX=\"$(prefix)\"           			\
+@@ -327,9 +409,30 @@ INCLUDES = \
+ 
+ CLEANFILES = $(RECMARSHALFILES)
+ AM_CFLAGS = -g
+-EXTRA_DIST = cd-content-marshal.list
++CAMFILES = cam/cam-cdrom.c		\
++	   cam/freebsd_dvd_rw_utils.c	\
++	   burn-medium-cam.c
++
++SCSIFILES = scsi/scsi-command.c			\
++	    scsi/scsi-get-configuration.c	\
++	    scsi/scsi-read-disc-info.c		\
++	    scsi/scsi-read-toc-pma-atip.c	\
++	    scsi/scsi-sense-data.c		\
++	    scsi/scsi-sg.c			\
++	    scsi/scsi-error.c			\
++	    scsi/scsi-read-track-information.c	\
++	    scsi/scsi-get-performance.c		\
++	    scsi/scsi-mode-sense.c		\
++	    scsi/scsi-read-capacity.c		\
++	    scsi/scsi-read-disc-structure.c	\
++	    scsi/scsi-read-format-capacities.c	\
++	    burn-medium-scsi.c
++
++EXTRA_DIST = cd-content-marshal.list $(CAMFILES) $(SCSIFILES)
+ GLIB_GENMARSHAL = `pkg-config --variable=glib_genmarshal glib-2.0`
+ RECMARSHALFILES = brasero-marshal.h brasero-marshal.c 
++@WITH_CAM_FALSE@SCSISOURCES = $(SCSIFILES)
++@WITH_CAM_TRUE@SCSISOURCES = $(CAMFILES)
+ brasero_SOURCES = \
+ 	$(RECMARSHALFILES)			\
+ 	main.c		\
+@@ -435,43 +538,32 @@ brasero_SOURCES = \
+ 	burn-iso-field.c         \
+ 	burn-iso-field.h         \
+ 	burn-medium.h         \
+-	burn-medium.c         \
++	cam/cam-cdrom.h		\
++	cam/freebsd_dvd_rw_utils.h	\
+ 	scsi/scsi-base.h         \
+-	scsi/scsi-command.c         \
+ 	scsi/scsi-command.h         \
+ 	scsi/scsi-error.h         \
+-	scsi/scsi-get-configuration.c         \
+ 	scsi/scsi-get-configuration.h         \
+ 	scsi/scsi-mmc1.h         \
+ 	scsi/scsi-mmc2.h         \
+ 	scsi/scsi-opcodes.h         \
+-	scsi/scsi-read-disc-info.c         \
+ 	scsi/scsi-read-disc-info.h         \
+-	scsi/scsi-read-toc-pma-atip.c         \
+ 	scsi/scsi-read-toc-pma-atip.h         \
+-	scsi/scsi-sense-data.c         \
+ 	scsi/scsi-sense-data.h         \
+-	scsi/scsi-sg.c         \
+ 	scsi/scsi-sg.h         \
+ 	scsi/scsi-utils.h         \
+ 	scsi/scsi-q-subchannel.h         \
+-	scsi/scsi-error.c         \
+-	scsi/scsi-read-track-information.c         \
+ 	scsi/scsi-read-track-information.h         \
+-	scsi/scsi-get-performance.c         \
+ 	scsi/scsi-get-performance.h         \
+ 	scsi/scsi-mmc3.h         \
+ 	scsi/scsi-mode-pages.h         \
+-	scsi/scsi-mode-sense.c         \
+ 	scsi/scsi-status-page.h         \
+ 	scsi/scsi-spc1.h         \
+-	scsi/scsi-read-capacity.c         \
+ 	scsi/scsi-read-capacity.h         \
+-	scsi/scsi-read-disc-structure.c         \
+ 	scsi/scsi-read-disc-structure.h         \
+ 	scsi/scsi-dvd-structures.h         \
+-	scsi/scsi-read-format-capacities.c         \
+ 	scsi/scsi-read-format-capacities.h         \
++	$(SCSISOURCES)		\
+ 	burn-debug.c         \
+ 	burn-debug.h         \
+ 	burn-track.h         \
+@@ -647,7 +739,8 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/burn-iso-field.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/burn-iso9660.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/burn-job.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/burn-medium.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/burn-medium-cam.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/burn-medium-scsi.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/burn-mkisofs-base.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/burn-plugin-manager.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/burn-plugin.Po@am__quote@
+@@ -660,7 +753,9 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/burn-track.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/burn-volume.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/burn.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cam-cdrom.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/eggtreemultidnd.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/freebsd_dvd_rw_utils.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/scsi-command.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/scsi-error.Po@am__quote@
+@@ -879,6 +974,34 @@ scsi-read-format-capacities.obj: scsi/sc
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o scsi-read-format-capacities.obj `if test -f 'scsi/scsi-read-format-capacities.c'; then $(CYGPATH_W) 'scsi/scsi-read-format-capacities.c'; else $(CYGPATH_W) '$(srcdir)/scsi/scsi-read-format-capacities.c'; fi`
+ 
++cam-cdrom.o: cam/cam-cdrom.c
++@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cam-cdrom.o -MD -MP -MF $(DEPDIR)/cam-cdrom.Tpo -c -o cam-cdrom.o `test -f 'cam/cam-cdrom.c' || echo '$(srcdir)/'`cam/cam-cdrom.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/cam-cdrom.Tpo $(DEPDIR)/cam-cdrom.Po
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='cam/cam-cdrom.c' object='cam-cdrom.o' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cam-cdrom.o `test -f 'cam/cam-cdrom.c' || echo '$(srcdir)/'`cam/cam-cdrom.c
++
++cam-cdrom.obj: cam/cam-cdrom.c
++@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cam-cdrom.obj -MD -MP -MF $(DEPDIR)/cam-cdrom.Tpo -c -o cam-cdrom.obj `if test -f 'cam/cam-cdrom.c'; then $(CYGPATH_W) 'cam/cam-cdrom.c'; else $(CYGPATH_W) '$(srcdir)/cam/cam-cdrom.c'; fi`
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/cam-cdrom.Tpo $(DEPDIR)/cam-cdrom.Po
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='cam/cam-cdrom.c' object='cam-cdrom.obj' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cam-cdrom.obj `if test -f 'cam/cam-cdrom.c'; then $(CYGPATH_W) 'cam/cam-cdrom.c'; else $(CYGPATH_W) '$(srcdir)/cam/cam-cdrom.c'; fi`
++
++freebsd_dvd_rw_utils.o: cam/freebsd_dvd_rw_utils.c
++@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT freebsd_dvd_rw_utils.o -MD -MP -MF $(DEPDIR)/freebsd_dvd_rw_utils.Tpo -c -o freebsd_dvd_rw_utils.o `test -f 'cam/freebsd_dvd_rw_utils.c' || echo '$(srcdir)/'`cam/freebsd_dvd_rw_utils.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/freebsd_dvd_rw_utils.Tpo $(DEPDIR)/freebsd_dvd_rw_utils.Po
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='cam/freebsd_dvd_rw_utils.c' object='freebsd_dvd_rw_utils.o' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o freebsd_dvd_rw_utils.o `test -f 'cam/freebsd_dvd_rw_utils.c' || echo '$(srcdir)/'`cam/freebsd_dvd_rw_utils.c
++
++freebsd_dvd_rw_utils.obj: cam/freebsd_dvd_rw_utils.c
++@am__fastdepCC_TRUE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT freebsd_dvd_rw_utils.obj -MD -MP -MF $(DEPDIR)/freebsd_dvd_rw_utils.Tpo -c -o freebsd_dvd_rw_utils.obj `if test -f 'cam/freebsd_dvd_rw_utils.c'; then $(CYGPATH_W) 'cam/freebsd_dvd_rw_utils.c'; else $(CYGPATH_W) '$(srcdir)/cam/freebsd_dvd_rw_utils.c'; fi`
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/freebsd_dvd_rw_utils.Tpo $(DEPDIR)/freebsd_dvd_rw_utils.Po
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='cam/freebsd_dvd_rw_utils.c' object='freebsd_dvd_rw_utils.obj' libtool=no @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o freebsd_dvd_rw_utils.obj `if test -f 'cam/freebsd_dvd_rw_utils.c'; then $(CYGPATH_W) 'cam/freebsd_dvd_rw_utils.c'; else $(CYGPATH_W) '$(srcdir)/cam/freebsd_dvd_rw_utils.c'; fi`
++
+ mostlyclean-libtool:
+ 	-rm -f *.lo
+ 
