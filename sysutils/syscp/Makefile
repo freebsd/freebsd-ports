@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	syscp
-PORTVERSION=	1.2.16
-PORTREVISION=	1
+PORTVERSION=	1.2.19
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://nuernburg.files.syscp.org/releases/tgz/ \
 		http://canada.files.syscp.org/releases/tgz/ \
@@ -23,7 +22,7 @@ WRKSRC=		${WRKDIR}
 
 NO_BUILD=	yes
 
-SUB_FILES+=	pkg-message
+SUB_FILES+=	pkg-message pkg-deinstall
 
 USE_PHP=	gettext mysql pcre session xml
 
@@ -37,14 +36,20 @@ RUN_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql50-server \
 		webalizer:${PORTSDIR}/www/webalizer
 
 post-patch:
-		${FIND} ${WRKSRC}/${PORTNAME} -name '*.orig' -delete
+	${FIND} ${WRKSRC}/${PORTNAME} -name '*.orig' -delete
+	@cd ${WRKSRC}/${PORTNAME}/lib && ${MV} userdata.inc.php userdata.inc.php.dist
 
 do-install:
-		cd ${WRKDIR}/${PORTNAME} && \
-		${FIND} . | ${CPIO} --quiet -pdm -L ${PREFIX}/www/${PORTNAME}
+	cd ${WRKDIR}/${PORTNAME} && \
+	${FIND} . | ${CPIO} --quiet -pdm -L ${WWWDIR}
 
 post-install:
-		@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/${PORTNAME}
-		${CAT} ${PKGMESSAGE}
+	@if [ ! -f ${WWWDIR}/lib/userdata.inc.php ]; then \
+	${CP} -p ${WWWDIR}/lib/userdata.inc.php.dist ${WWWDIR}/lib/userdata.inc.php ; fi
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${CHMOD} 0640 ${WWWDIR}/lib/userdata.inc.php
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHMOD} 0640 ${WWWDIR}/lib/userdata.inc.php' >> ${TMPPLIST}
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
