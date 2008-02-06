@@ -7,35 +7,29 @@
 
 PORTNAME=	acrobatviewer
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print java
-MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/magic/acrobatviewer/unix/1.x/
-DISTNAME=	viewer.bin
-EXTRACT_SUFX=
+DISTFILES=	viewer.bin:1 MRJToolkitStubs.zip:2
+MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/magic/acrobatviewer/unix/1.x/:1 \
+		http://developer.apple.com/samplecode/MRJToolkitStubs/:2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer for the PDF files written in Java(TM)
 
-#RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
-#		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper
-
 USE_ZIP=	yes
-USE_XLIB=	yes
-USE_PERL5_BUILD=yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 NO_BUILD=	yes
+SUB_FILES+=	AcrobatViewer
+SUB_LIST+=	PORTNAME=${PORTNAME}
 
-JAVAVM=		${LOCALBASE}/bin/javavm
-
-INSTSBDR=	${PREFIX}/share/java/AdobeAcrobatViewer
-
-# For the end-users this "InstallAnywhere" whizard probably is a great step
-# toward Windowze-like software installations comparing with traditional
-# "make install" enviropment, but for *nix administrator it is a pain to deal
-# with. Fortunately, Zero G (author of the InstallAnywhere) does not use
-# propiertary format for archiving files, so it was possible for me to make
-# following dirty hack. If they will provide better way to centralise
-# installations in the next versions of InstallAnywhere than I'll be glad to
+# For the end-users this "InstallAnywhere" wizard probably is a great step
+# toward Windows-like software installations compared with the traditional
+# "make install" paradigm, but for Unix administrators it is a pain to deal
+# with. Fortunately, Zero G (author of the InstallAnywhere) does not use a
+# proprietary format for archiving files, so it was possible for me to do the
+# following dirty hack. If they will provide a better way to centralise
+# installations in the next versions of InstallAnywhere then I'll be glad to
 # remove all following crap.
 
 BLOCKSIZE=	32768
@@ -45,25 +39,27 @@ ARCHBLOCKS=	84
 
 do-extract:
 		@${MKDIR} ${WRKSRC} && \
-		cd ${WRKSRC} && \
-		dd if=${DISTDIR}/${DISTNAME} of=archive.zip bs=${BLOCKSIZE} skip=${ARCHSTART} count=${ARCHBLOCKS} 2>/dev/null && \
-		${LOCALBASE}/bin/unzip -o -a -j -qq archive.zip && \
-		${PERL} -pi -e "s.\x0D.." ${WRKSRC}/AcrobatViewer.lax
+			cd ${WRKSRC} && \
+			dd if=${DISTDIR}/viewer.bin of=archive.zip bs=${BLOCKSIZE} skip=${ARCHSTART} count=${ARCHBLOCKS} 2>/dev/null && \
+			${LOCALBASE}/bin/unzip -o -a -j -qq archive.zip
+		@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+			${DISTDIR}/MRJToolkitStubs.zip ${EXTRACT_AFTER_ARGS}
 
-do-configure:
-		@${PERL} -pi -e "s|%INSTDIR%|${INSTSBDR}|g" ${WRKSRC}/AcrobatViewer.lax && \
-		${PERL} -pi -e "s|%JAVAVM%|${JAVAVM}|g" ${WRKSRC}/AcrobatViewer.lax && \
-		${PERL} -pi -e "s|%JAVAJIT%|${JAVAJIT}|g" ${WRKSRC}/AcrobatViewer.lax
+post-extract:
+		@cd ${WRKDIR}/MRJToolkitStubs/MRJToolkitStubs && \
+			${JAR} cmf META-INF/MANIFEST.MF MRJToolkitStubs.jar com && \
+			${MV} MRJToolkitStubs.jar ${WRKSRC}
 
 do-install:
-		${MKDIR} ${INSTSBDR}
-		${INSTALL_SCRIPT} ${WRKSRC}/launixgc.sh ${INSTSBDR}/AcrobatViewer
-		${INSTALL_DATA} ${WRKSRC}/License.pdf ${INSTSBDR}/
-		${INSTALL_DATA} ${WRKSRC}/help.pdf ${INSTSBDR}/
-		${INSTALL_DATA} ${WRKSRC}/lax.jar ${INSTSBDR}/
-		${INSTALL_DATA} ${WRKSRC}/acrobat.jar ${INSTSBDR}/
-		${INSTALL_DATA} ${WRKSRC}/AcrobatViewer.lax ${INSTSBDR}/
-		${LN} -sf ${INSTSBDR}/AcrobatViewer ${PREFIX}/bin/AcrobatViewer
+		${MKDIR} ${JAVAJARDIR}/${PORTNAME}
+		${INSTALL_DATA} ${WRKSRC}/acrobat.jar ${JAVAJARDIR}/${PORTNAME}
+		${INSTALL_DATA} ${WRKSRC}/MRJToolkitStubs.jar ${JAVAJARDIR}/${PORTNAME}
+.if !defined(NOPORTDOCS)
+		${MKDIR} ${DOCSDIR}/
+		${INSTALL_DATA} ${WRKSRC}/License.pdf ${DOCSDIR}/
+		${INSTALL_DATA} ${WRKSRC}/help.pdf ${DOCSDIR}/
+.endif
+		${INSTALL_SCRIPT} ${WRKDIR}/AcrobatViewer ${PREFIX}/bin/AcrobatViewer
 
 post-install:
 		@${CAT} ${PKGMESSAGE}
