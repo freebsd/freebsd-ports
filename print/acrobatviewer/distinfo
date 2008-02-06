@@ -1,3 +1,6 @@
 MD5 (viewer.bin) = 7cc85a3d8856de3bb1dc20eed8bfd466
 SHA256 (viewer.bin) = beb9d32fca6f7411ef53f726e68172aeb21c2073f3a989bd16f4f6a6f298fcee
 SIZE (viewer.bin) = 2782530
+MD5 (MRJToolkitStubs.zip) = e527efeb54794f5f535ae2c3ac1c20c9
+SHA256 (MRJToolkitStubs.zip) = da7fed3f58e740fdb588daf064439356181e498f07dfe1218ac21da801c6f59a
+SIZE (MRJToolkitStubs.zip) = 19748
