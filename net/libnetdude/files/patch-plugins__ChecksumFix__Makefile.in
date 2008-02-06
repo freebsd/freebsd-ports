@@ -9,14 +9,3 @@
  ACLOCAL = @ACLOCAL@
  AMDEP_FALSE = @AMDEP_FALSE@
  AMDEP_TRUE = @AMDEP_TRUE@
---- ./plugins/ChecksumFix/Makefile.in.orig	2008-01-27 18:27:24.000000000 -0500
-+++ ./plugins/ChecksumFix/Makefile.in	2008-01-27 18:27:33.000000000 -0500
-@@ -79,7 +79,7 @@
- ETAGS = etags
- CTAGS = ctags
- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
--pkgincludedir = $(includedir)/libnetdude/$(version_major).$(version_minor)/plugins/
-+pkgincludedir = $(includedir)/libnetdude/$(version_major).$(version_minor)/plugins
- ACLOCAL = @ACLOCAL@
- AMDEP_FALSE = @AMDEP_FALSE@
- AMDEP_TRUE = @AMDEP_TRUE@
