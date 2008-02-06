@@ -1,4 +1,8 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
+
 if [ "$2" = DEINSTALL ]; then
 	echo "==============================================================================="
 	echo "If you are permanently removing this port, run:"
