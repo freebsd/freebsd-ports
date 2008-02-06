@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvrml
-PORTVERSION=	0.17.4
+PORTVERSION=	0.17.5
 CATEGORIES=	www graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,6 +28,7 @@ USE_SDL=	sdl
 USE_JAVA=	yes
 GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure mozilla-plugin/configure lib/gtkglext/configure
+CONFIGURE_ARGS=	--enable-gecko-rpath
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OPSYS:L}"	\
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client ${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"	\
