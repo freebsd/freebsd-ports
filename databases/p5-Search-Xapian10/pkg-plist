@@ -12,6 +12,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/MSet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/MSet/Tied.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/MSetIterator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/MultiValueSorter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/PerlStopper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/PositionIterator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/PostingIterator.pm
