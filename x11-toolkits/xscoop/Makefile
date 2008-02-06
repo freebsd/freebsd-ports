@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xscoop
 # Date created:				Sa 04 Nov 2005 00:00:00 MET DST
-# Whom:					Ron Scheckelhoff <rscheckelhoff@yahoo.com>
+# Whom:					Ron Scheckelhoff <rscheckelhoff@fourcalorieservers.com
 #
 # $FreeBSD$
 #
@@ -8,7 +8,7 @@
 PORTNAME=	xscoop
 PORTVERSION=	1.0.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.datazygte.com/ports/x11-toolkits/xscoop/ \
+MASTER_SITES=	http://www.fourcalorieservers.com/ports/x11-toolkits/xscoop/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/others_ports/${PORTNAME}/sources/
 
 MAINTAINER=	rscheckelhoff@fourcalorieservers.com
