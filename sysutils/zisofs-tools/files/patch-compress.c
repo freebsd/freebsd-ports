@@ -1,6 +1,6 @@
---- compress.c.orig	Tue Jul 31 07:20:52 2001
-+++ compress.c	Fri May 13 21:17:02 2005
-@@ -13,7 +13,7 @@
+--- compress.c.old	2008-01-17 17:19:55.000000000 -0200
++++ compress.c	2008-01-17 17:20:09.000000000 -0200
+@@ -15,7 +15,7 @@
  
  #include <stdlib.h>
  #include <stdio.h>
@@ -8,4 +8,4 @@
 +#include <time.h>
  #include <unistd.h>
  #include <zlib.h>
- #include "mkzftree.h"
+ 
