@@ -1,48 +1,245 @@
 bin/brasero
+lib/brasero/plugins/libbrasero-cdrdao.la
+lib/brasero/plugins/libbrasero-cdrdao.so
+lib/brasero/plugins/libbrasero-cdrecord.la
+lib/brasero/plugins/libbrasero-cdrecord.so
+lib/brasero/plugins/libbrasero-dvdcss.la
+lib/brasero/plugins/libbrasero-dvdcss.so
+lib/brasero/plugins/libbrasero-dvdrwformat.la
+lib/brasero/plugins/libbrasero-dvdrwformat.so
+lib/brasero/plugins/libbrasero-genisoimage.la
+lib/brasero/plugins/libbrasero-genisoimage.so
+lib/brasero/plugins/libbrasero-growisofs.la
+lib/brasero/plugins/libbrasero-growisofs.so
+lib/brasero/plugins/libbrasero-local-track.la
+lib/brasero/plugins/libbrasero-local-track.so
+lib/brasero/plugins/libbrasero-md5sum-file.la
+lib/brasero/plugins/libbrasero-md5sum-file.so
+lib/brasero/plugins/libbrasero-md5sum.la
+lib/brasero/plugins/libbrasero-md5sum.so
+lib/brasero/plugins/libbrasero-mkisofs.la
+lib/brasero/plugins/libbrasero-mkisofs.so
+lib/brasero/plugins/libbrasero-readcd.la
+lib/brasero/plugins/libbrasero-readcd.so
+lib/brasero/plugins/libbrasero-readom.la
+lib/brasero/plugins/libbrasero-readom.so
+lib/brasero/plugins/libbrasero-toc2cue.la
+lib/brasero/plugins/libbrasero-toc2cue.so
+lib/brasero/plugins/libbrasero-transcode.la
+lib/brasero/plugins/libbrasero-transcode.so
+lib/brasero/plugins/libbrasero-wodim.la
+lib/brasero/plugins/libbrasero-wodim.so
 share/applications/brasero.desktop
-%%DATADIR%%/brasero.png
-%%DATADIR%%/cd-action-burn-16.png
-%%DATADIR%%/cd-action-burn.png
-%%DATADIR%%/disc-00.png
-%%DATADIR%%/disc-05.png
-%%DATADIR%%/disc-10.png
-%%DATADIR%%/disc-100.png
-%%DATADIR%%/disc-15.png
-%%DATADIR%%/disc-20.png
-%%DATADIR%%/disc-25.png
-%%DATADIR%%/disc-30.png
-%%DATADIR%%/disc-35.png
-%%DATADIR%%/disc-40.png
-%%DATADIR%%/disc-45.png
-%%DATADIR%%/disc-50.png
-%%DATADIR%%/disc-55.png
-%%DATADIR%%/disc-60.png
-%%DATADIR%%/disc-65.png
-%%DATADIR%%/disc-70.png
-%%DATADIR%%/disc-75.png
-%%DATADIR%%/disc-80.png
-%%DATADIR%%/disc-85.png
-%%DATADIR%%/disc-90.png
-%%DATADIR%%/disc-95.png
+%%DATADIR%%/icons/hicolor/16x16/actions/insert-pause.png
+%%DATADIR%%/icons/hicolor/16x16/actions/iso-image-burn.png
+%%DATADIR%%/icons/hicolor/16x16/actions/iso-image-new.png
+%%DATADIR%%/icons/hicolor/16x16/actions/media-optical-audio-new.png
+%%DATADIR%%/icons/hicolor/16x16/actions/media-optical-blank.png
+%%DATADIR%%/icons/hicolor/16x16/actions/media-optical-burn.png
+%%DATADIR%%/icons/hicolor/16x16/actions/media-optical-copy.png
+%%DATADIR%%/icons/hicolor/16x16/actions/media-optical-data-new.png
+%%DATADIR%%/icons/hicolor/16x16/actions/transform-crop-and-resize.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-00.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-05.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-10.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-100.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-15.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-20.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-25.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-30.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-35.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-40.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-45.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-50.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-55.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-60.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-65.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-70.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-75.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-80.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-85.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-90.png
+%%DATADIR%%/icons/hicolor/16x16/status/brasero-disc-95.png
+%%DATADIR%%/icons/hicolor/22x22/actions/insert-pause.png
+%%DATADIR%%/icons/hicolor/22x22/actions/iso-image-burn.png
+%%DATADIR%%/icons/hicolor/22x22/actions/iso-image-new.png
+%%DATADIR%%/icons/hicolor/22x22/actions/media-optical-audio-new.png
+%%DATADIR%%/icons/hicolor/22x22/actions/media-optical-blank.png
+%%DATADIR%%/icons/hicolor/22x22/actions/media-optical-burn.png
+%%DATADIR%%/icons/hicolor/22x22/actions/media-optical-copy.png
+%%DATADIR%%/icons/hicolor/22x22/actions/media-optical-data-new.png
+%%DATADIR%%/icons/hicolor/22x22/actions/transform-crop-and-resize.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-00.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-05.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-10.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-100.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-15.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-20.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-25.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-30.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-35.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-40.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-45.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-50.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-55.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-60.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-65.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-70.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-75.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-80.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-85.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-90.png
+%%DATADIR%%/icons/hicolor/22x22/status/brasero-disc-95.png
+%%DATADIR%%/icons/hicolor/24x24/actions/insert-pause.png
+%%DATADIR%%/icons/hicolor/24x24/actions/iso-image-burn.png
+%%DATADIR%%/icons/hicolor/24x24/actions/iso-image-new.png
+%%DATADIR%%/icons/hicolor/24x24/actions/media-optical-audio-new.png
+%%DATADIR%%/icons/hicolor/24x24/actions/media-optical-blank.png
+%%DATADIR%%/icons/hicolor/24x24/actions/media-optical-burn.png
+%%DATADIR%%/icons/hicolor/24x24/actions/media-optical-copy.png
+%%DATADIR%%/icons/hicolor/24x24/actions/media-optical-data-new.png
+%%DATADIR%%/icons/hicolor/24x24/actions/transform-crop-and-resize.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-00.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-05.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-10.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-100.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-15.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-20.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-25.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-30.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-35.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-40.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-45.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-50.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-55.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-60.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-65.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-70.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-75.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-80.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-85.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-90.png
+%%DATADIR%%/icons/hicolor/24x24/status/brasero-disc-95.png
+%%DATADIR%%/icons/hicolor/32x32/actions/insert-pause.png
+%%DATADIR%%/icons/hicolor/32x32/actions/iso-image-burn.png
+%%DATADIR%%/icons/hicolor/32x32/actions/iso-image-new.png
+%%DATADIR%%/icons/hicolor/32x32/actions/media-optical-audio-new.png
+%%DATADIR%%/icons/hicolor/32x32/actions/media-optical-blank.png
+%%DATADIR%%/icons/hicolor/32x32/actions/media-optical-burn.png
+%%DATADIR%%/icons/hicolor/32x32/actions/media-optical-copy.png
+%%DATADIR%%/icons/hicolor/32x32/actions/media-optical-data-new.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-00.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-05.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-10.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-100.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-15.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-20.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-25.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-30.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-35.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-40.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-45.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-50.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-55.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-60.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-65.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-70.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-75.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-80.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-85.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-90.png
+%%DATADIR%%/icons/hicolor/32x32/status/brasero-disc-95.png
+%%DATADIR%%/icons/hicolor/scalable/actions/insert-pause.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/iso-image-burn.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/iso-image-new.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/media-optical-audio-new.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/media-optical-blank.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/media-optical-burn.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/media-optical-copy.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/media-optical-data-new.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/transform-crop-and-resize.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-00.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-05.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-10.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-100.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-15.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-20.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-25.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-30.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-35.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-40.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-45.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-50.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-55.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-60.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-65.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-70.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-75.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-80.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-85.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-90.svg
+%%DATADIR%%/icons/hicolor/scalable/status/brasero-disc-95.svg
 %%DATADIR%%/logo.png
 share/icons/hicolor/16x16/apps/brasero.png
+share/icons/hicolor/22x22/apps/brasero.png
 share/icons/hicolor/24x24/apps/brasero.png
+share/icons/hicolor/32x32/apps/brasero.png
+share/icons/hicolor/48x48/apps/brasero.png
 share/icons/hicolor/scalable/apps/brasero.svg
+share/locale/ar/LC_MESSAGES/brasero.mo
 share/locale/ca/LC_MESSAGES/brasero.mo
+share/locale/cs/LC_MESSAGES/brasero.mo
 share/locale/de/LC_MESSAGES/brasero.mo
+share/locale/dz/LC_MESSAGES/brasero.mo
+share/locale/en_GB/LC_MESSAGES/brasero.mo
 share/locale/es/LC_MESSAGES/brasero.mo
+share/locale/fi/LC_MESSAGES/brasero.mo
 share/locale/fr/LC_MESSAGES/brasero.mo
+share/locale/gl/LC_MESSAGES/brasero.mo
+share/locale/he/LC_MESSAGES/brasero.mo
 share/locale/hu/LC_MESSAGES/brasero.mo
 share/locale/it/LC_MESSAGES/brasero.mo
 share/locale/ja/LC_MESSAGES/brasero.mo
 share/locale/lt/LC_MESSAGES/brasero.mo
+share/locale/mk/LC_MESSAGES/brasero.mo
+share/locale/nb/LC_MESSAGES/brasero.mo
+share/locale/oc/LC_MESSAGES/brasero.mo
+share/locale/pa/LC_MESSAGES/brasero.mo
 share/locale/pl/LC_MESSAGES/brasero.mo
+share/locale/pt/LC_MESSAGES/brasero.mo
 share/locale/pt_BR/LC_MESSAGES/brasero.mo
+share/locale/ru/LC_MESSAGES/brasero.mo
+share/locale/sl/LC_MESSAGES/brasero.mo
+share/locale/sr/LC_MESSAGES/brasero.mo
+share/locale/sr@Latn/LC_MESSAGES/brasero.mo
 share/locale/sv/LC_MESSAGES/brasero.mo
 share/mime/packages/brasero.xml
+@dirrm %%DATADIR%%/icons/hicolor/16x16/status
+@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
+@dirrm %%DATADIR%%/icons/hicolor/16x16
+@dirrm %%DATADIR%%/icons/hicolor/22x22/status
+@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
+@dirrm %%DATADIR%%/icons/hicolor/22x22
+@dirrm %%DATADIR%%/icons/hicolor/24x24/status
+@dirrm %%DATADIR%%/icons/hicolor/24x24/actions
+@dirrm %%DATADIR%%/icons/hicolor/24x24
+@dirrm %%DATADIR%%/icons/hicolor/32x32/status
+@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
+@dirrm %%DATADIR%%/icons/hicolor/32x32
+@dirrm %%DATADIR%%/icons/hicolor/scalable/status
+@dirrm %%DATADIR%%/icons/hicolor/scalable/actions
+@dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrm lib/brasero/plugins
+@dirrm lib/brasero
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/sr@Latn/LC_MESSAGES
+@dirrmtry share/locale/sr@Latn
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc

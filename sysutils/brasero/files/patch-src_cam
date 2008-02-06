@@ -1,0 +1,1361 @@
+diff -rupN cam.orig/freebsd_dvd_rw_utils.h cam/freebsd_dvd_rw_utils.h
+--- /dev/null	1969-12-31 19:00:00.000000000 -0500
++++ src/cam/freebsd_dvd_rw_utils.h	2008-01-24 16:52:25.000000000 -0500
+@@ -0,0 +1,49 @@
++//
++// This is part of dvd+rw-tools by Andy Polyakov <appro@fy.chalmers.se>
++//
++// Use-it-on-your-own-risk, GPL bless...
++//
++// For further details see http://fy.chalmers.se/~appro/linux/DVD+RW/
++//
++
++#ifndef FREEBSD_DVD_RW_UTILS_H
++#define FREEBSD_DVD_RW_UTILS_H
++
++#ifdef HAVE_CONFIG_H
++#  include <config.h>
++#endif
++
++#include <glib.h>
++
++#include "cam-cdrom.h"
++
++#define DRIVE_CDROM_CAPS_DVDRW		1
++#define DRIVE_CDROM_CAPS_DVDPLUSR	2
++#define DRIVE_CDROM_CAPS_DVDPLUSRW	4
++#define DRIVE_CDROM_CAPS_DVDPLUSRWDL	8
++#define DRIVE_CDROM_CAPS_DVDPLUSRDL	16
++#define DRIVE_CDROM_CAPS_BDROM		32
++#define DRIVE_CDROM_CAPS_BDR		64
++#define DRIVE_CDROM_CAPS_BDRE		128
++#define DRIVE_CDROM_CAPS_HDDVDROM	256
++#define DRIVE_CDROM_CAPS_HDDVDR		512
++#define DRIVE_CDROM_CAPS_HDDVDRW	1024
++
++int brasero_cdrom_get_dvd_r_rw_profile (BRASEROCDROM *cdrom);
++int brasero_cdrom_get_read_write_speed (BRASEROCDROM *cdrom, int *read_speed, int *write_speed, char **write_speeds);
++int brasero_cdrom_get_disc_capacity_for_type (BRASEROCDROM *cdrom, int type, guint64 *capacity);
++int brasero_cdrom_get_disc_type (BRASEROCDROM *cdrom);
++int brasero_cdrom_read_disc_information_std (BRASEROCDROM *cdrom, unsigned char *buf);
++int brasero_cdrom_disc_is_appendable (BRASEROCDROM *cdrom);
++int brasero_cdrom_disc_is_rewritable (BRASEROCDROM *cdrom);
++int brasero_cdrom_read_atip (BRASEROCDROM *cdrom, unsigned char **buf);
++int brasero_cdrom_read_format_capacities (BRASEROCDROM *cdrom, unsigned char **buf);
++int brasero_cdrom_get_performance_wrt_spd_desc (BRASEROCDROM *cdrom, unsigned char **buf);
++int brasero_cdrom_get_configuration_feature (BRASEROCDROM *cdrom, int feature, unsigned char **buf);
++int brasero_cdrom_read_track_info (BRASEROCDROM *cdrom, int track_num, unsigned char *buf, int size);
++int brasero_cdrom_read_toc_raw (BRASEROCDROM *cdrom, int track_num, unsigned char **buf);
++int brasero_cdrom_read_toc_formatted (BRASEROCDROM *cdrom, int track_num, unsigned char **buf);
++int brasero_read_disc_information_std (BRASEROCDROM *cdrom, unsigned char *buf);
++int brasero_cdrom_read_format_capacities (BRASEROCDROM *cdrom, unsigned char **buf);
++
++#endif				/* FREEBSD_DVD_RW_UTILS_H */
+--- /dev/null	2008-02-03 02:26:39.000000000 -0500
++++ src/cam/cam-cdrom.h	2008-02-03 11:32:23.000000000 -0500
+@@ -0,0 +1,68 @@
++/***************************************************************************
++ * CVSID: $Id$
++ *
++ * hfp-cdrom.h : SCSI CD-ROM abstraction layer
++ *
++ * Copyright (C) 2006 Jean-Yves Lefort <jylefort@FreeBSD.org>
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
++ *
++ **************************************************************************/
++
++#ifndef _BRASERO_CDROM_H
++#define _BRASERO_CDROM_H
++
++#ifdef HAVE_CONFIG_H
++#  include <config.h>
++#endif
++
++#include <glib.h>
++
++#include <sys/types.h>
++
++typedef struct _BRASEROCDROM BRASEROCDROM;
++
++typedef enum
++{
++  BRASERO_CDROM_DIRECTION_NONE,
++  BRASERO_CDROM_DIRECTION_IN,
++  BRASERO_CDROM_DIRECTION_OUT
++} BRASEROCDROMDirection;
++
++/* ATAPI/SCSI commands */
++enum
++{
++  BRASERO_CDROM_TEST_UNIT_READY			= 0x00,
++  BRASERO_CDROM_GET_EVENT_STATUS_NOTIFICATION	= 0x4a,
++  BRASERO_CDROM_MODE_SENSE_BIG			= 0x5a
++};
++
++BRASEROCDROM *brasero_cdrom_new (const char *path);
++
++gboolean brasero_cdrom_send_ccb (BRASEROCDROM *cdrom,
++			    const char *ccb,
++			    int ccb_len,
++			    BRASEROCDROMDirection direction,
++			    void *data,
++			    int len,
++			    char **err);
++
++gboolean brasero_cdrom_test_unit_ready (BRASEROCDROM *cdrom);
++
++int brasero_cdrom_get_fd (BRASEROCDROM *cdrom);
++
++void brasero_cdrom_free (BRASEROCDROM *cdrom);
++
++#endif /* _BRASERO_CDROM_H */
+--- /dev/null	2008-02-03 13:11:45.000000000 -0500
++++ src/cam/cam-cdrom.c	2008-02-03 13:24:53.000000000 -0500
+@@ -0,0 +1,156 @@
++/***************************************************************************
++ * CVSID: $Id$
++ *
++ * cam-cdrom.c : SCSI CD-ROM abstraction layer
++ *
++ * Copyright (C) 2006 Jean-Yves Lefort <jylefort@FreeBSD.org>
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, write to the Free Software
++ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
++ *
++ **************************************************************************/
++
++#ifdef HAVE_CONFIG_H
++#  include <config.h>
++#endif
++
++#include <string.h>
++#include <errno.h>
++#include <fcntl.h>
++#include <unistd.h>
++#include <sys/ioctl.h>
++#include <sys/types.h>
++#include <sys/ata.h>
++#include <stdio.h>
++#include <camlib.h>
++#include <cam/scsi/scsi_message.h>
++#include <glib.h>
++
++#include "cam-cdrom.h"
++
++struct _BRASEROCDROM
++{
++  struct cam_device	*cam;		/* for SCSI drives */
++  int                    fd;
++};
++
++BRASEROCDROM *
++brasero_cdrom_new (const char *path)
++{
++  BRASEROCDROM *cdrom = NULL;
++  struct cam_device *cam;
++  int fd;
++
++  g_assert(path != NULL);
++
++  /* brasero_open_device() fails unless we use O_RDWR */
++  cam = cam_open_device(path, O_RDWR);
++  fd = open(path, O_RDONLY | O_NONBLOCK);
++  if (cam && fd > -1)
++    {
++      cdrom = g_new0(BRASEROCDROM, 1);
++      cdrom->cam = cam;
++      cdrom->fd = fd;
++    }
++
++  return cdrom;
++}
++
++gboolean
++brasero_cdrom_send_ccb (BRASEROCDROM *cdrom,
++		    const char *ccb,
++		    int ccb_len,
++		    BRASEROCDROMDirection direction,
++		    void *data,
++		    int len,
++		    char **err)
++{
++  int timeout;
++
++  g_assert(cdrom != NULL);
++  g_assert(ccb != NULL);
++  g_assert(direction == BRASERO_CDROM_DIRECTION_NONE
++	 || direction == BRASERO_CDROM_DIRECTION_IN
++	 || direction == BRASERO_CDROM_DIRECTION_OUT);
++  g_assert(direction == BRASERO_CDROM_DIRECTION_NONE || data != NULL);
++
++  timeout = 10;
++
++  union ccb cam_ccb;
++  static int scsi_direction[] = { CAM_DIR_NONE, CAM_DIR_IN, CAM_DIR_OUT };
++
++  memset(&cam_ccb, 0, sizeof(cam_ccb));
++
++  cam_ccb.ccb_h.path_id = cdrom->cam->path_id;
++  cam_ccb.ccb_h.target_id = cdrom->cam->target_id;
++  cam_ccb.ccb_h.target_lun = cdrom->cam->target_lun;
++
++  cam_fill_csio(&cam_ccb.csio,
++		1,
++		NULL,
++		scsi_direction[direction],
++		MSG_SIMPLE_Q_TAG,
++		data,
++		len,
++		sizeof(cam_ccb.csio.sense_data),
++		ccb_len,
++		timeout * 1000);
++
++  memcpy(cam_ccb.csio.cdb_io.cdb_bytes, ccb, 16);
++
++  if (cam_send_ccb(cdrom->cam, &cam_ccb) == -1)
++    {
++      if (err)
++        *err = g_strdup_printf("cam_send_ccb() failure: %s", g_strerror(errno));
++    }
++  if ((cam_ccb.ccb_h.status & CAM_STATUS_MASK) != CAM_REQ_CMP)
++    {
++      if (err)
++        *err = g_strdup_printf("CCB request failed with status %i", cam_ccb.ccb_h.status & CAM_STATUS_MASK);
++      return FALSE;
++    }
++
++  return TRUE;
++}
++
++gboolean
++brasero_cdrom_test_unit_ready (BRASEROCDROM *cdrom)
++{
++  static char ccb[16] = { BRASERO_CDROM_TEST_UNIT_READY };
++
++  g_assert(cdrom != NULL);
++
++  return brasero_cdrom_send_ccb(cdrom, ccb, 6, BRASERO_CDROM_DIRECTION_NONE, NULL, 0, NULL);
++}
++
++int
++brasero_cdrom_get_fd (BRASEROCDROM *cdrom)
++{
++  g_assert(cdrom != NULL);
++
++  return (cdrom->fd);
++}
++
++void
++brasero_cdrom_free (BRASEROCDROM *cdrom)
++{
++  g_assert(cdrom != NULL);
++
++  if (cdrom->cam)
++    cam_close_device(cdrom->cam);
++
++  close(cdrom->fd);
++
++  g_free(cdrom);
++}
+--- /dev/null	2008-02-03 13:11:45.000000000 -0500
++++ src/cam/freebsd_dvd_rw_utils.c	2008-02-03 13:30:36.000000000 -0500
+@@ -0,0 +1,1075 @@
++/* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 8; tab-width: 8 -*-
++ *
++ * This is part of dvd+rw-tools by Andy Polyakov <appro@fy.chalmers.se>
++ *
++ * Use-it-on-your-own-risk, GPL bless...
++ *
++ * For further details see http://fy.chalmers.se/~appro/linux/DVD+RW/
++*/
++
++#include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
++#include <sys/types.h>
++
++#include <glib.h>
++
++#include "freebsd_dvd_rw_utils.h"
++
++typedef enum {
++	NONE = BRASERO_CDROM_DIRECTION_NONE,
++	READ = BRASERO_CDROM_DIRECTION_IN,
++	WRITE = BRASERO_CDROM_DIRECTION_OUT
++} Direction;
++
++typedef struct ScsiCommand ScsiCommand;
++
++struct ScsiCommand {
++	BRASEROCDROM		*cdrom;
++	char			ccb[16];
++	int			len;
++};
++
++static ScsiCommand *
++scsi_command_new_from_cdrom (BRASEROCDROM *cdrom)
++{
++	ScsiCommand *cmd;
++
++	cmd = g_new0 (ScsiCommand, 1);
++	cmd->cdrom = cdrom;
++
++	return cmd;
++}
++
++static void
++scsi_command_free (ScsiCommand * cmd)
++{
++	free (cmd);
++}
++
++static void
++scsi_command_init (ScsiCommand * cmd, size_t i, int arg)
++{
++	cmd->ccb[i] = arg;
++	if (i == 0 || i >= cmd->len)
++		cmd->len = i + 1;
++}
++
++static int
++scsi_command_transport (ScsiCommand * cmd, Direction dir, void *buf,
++			size_t sz)
++{
++	if (brasero_cdrom_send_ccb(cmd->cdrom, cmd->ccb, cmd->len, dir, buf, sz, NULL))
++		return 0;
++	else
++		return -1;
++}
++
++int
++brasero_cdrom_get_dvd_r_rw_profile (BRASEROCDROM *cdrom)
++{
++	ScsiCommand *cmd;
++	int retval = 0;
++	unsigned char page[20];
++	unsigned char *list;
++	int i, len;
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	scsi_command_init (cmd, 0, 0x46);
++	scsi_command_init (cmd, 1, 2);
++	scsi_command_init (cmd, 8, 8);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, page, 8)) {
++		/* GET CONFIGURATION failed */
++		scsi_command_free (cmd);
++		return -1;
++	}
++
++	/* See if it's 2 gen drive by checking if DVD+R profile is an option */
++	len = 4 + (page[0] << 24 | page[1] << 16 | page[2] << 8 | page[3]);
++	if (len > 264) {
++		scsi_command_free (cmd);
++		/* insane profile list length */
++		return -1;
++	}
++
++	list = g_new (unsigned char, len);
++
++	scsi_command_init (cmd, 0, 0x46);
++	scsi_command_init (cmd, 1, 2);
++	scsi_command_init (cmd, 7, len >> 8);
++	scsi_command_init (cmd, 8, len);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, list, len)) {
++		/* GET CONFIGURATION failed */
++		scsi_command_free (cmd);
++		free (list);
++		return -1;
++	}
++
++	for (i = 12; i < list[11]; i += 4) {
++		int profile = (list[i] << 8 | list[i + 1]);
++		/* 0x13: DVD-RW Restricted Overwrite
++		 * 0x14: DVD-RW Sequential
++		 * 0x1B: DVD+R
++		 * 0x1A: DVD+RW
++		 * 0x2A: DVD+RW DL
++		 * 0x2B: DVD+R DL
++		 * 0x40: BD-ROM
++		 * 0x41: BD-R SRM
++		 * 0x42: BD-R RRM
++		 * 0x43: BD-RE
++		 * 0x50: HD DVD-ROM
++		 * 0x51: HD DVD-R
++		 * 0x52: HD DVD-Rewritable
++		 */
++
++		switch (profile) {
++			case 0x13:
++			case 0x14:
++				retval |= DRIVE_CDROM_CAPS_DVDRW;
++				break;
++			case 0x1B:
++				retval |= DRIVE_CDROM_CAPS_DVDPLUSR;
++				break;
++			case 0x1A:
++				retval |= DRIVE_CDROM_CAPS_DVDPLUSRW;
++				break;
++			case 0x2A:
++				retval |= DRIVE_CDROM_CAPS_DVDPLUSRWDL;
++				break;
++			case 0x2B:
++				retval |= DRIVE_CDROM_CAPS_DVDPLUSRDL;
++				break;
++			case 0x40:
++				retval |= DRIVE_CDROM_CAPS_BDROM;
++				break;
++			case 0x41:
++			case 0x42:
++				retval |= DRIVE_CDROM_CAPS_BDR;
++				break;
++			case 0x43:
++				retval |= DRIVE_CDROM_CAPS_BDRE;
++				break;
++			case 0x50:
++				retval |= DRIVE_CDROM_CAPS_HDDVDROM;
++				break;
++			case 0x51:
++				retval |= DRIVE_CDROM_CAPS_HDDVDR;
++				break;
++			case 0x52:
++				retval |= DRIVE_CDROM_CAPS_HDDVDRW;
++				break;
++			default:
++				break;
++		}
++	}
++
++	scsi_command_free (cmd);
++	free (list);
++
++	return retval;
++
++}
++
++static unsigned char *
++pull_page2a_from_cdrom (BRASEROCDROM *cdrom)
++{
++	ScsiCommand *cmd;
++	unsigned char header[12], *page2A;
++	unsigned int len, bdlen;
++
++	g_return_val_if_fail (cdrom != NULL, NULL);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	scsi_command_init (cmd, 0, 0x5A);	/* MODE SENSE */
++	scsi_command_init (cmd, 1, 0x08);	/* Disable Block Descriptors */
++	scsi_command_init (cmd, 2, 0x2A);	/* Capabilities and Mechanical Status */
++	scsi_command_init (cmd, 8, sizeof (header));	/* header only to start with */
++	scsi_command_init (cmd, 9, 0);
++
++	if (scsi_command_transport (cmd, READ, header, sizeof (header))) {
++		/* MODE SENSE failed */
++		scsi_command_free (cmd);
++		return NULL;
++	}
++
++	len = (header[0] << 8 | header[1]) + 2;
++	bdlen = header[6] << 8 | header[7];
++
++	/* should never happen as we set "DBD" above */
++	if (bdlen) {
++		if (len < (8 + bdlen + 30)) {
++			/* LUN impossible to bear with */
++			scsi_command_free (cmd);
++			return NULL;
++		}
++	} else if (len < (8 + 2 + (unsigned int) header[9])) {
++		/* SANYO does this. */
++		len = 8 + 2 + header[9];
++	}
++
++	page2A = g_new (unsigned char, len);
++	if (page2A == NULL) {
++		/* ENOMEM */
++		scsi_command_free (cmd);
++		return NULL;
++	}
++
++	scsi_command_init (cmd, 0, 0x5A);	/* MODE SENSE */
++	scsi_command_init (cmd, 1, 0x08);	/* Disable Block Descriptors */
++	scsi_command_init (cmd, 2, 0x2A);	/* Capabilities and Mechanical Status */
++	scsi_command_init (cmd, 7, len >> 8);
++	scsi_command_init (cmd, 8, len);	/* Real length */
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, page2A, len)) {
++		/* MODE SENSE failed */
++		scsi_command_free (cmd);
++		free (page2A);
++		return NULL;
++	}
++
++	scsi_command_free (cmd);
++
++	len -= 2;
++	/* paranoia */
++	if (len < ((unsigned int) page2A[0] << 8 | page2A[1])) {
++		page2A[0] = len >> 8;
++		page2A[1] = len;
++	}
++
++	return page2A;
++}
++
++static int
++int_compare (const void *a, const void *b)
++{
++	/* descending order */
++	return *((int *) b) - *((int *) a);
++}
++
++/* gets the list of supported write speeds.  in the event
++ * that anything goes wrong, returns NULL.
++ */
++static char *
++get_write_speeds (const unsigned char *p, int length, int max_speed)
++{
++	char *result, *str;
++	int nr_records;
++	int *tmpspeeds;
++	int i, j;
++
++	result = NULL;
++
++	/* paranoia */
++	if (length < 32)
++		return NULL;
++
++	nr_records = p[30] << 8 | p[31];
++
++	/* paranoia */
++	if (length < 32 + 4 * nr_records)
++		return NULL;
++
++	tmpspeeds = g_new (int, nr_records);
++
++	for (i = 0; i < nr_records; i++)
++	{
++		tmpspeeds[i] = p[4*i + 34] << 8 | p[4*i + 35];
++
++		/* i'm not sure how likely this is to show up, but it's
++		 * definitely wrong.  if we see it, abort.
++		 */
++		if (tmpspeeds[i] == 0)
++			goto free_tmpspeeds;
++	}
++
++	/* sort */
++	qsort (tmpspeeds, nr_records, sizeof (int), int_compare);
++
++	/* uniq */
++	for (i = j = 0; i < nr_records; i++)
++	{
++		tmpspeeds[j] = tmpspeeds[i];
++
++		/* make sure we don't look past the end of the array */
++		if (i >= (nr_records - 1) || tmpspeeds[i+1] != tmpspeeds[i])
++			j++;
++	}
++
++	/* j is now the number of unique entries in the array */
++	if (j == 0)
++		/* no entries?  this isn't right. */
++		goto free_tmpspeeds;
++
++	/* sanity check: the first item in the descending order
++	 * list ought to be the highest speed as detected through
++	 * other means
++	 */
++	if (tmpspeeds[0] != max_speed)
++		/* sanity check failed. */
++		goto free_tmpspeeds;
++
++	/* our values are 16-bit.  8 bytes per value
++	 * is more than enough including space for
++	 * ',' and '\0'.  we know j is not zero.
++	 */
++	result = str = g_new (char, 8 * j);
++
++	for (i = 0; i < j; i++)
++	{
++		if (i > 0)
++			*(str++) = ',';
++
++		str += sprintf (str, "%d", tmpspeeds[i]);
++	}
++
++free_tmpspeeds:
++	free (tmpspeeds);
++
++	return result;
++}
++
++int
++brasero_cdrom_get_read_write_speed (BRASEROCDROM *cdrom, int *read_speed, int *write_speed, char **write_speeds)
++{
++	unsigned char *page2A;
++	int len, hlen;
++	unsigned char *p;
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++
++	*read_speed = 0;
++	*write_speed = 0;
++	*write_speeds = NULL;
++
++	page2A = pull_page2a_from_cdrom (cdrom);
++	if (page2A == NULL) {
++		printf ("Failed to get Page 2A\n");
++		/* Failed to get Page 2A */
++		return -1;
++	}
++
++	len = (page2A[0] << 8 | page2A[1]) + 2;
++	hlen = 8 + (page2A[6] << 8 | page2A[7]);
++	p = page2A + hlen;
++
++	/* Values guessed from the cd_mode_page_2A struct
++	 * in cdrecord's libscg/scg/scsireg.h */
++	if (len < (hlen + 30) || p[1] < (30 - 2)) {
++		/* no MMC-3 "Current Write Speed" present,
++		 * try to use the MMC-2 one */
++		if (len < (hlen + 20) || p[1] < (20 - 2))
++			*write_speed = 0;
++		else
++			*write_speed = p[18] << 8 | p[19];
++	} else {
++		*write_speed = p[28] << 8 | p[29];
++	}
++
++	if (len >= hlen+9)
++	    *read_speed = p[8] << 8 | p[9];
++	else
++	    *read_speed = 0;
++
++	*write_speeds = get_write_speeds (p, len, *write_speed);
++
++	free (page2A);
++
++	return 0;
++}
++
++
++static int
++get_disc_capacity_cd (BRASEROCDROM *cdrom, guint64 *size)
++{
++	ScsiCommand *cmd;
++	int retval;
++	guint64 block_size;
++	guint64 num_blocks;
++	unsigned char header [8];
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++
++	retval = -1;
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++	scsi_command_init (cmd, 0, 0x25);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, header, 8)) {
++		/* READ CDROM CAPACITY failed */
++		goto done;
++	}
++
++	num_blocks = (header [0] << 24) | (header [1] << 16) | (header [2] << 8) | header [3];
++	num_blocks++;
++	block_size = header [4] << 24 | header [5] << 16 | header [6] << 8 | header [7];
++
++	if (size) {
++		*size = num_blocks * block_size;
++	}
++	retval = 0;
++
++ done:
++	scsi_command_free (cmd);
++
++	return retval;
++}
++
++static int
++get_disc_capacity_cdr (BRASEROCDROM *cdrom, guint64 *size)
++{
++	ScsiCommand *cmd;
++	int retval;
++	guint64 secs;
++	unsigned char toc [8];
++	unsigned char *atip;
++	int len;
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++
++	retval = -1;
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++	/* READ_TOC */
++	scsi_command_init (cmd, 0, 0x43);
++	/* FMT_ATIP */
++	scsi_command_init (cmd, 2, 4 & 0x0F);
++	scsi_command_init (cmd, 6, 0);
++	scsi_command_init (cmd, 8, 4);
++	scsi_command_init (cmd, 9, 0);
++
++	if (scsi_command_transport (cmd, READ, toc, 4)) {
++		/* READ TOC failed */
++		goto done;
++	}
++
++	len = 2 + (toc [0] << 8 | toc [1]);
++
++	atip = g_new (unsigned char, len);
++
++	scsi_command_init (cmd, 0, 0x43);
++	scsi_command_init (cmd, 2, 4 & 0x0F);
++	scsi_command_init (cmd, 6, 0);
++	scsi_command_init (cmd, 7, len >> 8);
++	scsi_command_init (cmd, 8, len);
++	scsi_command_init (cmd, 9, 0);
++
++	if (scsi_command_transport (cmd, READ, atip, len)) {
++		/* READ TOC failed */
++		free (atip);
++		goto done;
++	}
++
++	secs = atip [12] * 60 + atip [13] + (atip [14] / 75 + 1);
++
++	if (size) {
++		*size = (1 + secs * 7 / 48) * 1024 * 1024;
++	}
++	retval = 0;
++
++	free (atip);
++ done:
++	scsi_command_free (cmd);
++
++	return retval;
++}
++
++static int
++get_disc_capacity_dvdr_from_type (BRASEROCDROM *cdrom, int type, guint64 *size)
++{
++	ScsiCommand *cmd;
++	unsigned char formats [260];
++	unsigned char buf [32];
++	guint64 blocks;
++	guint64 nwa;
++	int i;
++	int len;
++	int obligatory;
++	int retval;
++	int next_track;
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++
++	retval = -1;
++	blocks = 0;
++	next_track = 1;
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++ retry:
++	if (type == 0x1A || type == 0x14 || type == 0x13 || type == 0x12) {
++
++		/* READ FORMAT CAPACITIES */
++		scsi_command_init (cmd, 0, 0x23);
++		scsi_command_init (cmd, 8, 12);
++		scsi_command_init (cmd, 9, 0);
++		if (scsi_command_transport (cmd, READ, formats, 12)) {
++			/* READ FORMAT CAPACITIES failed */
++			goto done;
++		}
++
++		len = formats [3];
++		if (len & 7 || len < 16) {
++			/* Length isn't sane */
++			goto done;
++		}
++
++		scsi_command_init (cmd, 0, 0x23);
++		scsi_command_init (cmd, 7, (4 + len) >> 8);
++		scsi_command_init (cmd, 8, (4 + len) & 0xFF);
++		scsi_command_init (cmd, 9, 0);
++		if (scsi_command_transport (cmd, READ, formats, 4 + len)) {
++			/* READ FORMAT CAPACITIES failed */
++			goto done;
++		}
++
++		if (len != formats [3]) {
++			/* Parameter length inconsistency */
++			goto done;
++		}
++	}
++
++	obligatory = 0x00;
++
++	switch (type) {
++    	case 0x1A:		/* DVD+RW */
++		obligatory = 0x26;
++	case 0x13:		/* DVD-RW Restricted Overwrite */
++	case 0x14:		/* DVD-RW Sequential */
++		for (i = 8, len = formats [3]; i < len; i += 8) {
++			if ((formats [4 + i + 4] >> 2) == obligatory) {
++				break;
++			}
++		}
++
++		if (i == len) {
++			/* Can't find obligatory format descriptor */
++			goto done;
++		}
++
++		blocks  = formats [4 + i + 0] << 24;
++		blocks |= formats [4 + i + 1] << 16;
++		blocks |= formats [4 + i + 2] << 8;
++		blocks |= formats [4 + i + 3];
++		nwa = formats [4 + 5] << 16 | formats [4 + 6] << 8 | formats [4 + 7];
++		if (nwa > 2048) {
++			blocks *= nwa / 2048;
++		} else if (nwa < 2048) {
++			blocks /= 2048 / nwa;
++		}
++
++		retval = 0;
++		break;
++
++	case 0x12:		/* DVD-RAM */
++
++		blocks  = formats [4 + 0] << 24;
++		blocks |= formats [4 + 1] << 16;
++		blocks |= formats [4 + 2] << 8;
++		blocks |= formats [4 + 3];
++		nwa = formats [4 + 5] << 16 | formats [4 + 6] << 8 | formats [4 + 7];
++		if (nwa > 2048) {
++			blocks *= nwa / 2048;
++		} else if (nwa < 2048) {
++			blocks /= 2048 / nwa;
++		}
++
++		retval = 0;
++		break;
++
++	case 0x11:		/* DVD-R */
++	case 0x1B:		/* DVD+R */
++	case 0x2B:		/* DVD+R Double Layer */
++	case 0x41:		/* BD-R SRM */
++
++		/* READ TRACK INFORMATION */
++		scsi_command_init (cmd, 0, 0x52);
++		scsi_command_init (cmd, 1, 1);
++		scsi_command_init (cmd, 4, next_track >> 8);
++		scsi_command_init (cmd, 5, next_track & 0xFF);
++		scsi_command_init (cmd, 8, sizeof (buf));
++		scsi_command_init (cmd, 9, 0);
++		if (scsi_command_transport (cmd, READ, buf, sizeof (buf))) {
++			/* READ TRACK INFORMATION failed */
++			if (next_track > 0) {
++				goto done;
++			} else {
++				next_track = 1;
++				goto retry;
++			}
++		}
++
++		blocks = buf [24] << 24;
++		blocks |= buf [25] << 16;
++		blocks |= buf [26] << 8;
++		blocks |= buf [27];
++
++		retval = 0;
++		break;
++	case 0x43:	/* DB-RE */
++		/* Pull the formatted capacity */
++		blocks  = formats [4 + 0] << 24;
++		blocks |= formats [4 + 1] << 16;
++		blocks |= formats [4 + 2] << 8;
++		blocks |= formats [4 + 3];
++		break;
++	default:
++		blocks = 0;
++		break;
++	}
++
++ done:
++	scsi_command_free (cmd);
++
++	if (size) {
++		*size = blocks * 2048;
++	}
++
++	return retval;
++}
++
++int
++brasero_cdrom_get_disc_capacity_for_type (BRASEROCDROM *cdrom, int type, guint64 *size)
++{
++	int retval;
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++
++	retval = -1;
++
++	switch (type) {
++	case 0x8:
++		retval = get_disc_capacity_cd (cdrom, size);
++		break;
++	case 0x9:
++	case 0xa:
++		retval = get_disc_capacity_cdr (cdrom, size);
++		break;
++	case 0x10:
++		retval = get_disc_capacity_cd (cdrom, size);
++		break;
++	case 0x11:
++	case 0x13:
++	case 0x14:
++	case 0x1B:
++	case 0x2B:
++	case 0x1A:
++	case 0x12:
++	case 0x41:
++	case 0x43:
++		retval = get_disc_capacity_dvdr_from_type (cdrom, type, size);
++		break;
++	default:
++		retval = -1;
++	}
++
++	return retval;
++}
++
++int
++brasero_cdrom_get_disc_type (BRASEROCDROM *cdrom)
++{
++	ScsiCommand *cmd;
++	int retval = -1;
++	unsigned char header[8];
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	scsi_command_init (cmd, 0, 0x46);
++	scsi_command_init (cmd, 1, 1);
++	scsi_command_init (cmd, 8, 8);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, header, 8)) {
++		/* GET CONFIGURATION failed */
++		scsi_command_free (cmd);
++		return -1;
++	}
++
++	retval = (header[6]<<8)|(header[7]);
++
++
++	scsi_command_free (cmd);
++	return retval;
++}
++
++int
++brasero_cdrom_get_configuration_feature (BRASEROCDROM *cdrom,
++				  	 int feature,
++				  	 unsigned char **buf)
++{
++	ScsiCommand *cmd;
++	int retval = 0;
++	int len;
++	unsigned char header[8];
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++	g_return_val_if_fail (buf != NULL, -1);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	scsi_command_init (cmd, 0, 0x46);
++	scsi_command_init (cmd, 1, 2);
++	scsi_command_init (cmd, 2, feature >> 8);
++	scsi_command_init (cmd, 3, feature);
++	scsi_command_init (cmd, 8, 8);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, header, 8)) {
++		scsi_command_free (cmd);
++		return -1;
++	}
++
++	len = 4 + (header[0] << 24 | header[1] << 16 | header[2] << 8 | header[3]);
++	if (len > 264) {
++		scsi_command_free (cmd);
++		return -1;
++	}
++
++	*buf = g_new (unsigned char, len);
++
++	scsi_command_init (cmd, 0, 0x46);
++	scsi_command_init (cmd, 1, 2);
++	scsi_command_init (cmd, 2, feature >> 8);
++	scsi_command_init (cmd, 3, feature);
++	scsi_command_init (cmd, 7, len >> 8);
++	scsi_command_init (cmd, 8, len);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, *buf, len)) {
++		g_free (*buf);
++		*buf = NULL;
++		retval = -1;
++	}
++
++	scsi_command_free (cmd);
++
++	return retval;
++}
++
++int
++brasero_cdrom_read_disc_information_std (BRASEROCDROM *cdrom,
++				         unsigned char *buf)
++{
++	ScsiCommand *cmd;
++	int retval = 0;
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++	g_return_val_if_fail (buf != NULL, -1);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	/* see section 5.19 of MMC-3 from http://www.t10.org/drafts.htm#mmc3 */
++	scsi_command_init (cmd, 0, 0x51); /* READ_DISC_INFORMATION */
++	scsi_command_init (cmd, 8, 32);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, buf, 32)) {
++		retval = -1;
++	}
++
++	scsi_command_free (cmd);
++	return retval;
++}
++
++int
++brasero_cdrom_read_track_info (BRASEROCDROM *cdrom,
++			       int track_num,
++			       unsigned char *buf,
++			       int size)
++{
++	ScsiCommand *cmd;
++	int retval = 0;
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++	g_return_val_if_fail (buf != NULL, -1);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	scsi_command_init (cmd, 0, 0x52);
++	scsi_command_init (cmd, 1, 1);
++	scsi_command_init (cmd, 4, track_num >> 8);
++	scsi_command_init (cmd, 5, track_num & 0xFF);
++	scsi_command_init (cmd, 8, size);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, buf, size)) {
++		retval = -1;
++	}
++
++	scsi_command_free (cmd);
++	return retval;
++}
++
++int
++brasero_cdrom_read_toc_formatted (BRASEROCDROM *cdrom,
++				  int track_num,
++				  unsigned char **buf)
++{
++	ScsiCommand *cmd;
++	int retval = 0;
++	int len;
++	unsigned char header[4];
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++	g_return_val_if_fail (buf != NULL, -1);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	scsi_command_init (cmd, 0, 0x43);
++	scsi_command_init (cmd, 2, 0);
++	scsi_command_init (cmd, 6, track_num);
++	scsi_command_init (cmd, 8, 4);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, header, 4)) {
++		scsi_command_free (cmd);
++		*buf = NULL;
++		return -1;
++	}
++
++	len = (header[0] << 8 | header[1]) + 2;
++
++	*buf = g_malloc0 (len);
++
++	scsi_command_init (cmd, 8, len);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, *buf, len)) {
++		g_free (*buf);
++		*buf = NULL;
++		retval = -1;
++	}
++
++	scsi_command_free (cmd);
++	return retval;
++}
++
++int
++brasero_cdrom_read_toc_raw (BRASEROCDROM *cdrom,
++			    int track_num,
++			    unsigned char **buf)
++{
++	ScsiCommand *cmd;
++	int retval = 0;
++	int len;
++	unsigned char header[4];
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++	g_return_val_if_fail (buf != NULL, -1);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	scsi_command_init (cmd, 0, 0x43);
++	scsi_command_init (cmd, 2, 2);
++	scsi_command_init (cmd, 6, track_num);
++	scsi_command_init (cmd, 8, 4);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, header, 4)) {
++		scsi_command_free (cmd);
++		*buf = NULL;
++		return -1;
++	}
++
++	len = (header[0] << 8 | header[1]) + 2;
++
++	*buf = g_malloc0 (len);
++
++	scsi_command_init (cmd, 8, len);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, *buf, len)) {
++		g_free (*buf);
++		*buf = NULL;
++		retval = -1;
++	}
++
++	scsi_command_free (cmd);
++	return retval;
++}
++
++int
++brasero_cdrom_read_atip (BRASEROCDROM *cdrom,
++			 unsigned char **buf)
++{
++	ScsiCommand *cmd;
++	int retval = 0;
++	int len;
++	unsigned char header[4];
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++	g_return_val_if_fail (buf != NULL, -1);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	scsi_command_init (cmd, 0, 0x43);
++	scsi_command_init (cmd, 2, 4);
++	scsi_command_init (cmd, 6, 0);
++	scsi_command_init (cmd, 8, 4);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, header, 4)) {
++		scsi_command_free (cmd);
++		*buf = NULL;
++		return -1;
++	}
++
++	len = (header[0] << 8 | header[1]) + 2;
++
++	*buf = g_malloc0 (len);
++
++	scsi_command_init (cmd, 8, len);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, *buf, len)) {
++		g_free (*buf);
++		*buf = NULL;
++		retval = -1;
++	}
++
++	scsi_command_free (cmd);
++	return retval;
++}
++
++int
++brasero_cdrom_read_format_capacities (BRASEROCDROM *cdrom,
++			 	      unsigned char **buf)
++{
++	ScsiCommand *cmd;
++	int retval = 0;
++	int len;
++	unsigned char header[12];
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++	g_return_val_if_fail (buf != NULL, -1);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	scsi_command_init (cmd, 0, 0x23);
++	scsi_command_init (cmd, 8, 12);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, header, 12)) {
++		/* READ FORMAT CAPACITIES failed */
++		return -1;
++	}
++
++	len = header [3];
++	if (len & 7 || len < 16) {
++		/* Length isn't sane */
++		return -1;
++	}
++
++	*buf = g_new (unsigned char, len + 4);
++
++	scsi_command_init (cmd, 0, 0x23);
++	scsi_command_init (cmd, 7, (4 + len) >> 8);
++	scsi_command_init (cmd, 8, (4 + len) & 0xFF);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, *buf, 4 + len)) {
++		/* READ FORMAT CAPACITIES failed */
++		g_free (*buf);
++		*buf = NULL;
++		retval = -1;
++	}
++
++	return retval;
++}
++
++int
++brasero_cdrom_get_performance_wrt_spd_desc (BRASEROCDROM *cdrom,
++			    		    unsigned char **buf)
++{
++	ScsiCommand *cmd;
++	int retval = 0;
++	int len;
++	int desc_num;
++	unsigned char header[8];
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++	g_return_val_if_fail (buf != NULL, -1);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	scsi_command_init (cmd, 0, 0xac);
++	scsi_command_init (cmd, 8, 0);
++	scsi_command_init (cmd, 9, 0);
++	scsi_command_init (cmd, 10, 3);
++	scsi_command_init (cmd, 11, 0);
++	if (scsi_command_transport (cmd, READ, header, 8)) {
++		scsi_command_free (cmd);
++		*buf = NULL;
++		return -1;
++	}
++
++	len = (header[0] << 24 | header[1] << 16 | header[2] << 8 | header[3]) + 4;
++	if (len > 2048) {
++		len = 2048;
++	}
++
++	desc_num = (len - 8) / 12;
++
++	*buf = g_malloc0 (len);
++
++	scsi_command_init (cmd, 8, desc_num >> 8);
++	scsi_command_init (cmd, 9, desc_num);
++	scsi_command_init (cmd, 11, 0);
++	if (scsi_command_transport (cmd, READ, *buf, len)) {
++		g_free (*buf);
++		*buf = NULL;
++		retval = -1;
++	}
++
++	scsi_command_free (cmd);
++	return retval;
++}
++
++int
++brasero_cdrom_disc_is_appendable (BRASEROCDROM *cdrom)
++{
++	ScsiCommand *cmd;
++	int retval = -1;
++	unsigned char header[32];
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	/* see section 5.19 of MMC-3 from http://www.t10.org/drafts.htm#mmc3 */
++	scsi_command_init (cmd, 0, 0x51); /* READ_DISC_INFORMATION */
++	scsi_command_init (cmd, 8, 32);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, header, 32)) {
++		/* READ_DISC_INFORMATION failed */
++		scsi_command_free (cmd);
++		return 0;
++	}
++
++	retval = ((header[2]&0x03) == 0x01);
++
++	scsi_command_free (cmd);
++	return retval;
++}
++
++int
++brasero_cdrom_disc_is_rewritable (BRASEROCDROM *cdrom)
++{
++	ScsiCommand *cmd;
++	int retval = -1;
++	unsigned char header[32];
++
++	g_return_val_if_fail (cdrom != NULL, -1);
++
++	cmd = scsi_command_new_from_cdrom (cdrom);
++
++	/* see section 5.19 of MMC-3 from http://www.t10.org/drafts.htm#mmc3 */
++	scsi_command_init (cmd, 0, 0x51); /* READ_DISC_INFORMATION */
++	scsi_command_init (cmd, 8, 32);
++	scsi_command_init (cmd, 9, 0);
++	if (scsi_command_transport (cmd, READ, header, 32)) {
++		/* READ_DISC_INFORMATION failed */
++		scsi_command_free (cmd);
++		return 0;
++	}
++
++	retval = ((header[2]&0x10) != 0);
++
++	scsi_command_free (cmd);
++	return retval;
++}
