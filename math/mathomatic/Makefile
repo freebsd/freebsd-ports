@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mathomatic
-PORTVERSION=	12.8.5
+PORTVERSION=	12.8.6
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/ \
 		http://critical.ch/distfiles/ \
