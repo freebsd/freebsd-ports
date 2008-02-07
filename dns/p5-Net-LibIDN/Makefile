@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-LibIDN
-PORTVERSION=	0.09
+PORTVERSION=	0.10
 CATEGORIES=	dns perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	domi@saargate.de
+MAINTAINER=	domi@nonsensss.de
 COMMENT=	This module provides access to the libidn library
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
