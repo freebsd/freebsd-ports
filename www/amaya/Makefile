@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	9.51
-PORTREVISION=	1
+PORTVERSION=	9.55
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/ \
@@ -19,7 +18,7 @@ MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.ntua.gr/pub/www/W3C/amaya/ \
 		ftp://nic.funet.fi/index/WWW/W3/amaya/ \
 		http://www.nic.funet.fi/index/WWW/W3/amaya/
-DISTNAME=	${PORTNAME}-fullsrc-${PORTVERSION}
+DISTNAME=	${PORTNAME}-fullsrc-${PORTVERSION}-2
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	adam-ports@blacktabby.org
@@ -28,8 +27,6 @@ COMMENT=	The W3C's testbed web editor/browser
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
-
-BROKEN=		Checksum mismatch
 
 WRKSRC=		${WRKDIR}/Amaya/obj
 
@@ -46,9 +43,7 @@ OPTIONS=	BOOKMARKS "Enable bookmark support (experimental)" off \
 		OPENGL "Enable OpenGL support" off \
 		TEMPLATES "Enable template support (experimental)" off
 
-REALVERSION=	8.8.51
-DATADIR=	${PREFIX}/Amaya-${REALVERSION}
-PLIST_SUB=	REALVERSION="${REALVERSION}"
+DATADIR=	${PREFIX}/Amaya
 
 .include <bsd.port.pre.mk>
 
