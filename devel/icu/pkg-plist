@@ -24,7 +24,9 @@ include/layout/LETypes.h
 include/layout/LayoutEngine.h
 include/layout/ParagraphLayout.h
 include/layout/RunArrays.h
+include/layout/loengine.h
 @dirrm include/layout
+include/unicode/basictz.h
 include/unicode/brkiter.h
 include/unicode/calendar.h
 include/unicode/caniter.h
@@ -40,6 +42,8 @@ include/unicode/dcfmtsym.h
 include/unicode/decimfmt.h
 include/unicode/docmain.h
 include/unicode/dtfmtsym.h
+include/unicode/dtptngen.h
+include/unicode/dtrule.h
 include/unicode/fieldpos.h
 include/unicode/fmtable.h
 include/unicode/format.h
@@ -51,14 +55,15 @@ include/unicode/measure.h
 include/unicode/msgfmt.h
 include/unicode/normlzr.h
 include/unicode/numfmt.h
-include/unicode/ppalmos.h
 include/unicode/parseerr.h
 include/unicode/parsepos.h
 include/unicode/platform.h
+include/unicode/ppalmos.h
 include/unicode/putil.h
 include/unicode/pwin32.h
 include/unicode/rbbi.h
 include/unicode/rbnf.h
+include/unicode/rbtz.h
 include/unicode/regex.h
 include/unicode/rep.h
 include/unicode/resbund.h
@@ -73,6 +78,8 @@ include/unicode/symtable.h
 include/unicode/tblcoll.h
 include/unicode/timezone.h
 include/unicode/translit.h
+include/unicode/tzrule.h
+include/unicode/tztrans.h
 include/unicode/ubidi.h
 include/unicode/ubrk.h
 include/unicode/ucal.h
@@ -91,6 +98,7 @@ include/unicode/ucsdet.h
 include/unicode/ucurr.h
 include/unicode/udat.h
 include/unicode/udata.h
+include/unicode/udatpg.h
 include/unicode/udeprctd.h
 include/unicode/udraft.h
 include/unicode/uenum.h
@@ -137,6 +145,7 @@ include/unicode/utrace.h
 include/unicode/utrans.h
 include/unicode/utypes.h
 include/unicode/uversion.h
+include/unicode/vtzone.h
 @dirrm include/unicode
 lib/icu/%%ICUVER%%/Makefile.inc
 lib/icu/current
@@ -165,7 +174,6 @@ lib/libsicuio.a
 lib/libicuio.so.%%ICUMAJOR%%.%%ICUMINOR%%
 lib/libicuio.so
 lib/libicuio.so.%%ICUMAJOR%%
-lib/libsicutu.a
 lib/libicutu.so.%%ICUMAJOR%%.%%ICUMINOR%%
 lib/libicutu.so.%%ICUMAJOR%%
 lib/libicutu.so

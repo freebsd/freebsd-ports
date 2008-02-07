@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	icu
-PORTVERSION=	3.6
+PORTVERSION=	3.8.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
-		ftp://ftp.software.ibm.com/software/globalization/icu/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 DISTNAME=	icu4c-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	-src.tgz
@@ -17,7 +16,7 @@ EXTRACT_SUFX=	-src.tgz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	International Components for Unicode (from IBM)
 
-OPTIONS=	THREADS "Build multi-threaded version of the library" off
+OPTIONS=	THREADS "Build thread-safe version of the library" on
 CONFLICTS=	icu2-[0-9]*
 
 INSTALLS_SHLIB=		yes
@@ -30,6 +29,7 @@ CONFIGURE_ARGS+=	${OPSYS}
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--enable-samples=no
+ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 USE_GMAKE=		yes
 
@@ -49,7 +49,7 @@ MAN8+=	gensprep.8
 MAN8+=	genuca.8
 
 ICUMAJOR=	${PORTVERSION:S/.//:R}
-PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUMINOR=0
+PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUMINOR=1
 PLIST_SUB+=	ICUVER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
@@ -62,12 +62,13 @@ CXXFLAGS:=	${CXXFLAGS:N-funroll-loops:N-O*:N-*strict-aliasing} -O2 -fno-strict-a
 .endif
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
-.if defined(WITH_THREADS)
-CONFIGURE_ARGS+=	--enable-threads=yes
+.if defined(WITHOUT_THREADS)
+CONFIGURE_ARGS+=	--enable-threads=no
+.else
+# This builds thread-safe, but not the thread-using version:
+CONFIGURE_ARGS+=	--enable-weak-threads
 post-patch:
 	${REINPLACE_CMD} -e 's,\(THREADSC.*FLAGS\).*,\1=${PTHREAD_CFLAGS},g' ${WRKSRC}/config/mh-bsd-gcc
-.else
-CONFIGURE_ARGS+=	--enable-threads=no
 .endif
 
 iotest cintltst intltest:
