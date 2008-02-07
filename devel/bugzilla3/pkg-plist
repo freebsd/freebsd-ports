@@ -51,6 +51,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/modules-manual-download.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules-manual-instructions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules-manual-optional.html
+%%PORTDOCS%%%%DOCSDIR%%/html/multiple-bz-dbs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/myaccount.html
 %%PORTDOCS%%%%DOCSDIR%%/html/newversions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/nonroot.html
@@ -84,7 +85,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/versions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/voting.html
 %%PORTDOCS%%%%DOCSDIR%%/html/whining.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x834.html
 %%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.xml
 %%PORTDOCS%%%%DOCSDIR%%/images/callouts/1.gif
