@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xterm
-PORTVERSION=	229
-PORTREVISION=	1
+PORTVERSION=	232
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		http://voodoo.bawue.com/download/
@@ -30,7 +29,7 @@ CONFIGURE_ARGS+=--enable-wide-chars --enable-luit --with-utempter \
 CONFIGURE_ARGS+=	--enable-256-color
 .endif
 
-MAN1=		resize.1 xterm.1
+MAN1=		resize.1 koi8rxterm.1 uxterm.1 xterm.1
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/xterm
