@@ -1,0 +1,8 @@
+FCheck is an open source PERL script providing intrusion detection and policy
+enforcement of Windows 95/98/NT/3.x and Unix server administration through the
+use of comparative system snapshots. FCheck can provide notification of any
+differences found through use of your event management system, printer, and/or
+email when any monitored files or directories are altered, including any
+additions and/or deletions.
+
+WWW:	http://www.geocities.com/fcheck2000/

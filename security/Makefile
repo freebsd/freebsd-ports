@@ -129,6 +129,7 @@
     SUBDIR += fakebo
     SUBDIR += fakeident
     SUBDIR += fakeroot
+    SUBDIR += fcheck
     SUBDIR += fcrackzip
     SUBDIR += fiked
     SUBDIR += find-zlib
