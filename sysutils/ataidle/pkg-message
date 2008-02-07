@@ -1,0 +1,14 @@
+Note: ataidle options and rc startup settings
+      have changed in version 2.
+
+Add the following lines to /etc/rc.conf to enable ataidle:
+
+ataidle_enable (bool): set to NO by default.
+         Set to YES to enable ataidle.
+ataidle_devices: list of devices on which to run ataidle
+ataidle_adX: parameters to pass to ataidle(8)
+
+Example:
+ataidle_enable="YES"
+ataidle_devices="ad0"
+ataidle_ad0="-I 60 -S 120 -A 127 -P 254"
