@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ataidle
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cran.org.uk/bruce/software/
 
@@ -16,7 +15,7 @@ COMMENT=	Utility to spin down ATA drives
 
 USE_RC_SUBR=	${PORTNAME}
 MAN8=		ataidle.8
-PORTDOCS=	COPYING ChangeLog README
+PORTDOCS=	COPYING Changelog README
 PLIST_FILES=	sbin/ataidle
 
 do-install:
@@ -27,10 +26,13 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 501105
-IGNORE=		requires FreeBSD 5.2 or newer
+.if ${OSVERSION} < 600034
+IGNORE=		requires FreeBSD 6.1 or newer
 .endif
 
 .include <bsd.port.post.mk>
