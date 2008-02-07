@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openser
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	net
 MASTER_SITES=	http://openser.org/pub/openser/${PORTVERSION}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-tls_src
@@ -33,11 +33,11 @@ PLIST_FILES=	sbin/openser sbin/openserctl sbin/openserunix \
 
 PLIST_DIRS=	lib/openser/modules lib/openser/openserctl lib/openser
 
-MODULES=	acc alias_db auth auth_db auth_diameter avpops cpl-c dbtext \
+MODULES=	acc alias_db auth auth_db avpops cpl-c dbtext \
 		dialog dispatcher diversion domain domainpolicy enum exec flatstore \
 		gflags group imc lcr mangler maxfwd mediaproxy mi_fifo msilo \
-		nathelper options pa path pdt permissions pike presence pua pua_mi \
-		pua_usrloc registrar rr seas siptrace sl sms speeddial sst statistics \
+		nathelper options pa path pdt permissions pike \
+		registrar rr siptrace sl sms speeddial sst statistics \
 		textops tm uac uac_redirect uri \
 		uri_db usrloc xlog
 
@@ -63,7 +63,8 @@ OPTIONS=	MYSQL "MySQL support" on \
 		POSTGRESQL "PostgreSQL support" off \
 		UNIXODBC "UnixODBC support" off \
 		TLS "TLS support" off \
-		SNMPSTATS "SNMPStats support" off
+		SNMPSTATS "SNMPStats support" off \
+		AUTHRADIUS "auth_radius module" off
 
 .include <bsd.port.pre.mk>
 
@@ -123,6 +124,14 @@ RUN_DEPENDS+=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp
 MODULES+=	snmpstats
 .else
 MAKE_ENV+=	SNMPSTATS=snmpstats
+.endif
+
+.if defined(WITH_AUTHRADIUS)
+USE_AUTHRADIUS=	yes
+MODULES+=	auth_radius
+PLIST_FILES+=	lib/openser/modules/auth_radius.so
+.else
+MAKE_ENV+=	AUTHRADIUS=auth_radius
 .endif
 
 PLIST_FILES+=	${MODULES:S|^|lib/openser/modules/|:S|$|.so|} \
