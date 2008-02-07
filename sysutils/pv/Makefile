@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pv
-PORTVERSION=	0.9.6
+PORTVERSION=	1.1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	pipeviewer
 
 MAINTAINER=	daniel@roe.ch
@@ -18,21 +18,44 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/pv
 MAN1=		pv.1
-INFO=		pv
-PORTDOCS=	README NEWS TODO manual.html
+PLIST_FILES=	bin/pv
+PORTDOCS=	README COPYING INSTALL NEWS PACKAGE \
+		TODO VERSION release-checklist
+OPTIONS=	DEBUG "Enable debug support" off \
+		PROFILER "Enable profiling support" off \
+		LFS "Enable LFS support" on \
+		NLS "Use Native Language Support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debugging
+.endif
+.if defined(WITH_PROFILER)
+CONFIGURE_ARGS+=	--enable-profiling
+.endif
+.if defined(WITHOUT_LFS)
+CONFIGURE_ARGS+=	--disable-lfs
+.endif
+.if defined(WITH_NLS)
+CONFIGURE_ARGS+=	--enable-static-nls
+.else
+CONFIGURE_ARGS+=	--disable-nls
+.endif
 
 post-patch:
 	@${CP} ${WRKSRC}/README ${WRKSRC}/doc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pv ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/quickref.1 ${PREFIX}/man/man1/pv.1
-	${INSTALL_DATA} ${WRKSRC}/doc/pv.info ${PREFIX}/${INFO_PATH}
+	${INSTALL_PROGRAM} ${WRKSRC}/pv ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/doc/quickref.1 ${MAN1PREFIX}/man/man1/pv.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+test:
+	cd ${WRKSRC} && make test
+
+.include <bsd.port.post.mk>
