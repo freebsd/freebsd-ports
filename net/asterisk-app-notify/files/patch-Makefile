@@ -1,33 +1,27 @@
---- Makefile.orig	Fri Mar 23 21:14:57 2007
-+++ Makefile	Sat Mar 24 00:09:09 2007
-@@ -9,7 +9,7 @@
+--- Makefile.orig	Thu Feb  1 04:08:39 2007
++++ Makefile	Thu Oct 25 00:05:18 2007
+@@ -7,6 +7,7 @@
+ #
+ 
  NAME=app_notify
- CONF=dialer_extensions.conf
++CONF=extensions_dialer.conf
  
--CFLAGS=-g -Wall -D_REENTRANT -D_GNU_SOURCE -fPIC
-+CFLAGS+= -g -Wall -D_REENTRANT -D_GNU_SOURCE -fPIC -I$(LOCALBASE)/include
- LIBS=
- RES=$(NAME).so
- 
-@@ -19,7 +19,7 @@
- SOLINK=-shared -Xlinker -x
+ CC=gcc
+ CFLAGS=$(shell ./cflags.sh)
+@@ -21,7 +22,7 @@
+ 	CC=gcc -arch ppc -arch i386
+ else
+   SOLINK=-shared -Xlinker -x
+-  MODULES_DIR=/usr/lib/asterisk/modules
++  MODULES_DIR=$(LOCALBASE)/lib/asterisk/modules
  endif
  
--MODULES_DIR=/usr/lib/asterisk/modules
-+MODULES_DIR=$(PREFIX)/lib/asterisk/modules
- 
- app_notify.so : app_notify.o
- 	$(CC) $(SOLINK) -o $@ $<
-@@ -30,10 +30,9 @@
+ RES=$(NAME).so
+@@ -35,6 +36,7 @@
  	rm -f $(NAME).o $(NAME).so notifyClient.o notifyClient sampleClient
  
  install: all
--	if ! [ -f /etc/asterisk/$(CONF) ]; then \
--		install -m 644 $(CONF).sample /etc/asterisk/$(CONF) ; \
--	fi
-+	install -m 644 $(CONF).sample $(PREFIX)/etc/asterisk/$(CONF).sample ; \
++	install -m 644 $(CONF).sample $(LOCALBASE)/etc/asterisk/$(CONF).sample ; \
  	if [ -f $(NAME).so ]; then \
-+		mkdir -p $(MODULES_DIR) ; \
  		install -m 755 $(NAME).so $(MODULES_DIR) ; \
  	fi
- 
