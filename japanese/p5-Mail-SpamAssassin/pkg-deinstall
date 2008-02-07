@@ -3,27 +3,15 @@
 if [ "$2" != "POST-DEINSTALL" ]; then
     exit 0
 fi
+
 if [ -d /var/db/spamassassin ]; then
-	echo "To delete /var/db/spamassassin, use 'rm -rf /var/db/spamassassin'"
+        echo "To delete /var/db/spamassassin, use 'rm -rf /var/db/spamassassin'"
 fi
 
 USER=spamd
-GROUP=${USER}
 
 if pw usershow "${USER}" 2>/dev/null 1>&2; then
-	if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
-		echo "To delete ${USER} user permanently, use 'rmuser ${USER}'"
-	else
-		pw userdel ${USER}
-	fi
-fi
-
-if pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
-	if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
-		echo "To delete the ${GROUP} group permanently, use 'pw groupdel ${GROUP}'."
-	else
-		pw groupdel ${GROUP}
-	fi
+	echo "To delete ${USER} user permanently, use 'rmuser ${USER}'"
 fi
 
 exit 0
