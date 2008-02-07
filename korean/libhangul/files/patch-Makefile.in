@@ -1,6 +1,6 @@
---- ../libhangul-0.0.6_orig/Makefile.in	2007-07-10 22:09:15.000000000 +0900
-+++ Makefile.in	2007-11-02 23:19:46.000000000 +0900
-@@ -190,7 +190,7 @@
+--- ../libhangul-0.0.7_orig/Makefile.in	2008-01-31 23:42:08.000000000 +0900
++++ Makefile.in	2008-02-04 02:51:19.000000000 +0900
+@@ -191,7 +191,7 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = hangul data bindings test
