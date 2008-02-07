@@ -6,19 +6,33 @@
 #
 
 PORTNAME=	katalog
-PORTVERSION=	0.3
-PORTREVISION=	4
+PORTVERSION=	0.4
 CATEGORIES=	misc kde
 MASTER_SITES=	http://salvaste.altervista.org/files/
+
+PATCH_SITES=	http://www.realtime.sk/~stromek/kde/katalog/
+PATCHFILES=	katalog.cmake.diff
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD organizer for KDE
 
-USE_KDEBASE_VER=3
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
+BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+
+USE_KDEBASE_VER=	3
+USE_SQLITE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' \
+		${WRKSRC}/cmake/modules/FindSQLite3.cmake
+	@${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/qt3/|lib/|g' \
+		${WRKSRC}/libqsqlite3/CMakeLists.txt
+	@${ECHO_CMD} 'macro_add_compile_flags( katalog "-fPIC" )' \
+		>> ${WRKSRC}/libkatalog/CMakeLists.txt
+	@${ECHO_CMD} 'macro_add_compile_flags( katalogxml "-fPIC" )' \
+		>> ${WRKSRC}/xml_backend/libkatalogxml/CMakeLists.txt
+
+do-configure:
+	@cd ${CONFIGURE_WRKSRC} && ${LOCALBASE}/bin/cmake .
 
 .include <bsd.port.mk>
