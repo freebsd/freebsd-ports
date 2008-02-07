@@ -8,7 +8,7 @@
 PORTNAME=	deluge
 PORTVERSION=	0.5.8.3
 CATEGORIES=	net-p2p python
-MASTER_SITES=	http://download.deluge-torrent.org/tarball/${PORTVERSION}/
+MASTER_SITES=	http://ftp.osuosl.org/pub/deluge/source/${PORTVERSION}/
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A Bittorrent client, using Python, GTK+2 and Rasterbar libtorrent
