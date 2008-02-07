@@ -7,6 +7,7 @@
 
 PORTNAME=	parrot
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/R/RG/RGRJR/
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		bison:${PORTSDIR}/devel/bison \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
-		icudata.36:${PORTSDIR}/devel/icu
+		icudata:${PORTSDIR}/devel/icu
 
 USE_BISON=	build
 USE_GCC=	3.4+
