@@ -15361,6 +15361,7 @@ sqlite2		ports/databases/sqlite2
 sqlite3		ports/databases/sqlite3
 sqlite3-threads		ports/databases/sqlite3-threads
 sqlitemanager	ports/databases/sqlitemanager
+sqlninja	ports/security/sqlninja
 sqlrelay	ports/databases/sqlrelay
 sqsh		ports/databases/sqsh
 sqstat		ports/www/sqstat
