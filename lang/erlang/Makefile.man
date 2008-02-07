@@ -105,6 +105,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	cprof.3 \
 	cpu_sup.3 \
 	crashdump.3 \
+	crypto.3 \
 	ct.3 \
 	ct_cover.3 \
 	ct_ftp.3 \
@@ -247,6 +248,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	ms_transform.3 \
 	net_adm.3 \
 	net_kernel.3 \
+	new_ssl.3 \
 	nteventlog.3 \
 	odbc.3 \
 	orber.3 \
@@ -264,6 +266,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	overload.3 \
 	packages.3 \
 	percept.3 \
+	percept_profile.3 \
 	pg.3 \
 	pg2.3 \
 	pman.3 \
@@ -322,6 +325,8 @@ MAN3=	CosEventChannelAdmin.3 \
 	ssh_ssh.3 \
 	ssh_sshd.3 \
 	ssh_transport.3 \
+	ssl.3 \
+	ssl_pkix.3 \
 	string.3 \
 	supervisor.3 \
 	supervisor_bridge.3 \
@@ -359,11 +364,13 @@ MAN4=	app.4 \
 	script.4
 
 MAN6=	common_test.6 \
+	crypto.6 \
 	docbuilder.6 \
 	kernel.6 \
 	observer.6 \
 	runtime_tools.6 \
 	sasl.6 \
 	snmp.6 \
+	ssl.6 \
 	stdlib.6 \
 	test_server.6

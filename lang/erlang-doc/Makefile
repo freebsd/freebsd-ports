@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	erlang-doc
-PORTVERSION=	r12b0
+PORTVERSION=	r12b1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://erlang.org/doc/pdf/:release \
@@ -80,13 +80,11 @@ DISTFILES=	appmon.pdf:release \
 		programming_rules.pdf:erlangse \
 		armstrong_thesis_2003.pdf:joe \
 		master_thesis_patterns.pdf:local
-DIST_SUBDIR=	erlang
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Documentation (PDF) for the Erlang/OTP system
-
-BROKEN=		Checksum mismatch
 
 NO_BUILD=	yes
 
