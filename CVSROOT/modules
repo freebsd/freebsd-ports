@@ -14695,6 +14695,7 @@ rude		ports/net/rude
 rudeconfig	ports/devel/rudeconfig
 rudiments	ports/devel/rudiments
 runit		ports/sysutils/runit
+runsomebrowser	ports/www/runsomebrowser
 runwhen		ports/sysutils/runwhen
 rvi		ports/devel/rvi
 rvm		ports/devel/rvm
