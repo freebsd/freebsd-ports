@@ -4032,6 +4032,7 @@ gnometelnet	ports/net/gnometelnet
 gnomoradio	ports/audio/gnomoradio
 gnono		ports/games/gnono
 gnopernicus	ports/accessibility/gnopernicus
+gnormalize	ports/audio/gnormalize
 gnosamba	ports/net/gnosamba
 gnotepad+	ports/editors/gnotepad+
 gnotime		ports/deskutils/gnotime
