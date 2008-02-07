@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	parrot
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/J/JO/JONATHAN/
+MASTER_SITE_SUBDIR=	../../authors/id/R/RG/RGRJR/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages
@@ -19,8 +19,6 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		icudata.36:${PORTSDIR}/devel/icu
-
-BROKEN=		does not package
 
 USE_BISON=	build
 USE_GCC=	3.4+

@@ -16,8 +16,8 @@ compilers/tge/TGE/Parser.pbc
 compilers/tge/TGE/Rule.pbc
 compilers/tge/TGE/Tree.pbc
 compilers/tge/tgc.pir
-config/gen/cpu/i386/memcpy_mmx.c
-config/gen/cpu/i386/memcpy_sse.c
+config/auto/cpu/i386/memcpy_mmx.c
+config/auto/cpu/i386/memcpy_sse.c
 config/gen/platform/ansi/dl.c
 config/gen/platform/ansi/time.c
 config/gen/platform/darwin/memalign.c
@@ -337,7 +337,6 @@ libdata/pkgconfig/parrot.pc
 %%PARROT_DOCS%%/pdds/draft/pdd09_gc.pod
 %%PARROT_DOCS%%/pdds/draft/pdd10_embedding.pod
 %%PARROT_DOCS%%/pdds/draft/pdd11_extending.pod
-%%PARROT_DOCS%%/pdds/draft/pdd12_assembly.pod
 %%PARROT_DOCS%%/pdds/draft/pdd14_bignum.pod
 %%PARROT_DOCS%%/pdds/draft/pdd16_native_call.pod
 %%PARROT_DOCS%%/pdds/draft/pdd18_security.pod
@@ -357,6 +356,7 @@ libdata/pkgconfig/parrot.pc
 %%PARROT_DOCS%%/pdds/pdd24_events.pod
 %%PARROT_DOCS%%/pdds/pdd25_concurrency.pod
 %%PARROT_DOCS%%/pdds/pdd26_ast.pod
+%%PARROT_DOCS%%/pdds/pdd27_multiple_dispatch.pod
 %%PARROT_DOCS%%/pdds/pdd_template.pod
 %%PARROT_DOCS%%/pmc.pod
 %%PARROT_DOCS%%/pmc/array.pod
@@ -367,16 +367,17 @@ libdata/pkgconfig/parrot.pc
 %%PARROT_DOCS%%/porting_intro.pod
 %%PARROT_DOCS%%/project/cage_cleaners_guide.pod
 %%PARROT_DOCS%%/project/committer_guide.pod
+%%PARROT_DOCS%%/project/debian_packaging_guide.pod
 %%PARROT_DOCS%%/project/metacommitter_guide.pod
 %%PARROT_DOCS%%/project/pause_guide.pod
 %%PARROT_DOCS%%/project/release_manager_guide.pod
+%%PARROT_DOCS%%/project/roles_responsibilities.pod
 %%PARROT_DOCS%%/project/ticket_wrangler_guide.pod
 %%PARROT_DOCS%%/req/model_users.pod
 %%PARROT_DOCS%%/resources/favicon.ico
 %%PARROT_DOCS%%/resources/parrot_small.png
 %%PARROT_DOCS%%/resources/perl.css
 %%PARROT_DOCS%%/resources/up.gif
-%%PARROT_DOCS%%/roles_responsibilities.pod
 %%PARROT_DOCS%%/running.pod
 %%PARROT_DOCS%%/stability.pod
 %%PARROT_DOCS%%/stm/atomic.pod
@@ -787,9 +788,10 @@ tools/install/smoke.pl
 @dirrm config/gen/platform/darwin
 @dirrm config/gen/platform/ansi
 @dirrm config/gen/platform
-@dirrm config/gen/cpu/i386
-@dirrm config/gen/cpu
 @dirrm config/gen
+@dirrm config/auto/cpu/i386
+@dirrm config/auto/cpu
+@dirrm config/auto
 @dirrm config
 @dirrm compilers/tge/TGE
 @dirrm compilers/tge
