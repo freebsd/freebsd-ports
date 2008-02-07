@@ -2,8 +2,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/Resource.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/Resource.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/_find_prio.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/_find_rlimit.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/_g.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/get_prios.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/get_rlimits.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/getpriority.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSD/Resource/getrlimit.al
