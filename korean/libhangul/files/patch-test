@@ -1,7 +1,7 @@
-diff -urN ../libhangul-0.0.6_orig/test/Makefile.in test/Makefile.in
---- ../libhangul-0.0.6_orig/test/Makefile.in	2007-07-10 22:09:15.000000000 +0900
-+++ test/Makefile.in	2007-11-02 23:07:29.000000000 +0900
-@@ -183,9 +183,11 @@
+diff -urN ../libhangul-0.0.7_orig/test/Makefile.in test/Makefile.in
+--- ../libhangul-0.0.7_orig/test/Makefile.in	2008-01-31 23:21:44.000000000 +0900
++++ test/Makefile.in	2008-02-04 02:53:07.000000000 +0900
+@@ -184,9 +184,11 @@
  hangul_CFLAGS = 
  hangul_SOURCES = hangul.c
  hangul_LDADD = ../hangul/libhangul.la
@@ -13,7 +13,7 @@ diff -urN ../libhangul-0.0.6_orig/test/Makefile.in test/Makefile.in
  all: all-am
  
  .SUFFIXES:
-@@ -228,10 +230,10 @@
+@@ -229,10 +231,10 @@
  	done
  hangul$(EXEEXT): $(hangul_OBJECTS) $(hangul_DEPENDENCIES) 
  	@rm -f hangul$(EXEEXT)
@@ -26,15 +26,3 @@ diff -urN ../libhangul-0.0.6_orig/test/Makefile.in test/Makefile.in
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
-diff -urN ../libhangul-0.0.6_orig/test/hangul.c test/hangul.c
---- ../libhangul-0.0.6_orig/test/hangul.c	2007-03-21 22:21:29.000000000 +0900
-+++ test/hangul.c	2007-11-02 23:00:02.000000000 +0900
-@@ -2,7 +2,7 @@
- #include <stdlib.h>
- #include <string.h>
- #include <iconv.h>
--#include <endian.h>
-+#include <sys/endian.h>
- 
- #include "../hangul/hangul.h"
- 
