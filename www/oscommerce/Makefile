@@ -8,21 +8,22 @@
 #
 
 PORTNAME=	oscommerce
-DISTVERSION=	2.2rc1
+DISTVERSION=	2.2rc2a
 PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	http://oscommerce.sunsite.dk/downloads/
+MASTER_SITES=	http://www.oscommerce.com/ext/
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	vlad@vlad.uz.ua
 COMMENT=	An full-featured open source e-commerce system
 
 USE_ZIP=	yes
-USE_PHP=	mysql session pcre
+USE_PHP=	mysql session pcre gd curl openssl
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-DOCS=		CHANGELOG LICENSE STANDARD documentation.pdf upgrade.html
+DOCS=		CHANGELOG LICENSE STANDARD community_docs.pdf \
+			documentation.pdf upgrade.html
 
 do-install:
 	${MKDIR} ${WWWDIR}
