@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaws
-PORTVERSION=	1.73
+PORTVERSION=	1.75
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
 

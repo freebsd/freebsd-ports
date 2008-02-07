@@ -1,5 +1,6 @@
 bin/yaws
 etc/yaws.conf.sample
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/authmod_gssapi.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/haxe.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/json.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/jsonrpc.beam
@@ -45,6 +46,7 @@ etc/yaws.conf.sample
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/mime.types
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/soap.xsd
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/priv/wsdl.xsd
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/authmod_gssapi.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/haxe.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/json.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/jsonrpc.erl
