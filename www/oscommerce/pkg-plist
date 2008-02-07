@@ -1,6 +1,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/STANDARD
+%%PORTDOCS%%%%DOCSDIR%%/community_docs.pdf
 %%PORTDOCS%%%%DOCSDIR%%/documentation.pdf
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 %%WWWDIR%%/catalog/.htaccess
@@ -16,6 +17,7 @@
 %%WWWDIR%%/catalog/admin/.htaccess
 %%WWWDIR%%/catalog/admin/administrators.php
 %%WWWDIR%%/catalog/admin/backup.php
+%%WWWDIR%%/catalog/admin/backups/.htaccess
 %%WWWDIR%%/catalog/admin/banner_manager.php
 %%WWWDIR%%/catalog/admin/banner_statistics.php
 %%WWWDIR%%/catalog/admin/cache.php
@@ -45,7 +47,6 @@
 %%WWWDIR%%/catalog/admin/images/categories/tools.gif
 %%WWWDIR%%/catalog/admin/images/graph_hbar_blue.gif
 %%WWWDIR%%/catalog/admin/images/graph_hbar_red.gif
-%%WWWDIR%%/catalog/admin/images/graphs/.cvsignore
 %%WWWDIR%%/catalog/admin/images/graphs/dummy
 %%WWWDIR%%/catalog/admin/images/header_administration.gif
 %%WWWDIR%%/catalog/admin/images/header_checkout.gif
@@ -78,6 +79,7 @@
 %%WWWDIR%%/catalog/admin/images/oscommerce.png
 %%WWWDIR%%/catalog/admin/images/pixel_black.gif
 %%WWWDIR%%/catalog/admin/images/pixel_trans.gif
+%%WWWDIR%%/catalog/admin/includes/.htaccess
 %%WWWDIR%%/catalog/admin/includes/application_bottom.php
 %%WWWDIR%%/catalog/admin/includes/application_top.php
 %%WWWDIR%%/catalog/admin/includes/boxes/catalog.php
@@ -400,7 +402,6 @@
 %%WWWDIR%%/catalog/admin/includes/languages/german/tax_rates.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/whos_online.php
 %%WWWDIR%%/catalog/admin/includes/languages/german/zones.php
-%%WWWDIR%%/catalog/admin/includes/local/.cvsignore
 %%WWWDIR%%/catalog/admin/includes/local/README
 %%WWWDIR%%/catalog/admin/includes/modules/index/customers.php
 %%WWWDIR%%/catalog/admin/includes/modules/index/orders.php
@@ -450,7 +451,12 @@
 %%WWWDIR%%/catalog/download/.htaccess
 %%WWWDIR%%/catalog/download/unreal.zip
 %%WWWDIR%%/catalog/ext/modules/payment/chronopay/callback.php
-%%WWWDIR%%/catalog/ext/modules/payment/paypal/ipn.php
+%%WWWDIR%%/catalog/ext/modules/payment/paypal/express.php
+%%WWWDIR%%/catalog/ext/modules/payment/paypal/express_uk.php
+%%WWWDIR%%/catalog/ext/modules/payment/paypal/images/btn_express.gif
+%%WWWDIR%%/catalog/ext/modules/payment/paypal/images/btn_express_espanol.gif
+%%WWWDIR%%/catalog/ext/modules/payment/paypal/images/btn_express_german.gif
+%%WWWDIR%%/catalog/ext/modules/payment/paypal/standard_ipn.php
 %%WWWDIR%%/catalog/ext/modules/payment/sofortueberweisung/callback.php
 %%WWWDIR%%/catalog/ext/modules/payment/sofortueberweisung/images/sofortueberweisung.gif
 %%WWWDIR%%/catalog/ext/modules/payment/worldpay/junior_callback.php
@@ -687,16 +693,19 @@
 %%WWWDIR%%/catalog/includes/languages/english/modules/order_total/ot_subtotal.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/order_total/ot_tax.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/order_total/ot_total.php
-%%WWWDIR%%/catalog/includes/languages/english/modules/payment/authorizenet.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/authorizenet_cc_aim.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/authorizenet_cc_sim.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/cc.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/chronopay.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/cod.php
-%%WWWDIR%%/catalog/includes/languages/english/modules/payment/ipayment.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/ipayment_cc.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/moneyorder.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/nochex.php
-%%WWWDIR%%/catalog/includes/languages/english/modules/payment/paypal.php
-%%WWWDIR%%/catalog/includes/languages/english/modules/payment/paypal_ipn.php
-%%WWWDIR%%/catalog/includes/languages/english/modules/payment/payquake_cc.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/paypal_direct.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/paypal_express.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/paypal_standard.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/paypal_uk_direct.php
+%%WWWDIR%%/catalog/includes/languages/english/modules/payment/paypal_uk_express.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/pm2checkout.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/psigate.php
 %%WWWDIR%%/catalog/includes/languages/english/modules/payment/secpay.php
@@ -781,16 +790,19 @@
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/order_total/ot_subtotal.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/order_total/ot_tax.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/order_total/ot_total.php
-%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/authorizenet.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/authorizenet_cc_aim.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/authorizenet_cc_sim.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/cc.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/chronopay.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/cod.php
-%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/ipayment.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/ipayment_cc.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/moneyorder.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/nochex.php
-%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/paypal.php
-%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/paypal_ipn.php
-%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/payquake_cc.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/paypal_direct.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/paypal_express.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/paypal_standard.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/paypal_uk_direct.php
+%%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/paypal_uk_express.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/pm2checkout.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/psigate.php
 %%WWWDIR%%/catalog/includes/languages/espanol/modules/payment/secpay.php
@@ -875,16 +887,19 @@
 %%WWWDIR%%/catalog/includes/languages/german/modules/order_total/ot_subtotal.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/order_total/ot_tax.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/order_total/ot_total.php
-%%WWWDIR%%/catalog/includes/languages/german/modules/payment/authorizenet.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/authorizenet_cc_aim.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/authorizenet_cc_sim.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/cc.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/chronopay.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/cod.php
-%%WWWDIR%%/catalog/includes/languages/german/modules/payment/ipayment.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/ipayment_cc.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/moneyorder.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/nochex.php
-%%WWWDIR%%/catalog/includes/languages/german/modules/payment/paypal.php
-%%WWWDIR%%/catalog/includes/languages/german/modules/payment/paypal_ipn.php
-%%WWWDIR%%/catalog/includes/languages/german/modules/payment/payquake_cc.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/paypal_direct.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/paypal_express.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/paypal_standard.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/paypal_uk_direct.php
+%%WWWDIR%%/catalog/includes/languages/german/modules/payment/paypal_uk_express.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/pm2checkout.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/psigate.php
 %%WWWDIR%%/catalog/includes/languages/german/modules/payment/secpay.php
@@ -908,7 +923,6 @@
 %%WWWDIR%%/catalog/includes/languages/german/specials.php
 %%WWWDIR%%/catalog/includes/languages/german/ssl_check.php
 %%WWWDIR%%/catalog/includes/languages/german/tell_a_friend.php
-%%WWWDIR%%/catalog/includes/local/.cvsignore
 %%WWWDIR%%/catalog/includes/local/README
 %%WWWDIR%%/catalog/includes/modules/address_book_details.php
 %%WWWDIR%%/catalog/includes/modules/also_purchased_products.php
@@ -920,16 +934,19 @@
 %%WWWDIR%%/catalog/includes/modules/order_total/ot_subtotal.php
 %%WWWDIR%%/catalog/includes/modules/order_total/ot_tax.php
 %%WWWDIR%%/catalog/includes/modules/order_total/ot_total.php
-%%WWWDIR%%/catalog/includes/modules/payment/authorizenet.php
+%%WWWDIR%%/catalog/includes/modules/payment/authorizenet_cc_aim.php
+%%WWWDIR%%/catalog/includes/modules/payment/authorizenet_cc_sim.php
 %%WWWDIR%%/catalog/includes/modules/payment/cc.php
 %%WWWDIR%%/catalog/includes/modules/payment/chronopay.php
 %%WWWDIR%%/catalog/includes/modules/payment/cod.php
-%%WWWDIR%%/catalog/includes/modules/payment/ipayment.php
+%%WWWDIR%%/catalog/includes/modules/payment/ipayment_cc.php
 %%WWWDIR%%/catalog/includes/modules/payment/moneyorder.php
 %%WWWDIR%%/catalog/includes/modules/payment/nochex.php
-%%WWWDIR%%/catalog/includes/modules/payment/paypal.php
-%%WWWDIR%%/catalog/includes/modules/payment/paypal_ipn.php
-%%WWWDIR%%/catalog/includes/modules/payment/payquake_cc.php
+%%WWWDIR%%/catalog/includes/modules/payment/paypal_direct.php
+%%WWWDIR%%/catalog/includes/modules/payment/paypal_express.php
+%%WWWDIR%%/catalog/includes/modules/payment/paypal_standard.php
+%%WWWDIR%%/catalog/includes/modules/payment/paypal_uk_direct.php
+%%WWWDIR%%/catalog/includes/modules/payment/paypal_uk_express.php
 %%WWWDIR%%/catalog/includes/modules/payment/pm2checkout.php
 %%WWWDIR%%/catalog/includes/modules/payment/psigate.php
 %%WWWDIR%%/catalog/includes/modules/payment/secpay.php
@@ -1053,6 +1070,7 @@
 @dirrm %%WWWDIR%%/catalog/ext/modules/payment/worldpay
 @dirrm %%WWWDIR%%/catalog/ext/modules/payment/sofortueberweisung/images
 @dirrm %%WWWDIR%%/catalog/ext/modules/payment/sofortueberweisung
+@dirrm %%WWWDIR%%/catalog/ext/modules/payment/paypal/images
 @dirrm %%WWWDIR%%/catalog/ext/modules/payment/paypal
 @dirrm %%WWWDIR%%/catalog/ext/modules/payment/chronopay
 @dirrm %%WWWDIR%%/catalog/ext/modules/payment
@@ -1098,6 +1116,7 @@
 @dirrm %%WWWDIR%%/catalog/admin/ext/modules/payment
 @dirrm %%WWWDIR%%/catalog/admin/ext/modules
 @dirrm %%WWWDIR%%/catalog/admin/ext
+@dirrm %%WWWDIR%%/catalog/admin/backups
 @dirrm %%WWWDIR%%/catalog/admin
 @dirrm %%WWWDIR%%/catalog
 @dirrm %%WWWDIR%%
