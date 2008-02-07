@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	munin
 PKGNAMESUFFIX=	-main
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.r/rc/}
 
-MAINTAINER=	lupe@lupe-christoph.de
+MAINTAINER=	des@FreeBSD.org
 COMMENT=	Collector part of Munin
 
 USE_PERL5=	yes
