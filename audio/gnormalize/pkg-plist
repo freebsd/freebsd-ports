@@ -1,0 +1,18 @@
+bin/gnormalize
+%%DATADIR%%/animations/dancing_penguin.gif
+%%DATADIR%%/animations/penguin_cold.gif
+%%DATADIR%%/animations/penguin_ice.gif
+%%DATADIR%%/animations/super_tux.gif
+%%DATADIR%%/animations/penguin_and_camel.gif
+%%DATADIR%%/animations/penguin_computer.gif
+%%DATADIR%%/animations/penguin_typing.gif
+%%DATADIR%%/animations/tux_lunapaint.gif
+%%DATADIR%%/README
+share/icons/gnormalize.png
+share/icons/large/gnormalize.png
+share/icons/mini/gnormalize.png
+share/pixmaps/gnormalize.png
+@dirrmtry %%DATADIR%%/animations
+@dirrmtry %%DATADIR%%
+@dirrmtry share/icons/large
+@dirrmtry share/icons/mini

@@ -219,6 +219,7 @@
     SUBDIR += gnome-audio
     SUBDIR += gnome-media
     SUBDIR += gnomoradio
+    SUBDIR += gnormalize
     SUBDIR += gnowavcut
     SUBDIR += gnuitar
     SUBDIR += gnump3d
