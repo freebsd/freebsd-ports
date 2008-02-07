@@ -1,7 +1,5 @@
 bin/hello
-@unexec install-info --delete %D/info/hello.info %D/info/dir
-info/hello.info
-@exec install-info --dir-file=%D/info/dir --entry="* Hello: (hello).		Hello Reference Manual." %D/info/hello.info
+%%NLS%%share/locale/bg/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/da/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/de/LC_MESSAGES/hello.mo
@@ -9,9 +7,13 @@ info/hello.info
 %%NLS%%share/locale/el/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/es/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/es_AR/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/et/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/he/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/hello.mo
@@ -19,6 +21,7 @@ info/hello.info
 %%NLS%%share/locale/id/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/it/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/hello.mo
@@ -27,11 +30,18 @@ info/hello.info
 %%NLS%%share/locale/pl/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/hello.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/hello.mo
+%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es_AR
 %%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de_DE
