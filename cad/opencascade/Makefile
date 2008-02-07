@@ -25,6 +25,8 @@ LIB_DEPENDS=	itcl.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk		\
 		dps.0:${PORTSDIR}/x11/dgs
 
+BROKEN=		Does not compile
+
 USE_BZIP2=	yes
 USE_BISON=	build
 USE_XLIB=	yes
