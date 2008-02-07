@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	japanese mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${PATCH_SITES}
@@ -18,7 +18,8 @@ DIST_SUBDIR=	ja-spamassassin
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://spamassassin.jp/download/sa${PORTVERSION:R}/:JA
-PATCHFILES=	spamassassin-3.2.3-ja-test1.patch:JA
+PATCHFILES=	spamassassin-${PORTVERSION}-ja-${PATCHLEVEL}.patch:JA
+PATCHLEVEL=	test1
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	fmysh@iijmio-mail.jp
