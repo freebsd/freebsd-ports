@@ -2,6 +2,8 @@ bin/alensnns
 bin/alens-2.63
 bin/lensnns
 bin/lens-2.63
+etc/mri/lensnns.cshrc
+etc/mri/lensnns.profile
 %%DATADIR%%/Commands/addGroup.txt
 %%DATADIR%%/Commands/addLinkType.txt
 %%DATADIR%%/Commands/addNet.txt
@@ -232,3 +234,4 @@ bin/lens-2.63
 @dirrm %%DATADIR%%/Examples
 @dirrm %%DATADIR%%/Commands
 @dirrm %%DATADIR%%
+@dirrmtry etc/mri
