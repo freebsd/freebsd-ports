@@ -707,6 +707,7 @@
     SUBDIR += snortsms
     SUBDIR += snortsnarf
     SUBDIR += spike-proxy
+    SUBDIR += sqlninja
     SUBDIR += squidclam
     SUBDIR += srm
     SUBDIR += srp

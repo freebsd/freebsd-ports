@@ -1,0 +1,9 @@
+Sqlninja is a tool targeted to exploit SQL Injection vulnerabilities on
+a web application that uses Microsoft SQL Server as its back-end.
+
+Its main goal is to provide a remote shell on the vulnerable DB server,
+even in a very hostile environment. It should be used by penetration
+testers to help and automate the process of taking over a DB Server when
+a SQL Injection vulnerability has been discovered.
+
+WWW: http://sqlninja.sourceforge.net/
