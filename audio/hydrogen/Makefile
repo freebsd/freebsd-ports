@@ -44,12 +44,6 @@ OPTIONS=	JACK "JACK support" off \
 		LRDF "LRDF support" off \
 		FLAC "FLAC support" on
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
 CPPFLAGS+=	${PTHREAD_CFLAGS}
@@ -118,4 +112,4 @@ do-install:
 	${MKDIR} ${MAN1PREFIX}/man/ru.KOI8-R/man1
 	${INSTALL_MAN} ${WRKSRC}/man/ru/hydrogen.1 ${MAN1PREFIX}/man/ru.KOI8-R/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
