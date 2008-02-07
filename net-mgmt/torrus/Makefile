@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	torrus
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.6
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -52,16 +52,23 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		var_user=${TORRUS_USER} var_group=${TORRUS_USER} \
 		varprefix=${PREFIX}/var/torrus torrus_user=${TORRUS_USER} \
 		defrrddir=${PREFIX}/${TORRUS_RRDDIR} \
+		pkghome=${PREFIX}/share/torrus \
+		pkgbindir=${PREFIX}/libexec/torrus \
+		pkgdocdir=${PREFIX}/share/doc/torrus \
+		exmpdir=${PREFIX}/share/examples/torrus \
+		perllibdir=${SITE_PERL} \
+		scriptsdir=${PREFIX}/libexec/torrus/scripts \
 		--enable-pkgonly
 
-MAN1=		torrus.1 torrus_acledit.1 torrus_cleanup.1 torrus_clearcache.1 \
-		torrus_collector.1 torrus_compilexml.1 torrus_configinfo.1 \
+MAN1=		torrus.1 torrus_acledit.1 torrus_buildsearchdb.1 \
+		torrus_cleanup.1 torrus_clearcache.1 torrus_collector.1 \
+		torrus_compilexml.1 torrus_configinfo.1 \
 		torrus_configsnapshot.1 torrus_devdiscover.1 torrus_genddx.1 \
-		torrus_genlist.1 torrus_monitor.1 torrus_schedulerinfo.1 \
-		torrus_ttproclist.1 torrus_rrddir2xml.1
+		torrus_genlist.1 torrus_genreport.1 torrus_monitor.1 \
+		torrus_rrddir2xml.1 torrus_schedulerinfo.1 torrus_ttproclist.1
 
 MAN7=		torrus_action_printemail.7 torrus_action_snmptrap.7 \
-		torrus_action_notify.7
+		torrus_action_notify.7 torrus_install_plugin.7
 
 .include <bsd.port.pre.mk>
 
