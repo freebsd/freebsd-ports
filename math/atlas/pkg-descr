@@ -13,7 +13,7 @@ the usual -lblas.  Corresponding pure C versions of the ATLAS libraries are
 also included, in libcblas and libptcblas.
 
 The ATLAS-enhanced LAPACK routines are also provided.
-To link software with this library instead of the standard LAPACK, use 
+To link software with this library instead of the standard LAPACK, for example, use 
 -L/usr/local/lib/gcc-4.2.3 -L/usr/local/lib/gcc-4.2.3/gcc/i386-portbld-freebsd7.0/4.2.3 -lalapack -lf77blas -lcblas -latlas -lgfortranbegin -lgfortran -lm, or 
 -L/usr/local/lib/gcc-4.2.3 -L/usr/local/lib/gcc-4.2.3/gcc/i386-portbld-freebsd7.0/4.2.3 -lalapack_r -lptf77blas -lptcblas -latlas -lgfortranbegin -lgfortran
 -lm for the threaded library, in place of the usual -llapack.
