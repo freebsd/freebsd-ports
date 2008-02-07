@@ -10695,6 +10695,7 @@ p5-Net-Stomp	ports/net-im/p5-Net-Stomp
 p5-Net-Subnets	ports/net/p5-Net-Subnets
 p5-Net-TCLink	ports/net/p5-Net-TCLink
 p5-Net-Telnet	ports/net/p5-Net-Telnet
+p5-Net-Telnet-Cisco-IOS	ports/net-mgmt/p5-Net-Telnet-Cisco-IOS
 p5-Net-Telnet-Netscreen	ports/net/p5-Net-Telnet-Netscreen
 p5-Net-TiVo	ports/net/p5-Net-TiVo
 p5-Net-Traceroute	ports/net/p5-Net-Traceroute
