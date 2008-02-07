@@ -1,5 +1,5 @@
---- Makefile.defs.orig	Thu May 24 11:21:19 2007
-+++ Makefile.defs	Sat May 26 19:52:01 2007
+--- Makefile.defs.orig	Thu Dec 20 13:34:23 2007
++++ Makefile.defs	Wed Jan 30 14:58:46 2008
 @@ -131,7 +131,7 @@
  ifeq ($(ARCH_B),64b)
  	LIBDIR ?= lib64
@@ -34,7 +34,7 @@
  
  #add libssl if needed
  ifneq ($(TLS),)
--DEFS+= -I$(LOCALBASE)/ssl/include
+-DEFS+= -I$(LOCALBASE)/ssl/include -I$(LOCALBASE)/include
 -LIBS+= -L$(LOCALBASE)/lib -L$(LOCALBASE)/ssl/lib -lssl  -lcrypto
 +DEFS+= -I$(OPENSSLINC)
 +LIBS+= -L$(OPENSSLLIB) -lssl  -lcrypto
