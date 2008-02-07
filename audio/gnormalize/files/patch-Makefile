@@ -1,0 +1,68 @@
+--- Makefile.orig	2006-12-03 04:31:26.000000000 +0800
++++ Makefile	2008-02-07 13:09:06.000000000 +0800
+@@ -1,6 +1,5 @@
+ PREFIX=/usr
+ BINDIR=$(PREFIX)/bin
+-DOCDIR=$(PREFIX)/share/doc/gnormalize
+ ICONDIR=$(PREFIX)/share/icons
+ ICONDIR2=$(PREFIX)/share/pixmaps
+ LICONDIR=$(ICONDIR)/large
+@@ -8,8 +7,11 @@
+ BASE=$(PREFIX)/share/gnormalize
+ ANIMDIR=$(BASE)/animations
+ MANDIR=$(PREFIX)/share/man
++INSTALL_PROG=install -m 755 -o root -g wheel
++INSTALL_DATA=install -m 444 -o root -g wheel
+ 
+ DOCS=README
++MAN_PAGE=gnormalize.1
+ 
+ all:
+ clean:
+@@ -17,21 +19,22 @@
+ 
+ 
+ install: all
++	cat ${MAN_PAGE}.bz2 | bzip2 -d -- > ${MAN_PAGE}
+ 	mkdir -p "$(BINDIR)"
+ 	mkdir -p "$(ICONDIR)"
+ 	mkdir -p "$(ICONDIR2)"
++	mkdir -p "$(LICONDIR)"
++	mkdir -p "$(MICONDIR)"
+ 	mkdir -p "$(ANIMDIR)"
+-	mkdir -p "$(DOCDIR)"
+ 	mkdir -p "$(MANDIR)/man1/"
+-	install -Dm 755 gnormalize "$(BINDIR)/gnormalize"
+-	install -m 644 $(DOCS) "$(DOCDIR)/"
+-	install -m 644 $(DOCS) "$(BASE)/"
+-	install -m 644 gnormalize.1.bz2 "$(MANDIR)/man1/gnormalize.1.bz2"
++	$(INSTALL_PROG) gnormalize "$(BINDIR)/gnormalize"
++	$(INSTALL_DATA) $(DOCS) "$(BASE)/"
++	$(INSTALL_DATA) ${MAN_PAGE} "$(MANDIR)/man1/${MAN_PAGE}"
+ 	install -d "$(ANIMDIR)"
+-	install -m 644 animations/*.gif "$(ANIMDIR)/"	
+-	install -Dm 644 icons/gnormalize-32.png "$(ICONDIR)/gnormalize.png"
+-	install -Dm 644 icons/gnormalize-48.png "$(LICONDIR)/gnormalize.png"
+-	install -Dm 644 icons/gnormalize-16.png "$(MICONDIR)/gnormalize.png"
++	$(INSTALL_DATA) animations/*.gif "$(ANIMDIR)/"	
++	$(INSTALL_DATA) icons/gnormalize-32.png "$(ICONDIR)/gnormalize.png"
++	$(INSTALL_DATA) icons/gnormalize-48.png "$(LICONDIR)/gnormalize.png"
++	$(INSTALL_DATA) icons/gnormalize-16.png "$(MICONDIR)/gnormalize.png"
+ 	ln -sf "$(ICONDIR)/gnormalize.png" "$(ICONDIR2)/gnormalize.png"
+ 
+ postinstall:
+@@ -39,13 +42,12 @@
+ 
+ uninstall:
+ 	rm -f "$(BINDIR)/gnormalize"
+-	rm -f "$(MANDIR)/man1/gnormalize.1.bz2"
++	rm -f "$(MANDIR)/man1/gnormalize.1"
+ 	rm -f "$(ICONDIR)/gnormalize.png"
+ 	rm -f "$(LICONDIR)/gnormalize.png"
+ 	rm -f "$(MICONDIR)/gnormalize.png"
+ 	unlink "$(ICONDIR2)/gnormalize.png"
+ 	rm -rf "$(BASE)"
+-	rm -rf "$(PREFIX)/share/doc/gnormalize"
+ 
+ postuninstall:
+ 	update-menus

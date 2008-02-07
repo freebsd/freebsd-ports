@@ -1,0 +1,10 @@
+gnormalize decodes the MP3/MP4/MPC/OGG/APE/FLAC file to WAV,
+then normalizes the WAV to a targeted volume level and re-encodes
+it. Moreover, gnormalize can extract Audio CD track and output as
+various popular audio formats (MP3, MP4, MPC, OGG, APE, FLAC, WAV)
+with fast speed and high quality. gnormalize can also convert audio
+format between MP3, MP4, MPC, OGG, APE and FLAC with high fidelity,
+which meets your need to play and collect audio files. It can change
+the encoding and Metadata (tag) properties of final normalized files.
+
+WWW: http://gnormalize.sourceforge.net/
