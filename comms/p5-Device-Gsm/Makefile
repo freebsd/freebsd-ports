@@ -7,6 +7,7 @@
 
 PORTNAME=	Device-Gsm
 PORTVERSION=	1.48
+PORTREVISION=	1
 CATEGORIES=	comms perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Device
@@ -16,6 +17,7 @@ MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Perl interface to GSM phones/modems on serial ports
 
 BUILD_DEPENDS=	${SITE_PERL}/Device/Modem.pm:${PORTSDIR}/comms/p5-Device-Modem
+RUN_DEPENDS=	${SITE_PERL}/Device/Modem.pm:${PORTSDIR}/comms/p5-Device-Modem
 
 PERL_CONFIGURE=	yes
 
