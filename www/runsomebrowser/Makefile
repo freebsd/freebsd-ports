@@ -12,7 +12,7 @@ MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
-COMMENT=	Script for running the an  available WEB browser
+COMMENT=	Script for running the an available WEB browser
 
 NO_BUILD=	yes
 
