@@ -205,8 +205,8 @@ diff -u -r1.235 cserverdc.cpp
  /** return true if accept is allowed - override */
  bool cServerDC::AllowNewConn()
  {
--	return mConnList.size() <= (unsigned) mC.max_users_total + mC.max_extra_regs + mC.max_extra_vips + mC.max_extra_ops + mC.max_extra_cheefs + mC.max_extra_admins + 200;
-+	return mDCConnList.size() <= (unsigned) mC.max_users_total + mC.max_extra_regs + mC.max_extra_vips + mC.max_extra_ops + mC.max_extra_cheefs + mC.max_extra_admins + 200;
+-	return mConnList.size() <= (unsigned) mC.max_users_total + mC.max_extra_regs + mC.max_extra_vips + mC.max_extra_ops + mC.max_extra_cheefs + mC.max_extra_admins + 300;
++	return mDCConnList.size() <= (unsigned) mC.max_users_total + mC.max_extra_regs + mC.max_extra_vips + mC.max_extra_ops + mC.max_extra_cheefs + mC.max_extra_admins + 300;
  }
  
  int cServerDC::SaveFile(const string &file, const string &text)

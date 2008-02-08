@@ -21,8 +21,8 @@ diff -Nur verlihub-orig/src/cdbconf.h verlihub/src/cdbconf.h
  	string lang_name;
  	bool allow_exec;
 diff -Nur verlihub-orig/src/cmysql.cpp verlihub/src/cmysql.cpp
---- src/cmysql.cpp	2006-07-15 18:42:52.000000000 +0400
-+++ src/cmysql.cpp	2006-07-15 18:45:25.000000000 +0400
+--- src/cmysql.cpp.orig	Sun Jun 24 00:11:33 2007
++++ src/cmysql.cpp	Tue Jan 29 16:39:29 2008
 @@ -19,10 +19,10 @@
  /*!
      \fn nMySQL::cMySQL::cMySQL(string&host,string&user,string&pass,string&data)
@@ -37,7 +37,7 @@ diff -Nur verlihub-orig/src/cmysql.cpp verlihub/src/cmysql.cpp
      	throw "Mysql connection error.";
      }
 @@ -40,12 +40,13 @@
- 	if(!mDBHandle) Error(0, string("Can't init mysql structure :(.: "));
+ 	if(!mDBHandle) Error(0, string("Can't init mysql structure :(.: "));	
  }
  
 -bool cMySQL::Connect(string &host, string &user, string &pass, string &data)
@@ -45,13 +45,13 @@ diff -Nur verlihub-orig/src/cmysql.cpp verlihub/src/cmysql.cpp
  {
  	if(Log(1)) LogStream() << "Connecting to mysql server: "
 -			<< user << "@" << host << "/" << data << endl;
-+			<< user << "@" << host << "/" << data << "with charset " << charset << endl;
- 
++ 			<< user << "@" << host << "/" << data << "with charset " << charset << endl;
+ 	
  	mysql_options(mDBHandle,MYSQL_OPT_COMPRESS,0);
-+	mysql_options(mDBHandle,MYSQL_SET_CHARSET_NAME,charset.c_str());
++ 	mysql_options(mDBHandle,MYSQL_SET_CHARSET_NAME,charset.c_str());
+ 	
  	if(!mysql_real_connect(
  		mDBHandle,
- 		host.c_str(),
 diff -Nur verlihub-orig/src/cmysql.h verlihub/src/cmysql.h
 --- src/cmysql.h	2006-07-15 18:42:52.000000000 +0400
 +++ src/cmysql.h	2006-07-15 18:43:50.000000000 +0400
