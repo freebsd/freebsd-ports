@@ -42,6 +42,7 @@
     SUBDIR += auth_ldap
     SUBDIR += autoindex
     SUBDIR += autoindex2
+    SUBDIR += awffull
     SUBDIR += awstats
     SUBDIR += awstats-devel
     SUBDIR += axis
