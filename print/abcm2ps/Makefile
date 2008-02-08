@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	abcm2ps
-PORTVERSION=	5.7.3
+PORTVERSION=	5.7.4
 CATEGORIES=	print audio
 MASTER_SITES=	http://moinejf.free.fr/
 
@@ -20,7 +20,8 @@ PORTDOCS=	Changes README deco.abc journey.abc mtunes1.abc mtunes2.abc \
 		sample3.abc sample4.abc voices.abc sample3.eps features.txt \
 		format.txt options.txt
 PLIST_FILES=	bin/abcm2ps %%DATADIR%%/fbook.fmt %%DATADIR%%/fonts.fmt \
-		%%DATADIR%%/landscape.fmt %%DATADIR%%/tight.fmt
+		%%DATADIR%%/flute.fmt %%DATADIR%%/landscape.fmt \
+		%%DATADIR%%/tight.fmt
 PLIST_DIRS=	%%DATADIR%%
 
 do-install:
