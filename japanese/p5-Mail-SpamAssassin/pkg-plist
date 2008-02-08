@@ -7,13 +7,13 @@ bin/spamassassin
 bin/spamc
 bin/spamd
 @unexec rm -rf %D/etc/mail/spamassassin/sa-update-keys || true
-@unexec if cmp -s %B/tokenizer.pre.sample %B/tokenizer.pre; then rm -f %B/tokenizer.pre; fi
-etc/mail/spamassassin/tokenizer.pre.sample
-@exec [ -f %B/tokenizer.pre ] || cp %B/%f %B/tokenizer.pre
 etc/mail/spamassassin/local.cf.sample
 @unexec if cmp -s %B/init.pre.sample %B/init.pre; then rm -f %B/init.pre; fi
 etc/mail/spamassassin/init.pre.sample
 @exec [ -f %B/init.pre ] || cp %B/%f %B/init.pre
+@unexec if cmp -s %B/tokenizer.pre.sample %B/tokenizer.pre; then rm -f %B/tokenizer.pre; fi
+etc/mail/spamassassin/tokenizer.pre.sample
+@exec [ -f %B/tokenizer.pre ] || cp %B/%f %B/tokenizer.pre
 @unexec if cmp -s %B/v310.pre.sample %B/v310.pre; then rm -f %B/v310.pre; fi
 etc/mail/spamassassin/v310.pre.sample
 @exec [ -f %B/v310.pre ] || cp %B/%f %B/v310.pre
