@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.zenphoto.org/files/
 MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	A simpler web photo gallery
 
+FORBIDDEN=	XSS security issues, http://www.securityfocus.com/bid/27084
+
 USE_PHP=	mysql gd session
 WANT_PHP_WEB=	yes
 
