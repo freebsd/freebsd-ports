@@ -12,8 +12,11 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	daniel+aputils@pelleg.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of utilities to configure and monitor wireless access points
+
+DEPRECATED=		Does not work with gcc4.2; appears to be abandoned
+EXPIRATION_DATE=	2008-04-07
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
