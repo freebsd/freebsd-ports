@@ -17,13 +17,13 @@ DISTNAME=	fuse4bsd-${DISTVERSION}
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Kernel module for fuse
 
-USE_BZIP2=	yes
 BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	deplate:${PORTSDIR}/textproc/ruby-deplate
 .endif
 
+USE_BZIP2=	yes
 MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
 
 SRC_BASE?=	/usr/src
