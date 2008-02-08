@@ -18,6 +18,7 @@ bin/tslearn
 include/gcin-im-client.h
 lib/gtk-2.0/immodules/im-gcin.so
 lib/gcin1.so
+lib/gcin2.so
 lib/libgcin-im-client.so
 lib/libgcin-im-client.so.1.0.2
 lib/libgcin-im-client.so.1
@@ -52,8 +53,10 @@ lib/libgcin-im-client.so.1
 %%DATADIR%%/table/pinyin.kbm
 %%DATADIR%%/table/pinyin-asdf.kbm
 %%DATADIR%%/table/pin-juyin.xlt
+%%DATADIR%%/table/s2t.dat
 %%DATADIR%%/table/simplex.gtab
 %%DATADIR%%/table/symbol-table
+%%DATADIR%%/table/t2s.dat
 %%DATADIR%%/table/tsin-1.src
 %%DATADIR%%/table/tsin32
 %%DATADIR%%/table/tsin32.idx

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcin
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	chinese textproc gnome
 MASTER_SITES=	http://cle.linux.org.tw/gcin/download/:main \
 		http://ftp.twaren.net/local-distfiles/gcin/:main \
@@ -27,7 +27,9 @@ INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
 OPTIONS=	BOSHIAMY	"enable Boshiamy Input Method"	off
 
-MAN1=		gcin.1 gcin2tab.1
+MAN1=		gcin.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
+		gcin-message.1 gcin-setup.1 gtab-merge.1 juyin-learn.1 \
+		phoa2d.1 sim2trad.1 tsa2d32.1 tslearn.1
 
 .include <bsd.port.pre.mk>
 
