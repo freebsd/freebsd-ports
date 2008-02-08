@@ -40,11 +40,11 @@ VISUALIZATION_PLUGINS=	blur_scope sanalyzer opengl_spectrum
 PLIST_SUB+=	DATADIR="share"
 
 OPTIONS=	NLS 		"Internationalization" on \
-		IPV6		"Use ipv6" on \
-		VFILEINFO	"Extended Vorbis Fileinfo" off \
-		VORBIS		"Vorbis Plugin"	on \
-		MIKMOD		"Mikemod Plugin" on \
-		SIMD		"x86 SIMD (3DNow!/MMX)" on
+		IPV6		"Enable ipv6" on \
+		VFILEINFO	"Enable Extended Vorbis Fileinfo" off \
+		VORBIS		"Enable Vorbis Plugin"	on \
+		MIKMOD		"Enable Mikemod Plugin" on \
+		SIMD		"Enable x86 SIMD (3DNow!/MMX)" on
 
 .include <bsd.port.pre.mk>
 
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITH_IPV6)
+.if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
@@ -74,7 +74,7 @@ LIB_DEPENDS+=	rcd.1:${PORTSDIR}/devel/librcd
 CFLAGS+=	-DALL_VORBIS_TAGS
 .endif
 
-.if defined(WITH_MIKMOD)
+.if !defined(WITHOUT_MIKMOD)
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 INPUT_PLUGINS+=	mikmod
 PLIST_SUB+=	MIKMODPLUGIN:=""
@@ -83,7 +83,7 @@ CONFIGURE_ARGS+=	--disable-mikmod
 PLIST_SUB+=	MIKMODPLUGIN:="@comment "
 .endif
 
-.if defined(WITH_VORBIS)
+.if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 INPUT_PLUGINS+=	vorbis
 PLIST_SUB+=	VORBISPLUGIN:=""
@@ -105,7 +105,7 @@ PLIST_SUB+=	ESDPLUGIN:="@comment "
 WITHOUT_SIMD+=	yes
 .endif
 
-.if defined(WITH_SIMD)
+.if !defined(WITHOUT_SIMD)
 CONFIGURE_ARGS+=	--enable-simd
 .endif
 
@@ -151,7 +151,7 @@ post-patch:
 .  endfor
 .endif
 # If there is no esound installed, the autotools won't find a required macro
-.if !${HAVE_GNOME:Mesound}!=""
+.if ${HAVE_GNOME:Mesound}==""
 	${REINPLACE_CMD} -e '/AM_PATH_ESD/,/have_esd=no/d' ${WRKSRC}/configure.in
 .endif
 
