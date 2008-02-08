@@ -9,7 +9,6 @@ PORTNAME=	qdvdauthor
 PORTVERSION=	1.0.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
-DISTFILES=	${PORTNAME}-${PORTVERSION}-4${EXTRACT_SUFX}
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	QT graphical frontend for dvdauthor
