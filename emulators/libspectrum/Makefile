@@ -11,7 +11,7 @@ CATEGORIES=	emulators devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fuse-emulator
 
-MAINTAINER=	kemm@in-line.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Handling of ZX-Spectrum emulator files formats
 
 USE_AUTOTOOLS=	libtool:15
