@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080208:
+  AFFECTS: users of ports-mgmt/portupgrade
+  AUTHOR: sem@FreeBSD.org
+
+  As was claimed in an enrty 20070301 bellow in the file. You should fill
+  ALT_DEPENDS section of pkgtools.conf for portupgrade works correctly
+  with your alternative dependencies. Now it's an obligatory requirement.
+
+  It's was done as a compromise between speed and compexity.
+
 20080203:
   AFFECTS: users of www/xshttpd
   AUTHOR: johans@FreeBSD.org
