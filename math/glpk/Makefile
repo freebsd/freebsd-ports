@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	4.24
+PORTVERSION=	4.25
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -17,26 +17,23 @@ COMMENT=	A GNU Linear Programming Kit
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
-
-GMPL_H= 	glpavl.h glpdmp.h glplib.h glpmpl.h glprng.h glpstd.h
-GMPLDIR=	${LOCALBASE}/include/gmpl
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	bench.txt bench1.txt glpk.ps glpk_faq.txt gmpl.ps opb.txt
+PORTDOCS=	bench.txt bench1.txt glpk.ps glpk_faq.txt gmpl.ps \
+		gomory.djvu opb.txt
 .endif
 
 post-install:
-	@${MKDIR} ${GMPLDIR}
-	for incfile in ${GMPL_H} ; do \
-		${INSTALL_DATA} ${WRKSRC}/include/$${incfile} ${GMPLDIR} ; \
-	done
+	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/
 
 .if !defined(NOPORTDOCS)
+	@${CP} ${WRKSRC}/doc/memo/gomory.djvu ${WRKSRC}/doc/
 	@${MKDIR} ${DOCSDIR}
 	for docfile in ${PORTDOCS} ; do \
 		${INSTALL_MAN} ${WRKSRC}/doc/$${docfile} ${DOCSDIR} ; \
