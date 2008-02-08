@@ -113,6 +113,10 @@ CONFIGURE_ARGS+=--enable-snmp
 LIB_DEPENDS+=netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
+.if defined(WITH_TCPSOCKETS)
+CONFIGURE_ARGS+=--enable-tcp-zebra
+.endif
+
 .if defined(WITH_TCPMD5)
 EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.h ${PATCHDIR}/extra-tcpmd5-patch-vtysh-extract.pl.in
 CFLAGS+=	-DQUAGGA_TCP_MD5SIG
