@@ -14,6 +14,7 @@ lib/vile/vile-bat-filt
 lib/vile/vile-bnf-filt
 lib/vile/vile-c-filt
 lib/vile/vile-cfg-filt
+lib/vile/vile-conf-filt
 lib/vile/vile-crypt
 lib/vile/vile-css-filt
 lib/vile/vile-cweb-filt
@@ -107,6 +108,7 @@ share/vile/dcl.keywords
 share/vile/def.keywords
 share/vile/diff.keywords
 share/vile/digraphs.rc
+share/vile/docbook.keywords
 share/vile/ecl.keywords
 share/vile/esql.keywords
 share/vile/est.keywords

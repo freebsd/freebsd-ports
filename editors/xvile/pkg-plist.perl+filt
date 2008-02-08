@@ -23,6 +23,7 @@ lib/xvile/vile-basic-filt.so
 lib/xvile/vile-bat-filt.so
 lib/xvile/vile-bnf-filt.so
 lib/xvile/vile-cfg-filt.so
+lib/xvile/vile-conf-filt.so
 lib/xvile/vile-css-filt.so
 lib/xvile/vile-cweb-filt.so
 lib/xvile/vile-dcl-filt.so
@@ -155,6 +156,7 @@ share/xvile/vile/cweb.keywords
 share/xvile/vile/dcl.keywords
 share/xvile/vile/def.keywords
 share/xvile/vile/diff.keywords
+share/xvile/vile/docbook.keywords
 share/xvile/vile/ecl.keywords
 share/xvile/vile/esql.keywords
 share/xvile/vile/est.keywords

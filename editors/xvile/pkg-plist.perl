@@ -20,6 +20,7 @@ lib/xvile/vile-ada-filt
 lib/xvile/vile-awk-filt
 lib/xvile/vile-bat-filt
 lib/xvile/vile-cfg-filt
+lib/xvile/vile-conf-filt
 lib/xvile/vile-cweb-filt
 lib/xvile/vile-dcl-filt
 lib/xvile/vile-fdl-filt
@@ -155,6 +156,7 @@ share/xvile/vile/cweb.keywords
 share/xvile/vile/dcl.keywords
 share/xvile/vile/def.keywords
 share/xvile/vile/diff.keywords
+share/xvile/vile/docbook.keywords
 share/xvile/vile/ecl.keywords
 share/xvile/vile/esql.keywords
 share/xvile/vile/est.keywords
