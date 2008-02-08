@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	Net-RawIP
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 PORTEPOCH=	1
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		http://www.ic.al.lg.ua/~ksv/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A perl module to manipulate raw IP packets
-
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils
 
 PERL_CONFIGURE=	yes
 MAN3=		Net::RawIP.3 Net::RawIP::libpcap.3
