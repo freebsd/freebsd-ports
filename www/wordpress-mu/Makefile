@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.3
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://mu.wordpress.org/
@@ -15,7 +15,7 @@ DISTNAME=	latest
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Multi-user version of the famous WordPress blogging application
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.3
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_PHP=	mysql pcre xml
 NO_BUILD=	YES

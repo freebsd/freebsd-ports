@@ -131,7 +131,6 @@
 %%WWWDIR%%/wp-admin/update-links.php
 %%WWWDIR%%/wp-admin/upgrade-functions.php
 %%WWWDIR%%/wp-admin/upgrade.php
-%%WWWDIR%%/wp-admin/upload-functions.php
 %%WWWDIR%%/wp-admin/upload.php
 %%WWWDIR%%/wp-admin/user-edit.php
 %%WWWDIR%%/wp-admin/users.php
@@ -152,7 +151,6 @@
 %%WWWDIR%%/wp-config-sample.php
 %%WWWDIR%%/wp-content/blogs.php
 %%WWWDIR%%/wp-content/index.php
-%%WWWDIR%%/wp-content/mu-plugins/sync-taxonomy.php
 %%WWWDIR%%/wp-content/themes/classic/comments-popup.php
 %%WWWDIR%%/wp-content/themes/classic/comments.php
 %%WWWDIR%%/wp-content/themes/classic/footer.php
