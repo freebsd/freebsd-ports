@@ -20,7 +20,6 @@ lib/jabber/pymsn/src/legacy/__init__.py
 lib/jabber/pymsn/src/legacy/glue.py
 lib/jabber/pymsn/src/legacy/msn/msnp11chl.py
 lib/jabber/pymsn/src/legacy/msn/msn.py
-lib/jabber/pymsn/src/legacy/msn/msnft.py
 lib/jabber/pymsn/src/legacy/msn/__init__.py
 lib/jabber/pymsn/src/legacy/msn/msnw.py
 lib/jabber/pymsn/src/legacy/msn/test_msn.py
@@ -30,7 +29,6 @@ lib/jabber/pymsn/src/misciq.py
 lib/jabber/pymsn/src/register.py
 lib/jabber/pymsn/src/session.py
 lib/jabber/pymsn/src/socks5.py
-lib/jabber/pymsn/src/svninfo.py
 lib/jabber/pymsn/src/throttle.py
 lib/jabber/pymsn/src/twistfix/words/protocols/jabber/__init__.py
 lib/jabber/pymsn/src/twistfix/words/protocols/jabber/client.py
