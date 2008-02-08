@@ -13,6 +13,7 @@ lib/webmin/virtual-server/bw-template
 lib/webmin/virtual-server/bw.pl
 lib/webmin/virtual-server/bwgraph.cgi
 lib/webmin/virtual-server/cert_form.cgi
+lib/webmin/virtual-server/change-password.pl
 lib/webmin/virtual-server/change_users.cgi
 lib/webmin/virtual-server/check.cgi
 lib/webmin/virtual-server/collect-lib.pl
@@ -268,6 +269,10 @@ lib/webmin/virtual-server/migration-ensim.pl
 lib/webmin/virtual-server/migration-plesk.pl
 lib/webmin/virtual-server/modify-domain.pl
 lib/webmin/virtual-server/module.info
+lib/webmin/virtual-server/newfeatures-all/3.52/1-restore
+lib/webmin/virtual-server/newfeatures-all/3.52/3-active-ip
+lib/webmin/virtual-server/newfeatures-all/3.52/5-mailout
+lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
 lib/webmin/virtual-server/postinstall.pl
@@ -312,6 +317,7 @@ lib/webmin/virtual-server/save_tmpl.cgi
 lib/webmin/virtual-server/save_user.cgi
 lib/webmin/virtual-server/save_vfile.cgi
 lib/webmin/virtual-server/search.cgi
+lib/webmin/virtual-server/seen_newfeatures.cgi
 lib/webmin/virtual-server/showpass.cgi
 lib/webmin/virtual-server/simple-lib.pl
 lib/webmin/virtual-server/start_feature.cgi
@@ -331,6 +337,10 @@ lib/webmin/virtual-server/virtual_feature_api.pl
 lib/webmin/virtual-server/vui-lib.pl
 lib/webmin/virtual-server/warnbw-template
 lib/webmin/virtual-server/writelogs.pl
+@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.52
+@dirrm lib/webmin/virtual-server/newfeatures-gpl
+@dirrm lib/webmin/virtual-server/newfeatures-all/3.52
+@dirrm lib/webmin/virtual-server/newfeatures-all
 @dirrm lib/webmin/virtual-server/lang
 @dirrm lib/webmin/virtual-server/images
 @dirrm lib/webmin/virtual-server/help
