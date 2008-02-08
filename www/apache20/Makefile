@@ -138,6 +138,10 @@ CONFIGURE_ARGS+=	--with-ldap \
 .include "${APACHEDIR}/Makefile.modules"
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 600023 && ${OSVERSION} < 700014 && ${ARCH} == i386
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
+.endif
+
 .if exists(${LOCALBASE}/lib/libapr-0.so) || defined(WITH_APR_FROM_PORTS)
 IGNORE=	: apr from ports (WITH_APR_FROM_PORTS) is no longer supported
 .endif
