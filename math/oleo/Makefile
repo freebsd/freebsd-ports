@@ -12,7 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	The GNU spreadsheet for X11 and terminals
 
 USE_PERL5_BUILD=	yes
@@ -27,12 +27,6 @@ PORTDOCS=	AUTHORS FAQ
 
 OPTIONS=	MOTIF "Motif support" off \
 		NLS "NLS support" on
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 .if defined(WITH_MOTIF)
 LIB_DEPENDS+=	plot:${PORTSDIR}/graphics/plotutils \
@@ -72,4 +66,4 @@ pre-build:
 		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
