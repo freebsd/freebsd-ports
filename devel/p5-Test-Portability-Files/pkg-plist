@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Portability/Files/.packlist
+%%SITE_PERL%%/Test/Portability/Files.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Portability/Files
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Portability
+@dirrmtry %%SITE_PERL%%/Test/Portability
