@@ -56,4 +56,10 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700000
+BROKEN=	Does not build with GCC 4.2
+.endif
+
+.include <bsd.port.post.mk>
