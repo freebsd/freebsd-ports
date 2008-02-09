@@ -14,8 +14,6 @@ DESCR=		${.CURDIR}/pkg-descr
 MASTERDIR=	${.CURDIR}/../transmission
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_GNOME=	gnometarget intlhack
-
 CUSTOM_SUBDIRS=	third-party libtransmission daemon
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 MAN1=		transmission-daemon.1 transmission-proxy.1 \
