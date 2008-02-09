@@ -223,6 +223,8 @@ CONFIGURE_ARGS+=	--disable-srp
 
 .if ${OSVERSION} < 500016
 BROKEN=			"Does not compile / Needs thread support"
+.elif ${OSVERSION} >= 700000
+BROKEN=			Does not compile
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
