@@ -16,8 +16,6 @@ DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source \
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Compiler for the functional language Haskell
 
-BROKEN=		does not deinstall
-
 ONLY_FOR_ARCHS=	i386
 
 BOOT_DIST6=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
@@ -34,6 +32,10 @@ GNU_CONFIGURE=	yes
 OPTIONS=	PROFILE "Compile for profiling as well" on
 
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libreadline.so.5)
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.endif
 
 .if ${OSVERSION} >= 700000
 DISTFILES+=	${BOOT_DIST7}
