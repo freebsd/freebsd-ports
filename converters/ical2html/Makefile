@@ -7,13 +7,14 @@
 
 PORTNAME=	ical2html
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	http://www.w3.org/Tools/Ical2html/
 
 MAINTAINER=	keiichi@iijlab.net
 COMMENT=	Manipulation commands for iCalendar files
 
-LIB_DEPENDS=	ical.0:${PORTSDIR}/devel/libical
+LIB_DEPENDS=	ical.27:${PORTSDIR}/devel/libical
 
 GNU_CONFIGURE=	yes
 
