@@ -14046,6 +14046,7 @@ rand		ports/textproc/rand
 randrext	ports/x11/randrext
 randrproto	ports/x11/randrproto
 raop_play	ports/audio/raop_play
+rapid		ports/math/rapid
 rapidsvn	ports/devel/rapidsvn
 raproxy		ports/audio/raproxy
 raptor		ports/textproc/raptor
