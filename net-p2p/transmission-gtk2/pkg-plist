@@ -4,6 +4,12 @@ share/applications/transmission.desktop
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/icons/hicolor/16x16/apps/transmission.png
+share/icons/hicolor/22x22/apps/transmission.png
+share/icons/hicolor/24x24/apps/transmission.png
+share/icons/hicolor/32x32/apps/transmission.png
+share/icons/hicolor/48x48/apps/transmission.png
+share/icons/hicolor/scalable/apps/transmission.svg
 share/locale/de/LC_MESSAGES/transmission.mo
 share/locale/es/LC_MESSAGES/transmission.mo
 share/locale/fi/LC_MESSAGES/transmission.mo
