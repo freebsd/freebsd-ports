@@ -3,7 +3,7 @@ Calendaring and Scheduling protocols. (RFC 2445, 2446, and 2447). It
 parses iCal components and provides a C API for manipulating the
 component properties, parameters, and subcomponents.
 
-WWW: http://www.softwarestudio.org/libical/
+WWW: http://freeassociation.sourceforge.net/
 
 /Joe Kelsey
 joe@zircon.seattle.wa.us
