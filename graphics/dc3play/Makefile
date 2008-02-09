@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.itojun.org/pub/digi-cam/DC-3/unix/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digital camera downloading tool for Ricoh DC-3
 
+BROKEN=		Does not fetch
 RESTRICTED=	"Beta test period, redistribution prohibited"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
