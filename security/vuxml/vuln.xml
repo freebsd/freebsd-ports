@@ -34,7 +34,7 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
-  <vuln vid="0832ee18-cf77-11dc-8c6a-00304881ac9a ">
+  <vuln vid="0832ee18-cf77-11dc-8c6a-00304881ac9a">
     <topic>jetty -- multiple vulnerability</topic>
     <affects>
       <package>
