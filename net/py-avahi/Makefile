@@ -5,7 +5,7 @@
 # $FreeBSD$
 #    $MCom: ports/net/py-avahi/Makefile,v 1.4 2007/07/31 18:24:13 ahze Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	# empty
@@ -30,6 +30,10 @@ AVAHI_SLAVE=	python
 USE_GNOME=	gnomehack gnometarget pygtk2
 USE_PYTHON=	yes
 MAN1=		avahi-bookmarks.1 avahi-discover.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@pkglibdir@|${DATADIR}|' \
+	    	${WRKSRC}/avahi-python/avahi/ServiceTypeDatabase.py.in
 
 pre-build:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
