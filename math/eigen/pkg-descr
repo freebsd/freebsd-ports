@@ -1,0 +1,15 @@
+Eigen is a lightweight C++ template library for vector and matrix math, a.k.a.
+linear algebra.
+Unlike most other linear algebra libraries, Eigen focuses on the simple
+mathematical needs of applications: games and other OpenGL apps, spreadsheets
+and other office apps, etc. Eigen is dedicated to providing optimal speed with 
+GCC. 
+Its fixed-size classes are specially optimized for small sizes up to 4,
+although it is theoretically possible to specialize them to any size. They
+never cause dynamic memory applications and the simple operations on them are
+as fast as is possible at least for sizes up to 4 (see below). 
+Its dynamic-size classes are more flexible and suitable for larger sizes. 
+Both fixed-size and dynamic-size classes use the same underlying C++ code,
+thanks to a curiously recurring template pattern.
+
+WWW:	http://eigen.tuxfamily.org/

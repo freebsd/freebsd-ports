@@ -1,0 +1,13 @@
+include/eigen/linearsolver.h
+include/eigen/linearsolverbase.h
+include/eigen/ludecomposition.h
+include/eigen/ludecompositionbase.h
+include/eigen/matrix.h
+include/eigen/matrixbase.h
+include/eigen/projective.h
+include/eigen/util.h
+include/eigen/vector.h
+include/eigen/vectorbase.h
+include/eigen/regressioninternal.h
+include/eigen/regression.h
+@dirrm include/eigen
