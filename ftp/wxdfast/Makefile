@@ -28,4 +28,10 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|pt_BR||' ${WRKSRC}/man/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000 && ${ARCH} == i386
+BROKEN=	Does not compile
+.endif
+
+.include <bsd.port.post.mk>
