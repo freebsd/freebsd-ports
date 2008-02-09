@@ -58,6 +58,7 @@
     SUBDIR += entropy
     SUBDIR += eukleides
     SUBDIR += eval
+    SUBDIR += facile
     SUBDIR += fann
     SUBDIR += fbm
     SUBDIR += femlab

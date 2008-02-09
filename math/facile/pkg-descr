@@ -1,0 +1,10 @@
+FaCiLe is a constraint programming library on integer and integer set
+finite domains written in OCaml. It offers all usual facilities to create
+and manipulate finite domain variables, arithmetic expressions and
+constraints, built-in global constraints and search and optimization goals.
+
+FaCiLe allows as well to build easily user-defined constraints and goals,
+making pervasive use of OCaml higher-order functionals to provide a simple
+and flexible interface for the user.
+
+WWW:	http://www.recherche.enac.fr/log/facile/

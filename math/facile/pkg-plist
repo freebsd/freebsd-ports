@@ -1,0 +1,5 @@
+lib/ocaml/facile/facile.a
+lib/ocaml/facile/facile.cmi
+lib/ocaml/facile/facile.cma
+lib/ocaml/facile/facile.cmxa
+@dirrm lib/ocaml/facile
