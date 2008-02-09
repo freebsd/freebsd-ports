@@ -47,7 +47,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>zenphoto project reports:</p>
 	<blockquote cite="http://www.zenphoto.org/2008/02/">
 	  <p>A new zenphoto version is now available. This release contains
-	   a security fixes for HTML, XSS, and SQL injection vulnerabilities.
+	   security fixes for HTML, XSS, and SQL injection vulnerabilities.
 	   </p>
 	</blockquote>
       </body>
