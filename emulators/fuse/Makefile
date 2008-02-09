@@ -6,72 +6,40 @@
 #
 
 PORTNAME=	fuse
-PORTVERSION=	0.8.0.1
+PORTVERSION=	0.9.0
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	fuse-emulator
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri.pankov@gmail.com
 COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 
-LIB_DEPENDS=	spectrum.5:${PORTSDIR}/emulators/libspectrum \
+LIB_DEPENDS=	spectrum.6:${PORTSDIR}/emulators/libspectrum \
 		765.4:${PORTSDIR}/emulators/lib765 \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		png.5:${PORTSDIR}/graphics/png
+		gcrypt.13:${PORTSDIR}/security/libgcrypt
 
-WANT_GNOME=		yes
-WANT_SDL=		yes
-USE_XLIB=		yes
-USE_PERL5_BUILD=	yes
-USE_GETOPT_LONG=	yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-plus3-disk-prefix=${LOCALBASE}
-CFLAGS+=	 `${LOCALBASE}/bin/libpng-config --I_opts` -I${LOCALBASE}/include
+USE_GNOME=	libxml2 glib20 gtk20
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-OPTIONS=	SMALLMEM "Low memory compile needed" off \
-		GTK      "Use GTK1 user interface" off \
-		GTK2	 "Use GTK2 user interface" on \
-		SDL	 "Use SDL user interface" on \
-		SVGALIB  "Use SVGAlib user interface" off \
-		GCRYPT	 "Support digital signing of .RZX files" off
+MAN1=		fuse.1
+
+OPTIONS=	AO "Use libao for audio output" off \
+		SAMPLERATE "Support for better beeper sound quality" on
 
 .include <bsd.port.pre.mk>
 
-# adjust location of manual page
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
-
-.if defined(WITH_SMALLMEM)
-BROKEN=	Does not compile
-CONFIGURE_ARGS+=	--enable-smallmem
+.if defined(WITH_AO)
+CONFIGURE_ARGS+=--with-libao
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
 .endif
 
-.if !defined(WITHOUT_GTK)
-USE_GNOME=		gtk12
+.if !defined(WITHOUT_SAMPLERATE)
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 .else
-CONFIGURE_ARGS+=	--without-gtk
+CONFIGURE_ARGS+=--without-libsamplerate
 .endif
-
-.if defined(WITH_GTK2)
-CONFIGURE_ARGS+=	--with-gtk2
-USE_GNOME+=		gtk20
-.endif
-
-.if defined(WITH_SDL)
-CONFIGURE_ARGS+=	--with-sdl
-USE_SDL=		yes
-.endif
-
-.if defined(WITH_SVGALIB)
-CONFIGURE_ARGS+=	--with-svgalib
-LIB_DEPENDS+=		vga.1:${PORTSDIR}/graphics/svgalib
-.endif
-
-.if defined(WITH_GCRYPT) || exists(${LOCALBASE}/include/gcrypt.h)
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
-LIB_DEPENDS+=	gcrypt.13:${PORTSDIR}/security/libgcrypt
-.endif
-
-MAN1=	fuse.1
 
 .if !defined(NOPORTDOCS)
 post-install:

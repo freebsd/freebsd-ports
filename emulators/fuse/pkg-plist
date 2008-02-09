@@ -11,7 +11,7 @@ bin/fuse
 %%DATADIR%%/48.rom
 %%DATADIR%%/cassette.bmp
 %%DATADIR%%/disk_plus3.szx
-%%DATADIR%%/fuse.font
+%%DATADIR%%/gluck.rom
 %%DATADIR%%/if1-1.rom
 %%DATADIR%%/if1-2.rom
 %%DATADIR%%/keyboard.scr
@@ -27,6 +27,7 @@ bin/fuse
 %%DATADIR%%/plus3e-1.rom
 %%DATADIR%%/plus3e-2.rom
 %%DATADIR%%/plus3e-3.rom
+%%DATADIR%%/plusd.rom
 %%DATADIR%%/se-0.rom
 %%DATADIR%%/se-1.rom
 %%DATADIR%%/tape_128.szx
