@@ -6,7 +6,7 @@
 #
 
 PORTVERSION=	0.7r1768
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2
 
@@ -16,6 +16,7 @@ MASTERDIR=	${.CURDIR}/../xaralx
 MD5_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 PATCHDIR=	${.CURDIR}/files
-EXTRA_PATCHES=	${MASTERDIR}/files/patch-configure.in
+EXTRA_PATCHES=	${MASTERDIR}/files/patch-configure.in \
+		${MASTERDIR}/files/patch-wxOil_compatdef.h
 
 .include "${MASTERDIR}/Makefile"

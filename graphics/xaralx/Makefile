@@ -7,7 +7,7 @@
 
 PORTNAME=	XaraLX
 PORTVERSION?=	0.7r1692
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.xara.com/opensource/ \
 		${MASTER_SITE_LOCAL}
@@ -24,18 +24,15 @@ BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config \
 		xml2-config:${PORTSDIR}/textproc/libxml2 \
 		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
-LIB_DEPENDS+=	dlmalloc.2:${PORTSDIR}/devel/libdlmalloc \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_AUTOTOOLS=	autoconf:261:env aclocal:19:env automake:19:env libtool:15:env
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--program-suffix=${PKGNAMESUFFIX}
-# we're using dlmalloc because the stock libc does not have malloc_usable_size()
-CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -ldlmalloc"
 
 USE_GMAKE=	yes
-MAKE_ENV?=	INCLUDES="-I${LOCALBASE}/include/dlmalloc" LANG=C
+MAKE_ENV?=	LANG=C
 
 USE_GCC=	3.4+
 USE_WX=		2.6
@@ -73,6 +70,13 @@ NO_PACKAGE=	yes
 BROKEN=	does not configure due to the lack of CDraw libraries for ${ARCH}
 .endif
 
+.if ${OSVERSION} < 700036
+# we're using dlmalloc because the stock libc does not have malloc_usable_size()
+LIB_DEPENDS+=	dlmalloc.2:${PORTSDIR}/devel/libdlmalloc
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -ldlmalloc"
+MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include/dlmalloc"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -E \
 		-e 's/^Name=Xara Xtreme$$/Name=Xara Xtreme ${PORTVERSION}/' \
@@ -81,6 +85,13 @@ post-patch:
 		-e 's/^Exec=xaralx %F$$/Exec=xaralx${PKGNAMESUFFIX} %F/' \
 		-e 's/^TryExec=xaralx$$/TryExec=xaralx${PKGNAMESUFFIX}/' \
 		${WRKSRC}/xaralx.desktop
+.if ${OSVERSION} >= 700036
+	${REINPLACE_CMD} \
+		-e 's/malloc\/malloc.h/stdlib.h/' \
+		-e 's/malloc.h/stdlib.h/' \
+		${WRKSRC}/wxOil/fixmem.cpp \
+		${WRKSRC}/wxOil/stdwx.h
+.endif
 
 pre-configure:
 	cd ${WRKSRC} && \
