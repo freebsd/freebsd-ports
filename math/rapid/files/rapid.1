@@ -1,0 +1,102 @@
+.TH RAPID 1
+.SH NAME    \" Section header
+.PP
+ 
+RAPID -- Robust and Accurate Polygon Interference Detection
+
+\" Convention:
+\" Underline anything that is typed verbatim - commands, etc.
+.SH SYNOPSIS
+.PP
+.nf 
+.na
+#include <RAPID/RAPID.H>
+c++ -I/usr/local/include program.c++ -L/usr/local/lib -lRAPID -lm
+.ad
+.fi
+
+.SH "DESCRIPTION"
+
+.B RAPID
+is a  robust and accurate polygon interference detection  library for
+large environments composed of unstructured models. 
+
+It is applicable to polygon soups - models which contain no adjacency
+information, and obey no topological constraints. The models may
+contain cracks, holes, self-intersections, and nongeneric (e.g.
+coplanar and collinear) configurations. 
+
+It is numericaly robust - the algorithm is not subject to conditioning
+problems, and requires no special handling of nongeneric cases (such as
+parallel faces).
+
+The RAPID library is free for non-commercial use. Please use this
+request form to download the latest version. It has a very simple user
+interface: the user need noncommerial use. be familiar with only about
+five function calls. A  C++ sample client program illustrates its use. 
+
+The current version of RAPID is version 2.01. The previous version was
+1.04 - the change in version designation from 1.xx to 2.xx reflects a
+moderate alteration in the library's interface (mostly just name
+changes). The following changes from version 1.04 have been made: 
+
+Use include file "RAPID.H":  The RAPID API now requires only that you
+include "RAPID.H" and link to "libRAPID.a" to be able to use the
+library. 
+
+Standalone library:  RAPID no longer uses the SVM library. RAPID only
+depends on the standard math library, "libm.a", which you probably link
+to anyway. 
+
+Use object "RAPID_model" instead of "box":  The C++ object into which
+you load polygons is now called "RAPID_model". Previous versions used
+"box," which was a holdover from prerelease implementations, and was
+not a suitable identifier for the API. 
+
+Consistent use of "RAPID_" prefix:  All the globals, such as those
+which began with "OBBT_" now use the prefix "RAPID_". Note, also, that
+the old constants "ALL_CONTACTS" and "FIRST_CONTACT" have been replaced
+with the symbols "RAPID_ALL_CONSTACTS" and "RAPID_FIRST_CONTACT" in
+RAPID 2.00. 
+
+No explicit library initialization:  Previous versions required the
+client to call 'box::initialize()' before any other RAPID library call.
+This was a common but unnecessary source of client bugs (people forgot
+to call this routine). RAPID 2.00 no longer requires this, since all
+API routines check to see if the library has been initialized. This
+extra check has had a negligible performance impact. 
+
+Revision of model construction interface:  RAPID 2.00 requires calls to
+BeginModel() and EndModel() to enclose the AddTri() calls for building
+objects. This more resembles the OpenGL interface, with which many
+clients will likely be familiar. Generally, preprocessing of the
+objects will take place when EndModel() is called. Later versions of
+RAPID will allow special procedures to be placed after the BeginModel()
+call but before the first AddTri() call to give the client more control
+over how the models are preprocessed. 
+
+Faster preprocessing:  The preprocessing for RAPID has been greatly
+improved in terms of speed. RAPID 2.00 is generally 5 times faster than
+previous versions in preprocessing models. The quality of the
+hierarchies have theoretically been affected, in some ways for the
+better and in some ways for the worse, but we have not conducted a
+thorough study to gauge overall impact of our changes. In a later
+release, we intend to provide an alternative preprocessing algorithm
+which will be computationally expensive but which will build better
+hierarchies. 
+
+No support for plain C:  Some clients may not consider this an
+improvement, but support for plain C has been discontinued. Of course,
+clients are still able to construct their own plain C wrappers for the
+C++ functions in RAPID. This change has made the implementation of
+RAPID more clean. 
+
+.SH "SEE ALSO"
+dtiquery(1)
+
+.SH AUTHOR
+.nf
+.na
+UNC Research Group on Modeling
+http://www.cs.unc.edu/~geom/OBB/OBBT.html
+
