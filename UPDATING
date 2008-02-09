@@ -10,11 +10,11 @@ upgrades.
   AFFECTS: users of ports-mgmt/portupgrade
   AUTHOR: sem@FreeBSD.org
 
-  As was claimed in an enrty 20070301 bellow in this file. You should fill
-  ALT_DEPENDS section of pkgtools.conf for portupgrade works correctly
+  As was claimed in the entry 20070301 below in this file, you should fill
+  ALT_DEPENDS section of pkgtools.conf for portupgrade to work correctly
   with your alternative dependencies. Now it's an obligatory requirement.
 
-  It was done as a compromise between speed and compexity.
+  It was done as a compromise between speed and complexity.
 
 20080203:
   AFFECTS: users of www/xshttpd
@@ -94,11 +94,11 @@ upgrades.
   AFFECTS: users of net/freeradius
   AUTHOR: David Wood <david@wood2.org.uk>
 
-  FreeRADIUS 2.0 is now available as the net/freeradius2 port. All 
-  FreeRADIUS users are advised to consider upgrading to 2.0. It is the 
-  FreeRADIUS team's intention to put the 1.x server into 'maintenance' mode with 
-  just critical bug fixes.[1] 2.0 has many improvements including numerous bug 
-  fixesthat were too difficult for the 1.x server, as well as many new features.
+  FreeRADIUS 2.0 is now available as the net/freeradius2 port. All FreeRADIUS
+  users are advised to consider upgrading to 2.0. It is the FreeRADIUS team's
+  intention to put the 1.x server into 'maintenance' mode with just critical
+  bug fixes.[1] 2.0 has many improvements including numerous bug fixes that were
+  too difficult for the 1.x server, as well as many new features.
 
   Before uninstalling 1.x, it is recommended that you backup your
   configuration, which is typically in /usr/local/etc/raddb, then move 
@@ -118,9 +118,9 @@ upgrades.
   the default location. It is worth reading man 5 unlang for details of
   the new FreeRADIUS 'un-language' before starting.
 
-  Alternatively, you can move your 1.x configuration to another 
-  location, such as /usr/local/etc/raddb_v1, then edit /etc/rc.conf to point the 
-  rc.d script to that location. For example:
+  Alternatively, you can move your 1.x configuration to another location, such
+  as /usr/local/etc/raddb_v1, then edit /etc/rc.conf to point the rc.d script
+  to that location. For example:
 
   radiusd_flags="-d /usr/local/etc/raddb_v1"
 
@@ -160,7 +160,7 @@ upgrades.
   AUTHOR: lioux@FreeBSD.org
 
   www/amphetadesk has been updated to use the USE_RC_SUBR framework
-  for rc.d scripts. The rc.d script has been renamed from ampetadesk.sh
+  for rc.d scripts. The rc.d script has been renamed from amphetadesk.sh
   to amphetadesk for consistency with other ports.
 
 20071216:
@@ -231,8 +231,9 @@ upgrades.
   AFFECTS: users of net/skype-devel
   AUTHOR: beech@FreeBSD.org
 
-  The skype-devel port has been upgraded to version 1.4.0.118. This requires a sysctl
-  change to run. After upgrading, please do: "sysctl compat.linux.osrelease=2.4.20"
+  The skype-devel port has been upgraded to version 1.4.0.118. This requires
+  a sysctl change to run. After upgrading, please do:
+  	sysctl compat.linux.osrelease=2.4.20
   from a terminal. Also add: "compat.linux.osrelease=2.4.20" to your
   /etc/sysctl.conf  to make this change at boot time.
 
@@ -403,7 +404,7 @@ upgrades.
   AFFECTS: users of devel/p5-gearmand
   AUTHOR: clsung@FreeBSD.org
 
-  The port p5-gearmand has been splited up, so Gearman servers can
+  The port p5-gearmand has been split up, so Gearman servers can
   be embedded into other processes. The Gearman::Server class is
   located at devel/p5-Gearman-Server, if you have devel/p5-gearmand
   installed, perform an upgrade devel/p5-Gearman-Server with a
@@ -525,12 +526,13 @@ upgrades.
   scanner-queue.pl. You will need to rewrite any rules you had in place within
   the old quarantine-attachments.txt into the new format quarantine-events.txt
 
-  Changed setuid to 6755 - ie it's now setuid and setgid. Forcing all files to
-  be group qscand will allow those who wish to do so to keep their AV daemons
-  running as other accounts. They just need to ensure those daemons are members
-  of the qscand group - and as such should be able to read the necessary files.
-  e.g. clamd could run as "clamav", but as long as account "clamav" is a member
-  of group "qscand", clamd is able to read the mail enough to scan it.
+  Changed setuid to 6755 - i.e. it's now setuid and setgid. Forcing all files
+  to be group qscand will allow those who wish to do so to keep their AV
+  daemons running as other accounts. They just need to ensure those daemons are
+  members of the qscand group - and as such should be able to read the
+  necessary files. E.g. clamd could run as "clamav", but as long as account
+  "clamav" is a member of group "qscand", clamd is able to read the mail enough
+  to scan it.
 
 20070903:
   AFFECTS: users of net/whois, net/gwhois
@@ -581,11 +583,11 @@ upgrades.
   completely rolled back, and replaced with a brand new implementation utilizing
   chroot.
 
-  When DESTDIR is set, the system will chroot into the specified directory, mount
-  devfs, null mount the ports tree, then proceed with building and installing.
-  Your kernel must support nullfs (is available as loadable kernel module on
-  default installation).  The target environment must be a full FreeBSD
-  installation. For advanced use, read comments at the beginning of
+  When DESTDIR is set, the system will chroot into the specified directory,
+  mount devfs, null mount the ports tree, then proceed with building and
+  installing.  Your kernel must support nullfs (is available as loadable kernel
+  module on default installation).  The target environment must be a full
+  FreeBSD installation. For advanced use, read comments at the beginning of
   bsd.destdir.mk.
 
 20070730:
@@ -598,15 +600,16 @@ upgrades.
 
     # portupgrade -o lang/python25 lang/python24
 
-  If want to keep 2.4.x installed alongside 2.5.x, set the PYTHON_DEFAULT_VERSION
-  variable to 'python2.5' without quotes in make.conf, then go to lang/python and
-  execute
+  If you want to keep 2.4.x installed alongside 2.5.x, set the
+  PYTHON_DEFAULT_VERSION variable to 'python2.5' without quotes in make.conf,
+  then go to lang/python and execute
 
     # portupgrade -R python
 
-  Once the installed Python has been updated to 2.5, by using one of the methods
-  above, it is required to run the upgrade-site-packages target in lang/python to
-  assure that site-packages are made available to the new Python version.
+  Once the installed Python has been updated to 2.5, by using one of the
+  methods above, it is required to run the upgrade-site-packages target in
+  lang/python to assure that site-packages are made available to the new Python
+  version.
 
     # cd /usr/ports/lang/python && make upgrade-site-packages
 
@@ -3026,11 +3029,11 @@ portupgrade -a
                 mxdcc   ip      10.7.8.9
   "MX" marks the IP address of one of your mail systems that should be ignored
   in initial Received: headers and when reported by sendmail to dccm. "MXDCC"
-  marks IP addresses of your mail systems that run DCC clients and that will have
-  already reported mail to the DCC. Continue using "OK" whitelist entries for
-  mail systems that you trust to never send or forward unsolicited bulk email.
-  Allow custom DNS blacklist SMTP rejection messages. See -Bset:rej-msg=X in the
-  dccifd and dccm man pages.
+  marks IP addresses of your mail systems that run DCC clients and that will
+  have already reported mail to the DCC. Continue using "OK" whitelist entries
+  for mail systems that you trust to never send or forward unsolicited bulk
+  email. Allow custom DNS blacklist SMTP rejection messages. See
+  -Bset:rej-msg=X in the dccifd and dccm man pages.
 
 20060207:
   AFFECTS: users of www/jakarta-tomcat4, www/jakarta-tomcat41,
@@ -3228,7 +3231,8 @@ portupgrade -a
   update your KDE installation without interruptions.
 
   We recommend sticking to the following procedure. This procedure requires you
-  to have sysutils/portupgrade installed and to be the superuser (or using sudo).
+  to have sysutils/portupgrade installed and to be the superuser (or using
+  sudo).
 
   1.) Delete installed packages which conflict with the updated KDE
       ports.
@@ -3676,7 +3680,8 @@ portupgrade -a
   be found at http://your.site.com/b2evo/blogs/install
 
 20050911:
-  AFFECTS: users of mail/libspf2, mail/postfix, mail/postfix21, mail/postfix-policyd-spf, mail/exim
+  AFFECTS: users of mail/libspf2, mail/postfix, mail/postfix21,
+  	   mail/postfix-policyd-spf, mail/exim
   AUTHOR: marcus@corp.grupos.com.br
 
   Now version 1.0.4 of libspf2 has repo copied from mail/libspf2 to
@@ -3708,8 +3713,8 @@ portupgrade -a
   AFFECTS: users of www/jakarta-tomcat55
   AUTHOR: hq@FreeBSD.org
 
-  The port installs a new RCng startup script which no longer uses tomcat55ctl to
-  control the Tomcat daemon. Furthermore, the behavior of Tomcat may be
+  The port installs a new RCng startup script which no longer uses tomcat55ctl
+  to control the Tomcat daemon. Furthermore, the behavior of Tomcat may be
   configured through switches and variables from /etc/rc.conf. They are
   documented in the header of the RCng script:
 
@@ -3756,7 +3761,8 @@ portupgrade -a
   installation.
 
   We recommend sticking to the following procedure. This procedure requires you
-  to have sysutils/portupgrade installed and to be the superuser (or using sudo).
+  to have sysutils/portupgrade installed and to be the superuser (or using
+  sudo).
 
   1.) Delete installed packages which conflict with the updated KDE
       ports.
