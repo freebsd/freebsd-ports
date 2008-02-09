@@ -61,6 +61,7 @@ MAN3=	curs_addch.3x \
 	curs_termattrs.3x \
 	curs_termcap.3x \
 	curs_terminfo.3x \
+	curs_threads.3x \
 	curs_touch.3x \
 	curs_trace.3x \
 	curs_util.3x \
@@ -397,6 +398,10 @@ MLINKS+=\
 	curs_terminfo.3x vid_puts.3x \
 	curs_terminfo.3x vidattr.3x \
 	curs_terminfo.3x vidputs.3x \
+	curs_threads.3x set_escdelay.3x \
+	curs_threads.3x set_tabsize.3x \
+	curs_threads.3x use_screen.3x \
+	curs_threads.3x use_window.3x \
 	curs_touch.3x is_linetouched.3x \
 	curs_touch.3x is_wintouched.3x \
 	curs_touch.3x touchline.3x \
