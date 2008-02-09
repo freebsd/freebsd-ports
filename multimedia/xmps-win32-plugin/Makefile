@@ -43,4 +43,10 @@ post-patch:
 post-install:
 	@${LN} -sf libwin32.so ${PREFIX}/lib/xmps/codecs/video/libwin32.so.${LIB_VERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=	Does not compile
+.endif
+
+.include <bsd.port.post.mk>
