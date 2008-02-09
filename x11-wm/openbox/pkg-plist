@@ -100,6 +100,7 @@ share/xsessions/openbox-kde.desktop
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/es/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/et/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/openbox.mo
