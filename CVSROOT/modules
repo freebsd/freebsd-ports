@@ -2817,6 +2817,7 @@ fa-aspell	ports/textproc/fa-aspell
 faac		ports/audio/faac
 faad		ports/audio/faad
 faces		ports/mail/faces
+facile		ports/math/facile
 facter		ports/sysutils/facter
 fakebo		ports/security/fakebo
 fakeident	ports/security/fakeident
