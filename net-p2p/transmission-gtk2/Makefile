@@ -15,6 +15,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 USE_GNOME=	gnometarget gnomehack gtk20 desktopfileutils intlhack
 USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--without-wx
 
 CUSTOM_SUBDIRS=	third-party libtransmission gtk po
