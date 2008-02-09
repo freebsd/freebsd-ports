@@ -7,20 +7,24 @@
 #
 
 PORTNAME=	epydoc
-PORTVERSION=	2.1
+PORTVERSION=	3.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python API documentation generation tool
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-MAN1=	epydoc.1 epydocgui.1
+MAN1=		epydoc.1 epydocgui.1
 
 OPTIONS=	UTF8 "Use UTF-8 instead of iso-8859-1 in HTMLs" off
+
+HTMLENCODINGFILES=	epydoc/docwriter/html_colorize.py \
+			epydoc/docwriter/html.py \
+			epydoc/docparser.py
 
 .include <bsd.port.pre.mk>
 
@@ -29,8 +33,9 @@ HTMLENCODING?=	utf-8
 .endif
 .if defined(HTMLENCODING)
 post-patch:
-	${REINPLACE_CMD} 's,iso-8859-1,${HTMLENCODING},g' \
-		${WRKSRC}/epydoc/html.py
+.for f in ${HTMLENCODINGFILES}
+	${REINPLACE_CMD} 's,iso-8859-1,${HTMLENCODING},g' ${WRKSRC}/${f}
+.endfor
 .endif
 
 post-install:
