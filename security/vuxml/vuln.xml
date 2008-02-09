@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1a818749-d646-11dc-8959-000bcdc1757a">
+    <topic>zenphoto -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>zenphoto</name>
+	<range><lt>1.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>zenphoto project reports:</p>
+	<blockquote cite="http://www.zenphoto.org/2008/02/">
+	  <p>A new zenphoto version is now available. This release contains
+	   a security fixes for HTML, XSS, and SQL injection vulnerabilities.
+	   </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2007-6666</cvename>
+	<url>http://www.securityfocus.com/bid/27084</url>
+	<url>http://secunia.com/advisories/28281</url>
+    </references>
+    <dates>
+      <discovery>2008-01-03</discovery>
+      <entry>2008-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0832ee18-cf77-11dc-8c6a-00304881ac9a">
     <topic>jetty -- multiple vulnerability</topic>
     <affects>
