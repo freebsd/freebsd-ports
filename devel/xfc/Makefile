@@ -32,6 +32,8 @@ CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
+.elif ${OSVERSION} >= 700000
+BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .include <bsd.port.post.mk>
