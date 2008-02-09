@@ -413,7 +413,7 @@ LUA_VER_SH?=			${LUA_VER:C/[[:digit:]]\.([[:digit:]])/\1/}
 LUA_VER_STR?=			${LUA_VER:S/.//g}
 
 # Paths.
-LUA_PREFIX?=			${LOCALBASE}
+LUA_PREFIX?=			${PREFIX}
 LUA_SUBDIR?=			lua${LUA_VER_STR}
 LUA_BINDIR?=			${LUA_PREFIX}/bin/${LUA_SUBDIR}
 LUA_INCDIR?=			${LUA_PREFIX}/include/${LUA_SUBDIR}
