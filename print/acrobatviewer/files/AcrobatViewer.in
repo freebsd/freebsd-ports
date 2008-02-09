@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -classpath "%%JAVAJARDIR%%/%%PORTNAME%%/acrobat.jar:%%JAVAJARDIR%%/%%PORTNAME%%/MRJToolkitStubs.jar" com.adobe.acrobat.Viewer "$@"
