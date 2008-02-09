@@ -11288,6 +11288,7 @@ p5-Test-Parser	ports/devel/p5-Test-Parser
 p5-Test-Perl-Critic	ports/textproc/p5-Test-Perl-Critic
 p5-Test-Pod	ports/devel/p5-Test-Pod
 p5-Test-Pod-Coverage	ports/devel/p5-Test-Pod-Coverage
+p5-Test-Portability-Files	ports/devel/p5-Test-Portability-Files
 p5-Test-RandomResults	ports/devel/p5-Test-RandomResults
 p5-Test-Reporter	ports/devel/p5-Test-Reporter
 p5-Test-Script	ports/devel/p5-Test-Script
