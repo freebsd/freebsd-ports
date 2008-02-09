@@ -1,0 +1,8 @@
+The transmission-daemon is a daemon-based Transmission session that can
+be controlled via IPC commands by transmission-remote (included).
+
+Transmission is a free, lightweight BitTorrent client. It features a
+simple, intuitive interface on top on an efficient, cross-platform
+back-end.
+
+WWW: http://www.transmissionbt.com/
