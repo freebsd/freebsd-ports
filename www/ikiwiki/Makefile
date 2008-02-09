@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	2.20
+PORTVERSION=	2.30
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -41,6 +41,7 @@ OPTIONS=	W3M "Install w3m CGI wrapper" off
 MAN1=		ikiwiki.1 ikiwiki-makerepo.1 ikiwiki-update-wikilist.1
 MAN8=		ikiwiki-mass-rebuild.8
 PORTDOCS=	CHANGELOG NEWS README
+PORTEXAMPLES=	ikiwiki.setup
 
 .include <bsd.port.pre.mk>
 
@@ -70,6 +71,10 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/doc/@} ${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

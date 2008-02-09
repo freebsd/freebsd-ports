@@ -17,6 +17,7 @@
 %%DATADIR%%/basewiki/openid.mdwn
 %%DATADIR%%/basewiki/pagespec.mdwn
 %%DATADIR%%/basewiki/preprocessordirective.mdwn
+%%DATADIR%%/basewiki/recentchanges.mdwn
 %%DATADIR%%/basewiki/sandbox.mdwn
 %%DATADIR%%/basewiki/shortcuts.mdwn
 %%DATADIR%%/basewiki/style.css
@@ -60,12 +61,12 @@
 %%DATADIR%%/templates/atomitem.tmpl
 %%DATADIR%%/templates/atompage.tmpl
 %%DATADIR%%/templates/blogpost.tmpl
+%%DATADIR%%/templates/change.tmpl
 %%DATADIR%%/templates/editpage.tmpl
 %%DATADIR%%/templates/estseek.conf
 %%DATADIR%%/templates/feedlink.tmpl
 %%DATADIR%%/templates/inlinepage.tmpl
 %%DATADIR%%/templates/misc.tmpl
-%%DATADIR%%/templates/notifymail.tmpl
 %%DATADIR%%/templates/page.tmpl
 %%DATADIR%%/templates/passwordmail.tmpl
 %%DATADIR%%/templates/recentchanges.tmpl
@@ -120,6 +121,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/postsparkline.pm
 %%SITE_PERL%%/IkiWiki/Plugin/prettydate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/rawhtml.pm
+%%SITE_PERL%%/IkiWiki/Plugin/recentchanges.pm
 %%SITE_PERL%%/IkiWiki/Plugin/search.pm
 %%SITE_PERL%%/IkiWiki/Plugin/shortcut.pm
 %%SITE_PERL%%/IkiWiki/Plugin/sidebar.pm
@@ -139,6 +141,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/version.pm
 %%SITE_PERL%%/IkiWiki/Plugin/wikitext.pm
 %%SITE_PERL%%/IkiWiki/Rcs/Stub.pm
+%%SITE_PERL%%/IkiWiki/Rcs/bzr.pm
 %%SITE_PERL%%/IkiWiki/Rcs/git.pm
 %%SITE_PERL%%/IkiWiki/Rcs/mercurial.pm
 %%SITE_PERL%%/IkiWiki/Rcs/monotone.pm
