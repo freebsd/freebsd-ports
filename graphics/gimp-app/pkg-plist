@@ -431,7 +431,7 @@ libexec/gimp/2.2/plug-ins/spheredesigner
 libexec/gimp/2.2/plug-ins/spread
 libexec/gimp/2.2/plug-ins/struc
 libexec/gimp/2.2/plug-ins/sunras
-libexec/gimp/2.2/plug-ins/svg
+%%SVG%%libexec/gimp/2.2/plug-ins/svg
 libexec/gimp/2.2/plug-ins/tga
 libexec/gimp/2.2/plug-ins/threshold_alpha
 libexec/gimp/2.2/plug-ins/tiff-load
