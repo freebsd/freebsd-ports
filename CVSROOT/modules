@@ -2473,6 +2473,7 @@ eieio		ports/devel/eieio
 eif		ports/games/eif
 eiffel		ports/lang/eiffel
 eiffelstudio	ports/devel/eiffelstudio
+eigen		ports/math/eigen
 eights		ports/games/eights
 einstein	ports/games/einstein
 eispack		ports/math/eispack
