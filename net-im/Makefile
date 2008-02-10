@@ -125,6 +125,7 @@
     SUBDIR += telepathy-glib
     SUBDIR += telepathy-idle
     SUBDIR += telepathy-python
+    SUBDIR += telepathy-qt
     SUBDIR += telepathy-salut
     SUBDIR += tkabber
     SUBDIR += tkabber-devel
