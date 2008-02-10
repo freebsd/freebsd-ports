@@ -4,10 +4,13 @@ share/alex-%%PORTVERSION%%/AlexTemplate-debug
 share/alex-%%PORTVERSION%%/AlexTemplate-ghc
 share/alex-%%PORTVERSION%%/AlexTemplate-ghc-debug
 share/alex-%%PORTVERSION%%/AlexWrapper-basic
-share/alex-%%PORTVERSION%%/AlexWrapper-posn
-share/alex-%%PORTVERSION%%/AlexWrapper-monad
+share/alex-%%PORTVERSION%%/AlexWrapper-basic-bytestring
 share/alex-%%PORTVERSION%%/AlexWrapper-gscan
-@dirrm share/alex-%%PORTVERSION%%
+share/alex-%%PORTVERSION%%/AlexWrapper-monad
+share/alex-%%PORTVERSION%%/AlexWrapper-monad-bytestring
+share/alex-%%PORTVERSION%%/AlexWrapper-posn
+share/alex-%%PORTVERSION%%/AlexWrapper-posn-bytestring
+share/doc/alex-%%PORTVERSION%%/LICENSE
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/Tokens.x
 %%PORTDOCS%%%%EXAMPLESDIR%%/Tokens_gscan.x
@@ -23,3 +26,5 @@ share/alex-%%PORTVERSION%%/AlexWrapper-gscan
 %%PORTDOCS%%%%EXAMPLESDIR%%/words_monad.x
 %%PORTDOCS%%%%EXAMPLESDIR%%/words_posn.x
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm share/doc/alex-2.2
+@dirrm share/alex-%%PORTVERSION%%
