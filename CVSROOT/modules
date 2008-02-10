@@ -15356,6 +15356,7 @@ spooles-mpich	ports/math/spooles-mpich
 spread		ports/net/spread
 spread-j	ports/net/spread-j
 spreadlogd	ports/www/spreadlogd
+spring		ports/games/spring
 springframework	ports/java/springframework
 springgraph	ports/graphics/springgraph
 spruce		ports/mail/spruce
