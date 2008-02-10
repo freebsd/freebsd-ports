@@ -129,6 +129,7 @@ include/wine/windows/d3dx8.h
 include/wine/windows/d3dx8core.h
 include/wine/windows/d3dx8math.h
 include/wine/windows/d3dx8math.inl
+include/wine/windows/d3dx8mesh.h
 include/wine/windows/d3dx9.h
 include/wine/windows/d3dx9core.h
 include/wine/windows/d3dx9math.h

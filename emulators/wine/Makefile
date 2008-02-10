@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	0.9.54
+PORTVERSION=	0.9.55
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
@@ -58,11 +58,11 @@ pre-build:
 	cd ${WRKSRC} && make depend
 
 post-install:
-	${RM} -f ${MAN1PREFIX}/man/de.UTF-8/man1/wine.1 \
-	         ${MAN1PREFIX}/man/fr.UTF-8/man1/wine.1 \
-	         ${MAN1PREFIX}/man/fr.UTF-8/man1/wineserver.1
-	-${RMDIR} -p ${MAN1PREFIX}/man/de.UTF-8/man1 \
-	             ${MAN1PREFIX}/man/fr.UTF-8/man1
+	@${RM} -f ${MAN1PREFIX}/man/de.UTF-8/man1/wine.1 \
+	          ${MAN1PREFIX}/man/fr.UTF-8/man1/wine.1 \
+	          ${MAN1PREFIX}/man/fr.UTF-8/man1/wineserver.1
+	@-${RMDIR} -p ${MAN1PREFIX}/man/de.UTF-8/man1 \
+	              ${MAN1PREFIX}/man/fr.UTF-8/man1
 	${MV} -f ${PREFIX}/lib/libwine.so.1.0 ${PREFIX}/lib/libwine.so.1
 	${LN} -sf libwine.so.1 ${PREFIX}/lib/libwine.so
 .if !defined(NOPORTDOCS)
