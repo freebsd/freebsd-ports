@@ -1,0 +1,11 @@
+--- ../include/QtTapioca/CMakeLists.txt	2007/06/15 08:40:29	1981
++++ ../include/QtTapioca/CMakeLists.txt	2007/07/20 15:33:04	2019
+@@ -18,6 +18,8 @@
+     contact.h
+     ContactBase
+     contactbase.h
++    ContactGroup
++    contactgroup.h
+     ContactList
+     contactlist.h
+     DBusProxyObject
