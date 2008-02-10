@@ -14,11 +14,3 @@ The issue is known and probably a fluid2 bug, see FLTK2 STR #1302.
  	qubix$(EXEEXT) \
  	resizable$(EXEEXT) \
  	resizealign$(EXEEXT) \
-@@ -170,7 +169,6 @@
- 	timer$(EXEEXT) \
- 	utf$(EXEEXT) \
- 	fullscreen$(EXEEXT) \
--	valuators$(EXEEXT) \
- 	list$(EXEEXT) \
- 	wizard$(EXEEXT)
- 

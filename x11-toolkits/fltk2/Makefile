@@ -19,12 +19,13 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-SNAPSHOT=	r5990
+SNAPSHOT=	r6025
 
 OPTIONS=	FLTK_THREADS "Install with threads support" on \
 		FLTK_CAIRO "Use cairo as graphics backend" off \
 		FLTK_EXAMPLES "Build and install example programs" on
 
+EXAMPLESDIR=	${PREFIX}/share/examples/fltk2
 LATEST_LINK=	fltk2
 
 USE_BZIP2=	yes
@@ -77,7 +78,7 @@ example_apps=	ansiwidget arc bitmap boxtype browser button buttons cairo \
 		list_visuals mandelbrot menu message monitors navigation \
 		output pack pixmap progress qubix resizable resizealign \
 		scroll shape sizes symbols tabs threads tile timer \
-		utf wizard
+		utf valuators wizard
 example_img=	images/ulon.bmp
 PORTEXAMPLES=	*
 .else
