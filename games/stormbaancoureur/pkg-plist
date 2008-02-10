@@ -1,5 +1,4 @@
 bin/stormbaancoureur
-%%DATADIR%%/images/engine.tga
 %%DATADIR%%/images/info_carpet_smooth.rgb
 %%DATADIR%%/images/info_door_smooth.rgb
 %%DATADIR%%/images/info_jump_smooth.rgb
@@ -24,8 +23,11 @@ bin/stormbaancoureur
 %%DATADIR%%/models/highjump.3ds
 %%DATADIR%%/models/jumpboard.3ds
 %%DATADIR%%/models/leafspring.3ds
+%%DATADIR%%/models/monoramp.3ds
+%%DATADIR%%/models/piston.3ds
 %%DATADIR%%/models/ramp.3ds
 %%DATADIR%%/models/rearaxle.3ds
+%%DATADIR%%/models/rod.3ds
 %%DATADIR%%/models/spikegate.3ds
 %%DATADIR%%/models/spindle.3ds
 %%DATADIR%%/models/terrain3.3ds
