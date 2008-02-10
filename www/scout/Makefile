@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to harvest URLs from a given start point
 
 BROKEN=		Does not fetch
+DEPRECATED=	Abandonware, website disappeared.
+EXPIRATION_DATE=	2008-04-12
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-shared --enable-static
