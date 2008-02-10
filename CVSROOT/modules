@@ -15703,6 +15703,7 @@ tamago-emacs21	ports/editors/tamago-emacs21
 tank		ports/games/tank
 tap-plugins	ports/audio/tap-plugins
 tapidbus	ports/net/tapidbus
+tapioca-qt	ports/net-im/tapioca-qt
 tardy		ports/archivers/tardy
 taskjuggler	ports/deskutils/taskjuggler
 taskstep	ports/deskutils/taskstep
