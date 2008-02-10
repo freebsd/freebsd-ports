@@ -15,6 +15,8 @@ DISTNAME=	unpv22e
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The networking library used in UNIX Network Programming Volume 2 2e
 
+BROKEN=	checksum mismatch
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
