@@ -1,0 +1,276 @@
+bin/spring
+etc/spring/datadir
+lib/spring/AI/Bot-libs/AAI.so
+lib/spring/AI/Bot-libs/KAIK-0.13.so
+lib/spring/AI/Bot-libs/TestGlobalAI.so
+lib/spring/AI/Helper-libs/CentralBuildAI.so
+lib/spring/AI/Helper-libs/EconomyAI.so
+lib/spring/AI/Helper-libs/MetalMakerAI.so
+lib/spring/AI/Helper-libs/MexUpgraderAI.so
+lib/spring/AI/Helper-libs/RadarAI.so
+lib/spring/AI/Helper-libs/ReportIdleAI.so
+lib/spring/AI/Helper-libs/SimpleFormationAI.so
+lib/spring/unitsync.so
+share/applications/spring.desktop
+share/pixmaps/spring.png
+%%DATADIR%%/AI/AAI/AAI FAQ.txt
+%%DATADIR%%/AI/AAI/AAI ReadMe.txt
+%%DATADIR%%/AI/AAI/cfg/general.cfg
+%%DATADIR%%/AI/AAI/cfg/help/example general.cfg
+%%DATADIR%%/AI/AAI/cfg/help/example mod.cfg
+%%DATADIR%%/AI/AAI/cfg/map/2Lakes.cfg
+%%DATADIR%%/AI/AAI/cfg/map/AATA-RumblingForest.cfg
+%%DATADIR%%/AI/AAI/cfg/map/AavikkoV2.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Altored_Divide.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Aquatic_Divide_TNM05-V2.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Archers_Valley_v5.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Ashap_Plateau.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Battle_Holms_v4.cfg
+%%DATADIR%%/AI/AAI/cfg/map/BlackLake_Swamp_v_1.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Blue Planet.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Canyon_Wasteland-v02.cfg
+%%DATADIR%%/AI/AAI/cfg/map/CenterrockV11.cfg
+%%DATADIR%%/AI/AAI/cfg/map/CenterrockV12.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Cliff Run-v01.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Coast To Coast Remake.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Comet Catcher Redux.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Comet Catcher Remake-v02.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Comet Catcher Remake.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Cooper_Hill_TNM02-V1.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Core_Prime_Industrial_Area.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Craggy Hills v1.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Crimson_Paradise.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Crossing_4_final.cfg
+%%DATADIR%%/AI/AAI/cfg/map/DarkSide Remake.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Dead Reef v3.cfg
+%%DATADIR%%/AI/AAI/cfg/map/DeltaSiegeDry.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Deserted_Gully-v02.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Dueling_Bases-v01.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Evergreen_Haven-Redux-v02.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Evergreen_Haven-v03.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Expandation v01.cfg
+%%DATADIR%%/AI/AAI/cfg/map/FF-AsteroidBattle.cfg
+%%DATADIR%%/AI/AAI/cfg/map/FF-Surrounded.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Flooded_Canyon-v2.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Flooded_Canyon-v3.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Foothill_Basin_Redux-v02.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Foothills-v08.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Four_Lakes_V2.cfg
+%%DATADIR%%/AI/AAI/cfg/map/FunTA-Battle_for_Aqua_Prime-v03.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Gods Of War 2 Remake V2.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Green Comet Basic.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Hells Pass.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Ice_Bergs_V2.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Iron_Craters_V1.cfg
+%%DATADIR%%/AI/AAI/cfg/map/IslandAlpha.cfg
+%%DATADIR%%/AI/AAI/cfg/map/IslandDivide.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Islands_In_War_1.0.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Long_Division-v01.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Moon Quartet Remake.cfg
+%%DATADIR%%/AI/AAI/cfg/map/MoonQ20.cfg
+%%DATADIR%%/AI/AAI/cfg/map/MoonQ20x.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Mountain Siege.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Mountain_Range-v07.cfg
+%%DATADIR%%/AI/AAI/cfg/map/No_Mans_Land-V03.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Painted Desert Remake V2.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Painted Desert Remake.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Plains_and_passes.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Raised_Divide_v1.cfg
+%%DATADIR%%/AI/AAI/cfg/map/River Dale-v01.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Road_To_Rome.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Rush_Hour-By_Wired.cfg
+%%DATADIR%%/AI/AAI/cfg/map/SailAway.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Shore2Shore_Remake-v01.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Small Supreme Battlefield.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Small Supreme Islands V2.cfg
+%%DATADIR%%/AI/AAI/cfg/map/SmallDivide.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Supreme Battlefield.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Surrounded_Grounds-v2.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Tabula-v2.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Tactical_Divide_v2.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Tangerine.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Tempest.cfg
+%%DATADIR%%/AI/AAI/cfg/map/The Oasis.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Tropical.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Twilight_Canyon-v01.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Vegan_Canyons-v01.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Verdant v3.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Whakamutunga_Riri-v01.cfg
+%%DATADIR%%/AI/AAI/cfg/map/Winter_Wonderland.cfg
+%%DATADIR%%/AI/AAI/cfg/map/aftershock.cfg
+%%DATADIR%%/AI/AAI/cfg/map/cathralda.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/1944DemoReleasev0.01b.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/1944publicalpha_v0.01b3d.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/A-A-SBetaPack1.9B.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/AA3.2.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/AA5.0project.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/AAIA10.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/BA58.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/BA591.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/BA_Installer_Version.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/BOTA_13.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/BOTA_14.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/CA-BETA1.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/Expand&Exterminate v0.163.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/Expand_and_Exterminate_v_0.171.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/FF 1.21 S.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/FleabowlNR10.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/KuroTA-v047.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/OTA_Classic_TA.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/OTA_Shiny_TA.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/OTA_with_Evolva_models.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/OTA_with_UTASP_BP.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/PURE0.51.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/S44LiteRelease.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/SmallMod.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/SpringWD5B65.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/StarWars01.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/TABFForSPRINGv15.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/TBT12.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/TLLv104.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/XTAPE.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/XTA_Installer_Version.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/gundam_1.1_epic.cfg
+%%DATADIR%%/AI/AAI/cfg/mod/gundam_1.1_tiny.cfg
+%%DATADIR%%/AI/AAI/learn/mod/BA58.dat
+%%DATADIR%%/AI/AAI/learn/mod/BA591.dat
+%%DATADIR%%/AI/AAI/learn/mod/XTA_Installer_Version.dat
+%%DATADIR%%/LuaUI/API.txt
+%%DATADIR%%/LuaUI/CHANGELOG.txt
+%%DATADIR%%/LuaUI/Config/README.txt
+%%DATADIR%%/LuaUI/Fonts/FreeMonoBold_12.lua
+%%DATADIR%%/LuaUI/Fonts/FreeMonoBold_12.png
+%%DATADIR%%/LuaUI/Fonts/README
+%%DATADIR%%/LuaUI/Headers/colors.h.lua
+%%DATADIR%%/LuaUI/Headers/keysym.h.lua
+%%DATADIR%%/LuaUI/Icons/cross.png
+%%DATADIR%%/LuaUI/Icons/diamond.png
+%%DATADIR%%/LuaUI/Icons/e.png
+%%DATADIR%%/LuaUI/Icons/hemi-down.png
+%%DATADIR%%/LuaUI/Icons/hemi-up.png
+%%DATADIR%%/LuaUI/Icons/hemi.png
+%%DATADIR%%/LuaUI/Icons/hourglass-side.png
+%%DATADIR%%/LuaUI/Icons/hourglass.png
+%%DATADIR%%/LuaUI/Icons/m-down.png
+%%DATADIR%%/LuaUI/Icons/m-up.png
+%%DATADIR%%/LuaUI/Icons/m.png
+%%DATADIR%%/LuaUI/Icons/sphere.png
+%%DATADIR%%/LuaUI/Icons/square.png
+%%DATADIR%%/LuaUI/Icons/square_+.png
+%%DATADIR%%/LuaUI/Icons/square_x.png
+%%DATADIR%%/LuaUI/Icons/star-dark.png
+%%DATADIR%%/LuaUI/Icons/star.png
+%%DATADIR%%/LuaUI/Icons/tri-down.png
+%%DATADIR%%/LuaUI/Icons/tri-up.png
+%%DATADIR%%/LuaUI/Icons/triangle-down.png
+%%DATADIR%%/LuaUI/Icons/triangle-up.png
+%%DATADIR%%/LuaUI/Icons/x.png
+%%DATADIR%%/LuaUI/Images/flags25x15.png
+%%DATADIR%%/LuaUI/Images/highlight_strip.png
+%%DATADIR%%/LuaUI/Images/players.png
+%%DATADIR%%/LuaUI/Models/colors.lua
+%%DATADIR%%/LuaUI/Models/colors.mtl
+%%DATADIR%%/LuaUI/Models/colors.obj
+%%DATADIR%%/LuaUI/NEWS.txt
+%%DATADIR%%/LuaUI/README.txt
+%%DATADIR%%/LuaUI/Sounds/README.txt
+%%DATADIR%%/LuaUI/Sounds/bounce.wav
+%%DATADIR%%/LuaUI/Sounds/flag_grab.wav
+%%DATADIR%%/LuaUI/Sounds/land.wav
+%%DATADIR%%/LuaUI/Sounds/message_admin.wav
+%%DATADIR%%/LuaUI/Sounds/message_private.wav
+%%DATADIR%%/LuaUI/Sounds/message_team.wav
+%%DATADIR%%/LuaUI/Sounds/pop.wav
+%%DATADIR%%/LuaUI/Sounds/teamgrab.wav
+%%DATADIR%%/LuaUI/Widgets/camera_ctrl.lua
+%%DATADIR%%/LuaUI/Widgets/camera_shake.lua
+%%DATADIR%%/LuaUI/Widgets/camera_smooth_move.lua
+%%DATADIR%%/LuaUI/Widgets/cmd_circle.lua
+%%DATADIR%%/LuaUI/Widgets/cmd_doline.lua
+%%DATADIR%%/LuaUI/Widgets/cmd_factoryclear.lua
+%%DATADIR%%/LuaUI/Widgets/cmd_givemobile.lua
+%%DATADIR%%/LuaUI/Widgets/cmd_savequeue.lua
+%%DATADIR%%/LuaUI/Widgets/dbg_debug.lua
+%%DATADIR%%/LuaUI/Widgets/gui_bigcursor.lua
+%%DATADIR%%/LuaUI/Widgets/gui_clock.lua
+%%DATADIR%%/LuaUI/Widgets/gui_comm_ends.lua
+%%DATADIR%%/LuaUI/Widgets/gui_eyes.lua
+%%DATADIR%%/LuaUI/Widgets/gui_fps.lua
+%%DATADIR%%/LuaUI/Widgets/gui_game_setup.lua
+%%DATADIR%%/LuaUI/Widgets/gui_hilight_unit.lua
+%%DATADIR%%/LuaUI/Widgets/gui_loadscreens.lua
+%%DATADIR%%/LuaUI/Widgets/gui_minimap.lua
+%%DATADIR%%/LuaUI/Widgets/gui_modeltest.lua
+%%DATADIR%%/LuaUI/Widgets/gui_mousetrail.lua
+%%DATADIR%%/LuaUI/Widgets/gui_selbuttons.lua
+%%DATADIR%%/LuaUI/Widgets/gui_team_platter.lua
+%%DATADIR%%/LuaUI/Widgets/gui_tooltip.lua
+%%DATADIR%%/LuaUI/Widgets/gui_xray_shader.lua
+%%DATADIR%%/LuaUI/Widgets/hook_copyqueue.lua
+%%DATADIR%%/LuaUI/Widgets/ico_customicons.lua
+%%DATADIR%%/LuaUI/Widgets/minimap_relative.lua
+%%DATADIR%%/LuaUI/Widgets/minimap_startbox.lua
+%%DATADIR%%/LuaUI/Widgets/snd_chatterbox.lua
+%%DATADIR%%/LuaUI/Widgets/unit_factory_guard.lua
+%%DATADIR%%/LuaUI/Widgets/unit_immobile_buider.lua
+%%DATADIR%%/LuaUI/Widgets/unit_metal_maker.lua
+%%DATADIR%%/LuaUI/Widgets/unit_stockpile.lua
+%%DATADIR%%/LuaUI/actions.lua
+%%DATADIR%%/LuaUI/callins.lua
+%%DATADIR%%/LuaUI/ctrlpanel.txt
+%%DATADIR%%/LuaUI/debug.lua
+%%DATADIR%%/LuaUI/flags.lua
+%%DATADIR%%/LuaUI/fonts.lua
+%%DATADIR%%/LuaUI/layout.lua
+%%DATADIR%%/LuaUI/loadmodel.lua
+%%DATADIR%%/LuaUI/main.lua
+%%DATADIR%%/LuaUI/modui_dialog.lua
+%%DATADIR%%/LuaUI/savetable.lua
+%%DATADIR%%/LuaUI/selector.lua
+%%DATADIR%%/LuaUI/setupdefs.lua
+%%DATADIR%%/LuaUI/system.lua
+%%DATADIR%%/LuaUI/tweakmode.lua
+%%DATADIR%%/LuaUI/utils.lua
+%%DATADIR%%/LuaUI/widgets.lua
+%%DATADIR%%/base/spring/bitmaps.sdz
+%%DATADIR%%/base/springcontent.sdz
+%%DATADIR%%/cmdcolors.txt
+%%DATADIR%%/ctrlpanel.txt
+%%DATADIR%%/fonts/Luxi.ttf
+%%DATADIR%%/fonts/Vera.ttf
+%%DATADIR%%/gui.lua
+%%DATADIR%%/selectkeys.txt
+%%DATADIR%%/startscripts/aistartscripttest.lua
+%%DATADIR%%/startscripts/cmdrscript.lua
+%%DATADIR%%/startscripts/missionhelper.lua
+%%DATADIR%%/startscripts/missiontest.lua
+%%DATADIR%%/startscripts/ordertroops.lua
+%%DATADIR%%/uikeys.txt
+%%DATADIR%%/usericons.tdf
+@dirrm %%DATADIR%%/startscripts
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/base/spring
+@dirrm %%DATADIR%%/base
+@dirrm %%DATADIR%%/LuaUI/Widgets
+@dirrm %%DATADIR%%/LuaUI/Sounds
+@dirrm %%DATADIR%%/LuaUI/Models
+@dirrm %%DATADIR%%/LuaUI/Images
+@dirrm %%DATADIR%%/LuaUI/Icons
+@dirrm %%DATADIR%%/LuaUI/Headers
+@dirrm %%DATADIR%%/LuaUI/Fonts
+@dirrm %%DATADIR%%/LuaUI/Config
+@dirrm %%DATADIR%%/LuaUI
+@dirrm %%DATADIR%%/AI/AAI/learn/mod
+@dirrm %%DATADIR%%/AI/AAI/learn
+@dirrm %%DATADIR%%/AI/AAI/cfg/mod
+@dirrm %%DATADIR%%/AI/AAI/cfg/map
+@dirrm %%DATADIR%%/AI/AAI/cfg/help
+@dirrm %%DATADIR%%/AI/AAI/cfg
+@dirrm %%DATADIR%%/AI/AAI
+@dirrm %%DATADIR%%/AI
+@dirrm %%DATADIR%%
+@dirrm lib/spring/AI/Helper-libs
+@dirrm lib/spring/AI/Bot-libs
+@dirrm lib/spring/AI
+@dirrm lib/spring
+@dirrm etc/spring
