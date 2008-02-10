@@ -1,10 +1,16 @@
 bin/swig
 bin/swig%%VER%%
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/cmdopt.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/engineering.html
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/file.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/index.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/internals.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/migrate.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/parm.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/runtime.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/scanner.html
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/tree.html
+%%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/wrapobj.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Allegrocl.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/Arguments.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Manual/CSharp.html
@@ -284,7 +290,6 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/csharp/extend/example.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/csharp/extend/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/csharp/extend/example.sln
-%%EXAMPLESDIR%%/%%PORTVERSION%%/csharp/extend/main.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/csharp/extend/runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/csharp/funcptr/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/csharp/funcptr/example-cs.csproj
@@ -335,7 +340,6 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/README
 %%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/main.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/matrix.c
-%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/matrix.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/matrix.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/matrix.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/package.i
@@ -402,11 +406,6 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/java/funcptr/index.html
 %%EXAMPLESDIR%%/%%PORTVERSION%%/java/funcptr/main.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/java/index.html
-%%EXAMPLESDIR%%/%%PORTVERSION%%/java/mpointer/Makefile
-%%EXAMPLESDIR%%/%%PORTVERSION%%/java/mpointer/example.cxx
-%%EXAMPLESDIR%%/%%PORTVERSION%%/java/mpointer/example.h
-%%EXAMPLESDIR%%/%%PORTVERSION%%/java/mpointer/example.i
-%%EXAMPLESDIR%%/%%PORTVERSION%%/java/mpointer/main.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/java/multimap/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/java/multimap/example.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/java/multimap/example.dsp
@@ -470,6 +469,17 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functor/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functor/runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/README
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/bar.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/bar.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/base.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/base.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/foo.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/foo.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/spam.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import/spam.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/lua.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/pointer/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/pointer/example.c
@@ -608,11 +618,6 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/java/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/java/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/java/runme.pl
-%%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/mpointer/Makefile
-%%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/mpointer/example.cxx
-%%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/mpointer/example.h
-%%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/mpointer/example.i
-%%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/mpointer/runme.pl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/multimap/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/multimap/example.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/multimap/example.dsp
@@ -849,11 +854,6 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/python/java/runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/python/libffi/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/python/libffi/example.i
-%%EXAMPLESDIR%%/%%PORTVERSION%%/python/mpointer/Makefile
-%%EXAMPLESDIR%%/%%PORTVERSION%%/python/mpointer/example.cxx
-%%EXAMPLESDIR%%/%%PORTVERSION%%/python/mpointer/example.h
-%%EXAMPLESDIR%%/%%PORTVERSION%%/python/mpointer/example.i
-%%EXAMPLESDIR%%/%%PORTVERSION%%/python/mpointer/runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/python/multimap/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/python/multimap/example.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/python/multimap/example.dsp
@@ -1016,11 +1016,6 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mark_function/example.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mark_function/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mark_function/runme.rb
-%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mpointer/Makefile
-%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mpointer/example.cxx
-%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mpointer/example.h
-%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mpointer/example.i
-%%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mpointer/runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/multimap/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/multimap/example.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/multimap/example.dsp
@@ -1124,11 +1119,6 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/java/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/java/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/java/runme.tcl
-%%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/mpointer/Makefile
-%%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/mpointer/example.cxx
-%%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/mpointer/example.h
-%%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/mpointer/example.i
-%%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/mpointer/runme.tcl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/multimap/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/multimap/example.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/multimap/example.dsp
@@ -1155,6 +1145,18 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/simple/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/simple/index.html
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/simple/runme.tcl
+%%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/std_vector/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/std_vector/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/std_vector/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/std_vector/runme.tcl
+%%EXAMPLESDIR%%/%%PORTVERSION%%/python/docstrings/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/python/docstrings/example.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/python/docstrings/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/python/docstrings/runme.py
+%%EXAMPLESDIR%%/%%PORTVERSION%%/python/docstrings/example.cxx
+%%EXAMPLESDIR%%/%%PORTVERSION%%/r/simple/example.dsp
+%%EXAMPLESDIR%%/%%PORTVERSION%%/r/class/example.dsp
+%%EXAMPLESDIR%%/%%PORTVERSION%%/r/check.list
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/value/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/value/example.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/value/example.h
@@ -1227,6 +1229,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/li_typemaps_runme.ss
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/li_typemaps_runme_proxy.ss
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/list_vector_runme.ss
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/member_pointer_runme.ss
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/multiple_inheritance_runme_proxy.ss
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/multivalue_runme.ss
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/name_runme.ss
@@ -1269,6 +1272,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/constructor_copy.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/constructor_exception.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/constructor_explicit.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/constructor_ignore.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/constructor_value.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/contract.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/conversion.i
@@ -1292,6 +1296,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/constover_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/csharp_attributes_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/csharp_exceptions_runme.cs
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/csharp_prepost_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/csharp_typemaps_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/default_args_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/default_constructor_runme.cs
@@ -1306,11 +1311,14 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/enum_thorough_typesafe_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/imports_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/intermediary_classname_runme.cs
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/li_boost_shared_ptr_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/li_std_except_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/li_std_string_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/li_std_vector_runme.cs
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/li_std_wstring_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/li_typemaps_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/long_long_runme.cs
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/member_pointer_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/operator_overload_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/overload_complicated_runme.cs
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/overload_template_runme.cs
@@ -1325,6 +1333,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp_attributes.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp_exceptions.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp_features.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp_prepost.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp_typemaps.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/default_args.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/default_constructor.i
@@ -1508,6 +1517,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/inherit.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/inherit_missing.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/inherit_same_name.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/inherit_target_language.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/inherit_void_arg.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/inline_initializer.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/integers.i
@@ -1549,6 +1559,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/ignore_parameter_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/imports_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/inctest_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/inherit_target_language_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/intermediary_classname_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_constants_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_director_runme.java
@@ -1557,15 +1568,20 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_lib_arrays_dimensionless_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_lib_arrays_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_lib_various_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_pgcpp_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_pragmas_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_prepost_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_throws_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_typemaps_proxy_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/java_typemaps_typewrapper_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/li_boost_shared_ptr_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/li_carrays_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/li_std_except_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/li_std_string_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/li_std_vector_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/li_typemaps_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/long_long_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/member_pointer_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/minherit2_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/multiple_inheritance_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/operator_overload_runme.java
@@ -1574,11 +1590,16 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/pointer_reference_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/primitive_ref_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/profiletest_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/rename1_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/rename2_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/rename3_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/rename4_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/ret_by_value_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/rname_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/sizet_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_classes_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_default_arg_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_methods_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/typemap_namespace_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/unions_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/using_pointers_runme.java
@@ -1591,7 +1612,9 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_lib_arrays.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_lib_arrays_dimensionless.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_lib_various.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_pgcpp.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_pragmas.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_prepost.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_throws.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_typemaps_proxy.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_typemaps_typewrapper.i
@@ -1599,8 +1622,10 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/langobj.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lextype.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_attribute.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_boost_shared_ptr.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_carrays.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_cdata.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_cdata_carrays.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_cmalloc.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_constraints.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_cpointer.i
@@ -1611,7 +1636,10 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_math.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_deque.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_except.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_map.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_pair.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_set.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_stream.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_string.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_vector.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_wstring.i
@@ -1625,18 +1653,31 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/Makefile.in
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/abstract_access_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/cpp_basic_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/dynamic_cast_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/enums_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/exception_order_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/exception_partial_info_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/import.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/imports_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/li_carrays_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/li_std_except_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/li_std_pair_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/li_std_string_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/li_std_vector_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/member_pointer_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/newobject1_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/newobject2_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/operator_overload_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/overload_simple_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/overload_template_fast_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/overload_template_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/primitive_ref_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/ret_by_value_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/sizet_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/smart_pointer_overload_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/template_default_arg_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/voidtest_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/member_pointer.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/member_template.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/memberin1.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/minherit.i
@@ -1646,6 +1687,11 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/mod.list
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/mod_a.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/mod_b.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/multi_import.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/multi_import.list
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/multi_import_a.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/multi_import_b.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/multi_import_c.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/multiple_inheritance.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/multivalue.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/mzscheme/Makefile
@@ -1717,8 +1763,10 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/import_nomodule_runme.pl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/imports_runme.pl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/inherit_runme.pl
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/li_cdata_carrays_runme.pl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/li_std_list.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/li_std_string_runme.pl
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/member_pointer_runme.pl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/multiple_inheritance_runme.pl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/operator_overload_runme.pl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/overload_copy_runme.pl
@@ -1792,7 +1840,6 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/argcargvtest_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/array_member_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/arrays_global_runme.py
-%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/attributetest.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/autodoc.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/callback.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/callback_runme.py
@@ -1888,8 +1935,10 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_wstream_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_wstring.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_wstring_runme.py
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/member_pointer_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/minherit_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/mod_runme.py
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/multi_import_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/namespace_class_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/namespace_typemap_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/namespace_virtual_method_runme.py
@@ -1998,8 +2047,14 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/refcount.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/reference_global_vars.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/register_par.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/rename.h
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/rename1.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/rename2.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/rename3.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/rename4.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/rename_camel.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/rename_scope.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/restrict_cplusplus.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ret_by_value.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/return_const_value.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/return_value_scope.i
@@ -2007,18 +2062,30 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/Makefile.in
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/README
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/abstract_access_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/abstract_inherit_ok_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/abstract_inherit_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/abstract_signature_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/abstract_typedef2_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/abstract_typedef_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/abstract_virtual_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/access_change_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/add_link_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/aggregate_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/anonymous_bitfield_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/apply_signed_char_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/apply_strings_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/argout_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/array_member_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/arrays_global_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/arrays_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/bools_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/cast_operator_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/casts_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/char_constant_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/check_missing_tests.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/class_ignore_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/const_const_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/constover_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/cpp_namespace_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/default_constructor_runme.rb
@@ -2041,18 +2108,37 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/extend_template_ns_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/extend_template_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/friends_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/function_typedef_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/grouping_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/ignore_parameter_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/imports_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/inherit_missing_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/integers_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/keywords.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/keywords_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_carrays_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_cstring_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_factory_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_math_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_deque_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_functors.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_functors_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_map_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_pair_lang_object.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_pair_lang_object_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_pair_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_queue.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_queue_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_set_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_speed.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_speed2_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_speed_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_stack.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_stack_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_stream_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_string_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/li_std_vector_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/member_pointer_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/minherit_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/namespace_typemap_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/naming.i
@@ -2081,7 +2167,12 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/smart_pointer_typedef_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/sneaky1_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/static_const_member_2_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/std_containers_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/stl_new.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/stl_new_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/struct_value_runme.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/swig_assert.rb
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/swig_gc.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/template_construct_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/template_extend1_runme.rb
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ruby/template_extend2_runme.rb
@@ -2149,6 +2240,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/schemerunme/typename.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/schemerunme/unions.scm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/schemerunme/unions_proxy.scm
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/shared_ptr_wrapper.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/sizeof_pointer.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/sizet.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/smart_pointer_const.i
@@ -2166,14 +2258,17 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/smart_pointer_rename.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/smart_pointer_simple.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/smart_pointer_static.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/smart_pointer_templatemethods.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/smart_pointer_typedef.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/sneaky1.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/special_variables.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/static_array_member.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/static_const_member.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/static_const_member_2.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/std_containers.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/struct_rename.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/struct_value.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/swig_examples_lock.h
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/sym.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tag_no_clash_with_variable.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/Makefile
@@ -2186,6 +2281,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/import_nomodule_runme.tcl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/imports_runme.tcl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/li_std_string_runme.tcl
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/member_pointer_runme.tcl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/newobject1_runme.tcl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/newobject2_runme.tcl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl/overload_copy_runme.tcl
@@ -2226,6 +2322,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_inherit.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_inherit_abstract.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_int_const.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_methods.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_ns.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_ns2.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_ns3.i
@@ -2363,6 +2460,7 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/cmalloc.i
 %%DATADIR%%/%%PORTVERSION%%/constraints.i
 %%DATADIR%%/%%PORTVERSION%%/cpointer.i
+%%DATADIR%%/%%PORTVERSION%%/csharp/boost_shared_ptr.i
 %%DATADIR%%/%%PORTVERSION%%/csharp/csharp.swg
 %%DATADIR%%/%%PORTVERSION%%/csharp/csharphead.swg
 %%DATADIR%%/%%PORTVERSION%%/csharp/csharpkw.swg
@@ -2377,8 +2475,10 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/csharp/std_pair.i
 %%DATADIR%%/%%PORTVERSION%%/csharp/std_string.i
 %%DATADIR%%/%%PORTVERSION%%/csharp/std_vector.i
+%%DATADIR%%/%%PORTVERSION%%/csharp/std_wstring.i
 %%DATADIR%%/%%PORTVERSION%%/csharp/stl.i
 %%DATADIR%%/%%PORTVERSION%%/csharp/typemaps.i
+%%DATADIR%%/%%PORTVERSION%%/csharp/wchar.i
 %%DATADIR%%/%%PORTVERSION%%/cstring.i
 %%DATADIR%%/%%PORTVERSION%%/cwstring.i
 %%DATADIR%%/%%PORTVERSION%%/exception.i
@@ -2410,6 +2510,7 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/guile/typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/inttypes.i
 %%DATADIR%%/%%PORTVERSION%%/java/arrays_java.i
+%%DATADIR%%/%%PORTVERSION%%/java/boost_shared_ptr.i
 %%DATADIR%%/%%PORTVERSION%%/java/director.swg
 %%DATADIR%%/%%PORTVERSION%%/java/enums.swg
 %%DATADIR%%/%%PORTVERSION%%/java/enumsimple.swg
@@ -2430,17 +2531,22 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/java/typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/java/various.i
 %%DATADIR%%/%%PORTVERSION%%/lua/_std_common.i
+%%DATADIR%%/%%PORTVERSION%%/lua/carrays.i
 %%DATADIR%%/%%PORTVERSION%%/lua/lua.swg
 %%DATADIR%%/%%PORTVERSION%%/lua/lua_fnptr.i
 %%DATADIR%%/%%PORTVERSION%%/lua/luarun.swg
 %%DATADIR%%/%%PORTVERSION%%/lua/luaruntime.swg
 %%DATADIR%%/%%PORTVERSION%%/lua/luatypemaps.swg
+%%DATADIR%%/%%PORTVERSION%%/lua/std_common.i
 %%DATADIR%%/%%PORTVERSION%%/lua/std_deque.i
 %%DATADIR%%/%%PORTVERSION%%/lua/std_except.i
+%%DATADIR%%/%%PORTVERSION%%/lua/std_map.i
 %%DATADIR%%/%%PORTVERSION%%/lua/std_pair.i
 %%DATADIR%%/%%PORTVERSION%%/lua/std_string.i
 %%DATADIR%%/%%PORTVERSION%%/lua/std_vector.i
+%%DATADIR%%/%%PORTVERSION%%/lua/stl.i
 %%DATADIR%%/%%PORTVERSION%%/lua/typemaps.i
+%%DATADIR%%/%%PORTVERSION%%/lua/wchar.i
 %%DATADIR%%/%%PORTVERSION%%/math.i
 %%DATADIR%%/%%PORTVERSION%%/modula3/modula3.swg
 %%DATADIR%%/%%PORTVERSION%%/modula3/modula3head.swg
@@ -2652,32 +2758,61 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/ruby/progargcargv.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/ruby.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubyapi.swg
+%%DATADIR%%/%%PORTVERSION%%/ruby/rubyautodoc.swg
+%%DATADIR%%/%%PORTVERSION%%/ruby/rubyclasses.swg
+%%DATADIR%%/%%PORTVERSION%%/ruby/rubycomplex.swg
+%%DATADIR%%/%%PORTVERSION%%/ruby/rubycontainer.swg
+%%DATADIR%%/%%PORTVERSION%%/ruby/rubycontainer_extended.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubydef.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubyerrors.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubyfragments.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubyhead.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubyinit.swg
+%%DATADIR%%/%%PORTVERSION%%/ruby/rubyiterators.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubykw.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubymacros.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubyopers.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubyprimtypes.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubyrun.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubyruntime.swg
+%%DATADIR%%/%%PORTVERSION%%/ruby/rubystdautodoc.swg
+%%DATADIR%%/%%PORTVERSION%%/ruby/rubystdcommon.swg
+%%DATADIR%%/%%PORTVERSION%%/ruby/rubystdfunctors.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubystrings.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubytracking.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubytypemaps.swg
 %%DATADIR%%/%%PORTVERSION%%/ruby/rubyuserdir.swg
+%%DATADIR%%/%%PORTVERSION%%/ruby/rubywstrings.swg
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_alloc.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_basic_string.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_char_traits.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/std_common.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_complex.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_container.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/std_deque.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/std_except.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_functors.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_ios.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_iostream.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_list.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/std_map.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_multimap.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_multiset.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/std_pair.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_queue.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_set.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_sstream.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_stack.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_streambuf.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/std_string.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/std_vector.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_vectora.i
+%%DATADIR%%/%%PORTVERSION%%/ruby/std_wstring.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/stl.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/timeval.i
 %%DATADIR%%/%%PORTVERSION%%/ruby/typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/runtime.swg
+%%DATADIR%%/%%PORTVERSION%%/shared_ptr.i
 %%DATADIR%%/%%PORTVERSION%%/std/_std_deque.i
 %%DATADIR%%/%%PORTVERSION%%/std/std_alloc.i
 %%DATADIR%%/%%PORTVERSION%%/std/std_basic_string.i
@@ -2694,8 +2829,10 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/std/std_multimap.i
 %%DATADIR%%/%%PORTVERSION%%/std/std_multiset.i
 %%DATADIR%%/%%PORTVERSION%%/std/std_pair.i
+%%DATADIR%%/%%PORTVERSION%%/std/std_queue.i
 %%DATADIR%%/%%PORTVERSION%%/std/std_set.i
 %%DATADIR%%/%%PORTVERSION%%/std/std_sstream.i
+%%DATADIR%%/%%PORTVERSION%%/std/std_stack.i
 %%DATADIR%%/%%PORTVERSION%%/std/std_streambuf.i
 %%DATADIR%%/%%PORTVERSION%%/std/std_string.i
 %%DATADIR%%/%%PORTVERSION%%/std/std_vector.i
@@ -2845,12 +2982,12 @@ bin/swig%%VER%%
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/variables
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/value
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/std_vector
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/simple
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/reference
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/pointer
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/operator
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/multimap
-@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/mpointer
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/java
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/import
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/tcl/funcptr
@@ -2870,7 +3007,6 @@ bin/swig%%VER%%
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/overloading
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/operator
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/multimap
-@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mpointer
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/mark_function
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/java
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/ruby/import_template
@@ -2902,7 +3038,6 @@ bin/swig%%VER%%
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/pointer
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/operator
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/multimap
-@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/mpointer
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/libffi
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/java
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/import_template
@@ -2914,6 +3049,7 @@ bin/swig%%VER%%
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/exceptshadow
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/exception
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/enum
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/docstrings
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/contract
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/constants
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/python/class
@@ -2950,7 +3086,6 @@ bin/swig%%VER%%
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/pointer
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/multiple_inheritance
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/multimap
-@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/mpointer
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/java
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/inline
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/perl5/import
@@ -2984,6 +3119,7 @@ bin/swig%%VER%%
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/variables
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/simple
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/pointer
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/import
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functor
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functest
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/funcptr3
@@ -2998,7 +3134,6 @@ bin/swig%%VER%%
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/java/pointer
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/java/native
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/java/multimap
-@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/java/mpointer
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/java/funcptr
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/java/extend
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/java/enum
