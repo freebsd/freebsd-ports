@@ -721,6 +721,7 @@
     SUBDIR += speyes
     SUBDIR += spicetrade
     SUBDIR += spider
+    SUBDIR += spring
     SUBDIR += ssamtse
     SUBDIR += ssc
     SUBDIR += starfighter
