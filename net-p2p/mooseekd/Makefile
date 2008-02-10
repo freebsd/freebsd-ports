@@ -8,7 +8,7 @@
 PORTNAME=	mooseekd
 PORTVERSION=	0.05
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://files.beep-media-player.org/releases/mooseekd/
+MASTER_SITES=	http://files.backtrace.info/releases/mooseekd/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A deamon to connect to the Soulseek network
