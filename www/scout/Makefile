@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://sid.joedog.org/pub/scout/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to harvest URLs from a given start point
 
+BROKEN=		Does not fetch
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-shared --enable-static
 MAN1=		scout.1
