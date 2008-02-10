@@ -123,6 +123,36 @@
 %%INSTALLDIR%%/index_icons/osx/uu.png
 %%INSTALLDIR%%/index_icons/osx/web.png
 %%INSTALLDIR%%/index_icons/osx/xls.png
+%%INSTALLDIR%%/index_icons/winvista/back.png
+%%INSTALLDIR%%/index_icons/winvista/binary.png
+%%INSTALLDIR%%/index_icons/winvista/binhex.png
+%%INSTALLDIR%%/index_icons/winvista/cd.png
+%%INSTALLDIR%%/index_icons/winvista/comp.png
+%%INSTALLDIR%%/index_icons/winvista/compressed.png
+%%INSTALLDIR%%/index_icons/winvista/dir.png
+%%INSTALLDIR%%/index_icons/winvista/dll.png
+%%INSTALLDIR%%/index_icons/winvista/doc.png
+%%INSTALLDIR%%/index_icons/winvista/generic.png
+%%INSTALLDIR%%/index_icons/winvista/image.png
+%%INSTALLDIR%%/index_icons/winvista/java.png
+%%INSTALLDIR%%/index_icons/winvista/js.png
+%%INSTALLDIR%%/index_icons/winvista/key.png
+%%INSTALLDIR%%/index_icons/winvista/login.png
+%%INSTALLDIR%%/index_icons/winvista/mov.png
+%%INSTALLDIR%%/index_icons/winvista/movie.png
+%%INSTALLDIR%%/index_icons/winvista/new.png
+%%INSTALLDIR%%/index_icons/winvista/pdf.png
+%%INSTALLDIR%%/index_icons/winvista/php.png
+%%INSTALLDIR%%/index_icons/winvista/ppt.png
+%%INSTALLDIR%%/index_icons/winvista/ps.png
+%%INSTALLDIR%%/index_icons/winvista/search.png
+%%INSTALLDIR%%/index_icons/winvista/sound.png
+%%INSTALLDIR%%/index_icons/winvista/tar.png
+%%INSTALLDIR%%/index_icons/winvista/text.png
+%%INSTALLDIR%%/index_icons/winvista/unknown.png
+%%INSTALLDIR%%/index_icons/winvista/uu.png
+%%INSTALLDIR%%/index_icons/winvista/web.png
+%%INSTALLDIR%%/index_icons/winvista/xls.png
 %%INSTALLDIR%%/index_icons/winxp/back.png
 %%INSTALLDIR%%/index_icons/winxp/binary.png
 %%INSTALLDIR%%/index_icons/winxp/binhex.png
@@ -197,11 +227,12 @@
 @dirrm %%INSTALLDIR%%/index_icons/apache
 @dirrm %%INSTALLDIR%%/index_icons/kde
 @dirrm %%INSTALLDIR%%/index_icons/osx
+@dirrm %%INSTALLDIR%%/index_icons/winvista
 @dirrm %%INSTALLDIR%%/index_icons/winxp
 @dirrm %%INSTALLDIR%%/index_icons
 @dirrm %%INSTALLDIR%%/languages
 @dirrm %%INSTALLDIR%%/templates/default
 @dirrm %%INSTALLDIR%%/templates/simple_image_gallery
 @dirrm %%INSTALLDIR%%/templates
-@dirrm %%INSTALLDIR%%
+@dirrmtry %%INSTALLDIR%%
 @dirrmtry www/data
