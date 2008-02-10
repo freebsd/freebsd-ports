@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:mod_ssl/} \
@@ -36,8 +36,8 @@ PATCH_DEPENDS=	${BUILD_DEPENDS}
 CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
 		apache_fp-1.* caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* w3c-httpd-3.*
-VERSION_APACHE=	1.3.39
-VERSION_MODSSL=	2.8.30
+VERSION_APACHE=	1.3.41
+VERSION_MODSSL=	2.8.31
 VERSION_MODSNMP=	1.3.14.13
 VERSION_MODACCEL=	1.0.34
 VERSION_MODDEFLATE=	1.0.21
