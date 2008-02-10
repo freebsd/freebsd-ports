@@ -7,6 +7,7 @@
 
 PORTNAME=	makehuman
 DISTVERSION=	0.9.1-rc1a
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -39,5 +40,9 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-makehumandocDATA||' ${WRKSRC}/Makefile.in
 .endif
+
+post-install:
+	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 -n 10 ${CHMOD} 0755
+	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 -n 10 ${CHMOD} 0644
 
 .include <bsd.port.mk>
