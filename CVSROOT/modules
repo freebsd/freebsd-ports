@@ -15810,6 +15810,7 @@ telbook		ports/misc/telbook
 telepathy-gabble	ports/net-im/telepathy-gabble
 telepathy-glib	ports/net-im/telepathy-glib
 telepathy-idle	ports/net-im/telepathy-idle
+telepathy-qt	ports/net-im/telepathy-qt
 telepathy-salut	ports/net-im/telepathy-salut
 tellico		ports/misc/tellico
 telserv		ports/net/telserv
