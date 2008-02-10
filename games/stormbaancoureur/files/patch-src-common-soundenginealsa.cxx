@@ -1,6 +1,6 @@
---- src-common/soundenginealsa.cxx.orig	Thu May 17 20:02:03 2007
-+++ src-common/soundenginealsa.cxx	Thu Aug  9 02:19:21 2007
-@@ -38,93 +38,20 @@
+--- src-common/soundenginealsa.cxx.orig	2008-01-06 23:27:11.000000000 +0300
++++ src-common/soundenginealsa.cxx	2008-02-09 00:54:41.000000000 +0300
+@@ -38,219 +38,46 @@
    complexfeed(0),
    enginefeed(0),
    activefeed(0),
@@ -54,8 +54,11 @@
 -    );
 -  }
 -
--  snd_pcm_uframes_t frames = framelag;
--  snd_pcm_hw_params_set_period_size_near(handle, params, &frames, &dir);
+-  snd_pcm_uframes_t frames_in_buffer = framelag;
+-  snd_pcm_uframes_t frames_in_period = framelag/8;
+-
+-  snd_pcm_hw_params_set_buffer_size_near(handle, params, &frames_in_buffer);
+-  snd_pcm_hw_params_set_period_size_near(handle, params, &frames_in_period, &dir);
 -
 -  /* Write the parameters to the driver */
 -  rc = snd_pcm_hw_params(handle, params);
@@ -65,8 +68,13 @@
 -    return;
 -  }
 -  snd_pcm_hw_params_get_period_size(params, &periodsz, &dir);
--  batchsize = (int) ceilf(framelag / (float) periodsz);
--  fprintf(stderr,"soundenginealsa.cxx: requested period %d, got period %d, use batchsize %d\n", framelag, (int) periodsz, batchsize);
+-  snd_pcm_hw_params_get_buffer_size(params, &buffersz);
+-
+-  fprintf(stderr,"soundenginealsa.cxx: period size SOLL-WERT %d, IST-WERT %d\n", framelag/8, (int) periodsz);
+-  fprintf(stderr,"soundenginealsa.cxx: buffer size SOLL-WERT %d, IST-WERT %d\n", framelag,   (int) buffersz);
+-
+-  if (buffersz % periodsz)
+-    fprintf(stderr,"soundenginealsa.cxx: WARNING - buffersz is not a multiple of periodsz\n");
 -
 -  simplefeed  = new SoundFeedSimple(periodsz);
 -  complexfeed = new SoundFeedComplex(periodsz);
@@ -94,7 +102,11 @@
  }
  
  
-@@ -136,40 +63,11 @@
+ void SoundEngineAlsa::StopPlay(void)
+ {
+-  puts("NOT YET IMPLEMENTED");
+ }
+ 
  
  void SoundEngineAlsa::SetMode(const std::string &modename)
  {
@@ -135,7 +147,12 @@
  }
  
  
-@@ -182,58 +80,6 @@
+ void SoundEngineAlsa::SetLowPass(float f)
+ {
+-  lpfilter = f;
+ }
+ 
+ 
  
  float SoundEngineAlsa::Sustain(void)
  {
@@ -171,7 +188,12 @@
 -
 -  if (delay < framelag)
 -  {
--    int cnt = batchsize;
+-    int todo = framelag - delay;
+-#if 0
+-    int cnt  = (todo + periodsz-1) / periodsz; // Use this with pulse audio (fedora)
+-#else
+-    int cnt  = todo / periodsz; // Use this with all other alsa implementations
+-#endif
 -    short *data = activefeed->Get(cnt);
 -    if (cnt)
 -    {
@@ -188,6 +210,10 @@
 -      else
 -        if (rc != (int) (cnt*periodsz))
 -          fprintf(stderr, "short write, wrote %d frames instead of %d\n", rc, (int) periodsz);
+-#if 0
+-        else
+-          fprintf(stderr, "wrote %d sound frames\n", rc);
+-#endif
 -    }
 -  }
 -  return fractiondone;

@@ -1,5 +1,5 @@
---- src-stormbaancoureur/Makefile.orig	2007-12-29 00:55:42.000000000 +0300
-+++ src-stormbaancoureur/Makefile	2007-12-31 16:51:58.000000000 +0300
+--- src-stormbaancoureur/Makefile.orig	2008-02-08 21:00:29.000000000 +0300
++++ src-stormbaancoureur/Makefile	2008-02-09 01:02:10.000000000 +0300
 @@ -5,7 +5,7 @@
  GLPREFIX=/usr
  PLIBPREFIX=/usr
@@ -50,7 +50,7 @@
  	$(CXX) -o stormbaancoureur $(OBJS) $(LFLAGS) $(LIBS)
  
  staticworldobject.o: ../src-common/staticworldobject.cxx ../src-common/staticworldobject.h ../src-common/worldobject.h
-@@ -102,62 +99,61 @@
+@@ -102,64 +99,63 @@
  GAMEDIR=$(DESTDIR)/usr/share/games/stormbaancoureur
  install: stormbaancoureur
  	# Directories
@@ -67,28 +67,26 @@
 -	install stormbaancoureur $(DESTDIR)/usr/games/stormbaancoureur
 +	${BSD_INSTALL_PROGRAM} stormbaancoureur $(PREFIX)/bin/stormbaancoureur
  	# Images
--	install -m 644 images/engine.tga $(GAMEDIR)/images/engine.tga
 -	install -m 644 images/info_carpet_smooth.rgb $(GAMEDIR)/images/info_carpet_smooth.rgb
 -	install -m 644 images/info_door_smooth.rgb $(GAMEDIR)/images/info_door_smooth.rgb
 -	install -m 644 images/info_jump_smooth.rgb $(GAMEDIR)/images/info_jump_smooth.rgb
 -	install -m 644 images/spot.tga $(GAMEDIR)/images/spot.tga
-+	${BSD_INSTALL_DATA} -m 644 images/engine.tga $(DATADIR)/images/engine.tga
-+	${BSD_INSTALL_DATA} -m 644 images/info_carpet_smooth.rgb $(DATADIR)/images/info_carpet_smooth.rgb
-+	${BSD_INSTALL_DATA} -m 644 images/info_door_smooth.rgb $(DATADIR)/images/info_door_smooth.rgb
-+	${BSD_INSTALL_DATA} -m 644 images/info_jump_smooth.rgb $(DATADIR)/images/info_jump_smooth.rgb
-+	${BSD_INSTALL_DATA} -m 644 images/spot.tga $(DATADIR)/images/spot.tga
++	${BSD_INSTALL_DATA} images/info_carpet_smooth.rgb $(DATADIR)/images/info_carpet_smooth.rgb
++	${BSD_INSTALL_DATA} images/info_door_smooth.rgb $(DATADIR)/images/info_door_smooth.rgb
++	${BSD_INSTALL_DATA} images/info_jump_smooth.rgb $(DATADIR)/images/info_jump_smooth.rgb
++	${BSD_INSTALL_DATA} images/spot.tga $(DATADIR)/images/spot.tga
  	# Sounds
 -	install -m 644 sounds/rpm_graph.txt $(GAMEDIR)/sounds/rpm_graph.txt
 -	install -m 644 sounds/camaro_s16_le.wav $(GAMEDIR)/sounds/camaro_s16_le.wav
 -	install -m 644 sounds/detonationnorm_s16_le.wav $(GAMEDIR)/sounds/detonationnorm_s16_le.wav
-+	${BSD_INSTALL_DATA} -m 644 sounds/rpm_graph.txt $(DATADIR)/sounds/rpm_graph.txt
-+	${BSD_INSTALL_DATA} -m 644 sounds/camaro_s16_le.wav $(DATADIR)/sounds/camaro_s16_le.wav
-+	${BSD_INSTALL_DATA} -m 644 sounds/detonationnorm_s16_le.wav $(DATADIR)/sounds/detonationnorm_s16_le.wav
++	${BSD_INSTALL_DATA} sounds/rpm_graph.txt $(DATADIR)/sounds/rpm_graph.txt
++	${BSD_INSTALL_DATA} sounds/camaro_s16_le.wav $(DATADIR)/sounds/camaro_s16_le.wav
++	${BSD_INSTALL_DATA} sounds/detonationnorm_s16_le.wav $(DATADIR)/sounds/detonationnorm_s16_le.wav
          # Shaders
 -	install -m 644 shaders/bramlight.fp $(GAMEDIR)/shaders/bramlight.fp
 -	install -m 644 shaders/bramlight.vp $(GAMEDIR)/shaders/bramlight.vp
-+	${BSD_INSTALL_DATA} -m 644 shaders/bramlight.fp $(DATADIR)/shaders/bramlight.fp
-+	${BSD_INSTALL_DATA} -m 644 shaders/bramlight.vp $(DATADIR)/shaders/bramlight.vp
++	${BSD_INSTALL_DATA} shaders/bramlight.fp $(DATADIR)/shaders/bramlight.fp
++	${BSD_INSTALL_DATA} shaders/bramlight.vp $(DATADIR)/shaders/bramlight.vp
  	# Models (car parts)
 -	install -m 644 models/coilspring.3ds $(GAMEDIR)/models/coilspring.3ds
 -	install -m 644 models/fivespoke.3ds $(GAMEDIR)/models/fivespoke.3ds
@@ -97,13 +95,13 @@
 -	install -m 644 models/rearaxle.3ds $(GAMEDIR)/models/rearaxle.3ds
 -	install -m 644 models/spindle.3ds $(GAMEDIR)/models/spindle.3ds
 -	install -m 644 models/wishbone.3ds $(GAMEDIR)/models/wishbone.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/coilspring.3ds $(DATADIR)/models/coilspring.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/fivespoke.3ds $(DATADIR)/models/fivespoke.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/frame.3ds $(DATADIR)/models/frame.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/leafspring.3ds $(DATADIR)/models/leafspring.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/rearaxle.3ds $(DATADIR)/models/rearaxle.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/spindle.3ds $(DATADIR)/models/spindle.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/wishbone.3ds $(DATADIR)/models/wishbone.3ds
++	${BSD_INSTALL_DATA} models/coilspring.3ds $(DATADIR)/models/coilspring.3ds
++	${BSD_INSTALL_DATA} models/fivespoke.3ds $(DATADIR)/models/fivespoke.3ds
++	${BSD_INSTALL_DATA} models/frame.3ds $(DATADIR)/models/frame.3ds
++	${BSD_INSTALL_DATA} models/leafspring.3ds $(DATADIR)/models/leafspring.3ds
++	${BSD_INSTALL_DATA} models/rearaxle.3ds $(DATADIR)/models/rearaxle.3ds
++	${BSD_INSTALL_DATA} models/spindle.3ds $(DATADIR)/models/spindle.3ds
++	${BSD_INSTALL_DATA} models/wishbone.3ds $(DATADIR)/models/wishbone.3ds
  	#install -m 644 models/car.3ds $(GAMEDIR)/models/car.3ds
  	#install -m 644 models/wheel.3ds $(GAMEDIR)/models/wheel.3ds
  	#install -m 644 models/licplate.ac $(GAMEDIR)/models/licplate.ac
@@ -126,34 +124,40 @@
 -	install -m 644 models/grid.3ds $(GAMEDIR)/models/grid.3ds
 -	install -m 644 models/highjump.3ds $(GAMEDIR)/models/highjump.3ds
 -	install -m 644 models/jumpboard.3ds $(GAMEDIR)/models/jumpboard.3ds
+-	install -m 644 models/monoramp.3ds $(GAMEDIR)/models/monoramp.3ds
+-	install -m 644 models/piston.3ds $(GAMEDIR)/models/piston.3ds
 -	install -m 644 models/ramp.3ds $(GAMEDIR)/models/ramp.3ds
+-	install -m 644 models/rod.3ds $(GAMEDIR)/models/rod.3ds
 -	install -m 644 models/spikegate.3ds $(GAMEDIR)/models/spikegate.3ds
 -	install -m 644 models/terrain3.3ds $(GAMEDIR)/models/terrain3.3ds
 -	install -m 644 models/track.3ds $(GAMEDIR)/models/track.3ds
 -	install -m 644 models/turntable_ramp.3ds $(GAMEDIR)/models/turntable_ramp.3ds
 -	install -m 644 models/turntable_wheel.3ds $(GAMEDIR)/models/turntable_wheel.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/baseplate.3ds $(DATADIR)/models/baseplate.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/carpet.3ds $(DATADIR)/models/carpet.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/crate.3ds $(DATADIR)/models/crate.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/cratejump.3ds $(DATADIR)/models/cratejump.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/crate_low.3ds $(DATADIR)/models/crate_low.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/door.3ds $(DATADIR)/models/door.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/doorstand.3ds $(DATADIR)/models/doorstand.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/ferriswheelcart.3ds $(DATADIR)/models/ferriswheelcart.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/ferriswheelstand.3ds $(DATADIR)/models/ferriswheelstand.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/ferriswheelwheel.3ds $(DATADIR)/models/ferriswheelwheel.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/finishdoor.3ds $(DATADIR)/models/finishdoor.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/finishplank.3ds $(DATADIR)/models/finishplank.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/floppy.3ds $(DATADIR)/models/floppy.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/grid.3ds $(DATADIR)/models/grid.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/highjump.3ds $(DATADIR)/models/highjump.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/jumpboard.3ds $(DATADIR)/models/jumpboard.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/ramp.3ds $(DATADIR)/models/ramp.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/spikegate.3ds $(DATADIR)/models/spikegate.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/terrain3.3ds $(DATADIR)/models/terrain3.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/track.3ds $(DATADIR)/models/track.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/turntable_ramp.3ds $(DATADIR)/models/turntable_ramp.3ds
-+	${BSD_INSTALL_DATA} -m 644 models/turntable_wheel.3ds $(DATADIR)/models/turntable_wheel.3ds
++	${BSD_INSTALL_DATA} models/baseplate.3ds $(DATADIR)/models/baseplate.3ds
++	${BSD_INSTALL_DATA} models/carpet.3ds $(DATADIR)/models/carpet.3ds
++	${BSD_INSTALL_DATA} models/crate.3ds $(DATADIR)/models/crate.3ds
++	${BSD_INSTALL_DATA} models/cratejump.3ds $(DATADIR)/models/cratejump.3ds
++	${BSD_INSTALL_DATA} models/crate_low.3ds $(DATADIR)/models/crate_low.3ds
++	${BSD_INSTALL_DATA} models/door.3ds $(DATADIR)/models/door.3ds
++	${BSD_INSTALL_DATA} models/doorstand.3ds $(DATADIR)/models/doorstand.3ds
++	${BSD_INSTALL_DATA} models/ferriswheelcart.3ds $(DATADIR)/models/ferriswheelcart.3ds
++	${BSD_INSTALL_DATA} models/ferriswheelstand.3ds $(DATADIR)/models/ferriswheelstand.3ds
++	${BSD_INSTALL_DATA} models/ferriswheelwheel.3ds $(DATADIR)/models/ferriswheelwheel.3ds
++	${BSD_INSTALL_DATA} models/finishdoor.3ds $(DATADIR)/models/finishdoor.3ds
++	${BSD_INSTALL_DATA} models/finishplank.3ds $(DATADIR)/models/finishplank.3ds
++	${BSD_INSTALL_DATA} models/floppy.3ds $(DATADIR)/models/floppy.3ds
++	${BSD_INSTALL_DATA} models/grid.3ds $(DATADIR)/models/grid.3ds
++	${BSD_INSTALL_DATA} models/highjump.3ds $(DATADIR)/models/highjump.3ds
++	${BSD_INSTALL_DATA} models/jumpboard.3ds $(DATADIR)/models/jumpboard.3ds
++	${BSD_INSTALL_DATA} models/monoramp.3ds $(DATADIR)/models/monoramp.3ds
++	${BSD_INSTALL_DATA} models/piston.3ds $(DATADIR)/models/piston.3ds
++	${BSD_INSTALL_DATA} models/ramp.3ds $(DATADIR)/models/ramp.3ds
++	${BSD_INSTALL_DATA} models/rod.3ds $(DATADIR)/models/rod.3ds
++	${BSD_INSTALL_DATA} models/spikegate.3ds $(DATADIR)/models/spikegate.3ds
++	${BSD_INSTALL_DATA} models/terrain3.3ds $(DATADIR)/models/terrain3.3ds
++	${BSD_INSTALL_DATA} models/track.3ds $(DATADIR)/models/track.3ds
++	${BSD_INSTALL_DATA} models/turntable_ramp.3ds $(DATADIR)/models/turntable_ramp.3ds
++	${BSD_INSTALL_DATA} models/turntable_wheel.3ds $(DATADIR)/models/turntable_wheel.3ds
  
  deb:
  	strip stormbaancoureur
