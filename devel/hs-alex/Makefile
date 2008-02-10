@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	alex
-PORTVERSION=	2.1.0
-PORTREVISION=	2
+PORTVERSION=	2.2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/alex/dist/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
