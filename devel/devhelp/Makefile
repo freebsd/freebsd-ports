@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	devhelp
-PORTVERSION=	0.17
-CATEGORIES?=	devel gnome
+PORTVERSION=	0.19
+CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C,^([[:digit:]]+\.[[:digit:]]+).*,\1,}
 DIST_SUBDIR=	gnome2
