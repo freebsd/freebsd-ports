@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	haxml
-PORTVERSION=	1.13.2
-PORTREVISION=	1
+PORTVERSION=	1.13.3
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://www.haskell.org/HaXml/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/
@@ -36,9 +35,8 @@ do-install:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/runhaskell Setup.hs install
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/.installed-pkg-config ${PREFIX}/lib/HaXml-${PORTVERSION}/ghc-${GHC_VERSION}/HaXml.pkgconf
+	@${INSTALL_DATA} ${WRKSRC}/dist/installed-pkg-config ${PREFIX}/lib/HaXml-${PORTVERSION}/ghc-${GHC_VERSION}/HaXml.pkgconf
 	@${RM} -f ${LOCALBASE}/lib/ghc-${GHC_VERSION}/package.conf.old
-	@${TOUCH} ${PREFIX}/lib/HaXml-${PORTVERSION}/ghc-${GHC_VERSION}/include/.keep_me
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC} && ${CP} -R docs/* ${DOCSDIR})

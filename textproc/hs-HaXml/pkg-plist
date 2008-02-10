@@ -4,7 +4,6 @@ bin/MkOneOf
 bin/Validate
 bin/Xtract
 lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/HaXml.pkgconf
-lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/include/.keep_me
 lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/HuttonMeijerWallace.hi
 lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/DtdToHaskell/Convert.hi
 lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/DtdToHaskell/Instance.hi
@@ -30,6 +29,7 @@ lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Xtract/Parse.hi
 lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml.hi
 lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/HSHaXml-%%HAXML_VERSION%%.o
 lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/libHSHaXml-%%HAXML_VERSION%%.a
+share/doc/HaXml-%%HAXML_VERSION%%/COPYRIGHT
 @dirrm lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators
 @dirrm lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/DtdToHaskell
 @dirrm lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Html
@@ -37,9 +37,9 @@ lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/libHSHaXml-%%HAXML_VERSION%%.a
 @dirrm lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml
 @dirrm lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/Text/XML
 @dirrm lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/Text
-@dirrm lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/include
 @dirrm lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%
 @dirrm lib/HaXml-%%HAXML_VERSION%%
+@dirrm share/doc/HaXml-%%HAXML_VERSION%%
 @exec %D/bin/ghc-pkg register %D/lib/HaXml-%%HAXML_VERSION%%/ghc-%%GHC_VERSION%%/HaXml.pkgconf
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg unregister HaXml
