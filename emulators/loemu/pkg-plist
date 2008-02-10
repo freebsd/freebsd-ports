@@ -27,11 +27,17 @@ bin/loemu-builder
 %%DATADIR%%/glade/Loemu.glade
 %%DATADIR%%/glade/Preferences.glade
 %%DATADIR%%/glade/penguin-revolt-128.png
+%%DATADIR%%/images/penguin-revolt-128.png
+%%DATADIR%%/images/state_1.gif
+%%DATADIR%%/images/state_2.gif
+%%DATADIR%%/images/state_3.gif
+%%DATADIR%%/images/state_4.gif
 share/locale/fr/LC_MESSAGES/loemu.mo
 share/locale/ca/LC_MESSAGES/loemu.mo
 share/locale/sv/LC_MESSAGES/loemu.mo
 @dirrm %%DATADIR%%/snaps
 @dirrm %%DATADIR%%/roms
+@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/flyers
 @dirrm %%DATADIR%%/config
