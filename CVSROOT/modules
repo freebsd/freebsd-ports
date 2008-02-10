@@ -1933,6 +1933,7 @@ de-webalizer2	ports/german/webalizer2
 de-wordpress	ports/german/wordpress
 deal		ports/games/deal
 deb2targz	ports/archivers/deb2targz
+decibel		ports/net-im/decibel
 deco		ports/misc/deco
 decss		ports/www/decss
 decurs		ports/x11/decurs
