@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	obconf
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://offload1.icculus.org/openbox/obconf/
 
