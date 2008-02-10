@@ -1,4 +1,5 @@
 bin/obconf
+share/pixmaps/obconf.png
 share/applications/obconf.desktop
 share/mimelnk/application/x-openbox-theme.desktop
 share/mime/packages/obconf.xml
@@ -10,7 +11,9 @@ share/mime/packages/obconf.xml
 %%NLS%%share/locale/es/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/it/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/no/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/obconf.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/obconf.mo
 %%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@boldquot
