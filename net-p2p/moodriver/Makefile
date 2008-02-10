@@ -8,7 +8,7 @@
 PORTNAME=	moodriver
 PORTVERSION=	0.20.1
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://files.beep-media-player.org/releases/moodriver/
+MASTER_SITES=	http://files.backtrace.info/releases/moodriver/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	C++ museekd client library

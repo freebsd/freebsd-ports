@@ -3,4 +3,4 @@ and usage semantics for all tasks, while having extensive standards
 and services support under the hood (MusicBrainz, Last.fm radio/scrobbling,
 HAL, DBus), yet keeping the details out of the way of the user.
 
-WWW:	http://beep-media-player.org/
+WWW:	http://bmpx.backtrace.info

@@ -9,7 +9,7 @@ PORTNAME=	bmpx
 PORTVERSION=	0.40.7
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://files.beep-media-player.org/releases/0.40/
+MASTER_SITES=	http://files.backtrace.info/releases/0.40/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Media player geared towards usability, technical efficiency and looks

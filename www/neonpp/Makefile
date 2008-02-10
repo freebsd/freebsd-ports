@@ -8,7 +8,7 @@
 PORTNAME=	neonpp
 PORTVERSION=	0.3
 CATEGORIES=	www
-MASTER_SITES=	http://files.beep-media-player.org/releases/neonpp/ \
+MASTER_SITES=	http://files.backtrace.info/releases/neonpp/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	novel
 
