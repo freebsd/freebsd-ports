@@ -24,6 +24,31 @@ lib/libgdl-gnome-1.so
 lib/libgdl-gnome-1.so.0
 libdata/pkgconfig/gdl-1.0.pc
 libdata/pkgconfig/gdl-gnome-1.0.pc
+%%DOCSDIR%%/GdlComboButton.html
+%%DOCSDIR%%/GdlDock.html
+%%DOCSDIR%%/GdlDockBar.html
+%%DOCSDIR%%/GdlDockItem.html
+%%DOCSDIR%%/GdlDockLayout.html
+%%DOCSDIR%%/GdlDockMaster.html
+%%DOCSDIR%%/GdlDockNotebook.html
+%%DOCSDIR%%/GdlDockObject.html
+%%DOCSDIR%%/GdlDockPaned.html
+%%DOCSDIR%%/GdlDockPlaceholder.html
+%%DOCSDIR%%/GdlDockTablabel.html
+%%DOCSDIR%%/GdlIcons.html
+%%DOCSDIR%%/GdlSwitcher.html
+%%DOCSDIR%%/gdl-gdl-stock.html
+%%DOCSDIR%%/gdl-gdl-tools.html
+%%DOCSDIR%%/gdl-main.html
+%%DOCSDIR%%/gdl.devhelp
+%%DOCSDIR%%/gdl.devhelp2
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
 share/gdl/glade/layout.glade
 share/locale/am/LC_MESSAGES/gdl-1.mo
 share/locale/ar/LC_MESSAGES/gdl-1.mo
@@ -67,11 +92,13 @@ share/locale/sq/LC_MESSAGES/gdl-1.mo
 share/locale/sr/LC_MESSAGES/gdl-1.mo
 share/locale/sr@Latn/LC_MESSAGES/gdl-1.mo
 share/locale/sv/LC_MESSAGES/gdl-1.mo
+share/locale/tr/LC_MESSAGES/gdl-1.mo
 share/locale/uk/LC_MESSAGES/gdl-1.mo
 share/locale/vi/LC_MESSAGES/gdl-1.mo
 share/locale/zh_CN/LC_MESSAGES/gdl-1.mo
 @dirrm share/gdl/glade
 @dirrm share/gdl
+@dirrm %%DOCSDIR%%
 @dirrm include/libgdl-1.0/gdl
 @dirrm include/libgdl-1.0
 @dirrmtry share/locale/uk/LC_MESSAGES
