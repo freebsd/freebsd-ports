@@ -5,15 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	wxglade
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	devel x11-toolkits python
 MASTER_SITES=	SF
 DISTNAME=	wxGlade-${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	GUI builder for wxPython/wxWindows written in Python
-
-CONFLICTS=	wxglade-devel-[0-9]*
 
 WRKSRC=		${WRKDIR}/wxGlade-${PORTVERSION}
 
@@ -35,7 +33,7 @@ do-install:
 .for f in codegen edit_sizers icons res widgets
 	${CP} -R ${WRKSRC}/${f} ${PYTHON_SITELIBDIR}/${PORTNAME}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/debian/wxglade.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/debian/wxglade.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
