@@ -39,7 +39,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" || ${OSVERSION} >= 800000
+.if ${ARCH} != "i386" || ${OSVERSION} >= 700000
 BROKEN=		Does not compile
 .endif
 
