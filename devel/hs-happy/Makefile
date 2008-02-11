@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	happy
-PORTVERSION=	1.16
-PORTREVISION=	2
+PORTVERSION=	1.17
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/happy/dist/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	simonmar@microsoft.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	An LALR(1) parser generator for the functional language Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
