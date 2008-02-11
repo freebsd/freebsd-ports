@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iso-codes
-DISTVERSION=	1.8
+DISTVERSION=	1.9
 CATEGORIES=	misc
 MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/ \
 		LOCAL
