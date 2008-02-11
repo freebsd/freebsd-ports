@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	goom
-PORTVERSION=	1.8.1
-PORTREVISION=	3
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	goom
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	xmms-
-DISTNAME=	xmms-goom_${PORTVERSION:S/.p/pre/}-2
-EXTRACT_SUFX=	.tgz
+DISTNAME=	${PORTNAME}-2k4-0-src
 
 MAINTAINER=	dyeske@gmail.com
 COMMENT=	A cool XMMS visualization
@@ -22,30 +19,18 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms \
 		nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-PLIST_FILES=	lib/xmms/Visualization/libgoom.so
-USE_X_PREFIX=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gdkpixbuf
+USE_AUTOTOOLS=	libtool:15
+USE_XORG=	x11
+USE_GNOME+=	gdkpixbuf gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_SDL=	sdl
 
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
+WRKSRC=		${WRKDIR}/goom2k4-0
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g; \
-		s|-lgtk|`${GTK_CONFIG} --libs`|g; \
-		s|-O9||' \
+	@${CHMOD} -R og+rx ${WRKSRC}
+	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g' \
 		${BUILD_WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

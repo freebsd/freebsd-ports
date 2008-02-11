@@ -1,0 +1,21 @@
+bin/goom2
+include/goom/goom.h
+include/goom/goom_plugin_info.h
+include/goom/goom_typedefs.h
+include/goom/goom_graphic.h
+include/goom/goom_config_param.h
+include/goom/goom_visual_fx.h
+include/goom/goom_filters.h
+include/goom/goomsl.h
+include/goom/goomsl_hash.h
+include/goom/goomsl_heap.h
+include/goom/goom_tools.h
+include/goom/goom_config.h
+lib/libgoom2.so.0
+lib/libgoom2.a
+lib/libgoom2.la
+lib/xmms/Visualization/libxmmsgoom2.so
+lib/xmms/Visualization/libxmmsgoom2.la
+lib/xmms/Visualization/libxmmsgoom2.a
+libdata/pkgconfig/libgoom2.pc
+@dirrm include/goom
