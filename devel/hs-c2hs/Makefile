@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	c2hs
-PORTVERSION=	0.15.0
+PORTVERSION=	0.15.1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
 PKGNAMEPREFIX=	hs-
@@ -21,15 +21,17 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 .include <bsd.port.pre.mk>
 
-GHC_VERSION=	6.6.1
+GHC_VERSION=	6.8.2
 
 # 'owned' by lang/ghc:
 CABALDIR=       ${PREFIX}/${SUBDIR}
 CABALCMD=       ${LOCALBASE}/bin/runghc Setup.hs
 SUBDIR=		lib/ghc-${GHC_VERSION}/cabal
 
-PLIST_FILES=	bin/c2hs ${SUBDIR}/${PORTNAME}/C2HS.hs
-PLIST_DIRS=	${SUBDIR}/${PORTNAME}
+PLIST_FILES=	bin/c2hs ${SUBDIR}/${PORTNAME}/C2HS.hs \
+			${SUBDIR}/${PORTNAME}/doc/c2hs-${PORTVERSION}/COPYING
+PLIST_DIRS=	${SUBDIR}/${PORTNAME}/doc/c2hs-${PORTVERSION} ${SUBDIR}/${PORTNAME}/doc \
+			${SUBDIR}/${PORTNAME}
 
 CONFIGURE_ARGS=	--ghc --prefix=${PREFIX} --libdir=${CABALDIR} \
 			--datadir=${CABALDIR}/${PORTNAME} \
