@@ -1,0 +1,13 @@
+--- bin/portupgrade.orig	2008-02-11 13:37:36.000000000 +0300
++++ bin/portupgrade	2008-02-11 16:07:28.000000000 +0300
+@@ -656,8 +656,10 @@
+ 	    if $upward_recursive
+ 	      STDERR.print '[Exclude up-to-date packages '
+ 	      not_need_upgrade = []
++	      not_need_upgrade << ''
+ 	      depends.each do |task|
+ 		STDERR.print '.'
++		next if task == ''
+ 		pkg = PkgInfo.new(task)
+ 		origin = $pkgdb.origin(task)
+ 		if !origin.nil?
