@@ -1,6 +1,6 @@
 lib/libev.a
 lib/libev.la
 lib/libev.so
-lib/libev.so.2
+lib/libev.so.3
 include/ev.h
 include/ev++.h
