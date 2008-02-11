@@ -18,6 +18,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Flux/Black-box applet displaying system information a la GNU uname
 
+BROKEN=	Checksum mismatch
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
