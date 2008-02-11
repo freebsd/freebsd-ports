@@ -7,6 +7,7 @@
 
 PORTNAME=	eaccelerator
 DISTVERSION=	0.9.5.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://bart.eaccelerator.net/source/${DISTVERSION}/
 
@@ -18,8 +19,10 @@ USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
 
 CONFIGURE_ARGS=	--enable-eaccelerator=shared \
+		--with-eaccelerator-shared-memory \
 		--with-eaccelerator-sessions \
-		--with-eaccelerator-userid=www
+		--with-eaccelerator-content-caching \
+		--with-eaccelerator-userid=80
 
 USE_BZIP2=	yes
 SUB_FILES=	pkg-message
