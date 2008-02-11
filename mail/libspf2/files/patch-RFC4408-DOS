@@ -1,0 +1,49 @@
+--- src/include/spf.h.orig	2008-02-10 11:30:04.000000000 -0200
++++ src/include/spf.h	2008-02-10 11:30:20.000000000 -0200
+@@ -52,8 +52,8 @@
+ 
+ /* FYI only -- defaults can't be changed without recompiling the library */
+ #define SPF_DEFAULT_MAX_DNS_MECH 10	/* DoS limit on SPF mechanisms	*/
+-#define SPF_DEFAULT_MAX_DNS_PTR	  5	/* DoS limit on PTR records	*/
+-#define SPF_DEFAULT_MAX_DNS_MX	  5	/* DoS limit on MX records	*/
++#define SPF_DEFAULT_MAX_DNS_PTR	 10	/* DoS limit on PTR records	*/
++#define SPF_DEFAULT_MAX_DNS_MX	 10	/* DoS limit on MX records	*/
+ #define SPF_DEFAULT_SANITIZE	  1
+ #define SPF_DEFAULT_WHITELIST	  "include:spf.trusted-forwarder.org"
+ #define SPF_EXP_MOD_NAME	"exp-text"
+--- src/include/spf_internal.h.orig	2008-02-10 11:30:28.000000000 -0200
++++ src/include/spf_internal.h	2008-02-10 11:31:26.000000000 -0200
+@@ -57,13 +57,13 @@
+ /* It is a bad idea to change this for the same reasons as mentioned
+  * above for SPF_MAX_DNS_MECH
+  */
+-#define SPF_MAX_DNS_PTR   5
++#define SPF_MAX_DNS_PTR   10
+ #endif
+ #ifndef SPF_MAX_DNS_MX
+ /* It is a bad idea to change this for the same reasons as mentioned
+  * above for SPF_MAX_DNS_MECH
+  */
+-#define SPF_MAX_DNS_MX    5
++#define SPF_MAX_DNS_MX    10
+ #endif
+ 
+ #if 1
+--- src/include/spf_server.h.orig	2008-02-10 11:31:38.000000000 -0200
++++ src/include/spf_server.h	2008-02-10 11:31:55.000000000 -0200
+@@ -43,13 +43,13 @@
+ /* It is a bad idea to change this for the same reasons as mentioned
+  * above for SPF_MAX_DNS_MECH
+  */
+-#define SPF_MAX_DNS_PTR   5
++#define SPF_MAX_DNS_PTR   10
+ #endif
+ #ifndef SPF_MAX_DNS_MX
+ /* It is a bad idea to change this for the same reasons as mentioned
+  * above for SPF_MAX_DNS_MECH
+  */
+-#define SPF_MAX_DNS_MX    5
++#define SPF_MAX_DNS_MX    10
+ #endif
+ 
+ struct SPF_server_struct {
