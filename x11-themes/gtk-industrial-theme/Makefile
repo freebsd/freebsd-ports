@@ -19,6 +19,8 @@ COMMENT=	Slick theme for GTK1 from Ximian
 
 EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
+BROKEN=	Checksum mismatch
+
 WRKSRC=		${WRKDIR}/ximian-artwork-${PORTVERSION}
 USE_GMAKE=	yes
 USE_GNOME=	gdkpixbuf
