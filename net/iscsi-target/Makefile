@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	iscsi-target
-PORTVERSION=	20071221
+PORTNAME=	iscsi
+PORTVERSION=	20080207
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/ \
 		http://www.magnesium.net/~mdf/distfiles/
+PKGNAMESUFFIX=  -target
 DISTNAME=	netbsd-iscsi-${PORTVERSION}
 
 MAINTAINER=	mark@foster.cc
