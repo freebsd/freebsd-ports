@@ -12,4 +12,6 @@ share/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays-ghc
 share/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays-ghc-debug
 share/happy-%%HAPPY_VERSION%%/HappyTemplate-coerce
 share/happy-%%HAPPY_VERSION%%/HappyTemplate-ghc
+share/doc/happy-%%HAPPY_VERSION%%/LICENSE
 @dirrm share/happy-%%HAPPY_VERSION%%
+@dirrm share/doc/happy-%%HAPPY_VERSION%%
