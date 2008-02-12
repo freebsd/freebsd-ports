@@ -9,6 +9,8 @@ include/ddm-1/ddm/ddm-data-query.h
 include/ddm-1/ddm/ddm-data-resource.h
 include/ddm-1/ddm/ddm-notification-set.h
 include/ddm-1/ddm/ddm-qname.h
+include/ddm-1/ddm/ddm-client.h
+include/ddm-1/ddm/ddm-feed.h
 include/ddm-1/ddm/ddm.h
 lib/libddm-1.la
 lib/libddm-1.so
@@ -52,6 +54,7 @@ share/icons/hicolor/22x22/apps/mugshot_notification_disabled.png
 share/icons/hicolor/24x24/apps/mugshot.png
 share/icons/hicolor/32x32/apps/mugshot.png
 share/icons/hicolor/48x48/apps/mugshot.png
+share/icons/hicolor/64x64/apps/mugshot.png
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm lib/mugshot/firefox/defaults/preferences
