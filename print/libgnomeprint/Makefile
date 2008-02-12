@@ -8,7 +8,7 @@
 # NOTE: Remind to update comms/gfax plist when PORTVERSION change.
 
 PORTNAME=	libgnomeprint
-PORTVERSION=	2.18.3
+PORTVERSION=	2.18.4
 PORTREVISION?=	0
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -41,7 +41,7 @@ PLIST_SUB=	VERSION=${PORTVERSION} \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CUPS) || exists(${LOCALBASE}/lib/libcups.so)
+.if (defined(WITH_CUPS) || exists(${LOCALBASE}/lib/libcups.so)) && !defined(WITHOUT_CUPS)
 CONFIGURE_ARGS+=	--with-cups
 LIB_DEPENDS+=		gnomecups-1.0:${PORTSDIR}/print/libgnomecups
 PLIST_SUB+=		CUPS:=""
