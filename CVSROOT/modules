@@ -16051,6 +16051,7 @@ tor		ports/security/tor
 tor-devel		ports/security/tor-devel
 tora		ports/databases/tora
 torcs		ports/games/torcs
+tork		ports/net-mgmt/tork
 tornado		ports/games/tornado
 torque		ports/sysutils/torque
 torrent		ports/games/torrent
