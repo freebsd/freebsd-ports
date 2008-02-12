@@ -23,6 +23,9 @@ USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:261
 USE_BDB=	yes
 
+DEPRECATED=		no longer supported by developers
+EXPIRATION_DATE=	2008-02-29
+
 CONFIGURE_ENV=	CFLAGS="-I${BDB_INCLUDE_DIR}" \
 	LDFLAGS="-l${BDB_LIB_NAME} -L${BDB_LIB_DIR}"
 
