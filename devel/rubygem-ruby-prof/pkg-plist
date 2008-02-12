@@ -45,8 +45,10 @@ bin/ruby-prof
 %%GEM_LIB_DIR%%/examples/graph.txt
 %%GEM_LIB_DIR%%/ext/Makefile
 %%GEM_LIB_DIR%%/ext/extconf.rb
+%%GEM_LIB_DIR%%/ext/extconf.rb.rej
 %%GEM_LIB_DIR%%/ext/measure_allocations.h
 %%GEM_LIB_DIR%%/ext/measure_cpu_time.h
+%%GEM_LIB_DIR%%/ext/measure_memory.h
 %%GEM_LIB_DIR%%/ext/measure_process_time.h
 %%GEM_LIB_DIR%%/ext/measure_wall_time.h
 %%GEM_LIB_DIR%%/ext/mkmf.log
@@ -57,6 +59,7 @@ bin/ruby-prof
 %%GEM_LIB_DIR%%/lib/ruby_prof.so
 %%GEM_LIB_DIR%%/lib/ruby-prof/abstract_printer.rb
 %%GEM_LIB_DIR%%/lib/ruby-prof/call_tree_printer.rb
+%%GEM_LIB_DIR%%/lib/ruby-prof/call_tree_printer.rb.rej
 %%GEM_LIB_DIR%%/lib/ruby-prof/flat_printer.rb
 %%GEM_LIB_DIR%%/lib/ruby-prof/graph_html_printer.rb
 %%GEM_LIB_DIR%%/lib/ruby-prof/graph_printer.rb
@@ -67,7 +70,6 @@ bin/ruby-prof
 %%GEM_LIB_DIR%%/rails_plugin/ruby-prof/lib/profiling.rb
 %%GEM_LIB_DIR%%/test/basic_test.rb
 %%GEM_LIB_DIR%%/test/duplicate_names_test.rb
-%%GEM_LIB_DIR%%/test/gc.log
 %%GEM_LIB_DIR%%/test/line_number_test.rb
 %%GEM_LIB_DIR%%/test/measure_mode_test.rb
 %%GEM_LIB_DIR%%/test/module_test.rb
