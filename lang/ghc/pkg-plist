@@ -1589,6 +1589,7 @@ share/doc/ghc/libraries/xhtml/LICENSE
 @dirrm lib/ghc-%%GHC_VERSION%%/icons
 @dirrm lib/ghc-%%GHC_VERSION%%/hslibs-imports/ghc
 @dirrm lib/ghc-%%GHC_VERSION%%/hslibs-imports
+@exec mkdir -p %D/lib/ghc-%%GHC_VERSION%%/cabal
 @dirrm lib/ghc-%%GHC_VERSION%%/cabal
 @dirrm lib/ghc-%%GHC_VERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf || /usr/bin/true
