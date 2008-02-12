@@ -1,0 +1,23 @@
+--- configure.in.in.orig	2007-12-29 22:18:50.000000000 +0100
++++ configure.in.in	2008-02-10 04:03:12.000000000 +0100
+@@ -400,7 +400,7 @@
+ 
+ dnl Checks for libraries.
+ dnl Replace `main' with a function in -ldl:
+-AC_CHECK_LIB(dl, dlsym,,AC_MSG_ERROR("libdl is required"))
++AC_CHECK_LIB(c, dlsym,,AC_MSG_ERROR("liblc is required"))
+ 
+ dnl If we're using gcc here define _GNU_SOURCE
+ AC_MSG_CHECKING(for RTLD_NEXT from dlfcn.h)
+@@ -606,8 +606,9 @@
+ 
+ dnl Find the correct poll prototype on this machine 
+ AC_MSG_CHECKING(for correct poll prototype)
+-PROTO=
+-for testproto in 'struct pollfd *ufds, unsigned long nfds, int timeout' 
++PROTO1="struct pollfd fds[], nfds_t nfds, int timeout"
++PROTO2="struct pollfd *fds, unsigned int nfds, int timeout"
++for PROTO in "$PROTO1" "$PROTO2"
+ do
+   if test "${PROTO}" = ""; then
+     AC_TRY_COMPILE([

@@ -1,0 +1,228 @@
+--- configure.orig	2007-12-30 14:03:06.000000000 +0100
++++ configure	2008-02-10 03:25:35.000000000 +0100
+@@ -11975,13 +11975,13 @@
+ 
+   darwin*)
+   # if libdl is installed we need to link against it
+-    { echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
+-echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6; }
++    { echo "$as_me:$LINENO: checking for dlopen in -lc" >&5
++echo $ECHO_N "checking for dlopen in -lc... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="-lc  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -12037,7 +12037,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6; }
+ if test $ac_cv_lib_dl_dlopen = yes; then
+-  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"
++  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lc"
+ else
+ 
+     lt_cv_dlopen="dyld"
+@@ -12281,13 +12281,13 @@
+ if test $ac_cv_func_dlopen = yes; then
+   lt_cv_dlopen="dlopen"
+ else
+-  { echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
+-echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6; }
++  { echo "$as_me:$LINENO: checking for dlopen in -lc" >&5
++echo $ECHO_N "checking for dlopen in -lc... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="-lc  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -12343,7 +12343,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6; }
+ if test $ac_cv_lib_dl_dlopen = yes; then
+-  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"
++  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lc"
+ else
+   { echo "$as_me:$LINENO: checking for dlopen in -lsvld" >&5
+ echo $ECHO_N "checking for dlopen in -lsvld... $ECHO_C" >&6; }
+@@ -15604,13 +15604,13 @@
+ 
+   darwin*)
+   # if libdl is installed we need to link against it
+-    { echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
+-echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6; }
++    { echo "$as_me:$LINENO: checking for dlopen in -lc" >&5
++echo $ECHO_N "checking for dlopen in -lc... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="-lc  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -15666,7 +15666,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6; }
+ if test $ac_cv_lib_dl_dlopen = yes; then
+-  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"
++  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lc"
+ else
+ 
+     lt_cv_dlopen="dyld"
+@@ -15910,13 +15910,13 @@
+ if test $ac_cv_func_dlopen = yes; then
+   lt_cv_dlopen="dlopen"
+ else
+-  { echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
+-echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6; }
++  { echo "$as_me:$LINENO: checking for dlopen in -lc" >&5
++echo $ECHO_N "checking for dlopen in -lc... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="-lc  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -15972,7 +15972,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6; }
+ if test $ac_cv_lib_dl_dlopen = yes; then
+-  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"
++  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lc"
+ else
+   { echo "$as_me:$LINENO: checking for dlopen in -lsvld" >&5
+ echo $ECHO_N "checking for dlopen in -lsvld... $ECHO_C" >&6; }
+@@ -20946,13 +20946,13 @@
+ 
+   darwin*)
+   # if libdl is installed we need to link against it
+-    { echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
+-echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6; }
++    { echo "$as_me:$LINENO: checking for dlopen in -lc" >&5
++echo $ECHO_N "checking for dlopen in -lc... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="-lc  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21008,7 +21008,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6; }
+ if test $ac_cv_lib_dl_dlopen = yes; then
+-  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"
++  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lc"
+ else
+ 
+     lt_cv_dlopen="dyld"
+@@ -21252,13 +21252,13 @@
+ if test $ac_cv_func_dlopen = yes; then
+   lt_cv_dlopen="dlopen"
+ else
+-  { echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
+-echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6; }
++  { echo "$as_me:$LINENO: checking for dlopen in -lc" >&5
++echo $ECHO_N "checking for dlopen in -lc... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="-lc  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21314,7 +21314,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6; }
+ if test $ac_cv_lib_dl_dlopen = yes; then
+-  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-ldl"
++  lt_cv_dlopen="dlopen" lt_cv_dlopen_libs="-lc"
+ else
+   { echo "$as_me:$LINENO: checking for dlopen in -lsvld" >&5
+ echo $ECHO_N "checking for dlopen in -lsvld... $ECHO_C" >&6; }
+@@ -27209,13 +27209,13 @@
+ 
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
+-echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for dlopen in -lc" >&5
++echo $ECHO_N "checking for dlopen in -lc... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="-lc  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -27272,7 +27272,7 @@
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6; }
+ if test $ac_cv_lib_dl_dlopen = yes; then
+ 
+-LIBDL="-ldl"
++LIBDL="-lc"
+ ac_cv_have_dlfcn=yes
+ 
+ fi
+@@ -37132,13 +37132,13 @@
+ LIBS=
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for dlsym in -ldl" >&5
+-echo $ECHO_N "checking for dlsym in -ldl... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for dlsym in -lc" >&5
++echo $ECHO_N "checking for dlsym in -lc... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_dl_dlsym+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="-lc  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -37198,11 +37198,11 @@
+ #define HAVE_LIBDL 1
+ _ACEOF
+ 
+-  LIBS="-ldl $LIBS"
++  LIBS="-lc $LIBS"
+ 
+ else
+-  { { echo "$as_me:$LINENO: error: \"libdl is required\"" >&5
+-echo "$as_me: error: \"libdl is required\"" >&2;}
++  { { echo "$as_me:$LINENO: error: \"liblc is required\"" >&5
++echo "$as_me: error: \"liblc is required\"" >&2;}
+    { (exit 1); exit 1; }; }
+ fi
+ 
+@@ -37710,8 +37710,9 @@
+ 
+ { echo "$as_me:$LINENO: checking for correct poll prototype" >&5
+ echo $ECHO_N "checking for correct poll prototype... $ECHO_C" >&6; }
+-PROTO=
+-for testproto in 'struct pollfd *ufds, unsigned long nfds, int timeout'
++PROTO1="struct pollfd fds[], nfds_t nfds, int timeout"
++PROTO2="struct pollfd *fds, unsigned int nfds, int timeout"
++for PROTO in "$PROTO1" "$PROTO2"
+ do
+   if test "${PROTO}" = ""; then
+     cat >conftest.$ac_ext <<_ACEOF
