@@ -15,6 +15,7 @@
 %%CACTIDIR%%/cli/poller_output_empty.php
 %%CACTIDIR%%/cli/poller_reindex_hosts.php
 %%CACTIDIR%%/cli/rebuild_poller_cache.php
+%%CACTIDIR%%/cli/repair_database.php
 %%CACTIDIR%%/cmd.php
 %%CACTIDIR%%/color.php
 %%CACTIDIR%%/data_input.php
@@ -301,6 +302,7 @@
 %%CACTIDIR%%/install/0_8_6h_to_0_8_6i.php
 %%CACTIDIR%%/install/0_8_6j_to_0_8_7.php
 %%CACTIDIR%%/install/0_8_7_to_0_8_7a.php
+%%CACTIDIR%%/install/0_8_7a_to_0_8_7b.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
