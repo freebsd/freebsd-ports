@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	netbeans
-PORTVERSION=	6.0
+PORTVERSION=	6.0.1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/6.0/final/zip/
 
-DISTNAME=	netbeans-6.0-200711261600
+DISTNAME=	netbeans-${PORTVERSION}-200801291616-ml
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
