@@ -608,7 +608,7 @@
     SUBDIR += setquota
     SUBDIR += sfdisk
     SUBDIR += sformat
-    SUBDIR += sge
+    SUBDIR += sge60
     SUBDIR += shlock
     SUBDIR += sjog
     SUBDIR += skill
