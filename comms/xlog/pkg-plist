@@ -27,6 +27,15 @@ share/pixmaps/xlog/xlog-keyer.png
 share/pixmaps/xlog/xlog-scoring.png
 share/pixmaps/xlog/xlog.png
 share/pixmaps/xlog/xlog.xpm
+%%WITHNLS%%share/locale/da/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/de/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/es/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/fr/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/nl/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/cs/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/pl/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/sk/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/sv/LC_MESSAGES/xlog.mo
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/BUGS
 %%DATADIR%%/ChangeLog
@@ -93,21 +102,13 @@ share/pixmaps/xlog/xlog.xpm
 %%DATADIR%%/manual/xlog-scorewindow.png
 %%DATADIR%%/manual/xlog-workedwindow.png
 %%DATADIR%%/qsllabels.glabels
-%%WITHNLS%%share/locale/da/LC_MESSAGES/xlog.mo
-%%WITHNLS%%share/locale/de/LC_MESSAGES/xlog.mo
-%%WITHNLS%%share/locale/es/LC_MESSAGES/xlog.mo
-%%WITHNLS%%share/locale/fr/LC_MESSAGES/xlog.mo
-%%WITHNLS%%share/locale/nl/LC_MESSAGES/xlog.mo
-%%WITHNLS%%share/locale/cs/LC_MESSAGES/xlog.mo
-%%WITHNLS%%share/locale/pl/LC_MESSAGES/xlog.mo
-%%WITHNLS%%share/locale/sk/LC_MESSAGES/xlog.mo
-%%WITHNLS%%share/locale/sv/LC_MESSAGES/xlog.mo
 @dirrm %%DATADIR%%/manual
 @dirrm %%DATADIR%%/dxcc
 @dirrm %%DATADIR%%
-@dirrm share/pixmaps/xlog
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrmtry share/applications
+@dirrm share/pixmaps/xlog
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
+@dirrmtry share/icons
+@dirrmtry share/applications
