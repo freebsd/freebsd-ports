@@ -1418,6 +1418,7 @@ claws-mail-rssyl	ports/mail/claws-mail-rssyl
 claws-mail-smime	ports/mail/claws-mail-smime
 claws-mail-spamreport	ports/mail/claws-mail-spamreport
 claws-mail-synce	ports/mail/claws-mail-synce
+claws-mail-tnef	ports/mail/claws-mail-tnef
 claws-mail-vcalendar	ports/mail/claws-mail-vcalendar
 cle		ports/editors/cle
 clean		ports/sysutils/clean
