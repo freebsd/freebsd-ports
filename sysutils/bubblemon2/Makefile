@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bubblemon2
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.9
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SAVANNAH/bubblemon
 DISTNAME=	bubblemon-${PORTVERSION}
