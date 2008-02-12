@@ -271,7 +271,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>claws-mail</name>
-	<range><gt>3.0.2</gt></range>
+	<range><lt>3.1.0</lt></range>
       </package>
     </affects>
     <description>
@@ -294,6 +294,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-12-03</discovery>
       <entry>2008-01-22</entry>
+      <modified>2008-02-12</modified>
     </dates>
   </vuln>
 
