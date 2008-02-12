@@ -1,7 +1,5 @@
-$FreeBSD$
-
-*** configure.orig	Thu Nov 17 16:23:48 2005
---- configure	Wed Apr 19 23:00:24 2006
+*** configure.sh.orig	Thu Nov 17 16:23:48 2005
+--- configure.sh	Wed Apr 19 23:00:24 2006
 ***************
 *** 1,40 ****
   #!/bin/sh

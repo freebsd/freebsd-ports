@@ -1,24 +1,26 @@
 # New ports collection makefile for:   DIMES
 # Date created:        18 April 2006
 # Whom:            stast
-#
 # $FreeBSD$
+#
 #
 
 PORTNAME=	DIMES
-DISTVERSION=	0-4-2
+PORTVERSION=	0.4.3b
 CATEGORIES=	net java
-MASTER_SITES=	http://netdimes.org/downloads/
+MASTER_SITES=	http://netdimes.org/downloads/ \
+		http://www.stasyan.com/devel/distfiles/
+DISTNAME=	${PORTNAME}-0-4-3b
 
 MAINTAINER=	stast@bsdportal.ru
 COMMENT=	Distributed research project for measurement topology of the Internet
 
 NO_PACKAGE=	There is the string in properties.xml which system-depends
-NO_BUILD=	.jar files are ready for use.
 
 WRKSRC=		${WRKDIR}/DIMES
 
 USE_JAVA=	YES
+JAVA_BUILD=	YES
 JAVA_VERSION=	1.4+
 #java-linux required
 JAVA_OS=	linux
@@ -30,7 +32,7 @@ post-patch:
 	cd ${WRKSRC}; echo "JAVA_HOME=${JAVA_HOME}" >> ${WRKSRC}/colors.sh;
 
 do-install:
-	cd ${WRKSRC}; ${SH} ./fix_permissions.sh; ./configure ${JAVASHAREDIR}
+	cd ${WRKSRC}; ${SH} ./fix_permissions.sh; ./configure.sh ${JAVASHAREDIR}
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DATADIR}/Classes
 	@${MKDIR} ${DATADIR}/Classes/Base
