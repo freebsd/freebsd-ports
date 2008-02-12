@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Server-SimpleHTTP
-PORTVERSION=	1.30
+PORTVERSION=	1.40
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Perl extension to serve HTTP requests in POE
 
 RUN_DEPENDS=	p5-Storable>0:${PORTSDIR}/devel/p5-Storable \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
-		p5-POE>=0.38:${PORTSDIR}/devel/p5-POE
+		p5-POE>=0.9999:${PORTSDIR}/devel/p5-POE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
