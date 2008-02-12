@@ -1,0 +1,5 @@
+Enables the scanning of message attachments in mail received from a POP, IMAP,
+or LOCAL account using Clam AntiVirus. It can optionally delete the mail or
+save it to a designated folder.
+
+WWW:	http://www.claws-mail.org/plugins.php
