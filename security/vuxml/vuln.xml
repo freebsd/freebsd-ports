@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dea7df85-d96c-11dc-9bfc-000e0c092e7a">
+    <topic>cacti -- Multiple security vulnerabilities have been discovered</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.7b</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The cacti development team reports:</p>
+	<blockquote cite="http://forums.cacti.net/about25749.html">
+	  <p>Multiple security vulnerabilities have been discovered in
+	    Cacti's web interface:</p>
+	    <ul>
+	      <li>XSS vulnerabilities</li>
+	      <li>Path disclosure vulnerabilities</li>
+	      <li>SQL injection vulnerabilities</li>
+	      <li>HTTP response splitting vulnerabilities</li>
+	    </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://forums.cacti.net/about25749.html</url>
+    </references>
+    <dates>
+      <discovery>2008-02-12</discovery>
+      <entry>2008-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="739329c8-d8f0-11dc-ac2f-0016d325a0ed">
     <topic>ikiwiki -- javascript insertion via uris</topic>
     <affects>
