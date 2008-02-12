@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	xfce4-session
-PORTVERSION=	4.4.1
-PORTREVISION=	1
+PORTVERSION=	4.4.2
+PORTREVISION=	0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Session manager for the Xfce 4 desktop environment
-
-BUILD_DEPENDS=	iceauth:${X_CLIENTS_PORT}
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
@@ -30,4 +27,14 @@ USE_XLIB=	yes
 
 MAN1=		xfce4-session.1 xfce4-session-logout.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} != xorg
+BUILD_DEPENDS+=	iceauth:${X_CLIENTS_PORT}
+.else
+BUILD_DEPENDS+=	iceauth:${PORTSDIR}/x11/iceauth
+.endif
+
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+.include <bsd.port.post.mk>

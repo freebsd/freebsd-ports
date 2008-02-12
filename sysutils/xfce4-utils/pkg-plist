@@ -6,10 +6,12 @@ bin/xflock4
 bin/xfmountdev4
 bin/xfrun4
 bin/xfterm4
+etc/xdg/xfce4/Xft.xrdb
 etc/xdg/xfce4/xinitrc
 %%WITH_DBUS%%share/dbus-1/services/org.xfce.RunDialog.service
 share/icons/hicolor/48x48/apps/xfce4-logo.png
 share/locale/af/LC_MESSAGES/xfce-utils.mo
+share/locale/am/LC_MESSAGES/xfce-utils.mo
 share/locale/ar/LC_MESSAGES/xfce-utils.mo
 share/locale/az/LC_MESSAGES/xfce-utils.mo
 share/locale/be/LC_MESSAGES/xfce-utils.mo
@@ -40,9 +42,11 @@ share/locale/ja/LC_MESSAGES/xfce-utils.mo
 share/locale/ka/LC_MESSAGES/xfce-utils.mo
 share/locale/ko/LC_MESSAGES/xfce-utils.mo
 share/locale/lt/LC_MESSAGES/xfce-utils.mo
+share/locale/lv/LC_MESSAGES/xfce-utils.mo
 share/locale/mk/LC_MESSAGES/xfce-utils.mo
 share/locale/mr/LC_MESSAGES/xfce-utils.mo
 share/locale/ms/LC_MESSAGES/xfce-utils.mo
+share/locale/nb_NO/LC_MESSAGES/xfce-utils.mo
 share/locale/nl/LC_MESSAGES/xfce-utils.mo
 share/locale/pl/LC_MESSAGES/xfce-utils.mo
 share/locale/pa/LC_MESSAGES/xfce-utils.mo
@@ -105,6 +109,8 @@ share/xfce4/doc/xfce-mouse.png
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
 @dirrmtry share/xfce4/doc/C/images
 @dirrmtry share/xfce4/doc/C
 @dirrmtry share/xfce4/doc/fr

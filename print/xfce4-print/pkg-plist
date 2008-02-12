@@ -42,6 +42,7 @@ share/gtk-doc/html/libxfprint/up.png
 share/icons/hicolor/24x24/devices/printer.png
 share/icons/hicolor/48x48/devices/printer.png
 share/icons/hicolor/scalable/devices/printer.svg
+share/locale/am/LC_MESSAGES/xfprint.mo
 share/locale/ar/LC_MESSAGES/xfprint.mo
 share/locale/az/LC_MESSAGES/xfprint.mo
 share/locale/be/LC_MESSAGES/xfprint.mo
@@ -52,6 +53,7 @@ share/locale/cs/LC_MESSAGES/xfprint.mo
 share/locale/de/LC_MESSAGES/xfprint.mo
 share/locale/dz/LC_MESSAGES/xfprint.mo
 share/locale/el/LC_MESSAGES/xfprint.mo
+share/locale/eo/LC_MESSAGES/xfprint.mo
 share/locale/en_GB/LC_MESSAGES/xfprint.mo
 share/locale/es/LC_MESSAGES/xfprint.mo
 share/locale/es_MX/LC_MESSAGES/xfprint.mo
@@ -70,9 +72,11 @@ share/locale/ja/LC_MESSAGES/xfprint.mo
 share/locale/ka/LC_MESSAGES/xfprint.mo
 share/locale/ko/LC_MESSAGES/xfprint.mo
 share/locale/lt/LC_MESSAGES/xfprint.mo
+share/locale/lv/LC_MESSAGES/xfprint.mo
 share/locale/mk/LC_MESSAGES/xfprint.mo
 share/locale/mr/LC_MESSAGES/xfprint.mo
 share/locale/ms/LC_MESSAGES/xfprint.mo
+share/locale/nb_NO/LC_MESSAGES/xfprint.mo
 share/locale/nl/LC_MESSAGES/xfprint.mo
 share/locale/pa/LC_MESSAGES/xfprint.mo
 share/locale/pl/LC_MESSAGES/xfprint.mo
@@ -119,6 +123,8 @@ share/xfce4/doc/fr/xfprint.html
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
 @dirrmtry share/xfce4/doc/C/images
 @dirrmtry share/xfce4/doc/C
 @dirrmtry share/xfce4/doc/fr/images

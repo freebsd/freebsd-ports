@@ -1,4 +1,5 @@
 bin/xdt-autogen
+bin/xdt-commit
 share/xfce4/dev-tools/m4macros/xdt-depends.m4
 share/xfce4/dev-tools/m4macros/xdt-features.m4
 share/xfce4/dev-tools/m4macros/xdt-i18n.m4

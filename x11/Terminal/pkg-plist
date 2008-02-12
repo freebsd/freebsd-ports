@@ -2,25 +2,6 @@ bin/Terminal
 bin/terminal
 libexec/TerminalHelp
 share/Terminal/Terminal-toolbars.ui
-share/Terminal/Terminal.ui
-share/Terminal/apps/balsa.desktop
-share/Terminal/apps/epiphany.desktop
-share/Terminal/apps/evolution.desktop
-share/Terminal/apps/exo-open-browser.desktop
-share/Terminal/apps/exo-open-mailer.desktop
-share/Terminal/apps/firefox.desktop
-share/Terminal/apps/galeon.desktop
-share/Terminal/apps/kmail.desktop
-share/Terminal/apps/konqueror.desktop
-share/Terminal/apps/lynx.desktop
-share/Terminal/apps/mozilla-browser.desktop
-share/Terminal/apps/mozilla-mailer.desktop
-share/Terminal/apps/mutt.desktop
-share/Terminal/apps/opera-browser.desktop
-share/Terminal/apps/opera-mailer.desktop
-share/Terminal/apps/sensible-browser.desktop
-share/Terminal/apps/sylpheed-claws.desktop
-share/Terminal/apps/thunderbird.desktop
 share/applications/Terminal.desktop
 %%PORTDOCS%%%%DOCSDIR%%/C/advanced.html
 %%PORTDOCS%%%%DOCSDIR%%/C/copyright.html
@@ -43,9 +24,35 @@ share/applications/Terminal.desktop
 %%PORTDOCS%%%%DOCSDIR%%/C/images/terminal-toolbars.png
 %%PORTDOCS%%%%DOCSDIR%%/C/index.html
 %%PORTDOCS%%%%DOCSDIR%%/C/preferences.html
-%%PORTDOCS%%%%DOCSDIR%%/C/preferred-applications.html
 %%PORTDOCS%%%%DOCSDIR%%/C/support.html
 %%PORTDOCS%%%%DOCSDIR%%/C/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/getting-started.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-applications-dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-applications-menu.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-choose-custom-webbrowser.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-compose-shortcut.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-edit-applications.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-edit-preferences.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-first-time.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-multiple-tabs.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-preferences-advanced.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-preferences-appearance.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-preferences-colors.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-preferences-general.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-preferences-shortcuts.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-set-title.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/images/terminal-toolbars.png
+%%PORTDOCS%%%%DOCSDIR%%/fr/index.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/preferences.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/support.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/getting-started.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/images/terminal-applications-dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/images/terminal-applications-menu.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/images/terminal-choose-custom-webbrowser.png
@@ -57,17 +64,12 @@ share/applications/Terminal.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ja/images/terminal-preferences-advanced.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/images/terminal-preferences-appearance.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/images/terminal-preferences-colors.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/images/terminal-set-title.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/images/terminal-preferences-general.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/images/terminal-preferences-shortcuts.png
+%%PORTDOCS%%%%DOCSDIR%%/ja/images/terminal-set-title.png
 %%PORTDOCS%%%%DOCSDIR%%/ja/images/terminal-toolbars.png
-%%PORTDOCS%%%%DOCSDIR%%/ja/advanced.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/copyright.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/getting-started.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/index.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/preferences.html
-%%PORTDOCS%%%%DOCSDIR%%/ja/preferred-applications.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/support.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/terminal.css
@@ -90,38 +92,44 @@ share/icons/hicolor/48x48/stock/navigation/stock_terminal-appearance.png
 share/icons/hicolor/48x48/stock/navigation/stock_terminal-colors.png
 share/icons/hicolor/48x48/stock/navigation/stock_terminal-compose.png
 share/icons/hicolor/48x48/stock/navigation/stock_terminal-general.png
-share/icons/hicolor/48x48/stock/navigation/stock_terminal-mailreader.png
 share/icons/hicolor/48x48/stock/navigation/stock_terminal-shortcuts.png
-share/icons/hicolor/48x48/stock/navigation/stock_terminal-webbrowser.png
 share/icons/hicolor/scalable/apps/Terminal.svg
+share/locale/ar/LC_MESSAGES/Terminal.mo
 share/locale/be/LC_MESSAGES/Terminal.mo
+share/locale/ca/LC_MESSAGES/Terminal.mo
+share/locale/cs/LC_MESSAGES/Terminal.mo
 share/locale/de/LC_MESSAGES/Terminal.mo
 share/locale/dz/LC_MESSAGES/Terminal.mo
+share/locale/el/LC_MESSAGES/Terminal.mo
 share/locale/en_GB/LC_MESSAGES/Terminal.mo
 share/locale/eo/LC_MESSAGES/Terminal.mo
 share/locale/es/LC_MESSAGES/Terminal.mo
 share/locale/eu/LC_MESSAGES/Terminal.mo
+share/locale/fi/LC_MESSAGES/Terminal.mo
 share/locale/fr/LC_MESSAGES/Terminal.mo
+share/locale/gl/LC_MESSAGES/Terminal.mo
 share/locale/he/LC_MESSAGES/Terminal.mo
 share/locale/hu/LC_MESSAGES/Terminal.mo
 share/locale/it/LC_MESSAGES/Terminal.mo
 share/locale/ja/LC_MESSAGES/Terminal.mo
+share/locale/ko/LC_MESSAGES/Terminal.mo
 share/locale/lt/LC_MESSAGES/Terminal.mo
+share/locale/lv/LC_MESSAGES/Terminal.mo
+share/locale/nb_NO/LC_MESSAGES/Terminal.mo
 share/locale/nl/LC_MESSAGES/Terminal.mo
 share/locale/pa/LC_MESSAGES/Terminal.mo
-share/locale/pt_BR/LC_MESSAGES/Terminal.mo
-share/locale/ru/LC_MESSAGES/Terminal.mo
-share/locale/sv/LC_MESSAGES/Terminal.mo
-share/locale/vi/LC_MESSAGES/Terminal.mo
-share/locale/ca/LC_MESSAGES/Terminal.mo
-share/locale/cs/LC_MESSAGES/Terminal.mo
-share/locale/el/LC_MESSAGES/Terminal.mo
-share/locale/fi/LC_MESSAGES/Terminal.mo
-share/locale/gl/LC_MESSAGES/Terminal.mo
-share/locale/ko/LC_MESSAGES/Terminal.mo
 share/locale/pl/LC_MESSAGES/Terminal.mo
+share/locale/pt_BR/LC_MESSAGES/Terminal.mo
+share/locale/pt_PT/LC_MESSAGES/Terminal.mo
+share/locale/ro/LC_MESSAGES/Terminal.mo
+share/locale/ru/LC_MESSAGES/Terminal.mo
 share/locale/sk/LC_MESSAGES/Terminal.mo
+share/locale/sq/LC_MESSAGES/Terminal.mo
+share/locale/sv/LC_MESSAGES/Terminal.mo
+share/locale/tr/LC_MESSAGES/Terminal.mo
 share/locale/uk/LC_MESSAGES/Terminal.mo
+share/locale/ur/LC_MESSAGES/Terminal.mo
+share/locale/vi/LC_MESSAGES/Terminal.mo
 share/locale/zh_CN/LC_MESSAGES/Terminal.mo
 share/locale/zh_TW/LC_MESSAGES/Terminal.mo
 share/pixmaps/terminal.xpm
@@ -133,11 +141,12 @@ share/pixmaps/terminal.xpm
 @dirrmtry icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/C/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/C
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-@dirrm share/Terminal/apps
 @dirrm share/Terminal
 @dirrmtry share/icons/hicolor/16x16/stock/navigation
 @dirrmtry share/icons/hicolor/16x16/stock

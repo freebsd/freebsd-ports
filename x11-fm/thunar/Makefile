@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Thunar
-PORTVERSION=	0.8.0
-PORTREVISION=	5
+PORTVERSION=	0.9.0
+PORTREVISION=	0
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -16,6 +16,9 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 file manager
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
+PATCHFILES=	Thunar-0.9.0-missing-audio-cds-for-volman.patch
+PATCH_SITES=	http://thunar.xfce.org/download/sources/Thunar/0.9.0/
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
