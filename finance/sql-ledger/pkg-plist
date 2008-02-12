@@ -121,7 +121,7 @@ sql-ledger/doc/UPGRADE-2.8.0-2.8.2
 sql-ledger/doc/UPGRADE-2.8.2-2.8.4
 sql-ledger/doc/UPGRADE-2.8.4-2.8.6
 sql-ledger/doc/UPGRADE-2.8.6-2.8.7
-sql-ledger/doc/UPGRADE-2.8.7-2.8.8
+sql-ledger/doc/UPGRADE-2.8.7-2.8.12
 sql-ledger/doc/faq.html
 sql-ledger/favicon.ico
 sql-ledger/gl.pl
@@ -1890,7 +1890,9 @@ sql-ledger/sql/Default-chart.sql
 sql-ledger/sql/Dutch_Default-chart.sql
 sql-ledger/sql/Dutch_Standard-chart.sql
 sql-ledger/sql/Egypt-UTF8-chart.sql
+sql-ledger/sql/Egypt_UTF8-chart.sql
 sql-ledger/sql/Estonian_KA2-chart.sql
+sql-ledger/sql/Estonian_UTF8-chart.sql
 sql-ledger/sql/France-chart.sql
 sql-ledger/sql/German-Sample-chart.sql
 sql-ledger/sql/German-Sample-gifi.sql

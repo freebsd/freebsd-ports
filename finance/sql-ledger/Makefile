@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sql-ledger
-PORTVERSION=	2.8.8
+PORTVERSION=	2.8.12
 CATEGORIES=	finance perl5
 MASTER_SITES=	http://www.sql-ledger.com/source/ \
 		http://abacus.sql-ledger.com/source/ \
