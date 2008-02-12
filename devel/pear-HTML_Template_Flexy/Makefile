@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	HTML_Template_Flexy
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An extremely powerful Tokenizer driven Template engine
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 LATEST_LINK=	pear-HTML_Template_Flexy
 OPTIONS=	PEAR_HTML_JAVASCRIPT "PEAR::HTML_Javascript support" off \
