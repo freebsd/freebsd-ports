@@ -18,6 +18,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
+FORBIDDEN=	http://VuXML.FreeBSD.org/a59afa47-c930-11dc-810c-0016179b2dd5.html
+
 LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 		cairo:${PORTSDIR}/graphics/cairo \
 		expat:${PORTSDIR}/textproc/expat2 \
