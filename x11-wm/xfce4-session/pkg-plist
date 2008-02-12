@@ -41,6 +41,7 @@ share/icons/hicolor/72x72/apps/xfsm-trash-hilight.png
 share/icons/hicolor/72x72/apps/xfsm-trash-normal.png
 share/icons/hicolor/scalable/apps/xfce4-session.svg
 share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
+share/locale/am/LC_MESSAGES/xfce4-session.mo
 share/locale/ar/LC_MESSAGES/xfce4-session.mo
 share/locale/az/LC_MESSAGES/xfce4-session.mo
 share/locale/be/LC_MESSAGES/xfce4-session.mo
@@ -69,6 +70,7 @@ share/locale/ja/LC_MESSAGES/xfce4-session.mo
 share/locale/ka/LC_MESSAGES/xfce4-session.mo
 share/locale/ko/LC_MESSAGES/xfce4-session.mo
 share/locale/lt/LC_MESSAGES/xfce4-session.mo
+share/locale/lv/LC_MESSAGES/xfce4-session.mo
 share/locale/mk/LC_MESSAGES/xfce4-session.mo
 share/locale/mr/LC_MESSAGES/xfce4-session.mo
 share/locale/ms/LC_MESSAGES/xfce4-session.mo

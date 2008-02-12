@@ -17,6 +17,7 @@ share/icons/hicolor/48x48/apps/xfwm4.png
 share/icons/hicolor/scalable/apps/wmtweaks.svg
 share/icons/hicolor/scalable/apps/xfce4-workspaces.svg
 share/icons/hicolor/scalable/apps/xfwm4.svg
+share/locale/am/LC_MESSAGES/xfwm4.mo
 share/locale/ar/LC_MESSAGES/xfwm4.mo
 share/locale/az/LC_MESSAGES/xfwm4.mo
 share/locale/be/LC_MESSAGES/xfwm4.mo
@@ -46,6 +47,7 @@ share/locale/ja/LC_MESSAGES/xfwm4.mo
 share/locale/ka/LC_MESSAGES/xfwm4.mo
 share/locale/ko/LC_MESSAGES/xfwm4.mo
 share/locale/lt/LC_MESSAGES/xfwm4.mo
+share/locale/lv/LC_MESSAGES/xfwm4.mo
 share/locale/mk/LC_MESSAGES/xfwm4.mo
 share/locale/mr/LC_MESSAGES/xfwm4.mo
 share/locale/ms/LC_MESSAGES/xfwm4.mo

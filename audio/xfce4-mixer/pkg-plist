@@ -7,6 +7,7 @@ lib/xfce4/mcs-plugins/sound_settings.so
 libexec/xfce4/panel-plugins/xfce4-mixer-plugin
 share/applications/xfce-mixer-settings.desktop
 share/icons/hicolor/48x48/apps/xfce4-mixer.png
+share/locale/am/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ar/LC_MESSAGES/xfce4-mixer.mo
 share/locale/az/LC_MESSAGES/xfce4-mixer.mo
 share/locale/be/LC_MESSAGES/xfce4-mixer.mo
@@ -36,6 +37,7 @@ share/locale/ja/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ka/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ko/LC_MESSAGES/xfce4-mixer.mo
 share/locale/lt/LC_MESSAGES/xfce4-mixer.mo
+share/locale/lv/LC_MESSAGES/xfce4-mixer.mo
 share/locale/mk/LC_MESSAGES/xfce4-mixer.mo
 share/locale/mr/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ms/LC_MESSAGES/xfce4-mixer.mo
