@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pdf_viewer
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -16,8 +15,8 @@ MAINTAINER=	c0rn@o2.pl
 COMMENT=	This claws-mail plugin enables viewing of PDF and PS files
 
 LIB_DEPENDS=	poppler-glib:${PORTSDIR}/graphics/poppler-gtk
-BUILD_DEPENDS=	claws-mail>=3.0.1:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.0.1:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.3.0:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.3.0:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -25,6 +24,8 @@ USE_ICONV=	yes
 USE_XLIB=	yes
 USE_GHOSTSCRIPT=	yes
 USE_AUTOTOOLS=	autoconf:261
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	--with-iconv-prefix=${LOCALBASE} \
 	--with-libintl-prefix=${LOCALBASE}
