@@ -8,6 +8,7 @@
 
 PORTNAME=	mnemosyne
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}-proj
@@ -20,8 +21,9 @@ COMMENT=	Flash-card tool which optimises your learning process
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PLIST_SUB+=	PYVER=${PYTHON_VERSION}
 
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
+		py*-xml>=0:${PORTSDIR}/textproc/py-xml \
+		py*-qt>=0:${PORTSDIR}/x11-toolkits/py-qt
 
 .include <bsd.port.mk>
