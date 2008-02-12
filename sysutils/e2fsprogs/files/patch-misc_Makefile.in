@@ -19,17 +19,7 @@
  
  LPROGS=		@E2INITRD_PROG@
  
-@@ -251,8 +251,7 @@
- 		$(DESTDIR)$(root_sbindir) $(DESTDIR)$(bindir) \
- 		$(DESTDIR)$(man1dir) $(DESTDIR)$(man8dir) \
- 		$(DESTDIR)$(man1dir) $(DESTDIR)$(man5dir) \
--		$(DESTDIR)$(libdir) $(DESTDIR)/$(root_sysconfdir) \
--		$(DESTDIR)/etc/init.d
-+		$(DESTDIR)$(libdir) $(DESTDIR)/$(root_sysconfdir)
- 
- install: all $(SMANPAGES) $(UMANPAGES) installdirs
- 	@for i in $(SPROGS); do \
-@@ -312,11 +311,9 @@
+@@ -311,11 +310,9 @@
  		echo "	INSTALL_DATA $(man5dir)/$$i"; \
  		$(INSTALL_DATA) $$i $(DESTDIR)$(man5dir)/$$i; \
  	done

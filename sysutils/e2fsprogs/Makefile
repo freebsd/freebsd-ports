@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.40.5
-PORTREVISION?=	1
+PORTVERSION=	1.40.6
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,7 +40,7 @@ MAN8=	badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 \
 	findfs.8 blkid.8 logsave.8 fsck_ext2fs.8
 
 post-extract:
-	${CHMOD} u+w ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot \
+	@${CHMOD} u+w ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
@@ -51,27 +51,41 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
+# We need to make sure that anything that is outside the root file
+# system is statically linked, else we're in trouble if e2fsck is needed
+# for boot:
 MAKE_ARGS+=	STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
-		../lib/libblkid.a  ../lib/libuuid.a \
-		${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
+		../lib/libblkid.a  ../lib/libuuid.a" \
+		LIBINTL="${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
 PLIST_SUB=	NLS=""
 .endif
 
 post-patch::
-	${REINPLACE_CMD} -E -e \
+	@${REINPLACE_CMD} -E -e \
 		's:\$$\(libdir\)/pkgconfig:${PREFIX}/libdata/pkgconfig:' \
 		${WRKSRC}/lib/*/Makefile.in
-	@: # don't build/install libext2fs.info
-	${REINPLACE_CMD} -e 's/ install-doc-libs$$//' ${WRKSRC}/Makefile.in
+# don't build/install libext2fs.info
+	@${REINPLACE_CMD} -e 's/ install-doc-libs$$//' ${WRKSRC}/Makefile.in
 
 .if ${MASTERDIR} == ${.CURDIR}
 post-build:
+# Avoid a regression from 1.40.5,
+# check that e2fsck isn't dynalinked against anything but libc.so:
+	@${ECHO_CMD} -n "===>  checking that e2fsck depends on no shared objects beyond libc.so: "
+	@a="$$(ldd ${WRKSRC}/e2fsck/e2fsck 2>/dev/null \
+	    | ${GREP} -v 'not a dynamic executable' \
+	    | ${GREP} '=>' \
+	    | ${AWK}  '{print $$3;}' \
+	    | ${GREP} -v '^/lib/libc\.so\.' || :)"; \
+	if test "x$$a" = "x" ; then echo 'PASS' ; else \
+	    echo 'FAIL' ; echo '===>  e2fsck depends on:' ; echo "$$a" ; exit 1 ; fi
+# Update translation binary files
 .if !defined(WITHOUT_NLS)
 	cd ${WRKSRC}/po && ${MAKE} update-gmo
 .endif
-	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -s -static ${LIBS} \
+# Build fsck(8) wrapper
+	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} -s ${LIBS} \
 		-o ${WRKSRC}/fsck_ext2fs ${FILESDIR}/fsck_ext2fs.c
-	cd ${WRKSRC}/tests && ${MAKE} check
 # While the ${MAKE} check can take a minute on an end user's system, the
 # correctness of tools such as e2fsck is critical to the health of the
 # file systems.  The upstream is not using any *BSD as his development
@@ -79,6 +93,9 @@ post-build:
 # test on each and every system and not just package building hosts.
 # There have been subtle failures induced by Linux-isms in the past.
 # -- Matthias Andree, package maintainer, 2007-09-18
+	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
+	cd ${WRKSRC}/tests && ${MAKE} check \
+	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${PREFIX}/sbin/

@@ -1,6 +1,6 @@
 --- e2fsprogs-1.35/e2fsck/unix.c~	Sun Dec  7 18:11:38 2003
 +++ e2fsprogs-1.35/e2fsck/unix.c	Tue Feb 24 22:13:52 2004
-@@ -416,6 +416,24 @@
+@@ -461,6 +461,24 @@
  	return 0;
  }
  
@@ -25,7 +25,7 @@
  #define PATH_SET "PATH=/sbin"
  
  static void reserve_stdio_fds(void)
-@@ -448,6 +466,17 @@
+@@ -493,6 +511,17 @@
  	ctx->progress_fd = 0;
  }
  
@@ -43,7 +43,7 @@
  static void signal_progress_off(int sig EXT2FS_ATTR((unused)))
  {
  	e2fsck_t ctx = e2fsck_global_ctx;
-@@ -740,6 +769,8 @@
+@@ -825,6 +854,8 @@
  	sigaction(SIGUSR1, &sa, 0);
  	sa.sa_handler = signal_progress_off;
  	sigaction(SIGUSR2, &sa, 0);
