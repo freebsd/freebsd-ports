@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	asunder
-PORTVERSION=	1.0
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
@@ -24,6 +24,8 @@ GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_GNOME=	gtk20
 
+DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LAME)
@@ -37,5 +39,15 @@ RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
 .if defined(WITH_FLAC)
 RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
+
+do-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+.endif
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/asunder.desktop ${DATADIR}/
+	@${INSTALL_DATA} ${WRKSRC}/pixmaps/asunder.png ${DATADIR}/
 
 .include <bsd.port.post.mk>
