@@ -5,56 +5,33 @@
 # $FreeBSD$
 
 PORTNAME=	egoboo
-PORTVERSION=	2.22
-PORTREVISION=	6
+PORTVERSION=	2.7.5
+PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
-DISTNAME=	ego222
+MASTER_SITES=	SF
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME:S/-/-data-/}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A 3d dungeon crawling adventure in the spirit of NetHack
+MAINTAINER=	amdmi3@amdmi3.ru
+COMMENT=	A 3D dungeon crawling adventure in the spirit of NetHack
 
-PATCH_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_SDL=	sdl
+USE_SDL=	sdl ttf mixer image
+USE_GL=		yes
 USE_GMAKE=	yes
 
-pre-patch:
-	@${FIND} ${WRKSRC}/.. -type d -name CVS | ${XARGS} ${RM} -rf
+WRKSRC=		${WRKDIR}/${DISTNAME}/game
+MAKEFILE=	Makefile.unix
 
 post-patch:
-	@cd ${WRKSRC}/code && ${GMAKE} clean
-	@${REINPLACE_CMD} -E 's|sdl-config|\${SDL_CONFIG}|g ; \
-		s|/usr/X11(R6)?/|${X11BASE}/|g ; s|CC=|#CC=|g; \
-		s|-O3|${CFLAGS}|g; s|-ffast-math||g' ${WRKSRC}/code/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/share/egoboo|${DATADIR}|g; \
+		s|cp -a|cp -RPp|; s|/usr/libexec|${PREFIX}/libexec|' \
+		${WRKSRC}/egoboo.sh
 
-do-build:
-	@cd ${WRKSRC}/code && ${SETENV} ${MAKE_ENV} ${GMAKE}
+post-install:
+	${MKDIR} ${DATADIR}
+	@cd ${WRKDIR}/${DISTNAME:S/-/-data-/} && \
+		${COPYTREE_SHARE} . ${DATADIR}
 
-do-install:
-	@${MKDIR} "${PREFIX}/share/${PORTNAME}"
-	@${MKDIR} "${PREFIX}/share/${PORTNAME}/import"
-	@${CHGRP} games ${PREFIX}/share/${PORTNAME}/import"
-	@${CHMOD} g+ws ${PREFIX}/share/${PORTNAME}/import
-	@${TAR} -cf - -C "${WRKSRC}" modules | \
-	${TAR} xf - -C "${PREFIX}/share/${PORTNAME}"
-	@${TAR} -cf - -C "${WRKSRC}" players |\
-	${TAR} xf - -C "${PREFIX}/share/${PORTNAME}"
-	@${TAR} -cf - -C "${WRKSRC}" text |\
-	${TAR} xf - -C "${PREFIX}/share/${PORTNAME}"
-	@${TAR} -cf - -C "${WRKSRC}" basicdat |\
-	${TAR} xf - -C "${PREFIX}/share/${PORTNAME}"
-	@${INSTALL_PROGRAM} ${WRKSRC}/code/egoboo ${PREFIX}/share/${PORTNAME}/egoboo-real
-	@${CHGRP} games ${PREFIX}/share/${PORTNAME}/egoboo-real
-	@${CHMOD} g+s ${PREFIX}/share/${PORTNAME}/egoboo-real
-	@(${ECHO_CMD} "#!/bin/sh"; ${ECHO_CMD} "cd ${PREFIX}/share/${PORTNAME}"; \
-	  ${ECHO_CMD} "./egoboo-real $$*") > ${PREFIX}/bin/egoboo
-	@${CHMOD} a+x ${PREFIX}/bin/egoboo
-	@${INSTALL_DATA} -m 644 ${WRKSRC}/*.txt  ${PREFIX}/share/${PORTNAME}
-	@${CHGRP} games ${PREFIX}/share/${PORTNAME}/basicdat/*.txt
-	@${CHMOD} g+w   ${PREFIX}/share/${PORTNAME}/basicdat/*.txt
+	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.mk>
