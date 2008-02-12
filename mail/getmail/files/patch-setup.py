@@ -1,5 +1,5 @@
---- setup.py.orig
-+++ setup.py
+--- setup.py.orig	2007-11-23 08:26:55.000000000 -0800
++++ setup.py	2008-02-05 09:24:03.000000000 -0800
 @@ -39,12 +39,11 @@
      datadir or prefix,
      'share',
@@ -14,12 +14,13 @@
      'man',
      'man1'
  )
-@@ -97,24 +96,6 @@
+@@ -98,25 +97,6 @@
      'getmail_mbox'
      ],
      data_files=[
 -        (GETMAILDOCDIR, [
 -            './README',
+-            './getmail.spec',
 -            'docs/BUGS',
 -            'docs/COPYING',
 -            'docs/CHANGELOG',
@@ -38,4 +39,4 @@
 -        ]),
          (GETMAILMANDIR, [
              'docs/getmail.1',
-             'docs/getmail_maildir.1',
+             'docs/getmail_fetch.1',
