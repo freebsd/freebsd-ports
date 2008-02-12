@@ -1800,6 +1800,7 @@
     SUBDIR += pear-Text_Diff
     SUBDIR += pear-VFS
     SUBDIR += pear-Validate
+    SUBDIR += pear-Validate_AU
     SUBDIR += pear-Validate_Finance
     SUBDIR += pear-Validate_Finance_CreditCard
     SUBDIR += pear-Var_Dump
