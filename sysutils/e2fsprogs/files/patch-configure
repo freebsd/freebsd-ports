@@ -1,6 +1,6 @@
 --- a/configure.orig	Thu Jun  8 15:30:16 2006
 +++ b/configure	Thu Jun  8 15:30:34 2006
-@@ -8095,7 +8095,7 @@
+@@ -9044,7 +9044,7 @@
  
  
  
@@ -9,7 +9,7 @@
  stdlib.h string.h unistd.h sys/param.h
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
-@@ -16641,7 +16641,7 @@
+@@ -15105,7 +15105,7 @@
  fi
  { echo "$as_me:$LINENO: checking for unified diff option" >&5
  echo $ECHO_N "checking for unified diff option... $ECHO_C" >&6; }
