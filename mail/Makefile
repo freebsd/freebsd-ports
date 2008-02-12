@@ -58,6 +58,7 @@
     SUBDIR += claws-mail-smime
     SUBDIR += claws-mail-spamreport
     SUBDIR += claws-mail-synce
+    SUBDIR += claws-mail-tnef
     SUBDIR += claws-mail-vcalendar
     SUBDIR += cmail
     SUBDIR += cone
