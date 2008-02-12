@@ -401,6 +401,7 @@ animenfo-client	ports/databases/animenfo-client
 animenfo-client-gtk	ports/databases/animenfo-client-gtk
 animorph	ports/graphics/animorph
 anjuta		ports/devel/anjuta
+anki		ports/games/anki
 annelid		ports/games/annelid
 annextools	ports/net-mgmt/annextools
 annoyance-filter	ports/mail/annoyance-filter
