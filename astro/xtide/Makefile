@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xtide
-PORTVERSION=	2.9.5
+PORTVERSION=	2.10
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		libtcd-2.2.3.tar.bz2 \
-		harmonics-dwf-20071122-free.tcd.bz2
+		harmonics-dwf-20071228-free.tcd.bz2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		libtcd-2.2.3.tar.bz2
 
@@ -22,8 +22,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_XORG=	xpm
-USE_XLIB=	yes
 USE_GNOME=	gnometarget
+USE_XLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -39,7 +39,7 @@ LDFLAGS=	-L../libtcd-2.2.3/.libs -L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@${BZCAT} ${DISTDIR}/harmonics-dwf-20071122-free.tcd.bz2 \
+	@${BZCAT} ${DISTDIR}/harmonics-dwf-20071228-free.tcd.bz2 \
 		> ${WRKSRC}/harmonics.tcd
 
 post-patch:
@@ -51,8 +51,12 @@ post-patch:
 
 pre-configure:
 	@cd ${WRKDIR}/libtcd-2.2.3 \
-		&& ${SETENV} ${MAKE_ENV} ${SH} ./configure --disable-shared \
-		&& ${MAKE}
+		&& ${SETENV} ${CONFIGURE_ENV} \
+			CC="${CC}" CFLAGS="${CFLAGS}" \
+			CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+			${SH} ./configure --disable-shared \
+			${CONFIGURE_ARGS} \
+		&& ${SETENV} ${MAKE_ENV} ${GMAKE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tide ${PREFIX}/bin
