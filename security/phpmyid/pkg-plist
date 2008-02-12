@@ -3,6 +3,7 @@ www/phpMyID/CHANGELOG
 www/phpMyID/LICENSE
 www/phpMyID/MyID.config.php
 www/phpMyID/MyID.php
+www/phpMyID/FAQ
 www/phpMyID/README
 www/phpMyID/htaccess
 @dirrmtry www/phpMyID
