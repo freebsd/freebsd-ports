@@ -1,6 +1,0 @@
-bin/xbomb
-lib/X11/app-defaults/XBomb
-lib/X11/xbomb/xbomb3.hi
-lib/X11/xbomb/xbomb4.hi
-lib/X11/xbomb/xbomb6.hi
-@dirrm lib/X11/xbomb
