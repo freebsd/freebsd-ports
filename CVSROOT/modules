@@ -12134,6 +12134,7 @@ pear-Translation2	ports/sysutils/pear-Translation2
 pear-UDDI	ports/www/pear-UDDI
 pear-VFS	ports/devel/pear-VFS
 pear-Validate	ports/devel/pear-Validate
+pear-Validate_AU	ports/devel/pear-Validate_AU
 pear-Validate_Finance	ports/devel/pear-Validate_Finance
 pear-Validate_Finance_CreditCard	ports/devel/pear-Validate_Finance_CreditCard
 pear-Var_Dump	ports/devel/pear-Var_Dump
