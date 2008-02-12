@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	claws-mail
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.3.0
 CATEGORIES=	mail news ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sylpheed-claws
 DISTFILES=	${EXTRACT_ONLY} \
 		${THEMEFILE}
@@ -17,8 +16,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
-
-FORBIDDEN=	http://VuXML.FreeBSD.org/a59afa47-c930-11dc-810c-0016179b2dd5.html
 
 LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 		cairo:${PORTSDIR}/graphics/cairo \
@@ -41,7 +38,6 @@ USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xi xinerama xrandr \
 		xrender
 USE_GNOME=	gnomehack pkgconfig gtk20 glib20 atk libartlgpl2 pango libxml2
 GNU_CONFIGURE=	yes
-USE_GCC=	3.3+
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
@@ -57,34 +53,23 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-OPTIONS=	ALL		"Enable all options."			off \
+OPTIONS=	ALL		"Enable all options except GNUTLS."			off \
 		ASPELL		"Enable spell checking support."	on \
-		CLAMAV		"Enable virus-checking support."	off \
+		BOGOFILTER	"Enable bogofilter support."		off \
 		COMPFACE	"Enable X-Face support."		on \
 		DEBUG		"Enable debug support."			off \
 		DILLO		"Enable Dillo HTML viewer."		off \
-		GNOMEPRINT	"Enable extended print support (GNOME)."	off \
+		GNOMEPRINT	"Enable extended print support (deprecated)."	off \
+		GNUTLS		"Enable gnuTLS support."		off \
 		GPGME		"Enable PGP/GnuPG support using GPGME."	off \
 		IPV6		"Enable ipv6 support."			on \
 		JPILOT		"Enable JPilot support."		off \
 		LDAP		"Enable LDAP support."			off \
 		SA_PLUG		"Enable SpamAssassin support."		off \
-		SSL		"Enable OpenSSL support."		on \
 		STARTUP		"Enable startup notification support."	on \
 		THEMES		"Install additional themes."		on
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_SSL)
-# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--enable-openssl --with-openssl-includes=${OPENSSLINC} \
-			--with-openssl-libs=${OPENSSLLIB}
-CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
-.else
-CONFIGURE_ARGS+=	--disable-openssl
-.endif
 
 .if ${HAVE_GNOME:Mgnomeprint} != "" || defined(WITH_GNOMEPRINT)
 PLIST_SUB+=		GNOMEPRINT=""
@@ -95,18 +80,15 @@ PLIST_SUB+=		GNOMEPRINT="@comment "
 CONFIGURE_ARGS+=	--disable-gnomeprint
 .endif
 
-.if exists(${LOCALBASE}/include/clamav.h)
-WITH_CLAMAV=		yes
+.if defined(WITH_BOGOFILTER) || defined(WITH_ALL)
+RUN_DEPENDS+=		bogofilter:${PORTSDIR}/mail/bogofilter
+CONFIGURE_ARGS+=	--enable-bogofilter-plugin
+PLIST_SUB+=		BOGO_PLUG=""
+.else
+CONFIGURE_ARGS+=	--disable-bogofilter-plugin
+PLIST_SUB+=		BOGO_PLUG="@comment "
 .endif
 
-.if defined(WITH_CLAMAV) || defined(WITH_ALL)
-CONFIGURE_ARGS+=	--enable-clamav-plugin
-PLIST_SUB+=		CLAM_PLUG=""
-BUILD_DEPENDS=	   	${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav
-.else
-CONFIGURE_ARGS+=	--disable-clamav-plugin
-PLIST_SUB+=		CLAM_PLUG="@comment "
-.endif
 .if defined(WITH_COMPFACE) || defined(WITH_ALL)
 LIB_DEPENDS+=		compface.1:${PORTSDIR}/mail/faces
 CONFIGURE_ARGS+=	--enable-compface
@@ -139,6 +121,17 @@ PLIST_SUB+=		SA_PLUG=""
 .else
 CONFIGURE_ARGS+=	--disable-spamassassin-plugin
 PLIST_SUB+=		SA_PLUG="@comment "
+.endif
+.if defined(WITH_GNUTLS)
+CONFIGURE_ARGS+=	--enable-gnutls --disable-openssl
+LIB_DEPENDS+=		gnutls.13:${PORTSDIR}/security/gnutls
+.else
+CONFIGURE_ARGS+=	--disable-gnutls
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CONFIGURE_ARGS+=	--enable-openssl --with-openssl-includes=${OPENSSLINC} \
+			--with-openssl-libs=${OPENSSLLIB}
+CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 .endif
 .if defined(WITH_GPGME) || defined(WITH_ALL)
 PLIST_SUB+=		GPGME=""
@@ -191,8 +184,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lresolv||g; s|-lpisock\"|-liconv &|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
-		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g ; s|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/src/procmime.c
 	@${REINPLACE_CMD} -e "s|po intl src|po src| ; s:@CLAWS_GNOME2:#@CLAWS_GNOME2:g" ${WRKSRC}/Makefile.in
@@ -205,7 +196,7 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-.for i in NEWS README RELEASE_NOTES TODO tools/README.sylprint
+.for i in NEWS README RELEASE_NOTES TODO
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
@@ -233,8 +224,6 @@ post-install:
 	@${FIND} ${DATADIR}/themes -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${FIND} ${DATADIR}/themes -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 .endif
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylprint.pl ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/tools/sylprint.rc ${PREFIX}/etc/sylprint.rc.example
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/claws-mail*.png ${PREFIX}/share/pixmaps/
 
