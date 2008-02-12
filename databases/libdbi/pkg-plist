@@ -10,6 +10,7 @@ lib/libdbi.so.0
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/contact.html
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/copying-fdl.html
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/description.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/drivercaps.html
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/driverfuncs-dbquery.html
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/driverfuncs-infrastructure.html
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/driverfuncs-publicdbquery.html
@@ -18,11 +19,16 @@ lib/libdbi.so.0
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/helperfuncs.html
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/requireddrivercaps.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/settingdrivercaps.html
 %%PORTDOCS%%%%DOCSDIR%%/driver-guide/terminology.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/connerrors.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/contact.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/copying-fdl.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/description.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/errorhandling.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/errornumbers.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/gnugpl.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/intro.html
@@ -37,9 +43,11 @@ lib/libdbi.so.0
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference-field-idx.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference-field-meta.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference-query.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference-results.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/terminology.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/x267.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/x276.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/x278.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/programmers-guide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/driver-guide
