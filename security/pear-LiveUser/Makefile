@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	LiveUser
-PORTVERSION=	0.16.12
+PORTVERSION=	0.16.13
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
