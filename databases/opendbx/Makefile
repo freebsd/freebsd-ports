@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendbx
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.linuxnetworks.de/opendbx/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -35,7 +35,7 @@ OPTIONS=	MYSQL	"Support for the MySQL database" on \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE) && !defined(WITH_SQLITE3) && !defined(WITH_MSSQL)
+.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE) && !defined(WITH_SQLITE3) && !defined(WITH_MSSQL) && !defined(WITH_SYBASE)
 IGNORE=		needs at least one database backend
 .endif
 
