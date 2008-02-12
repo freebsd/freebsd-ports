@@ -15,6 +15,8 @@ DIST_SUBDIR=	zope
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
+FORBIDDEN=	http://VuXML.FreeBSD.org/ffba6ab0-90b5-11dc-9835-003048705d5a.html
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
 WRKSRC=	${WRKDIR}/Plone-${PORTVERSION}-final
