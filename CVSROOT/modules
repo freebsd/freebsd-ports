@@ -1405,6 +1405,7 @@ claws-mail	ports/mail/claws-mail
 claws-mail-att_remover	ports/mail/claws-mail-att_remover
 claws-mail-attach_warner	ports/mail/claws-mail-attach_warner
 claws-mail-cachesaver	ports/mail/claws-mail-cachesaver
+claws-mail-clamav	ports/mail/claws-mail-clamav
 claws-mail-etpan_privacy	ports/mail/claws-mail-etpan_privacy
 claws-mail-fetchinfo	ports/mail/claws-mail-fetchinfo
 claws-mail-gtkhtml2_viewer	ports/mail/claws-mail-gtkhtml2_viewer
