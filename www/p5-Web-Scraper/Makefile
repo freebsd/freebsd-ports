@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Web-Scraper
-PORTVERSION=	0.22
+PORTVERSION=	0.24
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web Scraping Toolkit inspired by Scrapi
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
