@@ -1,0 +1,6 @@
+Implementation of the Diffie-Hellman Key Exchange cryptographic protocol
+in PHP5. Enables two parties without any prior knowledge of each other
+establish a secure shared secret key across an insecure channel
+of communication.
+
+WWW: http://pear.php.net/package/Crypt_DiffieHellman/

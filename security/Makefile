@@ -545,6 +545,7 @@
     SUBDIR += pear-Crypt_Blowfish
     SUBDIR += pear-Crypt_CBC
     SUBDIR += pear-Crypt_CHAP
+    SUBDIR += pear-Crypt_DiffieHellman
     SUBDIR += pear-Crypt_GPG
     SUBDIR += pear-Crypt_HMAC
     SUBDIR += pear-Crypt_RC4
