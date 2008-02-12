@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdadminscripts
-PORTVERSION=	4.1.1
+PORTVERSION=	4.2
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -107,7 +107,7 @@ do-install:
 .if defined(NOPORTDOCS)
 .undef MAN1
 .else
-	@${ECHO_MSG} "===>  Installing man pages."
+	@${ECHO_MSG} "===>  Installing manual pages."
 .for _manpage in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/${_manpage} ${MANPREFIX}/man/man1/
 .endfor
