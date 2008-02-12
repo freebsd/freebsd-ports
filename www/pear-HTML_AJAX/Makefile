@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	HTML_AJAX
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.2
 CATEGORIES=	www devel pear
 
 MAINTAINER=	numisemis@yahoo.com
