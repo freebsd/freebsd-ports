@@ -42,6 +42,7 @@
     SUBDIR += an
     SUBDIR += anagramarama
     SUBDIR += angband
+    SUBDIR += anki
     SUBDIR += annelid
     SUBDIR += antipolix
     SUBDIR += antrix
@@ -593,6 +594,7 @@
     SUBDIR += ptkei
     SUBDIR += ptools
     SUBDIR += pvpgn
+    SUBDIR += py-anki
     SUBDIR += py-mnemosyne
     SUBDIR += py-poker-eval
     SUBDIR += py-pychess
