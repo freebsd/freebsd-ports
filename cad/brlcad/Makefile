@@ -7,7 +7,7 @@
 
 PORTNAME=	brlcad
 PORTVERSION=	7.10.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	SF
 
@@ -120,7 +120,7 @@ CONFIGURE_ARGS+=	--disable-debug --enable-optimized
 .endif
 
 post-patch:
-	${REINPLACE_CMD} "s+8\.5a6+8.5.0+" ${WRKSRC}/src/other/tcl/library/init.tcl
+	${REINPLACE_CMD} "s+8\.5a6+8.5.1+" ${WRKSRC}/src/other/tcl/library/init.tcl
 
 pre-install:
 	${CP} ${FILESDIR}/mged.sh ${WRKSRC}
