@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xpn
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
+#PORTREVISION=	0
 CATEGORIES=	news python
 MASTER_SITES=	http://xpn.altervista.org/codice/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -22,7 +22,7 @@ NO_BUILD=	yes
 USE_PYTHON=	2.4+
 
 FIND_DIRS=	-type d
-FIND_DATA=	-type f -mindepth 2
+FIND_DATA=	-type f -mindepth 2 -not -name "*~"
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} XPN=${XPN}
