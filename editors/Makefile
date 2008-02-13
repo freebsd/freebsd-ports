@@ -80,6 +80,7 @@
     SUBDIR += kile
     SUBDIR += klat
     SUBDIR += koffice-kde3
+    SUBDIR += komodo-edit
     SUBDIR += kxmleditor
     SUBDIR += lazarus
     SUBDIR += le
