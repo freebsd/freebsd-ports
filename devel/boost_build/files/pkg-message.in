@@ -1,0 +1,15 @@
+To use boost_build, it is necessary to set BOOST_ROOT in
+your environment:
+
+ sh/bash/ksh:
+	BOOST_ROOT=%%DATADIR%% ; export BOOST_ROOT
+ csh:
+	setenv BOOST_ROOT %%DATADIR%%
+
+Note: The default toolchain is gcc.
+To override this on a system-wide basis, edit this file:
+	%%DATADIR%%/site-config.jam
+
+For an example of a per-user settings file which may be
+copied to your home directory, see:
+	 %%DATADIR%%/user-config.jam
