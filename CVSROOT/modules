@@ -927,6 +927,7 @@ bksh		ports/sysutils/bksh
 blackbox	ports/x11-wm/blackbox
 blackened	ports/irc/blackened
 blackjack	ports/games/blackjack
+blackshadeselite	ports/games/blackshadeselite
 blacs		ports/math/blacs
 bladeenc	ports/audio/bladeenc
 blam		ports/net/blam
