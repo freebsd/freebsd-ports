@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tcptrack
-PORTVERSION=		1.2.0
+PORTVERSION=		1.3.0
 CATEGORIES=		net-mgmt
 MASTER_SITES=		http://www.rhythm.cx/~steve/devel/tcptrack/%SUBDIR%/
 MASTER_SITE_SUBDIR=	release/${PORTVERSION}/source
