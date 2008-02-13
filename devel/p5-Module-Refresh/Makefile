@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	Module-Refresh
-PORTVERSION=	0.09
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Module
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fbsdports@commit.it
+MAINTAINER=	lippemail@gmail.com
 COMMENT=	Refresh %INC files when updated on disk
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	5.8.1+
 
 MAN3=		Module::Refresh.3
 
