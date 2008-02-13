@@ -6191,6 +6191,7 @@ koffice-i18n-xh	ports/misc/koffice-i18n-xh
 koffice-i18n-zu	ports/misc/koffice-i18n-zu
 koffice-kde3	ports/editors/koffice-kde3
 kojoney		ports/net/kojoney
+komodo-edit	ports/editors/komodo-edit
 komparator	ports/sysutils/komparator
 kompmgr		ports/x11-wm/kompmgr
 kompose		ports/deskutils/kompose
