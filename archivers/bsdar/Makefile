@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ar
-PORTVERSION=	20080117
+PORTVERSION=	20080202
 CATEGORIES=	archivers
 MASTER_SITES=	http://web.student.chalmers.se/~kaiw/patch/
 PKGNAMEPREFIX=	bsd-
@@ -27,7 +27,7 @@ IGNORE=		does not compile
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ar ${PREFIX}/bin/ar
 	${LN} -s ${PREFIX}/bin/ar ${PREFIX}/bin/ranlib
-	${INSTALL_DATA} ${WRKSRC}/ar.1 ${MAN1PREFIX}/man/man1/ar.1
-	${INSTALL_DATA} ${WRKSRC}/ar.1 ${MAN1PREFIX}/man/man1/ranlib.1
+	${INSTALL_MAN} ${WRKSRC}/ar.1 ${MAN1PREFIX}/man/man1/ar.1
+	${INSTALL_MAN} ${WRKSRC}/ar.1 ${MAN1PREFIX}/man/man1/ranlib.1
 
 .include <bsd.port.post.mk>
