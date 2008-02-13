@@ -210,7 +210,6 @@
     SUBDIR += libsrs_alt
     SUBDIR += libvmime
     SUBDIR += lightning
-    SUBDIR += linux-netscape-messenger
     SUBDIR += linux-thunderbird
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp
