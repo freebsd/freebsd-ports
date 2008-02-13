@@ -7229,6 +7229,7 @@ log4cpp		ports/devel/log4cpp
 log4cxx		ports/devel/log4cxx
 log4j		ports/devel/log4j
 log4sh		ports/devel/log4sh
+log4shib	ports/devel/log4shib
 log_analysis	ports/sysutils/log_analysis
 logcheck	ports/security/logcheck
 logjam		ports/deskutils/logjam
