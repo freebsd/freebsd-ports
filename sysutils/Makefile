@@ -610,6 +610,7 @@
     SUBDIR += sfdisk
     SUBDIR += sformat
     SUBDIR += sge60
+    SUBDIR += sge61
     SUBDIR += shlock
     SUBDIR += sjog
     SUBDIR += skill
