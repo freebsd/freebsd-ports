@@ -1,0 +1,5 @@
+The log4shib library is derived from the log4cpp library with
+patches applied for platform portability and thread safety by
+Scott Cantor.
+
+WWW: https://spaces.internet2.edu/display/SHIB2/log4shib
