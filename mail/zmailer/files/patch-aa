@@ -1,13 +1,5 @@
 --- configure.orig	Fri Dec 26 10:29:15 2003
 +++ configure	Fri Dec 26 10:33:26 2003
-@@ -280,6 +280,7 @@
- # Factoring default headers for most tests.
- ac_includes_default="\
- #include <stdio.h>
-+#include <sys/param.h>
- #if HAVE_SYS_TYPES_H
- # include <sys/types.h>
- #endif
 @@ -20317,7 +20318,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */

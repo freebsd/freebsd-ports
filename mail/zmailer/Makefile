@@ -6,29 +6,28 @@
 #
 
 PORTNAME=	zmailer
-PORTVERSION=	2.99.56
+PORTVERSION=	2.99.57
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/mail/zmailer/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	A fully functional fast, robust SMTP server and transport agent
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.*
+
+OPTIONS=	SSL "Enable SSL support" ON
+
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
-.if defined(WITH_SSL)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS=	--with-openssl
-.else
-CONFIGURE_ARGS=	--without-openssl
-.endif
-
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
+.if defined(WITHOUT_SSL)
+CONFIGURE_ARGS=	--without-openssl
+.else
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CONFIGURE_ARGS=	--with-openssl
 .endif
 
 CONFIGURE_ARGS+=--prefix=${PREFIX}/ \
@@ -66,6 +65,9 @@ DOMAIN!=	/bin/hostname | ${SED} -e "s:^"`/bin/hostname -s`"\.*::g"
 .if (${DOMAIN} == "")
 DOMAIN=		"mydomain.com"
 .endif
+
+pre-install:
+	cd ${WRKSRC}/man && make install
 
 post-install:
 	@${SETENV} PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
