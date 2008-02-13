@@ -708,6 +708,7 @@
     SUBDIR += log4cxx
     SUBDIR += log4j
     SUBDIR += log4sh
+    SUBDIR += log4shib
     SUBDIR += loki
     SUBDIR += looks
     SUBDIR += lrmi
