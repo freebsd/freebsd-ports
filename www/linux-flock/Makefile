@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	flock
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 DISTVERSIONSUFFIX=	.en-US.linux-i686
 CATEGORIES=	www
-MASTER_SITES=	http://saimei.acc.umu.se/mirror/%SUBDIR%/ \
-		http://mirrors.ibiblio.org/pub/mirrors/%SUBDIR%/ \
+MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/%SUBDIR%/ \
 		http://ftp.osuosl.org/pub/%SUBDIR%/ \
+		http://saimei.acc.umu.se/mirror/%SUBDIR%/ \
 		http://www.gtlib.gatech.edu/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}
 
