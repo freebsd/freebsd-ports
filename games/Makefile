@@ -77,6 +77,7 @@
     SUBDIR += biorythm
     SUBDIR += bitefusion
     SUBDIR += blackjack
+    SUBDIR += blackshadeselite
     SUBDIR += blinkensisters
     SUBDIR += blobandconquer
     SUBDIR += bloboats
