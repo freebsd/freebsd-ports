@@ -1,0 +1,23 @@
+--- Makefile.orig	2007-11-22 01:14:27.000000000 +0300
++++ Makefile	2008-01-27 23:53:31.000000000 +0300
+@@ -1,6 +1,4 @@
+-CC := gcc
+-CXX := g++
+-LINKER := g++
++LINKER := $(CXX)
+ ASM := nasm
+ SRCDIR := ./Source
+ NET_SRCDIR := ./Source/Net
+@@ -8,9 +6,9 @@
+ NET_BINDIR := ./objs/Net
+ EXE := $(BINDIR)/blackshades #$(BINDIR)/bse_viewer
+ 
+-CFLAGS := -O2 -fstrict-aliasing -Wall -g $(shell sdl-config --cflags) -I$(SRCDIR) -I$(NET_SRCDIR) -include Source/Support.h
+-CXXFLAGS := $(CFLAGS)
+-LDFLAGS := $(shell sdl-config --libs) -lGL -lGLU -lopenal -lalut # -framework QuickTime
++CFLAGS += -Wall `${SDL_CONFIG} --cflags` -I$(SRCDIR) -I$(NET_SRCDIR) -include Source/Support.h
++CXXFLAGS += -Wall `${SDL_CONFIG} --cflags` -I$(SRCDIR) -I$(NET_SRCDIR) -include Source/Support.h
++LDFLAGS := `${SDL_CONFIG} --libs` -lGL -lGLU -lopenal -lalut # -framework QuickTime
+ 
+ # Don't want ogg?
+ #CFLAGS += -DNOOGG

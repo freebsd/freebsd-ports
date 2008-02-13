@@ -1,0 +1,18 @@
+Black Shades Elite is an action game that is more or less similar
+to the original Black Shades "Psychic Bodyguard FPS". Kill anyone
+that tries to kill the VIP (the white guy). The psychic part is
+seeing blue lines when bad guys line up on the VIP (when the line
+is red they are about to shoot). Other powers (slow down, and
+visions) are available - press F1 for how to use.
+
+It has a few more user friendly options (in the ~/blackshades.config
+file) as well as a help menu. Aside from that the internals have
+had some major changes, but there is still a lot more to do. Other
+options include 3rd person (which was in the original game, just
+disabled). The other change that I enjoy is the lack of a busy loop
+- now cpu usage isn't 100% - on any recent system it should be less
+than 25%.
+
+Feature and bug reports are encouraged. I'm sure it's buggy. Enjoy.
+
+WWW: http://home.gna.org/blackshadeselite/
