@@ -1,0 +1,13 @@
+
+*********************************************************************
+You have just installed the Dojo DHTML toolkit. 
+
+Note that you should restart your Apache web server to ensure that
+the Dojo configuration file is loaded.
+
+Dojo toolkit demonstration pages can be found at:
+http://localhost/dojo/dijit/demos/chat.html
+http://localhost/dojo/dijit/demos/form.html
+http://localhost/dojo/dijit/demos/i18n.html
+http://localhost/dojo/dijit/demos/mail.html
+http://localhost/dojo/dijit/demos/nihao.html

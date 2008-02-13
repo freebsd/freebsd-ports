@@ -111,6 +111,7 @@
     SUBDIR += diamanda
     SUBDIR += dillo
     SUBDIR += dillo-i18n
+    SUBDIR += dojo
     SUBDIR += dokeos
     SUBDIR += dokuwiki
     SUBDIR += dokuwiki-devel
