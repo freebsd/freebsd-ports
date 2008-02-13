@@ -6041,6 +6041,7 @@ klat		ports/editors/klat
 klavaro		ports/games/klavaro
 klayout		ports/cad/klayout
 kldfind		ports/sysutils/kldfind
+kleansweep	ports/sysutils/kleansweep
 klh10		ports/emulators/klh10
 klibido		ports/news/klibido
 klineakconfig	ports/sysutils/klineakconfig
