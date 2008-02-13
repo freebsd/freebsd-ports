@@ -1,0 +1,25 @@
+#!/bin/sh
+
+PW="/usr/sbin/pw"
+CHOWN="/usr/sbin/chown"
+CHMOD="/bin/chmod"
+MKDIR="/bin/mkdir -p"
+NOLOGIN="/usr/sbin/nologin"
+
+DNRD_USER=%%DNRD_USER%%
+DNRD_GROUP=%%DNRD_GROUP%%
+DNRD_DIR=%%DNRD_DIR%%
+
+case "$2" in
+PRE-INSTALL)
+	${PW} groupshow -n ${DNRD_USER} >/dev/null 2>&1 \
+	|| ${PW} groupadd -n ${DNRD_USER}
+	${PW} usershow -n ${DNRD_USER} >/dev/null 2>&1 \
+	|| ${PW} useradd ${DNRD_USER} -g ${DNRD_GROUP} -s ${NOLOGIN}
+  ;;
+POST-INSTALL)
+	if [ ! -d ${DNRD_DIR} ]; then
+		${MKDIR} ${DNRD_DIR}
+	fi
+  ;;
+esac
