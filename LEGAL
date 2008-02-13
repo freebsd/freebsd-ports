@@ -364,6 +364,7 @@ jre-6*-linux-*.bin	java/linux-sun-jre16	License does not allow distribution
 jsdk20-solaris2-sparc*	java/jsdk		No commercial use
 jude-community-*.zip	devel/jude-community	License restrictions
 kaffe-*			java/kaffe		Restrictive copyright
+komodo-*		editors/komodo-edit	Distribution not permitted
 KASH3-*			math/kash3		Not for commercial
 						distribution or use
 KDE/ICONS-*		x11-themes/kde-icons-*	Unclear about licensing
