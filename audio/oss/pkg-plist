@@ -25,6 +25,8 @@ lib/oss/modules/cs4281.ko
 lib/oss/modules/digi32.ko
 lib/oss/modules/digi96.ko
 lib/oss/modules/emu10k1x.ko
+lib/oss/modules/envy24.ko
+lib/oss/modules/envy24ht.ko
 lib/oss/modules/fm801.ko
 lib/oss/modules/geode.ko
 lib/oss/modules/hdaudio.ko
@@ -34,6 +36,7 @@ lib/oss/modules/maestro.ko
 lib/oss/modules/neomagic.ko
 lib/oss/modules/s3vibes.ko
 lib/oss/modules/sblive.ko
+lib/oss/modules/sbxfi.ko
 lib/oss/modules/softoss.ko
 lib/oss/modules/solo.ko
 lib/oss/modules/trident.ko
