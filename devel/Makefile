@@ -106,6 +106,7 @@
     SUBDIR += bonobo-conf
     SUBDIR += boost
     SUBDIR += boost-python
+    SUBDIR += boost_build
     SUBDIR += bouml
     SUBDIR += bouml-doc
     SUBDIR += bufferpool
