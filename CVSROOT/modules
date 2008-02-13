@@ -1018,6 +1018,7 @@ bookmarkbridge	ports/www/bookmarkbridge
 bookreader	ports/deskutils/bookreader
 boost		ports/devel/boost
 boost-python		ports/devel/boost-python
+boost_build	ports/devel/boost_build
 bopm		ports/irc/bopm
 borzoi		ports/security/borzoi
 boswars		ports/games/boswars
