@@ -1,5 +1,4 @@
 %%SGE_BASE%%/3rd_party/3rd_party_licscopyrights
-%%QMON%%%%SGE_BASE%%/3rd_party/qmon/copyrights
 %%QMON%%%%SGE_BASE%%/3rd_party/qmon/ltree_changed.tar.gz
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/qacct
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/qalter
@@ -12,6 +11,7 @@
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/qmod
 %%QMON%%%%SGE_BASE%%/bin/%%SGE_ARCH%%/qmon
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/qping
+%%SGE_BASE%%/bin/%%SGE_ARCH%%/qquota
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/qresub
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/qrls
 %%SGE_BASE%%/bin/%%SGE_ARCH%%/qrsh
@@ -43,6 +43,7 @@
 %%SGE_BASE%%/catman/cat/cat1/qmod.1
 %%QMON%%%%SGE_BASE%%/catman/cat/cat1/qmon.1
 %%SGE_BASE%%/catman/cat/cat1/qping.1
+%%SGE_BASE%%/catman/cat/cat1/qquota.1
 %%SGE_BASE%%/catman/cat/cat1/qresub.1
 %%SGE_BASE%%/catman/cat/cat1/qrls.1
 %%SGE_BASE%%/catman/cat/cat1/qrsh.1
@@ -118,6 +119,7 @@
 %%SGE_BASE%%/catman/cat/cat5/sge_priority.5
 %%SGE_BASE%%/catman/cat/cat5/sge_qstat.5
 %%SGE_BASE%%/catman/cat/cat5/sge_request.5
+%%SGE_BASE%%/catman/cat/cat5/sge_resource_quota.5
 %%SGE_BASE%%/catman/cat/cat5/sgepasswd.5
 %%SGE_BASE%%/catman/cat/cat5/share_tree.5
 %%SGE_BASE%%/catman/cat/cat5/user.5
@@ -146,8 +148,12 @@
 %%SGE_BASE%%/ckpt/sx6_clean_command
 %%SGE_BASE%%/ckpt/sx6_migration_command
 %%SGE_BASE%%/ckpt/sx6_restart_command
+%%SGE_BASE%%/dtrace/README-dtrace.txt
+%%SGE_BASE%%/dtrace/monitor.d
+%%SGE_BASE%%/dtrace/monitor.sh
 %%SGE_BASE%%/examples/drmaa/example.c
 %%SGE_BASE%%/examples/drmaa/howto1.c
+%%SGE_BASE%%/examples/drmaa/howto1_1.c
 %%SGE_BASE%%/examples/drmaa/howto2.c
 %%SGE_BASE%%/examples/drmaa/howto2_1.c
 %%SGE_BASE%%/examples/drmaa/howto3.c
@@ -157,6 +163,7 @@
 %%SGE_BASE%%/examples/drmaa/howto5.c
 %%SGE_BASE%%/examples/drmaa/howto6.c
 %%SGE_BASE%%/examples/jobs/array_submitter.sh
+%%SGE_BASE%%/examples/jobs/hello.bat
 %%SGE_BASE%%/examples/jobs/jobnet_submitter.sh
 %%SGE_BASE%%/examples/jobs/pascal.sh
 %%SGE_BASE%%/examples/jobs/pminiworm.sh
@@ -164,21 +171,26 @@
 %%SGE_BASE%%/examples/jobs/sleeper.sh
 %%SGE_BASE%%/examples/jobs/step_A_array_submitter.sh
 %%SGE_BASE%%/examples/jobs/step_B_array_submitter.sh
+%%SGE_BASE%%/examples/jobs/worker.exe
 %%SGE_BASE%%/examples/jobs/worker.sh
 %%SGE_BASE%%/examples/jobsbin/%%SGE_ARCH%%/work
 %%SGE_BASE%%/include/drmaa.h
 %%SGE_BASE%%/inst_sge
 %%SGE_BASE%%/install_execd
 %%SGE_BASE%%/install_qmaster
+%%SGE_BASE%%/lib/drmaa-0.5.jar
+%%SGE_BASE%%/lib/drmaa.jar
 %%QMON%%%%SGE_BASE%%/lib/%%SGE_ARCH%%/libXltree.so
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libcrypto.so
-%%BDB_SPOOL%%%%SGE_BASE%%/lib/%%SGE_ARCH%%/libdb-4.2.so
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libdrmaa.so
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libdrmaa.so.0.95
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libdrmaa.so.1.0
+%%SGE_BASE%%/lib/%%SGE_ARCH%%/libjuti.so
 %%BDB_SPOOL%%%%SGE_BASE%%/lib/%%SGE_ARCH%%/libspoolb.so
 %%BDB_SPOOL%%%%SGE_BASE%%/lib/%%SGE_ARCH%%/libspoolc.so
 %%SGE_BASE%%/lib/%%SGE_ARCH%%/libssl.so
+%%SGE_BASE%%/lib/jgdi.jar
+%%SGE_BASE%%/lib/juti.jar
 %%SGE_BASE%%/mpi/README
 %%SGE_BASE%%/mpi/README.atm
 %%SGE_BASE%%/mpi/hostname
@@ -228,6 +240,7 @@
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_pe.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_prj.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_queue.xpm
+%%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_rqs.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_sched.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_submit.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/big/toolbar_ticket.xpm
@@ -309,6 +322,7 @@
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/toolbar_pe.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/toolbar_prj.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/toolbar_queue.xpm
+%%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/toolbar_rqs.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/toolbar_sched.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/toolbar_submit.xpm
 %%QMON%%%%SGE_BASE%%/qmon/PIXMAPS/toolbar_ticket.xpm
@@ -333,6 +347,7 @@
 %%SGE_BASE%%/util/arch
 %%SGE_BASE%%/util/arch_variables
 %%SGE_BASE%%/util/bdb_checkpoint.sh
+%%SGE_BASE%%/util/certtool.sh
 %%SGE_BASE%%/util/create_settings.sh
 %%SGE_BASE%%/util/dl.csh
 %%SGE_BASE%%/util/dl.sh
@@ -364,6 +379,7 @@
 %%SGE_BASE%%/util/resources/centry/arch
 %%SGE_BASE%%/util/resources/centry/calendar
 %%SGE_BASE%%/util/resources/centry/cpu
+%%SGE_BASE%%/util/resources/centry/display_win_gui
 %%SGE_BASE%%/util/resources/centry/h_core
 %%SGE_BASE%%/util/resources/centry/h_cpu
 %%SGE_BASE%%/util/resources/centry/h_data
@@ -417,6 +433,8 @@
 %%SGE_BASE%%/util/resources/loadsensors/solaris-iidle.sh
 %%SGE_BASE%%/util/resources/pe/make
 %%SGE_BASE%%/util/resources/pe/make.sge_pqs_api
+%%SGE_BASE%%/util/resources/schemas/qhost/qhost.xsd
+%%SGE_BASE%%/util/resources/schemas/qquota/qquota.xsd
 %%SGE_BASE%%/util/resources/schemas/qstat/detailed_job_info.xsd
 %%SGE_BASE%%/util/resources/schemas/qstat/message.xsd
 %%SGE_BASE%%/util/resources/schemas/qstat/qstat.xsd
@@ -426,12 +444,14 @@
 %%SGE_BASE%%/util/setfileperm.sh
 %%SGE_BASE%%/util/sgeCA/renew_all_certs.csh
 %%SGE_BASE%%/util/sgeCA/sge_ca
+%%SGE_BASE%%/util/sgeCA/sge_ca.cnf
 %%SGE_BASE%%/util/sgeCA/sge_ssl.cnf
 %%SGE_BASE%%/util/sgeCA/sge_ssl_template.cnf
 %%SGE_BASE%%/util/sge_aliases
 %%SGE_BASE%%/util/sge_request
 %%SGE_BASE%%/util/sgeremoterun
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/adminrun
+%%SGE_BASE%%/utilbin/%%SGE_ARCH%%/authuser
 %%BDB_SPOOL%%%%SGE_BASE%%/utilbin/%%SGE_ARCH%%/berkeley_db_svc
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/checkprog
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/checkuser
@@ -465,11 +485,11 @@
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/spoolinit
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/testsuidroot
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/uidgid
-%%PORTDOCS%%%%DOCSDIR%%/README-ARCo.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-Autoinstall.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-DRMAA-Java.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-DRMAA.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-Update-60u2.txt
+%%PORTDOCS%%%%DOCSDIR%%/README-Upgrade-61.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-Upgrade.txt
 %%PORTDOCS%%%%DOCSDIR%%/compatibility_test.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/adoc.html
@@ -483,15 +503,24 @@
 %%PORTDOCS%%%%DOCSDIR%%/devel/libmir.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/review.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/review_help.txt
+%%PORTDOCS%%%%DOCSDIR%%/devel/rfe/AR_job_life_time.jpg
+%%PORTDOCS%%%%DOCSDIR%%/devel/rfe/AR_life_time.jpg
+%%PORTDOCS%%%%DOCSDIR%%/devel/rfe/AdvanceReservationSpecification.html
+%%PORTDOCS%%%%DOCSDIR%%/devel/rfe/EvaluationExpressionSupport.html
+%%PORTDOCS%%%%DOCSDIR%%/devel/rfe/EvaluationExpressionSupport.wiki
+%%PORTDOCS%%%%DOCSDIR%%/devel/rfe/ResourceLimitationRulesSpecification.html
+%%PORTDOCS%%%%DOCSDIR%%/devel/rfe/ResourceQuotaSpecification.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/auto_user.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/bapl.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/cluster_queue.txt
+%%PORTDOCS%%%%DOCSDIR%%/devel/rfe/dtrace_monitor.wiki
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/event_mirror.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/job_category.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/job_class.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/maui.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/policy_module.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/priority_class.txt
+%%PORTDOCS%%%%DOCSDIR%%/devel/rfe/profiling.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/qmaster_monitoring.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/resource_attributes.txt
 %%PORTDOCS%%%%DOCSDIR%%/devel/rfe/resource_reservation.txt
@@ -515,6 +544,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qmod.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qmon.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qping.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qquota.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qresub.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qrls.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman1/qrsh.html
@@ -535,6 +565,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_control.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_delete_job_template.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_exit.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_get_DRMAA_implementation.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_get_DRM_system.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_get_attribute.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_get_attribute_names.html
@@ -542,6 +573,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_get_next_attr_name.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_get_next_attr_value.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_get_next_job_id.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_get_num_attr_names.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_get_num_attr_values.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_get_num_job_ids.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_get_vector_attribute.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_get_vector_attribute_names.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman3/drmaa_init.html
@@ -698,10 +732,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman5/sge_priority.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman5/sge_qstat.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman5/sge_request.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman5/sge_resource_quota.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman5/sgepasswd.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman5/share_tree.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman5/user.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman5/usermapping.html
+%%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/SGE_Helper_Service.exe.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/sge_commd.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/sge_execd.html
 %%PORTDOCS%%%%DOCSDIR%%/htmlman/htmlman8/sge_qmaster.html
@@ -782,6 +818,8 @@
 @dirrm %%SGE_BASE%%/util/resources/usersets
 @dirrm %%SGE_BASE%%/util/resources/starter_methods
 @dirrm %%SGE_BASE%%/util/resources/schemas/qstat
+@dirrm %%SGE_BASE%%/util/resources/schemas/qquota
+@dirrm %%SGE_BASE%%/util/resources/schemas/qhost
 @dirrm %%SGE_BASE%%/util/resources/schemas
 @dirrm %%SGE_BASE%%/util/resources/pe
 @dirrm %%SGE_BASE%%/util/resources/loadsensors
@@ -811,6 +849,7 @@
 @dirrm %%SGE_BASE%%/examples/jobs
 @dirrm %%SGE_BASE%%/examples/drmaa
 @dirrm %%SGE_BASE%%/examples
+@dirrm %%SGE_BASE%%/dtrace
 @dirrm %%SGE_BASE%%/ckpt
 @dirrm %%SGE_BASE%%/catman/cat/cat8
 @dirrm %%SGE_BASE%%/catman/cat/cat5
