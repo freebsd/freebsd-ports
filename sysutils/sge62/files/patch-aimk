@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- aimk.orig
 +++ aimk
-@@ -210,7 +210,7 @@
+@@ -222,7 +222,7 @@
  if ( $?SGE_INPUT_CFLAGS ) then
     set INP_CFLAGS    = "$SGE_INPUT_CFLAGS"
  else
@@ -12,7 +12,7 @@ $FreeBSD$
  endif
  
  # Default build targets for which we have seperate make files
-@@ -1003,12 +1003,12 @@
+@@ -1065,12 +1065,12 @@
        set OFLAG = "-O"
     endif
     set ARFLAGS  = rcv
@@ -28,8 +28,8 @@ $FreeBSD$
     set NOERR_CFLAG = "-Wno-error"
     set LFLAGS   = "$DEBUG_FLAG $LFLAGS -export-dynamic"
     set LIBS     = "$LIBS -lkvm"
-@@ -1017,9 +1017,9 @@
-    set SHARED_LFLAGS = "$SHARED_LFLAGS -L. -shared -export-dynamic" 
+@@ -1080,9 +1080,9 @@
+    set AUTHLIBS = "-lcrypt -lpam"
     
     set XMTDEF   = ""
 -   set XINCD    = "$XMTINCD $XINCD -I/usr/X11/include"
@@ -40,3 +40,19 @@ $FreeBSD$
     set XLFLAGS  = "$XLIBD"
     set XLIBS    = " -Xlinker -lXm -Xlinker -Bdynamic -lXpm -lXt -lXext -lX11 -lSM -lICE -lXp"
     set RM	= "rm -f"
+@@ -1728,6 +1728,7 @@
+    if ("$JAVA_ARCH" != "") then
+       set CORE_INCLUDE = "$CORE_INCLUDE -I${JAVA_HOME}/${JAVA_INCL}/${JAVA_ARCH}"
+       switch ($buildarch)
++	 case fbsd-i386:
+          case lx24-x86:
+          case ulx24-x86:
+          case lx26-x86:
+@@ -1745,6 +1746,7 @@
+          case usol-sparc:
+              set JAVA_LIB_ARCH = sparc
+              breaksw
++	 case fbsd-amd64:
+          case lx24-amd64:
+          case ulx24-amd64:
+          case lx26-amd64:

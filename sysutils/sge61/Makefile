@@ -8,10 +8,14 @@
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/163/
-MASTER_SITES+=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/161/:src \
+		http://gridengine.sunsource.net/download/SGE61/:bin \
+		${MASTER_SITE_LOCAL}:src,bin
 MASTER_SITE_SUBDIR=	brooks
-DISTNAME=	ge-V60u12_TAG-src
+DISTNAME=	ge-V${SGE_RELEASE:S/.//}_TAG-src
+DISTFILES=	${DISTNAME}.tar.gz:src \
+		ge-${SGE_RELEASE}-common.tar.gz:bin
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Sun Grid Engine, a batch queueing system
@@ -28,9 +32,8 @@ OPTIONS=	BDB "Use DB based spooler" on \
 		JAVA "Support Java DRMAA API" on \
 		X11 "Qmon X11 GUI" on
 
-CONFLICTS=	sge-5* sgeee-[0-9]* sge-0.*
-
-EXTRA_PATCHES=	${FILESDIR}/sge-freebsd-pdc.diff
+LATEST_LINK=	sge61
+CONFLICTS=	sge-6.[02-9]* sge-5* sgeee-[0-9]* sge-0.*
 
 .if !exists(/usr/include/sys/_pthreadtypes.h)
 EXTRA_PATCHES=	${FILESDIR}/pthread-types.diff
@@ -46,8 +49,8 @@ SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
 SGE_BUILD_ARCH=	FREEBSD_${ARCH:U}
-SGE_VERSION=	6.0.12
-SGE_RELEASE=	6.0u12
+SGE_RELEASE=	6.1u3
+SGE_VERSION=	${SGE_RELEASE:S/u/./}
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
 PLIST_SUB+=	SGE_BASE=${SGE_BASE}
@@ -63,6 +66,7 @@ WRKSRC=		${WRKDIR}/gridengine/source
 TMP_SGE_ROOT=	${WRKDIR}/sgeroot
 AIMK_CMD=	${SETENV} ${AIMK_ENV} ./aimk ${AIMK_ARGS}
 
+# From DEFAULTPROGS in scripts/distinst
 INST_PROGS=	man common \
 		sge_qmaster \
 		sge_execd \
@@ -80,13 +84,14 @@ INST_PROGS=	man common \
 		qsh \
 		utilbin \
 		jobs \
+		${QMON} \
 		qhost \
 		qmake \
 		qtcsh \
 		qping \
 		qloadsensor.exe \
 		sgepasswd \
-		${QMON}
+		qquota
 
 MANPREFIX=	${SGE_ROOT}
 .include "${.CURDIR}/Makefile.man"
@@ -105,18 +110,12 @@ PLIST_SUB+=	BDB_SPOOL="@comment "
 .if defined(WITH_JAVA)
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
-JAVA_OS=	native
-JAVA_BUILD=	jdk
-JAVA_RUN=	jre
-ANT?=		${LOCALBASE}/bin/ant
-BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 PLIST_SUB+=	DRMAA=
-AIMK_ENV+=	JAVA_HOME=${JAVA_HOME}
 CATEGORIES+=	java
 .else
-AIMK_ARGS+=	-no-java -no-jni
 PLIST_SUB+=	DRMAA="@comment "
 .endif
+AIMK_ARGS+=	-no-java -no-jni
 
 .if defined(WITH_X11)
 USE_MOTIF=	yes
@@ -127,6 +126,14 @@ AIMK_ARGS+=	-no-qmon
 PLIST_SUB+=	QMON="@comment "
 QMON=		noqmon
 .endif
+
+post-extract:
+	@cd ${WRKDIR} && ${TAR} xf ${DISTDIR}/ge-${SGE_RELEASE}-common.tar.gz \*.jar
+	@${CP} ${WRKDIR}/lib/drmaa.jar ${WRKSRC}/classes/
+	@${MKDIR} ${WRKSRC}/classes/juti
+	@${CP} ${WRKDIR}/lib/juti.jar ${WRKSRC}/classes/juti/
+	@${MKDIR} ${WRKSRC}/libs/jgdi/build
+	@${CP} ${WRKDIR}/lib/jgdi.jar ${WRKSRC}/libs/jgdi/build/
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
@@ -160,7 +167,8 @@ post-patch:
 	    -e 's|%%X11BASE%%|${X11BASE}|g' \
 	    ${FILESDIR}/aimk.private > ${WRKSRC}/aimk.private
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-	    -e 's|%%OPENSSLBASE%%|${OPENSSLBASE}|g' < \
+	    -e 's|%%OPENSSLBASE%%|${OPENSSLBASE}|g' \
+	    -e 's|%%WRKDIR%%|${WRKDIR}|g' \
 	    ${FILESDIR}/distinst.private > ${WRKSRC}/distinst.private
 .if !defined(WITH_X11)
 	@${REINPLACE_CMD} -e 's/qmon//' ${WRKSRC}/dist/util/setfileperm.sh
@@ -172,7 +180,7 @@ do-build:
 	@cd ${WRKSRC} && ${AIMK_CMD} depend
 	@cd ${WRKSRC} && \
 	    ${AIMK_CMD} -debug && \
-	    ${AIMK_CMD} -man ${SGE_PRODUCT} &&
+	    ${AIMK_CMD} -man ${SGE_PRODUCT}
 	@${MKDIR} ${TMP_SGE_ROOT}
 	@cd ${WRKSRC} && ${SETENV} SGE_ROOT=${TMP_SGE_ROOT} \
 	    ./scripts/distinst -local -libs ${SGE_ARCH} -- ${INST_PROGS}
