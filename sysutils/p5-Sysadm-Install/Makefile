@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sysadm-Install
-PORTVERSION=	0.23
+PORTVERSION=	0.25
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MS/MSCHILLI
@@ -17,18 +17,11 @@ COMMENT=	Typical installation tasks for system administrators
 
 BUILD_DEPENDS=	${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
 		${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
+		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+		${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect \
+		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-.if defined(WITH_ARCHIVE_TAR)
-BUILD_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar
-RUN_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar
-.endif
-
-.if defined(WITH_EXPECT)
-BUILD_DEPENDS+=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect
-RUN_DEPENDS+=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect
-.endif
 
 PERL_CONFIGURE=	yes
 
