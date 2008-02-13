@@ -515,6 +515,7 @@
     SUBDIR += nibbles
     SUBDIR += nighthawk
     SUBDIR += nil
+    SUBDIR += nimuh
     SUBDIR += ninix-aya
     SUBDIR += njam
     SUBDIR += noegnud-addons
