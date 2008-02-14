@@ -1,3 +1,6 @@
+Now you need to examine %%PAM_DIR%%/%%PAM_TARGET%%
+and add the relevant PAM configuration lines to your
+/etc/pam.conf file.
 
 If you defined call upload script in pure-ftpd config
 define corresponding vars in rc.conf

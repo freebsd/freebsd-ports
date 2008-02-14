@@ -7,7 +7,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -24,31 +24,33 @@ MASTER_SITE_SUBDIR=	pureftpd
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A small, easy to set up, fast and very secure FTP server
 
+SUB_FILES=	pkg-message
+SUB_LIST=	PAM_DIR=${PAM_DIR} PAM_TARGET=${PAM_TARGET}
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	pure-ftpd.sh
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=		--with-everything \
-			--with-paranoidmsg \
-			--with-virtualchroot \
-			--with-tls \
-			--with-largefile \
-			--sysconfdir=${PREFIX}/etc
+CONFIGURE_ARGS=	--with-everything \
+		--with-paranoidmsg \
+		--with-virtualchroot \
+		--with-tls \
+		--with-largefile \
+		--sysconfdir=${PREFIX}/etc
 
 MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-statsdecode.8 \
 		pure-uploadscript.8 pure-pw.8 pure-pwconvert.8 pure-quotacheck.8 \
 		pure-authd.8
 
-OPTIONS=	LDAP	"Support for users in LDAP directories" off \
-		MYSQL	"Support for users in MySQL database" off \
-		PAM	"Support for PAM authentication" on \
-		PGSQL	"Support for users in PostgreSQL database" off \
-		PRIVSEP	"Enable privilege separation" off \
+OPTIONS=	LDAP		"Support for users in LDAP directories" off \
+		MYSQL		"Support for users in MySQL database" off \
+		PAM		"Support for PAM authentication" on \
+		PGSQL		"Support for users in PostgreSQL database" off \
+		PRIVSEP		"Enable privilege separation" off \
 		PERUSERLIMITS	"Per-user concurrency limits" off \
 		THROTTLING	"Bandwidth throttling" off \
-		BANNER	"Show ${PORTNAME} welcome upon session start" on \
-		UPLOADSCRIPT "Support uploadscript daemon" off \
-		UTF8	"Support for charset conversion (expreimental)" off \
+		BANNER		"Show ${PORTNAME} welcome upon session start" on \
+		UPLOADSCRIPT	"Support uploadscript daemon" off \
+		UTF8		"Support for charset conversion (expreimental)" off \
 		SENDFILE	"Support for the sendfile syscall" on
 
 .include <bsd.port.pre.mk>
@@ -72,7 +74,7 @@ CONFIGURE_ARGS+=	--with-mysql
 
 # postgresql support requested?
 .if defined(WITH_PGSQL)
-USE_PGSQL=	yes
+USE_PGSQL=		YES
 CONFIGURE_ARGS+=	--with-pgsql
 .endif
 
@@ -132,6 +134,7 @@ PORTDOCS=	AUTHORS CONTACT COPYING HISTORY NEWS \
 		README.Netfilter README.MySQL README.PGSQL README.Virtual-Users \
 		README.Authentication-Modules THANKS pure-ftpd.png \
 		pureftpd.schema README.TLS
+PORTEXAMPLES=	*
 
 CONTRIB=	xml_python_processors.txt pure-stat.pl pure-vpopauth.pl
 
@@ -146,28 +149,29 @@ pre-fetch:
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${exec_prefix}|${PREFIX}|g' ${WRKSRC}/configuration-file/pure-config.pl.in
-	@${REINPLACE_CMD} -e 's,SYNTAX SYNTAX,SYNTAX,' ${WRKSRC}/pureftpd.schema
+	@${REINPLACE_CMD} -e 's|$${exec_prefix}|${PREFIX}|g' \
+		${WRKSRC}/configuration-file/pure-config.pl.in
+	@${REINPLACE_CMD} -e 's,SYNTAX SYNTAX,SYNTAX,' \
+		${WRKSRC}/pureftpd.schema
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-ldap.conf ${PREFIX}/etc/pureftpd-ldap.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-mysql.conf ${PREFIX}/etc/pureftpd-mysql.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-pgsql.conf ${PREFIX}/etc/pureftpd-pgsql.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-ftpd.conf ${PREFIX}/etc/pure-ftpd.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-config.pl ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/configuration-file/pure-config.pl ${PREFIX}/sbin/
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/contrib && ${INSTALL_SCRIPT} ${CONTRIB} ${EXAMPLESDIR}
-	${CHMOD} 755 ${PREFIX}/sbin/pure-config.pl
+	${MKDIR} ${PAM_DIR}
+	${INSTALL_DATA} ${PAM_TEMPL} ${PAM_DIR}/${PAM_TARGET}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 . for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 . endfor
 .endif
-	${MKDIR} ${PAM_DIR}
-	${INSTALL_DATA} ${PAM_TEMPL} ${PAM_DIR}/${PAM_TARGET}
-	@${ECHO_MSG} "Now you need to examine ${PAM_DIR}/${PAM_TARGET}"
-	@${ECHO_MSG} "and add the relevant PAM configuration lines to your /etc/pam.conf file."
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
