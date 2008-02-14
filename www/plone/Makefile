@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	plone
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.5
 CATEGORIES=	www zope
-MASTER_SITES=	http://plone.googlecode.com/files/:src
-DISTFILES=	Plone-${PORTVERSION}-final.tar.gz:src
+MASTER_SITES=	https://launchpad.net/plone/${PORTVERSION:R}/${PORTVERSION}/+download/
+DISTFILES=	Plone-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	zope
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
-FORBIDDEN=	http://VuXML.FreeBSD.org/ffba6ab0-90b5-11dc-9835-003048705d5a.html
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
-WRKSRC=	${WRKDIR}/Plone-${PORTVERSION}-final
+WRKSRC=	${WRKDIR}/Plone-${PORTVERSION}
 USE_ZOPE=	yes
 ZOPE_VERSION=	2.9
 USE_PYTHON=	2.4
@@ -82,7 +80,8 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_VERSION} != ${PYTHON_DEFAULT_VERSION} && defined(PACKAGE_BUILDING)
-IGNORE=	can't be built: the default Python version should be ${PYTHON_VERSION} in order to build a package in the build cluster
+IGNORE=	can't be built: the default Python version should be ${PYTHON_VERSION} \
+in order to build a package in the build cluster
 .endif
 
 .include <bsd.port.post.mk>
