@@ -1,0 +1,7 @@
+This Perl module keeps a directory in sync with a portion of a
+Subversion repository.  This is typically used to keep a development
+web server in sync with the changes made to the repository. This
+directory can either be on the same box as the repository itself,
+or it can be remote.
+
+WWW:    http://search.cpan.org/dist/SVN-Notify-Mirror/
