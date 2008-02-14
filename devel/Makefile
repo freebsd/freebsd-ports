@@ -1517,6 +1517,7 @@
     SUBDIR += p5-SVN-Mirror
     SUBDIR += p5-SVN-Notify
     SUBDIR += p5-SVN-Notify-Mirror
+    SUBDIR += p5-SVN-Notify-Snapshot
     SUBDIR += p5-SVN-S4
     SUBDIR += p5-SVN-Simple
     SUBDIR += p5-SVN-Statistics
