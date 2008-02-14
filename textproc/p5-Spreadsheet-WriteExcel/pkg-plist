@@ -34,6 +34,7 @@ bin/chartex
 %%PORTDOCS%%%%DOCSDIR%%/tpj0503-0004-05.gif
 %%PORTDOCS%%%%DOCSDIR%%/win32ole.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/autofilter.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/autofit.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/bigfile.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug_report.pl
@@ -41,6 +42,8 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/charts/Chart1.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/charts/Chart2.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/charts/Chart3.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/Chart4.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/Chart5.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/charts/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/charts/chartex.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/charts/charts.pod
@@ -48,6 +51,8 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/charts/demo1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/charts/demo2.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/charts/demo3.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/demo4.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/charts/demo5.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/chess.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/colors.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/comments1.pl
@@ -85,7 +90,7 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/protection.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/regions.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/repeat.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/republic.bmp
+%%PORTDOCS%%%%EXAMPLESDIR%%/republic.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/right_to_left.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/row_wrap.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/sales.pl
@@ -97,7 +102,6 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/tab_colors.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/tab2xls.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/textwrap.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/unicode.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_2022_jp.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_2022_jp.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_8859_11.pl
@@ -111,7 +115,6 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_cp1256.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_cp1256.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_cyrillic.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_japan.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_koi8r.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_koi8r.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_list.pl
@@ -119,6 +122,8 @@ bin/chartex
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_polish_utf8.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_shift_jis.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/unicode_shift_jis.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_utf16.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/unicode_utf16_japan.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/win32ole.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/writeA1.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/write_arrays.pl
