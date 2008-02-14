@@ -8,3 +8,4 @@ Using Config::Model, a typical configuration validation tool will be made of
 Config::Model provides a validation engine according to a set of rules.
 
 WWW: http://config-model.sourceforge.net/
+WWW: http://search.cpan.org/dist/Config-Model/

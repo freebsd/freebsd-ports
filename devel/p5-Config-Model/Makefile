@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-DISTVERSION=	0.616
+DISTVERSION=	0.618
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN SF
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,13 @@ COMMENT=	Model to create configuration validation tool
 RUN_DEPENDS=	p5-Error>0:${PORTSDIR}/lang/p5-Error \
 		p5-Exception-Class>0:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Log-Log4perl>0:${PORTSDIR}/devel/p5-Log-Log4perl \
-		p5-Parse-RecDescent>=1.90:${PORTSDIR}/devel/p5-Parse-RecDescent
+		p5-Parse-RecDescent>=1.90:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-Carp-Assert-More>=1.12:${PORTSDIR}/devel/p5-Carp-Assert-More \
+		p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny \
+		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-ReadLine-Gnu>=1.16:${PORTSDIR}/devel/p5-ReadLine-Gnu \
+		p5-ReadLine-Perl>=1.0302:${PORTSDIR}/devel/p5-ReadLine-Perl \
+		p5-Test-Simple>=0.74:${PORTSDIR}/devel/p5-Test-Simple
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
