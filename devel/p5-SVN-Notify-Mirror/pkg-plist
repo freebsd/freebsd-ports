@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/SVN/Notify/Mirror.pm
+%%SITE_PERL%%/SVN/Notify/Mirror/ConfigData.pm
+%%SITE_PERL%%/SVN/Notify/Mirror/Rsync.pm
+%%SITE_PERL%%/SVN/Notify/Mirror/SSH.pm
+@dirrm %%SITE_PERL%%/SVN/Notify/Mirror
+@dirrmtry %%SITE_PERL%%/SVN/Notify
+@dirrmtry %%SITE_PERL%%/SVN
