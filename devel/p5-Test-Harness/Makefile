@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Harness
-PORTVERSION=	3.07
+PORTVERSION=	3.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,11 +15,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run perl standard test scripts with statistics
 
 PERL_CONFIGURE=	yes
-INSTALL_TARGET=	pure_install
 
 MAN1=		prove.1
-MAN3=		\
-		App::Prove.3 \
+MAN3=		App::Prove.3 \
 		App::Prove::State.3 \
 		TAP::Base.3 \
 		TAP::Formatter::Color.3 \
@@ -45,6 +43,7 @@ MAN3=		\
 		TAP::Parser::Result::YAML.3 \
 		TAP::Parser::Source.3 \
 		TAP::Parser::Source::Perl.3 \
+		TAP::Parser::Utils.3 \
 		TAP::Parser::YAMLish::Reader.3 \
 		TAP::Parser::YAMLish::Writer.3 \
 		Test::HACKING.3 \

@@ -26,6 +26,7 @@
 %%SITE_PERL%%/TAP/Parser/Result/YAML.pm
 %%SITE_PERL%%/TAP/Parser/Source.pm
 %%SITE_PERL%%/TAP/Parser/Source/Perl.pm
+%%SITE_PERL%%/TAP/Parser/Utils.pm
 %%SITE_PERL%%/TAP/Parser/YAMLish/Reader.pm
 %%SITE_PERL%%/TAP/Parser/YAMLish/Writer.pm
 %%SITE_PERL%%/Test/HACKING.pod
