@@ -12,7 +12,7 @@
  glibtop_get_shm_limits_s (glibtop *server, glibtop_shm_limits *buf)
  {
  	size_t len;
-+#if __FreeBSD_version < 800020
++#if __FreeBSD_version < 700002
  	int shmmax, shmmin, shmmni, shmseg, shmall;
 +#else
 +	unsigned long shmmax, shmmin, shmmni, shmseg, shmall;
