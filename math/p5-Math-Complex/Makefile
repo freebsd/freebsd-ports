@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Complex
-PORTVERSION=	1.49
+PORTVERSION=	1.52
 CATEGORIES=	math
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Complex numbers and associated mathematical functions
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		Math::Complex.3 \
 		Math::Trig.3
