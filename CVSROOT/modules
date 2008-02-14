@@ -11056,6 +11056,7 @@ p5-SVN-Log	ports/devel/p5-SVN-Log
 p5-SVN-Mirror	ports/devel/p5-SVN-Mirror
 p5-SVN-Notif	ports/devel/p5-SVN-Notify
 p5-SVN-Notify-Mirror	ports/devel/p5-SVN-Notify-Mirror
+p5-SVN-Notify-Snapshot	ports/devel/p5-SVN-Notify-Snapshot
 p5-SVN-S4	ports/devel/p5-SVN-S4
 p5-SVN-Simple	ports/devel/p5-SVN-Simple
 p5-SVN-Statistics	ports/devel/p5-SVN-Statistics
