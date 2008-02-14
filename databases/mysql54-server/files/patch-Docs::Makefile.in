@@ -1,15 +1,15 @@
---- Docs/Makefile.in.orig	Fri Jun  2 20:02:56 2006
-+++ Docs/Makefile.in	Thu Jun 15 07:18:41 2006
-@@ -370,7 +370,7 @@
- # generated files explicitly in DISTCLEANFILES.
- DISTCLEANFILES = $(TXT_FILES)
- GT = $(srcdir)/generate-text-files.pl
+--- Docs/Makefile.in.orig	2008-01-29 22:43:40.000000000 +0100
++++ Docs/Makefile.in	2008-02-14 08:21:57.000000000 +0100
+@@ -368,7 +368,7 @@
+ yassl_taocrypt_extra_cxxflags = @yassl_taocrypt_extra_cxxflags@
+ zlib_dir = @zlib_dir@
+ EXTRA_DIST = mysql.info INSTALL-BINARY @extra_docs@
 -all: all-am
 +all:
  
  .SUFFIXES:
  $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
-@@ -458,7 +458,7 @@
+@@ -453,7 +453,7 @@
  install-data: install-data-am
  uninstall: uninstall-am
  
