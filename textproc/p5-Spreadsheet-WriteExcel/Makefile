@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet-WriteExcel
-PORTVERSION=	2.18
+PORTVERSION=	2.20
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Spreadsheet
@@ -49,7 +49,7 @@ post-install:
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/README \
-		${WRKSRC}/examples/republic.bmp ${EXAMPLESDIR}
+		${WRKSRC}/examples/republic.png ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.txt ${EXAMPLESDIR}
 	@${MKDIR} ${EXAMPLESDIR}/charts
