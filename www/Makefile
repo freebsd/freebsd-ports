@@ -272,6 +272,7 @@
     SUBDIR += libghttp
     SUBDIR += libgtkhtml
     SUBDIR += libhttpd-persistent
+    SUBDIR += libmicrohttpd
     SUBDIR += libwww
     SUBDIR += lifetype
     SUBDIR += lightsquid
