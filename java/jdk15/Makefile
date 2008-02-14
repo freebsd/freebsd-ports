@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://download.java.net/tiger/
@@ -25,13 +24,9 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 OPTIONS=	DEBUG	"Enable debugging support"	off \
-		IPV6	"Enable IPv6 support"		off
-.if ${MACHINE_ARCH} == "amd64"
-OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start"	off
-.else
-OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start"	on
-.endif
-OPTIONS+=	POLICY	"Install the Unlimited Strength Policy Files"	off \
+		IPV6	"Enable IPv6 support"		off \
+		WEB	"Enable the browser plugin and Java Web Start"	on \
+		POLICY	"Install the Unlimited Strength Policy Files"	off \
 		TZUPDATE	"Update the time zone data"		on \
 		JAIL	"Port is being built within a jail"		off
 
@@ -54,10 +49,10 @@ POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
 TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}.zip
 
 JDK_VERSION=	1.5.0
-JDK_UPDATE_VERSION=	13
-JDK_PATCHSET_VERSION=	7
-JDK_BUILD_NUMBER=	05
-JDK_BUILD_DATE=		25_sep_2007
+JDK_UPDATE_VERSION=	14
+JDK_PATCHSET_VERSION=	8
+JDK_BUILD_NUMBER=	03
+JDK_BUILD_DATE=		05_oct_2007
 LATEST_LINK=	jdk15
 
 TZUPDATE_VERSION=	1.3.3
@@ -66,10 +61,12 @@ TZUPDATE_TZVERSION=	2007k
 .if !defined(WITH_LINUX_BOOTSTRAP)
 NATIVE_BOOTSTRAP_JDKS+=	${LOCALBASE}/diablo-jdk1.5.0 \
 			${LOCALBASE}/jdk1.5.0 \
+			${LOCALBASE}/jdk1.6.0 \
 			${LOCALBASE}/jdk1.4.2
 .endif
 
 LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.5.0 \
+			${LOCALBASE}/linux-sun-jdk1.6.0 \
 			${LOCALBASE}/linux-sun-jdk1.4.2
 
 .include <bsd.port.pre.mk>
@@ -277,11 +274,6 @@ pre-patch:
 		${BZIP2_CMD} -dc ${DISTDIR}/${PATCHSETFILE} | ${TAR} -xf - && \
 		${CHMOD} -R u+w * && \
 		${PATCH} -p0 < ${WRKDIR}/jdk15.patches
-.if (${ARCH} == amd64) && !defined(WITHOUT_WEB)
-	@cd ${WRKDIR} && \
-		uudecode -o /dev/stdout < ${FILESDIR}/plugin_amd64.bz2.uu | \
-		${BZIP2_CMD} -dc | ${PATCH} -p0
-.endif
 
 post-patch:
 	@for file in ${PTHREAD_FILES}; do \
