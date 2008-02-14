@@ -7,6 +7,7 @@
 
 PORTNAME=	win4bsd
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.win4bsd.com/pub/releases/${PORTVERSION}/
 DISTNAME=	Win4BSD-1.1_63918_i386-freebsd
@@ -21,6 +22,7 @@ ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	installs an i386 binary which requires dependecies
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
+USE_LDCONFIG=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 RESTRICTED=	Redistribution is not allowed
@@ -30,6 +32,10 @@ PKGDEINSTALL=	${WRKSRC}/+POST-DEINSTALL
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 600000
+LIB_DEPENDS+=  c.5:${PORTSDIR}/misc/compat5x
+.endif
 
 .if !exists(/usr/src/sys/kern)
 IGNORE=		requires system source for installing kqemu, the accelerator that provides native CPU speed in Win4BSD.  Please install the system sources in /usr/src (e.g. using sysinstall), and run make again
