@@ -6712,6 +6712,7 @@ libmcve		ports/devel/libmcve
 libmemcache	ports/databases/libmemcache
 libmemcached	ports/databases/libmemcached
 libmicro	ports/benchmarks/libmicro
+libmicrohttpd	ports/www/libmicrohttpd
 libmikmod	ports/audio/libmikmod
 libmimedir	ports/devel/libmimedir
 libmms		ports/net/libmms
