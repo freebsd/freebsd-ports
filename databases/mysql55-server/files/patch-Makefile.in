@@ -1,12 +1,12 @@
---- Makefile.in.orig	Tue May  8 11:43:16 2007
-+++ Makefile.in	Thu May 17 09:28:15 2007
-@@ -396,14 +396,7 @@
+--- Makefile.in.orig	2008-01-29 22:44:32.000000000 +0100
++++ Makefile.in	2008-02-14 08:23:39.000000000 +0100
+@@ -398,14 +398,7 @@
  EXTRA_DIST = INSTALL-SOURCE INSTALL-WIN-SOURCE \
  			README COPYING EXCEPTIONS-CLIENT CMakeLists.txt
  
 -SUBDIRS = . include @docs_dirs@ @zlib_dir@ \
 -			@readline_topdir@ sql-common scripts \
--			@thread_dirs@ pstack \
+-			@pstack_dir@ \
 -			@sql_union_dirs@ unittest storage plugin \
 -			@sql_server@ @man_dirs@ tests \
 -			netware @libmysqld_dirs@ \
@@ -14,5 +14,5 @@
 -			win
 +SUBDIRS =
  
- DIST_SUBDIRS = $(SUBDIRS) BUILD debian
- DISTCLEANFILES = ac_available_languages_fragment
+ DIST_SUBDIRS = . include Docs zlib \
+ 			cmd-line-utils sql-common scripts \
