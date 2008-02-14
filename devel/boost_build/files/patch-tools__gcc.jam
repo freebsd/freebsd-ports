@@ -1,0 +1,11 @@
+--- tools/gcc.jam.orig	2008-02-14 22:50:19.000000000 +0000
++++ tools/gcc.jam	2008-02-14 22:50:44.000000000 +0000
+@@ -155,7 +155,7 @@
+         # will pick the right onces.
+         # Note that we don't provide a clean way to build 32-bit binary
+         # with 64-bit compiler, but user can always pass -m32 manually.
+-        local lib_path = $(root)/bin $(root)/lib $(root)/lib32 $(root)/lib64 ;
++        local lib_path = /lib $(root)/bin $(root)/lib $(root)/lib32 $(root)/lib64 ;
+         if $(.debug-configuration)
+         {
+             ECHO notice: using gcc libraries :: $(condition) :: $(lib_path) ;
