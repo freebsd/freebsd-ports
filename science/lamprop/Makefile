@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lamprop
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	science
 MASTER_SITES=	http://www.xs4all.nl/~rsmith/software/
 
@@ -25,9 +25,9 @@ MAKE_ENV=	NOPORTDOCS=yes
 PORTDOCS=	LICENSE README NEWS
 .endif
 
-REP=	's|-pipe||; s|-fmerge-constants||; s|--fast-math||'
-
 post-patch:
-	@${REINPLACE_CMD} -e ${REP} ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|-pipe||; s|-fmerge-constants||; s|-fno-unit-at-a-time||; s|--fast-math||' \
+		 ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
