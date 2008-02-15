@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aptana
-PORTVERSION=	1.1.0.007007
+PORTVERSION=	1.1.2.007725
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://update.aptana.com/install/${ECLIPSE_VER}/
