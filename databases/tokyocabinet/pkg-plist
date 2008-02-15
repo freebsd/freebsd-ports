@@ -16,7 +16,7 @@ include/tcutil.h
 lib/libtokyocabinet.a
 lib/libtokyocabinet.so
 lib/libtokyocabinet.so.1
-lib/libtokyocabinet.so.1.29.0
+lib/libtokyocabinet.so.1.33.0
 libdata/pkgconfig/tokyocabinet.pc
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
