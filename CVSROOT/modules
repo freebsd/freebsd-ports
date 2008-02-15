@@ -1195,6 +1195,7 @@ cascade		ports/cad/cascade
 castget		ports/www/castget
 castor		ports/java/castor
 castpodder	ports/multimedia/castpodder
+catapult	ports/emulators/catapult
 catdoc		ports/textproc/catdoc
 catdvi		ports/print/catdvi
 caudium12	ports/www/caudium12
