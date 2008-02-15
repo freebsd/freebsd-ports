@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	irrd
-PORTVERSION=	2.1.5
+PORTVERSION=	2.3.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.irrd.net/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	takano@net-chef.net
+MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Internet Routing Registry database server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/src
@@ -24,10 +24,10 @@ MAN8=		irrd.8
 IRRD_CONFDIR=	${PREFIX}/etc
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	irrd.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC="${YACC}"
-CONFIGURE_ARGS+=	--disable-thread
+#CONFIGURE_ARGS+=	--disable-thread
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
@@ -36,32 +36,20 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/etc/irrd.conf|${IRRD_CONFDIR}/irrd.conf|g'	\
-		${WRKSRC}/programs/IRRd/irrd.8				\
-		${WRKSRC}/programs/IRRd/main.c				\
-		${WRKSRC}/programs/hdr_comm/read_conf.c			\
-		${WRKSRC}/programs/irr_notify/main.c			\
-		${WRKSRC}/programs/irr_rpsl_check/main.c		\
-		${WRKSRC}/programs/irr_submit/main.c			\
-		${WRKSRC}/programs/irrdcacher/irrdcacher		\
-		${WRKSRC}/programs/rps_dist/rpsdist.c
-
-post-build:
-	${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/irrd.sh > ${WRKDIR}/irrd.sh
+	${REINPLACE_CMD} -e 's|/etc/irrd.conf|${IRRD_CONFDIR}/irrd.conf|g' \
+		${WRKSRC}/programs/IRRd/irrd.8	\
+		${WRKSRC}/programs/IRRd/main.c	\
+		${WRKSRC}/programs/irr_rpsl_submit/main.c	\
+		${WRKSRC}/programs/irr_notify/main.c	\
+		${WRKSRC}/programs/irr_rpsl_check/main.c	\
+		${WRKSRC}/programs/rps_dist/rpsdist.c	\
+		${WRKSRC}/programs/irrdcacher/irrdcacher	\
+		${WRKSRC}/programs/hdr_comm/read_conf.c
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/programs/irrdcacher/irrdcacher    ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKSRC}/programs/irrdcacher/ripe2rpsl     ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/programs/irrdcacher/update_source ${PREFIX}/sbin
 	@${INSTALL_DATA}   ${WRKSRC}/../samples/irrd.conf.sample       ${IRRD_CONFDIR}
 	@${INSTALL_DATA}   ${WRKSRC}/programs/IRRd/irrd.8              ${PREFIX}/man/man8
-	@${INSTALL_SCRIPT} ${WRKDIR}/irrd.sh                           ${PREFIX}/etc/rc.d
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
