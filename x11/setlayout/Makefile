@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	setlayout
-DISTVERSION=	20071217
+DISTVERSION=	20080210
 CATEGORIES=	x11
 MASTER_SITES=	http://icculus.org/openbox/tools/
 DISTFILES=	${PORTNAME}.c
@@ -26,7 +26,7 @@ do-extract:
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} -I ${PREFIX}/include -L ${PREFIX}/lib -lX11 ${DISTFILES}
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} `pkg-config --cflags --libs x11` ${DISTFILES}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
