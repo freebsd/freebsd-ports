@@ -1,4 +1,93 @@
 bin/bnfc
+%%PORTDOCS%%%%DOCSDIR%%/BNF.jpg
+%%PORTDOCS%%%%DOCSDIR%%/BNFC_XML.html
+%%PORTDOCS%%%%DOCSDIR%%/BNFConv.bib
+%%PORTDOCS%%%%DOCSDIR%%/BNF_Converter_CPP_Mode.html
+%%PORTDOCS%%%%DOCSDIR%%/BNF_Converter_C_Mode.html
+%%PORTDOCS%%%%DOCSDIR%%/BNF_Converter_Haskell_Mode.html
+%%PORTDOCS%%%%DOCSDIR%%/BNF_Converter_Java1_5_Mode.html
+%%PORTDOCS%%%%DOCSDIR%%/BNF_Converter_Java_Mode.html
+%%PORTDOCS%%%%DOCSDIR%%/BNF_Converter_OCaml_Mode.html
+%%PORTDOCS%%%%DOCSDIR%%/BNF_Report.tex
+%%PORTDOCS%%%%DOCSDIR%%/CC-2004.bib
+%%PORTDOCS%%%%DOCSDIR%%/CC-2004.tex
+%%PORTDOCS%%%%DOCSDIR%%/HW-tooldemo.tex
+%%PORTDOCS%%%%DOCSDIR%%/HW2004.pdf
+%%PORTDOCS%%%%DOCSDIR%%/HW2004.sxi
+%%PORTDOCS%%%%DOCSDIR%%/HW2004_slides.tex
+%%PORTDOCS%%%%DOCSDIR%%/LBNF-report.pdf
+%%PORTDOCS%%%%DOCSDIR%%/LBNF-report.tex
+%%PORTDOCS%%%%DOCSDIR%%/LBNF.tex
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/bnf-converter.html
+%%PORTDOCS%%%%DOCSDIR%%/bnfc_1.1.html
+%%PORTDOCS%%%%DOCSDIR%%/c.tex
+%%PORTDOCS%%%%DOCSDIR%%/cc-2004/BNFConv.bib
+%%PORTDOCS%%%%DOCSDIR%%/cc-2004/CC-2004.bib
+%%PORTDOCS%%%%DOCSDIR%%/cc-2004/CC-2004.tex
+%%PORTDOCS%%%%DOCSDIR%%/cc-2004/LBNF.tex
+%%PORTDOCS%%%%DOCSDIR%%/cc-2004/c.tex
+%%PORTDOCS%%%%DOCSDIR%%/cc-2004/cpp.tex
+%%PORTDOCS%%%%DOCSDIR%%/cc-2004/haskell.tex
+%%PORTDOCS%%%%DOCSDIR%%/cc-2004/java.tex
+%%PORTDOCS%%%%DOCSDIR%%/cc-2004/lbnf_spec.tex
+%%PORTDOCS%%%%DOCSDIR%%/cc-2004/llncs.cls
+%%PORTDOCS%%%%DOCSDIR%%/cc-2004/prototyping.tex
+%%PORTDOCS%%%%DOCSDIR%%/cpp.tex
+%%PORTDOCS%%%%DOCSDIR%%/default.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/Alfa.cf
+%%PORTDOCS%%%%DOCSDIR%%/examples/C.cf
+%%PORTDOCS%%%%DOCSDIR%%/examples/DefinedRules.cf
+%%PORTDOCS%%%%DOCSDIR%%/examples/LBNF.cf
+%%PORTDOCS%%%%DOCSDIR%%/examples/Sorting.alfa
+%%PORTDOCS%%%%DOCSDIR%%/examples/runtime.c
+%%PORTDOCS%%%%DOCSDIR%%/glr-bnfc.html
+%%PORTDOCS%%%%DOCSDIR%%/gpce-04/GPCE-2004.bib
+%%PORTDOCS%%%%DOCSDIR%%/gpce-04/GPCE-2004.tex
+%%PORTDOCS%%%%DOCSDIR%%/gpce-04/LBNF.tex
+%%PORTDOCS%%%%DOCSDIR%%/gpce-04/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/gpce-04/c.tex
+%%PORTDOCS%%%%DOCSDIR%%/gpce-04/cpp.tex
+%%PORTDOCS%%%%DOCSDIR%%/gpce-04/haskell.tex
+%%PORTDOCS%%%%DOCSDIR%%/gpce-04/java.tex
+%%PORTDOCS%%%%DOCSDIR%%/gpce-04/lbnf_spec.tex
+%%PORTDOCS%%%%DOCSDIR%%/gpce-04/llncs.cls
+%%PORTDOCS%%%%DOCSDIR%%/gpce-04/prototyping.tex
+%%PORTDOCS%%%%DOCSDIR%%/haskell.tex
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/java.tex
+%%PORTDOCS%%%%DOCSDIR%%/lbnf_spec.tex
+%%PORTDOCS%%%%DOCSDIR%%/llncs.cls
+%%PORTDOCS%%%%DOCSDIR%%/pragmas.html
+%%PORTDOCS%%%%DOCSDIR%%/prototyping.tex
+%%PORTDOCS%%%%DOCSDIR%%/quick.html
+%%PORTDOCS%%%%DOCSDIR%%/retrospect2006.txt
+%%PORTDOCS%%%%DOCSDIR%%/sig-alt.cls
+%%PORTDOCS%%%%DOCSDIR%%/tech-2004/BNFC_tech_2004.bib
+%%PORTDOCS%%%%DOCSDIR%%/tech-2004/BNFC_tech_2004.tex
+%%PORTDOCS%%%%DOCSDIR%%/tech-2004/ChalmGUmarke.eps
+%%PORTDOCS%%%%DOCSDIR%%/tech-2004/ChalmGUtextsvEng.eps
+%%PORTDOCS%%%%DOCSDIR%%/tech-2004/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/tech-2004/tech2004.tex
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/bnfc-tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/bnfc-tutorial.txt
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/calc/Calc.cf
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/calc/c/Interpret.c
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/calc/c/Interpreter.c
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/calc/c/Interpreter.h
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/calc/ex1.calc
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/calc/haskell/Compile.hs
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/calc/haskell/Compiler.hs
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/calc/haskell/Interpret.hs
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/calc/haskell/Interpreter.hs
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/calc/java/Calc/Interpret.java
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/calc/java/Calc/Interpreter.java
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/cmm/CMM.cf
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/cmm/fibonacci.cmm
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/tuttree.dot
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/tuttree.png
+%%PORTDOCS%%%%DOCSDIR%%/user.html
 %%EXAMPLESDIR%%/C4.cf
 %%EXAMPLESDIR%%/JavaletteLight.cf
 %%EXAMPLESDIR%%/OCL.cf
@@ -23,5 +112,15 @@ bin/bnfc
 @dirrm %%EXAMPLESDIR%%/multi
 @dirrm %%EXAMPLESDIR%%/haskell-core
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/LBNF-report.tex
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/cmm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/calc/java/Calc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/calc/java
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/calc/haskell
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/calc/c
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial/calc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tech-2004
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/gpce-04
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cc-2004
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
