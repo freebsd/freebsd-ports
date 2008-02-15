@@ -13,6 +13,7 @@
     SUBDIR += bfe
     SUBDIR += bochs
     SUBDIR += bsvc
+    SUBDIR += catapult
     SUBDIR += cinc
     SUBDIR += cingb
     SUBDIR += cpmemu
