@@ -13513,6 +13513,7 @@ py-psyco	ports/devel/py-psyco
 py-psycopg	ports/databases/py-psycopg
 py-psycopg2	ports/databases/py-psycopg2
 py-pullparser	ports/www/py-pullparser
+py-punjab	ports/net-im/py-punjab
 py-px		ports/devel/py-px
 py-py2play	ports/net-p2p/py-py2play
 py-pyPgSQL	ports/databases/py-pyPgSQL
