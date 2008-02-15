@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	desktop-file-utils
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 
