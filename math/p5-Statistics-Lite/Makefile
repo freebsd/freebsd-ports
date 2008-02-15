@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	Statistics-Lite
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	math perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Statistics
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	The lightweight and functional object-oriented statistics
 
 PERL_CONFIGURE=	yes
+USE_DOS2UNIX=	yes
 
 MAN3=		Statistics::Lite.3
 
