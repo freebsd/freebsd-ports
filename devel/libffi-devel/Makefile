@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libffi
-DISTVERSION=	2.0-20071128
+DISTVERSION=	2.0-20080208
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.alpha-tierchen.de/pub/FreeBSD/ports/distfiles/
 PKGNAMESUFFIX=	-devel
