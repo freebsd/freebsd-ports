@@ -8,7 +8,8 @@
 PORTNAME=	tijmp
 PORTVERSION=	0.4
 CATEGORIES=	devel java
-MASTER_SITES=	http://www.khelekore.org/jmp/tijmp/
+MASTER_SITES=	http://www.khelekore.org/jmp/tijmp/ \
+		http://www.klop.ws/~ronald/software-mirrors/
 
 MAINTAINER=	ronald@echteman.nl
 COMMENT=	Tools Interface Java Memory Profiler
