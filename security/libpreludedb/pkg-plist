@@ -35,6 +35,7 @@ share/aclocal/libpreludedb.m4
 %%DATADIR%%/classic/mysql-update-14-4.sql
 %%DATADIR%%/classic/mysql-update-14-5.sql
 %%DATADIR%%/classic/mysql-update-14-6.sql
+%%DATADIR%%/classic/mysql-update-14-7.sql
 %%DATADIR%%/classic/mysql.sql
 %%DATADIR%%/classic/mysql2pgsql.sh
 %%DATADIR%%/classic/mysql2sqlite.sh
@@ -44,10 +45,12 @@ share/aclocal/libpreludedb.m4
 %%DATADIR%%/classic/pgsql-update-14-4.sql
 %%DATADIR%%/classic/pgsql-update-14-5.sql
 %%DATADIR%%/classic/pgsql-update-14-6.sql
+%%DATADIR%%/classic/pgsql-update-14-7.sql
 %%DATADIR%%/classic/pgsql.sql
 %%DATADIR%%/classic/sqlite-update-14-4.sql
 %%DATADIR%%/classic/sqlite-update-14-5.sql
 %%DATADIR%%/classic/sqlite-update-14-6.sql
+%%DATADIR%%/classic/sqlite-update-14-7.sql
 %%DATADIR%%/classic/sqlite.sql
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
