@@ -34,6 +34,57 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="be4b0529-dbaf-11dc-9791-000ea6702141">
+    <topic>clamav -- ClamAV libclamav PE File Integer Overflow Vulnerability</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><ge>0.92</ge><lt>0.92.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>iDefense Security Advisory 02.12.08:</p>
+	<blockquote cite="http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=658">
+	  <p>Remote exploitation of an integer overflow vulnerability
+	    in Clam AntiVirus' ClamAV, as included in various vendors'
+	    operating system distributions, allows attackers to execute
+	    arbitrary code with the privileges of the affected process.</p>
+	  <p>The vulnerability exists within the code responsible
+	    for parsing and scanning PE files. While iterating through
+	    all sections contained in the PE file, several attacker
+	    controlled values are extracted from the file. On each iteration,
+	    arithmetic operations are performed without taking into
+	    consideration 32-bit integer wrap.</p>
+	  <p>Since insufficient integer overflow checks are present,
+	    an attacker can cause a heap overflow by causing a specially
+	    crafted Petite packed PE binary to be scanned. This results
+	    in an exploitable memory corruption condition.</p>
+	  <p>Exploitation of this vulnerability results in the
+	    execution of arbitrary code with the privileges of the process
+	    using libclamav. In the case of the clamd program, this will
+	    result in code execution with the privileges of the clamav user.
+	    Unsuccessful exploitation results in the clamd process crashing.</p>
+	</blockquote>
+	<h1>Workaround</h1>
+	<p>Disabling the scanning of PE files will prevent exploitation.</p>
+	<p>If using clamscan, this can be done by running clamscan with the
+	  '--no-pe' option.</p>
+	<p>If using clamdscan, set the 'ScanPE' option in the clamd.conf
+	  file to 'no'.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-0318</cvename>
+      <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=658</url>
+      <url>http://svn.clamav.net/svn/clamav-devel/trunk/ChangeLog</url>
+    </references>
+    <dates>
+      <discovery>2008-01-07</discovery>
+      <entry>2008-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dea7df85-d96c-11dc-9bfc-000e0c092e7a">
     <topic>cacti -- Multiple security vulnerabilities have been discovered</topic>
     <affects>
