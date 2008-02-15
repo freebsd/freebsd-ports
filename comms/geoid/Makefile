@@ -7,6 +7,7 @@
 
 PORTNAME=	geoid
 PORTVERSION=	1.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/LinuxApps/ \
@@ -24,7 +25,7 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile
 
 MAKE_ENV+=	CXX="${CXX}"
-PLIST_FILES=	bin/geoid ${DATADIR_REL}/country.pos
+PLIST_FILES=	bin/geoid ${DATADIR_REL}/country.pos share/pixmaps/geoid.png
 PLIST_DIRS=	${DATADIR_REL}
 
 post-patch:
@@ -33,6 +34,7 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/geoid ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/geoid.png ${PREFIX}/share/pixmaps
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA}	${WRKSRC}/country.pos ${DATADIR}
 
