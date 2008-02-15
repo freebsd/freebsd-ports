@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	metromap
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.1.2
 CATEGORIES=	misc
 MASTER_SITES=	http://metromap.antex.ru/ \
 		http://www.amdmi3.ru/distfiles/
@@ -18,10 +17,12 @@ COMMENT=	A simple application for finding paths in different subways maps
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 USE_BZIP2=	yes
-NO_BUILD=	yes
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,make,${GMAKE},' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/bin/python,${SETENV} python,' ${WRKSRC}/metromap.py
 
 .include <bsd.port.mk>
