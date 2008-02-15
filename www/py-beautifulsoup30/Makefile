@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	beautifulsoup
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	www python
 MASTER_SITES=	http://www.crummy.com/software/BeautifulSoup/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
