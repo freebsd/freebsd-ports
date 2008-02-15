@@ -9,6 +9,7 @@ etc/prelude-lml/prelude-lml.conf-dist
 etc/prelude-lml/ruleset/apc-emu.rules
 etc/prelude-lml/ruleset/arbor.rules
 etc/prelude-lml/ruleset/arpwatch.rules
+etc/prelude-lml/ruleset/asterisk.rules
 etc/prelude-lml/ruleset/bonding.rules
 etc/prelude-lml/ruleset/cacti-thold.rules
 etc/prelude-lml/ruleset/checkpoint.rules
@@ -24,10 +25,12 @@ etc/prelude-lml/ruleset/exim.rules
 etc/prelude-lml/ruleset/f5-bigip.rules
 etc/prelude-lml/ruleset/grsecurity.rules
 etc/prelude-lml/ruleset/honeyd.rules
+etc/prelude-lml/ruleset/honeytrap.rules
 etc/prelude-lml/ruleset/httpd.rules
 etc/prelude-lml/ruleset/ipchains.rules
 etc/prelude-lml/ruleset/ipfw.rules
 etc/prelude-lml/ruleset/ipso.rules
+etc/prelude-lml/ruleset/kojoney.rules
 etc/prelude-lml/ruleset/linksys-wap11.rules
 etc/prelude-lml/ruleset/modsecurity.rules
 etc/prelude-lml/ruleset/ms-cluster.rules
@@ -46,6 +49,7 @@ etc/prelude-lml/ruleset/portsentry.rules
 etc/prelude-lml/ruleset/postfix.rules
 etc/prelude-lml/ruleset/proftpd.rules
 etc/prelude-lml/ruleset/qpopper.rules
+etc/prelude-lml/ruleset/rishi.rules
 etc/prelude-lml/ruleset/selinux.rules
 etc/prelude-lml/ruleset/sendmail.rules
 etc/prelude-lml/ruleset/shadow-utils.rules
