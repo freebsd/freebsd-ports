@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	science hamradio
 MASTER_SITES=	http://www.qsl.net/ik5nax/
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Smith chart program for impedance matching
 
 USE_X_PREFIX=	yes
