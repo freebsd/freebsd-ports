@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amfext
-PORTVERSION=	0.8.7
+PORTVERSION=	0.9
 CATEGORIES=	www
 MASTER_SITES=	http://www.teslacore.it/projects/amfext/ \
 		${MASTER_SITE_LOCAL}
