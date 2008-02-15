@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2.43
+PORTVERSION=	2.44
 CATEGORIES=	lang lisp
 MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION} \
 		ftp://sunsite.unc.edu/pub/Linux/devel/lang/lisp/
@@ -14,10 +14,10 @@ MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION} \
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A Common Lisp implementation
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv \
+		${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall
 LIB_DEPENDS=	readline.5:${PORTSDIR}/devel/readline
 
-USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GHOSTSCRIPT_BUILD=	yes
@@ -55,11 +55,13 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-# Semgentation fault in amd64 when using 'mmap(2)'. Also in Linux/ia64.
+# Semgentation fault in amd64 when using 'mmap(2)', errno = EINVAL.
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=--disable-mmap
-.elif ${OSVERSION} >= 800000
-BROKEN=	dumps core during build
+.endif
+
+.if ${ARCH} == "i386" && ${OSVERSION} >= 700000
+USE_GCC=	3.4
 .endif
 
 MODULES=	BDB CLX_MIT CLX_NEW FASTCGI GDBM GTK2 ORACLE PARI PCRE PGSQL \

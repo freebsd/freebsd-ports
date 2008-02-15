@@ -1,8 +1,6 @@
 bin/clisp
 lib/clisp/base/calls.o
 lib/clisp/base/gettext.o
-lib/clisp/base/libavcall.a
-lib/clisp/base/libcallback.a
 lib/clisp/base/libnoreadline.a
 lib/clisp/base/lisp.a
 lib/clisp/base/lisp.run
@@ -59,8 +57,6 @@ lib/clisp/full/gettext.o
 %%CLX_MIT%%lib/clisp/full/input.lisp
 %%CLX_MIT%%lib/clisp/full/keysyms.fas
 %%CLX_MIT%%lib/clisp/full/keysyms.lisp
-lib/clisp/full/libavcall.a
-lib/clisp/full/libcallback.a
 lib/clisp/full/libnoreadline.a
 lib/clisp/full/lisp.a
 lib/clisp/full/lisp.run
@@ -105,7 +101,6 @@ lib/clisp/full/width.o
 lib/clisp/linkkit/clisp.h
 lib/clisp/linkkit/modprep.lisp
 lib/clisp/linkkit/modules.c
-lib/clisp/linkkit/modules.d
 %%DOCSDIR%%/ANNOUNCE
 %%DOCSDIR%%/COPYRIGHT
 %%DOCSDIR%%/GNU-GPL

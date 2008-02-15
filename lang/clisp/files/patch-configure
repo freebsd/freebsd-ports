@@ -1,0 +1,25 @@
+--- ./configure.orig	Wed Dec 12 20:56:58 2007
++++ ./configure	Mon Feb  4 14:53:22 2008
+@@ -380,22 +380,18 @@
+         passnextm=yes ;;
+ 
+       --elispdir=* | --elispdi=* | --elispd=* | --elisp=* | --elis=* | --eli=* | --el=*)
+-        subdir_configure_args="$subdir_configure_args $arg"
+         makemake_args="$makemake_args --elispdir="`getarg "$arg"` ;;
+ 
+       --elispdir | --elispdi | --elispd | --elisp | --elis | --eli | --el)
+-        subdir_configure_args="$subdir_configure_args $arg"
+         makemake_args="$makemake_args --elispdir="
+         prev=elispdir
+         passnext=yes
+         passnextm=yes ;;
+ 
+       --vimdir=* | --vimdi=* | --vimd=* | --vim=* | --vi=*)
+-        subdir_configure_args="$subdir_configure_args $arg"
+         makemake_args="$makemake_args --vimdir="`getarg "$arg"` ;;
+ 
+       --vimdir | --vimdi | --vimd | --vim | --vi)
+-        subdir_configure_args="$subdir_configure_args $arg"
+         makemake_args="$makemake_args --vimdir="
+         prev=vimdir
+         passnext=yes
