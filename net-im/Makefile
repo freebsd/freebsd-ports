@@ -110,6 +110,7 @@
     SUBDIR += psi-gentoo
     SUBDIR += py-jabber
     SUBDIR += py-msnp
+    SUBDIR += py-punjab
     SUBDIR += py-pyxmpp
     SUBDIR += py-twistedWords
     SUBDIR += py-xmpppy
