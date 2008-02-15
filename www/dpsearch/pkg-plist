@@ -126,6 +126,8 @@ etc/dpsearch/langmap/ja.sjis.lm
 etc/dpsearch/langmap/ja.utf-8.lit.lm
 etc/dpsearch/langmap/ja.utf-8.lm
 etc/dpsearch/langmap/jv.utf-8.lm
+etc/dpsearch/langmap/ka.georgian-academy.lm
+etc/dpsearch/langmap/ka.georgian-ps.lm
 etc/dpsearch/langmap/ka.geostd8.lm
 etc/dpsearch/langmap/ka.utf-8.lm
 etc/dpsearch/langmap/kk.utf-8.lm
