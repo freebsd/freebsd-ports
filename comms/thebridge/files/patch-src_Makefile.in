@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Mon Jul  2 22:45:43 2007
-+++ src/Makefile.in	Sat Jul 21 00:59:05 2007
-@@ -105,7 +105,7 @@
+--- src/Makefile.in.orig	2008-02-10 02:05:09.000000000 +0900
++++ src/Makefile.in	2008-02-11 16:26:34.000000000 +0900
+@@ -109,7 +109,7 @@
  @LINK_BOX_FALSE@	avrs.$(OBJEXT)
  tbd_OBJECTS = $(am_tbd_OBJECTS)
  @LINK_BOX_FALSE@tbd_DEPENDENCIES = $(top_builddir)/common/libcommon.a \
@@ -9,19 +9,22 @@
  DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
  depcomp = $(SHELL) $(top_srcdir)/config/depcomp
  am__depfiles_maybe = depfiles
-@@ -207,9 +207,9 @@
+@@ -214,12 +214,12 @@
  @LINK_BOX_TRUE@		  dirclient.c dirclient.h thebridge.c users.c users.h \
  @LINK_BOX_TRUE@		  hostfile.c hostfile.h eventhook.c eventhook.h avrs.c avrs.h 
  
--@LINK_BOX_FALSE@AM_CPPFLAGS = -I$(top_srcdir)/inc -I$(top_srcdir)/zlib -I$(top_srcdir)/spandsp
-+@LINK_BOX_FALSE@AM_CPPFLAGS = -I$(top_srcdir)/inc -Izlib -I$(top_srcdir)/spandsp
- @LINK_BOX_TRUE@AM_CPPFLAGS = -I$(top_srcdir)/inc -I$(top_srcdir)/gsm/inc -DLINK_BOX \
--@LINK_BOX_TRUE@        -I$(top_srcdir)/zlib -I$(top_srcdir)/linkbox
-+@LINK_BOX_TRUE@        -Izlib -I$(top_srcdir)/linkbox
+-@LINK_BOX_FALSE@AM_CPPFLAGS = -I$(top_srcdir)/inc -I$(top_srcdir)/zlib -I$(top_srcdir)/spandsp \
++@LINK_BOX_FALSE@AM_CPPFLAGS = -I$(top_srcdir)/inc -Izlib -I$(top_srcdir)/spandsp \
+ @LINK_BOX_FALSE@                -DSYSCON_DIR=\"$(sysconfdir)\"
  
- @LINK_BOX_FALSE@AM_CFLAGS = -Wall -DSYSCON_DIR=\"$(sysconfdir)\" -lm
- @LINK_BOX_TRUE@AM_CFLAGS = -Wall -DSYSCON_DIR=\"$(sysconfdir)\"
-@@ -217,7 +217,7 @@
+ @LINK_BOX_TRUE@AM_CPPFLAGS = -I$(top_srcdir)/inc \
+ @LINK_BOX_TRUE@	-I$(top_srcdir)/gsm/inc -DLINK_BOX \
+-@LINK_BOX_TRUE@	-I$(top_srcdir)/zlib -I$(top_srcdir)/linkbox \
++@LINK_BOX_TRUE@	-Izlib -I$(top_srcdir)/linkbox \
+ @LINK_BOX_TRUE@	-DSYSCON_DIR=\"$(sysconfdir)\" $(am__append_1)
+ @LINK_BOX_FALSE@AM_CFLAGS = -Wall  -lm
+ @LINK_BOX_TRUE@AM_CFLAGS = -Wall 
+@@ -227,7 +227,7 @@
  @LINK_BOX_FALSE@        dirclient.h thebridge.c users.c users.h hostfile.c hostfile.h \
  @LINK_BOX_FALSE@        eventhook.c eventhook.h avrs.c avrs.h
  
