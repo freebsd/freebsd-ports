@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+
+# PROVIDE: punjab
+# REQUIRE: DAEMON
+# BEFORE:  
+
+. %%RC_SUBR%%
+
+punjab_enable=${punjab_enable-"NO"}
+punjab_chdir=${punjab_chdir-"%%HTMLDIR%%"}
+
+name="punjab"
+rcvar=`set_rcvar`
+pidfile="/var/run/twistd.pid"
+command="%%PREFIX%%/bin/twistd"
+command_args="--pidfile $pidfile -f %%PREFIX%%/libexec/punjab.tap"
+command_interpreter="%%PYTHON_CMD%%"
+
+load_rc_config $name
+run_rc_command "$1"
+
