@@ -1,97 +1,87 @@
---- ./Makefile.orig	Tue Jul 18 00:34:50 2006
-+++ ./Makefile	Sat Sep  2 18:40:11 2006
-@@ -1,5 +1,5 @@
+--- Makefile.orig	2008-02-15 17:58:56.000000000 -0300
++++ Makefile	2008-02-15 18:00:12.000000000 -0300
+@@ -1,6 +1,6 @@
 -CC=gcc
--STRIP=strip
 +CC?=gcc
+ WINDRES=windres
+-STRIP=strip
 +STRIP?=strip
  
  STRIPFLAGS=--strip-unneeded --remove-section=.comment
  
-@@ -86,9 +86,9 @@
- BASELDFLAGS ?= -lm -ldl
+@@ -179,9 +179,9 @@
+ endif
  
  #BASELDFLAGS=-lm  -lz
--GLXLDFLAGS=-L/usr/X11R6/lib -lX11 -lXext -lpng -ljpeg
+-GLXLDFLAGS=-L/usr/X11R6/lib -lX11 -lXext $(IMAGELDFLAGS)
 -GLSLDFLAGS=-L/usr/X11R6/lib -lMesaGL -lglide -lvga
--XLDFLAGS=-L/usr/X11R6/lib -lX11 -lXext -lpng -ljpeg
-+GLXLDFLAGS=-L$(X11BASE)/lib -lX11 -lXext -L$(LOCALBASE)/lib -lpng -ljpeg
-+GLSLDFLAGS=-L$(X11BASE)/lib -lMesaGL -lglide -lvga
-+XLDFLAGS=-L$(X11BASE)/lib -lX11 -lXext -L$(LOCALBASE)/lib -lpng -ljpeg
+-XLDFLAGS=-L/usr/X11R6/lib -lX11 -lXext $(IMAGELDFLAGS)
++GLXLDFLAGS=-L$(LOCALBASE)/lib -lX11 -lXext $(IMAGELDFLAGS)
++GLSLDFLAGS=-L$(LOCALBASE)/lib -lMesaGL -lglide -lvga
++XLDFLAGS=-L$(LOCALBASE)/lib -lX11 -lXext $(IMAGELDFLAGS)
  SLDFLAGS=-lvga
  
  ifeq ($(USEASM),true)
-@@ -119,12 +119,14 @@
+@@ -212,18 +212,20 @@
  	BASE_ASM_CFLAGS = -DNOASM
  endif
  
--BASE_CFLAGS=$(BASE_ASM_CFLAGS) -Wall -Dstrnicmp=strncasecmp -Dstricmp=strcasecmp -I$(CLIENT_DIR) -I$(SERVER_DIR) -I$(COMMON_DIR) -I$(SW_DIR) -I$(GL_DIR) -I$(PROGS_DIR) -I$(LIBS_DIR) -I$(QUX_DIR) -I$(LIBS_DIR)/dxsdk7/include -I$(LIBS_DIR)/sdl/include -I$(LIBS_DIR)/sdl/include/SDL -D_vsnprintf=vsnprintf -D_snprintf=snprintf
-+BASE_CFLAGS=$(BASE_ASM_CFLAGS) -Dstrnicmp=strncasecmp -Dstricmp=strcasecmp -I$(CLIENT_DIR) -I$(SERVER_DIR) -I$(COMMON_DIR) -I$(SW_DIR) -I$(GL_DIR) -I$(PROGS_DIR) -I$(LIBS_DIR) -I$(QUX_DIR) -I$(LIBS_DIR)/dxsdk7/include -I$(LIBS_DIR)/sdl/include -I$(LIBS_DIR)/sdl/include/SDL -D_vsnprintf=vsnprintf -D_snprintf=snprintf
+-BASE_CFLAGS=$(BASE_ASM_CFLAGS) -Wall -Dstrnicmp=strncasecmp -Dstricmp=strcasecmp -I$(CLIENT_DIR) -I$(SERVER_DIR) -I$(COMMON_DIR) -I$(SW_DIR) -I$(GL_DIR) -I$(D3D9_DIR) -I$(D3D7_DIR) -I$(PROGS_DIR) -I$(LIBS_DIR) -I$(LIBS_DIR)/dxsdk7/include -I$(LIBS_DIR)/sdl/include -I$(LIBS_DIR)/sdl/include/SDL -D_vsnprintf=vsnprintf -D_snprintf=snprintf
++BASE_CFLAGS=$(BASE_ASM_CFLAGS) -Dstrnicmp=strncasecmp -Dstricmp=strcasecmp -I$(CLIENT_DIR) -I$(SERVER_DIR) -I$(COMMON_DIR) -I$(SW_DIR) -I$(GL_DIR) -I$(D3D9_DIR) -I$(D3D7_DIR) -I$(PROGS_DIR) -I$(LIBS_DIR) -I$(LIBS_DIR)/dxsdk7/include -I$(LIBS_DIR)/sdl/include -I$(LIBS_DIR)/sdl/include/SDL -D_vsnprintf=vsnprintf -D_snprintf=snprintf
  CLIENT_ONLY_CFLAGS=-DCLIENTONLY
  SERVER_ONLY_CFLAGS=-DSERVERONLY
  JOINT_CFLAGS=
  DEBUG_CFLAGS=-ggdb -g
+ 
 +ifeq ($(OPTIMIZED_CFLAGS),true)
- RELEASE_CFLAGS=-O6 -fno-strict-aliasing -ffast-math -funroll-loops -fexpensive-optimizations $(CPUOPTIMIZATIONS)
+ ifeq ($(FTE_TARGET),win32)
+ 	RELEASE_CFLAGS=-fno-strict-aliasing -ffast-math -fexpensive-optimizations $(CPUOPTIMIZATIONS)
+ else
+ 	RELEASE_CFLAGS=-O2 -fno-strict-aliasing $(CPUOPTIMIZATIONS)
+ 	#RELEASE_CFLAGS=-O6 -fno-strict-aliasing -ffast-math -funroll-loops -fexpensive-optimizations $(CPUOPTIMIZATIONS)
+ endif
 +endif
+ 
  GLCFLAGS=-DGLQUAKE
  SWCFLAGS=-DSWQUAKE
+@@ -550,7 +552,7 @@
+ 	#oss, X, etc.
  
-@@ -339,11 +341,11 @@
- GL_EXE_NAME=../fteqw_sdl.gl
- GLCL_EXE_NAME=../fteqwcl_sdl.gl
- ifdef windir
--	GL_LDFLAGS=$(GLLDFLAGS) -lmingw32 -lwsock32 `sdl-config --libs`
-+	GL_LDFLAGS=$(GLLDFLAGS) -lmingw32 -lwsock32 `$(SDL_CONFIG) --libs`
- else
--	GL_LDFLAGS=$(GLLDFLAGS) -lpng -ljpeg `sdl-config --libs`
-+	GL_LDFLAGS=$(GLLDFLAGS) -lpng -ljpeg `$(SDL_CONFIG) --libs`
- endif
--GL_CFLAGS=$(GLCFLAGS) `sdl-config --cflags`
-+GL_CFLAGS=$(GLCFLAGS) `$(SDL_CONFIG) --cflags`
- GLB_DIR=gl_sdl
- GLCL_DIR=glcl_sdl
+ 	SV_DIR=sv_linux
+-	SV_LDFLAGS=-lz -ldl
++	SV_LDFLAGS=-lz
  
-@@ -354,9 +356,9 @@
- SW_LDFLAGS=$(SWLDFLAGS) -lmingw32 -lwsock32 -lSDLmain -lSDL
- else
- #pthread is needed because of SDL.
--SW_LDFLAGS=$(SWLDFLAGS) `sdl-config --libs` -lpng -ljpeg
-+SW_LDFLAGS=$(SWLDFLAGS) `$(SDL_CONFIG) --libs` -lpng -ljpeg
- endif
--SW_CFLAGS=$(SWCFLAGS) `sdl-config --cflags`
-+SW_CFLAGS=$(SWCFLAGS) `$(SDL_CONFIG) --cflags`
- SWB_DIR=sw_sdl
- SWCL_DIR=swcl_sdl
- 
-@@ -424,8 +426,8 @@
- endif
+ ifeq ($(USEASM),true)
+ 	GLCL_OBJS=$(GL_OBJS) $(GLQUAKE_OBJS) gl_vidlinuxglx.o snd_linux.o cd_null.o sys_linux.o sys_dosa.o
+@@ -560,19 +562,12 @@
  	GL_EXE_NAME=../fteqw.gl
  	GLCL_EXE_NAME=../fteqwcl.gl
--	GL_LDFLAGS= -L/usr/local/lib $(GLLDFLAGS) $(GLXLDFLAGS) -lXxf86vm
+ 	GL_LDFLAGS= -L/usr/local/lib $(GLLDFLAGS) $(GLXLDFLAGS) -lXxf86vm -lpthread
 -	GL_CFLAGS=$(GLCFLAGS) -I/usr/local/include -I/usr/X11R6/include
-+	GL_LDFLAGS=$(GLLDFLAGS) $(GLXLDFLAGS) -lXxf86vm
-+	GL_CFLAGS=$(GLCFLAGS) -I$(LOCALBASE)/include -I$(X11BASE)/include
++	GL_CFLAGS=$(GLCFLAGS) -I$(LOCALBASE)/include
  	GLB_DIR=gl_bsd
  	GLCL_DIR=glcl_bsd
  
-@@ -436,8 +438,8 @@
- endif
- 	SW_EXE_NAME=../fteqw.sw
- 	SWCL_EXE_NAME=../fteqwcl.sw
--	SW_LDFLAGS=-L/usr/local/lib $(SWLDFLAGS) $(XLDFLAGS)
+-ifeq ($(USEASM),true)
+-	SWCL_OBJS=$(SOFTWARE_OBJS) vid_x.o snd_linux.o cd_null.o sys_linux.o sys_dosa.o
+-else
+-	SWCL_OBJS=$(SOFTWARE_OBJS) vid_x.o snd_linux.o cd_null.o sys_linux.o
+-endif
+-	SW_EXE_NAME=../fteqw.sw
+-	SWCL_EXE_NAME=../fteqwcl.sw
+-	SW_LDFLAGS=-L/usr/local/lib $(SWLDFLAGS) $(XLDFLAGS) -lXxf86vm -lpthread
 -	SW_CFLAGS=$(SWCFLAGS) -I/usr/local/include -I/usr/X11R6/include
-+	SW_LDFLAGS=$(SWLDFLAGS) $(XLDFLAGS)
-+	SW_CFLAGS=$(SWCFLAGS) -I$(LOCALBASE)/include -I$(X11BASE)/include
++	SW_EXE_NAME=../fteqw.sdl
++	SWCL_EXE_NAME=../fteqwcl.sdl
  	SWB_DIR=sw_bsd
  	SWCL_DIR=swcl_bsd
  
-@@ -449,7 +451,7 @@
+@@ -584,7 +579,7 @@
  	M_EXE_NAME=../fteqw
  	MCL_EXE_NAME=../fteqwcl
- 	M_LDFLAGS=$(GLLDFLAGS) $(GLXLDFLAGS) -lXxf86vm
+ 	M_LDFLAGS=$(GLLDFLAGS) $(GLXLDFLAGS) -lXxf86vm -lpthread
 -	M_CFLAGS=$(SWCFLAGS) $(GLCFLAGS) -I/usr/X11R6/include
-+	M_CFLAGS=$(SWCFLAGS) $(GLCFLAGS) -I$(X11BASE)/include
++	M_CFLAGS=$(SWCFLAGS) $(GLCFLAGS) -I$(LOCALBASE)/include
  	MB_DIR=m_bsd
  	MCL_DIR=mcl_bsd
- endif
+ 

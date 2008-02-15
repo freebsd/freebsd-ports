@@ -1,31 +1,30 @@
---- ./client/snd_linux.c.orig	Tue Jul 18 00:34:50 2006
-+++ ./client/snd_linux.c	Sat Sep  2 18:40:11 2006
-@@ -115,14 +115,6 @@
+--- ./client/snd_linux.c.orig	2008-02-15 14:04:33.000000000 -0300
++++ ./client/snd_linux.c	2008-02-15 14:09:16.000000000 -0300
+@@ -114,14 +114,6 @@
  		return 0;
  	}
  
 -	if (ioctl(sc->audio_fd, SNDCTL_DSP_GETOSPACE, &info)==-1)
 -	{
 -		perror("GETOSPACE");
--		Con_Printf(S_ERROR "OSS: Um, can't do GETOSPACE?\n");
+-		Con_Printf(CON_ERROR "OSS: Um, can't do GETOSPACE?\n");
 -		OSS_Shutdown(sc);
 -		return 0;
 -	}
 -
- 	sc->sn.splitbuffer = 0;
- 
  // set sample bits & speed
-@@ -152,27 +144,6 @@
+ 
+ 	ioctl(sc->audio_fd, SNDCTL_DSP_GETFMTS, &fmt);
+@@ -149,26 +141,6 @@
  		sc->sn.speed = tryrates[i];
  	}
  
 -	if (sc->sn.samples > (info.fragstotal * info.fragsize * 4))
 -	{
--		Con_Printf(S_NOTICE "OSS: Enabling bigfoot's mmap hack! Hope you know what you're doing!\n");
+-		Con_Printf(CON_NOTICE "OSS: Enabling bigfoot's mmap hack! Hope you know what you're doing!\n");
 -		sc->sn.samples = info.fragstotal * info.fragsize * 4;
 -	}
 -	sc->sn.samples = info.fragstotal * info.fragsize;
--	sc->sn.submission_chunk = 1;
 -
 -// memory map the dma buffer
 -
@@ -33,7 +32,7 @@
 -	if (!sc->sn.buffer)
 -	{
 -		perror(snddev);
--		Con_Printf(S_ERROR "OSS: Could not mmap %s\n", snddev);
+-		Con_Printf(CON_ERROR "OSS: Could not mmap %s\n", snddev);
 -		OSS_Shutdown(sc);
 -		return 0;
 -	}
@@ -43,22 +42,19 @@
  	tmp = 0;
  	if (sc->sn.numchannels == 2)
  		tmp = 1;
-@@ -228,6 +199,36 @@
- 		Con_Printf(S_ERROR "OSS: %d-bit sound not supported.\n", sc->sn.samplebits);
- 		OSS_Shutdown(sc);
+@@ -226,6 +198,35 @@
  		return 0;
-+	}
-+
+ 	}
+ 
 +	if (ioctl(sc->audio_fd, SNDCTL_DSP_GETOSPACE, &info)==-1)
 +	{
 +		perror("GETOSPACE");
-+		Con_Printf(S_ERROR "OSS: Um, can't do GETOSPACE?\n");
++		Con_Printf(CON_ERROR "OSS: Um, can't do GETOSPACE?\n");
 +		OSS_Shutdown(sc);
 +		return 0;
 +	}
 +
 +	sc->sn.samples = info.fragstotal * info.fragsize;
-+	sc->sn.submission_chunk = 1;
 +
 +// memory map the dma buffer
 +
@@ -66,7 +62,7 @@
 +	if (!sc->sn.buffer)
 +	{
 +		perror(snddev);
-+		Con_Printf(S_ERROR "OSS: Could not mmap %s\n", snddev);
++		Con_Printf(CON_ERROR "OSS: Could not mmap %s\n", snddev);
 +		OSS_Shutdown(sc);
 +		return 0;
 +	}
@@ -75,8 +71,10 @@
 +
 +	if (sc->sn.samples > (info.fragstotal * info.fragsize * 4))
 +	{
-+		Con_Printf(S_NOTICE "OSS: Enabling bigfoot's mmap hack! Hope you know what you're doing!\n");
++		Con_Printf(CON_NOTICE "OSS: Enabling bigfoot's mmap hack! Hope you know what you're doing!\n");
 +		sc->sn.samples = info.fragstotal * info.fragsize * 4;
- 	}
- 
++	}
++
  // toggle the trigger & start her up
+ 
+ 	tmp = 0;

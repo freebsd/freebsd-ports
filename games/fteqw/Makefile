@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fteqw
-PORTVERSION=	2770
-PORTREVISION=	2
+PORTVERSION=	3343
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	ftesrc${PORTVERSION}-all
@@ -15,17 +14,14 @@ DISTNAME=	ftesrc${PORTVERSION}-all
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	QuakeWorld client with cool features, but still compatible
 
-USE_ZIP=	yes
 USE_DOS2UNIX=	yes
-USE_GCC=	3.2+
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/engine
+NO_WRKSUBDIR=	yes
 
-OPTIONS=	GL "Build OpenGL client" on \
+OPTIONS=	DEDICATED "Build dedicated server" on \
+		GL "Build OpenGL (hardware) client" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
-		SV "Build dedicated server" on \
-		SW "Build software (X11) client" on \
-		X86_ASM "Enable use of x86 assembly code" on
+		SDL "Build SDL (software) client" on
 
 SUB_FILES=	pkg-message
 
@@ -33,11 +29,17 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_DEDICATED) && defined(WITHOUT_GLX) && defined(WITHOUT_X11)
-IGNORE=		needs at least one executable (DEDICATED, GLX or X11)
+.if defined(WITHOUT_DEDICATED) && defined(WITHOUT_GL) && defined(WITHOUT_SDL)
+IGNORE=		needs at least one executable (DEDICATED, GL or SDL)
 .endif
 
-.if !defined(WITHOUT_GL) || !defined(WITHOUT_SW)
+.if !defined(WITHOUT_DEDICATED)
+ALL_TARGET+=	sv-rel
+PLIST_FILES+=	bin/fteqw-sv
+FTE_TARGETS+=	fteqw.sv
+.endif
+
+.if !defined(WITHOUT_GL) || !defined(WITHOUT_SDL)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
@@ -54,25 +56,18 @@ FTE_TARGETS+=	fteqw.gl
 MAKE_ENV+=	OPTIMIZED_CFLAGS=true
 .endif
 
-.if !defined(WITHOUT_SV)
-ALL_TARGET+=	sv-rel
-PLIST_FILES+=	bin/fteqw-sv
-FTE_TARGETS+=	fteqw.sv
-.endif
-
-.if !defined(WITHOUT_SW)
-USE_XLIB=	yes
+# SDL is used instead of the native X11 software version as it reports a
+# memory allocation error at startup. It also fails with USEASM=true.
+.if !defined(WITHOUT_SDL)
+USE_SDL=	sdl
 ALL_TARGET+=	sw-rel
-PLIST_FILES+=	bin/fteqw-sw
-FTE_TARGETS+=	fteqw.sw
-.endif
-
-.if !defined(WITHOUT_X86_ASM) && ${ARCH} == "i386"
-MAKE_ENV+=	USEASM=true
+PLIST_FILES+=	bin/fteqw-sdl
+FTE_TARGETS+=	fteqw.sdl
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/malloc\.h/stdlib.h/' ${WRKSRC}/gl/gl_alias.c
+	@${REINPLACE_CMD} -e 's/alloca\.h/stdlib.h/' \
+		${WRKSRC}/gl/gl_alias.c ${WRKSRC}/common/com_mesh.c
 	@${REINPLACE_CMD} -e 's/__linux__/__unix__/' \
 		${WRKSRC}/common/plugin.c ${WRKSRC}/server/svq3_game.c
 
