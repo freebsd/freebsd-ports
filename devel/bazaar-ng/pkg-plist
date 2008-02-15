@@ -374,12 +374,12 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_indirect.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_indirect.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_indirect.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_service.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_service.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_lp_service.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_register.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_register.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/test_register.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/multiparent.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/multiparent.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/multiparent.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/progress.py
 %%PYTHON_SITELIBDIR%%/bzrlib/progress.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/progress.pyo
@@ -908,6 +908,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/repository_implementations/test_find_text_key_references.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/repository_implementations/test_find_text_key_references.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/repository_implementations/test_find_text_key_references.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/repository_implementations/test_has_revisions.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/repository_implementations/test_has_revisions.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/repository_implementations/test_has_revisions.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/repository_implementations/test_has_same_location.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/repository_implementations/test_has_same_location.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/repository_implementations/test_has_same_location.pyo
