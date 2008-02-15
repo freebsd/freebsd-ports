@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	3.9.0
-PORTREVISION=	1
+PORTVERSION=	3.10.2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-nosound
@@ -19,7 +18,7 @@ COMMENT=	Free eartraining software
 
 BUILD_DEPENDS=	${STYLESHEET}:${PORTSDIR}/textproc/docbook-xsl
 
-USE_GNOME=	gnomehack gnomeprefix libxslt pygtk2
+USE_GNOME=	gnomehack gnometarget libxslt pygtk2
 WANT_GNOME=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
@@ -35,6 +34,9 @@ MAN1=		lessonfile_editor.1 solfege.1
 
 STYLESHEET=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl
 
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
+
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mpygnomeextras}!=""
@@ -42,16 +44,13 @@ USE_GNOME+=	pygnomeextras
 .endif
 
 post-patch:
-	@${RM} ${WRKSRC}/lesson-files/bin/csound-play-harmonic-interval.sh.orig
 	@${GREP} -lR "/usr/bin/python" ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e 's|/usr/bin/python|${SETENV} python|g'
-.for file in lessonfile_editor.py.in run-solfege.py.in
-	@${REINPLACE_CMD} -e 's|share", "solfege|share", "gnome", "solfege|g' \
-		${WRKSRC}/${file}
-.endfor
 	@${REINPLACE_CMD} -e 's|type=sequencer-device|type=fake-synth|g ; \
 		 s|/usr/bin|${LOCALBASE}/bin|g' ${WRKSRC}/default.config
 	@${REINPLACE_CMD} -e 's|(datadir)/locale|(prefix)/share/locale|g' \
 		${WRKSRC}/po/Makefile
+	@${REINPLACE_CMD} -i '' -e 's|/bin/bash|/bin/sh|g' \
+		${WRKSRC}/lesson-files/bin/csound-play-harmonic-interval.sh
 
 .include <bsd.port.post.mk>
