@@ -14,7 +14,7 @@
 
 . %%RC_SUBR%%
 
-SGE_ROOT=%%PREFIX%%/%%SGE_BASE%%
+export SGE_ROOT=%%PREFIX%%/%%SGE_BASE%%
 
 name="sge"
 start_cmd="sge_start"
@@ -26,6 +26,17 @@ sge_start()
 		${sgemaster_script} start
 	fi
 	if checkyesno sge_execd_enable; then
+		host=`hostname`
+		execd_spool_dir=${execd_spool_dir:-`${qconf} -sconf ${host} 2>/dev/null | awk '($1 == "execd_spool_dir") {print $2}'`}
+		execd_spool_dir=${execd_spool_dir:-`${qconf} -sconf global 2>/dev/null | awk '($1 == "execd_spool_dir") {print $2}'`}
+		if [ -n "${execd_spool_dir}" ]; then
+			mkdir -p ${execd_spool_dir}
+			mkdir -p ${execd_spool_dir}/${host%%.*}
+			mkdir -p ${execd_spool_dir}/${host%%.*}/active_jobs
+			mkdir -p ${execd_spool_dir}/${host%%.*}/jobs
+			mkdir -p ${execd_spool_dir}/${host%%.*}/job_scripts
+			chown -R sgeadmin ${execd_spool_dir}/${host%%.*}
+		fi
 		${sgeexecd_script} start
 	fi
 }
@@ -44,8 +55,11 @@ load_rc_config $name
 
 sge_qmaster_enable=${sge_qmaster_enable-NO}
 sge_execd_enable=${sge_execd_enable-NO}
-sge_cell=${sge_cell:-default}
-sgemaster_script=${SGE_ROOT}/${sge_cell}/common/sgemaster
-sgeexecd_script=${SGE_ROOT}/${sge_cell}/common/sgeexecd
+export SGE_CELL=${sge_cell:-default}
+sgemaster_script=${SGE_ROOT}/${SGE_CELL}/common/sgemaster
+sgeexecd_script=${SGE_ROOT}/${SGE_CELL}/common/sgeexecd
+execd_spool_dir=${sge_execd_spool_dir-}
+sge_arch=fbsd-`uname -m`
+qconf=${SGE_ROOT}/bin/${sge_arch}/qconf
 
 run_rc_command $*
