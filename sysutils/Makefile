@@ -568,6 +568,7 @@
     SUBDIR += reed
     SUBDIR += rej
     SUBDIR += relaxconf
+    SUBDIR += relpath
     SUBDIR += rename
     SUBDIR += reoback
     SUBDIR += respond
