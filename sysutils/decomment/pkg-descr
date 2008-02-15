@@ -1,0 +1,4 @@
+Usage: decomment infile [r(emove whitespace)]
+
+Removes all comments and (optionally) whitespace from an input file. 
+Writes result on stdout.

@@ -123,6 +123,7 @@
     SUBDIR += dcfldd
     SUBDIR += dd_rescue
     SUBDIR += ddrescue
+    SUBDIR += decomment
     SUBDIR += deleted
     SUBDIR += deltup
     SUBDIR += desktopbsd-tools
