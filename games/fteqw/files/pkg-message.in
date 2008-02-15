@@ -2,11 +2,12 @@
 
 FTE QuakeWorld has been installed.
 
-To start in full-screen mode run it with "-fullscreen".
-
-To load and save the configuration to ~/.fte run it with "-usehome".
+By default it saves configuration to ~/.fte, to avoid run with "-nohome".
 
 To select the game you want to play use "-basedir <dir>". For example, to play
 Quake use "-basedir %%Q1DIR%%".
+
+For a complete list of supported games see:
+http://www.fteqw.com/wiki/index.php?title=SupportedGames
 
 ==============================================================================

@@ -1,38 +1,24 @@
---- ./common/fs.c.orig	Tue Jul 18 00:34:40 2006
-+++ ./common/fs.c	Sat Sep  2 19:18:59 2006
-@@ -2051,7 +2051,7 @@
- 	case FS_GAMEONLY:	//OS access only, no paks
- 		if (*com_homedir)
- 		{
--			snprintf(fullname, sizeof(fullname), "%s%s/%s", com_homedir, gamedirfile, filename);
-+			snprintf(fullname, sizeof(fullname), "%s/%s/%s", com_homedir, gamedirfile, filename);
- 			vfs = VFSOS_Open(fullname, mode);
- 			if (vfs)
- 				return vfs;
-@@ -2060,7 +2060,7 @@
+--- common/fs.c.orig	2008-02-15 14:55:07.000000000 -0300
++++ common/fs.c	2008-02-15 14:55:19.000000000 -0300
+@@ -2120,8 +2120,10 @@
+ 	}
+ 
+ 	//if we're meant to be writing, best write to it.
+-	if (strchr(mode , 'w') || strchr(mode , 'a'))
++	if (strchr(mode , 'w') || strchr(mode , 'a')) {
++		COM_CreatePath(fullname);
  		return VFSOS_Open(fullname, mode);
- 	case FS_GAME:
- 		if (*com_homedir)
--			snprintf(fullname, sizeof(fullname), "%s%s/%s", com_homedir, gamedirfile, filename);
-+			snprintf(fullname, sizeof(fullname), "%s/%s/%s", com_homedir, gamedirfile, filename);
- 		else
- 			snprintf(fullname, sizeof(fullname), "%s%s/%s", com_quakedir, gamedirfile, filename);
- 		break;
-@@ -2073,7 +2073,7 @@
- 	case FS_BASE:
- 		if (*com_homedir)
- 		{
--			snprintf(fullname, sizeof(fullname), "%s%s", com_homedir, filename);
-+			snprintf(fullname, sizeof(fullname), "%s/%s", com_homedir, filename);
- 			vfs = VFSOS_Open(fullname, mode);
- 			if (vfs)
- 				return vfs;
-@@ -2083,7 +2083,7 @@
- 	case FS_CONFIGONLY:
- 		if (*com_homedir)
- 		{
--			snprintf(fullname, sizeof(fullname), "%sfte/%s", com_homedir, filename);
-+			snprintf(fullname, sizeof(fullname), "%s/fte/%s", com_homedir, filename);
- 			vfs = VFSOS_Open(fullname, mode);
- 			if (vfs)
- 				return vfs;
++	}
+ 	return NULL;
+ }
+ 
+@@ -3144,9 +3146,6 @@
+ 		*com_homedir = '\0';
+ #endif
+ 
+-	if (!COM_CheckParm("-usehome"))
+-		*com_homedir = '\0';
+-
+ 	if (COM_CheckParm("-nohome"))
+ 		*com_homedir = '\0';
+ 
