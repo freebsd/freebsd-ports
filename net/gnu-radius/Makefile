@@ -5,25 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-radius
-PORTVERSION=	1.3
-PORTREVISION=	3
+PORTVERSION=	1.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
 DISTNAME=	radius-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	GNU RADIUS server
 
 CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	radiusd.sh
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl:15 libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
-CONFIGURE_TARGET=	# empty
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 SUB_FILES=	radiusd.sh
@@ -46,7 +44,8 @@ OPTIONS=	CLIENT "Enable build client" off \
 		POSTGRESQL "Enable PostgreSQL support" off \
 		SNMP "Enable SNMP support" off \
 		NOTIFY "Enable TTL notification" off \
-		EMACS "Enable emacs dotfiles install" off
+		EMACS "Enable emacs dotfiles install" off \
+		NLS	"Enable gettext support" on
 
 CONFIG_FILES=	access.deny client.conf clients config dictionary \
 		hints huntgroups naslist nastypes realms \
@@ -55,10 +54,6 @@ EXAMPLE_FILES=	README ascend.rw c3620.rw cisco.rw comos.rw config.syntax \
 		filter.rw hints-0.96 jetstream.rw nt.rw pam.conf radius.php
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 .if defined(WITH_SNMP)
 CONFIGURE_ARGS+=	--enable-snmp
@@ -110,10 +105,24 @@ USE_EMACS=	yes
 CONFIGURE_ARGS+=	--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}
 PLIST_SUB+=	EMACS=""
 .else
-EXTRA_PATCHES+=		${FILESDIR}/extrapatch-emacs
 CONFIGURE_ARGS+=	--without-lispdir
 PLIST_SUB+=	EMACS="@comment "
 .endif
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nl
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+PLIST_SUB+=	NLS=""
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|extern unsigned scheme_gc_interval;||g' \
+		${WRKSRC}/include/radiusd.h
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/radiusd.sh ${PREFIX}/etc/rc.d/radiusd.sh
