@@ -38,6 +38,7 @@
     SUBDIR += asterisk-stat
     SUBDIR += aswedit
     SUBDIR += aswiki
+    SUBDIR += atutor
     SUBDIR += august
     SUBDIR += auth_ldap
     SUBDIR += autoindex
