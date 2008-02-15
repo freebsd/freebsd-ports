@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libnurbs
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	A C++ library for representing curves or surfaces
 
 USE_AUTOTOOLS=	libtool:15
@@ -22,10 +22,4 @@ USE_LDCONFIG=	yes
 
 MAN1=	nurbs++-config.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
