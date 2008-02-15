@@ -628,6 +628,7 @@ atris		ports/games/atris
 atris-sounds	ports/games/atris-sounds
 atslog		ports/comms/atslog
 atunes		ports/audio/atunes
+atutor		ports/www/atutor
 aub		ports/news/aub
 aube		ports/audio/aube
 auctex		ports/print/auctex
