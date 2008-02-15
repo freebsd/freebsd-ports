@@ -7803,6 +7803,7 @@ mod_lisp2	ports/www/mod_lisp2
 mod_log_config-st	ports/www/mod_log_config-st
 mod_log_data	ports/www/mod_log_data
 mod_log_dbd	ports/www/mod_log_dbd
+mod_log_firstbyte	ports/www/mod_log_firstbyte
 mod_log_mysql	ports/www/mod_log_mysql
 mod_log_spread	ports/www/mod_log_spread
 mod_log_sql	ports/www/mod_log_sql
