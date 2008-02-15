@@ -1,20 +1,18 @@
 # New ports collection makefile for:    dpsearch
 # Date created:         14.06.2004
-# Whom:                 Maxim Zakharov <maxime@sochi.net.ru>
+# Whom:                 Maxim Zakharov <maxime@maxime.net.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	dpsearch
-PORTVERSION=	4.48
+PORTVERSION=	4.49
 CATEGORIES=	www
 MASTER_SITES=	http://www.dataparksearch.org/ \
 		http://dataparksearch.newsa.ru/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source search engine for Internet and Intranet sites
-
-#RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
@@ -136,11 +134,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 pre-install:
-	@${MKDIR} ${DATADIR}
+	@${INSTALL} -d ${DATADIR}
 
 post-install:
-	${CHMOD} 700 /var/dpsearch/cache
-	${CHOWN} -R www:www /var/dpsearch/
+	@${CHMOD} 700 /var/dpsearch/cache
+	@${ECHO_CMD} '@exec ${CHMOD} 700 /var/dpsearch/cache' >> ${TMPPLIST}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} /var/dpsearch/
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} /var/dpsearch/' >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
