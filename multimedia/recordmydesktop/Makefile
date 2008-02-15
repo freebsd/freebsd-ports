@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	recordmydesktop
-DISTVERSION=	0.3.7
+DISTVERSION=	0.3.7.3
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	recordmydesktop
+MASTER_SITES=	SF
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Record desktop sessions to an Ogg-Theora-Vorbis file
