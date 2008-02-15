@@ -1,0 +1,13 @@
+Ever tried logging Apache page serve times using '%D'? You'll have discovered
+that they aren't a good index of your server's performance, because they depend
+more on the client's connection speed, computer and browsing habits than on the
+speed of your server.
+
+mod_log_firstbyte is a module for Apache 2.0 which allows you to log the time
+between each request being read and the first byte of the response served.
+Unlike the total serve time, this index of performance tells you how long Apache
+actually spent loading the file off the disk or executing your script: it's
+independent of client connection speed. It makes a great performance benchmark
+for your server!
+
+WWW: http://code.google.com/p/mod-log-firstbyte/
