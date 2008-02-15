@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bzrtools
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://panoramicfeedback.com/opensource/
+MASTER_SITES=	https://launchpad.net/bzrtools/stable/${PORTVERSION}/+download/
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Extensions to devel/bazaar-ng
