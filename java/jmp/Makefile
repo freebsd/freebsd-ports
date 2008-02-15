@@ -9,7 +9,8 @@ PORTNAME=	jmp
 PORTVERSION=	0.51
 PORTREVISION=	2
 CATEGORIES=	java devel
-MASTER_SITES=	http://www.khelekore.org/jmp/
+MASTER_SITES=	http://www.khelekore.org/jmp/ \
+		http://www.klop.ws/~ronald/software-mirrors/
 
 MAINTAINER=	ronald@echteman.nl
 COMMENT=	Java Memory Profiler
