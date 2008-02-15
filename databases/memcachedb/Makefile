@@ -6,33 +6,31 @@
 #
 
 PORTNAME=	memcachedb
-PORTVERSION=	0.1.1
+DISTVERSION=	1.0.0-beta
 CATEGORIES=	databases
-MASTER_SITES=	http://memcachedb.googlecode.com/files/
+MASTER_SITES=	http://memcachedb.googlecode.com/files/	\
+		http://freebsd.csie.nctu.edu.tw/~gslin/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed storage system designed for persistent
 
 LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
 
+CFLAGS=		-I"${BDB_INCLUDE_DIR}"
+CONFIUGRE_ARGS=	--enable-threads --with-bdb="${LOCALBASE}" \
+		--with-libevent="${LOCALBASE}"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+GNU_CONFIGURE=	yes
+LDFLAGS=	-l"${BDB_LIB_NAME}" -L"${LOCALBASE}/lib"
 MCDBDIR?=	/var/db/memcachedb
-PLIST_SUB+=	MCDBDIR="${MCDBDIR}"
 USE_BDB=	46+
-USE_DOS2UNIX=	YES
 USE_RC_SUBR=	${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-	${REINPLACE_CMD} \
-		-e "s,%%BDB_LIB_NAME%%,${BDB_LIB_NAME}," \
-		-e "s,%%BDB_LIB_DIR%%,${BDB_LIB_DIR}," \
-		-e "s,%%BDB_INCLUDE_DIR%%,${BDB_INCLUDE_DIR}," \
-		${WRKSRC}/Makefile
+	${CHMOD} a+x ${WRKSRC}/install-sh
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/memcachedb ${PREFIX}/sbin
+post-install:
 	${MKDIR} ${MCDBDIR} || ${TRUE}
 	${CHOWN} nobody:nobody ${MCDBDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
