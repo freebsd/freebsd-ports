@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sfslite
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.okws.org/dist/
 
@@ -65,9 +64,5 @@ pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKG_INSTALL} ${PKGNAME} PRE-INSTALL
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 .include <bsd.port.post.mk>
