@@ -46,16 +46,13 @@ etc/raddb/sqlserver-dist
 etc/raddb/users-dist
 etc/rc.d/radiusd.sh
 include/radius/argcv.h
-include/radius/argp.h
+include/radius/debug.h
 include/radius/dictionary.h
 include/radius/envar.h
-include/radius/getopt.h
 include/radius/list.h
 include/radius/md4.h
 include/radius/md5.h
 include/radius/mem.h
-include/radius/obstack.h
-include/radius/radargp.h
 include/radius/raddbm.h
 include/radius/radius.h
 include/radius/radpaths.h
@@ -69,20 +66,24 @@ lib/libgnuradius.so
 lib/libgnuradius.la
 lib/libgnuradius.so.0
 %%GUILE%%bin/radsession
-%%GUILE%%lib/libguile-gnuradius-v-1.3.so
+%%GUILE%%lib/libguile-gnuradius-v-1.5.so
 %%GUILE%%lib/libradscm.a
 %%GUILE%%lib/libradscm.la
 %%GUILE%%lib/libradscm.so
-%%GUILE%%lib/libradscm.so.0
+%%GUILE%%lib/libradscm.so.1
 %%GUILE%%lib/libservscm.a
 %%CLIENT%%lib/security/pam_radius.a
 %%CLIENT%%lib/security/pam_radius.la
 %%CLIENT%%lib/security/pam_radius.so
 %%CLIENT%%libexec/nas.scm
-share/locale/ca/LC_MESSAGES/radius.mo
-share/locale/es/LC_MESSAGES/radius.mo
-share/locale/pl/LC_MESSAGES/radius.mo
-share/locale/ru/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/es/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/radius.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/radius.mo
 %%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/gnuradius.scm
 %%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/ipalloc.scm
 %%GUILE%%%%DATADIR%%/%%PORTVERSION%%/scheme/radiusd.scm
@@ -122,6 +123,6 @@ share/locale/ru/LC_MESSAGES/radius.mo
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
 @dirrmtry lib/security
-@unexec rm -f /var/run/radiusd.pid
-@unexec rm -rf /var/log/radius
+@unexec rm -f %B/run/radiusd.pid
+@unexec rm -rf %B/log/radius 2>&1 >/dev/null || true
 @unexec echo "Leaving /var/run/radutmp, /var/log/radwtmp and /var/log/radstat alone."
