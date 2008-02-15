@@ -1940,6 +1940,7 @@ deal		ports/games/deal
 deb2targz	ports/archivers/deb2targz
 decibel		ports/net-im/decibel
 deco		ports/misc/deco
+decomment	ports/sysutils/decomment
 decss		ports/www/decss
 decurs		ports/x11/decurs
 dedit		ports/editors/dedit
