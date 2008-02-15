@@ -36,6 +36,8 @@ lib/gauche/%%VERSION%%/%%TARGET%%/sxml-sxpath.so
 lib/gauche/%%VERSION%%/%%TARGET%%/sxml-tools.so
 lib/gauche/%%VERSION%%/%%TARGET%%/syslog.so
 lib/gauche/%%VERSION%%/%%TARGET%%/termios.so
+lib/gauche/%%VERSION%%/%%TARGET%%/text-gettext-lib.so
+lib/gauche/%%VERSION%%/%%TARGET%%/text-tr-lib.so
 lib/gauche/%%VERSION%%/%%TARGET%%/threads.so
 lib/gauche/%%VERSION%%/%%TARGET%%/util-match-lib.so
 lib/gauche/%%VERSION%%/%%TARGET%%/vport.so
