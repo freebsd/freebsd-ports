@@ -17,6 +17,7 @@ COMMENT=	Log the time between request and the first byte of the response served
 USE_APACHE=	2.0+
 MOD=		mod_log_firstbyte
 PKGMESSAGE=	${WRKSRC}/readme.txt
+DIST_SUBDIR=	${PORTNAME}
 
 do-extract:
 	${MKDIR} ${WRKSRC}
