@@ -14153,6 +14153,7 @@ relay		ports/net/relay
 relay-ctrl	ports/mail/relay-ctrl
 relayd		ports/net/relayd
 relaydb		ports/mail/relaydb
+relpath		ports/sysutils/relpath
 remarp		ports/net-mgmt/remarp
 remember.el	ports/deskutils/remember.el
 remind		ports/deskutils/remind
