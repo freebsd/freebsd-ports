@@ -130,6 +130,9 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/NewSolver.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Operator.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/QuadratureFormular.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/R1.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/R2.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/R3.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/REAME_SuperLU
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/RNM.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/RNM_op.hpp
@@ -266,6 +269,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/nolinear-elas.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/onde.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/periodic4.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/periodic4bis.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/plot.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/readmesh.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/ref.edp
