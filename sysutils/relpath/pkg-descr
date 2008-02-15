@@ -1,0 +1,8 @@
+Usage: relpath [-d DIR] START_DIR END_PATH
+
+Find a relative path from START_DIR to END_PATH.
+Prints the relative path on standard out.
+
+If -d DIR, then only emit a relative path if both
+START_DIR and END_PATH are sub-directories of DIR;
+otherwise, emit an absolute path to END_PATH.
