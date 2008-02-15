@@ -1,21 +1,17 @@
---- configure.orig	2006-12-24 23:12:11.000000000 +0000
-+++ configure	2007-11-28 10:21:03.000000000 +0000
-@@ -19483,12 +19483,13 @@
- powerpc*-*-rtems*) TARGET=POWERPC; TARGETDIR=powerpc;;
- rs6000-*-aix*) TARGET=POWERPC_AIX; TARGETDIR=powerpc;;
- arm*-*-linux-*) TARGET=ARM; TARGETDIR=arm;;
-+arm-*-freebsd*) TARGET=ARM; TARGETDIR=arm;;
- arm*-*-netbsdelf* | arm*-*-knetbsd*-gnu) TARGET=ARM; TARGETDIR=arm;;
- arm*-*-rtems*) TARGET=ARM; TARGETDIR=arm;;
- cris-*-*) TARGET=LIBFFI_CRIS; TARGETDIR=cris;;
- s390-*-linux-*) TARGET=S390; TARGETDIR=s390;;
- s390x-*-linux-*) TARGET=S390; TARGETDIR=s390;;
--x86_64-*-linux* | x86_64-*-freebsd* | x86_64-*-kfreebsd*-gnu) TARGET=X86_64; TARGETDIR=x86;;
-+x86_64-*-linux* | amd64-*-freebsd* | amd64-*-kfreebsd*-gnu) TARGET=X86_64; TARGETDIR=x86;;
- x86_64-*-darwin*) TARGET=X86_DARWIN; TARGETDIR=x86;;
- sh-*-linux* | sh[34]*-*-linux*) TARGET=SH; TARGETDIR=sh;;
- sh-*-rtems*) TARGET=SH; TARGETDIR=sh;;
-@@ -21725,11 +21726,6 @@
+--- configure.orig	2008-01-29 15:15:17.000000000 +0000
++++ configure	2008-02-08 04:04:16.000000000 +0000
+@@ -20366,6 +20366,10 @@
+ 	HAVE_LONG_DOUBLE='defined(__LONG_DOUBLE_128__)'
+ 	;;
+ 
++  amd64-*-freebsd*)
++	TARGET=X86_64; TARGETDIR=x86
++	;;
++
+   arm*-*-*)
+ 	TARGET=ARM; TARGETDIR=arm
+ 	;;
+@@ -22673,11 +22677,6 @@
    toolexecdir='$(libdir)/gcc-lib/$(target_alias)'
    toolexeclibdir='$(libdir)'
  fi
