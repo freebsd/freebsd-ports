@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.14
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -28,7 +28,7 @@ DOCS=		COPYING ChangeLog README THANKS
 BINS=		tcamgr tcatest tcbmgr tcbmttest tcbtest tchmgr tchmttest \
 		tchtest tcucodec tcumttest tcutest
 LIBS=		libtokyocabinet.a libtokyocabinet.so libtokyocabinet.so.1 \
-		libtokyocabinet.so.1.29.0
+		libtokyocabinet.so.1.33.0
 INCLUDES=	tcbdb.h tchdb.h tcutil.h
 
 OPTIONS=	DEBUG "Debugging support" off \
