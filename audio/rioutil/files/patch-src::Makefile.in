@@ -1,40 +1,28 @@
---- src/Makefile.in.orig	Thu Aug 19 03:13:54 2004
-+++ src/Makefile.in	Thu Aug 19 04:14:32 2004
-@@ -98,12 +98,12 @@
- install_sh = @install_sh@
- bin_PROGRAMS = rioutil
- 
--INCLUDES = -I$(top_srcdir)/include -I/usr/local/include
-+INCLUDES = -I$(top_srcdir)/include
- 
--rioutil_SOURCES = main.c getopt.c getopt1.c main.h getopt.h
-+rioutil_SOURCES = main.c main.h
- 
- @MACOSX_TRUE@rioutil_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la -lIOKit
--@MACOSX_FALSE@rioutil_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la
-+@MACOSX_FALSE@rioutil_LDADD = $(top_srcdir)/librioutil/librioutil.la
- @MACOSX_TRUE@CFLGS = -traditional-cpp
- 
- rioutil_DEPENDENCIES = $(top_srcdir)/librioutil/librioutil.la
-@@ -114,7 +114,7 @@
- bin_PROGRAMS = rioutil$(EXEEXT)
+--- src/Makefile.in.orig	Fri Feb 15 20:49:03 2008
++++ src/Makefile.in	Fri Feb 15 20:49:33 2008
+@@ -51,7 +51,7 @@
+ am__installdirs = "$(DESTDIR)$(bindir)"
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
  PROGRAMS = $(bin_PROGRAMS)
- 
 -am_rioutil_OBJECTS = main.$(OBJEXT) getopt.$(OBJEXT) getopt1.$(OBJEXT)
 +am_rioutil_OBJECTS = main.$(OBJEXT)
  rioutil_OBJECTS = $(am_rioutil_OBJECTS)
- rioutil_LDFLAGS =
- 
-@@ -125,7 +125,7 @@
- LIBS = @LIBS@
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/include
  depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
--@AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/getopt.Po ./$(DEPDIR)/getopt1.Po \
-+@AMDEP_TRUE@DEP_FILES = \
- @AMDEP_TRUE@	./$(DEPDIR)/main.Po
- COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
- 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-@@ -187,8 +187,6 @@
+@@ -172,9 +172,9 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-INCLUDES = -I$(top_srcdir)/include -I/usr/local/include
+-rioutil_SOURCES = main.c getopt.c getopt1.c main.h getopt.h
+-@MACOSX_FALSE@rioutil_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la
++INCLUDES = -I$(top_srcdir)/include
++rioutil_SOURCES = main.c main.h
++@MACOSX_FALSE@rioutil_LDADD = $(top_srcdir)/librioutil/librioutil.la
+ @MACOSX_TRUE@rioutil_LDADD = -L/usr/local/lib $(top_srcdir)/librioutil/librioutil.la -lIOKit
+ @MACOSX_TRUE@PREBIND_FLAGS = -prebind
+ rioutil_LDFLAGS = $(PREBIND_FLAGS)
+@@ -250,8 +250,6 @@
  distclean-compile:
  	-rm -f *.tab.c
  
@@ -42,4 +30,4 @@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt1.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
  
- distclean-depend:
+ .c.o:
