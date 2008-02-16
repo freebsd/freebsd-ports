@@ -358,6 +358,7 @@
     SUBDIR += p5-Authen-TypeKey
     SUBDIR += p5-Business-PayPal-EWP
     SUBDIR += p5-CSP
+    SUBDIR += p5-Cisco-Hash
     SUBDIR += p5-Crypt-Anubis
     SUBDIR += p5-Crypt-AppleTwoFish
     SUBDIR += p5-Crypt-Blowfish
