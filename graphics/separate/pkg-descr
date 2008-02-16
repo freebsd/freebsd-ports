@@ -1,0 +1,9 @@
+Separate+ is a CMYK Separation plugin for The GIMP.
+
+One thing preventing The GIMP from being useful
+in a pre-press environment is the lack of support
+for the CMYK colour-space. This plug-in goes some
+small way towards rectifying the situation, using
+a trick with layers to fake CMYK support.
+
+WWW: http://cue.yellowmagic.info/softwares/separate.html
