@@ -1,0 +1,204 @@
+--- cmddata.cpp	Tue Oct  4 11:57:54 2005
++++ cmddata.cpp	Mon Jan 16 18:06:24 2006
+@@ -123,6 +123,34 @@
+   if (Test && Extract)
+     Test=false;
+   BareOutput=(CmdChar=='L' || CmdChar=='V') && Command[1]=='B';
++#ifdef WITH_ICONV
++  if ( (encInt[0] != '\0') || (encExt[0] != '\0') ) {
++    char fullEncInt[ENC_MAXLEN + OPT_MAXLEN + 1];
++    char fullEncExt[ENC_MAXLEN + OPT_MAXLEN + 1];
++
++    strcpy(fullEncInt, encInt);
++    strcpy(fullEncExt, encExt);
++
++    if (encOpt[0] == '\0') strcpy(encOpt, OPT_DEFAULT);
++
++    if (encOpt[0] != '\0') {
++      strcat(fullEncInt, "//"); strcat(fullEncInt, encOpt);
++      strcat(fullEncExt, "//"); strcat(fullEncExt, encOpt);
++    }
++
++    h_E2I = iconv_open(fullEncInt, encExt);
++    h_I2E = iconv_open(fullEncExt, encInt);
++
++    if ( (h_E2I == (iconv_t)(-1)) || (h_I2E == (iconv_t)(-1)) ) {
++      if (h_E2I != (iconv_t)(-1)) iconv_close(h_E2I);
++      if (h_I2E != (iconv_t)(-1)) iconv_close(h_I2E);
++      mprintf(St(MIconvCannotOpen), encInt, encExt, encOpt);
++    }
++  } else {
++    h_E2I = (iconv_t)(-1);
++    h_I2E = (iconv_t)(-1);
++  }
++#endif
+ }
+ 
+ 
+@@ -746,6 +774,22 @@
+           break;
+       }
+       break;
++#ifdef WITH_ICONV
++    case 'L':
++      switch(toupper(Switch[1]))
++      {
++	case 'L':
++	  strncpy(encExt, Switch+2, sizeof(encExt)-1);
++	  break;
++        case 'A':
++	  strncpy(encInt, Switch+2, sizeof(encInt)-1);
++	  break;
++	case 'O':
++	  strncpy(encOpt, Switch+2, sizeof(encOpt)-1);
++	  break;
++      }
++      break;
++#endif
+ #ifndef GUI
+     case '?' :
+       OutHelp();
+@@ -964,7 +920,11 @@
+     MCHelpCmdT,MCHelpCmdV,MCHelpCmdX,MCHelpSw,MCHelpSwm,MCHelpSwAC,MCHelpSwAD,
+     MCHelpSwAP,MCHelpSwAVm,MCHelpSwCm,MCHelpSwCFGm,MCHelpSwCL,MCHelpSwCU,
+     MCHelpSwDH,MCHelpSwEP,MCHelpSwEP3,MCHelpSwF,MCHelpSwIDP,MCHelpSwIERR,
+-    MCHelpSwINUL,MCHelpSwIOFF,MCHelpSwKB,MCHelpSwN,MCHelpSwNa,MCHelpSwNal,
++    MCHelpSwINUL,MCHelpSwIOFF,MCHelpSwKB,
++#ifdef WITH_ICONV
++    MCHelpSwLA,MCHelpSwLL,MCHelpSwLO,
++#endif
++    MCHelpSwN,MCHelpSwNa,MCHelpSwNal,
+     MCHelpSwOp,MCHelpSwOm,MCHelpSwOC,MCHelpSwOR,MCHelpSwOW,MCHelpSwP,
+     MCHelpSwPm,MCHelpSwR,MCHelpSwRI,MCHelpSwSL,MCHelpSwSM,MCHelpSwTA,
+     MCHelpSwTB,MCHelpSwTN,MCHelpSwTO,MCHelpSwTS,MCHelpSwU,MCHelpSwVUnr,
+--- global.hpp	Tue Oct  4 11:57:54 2005
++++ global.hpp	Mon Jan 16 18:04:41 2006
+@@ -9,6 +9,19 @@
+ 
+ EXTVAR ErrorHandler ErrHandler;
+ 
++#ifdef WITH_ICONV
+ 
++#define OPT_DEFAULT "IGNORE"	/* ignore unrepresentable chars */
++
++#define ENC_MAXLEN 32		/* encoding name maximum length */
++#define OPT_MAXLEN 9		/* strlen("TRANSLIT") */
++
++EXTVAR iconv_t h_E2I;			/* ExtToInt handler */
++EXTVAR iconv_t h_I2E;			/* IntToExt handler */
++EXTVAR char encInt[ENC_MAXLEN];	/* internal (archive) encoding */
++EXTVAR char encExt[ENC_MAXLEN];	/* external (filesystem) encoding */
++EXTVAR char encOpt[OPT_MAXLEN];	/* encoding option (ignore/translit) */
++
++#endif
+ 
+ #endif
+--- loclang.hpp	Tue Oct  4 11:57:54 2005
++++ loclang.hpp	Mon Jan 16 18:04:41 2006
+@@ -6,7 +6,7 @@
+ #define   MCopyright         "\nRAR %s   Copyright (c) 1993-%d Alexander Roshal   %d %s %d"
+ #define   MRegTo             "\nRegistered to %s\n"
+ #define   MShare             "\nShareware version         Type RAR -? for help\n"
+-#define   MUCopyright        "\nUNRAR %s freeware      Copyright (c) 1993-%d Alexander Roshal\n"
++#define   MUCopyright        "\nUNRAR %s (iconv) freeware      Copyright (c) 1993-%d Alexander Roshal\n"
+ #define   MBeta              "beta"
+ #define   MMonthJan          "Jan"
+ #define   MMonthFeb          "Feb"
+@@ -310,7 +310,7 @@
+ #define   MSyncScanError     "\nFile search errors, cannot synchronize archive"
+ #define   MCorrectingName    "\nWARNING: Attempting to correct the invalid file name"
+ #define   MUnpCannotMerge    "\nWARNING: You need to start extraction from a previous volume to unpack %s"
+-#define   MUnknownOption     "\nERROR: Unknown option: %s"
++#define   MUnknownOption     "\nERROR: Unknown option: %s\n"
+ #define   MSubHeadCorrupt    "\nERROR: Corrupt data header found, ignored"
+ #define   MSubHeadUnknown    "\nWARNING: Unknown data header format, ignored"
+ #define   MSubHeadDataCRC    "\nERROR: Corrupt %s data block"
+@@ -338,3 +338,9 @@
+ #define   MMaxPathLimit      "\nTotal path and file name length must not exceed %d characters"
+ #define   MRecVolLimit       "\nTotal number of usual and recovery volumes must not exceed 255"
+ #define   MVolumeNumber      "volume %d"
++#ifdef WITH_ICONV
++#define MCHelpSwLA           "\n  la<encoding>  Archive internal filenames encoding"
++#define MCHelpSwLL           "\n  ll<encoding>  Your locale encoding"
++#define MCHelpSwLO           "\n  lo<option>    Encoding option {ignore,translit,<empty>}"
++#define MIconvCannotOpen     "\nCannot open iconv to convert between '%s' and '%s' with option '%s'"
++#endif
+--- makefile.unix	Sat Apr 30 11:00:12 2005
++++ makefile.unix	Mon Jan 16 18:04:41 2006
+@@ -10,6 +10,13 @@
+ CXXFLAGS=-O2
+ DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+ STRIP=strip
++# iconv stuff. Remove #ICONV# to enable
++# where to get iconv.h
++CXXFLAGS+= -I/usr/local/include
++# where to get libiconv.so*
++LIBS+= -L/usr/local/lib -liconv
++# enable iconv stuff
++DEFINES+= -DWITH_ICONV
+ 
+ # Linux using LCC
+ #CXX=lcc
+--- os.hpp	Tue Oct  4 11:57:54 2005
++++ os.hpp	Mon Jan 16 18:04:41 2006
+@@ -169,6 +169,10 @@
+ #include <utime.h>
+ #include <locale.h>
+ 
++#ifdef WITH_ICONV
++#include <iconv.h>
++#endif
++
+ #ifdef  S_IFLNK
+ #define SAVE_LINKS
+ #endif
+--- strfn.cpp	Tue Oct  4 11:57:54 2005
++++ strfn.cpp	Mon Jan 16 18:04:41 2006
+@@ -22,23 +22,49 @@
+ 
+ void ExtToInt(const char *Src,char *Dest)
+ {
++#ifdef WITH_ICONV
++  static size_t ret;
++  ret = (size_t)(-1);
++  if (h_E2I != (iconv_t)(-1)) {
++    static size_t inbytesleft, outbytesleft;
++
++    inbytesleft = strlen(Src);
++    outbytesleft = inbytesleft;
++    ret = iconv(h_E2I, &Src, &inbytesleft, &Dest, &outbytesleft);
++  }
++  if (ret == (size_t)(-1)) strcpy(Dest, Src);
++#else	/* !WITH_ICONV */
+ #if defined(_WIN_32)
+   CharToOem(Src,Dest);
+ #else
+   if (Dest!=Src)
+     strcpy(Dest,Src);
+ #endif
++#endif	/* !WITH_ICONV */
+ }
+ 
+ 
+ void IntToExt(const char *Src,char *Dest)
+ {
++#ifdef WITH_ICONV
++  static size_t ret;
++  ret = (size_t)(-1);
++  if (h_I2E != (iconv_t)(-1)) {
++    static size_t inbytesleft, outbytesleft;
++
++    inbytesleft = strlen(Src);
++    outbytesleft = inbytesleft;
++    ret = iconv(h_I2E, &Src, &inbytesleft, &Dest, &outbytesleft);
++  }
++  if (ret == (size_t)(-1)) strcpy(Dest, Src);
++#else	/* !WITH_ICONV */
+ #if defined(_WIN_32)
+   OemToChar(Src,Dest);
+ #else
+   if (Dest!=Src)
+     strcpy(Dest,Src);
+ #endif
++#endif	/* !WITH_ICONV */
+ }
