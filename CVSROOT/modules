@@ -2249,6 +2249,7 @@ drupal5-insert-view	ports/www/drupal5-insert-view
 drupal5-nice_menus	ports/www/drupal5-nice_menus
 drupal5-securepages	ports/www/drupal5-securepages
 drupal5-simplenews	ports/www/drupal5-simplenews
+drupal5-tapir	ports/www/drupal5-tapir
 drupal5-taxonomy_access	ports/www/drupal5-taxonomy_access
 drupal5-taxonomy_ticker	ports/www/drupal5-taxonomy_ticker
 drupal5-tinymce	ports/www/drupal5-tinymce
