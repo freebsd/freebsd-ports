@@ -2255,6 +2255,7 @@ drupal5-simplenews	ports/www/drupal5-simplenews
 drupal5-tapir	ports/www/drupal5-tapir
 drupal5-taxonomy_access	ports/www/drupal5-taxonomy_access
 drupal5-taxonomy_ticker	ports/www/drupal5-taxonomy_ticker
+drupal5-thickbox	ports/www/drupal5-thickbox
 drupal5-tinymce	ports/www/drupal5-tinymce
 drupal5-token	ports/www/drupal5-token
 drupal5-ubrowser	ports/www/drupal5-ubrowser
