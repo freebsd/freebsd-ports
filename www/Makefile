@@ -737,6 +737,7 @@
     SUBDIR += p5-HTML-LinkExtractor
     SUBDIR += p5-HTML-Lint
     SUBDIR += p5-HTML-Location
+    SUBDIR += p5-HTML-Macro
     SUBDIR += p5-HTML-Mason
     SUBDIR += p5-HTML-Pager
     SUBDIR += p5-HTML-Parser
