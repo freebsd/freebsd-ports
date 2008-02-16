@@ -1,0 +1,4 @@
+bin/fontmatrix
+share/applications/fontmatrix.desktop
+share/icons/hicolor/48x48/apps/fontmatrix.png
+@dirrmtry share/applications
