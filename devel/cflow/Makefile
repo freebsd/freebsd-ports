@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	devel/lang/c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A call graph generator for C code
 
+CONFLICTS=	gnucflow-[0-9]*
+
 USE_GMAKE=	yes
 MAN1=		cflow.1
 MANCOMPRESSED=	yes
