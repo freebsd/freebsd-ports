@@ -6540,6 +6540,7 @@ libdockapp	ports/x11-wm/libdockapp
 libdomainkeys	ports/mail/libdomainkeys
 libdrm		ports/graphics/libdrm
 libds		ports/devel/libds
+libdsk		ports/emulators/libdsk
 libdsp		ports/devel/libdsp
 libdssialsacompat	ports/audio/libdssialsacompat
 libdungeonmaker	ports/games/libdungeonmaker
