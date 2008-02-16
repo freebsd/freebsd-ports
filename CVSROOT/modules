@@ -9630,6 +9630,7 @@ p5-Data-Swap	ports/devel/p5-Data-Swap
 p5-Data-Table	ports/devel/p5-Data-Table
 p5-Data-Taxonomy-Tags	ports/devel/p5-Data-Taxonomy-Tags
 p5-Data-TemporaryBag	ports/devel/p5-Data-TemporaryBag
+p5-Data-Throttler	ports/devel/p5-Data-Throttler
 p5-Data-TreeDumper	ports/devel/p5-Data-TreeDumper
 p5-Data-TreeDumper-Renderer-DHTML	ports/www/p5-Data-TreeDumper-Renderer-DHTML
 p5-Data-Types	ports/devel/p5-Data-Types
