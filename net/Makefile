@@ -768,6 +768,7 @@
     SUBDIR += rshell
     SUBDIR += rsync
     SUBDIR += rtg
+    SUBDIR += rtpbreak
     SUBDIR += ruby-dict
     SUBDIR += ruby-icmp
     SUBDIR += ruby-ldap
