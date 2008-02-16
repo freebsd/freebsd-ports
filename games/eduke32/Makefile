@@ -5,17 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	eduke32
-PORTVERSION=	20060718
-PORTREVISION=	3
+PORTVERSION=	20080206
 CATEGORIES=	games
-MASTER_SITES=	SF
-DISTFILES=	${PORTNAME}_src_${PORTVERSION}${EXTRACT_SUFX} \
-		txbuild_src_${PORTVERSION}${EXTRACT_SUFX}
-
-PATCH_SITES=	http://gid0.free.fr/eduke32/
-PATCHFILES=	${PORTNAME}_src_${PORTVERSION}.patch \
-		txbuild_src_${PORTVERSION}.patch
-PATCH_DIST_STRIP=	-p0
+MASTER_SITES=	http://wiki.eduke32.com/stuff/
+DISTFILES=	${PORTNAME}_src_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	olivier@gid0.org
 COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
@@ -30,8 +23,7 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_GNOME=	gtk20
 USE_SDL=	mixer sdl
-WRKSRC=		${WRKDIR}/${PORTNAME}_src_${PORTVERSION}
-PATCH_WRKSRC=	${WRKDIR}
+WRKSRC=		${WRKDIR}/${PORTNAME}_src_${PORTVERSION}/${PORTNAME}
 
 OPTIONS=	MIDI "Enable MIDI support" on
 
@@ -45,19 +37,15 @@ RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity
 
 post-patch:
 	@${REINPLACE_CMD} -Ee \
-		's|^(EROOT=)../build/|\1../txbuild_src_${PORTVERSION}/|; \
-		 s|^(CC=).*|\1${CC}|; \
+		's|^(CC=).*|\1${CC}|; \
 		 s|^(CXX=).*|\1${CXX}|; \
-		 s|^(NASMFLAGS=).*|\1 -s -f elf|; \
 		 s|/usr/X11R6|${X11BASE}|; \
 		 s|sdl-config|${SDL_CONFIG}|' \
 		${WRKSRC}/Makefile \
-		${WRKDIR}/txbuild_src_${PORTVERSION}/Makefile \
-		${WRKDIR}/txbuild_src_${PORTVERSION}/Makefile.shared
+		${WRKSRC}/../build/Makefile \
+		${WRKSRC}/../build/Makefile.shared
 	@${REINPLACE_CMD} -e 's|/usr/share/games/eduke32|${DN3DDIR}|' \
 		${WRKSRC}/source/game.c ${WRKSRC}/source/astub.c
-	@${REINPLACE_CMD} -e 's,^#if defined RENDERTYPEWIN || .*,#if 0,' \
-		${WRKSRC}/source/game.c
 
 do-install:
 .for f in eduke32 mapster32
