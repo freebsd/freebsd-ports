@@ -10,8 +10,8 @@ PORTVERSION=	0.6.22
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnokii/ \
-		ftp://ftp.gnokii.org/pub/gnokii/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		ftp://ftp.gnokii.org/pub/gnokii/ \
+		http://www.gnokii.org/download/gnokii/0.6.x/
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Tools to talk to GSM cellular phones
