@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/RobotRules/Parser/.packlist
+%%SITE_PERL%%/WWW/RobotRules/Parser.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/RobotRules/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/RobotRules
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/RobotRules
+@dirrmtry %%SITE_PERL%%/WWW
