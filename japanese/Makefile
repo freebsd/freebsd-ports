@@ -315,6 +315,7 @@
     SUBDIR += ruby-tk
     SUBDIR += ruby-uconv
     SUBDIR += ruby-usersguide
+    SUBDIR += rubygem-jpmobile
     SUBDIR += rxvt
     SUBDIR += ryaku-fpw
     SUBDIR += samba
