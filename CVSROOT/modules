@@ -11832,6 +11832,7 @@ p5-qpsmtpd	ports/mail/p5-qpsmtpd
 p5-qt		ports/x11-toolkits/p5-qt
 p5-reaper	ports/devel/p5-reaper
 p5-rpm-build-perl	ports/devel/p5-rpm-build-perl
+p5-self		ports/devel/p5-self
 p5-sqlrelay	ports/databases/p5-sqlrelay
 p5-subatom	ports/devel/p5-subatom
 p5-tagged	ports/audio/p5-tagged
