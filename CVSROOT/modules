@@ -5470,6 +5470,7 @@ ja-ruby-slang	ports/japanese/ruby-slang
 ja-ruby-tk	ports/japanese/ruby-tk
 ja-ruby-uconv	ports/japanese/ruby-uconv
 ja-ruby-usersguide	ports/japanese/ruby-usersguide
+ja-rubygem-jpmobile	ports/japanese/rubygem-jpmobile
 ja-rxvt		ports/japanese/rxvt
 ja-ryaku-fpw	ports/japanese/ryaku-fpw
 ja-samba	ports/japanese/samba
