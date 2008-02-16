@@ -1,0 +1,5 @@
+--------------------------------------------------
+To use readline-java add the file
+%%JAVAJARDIR%%/libreadline-java.jar
+to your classpath!
+--------------------------------------------------

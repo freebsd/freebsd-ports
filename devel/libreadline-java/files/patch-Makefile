@@ -1,0 +1,59 @@
+--- Makefile	2003-01-07 11:14:35.000000000 +0100
++++ /tmp/libreadline-java-0.8.0/Makefile	2007-09-22 22:11:13.000000000 +0200
+@@ -54,11 +54,11 @@
+ JAVALIBDIR= $(PREFIX)/share/java
+ 
+ # libraries to build
+-T_LIBS    = JavaReadline
++T_LIBS    = JavaReadline JavaEditline JavaGetline
+ 
+ # Operating system dependent
+ JAVAINCLUDE       = $(JAVA_HOME)/include
+-JAVANATINC        = $(JAVA_HOME)/include/linux
++JAVANATINC        = $(JAVA_HOME)/include/freebsd
+ 
+ ifeq (MSC,$(WIN32))
+ JAVA_HOME := c:/j2sdk1.4.0
+@@ -69,9 +69,14 @@
+ endif
+ 
+ ## normal javac
+-JAVAC = javac
++JAVAC ?= javac
+ JC_FLAGS = 
+ 
++## other tools
++JAVA ?= java
++JAVAH ?= javah
++JAR_ ?= jar
++
+ ## with jikes
+ #JAVAC = jikes
+ #JC_FLAGS = -O +E
+@@ -86,7 +91,7 @@
+ world : jar build-native
+ 
+ jar: build-java
+-	cd $(BUILDDIR) ; jar -cvmf ../$(MF_STUB) ../$(JAR) *
++	cd $(BUILDDIR) ; $(JAR_) -cvmf ../$(MF_STUB) ../$(JAR) *
+ 
+ $(JAR):
+ 	cd $(BUILDDIR) ; jar -cvmf ../$(MF_STUB) ../$(JAR) *
+@@ -96,7 +101,7 @@
+ 
+ build-native: 
+ 	cd src; $(MAKE) T_LIBS="$(T_LIBS)" JAVAINCLUDE="$(JAVAINCLUDE)" \
+-		        JAVANATINC="$(JAVANATINC)" native
++		        JAVANATINC="$(JAVANATINC)" JAVAH="$(JAVAH)" native
+ 
+ apidoc: $(APIDIR)
+ 	javadoc -sourcepath src -d $(APIDIR) -windowtitle $(WTITLE) \
+@@ -140,7 +145,7 @@
+ 	rpm --define _topdir$(RPM_BASE) -ba $(RPM_BASE)/SPECS/libreadline-java.spec
+ 
+ test: $(JAR) build-native
+-	LD_LIBRARY_PATH=. java -jar $(JAR) src/test/tinputrc $(ARGS)
++	LD_LIBRARY_PATH=. $(JAVA) -jar $(JAR) src/test/tinputrc $(ARGS)
+ 
+ clean:
+ 	$(MAKE) -C src/native clean

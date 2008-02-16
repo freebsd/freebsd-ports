@@ -1,0 +1,17 @@
+Java-Readline is a port of GNU Readline for Java. Or, to be more
+precise, it is a JNI-wrapper to Readline. It is distributed under the
+LGPL.
+
+You must call Readline.load(ReadlineLibrary lib); before using any
+other methods.  If you omit the call to the load()-method, the pure
+Java fallback solution is used.  Possible values for lib are:
+
+ReadlineLibrary.PureJava
+ReadlineLibrary.GnuReadline
+ReadlineLibrary.Editline
+ReadlineLibrary.Getline
+
+Note that all programs using GnuReadline will fall under the GPL,
+since Gnu-Readline is GPL software!
+
+WWW: http://sourceforge.net/projects/java-readline/
