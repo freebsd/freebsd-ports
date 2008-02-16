@@ -1,0 +1,5 @@
+The Content Construction Kit allows you create and customize fields using a web
+browser. In Drupal 5.x custom content types can be created in core, and CCK
+allows you to add custom fields to any content type.
+
+WWW: http://drupal.org/project/cck
