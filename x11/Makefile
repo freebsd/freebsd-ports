@@ -323,6 +323,7 @@
     SUBDIR += xcalib
     SUBDIR += xcb
     SUBDIR += xcb-proto
+    SUBDIR += xcb-util
     SUBDIR += xclick
     SUBDIR += xclip
     SUBDIR += xclipboard
