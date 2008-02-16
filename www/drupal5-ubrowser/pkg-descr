@@ -1,0 +1,9 @@
+uBrowser is the new way to browse taxonomy for Drupal 5.x. It creates an easy
+to use interface for browsing vocabularies (categories) like you would browse
+a directory tree. Each term in the vocabulary is like a file folder, and
+clicking on it in the category select box will display all the nodes that have
+been classified with that term in the node select box. The look may be changed
+in the CSS, but other display options such as search forms, action buttons,
+and display names may be specified when the uBrowser is built for display.
+
+WWW: http://drupal.org/project/ubrowser
