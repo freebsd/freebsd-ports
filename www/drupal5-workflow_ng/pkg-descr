@@ -1,0 +1,5 @@
+Workflow-ng allows one to customize drupal's built in workflows in a very
+flexible way. In short, it's a rule-based event driven action evaluation
+system.
+
+WWW: http://drupal.org/project/workflow_ng
