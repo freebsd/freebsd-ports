@@ -1,7 +1,22 @@
 libexec/xfce4/panel-plugins/xfce4-fsguard-plugin
+share/icons/hicolor/16x16/apps/xfce4-fsguard-plugin-urgent.png
+share/icons/hicolor/16x16/apps/xfce4-fsguard-plugin-warning.png
+share/icons/hicolor/16x16/apps/xfce4-fsguard-plugin.png
+share/icons/hicolor/22x22/apps/xfce4-fsguard-plugin-urgent.png
+share/icons/hicolor/22x22/apps/xfce4-fsguard-plugin-warning.png
+share/icons/hicolor/22x22/apps/xfce4-fsguard-plugin.png
+share/icons/hicolor/24x24/apps/xfce4-fsguard-plugin-urgent.png
+share/icons/hicolor/24x24/apps/xfce4-fsguard-plugin-warning.png
+share/icons/hicolor/24x24/apps/xfce4-fsguard-plugin.png
 share/icons/hicolor/32x32/apps/xfce4-fsguard-plugin-urgent.png
 share/icons/hicolor/32x32/apps/xfce4-fsguard-plugin-warning.png
 share/icons/hicolor/32x32/apps/xfce4-fsguard-plugin.png
+share/icons/hicolor/36x36/apps/xfce4-fsguard-plugin-urgent.png
+share/icons/hicolor/36x36/apps/xfce4-fsguard-plugin-warning.png
+share/icons/hicolor/36x36/apps/xfce4-fsguard-plugin.png
+share/icons/hicolor/48x48/apps/xfce4-fsguard-plugin-urgent.png
+share/icons/hicolor/48x48/apps/xfce4-fsguard-plugin-warning.png
+share/icons/hicolor/48x48/apps/xfce4-fsguard-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin-urgent.svg
 share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin-warning.svg
 share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin.svg
@@ -16,6 +31,7 @@ share/locale/hu/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/ko/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/lt/LC_MESSAGES/xfce4-fsguard-plugin.mo
+share/locale/lv/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/nb_NO/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-fsguard-plugin.mo
@@ -23,11 +39,14 @@ share/locale/pt_PT/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-fsguard-plugin.mo
+share/locale/ur/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/xfce4/panel-plugins/fsguard.desktop
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
 @dirrmtry libexec/xfce4/panel-plugins
