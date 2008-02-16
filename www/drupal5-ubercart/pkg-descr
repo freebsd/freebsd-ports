@@ -1,0 +1,10 @@
+Ubercart is an e-commerce suite developed for Drupal. It has been designed with
+the end user in mind, focusing on usability in three key areas: store
+configuration, product and catalog creation, and order administration. On the
+front end, all major systems are configurable and integrate with the standard
+Drupal systems (node, taxonomy, user, etc.). On the back end, the settings
+pages and order administration pages have been designed with ease of use in
+mind, and we are constantly working to lower the barrier to entry for new
+Ubercart users.
+
+WWW: http://drupal.org/project/ubercart

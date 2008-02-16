@@ -150,6 +150,7 @@
     SUBDIR += drupal5-thickbox
     SUBDIR += drupal5-tinymce
     SUBDIR += drupal5-token
+    SUBDIR += drupal5-ubercart
     SUBDIR += drupal5-ubrowser
     SUBDIR += drupal5-views
     SUBDIR += drupal5-workflow_ng
