@@ -1035,6 +1035,7 @@
     SUBDIR += p5-Cvs
     SUBDIR += p5-DB_File-Lock
     SUBDIR += p5-Danga-Socket
+    SUBDIR += p5-Danga-Socket-Callback
     SUBDIR += p5-Data-ACL
     SUBDIR += p5-Data-Alias
     SUBDIR += p5-Data-Bind
