@@ -1,0 +1,3 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Kwalitee/.packlist
+%%SITE_PERL%%/Test/Kwalitee.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Kwalitee
