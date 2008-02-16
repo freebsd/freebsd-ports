@@ -1,13 +1,13 @@
 $FreeBSD$
 
---- ../../j2se/make/sun/splashscreen/Makefile.orig	Fri Oct 26 10:33:27 2007
-+++ ../../j2se/make/sun/splashscreen/Makefile	Fri Oct 26 10:35:59 2007
-@@ -49,7 +49,7 @@
-     ifeq ($(OS_VENDOR), NetBSD)
-       ICONV_DIR = /usr/pkg
-     else
+--- ../../j2se/make/sun/splashscreen/Makefile.orig	Sat Feb 16 11:45:24 2008
++++ ../../j2se/make/sun/splashscreen/Makefile	Sat Feb 16 11:45:37 2008
+@@ -47,7 +47,7 @@
+   CFLAGS += -DWITH_X11
+   ifeq ($(PLATFORM), bsd)
+     ifneq ($(OS_VENDOR), NetBSD)
 -      ICONV_DIR = /usr/local
 +      ICONV_DIR = ${LOCALBASE}
+       ICONV_LIB = -L$(ICONV_DIR)/lib -liconv
      endif
      CPPFLAGS += -I$(OPENWIN_HOME)/include \
-                 -I$(OPENWIN_HOME)/include/X11/extensions \
