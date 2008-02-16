@@ -16456,6 +16456,7 @@ v6eval		ports/net/v6eval
 v7sh		ports/shells/v7sh
 vMac		ports/emulators/vMac
 v_sim		ports/science/v_sim
+vacation	ports/mail/vacation
 vala		ports/lang/vala
 valgrind	ports/devel/valgrind
 valgrind-snapshot	ports/devel/valgrind-snapshot
