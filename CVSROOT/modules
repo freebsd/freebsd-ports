@@ -2246,6 +2246,7 @@ drupal5-disknode	ports/www/drupal5-disknode
 drupal5-google_analytics	ports/www/drupal5-google_analytics
 drupal5-gsitemap	ports/www/drupal5-gsitemap
 drupal5-i18n	ports/www/drupal5-i18n
+drupal5-imagecache	ports/www/drupal5-imagecache
 drupal5-imagefield	ports/www/drupal5-imagefield
 drupal5-insert-view	ports/www/drupal5-insert-view
 drupal5-nice_menus	ports/www/drupal5-nice_menus
