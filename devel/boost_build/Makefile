@@ -229,7 +229,110 @@ BOOST_BUILD_DOC_FILES=		\
 
 PLIST_DIRS+=	${BOOST_BUILD_DOC_DIRS:C/^/${DOCSDIR_REL}\//} \
 		${DOCSDIR_REL}
-PLIST_FILES+=	${BOOST_BUILD_DOC_FILES:C/^/${DOCSDIR_REL}\//}
+PLIST_FILES+=	${BOOST_BUILD_DOC_FILES:C/^/${DOCSDIR_REL}\//} \
+		share/doc/boost.png
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+BOOST_BUILD_EXAMPLE_DIRS=		\
+	variant/libs			\
+	variant				\
+	qt/qt4/uic			\
+	qt/qt4/moccable-cpp		\
+	qt/qt4/hello			\
+	qt/qt4				\
+	qt/qt3/uic			\
+	qt/qt3/moccable-cpp		\
+	qt/qt3/hello			\
+	qt/qt3				\
+	qt				\
+	python_modules			\
+	pch/source			\
+	pch/include			\
+	pch				\
+	make				\
+	libraries/util/foo/include	\
+	libraries/util/foo		\
+	libraries/util			\
+	libraries/app			\
+	libraries			\
+	hello				\
+	gettext				\
+	generator			\
+	generate			\
+	customization
+
+BOOST_BUILD_EXAMPLE_FILES=			\
+	variant/readme.txt			\
+	variant/project-root.jam		\
+	variant/libs/l.cpp			\
+	variant/libs/Jamfile			\
+	variant/a.cpp				\
+	variant/Jamfile				\
+	qt/qt4/uic/main.cpp			\
+	qt/qt4/uic/hello_world_widget.ui	\
+	qt/qt4/uic/Jamroot			\
+	qt/qt4/moccable-cpp/main.cpp		\
+	qt/qt4/moccable-cpp/Jamroot		\
+	qt/qt4/hello/main.cpp			\
+	qt/qt4/hello/arrow.h			\
+	qt/qt4/hello/arrow.cpp			\
+	qt/qt4/hello/Jamroot			\
+	qt/qt3/uic/main.cpp			\
+	qt/qt3/uic/hello_world_widget.ui	\
+	qt/qt3/uic/Jamroot			\
+	qt/qt3/moccable-cpp/main.cpp		\
+	qt/qt3/moccable-cpp/Jamroot		\
+	qt/qt3/hello/main.cpp			\
+	qt/qt3/hello/canvas.h			\
+	qt/qt3/hello/canvas.cpp			\
+	qt/qt3/hello/Jamroot			\
+	qt/README.txt				\
+	python_modules/readme.txt		\
+	python_modules/python_helpers.py	\
+	python_modules/python_helpers.jam	\
+	python_modules/Jamroot			\
+	pch/source/hello_world.cpp		\
+	pch/include/pch.hpp			\
+	pch/Jamroot				\
+	make/readme.txt				\
+	make/main_cpp.pro			\
+	make/Jamroot				\
+	libraries/util/foo/include/lib1.h	\
+	libraries/util/foo/bar.cpp		\
+	libraries/util/foo/Jamfile		\
+	libraries/app/app.cpp			\
+	libraries/app/Jamfile			\
+	libraries/Jamroot			\
+	hello/hello.cpp				\
+	hello/Jamroot				\
+	gettext/russian.po			\
+	gettext/readme.txt			\
+	gettext/project-root.jam		\
+	gettext/main.cpp			\
+	gettext/Jamfile				\
+	generator/soap.jam			\
+	generator/foo.gci			\
+	generator/README.txt			\
+	generator/Jamroot			\
+	generate/a.cpp				\
+	generate/REAME.txt			\
+	generate/Jamroot			\
+	customization/verbatim.jam		\
+	customization/usage.verbatim		\
+	customization/t2.verbatim		\
+	customization/t1.verbatim		\
+	customization/readme.txt		\
+	customization/project-root.jam		\
+	customization/inline_file.py		\
+	customization/codegen.cpp		\
+	customization/class.verbatim		\
+	customization/Jamfile			\
+	boost-build.jam
+
+PLIST_DIRS+=	${BOOST_BUILD_EXAMPLE_DIRS:C/^/${EXAMPLESDIR_REL}\//} \
+		${EXAMPLESDIR_REL}
+PLIST_FILES+=	${BOOST_BUILD_EXAMPLE_FILES:C/^/${EXAMPLESDIR_REL}\//}
 .endif
 
 do-install:
@@ -245,8 +348,18 @@ do-install:
 .for _dir in ${BOOST_BUILD_DOC_DIRS}
 	@${MKDIR} ${DOCSDIR}/${_dir}
 .endfor
+	@${INSTALL_MAN} ${WRKSRC}/boost.png ${PREFIX}/share/doc/boost.png
 .for _file in ${BOOST_BUILD_DOC_FILES}
 	@${INSTALL_MAN} ${WRKSRC}/doc/${_file} ${DOCSDIR}/${_file}
+.endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+.for _dir in ${BOOST_BUILD_EXAMPLE_DIRS}
+	@${MKDIR} ${EXAMPLESDIR}/${_dir}
+.endfor
+.for _file in ${BOOST_BUILD_EXAMPLE_FILES}
+	@${INSTALL_MAN} ${WRKSRC}/example/${_file} ${EXAMPLESDIR}/${_file}
 .endfor
 .endif
 
