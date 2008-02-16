@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	cloc
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	misc
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.pl
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Counts lines of code
+
+RUN_DEPENDS=	p5-Algorithm-Diff>=0:${PORTSDIR}/devel/p5-Algorithm-Diff
 
 USE_PERL5_RUN=	yes
 EXTRACT_CMD=	${CP}
