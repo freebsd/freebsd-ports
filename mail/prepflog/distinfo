@@ -1,0 +1,6 @@
+MD5 (prepflog-0.3.tgz) = 28549d84742b99e1be3cd61516ce31bb
+SHA256 (prepflog-0.3.tgz) = 7f13cc976717a84a2c3f185d76c3dddeb139265ca2e7b29d1453168b8f425140
+SIZE (prepflog-0.3.tgz) = 5601
+MD5 (pflogsumm-patch.diff) = a01235f6115ab8f563715e66f96cb29b
+SHA256 (pflogsumm-patch.diff) = 8b1fcaac79145393a13178edb6993859cf2f75db89afd86d3c0089065c169244
+SIZE (pflogsumm-patch.diff) = 582

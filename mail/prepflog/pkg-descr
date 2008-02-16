@@ -1,0 +1,7 @@
+The script processes mail log files that are to be passed to pflogsumm
+or awstats disregarding the lines relating to the re-injection of
+messages into postfix.
+
+It is very useful for a postfix setup which uses amavis for virus filtering.
+
+WWW: http://www.gufonero.com/postfix/prepflog.html
