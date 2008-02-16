@@ -14989,6 +14989,7 @@ senna		ports/textproc/senna
 senso		ports/games/senso
 sensors-applet	ports/sysutils/sensors-applet
 sentinel	ports/mail/sentinel
+separate	ports/graphics/separate
 seq2		ports/misc/seq2
 seqio		ports/biology/seqio
 ser		ports/net/ser
