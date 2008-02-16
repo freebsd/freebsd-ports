@@ -1,14 +1,13 @@
---- libntfs-3g/Makefile.in.orig	Sat Aug 25 18:23:50 2007
-+++ libntfs-3g/Makefile.in	Mon Sep 10 14:38:59 2007
-@@ -82,7 +82,7 @@
- am__installdirs = "$(DESTDIR)$(libdir)"
- libLTLIBRARIES_INSTALL = $(INSTALL)
- LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
--libntfs_3g_la_LIBADD =
+--- libntfs-3g/Makefile.in.orig	Mon Jan 28 16:08:09 2008
++++ libntfs-3g/Makefile.in	Fri Feb  8 15:58:37 2008
+@@ -249,6 +249,7 @@
+ libntfs_3g_la_CFLAGS = $(AM_CFLAGS) -I$(top_srcdir)/include/ntfs-3g
+ libntfs_3g_la_LDFLAGS = -version-info $(LIBNTFS_3G_VERSION) -no-undefined
+ @FUSE_INTERNAL_TRUE@libntfs_3g_la_LIBADD = $(top_srcdir)/libfuse-lite/libfuse-lite.la
 +libntfs_3g_la_LIBADD = -lublio
- am_libntfs_3g_la_OBJECTS = libntfs_3g_la-attrib.lo \
- 	libntfs_3g_la-attrlist.lo libntfs_3g_la-bitmap.lo \
- 	libntfs_3g_la-bootsect.lo libntfs_3g_la-collate.lo \
+ libntfs_3g_la_SOURCES = attrib.c attrlist.c bitmap.c bootsect.c \
+ 	collate.c compat.c compress.c debug.c device.c dir.c index.c \
+ 	inode.c lcnalloc.c logfile.c logging.c mft.c misc.c mst.c \
 --- ./src/ntfs-3g.c.orig	Sun Apr 15 20:52:01 2007
 +++ ./src/ntfs-3g.c	Mon Apr 30 14:12:57 2007
 @@ -1603,7 +1603,11 @@
