@@ -7,6 +7,7 @@
 
 PORTNAME=	spring
 PORTVERSION=	0.76b1
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://spring.clan-sy.com/dl/ \
 		http://www.amdmi3.ru/distfiles/

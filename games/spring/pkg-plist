@@ -247,6 +247,7 @@ share/pixmaps/spring.png
 %%DATADIR%%/startscripts/ordertroops.lua
 %%DATADIR%%/uikeys.txt
 %%DATADIR%%/usericons.tdf
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/startscripts
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/base/spring
