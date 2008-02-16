@@ -4072,6 +4072,7 @@ gnuboy		ports/emulators/gnuboy
 gnucap		ports/cad/gnucap
 gnucash		ports/finance/gnucash
 gnucash-docs	ports/finance/gnucash-docs
+gnucflow	ports/devel/gnucflow
 gnuchess	ports/games/gnuchess
 gnudatalanguage	ports/science/gnudatalanguage
 gnudoku		ports/games/gnudoku
