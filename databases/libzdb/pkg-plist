@@ -9,4 +9,4 @@ lib/libzdb.a
 lib/libzdb.la
 lib/libzdb.so
 lib/libzdb-%%VERSION%%.so
-lib/libzdb-%%VERSION%%.so.2
+lib/libzdb-%%VERSION%%.so.4
