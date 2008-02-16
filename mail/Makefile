@@ -639,6 +639,7 @@
     SUBDIR += uebimiau
     SUBDIR += up-imapproxy
     SUBDIR += usendmail
+    SUBDIR += vacation
     SUBDIR += vbsfilter
     SUBDIR += vexim
     SUBDIR += vm
