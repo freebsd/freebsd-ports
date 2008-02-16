@@ -1,0 +1,5 @@
+Imagecache is a dynamic image manipulation and caching tool. It allows you to
+create a name space that corresponds to a set of image manipulation actions.
+Derivative images are generated the first time they are requested by a client.
+
+WWW: http://drupal.org/project/imagecache
