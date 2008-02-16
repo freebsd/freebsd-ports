@@ -13,8 +13,7 @@ Now fuse filesystems (sysutils/fusefs-*) can be mounted at startup from
 named "mount_<fstype>", which is not created by all the fusefs ports.
 
 Note that the rc.d script will unmount all fuse filesystems when called with
-"stop", so it can unload the kernel module, and as a temporary workaround to
-flush cache in drivers like NTFS-3G (sysutils/fusefs-ntfs) at shutdown (until
-a proper solution is implemented).
+"stop" (in reverse order in case of nested mounts), so it can unload the
+kernel module.
 
 ==============================================================================
