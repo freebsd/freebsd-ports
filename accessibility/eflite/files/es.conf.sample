@@ -1,0 +1,7 @@
+socketfile=/tmp/es.socket
+punct_some=@#$%^&_[]{}\|
+punct_all=!@#$%^&*()-=_+[]\|{};':",./<>?
+speech_volume=1000
+tone_volume=8192
+speaker_tones=1
+soundcard_tones=1

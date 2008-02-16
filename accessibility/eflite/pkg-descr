@@ -1,0 +1,14 @@
+EFlite is a speech server for Emacspeak and other screen readers that allows
+them to interface with Festival Lite, a free text-to-speech engine developed at
+the CMU Speech Center as an off-shoot of Festival.  EFlite is still in beta,
+but I have been using it successfully with Yasr to get speech on my notebook
+under Linux without having to lug my Speak-out around.  It uses Festival Lite's
+code to interface with the sound driver and, therefore, should work with some
+versions of ALSA, but I have only tested it with the OSS sound drivers so far.
+Michael P. Gorse
+mgorse@alum.wpi.edu
+mgorse@users.sf.net
+
+WWW: http://eflite.sourceforge.net/
+
+Ported by David K. Gerry <David.K.Gerry@GMail.com>
