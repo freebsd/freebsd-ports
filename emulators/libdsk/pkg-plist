@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+bin/apriboot
+bin/dskdump
+bin/dskform
+bin/dskid
+bin/dskscan
+bin/dsktrans
+bin/dskutil
+bin/md3serial
+include/libdsk.h
+lib/libdsk.a
+lib/libdsk.la
+lib/libdsk.so
+lib/libdsk.so.5

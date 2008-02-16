@@ -60,6 +60,7 @@
     SUBDIR += klh10
     SUBDIR += kqemu-kmod
     SUBDIR += lib765
+    SUBDIR += libdsk
     SUBDIR += libspectrum
     SUBDIR += linux-ePSXe
     SUBDIR += linux-geepee32
