@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Throttler/Memcached/.packlist
+%%SITE_PERL%%/Data/Throttler/Memcached.pm
+%%SITE_PERL%%/Data/Throttler/BucketChain/Memcached.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Throttler/Memcached
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Throttler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data/Throttler/BucketChain
+@dirrmtry %%SITE_PERL%%/Data/Throttler
+@dirrmtry %%SITE_PERL%%/Data
