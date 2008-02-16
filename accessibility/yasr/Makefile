@@ -1,0 +1,48 @@
+# Ports collection makefile for:	yasr
+# Date created:				Wed Jan 14 2004
+# Whom:					David K. Gerry
+#
+# $FreeBSD$
+#
+
+PORTNAME=	yasr
+PORTVERSION=	0.6.7
+CATEGORIES=	accessibility
+MASTER_SITES=	SF
+
+MAINTAINER=	David.K.Gerry@GMail.com
+COMMENT=	A general-purpose console screen reader
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+MAN1=		yasr.1
+PORTDOCS=	AUTHORS BUGS CREDITS ChangeLog NEWS README TODO
+SUB_FILES=	pkg-message
+
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+.if !defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=		NLS=""
+USE_GETTEXT=		yes
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.endif
+
+PLIST_FILES=	bin/yasr \
+		%%DATADIR%%/yasr.conf
+PLIST_DIRS=	%%DATADIR%%
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/csh|' ${WRKSRC}/yasr.conf
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
+	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+
+.include <bsd.port.mk>
