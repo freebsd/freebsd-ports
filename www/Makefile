@@ -336,6 +336,7 @@
     SUBDIR += mod_auth_cookie_mysql2
     SUBDIR += mod_auth_external
     SUBDIR += mod_auth_external2
+    SUBDIR += mod_auth_form
     SUBDIR += mod_auth_imap
     SUBDIR += mod_auth_imap2
     SUBDIR += mod_auth_kerb
