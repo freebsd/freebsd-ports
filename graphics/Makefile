@@ -196,6 +196,7 @@
     SUBDIR += gimp-lqr-plugin
     SUBDIR += gimp-manual-html
     SUBDIR += gimp-manual-pdf
+    SUBDIR += gimpfx-foundry
     SUBDIR += gimpshop
     SUBDIR += giram
     SUBDIR += gkrellkam
