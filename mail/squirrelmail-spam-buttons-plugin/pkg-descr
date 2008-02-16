@@ -1,0 +1,10 @@
+This plugin will place "Spam" and/or "Not Spam" buttons on the mailbox message
+list page as well as on a single message view page. The action associated with
+the buttons (as well as the button text) can be configured to suit most any
+spam reporting system. Reporting by email, reporting by executing a command on
+the server and reporting by moving (or copying) the message to a designated
+folder are all supported. Any number of custom buttons may also be added, where
+the associated action is completely customizable (for instance, adding the
+message sender to a whitelist or blacklist).
+
+WWW: http://www.squirrelmail.org/plugin_view.php?id=242
