@@ -1,0 +1,12 @@
+%%SITE_PERL%%/HTML/Macro.pm
+%%SITE_PERL%%/HTML/Macro/Loop.pm
+%%SITE_PERL%%/auto/HTML/Macro/Loop/autosplit.ix
+%%SITE_PERL%%/auto/HTML/Macro/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Macro/.packlist
+@dirrmtry %%SITE_PERL%%/HTML/Macro
+@dirrmtry %%SITE_PERL%%/HTML
+@dirrmtry %%SITE_PERL%%/auto/HTML/Macro/Loop
+@dirrmtry %%SITE_PERL%%/auto/HTML/Macro
+@dirrmtry %%SITE_PERL%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Macro
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
