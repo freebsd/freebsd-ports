@@ -11081,6 +11081,7 @@ p5-SVG-Metadata	ports/graphics/p5-SVG-Metadata
 p5-SVN-ACL	ports/devel/p5-SVN-ACL
 p5-SVN-Agent	ports/devel/p5-SVN-Agent
 p5-SVN-Dump	ports/devel/p5-SVN-Dump
+p5-SVN-Hook	ports/devel/p5-SVN-Hook
 p5-SVN-Log	ports/devel/p5-SVN-Log
 p5-SVN-Mirror	ports/devel/p5-SVN-Mirror
 p5-SVN-Notif	ports/devel/p5-SVN-Notify
