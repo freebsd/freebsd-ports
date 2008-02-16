@@ -1655,6 +1655,7 @@
     SUBDIR += p5-Test-Warn
     SUBDIR += p5-Test-XML
     SUBDIR += p5-Test-XML-Valid
+    SUBDIR += p5-Test-YAML-Meta
     SUBDIR += p5-Test-YAML-Valid
     SUBDIR += p5-Test-use-ok
     SUBDIR += p5-Text-LevenshteinXS
