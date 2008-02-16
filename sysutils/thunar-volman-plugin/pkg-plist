@@ -1,17 +1,32 @@
 bin/thunar-volman
+libexec/thunar-volman-settings
+share/applications/thunar-volman-settings.desktop
 share/icons/hicolor/48x48/apps/tvm-burn-cd.png
 share/icons/hicolor/48x48/apps/tvm-dev-pocketpc.png
 share/icons/hicolor/48x48/apps/tvm-dev-tablet.png
 share/icons/hicolor/scalable/apps/tvm-burn-cd.svg
 share/locale/de/LC_MESSAGES/thunar-volman.mo
+share/locale/en_GB/LC_MESSAGES/thunar-volman.mo
+share/locale/eu/LC_MESSAGES/thunar-volman.mo
 share/locale/fi/LC_MESSAGES/thunar-volman.mo
 share/locale/fr/LC_MESSAGES/thunar-volman.mo
 share/locale/hu/LC_MESSAGES/thunar-volman.mo
+share/locale/it/LC_MESSAGES/thunar-volman.mo
+share/locale/lv/LC_MESSAGES/thunar-volman.mo
+share/locale/nb_NO/LC_MESSAGES/thunar-volman.mo
 share/locale/pl/LC_MESSAGES/thunar-volman.mo
+share/locale/pt_BR/LC_MESSAGES/thunar-volman.mo
+share/locale/uk/LC_MESSAGES/thunar-volman.mo
+share/locale/ur/LC_MESSAGES/thunar-volman.mo
 share/locale/zh_TW/LC_MESSAGES/thunar-volman.mo
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
 @dirrm share/icons/hicolor/scalable/apps
 @dirrm share/icons/hicolor/scalable
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor
 @dirrm share/icons
+@dirrmtry share/applications
