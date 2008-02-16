@@ -2241,6 +2241,7 @@ drupal5		ports/www/drupal5
 drupal5-adsense	ports/www/drupal5-adsense
 drupal5-bluebreeze	ports/www/drupal5-bluebreeze
 drupal5-bookreview	ports/www/drupal5-bookreview
+drupal5-cck	ports/www/drupal5-cck
 drupal5-disknode	ports/www/drupal5-disknode
 drupal5-google_analytics	ports/www/drupal5-google_analytics
 drupal5-gsitemap	ports/www/drupal5-gsitemap
