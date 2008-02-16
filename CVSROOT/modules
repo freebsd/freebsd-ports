@@ -17984,6 +17984,7 @@ yaps		ports/comms/yaps
 yarv		ports/lang/yarv
 yasm		ports/devel/yasm
 yasql		ports/databases/yasql
+yasr		ports/accessibility/yasr
 yate-devel	ports/net/yate-devel
 yatex		ports/print/yatex
 yatex-xemacs	ports/print/yatex-xemacs
