@@ -11591,6 +11591,7 @@ p5-WWW-Myspace	ports/www/p5-WWW-Myspace
 p5-WWW-OpenSVN	ports/www/p5-WWW-OpenSVN
 p5-WWW-OpenSearch	ports/www/p5-WWW-OpenSearch
 p5-WWW-Robot	ports/www/p5-WWW-Robot
+p5-WWW-RobotRules-Parser	ports/www/p5-WWW-RobotRules-Parser
 p5-WWW-Scraper-ISBN	ports/www/p5-WWW-Scraper-ISBN
 p5-WWW-Scraper-ISBN-Amazon_Driver	ports/www/p5-WWW-Scraper-ISBN-Amazon_Driver
 p5-WWW-Scraper-ISBN-Driver	ports/www/p5-WWW-Scraper-ISBN-Driver
