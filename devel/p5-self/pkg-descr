@@ -1,0 +1,8 @@
+This moudles adds self and args keywords in your Perl OO module. It's
+really just handy helpers to get rid of:
+
+    my $self = shift;
+
+Basically, self is just eqaul to $_[0], and args is just $_[1..$#_].
+
+WWW:	http://search.cpan.org/dist/self/
