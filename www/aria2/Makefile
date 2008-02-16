@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.12.0
+DISTVERSION=	0.12.1
 CATEGORIES=	www
 MASTER_SITES=	SFE
 
@@ -29,7 +29,7 @@ GNU_CONFIGURE=	yes
 .ifdef WITHOUT_NLS
 CONFIGURE_ARGS+=	--disable-nls
 .else
-LINGUAS=	ca de es fr it ja nl pt_BR ru sv
+LINGUAS=	ca de es fi fr he it ja nl pt_BR ru sv
 .endif
 PLIST_FILES=	bin/aria2c \
 		${LINGUAS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2c.mo|}
