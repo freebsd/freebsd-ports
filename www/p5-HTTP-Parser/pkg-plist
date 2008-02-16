@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser/.packlist
+%%SITE_PERL%%/HTTP/Parser.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
+@dirrmtry %%SITE_PERL%%/HTTP
