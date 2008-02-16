@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/ToObject/.packlist
+%%SITE_PERL%%/Tie/ToObject.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/ToObject
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
+@dirrmtry %%SITE_PERL%%/Tie
