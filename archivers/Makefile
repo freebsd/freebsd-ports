@@ -145,6 +145,7 @@
     SUBDIR += unmakeself
     SUBDIR += unmass
     SUBDIR += unrar
+    SUBDIR += unrar-iconv
     SUBDIR += unshield
     SUBDIR += untar
     SUBDIR += unzip
