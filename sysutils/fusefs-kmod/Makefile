@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	fusefs
-DISTVERSION=	0.3.9-pre1
-PORTREVISION=	3
+DISTVERSION=	0.3.9-pre1.20080208
 CATEGORIES=	sysutils kld
-MASTER_SITES=	http://fuse4bsd.creo.hu/downloads/ \
-		http://am-productions.biz/docs/
+MASTER_SITES=	http://mercurial.creo.hu/repos/fuse4bsd-hg/index.cgi/archive/
 PKGNAMESUFFIX=	-kmod
-DISTNAME=	fuse4bsd-${DISTVERSION}
+DISTNAME=	${HG_SHORTREV}
+DIST_SUBDIR=	fuse4bsd
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Kernel module for fuse
@@ -23,15 +22,17 @@ BUILD_DEPENDS=	fusefs-libs>2.4.1:${PORTSDIR}/sysutils/fusefs-libs
 BUILD_DEPENDS+=	deplate:${PORTSDIR}/textproc/ruby-deplate
 .endif
 
-USE_BZIP2=	yes
-MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
+USE_RC_SUBR=	fusefs
+MAKE_ENV=	BINDIR="${PREFIX}/sbin" MANDIR="${MANPREFIX}/man/man" \
+		KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys" \
+		MOUNT="${SRC_BASE}/sbin/mount"
+WRKSRC=		${WRKDIR}/fuse4bsd-${HG_SHORTREV}
+DISABLE_SIZE=	yes
 
 SRC_BASE?=	/usr/src
 KMODDIR=	${PREFIX}/modules
-MAKE_ARGS=	KMODDIR=${KMODDIR}
-MODULE_PATH=	`/sbin/sysctl -n kern.module_path`;${KMODDIR}
-USE_RC_SUBR=	fusefs
 SETUP=		setup.sh
+HG_SHORTREV=	498acaef33b0
 
 MAN8=		mount_fusefs.8
 TXT_DOCS=	doc.text
@@ -66,8 +67,10 @@ IGNORE=		requires the Kernel source to be installed. Set SRC_BASE if it is not i
 IGNORE=		requires the userland sources to be installed. Set SRC_BASE if it is not in /usr/src
 .endif
 
-.if !defined(WITH_AUTOSETUP)
-SUB_FILES=	pkg-message
+.if defined(WITH_AUTOSETUP)
+SUB_FILES+=	${SETUP}
+.else
+SUB_FILES+=	pkg-message
 .endif
 
 post-patch:
@@ -88,10 +91,8 @@ pre-install:
 post-install:
 	@${LN} -fs ${PREFIX}/sbin/mount_fusefs /usr/sbin
 .if defined(WITH_AUTOSETUP) && !defined(PACKAGE_BUILDING)
-	@${SED} -e 's|@@PREFIX@@|${PREFIX}|g' \
-		${FILESDIR}/${SETUP} > ${WRKDIR}/${SETUP}
-	@${ECHO} "Modifying global startup config files and loading module...";
-	${SH} ${WRKDIR}/${SETUP}
+	@${ECHO} "Modifying global startup config files and loading module..."
+	@${SH} ${WRKDIR}/${SETUP}
 .else
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 .endif

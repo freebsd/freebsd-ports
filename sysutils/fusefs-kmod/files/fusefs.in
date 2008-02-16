@@ -40,13 +40,13 @@ fusefs_stop()
 		return 1
 	fi
 	echo "Stopping ${name}."
-# Unmount FUSE filesystems in reverse order (in case they are nested) with
-# a delay of one second after, to allow 'umount' finish.
+# Unmount FUSE filesystems in reverse order (in case they are nested) to
+# allow recent FUSE implementation to synchronize disks before shutdown.
 	mount | sed -e '1!G;h;$!d' | while read dev d1 mountpoint d2; do
 		case "$dev" in
 		/dev/fuse[0-9]*)
 			echo "fusefs: unmounting ${mountpoint}."
-			umount $mountpoint ; sleep 1
+			umount $mountpoint
 			;;
 		esac
 	done
