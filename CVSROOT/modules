@@ -3437,6 +3437,7 @@ fv		ports/graphics/fv
 fvcool		ports/sysutils/fvcool
 fvm		ports/science/fvm
 fvwm		ports/x11-wm/fvwm
+fvwm-crystal	ports/x11-wm/fvwm-crystal
 fvwm-themes	ports/x11-themes/fvwm-themes
 fvwm2		ports/x11-wm/fvwm2
 fvwm2-devel	ports/x11-wm/fvwm2-devel
