@@ -1,5 +1,4 @@
 bin/klammail
-bin/klamd
 bin/klamarkollon
 bin/ScanWithKlamAV
 %%DOCSDIR%%/index.docbook
