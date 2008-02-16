@@ -1,0 +1,26 @@
+==============================================================================
+
+Yasr requires a text-to-speech engine to work. FreeBSD offers two: Festival
+and FLite (Festival Lite). Edit the system configuration file
+%%DATADIR%%/yasr.conf
+or user configuration file ~/.yasr.conf and set "synthesizer" and
+"synthesizer port".
+
+NOTE: To use FLite requires the Emacspeak speech server eflite to be
+installed.
+
+EXAMPLES:
+
+Festival
+    synthesizer=festival
+    sythesizer port=|%%LOCALBASE%%/bin/festival
+Festival running as a server
+    synthesizer=festival
+    synthesizer port=127.0.0.1:1314
+FLite
+    synthesizer=Emacspeak server
+    synthesizer port=|%%LOCALBASE%%/bin/eflite
+
+See man page for more information.
+
+==============================================================================
