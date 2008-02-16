@@ -1,0 +1,4 @@
+This Perl module is a YAML-based configuration wrapper around the
+SVN::Notify module.
+
+WWW:    http://search.cpan.org/dist/SVN-Notify-Config/
