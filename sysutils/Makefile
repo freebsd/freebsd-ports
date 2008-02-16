@@ -474,6 +474,7 @@
     SUBDIR += p5-LJ-TextMessage
     SUBDIR += p5-MogileFS-Client
     SUBDIR += p5-MogileFS-Utils
+    SUBDIR += p5-Probe-Perl
     SUBDIR += p5-Proc-PidUtil
     SUBDIR += p5-Quota
     SUBDIR += p5-Schedule-At
