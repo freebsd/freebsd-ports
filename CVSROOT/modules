@@ -9300,6 +9300,7 @@ p5-Chart-PNGgraph	ports/graphics/p5-Chart-PNGgraph
 p5-Chatbot-Eliza	ports/misc/p5-Chatbot-Eliza
 p5-Chemistry-Elements	ports/science/p5-Chemistry-Elements
 p5-Chess-PGN-Parse	ports/textproc/p5-Chess-PGN-Parse
+p5-Cisco-Hash	ports/security/p5-Cisco-Hash
 p5-Cisco-IPPhone	ports/net/p5-Cisco-IPPhone
 p5-Cisco-Reconfig	ports/net-mgmt/p5-Cisco-Reconfig
 p5-Class-Accessor	ports/devel/p5-Class-Accessor
