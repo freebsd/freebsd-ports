@@ -1,0 +1,113 @@
+--- Makefile.orig	Wed Dec 12 17:56:25 2007
++++ Makefile	Fri Dec 14 11:23:34 2007
+@@ -1,7 +1,7 @@
+ #!/usr/bin/make -f
+ .PHONY: all install uninstall dist correctpermissions install-doc uninstall-doc
+ 
+-prefix?=/usr/local
++prefix=$(PREFIX)
+ docdir?=$(prefix)/share/doc/fvwm-crystal/
+ addondir?=$(prefix)/share/fvwm-crystal/addons
+ 
+@@ -10,12 +10,12 @@
+ all:
+ 	@echo "There is nothing to compile."
+ 
+-install: uninstall correctpermissions
++install: uninstall install-doc correctpermissions
+ 	@echo Installing fvwm-crystal $(RELEASE) to $(prefix)
+ 	mkdir -p $(prefix)/bin $(prefix)/share/fvwm-crystal/fvwm 
+ 
+ 	install -m 755 bin/fvwm-crystal.apps bin/fvwm-crystal.wallpaper bin/fvwm-crystal $(prefix)/bin
+-	cp -d -r fvwm/* $(prefix)/share/fvwm-crystal/fvwm/
++	cp -r fvwm/* $(prefix)/share/fvwm-crystal/fvwm/
+ 
+ uninstall:
+ 	@echo "Uninstalling previously installed fvwm-crystal"
+@@ -27,7 +27,7 @@
+ dist: correctpermissions
+ 	mkdir -p "fvwm-crystal-$(RELEASE)"
+ 	find -maxdepth 1 ! -name "." ! -name ".*" ! -name "_darcs" ! -name "*.html" ! -name "fvwm-crystal-$(RELEASE)" \
+-		-exec cp -r -d {} "fvwm-crystal-$(RELEASE)/" \;
++		-exec cp -r {} "fvwm-crystal-$(RELEASE)/" \;
+ 	darcs changes > "fvwm-crystal-$(RELEASE)/ChangeLog"
+ 	tar czf "../fvwm-crystal-$(RELEASE).tar.gz" "fvwm-crystal-$(RELEASE)"
+ 	rm -rf "fvwm-crystal-$(RELEASE)"
+@@ -37,7 +37,7 @@
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)"
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm"
+ 	# Copy basic files
+-	cp -r AUTHORS COPYING INSTALL Makefile NEWS README fvwm-crystal-minimal-$(RELEASE)/
++	cp -r AUTHORS INSTALL Makefile NEWS README fvwm-crystal-minimal-$(RELEASE)/
+ 	cp -r fvwm/config fvwm-crystal-minimal-$(RELEASE)/fvwm/
+ 	# Copy addons/
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/addons"
+@@ -51,26 +51,26 @@
+ 	# Copy fvwm/Applications/
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/Applications"
+ 	find fvwm/Applications -maxdepth 1 ! -name "." ! -name ".*" ! -name "Applications" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/Applications/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/Applications/" \;
+ 	# Copy fvwm/colorsets/
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/colorsets"
+ 	find fvwm/colorsets -maxdepth 1 ! -name "." ! -name ".*" ! -name "colorsets" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/colorsets/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/colorsets/" \;
+ 	# Copy fvwm/components/
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/components"
+ 	find fvwm/components -maxdepth 1 ! -name "." ! -name ".*" ! -name "components" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/components/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/components/" \;
+ 	# Copy fvwm/decorations/
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/decorations"
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/decorations/Crystal"
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/decorations/DarkSky"
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/decorations/MicroClear"
+ 	find fvwm/decorations/Crystal -maxdepth 1 ! -name "." ! -name ".*" ! -name "Crystal" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/decorations/Crystal/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/decorations/Crystal/" \;
+ 	find fvwm/decorations/DarkSky -maxdepth 1 ! -name "." ! -name ".*" ! -name "DarkSky" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/decorations/DarkSky/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/decorations/DarkSky/" \;
+ 	find fvwm/decorations/MicroClear -maxdepth 1 ! -name "." ! -name ".*" ! -name "MicroClear" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/decorations/MicroClear/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/decorations/MicroClear/" \;
+ 	# Copy fvwm/icons/
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/icons"
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/icons/Default"
+@@ -152,28 +152,28 @@
+ 	cp fvwm/icons/Default/32x32/apps/grml.png fvwm-crystal-minimal-$(RELEASE)/fvwm/icons/Default/32x32/apps/
+ 	# Copy other icons
+ 	find fvwm/icons/Default/22x22/categories -maxdepth 1 ! -name "." ! -name ".*" ! -name "categories" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/icons/Default/22x22/categories/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/icons/Default/22x22/categories/" \;
+ 	find fvwm/icons/Default/22x22/fvwm-crystal -maxdepth 1 ! -name "." ! -name ".*" ! -name "fvwm-crystal" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/icons/Default/22x22/fvwm-crystal/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/icons/Default/22x22/fvwm-crystal/" \;
+ 	find fvwm/icons/Default/32x32/categories -maxdepth 1 ! -name "." ! -name ".*" ! -name "categories" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/icons/Default/32x32/categories/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/icons/Default/32x32/categories/" \;
+ 	find fvwm/icons/Default/32x32/fvwm-crystal -maxdepth 1 ! -name "." ! -name ".*" ! -name "fvwm-crystal" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/icons/Default/32x32/fvwm-crystal/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/icons/Default/32x32/fvwm-crystal/" \;
+ 	# Copy fvwm/locales/
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/locale"
+ 	find fvwm/locale -maxdepth 1 ! -name "." ! -name ".*" ! -name "locale" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/locale/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/locale/" \;
+ 	# Copy fvwm/preferences/
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/preferences"
+ 	find fvwm/preferences -maxdepth 1 ! -name "." ! -name ".*" ! -name "preferences" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/preferences/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/preferences/" \;
+ 	# Copy fvwm/recipes/
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/recipes"
+ 	cp -r fvwm/recipes/Default fvwm/recipes/Light fvwm/recipes/Nebulae fvwm/recipes/TopLine fvwm-crystal-minimal-$(RELEASE)/fvwm/recipes
+ 	# Copy fvwm/scripts/
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/scripts"
+ 	find fvwm/scripts -maxdepth 1 ! -name "." ! -name ".*" ! -name "scripts" \
+-		-exec cp -r -d {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/scripts/" \;
++		-exec cp -r {} "fvwm-crystal-minimal-$(RELEASE)/fvwm/scripts/" \;
+ 	# Copy fvwm/wallpapers/
+ 	mkdir -p "fvwm-crystal-minimal-$(RELEASE)/fvwm/wallpapers"
+ 	cp -r fvwm/wallpapers/fvwm-crystal-dark1-1024x768.jpg fvwm-crystal-minimal-$(RELEASE)/fvwm/wallpapers

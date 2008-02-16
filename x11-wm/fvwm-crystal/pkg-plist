@@ -1,0 +1,3059 @@
+bin/fvwm-crystal
+bin/fvwm-crystal.apps
+bin/fvwm-crystal.wallpaper
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/15~doom3~DOOM_III
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/15~quake3~Quake_III_Arena
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/15~quake4~Quake_IV
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/15~ut2004~Unreal_Tournament_2004
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/18~et~Enemy_Territory
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/18~q3ut3~Q3A:_Urban_Terror
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/20~xqf~XQF
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~bzflag~bzFlag
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~lxdoom~LxDoom
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~nexuiz~Nexuiz
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~quake2~Quake_II
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~ut~Unreal_Tournament
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~wolfmp~RTCW_Multiplayer
+%%DATADIR%%/fvwm/Applications/20~Games/20~FPP/~wolfsp~Return_to_Castle_Wolfenstein
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/20~frozen-bubble~Frozen_Bubble
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/20~supertux~SuperTux
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~armagetron~Armagetron
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~gltron~GLTron
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~gnibbles~Nibbles
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~gnome-stones~Stones
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~icebreaker~IceBreaker
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~jumpnbump-menu~Jump'N'Bump
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~kbounce~KBounce
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~kgoldrunner~KGoldrunner
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~ksnake~KSnake
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~ktron~KTron
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~lbreakout2~LBreakout2
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~liquidwar~LiquidWar
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~moagg~Moagg
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~neverball~Neverball
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~neverputt~Neverputt
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~njam~Njam
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~ppracer~PlanetPenguin_Racer
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~snake~Snake
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~torcs~Torcs
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~trackballs~Trackballs
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~trophy~Trophy
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~worm~Worm
+%%DATADIR%%/fvwm/Applications/20~Games/Arcade/~xmoto~X-Moto
+%%DATADIR%%/fvwm/Applications/20~Games/Board/~eboard~Eboard
+%%DATADIR%%/fvwm/Applications/20~Games/Board/~gtkboard~GTKBoard
+%%DATADIR%%/fvwm/Applications/20~Games/Board/~gweled~Gweled
+%%DATADIR%%/fvwm/Applications/20~Games/Board/~kbackgammon~KBackgammon
+%%DATADIR%%/fvwm/Applications/20~Games/Board/~kenolaba~Kenolaba
+%%DATADIR%%/fvwm/Applications/20~Games/Board/~kmahjongg~KMahjongg
+%%DATADIR%%/fvwm/Applications/20~Games/Board/~kreversi~KReversi
+%%DATADIR%%/fvwm/Applications/20~Games/Board/~kshisen~Shisen-Sho
+%%DATADIR%%/fvwm/Applications/20~Games/Board/~mahjongg~Mahjongg
+%%DATADIR%%/fvwm/Applications/20~Games/Board/~xboard~XBoard
+%%DATADIR%%/fvwm/Applications/20~Games/Board/~xmahjongg~xMahjongg
+%%DATADIR%%/fvwm/Applications/20~Games/Card/~blackjack~Blackjack
+%%DATADIR%%/fvwm/Applications/20~Games/Card/~kpat~KPat
+%%DATADIR%%/fvwm/Applications/20~Games/Card/~kpoker~KPoker
+%%DATADIR%%/fvwm/Applications/20~Games/Card/~lskat~Lieutenant_Skat
+%%DATADIR%%/fvwm/Applications/20~Games/Card/~sol~Aisle_Riot
+%%DATADIR%%/fvwm/Applications/20~Games/Card/~xpat2~xPat2
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~blackboxgame~Black_Box
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~bridges~Bridges
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~cube~Cube
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~dominosa~Dominosa
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~fifteen~Fifteen
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~flipgame~Flip
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~guess~Guess
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~inertia~Inertia
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~lightup~Light_Up
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~loopy~Loopy
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~map~Map
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~mines~Mines
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~netgame~Net
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~netslide~Netslide
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~pattern~Pattern
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~pegs~Pegs
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~rect~Rectangles
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~samegame~Same_Game
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~sixteen~Sixteen
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~slant~Slant
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~solo~Solo
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~tents~Tents
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~twiddle~Twiddle
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection/~untangle~Untangle
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~atomix~Atomix
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~enigma~Enigma
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gataxx~Ataxx
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~glines~gLines
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gnect~gNect
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gnobots2~GnoBots2
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gnomine~GnoMine
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gnotravex~Tetravex
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gnotski~Klotski
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gnudoku~GNUDoku
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~gtali~Tali
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~iagno~Iagno
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~katomic~KAtomic
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~kblackbox~KBlackBox
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~kjumpingcube~KJumpingCube
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~klickety~Klickety
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~klines~Kolor_Lines
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~kmines~KMines
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~knetwalk~KNetWalk
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~ksame~SameGame
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~ksokoban~KSokoban
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~kwin4~KWin4
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~lmarbles~LMarbles
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~pathological~Pathological
+%%DATADIR%%/fvwm/Applications/20~Games/Logic/~same-gnome~Same_Game
+%%DATADIR%%/fvwm/Applications/20~Games/Others/~BillardGL~BillardGL
+%%DATADIR%%/fvwm/Applications/20~Games/Others/~billard-gl~BillardGL
+%%DATADIR%%/fvwm/Applications/20~Games/Others/~dosbox~DOSBox
+%%DATADIR%%/fvwm/Applications/20~Games/Others/~foobillard~FooBillard
+%%DATADIR%%/fvwm/Applications/20~Games/Others/~kolf~Kolf
+%%DATADIR%%/fvwm/Applications/20~Games/Others/~ktuberling~KTuberling
+%%DATADIR%%/fvwm/Applications/20~Games/Others/~pydance~PyDance
+%%DATADIR%%/fvwm/Applications/20~Games/RPG/20~el~Eternal_Lands
+%%DATADIR%%/fvwm/Applications/20~Games/RPG/~adom~ADOM
+%%DATADIR%%/fvwm/Applications/20~Games/RPG/~diablo2~Diablo_II
+%%DATADIR%%/fvwm/Applications/20~Games/RPG/~falconseye~Falcon's_Eye
+%%DATADIR%%/fvwm/Applications/20~Games/RPG/~gnome-mud~Gnome_MUD
+%%DATADIR%%/fvwm/Applications/20~Games/RPG/~nwn~Neverwinter_Nights
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~Maelstrom~Maelstrom
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~abuse~Abuse
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~barrage~Barrage
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~blobwars~BlobWars
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~chromium~Chromium
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~kasteroids~KAsteroids
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~kobodeluxe~Kobo_Deluxe
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~kobodl~Kobo_Deluxe
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~kspaceduel~KSpaceDuel
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~maelstrom~Maelstrom
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~moon-buggy~Moon_Buggy
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~starfighter~Starfighter
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~xevil~XEvil
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~xpilot~XPilot
+%%DATADIR%%/fvwm/Applications/20~Games/Shooters/~xrick~Rick_Dangerous
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/20~netpanzer~NetPanzer
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/20~openttd~OpenTTD
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/20~starcraft~StarCraft
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/20~wesnoth~The_Battle_For_Wesnoth
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~atanks~Atanks
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~atlantik~Atlantik
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~castle-combat~Castle_Combat
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~civclient~FreeCiv_Client
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~civserver~FreeCiv_Server
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~kbattleship~KBattleship
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~konquest~Konquest
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~lgeneral~LGeneral
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~lincity-ng~LinCity
+%%DATADIR%%/fvwm/Applications/20~Games/Strategy/~scorched3d~Scorched3D
+%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/20~crack-attack~Crack_Attack!
+%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~bastet~Bastard_Tetris
+%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~gnometris~GnomeTris
+%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~kfouleggs~KFoulEggs
+%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~ksirtet~KSirtet
+%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~ksmiletris~KSmileTris
+%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~ltris~LTris
+%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~netris~Netris
+%%DATADIR%%/fvwm/Applications/20~Games/Tetris-like/~netris~Netris_Server
+%%DATADIR%%/fvwm/Applications/Development/IDE/20~anjuta~Anjuta
+%%DATADIR%%/fvwm/Applications/Development/IDE/20~eclipse~Eclipse
+%%DATADIR%%/fvwm/Applications/Development/IDE/20~kdevelop3~kDevelop
+%%DATADIR%%/fvwm/Applications/Development/IDE/20~kdevelop~kDevelop
+%%DATADIR%%/fvwm/Applications/Development/IDE/20~monodevelop~MonoDevelop
+%%DATADIR%%/fvwm/Applications/Development/IDE/~bluefish~Bluefish
+%%DATADIR%%/fvwm/Applications/Development/IDE/~conglomerate~Conglomerate
+%%DATADIR%%/fvwm/Applications/Development/IDE/~eric~Eric
+%%DATADIR%%/fvwm/Applications/Development/IDE/~glade-2~Glade
+%%DATADIR%%/fvwm/Applications/Development/IDE/~idle~IDLE
+%%DATADIR%%/fvwm/Applications/Development/IDE/~nvu~Nvu
+%%DATADIR%%/fvwm/Applications/Development/IDE/~pida~Pida
+%%DATADIR%%/fvwm/Applications/Development/IDE/~quanta~Quanta+
+%%DATADIR%%/fvwm/Applications/Development/IDE/~rapidsvn~RapidSVN
+%%DATADIR%%/fvwm/Applications/Development/Text_editors/18~gvim~gViM
+%%DATADIR%%/fvwm/Applications/Development/Text_editors/18~kvim~kViM
+%%DATADIR%%/fvwm/Applications/Development/Text_editors/20~cream~ViM_Cream
+%%DATADIR%%/fvwm/Applications/Development/Text_editors/20~emacs~Emacs
+%%DATADIR%%/fvwm/Applications/Development/Text_editors/20~xemacs~XEmacs
+%%DATADIR%%/fvwm/Applications/Development/Text_editors/~gedit~gEdit
+%%DATADIR%%/fvwm/Applications/Development/Text_editors/~kate~Kate
+%%DATADIR%%/fvwm/Applications/Development/Text_editors/~kedit~kEdit
+%%DATADIR%%/fvwm/Applications/Development/Text_editors/~mousepad~Mousepad
+%%DATADIR%%/fvwm/Applications/Development/Text_editors/~scite~Scite
+%%DATADIR%%/fvwm/Applications/Development/Text_editors/~teaed~Tea_for_Linux
+%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/20~firefox~Firefox
+%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/20~flock~Flock
+%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/20~konqueror~Konqueror
+%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/20~mozilla-firefox~Firefox
+%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/20~mozilla-suite~Mozilla_Suite
+%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/20~opera~Opera
+%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/~dillo~Dillo
+%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/~elinks~ELinks
+%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/~epiphany~Epiphany
+%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/~galeon~Galeon
+%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/~links2~Links2
+%%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers/~lynx~Lynx
+%%DATADIR%%/fvwm/Applications/Internet/13~Email/16~evolution~Evolution
+%%DATADIR%%/fvwm/Applications/Internet/13~Email/16~kmail~kMail
+%%DATADIR%%/fvwm/Applications/Internet/13~Email/18~mozilla-thunderbird~Thunderbird
+%%DATADIR%%/fvwm/Applications/Internet/13~Email/18~thunderbird~Thunderbird
+%%DATADIR%%/fvwm/Applications/Internet/13~Email/19~fetchmail~Fetch_new_mail
+%%DATADIR%%/fvwm/Applications/Internet/13~Email/20~mutt~Mutt
+%%DATADIR%%/fvwm/Applications/Internet/13~Email/20~pine~Pine
+%%DATADIR%%/fvwm/Applications/Internet/13~Email/~balsa~Balsa
+%%DATADIR%%/fvwm/Applications/Internet/13~Email/~sylpheed-claws~Sylpheed-Claws
+%%DATADIR%%/fvwm/Applications/Internet/13~Email/~sylpheed-gtk2~Sylpheed-GTK2
+%%DATADIR%%/fvwm/Applications/Internet/13~Email/~sylpheed~Sylpheed
+%%DATADIR%%/fvwm/Applications/Internet/7~RSS_readers/20~snownews~SnowNews
+%%DATADIR%%/fvwm/Applications/Internet/7~RSS_readers/~akregator~Akregator
+%%DATADIR%%/fvwm/Applications/Internet/7~RSS_readers/~liferea~Liferea
+%%DATADIR%%/fvwm/Applications/Internet/7~RSS_readers/~straw~Straw
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~amule~aMule
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~azureus~Azureus
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~btdownloadgui.py~BitTorrent_GUI
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~btdownloadgui~BitTorrent_GUI
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~d4x~Downloader_for_X
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~gftp~gFTP
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~giFTcurs~giFTcurs
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~giFToxic~giFToxic
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~gtk-gnutella~GTK_Gnutella
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~kmldonkey~kMLDonkey
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~ktorrent~kTorrent
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~mlgui~MLDonkey
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~qtorrent~QTorrent
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~valknut~Valknut
+%%DATADIR%%/fvwm/Applications/Internet/File_sharing/~xmule~xMule
+%%DATADIR%%/fvwm/Applications/Internet/IM/10~gaim~Gaim
+%%DATADIR%%/fvwm/Applications/Internet/IM/10~gg2~GNU_Gadu
+%%DATADIR%%/fvwm/Applications/Internet/IM/10~kadu~Kadu
+%%DATADIR%%/fvwm/Applications/Internet/IM/10~kopete~Kopete
+%%DATADIR%%/fvwm/Applications/Internet/IM/10~tleenx2~TleenX2
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~gabber~Gabber
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~gajim~Gajim
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~gossip~Gossip
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~kf~kf
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~psi~Psi
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~sim~SIM
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber/~tkabber~Tkabber
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/10~TeamSpeak~TeamSpeak
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/10~teamspeak~TeamSpeak
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/~gizmo~Gizmo
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/~ihu~I_Hear_U
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/~kphone~kPhone
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/~linphone~LinPhone
+%%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice/~skype~Skype
+%%DATADIR%%/fvwm/Applications/Internet/IM/~centericq~CenterICQ
+%%DATADIR%%/fvwm/Applications/Internet/IM/~ekg2~EKG2
+%%DATADIR%%/fvwm/Applications/Internet/IM/~ekg~EKG
+%%DATADIR%%/fvwm/Applications/Internet/IM/~licq~lICQ
+%%DATADIR%%/fvwm/Applications/Internet/IM/~linpopup~LinPopup
+%%DATADIR%%/fvwm/Applications/Internet/IRC_clients/~BitchX~BitchX
+%%DATADIR%%/fvwm/Applications/Internet/IRC_clients/~epic4~Epic4
+%%DATADIR%%/fvwm/Applications/Internet/IRC_clients/~irssi~Irssi
+%%DATADIR%%/fvwm/Applications/Internet/IRC_clients/~kvirc~kvIRC
+%%DATADIR%%/fvwm/Applications/Internet/IRC_clients/~weechat-curses~WeeChat
+%%DATADIR%%/fvwm/Applications/Internet/IRC_clients/~xchat~X_Chat
+%%DATADIR%%/fvwm/Applications/Internet/Others/~kppp~kPPP
+%%DATADIR%%/fvwm/Applications/Internet/Usenet/10~slrn-pl~slrn-pl
+%%DATADIR%%/fvwm/Applications/Internet/Usenet/10~slrn~slrn
+%%DATADIR%%/fvwm/Applications/Internet/Usenet/~knode~kNode
+%%DATADIR%%/fvwm/Applications/Internet/Usenet/~pan~Pan
+%%DATADIR%%/fvwm/Applications/Multimedia/10~Mixers/~alsamixer~ALSA_Mixer
+%%DATADIR%%/fvwm/Applications/Multimedia/10~Mixers/~aumix~Aumix
+%%DATADIR%%/fvwm/Applications/Multimedia/10~Mixers/~gnome-alsamixer~GNOME_Alsamixer
+%%DATADIR%%/fvwm/Applications/Multimedia/10~Mixers/~kmix~kMix
+%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/20~blender~Blender
+%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/20~gimp~GIMP
+%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/20~inkscape~Inkscape
+%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/20~pixel32~Pixel32
+%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~dia~Dia
+%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~qcad~qCAD
+%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~sodipodi~Sodipodi
+%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~tuxpaint~TuxPaint
+%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~wings3d~Wings_3D
+%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~xfig~XFig
+%%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors/~xsane~XSane
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/15~glurp~Glurp
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/15~gmpc~gMPC
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/15~pygmy~Pygmy
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/15~xmms~XMMS
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/15~zinf~Zinf
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/20~amarok~amaroK
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/20~beep-media-player~Beep_Media_Player
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/20~bmp~Beep_Media_Player
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/20~quodlibet~Quod_Libet
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/~cmus~C_Music_Player
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/~goobox~Goobox
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_players/~rhythmbox~Rhythmbox
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~ardour~Ardour
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~audacity~Audacity
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~easytag~EasyTag
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~exfalso~Ex_Falso
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~grip~Grip
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~hydrogen~Hydrogen
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~lmms~LMMS
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~qjackctl~QJackCtl
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~sound-juicer~Sound_Juicer
+%%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools/~sweep~Sweep
+%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/20~f-spot~F-Spot
+%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~digikam~DigiKam
+%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~gcolor2~gColor2
+%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~gpaint~gPaint
+%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~gqview~GQview
+%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~gthumb~gThumb
+%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~gwenview~Gwenview
+%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~kpaint~kPaint
+%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~kview~kView
+%%DATADIR%%/fvwm/Applications/Multimedia/Image_tools/~qcomicbook~QComicBook
+%%DATADIR%%/fvwm/Applications/Multimedia/Tools/~ipodder~iPodder
+%%DATADIR%%/fvwm/Applications/Multimedia/Tools/~streamtuner~StreamTuner
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_players/~gmplayer~MPlayer
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_players/~gxine~gXINE
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_players/~realplayer~RealPlayer
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_players/~totem~Totem
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_players/~xine~XINE
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/20~monotheka~Monotheka
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/20~nvtv~nVidia_TV-Out
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/20~tvtime~TVTime
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/20~xawtv~xawTV
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/20~zapping~Zapping
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/~acidrip~AcidRip
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/~avidemux~AVIdemux
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/~cinelerra~Cinelerra
+%%DATADIR%%/fvwm/Applications/Multimedia/Video_tools/~gcfilms~GCfilms
+%%DATADIR%%/fvwm/Applications/Office/DTP/20~scribus~Scribus
+%%DATADIR%%/fvwm/Applications/Office/DTP/~kile~Kile
+%%DATADIR%%/fvwm/Applications/Office/DTP/~lyx~LyX
+%%DATADIR%%/fvwm/Applications/Office/GNOME_Office/~abiword~Abiword
+%%DATADIR%%/fvwm/Applications/Office/GNOME_Office/~gnumeric~Gnumeric
+%%DATADIR%%/fvwm/Applications/Office/KOffice/10~kword~kWord
+%%DATADIR%%/fvwm/Applications/Office/KOffice/~karbon~Karbon
+%%DATADIR%%/fvwm/Applications/Office/KOffice/~kchart~kChart
+%%DATADIR%%/fvwm/Applications/Office/KOffice/~kformula~kFormula
+%%DATADIR%%/fvwm/Applications/Office/KOffice/~kivio~Kivio
+%%DATADIR%%/fvwm/Applications/Office/KOffice/~koshell~kOffice
+%%DATADIR%%/fvwm/Applications/Office/KOffice/~kpresenter~kPresenter
+%%DATADIR%%/fvwm/Applications/Office/KOffice/~krita~Krita
+%%DATADIR%%/fvwm/Applications/Office/KOffice/~kspread~kSpread
+%%DATADIR%%/fvwm/Applications/Office/KOffice/~kugar~Kugar
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/20~oowriter2~OpenOffice.org_Writer
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/20~oowriter~OpenOffice.org_Writer
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oobase2~OpenOffice.org_Base
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oobase~OpenOffice.org_Base
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oocalc2~OpenOffice.org_Calc
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oocalc~OpenOffice.org_Calc
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oodraw2~OpenOffice.org_Draw
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oodraw~OpenOffice.org_Draw
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~ooffice2~OpenOffice.org_Suite
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~ooffice~OpenOffice.org_Suite
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~ooimpress2~OpenOffice.org_Impress
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~ooimpress~OpenOffice.org_Impress
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oomath2~OpenOffice.org_Math
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oomath~OpenOffice.org_Math
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oopadmin2~OpenOffice.org_Printer_Admin
+%%DATADIR%%/fvwm/Applications/Office/OpenOffice.org/~oopadmin~OpenOffice.org_Printer_Admin
+%%DATADIR%%/fvwm/Applications/Office/PIM/~balsa-ab~Balsa_Address_Book
+%%DATADIR%%/fvwm/Applications/Office/PIM/~dlume~Dlume
+%%DATADIR%%/fvwm/Applications/Office/PIM/~jpilot~J-Pilot
+%%DATADIR%%/fvwm/Applications/Office/PIM/~kaddressbook~kAddressBook
+%%DATADIR%%/fvwm/Applications/Office/PIM/~kontact~Kontact
+%%DATADIR%%/fvwm/Applications/Office/PIM/~korganizer~kOrganizer
+%%DATADIR%%/fvwm/Applications/Office/PIM/~kpilot~kPilot
+%%DATADIR%%/fvwm/Applications/Office/PIM/~rubrica~Rubrica
+%%DATADIR%%/fvwm/Applications/Office/PIM/~wyrd~Wyrd
+%%DATADIR%%/fvwm/Applications/Office/Viewers/~acroread~AcroRead
+%%DATADIR%%/fvwm/Applications/Office/Viewers/~djview~DjVu_Viewer
+%%DATADIR%%/fvwm/Applications/Office/Viewers/~evince~Evince
+%%DATADIR%%/fvwm/Applications/Office/Viewers/~gv~GhostView
+%%DATADIR%%/fvwm/Applications/Office/Viewers/~xpdf~xPDF
+%%DATADIR%%/fvwm/Applications/Other/CD_burning/10~gnomebaker~GnomeBaker
+%%DATADIR%%/fvwm/Applications/Other/CD_burning/10~graveman~Graveman
+%%DATADIR%%/fvwm/Applications/Other/CD_burning/10~k3b~K3B
+%%DATADIR%%/fvwm/Applications/Other/CD_burning/~xcdroast~XCDRoast
+%%DATADIR%%/fvwm/Applications/Other/Knowledge/~basket~Basket
+%%DATADIR%%/fvwm/Applications/Other/Knowledge/~celestia~Celestia
+%%DATADIR%%/fvwm/Applications/Other/Knowledge/~freemind~FreeMind
+%%DATADIR%%/fvwm/Applications/Other/Knowledge/~ktouch~kTouch
+%%DATADIR%%/fvwm/Applications/Other/Knowledge/~stardict~StarDict
+%%DATADIR%%/fvwm/Applications/Other/Knowledge/~stellarium~Stellarium
+%%DATADIR%%/fvwm/Applications/Other/Knowledge/~tomboy~Tomboy
+%%DATADIR%%/fvwm/Applications/Other/Knowledge/~ydpdict~YDP_Dictionary
+%%DATADIR%%/fvwm/Applications/Other/Knowledge/~zim~Zim
+%%DATADIR%%/fvwm/Applications/Other/Security/~gpass~gPass
+%%DATADIR%%/fvwm/Applications/Other/Security/~gpa~GNU_Privacy_Assistant
+%%DATADIR%%/fvwm/Applications/Other/Security/~revelation~Revelation
+%%DATADIR%%/fvwm/Applications/Other/Security/~seahorse~Seahorse
+%%DATADIR%%/fvwm/Applications/Other/Security/~zsafe~zSafe
+%%DATADIR%%/fvwm/Applications/System/Configuration/10~drakconf~Mandrivia_Control_Center
+%%DATADIR%%/fvwm/Applications/System/Configuration/10~gnome-control-center~GNOME_Control_Center
+%%DATADIR%%/fvwm/Applications/System/Configuration/10~kcontrol~KDE_Control_Center
+%%DATADIR%%/fvwm/Applications/System/Configuration/~aptitude~Aptitude
+%%DATADIR%%/fvwm/Applications/System/Configuration/~aptsh~AptSh
+%%DATADIR%%/fvwm/Applications/System/Configuration/~gconf-editor~GConf_Editor
+%%DATADIR%%/fvwm/Applications/System/Configuration/~nvidia-settings~nVidia_Settings
+%%DATADIR%%/fvwm/Applications/System/Configuration/~porthole~Porthole
+%%DATADIR%%/fvwm/Applications/System/Configuration/~smart~Smart
+%%DATADIR%%/fvwm/Applications/System/Configuration/~synaptic~Synaptic
+%%DATADIR%%/fvwm/Applications/System/File_managers/10~mc~Midnight_Commander
+%%DATADIR%%/fvwm/Applications/System/File_managers/15~nautilus~Nautilus
+%%DATADIR%%/fvwm/Applications/System/File_managers/15~tuxcmd~TuxCommander
+%%DATADIR%%/fvwm/Applications/System/File_managers/20~rox~ROX-Filer
+%%DATADIR%%/fvwm/Applications/System/File_managers/~filerunner~FileRunner
+%%DATADIR%%/fvwm/Applications/System/File_managers/~gentoo~Gentoo
+%%DATADIR%%/fvwm/Applications/System/File_managers/~konqueror~Konqueror
+%%DATADIR%%/fvwm/Applications/System/File_managers/~krusader~Krusader
+%%DATADIR%%/fvwm/Applications/System/File_managers/~xfe~X_File_Explorer
+%%DATADIR%%/fvwm/Applications/System/File_managers/~xnc~X_Northern_Captain
+%%DATADIR%%/fvwm/Applications/System/Others/~mysqlcc~MySQLCC
+%%DATADIR%%/fvwm/Applications/System/Others/~nessus~Nessus
+%%DATADIR%%/fvwm/Applications/System/Others/~qps~qps
+%%DATADIR%%/fvwm/Applications/System/Others/~qtstalker~QTStalker
+%%DATADIR%%/fvwm/Applications/System/Others/~vmware~VMware
+%%DATADIR%%/fvwm/Applications/System/Terminals/~Eterm~Eterm
+%%DATADIR%%/fvwm/Applications/System/Terminals/~aterm~Aterm
+%%DATADIR%%/fvwm/Applications/System/Terminals/~gnome-terminal~GNOME_Terminal
+%%DATADIR%%/fvwm/Applications/System/Terminals/~konsole~Konsole
+%%DATADIR%%/fvwm/Applications/System/Terminals/~mrxvt~MRxvt
+%%DATADIR%%/fvwm/Applications/System/Terminals/~multi-gnome-terminal~Multi_GNOME_Terminal
+%%DATADIR%%/fvwm/Applications/System/Terminals/~urxvt~URxvt
+%%DATADIR%%/fvwm/Applications/System/Terminals/~xfce4-terminal~XFCE4_Terminal
+%%DATADIR%%/fvwm/Applications/System/Terminals/~xterm~XTerm
+%%DATADIR%%/fvwm/colorsets/CIOS.cs
+%%DATADIR%%/fvwm/colorsets/Clear.cs
+%%DATADIR%%/fvwm/colorsets/CrystalZono.cs
+%%DATADIR%%/fvwm/colorsets/DarkDesktop.cs
+%%DATADIR%%/fvwm/colorsets/DarkGreen.cs
+%%DATADIR%%/fvwm/colorsets/HUD - Green.cs
+%%DATADIR%%/fvwm/colorsets/Industrial.cs
+%%DATADIR%%/fvwm/colorsets/IrishDesktop.cs
+%%DATADIR%%/fvwm/colorsets/Kill Bill.cs
+%%DATADIR%%/fvwm/colorsets/Metabox.cs
+%%DATADIR%%/fvwm/colorsets/Midnight.cs
+%%DATADIR%%/fvwm/colorsets/Original.cs
+%%DATADIR%%/fvwm/colorsets/Red - Cyan.cs
+%%DATADIR%%/fvwm/colorsets/RedDesktop.cs
+%%DATADIR%%/fvwm/colorsets/WhiteDesktop.cs
+%%DATADIR%%/fvwm/colorsets/colorset-definition
+%%DATADIR%%/fvwm/components/Standard
+%%DATADIR%%/fvwm/components/apps/FvwmMiniConsole
+%%DATADIR%%/fvwm/components/apps/Nautilus
+%%DATADIR%%/fvwm/components/apps/QuakeConsole
+%%DATADIR%%/fvwm/components/apps/ROX-Filer
+%%DATADIR%%/fvwm/components/apps/XScreenSaver
+%%DATADIR%%/fvwm/components/bindings/Desktop-MMB-EdgeScroll
+%%DATADIR%%/fvwm/components/bindings/Desktop-MMB-TogglePanels
+%%DATADIR%%/fvwm/components/bindings/Desktop-PageSwitch-Horizontal
+%%DATADIR%%/fvwm/components/bindings/Desktop-PageSwitch-Vertical
+%%DATADIR%%/fvwm/components/bindings/Desktop-RMB-OpenTerminal
+%%DATADIR%%/fvwm/components/bindings/Icon-Basic
+%%DATADIR%%/fvwm/components/bindings/Misc-Keybindings
+%%DATADIR%%/fvwm/components/bindings/Misc-Keybindings_NumLock
+%%DATADIR%%/fvwm/components/bindings/Mouse-GoHome
+%%DATADIR%%/fvwm/components/bindings/Music
+%%DATADIR%%/fvwm/components/bindings/Music-Dvorak
+%%DATADIR%%/fvwm/components/bindings/Music-Dvorak_NumLock
+%%DATADIR%%/fvwm/components/bindings/Music_NumLock
+%%DATADIR%%/fvwm/components/bindings/Numpad-Control
+%%DATADIR%%/fvwm/components/bindings/Numpad-Focus
+%%DATADIR%%/fvwm/components/bindings/Numpad-Focus-Raise
+%%DATADIR%%/fvwm/components/bindings/Numpad-Move
+%%DATADIR%%/fvwm/components/bindings/Numpad-Warp
+%%DATADIR%%/fvwm/components/bindings/PageSwitch-Horizontal
+%%DATADIR%%/fvwm/components/bindings/PageSwitch-Horizontal_NumLock
+%%DATADIR%%/fvwm/components/bindings/PageSwitch-Vertical
+%%DATADIR%%/fvwm/components/bindings/PageSwitch-Vertical_NumLock
+%%DATADIR%%/fvwm/components/bindings/Pager-Horizontal
+%%DATADIR%%/fvwm/components/bindings/Pager-Horizontal_NumLock
+%%DATADIR%%/fvwm/components/bindings/Pager-Vertical
+%%DATADIR%%/fvwm/components/bindings/Pager-Vertical_NumLock
+%%DATADIR%%/fvwm/components/bindings/Remove-Defaults
+%%DATADIR%%/fvwm/components/bindings/Window-Basic
+%%DATADIR%%/fvwm/components/bindings/Window-Border
+%%DATADIR%%/fvwm/components/bindings/Window-Control
+%%DATADIR%%/fvwm/components/bindings/Window-Control_NumLock
+%%DATADIR%%/fvwm/components/bindings/Window-List
+%%DATADIR%%/fvwm/components/bindings/Window-Rearrange
+%%DATADIR%%/fvwm/components/bindings/Window-Rearrange_NumLock
+%%DATADIR%%/fvwm/components/bindings/Window-Warp
+%%DATADIR%%/fvwm/components/bindings/Window-Warp-Dvorak
+%%DATADIR%%/fvwm/components/bindings/Window-Warp-Dvorak_NumLock
+%%DATADIR%%/fvwm/components/bindings/Window-Warp_NumLock
+%%DATADIR%%/fvwm/components/decorations/Buttons-fvwm-crystal
+%%DATADIR%%/fvwm/components/decorations/Buttons-fvwm-crystal-MiniIcon
+%%DATADIR%%/fvwm/components/decorations/Buttons-fvwm-crystal_NumLock
+%%DATADIR%%/fvwm/components/decorations/Buttons-macosx
+%%DATADIR%%/fvwm/components/decorations/Buttons-macosx-MiniIcon
+%%DATADIR%%/fvwm/components/decorations/Buttons-macosx_NumLock
+%%DATADIR%%/fvwm/components/decorations/Buttons-nextstep
+%%DATADIR%%/fvwm/components/decorations/Buttons-nextstep-MiniIcon
+%%DATADIR%%/fvwm/components/decorations/Buttons-os2
+%%DATADIR%%/fvwm/components/decorations/Buttons-os2-MiniIcon
+%%DATADIR%%/fvwm/components/decorations/Buttons-os2_NumLock
+%%DATADIR%%/fvwm/components/decorations/Buttons-windows
+%%DATADIR%%/fvwm/components/decorations/Buttons-windows_NumLock
+%%DATADIR%%/fvwm/components/desktop/FVWM-Crystal_Functions
+%%DATADIR%%/fvwm/components/desktop/FVWM-Crystal_Preferences
+%%DATADIR%%/fvwm/components/desktop/FVWM-Crystal_Styles
+%%DATADIR%%/fvwm/components/desktop/Icon-Mwm
+%%DATADIR%%/fvwm/components/desktop/Icon-Thumbnails
+%%DATADIR%%/fvwm/components/desktop/Keyboard
+%%DATADIR%%/fvwm/components/desktop/Keyboard-Dvorak
+%%DATADIR%%/fvwm/components/desktop/Keyboard-Dvorak_NumLock
+%%DATADIR%%/fvwm/components/desktop/Keyboard-Vertical
+%%DATADIR%%/fvwm/components/desktop/Keyboard-Vertical-Dvorak
+%%DATADIR%%/fvwm/components/desktop/Keyboard-Vertical-Dvorak_NumLock
+%%DATADIR%%/fvwm/components/desktop/Keyboard-Vertical_NumLock
+%%DATADIR%%/fvwm/components/desktop/Keyboard_NumLock
+%%DATADIR%%/fvwm/components/desktop/Numpad
+%%DATADIR%%/fvwm/components/desktop/Numpad-Raise
+%%DATADIR%%/fvwm/components/functions/About
+%%DATADIR%%/fvwm/components/functions/Clear-FVWM-Settings
+%%DATADIR%%/fvwm/components/functions/Colorsets
+%%DATADIR%%/fvwm/components/functions/Desktop-Pager
+%%DATADIR%%/fvwm/components/functions/Developer-Menu
+%%DATADIR%%/fvwm/components/functions/EWMH-BaseStruts
+%%DATADIR%%/fvwm/components/functions/EdgeScroll-Toggle
+%%DATADIR%%/fvwm/components/functions/Exec-Accelerator
+%%DATADIR%%/fvwm/components/functions/Exit
+%%DATADIR%%/fvwm/components/functions/Exit-Safe
+%%DATADIR%%/fvwm/components/functions/Exit-Safe-gdm
+%%DATADIR%%/fvwm/components/functions/Exit-Safe-sudo
+%%DATADIR%%/fvwm/components/functions/Exit-gdm
+%%DATADIR%%/fvwm/components/functions/Exit-sudo
+%%DATADIR%%/fvwm/components/functions/FindFunctions
+%%DATADIR%%/fvwm/components/functions/Fullscreen
+%%DATADIR%%/fvwm/components/functions/FvwmExpose
+%%DATADIR%%/fvwm/components/functions/FvwmFormDefault
+%%DATADIR%%/fvwm/components/functions/FvwmIdent
+%%DATADIR%%/fvwm/components/functions/Icon-Basic
+%%DATADIR%%/fvwm/components/functions/Icon-Mwm
+%%DATADIR%%/fvwm/components/functions/Icon-Thumbnails
+%%DATADIR%%/fvwm/components/functions/Keyboard-Modifiers
+%%DATADIR%%/fvwm/components/functions/Menu-Position
+%%DATADIR%%/fvwm/components/functions/Mixer-aumix
+%%DATADIR%%/fvwm/components/functions/Mixer-cdcd
+%%DATADIR%%/fvwm/components/functions/Mixer-cmus
+%%DATADIR%%/fvwm/components/functions/Mixer-mpd
+%%DATADIR%%/fvwm/components/functions/Mixer-quodlibet
+%%DATADIR%%/fvwm/components/functions/Mixer-xmms
+%%DATADIR%%/fvwm/components/functions/Mixer-xmms2
+%%DATADIR%%/fvwm/components/functions/Music-cdcd
+%%DATADIR%%/fvwm/components/functions/Music-cmus
+%%DATADIR%%/fvwm/components/functions/Music-mpd
+%%DATADIR%%/fvwm/components/functions/Music-quodlibet
+%%DATADIR%%/fvwm/components/functions/Music-xmms
+%%DATADIR%%/fvwm/components/functions/Music-xmms2
+%%DATADIR%%/fvwm/components/functions/Numpad
+%%DATADIR%%/fvwm/components/functions/PPick
+%%DATADIR%%/fvwm/components/functions/Preferences
+%%DATADIR%%/fvwm/components/functions/Preferences-Menu
+%%DATADIR%%/fvwm/components/functions/Screenshot-import
+%%DATADIR%%/fvwm/components/functions/Urgency-Hint
+%%DATADIR%%/fvwm/components/functions/Wallpaper
+%%DATADIR%%/fvwm/components/functions/Window-Autohide
+%%DATADIR%%/fvwm/components/functions/Window-Basic
+%%DATADIR%%/fvwm/components/functions/Window-Buttons
+%%DATADIR%%/fvwm/components/functions/Window-Buttons-Vertical
+%%DATADIR%%/fvwm/components/functions/Window-Decorations
+%%DATADIR%%/fvwm/components/functions/Window-Focus
+%%DATADIR%%/fvwm/components/functions/Window-List
+%%DATADIR%%/fvwm/components/functions/Window-Rearrange
+%%DATADIR%%/fvwm/components/functions/Window-Remember-ClickToFocus
+%%DATADIR%%/fvwm/components/functions/Window-Remember-SloppyFocus
+%%DATADIR%%/fvwm/components/functions/Window-SetPlacementPolicy
+%%DATADIR%%/fvwm/components/scripts/FvwmScript-AcpiBatt
+%%DATADIR%%/fvwm/components/scripts/FvwmScript-Clock
+%%DATADIR%%/fvwm/components/scripts/FvwmScript-Clock-24h
+%%DATADIR%%/fvwm/components/scripts/FvwmScript-Clock-24h-small_date
+%%DATADIR%%/fvwm/components/scripts/FvwmScript-Clock-small_date
+%%DATADIR%%/fvwm/components/scripts/FvwmScript-CpuFreq
+%%DATADIR%%/fvwm/components/scripts/FvwmScript-CpuTemp
+%%DATADIR%%/fvwm/components/styles/Application-Icons-22-32
+%%DATADIR%%/fvwm/components/styles/Applications
+%%DATADIR%%/fvwm/components/styles/CursorStyle
+%%DATADIR%%/fvwm/components/styles/CursorStyle-Border
+%%DATADIR%%/fvwm/components/styles/FVWM
+%%DATADIR%%/fvwm/components/styles/FocusPolicy-FVWM-Crystal
+%%DATADIR%%/fvwm/components/styles/FocusPolicy-FVWM-Crystal-Raise
+%%DATADIR%%/fvwm/components/styles/FocusPolicy-MSWindows
+%%DATADIR%%/fvwm/components/styles/Menu
+%%DATADIR%%/fvwm/components/styles/QuakeConsole
+%%DATADIR%%/fvwm/components/styles/Window-Decorations
+%%DATADIR%%/fvwm/config
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/Colorsets
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/README
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/Theme.os2
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/Theme.windows
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-blue-icon.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-blue.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-gray-blue.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-gray-green.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-gray-red.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-gray-violet.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-gray-white.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-gray-yellow.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-gray.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-green-icon.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-green.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-red-icon.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-red.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-violet-icon.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-violet.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-white-icon.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-white.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-yellow-icon.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/button-yellow.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/title-active.png
+%%DATADIR%%/fvwm/decorations/Aqua/Blank buttons/title-inactive.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/Colorsets
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/README
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/Theme.os2
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/Theme.windows
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-blue-icon.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-blue.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-gray-blue.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-gray-green.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-gray-red.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-gray-violet.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-gray-white.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-gray-yellow.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-gray.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-green-icon.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-green.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-red-icon.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-red.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-violet-icon.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-violet.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-white-icon.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-white.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-yellow-icon.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/button-yellow.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/title-active.png
+%%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons/title-inactive.png
+%%DATADIR%%/fvwm/decorations/Clear/Blue/Colorsets
+%%DATADIR%%/fvwm/decorations/Clear/Blue/README
+%%DATADIR%%/fvwm/decorations/Clear/Blue/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Clear/Blue/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Clear/Blue/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Clear/Blue/Theme.os2
+%%DATADIR%%/fvwm/decorations/Clear/Blue/Theme.windows
+%%DATADIR%%/fvwm/decorations/Clear/Green/Colorsets
+%%DATADIR%%/fvwm/decorations/Clear/Green/README
+%%DATADIR%%/fvwm/decorations/Clear/Green/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Clear/Green/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Clear/Green/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Clear/Green/Theme.os2
+%%DATADIR%%/fvwm/decorations/Clear/Green/Theme.windows
+%%DATADIR%%/fvwm/decorations/Clear/Mono/Colorsets
+%%DATADIR%%/fvwm/decorations/Clear/Mono/README
+%%DATADIR%%/fvwm/decorations/Clear/Mono/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Clear/Mono/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Clear/Mono/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Clear/Mono/Theme.os2
+%%DATADIR%%/fvwm/decorations/Clear/Mono/Theme.windows
+%%DATADIR%%/fvwm/decorations/Clear/Navy/Colorsets
+%%DATADIR%%/fvwm/decorations/Clear/Navy/README
+%%DATADIR%%/fvwm/decorations/Clear/Navy/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Clear/Navy/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Clear/Navy/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Clear/Navy/Theme.os2
+%%DATADIR%%/fvwm/decorations/Clear/Navy/Theme.windows
+%%DATADIR%%/fvwm/decorations/Clear/Orange/Colorsets
+%%DATADIR%%/fvwm/decorations/Clear/Orange/README
+%%DATADIR%%/fvwm/decorations/Clear/Orange/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Clear/Orange/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Clear/Orange/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Clear/Orange/Theme.os2
+%%DATADIR%%/fvwm/decorations/Clear/Orange/Theme.windows
+%%DATADIR%%/fvwm/decorations/Clear/Red/Colorsets
+%%DATADIR%%/fvwm/decorations/Clear/Red/README
+%%DATADIR%%/fvwm/decorations/Clear/Red/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Clear/Red/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Clear/Red/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Clear/Red/Theme.os2
+%%DATADIR%%/fvwm/decorations/Clear/Red/Theme.windows
+%%DATADIR%%/fvwm/decorations/Clear/Violet/Colorsets
+%%DATADIR%%/fvwm/decorations/Clear/Violet/README
+%%DATADIR%%/fvwm/decorations/Clear/Violet/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Clear/Violet/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Clear/Violet/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Clear/Violet/Theme.os2
+%%DATADIR%%/fvwm/decorations/Clear/Violet/Theme.windows
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/Colorsets
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/README
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/Theme.os2
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/Theme.windows
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-close.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-empty-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-empty.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-options.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-active-title.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-arrows-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-close-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-empty-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-empty.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-iconify-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-maximize-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-options-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky/window-inactive-title.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/Colorsets
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/README
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/Theme.os2
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/Theme.windows
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-close.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-empty-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-empty.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-options.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-active-title.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-arrows-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-close-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-empty-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-empty.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-iconify-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-maximize-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-options-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Default/window-inactive-title.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/Colorsets
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/README
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/Theme.os2
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/Theme.windows
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-close.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-empty-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-empty.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-options.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-active-title.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-arrows-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-close-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-empty-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-empty.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-iconify-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-maximize-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-options-down.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/Clearlooks/Olive/window-inactive-title.png
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/Colorsets
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/README
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/Theme.os2
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/Theme.windows
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/window-arrows.png
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/window-close.png
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/window-empty.png
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/window-iconify.png
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/window-maximize.png
+%%DATADIR%%/fvwm/decorations/Crystal/CIOS/window-options.png
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/Colorsets
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/README
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/Theme.os2
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/Theme.windows
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/window-arrows.png
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/window-close.png
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/window-empty.png
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/window-iconify.png
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/window-maximize.png
+%%DATADIR%%/fvwm/decorations/Crystal/CrystalZono/window-options.png
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/Colorsets
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/README
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/Theme.os2
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/Theme.windows
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/window-arrows.png
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/window-close.png
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/window-empty.png
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/window-iconify.png
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/window-maximize.png
+%%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop/window-options.png
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/Colorsets
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/README
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/Theme.os2
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/Theme.windows
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/window-arrows.png
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/window-close.png
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/window-empty.png
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/window-iconify.png
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/window-maximize.png
+%%DATADIR%%/fvwm/decorations/Crystal/DarkGreen/window-options.png
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/Colorsets
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/README
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/Theme.os2
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/Theme.windows
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/window-arrows.png
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/window-close.png
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/window-empty.png
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/window-iconify.png
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/window-maximize.png
+%%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop/window-options.png
+%%DATADIR%%/fvwm/decorations/Crystal/Original/Colorsets
+%%DATADIR%%/fvwm/decorations/Crystal/Original/README
+%%DATADIR%%/fvwm/decorations/Crystal/Original/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Crystal/Original/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Crystal/Original/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Crystal/Original/Theme.os2
+%%DATADIR%%/fvwm/decorations/Crystal/Original/Theme.windows
+%%DATADIR%%/fvwm/decorations/Crystal/Original/window-arrows.png
+%%DATADIR%%/fvwm/decorations/Crystal/Original/window-close.png
+%%DATADIR%%/fvwm/decorations/Crystal/Original/window-empty.png
+%%DATADIR%%/fvwm/decorations/Crystal/Original/window-iconify.png
+%%DATADIR%%/fvwm/decorations/Crystal/Original/window-maximize.png
+%%DATADIR%%/fvwm/decorations/Crystal/Original/window-options.png
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/Colorsets
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/README
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/Theme.os2
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/Theme.windows
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/window-arrows.png
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/window-close.png
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/window-empty.png
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/window-iconify.png
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/window-maximize.png
+%%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan/window-options.png
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/Colorsets
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/README
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/Theme.os2
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/Theme.windows
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/window-arrows.png
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/window-close.png
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/window-empty.png
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/window-iconify.png
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/window-maximize.png
+%%DATADIR%%/fvwm/decorations/Crystal/RedDesktop/window-options.png
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/Colorsets
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/README
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/Theme.os2
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/Theme.windows
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/window-arrows.png
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/window-close.png
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/window-empty.png
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/window-iconify.png
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/window-maximize.png
+%%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop/window-options.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/Colorsets
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/README
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/Theme.macosx
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/Theme.os2
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/Theme.windows
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/button-active-arrows.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/button-active-close.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/button-active-iconify.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/button-active-maximize.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/button-active-menu.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/button-active-options.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/button-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/button-inactive-close.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/button-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/button-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/button-inactive-menu.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Black/button-inactive-options.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/Colorsets
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/README
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/Theme.macosx
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/Theme.os2
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/Theme.windows
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/button-active-arrows.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/button-active-close.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/button-active-iconify.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/button-active-maximize.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/button-active-menu.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/button-active-options.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/button-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/button-inactive-close.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/button-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/button-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/button-inactive-menu.png
+%%DATADIR%%/fvwm/decorations/DarkSky/Gray/button-inactive-options.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/Colorsets
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/README
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/Theme.os2
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/Theme.windows
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/window-active-close.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/window-active-menu.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/window-active-options.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/window-inactive-menu.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/Colorsets
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/README
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/Theme.os2
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/Theme.windows
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/window-active-close.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/window-active-menu.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/window-active-options.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/window-inactive-menu.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/Colorsets
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/README
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/Theme.os2
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/Theme.windows
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/window-active-close.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/window-active-menu.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/window-active-options.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/window-inactive-menu.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/Colorsets
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/README
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/Theme.os2
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/Theme.windows
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/window-active-close.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/window-active-menu.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/window-active-options.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/window-inactive-menu.png
+%%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/Colorsets
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/README
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/Theme.macosx
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/Theme.os2
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/Theme.windows
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/button-active-arrows.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/button-active-close.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/button-active-iconify.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/button-active-maximize.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/button-active-menu.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/button-active-options.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/button-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/button-inactive-close.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/button-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/button-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/button-inactive-menu.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/button-inactive-options.png
+%%DATADIR%%/fvwm/decorations/DawnSky/Default/title-active.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/Colorsets
+%%DATADIR%%/fvwm/decorations/Elberg/Default/README
+%%DATADIR%%/fvwm/decorations/Elberg/Default/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Elberg/Default/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Elberg/Default/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Elberg/Default/Theme.os2
+%%DATADIR%%/fvwm/decorations/Elberg/Default/Theme.windows
+%%DATADIR%%/fvwm/decorations/Elberg/Default/title-active-background.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/title-active-text-left.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/title-active-text-right.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/title-active-text.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/title-inactive-background.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/title-inactive-text-left.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/title-inactive-text-right.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/title-inactive-text.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/window-active-close.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/window-active-options.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/Elberg/Default/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/Colorsets
+%%DATADIR%%/fvwm/decorations/Fear/Default/README
+%%DATADIR%%/fvwm/decorations/Fear/Default/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Fear/Default/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Fear/Default/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Fear/Default/Theme.os2
+%%DATADIR%%/fvwm/decorations/Fear/Default/Theme.windows
+%%DATADIR%%/fvwm/decorations/Fear/Default/button.xcf
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-active-close.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-active-empty-down.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-active-empty.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-active-options.png
+%%DATADIR%%/fvwm/decorations/Fear/Default/window-inactive.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/Colorsets
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/README
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/Theme.os2
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/Theme.windows
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-blue-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-blue.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-gray-blue.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-gray-green.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-gray-red.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-gray-violet.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-gray-white.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-gray-yellow.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-gray.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-green-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-green.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-red-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-red.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-violet-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-violet.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-white-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-white.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-yellow-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Alternative/button-yellow.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/Colorsets
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/README
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/Theme.os2
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/Theme.windows
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-blue-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-blue.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-gray-blue.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-gray-green.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-gray-red.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-gray-violet.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-gray-white.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-gray-yellow.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-gray.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-green-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-green.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-red-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-red.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-violet-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-violet.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-white-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-white.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-yellow-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Default/button-yellow.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/Colorsets
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/README
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/Theme.os2
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/Theme.windows
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-blue-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-blue.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-gray-blue.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-gray-green.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-gray-red.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-gray-violet.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-gray-white.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-gray-yellow.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-gray.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-green-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-green.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-red-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-red.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-violet-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-violet.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-white-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-white.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-yellow-icon.png
+%%DATADIR%%/fvwm/decorations/Gentoo/Gray/button-yellow.png
+%%DATADIR%%/fvwm/decorations/Ish/Aqua/Colorsets
+%%DATADIR%%/fvwm/decorations/Ish/Aqua/README
+%%DATADIR%%/fvwm/decorations/Ish/Aqua/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Ish/Aqua/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Ish/Aqua/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Ish/Aqua/Theme.os2
+%%DATADIR%%/fvwm/decorations/Ish/Aqua/Theme.windows
+%%DATADIR%%/fvwm/decorations/Ish/Aqua/button-active-down.png
+%%DATADIR%%/fvwm/decorations/Ish/Aqua/button-active.png
+%%DATADIR%%/fvwm/decorations/Ish/Aqua/button-inactive.png
+%%DATADIR%%/fvwm/decorations/Ish/Aqua/title.png
+%%DATADIR%%/fvwm/decorations/Ish/Black/Colorsets
+%%DATADIR%%/fvwm/decorations/Ish/Black/README
+%%DATADIR%%/fvwm/decorations/Ish/Black/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Ish/Black/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Ish/Black/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Ish/Black/Theme.os2
+%%DATADIR%%/fvwm/decorations/Ish/Black/Theme.windows
+%%DATADIR%%/fvwm/decorations/Ish/Black/button-active-down.png
+%%DATADIR%%/fvwm/decorations/Ish/Black/button-active.png
+%%DATADIR%%/fvwm/decorations/Ish/Black/button-inactive.png
+%%DATADIR%%/fvwm/decorations/Ish/Black/title.png
+%%DATADIR%%/fvwm/decorations/Ish/Blue/Colorsets
+%%DATADIR%%/fvwm/decorations/Ish/Blue/README
+%%DATADIR%%/fvwm/decorations/Ish/Blue/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Ish/Blue/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Ish/Blue/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Ish/Blue/Theme.os2
+%%DATADIR%%/fvwm/decorations/Ish/Blue/Theme.windows
+%%DATADIR%%/fvwm/decorations/Ish/Blue/button-active-down.png
+%%DATADIR%%/fvwm/decorations/Ish/Blue/button-active.png
+%%DATADIR%%/fvwm/decorations/Ish/Blue/button-inactive.png
+%%DATADIR%%/fvwm/decorations/Ish/Blue/title.png
+%%DATADIR%%/fvwm/decorations/Ish/Green/Colorsets
+%%DATADIR%%/fvwm/decorations/Ish/Green/README
+%%DATADIR%%/fvwm/decorations/Ish/Green/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Ish/Green/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Ish/Green/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Ish/Green/Theme.os2
+%%DATADIR%%/fvwm/decorations/Ish/Green/Theme.windows
+%%DATADIR%%/fvwm/decorations/Ish/Green/button-active-down.png
+%%DATADIR%%/fvwm/decorations/Ish/Green/button-active.png
+%%DATADIR%%/fvwm/decorations/Ish/Green/button-inactive.png
+%%DATADIR%%/fvwm/decorations/Ish/Green/title.png
+%%DATADIR%%/fvwm/decorations/Ish/Lite/Colorsets
+%%DATADIR%%/fvwm/decorations/Ish/Lite/README
+%%DATADIR%%/fvwm/decorations/Ish/Lite/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Ish/Lite/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Ish/Lite/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Ish/Lite/Theme.os2
+%%DATADIR%%/fvwm/decorations/Ish/Lite/Theme.windows
+%%DATADIR%%/fvwm/decorations/Ish/Lite/button-active-down.png
+%%DATADIR%%/fvwm/decorations/Ish/Lite/button-active.png
+%%DATADIR%%/fvwm/decorations/Ish/Lite/button-inactive.png
+%%DATADIR%%/fvwm/decorations/Ish/Lite/title.png
+%%DATADIR%%/fvwm/decorations/Ish/Orange/Colorsets
+%%DATADIR%%/fvwm/decorations/Ish/Orange/README
+%%DATADIR%%/fvwm/decorations/Ish/Orange/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Ish/Orange/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Ish/Orange/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Ish/Orange/Theme.os2
+%%DATADIR%%/fvwm/decorations/Ish/Orange/Theme.windows
+%%DATADIR%%/fvwm/decorations/Ish/Orange/button-active-down.png
+%%DATADIR%%/fvwm/decorations/Ish/Orange/button-active.png
+%%DATADIR%%/fvwm/decorations/Ish/Orange/button-inactive.png
+%%DATADIR%%/fvwm/decorations/Ish/Orange/title.png
+%%DATADIR%%/fvwm/decorations/Ish/Pink/Colorsets
+%%DATADIR%%/fvwm/decorations/Ish/Pink/README
+%%DATADIR%%/fvwm/decorations/Ish/Pink/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Ish/Pink/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Ish/Pink/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Ish/Pink/Theme.os2
+%%DATADIR%%/fvwm/decorations/Ish/Pink/Theme.windows
+%%DATADIR%%/fvwm/decorations/Ish/Pink/button-active-down.png
+%%DATADIR%%/fvwm/decorations/Ish/Pink/button-active.png
+%%DATADIR%%/fvwm/decorations/Ish/Pink/button-inactive.png
+%%DATADIR%%/fvwm/decorations/Ish/Pink/title.png
+%%DATADIR%%/fvwm/decorations/Ish/Purple/Colorsets
+%%DATADIR%%/fvwm/decorations/Ish/Purple/README
+%%DATADIR%%/fvwm/decorations/Ish/Purple/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Ish/Purple/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Ish/Purple/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Ish/Purple/Theme.os2
+%%DATADIR%%/fvwm/decorations/Ish/Purple/Theme.windows
+%%DATADIR%%/fvwm/decorations/Ish/Purple/button-active-down.png
+%%DATADIR%%/fvwm/decorations/Ish/Purple/button-active.png
+%%DATADIR%%/fvwm/decorations/Ish/Purple/button-inactive.png
+%%DATADIR%%/fvwm/decorations/Ish/Purple/title.png
+%%DATADIR%%/fvwm/decorations/Ish/Red/Colorsets
+%%DATADIR%%/fvwm/decorations/Ish/Red/README
+%%DATADIR%%/fvwm/decorations/Ish/Red/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Ish/Red/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Ish/Red/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Ish/Red/Theme.os2
+%%DATADIR%%/fvwm/decorations/Ish/Red/Theme.windows
+%%DATADIR%%/fvwm/decorations/Ish/Red/button-active-down.png
+%%DATADIR%%/fvwm/decorations/Ish/Red/button-active.png
+%%DATADIR%%/fvwm/decorations/Ish/Red/button-inactive.png
+%%DATADIR%%/fvwm/decorations/Ish/Red/title.png
+%%DATADIR%%/fvwm/decorations/MicroClear/Default/Colorsets
+%%DATADIR%%/fvwm/decorations/MicroClear/Default/README
+%%DATADIR%%/fvwm/decorations/MicroClear/Default/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/MicroClear/Default/Theme.macosx
+%%DATADIR%%/fvwm/decorations/MicroClear/Default/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/MicroClear/Default/Theme.os2
+%%DATADIR%%/fvwm/decorations/MicroClear/Default/Theme.windows
+%%DATADIR%%/fvwm/decorations/Mist/Default/Colorsets
+%%DATADIR%%/fvwm/decorations/Mist/Default/README
+%%DATADIR%%/fvwm/decorations/Mist/Default/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Mist/Default/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Mist/Default/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Mist/Default/Theme.os2
+%%DATADIR%%/fvwm/decorations/Mist/Default/Theme.windows
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-active-close-left.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-active-close-right.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-active-empty-right.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-active-iconify-left.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-active-maximize-right.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-active-menu-left.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-active-options.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-active-title.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-inactive-close-left.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-inactive-close-right.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-inactive-empty-right.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-inactive-iconify-left.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-inactive-maximize-right.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-inactive-menu-left.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/Mist/Default/window-inactive-title.png
+%%DATADIR%%/fvwm/decorations/Motif/Cyan Gray/Colorsets
+%%DATADIR%%/fvwm/decorations/Motif/Cyan Gray/README
+%%DATADIR%%/fvwm/decorations/Motif/Cyan Gray/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Motif/Cyan Gray/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Motif/Cyan Gray/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Motif/Cyan Gray/Theme.os2
+%%DATADIR%%/fvwm/decorations/Motif/Cyan Gray/Theme.windows
+%%DATADIR%%/fvwm/decorations/Motif/Pink Navy/Colorsets
+%%DATADIR%%/fvwm/decorations/Motif/Pink Navy/README
+%%DATADIR%%/fvwm/decorations/Motif/Pink Navy/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Motif/Pink Navy/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Motif/Pink Navy/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Motif/Pink Navy/Theme.os2
+%%DATADIR%%/fvwm/decorations/Motif/Pink Navy/Theme.windows
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/Colorsets
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/README
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/Theme.macosx
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/Theme.os2
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/Theme.windows
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-active-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-active-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/BlueCurve/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/Colorsets
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/README
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/Theme.macosx
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/Theme.os2
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/Theme.windows
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-active-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-active-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/Crux/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/Colorsets
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/README
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/Theme.macosx
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/Theme.os2
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/Theme.windows
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-active-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-active-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dawn/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/Colorsets
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/README
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/Theme.macosx
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/Theme.os2
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/Theme.windows
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-active-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-active-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/Debian/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/Colorsets
+%%DATADIR%%/fvwm/decorations/SystemG/Default/README
+%%DATADIR%%/fvwm/decorations/SystemG/Default/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/SystemG/Default/Theme.macosx
+%%DATADIR%%/fvwm/decorations/SystemG/Default/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/SystemG/Default/Theme.os2
+%%DATADIR%%/fvwm/decorations/SystemG/Default/Theme.windows
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-active-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-active-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/Default/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/Colorsets
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/README
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/Theme.macosx
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/Theme.os2
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/Theme.windows
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-active-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-active-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/Dusk/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/Colorsets
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/README
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/Theme.macosx
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/Theme.os2
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/Theme.windows
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-active-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-active-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/Geramik/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/Colorsets
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/README
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/Theme.macosx
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/Theme.os2
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/Theme.windows
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-active-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-active-options.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/SystemG/SaltLake/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/Colorsets
+%%DATADIR%%/fvwm/decorations/Winter/Default/README
+%%DATADIR%%/fvwm/decorations/Winter/Default/Theme.fvwm-crystal
+%%DATADIR%%/fvwm/decorations/Winter/Default/Theme.macosx
+%%DATADIR%%/fvwm/decorations/Winter/Default/Theme.nextstep
+%%DATADIR%%/fvwm/decorations/Winter/Default/Theme.os2
+%%DATADIR%%/fvwm/decorations/Winter/Default/Theme.windows
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-active-arrows-down.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-active-arrows.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-active-close-down.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-active-close.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-active-iconify-down.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-active-iconify.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-active-maximize-down.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-active-maximize.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-active-options-down.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-active-options.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-active-title.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-inactive-arrows.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-inactive-close.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-inactive-iconify.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-inactive-maximize.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-inactive-options.png
+%%DATADIR%%/fvwm/decorations/Winter/Default/window-inactive-title.png
+%%DATADIR%%/fvwm/icons/Default/16x16/fvwm-crystal/fvwm-crystal.png
+%%DATADIR%%/fvwm/icons/Default/16x16/fvwm-crystal/media-playback-start.png
+%%DATADIR%%/fvwm/icons/Default/16x16/fvwm-crystal/media-skip-forward.png
+%%DATADIR%%/fvwm/icons/Default/16x16/fvwm-crystal/window-list.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/BitchX.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/Eterm.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/Maelstrom.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/TeamSpeak.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/abiword.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/abuse.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/acidrip.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/acroread.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/adom.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/akregator.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/alsamixer.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/amarok.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/amule.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/anjuta.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/aptitude.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/aptsh.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/archlinux.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ardour.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/armagetron.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/atanks.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/aterm.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/atlantik.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/atomix.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/audacity.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/aumix.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/avidemux.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/azureus.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/balsa-ab.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/balsa.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/barrage.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/basket.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/bastet.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/beep-media-player.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/billard-gl.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/blackboxgame.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/blackjack.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/blender.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/blobwars.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/bluefish.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/bmp.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/bridges.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/btdownloadgui.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/btdownloadgui.py.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/bzflag.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/castle-combat.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/cat_default.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/celestia.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/centericq.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/chromium.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/cinelerra.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/civclient.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/civserver.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/cmus.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/conglomerate.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/crack-attack.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/cream.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/cube.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/d4x.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/dcgui.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/debian.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/default.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/dia.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/diablo2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/digikam.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/dillo.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/djview.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/dlume.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/dominosa.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/doom.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/doom3.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/dosbox.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/drakconf.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/easytag.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/eboard.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/eclipse.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/egoboo.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ekg.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ekg2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/el.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/elinks.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/emacs.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/enigma.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/epic4.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/epiphany.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/eric.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/et.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/evince.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/evolution.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/exfalso.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/f-spot.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/falconseye.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/fetchmail.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/fifteen.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/filerunner.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/firefox.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/flipgame.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/flock.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/foobillard.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/freeciv.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/freemind.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/frozen-bubble.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/fvwm-crystal.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gabber.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gaim.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gajim.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/galeon.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gataxx.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gcfilms.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gcolor2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gconf-editor.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gedit.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gentoo.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gentoolinux.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gftp.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gg.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gg2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/giFTcurs.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/giFToxic.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gimp.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gizmo.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/glade-2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/glines.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gltron.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/glurp.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gmpc.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gmplayer.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnect.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnibbles.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnobots2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnome-alsamixer.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnome-control-center.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnome-mud.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnome-stones.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnome-terminal.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnome.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnomebaker.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnometris.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnomine.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnotravex.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnotski.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnudoku.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gnumeric.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/goobox.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gossip.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gpa.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gpaint.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gpass.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gqview.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/graveman.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/grip.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/grml.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gtali.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gthumb.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gtk-gnutella.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gtkboard.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gtktalog.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/guess.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gv.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gvim.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gweled.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gwenview.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/gxine.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/hydrogen.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/iagno.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/icebreaker.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/idle.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ihu.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/inertia.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/inkscape.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ipodder.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/irssi.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/jpilot.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/jumpnbump-menu.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/k3b.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kaddressbook.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kadu.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/karbon.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kasteroids.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kate.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/katomic.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kbackgammon.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kbattleship.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kblackbox.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kbounce.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kchart.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kcontrol.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kde.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kdevelop.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kdevelop3.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kedit.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kenolaba.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kf.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kformula.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kfouleggs.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kgoldrunner.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kile.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kivio.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kjumpingcube.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/klickety.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/klines.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kmahjongg.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kmail.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kmenu.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kmines.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kmix.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kmldonkey.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/knetwalk.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/knode.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kobodeluxe.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kobodl.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kolf.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/konqueror.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/konquest.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/konsole.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kontact.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kopete.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/korganizer.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/koshell.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kpaint.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kpat.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kphone.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kpilot.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kpoker.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kppp.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kpresenter.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kreversi.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/krita.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/krusader.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ksame.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kshisen.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ksirtet.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ksmiletris.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ksnake.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ksokoban.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kspaceduel.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kspread.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ktorrent.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ktouch.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ktron.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ktuberling.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kugar.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kview.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kvim.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kvirc.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kwin4.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/kword.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/lbreakout2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/lgeneral.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/licq.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/liferea.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/lightup.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/lincity-ng.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/links2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/linphone.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/linpopup.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/linux.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/liquidwar.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/lmarbles.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/lmms.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/loopy.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/lskat.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ltris.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/lxdoom.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/lynx.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/lyx.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/maelstrom.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mahjongg.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mandriva.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/map.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mc.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mines.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mldonkey.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mlgui.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/moagg.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/monodevelop.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/monotheka.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/moon-buggy.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mousepad.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mozilla-firefox.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mozilla-suite.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mozilla-thunderbird.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mozilla.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mplayer.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mrxvt.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/multi-gnome-terminal.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mutt.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/mysqlcc.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/nautilus.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/nessus.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/netgame.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/netpanzer.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/netris.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/netslide.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/neverball.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/neverputt.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/nexuiz.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/njam.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/nvidia-settings.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/nvidia.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/nvtv.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/nvu.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/nwn.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/oobase.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/oobase2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/oocalc.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/oocalc2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/oodraw.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/oodraw2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ooffice.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ooffice2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ooimpress.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ooimpress2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/oomath.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/oomath2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/oopadmin.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/oopadmin2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/oowriter.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/oowriter2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/openoffice.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/openttd.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/opera.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/pan.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/pathological.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/pattern.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/pegs.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/pida.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/pine.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/pingus.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/pixel32.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/porthole.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ppracer.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/psi.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/pydance.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/pygmy.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/pysol.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/python.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/q3ut3.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/qcad.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/qcomicbook.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/qjackctl.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/qps.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/qtorrent.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/qtstalker.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/quake.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/quake2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/quake3.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/quake4.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/quanta.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/quodlibet.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/rapidsvn.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/realplayer.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/rect.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/revelation.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/rhythmbox.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/rox.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/rubrica.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/same-gnome.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/samegame.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/scite.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/scorched3d.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/scribus.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/seahorse.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/sim.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/sixteen.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/skype.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/slant.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/slrn-pl.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/slrn.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/smart.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/snake.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/snownews.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/sodipodi.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/sol.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/solo.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/sound-juicer.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/starcraft.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/stardict.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/starfighter.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/stellarium.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/straw.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/streamtuner.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/supertux.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/sweep.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/sylpheed-claws.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/sylpheed-gtk2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/sylpheed.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/synaptic.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/teaed.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/teamspeak.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/tents.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/thunderbird.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/tkabber.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/tleenx2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/tomboy.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/torcs.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/totem.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/trackballs.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/trophy.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/tuxcmd.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/tuxpaint.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/tvtime.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/twiddle.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ubuntu.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/untangle.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/urxvt.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ut.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ut2004.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/valknut.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/vim.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/vmware.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/weechat-curses.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/wesnoth.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/wings3d.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/wolfmp.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/wolfsp.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/worm.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/wyrd.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xawtv.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xboard.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xcdroast.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xchat.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xemacs.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xevil.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xfce4-terminal.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xfe.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xfig.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xine.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xmahjongg.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xmms.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xmoto.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xmule.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xnc.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xpat2.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xpdf.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xpilot.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xqf.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xrick.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xsane.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xscreensaver.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/xterm.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/ydpdict.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/zapping.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/zim.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/zinf.png
+%%DATADIR%%/fvwm/icons/Default/22x22/apps/zsafe.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Configuration.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Development.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/GNOME.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Games.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Internet.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/KDE.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Multimedia.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Office.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Other.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/System.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/Terminals.png
+%%DATADIR%%/fvwm/icons/Default/22x22/categories/directory.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/applications-development.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/applications.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/audio-x-generic.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/camera-photo.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/colorsets-file.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/colorsets.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/dd.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/df.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/fvwm-crystal.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/gdm-xnest.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/gdm.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/media-eject.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/media-playback-pause.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/media-playback-start.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/media-playback-stop.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/media-record.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/media-seek-backward.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/media-seek-forward.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/media-skip-backward.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/media-skip-forward.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/multimedia-volume-control.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/preferences-desktop-screensaver.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/preferences-desktop-theme.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/preferences-desktop-wallpaper.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/preferences-desktop.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/system-file-manager.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/system-lock-screen.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/system-log-out.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/system-reboot.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/system-shutdown.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/user-desktop.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/utilities-terminal.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/view-refresh.png
+%%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal/window-list.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/BitchX.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/Eterm.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/Maelstrom.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/TeamSpeak.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/abiword.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/abuse.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/acidrip.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/acroread.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/adom.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/akregator.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/alsamixer.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/amarok.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/amule.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/anjuta.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/aptitude.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/aptsh.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/archlinux.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ardour.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/armagetron.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/atanks.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/aterm.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/atlantik.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/atomix.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/audacity.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/aumix.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/avidemux.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/azureus.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/balsa-ab.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/balsa.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/barrage.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/basket.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/bastet.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/beep-media-player.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/billard-gl.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/blackboxgame.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/blackjack.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/blender.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/blobwars.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/bluefish.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/bmp.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/bridges.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/btdownloadgui.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/btdownloadgui.py.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/bzflag.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/castle-combat.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/celestia.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/centericq.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/chromium.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/cinelerra.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/civclient.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/civserver.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/cmus.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/conglomerate.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/crack-attack.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/cream.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/cube.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/d4x.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/dcgui.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/debian.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/default.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/dia.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/diablo2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/digikam.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/dillo.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/djview.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/dlume.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/dominosa.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/doom.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/doom3.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/dosbox.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/drakconf.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/easytag.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/eboard.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/eclipse.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/egoboo.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ekg.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ekg2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/el.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/elinks.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/emacs.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/enigma.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/epic4.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/epiphany.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/eric.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/et.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/evince.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/evolution.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/exfalso.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/f-spot.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/falconseye.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/fetchmail.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/fifteen.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/filerunner.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/firefox.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/flipgame.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/flock.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/foobillard.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/freeciv.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/freemind.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/frozen-bubble.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/fvwm-crystal.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gabber.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gaim.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gajim.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/galeon.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gataxx.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gcfilms.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gcolor2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gconf-editor.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gedit.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gentoo.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gentoolinux.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gftp.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gg.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gg2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/giFTcurs.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/giFToxic.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gimp.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gizmo.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/glade-2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/glines.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gltron.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/glurp.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gmpc.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gmplayer.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnect.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnibbles.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnobots2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnome-alsamixer.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnome-control-center.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnome-mud.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnome-stones.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnome-terminal.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnome.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnomebaker.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnometris.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnomine.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnotravex.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnotski.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnudoku.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gnumeric.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/goobox.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gossip.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gpa.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gpaint.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gpass.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gqview.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/graveman.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/grip.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/grml.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gtali.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gthumb.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gtk-gnutella.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gtkboard.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gtktalog.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/guess.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gv.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gvim.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gweled.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gwenview.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/gxine.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/hydrogen.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/iagno.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/icebreaker.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/idle.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ihu.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/inertia.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/inkscape.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ipodder.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/irssi.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/jpilot.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/jumpnbump-menu.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/k3b.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kaddressbook.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kadu.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/karbon.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kasteroids.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kate.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/katomic.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kbackgammon.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kbattleship.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kblackbox.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kbounce.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kchart.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kcontrol.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kde.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kdevelop.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kdevelop3.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kedit.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kenolaba.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kf.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kformula.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kfouleggs.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kgoldrunner.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kile.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kivio.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kjumpingcube.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/klickety.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/klines.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kmahjongg.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kmail.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kmenu.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kmines.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kmix.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kmldonkey.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/knetwalk.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/knode.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kobodeluxe.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kobodl.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kolf.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/konqueror.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/konquest.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/konsole.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kontact.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kopete.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/korganizer.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/koshell.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kpaint.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kpat.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kphone.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kpilot.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kpoker.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kppp.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kpresenter.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kreversi.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/krita.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/krusader.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ksame.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kshisen.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ksirtet.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ksmiletris.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ksnake.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ksokoban.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kspaceduel.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kspread.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ktorrent.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ktouch.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ktron.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ktuberling.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kugar.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kview.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kvim.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kvirc.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kwin4.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/kword.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/lbreakout2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/lgeneral.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/licq.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/liferea.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/lightup.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/lincity-ng.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/links2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/linphone.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/linpopup.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/linux.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/liquidwar.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/lmarbles.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/lmms.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/loopy.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/lskat.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ltris.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/lxdoom.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/lynx.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/lyx.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/maelstrom.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mahjongg.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mandriva.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/map.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mc.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mines.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mldonkey.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mlgui.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/moagg.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/monodevelop.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/monotheka.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/moon-buggy.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mousepad.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mozilla-firefox.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mozilla-suite.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mozilla-thunderbird.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mozilla.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mplayer.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mrxvt.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/multi-gnome-terminal.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mutt.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/mysqlcc.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/nautilus.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/nessus.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/netgame.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/netpanzer.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/netris.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/netslide.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/neverball.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/neverputt.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/nexuiz.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/njam.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/nvidia-settings.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/nvidia.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/nvtv.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/nvu.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/nwn.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/oobase.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/oobase2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/oocalc.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/oocalc2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/oodraw.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/oodraw2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ooffice.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ooffice2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ooimpress.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ooimpress2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/oomath.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/oomath2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/oopadmin.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/oopadmin2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/oowriter.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/oowriter2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/openoffice.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/openttd.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/opera.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/pan.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/pathological.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/pattern.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/pegs.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/pida.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/pine.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/pingus.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/pixel32.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/porthole.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ppracer.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/psi.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/pydance.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/pygmy.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/pysol.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/python.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/q3ut3.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/qcad.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/qcomicbook.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/qjackctl.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/qps.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/qtorrent.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/qtstalker.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/quake.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/quake2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/quake3.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/quake4.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/quanta.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/quodlibet.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/rapidsvn.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/realplayer.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/rect.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/revelation.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/rhythmbox.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/rox.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/rubrica.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/same-gnome.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/samegame.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/scite.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/scorched3d.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/scribus.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/seahorse.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/sim.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/sixteen.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/skype.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/slant.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/slrn-pl.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/slrn.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/smart.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/snake.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/snownews.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/sodipodi.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/sol.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/solo.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/sound-juicer.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/starcraft.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/stardict.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/starfighter.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/stellarium.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/straw.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/streamtuner.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/supertux.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/sweep.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/sylpheed-claws.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/sylpheed-gtk2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/sylpheed.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/synaptic.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/teaed.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/teamspeak.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/tents.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/thunderbird.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/tkabber.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/tleenx2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/tomboy.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/torcs.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/totem.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/trackballs.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/trophy.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/tuxcmd.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/tuxpaint.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/tvtime.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/twiddle.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ubuntu.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/untangle.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/urxvt.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ut.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ut2004.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/valknut.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/vim.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/vmware.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/weechat-curses.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/wesnoth.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/wings3d.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/wolfmp.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/wolfsp.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/worm.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/wyrd.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xawtv.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xboard.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xcdroast.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xchat.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xemacs.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xevil.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xfce4-terminal.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xfe.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xfig.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xine.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xmahjongg.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xmms.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xmoto.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xmule.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xnc.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xpat2.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xpdf.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xpilot.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xqf.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xrick.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xsane.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xscreensaver.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/xterm.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/ydpdict.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/zapping.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/zim.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/zinf.png
+%%DATADIR%%/fvwm/icons/Default/32x32/apps/zsafe.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Configuration.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Development.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/GNOME.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Games.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Internet.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/KDE.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Multimedia.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Office.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Other.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/System.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/Terminals.png
+%%DATADIR%%/fvwm/icons/Default/32x32/categories/directory.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/applications-development.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/applications.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/audio-x-generic.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/camera-photo.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/colorsets-file.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/colorsets.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/dd.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/df.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/fvwm-crystal.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/gdm-xnest.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/gdm.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/media-eject.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/media-playback-pause.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/media-playback-start.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/media-playback-stop.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/media-record.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/media-seek-backward.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/media-seek-forward.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/media-skip-backward.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/media-skip-forward.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/multimedia-volume-control.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/preferences-desktop-screensaver.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/preferences-desktop-theme.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/preferences-desktop-wallpaper.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/preferences-desktop.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/system-file-manager.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/system-lock-screen.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/system-log-out.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/system-reboot.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/system-shutdown.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/user-desktop.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/utilities-terminal.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/view-refresh.png
+%%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal/window-list.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/Eterm.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/abiword.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/acidrip.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/acroread.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/akregator.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/amarok.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/anjuta.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/aptitude.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/aptsh.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/archlinux.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ardour.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/aterm.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/atlantik.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/avidemux.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/azureus.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/balsa-ab.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/balsa.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/barrage.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/basket.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/beep-media-player.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/blackboxgame.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/blackjack.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/blender.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/bluefish.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/bmp.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/bridges.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/castle-combat.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/celestia.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/centericq.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/cinelerra.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/crack-attack.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/cube.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/dcgui.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/debian.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/default.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/dia.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/dlume.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/dominosa.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/doom.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/doom3.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/drakconf.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/eboard.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/eclipse.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/el.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/emacs.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/enigma.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/epiphany.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/evolution.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/exfalso.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/f-spot.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/fifteen.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/firefox.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/flipgame.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/flock.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/foobillard.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/frozen-bubble.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/fvwm-crystal.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gajim.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/galeon.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gataxx.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gcolor2.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gentoo.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gentoolinux.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gftp.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gg2.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gimp.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gizmo.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/glade-2.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/glines.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gltron.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/glurp.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gmplayer.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnect.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnibbles.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnobots2.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnome-alsamixer.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnome-control-center.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnome-mud.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnome-stones.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnome-terminal.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnome.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnomebaker.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnometris.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnomine.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnotravex.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnotski.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gnudoku.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/goobox.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gpaint.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gpass.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gqview.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/graveman.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gtali.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gthumb.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/guess.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gvim.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gweled.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/gwenview.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/hydrogen.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/iagno.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/icebreaker.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ihu.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/inertia.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ipodder.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/k3b.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kaddressbook.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/karbon.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kasteroids.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kate.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/katomic.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kbackgammon.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kblackbox.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kcontrol.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kde.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kdevelop.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kdevelop3.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kedit.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kenolaba.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kf.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kfouleggs.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/klickety.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kmahjongg.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kmines.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kmix.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kmldonkey.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/knetwalk.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/knode.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kolf.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/konqueror.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/konquest.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/konsole.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kontact.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kopete.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kpaint.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kpat.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kphone.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kpilot.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kpoker.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kppp.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kreversi.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/krusader.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ksame.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kshisen.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ksirtet.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ksmiletris.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ksnake.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ksokoban.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kspaceduel.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ktorrent.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ktouch.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ktron.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ktuberling.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kview.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kvim.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kvirc.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/kwin4.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/licq.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/liferea.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/lightup.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/lincity-ng.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/linphone.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/linpopup.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/linux.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/lmms.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/loopy.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/lskat.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/lxdoom.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/lynx.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/mandriva.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/map.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/mines.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/monodevelop.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/monotheka.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/mousepad.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/mozilla-firefox.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/mozilla-thunderbird.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/mplayer.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/mrxvt.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/multi-gnome-terminal.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/mutt.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/nautilus.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/netgame.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/netslide.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/nexuiz.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/nvu.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/oobase.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/oobase2.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/oocalc.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/oocalc2.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/oodraw.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/oodraw2.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ooimpress.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ooimpress2.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/oomath.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/oomath2.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/oopadmin.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/oopadmin2.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/oowriter.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/oowriter2.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/openttd.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/pattern.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/pegs.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/pida.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/pixel32.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/porthole.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ppracer.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/pydance.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/pygmy.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/qtstalker.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/quake4.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/quanta.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/quodlibet.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/realplayer.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/rect.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/rubrica.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/same-gnome.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/samegame.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/scite.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/scorched3d.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/sim.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/sixteen.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/slant.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/smart.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/snownews.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/sodipodi.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/sol.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/solo.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/sound-juicer.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/stardict.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/straw.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/streamtuner.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/sweep.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/synaptic.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/teaed.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/tents.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/thunderbird.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/tomboy.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/totem.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/tuxcmd.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/tvtime.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/twiddle.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ubuntu.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/untangle.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/urxvt.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ut2004.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/vim.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/vmware.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/wesnoth.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/wyrd.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/xawtv.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/xemacs.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/xfce4-terminal.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/xfe.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/xfig.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/xmms.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/xmoto.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/xnc.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/xqf.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/xscreensaver.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/ydpdict.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/zapping.png
+%%DATADIR%%/fvwm/icons/Default/48x48/apps/zim.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Configuration.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Development.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/GNOME.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Games.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Internet.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/KDE.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Multimedia.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Office.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Other.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/System.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/Terminals.png
+%%DATADIR%%/fvwm/icons/Default/48x48/categories/directory.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/applications-development.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/applications.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/audio-x-generic.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/camera-photo.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/colorsets-file.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/colorsets.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/dd.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/df.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/fvwm-crystal.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/gdm-xnest.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/gdm.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/media-eject.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/media-playback-pause.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/media-playback-start.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/media-playback-stop.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/media-record.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/media-seek-backward.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/media-seek-forward.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/media-skip-backward.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/media-skip-forward.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/multimedia-volume-control.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/preferences-desktop-screensaver.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/preferences-desktop-theme.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/preferences-desktop-wallpaper.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/preferences-desktop.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/system-file-manager.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/system-lock-screen.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/system-log-out.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/system-reboot.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/system-shutdown.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/user-desktop.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/utilities-terminal.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/view-refresh.png
+%%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal/window-list.png
+%%DATADIR%%/fvwm/locale/de_DE.UTF-8/LC_MESSAGES/fvwm-crystal.mo
+%%DATADIR%%/fvwm/locale/de_DE.UTF-8/LC_MESSAGES/fvwm-crystal.po
+%%DATADIR%%/fvwm/locale/de_DE/LC_MESSAGES/fvwm-crystal.mo
+%%DATADIR%%/fvwm/locale/de_DE/LC_MESSAGES/fvwm-crystal.po
+%%DATADIR%%/fvwm/locale/es_ES/LC_MESSAGES/fvwm-crystal.mo
+%%DATADIR%%/fvwm/locale/es_ES/LC_MESSAGES/fvwm-crystal.po
+%%DATADIR%%/fvwm/locale/hu_HU/LC_MESSAGES/fvwm-crystal.mo
+%%DATADIR%%/fvwm/locale/hu_HU/LC_MESSAGES/fvwm-crystal.po
+%%DATADIR%%/fvwm/locale/pl_PL.UTF-8/LC_MESSAGES/fvwm-crystal.mo
+%%DATADIR%%/fvwm/locale/pl_PL.UTF-8/LC_MESSAGES/fvwm-crystal.po
+%%DATADIR%%/fvwm/locale/pl_PL/LC_MESSAGES/fvwm-crystal.mo
+%%DATADIR%%/fvwm/locale/pl_PL/LC_MESSAGES/fvwm-crystal.po
+%%DATADIR%%/fvwm/locale/ru_RU.KOI8-R/LC_MESSAGES/fvwm-crystal.mo
+%%DATADIR%%/fvwm/locale/ru_RU.KOI8-R/LC_MESSAGES/fvwm-crystal.po
+%%DATADIR%%/fvwm/locale/ru_RU.UTF-8/LC_MESSAGES/fvwm-crystal.mo
+%%DATADIR%%/fvwm/locale/ru_RU.UTF-8/LC_MESSAGES/fvwm-crystal.po
+%%DATADIR%%/fvwm/locale/sk_SK.UTF-8/LC_MESSAGES/fvwm-crystal.mo
+%%DATADIR%%/fvwm/locale/sk_SK.UTF-8/LC_MESSAGES/fvwm-crystal.po
+%%DATADIR%%/fvwm/locale/sk_SK/LC_MESSAGES/fvwm-crystal.mo
+%%DATADIR%%/fvwm/locale/sk_SK/LC_MESSAGES/fvwm-crystal.po
+%%DATADIR%%/fvwm/preferences/DefaultDesktopManager
+%%DATADIR%%/fvwm/preferences/DefaultFocusPolicy
+%%DATADIR%%/fvwm/preferences/DefaultMusicPlayer
+%%DATADIR%%/fvwm/preferences/DefaultTerminal
+%%DATADIR%%/fvwm/preferences/LastChoosenButtonModel
+%%DATADIR%%/fvwm/preferences/LastChoosenColorset
+%%DATADIR%%/fvwm/preferences/LastChoosenRecipe
+%%DATADIR%%/fvwm/preferences/LastChoosenWallpaper
+%%DATADIR%%/fvwm/preferences/LastChoosenWindowDecoration
+%%DATADIR%%/fvwm/preferences/PrivilegedTerminals
+%%DATADIR%%/fvwm/preferences/QuakeConsoleHeight
+%%DATADIR%%/fvwm/preferences/QuakeConsoleTerminal
+%%DATADIR%%/fvwm/preferences/Startup
+%%DATADIR%%/fvwm/recipes/Clean
+%%DATADIR%%/fvwm/recipes/Clean Vertical
+%%DATADIR%%/fvwm/recipes/Corner
+%%DATADIR%%/fvwm/recipes/Default
+%%DATADIR%%/fvwm/recipes/Default with ACPI
+%%DATADIR%%/fvwm/recipes/Dock
+%%DATADIR%%/fvwm/recipes/Light
+%%DATADIR%%/fvwm/recipes/Nebulae
+%%DATADIR%%/fvwm/recipes/Old School
+%%DATADIR%%/fvwm/recipes/SideLine
+%%DATADIR%%/fvwm/recipes/TopDown
+%%DATADIR%%/fvwm/recipes/TopLine
+%%DATADIR%%/fvwm/scripts/FvwmMPD/FvwmApplet-MpdAddSong
+%%DATADIR%%/fvwm/scripts/FvwmMPD/FvwmApplet-MpdPlEd
+%%DATADIR%%/fvwm/scripts/FvwmMPD/getdir.sh
+%%DATADIR%%/fvwm/scripts/FvwmMPD/getprevdir.py
+%%DATADIR%%/fvwm/scripts/FvwmMPD/listsongs.sh
+%%DATADIR%%/fvwm/scripts/FvwmMPD/parseplaylist.sh
+%%DATADIR%%/fvwm/scripts/FvwmMPD/stripnames.py
+%%DATADIR%%/fvwm/wallpapers/fvwm-crystal-bright1-1024x768.jpg
+%%DATADIR%%/fvwm/wallpapers/fvwm-crystal-dark1-1024x768.jpg
+%%DATADIR%%/fvwm/wallpapers/fvwm-crystal-dark2-1024x768.jpg
+%%PORTDOCS%%%%DOCSDIR%%/addons/Xresources
+%%PORTDOCS%%%%DOCSDIR%%/addons/Xsession
+%%PORTDOCS%%%%DOCSDIR%%/addons/fvwm-crystal.desktop
+%%PORTDOCS%%%%DOCSDIR%%/addons/fvwm.vim
+%%PORTDOCS%%%%DOCSDIR%%/addons/sudo
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Application database.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/Crystal ROX! HOWTO.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/Keyboard bindings.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/Mouse bindings.txt
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/Tips.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/addons
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/fvwm/wallpapers
+@dirrm %%DATADIR%%/fvwm/scripts/FvwmMPD
+@dirrm %%DATADIR%%/fvwm/scripts
+@dirrm %%DATADIR%%/fvwm/recipes
+@dirrm %%DATADIR%%/fvwm/preferences
+@dirrm %%DATADIR%%/fvwm/locale/sk_SK/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/sk_SK.UTF-8/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/sk_SK.UTF-8
+@dirrm %%DATADIR%%/fvwm/locale/sk_SK
+@dirrm %%DATADIR%%/fvwm/locale/ru_RU.UTF-8/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/ru_RU.UTF-8
+@dirrm %%DATADIR%%/fvwm/locale/ru_RU.KOI8-R/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/ru_RU.KOI8-R
+@dirrm %%DATADIR%%/fvwm/locale/pl_PL/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/pl_PL.UTF-8/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/pl_PL.UTF-8
+@dirrm %%DATADIR%%/fvwm/locale/pl_PL
+@dirrm %%DATADIR%%/fvwm/locale/hu_HU/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/hu_HU
+@dirrm %%DATADIR%%/fvwm/locale/es_ES/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/es_ES
+@dirrm %%DATADIR%%/fvwm/locale/de_DE/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/de_DE.UTF-8/LC_MESSAGES
+@dirrm %%DATADIR%%/fvwm/locale/de_DE.UTF-8
+@dirrm %%DATADIR%%/fvwm/locale/de_DE
+@dirrm %%DATADIR%%/fvwm/locale
+@dirrm %%DATADIR%%/fvwm/icons/Default/48x48/fvwm-crystal
+@dirrm %%DATADIR%%/fvwm/icons/Default/48x48/categories
+@dirrm %%DATADIR%%/fvwm/icons/Default/48x48/apps
+@dirrm %%DATADIR%%/fvwm/icons/Default/48x48
+@dirrm %%DATADIR%%/fvwm/icons/Default/32x32/fvwm-crystal
+@dirrm %%DATADIR%%/fvwm/icons/Default/32x32/categories
+@dirrm %%DATADIR%%/fvwm/icons/Default/32x32/apps
+@dirrm %%DATADIR%%/fvwm/icons/Default/32x32
+@dirrm %%DATADIR%%/fvwm/icons/Default/22x22/fvwm-crystal
+@dirrm %%DATADIR%%/fvwm/icons/Default/22x22/categories
+@dirrm %%DATADIR%%/fvwm/icons/Default/22x22/apps
+@dirrm %%DATADIR%%/fvwm/icons/Default/22x22
+@dirrm %%DATADIR%%/fvwm/icons/Default/16x16/fvwm-crystal
+@dirrm %%DATADIR%%/fvwm/icons/Default/16x16
+@dirrm %%DATADIR%%/fvwm/icons/Default
+@dirrm %%DATADIR%%/fvwm/icons
+@dirrm %%DATADIR%%/fvwm/decorations/Winter/Default
+@dirrm %%DATADIR%%/fvwm/decorations/Winter
+@dirrm %%DATADIR%%/fvwm/decorations/SystemG/SaltLake
+@dirrm %%DATADIR%%/fvwm/decorations/SystemG/Geramik
+@dirrm %%DATADIR%%/fvwm/decorations/SystemG/Dusk
+@dirrm %%DATADIR%%/fvwm/decorations/SystemG/Default
+@dirrm %%DATADIR%%/fvwm/decorations/SystemG/Debian
+@dirrm %%DATADIR%%/fvwm/decorations/SystemG/Dawn
+@dirrm %%DATADIR%%/fvwm/decorations/SystemG/Crux
+@dirrm %%DATADIR%%/fvwm/decorations/SystemG/BlueCurve
+@dirrm %%DATADIR%%/fvwm/decorations/SystemG
+@dirrm %%DATADIR%%/fvwm/decorations/Motif/Pink Navy
+@dirrm %%DATADIR%%/fvwm/decorations/Motif/Cyan Gray
+@dirrm %%DATADIR%%/fvwm/decorations/Motif
+@dirrm %%DATADIR%%/fvwm/decorations/Mist/Default
+@dirrm %%DATADIR%%/fvwm/decorations/Mist
+@dirrm %%DATADIR%%/fvwm/decorations/MicroClear/Default
+@dirrm %%DATADIR%%/fvwm/decorations/MicroClear
+@dirrm %%DATADIR%%/fvwm/decorations/Ish/Red
+@dirrm %%DATADIR%%/fvwm/decorations/Ish/Purple
+@dirrm %%DATADIR%%/fvwm/decorations/Ish/Pink
+@dirrm %%DATADIR%%/fvwm/decorations/Ish/Orange
+@dirrm %%DATADIR%%/fvwm/decorations/Ish/Lite
+@dirrm %%DATADIR%%/fvwm/decorations/Ish/Green
+@dirrm %%DATADIR%%/fvwm/decorations/Ish/Blue
+@dirrm %%DATADIR%%/fvwm/decorations/Ish/Black
+@dirrm %%DATADIR%%/fvwm/decorations/Ish/Aqua
+@dirrm %%DATADIR%%/fvwm/decorations/Ish
+@dirrm %%DATADIR%%/fvwm/decorations/Gentoo/Gray
+@dirrm %%DATADIR%%/fvwm/decorations/Gentoo/Default
+@dirrm %%DATADIR%%/fvwm/decorations/Gentoo/Alternative
+@dirrm %%DATADIR%%/fvwm/decorations/Gentoo
+@dirrm %%DATADIR%%/fvwm/decorations/Fear/Default
+@dirrm %%DATADIR%%/fvwm/decorations/Fear
+@dirrm %%DATADIR%%/fvwm/decorations/Elberg/Default
+@dirrm %%DATADIR%%/fvwm/decorations/Elberg
+@dirrm %%DATADIR%%/fvwm/decorations/DawnSky/Default
+@dirrm %%DATADIR%%/fvwm/decorations/DawnSky
+@dirrm %%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Red
+@dirrm %%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Purple
+@dirrm %%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Green
+@dirrm %%DATADIR%%/fvwm/decorations/Dawn of a Terminal/Blue
+@dirrm %%DATADIR%%/fvwm/decorations/Dawn of a Terminal
+@dirrm %%DATADIR%%/fvwm/decorations/DarkSky/Gray
+@dirrm %%DATADIR%%/fvwm/decorations/DarkSky/Black
+@dirrm %%DATADIR%%/fvwm/decorations/DarkSky
+@dirrm %%DATADIR%%/fvwm/decorations/Crystal/WhiteDesktop
+@dirrm %%DATADIR%%/fvwm/decorations/Crystal/RedDesktop
+@dirrm %%DATADIR%%/fvwm/decorations/Crystal/Red - Cyan
+@dirrm %%DATADIR%%/fvwm/decorations/Crystal/Original
+@dirrm %%DATADIR%%/fvwm/decorations/Crystal/IrishDesktop
+@dirrm %%DATADIR%%/fvwm/decorations/Crystal/DarkGreen
+@dirrm %%DATADIR%%/fvwm/decorations/Crystal/DarkDesktop
+@dirrm %%DATADIR%%/fvwm/decorations/Crystal/CrystalZono
+@dirrm %%DATADIR%%/fvwm/decorations/Crystal/CIOS
+@dirrm %%DATADIR%%/fvwm/decorations/Crystal
+@dirrm %%DATADIR%%/fvwm/decorations/Clearlooks/Olive
+@dirrm %%DATADIR%%/fvwm/decorations/Clearlooks/Default
+@dirrm %%DATADIR%%/fvwm/decorations/Clearlooks/DeepSky
+@dirrm %%DATADIR%%/fvwm/decorations/Clearlooks
+@dirrm %%DATADIR%%/fvwm/decorations/Clear/Violet
+@dirrm %%DATADIR%%/fvwm/decorations/Clear/Red
+@dirrm %%DATADIR%%/fvwm/decorations/Clear/Orange
+@dirrm %%DATADIR%%/fvwm/decorations/Clear/Navy
+@dirrm %%DATADIR%%/fvwm/decorations/Clear/Mono
+@dirrm %%DATADIR%%/fvwm/decorations/Clear/Green
+@dirrm %%DATADIR%%/fvwm/decorations/Clear/Blue
+@dirrm %%DATADIR%%/fvwm/decorations/Clear
+@dirrm %%DATADIR%%/fvwm/decorations/Aqua/Buttons with icons
+@dirrm %%DATADIR%%/fvwm/decorations/Aqua/Blank buttons
+@dirrm %%DATADIR%%/fvwm/decorations/Aqua
+@dirrm %%DATADIR%%/fvwm/decorations
+@dirrm %%DATADIR%%/fvwm/components/styles
+@dirrm %%DATADIR%%/fvwm/components/scripts
+@dirrm %%DATADIR%%/fvwm/components/functions
+@dirrm %%DATADIR%%/fvwm/components/desktop
+@dirrm %%DATADIR%%/fvwm/components/decorations
+@dirrm %%DATADIR%%/fvwm/components/bindings
+@dirrm %%DATADIR%%/fvwm/components/apps
+@dirrm %%DATADIR%%/fvwm/components
+@dirrm %%DATADIR%%/fvwm/colorsets
+@dirrm %%DATADIR%%/fvwm/Applications/System/Terminals
+@dirrm %%DATADIR%%/fvwm/Applications/System/Others
+@dirrm %%DATADIR%%/fvwm/Applications/System/File_managers
+@dirrm %%DATADIR%%/fvwm/Applications/System/Configuration
+@dirrm %%DATADIR%%/fvwm/Applications/System
+@dirrm %%DATADIR%%/fvwm/Applications/Other/Security
+@dirrm %%DATADIR%%/fvwm/Applications/Other/Knowledge
+@dirrm %%DATADIR%%/fvwm/Applications/Other/CD_burning
+@dirrm %%DATADIR%%/fvwm/Applications/Other
+@dirrm %%DATADIR%%/fvwm/Applications/Office/Viewers
+@dirrm %%DATADIR%%/fvwm/Applications/Office/PIM
+@dirrm %%DATADIR%%/fvwm/Applications/Office/OpenOffice.org
+@dirrm %%DATADIR%%/fvwm/Applications/Office/KOffice
+@dirrm %%DATADIR%%/fvwm/Applications/Office/GNOME_Office
+@dirrm %%DATADIR%%/fvwm/Applications/Office/DTP
+@dirrm %%DATADIR%%/fvwm/Applications/Office
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Video_tools
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Video_players
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Tools
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Image_tools
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio_tools
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/Audio_players
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/20~Image_editors
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia/10~Mixers
+@dirrm %%DATADIR%%/fvwm/Applications/Multimedia
+@dirrm %%DATADIR%%/fvwm/Applications/Internet/Usenet
+@dirrm %%DATADIR%%/fvwm/Applications/Internet/Others
+@dirrm %%DATADIR%%/fvwm/Applications/Internet/IRC_clients
+@dirrm %%DATADIR%%/fvwm/Applications/Internet/IM/20~Voice
+@dirrm %%DATADIR%%/fvwm/Applications/Internet/IM/20~Jabber
+@dirrm %%DATADIR%%/fvwm/Applications/Internet/IM
+@dirrm %%DATADIR%%/fvwm/Applications/Internet/File_sharing
+@dirrm %%DATADIR%%/fvwm/Applications/Internet/7~RSS_readers
+@dirrm %%DATADIR%%/fvwm/Applications/Internet/13~Email
+@dirrm %%DATADIR%%/fvwm/Applications/Internet/10~Web_browsers
+@dirrm %%DATADIR%%/fvwm/Applications/Internet
+@dirrm %%DATADIR%%/fvwm/Applications/Development/Text_editors
+@dirrm %%DATADIR%%/fvwm/Applications/Development/IDE
+@dirrm %%DATADIR%%/fvwm/Applications/Development
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Tetris-like
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Strategy
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Shooters
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/RPG
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Others
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Logic/Portable_Puzzle_Collection
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Logic
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Card
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Board
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/Arcade
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games/20~FPP
+@dirrm %%DATADIR%%/fvwm/Applications/20~Games
+@dirrm %%DATADIR%%/fvwm/Applications
+@dirrm %%DATADIR%%/fvwm
+@dirrm %%DATADIR%%
