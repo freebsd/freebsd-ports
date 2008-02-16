@@ -1,0 +1,9 @@
+Data::Throttler helps solving throttling tasks like "allow a single IP
+only to send 100 emails per hour".
+
+It provides an optionally persistent data store to keep track of
+what happened before and offers a simple yes/no interface to an application,
+which can then focus on performing the actual task (like sending email)
+or suppressing/postponing it.
+
+WWW:	http://search.cpan.org/dist/Data-Throttler/
