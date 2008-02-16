@@ -413,6 +413,7 @@
     SUBDIR += gnome-vfs1
     SUBDIR += gnome-vfsmm
     SUBDIR += gnome2-hacker-tools
+    SUBDIR += gnucflow
     SUBDIR += gnulibiberty
     SUBDIR += gnustep
     SUBDIR += gnustep-make
