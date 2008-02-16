@@ -1801,6 +1801,7 @@ cyrus-sasl2-saslauthd	ports/security/cyrus-sasl2-saslauthd
 cyrus2courier	ports/mail/cyrus2courier
 d2x		ports/games/d2x
 da-aspell	ports/textproc/da-aspell
+daa2iso		ports/sysutils/daa2iso
 daapd		ports/audio/daapd
 daaplib		ports/audio/daaplib
 dact		ports/archivers/dact
