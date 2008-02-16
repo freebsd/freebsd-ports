@@ -1,11 +1,20 @@
---- configure.orig	Mon Jul 16 08:10:12 2007
-+++ configure	Mon Jul 16 08:10:48 2007
-@@ -20038,7 +20038,7 @@
+--- configure.orig	Mon Jan 28 16:08:03 2008
++++ configure	Fri Feb  8 18:29:13 2008
+@@ -19836,7 +19836,7 @@
+ fi
  
+ 	;;
+-darwin*|netbsd*)
++darwin*|netbsd*|freebsd*)
+ 	with_fuse="external"
+ 	;;
+ freebsd*)
+@@ -23293,7 +23293,7 @@
+ fi
  
- case "$target_os" in
--linux*|darwin*|netbsd*)
-+linux*|darwin*|netbsd*|freebsd*)
- 
- 
- if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+ # Settings
+-pkgconfigdir="\$(libdir)/pkgconfig"
++pkgconfigdir="\$(prefix)/libdata/pkgconfig"
+ ntfs3gincludedir="\$(includedir)/ntfs-3g"
+ # Executables should be installed to the root filesystem, otherwise
+ # automounting NTFS volumes can fail during boot if the driver binaries

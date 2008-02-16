@@ -1,22 +1,20 @@
---- src/Makefile.in.orig	Sat Aug 25 18:23:50 2007
-+++ src/Makefile.in	Mon Sep 10 15:23:40 2007
-@@ -528,7 +528,7 @@
+--- src/Makefile.in.orig	Mon Jan 28 16:08:09 2008
++++ src/Makefile.in	Fri Feb  8 16:05:14 2008
+@@ -638,7 +638,7 @@
  
  info-am:
  
--install-data-am: install-data-local install-man
-+install-data-am: install-man
+-install-data-am: install-data-local install-man \
++install-data-am: install-man \
+ 	install-rootbinPROGRAMS install-rootsbinDATA
  
  install-exec-am: install-binPROGRAMS install-exec-local
- 	@$(NORMAL_INSTALL)
-@@ -590,8 +590,8 @@
- @RUN_LDCONFIG_TRUE@	$(LDCONFIG)
+@@ -696,7 +696,7 @@
  
  install-exec-local:
--	$(INSTALL) -d $(DESTDIR)/sbin
--	$(LN_S) -f $(bindir)/ntfs-3g $(DESTDIR)/sbin/mount.ntfs-3g
-+	$(INSTALL) -d $(DESTDIR)/usr/sbin
-+	$(LN_S) -f $(bindir)/ntfs-3g $(DESTDIR)/usr/sbin/mount_ntfs-3g
+ 	$(INSTALL) -d "$(DESTDIR)$(rootsbindir)"
+-	$(LN_S) -f "$(rootbindir)/ntfs-3g" "$(DESTDIR)$(rootsbindir)/mount.ntfs-3g"
++	$(LN_S) -f "$(rootbindir)/ntfs-3g" "/usr/sbin/mount_ntfs-3g"
  
  install-data-local:
- 	$(INSTALL) -d $(DESTDIR)$(man8dir)
+ 	$(INSTALL) -d "$(DESTDIR)$(man8dir)"

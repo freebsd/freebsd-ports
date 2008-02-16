@@ -1,52 +1,10 @@
 ==============================================================================
 
-NTFS-3G has been installed, and was built with UBLIO support.
+NTFS-3G has been installed, for information, known issues and how to report
+bugs see the FreeBSD README:
 
-The UBLIO layer is configured through environment variables, which are read
-when mounting the filesystem. The following are available:
+%%DOCSDIR%%/README.FreeBSD
 
-NTFS_USE_UBLIO	- Enable the UBLIO cache.
-UBLIO_BLOCKSIZE	- Actual reads/writes will be multiples of this quantity.
-UBLIO_ITEMS	- Number of cache entries, each of UBLIO_BLOCKSIZE length.
-UBLIO_GRACE	- Number of times a cache entry will refuse being recycled.
-UBLIO_SYNC_IO	- If enabled, all writes will be immediatly executed.
-
-To give an idea about tuning, here are the default values with some notes
-(they are only based on some simple benchmarks, and may be wrong):
-
-NTFS_USE_UBLIO	- 1. Disabling it drastically decreases performance.
-UBLIO_BLOCKSIZE	- 262144 (256KB). Larger improves reading/writing speed of
-		  large files, and smaller makes filesystem operations
-		  (creation, deletion, moving, find(1)) perform faster.
-		  Try 2/4MB and 512/256KB for the different approaches. Note
-		  that after that points performance descreases again.
-UBLIO_ITEMS	- 64. Higher increases speed of filesystem operations. Try 128.
-UBLIO_GRACE	- 32. Makes the cache items have more chances to be reused.
-UBLIO_SYNC_IO	- 0. If enabled, highly decreases writing speed, but the data
-		  is immediatly written to the disk.
-
-For example (improves performance over large files, but read below):
-
-# env UBLIO_BLOCKSIZE=2097152 ntfs-3g /dev/ad0s1 /mnt
-
-Alternatively these variables could be set in the shell startup file. For
-example if you are using it in /etc/fstab add them to /etc/profile. In that
-case, use "ntfs-3g" as the type and add the "late" parameter. Note that this
-requires fusefs_enable="YES" to be present in /etc/rc.conf.
-
-It is also possible to enforce block aligned I/O on regular files by setting
-the FORCE_ALIGNED_IO variable (it will be set to 512 bytes), but this is only
-useful for testing purposes and in practice has no use.
-
-Note that higher values for UBLIO_BLOCKSIZE and UBLIO_ITEMS increase the
-memory usage by their product in bytes. For example, if you set it to 1MB it
-would consume 64MB. To decrease it to 16MB you could set UBLIO_BLOCKSIZE to
-256KB (currently this is the default). Small values like 4096 can be used and
-also perform fine.
-
-When doing many simultaneous file operations on FUSE and native (not FUSE)
-filesystems sometimes one of them fails: read(2) returns -1 and sets errno to
-EAGAIN. The greater UBLIO_BLOCKSIZE is, more chances this has to happen (this
-still has to be clarified).
+Also see the official README (but has some Linux specific parts).
 
 ==============================================================================
