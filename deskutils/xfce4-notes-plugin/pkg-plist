@@ -8,14 +8,24 @@ share/icons/hicolor/scalable/apps/xfce4-notes-plugin.svg
 share/locale/ca/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/en_GB/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/eu/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/lv/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/nb_NO/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/nl/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/pt_BR/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/pt_PT/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/ur/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-notes-plugin.mo
 share/xfce4/panel-plugins/xfce4-notes-plugin.desktop
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
 @dirrmtry libexec/xfce4/panel-plugins
 @dirrmtry libexec/xfce4
