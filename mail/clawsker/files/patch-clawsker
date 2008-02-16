@@ -1,0 +1,11 @@
+--- clawsker.orig	Mon Feb  4 23:58:45 2008
++++ clawsker	Mon Feb  4 23:59:08 2008
+@@ -345,8 +345,6 @@
+ sub set_widget_hint() {
+     if ($SHOWHINTS) {
+         my ($wdgt, $hint) = @_;    
+-        $wdgt->set_tooltip_text ($hint);
+-        $wdgt->set_has_tooltip (TRUE);
+     }
+ }
+ 

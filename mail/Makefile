@@ -61,6 +61,7 @@
     SUBDIR += claws-mail-synce
     SUBDIR += claws-mail-tnef
     SUBDIR += claws-mail-vcalendar
+    SUBDIR += clawsker
     SUBDIR += cmail
     SUBDIR += cone
     SUBDIR += contact-lookup-applet
