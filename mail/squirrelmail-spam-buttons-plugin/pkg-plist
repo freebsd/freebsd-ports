@@ -1,0 +1,41 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/COPYING
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/INSTALL
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/README
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/bounce_identity.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/bounce_send.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/buttons.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/compose_functions-1.4.10.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/compose_functions-1.4.11.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/compose_functions-1.4.14.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/compose_functions-1.5.2.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config.sample.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/configtest.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib/sa-postfix-en.html
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib/sa-wrapper.html
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/functions.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/getpot
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/make_release.sh
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/options.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/patches/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/patches/spam_buttons-squirrelmail-1.4.10.diff
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/patches/spam_buttons-squirrelmail-1.4.3.diff
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/patches/spam_buttons-squirrelmail-1.4.4.diff
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/patches/spam_buttons-squirrelmail-1.5.1.diff
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/report.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/setup.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/spam_buttons.pot
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default/confirmation_note.tpl
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default/read_menubar_buttons.tpl
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default/redirect_preview_pane.tpl
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default/redirect_standard.tpl
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/version
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/patches
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
