@@ -18,7 +18,7 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Provides buttons with customizable action (for reporting spam, etc.)
 
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
-		${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin # this line might no be required
+		${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 
