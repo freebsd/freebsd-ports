@@ -1,13 +1,13 @@
 $FreeBSD$
 
---- ../../hotspot/build/bsd/makefiles/vm.make.orig	Sun Jul 29 23:03:30 2007
-+++ ../../hotspot/build/bsd/makefiles/vm.make	Sun Jul 29 23:03:30 2007
-@@ -67,7 +67,7 @@
- # Extra flags from gnumake's invocation or environment
- CFLAGS += $(EXTRA_CFLAGS)
+--- ../../hotspot/build/bsd/makefiles/vm.make.orig	Sat Feb 16 10:44:36 2008
++++ ../../hotspot/build/bsd/makefiles/vm.make	Sat Feb 16 10:45:02 2008
+@@ -70,7 +70,7 @@
+ LIBS += -lm
  
--LIBS += -lm -pthread
-+LIBS += -lm ${PTHREAD_LIBS}
+ ifneq (Darwin, $(UNAME.s))
+-LIBS += -pthread
++LIBS += ${PTHREAD_LIBS}
+ endif
  
  # By default, link the *.o into the library, not the executable.
- LINK_INTO$(LINK_INTO) = LIBJVM

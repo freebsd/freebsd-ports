@@ -1,13 +1,13 @@
 $FreeBSD$
 
---- ../../j2se/make/java/instrument/Makefile.orig	Fri Oct 26 09:20:07 2007
-+++ ../../j2se/make/java/instrument/Makefile	Fri Oct 26 09:25:39 2007
-@@ -109,7 +109,7 @@
-   ifeq ($(OS_VENDOR), NetBSD)
-     ICONV_DIR = /usr/pkg
-   else
+--- ../../j2se/make/java/instrument/Makefile.orig	Sat Feb 16 11:02:12 2008
++++ ../../j2se/make/java/instrument/Makefile	Sat Feb 16 11:02:38 2008
+@@ -112,7 +112,7 @@
+ 
+ ifeq ($(PLATFORM), bsd)
+   ifneq ($(OS_VENDOR), NetBSD)
 -    ICONV_DIR = /usr/local
 +    ICONV_DIR = ${LOCALBASE}
+     CPPFLAGS += -I$(ICONV_DIR)/include
+     OTHER_LDLIBS += -L$(ICONV_DIR)/lib -liconv
    endif
-   CPPFLAGS += -I$(ICONV_DIR)/include
-   OTHER_LDLIBS += -L$(ICONV_DIR)/lib -liconv
