@@ -23,7 +23,6 @@ RUN_DEPENDS+=	mono:${PORTSDIR}/lang/mono
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
