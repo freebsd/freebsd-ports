@@ -17113,6 +17113,7 @@ xcalendar	ports/deskutils/xcalendar
 xcalib		ports/x11/xcalib
 xcb		ports/x11/xcb
 xcb-proto	ports/x11/xcb-proto
+xcb-util	ports/x11/xcb-util
 xcd		ports/audio/xcd
 xcdplayer	ports/audio/xcdplayer
 xcdroast	ports/sysutils/xcdroast
