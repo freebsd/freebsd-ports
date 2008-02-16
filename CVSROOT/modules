@@ -3747,6 +3747,7 @@ gimp-help	ports/graphics/gimp-help
 gimp-lqr-plugin	ports/graphics/gimp-lqr-plugin
 gimp-manual-html	ports/graphics/gimp-manual-html
 gimp-manual-pdf		ports/graphics/gimp-manual-pdf
+gimpfx-foundry	ports/graphics/gimpfx-foundry
 gimpshop	ports/graphics/gimpshop
 gindent		ports/devel/gindent
 gini		ports/net/gini
