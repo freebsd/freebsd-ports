@@ -10973,6 +10973,7 @@ p5-Pod-Xhtml	ports/textproc/p5-Pod-Xhtml
 p5-PodToHTML	ports/www/p5-PodToHTML
 p5-PostScript-Simple	ports/print/p5-PostScript-Simple
 p5-Prima	ports/x11-toolkits/p5-Prima
+p5-Probe-Perl	ports/sysutils/p5-Probe-Perl
 p5-Proc-Background	ports/devel/p5-Proc-Background
 p5-Proc-Daemon	ports/devel/p5-Proc-Daemon
 p5-Proc-Fork	ports/devel/p5-Proc-Fork
