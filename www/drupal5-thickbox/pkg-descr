@@ -1,0 +1,8 @@
+The Thickbox module is a wrapper for the jQuery plugin ThickBox.
+
+ThickBox is a webpage UI dialog widget written in JavaScript on top of the
+jQuery library. Its function is to show a single image, multiple images,
+inline content, iframed content, or content served through AJAX in a hybrid
+modal.
+
+WWW: http://drupal.org/project/thickbox
