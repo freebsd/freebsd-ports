@@ -2480,6 +2480,7 @@ eel		ports/x11-toolkits/eel
 eet		ports/devel/eet
 efax		ports/comms/efax
 efax-gtk	ports/comms/efax-gtk
+eflite		ports/accessibility/eflite
 efltk		ports/x11-toolkits/efltk
 eggcreator	ports/irc/eggcreator
 eggdrop		ports/irc/eggdrop
