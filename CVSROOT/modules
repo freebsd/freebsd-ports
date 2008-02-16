@@ -9847,6 +9847,7 @@ p5-Event-RPC	ports/devel/p5-Event-RPC
 p5-Excel-Template	ports/textproc/p5-Excel-Template
 p5-Exception-Class	ports/devel/p5-Exception-Class
 p5-Exception-Class-DBI	ports/databases/p5-Exception-Class-DBI
+p5-Exception-Class-TryCatch	ports/devel/p5-Exception-Class-TryCatch
 p5-Exception-Handler	ports/devel/p5-Exception-Handler
 p5-Expect	ports/lang/p5-Expect
 p5-Expect-Simple	ports/devel/p5-Expect-Simple
