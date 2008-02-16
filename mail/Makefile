@@ -471,6 +471,7 @@
     SUBDIR += postilion
     SUBDIR += prayer
     SUBDIR += premail
+    SUBDIR += prepflog
     SUBDIR += procmail
     SUBDIR += prom-wl
     SUBDIR += pronto
