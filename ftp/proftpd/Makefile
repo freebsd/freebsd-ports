@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -16,8 +16,13 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
 		http://mirrors.ibiblio.org/pub/mirrors/proftpd/distrib/source/ \
 		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/ \
-		CENKES:clam
+		CENKES:clam \
+		http://www.smartftp.com/oss/proftpd/:digest \
+		http://lev.serebryakov.spb.ru/mod_comb/:comb\
+		LOCAL/beech:digest \
+		LOCAL/beech:comb
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	beech@FreeBSD.org
 COMMENT?=	Highly configurable ftp daemon
@@ -75,7 +80,9 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		BAN "Include mod_ban (Requires CTRLS)" off \
 		NLS "Use nls (builds mod_lang)" off \
 		CYRFIX "Patch to fix cyrillic encoding" off \
-		CLAMAV "Include mod_clamav " off
+		CLAMAV "Include mod_clamav" off \
+		DIGEST "Include mod_digest" off \
+		COMB "Include mod_comb (multistream upload)" off
 
 MODULES?=
 LIBDIRS?=
@@ -215,11 +222,26 @@ MODULES:=${MODULES}:mod_quotatab_sql
 .if defined(WITH_CLAMAV)
 #http://www.uglyboxindustries.com/mod_clamav_new.c
 DISTFILES+=	mod_clamav-0.5.1.tar.bz2:clam
+EXTRACT_ONLY+=	mod_clamav-0.5.1.tar.bz2
 USE_CLAMAV=	yes
 MODULES:=${MODULES}:mod_clamav
 LIB_DEPENDS+=	clamav.3:${PORTSDIR}/security/clamav
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+.endif
+
+.if defined(WITH_DIGEST)
+DISTFILES+=	mod_digest.c:digest
+MODULES:=${MODULES}:mod_digest
+.endif
+
+.if defined(WITH_COMB)
+COMB_VERSION=	0.1
+DISTFILES+=	mod_comb-${COMB_VERSION}.tar.bz2:comb
+EXTRACT_ONLY+=	mod_comb-${COMB_VERSION}.tar.bz2
+MODULES:=${MODULES}:mod_comb
+PORTDOCScontrib+=mod_comb.html
+PORTDOCSreadme+=README.mod_comb
 .endif
 
 # mod_ifsession should be the last item in the modules list
@@ -247,6 +269,14 @@ MODULES!=${ECHO} ${MODULES} | ${SED} -e 's,^:,,' -e 's,:$$,,'
 post-extract:
 .if defined(WITH_CLAMAV)
 	@${MV} ${WRKDIR}/mod_clamav_new.c ${WRKSRC}/modules/mod_clamav.c
+.endif
+.if defined(WITH_DIGEST)
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/mod_digest.c ${WRKSRC}/modules/
+.endif
+.if defined(WITH_COMB)
+	@${MV} ${WRKDIR}/mod_comb-${COMB_VERSION}/mod_comb.c ${WRKSRC}/contrib/
+	@${MV} ${WRKDIR}/mod_comb-${COMB_VERSION}/README ${WRKSRC}/README.mod_comb
+	@${MV} ${WRKDIR}/mod_comb-${COMB_VERSION}/mod_comb.html ${WRKSRC}/doc/contrib/
 .endif
 
 post-patch:
