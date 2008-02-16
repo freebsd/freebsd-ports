@@ -1187,6 +1187,7 @@
     SUBDIR += p5-Event-Notify
     SUBDIR += p5-Event-RPC
     SUBDIR += p5-Exception-Class
+    SUBDIR += p5-Exception-Class-TryCatch
     SUBDIR += p5-Exception-Handler
     SUBDIR += p5-Expect-Simple
     SUBDIR += p5-Exporter-Lite
