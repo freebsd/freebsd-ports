@@ -6827,6 +6827,7 @@ libquicktime	ports/multimedia/libquicktime
 libranlib	ports/math/libranlib
 librcc		ports/devel/librcc
 librcd		ports/devel/librcd
+libreadline-java	ports/devel/libreadline-java
 libredblack	ports/devel/libredblack
 librep		ports/lang/librep
 libretto-config	ports/sysutils/libretto-config
