@@ -16409,6 +16409,7 @@ unpaper		ports/graphics/unpaper
 unpost		ports/news/unpost
 unquote		ports/sysutils/unquote
 unrar		ports/archivers/unrar
+unrar-iconv	ports/archivers/unrar-iconv
 unreal		ports/irc/unreal
 unroff		ports/textproc/unroff
 unrtf		ports/textproc/unrtf
