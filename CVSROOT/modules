@@ -13054,6 +13054,7 @@ prelude-lml	ports/security/prelude-lml
 prelude-manager	ports/security/prelude-manager
 premail		ports/mail/premail
 premake		ports/devel/premake
+prepflog	ports/mail/prepflog
 preps-gui	ports/devel/preps-gui
 prepstools	ports/devel/prepstools
 present		ports/devel/present
