@@ -1519,6 +1519,7 @@
     SUBDIR += p5-SVN-ACL
     SUBDIR += p5-SVN-Agent
     SUBDIR += p5-SVN-Dump
+    SUBDIR += p5-SVN-Hook
     SUBDIR += p5-SVN-Log
     SUBDIR += p5-SVN-Mirror
     SUBDIR += p5-SVN-Notify
