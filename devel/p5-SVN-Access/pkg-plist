@@ -1,0 +1,10 @@
+%%SITE_PERL%%/SVN/Access.pm
+%%SITE_PERL%%/SVN/Access/Group.pm
+%%SITE_PERL%%/SVN/Access/Resource.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Access/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Access
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
+@dirrm %%SITE_PERL%%/SVN/Access
+@dirrmtry %%SITE_PERL%%/SVN
+%%EXAMPLESDIR%%/svnaclmgr.pl
+@dirrm %%EXAMPLESDIR%%

@@ -1,0 +1,36 @@
+# New ports collection makefile for:	p5-SVN-Access
+# Date created:		2008-02-11
+# Whom:			Greg Larkin <glarkin@sourcehosting.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	SVN-Access
+PORTVERSION=	0.03
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	SVN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	glarkin@sourcehosting.net
+COMMENT=	Perl extension to manipulate SVN Access files
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Base.pm:${PORTSDIR}/devel/subversion-perl \
+		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Base.pm:${PORTSDIR}/devel/subversion-perl \
+		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+
+PERL_CONFIGURE=	yes
+
+MAN3=		SVN::Access.3 \
+		SVN::Access::Group.3 \
+		SVN::Access::Resource.3
+
+post-install:
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+	@${FIND} ${EXAMPLESDIR} -name \*.pl -type f -print0 | \
+		${XARGS} -0 ${CHMOD} 755
+	@${ECHO_CMD} '@exec ${FIND} ${EXAMPLESDIR} -name \*.pl -type f -print0 | \
+		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
+
+.include <bsd.port.mk>

@@ -1517,6 +1517,7 @@
     SUBDIR += p5-SPOPS
     SUBDIR += p5-SSN-Validate
     SUBDIR += p5-SVN-ACL
+    SUBDIR += p5-SVN-Access
     SUBDIR += p5-SVN-Agent
     SUBDIR += p5-SVN-Dump
     SUBDIR += p5-SVN-Hook
