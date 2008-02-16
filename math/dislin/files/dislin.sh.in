@@ -8,6 +8,9 @@
 DISLIN=%%DISLIN_DIR%%
 export DISLIN
 
+LD_LIBRARY_PATH=$DISLIN:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
+
 self="${0##*/}"
 program="${DISLIN}/bin/${self}"
 
