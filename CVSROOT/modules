@@ -14340,6 +14340,7 @@ rtgui		ports/net-p2p/rtgui
 rth		ports/devel/rth
 rtorrent	ports/net-p2p/rtorrent
 rtorrent-devel	ports/net-p2p/rtorrent-devel
+rtpbreak	ports/net/rtpbreak
 rtpmon		ports/mbone/rtpmon
 rtptools	ports/mbone/rtptools
 rtty		ports/sysutils/rtty
