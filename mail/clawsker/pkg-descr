@@ -1,0 +1,19 @@
+Clawsker is an applet to edit Claws Mail's hidden preferences.
+
+Claws Mail has a high number of configurable options and, in order to keep
+the binary small and fast, some of these preferences which are not widely
+used are not provided with a graphical interface for inspection and/or
+modification.
+
+Users wanting to edit such preferences had to face editing the configuration
+text files directly, now it is possible with a convenient GTK2 interface using
+Clawsker.
+
+Other features:
+
+    * Handling of all hidden preferences
+    * Fully internationalized interface using gettext
+    * Detection of running Claws Mail
+    * Support for alternate configuration directories
+
+WWW:	http://www.claws-mail.org/clawsker

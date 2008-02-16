@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Feb  4 23:32:18 2008
++++ Makefile	Mon Feb  4 23:33:11 2008
+@@ -7,7 +7,7 @@
+ VERSION = $(shell cat VERSION)
+ PREFIX ?= /usr/local
+ BINDIR = ${PREFIX}/bin
+-DATADIR = ${PREFIX}/share
++DATADIR = ${PREFIX}
+ LIBDIR = ${PREFIX}/lib/${NAME}
+ MANDIR = ${DATADIR}/man
+ MAN1DIR = ${MANDIR}/man1
