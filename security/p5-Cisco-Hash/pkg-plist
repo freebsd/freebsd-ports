@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Cisco/Hash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/Hash/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/Hash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco
+@dirrmtry %%SITE_PERL%%/Cisco
