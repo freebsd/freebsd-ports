@@ -645,6 +645,7 @@
     SUBDIR += libpthread-stubs
     SUBDIR += librcc
     SUBDIR += librcd
+    SUBDIR += libreadline-java
     SUBDIR += libredblack
     SUBDIR += libruin
     SUBDIR += libs11n

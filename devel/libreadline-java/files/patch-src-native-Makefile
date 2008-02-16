@@ -1,0 +1,55 @@
+--- src/native/Makefile.orig	2003-01-07 07:14:35.000000000 -0300
++++ src/native/Makefile	2008-02-16 18:53:37.000000000 -0300
+@@ -44,10 +44,12 @@
+ LIB_EXT := dll
+ CFLAGS=-DWIN32=$(WIN32) -D__IBMC__
+ else
+-INCLUDES          = -I $(JAVAINCLUDE) -I $(JAVANATINC)
+-LIBPATH           = -L/usr/lib/termcap 
++INCLUDES          = -I $(JAVAINCLUDE) -I $(JAVANATINC) -I $(LOCALBASE)/include
++ifeq (JavaEditline,$(TG))
++LIBPATH           = -L$(LOCALBASE)/lib -rpath $(LOCALBASE)/lib
++endif
+ JavaReadline_LIBS = -lreadline -ltermcap -lhistory
+-JavaEditline_LIBS = -ledit -ltermcap
++JavaEditline_LIBS = $(LOCALBASE)/lib/libedit.so -ltermcap
+ ifeq (cygwin,$(WIN32))
+ JavaGetline_LIBS = -lcygwin
+ endif
+@@ -55,8 +57,9 @@
+ OBJ_EXT := o
+ LIB_PRE := lib
+ LIB_EXT := so
+-CFLAGS=-fPIC -DPOSIX
++CFLAGS+=-fPIC -DPOSIX
+ endif
++JAVAH ?= javah
+ 
+ 
+ OBJECTS := org_gnu_readline_Readline.$(OBJ_EXT)
+@@ -69,13 +72,13 @@
+ lib: $(ROOTDIR)/$(LIB_PRE)$(TG).$(LIB_EXT)
+ 
+ JavaReadline:
+-	make TG=$@ lib
++	$(MAKE) TG=$@ lib
+ 
+ JavaEditline:
+-	make TG=$@ lib
++	$(MAKE) TG=$@ lib
+ 
+ JavaGetline:
+-	make TG=$@ lib
++	$(MAKE) TG=$@ lib
+ 
+ $(ROOTDIR)/$(LIB_PRE)$(TG).$(LIB_EXT): $(OBJECTS)
+ ifeq (MSC,$(WIN32))
+@@ -110,7 +113,7 @@
+ 	                                   -c org_gnu_readline_Readline.c
+ 
+ org_gnu_readline_Readline.h: $(BUILDDIR)/org/gnu/readline/Readline.class
+-	javah -classpath $(BUILDDIR) -jni org.gnu.readline.Readline
++	$(JAVAH) -classpath $(BUILDDIR) -jni org.gnu.readline.Readline
+ 	touch org_gnu_readline_Readline.h
+ 
+ clean:
