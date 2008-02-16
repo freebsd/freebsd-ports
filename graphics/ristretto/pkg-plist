@@ -7,16 +7,21 @@ share/icons/hicolor/32x32/apps/ristretto.png
 share/icons/hicolor/36x36/apps/ristretto.png
 share/icons/hicolor/48x48/apps/ristretto.png
 share/icons/hicolor/scalable/apps/ristretto.svg
+share/locale/bg/LC_MESSAGES/ristretto.mo
+share/locale/cs/LC_MESSAGES/ristretto.mo
 share/locale/de/LC_MESSAGES/ristretto.mo
 share/locale/fi/LC_MESSAGES/ristretto.mo
 share/locale/fr/LC_MESSAGES/ristretto.mo
+share/locale/hu/LC_MESSAGES/ristretto.mo
+share/locale/it/LC_MESSAGES/ristretto.mo
+share/locale/lv/LC_MESSAGES/ristretto.mo
 share/locale/nb_NO/LC_MESSAGES/ristretto.mo
 share/locale/nl/LC_MESSAGES/ristretto.mo
-share/locale/cs/LC_MESSAGES/ristretto.mo
-share/locale/hu/LC_MESSAGES/ristretto.mo
-share/locale/lv/LC_MESSAGES/ristretto.mo
 share/locale/pt_BR/LC_MESSAGES/ristretto.mo
+share/locale/tr/LC_MESSAGES/ristretto.mo
 share/locale/ur/LC_MESSAGES/ristretto.mo
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
 @dirrmtry share/applications
