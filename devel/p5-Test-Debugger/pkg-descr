@@ -1,0 +1,9 @@
+Have you ever tried to debug a test script that is failing tests? Without too
+many modifications, your test script can generate a log file with information
+about each failed test.
+
+You can take your existing test script, and with (hopefully) very little
+effort, convert it to use Test::Debugger. Then re-run your modified test and
+view the log file it creates.
+
+WWW: http://search.cpan.org/dist/Test-Debugger/
