@@ -11412,6 +11412,7 @@ p5-Text-Ngrams	ports/textproc/p5-Text-Ngrams
 p5-Text-Original	ports/textproc/p5-Text-Original
 p5-Text-PDF	ports/print/p5-Text-PDF
 p5-Text-ParagraphDiff	ports/textproc/p5-Text-ParagraphDiff
+p5-Text-ParseWords	ports/textproc/p5-Text-ParseWords
 p5-Text-Password-Pronounceable	ports/security/p5-Text-Password-Pronounceable
 p5-Text-Query	ports/textproc/p5-Text-Query
 p5-Text-Query-SQL	ports/databases/p5-Text-Query-SQL
