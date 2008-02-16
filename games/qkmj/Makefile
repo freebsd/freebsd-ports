@@ -17,7 +17,8 @@ EXTRACT_ONLY=
 MAINTAINER=	clive@FreeBSD.org
 COMMENT=	QKMJ - QK Ma2Jong4 client
 
-RUN_DEPENDS=	compat4x-i386>=0:${PORTSDIR}/misc/compat4x
+RUN_DEPENDS=	compat4x-i386>=0:${PORTSDIR}/misc/compat4x \
+		compat5x-i386>=0:${PORTSDIR}/misc/compat5x
 
 ONLY_FOR_ARCHS=	i386 amd64
 IA32_BINARY_PORT=	yes
