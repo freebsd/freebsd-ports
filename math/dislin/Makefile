@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dislin
-PORTVERSION=	9.1
-PORTREVISION=	2
+PORTVERSION=	9.2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gwdg.de/pub/grafik/dislin/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
@@ -15,13 +14,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.fbsd${BINVER}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific data plotting package
 
+LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
+
 RESTRICTED=	free for non-commercial use.
 ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-BROKEN=		does not fetch
 
 MD5_FILE=	${MASTERDIR}/distinfo${BINVER}
 PLIST_SUB+=	VER=${PORTVERSION} MAJ=${MAJ}
@@ -43,9 +42,12 @@ BINVER=		-5.4
 .else
 BINVER=		-6.0
 .endif
+.if ${OSVERSION} >= 700000
+LIB_DEPENDS+=	z.3:${PORTSDIR}/misc/compat6x
+.endif
 
 do-install:
-	(cd ${WRKSRC} && ${ENV} DISLIN=${DISLIN_DIR} ${SH} INSTALL)
+	cd ${WRKSRC} && ${SETENV} DISLIN=${DISLIN_DIR} ${SH} INSTALL
 	${INSTALL_SCRIPT} ${WRKDIR}/dislin.sh ${DISLIN_DIR}/bin
 .for _program in ${PROGRAMS}
 	${LN} -s ${DISLIN_DIR}/bin/dislin.sh ${PREFIX}/bin/${_program}
@@ -56,11 +58,13 @@ do-install:
 	${LN} -s ${DISLIN_DIR}/lib/${_lib}-${PORTVERSION}.so	\
 		${PREFIX}/lib/lib${_lib}.so.${MAJ}
 .endfor
-	${LN} -s ${DISLIN_DIR}/java/disjava-${PORTVERSION}.so	\
-		${PREFIX}/lib/libdisjava.so
+	${LN} -s ${LOCALBASE}/lib/libf2c.so ${DISLIN_DIR}/libg2c.so
+	${LN} -s ${LOCALBASE}/lib/libf2c.so.2 ${DISLIN_DIR}/libg2c.so.2
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DISLIN_DIR}
 
 post-install:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>

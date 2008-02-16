@@ -1,12 +1,4 @@
-Note:	libdisjava.so is linked against libm.so.2, you might have to
-	add the following entry in your /etc/libmap.conf:
-
-libm.so.2		libm.so.4
-
-	-------------------------------------------------------------
-
 	DISLIN is free for non-commercial use on Linux and FreeBSD
 	only.  You are advised to familiarize yourself with the terms
 	of license listed in %%DISLIN_DIR%%/DISLIN and on the DISLIN
-	website, http://www.linmpi.mpg.de/dislin/.
-
+	website, http://www.mps.mpg.de/dislin/ .
