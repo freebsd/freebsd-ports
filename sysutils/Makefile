@@ -682,6 +682,7 @@
     SUBDIR += udesc_dump
     SUBDIR += udfclient
     SUBDIR += ufs_copy
+    SUBDIR += uif2iso
     SUBDIR += unieject
     SUBDIR += uniutils
     SUBDIR += unquote
