@@ -1066,6 +1066,7 @@
     SUBDIR += p5-Data-Taxonomy-Tags
     SUBDIR += p5-Data-TemporaryBag
     SUBDIR += p5-Data-Throttler
+    SUBDIR += p5-Data-Throttler-Memcached
     SUBDIR += p5-Data-TreeDumper
     SUBDIR += p5-Data-Types
     SUBDIR += p5-Data-UUID
