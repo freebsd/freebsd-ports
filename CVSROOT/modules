@@ -1425,6 +1425,7 @@ claws-mail-spamreport	ports/mail/claws-mail-spamreport
 claws-mail-synce	ports/mail/claws-mail-synce
 claws-mail-tnef	ports/mail/claws-mail-tnef
 claws-mail-vcalendar	ports/mail/claws-mail-vcalendar
+clawsker	ports/mail/clawsker
 cle		ports/editors/cle
 clean		ports/sysutils/clean
 clean-theme-gtk	ports/x11-themes/clean-theme-gtk
