@@ -7,6 +7,7 @@
 
 PORTNAME=	udfclient
 PORTVERSION=	0.5.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/ \
 		${MASTER_SITE_NETBSD} \
@@ -23,7 +24,8 @@ CONFIGURE_ENV+=	with_pthread_cflags="${PTHREAD_CFLAGS}" \
 		with_thread_libs="${PTHREAD_LIBS}"
 MAKE_ARGS+=	INSTALL="${INSTALL_PROGRAM}"
 
-OPTIONS=	FUSE	"udfclientfs via FUSE"	off
+OPTIONS=	FUSE	"udfclientfs via FUSE"	off \
+		DEBUG	"build with debuging support" off
 
 PLIST_FILES=	bin/udfdump \
 		bin/udfclient \
@@ -36,7 +38,7 @@ PLIST_FILES=	bin/udfdump \
 
 .if defined(WITH_FUSE)
 UDFCLIENTFS_NAME=	udfclientfs
-UDFCLIENTFS_VERSION=	0.1
+UDFCLIENTFS_VERSION=	0.2
 UDFCLIENTFS_DIR=	${WRKDIR}/udfclientfs
 
 MASTER_SITES+=	http://www.icyb.net.ua/~avg/distfiles/:fuse
@@ -47,6 +49,10 @@ RUN_DEPENDS+=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 
 PLIST_FILES+=	bin/${UDFCLIENTFS_NAME}
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ENV+=	CFLAGS="-O0 -ggdb3"
 .endif
 
 post-patch:
