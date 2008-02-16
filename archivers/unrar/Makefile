@@ -17,7 +17,7 @@ COMMENT=	Extract, view & test RAR archives
 
 WRKSRC=		${WRKDIR}/unrar
 
-CONFLICTS?=	zh-unrar-*
+CONFLICTS?=	zh-unrar-* unrar-iconv-*
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/unrar
