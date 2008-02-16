@@ -11615,6 +11615,7 @@ p5-Want		ports/devel/p5-Want
 p5-WeakRef	ports/devel/p5-WeakRef
 p5-Weather-Underground	ports/astro/p5-Weather-Underground
 p5-Web-Scraper	ports/www/p5-Web-Scraper
+p5-Web-Scraper-Config	ports/www/p5-Web-Scraper-Config
 p5-WebService-Basecamp	ports/www/p5-WebService-Basecamp
 p5-WebService-Bloglines	ports/www/p5-WebService-Bloglines
 p5-WebService-BuzzurlAPI	ports/www/p5-WebService-BuzzurlAPI
