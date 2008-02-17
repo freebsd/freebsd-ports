@@ -15470,6 +15470,7 @@ squirrelmail-devel	ports/mail/squirrelmail-devel
 squirrelmail-email_footer-plugin	ports/mail/squirrelmail-email_footer-plugin
 squirrelmail-login_auth-plugin	ports/mail/squirrelmail-login_auth-plugin
 squirrelmail-login_notes-plugin	ports/mail/squirrelmail-login_notes-plugin
+squirrelmail-mark_read-plugin	ports/mail/squirrelmail-mark_read-plugin
 squirrelmail-multilogin-plugin	ports/mail/squirrelmail-multilogin-plugin
 squirrelmail-newuser_wiz-plugin	ports/mail/squirrelmail-newuser_wiz-plugin
 squirrelmail-notes-plugin	ports/mail/squirrelmail-notes-plugin
