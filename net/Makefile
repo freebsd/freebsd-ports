@@ -498,6 +498,7 @@
     SUBDIR += p5-Net-IPTrie
     SUBDIR += p5-Net-Ident
     SUBDIR += p5-Net-Interface
+    SUBDIR += p5-Net-LDAP-LDAPhash
     SUBDIR += p5-Net-Libdnet
     SUBDIR += p5-Net-MAC-Vendor
     SUBDIR += p5-Net-MovableType
