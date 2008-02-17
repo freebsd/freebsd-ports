@@ -1,0 +1,7 @@
+Change SQL Password allows users to change their passwords when they are stored
+in a SQL database. Supports both crypted (MD5, SASL, UNIX) and plaintext
+passwords as well as allowing the administrator to force password changes. If
+you have SSL support in your web server, you may also force the connection to
+SSL when the user is changing her password.
+
+WWW: http://www.squirrelmail.org/plugin_view.php?id=25
