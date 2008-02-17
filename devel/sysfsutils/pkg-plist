@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+bin/dlist_test
+bin/get_device
+bin/get_driver
+bin/get_module
+bin/systool
+include/sysfs/dlist.h
+include/sysfs/libsysfs.h
+lib/libsysfs.a
+lib/libsysfs.la
+lib/libsysfs.so
+lib/libsysfs.so.2
+@dirrmtry include/sysfs

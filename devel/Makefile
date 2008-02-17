@@ -2305,6 +2305,7 @@
     SUBDIR += swigruby
     SUBDIR += synfig
     SUBDIR += sysconftool
+    SUBDIR += sysfsutils
     SUBDIR += t1lib
     SUBDIR += ta-lib
     SUBDIR += tailor
