@@ -86,12 +86,12 @@ dspam:*:202:202:Dspam:/nonexistent:/usr/sbin/nologin
 shoutcast:*:210:210:Shoutcast sandbox:/nonexistent:/bin/sh
 bs:*:220:220:Big Sister:/usr/local/bigsister:/bin/sh
 postgrey:*:225:225:Postgrey Owner:/nonexistent:/usr/sbin/nologin
+aprsd:*:240:240:aprsd:/nonexistent:/bin/sh
+tnc:*:241:241:aprsd:/nonexistent:/bin/sh
 fcron:*:247:247:fcron pseudo-user:/nonexistent:/usr/sbin/nologin
 _tor:*:256:256:Tor anonymising router:/var/db/tor:/bin/sh
 _dns-proxy-tor:*:257:257:dns-proxy-tor user:/nonexistent:/usr/sbin/nologin
 _trans-proxy-tor:*:258:258:dns-proxy-tor user:/nonexistent:/usr/sbin/nologin
-aprsd:*:240:240:aprsd:/nonexistent:/bin/sh
-tnc:*:241:241:aprsd:/nonexistent:/bin/sh
 meta1s:*:260:260:MeTA1 SMTPS:/nonexistent:/usr/sbin/nologin
 meta1q:*:261:261:MeTA1 QMGR:/nonexistent:/usr/sbin/nologin
 meta1c:*:262:262:MeTA1 SMTPC:/nonexistent:/usr/sbin/nologin
