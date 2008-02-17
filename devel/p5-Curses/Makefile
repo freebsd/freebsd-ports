@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Curses
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Curses
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
@@ -21,7 +20,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Curses.3
 
 pre-configure:
-	@${LN} -s ${WRKSRC}/hints/c-freebsd.ncurses.h \
+	@${LN} -sf ${WRKSRC}/hints/c-freebsd.ncurses.h \
 		${WRKSRC}/c-config.h
 
 .include <bsd.port.mk>
