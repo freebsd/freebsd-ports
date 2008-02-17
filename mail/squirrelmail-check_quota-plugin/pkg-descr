@@ -1,0 +1,9 @@
+This plugin will check and display users' mail quota status. Current and
+maximum quota usage is displayed in easy-to-read graphical format. Optional
+warnings may also be displayed to users who are nearing their quota allocation
+when they log in (where the "Message Of The Day" would normally be displayed).
+
+This plugin is compatible with three types of mail quota systems:
+UNIX (filesystem), IMAP-based, and cPanel quotas.
+
+WWW: http://www.squirrelmail.org/plugin_view.php?id=237

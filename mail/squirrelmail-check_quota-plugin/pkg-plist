@@ -1,0 +1,32 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/CHANGELOG
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/FAQ
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/INSTALL
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/LICENSE
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/README
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/TRANSLATING
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/check_quota.pot
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config.sample.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/functions.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/getpot
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/images/gd_bar.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/images/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/make_release.sh
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/setup.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/swf/bar.swf
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/swf/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default/graph.tpl
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default/horizontal_rule.tpl
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default/motd_alert.tpl
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/themes/default_theme.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/themes/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/troubleshoot.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/version
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/images/
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/swf/
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default/
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/themes/
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
