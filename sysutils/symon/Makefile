@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	symon
-PORTVERSION=	2.75
+PORTVERSION=	2.78
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/
 
