@@ -10597,6 +10597,7 @@ p5-NNML		ports/news/p5-NNML
 p5-NNTPClient	ports/news/p5-NNTPClient
 p5-NSNMP	ports/net-mgmt/p5-NSNMP
 p5-Nagios-Plugin	ports/net-mgmt/p5-Nagios-Plugin
+p5-Nagios-Plugins-Memcached	ports/net-mgmt/p5-Nagios-Plugins-Memcached
 p5-Net		ports/net/p5-Net
 p5-Net-ACL	ports/net-mgmt/p5-Net-ACL
 p5-Net-AIM	ports/net-im/p5-Net-AIM
@@ -15581,8 +15582,8 @@ stlfilt		ports/devel/stlfilt
 stlport		ports/devel/stlport
 stmpclean	ports/sysutils/stmpclean
 stone		ports/net/stone
-stormbaancoureur	ports/games/stormbaancoureur
 stonx		ports/emulators/stonx
+stormbaancoureur	ports/games/stormbaancoureur
 stow		ports/sysutils/stow
 stowES		ports/sysutils/stowES
 str		ports/devel/str
