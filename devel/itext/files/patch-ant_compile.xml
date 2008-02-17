@@ -1,10 +1,10 @@
---- ant/compile.xml.orig	Wed Sep 12 22:10:40 2007
-+++ ant/compile.xml	Wed Sep 12 22:11:21 2007
-@@ -67,6 +67,7 @@
+--- ant/compile.xml.orig	2008-02-17 18:49:03.000000000 +0100
++++ ant/compile.xml	2008-02-17 18:50:44.000000000 +0100
+@@ -81,6 +81,7 @@
                  <include name="**/*.txt"/>
              </fileset>
          </copy>
-+        <mkdir dir="${itext.lib}"/>
-         <jar jarfile="${itext.jar}" basedir="${itext.bin}" excludes="com/lowagie/examples/**,**/*.cmap,**/*.properties,com/lowagie/text/pdf/fonts/cmaps/**">
++	<mkdir dir="${itext.lib}"/>
+         <jar jarfile="${itext.jar}" basedir="${itext.bin}" excludes="com/lowagie/rups/**,com/lowagie/examples/**,**/*.cmap,**/*.properties,com/lowagie/text/pdf/fonts/cmaps/**">
              <manifest>
                  <attribute name="Main-Class" value="com.lowagie.tools.ToolboxAvailable"/>
