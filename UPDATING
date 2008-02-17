@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080216:
+  AFFECTS: users of sysutils/symon
+  AUTHOR: uspoerlein@gmail.com
+
+  The symon port has been updated from 2.75 to 2.78. It changes the wire
+  protocol again. You should update your symux(8) and symon(8) installations
+  simultaneously, as
+     - new symon clients will make old symux servers exit, and
+     - new symux servers don't understand the old symon client's if() and mem()
+       probes.
+
 20080208:
   AFFECTS: users of ports-mgmt/portupgrade
   AUTHOR: sem@FreeBSD.org
