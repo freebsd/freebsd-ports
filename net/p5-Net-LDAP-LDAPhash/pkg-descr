@@ -1,0 +1,13 @@
+This takes from a search and turns it into a hash.
+
+The returned has is in the following format.
+
+{DN}{ldap}{attribute}[array of values for this attribute]
+
+The reason for the {ldap} is to allow for other values and
+the like to be tagged onto a hash for a DN that are unrelated to LDAP.
+
+This function does not make any attempt to check if the search succedded
+or not.
+
+WWW: http://search.cpan.org/dist/Net-LDAP-LDAPhash/

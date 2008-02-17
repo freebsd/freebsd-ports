@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Net/LDAP/LDAPhash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP/LDAPhash/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP/LDAPhash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/LDAP
+@dirrmtry %%SITE_PERL%%/Net
