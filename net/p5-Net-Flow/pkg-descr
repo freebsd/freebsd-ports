@@ -1,0 +1,12 @@
+The Flow module provides the decoding function for NetFlow version 5,9
+and IPFIX, and the encoding function for NetFlow version 9 and IPFIX.
+It supports NetFlow version 9 (RFC3945) and NetFlow version 5
+(http://www.cisco.com/) and IPFIX(draft-ietf-ipfix-protocol-26.txt).
+Regretfully, it doesn't provide the full specification of IPFIX, yet.
+It is future work. You can easily make the Flow Proxy, Protocol Converter
+and Flow Concentrator by using the combination of both function. And also,
+you can make the flexible Collector which can receive any Templates
+by using the Storable perl module.
+
+AUTHOR:	Atsushi Kobayashi <akoba@nttv6.net>
+WWW:	http://search.cpan.org/dist/Net-Flow/

@@ -485,6 +485,7 @@
     SUBDIR += p5-Net-FS-Gmail
     SUBDIR += p5-Net-FTP-File
     SUBDIR += p5-Net-Finger
+    SUBDIR += p5-Net-Flow
     SUBDIR += p5-Net-Frame
     SUBDIR += p5-Net-Frame-Dump
     SUBDIR += p5-Net-Gnats
