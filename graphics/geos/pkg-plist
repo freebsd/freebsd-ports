@@ -1,17 +1,112 @@
 bin/XMLTester
 bin/geos-config
 include/geos.h
+include/geos/algorithm/LineIntersector.h
+include/geos/algorithm/PointLocator.h
 include/geos/geom.h
+include/geos/geom/BinaryOp.h
+include/geos/geom/Coordinate.h
+include/geos/geom/Coordinate.inl
+include/geos/geom/CoordinateArraySequence.h
+include/geos/geom/CoordinateArraySequenceFactory.h
+include/geos/geom/CoordinateArraySequenceFactory.inl
+include/geos/geom/CoordinateFilter.h
+include/geos/geom/CoordinateList.h
+include/geos/geom/CoordinateSequence.h
+include/geos/geom/CoordinateSequenceFactory.h
+include/geos/geom/Dimension.h
+include/geos/geom/Envelope.h
+include/geos/geom/Envelope.inl
+include/geos/geom/Geometry.h
+include/geos/geom/Geometry.inl
+include/geos/geom/GeometryCollection.h
+include/geos/geom/GeometryCollection.inl
+include/geos/geom/GeometryComponentFilter.h
+include/geos/geom/GeometryFactory.h
+include/geos/geom/GeometryFactory.inl
+include/geos/geom/GeometryFilter.h
+include/geos/geom/GeometryList.h
+include/geos/geom/IntersectionMatrix.h
+include/geos/geom/LineSegment.h
+include/geos/geom/LineSegment.inl
+include/geos/geom/LineString.h
+include/geos/geom/LinearRing.h
+include/geos/geom/Location.h
+include/geos/geom/MultiLineString.h
+include/geos/geom/MultiLineString.inl
+include/geos/geom/MultiPoint.h
+include/geos/geom/MultiPolygon.h
+include/geos/geom/MultiPolygon.inl
+include/geos/geom/Point.h
+include/geos/geom/Polygon.h
+include/geos/geom/PrecisionModel.h
+include/geos/geom/PrecisionModel.inl
+include/geos/geom/util/CoordinateOperation.h
+include/geos/geom/util/GeometryEditor.h
+include/geos/geom/util/GeometryEditorOperation.h
+include/geos/geom/util/GeometryTransformer.h
+include/geos/geom/util/LinearComponentExtracter.h
+include/geos/geom/util/PointExtracter.h
+include/geos/geom/util/PolygonExtracter.h
+include/geos/geom/util/ShortCircuitedGeometryVisitor.h
 include/geos/geomUtil.h
 include/geos/geomgraph.h
+include/geos/geomgraph/EdgeEnd.h
+include/geos/geomgraph/EdgeEndStar.h
+include/geos/geomgraph/EdgeList.h
+include/geos/geomgraph/GeometryGraph.h
+include/geos/geomgraph/GeometryGraph.inl
+include/geos/geomgraph/GraphComponent.h
+include/geos/geomgraph/Node.h
+include/geos/geomgraph/NodeMap.h
+include/geos/geomgraph/PlanarGraph.h
+include/geos/geomgraph/index/EdgeSetIntersector.h
+include/geos/geomgraph/index/MonotoneChain.h
+include/geos/geomgraph/index/MonotoneChainEdge.h
+include/geos/geomgraph/index/MonotoneChainIndexer.h
+include/geos/geomgraph/index/SegmentIntersector.h
+include/geos/geomgraph/index/SimpleEdgeSetIntersector.h
+include/geos/geomgraph/index/SimpleMCSweepLineIntersector.h
+include/geos/geomgraph/index/SimpleSweepLineIntersector.h
+include/geos/geomgraph/index/SweepLineEvent.h
+include/geos/geomgraph/index/SweepLineEventObj.h
+include/geos/geomgraph/index/SweepLineSegment.h
 include/geos/geomgraphindex.h
 include/geos/geosAlgorithm.h
+include/geos/index/ItemVisitor.h
+include/geos/index/SpatialIndex.h
+include/geos/index/bintree/Bintree.h
+include/geos/index/bintree/Interval.h
+include/geos/index/chain/MonotoneChain.h
+include/geos/index/chain/MonotoneChainOverlapAction.h
+include/geos/index/chain/MonotoneChainSelectAction.h
+include/geos/index/quadtree/NodeBase.h
+include/geos/index/quadtree/Quadtree.h
+include/geos/index/quadtree/Root.h
+include/geos/index/strtree/AbstractNode.h
+include/geos/index/strtree/AbstractSTRtree.h
+include/geos/index/strtree/Boundable.h
+include/geos/index/strtree/Interval.h
+include/geos/index/strtree/SIRtree.h
+include/geos/index/strtree/STRtree.h
+include/geos/index/sweepline/SweepLineOverlapAction.h
 include/geos/indexBintree.h
 include/geos/indexChain.h
 include/geos/indexQuadtree.h
 include/geos/indexStrtree.h
 include/geos/indexSweepline.h
+include/geos/inline.h
 include/geos/io.h
+include/geos/io/ByteOrderDataInStream.h
+include/geos/io/ByteOrderDataInStream.inl
+include/geos/io/ByteOrderValues.h
+include/geos/io/ParseException.h
+include/geos/io/WKBConstants.h
+include/geos/io/WKBReader.h
+include/geos/io/WKBWriter.h
+include/geos/io/WKTReader.h
+include/geos/io/WKTReader.inl
+include/geos/io/WKTWriter.h
 include/geos/noding.h
 include/geos/nodingSnapround.h
 include/geos/opBuffer.h
@@ -19,25 +114,75 @@ include/geos/opDistance.h
 include/geos/opLinemerge.h
 include/geos/opOverlay.h
 include/geos/opPolygonize.h
+include/geos/opPredicate.h
 include/geos/opRelate.h
 include/geos/opValid.h
 include/geos/operation.h
+include/geos/operation/EndpointInfo.h
+include/geos/operation/GeometryGraphOperation.h
+include/geos/operation/IsSimpleOp.h
+include/geos/operation/buffer/BufferOp.h
+include/geos/operation/buffer/OffsetCurveBuilder.h
+include/geos/operation/distance/DistanceOp.h
+include/geos/operation/linemerge/LineMergeGraph.h
+include/geos/operation/linemerge/LineMerger.h
+include/geos/operation/overlay/OverlayOp.h
+include/geos/operation/polygonize/Polygonizer.h
+include/geos/operation/relate/RelateComputer.h
+include/geos/operation/relate/RelateOp.h
+include/geos/operation/valid/IsValidOp.h
+include/geos/operation/valid/TopologyValidationError.h
 include/geos/planargraph.h
+include/geos/planargraph/NodeMap.h
+include/geos/planargraph/PlanarGraph.h
 include/geos/platform.h
 include/geos/precision.h
-include/geos/profiler.h
+include/geos/precision/CommonBitsOp.h
+include/geos/precision/CommonBitsRemover.h
+include/geos/precision/EnhancedPrecisionOp.h
+include/geos/precision/SimpleGeometryPrecisionReducer.h
+include/geos/simplify/DouglasPeuckerSimplifier.h
+include/geos/simplify/TopologyPreservingSimplifier.h
 include/geos/spatialIndex.h
 include/geos/timeval.h
 include/geos/unload.h
 include/geos/util.h
+include/geos/util/GEOSException.h
+include/geos/util/GeometricShapeFactory.h
+include/geos/util/IllegalArgumentException.h
+include/geos/util/TopologyException.h
 include/geos/version.h
 include/geos_c.h
 lib/libgeos.a
 lib/libgeos.la
 lib/libgeos.so
-lib/libgeos.so.4
+lib/libgeos.so.0
 lib/libgeos_c.a
 lib/libgeos_c.la
 lib/libgeos_c.so
-lib/libgeos_c.so.2
+lib/libgeos_c.so.5
+@dirrm include/geos/util
+@dirrm include/geos/simplify
+@dirrm include/geos/precision
+@dirrm include/geos/planargraph
+@dirrm include/geos/operation/valid
+@dirrm include/geos/operation/relate
+@dirrm include/geos/operation/polygonize
+@dirrm include/geos/operation/overlay
+@dirrm include/geos/operation/linemerge
+@dirrm include/geos/operation/distance
+@dirrm include/geos/operation/buffer
+@dirrm include/geos/operation
+@dirrm include/geos/io
+@dirrm include/geos/index/sweepline
+@dirrm include/geos/index/strtree
+@dirrm include/geos/index/quadtree
+@dirrm include/geos/index/chain
+@dirrm include/geos/index/bintree
+@dirrm include/geos/index
+@dirrm include/geos/geomgraph/index
+@dirrm include/geos/geomgraph
+@dirrm include/geos/geom/util
+@dirrm include/geos/geom
+@dirrm include/geos/algorithm
 @dirrm include/geos

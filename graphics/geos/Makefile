@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	geos
-PORTVERSION=	2.2.3
+PORTVERSION=	3.0.0
 CATEGORIES=	graphics geography
-MASTER_SITES=	http://geos.refractions.net/
+MASTER_SITES=	http://geos.refractions.net/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	saurbier@math.uni-bielefeld.de
+MAINTAINER=	konstantin@saurbier.net
 COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
 
 USE_AUTOTOOLS=	libtool:15
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
 USE_BZIP2=	YES
 USE_GCC=	3.4+
 
 USE_LDCONFIG=	YES
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+post-patch:
+	@${REINPLACE_CMD} -e '/-release/d' ${WRKSRC}/source/Makefile.in
 
 .include <bsd.port.mk>
