@@ -1,0 +1,9 @@
+This plugin allows the user to turn on the display of "(read/unread)" links to
+the right of any folders in their folder list that contain at least one
+message. Clicking on the link will then mark all messages in this folder as
+read/unread. Note that you may turn the "read/unread" link on and off by going
+to the Folders page. You may even turn only the "read" or the "unread" link on
+or off. It also displays a "mark all read/unread" link below the folder list to
+ mark all folders read/unread that are selected on the Folders page.
+
+WWW: http://www.squirrelmail.org/plugin_view.php?id=218
