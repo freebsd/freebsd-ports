@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jcifs
-PORTVERSION=	1.2.17
+PORTVERSION=	1.2.18e
 CATEGORIES=	net java
 MASTER_SITES=	http://jcifs.samba.org/src/
 EXTRACT_SUFX=	.tgz
@@ -31,7 +31,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/docs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
 	cd ${WRKSRC}/docs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/
 	cd ${WRKSRC}/examples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \;
 	cd ${WRKSRC}/examples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 	@${FIND} ${EXAMPLESDIR} ! -type d | \
