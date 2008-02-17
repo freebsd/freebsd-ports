@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdo
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.0
 CATEGORIES=	science
 MASTER_SITES=	http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
 		http://sunpoet.net/distfiles/
@@ -23,10 +23,9 @@ CONFIGURE_ENV=	CC="${CC}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-PLIST_FILES=	bin/cdo bin/cdotest
+PLIST_FILES=	bin/cdo
 
-OPTIONS=	HDF5	"HDF5 support" off \
-		NETCDF	"NETCDF support" off
+OPTIONS=	NETCDF	"NETCDF support"	off
 
 .include <bsd.port.pre.mk>
 
@@ -34,14 +33,16 @@ OPTIONS=	HDF5	"HDF5 support" off \
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -DPTHREAD_MUTEXATTR_CONDATTR"
 .endif
 
-.if defined(WITH_HDF5)
-CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}
-LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
-.endif
-
 .if defined(WITH_NETCDF)
 CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}
 LIB_DEPENDS+=		netcdf.4:${PORTSDIR}/science/netcdf
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src-Makefile.in
+PLIST_FILES+=		bin/cdotest
+.endif
+
+post-build:
+.if defined(WITH_NETCDF)
+	cd "${WRKSRC}/src" && ${SETENV} CDO_PATH="${WRKSRC}/src/cdo" "${WRKSRC}/src/cdotest"
 .endif
 
 post-install:
