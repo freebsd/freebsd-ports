@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://www.amdmi3.ru/distfiles/
@@ -71,7 +71,6 @@ post-patch:
 	@${REINPLACE_CMD} -e '/LIBS/ s|-lSDL_mixer|`${SDL_CONFIG} --libs` &|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/mang|/man6|' ${WRKSRC}/Makefile.in
-	@${ECHO_CMD} -n exported > ${WRKSRC}/src/svnVersion
 
 .if !defined(NOPORTDOCS)
 post-install:
