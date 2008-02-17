@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grass
-PORTVERSION=	6.2.1
-PORTREVISION=	1
+PORTVERSION=	6.2.3
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.itc.it/grass62/source/ \
@@ -54,8 +53,7 @@ ALL_TARGET=
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-libs=${LOCALBASE}/lib \
-		--with-tcltk-includes="${LOCALBASE}/include/tcl8.4 \
-					 ${LOCALBASE}/include/tk8.4" \
+		--with-tcltk-includes="${TCL_INCLUDEDIR} ${TK_INCLUDEDIR}" \
 		--with-opengl-includes=${X11BASE}/include \
 		--with-opengl-libs=${X11BASE}/lib \
 		--with-freetype \
@@ -67,8 +65,6 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 
 PLIST_SUB=	GRASS_INST_DIR=${GRASS_INST_DIR} \
 		VERSION=${PORTVERSION}
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/%%GRASS_INST_DIR%%/lib
 USE_LDCONFIG=	${PREFIX}/${GRASS_INST_DIR}/lib
 
 OPTIONS=	MYSQL "Enable MySQL support" Off \
@@ -97,12 +93,8 @@ USE_PGSQL=	yes
 PLIST_SUB+=	PGSQL=""
 .endif
 
-.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
-
 post-extract:
-	@${REINPLACE_CMD} -E '28s|/grass-.*|/${GRASS_INST_DIR}|g' \
+	@${REINPLACE_CMD} -E '/^INST_DIR=/s|/grass-.*|/${GRASS_INST_DIR}|g' \
 	${WRKSRC}/Makefile
-
-post-install: install-ldconfig-file
 
 .include <bsd.port.post.mk>

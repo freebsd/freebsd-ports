@@ -961,8 +961,8 @@ bin/grass62
 %%GRASS_INST_DIR%%/driver/PNG
 %%GRASS_INST_DIR%%/driver/XDRIVER
 %%GRASS_INST_DIR%%/driver/db/dbf
-%%GRASS_INST_DIR%%/driver/db/ogr
 %%MYSQL%%%%GRASS_INST_DIR%%/driver/db/mysql
+%%GRASS_INST_DIR%%/driver/db/ogr
 %%PGSQL%%%%GRASS_INST_DIR%%/driver/db/pg
 %%GRASS_INST_DIR%%/etc/BUILD
 %%GRASS_INST_DIR%%/etc/FIPS.code
@@ -1091,7 +1091,6 @@ bin/grass62
 %%GRASS_INST_DIR%%/etc/gem/skeleton/info
 %%GRASS_INST_DIR%%/etc/gem/skeleton/libs
 %%GRASS_INST_DIR%%/etc/gem/skeleton/license
-%%GRASS_INST_DIR%%/etc/gem/skeleton/macosx/bin/make
 %%GRASS_INST_DIR%%/etc/gem/skeleton/name
 %%GRASS_INST_DIR%%/etc/gem/skeleton/post
 %%GRASS_INST_DIR%%/etc/gem/skeleton/uninstall
@@ -1141,6 +1140,7 @@ bin/grass62
 %%GRASS_INST_DIR%%/etc/gm/script/r.recode.rules
 %%GRASS_INST_DIR%%/etc/gm/script/r.support.sh
 %%GRASS_INST_DIR%%/etc/gm/script/v.in.asciipoints
+%%GRASS_INST_DIR%%/etc/gm/script/v.type.sh
 %%GRASS_INST_DIR%%/etc/gm/thematic.tcl
 %%GRASS_INST_DIR%%/etc/gm/tksys.tcl
 %%GRASS_INST_DIR%%/etc/gm/vector.tcl
@@ -1263,11 +1263,14 @@ bin/grass62
 %%GRASS_INST_DIR%%/etc/mon.stop
 %%GRASS_INST_DIR%%/etc/mon.which
 %%GRASS_INST_DIR%%/etc/monitorcap
+%%GRASS_INST_DIR%%/etc/msgs/am.msg
 %%GRASS_INST_DIR%%/etc/msgs/cs.msg
 %%GRASS_INST_DIR%%/etc/msgs/de.msg
+%%GRASS_INST_DIR%%/etc/msgs/es.msg
 %%GRASS_INST_DIR%%/etc/msgs/fr.msg
 %%GRASS_INST_DIR%%/etc/msgs/it.msg
 %%GRASS_INST_DIR%%/etc/msgs/ja.msg
+%%GRASS_INST_DIR%%/etc/msgs/lv.msg
 %%GRASS_INST_DIR%%/etc/msgs/pl.msg
 %%GRASS_INST_DIR%%/etc/msgs/pt_br.msg
 %%GRASS_INST_DIR%%/etc/msgs/ru.msg
@@ -2187,6 +2190,8 @@ bin/grass62
 @dirrm %%GRASS_INST_DIR%%/locale/cs
 @dirrm %%GRASS_INST_DIR%%/locale/ar/LC_MESSAGES
 @dirrm %%GRASS_INST_DIR%%/locale/ar
+@dirrm %%GRASS_INST_DIR%%/locale/am/LC_MESSAGES
+@dirrm %%GRASS_INST_DIR%%/locale/am
 @dirrm %%GRASS_INST_DIR%%/locale
 @dirrm %%GRASS_INST_DIR%%/lib
 @dirrm %%GRASS_INST_DIR%%/include/grass/vect
@@ -2220,8 +2225,6 @@ bin/grass62
 @dirrm %%GRASS_INST_DIR%%/etc/gtcltk
 @dirrm %%GRASS_INST_DIR%%/etc/gm/script
 @dirrm %%GRASS_INST_DIR%%/etc/gm
-@dirrm %%GRASS_INST_DIR%%/etc/gem/skeleton/macosx/bin
-@dirrm %%GRASS_INST_DIR%%/etc/gem/skeleton/macosx
 @dirrm %%GRASS_INST_DIR%%/etc/gem/skeleton
 @dirrm %%GRASS_INST_DIR%%/etc/gem
 @dirrm %%GRASS_INST_DIR%%/etc/form
