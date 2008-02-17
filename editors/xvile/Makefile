@@ -37,6 +37,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 MAN1=		xvile.1
 
 OPTIONS= FILTERS "Add support for loadable filters" OFF
+OPTIONS+= ICONV "Add support for ICONV" OFF
 OPTIONS+= MENUS "Add support for menus" OFF
 OPTIONS+= PERL "Add support for perl functions" OFF
 OPTIONS+= XAW3D "Use XAW3D to get a 3D effect" OFF
@@ -44,6 +45,10 @@ OPTIONS+= XAW3D "Use XAW3D to get a 3D effect" OFF
 .include <bsd.port.pre.mk>
 
 pre-configure:
+.if ! defined(WITH_ICONV)
+	@${ECHO_MSG} "Choose the option ICONV if you want to make an xvile which includes"
+	@${ECHO_MSG} "ICONV functionality"
+.endif
 .if ! defined(WITH_MENUS)
 	@${ECHO_MSG} "To use xvile with menus, choose the option MENUS,"
 	@${ECHO_MSG} "which will also turn on Xaw. If you have Xaw3d, you can use it"
@@ -57,6 +62,13 @@ pre-configure:
 .if ! defined(WITH_FILTERS)
 	@${ECHO_MSG} "Choose the option FILTERS if you want to make an xvile which will"
 	@${ECHO_MSG} "dynamically load filters as needed."
+.endif
+
+.if defined(WITH_ICONV)
+CONFIGURE_ARGS+=	--with-iconv
+USE_ICONV=	yes
+.else
+CONFIGURE_ARGS+=	--without-iconv
 .endif
 
 .if defined(WITH_MENUS)
