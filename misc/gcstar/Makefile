@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcstar
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	misc
 MASTER_SITES=	http://download.gna.org/gcstar/ \
 		http://djdomics.free.fr/distfiles/
