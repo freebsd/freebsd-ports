@@ -29,9 +29,17 @@ GNU_CONFIGURE=	yes
 MAN1=		vile.1
 
 OPTIONS= FILTERS "Add support for loadable filters" OFF
+OPTIONS+= ICONV "Add support for ICONV" OFF
 OPTIONS+= PERL "Add support for perl functions" OFF
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ICONV)
+CONFIGURE_ARGS+=	--with-iconv
+USE_ICONV=	yes
+.else
+CONFIGURE_ARGS+=	--without-iconv
+.endif
 
 .if defined(WITH_PERL)
 CONFIGURE_ARGS+=	--with-perl
@@ -49,6 +57,10 @@ PLIST=		${PKGDIR}/pkg-plist.perl+filt
 .endif
 
 pre-configure:
+.if ! defined(WITH_ICONV)
+	@${ECHO_MSG} "Choose the option ICONV if you want to make a vile which includes"
+	@${ECHO_MSG} "ICONV functionality"
+.endif
 .if ! defined(WITH_PERL)
 	@${ECHO_MSG} "Choose the option PERL if you want to make a vile which includes"
 	@${ECHO_MSG} "PERL functionality"
