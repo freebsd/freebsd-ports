@@ -1,0 +1,19 @@
+This site is about a seam-carving C/C++ library called Liquid
+Rescale.
+
+It is a free, open source implementation of the algorithm described
+in the paper [1] by Shai Avidan and Ariel Shamir.
+
+It aims at resizing pictures non uniformly while preserving their
+features, i.e. avoiding distortion of the important parts.
+
+The API is intended to be powerful, yet fast and easy to use. It
+supports saving and loading of the carving information, real-time
+scaling, manual feature selection, customizable progress report and
+more.
+
+Included are full documentation (in docbook format) and examples.
+
+[1] http://www.faculty.idc.ac.il/arik/imret.pdf
+
+WWW: http://liblqr.wikidot.com/
