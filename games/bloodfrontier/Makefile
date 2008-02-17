@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sauerbraten
-PORTVERSION=	20070415
+PORTVERSION=	20071222
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_2007_04_15_spring_edition_linux
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}_2007_12_24_assassin_edition_linux
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	First person shooter based on Cube
@@ -25,6 +24,8 @@ MAKE_ENV+=	CXX="${CXX}"
 BUILD_WRKSRC=	${WRKSRC}/src
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	libenet
+
+PORTDOCS=	*
 
 OPTIONS=	CLIENT "Build client" on \
 		DEDICATED "Build dedicated server" on
