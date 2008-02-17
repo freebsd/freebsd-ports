@@ -370,6 +370,7 @@
     SUBDIR += libkexif
     SUBDIR += libkexiv2
     SUBDIR += libkipi
+    SUBDIR += liblqr-1
     SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
