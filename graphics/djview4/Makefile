@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	djview
-PORTVERSION=	4.1
+PORTVERSION=	4.3
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}4-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Standalone Djvu viewer and plugin based on Qt4 toolkit
 
-LIB_DEPENDS=	djvulibre.19:${PORTSDIR}/graphics/djvulibre-nox11
+LIB_DEPENDS=	djvulibre.20:${PORTSDIR}/graphics/djvulibre-nox11
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig gnometarget
@@ -28,7 +28,7 @@ CONFIGURE_ENV=	QMAKE="${LOCALBASE}/bin/qmake-qt4" \
 		CXXFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
-WRKSRC=		${WRKDIR}/${PORTNAME}4-${PORTVERSION}.orig
+WRKSRC=		${WRKDIR}/${PORTNAME}4-${PORTVERSION}
 
 .if defined(CXX) && ${CXX:M*icc}
 QMAKESPEC?=	freebsd-icc
