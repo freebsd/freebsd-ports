@@ -12,9 +12,9 @@ include/pixie/sdr.h
 include/pixie/shadeop.h
 lib/pixie/file.so
 lib/pixie/framebuffer.so
-lib/pixie/libcommon.a
-lib/pixie/libcommon.so
-lib/pixie/libcommon.so.0
+lib/pixie/libpixiecommon.a
+lib/pixie/libpixiecommon.so
+lib/pixie/libpixiecommon.so.0
 lib/pixie/libri.a
 lib/pixie/libri.so
 lib/pixie/libri.so.0
@@ -22,62 +22,6 @@ lib/pixie/libsdr.a
 lib/pixie/libsdr.so
 lib/pixie/libsdr.so.0
 lib/pixie/rgbe.so
-%%PORTDOCS%%%%DOCSDIR%%/attributes.htm
-%%PORTDOCS%%%%DOCSDIR%%/autoraytracing.htm
-%%PORTDOCS%%%%DOCSDIR%%/display.htm
-%%PORTDOCS%%%%DOCSDIR%%/dso.htm
-%%PORTDOCS%%%%DOCSDIR%%/figures/Thumbs.db
-%%PORTDOCS%%%%DOCSDIR%%/figures/caustic1.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/caustic2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/directPhoton.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/ex1_beauty.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/ex1_precompute.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/ex3_beauty.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/ex3g_beauty.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/ex5_beauty.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/ex6.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/tcaustic1.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/tcaustic2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/tdirectPhoton.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/tex1_beauty.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/tex1_precompute.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/tex3_beauty.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/tex5_beauty.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/tex6.jpg
-%%PORTDOCS%%%%DOCSDIR%%/figures/tx3g_beauty.jpg
-%%PORTDOCS%%%%DOCSDIR%%/gi.htm
-%%PORTDOCS%%%%DOCSDIR%%/hardshaders.htm
-%%PORTDOCS%%%%DOCSDIR%%/hiders.htm
-%%PORTDOCS%%%%DOCSDIR%%/index.htm
-%%PORTDOCS%%%%DOCSDIR%%/logo.jpg
-%%PORTDOCS%%%%DOCSDIR%%/network.htm
-%%PORTDOCS%%%%DOCSDIR%%/occlusionculling.htm
-%%PORTDOCS%%%%DOCSDIR%%/options.htm
-%%PORTDOCS%%%%DOCSDIR%%/rayshadow/index.html
-%%PORTDOCS%%%%DOCSDIR%%/rayshadow/logo.jpg
-%%PORTDOCS%%%%DOCSDIR%%/rayshadow/shadow.rib
-%%PORTDOCS%%%%DOCSDIR%%/rayshadow/shadow1.jpg
-%%PORTDOCS%%%%DOCSDIR%%/rayshadow/shadow2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/rayshadow/shadowShade.rib
-%%PORTDOCS%%%%DOCSDIR%%/rayshadow/tshadow1.jpg
-%%PORTDOCS%%%%DOCSDIR%%/rayshadow/tshadow2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/raytracing.htm
-%%PORTDOCS%%%%DOCSDIR%%/raytracingsl.htm
-%%PORTDOCS%%%%DOCSDIR%%/running/index.html
-%%PORTDOCS%%%%DOCSDIR%%/running/logo.jpg
-%%PORTDOCS%%%%DOCSDIR%%/sdrlib.htm
-%%PORTDOCS%%%%DOCSDIR%%/softshadow/Thumbs.db
-%%PORTDOCS%%%%DOCSDIR%%/softshadow/index.html
-%%PORTDOCS%%%%DOCSDIR%%/softshadow/logo.jpg
-%%PORTDOCS%%%%DOCSDIR%%/softshadow/shadow.JPG
-%%PORTDOCS%%%%DOCSDIR%%/softshadow/shadow.rib
-%%PORTDOCS%%%%DOCSDIR%%/softshadow/shadow.tif
-%%PORTDOCS%%%%DOCSDIR%%/softshadow/shadow2.JPG
-%%PORTDOCS%%%%DOCSDIR%%/softshadow/tshadow.JPG
-%%PORTDOCS%%%%DOCSDIR%%/softshadow/tshadow2.JPG
-%%PORTDOCS%%%%DOCSDIR%%/tips.htm
-%%PORTDOCS%%%%DOCSDIR%%/tsm.htm
-%%PORTDOCS%%%%DOCSDIR%%/versions.htm
 %%DATADIR%%/shaders/ambientindirect.sdr
 %%DATADIR%%/shaders/ambientindirect.sl
 %%DATADIR%%/shaders/ambientlight.sdr
@@ -134,10 +78,5 @@ lib/pixie/rgbe.so
 %%DATADIR%%/shaders/spotlight.sl
 @dirrm %%DATADIR%%/shaders
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/softshadow
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/running
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/rayshadow
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/figures
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/pixie
 @dirrm include/pixie
