@@ -24,8 +24,10 @@ include/libdjvu/miniexp.h
 %%X11%%lib/djvulibre/plugins/nsdejavu.so
 lib/libdjvulibre.la
 lib/libdjvulibre.so
-lib/libdjvulibre.so.19
+lib/libdjvulibre.so.20
 libdata/pkgconfig/ddjvuapi.pc
+%%X11%%share/djvu/djview3/cs/djview.qm
+%%X11%%share/djvu/djview3/cs/qt.qm
 %%X11%%share/djvu/djview3/de/djview.qm
 %%X11%%share/djvu/djview3/de/qt.qm
 %%X11%%share/djvu/djview3/desktop/djvulibre-djview3.desktop
@@ -35,6 +37,7 @@ libdata/pkgconfig/ddjvuapi.pc
 %%X11%%share/djvu/djview3/fr/qt.qm
 %%X11%%share/djvu/djview3/ja/djview.qm
 %%X11%%%%X11%%share/djvu/djview3/ja/qt.qm
+share/djvu/osi/cs/messages.xml
 share/djvu/osi/de/libdjvu++.xml
 share/djvu/osi/de/messages.xml
 share/djvu/osi/desktop/djvulibre-mime.xml
@@ -67,11 +70,13 @@ share/djvu/pubtext/DjVuXML-s.dtd
 @dirrm share/djvu/osi/en
 @dirrm share/djvu/osi/desktop
 @dirrm share/djvu/osi/de
+@dirrm share/djvu/osi/cs
 @dirrm share/djvu/osi
 %%X11%%@dirrm share/djvu/djview3/ja
 %%X11%%@dirrm share/djvu/djview3/fr
 %%X11%%@dirrm share/djvu/djview3/desktop
 %%X11%%@dirrm share/djvu/djview3/de
+%%X11%%@dirrm share/djvu/djview3/cs
 %%X11%%@dirrm share/djvu/djview3
 @dirrmtry share/djvu
 @dirrmtry man/fr/man1

@@ -1,12 +1,12 @@
---- tools/any2djvu.orig	Sat Feb 17 02:33:06 2007
-+++ tools/any2djvu	Sat Feb 17 02:36:10 2007
+--- tools/any2djvu.orig	2008-02-17 20:18:08.000000000 +0300
++++ tools/any2djvu	2008-02-17 20:20:31.000000000 +0300
 @@ -1,11 +1,11 @@
 -#! /bin/bash -f
 +#!/bin/sh
  # CVS version control block - do not edit manually
  #  $RCSfile: any2djvu,v $
- #  $Revision: 1.1 $
- #  $Date: 2005/08/23 15:53:01 $
+ #  $Revision: 1.3 $
+ #  $Date: 2007/08/10 08:08:55 $
  #  $Source: /cvsroot/djvu/djvulibre-3.5/tools/any2djvu,v $
  
 -function copyright()
@@ -59,37 +59,37 @@
  {
      echo "Convert files from .ps/.ps.gz/.pdf to .djvu"
      echo "Usage:	$0 [options] [url] {filename(s)}"
-@@ -121,13 +121,13 @@
+@@ -123,13 +123,13 @@
  fi
  
  # check OCR option
--if [ ! x$ocr == x0 ] && [ ! x$ocr == x1 ]; then
-+if [ ! x$ocr = x0 ] && [ ! x$ocr = x1 ]; then
+-if [ ! "x$ocr" == x0 ] && [ ! "x$ocr" == x1 ]; then
++if [ ! "x$ocr" = x0 ] && [ ! "x$ocr" = x1 ]; then
      echo 'error: -o OCR must be 0 or 1'
      exit 2
  fi
  
  # if help is requested or docformat is not specified right - show help
--if [ x$docformat == x'help' ]; then
-+if [ x$docformat = x'help' ]; then
+-if [ "x$docformat" == x'help' ]; then
++if [ "x$docformat" = x'help' ]; then
      format_help
      exit 0
  fi
-@@ -190,7 +190,7 @@
- 	    -F ocr=$ocr -F legal=1 $rurl/$rcgi				\
- 	    | eval tee $log $shellopts
+@@ -215,7 +215,7 @@
+             -F ocr=$ocr -F legal=1 "$rurl/$rcgi"                          \
+             | eval tee "'$log'" $shellopts
      else
--	wget $wgetopts -O - "$rurl/$rcgi?urlupload=$lurl/$in$cgiopts"	\
-+	/usr/bin/fetch $wgetopts -o - "$rurl/$rcgi?urlupload=$lurl/$in$cgiopts"	\
- 	    | eval tee $log $shellopts
+-        wget $wgetopts -O - "$rurl/$rcgi?urlupload=$lurl/$in$cgiopts"   \
++         /usr/bin/fetch$wgetopts -o - "$rurl/$rcgi?urlupload=$lurl/$in$cgiopts"   \
+             | eval tee "'$log'" $shellopts
      fi
-     l=`egrep 'href=djvu/.*\.djvu' $log`
-@@ -200,7 +200,7 @@
- 	echo "error: something got wrong. check log file"
- 	exit 1
+     l=`egrep 'href=djvu/.*\.djvu' "$log"`
+@@ -225,7 +225,7 @@
+         echo "error: something got wrong. check log file"
+         exit 1
      fi
--    wget $wgetopts -O $b.djvu "$rurl/$l"
+-    wget $wgetopts -O "$b.djvu" "$rurl/$l"
 +    /usr/bin/fetch $wgetopts -o $b.djvu "$rurl/$l"
  
-     [ -z $doclean ] || rm $log
-     [ -z $silent ]  && ls -l $b.djvu
+     [ -z "$doclean" ] || rm "$log"
+     [ -z $silent ]  && ls -l "$b.djvu"
