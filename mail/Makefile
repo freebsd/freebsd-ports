@@ -559,6 +559,7 @@
     SUBDIR += simscan
     SUBDIR += sma
     SUBDIR += smail
+    SUBDIR += smfsav
     SUBDIR += smtp-gated
     SUBDIR += smtpclient
     SUBDIR += smtpd
