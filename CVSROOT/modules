@@ -15255,6 +15255,7 @@ smb_auth	ports/www/smb_auth
 smbftpd		ports/ftp/smbftpd
 smbldap-tools	ports/net/smbldap-tools
 smc		ports/devel/smc
+smfsav		ports/mail/smfsav
 smiley		ports/games/smiley
 sml-fxp		ports/textproc/sml-fxp
 sml-mode.el	ports/lang/sml-mode.el
