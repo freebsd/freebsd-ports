@@ -1,0 +1,11 @@
+--- ogr/GNUmakefile.orig	Fri Nov  9 11:11:24 2007
++++ ogr/GNUmakefile	Wed Dec 26 12:30:59 2007
+@@ -15,7 +15,7 @@
+ 
+ default:	lib
+ 
+-all:	sublibs apps test_ogrsf$(EXE) 
++all:	sublibs
+ 
+ clean:
+ 	rm -f html/*

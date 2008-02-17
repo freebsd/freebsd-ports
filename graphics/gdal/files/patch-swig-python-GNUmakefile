@@ -1,0 +1,20 @@
+--- swig/python/GNUmakefile.orig	2007-11-26 16:02:20.000000000 +0800
++++ swig/python/GNUmakefile	2008-02-13 14:27:20.000000000 +0800
+@@ -43,7 +43,7 @@
+ generate: ${WRAPPERS}
+ 
+ build:
+-	python setup.py build
++	python setup.py bdist_egg
+ 
+ egg:
+ 	python setup.py bdist_egg 
+@@ -51,7 +51,7 @@
+ install:
+ 
+ ifeq ($(PY_HAVE_SETUPTOOLS),1)
+-	python setup.py install 
++	env %%MAKE_ENV%% python setup.py easy_install -O 1 -N -S %%PYTHON_SITELIBDIR%% -d %%PYEASYINSTALL_SITELIBDIR%% -s %%PYEASYINSTALL_BINDIR%% %%WRKSRC%%/swig/python/dist/%%PYEASYINSTALL_EGG%%
+ else
+ 	python setup.py install --prefix=$(DESTDIR)$(prefix)
+ endif
