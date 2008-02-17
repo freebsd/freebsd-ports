@@ -1,0 +1,48 @@
+--- Makefile.orig	2006-10-25 23:15:10.000000000 +0300
++++ Makefile	2008-02-17 14:19:30.000000000 +0200
+@@ -1,17 +1,17 @@
+ CC = gcc
+ PREFIX = /usr/local
+ SBINDIR = $(PREFIX)/sbin
+-DATADIR = /var/run/smfs
+-CONFDIR = /etc/mail/smfs
+-USER = smfs
+-GROUP = smfs
+-CFLAGS = -O2 -D_REENTRANT -fomit-frame-pointer -I/usr/local/include
++DATADIR = /var/run/smfsav
++CONFDIR = $(PREFIX)/etc
++USER = smfsav
++GROUP = smfsav
++CFLAGS = -O2 -D_REENTRANT -fomit-frame-pointer -I../src/include
+ 
+ # Linux
+-LDFLAGS = -lmilter -lpthread -lresolv
++#LDFLAGS = -lmilter -lpthread -lresolv
+ 
+ # FreeBSD (BIND v8 is required)
+-#LDFLAGS = -lmilter -pthread -L/usr/local/lib -lbind_r
++LDFLAGS = -lmilter -pthread -L../src/lib -lbind_r
+ 
+ # Solaris
+ #LDFLAGS = -lmilter -lpthread -lsocket -lnsl -lresolv
+@@ -30,20 +30,3 @@
+ 
+ clean:
+ 	rm -f smf-sav.o smf-sav
+-
+-install:
+-	@./install.sh
+-	@cp -f -p smf-sav $(SBINDIR)
+-	@if test ! -d $(DATADIR); then \
+-	mkdir -m 700 $(DATADIR); \
+-	chown $(USER):$(GROUP) $(DATADIR); \
+-	fi
+-	@if test ! -d $(CONFDIR); then \
+-	mkdir -m 755 $(CONFDIR); \
+-	fi
+-	@if test ! -f $(CONFDIR)/smf-sav.conf; then \
+-	cp -p smf-sav.conf $(CONFDIR)/smf-sav.conf; \
+-	else \
+-	cp -p smf-sav.conf $(CONFDIR)/smf-sav.conf.new; \
+-	fi
+-	@echo Please, inspect and edit the $(CONFDIR)/smf-sav.conf file.
