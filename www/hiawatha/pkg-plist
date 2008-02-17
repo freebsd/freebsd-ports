@@ -1,17 +1,22 @@
-sbin/hiawatha
 sbin/cgi-wrapper
-sbin/wigwam
-sbin/php-fcgi
+sbin/hiawatha
 sbin/newroot
-@unexec if cmp -s %D/etc/hiawatha/httpd.conf %D/etc/hiawatha/httpd.conf.sample; then rm -f %D/etc/hiawatha/httpd.conf; fi
-@unexec if cmp -s %D/etc/hiawatha/mimetype.conf %D/etc/hiawatha/mimetype.conf.sample; then rm -f %D/etc/hiawatha/mimetype.conf; fi
-@unexec if cmp -s %D/etc/hiawatha/cgi-wrapper.conf %D/etc/hiawatha/cgi-wrapper.conf.sample; then rm -f %D/etc/hiawatha/cgi-wrapper.conf; fi
-@unexec if cmp -s %D/etc/hiawatha/php-fcgi.conf %D/etc/hiawatha/php-fcgi.conf.sample; then rm -f %D/etc/hiawatha/php-fcgi.conf; fi
-etc/hiawatha/httpd.conf.sample
-etc/hiawatha/mimetype.conf.sample
-etc/hiawatha/cgi-wrapper.conf.sample
-etc/hiawatha/php-fcgi.conf.sample
-@dirrm etc/hiawatha
-@unexec if cmp -s %D/www/hiawatha/index.html %D/www/hiawatha/index.html.sample; then rm -f %D/www/hiawatha/index.html; fi
-www/hiawatha/index.html.sample
-@dirrm www/hiawatha
+sbin/php-fcgi
+sbin/wigwam
+%%ETCDIR%%/cgi-wrapper.conf
+%%ETCDIR%%/httpd.conf
+%%ETCDIR%%/mimetype.conf
+%%ETCDIR%%/php-fcgi.conf
+%%WWWDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%EXAMPLESDIR%%/hiawatha
+%%PORTDOCS%%%%EXAMPLESDIR%%/mkcert
+%%PORTDOCS%%%%EXAMPLESDIR%%/newroot
+%%PORTDOCS%%%%EXAMPLESDIR%%/php-fcgi
+@dirrm %%ETCDIR%%
+@dirrm %%WWWDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
