@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	2008-01-04 20:42:09.000000000 +0800
++++ src/Makefile.in	2008-01-31 20:06:47.000000000 +0800
+@@ -37,8 +37,8 @@
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ host_triplet = @host@
+-bin_PROGRAMS = cdo$(EXEEXT)
+-noinst_PROGRAMS = cdotest$(EXEEXT)
++bin_PROGRAMS = cdo$(EXEEXT) cdotest$(EXEEXT)
++noinst_PROGRAMS = 
+ subdir = src
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+ 	$(srcdir)/config.h.in
