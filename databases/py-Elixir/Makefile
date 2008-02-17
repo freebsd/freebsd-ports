@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Elixir
-PORTVERSION=	0.3.0
+PORTVERSION=	0.5.1
 #PORTREVISION=	0
 CATEGORIES=	databases python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/E/Elixir/
+MASTER_SITES=	CHEESESHOP \
+		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
