@@ -6714,6 +6714,7 @@ liblinear	ports/science/liblinear
 liblingoteach	ports/textproc/liblingoteach
 liblo		ports/audio/liblo
 liblogging	ports/devel/liblogging
+liblqr-1	ports/graphics/liblqr-1
 liblrdf		ports/textproc/liblrdf
 libltdl15	ports/devel/libltdl15
 liblug		ports/graphics/liblug
