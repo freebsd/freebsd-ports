@@ -1,0 +1,9 @@
+libexec/nagios/check_memcached
+%%SITE_PERL%%/Nagios/Plugins/Memcached.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios/Plugins/Memcached/.packlist
+@dirrmtry libexec/nagios
+@dirrmtry %%SITE_PERL%%/Nagios/Plugins
+@dirrmtry %%SITE_PERL%%/Nagios
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios/Plugins
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
