@@ -6,6 +6,7 @@
 
 PORTNAME=		squirrelmail-plugins
 PORTVERSION=		1.0
+PORTREVISION=		1
 CATEGORIES=		mail www
 MASTER_SITES=		# none
 DISTFILES=		# none
@@ -30,10 +31,10 @@ SUB_LIST+=	"SQUIRRELDIR=squirrelmail"
 .endif
 .endif
 
-
 OPTIONS=	SIEVE	"Sieve Mail Filters plugin" off \
 		CALENDR	"Shared Calendars plugin" off \
-		LDAPPWD	"Change LDAP passwords plugin" off \
+		LDAPPW	"Change LDAP passwords plugin" off \
+		SQLPW	"Change *SQL passwords plugin" off \
 		MAILFT	"E-mail footer plugin" off \
 		LGAUTH	"HTTP-auth based login plugin" off \
 		LGNOTES	"Notes on login screen plugin" off \
@@ -45,13 +46,14 @@ OPTIONS=	SIEVE	"Sieve Mail Filters plugin" off \
 		QMADMIN	"Qmailadmin login plugin" off \
 		QUOTA	"Quota usage plugin" off \
 		SASQL	"SpamAssassin SQL plugin" off \
+		BUTTONS "Custom (spam/ham/etc.) buttons" off \
 		SLOGIN	"SSL login plugin" off \
 		TIMEOUT	"User session timeout plugin" off \
 		TMDA	"TMDA plugin" off \
 		VLOGIN	"Multi-site-hosting capabilities plugin" off \
 		WEBSRCH	"Web search engines plugin" off \
 		WETTER	"Weather in Germany plugin" off
-#		NEWUSER "New user wizard plugin" off 
+#		NEWUSER "New user wizard plugin" off
 
 .include <bsd.port.pre.mk>
 
@@ -65,6 +67,10 @@ RUN_DEPENDS+=		${SQUIRRELDIR}/plugins/calendar:${PORTSDIR}/mail/squirrelmail-sha
 
 .if !defined(WITHOUT_LDAPPW) || defined(WITH_LDAPPW)
 RUN_DEPENDS+=		${SQUIRRELDIR}/plugins/change_ldappass:${PORTSDIR}/mail/squirrelmail-change_ldappass-plugin
+.endif
+
+.if !defined(WITHOUT_SQLPW) || defined(WITH_SQLPW)
+RUN_DEPENDS+=		${SQUIRRELDIR}/plugins/change_sqlpass:${PORTSDIR}/mail/squirrelmail-change_sqlpass-plugin
 .endif
 
 .if !defined(WITHOUT_MAILFT) || defined(WITH_MAILFT)
@@ -113,6 +119,10 @@ RUN_DEPENDS+=		${SQUIRRELDIR}/plugins/quota_usage:${PORTSDIR}/mail/squirrelmail-
 
 .if !defined(WITHOUT_SASQL) || defined(WITH_SASQL)
 RUN_DEPENDS+=		${SQUIRRELDIR}/plugins/sasql:${PORTSDIR}/mail/squirrelmail-sasql-plugin
+.endif
+
+.if !defined(WITHOUT_BUTTONS) || defined(WITH_BUTTONS)
+RUN_DEPENDS+=		${SQUIRRELDIR}/plugins/spam_buttons:${PORTSDIR}/mail/squirrelmail-spam-buttons-plugin
 .endif
 
 .if !defined(WITHOUT_SLOGIN) || defined(WITH_SLOGIN)
