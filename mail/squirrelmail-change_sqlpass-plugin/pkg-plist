@@ -1,0 +1,19 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/COPYING
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/INSTALL
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/README
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/change_sqlpass.pot
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config.php.sample
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/functions.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/generate.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/getpot
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/jeffco/howto_pam_mysql.tar
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/make_release.sh
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/md5crypt.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/options.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/setup.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/version
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/jeffco
+@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
