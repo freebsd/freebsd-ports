@@ -10655,6 +10655,7 @@ p5-Net-Finger	ports/net/p5-Net-Finger
 p5-Net-Flickr-API	ports/www/p5-Net-Flickr-API
 p5-Net-Flickr-Backup	ports/www/p5-Net-Flickr-Backup
 p5-Net-Flickr-RDF	ports/www/p5-Net-Flickr-RDF
+p5-Net-Flow	ports/net/p5-Net-Flow
 p5-Net-Frame	ports/net/p5-Net-Frame
 p5-Net-Frame-Dump	ports/net/p5-Net-Frame-Dump
 p5-Net-FreeDB	ports/audio/p5-Net-FreeDB
