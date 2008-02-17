@@ -15463,6 +15463,7 @@ squirrelmail-calendar_file_backend-plugin	ports/mail/squirrelmail-calendar_file_
 squirrelmail-calendar_sql_backend-plugin	ports/mail/squirrelmail-calendar_sql_backend-plugin
 squirrelmail-change_ldappass-plugin	ports/mail/squirrelmail-change_ldappass-plugin
 squirrelmail-change_sqlpass-plugin	ports/mail/squirrelmail-change_sqlpass-plugin
+squirrelmail-check_quota-plugin	ports/mail/squirrelmail-check_quota-plugin
 squirrelmail-compatibility-plugin	ports/mail/squirrelmail-compatibility-plugin
 squirrelmail-compatibility-plugin1	ports/mail/squirrelmail-compatibility-plugin1
 squirrelmail-devel	ports/mail/squirrelmail-devel
