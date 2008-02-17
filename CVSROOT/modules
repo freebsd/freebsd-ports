@@ -12966,6 +12966,7 @@ ports_traceroute	ports/net/traceroute
 ports_tracker		ports/audio/tracker
 ports_ukrainian	ports/ukrainian
 ports_units	ports/math/units
+ports_vacation	ports/mail/vacation
 ports_vietnamese	ports/vietnamese
 ports_whois		ports/net/whois
 ports_www	ports/www
@@ -16510,7 +16511,6 @@ v6eval		ports/net/v6eval
 v7sh		ports/shells/v7sh
 vMac		ports/emulators/vMac
 v_sim		ports/science/v_sim
-vacation	ports/mail/vacation
 vala		ports/lang/vala
 valgrind	ports/devel/valgrind
 valgrind-snapshot	ports/devel/valgrind-snapshot
