@@ -92,6 +92,7 @@ lib/scm/slib/mbe.scm
 lib/scm/slib/minimize.scm
 lib/scm/slib/mkclrnam.scm
 lib/scm/slib/mklibcat.scm
+lib/scm/slib/mkpltcat.scm
 lib/scm/slib/modular.scm
 lib/scm/slib/mulapply.scm
 lib/scm/slib/mularg.scm
@@ -182,8 +183,8 @@ lib/scm/slib/vet.scm
 lib/scm/slib/withfile.scm
 lib/scm/slib/wttest.scm
 lib/scm/slib/wttree.scm
-lib/scm/slib/yasyn.scm
 lib/scm/slib/xml-parse.scm
+lib/scm/slib/yasyn.scm
 lib/scm/slibcat
 lib/scm/socket.so
 lib/scm/unix.so
