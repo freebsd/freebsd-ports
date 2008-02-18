@@ -1,28 +1,5 @@
 bin/sdpa
-lib/libsdpa.a
-include/sdpa-lib.hpp
-include/sdpa-lib2.hpp
-share/examples/sdpa/Makefile
-share/examples/sdpa/example1-1.cpp
-share/examples/sdpa/example1-2.cpp
-share/examples/sdpa/example1.dat
-share/examples/sdpa/example1.dat-s
-share/examples/sdpa/example1.ini
-share/examples/sdpa/example1.ini-s
-share/examples/sdpa/example1.result
-share/examples/sdpa/example2-1.cpp
-share/examples/sdpa/example2-2.cpp
-share/examples/sdpa/example2.dat
-share/examples/sdpa/example2.result
-share/examples/sdpa/example3.cpp
-share/examples/sdpa/example4.cpp
-share/examples/sdpa/example5.cpp
-share/examples/sdpa/example6.cpp
-share/examples/sdpa/param.sdpa
 share/sdpa/param.sdpa
 @dirrm share/sdpa
-@dirrm share/examples/sdpa
-%%PORTDOCS%%%%DOCSDIR%%/sdpa.%%OLDVERSION%%.manual.ps.gz
-%%PORTDOCS%%%%DOCSDIR%%/sdpa.%%OLDVERSION%%.manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/sdpa.%%OLDVERSION%%.install.txt
+%%PORTDOCS%%%%DOCSDIR%%/sdpa.7.0.5.manual.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
