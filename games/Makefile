@@ -698,6 +698,7 @@
     SUBDIR += sdlsand
     SUBDIR += seabattle
     SUBDIR += seahaven
+    SUBDIR += secretmaryochronicles
     SUBDIR += senken
     SUBDIR += senso
     SUBDIR += sex
