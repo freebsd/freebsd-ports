@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl_sge
 PORTVERSION=	0.030809
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.etek.chalmers.se/~e8cal1/sge/files/ \
 		http://www.digitalfanatics.org/cal/sge/files/
@@ -16,8 +16,9 @@ DISTNAME=	sge030809
 MAINTAINER=	jaj@hcl-club.lu
 COMMENT=	A graphic library for the Simple DirectMedia Layer (SDL)
 
-USE_GMAKE=		yes
-USE_LDCONFIG=		yes
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 OPTIONS=	SDL_IMAGE "Enable support for SDL_IMAGE" On \
 		FREETYPE "Enable FreeType support" On \
