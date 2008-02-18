@@ -28,7 +28,6 @@ DATA_DIRS=	2YearsToNever Anonymous Aquiline BWM Big Blackwindow Bubbles_Exact \
 		bluefoo gorilla gorillaz mxflat typo
 
 do-install:
-	@${LN} -sf ${PREFIX}/share/sawfish/1.3.? ${PREFIX}/share/sawfish/1.3
 	@${MKDIR} ${PREFIX}/share/sawfish/1.3/themes
 .for d in ${DATA_DIRS}
 	@${MKDIR} ${PREFIX}/share/sawfish/1.3/themes/${d}
