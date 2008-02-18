@@ -14,10 +14,8 @@ MASTER_SITES=	http://www.gajim.org/downloads/ \
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -37,7 +35,18 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-MAN1=		gajim.1 gajim-remote.1
+MAN1=		gajim.1
+
+.if !defined(WITHOUT_DBUS)
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
+CONFIGURE_ARGS+=	--enable-remote
+MAN1+=	gajim-remote.1
+PLIST_SUB+=	DBUS=""
+.else
+CONFIGURE_ARGS+=	--disable-remote
+PLIST_SUB+=	DBUS="@comment "
+.endif
 
 EMOTICONS=	animated static static-big
 ICONSETS=	crystal dcraven gnome goojim gossip gota jabberbulb nuvola \
