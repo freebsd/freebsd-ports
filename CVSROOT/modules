@@ -9944,6 +9944,7 @@ p5-File-Type	ports/devel/p5-File-Type
 p5-File-Util	ports/devel/p5-File-Util
 p5-File-Which	ports/sysutils/p5-File-Which
 p5-File-chdir	ports/devel/p5-File-chdir
+p5-File-chmod	ports/devel/p5-File-chmod
 p5-File-pushd	ports/devel/p5-File-pushd
 p5-FileHandle-Fmode	ports/devel/p5-FileHandle-Fmode
 p5-FileHandle-Unget	ports/devel/p5-FileHandle-Unget
