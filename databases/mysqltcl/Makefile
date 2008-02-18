@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mysqltcl
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	databases tcl83 tcl84
 MASTER_SITES=	http://www.xdobry.de/mysqltcl/
 
-MAINTAINER=	bkoenig@cs.tu-berlin.de
+MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	TCL module for accessing MySQL databases based on msqltcl
 
 USE_LDCONFIG=	yes
