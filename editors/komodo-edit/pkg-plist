@@ -3264,6 +3264,7 @@
 %%DATADIR%%/share/icons/komodo48.png
 %%DATADIR%%/share/icons/komodo48.xpm
 bin/komodo
+share/applications/komodo-edit-4.2.desktop
 @dirrm %%DATADIR%%/share/icons
 @dirrm %%DATADIR%%/share/doc
 @dirrm %%DATADIR%%/share
@@ -3510,3 +3511,4 @@ bin/komodo
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%
+@dirrmtry share/applications

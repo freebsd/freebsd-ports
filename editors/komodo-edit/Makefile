@@ -6,6 +6,7 @@
 
 PORTNAME=	komodo-edit
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://downloads.activestate.com/Komodo/Linux/4.2/
 DISTNAME=	Komodo-Edit-4.2.1-283000-linux-libcpp6-x86
@@ -23,7 +24,8 @@ USE_LINUX=	yes
 USE_PYTHON=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e "s,  _selinux_prepare(absInstallDir),  return," \
+	${REINPLACE_CMD} -e "s,  _selinux_prepare(absInstallDir),  return,; \
+		s,/usr/share/applications,${PREFIX}/share/applications," \
 		${WRKSRC}/support/_install.py
 
 do-install:
