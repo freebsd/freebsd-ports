@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	nikto
-PORTVERSION=	1.36
-PORTREVISION=	1
+PORTVERSION=	2.02
 CATEGORIES=	security www
 MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
 		http://www.mirrors.wiretapped.net/security/vulnerability-assessment/${PORTNAME}/ \
@@ -23,8 +22,7 @@ USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
-PORTDOCS=	CHANGES.txt README_plugins.txt nikto_usage.html nikto_usage.txt
-MAN1=		${PORTNAME}.1
+PORTDOCS=	CHANGES.txt LICENSE.txt nikto_manual.html
 
 OPTIONS+=	SSLEAY "Use NET::SSLeay for ssl scanning" on
 OPTIONS+=	NMAP "Use security/nmap for port scanning" on
@@ -43,13 +41,12 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/bin/perl|${PERL}|" ${WRKSRC}/nikto.pl
 	@${REINPLACE_CMD} -Ee "s,(config.txt),${PREFIX}/etc/nikto.conf," ${WRKSRC}/nikto.pl
 	@${REINPLACE_CMD} -Ee "s|/usr/bin/nmap|${LOCALBASE}/bin/nmap|g" \
-		-e "s|# (PLUGINDIR=)/usr/local/nikto/plugins|\1${DATADIR}|g" \
+		-e "s|# (EXECDIR=)/usr/local/nikto|\1${DATADIR}|g" \
 		${WRKSRC}/config.txt
 	@${REINPLACE_CMD} "s/config.txt/nikto.conf/g" ${WRKSRC}/plugins/* ${WRKSRC}/docs/*
-	@${REINPLACE_CMD} -e 's:\$NIKTO{plugindir}/../docs/CHANGES.txt:\$NIKTO{plugindir}/../doc/nikto/CHANGES.txt:' \
-		-e 's:\$NIKTO{plugindir}/../CHANGES.txt:\$NIKTO{plugindir}/../doc/nikto/CHANGES.txt:' \
+	@${REINPLACE_CMD} -e 's:\$NIKTO{plugindir}/../docs/CHANGES.txt:\$NIKTO{plugindir}/../../doc/nikto/CHANGES.txt:' \
+		-e 's:\$NIKTO{plugindir}/../CHANGES.txt:\$NIKTO{plugindir}/../../doc/nikto/CHANGES.txt:' \
 		${WRKSRC}/plugins/nikto_core.plugin
-	@${MV} ${WRKSRC}/docs/${PORTNAME}-${PORTVERSION}.man ${WRKSRC}/docs/${PORTNAME}.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${PREFIX}/bin/nikto
@@ -57,17 +54,17 @@ do-install:
 	[ -f ${PREFIX}/etc/nikto.conf ] || \
 		${INSTALL_DATA} ${WRKSRC}/config.txt ${PREFIX}/etc/nikto.conf
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/plugins/LW.pm ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/plugins/*.db ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/plugins/nikto_plugin_order.txt ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/plugins/*.plugin ${DATADIR}
-
+	@${MKDIR} ${DATADIR}/plugins
+	${INSTALL_DATA} ${WRKSRC}/plugins/LW2.pm ${DATADIR}/plugins
+	@${RM} ${WRKSRC}/plugins/db_*.bak
+	${INSTALL_DATA} ${WRKSRC}/plugins/db_* ${DATADIR}/plugins
+	${INSTALL_DATA} ${WRKSRC}/plugins/nikto_plugin_order.txt ${DATADIR}/plugins
+	${INSTALL_DATA} ${WRKSRC}/plugins/*.plugin ${DATADIR}/plugins
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .	for i in ${PORTDOCS}
 		${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
 .	endfor
 .endif
-	${INSTALL_MAN} ${WRKSRC}/docs/${MAN1} ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
