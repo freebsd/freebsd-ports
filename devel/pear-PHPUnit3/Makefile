@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHPUnit
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.13
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 
@@ -42,6 +42,9 @@ USE_PHP=	dom spl pcre
 FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Extensions/Database/Constraint/TableIsEqual.php \
 		PHPUnit/Extensions/Database/DB/MetaData/InformationSchema.php \
+		PHPUnit/Extensions/Database/DB/MetaData/MySQL.php \
+		PHPUnit/Extensions/Database/DB/MetaData/Oci.php \
+		PHPUnit/Extensions/Database/DB/MetaData/PgSQL.php \
 		PHPUnit/Extensions/Database/DB/MetaData/Sqlite.php \
 		PHPUnit/Extensions/Database/DB/DataSet.php \
 		PHPUnit/Extensions/Database/DB/DefaultDatabaseConnection.php \
@@ -96,6 +99,9 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Extensions/SeleniumTestCase.php \
 		PHPUnit/Extensions/TestDecorator.php \
 		PHPUnit/Extensions/TestSetup.php \
+		PHPUnit/Extensions/SeleniumTestCase/append.php \
+		PHPUnit/Extensions/SeleniumTestCase/phpunit_coverage.php \
+		PHPUnit/Extensions/SeleniumTestCase/prepend.php \
 		PHPUnit/Framework/ComparisonFailure/Array.php \
 		PHPUnit/Framework/ComparisonFailure/Object.php \
 		PHPUnit/Framework/ComparisonFailure/Scalar.php \
@@ -163,6 +169,7 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Framework/SelfDescribing.php \
 		PHPUnit/Framework/SkippedTest.php \
 		PHPUnit/Framework/SkippedTestError.php \
+		PHPUnit/Framework/SkippedTestSuiteError.php \
 		PHPUnit/Framework/Test.php \
 		PHPUnit/Framework/TestCase.php \
 		PHPUnit/Framework/TestFailure.php \
@@ -200,9 +207,13 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Util/Log/PMD/Rule/Function.php \
 		PHPUnit/Util/Log/PMD/Rule/Project.php \
 		PHPUnit/Util/Log/PMD/Rule.php \
+		PHPUnit/Util/Log/CPD.php \
+		PHPUnit/Util/Log/Database.php \
 		PHPUnit/Util/Log/GraphViz.php \
 		PHPUnit/Util/Log/JSON.php \
+		PHPUnit/Util/Log/Metrics.php \
 		PHPUnit/Util/Log/PEAR.php \
+		PHPUnit/Util/Log/PMD.php \
 		PHPUnit/Util/Log/TAP.php \
 		PHPUnit/Util/Log/XML.php \
 		PHPUnit/Util/Metrics/Class.php \
@@ -231,7 +242,11 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Util/Skeleton/IncompleteTestMethod.tpl \
 		PHPUnit/Util/Skeleton/TestClass.tpl \
 		PHPUnit/Util/Skeleton/TestMethod.tpl \
-		PHPUnit/Util/Skeleton/TestMethodConstraint.tpl \
+		PHPUnit/Util/Skeleton/TestMethodBool.tpl \
+		PHPUnit/Util/Skeleton/TestMethodBoolStatic.tpl \
+		PHPUnit/Util/Skeleton/TestMethodException.tpl \
+		PHPUnit/Util/Skeleton/TestMethodExceptionStatic.tpl \
+		PHPUnit/Util/Skeleton/TestMethodStatic.tpl \
 		PHPUnit/Util/TestDox/ResultPrinter/HTML.php \
 		PHPUnit/Util/TestDox/ResultPrinter/Text.php \
 		PHPUnit/Util/TestDox/NamePrettifier.php \
@@ -315,6 +330,11 @@ TESTS=		Extensions/Database/DataSet/AllTests.php \
 		Util/AllTests.php \
 		Util/TimerTest.php \
 		_files/AnInterface.php \
+		_files/BankAccount.json \
+		_files/BankAccount.metrics \
+		_files/BankAccount.pmd \
+		_files/BankAccount.tap \
+		_files/BankAccount.xml \
 		_files/ClassWithNonPublicAttributes.php \
 		_files/DoubleTestCase.php \
 		_files/Error.php \
@@ -345,6 +365,8 @@ TESTS=		Extensions/Database/DataSet/AllTests.php \
 		_files/TornDown4.php \
 		_files/TornDown5.php \
 		_files/WasRun.php \
+		_files/foo.xml \
+		_files/bar.xml \
 		AllTests.php \
 		TestConfiguration.php.dist
 SCRIPTFILES=	phpunit
