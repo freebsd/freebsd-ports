@@ -1,5 +1,5 @@
-This module is an attempt to create a meta object protocol for the
-Perl 5 object system. It makes no attempt to change the behavior or
+This module is a fully functioning meta object protocol for the Perl 5
+object system. It makes no attempt to change the behavior or
 characteristics of the Perl 5 object system, only to create a protocol
 for its manipulation and introspection.
 
