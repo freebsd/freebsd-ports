@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.dwheeler.com/flawfinder/ \
 		${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Examines source code looking for security weaknesses
 
 USE_PYTHON=	yes
