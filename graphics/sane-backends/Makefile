@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	sane-backends
-PORTVERSION=	1.0.18
-PORTREVISION=	1
+PORTVERSION=	1.0.19
 CATEGORIES=	graphics
-MASTER_SITES=	http://alioth.debian.org/download.php/1669/ \
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/2318/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp3.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -66,7 +65,8 @@ PLIST_SUB+=		GPHOTO2="@comment "
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|= \.\./libtool|= @LIBTOOL@|g'
-	@${REINPLACE_CMD} -e 's|} -D_REENT|} ${PTHREAD_CFLAGS} -D_REENT|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g; s|echo aout|echo elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^for ac_header in/s|libc.h||g ; \
+		 s|} -D_REENT|} ${PTHREAD_CFLAGS} -D_REENT|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
