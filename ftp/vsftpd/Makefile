@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vsftpd
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
@@ -33,6 +33,9 @@ USE_RC_SUBR=	vsftpd.sh
 .endif
 
 .if defined(WITH_VSFTPD_SSL) && !defined(WITHOUT_SSL)
+.if ${OSVERSION} < 700000
+WITH_OPENSSL_PORT=	yes
+.endif
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 SSL_SUFFIX=	-ssl
 CFLAGS+=	-I${OPENSSLINC}
