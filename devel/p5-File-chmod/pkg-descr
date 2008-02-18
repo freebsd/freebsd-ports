@@ -1,0 +1,8 @@
+File::chmod is a utility that allows you to bypass system calls
+or bit processing of a file's permissions. It overloads the
+chmod() function with its own that gets an octal mode, a
+symbolic mode, or an "ls" mode. If you wish not to overload chmod(),
+you can export symchmod() and lschmod(), which take, respectively,
+a symbolic mode and an "ls" mode.
+
+WWW: http://search.cpan.org/dist/File-chmod/
