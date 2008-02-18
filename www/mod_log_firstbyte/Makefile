@@ -21,7 +21,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 do-extract:
 	${MKDIR} ${WRKSRC}
-	cd ${DISTDIR} && ${CP} ${DISTFILES} ${WRKSRC}
+	cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}
 
 do-build:
 	cd ${WRKSRC} && ${APXS} -c ${MOD}.c
