@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	poco
-PORTVERSION=	1.2.8
+PORTVERSION=	1.3.2
 CATEGORIES=	devel net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	wes@FreeBSD.org
@@ -17,5 +17,7 @@ COMMENT=	C++ Portable Components library
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

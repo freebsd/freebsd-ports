@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080218:
+  AFFECTS: users of devel/poco and devel/poco-ssl
+  AUTHOR: lippemail@gmail.com
+
+  The HashFunction class template has been changed in an incompatible
+  way. The member function formerly named hash() is now the function
+  call operator. If you have defined your own HashFunction classes,
+  you have to update your code.
+
 20080216:
   AFFECTS: users of sysutils/symon
   AUTHOR: uspoerlein@gmail.com
