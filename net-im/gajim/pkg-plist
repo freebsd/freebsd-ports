@@ -1,5 +1,5 @@
 bin/gajim
-bin/gajim-remote
+%%DBUS%%bin/gajim-remote
 lib/gajim/gtkspell.la
 lib/gajim/gtkspell.so
 lib/gajim/idle.la

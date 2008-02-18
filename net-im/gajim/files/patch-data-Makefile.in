@@ -9,3 +9,14 @@
  desktopdir = $(datadir)/applications
  desktop_in_files = gajim.desktop.in.in 
  desktop_DATA = $(desktop_in_files:.desktop.in.in=.desktop)
+@@ -267,7 +267,9 @@
+ sounds_DATA = $(srcdir)/sounds/*.wav
+ otherdir = $(pkgdatadir)/data/other
+ other_DATA = other/servers.xml
+-man_MANS = gajim.1 gajim-remote.1
++@BUILD_REMOTE_CONTROL_FALSE@OPTIONAL_MAN = 
++@BUILD_REMOTE_CONTROL_TRUE@OPTIONAL_MAN = gajim-remote.1
++man_MANS = gajim.1 $(OPTIONAL_MAN)
+ EXTRA_DIST = $(desktop_in_files) \
+             $(sounds_DATA) \
+             $(other_DATA) \
