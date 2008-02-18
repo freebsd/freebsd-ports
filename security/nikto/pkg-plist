@@ -2,24 +2,30 @@ bin/nikto
 @unexec if cmp -s %D/etc/nikto.conf %D/etc/nikto.conf.sample; then rm -f %D/etc/nikto.conf; fi
 etc/nikto.conf.sample
 @exec [ -f %B/nikto.conf ] || cp %B/%f %B/nikto.conf
-%%DATADIR%%/nikto_mutate.plugin
-%%DATADIR%%/nikto_outdated.plugin
-%%DATADIR%%/nikto_apacheusers.plugin
-%%DATADIR%%/nikto_passfiles.plugin
-%%DATADIR%%/nikto_httpoptions.plugin
-%%DATADIR%%/nikto_msgs.plugin
-%%DATADIR%%/server_msgs.db
-%%DATADIR%%/outdated.db
-%%DATADIR%%/scan_database.db
-%%DATADIR%%/nikto_core.plugin
-%%DATADIR%%/nikto_headers.plugin
-%%DATADIR%%/nikto_plugin_order.txt
-%%DATADIR%%/nikto_put_del_test.plugin
-%%DATADIR%%/nikto_realms.plugin
-%%DATADIR%%/nikto_robots.plugin
-%%DATADIR%%/nikto_user_enum_apache.plugin
-%%DATADIR%%/nikto_user_enum_cgiwrap.plugin
-%%DATADIR%%/realms.db
-%%DATADIR%%/servers.db
-%%DATADIR%%/LW.pm
+%%DATADIR%%/plugins/LW2.pm
+%%DATADIR%%/plugins/db_404_strings
+%%DATADIR%%/plugins/db_favicon
+%%DATADIR%%/plugins/db_outdated
+%%DATADIR%%/plugins/db_realms
+%%DATADIR%%/plugins/db_server_msgs
+%%DATADIR%%/plugins/db_tests
+%%DATADIR%%/plugins/db_variables
+%%DATADIR%%/plugins/nikto_apache_expect_xss.plugin
+%%DATADIR%%/plugins/nikto_apacheusers.plugin
+%%DATADIR%%/plugins/nikto_core.plugin
+%%DATADIR%%/plugins/nikto_favicon.plugin
+%%DATADIR%%/plugins/nikto_headers.plugin
+%%DATADIR%%/plugins/nikto_httpoptions.plugin
+%%DATADIR%%/plugins/nikto_msgs.plugin
+%%DATADIR%%/plugins/nikto_mutate.plugin
+%%DATADIR%%/plugins/nikto_outdated.plugin
+%%DATADIR%%/plugins/nikto_passfiles.plugin
+%%DATADIR%%/plugins/nikto_plugin_order.txt
+%%DATADIR%%/plugins/nikto_put_del_test.plugin
+%%DATADIR%%/plugins/nikto_reports.plugin
+%%DATADIR%%/plugins/nikto_robots.plugin
+%%DATADIR%%/plugins/nikto_single.plugin
+%%DATADIR%%/plugins/nikto_user_enum_apache.plugin
+%%DATADIR%%/plugins/nikto_user_enum_cgiwrap.plugin
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
