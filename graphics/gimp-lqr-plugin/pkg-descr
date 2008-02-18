@@ -1,5 +1,19 @@
-Content-aware rescaling. Keeps the features of the image while
-rescaling along a single direction. Tested on Gimp 2.2. It installs
-under the Layer menu now.
+The Liquid Rescale plugin is an implementation of the content-aware
+resizing by seam carving algorithm by Shai Avidan and Ariel Shamir.
 
-WWW: http://web.tiscali.it/carlobaldassi/
+It aims at resizing pictures non uniformly while preserving the
+features of the picture, i.e. avoiding distortion of the important
+parts of the picture. It can also be used to remove portions of the
+picture in a consistent way.
+
+It works both ways, but enlarging gives better results if done in
+successive steps. It can use extra layers as masks to select which
+features of the image should be preserved and which should be
+discarded.
+
+The plugin works on the active layer or floating selection. If a
+selection is present, it is saved to a channel. If the layer has a
+transparency mask, an option is given to select the behaviour
+(apply/discard).
+
+WWW: http://liquidrescale.wikidot.com/

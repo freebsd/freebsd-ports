@@ -12,25 +12,32 @@
 %%DATADIR%%/help/images/wilber.png
 %%DATADIR%%/help/it/gimp-help.xml
 %%DATADIR%%/help/it/index.html
-%%NLS%%share/locale/de/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%share/locale/es_AR/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%share/locale/es_ES/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%share/locale/eu_ES/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%share/locale/it/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%share/locale/nb_NO/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%share/locale/ro_RO/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%share/locale/sr/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/gimp22-lqr-plugin.mo
-%%NLS%%@dirrmtry share/locale/ro_RO/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro_RO
-%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nb_NO
-%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/es_AR
+share/locale/de/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/es_AR/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/es_ES/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/eu_ES/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/fr/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/hu/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/it/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/nb_NO/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/pt_BR/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/ro_RO/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/ru/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/sr/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/zh_CN/LC_MESSAGES/gimp20-lqr-plugin.mo
+share/locale/zh_TW/LC_MESSAGES/gimp20-lqr-plugin.mo
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/ro_RO/LC_MESSAGES
+@dirrmtry share/locale/ro_RO
+@dirrmtry share/locale/pt_BR/LC_MESSAGES
+@dirrmtry share/locale/pt_BR
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/eu_ES/LC_MESSAGES
+@dirrmtry share/locale/eu_ES
+@dirrmtry share/locale/es_AR/LC_MESSAGES
+@dirrmtry share/locale/es_AR
 @dirrm %%DATADIR%%/help/it
 @dirrm %%DATADIR%%/help/images
 @dirrm %%DATADIR%%/help/es_ES
