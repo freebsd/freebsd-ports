@@ -1,0 +1,95 @@
+diff -urN ./Collect/Makefile.in ./Collect/Makefile.in
+--- ./Collect/Makefile.in	2008-01-26 05:35:07.000000000 +0100
++++ ./Collect/Makefile.in	2008-02-18 22:48:22.000000000 +0100
+@@ -257,6 +257,7 @@
+ 	MboxCollector.cpp
+ 
+ libCollect_la_CXXFLAGS = \
++	-fPIC \
+ 	-I$(top_srcdir)/Utils \
+ 	-I$(top_srcdir)/Tokenize \
+ 	-I$(top_srcdir)/Tokenize/filters \
+diff -urN ./IndexSearch/Google/Makefile.in ./IndexSearch/Google/Makefile.in
+--- ./IndexSearch/Google/Makefile.in	2008-01-26 05:35:07.000000000 +0100
++++ ./IndexSearch/Google/Makefile.in	2008-02-18 22:48:22.000000000 +0100
+@@ -261,6 +261,7 @@
+ @HAVE_SOAP_TRUE@	GoogleAPIEngine.cpp
+ 
+ @HAVE_SOAP_TRUE@libSearchGoogle_la_CXXFLAGS = \
++@HAVE_SOAP_TRUE@	-fPIC \
+ @HAVE_SOAP_TRUE@	-I$(top_srcdir)/Utils \
+ @HAVE_SOAP_TRUE@	-I$(top_srcdir)/Tokenize \
+ @HAVE_SOAP_TRUE@	-I$(top_srcdir)/Tokenize/filters \
+@@ -561,7 +562,7 @@
+ @HAVE_SOAP_TRUE@	wsdl2h -n gapi -o GoogleSearch.h googleapi/GoogleSearch.wsdl
+ 
+ @HAVE_SOAP_TRUE@GAPIClientLib.cpp : GoogleSearch.h
+-@HAVE_SOAP_TRUE@	soapcpp2 -n -pGAPI -I /usr/include/gsoap/import GoogleSearch.h
++@HAVE_SOAP_TRUE@	soapcpp2 -n -pGAPI -I/usr/include/gsoap/import -I/usr/share/gsoap/import GoogleSearch.h
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+diff -urN ./IndexSearch/Makefile.in ./IndexSearch/Makefile.in
+--- ./IndexSearch/Makefile.in	2008-01-26 05:35:07.000000000 +0100
++++ ./IndexSearch/Makefile.in	2008-02-18 22:48:22.000000000 +0100
+@@ -348,7 +348,7 @@
+ 
+ @HAVE_SOAP_FALSE@pinot_search_DEPENDENCIES = libIndexSearch.la
+ @HAVE_SOAP_TRUE@pinot_search_DEPENDENCIES = libIndexSearch.la libSearchSOAP.la
+-AM_CXXFLAGS = -I$(top_srcdir)/Utils -I$(top_srcdir)/Tokenize \
++AM_CXXFLAGS = -fPIC -I$(top_srcdir)/Utils -I$(top_srcdir)/Tokenize \
+ 	-I$(top_srcdir)/Tokenize/filters -I$(top_srcdir)/Collect \
+ 	-I$(top_srcdir)/IndexSearch/Google \
+ 	-I$(top_srcdir)/IndexSearch/xesam @HTTP_CFLAGS@ @XML_CFLAGS@ \
+diff -urN ./Makefile.in ./Makefile.in
+--- ./Makefile.in	2008-01-26 05:35:08.000000000 +0100
++++ ./Makefile.in	2008-02-18 22:48:22.000000000 +0100
+@@ -783,8 +783,8 @@
+ 	@rm $(DESTDIR)$(libdir)/lib*filter.a $(DESTDIR)$(libdir)/lib*filter.la
+ 	@mv $(DESTDIR)$(libdir)/lib*filter* $(DESTDIR)$(libdir)/pinot/filters/
+ 	@mkdir -p $(DESTDIR)$(libdir)/pinot/backends
+-	@rm $(DESTDIR)$(libdir)/lib*.a $(DESTDIR)$(libdir)/lib*.la
+-	@mv $(DESTDIR)$(libdir)/lib* $(DESTDIR)$(libdir)/pinot/backends/
++	@rm $(DESTDIR)$(libdir)/libxapianbackend.a $(DESTDIR)$(libdir)/libxapianbackend.la
++	@mv $(DESTDIR)$(libdir)/libxapianbackend* $(DESTDIR)$(libdir)/pinot/backends/
+ 	@mkdir -p $(DESTDIR)$(datadir)/icons/hicolor/48x48/apps/
+ 	$(INSTALL_DATA) $(srcdir)/UI/icons/48x48/pinot.png $(DESTDIR)$(datadir)/icons/hicolor/48x48/apps/pinot.png
+ 	@mkdir -p $(DESTDIR)$(datadir)/icons/hicolor/32x32/apps/
+diff -urN ./Monitor/Makefile.in ./Monitor/Makefile.in
+--- ./Monitor/Makefile.in	2008-01-26 05:35:08.000000000 +0100
++++ ./Monitor/Makefile.in	2008-02-18 22:48:22.000000000 +0100
+@@ -256,7 +256,7 @@
+ noinst_LTLIBRARIES = libMonitor.la
+ libMonitor_la_SOURCES = MonitorEvent.cpp MonitorFactory.cpp \
+ 	MonitorHandler.cpp $(am__append_1)
+-libMonitor_la_CXXFLAGS = -I$(top_srcdir)/Utils \
++libMonitor_la_CXXFLAGS = -fPIC -I$(top_srcdir)/Utils \
+ 	-I$(top_srcdir)/Tokenize -I$(top_srcdir)/Tokenize/filters \
+ 	-I$(top_srcdir)/SQL -I$(top_srcdir)/Collect \
+ 	-I$(top_srcdir)/Index -I$(top_srcdir)/Search @HTTP_CFLAGS@ \
+diff -urN ./SQL/Makefile.in ./SQL/Makefile.in
+--- ./SQL/Makefile.in	2008-01-26 05:35:08.000000000 +0100
++++ ./SQL/Makefile.in	2008-02-18 22:48:22.000000000 +0100
+@@ -254,7 +254,10 @@
+ 	SQLiteBase.cpp \
+ 	ViewHistory.cpp
+ 
+-libSQL_la_CXXFLAGS = -I$(top_srcdir)/Utils
++libSQL_la_CXXFLAGS = \
++	-fPIC \
++	-I$(top_srcdir)/Utils
++
+ all: all-am
+ 
+ .SUFFIXES:
+diff -urN ./UI/GTK2/src/Makefile.in ./UI/GTK2/src/Makefile.in
+--- ./UI/GTK2/src/Makefile.in	2008-01-26 05:35:08.000000000 +0100
++++ ./UI/GTK2/src/Makefile.in	2008-02-18 22:48:22.000000000 +0100
+@@ -325,6 +325,7 @@
+ 	WorkerThreads.cpp
+ 
+ AM_CXXFLAGS = \
++	-fPIC \
+ 	-I$(top_srcdir)/Utils \
+ 	-I$(top_srcdir)/Tokenize \
+ 	-I$(top_srcdir)/Tokenize/filters \
