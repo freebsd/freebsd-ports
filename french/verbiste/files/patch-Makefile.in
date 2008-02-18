@@ -1,15 +1,11 @@
---- Makefile.in.orig	Thu Aug  2 08:50:55 2007
-+++ Makefile.in	Thu Aug  2 08:53:57 2007
-@@ -308,11 +308,9 @@
- 	COPYING
- 
+--- Makefile.in.orig	2008-02-18 11:57:24.000000000 -0500
++++ Makefile.in	2008-02-18 11:59:05.000000000 -0500
+@@ -264,7 +264,7 @@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
  # COPYING contains the license; main-window.cpp expects it there.
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
- doc_DATA = \
- 	AUTHORS \
--	COPYING \
--	INSTALL \
- 	NEWS \
- 	README \
- 	TODO \
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
