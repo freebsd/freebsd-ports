@@ -839,10 +839,8 @@
 %%ZOPEPRODUCTDIR%%/Archetypes/tests/test_templatemixin.pyc
 %%ZOPEPRODUCTDIR%%/Archetypes/tests/test_unicode.py
 %%ZOPEPRODUCTDIR%%/Archetypes/tests/test_unicode.pyc
-%%ZOPEPRODUCTDIR%%/Archetypes/tests/test_update_schema1.py
-%%ZOPEPRODUCTDIR%%/Archetypes/tests/test_update_schema1.pyc
-%%ZOPEPRODUCTDIR%%/Archetypes/tests/test_update_schema2.py
-%%ZOPEPRODUCTDIR%%/Archetypes/tests/test_update_schema2.pyc
+%%ZOPEPRODUCTDIR%%/Archetypes/tests/test_update_schema.py
+%%ZOPEPRODUCTDIR%%/Archetypes/tests/test_update_schema.pyc
 %%ZOPEPRODUCTDIR%%/Archetypes/tests/test_utils.py
 %%ZOPEPRODUCTDIR%%/Archetypes/tests/test_utils.pyc
 %%ZOPEPRODUCTDIR%%/Archetypes/tests/test_utils2.py
@@ -1014,6 +1012,7 @@
 %%ZOPEPRODUCTDIR%%/CMFCore/ActionProviderBase.pyc
 %%ZOPEPRODUCTDIR%%/CMFCore/ActionsTool.py
 %%ZOPEPRODUCTDIR%%/CMFCore/ActionsTool.pyc
+%%ZOPEPRODUCTDIR%%/CMFCore/CHANGES.txt
 %%ZOPEPRODUCTDIR%%/CMFCore/CMFBTreeFolder.py
 %%ZOPEPRODUCTDIR%%/CMFCore/CMFBTreeFolder.pyc
 %%ZOPEPRODUCTDIR%%/CMFCore/CMFCatalogAware.py
@@ -4907,14 +4906,14 @@
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/lazycatalog.py
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/lazycatalog.pyc
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/PlacelessTranslationService.pot
-%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/cs/LC_MESSAGES/PlacelessTranslationService.po
-%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/de/LC_MESSAGES/PlacelessTranslationService.po
-%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/el/LC_MESSAGES/PlacelessTranslationService.po
-%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/pt_BR/LC_MESSAGES/PlacelessTranslationService.po
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/cs/LC_MESSAGES/PlacelessTranslationService.mo
+%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/cs/LC_MESSAGES/PlacelessTranslationService.po
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/de/LC_MESSAGES/PlacelessTranslationService.mo
+%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/de/LC_MESSAGES/PlacelessTranslationService.po
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/el/LC_MESSAGES/PlacelessTranslationService.mo
+%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/el/LC_MESSAGES/PlacelessTranslationService.po
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/pt_BR/LC_MESSAGES/PlacelessTranslationService.mo
+%%ZOPEPRODUCTDIR%%/PlacelessTranslationService/locales/pt_BR/LC_MESSAGES/PlacelessTranslationService.po
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/memoize.py
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/memoize.pyc
 %%ZOPEPRODUCTDIR%%/PlacelessTranslationService/msgfmt.py
@@ -5896,6 +5895,8 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-ko.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-lt.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-lt.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-lv.mo
+%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-lv.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-manual.pot
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-mi.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/plone-mi.po
@@ -6152,6 +6153,8 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ko/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lt/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lt/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lv/LC_MESSAGES/plonelocales.mo
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lv/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/mi/LC_MESSAGES/plonelocales.mo
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/mi/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/my/LC_MESSAGES/plonelocales.mo
@@ -8446,6 +8449,8 @@
 %%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales/browser/languageselector.pt
 %%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales/browser/selector.py
 %%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales/browser/selector.pyc
+%%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales/browser/tests.py
+%%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales/browser/tests.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales/configure.zcml
 %%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales/countries.py
 %%ZOPELIBPYTHONDIR%%/plone/app/i18n/locales/countries.pyc
@@ -9089,8 +9094,10 @@
 %%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/terms.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/tests/__init__.py
 %%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/tests/__init__.pyc
-%%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/tests/test_catalog.py
-%%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/tests/test_catalog.pyc
+%%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/tests/base.py
+%%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/tests/base.pyc
+%%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/tests/test_vocabularies.py
+%%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/tests/test_vocabularies.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/types.py
 %%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/types.pyc
 %%ZOPELIBPYTHONDIR%%/plone/app/vocabularies/users.py
@@ -9429,6 +9436,7 @@
 %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/country-flags/za.gif
 %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/country-flags/zm.gif
 %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/country-flags/zw.gif
+%%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/language-flags/ar.gif
 %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/language-flags/cy.gif
 %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/language-flags/eo.gif
 %%ZOPELIBPYTHONDIR%%/plone/i18n/locales/browser/language-flags/eu.gif
@@ -9503,6 +9511,8 @@
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/ru.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tests/__init__.py
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tests/__init__.pyc
+%%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tests/test_adapters.py
+%%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tests/test_adapters.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tests/test_normalizer.py
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tests/test_normalizer.pyc
 %%ZOPELIBPYTHONDIR%%/plone/i18n/normalizer/tr.py
@@ -10135,6 +10145,8 @@
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/my
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/mi/LC_MESSAGES
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/mi
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lv/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lv
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lt/LC_MESSAGES
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lt
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ko/LC_MESSAGES

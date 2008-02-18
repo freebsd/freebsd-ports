@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	plone3
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	www zope
-MASTER_SITES=	https://launchpad.net/plone/3.0/${PORTVERSION}/+download/
-DISTFILES=	Plone-${PORTVERSION}.tar.gz
-#DIST_SUBDIR=	zope
+MASTER_SITES=	https://launchpad.net/plone/${PORTVERSION:R}/${PORTVERSION}/+download/
+DISTNAME=	Plone-${PORTVERSION}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	nakaji@jp.FreeBSD.org
 COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
@@ -89,16 +89,12 @@ do-install:
 	@${CP} -R ${WRKSRC}/Products/$m ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}
 	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/$m -type f -print0 \
 		| ${XARGS} -0 -- ${CHMOD} a-w
-	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/$m -name '._*' -print0 \
-		| ${XARGS} -0 -- ${RM} -rf
 .endfor
 	@${MKDIR} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python
 .for m in ${_PY_MODULES}
 	@${CP} -R ${WRKSRC}/lib/python/$m ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python
 	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python/$m -type f -print0 \
 		| ${XARGS} -0 -- ${CHMOD} a-w
-	@${FIND} ${PREFIX}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/../lib/python/$m -name '._*' -print0 \
-		| ${XARGS} -0 -- ${RM} -rf
 .endfor
 
 post-install:
