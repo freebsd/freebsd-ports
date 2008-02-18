@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.16.8.11
-PORTREVISION=	0
+PORTVERSION=	0.16.8.12
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,26 +38,10 @@ CONFIGURE_ARGS+=--disable-sound
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-PLIST_FILES=	share/locale/bg/LC_MESSAGES/e16.mo \
-		share/locale/bs/LC_MESSAGES/e16.mo \
-		share/locale/da/LC_MESSAGES/e16.mo \
-		share/locale/de/LC_MESSAGES/e16.mo \
-		share/locale/en_US/LC_MESSAGES/e16.mo \
-		share/locale/es/LC_MESSAGES/e16.mo \
-		share/locale/fr/LC_MESSAGES/e16.mo \
-		share/locale/hu/LC_MESSAGES/e16.mo \
-		share/locale/ja/LC_MESSAGES/e16.mo \
-		share/locale/ko/LC_MESSAGES/e16.mo \
-		share/locale/nl/LC_MESSAGES/e16.mo \
-		share/locale/no/LC_MESSAGES/e16.mo \
-		share/locale/pl/LC_MESSAGES/e16.mo \
-		share/locale/pt/LC_MESSAGES/e16.mo \
-		share/locale/pt_BR/LC_MESSAGES/e16.mo \
-		share/locale/ru/LC_MESSAGES/e16.mo \
-		share/locale/sv/LC_MESSAGES/e16.mo \
-		share/locale/tr/LC_MESSAGES/e16.mo
+PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.mk>
