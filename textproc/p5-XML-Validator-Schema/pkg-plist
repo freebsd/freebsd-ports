@@ -1,6 +1,7 @@
 %%SITE_PERL%%/XML/Validator/Schema.pm
 %%SITE_PERL%%/XML/Validator/Schema/Attribute.pm
 %%SITE_PERL%%/XML/Validator/Schema/AttributeLibrary.pm
+%%SITE_PERL%%/XML/Validator/Schema/AttributeNode.pm
 %%SITE_PERL%%/XML/Validator/Schema/ComplexTypeNode.pm
 %%SITE_PERL%%/XML/Validator/Schema/ElementLibrary.pm
 %%SITE_PERL%%/XML/Validator/Schema/ElementNode.pm

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Validator-Schema
-PORTVERSION=	1.08
+PORTVERSION=	1.10
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,8 @@ COMMENT=	Perl module for validating XML documents against a W3C XML Schema
 
 BUILD_DEPENDS=	${SITE_PERL}/Tree/DAG_Node.pm:${PORTSDIR}/devel/p5-Tree-DAG_Node \
 		${SITE_PERL}/XML/SAX/Exception.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/XML/Filter/BufferText.pm:${PORTSDIR}/textproc/p5-XML-Filter-BufferText
+		${SITE_PERL}/XML/Filter/BufferText.pm:${PORTSDIR}/textproc/p5-XML-Filter-BufferText \
+		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -24,6 +25,7 @@ PERL_CONFIGURE=	yes
 MAN3=		XML::Validator::Schema.3 \
 		XML::Validator::Schema::Attribute.3 \
 		XML::Validator::Schema::AttributeLibrary.3 \
+		XML::Validator::Schema::AttributeNode.3 \
 		XML::Validator::Schema::ComplexTypeNode.3 \
 		XML::Validator::Schema::ElementLibrary.3 \
 		XML::Validator::Schema::ElementNode.3 \
