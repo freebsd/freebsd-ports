@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	tapioca-voip
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Framework for VoIP and IP applications
 
+BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
 CMAKE?=		${LOCALBASE}/bin/cmake
 CMAKE_ARGS=	-DCMAKE_BUILD_TYPE=DEBUG \
