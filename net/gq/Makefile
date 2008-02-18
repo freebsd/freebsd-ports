@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gq
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/gqclient
@@ -19,8 +19,7 @@ LIB_DEPENDS=	gnome-keyring:${PORTSDIR}/security/gnome-keyring
 OPTIONS=	DND	"Enable Drag and drop support in browse mode" On \
 		CACHE	"Support the OpenLDAP experimental client cache" On
 
-USE_GNOME=	gnomehier gnometarget libglade2
-USE_XLIB=	yes
+USE_GNOME=	gnometarget libglade2
 USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
 USE_GETTEXT=	yes
