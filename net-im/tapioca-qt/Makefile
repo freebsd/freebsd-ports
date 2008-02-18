@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	tapioca-voip
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Framework for VoIP and IP applications
 
+BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	QtTelepathyCore.0:${PORTSDIR}/net-im/telepathy-qt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build
