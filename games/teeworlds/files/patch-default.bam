@@ -1,0 +1,76 @@
+--- default.bam.orig	2008-02-09 22:10:40.000000000 +0300
++++ default.bam	2008-02-18 00:06:31.000000000 +0300
+@@ -173,19 +173,20 @@
+ 		settings.cc.flags = "/wd4244"
+ 	else
+ 		settings.cc.flags = "-Wall"
+-		settings.linker.flags = ""
++		settings.linker.flags = "-L/usr/local/lib/portaudio2 -L/usr/local/lib -pthread"
++		settings.linker.libs:add("z")
+ 	end
+ 
+ 	-- set some platform specific settings
+ 	settings.cc.includes:add("src")
+-	settings.cc.includes:add("src/external/zlib")
++	settings.cc.includes:add("/usr/local/include/portaudio2")
++	settings.cc.includes:add("/usr/local/include")
+ 
+ 	if family == "unix" then
+    		if platform == "macosx" then
+ 			glfw_platform = "macosx"
+ 		else
+ 			glfw_platform = "x11"
+-			settings.linker.libs:add("pthread")
+ 		end
+ 	elseif family == "windows" then
+ 		glfw_platform = "win32"
+@@ -217,7 +218,6 @@
+ 		else
+ 			engine_settings.cc.flags = "-Wall -pedantic-errors"
+ 		end
+-		engine_settings.linker.flags = ""
+ 	end
+ 
+ 	-- server
+@@ -237,10 +237,11 @@
+ 			client_settings.linker.frameworks:add("AudioToolbox")
+ 			client_settings.linker.frameworks:add("AudioUnit")
+ 		else
+-            client_settings.linker.libs:add("asound")
+ 			client_settings.linker.libs:add("X11")
++			client_settings.linker.libs:add("Xxf86vm")
+ 			client_settings.linker.libs:add("GL")
+ 			client_settings.linker.libs:add("GLU")
++			client_settings.linker.libs:add("portaudio")
+ 		end
+ 	elseif family == "windows" then
+ 		client_settings.linker.libs:add("opengl32.lib")
+@@ -249,10 +250,8 @@
+ 	end
+ 
+ 	external_settings = settings:copy()
+-	zlib = Compile(external_settings, Collect("src/engine/external/zlib/*.c"))
+ 	wavpack = Compile(external_settings, Collect("src/engine/external/wavpack/*.c"))
+ 	pnglite = Compile(external_settings, Collect("src/engine/external/pnglite/*.c"))
+-	portaudio = Compile(external_settings, Collect("src/engine/external/pa.c"))
+ 	
+ 	engine = Compile(engine_settings, Collect("src/engine/*.c"))
+ 	client = Compile(client_settings, Collect("src/engine/client/*.c"))
+@@ -280,7 +279,7 @@
+ 	
+ 	-- build client, server and master server
+ 	client_exe = Link(client_settings, "teewars", game_shared, game_client,
+-		engine, client, editor, glfw, portaudio, zlib, pnglite, wavpack,
++		engine, client, editor, glfw, pnglite, wavpack,
+ 		client_link_other)
+ 
+ 	server_exe = Link(server_settings, "teewars_srv", engine, server,
+@@ -326,7 +325,7 @@
+ release_settings.config_name = "release"
+ release_settings.config_ext = ""
+ release_settings.debug = 0
+-release_settings.cc.optimize = 1
++release_settings.cc.optimize = 0
+ 
+ DefaultTarget(build(debug_settings))
+ build(release_settings)
