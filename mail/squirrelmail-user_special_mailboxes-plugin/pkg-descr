@@ -1,0 +1,6 @@
+Allows users to specify a list of additional folders they would like to be
+treated as special, that is that these folders will be shown at the top of the
+folders lists, and in different colour on the left frame (if you have the
+option turned on).
+
+WWW: http://www.squirrelmail.org/plugin_view.php?id=183
