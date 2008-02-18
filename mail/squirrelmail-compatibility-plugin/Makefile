@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	compatibility
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.0.10
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=	squirrelmail-
@@ -64,10 +63,6 @@ do-install:
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME}
 
 post-install:
-	@${ECHO} "Patching SquirrelMail for compatibility plugin"
-	@${ECHO} ""
-	${PATCH} -sN -p0 -d ${SQUIRRELDIR}/plugins/compatibility < ${SQUIRRELDIR}/plugins/compatibility/patches/compatibility_patch-1.4.11.diff
-	@${ECHO} ""
 
 .ifndef WITHOUT_ACTIVATE
 .if exists( ${SQUIRRELDIR}/config/config.php )
