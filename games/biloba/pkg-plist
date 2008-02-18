@@ -2,11 +2,17 @@ bin/biloba
 %%DATADIR%%/en/2play.png
 %%DATADIR%%/en/3play.png
 %%DATADIR%%/en/4play.png
+%%DATADIR%%/en/aide1-maemo.png
 %%DATADIR%%/en/aide1.png
+%%DATADIR%%/en/aide2-maemo.png
 %%DATADIR%%/en/aide2.png
+%%DATADIR%%/en/aide3-maemo.png
 %%DATADIR%%/en/aide3.png
+%%DATADIR%%/en/aide4-maemo.png
 %%DATADIR%%/en/aide4.png
+%%DATADIR%%/en/aide5-maemo.png
 %%DATADIR%%/en/aide5.png
+%%DATADIR%%/en/aide6-maemo.png
 %%DATADIR%%/en/aide6.png
 %%DATADIR%%/en/arrow-down-left.png
 %%DATADIR%%/en/arrow-down-right.png
@@ -18,6 +24,7 @@ bin/biloba
 %%DATADIR%%/en/arrow-up.png
 %%DATADIR%%/en/biloba-title.png
 %%DATADIR%%/en/black-highlighter.png
+%%DATADIR%%/en/border-maemo.png
 %%DATADIR%%/en/border.png
 %%DATADIR%%/en/computer.png
 %%DATADIR%%/en/create-game.png
@@ -55,11 +62,17 @@ bin/biloba
 %%DATADIR%%/es/2play.png
 %%DATADIR%%/es/3play.png
 %%DATADIR%%/es/4play.png
+%%DATADIR%%/es/aide1-maemo.png
 %%DATADIR%%/es/aide1.png
+%%DATADIR%%/es/aide2-maemo.png
 %%DATADIR%%/es/aide2.png
+%%DATADIR%%/es/aide3-maemo.png
 %%DATADIR%%/es/aide3.png
+%%DATADIR%%/es/aide4-maemo.png
 %%DATADIR%%/es/aide4.png
+%%DATADIR%%/es/aide5-maemo.png
 %%DATADIR%%/es/aide5.png
+%%DATADIR%%/es/aide6-maemo.png
 %%DATADIR%%/es/aide6.png
 %%DATADIR%%/es/arrow-down-left.png
 %%DATADIR%%/es/arrow-down-right.png
@@ -71,6 +84,7 @@ bin/biloba
 %%DATADIR%%/es/arrow-up.png
 %%DATADIR%%/es/biloba-title.png
 %%DATADIR%%/es/black-highlighter.png
+%%DATADIR%%/es/border-maemo.png
 %%DATADIR%%/es/border.png
 %%DATADIR%%/es/computer.png
 %%DATADIR%%/es/create-game.png
@@ -108,11 +122,17 @@ bin/biloba
 %%DATADIR%%/fr/2play.png
 %%DATADIR%%/fr/3play.png
 %%DATADIR%%/fr/4play.png
+%%DATADIR%%/fr/aide1-maemo.png
 %%DATADIR%%/fr/aide1.png
+%%DATADIR%%/fr/aide2-maemo.png
 %%DATADIR%%/fr/aide2.png
+%%DATADIR%%/fr/aide3-maemo.png
 %%DATADIR%%/fr/aide3.png
+%%DATADIR%%/fr/aide4-maemo.png
 %%DATADIR%%/fr/aide4.png
+%%DATADIR%%/fr/aide5-maemo.png
 %%DATADIR%%/fr/aide5.png
+%%DATADIR%%/fr/aide6-maemo.png
 %%DATADIR%%/fr/aide6.png
 %%DATADIR%%/fr/arrow-down-left.png
 %%DATADIR%%/fr/arrow-down-right.png
@@ -124,6 +144,7 @@ bin/biloba
 %%DATADIR%%/fr/arrow-up.png
 %%DATADIR%%/fr/biloba-title.png
 %%DATADIR%%/fr/black-highlighter.png
+%%DATADIR%%/fr/border-maemo.png
 %%DATADIR%%/fr/border.png
 %%DATADIR%%/fr/computer.png
 %%DATADIR%%/fr/create-game.png
@@ -160,8 +181,8 @@ bin/biloba
 %%DATADIR%%/fr/tile.png
 %%DATADIR%%/snd/eat.wav
 %%DATADIR%%/snd/type.wav
-@dirrm %%DATADIR%%/en
-@dirrm %%DATADIR%%/es
-@dirrm %%DATADIR%%/fr
 @dirrm %%DATADIR%%/snd
+@dirrm %%DATADIR%%/fr
+@dirrm %%DATADIR%%/es
+@dirrm %%DATADIR%%/en
 @dirrm %%DATADIR%%
