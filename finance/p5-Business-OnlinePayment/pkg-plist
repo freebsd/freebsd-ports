@@ -1,9 +1,10 @@
-%%SITE_PERL%%/Business/OnlinePayment.pm
-%%SITE_PERL%%/auto/Business/OnlinePayment/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
+%%SITE_PERL%%/Business/FraudDetect.pm
+%%SITE_PERL%%/Business/OnlinePayment.pm
+%%SITE_PERL%%/Business/FraudDetect/preCharge.pm
+%%SITE_PERL%%/Business/OnlinePayment/HTTPS.pm
 @dirrmtry %%SITE_PERL%%/Business/OnlinePayment
+@dirrmtry %%SITE_PERL%%/Business/FraudDetect
 @dirrmtry %%SITE_PERL%%/Business
-@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment
-@dirrm %%SITE_PERL%%/auto/Business
