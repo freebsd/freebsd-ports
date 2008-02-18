@@ -1,9 +1,0 @@
---- build.orig	Wed Sep  5 02:55:56 2007
-+++ build	Thu Jan 17 00:36:34 2008
-@@ -1,5 +1,5 @@
- #! /bin/sh
--:;exec ./scmlit -no-init-file -f $0 -e"(bi)" build "$@"
-+:;exec $SCMLIT -no-init-file -f $0 -e"(bi)" build "$@"
- ;;
- ;; Copyright (C) 1994-2006 Free Software Foundation, Inc.
- ;;

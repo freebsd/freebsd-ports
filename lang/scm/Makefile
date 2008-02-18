@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	scm
-PORTVERSION=	5e4
+PORTVERSION=	5e5
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/%SUBDIR%/ \
+MASTER_SITES=	http://swiss.csail.mit.edu/ftpdir/scm/%SUBDIR%/ \
 		ftp://ftp.informatik.uni-hamburg.de/ftpmnt/inf1/pub/soft/lang/scheme/
 MASTER_SITE_SUBDIR=	. OLD
-DISTFILES=	${PORTNAME}${PORTVERSION}.zip slib3a5.zip slib-psd1-3.tar.gz
-EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.zip slib3a5.zip
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} slib-3b1.zip slib-psd1-3.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} slib-3b1.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scheme interpreter
@@ -26,7 +26,9 @@ ALL_TARGET=	scmlit
 MAN1=		scm.1
 INFO=		scm
 
-PLIST_SUB=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+SUB_FILES=	require.scm
 
 SCM_DATA=	COPYING Iedline.scm Init${PORTVERSION}.scm Link.scm \
 		Macexp.scm Macro.scm Transcen.scm Tscript.scm mkimpcat.scm \
@@ -42,10 +44,9 @@ BROKEN=		Does not compile on ${ARCH}
 
 post-extract:
 	@${TAR} -C ${WRKDIR} -zxf ${DISTDIR}/slib-psd1-3.tar.gz
-	@${CP} ${FILESDIR}/require.scm.in ${WRKDIR}/require.scm
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKDIR}/require.scm
+	@${REINPLACE_CMD} -e 's|exec ./scmlit|exec $$SCMLIT|g' ${WRKSRC}/build
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
 		 s|%%CFLAGS%%|${CFLAGS}|g ; \
 		 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/build.scm
