@@ -8,8 +8,10 @@
 PORTNAME=	catdoc
 PORTVERSION=	0.94.2
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.45.free.net/pub/catdoc/ \
-		http://www.amdmi3.ru/distfiles/
+MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
+		ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
+		ftp://ftp.demos.ru/pub/sunfreeware/SOURCES/ \
+		ftp://ftp.45.free.net/pub/catdoc/
 #		${MASTER_SITE_TEX_CTAN:S/$/support\/catdoc\//}
 
 MAINTAINER=	amdmi3@amdmi3.ru
