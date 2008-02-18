@@ -69,7 +69,7 @@ french/cups-base||2002-11-23|deleted since not supportable under cups 1.1.16
 french/cups-lpr||2002-11-23|deleted since not supportable under cups 1.1.16
 korean/w3m|www/w3m-m17n|2002-11-23|www/w3m-m17n could handle Korean
 korean/gaim|net/gaim|2002-11-24|net/gaim could handle Korean
-palm/xcopilot|palm/pose|2002-11-24|pose supersceded xcopilot
+palm/xcopilot|palm/pose|2002-11-24|pose superseded xcopilot
 www/libxpg4-ns||2002-11-24|needless since all native netscapes are removed
 textproc/pspell-ispell||2002-11-28|this plugin was obsoleted by aspell
 audio/linux-realplayer|multimedia/linux-realplayer|2002-11-28|new category
@@ -331,7 +331,7 @@ www/sqmgrlog|www/sarg|2003-05-15|Renamed into sarg
 devel/adabroker||2003-05-19|no longer maintained, does not compile with latest compiler
 chinese/rxvt||2003-05-20|no longer needed
 chinese/rxvt-big5||2003-05-20|no longer needed
-chinese/rxvt-gb||2003-05-20|no longer needeD
+chinese/rxvt-gb||2003-05-20|no longer needed
 misc/p5-DataCash||2003-05-20|No longer available
 net/p5-Net-BGP4|net/p5-Net-BGP|2003-05-21|module was renamed
 x11-wm/kde-icontheme-crystal||2003-05-22|Included in kdelibs
@@ -369,7 +369,7 @@ devel/pear-install|devel/pear-PEAR|2003-06-08|merged
 textproc/gnomespell-devel|textproc/gnomespell|2003-06-11|rolled into gnomespell
 mail/evolution-devel|mail/evolution|2003-06-11|rolled into evolution
 misc/wmessage|x11/wmessage|2003-06-12|accurate category
-net/mldonkey-src|net/mldonkey|2003-06-15|no londer needed
+net/mldonkey-src|net/mldonkey|2003-06-15|no longer needed
 news/straw||2003-06-20|port was broken with no sign of a fix
 devel/libtool|devel/libtool13|2003-06-26|move to versioned libtool portnames
 www/mozilla-vendor|www/mozilla|2003-07-01|vendor tree in sync with 1.4
@@ -490,7 +490,7 @@ net/openldap21|net/openldap21-server|2003-08-13|split into -client and -server
 net/openldap22|net/openldap22-server|2003-08-13|split into -client and -server
 x11-toolkits/gtk-industrial-theme|x11-toolkits/gnome-themes-extras|2003-08-14|gtk-industrial-theme is now included with gnome-themes-extras
 devel/gnomedebug||2003-08-17|remove stale, broken port
-devel/gide|devel/anjuta|2003-08-17|gide was superceded by anjuta
+devel/gide|devel/anjuta|2003-08-17|gide was superseded by anjuta
 graphics/gd2|graphics/gd|2003-08-19|Cleanup gd-related ports
 graphics/gd-nox11|graphics/gd|2003-08-19|Cleanup gd-related ports
 graphics/p5-GD2|graphics/p5-GD|2003-08-19|Cleanup gd-related ports
@@ -509,7 +509,7 @@ textproc/pl-aspell|polish/aspell|2003-08-19|moved to new polish category
 www/bmsync||2003-08-19|obsolete
 shells/tcsh||2003-08-21|removed, already in base system, not really maintained
 x11/ruby-panel-applet||2003-08-22|GNOME 1.4 desktop is gone
-emulators/truereality||2003-08-25|Lack of developement in recent years
+emulators/truereality||2003-08-25|Lack of development in recent years
 www/bacon||2003-08-26|removed as unmaintained for two years
 mail/mailfilter||2003-08-26|removed as unmaintained for two years
 security/py-amkCrypto||2003-08-27|replaced by security/py-pycrypto
@@ -650,7 +650,7 @@ comms/bayonne||2003-11-07|port was broken for >3 months with no fix submitted
 emulators/xpinmame||2003-11-07|port was broken for >3 months with no fix submitted
 french/spip||2003-11-07|port was broken for >3 months with no fix submitted
 ftp/moxftp||2003-11-07|port was broken for >3 months with no fix submitted
-ftp/sftp||2005-12-20|Author no longer supports the software. Functionality is in OpenSSH.
+ftp/sftp||2005-12-20|Author no longer supports the software. Functionality is in OpenSSH
 games/rollemup||2003-11-07|port was broken for >3 months with no fix submitted
 games/xpuyo||2003-11-07|port was broken for >3 months with no fix submitted
 graphics/imlib3d||2003-11-07|port was broken for >3 months with no fix submitted
@@ -673,7 +673,7 @@ editors/openoffice-1.1-cz|editors/openoffice-1.1-cs|2003-11-08|Czech language IS
 editors/openoffice-1.1-sl|editors/openoffice-1.1-sk|2003-11-08|Slovak language ISO code is sk
 security/pgp5||2003-11-08|Software is outdated
 x11-toolkits/wxgtk-devel|x11-toolkits/wxgtk|2003-11-10|renamed
-net/lmule||2003-11-10|project has been abadoned in favor of net/xmule
+net/lmule||2003-11-10|project has been abandoned in favor of net/xmule
 net/kxicq-devel||2003-11-13|unmaintained, better KDE ICQ clients available
 x11-fonts/ae_fonts_mono|arabic/ae_fonts_mono|2003-11-15|Moved to new arabic category
 x11-fonts/ae_fonts_ttf|arabic/ae_fonts_ttf|2003-11-15|Moved to new arabic category
@@ -715,7 +715,7 @@ textproc/rtf2htm||2004-01-09|renamed to unrtf, which already exists
 net/everybuddy|net/ayttm|2004-01-09|renamed port to ayttm
 sysutils/xw||2004-01-10|Project dead and disappeared
 net/papaya-plugins||2004-01-10|Integrated in net/papaya
-lang/fpl||2004-01-10|Distfiles and maintainer dispappeared
+lang/fpl||2004-01-10|Distfiles and maintainer disappeared
 lang/ghc6|lang/ghc|2004-01-15|Make 6.x default version
 net/nttcp|benchmarks/nttcp|2004-01-16|Moved to right category
 net/ttcp|benchmarks/ttcp|2004-01-16|Moved to right category
@@ -924,12 +924,12 @@ devel/p5-POE-Session-Cascading||2004-03-01|obsolete - deleted from CPAN
 games/linux_nwndata|games/nwndata|2004-03-01|Data files are not Linux-specific
 games/linux_nwnclient|games/linux-nwnclient|2004-03-01|Misnamed
 sysutils/fsck_ext2fs|sysutils/e2fsprogs|2004-03-01|Better utility
-japanese/vfxdvi118||2004-03-04|removed (obsolate)
-japanese/vfxdvi240||2004-03-04|removed (obsolate)
-japanese/vfxdvi300||2004-03-04|removed (obsolate)
-japanese/vfxdvi360||2004-03-04|removed (obsolate)
-japanese/vfxdvi400||2004-03-04|removed (obsolate)
-japanese/vfxdvi600||2004-03-04|removed (obsolate)
+japanese/vfxdvi118||2004-03-04|removed (obsolete)
+japanese/vfxdvi240||2004-03-04|removed (obsolete)
+japanese/vfxdvi300||2004-03-04|removed (obsolete)
+japanese/vfxdvi360||2004-03-04|removed (obsolete)
+japanese/vfxdvi400||2004-03-04|removed (obsolete)
+japanese/vfxdvi600||2004-03-04|removed (obsolete)
 graphics/filmgimp|graphics/cinepaint|2004-03-06|renamed
 sysutils/xwatch||2004-03-09|obsolete-distfile deleted by author
 x11-toolkits/qt32|x11-toolkits/qt33|2004-03-09|qt32 replaced by qt33
@@ -1182,10 +1182,10 @@ korean/hlatexp-pkfonts1200||2004-08-15|Port was unfetchable
 korean/hlatexp-pkfonts300||2004-08-15|Port was unfetchable
 korean/hlatexp-pkfonts600||2004-08-15|Port was unfetchable
 misc/sword-modules||2004-08-17|Obsoleted
-print/tipa|print/latex-tipa|2004-08-18|Port renamed for better categorisation
+print/tipa|print/latex-tipa|2004-08-18|Port renamed for better categorization
 ftp/lukemftpd|ftp/tnftpd|2004-08-18|Vendor name change
 x11-toolkits/notif2|x11-themes/notif2|2004-08-20|Better category
-www/apache13-fp||2004-08-20|Obsolete and unfixed security vulnerabilities
+www/apache13-fp||2004-08-20|Obsolete and has unfixed security vulnerabilities
 www/mod_csacek||2004-08-20|Obsolete and broken
 misc/cheatah||2004-08-20|Abandoned by the upstream authors
 japanese/platex209-euc|japanese/platex209|2004-08-20|renamed
@@ -1210,7 +1210,7 @@ graphics/kolourpaint|graphics/kdegraphics3|2004-10-13|kolourpaint was integrated
 graphics/kimagemapeditor|www/kdewebdev|2004-10-13|kimagemapeditor was integrated into the kdewebdev port
 www/zope-cmftransforms|www/zope-portaltransforms|2004-10-16|renamed by authors
 dns/bind9-sdb-mysql||2004-10-17|No longer maintained
-www/phpnuke||2004-10-17|security vulnerabilities and no longer maintained
+www/phpnuke||2004-10-17|Has security vulnerabilities and no longer maintained
 misc/bookcase|misc/tellico|2004-10-17|renamed
 audio/net-rhythmbox|audio/rhythmbox|2004-10-20|broken and audio/rhythmbox has more features
 devel/ruby-gconf|devel/ruby-gconf2|2004-10-22|did not install
@@ -1461,8 +1461,8 @@ www/linux-mozillafirebird|www/linux-firefox|2005-05-27|obsolete, use linux-firef
 www/linux-mozillafirebird-el||2005-05-27|obsolete, use linux-firefox with localization xpi instead
 textproc/py-martel||2005-05-31|obsolete, not up-to-date and is only a subset of biology/py-biopython
 multimedia/gstreamer-plugins-xine||2005-05-31|obsolete, use gstreamer-ffmpeg instead
-audio/libmusepack|audio/libmpcdec|2005-05-31|moved, lib rename.
-devel/idlefork||2005-06-03|has been integrated into Pyhton 2.3+
+audio/libmusepack|audio/libmpcdec|2005-05-31|moved, lib rename
+devel/idlefork||2005-06-03|has been integrated into Python 2.3+
 editors/gxedit||2005-06-03|project no longer exists
 misc/yaucg||2005-06-03|master site disappeared, script probably broken
 net/archie.el||2005-06-03|master site disappeared
@@ -1517,7 +1517,7 @@ portuguese/openoffice-1.1-pt_PT||2005-06-29|localized version should be built vi
 russian/openoffice-1.0||2005-06-29|no longer maintained
 russian/openoffice-1.1||2005-06-29|localized version should be built via knob
 astro/gdesklets-weather||2005-07-03|does not work for a long time
-net/gdesklets-rssgrab||2005-07-03|dissapeared
+net/gdesklets-rssgrab||2005-07-03|disappeared
 misc/44bsd-more|sysutils/44bsd-more|2005-07-10|moved to better category
 misc/less|sysutils/less|2005-07-10|moved to better category
 misc/most|sysutils/most|2005-07-10|moved to better category
@@ -1539,7 +1539,7 @@ devel/swarm||2005-07-18|failed to compile
 lang/gcc27|lang/gcc295|2005-07-18|long obsolete
 net/tramp-emacs20|net/tramp-emacs|2005-07-18|expired
 x11/eweather||2005-07-18|did not work with update wmweather
-sysutils/sgeee|sysutils/sgeee53|2005-07-28|SGE 6 is being imported and is incompatable with 5.3
+sysutils/sgeee|sysutils/sgeee53|2005-07-28|SGE 6 is being imported and is incompatible with 5.3
 lang/stackless_python||2005-07-29|outdated and unmaintained
 x11-wm/rox-pager||2005-07-30|libwnck incompatibility; no new version available
 lang/gcc31|lang/gcc32|2005-07-31|outdated and unmaintained, and gcc32 is basically the same (plus one ABI change and many fixes)
@@ -1603,7 +1603,7 @@ audio/replay||2005-10-17|no longer on sunsite, home page gone
 devel/hs-uni||2005-10-17|abandoned, didn't build with latest lang/ghc
 audio/mp3chew||2005-10-17|master site disappeared long ago
 converters/cn2jp||2005-10-17|no longer available from author's site
-devel/swig13-doc||2005-10-18|incorperated in devel/swig13
+devel/swig13-doc||2005-10-18|incorporated in devel/swig13
 palm/hdconv||2005-10-18|master site disappeared
 mail/stuphead||2005-10-18|master site disappeared
 japanese/libimg||2005-10-18|forbidden; no longer exists
@@ -1673,111 +1673,111 @@ editors/abiword-plugins-devel|editors/abiword-plugins|2005-11-04|Has been merged
 net/trafshow4|net/trafshow|2005-11-05|obsolete version, use net/trafshow instead
 games/p5-Games-Sequential|games/p5-Games-AlphaBeta|2005-11-05|has been merged into games/p5-Games-AlphaBeta
 misc/screen|sysutils/screen|2005-11-05|new category
-audio/musicbox||2005-11-05|Port passed expiry date and was removed.
-biology/nclever||2005-11-05|Port passed expiry date and was removed.
-cad/ziarc||2005-11-05|Port passed expiry date and was removed.
-chinese/chinput||2005-11-05|Port passed expiry date and was removed.
-chinese/metalist||2005-11-05|Port passed expiry date and was removed.
-databases/hs-hsql||2005-11-05|Port passed expiry date and was removed.
-databases/ruby-criteria||2005-11-05|Port passed expiry date and was removed.
-databases/tkgnats||2005-11-05|Port passed expiry date and was removed.
-devel/doc++||2005-11-05|Port passed expiry date and was removed.
-devel/ecb-emacs20||2005-11-05|Port passed expiry date and was removed.
-devel/linux_devtools-6||2005-11-05|Port passed expiry date and was removed.
-devel/linux_devtools-7||2005-11-05|Port passed expiry date and was removed.
-devel/m6811-gcc||2005-11-05|Port passed expiry date and was removed.
-devel/zendstudio||2005-11-05|Port passed expiry date and was removed.
-emulators/mips64emul||2005-11-05|Port passed expiry date and was removed.
-emulators/osf1_base||2005-11-05|Port passed expiry date and was removed.
-games/crossword||2005-11-05|Port passed expiry date and was removed.
-games/freebooters||2005-11-05|Port passed expiry date and was removed.
-games/gniffel||2005-11-05|Port passed expiry date and was removed.
-games/hlserver-action||2005-11-05|Port passed expiry date and was removed.
-games/pp||2005-11-05|Port passed expiry date and was removed.
-games/powerpak||2005-11-05|Port passed expiry date and was removed.
-games/pythoong||2005-11-05|Port passed expiry date and was removed.
-games/smacx||2005-11-05|Port passed expiry date and was removed.
-games/tictactoe3d||2005-11-05|Port passed expiry date and was removed.
-games/utserver-to||2005-11-05|Port passed expiry date and was removed.
-games/xchain||2005-11-05|Port passed expiry date and was removed.
-games/xjumpjump||2005-11-05|Port passed expiry date and was removed.
-games/xmj||2005-11-05|Port passed expiry date and was removed.
-games/xnibbles||2005-11-05|Port passed expiry date and was removed.
-games/xothello||2005-11-05|Port passed expiry date and was removed.
-games/xsol||2005-11-05|Port passed expiry date and was removed.
-graphics/diacanvas||2005-11-05|Port passed expiry date and was removed.
-graphics/linux_mesa3||2005-11-05|Port passed expiry date and was removed.
-graphics/osgedit||2005-11-05|Port passed expiry date and was removed.
-graphics/py-imaging-handbook||2005-11-05|Port passed expiry date and was removed.
-graphics/xbarcode||2005-11-05|Port passed expiry date and was removed.
-graphics/xmms-xvs||2005-11-05|Port passed expiry date and was removed.
-japanese/dserver||2005-11-05|Port passed expiry date and was removed.
-japanese/ebw3||2005-11-05|Port passed expiry date and was removed.
-japanese/elisa10x8||2005-11-05|Port passed expiry date and was removed.
-japanese/iv||2005-11-05|Port passed expiry date and was removed.
-japanese/mozilla-jlp-devel||2005-11-05|Port passed expiry date and was removed.
-japanese/openoffice-templates||2005-11-05|Port passed expiry date and was removed.
-japanese/pgp.language||2005-11-05|Port passed expiry date and was removed.
-japanese/xemacs21-canna+freewnn||2005-11-05|Port passed expiry date and was removed.
-japanese/xemacs21-canna+wnn6||2005-11-05|Port passed expiry date and was removed.
-japanese/xemacs21-freewnn||2005-11-05|Port passed expiry date and was removed.
-japanese/xemacs21-wnn6||2005-11-05|Port passed expiry date and was removed.
-japanese/zope-zmilocalizer||2005-11-05|Port passed expiry date and was removed.
-java/bugseeker-demo||2005-11-05|Port passed expiry date and was removed.
-java/bugseeker||2005-11-05|Port passed expiry date and was removed.
-java/forte||2005-11-05|Port passed expiry date and was removed.
-lang/generic-haskell||2005-11-05|Port passed expiry date and was removed.
-lang/helium||2005-11-05|Port passed expiry date and was removed.
-lang/o2c||2005-11-05|Port passed expiry date and was removed.
-misc/edonkey-tool-slist||2005-11-05|Port passed expiry date and was removed.
-misc/peq||2005-11-05|Port passed expiry date and was removed.
-multimedia/cupid||2005-11-05|Port passed expiry date and was removed.
-net/gnomba||2005-11-05|Port passed expiry date and was removed.
-net/jabber-xdb_ldap||2005-11-05|Port passed expiry date and was removed.
-news/t-gnus||2005-11-05|Port passed expiry date and was removed.
-print/p5-GnomePrint||2005-11-05|Port passed expiry date and was removed.
-russian/X.language||2005-11-05|Port passed expiry date and was removed.
-textproc/cdsware||2005-11-05|Port passed expiry date and was removed.
-textproc/p5-XML-SAX-Base||2005-11-05|Port passed expiry date and was removed.
-textproc/tei-xlite||2005-11-05|Port passed expiry date and was removed.
-ukrainian/iceb||2005-11-05|Port passed expiry date and was removed.
-www/linux-lesstif-ns||2005-11-05|Port passed expiry date and was removed.
-www/mod_pcgi2||2005-11-05|Port passed expiry date and was removed.
-www/netscape-remote||2005-11-05|Port passed expiry date and was removed.
-www/p5-GtkHTML||2005-11-05|Port passed expiry date and was removed.
-www/p5-MasonX-Apache2Handler||2005-11-05|Port passed expiry date and was removed.
-www/pgdriver||2005-11-05|Port passed expiry date and was removed.
-www/tasks||2005-11-05|Port passed expiry date and was removed.
-www/zope-soapmethod||2005-11-05|Port passed expiry date and was removed.
-www/zope-zpt||2005-11-05|Port passed expiry date and was removed.
-x11-toolkits/erlgtk||2005-11-05|Port passed expiry date and was removed.
-x11-toolkits/guis||2005-11-05|Port passed expiry date and was removed.
-x11-toolkits/hs-port||2005-11-05|Port passed expiry date and was removed.
-x11-toolkits/jx||2005-11-05|Port passed expiry date and was removed.
-x11-toolkits/qt145||2005-11-05|Port passed expiry date and was removed.
-x11/ruby-gnome||2005-11-05|Port passed expiry date and was removed.
-www/netscape-wrapper||2005-11-05|Port depended on another that was removed.
-x11-toolkits/hs-gio||2005-11-05|Port depended on another that was removed.
-x11/ruby-gnome-all||2005-11-05|Port depended on another that was removed.
-devel/ruby-libglade||2005-11-05|Port depended on another that was removed.
-sysutils/rlogview||2005-11-05|Port depended on another that was removed.
-deskutils/notebook||2005-11-05|Port depended on another that was removed.
-devel/codecrusader||2005-11-05|Port depended on another that was removed.
-x11-toolkits/libj2dplot||2005-11-05|Port depended on another that was removed.
-x11-toolkits/libjparser||2005-11-05|Port depended on another that was removed.
-x11-toolkits/libjsearch||2005-11-05|Port depended on another that was removed.
-x11-toolkits/libjtoolbar||2005-11-05|Port depended on another that was removed.
-x11-toolkits/libjtree||2005-11-05|Port depended on another that was removed.
-mail/arrow||2005-11-05|Port depended on another that was removed.
-math/glove||2005-11-05|Port depended on another that was removed.
-math/thx_1138||2005-11-05|Port depended on another that was removed.
-x11-fm/systemg||2005-11-05|Port depended on another that was removed.
-graphics/ruby-libart||2005-11-05|Port depended on another that was removed.
-graphics/ruby-gdk_imlib||2005-11-05|Port depended on another that was removed.
-graphics/ruby-gdk_pixbuf||2005-11-05|Port depended on another that was removed.
-news/t-gnus-emacs20||2005-11-05|Port depended on another that was removed.
-news/t-gnus-mule||2005-11-05|Port depended on another that was removed.
-news/t-gnus-xemacs21-mule||2005-11-05|Port depended on another that was removed.
+audio/musicbox||2005-11-05|Port passed expiry date and was removed
+biology/nclever||2005-11-05|Port passed expiry date and was removed
+cad/ziarc||2005-11-05|Port passed expiry date and was removed
+chinese/chinput||2005-11-05|Port passed expiry date and was removed
+chinese/metalist||2005-11-05|Port passed expiry date and was removed
+databases/hs-hsql||2005-11-05|Port passed expiry date and was removed
+databases/ruby-criteria||2005-11-05|Port passed expiry date and was removed
+databases/tkgnats||2005-11-05|Port passed expiry date and was removed
+devel/doc++||2005-11-05|Port passed expiry date and was removed
+devel/ecb-emacs20||2005-11-05|Port passed expiry date and was removed
+devel/linux_devtools-6||2005-11-05|Port passed expiry date and was removed
+devel/linux_devtools-7||2005-11-05|Port passed expiry date and was removed
+devel/m6811-gcc||2005-11-05|Port passed expiry date and was removed
+devel/zendstudio||2005-11-05|Port passed expiry date and was removed
+emulators/mips64emul||2005-11-05|Port passed expiry date and was removed
+emulators/osf1_base||2005-11-05|Port passed expiry date and was removed
+games/crossword||2005-11-05|Port passed expiry date and was removed
+games/freebooters||2005-11-05|Port passed expiry date and was removed
+games/gniffel||2005-11-05|Port passed expiry date and was removed
+games/hlserver-action||2005-11-05|Port passed expiry date and was removed
+games/pp||2005-11-05|Port passed expiry date and was removed
+games/powerpak||2005-11-05|Port passed expiry date and was removed
+games/pythoong||2005-11-05|Port passed expiry date and was removed
+games/smacx||2005-11-05|Port passed expiry date and was removed
+games/tictactoe3d||2005-11-05|Port passed expiry date and was removed
+games/utserver-to||2005-11-05|Port passed expiry date and was removed
+games/xchain||2005-11-05|Port passed expiry date and was removed
+games/xjumpjump||2005-11-05|Port passed expiry date and was removed
+games/xmj||2005-11-05|Port passed expiry date and was removed
+games/xnibbles||2005-11-05|Port passed expiry date and was removed
+games/xothello||2005-11-05|Port passed expiry date and was removed
+games/xsol||2005-11-05|Port passed expiry date and was removed
+graphics/diacanvas||2005-11-05|Port passed expiry date and was removed
+graphics/linux_mesa3||2005-11-05|Port passed expiry date and was removed
+graphics/osgedit||2005-11-05|Port passed expiry date and was removed
+graphics/py-imaging-handbook||2005-11-05|Port passed expiry date and was removed
+graphics/xbarcode||2005-11-05|Port passed expiry date and was removed
+graphics/xmms-xvs||2005-11-05|Port passed expiry date and was removed
+japanese/dserver||2005-11-05|Port passed expiry date and was removed
+japanese/ebw3||2005-11-05|Port passed expiry date and was removed
+japanese/elisa10x8||2005-11-05|Port passed expiry date and was removed
+japanese/iv||2005-11-05|Port passed expiry date and was removed
+japanese/mozilla-jlp-devel||2005-11-05|Port passed expiry date and was removed
+japanese/openoffice-templates||2005-11-05|Port passed expiry date and was removed
+japanese/pgp.language||2005-11-05|Port passed expiry date and was removed
+japanese/xemacs21-canna+freewnn||2005-11-05|Port passed expiry date and was removed
+japanese/xemacs21-canna+wnn6||2005-11-05|Port passed expiry date and was removed
+japanese/xemacs21-freewnn||2005-11-05|Port passed expiry date and was removed
+japanese/xemacs21-wnn6||2005-11-05|Port passed expiry date and was removed
+japanese/zope-zmilocalizer||2005-11-05|Port passed expiry date and was removed
+java/bugseeker-demo||2005-11-05|Port passed expiry date and was removed
+java/bugseeker||2005-11-05|Port passed expiry date and was removed
+java/forte||2005-11-05|Port passed expiry date and was removed
+lang/generic-haskell||2005-11-05|Port passed expiry date and was removed
+lang/helium||2005-11-05|Port passed expiry date and was removed
+lang/o2c||2005-11-05|Port passed expiry date and was removed
+misc/edonkey-tool-slist||2005-11-05|Port passed expiry date and was removed
+misc/peq||2005-11-05|Port passed expiry date and was removed
+multimedia/cupid||2005-11-05|Port passed expiry date and was removed
+net/gnomba||2005-11-05|Port passed expiry date and was removed
+net/jabber-xdb_ldap||2005-11-05|Port passed expiry date and was removed
+news/t-gnus||2005-11-05|Port passed expiry date and was removed
+print/p5-GnomePrint||2005-11-05|Port passed expiry date and was removed
+russian/X.language||2005-11-05|Port passed expiry date and was removed
+textproc/cdsware||2005-11-05|Port passed expiry date and was removed
+textproc/p5-XML-SAX-Base||2005-11-05|Port passed expiry date and was removed
+textproc/tei-xlite||2005-11-05|Port passed expiry date and was removed
+ukrainian/iceb||2005-11-05|Port passed expiry date and was removed
+www/linux-lesstif-ns||2005-11-05|Port passed expiry date and was removed
+www/mod_pcgi2||2005-11-05|Port passed expiry date and was removed
+www/netscape-remote||2005-11-05|Port passed expiry date and was removed
+www/p5-GtkHTML||2005-11-05|Port passed expiry date and was removed
+www/p5-MasonX-Apache2Handler||2005-11-05|Port passed expiry date and was removed
+www/pgdriver||2005-11-05|Port passed expiry date and was removed
+www/tasks||2005-11-05|Port passed expiry date and was removed
+www/zope-soapmethod||2005-11-05|Port passed expiry date and was removed
+www/zope-zpt||2005-11-05|Port passed expiry date and was removed
+x11-toolkits/erlgtk||2005-11-05|Port passed expiry date and was removed
+x11-toolkits/guis||2005-11-05|Port passed expiry date and was removed
+x11-toolkits/hs-port||2005-11-05|Port passed expiry date and was removed
+x11-toolkits/jx||2005-11-05|Port passed expiry date and was removed
+x11-toolkits/qt145||2005-11-05|Port passed expiry date and was removed
+x11/ruby-gnome||2005-11-05|Port passed expiry date and was removed
+www/netscape-wrapper||2005-11-05|Port depended on another that was removed
+x11-toolkits/hs-gio||2005-11-05|Port depended on another that was removed
+x11/ruby-gnome-all||2005-11-05|Port depended on another that was removed
+devel/ruby-libglade||2005-11-05|Port depended on another that was removed
+sysutils/rlogview||2005-11-05|Port depended on another that was removed
+deskutils/notebook||2005-11-05|Port depended on another that was removed
+devel/codecrusader||2005-11-05|Port depended on another that was removed
+x11-toolkits/libj2dplot||2005-11-05|Port depended on another that was removed
+x11-toolkits/libjparser||2005-11-05|Port depended on another that was removed
+x11-toolkits/libjsearch||2005-11-05|Port depended on another that was removed
+x11-toolkits/libjtoolbar||2005-11-05|Port depended on another that was removed
+x11-toolkits/libjtree||2005-11-05|Port depended on another that was removed
+mail/arrow||2005-11-05|Port depended on another that was removed
+math/glove||2005-11-05|Port depended on another that was removed
+math/thx_1138||2005-11-05|Port depended on another that was removed
+x11-fm/systemg||2005-11-05|Port depended on another that was removed
+graphics/ruby-libart||2005-11-05|Port depended on another that was removed
+graphics/ruby-gdk_imlib||2005-11-05|Port depended on another that was removed
+graphics/ruby-gdk_pixbuf||2005-11-05|Port depended on another that was removed
+news/t-gnus-emacs20||2005-11-05|Port depended on another that was removed
+news/t-gnus-mule||2005-11-05|Port depended on another that was removed
+news/t-gnus-xemacs21-mule||2005-11-05|Port depended on another that was removed
 net/aim|net-im/aim|2005-11-09|Moved to a new net-im category
 net/amsn|net-im/amsn|2005-11-09|Moved to a new net-im category
 net/ari-yahoo|net-im/ari-yahoo|2005-11-09|Moved to a new net-im category
@@ -1992,7 +1992,7 @@ devel/py-ll-url||2005-12-31|Replaced by py-ll-core
 misc/gkrellmaflag||2005-12-31|Unfetchable
 devel/libmusclecard||2006-01-02|Temporary integrated into pcsc-lite port
 deskutils/gdesklets-ltvariations||2006-01-04|Deleted; dead and unfetchable
-editors/vimpart||2006-01-08|As of 3.5.0, vimpart is no longer part of KDE.
+editors/vimpart||2006-01-08|As of 3.5.0, vimpart is no longer part of KDE
 sysutils/linneighborhood|net/linneighborhood|2006-01-10|Move to a more appropriate category
 www/plog|www/lifetype|2006-01-11|project renamed
 mail/thunderbird-devel|mail/thunderbird|2006-01-12|Thunderbird 1.5 is now stable
@@ -2160,16 +2160,16 @@ x11-clocks/gdesklets-praytime||2006-02-14|Remove expired port
 www/p5-Bundle-Catalyst||2006-02-15|Replaced by www/p5-Task-Catalyst
 games/xgolgo||2006-02-15|Remove expired port
 games/virt||2006-02-15|Remove expired port
-editors/apel-mule||2006-02-16|Remove expired port editors/custom-mule and all dependant ports
-editors/bitmap-mule||2006-02-16|Remove expired port editors/custom-mule and all dependant ports
-editors/flim113-mule||2006-02-16|Remove expired port editors/custom-mule and all dependant ports
-editors/semi113-mule||2006-02-16|Remove expired port editors/custom-mule and all dependant ports
-editors/custom-mule||2006-02-16|Remove expired port editors/custom-mule and all dependant ports
-editors/apel-emacs19||2006-02-16|Remove expired port editors/custom-emacs and all dependant ports
-editors/flim113-emacs19||2006-02-16|Remove expired port editors/custom-emacs and all dependant ports
-editors/semi113-emacs19||2006-02-16|Remove expired port editors/custom-emacs and all dependant ports
-devel/pcl-cvs-emacs||2006-02-16|Remove expired port editors/custom-emacs and all dependant ports
-editors/custom-emacs||2006-02-16|Remove expired port editors/custom-emacs and all dependant ports
+editors/apel-mule||2006-02-16|Remove expired port editors/custom-mule and all dependent ports
+editors/bitmap-mule||2006-02-16|Remove expired port editors/custom-mule and all dependent ports
+editors/flim113-mule||2006-02-16|Remove expired port editors/custom-mule and all dependent ports
+editors/semi113-mule||2006-02-16|Remove expired port editors/custom-mule and all dependent ports
+editors/custom-mule||2006-02-16|Remove expired port editors/custom-mule and all dependent ports
+editors/apel-emacs19||2006-02-16|Remove expired port editors/custom-emacs and all dependent ports
+editors/flim113-emacs19||2006-02-16|Remove expired port editors/custom-emacs and all dependent ports
+editors/semi113-emacs19||2006-02-16|Remove expired port editors/custom-emacs and all dependent ports
+devel/pcl-cvs-emacs||2006-02-16|Remove expired port editors/custom-emacs and all dependent ports
+editors/custom-emacs||2006-02-16|Remove expired port editors/custom-emacs and all dependent ports
 graphics/animabob||2006-02-16|Remove expired port
 graphics/deep_zoom||2006-02-16|Remove expired port
 games/xshipwars-client||2006-02-16|Remove expired port
@@ -2201,7 +2201,7 @@ mail/glacier||2006-03-31|Has expired: mastersite disappeared, no longer maintain
 math/xwpl||2006-03-31|Has expired: source not available and no recent binary
 sysutils/nwclient||2006-03-31|Removed due to security problems
 sysutils/nwclient602||2006-03-31|Removed due to security problems
-lang/ruby18-nopthreads||2006-03-31|Removed since pthread support of ruby18 is disabled by default.
+lang/ruby18-nopthreads||2006-03-31|Removed since pthread support of ruby18 is disabled by default
 net-mgmt/nfdump-devel|net-mgmt/nfdump|2006-04-02|Development port no longer needed
 devel/py-twistedXish|net-im/py-twistedWords|2006-04-05|Incorporated into net-im/py-twistedWords
 devel/upp602|devel/upp|2006-04-05|Was created in a bad directory
@@ -2252,7 +2252,7 @@ www/mod_php4|lang/php4|2006-05-06|Unification of php slave ports
 www/mod_php5|lang/php5|2006-05-06|Unification of php slave ports
 www/php4-cgi|lang/php4|2006-05-06|Unification of php slave ports
 www/php5-cgi|lang/php5|2006-05-06|Unification of php slave ports
-multimedia/gnonlin|multimedia/gstreamer-plugins-gnonlin|2006-05-08|Merge duplicite ports
+multimedia/gnonlin|multimedia/gstreamer-plugins-gnonlin|2006-05-08|Merge duplicate ports
 www/linux-mozilla-devel|www/linux-seamonkey-devel|2006-05-10|Mozilla-devel is now Seamonkey
 games/rtcw-paks||2006-05-11|Not needed because games/rtcw asks for the files (only 3)
 deskutils/superkaramba|misc/kdeutils3|2006-05-13|superkaramba was integrated into the kdeutils3 port
@@ -2337,9 +2337,9 @@ x11/efancylauncher||2006-06-03|Has expired
 graphics/gimp-ufraw|graphics/ufraw|2006-06-04|UFRaw is a standalone app, GIMP plug-in is only a feature
 devel/gnu-libtool||2006-06-05|Has expired: devel/libtool15 is now stock and should be used instead
 japanese/linux-ttfonts||2006-06-05|Has expired: "The linuxolator uses the fonts from the X-server or font-server, so there is no need to install fonts into LINUXBASE"
-net/gnomemeeting||2006-06-05|Has expired: Superseeded by net/ekiga
+net/gnomemeeting||2006-06-05|Has expired: Superseded by net/ekiga
 news/knzb||2006-06-05|Has expired: This seems to be abandonware. Try news/klibido
-x11/linux-gnomelibs||2006-06-05|Has expired: This is a very outdated version of GNOME and it is not used by any port.
+x11/linux-gnomelibs||2006-06-05|Has expired: This is a very outdated version of GNOME and it is not used by any port
 x11-fonts/linux-urw-fonts||2006-06-05|Has expired: "The linuxolator uses the fonts from the X-server or font-server, so there is no need to install fonts into LINUXBASE"
 math/pari-devel|math/pari|2006-06-05|Merged into stable port
 x11-toolkits/gtk12-apireference||2006-06-06|Obsoleted by x11-toolkits/gtk20-reference and friends
@@ -2366,11 +2366,11 @@ audio/py-shellac|audio/shellac|2006-06|Because it's a application, not a library
 print/cups-lpr|print/cups-base|2006-06|Merged cups-lpr into cups-base
 audio/mpck|audio/checkmate|2006-06-24|project was renamed
 www/xpi-tablesort|www/xpi-tabletools|2006-06-27|Extension renamed
-mail/rssyl|mail/sylpheed-claws-rssyl|2006-06-27|Moved to follow the rest of sypheed-claws nameing scheme
+mail/rssyl|mail/sylpheed-claws-rssyl|2006-06-27|Moved to follow the rest of sylpheed-claws naming scheme
 net/rwhois|net/rwhoisd|2006-06-27|Moved to an accurate name
 lang/linux-libgcc||2006-06-29|Obsoleted by emulators/linux_base-fc3 and emulators/linux_base-fc4
 x11-wm/aewm++||2006-07-04|Has expired: The project is dead, a fork exists: xaewm
-emulators/linux_base-fc3||2006-07-04|Has expired: superseeded by linux_base-fc4 port
+emulators/linux_base-fc3||2006-07-04|Has expired: superseded by linux_base-fc4 port
 misc/linux-opengroupware||2006-07-04|Has expired
 net/opengk||2006-07-04|Has expired: Latest version is from 2003-02-03. Use net/gatekeeper instead
 textproc/sed_inplace||2006-07-04|Has expired: This port is not required anymore
@@ -2382,7 +2382,7 @@ math/UFsparse|math/ufsparse|2006-07-09|port name should not have capital letters
 sysutils/lineak_defaultplugin|sysutils/lineak-defaultplugin|2006-07-09|port name changed to match upstream
 sysutils/lineak_kdeplugins|sysutils/lineak-kdeplugins|2006-07-09|port name changed to match upstream
 sysutils/lineak_xosdplugin|sysutils/lineak-xosdplugin|2006-07-09|port name changed to match upstream
-japanese/phpgroupware||2006-04-10|removed at mainter request (because broken and vulnerabilities)
+japanese/phpgroupware||2006-04-10|removed at maintainer request (is broken and has vulnerabilities)
 www/p5-Catalyst|www/p5-Catalyst-Runtime|2006-07-10|follow CPAN split of package
 textproc/p5-JSON-Syck|textproc/p5-YAML-Syck|2006-07-12|The textproc/p5-YAML-Syck port now includes JSON functionality
 x11/settitle||2006-07-14|Has expired: Download unavailable anymore
@@ -2433,7 +2433,7 @@ devel/p5-Linux-Pid||2006-09-03|Was a p5-Apache-SizeLimit dependency, now removed
 www/mozilla-devel|www/seamonkey|2006-09-03|Security vulnerabilities
 textproc/p5-Text-SwiftTemplate||2006-09-04|unfetchable, removed
 security/fpc-md5|security/fpc-hash|2006-09-07|Port was renamed
-devel/linux_devtools||2006-09-11|Has expired: the dependcy is deprecated, please use a linux_dist port instead
+devel/linux_devtools||2006-09-11|Has expired: the dependency is deprecated, please use a linux_dist port instead
 graphics/pecl-imagick||2006-09-11|Has expired: Project is dead and does not work
 korean/linux_locale||2006-09-11|Has expired: the dependency is scheduled for removal and a recent glib does not need this
 net-im/jabber-aim||2006-09-18|This transport is deprecated, use net-im/jabber-pyaim instead
@@ -2498,7 +2498,7 @@ devel/mingw-binutils||2006-11-09|Has expired: use mingw32-* ports instead
 devel/mingw-bin-msvcrt||2006-11-09|Has expired: use mingw32-* ports instead
 devel/mingw-gcc||2006-11-09|Has expired: use mingw32-* ports instead
 devel/mingw-opengl-headers||2006-11-09|Has expired: use mingw32-* ports instead
-editors/offix-editor||2006-11-09|Has expired: developement ceased in 1996
+editors/offix-editor||2006-11-09|Has expired: development ceased in 1996
 print/offix-printer||2006-11-09|Has expired: development ceased in 1996
 sysutils/wmmon||2006-11-09|Has expired: no longer available from mastersite
 sysutils/xsysinfo||2006-11-09|Has expired: no longer available from mastersite
@@ -2538,10 +2538,10 @@ www/mozilla-bonobo||2006-12-12|Has expired: "Does not build with new Mozilla"
 www/p5-ldap-abook||2006-12-12|Has expired: Arbitrary command execution vulnerability in CGI script
 x11-wm/tpager||2006-12-12|Has expired: Unmaintained and disappears from MASTER_SITE on a regular basis
 x11/XFree86-aoutlibs||2006-12-12|Has expired: Requires a.out ld.so and support libraries
-x11/linux-XFree86-libs||2006-12-12|Has expired: superseeded by linux-xorg-libs port
+x11/linux-XFree86-libs||2006-12-12|Has expired: superseded by linux-xorg-libs port
 www/mod_v2h||2006-12-12|Has expired: No longer available for download, the website is gone
 www/mod_injection||2006-12-12|Has expired: No longer available for download, the website is gone
-www/nspostgres||2006-12-12|Has expired: Use www/aolserver with WITH_NSPOSTGRES=1 instead.
+www/nspostgres||2006-12-12|Has expired: Use www/aolserver with WITH_NSPOSTGRES=1 instead
 www/fxhtml||2006-12-12|Has expired: crusty old a.out binary, not useful any more
 www/jakarta-tomcat3||2006-12-12|Has expired: Please use www/tomcat55 instead
 shells/mudsh||2006-12-12|Has expired: Project disappeared from the internet
@@ -2585,13 +2585,13 @@ www/mod_frontpage2-rtr||2006-12-12|Removed: Microsoft Frontpage Extensions have 
 net/wais||2006-12-12|Has expired: Imported 12 years ago; never completed
 www/w3c-httpd||2006-12-12|Has expired: Does not compile
 multimedia/gstreamer-plugins-dirac80||2006-12-13|Has expired: Obsolete version, use gstreamer 0.10 instead
-devel/ruby-pcsc-lite||2006-12-14|Has expired: Does not compile with new pcsc-lite. Port is broken since 2005/04/20.
-audio/alsaplayer||2006-12-14|Has expired: Remote code execution: http://vuxml.FreeBSD.org/9855ac8e-2aec-11db-a6e2-000e0c2e438a.html. Last version 0.99.76 is more than 3 years old.
+devel/ruby-pcsc-lite||2006-12-14|Has expired: Does not compile with new pcsc-lite. Port is broken since 2005/04/20
+audio/alsaplayer||2006-12-14|Has expired: Remote code execution: http://vuxml.FreeBSD.org/9855ac8e-2aec-11db-a6e2-000e0c2e438a.html. Last version 0.99.76 is more than 3 years old
 sysutils/kdar||2006-12-14|Has expired: Does not compile with dar-2.3.0
 net-im/ymessenger||2006-12-14|Has expired: is a dynamically linked binary linked to old version of gtkhtml no longer in ports
 audio/ac3dec||2006-12-14|Dead outside FreeBSD and replaced by liba52
 net-p2p/mldonkey-sancho||2006-12-14|Removed due to developer's request
-net/gmdns||2006-12-14|Dead, unmaintain and nothing use it
+net/gmdns||2006-12-14|Dead, unmaintained, and nothing uses it
 devel/stlport-icc||2006-12-20|Has expired: does not work with stlport 4.6.2
 security/gnupg-devel|security/gnupg|2006-12-21|gnupg-devel has been released as Gnupg 2.0
 devel/javasvn|devel/svnkit|2006-12-23|JavaSVN has been renamed to SVNKit
@@ -2600,7 +2600,7 @@ devel/p5-Inline-C2XS|devel/p5-InlineX-C2XS|2006-12-26|Project rename the module 
 www/etoile-grr|www/etoile-mollusk|2006-12-29|Project moved
 deskutils/etoile-etoileextensionskit|www/etoile-ui|2006-12-29|Project splitted in new modules
 deskutils/etoile-preferenceskit|www/etoile-panekit|2006-12-29|Project splitted in new modules
-deskutils/etoile-workspaceswitcher||2006-12-29|Project dopped
+deskutils/etoile-workspaceswitcher||2006-12-29|Project dropped
 mail/sylpheed-claws-att_remover|mail/claws-mail-att_remover|2006-12-31|Project renamed upstream
 mail/sylpheed-claws-cachesaver|mail/claws-mail-cachesaver|2006-12-31|Project renamed upstream
 mail/sylpheed-claws-etpan_privacy|mail/claws-mail-etpan_privacy|2006-12-31|Project renamed upstream
@@ -2672,12 +2672,12 @@ textproc/nfbtrans||2007-01-05|Has expired: Unfetchable
 comms/ecu||2007-01-05|Has expired: is unfetchable and project homepage disappeared
 net/citadel||2007-01-05|Has expired: http://www.FreeBSD.org/ports/portaudit/4c005a5e-2541-4d95-80a0-00c76919aa66.html
 multimedia/mtv||2007-01-05|Has expired: No new releases in the past 5 years
-mail/py-email2||2007-01-08|Has expired: Only usable python versions schedualed to expire
+mail/py-email2||2007-01-08|Has expired: Only usable python versions scheduled to expire
 net/ruby-radius||2007-01-08|Has expired: distfile disappeared from homepage
 devel/versuch|net/versuch|2007-01-12|Removed duplicate port
 german/tvbrowser|misc/tvbrowser|2007-01-13|move to misc/tvbrowser
 chinese/xcin||2007-01-17|Has expired: dead project, see http://lists.linux.org.tw/pipermail/xcin/2005-November/004300.html
-x11-wm/wmi||2007-01-17|Has expired: This port is unsupported by the author.  Please use x11-wm/wmii instead.
+x11-wm/wmi||2007-01-17|Has expired: This port is unsupported by the author.  Please use x11-wm/wmii instead
 www/abcache||2007-01-17|Has expired: "is a dead project and the distfile disappeared"
 devel/rubygem-event-loop||2007-01-17|Has expired: replaced by devel/ruby-event-loop which gets around issues caused by the rubygems system
 games/hlserver-opera||2007-01-17|Has expired: distfile and homepage disappeared
@@ -2703,9 +2703,9 @@ sysutils/xfce4-showdesktop-plugin|deskutils/orage|2007-01-22|got obsolete by xfc
 x11/xfce4-trigger-launcher||2007-01-22|got obsolete by xfce 4.4 update
 x11-fm/xfce4-fm||2007-01-22|got obsolete by xfce 4.4 update
 x11-wm/xfce4-systray||2007-01-22|got obsolete by xfce 4.4 update
-russian/rispell||2007-01-23|Has expired: does not work with current textproc/ispell, use rus-ispell port istead
+russian/rispell||2007-01-23|Has expired: does not work with current textproc/ispell, use rus-ispell port instead
 audio/mp3encode||2007-01-25|Has expired: is unfetchable and has no homepage
-biology/coalesce||2007-01-25|Has expired: Not supported by the authors. Last version is from 1995. Use biology/fluctuate instead.
+biology/coalesce||2007-01-25|Has expired: Not supported by the authors. Last version is from 1995. Use biology/fluctuate instead
 devel/leoarg||2007-01-25|Has expired: distfile and homepage disappeared
 misc/dirtree||2007-01-25|distfile and homepage disappeared
 misc/argparse||2007-01-25|distfile and homepage disappeared
@@ -2806,17 +2806,17 @@ textproc/cl-meta-cmucl||2007-02-10|Depended on removed port devel/cl-asdf-cmucl
 textproc/cl-ppcre-cmucl||2007-02-10|Depended on removed port devel/cl-asdf-cmucl
 www/cl-lml-cmucl||2007-02-10|Depended on removed port devel/cl-asdf-cmucl
 emulators/vmware-tools2||2007-02-12|Has expired: Unfetchable
-lang/ruby16||2007-02-13|Port passed expiry date and was removed.
-lang/ruby16-shim-ruby18||2007-02-13|Port passed expiry date and was removed.
-lang/ruby16_static||2007-02-13|Port passed expiry date and was removed.
-lang/ruby18_static||2007-02-13|Port passed expiry date and was removed.
+lang/ruby16||2007-02-13|Port passed expiry date and was removed
+lang/ruby16-shim-ruby18||2007-02-13|Port passed expiry date and was removed
+lang/ruby16_static||2007-02-13|Port passed expiry date and was removed
+lang/ruby18_static||2007-02-13|Port passed expiry date and was removed
 devel/Subversive|devel/subversive|2007-02-16|Normalize port name
 www/ruby-mnogosearch||2007-02-17|Has expired: distfile and homepage disappeared
 textproc/p5-Pod-LaTeX||2007-02-18|Has expired: Incorrect pkg-plist
 editors/emacs20-mule-devel||2007-02-18|Has expired: homepage and patchfiles disappeared
-irc/sircd||2007-02-18|Has expired: No upgrade since 02-02-2002. Developer unavailable. Website gone.
-math/vtk43-headers||2007-02-18|Has expired: Please use vtk 4.4 or 5.x.
-math/vtk43||2007-02-18|Has expired: Please use vtk 4.4 or 5.x.
+irc/sircd||2007-02-18|Has expired: No upgrade since 02-02-2002. Developer unavailable. Website gone
+math/vtk43-headers||2007-02-18|Has expired: Please use vtk 4.4 or 5.x
+math/vtk43||2007-02-18|Has expired: Please use vtk 4.4 or 5.x
 textproc/ruby-htmlcompact||2007-02-18|Has expired: distfile and homepage disappeared
 textproc/ruby-rwv2||2007-02-18|Has expired: distfile disappeared and has no homepage
 net/happystats||2007-02-18|Has expired: Disappeared from the internet
@@ -2826,9 +2826,9 @@ www/p5-HTML||2007-02-23|Has expired: project no longer exists
 audio/speex-devel|audio/speex|2007-02-23|Merged into audio/speex
 www/horde|www/horde-base|2007-02-24|Port renamed for consistency
 www/phpip|net-mgmt/phpip|2007-02-26|move to net-mgmt/phpip
-www/aolserver-openacs-pg||2007-02-28|Not longer needed.
-devel/boost-gcc3|devel/boost|2007-03-07|Removed support for FreeBSD 4.
-graphics/jpeg-mmx|graphics/jpeg|2007-03-08|Has expired: no longer needed.
+www/aolserver-openacs-pg||2007-02-28|Not longer needed
+devel/boost-gcc3|devel/boost|2007-03-07|Removed support for FreeBSD 4.X
+graphics/jpeg-mmx|graphics/jpeg|2007-03-08|Has expired: no longer needed
 graphics/gstreamer-plugins-jpeg-mmx80|graphics/gstreamer-plugins-jpeg80|2007-03-08|graphics/jpeg-mmx was removed
 java/linux-ibm-jdk13||2007-03-09|Has expired: Vulnerabilities in the browser plugin
 java/linux-ibm-jdk14||2007-03-09|Has expired: Vulnerabilities in the browser plugin
@@ -2848,7 +2848,7 @@ misc/muuz||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
 misc/xdf||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
 net/telnetx||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
 sysutils/diskmark||2007-03-13|Has expired: Makes no sense on FreeBSD > 4.x.  Use glabel(8) instead
-sysutils/diskusage||2007-03-13|Has expired: Unmainntaied, MASTER_SITES disappeared, WWW disappeared.
+sysutils/diskusage||2007-03-13|Has expired: Unmaintained, MASTER_SITES disappeared, WWW disappeared
 sysutils/xperfmon3||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
 comms/mwavem||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
 chinese/big5fs||2007-03-14|Has expired: Use mount_cd9660(8), mount_msdosfs(8), or mount_ntfs(8) instead
@@ -2949,7 +2949,7 @@ x11/xlibs|xorg-libraries|2007-05-25|Replaced by x11/xorg-libraries
 multimedia/ffmpeg-devel|multimedia/ffmpeg|2007-05-25|Merged multimedia/ffmpeg-devel into multimedia/ffmpeg
 devel/wfut||2007-05-27|Obsolete
 net-im/gaim-hotkeys|net-im/pidgin-hotkeys|2007-05-28|Project renamed
-devel/ruby-inline||2007-05-28|Has expired: New versions only available in rubygems. Use devel/rubygem-inline instead.
+devel/ruby-inline||2007-05-28|Has expired: New versions only available in rubygems. Use devel/rubygem-inline instead
 devel/tkref||2007-05-28|Has expired: is seriously outdated, take a look at http://www.tcl.tk/doc/ for TCL/TK documentation
 net-p2p/amule1||2007-05-28|Has expired: use net-p2p/amule2 if you are running OSVERSION > 500000
 games/marathon-evil||2007-05-28|Has expired: Installed by games/alephone-scenarios with wrapper script
@@ -3028,9 +3028,9 @@ devel/agenda-libs||2007-06-02|Has expired: Agenda VR3 is dead for long time
 devel/agenda-headers||2007-06-02|Has expired: Agenda VR3 is dead for long time
 devel/agenda-snow-libs||2007-06-02|Has expired: Agenda VR3 is dead for long time
 devel/agenda-static-libs||2007-06-02|Has expired: Agenda VR3 is dead for long time
-devel/mipsel-linux-binutils||2007-06-02|Has expired: This is Agenda VR3-specific port, and Agenda VR3 is dead for long time.
-devel/mipsel-linux-gcc||2007-06-02|Has expired: This is Agenda VR3-specific port, and Agenda VR3 is dead for long time.
-devel/mipsel-linux-kernel-headers||2007-06-02|Has expired: This is Agenda VR3-specific port, and Agenda VR3 is dead for long time.
+devel/mipsel-linux-binutils||2007-06-02|Has expired: This is Agenda VR3-specific port, and Agenda VR3 is dead for long time
+devel/mipsel-linux-gcc||2007-06-02|Has expired: This is Agenda VR3-specific port, and Agenda VR3 is dead for long time
+devel/mipsel-linux-kernel-headers||2007-06-02|Has expired: This is Agenda VR3-specific port, and Agenda VR3 is dead for long time
 net/mrtg-ping-probe|net-mgmt/mrtg-ping-probe|2007-06-03|related ports mrtg was moved to net-mgmt from net
 japanese/addttfont||2007-06-03|obsolete
 japanese/p5-mkres||2007-06-03|obsolete
@@ -3048,7 +3048,7 @@ sysutils/xperfmon||2007-06-04|Has expired: irrelevant for supported FreeBSD rele
 textproc/ruby-html-parser||2007-06-04|Has expired: distfile and homepage disappeared
 textproc/ruby-libxslt||2007-06-04|Has expired: Broken on all supported versions of FreeBSD
 www/py-htmltestcase||2007-06-04|Has expired: Upstream site disappeared and dependency is set to expire
-multimedia/snd-music-duplicates||2007-06-05|Has expired: Development has been ceased, successor is shareware.
+multimedia/snd-music-duplicates||2007-06-05|Has expired: Development has been ceased, successor is shareware
 audio/freebirth||2007-06-05|Has expired: Doesn't work on FreeBSD 5.0 and higher
 net/sixxs-heartbeatd||2007-06-05|obsolete, use net/sixxs-aiccu instead
 graphics/tgif-nls|graphics/tgif|2007-06-09|graphics/tgif now supports NLS by default
@@ -3075,14 +3075,14 @@ mail/turba|mail/horde-turba|2007-06-21|Port renamed for consistency
 security/jeta|security/horde-jeta|2007-06-21|Port renamed for consistency
 graphics/digikamimageplugins|graphics/digikam|2007-07-02|Projects merged
 ftp/lukemftp|ftp/tnftp|2007-07-02|Vendor name change
-net/obnc||2007-07-03|Removed: A new version of this port is available from base system.
+net/obnc||2007-07-03|Removed: A new version of this port is available from base system
 databases/p5-DBD-RAM||2007-07-03|Has expired: Only works on 4.x
 databases/p5-DBD-File||2007-07-03|Has expired: Only usable on 4.x
 databases/p5-DBI-137|databases/p5-DBI|2007-07-03|Only useful for 4.x
 multimedia/libdivxencore||2007-07-04|Obsolete port
 multimedia/libdivxdecore||2007-07-04|Obsolete port
 multimedia/libdivxdecore-devel||2007-07-04|Obsolete port
-multimedia/handbrake-gtk2||2007-07-04|Obsolete, getting old to keep unsupport version around
+multimedia/handbrake-gtk2||2007-07-04|Obsolete, getting old to keep unsupported version around
 audio/amarokFS||2007-07-04|Removed
 net/rrdtool|databases/rrdtool|2007-07-05|Move to better category
 sysutils/cd-write||2007-07-06|Obsolete port
@@ -3135,7 +3135,7 @@ www/p5-Kwiki-VimMode||2007-08-01|Has expired: already bundled in www/p5-Kwiki (0
 www/p5-Kwiki-plugins||2007-08-01|Has expired: already bundled in www/p5-Kwiki (0.39 or later)
 www/p5-Kwiki-Icons-Gnome||2007-08-01|Has expired: already bundled in www/p5-Kwiki (0.39 or later)
 x11-fm/endeavour||2007-08-01|Has expired: Development ceased, this port should be updated to Endeavour Mark II
-security/p5-openxpki-client-soap-lite||2007-08-01|Has expired: No longer maintained by Developers.
+security/p5-openxpki-client-soap-lite||2007-08-01|Has expired: No longer maintained by developers
 net-mgmt/aircrack|net-mgmt/aircrack-ng|2007-08-01|Has expired: Please use net-mgmt/aircrack-ng
 databases/ruby-postgres|databases/rubygem-postgres|2007-08-03|Port updated in rubygem version
 editors/flim113||2007-08-05|Expired: distfile no longer available
@@ -3192,7 +3192,7 @@ devel/semantic-emacs20|devel/semantic|2007-08-19|Has expired: emacs20 and relate
 net/ddc||2007-08-22|Usability expired
 games/groundhog||2007-08-22|Game is not worth keeping
 x11-toolkits/pmw|x11-toolkits/py-Pmw|2007-09-02|Port renamed for consistency
-java/gj-jdk11||2007-09-03|Has expired: Modern versions of jdk support generics natively
+java/gj-jdk11||2007-09-03|Has expired: Modern versions of JDK support generics natively
 comms/tilp||2007-09-06|Superseded by comms/tilp2
 net/openbgpd-devel|net/openbgpd|2007-09-06|Older version than in openbgpd port
 net-im/gaim|net-im/pidgin|2007-09-06|Project renamed
@@ -3224,21 +3224,21 @@ devel/fpc-fcl||2007-09-18|It was separated to another fpc-fcl-* ports
 security/vncrypt||2007-09-18|Has expired: not supported on any current version of FreeBSD
 net-mgmt/ocs-unix-agent||2007-09-18|Has expired: Use net-mgmt/ocsinventory-agent instead
 x11-wm/obtuner||2007-09-18|Has expired: broken with recent Openbox and the project is not active anymore
-www/mapedit||2007-09-18|Has expired: Depends on obsolete version of jdk
-www/hotjava||2007-09-18|Has expired: Depends on obsolete version of jdk
+www/mapedit||2007-09-18|Has expired: Depends on obsolete version of JDK
+www/hotjava||2007-09-18|Has expired: Depends on obsolete version of JDK
 sysutils/cd9660_unicode||2007-09-18|Has expired: is obsolete. See mount_cd9660(8)
 net-mgmt/p5-Net-SNMP3||2007-09-18|Has expired: only runs with old, unsupported Perl versions
-lang/fesi||2007-09-18|Has expired: Depends on obsolete version of jdk
+lang/fesi||2007-09-18|Has expired: Depends on obsolete version of JDK
 lang/gnomebasic||2007-09-18|Has expired: Five years abandoned project; functionality folded into mono
-lang/gnat-gcc34||2007-09-18|Has expired: This port was made for initial bootstraping of later versions and is no longer needed
+lang/gnat-gcc34||2007-09-18|Has expired: This port was made for initial bootstrapping of later versions and is no longer needed
 devel/hs-green-card||2007-09-18|Has expired: "Does not build with latest GHC"
 devel/p5-Devel-DProf||2007-09-18|Has expired: only works for old, unsupported Perl versions
-java/jdk11-doc||2007-09-18|Has expired: Obsolete version of jdk
-databases/java-sqlrelay||2007-09-18|Has expired: Depends on obsolete version of jdk
-mail/yuzu||2007-09-18|Has expired: Depends on obsolete version of jdk
+java/jdk11-doc||2007-09-18|Has expired: Obsolete version of JDK
+databases/java-sqlrelay||2007-09-18|Has expired: Depends on obsolete version of JDK
+mail/yuzu||2007-09-18|Has expired: Depends on obsolete version of JDK
 net/ng_netflow||2007-09-18|Has expired: already in base in all supported versions of FreeBSD
-java/jdk12-doc||2007-09-18|Has expired: Obsolete version of jdk
-japanese/netypesv||2007-09-18|Has expired: Depends on obsolete version of jdk
+java/jdk12-doc||2007-09-18|Has expired: Obsolete version of JDK
+japanese/netypesv||2007-09-18|Has expired: Depends on obsolete version of JDK
 net-im/micq|net-im/climm|2007-09-18|Project renamed
 graphics/blender-devel|graphics/blender|2007-09-21|Not needed since binary version is gone
 print/ghostscript-afpl|print/ghostscript-gpl|2007-09-24|Replaced by print/ghostscript-gpl
@@ -3312,7 +3312,7 @@ japanese/navi2ch-emacs20||2007-10-14|Has expired: emacs20 and related ports are 
 japanese/w3||2007-10-14|Has expired: distfile is 10 years old and depends on emacs19 which is obsolete
 korean/mule-freewnn||2007-10-14|Has expired: emacs19 and related ports are obsolete; please use a more recent version
 www/w3||2007-10-14|Has expired: distfile is 10 years old and depends on emacs19 which is obsolete
-security/p5-Digest-SHA2||2007-10-16|Has expired: Has numerious known bugs, deprecated in favor of Digest::SHA
+security/p5-Digest-SHA2||2007-10-16|Has expired: Has numerous known bugs, deprecated in favor of Digest::SHA
 devel/p5-Devel-Peek||2007-10-16|Has expired: depends on antique versions of perl
 devel/bison2|devel/bison|2007-10-17|Bison 1.x to 2.x conversion
 games/actioncube|games/assaultcube|2007-10-19|Project name changed
@@ -3336,8 +3336,8 @@ x11-themes/kde-icons-kids||2007-12-11|Unfetchable
 x11-themes/kde-icons-outline||2007-12-11|Unfetchable
 java/jdk11|java/jdk16|2007-12-11|Obsolete version
 java/jdk12|java/jdk16|2007-12-11|Obsolete version
-java/jfc||2007-12-11|For obsolete version of jdk
-java/jre||2007-12-11|For obsolete version of jdk
+java/jfc||2007-12-11|For obsolete version of JDK
+java/jre||2007-12-11|For obsolete version of JDK
 java/linux-blackdown-jdk12|java/linux-blackdown-jdk14|2007-12-11|Obsolete version
 java/linux-sun-jdk12|java/linux-sun-jdk16|2007-12-11|Obsolete version
 x11-wm/ion-3||2007-12-12|Removed by insistence of software author
