@@ -1,4 +1,4 @@
-%%SITE_PERL%%/Catalyst/Manual.pm
+%%SITE_PERL%%/Catalyst/ManualPlaceholder.pm
 %%SITE_PERL%%/Catalyst/Manual/About.pod
 %%SITE_PERL%%/Catalyst/Manual/Actions.pod
 %%SITE_PERL%%/Catalyst/Manual/Cookbook.pod
