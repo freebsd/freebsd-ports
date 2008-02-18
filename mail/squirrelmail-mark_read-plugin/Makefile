@@ -7,6 +7,7 @@
 
 PORTNAME=	mark_read
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX=	squirrelmail-
@@ -61,6 +62,9 @@ pre-everything::
 	@${ECHO} "WITHOUT_ACTIVATE"
 .endif
 	@${ECHO} ""
+
+post-patch:
+	@${RM} ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/mark_read.php.orig
 
 do-install:
 	${CP} -R ${WRKSRC}/${SQUIRREL_PLUGIN_NAME} ${SQUIRRELDIR}/plugins
