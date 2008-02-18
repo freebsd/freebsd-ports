@@ -11,21 +11,27 @@ bin/scanimage
 @unexec if cmp -s %D/etc/sane.d/bh.conf %D/etc/sane.d/dist/bh.conf; then rm -f %D/etc/sane.d/bh.conf; fi
 @unexec if cmp -s %D/etc/sane.d/canon.conf %D/etc/sane.d/dist/canon.conf; then rm -f %D/etc/sane.d/canon.conf; fi
 @unexec if cmp -s %D/etc/sane.d/canon630u.conf %D/etc/sane.d/dist/canon630u.conf; then rm -f %D/etc/sane.d/canon630u.conf; fi
+@unexec if cmp -s %D/etc/sane.d/cardscan.conf %D/etc/sane.d/dist/cardscan.conf; then rm -f %D/etc/sane.d/cardscan.conf; fi
 @unexec if cmp -s %D/etc/sane.d/coolscan.conf %D/etc/sane.d/dist/coolscan.conf; then rm -f %D/etc/sane.d/coolscan.conf; fi
 @unexec if cmp -s %D/etc/sane.d/coolscan2.conf %D/etc/sane.d/dist/coolscan2.conf; then rm -f %D/etc/sane.d/coolscan2.conf; fi
 @unexec if cmp -s %D/etc/sane.d/dc210.conf %D/etc/sane.d/dist/dc210.conf; then rm -f %D/etc/sane.d/dc210.conf; fi
 @unexec if cmp -s %D/etc/sane.d/dc240.conf %D/etc/sane.d/dist/dc240.conf; then rm -f %D/etc/sane.d/dc240.conf; fi
 @unexec if cmp -s %D/etc/sane.d/dc25.conf %D/etc/sane.d/dist/dc25.conf; then rm -f %D/etc/sane.d/dc25.conf; fi
+@unexec if cmp -s %D/etc/sane.d/dell1600n_net.conf %D/etc/sane.d/dist/dell1600n_net.conf; then rm -f %D/etc/sane.d/dell1600n_net.conf; fi
 @unexec if cmp -s %D/etc/sane.d/dll.conf %D/etc/sane.d/dist/dll.conf; then rm -f %D/etc/sane.d/dll.conf; fi
 @unexec if cmp -s %D/etc/sane.d/dmc.conf %D/etc/sane.d/dist/dmc.conf; then rm -f %D/etc/sane.d/dmc.conf; fi
+@unexec if cmp -s %D/etc/sane.d/epjitsu.conf %D/etc/sane.d/dist/epjitsu.conf; then rm -f %D/etc/sane.d/epjitsu.conf; fi
 @unexec if cmp -s %D/etc/sane.d/epson.conf %D/etc/sane.d/dist/epson.conf; then rm -f %D/etc/sane.d/epson.conf; fi
+@unexec if cmp -s %D/etc/sane.d/epson2.conf %D/etc/sane.d/dist/epson2.conf; then rm -f %D/etc/sane.d/epson2.conf; fi
 @unexec if cmp -s %D/etc/sane.d/fujitsu.conf %D/etc/sane.d/dist/fujitsu.conf; then rm -f %D/etc/sane.d/fujitsu.conf; fi
 @unexec if cmp -s %D/etc/sane.d/genesys.conf %D/etc/sane.d/dist/genesys.conf; then rm -f %D/etc/sane.d/genesys.conf; fi
 %%GPHOTO2%%@unexec if cmp -s %D/etc/sane.d/gphoto2.conf %D/etc/sane.d/dist/gphoto2.conf; then rm -f %D/etc/sane.d/gphoto2.conf; fi
 @unexec if cmp -s %D/etc/sane.d/gt68xx.conf %D/etc/sane.d/dist/gt68xx.conf; then rm -f %D/etc/sane.d/gt68xx.conf; fi
 @unexec if cmp -s %D/etc/sane.d/hp.conf %D/etc/sane.d/dist/hp.conf; then rm -f %D/etc/sane.d/hp.conf; fi
+@unexec if cmp -s %D/etc/sane.d/hp3900.conf %D/etc/sane.d/dist/hp3900.conf; then rm -f %D/etc/sane.d/hp3900.conf; fi
 @unexec if cmp -s %D/etc/sane.d/hp4200.conf %D/etc/sane.d/dist/hp4200.conf; then rm -f %D/etc/sane.d/hp4200.conf; fi
 @unexec if cmp -s %D/etc/sane.d/hp5400.conf %D/etc/sane.d/dist/hp5400.conf; then rm -f %D/etc/sane.d/hp5400.conf; fi
+@unexec if cmp -s %D/etc/sane.d/hs2p.conf %D/etc/sane.d/dist/hs2p.conf; then rm -f %D/etc/sane.d/hs2p.conf; fi
 @unexec if cmp -s %D/etc/sane.d/ibm.conf %D/etc/sane.d/dist/ibm.conf; then rm -f %D/etc/sane.d/ibm.conf; fi
 @unexec if cmp -s %D/etc/sane.d/leo.conf %D/etc/sane.d/dist/leo.conf; then rm -f %D/etc/sane.d/leo.conf; fi
 @unexec if cmp -s %D/etc/sane.d/lexmark.conf %D/etc/sane.d/dist/lexmark.conf; then rm -f %D/etc/sane.d/lexmark.conf; fi
@@ -68,22 +74,28 @@ etc/sane.d/dist/avision.conf
 etc/sane.d/dist/bh.conf
 etc/sane.d/dist/canon.conf
 etc/sane.d/dist/canon630u.conf
+etc/sane.d/dist/cardscan.conf
 etc/sane.d/dist/coolscan.conf
 etc/sane.d/dist/coolscan2.conf
 etc/sane.d/dist/dc210.conf
 etc/sane.d/dist/dc240.conf
 etc/sane.d/dist/dc25.conf
+etc/sane.d/dist/dell1600n_net.conf
 etc/sane.d/dist/dll.conf
 @exec if test ! -e %D/etc/sane.d/dll.conf; then cp %D/etc/sane.d/dist/dll.conf %D/etc/sane.d/dll.conf; fi
 etc/sane.d/dist/dmc.conf
+etc/sane.d/dist/epjitsu.conf
 etc/sane.d/dist/epson.conf
+etc/sane.d/dist/epson2.conf
 etc/sane.d/dist/fujitsu.conf
 etc/sane.d/dist/genesys.conf
 %%GPHOTO2%%etc/sane.d/dist/gphoto2.conf
 etc/sane.d/dist/gt68xx.conf
 etc/sane.d/dist/hp.conf
+etc/sane.d/dist/hp3900.conf
 etc/sane.d/dist/hp4200.conf
 etc/sane.d/dist/hp5400.conf
+etc/sane.d/dist/hs2p.conf
 etc/sane.d/dist/ibm.conf
 etc/sane.d/dist/leo.conf
 etc/sane.d/dist/lexmark.conf
@@ -152,6 +164,9 @@ lib/sane/libsane-canon.so.1
 lib/sane/libsane-canon630u.la
 lib/sane/libsane-canon630u.so
 lib/sane/libsane-canon630u.so.1
+lib/sane/libsane-cardscan.la
+lib/sane/libsane-cardscan.so
+lib/sane/libsane-cardscan.so.1
 lib/sane/libsane-coolscan.la
 lib/sane/libsane-coolscan.so
 lib/sane/libsane-coolscan.so.1
@@ -176,9 +191,15 @@ lib/sane/libsane-dll.so.1
 lib/sane/libsane-dmc.la
 lib/sane/libsane-dmc.so
 lib/sane/libsane-dmc.so.1
+lib/sane/libsane-epjitsu.la
+lib/sane/libsane-epjitsu.so
+lib/sane/libsane-epjitsu.so.1
 lib/sane/libsane-epson.la
 lib/sane/libsane-epson.so
 lib/sane/libsane-epson.so.1
+lib/sane/libsane-epson2.la
+lib/sane/libsane-epson2.so
+lib/sane/libsane-epson2.so.1
 lib/sane/libsane-fujitsu.la
 lib/sane/libsane-fujitsu.so
 lib/sane/libsane-fujitsu.so.1
@@ -197,12 +218,24 @@ lib/sane/libsane-hp.so.1
 lib/sane/libsane-hp3500.la
 lib/sane/libsane-hp3500.so
 lib/sane/libsane-hp3500.so.1
+lib/sane/libsane-hp3900.la
+lib/sane/libsane-hp3900.so
+lib/sane/libsane-hp3900.so.1
 lib/sane/libsane-hp4200.la
 lib/sane/libsane-hp4200.so
 lib/sane/libsane-hp4200.so.1
 lib/sane/libsane-hp5400.la
 lib/sane/libsane-hp5400.so
 lib/sane/libsane-hp5400.so.1
+lib/sane/libsane-hp5590.la
+lib/sane/libsane-hp5590.so
+lib/sane/libsane-hp5590.so.1
+lib/sane/libsane-hpljm1005.la
+lib/sane/libsane-hpljm1005.so
+lib/sane/libsane-hpljm1005.so.1
+lib/sane/libsane-hs2p.la
+lib/sane/libsane-hs2p.so
+lib/sane/libsane-hs2p.so.1
 lib/sane/libsane-ibm.la
 lib/sane/libsane-ibm.so
 lib/sane/libsane-ibm.so.1
@@ -397,22 +430,25 @@ sbin/saned
 %%NLS%%share/locale/cs/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/da/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/de/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/es/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/sane-backends.mo
-%%NLS%%share/locale/no/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sane-backends.mo
 @exec mkdir %D/share/sane
 @exec mkdir %D/share/sane/artec_eplus48u
+@exec mkdir %D/share/sane/epjitsu
 @exec mkdir %D/share/sane/gt68xx
 @exec mkdir %D/share/sane/snapscan
 @dirrmtry share/sane/snapscan
 @dirrmtry share/sane/gt68xx
+@dirrmtry share/sane/epjitsu
 @dirrmtry share/sane/artec_eplus48u
 @dirrmtry share/sane
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/umax
