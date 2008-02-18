@@ -14971,6 +14971,7 @@ seaview		ports/biology/seaview
 sec		ports/sysutils/sec
 seccure		ports/security/seccure
 secpanel	ports/security/secpanel
+secretmaryochronicles	ports/games/secretmaryochronicles
 sectar		ports/archivers/sectar
 sectok		ports/security/sectok
 secure_delete	ports/security/secure_delete
