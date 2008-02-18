@@ -11317,6 +11317,7 @@ p5-Test-Deep	ports/devel/p5-Test-Deep
 p5-Test-Dependencies	ports/devel/p5-Test-Dependencies
 p5-Test-Differences	ports/devel/p5-Test-Differences
 p5-Test-Dir	ports/misc/p5-Test-Dir
+p5-Test-Distribution	ports/devel/p5-Test-Distribution
 p5-Test-Exception	ports/devel/p5-Test-Exception
 p5-Test-Expect	ports/devel/p5-Test-Expect
 p5-Test-File	ports/devel/p5-Test-File
