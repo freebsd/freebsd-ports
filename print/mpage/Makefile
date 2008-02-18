@@ -10,7 +10,7 @@
 # "Legal" (8.5" x 14").
 
 PORTNAME=	mpage
-PORTVERSION=	2.5.5
+PORTVERSION=	2.5.6
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 EXTRACT_SUFX=	.tgz
@@ -21,13 +21,12 @@ COMMENT=	Print multiple pages per sheet of paper
 ALL_TARGET=	default
 
 MAN1=		mpage.1
+PORTDOCS=	CHANGES Characters Copyright Encoding.format FAQ NEWS \
+		README README.OS2 README.amiga SCOPTIONS TODO
 PLIST_FILES=	bin/mpage %%DATADIR%%/CP850.PC %%DATADIR%%/ISO+STD+OTH \
 		%%DATADIR%%/ISO-8859.1 %%DATADIR%%/ISO-8859.15 \
 		%%DATADIR%%/ISO-Latin.1 %%DATADIR%%/ISO-Latin.2
 PLIST_DIRS=	%%DATADIR%%
-
-PORTDOCS=	CHANGES COPYING COPYING.LESSER Characters Copyright Encoding.format \
-		FAQ NEWS README README.OS2 README.amiga SCOPTIONS TODO
 
 post-install:
 .if !defined(NOPORTDOCS)
