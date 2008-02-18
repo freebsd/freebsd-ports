@@ -1617,6 +1617,7 @@
     SUBDIR += p5-Test-Deep
     SUBDIR += p5-Test-Dependencies
     SUBDIR += p5-Test-Differences
+    SUBDIR += p5-Test-Distribution
     SUBDIR += p5-Test-Exception
     SUBDIR += p5-Test-Expect
     SUBDIR += p5-Test-File

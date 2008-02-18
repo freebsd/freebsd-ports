@@ -1,0 +1,5 @@
+When using this module in a test script, it goes through all the modules
+in your distribution, checks their POD, checks that they compile ok and
+checks that they all define a $VERSION.
+
+WWW:	http://search.cpan.org/dist/Test-Distribution/
