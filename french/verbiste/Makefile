@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	verbiste
-PORTVERSION=	0.1.21
+PORTVERSION=	0.1.22
 CATEGORIES=	french textproc
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
@@ -20,6 +20,7 @@ USE_AUTOTOOLS=	libtool:15
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if !defined(PKGNAMEPREFIX)
