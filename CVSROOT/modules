@@ -15490,6 +15490,7 @@ squirrelmail-spam-buttons-plugin	ports/mail/squirrelmail-spam-buttons-plugin
 squirrelmail-timeout_user-plugin	ports/mail/squirrelmail-timeout_user-plugin
 squirrelmail-tmda-plugin	ports/mail/squirrelmail-tmda-plugin
 squirrelmail-unsafe_image_rules-plugin	ports/mail/squirrelmail-unsafe_image_rules-plugin
+squirrelmail-user_special_mailboxes-plugin	ports/mail/squirrelmail-user_special_mailboxes-plugin
 squirrelmail-vlogin-plugin	ports/mail/squirrelmail-vlogin-plugin
 squirrelmail-websearch-plugin	ports/mail/squirrelmail-websearch-plugin
 squirrelmail-wetteronline-plugin	ports/mail/squirrelmail-wetteronline-plugin
