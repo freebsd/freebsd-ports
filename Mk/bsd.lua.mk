@@ -74,7 +74,9 @@
 # LUA_VER_SH	- The Lua shared library major version (e.g. "1").
 # LUA_VER_STR	- The Lua version without the dots (e.g. "51").
 # LUA_PREFIX	- The prefix where Lua (and components) is installed.
+#				  NOTE: please see comments below about its double function.
 # LUA_SUBDIR	- The directory under bin/share/lib where Lua is installed.
+#				  Also used by Lua ports (lang/lua*) to set LATEST_LINK.
 # LUA_INCDIR	- The directory where Lua and tolua header files are installed.
 # LUA_LIBDIR	- The directory where Lua and tolua libraries are installed.
 # LUA_MODLIBDIR	- The directory where Lua module libraries (.so) are installed.
@@ -412,17 +414,36 @@ LUA_VER?=				${_LUA_VER}
 LUA_VER_SH?=			${LUA_VER:C/[[:digit:]]\.([[:digit:]])/\1/}
 LUA_VER_STR?=			${LUA_VER:S/.//g}
 
-# Paths.
-LUA_PREFIX?=			${PREFIX}
+# Package name.
+LUA_PKGNAMEPREFIX?=		lua${LUA_VER_STR}-
 LUA_SUBDIR?=			lua${LUA_VER_STR}
+
+# Currently Lua ports (those which install Lua and modules) must either:
+# 1. Have PORTNAME=lua and LATEST_LINK=${LUA_SUBDIR} (currently Lua ports).
+# 2. Have PKGNAMEPREFIX=${LUA_PKGNAMEPREFIX} (currently Lua modules).
+# 3. Have LUA_PREFIX?=${PREFIX} (currently none).
+#
+# FIXME: the correct solution to this problem could be either:
+# 1. Create a lua*-config script, and make dependent ports use it.
+# 2. Set in each port if it's a "Lua module", or just requires Lua.
+#
+
+.if (defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == ${LUA_PKGNAMEPREFIX}) || \
+    (${PORTNAME} == "lua" && defined(LATEST_LINK) && \
+    ${LATEST_LINK} == ${LUA_SUBDIR})
+# For Lua and modules, which need to install in LUA_*DIR, respect PREFIX.
+LUA_PREFIX?=			${PREFIX}
+.else
+# For dependencies using LUA_{INC,LIB}DIR, use LOCALBASE as expected.
+LUA_PREFIX?=			${LOCALBASE}
+.endif
+
+# Paths.
 LUA_BINDIR?=			${LUA_PREFIX}/bin/${LUA_SUBDIR}
 LUA_INCDIR?=			${LUA_PREFIX}/include/${LUA_SUBDIR}
 LUA_LIBDIR?=			${LUA_PREFIX}/lib/${LUA_SUBDIR}
 LUA_MODLIBDIR?=			${LUA_PREFIX}/lib/lua/${LUA_VER}
 LUA_MODSHAREDIR?=		${LUA_PREFIX}/share/lua/${LUA_VER}
-
-# Package name.
-LUA_PKGNAMEPREFIX?=		lua${LUA_VER_STR}-
 
 # Programs.
 LUA_CMD?=				${LUA_PREFIX}/bin/lua-${LUA_VER}
