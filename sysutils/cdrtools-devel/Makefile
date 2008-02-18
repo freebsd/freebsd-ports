@@ -23,6 +23,7 @@
 
 PORTNAME=	cdrtools
 PORTVERSION=	2.01.01a37
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
@@ -38,15 +39,22 @@ MAN8=		isoinfo.8 mkisofs.8
 MLINKS=		isoinfo.8 devdump.8 isoinfo.8 isodump.8 isoinfo.8 isovfy.8 \
 		mkisofs.8 mkhybrid.8
 DOCS=		README.FreeBSD README.mkisofs
+CDDA2WAVDOCS=	FAQ Frontends HOWTOUSE OtherProgs README THANKS TODO
 CDRECORDDOCS=	README README.ATAPI README.DiskT@2 README.WORM README.audio \
 		README.cdplus README.cdrw README.cdtext README.clone \
 		README.copy README.multi README.raw README.rscsi README.sony \
 		README.verify
-CDDA2WAVDOCS=	FAQ Frontends HOWTOUSE OtherProgs README THANKS TODO
 MKISOFSDOCS=	README README.compression README.eltorito README.graft_dirs \
 		README.hfs_boot README.hfs_magic README.hide README.joliet \
 		README.macosx README.mkhybrid README.prep_boot README.rootinfo \
 		README.session README.sort README.sparcboot README.sunx86boot
+SICONVTABLES=	cp10000 cp10006 cp10007 cp10029 cp10079 cp10081 cp1250 \
+		cp1251 cp1252 cp1253 cp1254 cp1255 cp1256 cp1257 cp1258 \
+		cp437 cp737 cp775 cp850 cp852 cp855 cp857 cp860 cp861 \
+		cp862 cp863 cp864 cp865 cp866 cp869 cp874 iso8859-1 \
+		iso8859-10 iso8859-11 iso8859-13 iso8859-14 iso8859-15 \
+		iso8859-16 iso8859-2 iso8859-3 iso8859-4 iso8859-5 \
+		iso8859-6 iso8859-7 iso8859-8 iso8859-9 koi8-r koi8-u
 
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
@@ -67,11 +75,18 @@ PKGNAMESUFFIX?=	-devel
 .include <bsd.port.pre.mk>
 
 CCOM!=		${BASENAME} ${CC}
-MAKE_ENV=	CCOM=${CCOM} LANG=C
+MAKE_ENV=	CCOM=${CCOM} LANG=C INS_BASE=${LOCALBASE}
 CDRTLSTARGET=	${ARCH}-freebsd-${CCOM}
 
 .if ${OSVERSION} >= 501104 && ${OSVERSION} < 502113
 IGNORE=		does not work with mlockall(2) on your version of FreeBSD 5.x. Please update to FreeBSD 5.3 or later in order to use this port
+.endif
+
+.if exists(${LOCALBASE}/lib/libiconv.a) || \
+	exists(${LOCALBASE}/lib/libintl.a) || !defined(WITHOUT_NLS)
+MAKE_ENV+=	OSDEFS=-I${LOCALBASE}/include
+USE_GETTEXT=	yes
+USE_ICONV=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libcdio.a) || defined(WITH_CDDB)
@@ -112,10 +127,10 @@ post-patch:
 .if !defined(WITH_RSCSI)
 	@${RM} ${WRKSRC}/TARGETS/55rscsi
 .endif
-.for i in btcflash/btcflash.1 cdda2wav/cdda2wav.1 cdrecord/README.rscsi \
-	cdrecord/cdrecord.1 cdrecord/cdrecord.dfl cdrecord/defaults.c \
-	include/schily/deflts.h librscg/scsi-remote.c readcd/readcd.1 \
-	rscsi/rscsi.c rscsi/rscsi.dfl scgcheck/scgcheck.1
+.for i in DEFAULTS/Defaults.freebsd btcflash/btcflash.1 cdda2wav/cdda2wav.1 \
+	cdrecord/README.rscsi cdrecord/cdrecord.1 cdrecord/cdrecord.dfl \
+	cdrecord/defaults.c include/schily/deflts.h librscg/scsi-remote.c \
+	readcd/readcd.1 rscsi/rscsi.c rscsi/rscsi.dfl scgcheck/scgcheck.1
 	@${REINPLACE_CMD} -e 's|\/opt\/schily|${PREFIX}|g; \
 		s|\/usr\/local|${PREFIX}|g; s|\/etc\/default|${PREFIX}\/etc|g; \
 		s|\/var\/adm\/messages|\/var\/run\/dmesg.boot|g' ${WRKSRC}/${i}
@@ -160,6 +175,10 @@ do-install:
 .if !exists(${PREFIX}/etc/cdrecord)
 	@${INSTALL_DATA} ${WRKSRC}/cdrecord/cdrecord.dfl ${PREFIX}/etc/cdrecord
 .endif
+	@${MKDIR} ${PREFIX}/lib/siconv
+.for i in ${SICONVTABLES}
+	@${INSTALL_DATA} ${WRKSRC}/libsiconv/tables/${i} ${PREFIX}/lib/siconv
+.endfor
 .if defined(WITH_RSCSI)
 	@${INSTALL_DATA} ${WRKSRC}/rscsi/rscsi.dfl ${PREFIX}/etc/rscsi.sample
 .if !exists(${PREFIX}/etc/rscsi)
