@@ -52,6 +52,19 @@ instead of "ntfs", and the additional "late" parameter is required. Example:
 
 /dev/ad4s1		/wxp		ntfs-3g	rw,late		0	0
 
+Note that in FreeBSD 7.x, mount(8) has a fixed (hard coded) list of external
+mount_XXX programs that can be called, so to make this work you have to do one
+of the following:
+
+1. Rename /sbin/mount_ntfs, symlink ntfs-3g as the former, and use just "ntfs"
+   as the type in /etc/fstab.
+   $ mv /sbin/mount_ntfs /sbin/mount_ntfs-kern
+   $ ln -s /usr/sbin/mount_ntfs-3g /usr/sbin/mount_ntfs
+2. Apply a patch to src/sbin/mount/mount.c to add "ntfs-3g" as a valid type.
+3. Apply a patch to src/sbin/mount/mount.c to make it work like in 6.x (better
+   than the previous one as will allow any external type). It can be found at:
+   http://people.freebsd.org/~alepulver/current-7.0-mount.diff
+
 ==============================================================================
 4. Ublio configuration
 ==============================================================================
