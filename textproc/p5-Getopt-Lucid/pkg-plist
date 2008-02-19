@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Lucid/.packlist
+%%SITE_PERL%%/Getopt/Lucid.pm
+%%SITE_PERL%%/Getopt/Lucid/Exception.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt/Lucid
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Getopt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/Getopt/Lucid
+@dirrmtry %%SITE_PERL%%/Getopt
