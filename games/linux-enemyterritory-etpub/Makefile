@@ -7,7 +7,7 @@
 
 PORTNAME=	etpub
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games linux
 MASTER_SITES=	http://et.tjw.org/etpub/dist/
 PKGNAMEPREFIX=	linux-enemyterritory-
@@ -45,7 +45,7 @@ pre-patch:
 do-build:
 .for f in et etded
 	@(${ECHO_CMD} "#!/bin/sh"; \
-	${ECHO_CMD} 'exec ${PREFIX}/bin/${f} +set fs_game ${PORTNAME} +set omnibot_path "${DATADIR}/omni-bot" "$$@"') > \
+	${ECHO_CMD} 'exec ${PREFIX}/bin/${f} +set fs_game ${PORTNAME} +set omnibot_path "${DATADIR}/../omni-bot" "$$@"') > \
 		${WRKSRC}/${f}-${PORTNAME}
 .endfor
 

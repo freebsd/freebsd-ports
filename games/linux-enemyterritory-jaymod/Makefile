@@ -7,6 +7,7 @@
 
 PORTNAME=	jaymod
 PORTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://jaymod.clanfu.org/lib/downloads/ \
 		http://budjb.com/lib/downloads/ \
@@ -38,7 +39,7 @@ RUN_DEPENDS+=	et-omni-bot:${PORTSDIR}/games/linux-enemyterritory-omni-bot
 do-build:
 .for f in et etded
 	@(${ECHO_CMD} "#!/bin/sh"; \
-	${ECHO_CMD} 'exec ${PREFIX}/bin/${f} +set fs_game ${PORTNAME} +set omnibot_path "${DATADIR}/omni-bot" "$$@"') > \
+	${ECHO_CMD} 'exec ${PREFIX}/bin/${f} +set fs_game ${PORTNAME} +set omnibot_path "${DATADIR}/../omni-bot" "$$@"') > \
 		${WRKSRC}/${f}-${PORTNAME}
 .endfor
 

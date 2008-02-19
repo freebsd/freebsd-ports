@@ -7,6 +7,7 @@
 
 PORTNAME=	omni-bot
 PORTVERSION=	0.66
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -27,7 +28,7 @@ DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
 do-build:
 .for f in et etded
 	@(${ECHO_CMD} "#!/bin/sh"; \
-	${ECHO_CMD} 'exec ${PREFIX}/bin/${f} +set fs_game ${PORTNAME} +set omnibot_path "${DATADIR}/omni-bot" "$$@"') > \
+	${ECHO_CMD} 'exec ${PREFIX}/bin/${f} +set fs_game ${PORTNAME} +set omnibot_path "${DATADIR}" "$$@"') > \
 		${WRKSRC}/${f}-${PORTNAME}
 .endfor
 
