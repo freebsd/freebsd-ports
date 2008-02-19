@@ -1,5 +1,5 @@
---- ./Makefile.PL.orig	Wed Dec 26 15:47:34 2007
-+++ ./Makefile.PL	Wed Dec 26 15:49:41 2007
+--- ./Makefile.PL.orig	Tue Feb 19 09:43:14 2008
++++ ./Makefile.PL	Tue Feb 19 09:45:48 2008
 @@ -17,30 +17,4 @@
  requires    'HTTP::Request'    =>    0;
  requires    'HTTP::Response'   =>    0;
@@ -9,7 +9,7 @@
 -build_requires   'LWP::ConnCache'               =>    0;
 -
 -my $value = prompt( 'Do you want to test streaming ( requires POE::Component::Client::HTTP ) [y/N]?', 'N' );
--build_requires   'POE::Component::Client::HTTP' =>    0 if $value =~ /^Y$/i;
+-build_requires   'POE::Component::Client::HTTP' => 0.82 if $value =~ /^Y$/i;
 -
 -# Ask users if they want SSL support
 -$value = prompt( 'Do you want SSL support ( requires POE::Component::SSLify ) [y/N]?', 'N' );
@@ -23,11 +23,11 @@
 -# Add to the prereqs IPC::Shareable?
 -if ( $value =~ /^Y$/i ) {
 -   requires 'IPC::Shareable' => '0';
--   build_requires   'POE::Component::Client::HTTP' =>    0;
+-   build_requires   'POE::Component::Client::HTTP' => 0.82;
 -}
 -
 -# Sanity check
 -eval { require IPC::Shareable; };
--build_requires 'POE::Component::Client::HTTP' =>    0 unless $@;
+-build_requires 'POE::Component::Client::HTTP' => 0.82 unless $@;
 -
  WriteAll();
