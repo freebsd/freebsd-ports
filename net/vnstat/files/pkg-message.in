@@ -1,0 +1,9 @@
+###########################################################################
+vnstat has been installed.
+
+This port neeeds a cron entry. Please copy the contents of:
+%%DOCSDIR%%/vnstat-cron to your crontab.
+
+For more information about vnStat use "man vnstat" or visit:
+http://humdi.net/vnstat/
+###########################################################################
