@@ -1743,7 +1743,6 @@
     SUBDIR += p5-capitalization
     SUBDIR += p5-enum
     SUBDIR += p5-forks
-    SUBDIR += p5-gearmand
     SUBDIR += p5-iCal-Parser
     SUBDIR += p5-mixin
     SUBDIR += p5-mocked
