@@ -1,0 +1,7 @@
+The goal of this module is providing good code readability and clarity
+of intent for command-line option processing. While readability is a
+subjective standard, Getopt::Lucid relies on a more verbose,
+plain-English option specification as compared against the more symbolic
+approach of Getopt::Long.
+
+WWW:	http://search.cpan.org/dist/Getopt-Lucid/
