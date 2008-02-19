@@ -20,6 +20,8 @@ BUILD_DEPENDS=	p5-Imager>=0:${PORTSDIR}/graphics/p5-Imager \
 		libqrencode>=0:${PORTSDIR}/graphics/libqrencode
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Does not build
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Imager::QRCode.3
