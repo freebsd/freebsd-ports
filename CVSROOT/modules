@@ -16668,6 +16668,7 @@ vnc		ports/net/vnc
 vnc2swf		ports/net/vnc2swf
 vnccrack	ports/security/vnccrack
 vncreflector	ports/net/vncreflector
+vnstat		ports/net/vnstat
 vobcopy		ports/sysutils/vobcopy
 vodcatcher	ports/multimedia/vodcatcher
 vodmr		ports/mail/vodmr
