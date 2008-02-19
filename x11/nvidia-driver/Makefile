@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	100.14.19
+DISTVERSION?=	169.07
 PORTREVISION?=	0			# For consistency with slave ports
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -35,13 +35,18 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 # you need to use legacy driver version and install one of corresponding
 # `x11/nvidia-driver-71xx' or `x11/nvidia-driver-96xx' slave ports.
 #
-NVVERSION=	${DISTVERSION:S/.//g}
-
-# Use a dirty hack to apply patches selectively based on NVVERSION (first
-# two or three digits, really).
+# NVidia played it tricky with their versioning scheme once again.  To make
+# stable and legacy versions comprable, employ some sad ugly hackery: assign
+# NVVERSION for slave ports independently of master.  Hopefully, this is a
+# temporary measure and will go away soon.
 #
+NVVERSION?=	${DISTVERSION:S/.//g}00
+
 EXTRA_PATCHES=	${PATCHDIR}/7667-patch-lib::Makefile \
-		${PATCHDIR}/${NVVERSION:C/....$//}xx-patch-*
+# Legacy versions still need the locking patch
+.if ${NVVERSION} < 1000000
+EXTRA_PATCHES+=	${PATCHDIR}/${NVVERSION:C/....$//}xx-patch-*
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -135,7 +140,7 @@ pre-su-install:
 # XXX This port silently assumes PREFIX == X11BASE XXX
 	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
 # xorg-server-1.4 installs its own ${X11BASE}/lib/xorg/modules/libwfb.so,
-# so back it up so it can be later restored similarly to what nVidia does:
+# so back it up so it can be later restored similarly to what NVidia does:
 .if ${NVVERSION} >= 974600 && ${X_WINDOW_SYSTEM} == "xorg"
 	@${MV} -f ${PREFIX}/${MODULESDIR}/libwfb.so \
 		${PREFIX}/${MODULESDIR}/XXX-libwfb.so.%%.${XSERVVERSION}
@@ -152,6 +157,8 @@ post-install:
 	@${REINPLACE_CMD} '/wfb/d' ${TMPPLIST}
 .endif
 	@${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
