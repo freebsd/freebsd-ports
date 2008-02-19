@@ -52,6 +52,10 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		Does not compile
+.endif
+
 .if ${OSVERSION} < 502106
 IGNORE=	is of no use for you because your system is too old and doesn't have pf
 .endif
