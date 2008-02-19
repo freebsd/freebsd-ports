@@ -102,7 +102,7 @@ OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 
 .  if (defined(SERVER_ONLY) && defined(WITH_HIER)) || make(makesum)
-PATCH_SITES+=	http://gppl.moonbone.ru/:hier812055
+PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-hier/:hier812055
 PATCHFILES+=	hier-Pg8.1.2-0.5.5.diff.gz:hier812055
 USE_BISON=	build
 .  endif
@@ -112,7 +112,7 @@ USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-8111-icu-xx-2008-01-08.diff.gz:icu
+PATCHFILES+=	pg-8111-icu-xx-2008-02-19.diff.gz:icu
 .  endif
 
 PATCH_DIST_STRIP=-p1
