@@ -204,7 +204,7 @@ do-install:
 .else
 
 post-patch:
-	LC_CTYPE=C ${REINPLACE_CMD} "`${PRINTF} 's|\0152\013\0350|\0152\\\n\0350|g'`" \
+	LC_ALL=C ${REINPLACE_CMD} "`${PRINTF} 's|\0152\013\0350|\0152\\\n\0350|g'`" \
 		${WRKSRC}/lib/sbin${BITS}${OSSFX}/vmware-checkvm
 
 do-build:
