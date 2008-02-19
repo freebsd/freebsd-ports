@@ -1,6 +1,6 @@
---- configure.orig	Fri Sep  2 03:27:55 2005
-+++ configure	Sun Sep  4 16:10:14 2005
-@@ -34922,7 +34922,7 @@
+--- configure.orig	2008-02-11 15:36:45.000000000 -0800
++++ configure	2008-02-19 14:03:01.410279419 -0800
+@@ -31928,7 +31928,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +9,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -34995,7 +34995,7 @@
+@@ -32004,7 +32004,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,3 +18,12 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
+@@ -32263,7 +32263,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+-#include <unicode/utypes.h>
++#include <unicode/utypes.h-disabled>
+ 
+ int
+ main ()
