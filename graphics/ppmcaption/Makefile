@@ -19,17 +19,10 @@ CONFIGURE_ARGS+=	--with-builtin="ncenB24.bdf -scale 0.5 -blur 5"
 MAN1=		ppmcaption.1
 PLIST_FILES=	bin/ppmcaption
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64"
-BROKEN=		"Does not compile on ia64"
-.endif
-
-.if ${ARCH} == "amd64" && ${OSVERSION} < 700000
-BROKEN=		Does not compile on amd64 5.x/6.x
-.endif
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	does not compile on ia64 or amd64
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-lang-c89,," ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
