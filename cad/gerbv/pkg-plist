@@ -1,4 +1,5 @@
 bin/gerbv
+share/applications/gerbv.desktop
 %%PORTDOCS%%%%DOCSDIR%%/PNG-print/PNGPrintMiniHowto.txt
 %%PORTDOCS%%%%DOCSDIR%%/PNG-print/gimp-window.jpg
 %%PORTDOCS%%%%DOCSDIR%%/aperturemacro.txt
@@ -84,6 +85,12 @@ bin/gerbv
 %%DATADIR%%/scheme/gerb-debug.scm
 %%DATADIR%%/scheme/gerb-ps.scm
 %%DATADIR%%/scheme/init.scm
+share/icons/hicolor/16x16/apps/gerbv.png
+share/icons/hicolor/22x22/apps/gerbv.png
+share/icons/hicolor/24x24/apps/gerbv.png
+share/icons/hicolor/32x32/apps/gerbv.png
+share/icons/hicolor/48x48/apps/gerbv.png
+share/icons/hicolor/scalable/apps/gerbv.svg
 @dirrm %%DATADIR%%/scheme
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/trailing
@@ -105,3 +112,6 @@ bin/gerbv
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/eagle
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/PNG-print
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

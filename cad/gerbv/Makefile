@@ -7,16 +7,17 @@
 #
 
 PORTNAME=	gerbv
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	cad
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Free Gerber Viewer
 
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	desktopfileutils gnometarget gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+INSTALLS_ICONS=	yes
 
 MAN1=		gerbv.1
 
@@ -27,8 +28,20 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|LIBPNG_CONFIG --cflags|PKG_CONFIG --cflags libpng12|g ; \
 		 s|LIBPNG_CONFIG --ldflags|PKG_CONFIG --libs libpng12|g'
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|desktop||g' ${WRKSRC}/Makefile.in
 
 post-install:
+	@${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/desktop/gerbv.desktop \
+		${PREFIX}/share/applications
+	@${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/desktop/gerbv.svg \
+		${PREFIX}/share/icons/hicolor/scalable/apps
+.for i in 16 22 24 32 48
+	@${MKDIR} ${PREFIX}/share/icons/hicolor/${i}x${i}/apps
+	${INSTALL_DATA} ${WRKSRC}/desktop/gerbv-${i}.png \
+		${PREFIX}/share/icons/hicolor/${i}x${i}/apps/gerbv.png
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.fig ${DOCSDIR}
@@ -45,5 +58,6 @@ post-install:
 	cd ${WRKSRC}/example && ${FIND} . ! -name "*Makefile*" | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
+	-@update-desktop-database
 
 .include <bsd.port.mk>
