@@ -391,6 +391,7 @@
     SUBDIR += libvisual
     SUBDIR += libvisual-plugins
     SUBDIR += libvisual04
+    SUBDIR += libvisual04-plugins
     SUBDIR += libwmf
     SUBDIR += libwpcg
     SUBDIR += libx3dtk
