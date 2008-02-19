@@ -8,6 +8,9 @@
 DISTVERSION=	96.43.01
 PORTREVISION=	0
 
+# XXX Should be set in master port XXX
+NVVERSION=	${DISTVERSION:S/.//g}
+
 MASTERDIR=	${.CURDIR}/../nvidia-driver
 
 .include "${MASTERDIR}/Makefile"
