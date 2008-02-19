@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	detex
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	print
 MASTER_SITES=	http://www.cs.purdue.edu/homes/trinkle/detex/
 EXTRACT_SUFX=	.tar
