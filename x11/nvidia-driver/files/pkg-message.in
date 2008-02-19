@@ -1,4 +1,3 @@
-
 To use these drivers, make sure that you have loaded the nvidia kernel
 module, by doing
 
@@ -35,4 +34,3 @@ in /var/log/Xorg.0.log while actually you have ``options SYSVSHM''
 enabled in kernel, the sysctl ``kern.ipc.shmall'' should be increased.
 
 See %%DOCSDIR%%/README for more information.
-
