@@ -1,4 +1,3 @@
-etc/ggz.modules
 lib/ggz/ggz.ttt3d
 lib/ggz/geekgame
 share/ggz/geekgame/bot.png
@@ -13,6 +12,12 @@ share/ggz/ttt3d/board.bmp
 share/ggz/ttt3d/cursor.bmp
 share/ggz/ttt3d/figure.bmp
 share/ggz/ttt3d/lines.bmp
+@unexec ggz-config -D --remove --modfile=%D/share/ggz/geekgame.dsc --force
+share/ggz/geekgame.dsc
+@exec ggz-config -D --install --modfile=%D/share/ggz/geekgame.dsc --force
+@unexec ggz-config -D --remove --modfile=%D/share/ggz/ttt3d.dsc --force
+share/ggz/ttt3d.dsc
+@exec ggz-config -D --install --modfile=%D/share/ggz/ttt3d.dsc --force
 @dirrm share/ggz/geekgame
 @dirrm share/ggz/ttt3d
 @dirrmtry lib/ggz

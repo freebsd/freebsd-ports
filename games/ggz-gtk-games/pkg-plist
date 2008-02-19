@@ -1,4 +1,3 @@
-etc/ggz.modules
 lib/ggz/ggz.ccheckers
 lib/ggz/ggz.chess
 lib/ggz/ggz.combat
@@ -99,6 +98,33 @@ share/ggz/reversi/pixmaps/enemydot.svg
 share/ggz/reversi/pixmaps/white.svg
 share/ggz/tictactoe/pixmaps/o.svg
 share/ggz/tictactoe/pixmaps/x.svg
+@unexec ggz-config -D --remove --modfile=%D/share/ggz/chess.dsc --force
+share/ggz/chess.dsc
+@exec ggz-config -D --install --modfile=%D/share/ggz/chess.dsc --force
+@unexec ggz-config -D --remove --modfile=%D/share/ggz/chinese-checkers.dsc --force
+share/ggz/chinese-checkers.dsc
+@exec ggz-config -D --install --modfile=%D/share/ggz/chinese-checkers.dsc --force
+@unexec ggz-config -D --remove --modfile=%D/share/ggz/combat.dsc --force
+share/ggz/combat.dsc
+@exec ggz-config -D --install --modfile=%D/share/ggz/combat.dsc --force
+@unexec ggz-config -D --remove --modfile=%D/share/ggz/dots.dsc --force
+share/ggz/dots.dsc
+@exec ggz-config -D --install --modfile=%D/share/ggz/dots.dsc --force
+@unexec ggz-config -D --remove --modfile=%D/share/ggz/ggzcards.dsc --force
+share/ggz/ggzcards.dsc
+@exec ggz-config -D --install --modfile=%D/share/ggz/ggzcards.dsc --force
+@unexec ggz-config -D --remove --modfile=%D/share/ggz/hastings.dsc --force
+share/ggz/hastings.dsc
+@exec ggz-config -D --install --modfile=%D/share/ggz/hastings.dsc --force
+@unexec ggz-config -D --remove --modfile=%D/share/ggz/reversi.dsc --force
+share/ggz/reversi.dsc
+@exec ggz-config -D --install --modfile=%D/share/ggz/reversi.dsc --force
+@unexec ggz-config -D --remove --modfile=%D/share/ggz/spades.dsc --force
+share/ggz/spades.dsc
+@exec ggz-config -D --install --modfile=%D/share/ggz/spades.dsc --force
+@unexec ggz-config -D --remove --modfile=%D/share/ggz/tictactoe.dsc --force
+share/ggz/tictactoe.dsc
+@exec ggz-config -D --install --modfile=%D/share/ggz/tictactoe.dsc --force
 %%NLS%%share/locale/de/LC_MESSAGES/chess.mo
 %%NLS%%share/locale/de/LC_MESSAGES/chinese-checkers.mo
 %%NLS%%share/locale/de/LC_MESSAGES/combat.mo
