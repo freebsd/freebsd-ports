@@ -4,6 +4,6 @@ SIZE (postgresql/postgresql-8.1.11.tar.bz2) = 11735420
 MD5 (postgresql/hier-Pg8.1.2-0.5.5.diff.gz) = 15916bf13b99702599ce70b6475f7d86
 SHA256 (postgresql/hier-Pg8.1.2-0.5.5.diff.gz) = 14ecc3809ce69f47c3460efee3fc7fce78f68802936650fc4e1132adffd41d1e
 SIZE (postgresql/hier-Pg8.1.2-0.5.5.diff.gz) = 31203
-MD5 (postgresql/pg-8111-icu-xx-2008-01-08.diff.gz) = 3ea2b3d7a3da131c8c7ccff9c4ef7155
-SHA256 (postgresql/pg-8111-icu-xx-2008-01-08.diff.gz) = 9afef8ee462085effc9d977710af5b39f432e8d37bc1256aacbd2c736fb8db8f
-SIZE (postgresql/pg-8111-icu-xx-2008-01-08.diff.gz) = 4205
+MD5 (postgresql/pg-8111-icu-xx-2008-02-19.diff.gz) = f7feae5b29a560e3d0c47287d57a3edf
+SHA256 (postgresql/pg-8111-icu-xx-2008-02-19.diff.gz) = efde913bb698fbdeeeba045a018675c24bd3ddc0027aa0b3ffa97479237c31d0
+SIZE (postgresql/pg-8111-icu-xx-2008-02-19.diff.gz) 4213
