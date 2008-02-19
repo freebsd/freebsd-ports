@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellm
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -82,7 +82,9 @@ MAN1PREFIX=	${X11BASE}
 .include <bsd.port.pre.mk>
 
 ALL_TARGET=	freebsd
+.if ${OSVERSION} < 500000
 INSTALL_TARGET=	install_freebsd
+.endif
 
 MAKE_ENV+=	CC="${CC}" INSTALLROOT=${X11BASE} INSTALLDIR=${X11BASE}/bin \
 		PKGCONFIGDIR=${X11BASE}/libdata/pkgconfig \
@@ -114,9 +116,13 @@ post-install:
 	@${MKDIR} ${X11BASE}/libexec/gkrellm2/plugins
 	@${MKDIR} ${X11BASE}/share/gkrellm2/themes
 	@${GZIP_CMD} ${MAN1PREFIX}/man/man1/gkrellm.1
+.if ${OSVERSION} < 500000
 	@${CHMOD} 2511 ${X11BASE}/bin/gkrellm
 .endif
+.endif
+.if ${OSVERSION} < 500000
 	@${CHMOD} 2511 ${PREFIX}/sbin/gkrellmd
+.endif
 	@${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins-gkrellmd
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/server/gkrellmd.conf \
