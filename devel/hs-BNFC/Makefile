@@ -7,6 +7,7 @@
 
 PORTNAME=	bnfc
 PORTVERSION=	2.4b
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.chalmers.se/Cs/Research/Language-technology/BNFC/download/ \
 		http://web.student.chalmers.se/~kaiw/FreeBSD/disfiles/
@@ -26,10 +27,10 @@ do-install:
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
