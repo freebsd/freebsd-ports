@@ -1,5 +1,7 @@
 bin/rigctl
+bin/rigctld
 bin/rigmem
+bin/rigsmtr
 bin/rigswr
 bin/rotctl
 include/hamlib/rig.h
