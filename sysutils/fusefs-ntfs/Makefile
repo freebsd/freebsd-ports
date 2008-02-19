@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	ntfs
-PORTVERSION=	1.2129
+PORTVERSION=	1.2216
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ntfs-3g.org/
 PKGNAMEPREFIX=	fusefs-
