@@ -145,7 +145,6 @@
     SUBDIR += freenet6
     SUBDIR += freenx
     SUBDIR += freeradius
-    SUBDIR += freeradius-devel
     SUBDIR += freeradius-mysql
     SUBDIR += freeradius2
     SUBDIR += freevrrpd
