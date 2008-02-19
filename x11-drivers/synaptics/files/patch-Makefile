@@ -8,7 +8,8 @@
 +  ARCH = $(shell uname -m)
  endif
  ifeq ($(ARCH),amd64)
-   ARCH = x86_64
+-  ARCH = x86_64
++  override ARCH = x86_64
  endif
  ifeq ($(ARCH),x86_64)
    ARCH_DEFINES = -D__x86_64__ -D_XSERVER64

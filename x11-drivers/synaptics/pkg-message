@@ -2,10 +2,6 @@
 
 			* SETUP NOTE * SETUP NOTE *
 
-o Please remove ${X11BASE}/lib/modules/input/synaptics_drv.so
-  manually, If you have installed synaptics-0.14.4_1.  I forgot
-  to chase pkg-plist on 0.14.4_1.
-
 o Add boot time tunable to /boot/loader.conf.
   Set hw.psm.synaptics_support=1 and shutdown -r now!
 
@@ -29,11 +25,19 @@ o Set your /etc/xorg.conf (or /etc/XF86Config)
   Please disable your existing "CorePointer" in "ServerLayout"
   section, only use "Synaptics_Touchpad" CorePointer.
 
+  * IMPORTANT NOTICE *
+  Please set *AllowEmptyInput* option at ServerFlags section.
+
 /etc/xorg.conf (or /etc/XF86Config) ---------------
 	:
 Section "Module"
 		:
 	Load		"synaptics"
+EndSection
+
+Section "ServerFlags"
+		:
+	Option		"AllowEmptyInput"
 EndSection
 
 Section "ServerLayout"
