@@ -7,7 +7,7 @@
 
 PORTNAME=	ipacco
 PORTVERSION=	0.2.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ipacco
@@ -16,7 +16,7 @@ MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Web based tool to analyze Cisco IP accounting data
 
 RUN_DEPENDS=	${LOCALBASE}/include/tclExtend.h:${PORTSDIR}/lang/tclX \
-		${LOCALBASE}/lib/mysqltcl-3.03/pkgIndex.tcl:${PORTSDIR}/databases/mysqltcl \
+		${LOCALBASE}/lib/mysqltcl-3.04/pkgIndex.tcl:${PORTSDIR}/databases/mysqltcl \
 		dtplite:${PORTSDIR}/devel/tcllib
 
 NO_BUILD=	yes
