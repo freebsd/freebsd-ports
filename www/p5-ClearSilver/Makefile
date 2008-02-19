@@ -14,8 +14,8 @@ DISTFILES=
 MAINTAINER=	rink@FreeBSD.org
 COMMENT=	Perl bindings for fast and powerful template system
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/clearsilver:extract
-RUN_DEPENDS=	${LOCALBASE}/bin/cstest:${PORTSDIR}/www/clearsilver
+BUILD_DEPENDS=	${LOCALBASE}/lib/libneo_cs.a:${PORTSDIR}/www/clearsilver \
+		${NONEXISTENT}:${PORTSDIR}/www/clearsilver:extract
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include/ClearSilver"
