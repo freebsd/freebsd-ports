@@ -20,7 +20,13 @@ USE_OPENLDAP=	yes
 
 PLIST_FILES=	lib/lkpd_ldap.so lib/lkpd_ldap.so.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700042
+BROKEN=		Does not compile with gcc42 on 64-bit platforms
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
