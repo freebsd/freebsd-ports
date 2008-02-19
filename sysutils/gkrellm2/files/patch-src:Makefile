@@ -1,8 +1,8 @@
 Index: src/Makefile
 diff -u src/Makefile.orig src/Makefile
---- src/Makefile.orig	Wed Oct 25 08:42:42 2006
-+++ src/Makefile	Tue Dec 26 10:46:38 2006
-@@ -39,17 +39,19 @@
+--- src/Makefile.orig	2007-05-29 04:12:20.000000000 +0900
++++ src/Makefile	2008-02-19 18:45:50.000000000 +0900
+@@ -41,17 +41,19 @@
  endif
  
  
@@ -25,7 +25,7 @@ diff -u src/Makefile.orig src/Makefile
  else
      EXTRAOBJS ?= md5c.o
  endif
-@@ -68,9 +70,17 @@
+@@ -70,9 +72,17 @@
  
  PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
  
@@ -44,7 +44,7 @@ diff -u src/Makefile.orig src/Makefile
  LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS) $(SSL_LIBS) $(SENSORS_LIBS)
  
  ifeq ($(debug),1)
-@@ -96,7 +106,7 @@
+@@ -98,7 +108,7 @@
  endif
  
  
@@ -53,3 +53,25 @@ diff -u src/Makefile.orig src/Makefile
  
  OBJS =	main.o alerts.o battery.o base64.o clock.o cpu.o disk.o fs.o \
  	hostname.o inet.o mail.o mem.o net.o proc.o sensors.o uptime.o \
+@@ -124,13 +134,20 @@
+ 	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -lmd" gkrellm
+ endif
+ 
+-freebsd3 freebsd:
++freebsd3 freebsd4:
+ ifeq ($(HAVE_SSL),1)
+ 	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -ldevstat" gkrellm
+ else
+ 	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -ldevstat -lmd" gkrellm
+ endif
+ 
++freebsd5 freebsd6 freebsd7 freebsd:
++ifeq ($(HAVE_SSL),1)
++	$(MAKE) EXTRAOBJS= SYS_LIBS="-ldevstat" gkrellm
++else
++	$(MAKE) EXTRAOBJS= SYS_LIBS="-ldevstat -lmd" gkrellm
++endif
++
+ darwin: 
+ ifeq ($(HAVE_SSL),1)
+ 	$(MAKE) GTK_CONFIG=gtk-config STRIP= \

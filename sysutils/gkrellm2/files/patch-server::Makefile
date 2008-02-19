@@ -56,6 +56,22 @@ diff -u server/Makefile.orig server/Makefile
  	$(CC) $(OBJS) $(EXTRAOBJS) -o gkrellmd.static -static \
  		$(LIBS) $(LINK_FLAGS)
  
+@@ -122,10 +131,14 @@
+ 	$(MAKE) GTK_CONFIG=gtk12-config \
+ 		EXTRAOBJS= SYS_LIBS="-lkvm -lmd" gkrellmd
+ 
+-freebsd3 freebsd:
++freebsd3 freebsd4:
+ 	$(MAKE) GTK_CONFIG=gtk12-config \
+ 		EXTRAOBJS= SYS_LIBS="-lkvm -ldevstat -lmd" gkrellmd
+ 
++freebsd5 freebsd6 freebsd7 freebsd:
++	$(MAKE) GTK_CONFIG=gtk12-config \
++		EXTRAOBJS= SYS_LIBS="-ldevstat -lmd" gkrellmd
++
+ darwin: 
+ 	$(MAKE) GTK_CONFIG=gtk-config STRIP= \
+ 		EXTRAOBJS= SYS_LIBS="-lkvm -lmd5" \
 @@ -159,7 +168,7 @@
  	SYS_LIBS=" -llargeint -lws2_32 -lpdh -lnetapi32 -liphlpapi -lntdll -lintl" \
  	gkrellmd
