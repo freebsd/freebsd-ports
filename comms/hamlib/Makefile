@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hamlib
-PORTVERSION=	1.2.6.1
-PORTREVISION=	1
+PORTVERSION=	1.2.7
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,8 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-perl-binding --with-python=${PYTHON_CMD}
 PLIST_SUB=	VER=${PORTVERSION}
 
-MAN1=		rigctl.1 rigmem.1 rigswr.1 rotctl.1
-MAN8=		rpc.rigd.8 rpc.rotd.8
+MAN1=		rigctl.1 rigmem.1 rigswr.1 rotctl.1 rigsmtr.1
+MAN8=		rpc.rigd.8 rpc.rotd.8 rigctld.8
 
 OPTIONS	=	PYTHON	"Define if you want PYTHON bindings" OFF \
 		TCL	"Define if you want TCL bindings" OFF \
