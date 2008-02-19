@@ -8,7 +8,7 @@
 
 PORTNAME=	ggz-sdl-games
 PORTVERSION=	${GGZ_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
@@ -24,6 +24,10 @@ USE_GGZ=	client
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/geekgame/module.dsc ${PREFIX}/share/ggz/geekgame.dsc
+	${INSTALL_DATA} ${WRKSRC}/ttt3d/module.dsc ${PREFIX}/share/ggz/ttt3d.dsc
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/games/libggz/bsd.ggz.mk"
