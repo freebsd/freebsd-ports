@@ -1,9 +1,9 @@
---- include/Makefile.in.orig	2007-08-28 15:39:22.000000000 +0200
-+++ include/Makefile.in	2007-08-28 15:36:52.000000000 +0200
+--- include/Makefile.in.orig	Fri Dec 21 15:00:52 2007
++++ include/Makefile.in	Thu Jan 17 20:23:32 2008
 @@ -229,7 +229,7 @@
- BUILT_SOURCES = nut_version.h
- CLEANFILES = nut_version.h
- SVNREV = $(shell svnversion -n $(top_srcdir) 2>/dev/null)
+ BUILT_SOURCES = nut_version.h nut_stdint.h
+ CLEANFILES = nut_version.h nut_stdint.h
+ SVNREV = $(shell unset LANG && svnversion -n $(top_srcdir) 2>/dev/null)
 -NUT_VERSION = $(shell if test "$(SVNREV)" = "exported"; then echo "$(PACKAGE_VERSION)"; else echo "$(PACKAGE_VERSION)-$(SVNREV)"; fi)
 +NUT_VERSION = $(shell if test "$(SVNREV)" = "exported" -o -z "${SVNREV}"; then echo "$(PACKAGE_VERSION)"; else echo "$(PACKAGE_VERSION)-$(SVNREV)"; fi)
  all: $(BUILT_SOURCES) config.h
