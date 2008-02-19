@@ -6945,6 +6945,7 @@ libvc		ports/devel/libvc
 libvisual	ports/graphics/libvisual
 libvisual-plugins	ports/graphics/libvisual-plugins
 libvisual04	ports/graphics/libvisual04
+libvisual04-plugins	ports/graphics/libvisual04-plugins
 libvmime	ports/mail/libvmime
 libvncserver	ports/net/libvncserver
 libvolume_id	ports/devel/libvolume_id
