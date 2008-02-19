@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-gmail-notifier
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	mail deskutils
 MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/
 
@@ -15,7 +16,7 @@ COMMENT=	A Gmail Inbox Monitor for the GNOME2 desktop
 
 LIB_PC_DEPENDS=	libnotify:devel/libnotify	\
 		libsoup-2.2:devel/libsoup	\
-		gnutls:security/gnutls
+		gnome-keyring-1:security/gnome-keyring
 
 BUILD_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|:C|:|.pc:${PORTSDIR}/|}
 RUN_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|:C|:|.pc:${PORTSDIR}/|}
@@ -24,6 +25,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 libgnome libgnomeui libxml2 libglade2
+USE_GSTREAMER=	good
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@DATADIRNAME@|share|' ${WRKSRC}/po/Makefile.in.in
