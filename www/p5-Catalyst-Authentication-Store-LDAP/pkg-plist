@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store/LDAP/.packlist
+%%SITE_PERL%%/Catalyst/Authentication/Store/LDAP.pm
+%%SITE_PERL%%/Catalyst/Authentication/Store/LDAP/Backend.pm
+%%SITE_PERL%%/Catalyst/Authentication/Store/LDAP/User.pm
+@dirrm %%SITE_PERL%%/Catalyst/Authentication/Store/LDAP
+@dirrmtry %%SITE_PERL%%/Catalyst/Authentication/Store
+@dirrmtry %%SITE_PERL%%/Catalyst/Authentication
+@dirrmtry %%SITE_PERL%%/Catalyst
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store/LDAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst

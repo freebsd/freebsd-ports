@@ -623,6 +623,7 @@
     SUBDIR += p5-CGI_Lite
     SUBDIR += p5-Catalyst-Action-REST
     SUBDIR += p5-Catalyst-Action-RenderView
+    SUBDIR += p5-Catalyst-Authentication-Store-LDAP
     SUBDIR += p5-Catalyst-Component-ACCEPT_CONTEXT
     SUBDIR += p5-Catalyst-Controller-BindLex
     SUBDIR += p5-Catalyst-Controller-FormBuilder
