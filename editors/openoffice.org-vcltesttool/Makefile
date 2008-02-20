@@ -126,7 +126,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bash:${PORTSDIR}/shells/bash \
 		imake:${X_IMAKE_PORT} \
-		gperf:${PORTSDIR}/devel/gperf #i85469#
+		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf #i85469#
 
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 .if !defined(WITH_GPC)
