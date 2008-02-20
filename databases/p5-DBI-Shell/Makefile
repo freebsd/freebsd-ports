@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	DBI-Shell
-PORTVERSION=	11.94
+PORTVERSION=	11.95
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interactive command shell for the DBI
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	${BUILD_DEPENDS}
-RUN_DEPENDS+=	${SITE_PERL}/Text/Reform.pm:${PORTSDIR}/textproc/p5-Text-Reform \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+		${SITE_PERL}/Text/Reform.pm:${PORTSDIR}/textproc/p5-Text-Reform \
+		${SITE_PERL}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		${SITE_PERL}/IO/Tee.pm:${PORTSDIR}/devel/p5-IO-Tee
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN1=		dbish.1
-MAN3=		DBI::Format.3 DBI::Format::SQLMinus.3 DBI::Shell.3
+MAN3=		DBI::Format.3 DBI::Format::CSV.3 DBI::Format::SQLMinus.3 DBI::Shell.3
 
 .include <bsd.port.mk>

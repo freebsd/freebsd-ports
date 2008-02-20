@@ -5,6 +5,7 @@ bin/dbish
 %%SITE_PERL%%/DBI/Shell/Spool.pm
 %%SITE_PERL%%/DBI/Shell/Timing.pm
 %%SITE_PERL%%/DBI/Shell/FindSqlFile.pm
+%%SITE_PERL%%/DBI/Format/CSV.pm
 %%SITE_PERL%%/DBI/Format/SQLMinus.pm
 %%SITE_PERL%%/DBI/Shell.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/Shell/.packlist
