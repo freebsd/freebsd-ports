@@ -6,37 +6,36 @@
 #
 
 PORTNAME=	xmonad
-PORTVERSION=	0.4
+PORTVERSION=	0.6
 CATEGORIES=	x11-wm haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmonad/${PORTVERSION}/
 
 MAINTAINER=	matt.guegan@free.fr
 COMMENT=	Xmonad is a minimalist and tiling window manager for X
 
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
+		hs-x11-ghc>=1.4.1:${PORTSDIR}/x11/hs-x11-ghc
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+
 USE_XLIB=	yes
 
 CABALCMD=	${LOCALBASE}/bin/runghc Setup.lhs
+GHC_VERSION=	6.8.2
+SUBDIR=		lib/${PORTNAME}-${PORTVERSION}
+PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
+		SUBDIR=${SUBDIR}
 
-.include <bsd.port.pre.mk>
-
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
-		hs-x11-extras-ghc>=0.4:${PORTSDIR}/x11/hs-x11-extras-ghc
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
-
-PLIST_FILES=	bin/xmonad
-PORTDOCS=	LICENSE
 MAN1=		xmonad.1
 
 do-configure:
 	cd ${WRKSRC} && ${CABALCMD} configure --ghc --prefix=${PREFIX}
 
 do-build:
-	cd ${WRKSRC} && ${CABALCMD} build
+	cd ${WRKSRC} && ${CABALCMD} build && ${CABALCMD} register --gen-script
 
 do-install:
-	@cd ${WRKSRC} && ${CABALCMD} install
+	cd ${WRKSRC} && ${CABALCMD} install
 	${INSTALL_MAN} ${WRKSRC}/man/xmonad.1 ${MAN1PREFIX}/man/man1
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/register.sh ${PREFIX}/${SUBDIR}/register.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
