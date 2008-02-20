@@ -998,30 +998,6 @@ share/sawfish/1.3/themes/gorilla/tr.png
 share/sawfish/1.3/themes/gorilla/max.png
 share/sawfish/1.3/themes/gorilla/tr-u.png
 share/sawfish/1.3/themes/gorilla/left.png
-share/sawfish/1.3/themes/gorilla/.xvpics/unfocused.png
-share/sawfish/1.3/themes/gorilla/.xvpics/left-u.png
-share/sawfish/1.3/themes/gorilla/.xvpics/bl.png
-share/sawfish/1.3/themes/gorilla/.xvpics/top.png
-share/sawfish/1.3/themes/gorilla/.xvpics/menu-unfocused.png
-share/sawfish/1.3/themes/gorilla/.xvpics/br.png
-share/sawfish/1.3/themes/gorilla/.xvpics/menu.png
-share/sawfish/1.3/themes/gorilla/.xvpics/bottom.png
-share/sawfish/1.3/themes/gorilla/.xvpics/top-u.png
-share/sawfish/1.3/themes/gorilla/.xvpics/aaterm.png
-share/sawfish/1.3/themes/gorilla/.xvpics/tl.png
-share/sawfish/1.3/themes/gorilla/.xvpics/ScalableGorilla.xcf.bz2
-share/sawfish/1.3/themes/gorilla/.xvpics/right.png
-share/sawfish/1.3/themes/gorilla/.xvpics/min-unfocused.png
-share/sawfish/1.3/themes/gorilla/.xvpics/right-u.png
-share/sawfish/1.3/themes/gorilla/.xvpics/max-unfocused.png
-share/sawfish/1.3/themes/gorilla/.xvpics/tl-u.png
-share/sawfish/1.3/themes/gorilla/.xvpics/title.png
-share/sawfish/1.3/themes/gorilla/.xvpics/min.png
-share/sawfish/1.3/themes/gorilla/.xvpics/max.png
-share/sawfish/1.3/themes/gorilla/.xvpics/tr.png
-share/sawfish/1.3/themes/gorilla/.xvpics/tr-u.png
-share/sawfish/1.3/themes/gorilla/.xvpics/focused.png
-share/sawfish/1.3/themes/gorilla/.xvpics/left.png
 share/sawfish/1.3/themes/gorilla/unfocused.png
 share/sawfish/1.3/themes/gorilla/top.png
 share/sawfish/1.3/themes/gorilla/top-u.png
@@ -1237,7 +1213,6 @@ share/sawfish/1.3/themes/typo/README
 @dirrm share/sawfish/1.3/themes/Bubbles_Exact/.xvpics
 @dirrm share/sawfish/1.3/themes/Elberg/.xvpics
 @dirrm share/sawfish/1.3/themes/V/.xvpics
-@dirrm share/sawfish/1.3/themes/gorilla/.xvpics
 @dirrm share/sawfish/1.3/themes/mxflat/button-icons/ball-12
 @dirrm share/sawfish/1.3/themes/mxflat/button-icons/ball-9
 @dirrm share/sawfish/1.3/themes/mxflat/button-icons/default-12
