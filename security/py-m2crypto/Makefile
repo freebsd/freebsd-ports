@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	m2crypto
-PORTVERSION=	0.17
+PORTVERSION=	0.18.2
 CATEGORIES=	security python
-MASTER_SITES=	http://wiki.osafoundation.org/pub/Projects/MeTooCrypto/
+MASTER_SITES=	http://chandlerproject.org/pub/Projects/MeTooCrypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
@@ -18,16 +18,15 @@ COMMENT=	Crypto and SSL toolkit for Python
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
 USE_PYTHON=	2.3+
-USE_PYDISTUTILS=yes
 USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
+USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	M2Crypto
 
-.if defined(WITH_OPENSSL_PORT)
-PYDISTUTILS_BUILDARGS=	--openssl="${LOCALBASE}"
-.endif
+.include <bsd.port.pre.mk>
+
+PYDISTUTILS_BUILDARGS=	build_ext --openssl="${OPENSSLBASE}"
 
 post-patch:
 	@${REINPLACE_CMD} "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" ${WRKSRC}/SWIG/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
