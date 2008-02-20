@@ -17,6 +17,8 @@ DISTFILES=	${CFILES:S/$/.c/}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Mjpeg-tools YUV video stream processing tools
 
+BROKEN=		Does not compile
+
 LIB_DEPENDS=	lavjpeg-1.9.1:${PORTSDIR}/multimedia/mjpegtools
 
 CFILES=		yuvafps yuvfade yuvwater
