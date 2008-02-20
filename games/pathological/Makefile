@@ -7,13 +7,12 @@
 
 PORTNAME=	pathological
 PORTVERSION=	1.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	janos.mohacsi@bsd.hu
-COMMENT=	Pathological is an enriched clone of the game "Logical"
+COMMENT=	Enriched clone of the game "Logical"
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
