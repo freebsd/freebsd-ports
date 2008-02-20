@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	SSN-Validate
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/K/KM/KMELTZ
+MASTER_SITES=	CPAN/../../authors/id/K/KM/KMELTZ
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tiger@whitetigersd.com
 COMMENT=	Perl extension to do SSN Validation
+
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
+		${SITE_PERL}/Module/Signature.pm:${PORTSDIR}/security/p5-Module-Signature
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
