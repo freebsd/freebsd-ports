@@ -13,7 +13,7 @@ PORTNAME=	openvpn
 # UPGRADE REQUESTS WILL BE DROPPED UNLESS BSD-RELATED.
 # -----------------------------------------------------
 PORTVERSION=	2.0.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
