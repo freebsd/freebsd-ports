@@ -1,15 +1,14 @@
---- sample-config/nrpe.cfg.in.orig	Tue Dec 12 12:34:00 2006
-+++ sample-config/nrpe.cfg.in	Tue Jun 26 20:16:45 2007
-@@ -190,8 +190,10 @@
+--- sample-config/nrpe.cfg.in.orig	2007-11-24 04:01:23.000000000 +1030
++++ sample-config/nrpe.cfg.in	2008-02-20 18:39:58.000000000 +1030
+@@ -198,7 +198,10 @@
  
  command[check_users]=@libexecdir@/check_users -w 5 -c 10
  command[check_load]=@libexecdir@/check_load -w 15,10,5 -c 30,25,20
--command[check_disk1]=@libexecdir@/check_disk -w 20 -c 10 -p /dev/hda1
--command[check_disk2]=@libexecdir@/check_disk -w 20 -c 10 -p /dev/hdb1
-+command[check_disk_root]=@libexecdir@/check_disk -w 20 -c 10 --path /
-+command[check_disk_var]=@libexecdir@/check_disk -w 20 -c 10 --path /var
-+command[check_disk_tmp]=@libexecdir@/check_disk -w 20 -c 10 --path /tmp
-+command[check_disk_usr]=@libexecdir@/check_disk -w 20 -c 10 --path /usr
+-command[check_hda1]=@libexecdir@/check_disk -w 20% -c 10% -p /dev/hda1
++command[check_root]=@libexecdir@/check_disk -w 20% -c 10% -p /
++command[check_var]=@libexecdir@/check_disk -w 20% -c 10% -p /var
++command[check_tmp]=@libexecdir@/check_disk -w 20% -c 10% -p /tmp
++command[check_usr]=@libexecdir@/check_disk -w 20% -c 10% -p /usr
  command[check_zombie_procs]=@libexecdir@/check_procs -w 5 -c 10 -s Z
  command[check_total_procs]=@libexecdir@/check_procs -w 150 -c 200 
  
