@@ -35,10 +35,10 @@ share/locale/ru/LC_MESSAGES/mail-notification.mo
 share/locale/sr/LC_MESSAGES/mail-notification.mo
 share/locale/sr@Latn/LC_MESSAGES/mail-notification.mo
 share/locale/sv/LC_MESSAGES/mail-notification.mo
-%%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/liborg-gnome-mail-notification.a
-%%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/liborg-gnome-mail-notification.la
-%%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/liborg-gnome-mail-notification.so
-%%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/org-gnome-mail-notification.eplug
+%%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/liborg-jylefort-mail-notification.a
+%%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/liborg-jylefort-mail-notification.la
+%%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/liborg-jylefort-mail-notification.so
+%%EVOLUTION%%lib/evolution/%%EVO_VERSION%%/plugins/org-jylefort-mail-notification.eplug
 @dirrm share/omf/mail-notification
 @dirrm share/mail-notification/ui
 @dirrm share/mail-notification
