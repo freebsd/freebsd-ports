@@ -29,6 +29,7 @@ post-patch:
 		${WRKSRC}/support/_install.py
 
 do-install:
+	${MKDIR} ${PREFIX}/share/applications
 	cd ${WRKSRC}; ./install.sh -I ${DATADIR}
 	${LN} -sf ${DATADIR}/bin/komodo ${PREFIX}/bin/komodo
 
