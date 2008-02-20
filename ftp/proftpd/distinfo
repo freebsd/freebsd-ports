@@ -10,3 +10,6 @@ SIZE (mod_digest.c) = 39073
 MD5 (mod_comb-0.1.tar.bz2) = 99ee47c8b5147196c9a2faa4596eaae7
 SHA256 (mod_comb-0.1.tar.bz2) = 05786083c05cb3e53e3ff723b1ca2036af68d5cd9ebb26d2ae1e8009e05b77f1
 SIZE (mod_comb-0.1.tar.bz2) = 11617
+MD5 (mod_sql_tds-4.5.tar.bz2) = 6fe1feac62f483c2e536d0e3a0abe619
+SHA256 (mod_sql_tds-4.5.tar.bz2) = 4b225c2e945a2587cbb46161a263a8e40922da7bd6beb3fdb76c01aaaac705f5
+SIZE (mod_sql_tds-4.5.tar.bz2) = 10923

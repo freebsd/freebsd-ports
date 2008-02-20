@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -19,8 +19,10 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		CENKES:clam \
 		http://www.smartftp.com/oss/proftpd/:digest \
 		http://lev.serebryakov.spb.ru/mod_comb/:comb\
+		http://labratsoftware.com/mod_sql_tds/:sql_tds \
 		LOCAL/beech:digest \
-		LOCAL/beech:comb
+		LOCAL/beech:comb \
+		LOCAL/beech:sql_tds
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -63,8 +65,9 @@ CONFIGURE_ARGS=	--localstatedir=/var/run \
 OPTIONS=	IPV6 "Use IPv6" off \
 		LDAP "Use LDAP" off \
 		LDAP_TLS "Use LDAP TLS (Requires LDAP, OPENSSL)" off\
-		MYSQL "Use MySQL" off \
-		PGSQL "Use Postgres" off \
+		MYSQL "MySQL auth (Can be combined with PGSQL)" off \
+		PGSQL "Postgres auth (Can be combined with MYSQL)" off \
+		TDS "FreeTDS - Sybase & MS-SQL auth (Exclusive)" off \
 		OPENSSL "Include mod_tls" on \
 		QUOTA "Include mod_quota" off \
 		IFSESSION "Include mod_ifsession" on \
@@ -244,6 +247,17 @@ PORTDOCScontrib+=mod_comb.html
 PORTDOCSreadme+=README.mod_comb
 .endif
 
+.if defined(WITH_TDS)
+DISTFILES+=	mod_sql_tds-4.5.tar.bz2:sql_tds
+EXTRACT_ONLY+=	mod_sql_tds-4.5.tar.bz2
+MODULES:=${MODULES}:mod_sql_tds
+MODULES:=mod_sql${MODULES}
+PLIST_FILES+=	include/proftpd/mod_sql.h
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds
+.endif
+
 # mod_ifsession should be the last item in the modules list
 .if !defined(WITHOUT_IFSESSION)
 MODULES:=${MODULES}:mod_ifsession
@@ -277,6 +291,10 @@ post-extract:
 	@${MV} ${WRKDIR}/mod_comb-${COMB_VERSION}/mod_comb.c ${WRKSRC}/contrib/
 	@${MV} ${WRKDIR}/mod_comb-${COMB_VERSION}/README ${WRKSRC}/README.mod_comb
 	@${MV} ${WRKDIR}/mod_comb-${COMB_VERSION}/mod_comb.html ${WRKSRC}/doc/contrib/
+.endif
+
+.if defined(WITH_TDS)
+	 @${MV} ${WRKDIR}/mod_sql_tds.c ${WRKSRC}/contrib/
 .endif
 
 post-patch:
