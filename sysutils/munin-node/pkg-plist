@@ -7,7 +7,7 @@
 etc/munin/munin-node.conf.sample
 @unexec if cmp -s %D/etc/munin/plugin-conf.d/plugins.conf %D/etc/munin/plugin-conf.d/plugins.conf.sample; then rm -f %D/etc/munin/plugin-conf.d/plugins.conf; fi
 etc/munin/plugin-conf.d/plugins.conf.sample
-@unexec rm %D/etc/rc.d/munin-node.sh 2>/dev/null || true
+etc/rc.d/munin-node.sh
 sbin/munin-node
 sbin/munin-node-configure
 sbin/munin-node-configure-snmp
