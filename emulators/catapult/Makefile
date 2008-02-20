@@ -8,6 +8,7 @@
 
 PORTNAME=	catapult
 PORTVERSION=	0.6.3R1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	openmsx
@@ -30,7 +31,8 @@ USE_WX=		2.6
 USE_GNOME=	libxml2
 
 post-patch:
-	@${REINPLACE_CMD} 's|freebsd5\*|freebsd*|' ${WRKSRC}/build/detectsys.sh
+	@${REINPLACE_CMD} 's|freebsd5\*|freebsd*|; s|x86_64)|amd64)|;' \
+	    ${WRKSRC}/build/detectsys.sh
 	@${REINPLACE_CMD} 's|@$$(CXX)|$$(CXX)|' ${WRKSRC}/build/main.mk
 	@${REINPLACE_CMD} 's|INSTALL_BASE|INSTALL_SHARE_DIR|' ${WRKSRC}/build/info2code.mk
 	@${REINPLACE_CMD} 's|wx-config|${WX_CONFIG}|g' \
