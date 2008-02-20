@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	SMS-Send
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	comms perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	SMS
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Driver-based API for sending SMS messages
 
-RUN_DEPENDS=	${SITE_PERL}/Class/Adapter.pm:${PORTSDIR}/devel/p5-Class-Adapter \
+BUILD_DEPENDS=	${SITE_PERL}/Class/Adapter.pm:${PORTSDIR}/devel/p5-Class-Adapter \
 		${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
-		${SITE_PERL}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util
-BUILD_DEPENDS=	${RUN_DEPENDS}
+		${SITE_PERL}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
+		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
