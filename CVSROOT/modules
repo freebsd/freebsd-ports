@@ -16290,6 +16290,7 @@ ttt		ports/net/ttt
 ttyload		ports/sysutils/ttyload
 ttyrec		ports/misc/ttyrec
 tua		ports/sysutils/tua
+tuareg-mode.el	ports/lang/tuareg-mode.el
 tuc		ports/converters/tuc
 tulip		ports/graphics/tulip
 tumgreyspf	ports/mail/tumgreyspf
