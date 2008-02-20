@@ -1,21 +1,15 @@
-%%MYADMDIR%%/docs/COPYING
-%%MYADMDIR%%/docs/ChangeLog
-%%MYADMDIR%%/docs/INSTALL
-%%MYADMDIR%%/docs/README
-%%MYADMDIR%%/docs/TODO
-%%MYADMDIR%%/docs/UPGRADE
-%%MYADMDIR%%/config.inc.php-example
-%%MYADMDIR%%/index.php
-%%MYADMDIR%%/style.css
-%%MYADMDIR%%/libs/admin.lib.php
-%%MYADMDIR%%/libs/auth.lib.php
-%%MYADMDIR%%/libs/common.lib.php
-%%MYADMDIR%%/pages/change.inc.php
-%%MYADMDIR%%/pages/register.inc.php
-%%MYADMDIR%%/pages/admin.inc.php
-%%MYADMDIR%%/pages/main.inc.php
-@dirrm %%MYADMDIR%%/docs
-@dirrm %%MYADMDIR%%/pages
-@dirrm %%MYADMDIR%%/libs
-@dirrm %%MYADMDIR%%
-@dirrmtry www/data
+@unexec if cmp -s %D/%%WWWDIR%%/config.inc.php-example %D/%%WWWDIR%%/config.inc.php; then rm -f %D/%%WWWDIR%%/config.inc.php; fi
+%%WWWDIR%%/config.inc.php-example
+@exec if [ ! -f %D/%%WWWDIR%%/config.inc.php ] ; then cp -p %D/%F %B/config.inc.php; fi
+%%WWWDIR%%/index.php
+%%WWWDIR%%/style.css
+%%WWWDIR%%/libs/admin.lib.php
+%%WWWDIR%%/libs/auth.lib.php
+%%WWWDIR%%/libs/common.lib.php
+%%WWWDIR%%/pages/admin.inc.php
+%%WWWDIR%%/pages/change.inc.php
+%%WWWDIR%%/pages/main.inc.php
+%%WWWDIR%%/pages/register.inc.php
+@dirrm %%WWWDIR%%/pages
+@dirrm %%WWWDIR%%/libs
+@dirrm %%WWWDIR%%
