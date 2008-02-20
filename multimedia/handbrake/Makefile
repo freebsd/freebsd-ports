@@ -64,7 +64,7 @@ APPLY?=		/usr/bin/apply
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64" && ${OSVERSION} < 700000
 BROKEN=		Does not compile
 .endif
 

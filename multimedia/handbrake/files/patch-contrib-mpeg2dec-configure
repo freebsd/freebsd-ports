@@ -1,0 +1,11 @@
+--- contrib/mpeg2dec/configure.orig	2008-02-19 19:54:39.000000000 +0800
++++ contrib/mpeg2dec/configure	2008-02-19 19:55:08.000000000 +0800
+@@ -23981,7 +23981,7 @@
+     cd ..; rm -fr ac_test_libtool; echo "$as_me:$LINENO: result: $ac_cv_libtool_non_pic" >&5
+ echo "${ECHO_T}$ac_cv_libtool_non_pic" >&6
+     if test x"$ac_cv_libtool_non_pic" = x"yes"; then
+-	LIBMPEG2_CFLAGS="$LIBMPEG2_CFLAGS -prefer-non-pic"
++	LIBMPEG2_CFLAGS="$LIBMPEG2_CFLAGS"
+     else
+ 	:
+     fi
