@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mail-notification
-DISTVERSION=	4.0
-PORTREVISION=	3
+DISTVERSION=	4.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
@@ -17,7 +16,10 @@ COMMENT=	A mail notification for freedesktop.org-compliant system trays
 
 LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
 
+USE_BZIP2=	yes
 USE_XLIB=	yes
+USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gnomehack eel2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -72,9 +74,9 @@ PLIST_SUB+=	GMAIL=""
 CONFIGURE_ARGS+=--disable-evolution
 PLIST_SUB+=	EVOLUTION="@comment "
 .else
-EVO_VERSION=	2.10
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin-${EVO_VERSION}.pc:${PORTSDIR}/mail/evolution
-RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin-${EVO_VERSION}.pc:${PORTSDIR}/mail/evolution
+EVO_VERSION=	2.12
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin.pc:${PORTSDIR}/mail/evolution
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin.pc:${PORTSDIR}/mail/evolution
 PLIST_SUB+=	EVOLUTION="" EVO_VERSION=${EVO_VERSION}
 .endif
 .if defined(WITHOUT_MOZILLA)
