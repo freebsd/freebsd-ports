@@ -6,6 +6,7 @@
 
 PORTNAME=	decibel
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://decibel.kde.org/fileadmin/downloads/decibel/releases/
 
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	QtTapioca.0:${PORTSDIR}/net-im/tapioca-qt
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib xml dbus moc uic rcc
+QT_COMPONENTS=	corelib xml dbus moc uic rcc qtestlib
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build

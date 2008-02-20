@@ -39,3 +39,8 @@ share/Decibel/components/de.basyskom.simpleclient.textchannel.component
 share/dbus-1/services/de.basyskom.decibel.log.service
 share/dbus-1/services/de.basyskom.simpleclient.service
 share/doc/Decibel/demos.html
+@dirrm include/Decibel
+@dirrm lib/Decibel
+@dirrm share/Decibel/components
+@dirrm share/Decibel
+@dirrm share/doc/Decibel
