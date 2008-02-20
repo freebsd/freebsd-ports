@@ -1,0 +1,17 @@
+This plugin implements the Catalyst::Authentication v.10 API.
+
+This plugin uses Net::LDAP to let your application authenticate against
+an LDAP directory.  It has a pretty high degree of flexibility, given
+the wide variation of LDAP directories and schemas from one system to
+another.
+
+It authenticates users in two steps:
+
+1) A search of the directory is performed, looking for a user object
+that matches the username you pass.  This is done with the bind
+credentials supplied in the "binddn" and "bindpw" configuration options.
+
+2) If that object is found, we then re-bind to the directory as that
+object.  Assuming this is successful, the user is Authenticated.
+
+WWW: http://search.cpan.org/dist/Catalyst-Authentication-Store-LDAP/
