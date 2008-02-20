@@ -90,9 +90,6 @@ lib/libcxsparse.so.1
 lib/libklu.a
 lib/libklu.so
 lib/libklu.so.1
-lib/libklu_cholmod.a
-lib/libklu_cholmod.so
-lib/libklu_cholmod.so.1
 lib/libldl.a
 lib/libldl.so
 lib/libldl.so.1
