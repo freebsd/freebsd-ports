@@ -1,0 +1,24 @@
+bin/ar86
+bin/as86
+bin/bcc
+bin/ld86
+bin/nm86
+bin/objdump86
+bin/size86
+lib/bcc/as86_encap
+lib/bcc/bcc-cc1
+lib/bcc/bcc-cpp
+lib/bcc/copt
+lib/bcc/i386/rules.386
+lib/bcc/i386/rules.end
+lib/bcc/i386/rules.start
+lib/bcc/rules.186
+lib/bcc/rules.386
+lib/bcc/rules.86
+lib/bcc/rules.end
+lib/bcc/rules.i
+lib/bcc/rules.net
+lib/bcc/rules.start
+lib/bcc/unproto
+@dirrm lib/bcc/i386
+@dirrm lib/bcc
