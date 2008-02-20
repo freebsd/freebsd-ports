@@ -1,0 +1,11 @@
+--- contrib/a52dec/configure.orig	2008-02-19 19:53:29.000000000 +0800
++++ contrib/a52dec/configure	2008-02-19 19:54:14.000000000 +0800
+@@ -9640,7 +9640,7 @@
+ 
+ 
+ 
+-LIBA52_CFLAGS="$LIBA52_CFLAGS -prefer-non-pic"
++LIBA52_CFLAGS="$LIBA52_CFLAGS"
+ 
+ # Check whether --enable-double or --disable-double was given.
+ if test "${enable_double+set}" = set; then
