@@ -17655,6 +17655,7 @@ xmold		ports/x11/xmold
 xmolwt		ports/biology/xmolwt
 xmon		ports/x11/xmon
 xmonad		ports/x11-wm/xmonad
+xmonad-contrib	ports/x11-wm/xmonad-contrib
 xmoontool	ports/astro/xmoontool
 xmore		ports/x11/xmore
 xmorph		ports/graphics/xmorph
