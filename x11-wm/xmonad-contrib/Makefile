@@ -1,0 +1,40 @@
+# New ports collection makefile for:	xmonad-contrib
+# Date created:		2008-01-23
+# Whom:		Matthieu Guegan <matt.guegan@free.fr>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xmonad-contrib
+PORTVERSION=	0.6
+CATEGORIES=	x11-wm haskell
+MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmonad-contrib/${PORTVERSION}/
+
+MAINTAINER=	matt.guegan@free.fr
+COMMENT=	Third party tiling algorithms, configurations and scripts to xmonad
+
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
+		hs-x11-ghc>=1.4.1:${PORTSDIR}/x11/hs-x11-ghc \
+		xmonad:${PORTSDIR}/x11-wm/xmonad
+RUN_DEPENDS=	xmonad:${PORTSDIR}/x11-wm/xmonad
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
+
+USE_XLIB=	yes
+
+CABALCMD=	${LOCALBASE}/bin/runghc Setup.lhs
+GHC_VERSION=	6.8.2
+SUBDIR=		lib/${PORTNAME}-${PORTVERSION}
+PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
+		SUBDIR=${SUBDIR}
+
+do-configure:
+	cd ${WRKSRC} && ${CABALCMD} configure --ghc --prefix=${PREFIX}
+
+do-build:
+	cd ${WRKSRC} && ${CABALCMD} build && ${CABALCMD} register --gen-script
+
+do-install:
+	cd ${WRKSRC} && ${CABALCMD} install
+	${INSTALL_SCRIPT} ${WRKSRC}/register.sh ${PREFIX}/${SUBDIR}/register.sh
+
+.include <bsd.port.mk>
