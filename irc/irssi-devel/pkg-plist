@@ -22,7 +22,7 @@ etc/irssi.conf.sample
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.so
-include/irssi/config.h
+include/irssi/irssi-config.h
 include/irssi/irssi-version.h
 include/irssi/src/common.h
 include/irssi/src/core/args.h
