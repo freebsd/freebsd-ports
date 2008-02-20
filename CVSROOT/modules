@@ -1981,6 +1981,7 @@ detachtty	ports/misc/detachtty
 detex		ports/print/detex
 detox		ports/sysutils/detox
 deutex		ports/archivers/deutex
+dev86		ports/devel/dev86
 devcpu		ports/sysutils/devcpu
 devcpu-data	ports/sysutils/devcpu-data
 devede		ports/multimedia/devede
