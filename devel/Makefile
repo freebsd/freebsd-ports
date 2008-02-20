@@ -244,6 +244,7 @@
     SUBDIR += ddd
     SUBDIR += deputy
     SUBDIR += desktop-file-utils
+    SUBDIR += dev86
     SUBDIR += devhelp
     SUBDIR += devtodo
     SUBDIR += dfuife-curses

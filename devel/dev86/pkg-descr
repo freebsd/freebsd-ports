@@ -1,0 +1,4 @@
+This is port of Robert de Bath's 8086 Linux development environment. It is an
+extension to Bruce Evan's C compiler (devel/bcc port).
+
+WWW: http://homepage.ntlworld.com/robert.debath/
