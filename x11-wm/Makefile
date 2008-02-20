@@ -145,6 +145,7 @@
     SUBDIR += xfce4-session
     SUBDIR += xfce4-wm
     SUBDIR += xmonad
+    SUBDIR += xmonad-contrib
     SUBDIR += yawm
 
 .include <bsd.port.subdir.mk>
