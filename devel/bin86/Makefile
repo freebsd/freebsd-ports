@@ -15,7 +15,7 @@ MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	16-bit assembler and loader (conflicts with devel/bcc)
 
 BINS=		as/as86 ld/ld86 ld/objchop ld/catimage ld/objdump86
-CONFLICTS=	bcc-[0-9]*
+CONFLICTS=	bcc-[0-9]* dev86-[0-9]*
 PORTDOCS=	ChangeLog README README-0.4
 MAN1=		as86.1 ld86.1
 
