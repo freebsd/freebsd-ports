@@ -1,0 +1,8 @@
+--- getarch~	2008-01-19 02:14:59.000000000 +0900
++++ getarch	2008-02-20 17:14:45.000000000 +0900
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # if test getarch_cmd -ot getarch.c; then
+ #     rm -f getarch_cmd
