@@ -1,0 +1,9 @@
+---------------------------------------------------------------
+ProMA is now installed!
+
+Please, read the following reference for install instructions:
+
+%%DOCSDIR%%/INSTALL
+
+Please configure %%WWWDIR%%/config.inc.php with your settings.
+---------------------------------------------------------------
