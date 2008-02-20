@@ -1,5 +1,5 @@
---- src/GUI/ots_gui.c.orig	Sun Apr  2 22:56:24 2006
-+++ src/GUI/ots_gui.c	Sat Apr  8 19:46:40 2006
+--- src/GUI/ots_gui.c.orig	2008-02-10 12:57:32.000000000 -0700
++++ src/GUI/ots_gui.c	2008-02-19 18:17:30.000000000 -0700
 @@ -1026,7 +1026,7 @@
    }
   else
@@ -26,6 +26,6 @@
   Otk_SetBorderThickness( main_panel, 0.25 );
 - sprintf(tmpstr,"%s..%csrc%cGUI%cotslogo.ppm", invocation_path, slashchr, slashchr, slashchr );
 + snprintf(tmpstr, sizeof(tmpstr), "%%PREFIX%%/share/ots/otslogo.ppm");
-  subpanel = OtkMakePanel( main_panel, Otk_Raised, Otk_LightGray, 20, 2, 60, 20 );
+  subpanel = OtkMakePanel( main_panel, Otk_Raised, Otk_LightGray, 18.5, 2, 63, 17 );
+  Otk_SetBorderThickness( subpanel, 0.75 );
   testfile = fopen(tmpstr,"r");
-  if (testfile!=0)
