@@ -2,7 +2,7 @@
 #
 # openvpn.sh - load tun/tap driver and start OpenVPN daemon
 #
-# (C) Copyright 2005 - 2007 by Matthias Andree
+# (C) Copyright 2005 - 2008 by Matthias Andree
 # based on suggestions by Matthias Grimm and Dirk Gouders
 # with multi-instance contribution from Denis Shaposhnikov, Gleb Kozyrev
 # and Vasil Dimov
@@ -126,6 +126,6 @@ dir="$(eval echo \${${name}_dir})"
 interfaces="$(eval echo \${${name}_if})"
 
 required_files=${configfile}
-command_args="--cd ${dir} --daemon --config ${configfile} --writepid ${pidfile}"
+command_args="--cd ${dir} --daemon ${name} --config ${configfile} --writepid ${pidfile}"
 
 run_rc_command "$1"
