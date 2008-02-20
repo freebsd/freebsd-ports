@@ -20,7 +20,7 @@ diff -u -r1.2 lp_solve_5.5.patch
 +! def=
 +! so=yes
 +! 
-+! opts='-O3'
++! opts='-O3 -DINTEGERTIME'
 +!
 +! $CC -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd $opts $def -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src
 +! ar rv liblpsolve55.a `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'`
@@ -28,8 +28,8 @@ diff -u -r1.2 lp_solve_5.5.patch
 +! 
 +! if [ "$so" != "" ]
 +! then
-+!   $CC -fpic -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd -I. $opts -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src
-+!   $CC -shared -Wl,-Bsymbolic -Wl,-soname,liblpsolve55.so -o liblpsolve55.so `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'` -lc -lm -lcompat
++!   $CC -fPIC -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd -I. $opts -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src
++!   $CC -shared -Wl,-Bsymbolic -Wl,-soname,liblpsolve55.so -o liblpsolve55.so `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'` -lc -lm
 +! fi
 +! 
 +! rm *.o 2>/dev/null
@@ -54,7 +54,7 @@ diff -u -r1.3 makefile.mk
  BUILD_ACTION=sh ccc.solaris
  .ELSE
 +.IF "$(OS)"=="FREEBSD"
-+BUILD_ACTION=sh ccc.freebsd
++BUILD_ACTION=sh -x ccc.freebsd
 +OUT2LIB=$(BUILD_DIR)$/liblpsolve55.so
 +.ELSE
  BUILD_ACTION=sh ccc
