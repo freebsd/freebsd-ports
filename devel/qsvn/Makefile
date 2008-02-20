@@ -9,7 +9,7 @@ PORTNAME=	qsvn
 DISTVERSION=	0.6.1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	devel
-MASTER_SITES=	http://ar.oszine.de/projects/qsvn/chrome/site/
+MASTER_SITES=	http://www.anrichter.net/projects/qsvn/chrome/site/
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	Qt based GUI frontend for Subversion
