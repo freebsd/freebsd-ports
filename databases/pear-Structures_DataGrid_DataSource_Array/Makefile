@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Structures_DataGrid_DataSource_Array
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
