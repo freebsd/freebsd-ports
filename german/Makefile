@@ -37,6 +37,7 @@
     SUBDIR += staroffice70
     SUBDIR += steak
     SUBDIR += swissgerman-ding
+    SUBDIR += tipp10
     SUBDIR += unix-connect
     SUBDIR += vtiger
     SUBDIR += webalizer2
