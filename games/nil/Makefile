@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-cvs-backup-${DISTVERSION}
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A multiplayer game like Quake in 2D or Worms done right
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

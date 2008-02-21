@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://dept-info.labri.fr/~auber/projects/tulip/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A system dedicated to the visualization of huge graphs
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

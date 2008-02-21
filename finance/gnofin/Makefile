@@ -12,7 +12,7 @@ CATEGORIES=	finance deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Light-weight GNOME based financial management program
 
 USE_X_PREFIX=	yes

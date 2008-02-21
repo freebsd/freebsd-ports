@@ -11,7 +11,7 @@ MASTER_SITES=	http://lincvs.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0-generic-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Cross-platform Version Control
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

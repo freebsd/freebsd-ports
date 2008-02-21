@@ -12,7 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://www.leb.net/~troll/
 DISTNAME=	TrickyIRC-${PORTVERSION}
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Allows client independent detaching and reattaching of IRC sessions
 
 MAKEFILE=	GNUmakefile

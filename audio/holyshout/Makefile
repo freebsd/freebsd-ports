@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Streaming audio to Icecast/shoutcast supports multiple bitrate stream
 
 LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2 \

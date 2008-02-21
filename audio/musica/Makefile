@@ -10,7 +10,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www-ict.its.tudelft.nl/~erik/open-source/musica/ \
 					http://www.gahr.ch/FreeBSD/musica/
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GTK based midi player
 
 USE_GNOME=	gtk12

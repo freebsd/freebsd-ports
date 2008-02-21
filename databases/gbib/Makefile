@@ -17,7 +17,7 @@ PATCH_SITE_SUBDIR=	pool/main/g/gbib
 PATCHFILES=	${PORTNAME}_${PORTVERSION}-3.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Editor/browser for BibTeX bibliographic databases
 
 USE_X_PREFIX=	yes

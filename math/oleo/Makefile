@@ -12,7 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The GNU spreadsheet for X11 and terminals
 
 USE_PERL5_BUILD=	yes

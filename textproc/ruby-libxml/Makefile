@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	libxml
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A friendly API to libxml for Ruby
 
 BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
