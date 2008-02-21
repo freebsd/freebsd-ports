@@ -1,4 +1,6 @@
+%%WWWDIR%%/example_robots.txt
 %%WWWDIR%%/index.php
+%%WWWDIR%%/lighttpd-rewrite.txt
 %%WWWDIR%%/rss-comments.php
 %%WWWDIR%%/rss.php
 %%WWWDIR%%/themes/default/album.php
@@ -116,11 +118,11 @@
 %%WWWDIR%%/themes/stopdesign/theme.png
 %%WWWDIR%%/themes/stopdesign/theme.txt
 %%WWWDIR%%/themes/stopdesign/themeoptions.php
-%%WWWDIR%%/zp-core/Sajax.php
 %%WWWDIR%%/zp-core/admin-functions.php
 %%WWWDIR%%/zp-core/admin.css
 %%WWWDIR%%/zp-core/admin.php
 %%WWWDIR%%/zp-core/albumsort.php
+%%WWWDIR%%/zp-core/archive.php
 %%WWWDIR%%/zp-core/auth_zp.php
 %%WWWDIR%%/zp-core/cache-images.php
 %%WWWDIR%%/zp-core/changelog.html
@@ -145,19 +147,24 @@
 %%WWWDIR%%/zp-core/functions-image.php
 %%WWWDIR%%/zp-core/functions.php
 %%WWWDIR%%/zp-core/i.php
+%%WWWDIR%%/zp-core/images/action.png
 %%WWWDIR%%/zp-core/images/cache.png
+%%WWWDIR%%/zp-core/images/envelope.png
 %%WWWDIR%%/zp-core/images/err-cachewrite.gif
 %%WWWDIR%%/zp-core/images/err-imagegeneral.gif
 %%WWWDIR%%/zp-core/images/err-imagenotfound.gif
 %%WWWDIR%%/zp-core/images/err-nogd.gif
 %%WWWDIR%%/zp-core/images/fail.png
+%%WWWDIR%%/zp-core/images/lock.png
+%%WWWDIR%%/zp-core/images/lock_open.png
 %%WWWDIR%%/zp-core/images/movie.jpg
 %%WWWDIR%%/zp-core/images/pass.png
+%%WWWDIR%%/zp-core/images/pencil.png
+%%WWWDIR%%/zp-core/images/refresh.png
+%%WWWDIR%%/zp-core/images/reset.png
 %%WWWDIR%%/zp-core/images/rss.gif
 %%WWWDIR%%/zp-core/images/videoDefault.png
 %%WWWDIR%%/zp-core/images/warn.png
-%%WWWDIR%%/zp-core/images/watermark-video.png
-%%WWWDIR%%/zp-core/images/watermark.png
 %%WWWDIR%%/zp-core/images/zen-logo.gif
 %%WWWDIR%%/zp-core/images/zen-logo.jpg
 %%WWWDIR%%/zp-core/images/zenphoto.gif
@@ -167,6 +174,7 @@
 %%WWWDIR%%/zp-core/js/flvplayer.js
 %%WWWDIR%%/zp-core/js/jquery.js
 %%WWWDIR%%/zp-core/js/prototype.js
+%%WWWDIR%%/zp-core/js/prototype.tooltip.js
 %%WWWDIR%%/zp-core/js/scriptaculous/builder.js
 %%WWWDIR%%/zp-core/js/scriptaculous/controls.js
 %%WWWDIR%%/zp-core/js/scriptaculous/dragdrop.js
@@ -185,47 +193,51 @@
 %%WWWDIR%%/zp-core/plugins/flip_image.php
 %%WWWDIR%%/zp-core/plugins/image_mirror.php
 %%WWWDIR%%/zp-core/plugins/image_rotate.php
-%%WWWDIR%%/zp-core/plugins/imagerating/rating.js
-%%WWWDIR%%/zp-core/plugins/imagerating/update.php
 %%WWWDIR%%/zp-core/plugins/phooglelite.php
 %%WWWDIR%%/zp-core/plugins/print_album_menu.php
+%%WWWDIR%%/zp-core/plugins/rating/alt_star.png
+%%WWWDIR%%/zp-core/plugins/rating/rating.css
+%%WWWDIR%%/zp-core/plugins/rating/rating.js
+%%WWWDIR%%/zp-core/plugins/rating/update.php
 %%WWWDIR%%/zp-core/plugins/spamfilters/akismet.php
 %%WWWDIR%%/zp-core/plugins/spamfilters/none.php
 %%WWWDIR%%/zp-core/plugins/spamfilters/simple.php
 %%WWWDIR%%/zp-core/plugins/spamfilters/spamassassin.php
-%%WWWDIR%%/zp-core/plugins/zipfile.php
 %%WWWDIR%%/zp-core/refresh-metadata.php
+%%WWWDIR%%/zp-core/Sajax.php
 %%WWWDIR%%/zp-core/setup.php
 %%WWWDIR%%/zp-core/sortable.php
 %%WWWDIR%%/zp-core/template-functions.php
 %%WWWDIR%%/zp-core/upgrade.php
 %%WWWDIR%%/zp-core/utf8.php
+%%WWWDIR%%/zp-core/watermarks/watermark-video.png
+%%WWWDIR%%/zp-core/watermarks/watermark.png
 %%WWWDIR%%/zp-core/zp-config.php.example
-@dirrm %%WWWDIR%%/zp-core/plugins/spamfilters
-@dirrm %%WWWDIR%%/zp-core/plugins/imagerating
-@dirrm %%WWWDIR%%/zp-core/plugins
-@dirrm %%WWWDIR%%/zp-core/js/scriptaculous
-@dirrm %%WWWDIR%%/zp-core/js
-@dirrm %%WWWDIR%%/zp-core/images
-@dirrm %%WWWDIR%%/zp-core/exif/makers
-@dirrm %%WWWDIR%%/zp-core/exif
+@dirrmtry %%WWWDIR%%/zp-core/watermarks
+@dirrmtry %%WWWDIR%%/zp-core/plugins/spamfilters
+@dirrmtry %%WWWDIR%%/zp-core/plugins/rating
+@dirrmtry %%WWWDIR%%/zp-core/plugins
+@dirrmtry %%WWWDIR%%/zp-core/js/scriptaculous
+@dirrmtry %%WWWDIR%%/zp-core/js
+@dirrmtry %%WWWDIR%%/zp-core/images
+@dirrmtry %%WWWDIR%%/zp-core/exif/makers
+@dirrmtry %%WWWDIR%%/zp-core/exif
 @dirrmtry %%WWWDIR%%/zp-core
-@dirrm %%WWWDIR%%/themes/stopdesign/js
-@dirrm %%WWWDIR%%/themes/stopdesign/img
-@dirrm %%WWWDIR%%/themes/stopdesign/css
-@dirrm %%WWWDIR%%/themes/stopdesign
-@dirrm %%WWWDIR%%/themes/example
-@dirrm %%WWWDIR%%/themes/effervescence_plus/styles
-@dirrm %%WWWDIR%%/themes/effervescence_plus/scripts
-@dirrm %%WWWDIR%%/themes/effervescence_plus/images/smooth
-@dirrm %%WWWDIR%%/themes/effervescence_plus/images/slimbox
-@dirrm %%WWWDIR%%/themes/effervescence_plus/images
-@dirrm %%WWWDIR%%/themes/effervescence_plus
-@dirrm %%WWWDIR%%/themes/default/styles
-@dirrm %%WWWDIR%%/themes/default/images
-@dirrm %%WWWDIR%%/themes/default
-@dirrm %%WWWDIR%%/themes
-@dirrm %%WWWDIR%%/cache
+@dirrmtry %%WWWDIR%%/themes/stopdesign/js
+@dirrmtry %%WWWDIR%%/themes/stopdesign/img
+@dirrmtry %%WWWDIR%%/themes/stopdesign/css
+@dirrmtry %%WWWDIR%%/themes/stopdesign
+@dirrmtry %%WWWDIR%%/themes/example
+@dirrmtry %%WWWDIR%%/themes/effervescence_plus/styles
+@dirrmtry %%WWWDIR%%/themes/effervescence_plus/scripts
+@dirrmtry %%WWWDIR%%/themes/effervescence_plus/images/smooth
+@dirrmtry %%WWWDIR%%/themes/effervescence_plus/images/slimbox
+@dirrmtry %%WWWDIR%%/themes/effervescence_plus/images
+@dirrmtry %%WWWDIR%%/themes/effervescence_plus
+@dirrmtry %%WWWDIR%%/themes/default/styles
+@dirrmtry %%WWWDIR%%/themes/default/images
+@dirrmtry %%WWWDIR%%/themes/default
+@dirrmtry %%WWWDIR%%/themes
+@dirrmtry %%WWWDIR%%/cache
 @dirrmtry %%WWWDIR%%/albums
 @dirrmtry %%WWWDIR%%
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%
