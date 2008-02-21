@@ -7,7 +7,7 @@
 
 PORTNAME=	siteframe
 PORTVERSION=	5.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.broadpool.net/pub/siteframe/
 
@@ -22,7 +22,6 @@ USE_PHP=	mysqli simplexml xml session gd
 DEFAULT_PHP_VER=	5
 IGNORE_WITH_PHP=	4
 USE_MYSQL=	yes
-DEFAULT_MYSQL_VER=	41
 IGNORE_WITH_MYSQL=	40
 
 # where to install
