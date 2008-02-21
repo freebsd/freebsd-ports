@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libcwd
-PORTVERSION=	0.99.47
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	The C++ Debugging Support Library
 
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--disable-threading
+CONFIGURE_ARGS=	--disable-threading --disable-pch
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
@@ -36,10 +36,4 @@ post-patch:
 pre-configure:
 	@${CP} ${LTMAIN} ${WRKSRC}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
