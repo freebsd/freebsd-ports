@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	I18N-Charset
-PORTVERSION=	1.37.9
+PORTVERSION=	1.38.8
 CATEGORIES=	misc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	I18N
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
@@ -28,6 +27,5 @@ MAN3=		I18N::Charset.3
 
 post-patch:
 	@${PERL} -pi -e 's#\r$$##g' ${WRKSRC}/lib/I18N/Charset.pm
-	@${PERL} -pi -e 's#\r$$##g' ${WRKSRC}/lib/I18N/Charset/character-sets
 
 .include <bsd.port.mk>
