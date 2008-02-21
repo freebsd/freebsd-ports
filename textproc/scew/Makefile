@@ -10,7 +10,7 @@ PORTVERSION=	0.4.0
 CATEGORIES=	textproc
 MASTER_SITES=	SAVANNAH/${PORTNAME}/
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Simple C Expat Wrapper
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

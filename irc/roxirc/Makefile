@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	irc tk
 MASTER_SITES=	http://roxirc.lighter.net/download/
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A tcl/tk irc client
 
 USE_TK=		yes

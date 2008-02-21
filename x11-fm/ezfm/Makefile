@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 DISTNAME=	EZFM-0.4-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	EZWGL-based file manager for X Window System
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

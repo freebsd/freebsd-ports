@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	3D modeling environment for the RenderMan interface
 
 LIB_DEPENDS=	aqsis.1:${PORTSDIR}/graphics/aqsis \

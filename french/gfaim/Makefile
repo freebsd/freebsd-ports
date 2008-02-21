@@ -13,7 +13,7 @@ MASTER_SITES=	http://freeperso.free.fr/ \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Gfaim est un logiciel de recherche de recettes de cuisine
 
 USE_XLIB=	yes

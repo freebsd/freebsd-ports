@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/Guppi/0.40
 DISTNAME=	Guppi-${PORTVERSION}
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A plotting program for GNOME
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile

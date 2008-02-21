@@ -12,7 +12,7 @@ PORTREVISION=	3
 CATEGORIES=	games devel
 MASTER_SITES=	http://adgali.apiou.org/download/
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An open source game library useful for 2D game development
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

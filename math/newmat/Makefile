@@ -13,7 +13,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.robertnz.net/ftp/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A C++ matrix library
 
 NO_WRKSUBDIR=	yes

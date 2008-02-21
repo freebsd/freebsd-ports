@@ -10,7 +10,7 @@ PORTVERSION=	20070727
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gahr.ch/FreeBSD/distfiles/
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A CMYK plugin for The GIMP
 
 BUILD_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep \

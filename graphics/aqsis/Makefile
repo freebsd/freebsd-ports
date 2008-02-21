@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gahr@gahr.ch
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A photorealistic rendering system
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
