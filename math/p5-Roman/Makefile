@@ -6,23 +6,16 @@
 #
 
 PORTNAME=	Roman
-PORTVERSION=	1.1
+PORTVERSION=	1.22
 CATEGORIES=	math perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Roman
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Perl module to convert between Arabic and Roman numerals
 
-NO_BUILD=	yes
-PLIST_FILES=	%%SITE_PERL%%/Roman.pm
-USE_PERL5_RUN=	yes
+PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
+MAN3=		Roman.3
 
-do-install:
-	${MKDIR} ${SITE_PERL}
-	${CP} ${WRKSRC}/Roman.pm ${SITE_PERL}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
