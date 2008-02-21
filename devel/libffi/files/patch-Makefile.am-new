@@ -1,0 +1,29 @@
+--- Makefile.am	2008-02-15 00:42:33.000000000 +0000
++++ Makefile.am	2008-02-21 01:50:41.000000000 +0000
+@@ -26,6 +26,7 @@
+ 	src/sparc/v8.S src/sparc/v9.S src/sparc/ffitarget.h \
+ 	src/sparc/ffi.c src/x86/darwin64.S \
+ 	src/x86/ffi.c src/x86/sysv.S src/x86/win32.S src/x86/darwin.S \
++	src/x86/freebsd.S \
+ 	src/x86/ffi64.c src/x86/unix64.S src/x86/ffitarget.h \
+ 	src/pa/ffitarget.h src/pa/ffi.c src/pa/linux.S src/pa/hpux32.S \
+ 	src/frv/ffi.c src/frv/eabi.S src/frv/ffitarget.h src/dlmalloc.c \
+@@ -84,7 +85,7 @@
+ libffi_la_SOURCES = src/debug.c src/prep_cif.c src/types.c \
+ 		src/raw_api.c src/java_raw_api.c src/closures.c
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libffi.pc
+ 
+ nodist_libffi_la_SOURCES =
+@@ -95,6 +96,9 @@
+ if X86
+ nodist_libffi_la_SOURCES += src/x86/ffi.c src/x86/sysv.S
+ endif
++if X86_FREEBSD
++nodist_libffi_la_SOURCES += src/x86/ffi.c src/x86/freebsd.S
++endif
+ if X86_WIN32
+ nodist_libffi_la_SOURCES += src/x86/ffi.c src/x86/win32.S
+ endif

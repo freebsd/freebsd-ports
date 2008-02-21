@@ -6,24 +6,27 @@
 #
 
 PORTNAME=	libffi
-PORTVERSION=	1.20
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://sources.redhat.com/pub/libffi/
+MASTER_SITES=	ftp://sourceware.org/pub/libffi/
 
-MAINTAINER=	horance@freera.net
+MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Foreign Function Interface
 
-USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	# empty
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	automake:110 autoconf:261
 
-CONFLICTS=	gcc-3*
+INFO=		libffi
 
-.include <bsd.port.pre.mk>
+MAN3=		ffi.3 ffi_call.3 ffi_prep_cif.3
 
-.if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		"Configure fails on !i386 and !alpha"
-.endif
+pre-configure:
+		@${REINPLACE_CMD} -e 's,^\(includesdir = \).*,\1$$(includedir),' \
+			${WRKSRC}/include/Makefile.am
 
-.include <bsd.port.post.mk>
+post-configure:
+		@${REINPLACE_CMD} -e 's,^\(transform = \).*,\1,' \
+			${WRKSRC}/man/Makefile
+
+.include <bsd.port.mk>
