@@ -28,11 +28,13 @@ USE_GETTEXT=	yes
 USE_SDL=	sdl
 USE_RUBY=	yes
 USE_LDCONFIG=	yes
+USE_GNOME=
 INSTALLS_ICONS=	yes
 
 OPTIONS=	GPOD "iPod support" on \
 		NJB "Creative Nomad and Dell support" on \
 		MTP "MTP device support" on \
+		LIBVISUAL "libvisual support" off \
 		OPENGL "OpenGL support" on \
 		AMAZON "Amazon cover fetching support" on \
 		MYSQL "Use MySQL as collection backend" off \
@@ -43,8 +45,7 @@ OPTIONS=	GPOD "iPod support" on \
 
 CONFIGURE_ARGS+=--without-exscalibar \
 		--with-mp4v2 \
-		--with-mp4v2-dir=${PREFIX} \
-		--without-libvisual
+		--with-mp4v2-dir=${PREFIX}
 
 .if !defined(WITH_GPOD)
 PLIST_SUB+=	GPOD="@comment "
@@ -69,6 +70,13 @@ PLIST_SUB+=	MTP="@comment "
 LIB_DEPENDS+=	mtp.6:${PORTSDIR}/audio/libmtp
 CONFIGURE_ARGS+=--with-libmtp
 PLIST_SUB+=	MTP=""
+.endif
+
+.if defined(WITHOUT_LIBVISUAL)
+CONFIGURE_ARGS+=--without-libvisual
+.else
+LIB_DEPENDS+=	visual-0.4:${PORTSDIR}/graphics/libvisual04
+USE_GNOME+=	gnomelibs
 .endif
 
 .if defined(WITHOUT_OPENGL)
