@@ -1,6 +1,6 @@
---- SConstruct.orig	2007-08-01 07:04:48.000000000 +0200
-+++ SConstruct	2007-09-06 11:09:13.000000000 +0200
-@@ -38,7 +38,7 @@
+--- SConstruct.orig	2008-02-06 18:54:40.000000000 +0100
++++ SConstruct	2008-02-11 09:56:44.000000000 +0100
+@@ -41,7 +41,7 @@
      BoolOption('FPU_OPTIMIZATION', 'Build runtime checked assembler code', 1),
      BoolOption('LIBLO', 'Compile with support for liblo library', 1),
      BoolOption('NLS', 'Set to turn on i18n support', 1),
@@ -9,7 +9,7 @@
      BoolOption('SURFACES', 'Build support for control surfaces', 1),
      BoolOption('SYSLIBS', 'USE AT YOUR OWN RISK: CANCELS ALL SUPPORT FROM ARDOUR AUTHORS: Use existing system versions of various libraries instead of internal ones', 0),
      BoolOption('UNIVERSAL', 'Compile as universal binary.  Requires that external libraries are already universal.', 0),
-@@ -381,7 +381,7 @@
+@@ -387,7 +387,7 @@
  # Make sure they know what they are doing
  #
  
@@ -18,7 +18,7 @@
      if os.path.isfile('.personal_use_only'):
          print "Enabling VST support. Note that distributing a VST-enabled ardour\nis a violation of several different licences.\nBuild with VST=false if you intend to distribute ardour to others."
      else:
-@@ -597,9 +597,9 @@
+@@ -663,9 +663,9 @@
      opt_flags.extend (["-mhard-float", "-mpowerpc-gfxopt"])
      opt_flags.extend (["-Os"])
  
@@ -30,7 +30,7 @@
      
      debug_flags.append ("-DARCH_X86")
      opt_flags.append ("-DARCH_X86")
-@@ -644,12 +644,7 @@
+@@ -710,12 +710,7 @@
              print "\nWarning: you are building Ardour with SSE support even though your system does not support these instructions. (This may not be an error, especially if you are a package maintainer)"
  # end optimization section
  
@@ -43,8 +43,8 @@
 +env['LIBDIR']='lib'
  
  #
- # save off guessed arch element in an env
-@@ -668,13 +663,7 @@
+ # a single way to test if we're on OS X
+@@ -746,13 +741,7 @@
  # prepend boiler plate optimization flags
  #
  
@@ -59,7 +59,7 @@
  
  if env['DEBUG'] == 1:
      env.Append(CCFLAGS=" ".join (debug_flags))
-@@ -719,6 +708,7 @@
+@@ -838,6 +827,7 @@
  
  libraries['usb'] = LibraryInfo ()
  prep_libcheck(env, libraries['usb'])
@@ -67,7 +67,7 @@
  
  conf = Configure (libraries['usb'])
  if conf.CheckLib ('usb', 'usb_interrupt_write'):
-@@ -777,6 +767,7 @@
+@@ -896,6 +886,7 @@
  if env['LIBLO']:
      libraries['lo'] = LibraryInfo ()
      prep_libcheck(env, libraries['lo'])
@@ -75,7 +75,7 @@
  
      conf = Configure (libraries['lo'])
      if conf.CheckLib ('lo', 'lo_server_new') == False:
-@@ -790,6 +781,7 @@
+@@ -909,6 +900,7 @@
  
  libraries['dmalloc'] = LibraryInfo ()
  prep_libcheck(env, libraries['dmalloc'])
@@ -83,7 +83,7 @@
  
  #
  # look for the threaded version
-@@ -821,8 +813,10 @@
+@@ -946,8 +938,10 @@
      subst_dict['%MIDITAG%'] = "ardour"
      subst_dict['%MIDITYPE%'] = "coremidi"
  else:
@@ -96,7 +96,19 @@
  
  env = conf.Finish()
  
-@@ -992,8 +986,7 @@
+@@ -1001,9 +995,9 @@
+ 
+ #    libraries['flowcanvas'] = LibraryInfo(LIBS='flowcanvas', LIBPATH='#/libs/flowcanvas', CPPPATH='#libs/flowcanvas')
+     libraries['soundtouch'] = LibraryInfo()
+-    #libraries['soundtouch'].ParseConfig ('pkg-config --cflags --libs soundtouch-1.0')
++    libraries['soundtouch'].ParseConfig ('pkg-config --cflags --libs soundtouch-1.0')
+     # Comment the previous line and uncomment this for Debian:
+-    libraries['soundtouch'].ParseConfig ('pkg-config --cflags --libs libSoundTouch')
++    #libraries['soundtouch'].ParseConfig ('pkg-config --cflags --libs libSoundTouch')
+ 
+     libraries['appleutility'] = LibraryInfo(LIBS='libappleutility',
+                                             LIBPATH='#libs/appleutility',
+@@ -1119,8 +1113,7 @@
  surface_subdirs = [ 'libs/surfaces/control_protocol',
                      'libs/surfaces/generic_midi',
                      'libs/surfaces/tranzport',
@@ -106,7 +118,7 @@
                      ]
  
  if env['SURFACES']:
-@@ -1106,8 +1099,8 @@
+@@ -1225,8 +1218,8 @@
      subst_dict['%JACK_INPUT%'] = "coreaudio:Built-in Audio:in"
      subst_dict['%JACK_OUTPUT%'] = "coreaudio:Built-in Audio:out"
  else:
