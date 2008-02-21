@@ -4,6 +4,8 @@
 %%RUBY_SITELIBDIR%%/rss/2.0.rb
 %%RUBY_SITELIBDIR%%/rss/atom.rb
 %%RUBY_SITELIBDIR%%/rss/content.rb
+%%RUBY_SITELIBDIR%%/rss/content/1.0.rb
+%%RUBY_SITELIBDIR%%/rss/content/2.0.rb
 %%RUBY_SITELIBDIR%%/rss/converter.rb
 %%RUBY_SITELIBDIR%%/rss/dublincore.rb
 %%RUBY_SITELIBDIR%%/rss/dublincore/1.0.rb
@@ -48,6 +50,7 @@
 %%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
 @dirrm %%RUBY_SITELIBDIR%%/rss/maker
 @dirrm %%RUBY_SITELIBDIR%%/rss/dublincore
+@dirrm %%RUBY_SITELIBDIR%%/rss/content
 @dirrm %%RUBY_SITELIBDIR%%/rss
 @dirrmtry %%RUBY_SITELIBDIR%%
 @dirrmtry lib/ruby/site_ruby
