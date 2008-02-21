@@ -86,6 +86,10 @@ OPTIONS=	TK "Build with TK support" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+BROKEN=		Does not run on FreeBSD >= 7.0, libtool will exclude all modules
+.endif
+
 CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--enable-dependency-tracking \
 		--enable-r=no \
