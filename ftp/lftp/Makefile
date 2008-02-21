@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.6.1
+PORTVERSION=	3.6.3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
 		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
@@ -16,8 +16,9 @@ MASTER_SITES=	ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
 		ftp://ftp.iasi.roedu.net/pub/os/Linux/network/ftp/lftp/old/ \
 		ftp://ftp.yars.free.net/pub/source/lftp/ \
 		ftp://ftp.yars.free.net/pub/source/lftp/old/ \
-		ftp://lftp.yar.ru/lftp/ \
-		ftp://lftp.yar.ru/lftp/old/
+		ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
+		http://lftp.cybermirror.org/ \
+		http://lftp.cybermirror.org/old/
 
 MAINTAINER=	fm@cross-road.org.ua
 COMMENT=	Shell-like command line ftp client
@@ -30,6 +31,10 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+PORTDOCS=	AUTHORS BUGS ChangeLog FAQ FEATURES INSTALL \
+		MIRRORS NEWS README README.debug-levels README.modules \
+		THANKS TODO
 
 OPTIONS=	GNUTLS "With GnutTLS support" off \
 		OPENSSL "With OpenSSL support" on \
@@ -64,11 +69,13 @@ MAN1=		lftp.1 lftpget.1
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/etc/lftp.conf.sample
+	@if [ ! -f ${PREFIX}/etc/lftp.conf ]; then \
+	${CP} -p ${PREFIX}/etc/lftp.conf.sample ${PREFIX}/etc/lftp.conf ; \
+	fi
+
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for ifile in COPYING FAQ NEWS README README.debug-levels README.modules THANKS TODO FEATURES
-	@${INSTALL_DATA} ${WRKSRC}/${ifile} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
