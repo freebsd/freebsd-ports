@@ -1,5 +1,5 @@
 --- io.c.orig	2007-07-01 15:19:57.000000000 -0400
-+++ io.c	2007-11-24 18:14:00.000000000 -0500
++++ io.c	2008-02-21 11:30:53.000000000 -0500
 @@ -17,6 +17,7 @@
  static void rewrite_contest_file(void);
  static void write_call_library_file(void);
@@ -377,7 +377,7 @@
  
 -  strcpy(filnam, contest_file_base);
 -  strcat(filnam, ".INI");
-+  snprintf(filnam, sizeof(filnam), "%s.INIT", contest_file_base);
++  snprintf(filnam, sizeof(filnam), "%s.INI", contest_file_base);
    fp = fopen(filnam, "w");
    if(fp==NULL)
     {
