@@ -1,16 +1,22 @@
 @comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/.packlist
 %%SITE_PERL%%/POE/Component/IRC.pm
 %%SITE_PERL%%/POE/Component/IRC/Common.pm
 %%SITE_PERL%%/POE/Component/IRC/Constants.pm
 %%SITE_PERL%%/POE/Component/IRC/Pipeline.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin.pm
+%%SITE_PERL%%/POE/Component/IRC/Plugin/AutoJoin.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/BotAddressed.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/BotTraffic.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/CTCP.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Connector.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Console.pm
+%%SITE_PERL%%/POE/Component/IRC/Plugin/CycleEmpty.pm
+%%SITE_PERL%%/POE/Component/IRC/Plugin/FollowTail.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/ISupport.pm
+%%SITE_PERL%%/POE/Component/IRC/Plugin/Logger.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/NickReclaim.pm
+%%SITE_PERL%%/POE/Component/IRC/Plugin/NickServID.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/PlugMan.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Proxy.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Whois.pm
@@ -23,24 +29,25 @@
 %%SITE_PERL%%/POE/Filter/CTCP.pm
 %%SITE_PERL%%/POE/Filter/IRC.pm
 %%SITE_PERL%%/POE/Filter/IRC/Compat.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/.packlist
-%%PORTDOCS%%%%EXAMPLESDIR%%/aimproxy.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/dcctest.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/dicebot.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/eliza.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/ircproxy.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/moo.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/simpleclient.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/tinyurl.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC
+%%EXAMPLESDIR%%/aimproxy.pl
+%%EXAMPLESDIR%%/dcctest.pl
+%%EXAMPLESDIR%%/dicebot.pl
+%%EXAMPLESDIR%%/eliza.pl
+%%EXAMPLESDIR%%/ircproxy.pl
+%%EXAMPLESDIR%%/logger.pl
+%%EXAMPLESDIR%%/moo.pl
+%%EXAMPLESDIR%%/rot13_multi.pl
+%%EXAMPLESDIR%%/simpleclient.pl
+%%EXAMPLESDIR%%/tinyurl.pl
+@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
-@dirrm %%SITE_PERL%%/POE/Component/IRC/Plugin
-@dirrm %%SITE_PERL%%/POE/Component/IRC/Qnet
-@dirrm %%SITE_PERL%%/POE/Component/IRC/Test
-@dirrm %%SITE_PERL%%/POE/Component/IRC
-@dirrm %%SITE_PERL%%/POE/Filter/IRC
-@dirrmtry %%SITE_PERL%%/POE/Component
+@dirrmtry %%SITE_PERL%%/POE/Filter/IRC
 @dirrmtry %%SITE_PERL%%/POE/Filter
+@dirrmtry %%SITE_PERL%%/POE/Component/IRC/Test
+@dirrmtry %%SITE_PERL%%/POE/Component/IRC/Qnet
+@dirrmtry %%SITE_PERL%%/POE/Component/IRC/Plugin
+@dirrmtry %%SITE_PERL%%/POE/Component/IRC
+@dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE

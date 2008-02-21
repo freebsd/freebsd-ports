@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	5.46
+PORTVERSION=	5.68
 CATEGORIES=	irc devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	POE
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fully event-driven IRC client module
 
 RUN_DEPENDS=	p5-POE>=0.3202:${PORTSDIR}/devel/p5-POE \
@@ -30,13 +29,18 @@ MAN3=		POE::Component::IRC.3 \
 		POE::Component::IRC::Constants.3 \
 		POE::Component::IRC::Pipeline.3 \
 		POE::Component::IRC::Plugin.3 \
+		POE::Component::IRC::Plugin::AutoJoin.3 \
 		POE::Component::IRC::Plugin::BotAddressed.3 \
 		POE::Component::IRC::Plugin::BotTraffic.3 \
 		POE::Component::IRC::Plugin::CTCP.3 \
 		POE::Component::IRC::Plugin::Connector.3 \
 		POE::Component::IRC::Plugin::Console.3 \
+		POE::Component::IRC::Plugin::CycleEmpty.3 \
+		POE::Component::IRC::Plugin::FollowTail.3 \
 		POE::Component::IRC::Plugin::ISupport.3 \
+		POE::Component::IRC::Plugin::Logger.3 \
 		POE::Component::IRC::Plugin::NickReclaim.3 \
+		POE::Component::IRC::Plugin::NickServID.3 \
 		POE::Component::IRC::Plugin::PlugMan.3 \
 		POE::Component::IRC::Plugin::Proxy.3 \
 		POE::Component::IRC::Plugin::Whois.3 \
