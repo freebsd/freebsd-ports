@@ -7279,6 +7279,7 @@ lookupd		ports/sysutils/lookupd
 lookupd_ldap	ports/sysutils/lookupd_ldap
 loop		ports/misc/loop
 lopster		ports/net-p2p/lopster
+lordsawar	ports/games/lordsawar
 lostirc		ports/irc/lostirc
 loudmouth	ports/net-im/loudmouth
 lout		ports/print/lout
