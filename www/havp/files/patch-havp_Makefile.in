@@ -1,9 +1,9 @@
---- havp/Makefile.in.orig	Fri May  4 14:37:52 2007
-+++ havp/Makefile.in	Fri May  4 14:40:43 2007
+--- havp/Makefile.in.orig	2007-09-11 15:42:44.000000000 -0300
++++ havp/Makefile.in	2008-02-18 08:38:17.000000000 -0300
 @@ -26,30 +26,7 @@
  install: all
  	$(INSTALL) -d $(DESTDIR)$(sbindir)
- 	$(INSTALL) -s -m 755 havp $(DESTDIR)$(sbindir)/havp
+ 	$(INSTALL) -m 755 havp $(DESTDIR)$(sbindir)/havp
 -	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/log/havp
 -	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/tmp/havp
 -	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/run/havp
