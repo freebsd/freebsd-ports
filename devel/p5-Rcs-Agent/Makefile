@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	Rcs-Agent
-PORTVERSION=	1.03
+PORTVERSION=	1.05
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Rcs
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	A perl module for RCS archive manipulation
 
-BUILD_DEPENDS=	${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote
+BUILD_DEPENDS=	p5-String-ShellQuote>1.00:${PORTSDIR}/textproc/p5-String-ShellQuote
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
