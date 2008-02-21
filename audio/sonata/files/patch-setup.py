@@ -22,10 +22,10 @@
 +                    ('share/locale/be@latin/LC_MESSAGES', ['mo/be@latin/sonata.mo']),
 +                    ('share/locale/uk/LC_MESSAGES', ['mo/uk/sonata.mo'])]
 +
-+if not os.getenv("NOPORTDOCS"):
++if not os.environ.has_key("NOPORTDOCS"):
 +	port_data_files.append(('%%DOCSDIR%%', ['README']))
 +
-+if not os.getenv("NO_INSTALL_MANPAGES"):
++if not os.environ.has_key("NO_INSTALL_MANPAGES"):
 +	port_data_files.append(('man/man1', ['sonata.1']))
 +
  setup(name='Sonata',

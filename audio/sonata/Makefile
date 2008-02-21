@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	sonata
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.4.2
+#PORTREVISION=	0
 CATEGORIES=	audio python
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,6 +31,12 @@ REINPLACE_ARGS=	-i.bak -e 's,%%DOCSDIR%%,${DOCSDIR},'
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=	${PORTNAME}.1
+.else
+MAKE_ENV=	NO_INSTALL_MANPAGES=${NO_INSTALL_MANPAGES}
+.endif
+
+.if defined(NOPORTDOCS)
+MAKE_ENV+=	NOPORTDOCS=${NOPORTDOCS}
 .endif
 
 post-patch:
@@ -47,7 +53,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/tagpy/__init__.py:${PORTSDIR}/audio/py-tagpy
 .endif
 
 .if defined (WITH_ZSI)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ZSI/ServiceProxy.py:${PORTSDIR}/net/py-zsi
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ZSI/ServiceProxy.py:${PORTSDIR}/net/py-zsi-devel
 .endif
 
 .include <bsd.port.post.mk>
