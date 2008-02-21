@@ -455,6 +455,7 @@
     SUBDIR += lm-solve
     SUBDIR += lmarbles
     SUBDIR += lmpc
+    SUBDIR += lordsawar
     SUBDIR += ltris
     SUBDIR += lucidlife
     SUBDIR += luola
