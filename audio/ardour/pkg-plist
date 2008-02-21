@@ -4,12 +4,13 @@ lib/ardour2/libsndfile-ardour.so
 lib/ardour2/libpbd.so
 lib/ardour2/libmidi++.so
 lib/ardour2/libardour.so
-%%NO_VST%%lib/ardour2/ardour-%%DISTVERSION%%
+%%NO_VST%%lib/ardour2/ardour-2.3
 %%VST%%lib/ardour2/ardour_vst.exe.so
 %%VST%%lib/ardour2/libardourgtk.so
 lib/ardour2/libgtkmm2ext.so
 lib/ardour2/libardour_cp.so
 lib/ardour2/libvampsdk.so
+lib/ardour2/libvamphostsdk.so
 lib/ardour2/libsoundtouch.so
 lib/ardour2/librubberband.so
 lib/ardour2/surfaces/libardour_genericmidi.so
@@ -18,6 +19,8 @@ lib/ardour2/surfaces/libardour_tranzport.so
 @dirrm lib/ardour2/surfaces
 lib/ardour2/engines/libclearlooks.so
 @dirrm lib/ardour2/engines
+lib/ardour2/vamp/libardourvampplugins.so
+@dirrm lib/ardour2/vamp
 @dirrm lib/ardour2
 etc/ardour2/ardour.menus
 etc/ardour2/ardour.bindings
@@ -113,6 +116,8 @@ share/ardour2/icons/saebig.png
 share/ardour2/icons/saelogo2.png
 share/ardour2/icons/saeoldlogo.png
 share/ardour2/icons/sae.png
+share/ardour2/icons/ferret_01.png
+share/ardour2/icons/ferret_02.png
 @dirrm share/ardour2/icons
 share/ardour2/templates/16 Tracks.template
 share/ardour2/templates/2 Track.template
