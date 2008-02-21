@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	csocks
-PORTVERSION=	1.1
+PORTVERSION=	1.5
 CATEGORIES=	net security
 MASTER_SITES=	http://csocks.altervista.org/download/ \
 		http://csocks.virtuale.org/download/
@@ -15,20 +15,22 @@ COMMENT=	SOCKS Client v4/v5 RFC Compliant with many features
 
 ONLY_FOR_ARCHS=	i386
 
-PLIST_FILES=	etc/csocks.conf lib/libcsocks.so lib/libcsocks.so.1 bin/csocks
+PLIST_FILES=	etc/csocks.conf.sample lib/libcsocks.so lib/libcsocks.so.1 bin/csocks
 
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/src
 USE_LDCONFIG=	yes
 MAN1=		csocks.1
 MAN5=		csocks.conf.5
 MANCOMPRESSED=	yes
 
+post-patch:
+	${REINPLACE_CMD} "s#/usr/local#${PREFIX}#" ${WRKDIR}/src/Makefile
+
 do-install:
-	${CP} -p ${WRKDIR}/${DISTNAME}/freebsd/libcsocks.so.1 ${PREFIX}/lib/
+	${CP} -p ${WRKDIR}/src/libcsocks.so.1 ${PREFIX}/lib/
 	${LN} -fs ${PREFIX}/lib/libcsocks.so.1 ${PREFIX}/lib/libcsocks.so
-	${CP} -p ${WRKDIR}/${DISTNAME}/freebsd/csocks ${PREFIX}/bin
-	${CP} -p ${WRKDIR}/${DISTNAME}/freebsd/csocks.conf ${PREFIX}/etc/
-	${CP} -p ${WRKDIR}/${DISTNAME}/man/csocks.1.gz ${MANPREFIX}/man/man1
-	${CP} -p ${WRKDIR}/${DISTNAME}/man/csocks.conf.5.gz ${MANPREFIX}/man/man5
+	${CP} -p ${WRKDIR}/freebsd/csocks ${PREFIX}/bin
+	${CP} -p ${WRKDIR}/csocks.conf ${PREFIX}/etc/csocks.conf.sample
+	${CP} -p ${WRKDIR}/man/csocks.1.gz ${MANPREFIX}/man/man1
+	${CP} -p ${WRKDIR}/man/csocks.conf.5.gz ${MANPREFIX}/man/man5
 .include <bsd.port.mk>
