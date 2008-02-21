@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	Data-Swap
-PORTVERSION=	0.05
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Data
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	parv@pair.com
 COMMENT=	XS module to swap the contents and types of referenced variables
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.6.0+
 
 MAN3=	Data::Swap.3
 
