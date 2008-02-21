@@ -6,6 +6,7 @@
 
 PORTNAME=	kb
 PORTVERSION=	7.09
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.db.net/downloads/ \
 		${MASTER_SITE_LOCAL}
