@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-gmail-notifier
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail deskutils
 MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/
 

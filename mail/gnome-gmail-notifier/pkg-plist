@@ -8,8 +8,10 @@ share/gnome-gmail-notifier/ggn-new.svg
 share/gnome-gmail-notifier/ggn-normal.svg
 share/gnome-gmail-notifier/ggn-prefs.glade
 share/gnome-gmail-notifier/ggn-wait.svg
+share/gnome-gmail-notifier/ggn-warn.svg
 share/gnome-gmail-notifier/welcome-logo.png
 share/gnome-gmail-notifier/welcome-shot.png
 share/gnome-gmail-notifier/welcome.css
 share/gnome-gmail-notifier/welcome.html
+share/pixmaps/gnome-gmail-notifier.svg
 @dirrm share/gnome-gmail-notifier
