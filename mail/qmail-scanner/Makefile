@@ -7,7 +7,7 @@
 
 PORTNAME=	qmail-scanner
 PORTVERSION=	2.01
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -61,7 +61,8 @@ CONTRIB=	mrtg-qmail-scanner.cfg check_AV_daemons logrotate.qmail-scanner \
 OPTIONS=	TNEF "Mark Simpson's Patch (Recommended)" on \
 		FIX_MIME "Fix broken MIME messages" off \
 		REDUNDANT "Scan attachments and body mails" on \
-		NORMALIZE "Decode encoded headers per MIME Base64" off
+		NORMALIZE "Decode encoded headers per MIME Base64" off \
+		CWRAPPER "use C wrapper (no suid perl script needed)" on
 
 SUB_FILES=	pkg-install pkg-message
 SUB_LIST+=	QS_USER=${QS_USER} \
@@ -85,6 +86,18 @@ CONFIGURE_ARGS+=	--redundant no
 
 .if !defined(WITH_NORMALIZE)
 CONFIGURE_ARGS+=	--normalize no
+.endif
+
+.if defined(WITH_CWRAPPER)
+SUB_LIST+=	CWRAPPER=yes
+SUB_LIST+=	QSQ_TARGET=qmail-scanner-queue
+CWRAPPER_FLG=	yes
+PLIST_SUB+=	CWRAPPER=""
+.else
+SUB_LIST+=	CWRAPPER=no
+SUB_LIST+=	QSQ_TARGET=qmail-scanner-queue.pl
+CWRAPPER_FLG=	no
+PLIST_SUB+=	CWRAPPER="@comment "
 .endif
 
 .if defined(QS_USER)
@@ -220,11 +233,21 @@ pre-configure:
 	@${ECHO_MSG} "			(Default: yes, Options: yes|no|number)"
 	@${ECHO_MSG} ""
 	@${SED} -e 's,%%SPOOLDIR%%,${SPOOLDIR},g; s,%%QS_USER%%,${QS_USER},g; \
-		s,%%QS_ID%%,${QS_ID},g' ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+		s,%%QS_ID%%,${QS_ID},g; s,%%CWRAPPER%%,${CWRAPPER_FLG},g' \
+		${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-build:
 	@${REINPLACE_CMD} -E 's,^#!.*perl(.*)$$,#!${PERL}\1,' ${WRKSRC}/qmail-scanner-queue.pl
+.if defined(WITH_CWRAPPER)
+	# remove the -T option in the perl script:
+	@${REINPLACE_CMD} -E 's,^(#!${PERL}.*)-T(.*)$$,\1\2,' ${WRKSRC}/qmail-scanner-queue.pl
+	# patch the correct paths into the c wrapper:
+	@${REINPLACE_CMD} -E 's|^(#define REAL_PATH ")/var/qmail/bin/qmail-scanner-queue.pl(".*)$$|\1${PREFIX}/bin/qmail-scanner-queue.pl\2|' \
+		${WRKSRC}/contrib/qmail-scanner-queue.c
+	# compile the c wrapper:
+	@${CC} ${CFLAGS} -o ${WRKSRC}/contrib/qmail-scanner-queue ${WRKSRC}/contrib/qmail-scanner-queue.c
+.endif
 
 do-install:
 .if !defined(NOPORTDOCS)
@@ -234,6 +257,9 @@ do-install:
 .endif
 	@${MKDIR} ${SPOOLDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/qmail-scanner-queue.pl ${PREFIX}/bin
+.if defined(WITH_CWRAPPER)
+	@${INSTALL_PROGRAM} ${WRKSRC}/contrib/qmail-scanner-queue ${PREFIX}/bin
+.endif
 	@${INSTALL_DATA} ${WRKSRC}/quarantine-events.txt ${SPOOLDIR}/quarantine-events.txt.sample
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}

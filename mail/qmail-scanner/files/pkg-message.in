@@ -14,17 +14,16 @@ Anti-Virus or Anti-Spam;
 Now configure the environment variable to use qmail-scanner:
 
 You just need to add for your tcpserver file (generally called
-as: tcp.smtp):
+as 'tcp.smtp'):
 
-QMAILQUEUE="%%PREFIX%%/bin/qmail-scanner-queue.pl"
+QMAILQUEUE="%%PREFIX%%/bin/%%QSQ_TARGET%%"
 
-Or create an new file in /service/smtpd/env, with the following
-content and called as "QMAILQUEUE":
+Or create an new file in /service/smtpd/env:
 
-%%PREFIX%%/bin/qmail-scanner-queue.pl
+# echo '%%PREFIX%%/bin/%%QSQ_TARGET%%' > /service/smtpd/env/QMAILQUEUE
 
 NOTE: always you change anything in your environment dir, you just
-need to restart your smtpd, for it use: "svc -k /service/smtpd".
+need to restart your smtpd, for it, use: "svc -k /service/smtpd".
 
 You can test your installation by running 'make test' in port dir.
 
@@ -33,5 +32,4 @@ and then run "qmail-scanner-queue.pl -g" to generate DB version.
 
 Please log into an unpriviledged account and run 
 
-%%PREFIX%%/bin/qmail-scanner-queue.pl -g
-
+%%PREFIX%%/bin/%%QSQ_TARGET%% -g
