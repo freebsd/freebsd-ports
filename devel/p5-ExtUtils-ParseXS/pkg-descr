@@ -3,3 +3,5 @@ constructs necessary to let C functions manipulate Perl values and creates
 the glue necessary to let Perl access those functions.  The compiler uses
 typemaps to determine how to map C function parameters and variables to Perl
 values.
+
+WWW:	http://search.cpan.org/dist/ExtUtils-ParseXS/
