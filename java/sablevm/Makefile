@@ -7,15 +7,15 @@
 
 PORTNAME=	sablevm
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sablevm
+MASTER_SITES=	SF
 
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Java VM created by McGill University's Sable Research Group
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt \
-		ffi:${PORTSDIR}/devel/libffi-devel
+		ffi:${PORTSDIR}/devel/libffi
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl
