@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/security/clamav/files/pkg-install.in,v 1.4 2007-02-18 16:12:37 garga Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/clamav/files/pkg-install.in,v 1.5 2008-02-21 13:19:50 garga Exp $
 
 PREFIX=${PKG_PREFIX:-%%PREFIX%%}
 
@@ -14,7 +14,7 @@ RUNDIR=%%RUNDIR%%
 
 PW="pw"
 CHOWN="chown"
-MKDIR="mkdir -p"
+INSTALL_DIR="install -d -o ${CLAMAVUSER} -g ${CLAMAVGROUP} -m 0755"
 
 if [ "$2" = "PRE-INSTALL" ]; then
 
@@ -41,16 +41,8 @@ if [ "$2" = "PRE-INSTALL" ]; then
 	fi
 
 elif [ "$2" = "POST-INSTALL" ]; then
-
-	[ ! -d "${DBDIR}" ] && (${MKDIR} ${DBDIR} || exit 1)
-	${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DBDIR} || exit 1
-
-	[ ! -d "${LOGDIR}" ] && (${MKDIR} ${LOGDIR} || exit 1)
-	${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${LOGDIR} || exit 1
-
-	[ ! -d "${RUNDIR}" ] && (${MKDIR} ${RUNDIR} || exit 1)
-	${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${RUNDIR} || exit 1
-
+	${INSTALL_DIR} ${DBDIR} ${LOGDIR} ${RUNDIR}
+	${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DBDIR} ${LOGDIR} ${RUNDIR}
 fi
 
 exit 0
