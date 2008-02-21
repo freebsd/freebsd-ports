@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20080124
+PORTVERSION=	20080221
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -112,12 +112,13 @@ CONFIGURE_ARGS+=	--enable-gethostbyname_r
 # force to use -lthr until it's not fixed.
 .if ${OSVERSION} >= 601000
 PTHREAD_LIBS=	-lthr
-.endif
 # Maybe the port is broken for
 # FreeBSD 5.2.1 since -lc_r
 # and -pthread have both issues there.
-.if ${OSVERSION} == 502010
+.elif ${OSVERSION} == 502010
 PTHREAD_LIBS=	-pthread
+.else
+PTHREAD_LIBS=	-lpthread
 .endif
 
 .if defined(WITH_ARC)
