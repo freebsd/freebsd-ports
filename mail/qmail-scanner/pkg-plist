@@ -1,4 +1,5 @@
 bin/qmail-scanner-queue.pl
+%%CWRAPPER%%bin/qmail-scanner-queue
 %%PORTDOCS%%%%DOCSDIR%%/contrib/logging_first_80_chars.eml
 %%PORTDOCS%%%%DOCSDIR%%/contrib/patch_for_nod32_single_user.eml
 %%PORTDOCS%%%%DOCSDIR%%/contrib/reformime-test.eml

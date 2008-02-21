@@ -10,6 +10,7 @@ QS_USER=%%QS_USER%%
 QS_ID=%%QS_ID%%
 
 SPOOLDIR=%%SPOOLDIR%%
+CWRAPPER=%%CWRAPPER%%
 
 case "$2" in
 PRE-INSTALL)
@@ -35,8 +36,13 @@ POST-INSTALL)
   # Mod and owner
   ${CHOWN} -R ${QS_USER}:${QS_USER} ${SPOOLDIR}
   ${CHOWN} ${QS_USER}:${QS_USER} ${PKG_PREFIX}/bin/qmail-scanner-queue.pl
-  ${CHMOD} 4755 ${PKG_PREFIX}/bin/qmail-scanner-queue.pl
-
+  if [ ":${CWRAPPER}" = ":yes" ]; then
+	${CHOWN} ${QS_USER}:${QS_USER} ${PKG_PREFIX}/bin/qmail-scanner-queue
+	${CHMOD} 6755 ${PKG_PREFIX}/bin/qmail-scanner-queue
+ 	${CHMOD} 0755 ${PKG_PREFIX}/bin/qmail-scanner-queue.pl
+  else
+	${CHMOD} 4755 ${PKG_PREFIX}/bin/qmail-scanner-queue.pl
+  fi
   # Initialize
   ${PKG_PREFIX}/bin/qmail-scanner-queue.pl -z
   ${PKG_PREFIX}/bin/qmail-scanner-queue.pl -g
