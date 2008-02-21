@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.92.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -107,6 +108,8 @@ CONFIGURE_ARGS+=	--enable-gethostbyname_r
 # force to use -lthr until it's not fixed.
 .if ${OSVERSION} >= 601000
 PTHREAD_LIBS=	-lthr
+.else
+PTHREAD_LIBS=	-lpthread
 .endif
 
 .if defined(WITH_ARC)
