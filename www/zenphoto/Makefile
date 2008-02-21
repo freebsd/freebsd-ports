@@ -4,14 +4,12 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.zenphoto.org/files/
 
 MAINTAINER=	jadawin@tuxaco.net
 COMMENT=	A simpler web photo gallery
-
-FORBIDDEN=	XSS security issues, http://www.securityfocus.com/bid/27084
 
 USE_PHP=	mysql gd session
 WANT_PHP_WEB=	yes
