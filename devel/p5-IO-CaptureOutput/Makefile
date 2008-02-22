@@ -7,6 +7,7 @@
 
 PORTNAME=	IO-CaptureOutput
 PORTVERSION=	1.08.01
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	IO
@@ -17,6 +18,9 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Capture STDOUT/STDERR from subprocesses and XS/C modules
 
 PERL_CONFIGURE=	yes
+
+RUN_DEPENDS=	p5-PathTools>=3.27:${PORTSDIR}/devel/p5-PathTools
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAN3=	IO::CaptureOutput.3
 
