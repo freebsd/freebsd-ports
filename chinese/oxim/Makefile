@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oxim
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
 		ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \

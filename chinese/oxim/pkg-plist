@@ -24,6 +24,8 @@ lib/oxim/tables/cnscj.tab
 lib/oxim/tables/cnsphone.tab
 lib/oxim/tables/default.phr
 lib/oxim/tables/symbol.list
+share/applications/oxim-setup.desktop
+share/pixmaps/oxim-setup.png
 @dirrm etc/oxim
 @dirrm lib/oxim/immodules
 @dirrm lib/oxim/modules
