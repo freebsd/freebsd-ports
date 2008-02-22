@@ -34,6 +34,88 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="810a5197-e0d9-11dc-891a-02061b08fc24">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>2.0.0.12,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>2.0.0.12</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.1.8</lt></range>
+      </package>
+      <package>
+	<name>flock</name>
+	<name>linux-flock</name>
+	<range><lt>1.0.9</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<name>linux-seamonkey-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Foundation reports of multiple security issues
+	  in Firefox, Seamonkey, and Thunderbird.  Several of these
+	  issues can probably be used to run arbitrary code with the
+	  privilege of the user running the program.</p>
+	<blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
+	  <ul>
+	    <li>Web forgery overwrite with div overlay</li>
+	    <li>URL token stealing via stylesheet redirect</li>
+	    <li>Mishandling of locally-saved plain text files</li>
+	    <li>File action dialog tampering</li>
+	    <li>Possible information disclosure in BMP decoder</li>
+	    <li>Web browsing history and forward navigation stealing</li>
+	    <li>Directory traversal via chrome: URI</li>
+	    <li>Stored password corruption</li>
+	    <li>Privilege escalation, XSS, Remote Code Execution</li>
+	    <li>Multiple file input focus stealing vulnerabilities</li>
+	    <li>Crashes with evidence of memory corruption (rv:1.8.1.12)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-0412</cvename>
+      <cvename>CVE-2008-0413</cvename>
+      <cvename>CVE-2008-0414</cvename>
+      <cvename>CVE-2008-0415</cvename>
+      <cvename>CVE-2008-0417</cvename>
+      <cvename>CVE-2008-0418</cvename>
+      <cvename>CVE-2008-0419</cvename>
+      <cvename>CVE-2008-0420</cvename>
+      <cvename>CVE-2008-0591</cvename>
+      <cvename>CVE-2008-0592</cvename>
+      <cvename>CVE-2008-0593</cvename>
+      <cvename>CVE-2008-0594</cvename>
+      <url>http://www.mozilla.org/projects/security/known-vulnerabilities.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-01.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-02.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-03.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-04.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-05.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-06.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-07.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-08.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-09.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-10.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-11.html</url>
+    </references>
+    <dates>
+      <discovery>2008-02-07</discovery>
+      <entry>2008-02-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e5d29309-e0db-11dc-97b2-001c2514716c">
     <topic>openldap -- modrdn Denial of Service vulnerability</topic>
     <affects>
