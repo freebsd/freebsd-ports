@@ -19,6 +19,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 DEPRECATED=	Obsolete version, use Firefox 2.0 or greater instead
+FORBIDDEN=	http://vuxml.FreeBSD.org/810a5197-e0d9-11dc-891a-02061b08fc24.html
 
 LATEST_LINK=	firefox15
 MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
