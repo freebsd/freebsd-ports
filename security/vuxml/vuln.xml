@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="30c560ff-e0df-11dc-891a-02061b08fc24">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><lt>9.26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera Software ASA reports about multiple security
+	  fixes:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/freebsd/925/">
+	  <ul>
+	    <li>Fixed an issue where simulated text inputs could trick
+	      users into uploading arbitrary files, as reported by
+	      Mozilla.</li>
+	    <li>Image properties can no longer be used to execute
+	      scripts, as reported by Max Leonov.</li>
+	    <li>Fixed an issue where the representation of DOM
+	      attribute values could allow cross site scripting, as
+	      reported by Arnaud.lb.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/docs/changelogs/freebsd/926/</url>
+      <url>http://www.opera.com/support/search/view/877/</url>
+      <url>http://www.opera.com/support/search/view/879/</url>
+      <url>http://www.opera.com/support/search/view/880/</url>
+     </references>
+    <dates>
+      <discovery>2008-02-20</discovery>
+      <entry>2008-02-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="810a5197-e0d9-11dc-891a-02061b08fc24">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
