@@ -1,0 +1,7 @@
+This module provide a lightweight IOC or Inversion of Control framework.
+Inversion of Control, sometimes called Dependency Injection, is a
+component management style which aims to clean up component
+configuration and provide a cleaner, more flexible means of configuring
+a large application.
+
+WWW: http://search.cpan.org/dist/IOC/
