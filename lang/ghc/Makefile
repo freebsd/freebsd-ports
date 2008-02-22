@@ -16,10 +16,7 @@ DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source \
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Compiler for the functional language Haskell
 
-ONLY_FOR_ARCHS=	i386
-
-BOOT_DIST6=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
-BOOT_DIST7=	ghc-${PORTVERSION}-i386-unknown-freebsd7-boot${EXTRACT_SUFX}:boot
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_AUTOTOOLS=	autoconf:261:env
 USE_BZIP2=	yes
@@ -37,13 +34,22 @@ OPTIONS=	PROFILE "Compile for profiling as well" on
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
+.if ${ARCH} == "i386"
 .if ${OSVERSION} >= 700000
-DISTFILES+=	${BOOT_DIST7}
+DISTFILES+=	ghc-${PORTVERSION}-i386-unknown-freebsd7-boot${EXTRACT_SUFX}:boot
 .elif ${OSVERSION} >= 600000
-DISTFILES+=	${BOOT_DIST6}
+DISTFILES+=	ghc-${PORTVERSION}-i386-unknown-freebsd6-boot${EXTRACT_SUFX}:boot
 .else
 IGNORE=		unsupported at the moment
-#DISTFILES+=	${BOOT_DIST5}
+.endif
+.endif
+
+.if ${ARCH} == "amd64"
+.if ${OSVERSION} >= 700000
+DISTFILES+=	ghc-${PORTVERSION}-x86_64-unknown-freebsd7-boot${EXTRACT_SUFX}:boot
+.else
+IGNORE=		unsupported at the moment
+.endif
 .endif
 
 PLIST_SUB+=	GHC_VERSION=${PORTVERSION}
