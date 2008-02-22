@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse-devel
 PORTVERSION=	3.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-${PORTVERSION}-200709211145
@@ -107,6 +107,7 @@ post-patch:
 	@${PATCH} ${PATCH_DIST_ARGS} "${SWTMOZ}/gtk/org/eclipse/swt/browser/MozillaDelegate.java" ${FILESDIR}/post-patch-plugins-swt-mozilla-gtk-swt-browser-MozillaDelegate.java
 	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/gtk/org/eclipse/swt/internal/gtk/OS.java" ${FILESDIR}/post-patch-plugins-swt-gtk-swt-internal-gtk-OS.java
 	@${PATCH} ${PATCH_DIST_ARGS} "${SWTGTK}/gtk/library/os.c" ${FILESDIR}/post-patch-plugins-swt-gtk-library-os.c
+	@${PATCH} ${PATCH_DIST_ARGS} "${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT/gtk/org/eclipse/swt/widgets/FileDialog.java" ${FILESDIR}/post-patch-plugins-swt-gtk-swt-FileDialog.java
 
 	@${REINPLACE_CMD} -e 's|%%GECKO%%|${GECKO}|g' \
 		"${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh" \
