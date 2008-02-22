@@ -1,0 +1,25 @@
+include/spnetkit/spnkbase64.hpp
+include/spnetkit/spnkendpoint.hpp
+include/spnetkit/spnkfile.hpp
+include/spnetkit/spnkhash.hpp
+include/spnetkit/spnkhttpcli.hpp
+include/spnetkit/spnkhttpmsg.hpp
+include/spnetkit/spnkini.hpp
+include/spnetkit/spnklist.hpp
+include/spnetkit/spnklog.hpp
+include/spnetkit/spnkmemcli.hpp
+include/spnetkit/spnkmemobj.hpp
+include/spnetkit/spnkpop3cli.hpp
+include/spnetkit/spnkreader.hpp
+include/spnetkit/spnksmtpaddr.hpp
+include/spnetkit/spnksmtpcli.hpp
+include/spnetkit/spnksocket.hpp
+include/spnetkit/spnksocketpool.hpp
+include/spnetkit/spnksslsocket.hpp
+include/spnetkit/spnkstr.hpp
+include/spnetkit/spnktime.hpp
+lib/libspnetkit.so
+lib/libspnetkit.so.0
+lib/libspnetkit_s.so
+lib/libspnetkit_s.so.0
+@dirrm include/spnetkit

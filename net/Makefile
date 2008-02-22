@@ -850,6 +850,7 @@
     SUBDIR += socketpipe
     SUBDIR += socks5
     SUBDIR += splatd
+    SUBDIR += spnetkit
     SUBDIR += spoofer
     SUBDIR += spread
     SUBDIR += spread-j

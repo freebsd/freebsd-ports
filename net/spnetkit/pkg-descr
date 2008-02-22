@@ -1,0 +1,7 @@
+spnetkit is a C++ wrapper for BSD-style sockets.
+It implements the TCP, UDP, SSL transport layer protocols.
+Implemented application layer protocols are HTTP client, SMTP client,
+POP3 client and memcached client. Features include an inifile reader,
+base64 codec.
+
+WWW: http://code.google.com/p/spnetkit/
