@@ -1309,6 +1309,7 @@
     SUBDIR += p5-IO-Util
     SUBDIR += p5-IO-YAML
     SUBDIR += p5-IO-stringy
+    SUBDIR += p5-IOC
     SUBDIR += p5-IPC-Cache
     SUBDIR += p5-IPC-Cmd
     SUBDIR += p5-IPC-DirQueue
