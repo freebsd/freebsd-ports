@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	Mail-SPF
-PORTVERSION=	2.004
+PORTVERSION=	2.005
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Mail
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	gmc@sonologic.nl
 COMMENT=	Reference implementation of the RFC 4408 SPF protocol
 
-RUN_DEPENDS=	${SITE_PERL}/Net/DNS/Resolver/Programmable.pm:${PORTSDIR}/dns/p5-Net-DNS-Resolver-Programmable \
-		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
-		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		${SITE_PERL}/${PERL_ARCH}/NetAddr/IP.pm:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	p5-Net-DNS-Resolver-Programmable>=0.002.1:${PORTSDIR}/dns/p5-Net-DNS-Resolver-Programmable \
+		p5-Net-DNS>=0.58:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-version>0:${PORTSDIR}/devel/p5-version \
+		p5-Error>0:${PORTSDIR}/lang/p5-Error \
+		p5-NetAddr-IP>=4:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+		p5-URI>=1.13:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.6.0+
 CONFIGURE_ARGS=	--install_path sbin=${PREFIX}/sbin
 
 MAN1=		spfquery.1
@@ -42,13 +41,12 @@ MAN3=		Mail::SPF.3 Mail::SPF::Mech::PTR.3 Mail::SPF::Mech.3 \
 .include <bsd.port.pre.mk>
 
 DOCSDIR=	${PREFIX}/share/doc/p5-Mail-SPF
+DOCS=		CHANGES INSTALL LICENSE README TODO
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in CHANGES LICENSE README TODO
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
