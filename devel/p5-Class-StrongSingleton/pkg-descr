@@ -1,0 +1,7 @@
+This module is an alternative to Class::Singleton and
+Class::WeakSingleton, and provides a more secure Singleton class in that
+it takes steps to prevent the possibility of accidental creation of
+multiple instances and/or the overwriting of existsing Singleton
+instances.
+
+WWW: http://search.cpan.org/dist/Class-StrongSingleton/
