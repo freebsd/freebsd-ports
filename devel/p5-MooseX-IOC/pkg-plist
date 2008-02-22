@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/IOC/.packlist
+%%SITE_PERL%%/MooseX/IOC.pm
+%%SITE_PERL%%/MooseX/IOC/Meta/Attribute.pm
+@dirrm %%SITE_PERL%%/MooseX/IOC/Meta
+@dirrm %%SITE_PERL%%/MooseX/IOC
+@dirrmtry %%SITE_PERL%%/MooseX
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/IOC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
