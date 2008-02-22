@@ -9401,6 +9401,7 @@ p5-Class-Singleton	ports/devel/p5-Class-Singleton
 p5-Class-Spiffy	ports/devel/p5-Class-Spiffy
 p5-Class-StateMachine	ports/devel/p5-Class-StateMachine
 p5-Class-Std	ports/devel/p5-Class-Std
+p5-Class-StrongSingleton	ports/devel/p5-Class-StrongSingleton
 p5-Class-Tangram	ports/devel/p5-Class-Tangram
 p5-Class-Throwable	ports/devel/p5-Class-Throwable
 p5-Class-Tom	ports/devel/p5-Class-Tom
