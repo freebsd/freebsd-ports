@@ -95,6 +95,14 @@ CONFIGURE_ARGS+=	${NMH_EXTRA_CONFIGURE_ARGS}
 .endif
 
 CFLAGS+=	-D${NMH_LOCKING} -O
+OPTIONS=	SASL2 "Cyrus SASL2" OFF
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SASL2)
+LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+CONFIGURE_ARGS+=	--with-cyrus-sasl=${PREFIX}
+.endif
 
 MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 flists.1 \
 	folder.1 folders.1 forw.1 inc.1 install-mh.1 mark.1 \
@@ -120,4 +128,4 @@ post-patch:
 post-install:
 	@PKG_PREFIX='${PREFIX}' ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
