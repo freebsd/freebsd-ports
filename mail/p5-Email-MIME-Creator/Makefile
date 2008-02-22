@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	Email-MIME-Creator
-PORTVERSION=	1.453
+PORTVERSION=	1.454
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Email
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hashiz@tomba.meridiani.jp
 COMMENT=	Email::MIME constructor for starting anew
 
-BUILD_DEPENDS=	${SITE_PERL}/Email/MIME/Modifier.pm:${PORTSDIR}/mail/p5-Email-MIME-Modifier \
-		${SITE_PERL}/Email/MIME.pm:${PORTSDIR}/mail/p5-Email-MIME \
-		${SITE_PERL}/Email/Simple/Creator.pm:${PORTSDIR}/mail/p5-Email-Simple-Creator
+BUILD_DEPENDS=	p5-Email-MIME>=1.82:${PORTSDIR}/mail/p5-Email-MIME \
+		p5-Email-MIME-Modifier>=1.440:${PORTSDIR}/mail/p5-Email-MIME-Modifier \
+		p5-Email-Simple>=1.92:${PORTSDIR}/mail/p5-Email-Simple \
+		p5-Email-Simple-Creator>=1.4:${PORTSDIR}/mail/p5-Email-Simple-Creator
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
