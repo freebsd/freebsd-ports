@@ -15429,6 +15429,7 @@ splaytk		ports/audio/splaytk
 splint		ports/devel/splint
 splitvt		ports/misc/splitvt
 splix		ports/print/splix
+spnetkit	ports/net/spnetkit
 spoofer		ports/net/spoofer
 spooles		ports/math/spooles
 spooles-mpich	ports/math/spooles-mpich
