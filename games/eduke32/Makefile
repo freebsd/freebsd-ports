@@ -13,11 +13,6 @@ DISTFILES=	${PORTNAME}_src_${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	olivier@gid0.org
 COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-
-ONLY_FOR_ARCHS=	i386
-ONLY_FOR_ARCHS_REASON=	uses i386 assembly code
-REINPLACE_ARGS=	-i ''
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
@@ -31,11 +26,18 @@ OPTIONS=	MIDI "Enable MIDI support" on
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "i386"
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+.endif
+
 .if !defined(WITHOUT_MIDI)
 RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity
 .endif
 
 post-patch:
+.if ${ARCH} != "i386"
+	@${REINPLACE_CMD} -Ee 's|^(NOASM =).*|\1 1|' ${WRKSRC}/Makefile
+.endif
 	@${REINPLACE_CMD} -Ee \
 		's|^(CC=).*|\1${CC}|; \
 		 s|^(CXX=).*|\1${CXX}|; \
