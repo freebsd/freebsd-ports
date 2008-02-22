@@ -10597,6 +10597,7 @@ p5-MogileFS-Client	ports/sysutils/p5-MogileFS-Client
 p5-MogileFS-Utils	ports/sysutils/p5-MogileFS-Utils
 p5-Mon		ports/net-mgmt/p5-Mon
 p5-Moose	ports/devel/p5-Moose
+p5-MooseX-IOC	ports/devel/p5-MooseX-IOC
 p5-MusicBrainz-Client	ports/audio/p5-MusicBrainz-Client
 p5-MusicBrainz-Queries	ports/audio/p5-MusicBrainz-Queries
 p5-MusicBrainz-TRM	ports/audio/p5-MusicBrainz-TRM
