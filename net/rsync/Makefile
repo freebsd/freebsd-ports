@@ -39,6 +39,7 @@ MAN5=		rsyncd.conf.5
 OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 		TIMELIMIT "Time limit patch" on \
 		FLAGSP "File system flags support patch, adds --flags" off \
+		ATIMES "Preserve file atimes; adds --atimes" off \
 		ACLSP "ACL support patch, adds --acls" off \
 		SSH "Use SSH instead of RSH" on
 
@@ -58,6 +59,25 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
 
 .if defined(WITH_FLAGSP)
 EXTRA_PATCHES+=	${WRKSRC}/patches/flags.diff
+.endif
+
+# The atimes patch works only by itself; it does not patch cleanly when used
+# alongside timelimit, flags, or acls.
+#
+.if defined(WITH_ATIMES)
+EXTRA_PATCHES+=	${WRKSRC}/patches/atimes.diff
+
+.if defined(WITH_ACLSP)
+IGNORE=		ACLs and atimes patches don't work together; please re-run 'make config' and disable one of them
+.endif
+
+.if !defined(WITHOUT_TIMELIMIT)
+IGNORE=		timelimit and atimes patches don't work together; please re-run 'make config' and disable one of them
+.endif
+
+.if defined(WITH_FLAGSP)
+IGNORE=		Flags and atimes patches don't work together; please re-run 'make config' and disable one of them
+.endif
 .endif
 
 .if defined(WITH_ACLSP)
