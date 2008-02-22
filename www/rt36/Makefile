@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rt
-PORTVERSION?=	3.6.5
+PORTVERSION?=	3.6.6
 #PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
@@ -53,6 +53,7 @@ PERL_MODULES =	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 	        ${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil \
 	        ${SITE_PERL}/Calendar/Simple.pm:${PORTSDIR}/devel/p5-Calendar-Simple \
 		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${SITE_PERL}/CSS/Squish.pm:${PORTSDIR}/textproc/p5-CSS-Squish \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
 
