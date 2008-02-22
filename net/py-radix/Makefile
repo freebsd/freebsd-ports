@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	radix
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	net python
 MASTER_SITES=	http://www2.mindrot.org/files/py-radix/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
