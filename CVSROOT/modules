@@ -10248,6 +10248,7 @@ p5-IO-Util	ports/devel/p5-IO-Util
 p5-IO-YAML	ports/devel/p5-IO-YAML
 p5-IO-Zlib	ports/archivers/p5-IO-Zlib
 p5-IO-stringy	ports/devel/p5-IO-stringy
+p5-IOC		ports/devel/p5-IOC
 p5-IP-Country	ports/net/p5-IP-Country
 p5-IPC-Cache	ports/devel/p5-IPC-Cache
 p5-IPC-Cmd	ports/devel/p5-IPC-Cmd
