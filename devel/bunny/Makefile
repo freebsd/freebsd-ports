@@ -22,6 +22,13 @@ PORTDOCS=	README
 PLIST_FILES=	bin/bunny-trace bin/bunny-gcc bin/bunny-flow bin/bunny-exec \
 		bin/bunny-main
 
+.include <bsd.port.pre.mk>
+
+# attempt to fix build on sparc64
+.if ${ARCH} == "sparc64"
+CFLAGS+=	-O0
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/${MAKEFILE}
 
@@ -35,4 +42,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
