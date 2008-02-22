@@ -10,3 +10,6 @@ SIZE (ghc-6.8.2-i386-unknown-freebsd6-boot.tar.bz2) = 28890579
 MD5 (ghc-6.8.2-i386-unknown-freebsd7-boot.tar.bz2) = 1761930aff8e7e55569ed9a69937fab7
 SHA256 (ghc-6.8.2-i386-unknown-freebsd7-boot.tar.bz2) = 54f66813e8abca0e77aa15709f482f11dbd1850d3f06ba31be73fdc600cc6136
 SIZE (ghc-6.8.2-i386-unknown-freebsd7-boot.tar.bz2) = 28717650
+MD5 (ghc-6.8.2-x86_64-unknown-freebsd7-boot.tar.bz2) = 6e5d98be9f098fcb25ec3cfc29c1d7fd
+SHA256 (ghc-6.8.2-x86_64-unknown-freebsd7-boot.tar.bz2) = 1fda769618460c4b656205f52b30fe801386fd8333b1f1b9513b698cf2422f41
+SIZE (ghc-6.8.2-x86_64-unknown-freebsd7-boot.tar.bz2) = 41041294
