@@ -9378,6 +9378,7 @@ p5-Class-Inflate	ports/databases/p5-Class-Inflate
 p5-Class-Inner	ports/devel/p5-Class-Inner
 p5-Class-InsideOut	ports/devel/p5-Class-InsideOut
 p5-Class-Inspector	ports/devel/p5-Class-Inspector
+p5-Class-Interfaces	ports/devel/p5-Class-Interfaces
 p5-Class-Loader	ports/devel/p5-Class-Loader
 p5-Class-MOP	ports/devel/p5-Class-MOP
 p5-Class-MakeMethods	ports/devel/p5-Class-MakeMethods
