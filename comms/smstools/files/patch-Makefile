@@ -1,27 +1,28 @@
---- Makefile	Fri Apr 21 11:25:01 2006
-+++ Makefile	Fri Apr 21 13:23:24 2006
-@@ -1,18 +1,18 @@
- # Makefile
+--- Makefile.old	2008-02-05 23:39:45.000000000 -0200
++++ Makefile	2008-02-05 23:40:48.000000000 -0200
+@@ -2,17 +2,17 @@
  
--VERSION=$(shell grep package_version src/version.h | cut -f2)
-+VERSION=2.0.7
+ VERSION=$(shell grep package_version src/version.h | cut -f2)
  
 -compile: 
 -	cd src && $(MAKE) -$(MAKEFLAGS) 
-+all:
++all: 
 +	cd src && $(MAKE) $(MAKEFLAGS) 
  
 -install: compile
 -	./install.sh
-+install: 
++install:
 +	@$(SH) ./install.sh
  
  uninstall: 
- 	./uninstall.sh
+-	./uninstall.sh
++	@$(SH) ./uninstall.sh
  
  clean:
 -	cd src && $(MAKE) -$(MAKEFLAGS) clean
 +	cd src && $(MAKE) $(MAKEFLAGS) clean
  
- package: compile clean
- 	./package.sh
+-package: compile clean
+-	./package.sh
++package: clean
++	@$(SH) ./package.sh
