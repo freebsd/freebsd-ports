@@ -685,3 +685,5 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrmtry share/locale/as
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang
+@exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/etc/gtk-2.0/gdk-pixbuf.loaders 2>/dev/null || /usr/bin/true
+@exec %D/bin/gtk-query-immodules-2.0 > /dev/null 2>&1 && %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules 2>/dev/null || /usr/bin/true
