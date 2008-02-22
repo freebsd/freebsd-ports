@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e5d29309-e0db-11dc-97b2-001c2514716c">
+    <topic>openldap -- modrdn Denial of Service vulnerability</topic>
+    <affects>
+      <package>
+	<name>openldap-server</name>
+	<range><lt>2.3.41</lt></range>
+	<range><gt>2.4.0</gt><lt>2.4.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/28926/">
+	  <p>A vulnerability has been reported in OpenLDAP, which can
+	    be exploited by malicious users to cause a DoS (Denial of
+	    Service).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>27778</bid>
+      <cvename>CVE-2008-0658</cvename>
+    </references>
+    <dates>
+      <discovery>2008-02-13</discovery>
+      <entry>2008-02-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="be4b0529-dbaf-11dc-9791-000ea6702141">
     <topic>clamav -- ClamAV libclamav PE File Integer Overflow Vulnerability</topic>
     <affects>
