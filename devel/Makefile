@@ -972,6 +972,7 @@
     SUBDIR += p5-Class-Inner
     SUBDIR += p5-Class-InsideOut
     SUBDIR += p5-Class-Inspector
+    SUBDIR += p5-Class-Interfaces
     SUBDIR += p5-Class-Loader
     SUBDIR += p5-Class-MOP
     SUBDIR += p5-Class-MakeMethods
