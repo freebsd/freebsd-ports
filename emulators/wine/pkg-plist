@@ -375,6 +375,10 @@ include/wine/windows/pshpack4.h
 include/wine/windows/pshpack8.h
 include/wine/windows/pstore.h
 include/wine/windows/pstore.idl
+include/wine/windows/qedit.h
+include/wine/windows/qedit.idl
+include/wine/windows/slerror.h
+include/wine/windows/slpublic.h
 include/wine/windows/ras.h
 include/wine/windows/reason.h
 include/wine/windows/regstr.h
@@ -544,6 +548,7 @@ lib/wine/control.exe.so
 lib/wine/credui.dll.so
 lib/wine/crtdll.dll.so
 lib/wine/crypt32.dll.so
+lib/wine/cryptdlg.dll.so
 lib/wine/cryptdll.dll.so
 lib/wine/cryptnet.dll.so
 lib/wine/ctapi32.dll.so
@@ -556,6 +561,18 @@ lib/wine/d3d9.dll.so
 lib/wine/d3dim.dll.so
 lib/wine/d3drm.dll.so
 lib/wine/d3dx8.dll.so
+lib/wine/d3dx9_24.dll.so
+lib/wine/d3dx9_25.dll.so
+lib/wine/d3dx9_26.dll.so
+lib/wine/d3dx9_27.dll.so
+lib/wine/d3dx9_28.dll.so
+lib/wine/d3dx9_29.dll.so
+lib/wine/d3dx9_30.dll.so
+lib/wine/d3dx9_31.dll.so
+lib/wine/d3dx9_32.dll.so
+lib/wine/d3dx9_33.dll.so
+lib/wine/d3dx9_34.dll.so
+lib/wine/d3dx9_35.dll.so
 lib/wine/d3dx9_36.dll.so
 lib/wine/d3dxof.dll.so
 lib/wine/dbghelp.dll.so
@@ -585,6 +602,7 @@ lib/wine/dpnet.dll.so
 lib/wine/dpnhpast.dll.so
 lib/wine/dpnlobby.dll.so
 lib/wine/dsound.dll.so
+lib/wine/dssenh.dll.so
 lib/wine/dswave.dll.so
 lib/wine/dwmapi.dll.so
 lib/wine/dxdiagn.dll.so
@@ -597,6 +615,7 @@ lib/wine/gdi32.dll.so
 lib/wine/gdiplus.dll.so
 lib/wine/glu32.dll.so
 lib/wine/gphoto2.ds.so
+lib/wine/gpkcsp.dll.so
 lib/wine/hal.dll.so
 lib/wine/hh.exe.so
 lib/wine/hhctrl.ocx.so
@@ -614,9 +633,11 @@ lib/wine/imm.dll16
 lib/wine/imm32.dll.so
 lib/wine/inetcomm.dll.so
 lib/wine/infosoft.dll.so
+lib/wine/initpki.dll.so
 lib/wine/inkobj.dll.so
 lib/wine/inseng.dll.so
 lib/wine/iphlpapi.dll.so
+lib/wine/itircl.dll.so
 lib/wine/itss.dll.so
 lib/wine/kernel32.dll.so
 lib/wine/keyboard.drv16
@@ -727,6 +748,7 @@ lib/wine/libshdocvw.def
 lib/wine/libshell32.def
 lib/wine/libshfolder.def
 lib/wine/libshlwapi.def
+lib/wine/libslc.def
 lib/wine/libsnmpapi.def
 lib/wine/libspoolss.def
 lib/wine/libsti.def
@@ -794,6 +816,7 @@ lib/wine/msimtf.dll.so
 lib/wine/msisys.ocx.so
 lib/wine/msnet32.dll.so
 lib/wine/msrle32.dll.so
+lib/wine/mssip32.dll.so
 lib/wine/msvcirt.dll.so
 lib/wine/msvcrt.dll.so
 lib/wine/msvcr71.dll.so
@@ -843,6 +866,7 @@ lib/wine/propsys.dll.so
 lib/wine/psapi.dll.so
 lib/wine/pstorec.dll.so
 lib/wine/qcap.dll.so
+lib/wine/qedit.dll.so
 lib/wine/qmgr.dll.so
 lib/wine/qmgrprxy.dll.so
 lib/wine/quartz.dll.so
@@ -860,6 +884,7 @@ lib/wine/rsabase.dll.so
 lib/wine/rsaenh.dll.so
 lib/wine/rundll32.exe.so
 lib/wine/sane.ds.so
+lib/wine/sccbase.dll.so
 lib/wine/schannel.dll.so
 lib/wine/secur32.dll.so
 lib/wine/security.dll.so
@@ -875,7 +900,10 @@ lib/wine/shell.dll16
 lib/wine/shell32.dll.so
 lib/wine/shfolder.dll.so
 lib/wine/shlwapi.dll.so
+lib/wine/slbcsp.dll.so
+lib/wine/slc.dll.so
 lib/wine/snmpapi.dll.so
+lib/wine/softpub.dll.so
 lib/wine/sound.drv16
 lib/wine/spoolss.dll.so
 lib/wine/spoolsv.exe.so
