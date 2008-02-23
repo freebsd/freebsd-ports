@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	Data-Pageset
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Data
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Page numbering and page sets
 
-BUILD_DEPENDS=	${SITE_PERL}/Data/Page.pm:${PORTSDIR}/databases/p5-Data-Page
+BUILD_DEPENDS=	p5-Data-Page>=2:${PORTSDIR}/databases/p5-Data-Page \
+		p5-Test-Simple>=0.1:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Data::Pageset.3
