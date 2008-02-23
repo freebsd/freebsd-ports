@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	createtorrent
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.createtorrent.com/ \
 		http://critical.ch/distfiles/ \
