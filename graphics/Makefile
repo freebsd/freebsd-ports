@@ -190,6 +190,7 @@
     SUBDIR += gimmage
     SUBDIR += gimp
     SUBDIR += gimp-app
+    SUBDIR += gimp-data-extras
     SUBDIR += gimp-gap
     SUBDIR += gimp-greycstoration
     SUBDIR += gimp-help
