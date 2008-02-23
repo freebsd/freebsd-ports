@@ -7,6 +7,7 @@
 %%SITE_PERL%%/Heap/Simple/Number.pm
 %%SITE_PERL%%/Heap/Simple/NumberReverse.pm
 %%SITE_PERL%%/Heap/Simple/Object.pm
+%%SITE_PERL%%/Heap/Simple/Perl/Package.pm
 %%SITE_PERL%%/Heap/Simple/Perl.pm
 %%SITE_PERL%%/Heap/Simple/Scalar.pm
 %%SITE_PERL%%/Heap/Simple/String.pm
@@ -40,5 +41,6 @@
 @dirrm %%SITE_PERL%%/auto/Heap/Simple/Perl
 @dirrmtry %%SITE_PERL%%/auto/Heap/Simple
 @dirrmtry %%SITE_PERL%%/auto/Heap
+@dirrmtry %%SITE_PERL%%/Heap/Simple/Perl
 @dirrmtry %%SITE_PERL%%/Heap/Simple
 @dirrmtry %%SITE_PERL%%/Heap
