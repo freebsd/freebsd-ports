@@ -1,2 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cache/.packlist
 %%SITE_PERL%%/App/Cache.pm
 @dirrmtry %%SITE_PERL%%/App
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
