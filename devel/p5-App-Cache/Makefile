@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	App-Cache
-PORTVERSION=	0.31
+PORTVERSION=	0.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	App
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor/Chained/Fast.pm:${PORTSDIR}/devel/p5-
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		App::Cache.3
 
