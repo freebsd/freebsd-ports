@@ -1,0 +1,15 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+instiki has been installed in %%DATADIR%%
+
+Please add:
+
+	instiki_enable="YES" to your /etc/rc.conf 
+
+From a terminal do:
+
+	%%LOCALBASE%%/etc/rc.d/instwiki start
+
+Point your browser to: http://localhost:2500 for setup.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 

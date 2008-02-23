@@ -14,18 +14,40 @@
 
 name="instiki"
 rcvar=${name}_enable
+start_cmd="${name}_start"
+status_cmd="${name}_status"
+stop_cmd="${name}_stop"
 
 #rcvar=`set_rcvar`
 
-command="%%PREFIX%%/%%INSTIKIDIR%%/instiki"
-command_interpreter="%%RUBY_WITH_SUFFIX%%"
+command="%%DATADIR%%/instiki.rb"
+command_interpreter="/usr/bin/env"
 
 : ${instiki_enable="NO"}
 : ${instiki_flags="--port %%INSTIKIPORT%% --daemon"}
 
+instiki_pid=$(ps x | grep "ruby $command" | grep -v grep | awk '{ print $1 }' )
 sig_stop=KILL
 
+instiki_start()
+{
+    unset "start_cmd"
+    test -n "$instiki_pid" || run_rc_command start
+}
+
+instiki_status()
+{
+    if [ -n "$instiki_pid" ] ; then
+	echo "Instiki is running at pid: $instiki_pid"
+    else
+        echo "Instiki is not running."
+   fi
+}
+
+instiki_stop()
+{
+    test -n "$instiki_pid" && kill -$sig_stop $instiki_pid
+}
+
 load_rc_config $name
-
 run_rc_command "$1"
-
