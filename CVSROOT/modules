@@ -3743,6 +3743,7 @@ gimmie		ports/deskutils/gimmie
 gimmix		ports/audio/gimmix
 gimp		ports/graphics/gimp
 gimp-app	ports/graphics/gimp-app
+gimp-data-extras	ports/graphics/gimp-data-extras
 gimp-gap	ports/graphics/gimp-gap
 gimp-greycstoration	ports/graphics/gimp-greycstoration
 gimp-gutenprint	ports/print/gimp-gutenprint
