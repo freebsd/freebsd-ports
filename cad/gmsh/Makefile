@@ -40,7 +40,7 @@ CONFIGURE_ARGS=	--with-fltk-prefix=${X11BASE} \
 		--with-png-prefix=${LOCALBASE}
 ALL_TARGET=	all utils
 
-.if !defined(WITHOUT_HDF5) && !defined(WITHOUT_OCC)
+.if !defined(WITHOUT_HDF5) && defined(WITH_OCC)
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 .endif
 
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--enable-cgns --with-cgns-prefix=${LOCALBASE}
 CONFIGURE_ARGS+=	--disable-cgns
 .endif
 
-.if !defined(WITHOUT_OCC)
+.if defined(WITH_OCC)
 LIB_DEPENDS+=		TKernel.0:${PORTSDIR}/cad/opencascade
 CONFIGURE_ARGS+=	--enable-occ --with-occ-prefix=${LOCALBASE}/OpenCAS/ros
 CONFIGURE_ENV+=		ARCH="${ARCH}"
@@ -102,8 +102,8 @@ pre-everything::
 	@${ECHO_MSG} "Define WITHOUT_CGNS to disable CGNS support."
 	@${ECHO_MSG} ""
 .endif
-.if !defined(WITHOUT_OCC)
-	@${ECHO_MSG} "Define WITHOUT_OCC to disable STEP, IGES and BREP support"
+.if !defined(WITH_OCC)
+	@${ECHO_MSG} "Define WITH_OCC to enable STEP, IGES and BREP support"
 	@${ECHO_MSG} "(through OpenCascade)."
 	@${ECHO_MSG} ""
 .endif
