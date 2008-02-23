@@ -67,6 +67,9 @@ etc/uams/uams_dhx.so
 etc/uams/uams_dhx_passwd.a
 etc/uams/uams_dhx_passwd.la
 etc/uams/uams_dhx_passwd.so
+%%NETATALKKRB5%%etc/uams/uams_gss.a
+%%NETATALKKRB5%%etc/uams/uams_gss.la
+%%NETATALKKRB5%%etc/uams/uams_gss.so
 etc/uams/uams_guest.a
 etc/uams/uams_guest.la
 etc/uams/uams_guest.so

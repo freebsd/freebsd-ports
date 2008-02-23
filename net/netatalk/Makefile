@@ -28,6 +28,14 @@ USE_RC_SUBR=	netatalk
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
 			--with-libiconv=${LOCALBASE}
+
+.if defined(WITH_KRB5)
+CONFIGURE_ARGS+=	--enable-krbV-uam
+PLIST_SUB+=		NETATALKKRB5=""
+.else
+PLIST_SUB+=		NETATALKKRB5="@comment "
+.endif
+
 .if defined(WITH_PAM)
 CONFIGURE_ARGS+=	--with-pam=/etc/pam.d
 PLIST_SUB+=		NETATALKPAM=""
@@ -82,6 +90,7 @@ pre-everything::
 	@${ECHO_MSG} "		WITH_SRVLOC=yes		Enable Service Location Protocol support"
 	@${ECHO_MSG} "		WITH_PAM=yes		Enable PAM support"
 	@${ECHO_MSG} "		WITH_TIMELORD=yes	Enable Timelord network time service"
+	@${ECHO_MSG} "		WITH_KRB5=yes		Enable Kerberos V UAM"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "See Netatalk's Makefile for more details on some of these options."
 	@${ECHO_MSG} ""
