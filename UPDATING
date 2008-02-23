@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080223:
+  AFFECTS: users of www/instiki
+  AUTHOR: beech@FreeBSD.org
+
+  The default install directory for instiki has changed from
+  /usr/local/instiki to /usr/local/share/instiki.
+
+  If you are updating from a previous version, to preserve your
+  settings and data, please do the following:
+	mv /usr/local/instiki /usr/local/share
+  Then update as usual.
+
 20080219:
   AFFECTS: users of x11-wm/xmonad
   AUTHOR: jacula@gmail.com
