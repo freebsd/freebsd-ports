@@ -15271,6 +15271,7 @@ smbldap-tools	ports/net/smbldap-tools
 smc		ports/devel/smc
 smfsav		ports/mail/smfsav
 smiley		ports/games/smiley
+smilutils	ports/multimedia/smilutils
 sml-fxp		ports/textproc/sml-fxp
 sml-mode.el	ports/lang/sml-mode.el
 sml-nj		ports/lang/sml-nj
