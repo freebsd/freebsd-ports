@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	Catalyst-View-JSON
-PORTVERSION=	0.20
+PORTVERSION=	0.22
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Catalyst
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Catalyst View handler that returns stash data in JSON format
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
