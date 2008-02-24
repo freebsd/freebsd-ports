@@ -7,7 +7,7 @@
 
 PORTNAME=	vnstat
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://humdi.net/vnstat/ \
 		http://mcx2.org/files/
@@ -25,7 +25,7 @@ SUB_FILES=	pkg-message
 post-extract:
 	@cd ${WRKSRC} && ${CP} cron/vnstat vnstat-cron
 	@${REINPLACE_CMD} -e 's|/usr/bin|/usr/local/bin|g' \
-		${WRKSRC}/vnstat-cron
+		-e 's|/var/lib|/var/db|g' ${WRKSRC}/vnstat-cron
 
 post-install:
 .if !defined(NOPORTDOCS)
