@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	csync2
-PORTVERSION=	1.33
-PORTREVISION=	1
+PORTVERSION=	1.34
 CATEGORIES=	net
 MASTER_SITES=	http://oss.linbit.com/csync2/ \
 		http://people.freebsd.org/~aaron/distfiles/
@@ -22,15 +21,15 @@ LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \
 		gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
-BROKEN=		Installs config file in /etc
-
 MAN1=	csync2.1
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_FILES=	sbin/csync2 \
+PLIST_FILES=	etc/csync2.cfg-dist \
+		sbin/csync2 \
 		sbin/csync2-compare
 
 post-install:
