@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	2.0.8
+PORTVERSION=	2.1.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -18,13 +18,6 @@ COMMENT=	An automatic 3D finite element mesh generator
 RUN_DEPENDS=	getdp:${PORTSDIR}/science/getdp
 LIB_DEPENDS=	gsl.10:${PORTSDIR}/math/gsl \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
-
-.if !defined(WITHOUT_TRIANGLE)
-NO_CDROM=		Triangle must not be sold for profit
-EXTRACT_DEPENDS+=	${NONEXISTENT}:${TRIANGLE_PORTDIR}:patch \
-			unzip:${PORTSDIR}/archivers/unzip
-TRIANGLE_PORTDIR=	${PORTSDIR}/math/triangle
-.endif
 
 .if !defined(WITHOUT_TETGEN)
 EXTRACT_DEPENDS+=	${NONEXISTENT}:${TETGEN_PORTDIR}:patch
@@ -38,6 +31,7 @@ CONFIGURE_ARGS=	--with-fltk-prefix=${X11BASE} \
 		--with-gsl-prefix=${LOCALBASE} \
 		--with-jpeg-prefix=${LOCALBASE} \
 		--with-png-prefix=${LOCALBASE}
+USE_GMAKE=	yes
 ALL_TARGET=	all utils
 
 .if !defined(WITHOUT_HDF5) && defined(WITH_OCC)
@@ -80,11 +74,6 @@ MAN1=		gmsh.1
 
 pre-everything::
 	@${ECHO_MSG} ""
-.if !defined(WITHOUT_TRIANGLE)
-	@${ECHO_MSG} "Define WITHOUT_TRIANGLE to disable Triangle as an alternative"
-	@${ECHO_MSG} "isotropic 2D mesh generator."
-	@${ECHO_MSG} ""
-.endif
 .if !defined(WITHOUT_TETGEN)
 	@${ECHO_MSG} "Define WITHOUT_TETGEN to disable Tetgen as an alternative"
 	@${ECHO_MSG} "3D mesh generator."
@@ -110,14 +99,6 @@ pre-everything::
 
 post-extract:
 	${TOUCH} ${PKGMESSAGE}
-.if !defined(WITHOUT_TRIANGLE)
-	${CP} `cd ${TRIANGLE_PORTDIR}; ${MAKE} -V WRKSRC`/triangle.*	\
-		${WRKSRC}/contrib/Triangle
-	@${ECHO} >> ${PKGMESSAGE}
-	@${ECHO} "This package of Gmsh has been built with Triangle, then" >> ${PKGMESSAGE}
-	@${ECHO} "distribution of this code as part of a commercial system" >> ${PKGMESSAGE}
-	@${ECHO} "is permissible only by direct arrangement with the Triangle's author." >> ${PKGMESSAGE}
-.endif
 .if !defined(WITHOUT_TETGEN)
 	${CP} ${TETGEN_SRC:S|^|`cd ${TETGEN_PORTDIR}; ${MAKE} -V WRKSRC`/|}	\
 		${WRKSRC}/contrib/Tetgen
