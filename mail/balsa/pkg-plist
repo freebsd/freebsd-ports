@@ -3,6 +3,7 @@ bin/balsa-ab
 etc/sound/events/balsa.soundlist
 libdata/bonobo/servers/GNOME_Balsa.server
 share/applications/balsa.desktop
+share/balsa/hicolor/16x16/apps/balsa-drop-down.png
 share/balsa/hicolor/16x16/apps/balsa-encrypted.png
 share/balsa/hicolor/16x16/apps/balsa-mark-all.png
 share/balsa/hicolor/16x16/apps/balsa-mbox-draft.png
