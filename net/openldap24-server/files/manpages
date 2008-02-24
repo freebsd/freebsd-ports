@@ -206,6 +206,7 @@ MAN5+=	ldap.conf.5 \
 	slapd-perl.5 \
 	slapd-relay.5 \
 	slapd-shell.5 \
+	slapd-sock.5 \
 	slapd-sql.5 \
 	slapd.access.5 \
 	slapd.backends.5 \
