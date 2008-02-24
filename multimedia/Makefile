@@ -198,6 +198,7 @@
     SUBDIR += ruby-flvtool2
     SUBDIR += sabbu
     SUBDIR += shell-fm
+    SUBDIR += smilutils
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
     SUBDIR += smplayer
