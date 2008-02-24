@@ -2,7 +2,8 @@
 vnstat has been installed.
 
 This port neeeds a cron entry. Please copy the contents of:
-%%DOCSDIR%%/vnstat-cron to your crontab.
+%%DOCSDIR%%/vnstat-cron to your crontab. A Sample 
+configuration file has be installed in %%PREFIX%%/etc/
 
 For more information about vnStat use "man vnstat" or visit:
 http://humdi.net/vnstat/

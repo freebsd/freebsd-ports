@@ -1,5 +1,5 @@
---- Makefile.orig	2008-02-03 19:23:03.000000000 +0100
-+++ Makefile	2008-02-19 18:02:58.000000000 +0100
+--- Makefile.orig	2008-02-03 13:23:03.000000000 -0500
++++ Makefile	2008-02-21 19:51:31.000000000 -0500
 @@ -1,106 +1,29 @@
 -# bin, man and cron dirs
 -BIN = $(DESTDIR)/usr/bin
@@ -93,9 +93,9 @@
 -	@if [ `grep -c vnstat /etc/crontab` -eq 0 ]; \
 -	then cat cron/vnstat >>/etc/crontab; \
 -	sed -i "" -e 's/lib\/vnstat/db\/vnstat/g' -e 's/\/usr\/bin\/vnstat/\/usr\/local\/bin\/vnstat/g' /etc/crontab; \
-+	@if [ ! -f ${PREFIX}/etc/vnstat.conf ]; \
-+	then install -m 644 cfg/vnstat.conf ${PREFIX}/etc; \
-+	sed -i "" -e 's/lib/db/g' ${PREFIX}/etc/vnstat.conf; \
++	@if [ ! -f ${PREFIX}/etc/vnstat.conf.sample ]; \
++	then install -m 644 cfg/vnstat.conf ${PREFIX}/etc/vnstat.conf.sample; \
++	sed -i "" -e 's/lib/db/g' ${PREFIX}/etc/vnstat.conf.sample; \
  	fi
  
  # update man page	
@@ -120,4 +120,4 @@
 -	@echo "The cron entry from /etc/crontab needs to be removed manually."
 +	rm -f ${PREFIX}/bin/vnstat
 +	rm -f ${PREFIX}/man/man1/vnstat.1*
-+	rm -f ${PREFIX}/etc/vnstat.conf
++	rm -f ${PREFIX}/etc/vnstat.conf.sample
