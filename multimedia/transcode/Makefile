@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	transcode
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fromani.exit1.org/
 
@@ -92,7 +91,7 @@ CONFIGURE_ARGS+=	--enable-mjpegtools
 CONFIGURE_ARGS+=	--enable-mjpegtools=no
 .endif
 
-.if defined(WITH_AVIFILE) || exists(${LOCALBASE}/lib/libaviplay.so)
+.if (defined(WITH_AVIFILE) || exists(${LOCALBASE}/lib/libaviplay.so)) && ${OSVERSION} < 700000
 LIB_DEPENDS+=	aviplay:${PORTSDIR}/multimedia/avifile
 CONFIGURE_ARGS+=	--with-avifile-prefix=${LOCALBASE} --enable-avifile
 .else
