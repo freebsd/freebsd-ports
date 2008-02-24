@@ -37,11 +37,11 @@ include/exo-0.3/exo-hal/exo-hal.h
 lib/libexo-0.3.a
 lib/libexo-0.3.la
 lib/libexo-0.3.so
-lib/libexo-0.3.so.4
+lib/libexo-0.3.so.5
 lib/libexo-hal-0.3.a
 lib/libexo-hal-0.3.la
 lib/libexo-hal-0.3.so
-lib/libexo-hal-0.3.so.4
+lib/libexo-hal-0.3.so.5
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-0.3/_exo.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-0.3/_exo.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-0.3/_exo.so
@@ -60,48 +60,64 @@ libexec/exo-compose-mail-0.3
 libexec/exo-helper-0.3
 %%NOTIFY%%libexec/exo-mount-notify-0.3
 share/applications/exo-preferred-applications.desktop
-%%GTK_DOC%%share/gtk-doc/html/exo/ExoCellRendererEllipsizedText.html
-%%GTK_DOC%%share/gtk-doc/html/exo/ExoEllipsizedLabel.html
-%%GTK_DOC%%share/gtk-doc/html/exo/ExoIconBar.html
-%%GTK_DOC%%share/gtk-doc/html/exo/ExoIconView.html
-%%GTK_DOC%%share/gtk-doc/html/exo/ExoToolbarsEditor.html
-%%GTK_DOC%%share/gtk-doc/html/exo/ExoToolbarsEditorDialog.html
-%%GTK_DOC%%share/gtk-doc/html/exo/ExoToolbarsModel.html
-%%GTK_DOC%%share/gtk-doc/html/exo/ExoToolbarsView.html
-%%GTK_DOC%%share/gtk-doc/html/exo/ExoTreeView.html
-%%GTK_DOC%%share/gtk-doc/html/exo/ExoWrapTable.html
-%%GTK_DOC%%share/gtk-doc/html/exo/ExoXsessionClient.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-Binding-Properties-Functions.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-Executing-Applications.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-Extensions-to-GObject.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-Extensions-to-Gtk.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-Extensions-to-Pango.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-Extensions-to-gdk-pixbuf.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-MD5-functions.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-Miscellaneous-Utility-Functions.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-Opening-URLs.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-String-Utility-Functions.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-Version-Information.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-csource.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-extensions.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-miscelleanous.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-overview.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-toolbars.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-tools.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo-widgets.html
-%%GTK_DOC%%share/gtk-doc/html/exo/exo.devhelp
-%%GTK_DOC%%share/gtk-doc/html/exo/home.png
-%%GTK_DOC%%share/gtk-doc/html/exo/index.html
-%%GTK_DOC%%share/gtk-doc/html/exo/index.sgml
-%%GTK_DOC%%share/gtk-doc/html/exo/ix01.html
-%%GTK_DOC%%share/gtk-doc/html/exo/left.png
-%%GTK_DOC%%share/gtk-doc/html/exo/right.png
-%%GTK_DOC%%share/gtk-doc/html/exo/style.css
-%%GTK_DOC%%share/gtk-doc/html/exo/up.png
+share/gtk-doc/html/exo/ExoCellRendererEllipsizedText.html
+share/gtk-doc/html/exo/ExoCellRendererIcon.html
+share/gtk-doc/html/exo/ExoEllipsizedLabel.html
+share/gtk-doc/html/exo/ExoIconBar.html
+share/gtk-doc/html/exo/ExoIconChooserDialog.html
+share/gtk-doc/html/exo/ExoIconView.html
+share/gtk-doc/html/exo/ExoToolbarsEditor.html
+share/gtk-doc/html/exo/ExoToolbarsEditorDialog.html
+share/gtk-doc/html/exo/ExoToolbarsModel.html
+share/gtk-doc/html/exo/ExoToolbarsView.html
+share/gtk-doc/html/exo/ExoTreeView.html
+share/gtk-doc/html/exo/ExoWrapTable.html
+share/gtk-doc/html/exo/ExoXsessionClient.html
+share/gtk-doc/html/exo/ch01.html
+share/gtk-doc/html/exo/exo-Binding-Properties-Functions.html
+share/gtk-doc/html/exo/exo-Executing-Applications.html
+share/gtk-doc/html/exo/exo-Extensions-to-GObject.html
+share/gtk-doc/html/exo/exo-Extensions-to-Gtk.html
+share/gtk-doc/html/exo/exo-Extensions-to-Pango.html
+share/gtk-doc/html/exo/exo-Extensions-to-gdk-pixbuf.html
+share/gtk-doc/html/exo/exo-HAL-Support-Functions.html
+share/gtk-doc/html/exo/exo-MD5-functions.html
+share/gtk-doc/html/exo/exo-Miscellaneous-Utility-Functions.html
+share/gtk-doc/html/exo/exo-Mount-Points.html
+share/gtk-doc/html/exo/exo-Opening-URLs.html
+share/gtk-doc/html/exo/exo-String-Utility-Functions.html
+share/gtk-doc/html/exo/exo-Version-Information.html
+share/gtk-doc/html/exo/exo-cell-renderers.html
+share/gtk-doc/html/exo/exo-csource.html
+share/gtk-doc/html/exo/exo-deprecated-widgets.html
+share/gtk-doc/html/exo/exo-extensions.html
+share/gtk-doc/html/exo/exo-gtk-file-chooser-add-thumbnail-preview.png
+share/gtk-doc/html/exo/exo-icon-chooser-dialog.png
+share/gtk-doc/html/exo/exo-miscelleanous.html
+share/gtk-doc/html/exo/exo-overview.html
+share/gtk-doc/html/exo/exo-toolbars-editor-dialog.png
+share/gtk-doc/html/exo/exo-toolbars-editor.png
+share/gtk-doc/html/exo/exo-toolbars-view.png
+share/gtk-doc/html/exo/exo-toolbars.html
+share/gtk-doc/html/exo/exo-tools.html
+share/gtk-doc/html/exo/exo-widgets.html
+share/gtk-doc/html/exo/exo-wrap-table.png
+share/gtk-doc/html/exo/exo.devhelp
+share/gtk-doc/html/exo/exo.devhelp2
+share/gtk-doc/html/exo/home.png
+share/gtk-doc/html/exo/index.html
+share/gtk-doc/html/exo/index.sgml
+share/gtk-doc/html/exo/ix01.html
+share/gtk-doc/html/exo/left.png
+share/gtk-doc/html/exo/right.png
+share/gtk-doc/html/exo/style.css
+share/gtk-doc/html/exo/up.png
+
 share/icons/hicolor/24x24/apps/preferences-desktop-default-applications.png
 share/icons/hicolor/48x48/apps/applications-internet.png
 share/icons/hicolor/48x48/apps/applications-other.png
 share/icons/hicolor/48x48/apps/preferences-desktop-default-applications.png
+share/locale/ar/LC_MESSAGES/libexo-0.3.mo
 share/locale/be/LC_MESSAGES/libexo-0.3.mo
 share/locale/ca/LC_MESSAGES/libexo-0.3.mo
 share/locale/cy/LC_MESSAGES/libexo-0.3.mo
@@ -122,14 +138,20 @@ share/locale/it/LC_MESSAGES/libexo-0.3.mo
 share/locale/ja/LC_MESSAGES/libexo-0.3.mo
 share/locale/ka/LC_MESSAGES/libexo-0.3.mo
 share/locale/lt/LC_MESSAGES/libexo-0.3.mo
+share/locale/lv/LC_MESSAGES/libexo-0.3.mo
 share/locale/mk/LC_MESSAGES/libexo-0.3.mo
+share/locale/nb_NO/LC_MESSAGES/libexo-0.3.mo
 share/locale/nl/LC_MESSAGES/libexo-0.3.mo
 share/locale/pa/LC_MESSAGES/libexo-0.3.mo
 share/locale/pl/LC_MESSAGES/libexo-0.3.mo
 share/locale/pt_BR/LC_MESSAGES/libexo-0.3.mo
+share/locale/pt_PT/LC_MESSAGES/libexo-0.3.mo
 share/locale/ro/LC_MESSAGES/libexo-0.3.mo
 share/locale/ru/LC_MESSAGES/libexo-0.3.mo
+share/locale/sq/LC_MESSAGES/libexo-0.3.mo
 share/locale/sv/LC_MESSAGES/libexo-0.3.mo
+share/locale/ur/LC_MESSAGES/libexo-0.3.mo
+share/locale/zh_TW/LC_MESSAGES/libexo-0.3.mo
 share/pixmaps/exo-0.3/exo-thumbnail-frame.png
 %%PYTHON%%share/pygtk/2.0/defs/exo-0.3/exo.defs
 share/xfce4/doc/C/exo-preferred-applications.html
@@ -184,9 +206,9 @@ share/xfce4/helpers/xterm.desktop
 @dirrm include/exo-0.3
 @dirrmtry lib/xfce4/mcs-plugins
 @dirrmtry lib/xfce4
-%%GTK_DOC%%@dirrm share/gtk-doc/html/exo
-%%GTK_DOC%%@dirrmtry share/gtk-doc/html
-%%GTK_DOC%%@dirrmtry share/gtk-doc
+@dirrm share/gtk-doc/html/exo
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 @dirrmtry share/applications
 @dirrmtry share/icons/hicolor/24x24/apps
 @dirrmtry share/icons/hicolor/24x24

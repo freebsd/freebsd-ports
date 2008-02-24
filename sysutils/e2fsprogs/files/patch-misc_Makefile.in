@@ -1,6 +1,25 @@
---- a/misc/Makefile.in.orig	Sat Jun 30 16:57:47 2007
-+++ b/misc/Makefile.in	Sat Jun 30 16:58:17 2007
-@@ -295,11 +295,9 @@
+--- a/misc/Makefile.in.orig	Tue Jan  1 04:35:42 2008
++++ b/misc/Makefile.in	Sun Jan 13 10:46:31 2008
+@@ -19,14 +19,14 @@
+ 
+ SPROGS=		mke2fs badblocks tune2fs dumpe2fs blkid logsave \
+ 			$(E2IMAGE_PROG) @FSCK_PROG@
+-USPROGS=	mklost+found filefrag $(UUIDD_PROG)
++USPROGS=	mklost+found
+ SMANPAGES=	tune2fs.8 mklost+found.8 mke2fs.8 dumpe2fs.8 badblocks.8 \
+ 			e2label.8 findfs.8 blkid.8 $(E2IMAGE_MAN) \
+-			logsave.8 filefrag.8 $(UUIDD_MAN) @FSCK_MAN@
++			logsave.8 @FSCK_MAN@
+ FMANPAGES=	mke2fs.conf.5
+ 
+-UPROGS=		chattr lsattr uuidgen
+-UMANPAGES=	chattr.1 lsattr.1 uuidgen.1
++UPROGS=		chattr lsattr
++UMANPAGES=	chattr.1 lsattr.1
+ 
+ LPROGS=		@E2INITRD_PROG@
+ 
+@@ -311,11 +310,9 @@
  		echo "	INSTALL_DATA $(man5dir)/$$i"; \
  		$(INSTALL_DATA) $$i $(DESTDIR)$(man5dir)/$$i; \
  	done

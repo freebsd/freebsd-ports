@@ -7,6 +7,7 @@ share/applications/xfcalendar.desktop
 share/applications/xfce-xfcalendar-settings.desktop
 share/icons/hicolor/48x48/apps/xfcalendar.png
 share/icons/hicolor/scalable/apps/xfcalendar.svg
+share/locale/am/LC_MESSAGES/orage.mo
 share/locale/ar/LC_MESSAGES/orage.mo
 share/locale/az/LC_MESSAGES/orage.mo
 share/locale/bg/LC_MESSAGES/orage.mo
@@ -28,6 +29,7 @@ share/locale/it/LC_MESSAGES/orage.mo
 share/locale/ja/LC_MESSAGES/orage.mo
 share/locale/ka/LC_MESSAGES/orage.mo
 share/locale/lt/LC_MESSAGES/orage.mo
+share/locale/lv/LC_MESSAGES/orage.mo
 share/locale/mk/LC_MESSAGES/orage.mo
 share/locale/ms/LC_MESSAGES/orage.mo
 share/locale/nl/LC_MESSAGES/orage.mo

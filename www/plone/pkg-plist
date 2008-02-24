@@ -264,6 +264,7 @@
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test-html-title.html
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test-link.txt
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test-news-item.txt
+%%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test-xhtml-title.html
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test.gif
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test.sxw
 %%ZOPEPRODUCTDIR%%/ATContentTypes/tests/input/test.zip
@@ -386,6 +387,7 @@
 %%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/license.txt
 %%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/readme.txt
 %%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/skins/ATReferenceBrowserWidget/referencebrowser.js
+%%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/skins/ATReferenceBrowserWidget/referencebrowser.js.metadata
 %%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/skins/ATReferenceBrowserWidget/referencebrowser.pt
 %%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/skins/ATReferenceBrowserWidget/referencebrowser_filterBreadCrumbs.py
 %%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/skins/ATReferenceBrowserWidget/referencebrowser_insertHistory.py
@@ -394,6 +396,7 @@
 %%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/skins/ATReferenceBrowserWidget/referencebrowser_queryCatalog.py
 %%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/skins/ATReferenceBrowserWidget/referencebrowser_startupDirectory.py
 %%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/skins/ATReferenceBrowserWidget/select_lists.js
+%%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/skins/ATReferenceBrowserWidget/select_lists.js.metadata
 %%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/todo.txt
 %%ZOPEPRODUCTDIR%%/ATReferenceBrowserWidget/version.txt
 %%ZOPEPRODUCTDIR%%/Archetypes/AUTHORS
@@ -2373,6 +2376,10 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v2_5/rcs.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v2_5/two51_two52.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v2_5/two51_two52.pyc
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v2_5/two52_two53.py
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v2_5/two52_two53.pyc
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v2_5/two53_two54.py
+%%ZOPEPRODUCTDIR%%/CMFPlone/migrations/v2_5/two53_two54.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/patches/__init__.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/patches/__init__.pyc
 %%ZOPEPRODUCTDIR%%/CMFPlone/patches/dateIndexPatch.py
@@ -3116,6 +3123,7 @@
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_portalskin_set.cpy
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_portalskin_set.cpy.metadata
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_portrait_delete.py
+%%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_reinstallProducts.py
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_search_form.cpt
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_search_form.cpt.metadata
 %%ZOPEPRODUCTDIR%%/CMFPlone/skins/plone_prefs/prefs_search_macros.pt
@@ -3777,6 +3785,8 @@
 %%ZOPEPRODUCTDIR%%/CacheFu/CMFSquidTool/tests/framework.pyc
 %%ZOPEPRODUCTDIR%%/CacheFu/CMFSquidTool/tests/runalltests.py
 %%ZOPEPRODUCTDIR%%/CacheFu/CMFSquidTool/tests/runalltests.pyc
+%%ZOPEPRODUCTDIR%%/CacheFu/CMFSquidTool/tests/test_connections.py
+%%ZOPEPRODUCTDIR%%/CacheFu/CMFSquidTool/tests/test_connections.pyc
 %%ZOPEPRODUCTDIR%%/CacheFu/CMFSquidTool/tests/test_tool.py
 %%ZOPEPRODUCTDIR%%/CacheFu/CMFSquidTool/tests/test_tool.pyc
 %%ZOPEPRODUCTDIR%%/CacheFu/CMFSquidTool/threadinglocal.py
@@ -4824,6 +4834,9 @@
 %%ZOPEPRODUCTDIR%%/PloneLanguageTool/__init__.pyc
 %%ZOPEPRODUCTDIR%%/PloneLanguageTool/availablelanguages.py
 %%ZOPEPRODUCTDIR%%/PloneLanguageTool/availablelanguages.pyc
+%%ZOPEPRODUCTDIR%%/PloneLanguageTool/configure.zcml
+%%ZOPEPRODUCTDIR%%/PloneLanguageTool/exportimport.py
+%%ZOPEPRODUCTDIR%%/PloneLanguageTool/exportimport.pyc
 %%ZOPEPRODUCTDIR%%/PloneLanguageTool/interfaces.py
 %%ZOPEPRODUCTDIR%%/PloneLanguageTool/interfaces.pyc
 %%ZOPEPRODUCTDIR%%/PloneLanguageTool/skins/LanguageTool/addSupportedLanguage.py
@@ -5278,65 +5291,6 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/__init__.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/__init__.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/configure.zcml
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-af.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ar.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-bg.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-bn.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ca.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-cs.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-cy.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-da.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-de.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-el.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-eo.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-es.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-et.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-eu.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-fa.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-fi.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-fr.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-fu.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-he.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-hi.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-hr.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-hu.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-hy.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-id.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-it.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ja.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ka.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-kn.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ko.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-lt.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-manual.pot
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-mi.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-my.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-nl.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-nn.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-no.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-pl.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-pt-br.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-pt.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ro.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ru.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sk.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sl.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sm.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sq.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sr-Latn.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sr.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-sv.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-ta.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-te.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-to.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-tr.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-uk.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-vi.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-zh-cn.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-zh-hk.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-zh-tw.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes-zh.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/archetypes.pot
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-af.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-ar.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-bg.po
@@ -5355,7 +5309,6 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-fi.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-fr.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-fu.po
-%%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-generated.pot
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-he.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-hi.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n/atcontenttypes-hr.po
@@ -5818,7 +5771,9 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ar/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/bg/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/bn/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ca/LC_MESSAGES/plonefrontpage-ca.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ca/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/cs/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/cs/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/cy/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/da/LC_MESSAGES/plonelocales.po
@@ -5826,14 +5781,19 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/de/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/el/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/en/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/eo/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/eo/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/es/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/es/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/et/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/eu/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/eu/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fa/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fi/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fr/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fr/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/fu/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/he/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/he/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/hi/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/hr/LC_MESSAGES/plonelocales.po
@@ -5842,6 +5802,7 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/id/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/it/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/it/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ja/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ja/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ka/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/kn/LC_MESSAGES/plonelocales.po
@@ -5849,12 +5810,15 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lt/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/mi/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/my/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/nl/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/nl/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/nn/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/no/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/no/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pl/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/plonefrontpage.pot
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/plonelocales.pot
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt_BR/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/rm/LC_MESSAGES/plonelocales.po
@@ -5871,6 +5835,7 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ta/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/te/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/to/LC_MESSAGES/plonelocales.po
+%%ZOPEPRODUCTDIR%%/PloneTranslations/locales/tr/LC_MESSAGES/plonefrontpage.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/tr/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/uk/LC_MESSAGES/plonelocales.po
 %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/vi/LC_MESSAGES/plonelocales.po
@@ -5891,18 +5856,20 @@
 %%ZOPEPRODUCTDIR%%/PloneTranslations/tests/test_i18n.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/admix.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/admix.pyc
+%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/chart.py
+%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/chart.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/create.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/create.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/fillmsgstr.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/fillmsgstr.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/filter.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/filter.pyc
-%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/find-untranslated.py
-%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/find-untranslated.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/i18ngenerate.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/i18ngenerate.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/rebuild-pot.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/rebuild-pot.pyc
+%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/relocate.py
+%%ZOPEPRODUCTDIR%%/PloneTranslations/utils/relocate.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/setcomment.py
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/setcomment.pyc
 %%ZOPEPRODUCTDIR%%/PloneTranslations/utils/setdomain.py
@@ -6914,7 +6881,6 @@
 %%ZOPEPRODUCTDIR%%/kupu/zope3/field.pyc
 %%ZOPEPRODUCTDIR%%/kupu/zope3/interfaces.py
 %%ZOPEPRODUCTDIR%%/kupu/zope3/interfaces.pyc
-%%ZOPEPRODUCTDIR%%/statusmessages/._VERSION.txt
 %%ZOPEPRODUCTDIR%%/statusmessages/CREDITS.txt
 %%ZOPEPRODUCTDIR%%/statusmessages/HISTORY.txt
 %%ZOPEPRODUCTDIR%%/statusmessages/LICENSE.GPL
@@ -6937,6 +6903,8 @@
 %%ZOPEPRODUCTDIR%%/statusmessages/tests/test_adapter.pyc
 %%ZOPEPRODUCTDIR%%/statusmessages/tests/test_doctests.py
 %%ZOPEPRODUCTDIR%%/statusmessages/tests/test_doctests.pyc
+%%ZOPEPRODUCTDIR%%/statusmessages/tests/test_encoding.py
+%%ZOPEPRODUCTDIR%%/statusmessages/tests/test_encoding.pyc
 %%ZOPEPRODUCTDIR%%/validation/ChangeLog
 %%ZOPEPRODUCTDIR%%/validation/HISTORY.txt
 %%ZOPEPRODUCTDIR%%/validation/LICENSE.txt
@@ -7077,10 +7045,14 @@
 @dirrm %%ZOPEPRODUCTDIR%%/PluggableAuthService/doc
 @dirrm %%ZOPEPRODUCTDIR%%/PluggableAuthService/Extensions
 @dirrm %%ZOPEPRODUCTDIR%%/PluggableAuthService
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/utils
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/tests
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lt/LC_MESSAGES
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lt
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_TW/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_TW
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_HK/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_HK
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_CN/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_CN
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh/LC_MESSAGES
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/vi/LC_MESSAGES
@@ -7113,16 +7085,12 @@
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ru
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ro/LC_MESSAGES
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ro
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt_BR/LC_MESSAGES
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt_BR
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_HK/LC_MESSAGES
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_HK
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/rm/LC_MESSAGES
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/rm
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt_BR/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt_BR
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt/LC_MESSAGES
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pt
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_TW/LC_MESSAGES
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_TW
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pl/LC_MESSAGES
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/pl
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/no/LC_MESSAGES
@@ -7135,10 +7103,10 @@
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/my
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/mi/LC_MESSAGES
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/mi
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/af/LC_MESSAGES
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/af
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_CN/LC_MESSAGES
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/zh_CN
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lt/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/lt
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ko/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ko
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/kn/LC_MESSAGES
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/kn
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ka/LC_MESSAGES
@@ -7195,10 +7163,10 @@
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/bg
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ar/LC_MESSAGES
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ar
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ko/LC_MESSAGES
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/ko
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/af/LC_MESSAGES
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales/af
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/locales
-@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/utils
+@dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations/i18n
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTranslations
 @dirrm %%ZOPEPRODUCTDIR%%/PloneTestCase
 @dirrm %%ZOPEPRODUCTDIR%%/PlonePAS/zmi
@@ -7462,14 +7430,14 @@
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/skins/Images
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/skins
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/scripts
+@dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/profiles/sample_content/structure/subfolder
+@dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/profiles/sample_content/structure
+@dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/profiles/sample_content
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/profiles/default/workflows/default_workflow
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/profiles/default/workflows
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/profiles/default/types
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/profiles/default/skins
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/profiles/default
-@dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/profiles/sample_content/structure/subfolder
-@dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/profiles/sample_content/structure
-@dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/profiles/sample_content
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/profiles
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/interfaces
 @dirrm %%ZOPEPRODUCTDIR%%/CMFDefault/images

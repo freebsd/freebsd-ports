@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	9.0r48
+PORTVERSION=	9.0r115
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
 		LOCAL/lofi:suplib
@@ -31,7 +31,7 @@ WRKSRC=		${WRKDIR}/install_flash_player_9_linux
 LATEST_LINK=	flash9
 
 USE_NPAPI=	linux-*
-NPAPI_FILES=	libflashplayer.so flashplayer.xpt
+NPAPI_FILES=	libflashplayer.so
 
 CONFLICTS=	linux-flashplugin-7*
 

@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.2.12.06
+PORTVERSION=	1.2.12.08
 PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/1.2/${PORTVERSION}/ \
 		http://kapranoff.ru/~kappa/files/
 
-MAINTAINER=	alex@kapranoff.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS server with focus on security and simplicity
 
 REINPLACE_ARGS=	-i ""

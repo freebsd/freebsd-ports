@@ -6,8 +6,8 @@
 #    $MCom: ports/x11/libexo/Makefile,v 1.1 2006/10/02 21:05:55 ahze Exp $
 
 PORTNAME=	libexo
-PORTVERSION=	0.3.2
-PORTREVISION=	4
+PORTVERSION=	0.3.4
+PORTREVISION=	0
 CATEGORIES=	x11 xfce
 DISTNAME=	exo-${PORTVERSION}
 MASTER_SITES=	${MASTER_SITE_XFCE}
@@ -35,21 +35,11 @@ USE_XLIB=	yes
 OPTIONS=	HAL	"Enable HAL support"			on \
 		NOTIFY  "Enable notification support"		on \
 		PYTHON	"Enable Python support"			off \
-		GTKDOC	"Build with documentation"		off \
 		MCS	"Build with xfce4-mcs-manager support"	on
 
 MAN1=		exo-csource.1 exo-open.1
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_GTKDOC)
-BUILD_DEPENDS+=	gtkdocize:${PORTSDIR}/textproc/gtk-doc
-CONFIGURE_ARGS+=--enable-gtk-doc
-PLIST_SUB+=	GTK_DOC=""
-.else
-CONFIGURE_ARGS+=--disable-gtk-doc
-PLIST_SUB+=	GTK_DOC="@comment "
-.endif
 
 .if !defined(WITHOUT_HAL)
 CONFIGURE_ARGS+=--enable-hal

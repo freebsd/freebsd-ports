@@ -40,4 +40,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|PACKAGE_LIB_DIR "cantus-3.glade"|PACKAGE_DATA_DIR "/cantus/glade/cantus.glade"|'\
 		${WRKSRC}/source/cantus/gui_controller.cc
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+IGNORE=		includes i386 asm
+.endif
+
+.include <bsd.port.post.mk>

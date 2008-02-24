@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# rcNG script to start uuidd at boot-time on rcNG-enabled systems,
+# such as FreeBSD.
+#
+# (C) 2008 by Matthias Andree.
+# Licensed under the modified (= 2-clause) BSD license.
+
+# PROVIDE: uuidd
+# BEFORE: DAEMON
+
+. %%RC_SUBR%%
+
+name="uuidd"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/uuidd"
+procname="${command}"
+
+load_rc_config $name
+run_rc_command "$1"

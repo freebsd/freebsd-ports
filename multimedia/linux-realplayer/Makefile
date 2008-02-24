@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	linux-realplayer
-DISTVERSION=	10.0.8.805-20060718
-PORTREVISION=	2
+DISTVERSION=	10.0.9.809-20070726
 CATEGORIES=	multimedia audio linux
-MASTER_SITES=	https://helixcommunity.org/download.php/2152/:player \
+MASTER_SITES=	https://helixcommunity.org/download.php/2479/:player \
 		http://ftp.nluug.nl/ftp/pub/os/Linux/distr/pardusrepo/sources/:playeralt \
 		ftp://fr2.rpmfind.net/linux/sourceforge/m/mp/mplayer-tru/:codecs
 DISTFILES=	RealPlayer-${DISTVERSION}.i586.rpm:player,playeralt \

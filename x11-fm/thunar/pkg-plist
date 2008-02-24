@@ -32,10 +32,10 @@ include/thunarx-1/thunarx/thunarx-renamer.h
 include/thunarx-1/thunarx/thunarx.h
 lib/libthunar-vfs-1.la
 lib/libthunar-vfs-1.so
-lib/libthunar-vfs-1.so.4
+lib/libthunar-vfs-1.so.5
 lib/libthunarx-1.la
 lib/libthunarx-1.so
-lib/libthunarx-1.so.4
+lib/libthunarx-1.so.5
 %%PLUGIN_APR%%lib/thunarx-1/thunar-apr.la
 %%PLUGIN_APR%%lib/thunarx-1/thunar-apr.so
 %%PLUGIN_SBR%%lib/thunarx-1/thunar-sbr.la
@@ -58,6 +58,73 @@ share/applications/Thunar-folder-handler.desktop
 share/applications/Thunar.desktop
 %%WITH_DBUS%%share/dbus-1/services/org.xfce.FileManager.service
 %%WITH_DBUS%%share/dbus-1/services/org.xfce.Thunar.service
+share/gtk-doc/html/thunar-vfs/ThunarVfsGroup.html
+share/gtk-doc/html/thunar-vfs/ThunarVfsJob.html
+share/gtk-doc/html/thunar-vfs/ThunarVfsMimeAction.html
+share/gtk-doc/html/thunar-vfs/ThunarVfsMimeApplication.html
+share/gtk-doc/html/thunar-vfs/ThunarVfsMimeDatabase.html
+share/gtk-doc/html/thunar-vfs/ThunarVfsMimeHandler.html
+share/gtk-doc/html/thunar-vfs/ThunarVfsMonitor.html
+share/gtk-doc/html/thunar-vfs/ThunarVfsUser.html
+share/gtk-doc/html/thunar-vfs/ThunarVfsUserManager.html
+share/gtk-doc/html/thunar-vfs/ThunarVfsVolume.html
+share/gtk-doc/html/thunar-vfs/ThunarVfsVolumeManager.html
+share/gtk-doc/html/thunar-vfs/filesystem-monitoring.html
+share/gtk-doc/html/thunar-vfs/fundamentals.html
+share/gtk-doc/html/thunar-vfs/home.png
+share/gtk-doc/html/thunar-vfs/index.html
+share/gtk-doc/html/thunar-vfs/index.sgml
+share/gtk-doc/html/thunar-vfs/introduction.html
+share/gtk-doc/html/thunar-vfs/ix01.html
+share/gtk-doc/html/thunar-vfs/jobs.html
+share/gtk-doc/html/thunar-vfs/left.png
+share/gtk-doc/html/thunar-vfs/mime-types.html
+share/gtk-doc/html/thunar-vfs/right.png
+share/gtk-doc/html/thunar-vfs/style.css
+share/gtk-doc/html/thunar-vfs/thunar-vfs-Basic-Types.html
+share/gtk-doc/html/thunar-vfs/thunar-vfs-Initialization-and-Shutdown.html
+share/gtk-doc/html/thunar-vfs/thunar-vfs-Jobs.html
+share/gtk-doc/html/thunar-vfs/thunar-vfs-ThunarVfsInfo.html
+share/gtk-doc/html/thunar-vfs/thunar-vfs-ThunarVfsMimeInfo.html
+share/gtk-doc/html/thunar-vfs/thunar-vfs-ThunarVfsPath.html
+share/gtk-doc/html/thunar-vfs/thunar-vfs-Utility-Functions.html
+share/gtk-doc/html/thunar-vfs/thunar-vfs.devhelp
+share/gtk-doc/html/thunar-vfs/thunar-vfs.devhelp2
+share/gtk-doc/html/thunar-vfs/up.png
+share/gtk-doc/html/thunar-vfs/users-and-groups-handling.html
+share/gtk-doc/html/thunar-vfs/volume-handling.html
+share/gtk-doc/html/thunarx/ThunarxFileInfo.html
+share/gtk-doc/html/thunarx/ThunarxMenuProvider.html
+share/gtk-doc/html/thunarx/ThunarxPreferencesProvider.html
+share/gtk-doc/html/thunarx/ThunarxPropertyPage.html
+share/gtk-doc/html/thunarx/ThunarxPropertyPageProvider.html
+share/gtk-doc/html/thunarx/ThunarxProviderFactory.html
+share/gtk-doc/html/thunarx/ThunarxProviderPlugin.html
+share/gtk-doc/html/thunarx/ThunarxRenamer.html
+share/gtk-doc/html/thunarx/ThunarxRenamerProvider.html
+share/gtk-doc/html/thunarx/abstraction.png
+share/gtk-doc/html/thunarx/bulk-rename.png
+share/gtk-doc/html/thunarx/home.png
+share/gtk-doc/html/thunarx/index.html
+share/gtk-doc/html/thunarx/index.sgml
+share/gtk-doc/html/thunarx/ix01.html
+share/gtk-doc/html/thunarx/left.png
+share/gtk-doc/html/thunarx/menu-provider.png
+share/gtk-doc/html/thunarx/right.png
+share/gtk-doc/html/thunarx/say-hello.png
+share/gtk-doc/html/thunarx/style.css
+share/gtk-doc/html/thunarx/thunarx-Variables-and-functions-to-check-the-library-version.html
+share/gtk-doc/html/thunarx/thunarx-abstraction-layer.html
+share/gtk-doc/html/thunarx/thunarx-fundamentals.html
+share/gtk-doc/html/thunarx/thunarx-overview.html
+share/gtk-doc/html/thunarx/thunarx-providers.html
+share/gtk-doc/html/thunarx/thunarx-using-extensions.html
+share/gtk-doc/html/thunarx/thunarx-writing-extensions-advanced-topics.html
+share/gtk-doc/html/thunarx/thunarx-writing-extensions-getting-started.html
+share/gtk-doc/html/thunarx/thunarx-writing-extensions.html
+share/gtk-doc/html/thunarx/thunarx.devhelp
+share/gtk-doc/html/thunarx/thunarx.devhelp2
+share/gtk-doc/html/thunarx/up.png
 %%PLUGIN_TPA%%share/xfce4/panel-plugins/thunar-tpa.desktop
 %%DOCSDIR%%/README.gtkrc
 %%DOCSDIR%%/README.thunarrc
@@ -168,6 +235,27 @@ share/applications/Thunar.desktop
 %%DOCSDIR%%/html/ja/the-file-manager-window.html
 %%DOCSDIR%%/html/ja/using-removable-media.html
 %%DOCSDIR%%/html/ja/working-with-files-and-folders.html
+%%DOCSDIR%%/html/nl/images/bulk-rename.png
+%%DOCSDIR%%/html/nl/images/file-manager-window.png
+%%DOCSDIR%%/html/nl/images/file-properties.png
+%%DOCSDIR%%/html/nl/images/preferences-advanced.png
+%%DOCSDIR%%/html/nl/images/preferences-behavior.png
+%%DOCSDIR%%/html/nl/images/preferences-side-pane.png
+%%DOCSDIR%%/html/nl/images/preferences-views.png
+%%DOCSDIR%%/html/nl/images/removable-drives-and-media.png
+%%DOCSDIR%%/html/nl/images/removable-media-unmount.png
+%%DOCSDIR%%/html/nl/images/sendto-menu.png
+%%DOCSDIR%%/html/nl/images/visible-columns.png
+%%DOCSDIR%%/html/nl/advanced-topics.html
+%%DOCSDIR%%/html/nl/copyright.html
+%%DOCSDIR%%/html/nl/customizing-thunar.html
+%%DOCSDIR%%/html/nl/faq.html
+%%DOCSDIR%%/html/nl/index.html
+%%DOCSDIR%%/html/nl/preferences.html
+%%DOCSDIR%%/html/nl/support.html
+%%DOCSDIR%%/html/nl/the-file-manager-window.html
+%%DOCSDIR%%/html/nl/using-removable-media.html
+%%DOCSDIR%%/html/nl/working-with-files-and-folders.html
 %%DOCSDIR%%/html/pl/advanced-topics.html
 %%DOCSDIR%%/html/pl/copyright.html
 %%DOCSDIR%%/html/pl/customizing-thunar.html
@@ -238,12 +326,14 @@ share/icons/hicolor/16x16/stock/navigation/stock_thunar-templates.png
 share/icons/hicolor/24x24/apps/Thunar.png
 share/icons/hicolor/48x48/apps/Thunar.png
 share/icons/hicolor/scalable/apps/Thunar.svg
+share/locale/ar/LC_MESSAGES/Thunar.mo
 share/locale/be/LC_MESSAGES/Thunar.mo
 share/locale/ca/LC_MESSAGES/Thunar.mo
 share/locale/cs/LC_MESSAGES/Thunar.mo
 share/locale/de/LC_MESSAGES/Thunar.mo
 share/locale/dz/LC_MESSAGES/Thunar.mo
 share/locale/el/LC_MESSAGES/Thunar.mo
+share/locale/en_GB/LC_MESSAGES/Thunar.mo
 share/locale/eo/LC_MESSAGES/Thunar.mo
 share/locale/es/LC_MESSAGES/Thunar.mo
 share/locale/et/LC_MESSAGES/Thunar.mo
@@ -258,14 +348,22 @@ share/locale/ja/LC_MESSAGES/Thunar.mo
 share/locale/ka/LC_MESSAGES/Thunar.mo
 share/locale/ko/LC_MESSAGES/Thunar.mo
 share/locale/lt/LC_MESSAGES/Thunar.mo
+share/locale/lv/LC_MESSAGES/Thunar.mo
 share/locale/mk/LC_MESSAGES/Thunar.mo
+share/locale/nb_NO/LC_MESSAGES/Thunar.mo
 share/locale/nl/LC_MESSAGES/Thunar.mo
+share/locale/pa/LC_MESSAGES/Thunar.mo
 share/locale/pl/LC_MESSAGES/Thunar.mo
 share/locale/pt_BR/LC_MESSAGES/Thunar.mo
+share/locale/pt_PT/LC_MESSAGES/Thunar.mo
 share/locale/ro/LC_MESSAGES/Thunar.mo
 share/locale/ru/LC_MESSAGES/Thunar.mo
+share/locale/sk/LC_MESSAGES/Thunar.mo
+share/locale/sq/LC_MESSAGES/Thunar.mo
 share/locale/sv/LC_MESSAGES/Thunar.mo
+share/locale/tr/LC_MESSAGES/Thunar.mo
 share/locale/uk/LC_MESSAGES/Thunar.mo
+share/locale/ur/LC_MESSAGES/Thunar.mo
 share/locale/zh_CN/LC_MESSAGES/Thunar.mo
 share/locale/zh_TW/LC_MESSAGES/Thunar.mo
 share/pixmaps/Thunar/Thunar-about-logo.png
@@ -281,6 +379,10 @@ share/thumbnailers/thunar-vfs-font-thumbnailer-1.desktop
 %%PLUGIN_TPA%%@dirrmtry libexec/xfce4/panel-plugins
 %%PLUGIN_TPA%%@dirrmtry libexec/xfce4
 @dirrmtry share/applications
+@dirrm share/gtk-doc/html/thunar-vfs
+@dirrm share/gtk-doc/html/thunarx
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 %%PLUGIN_TPA%%@dirrmtry share/xfce4/panel-plugins
 %%PLUGIN_TPA%%@dirrmtry share/xfce4
 @dirrmtry %%DOCSDIR%%/html/C/images
@@ -293,6 +395,8 @@ share/thumbnailers/thunar-vfs-font-thumbnailer-1.desktop
 @dirrm %%DOCSDIR%%/html/fr
 @dirrmtry %%DOCSDIR%%/html/ja/images
 @dirrm %%DOCSDIR%%/html/ja
+@dirrmtry %%DOCSDIR%%/html/nl/images
+@dirrm %%DOCSDIR%%/html/nl
 @dirrmtry %%DOCSDIR%%/html/pl/images
 @dirrm %%DOCSDIR%%/html/pl
 @dirrmtry %%DOCSDIR%%/html/ru/images

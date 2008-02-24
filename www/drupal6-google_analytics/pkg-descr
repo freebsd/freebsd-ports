@@ -1,8 +1,0 @@
-This module adds the Google Analytics web statistics tracking system to your
-website.
-
-Provides the ability to selectively track certain user roles. Now with
-support for segmentation - allowing tracking of logged in visitors by user
-id, username, and profile fields from within Google Analytics.
-
-WWW: http://drupal.org/project/google_analytics

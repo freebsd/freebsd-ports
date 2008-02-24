@@ -3,12 +3,11 @@
 # Whom:				Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/firefox/Makefile,v 1.39 2007/05/31 12:16:54 ahze Exp $
+#   $MCom: ports-stable/www/firefox/Makefile,v 1.23 2007/12/03 20:58:20 ahze Exp $
 #
 
 PORTNAME=	firefox
-DISTVERSION=	2.0.0.10
-PORTREVISION=	1
+DISTVERSION=	2.0.0.12
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
@@ -106,6 +105,7 @@ post-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}/chrome/icons/default
 	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default.xpm
 	${LN} -sf ${FIREFOX_ICON_SRC} ${PREFIX}/share/pixmaps/${FIREFOX_ICON}
+	@${CAT} ${PKGMESSAGE}
 
 .include "${PORTSDIR}/www/mozilla/Makefile.common"
 .include <bsd.port.post.mk>

@@ -1,6 +1,0 @@
-%%PORTDOCS%%usr/share/doc/SDL_image-%%SDLIMVER%%/CHANGES
-%%PORTDOCS%%usr/share/doc/SDL_image-%%SDLIMVER%%/COPYING
-%%PORTDOCS%%usr/share/doc/SDL_image-%%SDLIMVER%%/README
-usr/lib/libSDL_image-1.2.so.0
-usr/lib/libSDL_image-1.2.so.0.1.4
-@dirrm usr/share/doc/SDL_image-%%SDLIMVER%%

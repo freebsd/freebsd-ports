@@ -7,7 +7,7 @@
 
 PORTNAME=	gurlchecker
 PORTVERSION=	0.10.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www gnome
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/%SUBDIR%/
 MASTER_SITE_SUBDIR=	547
@@ -20,7 +20,7 @@ LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2 \
 
 OPTIONS=	CROCO "Use CROCO library for CSS2 validation" off \
 		TIDY "Use TIDY library for HTML w3c validation" off \
-		CLAMAV "Use CLAMAV library for virii scan" off \
+		CLAMAV "Use CLAMAV library for virii scan" on \
 		GNUTLS "Use GNU TLS library for HTTPS check" on
 
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--disable-tidy
 .endif
 
 .if defined(WITH_CLAMAV)
-LIB_DEPENDS+=	clamav.2:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	clamav.3:${PORTSDIR}/security/clamav
 .else
 CONFIGURE_ARGS+=	--disable-clamav
 .endif

@@ -1,6 +1,0 @@
-MD5 (asterisk-1.4.11.tar.gz) = 3ba9b399fedc68de4845b1c5603d167c
-SHA256 (asterisk-1.4.11.tar.gz) = 99928f8aab62e532e71fdecbd18d5af2d211f1bbce27cf9cf2efc34e57a20101
-SIZE (asterisk-1.4.11.tar.gz) = 11218944
-MD5 (asterisk-1.4.11-codec-negotiation-20070831.diff.gz) = cf2385047d55ffffcff7197480e54c79
-SHA256 (asterisk-1.4.11-codec-negotiation-20070831.diff.gz) = 9d6b6efcbf20b35f407aa53320b649c0d884cce9b519435c7ea3aa8a51b2b42f
-SIZE (asterisk-1.4.11-codec-negotiation-20070831.diff.gz) = 37651

@@ -1,0 +1,515 @@
+diff --git Xext/EVI.c Xext/EVI.c
+index 8fe3481..13bd32a 100644
+--- Xext/EVI.c
++++ Xext/EVI.c
+@@ -34,6 +34,7 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ #include <X11/extensions/XEVIstr.h>
+ #include "EVIstruct.h"
+ #include "modinit.h"
++#include "scrnintstr.h"
+ 
+ #if 0
+ static unsigned char XEVIReqCode = 0;
+@@ -87,10 +88,22 @@ ProcEVIGetVisualInfo(ClientPtr client)
+ {
+     REQUEST(xEVIGetVisualInfoReq);
+     xEVIGetVisualInfoReply rep;
+-    int n, n_conflict, n_info, sz_info, sz_conflict;
++    int i, n, n_conflict, n_info, sz_info, sz_conflict;
+     VisualID32 *conflict;
++    unsigned int total_visuals = 0;
+     xExtendedVisualInfo *eviInfo;
+     int status;
++
++    /*
++     * do this first, otherwise REQUEST_FIXED_SIZE can overflow.  we assume
++     * here that you don't have more than 2^32 visuals over all your screens;
++     * this seems like a safe assumption.
++     */
++    for (i = 0; i < screenInfo.numScreens; i++)
++	total_visuals += screenInfo.screens[i]->numVisuals;
++    if (stuff->n_visual > total_visuals)
++	return BadValue;
++
+     REQUEST_FIXED_SIZE(xEVIGetVisualInfoReq, stuff->n_visual * sz_VisualID32);
+     status = eviPriv->getVisualInfo((VisualID32 *)&stuff[1], (int)stuff->n_visual,
+ 		&eviInfo, &n_info, &conflict, &n_conflict);
+diff --git Xext/cup.c Xext/cup.c
+index 6bfa278..781b9ce 100644
+--- Xext/cup.c
++++ Xext/cup.c
+@@ -196,6 +196,9 @@ int ProcGetReservedColormapEntries(
+ 
+     REQUEST_SIZE_MATCH (xXcupGetReservedColormapEntriesReq);
+ 
++    if (stuff->screen >= screenInfo.numScreens)
++	return BadValue;
++
+ #ifndef HAVE_SPECIAL_DESKTOP_COLORS
+     citems[CUP_BLACK_PIXEL].pixel = 
+ 	screenInfo.screens[stuff->screen]->blackPixel;
+diff --git Xext/sampleEVI.c Xext/sampleEVI.c
+index 7508aa7..b871bfd 100644
+--- Xext/sampleEVI.c
++++ Xext/sampleEVI.c
+@@ -34,6 +34,13 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ #include <X11/extensions/XEVIstr.h>
+ #include "EVIstruct.h"
+ #include "scrnintstr.h"
++
++#if HAVE_STDINT_H
++#include <stdint.h>
++#elif !defined(UINT32_MAX)
++#define UINT32_MAX 0xffffffffU
++#endif
++
+ static int sampleGetVisualInfo(
+     VisualID32 *visual,
+     int n_visual,
+@@ -42,24 +49,36 @@ static int sampleGetVisualInfo(
+     VisualID32 **conflict_rn,
+     int *n_conflict_rn)
+ {
+-    int max_sz_evi = n_visual * sz_xExtendedVisualInfo * screenInfo.numScreens;
++    unsigned int max_sz_evi;
+     VisualID32 *temp_conflict;
+     xExtendedVisualInfo *evi;
+-    int max_visuals = 0, max_sz_conflict, sz_conflict = 0;
++    unsigned int max_visuals = 0, max_sz_conflict, sz_conflict = 0;
+     register int visualI, scrI, sz_evi = 0, conflictI, n_conflict;
+-    *evi_rn = evi = (xExtendedVisualInfo *)xalloc(max_sz_evi);
+-    if (!*evi_rn)
+-         return BadAlloc;
++
++    if (n_visual > UINT32_MAX/(sz_xExtendedVisualInfo * screenInfo.numScreens))
++	return BadAlloc;
++    max_sz_evi = n_visual * sz_xExtendedVisualInfo * screenInfo.numScreens;
++    
+     for (scrI = 0; scrI < screenInfo.numScreens; scrI++) {
+         if (screenInfo.screens[scrI]->numVisuals > max_visuals)
+             max_visuals = screenInfo.screens[scrI]->numVisuals;
+     }
++
++    if (n_visual > UINT32_MAX/(sz_VisualID32 * screenInfo.numScreens 
++			       * max_visuals)) 
++	return BadAlloc;
+     max_sz_conflict = n_visual * sz_VisualID32 * screenInfo.numScreens * max_visuals;
++
++    *evi_rn = evi = (xExtendedVisualInfo *)xalloc(max_sz_evi);
++    if (!*evi_rn)
++         return BadAlloc;
++
+     temp_conflict = (VisualID32 *)xalloc(max_sz_conflict);
+     if (!temp_conflict) {
+         xfree(*evi_rn);
+         return BadAlloc;
+     }
++
+     for (scrI = 0; scrI < screenInfo.numScreens; scrI++) {
+         for (visualI = 0; visualI < n_visual; visualI++) {
+ 	    evi[sz_evi].core_visual_id = visual[visualI];
+diff --git Xext/security.c Xext/security.c
+index ba057de..e9d48c9 100644
+--- Xext/security.c
++++ Xext/security.c
+@@ -1563,7 +1563,7 @@ SecurityLoadPropertyAccessList(void)
+     if (!SecurityPolicyFile)
+ 	return;
+ 
+-    f = fopen(SecurityPolicyFile, "r");
++    f = Fopen(SecurityPolicyFile, "r");
+     if (!f)
+     {
+ 	ErrorF("error opening security policy file %s\n",
+@@ -1646,7 +1646,7 @@ SecurityLoadPropertyAccessList(void)
+     }
+ #endif /* PROPDEBUG */
+ 
+-    fclose(f);
++    Fclose(f);
+ } /* SecurityLoadPropertyAccessList */
+ 
+ 
+diff --git Xext/shm.c Xext/shm.c
+index ac587be..6f99e90 100644
+--- Xext/shm.c
++++ Xext/shm.c
+@@ -711,6 +711,8 @@ ProcPanoramiXShmCreatePixmap(
+     int i, j, result, rc;
+     ShmDescPtr shmdesc;
+     REQUEST(xShmCreatePixmapReq);
++    unsigned int width, height, depth;
++    unsigned long size;
+     PanoramiXRes *newPix;
+ 
+     REQUEST_SIZE_MATCH(xShmCreatePixmapReq);
+@@ -724,11 +726,18 @@ ProcPanoramiXShmCreatePixmap(
+ 	return rc;
+ 
+     VERIFY_SHMPTR(stuff->shmseg, stuff->offset, TRUE, shmdesc, client);
+-    if (!stuff->width || !stuff->height)
++
++    width = stuff->width;
++    height = stuff->height;
++    depth = stuff->depth;
++    if (!width || !height || !depth)
+     {
+ 	client->errorValue = 0;
+         return BadValue;
+     }
++    if (width > 32767 || height > 32767)
++        return BadAlloc;
++
+     if (stuff->depth != 1)
+     {
+         pDepth = pDraw->pScreen->allowedDepths;
+@@ -738,10 +747,18 @@ ProcPanoramiXShmCreatePixmap(
+ 	client->errorValue = stuff->depth;
+         return BadValue;
+     }
++
+ CreatePmap:
+-    VERIFY_SHMSIZE(shmdesc, stuff->offset,
+-		   PixmapBytePad(stuff->width, stuff->depth) * stuff->height,
+-		   client);
++    size = PixmapBytePad(width, depth) * height;
++    if (sizeof(size) == 4 && BitsPerPixel(depth) > 8) {
++        if (size < width * height)
++            return BadAlloc;
++        /* thankfully, offset is unsigned */
++        if (stuff->offset + size < size)
++            return BadAlloc;
++    }
++
++    VERIFY_SHMSIZE(shmdesc, stuff->offset, size, client);
+ 
+     if(!(newPix = (PanoramiXRes *) xalloc(sizeof(PanoramiXRes))))
+ 	return BadAlloc;
+@@ -1040,6 +1057,8 @@ ProcShmCreatePixmap(client)
+     register int i, rc;
+     ShmDescPtr shmdesc;
+     REQUEST(xShmCreatePixmapReq);
++    unsigned int width, height, depth;
++    unsigned long size;
+ 
+     REQUEST_SIZE_MATCH(xShmCreatePixmapReq);
+     client->errorValue = stuff->pid;
+@@ -1052,11 +1071,18 @@ ProcShmCreatePixmap(client)
+ 	return rc;
+ 
+     VERIFY_SHMPTR(stuff->shmseg, stuff->offset, TRUE, shmdesc, client);
+-    if (!stuff->width || !stuff->height)
++    
++    width = stuff->width;
++    height = stuff->height;
++    depth = stuff->depth;
++    if (!width || !height || !depth)
+     {
+ 	client->errorValue = 0;
+         return BadValue;
+     }
++    if (width > 32767 || height > 32767)
++	return BadAlloc;
++
+     if (stuff->depth != 1)
+     {
+         pDepth = pDraw->pScreen->allowedDepths;
+@@ -1066,10 +1092,18 @@ ProcShmCreatePixmap(client)
+ 	client->errorValue = stuff->depth;
+         return BadValue;
+     }
++
+ CreatePmap:
+-    VERIFY_SHMSIZE(shmdesc, stuff->offset,
+-		   PixmapBytePad(stuff->width, stuff->depth) * stuff->height,
+-		   client);
++    size = PixmapBytePad(width, depth) * height;
++    if (sizeof(size) == 4 && BitsPerPixel(depth) > 8) {
++	if (size < width * height)
++	    return BadAlloc;
++	/* thankfully, offset is unsigned */
++	if (stuff->offset + size < size)
++	    return BadAlloc;
++    }
++
++    VERIFY_SHMSIZE(shmdesc, stuff->offset, size, client);
+     pMap = (*shmFuncs[pDraw->pScreen->myNum]->CreatePixmap)(
+ 			    pDraw->pScreen, stuff->width,
+ 			    stuff->height, stuff->depth,
+diff --git Xi/chgfctl.c Xi/chgfctl.c
+index 2e0e13c..235d659 100644
+--- Xi/chgfctl.c
++++ Xi/chgfctl.c
+@@ -327,18 +327,13 @@ ChangeStringFeedback(ClientPtr client, DeviceIntPtr dev,
+ 		     xStringFeedbackCtl * f)
+ {
+     char n;
+-    long *p;
+     int i, j;
+     KeySym *syms, *sup_syms;
+ 
+     syms = (KeySym *) (f + 1);
+     if (client->swapped) {
+ 	swaps(&f->length, n);	/* swapped num_keysyms in calling proc */
+-	p = (long *)(syms);
+-	for (i = 0; i < f->num_keysyms; i++) {
+-	    swapl(p, n);
+-	    p++;
+-	}
++	SwapLongs((CARD32 *) syms, f->num_keysyms);
+     }
+ 
+     if (f->num_keysyms > s->ctrl.max_symbols) {
+diff --git Xi/chgkmap.c Xi/chgkmap.c
+index eac520f..75ee9f5 100644
+--- Xi/chgkmap.c
++++ Xi/chgkmap.c
+@@ -79,18 +79,14 @@ int
+ SProcXChangeDeviceKeyMapping(ClientPtr client)
+ {
+     char n;
+-    long *p;
+-    int i, count;
++    unsigned int count;
+ 
+     REQUEST(xChangeDeviceKeyMappingReq);
+     swaps(&stuff->length, n);
+     REQUEST_AT_LEAST_SIZE(xChangeDeviceKeyMappingReq);
+-    p = (long *)&stuff[1];
+     count = stuff->keyCodes * stuff->keySymsPerKeyCode;
+-    for (i = 0; i < count; i++) {
+-	swapl(p, n);
+-	p++;
+-    }
++    REQUEST_FIXED_SIZE(xChangeDeviceKeyMappingReq, count * sizeof(CARD32));
++    SwapLongs((CARD32 *) (&stuff[1]), count);
+     return (ProcXChangeDeviceKeyMapping(client));
+ }
+ 
+@@ -106,10 +102,14 @@ ProcXChangeDeviceKeyMapping(ClientPtr client)
+     int ret;
+     unsigned len;
+     DeviceIntPtr dev;
++    unsigned int count;
+ 
+     REQUEST(xChangeDeviceKeyMappingReq);
+     REQUEST_AT_LEAST_SIZE(xChangeDeviceKeyMappingReq);
+ 
++    count = stuff->keyCodes * stuff->keySymsPerKeyCode;
++    REQUEST_FIXED_SIZE(xChangeDeviceKeyMappingReq, count * sizeof(CARD32));
++
+     dev = LookupDeviceIntRec(stuff->deviceid);
+     if (dev == NULL) {
+ 	SendErrorToClient(client, IReqCode, X_ChangeDeviceKeyMapping, 0,
+diff --git Xi/chgprop.c Xi/chgprop.c
+index 59a93c6..21bda5b 100644
+--- Xi/chgprop.c
++++ Xi/chgprop.c
+@@ -81,19 +81,15 @@ int
+ SProcXChangeDeviceDontPropagateList(ClientPtr client)
+ {
+     char n;
+-    long *p;
+-    int i;
+ 
+     REQUEST(xChangeDeviceDontPropagateListReq);
+     swaps(&stuff->length, n);
+     REQUEST_AT_LEAST_SIZE(xChangeDeviceDontPropagateListReq);
+     swapl(&stuff->window, n);
+     swaps(&stuff->count, n);
+-    p = (long *)&stuff[1];
+-    for (i = 0; i < stuff->count; i++) {
+-	swapl(p, n);
+-	p++;
+-    }
++    REQUEST_FIXED_SIZE(xChangeDeviceDontPropagateListReq,
++                      stuff->count * sizeof(CARD32));
++    SwapLongs((CARD32 *) (&stuff[1]), stuff->count);
+     return (ProcXChangeDeviceDontPropagateList(client));
+ }
+ 
+diff --git Xi/grabdev.c Xi/grabdev.c
+index e2809ef..d0b4ae7 100644
+--- Xi/grabdev.c
++++ Xi/grabdev.c
+@@ -82,8 +82,6 @@ int
+ SProcXGrabDevice(ClientPtr client)
+ {
+     char n;
+-    long *p;
+-    int i;
+ 
+     REQUEST(xGrabDeviceReq);
+     swaps(&stuff->length, n);
+@@ -91,11 +89,11 @@ SProcXGrabDevice(ClientPtr client)
+     swapl(&stuff->grabWindow, n);
+     swapl(&stuff->time, n);
+     swaps(&stuff->event_count, n);
+-    p = (long *)&stuff[1];
+-    for (i = 0; i < stuff->event_count; i++) {
+-	swapl(p, n);
+-	p++;
+-    }
++
++    if (stuff->length != (sizeof(xGrabDeviceReq) >> 2) + stuff->event_count)
++       return BadLength;
++    
++    SwapLongs((CARD32 *) (&stuff[1]), stuff->event_count);
+ 
+     return (ProcXGrabDevice(client));
+ }
+diff --git Xi/grabdevb.c Xi/grabdevb.c
+index df62d0c..18db1f7 100644
+--- Xi/grabdevb.c
++++ Xi/grabdevb.c
+@@ -80,8 +80,6 @@ int
+ SProcXGrabDeviceButton(ClientPtr client)
+ {
+     char n;
+-    long *p;
+-    int i;
+ 
+     REQUEST(xGrabDeviceButtonReq);
+     swaps(&stuff->length, n);
+@@ -89,11 +87,9 @@ SProcXGrabDeviceButton(ClientPtr client)
+     swapl(&stuff->grabWindow, n);
+     swaps(&stuff->modifiers, n);
+     swaps(&stuff->event_count, n);
+-    p = (long *)&stuff[1];
+-    for (i = 0; i < stuff->event_count; i++) {
+-	swapl(p, n);
+-	p++;
+-    }
++    REQUEST_FIXED_SIZE(xGrabDeviceButtonReq,
++                      stuff->event_count * sizeof(CARD32));
++    SwapLongs((CARD32 *) (&stuff[1]), stuff->event_count);
+ 
+     return (ProcXGrabDeviceButton(client));
+ }
+diff --git Xi/grabdevk.c Xi/grabdevk.c
+index b74592f..429b2f7 100644
+--- Xi/grabdevk.c
++++ Xi/grabdevk.c
+@@ -80,8 +80,6 @@ int
+ SProcXGrabDeviceKey(ClientPtr client)
+ {
+     char n;
+-    long *p;
+-    int i;
+ 
+     REQUEST(xGrabDeviceKeyReq);
+     swaps(&stuff->length, n);
+@@ -89,11 +87,8 @@ SProcXGrabDeviceKey(ClientPtr client)
+     swapl(&stuff->grabWindow, n);
+     swaps(&stuff->modifiers, n);
+     swaps(&stuff->event_count, n);
+-    p = (long *)&stuff[1];
+-    for (i = 0; i < stuff->event_count; i++) {
+-	swapl(p, n);
+-	p++;
+-    }
++    REQUEST_FIXED_SIZE(xGrabDeviceKeyReq, stuff->event_count * sizeof(CARD32));
++    SwapLongs((CARD32 *) (&stuff[1]), stuff->event_count);
+     return (ProcXGrabDeviceKey(client));
+ }
+ 
+diff --git Xi/selectev.c Xi/selectev.c
+index d52db1b..19415c5 100644
+--- Xi/selectev.c
++++ Xi/selectev.c
+@@ -131,19 +131,16 @@ int
+ SProcXSelectExtensionEvent(ClientPtr client)
+ {
+     char n;
+-    long *p;
+-    int i;
+ 
+     REQUEST(xSelectExtensionEventReq);
+     swaps(&stuff->length, n);
+     REQUEST_AT_LEAST_SIZE(xSelectExtensionEventReq);
+     swapl(&stuff->window, n);
+     swaps(&stuff->count, n);
+-    p = (long *)&stuff[1];
+-    for (i = 0; i < stuff->count; i++) {
+-	swapl(p, n);
+-	p++;
+-    }
++    REQUEST_FIXED_SIZE(xSelectExtensionEventReq,
++                      stuff->count * sizeof(CARD32));
++    SwapLongs((CARD32 *) (&stuff[1]), stuff->count);
++
+     return (ProcXSelectExtensionEvent(client));
+ }
+ 
+diff --git Xi/sendexev.c Xi/sendexev.c
+index eac9abe..9803cf3 100644
+--- Xi/sendexev.c
++++ Xi/sendexev.c
+@@ -83,7 +83,7 @@ int
+ SProcXSendExtensionEvent(ClientPtr client)
+ {
+     char n;
+-    long *p;
++    CARD32 *p;
+     int i;
+     xEvent eventT;
+     xEvent *eventP;
+@@ -94,6 +94,11 @@ SProcXSendExtensionEvent(ClientPtr client)
+     REQUEST_AT_LEAST_SIZE(xSendExtensionEventReq);
+     swapl(&stuff->destination, n);
+     swaps(&stuff->count, n);
++
++    if (stuff->length != (sizeof(xSendExtensionEventReq) >> 2) + stuff->count +
++       (stuff->num_events * (sizeof(xEvent) >> 2)))
++       return BadLength;
++
+     eventP = (xEvent *) & stuff[1];
+     for (i = 0; i < stuff->num_events; i++, eventP++) {
+ 	proc = EventSwapVector[eventP->u.u.type & 0177];
+@@ -103,11 +108,8 @@ SProcXSendExtensionEvent(ClientPtr client)
+ 	*eventP = eventT;
+     }
+ 
+-    p = (long *)(((xEvent *) & stuff[1]) + stuff->num_events);
+-    for (i = 0; i < stuff->count; i++) {
+-	swapl(p, n);
+-	p++;
+-    }
++    p = (CARD32 *)(((xEvent *) & stuff[1]) + stuff->num_events);
++    SwapLongs(p, stuff->count);
+     return (ProcXSendExtensionEvent(client));
+ }
+ 
+diff --git dix/dixfonts.c dix/dixfonts.c
+index c21b3ec..7bb2404 100644
+--- dix/dixfonts.c
++++ dix/dixfonts.c
+@@ -325,6 +325,13 @@ doOpenFont(ClientPtr client, OFclosurePtr c)
+ 	err = BadFontName;
+ 	goto bail;
+     }
++    /* check values for firstCol, lastCol, firstRow, and lastRow */
++    if (pfont->info.firstCol > pfont->info.lastCol ||
++       pfont->info.firstRow > pfont->info.lastRow ||
++       pfont->info.lastCol - pfont->info.firstCol > 255) {
++       err = AllocError;
++       goto bail;
++    }
+     if (!pfont->fpe)
+ 	pfont->fpe = fpe;
+     pfont->refcnt++;
+diff --git hw/xfree86/common/xf86MiscExt.c hw/xfree86/common/xf86MiscExt.c
+index 655304e..ccb4f75 100644
+--- hw/xfree86/common/xf86MiscExt.c
++++ hw/xfree86/common/xf86MiscExt.c
+@@ -568,6 +568,10 @@ MiscExtPassMessage(int scrnIndex, const char *msgtype, const char *msgval,
+ 
+     DEBUG_P("MiscExtPassMessage");
+ 
++    /* should check this in the protocol, but xf86NumScreens isn't exported */
++    if (scrnIndex >= xf86NumScreens)
++	return BadValue;
++
+     if (*pScr->HandleMessage == NULL)
+ 	    return BadImplementation;
+     return (*pScr->HandleMessage)(scrnIndex, msgtype, msgval, retstr);

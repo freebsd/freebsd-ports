@@ -46,6 +46,7 @@ share/gtk-doc/html/libxfce4util/reference.html
 share/gtk-doc/html/libxfce4util/right.png
 share/gtk-doc/html/libxfce4util/style.css
 share/gtk-doc/html/libxfce4util/up.png
+share/locale/am/LC_MESSAGES/libxfce4util.mo
 share/locale/ar/LC_MESSAGES/libxfce4util.mo
 share/locale/ca/LC_MESSAGES/libxfce4util.mo
 share/locale/cs/LC_MESSAGES/libxfce4util.mo
@@ -63,13 +64,20 @@ share/locale/ja/LC_MESSAGES/libxfce4util.mo
 share/locale/ka/LC_MESSAGES/libxfce4util.mo
 share/locale/ko/LC_MESSAGES/libxfce4util.mo
 share/locale/lt/LC_MESSAGES/libxfce4util.mo
+share/locale/lv/LC_MESSAGES/libxfce4util.mo
 share/locale/mk/LC_MESSAGES/libxfce4util.mo
+share/locale/nb_NO/LC_MESSAGES/libxfce4util.mo
 share/locale/nl/LC_MESSAGES/libxfce4util.mo
 share/locale/pl/LC_MESSAGES/libxfce4util.mo
 share/locale/pt_BR/LC_MESSAGES/libxfce4util.mo
+share/locale/pt_PT/LC_MESSAGES/libxfce4util.mo
+share/locale/ro/LC_MESSAGES/libxfce4util.mo
 share/locale/sq/LC_MESSAGES/libxfce4util.mo
+share/locale/th/LC_MESSAGES/libxfce4util.mo
 share/locale/tr/LC_MESSAGES/libxfce4util.mo
 share/locale/uk/LC_MESSAGES/libxfce4util.mo
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
 @dirrm include/xfce4/libxfce4util
 @dirrmtry include/xfce4
 @dirrm share/gtk-doc/html/libxfce4util

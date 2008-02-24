@@ -25,7 +25,7 @@ PLIST_SUB+=		SHAREMODES="@comment "
 MAN7=			libsmbclient.7
 
 do-build:
-	cd ${WRKSRC} && ${MAKE} proto
+	cd ${WRKSRC} && ${MAKE} proto bin/.dummy
 	cd ${WRKSRC} && ${MAKE} libsmbclient
 .if !defined(WITHOUT_ADDNS)
 	cd ${WRKSRC} && ${MAKE} libaddns

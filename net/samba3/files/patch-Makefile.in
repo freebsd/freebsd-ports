@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Tue Jun 19 19:11:39 2007
-+++ Makefile.in	Thu Aug 30 23:19:54 2007
++++ Makefile.in	Mon Oct 15 03:26:15 2007
 @@ -424,6 +424,7 @@
  VFS_HPUXACL_OBJ = modules/vfs_hpuxacl.o
  VFS_IRIXACL_OBJ = modules/vfs_irixacl.o
@@ -8,6 +8,17 @@
  VFS_CATIA_OBJ = modules/vfs_catia.o
  VFS_CACHEPRIME_OBJ = modules/vfs_cacheprime.o
  VFS_PREALLOC_OBJ = modules/vfs_prealloc.o
+@@ -746,8 +747,8 @@
+             $(RPC_NTSVCS_OBJ) $(RPC_INITSHUTDOWN_OBJ) utils/passwd_util.o \
+ 	    $(LIBGPO_OBJ) $(NSS_INFO_OBJ)
+ 
+-WINBIND_WINS_NSS_OBJ = nsswitch/wins.o $(PARAM_OBJ) \
+-	$(LIBSMB_OBJ) $(LIB_NONSMBD_OBJ) $(NSSWINS_OBJ) $(KRBCLIENT_OBJ) $(SECRETS_OBJ)
++WINBIND_WINS_NSS_OBJ = $(PARAM_OBJ) $(LIBSMB_OBJ) $(LIB_NONSMBD_OBJ) \
++		$(NSSWINS_OBJ) $(KRBCLIENT_OBJ) $(SECRETS_OBJ) @WINBIND_WINS_NSS_EXTRA_OBJS@
+ 
+ PAM_SMBPASS_OBJ_0 = pam_smbpass/pam_smb_auth.o pam_smbpass/pam_smb_passwd.o \
+ 		pam_smbpass/pam_smb_acct.o pam_smbpass/support.o
 @@ -1477,6 +1478,11 @@
  	@$(SHLD) $(LDSHFLAGS) -o $@ $(VFS_TRU64ACL_OBJ) \
  		@SONAMEFLAG@`basename $@`

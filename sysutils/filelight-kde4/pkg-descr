@@ -1,9 +1,0 @@
-Filelight graphically represents a file system as a set of
-concentric segmented-rings, indicating where diskspace is
-being used. Segments expanding from the center represent
-files (including directories), with each segment's size 
-being proportional to the file's size and directories
-having child segments. 
-
-Author: Max Howell <max.howell@methylblue.com>
-WWW: http://www.methylblue.com/filelight/

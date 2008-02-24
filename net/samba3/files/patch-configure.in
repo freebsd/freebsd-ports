@@ -1,6 +1,6 @@
---- configure.in.orig	Mon Aug 20 15:04:51 2007
-+++ configure.in	Fri Aug 31 00:59:33 2007
-@@ -1041,6 +1041,21 @@
+--- configure.in.orig	Wed Nov 21 04:58:01 2007
++++ configure.in	Thu Dec 13 04:34:07 2007
+@@ -1052,6 +1052,21 @@
     AC_DEFINE(HAVE_SIG_ATOMIC_T_TYPE,1,[Whether we have the atomic_t variable type])
  fi
  
@@ -22,7 +22,7 @@
  AC_CACHE_CHECK([for struct timespec type],samba_cv_struct_timespec, [
      AC_TRY_COMPILE([
  #include <sys/types.h>
-@@ -1244,6 +1259,7 @@
+@@ -1255,6 +1270,7 @@
  
  # Find a method of generating a stack trace
  AC_CHECK_HEADERS(execinfo.h libexc.h libunwind.h)
@@ -30,7 +30,7 @@
  AC_CHECK_FUNCS(backtrace_symbols)
  AC_CHECK_LIB(exc, trace_back_stack)
  
-@@ -4041,10 +4057,10 @@
+@@ -4052,10 +4068,10 @@
  
    ################################################################
    # first test for Active Directory support being enabled
@@ -45,7 +45,7 @@
    ##################################################################
    # then test for uuid.h (necessary to generate unique DNS keynames
    # (uuid.h is required for this test)
-@@ -5115,7 +5131,7 @@
+@@ -5126,7 +5142,7 @@
  #################################################
  # check for ACL support
  
@@ -54,7 +54,7 @@
  AC_ARG_WITH(acl-support,
  [  --with-acl-support      Include ACL support (default=no)],
  [ case "$withval" in
-@@ -5123,43 +5139,37 @@
+@@ -5134,43 +5150,37 @@
  
  	case "$host_os" in
  	*sysv5*)
@@ -105,7 +105,7 @@
  	*linux*)
  		AC_CHECK_LIB(attr,getxattr,[ACL_LIBS="$ACL_LIBS -lattr"])
         		AC_CHECK_LIB(acl,acl_get_file,[ACL_LIBS="$ACL_LIBS -lacl"])
-@@ -5180,7 +5190,7 @@
+@@ -5191,7 +5201,7 @@
  			LIBS=$acl_LIBS
  		])
  		if test x"$samba_cv_HAVE_POSIX_ACLS" = x"yes"; then
@@ -114,7 +114,7 @@
  			AC_DEFINE(HAVE_POSIX_ACLS,1,[Whether POSIX ACLs are available])
  			AC_CACHE_CHECK([for acl_get_perm_np],samba_cv_HAVE_ACL_GET_PERM_NP,[
  				acl_LIBS=$LIBS
-@@ -5201,12 +5211,18 @@
+@@ -5212,12 +5222,18 @@
  				AC_DEFINE(HAVE_ACL_GET_PERM_NP,1,[Whether acl_get_perm_np() is available])
  			fi
  		fi
@@ -137,7 +137,7 @@
  			AC_TRY_LINK([
  				#include <sys/types.h>
  				#include <sys/acl.h>
-@@ -5219,20 +5235,20 @@
+@@ -5230,20 +5246,20 @@
  			[samba_cv_HAVE_POSIX_ACLS=yes],
  			[samba_cv_HAVE_POSIX_ACLS=no])
  			LIBS=$acl_LIBS
@@ -163,7 +163,7 @@
  				],
  				[samba_cv_HAVE_ACL_GET_PERM_NP=yes],
  				[samba_cv_HAVE_ACL_GET_PERM_NP=no])
-@@ -5241,17 +5257,22 @@
+@@ -5252,17 +5268,22 @@
  			if test x"$samba_cv_HAVE_ACL_GET_PERM_NP" = x"yes"; then
  				AC_DEFINE(HAVE_ACL_GET_PERM_NP,1,[Whether acl_get_perm_np() is available])
  			fi
@@ -188,7 +188,24 @@
  )
  
  if test x"$samba_cv_HAVE_POSIX_ACLS" = x"yes"; then
-@@ -6082,6 +6103,7 @@
+@@ -5736,6 +5757,7 @@
+ 		NSSSONAMEVERSIONSUFFIX=".1"
+ 		WINBIND_NSS_EXTRA_OBJS="nsswitch/winbind_nss_freebsd.o \
+ 		    nsswitch/winbind_nss_linux.o"
++		WINBIND_WINS_NSS_EXTRA_OBJS="nsswitch/wins_freebsd.o nsswitch/wins.o"
+ 		WINBIND_NSS="nsswitch/nss_winbind.$SHLIBEXT"
+ 		WINBIND_WINS_NSS="nsswitch/nss_wins.$SHLIBEXT"
+ 		;;
+@@ -5792,6 +5814,8 @@
+ AC_SUBST(WINBIND_NSS_LDSHFLAGS)
+ AC_SUBST(WINBIND_NSS_EXTRA_OBJS)
+ AC_SUBST(WINBIND_NSS_EXTRA_LIBS)
++AC_SUBST(WINBIND_WINS_NSS_EXTRA_OBJS)
++AC_SUBST(WINBIND_WINS_NSS_EXTRA_LIBS)
+ AC_SUBST(NSSSONAMEVERSIONSUFFIX)
+ 
+ AC_SUBST(SMB_KRB5_LOCATOR)
+@@ -6093,12 +6117,14 @@
  SMB_MODULE(vfs_irixacl, \$(VFS_IRIXACL_OBJ), "bin/irixacl.$SHLIBEXT", VFS)
  SMB_MODULE(vfs_hpuxacl, \$(VFS_HPUXACL_OBJ), "bin/hpuxacl.$SHLIBEXT", VFS)
  SMB_MODULE(vfs_tru64acl, \$(VFS_TRU64ACL_OBJ), "bin/tru64acl.$SHLIBEXT", VFS)
@@ -196,3 +213,10 @@
  SMB_MODULE(vfs_catia, \$(VFS_CATIA_OBJ), "bin/catia.$SHLIBEXT", VFS)
  SMB_MODULE(vfs_cacheprime, \$(VFS_CACHEPRIME_OBJ), "bin/cacheprime.$SHLIBEXT", VFS)
  SMB_MODULE(vfs_prealloc, \$(VFS_PREALLOC_OBJ), "bin/prealloc.$SHLIBEXT", VFS)
+ SMB_MODULE(vfs_commit, \$(VFS_COMMIT_OBJ), "bin/commit.$SHLIBEXT", VFS)
+ SMB_MODULE(vfs_gpfs, \$(VFS_GPFS_OBJ), "bin/gpfs.$SHLIBEXT", VFS)
+ SMB_MODULE(vfs_readahead, \$(VFS_READAHEAD_OBJ), "bin/readahead.$SHLIBEXT", VFS)
++SMB_MODULE(vfs_notify_fam, \$(VFS_NOTIFY_FAM_OBJ), "bin/notify_fam.$SHLIBEXT", VFS)
+ 
+ SMB_SUBSYSTEM(VFS,smbd/vfs.o)
+ 

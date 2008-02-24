@@ -1,9 +1,0 @@
-#!/bin/sh
-
-case "$2" in
-    POST-INSTALL)
-	ln -sf %%PREFIX%%/netbeans/bin/netbeans %%PREFIX%%/bin/netbeans
-	;;
-esac
-
-exit 0

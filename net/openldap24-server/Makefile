@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-DISTVERSION=		2.4.6
+DISTVERSION=		2.4.8
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -113,6 +113,7 @@ WANT_OPENLDAP_VER=	24
 .if defined(WITH_SASL) && !defined(WITHOUT_SASL)
 WANT_OPENLDAP_SASL=	yes
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.*
+PKGNAMESUFFIX=		-sasl-server
 .else
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-sasl-client-2.*
 .endif

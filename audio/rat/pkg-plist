@@ -1,7 +1,0 @@
-bin/rat-%%PORTVERSION%%
-bin/rat-%%PORTVERSION%%-ui
-bin/rat-%%PORTVERSION%%-media
-bin/rat
-etc/sdr/plugins/sdr2.plugin.S02.audio.rtp.-.rat-%%PORTVERSION%%
-@dirrm etc/sdr/plugins
-@dirrm etc/sdr

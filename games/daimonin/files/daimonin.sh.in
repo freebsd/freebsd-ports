@@ -1,4 +1,0 @@
-#!/bin/sh
-chmod -R +w ~/.daimonin
-cp -R %%PREFIX%%/share/daimonin-%%PORTVERSION%%/ ~/.daimonin
-cd ~/.daimonin && ./daimonin $*

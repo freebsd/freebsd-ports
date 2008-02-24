@@ -1,5 +1,0 @@
-The PHP OpenID library lets you enable OpenID authentication on sites
-built using PHP.  It features the OpenID consumer, Store
-implementations, and an OpenID server.
-
-WWW:	http://www.openidenabled.com/openid/libraries/php/

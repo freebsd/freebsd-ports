@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	orage
-PORTVERSION=	4.4.1
-PORTREVISION=	1
+PORTVERSION=	4.4.2
+PORTREVISION=	0
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=--with-bdb4=no
 .endif
 
 .if defined(WITH_ICAL)
-LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
+LIB_DEPENDS+=	ical.27:${PORTSDIR}/devel/libical
 .endif
 
 post-patch:

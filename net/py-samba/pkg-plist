@@ -25,6 +25,7 @@
 %%EXAMPLESDIR%%/tdbpack/tdbtimetrial.py
 %%EXAMPLESDIR%%/tdbpack/test_tdbpack.py
 @dirrm %%PYTHON_SITELIBDIR%%/samba
+@dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrm %%EXAMPLESDIR%%/spoolss
 @dirrm %%EXAMPLESDIR%%/tdbpack
 @dirrm %%EXAMPLESDIR%%

@@ -177,6 +177,7 @@ share/locale/it/LC_MESSAGES/libxine1.mo
 share/locale/pl/LC_MESSAGES/libxine1.mo
 share/locale/pt_BR/LC_MESSAGES/libxine1.mo
 share/locale/sk/LC_MESSAGES/libxine1.mo
+share/locale/tr/LC_MESSAGES/libxine1.mo
 %%DATADIR%%/libxine1/fonts/cc-16.xinefont.gz
 %%DATADIR%%/libxine1/fonts/cc-20.xinefont.gz
 %%DATADIR%%/libxine1/fonts/cc-24.xinefont.gz

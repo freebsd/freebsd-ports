@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.5
 PORTREVISION=	2
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	print
@@ -25,7 +25,6 @@ CONFLICTS=	LPRng-[0-9]*
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	cupsd
 CFLAGS+=	${PTHREAD_CFLAGS}
@@ -35,7 +34,6 @@ DSOFLAGS=	-Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" DSOFLAGS="${DSOFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--localstatedir=/var			\
-			--disable-pam				\
 			--disable-slp				\
 			--disable-gssapi			\
 			--with-cups-user=${CUPSOWN}		\
@@ -43,12 +41,16 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--with-system-groups=${CUPSSYSGRP}	\
 			--with-docdir=${DOCSDIR}		\
 			--with-icondir=${PREFIX}/share/icons	\
+			--with-menudir=${DESKTOPDIR}		\
 			--with-domainsocket=${CUPS_SOCKET}
 
 OPTIONS=	GNUTLS		"Build with GNUTLS library" on \
 		PHP		"Build PHP support" off \
 		PYTHON		"Build PYTHON support" off \
-		LIBPAPER	"Build with libpaper support" off
+		LIBPAPER	"Build with libpaper support" off \
+		DNSSD		"Build with DNS_SD (avahi) support" off \
+		PAM		"Build with PAM support" off \
+		LDAP		"Build with LDAP support" off
 
 CUPS_ETCDIR=	${PREFIX}/etc/cups
 CUPS_SPOOLDIR=	/var/spool/cups
@@ -95,6 +97,30 @@ USE_PYTHON=		yes
 .if defined(WITH_LIBPAPER)
 CONFIGURE_ARGS+=	--enable-libpaper
 LIB_DEPENDS+=		paper.2:${PORTSDIR}/print/libpaper
+.endif
+
+.if defined(WITH_DNSSD)
+CONFIGURE_ARGS+=	--enable-dnssd \
+			--with-dnssd-libs=${LOCALBASE}/lib/ \
+			--with-dnssd-includes=${LOCALBASE}/include/avahi-compat-libdns_sd/
+LIB_DEPENDS+=		dns_sd:${PORTSDIR}/net/avahi-libdns
+.else
+CONFIGURE_ARGS+=	--disable-dnssd
+.endif
+
+.if defined(WITH_PAM)
+CONFIGURE_ARGS+=	--enable-pam
+PLIST_SUB+=		WITH_PAMD=""
+.else
+CONFIGURE_ARGS+=	--disable-pam
+PLIST_SUB+=		WITH_PAMD="@comment "
+.endif
+
+.if defined(WITH_LDAP)
+USE_OPENLDAP=		yes
+CONFIGURE_ARGS+=	--enable-ldap
+.else
+CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
 MAN1EXT=	1
@@ -151,6 +177,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/share/s|/usr/share|${PREFIX}/share|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/cups|/usr/local/etc/cups|g' ${WRKSRC}/man/*.man*
 	@${REINPLACE_CMD} -e 's|CXX="$$CC"||g ; s|-lpthreads.*;|${PTHREAD_LIBS};|g' \
+		-e 's|/private/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-su-install:
@@ -173,6 +200,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${CUPS_ETCDIR}/${f}.N
 	cd ${CUPS_ETCDIR}/; if test ! -f ${f}; then ${CP} -p ${f}.N ${f}; fi
 .endfor
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/lpt-cupsd.conf ${EXAMPLESDIR}/
 	${INSTALL} -d ${CUPS_SPOOLDIR}/tmp/
 	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} ${CUPS_SPOOLDIR}/
 	${CHMOD} -R g+w ${CUPS_SPOOLDIR}/

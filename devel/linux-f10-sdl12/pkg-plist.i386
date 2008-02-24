@@ -1,8 +1,0 @@
-usr/share/doc/SDL-%%SDLVER%%/BUGS
-usr/share/doc/SDL-%%SDLVER%%/COPYING
-usr/share/doc/SDL-%%SDLVER%%/CREDITS
-usr/share/doc/SDL-%%SDLVER%%/README-SDL.txt
-usr/lib/libSDL-1.1.so.0
-usr/lib/libSDL-1.2.so.0
-usr/lib/libSDL-1.2.so.0.7.3
-@dirrm usr/share/doc/SDL-%%SDLVER%%

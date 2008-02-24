@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smbftpd
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.twbsd.org/download/download.php?file=smbftpd/
 

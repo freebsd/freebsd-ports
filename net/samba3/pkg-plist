@@ -48,6 +48,8 @@ sbin/swat
 %%EXAMPLESDIR%%/VFS/Makefile.in
 %%EXAMPLESDIR%%/VFS/README
 %%EXAMPLESDIR%%/VFS/autogen.sh
+%%EXAMPLESDIR%%/VFS/config.guess
+%%EXAMPLESDIR%%/VFS/config.sub
 %%EXAMPLESDIR%%/VFS/configure.in
 %%EXAMPLESDIR%%/VFS/install-sh
 %%EXAMPLESDIR%%/VFS/shadow_copy_test.c

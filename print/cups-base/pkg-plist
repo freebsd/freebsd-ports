@@ -33,6 +33,7 @@ etc/cups/mime.types.N
 etc/cups/snmp.conf.N
 @exec if test ! -f %D/etc/cups/snmp.conf; then cp -p %D/etc/cups/snmp.conf.N %D/etc/cups/snmp.conf; fi
 @exec chgrp cups %D/etc/cups
+%%WITH_PAMD%%etc/pam.d/cups
 bin/cancel
 bin/cups-config
 bin/cupstestdsc
@@ -154,32 +155,7 @@ sbin/reject
 %%DATADIR%%/charmaps/windows-936.txt
 %%DATADIR%%/charmaps/windows-949.txt
 %%DATADIR%%/charmaps/windows-950.txt
-%%DATADIR%%/charsets/iso-8859-1
-%%DATADIR%%/charsets/iso-8859-10
-%%DATADIR%%/charsets/iso-8859-13
-%%DATADIR%%/charsets/iso-8859-14
-%%DATADIR%%/charsets/iso-8859-15
-%%DATADIR%%/charsets/iso-8859-2
-%%DATADIR%%/charsets/iso-8859-3
-%%DATADIR%%/charsets/iso-8859-4
-%%DATADIR%%/charsets/iso-8859-5
-%%DATADIR%%/charsets/iso-8859-6
-%%DATADIR%%/charsets/iso-8859-7
-%%DATADIR%%/charsets/iso-8859-8
-%%DATADIR%%/charsets/iso-8859-9
-%%DATADIR%%/charsets/koi8-r
-%%DATADIR%%/charsets/koi8-u
 %%DATADIR%%/charsets/utf-8
-%%DATADIR%%/charsets/windows-1250
-%%DATADIR%%/charsets/windows-1251
-%%DATADIR%%/charsets/windows-1252
-%%DATADIR%%/charsets/windows-1253
-%%DATADIR%%/charsets/windows-1254
-%%DATADIR%%/charsets/windows-1255
-%%DATADIR%%/charsets/windows-1256
-%%DATADIR%%/charsets/windows-1257
-%%DATADIR%%/charsets/windows-1258
-%%DATADIR%%/charsets/windows-874
 %%DATADIR%%/data/HPGLprolog
 %%DATADIR%%/data/psglyphs
 %%DATADIR%%/data/testprint.ps
@@ -612,6 +588,7 @@ sbin/reject
 %%DATADIR%%/templates/it/users.tmpl
 %%DATADIR%%/templates/ja/add-class.tmpl
 %%DATADIR%%/templates/ja/add-printer.tmpl
+%%DATADIR%%/templates/ja/add-rss-subscription.tmpl
 %%DATADIR%%/templates/ja/admin.tmpl
 %%DATADIR%%/templates/ja/choose-device.tmpl
 %%DATADIR%%/templates/ja/choose-make.tmpl
@@ -638,9 +615,11 @@ sbin/reject
 %%DATADIR%%/templates/ja/job-restart.tmpl
 %%DATADIR%%/templates/ja/jobs-header.tmpl
 %%DATADIR%%/templates/ja/jobs.tmpl
+%%DATADIR%%/templates/ja/list-available-printers.tmpl
 %%DATADIR%%/templates/ja/maintenance.tmpl
 %%DATADIR%%/templates/ja/modify-class.tmpl
 %%DATADIR%%/templates/ja/modify-printer.tmpl
+%%DATADIR%%/templates/ja/norestart.tmpl
 %%DATADIR%%/templates/ja/option-conflict.tmpl
 %%DATADIR%%/templates/ja/option-trailer.tmpl
 %%DATADIR%%/templates/ja/pager.tmpl
@@ -662,6 +641,8 @@ sbin/reject
 %%DATADIR%%/templates/ja/samba-export.tmpl
 %%DATADIR%%/templates/ja/samba-exported.tmpl
 %%DATADIR%%/templates/ja/search.tmpl
+%%DATADIR%%/templates/ja/subscription-added.tmpl
+%%DATADIR%%/templates/ja/subscription-canceled.tmpl
 %%DATADIR%%/templates/ja/test-page.tmpl
 %%DATADIR%%/templates/ja/users.tmpl
 %%DATADIR%%/templates/job-cancel.tmpl
@@ -1373,15 +1354,20 @@ sbin/reject
 %%DOCSDIR%%/ja/images/button-accept-jobs.gif
 %%DOCSDIR%%/ja/images/button-add-class.gif
 %%DOCSDIR%%/ja/images/button-add-printer.gif
+%%DOCSDIR%%/ja/images/button-add-rss-subscription.gif
 %%DOCSDIR%%/ja/images/button-add-this-printer.gif
 %%DOCSDIR%%/ja/images/button-cancel-all-jobs.gif
 %%DOCSDIR%%/ja/images/button-cancel-job.gif
+%%DOCSDIR%%/ja/images/button-cancel-subscription.gif
 %%DOCSDIR%%/ja/images/button-change-settings.gif
+%%DOCSDIR%%/ja/images/button-clean-print-heads.gif
+%%DOCSDIR%%/ja/images/button-clear.gif
 %%DOCSDIR%%/ja/images/button-continue.gif
 %%DOCSDIR%%/ja/images/button-delete-class.gif
 %%DOCSDIR%%/ja/images/button-delete-printer.gif
 %%DOCSDIR%%/ja/images/button-edit-configuration-file.gif
 %%DOCSDIR%%/ja/images/button-export-samba.gif
+%%DOCSDIR%%/ja/images/button-find-new-printers.gif
 %%DOCSDIR%%/ja/images/button-help.gif
 %%DOCSDIR%%/ja/images/button-hold-job.gif
 %%DOCSDIR%%/ja/images/button-manage-classes.gif
@@ -1392,6 +1378,7 @@ sbin/reject
 %%DOCSDIR%%/ja/images/button-modify-printer.gif
 %%DOCSDIR%%/ja/images/button-move-job.gif
 %%DOCSDIR%%/ja/images/button-move-jobs.gif
+%%DOCSDIR%%/ja/images/button-print-self-test-page.gif
 %%DOCSDIR%%/ja/images/button-print-test-page.gif
 %%DOCSDIR%%/ja/images/button-publish-printer.gif
 %%DOCSDIR%%/ja/images/button-reject-jobs.gif
@@ -1418,6 +1405,7 @@ sbin/reject
 %%DOCSDIR%%/ja/images/button-view-access-log.gif
 %%DOCSDIR%%/ja/images/button-view-error-log.gif
 %%DOCSDIR%%/ja/images/button-view-page-log.gif
+%%DOCSDIR%%/ja/images/button-view-printable-version.gif
 %%DOCSDIR%%/ja/index.html
 %%DOCSDIR%%/pl/images/button-accept-jobs.gif
 %%DOCSDIR%%/pl/images/button-add-class.gif
@@ -1579,6 +1567,8 @@ sbin/reject
 %%DOCSDIR%%/zh_TW/images/button-view-page-log.gif
 %%DOCSDIR%%/zh_TW/images/button-view-printable-version.gif
 %%DOCSDIR%%/zh_TW/index.html
+%%EXAMPLESDIR%%/lpt-cupsd.conf
+share/applications/cups.desktop
 share/icons/hicolor/16x16/apps/cups.png
 share/icons/hicolor/32x32/apps/cups.png
 share/icons/hicolor/64x64/apps/cups.png
@@ -1663,6 +1653,7 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrm %%DOCSDIR%%/da/images
 @dirrm %%DOCSDIR%%/da
 @dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
 @exec mkdir -p %D/%%DATADIR%%/templates/da
 @exec mkdir -p %D/%%DATADIR%%/templates/fi
 @exec mkdir -p %D/%%DATADIR%%/templates/ko

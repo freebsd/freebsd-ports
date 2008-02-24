@@ -34,6 +34,1262 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="30c560ff-e0df-11dc-891a-02061b08fc24">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><lt>9.26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera Software ASA reports about multiple security
+	  fixes:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/freebsd/925/">
+	  <ul>
+	    <li>Fixed an issue where simulated text inputs could trick
+	      users into uploading arbitrary files, as reported by
+	      Mozilla.</li>
+	    <li>Image properties can no longer be used to execute
+	      scripts, as reported by Max Leonov.</li>
+	    <li>Fixed an issue where the representation of DOM
+	      attribute values could allow cross site scripting, as
+	      reported by Arnaud.lb.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/docs/changelogs/freebsd/926/</url>
+      <url>http://www.opera.com/support/search/view/877/</url>
+      <url>http://www.opera.com/support/search/view/879/</url>
+      <url>http://www.opera.com/support/search/view/880/</url>
+     </references>
+    <dates>
+      <discovery>2008-02-20</discovery>
+      <entry>2008-02-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="810a5197-e0d9-11dc-891a-02061b08fc24">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>2.0.0.12,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>2.0.0.12</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.1.8</lt></range>
+      </package>
+      <package>
+	<name>flock</name>
+	<name>linux-flock</name>
+	<range><lt>1.0.9</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<name>linux-seamonkey-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Foundation reports of multiple security issues
+	  in Firefox, Seamonkey, and Thunderbird.  Several of these
+	  issues can probably be used to run arbitrary code with the
+	  privilege of the user running the program.</p>
+	<blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
+	  <ul>
+	    <li>Web forgery overwrite with div overlay</li>
+	    <li>URL token stealing via stylesheet redirect</li>
+	    <li>Mishandling of locally-saved plain text files</li>
+	    <li>File action dialog tampering</li>
+	    <li>Possible information disclosure in BMP decoder</li>
+	    <li>Web browsing history and forward navigation stealing</li>
+	    <li>Directory traversal via chrome: URI</li>
+	    <li>Stored password corruption</li>
+	    <li>Privilege escalation, XSS, Remote Code Execution</li>
+	    <li>Multiple file input focus stealing vulnerabilities</li>
+	    <li>Crashes with evidence of memory corruption (rv:1.8.1.12)</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-0412</cvename>
+      <cvename>CVE-2008-0413</cvename>
+      <cvename>CVE-2008-0414</cvename>
+      <cvename>CVE-2008-0415</cvename>
+      <cvename>CVE-2008-0417</cvename>
+      <cvename>CVE-2008-0418</cvename>
+      <cvename>CVE-2008-0419</cvename>
+      <cvename>CVE-2008-0420</cvename>
+      <cvename>CVE-2008-0591</cvename>
+      <cvename>CVE-2008-0592</cvename>
+      <cvename>CVE-2008-0593</cvename>
+      <cvename>CVE-2008-0594</cvename>
+      <url>http://www.mozilla.org/projects/security/known-vulnerabilities.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-01.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-02.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-03.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-04.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-05.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-06.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-07.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-08.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-09.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-10.html</url>
+      <url>http://www.mozilla.org/security/announce/2008/mfsa2008-11.html</url>
+    </references>
+    <dates>
+      <discovery>2008-02-07</discovery>
+      <entry>2008-02-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e5d29309-e0db-11dc-97b2-001c2514716c">
+    <topic>openldap -- modrdn Denial of Service vulnerability</topic>
+    <affects>
+      <package>
+	<name>openldap-server</name>
+	<range><lt>2.3.41</lt></range>
+	<range><gt>2.4.0</gt><lt>2.4.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia Advisory reports:</p>
+	<blockquote cite="http://secunia.com/advisories/28926/">
+	  <p>A vulnerability has been reported in OpenLDAP, which can
+	    be exploited by malicious users to cause a DoS (Denial of
+	    Service).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>27778</bid>
+      <cvename>CVE-2008-0658</cvename>
+    </references>
+    <dates>
+      <discovery>2008-02-13</discovery>
+      <entry>2008-02-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="be4b0529-dbaf-11dc-9791-000ea6702141">
+    <topic>clamav -- ClamAV libclamav PE File Integer Overflow Vulnerability</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><ge>0.92</ge><lt>0.92.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>iDefense Security Advisory 02.12.08:</p>
+	<blockquote cite="http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=658">
+	  <p>Remote exploitation of an integer overflow vulnerability
+	    in Clam AntiVirus' ClamAV, as included in various vendors'
+	    operating system distributions, allows attackers to execute
+	    arbitrary code with the privileges of the affected process.</p>
+	  <p>The vulnerability exists within the code responsible
+	    for parsing and scanning PE files. While iterating through
+	    all sections contained in the PE file, several attacker
+	    controlled values are extracted from the file. On each iteration,
+	    arithmetic operations are performed without taking into
+	    consideration 32-bit integer wrap.</p>
+	  <p>Since insufficient integer overflow checks are present,
+	    an attacker can cause a heap overflow by causing a specially
+	    crafted Petite packed PE binary to be scanned. This results
+	    in an exploitable memory corruption condition.</p>
+	  <p>Exploitation of this vulnerability results in the
+	    execution of arbitrary code with the privileges of the process
+	    using libclamav. In the case of the clamd program, this will
+	    result in code execution with the privileges of the clamav user.
+	    Unsuccessful exploitation results in the clamd process crashing.</p>
+	</blockquote>
+	<h1>Workaround</h1>
+	<p>Disabling the scanning of PE files will prevent exploitation.</p>
+	<p>If using clamscan, this can be done by running clamscan with the
+	  '--no-pe' option.</p>
+	<p>If using clamdscan, set the 'ScanPE' option in the clamd.conf
+	  file to 'no'.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-0318</cvename>
+      <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=658</url>
+      <url>http://svn.clamav.net/svn/clamav-devel/trunk/ChangeLog</url>
+    </references>
+    <dates>
+      <discovery>2008-01-07</discovery>
+      <entry>2008-02-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="dea7df85-d96c-11dc-9bfc-000e0c092e7a">
+    <topic>cacti -- Multiple security vulnerabilities have been discovered</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.7b</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The cacti development team reports:</p>
+	<blockquote cite="http://forums.cacti.net/about25749.html">
+	  <p>Multiple security vulnerabilities have been discovered in
+	    Cacti's web interface:</p>
+	    <ul>
+	      <li>XSS vulnerabilities</li>
+	      <li>Path disclosure vulnerabilities</li>
+	      <li>SQL injection vulnerabilities</li>
+	      <li>HTTP response splitting vulnerabilities</li>
+	    </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://forums.cacti.net/about25749.html</url>
+    </references>
+    <dates>
+      <discovery>2008-02-12</discovery>
+      <entry>2008-02-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="739329c8-d8f0-11dc-ac2f-0016d325a0ed">
+    <topic>ikiwiki -- javascript insertion via uris</topic>
+    <affects>
+      <package>
+	<name>ikiwiki</name>
+	<range><lt>2.32.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ikiwiki development team reports:</p>
+	<blockquote cite="http://ikiwiki.info/security/#index30h2">
+	  <p>The htmlscrubber did not block javascript in uris.  This was
+	  fixed by adding a whitelist of valid uri types, which does not
+	  include javascript.  Some urls specifyable by the meta plugin
+	  could also theoretically have been used to inject javascript; this
+	  was also blocked.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://ikiwiki.info/security/#index30h2</url>
+    </references>
+    <dates>
+      <discovery>2008-02-10</discovery>
+      <entry>2008-02-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1a818749-d646-11dc-8959-000bcdc1757a">
+    <topic>zenphoto -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>zenphoto</name>
+	<range><lt>1.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>zenphoto project reports:</p>
+	<blockquote cite="http://www.zenphoto.org/2008/02/">
+	  <p>A new zenphoto version is now available. This release contains
+	   security fixes for HTML, XSS, and SQL injection vulnerabilities.
+	   </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2007-6666</cvename>
+	<url>http://www.securityfocus.com/bid/27084</url>
+	<url>http://secunia.com/advisories/28281</url>
+    </references>
+    <dates>
+      <discovery>2008-01-03</discovery>
+      <entry>2008-02-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0832ee18-cf77-11dc-8c6a-00304881ac9a">
+    <topic>jetty -- multiple vulnerability</topic>
+    <affects>
+      <package>
+	<name>jetty</name>
+	<range><lt>6.1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Greg Wilkins reports:</p>
+	<blockquote cite="http://jira.codehaus.org/browse/JETTY-386#action_117699">
+	  <p>jetty allows remote attackers to bypass protection mechanisms and
+	    read the source of files via multiple '/' characters in the URI.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>27117</bid>
+      <cvename>CVE-2007-6672</cvename>
+      <url>http://jira.codehaus.org/browse/JETTY-386#action_117699</url>
+    </references>
+    <dates>
+      <discovery>2007-12-22</discovery>
+      <entry>2008-02-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6ecd0b42-ce77-11dc-89b1-000e35248ad7">
+    <topic>libxine -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.1.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>xine project reports:</p>
+	<blockquote cite="http://xinehq.de/index.php/news">
+	  <p>A new xine-lib version is now available. This release contains
+	    a security fix (remotely-expoitable buffer overflow, CVE-2006-1664).
+	    (This is not the first time that that bug has been fixed...)
+	    It also fixes a few more recent bugs, such as the audio output
+	    problems in 1.1.9.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-1664</cvename>
+      <url>http://secunia.com/advisories/19853/</url>
+    </references>
+    <dates>
+      <discovery>2008-01-23</discovery>
+      <entry>2008-01-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fe2b6597-c9a4-11dc-8da8-0008a18a9961">
+    <topic>xorg -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<range><lt>1.4_4,1</lt></range>
+      </package>
+      <package>
+	<name>libXfont</name>
+	<range><lt>1.3.1_2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthieu Herrb of X.Org reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/xorg/2008-January/031918.html">
+	  <p>Several vulnerabilities have been identified in server code
+            of the X window system caused by lack of proper input validation
+            on user controlled data in various parts of the software,
+            causing various kinds of overflows.</p>
+          <p>Exploiting these overflows will crash the X server or,
+            under certain circumstances allow the execution of arbitray
+            machine code.</p>
+          <p>When the X server is running with root privileges (which is the
+            case for the Xorg server and for most kdrive based servers),
+            these vulnerabilities can thus also be used to raise
+            privileges.</p>
+          <p>All these vulnerabilities, to be exploited succesfully, require
+            either an already established connection to a running X server
+            (and normally running X servers are only accepting authenticated
+            connections), or a shell access with a valid user on the machine
+            where the vulnerable server is installed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-5760</cvename>
+      <cvename>CVE-2007-5958</cvename>
+      <cvename>CVE-2007-6427</cvename>
+      <cvename>CVE-2007-6428</cvename>
+      <cvename>CVE-2007-6429</cvename>
+      <cvename>CVE-2008-0006</cvename>
+      <url>http://lists.freedesktop.org/archives/xorg/2008-January/031918.html</url>
+      <url>http://lists.freedesktop.org/archives/xorg/2008-January/032099.html</url>
+      <url>http://secunia.com/advisories/28532/</url>
+    </references>
+    <dates>
+      <discovery>2008-01-18</discovery>
+      <entry>2008-01-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="024edd06-c933-11dc-810c-0016179b2dd5">
+    <topic>xfce -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xfce4-panel</name>
+	<name>libxfce4gui</name>
+	<range><lt>4.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gentoo reports:</p>
+	<blockquote cite="http://www.gentoo.org/security/en/glsa/glsa-200801-06.xml">
+	  <p>A remote attacker could entice a user to install a specially
+	    crafted "rc" file to execute arbitrary code via long strings
+	    in the "Name" and "Comment" fields or via unspecified vectors
+	    involving the second vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-6531</cvename>
+      <cvename>CVE-2007-6532</cvename>
+      <url>http://www.xfce.org/documentation/changelogs/4.4.2</url>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200801-06.xml</url>
+    </references>
+    <dates>
+      <discovery>2008-01-09</discovery>
+      <entry>2008-01-22</entry>
+      <modified>2008-02-13</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="a59afa47-c930-11dc-810c-0016179b2dd5">
+    <topic>claws-mail -- insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>claws-mail</name>
+	<range><lt>3.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nico Golde reports:</p>
+	<blockquote cite="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=454089">
+	  <p>A local attacker could exploit this vulnerability to conduct symlink
+	    attacks to overwrite files with the privileges of the user running
+	    Claws Mail.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>26676</bid>
+      <cvename>CVE-2007-6208</cvename>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200801-03.xml</url>
+      <url>http://security.gentoo.org/glsa/glsa-200801-03.xml</url>
+      <url>http://secunia.com/advisories/27897</url>
+    </references>
+    <dates>
+      <discovery>2007-12-03</discovery>
+      <entry>2008-01-22</entry>
+      <modified>2008-02-12</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="e5a9de5f-c6bc-11dc-b9f1-00a0cce0781e">
+    <topic>IRC Services-- Denial of Service Vulnerability</topic>
+    <affects>
+      <package>
+	<name>ircservices</name>
+	<range><lt>5.0.63</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/27761">
+	  <p>A vulnerability has been reported in IRC Services,
+	    which can be exploited by malicious people to cause
+	    a Denial of Service. The vulnerability is caused due
+	    to the improper handling of overly long passwords within
+	    the "default_encrypt()" function in encrypt.c and can be
+	    exploited to crash an affected server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-6122</cvename>
+      <url>http://secunia.com/advisories/27761</url>
+      <url>http://ircservices.za.net/Changes.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-11-21</discovery>
+      <entry>2008-01-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="02eedd3c-c6b5-11dc-93b6-000e35248ad7">
+    <topic>libxine -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.1.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>xine project reports:</p>
+	<blockquote cite="http://xinehq.de/index.php/news">
+	  <p>A new xine-lib version is now available. This release contains
+	    a security fix (remotely-expoitable buffer overflow, CVE-2008-0225).
+	    It also contains a read-past-end fix for an internal library
+	    function which is only used if the OS does not supply it and a
+	    rendering fix for Darwin/PPC.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-0225</cvename>
+      <url>http://aluigi.altervista.org/adv/xinermffhof-adv.txt</url>
+      <url>http://secunia.com/advisories/28384</url>
+    </references>
+    <dates>
+      <discovery>2008-01-08</discovery>
+      <entry>2008-01-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="60e1792b-c380-11dc-821a-000bcdc1757a">
+    <topic>geeklog xss vulnerability</topic>
+    <affects>
+      <package>
+	<name>geeklog</name>
+	<range><lt>1.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Geeklog reports:</p>
+	<blockquote cite="http://www.geeklog.net/article.php/geeklog-1.4.0sr6">
+	  <p>MustLive pointed out a possible XSS in the form to email an
+	    article to a friend that we're fixing with this release.</p>
+	  <p>Please note that this problem only exists in Geeklog 1.4.0
+	    - neither Geeklog 1.4.1 nor any older versions (1.3.x series)
+	    have that problem.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-3756</cvename>
+      <url>http://www.geeklog.net/article.php/geeklog-1.4.0sr6</url>
+    </references>
+    <dates>
+      <discovery>2008-01-08</discovery>
+      <entry>2008-01-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4451a4c9-c05e-11dc-982e-001372fd0af2">
+    <topic>drupal -- cross site request forgery</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.6</lt></range>
+      </package>
+      <package>
+	<name>drupal4</name>
+	<range><lt>4.7.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/208562">
+	  <p>The aggregator module fetches items from RSS feeds and makes
+	    them available on the site. The module provides an option to
+	    remove items from a particular feed. This has been implemented
+	    as a simple GET request and is therefore vulnerable to cross
+	    site request forgeries. For example: Should a privileged user
+	    view a page containing an &lt;img&gt; tag with a specially
+	    constructed src pointing to a remove items URL, the items would
+	    be removed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/208562</url>
+      <url>http://secunia.com/advisories/28422/</url>
+    </references>
+    <dates>
+      <discovery>2008-01-10</discovery>
+      <entry>2008-01-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6f736456-c060-11dc-982e-001372fd0af2">
+    <topic>drupal -- cross site scripting (utf8)</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.6</lt></range>
+      </package>
+      <package>
+	<name>drupal4</name>
+	<range><lt>4.7.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/208564">
+	  <p>When outputting plaintext Drupal strips potentially dangerous
+	    HTML tags and attributes from HTML, and escapes characters which
+	    have a special meaning in HTML. This output filtering secures
+	    the site against cross site scripting attacks via user input.</p>
+	  <p>Certain byte sequences that are invalid in the UTF8
+	    specification are not handled properly by Internet Explorer 6
+	    and may lead it to see a multibyte start character where none is
+	    present. Internet Explorer 6 then consumes a number of
+	    subsequent UTF-8 characters. This may lead to unsafe attributes
+	    that were outside a tag for the filter to appear inside a tag
+	    for Internet Explorer 6. This behaviour can then be used to
+	    insert and execute javascript in the context of the website.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/208564</url>
+      <url>http://secunia.com/advisories/28422/</url>
+    </references>
+    <dates>
+      <discovery>2008-01-10</discovery>
+      <entry>2008-01-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f0fa19dd-c060-11dc-982e-001372fd0af2">
+    <topic>drupal -- cross site scripting (register_globals)</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.6</lt></range>
+      </package>
+      <package>
+	<name>drupal4</name>
+	<range><lt>4.7.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/208565">
+	  <p>When theme .tpl.php files are accessible via the web and the PHP
+	    setting register_globals is set to enabled, anonymous users are
+	    able to execute cross site scripting attacks via specially
+	    crafted links.</p>
+	  <p>Drupal's .htaccess attempts to set register_globals to disabled
+	    and also prevents access to .tpl.php files. Only when both these
+	    measures are not effective and your PHP interpreter is
+	    configured with register_globals set to enabled, will this issue
+	    affect you.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/208565</url>
+      <url>http://secunia.com/advisories/28422/</url>
+    </references>
+    <dates>
+      <discovery>2008-01-10</discovery>
+      <entry>2008-01-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f358de71-bf64-11dc-928b-0016179b2dd5">
+    <topic>maradns -- CNAME record resource rotation denial of service</topic>
+    <affects>
+      <package>
+	<name>maradns</name>
+	<range><lt>1.2.12.08</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/28329">
+	  <p>A vulnerability has been reported in MaraDNS, which can be exploited
+	    by malicious people to cause a Denial of Service.</p>
+	  <p>The vulnerability is caused due to an error within the handling of
+	    certain DNS packets. This can be exploited to cause a resource rotation
+	    by sending specially crafted DNS packets, which cause an authoritative
+	    CNAME record to not resolve, resulting in a Denial of Sevices.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-0061</cvename>
+      <url>http://maradns.blogspot.com/2007/08/maradns-update-all-versions.html</url>
+      <url>http://secunia.com/advisories/28329</url>
+    </references>
+    <dates>
+      <discovery>2008-01-04</discovery>
+      <entry>2008-01-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f762ccbb-baed-11dc-a302-000102cc8983">
+    <topic>linux-realplayer -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-realplayer</name>
+	<range><ge>10.0.5</ge><lt>10.0.9.809.20070726</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/27361">
+	  <p>Multiple vulnerabilities have been reported in
+	    RealPlayer/RealOne/HelixPlayer, which can be exploited by malicious
+	    people to compromise a user's system.</p>
+	  <p>An input validation error when processing .RA/.RAM files can be
+	    exploited to cause a heap corruption via a specially crafted
+	    .RA/.RAM file with an overly large size field in the header.</p>
+	  <p>An error in the processing of .PLS files can be exploited to cause
+	    a memory corruption and execute arbitrary code via a specially
+	    crafted .PLS file.</p>
+	  <p>An input validation error when parsing .SWF files can be exploited
+	    to cause a buffer overflow via a specially crafted .SWF file with
+	    malformed record headers.</p>
+	  <p>A boundary error when processing rm files can be exploited to
+	    cause a buffer overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-5081</cvename>
+      <cvename>CVE-2007-3410</cvename>
+      <cvename>CVE-2007-2263</cvename>
+      <cvename>CVE-2007-2264</cvename>
+      <url>http://secunia.com/advisories/27361</url>
+      <url>http://service.real.com/realplayer/security/10252007_player/en/</url>
+      <url>http://www.zerodayinitiative.com/advisories/ZDI-07-063.html</url>
+      <url>http://www.zerodayinitiative.com/advisories/ZDI-07-062.html</url>
+      <url>http://www.zerodayinitiative.com/advisories/ZDI-07-061.html</url>
+      <url>http://secunia.com/advisories/25819/</url>
+      <certvu>759385</certvu>
+    </references>
+    <dates>
+      <discovery>2007-10-25</discovery>
+      <entry>2008-01-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="562cf6c4-b9f1-11dc-a302-000102cc8983">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><ge>9.0</ge><lt>9.0r115</lt></range>
+	<range><ge>7.0</ge><lt>7.0r73</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Security bulletin:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb07-20.html">
+	  <p>Critical vulnerabilities have been identified in Adobe Flash
+	    Player that could allow an attacker who successfully exploits these
+	    potential vulnerabilities to take control of the affected system. A
+	    malicious SWF must be loaded in Flash Player by the user for an
+	    attacker to exploit these potential vulnerabilities. Users are
+	    recommended to update to the most current version of Flash Player
+	    available for their platform.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-6242</cvename>
+      <cvename>CVE-2007-4768</cvename>
+      <cvename>CVE-2007-5275</cvename>
+      <cvename>CVE-2007-6243</cvename>
+      <cvename>CVE-2007-6244</cvename>
+      <cvename>CVE-2007-6245</cvename>
+      <cvename>CVE-2007-4324</cvename>
+      <cvename>CVE-2007-6246</cvename>
+      <cvename>CVE-2007-5476</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb07-20.html</url>
+      <url>http://secunia.com/advisories/28161/</url>
+    </references>
+    <dates>
+      <discovery>2007-12-18</discovery>
+      <entry>2008-01-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cf484358-b5d6-11dc-8de0-001c2514716c">
+    <topic>dovecot -- Specific LDAP + auth cache configuration may mix up user logins</topic>
+    <affects>
+      <package>
+	<name>dovecot</name>
+	<range><lt>1.0.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dovecot reports:</p>
+	<blockquote cite="http://www.dovecot.org/list/dovecot-news/2007-December/000057.html">
+	  <p>If two users with the same password and same pass_filter
+	    variables log in within auth_cache_ttl seconds (1h by default),
+	    the second user may get logged in with the first user's cached
+	    pass_attrs. For example if pass_attrs contained the user's
+	    home/mail directory, this would mean that the second user will
+	    be accessing the first user's mails.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.dovecot.org/list/dovecot-news/2007-December/000057.html</url>
+    </references>
+    <dates>
+      <discovery>2007-12-21</discovery>
+      <entry>2007-12-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4aab7bcd-b294-11dc-a6f0-00a0cce0781e">
+    <topic>gallery2 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>gallery2</name>
+        <range><lt>2.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The Gallery team reports:</p>
+        <blockquote cite="http://gallery.menalto.com/gallery_2.2.4_released">
+	  <p>Gallery 2.2.4 addresses the following security
+	    vulnerabilities:</p>
+	  <ul>
+	    <li>Publish XP module - Fixed unauthorized album creation
+	      and file uploads.</li>
+	    <li>URL rewrite module - Fixed local file inclusion
+	      vulnerability in unsecured admin controller and
+	      information disclosure in hotlink protection.</li>
+	    <li>Core / add-item modules - Fixed Cross Site Scripting
+	      (XSS) vulnerabilities through malicious file names.</li>
+	    <li>Installation (Gallery application) - Update
+	      web-accessibility protection of the storage folder for
+	      Apache 2.2.</li>
+	    <li>Core (Gallery application) / MIME module - Fixed
+	      vulnerability in checks for disallowed file extensions
+	      in file uploads.</li>
+	    <li>Gallery Remote module - Added missing permissions
+	      checks for some GR commands.</li>
+	    <li>WebDAV module - Fixed Cross Site Scripting (XSS)
+	      vulnerability through HTTP PROPPATCH.</li>
+	    <li>WebDAV module - Fixed information (item data)
+	      disclosure in a WebDAV view.</li>
+	    <li>Comment module - Fixed information (item data)
+	      disclosure in comment views.</li>
+	    <li>Core module (Gallery application) - Improved
+	      resilience against item information disclosure
+	      attacks.</li>
+	    <li>Slideshow module - Fixed information (item data)
+	      disclosure in the slideshow.</li>
+	    <li>Print modules - Fixed information (item data)
+	      disclosure in several print modules.</li>
+	    <li>Core / print modules - Fixed arbitrary URL redirection
+	      (phishing attacks) in the core module and several print
+	      modules.</li>
+	    <li>WebCam module - Fixed proxied request weakness.</li>
+	  </ul>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://gallery.menalto.com/gallery_2.2.4_released</url>
+    </references>
+    <dates>
+      <discovery>2007-12-24</discovery>
+      <entry>2007-12-25</entry>
+      <modified>2007-12-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="299e3f81-aee7-11dc-b781-0016179b2dd5">
+    <topic>e2fsprogs -- heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>e2fsprogs</name>
+	<range><lt>1.40.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Theodore Y. Ts'o reports:</p>
+	<blockquote cite="http://sourceforge.net/project/shownotes.php?group_id=2406&amp;release_id=560230">
+	  <p>Fix a potential security vulnerability where an untrusted
+	    filesystem can be corrupted in such a way that a program using
+	    libext2fs will allocate a buffer which is far too small.  This
+	    can lead to either a crash or potentially a heap-based buffer
+	    overflow crash.  No known exploits exist, but main concern is
+	    where an untrusted user who possesses privileged access in a
+	    guest Xen environment could corrupt a filesystem which is then
+	    accessed by thus allowing the untrusted user to gain privileged
+	    access in the host OS.  Thanks to the McAfee AVERT Research group
+	    for reporting this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>26772</bid>
+      <cvename>CVE-2007-5497</cvename>
+      <url>http://secunia.com/advisories/27889/</url>
+      <url>http://sourceforge.net/project/shownotes.php?group_id=2406&amp;release_id=560230</url>
+    </references>
+    <dates>
+      <discovery>2007-12-07</discovery>
+      <entry>2007-12-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8a835235-ae84-11dc-a5f9-001a4d49522b">
+    <topic>wireshark -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<name>wireshark-lite</name>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<range><ge>0.8.16</ge><lt>0.99.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Wireshark team reports of multiple vulnerabilities:</p>
+	<blockquote cite="http://www.wireshark.org/security/wnpa-sec-2007-03.html">
+	  <ul>
+	    <li>Wireshark could crash when reading an MP3 file.</li>
+	    <li>Beyond Security discovered that Wireshark could loop
+	      excessively while reading a malformed DNP packet.</li>
+	    <li>Stefan Esser discovered a buffer overflow in the SSL
+	      dissector.</li>
+	    <li>The ANSI MAP dissector could be susceptible to a
+	      buffer overflow on some platforms.</li>
+	    <li>The Firebird/Interbase dissector could go into an
+	      infinite loop or crash.</li>
+	    <li>The NCP dissector could cause a crash.</li>
+	    <li>The HTTP dissector could crash on some systems while
+	      decoding chunked messages.</li>
+	    <li>The MEGACO dissector could enter a large loop and
+	      consume system resources.</li>
+	    <li>The DCP ETSI dissector could enter a large loop and
+	      consume system resources.</li>
+	    <li>Fabiodds discovered a buffer overflow in the iSeries
+	      (OS/400) Communication trace file parser.</li>
+	    <li>The PPP dissector could overflow a buffer.</li>
+	    <li>The Bluetooth SDP dissector could go into an infinite
+	      loop.</li>
+	    <li>A malformed RPC Portmap packet could cause a
+	      crash.</li>
+	    <li>The IPv6 dissector could loop excessively.</li>
+	    <li>The USB dissector could loop excessively or crash.</li>
+	    <li>The SMB dissector could crash.</li>
+	    <li>The RPL dissector could go into an infinite loop.</li>
+	    <li>The WiMAX dissector could crash due to unaligned
+	      access on some platforms.</li>
+	    <li>The CIP dissector could attempt to allocate a huge
+	      amount of memory and crash.</li>
+	  </ul>
+
+	  <h2>Impact</h2>
+
+	  <p>It may be possible to make Wireshark or Ethereal crash or
+	    use up available memory by injecting a purposefully
+	    malformed packet onto the wire or by convincing someone to
+	    read a malformed packet trace file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-6112</cvename>
+      <cvename>CVE-2007-6113</cvename>
+      <cvename>CVE-2007-6114</cvename>
+      <cvename>CVE-2007-6115</cvename>
+      <cvename>CVE-2007-6117</cvename>
+      <cvename>CVE-2007-6118</cvename>
+      <cvename>CVE-2007-6120</cvename>
+      <cvename>CVE-2007-6121</cvename>
+      <cvename>CVE-2007-6438</cvename>
+      <cvename>CVE-2007-6439</cvename>
+      <cvename>CVE-2007-6441</cvename>
+      <cvename>CVE-2007-6450</cvename>
+      <cvename>CVE-2007-6451</cvename>
+      <url>http://www.wireshark.org/security/wnpa-sec-2007-03.html</url>
+    </references>
+    <dates>
+      <discovery>2007-12-19</discovery>
+      <entry>2007-12-19</entry>
+      <modified>2007-12-22</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="31b045e7-ae75-11dc-a5f9-001a4d49522b">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>opera</name>
+	<name>opera-devel</name>
+	<name>linux-opera</name>
+	<range><lt>9.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera Software ASA reports about multiple security
+	  fixes:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/freebsd/925/">
+	  <ul>
+	    <li>Fixed an issue where plug-ins could be used to allow
+	      cross domain scripting, as reported by David
+	      Bloom. Details will be disclosed at a later date.</li>
+	    <li>Fixed an issue with TLS certificates that could be
+	      used to execute arbitrary code, as reported by Alexander
+	      Klink (Cynops GmbH). Details will be disclosed at a
+	      later date.</li>
+	    <li>Rich text editing can no longer be used to allow cross
+	      domain scripting, as reported by David Bloom. See our
+	      advisory.</li>
+	    <li>Prevented bitmaps from revealing random data from
+	      memory, as reported by Gynvael Coldwind. Details will be
+	      disclosed at a later date.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-6520</cvename>
+      <cvename>CVE-2007-6521</cvename>
+      <cvename>CVE-2007-6522</cvename>
+      <cvename>CVE-2007-6524</cvename>
+      <url>http://www.opera.com/docs/changelogs/freebsd/925/</url>
+      <url>http://www.opera.com/support/search/view/875/</url>
+    </references>
+    <dates>
+      <discovery>2007-12-19</discovery>
+      <entry>2007-12-19</entry>
+      <modified>2007-12-29</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="31435fbc-ae73-11dc-a5f9-001a4d49522b">
+    <topic>peercast -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>peercast</name>
+	<range><lt>0.1218</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Luigi Auriemma reports that peercast is vulnerable to a
+	  buffer overflow which could lead to a DoS or potentially
+	  remote code execution:</p>
+	<blockquote cite="http://aluigi.altervista.org/adv/peercasthof-adv.txt">
+	  <p>The handshakeHTTP function which handles all the requests
+	    received by the other clients is vulnerable to a heap
+	    overflow which allows an attacker to fill the
+	    loginPassword and loginMount buffers located in the
+	    Servent class with how much data he wants.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://aluigi.altervista.org/adv/peercasthof-adv.txt</url>
+      <url>http://secunia.com/advisories/28120/</url>
+    </references>
+    <dates>
+      <discovery>2007-12-17</discovery>
+      <entry>2007-12-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fee7e059-acec-11dc-807f-001b246e4fdf">
+    <topic>ganglia-webfrontend -- XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ganglia-webfrontend</name>
+	<range><lt>3.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Ganglia project reports:</p>
+	<blockquote cite="http://ganglia.info/?p=60">
+	  <p>The Ganglia development team is pleased to release Ganglia
+	    3.0.6 (Foss) which is available[...].  This release includes a
+	    security fix for web frontend cross-scripting vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://sourceforge.net/mailarchive/message.php?msg_name=d4c731da0712101044l7245cba9l34974008879f47a3%40mail.gmail.com</url>
+      <url>http://sourceforge.net/mailarchive/forum.php?thread_name=d4c731da0712101044l7245cba9l34974008879f47a3%40mail.gmail.com&amp;forum_name=ganglia-developers</url>
+    </references>
+    <dates>
+      <discovery>2007-12-10</discovery>
+      <entry>2007-12-17</entry>
+      <modified>2007-12-18</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="30f5ca1d-a90b-11dc-bf13-0211060005df">
+    <topic>qemu -- Translation Block Local Denial of Service Vulnerability</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>0.9.0_4</lt></range>
+	<range><ge>0.9.0s.20070101*</ge><lt>0.9.0s.20070802_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SecurityFocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/26666/discuss">
+	  <p>QEMU is prone to a local denial-of-service vulnerability
+	    because it fails to perform adequate boundary checks when
+	    handling user-supplied input.</p>
+	  <p>Attackers can exploit this issue to cause denial-of-service
+	    conditions. Given the nature of the issue, attackers may also be
+	    able to execute arbitrary code, but this has not been confirmed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>26666</bid>
+      <cvename>CVE-2007-6227</cvename>
+      <url>http://www.securityfocus.com/archive/1/484429</url>
+    </references>
+    <dates>
+      <discovery>2007-11-30</discovery>
+      <entry>2007-12-12</entry>
+      <modified>2007-12-14</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="fa708908-a8c7-11dc-b41d-000fb5066b20">
+    <topic>drupal -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.4</lt></range>
+      </package>
+      <package>
+	<name>drupal4</name>
+	<range><lt>4.7.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Drupal Project reports:</p>
+	<blockquote cite="http://drupal.org/node/198162">
+	  <p>The function taxonomy_select_nodes() directly injects variables
+	    into SQL queries instead of using placeholders. While taxonomy
+	    module itself validates the input passed to
+	    taxonomy_select_nodes(), this is a weakness in Drupal core.
+	    Several contributed modules, such as taxonomy_menu, ajaxLoader,
+	    and ubrowser, directly pass user input to taxonomy_select_nodes(),
+	    enabling SQL injection attacks by anonymous users.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-6299</cvename>
+      <url>http://drupal.org/node/198162</url>
+      <url>http://secunia.com/advisories/27932/</url>
+    </references>
+    <dates>
+      <discovery>2007-12-05</discovery>
+      <entry>2007-12-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ffcbd42d-a8c5-11dc-bec2-02e0185f8d72">
+    <topic>samba -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>samba</name>
+	<name>samba3</name>
+	<name>ja-samba</name>
+	<range><lt>3.0.28,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secuna Research reports:</p>
+	<blockquote cite="http://secunia.com/advisories/27760/">
+	  <p>Secunia Research has discovered a vulnerability in Samba, which
+	    can be exploited by malicious people to compromise a vulnerable
+	    system.  The vulnerability is caused due to a boundary error within
+	    the "send_mailslot()" function.  This can be exploited to cause a
+	    stack-based buffer overflow with zero bytes via a specially crafted
+	    "SAMLOGON" domain logon packet containing a username string placed
+	    at an odd offset followed by an overly long GETDC string.
+	    Successful exploitation allows execution of arbitrary code, but
+	    requires that the "domain logons" option is enabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-6015</cvename>
+      <url>http://secunia.com/advisories/27760/</url>
+    </references>
+    <dates>
+      <discovery>2007-12-10</discovery>
+      <entry>2007-12-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b2571f88-a867-11dc-a6f0-00a0cce0781e">
+    <topic>smbftpd -- format string vulnerability </topic>
+    <affects>
+      <package>
+	<name>smbftpd</name>
+	<range><lt>0.96</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/27014/">
+	  <p>Format string vulnerability in the SMBDirList function in dirlist.c
+	    in SmbFTPD 0.96 allows remote attackers to execute arbitrary code via
+	    format string specifiers in a directory name.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-5184</cvename>
+      <url>http://secunia.com/advisories/27014/</url>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=543077</url>
+    </references>
+    <dates>
+      <discovery>2007-10-01</discovery>
+      <entry>2007-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6ae7cef2-a6ae-11dc-95e6-000c29c5647f">
     <topic>jetty -- multiple vulnerabilities</topic>
     <affects>
@@ -280,6 +1536,19 @@ Note:  Please add new entries to the beginning of this file.
 	<name>linux-seamonkey</name>
 	<range><lt>1.1.7</lt></range>
       </package>
+      <package>
+	<name>flock</name>
+	<name>linux-flock</name>
+	<range><lt>1.0.2</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<range><lt>3.0.a2007.12.12</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey-devel</name>
+	<range><lt>2.0.a2007.12.12</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -300,6 +1569,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-11-26</discovery>
       <entry>2007-11-27</entry>
+      <modified>2007-12-14</modified>
     </dates>
   </vuln>
 
@@ -890,14 +2160,14 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="a1ef3fc0-8ad0-11dc-9490-0016179b2dd5">
-    <topic>dirproxy -- remote denial of service</topic>
+    <topic>dircproxy -- remote denial of service</topic>
     <affects>
       <package>
-	<name>dirproxy</name>
+	<name>dircproxy</name>
 	<range><lt>1.0.5_1</lt></range>
       </package>
       <package>
-	<name>dirproxy-devel</name>
+	<name>dircproxy-devel</name>
 	<range><lt>1.2.0.b2_1</lt></range>
       </package>
     </affects>
@@ -920,7 +2190,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-09-06</discovery>
       <entry>2007-11-04</entry>
-       <modified>2007-11-05</modified>
+       <modified>2008-01-31</modified>
     </dates>
   </vuln>
 
@@ -1516,12 +2786,14 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>tcl</name>
 	<name>tcl-threads</name>
-	<range><lt>8.4.16,1</lt></range>
+	<range><lt>8.4.16</lt></range>
+	<range><gt>8.4.*,1</gt><lt>8.4.16,1</lt></range>
       </package>
       <package>
 	<name>tk</name>
 	<name>tk-threads</name>
-	<range><lt>8.4.16,2</lt></range>
+	<range><lt>8.4.16</lt></range>
+	<range><gt>8.4.*,2</gt><lt>8.4.16,2</lt></range>
       </package>
     </affects>
     <description>
@@ -1540,6 +2812,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-09-27</discovery>
       <entry>2007-10-05</entry>
+      <modified>2007-12-31</modified>
     </dates>
   </vuln>
 
@@ -1548,7 +2821,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>firebird-server</name>
-	<range><lt>2.0.3</lt></range>
+	<range><ge>1.*</ge><lt>1.5.5</lt></range>
+	<range><ge>2.0.*</ge><lt>2.0.3</lt></range>
       </package>
     </affects>
     <description>
@@ -1996,11 +3270,11 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-firefox-devel</name>
-	<range><gt>0</gt></range>
+	<range><lt>3.0.a2007.12.12</lt></range>
       </package>
       <package>
 	<name>linux-seamonkey-devel</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.0.a2007.12.12</lt></range>
       </package>
       <!-- Deprecated/old names -->
       <package>
@@ -2031,7 +3305,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-09-18</discovery>
       <entry>2007-09-19</entry>
-      <modified>2007-10-31</modified>
+      <modified>2007-12-14</modified>
     </dates>
   </vuln>
 
@@ -2044,7 +3318,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>php4</name>
-	<range><gt>0</gt></range>
+	<range><lt>4.4.8</lt></range>
       </package>
     </affects>
     <description>
@@ -2102,13 +3376,14 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2007-4662</cvename>
       <cvename>CVE-2007-4663</cvename>
       <cvename>CVE-2007-4670</cvename>
+      <url>http://www.php.net/releases/4_4_8.php</url>
       <url>http://www.php.net/releases/5_2_4.php</url>
       <url>http://secunia.com/advisories/26642</url>
     </references>
     <dates>
       <discovery>2007-08-30</discovery>
       <entry>2007-09-11</entry>
-      <modified>2007-09-22</modified>
+      <modified>2008-01-14</modified>
     </dates>
   </vuln>
 
@@ -2228,7 +3503,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>lsh</name>
-	<range><ge>0</ge></range>
+	<range><lt>2.0.1</lt></range>
       </package>
     </affects>
     <description>
@@ -2249,7 +3524,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-03-17</discovery>
       <entry>2007-09-05</entry>
-      <modified>2007-09-11</modified>
+      <modified>2008-01-07</modified>
     </dates>
   </vuln>
 
@@ -3106,11 +4381,11 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>linux-firefox-devel</name>
-	<range><gt>0</gt></range>
+	<range><lt>3.0.a2007.12.12</lt></range>
       </package>
       <package>
 	<name>linux-seamonkey-devel</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.0.a2007.12.12</lt></range>
       </package>
       <!-- Deprecated/old names -->
       <package>
@@ -3158,7 +4433,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-07-17</discovery>
       <entry>2007-07-19</entry>
-      <modified>2007-07-31</modified>    
+      <modified>2007-12-14</modified>    
     </dates>
   </vuln>
 
@@ -21276,7 +22551,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>freeradius-devel</name>
-	<range><gt>0</gt></range>
+	<range><le>1.0.2</le></range>
       </package>
     </affects>
     <description>
@@ -21298,6 +22573,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-05-17</discovery>
       <entry>2005-05-22</entry>
+      <modified>2008-01-20</modified>
     </dates>
   </vuln>
 

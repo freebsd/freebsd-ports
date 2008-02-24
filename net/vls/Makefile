@@ -16,8 +16,7 @@ COMMENT=	Broadcasts MPEG(1/2/4, PS/TS) video streams
 
 LIB_DEPENDS=	dvbpsi.4:${PORTSDIR}/multimedia/libdvbpsi
 .if !defined(WITHOUT_DVD)
-LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
-		dvdread.5:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS+=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 .endif
 
 USE_BZIP2=	yes
