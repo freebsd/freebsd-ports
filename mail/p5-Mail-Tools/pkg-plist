@@ -1,38 +1,34 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/.packlist
 %%SITE_PERL%%/Mail/Address.pm
+%%SITE_PERL%%/Mail/Address.pod
 %%SITE_PERL%%/Mail/Cap.pm
+%%SITE_PERL%%/Mail/Cap.pod
 %%SITE_PERL%%/Mail/Field.pm
+%%SITE_PERL%%/Mail/Field.pod
 %%SITE_PERL%%/Mail/Field/AddrList.pm
+%%SITE_PERL%%/Mail/Field/AddrList.pod
 %%SITE_PERL%%/Mail/Field/Date.pm
+%%SITE_PERL%%/Mail/Field/Date.pod
+%%SITE_PERL%%/Mail/Field/Generic.pm
+%%SITE_PERL%%/Mail/Field/Generic.pod
 %%SITE_PERL%%/Mail/Filter.pm
+%%SITE_PERL%%/Mail/Filter.pod
 %%SITE_PERL%%/Mail/Header.pm
+%%SITE_PERL%%/Mail/Header.pod
 %%SITE_PERL%%/Mail/Internet.pm
+%%SITE_PERL%%/Mail/Internet.pod
 %%SITE_PERL%%/Mail/Mailer.pm
-%%SITE_PERL%%/Mail/Mailer/qmail.pm
+%%SITE_PERL%%/Mail/Mailer.pod
 %%SITE_PERL%%/Mail/Mailer/rfc822.pm
 %%SITE_PERL%%/Mail/Mailer/sendmail.pm
 %%SITE_PERL%%/Mail/Mailer/smtp.pm
 %%SITE_PERL%%/Mail/Mailer/testfile.pm
 %%SITE_PERL%%/Mail/Send.pm
+%%SITE_PERL%%/Mail/Send.pod
 %%SITE_PERL%%/Mail/Util.pm
-%%SITE_PERL%%/auto/Mail/Internet/_prephdr.al
-%%SITE_PERL%%/auto/Mail/Internet/add_signature.al
-%%SITE_PERL%%/auto/Mail/Internet/autosplit.ix
-%%SITE_PERL%%/auto/Mail/Internet/escape_from.al
-%%SITE_PERL%%/auto/Mail/Internet/nntppost.al
-%%SITE_PERL%%/auto/Mail/Internet/reply.al
-%%SITE_PERL%%/auto/Mail/Internet/send.al
-%%SITE_PERL%%/auto/Mail/Internet/sign.al
-%%SITE_PERL%%/auto/Mail/Internet/smtpsend.al
-%%SITE_PERL%%/auto/Mail/Internet/unescape_from.al
-%%SITE_PERL%%/auto/Mail/Util/autosplit.ix
-%%SITE_PERL%%/auto/Mail/Util/mailaddress.al
-%%SITE_PERL%%/auto/Mail/Util/maildomain.al
-%%SITE_PERL%%/auto/Mail/Util/read_mbox.al
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
-@dirrm %%SITE_PERL%%/auto/Mail/Util
-@dirrm %%SITE_PERL%%/auto/Mail/Internet
-@dirrm %%SITE_PERL%%/auto/Mail
-@dirrm %%SITE_PERL%%/Mail/Mailer
-@dirrm %%SITE_PERL%%/Mail/Field
+%%SITE_PERL%%/Mail/Util.pod
+%%SITE_PERL%%/Mail/Mailer/qmail.pm
+@dirrmtry %%SITE_PERL%%/Mail/Mailer
+@dirrmtry %%SITE_PERL%%/Mail/Field
 @dirrmtry %%SITE_PERL%%/Mail
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
