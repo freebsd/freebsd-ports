@@ -10603,6 +10603,7 @@ p5-Mon		ports/net-mgmt/p5-Mon
 p5-Moose	ports/devel/p5-Moose
 p5-Moose-Policy	ports/devel/p5-Moose-Policy
 p5-MooseX-IOC	ports/devel/p5-MooseX-IOC
+p5-MooseX-Policy-SemiAffordanceAccessor	ports/devel/p5-MooseX-Policy-SemiAffordanceAccessor
 p5-MusicBrainz-Client	ports/audio/p5-MusicBrainz-Client
 p5-MusicBrainz-Queries	ports/audio/p5-MusicBrainz-Queries
 p5-MusicBrainz-TRM	ports/audio/p5-MusicBrainz-TRM
