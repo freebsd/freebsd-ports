@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	www
 MASTER_SITES=	http://download.moodle.org/stable18/
 EXTRACT_SUFX=	.tgz
@@ -79,12 +79,19 @@ pre-install:
 	@${ECHO} @dirrm ${MOODLEDATADIR} >> ${PLIST}
 
 do-install:
-	${INSTALL_DATA} -d ${PREFIX}/${MOODLEDIR}
-	${CP} -Rn ${WRKSRC}/* ${PREFIX}/${MOODLEDIR}
-	${FIND} ${PREFIX}/${MOODLEDIR} -type d -exec ${CHMOD} a+x {} \;
-	${MKDIR} ${PREFIX}/${MOODLEDATADIR}
-	${CHOWN} www ${PREFIX}/${MOODLEDATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${MOODLEDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDIR}' \
+		>> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${MOODLEDIR} -type d -exec ${CHMOD} a+x {} \;
+	@${ECHO_CMD} '@exec ${FIND} ${PREFIX}/${MOODLEDIR} -type d -exec ${CHMOD} a+x {} \;' \
+		>> ${TMPPLIST}
+	@${INSTALL} -d ${PREFIX}/${MOODLEDATADIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDATADIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDATADIR}' \
+		>> ${TMPPLIST}
 	${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}
+	@${ECHO_CMD} '@exec ${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}' >> ${TMPPLIST}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
