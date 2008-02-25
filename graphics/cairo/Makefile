@@ -10,7 +10,9 @@ PORTNAME=	cairo
 PORTVERSION=	1.4.14
 PORTREVISION?=	0
 CATEGORIES=	graphics
-MASTER_SITES=	http://cairographics.org/releases/
+MASTER_SITES=	http://cairographics.org/releases/ \
+    		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	marcus
 #MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	gnome@FreeBSD.org
