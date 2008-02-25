@@ -662,6 +662,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/array.so
 %%PYTHON_LIBDIR%%/lib-dynload/audioop.so
 %%PYTHON_LIBDIR%%/lib-dynload/binascii.so
+%%PYTHON_LIBDIR%%/lib-dynload/bsddb185.so
 %%PYTHON_LIBDIR%%/lib-dynload/bz2.so
 %%PYTHON_LIBDIR%%/lib-dynload/cPickle.so
 %%PYTHON_LIBDIR%%/lib-dynload/cStringIO.so
