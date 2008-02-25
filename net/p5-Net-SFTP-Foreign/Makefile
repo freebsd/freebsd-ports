@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	Net-SFTP-Foreign
-DISTVERSION=	0.90_15
+PORTVERSION=	1.35
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/S/SA/SALVA
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Net::SFTP::Foreign - Secure File Transfer Protocol client
 
 PERL_CONFIGURE=	5.8.0+
+
+BUILD_DEPENDS+=	${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
+		${SITE_PERL}/${PERL_ARCH}/Sort/Key.pm:${PORTSDIR}/devel/p5-Sort-Key
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 MAN3=		Net::SFTP::Foreign.3 \
 		Net::SFTP::Foreign::Attributes.3 \
