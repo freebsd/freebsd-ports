@@ -33,9 +33,6 @@ CONFLICTS=	sge-6.[1-9]* sge-5* sgeee-[0-9]* sge-0.*
 
 EXTRA_PATCHES=	${FILESDIR}/sge-freebsd-pdc.diff
 
-.if !exists(/usr/include/sys/_pthreadtypes.h)
-EXTRA_PATCHES=	${FILESDIR}/pthread-types.diff
-.endif
 NOT_FOR_ARCHS=	alpha
 
 USE_GETTEXT=	yes
