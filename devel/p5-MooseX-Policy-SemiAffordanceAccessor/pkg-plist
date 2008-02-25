@@ -1,0 +1,3 @@
+%%SITE_PERL%%/MooseX/Policy/SemiAffordanceAccessor.pm
+@dirrmtry %%SITE_PERL%%/MooseX/Policy
+@dirrmtry %%SITE_PERL%%/MooseX
