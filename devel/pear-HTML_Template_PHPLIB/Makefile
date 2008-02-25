@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML_Template_PHPLIB
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	bg1tpt@gmail.com
@@ -19,7 +19,9 @@ FILES=		HTML/Template/PHPLIB.php
 DOCS=		README
 EXAMPLES=	authors.php authors.tpl block.ihtml block.php ittest.php tpl1.ihtml tpl1.php
 _DOCSDIR=	examples
-TESTS=		AllTests.php file.tpl HTML_Template_PHPLIBTest.php
+TESTS=		AllTests.php HTML_Template_PHPLIBTest.php \
+		templates/block.tpl templates/block2.tpl templates/block3.tpl \
+		templates/simple.tpl templates/simple2.tpl
 
 do-install-tests-msg: .USE
 	@${ECHO_MSG} "     (These tests require PEAR::Benchmark - see"
