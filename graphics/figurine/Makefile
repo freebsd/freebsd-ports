@@ -12,24 +12,32 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A drawing program for X11
 
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
-
 
 GNU_CONFIGURE=	yes
 USE_XPM=	yes
 
 MAN1=		figurine.1
 
+.include <bsd.port.pre.mk>
+
+# Optimizations produce bad assembly code on sparc64
+.if ${ARCH} == "sparc64"
+CFLAGS+=	-=O0
+.endif
+
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "s|Doc examples src|src|" \
 		${WRKSRC}/Makefile.in
 .endif
-	@${FIND} ${WRKSRC} -type f -name Makefile.in | \
-		${XARGS} -n 10 ${REINPLACE_CMD} \
-		-e 's|datadir = @datadir@|datadir = @datadir@/doc|'
+	@${REINPLACE_CMD} -e 's|datadir = @datadir@|datadir = @datadir@/doc|' \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/src/Makefile.in \
+		${WRKSRC}/Doc/Makefile.in \
+		${WRKSRC}/examples/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
