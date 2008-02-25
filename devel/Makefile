@@ -1411,6 +1411,7 @@
     SUBDIR += p5-Module-ScanDeps
     SUBDIR += p5-Module-Starter
     SUBDIR += p5-Module-Starter-PBP
+    SUBDIR += p5-Module-Util
     SUBDIR += p5-Module-Versions-Report
     SUBDIR += p5-Moose
     SUBDIR += p5-MooseX-IOC
