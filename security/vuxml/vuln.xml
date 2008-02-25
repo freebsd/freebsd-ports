@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f113bbeb-e3ac-11dc-bb89-000bcdc1757a">
+    <topic>moinmoin - multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>moinmoin</name>
+	<range><lt>1.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MoinMoin Security advisory</p>
+	<blockquote cite="http://moinmo.in/SecurityFixes">
+	  <p>XSS issue in login action</p>
+	  <p>XSS issue in AttachFile action</p>
+	  <p>XSS issue in RenamePage/DeletePage action</p>
+	  <p>XSS issue in gui editor</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-0857</cvename>
+      <cvename>CVE-2007-0901</cvename>
+      <cvename>CVE-2007-0902</cvename>
+      <cvename>CVE-2007-2423</cvename>
+      <cvename>CVE-2007-2673</cvename>
+      <cvename>CVE-2008-0780</cvename>
+      <cvename>CVE-2008-0781</cvename>
+      <cvename>CVE-2008-0782</cvename>
+      <url>http://moinmo.in/SecurityFixes</url>
+      <url>http://secunia.com/advisories/29010/</url>
+      <url>http://www.securityfocus.com/bid/27404</url>
+    </references>
+    <dates>
+      <discovery>2007-02-08</discovery>
+      <entry>2008-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="30c560ff-e0df-11dc-891a-02061b08fc24">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
