@@ -8,7 +8,8 @@
 PORTNAME=	gosa
 PORTVERSION=	2.5.14
 CATEGORIES=	sysutils www
-MASTER_SITES=	http://oss.gonicus.de/pub/gosa/
+MASTER_SITES=	http://oss.gonicus.de/pub/gosa/ \
+		http://oss.gonicus.de/pub/gosa/archive/
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Web Based LDAP Administration Program
