@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Policy/.packlist
+%%SITE_PERL%%/Moose/Policy.pm
+%%SITE_PERL%%/Moose/Policy/FollowPBP.pm
+%%SITE_PERL%%/Moose/Policy/JavaAccessors.pm
+%%SITE_PERL%%/Moose/Policy/SingleInheritence.pm
+@dirrm %%SITE_PERL%%/Moose/Policy
+@dirrmtry %%SITE_PERL%%/Moose
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Policy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose
