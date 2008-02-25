@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	ldns
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/
 
-MAINTAINER=	saurbier@math.uni-bielefeld.de
+MAINTAINER=	konstantin@saurbier.net
 COMMENT=	A library for programs conforming to DNS RFCs and drafts
 
 USE_AUTOTOOLS=	libtool:15
