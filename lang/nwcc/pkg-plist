@@ -5,6 +5,7 @@ lib/libnwcc.o
 nwcc/bin/nwcc
 nwcc/bin/nwcc1
 nwcc/bin/snake
+nwcc/lib/dynlibnwcc.o
 nwcc/lib/libnwcc.o
 @dirrm nwcc/lib
 @dirrm nwcc/bin
