@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.5.8
+PORTVERSION=	1.6.1
 CATEGORIES=	www python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	moin
+MASTER_SITES=	http://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
 
 MAINTAINER=	bg1tpt@gmail.com
