@@ -1,0 +1,3 @@
+bin/pm_which
+%%SITE_PERL%%/Module/Util.pm
+@dirrmtry %%SITE_PERL%%/Module
