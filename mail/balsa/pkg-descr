@@ -1,12 +1,18 @@
-A mail reader for GNOME 2. It supports local mail, pop3, and IMAP. It can
-view mail files in mbox, maildir, and mh format.
+Balsa is a mail reader for the GNOME Desktop.  It supports many features:
 
-The pop3 support is not complete. All mail retrieved will be left on the
-server, and hence retrieved again if not deleted through some other pop3
-client. Using fetchmail would be recommended to retrieve pop3 mail.
-
-Balsa is probably not fully usable as one's primary mail client at this
-time.  However, it is under active development and fits with other gnome
-applications.
+* Support for local mailbox formats: mbox, maildir, mh
+* Allows nested mailboxes
+* Support for POP3 and IMAP mail access protocols
+* Printing
+* Spell Checking
+* Multi-threaded mail retrevial (optional)
+* MIME support (view images inline, save parts)
+* Supports SMTP and/or use of local MTA, ie. Sendmail
+* Address Book that integrates with GnomeCard
+* Highly configurable
+* Active, open development
+* Multiple character sets for composing and reading messages
+* Allows file attachments to outgoing messages
+* GPG/OpenPGP mail signing and encryption
 
 WWW: http://balsa.gnome.org/
