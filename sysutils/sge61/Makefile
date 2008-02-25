@@ -36,9 +36,6 @@ OPTIONS=	BDB "Use DB based spooler" on \
 LATEST_LINK=	sge61
 CONFLICTS=	sge-6.[02-9]* sge-5* sgeee-[0-9]* sge-0.*
 
-.if !exists(/usr/include/sys/_pthreadtypes.h)
-EXTRA_PATCHES=	${FILESDIR}/pthread-types.diff
-.endif
 NOT_FOR_ARCHS=	alpha
 
 USE_GETTEXT=	yes
