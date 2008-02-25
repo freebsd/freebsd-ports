@@ -1,0 +1,48 @@
+--- contrib/Makefile.orig	2003-04-07 21:03:22.000000000 +0800
++++ contrib/Makefile	2008-02-25 13:54:58.000000000 +0800
+@@ -3,9 +3,9 @@
+ #CFLAGS	=	-g
+ 
+ # Endian: define either _LITTLE_ENDIAN or _BIG_ENDIAN
+-ENDIAN	=	-D_LITTLE_ENDIAN
++#ENDIAN	=	-D_LITTLE_ENDIAN
+ 
+-CFLAGS	=	-g -I.. -DPROJ4 $(ENDIAN) -DDEBUG -DDEBUG2 
++CFLAGS	+=	-g -I.. -DDEBUG -DDEBUG2 %%ENDIAN%% %%PROJ4%% -I%%PREFIX%%/include -L%%PREFIX%%/lib
+ 
+ SHPOBJ	=	../shpopen.o ../dbfopen.o 
+ 
+@@ -15,7 +15,32 @@
+ 
+ default:	all
+ 
+-all:	shpdxf shpproj dbfinfo shpcentrd shpdata shpwkb dbfinfo dbfcat shpinfo shpfix shpcat
++#all:	shpdxf shpproj dbfinfo shpcentrd shpdata shpwkb dbfinfo dbfcat shpinfo shpfix shpcat
++
++.if defined(PROJ4)
++all:		allprog allproj
++install:	allprog_install allproj_install
++.else
++all:		allprog
++install:	allprog_install
++.endif
++
++ALLPROG=	dbfcat dbfinfo shpcat shpdxf shpfix
++ALLPROJ=	shpcentrd shpdata shpinfo shpproj shpwkb
++
++allprog:	$(ALLPROG)
++
++allprog_install:	$(ALLPROG)
++.for _ALLPROG in ${ALLPROG}
++	%%INSTALL%% -c -m 755 ${_ALLPROG} %%PREFIX%%/bin/${_ALLPROG}
++.endfor
++
++allproj:	$(ALLPROJ)
++
++allproj_install:	$(ALLPROJ)
++.for _ALLPROJ in ${ALLPROJ}
++	%%INSTALL%% -c -m 755 ${_ALLPROJ} %%PREFIX%%/bin/${_ALLPROJ}
++.endfor
+ 
+ clean:  
+ 	rm -f shpdxf shpproj dbfinfo shpcentrd shpdata shpwkb dbfcat dbfinfo shpinfo shpfix shpcat *.o
