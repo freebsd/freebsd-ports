@@ -1,6 +1,6 @@
---- src/pulsecore/atomic.h.orig	2007-10-28 15:13:53.000000000 -0400
-+++ src/pulsecore/atomic.h	2008-01-01 17:20:19.000000000 -0500
-@@ -106,6 +106,88 @@ static inline int pa_atomic_ptr_cmpxchg(
+--- src/pulsecore/atomic.h.orig	2008-01-23 19:44:20.000000000 -0500
++++ src/pulsecore/atomic.h	2008-02-25 14:02:59.000000000 -0500
+@@ -106,6 +106,76 @@ static inline int pa_atomic_ptr_cmpxchg(
      return __sync_bool_compare_and_swap(&a->value, (long) old_p, (long) new_p);
  }
  
@@ -25,31 +25,19 @@
 +}
 +
 +static inline int pa_atomic_add(pa_atomic_t *a, int i) {
-+	int r;
-+	r = pa_atomic_load(a);
-+	atomic_add_int((unsigned int *) &a->value, i);
-+	return r;
++	return atomic_fetchadd_int((unsigned int *) &a->value, i);
 +}
 +
 +static inline int pa_atomic_sub(pa_atomic_t *a, int i) {
-+	int r;
-+	r = pa_atomic_load(a);
-+	atomic_subtract_int((unsigned int *) &a->value, i);
-+	return r;
++	return atomic_fetchadd_int((unsigned int *) &a->value, -(i));
 +}
 +
 +static inline int pa_atomic_inc(pa_atomic_t *a) {
-+	int r;
-+	r = pa_atomic_load(a);
-+	atomic_add_int((unsigned int *) &a->value, 1);
-+	return r;
++	return atomic_fetchadd_int((unsigned int *) &a->value, 1);
 +}
 +
 +static inline int pa_atomic_dec(pa_atomic_t *a) {
-+	int r;
-+	r = pa_atomic_load(a);
-+	atomic_subtract_int((unsigned int *) &a->value, 1);
-+	return r;
++	return atomic_fetchadd_int((unsigned int *) &a->value, -1);
 +}
 +
 +static inline int pa_atomic_cmpxchg(pa_atomic_t *a, int old_i, int new_i) {
