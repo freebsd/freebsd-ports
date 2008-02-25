@@ -38,6 +38,7 @@
     SUBDIR += etoile-multimediakit
     SUBDIR += exportvideo
     SUBDIR += ffmpeg
+    SUBDIR += ffmpegthumbnailer
     SUBDIR += flv2mpeg4
     SUBDIR += freevo
     SUBDIR += fxtv
