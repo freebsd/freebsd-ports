@@ -8,8 +8,8 @@
 %%SITE_PERL%%/JSONRPC.pm
 %%SITE_PERL%%/JSONRPC/Transport/HTTP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON
-@dirrm %%SITE_PERL%%/JSONRPC/Transport
-@dirrm %%SITE_PERL%%/JSONRPC
-@dirrm %%SITE_PERL%%/JSON
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JSON
+@dirrmtry %%SITE_PERL%%/JSONRPC/Transport
+@dirrmtry %%SITE_PERL%%/JSONRPC
+@dirrmtry %%SITE_PERL%%/JSON
 @dirrmtry %%SITE_PERL%%/Apache
