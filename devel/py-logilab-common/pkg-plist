@@ -133,6 +133,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/test1.msg
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/test2.msg
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/write_protected_file.txt
+%%PYTHON_SITELIBDIR%%/logilab/common/test/foo.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/foo.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/foo.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/foomod.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/foomod.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/foomod.pyo
