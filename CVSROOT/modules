@@ -2288,6 +2288,7 @@ dtd-catalogs	ports/textproc/dtd-catalogs
 dtd2relax	ports/textproc/dtd2relax
 dtdinst		ports/textproc/dtdinst
 dtdparse	ports/textproc/dtdparse
+dtiquery	ports/science/dtiquery
 dtmfdial	ports/audio/dtmfdial
 dtse		ports/www/dtse
 dtv		ports/multimedia/dtv
