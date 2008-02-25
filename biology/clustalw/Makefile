@@ -6,22 +6,17 @@
 #
 
 PORTNAME=	clustalw
-PORTVERSION=	2.0
+PORTVERSION=	2.0.3
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ebi.ac.uk/pub/software/clustalw2/
-DISTNAME=	${PORTNAME}-linux-src-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CLUSTAL W Multiple Sequence Alignment Program
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
+GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-ALL_TARGET=	# empty
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/clustalw2 ${PREFIX}/bin
-	${LN} -sf clustalw2 ${PREFIX}/bin/clustalw
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/clustalw_help ${DATADIR}
+PLIST_FILES=	bin/clustalw2
 
 .include <bsd.port.mk>
