@@ -1,4 +1,11 @@
 @unexec if cmp -s %D/etc/imapproxyd.conf.default %D/etc/imapproxyd.conf; then rm -f %D/etc/imapproxyd.conf; fi
-etc/imapproxyd.conf.default
+etc/imapproxyd.conf.sample
 sbin/pimpstat
 sbin/in.imapproxyd
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.debian
+%%PORTDOCS%%%%DOCSDIR%%/README.known_issues
+%%PORTDOCS%%%%DOCSDIR%%/README.ssl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
