@@ -692,3 +692,4 @@ gamess.*/gamess*	science/gamess		No Redistribution
 vst_sdk2_3.zip		audio/ardour		Redistribution of the VST PlugIns SDK is not allowed
 send-*			net-mgmt/send		Not redistributable, license agreement required
 rapid-*			math/rapid		No commercial use
+dtiquery-*		science/dtiquery	License agreement is required
