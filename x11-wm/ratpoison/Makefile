@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ratpoison
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chess@chessgriffin.com
 COMMENT=	Simple window manager with no fat library dependencies
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
