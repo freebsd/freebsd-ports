@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.avoidtheroid.com/pub/${PORTNAME}/
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	3D asteroids-like multiplayer game
 
 LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
@@ -38,14 +38,6 @@ USE_AUTOTOOLS=	automake:19 autoconf:261
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == amd64 || ${ARCH} == sparc64
-BROKEN=		does not compile
-.endif
-.endif
-
 pre-patch:
 	@${PERL} -pi.orig -e 's|^aclocal|${ACLOCAL}|; \
 		s|^autoconf|${AUTOCONF}|; s|^automake|${AUTOMAKE}|' \
@@ -63,4 +55,4 @@ post-configure:
 		's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
