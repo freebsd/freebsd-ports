@@ -6,8 +6,7 @@
 #    $MCom: ports/net/netspeed_applet/Makefile,v 1.2 2007/05/19 21:36:17 marcus Exp $
 
 PORTNAME=	netspeed_applet
-PORTVERSION=	0.13
-PORTREVISION=	2
+PORTVERSION=	0.14
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.wh-hms.uni-ulm.de/~mfcn/shared/netspeed/
 
