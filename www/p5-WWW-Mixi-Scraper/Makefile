@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	WWW-Mixi-Scraper
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/I/IS/ISHIGAKI
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
@@ -27,6 +26,7 @@ BUILD_DEPENDS=	p5-Encode>=0:${PORTSDIR}/converters/p5-Encode \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+USE_DOS2UNIX=	yes
 
 MAN3=		WWW::Mixi::Scraper::Utils.3 \
 		WWW::Mixi::Scraper::Plugin::NewMusic.3 \
