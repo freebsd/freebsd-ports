@@ -7,6 +7,7 @@
 
 PORTNAME=	interchange
 PORTVERSION=	5.4.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.4/tar/
 
