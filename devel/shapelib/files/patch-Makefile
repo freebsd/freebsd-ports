@@ -1,11 +1,48 @@
---- Makefile.orig	Mon Apr  7 13:03:22 2003
-+++ Makefile	Fri Feb  3 02:16:16 2006
-@@ -2,3 +2,3 @@
- #LINKOPT	=	/usr/local/lib/libdbmalloc.a
+--- Makefile.orig	2003-04-07 21:03:22.000000000 +0800
++++ Makefile	2008-02-25 13:53:10.000000000 +0800
+@@ -1,10 +1,35 @@
+-
+-#LINKOPT	=	/usr/local/lib/libdbmalloc.a
 -CFLAGS	=	-g
-+#CFLAGS	=	-g
++#LINKOPT	=	%%PREFIX%%/lib/libdbmalloc.a
++CFLAGS	+=	-g
  
-@@ -94,49 +94,16 @@
+ default:	all
+ 
+-all:	shpcreate shpadd shpdump shprewind dbfcreate dbfadd dbfdump shptest
++TOOLS=	shpcreate shpadd shpdump shprewind dbfcreate dbfadd dbfdump shptest \
++	shputils shptreedump
++
++CONTRIBTOOLS=	
++
++#all:	lib shpcreate shpadd shpdump shprewind dbfcreate dbfadd dbfdump \
++#	shptest shputils shptreedump
++
++all:	lib tools contrib_tools
++
++install:	lib_install tools_install contrib_install
++
++tools:
++.for _TOOL in $(TOOLS)
++	$(CC) $(CFLAGS) -I. $(_TOOL).c -o $(_TOOL) .libs/libshp.a
++.endfor
++
++contrib_tools:
++	(cd contrib; ${MAKE} %%PROJ4%% all; cd ..)
++
++tools_install:
++.for _TOOL in ${TOOLS}
++	%%INSTALL%% -c -m 755 ${_TOOL} %%PREFIX%%/bin/${_TOOL}
++.endfor
++
++contrib_install:
++	(cd contrib; ${MAKE} %%PROJ4%% install; cd ..)
+ 
+ shpopen.o:	shpopen.c shapefil.h
+ 	$(CC) $(CFLAGS) -c shpopen.c
+@@ -92,51 +117,18 @@
+ 
+ 
  # -----------------------------------------------------------------------------
 -# The following is contributed by Jan-Oliver Wagner, and should allow for
 -# creating shared libraries on most platforms with gcc, and libtool installed.
@@ -44,10 +81,10 @@
 -	ranlib .libs/libshp.a
 -	rm -fr .libs/libshp.lax
 -	(cd .libs && rm -f libshp.la && ln -s ../libshp.la libshp.la)
-+	%%LIBTOOL%% --mode=compile $(CC) -DPACKAGE=\"libshp\" -DVERSION=\"$(SHPLIB_VERSION)\" -DSTDC_HEADERS=1  -I. -I. -I/usr/local/include    $(CFLAGS) -c shpopen.c
-+	%%LIBTOOL%% --mode=compile $(CC) -DPACKAGE=\"libshp\" -DVERSION=\"$(SHPLIB_VERSION)\" -DSTDC_HEADERS=1  -I. -I. -I/usr/local/include    $(CFLAGS) -c shptree.c
-+	%%LIBTOOL%% --mode=compile $(CC) -DPACKAGE=\"libshp\" -DVERSION=\"$(SHPLIB_VERSION)\" -DSTDC_HEADERS=1  -I. -I. -I/usr/local/include    $(CFLAGS) -c dbfopen.c
-+	%%LIBTOOL%% --mode=link $(CC)  $(CFLAGS)  -o libshp.la -rpath %%PREFIX%%lib -version-info 1:1:0 shpopen.lo shptree.lo dbfopen.lo  
++	%%LIBTOOL%% --mode=compile --tag=CXX $(CC) -DPACKAGE=\"libshp\" -DVERSION=\"$(SHPLIB_VERSION)\" -DSTDC_HEADERS=1 -I. -I%%PREFIX%%/include $(CFLAGS) -c shpopen.c
++	%%LIBTOOL%% --mode=compile --tag=CXX $(CC) -DPACKAGE=\"libshp\" -DVERSION=\"$(SHPLIB_VERSION)\" -DSTDC_HEADERS=1 -I. -I%%PREFIX%%/include $(CFLAGS) -c shptree.c
++	%%LIBTOOL%% --mode=compile --tag=CXX $(CC) -DPACKAGE=\"libshp\" -DVERSION=\"$(SHPLIB_VERSION)\" -DSTDC_HEADERS=1 -I. -I%%PREFIX%%/include $(CFLAGS) -c dbfopen.c
++	%%LIBTOOL%% --mode=link --tag=CXX $(CC) $(CFLAGS) -o libshp.la -rpath %%PREFIX%%/lib -version-info 1:1:0 shpopen.lo shptree.lo dbfopen.lo
  
  lib_install:
 -	cp .libs/libshp.la .libs/libshp.lai

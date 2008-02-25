@@ -1,9 +1,29 @@
+bin/shpcreate
+bin/shpadd
+bin/shpdump
+bin/shprewind
+bin/dbfcreate
+bin/dbfadd
+bin/dbfdump
+bin/shptest
+bin/shputils
+bin/shptreedump
+bin/dbfcat
+bin/dbfinfo
+bin/shpcat
+bin/shpdxf
+bin/shpfix
+%%PROJ4%%bin/shpcentrd
+%%PROJ4%%bin/shpdata
+%%PROJ4%%bin/shpinfo
+%%PROJ4%%bin/shpproj
+%%PROJ4%%bin/shpwkb
 include/shapefil.h
 lib/libshp.a
 lib/libshp.la
 lib/libshp.so
 lib/libshp.so.1
-share/doc/shapelib/dbf_api.html
-share/doc/shapelib/shapelib.html
-share/doc/shapelib/shp_api.html
-@dirrm share/doc/shapelib
+%%PORTDOCS%%%%DOCSDIR%%/dbf_api.html
+%%PORTDOCS%%%%DOCSDIR%%/shapelib.html
+%%PORTDOCS%%%%DOCSDIR%%/shp_api.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
