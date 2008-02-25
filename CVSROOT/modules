@@ -10594,6 +10594,7 @@ p5-Module-ScanDeps	ports/devel/p5-Module-ScanDeps
 p5-Module-Signature	ports/security/p5-Module-Signature
 p5-Module-Starter	ports/devel/p5-Module-Starter
 p5-Module-Starter-PBP	ports/devel/p5-Module-Starter-PBP
+p5-Module-Util	ports/devel/p5-Module-Util
 p5-Module-Versions-Report	ports/devel/p5-Module-Versions-Report
 p5-MogileFS-Client	ports/sysutils/p5-MogileFS-Client
 p5-MogileFS-Utils	ports/sysutils/p5-MogileFS-Utils
