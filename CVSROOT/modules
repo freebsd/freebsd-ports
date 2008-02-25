@@ -2944,6 +2944,7 @@ ffcall		ports/devel/ffcall
 ffe		ports/textproc/ffe
 ffff		ports/graphics/ffff
 ffmpeg		ports/multimedia/ffmpeg
+ffmpegthumbnailer	ports/multimedia/ffmpegthumbnailer
 ffproxy		ports/www/ffproxy
 ffs2recov	ports/sysutils/ffs2recov
 fftw		ports/math/fftw
