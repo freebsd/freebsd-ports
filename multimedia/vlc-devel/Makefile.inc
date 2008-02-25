@@ -233,7 +233,7 @@ post-patch:
 # mozilla plugin
 	@${REINPLACE_CMD} -e 's|$$(libdir)/mozilla/plugins|${FAKEDIR}/mozilla|; \
 		s|$$(libdir)/mozilla/components|${FAKEDIR}/mozilla|' \
-			${WRKSRC}/mozilla/Makefile.in
+			${WRKSRC}/projects/mozilla/Makefile.in
 # skins2 interface, no lrint on < 504000
 .if ${OSVERSION} < 504000
 	@${REINPLACE_CMD} -e 's|lrint|rint|' \
@@ -248,7 +248,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/' \
 		-e 's/-lc_r/${PTHREAD_LIBS}/' \
 		-e 's|-mcpu=pentiumpro||; s|-ldl||' \
-		${WRKSRC}/configure
+		${WRKSRC}/configure ${WRKSRC}/libs/loader/Makefile.in
 # cdrom/dvd support
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|; \
 		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
