@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	phing
-PORTVERSION=	2.1.1
+PORTVERSION=	2.3.0
 CATEGORIES=	devel
-MASTER_SITES=	http://dist.bsdlab.org/
-#MASTER_SITES=	http://www.tigris.org/files/documents/995/25833/
+MASTER_SITES=	http://www.tigris.org/files/documents/995/40189/
 PKGNAMEPREFIX=	php5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Project build system based on Apache Ant
 
+USE_ZIP=	yes
 USE_PHP=	yes
 DEFAULT_PHP_VER=5
 WANT_PHP_CLI=	yes
