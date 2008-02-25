@@ -86,12 +86,14 @@ share/locale/pt/LC_MESSAGES/gdl-1.mo
 share/locale/pt_BR/LC_MESSAGES/gdl-1.mo
 share/locale/ru/LC_MESSAGES/gdl-1.mo
 share/locale/rw/LC_MESSAGES/gdl-1.mo
+share/locale/si/LC_MESSAGES/gdl-1.mo
 share/locale/sk/LC_MESSAGES/gdl-1.mo
 share/locale/sl/LC_MESSAGES/gdl-1.mo
 share/locale/sq/LC_MESSAGES/gdl-1.mo
 share/locale/sr/LC_MESSAGES/gdl-1.mo
 share/locale/sr@Latn/LC_MESSAGES/gdl-1.mo
 share/locale/sv/LC_MESSAGES/gdl-1.mo
+share/locale/th/LC_MESSAGES/gdl-1.mo
 share/locale/tr/LC_MESSAGES/gdl-1.mo
 share/locale/uk/LC_MESSAGES/gdl-1.mo
 share/locale/vi/LC_MESSAGES/gdl-1.mo
@@ -105,6 +107,8 @@ share/locale/zh_CN/LC_MESSAGES/gdl-1.mo
 @dirrmtry share/locale/uk
 @dirrmtry share/locale/sl/LC_MESSAGES
 @dirrmtry share/locale/sl
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
