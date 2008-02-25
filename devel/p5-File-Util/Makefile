@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	File-Util
-PORTVERSION=	3.22
+PORTVERSION=	3.23
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	File
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jeffhung@mail2000.com.tw
 COMMENT=	Perl5 module for easy, versatile, portable file handling
 
-RUN_DEPENDS=	${SITE_PERL}/Class/OOorNO.pm:${PORTSDIR}/devel/p5-Class-OOorNO \
-		${SITE_PERL}/Exception/Handler.pm:${PORTSDIR}/devel/p5-Exception-Handler
+RUN_DEPENDS=	p5-Class-OOorNO>=0.01:${PORTSDIR}/devel/p5-Class-OOorNO \
+		p5-Exception-Handler>=1:${PORTSDIR}/devel/p5-Exception-Handler
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	YES
