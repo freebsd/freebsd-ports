@@ -1,6 +1,9 @@
+etc/dkimproxy_in.conf.example
+etc/dkimproxy_out.conf.example
 bin/dkim_responder.pl
 bin/dkimproxy.in
 bin/dkimproxy.out
+lib/LookupMap.pm
 lib/MSDW/SMTP/Client.pm
 lib/MSDW/SMTP/Server.pm
 lib/MySmtpProxyServer.pm
