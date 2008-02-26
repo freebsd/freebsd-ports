@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	RT-Client-REST
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	RT
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Perl modules designed to talk to RT installation using REST protocol
 
-BUILD_DEPENDS=	\
-	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-	${SITE_PERL}/HTTP/Cookies.pm:${PORTSDIR}/www/p5-libwww \
-	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
-	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
+BUILD_DEPENDS=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
+		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
+		${SITE_PERL}/HTTP/Cookies.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
