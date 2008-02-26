@@ -8,7 +8,6 @@ include/vamos/body/Dashboard.h
 include/vamos/body/Differential.h
 include/vamos/body/Drivetrain.h
 include/vamos/body/Engine.h
-include/vamos/body/Exerter.h
 include/vamos/body/Frame.h
 include/vamos/body/Fuel_Tank.h
 include/vamos/body/Gl_Car.h
