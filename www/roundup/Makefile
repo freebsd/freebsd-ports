@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	www python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/r/roundup/ \
+MASTER_SITES=	${MASTER_SITE_CHEESESHOP} \
 		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITE_SUBDIR=	source/r/${PORTNAME}
 
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	An Issue-Tracking System for Knowledge Workers
