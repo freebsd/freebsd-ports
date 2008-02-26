@@ -37,14 +37,24 @@ bin/qmgrctl.sh
 bin/rcvrenvfromlog.sh
 bin/runas
 bin/smconf
-include/meta1/hdrmoddef.h
-include/meta1/mfapi.h
-include/meta1/pmfapi.h
-include/meta1/pmfdef.h
-include/meta1/smreplycodes.h
-include/meta1/smmts.h
+include/sm/generic.h
+include/sm/error.h
+include/sm/hdrmoddef.h
+include/sm/mfapi.h
+include/sm/pmfapi.h
+include/sm/pmfdef.h
+include/sm/pmilter.h
+include/sm/smreplycodes.h
+include/sm/smmts.h
+lib/meta1/libcstrr.a
+lib/meta1/libevthr.a
+lib/meta1/libmtar.a
 lib/meta1/libpmilter.a
 lib/meta1/libpmutil.a
+lib/meta1/librcb.a
+lib/meta1/librcbcomm.a
+lib/meta1/libreplr.a
+lib/meta1/libthr.a
 libexec/qmgr
 libexec/smar
 libexec/smtpc
@@ -59,6 +69,6 @@ sbin/statit
 sbin/t-hostname
 sbin/t-getgroup
 sbin/tree
-@dirrm include/meta1
+@dirrm include/sm
 @dirrm lib/meta1
 @exec %D/sbin/sm.setup.sh
