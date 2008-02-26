@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vamos
-PORTVERSION=	0.5.7
+PORTVERSION=	0.6.0
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -19,8 +19,7 @@ LIB_DEPENDS=	alut.1:${PORTSDIR}/audio/freealut \
 
 USE_GNOME=	gnometarget
 USE_GL=		glut
-USE_SDL=	ttf sdl
-USE_GETOPT_LONG=	yes
+USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
