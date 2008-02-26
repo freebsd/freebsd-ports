@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.33
+lib/libmunger.so.34
 lib/libminimunger.a
 include/minimunger.h
 %%DATADIR%%/ipdatabase.munger
@@ -18,7 +18,6 @@ include/minimunger.h
 %%DATADIR%%/blog.css
 %%DATADIR%%/blog.cgi
 %%DATADIR%%/rss.munger
-%%DATADIR%%/mime2munger.munger
 %%DATADIR%%/xmlquery.munger
 %%DATADIR%%/filter.munger
 %%DATADIR%%/cgi.munger
