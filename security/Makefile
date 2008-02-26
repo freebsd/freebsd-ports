@@ -120,6 +120,7 @@
     SUBDIR += drweb-qmail
     SUBDIR += drweb-sendmail
     SUBDIR += dsniff
+    SUBDIR += easypg
     SUBDIR += engine_pkcs11
     SUBDIR += execwrap
     SUBDIR += expiretable
