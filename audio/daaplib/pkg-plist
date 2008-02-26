@@ -1,8 +1,0 @@
-include/daap/basic.h
-include/daap/registry.h
-include/daap/taginput.h
-include/daap/tagoutput.h
-lib/libdaaplib.a
-%%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm include/daap
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
