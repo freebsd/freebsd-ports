@@ -1803,7 +1803,6 @@ cyrus2courier	ports/mail/cyrus2courier
 d2x		ports/games/d2x
 da-aspell	ports/textproc/da-aspell
 daa2iso		ports/sysutils/daa2iso
-daaplib		ports/audio/daaplib
 dact		ports/archivers/dact
 dadadodo	ports/textproc/dadadodo
 daedalus	ports/sysutils/daedalus
