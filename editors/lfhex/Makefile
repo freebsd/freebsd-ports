@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	lfhex
-PORTVERSION=	0.3.7.2
-PORTREVISION=	2
+PORTVERSION=	0.4
 CATEGORIES=	editors
 MASTER_SITES=	http://stoopidsimple.com/files/ \
 		http://home.earthlink.net/~eyekode/data/
@@ -16,28 +15,29 @@ MASTER_SITES=	http://stoopidsimple.com/files/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Large file hex editor
 
-USE_QT_VER=	3
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui moc_build qmake_build rcc
 USE_BISON=	build
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-qt-moc=${MOC}
 
-MAKE_ARGS=	CXXFLAGS="${CXXFLAGS}" \
-		EXEC_PREFIX="${PREFIX}/bin" \
-		IFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
-		LFLAGS="${QTCFGLIBS} -lqt-mt ${PTHREAD_LIBS}" \
-		INSTALL="${INSTALL_PROGRAM}" \
-		VERBOSE=1
-
+PORTDOCS=	README
 PLIST_FILES=	bin/lfhex
 
 .include <bsd.port.pre.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|^DEFINES|# DEFINES|g' ${WRKSRC}/lfhex.pro
 .if ${OSVERSION} >= 700042
-	${REINPLACE_CMD} -e 's|abs|llabs|g' \
-		${WRKSRC}/src/reader.cpp
+	@${REINPLACE_CMD} -e 's| abs| llabs|g' ${WRKSRC}/reader.cpp
+.endif
+
+pre-build:
+	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} -unix lfhex.pro
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/lfhex ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
