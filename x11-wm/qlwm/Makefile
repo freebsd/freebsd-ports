@@ -8,69 +8,55 @@
 #
 
 PORTNAME=	qlwm
-PORTVERSION=	3.1
-PORTREVISION=	1
+PORTVERSION=	4.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.alinden.mynetcologne.de/qlwm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based window manager
 
-DOCDIR=		share/doc/${PORTNAME}
-DOCS=		CHANGES README
-LIBDIR=		lib/${PORTNAME}
-PLIST=		${WRKDIR}/pkg-plist
-MAN1=		qlwm.1
-USE_QT_VER=	3
-USE_X_PREFIX=	yes
-REINPLACE_ARGS=	-i'' -E
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui moc_build qmake_build
 
-MAKE_ENV=	DEST="${PREFIX}/${LIBDIR}" INCPATH="${QTCPPFLAGS}" \
-		LIBS="${QTCFGLIBS} -lqt-mt -pthread" LINK="${CXX}" MOC="${MOC}"
+MAN1=		qlwm.1
+PORTDOCS=	CHANGES README
+PLIST_FILES=	bin/qlwm \
+		lib/qlwm/biff \
+		lib/qlwm/dclock \
+		lib/qlwm/files/appdefaults \
+		lib/qlwm/files/button_left.xpm \
+		lib/qlwm/files/button_right.xpm \
+		lib/qlwm/files/defaults \
+		lib/qlwm/files/menu.xpm \
+		lib/qlwm/files/menuconfig \
+		lib/qlwm/files/tiled.xpm \
+		lib/qlwm/files/winlist.xpm \
+		lib/qlwm/qlwm
+PLIST_DIRS=	lib/qlwm/files \
+		lib/qlwm
+
+SUB_FILES=	qlwm
 
 post-patch:
-	${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} \
-		's|/usr/local/qlwm|${PREFIX}/${LIBDIR}|g ; \
-		 s|^CXX|#CXX|g ; \
-		 s|^INCPATH|#INCPATH|g ; \
-		 s|^LFLAGS|#LFLAGS|g ; \
-		 s|^LIBS|#LIBS|g ; \
-		 s|^LINK|#LINK|g ; \
-		 s|^MOC|#MOC|g'
-
-pre-install:
-	${ECHO_CMD} bin/qlwm > ${PLIST}
-.for i in biff dclock qlwm
-	${ECHO_CMD} ${LIBDIR}/$i >> ${PLIST}
-.endfor
-	for i in `cd ${WRKSRC}/files; ${ECHO_CMD} *`; do \
-		${ECHO_CMD} ${LIBDIR}/files/$$i >> ${PLIST}; \
-	done
-.if !defined(NOPORTDOCS)
-.for i in ${DOCS}
-	${ECHO_CMD} ${DOCDIR}/$i >> ${PLIST}
-.endfor
-.endif
-.for i in ${LIBDIR}/files ${LIBDIR}
-	${ECHO_CMD} @dirrm $i >> ${PLIST}
-.endfor
-.if !defined(NOPORTDOCS)
-	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
-.endif
+	@${REINPLACE_CMD} -e 's|/usr/local/qlwm|${PREFIX}/lib/qlwm|g ; \
+		 s|/usr/local/man|${MANPREFIX}/man|g' ${WRKSRC}/Makefile
 
 do-install:
-	${MKDIR} ${PREFIX}/${LIBDIR}/files
-	${INSTALL_DATA} ${WRKSRC}/files/* ${PREFIX}/${LIBDIR}/files
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qlwm ${WRKSRC}/dclock/dclock \
-		${WRKSRC}/mail/biff ${PREFIX}/${LIBDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/qlwm ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/qlwm.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/lib/qlwm
+	${INSTALL_PROGRAM} ${WRKSRC}/dclock/dclock ${PREFIX}/lib/qlwm
+	${INSTALL_PROGRAM} ${WRKSRC}/mail/biff ${PREFIX}/lib/qlwm
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qlwm ${PREFIX}/lib/qlwm
+	@${MKDIR} ${PREFIX}/lib/qlwm/files
+	${INSTALL_DATA} ${WRKSRC}/files/*.xpm ${PREFIX}/lib/qlwm/files
+	${INSTALL_DATA} ${WRKSRC}/files/appdefaults ${PREFIX}/lib/qlwm/files
+	${INSTALL_DATA} ${WRKSRC}/files/defaults ${PREFIX}/lib/qlwm/files
+	${INSTALL_DATA} ${WRKSRC}/files/menuconfig ${PREFIX}/lib/qlwm/files
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/${DOCDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-	${INSTALL_MAN} ${WRKSRC}/qlwm.1 ${PREFIX}/man/man1
-	${SED} -e s,%PREFIX%,${PREFIX},g <${FILESDIR}/qlwm >${WRKSRC}/qlwm
-	${INSTALL_SCRIPT} ${WRKSRC}/qlwm ${PREFIX}/bin
 
 .include <bsd.port.mk>
