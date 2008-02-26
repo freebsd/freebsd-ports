@@ -6,13 +6,12 @@
 # $FreeBSD$
 
 PORTNAME=	movingmotif
-PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTVERSION=	2.3.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Display scientific data as dynamic plot
 
 USE_MOTIF=	yes
@@ -22,10 +21,8 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
 .if ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
+CONFIGURE_ENV+=	CFLAGS="-O0"
 .endif
 
 .include <bsd.port.post.mk>
