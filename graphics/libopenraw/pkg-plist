@@ -12,11 +12,11 @@ include/libopenraw-1.0/libopenraw/types.h
 lib/libopenraw.a
 lib/libopenraw.la
 lib/libopenraw.so
-lib/libopenraw.so.4
+lib/libopenraw.so.5
 %%GNOME%%lib/libopenrawgnome.a
 %%GNOME%%lib/libopenrawgnome.la
 %%GNOME%%lib/libopenrawgnome.so
-%%GNOME%%lib/libopenrawgnome.so.4
+%%GNOME%%lib/libopenrawgnome.so.5
 libdata/pkgconfig/libopenraw-1.0.pc
 %%GNOME%%libdata/pkgconfig/libopenraw-gnome-1.0.pc
 %%GNOME%%@dirrm include/libopenraw-1.0/libopenraw-gnome
