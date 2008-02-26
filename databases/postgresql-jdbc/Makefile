@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	8.2.505
+PORTVERSION=	8.3.603
 DISTVERSIONSUFFIX=.src
 PORTREVISION=	0
 CATEGORIES=	databases java
@@ -28,10 +28,12 @@ post-patch:
 	${REINPLACE_CMD} 's,/usr/local/pgsql/share/java,${JAVAJARDIR},' ${WRKSRC}/README
 
 do-install:
-	@- ${INSTALL_DATA} ${WRKSRC}/jars/postgresql.jar ${JAVAJARDIR}/postgresql.jar ;\
-	  ${MKDIR} -m 0755 ${DOCSDIR} ;\
+	@ ${INSTALL_DATA} ${WRKSRC}/jars/postgresql.jar ${JAVAJARDIR}/postgresql.jar
+.if !defined(NOPORTDOCS)
+	@ ${MKDIR} -m 0755 ${DOCSDIR} ;\
 	  ${INSTALL_DATA} ${WRKSRC}/README \
 			  ${DOCSDIR}/README-jdbc
+.endif
 
 post-install:
 	@ ${SED} -e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
