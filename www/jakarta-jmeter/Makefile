@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jmeter
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.3.1
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	jmeter/binaries
@@ -15,7 +14,7 @@ PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jb.quenot@caraldi.com
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Functional behaviour load and performance test application
 
 USE_JAVA=	yes
