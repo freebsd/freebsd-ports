@@ -2,6 +2,8 @@
 %%SITE_PERL%%/HTTP/Body/MultiPart.pm
 %%SITE_PERL%%/HTTP/Body/OctetStream.pm
 %%SITE_PERL%%/HTTP/Body/UrlEncoded.pm
+%%SITE_PERL%%/HTTP/Body/XForms.pm
+%%SITE_PERL%%/HTTP/Body/XFormsMultipart.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Body/.packlist
 @dirrmtry %%SITE_PERL%%/HTTP/Body
 @dirrmtry %%SITE_PERL%%/HTTP

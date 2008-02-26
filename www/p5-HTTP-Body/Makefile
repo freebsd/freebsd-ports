@@ -7,24 +7,26 @@
 #
 
 PORTNAME=	HTTP-Body
-PORTVERSION=	0.9
+PORTVERSION=	1.01
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	HTTP
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	HTTP Body Parser
 
-BUILD_DEPENDS=	p5-File-Temp>=0.14:${PORTSDIR}/devel/p5-File-Temp \
-		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-File-Temp>=0.14:${PORTSDIR}/devel/p5-File-Temp \
+		p5-YAML>=0.39:${PORTSDIR}/textproc/p5-YAML \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		HTTP::Body::OctetStream.3 \
+MAN3=		HTTP::Body.3 \
+		HTTP::Body::MultiPart.3 \
+		HTTP::Body::OctetStream.3 \
 		HTTP::Body::UrlEncoded.3 \
-		HTTP::Body.3 \
-		HTTP::Body::MultiPart.3
+		HTTP::Body::XForms.3 \
+		HTTP::Body::XFormsMultipart.3
 
 .include <bsd.port.mk>
