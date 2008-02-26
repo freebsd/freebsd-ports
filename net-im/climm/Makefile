@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	climm
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.6.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.climm.org/source/ \
 		http://http.bg.climm.org/source/
@@ -31,13 +30,10 @@ OPTIONS=	LIBICONV "Iconv character set conversion" on \
 		P2P "Peer2peer connection support" on \
 		TCL "TCL scripting support" on \
 		SSL "SSL/OTR encryption support" on \
-		REMOTE "Remote control fifo support" on
-#		XMPP "XMPP Jabber support" on
+		REMOTE "Remote control fifo support" on \
+		XMPP "XMPP Jabber support" off
 
 .include <bsd.port.pre.mk>
-
-# XMPP support is currently broken - forcefully turn this off
-WITHOUT_XMPP=		true
 
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--disable-ssl --disable-otr
@@ -45,9 +41,11 @@ CONFIGURE_ARGS+=	--disable-ssl --disable-otr
 . if defined(WITHOUT_XMPP)
 CONFIGURE_ARGS+=	--enable-ssl=openssl
 . else
-CONFIGURE_ARGS+=	--enable-ssl=gnutls
+CONFIGURE_ARGS+=	--enable-ssl=gnutls --with-libgnutls-prefix=${LOCALBASE}
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 . endif
+CPPFLAGS+=		-I${LOCALBASE}/include
+CONFIGURE_ARGS+=	--with-libgcrypt-prefix=${LOCALBASE}
 LIB_DEPENDS+=		gcrypt:${PORTSDIR}/security/libgcrypt \
 			otr:${PORTSDIR}/security/libotr \
 			gpg-error:${PORTSDIR}/security/libgpg-error
