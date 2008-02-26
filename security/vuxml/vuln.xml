@@ -54,6 +54,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>27404</bid>
       <cvename>CVE-2007-0857</cvename>
       <cvename>CVE-2007-0901</cvename>
       <cvename>CVE-2007-0902</cvename>
@@ -64,11 +65,11 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2008-0782</cvename>
       <url>http://moinmo.in/SecurityFixes</url>
       <url>http://secunia.com/advisories/29010/</url>
-      <url>http://www.securityfocus.com/bid/27404</url>
     </references>
     <dates>
       <discovery>2007-02-08</discovery>
       <entry>2008-02-25</entry>
+      <modified>2008-02-26</modified>
     </dates>
   </vuln>
 
