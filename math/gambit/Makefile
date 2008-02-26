@@ -11,7 +11,7 @@ PORTVERSION=	0.2007.12.04
 CATEGORIES=	math
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A library of tools for doing computation in game theory
 
 USE_GNOME=	gnometarget gtk20
@@ -26,13 +26,7 @@ LDFLAGS=	${PTHREAD_LIBS}
 CFLAGS+=	-O2 -fno-strict-aliasing
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042 && ${ARCH} == "amd64"
-BROKEN=		Does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
