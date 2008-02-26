@@ -2401,6 +2401,7 @@ earthview	ports/misc/earthview
 easydiff	ports/textproc/easydiff
 easygtk		ports/x11-toolkits/easygtk
 easylatex	ports/print/easylatex
+easypg		ports/security/easypg
 easysoap	ports/net/easysoap
 easysok		ports/games/easysok
 easytag		ports/audio/easytag
