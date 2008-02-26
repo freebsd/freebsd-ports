@@ -15,7 +15,7 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	The C++ Debugging Support Library
 
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--disable-threading --disable-pch
+CONFIGURE_ARGS=	--disable-threading --disable-pch --disable-location
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
