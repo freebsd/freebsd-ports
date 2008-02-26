@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	Devel-Caller
-PORTVERSION=	0.11
+PORTVERSION=	2.03
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Devel
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
@@ -19,7 +18,7 @@ COMMENT=	A perl module which is meatier versions of caller
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PadWalker.pm:${PORTSDIR}/devel/p5-PadWalker
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	5.8.0+
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Devel::Caller.3
 
