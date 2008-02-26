@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-etc/daapd.conf.sample
-sbin/daapd
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -3363,3 +3363,4 @@ devel/wxGlade-devel||2008-02-11|Has expired: has been the same version as wxGlad
 sysutils/sge|sysutils/sge60|2008-02-12|Splitting into 6.0 and 6.1 versions
 mail/linux-netscape-messenger|mail/thunderbird|2008-02-13|Abandoned by AOL
 www/linux-netscape-navigator|www/firefox|2008-02-13|Abandoned by AOL
+audio/daapd||2008-02-26|Has expired: Development stalled, outdated. Does not support newer versions of DAAP protocol.
