@@ -104,7 +104,6 @@
     SUBDIR += cuetools
     SUBDIR += cymbaline
     SUBDIR += cynthiune
-    SUBDIR += daapd
     SUBDIR += daaplib
     SUBDIR += dagrab
     SUBDIR += dap
