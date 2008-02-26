@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libopenraw
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 
@@ -35,5 +35,6 @@ PLIST_SUB+=	GNOME="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|testsuite ||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
