@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	XML-Mini
-PORTVERSION=	1.2.8
+PORTVERSION=	1.38
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	XML
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	Perl implementation of the XML::Mini XML create/parse interface
 
-PERL_CONFIGURE=	yes
-
-RUN_DEPENDS+=	p5-Text-Balanced>=0.0:${PORTSDIR}/textproc/p5-Text-Balanced
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	XML::Mini.3 XML::Mini::Document.3 XML::Mini::Element.3 \
 	XML::Mini::Element::CData.3 XML::Mini::Element::Comment.3 \
