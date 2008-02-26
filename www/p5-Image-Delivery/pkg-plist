@@ -1,14 +1,11 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Delivery/.packlist
 %%SITE_PERL%%/Image/Delivery.pm
 %%SITE_PERL%%/Image/Delivery/Provider.pm
-%%SITE_PERL%%/Image/Delivery/Provider/File.pm
 %%SITE_PERL%%/Image/Delivery/Provider/IOHandle.pm
 %%SITE_PERL%%/Image/Delivery/Provider/Scalar.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Delivery/.packlist
-@dirrm %%SITE_PERL%%/Image/Delivery/Provider
-@dirrm %%SITE_PERL%%/Image/Delivery
-@dirrmtry %%SITE_PERL%%/Image
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Image/Delivery/Provider
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Image/Delivery
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Image
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Delivery
+%%SITE_PERL%%/Image/Delivery/Provider/File.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Delivery
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+@dirrmtry %%SITE_PERL%%/Image/Delivery/Provider
+@dirrmtry %%SITE_PERL%%/Image/Delivery
+@dirrmtry %%SITE_PERL%%/Image
