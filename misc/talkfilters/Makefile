@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	talkfilters
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.8
 CATEGORIES=	misc
 MASTER_SITES=	http://www.hyperrealm.com/talkfilters/ \
 		http://critical.ch/distfiles/ \
@@ -47,6 +47,10 @@ pre-everything::
 	@${ECHO_MSG} "be objectionable to some. They are provided uncensored, in their"
 	@${ECHO_MSG} "original form. Please don't use the filters to do anything that"
 	@${ECHO_MSG} "you shouldn't."
+
+post-extract:
+	@${ECHO} ${DO_NADA} > ${WRKSRC}/install-sh
+	@${CHMOD} +x ${WRKSRC}/install-sh
 
 post-patch:
 	@${RM} -f ${WRKSRC}/*.info*
