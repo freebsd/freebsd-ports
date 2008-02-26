@@ -2527,6 +2527,7 @@ lib/R/library/boot/latex/wool.tex
 lib/R/library/boot/man/boot.Rd.gz
 lib/R/library/boot/po/en@quot/LC_MESSAGES/R-boot.mo
 lib/R/library/boot/po/fr/LC_MESSAGES/R-boot.mo
+lib/R/library/boot/po/ru/LC_MESSAGES/R-boot.mo
 lib/R/library/class/CITATION
 lib/R/library/class/CONTENTS
 lib/R/library/class/DESCRIPTION
@@ -2553,6 +2554,8 @@ lib/R/library/class/R-ex/multiedit.R
 lib/R/library/class/R-ex/olvq1.R
 lib/R/library/class/R-ex/reduce.nn.R
 lib/R/library/class/R/class
+lib/R/library/class/R/class.rdb
+lib/R/library/class/R/class.rdx
 lib/R/library/class/help/AnIndex
 lib/R/library/class/help/SOM
 lib/R/library/class/help/batchSOM
@@ -2827,7 +2830,6 @@ lib/R/library/codetools/Meta/nsInfo.rds
 lib/R/library/codetools/Meta/package.rds
 lib/R/library/codetools/NAMESPACE
 lib/R/library/codetools/R-ex/checkUsage.R
-lib/R/library/codetools/R-ex/codetools.R
 lib/R/library/codetools/R-ex/findGlobals.R
 lib/R/library/codetools/R-ex/showTree.R
 lib/R/library/codetools/R/codetools
@@ -3596,6 +3598,7 @@ lib/R/library/grDevices/latex/xyTable.tex
 lib/R/library/grDevices/latex/xyz.coords.tex
 lib/R/library/grDevices/libs/grDevices.so
 lib/R/library/grDevices/man/grDevices.Rd.gz
+lib/R/library/grDevices/po/de/LC_MESSAGES/R-grDevices.mo
 lib/R/library/grDevices/po/en@quot/LC_MESSAGES/R-grDevices.mo
 lib/R/library/grDevices/po/en@quot/LC_MESSAGES/grDevices.mo
 lib/R/library/grDevices/po/en_GB/LC_MESSAGES/R-grDevices.mo
@@ -3888,6 +3891,7 @@ lib/R/library/graphics/latex/units.tex
 lib/R/library/graphics/latex/xspline.tex
 lib/R/library/graphics/latex/zAxis.tex
 lib/R/library/graphics/man/graphics.Rd.gz
+lib/R/library/graphics/po/de/LC_MESSAGES/R-graphics.mo
 lib/R/library/graphics/po/en@quot/LC_MESSAGES/R-graphics.mo
 lib/R/library/graphics/po/fr/LC_MESSAGES/R-graphics.mo
 lib/R/library/graphics/po/it/LC_MESSAGES/R-graphics.mo
@@ -4196,6 +4200,7 @@ lib/R/library/grid/latex/widthDetails.tex
 lib/R/library/grid/latex/xDetails.tex
 lib/R/library/grid/libs/grid.so
 lib/R/library/grid/man/grid.Rd.gz
+lib/R/library/grid/po/de/LC_MESSAGES/R-grid.mo
 lib/R/library/grid/po/en@quot/LC_MESSAGES/R-grid.mo
 lib/R/library/grid/po/en@quot/LC_MESSAGES/grid.mo
 lib/R/library/grid/po/fr/LC_MESSAGES/R-grid.mo
@@ -4246,6 +4251,7 @@ lib/R/library/lattice/R-ex/qq.R
 lib/R/library/lattice/R-ex/qqmath.R
 lib/R/library/lattice/R-ex/rfs.R
 lib/R/library/lattice/R-ex/shingles.R
+lib/R/library/lattice/R-ex/simpleTheme.R
 lib/R/library/lattice/R-ex/singer.R
 lib/R/library/lattice/R-ex/splom.R
 lib/R/library/lattice/R-ex/strip.default.R
@@ -4312,6 +4318,7 @@ lib/R/library/lattice/help/qqmath
 lib/R/library/lattice/help/rfs
 lib/R/library/lattice/help/shingles
 lib/R/library/lattice/help/simpleKey
+lib/R/library/lattice/help/simpleTheme
 lib/R/library/lattice/help/singer
 lib/R/library/lattice/help/splom
 lib/R/library/lattice/help/strip.default
@@ -4372,6 +4379,7 @@ lib/R/library/lattice/html/qqmath.html
 lib/R/library/lattice/html/rfs.html
 lib/R/library/lattice/html/shingles.html
 lib/R/library/lattice/html/simpleKey.html
+lib/R/library/lattice/html/simpleTheme.html
 lib/R/library/lattice/html/singer.html
 lib/R/library/lattice/html/splom.html
 lib/R/library/lattice/html/strip.default.html
@@ -4431,6 +4439,7 @@ lib/R/library/lattice/latex/qqmath.tex
 lib/R/library/lattice/latex/rfs.tex
 lib/R/library/lattice/latex/shingles.tex
 lib/R/library/lattice/latex/simpleKey.tex
+lib/R/library/lattice/latex/simpleTheme.tex
 lib/R/library/lattice/latex/singer.tex
 lib/R/library/lattice/latex/splom.tex
 lib/R/library/lattice/latex/strip.default.tex
@@ -5100,7 +5109,6 @@ lib/R/library/nlme/R-ex/pdMatrix.R
 lib/R/library/nlme/R-ex/pdMatrix.reStruct.R
 lib/R/library/nlme/R-ex/pdNatural.R
 lib/R/library/nlme/R-ex/pdSymm.R
-lib/R/library/nlme/R-ex/phenoModel.R
 lib/R/library/nlme/R-ex/plot.ACF.R
 lib/R/library/nlme/R-ex/plot.Variogram.R
 lib/R/library/nlme/R-ex/plot.augPred.R
@@ -5124,7 +5132,6 @@ lib/R/library/nlme/R-ex/print.summary.pdMat.R
 lib/R/library/nlme/R-ex/print.varFunc.R
 lib/R/library/nlme/R-ex/qqnorm.gls.R
 lib/R/library/nlme/R-ex/qqnorm.lme.R
-lib/R/library/nlme/R-ex/quinModel.R
 lib/R/library/nlme/R-ex/random.effects.R
 lib/R/library/nlme/R-ex/ranef.lmList.R
 lib/R/library/nlme/R-ex/ranef.lme.R
@@ -6252,6 +6259,8 @@ lib/R/library/spatial/R-ex/trls.influence.R
 lib/R/library/spatial/R-ex/trmat.R
 lib/R/library/spatial/R-ex/variogram.R
 lib/R/library/spatial/R/spatial
+lib/R/library/spatial/R/spatial.rdb
+lib/R/library/spatial/R/spatial.rdx
 lib/R/library/spatial/help/AnIndex
 lib/R/library/spatial/help/Kaver
 lib/R/library/spatial/help/Kenvl
@@ -7769,7 +7778,6 @@ lib/R/library/survival/R-ex/survexp.us.R
 lib/R/library/survival/R-ex/survfit.R
 lib/R/library/survival/R-ex/survobrien.R
 lib/R/library/survival/R-ex/survreg.R
-lib/R/library/survival/R-ex/survreg.control.R
 lib/R/library/survival/R-ex/survreg.distributions.R
 lib/R/library/survival/R-ex/survreg.old.R
 lib/R/library/survival/R-ex/tcut.R
@@ -8602,6 +8610,7 @@ lib/R/share/licenses/GPL-3
 lib/R/share/licenses/LGPL-2
 lib/R/share/licenses/LGPL-2.1
 lib/R/share/licenses/LGPL-3
+lib/R/share/licenses/license.db
 lib/R/share/locale/de/LC_MESSAGES/R.mo
 lib/R/share/locale/en/LC_MESSAGES/R.mo
 lib/R/share/locale/en@quot/LC_MESSAGES/R.mo
@@ -9050,6 +9059,8 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/library/grid/po/fr
 @dirrm lib/R/library/grid/po/en@quot/LC_MESSAGES
 @dirrm lib/R/library/grid/po/en@quot
+@dirrm lib/R/library/grid/po/de/LC_MESSAGES
+@dirrm lib/R/library/grid/po/de
 @dirrm lib/R/library/grid/po
 @dirrm lib/R/library/grid/man
 @dirrm lib/R/library/grid/libs
@@ -9075,6 +9086,8 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/library/graphics/po/fr
 @dirrm lib/R/library/graphics/po/en@quot/LC_MESSAGES
 @dirrm lib/R/library/graphics/po/en@quot
+@dirrm lib/R/library/graphics/po/de/LC_MESSAGES
+@dirrm lib/R/library/graphics/po/de
 @dirrm lib/R/library/graphics/po
 @dirrm lib/R/library/graphics/man
 @dirrm lib/R/library/graphics/latex
@@ -9101,6 +9114,8 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/library/grDevices/po/en_GB
 @dirrm lib/R/library/grDevices/po/en@quot/LC_MESSAGES
 @dirrm lib/R/library/grDevices/po/en@quot
+@dirrm lib/R/library/grDevices/po/de/LC_MESSAGES
+@dirrm lib/R/library/grDevices/po/de
 @dirrm lib/R/library/grDevices/po
 @dirrm lib/R/library/grDevices/man
 @dirrm lib/R/library/grDevices/libs
@@ -9169,6 +9184,8 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/library/class/R
 @dirrm lib/R/library/class/Meta
 @dirrm lib/R/library/class
+@dirrm lib/R/library/boot/po/ru/LC_MESSAGES
+@dirrm lib/R/library/boot/po/ru
 @dirrm lib/R/library/boot/po/fr/LC_MESSAGES
 @dirrm lib/R/library/boot/po/fr
 @dirrm lib/R/library/boot/po/en@quot/LC_MESSAGES
