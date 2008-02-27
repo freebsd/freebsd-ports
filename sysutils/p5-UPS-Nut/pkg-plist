@@ -1,5 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/UPS/Nut/.packlist
-%%SITE_PERL%%/UPS/Nut.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UPS/Nut
-@dirrmtry %%SITE_PERL%%/UPS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UPS

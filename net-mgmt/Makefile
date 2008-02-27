@@ -125,8 +125,6 @@
     SUBDIR += netleak
     SUBDIR += netmask
     SUBDIR += netmond
-    SUBDIR += netsaint
-    SUBDIR += netsaint-plugins
     SUBDIR += netspoc
     SUBDIR += nettop
     SUBDIR += netustad

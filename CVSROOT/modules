@@ -1410,7 +1410,6 @@ claws-mail-att_remover	ports/mail/claws-mail-att_remover
 claws-mail-attach_warner	ports/mail/claws-mail-attach_warner
 claws-mail-cachesaver	ports/mail/claws-mail-cachesaver
 claws-mail-clamav	ports/mail/claws-mail-clamav
-claws-mail-etpan_privacy	ports/mail/claws-mail-etpan_privacy
 claws-mail-fetchinfo	ports/mail/claws-mail-fetchinfo
 claws-mail-gtkhtml2_viewer	ports/mail/claws-mail-gtkhtml2_viewer
 claws-mail-maildir	ports/mail/claws-mail-maildir
@@ -2741,7 +2740,6 @@ evangeline	ports/irc/evangeline
 evas		ports/graphics/evas
 eventlog	ports/sysutils/eventlog
 eventum		ports/www/eventum
-eventwatcher	ports/sysutils/eventwatcher
 eventxx		ports/devel/eventxx
 everygui	ports/deskutils/everygui
 evfs		ports/devel/evfs
@@ -3696,7 +3694,6 @@ gfp		ports/finance/gfp
 gfslicer	ports/sysutils/gfslicer
 gftp		ports/ftp/gftp
 ggiterm		ports/x11/ggiterm
-ggo		ports/games/ggo
 ggrab		ports/multimedia/ggrab
 ggsd		ports/net/ggsd
 ggv		ports/print/ggv
@@ -8329,8 +8326,6 @@ netrek-COW3-bin	ports/games/netrek-COW3-bin
 netrexx		ports/java/netrexx
 netrik		ports/www/netrik
 netris		ports/games/netris
-netsaint	ports/net-mgmt/netsaint
-netsaint-plugins	ports/net-mgmt/netsaint-plugins
 netscape-java40	ports/devel/netscape-java40
 netscript	ports/net/netscript
 netsed		ports/net/netsed
@@ -11565,7 +11560,6 @@ p5-UNIVERSAL-isa	ports/devel/p5-UNIVERSAL-isa
 p5-UNIVERSAL-moniker	ports/devel/p5-UNIVERSAL-moniker
 p5-UNIVERSAL-require	ports/devel/p5-UNIVERSAL-require
 p5-UNIVERSAL-which	ports/devel/p5-UNIVERSAL-which
-p5-UPS-Nut	ports/sysutils/p5-UPS-Nut
 p5-URI		ports/net/p5-URI
 p5-URI-Fetch	ports/www/p5-URI-Fetch
 p5-URI-Find	ports/textproc/p5-URI-Find
@@ -16288,7 +16282,6 @@ tshark-lite	ports/net/tshark-lite
 tsito		ports/games/tsito
 tsocks		ports/net/tsocks
 tss		ports/sysutils/tss
-tsung		ports/benchmarks/tsung
 tt		ports/games/tt
 tta		ports/audio/tta
 ttcp		ports/benchmarks/ttcp
@@ -16722,7 +16715,6 @@ vte		ports/x11-toolkits/vte
 vte-reference	ports/x11-toolkits/vte-reference
 vtiger		ports/www/vtiger
 vtiger-customerportal	ports/www/vtiger-customerportal
-vtiger4		ports/www/vtiger4
 vtk		ports/math/vtk
 vtk-data	ports/math/vtk-data
 vtk-examples	ports/math/vtk-examples
@@ -17807,7 +17799,6 @@ xpi-sessionmanager	ports/www/xpi-sessionmanager
 xpi-statusbarclock	ports/www/xpi-statusbarclock
 xpi-stumbleupon	ports/www/xpi-stumbleupon
 xpi-stylish	ports/www/xpi-stylish
-xpi-surfkeys	ports/www/xpi-surfkeys
 xpi-tabextensions-ru	ports/russian/xpi-tabextensions
 xpi-tabletools	ports/www/xpi-tabletools
 xpi-tabmixplus	ports/www/xpi-tabmixplus

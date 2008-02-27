@@ -3366,3 +3366,12 @@ www/linux-netscape-navigator|www/firefox|2008-02-13|Abandoned by AOL
 audio/daapd||2008-02-26|Has expired: Development stalled, outdated. Does not support newer versions of DAAP protocol.
 audio/daaplib||2008-02-26|Has expired: Development stalled for years, outdated. Does not support newer versions of DAAP protocol.
 www/libhttpd-persistent||2008-02-27|Has expired: Development stalled for years, outdated.
+www/vtiger4||2008-02-27|Has expired: This version is no longer supported by the developers
+www/xpi-surfkeys||2008-02-27|Has expired: Development has been ceased
+sysutils/eventwatcher||2008-02-27|Has expired: no active development
+sysutils/p5-UPS-Nut||2008-02-27|Has expired: Version branch long since retired
+net-mgmt/netsaint||2008-02-27|Has expired: Now developed as Nagios, see net-mgmt/nagios port
+net-mgmt/netsaint-plugins||2008-02-27|Has expired: Now developed as Nagios, see net-mgmt/nagios port
+benchmarks/tsung||2008-02-27|Has expired: "fails to install"
+games/ggo||2008-02-27|Has expired: developer's focus have moved elsewhere
+mail/claws-mail-etpan_privacy||2008-02-27|Has expired: no longer supported by developers

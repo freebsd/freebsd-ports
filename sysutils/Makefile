@@ -177,7 +177,6 @@
     SUBDIR += etoile-installer
     SUBDIR += etoile-system
     SUBDIR += eventlog
-    SUBDIR += eventwatcher
     SUBDIR += evtviewer
     SUBDIR += extipl
     SUBDIR += extrackt
@@ -491,7 +490,6 @@
     SUBDIR += p5-Sysadm-Install
     SUBDIR += p5-SyslogScan
     SUBDIR += p5-Tie-Syslog
-    SUBDIR += p5-UPS-Nut
     SUBDIR += p5-Unix-ConfigFile
     SUBDIR += p5-Unix-Mknod
     SUBDIR += p5-Unix-Processors
