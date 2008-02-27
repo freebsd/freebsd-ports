@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	CGI-Application-Server
-PORTVERSION=	0.03
+PORTVERSION=	0.050
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	CGI
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	A simple HTTP server for developing with CGI::Application
 
-RUN_DEPENDS=	${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/IO/Capture/Stdout.pm:${PORTSDIR}/devel/p5-IO-Capture \
-		${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application \
-		${SITE_PERL}/HTTP/Server/Simple/Static.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple-Static
-BUILD_DEPENDS=	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
+RUN_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-IO-Capture>=0:${PORTSDIR}/devel/p5-IO-Capture \
+		p5-HTTP-Server-Simple-Static>=0.02:${PORTSDIR}/www/p5-HTTP-Server-Simple-Static
+BUILD_DEPENDS=	p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/Test/HTTP/Server/Simple.pm:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \
-		${SITE_PERL}/Test/WWW/Mechanize.pm:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
-		${SITE_PERL}/CGI/Application/Plugin/Redirect.pm:${PORTSDIR}/www/p5-CGI-Application-Plugin-Redirect
+		p5-Test-WWW-Mechanize>=1.08:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
+		p5-CGI-Application-Plugin-Redirect>=0:${PORTSDIR}/www/p5-CGI-Application-Plugin-Redirect
 
-PERL_MODBUILD=	5.8.0+
+PERL_CONFIGURE=	5.8.0+
 
 MAN3=	CGI::Application::Server.3
 
