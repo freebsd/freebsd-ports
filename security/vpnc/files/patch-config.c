@@ -1,6 +1,6 @@
---- config.c.orig	Fri Feb 16 18:22:06 2007
-+++ config.c	Tue Mar 13 16:11:53 2007
-@@ -251,12 +251,12 @@
+--- config.c.orig	2007-09-10 22:39:48.000000000 +0200
++++ config.c	2008-02-26 11:33:02.000000000 +0100
+@@ -267,12 +267,12 @@
  
  static const char *config_def_script(void)
  {
@@ -15,22 +15,21 @@
  }
  
  static const char *config_def_vendor(void)
-@@ -485,7 +485,7 @@
+@@ -538,7 +538,7 @@
  {
  	char *realname;
  	
 -	asprintf(&realname, "%s%s%s", index(name, '/') ? "" : "/etc/vpnc/", name, add_dot_conf ? ".conf" : "");
-+	asprintf(&realname, "%s%s%s", index(name, '/') ? "" : "%%PREFIX%%/etc/vpnc/", name, add_dot_conf ? ".conf" : "");
++	asprintf(&realname, "%s%s%s", index(name, '/') ? "" : "%%PREFIX%%/etc/", name, add_dot_conf ? ".conf" : "");
  	return realname;
  }
  
-@@ -701,8 +701,8 @@
+@@ -757,8 +757,7 @@
  	}
  	
  	if (!got_conffile) {
 -		read_config_file("/etc/vpnc/default.conf", config, 1);
 -		read_config_file("/etc/vpnc.conf", config, 1);
-+		read_config_file("%%PREFIX%%/etc/vpnc/default.conf", config, 1);
 +		read_config_file("%%PREFIX%%/etc/vpnc.conf", config, 1);
  	}
  	

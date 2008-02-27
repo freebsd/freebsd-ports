@@ -1,21 +1,33 @@
---- ./Makefile.orig	2007-02-19 21:51:12.000000000 +0100
-+++ ./Makefile	2007-07-24 16:45:36.000000000 +0200
-@@ -20,7 +20,7 @@
- # $Id: Makefile 148 2007-02-19 20:51:14Z Maurice Massar $
+--- Makefile.orig	2007-09-06 22:05:15.000000000 +0200
++++ Makefile	2008-02-27 19:17:28.000000000 +0100
+@@ -20,14 +20,14 @@
+ # $Id: Makefile 236 2007-09-05 20:40:59Z Joerg Mayer $
  
  DESTDIR=
 -PREFIX=/usr/local
-+PREFIX=%%PREFIX%%
- ETCDIR=/etc/vpnc
+-ETCDIR=/etc/vpnc
++PREFIX?=/usr/local
++ETCDIR=$(PREFIX)/etc/
  BINDIR=$(PREFIX)/bin
  SBINDIR=$(PREFIX)/sbin
-@@ -34,8 +34,7 @@
- VERSION := $(shell sh mk-version)
- RELEASE_VERSION := $(shell cat VERSION)
+ MANDIR=$(PREFIX)/share/man
+ 
+ SRCS = sysdep.c vpnc-debug.c isakmp-pkt.c tunip.c config.c dh.c math_group.c supp.c
+-BINS = vpnc cisco-decrypt
++BINS += vpnc
+ OBJS = $(addsuffix .o,$(basename $(SRCS)))
+ BINOBJS = $(addsuffix .o,$(BINS))
+ BINSRCS = $(addsuffix .c,$(BINS))
+@@ -49,9 +49,9 @@
+ #OPENSSL_GPL_VIOLATION = -DOPENSSL_GPL_VIOLATION
+ #OPENSSLLIBS = -lcrypto
  
 -CC=gcc
--CFLAGS += -W -Wall -O3 -Wmissing-declarations -Wwrite-strings -g
-+CC=%%CC%%
- CPPFLAGS = -DVERSION=\"$(VERSION)\"
- LDFLAGS = -g $(shell libgcrypt-config --libs)
+-CFLAGS ?= -O3 -g
+-CFLAGS += -W -Wall -Wmissing-declarations -Wwrite-strings
++CC?=gcc
++#CFLAGS ?= -O3 -g
++#CFLAGS += -W -Wall -Wmissing-declarations -Wwrite-strings
  CFLAGS +=  $(shell libgcrypt-config --cflags)
+ CPPFLAGS += -DVERSION=\"$(VERSION)\" $(OPENSSL_GPL_VIOLATION)
+ LDFLAGS ?= -g
