@@ -14,7 +14,7 @@ MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	A module with libxcb/libX11 extension/replacement libraries
 
 LIB_DEPENDS=	xcb.1:${PORTSDIR}/x11/libxcb
-BUILD_DEPENDS=	gperf:${PORTSDIR}/devel/gperf
+BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
