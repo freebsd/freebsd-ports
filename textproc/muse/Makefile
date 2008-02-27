@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	muse
-PORTVERSION=	3.11
+PORTVERSION=	3.12
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://download.gna.org/muse-el/ \
 		${MASTER_SITE_LOCAL} \
