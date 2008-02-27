@@ -1,0 +1,11 @@
+--- CSparse/Lib/Makefile~	Wed Feb 27 11:41:43 2008
++++ CSparse/Lib/Makefile	Wed Feb 27 11:50:50 2008
+@@ -1,6 +1,6 @@
+ # Modify the "-O" optimization option for best performance (-O3 on Linux):
+-CC = cc
+-CFLAGS = -O -I../Include
++CC = %%CC%%
++CFLAGS = %%CFLAGS%% -I../Include
+ 
+ AR = ar cr
+ RANLIB = ranlib

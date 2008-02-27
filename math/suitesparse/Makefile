@@ -86,15 +86,23 @@ post-patch:
 			  -e 's,%%METIS%%,${METIS},g' \
 			  -e 's,%%CHOLMOD_CONFIG%%,${CHOLMOD_CONFIG},g' \
 				 ${WRKSRC}/UFconfig/UFconfig.mk \
-				 ${WRKSRC_SHARED}/UFconfig/UFconfig.mk
+				 ${WRKSRC_SHARED}/UFconfig/UFconfig.mk\
+				 ${WRKSRC}/CSparse/Lib/Makefile \
+				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile \
+				 ${WRKSRC}/CXSparse/Lib/Makefile \
+				 ${WRKSRC_SHARED}/CXSparse/Lib/Makefile
 
 	@${REINPLACE_CMD}  -e 's,%%CFLAGS%%,${CFLAGS},g' \
 			   -e 's,%%FFLAGS%%,${FFLAGS},g' \
 				 ${WRKSRC}/UFconfig/UFconfig.mk \
+				 ${WRKSRC}/CSparse/Lib/Makefile \
+				 ${WRKSRC}/CXSparse/Lib/Makefile
 
 	@${REINPLACE_CMD}  -e 's,%%CFLAGS%%,${CFLAGS_SHARED},g' \
 			   -e 's,%%FFLAGS%%,${FFLAGS_SHARED},g' \
-				 ${WRKSRC_SHARED}/UFconfig/UFconfig.mk
+				 ${WRKSRC_SHARED}/UFconfig/UFconfig.mk \
+				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile \
+				 ${WRKSRC_SHARED}/CXSparse/Lib/Makefile
 
 do-build:
 	cd ${WRKSRC} ; ${GMAKE}
