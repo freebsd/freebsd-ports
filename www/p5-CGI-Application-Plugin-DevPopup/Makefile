@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	CGI-Application-Plugin-DevPopup
-PORTVERSION=	0.951
+PORTVERSION=	1.00
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	CGI
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hartzell@alerce.com
 COMMENT=	Runtime cgiapp info in a popup window
 
-BUILD_DEPENDS=	${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application
+BUILD_DEPENDS=	p5-CGI-Application>=4.01:${PORTSDIR}/www/p5-CGI-Application
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=	CGI::Application::Plugin::DevPopup.3 \
 	CGI::Application::Plugin::DevPopup::HTTPHeaders.3 \
-	CGI::Application::Plugin::DevPopup::Timing.3
+	CGI::Application::Plugin::DevPopup::Timing.3 \
+	CGI::Application::Plugin::DevPopup::Log.3
 
 .include <bsd.port.mk>
