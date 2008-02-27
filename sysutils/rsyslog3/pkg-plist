@@ -13,7 +13,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/property_replacer.html
-%%PORTDOCS%%%%DOCSDIR%%/rsconf1_actionexeconlyifpreviousissuspended.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_actionexeconlywhenpreviousissuspended.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_actionresumeinterval.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_allowedsender.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_controlcharacterescapeprefix.html
@@ -31,6 +31,9 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_filecreatemode.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_filegroup.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_fileowner.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_gssforwardservicename.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_gsslistenservicename.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_gssmode.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_includeconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_mainmsgqueuesize.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_moddir.html
