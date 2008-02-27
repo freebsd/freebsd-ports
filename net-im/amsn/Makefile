@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	amsn
-PORTVERSION=	0.96
-PORTREVISION=	1
+PORTVERSION=	0.97
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -32,5 +31,8 @@ CONFIGURE_ENV=	TK_INC_SPEC=${LOCALBASE}/include/tk8.4/generic
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' | ${XARGS} ${REINPLACE_CMD} -e 's|||'
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
+
+post-install:
+	@${CHMOD} +x ${DATADIR}/amsn
 
 .include <bsd.port.mk>

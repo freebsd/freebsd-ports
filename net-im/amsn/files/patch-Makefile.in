@@ -1,7 +1,7 @@
---- Makefile.in.orig	Thu Dec 22 10:06:24 2005
-+++ Makefile.in	Tue Jan  3 08:41:04 2006
-@@ -110,6 +110,11 @@
- FILES_TO_EXCLUDE += AppMain.tcl utils/linux/capture/test.tcl
+--- Makefile.in.orig	2007-12-25 05:25:59.000000000 +0800
++++ Makefile.in	2008-02-23 11:15:00.000000000 +0800
+@@ -134,6 +134,11 @@
+ FILES_TO_EXCLUDE += AppMain.tcl
  endif
  
 +ifeq ($(FOUND_OS),bsd)
@@ -12,23 +12,9 @@
  CONFIGURE_ARGS := @CONFIGURE_ARGS@
  
  #########################################################
-@@ -138,10 +143,11 @@
- 
- install:: $(FILES_TO_INSTALL)
- 	rm -Rf $(dstdir)/$(PACKAGE)
--	mkdir --parents $(dstdir)/$(PACKAGE)
-+	mkdir -p $(dstdir)/$(PACKAGE)
- 	mkdir -p $(slnkdir)
- 	@for p in $?; do \
--			cp -Rf --parents $(srcdir)/$$p $(dstdir)/$(PACKAGE); \
-+			mkdir -p $(dstdir)/$(PACKAGE)/`dirname $$p`; \
-+			cp -Rf $(srcdir)/$$p $(dstdir)/$(PACKAGE)/`dirname $$p`; \
- 		done
- 	find $(dstdir)/$(PACKAGE) -name CVS -print | xargs rm -Rf
- 	@for p in $(FILES_TO_EXCLUDE); do \
-@@ -235,6 +241,12 @@
-   endif
- endif
+@@ -227,6 +232,12 @@
+ libstdc++.a :
+ 	ln -s `g++ -print-file-name=libstdc++.a`
  
 +ifeq ($(FOUND_OS),bsd)
 +  ifeq ($(FOUND_X11),yes)
@@ -38,4 +24,4 @@
 +endif
  
  #########################################################
- # some rules ...
+ # include stuff
