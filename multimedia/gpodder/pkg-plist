@@ -20,8 +20,6 @@ bin/gpodder
 %%PYTHON_SITELIBDIR%%/gpodder/libconverter.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/libgpodder.py
 %%PYTHON_SITELIBDIR%%/gpodder/libgpodder.pyc
-%%PYTHON_SITELIBDIR%%/gpodder/libipodsync.py
-%%PYTHON_SITELIBDIR%%/gpodder/libipodsync.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/liblogger.py
 %%PYTHON_SITELIBDIR%%/gpodder/liblogger.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/libplayers.py
@@ -34,6 +32,10 @@ bin/gpodder
 %%PYTHON_SITELIBDIR%%/gpodder/opml.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/services.py
 %%PYTHON_SITELIBDIR%%/gpodder/services.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/sync.py
+%%PYTHON_SITELIBDIR%%/gpodder/sync.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/trayicon.py
+%%PYTHON_SITELIBDIR%%/gpodder/trayicon.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/util.py
 %%PYTHON_SITELIBDIR%%/gpodder/util.pyc
 share/applications/gpodder.desktop
