@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rtpbreak
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	net
 MASTER_SITES=	http://xenion.antifork.org/rtpbreak/
 EXTRACT_SUFX=	.tgz
@@ -17,12 +17,11 @@ COMMENT=	Detects, reconstructs and analyzes any RTP session
 BUILD_DEPENDS=	libnet11-config:${PORTSDIR}/net/libnet
 
 MAKE_ARGS+=	CFLAGS="-Wall -O3 -I${LOCALBASE}/include/libnet11" \
-		LIBS="-L${LOCALBASE}/lib/libnet11 -lpcap -lnet" \
-		DEFS="-DPATH_MAX=256"
+		LIBS="-L${LOCALBASE}/lib/libnet11 -lpcap -lnet"
 
 PLIST_FILES=	bin/rtpbreak
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rtpbreak ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/rtpbreak ${PREFIX}/bin
 
 .include <bsd.port.mk>
