@@ -28659,7 +28659,7 @@ http_access deny Gopher</pre>
     <affects>
       <package>
 	<name>up-imapproxy</name>
-	<range><lt>1.2.2</lt></range>
+	<range><lt>1.2.4</lt></range>
       </package>
       <package>
 	<name>pop3proxy</name>
@@ -28690,7 +28690,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-11-17</discovery>
       <entry>2005-01-02</entry>
-      <modified>2005-01-13</modified>
+      <modified>2008-02-27</modified>
     </dates>
   </vuln>
 
