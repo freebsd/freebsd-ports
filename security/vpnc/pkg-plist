@@ -1,0 +1,7 @@
+sbin/vpnc
+sbin/vpnc-script
+sbin/vpnc-disconnect
+%%DECRYPT%%bin/cisco-decrypt
+@unexec if cmp -s %D/etc/vpnc.conf %D/etc/vpnc.conf.sample; then rm -f %D/etc/vpnc.conf; fi
+etc/vpnc.conf.sample
+@exec [ -f %B/vpnc.conf ] || cp %B/%f %B/vpnc.conf
