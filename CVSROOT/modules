@@ -2937,6 +2937,7 @@ festvox-tll	ports/audio/festvox-tll
 festvox-us1-mbrola	ports/audio/festvox-us1-mbrola
 festvox-us2-mbrola	ports/audio/festvox-us2-mbrola
 festvox-us3-mbrola	ports/audio/festvox-us3-mbrola
+fetchconfig	ports/net-mgmt/fetchconfig
 fetchlog	ports/sysutils/fetchlog
 fetchmail	ports/mail/fetchmail
 fetchyahoo	ports/mail/fetchyahoo
