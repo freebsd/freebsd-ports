@@ -55,6 +55,7 @@
     SUBDIR += ehnt
     SUBDIR += etherape
     SUBDIR += ettercap
+    SUBDIR += fetchconfig
     SUBDIR += flow-extract
     SUBDIR += flow-tools
     SUBDIR += flowd
