@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	nload
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Console application which monitors network traffic in real time
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		nload.1
-MANCOMPRESSED=	yes
 PLIST_FILES=	bin/nload
 
 .include <bsd.port.mk>
