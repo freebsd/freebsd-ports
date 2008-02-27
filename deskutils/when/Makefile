@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	when
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.11
 CATEGORIES=	deskutils
 MASTER_SITES=	CENKES
-#http://www.lightandmatter.com/when/when.tar.gz
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A very simple personal calendar
