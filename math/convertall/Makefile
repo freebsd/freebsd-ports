@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	convertall
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	convertall
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another unit converter
@@ -37,7 +36,8 @@ do-install:
 	@${CHMOD} ${BINMODE} ${PYTHON_SITELIBDIR}/convertall/convertall.py
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PYTHON_SITELIBDIR}/convertall
 	@${MKDIR} ${PREFIX}/share/icons
-	${INSTALL_DATA} ${WRKSRC}/icons/*.png ${PREFIX}/share/icons
+	${INSTALL_DATA} ${WRKSRC}/icons/convertall.svg ${PREFIX}/share/icons
+	${INSTALL_DATA} ${WRKSRC}/icons/convertall_*.png ${PREFIX}/share/icons
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/data/*.dat ${DATADIR}
 .if !defined(NOPORTDOCS)
