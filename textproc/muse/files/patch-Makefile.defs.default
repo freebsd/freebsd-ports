@@ -1,11 +1,11 @@
---- Makefile.defs.default.orig	2008-01-07 17:21:10.000000000 +0800
-+++ Makefile.defs.default	2008-01-07 17:21:37.000000000 +0800
-@@ -14,7 +14,7 @@
- 
+--- Makefile.defs.default.orig	2008-01-29 11:13:11.000000000 +0800
++++ Makefile.defs.default	2008-02-26 16:31:21.000000000 +0800
+@@ -15,7 +15,7 @@
  # Installation options
  # PREFIX is only used here.
+ DESTDIR  =
 -PREFIX   = /usr/local
 +PREFIX   = $(LOCALBASE)
- ELISPDIR = $(PREFIX)/share/emacs/site-lisp/muse
- INFODIR  = $(PREFIX)/info
+ ELISPDIR = $(DESTDIR)$(PREFIX)/share/emacs/site-lisp/muse
+ INFODIR  = $(DESTDIR)$(PREFIX)/info
  
