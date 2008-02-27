@@ -7,6 +7,7 @@
 
 PORTNAME=	imapproxy
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.imapproxy.org/downloads/
 PKGNAMEPREFIX=	up-
