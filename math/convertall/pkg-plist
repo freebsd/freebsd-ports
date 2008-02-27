@@ -1,4 +1,6 @@
 bin/convertall
+%%PYTHON_SITELIBDIR%%/convertall/cmdline.py
+%%PYTHON_SITELIBDIR%%/convertall/cmdline.pyc
 %%PYTHON_SITELIBDIR%%/convertall/convertall.py
 %%PYTHON_SITELIBDIR%%/convertall/convertall.pyc
 %%PYTHON_SITELIBDIR%%/convertall/convertdlg.py
@@ -7,8 +9,8 @@ bin/convertall
 %%PYTHON_SITELIBDIR%%/convertall/finddlg.pyc
 %%PYTHON_SITELIBDIR%%/convertall/helpview.py
 %%PYTHON_SITELIBDIR%%/convertall/helpview.pyc
-%%PYTHON_SITELIBDIR%%/convertall/icons.py
-%%PYTHON_SITELIBDIR%%/convertall/icons.pyc
+%%PYTHON_SITELIBDIR%%/convertall/icondict.py
+%%PYTHON_SITELIBDIR%%/convertall/icondict.pyc
 %%PYTHON_SITELIBDIR%%/convertall/modbutton.py
 %%PYTHON_SITELIBDIR%%/convertall/modbutton.pyc
 %%PYTHON_SITELIBDIR%%/convertall/numedit.py
@@ -19,6 +21,8 @@ bin/convertall
 %%PYTHON_SITELIBDIR%%/convertall/optiondefaults.pyc
 %%PYTHON_SITELIBDIR%%/convertall/optiondlg.py
 %%PYTHON_SITELIBDIR%%/convertall/optiondlg.pyc
+%%PYTHON_SITELIBDIR%%/convertall/setup.py
+%%PYTHON_SITELIBDIR%%/convertall/setup.pyc
 %%PYTHON_SITELIBDIR%%/convertall/unitatom.py
 %%PYTHON_SITELIBDIR%%/convertall/unitatom.pyc
 %%PYTHON_SITELIBDIR%%/convertall/unitdata.py
@@ -33,7 +37,9 @@ bin/convertall
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README.html
+share/icons/convertall.svg
 share/icons/convertall_lg.png
+share/icons/convertall_med.png
 share/icons/convertall_sm.png
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
