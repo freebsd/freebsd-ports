@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcachedb
-DISTVERSION=	1.0.0-beta
+DISTVERSION=	1.0.1-beta
 CATEGORIES=	databases
 MASTER_SITES=	http://memcachedb.googlecode.com/files/	\
 		http://freebsd.csie.nctu.edu.tw/~gslin/files/
@@ -25,9 +25,6 @@ LDFLAGS=	-l"${BDB_LIB_NAME}" -L"${LOCALBASE}/lib"
 MCDBDIR?=	/var/db/memcachedb
 USE_BDB=	46+
 USE_RC_SUBR=	${PORTNAME}
-
-post-patch:
-	${CHMOD} a+x ${WRKSRC}/install-sh
 
 post-install:
 	${MKDIR} ${MCDBDIR} || ${TRUE}
