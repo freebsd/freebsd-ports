@@ -7,6 +7,7 @@
 
 PORTNAME=	migrate
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://popgen.csit.fsu.edu/%SUBDIR%/
 MASTER_SITE_SUBDIR=	currentversion oldversions/${PORTVERSION}
