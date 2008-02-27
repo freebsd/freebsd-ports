@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	swish++
-PORTVERSION=	6.1.4
+PORTVERSION=	6.1.5
 CATEGORIES=	www textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	swishplusplus
+MASTER_SITES=	SF/swishplusplus
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Web Indexing System for Humans: C++ version
@@ -19,7 +18,6 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} \
 		PERL=${PERL} PERL_VER=${PERL_VER}
