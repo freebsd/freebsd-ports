@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-Write
-PORTVERSION=	1.00
-PORTREVISION=	1
+PORTVERSION=	1.02
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	p5-Class-Gomor>=1.00:${PORTSDIR}/devel/p5-Class-Gomor \
 		p5-Net-Pcap>=0.14:${PORTSDIR}/net/p5-Net-Pcap
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.6.1+
 
 MAN3=	Net::Write.3 \
 	Net::Write::Layer.3 \
