@@ -35,23 +35,17 @@
 #include <unistd.h>
 
 static kvm_t *kd;
-static struct nlist nlst[] = { {"_cp_time"}, {0} };
+static int	cp_time_mib[2];
+static struct nlist	nlst[] = {
+	{"_cp_time"}, {0}};
 
 void
 cpu_init(void)
 {
-	if (!(kd = kvm_open(NULL, NULL, NULL, O_RDONLY, "kvm_open")))
-	{
-		perror("kvm_open");
-		exit(1);
-	}
-
-	kvm_nlist(kd, nlst);
-
-	if (!nlst[0].n_type)
-	{
-		perror("kvm_nlist");
-		exit(1);
+	size_t len = 2;
+	sysctlnametomib("kern.cp_time", cp_time_mib, &len);
+	if((kd = kvm_open(NULL, NULL, NULL, O_RDONLY, "kvm_open")) != NULL ){
+		kvm_nlist(kd, nlst);
 	}
 
 	seteuid(getuid());
@@ -73,13 +67,23 @@ int history[17];
 void cpu_getusage()
 {
 	long cpu, nice, system, idle, used, total;
-	long cpu_time[CPUSTATES];
+	long cpu_time[CPUSTATES], cpu_time_len=sizeof(cpu_time);
+	int error;
 
-	if (kvm_read(kd, nlst[0].n_value, &cpu_time, sizeof(cpu_time))
+	if( cp_time_mib[0] != 0 ){
+	    error =  sysctl(cp_time_mib, 2, cpu_time, &cpu_time_len, NULL, 0 );
+	    if ( error ){
+		perror("sysctl, cpu_time_mib");
+		exit(1);
+	    }
+	}
+	else {
+	    if (kvm_read(kd, nlst[0].n_value, &cpu_time, sizeof(cpu_time))
 		!= sizeof(cpu_time))
-	{
+	    {
 		perror("kvm_read");
 		exit(1);
+	    }
 	}
 
 	cpu = cpu_time[CP_USER];
