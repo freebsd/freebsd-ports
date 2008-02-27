@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	noscript
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.9
 #DISTVERSIONSUFFIX=	-fx+mz+sm+fl
 CATEGORIES=	www
 MASTER_SITES=	http://software.informaction.com/data/releases/ CENKES
