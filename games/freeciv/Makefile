@@ -55,7 +55,8 @@ CONFLICTS=	freeciv-[0-9]*
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/test.*==/s|==|=|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/test.*==/s|==|=|;\
+		/^LIBS/s|mixer|mixer $$SDL_LIBS|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in|${XARGS} ${REINPLACE_CMD} -e\
 		'/pkgdatadir/s|$$[(]datadir[)]/@PACKAGE@|${DATADIR}|'
 
