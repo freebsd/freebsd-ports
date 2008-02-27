@@ -32,6 +32,6 @@ CONFIGURE_ARGS+=	--with-xkb-base=${PREFIX}/share/X11/xkb \
 
 post-install:
 	${MKDIR} /var/lib/xkb
-	${LN} -s /var/lib/xkb ${PREFIX}/share/X11/xkb/compiled
+	${LN} -sf /var/lib/xkb ${PREFIX}/share/X11/xkb/compiled
 
 .include <bsd.port.mk>
