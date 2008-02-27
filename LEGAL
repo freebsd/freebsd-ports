@@ -622,6 +622,7 @@ vmware-linux-tools.*	emulators/linux-vmware-toolbox2 Not sure if we can
 vmware-linux-tools.*	emulators/linux-vmware-toolbox4 Not sure if we can
 						redistribute this
 VMware-workstation-*	emulators/vmware3	Not sure if we can redistribute this
+vpnc-*			security/vpnc		Redistribution is not allowed if liked against OpenSSL
 VTK-*			math/vtk		Portions contain patented algorithms
 						and may require a license for
 						commercial use
