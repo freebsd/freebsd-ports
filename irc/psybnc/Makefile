@@ -7,6 +7,7 @@
 
 PORTNAME=	psybnc
 DISTVERSION=	2.3.2-7
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://www.psybnc.at/download/beta/ CENKES
 DISTNAME=	psyBNC-${DISTVERSION}
@@ -20,10 +21,6 @@ MAKE_ARGS=	PSYBASE=${PSYBASE}
 IS_INTERACTIVE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-BROKEN=	does not run on amd64
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#=help/#=${PSYBASE}/help/#' ${WRKSRC}/lang/*
