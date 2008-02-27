@@ -46,7 +46,6 @@
     SUBDIR += claws-mail-attach_warner
     SUBDIR += claws-mail-cachesaver
     SUBDIR += claws-mail-clamav
-    SUBDIR += claws-mail-etpan_privacy
     SUBDIR += claws-mail-fetchinfo
     SUBDIR += claws-mail-gtkhtml2_viewer
     SUBDIR += claws-mail-maildir

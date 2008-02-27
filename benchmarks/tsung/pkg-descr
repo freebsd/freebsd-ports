@@ -1,5 +1,0 @@
-Tsung is a distributed load testing tool.  It is protocol-independent
-and can currently be used to stress HTTP, SOAP, PostgreSQL and Jabber
-servers.
-
-WWW: http://tsung.erlang-projects.org/

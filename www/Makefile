@@ -1295,7 +1295,6 @@
     SUBDIR += visitors
     SUBDIR += vtiger
     SUBDIR += vtiger-customerportal
-    SUBDIR += vtiger4
     SUBDIR += w3-4
     SUBDIR += w3m
     SUBDIR += w3m-img
@@ -1407,7 +1406,6 @@
     SUBDIR += xpi-statusbarclock
     SUBDIR += xpi-stumbleupon
     SUBDIR += xpi-stylish
-    SUBDIR += xpi-surfkeys
     SUBDIR += xpi-tabletools
     SUBDIR += xpi-tabmixplus
     SUBDIR += xpi-togglewordwrap
