@@ -1,0 +1,11 @@
+--- CXSparse/Lib/Makefile~	Sun May  6 06:03:41 2007
++++ CXSparse/Lib/Makefile	Wed Feb 27 11:59:17 2008
+@@ -1,6 +1,6 @@
+ # Modify the "-O" optimization option for best performance (-O3 on Linux):
+-CC = cc
+-CFLAGS = -O
++CC = %%CC%%
++CFLAGS = %%CFLAGS%%
+ I = -I../../UFconfig -I../Include
+ 
+ AR = ar cr
