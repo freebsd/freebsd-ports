@@ -1,19 +1,32 @@
---- scripts/miscellaneous/unpack.m.orig	2007-10-13 06:27:23.000000000 +0900
-+++ scripts/miscellaneous/unpack.m	2008-02-27 11:17:04.000000000 +0900
-@@ -124,12 +124,12 @@
+
+$FreeBSD$
+
+--- scripts/miscellaneous/unpack.m.orig
++++ scripts/miscellaneous/unpack.m
+@@ -124,19 +124,13 @@
      commandlist.tar = {"tar -x -v -f \"%s\"", ...
  		       "tar -x -f \"%s\"", ...
  		       @__parse_tar__, false};
 -    commandlist.targz = {"gzip -d -c \"%s\" | tar -x -v", ...
 -			 "gzip -d -c \"%s\" | tar -x", ...
-+    commandlist.targz = {"gzip -d -c \"%s\" | tar -x -v -f - ", ...
-+                        "gzip -d -c \"%s\" | tar -x -f - ", ...
- 			 @__parse_tar__, false};
-     commandlist.tgz = commandlist.targz;
+-			 @__parse_tar__, false};
+-    commandlist.tgz = commandlist.targz;
 -    commandlist.tarbz2 = {"bzip2 -d -c \"%s\" | tar -x -v", ...
 -			  "bzip2 -d -c \"%s\" | tar -x", ...
-+    commandlist.tarbz2 = {"bzip2 -d -c \"%s\" | tar -x -v -f - ", ...
-+                        "bzip2 -d -c \"%s\" | tar -x -f - ", ...
- 			  @__parse_tar__, false};
-     commandlist.tarbz = commandlist.tarbz2;
-     commandlist.tbz2 = commandlist.tarbz2;
+-			  @__parse_tar__, false};
+-    commandlist.tarbz = commandlist.tarbz2;
+-    commandlist.tbz2 = commandlist.tarbz2;
+-    commandlist.tbz = commandlist.tarbz2;
+-    commandlist.zip = {"unzip \"%s\"", ...
+-		       "unzip -q \"%s\"", ...
+-		       @__parse_zip__, false};
++    commandlist.targz = commandlist.tar;
++    commandlist.tgz = commandlist.tar;
++    commandlist.tarbz2 = commandlist.tar;
++    commandlist.tarbz = commandlist.tar;
++    commandlist.tbz2 = commandlist.tar;
++    commandlist.tbz = commandlist.tar;
++    commandlist.zip = commandlist.tar;
+   endif
+ 
+   nodotext = ext(! ismember (ext, "."));
