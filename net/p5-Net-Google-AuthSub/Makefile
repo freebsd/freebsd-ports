@@ -14,7 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lippemail@gmail.com
 COMMENT=	Interact with sites that implement Google style AuthSub
 
-RUN_DEPENDS=	p5-Test-Simple>=0.62:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS=	p5-Test-Simple>=0.62:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
 
