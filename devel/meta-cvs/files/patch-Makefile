@@ -1,5 +1,5 @@
---- /data/image/usr/ports/current/meta-cvs/work/mcvs-1.0.13/code/unix-bindings/Makefile.orig	2003-01-16 06:06:09.000000000 +0100
-+++ /data/image/usr/ports/current/meta-cvs/work/mcvs-1.0.13/code/unix-bindings/Makefile	2008-01-18 15:35:17.000000000 +0100
+--- code/unix-bindings/Makefile.orig	2003-01-16 06:06:09.000000000 +0100
++++ code/unix-bindings/Makefile	2008-01-18 15:35:17.000000000 +0100
 @@ -1,18 +1,12 @@
  # Makefile for CLISP module set unix-bindings
  
