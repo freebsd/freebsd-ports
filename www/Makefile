@@ -281,7 +281,6 @@
     SUBDIR += libapreq2
     SUBDIR += libghttp
     SUBDIR += libgtkhtml
-    SUBDIR += libhttpd-persistent
     SUBDIR += libmicrohttpd
     SUBDIR += libwww
     SUBDIR += lifetype

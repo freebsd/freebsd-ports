@@ -6684,7 +6684,6 @@ libhash		ports/devel/libhash
 libhid		ports/devel/libhid
 libhoard	ports/devel/libhoard
 libhome		ports/misc/libhome
-libhttpd-persistent	ports/www/libhttpd-persistent
 libical		ports/devel/libical
 libiconv	ports/converters/libiconv
 libicq		ports/net-im/libicq
