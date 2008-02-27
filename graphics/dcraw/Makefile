@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcraw
-PORTVERSION=	8.81
+PORTVERSION=	8.82
 CATEGORIES=	graphics
 MASTER_SITES=	CENKES
 
@@ -21,8 +21,20 @@ USE_BZIP2=	yes
 MAN1=		dcraw.1
 PLIST_FILES=	bin/dcraw
 
+do-build:
+	@cd ${BUILD_WRKSRC}/&&${CC} -o dcraw ${CFLAGS} -I${PREFIX}/include\
+		dcraw.c -L${PREFIX}/lib -lm -ljpeg -llcms
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1/
+
+make-dist:
+	@${RM} -rf ${WRKDIR};${MKDIR} ${WRKDIR};cd ${WRKDIR};\
+	${FETCH_CMD} http://cybercom.net/~dcoffin/dcraw/dcraw.c;\
+	${FETCH_CMD} http://cybercom.net/~dcoffin/dcraw/dcraw.1;\
+	ver=`grep -o -m1 -E '[2-9]\.[0-9][0-9]' dcraw.c`;\
+	${MKDIR} dcraw-$$ver;mv dcraw.[c1] dcraw-$$ver;\
+	${TAR} cjvf dcraw-$$ver.tar.bz2 dcraw-$$ver
 
 .include <bsd.port.mk>
