@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libcaca
-DISTVERSION=	0.99.beta11
-PORTREVISION=	2
+DISTVERSION=	0.99.beta13
 CATEGORIES=	graphics
 MASTER_SITES=	http://libcaca.zoy.org/files/
 
@@ -20,12 +19,14 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lm -lncurses"
 CONFIGURE_ARGS=	--disable-doc \
-		--enable-ncurses
+		--enable-ncurses \
+		--disable-csharp \
+		--disable-ruby
 
 DOCS=		AUTHORS COPYING COPYING.GPL COPYING.LGPL ChangeLog NEWS \
 		NOTES README THANKS TODO
 MAN1=		caca-config.1 cacafire.1 cacaplay.1 cacaserver.1 cacaview.1 \
-		img2irc.1
+		img2txt.1
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--disable-x11
@@ -55,8 +56,8 @@ CONFIGURE_ARGS+=--disable-slang
 post-patch:
 	@${REINPLACE_CMD} -e 's|-g -O2 ||g ; s| -fomit-frame-pointer||g ; \
 		s|arpa\/inet.h ||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g ; s| csharp||g' \
+			${WRKSRC}/Makefile.in
 
 .ifndef (NOPORTDOCS)
 post-install:
