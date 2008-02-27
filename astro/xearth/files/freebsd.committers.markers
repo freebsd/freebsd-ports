@@ -39,9 +39,10 @@
  36.6,		120.19,		"dryice"			# Qingdao, Shandong, China
  30.2727,	120.1662,	"davidxu"			# HangZhou, ZheJiang, China
  39.550,	116.214,	"nemoliu"			# Beijing, Beijing, China
+ -31.97908,	115.81611,	"adrian"			# Crawley, Perth, Western Australia
  22.1957,	113.549		"vs"				# Macau, Macau SAR
- 3.167,		101.700,	"ariff"				# Kuala Lumpur, Malaysia
  47.921386,	106.910153,	"ganbold"			# Ulaanbaatar, Mongolia
+ 3.167,		101.700,	"ariff"				# Kuala Lumpur, Malaysia
  55.033,	82.917,		"danfe,fjoe"			# Novosibirsk, Russia
  13.6325,	78.4552,	"jkoshy"			# Rishi Valley, India
  43.219564,	76.851597,	"bp"				# Almaty, Kazakhstan
@@ -84,8 +85,8 @@
  48.05,		11.9667,	"gj"				# Munich, Germany
  45.417,	11.883		"matteo"			# Padova, Italy
  48.32,		11.67,		"mr"				# Neufahrn, Germany
- 48.109752,	11.572466,	"barner"			# Munich, Germany
  48.108055,	11.635277,	"olli"				# Munich, Germany
+ 48.109752,	11.572466,	"barner"			# Munich, Germany
  55.406124,	11.3397291,	"phk"				# Slagelse, Denmark
  48.095,	11.296,		"harti"				# Gilching, Germany
  48.16,		11.26,		"rse"				# Dachau, Germany
@@ -93,10 +94,10 @@
  59.92,		10.75,		"eivind,anders"			# Oslo, Norway
  43.71,		10.40,		"luigi"				# Pisa, Italy
  54.231,	10.291		"miwi"				# Preetz, Germany
+ 56.156,	10.201,		"brix"				# Aarhus, Denmark
  57.2,		10.2,		"sos"				# Klokkerholm, Denmark
  56.14,		10.184,		"lbr"				# Aarhus, Denmark
  56.09105,	10.12423,	"erwin"				# Aarhus, Denmark
- 56.156,	10.201,		"brix"				# Aarhus, Denmark
  53.56,		10.02,		"cracauer"			# Hamburg, Germany
  53.64,		9.84,		"hm"		align=left	# Rellingen, Germany
  54.917,		9.783,		"xride"				# Soenderborg, Denmark
@@ -105,9 +106,9 @@
  45.467,	9.200,		"piso"				# Milano, Italy
  45.27,		9.17,		"olgeni"			# Milano, Italy
  45.488328,	9.164711,	"ale"		align=left	# Milano, Italy
+ 46.29523	8.98232		"gahr"				# Lodrino, Switzerland
  52.05,		8.9,		"lkoeller"			# Lemgo, Germany
  45.667		8.867,		"nivit"		align=left	# Fagnano Olona, Italy
- 46.29523	8.98232		"gahr"				# Lodrino, Switzerland
  47.1666,	8.5166,		"dhartmei"			# Zug, Switzerland
  47.380458,	8.514722,	"ehaupt"			# Zurich, Switzerland
  49.014958,	8.445214,	"mlaier"			# Rintheim, Germany
@@ -137,7 +138,6 @@
  51.9201,	4.4905,		"marks"				# Rotterdam, The Netherlands
  50.383,	4.36,		"jylefort"	align=left	# Charleroi, Belgium
  48.36,		2.99,		"charnier"	align=left	# Cannes Ecluse, France
- 42.8474,	2.6716,		"carvay"			# Araba, Vitoria-Gasteiz, Spain
  48.83,		2.36,		"antoine"			# Paris, France
  41.6666,	2.3333,		"jesusr"			# Barcelona, Spain
  48.87,		2.33,		"dumbbell,cognet"	align=left	# Paris, France
@@ -158,6 +158,7 @@
  52.01,		-0.75,		"tom"		align=left	# Milton Keynes, UK
  51.461916,	-1.011833,	"jesper"			# Reading, United Kingdom
  52.635,	-1.135,		"hmp"				# Leicester, East Midlands, UK
+ 42.8474,	-2.66976,	"carvay"			# Araba, Vitoria-Gasteiz, Spain
  51.49,		-3.16,		"ceri"				# Cardiff, UK
  53.20,		-6.15,		"dwmalone"	align=left	# Dublin, Ireland
  53.286499,	-6.196429,	"flz"				# Stillorgan, Co. Dublin, Ireland
@@ -228,8 +229,8 @@
  37.68,		-122.03,	"bmah"				# Castro Valley, CA, USA
  37.38,		-122.05,	"obrien"			# Sunnyvale, CA, USA
  37.39,		-122.06,	"marcel"			# Mountain View, CA, USA
- 37.3905,	-122.0715,	"delphij"			# Mountain View, CA, USA
  37.40,         -122.07,        "murray"			# (CORE) Mountain View, CA, USA
+ 37.3905,	-122.0715,	"delphij"			# Mountain View, CA, USA
  37.39		-122.11		"bakul"				# Los Altos, CA, USA
  47.382689,	-122.227021,	"garys"				# Kent, WA, USA
  37.81875,	-122.2466,	"kientzle"			# Oakland, CA, USA
@@ -256,4 +257,3 @@
  48.3898,	-123.4875,	"cy"				# Victoria, BC, Canada
  40.0,		-123.5,		"jkh"				# Miranda, CA, USA
  61.214020,	-149.881220,	"beech"				# Anchorage, AK, USA
- -31.97908,	115.81611,	"adrian"			# Crawley, Perth, Western Australia
