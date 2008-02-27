@@ -3,23 +3,22 @@
 # Whom:					Roy Marples <roy@marples.name>
 #
 # $FreeBSD$
+#
 
-PORTNAME=		dhcpcd
-PORTVERSION=		3.1.8
-PORTREVISION=		1
-CATEGORIES=		net
-MASTER_SITES=		${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	dhcpcd
+PORTNAME=	dhcpcd
+PORTVERSION=	3.2.3
+CATEGORIES=	net
+MASTER_SITES=	http://roy.marples.name/dhcpcd/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
 
-MAINTAINER=		roy@marples.name
-COMMENT=		DHCP client
+MAINTAINER=	roy@marples.name
+COMMENT=	DHCP client
 
-PLIST_FILES=		sbin/dhcpcd
-MAN8=			dhcpcd.8
+USE_BZIP2=	yes
+USE_RC_SUBR=	dhcpcd
 
-USE_BZIP2=		yes
-USE_RC_SUBR=		dhcpcd
-
-MAKE_ARGS=		INFODIR=/var/db
+MAN8=		dhcpcd.8
+PLIST_FILES=	sbin/dhcpcd
 
 .include <bsd.port.mk>
