@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Babel
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/babel/ \
 		${MASTER_SITE_LOCAL} \
