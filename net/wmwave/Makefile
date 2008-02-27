@@ -7,32 +7,32 @@
 
 PORTNAME=	wmwave
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	benjsc@FreeBSD.org
 COMMENT=	Display 802.11 status in the WindowMaker Dock
 
-MAKEFILE=	${FILESDIR}/Makefile
-WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XPM=	yes
-MAKE_ENV=	MANPREFIX=${MANPREFIX}
 
 MAN1=		wmwave.1
-MANCOMPRESSED=	yes
 PLIST_FILES=	bin/wmwave
 
-# configure is a no-op for this port.
-do-configure:
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+CFLAGS+=	-DWICACHE -I${PREFIX}/include
+LDFLAGS+=	-L${PREFIX}/lib -lX11 -lXpm -lXext -lm
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
+do-build:
+	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c ${WRKSRC}/wmgeneral.c \
+		-o ${WRKSRC}/${PORTNAME}
 
-.include <bsd.port.post.mk>
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
+
+.include <bsd.port.mk>
