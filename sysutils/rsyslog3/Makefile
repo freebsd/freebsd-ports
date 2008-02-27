@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	CENKES http://download.rsyslog.com/rsyslog/
 
@@ -36,6 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
 		${WRKSRC}/Makefile.in ${WRKSRC}/syslogd.c
+	@${REINPLACE_CMD} -e 's|rs_strerror_r|strerror_r|g' ${WRKSRC}/rfc3195d.c
 	@${GREP} -rl '/etc/rsyslog.conf' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} -e\
 		's|/etc/rsyslog.conf|${PREFIX}/etc/rsyslog.conf|'
 	@${ECHO_CMD} '#include <sys/socket.h>' >> ${WRKSRC}/net.h
