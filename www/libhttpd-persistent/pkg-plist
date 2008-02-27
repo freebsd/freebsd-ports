@@ -1,8 +1,0 @@
-include/httpd-persistent.h
-lib/libhttpd-persistent.a
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/HISTORY
-%%PORTDOCS%%%%DOCSDIR%%/License
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
-%%PORTDOCS%%%%DOCSDIR%%/libhttpd.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/

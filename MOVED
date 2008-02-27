@@ -3365,3 +3365,4 @@ mail/linux-netscape-messenger|mail/thunderbird|2008-02-13|Abandoned by AOL
 www/linux-netscape-navigator|www/firefox|2008-02-13|Abandoned by AOL
 audio/daapd||2008-02-26|Has expired: Development stalled, outdated. Does not support newer versions of DAAP protocol.
 audio/daaplib||2008-02-26|Has expired: Development stalled for years, outdated. Does not support newer versions of DAAP protocol.
+www/libhttpd-persistent||2008-02-27|Has expired: Development stalled for years, outdated.
