@@ -7,6 +7,7 @@
 
 PORTNAME=	gosa
 PORTVERSION=	2.5.14
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://oss.gonicus.de/pub/gosa/ \
 		http://oss.gonicus.de/pub/gosa/archive/
@@ -17,7 +18,7 @@ COMMENT=	Web Based LDAP Administration Program
 RUN_DEPENDS=	p5-Crypt-SmbHash>=0.12:${PORTSDIR}/security/p5-Crypt-SmbHash
 
 USE_BZIP2=	yes
-USE_PHP=	gettext iconv imap ldap mhash
+USE_PHP=	gettext iconv imap ldap mhash posix
 
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
