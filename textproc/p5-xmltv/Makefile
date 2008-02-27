@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.49
+PORTVERSION=	0.5.50
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
@@ -80,11 +80,11 @@ MAN1=	tv_cat.1 tv_check.1 tv_extractinfo_en.1 tv_find_grabbers.1 \
 	tv_grab_uk_rt.1 tv_grab_za.1 tv_grep.1 tv_imdb.1 \
 	tv_remove_some_overlapping.1 tv_sort.1 tv_split.1 tv_to_latex.1 \
 	tv_to_potatoe.1 tv_to_text.1 tv_validate_file.1 \
-	tv_validate_grabber.1
+	tv_validate_grabber.1 tv_grab_eu_epgdata.1 tv_grab_na_dtv.1
 MAN3=	Configure.3 Configure::Writer.3 Options.3 PreferredMethod.3 \
 	ValidateFile.3 ValidateGrabber.3 Version.3 \
 	XMLTV.3 XMLTV::Date.3 XMLTV::Grab_XML.3 XMLTV::Gunzip.3 \
-	XMLTV::GUI.3 XMLTV::Summarize.3
+	XMLTV::GUI.3 XMLTV::Summarize.3 XMLTV::Supplement.3
 
 # idea taken from devel/cvsweb port
 # Specify these directories in relative paths to ${PREFIX}.
