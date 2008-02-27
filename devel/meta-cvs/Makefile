@@ -12,15 +12,12 @@ CATEGORIES=	devel
 MASTER_SITES=	http://users.footprints.net/~kaz/
 DISTNAME=	mcvs-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A more capable version control system than CVS, built around CVS
 
 BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp \
 		${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv
 
-BROKEN=		Does not patch
-
-USE_GCC=	2.95
 USE_GETTEXT=	yes
 
 post-patch:
