@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.4.6
+PORTVERSION=	2.4.7
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -19,13 +19,13 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-# blanket approval for version updates: mnag@FreeBSD.org
-MAINTAINER=	vivek@khera.org
+MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-35-9].* postfix-current-2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
+NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_RC_SUBR=	postfix.sh
@@ -185,7 +185,7 @@ _REQUIRE+=		ypserv
 
 .if defined(WITH_VDA)
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/
-PATCHFILES+=		postfix-2.4.5-vda-ng.patch.gz
+PATCHFILES+=		postfix-2.4.6-vda-ng.patch.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
