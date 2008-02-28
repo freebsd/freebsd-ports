@@ -16,6 +16,8 @@ MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/privat2/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A client/server program for testing network performance
 
+BROKEN=		Checksum mismatch
+
 ALL_TARGET=	nttcp
 MAN1=		nttcp.1
 PLIST_FILES=	bin/nttcp
