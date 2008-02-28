@@ -9,9 +9,9 @@
 PORTNAME=	jakelib2
 PORTVERSION=	2.0.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.jakelib.org/lib/jakelib2/download/
+MASTER_SITES=	http://www.donuz.de/lib/jakelib2/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A cross platform C++ class library with a Java-like API
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
