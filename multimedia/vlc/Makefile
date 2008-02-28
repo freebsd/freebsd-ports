@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6d
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -231,7 +231,7 @@ CONFIGURE_ARGS+=--disable-corba
 .endif
 
 .if !defined(WITHOUT_DVBPSI)
-LIB_DEPENDS+=	dvbpsi.4:${PORTSDIR}/multimedia/libdvbpsi
+LIB_DEPENDS+=	dvbpsi.5:${PORTSDIR}/multimedia/libdvbpsi
 CONFIGURE_ARGS+=--enable-dvbpsi \
 		--with-dvbpsi=${LOCALBASE}
 .else
