@@ -13,9 +13,6 @@ etc/postfix/TLS_LICENSE
 etc/postfix/bounce.cf.default
 etc/postfix/main.cf.default
 etc/postfix/makedefs.out
-etc/postfix/post-install
-etc/postfix/postfix-files
-etc/postfix/postfix-script
 etc/postfix/dist/main.cf
 etc/postfix/dist/master.cf
 etc/postfix/dist/access
@@ -39,6 +36,9 @@ libexec/postfix/nqmgr
 libexec/postfix/oqmgr
 libexec/postfix/pickup
 libexec/postfix/pipe
+libexec/postfix/post-install
+libexec/postfix/postfix-files
+libexec/postfix/postfix-script
 libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
