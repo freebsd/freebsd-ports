@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	wireshark
-PORTVERSION=	0.99.7
+PORTVERSION=	0.99.8
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/
@@ -37,7 +37,7 @@ CFLAGS+=	-funit-at-a-time
 
 WIRESHARK_LIBS=
 
-.for x in capinfos editcap idl2wrs mergecap text2pcap
+.for x in capinfos editcap idl2wrs mergecap rawshark text2pcap
 .if defined(LITE)
 PLIST_SUB+=		${x:U}="@comment $x not installed"
 CONFIGURE_ARGS+=	--enable-$x=no

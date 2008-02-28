@@ -6,6 +6,7 @@ bin/dumpcap
 %%IDL2WRS%%
 %%MERGECAP%%
 %%RANDPKT%%
+%%RAWSHARK%%
 bin/tshark
 %%TEXT2PCAP%%
 lib/wireshark/plugins/%%PORTVERSION%%/agentx.la
@@ -80,6 +81,7 @@ lib/libwiretap.so.0
 %%DATADIR%%/dfilters
 %%DATADIR%%/dumpcap.html
 %%DATADIR%%/diameter/Ericsson.xml
+%%DATADIR%%/diameter/TGPPGmb.xml
 %%DATADIR%%/diameter/TGPPSh.xml
 %%DATADIR%%/diameter/chargecontrol.xml
 %%DATADIR%%/diameter/dictionary.dtd
@@ -183,8 +185,10 @@ lib/libwiretap.so.0
 %%DATADIR%%/radius/dictionary.versanet
 %%DATADIR%%/radius/dictionary.wispr
 %%DATADIR%%/radius/dictionary.xedia
+%%DATADIR%%/rawshark.html
 %%DATADIR%%/tshark.html
 %%DATADIR%%/text2pcap.html
+%%DATADIR%%/ws.css
 @dirrm lib/wireshark/plugins/%%PORTVERSION%%
 @dirrm lib/wireshark/plugins
 @dirrm lib/wireshark
