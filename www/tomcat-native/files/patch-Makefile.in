@@ -1,0 +1,16 @@
+--- Makefile.in.orig	2008-02-28 15:08:20.000000000 +0100
++++ Makefile.in	2008-02-28 15:08:52.000000000 +0100
+@@ -67,12 +67,7 @@
+ 
+ 
+ install: $(TARGET_LIB)
+-	$(APR_MKDIR) $(DESTDIR)$(includedir) $(DESTDIR)$(libdir)/pkgconfig \
+-		     $(DESTDIR)$(libdir) $(DESTDIR)$(bindir)
+-	$(INSTALL_DATA) tcnative.pc $(DESTDIR)$(libdir)/pkgconfig/$(TCNATIVE_PCFILE)
+-	list='$(INSTALL_SUBDIRS)'; for i in $$list; do \
+-		( cd $$i ; $(MAKE) DESTDIR=$(DESTDIR) install ); \
+-	done
++	$(APR_MKDIR) $(DESTDIR)$(libdir)
+ 	$(LIBTOOL) --mode=install $(INSTALL) -m 755 $(TARGET_LIB) $(DESTDIR)$(libdir)
+ 
+ $(TARGET_LIB): $(OBJECTS)
