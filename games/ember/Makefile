@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ember
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.5.1
+PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -18,7 +18,7 @@ DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Ember is a WorldForge 3d client using the OGRE 3d library
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.4.5.so:${PORTSDIR}/graphics/ogre3d
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOgreMain-1.4.6.so:${PORTSDIR}/graphics/ogre3d
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		eris-1.3:${PORTSDIR}/devel/eris \
@@ -60,6 +60,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/src/components/ogre/SceneManagers/EmberPagingSceneManager/src/filetutils.cpp
 	@${REINPLACE_CMD} -e 's|	install-dist_docDATA |	|g'  ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(sysconfdir)/ember/|$$(sysconfdir)/ember|g' \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/src/components/ogre/Makefile.in
 
 post-install:
 	(cd ${WRKDIR}/${PORTNAME}-media-${PORTVERSION} && ${FIND} . -type f -print | \
