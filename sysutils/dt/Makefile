@@ -11,10 +11,11 @@ PORTNAME=	dt
 PORTVERSION=	15.14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://home.comcast.net/~SCSIguy/SCSI_FAQ/RMiller_Tools/ftp/dt/ \
+		http://sce-tindy.tecnik93.com/FreeBSD/ports/dt/sources \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
-DISTNAME=	dt-source
+DISTNAME=	${PORTNAME}-source
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Data Test Program - disk/tape error diagnostic tool
 
 WRKSRC=		${WRKDIR}/dt.d
