@@ -63,7 +63,6 @@
     SUBDIR += ficl-devel
     SUBDIR += fpc
     SUBDIR += fpc-base
-    SUBDIR += fpc-devel
     SUBDIR += fpc-docs
     SUBDIR += fpc-tcl
     SUBDIR += fpc-units

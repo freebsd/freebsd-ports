@@ -5,7 +5,6 @@
 
     SUBDIR += FSViewer
     SUBDIR += asfiles
-    SUBDIR += binder
     SUBDIR += cfm
     SUBDIR += dfm
     SUBDIR += dolphin

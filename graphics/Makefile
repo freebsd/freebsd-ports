@@ -294,7 +294,6 @@
     SUBDIR += jbigkit
     SUBDIR += jdraw
     SUBDIR += jgraph
-    SUBDIR += jgv
     SUBDIR += jhead
     SUBDIR += jp2a
     SUBDIR += jpatch
