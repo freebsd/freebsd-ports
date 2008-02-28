@@ -7,7 +7,8 @@
 
 PORTNAME=	horde
 DISTVERSIONPREFIX=
-DISTVERSION=	3.1.6
+DISTVERSION=	3.2
+DISTVERSIONSUFFIX=	-rc2
 CATEGORIES=	www
 PKGNAMEPREFIX=
 PKGNAMESUFFIX=	-base
@@ -31,8 +32,6 @@ COMMENT=	Common code-base used by Horde applications
 # - WITHOUT_LDAP:	if you do not need OpenLDAP.
 #
 # - WITHOUT_FTP:	if you do not need the VFS FTP driver.
-#
-# - WITH_MCAL:		for mcal authentication back-end (deprecated).
 #
 # - WITH_IMSP:		use IMSP as a preferences backend.
 #
@@ -206,9 +205,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-lib_Horde_NLS.php
 USE_PHP+=	dom
 .else
 USE_PHP+=	domxml
-. if defined(WITH_MCAL)
-USE_PHP+=	mcal
-. endif
 .endif
 
 pre-patch:
@@ -239,8 +235,6 @@ pre-patch:
 	@${REINPLACE_CMD} -e "s:GeoIP lookup will not be performed.\"/>:GeoIP lookup will not be performed.\">${LOCALBASE}/share/GeoIP/GeoIP.dat</configstring>:" \
 		${WRKSRC}/config/conf.xml
 .endif
-	@${REINPLACE_CMD} -e "s:/etc/mpasswd:${LOCALBASE}/etc/mpasswd:g"	\
-		${WRKSRC}/lib/Horde/Auth/mcal.php
 	@${REINPLACE_CMD} -e "s:/usr/local/apache/htdocs:${PREFIX}/www:g"	\
 		${WRKDIR}/docs/INSTALL
 
