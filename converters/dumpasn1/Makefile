@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dumpasn1
-PORTVERSION=	20070127
+PORTVERSION=	20080204
 CATEGORIES=	converters security
 MASTER_SITES=	http://www.cs.auckland.ac.nz/~pgut001/
 DISTFILES=	dumpasn1.c dumpasn1.cfg
