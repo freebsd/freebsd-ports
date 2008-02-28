@@ -14,12 +14,3 @@
  
  #if defined( __TANDEM_NSK__ )
  
-@@ -1215,7 +1217,7 @@
- 					lineLength++;
- 					i++;	/* We've read two characters for a wchar_t */
- #if defined( __WIN32__ ) || \
--	( defined( __UNIX__ ) && !( defined( __MACH__ ) || defined( __OpenBSD__ ) ) )
-+	( defined( __UNIX__ ) && !( defined( __FreeBSD__ ) && __FreeBSD__ < 5 ) && !( defined( __MACH__ ) || defined( __OpenBSD__ ) ) )
- 
- 					wprintf( L"%c", wCh );
- #else
