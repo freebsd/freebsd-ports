@@ -1,24 +1,19 @@
---- config/sources.php.dist.orig	Mon Nov  7 11:03:26 2005
-+++ config/sources.php.dist	Wed Mar  8 23:18:05 2006
-@@ -490,109 +490,109 @@
+--- config/sources.php.dist.orig	2007-11-19 08:05:01.000000000 -0900
++++ config/sources.php.dist	2007-12-03 23:35:17.000000000 -0900
+@@ -636,105 +636,108 @@
  // configuration at all - in case we don't have at least a 3.0.6 Horde
  // install.  (In that case, be sure to change the params array below to suit
- // your needs).
+ // your needs.
 -if (!empty($GLOBALS['conf']['imsp']['enabled']) ||
 -    !isset($GLOBALS['conf']['imsp']['enabled'])) {
 -    // First, get the user name to login to IMSP server with.
--    $uid = $GLOBALS['prefs']->getValue('imsp_auth_user');
--    $pass = $GLOBALS['prefs']->getValue('imsp_auth_pass');
--    if (!strlen($uid)) {
--        $uid = Auth::getBareAuth();
--        $pass = Auth::getCredential('password');
+-    $_imsp_auth_user = $GLOBALS['prefs']->getValue('imsp_auth_user');
+-    $_imsp_auth_pass = $GLOBALS['prefs']->getValue('imsp_auth_pass');
+-    if (!strlen($_imsp_auth_user)) {
+-        $_imsp_auth_user = Auth::getBareAuth();
+-        $_imsp_auth_pass = Auth::getCredential('password');
 -    }
--    // Note we always use the horde username to append to the key even if we
--    // have an alternate username set in prefs.  This is to prevent the
--    // (fringe) case where an IMSP username for one user might be a valid
--    // horde username for another user.
--    $cfgKey = 'IMSP_' . Auth::getAuth();
--    $cfgSources[$cfgKey] = array(
+-    $cfgSources['imsp'] = array(
 -        'title' => _("IMSP"),
 -        'type' => 'imsp',
 -        'params' => array(
@@ -27,22 +22,20 @@
 -            'auth_method' => $GLOBALS['conf']['imsp']['auth_method'],
 -            // socket, command, and auth_mechanism are for imtest driver.
 -            'socket'  => isset($GLOBALS['conf']['imsp']['socket']) ?
--                         $GLOBALS['conf']['imsp']['socket'] . $uid . '.sck' :
+-                         $GLOBALS['conf']['imsp']['socket'] . $_imsp_auth_user . '.sck' :
 -                         '',
 -            'command' => isset($GLOBALS['conf']['imsp']['command']) ?
 -                         $GLOBALS['conf']['imsp']['command'] : '' ,
 -            'auth_mechanism' => isset($GLOBALS['conf']['imsp']['auth_mechanism']) ?
 -                                $GLOBALS['conf']['imsp']['auth_mechanism'] : '',
--            'username' => $uid,
--            'password' => $pass,
--            'name' => $uid,
+-            'username' => $_imsp_auth_user,
+-            'password' => $_imsp_auth_pass,
+-            'name' => $_imsp_auth_user,
 -            'group_id_field' => 'group',
 -            'group_id_value' => 'group',
 -            'contact_ownership' => false,
 -            // Dynamically generated acl rights for current user.
 -            'my_rights' => '',
--            // Flags this as the user's 'root' IMSP address book.
--            'is_root' => true
 -            ),
 -        'map' => array(
 -            '__key' => 'name',
@@ -71,6 +64,7 @@
 -        'strict' => array(),
 -        'export' => true,
 -        'browse' => true,
+-        'use_shares' => false,
 -        );
 -
 -    /**
@@ -80,32 +74,34 @@
 -     * book above. Any entries defined explicitly in cfgSources[]
 -     * will override any entries gathered dynamically below.
 -     */
--    require_once 'Net/IMSP/Utils.php';
--    $result = Net_IMSP_Utils::getAllBooks($cfgSources[$cfgKey]);
--    $count = 2;
--    if (!is_a($result, 'PEAR_Error')) {
--        $resultCount = count($result);
--        for ($i = 0; $i < $resultCount; $i++) {
--            // Make sure we didn't define this source explicitly,
--            // but set the acls from the server regardless.
--            $dup = false;
--            foreach ($cfgSources as $key => $thisSource) {
--                if (($thisSource['type'] == 'imsp') &&
--                    ($thisSource['params']['name'] == $result[$i]['params']['name'])) {
+-     if (empty($cfgSources['imsp']['use_shares'])) {
+-        require_once 'Net/IMSP/Utils.php';
+-        $result = Net_IMSP_Utils::getAllBooks($cfgSources['imsp']);
 -
--                    $dup = true;
--                    $acl = $result[$i]['params']['my_rights'];
--                    $cfgSources[$key]['params']['my_rights'] = $acl;
--                    break;
+-        if (!is_a($result, 'PEAR_Error')) {
+-            $resultCount = count($result);
+-            for ($i = 0; $i < $resultCount; $i++) {
+-                // Make sure we didn't define this source explicitly,
+-                // but set the acls from the server regardless.
+-                $dup = false;
+-                foreach ($cfgSources as $key => $thisSource) {
+-                    if (($thisSource['type'] == 'imsp') &&
+-                        ($thisSource['params']['name'] == $result[$i]['params']['name'])) {
+-
+-                        $dup = true;
+-                        $acl = $result[$i]['params']['my_rights'];
+-                        $cfgSources[$key]['params']['my_rights'] = $acl;
+-                        break;
+-                    }
+-                }
+-                if (!$dup) {
+-                    $cfgSources[$result[$i]['params']['name']] = $result[$i];
 -                }
 -            }
--            if (!$dup) {
--                $cfgSources[sprintf('IMSP_%d', $count++)] = $result[$i];
--            }
+-        } else {
+-            $notification->push($result);
 -        }
--    } else {
--        $notification->push($result);
--    }
+-     }
 -}
 +//UNCOMMENTIFIMSPif (!empty($GLOBALS['conf']['imsp']['enabled']) ||
 +//UNCOMMENTIFIMSP    !isset($GLOBALS['conf']['imsp']['enabled'])) {
@@ -167,8 +163,7 @@
 +//UNCOMMENTIFIMSP        'search' => array(
 +//UNCOMMENTIFIMSP            'name',
 +//UNCOMMENTIFIMSP            'email',
-+//UNCOMMENTIFIMSP            'alias',
-+//UNCOMMENTIFIMSP            'company',
++//UNCOMMENTIFIMSP            'alias',+//UNCOMMENTIFIMSP            'company',
 +//UNCOMMENTIFIMSP            'homePhone'
 +//UNCOMMENTIFIMSP            ),
 +//UNCOMMENTIFIMSP        'strict' => array(),
