@@ -7,6 +7,7 @@
 
 PORTNAME=	libspectrum
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	emulators devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	fuse-emulator
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	fuse-emulator
 MAINTAINER=	yuri.pankov@gmail.com
 COMMENT=	Handling of ZX-Spectrum emulator files formats
 
-LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt
 
 USE_GMAKE=	yes
 USE_GNOME=	glib20

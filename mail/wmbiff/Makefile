@@ -7,7 +7,7 @@
 
 PORTNAME=	wmbiff
 PORTVERSION=	0.4.27
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,7 +36,7 @@ PLIST_DIRS=	%%DATADIR%%/skins \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS+=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
 		gnutls.13:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-libgnutls-prefix=${LOCALBASE} \
 			--with-libgcrypt-prefix=${LOCALBASE}
