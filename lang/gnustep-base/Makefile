@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnustep-base
-PORTVERSION=	1.13.1
-PORTREVISION=	1
+PORTVERSION=	1.14.2
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -31,6 +30,7 @@ USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 USE_ICONV=	yes
 
+RESTRICTED=	GPL3
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 CFLAGS+=	-I${LOCALBASE}/include/libxml2/libxml
 BREAKS_IF_PEDANTIC=	yes
@@ -78,10 +78,6 @@ post-install:
 	(cd ${WRKSRC}/${i}; . ${GNUSTEP_MAKEFILES}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} -d ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 .endfor
-	${RM} ${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-base.so
-	${LN} -s libgnustep-base.so.${PORTVERSION} \
-		${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-base.so
-	${RM} ${GNUSTEP_SYSTEM_LIBRARIES}/Resources/gnustep-base/NSTimeZones/.README.swp
 
 test:
 	@(cd ${WRKSRC}/Testing && . ${GNUSTEP_MAKEFILES}/GNUstep.sh; ${GMAKE})

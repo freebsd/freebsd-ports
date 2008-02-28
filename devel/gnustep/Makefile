@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnustep
-PORTVERSION=	1.13.0
-PORTREVISION=	1
+PORTVERSION=	1.14.2
 CATEGORIES=	devel lang gnustep
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -16,6 +15,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Objective-C libraries based on the OpenStep standard
 
+RESTRICTED=	GPL3
 NO_BUILD=	yes
 NO_INSTALL=	yes
 USE_GNUSTEP=	yes
