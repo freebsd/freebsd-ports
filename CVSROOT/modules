@@ -4700,6 +4700,7 @@ horde-passwd	ports/www/horde-passwd
 horde-trean	ports/www/horde-trean
 horde-turba	ports/mail/horde-turba
 horde-vacation	ports/mail/horde-vacation
+horde-whups	ports/devel/horde-whups
 hostsentry	ports/security/hostsentry
 hot-babe	ports/deskutils/hot-babe
 hotkeys		ports/misc/hotkeys
