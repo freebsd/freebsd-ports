@@ -10,8 +10,8 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
-		http://www.tobez.org/download/port-mirrors/mail/libesmtp/ \
-		http://www.borgsdemons.com/distfiles/
+		http://ftp.osuosl.org/pub/blfs/svn/l/ \
+		ftp://ftp.linux.ee/pub/gentoo/distfiles/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mnag@FreeBSD.org
