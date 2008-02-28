@@ -1,24 +1,24 @@
---- Makefile.in.orig	2007-12-23 15:36:38.000000000 -0500
-+++ Makefile.in	2007-12-23 15:38:47.000000000 -0500
-@@ -159,7 +159,7 @@ am_dumpcap_OBJECTS = $(am__objects_2) ca
- 	ringbuffer.$(OBJEXT) sync_pipe_write.$(OBJEXT) \
- 	tempfile.$(OBJEXT) version_info.$(OBJEXT) \
- 	unicode-utils.$(OBJEXT) privileges.$(OBJEXT)
+--- Makefile.in.orig	2008-02-27 14:59:53.000000000 -0500
++++ Makefile.in	2008-02-28 00:00:04.000000000 -0500
+@@ -161,7 +161,7 @@ am_dumpcap_OBJECTS = $(am__objects_2) ca
+ 	sync_pipe_write.$(OBJEXT) tempfile.$(OBJEXT) \
+ 	version_info.$(OBJEXT) unicode-utils.$(OBJEXT) \
+ 	privileges.$(OBJEXT)
 -dumpcap_OBJECTS = $(am_dumpcap_OBJECTS)
 +dumpcap_OBJECTS = $(am_dumpcap_OBJECTS) @INET_NTOP_O@
  dumpcap_DEPENDENCIES = wiretap/libwiretap.la
  am__editcap_SOURCES_DIST = editcap.c epan/crypt/crypt-md5.c \
  	epan/plugins.c epan/report_err.c epan/privileges.c \
-@@ -200,7 +200,7 @@ am_tshark_OBJECTS = $(am__objects_3) $(a
+@@ -211,7 +211,7 @@ am_tshark_OBJECTS = $(am__objects_3) $(a
  	capture_opts.$(OBJEXT) capture_sync.$(OBJEXT) \
  	tempfile.$(OBJEXT) tshark-tap-register.$(OBJEXT) \
  	tshark.$(OBJEXT)
 -tshark_OBJECTS = $(am_tshark_OBJECTS)
 +tshark_OBJECTS = $(am_tshark_OBJECTS) @INET_NTOP_O@
- tshark_DEPENDENCIES = $(am__DEPENDENCIES_1) wiretap/libwiretap.la \
- 	epan/libwireshark.la $(am__DEPENDENCIES_2)
+ tshark_DEPENDENCIES = $(am__DEPENDENCIES_2) wiretap/libwiretap.la \
+ 	epan/libwireshark.la $(am__DEPENDENCIES_1)
  tshark_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
-@@ -885,6 +885,7 @@ wireshark_SOURCES = \
+@@ -905,6 +905,7 @@ wireshark_SOURCES = \
  	fileset.c	\
  	filters.c	\
  	g711.c \
@@ -26,7 +26,7 @@
  	merge.c	\
  	proto_hier_stats.c	\
  	summary.c	\
-@@ -925,6 +926,7 @@ tshark_SOURCES = \
+@@ -945,6 +946,7 @@ tshark_SOURCES = \
  	$(TSHARK_TAP_SRC)	\
  	capture_opts.c		\
  	capture_sync.c		\
@@ -34,7 +34,7 @@
  	tempfile.c		\
  	tshark-tap-register.c	\
  	tshark.c
-@@ -975,6 +977,7 @@ dumpcap_SOURCES = \
+@@ -1000,6 +1002,7 @@ dumpcap_SOURCES = \
  	clopts_common.c	\
  	conditions.c	\
  	dumpcap.c	\
@@ -42,7 +42,7 @@
  	pcapio.c	\
  	ringbuffer.c	\
  	sync_pipe_write.c	\
-@@ -1030,7 +1033,6 @@ wireshark_LDADD = \
+@@ -1054,7 +1057,6 @@ wireshark_LDADD = \
  	codecs/libcodec.a		\
  	wiretap/libwiretap.la		\
  	epan/libwireshark.la		\
@@ -50,7 +50,7 @@
  	@SSL_LIBS@ 			\
  	$(plugin_ldadd)			\
  	@PCRE_LIBS@			\
-@@ -1049,7 +1051,6 @@ tshark_LDADD = \
+@@ -1073,7 +1075,6 @@ tshark_LDADD = \
  	$(wireshark_optional_objects)	\
  	wiretap/libwiretap.la		\
  	epan/libwireshark.la		\
@@ -58,7 +58,7 @@
  	@SSL_LIBS@			\
  	$(plugin_ldadd)			\
  	@PCRE_LIBS@			\
-@@ -1117,7 +1118,6 @@ dftest_LDADD = \
+@@ -1183,7 +1184,6 @@ dftest_LDADD = \
  # Libraries with which to link dumpcap.
  dumpcap_LDADD = \
  	wiretap/libwiretap.la		\
