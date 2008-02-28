@@ -10,7 +10,7 @@ DISTVERSION=	2003-2
 DISTVERSIONSUFFIX=	.${ARCH}
 PORTREVISION=	3
 CATEGORIES=	french cad linux
-MASTER_SITES=	http://www.code-aster.org/FICHIERS/
+MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
