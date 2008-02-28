@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	libmemcached
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tangent.org/
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A C and C++ client library to the memcached server
 
-USE_PERL5_BUILD=yes # pod2man
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
@@ -21,7 +20,12 @@ USE_GNOME=	gnometarget
 post-patch:
 	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = libdata/pkgconfig|' \
 			${WRKSRC}/support/Makefile.in
+.if defined(NO_INSTALL_MANPAGES)
+	${REINPLACE_CMD} -e 's|^SUBDIRS = docs |SUBDIRS = |' ${WRKSRC}/Makefile.in
+.endif
 
+.if !defined(NO_INSTALL_MANPAGES)
+USE_PERL5_BUILD=yes # pod2man
 MAN1=		memcat.1 memcp.1 memerror.1 memflush.1 memrm.1 memslap.1 memstat.1
 MAN3=		libmemcached.3 \
 		libmemcached_examples.3 \
@@ -72,5 +76,6 @@ MAN3=		libmemcached.3 \
 		memcached_strerror.3 \
 		memcached_verbosity.3 \
 		memcached_version.3
+.endif
 
 .include <bsd.port.mk>
