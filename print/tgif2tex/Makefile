@@ -9,7 +9,7 @@ PORTNAME=	tgif2tex
 PORTVERSION=	2.13
 PORTREVISION=	1
 CATEGORIES+=	print
-MASTER_SITES=	http://www.fse.hiroshima-u.ac.jp/~nakano/tgif2tex/
+MASTER_SITES=	http://www.cs.hiroshima-u.ac.jp/~nakano/tgif2tex/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Converting texts in figure by tgif to LaTeX commands
