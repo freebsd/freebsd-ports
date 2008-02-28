@@ -7,6 +7,7 @@
 
 PORTNAME=	cyphesis
 PORTVERSION=	0.5.15
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
@@ -19,7 +20,7 @@ LIB_DEPENDS=	Atlas-0.6.1:${PORTSDIR}/devel/atlas-devel \
 		wfmath-0.3.4:${PORTSDIR}/math/wfmath \
 		mercator-0.2.4:${PORTSDIR}/devel/mercator \
 		skstream-0.3.4:${PORTSDIR}/net/skstream \
-		gcrypt.13:${PORTSDIR}/security/libgcrypt
+		gcrypt.15:${PORTSDIR}/security/libgcrypt
 
 CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 

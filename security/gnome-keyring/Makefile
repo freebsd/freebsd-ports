@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-keyring
 PORTVERSION=	2.20.3
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -18,7 +19,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program that keeps passwords and other secrets
 
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
-    		gcrypt.13:${PORTSDIR}/security/libgcrypt
+    		gcrypt.15:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 ltverhack

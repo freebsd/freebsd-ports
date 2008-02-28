@@ -7,6 +7,7 @@
 
 PORTNAME=	dirmngr
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	dirmngr
@@ -15,7 +16,7 @@ MAINTAINER=	lofi@freebsd.org
 COMMENT=	A client for managing and downloading certificate revocation lists
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
-LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		iconv:${PORTSDIR}/converters/libiconv \
 		ksba.17:${PORTSDIR}/security/libksba \

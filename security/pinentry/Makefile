@@ -7,7 +7,7 @@
 
 PORTNAME=	pinentry
 PORTVERSION=	0.7.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	pinentry
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	pinentry
 MAINTAINER=	lofi@freebsd.org
 COMMENT?=	A collection of simple PIN or passphrase entry dialogs
 
-LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
 		ksba.17:${PORTSDIR}/security/libksba
 
 CONFLICTS?=	pinentry-[a-z]*-[0.9]*

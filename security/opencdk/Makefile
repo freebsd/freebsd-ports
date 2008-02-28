@@ -19,7 +19,7 @@ MASTER_SITE_SUBDIR=	alpha/gnutls/opencdk
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Open Crypto Development Kit
 
-LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig ltverhack

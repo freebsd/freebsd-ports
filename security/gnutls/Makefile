@@ -7,7 +7,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 	ftp://ftp.gnutls.org/pub/gnutls/ \
@@ -19,7 +19,7 @@ MASTER_SITE_SUBDIR=	alpha/gnutls
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
 CONFLICTS=	gnutls-devel-[0-9]*

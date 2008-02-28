@@ -7,7 +7,7 @@
 
 PORTNAME=	fiked
 PORTVERSION=	0.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://dragon.roe.ch/bitsnpieces/fiked/ \
 		http://home.tiscalinet.ch/roe/fiked/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://dragon.roe.ch/bitsnpieces/fiked/ \
 MAINTAINER=	daniel@roe.ch
 COMMENT=	A fake IKE PSK+XAUTH daemon based on VPNC
 
-LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt
 .if !defined(WITHOUT_LIBNET)
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 .endif
