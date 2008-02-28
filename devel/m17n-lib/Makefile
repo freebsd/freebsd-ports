@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	m17n-lib
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for the multilingual text handling
 
-BUILD_DEPENDS=	m17n-db>=1.4.0:${PORTSDIR}/devel/m17n-db
+BUILD_DEPENDS=	m17n-db>=1.5.1:${PORTSDIR}/devel/m17n-db
 LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi \
 		gd.4:${PORTSDIR}/graphics/gd \
 		otf.0:${PORTSDIR}/print/libotf
-RUN_DEPENDS=	m17n-db>=1.4.0:${PORTSDIR}/devel/m17n-db
+RUN_DEPENDS=	m17n-db>=1.5.1:${PORTSDIR}/devel/m17n-db
 
 USE_XORG=	xaw xft xt
 USE_GNOME=	gnometarget libxml2 pkgconfig
