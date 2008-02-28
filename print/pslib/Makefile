@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pslib
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,10 +20,11 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GNOME=	gnomehack gnometarget intlhack pkgconfig
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 USE_LDCONFIG=	yes
 
 OPTIONS=	EXAMPLES	"Install additional examples" On \
