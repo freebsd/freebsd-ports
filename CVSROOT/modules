@@ -714,7 +714,6 @@ awstats		ports/www/awstats
 awstats-devel	ports/www/awstats-devel
 axe		ports/editors/axe
 axel		ports/ftp/axel
-axelq		ports/ftp/axelq
 axis		ports/www/axis
 axpoint		ports/print/axpoint
 axyftp		ports/ftp/axyftp
@@ -876,7 +875,6 @@ bind9		ports/dns/bind9
 bind9-dlz	ports/dns/bind9-dlz
 bind9-sdb-ldap	ports/dns/bind9-sdb-ldap
 bind94		ports/dns/bind94
-binder		ports/x11-fm/binder
 bindgraph	ports/dns/bindgraph
 bindtest	ports/net/bindtest
 bing		ports/net/bing
@@ -3190,7 +3188,6 @@ fpc		ports/lang/fpc
 fpc-base	ports/lang/fpc-base
 fpc-bfd		ports/devel/fpc-bfd
 fpc-cairo		ports/graphics/fpc-cairo
-fpc-devel	ports/lang/fpc-devel
 fpc-docs	ports/lang/fpc-docs
 fpc-fcl-base		ports/devel/fpc-fcl-base
 fpc-fcl-db		ports/devel/fpc-fcl-db
@@ -5727,7 +5724,6 @@ jftpgw		ports/ftp/jftpgw
 jggtrans	ports/net-im/jggtrans
 jgraph		ports/graphics/jgraph
 jgrapht		ports/java/jgrapht
-jgv		ports/graphics/jgv
 jhead		ports/graphics/jhead
 jid3lib		ports/audio/jid3lib
 jigdo		ports/net-p2p/jigdo
@@ -8047,7 +8043,6 @@ mucommander	ports/x11-fm/mucommander
 muddleftpd	ports/ftp/muddleftpd
 mudix		ports/net/mudix
 mudmagic	ports/games/mudmagic
-muggy		ports/editors/muggy
 mugshot		ports/net/mugshot
 muh		ports/irc/muh
 muine		ports/audio/muine
@@ -12372,7 +12367,6 @@ photoclip	ports/graphics/photoclip
 photopc		ports/graphics/photopc
 php-Auth_OpenID	ports/security/php-Auth_OpenID
 php-Net_Gearman	ports/devel/php-Net_Gearman
-php-dbg		ports/devel/php-dbg
 php-dbg2	ports/devel/php-dbg2
 php-dyn		ports/www/php-dyn
 php-gtk		ports/x11-toolkits/php-gtk
@@ -16867,7 +16861,6 @@ wise		ports/biology/wise
 wistumbler2	ports/net/wistumbler2
 wizardkit	ports/devel/wizardkit
 wm2		ports/x11-wm/wm2
-wmDeskGuide	ports/x11-wm/wmDeskGuide
 wmScoreBoard	ports/misc/wmScoreBoard
 wmakerconf	ports/x11-wm/wmakerconf
 wmalbum		ports/audio/wmalbum

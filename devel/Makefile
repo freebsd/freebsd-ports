@@ -1867,7 +1867,6 @@
     SUBDIR += perltidy
     SUBDIR += pharmacy
     SUBDIR += php-Net_Gearman
-    SUBDIR += php-dbg
     SUBDIR += php-dbg2
     SUBDIR += php-xdebug
     SUBDIR += php4-dio

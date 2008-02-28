@@ -3390,3 +3390,10 @@ french/pluxml-theme-bridge||2008-02-28|Has expired: pluxml is marked as deprecat
 french/pluxml-theme-snowxml||2008-02-28|Has expired: pluxml is marked as deprecated
 databases/pgbash||2008-02-28|Has expired: Last release in 2003, relies on outdated Postgre 7.3 and bash 2.05a
 audio/nogger||2008-02-28|Has expired: "just makes a humming noise""
+x11-wm/wmDeskGuide||2008-02-28|Has expired: Version branch long since retired
+ftp/axelq||2008-02-28|Has expired: Unmaintained, website disappeared
+lang/fpc-devel||2008-02-28|Has expired: now lags behind version in lang/fpc; use that instead
+devel/php-dbg||2008-02-28|Has expired: does not work with php5 and does not compile on gcc4.2
+graphics/jgv||2008-02-28|Has expired: development stalled for years, outdated, unmaintained
+editors/muggy||2008-02-28|Has expired: development stalled for years, unmaintained
+x11-fm/binder||2008-02-28|Has expired: development stalled for years, outdated, unmaintained

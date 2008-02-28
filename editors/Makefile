@@ -100,7 +100,6 @@
     SUBDIR += morla
     SUBDIR += mousepad
     SUBDIR += mp
-    SUBDIR += muggy
     SUBDIR += nano
     SUBDIR += ne
     SUBDIR += nedit

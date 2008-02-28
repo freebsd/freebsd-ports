@@ -129,7 +129,6 @@
     SUBDIR += windowlab
     SUBDIR += windowmaker
     SUBDIR += wm2
-    SUBDIR += wmDeskGuide
     SUBDIR += wmakerconf
     SUBDIR += wmanager
     SUBDIR += wmconfig
