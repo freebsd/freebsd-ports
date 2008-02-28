@@ -42,6 +42,8 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSHbox.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSTable.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSTable.html
+%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSTheme.gsdoc
+%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSTheme.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSVbox.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GSVbox.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Additions/GuiAdditions.html
@@ -232,8 +234,6 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSSound.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSSpellChecker.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSSpellChecker.html
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSSpellServer.gsdoc
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSSpellServer.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSSplitView.gsdoc
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSSplitView.html
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/Reference/NSStepper.gsdoc
@@ -304,16 +304,16 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/User/Gui/GuiUser/dependencies
 %%PORTDOCS%%System/Library/Documentation/man/man1/gopen.1.gz
 %%PORTDOCS%%System/Library/Documentation/man/man1/make_services.1.gz
-%%PORTDOCS%%System/Library/Documentation/info/manual.info
+%%PORTDOCS%%System/Library/Documentation/info/AppKit.info
 System/Library/Headers/AppKit/AppKit.h
 System/Library/Headers/AppKit/AppKitDefines.h
 System/Library/Headers/AppKit/AppKitExceptions.h
 System/Library/Headers/AppKit/DPSOperators.h
 System/Library/Headers/AppKit/GMAppKit.h
+System/Library/Headers/AppKit/GSAnimator.h
 System/Library/Headers/AppKit/GMArchiver.h
 System/Library/Headers/AppKit/GSDisplayServer.h
 System/Library/Headers/AppKit/GSDragView.h
-System/Library/Headers/AppKit/GSDrawFunctions.h
 System/Library/Headers/AppKit/GSEPSPrintOperation.h
 System/Library/Headers/AppKit/GSFontInfo.h
 System/Library/Headers/AppKit/GSFusedSilica.h
@@ -337,6 +337,7 @@ System/Library/Headers/AppKit/GSPrintOperation.h
 System/Library/Headers/AppKit/GSServicesManager.h
 System/Library/Headers/AppKit/GSTable.h
 System/Library/Headers/AppKit/GSTextConverter.h
+System/Library/Headers/AppKit/GSTheme.h
 System/Library/Headers/AppKit/GSTitleView.h
 System/Library/Headers/AppKit/GSToolbar.h
 System/Library/Headers/AppKit/GSToolbarView.h
@@ -350,7 +351,9 @@ System/Library/Headers/AppKit/IMLoading.h
 System/Library/Headers/AppKit/NSActionCell.h
 System/Library/Headers/AppKit/NSAffineTransform.h
 System/Library/Headers/AppKit/NSAlert.h
+System/Library/Headers/AppKit/NSAnimation.h
 System/Library/Headers/AppKit/NSApplication.h
+System/Library/Headers/AppKit/NSArrayController.h
 System/Library/Headers/AppKit/NSAttributedString.h
 System/Library/Headers/AppKit/NSBezierPath.h
 System/Library/Headers/AppKit/NSBitmapImageRep.h
@@ -371,6 +374,7 @@ System/Library/Headers/AppKit/NSColorWell.h
 System/Library/Headers/AppKit/NSComboBox.h
 System/Library/Headers/AppKit/NSComboBoxCell.h
 System/Library/Headers/AppKit/NSControl.h
+System/Library/Headers/AppKit/NSController.h
 System/Library/Headers/AppKit/NSCursor.h
 System/Library/Headers/AppKit/NSCustomImageRep.h
 System/Library/Headers/AppKit/NSDataLink.h
@@ -378,7 +382,6 @@ System/Library/Headers/AppKit/NSDataLinkManager.h
 System/Library/Headers/AppKit/NSDataLinkPanel.h
 System/Library/Headers/AppKit/NSDocument.h
 System/Library/Headers/AppKit/NSDocumentController.h
-System/Library/Headers/AppKit/NSDocumentFrameworkPrivate.h
 System/Library/Headers/AppKit/NSDragging.h
 System/Library/Headers/AppKit/NSDrawer.h
 System/Library/Headers/AppKit/NSEPSImageRep.h
@@ -400,7 +403,10 @@ System/Library/Headers/AppKit/NSImageView.h
 System/Library/Headers/AppKit/NSInputManager.h
 System/Library/Headers/AppKit/NSInputServer.h
 System/Library/Headers/AppKit/NSInterfaceStyle.h
+System/Library/Headers/AppKit/NSKeyValueBinding.h
 System/Library/Headers/AppKit/NSLayoutManager.h
+System/Library/Headers/AppKit/NSLevelIndicator.h
+System/Library/Headers/AppKit/NSLevelIndicatorCell.h
 System/Library/Headers/AppKit/NSMatrix.h
 System/Library/Headers/AppKit/NSMenu.h
 System/Library/Headers/AppKit/NSMenuItem.h
@@ -412,6 +418,7 @@ System/Library/Headers/AppKit/NSNib.h
 System/Library/Headers/AppKit/NSNibConnector.h
 System/Library/Headers/AppKit/NSNibDeclarations.h
 System/Library/Headers/AppKit/NSNibLoading.h
+System/Library/Headers/AppKit/NSObjectController.h
 System/Library/Headers/AppKit/NSOpenGL.h
 System/Library/Headers/AppKit/NSOpenGLView.h
 System/Library/Headers/AppKit/NSOpenPanel.h
@@ -463,6 +470,7 @@ System/Library/Headers/AppKit/NSTextStorage.h
 System/Library/Headers/AppKit/NSTextView.h
 System/Library/Headers/AppKit/NSToolbar.h
 System/Library/Headers/AppKit/NSToolbarItem.h
+System/Library/Headers/AppKit/NSUserDefaultsController.h
 System/Library/Headers/AppKit/NSUserInterfaceValidation.h
 System/Library/Headers/AppKit/NSView.h
 System/Library/Headers/AppKit/NSWindow.h
@@ -471,11 +479,11 @@ System/Library/Headers/AppKit/NSWindowController.h
 System/Library/Headers/AppKit/NSWorkspace.h
 System/Library/Headers/AppKit/PSOperators.h
 System/Library/Headers/Cocoa/Cocoa.h
+System/Library/Headers/GNUstepGUI/GSAnimator.h
 System/Library/Headers/GNUstepGUI/GMAppKit.h
 System/Library/Headers/GNUstepGUI/GMArchiver.h
 System/Library/Headers/GNUstepGUI/GSDisplayServer.h
 System/Library/Headers/GNUstepGUI/GSDragView.h
-System/Library/Headers/GNUstepGUI/GSDrawFunctions.h
 System/Library/Headers/GNUstepGUI/GSEPSPrintOperation.h
 System/Library/Headers/GNUstepGUI/GSFontInfo.h
 System/Library/Headers/GNUstepGUI/GSFusedSilica.h
@@ -499,6 +507,7 @@ System/Library/Headers/GNUstepGUI/GSPrintOperation.h
 System/Library/Headers/GNUstepGUI/GSServicesManager.h
 System/Library/Headers/GNUstepGUI/GSTable.h
 System/Library/Headers/GNUstepGUI/GSTextConverter.h
+System/Library/Headers/GNUstepGUI/GSTheme.h
 System/Library/Headers/GNUstepGUI/GSTitleView.h
 System/Library/Headers/GNUstepGUI/GSToolbar.h
 System/Library/Headers/GNUstepGUI/GSToolbarView.h
@@ -511,8 +520,8 @@ System/Library/Headers/GNUstepGUI/IMCustomObject.h
 System/Library/Headers/GNUstepGUI/IMLoading.h
 System/Library/Headers/gnustep/gui/GMAppKit.h
 System/Library/Headers/gnustep/gui/GMArchiver.h
+System/Library/Headers/gnustep/gui/GSAnimator.h
 System/Library/Headers/gnustep/gui/GSDisplayServer.h
-System/Library/Headers/gnustep/gui/GSDrawFunctions.h
 System/Library/Headers/gnustep/gui/GSFontInfo.h
 System/Library/Headers/gnustep/gui/GSFusedSilica.h
 System/Library/Headers/gnustep/gui/GSHbox.h
@@ -532,6 +541,7 @@ System/Library/Headers/gnustep/gui/GSPasteboardServer.h
 System/Library/Headers/gnustep/gui/GSServicesManager.h
 System/Library/Headers/gnustep/gui/GSTable.h
 System/Library/Headers/gnustep/gui/GSTextConverter.h
+System/Library/Headers/gnustep/gui/GSTheme.h
 System/Library/Headers/gnustep/gui/GSTitleView.h
 System/Library/Headers/gnustep/gui/GSToolbar.h
 System/Library/Headers/gnustep/gui/GSToolbarView.h
@@ -550,7 +560,10 @@ System/Library/Headers/gnustep/gui/GSPDFPrintOperation.h
 System/Library/Images/GNUstep.tiff
 System/Library/Images/GNUstepMenuImage.tiff
 System/Library/Images/GNUstep_Images_Copyright
+System/Library/Images/GSSearch.tiff
+System/Library/Images/GSStop.tiff
 System/Library/Images/NSComboArrow.tiff
+System/Library/Images/NSRatingLevelIndicator.tiff
 System/Library/Images/MagnifyGlass.tiff
 System/Library/Images/common_2DCheckMark.tiff
 System/Library/Images/common_2DDash.tiff
@@ -578,6 +591,7 @@ System/Library/Images/common_Diamond.tiff
 System/Library/Images/common_Dimple.tiff
 System/Library/Images/common_DownArrowSmall.tiff
 System/Library/Images/common_Folder.tiff
+System/Library/Images/common_HelpCursor.tiff
 System/Library/Images/common_Home.tiff
 System/Library/Images/common_HomeDirectory.tiff
 System/Library/Images/common_LeftTabStop.tiff
@@ -639,21 +653,23 @@ System/Library/Images/nsmapping.strings
 System/Library/Images/page_landscape.tiff
 System/Library/Images/page_portrait.tiff
 System/Library/KeyBindings/DefaultKeyBindings.dict
-System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSDataLinkPanel.gorm/data.classes
-System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSDataLinkPanel.gorm/data.info
-System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSDataLinkPanel.gorm/objects.gorm
-System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPageLayout.gorm/data.classes
-System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPageLayout.gorm/objects.gorm
-System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm/data.classes
-System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm/objects.gorm
-System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSSpellPanel.gorm/data.classes
-System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSSpellPanel.gorm/objects.gorm
-System/Library/Libraries/Resources/gnustep-gui/English.lproj/Localizable.strings
-System/Library/Libraries/Resources/gnustep-gui/Esperanto.lproj/Localizable.strings
-System/Library/Libraries/Resources/gnustep-gui/German.lproj/Localizable.strings
-System/Library/Libraries/Resources/gnustep-gui/Info-gnustep.plist
-System/Library/Libraries/Resources/gnustep-gui/Italian.lproj/Localizable.strings
-System/Library/Libraries/Resources/gnustep-gui/Lojban.lproj/Localizable.strings
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSDataLinkPanel.gorm/data.classes
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSDataLinkPanel.gorm/data.info
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSDataLinkPanel.gorm/objects.gorm
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPageLayout.gorm/data.classes
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPageLayout.gorm/data.info
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPageLayout.gorm/objects.gorm
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPrintPanel.gorm/data.classes
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPrintPanel.gorm/data.info
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPrintPanel.gorm/objects.gorm
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSSpellPanel.gorm/data.classes
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSSpellPanel.gorm/objects.gorm
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/Localizable.strings
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Esperanto.lproj/Localizable.strings
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/German.lproj/Localizable.strings
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Info-gnustep.plist
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Italian.lproj/Localizable.strings
+System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Lojban.lproj/Localizable.strings
 System/Library/Libraries/libgnustep-gui.so
 System/Library/Libraries/libgnustep-gui.so.%%BASEVERSION%%
 System/Library/Libraries/libgnustep-gui.so.%%VERSION%%
@@ -672,16 +688,19 @@ System/Tools/set_show_service
 @dirrm System/Library/Services/GSspell.service
 @dirrm System/Library/PostScript/PPD/English.lproj
 @dirrm System/Library/PostScript/PPD
-@dirrm System/Library/Libraries/Resources/gnustep-gui/Lojban.lproj
-@dirrm System/Library/Libraries/Resources/gnustep-gui/Italian.lproj
-@dirrm System/Library/Libraries/Resources/gnustep-gui/German.lproj
-@dirrm System/Library/Libraries/Resources/gnustep-gui/Esperanto.lproj
-@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSSpellPanel.gorm
-@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPrintPanel.gorm
-@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSPageLayout.gorm
-@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj/GSDataLinkPanel.gorm
-@dirrm System/Library/Libraries/Resources/gnustep-gui/English.lproj
-@dirrm System/Library/Libraries/Resources/gnustep-gui
+@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Lojban.lproj
+@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Italian.lproj
+@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/German.lproj
+@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Esperanto.lproj
+@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSSpellPanel.gorm
+@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPrintPanel.gorm
+@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSPageLayout.gorm
+@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj/GSDataLinkPanel.gorm
+@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/English.lproj
+@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources
+@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%
+@dirrm System/Library/Libraries/gnustep-gui/Versions
+@dirrm System/Library/Libraries/gnustep-gui
 @dirrm System/Library/Headers/gnustep/gui
 @dirrm System/Library/Headers/GNUstepGUI
 @dirrm System/Library/Headers/Cocoa
