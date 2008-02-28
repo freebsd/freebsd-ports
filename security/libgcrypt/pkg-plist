@@ -1,8 +1,22 @@
+bin/dumpsexp
 bin/libgcrypt-config
 include/gcrypt.h
 include/gcrypt-module.h
 lib/libgcrypt.a
 lib/libgcrypt.la
 lib/libgcrypt.so
-lib/libgcrypt.so.13
+lib/libgcrypt.so.15
 share/aclocal/libgcrypt.m4
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.LIB
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.SVN
+%%PORTDOCS%%%%DOCSDIR%%/README.apichanges
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
