@@ -19,6 +19,10 @@ LIB_DEPENDS=	dvbpsi.4:${PORTSDIR}/multimedia/libdvbpsi
 LIB_DEPENDS+=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 .endif
 
+BROKEN=		Does not build with current libdvbpsi
+DEPRECATED=	Development has been moved to multimedia/vlc
+EXPIRATION_DATE=	2008-04-28
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_RC_SUBR=	yes
