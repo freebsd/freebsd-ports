@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -14,8 +15,8 @@ PKGNAMEPREFIX=	claws-mail-
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Clamav plugin for claws-mail
 
-BUILD_DEPENDS=	claws-mail>=3.3.0:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.3.0:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
 LIB_DEPENDS=	clamav.3:${PORTSDIR}/security/clamav
 
 USE_GMAKE=	yes

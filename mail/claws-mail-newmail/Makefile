@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	claws-mail-
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	Message header summary logging plugin for claws-mail
 
-BUILD_DEPENDS=	claws-mail>=3.3.0:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.3.0:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_XLIB=	yes

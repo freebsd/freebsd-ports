@@ -7,7 +7,7 @@
 
 PORTNAME=	rssyl
 PORTVERSION=	0.18
-PORTEPOCH=	2
+PORTEPOCH=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -16,8 +16,8 @@ MAINTAINER=	c0rn@o2.pl
 COMMENT=	A RSS/Atom plugin for claws-mail
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	claws-mail>=3.3.0:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.3.0:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
 
 USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:261
