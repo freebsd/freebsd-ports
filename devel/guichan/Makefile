@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	guichan
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	devel games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://guichan.googlecode.com/files/
 
 MAINTAINER=	mva@sysfault.org
 COMMENT=	A small, efficient C++ GUI library designed for games
