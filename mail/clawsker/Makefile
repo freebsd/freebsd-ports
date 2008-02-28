@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clawsker
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/tools/
 
@@ -23,6 +23,8 @@ USE_GETTEXT=	yes
 MAN1=		clawsker.1
 
 PLIST_FILES=	bin/clawsker \
-		share/locale/es/LC_MESSAGES/clawsker.mo
+		share/locale/es/LC_MESSAGES/clawsker.mo \
+		share/locale/sr/LC_MESSAGES/clawsker.mo \
+		share/locale/sr@latin/LC_MESSAGES/clawsker.mo
 
 .include <bsd.port.mk>
