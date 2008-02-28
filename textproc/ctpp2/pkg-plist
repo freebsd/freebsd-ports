@@ -1,0 +1,52 @@
+include/ctpp2/CDT.hpp
+include/ctpp2/CTPP2.hpp
+include/ctpp2/CTPP2CharIterator.hpp
+include/ctpp2/CTPP2Compiler.hpp
+include/ctpp2/CTPP2FileSourceLoader.hpp
+include/ctpp2/CTPP2GlobalDefines.h
+include/ctpp2/CTPP2JSONParser.hpp
+include/ctpp2/CTPP2JSONFileParser.hpp
+include/ctpp2/CTPP2Parser.hpp
+include/ctpp2/CTPP2Syntax.h
+include/ctpp2/CTPP2SourceLoader.hpp
+include/ctpp2/CTPP2SysHeaders.h
+include/ctpp2/CTPP2Types.h
+include/ctpp2/CTPPException.hpp
+include/ctpp2/CTPPParserException.hpp
+include/ctpp2/FileOutputCollector.hpp
+include/ctpp2/OutputCollector.hpp
+include/ctpp2/StaticData.hpp
+include/ctpp2/StaticText.hpp
+include/ctpp2/SyscallFactory.hpp
+include/ctpp2/StringOutputCollector.hpp
+include/ctpp2/Types.h
+include/ctpp2/VM.hpp
+include/ctpp2/VMArgStack.hpp
+include/ctpp2/VMCodeStack.hpp
+include/ctpp2/VMDumper.hpp
+include/ctpp2/VMException.hpp
+include/ctpp2/VMExecutable.hpp
+include/ctpp2/VMFileLoader.hpp
+include/ctpp2/VMInstruction.hpp
+include/ctpp2/VMLoader.hpp
+include/ctpp2/VMMemoryCore.hpp
+include/ctpp2/VMOpcodeCollector.hpp
+include/ctpp2/VMOpcodes.h
+include/ctpp2/VMSTDLib.hpp
+include/ctpp2/VMStackException.hpp
+include/ctpp2/VMSyscall.hpp
+lib/libctpp2.so
+lib/libctpp2.so.2
+lib/libctpp2.so.2.0.4
+lib/libctpp2-st.a
+bin/ctpp2vm
+bin/ctpp2c
+bin/ctpp2i
+bin/ctpp2json
+share/locale/ru_RU.KOI8-R/LC_MESSAGES/ctpp2.mo
+share/locale/ru_RU.CP1251/LC_MESSAGES/ctpp2.mo
+@dirrmtry share/locale/ru_RU.KOI8-R/LC_MESSAGES
+@dirrmtry share/locale/ru_RU.KOI8-R
+@dirrmtry share/locale/ru_RU.CP1251/LC_MESSAGES
+@dirrmtry share/locale/ru_RU.CP1251
+@dirrm include/ctpp2

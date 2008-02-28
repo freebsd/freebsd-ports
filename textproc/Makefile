@@ -68,6 +68,7 @@
     SUBDIR += csv2xml
     SUBDIR += csvdiff
     SUBDIR += ctpp
+    SUBDIR += ctpp2
     SUBDIR += cwtext
     SUBDIR += cy-aspell
     SUBDIR += da-aspell
