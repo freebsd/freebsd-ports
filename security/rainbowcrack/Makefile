@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	http://freshdns.net/rainbowcrack/
 
-MAINTAINER=	bryan@freshdns.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hash cracker that precomputes plaintext - ciphertext pairs in advance
 
 .include <bsd.port.pre.mk>
