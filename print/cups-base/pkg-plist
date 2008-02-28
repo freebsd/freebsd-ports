@@ -1654,34 +1654,16 @@ share/locale/zh_TW/cups_zh_TW.po
 @dirrm %%DOCSDIR%%/da
 @dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
-@exec mkdir -p %D/%%DATADIR%%/templates/da
-@exec mkdir -p %D/%%DATADIR%%/templates/fi
-@exec mkdir -p %D/%%DATADIR%%/templates/ko
-@exec mkdir -p %D/%%DATADIR%%/templates/nl
-@exec mkdir -p %D/%%DATADIR%%/templates/no
-@exec mkdir -p %D/%%DATADIR%%/templates/pt
-@exec mkdir -p %D/%%DATADIR%%/templates/pt_BR
-@exec mkdir -p %D/%%DATADIR%%/templates/ru
-@exec mkdir -p %D/%%DATADIR%%/templates/zh
 @dirrm %%DATADIR%%/templates/zh_TW
-@dirrm %%DATADIR%%/templates/zh
-@dirrm %%DATADIR%%/templates/ru
 @dirrm %%DATADIR%%/templates/sv
-@dirrm %%DATADIR%%/templates/pt_BR
-@dirrm %%DATADIR%%/templates/pt
 @dirrm %%DATADIR%%/templates/pl
-@dirrm %%DATADIR%%/templates/no
-@dirrm %%DATADIR%%/templates/nl
-@dirrm %%DATADIR%%/templates/ko
 @dirrm %%DATADIR%%/templates/ja
 @dirrm %%DATADIR%%/templates/it
 @dirrm %%DATADIR%%/templates/he
 @dirrm %%DATADIR%%/templates/fr
-@dirrm %%DATADIR%%/templates/fi
 @dirrm %%DATADIR%%/templates/et
 @dirrm %%DATADIR%%/templates/es
 @dirrm %%DATADIR%%/templates/de
-@dirrm %%DATADIR%%/templates/da
 @dirrm %%DATADIR%%/templates
 @exec  mkdir -p %D/%%DATADIR%%/profiles
 @dirrm %%DATADIR%%/profiles
