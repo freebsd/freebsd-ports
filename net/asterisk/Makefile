@@ -22,7 +22,7 @@ LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		curl.4:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-ONLY_FOR_ARCHS=	i386 sparc64 amd64
+ONLY_FOR_ARCHS=	i386 sparc64 amd64 powerpc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323" \
