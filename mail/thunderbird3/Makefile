@@ -3,12 +3,12 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/mail/thunderbird/Makefile,v 1.25 2007/04/20 14:29:23 ahze Exp $
+#   $MCom: ports/mail/thunderbird/Makefile,v 1.28 2008/01/10 17:58:39 mezz Exp $
 #
 
 PORTNAME=	thunderbird
 DISTVERSION=	2.0.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${DISTVERSION}/source
@@ -27,10 +27,11 @@ USE_GMAKE=	yes
 USE_GCC=	3.4+
 WANT_PERL=	yes
 
-MOZ_EXTENSIONS=	wallet,spellcheck,xmlextras,webservices
+MOZ_EXTENSIONS=	wallet,spellcheck,xmlextras,webservices,auth,transformiix
 MOZ_PROTOCOLS=	http,file,jar,viewsource,res,data
 MOZ_GRAPHICS=	default,-xbm
-MOZ_OPTIONS=	--enable-single-profile --disable-profilesharing	\
+MOZ_OPTIONS=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
+		--enable-single-profile --disable-profilesharing \
 		--enable-application=mail --enable-official-branding
 MOZ_MK_OPTIONS=	MOZ_MOZ_THUNDERBIRD=1
 MOZ_EXPORT=	MOZ_THUNDERBIRD=1
