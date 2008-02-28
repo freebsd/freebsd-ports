@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m17n-docs
-PORTVERSION=	1.4.0a
+PORTVERSION=	1.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/
 
@@ -26,6 +26,7 @@ MAN3=		m17nCharacter.3m17n \
 		m17nDebug.3m17n \
 		m17nDraw.3m17n \
 		m17nError.3m17n \
+		m17nFLT.3m17n \
 		m17nFace.3m17n \
 		m17nFont.3m17n \
 		m17nFontset.3m17n \
@@ -59,6 +60,8 @@ MAN3=		m17nCharacter.3m17n \
 		mchartable.3m17n \
 		mchartable_lookup.3m17n \
 		mchartable_map.3m17n \
+		mchartable_max_char.3m17n \
+		mchartable_min_char.3m17n \
 		mchartable_range.3m17n \
 		mchartable_set.3m17n \
 		mchartable_set_range.3m17n \
@@ -90,6 +93,7 @@ MAN3=		m17nCharacter.3m17n \
 		mdebug_dump_all_symbols.3m17n \
 		mdebug_dump_chartab.3m17n \
 		mdebug_dump_face.3m17n \
+		mdebug_dump_flt.3m17n \
 		mdebug_dump_font.3m17n \
 		mdebug_dump_fontset.3m17n \
 		mdebug_dump_im.3m17n \
@@ -119,6 +123,11 @@ MAN3=		m17nCharacter.3m17n \
 		mface_put_hook.3m17n \
 		mface_put_prop.3m17n \
 		mface_update.3m17n \
+		mflt_coverage.3m17n \
+		mflt_find.3m17n \
+		mflt_get.3m17n \
+		mflt_name.3m17n \
+		mflt_run.3m17n \
 		mfont.3m17n \
 		mfont_check.3m17n \
 		mfont_close.3m17n \
