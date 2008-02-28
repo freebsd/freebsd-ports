@@ -9,7 +9,7 @@
 PORTNAME=	openclipart
 PORTVERSION=	0.18
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.openclipart.org/downloads/${PORTVERSION}/
+MASTER_SITES=	http://download.openclipart.org/downloads/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}${SVGPNG}
 
 MAINTAINER=	multimedia@FreeBSD.org
