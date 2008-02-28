@@ -18,6 +18,8 @@ COMMENT=	W3C's XHTML 1.1 DTD
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
+BROKEN=		Checksum mismatch
+
 LATEST_LINK=	xhtml-11
 WRKSRC=		${WRKDIR}/xhtml11-20010531
 NO_BUILD=	yes
