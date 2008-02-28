@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	langspec
-PORTVERSION=	2.0
+PORTVERSION=	3.0
 CATEGORIES=	java
-MASTER_SITES=	ftp://ftp.javasoft.com/docs/specs/ \
-		http://java.sun.com/docs/books/jls/second_edition/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.html
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	http://java.sun.com/docs/books/jls/download/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	The Java Language Specification
 
+USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 PORTDOCS=	*
