@@ -13,7 +13,7 @@ DISTNAME=	ja-${PORTNAME}-${PORTVERSION}
 DISTFILES=	td${PORTVERSION:S/.//}s.lzh \
 		td${PORTVERSION:S/.//}m.lzh
 
-MAINTAINER=	rewsirow@ff.iij4u.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tells you what day today is
 
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha \

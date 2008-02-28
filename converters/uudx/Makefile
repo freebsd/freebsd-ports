@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.vector.co.jp/pack/dos/util/bin/conv/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.lzh
 
-MAINTAINER=	rewsirow@ff.iij4u.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extractor from uuencoded files
 
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
