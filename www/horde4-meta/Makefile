@@ -32,7 +32,8 @@ OPTIONS=	IMP "IMAP Webmail System" on	\
 		VACATION "Vacation & Auto Respond" off	\
 		TREAN "Bookmark Manager" off	\
 		NIC "Network Monitor" off	\
-		ANSEL "Photo Gallery" off
+		ANSEL "Photo Gallery" off	\
+		WHUPS "Bug Tracking/Ticket System" off
 
 .include <bsd.port.pre.mk>
 
@@ -96,6 +97,10 @@ RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/nic/status.php:${PORTSDIR}/net-mgmt/hord
 
 .if defined(WITH_ANSEL)
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/ansel/gallery.php:${PORTSDIR}/www/horde-ansel
+.endif
+
+.if defined(WITH_WHUPS)
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/whups/index.php:${PORTSDIR}/devel/horde-whups
 .endif
 
 post-configure:
