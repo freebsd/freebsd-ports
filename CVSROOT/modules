@@ -1694,6 +1694,7 @@ ctemplate	ports/www/ctemplate
 cthumb		ports/graphics/cthumb
 ctorrent	ports/net-p2p/ctorrent
 ctpp		ports/textproc/ctpp
+ctpp2		ports/textproc/ctpp2
 ctrace		ports/net/ctrace
 ctris		ports/games/ctris
 ctrlproxy	ports/irc/ctrlproxy
