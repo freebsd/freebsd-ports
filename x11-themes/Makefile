@@ -113,7 +113,6 @@
     SUBDIR += gtk-qn-x11-theme
     SUBDIR += gtk-qnxtheme
     SUBDIR += gtk-qt-engine
-    SUBDIR += gtk-smooth-engine
     SUBDIR += gtk-xfce-engine
     SUBDIR += gtk-zenith-theme
     SUBDIR += gtkbe
@@ -126,7 +125,6 @@
     SUBDIR += icons-human-azul
     SUBDIR += icons-tango
     SUBDIR += icons-tango-extras
-    SUBDIR += indubstrial
     SUBDIR += irssi-themes
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea

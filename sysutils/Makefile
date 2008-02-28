@@ -69,7 +69,6 @@
     SUBDIR += cciss_vol_status
     SUBDIR += ccze
     SUBDIR += cdargs
-    SUBDIR += cdbakeoven
     SUBDIR += cdbkup
     SUBDIR += cdf
     SUBDIR += cdircmp

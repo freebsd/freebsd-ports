@@ -3375,3 +3375,9 @@ net-mgmt/netsaint-plugins||2008-02-27|Has expired: Now developed as Nagios, see 
 benchmarks/tsung||2008-02-27|Has expired: "fails to install"
 games/ggo||2008-02-27|Has expired: developer's focus have moved elsewhere
 mail/claws-mail-etpan_privacy||2008-02-27|Has expired: no longer supported by developers
+x11-themes/indubstrial||2008-02-28|Has expired: yes
+x11-themes/gtk-smooth-engine||2008-02-28|Has expired: Redundant port (now included in gtk-engines), no release since 2005
+security/amavis-perl||2008-02-28|Has expired: depends on misc/compat3x, which has security problems
+sysutils/cdbakeoven||2008-02-28|Has expired: Abandonware
+net/gnu-finger||2008-02-28|Has expired: no active development and known security vulnerabilities.
+misc/seizedesktop||2008-02-28|Has expired: development stalled for years, outdated, unmaintained

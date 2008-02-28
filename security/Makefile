@@ -15,7 +15,6 @@
     SUBDIR += aimsniff
     SUBDIR += altivore
     SUBDIR += amap
-    SUBDIR += amavis-perl
     SUBDIR += amavis-stats
     SUBDIR += amavisd
     SUBDIR += amavisd-milter
