@@ -8,8 +8,10 @@
 
 PORTNAME=	vshnu
 PORTVERSION=	1.0300
+PORTREVISION=	1
 CATEGORIES=	shells perl5
-MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/vshnu/
+MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/${PORTNAME}/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	New Visual Shell
