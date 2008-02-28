@@ -16107,6 +16107,7 @@ tolua++		ports/lang/tolua++
 tolua4		ports/lang/tolua4
 tomatoes	ports/games/tomatoes
 tomboy		ports/deskutils/tomboy
+tomcat-native	ports/www/tomcat-native
 tomcat41	ports/www/tomcat41
 tomcat55	ports/www/tomcat55
 tomcat6		ports/www/tomcat6
