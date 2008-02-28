@@ -12,9 +12,9 @@
 PORTNAME=	figlet
 PORTVERSION=	2.2.1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.fasta.fh-dortmund.de/mirror/gentoo/distfiles/ \
-		http://ftp.plig.org/pub/figlet/program/unix/ \
-		ftp://ftp.figlet.org/pub/figlet/program/unix/
+MASTER_SITES=	ftp://ftp.figlet.org/pub/figlet/program/unix/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	figlet221
 
 MAINTAINER=	obrien@FreeBSD.org
