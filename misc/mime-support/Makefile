@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	mime-support
-PORTVERSION=	3.40.1
+PORTVERSION=	3.40.1.1
 PORTREVISION=	0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
-DISTNAME=	${PORTNAME}_${PORTVERSION:C/(.*)\.([^.])/\1-\2/}
+DISTNAME=	${PORTNAME}_${PORTVERSION:C/([0-9]*\.[0-9]*)\.(.*)/\1-\2/}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	MIME Media Types list
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([0-9]*\.[0-9]*).*/\1/}
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/run-mailcap etc/mime.types
