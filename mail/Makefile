@@ -466,6 +466,7 @@
     SUBDIR += postfix21
     SUBDIR += postfix22
     SUBDIR += postfix23
+    SUBDIR += postfix24
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += postilion
