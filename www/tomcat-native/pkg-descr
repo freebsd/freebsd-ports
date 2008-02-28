@@ -1,0 +1,14 @@
+Tomcat can use the Apache Portable Runtime to provide superior scalability,
+performance, and better integration with native server technologies.
+APR has many uses, including access to advanced IO functionality (such as
+sendfile, epoll and OpenSSL), OS level functionality (random number
+generation, system status, etc), and native process handling (shared memory,
+NT pipes and Unix sockets).
+
+These features allows making Tomcat a general purposewebserver, will
+enable much better integration with other native web technologies, and
+overall make Java much more viable as a full fledged webserver platform
+rather than simply a backend focused technology.
+
+- Alex Dupre
+ale@FreeBSD.org

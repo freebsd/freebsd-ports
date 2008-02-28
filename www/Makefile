@@ -1237,6 +1237,7 @@
     SUBDIR += tikiwiki
     SUBDIR += tinymce
     SUBDIR += tinyproxy
+    SUBDIR += tomcat-native
     SUBDIR += tomcat41
     SUBDIR += tomcat55
     SUBDIR += tomcat6
