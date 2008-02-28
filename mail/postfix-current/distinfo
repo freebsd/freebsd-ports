@@ -1,3 +1,3 @@
-MD5 (postfix/postfix-2.5.0-RC2.tar.gz) = 5ff61333b257756cb6e4dd9c3af22348
-SHA256 (postfix/postfix-2.5.0-RC2.tar.gz) = cdccd1bce5f51d95c206e399a19334741462551bc050b78696343bc7599d40ce
-SIZE (postfix/postfix-2.5.0-RC2.tar.gz) = 3152038
+MD5 (postfix/postfix-2.6-20080221.tar.gz) = bfec2e9cbeeaef1a5d55fe8f4c654498
+SHA256 (postfix/postfix-2.6-20080221.tar.gz) = 5fc6afcf958fb3942dfa42648d03dbd4b2c83f099b872bce3f1d44e888b9cdc6
+SIZE (postfix/postfix-2.6-20080221.tar.gz) = 3141991
