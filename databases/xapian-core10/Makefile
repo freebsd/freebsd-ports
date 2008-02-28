@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	miwi
 MAINTAINER=	jean-francois.dockes@wanadoo.fr
 COMMENT=	A probabilistic text search database engine
 
+BROKEN=		Does not fetch
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
