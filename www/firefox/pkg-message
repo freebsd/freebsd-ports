@@ -10,7 +10,7 @@ setup public key authentication to "remote_host":
 ssh-keygen -t dsa
 cat ~/.ssh/id_dsa.pub | ssh remote_host "cat >> .ssh/authorized_keys"
 
-The SSH sever on remote_host must allow pub key authentication.
+The SSH server on remote_host must allow pub key authentication.
 
 ======================================================================
 
