@@ -17,6 +17,8 @@ COMMENT=	A simple console menu program
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
+BROKEN=		Does not fetch
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/pdmenu
