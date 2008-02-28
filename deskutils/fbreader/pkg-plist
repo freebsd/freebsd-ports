@@ -16,6 +16,7 @@ share/FBReader/formats/xhtml/xhtml-symbol.ent
 share/FBReader/help/MiniHelp.en.fb2
 share/FBReader/help/MiniHelp.fi.fb2
 share/FBReader/help/MiniHelp.fr.fb2
+share/FBReader/help/MiniHelp.id.fb2
 share/FBReader/help/MiniHelp.it.fb2
 share/FBReader/help/MiniHelp.ru.fb2
 share/FBReader/help/MiniHelp.sv.fb2
@@ -23,6 +24,7 @@ share/FBReader/help/MiniHelp.uk.fb2
 share/FBReader/resources/en.xml
 share/FBReader/resources/fi.xml
 share/FBReader/resources/fr.xml
+share/FBReader/resources/id.xml
 share/FBReader/resources/it.xml
 share/FBReader/resources/ru.xml
 share/FBReader/resources/sv.xml
@@ -90,6 +92,7 @@ share/zlibrary/languagePatterns.zip
 share/zlibrary/resources/en.xml
 share/zlibrary/resources/fi.xml
 share/zlibrary/resources/fr.xml
+share/zlibrary/resources/id.xml
 share/zlibrary/resources/it.xml
 share/zlibrary/resources/ru.xml
 share/zlibrary/resources/sv.xml
