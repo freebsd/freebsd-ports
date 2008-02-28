@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnustep-back
-PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -35,6 +34,7 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_XLIB=	yes
 
+RESTRICTED=	GPL3
 MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${X11BASE}/include"
 BACKVERSION=		${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 BREAKS_IF_PEDANTIC=	yes
@@ -49,8 +49,8 @@ PLIST_SUB+=		BACK=xdps-${BACKVERSION}
 PLIST_SUB+=		USE_XLIB="@comment "
 BACK_SUFFIX?=		-xdps
 CONFLICTS?=		gunstep-back-0.* gunstep-back-art-0.* gunstep-back-cairo-0.*
-#ADDITIONAL_INCLUDE_DIRS+=	-I${X11BASE}/include
-#ADDITIONAL_LDFLAGS+=	-L${X11BASE}/lib
+ADDITIONAL_INCLUDE_DIRS+=	-I${X11BASE}/include
+ADDITIONAL_LDFLAGS+=	-L${X11BASE}/lib
 .elif defined(WITH_GNUSTEP_LIBART)
 LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art
