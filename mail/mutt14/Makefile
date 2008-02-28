@@ -8,7 +8,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.4.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -119,7 +119,7 @@ CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .endif
 .if !defined(WITHOUT_GSSAPI)
-.if exists(${LOCALBASE}/bin/krb5-config)
+.if exists(${LOCALBASE}/bin/gss-client)
 LIB_DEPENDS+=		gssapi_krb5:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-gss=${LOCALBASE}
 .elif (defined(MAKE_KERBEROS5) && (${OSVERSION} > 500105)) || exists(/usr/lib/libkrb5.a)
