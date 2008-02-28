@@ -452,6 +452,7 @@
     SUBDIR += hgsvn
     SUBDIR += highlighterkit
     SUBDIR += horde-chora
+    SUBDIR += horde-whups
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
     SUBDIR += hptools
