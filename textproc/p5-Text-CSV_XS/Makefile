@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Text-CSV_XS
-PORTVERSION=	0.23
+PORTVERSION=	0.34
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Text
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ache@FreeBSD.org
-COMMENT=	Composition and decomposition of comma-separated values
+COMMENT=	Comma-separated values manipulation routines
 
 PERL_CONFIGURE=	yes
 
