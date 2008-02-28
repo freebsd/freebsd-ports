@@ -14,6 +14,8 @@ DISTNAME=	RakNet
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Networking API that provides reliable UDP primarily for online games
 
+BROKEN=		Checksum mismatch
+
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
 USE_DOS2UNIX=	yes
