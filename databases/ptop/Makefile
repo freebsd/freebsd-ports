@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	ptop
-DISTVERSION=	3.6.1b2
+DISTVERSION=	3.6.1b4
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1538/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1654/
 
 MAINTAINER=	sunghyuk@gmail.com
 COMMENT=	Top clone for postgresql
 
-WRKSRC=	${WRKDIR}/ptop-3.6.1-beta2
+WRKSRC=	${WRKDIR}/ptop-3.6.1-beta4
 
 MAN1=	ptop.1
 USE_GMAKE=	yes
