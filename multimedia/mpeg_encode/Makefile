@@ -15,6 +15,8 @@ DISTNAME=	${PKGNAME}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UCB's MPEG-I video stream encoder
 
+BROKEN=		Checksum mismatch
+
 MAN1=		mpeg_encode.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
