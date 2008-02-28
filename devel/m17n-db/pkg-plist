@@ -29,6 +29,7 @@ share/m17n/CASE-MAPPING.tab
 share/m17n/CASE-S.tab
 share/m17n/CASED.tab
 share/m17n/CATEGORY.tab
+share/m17n/CHAM-GENERIC.flt
 share/m17n/CHARSET.tbl
 share/m17n/CNS-1.map
 share/m17n/CNS-2.map
@@ -40,6 +41,7 @@ share/m17n/CNS-7.map
 share/m17n/CNS-F.map
 share/m17n/CODING.tbl
 share/m17n/COMBINE.tab
+share/m17n/COMBINING.flt
 share/m17n/CP10007.map
 share/m17n/CP1250.map
 share/m17n/CP1251.map
@@ -189,8 +191,10 @@ share/m17n/bs.lnm
 share/m17n/byn.lnm
 share/m17n/ca.lnm
 share/m17n/cjk-util.mim
+share/m17n/cmc-kbd.mim
 share/m17n/cs.lnm
 share/m17n/cy.lnm
+share/m17n/da-post.mim
 share/m17n/da.lnm
 share/m17n/de.lnm
 share/m17n/default.fst
@@ -237,6 +241,7 @@ share/m17n/icons/bn-itrans.png
 share/m17n/icons/bn-unijoy.png
 share/m17n/icons/bo-wylie.png
 share/m17n/icons/bopo-kbd.png
+share/m17n/icons/cmc-kbd.png
 share/m17n/icons/dv-phonetic.png
 share/m17n/icons/el-kbd.png
 share/m17n/icons/en-ispell.png
@@ -244,6 +249,7 @@ share/m17n/icons/fa-isiri.png
 share/m17n/icons/gu-itrans.png
 share/m17n/icons/he-kbd.png
 share/m17n/icons/hi-itrans.png
+share/m17n/icons/hi-typewriter.png
 share/m17n/icons/hr-kbd.png
 share/m17n/icons/hy-kbd.png
 share/m17n/icons/ja-anthy.png
@@ -281,6 +287,7 @@ share/m17n/icons/th-pattachote.png
 share/m17n/icons/th-tis820-2.png
 share/m17n/icons/th-tis820.png
 share/m17n/icons/unicode.png
+share/m17n/icons/vi-tcvn.png
 share/m17n/icons/vi-telex.png
 share/m17n/icons/vi-viqr.png
 share/m17n/icons/vi-vni.png
@@ -393,6 +400,8 @@ share/m17n/ur.lnm
 share/m17n/uz.lnm
 share/m17n/uz_Arab.lnm
 share/m17n/uz_Latn.lnm
+share/m17n/vi-base.mim
+share/m17n/vi-tcvn.mim
 share/m17n/vi-telex.mim
 share/m17n/vi-viqr.mim
 share/m17n/vi-vni.mim
