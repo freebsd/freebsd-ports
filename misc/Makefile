@@ -427,7 +427,6 @@
     SUBDIR += rtfm
     SUBDIR += ruby-vpim
     SUBDIR += salias
-    SUBDIR += seizedesktop
     SUBDIR += seq2
     SUBDIR += shared-mime-info
     SUBDIR += shc

@@ -369,7 +369,6 @@ amap		ports/security/amap
 amarok		ports/audio/amarok
 amarok-fs	ports/audio/amarok-fs
 amaterus	ports/x11-wm/amaterus
-amavis-perl	ports/security/amavis-perl
 amavis-stats	ports/security/amavis-stats
 amavisd		ports/security/amavisd
 amavisd-milter	ports/security/amavisd-milter
@@ -1230,7 +1229,6 @@ cd-discid	ports/audio/cd-discid
 cd2mp3		ports/audio/cd2mp3
 cdargs		ports/sysutils/cdargs
 cdb		ports/databases/cdb
-cdbakeoven	ports/sysutils/cdbakeoven
 cdbkup		ports/sysutils/cdbkup
 cdcat		ports/deskutils/cdcat
 cdcl		ports/science/cdcl
@@ -4068,7 +4066,6 @@ gnosamba	ports/net/gnosamba
 gnotepad+	ports/editors/gnotepad+
 gnotime		ports/deskutils/gnotime
 gnowavcut	ports/audio/gnowavcut
-gnu-finger	ports/net/gnu-finger
 gnu-radius	ports/net/gnu-radius
 gnu-regexp	ports/java/gnu-regexp
 gnu-watch	ports/misc/gnu-watch
@@ -4423,7 +4420,6 @@ gtk-qt-engine	ports/x11-themes/gtk-qt-engine
 gtk-send-pr	ports/sysutils/gtk-send-pr
 gtk-sharp10	ports/x11-toolkits/gtk-sharp10
 gtk-sharp20	ports/x11-toolkits/gtk-sharp20
-gtk-smooth-engine	ports/x11-themes/gtk-smooth-engine
 gtk-theme-switch	ports/x11/gtk-theme-switch
 gtk-theme-switch2	ports/x11/gtk-theme-switch2
 gtk-themepreview	ports/x11/gtk-themepreview
@@ -4983,7 +4979,6 @@ impress		ports/editors/impress
 imwheel		ports/x11/imwheel
 inadyn		ports/dns/inadyn
 indexme		ports/www/indexme
-indubstrial	ports/x11-themes/indubstrial
 ines		ports/emulators/ines
 info2html	ports/textproc/info2html
 info2man	ports/textproc/info2man
@@ -14992,7 +14987,6 @@ sedsed		ports/devel/sedsed
 see		ports/lang/see
 see-devel	ports/lang/see-devel
 seejpeg		ports/graphics/seejpeg
-seizedesktop	ports/misc/seizedesktop
 selectwm	ports/x11-wm/selectwm
 selenium	ports/www/selenium
 semantic	ports/devel/semantic

@@ -180,7 +180,6 @@
     SUBDIR += gnome-vnc
     SUBDIR += gnometelnet
     SUBDIR += gnosamba
-    SUBDIR += gnu-finger
     SUBDIR += gnu-radius
     SUBDIR += gofish
     SUBDIR += googolplex
