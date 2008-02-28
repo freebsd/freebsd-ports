@@ -1,5 +1,6 @@
 %%HORDIR%%/acl.php
 %%HORDIR%%/attachment.php
+%%HORDIR%%/cache.php
 %%HORDIR%%/compose.php
 %%HORDIR%%/config/.htaccess
 %%HORDIR%%/config/conf.xml
@@ -12,32 +13,93 @@
 %%HORDIR%%/config/servers.php.dist
 %%HORDIR%%/config/trailer.txt.dist
 %%HORDIR%%/contacts.php
-%%HORDIR%%/expand.php
 %%HORDIR%%/fetchmail.php
 %%HORDIR%%/fetchmailprefs.php
 %%HORDIR%%/filterprefs.php
 %%HORDIR%%/folders.php
+%%HORDIR%%/imple.php
 %%HORDIR%%/index.php
+%%HORDIR%%/js/ContactAutoComplete.js
+%%HORDIR%%/js/KeyNavList.js
+%%HORDIR%%/js/SpellChecker.js
+%%HORDIR%%/js/acl.js
+%%HORDIR%%/js/addressesBlocks.js
+%%HORDIR%%/js/builder.js
+%%HORDIR%%/js/compose.js
+%%HORDIR%%/js/contacts.js
+%%HORDIR%%/js/controls.js
+%%HORDIR%%/js/dragdrop.js
+%%HORDIR%%/js/effects.js
+%%HORDIR%%/js/fetchmailprefs.js
+%%HORDIR%%/js/folders.js
 %%HORDIR%%/js/ieEscGuard.js
+%%HORDIR%%/js/login.js
+%%HORDIR%%/js/mailbox.js
+%%HORDIR%%/js/message.js
+%%HORDIR%%/js/popup.js
+%%HORDIR%%/js/prototype.js
+%%HORDIR%%/js/redbox.js
+%%HORDIR%%/js/scriptaculous.js
+%%HORDIR%%/js/search.js
+%%HORDIR%%/js/slider.js
+%%HORDIR%%/js/src/ContactAutoComplete.js
+%%HORDIR%%/js/src/KeyNavList.js
+%%HORDIR%%/js/src/SpellChecker.js
+%%HORDIR%%/js/src/acl.js
+%%HORDIR%%/js/src/addressesBlocks.js
+%%HORDIR%%/js/src/builder.js
+%%HORDIR%%/js/src/compose.js
+%%HORDIR%%/js/src/contacts.js
+%%HORDIR%%/js/src/controls.js
+%%HORDIR%%/js/src/dragdrop.js
+%%HORDIR%%/js/src/effects.js
+%%HORDIR%%/js/src/fetchmailprefs.js
+%%HORDIR%%/js/src/folders.js
+%%HORDIR%%/js/src/ieEscGuard.js
+%%HORDIR%%/js/src/login.js
+%%HORDIR%%/js/src/mailbox.js
+%%HORDIR%%/js/src/message.js
+%%HORDIR%%/js/src/popup.js
+%%HORDIR%%/js/src/prototype.js
+%%HORDIR%%/js/src/redbox.js
+%%HORDIR%%/js/src/scriptaculous.js
+%%HORDIR%%/js/src/search.js
+%%HORDIR%%/js/src/slider.js
+%%HORDIR%%/js/src/stripe.js
+%%HORDIR%%/js/src/tables.js
+%%HORDIR%%/js/src/unblockImages.js
+%%HORDIR%%/js/stripe.js
+%%HORDIR%%/js/tables.js
+%%HORDIR%%/js/unblockImages.js
 %%HORDIR%%/lib/.htaccess
 %%HORDIR%%/lib/Auth/imp.php
+%%HORDIR%%/lib/Block/mailbox.php
 %%HORDIR%%/lib/Block/summary.php
 %%HORDIR%%/lib/Block/tree_folders.php
 %%HORDIR%%/lib/Compose.php
 %%HORDIR%%/lib/Crypt/PGP.php
 %%HORDIR%%/lib/Crypt/SMIME.php
-%%HORDIR%%/lib/Fetchmail/imap.php
 %%HORDIR%%/lib/Fetchmail.php
+%%HORDIR%%/lib/Fetchmail/imap.php
 %%HORDIR%%/lib/Filter.php
 %%HORDIR%%/lib/Folder.php
+%%HORDIR%%/lib/IMAP.php
+%%HORDIR%%/lib/IMAP/ACL.php
+%%HORDIR%%/lib/IMAP/ACL/rfc2086.php
+%%HORDIR%%/lib/IMAP/ACL/rfc4314.php
+%%HORDIR%%/lib/IMAP/Cache.php
 %%HORDIR%%/lib/IMAP/Client.php
+%%HORDIR%%/lib/IMAP/MailboxCache.php
 %%HORDIR%%/lib/IMAP/Search.php
 %%HORDIR%%/lib/IMAP/Sort.php
 %%HORDIR%%/lib/IMAP/Thread.php
 %%HORDIR%%/lib/IMAP/Tree.php
-%%HORDIR%%/lib/IMAP.php
 %%HORDIR%%/lib/IMP.php
 %%HORDIR%%/lib/Identity/imp.php
+%%HORDIR%%/lib/Imple.php
+%%HORDIR%%/lib/Imple/ContactAutoCompleter.php
+%%HORDIR%%/lib/Imple/SpellChecker.php
+%%HORDIR%%/lib/JSON.php
 %%HORDIR%%/lib/MIME/Contents.php
 %%HORDIR%%/lib/MIME/Headers.php
 %%HORDIR%%/lib/MIME/Viewer/alternative.php
@@ -54,6 +116,7 @@
 %%HORDIR%%/lib/MIME/Viewer/plain.php
 %%HORDIR%%/lib/MIME/Viewer/related.php
 %%HORDIR%%/lib/MIME/Viewer/rfc822.php
+%%HORDIR%%/lib/MIME/Viewer/smil.php
 %%HORDIR%%/lib/MIME/Viewer/status.php
 %%HORDIR%%/lib/MIME/Viewer/tnef.php
 %%HORDIR%%/lib/MIME/Viewer/zip.php
@@ -62,25 +125,37 @@
 %%HORDIR%%/lib/Maintenance/Task/delete_attachments_monthly.php
 %%HORDIR%%/lib/Maintenance/Task/delete_sentmail_monthly.php
 %%HORDIR%%/lib/Maintenance/Task/fetchmail_login.php
+%%HORDIR%%/lib/Maintenance/Task/purge_sentmail.php
+%%HORDIR%%/lib/Maintenance/Task/purge_spam.php
 %%HORDIR%%/lib/Maintenance/Task/purge_trash.php
 %%HORDIR%%/lib/Maintenance/Task/rename_sentmail_monthly.php
 %%HORDIR%%/lib/Maintenance/Task/tos_agreement.php
 %%HORDIR%%/lib/Maintenance/imp.php
 %%HORDIR%%/lib/Message.php
 %%HORDIR%%/lib/Notification/Listener/status.php
+%%HORDIR%%/lib/Quota.php
 %%HORDIR%%/lib/Quota/command.php
-%%HORDIR%%/lib/Quota/courier.php
-%%HORDIR%%/lib/Quota/cyrus.php
+%%HORDIR%%/lib/Quota/imap.php
 %%HORDIR%%/lib/Quota/logfile.php
+%%HORDIR%%/lib/Quota/maildir.php
 %%HORDIR%%/lib/Quota/mdaemon.php
 %%HORDIR%%/lib/Quota/mercury32.php
-%%HORDIR%%/lib/Quota.php
+%%HORDIR%%/lib/Quota/sql.php
 %%HORDIR%%/lib/Search.php
+%%HORDIR%%/lib/Sentmail.php
+%%HORDIR%%/lib/Sentmail/sql.php
 %%HORDIR%%/lib/Session.php
 %%HORDIR%%/lib/Spam.php
+%%HORDIR%%/lib/SpellChecker.php
+%%HORDIR%%/lib/SpellChecker/aspell.php
+%%HORDIR%%/lib/Template.php
+%%HORDIR%%/lib/UI/Compose.php
+%%HORDIR%%/lib/UI/Mailbox.php
+%%HORDIR%%/lib/UI/Message.php
 %%HORDIR%%/lib/api.php
 %%HORDIR%%/lib/base.php
 %%HORDIR%%/lib/prefs.php
+%%HORDIR%%/lib/tests/mime_viewer_html.phpt
 %%HORDIR%%/lib/version.php
 %%HORDIR%%/locale/.htaccess
 %%HORDIR%%/locale/ar_OM/LC_MESSAGES/imp.mo
@@ -200,92 +275,72 @@
 %%HORDIR%%/po/uk_UA.po
 %%HORDIR%%/po/zh_CN.po
 %%HORDIR%%/po/zh_TW.po
-%%HORDIR%%/recompose.php
 %%HORDIR%%/redirect.php
+%%HORDIR%%/rss.php
 %%HORDIR%%/saveimage.php
 %%HORDIR%%/scripts/.htaccess
 %%HORDIR%%/scripts/Imp.reg
+%%HORDIR%%/scripts/bounce_spam.php
 %%HORDIR%%/scripts/custom_login.php
+%%HORDIR%%/scripts/sql/imp.sql
+%%HORDIR%%/scripts/upgrades/convert_vfolders.php
 %%HORDIR%%/search.php
 %%HORDIR%%/smime.php
-%%HORDIR%%/spelling.php
 %%HORDIR%%/stationery.php
 %%HORDIR%%/templates/.htaccess
-%%HORDIR%%/templates/acl/acl.inc
+%%HORDIR%%/templates/acl/acl.html
 %%HORDIR%%/templates/common-header.inc
-%%HORDIR%%/templates/compose/attachments.inc
-%%HORDIR%%/templates/compose/attachments.js
-%%HORDIR%%/templates/compose/compose.inc
-%%HORDIR%%/templates/compose/compose.js
-%%HORDIR%%/templates/compose/compose_expand.js
-%%HORDIR%%/templates/compose/encrypt_list.inc
-%%HORDIR%%/templates/compose/expand.inc
-%%HORDIR%%/templates/compose/recompose.inc
-%%HORDIR%%/templates/compose/redirect.inc
-%%HORDIR%%/templates/compose/spelling.inc
-%%HORDIR%%/templates/compose/spelling.js
-%%HORDIR%%/templates/compose/success.inc
-%%HORDIR%%/templates/contacts/contacts.inc
-%%HORDIR%%/templates/fetchmail/account_select.inc
-%%HORDIR%%/templates/fetchmail/driver_select.inc
-%%HORDIR%%/templates/fetchmail/fetchmail.inc
-%%HORDIR%%/templates/fetchmail/manage.inc
-%%HORDIR%%/templates/fetchmail/top.inc
-%%HORDIR%%/templates/filters/notactive.inc
-%%HORDIR%%/templates/filters/prefs.inc
-%%HORDIR%%/templates/folders/actions.inc
+%%HORDIR%%/templates/compose/compose.html
+%%HORDIR%%/templates/compose/redirect.html
+%%HORDIR%%/templates/compose/success.html
+%%HORDIR%%/templates/contacts/contacts.html
+%%HORDIR%%/templates/fetchmail/fetchmail.html
+%%HORDIR%%/templates/fetchmail/fetchmailprefs.html
+%%HORDIR%%/templates/filters/prefs.html
+%%HORDIR%%/templates/folders/actions.html
 %%HORDIR%%/templates/folders/folders.html
 %%HORDIR%%/templates/folders/folders_confirm.html
-%%HORDIR%%/templates/folders/foot.inc
-%%HORDIR%%/templates/folders/head.inc
-%%HORDIR%%/templates/folders/import.inc
-%%HORDIR%%/templates/javascript/addressesBlocks.js
-%%HORDIR%%/templates/javascript/folders.js
-%%HORDIR%%/templates/javascript/popup.js
-%%HORDIR%%/templates/login/login.inc
-%%HORDIR%%/templates/mailbox/actions.inc
-%%HORDIR%%/templates/mailbox/actions_deleted.inc
-%%HORDIR%%/templates/mailbox/alert.inc
-%%HORDIR%%/templates/mailbox/empty_mailbox.inc
-%%HORDIR%%/templates/mailbox/footer.inc
-%%HORDIR%%/templates/mailbox/header.inc
-%%HORDIR%%/templates/mailbox/javascript.inc
-%%HORDIR%%/templates/mailbox/legend.inc
+%%HORDIR%%/templates/folders/folders_size.html
+%%HORDIR%%/templates/folders/head.html
+%%HORDIR%%/templates/folders/import.html
+%%HORDIR%%/templates/javascript_defs.php
+%%HORDIR%%/templates/login/login.html
+%%HORDIR%%/templates/login/mobile.inc
+%%HORDIR%%/templates/login/recompose.html
+%%HORDIR%%/templates/mailbox/actions.html
+%%HORDIR%%/templates/mailbox/actions_deleted.html
+%%HORDIR%%/templates/mailbox/empty_mailbox.html
+%%HORDIR%%/templates/mailbox/header.html
 %%HORDIR%%/templates/mailbox/mailbox.html
-%%HORDIR%%/templates/mailbox/message_footers.inc
-%%HORDIR%%/templates/mailbox/message_headers.inc
-%%HORDIR%%/templates/mailbox/navbar.inc
-%%HORDIR%%/templates/mailbox/searchfolder.inc
-%%HORDIR%%/templates/menu.inc
-%%HORDIR%%/templates/message/headers.inc
-%%HORDIR%%/templates/message/javascript.inc
-%%HORDIR%%/templates/message/message.inc
-%%HORDIR%%/templates/message/navbar_actions.inc
-%%HORDIR%%/templates/message/navbar_navigate.inc
-%%HORDIR%%/templates/message/navbar_top.inc
-%%HORDIR%%/templates/pgp/import_key.inc
-%%HORDIR%%/templates/pgp/notactive.inc
-%%HORDIR%%/templates/pgp/passphrase.inc
-%%HORDIR%%/templates/pgp/pgp.inc
-%%HORDIR%%/templates/prefs/defaultsearchselect.inc
+%%HORDIR%%/templates/mailbox/message_footers.html
+%%HORDIR%%/templates/mailbox/message_headers.html
+%%HORDIR%%/templates/mailbox/navbar.html
+%%HORDIR%%/templates/mailbox/searchfolder.html
+%%HORDIR%%/templates/menu.html
+%%HORDIR%%/templates/message/message.html
+%%HORDIR%%/templates/message/navbar_actions.html
+%%HORDIR%%/templates/message/navbar_navigate.html
+%%HORDIR%%/templates/message/navbar_top.html
+%%HORDIR%%/templates/newmsg/alert.html
+%%HORDIR%%/templates/pgp/import_key.html
+%%HORDIR%%/templates/pgp/passphrase.html
+%%HORDIR%%/templates/pgp/pgp.html
 %%HORDIR%%/templates/prefs/encryptselect.inc
 %%HORDIR%%/templates/prefs/folderselect.inc
 %%HORDIR%%/templates/prefs/initialpageselect.inc
 %%HORDIR%%/templates/prefs/sentmailselect.inc
+%%HORDIR%%/templates/prefs/soundselect.inc
 %%HORDIR%%/templates/prefs/sourceselect.inc
 %%HORDIR%%/templates/prefs/spamselect.inc
 %%HORDIR%%/templates/prefs/trashselect.inc
-%%HORDIR%%/templates/quota/quota.inc
-%%HORDIR%%/templates/saveimage/saveimage.inc
-%%HORDIR%%/templates/search/fields.inc
-%%HORDIR%%/templates/search/header.inc
-%%HORDIR%%/templates/search/javascript.inc
-%%HORDIR%%/templates/search/main.inc
-%%HORDIR%%/templates/smime/import_key.inc
-%%HORDIR%%/templates/smime/notactive.inc
-%%HORDIR%%/templates/smime/passphrase.inc
-%%HORDIR%%/templates/smime/smime.inc
-%%HORDIR%%/templates/stationery/prefs.inc
+%%HORDIR%%/templates/quota/quota.html
+%%HORDIR%%/templates/rss/mailbox.rss
+%%HORDIR%%/templates/saveimage/saveimage.html
+%%HORDIR%%/templates/search/search.html
+%%HORDIR%%/templates/smime/import_key.html
+%%HORDIR%%/templates/smime/passphrase.html
+%%HORDIR%%/templates/smime/smime.html
+%%HORDIR%%/templates/stationery/stationery.html
 %%HORDIR%%/templates/thread/thread.html
 %%HORDIR%%/test.php
 %%HORDIR%%/themes/azur/screen.css
@@ -295,11 +350,17 @@
 %%HORDIR%%/themes/burntorange/screen.css
 %%HORDIR%%/themes/cherry/screen.css
 %%HORDIR%%/themes/cornflower/screen.css
+%%HORDIR%%/themes/fadetogreen/screen.css
+%%HORDIR%%/themes/feed-rss.xsl
 %%HORDIR%%/themes/gennevilliers/screen.css
 %%HORDIR%%/themes/graphics/addressbook_add.png
 %%HORDIR%%/themes/graphics/addressbook_browse.png
 %%HORDIR%%/themes/graphics/apple.png
 %%HORDIR%%/themes/graphics/attachment.png
+%%HORDIR%%/themes/graphics/audio/doorbell.wav
+%%HORDIR%%/themes/graphics/audio/gnid3.wav
+%%HORDIR%%/themes/graphics/audio/jetsndb.wav
+%%HORDIR%%/themes/graphics/audio/reminder.wav
 %%HORDIR%%/themes/graphics/audio/theetone.wav
 %%HORDIR%%/themes/graphics/compose.png
 %%HORDIR%%/themes/graphics/empty_spam.png
@@ -311,12 +372,18 @@
 %%HORDIR%%/themes/graphics/filters.png
 %%HORDIR%%/themes/graphics/folders/drafts.png
 %%HORDIR%%/themes/graphics/folders/folder.png
+%%HORDIR%%/themes/graphics/folders/folder_create.png
+%%HORDIR%%/themes/graphics/folders/folder_delete.png
+%%HORDIR%%/themes/graphics/folders/folder_edit.png
 %%HORDIR%%/themes/graphics/folders/folder_open.png
 %%HORDIR%%/themes/graphics/folders/inbox.png
 %%HORDIR%%/themes/graphics/folders/sent.png
+%%HORDIR%%/themes/graphics/folders/spam.png
 %%HORDIR%%/themes/graphics/folders/trash.png
 %%HORDIR%%/themes/graphics/imp.png
+%%HORDIR%%/themes/graphics/loading.gif
 %%HORDIR%%/themes/graphics/mail_answered.png
+%%HORDIR%%/themes/graphics/mail_clearflag.png
 %%HORDIR%%/themes/graphics/mail_deleted.png
 %%HORDIR%%/themes/graphics/mail_draft.png
 %%HORDIR%%/themes/graphics/mail_flagged.png
@@ -324,6 +391,7 @@
 %%HORDIR%%/themes/graphics/mail_personal.png
 %%HORDIR%%/themes/graphics/mail_priority_high.png
 %%HORDIR%%/themes/graphics/mail_priority_low.png
+%%HORDIR%%/themes/graphics/mail_seen.png
 %%HORDIR%%/themes/graphics/mail_unseen.png
 %%HORDIR%%/themes/graphics/manage_attachments.png
 %%HORDIR%%/themes/graphics/mime/binary.png
@@ -334,166 +402,330 @@
 %%HORDIR%%/themes/graphics/mime/itip.png
 %%HORDIR%%/themes/graphics/mime/mail.png
 %%HORDIR%%/themes/graphics/mime/text.png
+%%HORDIR%%/themes/graphics/mini-error.png
 %%HORDIR%%/themes/graphics/newmail.png
+%%HORDIR%%/themes/graphics/popdown.png
+%%HORDIR%%/themes/graphics/redbox_spinner.gif
 %%HORDIR%%/themes/graphics/shared.png
 %%HORDIR%%/themes/graphics/signed.png
 %%HORDIR%%/themes/graphics/spacer_red.png
 %%HORDIR%%/themes/graphics/spellcheck.png
 %%HORDIR%%/themes/green/screen.css
 %%HORDIR%%/themes/grey/screen.css
+%%HORDIR%%/themes/ideas/screen.css
 %%HORDIR%%/themes/lavander/screen.css
 %%HORDIR%%/themes/luc/screen.css
 %%HORDIR%%/themes/lucblue/screen.css
+%%HORDIR%%/themes/mozilla/screen.css
 %%HORDIR%%/themes/postnuke/screen.css
 %%HORDIR%%/themes/rtl.css
 %%HORDIR%%/themes/screen.css
+%%HORDIR%%/themes/silver/graphics/addressbook_add.png
+%%HORDIR%%/themes/silver/graphics/addressbook_browse.png
+%%HORDIR%%/themes/silver/graphics/apple.png
+%%HORDIR%%/themes/silver/graphics/attachment.png
+%%HORDIR%%/themes/silver/graphics/audio/doorbell.wav
+%%HORDIR%%/themes/silver/graphics/audio/gnid3.wav
+%%HORDIR%%/themes/silver/graphics/audio/jetsndb.wav
+%%HORDIR%%/themes/silver/graphics/audio/reminder.wav
+%%HORDIR%%/themes/silver/graphics/audio/theetone.wav
+%%HORDIR%%/themes/silver/graphics/compose.png
+%%HORDIR%%/themes/silver/graphics/empty_spam.png
+%%HORDIR%%/themes/silver/graphics/empty_trash.png
+%%HORDIR%%/themes/silver/graphics/encrypted.png
+%%HORDIR%%/themes/silver/graphics/expand.png
+%%HORDIR%%/themes/silver/graphics/favicon.ico
+%%HORDIR%%/themes/silver/graphics/fetchmail.png
+%%HORDIR%%/themes/silver/graphics/filters.png
+%%HORDIR%%/themes/silver/graphics/folders/drafts.png
+%%HORDIR%%/themes/silver/graphics/folders/folder.png
+%%HORDIR%%/themes/silver/graphics/folders/folder_create.png
+%%HORDIR%%/themes/silver/graphics/folders/folder_delete.png
+%%HORDIR%%/themes/silver/graphics/folders/folder_edit.png
+%%HORDIR%%/themes/silver/graphics/folders/folder_open.png
+%%HORDIR%%/themes/silver/graphics/folders/inbox.png
+%%HORDIR%%/themes/silver/graphics/folders/sent.png
+%%HORDIR%%/themes/silver/graphics/folders/spam.png
+%%HORDIR%%/themes/silver/graphics/folders/trash.png
+%%HORDIR%%/themes/silver/graphics/imp.png
+%%HORDIR%%/themes/silver/graphics/loading.gif
+%%HORDIR%%/themes/silver/graphics/mail_answered.png
+%%HORDIR%%/themes/silver/graphics/mail_clearflag.png
+%%HORDIR%%/themes/silver/graphics/mail_deleted.png
+%%HORDIR%%/themes/silver/graphics/mail_draft.png
+%%HORDIR%%/themes/silver/graphics/mail_flagged.png
+%%HORDIR%%/themes/silver/graphics/mail_forwarded.png
+%%HORDIR%%/themes/silver/graphics/mail_personal.png
+%%HORDIR%%/themes/silver/graphics/mail_priority_high.png
+%%HORDIR%%/themes/silver/graphics/mail_priority_low.png
+%%HORDIR%%/themes/silver/graphics/mail_seen.png
+%%HORDIR%%/themes/silver/graphics/mail_unseen.png
+%%HORDIR%%/themes/silver/graphics/manage_attachments.png
+%%HORDIR%%/themes/silver/graphics/mime/binary.png
+%%HORDIR%%/themes/silver/graphics/mime/compressed.png
+%%HORDIR%%/themes/silver/graphics/mime/encryption.png
+%%HORDIR%%/themes/silver/graphics/mime/html.png
+%%HORDIR%%/themes/silver/graphics/mime/image.png
+%%HORDIR%%/themes/silver/graphics/mime/itip.png
+%%HORDIR%%/themes/silver/graphics/mime/mail.png
+%%HORDIR%%/themes/silver/graphics/mime/text.png
+%%HORDIR%%/themes/silver/graphics/mini-error.png
+%%HORDIR%%/themes/silver/graphics/newmail.png
+%%HORDIR%%/themes/silver/graphics/popdown.png
+%%HORDIR%%/themes/silver/graphics/redbox_spinner.gif
+%%HORDIR%%/themes/silver/graphics/shared.png
+%%HORDIR%%/themes/silver/graphics/signed.png
+%%HORDIR%%/themes/silver/graphics/spacer_red.png
+%%HORDIR%%/themes/silver/graphics/spellcheck.png
+%%HORDIR%%/themes/silver/screen.css
 %%HORDIR%%/themes/simplex/screen.css
 %%HORDIR%%/themes/sun/screen.css
+%%HORDIR%%/themes/tango-blue/graphics/addressbook-blue.png
+%%HORDIR%%/themes/tango-blue/graphics/addressbook-red.png
+%%HORDIR%%/themes/tango-blue/graphics/addressbook_add.png
+%%HORDIR%%/themes/tango-blue/graphics/addressbook_browse.png
+%%HORDIR%%/themes/tango-blue/graphics/apple.png
+%%HORDIR%%/themes/tango-blue/graphics/attachment.png
+%%HORDIR%%/themes/tango-blue/graphics/audio/doorbell.wav
+%%HORDIR%%/themes/tango-blue/graphics/audio/gnid3.wav
+%%HORDIR%%/themes/tango-blue/graphics/audio/jetsndb.wav
+%%HORDIR%%/themes/tango-blue/graphics/audio/reminder.wav
+%%HORDIR%%/themes/tango-blue/graphics/audio/theetone.wav
+%%HORDIR%%/themes/tango-blue/graphics/az.png
+%%HORDIR%%/themes/tango-blue/graphics/compose.png
+%%HORDIR%%/themes/tango-blue/graphics/empty_spam.png
+%%HORDIR%%/themes/tango-blue/graphics/empty_trash.png
+%%HORDIR%%/themes/tango-blue/graphics/encrypted.png
+%%HORDIR%%/themes/tango-blue/graphics/expand.png
+%%HORDIR%%/themes/tango-blue/graphics/favicon.ico
+%%HORDIR%%/themes/tango-blue/graphics/fetchmail.png
+%%HORDIR%%/themes/tango-blue/graphics/filters.png
+%%HORDIR%%/themes/tango-blue/graphics/folders/drafts.png
+%%HORDIR%%/themes/tango-blue/graphics/folders/folder.png
+%%HORDIR%%/themes/tango-blue/graphics/folders/folder_open.png
+%%HORDIR%%/themes/tango-blue/graphics/folders/inbox.png
+%%HORDIR%%/themes/tango-blue/graphics/folders/sent.png
+%%HORDIR%%/themes/tango-blue/graphics/folders/spam.png
+%%HORDIR%%/themes/tango-blue/graphics/folders/trash.png
+%%HORDIR%%/themes/tango-blue/graphics/forward.png
+%%HORDIR%%/themes/tango-blue/graphics/imp.png
+%%HORDIR%%/themes/tango-blue/graphics/loading.gif
+%%HORDIR%%/themes/tango-blue/graphics/mail_answered.png
+%%HORDIR%%/themes/tango-blue/graphics/mail_deleted.png
+%%HORDIR%%/themes/tango-blue/graphics/mail_draft.png
+%%HORDIR%%/themes/tango-blue/graphics/mail_flagged.png
+%%HORDIR%%/themes/tango-blue/graphics/mail_personal.png
+%%HORDIR%%/themes/tango-blue/graphics/mail_priority_high.png
+%%HORDIR%%/themes/tango-blue/graphics/mail_priority_low.png
+%%HORDIR%%/themes/tango-blue/graphics/mail_unseen.png
+%%HORDIR%%/themes/tango-blue/graphics/manage_attachments.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/audio.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/binary.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/compressed.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/deb.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/encryption.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/html.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/icalendar.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/image.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/itip.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/mail.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/msexcel.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/mspowerpoint.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/msword.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/ooo_calc.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/ooo_draw.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/ooo_impress.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/ooo_math.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/ooo_writer.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/pdf.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/php.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/rpm.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/script-js.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/source-c.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/source-cpp.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/source-h.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/source-java.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/source-python.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/text.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/vcard.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/video.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/xml.png
+%%HORDIR%%/themes/tango-blue/graphics/newmail.png
+%%HORDIR%%/themes/tango-blue/graphics/reply.png
+%%HORDIR%%/themes/tango-blue/graphics/shared.png
+%%HORDIR%%/themes/tango-blue/graphics/signed.png
+%%HORDIR%%/themes/tango-blue/graphics/spacer_red.png
+%%HORDIR%%/themes/tango-blue/graphics/spellcheck.png
+%%HORDIR%%/themes/tango-blue/graphics/za.png
+%%HORDIR%%/themes/tango-blue/screen.css
 %%HORDIR%%/thread.php
 %%HORDIR%%/view.php
-@dirrmtry %%HORDIR%%/config
-@dirrm %%HORDIR%%/js
-@dirrm %%HORDIR%%/lib/Auth
-@dirrm %%HORDIR%%/lib/Block
-@dirrm %%HORDIR%%/lib/Crypt
-@dirrm %%HORDIR%%/lib/Fetchmail
-@dirrm %%HORDIR%%/lib/IMAP
-@dirrm %%HORDIR%%/lib/Identity
-@dirrm %%HORDIR%%/lib/MIME/Viewer
-@dirrm %%HORDIR%%/lib/MIME
-@dirrm %%HORDIR%%/lib/Maintenance/Task
-@dirrm %%HORDIR%%/lib/Maintenance
-@dirrm %%HORDIR%%/lib/Notification/Listener
-@dirrm %%HORDIR%%/lib/Notification
-@dirrm %%HORDIR%%/lib/Quota
-@dirrm %%HORDIR%%/lib
-@dirrm %%HORDIR%%/locale/ar_OM/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ar_OM
-@dirrm %%HORDIR%%/locale/ar_SY/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ar_SY
-@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/bg_BG
-@dirrm %%HORDIR%%/locale/bs_BA/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/bs_BA
-@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ca_ES
-@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/cs_CZ
-@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/da_DK
-@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/de_DE
-@dirrm %%HORDIR%%/locale/el_GR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/el_GR
-@dirrm %%HORDIR%%/locale/en_US
-@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/es_ES
-@dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/et_EE
-@dirrm %%HORDIR%%/locale/fa_IR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fa_IR
-@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fi_FI
-@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fr_FR
-@dirrm %%HORDIR%%/locale/gl_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/gl_ES
-@dirrm %%HORDIR%%/locale/he_IL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/he_IL
-@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/hu_HU
-@dirrm %%HORDIR%%/locale/id_ID/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/id_ID
-@dirrm %%HORDIR%%/locale/is_IS/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/is_IS
-@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/it_IT
-@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ja_JP
-@dirrm %%HORDIR%%/locale/km_KH/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/km_KH
-@dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ko_KR
-@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/lt_LT
-@dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/lv_LV
-@dirrm %%HORDIR%%/locale/mk_MK/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/mk_MK
-@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nb_NO
-@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nl_NL
-@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nn_NO
-@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pl_PL
-@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pt_BR
-@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pt_PT
-@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ro_RO
-@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ru_RU
-@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sk_SK
-@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sl_SI
-@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sv_SE
-@dirrm %%HORDIR%%/locale/th_TH/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/th_TH
-@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/tr_TR
-@dirrm %%HORDIR%%/locale/uk_UA/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/uk_UA
-@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/zh_CN
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/mime
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/folders
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/audio
+@dirrm %%HORDIR%%/themes/tango-blue/graphics
+@dirrm %%HORDIR%%/themes/tango-blue
+@dirrm %%HORDIR%%/themes/sun
+@dirrm %%HORDIR%%/themes/simplex
+@dirrm %%HORDIR%%/themes/silver/graphics/mime
+@dirrm %%HORDIR%%/themes/silver/graphics/folders
+@dirrm %%HORDIR%%/themes/silver/graphics/audio
+@dirrm %%HORDIR%%/themes/silver/graphics
+@dirrm %%HORDIR%%/themes/silver
+@dirrm %%HORDIR%%/themes/postnuke
+@dirrm %%HORDIR%%/themes/mozilla
+@dirrm %%HORDIR%%/themes/lucblue
+@dirrm %%HORDIR%%/themes/luc
+@dirrm %%HORDIR%%/themes/lavander
+@dirrm %%HORDIR%%/themes/ideas
+@dirrm %%HORDIR%%/themes/grey
+@dirrm %%HORDIR%%/themes/green
+@dirrm %%HORDIR%%/themes/graphics/mime
+@dirrm %%HORDIR%%/themes/graphics/folders
+@dirrm %%HORDIR%%/themes/graphics/audio
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes/gennevilliers
+@dirrm %%HORDIR%%/themes/fadetogreen
+@dirrm %%HORDIR%%/themes/cornflower
+@dirrm %%HORDIR%%/themes/cherry
+@dirrm %%HORDIR%%/themes/burntorange
+@dirrm %%HORDIR%%/themes/brown
+@dirrm %%HORDIR%%/themes/bluewhite
+@dirrm %%HORDIR%%/themes/bluemoon
+@dirrm %%HORDIR%%/themes/azur
+@dirrm %%HORDIR%%/themes
+@dirrm %%HORDIR%%/templates/thread
+@dirrm %%HORDIR%%/templates/stationery
+@dirrm %%HORDIR%%/templates/smime
+@dirrm %%HORDIR%%/templates/search
+@dirrm %%HORDIR%%/templates/saveimage
+@dirrm %%HORDIR%%/templates/rss
+@dirrm %%HORDIR%%/templates/quota
+@dirrm %%HORDIR%%/templates/prefs
+@dirrm %%HORDIR%%/templates/pgp
+@dirrm %%HORDIR%%/templates/newmsg
+@dirrm %%HORDIR%%/templates/message
+@dirrm %%HORDIR%%/templates/mailbox
+@dirrm %%HORDIR%%/templates/login
+@dirrm %%HORDIR%%/templates/folders
+@dirrm %%HORDIR%%/templates/filters
+@dirrm %%HORDIR%%/templates/fetchmail
+@dirrm %%HORDIR%%/templates/contacts
+@dirrm %%HORDIR%%/templates/compose
+@dirrm %%HORDIR%%/templates/acl
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/scripts/upgrades
+@dirrm %%HORDIR%%/scripts/sql
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/po
 @dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_CN
+@dirrm %%HORDIR%%/locale/uk_UA/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/uk_UA
+@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/tr_TR
+@dirrm %%HORDIR%%/locale/th_TH/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/th_TH
+@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sl_SI
+@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sk_SK
+@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ru_RU
+@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_PT
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
+@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl_PL
+@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nn_NO
+@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nl_NL
+@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nb_NO
+@dirrm %%HORDIR%%/locale/mk_MK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/mk_MK
+@dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lv_LV
+@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lt_LT
+@dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ko_KR
+@dirrm %%HORDIR%%/locale/km_KH/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/km_KH
+@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ja_JP
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/is_IS/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/is_IS
+@dirrm %%HORDIR%%/locale/id_ID/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/id_ID
+@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hu_HU
+@dirrm %%HORDIR%%/locale/he_IL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/he_IL
+@dirrm %%HORDIR%%/locale/gl_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/gl_ES
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/fa_IR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fa_IR
+@dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/et_EE
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/el_GR
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da_DK
+@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/cs_CZ
+@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ca_ES
+@dirrm %%HORDIR%%/locale/bs_BA/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/bs_BA
+@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/bg_BG
+@dirrm %%HORDIR%%/locale/ar_SY/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ar_SY
+@dirrm %%HORDIR%%/locale/ar_OM/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ar_OM
 @dirrm %%HORDIR%%/locale
-@dirrm %%HORDIR%%/po
-@dirrm %%HORDIR%%/scripts
-@dirrm %%HORDIR%%/templates/acl
-@dirrm %%HORDIR%%/templates/compose
-@dirrm %%HORDIR%%/templates/contacts
-@dirrm %%HORDIR%%/templates/fetchmail
-@dirrm %%HORDIR%%/templates/filters
-@dirrm %%HORDIR%%/templates/folders
-@dirrm %%HORDIR%%/templates/javascript
-@dirrm %%HORDIR%%/templates/login
-@dirrm %%HORDIR%%/templates/mailbox
-@dirrm %%HORDIR%%/templates/message
-@dirrm %%HORDIR%%/templates/pgp
-@dirrm %%HORDIR%%/templates/prefs
-@dirrm %%HORDIR%%/templates/quota
-@dirrm %%HORDIR%%/templates/saveimage
-@dirrm %%HORDIR%%/templates/search
-@dirrm %%HORDIR%%/templates/smime
-@dirrm %%HORDIR%%/templates/stationery
-@dirrm %%HORDIR%%/templates/thread
-@dirrm %%HORDIR%%/templates
-@dirrm %%HORDIR%%/themes/azur
-@dirrm %%HORDIR%%/themes/bluemoon
-@dirrm %%HORDIR%%/themes/bluewhite
-@dirrm %%HORDIR%%/themes/brown
-@dirrm %%HORDIR%%/themes/burntorange
-@dirrm %%HORDIR%%/themes/cherry
-@dirrm %%HORDIR%%/themes/cornflower
-@dirrm %%HORDIR%%/themes/gennevilliers
-@dirrm %%HORDIR%%/themes/graphics/audio
-@dirrm %%HORDIR%%/themes/graphics/folders
-@dirrm %%HORDIR%%/themes/graphics/mime
-@dirrm %%HORDIR%%/themes/graphics
-@dirrm %%HORDIR%%/themes/green
-@dirrm %%HORDIR%%/themes/grey
-@dirrm %%HORDIR%%/themes/lavander
-@dirrm %%HORDIR%%/themes/luc
-@dirrm %%HORDIR%%/themes/lucblue
-@dirrm %%HORDIR%%/themes/postnuke
-@dirrm %%HORDIR%%/themes/simplex
-@dirrm %%HORDIR%%/themes/sun
-@dirrm %%HORDIR%%/themes
+@dirrm %%HORDIR%%/lib/tests
+@dirrm %%HORDIR%%/lib/UI
+@dirrm %%HORDIR%%/lib/SpellChecker
+@dirrm %%HORDIR%%/lib/Sentmail
+@dirrm %%HORDIR%%/lib/Quota
+@dirrm %%HORDIR%%/lib/Notification/Listener
+@dirrm %%HORDIR%%/lib/Notification
+@dirrm %%HORDIR%%/lib/Maintenance/Task
+@dirrm %%HORDIR%%/lib/Maintenance
+@dirrm %%HORDIR%%/lib/MIME/Viewer
+@dirrm %%HORDIR%%/lib/MIME
+@dirrm %%HORDIR%%/lib/Imple
+@dirrm %%HORDIR%%/lib/Identity
+@dirrm %%HORDIR%%/lib/IMAP/ACL
+@dirrm %%HORDIR%%/lib/IMAP
+@dirrm %%HORDIR%%/lib/Fetchmail
+@dirrm %%HORDIR%%/lib/Crypt
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib/Auth
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/js/src
+@dirrm %%HORDIR%%/js
+@dirrmtry %%HORDIR%%/config
 @dirrmtry %%HORDIR%%
 @dirrmtry %%HORBAS%%

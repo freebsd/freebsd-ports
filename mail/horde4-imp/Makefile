@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	4.1.6
+PORTVERSION=	4.2
+DISTVERSIONSUFFIX=	-rc1
 CATEGORIES=	mail www
 
 MAINTAINER=	beech@FreeBSD.org
@@ -46,7 +47,8 @@ USE_PHP+=	openssl
 .endif
 
 .if !defined(NOCRYPT)
-RUN_DEPENDS+=	${LOCALBASE}/bin/gpgv:${PORTSDIR}/security/gnupg1
+RUN_DEPENDS+=	${PEARDIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode \
+		${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 .endif
 
 .if !defined(WITHOUT_ASPELL)
