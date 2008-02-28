@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	beast
-PORTVERSION=	0.6.6
-PORTREVISION=	7
+PORTVERSION=	0.7.1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://beast.gtk.org/pub/beast/v0.6/ \
-		http://beast.gtk.org/beast-ftp/v0.6/
+MASTER_SITES=	ftp://beast.gtk.org/pub/beast/v0.7/ \
+		http://beast.gtk.org/beast-ftp/v0.7/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A powerful music composition and modular synthesis application
 
 LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \
@@ -21,23 +20,19 @@ LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack libgnomecanvas
-GNU_CONFIGURE=  yes
-INSTALLS_SHLIB=	yes
+USE_GNOME=	gnomehack intlhack libgnomecanvas
+USE_BZIP2=	yes
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DENODATA=255" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-debug \
 		--enable-osspcm=/dev/dsp \
 		--enable-ossmidi=/dev/midi
 
-MAN1=		beast.1 bsesh.1 sfidl.1
-MAN3=		beast-gxk.3 bse-procs.3 bse-structs.3 bse.3 sfi.3
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
+MAN1=		beast.1 bsescm.1 sfidl.1
+MAN5=		bse.5
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|$${libdir}/ladspa|${LOCALBASE}/lib/ladspa|; \
@@ -48,4 +43,4 @@ post-patch:
 		${WRKSRC}/bse/Makefile.in \
 		${WRKSRC}/bse/zintern/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
