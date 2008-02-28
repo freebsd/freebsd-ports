@@ -1,3 +1,4 @@
+include/dvbpsi/cat.h
 include/dvbpsi/demux.h
 include/dvbpsi/descriptor.h
 include/dvbpsi/dr.h
@@ -24,6 +25,7 @@ include/dvbpsi/dr_52.h
 include/dvbpsi/dr_55.h
 include/dvbpsi/dr_56.h
 include/dvbpsi/dr_59.h
+include/dvbpsi/dr_69.h
 include/dvbpsi/dvbpsi.h
 include/dvbpsi/eit.h
 include/dvbpsi/pat.h
@@ -33,5 +35,5 @@ include/dvbpsi/sdt.h
 lib/libdvbpsi.a
 lib/libdvbpsi.la
 lib/libdvbpsi.so
-lib/libdvbpsi.so.4
+lib/libdvbpsi.so.5
 @dirrm include/dvbpsi
