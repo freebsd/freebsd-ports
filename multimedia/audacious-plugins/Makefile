@@ -6,19 +6,15 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTVERSION=	1.4.5
 CATEGORIES=	multimedia audio
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://static.audacious-media-player.org/release/
-MASTER_SITE_SUBDIR=oliver
+MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Plugins needed for audacious
 
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
-LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 		
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -27,8 +23,9 @@ CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		CPP=${CPP}
 CONFIGURE_ARGS=	--disable-evdevplug --disable-alsa --disable-amidiplug \
-		--disable-pulse --disable-projectm
+		--disable-pulse --disable-projectm --disable-projectm-1.0
 WANT_GNOME=	yes
+WANT_EFL=	yes
 WANT_SDL=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS
@@ -38,12 +35,15 @@ PORTDOCS=	AUTHORS ChangeLog NEWS
 #		COREAUDIO	"Enable CoreAudio output plugin"	off \
 #		PROJECTM	"Enable projectM vis plugin"		off \
 
-OPTIONS=	ESOUND		"Enable Esound output output"		off \
+OPTIONS=	AUDIOCD		"Enable audiocd plugin"			off \
+		ESOUND		"Enable Esound output output"		off \
 		MP3		"Enable mp3 plugin"			on  \
 		ROCKLIGHT	"Enable Rocklight vis plugin"		on  \
 		LIRC		"Enable LIRC plugin"			off \
 		STATUSICON	"Enable X11 Status Icon plugin"		on  \
 		AOSD		"Enable X11 Audacious OSD plugin"	on  \
+		AOSDXCOMP	"Enable X11 Audacious OSD X Composite Support" on  \
+		ROOTVIS		"Enable X11 RootWindow vis plugin"      on  \
 		ADPLUG		"Enable AdPlug plugin"			off \
 		VORBIS		"Enable Ogg Vorbis input plugin"	off \
 		WAVPACK 	"Enable WavPack input plugin"		off \
@@ -56,16 +56,27 @@ OPTIONS=	ESOUND		"Enable Esound output output"		off \
 		ARTS		"Enable arts output plugin"		off \
 		SID		"Enable sid input plugin"		off \
 		OSS		"Enable OSS output plugin"		on  \
-		TIMIDITY	"Enable timidity plugin"		on  \
+		TIMIDITY	"Enable timidity plugin"		off \
+		CDAUDIO		"Enable cdaudio-ng input plugin"        on  \
+		NEON		"Enable neon support (experimental)"    on  \
 		MMS		"Enable mms support"			off \
+		MTP		"Enable MTP upload support"             off \
 		PARANORMAL	"Enable paranormal vis plugin"		on  \
 		XSPF		"Enable XSPF support"			on  \
 		TTA		"Enable TrueAudio plugin"		on  \
-		LAME		"Enable liblame plugin"			off \
 		GNOME		"Build with gnomevfs/gconf support"	off \
 		NLS		"Native Language Support"		on
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_AUDIOCD)
+LIB_DEPENDS+=   cdio.7:${PORTSDIR}/sysutils/libcdio
+CONFIGURE_ARGS+=--enable-cdaudio
+PLIST_SUB+=     AUDIOCDPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-cdaudio
+PLIST_SUB+=     AUDIOCDPLUGIN="@comment "
+.endif
 
 .if defined(WITH_ESOUND)
 USE_GNOME+=	esound
@@ -98,6 +109,15 @@ CONFIGURE_ARGS+=--disable-rocklight
 PLIST_SUB+=	ROCKLIGHTPLUGIN="@comment "
 .endif
 
+.if !defined(WITHOUT_ROOTVIS)
+USE_EFL=	imlib2
+CONFIGURE_ARGS+=--enable-rootvis
+PLIST_SUB+=	ROOTPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-rootvis
+PLIST_SUB+=	ROOTPLUGIN="@comment "
+.endif
+
 .if defined(WITH_LIRC)
 LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=--enable-lirc
@@ -125,6 +145,15 @@ CONFIGURE_ARGS+=--disable-aosd
 PLIST_SUB+=	AOSDPLUGIN="@comment "
 .endif
 
+.if !defined(WITHOUT_AOSDXCOMP)
+LIB_DEPENDS+=	Xcomposite.1:${PORTSDIR}/x11/libXcomposite
+CONFIGURE_ARGS+=--enable-aosd-xcomp
+PLIST_SUB+=	AOSDXCOMPPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-aosd-xcomp
+PLIST_SUB+=	AOSDXCOMPPLUGIN="@comment "
+.endif
+
 .if defined(WITH_ADPLUG)
 LIB_DEPENDS+=	binio.1:${PORTSDIR}/devel/libbinio
 CONFIGURE_ARGS+=--enable-adplug
@@ -136,12 +165,20 @@ PLIST_SUB+=	ADPLUGPLUGIN="@comment "
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=--enable-vorbis --enable-flac	# it uses an internal flac-lib copy
+CONFIGURE_ARGS+=--enable-vorbis
 PLIST_SUB+=	VORBISPLUGIN=""
-CFLAGS+=	-I. -I../libflac -Ilibflac	# to not use system flac if it is installed
 .else
-CONFIGURE_ARGS+=--disable-vorbis --disable-flac
+CONFIGURE_ARGS+=--disable-vorbis
 PLIST_SUB+=	VORBISPLUGIN="@comment "
+.endif
+
+.if defined(WITH_FLAC)
+LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
+CONFIGURE_ARGS+=--enable-flacng --enable-filewriter_flac
+PLIST_SUB+=	FLACPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-flacng --disable-filewriter_flac
+PLIST_SUB+=	FLACPLUGIN="@comment "
 .endif
 
 .if defined(WITH_WAVPACK)
@@ -198,7 +235,8 @@ PLIST_SUB+=	WMAPLUGIN="@comment "
 .endif
 
 .if defined(WITH_JACK)
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack \
+		samplerate.1:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--enable-jack
 PLIST_SUB+=	JACKPLUGIN=""
 .else
@@ -240,13 +278,34 @@ CONFIGURE_ARGS+=--disable-timidity
 PLIST_SUB+=	TIMIDITYPLUGIN="@comment "
 .endif
 
-.if !defined(WITHOUT_PARANORMAL)
-CONFIGURE_ARGS+=--enable-paranormal --disable-mms
-PLIST_SUB+=	PARANORMALPLUGIN="" MMSPLUGIN="@comment "
-USE_SDL=	sdl
+.if defined(WITH_CDAUDIO)
+LIB_DEPENDS+=	cdio.7:${PORTSDIR}/sysutils/libcdio \
+		cddb.4:${PORTSDIR}/audio/libcddb
+CONFIGURE_ARGS+=--enable-cdaudio
+PLIST_SUB+=	CDAUDIOPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-cdaudio
+PLIST_SUB+=	CDAUDIOPLUGIN="@comment "
+.endif
+
+.if defined(WITH_PARANORMAL)
+CONFIGURE_ARGS+=--enable-paranormal
+PLIST_SUB+=	PARANORMALPLUGIN=""
+USE_SDL+=	sdl
 .else
 CONFIGURE_ARGS+=--disable-paranormal
 PLIST_SUB+=	PARANORMALPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_NEON)
+LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon
+CONFIGURE_ARGS+=--enable-neon
+PLIST_SUB+=	NEONPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-neon
+PLIST_SUB+=	NEONPLUGIN="@comment "
+.endif
+
 .if defined(WITH_MMS)
 LIB_DEPENDS+=	mms.0:${PORTSDIR}/net/libmms
 CONFIGURE_ARGS+=--enable-mms
@@ -255,6 +314,14 @@ PLIST_SUB+=	MMSPLUGIN=""
 CONFIGURE_ARGS+=--disable-mms
 PLIST_SUB+=	MMSPLUGIN="@comment "
 .endif
+
+.if defined(WITH_MTP)
+LIB_DEPENDS+=	mtp.6:${PORTSDIR}/audio/libmtp
+CONFIGURE_ARGS+=--enable-mtp_up
+PLIST_SUB+=	MTPPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-mtp_up
+PLIST_SUB+=	MTPPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_XSPF)
@@ -274,15 +341,6 @@ CONFIGURE_ARGS+=--disable-tta
 PLIST_SUB+=	TTAPLUGIN="@comment "
 .endif
 
-.if defined(WITH_LAME)
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
-CONFIGURE_ARGS+=--enable-lame
-PLIST_SUB+=	LAMEPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-lame
-PLIST_SUB+=	LAMEPLUGIN="@comment "
-.endif
-
 .if defined(WITH_GNOME)
 USE_GNOME+=	gnomevfs2 gconf2
 CONFIGURE_ARGS+=--enable-gnome-vfs --enable-gconf
@@ -297,8 +355,30 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+pre-everything::
+.if defined(WITH_AUDIOCD) && !exists(${LOCALBASE}/lib/libcdio_cdda.so)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "Make sure you select the PARANOIA option when installing libcdio!"
+	@${ECHO_CMD} ""
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$EGREP|egrep|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$EGREP|egrep|g; \
+		s| -ldl||g' ${WRKSRC}/configure
+##cpp complains about to many input files otherwise:
+#.for i in console sexypsf alac vtx madplug adplug vorbis flacng wavpack aac modplug wma sid timidity tta esd jack OSS filewriter audiocompress cdaudio-ng
+#		@${ECHO} ' ' > ${WRKSRC}/src/${i}/.deps
+#.endfor
+
+pre-configure:
+.if defined(WITH_AUDIOCD) && !exists(${LOCALBASE}/lib/libcdio_cdda.so)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "sysutils/libcdio got not installed with PARANOIA enabled!"
+	@${ECHO_CMD} "To use the audiocd option you have to install libcdio with"
+	@${ECHO_CMD} "PARANOIA support! So please reinstall it properly."
+	@${ECHO_CMD} ""
+	@exit 1
+.endif
 
 post-install:
 .if defined(WITH_GNOME)

@@ -6,8 +6,8 @@
 #
 
 APP=		audacious
-LIB_DEPENDS=	audacious.5:${PORTSDIR}/multimedia/audacious
-BUILD_DEPENDS=	${LOCALBASE}/lib/audacious/General/libalarm.so:${PORTSDIR}/multimedia/audacious-plugins
+LIB_DEPENDS=	audclient.1:${PORTSDIR}/multimedia/audacious
+BUILD_DEPENDS=	${LOCALBASE}/lib/audacious/General/alarm.so:${PORTSDIR}/multimedia/audacious-plugins
 CPPFLAGS+=	-I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/include/gtk-2.0 \
 		-I${LOCALBASE}/include/cairo -I${LOCALBASE}/include/pango-1.0 \
 		-I${LOCALBASE}/include/atk-1.0

@@ -1,0 +1,49 @@
+--- src/audacious/Makefile.orig	2007-11-19 03:02:02.000000000 +0100
++++ src/audacious/Makefile	2007-11-26 19:04:28.000000000 +0100
+@@ -157,15 +157,8 @@
+ 
+ include ../../buildsys.mk
+ 
+-ifdef USE_DBUS
+-CPPFLAGS += -I../libaudclient
+-DBUS_BINDINGS = dbus-server-bindings.h dbus-client-bindings.h
+-LIBS += -L../libaudclient -laudclient
+-endif
+-
+-pre-depend: ${DBUS_BINDINGS}
+-
+-CPPFLAGS += -DHAVE_CONFIG_H		\
++CPPFLAGS =  -I.. -I../..		\
++	    -DHAVE_CONFIG_H		\
+ 	    ${MOWGLI_CFLAGS}		\
+ 	    ${GTK_CFLAGS}		\
+ 	    ${LIBGLADE_CFLAGS}		\
+@@ -176,10 +169,11 @@
+ 	    ${REGEX_CFLAGS}		\
+ 	    ${LIBMCS_CFLAGS}		\
+ 	    -D_AUDACIOUS_CORE		\
+-	    -I.. -I../..		\
+ 	    -I./intl
+ 
+-LIBS += ${LDADD}		\
++
++
++LIBS = ${LDADD}		\
+ 	${LIBINTL}		\
+ 	${samplerate_LIBS}	\
+ 	../libguess/libguess.a	\
+@@ -190,6 +184,14 @@
+ 	${LIBGLADE_LIBS}	\
+ 	${REGEX_LIBS}
+ 
++ifdef USE_DBUS
++CPPFLAGS += -I../libaudclient
++DBUS_BINDINGS = dbus-server-bindings.h dbus-client-bindings.h
++LIBS += -L../libaudclient -laudclient
++endif
++
++pre-depend: ${DBUS_BINDINGS}
++
+ LDFLAGS += ${PROG_IMPLIB_LDFLAGS}
+ 
+ build_stamp.c: 
