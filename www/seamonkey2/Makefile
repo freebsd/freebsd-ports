@@ -3,12 +3,12 @@
 # Whom:			eivind/dima/jseger
 #
 # $FreeBSD$
-#    $MCom: ports/www/seamonkey/Makefile,v 1.46 2007/02/06 00:05:55 ahze Exp $
+#   $MCom: ports/www/seamonkey/Makefile,v 1.48 2007/12/28 17:39:30 mezz Exp $
 #
 
 PORTNAME=	seamonkey
-DISTVERSION=	1.1.7
-PORTREVISION?=	1
+DISTVERSION=	1.1.8
+PORTREVISION?=	0
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}
@@ -30,11 +30,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/cairo"
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
 MOZ_EXTENSIONS=	default
-MOZ_OPTIONS+=	--enable-svg \
+MOZ_OPTIONS+=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
+		--enable-svg \
 		--enable-application=suite	\
 		--enable-svg-renderer=cairo	\
 		--enable-system-cairo		\
-		--enable-canvas
+		--enable-canvas \
+		--with-system-nss
 MOZ_MK_OPTIONS+=	MOZ_CO_PROJECT=suite
 
 NOT_FOR_ARCHS=	ia64
