@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ike
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	security net
 MASTER_SITES=	http://www.shrew.net/vpn/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
