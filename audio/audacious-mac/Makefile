@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	audacious-mac
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.10
 CATEGORIES=	audio
 MASTER_SITES=	http://www.netswarm.net/misc/
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Audacious plugin that support the Monkey's Audio lossless formats
 
-LIB_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
+LIB_DEPENDS=	audclient.1:${PORTSDIR}/multimedia/audacious \
 		mac.2:${PORTSDIR}/audio/mac
 
 USE_GMAKE=	yes
@@ -22,6 +22,5 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS = @CXXFLAGS@|CXXFLAGS = @CXXFLAGS@ -lmac|' ${WRKSRC}/src/Makefile.in
-	${CP} ${PATCHDIR}/url2filename.cpp ${WRKSRC}/src/
 
 .include <bsd.port.mk>

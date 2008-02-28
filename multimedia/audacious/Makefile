@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 CATEGORIES=	multimedia audio
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://static.audacious-media-player.org/release/
+MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
-EXTRACT_SUFX=.tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A media player based on BMP and XMMS
@@ -27,19 +25,35 @@ CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 
 MAN1=		audacious.1 audtool.1
 
-LIB_DEPENDS=	mcs.1:${PORTSDIR}/devel/libmcs
+LIB_DEPENDS=	mcs.1:${PORTSDIR}/devel/libmcs \
+		mowgli.1:${PORTSDIR}/devel/libmowgli
 
-PORTDOCS=	README AUTHORS ChangeLog NEWS
+PORTDOCS=	README AUTHORS NEWS
 
 OPTIONS=	CHARSET	"Build with automatic charset detection" off \
+		DBUS	"Build with dbus support" on \
 		GNOME	"Build with gconf support" off \
 		NLS	"Native Language Support" on \
-		XML	"Build with xml support" on
+		XML	"Build with xml support" on \
+		EXECINFO "Build with libexecinfo support" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CHARSET_DETECTION)
+.if !defined(WITHOUT_DBUS)
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+CONFIGURE_ARGS+=--enable-dbus
+PLIST_SUB+=	WITH_DBUS=""
+.else
+CONFIGURE_ARGS+=--disable-dbus
+PLIST_SUB+=	WITH_DBUS="@comment "
+.endif
+
+.if defined(WITH_CHARSET)
 CONFIGURE_ARGS+=--enable-chardet
+.endif
+
+.if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)
+LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 .endif
 
 .if defined(WITH_GNOME)
@@ -63,12 +77,20 @@ CONFIGURE_ARGS+=--with-xml-prefix=/
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(LIBDIR)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|datarootdir}/man|prefix}/man|g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-c |--check-format --check-domain |g' \
-		${WRKSRC}/po/Makefile.in.in
+# otherwise LIBDIR gets overwritten in tinderbox with /usr/lib from bsd.own.mk
+	@${REINPLACE_CMD} 's|LIBDIR|_LIBDIR|g' \
+		${WRKSRC}/buildsys.mk.in \
+		${WRKSRC}/configure \
+		${WRKSRC}/m4/buildsys.m4 \
+		${WRKSRC}/src/libid3tag/Makefile
+	@${REINPLACE_CMD} 's|+= $${LIB_CPPFLAGS} -I..|= -I.. $${LIB_CPPFLAGS}|' \
+		${WRKSRC}/src/libid3tag/Makefile
+.if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)
+	@${REINPLACE_CMD} 's|-laudclient$$|& -L${LOCALBASE}/lib -lexecinfo|' \
+		${WRKSRC}/src/audacious/Makefile
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)

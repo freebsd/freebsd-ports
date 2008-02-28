@@ -1,15 +1,15 @@
---- ./Makefile.orig	Wed Feb 28 13:01:40 2007
-+++ ./Makefile	Wed May 30 10:34:31 2007
+--- Makefile.orig	2007-10-28 19:36:45.000000000 +0100
++++ Makefile	2007-11-28 15:07:03.000000000 +0100
 @@ -7,7 +7,7 @@
  CC ?= gcc
  CFLAGS ?= -O2 -pipe
  
 -CFLAGS += -Wall -fPIC -DPIC -I/usr/local/include
 +CFLAGS += -Wall -fPIC -DPIC -I$(LOCALBASE)/include
- AUDACIOUSCFLAGS = $(shell pkg-config 'audacious >= 1.3' --cflags || echo "old")
+ AUDACIOUSCFLAGS = $(shell pkg-config 'audacious >= 1.4' --cflags || echo "old")
  
  ifeq ($(AUDACIOUSCFLAGS),old)
-@@ -16,6 +16,8 @@
+@@ -17,6 +17,8 @@
  CFLAGS += $(AUDACIOUSCFLAGS)
  endif
  
@@ -18,7 +18,7 @@
  DUMBLIBS := -ldumb -L/usr/local/lib
  AUDACIOUSLIBS := $(shell pkg-config audacious --libs) 
  
-@@ -24,13 +26,9 @@
+@@ -25,13 +27,9 @@
  OBJECTS := $(SOURCES:%.c=$(OBJDIR)/%.o)
  
  all:	$(PLUGIN_FILE)
