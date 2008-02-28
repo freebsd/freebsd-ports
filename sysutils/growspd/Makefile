@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://growspd.brokep.com/
 
-MAINTAINER=	growspd@brokep.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick utility to check files growth rate
 
 MAN1=		growspd.1
