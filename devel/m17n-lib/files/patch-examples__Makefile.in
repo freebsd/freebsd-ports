@@ -1,11 +1,11 @@
---- example/Makefile.in.orig	Mon Nov 27 15:50:47 2006
-+++ example/Makefile.in	Tue Apr 24 16:25:04 2007
-@@ -325,7 +325,7 @@
+--- example/Makefile.in.orig	Fri Dec 28 10:11:44 2007
++++ example/Makefile.in	Sun Dec 30 22:34:16 2007
+@@ -328,7 +328,7 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  BASICPROGS = m17n-conv
 -common_ldflags = ${top_builddir}/src/libm17n-core.la ${top_builddir}/src/libm17n.la
 +common_ldflags = ${top_builddir}/src/libm17n-core.la ${top_builddir}/src/libm17n.la $(INTLLIBS)
- common_ldflags_gui = ${common_ldflags} ${top_builddir}/src/libm17n-gui.la
+ common_ldflags_gui = ${common_ldflags} ${top_builddir}/src/libm17n-flt.la ${top_builddir}/src/libm17n-gui.la
  AM_CPPFLAGS = @CONFIG_FLAGS@
  m17n_date_SOURCES = mdate.c
