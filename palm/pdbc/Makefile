@@ -15,6 +15,8 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Palm DataBase Compiler/Decompiler
 
+BROKEN=		Checksum mismatch
+
 USE_ZIP=	YES
 EXTRACT_BEFORE_ARGS=	-q -a
 BUILD_WRKSRC=	${WRKSRC}/src
