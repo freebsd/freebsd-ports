@@ -1,3 +1,4 @@
+%%HORDIR%%/admin/alarms.php
 %%HORDIR%%/admin/cmdshell.php
 %%HORDIR%%/admin/datatree.php
 %%HORDIR%%/admin/groups.php
@@ -25,29 +26,74 @@
 %%HORDIR%%/config/motd.php.dist
 %%HORDIR%%/config/nls.php.dist
 %%HORDIR%%/config/prefs.php.dist
+%%HORDIR%%/config/registry.d/README
 %%HORDIR%%/config/registry.php.dist
 %%HORDIR%%/index.php
+%%HORDIR%%/js/QuickFinder.js
 %%HORDIR%%/js/addEvent.php
-%%HORDIR%%/js/alphaImageLoader.php
+%%HORDIR%%/js/colorpicker.js
+%%HORDIR%%/js/controls.js
+%%HORDIR%%/js/dhtmlHistory.js
+%%HORDIR%%/js/dragdrop.js
+%%HORDIR%%/js/effects.js
 %%HORDIR%%/js/enter_key_trap.js
 %%HORDIR%%/js/form_assign.js
 %%HORDIR%%/js/form_helpers.js
 %%HORDIR%%/js/form_sections.js
 %%HORDIR%%/js/hideable.js
+%%HORDIR%%/js/horde-prototype.js
 %%HORDIR%%/js/horde.ie.js
 %%HORDIR%%/js/horde.js
 %%HORDIR%%/js/httpclient.js
 %%HORDIR%%/js/ieEscGuard.js
 %%HORDIR%%/js/image.js
-%%HORDIR%%/js/open_colorpicker.js
+%%HORDIR%%/js/keybindings.js
+%%HORDIR%%/js/onDomReady.js
 %%HORDIR%%/js/popup.js
+%%HORDIR%%/js/prototype.js
+%%HORDIR%%/js/redbox.js
+%%HORDIR%%/js/scriptaculous.js
+%%HORDIR%%/js/slider.js
 %%HORDIR%%/js/sorter.js
+%%HORDIR%%/js/src/QuickFinder.js
+%%HORDIR%%/js/src/colorpicker.js
+%%HORDIR%%/js/src/controls.js
+%%HORDIR%%/js/src/dhtmlHistory.js
+%%HORDIR%%/js/src/dragdrop.js
+%%HORDIR%%/js/src/effects.js
+%%HORDIR%%/js/src/enter_key_trap.js
+%%HORDIR%%/js/src/form_assign.js
+%%HORDIR%%/js/src/form_helpers.js
+%%HORDIR%%/js/src/form_sections.js
+%%HORDIR%%/js/src/hideable.js
+%%HORDIR%%/js/src/horde-prototype.js
+%%HORDIR%%/js/src/horde.ie.js
+%%HORDIR%%/js/src/horde.js
+%%HORDIR%%/js/src/httpclient.js
+%%HORDIR%%/js/src/ieEscGuard.js
+%%HORDIR%%/js/src/image.js
+%%HORDIR%%/js/src/keybindings.js
+%%HORDIR%%/js/src/onDomReady.js
+%%HORDIR%%/js/src/popup.js
+%%HORDIR%%/js/src/prototype.js
+%%HORDIR%%/js/src/redbox.js
+%%HORDIR%%/js/src/scriptaculous.js
+%%HORDIR%%/js/src/slider.js
+%%HORDIR%%/js/src/sorter.js
+%%HORDIR%%/js/src/stripe.js
+%%HORDIR%%/js/src/stripe.js-prototype.js
+%%HORDIR%%/js/src/tables.js
+%%HORDIR%%/js/src/tables.js-prototype.js
 %%HORDIR%%/js/stripe.js
+%%HORDIR%%/js/stripe.js-prototype.js
 %%HORDIR%%/js/tables.js
+%%HORDIR%%/js/tables.js-prototype.js
 %%HORDIR%%/js/tooltip.js
 %%HORDIR%%/lib/.htaccess
 %%HORDIR%%/lib/Block/account.php
-%%HORDIR%%/lib/Block/color.php
+%%HORDIR%%/lib/Block/cloud.php
+%%HORDIR%%/lib/Block/feed.php
+%%HORDIR%%/lib/Block/feed/reader.php
 %%HORDIR%%/lib/Block/fortune.php
 %%HORDIR%%/lib/Block/google.php
 %%HORDIR%%/lib/Block/iframe.php
@@ -55,9 +101,11 @@
 %%HORDIR%%/lib/Block/moon.php
 %%HORDIR%%/lib/Block/sunrise.php
 %%HORDIR%%/lib/Block/time.php
+%%HORDIR%%/lib/Block/vatid.php
 %%HORDIR%%/lib/Block/weatherdotcom.php
 %%HORDIR%%/lib/Block/weatherdotcom_strings.php
 %%HORDIR%%/lib/File/CSV.php
+%%HORDIR%%/lib/File/PDF.php
 %%HORDIR%%/lib/File/PDF/fonts/courier.php
 %%HORDIR%%/lib/File/PDF/fonts/helvetica.php
 %%HORDIR%%/lib/File/PDF/fonts/helveticab.php
@@ -69,8 +117,11 @@
 %%HORDIR%%/lib/File/PDF/fonts/timesbi.php
 %%HORDIR%%/lib/File/PDF/fonts/timesi.php
 %%HORDIR%%/lib/File/PDF/fonts/zapfdingbats.php
-%%HORDIR%%/lib/File/PDF.php
+%%HORDIR%%/lib/Horde.php
+%%HORDIR%%/lib/Horde/Alarm.php
+%%HORDIR%%/lib/Horde/Alarm/sql.php
 %%HORDIR%%/lib/Horde/Array.php
+%%HORDIR%%/lib/Horde/Auth.php
 %%HORDIR%%/lib/Horde/Auth/Signup.php
 %%HORDIR%%/lib/Horde/Auth/application.php
 %%HORDIR%%/lib/Horde/Auth/auto.php
@@ -80,6 +131,7 @@
 %%HORDIR%%/lib/Horde/Auth/cyrus.php
 %%HORDIR%%/lib/Horde/Auth/ftp.php
 %%HORDIR%%/lib/Horde/Auth/http.php
+%%HORDIR%%/lib/Horde/Auth/http_remote.php
 %%HORDIR%%/lib/Horde/Auth/imap.php
 %%HORDIR%%/lib/Horde/Auth/imsp.php
 %%HORDIR%%/lib/Horde/Auth/ipbasic.php
@@ -87,47 +139,54 @@
 %%HORDIR%%/lib/Horde/Auth/krb5.php
 %%HORDIR%%/lib/Horde/Auth/ldap.php
 %%HORDIR%%/lib/Horde/Auth/login.php
-%%HORDIR%%/lib/Horde/Auth/mcal.php
+%%HORDIR%%/lib/Horde/Auth/msad.php
 %%HORDIR%%/lib/Horde/Auth/pam.php
 %%HORDIR%%/lib/Horde/Auth/passwd.php
 %%HORDIR%%/lib/Horde/Auth/peclsasl.php
 %%HORDIR%%/lib/Horde/Auth/radius.php
+%%HORDIR%%/lib/Horde/Auth/shibboleth.php
 %%HORDIR%%/lib/Horde/Auth/smb.php
 %%HORDIR%%/lib/Horde/Auth/smbclient.php
 %%HORDIR%%/lib/Horde/Auth/sql.php
-%%HORDIR%%/lib/Horde/Auth.php
+%%HORDIR%%/lib/Horde/Block.php
 %%HORDIR%%/lib/Horde/Block/Collection.php
 %%HORDIR%%/lib/Horde/Block/Layout/Manager.php
 %%HORDIR%%/lib/Horde/Block/Layout/View.php
 %%HORDIR%%/lib/Horde/Block/UI.php
-%%HORDIR%%/lib/Horde/Block.php
-%%HORDIR%%/lib/Horde/Browser/imode.php
 %%HORDIR%%/lib/Horde/Browser.php
+%%HORDIR%%/lib/Horde/Browser/imode.php
 %%HORDIR%%/lib/Horde/CLI.php
-%%HORDIR%%/lib/Horde/Cache/file.php
-%%HORDIR%%/lib/Horde/Cache/zps4.php
 %%HORDIR%%/lib/Horde/Cache.php
+%%HORDIR%%/lib/Horde/Cache/apc.php
+%%HORDIR%%/lib/Horde/Cache/eaccelerator.php
+%%HORDIR%%/lib/Horde/Cache/file.php
+%%HORDIR%%/lib/Horde/Cache/memcache.php
+%%HORDIR%%/lib/Horde/Cache/sql.php
+%%HORDIR%%/lib/Horde/Cache/xcache.php
+%%HORDIR%%/lib/Horde/Cache/zps4.php
+%%HORDIR%%/lib/Horde/Cipher.php
+%%HORDIR%%/lib/Horde/Cipher/BlockMode.php
 %%HORDIR%%/lib/Horde/Cipher/BlockMode/cbc.php
 %%HORDIR%%/lib/Horde/Cipher/BlockMode/cfb64.php
 %%HORDIR%%/lib/Horde/Cipher/BlockMode/ecb.php
 %%HORDIR%%/lib/Horde/Cipher/BlockMode/ofb64.php
-%%HORDIR%%/lib/Horde/Cipher/BlockMode.php
 %%HORDIR%%/lib/Horde/Cipher/blowfish.php
 %%HORDIR%%/lib/Horde/Cipher/cast128.php
 %%HORDIR%%/lib/Horde/Cipher/des.php
 %%HORDIR%%/lib/Horde/Cipher/rc2.php
 %%HORDIR%%/lib/Horde/Cipher/rc4.php
-%%HORDIR%%/lib/Horde/Cipher.php
+%%HORDIR%%/lib/Horde/Compress.php
 %%HORDIR%%/lib/Horde/Compress/dbx.php
 %%HORDIR%%/lib/Horde/Compress/gzip.php
 %%HORDIR%%/lib/Horde/Compress/tar.php
 %%HORDIR%%/lib/Horde/Compress/tnef.php
 %%HORDIR%%/lib/Horde/Compress/zip.php
-%%HORDIR%%/lib/Horde/Compress.php
 %%HORDIR%%/lib/Horde/Config.php
+%%HORDIR%%/lib/Horde/Crypt.php
 %%HORDIR%%/lib/Horde/Crypt/pgp.php
 %%HORDIR%%/lib/Horde/Crypt/smime.php
-%%HORDIR%%/lib/Horde/Crypt.php
+%%HORDIR%%/lib/Horde/DOM.php
+%%HORDIR%%/lib/Horde/Data.php
 %%HORDIR%%/lib/Horde/Data/csv.php
 %%HORDIR%%/lib/Horde/Data/icalendar.php
 %%HORDIR%%/lib/Horde/Data/imc.php
@@ -136,39 +195,49 @@
 %%HORDIR%%/lib/Horde/Data/vcard.php
 %%HORDIR%%/lib/Horde/Data/vnote.php
 %%HORDIR%%/lib/Horde/Data/vtodo.php
-%%HORDIR%%/lib/Horde/Data.php
+%%HORDIR%%/lib/Horde/DataTree.php
 %%HORDIR%%/lib/Horde/DataTree/null.php
 %%HORDIR%%/lib/Horde/DataTree/sql.php
-%%HORDIR%%/lib/Horde/DataTree.php
 %%HORDIR%%/lib/Horde/Date.php
-%%HORDIR%%/lib/Horde/Editor/htmlarea.php
+%%HORDIR%%/lib/Horde/Date/Recurrence.php
 %%HORDIR%%/lib/Horde/Editor.php
+%%HORDIR%%/lib/Horde/Editor/fckeditor.php
+%%HORDIR%%/lib/Horde/Editor/tinymce.php
+%%HORDIR%%/lib/Horde/Editor/xinha.php
+%%HORDIR%%/lib/Horde/Exception.php
+%%HORDIR%%/lib/Horde/Feed.php
+%%HORDIR%%/lib/Horde/Feed/Atom.php
+%%HORDIR%%/lib/Horde/Feed/Base.php
+%%HORDIR%%/lib/Horde/Feed/Entry/Atom.php
+%%HORDIR%%/lib/Horde/Feed/Entry/Base.php
+%%HORDIR%%/lib/Horde/Feed/Entry/Rss.php
+%%HORDIR%%/lib/Horde/Feed/Exception.php
+%%HORDIR%%/lib/Horde/Feed/Rss.php
+%%HORDIR%%/lib/Horde/Form.php
+%%HORDIR%%/lib/Horde/Form/Action.php
+%%HORDIR%%/lib/Horde/Form/Action/ConditionalEnable.php
+%%HORDIR%%/lib/Horde/Form/Action/ConditionalSetValue.php
 %%HORDIR%%/lib/Horde/Form/Action/conditional_enable.php
 %%HORDIR%%/lib/Horde/Form/Action/conditional_setvalue.php
 %%HORDIR%%/lib/Horde/Form/Action/reload.php
+%%HORDIR%%/lib/Horde/Form/Action/setcursorpos.php
 %%HORDIR%%/lib/Horde/Form/Action/submit.php
 %%HORDIR%%/lib/Horde/Form/Action/sum_fields.php
 %%HORDIR%%/lib/Horde/Form/Action/updatefield.php
-%%HORDIR%%/lib/Horde/Form/Action.php
 %%HORDIR%%/lib/Horde/Form/Renderer.php
 %%HORDIR%%/lib/Horde/Form/Type/tableset.php
-%%HORDIR%%/lib/Horde/Form.php
-%%HORDIR%%/lib/Horde/Graph/Chart/pie.php
-%%HORDIR%%/lib/Horde/Graph/Chart/pie3d.php
-%%HORDIR%%/lib/Horde/Graph/Plot/bar.php
-%%HORDIR%%/lib/Horde/Graph/Plot/bargrouped.php
-%%HORDIR%%/lib/Horde/Graph/Plot/barstacked.php
-%%HORDIR%%/lib/Horde/Graph/Plot/line.php
-%%HORDIR%%/lib/Horde/Graph/Plot/scatter.php
-%%HORDIR%%/lib/Horde/Graph.php
+%%HORDIR%%/lib/Horde/Group.php
 %%HORDIR%%/lib/Horde/Group/hooks.php
 %%HORDIR%%/lib/Horde/Group/ldap.php
-%%HORDIR%%/lib/Horde/Group.php
 %%HORDIR%%/lib/Horde/Help.php
 %%HORDIR%%/lib/Horde/History.php
+%%HORDIR%%/lib/Horde/Http/Client.php
+%%HORDIR%%/lib/Horde/Http/Client/Exception.php
+%%HORDIR%%/lib/Horde/Http/Client/Mock.php
+%%HORDIR%%/lib/Horde/Http/Client/Response.php
+%%HORDIR%%/lib/Horde/IMAP/ACL.php
 %%HORDIR%%/lib/Horde/IMAP/ACL/rfc2086.php
 %%HORDIR%%/lib/Horde/IMAP/ACL/rfc4314.php
-%%HORDIR%%/lib/Horde/IMAP/ACL.php
 %%HORDIR%%/lib/Horde/IMAP/Admin.php
 %%HORDIR%%/lib/Horde/IMAP/Cache.php
 %%HORDIR%%/lib/Horde/IMAP/Search.php
@@ -176,22 +245,68 @@
 %%HORDIR%%/lib/Horde/IMAP/Thread.php
 %%HORDIR%%/lib/Horde/IMAP/Tree.php
 %%HORDIR%%/lib/Horde/Identity.php
+%%HORDIR%%/lib/Horde/Image.php
+%%HORDIR%%/lib/Horde/Image/Effect.php
+%%HORDIR%%/lib/Horde/Image/Effect/border.php
+%%HORDIR%%/lib/Horde/Image/Effect/gd/drop_shadow.php
+%%HORDIR%%/lib/Horde/Image/Effect/gd/round_corners.php
+%%HORDIR%%/lib/Horde/Image/Effect/gd/text_watermark.php
+%%HORDIR%%/lib/Horde/Image/Effect/gd/unsharp_mask.php
+%%HORDIR%%/lib/Horde/Image/Effect/im/border.php
+%%HORDIR%%/lib/Horde/Image/Effect/im/drop_shadow.php
+%%HORDIR%%/lib/Horde/Image/Effect/im/photo_stack.php
+%%HORDIR%%/lib/Horde/Image/Effect/im/polaroid_image.php
+%%HORDIR%%/lib/Horde/Image/Effect/im/round_corners.php
+%%HORDIR%%/lib/Horde/Image/Effect/im/text_watermark.php
 %%HORDIR%%/lib/Horde/Image/gd.php
 %%HORDIR%%/lib/Horde/Image/im.php
+%%HORDIR%%/lib/Horde/Image/imagick.php
 %%HORDIR%%/lib/Horde/Image/png.php
 %%HORDIR%%/lib/Horde/Image/rgb.php
 %%HORDIR%%/lib/Horde/Image/svg.php
 %%HORDIR%%/lib/Horde/Image/swf.php
-%%HORDIR%%/lib/Horde/Image.php
 %%HORDIR%%/lib/Horde/Kolab.php
+%%HORDIR%%/lib/Horde/Kolab/Date.php
+%%HORDIR%%/lib/Horde/Kolab/Freebusy.php
+%%HORDIR%%/lib/Horde/Kolab/IMAP.php
+%%HORDIR%%/lib/Horde/Kolab/IMAP/cclient.php
+%%HORDIR%%/lib/Horde/Kolab/IMAP/pear.php
+%%HORDIR%%/lib/Horde/Kolab/LDAP.php
+%%HORDIR%%/lib/Horde/Kolab/XML.php
+%%HORDIR%%/lib/Horde/Kolab/XML/contact.php
+%%HORDIR%%/lib/Horde/Kolab/XML/event.php
+%%HORDIR%%/lib/Horde/Kolab/XML/note.php
+%%HORDIR%%/lib/Horde/Kolab/XML/task.php
 %%HORDIR%%/lib/Horde/LDAP.php
+%%HORDIR%%/lib/Horde/Lens.php
+%%HORDIR%%/lib/Horde/Lens/Interface.php
+%%HORDIR%%/lib/Horde/Lens/Iterator.php
+%%HORDIR%%/lib/Horde/Loader.php
+%%HORDIR%%/lib/Horde/Log.php
+%%HORDIR%%/lib/Horde/Log/Exception.php
+%%HORDIR%%/lib/Horde/Log/Filter/Interface.php
+%%HORDIR%%/lib/Horde/Log/Filter/Level.php
+%%HORDIR%%/lib/Horde/Log/Filter/Message.php
+%%HORDIR%%/lib/Horde/Log/Formatter/Interface.php
+%%HORDIR%%/lib/Horde/Log/Formatter/Simple.php
+%%HORDIR%%/lib/Horde/Log/Formatter/Xml.php
+%%HORDIR%%/lib/Horde/Log/Handler/Base.php
+%%HORDIR%%/lib/Horde/Log/Handler/Db.php
+%%HORDIR%%/lib/Horde/Log/Handler/Firebug.php
+%%HORDIR%%/lib/Horde/Log/Handler/Null.php
+%%HORDIR%%/lib/Horde/Log/Handler/Stream.php
+%%HORDIR%%/lib/Horde/Log/Logger.php
+%%HORDIR%%/lib/Horde/MIME.php
 %%HORDIR%%/lib/Horde/MIME/Contents.php
 %%HORDIR%%/lib/Horde/MIME/Headers.php
 %%HORDIR%%/lib/Horde/MIME/MDN.php
 %%HORDIR%%/lib/Horde/MIME/Magic.php
+%%HORDIR%%/lib/Horde/MIME/Mail.php
 %%HORDIR%%/lib/Horde/MIME/Message.php
 %%HORDIR%%/lib/Horde/MIME/Part.php
 %%HORDIR%%/lib/Horde/MIME/Structure.php
+%%HORDIR%%/lib/Horde/MIME/Viewer.php
+%%HORDIR%%/lib/Horde/MIME/Viewer/audio.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/css.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/deb.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/default.php
@@ -202,6 +317,7 @@
 %%HORDIR%%/lib/Horde/MIME/Viewer/msexcel.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/mspowerpoint.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/msword.php
+%%HORDIR%%/lib/Horde/MIME/Viewer/ooo.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/ooo/common.xsl
 %%HORDIR%%/lib/Horde/MIME/Viewer/ooo/global_document.xsl
 %%HORDIR%%/lib/Horde/MIME/Viewer/ooo/main_html.xsl
@@ -213,7 +329,6 @@
 %%HORDIR%%/lib/Horde/MIME/Viewer/ooo/table_cells.xsl
 %%HORDIR%%/lib/Horde/MIME/Viewer/ooo/table_columns.xsl
 %%HORDIR%%/lib/Horde/MIME/Viewer/ooo/table_rows.xsl
-%%HORDIR%%/lib/Horde/MIME/Viewer/ooo.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/pdf.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/php.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/plain.php
@@ -222,41 +337,44 @@
 %%HORDIR%%/lib/Horde/MIME/Viewer/rfc822.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/richtext.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/rpm.php
+%%HORDIR%%/lib/Horde/MIME/Viewer/rtf.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/security.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/simple.php
+%%HORDIR%%/lib/Horde/MIME/Viewer/smil.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/source.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/srchighlite.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/tgz.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/tnef.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/vcard.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/webcpp.php
+%%HORDIR%%/lib/Horde/MIME/Viewer/wordperfect.php
 %%HORDIR%%/lib/Horde/MIME/Viewer/zip.php
-%%HORDIR%%/lib/Horde/MIME/Viewer.php
 %%HORDIR%%/lib/Horde/MIME/mime.magic.php
 %%HORDIR%%/lib/Horde/MIME/mime.mapping.php
-%%HORDIR%%/lib/Horde/MIME.php
 %%HORDIR%%/lib/Horde/Maintenance.php
+%%HORDIR%%/lib/Horde/Memcache.php
 %%HORDIR%%/lib/Horde/Menu.php
+%%HORDIR%%/lib/Horde/Mobile.php
+%%HORDIR%%/lib/Horde/Mobile/Renderer.php
 %%HORDIR%%/lib/Horde/Mobile/Renderer/html.php
 %%HORDIR%%/lib/Horde/Mobile/Renderer/wml.php
-%%HORDIR%%/lib/Horde/Mobile/Renderer.php
-%%HORDIR%%/lib/Horde/Mobile.php
+%%HORDIR%%/lib/Horde/NLS.php
 %%HORDIR%%/lib/Horde/NLS/GeoIP.php
 %%HORDIR%%/lib/Horde/NLS/carsigns.php
 %%HORDIR%%/lib/Horde/NLS/coordinates.php
 %%HORDIR%%/lib/Horde/NLS/countries.php
 %%HORDIR%%/lib/Horde/NLS/tld.php
-%%HORDIR%%/lib/Horde/NLS.php
+%%HORDIR%%/lib/Horde/Notification.php
 %%HORDIR%%/lib/Horde/Notification/Event.php
+%%HORDIR%%/lib/Horde/Notification/Listener.php
 %%HORDIR%%/lib/Horde/Notification/Listener/audio.php
 %%HORDIR%%/lib/Horde/Notification/Listener/javascript.php
 %%HORDIR%%/lib/Horde/Notification/Listener/mobile.php
 %%HORDIR%%/lib/Horde/Notification/Listener/status.php
-%%HORDIR%%/lib/Horde/Notification/Listener.php
-%%HORDIR%%/lib/Horde/Notification.php
+%%HORDIR%%/lib/Horde/Perms.php
 %%HORDIR%%/lib/Horde/Perms/UI.php
 %%HORDIR%%/lib/Horde/Perms/datatree.php
-%%HORDIR%%/lib/Horde/Perms.php
+%%HORDIR%%/lib/Horde/Prefs.php
 %%HORDIR%%/lib/Horde/Prefs/CategoryManager.php
 %%HORDIR%%/lib/Horde/Prefs/UI.php
 %%HORDIR%%/lib/Horde/Prefs/imsp.php
@@ -264,21 +382,53 @@
 %%HORDIR%%/lib/Horde/Prefs/ldap.php
 %%HORDIR%%/lib/Horde/Prefs/session.php
 %%HORDIR%%/lib/Horde/Prefs/sql.php
-%%HORDIR%%/lib/Horde/Prefs.php
-%%HORDIR%%/lib/Horde/RPC/rest.php
+%%HORDIR%%/lib/Horde/RPC.php
+%%HORDIR%%/lib/Horde/RPC/jsonrpc.php
+%%HORDIR%%/lib/Horde/RPC/phpgw.php
 %%HORDIR%%/lib/Horde/RPC/soap.php
 %%HORDIR%%/lib/Horde/RPC/syncml.php
 %%HORDIR%%/lib/Horde/RPC/syncml_wbxml.php
 %%HORDIR%%/lib/Horde/RPC/webdav.php
 %%HORDIR%%/lib/Horde/RPC/xmlrpc.php
-%%HORDIR%%/lib/Horde/RPC.php
+%%HORDIR%%/lib/Horde/Rdo.php
+%%HORDIR%%/lib/Horde/Rdo/Adapter.php
+%%HORDIR%%/lib/Horde/Rdo/Adapter/Oci8.php
+%%HORDIR%%/lib/Horde/Rdo/Adapter/Pdo.php
+%%HORDIR%%/lib/Horde/Rdo/Adapter/Pdo/Cursor.php
+%%HORDIR%%/lib/Horde/Rdo/Adapter/Pdo/Mssql.php
+%%HORDIR%%/lib/Horde/Rdo/Adapter/Pdo/Mysql.php
+%%HORDIR%%/lib/Horde/Rdo/Adapter/Pdo/Oci.php
+%%HORDIR%%/lib/Horde/Rdo/Adapter/Pdo/Pgsql.php
+%%HORDIR%%/lib/Horde/Rdo/Adapter/Pdo/Sqlite.php
+%%HORDIR%%/lib/Horde/Rdo/Base.php
+%%HORDIR%%/lib/Horde/Rdo/Exception.php
+%%HORDIR%%/lib/Horde/Rdo/Inflector.php
+%%HORDIR%%/lib/Horde/Rdo/Iterator.php
+%%HORDIR%%/lib/Horde/Rdo/List.php
+%%HORDIR%%/lib/Horde/Rdo/Mapper.php
+%%HORDIR%%/lib/Horde/Rdo/Model.php
+%%HORDIR%%/lib/Horde/Rdo/Query.php
+%%HORDIR%%/lib/Horde/Rdo/Query/Builder.php
+%%HORDIR%%/lib/Horde/Rdo/Query/Builder/Mssql.php
+%%HORDIR%%/lib/Horde/Rdo/Query/Builder/Mysql.php
+%%HORDIR%%/lib/Horde/Rdo/Query/Builder/Oracle.php
+%%HORDIR%%/lib/Horde/Rdo/Query/Builder/Pgsql.php
+%%HORDIR%%/lib/Horde/Rdo/Query/Builder/Sqlite.php
+%%HORDIR%%/lib/Horde/Rdo/Query/Literal.php
 %%HORDIR%%/lib/Horde/Registry.php
-%%HORDIR%%/lib/Horde/SQL/Keywords.php
+%%HORDIR%%/lib/Horde/Release.php
+%%HORDIR%%/lib/Horde/Routes/Exception.php
+%%HORDIR%%/lib/Horde/Routes/Mapper.php
+%%HORDIR%%/lib/Horde/Routes/Route.php
+%%HORDIR%%/lib/Horde/Routes/Utils.php
 %%HORDIR%%/lib/Horde/SQL.php
-%%HORDIR%%/lib/Horde/Scheduler/cron.php
+%%HORDIR%%/lib/Horde/SQL/Keywords.php
 %%HORDIR%%/lib/Horde/Scheduler.php
+%%HORDIR%%/lib/Horde/Scheduler/cron.php
 %%HORDIR%%/lib/Horde/Secret.php
 %%HORDIR%%/lib/Horde/Serialize.php
+%%HORDIR%%/lib/Horde/Serialize/JSON.php
+%%HORDIR%%/lib/Horde/SessionHandler.php
 %%HORDIR%%/lib/Horde/SessionHandler/dbm.php
 %%HORDIR%%/lib/Horde/SessionHandler/ldap.php
 %%HORDIR%%/lib/Horde/SessionHandler/memcache.php
@@ -288,11 +438,17 @@
 %%HORDIR%%/lib/Horde/SessionHandler/pgsql.php
 %%HORDIR%%/lib/Horde/SessionHandler/sapdb.php
 %%HORDIR%%/lib/Horde/SessionHandler/sql.php
-%%HORDIR%%/lib/Horde/SessionHandler.php
 %%HORDIR%%/lib/Horde/SessionObjects.php
 %%HORDIR%%/lib/Horde/Share.php
+%%HORDIR%%/lib/Horde/Share/datatree.php
+%%HORDIR%%/lib/Horde/Share/kolab.php
+%%HORDIR%%/lib/Horde/SpellChecker.php
+%%HORDIR%%/lib/Horde/SpellChecker/aspell.php
+%%HORDIR%%/lib/Horde/SpellChecker/pspell.php
 %%HORDIR%%/lib/Horde/String.php
 %%HORDIR%%/lib/Horde/Template.php
+%%HORDIR%%/lib/Horde/Text.php
+%%HORDIR%%/lib/Horde/Text/Filter.php
 %%HORDIR%%/lib/Horde/Text/Filter/bbcode.php
 %%HORDIR%%/lib/Horde/Text/Filter/cleanascii.php
 %%HORDIR%%/lib/Horde/Text/Filter/dimsignature.php
@@ -309,28 +465,47 @@
 %%HORDIR%%/lib/Horde/Text/Filter/text2html.php
 %%HORDIR%%/lib/Horde/Text/Filter/words.php
 %%HORDIR%%/lib/Horde/Text/Filter/xss.php
-%%HORDIR%%/lib/Horde/Text/Filter.php
-%%HORDIR%%/lib/Horde/Text.php
+%%HORDIR%%/lib/Horde/Text/Rst.php
+%%HORDIR%%/lib/Horde/Text/Rst/Formatter.php
+%%HORDIR%%/lib/Horde/Text/Rst/Formatter/Html.php
+%%HORDIR%%/lib/Horde/Text/Rst/Parser.php
+%%HORDIR%%/lib/Horde/Text/Rst/Parser/Node.php
+%%HORDIR%%/lib/Horde/Text/Rst/Parser/State.php
+%%HORDIR%%/lib/Horde/Text/Textile.php
+%%HORDIR%%/lib/Horde/Token.php
 %%HORDIR%%/lib/Horde/Token/file.php
 %%HORDIR%%/lib/Horde/Token/sql.php
-%%HORDIR%%/lib/Horde/Token.php
+%%HORDIR%%/lib/Horde/Tree.php
 %%HORDIR%%/lib/Horde/Tree/html.php
 %%HORDIR%%/lib/Horde/Tree/javascript.php
 %%HORDIR%%/lib/Horde/Tree/select.php
-%%HORDIR%%/lib/Horde/Tree.php
 %%HORDIR%%/lib/Horde/UI/Language.php
 %%HORDIR%%/lib/Horde/UI/Pager.php
 %%HORDIR%%/lib/Horde/UI/Tabs.php
+%%HORDIR%%/lib/Horde/UI/TagCloud.php
+%%HORDIR%%/lib/Horde/UI/VarRenderer.php
 %%HORDIR%%/lib/Horde/UI/VarRenderer/html.php
 %%HORDIR%%/lib/Horde/UI/VarRenderer/tableset_html.php
-%%HORDIR%%/lib/Horde/UI/VarRenderer.php
 %%HORDIR%%/lib/Horde/UI/Widget.php
 %%HORDIR%%/lib/Horde/Util.php
+%%HORDIR%%/lib/Horde/VC.php
 %%HORDIR%%/lib/Horde/VC/cvs.php
 %%HORDIR%%/lib/Horde/VC/rcs.php
 %%HORDIR%%/lib/Horde/VC/svn.php
-%%HORDIR%%/lib/Horde/VC.php
 %%HORDIR%%/lib/Horde/Variables.php
+%%HORDIR%%/lib/Horde/View.php
+%%HORDIR%%/lib/Horde/View/Base.php
+%%HORDIR%%/lib/Horde/View/Exception.php
+%%HORDIR%%/lib/Horde/View/Helper.php
+%%HORDIR%%/lib/Horde/View/Interface.php
+%%HORDIR%%/lib/Horde/Xml/Element.php
+%%HORDIR%%/lib/Horde/Xml/Element/Exception.php
+%%HORDIR%%/lib/Horde/Yaml.php
+%%HORDIR%%/lib/Horde/Yaml/Dumper.php
+%%HORDIR%%/lib/Horde/Yaml/Exception.php
+%%HORDIR%%/lib/Horde/Yaml/Loader.php
+%%HORDIR%%/lib/Horde/Yaml/Node.php
+%%HORDIR%%/lib/Horde/iCalendar.php
 %%HORDIR%%/lib/Horde/iCalendar/valarm.php
 %%HORDIR%%/lib/Horde/iCalendar/vcard.php
 %%HORDIR%%/lib/Horde/iCalendar/vevent.php
@@ -339,23 +514,26 @@
 %%HORDIR%%/lib/Horde/iCalendar/vnote.php
 %%HORDIR%%/lib/Horde/iCalendar/vtimezone.php
 %%HORDIR%%/lib/Horde/iCalendar/vtodo.php
-%%HORDIR%%/lib/Horde/iCalendar.php
-%%HORDIR%%/lib/Horde.php
+%%HORDIR%%/lib/Net/IMSP.php
+%%HORDIR%%/lib/Net/IMSP/Auth.php
 %%HORDIR%%/lib/Net/IMSP/Auth/cram_md5.php
 %%HORDIR%%/lib/Net/IMSP/Auth/imtest.php
 %%HORDIR%%/lib/Net/IMSP/Auth/plaintext.php
-%%HORDIR%%/lib/Net/IMSP/Auth.php
 %%HORDIR%%/lib/Net/IMSP/Book.php
 %%HORDIR%%/lib/Net/IMSP/Options.php
 %%HORDIR%%/lib/Net/IMSP/Utils.php
-%%HORDIR%%/lib/Net/IMSP.php
+%%HORDIR%%/lib/Net/SMS.php
 %%HORDIR%%/lib/Net/SMS/clickatell_http.php
+%%HORDIR%%/lib/Net/SMS/generic_smpp.php
 %%HORDIR%%/lib/Net/SMS/generic_smtp.php
 %%HORDIR%%/lib/Net/SMS/sms2email_http.php
 %%HORDIR%%/lib/Net/SMS/vodafoneitaly_smtp.php
 %%HORDIR%%/lib/Net/SMS/win_http.php
-%%HORDIR%%/lib/Net/SMS.php
+%%HORDIR%%/lib/SyncML.php
 %%HORDIR%%/lib/SyncML/Backend.php
+%%HORDIR%%/lib/SyncML/Backend/Horde.php
+%%HORDIR%%/lib/SyncML/Backend/Sql.php
+%%HORDIR%%/lib/SyncML/Command.php
 %%HORDIR%%/lib/SyncML/Command/Alert.php
 %%HORDIR%%/lib/SyncML/Command/Final.php
 %%HORDIR%%/lib/SyncML/Command/Get.php
@@ -365,60 +543,67 @@
 %%HORDIR%%/lib/SyncML/Command/Status.php
 %%HORDIR%%/lib/SyncML/Command/Sync.php
 %%HORDIR%%/lib/SyncML/Command/SyncElement.php
-%%HORDIR%%/lib/SyncML/Command.php
+%%HORDIR%%/lib/SyncML/Command/SyncHdr.php
 %%HORDIR%%/lib/SyncML/Constants.php
+%%HORDIR%%/lib/SyncML/Device.php
 %%HORDIR%%/lib/SyncML/Device/Nokia.php
 %%HORDIR%%/lib/SyncML/Device/P800.php
+%%HORDIR%%/lib/SyncML/Device/Sync4JMozilla.php
 %%HORDIR%%/lib/SyncML/Device/Sync4j.php
 %%HORDIR%%/lib/SyncML/Device/Synthesis.php
-%%HORDIR%%/lib/SyncML/Device.php
 %%HORDIR%%/lib/SyncML/DeviceInfo.php
 %%HORDIR%%/lib/SyncML/State.php
 %%HORDIR%%/lib/SyncML/Sync.php
-%%HORDIR%%/lib/SyncML.php
+%%HORDIR%%/lib/SyncML/XMLOutput.php
 %%HORDIR%%/lib/Test.php
+%%HORDIR%%/lib/Text/Diff.php
+%%HORDIR%%/lib/Text/Diff/Engine/native.php
+%%HORDIR%%/lib/Text/Diff/Engine/shell.php
+%%HORDIR%%/lib/Text/Diff/Engine/string.php
+%%HORDIR%%/lib/Text/Diff/Engine/xdiff.php
+%%HORDIR%%/lib/Text/Diff/Mapped.php
+%%HORDIR%%/lib/Text/Diff/Renderer.php
+%%HORDIR%%/lib/Text/Diff/Renderer/context.php
 %%HORDIR%%/lib/Text/Diff/Renderer/inline.php
 %%HORDIR%%/lib/Text/Diff/Renderer/unified.php
-%%HORDIR%%/lib/Text/Diff/Renderer.php
-%%HORDIR%%/lib/Text/Diff.php
+%%HORDIR%%/lib/Text/Diff/ThreeWay.php
 %%HORDIR%%/lib/Text/Diff3.php
 %%HORDIR%%/lib/Text/Flowed.php
-%%HORDIR%%/lib/Text/reST/Formatter/html.php
-%%HORDIR%%/lib/Text/reST/Formatter.php
-%%HORDIR%%/lib/Text/reST/Parser.php
-%%HORDIR%%/lib/Text/reST.php
+%%HORDIR%%/lib/VFS.php
 %%HORDIR%%/lib/VFS/Browser.php
 %%HORDIR%%/lib/VFS/GC.php
+%%HORDIR%%/lib/VFS/ISOWriter.php
+%%HORDIR%%/lib/VFS/ISOWriter/RealInputStrategy.php
 %%HORDIR%%/lib/VFS/ISOWriter/RealInputStrategy/copy.php
 %%HORDIR%%/lib/VFS/ISOWriter/RealInputStrategy/direct.php
-%%HORDIR%%/lib/VFS/ISOWriter/RealInputStrategy.php
+%%HORDIR%%/lib/VFS/ISOWriter/RealOutputStrategy.php
 %%HORDIR%%/lib/VFS/ISOWriter/RealOutputStrategy/copy.php
 %%HORDIR%%/lib/VFS/ISOWriter/RealOutputStrategy/direct.php
-%%HORDIR%%/lib/VFS/ISOWriter/RealOutputStrategy.php
 %%HORDIR%%/lib/VFS/ISOWriter/mkisofs.php
-%%HORDIR%%/lib/VFS/ISOWriter.php
 %%HORDIR%%/lib/VFS/ListItem.php
 %%HORDIR%%/lib/VFS/Object.php
 %%HORDIR%%/lib/VFS/file.php
 %%HORDIR%%/lib/VFS/ftp.php
+%%HORDIR%%/lib/VFS/horde.php
 %%HORDIR%%/lib/VFS/musql.php
 %%HORDIR%%/lib/VFS/smb.php
 %%HORDIR%%/lib/VFS/sql.php
 %%HORDIR%%/lib/VFS/sql_file.php
-%%HORDIR%%/lib/VFS.php
+%%HORDIR%%/lib/VFS/ssh2.php
+%%HORDIR%%/lib/XML/WBXML.php
 %%HORDIR%%/lib/XML/WBXML/ContentHandler.php
+%%HORDIR%%/lib/XML/WBXML/DTD.php
 %%HORDIR%%/lib/XML/WBXML/DTD/SyncML.php
 %%HORDIR%%/lib/XML/WBXML/DTD/SyncMLDevInf.php
 %%HORDIR%%/lib/XML/WBXML/DTD/SyncMLMetInf.php
-%%HORDIR%%/lib/XML/WBXML/DTD.php
 %%HORDIR%%/lib/XML/WBXML/DTDManager.php
 %%HORDIR%%/lib/XML/WBXML/Decoder.php
 %%HORDIR%%/lib/XML/WBXML/Encoder.php
-%%HORDIR%%/lib/XML/WBXML.php
 %%HORDIR%%/lib/api.php
 %%HORDIR%%/lib/base.php
 %%HORDIR%%/lib/core.php
 %%HORDIR%%/lib/prefs.php
+%%HORDIR%%/lib/tests/webroot.phpt
 %%HORDIR%%/lib/version.php
 %%HORDIR%%/locale/.htaccess
 %%HORDIR%%/locale/ar_SY/LC_MESSAGES/horde.mo
@@ -540,13 +725,14 @@
 %%HORDIR%%/rpc.php
 %%HORDIR%%/scripts/.htaccess
 %%HORDIR%%/scripts/SCRIPTS
+%%HORDIR%%/scripts/alarms.php
 %%HORDIR%%/scripts/cookie_login.php
-%%HORDIR%%/scripts/count_sessions.php
-%%HORDIR%%/scripts/create-symlinks.php
 %%HORDIR%%/scripts/get_login.php
+%%HORDIR%%/scripts/horde.logrotate
 %%HORDIR%%/scripts/http_login_refer.php
+%%HORDIR%%/scripts/import_squirrelmail_prefs.php
+%%HORDIR%%/scripts/ldap/horde.prefs.acl
 %%HORDIR%%/scripts/ldap/horde.schema
-%%HORDIR%%/scripts/remove_prefs.php
 %%HORDIR%%/scripts/set_perms.sh
 %%HORDIR%%/scripts/sql/README
 %%HORDIR%%/scripts/sql/README.OCI8
@@ -557,8 +743,15 @@
 %%HORDIR%%/scripts/sql/create.sql
 %%HORDIR%%/scripts/sql/create.sybase.sql
 %%HORDIR%%/scripts/sql/create.xml
+%%HORDIR%%/scripts/sql/horde_alarms.mssql.sql
+%%HORDIR%%/scripts/sql/horde_alarms.oci8.sql
+%%HORDIR%%/scripts/sql/horde_alarms.pgsql.sql
+%%HORDIR%%/scripts/sql/horde_alarms.sql
+%%HORDIR%%/scripts/sql/horde_cache.pgsql.sql
+%%HORDIR%%/scripts/sql/horde_cache.sql
 %%HORDIR%%/scripts/sql/horde_datatree.mssql.sql
 %%HORDIR%%/scripts/sql/horde_datatree.mysql.sql
+%%HORDIR%%/scripts/sql/horde_datatree.pgsql.sql
 %%HORDIR%%/scripts/sql/horde_datatree.sql
 %%HORDIR%%/scripts/sql/horde_histories.mssql.sql
 %%HORDIR%%/scripts/sql/horde_histories.sql
@@ -574,6 +767,7 @@
 %%HORDIR%%/scripts/sql/horde_sessionhandler.pgsql.sql
 %%HORDIR%%/scripts/sql/horde_sessionhandler.sapdb.sql
 %%HORDIR%%/scripts/sql/horde_sessionhandler.sql
+%%HORDIR%%/scripts/sql/horde_syncml.sql
 %%HORDIR%%/scripts/sql/horde_tokens.sql
 %%HORDIR%%/scripts/sql/horde_users.sql
 %%HORDIR%%/scripts/sql/horde_vfs.mssql.sql
@@ -590,96 +784,565 @@
 %%HORDIR%%/scripts/upgrades/3.0_to_3.1.mysql.sql
 %%HORDIR%%/scripts/upgrades/3.0_to_3.1.oci8.sql
 %%HORDIR%%/scripts/upgrades/3.0_to_3.1.sql
+%%HORDIR%%/scripts/upgrades/3.1_to_3.2.msde.sql
+%%HORDIR%%/scripts/upgrades/3.1_to_3.2.mysql.sql
+%%HORDIR%%/scripts/upgrades/3.1_to_3.2.oci8.sql
+%%HORDIR%%/scripts/upgrades/3.1_to_3.2.pgsql.sql
+%%HORDIR%%/scripts/upgrades/3.1_to_3.2.sql
+%%HORDIR%%/scripts/upgrades/3.1_to_3.2.sybase.sql
 %%HORDIR%%/scripts/upgrades/migrate_user_categories.php
 %%HORDIR%%/scripts/upgrades/move_history_out_of_datatree.php
 %%HORDIR%%/services/cacheview.php
 %%HORDIR%%/services/changepassword.php
+%%HORDIR%%/services/confirm.php
 %%HORDIR%%/services/download/index.php
-%%HORDIR%%/services/editor/htmlarea/dialog.js
-%%HORDIR%%/services/editor/htmlarea/htmlarea.css
-%%HORDIR%%/services/editor/htmlarea/htmlarea.js
-%%HORDIR%%/services/editor/htmlarea/images/ed_about.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_align_center.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_align_justify.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_align_left.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_align_right.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_blank.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_charmap.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_color_bg.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_color_fg.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_copy.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_custom.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_cut.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_delete.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_format_bold.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_format_italic.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_format_strike.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_format_sub.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_format_sup.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_format_underline.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_help.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_hr.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_html.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_image.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_indent_less.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_indent_more.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_killword.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_left_to_right.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_link.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_list_bullet.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_list_num.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_paste.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_redo.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_right_to_left.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_rmformat.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_save.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_show_border.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_splitcel.gif
-%%HORDIR%%/services/editor/htmlarea/images/ed_undo.gif
-%%HORDIR%%/services/editor/htmlarea/images/fullscreen_maximize.gif
-%%HORDIR%%/services/editor/htmlarea/images/fullscreen_minimize.gif
-%%HORDIR%%/services/editor/htmlarea/images/insert_table.gif
-%%HORDIR%%/services/editor/htmlarea/lang/en.js
-%%HORDIR%%/services/editor/htmlarea/plugins/AnselImage/ansel-image.js
-%%HORDIR%%/services/editor/htmlarea/plugins/AnselImage/insert_image.php
-%%HORDIR%%/services/editor/htmlarea/plugins/AnselImage/lang/en.js
-%%HORDIR%%/services/editor/htmlarea/plugins/AnselImage/showimage.html
-%%HORDIR%%/services/editor/htmlarea/plugins/ContextMenu/context-menu.js
-%%HORDIR%%/services/editor/htmlarea/plugins/ContextMenu/lang/en.js
-%%HORDIR%%/services/editor/htmlarea/plugins/ContextMenu/menu.css
-%%HORDIR%%/services/editor/htmlarea/plugins/ListType/lang/en.js
-%%HORDIR%%/services/editor/htmlarea/plugins/ListType/list-type.js
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/cell-delete.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/cell-insert-after.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/cell-insert-before.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/cell-merge.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/cell-prop.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/cell-split.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/col-delete.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/col-insert-after.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/col-insert-before.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/col-split.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/row-delete.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/row-insert-above.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/row-insert-under.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/row-prop.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/row-split.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img/table-prop.gif
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/lang/en.js
-%%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/table-operations.js
-%%HORDIR%%/services/editor/htmlarea/popupdiv.js
-%%HORDIR%%/services/editor/htmlarea/popups/about.html
-%%HORDIR%%/services/editor/htmlarea/popups/blank.html
-%%HORDIR%%/services/editor/htmlarea/popups/fullscreen.html
-%%HORDIR%%/services/editor/htmlarea/popups/insert_image.html
-%%HORDIR%%/services/editor/htmlarea/popups/insert_table.html
-%%HORDIR%%/services/editor/htmlarea/popups/link.html
-%%HORDIR%%/services/editor/htmlarea/popups/popup.js
-%%HORDIR%%/services/editor/htmlarea/popups/select_color.html
-%%HORDIR%%/services/editor/htmlarea/popupwin.js
+%%HORDIR%%/services/editor/fckeditor/css/behaviors/disablehandles.htc
+%%HORDIR%%/services/editor/fckeditor/css/behaviors/showtableborders.htc
+%%HORDIR%%/services/editor/fckeditor/css/fck_editorarea.css
+%%HORDIR%%/services/editor/fckeditor/css/fck_internal.css
+%%HORDIR%%/services/editor/fckeditor/css/fck_showtableborders_gecko.css
+%%HORDIR%%/services/editor/fckeditor/css/images/block_address.png
+%%HORDIR%%/services/editor/fckeditor/css/images/block_blockquote.png
+%%HORDIR%%/services/editor/fckeditor/css/images/block_div.png
+%%HORDIR%%/services/editor/fckeditor/css/images/block_h1.png
+%%HORDIR%%/services/editor/fckeditor/css/images/block_h2.png
+%%HORDIR%%/services/editor/fckeditor/css/images/block_h3.png
+%%HORDIR%%/services/editor/fckeditor/css/images/block_h4.png
+%%HORDIR%%/services/editor/fckeditor/css/images/block_h5.png
+%%HORDIR%%/services/editor/fckeditor/css/images/block_h6.png
+%%HORDIR%%/services/editor/fckeditor/css/images/block_p.png
+%%HORDIR%%/services/editor/fckeditor/css/images/block_pre.png
+%%HORDIR%%/services/editor/fckeditor/css/images/fck_anchor.gif
+%%HORDIR%%/services/editor/fckeditor/css/images/fck_flashlogo.gif
+%%HORDIR%%/services/editor/fckeditor/css/images/fck_hiddenfield.gif
+%%HORDIR%%/services/editor/fckeditor/css/images/fck_pagebreak.gif
+%%HORDIR%%/services/editor/fckeditor/dialog/common/fck_dialog_common.css
+%%HORDIR%%/services/editor/fckeditor/dialog/common/fck_dialog_common.js
+%%HORDIR%%/services/editor/fckeditor/dialog/common/images/locked.gif
+%%HORDIR%%/services/editor/fckeditor/dialog/common/images/reset.gif
+%%HORDIR%%/services/editor/fckeditor/dialog/common/images/unlocked.gif
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_about.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_about/logo_fckeditor.gif
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_about/logo_fredck.gif
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_anchor.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_button.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_checkbox.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_colorselector.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_docprops.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_docprops/fck_document_preview.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_flash.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_flash/fck_flash.js
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_flash/fck_flash_preview.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_form.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_hiddenfield.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_image.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_image/fck_image.js
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_image/fck_image_preview.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_link.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_link/fck_link.js
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_listprop.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_paste.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_radiobutton.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_replace.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_select.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_select/fck_select.js
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_smiley.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_source.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_specialchar.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_spellerpages.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_table.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_tablecell.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_template.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_template/images/template1.gif
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_template/images/template2.gif
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_template/images/template3.gif
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_textarea.html
+%%HORDIR%%/services/editor/fckeditor/dialog/fck_textfield.html
+%%HORDIR%%/services/editor/fckeditor/fckconfig.js
+%%HORDIR%%/services/editor/fckeditor/fckdebug.html
+%%HORDIR%%/services/editor/fckeditor/fckdialog.html
+%%HORDIR%%/services/editor/fckeditor/fckeditor.html
+%%HORDIR%%/services/editor/fckeditor/fckeditor.js
+%%HORDIR%%/services/editor/fckeditor/fckstyles.xml
+%%HORDIR%%/services/editor/fckeditor/fcktemplates.xml
+%%HORDIR%%/services/editor/fckeditor/images/anchor.gif
+%%HORDIR%%/services/editor/fckeditor/images/arrow_ltr.gif
+%%HORDIR%%/services/editor/fckeditor/images/arrow_rtl.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/angel_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/angry_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/broken_heart.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/cake.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/confused_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/cry_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/devil_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/embaressed_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/envelope.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/heart.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/kiss.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/lightbulb.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/omg_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/regular_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/sad_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/shades_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/teeth_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/thumbs_down.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/thumbs_up.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/tounge_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/whatchutalkingabout_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/smiley/msn/wink_smile.gif
+%%HORDIR%%/services/editor/fckeditor/images/spacer.gif
+%%HORDIR%%/services/editor/fckeditor/js/fckeditorcode_gecko.js
+%%HORDIR%%/services/editor/fckeditor/js/fckeditorcode_ie.js
+%%HORDIR%%/services/editor/fckeditor/lang/af.js
+%%HORDIR%%/services/editor/fckeditor/lang/ar.js
+%%HORDIR%%/services/editor/fckeditor/lang/bg.js
+%%HORDIR%%/services/editor/fckeditor/lang/bn.js
+%%HORDIR%%/services/editor/fckeditor/lang/bs.js
+%%HORDIR%%/services/editor/fckeditor/lang/ca.js
+%%HORDIR%%/services/editor/fckeditor/lang/cs.js
+%%HORDIR%%/services/editor/fckeditor/lang/da.js
+%%HORDIR%%/services/editor/fckeditor/lang/de.js
+%%HORDIR%%/services/editor/fckeditor/lang/el.js
+%%HORDIR%%/services/editor/fckeditor/lang/en-au.js
+%%HORDIR%%/services/editor/fckeditor/lang/en-ca.js
+%%HORDIR%%/services/editor/fckeditor/lang/en-uk.js
+%%HORDIR%%/services/editor/fckeditor/lang/en.js
+%%HORDIR%%/services/editor/fckeditor/lang/eo.js
+%%HORDIR%%/services/editor/fckeditor/lang/es.js
+%%HORDIR%%/services/editor/fckeditor/lang/et.js
+%%HORDIR%%/services/editor/fckeditor/lang/eu.js
+%%HORDIR%%/services/editor/fckeditor/lang/fa.js
+%%HORDIR%%/services/editor/fckeditor/lang/fi.js
+%%HORDIR%%/services/editor/fckeditor/lang/fo.js
+%%HORDIR%%/services/editor/fckeditor/lang/fr.js
+%%HORDIR%%/services/editor/fckeditor/lang/gl.js
+%%HORDIR%%/services/editor/fckeditor/lang/he.js
+%%HORDIR%%/services/editor/fckeditor/lang/hi.js
+%%HORDIR%%/services/editor/fckeditor/lang/hr.js
+%%HORDIR%%/services/editor/fckeditor/lang/hu.js
+%%HORDIR%%/services/editor/fckeditor/lang/it.js
+%%HORDIR%%/services/editor/fckeditor/lang/ja.js
+%%HORDIR%%/services/editor/fckeditor/lang/km.js
+%%HORDIR%%/services/editor/fckeditor/lang/ko.js
+%%HORDIR%%/services/editor/fckeditor/lang/lt.js
+%%HORDIR%%/services/editor/fckeditor/lang/lv.js
+%%HORDIR%%/services/editor/fckeditor/lang/mn.js
+%%HORDIR%%/services/editor/fckeditor/lang/ms.js
+%%HORDIR%%/services/editor/fckeditor/lang/nb.js
+%%HORDIR%%/services/editor/fckeditor/lang/nl.js
+%%HORDIR%%/services/editor/fckeditor/lang/no.js
+%%HORDIR%%/services/editor/fckeditor/lang/pl.js
+%%HORDIR%%/services/editor/fckeditor/lang/pt-br.js
+%%HORDIR%%/services/editor/fckeditor/lang/pt.js
+%%HORDIR%%/services/editor/fckeditor/lang/ro.js
+%%HORDIR%%/services/editor/fckeditor/lang/ru.js
+%%HORDIR%%/services/editor/fckeditor/lang/sk.js
+%%HORDIR%%/services/editor/fckeditor/lang/sl.js
+%%HORDIR%%/services/editor/fckeditor/lang/sr-latn.js
+%%HORDIR%%/services/editor/fckeditor/lang/sr.js
+%%HORDIR%%/services/editor/fckeditor/lang/sv.js
+%%HORDIR%%/services/editor/fckeditor/lang/th.js
+%%HORDIR%%/services/editor/fckeditor/lang/tr.js
+%%HORDIR%%/services/editor/fckeditor/lang/uk.js
+%%HORDIR%%/services/editor/fckeditor/lang/vi.js
+%%HORDIR%%/services/editor/fckeditor/lang/zh-cn.js
+%%HORDIR%%/services/editor/fckeditor/lang/zh.js
+%%HORDIR%%/services/editor/fckeditor/skins/default/fck_dialog.css
+%%HORDIR%%/services/editor/fckeditor/skins/default/fck_editor.css
+%%HORDIR%%/services/editor/fckeditor/skins/default/fck_strip.gif
+%%HORDIR%%/services/editor/fckeditor/skins/default/images/toolbar.arrowright.gif
+%%HORDIR%%/services/editor/fckeditor/skins/default/images/toolbar.buttonarrow.gif
+%%HORDIR%%/services/editor/fckeditor/skins/default/images/toolbar.collapse.gif
+%%HORDIR%%/services/editor/fckeditor/skins/default/images/toolbar.end.gif
+%%HORDIR%%/services/editor/fckeditor/skins/default/images/toolbar.expand.gif
+%%HORDIR%%/services/editor/fckeditor/skins/default/images/toolbar.separator.gif
+%%HORDIR%%/services/editor/fckeditor/skins/default/images/toolbar.start.gif
+%%HORDIR%%/services/editor/fckeditor/src/fckconfig.js
+%%HORDIR%%/services/editor/fckeditor/src/fckeditor.js
+%%HORDIR%%/services/editor/tinymce/blank.htm
+%%HORDIR%%/services/editor/tinymce/langs/en.js
+%%HORDIR%%/services/editor/tinymce/src/tiny_mce_popup.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/about.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/anchor.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/charmap.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/color_picker.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/css/colorpicker.css
+%%HORDIR%%/services/editor/tinymce/themes/advanced/css/editor_content.css
+%%HORDIR%%/services/editor/tinymce/themes/advanced/css/editor_popup.css
+%%HORDIR%%/services/editor/tinymce/themes/advanced/css/editor_ui.css
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/about.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/common_buttons.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/create_accessible_content.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/images/insert_anchor_window.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/images/insert_image_window.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/images/insert_link_window.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/images/insert_table_window.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/index.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/insert_anchor_button.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/insert_image_button.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/insert_link_button.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/insert_table_button.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/style.css
+%%HORDIR%%/services/editor/tinymce/themes/advanced/editor_template.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/image.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/anchor.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/anchor_symbol.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/backcolor.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/bold.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/bold_de_se.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/bold_es.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/bold_fr.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/bold_ru.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/bold_tw.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/browse.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/bullist.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/button_menu.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/buttons.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/cancel_button_bg.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/charmap.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/cleanup.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/close.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/code.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/color.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/colors.jpg
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/copy.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/custom_1.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/cut.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/forecolor.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/help.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/hr.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/image.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/indent.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/insert_button_bg.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/italic.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/italic_de_se.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/italic_es.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/italic_ru.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/italic_tw.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/justifycenter.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/justifyfull.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/justifyleft.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/justifyright.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/link.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/menu_check.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/newdocument.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/numlist.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/opacity.png
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/outdent.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/paste.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/redo.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/removeformat.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/separator.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/spacer.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/statusbar_resize.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/strikethrough.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/sub.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/sup.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/underline.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/underline_es.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/underline_fr.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/underline_ru.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/underline_tw.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/undo.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/unlink.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/visualaid.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/xp/tab_bg.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/xp/tab_end.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/xp/tab_sel_bg.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/xp/tab_sel_end.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/images/xp/tabs_bg.gif
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/about.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/anchor.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/charmap.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/color_picker.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/image.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/link.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/source_editor.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/src/about.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/src/anchor.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/src/charmap.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/src/color_picker.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/src/image.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/src/link.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/src/source_editor.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/langs/cs.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/langs/cy.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/langs/en.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/langs/ja-euc-jp.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/langs/ja.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/langs/tw.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/langs/zh_cn.js
+%%HORDIR%%/services/editor/tinymce/themes/advanced/link.htm
+%%HORDIR%%/services/editor/tinymce/themes/advanced/source_editor.htm
+%%HORDIR%%/services/editor/tinymce/themes/simple/css/editor_content.css
+%%HORDIR%%/services/editor/tinymce/themes/simple/css/editor_popup.css
+%%HORDIR%%/services/editor/tinymce/themes/simple/css/editor_ui.css
+%%HORDIR%%/services/editor/tinymce/themes/simple/editor_template.js
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/bold.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/bold_de_se.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/bold_fr.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/bold_ru.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/bold_tw.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/bullist.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/buttons.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/cleanup.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/italic.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/italic_de_se.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/italic_ru.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/italic_tw.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/numlist.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/redo.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/separator.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/spacer.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/strikethrough.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/underline.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/underline_fr.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/underline_ru.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/underline_tw.gif
+%%HORDIR%%/services/editor/tinymce/themes/simple/images/undo.gif
+%%HORDIR%%/services/editor/tinymce/tiny_mce.js
+%%HORDIR%%/services/editor/tinymce/tiny_mce_popup.js
+%%HORDIR%%/services/editor/xinha/Xinha.css
+%%HORDIR%%/services/editor/xinha/XinhaCore.js
+%%HORDIR%%/services/editor/xinha/images/de/bold.gif
+%%HORDIR%%/services/editor/xinha/images/de/italic.gif
+%%HORDIR%%/services/editor/xinha/images/de/underline.gif
+%%HORDIR%%/services/editor/xinha/images/ed_about.gif
+%%HORDIR%%/services/editor/xinha/images/ed_align.gif
+%%HORDIR%%/services/editor/xinha/images/ed_align_center.gif
+%%HORDIR%%/services/editor/xinha/images/ed_align_justify.gif
+%%HORDIR%%/services/editor/xinha/images/ed_align_left.gif
+%%HORDIR%%/services/editor/xinha/images/ed_align_right.gif
+%%HORDIR%%/services/editor/xinha/images/ed_blank.gif
+%%HORDIR%%/services/editor/xinha/images/ed_buttons_main.gif
+%%HORDIR%%/services/editor/xinha/images/ed_charmap.gif
+%%HORDIR%%/services/editor/xinha/images/ed_clearfonts.gif
+%%HORDIR%%/services/editor/xinha/images/ed_color_bg.gif
+%%HORDIR%%/services/editor/xinha/images/ed_color_fg.gif
+%%HORDIR%%/services/editor/xinha/images/ed_copy.gif
+%%HORDIR%%/services/editor/xinha/images/ed_custom.gif
+%%HORDIR%%/services/editor/xinha/images/ed_cut.gif
+%%HORDIR%%/services/editor/xinha/images/ed_delete.gif
+%%HORDIR%%/services/editor/xinha/images/ed_format_bold.gif
+%%HORDIR%%/services/editor/xinha/images/ed_format_italic.gif
+%%HORDIR%%/services/editor/xinha/images/ed_format_strike.gif
+%%HORDIR%%/services/editor/xinha/images/ed_format_sub.gif
+%%HORDIR%%/services/editor/xinha/images/ed_format_sup.gif
+%%HORDIR%%/services/editor/xinha/images/ed_format_underline.gif
+%%HORDIR%%/services/editor/xinha/images/ed_help.gif
+%%HORDIR%%/services/editor/xinha/images/ed_hr.gif
+%%HORDIR%%/services/editor/xinha/images/ed_html.gif
+%%HORDIR%%/services/editor/xinha/images/ed_image.gif
+%%HORDIR%%/services/editor/xinha/images/ed_indent_less.gif
+%%HORDIR%%/services/editor/xinha/images/ed_indent_more.gif
+%%HORDIR%%/services/editor/xinha/images/ed_killword.gif
+%%HORDIR%%/services/editor/xinha/images/ed_left_to_right.gif
+%%HORDIR%%/services/editor/xinha/images/ed_link.gif
+%%HORDIR%%/services/editor/xinha/images/ed_list_bullet.gif
+%%HORDIR%%/services/editor/xinha/images/ed_list_num.gif
+%%HORDIR%%/services/editor/xinha/images/ed_overwrite.gif
+%%HORDIR%%/services/editor/xinha/images/ed_paste.gif
+%%HORDIR%%/services/editor/xinha/images/ed_print.gif
+%%HORDIR%%/services/editor/xinha/images/ed_redo.gif
+%%HORDIR%%/services/editor/xinha/images/ed_right_to_left.gif
+%%HORDIR%%/services/editor/xinha/images/ed_rmformat.gif
+%%HORDIR%%/services/editor/xinha/images/ed_save.gif
+%%HORDIR%%/services/editor/xinha/images/ed_save.png
+%%HORDIR%%/services/editor/xinha/images/ed_saveas.gif
+%%HORDIR%%/services/editor/xinha/images/ed_selectall.gif
+%%HORDIR%%/services/editor/xinha/images/ed_show_border.gif
+%%HORDIR%%/services/editor/xinha/images/ed_splitblock.gif
+%%HORDIR%%/services/editor/xinha/images/ed_splitcel.gif
+%%HORDIR%%/services/editor/xinha/images/ed_undo.gif
+%%HORDIR%%/services/editor/xinha/images/ed_word_cleaner.gif
+%%HORDIR%%/services/editor/xinha/images/fr/bold.gif
+%%HORDIR%%/services/editor/xinha/images/fr/strikethrough.gif
+%%HORDIR%%/services/editor/xinha/images/fr/underline.gif
+%%HORDIR%%/services/editor/xinha/images/fullscreen_maximize.gif
+%%HORDIR%%/services/editor/xinha/images/fullscreen_minimize.gif
+%%HORDIR%%/services/editor/xinha/images/insert_table.gif
+%%HORDIR%%/services/editor/xinha/images/insertfilelink.gif
+%%HORDIR%%/services/editor/xinha/images/insertmacro.png
+%%HORDIR%%/services/editor/xinha/images/tidy.gif
+%%HORDIR%%/services/editor/xinha/images/toggle_borders.gif
+%%HORDIR%%/services/editor/xinha/images/xinha_logo.gif
+%%HORDIR%%/services/editor/xinha/lang/b5.js
+%%HORDIR%%/services/editor/xinha/lang/ch.js
+%%HORDIR%%/services/editor/xinha/lang/cz.js
+%%HORDIR%%/services/editor/xinha/lang/da.js
+%%HORDIR%%/services/editor/xinha/lang/de.js
+%%HORDIR%%/services/editor/xinha/lang/ee.js
+%%HORDIR%%/services/editor/xinha/lang/el.js
+%%HORDIR%%/services/editor/xinha/lang/es.js
+%%HORDIR%%/services/editor/xinha/lang/eu.js
+%%HORDIR%%/services/editor/xinha/lang/fa.js
+%%HORDIR%%/services/editor/xinha/lang/fi.js
+%%HORDIR%%/services/editor/xinha/lang/fr.js
+%%HORDIR%%/services/editor/xinha/lang/gb.js
+%%HORDIR%%/services/editor/xinha/lang/he.js
+%%HORDIR%%/services/editor/xinha/lang/hu.js
+%%HORDIR%%/services/editor/xinha/lang/it.js
+%%HORDIR%%/services/editor/xinha/lang/ja.js
+%%HORDIR%%/services/editor/xinha/lang/lt.js
+%%HORDIR%%/services/editor/xinha/lang/lv.js
+%%HORDIR%%/services/editor/xinha/lang/nb.js
+%%HORDIR%%/services/editor/xinha/lang/nl.js
+%%HORDIR%%/services/editor/xinha/lang/pl.js
+%%HORDIR%%/services/editor/xinha/lang/pt_br.js
+%%HORDIR%%/services/editor/xinha/lang/ro.js
+%%HORDIR%%/services/editor/xinha/lang/ru.js
+%%HORDIR%%/services/editor/xinha/lang/sh.js
+%%HORDIR%%/services/editor/xinha/lang/si.js
+%%HORDIR%%/services/editor/xinha/lang/sr.js
+%%HORDIR%%/services/editor/xinha/lang/sv.js
+%%HORDIR%%/services/editor/xinha/lang/th.js
+%%HORDIR%%/services/editor/xinha/lang/vn.js
+%%HORDIR%%/services/editor/xinha/license.txt
+%%HORDIR%%/services/editor/xinha/modules/ColorPicker/ColorPicker.js
+%%HORDIR%%/services/editor/xinha/modules/ColorPicker/lang/pt_br.js
+%%HORDIR%%/services/editor/xinha/modules/ColorPicker/src/ColorPicker.js
+%%HORDIR%%/services/editor/xinha/modules/CreateLink/link.html
+%%HORDIR%%/services/editor/xinha/modules/CreateLink/link.js
+%%HORDIR%%/services/editor/xinha/modules/CreateLink/src/link.js
+%%HORDIR%%/services/editor/xinha/modules/Dialogs/dialog.js
+%%HORDIR%%/services/editor/xinha/modules/Dialogs/inline-dialog.js
+%%HORDIR%%/services/editor/xinha/modules/Dialogs/panel-dialog.js
+%%HORDIR%%/services/editor/xinha/modules/Dialogs/popupwin.js
+%%HORDIR%%/services/editor/xinha/modules/Dialogs/src/dialog.js
+%%HORDIR%%/services/editor/xinha/modules/Dialogs/src/inline-dialog.js
+%%HORDIR%%/services/editor/xinha/modules/Dialogs/src/panel-dialog.js
+%%HORDIR%%/services/editor/xinha/modules/Dialogs/src/popupwin.js
+%%HORDIR%%/services/editor/xinha/modules/FullScreen/full-screen.js
+%%HORDIR%%/services/editor/xinha/modules/FullScreen/lang/de.js
+%%HORDIR%%/services/editor/xinha/modules/FullScreen/lang/fr.js
+%%HORDIR%%/services/editor/xinha/modules/FullScreen/lang/nb.js
+%%HORDIR%%/services/editor/xinha/modules/FullScreen/lang/pl.js
+%%HORDIR%%/services/editor/xinha/modules/FullScreen/lang/pt_br.js
+%%HORDIR%%/services/editor/xinha/modules/FullScreen/lang/ru.js
+%%HORDIR%%/services/editor/xinha/modules/FullScreen/lang/sv.js
+%%HORDIR%%/services/editor/xinha/modules/FullScreen/src/full-screen.js
+%%HORDIR%%/services/editor/xinha/modules/Gecko/Gecko.js
+%%HORDIR%%/services/editor/xinha/modules/Gecko/lang/pt_br.js
+%%HORDIR%%/services/editor/xinha/modules/Gecko/paraHandlerBest.js
+%%HORDIR%%/services/editor/xinha/modules/Gecko/paraHandlerDirty.js
+%%HORDIR%%/services/editor/xinha/modules/Gecko/src/Gecko.js
+%%HORDIR%%/services/editor/xinha/modules/Gecko/src/paraHandlerBest.js
+%%HORDIR%%/services/editor/xinha/modules/Gecko/src/paraHandlerDirty.js
+%%HORDIR%%/services/editor/xinha/modules/GetHtml/DOMwalk.js
+%%HORDIR%%/services/editor/xinha/modules/GetHtml/TransformInnerHTML.js
+%%HORDIR%%/services/editor/xinha/modules/GetHtml/lang/pt_br.js
+%%HORDIR%%/services/editor/xinha/modules/GetHtml/src/DOMwalk.js
+%%HORDIR%%/services/editor/xinha/modules/GetHtml/src/TransformInnerHTML.js
+%%HORDIR%%/services/editor/xinha/modules/InsertImage/insert_image.html
+%%HORDIR%%/services/editor/xinha/modules/InsertImage/insert_image.js
+%%HORDIR%%/services/editor/xinha/modules/InsertImage/src/insert_image.js
+%%HORDIR%%/services/editor/xinha/modules/InsertTable/insert_table.html
+%%HORDIR%%/services/editor/xinha/modules/InsertTable/insert_table.js
+%%HORDIR%%/services/editor/xinha/modules/InsertTable/src/insert_table.js
+%%HORDIR%%/services/editor/xinha/modules/InternetExplorer/InternetExplorer.js
+%%HORDIR%%/services/editor/xinha/modules/InternetExplorer/src/InternetExplorer.js
+%%HORDIR%%/services/editor/xinha/plugins/AnselImage/ansel-image.js
+%%HORDIR%%/services/editor/xinha/plugins/AnselImage/insert_image.php
+%%HORDIR%%/services/editor/xinha/plugins/AnselImage/src/ansel-image.js
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/CharacterMap.css
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/character-map.js
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/img/ed_charmap.gif
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/de.js
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/fr.js
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/it.js
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/ja.js
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/nb.js
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/nl.js
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/pt_br.js
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/ru.js
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang/sv.js
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/popups/select_character.html
+%%HORDIR%%/services/editor/xinha/plugins/CharacterMap/src/character-map.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/context-menu.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/de.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/el.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/fr.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/he.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/ja.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/nb.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/nl.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/pl.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/pt_br.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang/sv.js
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/menu.css
+%%HORDIR%%/services/editor/xinha/plugins/ContextMenu/src/context-menu.js
+%%HORDIR%%/services/editor/xinha/plugins/ListType/ListType.css
+%%HORDIR%%/services/editor/xinha/plugins/ListType/img/circle.png
+%%HORDIR%%/services/editor/xinha/plugins/ListType/img/decimal.png
+%%HORDIR%%/services/editor/xinha/plugins/ListType/img/disc.png
+%%HORDIR%%/services/editor/xinha/plugins/ListType/img/lower-alpha.png
+%%HORDIR%%/services/editor/xinha/plugins/ListType/img/lower-roman.png
+%%HORDIR%%/services/editor/xinha/plugins/ListType/img/none.png
+%%HORDIR%%/services/editor/xinha/plugins/ListType/img/square.png
+%%HORDIR%%/services/editor/xinha/plugins/ListType/img/upper-alpha.png
+%%HORDIR%%/services/editor/xinha/plugins/ListType/img/upper-roman.png
+%%HORDIR%%/services/editor/xinha/plugins/ListType/lang/de.js
+%%HORDIR%%/services/editor/xinha/plugins/ListType/lang/fr.js
+%%HORDIR%%/services/editor/xinha/plugins/ListType/lang/ja.js
+%%HORDIR%%/services/editor/xinha/plugins/ListType/lang/nb.js
+%%HORDIR%%/services/editor/xinha/plugins/ListType/lang/nl.js
+%%HORDIR%%/services/editor/xinha/plugins/ListType/lang/pl.js
+%%HORDIR%%/services/editor/xinha/plugins/ListType/lang/pt_br.js
+%%HORDIR%%/services/editor/xinha/plugins/ListType/lang/ru.js
+%%HORDIR%%/services/editor/xinha/plugins/ListType/lang/sv.js
+%%HORDIR%%/services/editor/xinha/plugins/ListType/list-type.js
+%%HORDIR%%/services/editor/xinha/plugins/ListType/src/list-type.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/cell-delete.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/cell-insert-after.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/cell-insert-before.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/cell-merge.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/cell-prop.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/cell-split.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/col-delete.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/col-insert-after.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/col-insert-before.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/col-split.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/row-delete.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/row-insert-above.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/row-insert-under.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/row-prop.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/row-split.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/img/table-prop.gif
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/cz.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/da.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/de.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/el.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/fi.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/fr.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/he.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/it.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/ja.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/nb.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/nl.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/pl.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/pt_br.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/ro.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/ru.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang/sv.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/popups/merge_cells.html
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/src/table-operations.js
+%%HORDIR%%/services/editor/xinha/plugins/TableOperations/table-operations.js
+%%HORDIR%%/services/editor/xinha/popups/about.html
+%%HORDIR%%/services/editor/xinha/popups/blank.html
+%%HORDIR%%/services/editor/xinha/popups/editor_help.html
+%%HORDIR%%/services/editor/xinha/popups/popup.css
+%%HORDIR%%/services/editor/xinha/popups/popup.js
+%%HORDIR%%/services/editor/xinha/popups/select_color.html
+%%HORDIR%%/services/editor/xinha/popups/src/popup.js
+%%HORDIR%%/services/editor/xinha/skins/xp-blue/back.png
+%%HORDIR%%/services/editor/xinha/skins/xp-blue/button-background.png
+%%HORDIR%%/services/editor/xinha/skins/xp-blue/hover.png
+%%HORDIR%%/services/editor/xinha/skins/xp-blue/selected.png
+%%HORDIR%%/services/editor/xinha/skins/xp-blue/separator.png
+%%HORDIR%%/services/editor/xinha/skins/xp-blue/skin.css
+%%HORDIR%%/services/editor/xinha/src/XinhaCore.js
 %%HORDIR%%/services/go.php
 %%HORDIR%%/services/help/index.php
-%%HORDIR%%/services/images/colorpicker.php
 %%HORDIR%%/services/images/pixel.php
 %%HORDIR%%/services/images/view.php
 %%HORDIR%%/services/javascript.php
@@ -687,22 +1350,25 @@
 %%HORDIR%%/services/language.php
 %%HORDIR%%/services/maintenance.php
 %%HORDIR%%/services/obrowser/index.php
+%%HORDIR%%/services/portal/cloud_search.php
 %%HORDIR%%/services/portal/edit.php
 %%HORDIR%%/services/portal/index.php
 %%HORDIR%%/services/portal/mobile.php
 %%HORDIR%%/services/portal/rpcsum.php
 %%HORDIR%%/services/portal/sidebar.php
-%%HORDIR%%/services/prefs/index.php
+%%HORDIR%%/services/portal/syncml.php
 %%HORDIR%%/services/prefs.php
+%%HORDIR%%/services/prefs/index.php
 %%HORDIR%%/services/problem.php
 %%HORDIR%%/services/resetpassword.php
 %%HORDIR%%/services/shares/edit.php
+%%HORDIR%%/services/snooze.php
 %%HORDIR%%/signup.php
 %%HORDIR%%/templates/.htaccess
-%%HORDIR%%/templates/admin/common-header.inc
 %%HORDIR%%/templates/admin/groups/addchild.inc
 %%HORDIR%%/templates/admin/groups/delete.inc
 %%HORDIR%%/templates/admin/groups/edit.inc
+%%HORDIR%%/templates/admin/menu.inc
 %%HORDIR%%/templates/admin/setup/config.html
 %%HORDIR%%/templates/admin/setup/diff.html
 %%HORDIR%%/templates/admin/setup/index.html
@@ -715,6 +1381,7 @@
 %%HORDIR%%/templates/admin/user/remove.inc
 %%HORDIR%%/templates/admin/user/removequeued.inc
 %%HORDIR%%/templates/admin/user/update.inc
+%%HORDIR%%/templates/block/cloud.inc
 %%HORDIR%%/templates/common-footer.inc
 %%HORDIR%%/templates/common-header.inc
 %%HORDIR%%/templates/contents/open_view_win.js
@@ -728,16 +1395,9 @@
 %%HORDIR%%/templates/help/about.inc
 %%HORDIR%%/templates/help/index.inc
 %%HORDIR%%/templates/help/menu.inc
+%%HORDIR%%/templates/help/sidebar.inc
 %%HORDIR%%/templates/index/frames_index.inc
-%%HORDIR%%/templates/javascript/htmlarea.js
-%%HORDIR%%/templates/javascript/htmlarea_anselimage_lang.js
-%%HORDIR%%/templates/javascript/htmlarea_context_lang.js
-%%HORDIR%%/templates/javascript/htmlarea_lang.js
-%%HORDIR%%/templates/javascript/htmlarea_listtype_lang.js
-%%HORDIR%%/templates/javascript/htmlarea_table_lang.js
-%%HORDIR%%/templates/javascript/keybindings.js
 %%HORDIR%%/templates/javascript/open_calendar.js
-%%HORDIR%%/templates/javascript/open_google_win.js
 %%HORDIR%%/templates/javascript/open_html_helper.js
 %%HORDIR%%/templates/javascript/print.js
 %%HORDIR%%/templates/javascript/quoteBlocks.js
@@ -750,8 +1410,8 @@
 %%HORDIR%%/templates/portal/block.inc
 %%HORDIR%%/templates/portal/edit.inc
 %%HORDIR%%/templates/portal/layout.inc
-%%HORDIR%%/templates/portal/menu.inc
 %%HORDIR%%/templates/portal/sidebar.inc
+%%HORDIR%%/templates/prefs/alarm.inc
 %%HORDIR%%/templates/prefs/app.inc
 %%HORDIR%%/templates/prefs/begin.inc
 %%HORDIR%%/templates/prefs/categorymanagement.inc
@@ -786,7 +1446,9 @@
 %%HORDIR%%/themes/bluemoon/info.php
 %%HORDIR%%/themes/bluemoon/screen.css
 %%HORDIR%%/themes/bluewhite/info.php
+%%HORDIR%%/themes/bluewhite/rtl.css
 %%HORDIR%%/themes/bluewhite/screen.css
+%%HORDIR%%/themes/brown/graphics/button.gif
 %%HORDIR%%/themes/brown/info.php
 %%HORDIR%%/themes/brown/screen.css
 %%HORDIR%%/themes/burntorange/info.php
@@ -794,14 +1456,31 @@
 %%HORDIR%%/themes/camouflage/graphics/menu.png
 %%HORDIR%%/themes/camouflage/info.php
 %%HORDIR%%/themes/camouflage/screen.css
+%%HORDIR%%/themes/cornflower/graphics/active_tab_left.gif
+%%HORDIR%%/themes/cornflower/graphics/active_tab_right.gif
 %%HORDIR%%/themes/cornflower/graphics/tab_bottom.gif
 %%HORDIR%%/themes/cornflower/graphics/tab_left.gif
 %%HORDIR%%/themes/cornflower/graphics/tab_right.gif
 %%HORDIR%%/themes/cornflower/info.php
 %%HORDIR%%/themes/cornflower/screen.css
+%%HORDIR%%/themes/fadetogreen/graphics/control.png
+%%HORDIR%%/themes/fadetogreen/graphics/header.png
+%%HORDIR%%/themes/fadetogreen/graphics/headerbox.png
+%%HORDIR%%/themes/fadetogreen/graphics/menucurrent.png
+%%HORDIR%%/themes/fadetogreen/graphics/menuhover.png
+%%HORDIR%%/themes/fadetogreen/graphics/message.png
+%%HORDIR%%/themes/fadetogreen/graphics/notice.png
+%%HORDIR%%/themes/fadetogreen/graphics/sidebar.png
+%%HORDIR%%/themes/fadetogreen/graphics/sidebarhover.png
+%%HORDIR%%/themes/fadetogreen/info.php
+%%HORDIR%%/themes/fadetogreen/screen.css
 %%HORDIR%%/themes/gennevilliers/info.php
 %%HORDIR%%/themes/gennevilliers/screen.css
+%%HORDIR%%/themes/graphics/about.png
+%%HORDIR%%/themes/graphics/add_group.png
+%%HORDIR%%/themes/graphics/add_perm.png
 %%HORDIR%%/themes/graphics/administration.png
+%%HORDIR%%/themes/graphics/alerts/alarm.png
 %%HORDIR%%/themes/graphics/alerts/error.png
 %%HORDIR%%/themes/graphics/alerts/message.png
 %%HORDIR%%/themes/graphics/alerts/success.png
@@ -895,6 +1574,7 @@
 %%HORDIR%%/themes/graphics/avatars/xena.gif
 %%HORDIR%%/themes/graphics/az.png
 %%HORDIR%%/themes/graphics/blank.gif
+%%HORDIR%%/themes/graphics/block.png
 %%HORDIR%%/themes/graphics/block/down.png
 %%HORDIR%%/themes/graphics/block/large_down.png
 %%HORDIR%%/themes/graphics/block/large_left.png
@@ -1008,9 +1688,11 @@
 %%HORDIR%%/themes/graphics/block/weatherdotcom/32x32/9.png
 %%HORDIR%%/themes/graphics/block/weatherdotcom/32x32/TWClogo_32px.png
 %%HORDIR%%/themes/graphics/block/weatherdotcom/32x32/na.png
-%%HORDIR%%/themes/graphics/block.png
 %%HORDIR%%/themes/graphics/calendar.png
 %%HORDIR%%/themes/graphics/close.png
+%%HORDIR%%/themes/graphics/color-picker-cursor.gif
+%%HORDIR%%/themes/graphics/color-picker-palette.png
+%%HORDIR%%/themes/graphics/color-picker-resize.gif
 %%HORDIR%%/themes/graphics/colorpicker.png
 %%HORDIR%%/themes/graphics/colorscale.png
 %%HORDIR%%/themes/graphics/config.png
@@ -1068,16 +1750,24 @@
 %%HORDIR%%/themes/graphics/emoticons/winktongue.png
 %%HORDIR%%/themes/graphics/emoticons/winktongueout.png
 %%HORDIR%%/themes/graphics/emoticons/worried.png
+%%HORDIR%%/themes/graphics/external.png
 %%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/feed.png
+%%HORDIR%%/themes/graphics/flags/ad.png
+%%HORDIR%%/themes/graphics/flags/ae.png
 %%HORDIR%%/themes/graphics/flags/af.png
+%%HORDIR%%/themes/graphics/flags/ag.png
+%%HORDIR%%/themes/graphics/flags/ai.png
 %%HORDIR%%/themes/graphics/flags/al.png
 %%HORDIR%%/themes/graphics/flags/am.png
 %%HORDIR%%/themes/graphics/flags/an.png
 %%HORDIR%%/themes/graphics/flags/ao.png
 %%HORDIR%%/themes/graphics/flags/ar.png
+%%HORDIR%%/themes/graphics/flags/as.png
 %%HORDIR%%/themes/graphics/flags/at.png
 %%HORDIR%%/themes/graphics/flags/au.png
 %%HORDIR%%/themes/graphics/flags/aw.png
+%%HORDIR%%/themes/graphics/flags/ax.png
 %%HORDIR%%/themes/graphics/flags/az.png
 %%HORDIR%%/themes/graphics/flags/ba.png
 %%HORDIR%%/themes/graphics/flags/bb.png
@@ -1094,10 +1784,13 @@
 %%HORDIR%%/themes/graphics/flags/br.png
 %%HORDIR%%/themes/graphics/flags/bs.png
 %%HORDIR%%/themes/graphics/flags/bt.png
+%%HORDIR%%/themes/graphics/flags/bv.png
 %%HORDIR%%/themes/graphics/flags/bw.png
 %%HORDIR%%/themes/graphics/flags/by.png
 %%HORDIR%%/themes/graphics/flags/bz.png
 %%HORDIR%%/themes/graphics/flags/ca.png
+%%HORDIR%%/themes/graphics/flags/cc.png
+%%HORDIR%%/themes/graphics/flags/cd.png
 %%HORDIR%%/themes/graphics/flags/cf.png
 %%HORDIR%%/themes/graphics/flags/cg.png
 %%HORDIR%%/themes/graphics/flags/ch.png
@@ -1108,33 +1801,54 @@
 %%HORDIR%%/themes/graphics/flags/cn.png
 %%HORDIR%%/themes/graphics/flags/co.png
 %%HORDIR%%/themes/graphics/flags/cr.png
+%%HORDIR%%/themes/graphics/flags/cs.png
 %%HORDIR%%/themes/graphics/flags/cu.png
 %%HORDIR%%/themes/graphics/flags/cv.png
+%%HORDIR%%/themes/graphics/flags/cx.png
 %%HORDIR%%/themes/graphics/flags/cy.png
 %%HORDIR%%/themes/graphics/flags/cz.png
 %%HORDIR%%/themes/graphics/flags/de.png
+%%HORDIR%%/themes/graphics/flags/dj.png
 %%HORDIR%%/themes/graphics/flags/dk.png
+%%HORDIR%%/themes/graphics/flags/dm.png
+%%HORDIR%%/themes/graphics/flags/do.png
 %%HORDIR%%/themes/graphics/flags/dz.png
 %%HORDIR%%/themes/graphics/flags/ec.png
 %%HORDIR%%/themes/graphics/flags/ee.png
 %%HORDIR%%/themes/graphics/flags/eg.png
+%%HORDIR%%/themes/graphics/flags/eh.png
 %%HORDIR%%/themes/graphics/flags/er.png
 %%HORDIR%%/themes/graphics/flags/es.png
 %%HORDIR%%/themes/graphics/flags/et.png
+%%HORDIR%%/themes/graphics/flags/eu.png
+%%HORDIR%%/themes/graphics/flags/fam.png
 %%HORDIR%%/themes/graphics/flags/fi.png
 %%HORDIR%%/themes/graphics/flags/fj.png
+%%HORDIR%%/themes/graphics/flags/fk.png
+%%HORDIR%%/themes/graphics/flags/fm.png
 %%HORDIR%%/themes/graphics/flags/fo.png
 %%HORDIR%%/themes/graphics/flags/fr.png
 %%HORDIR%%/themes/graphics/flags/ga.png
+%%HORDIR%%/themes/graphics/flags/gb.png
+%%HORDIR%%/themes/graphics/flags/gd.png
 %%HORDIR%%/themes/graphics/flags/ge.png
+%%HORDIR%%/themes/graphics/flags/gf.png
+%%HORDIR%%/themes/graphics/flags/gh.png
 %%HORDIR%%/themes/graphics/flags/gi.png
 %%HORDIR%%/themes/graphics/flags/gl.png
+%%HORDIR%%/themes/graphics/flags/gm.png
+%%HORDIR%%/themes/graphics/flags/gn.png
 %%HORDIR%%/themes/graphics/flags/gp.png
+%%HORDIR%%/themes/graphics/flags/gq.png
 %%HORDIR%%/themes/graphics/flags/gr.png
+%%HORDIR%%/themes/graphics/flags/gs.png
 %%HORDIR%%/themes/graphics/flags/gt.png
 %%HORDIR%%/themes/graphics/flags/gu.png
+%%HORDIR%%/themes/graphics/flags/gw.png
 %%HORDIR%%/themes/graphics/flags/gy.png
 %%HORDIR%%/themes/graphics/flags/hk.png
+%%HORDIR%%/themes/graphics/flags/hm.png
+%%HORDIR%%/themes/graphics/flags/hn.png
 %%HORDIR%%/themes/graphics/flags/hr.png
 %%HORDIR%%/themes/graphics/flags/ht.png
 %%HORDIR%%/themes/graphics/flags/hu.png
@@ -1142,6 +1856,7 @@
 %%HORDIR%%/themes/graphics/flags/ie.png
 %%HORDIR%%/themes/graphics/flags/il.png
 %%HORDIR%%/themes/graphics/flags/in.png
+%%HORDIR%%/themes/graphics/flags/io.png
 %%HORDIR%%/themes/graphics/flags/iq.png
 %%HORDIR%%/themes/graphics/flags/ir.png
 %%HORDIR%%/themes/graphics/flags/is.png
@@ -1153,13 +1868,20 @@
 %%HORDIR%%/themes/graphics/flags/kg.png
 %%HORDIR%%/themes/graphics/flags/kh.png
 %%HORDIR%%/themes/graphics/flags/ki.png
+%%HORDIR%%/themes/graphics/flags/km.png
+%%HORDIR%%/themes/graphics/flags/kn.png
 %%HORDIR%%/themes/graphics/flags/kp.png
 %%HORDIR%%/themes/graphics/flags/kr.png
+%%HORDIR%%/themes/graphics/flags/kw.png
 %%HORDIR%%/themes/graphics/flags/ky.png
 %%HORDIR%%/themes/graphics/flags/kz.png
+%%HORDIR%%/themes/graphics/flags/la.png
 %%HORDIR%%/themes/graphics/flags/lb.png
 %%HORDIR%%/themes/graphics/flags/lc.png
+%%HORDIR%%/themes/graphics/flags/li.png
 %%HORDIR%%/themes/graphics/flags/lk.png
+%%HORDIR%%/themes/graphics/flags/lr.png
+%%HORDIR%%/themes/graphics/flags/ls.png
 %%HORDIR%%/themes/graphics/flags/lt.png
 %%HORDIR%%/themes/graphics/flags/lu.png
 %%HORDIR%%/themes/graphics/flags/lv.png
@@ -1167,51 +1889,87 @@
 %%HORDIR%%/themes/graphics/flags/ma.png
 %%HORDIR%%/themes/graphics/flags/mc.png
 %%HORDIR%%/themes/graphics/flags/md.png
+%%HORDIR%%/themes/graphics/flags/me.png
 %%HORDIR%%/themes/graphics/flags/mg.png
+%%HORDIR%%/themes/graphics/flags/mh.png
+%%HORDIR%%/themes/graphics/flags/mk.png
+%%HORDIR%%/themes/graphics/flags/ml.png
+%%HORDIR%%/themes/graphics/flags/mm.png
 %%HORDIR%%/themes/graphics/flags/mn.png
 %%HORDIR%%/themes/graphics/flags/mo.png
 %%HORDIR%%/themes/graphics/flags/mp.png
+%%HORDIR%%/themes/graphics/flags/mq.png
+%%HORDIR%%/themes/graphics/flags/mr.png
 %%HORDIR%%/themes/graphics/flags/ms.png
 %%HORDIR%%/themes/graphics/flags/mt.png
+%%HORDIR%%/themes/graphics/flags/mu.png
+%%HORDIR%%/themes/graphics/flags/mv.png
+%%HORDIR%%/themes/graphics/flags/mw.png
 %%HORDIR%%/themes/graphics/flags/mx.png
 %%HORDIR%%/themes/graphics/flags/my.png
 %%HORDIR%%/themes/graphics/flags/mz.png
 %%HORDIR%%/themes/graphics/flags/na.png
 %%HORDIR%%/themes/graphics/flags/nc.png
+%%HORDIR%%/themes/graphics/flags/ne.png
 %%HORDIR%%/themes/graphics/flags/nf.png
+%%HORDIR%%/themes/graphics/flags/ng.png
+%%HORDIR%%/themes/graphics/flags/ni.png
 %%HORDIR%%/themes/graphics/flags/nl.png
 %%HORDIR%%/themes/graphics/flags/no.png
 %%HORDIR%%/themes/graphics/flags/np.png
 %%HORDIR%%/themes/graphics/flags/nr.png
+%%HORDIR%%/themes/graphics/flags/nu.png
 %%HORDIR%%/themes/graphics/flags/nz.png
 %%HORDIR%%/themes/graphics/flags/om.png
 %%HORDIR%%/themes/graphics/flags/pa.png
 %%HORDIR%%/themes/graphics/flags/pe.png
 %%HORDIR%%/themes/graphics/flags/pf.png
+%%HORDIR%%/themes/graphics/flags/pg.png
 %%HORDIR%%/themes/graphics/flags/ph.png
 %%HORDIR%%/themes/graphics/flags/pk.png
 %%HORDIR%%/themes/graphics/flags/pl.png
 %%HORDIR%%/themes/graphics/flags/pm.png
+%%HORDIR%%/themes/graphics/flags/pn.png
 %%HORDIR%%/themes/graphics/flags/pr.png
+%%HORDIR%%/themes/graphics/flags/ps.png
 %%HORDIR%%/themes/graphics/flags/pt.png
+%%HORDIR%%/themes/graphics/flags/pw.png
 %%HORDIR%%/themes/graphics/flags/py.png
 %%HORDIR%%/themes/graphics/flags/qa.png
+%%HORDIR%%/themes/graphics/flags/re.png
 %%HORDIR%%/themes/graphics/flags/ro.png
+%%HORDIR%%/themes/graphics/flags/rs.png
 %%HORDIR%%/themes/graphics/flags/ru.png
+%%HORDIR%%/themes/graphics/flags/rw.png
 %%HORDIR%%/themes/graphics/flags/sa.png
 %%HORDIR%%/themes/graphics/flags/sb.png
+%%HORDIR%%/themes/graphics/flags/sc.png
+%%HORDIR%%/themes/graphics/flags/scotland.png
 %%HORDIR%%/themes/graphics/flags/sd.png
 %%HORDIR%%/themes/graphics/flags/se.png
 %%HORDIR%%/themes/graphics/flags/sg.png
+%%HORDIR%%/themes/graphics/flags/sh.png
 %%HORDIR%%/themes/graphics/flags/si.png
+%%HORDIR%%/themes/graphics/flags/sj.png
 %%HORDIR%%/themes/graphics/flags/sk.png
 %%HORDIR%%/themes/graphics/flags/sl.png
+%%HORDIR%%/themes/graphics/flags/sm.png
+%%HORDIR%%/themes/graphics/flags/sn.png
 %%HORDIR%%/themes/graphics/flags/so.png
 %%HORDIR%%/themes/graphics/flags/sr.png
+%%HORDIR%%/themes/graphics/flags/st.png
+%%HORDIR%%/themes/graphics/flags/sv.png
 %%HORDIR%%/themes/graphics/flags/sy.png
+%%HORDIR%%/themes/graphics/flags/sz.png
 %%HORDIR%%/themes/graphics/flags/tc.png
+%%HORDIR%%/themes/graphics/flags/td.png
+%%HORDIR%%/themes/graphics/flags/tf.png
 %%HORDIR%%/themes/graphics/flags/tg.png
 %%HORDIR%%/themes/graphics/flags/th.png
+%%HORDIR%%/themes/graphics/flags/tj.png
+%%HORDIR%%/themes/graphics/flags/tk.png
+%%HORDIR%%/themes/graphics/flags/tl.png
+%%HORDIR%%/themes/graphics/flags/tm.png
 %%HORDIR%%/themes/graphics/flags/tn.png
 %%HORDIR%%/themes/graphics/flags/to.png
 %%HORDIR%%/themes/graphics/flags/tp.png
@@ -1223,17 +1981,25 @@
 %%HORDIR%%/themes/graphics/flags/ua.png
 %%HORDIR%%/themes/graphics/flags/ug.png
 %%HORDIR%%/themes/graphics/flags/uk.png
+%%HORDIR%%/themes/graphics/flags/um.png
 %%HORDIR%%/themes/graphics/flags/us.png
 %%HORDIR%%/themes/graphics/flags/uy.png
+%%HORDIR%%/themes/graphics/flags/uz.png
 %%HORDIR%%/themes/graphics/flags/va.png
+%%HORDIR%%/themes/graphics/flags/vc.png
 %%HORDIR%%/themes/graphics/flags/ve.png
 %%HORDIR%%/themes/graphics/flags/vg.png
 %%HORDIR%%/themes/graphics/flags/vi.png
 %%HORDIR%%/themes/graphics/flags/vn.png
+%%HORDIR%%/themes/graphics/flags/vu.png
+%%HORDIR%%/themes/graphics/flags/wales.png
+%%HORDIR%%/themes/graphics/flags/wf.png
 %%HORDIR%%/themes/graphics/flags/ws.png
 %%HORDIR%%/themes/graphics/flags/ye.png
+%%HORDIR%%/themes/graphics/flags/yt.png
 %%HORDIR%%/themes/graphics/flags/yu.png
 %%HORDIR%%/themes/graphics/flags/za.png
+%%HORDIR%%/themes/graphics/flags/zm.png
 %%HORDIR%%/themes/graphics/flags/zw.png
 %%HORDIR%%/themes/graphics/google.png
 %%HORDIR%%/themes/graphics/group.png
@@ -1258,6 +2024,7 @@
 %%HORDIR%%/themes/graphics/keyboard.png
 %%HORDIR%%/themes/graphics/layout.png
 %%HORDIR%%/themes/graphics/lhand.png
+%%HORDIR%%/themes/graphics/loading.gif
 %%HORDIR%%/themes/graphics/locked.png
 %%HORDIR%%/themes/graphics/login.png
 %%HORDIR%%/themes/graphics/logout.png
@@ -1292,13 +2059,15 @@
 %%HORDIR%%/themes/graphics/mime/text.png
 %%HORDIR%%/themes/graphics/mime/vcard.png
 %%HORDIR%%/themes/graphics/mime/video.png
+%%HORDIR%%/themes/graphics/mime/wordperfect.png
 %%HORDIR%%/themes/graphics/mime/xml.png
+%%HORDIR%%/themes/graphics/minus.png
+%%HORDIR%%/themes/graphics/mobile.png
 %%HORDIR%%/themes/graphics/mobile/bottom.jpg
 %%HORDIR%%/themes/graphics/mobile/display.jpg
 %%HORDIR%%/themes/graphics/mobile/left.jpg
 %%HORDIR%%/themes/graphics/mobile/right.jpg
 %%HORDIR%%/themes/graphics/mobile/top.jpg
-%%HORDIR%%/themes/graphics/mobile.png
 %%HORDIR%%/themes/graphics/myaccount.png
 %%HORDIR%%/themes/graphics/nav/bottom-grey.png
 %%HORDIR%%/themes/graphics/nav/bottom.png
@@ -1319,9 +2088,12 @@
 %%HORDIR%%/themes/graphics/office.png
 %%HORDIR%%/themes/graphics/organizing.png
 %%HORDIR%%/themes/graphics/perms.png
+%%HORDIR%%/themes/graphics/phone.png
+%%HORDIR%%/themes/graphics/plus.png
 %%HORDIR%%/themes/graphics/prefs.png
 %%HORDIR%%/themes/graphics/print.png
 %%HORDIR%%/themes/graphics/problem.png
+%%HORDIR%%/themes/graphics/redbox_spinner.gif
 %%HORDIR%%/themes/graphics/reload.png
 %%HORDIR%%/themes/graphics/required.png
 %%HORDIR%%/themes/graphics/rhand.png
@@ -1417,296 +2189,1561 @@
 %%HORDIR%%/themes/rtl.css
 %%HORDIR%%/themes/safari.css
 %%HORDIR%%/themes/screen.css
+%%HORDIR%%/themes/silver/graphics/about.png
+%%HORDIR%%/themes/silver/graphics/add_group.png
+%%HORDIR%%/themes/silver/graphics/add_perm.png
+%%HORDIR%%/themes/silver/graphics/administration.png
+%%HORDIR%%/themes/silver/graphics/alerts/alarm.png
+%%HORDIR%%/themes/silver/graphics/alerts/error.png
+%%HORDIR%%/themes/silver/graphics/alerts/message.png
+%%HORDIR%%/themes/silver/graphics/alerts/success.png
+%%HORDIR%%/themes/silver/graphics/alerts/warning.png
+%%HORDIR%%/themes/silver/graphics/avatars/alien.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/aly.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/angryboy.gif
+%%HORDIR%%/themes/silver/graphics/avatars/ape.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/au.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/baby.gif
+%%HORDIR%%/themes/silver/graphics/avatars/barbarian.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/bart.gif
+%%HORDIR%%/themes/silver/graphics/avatars/batman.gif
+%%HORDIR%%/themes/silver/graphics/avatars/bert.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/bert2.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/bobafett.gif
+%%HORDIR%%/themes/silver/graphics/avatars/boo.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/boyandmower.gif
+%%HORDIR%%/themes/silver/graphics/avatars/boyandpc.gif
+%%HORDIR%%/themes/silver/graphics/avatars/bret.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/bunny.gif
+%%HORDIR%%/themes/silver/graphics/avatars/charlie_brown.gif
+%%HORDIR%%/themes/silver/graphics/avatars/clown.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/cocky.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/devil.gif
+%%HORDIR%%/themes/silver/graphics/avatars/digimon.gif
+%%HORDIR%%/themes/silver/graphics/avatars/dilbert.gif
+%%HORDIR%%/themes/silver/graphics/avatars/dino.gif
+%%HORDIR%%/themes/silver/graphics/avatars/dog.gif
+%%HORDIR%%/themes/silver/graphics/avatars/duck.gif
+%%HORDIR%%/themes/silver/graphics/avatars/einstein.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/elmerfudd.gif
+%%HORDIR%%/themes/silver/graphics/avatars/elmo.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/evil.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/female1.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/female2.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/franc.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/fredflinstone.gif
+%%HORDIR%%/themes/silver/graphics/avatars/garfield.gif
+%%HORDIR%%/themes/silver/graphics/avatars/gopher.gif
+%%HORDIR%%/themes/silver/graphics/avatars/greenhead.gif
+%%HORDIR%%/themes/silver/graphics/avatars/gremlin.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/grover.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/homer.gif
+%%HORDIR%%/themes/silver/graphics/avatars/hump.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/iceskatekid.gif
+%%HORDIR%%/themes/silver/graphics/avatars/jeri.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/kid.gif
+%%HORDIR%%/themes/silver/graphics/avatars/kirk.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/kryton.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/linux.gif
+%%HORDIR%%/themes/silver/graphics/avatars/lisa.gif
+%%HORDIR%%/themes/silver/graphics/avatars/lovebird.gif
+%%HORDIR%%/themes/silver/graphics/avatars/male1.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/male2.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/man.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/marge.gif
+%%HORDIR%%/themes/silver/graphics/avatars/maul.gif
+%%HORDIR%%/themes/silver/graphics/avatars/melon.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/mib.gif
+%%HORDIR%%/themes/silver/graphics/avatars/monkey.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/neo.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/ninja.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/paintingbird.gif
+%%HORDIR%%/themes/silver/graphics/avatars/picard.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/puff.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/redcreature.gif
+%%HORDIR%%/themes/silver/graphics/avatars/rei.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/rei2.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/ryu.gif
+%%HORDIR%%/themes/silver/graphics/avatars/sexy.gif
+%%HORDIR%%/themes/silver/graphics/avatars/smiley.gif
+%%HORDIR%%/themes/silver/graphics/avatars/smurfs.gif
+%%HORDIR%%/themes/silver/graphics/avatars/sonic.gif
+%%HORDIR%%/themes/silver/graphics/avatars/speedy.gif
+%%HORDIR%%/themes/silver/graphics/avatars/stan.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/superman.gif
+%%HORDIR%%/themes/silver/graphics/avatars/sylvester.gif
+%%HORDIR%%/themes/silver/graphics/avatars/thomas.gif
+%%HORDIR%%/themes/silver/graphics/avatars/tigger.gif
+%%HORDIR%%/themes/silver/graphics/avatars/trin.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/us.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/vampire.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/vampire2.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/wacko.gif
+%%HORDIR%%/themes/silver/graphics/avatars/winnie.gif
+%%HORDIR%%/themes/silver/graphics/avatars/wizard.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/wolverine.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/woman.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/woodie.jpg
+%%HORDIR%%/themes/silver/graphics/avatars/xena.gif
+%%HORDIR%%/themes/silver/graphics/az.png
+%%HORDIR%%/themes/silver/graphics/blank.gif
+%%HORDIR%%/themes/silver/graphics/block.png
+%%HORDIR%%/themes/silver/graphics/block/down.png
+%%HORDIR%%/themes/silver/graphics/block/large_down.png
+%%HORDIR%%/themes/silver/graphics/block/large_left.png
+%%HORDIR%%/themes/silver/graphics/block/large_right.png
+%%HORDIR%%/themes/silver/graphics/block/large_up.png
+%%HORDIR%%/themes/silver/graphics/block/left.png
+%%HORDIR%%/themes/silver/graphics/block/moon/firstquarter.png
+%%HORDIR%%/themes/silver/graphics/block/moon/fullmoon.png
+%%HORDIR%%/themes/silver/graphics/block/moon/lastquarter.png
+%%HORDIR%%/themes/silver/graphics/block/moon/newmoon.png
+%%HORDIR%%/themes/silver/graphics/block/right.png
+%%HORDIR%%/themes/silver/graphics/block/sunrise/sunrise.png
+%%HORDIR%%/themes/silver/graphics/block/sunrise/sunset.png
+%%HORDIR%%/themes/silver/graphics/block/up.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/0.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/1.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/10.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/11.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/12.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/13.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/14.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/15.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/16.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/17.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/18.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/19.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/2.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/20.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/21.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/22.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/23.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/24.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/25.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/26.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/27.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/28.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/29.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/3.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/30.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/31.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/32.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/33.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/34.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/35.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/36.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/37.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/38.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/39.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/4.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/40.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/41.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/42.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/43.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/44.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/45.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/46.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/47.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/5.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/6.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/7.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/8.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/9.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23/na.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/0.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/1.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/10.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/11.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/12.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/13.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/14.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/15.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/16.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/17.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/18.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/19.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/2.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/20.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/21.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/22.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/23.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/24.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/25.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/26.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/27.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/28.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/29.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/3.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/30.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/31.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/32.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/33.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/34.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/35.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/36.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/37.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/38.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/39.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/4.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/40.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/41.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/42.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/43.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/44.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/45.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/46.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/47.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/5.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/6.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/7.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/8.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/9.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/TWClogo_32px.png
+%%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32/na.png
+%%HORDIR%%/themes/silver/graphics/calendar.png
+%%HORDIR%%/themes/silver/graphics/close.png
+%%HORDIR%%/themes/silver/graphics/colorpicker.png
+%%HORDIR%%/themes/silver/graphics/colorscale.png
+%%HORDIR%%/themes/silver/graphics/config.png
+%%HORDIR%%/themes/silver/graphics/currentTab_left.png
+%%HORDIR%%/themes/silver/graphics/currentTab_right.png
+%%HORDIR%%/themes/silver/graphics/data.png
+%%HORDIR%%/themes/silver/graphics/datatree.png
+%%HORDIR%%/themes/silver/graphics/delete-small.png
+%%HORDIR%%/themes/silver/graphics/delete.png
+%%HORDIR%%/themes/silver/graphics/devel.png
+%%HORDIR%%/themes/silver/graphics/download.png
+%%HORDIR%%/themes/silver/graphics/edit-small.png
+%%HORDIR%%/themes/silver/graphics/edit.png
+%%HORDIR%%/themes/silver/graphics/emoticons/angel.png
+%%HORDIR%%/themes/silver/graphics/emoticons/angelwink.png
+%%HORDIR%%/themes/silver/graphics/emoticons/angry.png
+%%HORDIR%%/themes/silver/graphics/emoticons/annoyed.png
+%%HORDIR%%/themes/silver/graphics/emoticons/asleep.png
+%%HORDIR%%/themes/silver/graphics/emoticons/bigfrown.png
+%%HORDIR%%/themes/silver/graphics/emoticons/biggrin.png
+%%HORDIR%%/themes/silver/graphics/emoticons/blush.png
+%%HORDIR%%/themes/silver/graphics/emoticons/clown.png
+%%HORDIR%%/themes/silver/graphics/emoticons/confused.png
+%%HORDIR%%/themes/silver/graphics/emoticons/cool.png
+%%HORDIR%%/themes/silver/graphics/emoticons/coolgrin.png
+%%HORDIR%%/themes/silver/graphics/emoticons/cooltongue.png
+%%HORDIR%%/themes/silver/graphics/emoticons/dazed.png
+%%HORDIR%%/themes/silver/graphics/emoticons/devil.png
+%%HORDIR%%/themes/silver/graphics/emoticons/deviltongue.png
+%%HORDIR%%/themes/silver/graphics/emoticons/disappointed.png
+%%HORDIR%%/themes/silver/graphics/emoticons/embarrassed.png
+%%HORDIR%%/themes/silver/graphics/emoticons/enraged.png
+%%HORDIR%%/themes/silver/graphics/emoticons/frown.png
+%%HORDIR%%/themes/silver/graphics/emoticons/frustrated.png
+%%HORDIR%%/themes/silver/graphics/emoticons/grin.png
+%%HORDIR%%/themes/silver/graphics/emoticons/hangover.png
+%%HORDIR%%/themes/silver/graphics/emoticons/hippie.png
+%%HORDIR%%/themes/silver/graphics/emoticons/hippiegrin.png
+%%HORDIR%%/themes/silver/graphics/emoticons/hippietongue.png
+%%HORDIR%%/themes/silver/graphics/emoticons/hurt.png
+%%HORDIR%%/themes/silver/graphics/emoticons/indifferent.png
+%%HORDIR%%/themes/silver/graphics/emoticons/love.png
+%%HORDIR%%/themes/silver/graphics/emoticons/mad.png
+%%HORDIR%%/themes/silver/graphics/emoticons/mrt.png
+%%HORDIR%%/themes/silver/graphics/emoticons/punk.png
+%%HORDIR%%/themes/silver/graphics/emoticons/punkmohawk.png
+%%HORDIR%%/themes/silver/graphics/emoticons/punktongue.png
+%%HORDIR%%/themes/silver/graphics/emoticons/raspberry.png
+%%HORDIR%%/themes/silver/graphics/emoticons/sad.png
+%%HORDIR%%/themes/silver/graphics/emoticons/shout.png
+%%HORDIR%%/themes/silver/graphics/emoticons/smile.png
+%%HORDIR%%/themes/silver/graphics/emoticons/tired.png
+%%HORDIR%%/themes/silver/graphics/emoticons/tongueout.png
+%%HORDIR%%/themes/silver/graphics/emoticons/vampire.png
+%%HORDIR%%/themes/silver/graphics/emoticons/wink.png
+%%HORDIR%%/themes/silver/graphics/emoticons/winkgrin.png
+%%HORDIR%%/themes/silver/graphics/emoticons/winktongue.png
+%%HORDIR%%/themes/silver/graphics/emoticons/winktongueout.png
+%%HORDIR%%/themes/silver/graphics/emoticons/worried.png
+%%HORDIR%%/themes/silver/graphics/external.png
+%%HORDIR%%/themes/silver/graphics/favicon.ico
+%%HORDIR%%/themes/silver/graphics/feed.png
+%%HORDIR%%/themes/silver/graphics/flags/ad.png
+%%HORDIR%%/themes/silver/graphics/flags/ae.png
+%%HORDIR%%/themes/silver/graphics/flags/af.png
+%%HORDIR%%/themes/silver/graphics/flags/ag.png
+%%HORDIR%%/themes/silver/graphics/flags/ai.png
+%%HORDIR%%/themes/silver/graphics/flags/al.png
+%%HORDIR%%/themes/silver/graphics/flags/am.png
+%%HORDIR%%/themes/silver/graphics/flags/an.png
+%%HORDIR%%/themes/silver/graphics/flags/ao.png
+%%HORDIR%%/themes/silver/graphics/flags/ar.png
+%%HORDIR%%/themes/silver/graphics/flags/as.png
+%%HORDIR%%/themes/silver/graphics/flags/at.png
+%%HORDIR%%/themes/silver/graphics/flags/au.png
+%%HORDIR%%/themes/silver/graphics/flags/aw.png
+%%HORDIR%%/themes/silver/graphics/flags/ax.png
+%%HORDIR%%/themes/silver/graphics/flags/az.png
+%%HORDIR%%/themes/silver/graphics/flags/ba.png
+%%HORDIR%%/themes/silver/graphics/flags/bb.png
+%%HORDIR%%/themes/silver/graphics/flags/bd.png
+%%HORDIR%%/themes/silver/graphics/flags/be.png
+%%HORDIR%%/themes/silver/graphics/flags/bf.png
+%%HORDIR%%/themes/silver/graphics/flags/bg.png
+%%HORDIR%%/themes/silver/graphics/flags/bh.png
+%%HORDIR%%/themes/silver/graphics/flags/bi.png
+%%HORDIR%%/themes/silver/graphics/flags/bj.png
+%%HORDIR%%/themes/silver/graphics/flags/bm.png
+%%HORDIR%%/themes/silver/graphics/flags/bn.png
+%%HORDIR%%/themes/silver/graphics/flags/bo.png
+%%HORDIR%%/themes/silver/graphics/flags/br.png
+%%HORDIR%%/themes/silver/graphics/flags/bs.png
+%%HORDIR%%/themes/silver/graphics/flags/bt.png
+%%HORDIR%%/themes/silver/graphics/flags/bv.png
+%%HORDIR%%/themes/silver/graphics/flags/bw.png
+%%HORDIR%%/themes/silver/graphics/flags/by.png
+%%HORDIR%%/themes/silver/graphics/flags/bz.png
+%%HORDIR%%/themes/silver/graphics/flags/ca.png
+%%HORDIR%%/themes/silver/graphics/flags/cc.png
+%%HORDIR%%/themes/silver/graphics/flags/cd.png
+%%HORDIR%%/themes/silver/graphics/flags/cf.png
+%%HORDIR%%/themes/silver/graphics/flags/cg.png
+%%HORDIR%%/themes/silver/graphics/flags/ch.png
+%%HORDIR%%/themes/silver/graphics/flags/ci.png
+%%HORDIR%%/themes/silver/graphics/flags/ck.png
+%%HORDIR%%/themes/silver/graphics/flags/cl.png
+%%HORDIR%%/themes/silver/graphics/flags/cm.png
+%%HORDIR%%/themes/silver/graphics/flags/cn.png
+%%HORDIR%%/themes/silver/graphics/flags/co.png
+%%HORDIR%%/themes/silver/graphics/flags/cr.png
+%%HORDIR%%/themes/silver/graphics/flags/cs.png
+%%HORDIR%%/themes/silver/graphics/flags/cu.png
+%%HORDIR%%/themes/silver/graphics/flags/cv.png
+%%HORDIR%%/themes/silver/graphics/flags/cx.png
+%%HORDIR%%/themes/silver/graphics/flags/cy.png
+%%HORDIR%%/themes/silver/graphics/flags/cz.png
+%%HORDIR%%/themes/silver/graphics/flags/de.png
+%%HORDIR%%/themes/silver/graphics/flags/dj.png
+%%HORDIR%%/themes/silver/graphics/flags/dk.png
+%%HORDIR%%/themes/silver/graphics/flags/dm.png
+%%HORDIR%%/themes/silver/graphics/flags/do.png
+%%HORDIR%%/themes/silver/graphics/flags/dz.png
+%%HORDIR%%/themes/silver/graphics/flags/ec.png
+%%HORDIR%%/themes/silver/graphics/flags/ee.png
+%%HORDIR%%/themes/silver/graphics/flags/eg.png
+%%HORDIR%%/themes/silver/graphics/flags/eh.png
+%%HORDIR%%/themes/silver/graphics/flags/er.png
+%%HORDIR%%/themes/silver/graphics/flags/es.png
+%%HORDIR%%/themes/silver/graphics/flags/et.png
+%%HORDIR%%/themes/silver/graphics/flags/eu.png
+%%HORDIR%%/themes/silver/graphics/flags/fam.png
+%%HORDIR%%/themes/silver/graphics/flags/fi.png
+%%HORDIR%%/themes/silver/graphics/flags/fj.png
+%%HORDIR%%/themes/silver/graphics/flags/fk.png
+%%HORDIR%%/themes/silver/graphics/flags/fm.png
+%%HORDIR%%/themes/silver/graphics/flags/fo.png
+%%HORDIR%%/themes/silver/graphics/flags/fr.png
+%%HORDIR%%/themes/silver/graphics/flags/ga.png
+%%HORDIR%%/themes/silver/graphics/flags/gb.png
+%%HORDIR%%/themes/silver/graphics/flags/gd.png
+%%HORDIR%%/themes/silver/graphics/flags/ge.png
+%%HORDIR%%/themes/silver/graphics/flags/gf.png
+%%HORDIR%%/themes/silver/graphics/flags/gh.png
+%%HORDIR%%/themes/silver/graphics/flags/gi.png
+%%HORDIR%%/themes/silver/graphics/flags/gl.png
+%%HORDIR%%/themes/silver/graphics/flags/gm.png
+%%HORDIR%%/themes/silver/graphics/flags/gn.png
+%%HORDIR%%/themes/silver/graphics/flags/gp.png
+%%HORDIR%%/themes/silver/graphics/flags/gq.png
+%%HORDIR%%/themes/silver/graphics/flags/gr.png
+%%HORDIR%%/themes/silver/graphics/flags/gs.png
+%%HORDIR%%/themes/silver/graphics/flags/gt.png
+%%HORDIR%%/themes/silver/graphics/flags/gu.png
+%%HORDIR%%/themes/silver/graphics/flags/gw.png
+%%HORDIR%%/themes/silver/graphics/flags/gy.png
+%%HORDIR%%/themes/silver/graphics/flags/hk.png
+%%HORDIR%%/themes/silver/graphics/flags/hm.png
+%%HORDIR%%/themes/silver/graphics/flags/hn.png
+%%HORDIR%%/themes/silver/graphics/flags/hr.png
+%%HORDIR%%/themes/silver/graphics/flags/ht.png
+%%HORDIR%%/themes/silver/graphics/flags/hu.png
+%%HORDIR%%/themes/silver/graphics/flags/id.png
+%%HORDIR%%/themes/silver/graphics/flags/ie.png
+%%HORDIR%%/themes/silver/graphics/flags/il.png
+%%HORDIR%%/themes/silver/graphics/flags/in.png
+%%HORDIR%%/themes/silver/graphics/flags/io.png
+%%HORDIR%%/themes/silver/graphics/flags/iq.png
+%%HORDIR%%/themes/silver/graphics/flags/ir.png
+%%HORDIR%%/themes/silver/graphics/flags/is.png
+%%HORDIR%%/themes/silver/graphics/flags/it.png
+%%HORDIR%%/themes/silver/graphics/flags/jm.png
+%%HORDIR%%/themes/silver/graphics/flags/jo.png
+%%HORDIR%%/themes/silver/graphics/flags/jp.png
+%%HORDIR%%/themes/silver/graphics/flags/ke.png
+%%HORDIR%%/themes/silver/graphics/flags/kg.png
+%%HORDIR%%/themes/silver/graphics/flags/kh.png
+%%HORDIR%%/themes/silver/graphics/flags/ki.png
+%%HORDIR%%/themes/silver/graphics/flags/km.png
+%%HORDIR%%/themes/silver/graphics/flags/kn.png
+%%HORDIR%%/themes/silver/graphics/flags/kp.png
+%%HORDIR%%/themes/silver/graphics/flags/kr.png
+%%HORDIR%%/themes/silver/graphics/flags/kw.png
+%%HORDIR%%/themes/silver/graphics/flags/ky.png
+%%HORDIR%%/themes/silver/graphics/flags/kz.png
+%%HORDIR%%/themes/silver/graphics/flags/la.png
+%%HORDIR%%/themes/silver/graphics/flags/lb.png
+%%HORDIR%%/themes/silver/graphics/flags/lc.png
+%%HORDIR%%/themes/silver/graphics/flags/li.png
+%%HORDIR%%/themes/silver/graphics/flags/lk.png
+%%HORDIR%%/themes/silver/graphics/flags/lr.png
+%%HORDIR%%/themes/silver/graphics/flags/ls.png
+%%HORDIR%%/themes/silver/graphics/flags/lt.png
+%%HORDIR%%/themes/silver/graphics/flags/lu.png
+%%HORDIR%%/themes/silver/graphics/flags/lv.png
+%%HORDIR%%/themes/silver/graphics/flags/ly.png
+%%HORDIR%%/themes/silver/graphics/flags/ma.png
+%%HORDIR%%/themes/silver/graphics/flags/mc.png
+%%HORDIR%%/themes/silver/graphics/flags/md.png
+%%HORDIR%%/themes/silver/graphics/flags/me.png
+%%HORDIR%%/themes/silver/graphics/flags/mg.png
+%%HORDIR%%/themes/silver/graphics/flags/mh.png
+%%HORDIR%%/themes/silver/graphics/flags/mk.png
+%%HORDIR%%/themes/silver/graphics/flags/ml.png
+%%HORDIR%%/themes/silver/graphics/flags/mm.png
+%%HORDIR%%/themes/silver/graphics/flags/mn.png
+%%HORDIR%%/themes/silver/graphics/flags/mo.png
+%%HORDIR%%/themes/silver/graphics/flags/mp.png
+%%HORDIR%%/themes/silver/graphics/flags/mq.png
+%%HORDIR%%/themes/silver/graphics/flags/mr.png
+%%HORDIR%%/themes/silver/graphics/flags/ms.png
+%%HORDIR%%/themes/silver/graphics/flags/mt.png
+%%HORDIR%%/themes/silver/graphics/flags/mu.png
+%%HORDIR%%/themes/silver/graphics/flags/mv.png
+%%HORDIR%%/themes/silver/graphics/flags/mw.png
+%%HORDIR%%/themes/silver/graphics/flags/mx.png
+%%HORDIR%%/themes/silver/graphics/flags/my.png
+%%HORDIR%%/themes/silver/graphics/flags/mz.png
+%%HORDIR%%/themes/silver/graphics/flags/na.png
+%%HORDIR%%/themes/silver/graphics/flags/nc.png
+%%HORDIR%%/themes/silver/graphics/flags/ne.png
+%%HORDIR%%/themes/silver/graphics/flags/nf.png
+%%HORDIR%%/themes/silver/graphics/flags/ng.png
+%%HORDIR%%/themes/silver/graphics/flags/ni.png
+%%HORDIR%%/themes/silver/graphics/flags/nl.png
+%%HORDIR%%/themes/silver/graphics/flags/no.png
+%%HORDIR%%/themes/silver/graphics/flags/np.png
+%%HORDIR%%/themes/silver/graphics/flags/nr.png
+%%HORDIR%%/themes/silver/graphics/flags/nu.png
+%%HORDIR%%/themes/silver/graphics/flags/nz.png
+%%HORDIR%%/themes/silver/graphics/flags/om.png
+%%HORDIR%%/themes/silver/graphics/flags/pa.png
+%%HORDIR%%/themes/silver/graphics/flags/pe.png
+%%HORDIR%%/themes/silver/graphics/flags/pf.png
+%%HORDIR%%/themes/silver/graphics/flags/pg.png
+%%HORDIR%%/themes/silver/graphics/flags/ph.png
+%%HORDIR%%/themes/silver/graphics/flags/pk.png
+%%HORDIR%%/themes/silver/graphics/flags/pl.png
+%%HORDIR%%/themes/silver/graphics/flags/pm.png
+%%HORDIR%%/themes/silver/graphics/flags/pn.png
+%%HORDIR%%/themes/silver/graphics/flags/pr.png
+%%HORDIR%%/themes/silver/graphics/flags/ps.png
+%%HORDIR%%/themes/silver/graphics/flags/pt.png
+%%HORDIR%%/themes/silver/graphics/flags/pw.png
+%%HORDIR%%/themes/silver/graphics/flags/py.png
+%%HORDIR%%/themes/silver/graphics/flags/qa.png
+%%HORDIR%%/themes/silver/graphics/flags/re.png
+%%HORDIR%%/themes/silver/graphics/flags/ro.png
+%%HORDIR%%/themes/silver/graphics/flags/rs.png
+%%HORDIR%%/themes/silver/graphics/flags/ru.png
+%%HORDIR%%/themes/silver/graphics/flags/rw.png
+%%HORDIR%%/themes/silver/graphics/flags/sa.png
+%%HORDIR%%/themes/silver/graphics/flags/sb.png
+%%HORDIR%%/themes/silver/graphics/flags/sc.png
+%%HORDIR%%/themes/silver/graphics/flags/scotland.png
+%%HORDIR%%/themes/silver/graphics/flags/sd.png
+%%HORDIR%%/themes/silver/graphics/flags/se.png
+%%HORDIR%%/themes/silver/graphics/flags/sg.png
+%%HORDIR%%/themes/silver/graphics/flags/sh.png
+%%HORDIR%%/themes/silver/graphics/flags/si.png
+%%HORDIR%%/themes/silver/graphics/flags/sj.png
+%%HORDIR%%/themes/silver/graphics/flags/sk.png
+%%HORDIR%%/themes/silver/graphics/flags/sl.png
+%%HORDIR%%/themes/silver/graphics/flags/sm.png
+%%HORDIR%%/themes/silver/graphics/flags/sn.png
+%%HORDIR%%/themes/silver/graphics/flags/so.png
+%%HORDIR%%/themes/silver/graphics/flags/sr.png
+%%HORDIR%%/themes/silver/graphics/flags/st.png
+%%HORDIR%%/themes/silver/graphics/flags/sv.png
+%%HORDIR%%/themes/silver/graphics/flags/sy.png
+%%HORDIR%%/themes/silver/graphics/flags/sz.png
+%%HORDIR%%/themes/silver/graphics/flags/tc.png
+%%HORDIR%%/themes/silver/graphics/flags/td.png
+%%HORDIR%%/themes/silver/graphics/flags/tf.png
+%%HORDIR%%/themes/silver/graphics/flags/tg.png
+%%HORDIR%%/themes/silver/graphics/flags/th.png
+%%HORDIR%%/themes/silver/graphics/flags/tj.png
+%%HORDIR%%/themes/silver/graphics/flags/tk.png
+%%HORDIR%%/themes/silver/graphics/flags/tl.png
+%%HORDIR%%/themes/silver/graphics/flags/tm.png
+%%HORDIR%%/themes/silver/graphics/flags/tn.png
+%%HORDIR%%/themes/silver/graphics/flags/to.png
+%%HORDIR%%/themes/silver/graphics/flags/tp.png
+%%HORDIR%%/themes/silver/graphics/flags/tr.png
+%%HORDIR%%/themes/silver/graphics/flags/tt.png
+%%HORDIR%%/themes/silver/graphics/flags/tv.png
+%%HORDIR%%/themes/silver/graphics/flags/tw.png
+%%HORDIR%%/themes/silver/graphics/flags/tz.png
+%%HORDIR%%/themes/silver/graphics/flags/ua.png
+%%HORDIR%%/themes/silver/graphics/flags/ug.png
+%%HORDIR%%/themes/silver/graphics/flags/uk.png
+%%HORDIR%%/themes/silver/graphics/flags/um.png
+%%HORDIR%%/themes/silver/graphics/flags/us.png
+%%HORDIR%%/themes/silver/graphics/flags/uy.png
+%%HORDIR%%/themes/silver/graphics/flags/uz.png
+%%HORDIR%%/themes/silver/graphics/flags/va.png
+%%HORDIR%%/themes/silver/graphics/flags/vc.png
+%%HORDIR%%/themes/silver/graphics/flags/ve.png
+%%HORDIR%%/themes/silver/graphics/flags/vg.png
+%%HORDIR%%/themes/silver/graphics/flags/vi.png
+%%HORDIR%%/themes/silver/graphics/flags/vn.png
+%%HORDIR%%/themes/silver/graphics/flags/vu.png
+%%HORDIR%%/themes/silver/graphics/flags/wales.png
+%%HORDIR%%/themes/silver/graphics/flags/wf.png
+%%HORDIR%%/themes/silver/graphics/flags/ws.png
+%%HORDIR%%/themes/silver/graphics/flags/ye.png
+%%HORDIR%%/themes/silver/graphics/flags/yt.png
+%%HORDIR%%/themes/silver/graphics/flags/yu.png
+%%HORDIR%%/themes/silver/graphics/flags/za.png
+%%HORDIR%%/themes/silver/graphics/flags/zm.png
+%%HORDIR%%/themes/silver/graphics/flags/zw.png
+%%HORDIR%%/themes/silver/graphics/google.png
+%%HORDIR%%/themes/silver/graphics/group.png
+%%HORDIR%%/themes/silver/graphics/header.png
+%%HORDIR%%/themes/silver/graphics/help.png
+%%HORDIR%%/themes/silver/graphics/help_index.png
+%%HORDIR%%/themes/silver/graphics/hide_panel.png
+%%HORDIR%%/themes/silver/graphics/horde-power1.png
+%%HORDIR%%/themes/silver/graphics/horde-power2.png
+%%HORDIR%%/themes/silver/graphics/horde-power3.png
+%%HORDIR%%/themes/silver/graphics/horde.png
+%%HORDIR%%/themes/silver/graphics/image/crop.png
+%%HORDIR%%/themes/silver/graphics/image/flip.png
+%%HORDIR%%/themes/silver/graphics/image/grayscale.png
+%%HORDIR%%/themes/silver/graphics/image/mirror.png
+%%HORDIR%%/themes/silver/graphics/image/ratio.png
+%%HORDIR%%/themes/silver/graphics/image/refresh.png
+%%HORDIR%%/themes/silver/graphics/image/rotate-180.png
+%%HORDIR%%/themes/silver/graphics/image/rotate-270.png
+%%HORDIR%%/themes/silver/graphics/image/rotate-90.png
+%%HORDIR%%/themes/silver/graphics/info-icon.png
+%%HORDIR%%/themes/silver/graphics/info.png
+%%HORDIR%%/themes/silver/graphics/info_icon.png
+%%HORDIR%%/themes/silver/graphics/keyboard.png
+%%HORDIR%%/themes/silver/graphics/layout.png
+%%HORDIR%%/themes/silver/graphics/lhand.png
+%%HORDIR%%/themes/silver/graphics/loading.gif
+%%HORDIR%%/themes/silver/graphics/locked.png
+%%HORDIR%%/themes/silver/graphics/login.png
+%%HORDIR%%/themes/silver/graphics/logout.png
+%%HORDIR%%/themes/silver/graphics/map.png
+%%HORDIR%%/themes/silver/graphics/map_eu.png
+%%HORDIR%%/themes/silver/graphics/menu-active.png
+%%HORDIR%%/themes/silver/graphics/menu.png
+%%HORDIR%%/themes/silver/graphics/mime/audio.png
+%%HORDIR%%/themes/silver/graphics/mime/binary.png
+%%HORDIR%%/themes/silver/graphics/mime/compressed.png
+%%HORDIR%%/themes/silver/graphics/mime/deb.png
+%%HORDIR%%/themes/silver/graphics/mime/encryption.png
+%%HORDIR%%/themes/silver/graphics/mime/html.png
+%%HORDIR%%/themes/silver/graphics/mime/icalendar.png
+%%HORDIR%%/themes/silver/graphics/mime/image.png
+%%HORDIR%%/themes/silver/graphics/mime/mail.png
+%%HORDIR%%/themes/silver/graphics/mime/msexcel.png
+%%HORDIR%%/themes/silver/graphics/mime/mspowerpoint.png
+%%HORDIR%%/themes/silver/graphics/mime/msword.png
+%%HORDIR%%/themes/silver/graphics/mime/ooo_calc.png
+%%HORDIR%%/themes/silver/graphics/mime/ooo_draw.png
+%%HORDIR%%/themes/silver/graphics/mime/ooo_impress.png
+%%HORDIR%%/themes/silver/graphics/mime/ooo_math.png
+%%HORDIR%%/themes/silver/graphics/mime/ooo_writer.png
+%%HORDIR%%/themes/silver/graphics/mime/pdf.png
+%%HORDIR%%/themes/silver/graphics/mime/php.png
+%%HORDIR%%/themes/silver/graphics/mime/rpm.png
+%%HORDIR%%/themes/silver/graphics/mime/script-js.png
+%%HORDIR%%/themes/silver/graphics/mime/source-c.png
+%%HORDIR%%/themes/silver/graphics/mime/source-cpp.png
+%%HORDIR%%/themes/silver/graphics/mime/source-h.png
+%%HORDIR%%/themes/silver/graphics/mime/source-java.png
+%%HORDIR%%/themes/silver/graphics/mime/source-python.png
+%%HORDIR%%/themes/silver/graphics/mime/source-ruby.png
+%%HORDIR%%/themes/silver/graphics/mime/text.png
+%%HORDIR%%/themes/silver/graphics/mime/vcard.png
+%%HORDIR%%/themes/silver/graphics/mime/video.png
+%%HORDIR%%/themes/silver/graphics/mime/wordperfect.png
+%%HORDIR%%/themes/silver/graphics/mime/xml.png
+%%HORDIR%%/themes/silver/graphics/mobile.png
+%%HORDIR%%/themes/silver/graphics/mobile/bottom.jpg
+%%HORDIR%%/themes/silver/graphics/mobile/display.jpg
+%%HORDIR%%/themes/silver/graphics/mobile/left.jpg
+%%HORDIR%%/themes/silver/graphics/mobile/right.jpg
+%%HORDIR%%/themes/silver/graphics/mobile/top.jpg
+%%HORDIR%%/themes/silver/graphics/myaccount.png
+%%HORDIR%%/themes/silver/graphics/nav/bottom-grey.png
+%%HORDIR%%/themes/silver/graphics/nav/bottom.png
+%%HORDIR%%/themes/silver/graphics/nav/down-grey.png
+%%HORDIR%%/themes/silver/graphics/nav/down.png
+%%HORDIR%%/themes/silver/graphics/nav/first-grey.png
+%%HORDIR%%/themes/silver/graphics/nav/first.png
+%%HORDIR%%/themes/silver/graphics/nav/last-grey.png
+%%HORDIR%%/themes/silver/graphics/nav/last.png
+%%HORDIR%%/themes/silver/graphics/nav/left-grey.png
+%%HORDIR%%/themes/silver/graphics/nav/left.png
+%%HORDIR%%/themes/silver/graphics/nav/right-grey.png
+%%HORDIR%%/themes/silver/graphics/nav/right.png
+%%HORDIR%%/themes/silver/graphics/nav/top-grey.png
+%%HORDIR%%/themes/silver/graphics/nav/top.png
+%%HORDIR%%/themes/silver/graphics/nav/up-grey.png
+%%HORDIR%%/themes/silver/graphics/nav/up.png
+%%HORDIR%%/themes/silver/graphics/office.png
+%%HORDIR%%/themes/silver/graphics/organizing.png
+%%HORDIR%%/themes/silver/graphics/perms.png
+%%HORDIR%%/themes/silver/graphics/phone.png
+%%HORDIR%%/themes/silver/graphics/prefs.png
+%%HORDIR%%/themes/silver/graphics/print.png
+%%HORDIR%%/themes/silver/graphics/problem.png
+%%HORDIR%%/themes/silver/graphics/redbox_spinner.gif
+%%HORDIR%%/themes/silver/graphics/reload.png
+%%HORDIR%%/themes/silver/graphics/required.png
+%%HORDIR%%/themes/silver/graphics/rhand.png
+%%HORDIR%%/themes/silver/graphics/save.png
+%%HORDIR%%/themes/silver/graphics/search.png
+%%HORDIR%%/themes/silver/graphics/shadow.gif
+%%HORDIR%%/themes/silver/graphics/shadow.png
+%%HORDIR%%/themes/silver/graphics/shell.png
+%%HORDIR%%/themes/silver/graphics/show_panel.png
+%%HORDIR%%/themes/silver/graphics/smallheader.png
+%%HORDIR%%/themes/silver/graphics/sql.png
+%%HORDIR%%/themes/silver/graphics/tab_left.png
+%%HORDIR%%/themes/silver/graphics/tab_right.png
+%%HORDIR%%/themes/silver/graphics/tree/blank.png
+%%HORDIR%%/themes/silver/graphics/tree/folder.png
+%%HORDIR%%/themes/silver/graphics/tree/folderopen.png
+%%HORDIR%%/themes/silver/graphics/tree/join.png
+%%HORDIR%%/themes/silver/graphics/tree/joinbottom-down.png
+%%HORDIR%%/themes/silver/graphics/tree/joinbottom.png
+%%HORDIR%%/themes/silver/graphics/tree/leaf.png
+%%HORDIR%%/themes/silver/graphics/tree/line.png
+%%HORDIR%%/themes/silver/graphics/tree/minus.png
+%%HORDIR%%/themes/silver/graphics/tree/minusbottom.png
+%%HORDIR%%/themes/silver/graphics/tree/minusonly.png
+%%HORDIR%%/themes/silver/graphics/tree/minustop.png
+%%HORDIR%%/themes/silver/graphics/tree/nullonly.png
+%%HORDIR%%/themes/silver/graphics/tree/plus.png
+%%HORDIR%%/themes/silver/graphics/tree/plusbottom.png
+%%HORDIR%%/themes/silver/graphics/tree/plusonly.png
+%%HORDIR%%/themes/silver/graphics/tree/plustop.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-join.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-joinbottom-down.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-joinbottom.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-leaf.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-line.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-minus.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-minusbottom.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-minusonly.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-minustop.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-nullonly.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-plus.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-plusbottom.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-plusonly.png
+%%HORDIR%%/themes/silver/graphics/tree/rev-plustop.png
+%%HORDIR%%/themes/silver/graphics/unlocked.png
+%%HORDIR%%/themes/silver/graphics/user.png
+%%HORDIR%%/themes/silver/graphics/website.png
+%%HORDIR%%/themes/silver/graphics/za.png
+%%HORDIR%%/themes/silver/info.php
+%%HORDIR%%/themes/silver/screen.css
+%%HORDIR%%/themes/silver/themed_graphics
 %%HORDIR%%/themes/simplex/graphics/background.png
 %%HORDIR%%/themes/simplex/info.php
 %%HORDIR%%/themes/simplex/screen.css
+%%HORDIR%%/themes/sounds/doorbell.wav
+%%HORDIR%%/themes/sounds/gnid3.wav
+%%HORDIR%%/themes/sounds/jetsndb.wav
+%%HORDIR%%/themes/sounds/reminder.wav
+%%HORDIR%%/themes/sounds/theetone.wav
+%%HORDIR%%/themes/tango-blue/graphics/add_group.png
+%%HORDIR%%/themes/tango-blue/graphics/add_perm.png
+%%HORDIR%%/themes/tango-blue/graphics/administration.png
+%%HORDIR%%/themes/tango-blue/graphics/alerts/alarm.png
+%%HORDIR%%/themes/tango-blue/graphics/alerts/error.png
+%%HORDIR%%/themes/tango-blue/graphics/alerts/message.png
+%%HORDIR%%/themes/tango-blue/graphics/alerts/success.png
+%%HORDIR%%/themes/tango-blue/graphics/alerts/warning.png
+%%HORDIR%%/themes/tango-blue/graphics/az.png
+%%HORDIR%%/themes/tango-blue/graphics/blacklist.png
+%%HORDIR%%/themes/tango-blue/graphics/blank.gif
+%%HORDIR%%/themes/tango-blue/graphics/block.png
+%%HORDIR%%/themes/tango-blue/graphics/block/down.png
+%%HORDIR%%/themes/tango-blue/graphics/block/large_down.png
+%%HORDIR%%/themes/tango-blue/graphics/block/large_left.png
+%%HORDIR%%/themes/tango-blue/graphics/block/large_right.png
+%%HORDIR%%/themes/tango-blue/graphics/block/large_up.png
+%%HORDIR%%/themes/tango-blue/graphics/block/left.png
+%%HORDIR%%/themes/tango-blue/graphics/block/moon/firstquarter.png
+%%HORDIR%%/themes/tango-blue/graphics/block/moon/fullmoon.png
+%%HORDIR%%/themes/tango-blue/graphics/block/moon/lastquarter.png
+%%HORDIR%%/themes/tango-blue/graphics/block/moon/newmoon.png
+%%HORDIR%%/themes/tango-blue/graphics/block/right.png
+%%HORDIR%%/themes/tango-blue/graphics/block/sunrise/sunrise.png
+%%HORDIR%%/themes/tango-blue/graphics/block/sunrise/sunset.png
+%%HORDIR%%/themes/tango-blue/graphics/block/up.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/0.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/1.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/10.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/11.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/12.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/13.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/14.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/15.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/16.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/17.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/18.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/19.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/2.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/20.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/21.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/22.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/23.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/24.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/25.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/26.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/27.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/28.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/29.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/3.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/30.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/31.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/32.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/33.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/34.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/35.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/36.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/37.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/38.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/39.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/4.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/40.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/41.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/42.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/43.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/44.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/45.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/46.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/47.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/5.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/6.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/7.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/8.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/9.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23/na.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/0.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/1.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/10.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/11.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/12.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/13.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/14.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/15.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/16.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/17.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/18.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/19.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/2.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/20.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/21.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/22.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/23.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/24.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/25.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/26.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/27.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/28.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/29.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/3.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/30.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/31.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/32.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/33.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/34.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/35.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/36.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/37.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/38.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/39.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/4.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/40.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/41.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/42.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/43.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/44.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/45.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/46.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/47.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/5.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/6.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/7.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/8.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/9.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/TWClogo_32px.png
+%%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32/na.png
+%%HORDIR%%/themes/tango-blue/graphics/calander.png
+%%HORDIR%%/themes/tango-blue/graphics/calendar.png
+%%HORDIR%%/themes/tango-blue/graphics/close.png
+%%HORDIR%%/themes/tango-blue/graphics/colorpicker.png
+%%HORDIR%%/themes/tango-blue/graphics/colorscale.png
+%%HORDIR%%/themes/tango-blue/graphics/config.png
+%%HORDIR%%/themes/tango-blue/graphics/copy.png
+%%HORDIR%%/themes/tango-blue/graphics/data.png
+%%HORDIR%%/themes/tango-blue/graphics/datatree.png
+%%HORDIR%%/themes/tango-blue/graphics/delete-small.png
+%%HORDIR%%/themes/tango-blue/graphics/delete.png
+%%HORDIR%%/themes/tango-blue/graphics/devel.png
+%%HORDIR%%/themes/tango-blue/graphics/disable.png
+%%HORDIR%%/themes/tango-blue/graphics/download.png
+%%HORDIR%%/themes/tango-blue/graphics/edit-small.png
+%%HORDIR%%/themes/tango-blue/graphics/edit.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-angel.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-crying.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-devil-grin.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-glasses.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-grin.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-kiss.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-monkey.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-plain.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-sad.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-smile-big.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-smile.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-surprise.png
+%%HORDIR%%/themes/tango-blue/graphics/emoticons/face-wink.png
+%%HORDIR%%/themes/tango-blue/graphics/enable.png
+%%HORDIR%%/themes/tango-blue/graphics/favicon.ico
+%%HORDIR%%/themes/tango-blue/graphics/feed.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ad.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ae.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/af.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ag.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ai.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/al.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/am.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/an.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ao.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ar.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/as.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/at.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/au.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/aw.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ax.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/az.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ba.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bb.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bd.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/be.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bf.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bg.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bh.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bi.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bj.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bm.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bn.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bo.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/br.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bs.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bt.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bv.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bw.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/by.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/bz.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ca.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cc.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cd.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cf.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cg.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ch.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ci.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ck.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cl.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cm.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cn.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/co.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cr.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cs.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cu.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cv.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cx.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cy.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/cz.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/de.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/dj.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/dk.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/dm.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/do.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/dz.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ec.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ee.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/eg.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/eh.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/er.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/es.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/et.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/eu.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/fam.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/fi.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/fj.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/fk.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/fm.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/fo.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/fr.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ga.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gb.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gd.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ge.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gf.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gh.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gi.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gl.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gm.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gn.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gp.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gq.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gr.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gs.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gt.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gu.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gw.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/gy.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/hk.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/hm.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/hn.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/hr.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ht.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/hu.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/id.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ie.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/il.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/in.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/io.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/iq.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ir.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/is.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/it.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/jm.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/jo.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/jp.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ke.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/kg.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/kh.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ki.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/km.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/kn.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/kp.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/kr.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/kw.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ky.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/kz.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/la.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/lb.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/lc.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/li.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/lk.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/lr.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ls.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/lt.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/lu.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/lv.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ly.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ma.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mc.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/md.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/me.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mg.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mh.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mk.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ml.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mm.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mn.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mo.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mp.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mq.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mr.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ms.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mt.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mu.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mv.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mw.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mx.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/my.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/mz.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/na.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/nc.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ne.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/nf.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ng.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ni.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/nl.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/no.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/np.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/nr.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/nu.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/nz.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/om.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/pa.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/pe.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/pf.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/pg.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ph.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/pk.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/pl.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/pm.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/pn.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/pr.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ps.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/pt.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/pw.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/py.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/qa.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/re.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ro.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/rs.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ru.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/rw.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sa.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sb.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sc.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/scotland.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sd.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/se.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sg.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sh.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/si.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sj.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sk.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sl.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sm.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sn.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/so.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sr.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/st.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sv.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sy.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/sz.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tc.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/td.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tf.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tg.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/th.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tj.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tk.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tl.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tm.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tn.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/to.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tp.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tr.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tt.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tv.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tw.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/tz.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ua.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ug.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/uk.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/um.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/us.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/uy.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/uz.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/va.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/vc.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ve.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/vg.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/vi.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/vn.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/vu.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/wales.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/wf.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ws.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/ye.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/yt.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/yu.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/za.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/zm.png
+%%HORDIR%%/themes/tango-blue/graphics/flags/zw.png
+%%HORDIR%%/themes/tango-blue/graphics/google.png
+%%HORDIR%%/themes/tango-blue/graphics/group.png
+%%HORDIR%%/themes/tango-blue/graphics/help.png
+%%HORDIR%%/themes/tango-blue/graphics/help_index.png
+%%HORDIR%%/themes/tango-blue/graphics/hide_panel.png
+%%HORDIR%%/themes/tango-blue/graphics/horde-power1.png
+%%HORDIR%%/themes/tango-blue/graphics/horde-power2.png
+%%HORDIR%%/themes/tango-blue/graphics/horde-power3.png
+%%HORDIR%%/themes/tango-blue/graphics/horde.png
+%%HORDIR%%/themes/tango-blue/graphics/image/crop.png
+%%HORDIR%%/themes/tango-blue/graphics/image/flip.png
+%%HORDIR%%/themes/tango-blue/graphics/image/grayscale.png
+%%HORDIR%%/themes/tango-blue/graphics/image/mirror.png
+%%HORDIR%%/themes/tango-blue/graphics/image/ratio.png
+%%HORDIR%%/themes/tango-blue/graphics/image/refresh.png
+%%HORDIR%%/themes/tango-blue/graphics/image/rotate-180.png
+%%HORDIR%%/themes/tango-blue/graphics/image/rotate-270.png
+%%HORDIR%%/themes/tango-blue/graphics/image/rotate-90.png
+%%HORDIR%%/themes/tango-blue/graphics/imp.png
+%%HORDIR%%/themes/tango-blue/graphics/info.png
+%%HORDIR%%/themes/tango-blue/graphics/info_icon.png
+%%HORDIR%%/themes/tango-blue/graphics/ingo.png
+%%HORDIR%%/themes/tango-blue/graphics/keyboard.png
+%%HORDIR%%/themes/tango-blue/graphics/layout.png
+%%HORDIR%%/themes/tango-blue/graphics/lhand.png
+%%HORDIR%%/themes/tango-blue/graphics/locked.png
+%%HORDIR%%/themes/tango-blue/graphics/login.png
+%%HORDIR%%/themes/tango-blue/graphics/logout.png
+%%HORDIR%%/themes/tango-blue/graphics/map.png
+%%HORDIR%%/themes/tango-blue/graphics/map_eu.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/audio.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/binary.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/compressed.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/deb.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/encryption.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/html.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/icalendar.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/image.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/mail.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/msexcel.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/mspowerpoint.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/msword.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/ooo_calc.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/ooo_draw.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/ooo_impress.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/ooo_math.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/ooo_writer.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/pdf.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/php.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/rpm.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/script-js.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/source-c.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/source-cpp.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/source-h.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/source-java.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/source-python.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/text.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/vcard.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/video.png
+%%HORDIR%%/themes/tango-blue/graphics/mime/xml.png
+%%HORDIR%%/themes/tango-blue/graphics/mobile.png
+%%HORDIR%%/themes/tango-blue/graphics/mobile/bottom.jpg
+%%HORDIR%%/themes/tango-blue/graphics/mobile/display.jpg
+%%HORDIR%%/themes/tango-blue/graphics/mobile/left.jpg
+%%HORDIR%%/themes/tango-blue/graphics/mobile/right.jpg
+%%HORDIR%%/themes/tango-blue/graphics/mobile/top.jpg
+%%HORDIR%%/themes/tango-blue/graphics/myaccount.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/bottom-grey.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/bottom.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/down-grey.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/down.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/first-grey.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/first.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/last-grey.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/last.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/left-grey.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/left.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/right-grey.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/right.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/top-grey.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/top.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/up-grey.png
+%%HORDIR%%/themes/tango-blue/graphics/nav/up.png
+%%HORDIR%%/themes/tango-blue/graphics/new_small.png
+%%HORDIR%%/themes/tango-blue/graphics/office.png
+%%HORDIR%%/themes/tango-blue/graphics/organizing.png
+%%HORDIR%%/themes/tango-blue/graphics/perms.png
+%%HORDIR%%/themes/tango-blue/graphics/prefs.png
+%%HORDIR%%/themes/tango-blue/graphics/print.png
+%%HORDIR%%/themes/tango-blue/graphics/problem.png
+%%HORDIR%%/themes/tango-blue/graphics/reload.png
+%%HORDIR%%/themes/tango-blue/graphics/required.png
+%%HORDIR%%/themes/tango-blue/graphics/rhand.png
+%%HORDIR%%/themes/tango-blue/graphics/save.png
+%%HORDIR%%/themes/tango-blue/graphics/script.png
+%%HORDIR%%/themes/tango-blue/graphics/search.png
+%%HORDIR%%/themes/tango-blue/graphics/shadow.gif
+%%HORDIR%%/themes/tango-blue/graphics/shadow.png
+%%HORDIR%%/themes/tango-blue/graphics/shell.png
+%%HORDIR%%/themes/tango-blue/graphics/show_panel.png
+%%HORDIR%%/themes/tango-blue/graphics/sql.png
+%%HORDIR%%/themes/tango-blue/graphics/tab_bottom.gif
+%%HORDIR%%/themes/tango-blue/graphics/tree/blank.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/folder.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/folderopen.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/join.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/joinbottom-down.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/joinbottom.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/leaf.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/line.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/minus.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/minusbottom.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/minusonly.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/minustop.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/nullonly.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/plus.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/plusbottom.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/plusonly.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/plustop.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-join.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-joinbottom-down.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-joinbottom.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-leaf.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-line.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-minus.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-minusbottom.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-minusonly.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-minustop.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-nullonly.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-plus.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-plusbottom.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-plusonly.png
+%%HORDIR%%/themes/tango-blue/graphics/tree/rev-plustop.png
+%%HORDIR%%/themes/tango-blue/graphics/unlocked.png
+%%HORDIR%%/themes/tango-blue/graphics/user.png
+%%HORDIR%%/themes/tango-blue/graphics/vacation.png
+%%HORDIR%%/themes/tango-blue/graphics/website.png
+%%HORDIR%%/themes/tango-blue/graphics/whitelist.png
+%%HORDIR%%/themes/tango-blue/graphics/za.png
+%%HORDIR%%/themes/tango-blue/info.php
+%%HORDIR%%/themes/tango-blue/screen.css
+%%HORDIR%%/themes/tango-blue/themed_graphics
 %%HORDIR%%/util/barcode.php
 %%HORDIR%%/util/icon_browser.php
-%%HORDIR%%/util/regex_test.php
-@exec mkdir -p %D/%%HORDIR%%/lib/File/tests
-@exec mkdir -p %D/%%HORDIR%%/lib/Horde/Text/tests
-@exec mkdir -p %D/%%HORDIR%%/lib/Horde/docs/examples
-@exec mkdir -p %D/%%HORDIR%%/lib/Horde/scripts
-@exec mkdir -p %D/%%HORDIR%%/lib/Horde/tests
-@exec mkdir -p %D/%%HORDIR%%/lib/Text/docs/examples
-@exec mkdir -p %D/%%HORDIR%%/lib/Text/tests
-@exec mkdir -p %D/%%HORDIR%%/lib/VFS/tests
-@exec mkdir -p %D/%%HORDIR%%/lib/XML/docs/examples
-@exec mkdir -p %D/%%HORDIR%%/lib/XML/tests
-@exec mkdir -p %D/%%HORDIR%%/lib/data
-@exec mkdir -p %D/%%HORDIR%%/lib/docs
-@dirrm %%HORDIR%%/admin/locale/en_US
-@dirrm %%HORDIR%%/admin/locale/fi_FI
-@dirrm %%HORDIR%%/admin/locale/hu_HU
-@dirrm %%HORDIR%%/admin/locale
-@dirrm %%HORDIR%%/admin/perms
-@dirrm %%HORDIR%%/admin/setup
-@dirrm %%HORDIR%%/admin
-@dirrmtry %%HORDIR%%/config
-@dirrm %%HORDIR%%/js
-@dirrm %%HORDIR%%/lib/Block
-@dirrm %%HORDIR%%/lib/File/PDF/fonts
-@dirrm %%HORDIR%%/lib/File/PDF
-@dirrm %%HORDIR%%/lib/File/tests
-@dirrm %%HORDIR%%/lib/File
-@dirrm %%HORDIR%%/lib/Horde/Auth
-@dirrm %%HORDIR%%/lib/Horde/Block/Layout
-@dirrm %%HORDIR%%/lib/Horde/Block
-@dirrm %%HORDIR%%/lib/Horde/Browser
-@dirrm %%HORDIR%%/lib/Horde/Cache
-@dirrm %%HORDIR%%/lib/Horde/Cipher/BlockMode
-@dirrm %%HORDIR%%/lib/Horde/Cipher
-@dirrm %%HORDIR%%/lib/Horde/Compress
-@dirrm %%HORDIR%%/lib/Horde/Crypt
-@dirrm %%HORDIR%%/lib/Horde/Data
-@dirrm %%HORDIR%%/lib/Horde/DataTree
-@dirrm %%HORDIR%%/lib/Horde/Editor
-@dirrm %%HORDIR%%/lib/Horde/Form/Action
-@dirrm %%HORDIR%%/lib/Horde/Form/Type
-@dirrm %%HORDIR%%/lib/Horde/Form
-@dirrm %%HORDIR%%/lib/Horde/Graph/Chart
-@dirrm %%HORDIR%%/lib/Horde/Graph/Plot
-@dirrm %%HORDIR%%/lib/Horde/Graph
-@dirrm %%HORDIR%%/lib/Horde/Group
-@dirrm %%HORDIR%%/lib/Horde/IMAP/ACL
-@dirrm %%HORDIR%%/lib/Horde/IMAP
-@dirrm %%HORDIR%%/lib/Horde/Image
+@dirrm %%HORDIR%%/util
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/tree
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/nav
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/mobile
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/mime
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/image
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/flags
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/emoticons
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/32x32
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom/23x23
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/block/weatherdotcom
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/block/sunrise
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/block/moon
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/block
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/alerts
+@dirrm %%HORDIR%%/themes/tango-blue/graphics
+@dirrm %%HORDIR%%/themes/tango-blue
+@dirrm %%HORDIR%%/themes/sounds
+@dirrm %%HORDIR%%/themes/simplex/graphics
+@dirrm %%HORDIR%%/themes/simplex
+@dirrm %%HORDIR%%/themes/silver/graphics/tree
+@dirrm %%HORDIR%%/themes/silver/graphics/nav
+@dirrm %%HORDIR%%/themes/silver/graphics/mobile
+@dirrm %%HORDIR%%/themes/silver/graphics/mime
+@dirrm %%HORDIR%%/themes/silver/graphics/image
+@dirrm %%HORDIR%%/themes/silver/graphics/flags
+@dirrm %%HORDIR%%/themes/silver/graphics/emoticons
+@dirrm %%HORDIR%%/themes/silver/graphics/block/weatherdotcom/32x32
+@dirrm %%HORDIR%%/themes/silver/graphics/block/weatherdotcom/23x23
+@dirrm %%HORDIR%%/themes/silver/graphics/block/weatherdotcom
+@dirrm %%HORDIR%%/themes/silver/graphics/block/sunrise
+@dirrm %%HORDIR%%/themes/silver/graphics/block/moon
+@dirrm %%HORDIR%%/themes/silver/graphics/block
+@dirrm %%HORDIR%%/themes/silver/graphics/avatars
+@dirrm %%HORDIR%%/themes/silver/graphics/alerts
+@dirrm %%HORDIR%%/themes/silver/graphics
+@dirrm %%HORDIR%%/themes/silver
+@dirrm %%HORDIR%%/themes/purple
+@dirrm %%HORDIR%%/themes/print
+@dirrm %%HORDIR%%/themes/postnuke
+@dirrm %%HORDIR%%/themes/mozilla/graphics
+@dirrm %%HORDIR%%/themes/mozilla
+@dirrm %%HORDIR%%/themes/mobile
+@dirrm %%HORDIR%%/themes/lucblue
+@dirrm %%HORDIR%%/themes/luc/graphics
+@dirrm %%HORDIR%%/themes/luc
+@dirrm %%HORDIR%%/themes/lightblue/graphics
+@dirrm %%HORDIR%%/themes/lightblue
+@dirrm %%HORDIR%%/themes/lavander
+@dirrm %%HORDIR%%/themes/kolab/graphics
+@dirrm %%HORDIR%%/themes/kolab
+@dirrm %%HORDIR%%/themes/ideas/graphics
+@dirrm %%HORDIR%%/themes/ideas
+@dirrm %%HORDIR%%/themes/hi-contrast
+@dirrm %%HORDIR%%/themes/grey
+@dirrm %%HORDIR%%/themes/green
+@dirrm %%HORDIR%%/themes/graphics/tree
+@dirrm %%HORDIR%%/themes/graphics/nav
+@dirrm %%HORDIR%%/themes/graphics/mobile
+@dirrm %%HORDIR%%/themes/graphics/mime
+@dirrm %%HORDIR%%/themes/graphics/image
+@dirrm %%HORDIR%%/themes/graphics/flags
+@dirrm %%HORDIR%%/themes/graphics/emoticons
+@dirrm %%HORDIR%%/themes/graphics/block/weatherdotcom/32x32
+@dirrm %%HORDIR%%/themes/graphics/block/weatherdotcom/23x23
+@dirrm %%HORDIR%%/themes/graphics/block/weatherdotcom
+@dirrm %%HORDIR%%/themes/graphics/block/sunrise
+@dirrm %%HORDIR%%/themes/graphics/block/moon
+@dirrm %%HORDIR%%/themes/graphics/block
+@dirrm %%HORDIR%%/themes/graphics/avatars
+@dirrm %%HORDIR%%/themes/graphics/alerts
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes/gennevilliers
+@dirrm %%HORDIR%%/themes/fadetogreen/graphics
+@dirrm %%HORDIR%%/themes/fadetogreen
+@dirrm %%HORDIR%%/themes/cornflower/graphics
+@dirrm %%HORDIR%%/themes/cornflower
+@dirrm %%HORDIR%%/themes/camouflage/graphics
+@dirrm %%HORDIR%%/themes/camouflage
+@dirrm %%HORDIR%%/themes/burntorange
+@dirrm %%HORDIR%%/themes/brown/graphics
+@dirrm %%HORDIR%%/themes/brown
+@dirrm %%HORDIR%%/themes/bluewhite
+@dirrm %%HORDIR%%/themes/bluemoon
+@dirrm %%HORDIR%%/themes/barbie
+@dirrm %%HORDIR%%/themes/azur
+@dirrm %%HORDIR%%/themes/NeXTgrey
+@dirrm %%HORDIR%%/themes
+@dirrm %%HORDIR%%/templates/test
+@dirrm %%HORDIR%%/templates/shares
+@dirrm %%HORDIR%%/templates/rpcsum
+@dirrm %%HORDIR%%/templates/problem
+@dirrm %%HORDIR%%/templates/prefs
+@dirrm %%HORDIR%%/templates/portal
+@dirrm %%HORDIR%%/templates/menu
+@dirrm %%HORDIR%%/templates/maintenance
+@dirrm %%HORDIR%%/templates/login
+@dirrm %%HORDIR%%/templates/javascript
+@dirrm %%HORDIR%%/templates/index
+@dirrm %%HORDIR%%/templates/help
+@dirrm %%HORDIR%%/templates/data
+@dirrm %%HORDIR%%/templates/contents
+@dirrm %%HORDIR%%/templates/block
+@dirrm %%HORDIR%%/templates/admin/user
+@dirrm %%HORDIR%%/templates/admin/setup
+@dirrm %%HORDIR%%/templates/admin/groups
+@dirrm %%HORDIR%%/templates/admin
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/services/shares
+@dirrm %%HORDIR%%/services/prefs
+@dirrm %%HORDIR%%/services/portal
+@dirrm %%HORDIR%%/services/obrowser
+@dirrm %%HORDIR%%/services/images
+@dirrm %%HORDIR%%/services/help
+@dirrm %%HORDIR%%/services/editor/xinha/src
+@dirrm %%HORDIR%%/services/editor/xinha/skins/xp-blue
+@dirrm %%HORDIR%%/services/editor/xinha/skins
+@dirrm %%HORDIR%%/services/editor/xinha/popups/src
+@dirrm %%HORDIR%%/services/editor/xinha/popups
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/TableOperations/src
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/TableOperations/popups
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/TableOperations/lang
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/TableOperations/img
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/TableOperations
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/ListType/src
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/ListType/lang
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/ListType/img
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/ListType
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/ContextMenu/src
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/ContextMenu/lang
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/ContextMenu
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/CharacterMap/src
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/CharacterMap/popups
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/CharacterMap/lang
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/CharacterMap/img
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/CharacterMap
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/AnselImage/src
+@dirrm %%HORDIR%%/services/editor/xinha/plugins/AnselImage
+@dirrm %%HORDIR%%/services/editor/xinha/plugins
+@dirrm %%HORDIR%%/services/editor/xinha/modules/InternetExplorer/src
+@dirrm %%HORDIR%%/services/editor/xinha/modules/InternetExplorer
+@dirrm %%HORDIR%%/services/editor/xinha/modules/InsertTable/src
+@dirrm %%HORDIR%%/services/editor/xinha/modules/InsertTable
+@dirrm %%HORDIR%%/services/editor/xinha/modules/InsertImage/src
+@dirrm %%HORDIR%%/services/editor/xinha/modules/InsertImage
+@dirrm %%HORDIR%%/services/editor/xinha/modules/GetHtml/src
+@dirrm %%HORDIR%%/services/editor/xinha/modules/GetHtml/lang
+@dirrm %%HORDIR%%/services/editor/xinha/modules/GetHtml
+@dirrm %%HORDIR%%/services/editor/xinha/modules/Gecko/src
+@dirrm %%HORDIR%%/services/editor/xinha/modules/Gecko/lang
+@dirrm %%HORDIR%%/services/editor/xinha/modules/Gecko
+@dirrm %%HORDIR%%/services/editor/xinha/modules/FullScreen/src
+@dirrm %%HORDIR%%/services/editor/xinha/modules/FullScreen/lang
+@dirrm %%HORDIR%%/services/editor/xinha/modules/FullScreen
+@dirrm %%HORDIR%%/services/editor/xinha/modules/Dialogs/src
+@dirrm %%HORDIR%%/services/editor/xinha/modules/Dialogs
+@dirrm %%HORDIR%%/services/editor/xinha/modules/CreateLink/src
+@dirrm %%HORDIR%%/services/editor/xinha/modules/CreateLink
+@dirrm %%HORDIR%%/services/editor/xinha/modules/ColorPicker/src
+@dirrm %%HORDIR%%/services/editor/xinha/modules/ColorPicker/lang
+@dirrm %%HORDIR%%/services/editor/xinha/modules/ColorPicker
+@dirrm %%HORDIR%%/services/editor/xinha/modules
+@dirrm %%HORDIR%%/services/editor/xinha/lang
+@dirrm %%HORDIR%%/services/editor/xinha/images/fr
+@dirrm %%HORDIR%%/services/editor/xinha/images/de
+@dirrm %%HORDIR%%/services/editor/xinha/images
+@dirrm %%HORDIR%%/services/editor/xinha
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/simple/images
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/simple/css
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/simple
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/advanced/langs
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts/src
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/advanced/jscripts
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/advanced/images/xp
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/advanced/images
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en/images
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/advanced/docs/en
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/advanced/docs
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/advanced/css
+@dirrm %%HORDIR%%/services/editor/tinymce/themes/advanced
+@dirrm %%HORDIR%%/services/editor/tinymce/themes
+@dirrm %%HORDIR%%/services/editor/tinymce/src
+@dirrm %%HORDIR%%/services/editor/tinymce/langs
+@dirrm %%HORDIR%%/services/editor/tinymce
+@dirrm %%HORDIR%%/services/editor/fckeditor/src
+@dirrm %%HORDIR%%/services/editor/fckeditor/skins/default/images
+@dirrm %%HORDIR%%/services/editor/fckeditor/skins/default
+@dirrm %%HORDIR%%/services/editor/fckeditor/skins
+@dirrm %%HORDIR%%/services/editor/fckeditor/lang
+@dirrm %%HORDIR%%/services/editor/fckeditor/js
+@dirrm %%HORDIR%%/services/editor/fckeditor/images/smiley/msn
+@dirrm %%HORDIR%%/services/editor/fckeditor/images/smiley
+@dirrm %%HORDIR%%/services/editor/fckeditor/images
+@dirrm %%HORDIR%%/services/editor/fckeditor/dialog/fck_template/images
+@dirrm %%HORDIR%%/services/editor/fckeditor/dialog/fck_template
+@dirrm %%HORDIR%%/services/editor/fckeditor/dialog/fck_select
+@dirrm %%HORDIR%%/services/editor/fckeditor/dialog/fck_link
+@dirrm %%HORDIR%%/services/editor/fckeditor/dialog/fck_image
+@dirrm %%HORDIR%%/services/editor/fckeditor/dialog/fck_flash
+@dirrm %%HORDIR%%/services/editor/fckeditor/dialog/fck_docprops
+@dirrm %%HORDIR%%/services/editor/fckeditor/dialog/fck_about
+@dirrm %%HORDIR%%/services/editor/fckeditor/dialog/common/images
+@dirrm %%HORDIR%%/services/editor/fckeditor/dialog/common
+@dirrm %%HORDIR%%/services/editor/fckeditor/dialog
+@dirrm %%HORDIR%%/services/editor/fckeditor/css/images
+@dirrm %%HORDIR%%/services/editor/fckeditor/css/behaviors
+@dirrm %%HORDIR%%/services/editor/fckeditor/css
+@dirrm %%HORDIR%%/services/editor/fckeditor
+@dirrm %%HORDIR%%/services/editor
+@dirrm %%HORDIR%%/services/download
+@dirrm %%HORDIR%%/services
+@dirrm %%HORDIR%%/scripts/upgrades
+@dirrm %%HORDIR%%/scripts/sql
+@dirrm %%HORDIR%%/scripts/ldap
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/lib/tests
+@dirrm %%HORDIR%%/lib/XML/WBXML/DTD
+@dirrm %%HORDIR%%/lib/XML/WBXML
+@dirrm %%HORDIR%%/lib/XML
+@dirrm %%HORDIR%%/lib/VFS/ISOWriter/RealOutputStrategy
+@dirrm %%HORDIR%%/lib/VFS/ISOWriter/RealInputStrategy
+@dirrm %%HORDIR%%/lib/VFS/ISOWriter
+@dirrm %%HORDIR%%/lib/VFS
+@dirrm %%HORDIR%%/lib/Text/Diff/Renderer
+@dirrm %%HORDIR%%/lib/Text/Diff/Engine
+@dirrm %%HORDIR%%/lib/Text/Diff
+@dirrm %%HORDIR%%/lib/Text
+@dirrm %%HORDIR%%/lib/SyncML/Device
+@dirrm %%HORDIR%%/lib/SyncML/Command
+@dirrm %%HORDIR%%/lib/SyncML/Backend
+@dirrm %%HORDIR%%/lib/SyncML
+@dirrm %%HORDIR%%/lib/Net/SMS
+@dirrm %%HORDIR%%/lib/Net/IMSP/Auth
+@dirrm %%HORDIR%%/lib/Net/IMSP
+@dirrm %%HORDIR%%/lib/Net
+@dirrm %%HORDIR%%/lib/Horde/iCalendar
+@dirrm %%HORDIR%%/lib/Horde/Yaml
+@dirrm %%HORDIR%%/lib/Horde/Xml/Element
+@dirrm %%HORDIR%%/lib/Horde/Xml
+@dirrm %%HORDIR%%/lib/Horde/View
+@dirrm %%HORDIR%%/lib/Horde/VC
+@dirrm %%HORDIR%%/lib/Horde/UI/VarRenderer
+@dirrm %%HORDIR%%/lib/Horde/UI
+@dirrm %%HORDIR%%/lib/Horde/Tree
+@dirrm %%HORDIR%%/lib/Horde/Token
+@dirrm %%HORDIR%%/lib/Horde/Text/Rst/Parser
+@dirrm %%HORDIR%%/lib/Horde/Text/Rst/Formatter
+@dirrm %%HORDIR%%/lib/Horde/Text/Rst
+@dirrm %%HORDIR%%/lib/Horde/Text/Filter
+@dirrm %%HORDIR%%/lib/Horde/Text
+@dirrm %%HORDIR%%/lib/Horde/SpellChecker
+@dirrm %%HORDIR%%/lib/Horde/Share
+@dirrm %%HORDIR%%/lib/Horde/SessionHandler
+@dirrm %%HORDIR%%/lib/Horde/Serialize
+@dirrm %%HORDIR%%/lib/Horde/Scheduler
+@dirrm %%HORDIR%%/lib/Horde/SQL
+@dirrm %%HORDIR%%/lib/Horde/Routes
+@dirrm %%HORDIR%%/lib/Horde/Rdo/Query/Builder
+@dirrm %%HORDIR%%/lib/Horde/Rdo/Query
+@dirrm %%HORDIR%%/lib/Horde/Rdo/Adapter/Pdo
+@dirrm %%HORDIR%%/lib/Horde/Rdo/Adapter
+@dirrm %%HORDIR%%/lib/Horde/Rdo
+@dirrm %%HORDIR%%/lib/Horde/RPC
+@dirrm %%HORDIR%%/lib/Horde/Prefs
+@dirrm %%HORDIR%%/lib/Horde/Perms
+@dirrm %%HORDIR%%/lib/Horde/Notification/Listener
+@dirrm %%HORDIR%%/lib/Horde/Notification
+@dirrm %%HORDIR%%/lib/Horde/NLS
+@dirrm %%HORDIR%%/lib/Horde/Mobile/Renderer
+@dirrm %%HORDIR%%/lib/Horde/Mobile
 @dirrm %%HORDIR%%/lib/Horde/MIME/Viewer/ooo
 @dirrm %%HORDIR%%/lib/Horde/MIME/Viewer
 @dirrm %%HORDIR%%/lib/Horde/MIME
-@dirrm %%HORDIR%%/lib/Horde/Mobile/Renderer
-@dirrm %%HORDIR%%/lib/Horde/Mobile
-@dirrm %%HORDIR%%/lib/Horde/NLS
-@dirrm %%HORDIR%%/lib/Horde/Notification/Listener
-@dirrm %%HORDIR%%/lib/Horde/Notification
-@dirrm %%HORDIR%%/lib/Horde/Perms
-@dirrm %%HORDIR%%/lib/Horde/Prefs
-@dirrm %%HORDIR%%/lib/Horde/RPC
-@dirrm %%HORDIR%%/lib/Horde/SQL
-@dirrm %%HORDIR%%/lib/Horde/Scheduler
-@dirrm %%HORDIR%%/lib/Horde/SessionHandler
-@dirrm %%HORDIR%%/lib/Horde/Text/Filter
-@dirrm %%HORDIR%%/lib/Horde/Text/tests
-@dirrm %%HORDIR%%/lib/Horde/Text
-@dirrm %%HORDIR%%/lib/Horde/Token
-@dirrm %%HORDIR%%/lib/Horde/Tree
-@dirrm %%HORDIR%%/lib/Horde/UI/VarRenderer
-@dirrm %%HORDIR%%/lib/Horde/UI
-@dirrm %%HORDIR%%/lib/Horde/VC
-@dirrm %%HORDIR%%/lib/Horde/docs/examples
-@dirrm %%HORDIR%%/lib/Horde/docs
-@dirrm %%HORDIR%%/lib/Horde/iCalendar
-@dirrm %%HORDIR%%/lib/Horde/scripts
-@dirrm %%HORDIR%%/lib/Horde/tests
+@dirrm %%HORDIR%%/lib/Horde/Log/Handler
+@dirrm %%HORDIR%%/lib/Horde/Log/Formatter
+@dirrm %%HORDIR%%/lib/Horde/Log/Filter
+@dirrm %%HORDIR%%/lib/Horde/Log
+@dirrm %%HORDIR%%/lib/Horde/Lens
+@dirrm %%HORDIR%%/lib/Horde/Kolab/XML
+@dirrm %%HORDIR%%/lib/Horde/Kolab/IMAP
+@dirrm %%HORDIR%%/lib/Horde/Kolab
+@dirrm %%HORDIR%%/lib/Horde/Image/Effect/im
+@dirrm %%HORDIR%%/lib/Horde/Image/Effect/gd
+@dirrm %%HORDIR%%/lib/Horde/Image/Effect
+@dirrm %%HORDIR%%/lib/Horde/Image
+@dirrm %%HORDIR%%/lib/Horde/IMAP/ACL
+@dirrm %%HORDIR%%/lib/Horde/IMAP
+@dirrm %%HORDIR%%/lib/Horde/Http/Client
+@dirrm %%HORDIR%%/lib/Horde/Http
+@dirrm %%HORDIR%%/lib/Horde/Group
+@dirrm %%HORDIR%%/lib/Horde/Form/Type
+@dirrm %%HORDIR%%/lib/Horde/Form/Action
+@dirrm %%HORDIR%%/lib/Horde/Form
+@dirrm %%HORDIR%%/lib/Horde/Feed/Entry
+@dirrm %%HORDIR%%/lib/Horde/Feed
+@dirrm %%HORDIR%%/lib/Horde/Editor
+@dirrm %%HORDIR%%/lib/Horde/Date
+@dirrm %%HORDIR%%/lib/Horde/DataTree
+@dirrm %%HORDIR%%/lib/Horde/Data
+@dirrm %%HORDIR%%/lib/Horde/Crypt
+@dirrm %%HORDIR%%/lib/Horde/Compress
+@dirrm %%HORDIR%%/lib/Horde/Cipher/BlockMode
+@dirrm %%HORDIR%%/lib/Horde/Cipher
+@dirrm %%HORDIR%%/lib/Horde/Cache
+@dirrm %%HORDIR%%/lib/Horde/Browser
+@dirrm %%HORDIR%%/lib/Horde/Block/Layout
+@dirrm %%HORDIR%%/lib/Horde/Block
+@dirrm %%HORDIR%%/lib/Horde/Auth
+@dirrm %%HORDIR%%/lib/Horde/Alarm
 @dirrm %%HORDIR%%/lib/Horde
-@dirrm %%HORDIR%%/lib/Net/IMSP/Auth
-@dirrm %%HORDIR%%/lib/Net/IMSP
-@dirrm %%HORDIR%%/lib/Net/SMS
-@dirrm %%HORDIR%%/lib/Net
-@dirrm %%HORDIR%%/lib/SyncML/Command
-@dirrm %%HORDIR%%/lib/SyncML/Device
-@dirrm %%HORDIR%%/lib/SyncML
-@dirrm %%HORDIR%%/lib/Text/Diff/Renderer
-@dirrm %%HORDIR%%/lib/Text/Diff
-@dirrm %%HORDIR%%/lib/Text/docs/examples
-@dirrm %%HORDIR%%/lib/Text/docs
-@dirrm %%HORDIR%%/lib/Text/reST/Formatter
-@dirrm %%HORDIR%%/lib/Text/reST
-@dirrm %%HORDIR%%/lib/Text/tests
-@dirrm %%HORDIR%%/lib/Text
-@dirrm %%HORDIR%%/lib/VFS/ISOWriter/RealInputStrategy
-@dirrm %%HORDIR%%/lib/VFS/ISOWriter/RealOutputStrategy
-@dirrm %%HORDIR%%/lib/VFS/ISOWriter
-@dirrm %%HORDIR%%/lib/VFS/tests
-@dirrm %%HORDIR%%/lib/VFS
-@dirrm %%HORDIR%%/lib/XML/WBXML/DTD
-@dirrm %%HORDIR%%/lib/XML/WBXML
-@dirrm %%HORDIR%%/lib/XML/docs/examples
-@dirrm %%HORDIR%%/lib/XML/docs
-@dirrm %%HORDIR%%/lib/XML/tests
-@dirrm %%HORDIR%%/lib/XML
-@dirrmtry %%HORDIR%%/lib/data
-@dirrm %%HORDIR%%/lib/docs
+@dirrm %%HORDIR%%/lib/File/PDF/fonts
+@dirrm %%HORDIR%%/lib/File/PDF
+@dirrm %%HORDIR%%/lib/File
+@dirrm %%HORDIR%%/lib/Block/feed
+@dirrm %%HORDIR%%/lib/Block
 @dirrm %%HORDIR%%/lib
-@dirrm %%HORDIR%%/locale/ar_SY/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ar_SY
-@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/bg_BG
-@dirrm %%HORDIR%%/locale/bs_BA/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/bs_BA
-@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ca_ES
-@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/cs_CZ
-@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/da_DK
-@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/de_DE
-@dirrm %%HORDIR%%/locale/el_GR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/el_GR
-@dirrm %%HORDIR%%/locale/en_US
-@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/es_ES
-@dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/et_EE
-@dirrm %%HORDIR%%/locale/fa_IR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fa_IR
-@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fi_FI
-@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fr_FR
-@dirrm %%HORDIR%%/locale/gl_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/gl_ES
-@dirrm %%HORDIR%%/locale/he_IL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/he_IL
-@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/hu_HU
-@dirrm %%HORDIR%%/locale/id_ID/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/id_ID
-@dirrm %%HORDIR%%/locale/is_IS/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/is_IS
-@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/it_IT
-@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ja_JP
-@dirrm %%HORDIR%%/locale/km_KH/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/km_KH
-@dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ko_KR
-@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/lt_LT
-@dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/lv_LV
-@dirrm %%HORDIR%%/locale/mk_MK/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/mk_MK
-@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nb_NO
-@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nl_NL
-@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nn_NO
-@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pl_PL
-@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pt_BR
-@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pt_PT
-@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ro_RO
-@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ru_RU
-@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sk_SK
-@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sl_SI
-@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sv_SE
-@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/tr_TR
-@dirrm %%HORDIR%%/locale/uk_UA/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/uk_UA
-@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/zh_CN
-@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/zh_TW
-@dirrm %%HORDIR%%/locale
-@dirrm %%HORDIR%%/po
-@dirrm %%HORDIR%%/scripts/ldap
-@dirrm %%HORDIR%%/scripts/sql
-@dirrm %%HORDIR%%/scripts/upgrades
-@dirrm %%HORDIR%%/scripts
-@dirrm %%HORDIR%%/services/download
-@dirrm %%HORDIR%%/services/editor/htmlarea/images
-@dirrm %%HORDIR%%/services/editor/htmlarea/lang
-@dirrm %%HORDIR%%/services/editor/htmlarea/plugins/AnselImage/lang
-@dirrm %%HORDIR%%/services/editor/htmlarea/plugins/AnselImage
-@dirrm %%HORDIR%%/services/editor/htmlarea/plugins/ContextMenu/lang
-@dirrm %%HORDIR%%/services/editor/htmlarea/plugins/ContextMenu
-@dirrm %%HORDIR%%/services/editor/htmlarea/plugins/ListType/lang
-@dirrm %%HORDIR%%/services/editor/htmlarea/plugins/ListType
-@dirrm %%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/img
-@dirrm %%HORDIR%%/services/editor/htmlarea/plugins/TableOperations/lang
-@dirrm %%HORDIR%%/services/editor/htmlarea/plugins/TableOperations
-@dirrm %%HORDIR%%/services/editor/htmlarea/plugins
-@dirrm %%HORDIR%%/services/editor/htmlarea/popups
-@dirrm %%HORDIR%%/services/editor/htmlarea
-@dirrm %%HORDIR%%/services/editor
-@dirrm %%HORDIR%%/services/help
-@dirrm %%HORDIR%%/services/images
-@dirrm %%HORDIR%%/services/obrowser
-@dirrm %%HORDIR%%/services/portal
-@dirrm %%HORDIR%%/services/prefs
-@dirrm %%HORDIR%%/services/shares
-@dirrm %%HORDIR%%/services
-@dirrm %%HORDIR%%/templates/admin/groups
-@dirrm %%HORDIR%%/templates/admin/setup
-@dirrm %%HORDIR%%/templates/admin/user
-@dirrm %%HORDIR%%/templates/admin
-@dirrm %%HORDIR%%/templates/contents
-@dirrm %%HORDIR%%/templates/data
-@dirrm %%HORDIR%%/templates/help
-@dirrm %%HORDIR%%/templates/index
-@dirrm %%HORDIR%%/templates/javascript
-@dirrm %%HORDIR%%/templates/login
-@dirrm %%HORDIR%%/templates/maintenance
-@dirrm %%HORDIR%%/templates/menu
-@dirrm %%HORDIR%%/templates/portal
-@dirrm %%HORDIR%%/templates/prefs
-@dirrm %%HORDIR%%/templates/problem
-@dirrm %%HORDIR%%/templates/rpcsum
-@dirrm %%HORDIR%%/templates/shares
-@dirrm %%HORDIR%%/templates/test
-@dirrm %%HORDIR%%/templates
-@dirrm %%HORDIR%%/themes/NeXTgrey
-@dirrm %%HORDIR%%/themes/azur
-@dirrm %%HORDIR%%/themes/barbie
-@dirrm %%HORDIR%%/themes/bluemoon
-@dirrm %%HORDIR%%/themes/bluewhite
-@dirrm %%HORDIR%%/themes/brown
-@dirrm %%HORDIR%%/themes/burntorange
-@dirrm %%HORDIR%%/themes/camouflage/graphics
-@dirrm %%HORDIR%%/themes/camouflage
-@dirrm %%HORDIR%%/themes/cornflower/graphics
-@dirrm %%HORDIR%%/themes/cornflower
-@dirrm %%HORDIR%%/themes/gennevilliers
-@dirrm %%HORDIR%%/themes/graphics/alerts
-@dirrm %%HORDIR%%/themes/graphics/avatars
-@dirrm %%HORDIR%%/themes/graphics/block/moon
-@dirrm %%HORDIR%%/themes/graphics/block/sunrise
-@dirrm %%HORDIR%%/themes/graphics/block/weatherdotcom/23x23
-@dirrm %%HORDIR%%/themes/graphics/block/weatherdotcom/32x32
-@dirrm %%HORDIR%%/themes/graphics/block/weatherdotcom
-@dirrm %%HORDIR%%/themes/graphics/block
-@dirrm %%HORDIR%%/themes/graphics/emoticons
-@dirrm %%HORDIR%%/themes/graphics/flags
-@dirrm %%HORDIR%%/themes/graphics/image
-@dirrm %%HORDIR%%/themes/graphics/mime
-@dirrm %%HORDIR%%/themes/graphics/mobile
-@dirrm %%HORDIR%%/themes/graphics/nav
-@dirrm %%HORDIR%%/themes/graphics/tree
-@dirrm %%HORDIR%%/themes/graphics
-@dirrm %%HORDIR%%/themes/green
-@dirrm %%HORDIR%%/themes/grey
-@dirrm %%HORDIR%%/themes/hi-contrast
-@dirrm %%HORDIR%%/themes/ideas/graphics
-@dirrm %%HORDIR%%/themes/ideas
-@dirrm %%HORDIR%%/themes/kolab/graphics
-@dirrm %%HORDIR%%/themes/kolab
-@dirrm %%HORDIR%%/themes/lavander
-@dirrm %%HORDIR%%/themes/lightblue/graphics
-@dirrm %%HORDIR%%/themes/lightblue
-@dirrm %%HORDIR%%/themes/luc/graphics
-@dirrm %%HORDIR%%/themes/luc
-@dirrm %%HORDIR%%/themes/lucblue
-@dirrm %%HORDIR%%/themes/mobile
-@dirrm %%HORDIR%%/themes/mozilla/graphics
-@dirrm %%HORDIR%%/themes/mozilla
-@dirrm %%HORDIR%%/themes/postnuke
-@dirrm %%HORDIR%%/themes/print
-@dirrm %%HORDIR%%/themes/purple
-@dirrm %%HORDIR%%/themes/simplex/graphics
-@dirrm %%HORDIR%%/themes/simplex
-@dirrm %%HORDIR%%/themes
-@dirrm %%HORDIR%%/util
+@dirrm %%HORDIR%%/js/src
+@dirrm %%HORDIR%%/js
+@dirrm %%HORDIR%%/config/registry.d
+@dirrm %%HORDIR%%/config
+@dirrm %%HORDIR%%/admin/setup
+@dirrm %%HORDIR%%/admin/perms
+@dirrm %%HORDIR%%/admin/locale/hu_HU
+@dirrm %%HORDIR%%/admin/locale/fi_FI
+@dirrm %%HORDIR%%/admin/locale/en_US
+@dirrm %%HORDIR%%/admin/locale
+@dirrm %%HORDIR%%/admin
 @dirrmtry %%HORDIR%%
 @dirrmtry %%HORBAS%%
