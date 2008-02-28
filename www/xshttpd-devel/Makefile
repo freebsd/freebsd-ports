@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.6b04
+DISTVERSION=	3.6b05
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -99,7 +99,7 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} \
 		-e 's|\(MIME_TYPES\).*|\1 "${LOCALBASE}/etc/mime.types"|' \
-		${WRKSRC}/src/confuser.h
+		${WRKSRC}/src/constants.h
 	@${REINPLACE_CMD} -e 's|mime.types ||g' \
 		${WRKSRC}/config/Makefile.in
 
