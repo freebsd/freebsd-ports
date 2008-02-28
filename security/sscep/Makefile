@@ -15,6 +15,8 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Simple scep client
 
+BROKEN=		Checksum mismatch
+
 USE_OPENSSL=		yes
 
 MAKE_ARGS+=	BINDIR="${PREFIX}/bin" \
