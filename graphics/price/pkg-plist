@@ -21,6 +21,9 @@ Local/Applications/PRICE.app/Resources/DFTLowPass.gorm/objects.gorm
 Local/Applications/PRICE.app/Resources/Equalize.gorm/data.classes
 Local/Applications/PRICE.app/Resources/Equalize.gorm/data.info
 Local/Applications/PRICE.app/Resources/Equalize.gorm/objects.gorm
+Local/Applications/PRICE.app/Resources/Grayscale.gorm/data.classes
+Local/Applications/PRICE.app/Resources/Grayscale.gorm/data.info
+Local/Applications/PRICE.app/Resources/Grayscale.gorm/objects.gorm
 Local/Applications/PRICE.app/Resources/Histogram.gorm/data.classes
 Local/Applications/PRICE.app/Resources/Histogram.gorm/objects.gorm
 Local/Applications/PRICE.app/Resources/Info-gnustep.plist
@@ -52,6 +55,7 @@ Local/Tools/PRICE
 @dirrm Local/Applications/PRICE.app/Resources/Median.gorm
 @dirrm Local/Applications/PRICE.app/Resources/MainMenu.gorm
 @dirrm Local/Applications/PRICE.app/Resources/Histogram.gorm
+@dirrm Local/Applications/PRICE.app/Resources/Grayscale.gorm
 @dirrm Local/Applications/PRICE.app/Resources/Equalize.gorm
 @dirrm Local/Applications/PRICE.app/Resources/DFTLowPass.gorm
 @dirrm Local/Applications/PRICE.app/Resources/DFTHighPass.gorm
