@@ -129,7 +129,6 @@
     SUBDIR += kaffe
     SUBDIR += langspec
     SUBDIR += linux-blackdown-jdk14
-    SUBDIR += linux-blackdown-jre11
     SUBDIR += linux-sun-jdk13
     SUBDIR += linux-sun-jdk14
     SUBDIR += linux-sun-jdk15

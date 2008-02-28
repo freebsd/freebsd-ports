@@ -1,7 +1,0 @@
-%%WWWDIR%%/pluxml/templates/snowxml/img/fond.jpg
-%%WWWDIR%%/pluxml/templates/snowxml/img/header.jpg
-%%WWWDIR%%/pluxml/templates/snowxml/style.css
-%%WWWDIR%%/pluxml/templates/snowxml/template.php
-%%WWWDIR%%/pluxml/templates/snowxml/template.php.orig
-@dirrmtry %%WWWDIR%%/pluxml/templates/snowxml/img
-@dirrm %%WWWDIR%%/pluxml/templates/snowxml

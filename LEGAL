@@ -354,8 +354,6 @@ jpgraph-1.*		graphics/jpgraph	Not for commercial use
 jpgraph-2.*		graphics/jpgraph2	Not for commercial use
 jre*i_ELF.*.tar.gz	java/jre		License does not allow distribution
 						with fee
-jre118_v3-glibc-*	java/linux-blackdown-jre11 License does not allow
-						distribution with fee
 jre-1_5*-linux-*.bin	java/linux-sun-jre15	License does not allow distribution
 						with fee
 jre-6*-linux-*.bin	java/linux-sun-jre16	License does not allow distribution

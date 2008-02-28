@@ -433,7 +433,6 @@
     SUBDIR += nas
     SUBDIR += ncmpc
     SUBDIR += nekobee
-    SUBDIR += nogger
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += nspmod

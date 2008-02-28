@@ -355,7 +355,6 @@
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgadmin3-12
-    SUBDIR += pgbash
     SUBDIR += pgbouncer
     SUBDIR += pgcluster
     SUBDIR += pgpool
