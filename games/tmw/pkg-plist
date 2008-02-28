@@ -9,6 +9,7 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/gui/buttonhi.png
 %%DATADIR%%/data/graphics/gui/buttonpress.png
 %%DATADIR%%/data/graphics/gui/checkbox.png
+%%DATADIR%%/data/graphics/gui/close_button.png
 %%DATADIR%%/data/graphics/gui/deepbox.png
 %%DATADIR%%/data/graphics/gui/fixedfont.png
 %%DATADIR%%/data/graphics/gui/hits_blue.png
@@ -20,6 +21,7 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/gui/hscroll_right_default.png
 %%DATADIR%%/data/graphics/gui/hscroll_right_highlight.png
 %%DATADIR%%/data/graphics/gui/hscroll_right_pressed.png
+%%DATADIR%%/data/graphics/gui/item_shortcut_bgr.png
 %%DATADIR%%/data/graphics/gui/menuitemD.png
 %%DATADIR%%/data/graphics/gui/menuitemF.png
 %%DATADIR%%/data/graphics/gui/menuitemN.png
@@ -39,6 +41,7 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/gui/target-cursor-red-m.png
 %%DATADIR%%/data/graphics/gui/target-cursor-red-s.png
 %%DATADIR%%/data/graphics/gui/thickborder.png
+%%DATADIR%%/data/graphics/gui/unknown-item.png
 %%DATADIR%%/data/graphics/gui/vscroll_blue.png
 %%DATADIR%%/data/graphics/gui/vscroll_down_default.png
 %%DATADIR%%/data/graphics/gui/vscroll_down_highlight.png
