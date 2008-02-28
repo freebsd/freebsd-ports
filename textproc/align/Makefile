@@ -10,6 +10,7 @@ PORTNAME=	align
 PORTVERSION=	1.7.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/align/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Text column alignment filter
