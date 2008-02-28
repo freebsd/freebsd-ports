@@ -8,7 +8,7 @@
 PORTNAME=	libol
 PORTVERSION=	0.3.18
 CATEGORIES=	devel
-MASTER_SITES=	http://www.balabit.com/downloads/libol/0.3/
+MASTER_SITES=	http://www.balabit.com/downloads/files/libol/0.3/
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Library needed by syslog-ng
