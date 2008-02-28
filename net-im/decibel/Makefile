@@ -29,6 +29,12 @@ CMAKE_ARGS=	-DCMAKE_BUILD_TYPE=DEBUG \
 		-DCMAKE_CXX_COMPILER:STRING=${CXX} \
 		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == amd64) && (${OSVERSION} < 600000)
+BROKEN=		Does not compile
+.endif
+
 post-extract:
 	${MKDIR} ${WRKSRC}
 
@@ -40,4 +46,4 @@ post-patch:
 do-configure:
 	cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${CMAKE} ${CMAKE_ARGS} ..
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
