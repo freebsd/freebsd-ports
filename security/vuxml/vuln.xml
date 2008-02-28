@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e8a6a16d-e498-11dc-bb89-000bcdc1757a">
+    <topic>libxine -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.1.10.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>xine Team reports:</p>
+	<blockquote cite="http://www.xinehq.de/index.php/news">
+	  <p>A new xine-lib version is now available. This release
+	   contains a security fix (array index vulnerability which
+	   may lead to a stack buffer overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+       <cvename>CVE-2008-0486</cvename>
+       <url>http://www.xinehq.de/index.php/news</url>
+    </references>
+    <dates>
+      <discovery>2007-02-08</discovery>
+      <entry>2008-02-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9f581778-e3d4-11dc-bb89-000bcdc1757a">
     <topic>coppermine - multiple vulnerabilities</topic>
     <affects>
