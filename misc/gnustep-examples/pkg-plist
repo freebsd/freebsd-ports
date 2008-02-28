@@ -48,6 +48,13 @@ Local/Applications/Ink.app/Resources/Info-gnustep.plist
 Local/Applications/Ink.app/Resources/Ink.desktop
 Local/Applications/Ink.app/Resources/Ink_app.tiff
 Local/Applications/Ink.app/stamp.make
+Local/Applications/MyGL.app/MyGL
+Local/Applications/MyGL.app/Resources/Info-gnustep.plist
+Local/Applications/MyGL.app/Resources/MyGL.gorm/data.classes
+Local/Applications/MyGL.app/Resources/MyGL.gorm/data.info
+Local/Applications/MyGL.app/Resources/MyGL.gorm/objects.gorm
+Local/Applications/MyGL.app/Resources/MyGL.desktop
+Local/Applications/MyGL.app/stamp.make
 Local/Applications/NSBrowserTest.app/NSBrowserTest
 Local/Applications/NSBrowserTest.app/Resources/Info-gnustep.plist
 Local/Applications/NSBrowserTest.app/Resources/NSBrowserTest.desktop
@@ -82,6 +89,9 @@ Local/Library/ApplicationSupport/GSTest/GSHbox-test.bundle/stamp.make
 Local/Library/ApplicationSupport/GSTest/KeyboardInput-test.bundle/KeyboardInput-test
 Local/Library/ApplicationSupport/GSTest/KeyboardInput-test.bundle/Resources/Info-gnustep.plist
 Local/Library/ApplicationSupport/GSTest/KeyboardInput-test.bundle/stamp.make
+Local/Library/ApplicationSupport/GSTest/NSAnimation-test.bundle/NSAnimation-test
+Local/Library/ApplicationSupport/GSTest/NSAnimation-test.bundle/Resources/Info-gnustep.plist
+Local/Library/ApplicationSupport/GSTest/NSAnimation-test.bundle/stamp.make
 Local/Library/ApplicationSupport/GSTest/NSBox-test.bundle/NSBox-test
 Local/Library/ApplicationSupport/GSTest/NSBox-test.bundle/Resources/Info-gnustep.plist
 Local/Library/ApplicationSupport/GSTest/NSBox-test.bundle/stamp.make
@@ -118,6 +128,9 @@ Local/Library/ApplicationSupport/GSTest/NSTableView-test.bundle/stamp.make
 Local/Library/ApplicationSupport/GSTest/NSTextView-test.bundle/NSTextView-test
 Local/Library/ApplicationSupport/GSTest/NSTextView-test.bundle/Resources/Info-gnustep.plist
 Local/Library/ApplicationSupport/GSTest/NSTextView-test.bundle/stamp.make
+Local/Library/ApplicationSupport/GSTest/NSViewAnimation-test.bundle/NSViewAnimation-test
+Local/Library/ApplicationSupport/GSTest/NSViewAnimation-test.bundle/Resources/Info-gnustep.plist
+Local/Library/ApplicationSupport/GSTest/NSViewAnimation-test.bundle/stamp.make
 Local/Library/ApplicationSupport/GSTest/NSWindowStyleMask-test.bundle/NSWindowStyleMask-test
 Local/Library/ApplicationSupport/GSTest/NSWindowStyleMask-test.bundle/Resources/Info-gnustep.plist
 Local/Library/ApplicationSupport/GSTest/NSWindowStyleMask-test.bundle/stamp.make
@@ -133,6 +146,7 @@ Local/Tools/GFractal
 Local/Tools/GSTest
 Local/Tools/HostAddress
 Local/Tools/Ink
+Local/Tools/MyGL
 Local/Tools/NSBrowserTest
 Local/Tools/NSImageTest
 Local/Tools/NSPanelTest
@@ -144,6 +158,8 @@ Local/Tools/md5Digest
 @dirrm Local/Library/ApplicationSupport/GSTest/StringDrawing-test.bundle
 @dirrm Local/Library/ApplicationSupport/GSTest/NSWindowStyleMask-test.bundle/Resources
 @dirrm Local/Library/ApplicationSupport/GSTest/NSWindowStyleMask-test.bundle
+@dirrm Local/Library/ApplicationSupport/GSTest/NSViewAnimation-test.bundle/Resources
+@dirrm Local/Library/ApplicationSupport/GSTest/NSViewAnimation-test.bundle
 @dirrm Local/Library/ApplicationSupport/GSTest/NSTextView-test.bundle/Resources
 @dirrm Local/Library/ApplicationSupport/GSTest/NSTextView-test.bundle
 @dirrm Local/Library/ApplicationSupport/GSTest/NSTableView-test.bundle/Resources
@@ -168,6 +184,8 @@ Local/Tools/md5Digest
 @dirrm Local/Library/ApplicationSupport/GSTest/NSColorList-test.bundle
 @dirrm Local/Library/ApplicationSupport/GSTest/NSBox-test.bundle/Resources
 @dirrm Local/Library/ApplicationSupport/GSTest/NSBox-test.bundle
+@dirrm Local/Library/ApplicationSupport/GSTest/NSAnimation-test.bundle/Resources
+@dirrm Local/Library/ApplicationSupport/GSTest/NSAnimation-test.bundle
 @dirrm Local/Library/ApplicationSupport/GSTest/KeyboardInput-test.bundle/Resources
 @dirrm Local/Library/ApplicationSupport/GSTest/KeyboardInput-test.bundle
 @dirrm Local/Library/ApplicationSupport/GSTest/GSHbox-test.bundle/Resources
@@ -187,6 +205,9 @@ Local/Tools/md5Digest
 @dirrm Local/Applications/NSImageTest.app
 @dirrm Local/Applications/NSBrowserTest.app/Resources
 @dirrm Local/Applications/NSBrowserTest.app
+@dirrm Local/Applications/MyGL.app/Resources/MyGL.gorm
+@dirrm Local/Applications/MyGL.app/Resources
+@dirrm Local/Applications/MyGL.app
 @dirrm Local/Applications/Ink.app/Resources/English.lproj/MainMenu.gorm
 @dirrm Local/Applications/Ink.app/Resources/English.lproj
 @dirrm Local/Applications/Ink.app/Resources/Document.gorm
