@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	altermime
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	mail textproc
 MASTER_SITES=	http://www.pldaniels.com/altermime/ \
 	http://sce-tindy.tecnik93.com/FreeBSD/ports/altermime/sources/
