@@ -8,7 +8,7 @@
 PORTNAME=	cocot
 PORTVERSION=	20041220
 CATEGORIES=	converters
-MASTER_SITES=	http://iwa.ath.cx/software/cygwin/
+MASTER_SITES=	http://vmi.jp/software/cygwin/
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Code Converter on TTY
