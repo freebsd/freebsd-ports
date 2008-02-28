@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m17n-db
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/:m17n \
 		${MASTER_SITE_GNU:S/$/:glibc/}
@@ -41,6 +41,6 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g'
+		's|$${datadir}/pkgconfig|$${prefix}/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>
