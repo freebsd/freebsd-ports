@@ -9,22 +9,20 @@ PORTNAME=	blobandconquer
 DISTVERSION=	0.91-1
 PORTREVISION=	1
 CATEGORIES=	games
+# original url: http://www.parallelrealities.co.uk/download.php?proj=blobAndConquer&file=${DISTNAME}&type=zip
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
-		http://www.parallelrealities.co.uk/download.php?type=zip&file=
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	blobAndConquer-${DISTVERSION}
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A somewhat violent 3D action game
-
-FETCH_BEFORE_ARGS+=	-o ${DISTNAME}${EXTRACT_SUFX}
 
 USE_SDL=	sdl mixer image ttf
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_DOS2UNIX=	makefile src/headers.h src/main.cpp
 USE_GETTEXT=	yes
-
-FETCH_CMD=	/usr/bin/fetch
 
 WRKSRC=		${WRKDIR}/blobAndConquer-${DISTVERSION:C/^([0-9]\.[0-9][0-9]).*/\1/}
 PORTDOCS=	*
