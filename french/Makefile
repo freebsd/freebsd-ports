@@ -25,10 +25,7 @@
     SUBDIR += mozilla-flp
     SUBDIR += php_doc
     SUBDIR += plgrenouille
-    SUBDIR += pluxml
     SUBDIR += pluxml-devel
-    SUBDIR += pluxml-theme-bridge
-    SUBDIR += pluxml-theme-snowxml
     SUBDIR += staroffice52
     SUBDIR += verbiste
     SUBDIR += xtel

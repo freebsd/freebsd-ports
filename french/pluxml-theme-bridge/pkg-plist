@@ -1,7 +1,0 @@
-%%WWWDIR%%/pluxml/templates/bridge/img/fond.jpg
-%%WWWDIR%%/pluxml/templates/bridge/img/header.jpg
-%%WWWDIR%%/pluxml/templates/bridge/img/page.jpg
-%%WWWDIR%%/pluxml/templates/bridge/style.css
-%%WWWDIR%%/pluxml/templates/bridge/template.php
-@dirrmtry %%WWWDIR%%/pluxml/templates/bridge/img
-@dirrm %%WWWDIR%%/pluxml/templates/bridge

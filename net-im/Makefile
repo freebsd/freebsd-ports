@@ -136,7 +136,6 @@
     SUBDIR += tmsnc
     SUBDIR += vicq
     SUBDIR += vqcc-gtk
-    SUBDIR += wildfire
     SUBDIR += xfce4-messenger-plugin
     SUBDIR += ysm
 

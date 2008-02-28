@@ -3272,10 +3272,7 @@ fr-koffice-i18n	ports/french/koffice-i18n
 fr-med		ports/french/med
 fr-mozilla-flp	ports/french/mozilla-flp
 fr-plgrenouille	ports/french/plgrenouille
-fr-pluxml	ports/french/pluxml
 fr-pluxml-devel	ports/french/pluxml-devel
-fr-pluxml-theme-bridge	ports/french/pluxml-theme-bridge
-fr-pluxml-theme-snowxml	ports/french/pluxml-theme-snowxml
 fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
 fracplanet	ports/graphics/fracplanet
@@ -3635,8 +3632,6 @@ geg		ports/math/geg
 geist		ports/graphics/geist
 geki2		ports/games/geki2
 geki3		ports/games/geki3
-gekko		ports/www/gekko
-gekko-modules	ports/www/gekko-modules
 gemcal		ports/deskutils/gemcal
 gemdropx	ports/games/gemdropx
 geminifonts	ports/x11-fonts/geminifonts
@@ -7041,7 +7036,6 @@ linux-arts	ports/audio/linux-arts
 linux-aspell	ports/textproc/linux-aspell
 linux-atk	ports/accessibility/linux-atk
 linux-blackdown-jdk14	ports/java/linux-blackdown-jdk14
-linux-blackdown-jre11	ports/java/linux-blackdown-jre11
 linux-cairo	ports/graphics/linux-cairo
 linux-curl		ports/ftp/linux-curl
 linux-darwinia-demo	ports/games/linux-darwinia-demo
@@ -8443,7 +8437,6 @@ noegnud-nethack-deet	ports/games/noegnud-nethack-deet
 noegnud-slashem	ports/games/noegnud-slashem
 noffle		ports/news/noffle
 nofgpg		ports/security/nofgpg
-nogger		ports/audio/nogger
 nohtml		ports/mail/nohtml
 noip		ports/dns/noip
 nokryptia	ports/comms/nokryptia
@@ -12341,7 +12334,6 @@ pfw		ports/security/pfw
 pgaccess	ports/databases/pgaccess
 pgadmin3	ports/databases/pgadmin3
 pgadmin3-12	ports/databases/pgadmin3-12
-pgbash		ports/databases/pgbash
 pgbouncer	ports/databases/pgbouncer
 pgcalc		ports/math/pgcalc
 pgcluster	ports/databases/pgcluster
@@ -16847,7 +16839,6 @@ widentd		ports/net/widentd
 widgetfactory	ports/x11/widgetfactory
 wikicalc	ports/www/wikicalc
 wikindx		ports/www/wikindx
-wildfire	ports/net-im/wildfire
 wildmagic	ports/graphics/wildmagic
 wiliki		ports/www/wiliki
 wily		ports/editors/wily
