@@ -7,21 +7,24 @@
 
 PORTNAME=		Class-Hook
 PORTVERSION=		0.02
+PORTREVISION=		1
 CATEGORIES=		devel perl5
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN} \
+MASTER_SITES=		CPAN \
 			http://cottage.quynh-and-brian.org/freebsd/ports/distfiles/
-MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Add hooks on methods from other classes
-
-BUILD_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-			${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=		yes
 WRKSRC=			${WRKDIR}/Class-Hook
 
 MAN3=			Class::Hook.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=		p5-Time-HiRes>=0.01:${PORTSDIR}/devel/p5-Time-HiRes
+.endif
+
+.include <bsd.port.post.mk>
