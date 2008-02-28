@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.4.6
+PORTVERSION=	2.5.1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -23,7 +23,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	vivek@khera.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-35-9].* postfix-current-2.* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-46-9].* postfix-current-2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
 USE_SUBMAKE=	yes
@@ -184,6 +184,7 @@ _REQUIRE+=		ypserv
 .endif
 
 .if defined(WITH_VDA)
+IGNORE=			Waiting for a new patch that's work with 2.5.1
 PATCH_SITES+=		http://vda.sourceforge.net/VDA/
 PATCHFILES+=		postfix-2.4.5-vda-ng.patch.gz
 PATCH_DIST_STRIP=	-p1
