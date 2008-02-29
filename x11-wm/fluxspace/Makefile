@@ -17,6 +17,8 @@ COMMENT=	A window manager and workspace enhancer and integrator
 BUILD_DEPENDS=	imlib2-config:${PORTSDIR}/graphics/imlib2 \
 		swig:${PORTSDIR}/devel/swig13
 
+BROKEN=		Checksum mismatch
+
 USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
