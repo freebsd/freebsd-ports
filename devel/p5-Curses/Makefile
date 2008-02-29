@@ -7,6 +7,7 @@
 
 PORTNAME=	Curses
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,11 +17,18 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for terminal screen handling and optimization
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	PANELS MENUS FORMS
+CONFIGURE_ENV=	CURSES_CFLAGS="-I${WRKSRC}/usr/include/ncurses"\
+		CURSES_LDFLAGS="-L/usr/lib/ -lncurses"
 
 MAN3=		Curses.3
 
 pre-configure:
 	@${LN} -sf ${WRKSRC}/hints/c-freebsd.ncurses.h \
 		${WRKSRC}/c-config.h
+	@${MKDIR} -p ${WRKSRC}/usr/include/ncurses
+.for i in form.h ncurses.h menu.h panel.h
+	@${LN} -fs /usr/include/${i} ${WRKSRC}/usr/include/ncurses/${i}
+.endfor
 
 .include <bsd.port.mk>
