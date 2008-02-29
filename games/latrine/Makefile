@@ -8,7 +8,7 @@
 PORTNAME=	latrine
 PORTVERSION=	0.10.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.godisch.de/debian/latrine/
+MASTER_SITES=	http://people.debian.org/~godisch/latrine/
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Curses-based LAnguage TRaINEr
