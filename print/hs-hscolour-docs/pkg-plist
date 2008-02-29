@@ -1,0 +1,60 @@
+%%DOCSDIR_REL%%/html/HsColour/Language-Haskell-HsColour-ANSI.html
+%%DOCSDIR_REL%%/html/HsColour/Language-Haskell-HsColour-Anchors.html
+%%DOCSDIR_REL%%/html/HsColour/Language-Haskell-HsColour-CSS.html
+%%DOCSDIR_REL%%/html/HsColour/Language-Haskell-HsColour-Classify.html
+%%DOCSDIR_REL%%/html/HsColour/Language-Haskell-HsColour-ColourHighlight.html
+%%DOCSDIR_REL%%/html/HsColour/Language-Haskell-HsColour-Colourise.html
+%%DOCSDIR_REL%%/html/HsColour/Language-Haskell-HsColour-General.html
+%%DOCSDIR_REL%%/html/HsColour/Language-Haskell-HsColour-HTML.html
+%%DOCSDIR_REL%%/html/HsColour/Language-Haskell-HsColour-LaTeX.html
+%%DOCSDIR_REL%%/html/HsColour/Language-Haskell-HsColour-MIRC.html
+%%DOCSDIR_REL%%/html/HsColour/Language-Haskell-HsColour-TTY.html
+%%DOCSDIR_REL%%/html/HsColour/Language-Haskell-HsColour.html
+%%DOCSDIR_REL%%/html/HsColour/Main.html
+%%DOCSDIR_REL%%/html/HsColour/doc-index.html
+%%DOCSDIR_REL%%/html/HsColour/haddock-util.js
+%%DOCSDIR_REL%%/html/HsColour/haddock.css
+%%DOCSDIR_REL%%/html/HsColour/haskell_icon.gif
+%%DOCSDIR_REL%%/html/HsColour/index.html
+%%DOCSDIR_REL%%/html/HsColour/minus.gif
+%%DOCSDIR_REL%%/html/HsColour/plus.gif
+%%DOCSDIR_REL%%/html/HsColour/src/Main.html
+%%DOCSDIR_REL%%/html/HsColour/src/hscolour.css
+%%DOCSDIR_REL%%/html/Language-Haskell-HsColour-ANSI.html
+%%DOCSDIR_REL%%/html/Language-Haskell-HsColour-Anchors.html
+%%DOCSDIR_REL%%/html/Language-Haskell-HsColour-CSS.html
+%%DOCSDIR_REL%%/html/Language-Haskell-HsColour-Classify.html
+%%DOCSDIR_REL%%/html/Language-Haskell-HsColour-ColourHighlight.html
+%%DOCSDIR_REL%%/html/Language-Haskell-HsColour-Colourise.html
+%%DOCSDIR_REL%%/html/Language-Haskell-HsColour-General.html
+%%DOCSDIR_REL%%/html/Language-Haskell-HsColour-HTML.html
+%%DOCSDIR_REL%%/html/Language-Haskell-HsColour-LaTeX.html
+%%DOCSDIR_REL%%/html/Language-Haskell-HsColour-MIRC.html
+%%DOCSDIR_REL%%/html/Language-Haskell-HsColour-TTY.html
+%%DOCSDIR_REL%%/html/Language-Haskell-HsColour.html
+%%DOCSDIR_REL%%/html/doc-index.html
+%%DOCSDIR_REL%%/html/haddock-util.js
+%%DOCSDIR_REL%%/html/haddock.css
+%%DOCSDIR_REL%%/html/haskell_icon.gif
+%%DOCSDIR_REL%%/html/hscolour.haddock
+%%DOCSDIR_REL%%/html/index.html
+%%DOCSDIR_REL%%/html/minus.gif
+%%DOCSDIR_REL%%/html/plus.gif
+%%DOCSDIR_REL%%/html/src/Language-Haskell-HsColour-ANSI.html
+%%DOCSDIR_REL%%/html/src/Language-Haskell-HsColour-Anchors.html
+%%DOCSDIR_REL%%/html/src/Language-Haskell-HsColour-CSS.html
+%%DOCSDIR_REL%%/html/src/Language-Haskell-HsColour-Classify.html
+%%DOCSDIR_REL%%/html/src/Language-Haskell-HsColour-ColourHighlight.html
+%%DOCSDIR_REL%%/html/src/Language-Haskell-HsColour-Colourise.html
+%%DOCSDIR_REL%%/html/src/Language-Haskell-HsColour-General.html
+%%DOCSDIR_REL%%/html/src/Language-Haskell-HsColour-HTML.html
+%%DOCSDIR_REL%%/html/src/Language-Haskell-HsColour-LaTeX.html
+%%DOCSDIR_REL%%/html/src/Language-Haskell-HsColour-MIRC.html
+%%DOCSDIR_REL%%/html/src/Language-Haskell-HsColour-TTY.html
+%%DOCSDIR_REL%%/html/src/Language-Haskell-HsColour.html
+%%DOCSDIR_REL%%/html/src/hscolour.css
+@dirrm %%DOCSDIR_REL%%/html/src
+@dirrm %%DOCSDIR_REL%%/html/HsColour/src
+@dirrm %%DOCSDIR_REL%%/html/HsColour
+@dirrm %%DOCSDIR_REL%%/html
+@dirrmtry %%DOCSDIR_REL%%
