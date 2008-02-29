@@ -1,6 +1,4 @@
-include/theora/codec.h
 include/theora/theora.h
-include/theora/theoradec.h
 lib/libtheora.a
 lib/libtheora.la
 lib/libtheora.so
