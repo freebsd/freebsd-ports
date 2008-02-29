@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	semper@doubt.com
 COMMENT=	A curses-based spreadsheet program
 
+DEPRECATED=	distfile disappeared
+EXPIRATION_DATE=	2008-03-29
+
 NO_WRKSUBDIR=	yes
 MAN1=		sc.1 psc.1
 
