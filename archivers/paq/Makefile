@@ -6,25 +6,30 @@
 #
 
 PORTNAME=	paq
-DISTVERSION=	8o8
+DISTVERSION=	8o9
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cs.fit.edu/~mmahoney/compression/
 DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	bf2006a@yahoo.com
-COMMENT=	An archiver with an extremely high compression ratio
+COMMENT=	A family of archivers with extremely high compression ratios
 
+LPAQ=		lpaq8
+LPQ=		lpq1
+PAQ9=		paq9a
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LPAQ}${EXTRACT_SUFX} ${LPQ}${EXTRACT_SUFX} \
+		${PAQ9}${EXTRACT_SUFX}
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 SUB_FILES=	pkg-message
 CPPFILE=	${PORTNAME}${DISTVERSION:C/v.([^\.]*)$/\1/}
-PLIST_SUB=	CPPFILE=${CPPFILE}
+PLIST_SUB+=	CPPFILE=${CPPFILE} LPAQ=${LPAQ}	LPQ=${LPQ} PAQ9=${PAQ9}
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ASM) && ${ARCH} == "i386" && !defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-CXXFLAGS+=	-DUNIX
+PAQFLAGS+=	-DUNIX
 ASM1?=	nasm -f elf -o
 ASM2?=
 .if !defined(WITH_SSE2)
@@ -35,14 +40,14 @@ ASMFILE=	paq7asmsse
 STRIP=
 .elif !defined(WITHOUT_ASM) && ${ARCH} == "amd64" && !defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
-CXXFLAGS+=	-DUNIX
+PAQFLAGS+=	-DUNIX
 ASM1?=	yasm -f elf64 -o
 ASM2?=	-a x86 -m amd64
 ASMFILE=	paq7asm-x86_64
 STRIP=
 .else
 WITHOUT_ASM=	yes
-CXXFLAGS+=-DUNIX -DNOASM
+PAQFLAGS+=	-DUNIX -DNOASM
 .endif
 
 pre-everything::
@@ -67,22 +72,35 @@ pre-everything::
 do-build:
 .if !defined(WITHOUT_ASM)
 	${ASM1} ${WRKSRC}/${ASMFILE}.o ${ASM2} ${WRKSRC}/${ASMFILE}.asm
-	${CXX} ${WRKSRC}/${CPPFILE}.cpp ${CXXFLAGS} -o ${WRKSRC}/${CPPFILE} ${WRKSRC}/${ASMFILE}.o
+	${CXX} ${WRKSRC}/${CPPFILE}.cpp ${CXXFLAGS} ${PAQFLAGS} -o ${WRKSRC}/${CPPFILE} \
+	${WRKSRC}/${ASMFILE}.o
 .else
-	${CXX} ${WRKSRC}/${CPPFILE}.cpp ${CXXFLAGS} -o ${WRKSRC}/${CPPFILE}
+	${CXX} ${WRKSRC}/${CPPFILE}.cpp ${CXXFLAGS} ${PAQFLAGS} -o ${WRKSRC}/${CPPFILE}
 .endif
+	${CXX} ${WRKSRC}/${LPAQ}.cpp ${CXXFLAGS} -o ${WRKSRC}/${LPAQ}
+	${CXX} ${WRKSRC}/${LPAQ}.cpp ${CXXFLAGS} -DWIKI -o ${WRKSRC}/${LPAQ}e
+	${CXX} ${WRKSRC}/${LPQ}.cpp ${CXXFLAGS} -o ${WRKSRC}/${LPQ}
+	${CXX} ${WRKSRC}/${PAQ9}.cpp ${CXXFLAGS} -o ${WRKSRC}/${PAQ9}
 
 do-install:
 .if !exists(${PREFIX}/bin)
 	${MKDIR} ${PREFIX}/bin
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/${CPPFILE} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${LPAQ} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${LPAQ}e ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${LPQ} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PAQ9} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 .if !exists(${DOCSDIR})
 	${MKDIR} ${DOCSDIR}
 .endif
 	${INSTALL_MAN} ${WRKSRC}/${CPPFILE}.cpp ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/readme.txt ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${LPAQ}.cpp ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${LPQ}.cpp ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${PAQ9}.cpp ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/Readme.txt ${DOCSDIR}/${CPPFILE}_readme.txt
+	${INSTALL_MAN} ${WRKSRC}/readme.txt ${DOCSDIR}/${LPAQ}_readme.txt
 .endif
 	${CAT} ${PKGMESSAGE}
 
