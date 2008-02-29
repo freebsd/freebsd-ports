@@ -22,7 +22,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-popt-prefix=${LOCALBASE}
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=	--disable-nls --without-libiconv-prefix
+CONFIGURE_ENV+=		POPT_CFLAGS=-I${PREFIX}/include POPT_LIBS="-L${PREFIX}/lib -lpopt"
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_ICONV=	yes
