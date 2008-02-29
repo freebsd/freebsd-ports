@@ -1,7 +1,7 @@
 *************************************************************************
 
-See %%PREFIX%%/share/doc/paq/readme.txt and the comments at the head of 
-%%PREFIX%%/share/doc/paq/paq8*.cpp for instructions and details on usage
+See %%PREFIX%%/share/doc/paq/*_readme.txt and the comments at the head of 
+%%PREFIX%%/share/doc/paq/*paq*.cpp for instructions and details on usage
 and the algorithms employed.
 
 *************************************************************************
