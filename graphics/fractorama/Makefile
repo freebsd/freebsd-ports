@@ -9,10 +9,10 @@ PORTNAME=	fractorama
 PORTVERSION=	1.6.7
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://fractorama.com/ \
-		http://critical.ch/distfiles/${PORTNAME}/${PORTVERSION}/ \
+MASTER_SITES=	http://critical.ch/distfiles/${PORTNAME}/${PORTVERSION}/ \
 		http://energy.critical.ch/distfiles/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fractal generation program
