@@ -19,7 +19,6 @@ LIB_DEPENDS=	audclient.1:${PORTSDIR}/multimedia/audacious \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/"
-BROKEN=		Does not compile
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CXXFLAGS = @CXXFLAGS@|CXXFLAGS = @CXXFLAGS@ -lmac|' ${WRKSRC}/src/Makefile.in
