@@ -18,15 +18,24 @@ COMMENT=	A Compiler for the functional language Haskell
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+GHC_VERSION=	${PORTVERSION}
+
 USE_AUTOTOOLS=	autoconf:261:env
 USE_BZIP2=	yes
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
+
+# The configure process accepts,filters and canonicalises
+# the CONFIGURE_TARGET variable. You can read the files
+# ${WRKSRC}/configure and ${WRKSRC}/config.sub.
+# This is better fixed in the ${WRKSRC}/mk/build.mk.
+# You can view below.
 GNU_CONFIGURE=	yes
 
-OPTIONS=	PROFILE "Compile for profiling as well" on
+OPTIONS=	PROFILE "Compile for profiling as well" on \
+		DOCS "Install HTML documentation" on
 
 .include <bsd.port.pre.mk>
 
@@ -52,7 +61,13 @@ IGNORE=		unsupported at the moment
 .endif
 .endif
 
-PLIST_SUB+=	GHC_VERSION=${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
+GHC_LIBDIR_REL=	lib/ghc-${GHC_VERSION}
+PORTDOCS=	*
+MAN1=		ghc.1
+
+PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} GHC_LIBDIR_REL=${GHC_LIBDIR_REL} DOCSDIR_REL=${DOCSDIR_REL}
+
 .if defined(WITHOUT_PROFILE)
 PLIST_SUB+=	PROFILE="@comment "
 .else
@@ -61,13 +76,11 @@ PLIST_SUB+=	PROFILE=""
 
 # This port builds by downloading a minimal binary distribution of GHC and
 # using that to bootstrap.
-BOOT_DIR=	${WRKDIR}/ghc-${PORTVERSION}-boot
-BOOT_GHC=	${BOOT_DIR}/bin/ghc-${PORTVERSION}
+BOOT_DIR=	${WRKDIR}/ghc-${GHC_VERSION}-boot
+BOOT_GHC=	${BOOT_DIR}/bin/ghc-${GHC_VERSION}
 
 CONFIGURE_ARGS+=	--with-ghc=${BOOT_GHC}  --with-gcc=${CC} \
-	--with-gmp-includes=${LOCALBASE}/include --with-gmp-libraries=${LOCALBASE}/lib 
-# specifying CONFIGURE_TARGET doesn't work for some reason.
-CONFIGURE_TARGET=
+	--with-gmp-includes=${LOCALBASE}/include --with-gmp-libraries=${LOCALBASE}/lib
 # libgmp:
 CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
@@ -77,10 +90,47 @@ TMPDIR=		${WRKSRC}/tmp
 MAKE_ENV+=	TMPDIR=${TMPDIR}
 EXCLUDELIBS=	ALUT GLUT HGL OpenAL OpenGL X11
 
-post-extract:
-.if defined(WITHOUT_PROFILE)
-	@${ECHO} >>${WRKSRC}/mk/build.mk GhcLibWays=
+# Defining WITH_DOCS:
+# An in place installation and registration of haddock will be
+# activated. In this way it's possible to use it directly into
+# the build tree, without needing to install it. At the end
+# you could view the output of: ${BOOT_GHC} describe haddock
+.if defined(WITH_DOCS)
+
+MASTER_SITES+=	http://www.haskell.org/haddock/dist/:docs \
+		ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/:docs
+
+DISTFILES+=	haddock-2.0.0.0.tar.gz:docs \
+		hscolour-1.9.tar.gz:docs
+
+EXTRACT_ONLY=	${_DISTFILES:C/hscolour.*$//g:C/haddock.*$//g}
+
+SUB_FILES=	pkg-message.haddock
+
+SLAVES_PREFIX=		${WRKDIR}/slaves_prefix
+SLAVES_WRKDIRPREFIX=	${WRKDIR}/slaves_wrkdirprefix
+SLAVES_MAKE_ARGS=	-DSLAVE PREFIX=${SLAVES_PREFIX} WRKDIRPREFIX=${SLAVES_WRKDIRPREFIX}
+
+MAKE_ENV+=	PATH=${SLAVES_PREFIX}/bin:${PATH}
+CONFIGURE_ENV+=	PATH=${SLAVES_PREFIX}/bin:${PATH}
+
+BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
+		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
 .endif
+
+post-extract:
+	@${ECHO} >> ${WRKSRC}/mk/build.mk "docdir = ${PREFIX}/share/doc/ghc-${GHC_VERSION}"
+	@${ECHO} >> ${WRKSRC}/mk/build.mk "htmldir = ${PREFIX}/share/doc/ghc-${GHC_VERSION}"
+	@${ECHO} >> ${WRKSRC}/mk/build.mk "mandir = ${PREFIX}/man"
+	@${ECHO} >> ${WRKSRC}/mk/build.mk "infodir = ${PREFIX}/info"
+.if defined(WITHOUT_PROFILE)
+	@${ECHO} >> ${WRKSRC}/mk/build.mk "GhcLibWays ="
+.endif
+.if defined(WITH_DOCS)
+	@${ECHO} >> ${WRKSRC}/mk/build.mk "XMLDocWays = html"
+	@${ECHO} >> ${WRKSRC}/mk/build.mk "HADDOCK_DOCS = YES"
+.endif
+
 	@cd ${WRKSRC}/libraries && ${RM} -rf ${EXCLUDELIBS}
 
 post-patch:
@@ -91,10 +141,49 @@ pre-configure:
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS} --prefix=${BOOT_DIR})
 	@(cd ${BOOT_DIR} && ${GMAKE} install)
 
+# Defining WITH_DOCS:
+# Defining "SLAVE" in devel/hs-haddock and
+# print/hs-hscolour flips the building process
+# functionally to this port.
+.if defined(WITH_DOCS)
+	@${ECHO_MSG} -e "\a"
+	@${ECHO_MSG} "====================================================================="
+	@${ECHO_MSG} "  WARNING: Now Haddock and HsColour will be built, the respective    "
+	@${ECHO_MSG} "           ports won't be installed, but it takes place an in-place  "
+	@${ECHO_MSG} "           installation and registration of both.                    "
+	@${ECHO_MSG} "====================================================================="
+	@${ECHO_MSG} ""
+	@sleep 3
+
+	@${MKDIR} ${SLAVES_PREFIX}
+	@${MKDIR} ${SLAVES_WRKDIRPREFIX}
+
+	#@(cd ${PORTSDIR}/devel/hs-haddock && \ 
+	@(cd ../hs-haddock && \
+		${SETENV} PATH=${BOOT_DIR}/bin:${PATH} ${MAKE} ${SLAVES_MAKE_ARGS} install)
+
+	#@(cd ${PORTSDIR}/print/hs-hscolour && \ 
+	@(cd ../hs-hscolour && \
+		${SETENV} PATH=${BOOT_DIR}/bin:${PATH} ${MAKE} ${SLAVES_MAKE_ARGS} install)
+.endif
+
 pre-build:
 	@${MKDIR} ${TMPDIR}
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/ghc-${PORTVERSION}/cabal		# cabalised hs-foo-ghc ports
+	# cabalised hs-foo-ghc ports
+	@${MKDIR} ${PREFIX}/lib/ghc-${PORTVERSION}/cabal
+	@${MKDIR} ${PREFIX}/share/doc/ghc-${GHC_VERSION}/cabal
+
+.if defined(WITH_DOCS)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-docs)
+
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
+.else
+	@${INSTALL_MAN} ${WRKSRC}/docs/man/ghc.1 ${PREFIX}/man/man1
+.endif
+	@${RM} -f ${PREFIX}/lib/ghc-${PORTVERSION}/package.conf.old
 
 .include <bsd.port.post.mk>
