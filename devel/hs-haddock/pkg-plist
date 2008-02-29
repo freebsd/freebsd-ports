@@ -1,23 +1,26 @@
 bin/haddock
-lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/Distribution/Haddock.hi
-lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/HShaddock-%%HADDOCK_VERSION%%.o
-lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/Haddock/Exception.hi
-lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/Haddock/InterfaceFile.hi
-lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/Haddock/Types.hi
-lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/libHShaddock-%%HADDOCK_VERSION%%.a
-share/doc/haddock-%%HADDOCK_VERSION%%/LICENSE
-share/haddock-%%HADDOCK_VERSION%%/html/haddock-DEBUG.css
-share/haddock-%%HADDOCK_VERSION%%/html/haddock-util.js
-share/haddock-%%HADDOCK_VERSION%%/html/haddock.css
-share/haddock-%%HADDOCK_VERSION%%/html/haskell_icon.gif
-share/haddock-%%HADDOCK_VERSION%%/html/minus.gif
-share/haddock-%%HADDOCK_VERSION%%/html/plus.gif
-@dirrm lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/Haddock
-@dirrm lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%/Distribution
-@dirrm lib/haddock-%%HADDOCK_VERSION%%/ghc-%%GHC_VERSION%%
-@dirrm lib/haddock-%%HADDOCK_VERSION%%
-@dirrm share/doc/haddock-%%HADDOCK_VERSION%%
-@dirrm share/haddock-%%HADDOCK_VERSION%%/html
-@dirrm share/haddock-%%HADDOCK_VERSION%%
+%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution/Haddock.hi
+%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HShaddock-%%HADDOCK_VERSION%%.o
+%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/Exception.hi
+%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/InterfaceFile.hi
+%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/Types.hi
+%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHShaddock-%%HADDOCK_VERSION%%.a
+%%HADDOCK_LIBDIR_REL%%/register.sh
+%%DOCSDIR%%/LICENSE
+%%DATADIR_REL%%/html/haddock-DEBUG.css
+%%DATADIR_REL%%/html/haddock-util.js
+%%DATADIR_REL%%/html/haddock.css
+%%DATADIR_REL%%/html/haskell_icon.gif
+%%DATADIR_REL%%/html/minus.gif
+%%DATADIR_REL%%/html/plus.gif
+@dirrm %%DATADIR_REL%%/html
+@dirrm %%DATADIR_REL%%
+@dirrm %%DOCSDIR%%
+@dirrm %%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock
+@dirrm %%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution
+@dirrm %%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%HADDOCK_LIBDIR_REL%%
+@exec /bin/sh %D/%%HADDOCK_LIBDIR_REL%%/register.sh
 @exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec if [ -x %D/bin/ghc-pkg ]; then %D/bin/ghc-pkg unregister haddock || /usr/bin/true; fi
+@unexec if [ -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old ]; then rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old || /usr/bin/true; fi
