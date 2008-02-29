@@ -8,6 +8,5 @@ bin/mp3find
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Find/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Find
 @dirrm %%SITE_PERL%%/MP3/Find
-@dirrm %%SITE_PERL%%/MP3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3
 @dirrmtry %%SITE_PERL%%/MP3
