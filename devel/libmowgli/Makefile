@@ -7,6 +7,7 @@
 
 PORTNAME=	libmowgli
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -21,5 +22,7 @@ USE_GMAKE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|MOWGLI_DECLS_END   };|MOWGLI_DECLS_END   }|g' \
+		${WRKSRC}/src/libmowgli/mowgli.h
 
 .include <bsd.port.mk>
