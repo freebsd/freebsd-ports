@@ -1,0 +1,36 @@
+--- ../configure	2007-08-05 14:47:49.000000000 -0400
++++ ../configure	2008-02-14 14:16:33.000000000 -0500
+@@ -6169,5 +6169,5 @@
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char $ac_func ();
++void * $ac_func ();
+ /* The GNU C library defines this for functions which it implements
+     to always fail with ENOSYS.  Some functions are actually named
+@@ -6176,5 +6176,5 @@
+ choke me
+ #else
+-char (*f) () = $ac_func;
++void * (*f) () = $ac_func;
+ #endif
+ #ifdef __cplusplus
+@@ -6305,5 +6305,4 @@
+                  generic/utf8conv.c  \
+                  generic/dom.c       \
+-                 generic/domalloc.c  \
+                  generic/domhtml.c   \
+                  generic/domxpath.c  \
+@@ -7263,5 +7262,5 @@
+     if test "$GCC" = "yes" ; then
+ 	CFLAGS_OPTIMIZE=-O2
+-	CFLAGS_WARNING="-Wall -Wno-implicit-int"
++	CFLAGS_WARNING="-Wall -Wno-implicit-int -Wno-uninitialized"
+     else
+ 	CFLAGS_WARNING=""
+@@ -8404,5 +8401,5 @@
+ 		LIBS=`echo $LIBS | sed s/-pthread//`
+ 		CFLAGS="$CFLAGS -pthread"
+-	    	LDFLAGS="$LDFLAGS -pthread"
++	    	LDFLAGS="$LDFLAGS"
+ 	    fi
+ 	    case $system in

@@ -1,3 +1,4 @@
+include/tdom.h
 lib/tdom%%PORTVERSION%%/libtdom%%PORTVERSION%%.so
 lib/tdom%%PORTVERSION%%/libtdomstub%%PORTVERSION%%.a
 lib/tdom%%PORTVERSION%%/pkgIndex.tcl
