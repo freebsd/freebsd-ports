@@ -7,17 +7,16 @@
 
 PORTNAME=	Mail-Procmail
 PORTVERSION=	1.08
+PORTREVISION=	1
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Mail
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module provides procmail-like tools
 
-BUILD_DEPENDS=	${SITE_PERL}/LockFile/Lock.pm:${PORTSDIR}/devel/p5-LockFile-Simple \
-		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS= 	p5-LockFile-Simple>=0:${PORTSDIR}/devel/p5-LockFile-Simple \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 
 PERL_CONFIGURE=	yes
 
