@@ -8,7 +8,7 @@
 PORTNAME=	jpeginfo
 PORTVERSION=	1.6.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://fresh.t-systems-sfr.com/linux/src/
+MASTER_SITES=	http://www.kokkonen.net/tjko/src/
 
 MAINTAINER=	ache@freebsd.org
 COMMENT=	Generate listing and MD5, check jpegs for error, delete broken ones
