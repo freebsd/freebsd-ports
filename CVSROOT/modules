@@ -4731,6 +4731,7 @@ hs-frantk	ports/x11-toolkits/hs-frantk
 hs-glut-ghc	ports/x11-toolkits/hs-glut-ghc
 hs-gtk2hs	ports/x11-toolkits/hs-gtk2hs
 hs-haddock	ports/devel/hs-haddock
+hs-haddock-docs	ports/devel/hs-haddock-docs
 hs-happy	ports/devel/hs-happy
 hs-hat		ports/devel/hs-hat
 hs-haxml	ports/textproc/hs-haxml
