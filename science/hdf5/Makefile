@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	hdf5
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current/src/ \
+MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current16/src/ \
+		ftp://ftp.hdfgroup.org/HDF5/prev-releases/ \
 		ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-${PORTVERSION}/src/
 
 MAINTAINER=	koziol@hdfgroup.org
@@ -19,10 +20,15 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 LIBTOOLFILES=	configure c++/configure
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-cxx --enable-production \
-		--enable-threadsafe --disable-debug \
-		--with-pthread
+CONFIGURE_ARGS=	--disable-debug \
+		--enable-cxx \
+		--enable-instrument \
+		--enable-production \
+		--enable-strict-format-checks \
+		--enable-threadsafe \
+		--with-pthread=/usr \
+		--with-ssl=/usr \
+		--with-zlib=/usr
 ALL_TARGET=	lib progs
 
 .include <bsd.port.pre.mk>
@@ -33,20 +39,23 @@ BROKEN=		Does not compile on ${ARCH}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
-		 s|[\$$]LDFLAGS -pthread|\$$LDFLAGS ${PTHREAD_LIBS}|g'  \
-			${WRKSRC}/config/freebsd
-	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
-		 s|[\$$]LDFLAGS -pthread|\$$LDFLAGS ${PTHREAD_LIBS}|g'  \
-			${WRKSRC}/c++/config/freebsd
+	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g' \
+		-e 's|[\$$]LDFLAGS -pthread|\$$LDFLAGS ${PTHREAD_LIBS}|g'  \
+			${WRKSRC}/config/freebsd ${WRKSRC}/c++/config/freebsd
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/config/gnu-flags
-	@${REINPLACE_CMD} -e 's|objformat=|#objformat=|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|objformat=|#objformat=|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/version_type=freebsd-/s|=.*|=freebsd-elf|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e '/version_type=freebsd-/s|=.*|=freebsd-elf|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|objformat=|#objformat=|g' \
+		-e 's|\(version_type=freebsd\)-.*|\1-elf|g' \
+			${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
+.if defined(NOPORTEXAMPLES)
+.for i in . c++ hl
+	@${REINPLACE_CMD} \
+		-e 's,\((cd examples && $$(MAKE) $$@) || exit 1;\),#\1,g' \
+			${WRKSRC}/${i}/Makefile.in
+.endfor
+.endif
 
 post-install:
-.for i in gif2h5 h52gif h5debug h5diff h5dump h5import h5ls h5repart h5jam h5unjam
+.for i in gif2h5 h52gif h5debug h5diff h5dump h5import h5jam h5ls h5repack h5repart h5unjam
 	@${STRIP_CMD} ${PREFIX}/bin/${i}
 .endfor
 
