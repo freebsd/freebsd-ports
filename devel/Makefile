@@ -463,6 +463,7 @@
     SUBDIR += hs-drift
     SUBDIR += hs-fps
     SUBDIR += hs-haddock
+    SUBDIR += hs-haddock-docs
     SUBDIR += hs-happy
     SUBDIR += hs-hat
     SUBDIR += hs-hdoc
