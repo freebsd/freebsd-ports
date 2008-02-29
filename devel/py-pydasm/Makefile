@@ -6,28 +6,21 @@
 #
 
 PORTNAME=	pydasm
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.klake.org/~jt/misc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	libdasm-${PORTVERSION}
 
-MAINTAINER=	antoine.brodin@laposte.net
+MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	A python interface to libdasm
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGVERSION=	1.2
-
-.if !defined(WITHOUT_EXAMPLES)
-PLIST_SUB+=	EXAMPLES=""
-.else
-PLIST_SUB+=	EXAMPLES="@comment "
-.endif
 
 post-install:
-.if !defined(WITHOUT_EXAMPLES)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/das.py ${EXAMPLESDIR}
 .endif
