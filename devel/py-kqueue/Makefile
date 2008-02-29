@@ -37,6 +37,8 @@ post-patch:
 do-configure:
 	@(cd ${WRKSRC} && \
 	make -f Makefile.pre.in boot)
+	${GREP} '^BLDSHARED' ${PYTHON_LIBDIR}/config/Makefile >> \
+		${WRKSRC}/Makefile
 
 post-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
