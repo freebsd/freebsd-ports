@@ -1,9 +1,9 @@
---- src/gdevvglb.c.orig	Mon Jun  4 01:15:47 2007
-+++ src/gdevvglb.c	Mon Jun  4 01:18:45 2007
+--- src/gdevvglb.c.orig	Tue Sep 25 22:31:24 2007
++++ src/gdevvglb.c	Sat Nov 24 23:00:49 2007
 @@ -149,10 +149,13 @@
  }
  
- private gx_color_index
+ static gx_color_index
 -vgalib_map_rgb_color(gx_device * dev, gx_color_value red,
 -		     gx_color_value green, gx_color_value blue)
 +vgalib_map_rgb_color(gx_device * dev, const gx_color_value cv[])
@@ -16,4 +16,4 @@
 +    return pc_4bit_map_rgb_color(dev, cv);
  }
  
- private int
+ static int

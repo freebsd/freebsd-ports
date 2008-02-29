@@ -1,9 +1,9 @@
---- src/gdevperm.c.orig	Fri Jun 18 16:00:47 2004
-+++ src/gdevperm.c	Fri Dec 31 18:06:42 2004
-@@ -289,7 +289,7 @@
+--- src/gdevperm.c.orig	Tue Sep 25 22:31:24 2007
++++ src/gdevperm.c	Sat Nov 24 15:11:12 2007
+@@ -286,7 +286,7 @@
  	(strncmp((const char *)name, (const char *)str, name_size) == 0))
  
- private int
+ static int
 -perm_get_color_comp_index(const gx_device *pdev, const char *pname,
 +perm_get_color_comp_index(gx_device *pdev, const char *pname,
  					int name_size, int component_type)
