@@ -8,7 +8,7 @@
 PORTNAME=	pimdd
 PORTVERSION=	0.2.1.0
 CATEGORIES=	net
-MASTER_SITES=	http://antc.uoregon.edu/PIMDM/
+MASTER_SITES=	http://www.antc.uoregon.edu/PIMDM/
 DISTNAME=	pimd-dense
 
 MAINTAINER=	bms@FreeBSD.org
