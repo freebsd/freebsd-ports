@@ -98,13 +98,11 @@ MAKE_ENV+=	SOC_LOADER="dxmain.c" \
 		SOC_CFLAGS="`pkg-config --cflags gtk+-2.0`" \
 		SOC_LIBS="`pkg-config --libs gtk+-2.0`"
 .endif
-ALL_TARGET=	so pcl3opts
+ALL_TARGET=	so
 INSTALL_TARGET=	soinstall
 USE_LDCONFIG=	yes
 PLIST_SUB+=	SHLIB="" SHLIB_VER="${GS_VERSION:R}"
-INCLUDEDIR=	${PREFIX}/include/ghostscript
 .else
-ALL_TARGET=	all pcl3opts
 PLIST_SUB+=	SHLIB="@comment "
 .endif
 
@@ -167,10 +165,6 @@ pre-build:
 	${ECHO_MSG} ">>>   creating directories for compilation ..."
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
-# for EPAG driver
-	${ECHO_MSG} ">>>   building EPAG utility ..."
-	cd ${WRKSRC}/${EPAG_NAME} ; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
 	${ECHO_MSG} ">>>   creating symlinks for EPAG ..."
 .for i in gdevepag.c
 	${LN} -sf ${WRKSRC}/${EPAG_NAME}/${i} ${WRKSRC}/src
@@ -186,24 +180,28 @@ pre-build:
 		${WRKSRC}/freetype/objs/freetype214MT_D.a
 .endif
 
+post-build:
+# for PCL3 driver
+	${ECHO_MSG} ">>>   building PCL3 utility ..."
+	cd ${WRKSRC} ; \
+		${CC} ${CFLAGS} -I./obj -I./soobj -I./src \
+		-I./contrib/pcl3/eprn -o bin/pcl3opts \
+		contrib/pcl3/src/pcl3opts.c contrib/pcl3/src/pclscan.c \
+		contrib/pcl3/eprn/mediasize.c contrib/pcl3/src/pclsize.c
+# for EPAG driver
+	${ECHO_MSG} ">>>   building EPAG utility ..."
+	cd ${WRKSRC}/${EPAG_NAME} ; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
+
 pre-su-install:
 	${ECHO_MSG} ">>> in pre-install ..."
 	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
 	${MKDIR} ${DATADIR}
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-.if defined(WITH_SHLIB)
-	${MKDIR} ${INCLUDEDIR}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INCLUDEDIR}
-.endif
 
 post-install:
 	${ECHO_MSG} ">>> in post-install ..."
 	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont ${CIDFONTDIR}/CIDFont
-.if defined(WITH_SHLIB)
-.for i in iapi.h ierrors.h
-	${INSTALL_DATA} ${WRKSRC}/src/${i} ${INCLUDEDIR}
-.endfor
-.endif
 	${ECHO_MSG} ">>>   stripping gs ..."
 .if defined(WITH_SHLIB)
 	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx

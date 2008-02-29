@@ -295,11 +295,19 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJIS-UTF32-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJIS-UTF8-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJIS-UTF8-V
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJIS2004-UTF16-H
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJIS2004-UTF16-V
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJIS2004-UTF32-H
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJIS2004-UTF32-V
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJIS2004-UTF8-H
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJIS2004-UTF8-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJISPro-UCS2-HW-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJISPro-UCS2-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJISPro-UTF8-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJISX0213-UTF32-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJISX0213-UTF32-V
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJISX02132004-UTF32-H
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniJISX02132004-UTF32-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniKS-UCS2-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniKS-UCS2-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/UniKS-UTF16-H
@@ -557,6 +565,7 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/lib/pcharstr.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/pdf2dsc.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/pdf_base.ps
+%%DATADIR%%/%%GS_VERSION%%/lib/pdf_cslayer.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/pdf_draw.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/pdf_font.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/pdf_main.ps
