@@ -8,8 +8,9 @@
 PORTNAME=	simplejson
 PORTVERSION=	1.7.3
 CATEGORIES=	devel python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/s/simplejson/
+MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+MASTER_SITE_SUBDIR=	source/s/${PORTNAME}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Simplejson is a simple, fast, extensible JSON encoder/decoder
