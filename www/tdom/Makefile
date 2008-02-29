@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tDOM
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	0.8.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.tdom.org/files/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	High performance XML data processing with Tcl (ARGS for OpenACS)
@@ -24,6 +24,9 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
 
+pre-configure:
+	${RM} -f ${WRKSRC}/../generic/domalloc.?
+
 USE_LDCONFIG=	${TDOMBASE}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
@@ -35,6 +38,9 @@ DOCS=		CHANGES LICENSE README README.AOL
 HTMLDOCS=	category-index.html dom.html domDoc.html domNode.html \
 		expat.html expatapi.html index.html keyword-index.html \
 		tdomcmd.html tnc.html
+
+post-build test:
+	${SETENV} LANG=C ${MAKE} -C ${WRKSRC} test
 
 .include <bsd.port.pre.mk>
 
