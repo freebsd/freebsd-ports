@@ -8,7 +8,8 @@
 PORTNAME=	transcode
 PORTVERSION=	1.0.5
 CATEGORIES=	multimedia
-MASTER_SITES=	http://fromani.exit1.org/
+MASTER_SITES=	http://transcode.kabewm.com/ \
+		http://fromani.exit1.org/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A text-console utility for video stream processing
@@ -45,14 +46,14 @@ MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_FREETYPE) || exists(${LOCALBASE}/lib/libfreetype.so)
+.if (defined(WITH_FREETYPE) || exists(${LOCALBASE}/lib/libfreetype.so)) && !defined(WITHOUT_FREETYPE)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-ft-prefix=${LOCALBASE} --enable-freetype2
 .else
 CONFIGURE_ARGS+=	--disable-fttest --enable-freetype=no
 .endif
 
-.if defined(WITH_OGG) || exists(${LOCALBASE}/lib/libogg.so)
+.if (defined(WITH_OGG) || exists(${LOCALBASE}/lib/libogg.so)) && !defined(WITHOUT_OGG)
 LIB_DEPENDS+=	ogg.5:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=	--with-ogg-prefix=${LOCALBASE} --enable-ogg
 .else
@@ -63,35 +64,35 @@ CONFIGURE_ARGS+=	--enable-ogg=no
 CONFIGURE_ARGS+=	--enable-bktr
 .endif
 
-.if defined(WITH_VORBIS) || exists(${LOCALBASE}/lib/libvorbis.so)
+.if (defined(WITH_VORBIS) || exists(${LOCALBASE}/lib/libvorbis.so)) && !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--with-vorbis-prefix=${LOCALBASE} --enable-vorbis
 .else
 CONFIGURE_ARGS+=	--enable-vorbis=no
 .endif
 
-.if defined(WITH_THEORA) || exists(${LOCALBASE}/lib/libtheora.so)
+.if (defined(WITH_THEORA) || exists(${LOCALBASE}/lib/libtheora.so)) && !defined(WITHOUT_THEORA)
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=	--with-theora-prefix=${LOCALBASE} --enable-theora
 .else
 CONFIGURE_ARGS+=	--enable-theora=no
 .endif
 
-.if defined(WITH_IMAGEMAGICK) || exists(${LOCALBASE}/lib/libMagick.so)
+.if (defined(WITH_IMAGEMAGICK) || exists(${LOCALBASE}/lib/libMagick.so)) && !defined(WITHOUT_IMAGEMAGICK)
 LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=	--enable-imagemagick --with-imagemagick-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--enable-imagemagick=no
 .endif
 
-.if defined(WITH_MJPEG) || exists(${LOCALBASE}/lib/liblavjpeg.so)
+.if (defined(WITH_MJPEG) || exists(${LOCALBASE}/lib/liblavjpeg.so)) && !defined(WITHOUT_MJPEG)
 LIB_DEPENDS+=	lavjpeg-1.9.1:${PORTSDIR}/multimedia/mjpegtools
 CONFIGURE_ARGS+=	--enable-mjpegtools
 .else
 CONFIGURE_ARGS+=	--enable-mjpegtools=no
 .endif
 
-.if (defined(WITH_AVIFILE) || exists(${LOCALBASE}/lib/libaviplay.so)) && ${OSVERSION} < 700000
+.if (defined(WITH_AVIFILE) || exists(${LOCALBASE}/lib/libaviplay.so)) && !defined(WITHOUT_AVIFILE) && ${OSVERSION} < 700000
 LIB_DEPENDS+=	aviplay:${PORTSDIR}/multimedia/avifile
 CONFIGURE_ARGS+=	--with-avifile-prefix=${LOCALBASE} --enable-avifile
 .else
@@ -113,14 +114,14 @@ CONFIGURE_ARGS+=	--enable-libxml2 --with-libxml2-prefix=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-libxml2=no
 .endif
 
-.if defined(WITH_LIBDV) || exists(${LOCALBASE}/lib/libdv.so)
+.if (defined(WITH_LIBDV) || exists(${LOCALBASE}/lib/libdv.so)) && !defined(WITHOUT_LIBDV)
 LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=	--with-pal-yuv=YV12 --enable-libdv
 .else
 CONFIGURE_ARGS+=	--enable-libdv=no
 .endif
 
-.if defined(WITH_QUICKTIME) || exists(${LOCALBASE}/lib/libquicktime.so)
+.if (defined(WITH_QUICKTIME) || exists(${LOCALBASE}/lib/libquicktime.so)) && !defined(WITHOUT_QUICKTIME)
 LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
 CONFIGURE_ARGS+=	--enable-libquicktime \
 					--with-libquicktime-prefix=${LOCALBASE} \
