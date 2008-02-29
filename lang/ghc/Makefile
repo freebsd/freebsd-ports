@@ -158,12 +158,10 @@ pre-configure:
 	@${MKDIR} ${SLAVES_PREFIX}
 	@${MKDIR} ${SLAVES_WRKDIRPREFIX}
 
-	#@(cd ${PORTSDIR}/devel/hs-haddock && \ 
-	@(cd ../hs-haddock && \
+	@(cd ${PORTSDIR}/devel/hs-haddock && \
 		${SETENV} PATH=${BOOT_DIR}/bin:${PATH} ${MAKE} ${SLAVES_MAKE_ARGS} install)
 
-	#@(cd ${PORTSDIR}/print/hs-hscolour && \ 
-	@(cd ../hs-hscolour && \
+	@(cd ${PORTSDIR}/print/hs-hscolour && \
 		${SETENV} PATH=${BOOT_DIR}/bin:${PATH} ${MAKE} ${SLAVES_MAKE_ARGS} install)
 .endif
 
