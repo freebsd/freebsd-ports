@@ -39,6 +39,10 @@ pre-patch:
 	@${REINPLACE_CMD} 's|@DEFS@||g' ${WRKSRC}/compiled/Makefile.pre.in
 .endif
 
+post-configure:
+	${GREP} '^BLDSHARED' ${PYTHON_LIBDIR}/config/Makefile >> \
+		${WRKSRC}/Makefile
+
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		${PREFIX}/share/${PORTNAME}
