@@ -18,17 +18,13 @@ RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
 OPTIONS=	SAMPLE_CONFIG	"Install sample configuration files" off
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 powerpc
 USE_AUTOTOOLS=	libtool:15
 USE_MYSQL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700000
-BROKEN=	Does not build on 7-CURRENT
-.endif
 
 .if defined(WITH_SAMPLE_CONFIG)
 PLIST_SUB+=	SAMPLE_CONFIG=""
