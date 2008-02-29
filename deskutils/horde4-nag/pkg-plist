@@ -5,17 +5,32 @@
 %%HORDIR%%/data.php
 %%HORDIR%%/ics.php
 %%HORDIR%%/index.php
-%%HORDIR%%/js/fixUnstyledOptions.js
+%%HORDIR%%/js/QuickFinder.js
+%%HORDIR%%/js/effects.js
 %%HORDIR%%/js/prototype.js
+%%HORDIR%%/js/redbox.js
+%%HORDIR%%/js/scriptaculous.js
+%%HORDIR%%/js/src/QuickFinder.js
+%%HORDIR%%/js/src/effects.js
+%%HORDIR%%/js/src/prototype.js
+%%HORDIR%%/js/src/redbox.js
+%%HORDIR%%/js/src/scriptaculous.js
+%%HORDIR%%/js/src/tables.js
 %%HORDIR%%/js/tables.js
 %%HORDIR%%/lib/.htaccess
 %%HORDIR%%/lib/Block/summary.php
+%%HORDIR%%/lib/Block/tree_alarms.php
+%%HORDIR%%/lib/Block/tree_menu.php
+%%HORDIR%%/lib/Driver.php
 %%HORDIR%%/lib/Driver/kolab.php
 %%HORDIR%%/lib/Driver/sql.php
-%%HORDIR%%/lib/Driver.php
+%%HORDIR%%/lib/Forms/CreateTaskList.php
+%%HORDIR%%/lib/Forms/DeleteTaskList.php
+%%HORDIR%%/lib/Forms/EditTaskList.php
+%%HORDIR%%/lib/Forms/task.php
 %%HORDIR%%/lib/Nag.php
 %%HORDIR%%/lib/Notification/Listener/status.php
-%%HORDIR%%/lib/Widgets.php
+%%HORDIR%%/lib/UI/VarRenderer/nag.php
 %%HORDIR%%/lib/api.php
 %%HORDIR%%/lib/base.php
 %%HORDIR%%/lib/prefs.php
@@ -103,10 +118,17 @@
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.oci8.sql
 %%HORDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
+%%HORDIR%%/scripts/upgrades/2.1_to_2.2.sql
 %%HORDIR%%/scripts/upgrades/2004-09-13_add_uid_field.php
+%%HORDIR%%/scripts/upgrades/2006-04-18_add_creator_and_assignee_fields.php
+%%HORDIR%%/scripts/upgrades/create_missing_add_histories_sql.php
 %%HORDIR%%/search.php
 %%HORDIR%%/task.php
-%%HORDIR%%/tasklists.php
+%%HORDIR%%/tasklists/create.php
+%%HORDIR%%/tasklists/delete.php
+%%HORDIR%%/tasklists/edit.php
+%%HORDIR%%/tasklists/index.php
+%%HORDIR%%/tasklists/info.php
 %%HORDIR%%/templates/common-header.inc
 %%HORDIR%%/templates/data/export.inc
 %%HORDIR%%/templates/data/import.inc
@@ -116,12 +138,16 @@
 %%HORDIR%%/templates/list/task_headers.inc
 %%HORDIR%%/templates/list/task_summaries.inc
 %%HORDIR%%/templates/menu.inc
+%%HORDIR%%/templates/panel.inc
+%%HORDIR%%/templates/prefs/defaultduetimeselect.inc
 %%HORDIR%%/templates/prefs/tasklistselect.inc
 %%HORDIR%%/templates/search/search.inc
-%%HORDIR%%/templates/task/task.inc
-%%HORDIR%%/templates/tasklists/tasklists.inc
+%%HORDIR%%/templates/tasklist_info.php
+%%HORDIR%%/templates/tasklist_list.php
 %%HORDIR%%/templates/view/task.inc
+%%HORDIR%%/themes/bluewhite/screen.css
 %%HORDIR%%/themes/categoryCSS.php
+%%HORDIR%%/themes/fadetogreen/screen.css
 %%HORDIR%%/themes/graphics/add.png
 %%HORDIR%%/themes/graphics/alarm.png
 %%HORDIR%%/themes/graphics/alarm_small.png
@@ -129,96 +155,136 @@
 %%HORDIR%%/themes/graphics/checkbox.png
 %%HORDIR%%/themes/graphics/checked.png
 %%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/minus.png
 %%HORDIR%%/themes/graphics/nag.png
 %%HORDIR%%/themes/graphics/note.png
+%%HORDIR%%/themes/graphics/plus.png
+%%HORDIR%%/themes/graphics/redbox_spinner.gif
+%%HORDIR%%/themes/graphics/search.png
 %%HORDIR%%/themes/graphics/tasklists.png
 %%HORDIR%%/themes/graphics/unchecked.png
 %%HORDIR%%/themes/graphics/za.png
 %%HORDIR%%/themes/screen.css
+%%HORDIR%%/themes/silver/graphics/add.png
+%%HORDIR%%/themes/silver/graphics/alarm.png
+%%HORDIR%%/themes/silver/graphics/alarm_small.png
+%%HORDIR%%/themes/silver/graphics/az.png
+%%HORDIR%%/themes/silver/graphics/checkbox.png
+%%HORDIR%%/themes/silver/graphics/checked.png
+%%HORDIR%%/themes/silver/graphics/favicon.ico
+%%HORDIR%%/themes/silver/graphics/nag.png
+%%HORDIR%%/themes/silver/graphics/note.png
+%%HORDIR%%/themes/silver/graphics/tasklists.png
+%%HORDIR%%/themes/silver/graphics/unchecked.png
+%%HORDIR%%/themes/silver/graphics/za.png
+%%HORDIR%%/themes/silver/screen.css
+%%HORDIR%%/themes/silver/themed_graphics
+%%HORDIR%%/themes/sounds/theetone.wav
+%%HORDIR%%/themes/tango-blue/graphics/add.png
+%%HORDIR%%/themes/tango-blue/graphics/alarm.png
+%%HORDIR%%/themes/tango-blue/graphics/alarm_small.png
+%%HORDIR%%/themes/tango-blue/graphics/checkbox.png
+%%HORDIR%%/themes/tango-blue/graphics/checked.png
+%%HORDIR%%/themes/tango-blue/graphics/favicon.ico
+%%HORDIR%%/themes/tango-blue/graphics/nag.png
+%%HORDIR%%/themes/tango-blue/graphics/note.png
+%%HORDIR%%/themes/tango-blue/graphics/tasklists.png
+%%HORDIR%%/themes/tango-blue/graphics/unchecked.png
+%%HORDIR%%/themes/tango-blue/themed_graphics
 %%HORDIR%%/view.php
-@dirrmtry %%HORDIR%%/config
-@dirrm %%HORDIR%%/js
-@dirrm %%HORDIR%%/lib/Block
-@dirrm %%HORDIR%%/lib/Driver
-@dirrm %%HORDIR%%/lib/Notification/Listener
-@dirrm %%HORDIR%%/lib/Notification
-@dirrm %%HORDIR%%/lib
-@dirrm %%HORDIR%%/locale/ar_SY/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ar_SY
-@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/bg_BG
-@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ca_ES
-@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/cs_CZ
-@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/da_DK
-@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/de_DE
-@dirrm %%HORDIR%%/locale/el_GR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/el_GR
-@dirrm %%HORDIR%%/locale/en_US
-@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/es_ES
-@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fi_FI
-@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fr_FR
-@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/hu_HU
-@dirrm %%HORDIR%%/locale/id_ID/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/id_ID
-@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/it_IT
-@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ja_JP
-@dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ko_KR
-@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/lt_LT
-@dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/lv_LV
-@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nb_NO
-@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nl_NL
-@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nn_NO
-@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pl_PL
-@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pt_BR
-@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pt_PT
-@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ro_RO
-@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ru_RU
-@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sk_SK
-@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sl_SI
-@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sv_SE
-@dirrm %%HORDIR%%/locale/tr_TR
-@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/zh_CN
+@dirrm %%HORDIR%%/themes/tango-blue/graphics
+@dirrm %%HORDIR%%/themes/tango-blue
+@dirrm %%HORDIR%%/themes/sounds
+@dirrm %%HORDIR%%/themes/silver/graphics
+@dirrm %%HORDIR%%/themes/silver
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes/fadetogreen
+@dirrm %%HORDIR%%/themes/bluewhite
+@dirrm %%HORDIR%%/themes
+@dirrm %%HORDIR%%/templates/view
+@dirrm %%HORDIR%%/templates/search
+@dirrm %%HORDIR%%/templates/prefs
+@dirrm %%HORDIR%%/templates/list
+@dirrm %%HORDIR%%/templates/data
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/tasklists
+@dirrm %%HORDIR%%/scripts/upgrades
+@dirrm %%HORDIR%%/scripts/sql
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/po
 @dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_CN
+@dirrm %%HORDIR%%/locale/tr_TR
+@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sl_SI
+@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sk_SK
+@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ru_RU
+@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_PT
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
+@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl_PL
+@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nn_NO
+@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nl_NL
+@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nb_NO
+@dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lv_LV
+@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lt_LT
+@dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ko_KR
+@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ja_JP
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/id_ID/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/id_ID
+@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hu_HU
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/el_GR
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da_DK
+@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/cs_CZ
+@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ca_ES
+@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/bg_BG
+@dirrm %%HORDIR%%/locale/ar_SY/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ar_SY
 @dirrm %%HORDIR%%/locale
-@dirrm %%HORDIR%%/po
-@dirrm %%HORDIR%%/scripts/sql
-@dirrm %%HORDIR%%/scripts/upgrades
-@dirrm %%HORDIR%%/scripts
-@dirrm %%HORDIR%%/templates/data
-@dirrm %%HORDIR%%/templates/list
-@dirrm %%HORDIR%%/templates/prefs
-@dirrm %%HORDIR%%/templates/search
-@dirrm %%HORDIR%%/templates/task
-@dirrm %%HORDIR%%/templates/tasklists
-@dirrm %%HORDIR%%/templates/view
-@dirrm %%HORDIR%%/templates
-@dirrm %%HORDIR%%/themes/graphics
-@dirrm %%HORDIR%%/themes
+@dirrm %%HORDIR%%/lib/UI/VarRenderer
+@dirrm %%HORDIR%%/lib/UI
+@dirrm %%HORDIR%%/lib/Notification/Listener
+@dirrm %%HORDIR%%/lib/Notification
+@dirrm %%HORDIR%%/lib/Forms
+@dirrm %%HORDIR%%/lib/Driver
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/js/src
+@dirrm %%HORDIR%%/js
+@dirrmtry %%HORDIR%%/config
 @dirrmtry %%HORDIR%%
 @dirrmtry %%HORBAS%%
