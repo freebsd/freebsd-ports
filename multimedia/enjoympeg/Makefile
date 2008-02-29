@@ -10,7 +10,7 @@ PORTNAME=	enjoympeg
 PORTVERSION=	0.4.1
 PORTREVISION=	4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://people.freenet.de/for_Ki/
+MASTER_SITES=	http://freenet-homepage.de/for_Ki/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An MPEG-1 video player
