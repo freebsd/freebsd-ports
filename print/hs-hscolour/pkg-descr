@@ -1,0 +1,24 @@
+hscolour is a small Haskell script to colourise Haskell
+code. It currently has four output formats: 
+
+  ANSI terminal codes, HTML 3.2 with <font> tags,
+  HTML 4.01 with CSS, and LaTeX.
+
+author:		Malcolm Wallace
+maintainer:	Malcolm Wallace
+license:	GPL
+WWW:		http://www.cs.york.ac.uk/fp/darcs/hscolour
+package-url:	ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/
+Exposed-Modules: 
+  Language.Haskell.HsColour,
+  Language.Haskell.HsColour.ANSI,
+  Language.Haskell.HsColour.Anchors,
+  Language.Haskell.HsColour.Classify,
+  Language.Haskell.HsColour.ColourHighlight,
+  Language.Haskell.HsColour.Colourise,
+  Language.Haskell.HsColour.TTY,
+  Language.Haskell.HsColour.HTML,
+  Language.Haskell.HsColour.LaTeX,
+  Language.Haskell.HsColour.General,
+  Language.Haskell.HsColour.MIRC,
+  Language.Haskell.HsColour.CSS
