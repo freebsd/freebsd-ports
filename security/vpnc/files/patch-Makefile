@@ -1,5 +1,5 @@
 --- Makefile.orig	2007-09-06 22:05:15.000000000 +0200
-+++ Makefile	2008-02-27 19:17:28.000000000 +0100
++++ Makefile	2008-02-29 21:58:37.000000000 +0100
 @@ -20,14 +20,14 @@
  # $Id: Makefile 236 2007-09-05 20:40:59Z Joerg Mayer $
  
@@ -31,3 +31,12 @@
  CFLAGS +=  $(shell libgcrypt-config --cflags)
  CPPFLAGS += -DVERSION=\"$(VERSION)\" $(OPENSSL_GPL_VIOLATION)
  LDFLAGS ?= -g
+@@ -74,7 +74,7 @@
+ 	./makeman.pl
+ 
+ cisco-decrypt : cisco-decrypt.o config.o supp.o sysdep.o vpnc-debug.o
+-	$(CC) -o $@ $^ $(LDFLAGS)
++	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+ 
+ .depend: $(SRCS) $(BINSRCS)
+ 	$(CC) -MM $(SRCS) $(BINSRCS) $(CFLAGS) $(CPPFLAGS) > $@

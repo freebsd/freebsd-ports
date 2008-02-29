@@ -20,16 +20,17 @@
  	char *realname;
  	
 -	asprintf(&realname, "%s%s%s", index(name, '/') ? "" : "/etc/vpnc/", name, add_dot_conf ? ".conf" : "");
-+	asprintf(&realname, "%s%s%s", index(name, '/') ? "" : "%%PREFIX%%/etc/", name, add_dot_conf ? ".conf" : "");
++	asprintf(&realname, "%s%s%s", index(name, '/') ? "" : "%%PREFIX%%/etc/vpnc/", name, add_dot_conf ? ".conf" : "");
  	return realname;
  }
  
-@@ -757,8 +757,7 @@
+@@ -757,8 +757,8 @@
  	}
  	
  	if (!got_conffile) {
 -		read_config_file("/etc/vpnc/default.conf", config, 1);
 -		read_config_file("/etc/vpnc.conf", config, 1);
++		read_config_file("%%PREFIX%%/etc/vpnc/default.conf", config, 1);
 +		read_config_file("%%PREFIX%%/etc/vpnc.conf", config, 1);
  	}
  	
