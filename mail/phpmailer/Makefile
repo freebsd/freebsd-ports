@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	phpmailer
-PORTVERSION=	1.73
+PORTVERSION=	2.0.0
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${DISTVERSION}
+MASTER_SITES=	SF
+DISTNAME=	PHPMailer_v${DISTVERSION}
 
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	Full Featured Email Transfer Class for PHP
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_DOS2UNIX=	yes
 NO_BUILD=	yes
@@ -28,7 +27,7 @@ MSG_SUB=	DATADIR=${DATADIR} LOCALBASE=${LOCALBASE}
 
 do-install:
 	@${MKDIR} ${DATADIR}
-.for f in class.phpmailer.php class.smtp.php
+.for f in class.phpmailer.php class.pop3.php class.smtp.php
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DATADIR}
 .endfor
 	@${MKDIR} ${DATADIR}/language
