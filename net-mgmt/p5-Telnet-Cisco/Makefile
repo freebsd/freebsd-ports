@@ -7,18 +7,16 @@
 
 PORTNAME=	Net-Telnet-Cisco
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lyngbol@wheel.dk
 COMMENT=	Perl5 module to telnet to Cisco routers
 
-RUN_DEPENDS=	${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Net-Telnet>=3.02:${PORTSDIR}/net/p5-Net-Telnet \
+		p5-Term-ReadKey>=2:${PORTSDIR}/devel/p5-Term-ReadKey
 
 PERL_CONFIGURE=	yes
 
