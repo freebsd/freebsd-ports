@@ -1,5 +1,5 @@
---- setup.py.orig	Thu Aug 10 07:42:18 2006
-+++ setup.py	Tue Feb 27 20:27:07 2007
+--- setup.py.orig	2008-02-29 22:57:02.000000000 +0900
++++ setup.py	2008-02-29 23:01:47.000000000 +0900
 @@ -15,7 +15,7 @@
  from distutils.command.install_lib import install_lib
  
@@ -9,7 +9,7 @@
  
  def add_dir_to_list(dirlist, dir):
      """Add the directory 'dir' to the list 'dirlist' (at the front) if
-@@ -488,7 +488,7 @@
+@@ -489,7 +489,7 @@
  
              readline_libs = ['readline']
              if self.compiler.find_library_file(lib_dirs,
@@ -18,7 +18,7 @@
                  readline_libs.append('ncursesw')
              elif self.compiler.find_library_file(lib_dirs,
                                                   'ncurses'):
-@@ -500,7 +500,7 @@
+@@ -501,7 +501,7 @@
                                                 'termcap'):
                  readline_libs.append('termcap')
              exts.append( Extension('readline', ['readline.c'],
@@ -27,7 +27,7 @@
                                     extra_link_args=readline_extra_link_args,
                                     libraries=readline_libs) )
          if platform not in ['mac']:
-@@ -590,6 +590,8 @@
+@@ -591,6 +591,8 @@
              # OpenSSL doesn't do these until 0.9.8 so we'll bring our own hash
              exts.append( Extension('_sha256', ['sha256module.c']) )
              exts.append( Extension('_sha512', ['sha512module.c']) )
@@ -36,7 +36,16 @@
  
  
          # Modules that provide persistent dictionary-like semantics.  You will
-@@ -903,7 +905,7 @@
+@@ -857,7 +859,7 @@
+         # the more recent berkeleydb's db.h file first in the include path
+         # when attempting to compile and it will fail.
+         f = "/usr/include/db.h"
+-        if os.path.exists(f) and not db_incs:
++        if os.path.exists(f):
+             data = open(f).read()
+             m = re.search(r"#s*define\s+HASHVERSION\s+2\s*", data)
+             if m is not None:
+@@ -922,7 +930,7 @@
          # Curses support, requiring the System V version of curses, often
          # provided by the ncurses library.
          panel_library = 'panel'
@@ -45,7 +54,7 @@
              curses_libs = ['ncursesw']
              # Bug 1464056: If _curses.so links with ncursesw,
              # _curses_panel.so must link with panelw.
-@@ -913,6 +915,7 @@
+@@ -932,6 +940,7 @@
          elif (self.compiler.find_library_file(lib_dirs, 'ncurses')):
              curses_libs = ['ncurses']
              exts.append( Extension('_curses', ['_cursesmodule.c'],
@@ -53,7 +62,7 @@
                                     libraries = curses_libs) )
          elif (self.compiler.find_library_file(lib_dirs, 'curses')
                and platform != 'darwin'):
-@@ -932,6 +935,7 @@
+@@ -951,6 +960,7 @@
          if (module_enabled(exts, '_curses') and
              self.compiler.find_library_file(lib_dirs, panel_library)):
              exts.append( Extension('_curses_panel', ['_curses_panel.c'],
@@ -61,7 +70,7 @@
                                     libraries = [panel_library] + curses_libs) )
  
  
-@@ -1515,8 +1519,7 @@
+@@ -1535,8 +1545,7 @@
            ext_modules=[Extension('_struct', ['_struct.c'])],
  
            # Scripts to install
