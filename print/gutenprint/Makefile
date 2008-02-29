@@ -19,7 +19,6 @@ COMMENT=	The "meta-port" for GutenPrint
 RUN_DEPENDS=	gutenprint-base>0:${PORTSDIR}/print/gutenprint-base
 
 OPTIONS=	CUPS "GutenPrint (gimp-print) Cups Drivers" Off \
-		GIMP "GutenPrint Plugin for the GIMP (gimp-print)" Off \
 		IJS "IJS GhostScript Drivers" On \
 		FOOMATIC "Foomatic data files" Off
 
