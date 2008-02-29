@@ -4,6 +4,7 @@
 %%SITE_PERL%%/S3/GetResponse.pm
 %%SITE_PERL%%/S3/ListAllMyBucketsResponse.pm
 %%SITE_PERL%%/S3/ListBucketResponse.pm
+%%SITE_PERL%%/S3/LocationResponse.pm
 %%SITE_PERL%%/S3/QueryStringAuthGenerator.pm
 %%SITE_PERL%%/S3/Response.pm
 %%SITE_PERL%%/S3/S3Object.pm

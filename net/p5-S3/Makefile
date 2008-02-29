@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	S3
-PORTVERSION=	20070518
+PORTVERSION=	20071102
 CATEGORIES=	net perl5
-MASTER_SITES=	http://developer.amazonwebservices.com/connect/servlet/KbServlet/download/%SUBDIR%/
-MASTER_SITE_SUBDIR=	133-102-1292
+MASTER_SITES=	http://s3.amazonaws.com/doc/s3-example-code/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	s3-example-perl-library
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A library in Perl for working with the Amazon S3 REST interface
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		${SITE_PERL}/Digest/HMAC_SHA1.pm:${PORTSDIR}/security/p5-Digest-HMAC\
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
+RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
@@ -33,4 +31,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/S3.pm ${PREFIX}/${SITE_PERL_REL}
 	${INSTALL_SCRIPT} ${WRKSRC}/s3-*.pl ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-MIME-Base64>=0:${PORTSDIR}/converters/p5-MIME-Base64
+.endif
+
+.include <bsd.port.post.mk>
