@@ -31,6 +31,9 @@ INFO=	gcrypt
 .if ${ARCH} == "powerpc"
 CONFIGURE_ARGS+=	--disable-asm
 .endif
+.if (${OSVERSION} < 700000)
+CONFIGURE_ARGS+=	--disable-padlock-support
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" \
