@@ -13,53 +13,53 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A documentation tool for Haskell
 
+.if !defined(SLAVE)
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
-		docbook<2:${PORTSDIR}/textproc/docbook \
-		${LOCALBASE}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
-		${LOCALBASE}/share/sgml/docbook/3.1:${PORTSDIR}/textproc/docbook-310 \
-		${LOCALBASE}/share/xsl/docbook/catalog:${PORTSDIR}/textproc/docbook-xsl \
-		jade:${PORTSDIR}/textproc/jade \
-		xsltproc:${PORTSDIR}/textproc/libxslt
+.if exists(${LOCALBASE}/lib/libreadline.so.5)
+LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.endif
+
+.else
+NO_PKG_REGISTER=
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:261:env
 
-GHC_VERSION=	6.8.2
+GHC_VERSION=	 6.8.2
+HADDOCK_VERSION=	${PORTVERSION}
 
-PLIST_SUB+=	HADDOCK_VERSION=${PORTVERSION} GHC_VERSION=${GHC_VERSION}
-PORTDOCS=	*
+CABAL_CMD=	runghc Setup.lhs
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/share/sgml/catalog||' ${WRKSRC}/doc/configure.ac
+DATADIR=		${PREFIX}/share/${DISTNAME}
+HADDOCK_LIBDIR_REL=	lib/${DISTNAME}
+DOCSDIR=		${PREFIX}/share/doc/${DISTNAME}
+
+PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
+		DATADIR_REL=${DATADIR_REL} \
+		HADDOCK_LIBDIR_REL=${HADDOCK_LIBDIR_REL} \
+		HADDOCK_VERSION=${HADDOCK_VERSION} \
+		DOCSDIR_REL=${DOCSDIR_REL}
+
+.SILENT:
 
 do-configure:
-	cd ${WRKSRC} && runhaskell Setup.lhs configure --ghc ${CONFIGURE_ARGS}
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS}
-.endif
+	cd ${WRKSRC} && ${CABAL_CMD} configure --ghc --prefix=${PREFIX}
 
 do-build:
-	cd ${WRKSRC} && runhaskell Setup.lhs build
-
-post-build:
-.if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}/doc && \
-	 ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
+	cd ${WRKSRC} && ${CABAL_CMD} build
+.if !defined(SLAVE)
+	cd ${WRKSRC} && ${CABAL_CMD} register --gen-script
 .endif
 
 do-install:
-	cd ${WRKSRC} && runhaskell Setup.lhs install
+	cd ${WRKSRC} && ${CABAL_CMD} install
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/haddock
-.if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}/doc && ${CP} -R haddock ${PREFIX}/share/doc)
+	${STRIP_CMD} ${PREFIX}/bin/haddock
+.if !defined(SLAVE)
+	${INSTALL_SCRIPT} ${WRKSRC}/register.sh ${PREFIX}/${HADDOCK_LIBDIR_REL}/register.sh
 .endif
+	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
 .include <bsd.port.mk>
