@@ -114,6 +114,7 @@
     SUBDIR += hp2xx
     SUBDIR += hpijs
     SUBDIR += hplip
+    SUBDIR += hs-hscolour
     SUBDIR += html2latex
     SUBDIR += html2ps-a4
     SUBDIR += html2ps-letter

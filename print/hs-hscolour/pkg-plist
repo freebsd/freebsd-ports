@@ -1,0 +1,30 @@
+bin/HsColour
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HShscolour-%%HSCOLOUR_VERSION%%.o
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/ANSI.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Anchors.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/CSS.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Classify.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/ColourHighlight.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Colourise.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/General.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/HTML.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/LaTeX.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/MIRC.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/TTY.hi
+%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHShscolour-%%HSCOLOUR_VERSION%%.a
+%%HSCOLOUR_LIBDIR_REL%%/register.sh
+%%DOCSDIR_REL%%/LICENCE-GPL
+%%DOCSDIR_REL%%/README
+%%DATADIR_REL%%/hscolour.css
+@dirrm %%DATADIR_REL%%
+@dirrm %%DOCSDIR_REL%%
+@dirrm %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour
+@dirrm %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell
+@dirrm %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
+@dirrm %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%HSCOLOUR_LIBDIR_REL%%
+@exec /bin/sh %D/%%HSCOLOUR_LIBDIR_REL%%/register.sh
+@exec rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec if [ -x %D/bin/ghc-pkg ]; then %D/bin/ghc-pkg unregister hscolour || /usr/bin/true; fi
+@unexec if [ -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old ]; then rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old || /usr/bin/true; fi
