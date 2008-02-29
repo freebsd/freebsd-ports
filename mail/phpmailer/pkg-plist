@@ -16,8 +16,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/media/banner.css
 %%PORTDOCS%%%%DOCSDIR%%/media/stylesheet.css
 %%PORTDOCS%%%%DOCSDIR%%/packages.html
-%%PORTDOCS%%%%DOCSDIR%%/timeoutfix.diff
+%%PORTDOCS%%%%DOCSDIR%%/pop3_article.txt
+%%PORTDOCS%%%%DOCSDIR%%/use_gmail.txt
 %%DATADIR%%/class.phpmailer.php
+%%DATADIR%%/class.pop3.php
 %%DATADIR%%/class.smtp.php
 %%DATADIR%%/language/phpmailer.lang-br.php
 %%DATADIR%%/language/phpmailer.lang-ca.php
@@ -26,6 +28,7 @@
 %%DATADIR%%/language/phpmailer.lang-dk.php
 %%DATADIR%%/language/phpmailer.lang-en.php
 %%DATADIR%%/language/phpmailer.lang-es.php
+%%DATADIR%%/language/phpmailer.lang-et.php
 %%DATADIR%%/language/phpmailer.lang-fi.php
 %%DATADIR%%/language/phpmailer.lang-fo.php
 %%DATADIR%%/language/phpmailer.lang-fr.php
