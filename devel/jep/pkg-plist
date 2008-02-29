@@ -1,4 +1,6 @@
 @comment $FreeBSD$
 lib/libjep.a
 lib/libjep.la
+lib/libjep.so.2
+lib/libjep.so
 %%JAVAJARDIR%%/jep.jar
