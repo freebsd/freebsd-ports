@@ -1,14 +1,3 @@
 @comment $FreeBSD$
-%%PORTDOCS%%%%DOCSDIR%%/anleitung.pdf
-%%PORTDOCS%%%%DOCSDIR%%/anleitung.tex
-%%PORTDOCS%%%%DOCSDIR%%/caption.pdf
-%%PORTDOCS%%%%DOCSDIR%%/caption2.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%CLASSDIR%%/caption.dtx
-%%CLASSDIR%%/caption.sty
-%%CLASSDIR%%/caption.ins
-%%CLASSDIR%%/caption2.dtx
-%%CLASSDIR%%/caption2.sty
-%%CLASSDIR%%/caption3.sty
-@exec %%MKTEXLSR%%
-@unexec %%MKTEXLSR%%
+@exec %%MKTEXLSR%% %D/%%TEXMFDIR%%
+@unexec %%MKTEXLSR%% %D/%%TEXMFDIR%%
