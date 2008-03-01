@@ -81,7 +81,7 @@ PLIST_SUB+=		WITH_IPV6="@comment "
 .endif
 
 .if defined(WITH_GUILE)
-LIB_DEPENDS+=		guile.15:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=		guile.18:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=	--enable-guile
 MAN1+=			gnunet-download-manager.1
 PLIST_SUB+=		WITH_GUILE=""

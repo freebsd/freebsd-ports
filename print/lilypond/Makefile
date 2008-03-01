@@ -9,7 +9,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/:src \
 		http://distfiles.master.finkmirrors.net/:rpm
@@ -22,7 +22,7 @@ COMMENT=	The GNU music typesetter
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		rarian-sk-config:${PORTSDIR}/textproc/rarian
-LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 MAN1=		abc2ly.1 etf2ly.1 midi2ly.1 mup2ly.1 lilypond.1 musedata2ly.1 \

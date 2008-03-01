@@ -8,7 +8,7 @@
 
 PORTNAME=	gconf
 PORTVERSION=	1.0.9
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/GConf/1.0
@@ -18,7 +18,7 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A configuration database system for GNOME
 
-LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	glame
 PORTVERSION=	2.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		mad.2:${PORTSDIR}/audio/libmad \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		guile.15:${PORTSDIR}/lang/guile
+		guile.18:${PORTSDIR}/lang/guile
 
 USE_XORG=	xbitmaps
 USE_XLIB=	yes
