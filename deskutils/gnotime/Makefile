@@ -8,7 +8,7 @@
 
 PORTNAME=	gnotime
 PORTVERSION=	2.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gttr
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	gttr
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GnoTime is a time tracker for gnome2
 
-LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnomeprefix intlhack gtkhtml3 libgnomeui

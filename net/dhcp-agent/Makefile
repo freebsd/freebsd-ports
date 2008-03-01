@@ -8,7 +8,7 @@
 
 PORTNAME=	dhcp-agent
 PORTVERSION=	0.41
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable UNIX Dynamic Host Configuration suite
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
-LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
 

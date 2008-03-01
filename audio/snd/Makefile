@@ -7,7 +7,7 @@
 
 PORTNAME=		snd
 PORTVERSION=		7.8
-PORTREVISION=		7
+PORTREVISION=		8
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -71,7 +71,7 @@ RUN_DEPENDS+=		ruby:${PORTSDIR}/lang/ruby18
 .endif
 
 .if !defined(WITHOUT_GUILE)
-LIB_DEPENDS+=		guile.15:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=		guile.18:${PORTSDIR}/lang/guile
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=		guilegtk-1.2:${PORTSDIR}/x11-toolkits/guile-gtk
 .endif
