@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.far2wise.net/plod/
 
-MAINTAINER=	jross@far2wise.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system administration journaling tool
 
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
