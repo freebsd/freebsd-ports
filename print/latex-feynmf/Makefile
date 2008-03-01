@@ -6,11 +6,11 @@
 
 PORTNAME=	latex-feynmf
 PORTVERSION=	1.08.19961202
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib/feynmf
-DISTFILES=	${DOC_FILES} Makefile feynmf.pl \
+DISTFILES=	${PORTDOCS} Makefile feynmf.pl \
 		feynmf.dtx feynmf.ins feynmf209.ins \
 		manpics.1 manpics.2  manpics.3  manpics.mp
 DIST_SUBDIR=	${PORTNAME}
@@ -32,7 +32,7 @@ CLASSDIR=	${TEXMFDIR}/tex/latex/${PORTNAME:S/^latex-//}
 FONTDIR=	${TEXMFDIR}/fonts/source/public/${PORTNAME:S/^latex-//}
 MPDIR=		${TEXMFDIR}/metapost/${PORTNAME:S/^latex-//}
 
-DOC_FILES=	Announce COPYING Feynman.Diagrams README \
+PORTDOCS=	Announce COPYING Feynman.Diagrams README \
 		Tutorial manual.ps template.tex
 
 CLASS_FILES=	feynmf.dtx feynmf.ins feynmf209.ins \
@@ -61,7 +61,7 @@ do-install:
 	${INSTALL_SCRIPT} ${SCRIPT_FILES:S@^@${WRKSRC}/@} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
 .endif
 
 post-install:

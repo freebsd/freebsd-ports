@@ -1,13 +1,5 @@
 @comment $FreeBSD$
 bin/feynmf.pl
-%%PORTDOCS%%%%DOCSDIR%%/Announce
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/Feynman.Diagrams
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/Tutorial
-%%PORTDOCS%%%%DOCSDIR%%/manual.ps
-%%PORTDOCS%%%%DOCSDIR%%/template.tex
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%CLASSDIR%%/feynmf.dtx
 %%CLASSDIR%%/feynmf.ins
 %%CLASSDIR%%/feynmf209.ins
