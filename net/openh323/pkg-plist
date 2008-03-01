@@ -46,6 +46,7 @@ include/openh323/h450pdu.h
 include/openh323/h460.h
 include/openh323/h501.h
 include/openh323/h501pdu.h
+include/openh323/h4601.h
 include/openh323/hid.h
 include/openh323/ixjDefs.h
 include/openh323/ixjidb.h
