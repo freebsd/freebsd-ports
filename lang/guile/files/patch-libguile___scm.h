@@ -1,7 +1,7 @@
---- libguile/__scm.h.orig	Sat Apr 12 14:16:08 2003
-+++ libguile/__scm.h	Sun Jun  1 16:32:36 2003
-@@ -354,7 +354,8 @@
-  * that all the state of the process is contained in the stack. 
+--- libguile/__scm.h	2008-02-23 18:14:28.106264450 -0600
++++ libguile/__scm.h	2008-02-23 18:15:41.306005478 -0600
+@@ -411,7 +411,8 @@
+  * that all the state of the process is contained in the stack.
   */
  
 -#if defined (sparc) || defined (__sparc__) || defined (__sparc)

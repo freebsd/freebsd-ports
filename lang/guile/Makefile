@@ -6,16 +6,15 @@
 #    $MCom: ports/lang/guile/Makefile,v 1.1 2006/09/12 14:57:06 ahze Exp $
 
 PORTNAME=	guile
-PORTVERSION=	1.6.8
-PORTREVISION=	3
+PORTVERSION=	1.8.4
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	amatus@gnu.org
 COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	autoconf:261 libltdl:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -23,7 +22,7 @@ USE_GNOME=	gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-GUILE_VER=	1.6
+GUILE_VER=	1.8
 PLIST_SUB=	GUILE_VER=${GUILE_VER}
 
 REINPLACE_FILES=	libguile/gc.c libguile/mallocs.c \
@@ -32,17 +31,6 @@ REINPLACE_FILES=	libguile/gc.c libguile/mallocs.c \
 INFO=		goops guile-tut guile r5rs
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "ia64" && ${ARCH} != "amd64" && ${ARCH} != "powerpc"
-CONFIGURE_ARGS+=--with-threads
-PLIST_SUB+=	THREADS:=""
-.else
-PLIST_SUB+=	THREADS:="@comment "
-.endif
-
-.if ${ARCH} == "ia64"
-EXTRA_PATCHES=  ${FILESDIR}/extra-patch-ia64
-.endif
 
 post-extract:
 	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}
