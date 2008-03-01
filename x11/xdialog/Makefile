@@ -10,7 +10,8 @@ PORTNAME=	xdialog
 PORTVERSION=	2.3.1
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	http://thgodef.nerim.net/xdialog/
+MASTER_SITES=	http://thgodef.nerim.net/xdialog/ \
+  		LOCAL/chinsan
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
 MAINTAINER=	chinsan@FreeBSD.org
