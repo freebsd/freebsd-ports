@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://home.earthlink.net/~lab1701/larswm/
 
-MAINTAINER=	lab@fnurt.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiling Window Manager for X
 
 USE_IMAKE=	yes
