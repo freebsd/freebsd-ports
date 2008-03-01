@@ -19,6 +19,8 @@ COMMENT=	Enhanced support for editing and running Scheme code
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
+BROKEN=		Size mismatch
+
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
