@@ -1,0 +1,11 @@
+diff -ruN addpasswd.cxx.old addpasswd.cxx
+--- addpasswd.cxx.old	2006-04-14 09:56:19.000000000 -0400
++++ addpasswd.cxx	2008-01-05 21:55:43.000000000 -0500
+@@ -16,6 +16,7 @@
+ 
+ #include <algorithm>
+ #include <ptlib.h>
++#include <ptlib/pprocess.h>
+ #include <ptclib/cypher.h>
+ 
+ class Client : public PProcess
