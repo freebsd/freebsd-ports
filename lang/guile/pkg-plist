@@ -2,11 +2,13 @@ bin/guile
 bin/guile-config
 bin/guile-snarf
 bin/guile-tools
-include/guile-readline/readline.h
 include/guile/gh.h
+include/guile/readline.h
+include/guile/srfi/srfi-1.h
 include/guile/srfi/srfi-13.h
 include/guile/srfi/srfi-14.h
 include/guile/srfi/srfi-4.h
+include/guile/srfi/srfi-60.h
 include/libguile.h
 include/libguile/__scm.h
 include/libguile/alist.h
@@ -16,10 +18,12 @@ include/libguile/backtrace.h
 include/libguile/boolean.h
 include/libguile/chars.h
 include/libguile/continuations.h
-include/libguile/coop-defs.h
+include/libguile/convert.h
 include/libguile/debug-malloc.h
 include/libguile/debug.h
+include/libguile/deprecated.h
 include/libguile/deprecation.h
+include/libguile/discouraged.h
 include/libguile/dynl.h
 include/libguile/dynwind.h
 include/libguile/environments.h
@@ -32,6 +36,7 @@ include/libguile/feature.h
 include/libguile/filesys.h
 include/libguile/fluids.h
 include/libguile/fports.h
+include/libguile/futures.h
 include/libguile/gc.h
 include/libguile/gdb_interface.h
 include/libguile/gdbint.h
@@ -41,7 +46,9 @@ include/libguile/guardians.h
 include/libguile/hash.h
 include/libguile/hashtab.h
 include/libguile/hooks.h
+include/libguile/i18n.h
 include/libguile/init.h
+include/libguile/inline.h
 include/libguile/ioext.h
 include/libguile/iselect.h
 include/libguile/keywords.h
@@ -52,6 +59,7 @@ include/libguile/macros.h
 include/libguile/mallocs.h
 include/libguile/modules.h
 include/libguile/net_db.h
+include/libguile/null-threads.h
 include/libguile/numbers.h
 include/libguile/objects.h
 include/libguile/objprop.h
@@ -63,6 +71,7 @@ include/libguile/print.h
 include/libguile/procprop.h
 include/libguile/procs.h
 include/libguile/properties.h
+include/libguile/pthread-threads.h
 include/libguile/ramap.h
 include/libguile/random.h
 include/libguile/rdelim.h
@@ -79,11 +88,13 @@ include/libguile/snarf.h
 include/libguile/socket.h
 include/libguile/sort.h
 include/libguile/srcprop.h
+include/libguile/srfi-13.h
+include/libguile/srfi-14.h
+include/libguile/srfi-4.h
 include/libguile/stackchk.h
 include/libguile/stacks.h
 include/libguile/stime.h
 include/libguile/strings.h
-include/libguile/strop.h
 include/libguile/strorder.h
 include/libguile/strports.h
 include/libguile/struct.h
@@ -99,35 +110,33 @@ include/libguile/vectors.h
 include/libguile/version.h
 include/libguile/vports.h
 include/libguile/weaks.h
-lib/libguile-ltdl.a
-lib/libguile-ltdl.la
-lib/libguile-ltdl.so
-lib/libguile-ltdl.so.1
-lib/libguile-srfi-srfi-13-14-v-1.a
-lib/libguile-srfi-srfi-13-14-v-1.la
-lib/libguile-srfi-srfi-13-14-v-1.so
-lib/libguile-srfi-srfi-13-14-v-1.so.1
-lib/libguile-srfi-srfi-4-v-1.a
-lib/libguile-srfi-srfi-4-v-1.la
-lib/libguile-srfi-srfi-4-v-1.so
-lib/libguile-srfi-srfi-4-v-1.so.1
+lib/libguile-srfi-srfi-1-v-3.a
+lib/libguile-srfi-srfi-1-v-3.la
+lib/libguile-srfi-srfi-1-v-3.so
+lib/libguile-srfi-srfi-1-v-3.so.3
+lib/libguile-srfi-srfi-13-14-v-3.a
+lib/libguile-srfi-srfi-13-14-v-3.la
+lib/libguile-srfi-srfi-13-14-v-3.so
+lib/libguile-srfi-srfi-13-14-v-3.so.3
+lib/libguile-srfi-srfi-4-v-3.a
+lib/libguile-srfi-srfi-4-v-3.la
+lib/libguile-srfi-srfi-4-v-3.so
+lib/libguile-srfi-srfi-4-v-3.so.3
+lib/libguile-srfi-srfi-60-v-2.a
+lib/libguile-srfi-srfi-60-v-2.la
+lib/libguile-srfi-srfi-60-v-2.so
+lib/libguile-srfi-srfi-60-v-2.so.2
 lib/libguile.a
 lib/libguile.la
 lib/libguile.so
-lib/libguile.so.15
-lib/libguilereadline-v-12.a
-lib/libguilereadline-v-12.la
-lib/libguilereadline-v-12.so
-lib/libguilereadline-v-12.so.15
-%%THREADS:%%lib/libqthreads.a
-%%THREADS:%%lib/libqthreads.la
-%%THREADS:%%lib/libqthreads.so
-%%THREADS:%%lib/libqthreads.so.15
+lib/libguile.so.18
+lib/libguilereadline-v-17.a
+lib/libguilereadline-v-17.la
+lib/libguilereadline-v-17.so
+lib/libguilereadline-v-17.so.17
 share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/guile-procedures.txt
-%%DATADIR%%/%%GUILE_VER%%/ice-9/and-let*.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/and-let-star.scm
-%%DATADIR%%/%%GUILE_VER%%/ice-9/arrays.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/boot-9.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/buffered-input.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/calling.scm
@@ -135,20 +144,29 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/ice-9/common-list.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/debug.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/debugger.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debugger/command-loop.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debugger/commands.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debugger/state.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debugger/trc.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/debugger/utils.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/deprecated.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/documentation.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/emacs.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/expect.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/format.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/ftw.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/gap-buffer.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/getopt-long.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/hcons.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/history.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/lineio.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/list.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/ls.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/mapping.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/match.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/networking.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/null.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/occam-channel.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/optargs.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/poe.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/popen.scm
@@ -167,16 +185,52 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/ice-9/rw.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/safe-r5rs.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/safe.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/serialize.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/session.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/slib.scm
-%%DATADIR%%/%%GUILE_VER%%/ice-9/slib-old.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/stack-catch.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/streams.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/string-fun.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/syncase.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/threads.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/time.scm
+%%DATADIR%%/%%GUILE_VER%%/ice-9/weak-vector.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/base.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/example.el
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/interface.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals/evaluation.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals/format.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals/fset.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals/lambda.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals/load.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals/null.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals/set.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals/signal.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals/time.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals/trace.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/buffers.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/char-table.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/features.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/fns.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/format.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/guile.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/keymaps.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/lists.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/load.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/match.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/numbers.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/pure.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/read.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/signal.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/strings.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/symprop.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/syntax.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/system.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives/time.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/transform.scm
+%%DATADIR%%/%%GUILE_VER%%/lang/elisp/variables.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/accessors.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/active-slot.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/compile.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/composite-slot.scm
@@ -185,9 +239,11 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/internal.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/old-define-method.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/save.scm
+%%DATADIR%%/%%GUILE_VER%%/oop/goops/simple.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/stklos.scm
 %%DATADIR%%/%%GUILE_VER%%/oop/goops/util.scm
 %%DATADIR%%/%%GUILE_VER%%/scripts/PROGRAM
+%%DATADIR%%/%%GUILE_VER%%/scripts/api-diff
 %%DATADIR%%/%%GUILE_VER%%/scripts/autofrisk
 %%DATADIR%%/%%GUILE_VER%%/scripts/display-commentary
 %%DATADIR%%/%%GUILE_VER%%/scripts/doc-snarf
@@ -195,9 +251,13 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/scripts/generate-autoload
 %%DATADIR%%/%%GUILE_VER%%/scripts/lint
 %%DATADIR%%/%%GUILE_VER%%/scripts/punify
+%%DATADIR%%/%%GUILE_VER%%/scripts/read-rfc822
 %%DATADIR%%/%%GUILE_VER%%/scripts/read-scheme-source
+%%DATADIR%%/%%GUILE_VER%%/scripts/read-text-outline
+%%DATADIR%%/%%GUILE_VER%%/scripts/scan-api
 %%DATADIR%%/%%GUILE_VER%%/scripts/snarf-check-and-output-texi
 %%DATADIR%%/%%GUILE_VER%%/scripts/snarf-guile-m4-docs
+%%DATADIR%%/%%GUILE_VER%%/scripts/summarize-guile-TODO
 %%DATADIR%%/%%GUILE_VER%%/scripts/use2dot
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-1.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-10.scm
@@ -208,20 +268,30 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-17.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-19.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-2.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-26.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-31.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-34.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-35.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-37.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-39.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-4.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-6.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-60.scm
+%%DATADIR%%/%%GUILE_VER%%/srfi/srfi-69.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-8.scm
 %%DATADIR%%/%%GUILE_VER%%/srfi/srfi-9.scm
 @dirrm %%DATADIR%%/%%GUILE_VER%%/srfi
 @dirrm %%DATADIR%%/%%GUILE_VER%%/scripts
 @dirrm %%DATADIR%%/%%GUILE_VER%%/oop/goops
 @dirrm %%DATADIR%%/%%GUILE_VER%%/oop
+@dirrm %%DATADIR%%/%%GUILE_VER%%/lang/elisp/primitives
+@dirrm %%DATADIR%%/%%GUILE_VER%%/lang/elisp/internals
+@dirrm %%DATADIR%%/%%GUILE_VER%%/lang/elisp
+@dirrm %%DATADIR%%/%%GUILE_VER%%/lang
+@dirrm %%DATADIR%%/%%GUILE_VER%%/ice-9/debugger
 @dirrm %%DATADIR%%/%%GUILE_VER%%/ice-9
 @dirrm %%DATADIR%%/%%GUILE_VER%%
 @dirrm %%DATADIR%%
 @dirrm include/libguile
 @dirrm include/guile/srfi
-@dirrm include/guile-readline
 @dirrm include/guile

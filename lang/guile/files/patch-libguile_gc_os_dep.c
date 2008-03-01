@@ -1,7 +1,7 @@
---- libguile/gc_os_dep.c.orig	Wed Apr 16 22:16:21 2003
-+++ libguile/gc_os_dep.c	Sun Sep 12 15:18:00 2004
-@@ -93,6 +93,14 @@
- #    define OPENBSD
+--- libguile/gc_os_dep.c	2008-02-23 18:14:28.087264270 -0600
++++ libguile/gc_os_dep.c	2008-02-23 18:22:25.194095724 -0600
+@@ -115,6 +115,14 @@
+ #    define NETBSD
  #    define mach_type_known
  # endif
 +# if defined(__FreeBSD__) && defined(__sparc__)
@@ -15,7 +15,7 @@
  # if defined(__NetBSD__) && defined(__powerpc__)
  #    define POWERPC
  #    define NETBSD
-@@ -225,7 +233,21 @@
+@@ -249,7 +257,21 @@
  #    define ARM32
  #    define mach_type_known
  # endif
@@ -36,9 +36,9 @@
 +#   define mach_type_known
 +# elif defined(__alpha) || defined(__alpha__)
  #   define ALPHA
- #   if !defined(LINUX)
+ #   if !defined(LINUX) && !defined (NETBSD)
  #     define OSF1	/* a.k.a Digital Unix */
-@@ -1125,6 +1147,13 @@
+@@ -1159,6 +1181,13 @@
  #   endif
  # endif
  
@@ -52,7 +52,7 @@
  # ifdef IA64
  #   define MACH_TYPE "IA64"
  #   define ALIGN_DOUBLE
-@@ -1468,7 +1497,7 @@
+@@ -1504,7 +1533,7 @@
  #   include <setjmp.h>
  #endif
  
@@ -61,7 +61,7 @@
  #  include <machine/trap.h>
  #endif
  
-@@ -1501,7 +1530,7 @@
+@@ -1537,7 +1566,7 @@
  #endif
  
  #ifdef SUNOS5SIGS
@@ -70,3 +70,4 @@
  # undef setjmp
  # undef longjmp
  # define setjmp(env) sigsetjmp(env, 1)
+Only in guile-1.8.4/libguile: gc_os_dep.c.orig
