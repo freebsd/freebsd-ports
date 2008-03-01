@@ -20,6 +20,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IFHP - A highly configurable print filter for LPRng
 
+BROKEN=		Size mismatch
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GHOSTSCRIPT=	yes
