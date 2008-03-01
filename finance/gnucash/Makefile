@@ -8,7 +8,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -23,7 +23,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38 \
 		goffice-0.4:${PORTSDIR}/devel/goffice04
 RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
-		${LOCALBASE}/share/guile/1.6/slibcat:${PORTSDIR}/lang/slib-guile \
+		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote \

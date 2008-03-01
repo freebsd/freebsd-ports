@@ -7,6 +7,7 @@
 
 PORTNAME=	slib
 PORTVERSION=	3a4 # Keep this in sync with lang/slib
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-guile
@@ -22,8 +23,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 NO_BUILD=	yes
 
 do-install:
-	${LN} -shf ${PREFIX}/share/slib ${LOCALBASE}/share/guile/1.6/slib
-	cd ${PREFIX}/share/guile/1.6/slib && \
+	${LN} -shf ${PREFIX}/share/slib ${LOCALBASE}/share/guile/1.8/slib
+	cd ${PREFIX}/share/guile/1.8/slib && \
 		${LOCALBASE}/bin/guile -q -l guile.init -c \
 		"(require 'new-catalog)"
 
