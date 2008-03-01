@@ -1,0 +1,21 @@
+--- clirw.cxx	2006-02-20 05:03:23.000000000 -0500
++++ clirw.cxx	2006-12-06 11:35:37.000000000 -0500
+@@ -408,7 +408,7 @@
+ 			if (rule->m_screeningType == RewriteRule::NoScreening) {
+ 				rule->m_cli.resize(clis.GetSize());
+ 				for (PINDEX j = 0; j < clis.GetSize(); j++)
+-					rule->m_cli[j] = clis[j];
++					rule->m_cli[j] = (string)((const char *)(clis[j]));
+ 			} else
+ 				rule->m_cli.clear();
+ 
+@@ -667,6 +667,9 @@
+ 		++rule;
+ 	}
+ 
++	if (rule == ipRule.second.end())
++		return;
++
+ 	bool isTerminal = false;	
+ 	if (authData && authData->m_call) {
+ 		endptr callee = authData->m_call->GetCalledParty();

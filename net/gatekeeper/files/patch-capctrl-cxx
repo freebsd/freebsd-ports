@@ -1,0 +1,22 @@
+--- capctrl.cxx	2006-01-27 07:59:49.000000000 -0500
++++ capctrl.cxx	2006-12-13 10:34:22.000000000 -0500
+@@ -173,8 +173,8 @@
+ 
+ 				cliCallVolumes.resize(cliCallVolumes.size() + 1);
+ 				cliRule = cliCallVolumes.end() - 1;
+-				cliRule->first = cli;
+-				cliRule->second.m_sourceCLI = cli;
++				cliRule->first = string((const char*)cli);
++				cliRule->second.m_sourceCLI = string((const char*)cli);
+ 				newCLIRule = true;
+ 				
+ 				rule = &(cliRule->second);
+@@ -201,7 +201,7 @@
+ 	
+ 			unsigned tno = 0;
+ 			if (tokens.GetSize() >= 2)
+-				rule->m_prefix = tokens[tno++];
++				rule->m_prefix = string((const char*)(tokens[tno++]));
+ 			rule->m_maxVolume = tokens[tno++].AsUnsigned();
+ 			
+ 			if (newIpRule)

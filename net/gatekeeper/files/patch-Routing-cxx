@@ -1,0 +1,12 @@
+diff -ruN gatekeeper.old/work/gnugk-2.2.4/Routing.cxx gatekeeper/work/gnugk-2.2.4/Routing.cxx
+--- Routing.cxx.old	2006-05-24 14:04:42.000000000 -0400
++++ Routing.cxx	2008-01-05 22:25:51.000000000 -0500
+@@ -966,7 +966,7 @@
+ 	for (PINDEX i = 0; i < kv.GetSize(); i++) {
+ 		const PString &val = kv.GetDataAt(i);
+ 
+-		m_prefixes[i].m_prefix = kv.GetKeyAt(i);
++		m_prefixes[i].m_prefix = string((const char*)(kv.GetKeyAt(i)));
+ 
+ 		const PINDEX sepIndex = val.Find(':');
+ 		if (sepIndex == P_MAX_INDEX) {
