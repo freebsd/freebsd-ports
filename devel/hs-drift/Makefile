@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	drift
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://repetae.net/john/computer/haskell/DrIFT/drop/
+MASTER_SITES=	http://repetae.net/computer/haskell/DrIFT/drop/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	DrIFT-${PORTVERSION}
 
