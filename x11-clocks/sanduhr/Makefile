@@ -9,7 +9,7 @@ PORTNAME=	sanduhr
 PORTVERSION=	1.93
 PORTREVISION=	2
 CATEGORIES=	x11-clocks gnome
-MASTER_SITES=	http://seehuhn.de/data/
+MASTER_SITES=	http://seehuhn.de/media/programs/
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An alarm clock for GNOME desktop designed as a sand-glass
