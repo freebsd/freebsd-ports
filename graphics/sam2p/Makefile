@@ -23,6 +23,8 @@ BUILD_DEPENDS=	tif22pnm:${PORTSDIR}/graphics/tif22pnm \
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		Size mismatch
+
 USE_GHOSTSCRIPT_RUN=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
