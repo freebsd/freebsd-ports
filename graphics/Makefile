@@ -262,6 +262,7 @@
     SUBDIR += gx
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
+    SUBDIR += hs-HGL-ghc
     SUBDIR += hs-hgl
     SUBDIR += hsetroot
     SUBDIR += hugin
