@@ -9,7 +9,7 @@ PORTNAME=	urwvn
 PORTVERSION=	3.04
 PORTREVISION=	1
 CATEGORIES=	vietnamese x11-fonts
-MASTER_SITES=	http://vntex.org/urwvn/download/
+MASTER_SITES=	http://vntex.org/urwvn/download/ LOCAL/chinsan
 DISTNAME=	urwvn-${PORTVERSION}-ttf
 
 MAINTAINER=	chinsan@FreeBSD.org
