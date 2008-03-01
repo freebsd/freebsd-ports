@@ -15,6 +15,9 @@
 #   (2) The full name of the person.
 #   (3) In brief, what they will be working on (a couple of sentences).
 #
+# Changes to email forwards can be made without portmgr's approval.
+# Please use "Approved by: portmgr (implicit)" to that type of commits.
+#
 aaron
 ache
 acm
