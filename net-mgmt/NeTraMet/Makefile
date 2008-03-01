@@ -19,6 +19,8 @@ EXTRACT_ONLY=	NeTraMet${PORTVERSION:S/.//}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of the Internet Accounting Architecture
 
+BROKEN=		Checksum mismatch
+
 NETRAMET_DOCS=	usguide.pdf srlguide.pdf ntmref.pdf nm_rc.pdf \
 		nifty.pdf fdutil.pdf
 
