@@ -1,0 +1,9 @@
+--- lib/FAPIcidfmap.orig	2006-06-01 00:29:52.000000000 +0900
++++ lib/FAPIcidfmap	2008-01-11 08:49:20.000000000 +0900
+@@ -29,4 +29,5 @@
+ %
+ %  /Ryumin-Medium     << /Path (msgothic.ttc) /CIDFontType 0 /FAPI /UFST /CSI [(Japan1) 2] >> ;
+ %  /HeiseiKakuGo-W5   << /Path (F:/WIN2000/Fonts/BATANG.TTC) /CIDFontType 0 /FAPI /UFST /CSI [(Japan1) 2] >> ;
+-
++/Ryumin-Medium     << /Path (/usr/local/share/ghostscript/fonts/Ryumin-Light.ttf) /CIDFontType 0 /FAPI /UFST /CSI [(Japan1) 2] >> ;
++/HeiseiKakuGo-W5   << /Path (/usr/local/share/ghostscript/fonts/GothicBBB-Medium.ttf) /CIDFontType 0 /FAPI /UFST /CSI [(Japan1) 2] >> ;
