@@ -6,6 +6,7 @@
 
 PORTNAME=	lsh
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.lysator.liu.se/pub/security/%SUBDIR%/
@@ -15,7 +16,7 @@ MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	A secure (encrypted) remote shell compatible with ssh 2.0
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4 \
-		${LOCALBASE}/share/guile/1.6/slibcat:${PORTSDIR}/lang/slib-guile
+		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
 LIB_DEPENDS+=	oop:${PORTSDIR}/devel/liboop \
 		gmp.7:${PORTSDIR}/math/libgmp4
 
