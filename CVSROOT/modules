@@ -4721,6 +4721,7 @@ hplip		ports/print/hplip
 hppsmtools	ports/graphics/hppsmtools
 hptools		ports/devel/hptools
 hr-aspell	ports/textproc/hr-aspell
+hs-HGL-ghc	ports/graphics/hs-HGL-ghc
 hs-alex		ports/devel/hs-alex
 hs-buddha	ports/devel/hs-buddha
 hs-c2hs		ports/devel/hs-c2hs
