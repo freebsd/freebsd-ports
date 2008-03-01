@@ -9,7 +9,7 @@ PORTNAME=	gkrellm-helium
 PORTVERSION=	2.3.1
 PORTREVISION=	3
 CATEGORIES=	misc
-MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
+MASTER_SITES=	http://makovick.googlepages.com/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	pav@FreeBSD.org

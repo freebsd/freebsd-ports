@@ -9,7 +9,7 @@ PORTNAME=	gkrellweather
 PORTVERSION=	2.0.7
 PORTREVISION=	4
 CATEGORIES=	misc geography
-MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
+MASTER_SITES=	http://makovick.googlepages.com/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	pav@FreeBSD.org
