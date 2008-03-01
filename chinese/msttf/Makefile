@@ -14,7 +14,7 @@ DISTFILES=	${MSTTF_SIMHEI} ${MSTTF_SIMSUN} ${MSTTF_TAHOMA}
 DIST_SUBDIR=	msttf
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ld@FreeBSD.org.cn
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Three TrueType fonts from Microsoft Windows(TM) 2000/XP
 
 RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
