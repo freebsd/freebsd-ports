@@ -2049,9 +2049,9 @@ bin/eric4-unittest
 %%EXAMPLESDIR%%/modpython_dbg.pyc
 %%EXAMPLESDIR%%/rhallo.py
 %%EXAMPLESDIR%%/rhallo.pyc
-share/qt4/qsci/api/python/django.api
+share/qt4/qsci/api/python/django-0.96.api
 share/qt4/qsci/api/python/eric4.api
-share/qt4/qsci/api/python/tubogears1.0.api
+share/qt4/qsci/api/python/turbogears-1.0.api
 share/qt4/qsci/api/python/wxPython-2.8.api
 share/qt4/qsci/api/python/wxaddons.api
 share/qt4/qsci/api/python/zope-2.10.5.api

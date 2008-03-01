@@ -17,5 +17,5 @@ cfg = {
     'ericCodeTemplatesDir' : 'PYTHON_SITELIBDIR/eric4/CodeTemplates',
     'ericOthersDir'        : 'PYTHON_SITELIBDIR/eric4',
     'bindir'               : 'PREFIX/bin',
-    'mdir'                 : 'PREFIX/man',
+    'mdir'                 : 'PYTHON_SITELIBDIR',
 }
