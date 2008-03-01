@@ -24,6 +24,8 @@ COMMENT=	English-Chinese(T)/Chinese(T)-English dictionaries for StarDict
 
 RUN_DEPENDS=	stardict:${PORTSDIR}/textproc/stardict2
 
+BROKEN=		Checksum mismatch
+
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
