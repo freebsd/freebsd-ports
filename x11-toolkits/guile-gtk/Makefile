@@ -6,10 +6,9 @@
 #    $MCom: ports/x11-toolkits/guile-gtk/Makefile,v 1.2 2006/09/10 00:51:17 mezz Exp $
 
 PORTNAME=	guile-gtk
-PORTVERSION=	0.41
-PORTREVISION=	4
+PORTVERSION=	0.60
 CATEGORIES=	x11-toolkits scheme
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,12 +18,12 @@ LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gdkpixbuf libglade
+USE_GNOME=	gnometarget ltverhack gdkpixbuf libglade
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-gtkgl=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 INFO=		guile-gtk
 
