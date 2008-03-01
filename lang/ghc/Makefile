@@ -34,10 +34,15 @@ USE_GMAKE=	yes
 # You can view below.
 GNU_CONFIGURE=	yes
 
-OPTIONS=	PROFILE "Compile for profiling as well" on \
-		DOCS "Install HTML documentation" on
+OPTIONS=	PROFILE "Compile for profiling as well" on
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+OPTIONS+=	DOCS "Install HTML documentation" on
+.else
+.undef		WITH_DOCS
+.endif
 
 .if exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
