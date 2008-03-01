@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dkns
-PORTVERSION=	1.74
+PORTVERSION=	1.75
 CATEGORIES=	editors
 MASTER_SITES=	http://www.mammothcheese.ca/
 
