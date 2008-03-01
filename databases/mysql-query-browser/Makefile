@@ -21,6 +21,8 @@ LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		gtkdoc-mkhtml:${PORTSDIR}/textproc/gtk-doc \
 
+BROKEN=		Checksum mismatch
+
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:261:env
