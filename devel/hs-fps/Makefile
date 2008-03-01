@@ -20,6 +20,8 @@ COMMENT=	Fast, packed, strict byte arrays for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
+BROKEN=		Does not build
+
 OPTIONS=	PROFILE "Build libraries for profiling" off
 
 .include <bsd.port.pre.mk>
