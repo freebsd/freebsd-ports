@@ -8,7 +8,7 @@
 PORTNAME=	numeric
 PORTVERSION=	24.2
 CATEGORIES=	math python
-MASTER_SITES=	http://numeric.scipy.org/:doc \
+MASTER_SITES=	http://numpy.scipy.org/:doc \
 		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
 MASTER_SITE_SUBDIR=	numpy/:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
