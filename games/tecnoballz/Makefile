@@ -16,6 +16,8 @@ COMMENT=	A brick breaker (Arkanoid-like game)
 
 LIB_DEPENDS=	mikmod:${PORTSDIR}/audio/libmikmod
 
+BROKEN=		Size mismatch
+
 BUILD_WRKSRC=	${WRKSRC}/src
 
 USE_X_PREFIX=	yes
