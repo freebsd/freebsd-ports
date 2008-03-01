@@ -4,3 +4,6 @@ SIZE (ghostscript/ghostscript-8.61.tar.bz2) = 13244754
 MD5 (ghostscript/epag-3.09.tar.gz) = 63304a6afe44842124d2d880bf24dbe3
 SHA256 (ghostscript/epag-3.09.tar.gz) = ad10eca44c781a5851d5a8993dcd95b2e2b99392cbf2c8372a5a658f3b991b3b
 SIZE (ghostscript/epag-3.09.tar.gz) = 12858
+MD5 (ghostscript/Font.tar.bz2) = 200b2018a01065f4fa6aa063d9f14fce
+SHA256 (ghostscript/Font.tar.bz2) = 3805572c2a0fb7012f89ecef93feb757e8f78d59462fb81d7f6b095e9f1f3865
+SIZE (ghostscript/Font.tar.bz2) = 2198

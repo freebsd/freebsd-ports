@@ -23,6 +23,8 @@ EXTRACT_ONLY=	${GS_SRCS}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL Postscript interpreter
 
+BUILD_DEPENDS=	${LOCALBASE}/share/automake-1.10/install-sh:${PORTSDIR}/devel/automake110 \
+		${LOCALBASE}/bin/libtool:${PORTSDIR}/devel/libtool15
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
@@ -36,10 +38,14 @@ MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 PLIST_SUB=	GS_VERSION="${GS_VERSION}" \
 		CIDFONTDIR="${CIDFONTDIR}"
 
-SCRIPTS_ENV=	GS_DRIVERS_LIST="${GS_DRIVERS_LIST}" \
-		WITHOUT_X11="${WITHOUT_X11}" \
-		WITH_SVGALIB="${WITH_SVGALIB}" \
-		WITH_ICONV="${WITH_ICONV}"
+OPTIONS=	A4SIZE	"Set A4 (not Letter) as a default paper size"	off \
+		FONTCONFIG	"fontconfig support"	off \
+		FT_BRIDGE	"FreeType bridge"	off \
+		ICONV	"libiconv support (required by opvp/oprp drivers)" on \
+		JPNFONTS	"Japanese font support"	on \
+		SHLIB	"With shared libraries"	off \
+		SVGALIB	"svgalib support"	off \
+		X11	"X11 support"	on
 
 MAN1=		dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 gs-pcl3.1 pcl3opts.1 \
 		pdf2dsc.1 pdf2ps.1 pdfopt.1 pf2afm.1 pfbtopfa.1 printafm.1 \
@@ -55,7 +61,14 @@ MLINKS=		gslp.1 gsbj.1 \
 XCFLAGS=	${PTHREAD_CFLAGS}
 XLDFLAGS=	${PTHREAD_LIBS}
 
-MSG_PAPERSIZE=	"NOTE: Type \"make A4=yes\" to use A4 paper size by default."
+.include "Makefile.inc"
+.include <bsd.port.pre.mk>
+
+SCRIPTS_ENV=	GS_DRIVERS_LIST="${GS_DRIVERS_LIST}" \
+		WITHOUT_X11="${WITHOUT_X11}" \
+		WITH_SVGALIB="${WITH_SVGALIB}" \
+		WITH_ICONV="${WITH_ICONV}"
+
 .if !defined(WITH_LETTERSIZE)
 .if defined(A4) || defined(WITH_A4SIZE)
 XCFLAGS+=	-DA4
@@ -118,15 +131,31 @@ EPAG_VERS=	3.09
 EPAG_NAME=	${EPAG}-${EPAG_VERS}
 EPAG_SRCS=	${EPAG_NAME}.tar.gz
 
-.include "Makefile.inc"
-.include <bsd.port.pre.mk>
-.SILENT:
+# Add support for Japanese fonts
+.if defined(WITH_JPNFONTS)
+MASTER_SITES+=	http://www.interq.or.jp/mars/cherry/mac/:jpn
+DISTFILES+=	${JPN_SRCS}:jpn
+JPN_SRCS=	Font.tar.bz2
+PLIST_SUB+=	JPN=""
+.else
+PLIST_SUB+=	JPN="@comment "
+.endif
 
+.SILENT:
 pre-everything::
 	${ECHO_MSG} ${MSG_PAPERSIZE}
 
 post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
+.for _FILES in config.guess config.sub ltmain.sh
+	(cd ${WRKSRC}/ijs; ${RM} -f ${_FILES}; \
+	 ${LN} -s ${LOCALBASE}/share/libtool/${_FILES})
+.endfor
+.for _FILES in install-sh missing
+	(cd ${WRKSRC}/ijs; ${RM} -f ${_FILES}; \
+	 ${LN} -s ${LOCALBASE}/share/automake-1.10/${_FILES})
+.endfor
+
 # ** 3rd party driver **
 # Note: don't forget to add those devices in scripts/configure,
 # which update unix-gcc.mak to build gs with these new devices!
@@ -135,6 +164,11 @@ post-extract:
 	${ECHO_MSG} ">>>   extracting ${EPAG_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
 	${LN} -sf ${EPAG_NAME} ${WRKSRC}/${EPAG}
+# for Japanese fonts
+.if defined(WITH_JPNFONTS)
+	${ECHO_MSG} ">>>   extracting ${JPN_SRCS} ..."
+	${TAR} -C ${WRKSRC}/Resource -xypof ${DISTDIR}/${DIST_SUBDIR}/${JPN_SRCS}
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
@@ -158,7 +192,9 @@ pre-configure:
 post-configure:
 	${ECHO_MSG} ">>> in post-configure ..."
 	cd ${WRKSRC}/jasper ; \
-		${SETENV} ${MAKE_ENV} ${SH} ./configure
+		${SETENV} ${MAKE_ENV} ${SH} ./configure --prefix=${PREFIX}
+	cd ${WRKSRC}/ijs ; \
+		${SETENV} ${MAKE_ENV} ${SH} ./autogen.sh
 
 pre-build:
 	${ECHO_MSG} ">>> in pre-build ..."
@@ -245,6 +281,12 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/${i} \
 		${DATADIR}/${GS_VERSION}/lib
 .endfor
+# for Japanese fonts
+.if defined(WITH_JPNFONTS)
+	${ECHO_MSG} ">>>   installing Japanese font resources ..."
+	${INSTALL_DATA} ${WRKSRC}/Resource/Font/* \
+		${DATADIR}/${GS_VERSION}/Resource/Font/
+.endif
 #
 # now NOPORTDOCS dependend stuff
 #
@@ -296,5 +338,12 @@ post-install:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
+
+.if defined(WITH_FT_BRIDGE)
+	${ECHO_MSG} " *** Configure FAPIfontmap and FAPIcidfmap accordingly"
+	${ECHO_MSG} " *** in ${DATADIR}/${GS_VERSION}/lib"
+	${ECHO_MSG} " *** to use FreeType fonts."
+	@${ECHO_MSG}
+.endif
 
 .include <bsd.port.post.mk>
