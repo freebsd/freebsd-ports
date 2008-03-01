@@ -19,7 +19,7 @@ PATCHFILES=	16x16xpms.tar.gz icons_16x16.tar.gz smallicons.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	od@iclub.nsu.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application launcher dockapp similar to wmbutton
 
 USE_GETOPT_LONG=yes
