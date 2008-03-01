@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice frontend to the telnet, ssh, and rlogin clients for GNOME
 
+BROKEN=		Size mismatch
+
 USE_AUTOTOOLS=	automake:15:env libtool:15
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
