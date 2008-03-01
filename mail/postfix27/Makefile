@@ -7,6 +7,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -260,6 +261,7 @@ pre-install:
 do-install:
 	cd ${WRKSRC}; ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
 		config_directory=${PREFIX}/etc/postfix \
+		data_directory=/var/db/postfix \
 		daemon_directory=${PREFIX}/libexec/postfix \
 		command_directory=${PREFIX}/sbin \
 		queue_directory=/var/spool/postfix \
