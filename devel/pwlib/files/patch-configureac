@@ -1,35 +1,26 @@
---- configure.ac.orig	Wed Feb 22 05:53:28 2006
-+++ configure.ac	Tue Nov 27 16:58:54 2007
-@@ -136,7 +136,7 @@
+--- configure.ac.orig	2007-10-19 02:22:39.000000000 -0400
++++ configure.ac	2007-12-30 16:24:01.000000000 -0500
+@@ -145,7 +145,7 @@
     x86 | i686 | i586 | i486 | i386 ) MACHTYPE=x86
                     ;;
  
 -   x86_64)	   MACHTYPE=x86_64 ;
-+   x86_64|amd64)   MACHTYPE=x86_64 ;
++   x86_64|amd64)	   MACHTYPE=x86_64 ;
  		   P_64BIT=1 ;
                     LIB64=1 ;
  		   ;;
-@@ -145,7 +145,9 @@
- 		   P_64BIT=1 ;
+@@ -162,7 +162,9 @@
+                    LIB64=1 ;
  		   ;;
  
 -   sparc )         MACHTYPE=sparc ;
-+   sparc|sparc64 ) MACHTYPE=sparc ;
-+		   P_64BIT=1 ;
-+		   LIB64=1 ;
++   sparc|sparc64 )         MACHTYPE=sparc ;
++		P_64BIT=1 ;
++		LIB64=1 ;
  		   ;;
  
     powerpc )       MACHTYPE=ppc ;
-@@ -278,7 +280,7 @@
- 
- AC_MSG_CHECKING(if linker accepts -Wreorder)
- AC_LANG_CONFTEST([[int main(int ac,char **av) { return 0; }]])
--$STDCXX $CXXFLAGS -Wreorder conftest.cc > /dev/null 2>&1
-+$CXX $CXXFLAGS -Wreorder conftest.cc > /dev/null 2>&1
- if test $? = 0 ; then
-   AC_MSG_RESULT(yes)
-   STDCXXFLAGS="$STDCXXFLAGS -Wreorder"
-@@ -291,7 +293,7 @@
+@@ -348,7 +350,7 @@
  # $CXX $CFLAGS -Woverloaded-virtual conftest.cc > /dev/null 2>&1
  # if test $? = 0 ; then
  #   AC_MSG_RESULT(yes)
@@ -38,7 +29,7 @@
  # else
  #   AC_MSG_RESULT(no)
  # fi
-@@ -320,7 +322,7 @@
+@@ -377,7 +379,7 @@
    AC_MSG_RESULT(yes)
  else
    AC_MSG_RESULT(no)
@@ -47,7 +38,7 @@
  fi
  
  GCSECTIONS=0
-@@ -341,7 +343,7 @@
+@@ -398,7 +400,7 @@
    $CXX $CFLAGS -ffunction-sections -c conftest.cc > /dev/null 2>&1
    if test $? = 0 ; then
      AC_MSG_RESULT(yes)
@@ -56,7 +47,7 @@
      GCSECTIONS=1
    else
      AC_MSG_RESULT(no)
-@@ -357,7 +359,7 @@
+@@ -414,7 +416,7 @@
    dnl $CXX $CFLAGS -fdata-sections -c conftest.cc > /dev/null 2>&1
    dnl if test $? = 0 ; then
    dnl   AC_MSG_RESULT(yes)
@@ -65,7 +56,7 @@
    dnl   GCSECTIONS=1
    dnl else
    dnl   AC_MSG_RESULT(no)
-@@ -370,7 +372,7 @@
+@@ -427,7 +429,7 @@
    dnl $CXX $CFLAGS -fvtable-gc -c conftest.cc > /dev/null 2>&1
    dnl if test $? = 0 ; then
    dnl   AC_MSG_RESULT(yes)
@@ -74,22 +65,25 @@
    dnl   GCSECTIONS=1
    dnl else
    dnl   AC_MSG_RESULT(no)
-@@ -593,12 +595,12 @@
+@@ -662,7 +664,7 @@
  P_HAS_ATOMIC_INT=0
  P_NEEDS_GNU_CXX_NAMESPACE=0
  AC_MSG_CHECKING(if atomic integer available)
 -AC_TRY_COMPILE([#include <bits/atomicity.h>],
 +AC_TRY_COMPILE([#include ${ATOMICITY_H}],
-                [_Atomic_word val;], P_HAS_ATOMIC_INT=1)
- if test ${P_HAS_ATOMIC_INT} = 1 ; then
+                [_Atomic_word val;], P_HAS_ATOMIC_INT=1,
+     AC_TRY_COMPILE([#include <ext/atomicity.h>],
+ 		[_Atomic_word val;], P_HAS_ATOMIC_INT=2)
+@@ -671,7 +673,7 @@
    AC_MSG_RESULT(yes)
    AC_MSG_CHECKING(if __exchange_and_add is in __gnu_cxx namespace)
--  AC_TRY_COMPILE([#include <bits/atomicity.h>],
-+  AC_TRY_COMPILE([#include ${ATOMICITY_H}],
-                  [_Atomic_word val; __gnu_cxx::__exchange_and_add(&val, 1)], P_NEEDS_GNU_CXX_NAMESPACE=1)
-   if test ${P_NEEDS_GNU_CXX_NAMESPACE} = 1 ; then
-     AC_MSG_RESULT(yes)
-@@ -640,7 +642,7 @@
+   if test ${P_HAS_ATOMIC_INT} = 1 ; then
+-    AC_TRY_COMPILE([#include <bits/atomicity.h>],
++    AC_TRY_COMPILE([#include ${ATOMICITY_H}],
+         [_Atomic_word val; __gnu_cxx::__exchange_and_add(&val, 1)],
+         P_NEEDS_GNU_CXX_NAMESPACE=1)
+   else
+@@ -721,7 +723,7 @@
    AC_MSG_CHECKING(for upad128_t)
    AC_TRY_COMPILE([#include <sys/types.h>],
                   [upad128_t upad; upad._q = 0.0;], has_upad128_t=y)
@@ -98,7 +92,7 @@
      AC_MSG_RESULT(yes)
      AC_DEFINE(P_HAS_UPAD128_T)
    else
-@@ -665,7 +667,7 @@
+@@ -746,7 +748,7 @@
    fi
  fi
  
@@ -107,14 +101,14 @@
    
    AC_TRY_COMPILE([#include <semaphore.h>],
                   [sem_t *s = sem_open("test", O_CREAT)],
-@@ -689,18 +691,18 @@
+@@ -770,18 +772,18 @@
  dnl MSWIN_DISPLAY semaphore,Semaphore Support
  dnl MSWIN_DEFINE  semaphore,P_HAS_SEMAPHORES
  
 -dnl Linux, Mac OS X use libpthread and -lpthread
 -dnl FreeBSD uses the -pthread compiler option and uses libc_r
-+dnl FreeBSD >= 5.x, Linux, Mac OS X use libpthread and -lpthread
-+dnl FreeBSD < 5.x uses the -pthread compiler option and uses libc_r
++dnl FreeBSD>=5.x, Linux, Mac OS X use libpthread and -lpthread
++dnl FreeBSD <5.x uses the -pthread compiler option and uses libc_r
  
  AC_CHECK_LIB(pthread, pthread_create, HAS_PTHREADS=yes, HAS_PTHREADS=no)
  if test ${HAS_PTHREADS} = yes ; then
@@ -129,19 +123,10 @@
 -    STDCCFLAGS="$STDCCFLAGS -D_REENTRANT -pthread"
 +    ENDLDLIBS="$ENDLDLIBS ${PTHREAD_LIBS}"
 +    STDCCFLAGS="$STDCCFLAGS -D_REENTRANT ${PTHREAD_LIBS}"
-   fi
- fi
- 
-@@ -746,7 +748,7 @@
- if test ${P_HAS_RECURSIVE_MUTEX} = 1 ; then
-   AC_MSG_RESULT(yes)
- else
--  if test ${OSTYPE} == Darwin ; then
-+  if test ${OSTYPE} = Darwin ; then
-     AC_TRY_COMPILE([#include <pthread.h>],
-     			   [pthread_mutexattr_t attr; pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);], P_HAS_RECURSIVE_MUTEX=1)
-     if test ${P_HAS_RECURSIVE_MUTEX} = 1 ; then
-@@ -847,7 +849,7 @@
+   elif test ${OSTYPE} = FreeBSD ; then
+     HAS_PTHREADS=yes
+     ENDLDLIBS="$ENDLDLIBS -pthread"
+@@ -928,7 +930,7 @@
  AC_SUBST(HAS_PLUGINS)
  
  if test "x$LIB64" != "x" ; then
@@ -150,35 +135,7 @@
  else
    AC_DEFINE_UNQUOTED([P_DEFAULT_PLUGIN_DIR], ["${INSTALLPREFIX}/lib/pwlib"], [Default plugin directory])
  fi
-@@ -1253,7 +1255,7 @@
- else
-   AC_CHECK_HEADERS(expat.h, HAS_EXPAT=1)
-   if test "${HAS_EXPAT:-unset}" != "unset" ; then
--    AC_CHECK_LIB(expat, XML_ParserCreate, HAS_EXPAT=1, HAS_EXPAT=)
-+    AC_SEARCH_LIBS(XML_ParserCreate, expat, HAS_EXPAT=1, HAS_EXPAT=)
-   else
-     AC_CHECK_FILE(/usr/local/include/expat.h, HAS_EXPAT=1)
-     if test "${HAS_EXPAT:-unset}" != "unset" ; then
-@@ -1428,7 +1430,8 @@
-   if test $HAS_IPV6 = no ; then
-     AC_MSG_RESULT(no)
-   else
--    AC_TRY_COMPILE([#include <sys/socket.h>
-+    AC_TRY_COMPILE([#include <stddef.h>
-+		     #include <sys/socket.h>
-                      #include <netdb.h>],
-                      [getnameinfo(NULL, 0, NULL, 0, NULL, 0, 0);], HAS_IPV6=yes, HAS_IPV6=no)
-     if test $HAS_IPV6 = no ; then
-@@ -1485,7 +1488,7 @@
- HAS_SDL=
- if test "$enable_sdl" = "no" ; then
-   AC_MSG_NOTICE(SDL disabled)
--  AC_DEFINE(P_SDL, 0)
-+#  AC_DEFINE(P_SDL, 0)
- else
-   dnl SDL checks
-   if test "${SDLLIB:-unset}" = "unset" ; then
-@@ -1495,17 +1498,17 @@
+@@ -1660,7 +1662,7 @@
    dnl Linux check
    AC_CHECK_HEADERS(SDL/SDL.h, HAS_SDL=1)
    if test "${HAS_SDL:-unset}" != "unset" ; then
@@ -187,29 +144,7 @@
  	X11LIBDIR=/usr/X11R6/lib
      fi
      AC_CHECK_LIB(SDL, SDL_CreateYUVOverlay, HAS_SDL=1, HAS_SDL=, -L${X11LIBDIR} -lpthread -lX11 -lXext)
-   fi
- 
--  dnl freeBSD SDL check
-+  dnl FreeBSD SDL check
-   if test "${HAS_SDL:-unset}" = "unset" ; then
--    AC_CHECK_FILE(/usr/local/include/SDL11/SDL.h, HAS_SDL=1)
-+    AC_CHECK_HEADER(SDL/SDL.h, HAS_SDL=1)
-     if test "${HAS_SDL:-unset}" != "unset" ; then
--      SDLLIB=SDL-1.1
-+      SDLLIB=SDL
-     fi
-   fi
- 
-@@ -1527,7 +1530,7 @@
- dnl ########################################################################
- dnl check for video capture support.
- dnl videodev.h on linux
--dnl machine/ioctl_meteor on FreeBSD
-+dnl machine/ioctl_meteor or dev/bktr/ioctl_meteor.h on FreeBSD
- dnl i386/ioctl_meteor on OpenBSD
- dnl dev/ic/bt8xx on NetBSD
- 
-@@ -1553,9 +1556,10 @@
+@@ -1718,9 +1720,10 @@
      HAS_VIDEO_CAPTURE=1
    else
      AC_CHECK_HEADER(linux/videodev.h, HAS_VIDEO_CAPTURE=1)
@@ -217,19 +152,19 @@
 -    dnl AC_CHECK_HEADER(i386/ioctl_meteor.h, HAS_VIDEO_CAPTURE=1)
 -    dnl AC_CHECK_HEADER(dev/ic/bt8xx.h, HAS_VIDEO_CAPTURE=1)
 +    AC_CHECK_HEADER(machine/ioctl_meteor.h, HAS_VIDEO_CAPTURE=1)
-+    AC_CHECK_HEADER(dev/bktr/ioctl_meteor.h, HAS_VIDEO_CAPTURE=1)
 +    AC_CHECK_HEADER(i386/ioctl_meteor.h, HAS_VIDEO_CAPTURE=1)
 +    AC_CHECK_HEADER(dev/ic/bt8xx.h, HAS_VIDEO_CAPTURE=1)
++    AC_CHECK_HEADER(dev/bktr/ioctl_meteor.h, HAS_VIDEO_CAPTURE=1)
      if test "${HAS_VIDEO_CAPTURE}z" = "z" ; then
        AC_MSG_NOTICE(No Video Capture support)
        AC_DEFINE([NO_VIDEO_CAPTURE], [], [No video capture])
-@@ -2046,6 +2050,9 @@
-   AC_MSG_NOTICE(C++ exceptions enabled)
-   STDCCFLAGS="$STDCCFLAGS -fno-exceptions"
+@@ -2335,6 +2338,9 @@
+   STDCCFLAGS="$STDCCFLAGS -fexceptions"
  fi
-+
+ 
 +STDCCFLAGS="$CPPFLAGS $STDCCFLAGS"
 +STDCXXFLAGS="$CPPFLAGS $STDCXXFLAGS"
- 
++
  dnl ########################################################################
  dnl final declarations
+ 

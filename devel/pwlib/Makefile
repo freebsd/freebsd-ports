@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	pwlib
-PORTVERSION=	1.10.3
-PORTREVISION=	4
+PORTVERSION=	1.12.0
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.voxgratia.org/releases/
-DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
+MASTER_SITES=    ${MASTER_SITE_SOURCEFORGE}
+DISTNAME=	openh323/ptlib-v${PORTVERSION:S/./_/g}-src.
 EXTRACT_SUFX=	tar.gz
 
 MAINTAINER=	steve@energistic.com
@@ -19,7 +18,7 @@ COMMENT=	A cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_v${PORTVERSION:S/./_/g}
+WRKSRC=		${WRKDIR}/ptlib_v${PORTVERSION:S/./_/g}
 
 USE_BISON=	build
 USE_GMAKE=	yes
@@ -31,6 +30,10 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		does not compile
+.endif
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -O1 -I${WRKSRC}/include -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
@@ -72,6 +75,9 @@ CONFIGURE_ARGS+=	--disable-sdl
 .if !defined(WITHOUT_PLUGINS)
 CONFIGURE_ARGS+=	--enable-plugins
 .endif
+
+#explicity build OSS
+CONFIGURE_ARGS+=	--enable-oss
 
 #disable OpenLDAP support in PWLIB
 .if defined(WITHOUT_LDAP)
