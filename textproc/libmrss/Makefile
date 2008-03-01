@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmrss
-PORTVERSION=	0.19.0
+PORTVERSION=	0.19.1
 PORTREVISION=	0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.autistici.org/bakunin/libmrss/
