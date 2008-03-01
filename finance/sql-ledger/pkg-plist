@@ -121,7 +121,7 @@ sql-ledger/doc/UPGRADE-2.8.0-2.8.2
 sql-ledger/doc/UPGRADE-2.8.2-2.8.4
 sql-ledger/doc/UPGRADE-2.8.4-2.8.6
 sql-ledger/doc/UPGRADE-2.8.6-2.8.7
-sql-ledger/doc/UPGRADE-2.8.7-2.8.12
+sql-ledger/doc/UPGRADE-2.8.7-2.8.13
 sql-ledger/doc/faq.html
 sql-ledger/favicon.ico
 sql-ledger/gl.pl
@@ -614,6 +614,7 @@ sql-ledger/locale/de_utf/LANGUAGE
 sql-ledger/locale/de_utf/Num2text
 sql-ledger/locale/de_utf/aa
 sql-ledger/locale/de_utf/admin
+sql-ledger/locale/de_utf/all
 sql-ledger/locale/de_utf/am
 sql-ledger/locale/de_utf/ap
 sql-ledger/locale/de_utf/ar
