@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f9e96930-e6df-11dc-8c6a-00304881ac9a">
+    <topic>pcre -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>pcre</name>
+	<range><lt>7.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PCRE developers report:</p>
+	<blockquote cite="http://pcre.org/changelog.txt">
+	  <p>A character class containing a very large number of characters with
+	    codepoints greater than 255 (in UTF-8 mode, of course) caused a
+	    buffer overflow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>27786</bid>
+      <cvename>CVE-2008-0674</cvename>
+      <url>http://pcre.org/changelog.txt</url>
+    </references>
+    <dates>
+      <discovery>2008-01-28</discovery>
+      <entry>2008-02-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e8a6a16d-e498-11dc-bb89-000bcdc1757a">
     <topic>libxine -- buffer overflow vulnerability</topic>
     <affects>
