@@ -11,7 +11,7 @@ PORTNAME=	dt
 PORTVERSION=	15.14
 CATEGORIES=	sysutils
 MASTER_SITES=	http://home.comcast.net/~SCSIguy/SCSI_FAQ/RMiller_Tools/ftp/dt/ \
-		http://sce-tindy.tecnik93.com/FreeBSD/ports/dt/sources \
+		http://sce-tindy.tecnik93.com/FreeBSD/ports/dt/sources/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 DISTNAME=	${PORTNAME}-source
 
