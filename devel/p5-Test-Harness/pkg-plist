@@ -20,6 +20,7 @@
 %%SITE_PERL%%/TAP/Parser/Result/Bailout.pm
 %%SITE_PERL%%/TAP/Parser/Result/Comment.pm
 %%SITE_PERL%%/TAP/Parser/Result/Plan.pm
+%%SITE_PERL%%/TAP/Parser/Result/Pragma.pm
 %%SITE_PERL%%/TAP/Parser/Result/Test.pm
 %%SITE_PERL%%/TAP/Parser/Result/Unknown.pm
 %%SITE_PERL%%/TAP/Parser/Result/Version.pm
