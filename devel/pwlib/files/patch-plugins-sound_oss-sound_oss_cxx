@@ -1,0 +1,10 @@
+--- plugins/sound_oss/sound_oss.cxx.orig	2007-10-19 02:22:33.000000000 -0400
++++ plugins/sound_oss/sound_oss.cxx	2007-12-30 20:46:38.000000000 -0500
+@@ -643,6 +643,7 @@
+         arg = val = (entry.numChannels == 2) ? 1 : 0;
+         if (ConvertOSError(::ioctl(os_handle, SNDCTL_DSP_STEREO, &arg)) || (arg != val)) {
+ 
++	  resampleRate = entry.resampleRate;
+           mSampleRate = entry.sampleRate;
+           arg = val = entry.sampleRate;
+           if (ConvertOSError(::ioctl(os_handle, SNDCTL_DSP_SPEED, &arg))) {

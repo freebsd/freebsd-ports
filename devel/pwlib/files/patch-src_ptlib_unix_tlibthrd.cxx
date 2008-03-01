@@ -5,7 +5,7 @@
    PWaitAndSignal m(threadMutex);
  
 -  if (!activeThreads.Contains((unsigned)id)) 
-+  if (!activeThreads.Contains((unsigned long)id)) 
++  if (!activeThreads.Contains((uintptr_t)id)) 
      return FALSE;
  
    return pthread_kill(id, sig) == 0;
@@ -14,7 +14,7 @@
  
    ((PProcess *)this)->activeThreads.DisallowDeleteObjects();
 -  ((PProcess *)this)->activeThreads.SetAt((unsigned)PX_threadId, this);
-+  ((PProcess *)this)->activeThreads.SetAt((unsigned long)PX_threadId, this);
++  ((PProcess *)this)->activeThreads.SetAt((uintptr_t)PX_threadId, this);
  
    PX_firstTimeStart = FALSE;
  
@@ -23,7 +23,7 @@
  
    // put the thread into the thread list
 -  process.activeThreads.SetAt((unsigned)PX_threadId, this);
-+  process.activeThreads.SetAt((unsigned long)PX_threadId, this);
++  process.activeThreads.SetAt((uintptr_t)PX_threadId, this);
    if (process.activeThreads.GetSize() > highWaterMark)
      newHighWaterMark = highWaterMark = process.activeThreads.GetSize();
  
@@ -32,7 +32,7 @@
    PProcess & process = PProcess::Current();
    process.threadMutex.Wait();
 -  PThread * thread = process.activeThreads.GetAt((unsigned)pthread_self());
-+  PThread * thread = process.activeThreads.GetAt((unsigned long)pthread_self());
++  PThread * thread = process.activeThreads.GetAt((uintptr_t)pthread_self());
    process.threadMutex.Signal();
    return thread;
  }
@@ -41,7 +41,7 @@
  
   // remove this thread from the active thread list
 -  process.activeThreads.SetAt((unsigned)id, NULL);
-+  process.activeThreads.SetAt((unsigned long)id, NULL);
++  process.activeThreads.SetAt((uintptr_t)id, NULL);
  
    // delete the thread if required, note this is done this way to avoid
    // a race condition, the thread ID cannot be zeroed before the if!

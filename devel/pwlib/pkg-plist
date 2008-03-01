@@ -1,5 +1,14 @@
 bin/ptlib-config
 include/ptbuildopts.h
+include/ptclib/guid.h
+include/ptclib/podbc.h
+include/ptclib/pvfiledev.h
+include/ptclib/pwavfiledev.h
+include/ptclib/snmp.h
+include/ptclib/paec.h
+include/ptclib/psockbun.h
+include/ptclib/pvidfile.h
+include/ptclib/rfc1155.h
 include/ptclib/asnber.h
 include/ptclib/asner.h
 include/ptclib/asnper.h
@@ -58,6 +67,7 @@ include/ptlib/config.h
 include/ptlib/contain.h
 include/ptlib/contain.inl
 include/ptlib/critsec.h
+include/ptlib/devplugin.h
 include/ptlib/dict.h
 include/ptlib/dynalink.h
 include/ptlib/ethsock.h
@@ -133,6 +143,7 @@ include/ptlib/unix/ptlib/resampler.h
 include/ptlib/unix/ptlib/semaphor.h
 include/ptlib/unix/ptlib/serchan.h
 include/ptlib/unix/ptlib/sfile.h
+include/ptlib/unix/ptlib/shmvideo.h
 include/ptlib/unix/ptlib/socket.h
 include/ptlib/unix/ptlib/sound.h
 include/ptlib/unix/ptlib/svcproc.h
@@ -166,18 +177,12 @@ lib/pwlib/devices/sound/oss_pwplugin.so
 @dirrm lib/pwlib/devices
 @dirrmtry lib/pwlib
 %%DATADIR%%/make/common.mak
-%%DATADIR%%/make/defaultgui.mak
-%%DATADIR%%/make/gui.mak
 %%DATADIR%%/make/lib.mak
-%%DATADIR%%/make/motif.mak
 %%DATADIR%%/make/plugins.mak
 %%DATADIR%%/make/ptbuildopts.mak
 %%DATADIR%%/make/ptlib-config
 %%DATADIR%%/make/ptlib.mak
-%%DATADIR%%/make/pwlib.mak
-%%DATADIR%%/make/qt.mak
 %%DATADIR%%/make/unix.mak
-%%DATADIR%%/make/xlib.mak
 %%DATADIR%%/version.h
 @dirrm %%DATADIR%%/make
 @dirrm %%DATADIR%%
