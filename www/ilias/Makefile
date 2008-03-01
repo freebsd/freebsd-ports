@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	3.7.3
-PORTREVISION=	1
+PORTVERSION=	3.7.9
 CATEGORIES=	www
-MASTER_SITES=	http://www.ilias.de/download/src/
+MASTER_SITES=	SF
 
 MAINTAINER=	r@robakdesign.com
 COMMENT=	A poweful, dynamic, PHP and MySQL based e-learning platform
