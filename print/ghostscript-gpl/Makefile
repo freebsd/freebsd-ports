@@ -32,6 +32,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print
 CONFLICTS=	ghostscript-gnu*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+WANT_GNOME=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}" \
 		EXTRALIBS="${EXTRALIBS}"
@@ -106,7 +107,7 @@ MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".a"
 .if defined(WITHOUT_X11)
 MAKE_ENV+=	SOC_LOADER="dxmainc.c"
 .else
-USE_GNOME=	gtk20
+USE_GNOME+=	gtk20
 MAKE_ENV+=	SOC_LOADER="dxmain.c" \
 		SOC_CFLAGS="`pkg-config --cflags gtk+-2.0`" \
 		SOC_LIBS="`pkg-config --libs gtk+-2.0`"
