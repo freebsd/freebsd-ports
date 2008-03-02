@@ -7,7 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,7 +38,8 @@ CONFIGURE_ARGS=	--localstatedir=${DBDIR} \
 		--with-gdbm-root=${LOCALBASE} \
 		--with-gd-root=${LOCALBASE} \
 		--with-libpng-root=${LOCALBASE} \
-		--with-zlib-root=/usr
+		--with-zlib-root=/usr \
+		--disable-snmp
 # we currently disable IPv6
 CONFIGURE_ARGS+=--disable-ipv6
 
