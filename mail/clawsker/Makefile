@@ -22,9 +22,4 @@ USE_GETTEXT=	yes
 
 MAN1=		clawsker.1
 
-PLIST_FILES=	bin/clawsker \
-		share/locale/es/LC_MESSAGES/clawsker.mo \
-		share/locale/sr/LC_MESSAGES/clawsker.mo \
-		share/locale/sr@latin/LC_MESSAGES/clawsker.mo
-
 .include <bsd.port.mk>
