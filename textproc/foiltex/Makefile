@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	foiltex
-PORTVERSION=	2.1.4a
-PORTREVISION=	2
+PORTVERSION=	2.1.4b
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	nonfree/macros/latex/contrib/${PORTNAME}
 DISTFILES=	foiltex.dtx foiltex.ins
 
-MAINTAINER=	stefan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of LaTeX files for making foils
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
