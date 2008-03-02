@@ -6,6 +6,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	6.8.2
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot \
@@ -64,6 +65,8 @@ DISTFILES+=	ghc-${PORTVERSION}-x86_64-unknown-freebsd7-boot${EXTRACT_SUFX}:boot
 .else
 IGNORE=		unsupported at the moment
 .endif
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-rts-Linker.c \
+		${PATCHDIR}/extra-patch-driver-mangler-ghc-asm.lprl
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
