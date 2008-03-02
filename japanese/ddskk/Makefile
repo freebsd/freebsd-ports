@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ddskk
-PORTVERSION=	12.2.0
-PORTREVISION=	2
+PORTVERSION=	13.1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/skk/maintrunk/ \
 		ftp://ftp.ring.gr.jp/pub/elisp/skk/maintrunk/ \
@@ -17,16 +16,23 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Simple Kana to Kanji conversion program on Emacsen
 
+USE_EMACS=      yes
+
+.include <bsd.port.pre.mk>
+
+.if defined(EMACS_PORT_NAME)
+.if (${EMACS_PORT_NAME} == "emacs22")
+DEPPORT_SUFFIX=
+.else
+DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
+.endif
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-USE_EMACS=	yes
-.include <bsd.port.pre.mk>
-.if (${EMACS_PORT_NAME} == emacs20)
-DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
-PLIST=	${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .else
-DEPPORT_SUFFIX=
+.BEGIN:
+	@${ECHO} "Error: Bad port."
+	@${ECHO} "You must define EMACS_PORT_NAME."
+	@${FALSE}
 .endif
 
 INFO=		skk

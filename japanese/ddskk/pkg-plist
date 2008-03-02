@@ -1,16 +1,22 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/ccc.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/ccc.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/context-skk.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/context-skk.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/queue-m.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/queue-m.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/leim-list.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-abbrev.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-abbrev.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-act.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-act.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-annotation.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-annotation.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-auto.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-auto.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-autoloads.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-autoloads.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-azik.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-azik.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-comp.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-comp.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-cursor.el
@@ -27,6 +33,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-e21.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-gadget.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-gadget.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-hint.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-hint.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-isearch.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-isearch.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisx0201.el
@@ -51,11 +59,15 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-num.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-obsolete.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-obsolete.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server-completion.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server-completion.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-setup.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-study.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-study.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-tankan.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-tankan.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-tut.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-tut.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-vars.el
@@ -71,7 +83,7 @@ share/skk/NICOLA-SKK.tut
 share/skk/SKK.tut
 share/skk/SKK.tut.E
 share/skk/skk.xpm
-@dirrm share/skk
+@dirrmtry share/skk
 share/examples/ddskk/Emacs.ad
 share/examples/ddskk/dot.emacs
 share/examples/ddskk/dot.skk
