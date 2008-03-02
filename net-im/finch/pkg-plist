@@ -8,11 +8,13 @@ include/finch/gntconv.h
 include/finch/gntdebug.h
 include/finch/gntft.h
 include/finch/gntidle.h
+include/finch/gntlog.h
 include/finch/gntnotify.h
 include/finch/gntplugin.h
 include/finch/gntpounce.h
 include/finch/gntprefs.h
 include/finch/gntrequest.h
+include/finch/gntroomlist.h
 include/finch/gntstatus.h
 include/finch/gntsound.h
 include/finch/gntui.h
@@ -50,6 +52,8 @@ lib/finch/gnthistory.la
 lib/finch/gnthistory.so
 lib/finch/gntlastlog.la
 lib/finch/gntlastlog.so
+lib/finch/grouping.la
+lib/finch/grouping.so
 lib/gnt/irssi.la
 lib/gnt/irssi.so
 lib/gnt/s.la

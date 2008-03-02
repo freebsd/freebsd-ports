@@ -48,6 +48,7 @@ include/pidgin/gtkutils.h
 include/pidgin/gtkwhiteboard.h
 include/pidgin/minidialog.h
 include/pidgin/pidgin.h
+include/pidgin/pidgintooltip.h
 %%CAP%%lib/pidgin/cap.la
 %%CAP%%lib/pidgin/cap.so
 lib/pidgin/convcolors.la
@@ -85,6 +86,7 @@ lib/pidgin/timestamp_format.so
 lib/pidgin/xmppconsole.la
 lib/pidgin/xmppconsole.so
 libdata/pkgconfig/pidgin.pc
+share/applications/pidgin.desktop
 share/pixmaps/pidgin/animations/16/connect0.png
 share/pixmaps/pidgin/animations/16/connect1.png
 share/pixmaps/pidgin/animations/16/connect2.png
@@ -633,5 +635,6 @@ share/icons/hicolor/48x48/apps/pidgin.png
 @dirrm share/pixmaps/pidgin/animations/16
 @dirrm share/pixmaps/pidgin/animations
 @dirrm share/pixmaps/pidgin
+@dirrmtry share/applications
 @dirrm lib/pidgin
 @dirrm include/pidgin
