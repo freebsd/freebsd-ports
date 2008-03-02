@@ -36,7 +36,7 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 # `x11/nvidia-driver-71xx' or `x11/nvidia-driver-96xx' slave ports.
 #
 # NVidia played it tricky with their versioning scheme once again.  To make
-# stable and legacy versions comprable, employ some sad ugly hackery: assign
+# stable and legacy versions comparable, employ some sad ugly hackery: assign
 # NVVERSION for slave ports independently of master.  Hopefully, this is a
 # temporary measure and will go away soon.
 #
@@ -105,6 +105,11 @@ post-patch: .SILENT
 .if ${OSVERSION} >= 700048
 	${REINPLACE_CMD} -e '15s,^,#include <sys/priv.h>,' \
 		${WRKSRC}/src/nvidia_os.c
+.endif
+# Correct prototypes to fix the build with FreeBSD AGP support
+.if ${NVVERSION} == 1690700
+	${REINPLACE_CMD} -e '337,338s/(/(nv_stack_t *, /' \
+		${WRKSRC}/src/nv-freebsd.h
 .endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
