@@ -36,6 +36,7 @@ PORTDOCS=	AUTHORS ChangeLog NEWS
 #		PROJECTM	"Enable projectM vis plugin"		off \
 
 OPTIONS=	AUDIOCD		"Enable audiocd plugin"			off \
+		DBUS		"Enable dbus support"			on  \
 		ESOUND		"Enable Esound output output"		off \
 		MP3		"Enable mp3 plugin"			on  \
 		ROCKLIGHT	"Enable Rocklight vis plugin"		on  \
@@ -76,6 +77,15 @@ PLIST_SUB+=     AUDIOCDPLUGIN=""
 .else
 CONFIGURE_ARGS+=--disable-cdaudio
 PLIST_SUB+=     AUDIOCDPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_DBUS)
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+CONFIGURE_ARGS+=--enable-dbus --enable-gnomeshortcuts
+PLIST_SUB+=	DBUS=""
+.else
+CONFIGURE_ARGS+=--disable-dbus --disable-gnomeshortcuts
+PLIST_SUB+=	DBUS="@comment "
 .endif
 
 .if defined(WITH_ESOUND)
