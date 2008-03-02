@@ -4,5 +4,3 @@ message body based RFC2045.
 
 mimer.pl: MIME decoder library
 mimew.pl: MIME encoder library
-
-WWW:	http://www.cc.rim.or.jp/~ikuta/mime_pls/
