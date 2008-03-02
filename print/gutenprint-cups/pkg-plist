@@ -1,5 +1,6 @@
 bin/cups-calibrate
 etc/cups/command.types
+libexec/cups/driver/gutenprint.5.1
 libexec/cups/filter/commandtocanon
 libexec/cups/filter/commandtoepson
 libexec/cups/filter/rastertogutenprint.5.1
