@@ -131,23 +131,12 @@ lib/purple-2/statenotify.so
 %%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/Purple.pm
 %%DBUS%%lib/libpurple-client.la
 %%DBUS%%lib/libpurple-client.so
-%%DBUS%%lib/libpurple-client.so.3
+%%DBUS%%lib/libpurple-client.so.4
 lib/libpurple.la
 lib/libpurple.so
-lib/libpurple.so.3
+lib/libpurple.so.4
 libdata/pkgconfig/purple.pc
 share/aclocal/purple.m4
-share/applications/pidgin.desktop
-share/purple/ca-certs/Equifax_Secure_CA.pem
-share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
-share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem
-share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
-share/purple/ca-certs/Verisign_RSA_Secure_Server_CA.pem
-share/sounds/purple/alert.wav
-share/sounds/purple/login.wav
-share/sounds/purple/logout.wav
-share/sounds/purple/receive.wav
-share/sounds/purple/send.wav
 share/locale/af/LC_MESSAGES/pidgin.mo
 share/locale/am/LC_MESSAGES/pidgin.mo
 share/locale/ar/LC_MESSAGES/pidgin.mo
@@ -200,6 +189,7 @@ share/locale/pt/LC_MESSAGES/pidgin.mo
 share/locale/pt_BR/LC_MESSAGES/pidgin.mo
 share/locale/ro/LC_MESSAGES/pidgin.mo
 share/locale/ru/LC_MESSAGES/pidgin.mo
+share/locale/si/LC_MESSAGES/pidgin.mo
 share/locale/sk/LC_MESSAGES/pidgin.mo
 share/locale/sl/LC_MESSAGES/pidgin.mo
 share/locale/sq/LC_MESSAGES/pidgin.mo
@@ -217,6 +207,21 @@ share/locale/xh/LC_MESSAGES/pidgin.mo
 share/locale/zh_CN/LC_MESSAGES/pidgin.mo
 share/locale/zh_HK/LC_MESSAGES/pidgin.mo
 share/locale/zh_TW/LC_MESSAGES/pidgin.mo
+share/purple/ca-certs/Equifax_Secure_CA.pem
+share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
+share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem
+share/purple/ca-certs/StartCom_Free_SSL_CA.pem
+share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
+share/purple/ca-certs/Verisign_RSA_Secure_Server_CA.pem
+share/sounds/purple/alert.wav
+share/sounds/purple/login.wav
+share/sounds/purple/logout.wav
+share/sounds/purple/receive.wav
+share/sounds/purple/send.wav
+@dirrm share/sounds/purple
+@dirrm share/purple/ca-certs
+@dirrm share/purple
+%%PERL:%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Purple
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -227,6 +232,8 @@ share/locale/zh_TW/LC_MESSAGES/pidgin.mo
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/ps/LC_MESSAGES
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/my_MM/LC_MESSAGES
@@ -241,10 +248,5 @@ share/locale/zh_TW/LC_MESSAGES/pidgin.mo
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrm share/purple/ca-certs
-@dirrm share/purple
-@dirrm share/sounds/purple
-%%PERL:%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Purple
 @dirrm lib/purple-2
 @dirrm include/libpurple
-@dirrmtry share/applications

@@ -13,7 +13,7 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Pidgin multi-protocol messaging client (GTK+ UI)
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		purple.3:${PORTSDIR}/net-im/libpurple
+		purple.4:${PORTSDIR}/net-im/libpurple
 
 MASTERDIR=	${.CURDIR}/../libpurple
 BUILD_WRKSRC=	${WRKSRC}/pidgin
@@ -29,5 +29,14 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gtk20
 WANT_GNOME=	yes
 CONFIGURE_ARGS=	--disable-consoleui
+
+post-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	    	Makefile ${MAKE_ARGS} pidgin.desktop
+
+post-install:
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/pidgin.desktop \
+	    	${PREFIX}/share/applications/pidgin.desktop
 
 .include "${MASTERDIR}/Makefile"
