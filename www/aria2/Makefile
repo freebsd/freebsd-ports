@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	aria2
-DISTVERSION=	0.12.1
+DISTVERSION=	0.13.0
 CATEGORIES=	www
 MASTER_SITES=	SFE
+DISTNAME=	${PORTNAME}c-${DISTVERSION}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Yet another download tool
@@ -29,11 +30,15 @@ GNU_CONFIGURE=	yes
 .ifdef WITHOUT_NLS
 CONFIGURE_ARGS+=	--disable-nls
 .else
-LINGUAS=	ca de es fi fr he it ja nl pt_BR ru sv
+LINGUAS=	ca de es fi fr he hu id it ja nl nn pl pt_BR ru sv th
 .endif
 PLIST_FILES=	bin/aria2c \
 		${LINGUAS:S|^|share/locale/|:S|$|/LC_MESSAGES/aria2c.mo|}
 MAN1=		aria2c.1
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^install-data-am:/s|install-dist_docDATA||'\
+		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 
 post-configure:
 	@${REINPLACE_CMD} -e '/SETMODE/d' ${WRKSRC}/config.h
