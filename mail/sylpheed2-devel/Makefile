@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.4.0.b7
-PORTREVISION=	1
+PORTVERSION=	2.5.0.b1
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v2.4beta/
+MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.0\.[^\.]*$//}beta/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.b/beta/}
 
 MAINTAINER=	nork@FreeBSD.org
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 #IGNORE=	"is out-of-dated, use mail/sylpheed2 instead of this, until the next development starts."
 
-LATEST_LINK=	${PORTNAME}24
+LATEST_LINK=	${PORTNAME}25
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -52,7 +52,7 @@ OPTIONS=	GPGME		"Enable GnuPG support using GPGME." off \
 .if !defined(WITHOUT_SSL)
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
-RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 CONFIGURE_ARGS+=--enable-ssl
 .else
 CONFIGURE_ARGS+=--disable-ssl
@@ -113,6 +113,10 @@ post-patch:
 		s|-lresolv||g; s|-lpisock\"|-liconv &|g; ' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g' \
 		${WRKSRC}/libsylph/procmime.c
+
+	# to prevent breaking cc of ldif.c because of a base64.h in PREFIX/include
+	@${REINPLACE_CMD} -e 's|^\(DEFS.*\.\.\)$$|\1 -I../libsylph|' \
+		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|/etc/ssl/certs|${LOCALBASE}/share/certs|g' \
 		${WRKSRC}/libsylph/ssl.c
 
