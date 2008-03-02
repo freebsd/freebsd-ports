@@ -1,7 +1,0 @@
---- Makefile.in.orig	Sun Feb  4 20:53:35 2001
-+++ Makefile.in	Wed Feb 28 11:07:30 2001
-@@ -100,3 +100,3 @@
- 
--SUBDIRS = guile-gtk guile-gnome 
-+SUBDIRS = guile-gnome 
- 

@@ -1,7 +1,0 @@
---- guile-gnome/libglade/Makefile.in.orig	Sun Feb  4 20:53:44 2001
-+++ guile-gnome/libglade/Makefile.in	Wed Feb 28 11:11:15 2001
-@@ -103,3 +103,3 @@
- 
--GLADE_LIBS = -lglade -lglade-gnome 
-+GLADE_LIBS = `libglade-config --libs gnome`
-  

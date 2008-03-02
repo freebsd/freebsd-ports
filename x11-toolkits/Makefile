@@ -85,7 +85,6 @@
     SUBDIR += gtksourceview2-reference
     SUBDIR += gtkunique
     SUBDIR += gtoolkit
-    SUBDIR += guile-gnome
     SUBDIR += guile-gtk
     SUBDIR += hs-frantk
     SUBDIR += hs-glut-ghc
