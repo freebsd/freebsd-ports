@@ -8,7 +8,8 @@
 PORTNAME=	mime_pls
 PORTVERSION=	2.02
 CATEGORIES=	japanese perl5 mail
-MASTER_SITES=	http://www.cc.rim.or.jp/~ikuta/mime_pls/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nork
 PKGNAMEPREFIX=	ja-p5-
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//}
 EXTRACT_SUFX=	.tgz
