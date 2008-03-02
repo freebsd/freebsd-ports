@@ -2516,6 +2516,7 @@ elfio		ports/devel/elfio
 elfrc		ports/devel/elfrc
 elfsh		ports/devel/elfsh
 elftoaout	ports/devel/elftoaout
+elgg		ports/www/elgg
 elib		ports/devel/elib
 elib-emacs21	ports/devel/elib-emacs21
 elicit		ports/x11/elicit
