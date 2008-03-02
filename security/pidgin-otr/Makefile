@@ -8,7 +8,7 @@
 
 PORTNAME=	otr
 PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
 PKGNAMEPREFIX=	pidgin-
@@ -22,7 +22,7 @@ COMMENT=	Allows deniable private conversations using Pidgin
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
 LIB_DEPENDS=	otr:${PORTSDIR}/security/libotr \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
-		purple.3:${PORTSDIR}/net-im/libpurple
+		purple.4:${PORTSDIR}/net-im/libpurple
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
