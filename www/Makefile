@@ -158,6 +158,7 @@
     SUBDIR += dummyflash
     SUBDIR += eaccelerator
     SUBDIR += eldav.el
+    SUBDIR += elgg
     SUBDIR += elinks
     SUBDIR += elog
     SUBDIR += emacs-w3m
