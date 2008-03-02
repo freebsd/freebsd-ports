@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	relaxbsd
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of text menu based utilities for configuring RelaxBSD LiveCD
 
 BUILD_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog

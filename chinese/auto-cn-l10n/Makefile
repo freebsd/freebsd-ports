@@ -10,7 +10,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 DISTNAME=	zh-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The automatic localization for Simplified Chinese zh_CN.eucCN locale
 
 NO_BUILD=	yes

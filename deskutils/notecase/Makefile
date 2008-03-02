@@ -11,7 +11,7 @@ CATEGORIES=	deskutils textproc
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hierarchical text notes manager
 
 USE_GMAKE=	yes

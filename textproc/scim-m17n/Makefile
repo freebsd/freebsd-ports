@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=scim
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A SCIM IMEngine module which uses m17n library as the backend
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim

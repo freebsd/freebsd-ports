@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 PATCHFILES=	eva-0.4.1_20070504.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QQ IM Client for KDE3
 
 USE_KDELIBS_VER=3

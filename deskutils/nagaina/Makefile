@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://nagaina.googlecode.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A notes-taking application based QT4
 
 USE_QT_VER=	4

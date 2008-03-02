@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF
 DISTNAME=	qOrganizer-${PORTVERSION}
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general organizer that includes calendar with jurnal and schedule
 
 USE_QT_VER=	4

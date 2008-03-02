@@ -11,7 +11,7 @@ CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/g}
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE/Qt based frontend for various audio transcoding tools
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib

@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very simple Chinese chess program
 
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro \

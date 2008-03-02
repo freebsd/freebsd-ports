@@ -11,7 +11,7 @@ CATEGORIES=	graphics kde
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that can detect edges in images
 
 USE_QT_VER=	4

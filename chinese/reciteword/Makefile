@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}-books-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}-dicts-0.8.2.tar.bz2
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Education software to help people to study English
 
 GNU_CONFIGURE=	yes

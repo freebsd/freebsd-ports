@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	stardict
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean and foreign language Dictionaries for StarDict
 
 RUN_DEPENDS=	stardict:${PORTSDIR}/textproc/stardict2
