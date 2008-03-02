@@ -11,14 +11,13 @@ PORTVERSION=	6.5
 PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	gdb/releases
+MASTER_SITE_SUBDIR=	gdb/old-releases
 DISTNAME=	gdb-${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	PowerPC simulator (PSIM) running in the GNU GDB 6
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-psim --target=powerpc-freebsd-elf \
 		--program-suffix=psim \
