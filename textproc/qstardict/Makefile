@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qstardict
-PORTVERSION=	0.05
-PORTREVISION=	1
+PORTVERSION=	0.08
 CATEGORIES=	textproc
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
@@ -23,6 +22,20 @@ DICPATH=	${PREFIX}/share/stardict/dic
 
 PORTDOCS=	AUTHORS COPYNG ChangeLog INSTALL README THANKS
 
+OPTIONS=	DBUS "Enable D-BUS support" on
+
+.include <bsd.port.pre.mk>
+.if defined(WITHOUT_NLS)
+QMAKE_ARGS+=	NO_TRANSLATIONS=1
+.endif
+
+.if defined(WITHOUT_DBUS)
+QMAKE_ARGS+=	NO_DBUS=1
+.else
+#QMAKE_ARGS+=	"CONFIG+=qdbus"
+LIB_DEPENDS+=	QtDBus.4:${PORTSDIR}/devel/dbus-qt4
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|g" \
 		${WRKSRC}/qstardict.pro
@@ -30,7 +43,7 @@ post-patch:
 		${WRKSRC}/src/dictcore.cpp
 
 post-configure:
-	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE}
+	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKE_ARGS}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -41,4 +54,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
