@@ -17,7 +17,8 @@ MASTER_SITE_SUBDIR=	gnucash
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Quicken-like money and finance manager
 
-BUILD_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile
+BUILD_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
+    		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ofx.3:${PORTSDIR}/finance/libofx \
 		gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38 \
