@@ -4514,7 +4514,6 @@ guesswork-classic	ports/japanese/guesswork-classic
 guichan		ports/devel/guichan
 guikachu	ports/devel/guikachu
 guile		ports/lang/guile
-guile-gnome	ports/x11-toolkits/guile-gnome
 guile-gtk	ports/x11-toolkits/guile-gtk
 guile-lib	ports/devel/guile-lib
 guile-www	ports/www/guile-www
