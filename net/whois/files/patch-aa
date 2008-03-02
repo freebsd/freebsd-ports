@@ -1,5 +1,5 @@
---- Makefile.orig      Mon Nov 28 20:06:56 2005
-+++ Makefile   Mon Nov 28 20:06:38 2005
+--- Makefile.orig	Thu Jan 10 22:19:40 2008
++++ Makefile	Thu Jan 10 22:19:38 2008
 @@ -6,23 +6,23 @@
  #whois_LDADD += -lnsl -lsocket
  
@@ -31,10 +31,10 @@
  
  PERL := perl
  
-@@ -49,9 +49,8 @@
- 	$(PERL) -w make_tld_serv.pl < tld_serv_list > tld_serv.h
- 
+@@ -55,9 +55,8 @@
  install: whois
+ 	install -d $(BASEDIR)$(prefix)/bin/
+ 	install -d $(BASEDIR)$(prefix)/share/man/man1/
 -	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
 -	install -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
 -	cd po && $(MAKE) $@
@@ -42,4 +42,4 @@
 +	install -m 0644 whois.1 ${PREFIX}/man/man1/mwhois.1
  
  install-mkpasswd: mkpasswd
-       install -m 0755 mkpasswd $(BASEDIR)$(prefix)/bin/
+ 	install -d $(BASEDIR)$(prefix)/bin/
