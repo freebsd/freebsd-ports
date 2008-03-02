@@ -27,4 +27,9 @@ USE_LDCONFIG=	yes
 MAN1=	dhcp-client.1 dhcp-sniff.1
 INFO=	dhcp-agent
 
+BROKEN=	does not build with guile-1.8
+DEPRECATED=	Dhcp-agent has not been updated since 2003, it does \
+		not build with guile-1.8, and it is unmaintained
+EXPIRATION_DATE=	2008-04-02
+
 .include <bsd.port.mk>
