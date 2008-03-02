@@ -9,7 +9,7 @@ PORTNAME=	wmmemload
 PORTVERSION=	0.1.6
 PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://www.markstaggs.net/wmmemload/
+MASTER_SITES=	http://markstaggs.net/wmmemload-download/
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	An dockapp for windowmaker that displays the current mem/swap usage
