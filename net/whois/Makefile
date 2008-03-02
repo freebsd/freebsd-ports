@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	whois
-PORTVERSION=	4.7.22
+PORTVERSION=	4.7.24
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -37,6 +37,7 @@ NO_PO=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|prefix\=/usr/local|prefix\=${PREFIX}|g ; \
 		s|/usr/local|${LOCALBASE}|g ; \
+		s|share/man/|man/|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|/usr/share|${PREFIX}/share|g" ${WRKSRC}/po/Makefile
 	@if [ -n "${NO_PO}" ]; \
