@@ -31,10 +31,6 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BROKEN=		does not compile
-.endif
-
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -O1 -I${WRKSRC}/include -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
