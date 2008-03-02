@@ -10,7 +10,7 @@ PORTVERSION=	1.6.0
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ 2.0 terminal emulator with tabs
 
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib

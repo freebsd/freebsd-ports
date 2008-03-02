@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vector based 2D animation package
 
 LIB_DEPENDS=	xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26 \

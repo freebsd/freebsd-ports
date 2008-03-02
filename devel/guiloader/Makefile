@@ -11,7 +11,7 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	crow-designer
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ binding to the GuiLoader library
 
 USE_BZIP2=	yes

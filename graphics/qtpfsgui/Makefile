@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical user interface that provides a workflow for HDR imaging
 
 LIB_DEPENDS=	exiv2.0:${PORTSDIR}/graphics/exiv2 \

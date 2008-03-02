@@ -12,7 +12,7 @@ MASTER_SITES=	http://qlabels.p34.net/files/ \
 		http://www.sourcefiles.org/Utilities/Printer/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A labels and business cards creating and printing software
 
 USE_BZIP2=	yes

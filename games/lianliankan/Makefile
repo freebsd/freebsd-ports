@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	llk-linux
 DISTNAME=	llk_linux-${DISTVERSION}
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scarce recreation game
 
 USE_AUTOTOOLS=	automake:19:env

@@ -11,7 +11,7 @@ CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=synfig
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector-based 2D animation software package
 
 LIB_DEPENDS=	synfig.0:${PORTSDIR}/devel/synfig \

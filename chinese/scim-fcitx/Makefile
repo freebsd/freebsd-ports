@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 PKGNAMESUFFIX=	-fcitx
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}.${PORTVERSION}
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SCIM IMEngine module for fcitx
 
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim

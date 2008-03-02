@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=catkin
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blog management application based on Qt 4
 
 USE_QT_VER=	4

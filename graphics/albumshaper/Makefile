@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A drag-n-drop hierarchal photo album creation
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

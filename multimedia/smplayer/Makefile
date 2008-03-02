@@ -10,7 +10,7 @@ DISTVERSION=	0.5.21
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	A complete front-end based on QT3 for mplayer
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \

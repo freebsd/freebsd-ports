@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	PokerTH-${PORTVERSION}-1.src
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A poker game written in C++/QT4
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \

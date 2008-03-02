@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://speedcrunch.googlecode.com/files/
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A desktop calculator for power users
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake

@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://chmsee.gro.clinux.org/
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A viewer for Microsoft Help "CHM" files
 
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \

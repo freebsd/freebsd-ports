@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	finance
 MASTER_SITES=	SF
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A peronal accounting software
 
 USE_KDELIBS_VER=3

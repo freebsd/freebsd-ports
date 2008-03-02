@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	synfig
 DISTNAME=	ETL-${DISTVERSION}
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voria Extended Class and Template Library
 
 GNU_CONFIGURE=	yes

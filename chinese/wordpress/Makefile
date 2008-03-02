@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-zh
 PKGNAMEPREFIX=	zh-
 DISTNAME=	${PORTNAME}_${PORTVERSION}_zh_CN
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

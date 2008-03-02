@@ -11,7 +11,7 @@ CATEGORIES=	net-im python
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-r801
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MSN Messenger client
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \

@@ -11,7 +11,7 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	crow-designer
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-performance and compact GuiXml loader library
 
 LIB_PC_DEPENDS=	guiloader.pc:${PORTSDIR}/devel/guiloader

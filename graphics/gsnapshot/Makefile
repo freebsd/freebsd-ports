@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gtk+ based screen capture
 
 USE_AUTOTOOLS=	automake:15:env libtool:15

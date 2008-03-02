@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.bluedj.com/download/src/
 DISTNAME=	source-${PORTVERSION}
 #EXTRACT_SUFX=	.zip
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	bluedj contains many popular online games
 
 NO_BUILD=	yes

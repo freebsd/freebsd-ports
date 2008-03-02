@@ -13,7 +13,7 @@ MASTER_SITES=	http://qdevelop.org/download/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 DISTNAME=	QDevelop-${PORTVERSION:C/.([0-9])$/-\1/}
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A development environment entirely dedicated to Qt4
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake

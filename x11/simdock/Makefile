@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	relaxbsd@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast and customizable dockbar
 
 GNU_CONFIGURE=	yes
