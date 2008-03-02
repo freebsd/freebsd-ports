@@ -10,7 +10,7 @@ lib/audacious/Effect/stereo.so
 lib/audacious/Effect/voice_removal.so
 lib/audacious/General/alarm.so
 %%AOSDPLUGIN%%lib/audacious/General/aosd.so
-lib/audacious/General/gnomeshortcuts.so
+%%DBUS%%lib/audacious/General/gnomeshortcuts.so
 lib/audacious/General/hotkey.so
 %%LIRCPLUGIN%%lib/audacious/General/lirc.so
 lib/audacious/General/song_change.so
