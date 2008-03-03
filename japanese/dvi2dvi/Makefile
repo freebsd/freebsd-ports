@@ -9,8 +9,8 @@ PORTNAME=	dvi2dvi
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/ \
-		ftp://ftp.math.s.chiba-u.ac.jp/tex/tex/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	hrs
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		web2c-7.2a.tar.gz
 
