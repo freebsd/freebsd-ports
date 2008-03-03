@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.38
+PORTVERSION=	0.39
 CATEGORIES=	devel
 MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 
@@ -14,6 +14,7 @@ MAINTAINER=	lapo@lapo.it
 COMMENT=	A distributed version control system with digital signatures
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 SUB_FILES=	pkg-message
 USE_PERL5_BUILD=yes
@@ -24,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
+CONFIGURE_ARGS+=	--with-system-pcre
 
 PLIST_FILES=	bin/mtn share/zsh/site-functions/_mtn \
 		"@unexec [ -f %D/bin/zsh ] || rmdir %D/share/zsh/site-functions 2>/dev/null || true" \
