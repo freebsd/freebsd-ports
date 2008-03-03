@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.9.0.20080223
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/trunk-${DISTVERSION:S/0.9.0.//}-0024/
@@ -484,7 +484,7 @@ RUN_DEPENDS+=	transcode:${PORTSDIR}/multimedia/transcode
 .endif
 
 .if !defined(WITHOUT_HTTPD)
-LIB_DEPENDS+=	gnutls.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--enable-gnutls
 .else
 CONFIGURE_ARGS+=--disable-gnutls

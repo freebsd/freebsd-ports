@@ -7,7 +7,7 @@
 
 PORTNAME=	libnewmail
 PORTVERSION=	0.3
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	mail
 MASTER_SITES=	http://0pointer.de/lennart/projects/libnewmail/ \
 		http://www.stud.uni-hamburg.de/~lennart/projects/libnewmail/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://0pointer.de/lennart/projects/libnewmail/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic mail checking library
 
-LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls \
 		oop.4:${PORTSDIR}/devel/liboop
 
 USE_AUTOTOOLS=	libltdl:15 libtool:15
