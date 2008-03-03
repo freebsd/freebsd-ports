@@ -785,6 +785,7 @@
     SUBDIR += xspy
     SUBDIR += xyssl
     SUBDIR += yafic
+    SUBDIR += yapet
     SUBDIR += yersinia
     SUBDIR += zebedee
     SUBDIR += zombiezapper
