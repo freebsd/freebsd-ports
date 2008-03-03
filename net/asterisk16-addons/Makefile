@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk-addons
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.6
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/releases/
 
@@ -31,6 +31,12 @@ PLIST_SUB+=	SAMPLE_CONFIG=""
 .else
 PLIST_SUB+=	SAMPLE_CONFIG="@comment "
 .endif
+
+pre-configure:
+	if ${GREP} -sq fixup_codecs ${LOCALBASE}/include/asterisk/channel.h; \
+	then \
+		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/codecnego.diff; \
+	fi
 
 post-install:
 .if defined(WITH_SAMPLE_CONFIG)
