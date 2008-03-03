@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	2.6.9
-PORTREVISION=	2
+PORTVERSION=	3.0.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -27,7 +26,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --enable-ipv6 \
 		--with-rsyncd-conf=${PREFIX}/etc/rsyncd.conf
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-PATCH_STRIP=	-p1
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
@@ -37,10 +35,6 @@ MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
 OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
-		TIMELIMIT "Time limit patch" on \
-		FLAGSP "File system flags support patch, adds --flags" off \
-		ATIMES "Preserve file atimes; adds --atimes" off \
-		ACLSP "ACL support patch, adds --acls" off \
 		SSH "Use SSH instead of RSH" on
 
 .include <bsd.port.pre.mk>
@@ -51,42 +45,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 .else
 CONFIGURE_ARGS+=	--with-included-popt
-.endif
-
-.if !defined(WITHOUT_TIMELIMIT)
-EXTRA_PATCHES+=	${WRKSRC}/patches/time-limit.diff
-.endif
-
-.if defined(WITH_FLAGSP)
-EXTRA_PATCHES+=	${WRKSRC}/patches/flags.diff
-.endif
-
-# The atimes patch works only by itself; it does not patch cleanly when used
-# alongside timelimit, flags, or acls.
-#
-.if defined(WITH_ATIMES)
-EXTRA_PATCHES+=	${WRKSRC}/patches/atimes.diff
-
-.if defined(WITH_ACLSP)
-IGNORE=		ACLs and atimes patches don't work together; please re-run 'make config' and disable one of them
-.endif
-
-.if !defined(WITHOUT_TIMELIMIT)
-IGNORE=		timelimit and atimes patches don't work together; please re-run 'make config' and disable one of them
-.endif
-
-.if defined(WITH_FLAGSP)
-IGNORE=		Flags and atimes patches don't work together; please re-run 'make config' and disable one of them
-.endif
-.endif
-
-.if defined(WITH_ACLSP)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patches-acls.diff ${WRKSRC}/patches/acls.diff
-CONFIGURE_ARGS+=--enable-acl-support
-
-.if defined(WITH_FLAGSP)
-IGNORE=		can't be built: Flags and ACLs patches can't be both enabled at the same time. Please rerun 'make config' and disable one of them
-.endif
 .endif
 
 .if defined(WITHOUT_SSH)
