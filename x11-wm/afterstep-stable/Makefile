@@ -68,6 +68,9 @@ CONFIGURE_ARGS+=	--disable-savewindows
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700000
+BROKEN=		Does not build on FreeBSD 7.x and higher
+.endif
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not build on sparc64
 .endif
