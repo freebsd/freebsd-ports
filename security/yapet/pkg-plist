@@ -1,0 +1,12 @@
+bin/yapet
+share/applications/yapet.desktop
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/DESIGN
+%%DOCSDIR%%/README
+%%DOCSDIR%%/html/yapet.html
+%%DOCSDIR%%/html/DESIGN.html
+%%DOCSDIR%%/html/README.html
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
