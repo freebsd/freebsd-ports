@@ -457,5 +457,6 @@
 @dirrm %%HORDIR%%/js/src
 @dirrm %%HORDIR%%/js
 @dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/calendars
 @dirrmtry %%HORDIR%%
 @dirrmtry %%HORBAS%%
