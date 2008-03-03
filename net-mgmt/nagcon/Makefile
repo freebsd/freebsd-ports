@@ -6,16 +6,35 @@
 #
 
 PORTNAME=	nagcon
-PORTVERSION=	0.0.15
-PORTREVISION=	1
+PORTVERSION=	0.0.26
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.vanheusden.com/nagcon/
+MASTER_SITES=	http://www.vanheusden.com/nagcon/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ehaupt
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rand@meridian-enviro.com
-COMMENT=	Nagios 2.0 console monitor
+COMMENT=	Nagios console monitor
 
-USE_GMAKE=	YES
+LIB_DEPENDS=	strfunc.9:${PORTSDIR}/devel/libstrfunc
+
 PLIST_FILES=	bin/nagcon
+
+CFILES=		error.c
+CPPFILES=	utils.cpp br.cpp nc.cpp pl.cpp
+
+CFLAGS+=	-DVERSION=\"${PORTVERSION}\" -I${LOCALBASE}/include
+LDFLAGS+=	-lncurses -lstdc++ -L${LOCALBASE}/lib -lstrfunc
+
+do-build:
+	${CC} ${CFLAGS} -c -o ${WRKSRC}/${CFILES:C/\.c//}.o ${WRKSRC}/${CFILES}
+.for f in ${CPPFILES}
+	${CXX} ${CFLAGS} -c -o ${WRKSRC}/${f:C/\.cpp//}.o ${WRKSRC}/${f}
+.endfor
+	${CC} ${LDFLAGS} ${WRKSRC}/error.o ${CPPFILES:C/(.*)\.cpp/${WRKSRC}\/\1.o/} \
+		-o ${WRKSRC}/${PORTNAME}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
