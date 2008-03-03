@@ -1,15 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config xmlns="http://mediatomb.cc/0.10.0/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mediatomb.cc/0.10.0/config http://mediatomb.cc/0.10.0/config.xsd">
+<config version="1" xmlns="http://mediatomb.cc/config/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mediatomb.cc/config/1 http://mediatomb.cc/config/1.xsd">
   <server>
     <ui enabled="yes">
-      <accounts enabled="no" session-timeout="30"/>
+      <accounts enabled="no" session-timeout="30">
+        <account user="mediatomb" password="mediatomb"/>
+      </accounts>
     </ui>
     <name>MediaTomb</name>
+    <udn/>
     <home>%%MEDIATOMB_DIR%%</home>
     <webroot>%%DATADIR%%/web</webroot>
-    <storage driver="sqlite3">
-      <database-file>mediatomb.db</database-file>
+    <storage>
+      <sqlite3 enabled="yes">
+        <database-file>mediatomb.db</database-file>
+      </sqlite3>
+      <mysql enabled="no">
+        <host>localhost</host>
+        <username>mediatomb</username>
+        <database>mediatomb</database>
+      </mysql>
     </storage>
+    <protocolInfo extend="no"/><!-- For PS3 support change to "yes" -->
+    <!--
+       Uncomment the lines below to get rid of jerky avi playback on the
+       DSM320 or to enable subtitles support on the DSM units
+    -->
+    <!--
+    <custom-http-headers>
+      <add header="X-User-Agent: redsonic"/>
+    </custom-http-headers>
+
+    <manufacturerURL>redsonic.com</manufacturerURL>
+    <modelNumber>105</modelNumber>
+    -->
+    <!-- Uncomment the line below if you have a Telegent TG100 -->
+    <!--
+       <upnp-string-limit>101</upnp-string-limit>
+    -->
   </server>
   <import hidden-files="no">
     <scripting script-charset="UTF-8">
@@ -33,10 +60,14 @@
         <map from="wmx" to="video/x-ms-wmx"/>
         <map from="m3u" to="audio/x-mpegurl"/>
         <map from="pls" to="audio/x-scpls"/>
+        <map from="flv" to="video/x-flv"/>
+        <!-- Uncomment the line below for PS3 divx support -->
+        <!-- <map from="avi" to="video/divx"/> -->
+        <!-- Uncomment the line below for D-Link DSM / ZyXEL DMA-1000 -->
+        <!-- <map from="avi" to="video/avi"/> -->
       </extension-mimetype>
       <mimetype-upnpclass>
         <map from="audio/*" to="object.item.audioItem.musicTrack"/>
-        <map from="application/ogg" to="object.item.audioItem.musicTrack"/>
         <map from="video/*" to="object.item.videoItem"/>
         <map from="image/*" to="object.item.imageItem"/>
       </mimetype-upnpclass>
@@ -47,7 +78,35 @@
         <treat mimetype="image/jpeg" as="jpg"/>
         <treat mimetype="audio/x-mpegurl" as="playlist"/>
         <treat mimetype="audio/x-scpls" as="playlist"/>
+        <treat mimetype="audio/x-wav" as="pcm"/>
+        <treat mimetype="video/x-msvideo" as="avi"/>
       </mimetype-contenttype>
     </mappings>
   </import>
+  <transcoding enabled="no">
+    <mimetype-profile-mappings>
+      <transcode mimetype="video/x-flv" using="vlcmpeg"/>
+      <transcode mimetype="application/ogg" using="vlcmpeg"/>
+      <transcode mimetype="application/ogg" using="oggflac2raw"/>
+      <transcode mimetype="audio/x-flac" using="oggflac2raw"/>
+    </mimetype-profile-mappings>
+    <profiles>
+      <profile name="oggflac2raw" enabled="no" type="external">
+        <mimetype>audio/L16</mimetype>
+        <accept-url>no</accept-url>
+        <first-resource>yes</first-resource>
+        <accept-ogg-theora>no</accept-ogg-theora>
+        <agent command="ogg123" arguments="-d raw -f %out %in"/>
+        <buffer size="1048576" chunk-size="131072" fill-size="262144"/>
+      </profile>
+      <profile name="vlcmpeg" enabled="no" type="external">
+        <mimetype>video/mpeg</mimetype>
+        <accept-url>yes</accept-url>
+        <first-resource>yes</first-resource>
+        <accept-ogg-theora>yes</accept-ogg-theora>
+        <agent command="vlc" arguments="-I dummy %in --sout #transcode{venc=ffmpeg,vcodec=mp2v,vb=4096,fps=25,aenc=ffmpeg,acodec=mpga,ab=192,samplerate=44100,channels=2}:standard{access=file,mux=ps,dst=%out} vlc:quit"/>
+        <buffer size="14400000" chunk-size="512000" fill-size="120000"/>
+      </profile>
+    </profiles>
+  </transcoding>
 </config>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediatomb
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	net multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,8 @@ CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		CFLAGS="${CFLAGS}"
+LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2 \
+		curl.4:${PORTSDIR}/ftp/curl
 USE_RC_SUBR=	mediatomb.sh
 
 # --- configurable variables ---
@@ -51,8 +53,11 @@ OPTIONS=	SQLITE3 "sqlite3 support" on \
 		MYSQL "MySQL support" on \
 		JS "JavaScript (SpiderMonkey) support" on \
 		LIBEXIF "libexif support" on \
-		ID3LIB "id3lib support" on \
-		TAGLIB "taglib support" off \
+		TAGLIB "taglib support" on \
+		FFMPEG "ffmpeg metadata extraction support" on \
+		EXTERNAL_TRANSCODING "external transcoding support" on \
+		CURL "curl support" on \
+		ID3LIB "id3lib support" off \
 		LIBEXTRACTOR "libextractor support" off \
 		DEBUG "debug build" off
 
@@ -98,6 +103,42 @@ LIB_DEPENDS+=		exif:${PORTSDIR}/graphics/libexif
 CONFIGURE_ARGS+=	--disable-libexif
 .endif
 
+.if defined(WITH_EXTERNAL_TRANSCODING)
+CONFIGURE_ARGS+=	--enable-external-transcoding
+.else
+CONFIGURE_ARGS+=	--disable-external-transcoding
+.endif
+
+# CURL is only useful in combination with EXTERNAL_TRANSCODING
+.if defined(WITH_CURL) && defined(WITH_EXTERNAL_TRANSCODING)
+CONFIGURE_ARGS+=	--enable-curl \
+			--with-curl-cfg="${LOCALBASE}/bin/curl-config"
+.else
+CONFIGURE_ARGS+=	--disable-curl
+.endif
+
+.if defined(WITH_FFMPEG) && defined(WITH_LIBEXTRACTOR)
+IGNORE=	cannot be compiled with both, ffmpeg and libextractor. Please (re)run 'make config' and deselect either FFMPEG or LIBEXTRACTOR
+.endif
+
+.if defined(WITH_FFMPEG)
+CONFIGURE_ARGS+=	--enable-ffmpeg \
+			--with-ffmpeg-h="${LOCALBASE}/include" \
+			--with-ffmpeg-libs="${LOCALBASE}/lib"
+LIB_DEPENDS+=		avformat:${PORTSDIR}/multimedia/ffmpeg
+.else
+CONFIGURE_ARGS+=	--disable-ffmpeg
+.endif
+
+.if defined(WITH_LIBEXTRACTOR)
+CONFIGURE_ARGS+=	--enable-libextractor \
+			--with-extractor-h="${LOCALBASE}/include" \
+			--with-extractor-libs="${LOCALBASE}/lib"
+LIB_DEPENDS+=		extractor:${PORTSDIR}/textproc/libextractor
+.else
+CONFIGURE_ARGS+=	--disable-libextractor
+.endif
+
 .if defined(WITH_ID3LIB) && defined(WITH_TAGLIB)
 IGNORE=	cannot be compiled with both, taglib and id3lib. Please (re)run 'make config' and deselect either TAGLIB or ID3LIB
 .endif
@@ -117,15 +158,6 @@ CONFIGURE_ARGS+=	--enable-taglib \
 LIB_DEPENDS+=		tag:${PORTSDIR}/audio/taglib
 .else
 CONFIGURE_ARGS+=	--disable-taglib
-.endif
-
-.if defined(WITH_LIBEXTRACTOR)
-CONFIGURE_ARGS+=	--enable-libextractor \
-			--with-extractor-h="${LOCALBASE}/include" \
-			--with-extractor-libs="${LOCALBASE}/lib"
-LIB_DEPENDS+=		extractor:${PORTSDIR}/textproc/libextractor
-.else
-CONFIGURE_ARGS+=	--disable-libextractor
 .endif
 
 .if defined(WITH_DEBUG)
