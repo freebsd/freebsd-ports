@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_FREEBSD_ORG}
 MASTER_SITE_SUBDIR=development/CVSup/snapshots
 DISTNAME=	cvsup-snap-${PORTVERSION}
 
-MAINTAINER=	jdp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	General network file distribution system optimized for CVS (GUI version)
 
 CONFLICTS?=	cvsup-without-gui-[0-9]*
