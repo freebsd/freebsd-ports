@@ -42,8 +42,6 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 #
 NVVERSION?=	${DISTVERSION:S/.//g}00
 
-EXTRA_PATCHES=	${PATCHDIR}/7667-patch-lib::Makefile
-
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM} == "xorg"
