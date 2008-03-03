@@ -74,7 +74,7 @@ bin/mediatomb
 %%DATADIR%%/web/js/items.js
 %%DATADIR%%/web/js/md5.js
 %%DATADIR%%/web/js/nanotree.js
-%%DATADIR%%/web/js/pngbehavior.htc
+%%DATADIR%%/web/js/iepngfix.htc
 %%DATADIR%%/web/js/prototype.js
 %%DATADIR%%/web/js/tasks.js
 %%DATADIR%%/web/js/tools.js
