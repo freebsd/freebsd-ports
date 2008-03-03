@@ -813,6 +813,7 @@ search/htdig/scripts/wwwoffle-htdig-lasttime
 search/htdig/scripts/wwwoffle-htfuzzy
 search/htdig/scripts/wwwoffle-htsearch
 search/hyperestraier/conf/estseek.conf
+search/hyperestraier/conf/estseek.help
 search/hyperestraier/conf/estseek.tmpl
 search/hyperestraier/conf/estseek.top
 search/hyperestraier/scripts/wwwoffle-estcmd-full

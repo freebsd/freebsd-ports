@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wwwoffle
-PORTVERSION=	2.9a
-PORTREVISION=	3
+PORTVERSION=	2.9d
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://www.gedanken.freeserve.co.uk/download-wwwoffle/
+MASTER_SITES=	http://www.gedanken.demon.co.uk/download-wwwoffle/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sumikawa@FreeBSD.org
@@ -31,7 +30,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS=-lmd
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc --with-ipv6 \
 		--with-gnutls=${PREFIX} \
-		--with-spooldir=${WWWOFFLE_SPOOL}
+		--with-spooldir=${WWWOFFLE_SPOOL} \
+		--mandir=${MANPREFIX}/man
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
