@@ -7,11 +7,13 @@
 #
 
 PORTNAME=	wtf
-PORTVERSION=	20080114
+PORTVERSION=	20080303
 CATEGORIES=	games
-MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/
+MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/ \
+		LOCAL
+MASTER_SITE_SUBDIR=	jadawin
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Translates common Internet acronyms
 
 NO_BUILD=	yes
