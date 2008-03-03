@@ -7,6 +7,7 @@
 
 PORTNAME=	wput
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -14,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Uploads files or directories to a ftpserver with support of resuming
 
-LIB_DEPENDS=	gnutls.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.26:${PORTSDIR}/security/gnutls
 
 PORTDOCS=	ABOUT-NLS COPYING ChangeLog INSTALL TODO
 PORTEXAMPLES=	USAGE.examples USAGE.resumehandling USAGE.urlhandling \

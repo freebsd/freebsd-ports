@@ -7,6 +7,7 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -124,7 +125,7 @@ PLIST_SUB+=		SA_PLUG="@comment "
 .endif
 .if defined(WITH_GNUTLS)
 CONFIGURE_ARGS+=	--enable-gnutls --disable-openssl
-LIB_DEPENDS+=		gnutls.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.26:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
