@@ -710,7 +710,6 @@ pkg_backup() {
 
 pkg_time() {
 	echo "Packages (date of installation):"
-	echo ""
 	/bin/ls -lUTt /var/db/pkg/ | awk -F' ' '{ print $6,$7,$8,$9,$10 }' | cut -d/ -f1,5 
 	echo "***`pkg_info | wc -l` packages installed     ***"
 	exit 0
