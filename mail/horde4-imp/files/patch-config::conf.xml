@@ -1,16 +1,15 @@
---- config/conf.xml.orig	2007-11-07 19:50:59.000000000 -0900
-+++ config/conf.xml	2007-12-03 20:54:11.000000000 -0900
-@@ -7,7 +7,8 @@
-    <configswitch name="driver" required="false" desc="Choose a Spell Checking backend">
-     <case name="" desc="None" />
+--- config/conf.xml.orig	2008-01-02 22:07:57.000000000 -0900
++++ config/conf.xml	2008-03-03 10:49:08.000000000 -0900
+@@ -9,7 +9,7 @@
      <case name="aspell" desc="aspell (command line)">
--     <configstring name="path" desc="Enter the location of the aspell or ispell binary" />
-+     <configstring name="path" desc="Enter the location of the aspell or ispell 
-+     binary">%%ASPELL%%</configstring>
+      <configsection name="params">
+       <configstring name="path" required="false" desc="Enter the location of
+-      the aspell binary" />
++      the aspell binary">%%ASPELL%%</confstring>
+      </configsection>
      </case>
     </configswitch>
-   </configsection>
-@@ -16,7 +17,7 @@
+@@ -19,7 +19,7 @@
     <configstring name="gnupg" required="false" desc="If you want users to have
     the option of using the GNU Privacy Guard program to decrypt/encrypt PGP
     files, enter the location of the 'gpg' binary here.  If this is empty this
@@ -19,7 +18,7 @@
     <configmultienum name="gnupg_keyserver" required="false" desc="The address
     of the public PGP keyserver(s) to use.">pgp.mit.edu
      <values>
-@@ -30,7 +31,7 @@
+@@ -33,7 +33,7 @@
     <configstring name="openssl_cafile" required="false" desc="The location of
     the root certificates bundle, e.g. /etc/ssl/certs. See
     http://www.php.net/manual/en/ref.openssl.php#openssl.cert.verification for

@@ -6,11 +6,13 @@
 %%HORDIR%%/config/conf.xml
 %%HORDIR%%/config/filter.txt.dist
 %%HORDIR%%/config/header.php.dist
+%%HORDIR%%/config/hooks.php.dist
 %%HORDIR%%/config/menu.php.dist
 %%HORDIR%%/config/mime_drivers.php.dist
 %%HORDIR%%/config/motd.php.dist
 %%HORDIR%%/config/prefs.php.dist
 %%HORDIR%%/config/servers.php.dist
+%%HORDIR%%/config/spelling.php.dist
 %%HORDIR%%/config/trailer.txt.dist
 %%HORDIR%%/contacts.php
 %%HORDIR%%/fetchmail.php
@@ -19,7 +21,6 @@
 %%HORDIR%%/folders.php
 %%HORDIR%%/imple.php
 %%HORDIR%%/index.php
-%%HORDIR%%/js/ContactAutoComplete.js
 %%HORDIR%%/js/KeyNavList.js
 %%HORDIR%%/js/SpellChecker.js
 %%HORDIR%%/js/acl.js
@@ -42,7 +43,6 @@
 %%HORDIR%%/js/scriptaculous.js
 %%HORDIR%%/js/search.js
 %%HORDIR%%/js/slider.js
-%%HORDIR%%/js/src/ContactAutoComplete.js
 %%HORDIR%%/js/src/KeyNavList.js
 %%HORDIR%%/js/src/SpellChecker.js
 %%HORDIR%%/js/src/acl.js
@@ -73,7 +73,6 @@
 %%HORDIR%%/js/unblockImages.js
 %%HORDIR%%/lib/.htaccess
 %%HORDIR%%/lib/Auth/imp.php
-%%HORDIR%%/lib/Block/mailbox.php
 %%HORDIR%%/lib/Block/summary.php
 %%HORDIR%%/lib/Block/tree_folders.php
 %%HORDIR%%/lib/Compose.php
@@ -283,6 +282,7 @@
 %%HORDIR%%/scripts/bounce_spam.php
 %%HORDIR%%/scripts/custom_login.php
 %%HORDIR%%/scripts/sql/imp.sql
+%%HORDIR%%/scripts/sql/imp.xml
 %%HORDIR%%/scripts/upgrades/convert_vfolders.php
 %%HORDIR%%/search.php
 %%HORDIR%%/smime.php
@@ -303,6 +303,8 @@
 %%HORDIR%%/templates/folders/folders_size.html
 %%HORDIR%%/templates/folders/head.html
 %%HORDIR%%/templates/folders/import.html
+%%HORDIR%%/templates/javascript/addressesBlocks.js
+%%HORDIR%%/templates/javascript/popup.js
 %%HORDIR%%/templates/javascript_defs.php
 %%HORDIR%%/templates/login/login.html
 %%HORDIR%%/templates/login/mobile.inc
@@ -478,6 +480,7 @@
 %%HORDIR%%/themes/silver/graphics/spacer_red.png
 %%HORDIR%%/themes/silver/graphics/spellcheck.png
 %%HORDIR%%/themes/silver/screen.css
+%%HORDIR%%/themes/silver/themed_graphics
 %%HORDIR%%/themes/simplex/screen.css
 %%HORDIR%%/themes/sun/screen.css
 %%HORDIR%%/themes/tango-blue/graphics/addressbook-blue.png
@@ -558,6 +561,7 @@
 %%HORDIR%%/themes/tango-blue/graphics/spellcheck.png
 %%HORDIR%%/themes/tango-blue/graphics/za.png
 %%HORDIR%%/themes/tango-blue/screen.css
+%%HORDIR%%/themes/tango-blue/themed_graphics
 %%HORDIR%%/thread.php
 %%HORDIR%%/view.php
 @dirrm %%HORDIR%%/themes/tango-blue/graphics/mime
@@ -607,6 +611,7 @@
 @dirrm %%HORDIR%%/templates/message
 @dirrm %%HORDIR%%/templates/mailbox
 @dirrm %%HORDIR%%/templates/login
+@dirrm %%HORDIR%%/templates/javascript
 @dirrm %%HORDIR%%/templates/folders
 @dirrm %%HORDIR%%/templates/filters
 @dirrm %%HORDIR%%/templates/fetchmail
