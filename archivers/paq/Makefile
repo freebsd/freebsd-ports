@@ -77,30 +77,40 @@ do-build:
 .else
 	${CXX} ${WRKSRC}/${CPPFILE}.cpp ${CXXFLAGS} ${PAQFLAGS} -o ${WRKSRC}/${CPPFILE}
 .endif
+.if ${ARCH} == "alpha" || ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+PLIST_SUB+=	THIRTYTWO="@comment "
+.else
 	${CXX} ${WRKSRC}/${LPAQ}.cpp ${CXXFLAGS} -o ${WRKSRC}/${LPAQ}
 	${CXX} ${WRKSRC}/${LPAQ}.cpp ${CXXFLAGS} -DWIKI -o ${WRKSRC}/${LPAQ}e
 	${CXX} ${WRKSRC}/${LPQ}.cpp ${CXXFLAGS} -o ${WRKSRC}/${LPQ}
 	${CXX} ${WRKSRC}/${PAQ9}.cpp ${CXXFLAGS} -o ${WRKSRC}/${PAQ9}
+PLIST_SUB+=	THIRTYTWO=""
+.endif
 
 do-install:
 .if !exists(${PREFIX}/bin)
 	${MKDIR} ${PREFIX}/bin
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/${CPPFILE} ${PREFIX}/bin
+.if ${ARCH} != "alpha" && ${ARCH} != "amd64" && ${ARCH} != "ia64" && ${ARCH} != "sparc64"
 	${INSTALL_PROGRAM} ${WRKSRC}/${LPAQ} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/${LPAQ}e ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/${LPQ} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/${PAQ9} ${PREFIX}/bin
+.endif
 .if !defined(NOPORTDOCS)
 .if !exists(${DOCSDIR})
 	${MKDIR} ${DOCSDIR}
 .endif
 	${INSTALL_MAN} ${WRKSRC}/${CPPFILE}.cpp ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/Readme.txt ${DOCSDIR}/${CPPFILE}_readme.txt
+.if ${ARCH} != "alpha" && ${ARCH} != "amd64" && ${ARCH} != "ia64" && ${ARCH} != "sparc64"
 	${INSTALL_MAN} ${WRKSRC}/${LPAQ}.cpp ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/${LPQ}.cpp ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/${PAQ9}.cpp ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/Readme.txt ${DOCSDIR}/${CPPFILE}_readme.txt
 	${INSTALL_MAN} ${WRKSRC}/readme.txt ${DOCSDIR}/${LPAQ}_readme.txt
+.endif
 .endif
 	${CAT} ${PKGMESSAGE}
 

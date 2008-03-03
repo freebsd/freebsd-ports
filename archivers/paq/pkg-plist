@@ -1,12 +1,12 @@
 bin/%%CPPFILE%%
-bin/%%LPAQ%%
-bin/%%LPAQ%%e
-bin/%%LPQ%%
-bin/%%PAQ9%%
+%%THIRTYTWO%%bin/%%LPAQ%%
+%%THIRTYTWO%%bin/%%LPAQ%%e
+%%THIRTYTWO%%bin/%%LPQ%%
+%%THIRTYTWO%%bin/%%PAQ9%%
 %%PORTDOCS%%%%DOCSDIR%%/%%CPPFILE%%.cpp
-%%PORTDOCS%%%%DOCSDIR%%/%%LPAQ%%.cpp
-%%PORTDOCS%%%%DOCSDIR%%/%%LPQ%%.cpp
-%%PORTDOCS%%%%DOCSDIR%%/%%PAQ9%%.cpp
 %%PORTDOCS%%%%DOCSDIR%%/%%CPPFILE%%_readme.txt
-%%PORTDOCS%%%%DOCSDIR%%/%%LPAQ%%_readme.txt
+%%THIRTYTWO%%%%PORTDOCS%%%%DOCSDIR%%/%%LPAQ%%.cpp
+%%THIRTYTWO%%%%PORTDOCS%%%%DOCSDIR%%/%%LPQ%%.cpp
+%%THIRTYTWO%%%%PORTDOCS%%%%DOCSDIR%%/%%PAQ9%%.cpp
+%%THIRTYTWO%%%%PORTDOCS%%%%DOCSDIR%%/%%LPAQ%%_readme.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
