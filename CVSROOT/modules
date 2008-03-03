@@ -18018,6 +18018,7 @@ yamsweeper	ports/games/yamsweeper
 yamt		ports/audio/yamt
 yap		ports/graphics/yap
 yape		ports/emulators/yape
+yapet		ports/security/yapet
 yaph		ports/net/yaph
 yaps		ports/comms/yaps
 yarv		ports/lang/yarv
