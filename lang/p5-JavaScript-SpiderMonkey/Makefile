@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	JavaScript-SpiderMonkey
-PORTVERSION=	0.16
+PORTVERSION=	0.19
 CATEGORIES=	lang perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	JavaScript
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kappa@freebsd.org.ua
 COMMENT=	Perl interface to Mozilla JavaScript implementation
 
 LIB_DEPENDS=	js.1:${PORTSDIR}/lang/spidermonkey
-BUILD_DEPENDS=	${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl
+BUILD_DEPENDS=	${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
+		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
