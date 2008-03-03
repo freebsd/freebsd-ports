@@ -47,6 +47,7 @@ OPTIONS=	AUDIOCD		"Enable audiocd plugin"			off \
 		ROOTVIS		"Enable X11 RootWindow vis plugin"      on  \
 		ADPLUG		"Enable AdPlug plugin"			off \
 		VORBIS		"Enable Ogg Vorbis input plugin"	off \
+		FLAC		"Enable FLAC input plugin"		off \
 		WAVPACK 	"Enable WavPack input plugin"		off \
 		AAC		"Enable aac plugin"			on  \
 		SNDFILE 	"Enable sndfile extensions"		off \
@@ -281,6 +282,7 @@ CONFIGURE_ARGS+=--disable-sid
 .endif
 
 .if !defined(WITHOUT_TIMIDITY)
+RUN_DEPENDS+=	timidity:${PORTSDIR}/audio/timidity 
 CONFIGURE_ARGS+=--enable-timidity
 PLIST_SUB+=	TIMIDITYPLUGIN=""
 .else
@@ -375,10 +377,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$EGREP|egrep|g; \
 		s| -ldl||g' ${WRKSRC}/configure
-##cpp complains about to many input files otherwise:
-#.for i in console sexypsf alac vtx madplug adplug vorbis flacng wavpack aac modplug wma sid timidity tta esd jack OSS filewriter audiocompress cdaudio-ng
-#		@${ECHO} ' ' > ${WRKSRC}/src/${i}/.deps
-#.endfor
+	@${REINPLACE_CMD} -e 's|/etc/|${LOCALBASE}/lib/|g' \
+		${WRKSRC}/src/timidity/xmms-timidity.c
 
 pre-configure:
 .if defined(WITH_AUDIOCD) && !exists(${LOCALBASE}/lib/libcdio_cdda.so)

@@ -21,7 +21,7 @@ lib/audacious/Input/alac.so
 %%AUDIOCDPLUGIN%%lib/audacious/Input/cdaudio-ng.so
 lib/audacious/Input/console.so
 lib/audacious/Input/cuesheet.so
-%%VORBISPLUGIN%%lib/audacious/Input/flacng.so
+%%FLACPLUGIN%%lib/audacious/Input/flacng.so
 %%MP3PLUGIN%%lib/audacious/Input/madplug.so
 lib/audacious/Input/metronom.so
 %%MODPLUG%%lib/audacious/Input/modplug.so
@@ -41,6 +41,7 @@ lib/audacious/Input/wav.so
 %%ESDPLUGIN%%lib/audacious/Output/ESD.so
 %%ARTSPLUGIN%%lib/audacious/Output/arts.so
 lib/audacious/Output/filewriter.so
+%%JACKPLUGIN%%lib/audacious/Output/jackout.so
 lib/audacious/Output/null.so
 %%NEONPLUGIN%%lib/audacious/Transport/neon.so
 lib/audacious/Transport/stdio.so
