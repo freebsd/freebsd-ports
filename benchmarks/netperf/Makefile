@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netperf
-PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTVERSION=	2.4.4
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.netperf.org/netperf/
 
@@ -24,10 +23,6 @@ SCRIPTS=	arr_script packet_byte_script sctp_stream_script snapshot_script \
 		tcp_range_script tcp_rr_script tcp_stream_script udp_rr_script \
 		udp_stream_script
 
-.include <bsd.port.pre.mk>
-
-BUILD_DEFS+=	USE_INET6
-
 post-patch:
 .for i in ${SCRIPTS}
 	@${REINPLACE_CMD} -e 's^%%PREFIX%%^${PREFIX}^' ${WRKSRC}/doc/examples/$i
@@ -39,4 +34,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/examples/$i ${EXAMPLESDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
