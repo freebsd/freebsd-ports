@@ -9,12 +9,14 @@ or adding
 
 to your /boot/loader.conf.
 
+Note for users of FreeBSD 7.X and above: you MUST edit /boot/loader.conf
+and reboot, kldload'ing nvidia module will NOT do the trick.
+
 If you build this port with WITH_FREEBSD_AGP=yes, make sure you have
-agp.ko kernel module compiled and installed, since nvidia.ko will
-depend on it, or have your kernel compiled with "device agp".  Other-
-wise the nvidia kernel module will not load.  Also, care to specify
-correct ``Option "NvAGP"'' in ``Device'' section of your X11 configu-
-ration file.
+agp.ko kernel module installed and loaded, since nvidia.ko will depend
+on it, or have your kernel compiled with "device agp".  Otherwise the
+nvidia kernel module will not load.  Also, care to specify correct
+``Option "NvAGP"'' in ``Device'' section of your X11 configuration file.
 
 When building with Linux compatibility (WITH_LINUX=yes), make sure
 linux.ko is available as well (or have it compiled in kernel).  It can
