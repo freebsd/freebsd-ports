@@ -9,11 +9,17 @@ PORTNAME=	ezm3
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	lang
-
 MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/development/CVSup/ezm3/:src \
 		http://people.freebsd.org/~peter/ezm3-amd64/:amdb \
 		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/pav/:amdp
 DISTFILES=	ezm3-${PORTVERSION}-src.tar.bz2:src
+DIST_SUBDIR=	ezm3
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Easier, more portable Modula-3 distribution for building CVSup
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -24,18 +30,12 @@ DISTFILES+=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2:amdb \
 DISTFILES+=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2:src
 .endif
 
-MAINTAINER=	jdp@FreeBSD.org
-COMMENT=	Easier, more portable Modula-3 distribution for building CVSup
-
-DIST_SUBDIR=	ezm3
 INSTALL_TARGET=	all
 MAKE_ARGS+=	M3OPTIONS="-DBUILD_ALL -DSHIP_ALL"
 MAN1=		m3bundle.1
 PLIST_SUB+=	ARCH=${ARCH} TARGET=${TARGET} WORDSIZE=${WORDSIZE} \
 		ENDIANESS=${ENDIANESS}
 SCRIPTS_ENV+=	TARGET=${TARGET}
-USE_BZIP2=	yes
-USE_GMAKE=	yes
 
 PROGS=		bin/m3build \
 		bin/m3bundle \
