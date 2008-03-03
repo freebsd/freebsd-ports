@@ -33,8 +33,10 @@ test check:	build
 
 .include <bsd.port.pre.mk>
 
-.if defined(PACKAGE_BUILDING) && ${ARCH} != sparc64
+.if defined(PACKAGE_BUILDING)
+.if ${ARCH} != sparc64 || ${OSVERSION} >= 700055
 pre-install:	test
+.endif
 .endif
 
 .include <bsd.port.post.mk>
