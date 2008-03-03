@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	bpkg
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
