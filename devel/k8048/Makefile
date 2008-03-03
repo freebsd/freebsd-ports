@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	k8048
-PORTVERSION=	0.1
-PORTREVISION=	3
+PORTVERSION=	1.00
 CATEGORIES=	devel
 MASTER_SITES=	http://dev.kewl.org/k8048/
-DISTNAME=	$(PORTNAME)
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Programs Microchip PICs using Velleman K8048 board
 
 USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 #BUILD_DEPENDS+=	gpasm:${PORTSDIR}/devel/gputils
 
