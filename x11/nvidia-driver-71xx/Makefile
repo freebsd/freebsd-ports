@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-DISTVERSION=	71.86.01
+DISTVERSION=	71.86.04
 PORTREVISION=	0
 
 # XXX Should be set in master port XXX

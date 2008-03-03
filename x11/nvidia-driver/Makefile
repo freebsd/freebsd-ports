@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	169.07
+DISTVERSION?=	169.12
 PORTREVISION?=	0			# For consistency with slave ports
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -42,11 +42,7 @@ OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
 #
 NVVERSION?=	${DISTVERSION:S/.//g}00
 
-EXTRA_PATCHES=	${PATCHDIR}/7667-patch-lib::Makefile \
-# Legacy versions still need the locking patch
-.if ${NVVERSION} < 1000000
-EXTRA_PATCHES+=	${PATCHDIR}/${NVVERSION:C/....$//}xx-patch-*
-.endif
+EXTRA_PATCHES=	${PATCHDIR}/7667-patch-lib::Makefile
 
 .include <bsd.port.pre.mk>
 
@@ -107,7 +103,7 @@ post-patch: .SILENT
 		${WRKSRC}/src/nvidia_os.c
 .endif
 # Correct prototypes to fix the build with FreeBSD AGP support
-.if ${NVVERSION} == 1690700
+.if ${NVVERSION} >= 1690700
 	${REINPLACE_CMD} -e '337,338s/(/(nv_stack_t *, /' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
