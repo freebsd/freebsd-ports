@@ -9,7 +9,7 @@ PORTNAME=	fmars
 PORTVERSION=	0.0.207
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.v-lo.krakow.pl/~michal/
+MASTER_SITES=	http://users.v-lo.krakow.pl/~michal/
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Fast Memory Array Redcode Simulator
