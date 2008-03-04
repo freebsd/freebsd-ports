@@ -9,7 +9,7 @@ PORTNAME=	alienblaster
 PORTVERSION=	1.1.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.informatik.uni-bremen.de/~schwardt/alienblaster/
+MASTER_SITES=	http://www.schwardtnet.de/alienblaster/archives/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	alepulver@FreeBSD.org
