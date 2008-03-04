@@ -172,6 +172,11 @@ pre-configure::
 	@${ECHO_MSG} Configuring CUPS with options:
 	@${ECHO_MSG} ${CONFIGURE_ARGS} | fmt
 
+.if defined(WITH_PAM)
+post-configure:
+	${GREP} -v pam_securityserver ${WRKSRC}/conf/pam.darwin  > ${WRKSRC}/conf/pam.std
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/SILENT/d' ${WRKSRC}/Makedefs.in
 	@${REINPLACE_CMD} -e '/share/s|/usr/share|${PREFIX}/share|g' ${WRKSRC}/Makefile
