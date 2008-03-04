@@ -9,7 +9,7 @@ PORTNAME=	viruskiller
 DISTVERSION=	1.0-1
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?type=zip&file=
+MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?proj=viruskiller&type=zip&file=
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An arcade game that relies on quick reflexes
