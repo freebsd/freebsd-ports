@@ -1,3 +1,6 @@
+@unexec if cmp -s %D/etc/ss5/ss5.ha %D/etc/ss5/ss5.ha.default; then rm -f %D/etc/ss5/ss5.ha; fi
+etc/ss5/ss5.ha.default
+@exec [ -f %B/ss5.ha ] || cp %B/%f %B/ss5.ha
 etc/ss5/ss5.conf
 etc/ss5/ss5.passwd
 lib/ss5/mod_authentication.so
