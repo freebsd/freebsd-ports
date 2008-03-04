@@ -9,7 +9,7 @@ PORTNAME=	evq3
 PORTVERSION=	1.0a
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://evolution.quakedev.com/dev/final/
+MASTER_SITES=	http://evolution.quakedev.com/dev/evq3/
 DISTNAME=	${PORTNAME}-final-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pak-${PORTNAME}.pk3
