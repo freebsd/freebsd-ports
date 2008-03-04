@@ -46,6 +46,7 @@ share/aclocal/gnet-2.0.m4
 %%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-unix.html
 %%PORTDOCS%%%%DOCSDIR%%/gnet/gnet-uri.html
 %%PORTDOCS%%%%DOCSDIR%%/gnet/gnet.devhelp
+%%PORTDOCS%%%%DOCSDIR%%/gnet/gnet.devhelp2
 %%PORTDOCS%%%%DOCSDIR%%/gnet/home.png
 %%PORTDOCS%%%%DOCSDIR%%/gnet/index.html
 %%PORTDOCS%%%%DOCSDIR%%/gnet/index.sgml

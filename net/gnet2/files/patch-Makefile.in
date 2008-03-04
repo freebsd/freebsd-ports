@@ -1,10 +1,10 @@
---- Makefile.in.orig	Fri Jun 24 19:01:40 2005
-+++ Makefile.in	Fri Jun 24 19:02:29 2005
-@@ -214,7 +214,7 @@
+--- Makefile.in.orig	2008-03-04 11:10:59.000000000 +0100
++++ Makefile.in	2008-03-04 15:13:47.000000000 +0100
+@@ -265,7 +265,7 @@ target_alias = @target_alias@
  target_cpu = @target_cpu@
  target_os = @target_os@
  target_vendor = @target_vendor@
--SUBDIRS = src examples tests doc 
+-SUBDIRS = src examples macros tests doc 
 +SUBDIRS = src doc 
  EXTRA_DIST = \
  	TODO 					\
