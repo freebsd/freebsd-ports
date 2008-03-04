@@ -15,65 +15,8 @@ require 'tempfile'
 
 # 
 $OPT_TDIARYMASTER = "@@@@PREFIX@@@@/share/examples/tdiary"
+$OPT_TDIARYDOCDIR = "@@@@PREFIX@@@@/share/doc/tdiary"
 $OPT_LANG         = '@@@@LANG@@@@'
-
-module FileUtils16
-  def FileUtils16.mkdir_p(dir, *options)
-    begin
-      FileUtils.mkdir_p(dir, *options)
-    rescue TypeError
-      optionhash = {}
-      options.each { |o| optionhash[o] = true }
-      FileUtils.mkdir_p(dir, optionhash)
-    end
-  end
-  def FileUtils16.cp(src, dest, *options)
-    begin
-      FileUtils.cp(src, dest, *options)
-      FileUtils.chmod(0644, dest, *options)
-    rescue TypeError
-      optionhash = {}
-      options.each { |o| optionhash[o] = true }
-      FileUtils.cp(src, dest, optionhash)
-    end
-  end
-  def FileUtils16.cp_r(src, dest, *options)
-    begin
-      FileUtils.cp_r(src, dest, *options)
-    rescue TypeError
-      optionhash = {}
-      options.each { |o| optionhash[o] = true }
-      FileUtils.cp_r(src, dest, optionhash)
-    end
-  end
-  def FileUtils16.rm(list, *options)
-    begin
-      FileUtils.rm(list, *options)
-    rescue TypeError
-      optionhash = {}
-      options.each { |o| optionhash[o] = true }
-      FileUtils.rm(list, optionhash)
-    end
-  end
-  def FileUtils16.ln_s(list, destdir, *options)
-    begin
-      FileUtils.ln_s(list, destdir, *options)
-    rescue TypeError
-      optionhash = {}
-      options.each { |o| optionhash[o] = true }
-      FileUtils.ln_s(list, destdir, optionhash)
-    end
-  end
-  def FileUtils16.chmod(mode, list, *options)
-    begin
-      FileUtils.chmod(mode, list, *options)
-    rescue TypeError
-      optionhash = {}
-      options.each { |o| optionhash[o] = true }
-      FileUtils.chmod(mode, list, optionhash)
-    end
-  end
-end
 
 def usage
   STDERR.print "Usage: #{File.basename($0)} [options]\n"
@@ -85,6 +28,7 @@ def usage
   STDERR.print "    --name=<author_name>      Specify author name\n"
   STDERR.print "    --mail=<author_mail>      Specify author mail address\n"
   STDERR.print "    --tdiarymaster=<dir>      Specify tDiary master directory default: @@@@PREFIX@@@@/share/examples/tdiary\n"
+  STDERR.print "    --tdiarydocdir=<docdir>   Specify tDiary document directory default: @@@@PREFIX@@@@/share/doc/tdiary\n"
   STDERR.print "    --lang=<language>         Specify your language ('en' or 'ja' or 'zh') default: @@@@LANG@@@@\n"
   STDERR.print "    --suexec                  Use suExec for CGI execution\n"
   STDERR.print "    --symlink                 Use symbolic link for tDiary master files\n"
@@ -102,6 +46,7 @@ parser.set_options(
   ['--name',    '-n', GetoptLong::REQUIRED_ARGUMENT],
   ['--mail',    '-m', GetoptLong::REQUIRED_ARGUMENT],
   ['--tdiarymaster' , GetoptLong::REQUIRED_ARGUMENT],
+  ['--tdiarydocdir' , GetoptLong::REQUIRED_ARGUMENT],
   ['--lang'         , GetoptLong::REQUIRED_ARGUMENT],
   ['--suexec'       , GetoptLong::NO_ARGUMENT],
   ['--symlink', '-l', GetoptLong::NO_ARGUMENT],
@@ -120,6 +65,7 @@ usage() if defined?($OPT_HELP)
 
 class TdiaryInstall
   attr_accessor :tdiarymaster
+  attr_accessor :tdiarydocdir
   attr_accessor :tdconfig
   attr_accessor :lang
   attr_reader   :euid
@@ -137,7 +83,7 @@ class TdiaryInstall
     @username =(@passwd.name)
     @diarydir = 'diary'
     @httpdir  = 'public_html'
-    @fileutilOptions = []
+    @fileutilOptions = {}
     @author_name = @passwd.gecos
     @author_host = "#{`hostname`.chomp}"
     @author_mail = "#{@username}@#{`hostname`.chomp}"
@@ -186,87 +132,84 @@ class TdiaryInstall
     echo "***\n"
     echo "You have to execute the following commands:\n"
     echo "    % /usr/local/sbin/htpasswd -c #{@passwd.dir}/.htpasswd #{@username}\n\n"
-    echo "Please read #{@tdiarymaster}/README\n"
+    echo "Please read #{@tdiarydocdir}/README.en.html\n"
     echo "    for additional information.\n"
     echo "************************************************************\n"
   end
 
   def prepareDirs
     if ! FileTest.exist?("#{@passwd.dir}/#{@diarydir}")
-      FileUtils16.mkdir_p("#{@passwd.dir}/#{@diarydir}", *@fileutilOptions)
+      FileUtils.mkdir_p("#{@passwd.dir}/#{@diarydir}", @fileutilOptions)
     end
     if ! FileTest.exist?("#{@passwd.dir}/#{@httpdir}/#{@diarydir}")
-      FileUtils16.mkdir_p("#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
+      FileUtils.mkdir_p("#{@passwd.dir}/#{@httpdir}/#{@diarydir}", @fileutilOptions)
     end
   end
 
   def linkBaseFile
-    FileUtils16.cp_r("#{@tdiarymaster}/plugin", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
-    FileUtils16.ln_s("#{@tdiarymaster}/theme", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
-    FileUtils16.ln_s("#{@tdiarymaster}/doc", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
+    FileUtils.ln_s("#{@tdiarymaster}/theme", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", @fileutilOptions)
+    FileUtils.ln_s("#{@tdiarydocdir}", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/doc", @fileutilOptions)
     tempfile = Tempfile.new("index.rb")
     tempfile.write "#!/usr/local/bin/ruby\nrequire '#{@tdiarymaster}/index'\n"
     tempfile.close
-    FileUtils16.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", *@fileutilOptions)
-    FileUtils16.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", *@fileutilOptions)
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", @fileutilOptions)
+    FileUtils.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", @fileutilOptions)
     tempfile = Tempfile.new("update.rb")
     tempfile.write "#!/usr/local/bin/ruby\nrequire '#{@tdiarymaster}/update'\n"
     tempfile.close
-    FileUtils16.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions)
-    FileUtils16.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions)
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", @fileutilOptions)
+    FileUtils.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", @fileutilOptions)
   end
 
   def copyBaseFile
-    FileUtils16.cp_r("#{@tdiarymaster}/doc", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
-    FileUtils16.cp_r("#{@tdiarymaster}/misc", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
-    FileUtils16.cp_r("#{@tdiarymaster}/plugin", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
-    FileUtils16.cp_r("#{@tdiarymaster}/skel", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
-    FileUtils16.cp_r("#{@tdiarymaster}/tdiary", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
-    FileUtils16.cp_r("#{@tdiarymaster}/theme", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
-    FileUtils16.cp("#{@tdiarymaster}/index.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", *@fileutilOptions)
-    FileUtils16.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", *@fileutilOptions)
-    FileUtils16.cp("#{@tdiarymaster}/update.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions)
-    FileUtils16.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions)
-    FileUtils16.cp("#{@tdiarymaster}/tdiary.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.rb", *@fileutilOptions)
-    FileUtils16.cp("#{@tdiarymaster}/README", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/README", *@fileutilOptions)
-    if @lang == 'ja' then
-       FileUtils16.ln_s("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/misc/plugin/jdate.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/plugin/000jdate.rb", *@fileutilOptions)
-    end
+    opts = @fileutilOptions.dup
+    opts.store(:preserve, true)
+    FileUtils.cp_r("#{@tdiarydocdir}", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/doc", opts)
+    FileUtils.cp_r("#{@tdiarymaster}/misc", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", opts)
+    FileUtils.cp_r("#{@tdiarymaster}/plugin", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", opts)
+    FileUtils.cp_r("#{@tdiarymaster}/skel", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", opts)
+    FileUtils.cp_r("#{@tdiarymaster}/tdiary", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", opts)
+    FileUtils.cp_r("#{@tdiarymaster}/theme", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", opts)
+    FileUtils.cp("#{@tdiarymaster}/index.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", @fileutilOptions)
+    FileUtils.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", @fileutilOptions)
+    FileUtils.cp("#{@tdiarymaster}/update.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", @fileutilOptions)
+    FileUtils.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", @fileutilOptions)
+    FileUtils.cp("#{@tdiarymaster}/tdiary.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.rb", @fileutilOptions)
   end
 
   def installConfig
     tempfile = Tempfile.new("tdiary.conf-ja")
     tempfile.write tdiaryConfReplace("#{@tdiarymaster}/tdiary.conf.sample")
     tempfile.close
-    FileUtils16.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf-ja", *@fileutilOptions)
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf-ja", @fileutilOptions)
 
     tempfile = Tempfile.new("tdiary.conf-en") # sample configuration for English Environment
     tempfile.write tdiaryConfReplace("#{@tdiarymaster}/misc/i18n/tdiary.conf.sample-en")
     tempfile.close
-    FileUtils16.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf-en", *@fileutilOptions)
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf-en", @fileutilOptions)
 
     if ! FileTest.exist?("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf")
-      FileUtils16.cp("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/#{@tdconfig}", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf", *@fileutilOptions)
+      FileUtils.cp("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/#{@tdconfig}", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf", @fileutilOptions)
     end
 
     tempfile = Tempfile.new("dot.htaccess")
     tempfile.write dothtaccessReplace("#{@tdiarymaster}/dot.htaccess")
     tempfile.close
-    FileUtils16.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/dot.htaccess", *@fileutilOptions)
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/dot.htaccess", @fileutilOptions)
     if ! FileTest.exist?("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/.htaccess")
-      FileUtils16.cp("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/dot.htaccess", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/.htaccess", *@fileutilOptions)
+      FileUtils.cp("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/dot.htaccess", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/.htaccess", @fileutilOptions)
     end
   end
 
   def setPermissions
-    FileUtils16.chmod(0777, "#{@passwd.dir}/#{@diarydir}", *@fileutilOptions) if ! defined?($OPT_SUEXEC)
-    FileUtils16.chmod(0777, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions) if ! defined?($OPT_SUEXEC)
-    FileUtils16.rm("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary-FreeBSD.sh", :force, *@fileutilOptions)
+    FileUtils.chmod(0777, "#{@passwd.dir}/#{@diarydir}", @fileutilOptions) if ! defined?($OPT_SUEXEC)
+    FileUtils.chmod(0777, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", @fileutilOptions) if ! defined?($OPT_SUEXEC)
 
-    FileUtils16.chmod(0701, "#{@passwd.dir}/#{@diarydir}", *@fileutilOptions) if defined?($OPT_SUEXEC)
-    FileUtils16.chmod(0701, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions) if defined?($OPT_SUEXEC)
-    FileUtils16.chmod(0700, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", *@fileutilOptions) if defined?($OPT_SUEXEC)
-    FileUtils16.chmod(0700, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions) if defined?($OPT_SUEXEC)
+    FileUtils.chmod(0701, "#{@passwd.dir}/#{@diarydir}", @fileutilOptions) if defined?($OPT_SUEXEC)
+    FileUtils.chmod(0701, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", @fileutilOptions) if defined?($OPT_SUEXEC)
+    FileUtils.chmod(0604, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/.htaccess", @fileutilOptions) if defined?($OPT_SUEXEC)
+    FileUtils.chmod(0700, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", @fileutilOptions) if defined?($OPT_SUEXEC)
+    FileUtils.chmod(0700, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", @fileutilOptions) if defined?($OPT_SUEXEC)
 
     if @euid == 0 then
       Find.find("#{@passwd.dir}/#{@diarydir}", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}") do |f|
@@ -314,14 +257,15 @@ end
 
 tdiaryinst = TdiaryInstall.new
 tdiaryinst.tdiarymaster = $OPT_TDIARYMASTER
+tdiaryinst.tdiarydocdir = $OPT_TDIARYDOCDIR
 tdiaryinst.lang = $OPT_LANG
 tdiaryinst.username = $OPT_USER if defined?($OPT_USER)
 tdiaryinst.diarydir = $OPT_DIARYDIR if defined?($OPT_DIARYDIR)
 tdiaryinst.httpdir = $OPT_HTTPDIR if defined?($OPT_HTTPDIR)
 tdiaryinst.author_name = $OPT_NAME if defined?($OPT_NAME)
 tdiaryinst.author_mail = $OPT_MAIL if defined?($OPT_MAIL)
-tdiaryinst.fileutilOptions.push(:noop) if defined?($OPT_NOOP)
-tdiaryinst.fileutilOptions.push(:verbose) if defined?($OPT_VERBOSE)
+tdiaryinst.fileutilOptions.store(:noop, true) if defined?($OPT_NOOP)
+tdiaryinst.fileutilOptions.store(:verbose, true) if defined?($OPT_VERBOSE)
 
 tdiaryinst.installAll
 

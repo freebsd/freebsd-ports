@@ -13,7 +13,7 @@ This script should be run manually.
 ---
 There are documents in the following directories.
   See ...
-  %%EXAMPLESDIR%%/doc/
+  %%DOCSDIR%%
   %%EXAMPLESDIR%%/misc/i18n/
 =============================================================================
 
