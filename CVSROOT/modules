@@ -1076,6 +1076,7 @@ bsh		ports/java/bsh
 bsmtp		ports/mail/bsmtp
 bsmtrace	ports/security/bsmtrace
 bsnmp-regex	ports/net-mgmt/bsnmp-regex
+bsnmp-ucd	ports/net-mgmt/bsnmp-ucd
 bsnmpd		ports/net-mgmt/bsnmpd
 bsnmptools	ports/net-mgmt/bsnmptools
 bsp		ports/games/bsp
