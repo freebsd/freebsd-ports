@@ -1,4 +1,7 @@
 Inspired by Ruby on Rails' migrations, Migrate provides a way to deal
-with database schema changes in SQLAlchemy projects.
+with database schema changes in SQLAlchemy projects. Migrate extends
+SQLAlchemy to have database changeset handling. It provides a database
+change repository mechanism which can be used from the command line as
+well as from inside python code.
 
-WWW: http://erosson.com/migrate
+WWW: http://code.google.com/p/sqlalchemy-migrate/
