@@ -9,7 +9,8 @@ PORTNAME=	shrub
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	games linux
-MASTER_SITES=	http://www.etstats.com/shrubet/downloads/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	alepulver
 PKGNAMEPREFIX=	linux-enemyterritory-
 DISTNAME=	1.2-test13-l
 
