@@ -7,6 +7,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	1.4.0.118
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 PKGNAMESUFFIX=	-devel
@@ -31,7 +32,14 @@ USE_LINUX=	yes
 RESTRICTED=	Redistribution prohibited.
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_static-${DISTVERSION}-oss
-DATADIR=	${PREFIX}/share/${PKGBASE}
+PORTDOCS=	LICENSE README
+SUB_FILES=	pkg-message
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|Exec=skype|Exec=skype_devel --resources=${DATADIR}|' \
+		${WRKSRC}/skype.desktop
 
 do-build:
 	@${BRANDELF} -t Linux ${WRKSRC}/skype
@@ -41,7 +49,13 @@ do-install:
 	@${INSTALL} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
 	@${INSTALL_PROGRAM} ${WRKSRC}/skype ${PREFIX}/bin/skype_devel
 	@${CHMOD} a+rx ${PREFIX}/bin/skype_devel
-	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "icons sounds lang LICENSE README" ${DATADIR}/
-	@${ECHO} "There are known problems with some soundcards in 5.x. This is due to a bug in the kernel. If you experience problems update to the most recent FreeBSD RELEASE, if this does not fix your problems, ask on multimedia@FreeBSD.org." | fmt
+	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "icons sounds lang" ${DATADIR}/
 
-.include <bsd.port.mk>
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

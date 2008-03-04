@@ -1,8 +1,8 @@
 bin/skype_devel
+share/applications/skype.desktop
 %%DATADIR%%/icons/SkypeBlue_16x16.png
 %%DATADIR%%/icons/SkypeBlue_32x32.png
 %%DATADIR%%/icons/SkypeBlue_48x48.png
-@dirrm %%DATADIR%%/icons
 %%DATADIR%%/lang/skype_de.ts
 %%DATADIR%%/lang/skype_et.ts
 %%DATADIR%%/lang/skype_lv.ts
@@ -13,7 +13,6 @@ bin/skype_devel
 %%DATADIR%%/lang/skype_tr.ts
 %%DATADIR%%/lang/skype_zh_s.ts
 %%DATADIR%%/lang/skype_zh_t.ts
-@dirrm %%DATADIR%%/lang
 %%DATADIR%%/sounds/CallBusy.wav
 %%DATADIR%%/sounds/CallConnecting.wav
 %%DATADIR%%/sounds/CallHangup.wav
@@ -36,8 +35,8 @@ bin/skype_devel
 %%DATADIR%%/sounds/TransferRequest.wav
 %%DATADIR%%/sounds/VoicemailReceived.wav
 @dirrm %%DATADIR%%/sounds
-%%DATADIR%%/LICENSE
-%%DATADIR%%/README
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%
-share/applications/skype.desktop
 @dirrmtry share/applications
+
