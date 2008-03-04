@@ -12000,6 +12000,7 @@ peacock		ports/www/peacock
 pear		ports/devel/pear
 pear-Auth	ports/security/pear-Auth
 pear-Auth_HTTP	ports/security/pear-Auth_HTTP
+pear-Auth_OpenID	ports/security/pear-Auth_OpenID
 pear-Auth_PrefManager	ports/security/pear-Auth_PrefManager
 pear-Auth_RADIUS	ports/net/pear-Auth_RADIUS
 pear-Auth_SASL	ports/security/pear-Auth_SASL
