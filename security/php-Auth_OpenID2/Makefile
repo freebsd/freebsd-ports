@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	Auth_OpenID
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	security www pear
-MASTER_SITES=	http://www.openidenabled.com/resources/downloads/php-openid/pear/
+MASTER_SITES=	http://openidenabled.com/files/php-openid/packages/
 PKGNAMEPREFIX=	php-
-EXTRACT_SUFX=	.tgz
+DISTNAME=	php-openid-${PORTVERSION}
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	PHP OpenID library
@@ -18,6 +18,9 @@ COMMENT=	PHP OpenID library
 RUN_DEPENDS=	pear:${PORTSDIR}/devel/pear
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+CONFLICTS=	pear-Auth_OpenID-2.*
+
+USE_BZIP2=	yes
 NO_BUILD=	yes
 OPTIONS=	BCMATH "Use bcmath instead of libgmp" off \
 		MYSQL "Use mysql" off \
