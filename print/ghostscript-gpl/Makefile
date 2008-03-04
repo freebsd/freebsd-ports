@@ -146,10 +146,10 @@ PLIST_SUB+=	JPN="@comment "
 .SILENT:
 
 pre-everything::
-	@${ECHO_MSG} ${MSG_PAPERSIZE}
+	${ECHO_MSG} ${MSG_PAPERSIZE}
 
 post-extract:
-	@${ECHO_MSG} ">>> in post-extract ..."
+	${ECHO_MSG} ">>> in post-extract ..."
 	${RM} -fr ${WRKSRC}/ijs
 	${LN} -sf ../ijs-0.35 ${WRKSRC}/ijs
 
@@ -158,12 +158,12 @@ post-extract:
 # which update unix-gcc.mak to build gs with these new devices!
 #
 # for EPAG driver
-	@${ECHO_MSG} ">>>   extracting ${EPAG_SRCS} ..."
+	${ECHO_MSG} ">>>   extracting ${EPAG_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
 	${LN} -sf ${EPAG_NAME} ${WRKSRC}/${EPAG}
 # for Japanese fonts
 .if defined(WITH_JPNFONTS)
-	@${ECHO_MSG} ">>>   extracting ${JPN_SRCS} ..."
+	${ECHO_MSG} ">>>   extracting ${JPN_SRCS} ..."
 	${TAR} -C ${WRKSRC}/Resource -xypof ${DISTDIR}/${DIST_SUBDIR}/${JPN_SRCS}
 .endif
 
@@ -180,25 +180,25 @@ post-patch:
 # here we apply the modifications necessary to build the 3rd party drivers
 # advantage: you see unmodified makefiles after a pure make extract
 pre-configure:
-	@${ECHO_MSG} ">>> in pre-configure ..."
+	${ECHO_MSG} ">>> in pre-configure ..."
 # for EPAG driver
-	@${ECHO_MSG} ">>>   adding EPAG driver to contrib.mak ..."
+	${ECHO_MSG} ">>>   adding EPAG driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/epag.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 
 post-configure:
-	@${ECHO_MSG} ">>> in post-configure ..."
+	${ECHO_MSG} ">>> in post-configure ..."
 	cd ${WRKSRC}/jasper ; \
 		${SETENV} ${MAKE_ENV} ${SH} ./configure --prefix=${PREFIX}
 	cd ${WRKSRC}/ijs ; \
 		${SETENV} ${MAKE_ENV} ${SH} ./configure --prefix=${PREFIX}
 
 pre-build:
-	@${ECHO_MSG} ">>> in pre-build ..."
-	@${ECHO_MSG} ">>>   creating directories for compilation ..."
+	${ECHO_MSG} ">>> in pre-build ..."
+	${ECHO_MSG} ">>>   creating directories for compilation ..."
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
-	@${ECHO_MSG} ">>>   creating symlinks for EPAG ..."
+	${ECHO_MSG} ">>>   creating symlinks for EPAG ..."
 .for i in gdevepag.c
 	${LN} -sf ${WRKSRC}/${EPAG_NAME}/${i} ${WRKSRC}/src
 .endfor
@@ -215,27 +215,27 @@ pre-build:
 
 post-build:
 # for PCL3 driver
-	@${ECHO_MSG} ">>>   building PCL3 utility ..."
+	${ECHO_MSG} ">>>   building PCL3 utility ..."
 	cd ${WRKSRC} ; \
 		${CC} ${CFLAGS} -I./obj -I./soobj -I./src \
 		-I./contrib/pcl3/eprn -o bin/pcl3opts \
 		contrib/pcl3/src/pcl3opts.c contrib/pcl3/src/pclscan.c \
 		contrib/pcl3/eprn/mediasize.c contrib/pcl3/src/pclsize.c
 # for EPAG driver
-	@${ECHO_MSG} ">>>   building EPAG utility ..."
+	${ECHO_MSG} ">>>   building EPAG utility ..."
 	cd ${WRKSRC}/${EPAG_NAME} ; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
 
 pre-su-install:
-	@${ECHO_MSG} ">>> in pre-install ..."
-	@${ECHO_MSG} ">>>   creating ghostscript destdir ..."
+	${ECHO_MSG} ">>> in pre-install ..."
+	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
 	${MKDIR} ${DATADIR}
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 post-install:
-	@${ECHO_MSG} ">>> in post-install ..."
+	${ECHO_MSG} ">>> in post-install ..."
 	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont ${CIDFONTDIR}/CIDFont
-	@${ECHO_MSG} ">>>   stripping gs ..."
+	${ECHO_MSG} ">>>   stripping gs ..."
 .if defined(WITH_SHLIB)
 	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx
 	${LN} -sf gsc ${PREFIX}/bin/gs
@@ -243,16 +243,16 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gs
 .endif
 # for PCL3 driver
-	@${ECHO_MSG} ">>>   installing PCL3 utility in bindir ..."
+	${ECHO_MSG} ">>>   installing PCL3 utility in bindir ..."
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pcl3opts ${PREFIX}/bin
-	@${ECHO_MSG} ">>>   installing PCL3 manpages ..."
+	${ECHO_MSG} ">>>   installing PCL3 manpages ..."
 .for i in gs-pcl3.1 pcl3opts.1
 	${INSTALL_MAN} ${WRKSRC}/contrib/pcl3/doc/${i} ${MANPREFIX}/man/man1
 .endfor
 # other pcl3 stuff, which might be interesting for runtime
-	@${ECHO_MSG} ">>>   creating PCL3 destdir ..."
+	${ECHO_MSG} ">>>   creating PCL3 destdir ..."
 	${MKDIR} ${DATADIR}/${GS_VERSION}/pcl3
-	@${ECHO_MSG} ">>>   installing files in PCL3 destdir ..."
+	${ECHO_MSG} ">>>   installing files in PCL3 destdir ..."
 .for i in NEWS BUGS README lib/example.mcf lib/if-pcl3 ps/calign.ps \
 	ps/dumppdd.ps ps/levels-test.ps ps/margins-A4.ps \
 	ps/margins-A4Rotated.ps ps/margins-Env10Rotated.ps \
@@ -262,16 +262,16 @@ post-install:
 		${DATADIR}/${GS_VERSION}/pcl3
 .endfor
 # for DMPRT driver
-	@${ECHO_MSG} ">>>   installing DMPRT resources ..."
+	${ECHO_MSG} ">>>   installing DMPRT resources ..."
 .for i in dmp_init.ps dmp_site.ps escp_24.src
 	${INSTALL_DATA} ${WRKSRC}/contrib/japanese/${i} \
 		${DATADIR}/${GS_VERSION}/lib
 .endfor
 # for EPAG driver
-	@${ECHO_MSG} ">>>   installing EPAG utility in bindir ..."
+	${ECHO_MSG} ">>>   installing EPAG utility in bindir ..."
 	${INSTALL_PROGRAM} ${WRKSRC}/${EPAG_NAME}/ert ${PREFIX}/bin
 # contributed UPP driver
-	@${ECHO_MSG} ">>> installing contributed UPP profiles ..."
+	${ECHO_MSG} ">>> installing contributed UPP profiles ..."
 	${INSTALL_DATA} ${WRKSRC}/contrib/uniprint/*.upp \
 		${DATADIR}/${GS_VERSION}/lib
 .for i in lqx70ch.upp lqx70cl.upp lqx70cm.upp
@@ -280,7 +280,7 @@ post-install:
 .endfor
 # for Japanese fonts
 .if defined(WITH_JPNFONTS)
-	@${ECHO_MSG} ">>>   installing Japanese font resources ..."
+	${ECHO_MSG} ">>>   installing Japanese font resources ..."
 	${INSTALL_DATA} ${WRKSRC}/Resource/Font/* \
 		${DATADIR}/${GS_VERSION}/Resource/Font/
 .endif
@@ -288,7 +288,7 @@ post-install:
 # now NOPORTDOCS dependend stuff
 #
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} ">>> installing PORTDOC stuff ..."
+	${ECHO_MSG} ">>> installing PORTDOC stuff ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/japanese
 	${INSTALL_DATA} ${WRKSRC}/contrib/japanese/doc/* \
 		${DOCSDIR}/${GS_VERSION}/japanese
@@ -313,14 +313,14 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/contrib/md2k_md5k/* \
 		${DOCSDIR}/${GS_VERSION}/md2k_md5k
 # for PCL3 driver
-	@${ECHO_MSG} ">>>   installing PCL3 docs ..."
+	${ECHO_MSG} ">>>   installing PCL3 docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/pcl3
 .for i in NEWS doc/gs-pcl3.html doc/how-to-report.txt doc/pcl3opts.html
 	${INSTALL_DATA} ${WRKSRC}/contrib/pcl3/${i} \
 		${DOCSDIR}/${GS_VERSION}/pcl3
 .endfor
 # for EPAG driver
-	@${ECHO_MSG} ">>>   installing EPAG docs ..."
+	${ECHO_MSG} ">>>   installing EPAG docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${EPAG}
 .for i in ert.txt gdevepag.txt ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/${EPAG_NAME}/${i} \
@@ -331,16 +331,16 @@ post-install:
 		${DOCSDIR}/${GS_VERSION}/${EPAG}
 .endfor
 .endif
-	@${ECHO_MSG} "> post-installation tasks completed."
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${ECHO_MSG} "> post-installation tasks completed."
+	${ECHO_MSG}
+	${CAT} ${PKGMESSAGE}
+	${ECHO_MSG}
 
 .if defined(WITH_FT_BRIDGE)
-	@${ECHO_MSG} " *** Configure FAPIfontmap and FAPIcidfmap accordingly"
-	@${ECHO_MSG} " *** in ${DATADIR}/${GS_VERSION}/lib"
-	@${ECHO_MSG} " *** to use FreeType fonts."
-	@${ECHO_MSG}
+	${ECHO_MSG} " *** Configure FAPIfontmap and FAPIcidfmap accordingly"
+	${ECHO_MSG} " *** in ${DATADIR}/${GS_VERSION}/lib"
+	${ECHO_MSG} " *** to use FreeType fonts."
+	${ECHO_MSG}
 .endif
 
 .include <bsd.port.post.mk>
