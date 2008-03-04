@@ -31,8 +31,8 @@
 %%SITE_PERL%%/auto/GnuPG/Interface/test_default_key_passphrase.al
 %%SITE_PERL%%/auto/GnuPG/Interface/verify.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG/Interface/.packlist
-@dirrm %%SITE_PERL%%/GnuPG
-@dirrm %%SITE_PERL%%/auto/GnuPG/Interface
-@dirrm %%SITE_PERL%%/auto/GnuPG
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG/Interface
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG
+@dirrmtry %%SITE_PERL%%/GnuPG
+@dirrmtry %%SITE_PERL%%/auto/GnuPG/Interface
+@dirrmtry %%SITE_PERL%%/auto/GnuPG
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG/Interface
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG
