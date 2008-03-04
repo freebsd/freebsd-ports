@@ -9,7 +9,7 @@ PORTNAME=	starfighter
 DISTVERSION=	1.1-1
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?type=zip&file=
+MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?proj=starfighter&type=zip&file=
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Chris Bainfield is fighting for the freedom of the galaxy
