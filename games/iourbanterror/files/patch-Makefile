@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Dec 16 18:09:18 2007
-+++ Makefile	Sun Jan 27 15:36:33 2008
+--- Makefile.orig	2007-12-16 18:09:18.000000000 -0300
++++ Makefile	2008-02-28 11:39:45.000000000 -0300
 @@ -27,16 +27,22 @@
    endif
  endif
@@ -170,7 +170,7 @@
 -    BASE_CFLAGS += -DNO_VM_COMPILED
 +  ifeq ($(USE_SDL_AUDIO),1)
 +    BASE_CFLAGS += -DUSE_SDL_SOUND=1
-+  endif
+   endif
 +
 +  ifeq ($(USE_SDL_VIDEO),1)
 +    BASE_CFLAGS += -DUSE_SDL_VIDEO=1
@@ -183,7 +183,7 @@
 +      RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2 \
 +         -fstrength-reduce
 +    endif
-   endif
++  endif
 +
 +  ifneq ($(HAVE_VM_COMPILED),true)
 +    BASE_CFLAGS += -DNO_VM_COMPILED
@@ -353,7 +353,21 @@
  	$(echo_cmd) "LD $@"
  	$(Q)$(CC) -o $@ $(Q3OBJ) $(Q3POBJ_SMP) $(CLIENT_LDFLAGS) \
  		$(THREAD_LDFLAGS) $(LDFLAGS) $(LIBSDLMAIN)
-@@ -1248,7 +1274,7 @@
+@@ -1240,15 +1266,21 @@
+   ifeq ($(ARCH),x86)
+     Q3DOBJ += $(B)/ded/vm_x86.o
+   endif
++  ifeq ($(ARCH),amd64)
++    Q3DOBJ += $(B)/ded/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
++  endif
+   ifeq ($(ARCH),x86_64)
+     Q3DOBJ += $(B)/ded/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
+   endif
++  ifeq ($(ARCH),powerpc)
++    Q3DOBJ += $(B)/ded/vm_ppc.o
++  endif
+   ifeq ($(ARCH),ppc)
+     Q3DOBJ += $(B)/ded/vm_ppc.o
    endif
  endif
  
@@ -362,7 +376,7 @@
  	$(echo_cmd) "LD $@"
  	$(Q)$(CC) -o $@ $(Q3DOBJ) $(LDFLAGS)
  
-@@ -1287,7 +1313,7 @@
+@@ -1287,7 +1319,7 @@
  Q3CGOBJ = $(Q3CGOBJ_) $(B)/baseq3/cgame/cg_syscalls.o
  Q3CGVMOBJ = $(Q3CGOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
  
@@ -371,7 +385,7 @@
  	$(echo_cmd) "LD $@"
  	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3CGOBJ)
  
-@@ -1330,7 +1356,7 @@
+@@ -1330,7 +1362,7 @@
  MPCGOBJ = $(MPCGOBJ_) $(B)/missionpack/cgame/cg_syscalls.o
  MPCGVMOBJ = $(MPCGOBJ_:%.o=%.asm) $(B)/missionpack/game/bg_lib.asm
  
@@ -380,7 +394,7 @@
  	$(echo_cmd) "LD $@"
  	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(MPCGOBJ)
  
-@@ -1382,7 +1408,7 @@
+@@ -1382,7 +1414,7 @@
  Q3GOBJ = $(Q3GOBJ_) $(B)/baseq3/game/g_syscalls.o
  Q3GVMOBJ = $(Q3GOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
  
@@ -389,7 +403,7 @@
  	$(echo_cmd) "LD $@"
  	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(Q3GOBJ)
  
-@@ -1432,7 +1458,7 @@
+@@ -1432,7 +1464,7 @@
  MPGOBJ = $(MPGOBJ_) $(B)/missionpack/game/g_syscalls.o
  MPGVMOBJ = $(MPGOBJ_:%.o=%.asm) $(B)/missionpack/game/bg_lib.asm
  
@@ -398,7 +412,7 @@
  	$(echo_cmd) "LD $@"
  	$(Q)$(CC) $(SHLIBLDFLAGS) -o $@ $(MPGOBJ)
  
-@@ -1494,7 +1520,7 @@
+@@ -1494,7 +1526,7 @@
  Q3UIOBJ = $(Q3UIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
  Q3UIVMOBJ = $(Q3UIOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
  
@@ -407,7 +421,7 @@
  	$(echo_cmd) "LD $@"
  	$(Q)$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(Q3UIOBJ)
  
-@@ -1521,7 +1547,7 @@
+@@ -1521,7 +1553,7 @@
  MPUIOBJ = $(MPUIOBJ_) $(B)/missionpack/ui/ui_syscalls.o
  MPUIVMOBJ = $(MPUIOBJ_:%.o=%.asm) $(B)/baseq3/game/bg_lib.asm
  
