@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES?=	www ruby
 MASTER_SITES=	SF \
 		http://www.tdiary.org/download/
@@ -28,12 +28,15 @@ RUBY_SHEBANG_FILES=	index.rb update.rb misc/convert2.rb \
 			misc/plugin/xmlrpc/xmlrpc.rb misc/style/etdiary/etdiary_test.rb \
 			tdiary/wiki_style_test.rb
 
-PLIST_FILES=	${TDIARYDIR:S|${LOCALBASE}/||}/tdiaryinst.rb
-TDIARYDIR=	${EXAMPLESDIR}
+PORTDOCS=	ChangeLog COPYING HOWTO-make-io.rd HOWTO-make-plugin.html \
+		HOWTO-make-theme.html HOWTO-use-plugin.html \
+		HOWTO-write-tDiary.en.html HOWTO-write-tDiary.html INSTALL.html \
+		README.en.html README.html UPGRADE doc.css
+
+SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 #TDIARY_LANG	ja:Japanese en:English zh:Traditional-Chinese
-
 .if !defined(TDIARY_LANG) || ( defined(TDIARY_LANG) && ${TDIARY_LANG} != ja )
 TDIARY_LANG=	en
 .endif
@@ -44,25 +47,27 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
 .endif
 
+post-extract:
+	@cd ${WRKSRC} && ${RM} -f README && ${MV} ChangeLog doc
+	@cd ${WRKSRC} && ${MV} doc ${WRKDIR}
+
 do-install:
-	@-${MKDIR} ${TDIARYDIR}
+	@-${MKDIR} ${EXAMPLESDIR}
 	@${SED} -e 's,#!/usr/bin/env ruby,#!${RUBY},' \
 		-e 's,@@@@PREFIX@@@@,${PREFIX},g' \
 		-e 's,@@@@LANG@@@@,${TDIARY_LANG},g' \
-		${FILESDIR}/tdiaryinst.rb.in > ${TDIARYDIR}/tdiaryinst.rb
-	@${CP} -pR ${WRKSRC}/ ${TDIARYDIR}
-.if ${TDIARY_LANG} == ja
-	@${ECHO_MSG} "===>  TDIARY : Japanese Language messages support"
-	@${RUBY} -i -pe 'sub(/%Y-%m-%d/, "%Y-%m-%d [%J]")' ${TDIARYDIR}/tdiary.conf.sample
-.else
-	@${RUBY} -i -pe 'sub(/%Y-%m-%d/, "%Y-%m-%d [%a]")' ${TDIARYDIR}/misc/i18n/tdiary.conf.sample-en
-.endif
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${TDIARYDIR}
+		${FILESDIR}/tdiaryinst.rb.in > ${EXAMPLESDIR}/tdiaryinst.rb
+	@${CP} -pR ${WRKSRC}/ ${EXAMPLESDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	@${CHMOD} 755 ${EXAMPLESDIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}' \
+		>> ${TMPPLIST}
 
 post-install:
-	@cd ${WRKSRC} && ${FIND} . -type f -o -type l | ${SED} -e 's,^\.,${TDIARYDIR:S|${LOCALBASE}/||},' >> ${TMPPLIST}
-	@cd ${WRKSRC} && ${FIND} . -type d -depth  | ${SED} -e 's,^\.,@dirrm ${TDIARYDIR:S|${LOCALBASE}/||},' >> ${TMPPLIST}
-	@${SED}	-e 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|' < ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKDIR}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
