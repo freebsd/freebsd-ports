@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpiexec
-PORTVERSION=	0.82
-PORTREVISION=	1
+PORTVERSION=	0.83
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.osc.edu/~pw/mpiexec/
 EXTRACT_SUFX=	.tgz
@@ -19,6 +18,7 @@ LIB_DEPENDS=	torque.2:${PORTSDIR}/sysutils/torque
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CONFIGURE_ARGS=	--with-default-comm=mpich2
 
 PLIST_FILES=	bin/mpiexec
 MAN1=		mpiexec.1
