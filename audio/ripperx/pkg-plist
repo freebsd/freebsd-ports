@@ -11,3 +11,6 @@ bin/ripperX_plugin-mp3enc
 bin/ripperX_plugin-oggenc
 bin/ripperX_plugin-flac
 bin/ripperX_plugin-toolame
+bin/ripperX_plugin-musepack
+bin/ripperX_plugin_tester
+libdata/pkgconfig/ripperX.pc

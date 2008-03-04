@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ripperx
-PORTVERSION=	2.7.0
-PORTREVISION=	1
+PORTVERSION=	2.7.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ripperx
@@ -20,7 +19,9 @@ LIB_DEPENDS=	id3:${PORTSDIR}/audio/id3lib
 RUN_DEPENDS=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-L${LOCALBASE}/lib
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20 gnomehack
+MAN1=		ripperX.1
 
 .include <bsd.port.mk>
