@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	migrate
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	databases python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/m/migrate/ \
+MASTER_SITES=	http://sqlalchemy-migrate.googlecode.com/files/ \
 		http://dose.se/distfiles/migrate/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	sqlalchemy-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	elvstone@gmail.com
 COMMENT=	Database schema migrations for SQLAlchemy
 
-USE_PYTHON=	2.3+
-USE_PYDISTUTILS=	easy_install
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.3.10:${PORTSDIR}/databases/py-sqlalchemy
 
-RUN_DEPENDS+=	${LOCALBASE}/share/examples/sqlalchemy/vertical/vertical.py:${PORTSDIR}/databases/py-sqlalchemy
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	sqlalchemy_${PORTNAME}
 
 .include <bsd.port.mk>
