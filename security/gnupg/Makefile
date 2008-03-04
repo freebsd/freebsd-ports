@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	2.0.8
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -17,7 +16,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	The GNU Privacy Guard
 
-BUILD_DEPENDS=	libassuan>=1.0.1:${PORTSDIR}/security/libassuan
+BUILD_DEPENDS=	libassuan>=1.0.4:${PORTSDIR}/security/libassuan \
+		libksba>=1.0.2:${PORTSDIR}/security/libksba
 LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
 		gpg-error:${PORTSDIR}/security/libgpg-error \
 		ksba.17:${PORTSDIR}/security/libksba \
@@ -31,19 +31,21 @@ GNU_CONFIGURE=	YES
 USE_ICONV=	YES
 USE_LDCONFIG=	YES
 USE_GETTEXT=	YES
-CONFIGURE_TARGET=# empty
-CONFIGURE_ARGS+=	--enable-nls
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--disable-doc
+.else
 MAN1=		gpg2.1 gpgsm.1 gpgv2.1 gpg-agent.1 scdaemon.1 watchgnupg.1 \
 		gpgconf.1 gpg-preset-passphrase.1 gpg-connect-agent.1 \
 		gpgparsemail.1 symcryptrun.1 gpgsm-gencert.sh.1
 MAN8=		addgnupghome.8 applygnupgdefaults.8
 INFO=		gnupg
+.endif
 
 OPTIONS=	LDAP "LDAP keyserver interface" off \
 		SCDAEMON "Enable Smartcard daemon (with libusb)" off \
 		CURL "Use the real curl library (worked around if no)" on \
-		GPGSM "Enable GPGSM (require LDAP)" on
-#OPTIONS+=	NLS "National Language Support" off
+		GPGSM "Enable GPGSM (require LDAP)" off \
+		NLS "National Language Support" off
 
 .include <bsd.port.pre.mk>
 
@@ -66,13 +68,13 @@ CONFIGURE_ARGS+=--disable-ldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-#.if defined(WITH_NLS)
+.if defined(WITH_NLS) && !defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
-#.else
-#CONFIGURE_ARGS+=--disable-nls
-#PLIST_SUB+=	NLS="@comment "
-#.endif
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .if defined(WITH_SCDAEMON)
 CONFIGURE_ARGS+=--enable-scdaemon
