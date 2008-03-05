@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codeigniter
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://codeigniter.com/download_files/
 DISTNAME=	CodeIgniter_${PORTVERSION}
@@ -15,16 +15,47 @@ MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	A framework for developing PHP web applications
 
 USE_ZIP=	yes
-
-USE_APACHE=	2.0+
+USE_DOS2UNIX=	yes
 
 NO_BUILD=	yes
 USE_PHP=	session pcre
 WANT_PHP_WEB=	yes
 
-SUB_FILES=	pkg-message
+CI_SYS_DIR=	system
+CI_CONF_DIR=	${CI_SYS_DIR}/application/config
 
-OPTIONS=	PROD "Install for production server (see: make confighelp)" Off \
+# These are all user-configurable files that we'll install
+# a .sample copy for each.
+CI_CONF_FILES=	index.php ${CI_CONF_DIR}/autoload.php \
+		${CI_CONF_DIR}/config.php ${CI_CONF_DIR}/database.php \
+		${CI_CONF_DIR}/hooks.php ${CI_CONF_DIR}/mimes.php \
+		${CI_CONF_DIR}/routes.php ${CI_CONF_DIR}/smileys.php \
+		${CI_CONF_DIR}/user_agents.php
+
+# This is the rest of the CodeIgniter installation that doesn't change
+STD_BITS=	${CI_CONF_DIR}/index.html \
+		${CI_SYS_DIR}/application/controllers \
+		${CI_SYS_DIR}/application/errors \
+		${CI_SYS_DIR}/application/helpers \
+		${CI_SYS_DIR}/application/hooks \
+		${CI_SYS_DIR}/application/index.html \
+		${CI_SYS_DIR}/application/language \
+		${CI_SYS_DIR}/application/libraries \
+		${CI_SYS_DIR}/application/models \
+		${CI_SYS_DIR}/application/views \
+		${CI_SYS_DIR}/cache \
+		${CI_SYS_DIR}/codeigniter \
+		${CI_SYS_DIR}/database \
+		${CI_SYS_DIR}/fonts \
+		${CI_SYS_DIR}/helpers \
+		${CI_SYS_DIR}/language \
+		${CI_SYS_DIR}/libraries \
+		${CI_SYS_DIR}/logs \
+		${CI_SYS_DIR}/plugins \
+		${CI_SYS_DIR}/scaffolding
+
+OPTIONS=	APACHE "Configure for Apache-2.x" off \
+		PROD "Install for production server (see: make confighelp)" Off \
 		MSSQL "Install MSSQL support for PHP" Off \
 		MYSQL "Install MySQL support for PHP" Off \
 		MYSQLI "Install MySQLi support for PHP" Off \
@@ -33,12 +64,23 @@ OPTIONS=	PROD "Install for production server (see: make confighelp)" Off \
 		PGSQL "Install PostgreSQL support for PHP" Off \
 		SQLITE "Install SQLite support for PHP" Off
 
-PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
+.include <bsd.port.pre.mk>
 
+.if defined(WITH_APACHE)
+USE_APACHE=	2.0+
+
+PLIST_SUB+=	NOAPACHE="" CONFDIR=${CONFDIR_REL}
 CONFDIR=	${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=	${APACHEETCDIR}/Includes
 
-.include <bsd.port.pre.mk>
+PKGMESSAGE=	pkg-message-apache
+SUB_FILES=	pkg-message-apache
+.else
+PLIST_SUB+=	NOAPACHE="@comment "
+PKGMESSAGE=	pkg-message-noapache
+SUB_FILES=	pkg-message-noapache
+.endif
+PLIST_SUB+=	ECHO_MSG=${ECHO_MSG} CI_CONF_DIR=${CI_CONF_DIR}
 
 WITH_PHP_CGI?=	/cgi-bin/php
 
@@ -111,14 +153,27 @@ confighelp:
 	@${ECHO_MSG} ""
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "index.php system" ${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${STD_BITS}" ${WWWDIR}
+	@for i in ${CI_CONF_FILES}; do \
+		${INSTALL_DATA} ${WRKSRC}/$$i ${WWWDIR}/$$i.sample; \
+	done
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${WWWDIR}' >> ${TMPPLIST}
+		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
+	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
+		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
+	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
+		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 post-install:
+	@for i in ${CI_CONF_FILES}; do \
+		if [ ! -f ${WWWDIR}/$$i ]; then \
+			${CP} -p ${WWWDIR}/$$i.sample ${WWWDIR}/$$i; \
+		fi; \
+	done
+.if defined(WITH_APACHE)
 	@if [ -d "${CONFDIR}" ]; then \
 	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/codeigniter.conf; \
 	else \
@@ -129,6 +184,7 @@ post-install:
 	  ${ECHO_MSG} "" ; \
 	  ${FALSE} ; \
 	fi
+.endif
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}/user_guide/ && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
