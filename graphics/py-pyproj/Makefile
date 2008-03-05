@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyproj
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	graphics python geography
 MASTER_SITES=	http://pyproj.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,17 +19,21 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 PORTDOCS=	Changelog README README.html LICENSE_proj4
+PORTEXAMPLES=	datum_shift.py geodtest.py sample.out \
+		test.py test2.py test_transform.py
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/test/* ${EXAMPLESDIR}
-.endif
-
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/$f ${DOCSDIR}
+.endfor
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+.for f in ${PORTEXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/test/$f ${EXAMPLESDIR}
 .endfor
 .endif
 

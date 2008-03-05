@@ -22,12 +22,5 @@
 %%PYTHON_SITELIBDIR%%/pyproj/data/testntv2
 %%PYTHON_SITELIBDIR%%/pyproj/data/testvarious
 %%PYTHON_SITELIBDIR%%/pyproj/data/world
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datum_shift.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/geodtest.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.out
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_transform.py
-@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/pyproj/data
 @dirrm %%PYTHON_SITELIBDIR%%/pyproj
