@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.4
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP} \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	source/r/${PORTNAME}
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	An Issue-Tracking System for Knowledge Workers
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GETTEXT=	yes
 
