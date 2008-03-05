@@ -311,7 +311,6 @@
     SUBDIR += opensaml
     SUBDIR += opensc
     SUBDIR += openscep
-    SUBDIR += openssh
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
     SUBDIR += openssl

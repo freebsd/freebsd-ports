@@ -1,6 +1,0 @@
-MD5 (openssh-3.6.1.tgz) = aa2acd2be17dc3fd514a1e09336aab51
-SHA256 (openssh-3.6.1.tgz) = 3763e86c65b116832661c7294a1a92eee94664067939a9bca9013f489aa2d6fc
-SIZE (openssh-3.6.1.tgz) = 407929
-MD5 (openbsd28_3.6.1.patch) = bcd0e1e4603cfd4e1f2f457830d7842a
-SHA256 (openbsd28_3.6.1.patch) = 8c53880cedebade6cf74485f6184195baaa73bf7eb7bb550d2b17bfde7d8ec00
-SIZE (openbsd28_3.6.1.patch) = 51268
