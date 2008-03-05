@@ -1,4 +1,4 @@
-%%CONFDIR%%/codeigniter.conf
+%%NOAPACHE%%%%CONFDIR%%/codeigniter.conf
 %%PORTDOCS%%%%DOCSDIR%%/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/database/active_record.html
 %%PORTDOCS%%%%DOCSDIR%%/database/caching.html
@@ -7,6 +7,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/database/connecting.html
 %%PORTDOCS%%%%DOCSDIR%%/database/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/database/fields.html
+%%PORTDOCS%%%%DOCSDIR%%/database/forge.html
 %%PORTDOCS%%%%DOCSDIR%%/database/helpers.html
 %%PORTDOCS%%%%DOCSDIR%%/database/index.html
 %%PORTDOCS%%%%DOCSDIR%%/database/queries.html
@@ -14,6 +15,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/database/table_data.html
 %%PORTDOCS%%%%DOCSDIR%%/database/transactions.html
 %%PORTDOCS%%%%DOCSDIR%%/database/utilities.html
+%%PORTDOCS%%%%DOCSDIR%%/doc_style/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc_style/template.html
 %%PORTDOCS%%%%DOCSDIR%%/general/alternative_php.html
 %%PORTDOCS%%%%DOCSDIR%%/general/ancillary_classes.html
 %%PORTDOCS%%%%DOCSDIR%%/general/autoloader.html
@@ -43,11 +46,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/helpers/date_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/directory_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/download_helper.html
+%%PORTDOCS%%%%DOCSDIR%%/helpers/email_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/file_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/form_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/html_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/index.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/inflector_helper.html
+%%PORTDOCS%%%%DOCSDIR%%/helpers/path_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/security_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/smiley_helper.html
 %%PORTDOCS%%%%DOCSDIR%%/helpers/string_helper.html
@@ -82,6 +87,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_152.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_153.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_154.html
+%%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_160.html
+%%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_161.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrade_b11.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/upgrading.html
 %%PORTDOCS%%%%DOCSDIR%%/libraries/benchmark.html
@@ -113,6 +120,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/nav/moo.fx.pack.js
 %%PORTDOCS%%%%DOCSDIR%%/nav/nav.js
 %%PORTDOCS%%%%DOCSDIR%%/nav/prototype.lite.js
+%%PORTDOCS%%%%DOCSDIR%%/nav/user_guide_menu.js
 %%PORTDOCS%%%%DOCSDIR%%/overview/appflow.html
 %%PORTDOCS%%%%DOCSDIR%%/overview/at_a_glance.html
 %%PORTDOCS%%%%DOCSDIR%%/overview/features.html
@@ -121,16 +129,34 @@
 %%PORTDOCS%%%%DOCSDIR%%/overview/mvc.html
 %%PORTDOCS%%%%DOCSDIR%%/toc.html
 %%PORTDOCS%%%%DOCSDIR%%/userguide.css
-%%WWWDIR%%/index.php
-%%WWWDIR%%/system/application/config/autoload.php
-%%WWWDIR%%/system/application/config/config.php
-%%WWWDIR%%/system/application/config/database.php
-%%WWWDIR%%/system/application/config/hooks.php
-%%WWWDIR%%/system/application/config/index.html
-%%WWWDIR%%/system/application/config/mimes.php
-%%WWWDIR%%/system/application/config/routes.php
-%%WWWDIR%%/system/application/config/smileys.php
-%%WWWDIR%%/system/application/config/user_agents.php
+@unexec if cmp -s %D/%%WWWDIR%%/index.php.sample %D/%%WWWDIR%%/index.php; then rm -f %D/%%WWWDIR%%/index.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/index.php has not been removed"; fi
+%%WWWDIR%%/index.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/index.php ]; then cp -p %D/%F %B/index.php; fi
+@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php has not been removed"; fi
+%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/autoload.php ]; then cp -p %D/%F %B/autoload.php; fi
+@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php has not been removed"; fi
+%%WWWDIR%%/%%CI_CONF_DIR%%/config.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/config.php ]; then cp -p %D/%F %B/config.php; fi
+@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php has not been removed"; fi
+%%WWWDIR%%/%%CI_CONF_DIR%%/database.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/database.php ]; then cp -p %D/%F %B/database.php; fi
+@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php has not been removed"; fi
+%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/hooks.php ]; then cp -p %D/%F %B/hooks.php; fi
+%%WWWDIR%%/%%CI_CONF_DIR%%/index.html
+@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php has not been removed"; fi
+%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/mimes.php ]; then cp -p %D/%F %B/mimes.php; fi
+@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php has not been removed"; fi
+%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/routes.php ]; then cp -p %D/%F %B/routes.php; fi
+@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php has not been removed"; fi
+%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/smileys.php ]; then cp -p %D/%F %B/smileys.php; fi
+@unexec if cmp -s %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php.sample %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php; then rm -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php; else %%ECHO_MSG%% "===> Customized %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php has not been removed"; fi
+%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php.sample
+@exec if [ ! -f %D/%%WWWDIR%%/%%CI_CONF_DIR%%/user_agents.php ]; then cp -p %D/%F %B/user_agents.php; fi
 %%WWWDIR%%/system/application/controllers/index.html
 %%WWWDIR%%/system/application/controllers/welcome.php
 %%WWWDIR%%/system/application/errors/error_404.php
@@ -138,8 +164,10 @@
 %%WWWDIR%%/system/application/errors/error_general.php
 %%WWWDIR%%/system/application/errors/error_php.php
 %%WWWDIR%%/system/application/errors/index.html
+%%WWWDIR%%/system/application/helpers/index.html
 %%WWWDIR%%/system/application/hooks/index.html
 %%WWWDIR%%/system/application/index.html
+%%WWWDIR%%/system/application/language/english/index.html
 %%WWWDIR%%/system/application/libraries/index.html
 %%WWWDIR%%/system/application/models/index.html
 %%WWWDIR%%/system/application/views/index.html
@@ -149,40 +177,49 @@
 %%WWWDIR%%/system/codeigniter/Base5.php
 %%WWWDIR%%/system/codeigniter/CodeIgniter.php
 %%WWWDIR%%/system/codeigniter/Common.php
+%%WWWDIR%%/system/codeigniter/Compat.php
 %%WWWDIR%%/system/codeigniter/index.html
 %%WWWDIR%%/system/database/DB.php
 %%WWWDIR%%/system/database/DB_active_rec.php
 %%WWWDIR%%/system/database/DB_cache.php
 %%WWWDIR%%/system/database/DB_driver.php
+%%WWWDIR%%/system/database/DB_forge.php
 %%WWWDIR%%/system/database/DB_result.php
 %%WWWDIR%%/system/database/DB_utility.php
 %%WWWDIR%%/system/database/drivers/index.html
 %%WWWDIR%%/system/database/drivers/mssql/index.html
 %%WWWDIR%%/system/database/drivers/mssql/mssql_driver.php
+%%WWWDIR%%/system/database/drivers/mssql/mssql_forge.php
 %%WWWDIR%%/system/database/drivers/mssql/mssql_result.php
 %%WWWDIR%%/system/database/drivers/mssql/mssql_utility.php
 %%WWWDIR%%/system/database/drivers/mysql/index.html
 %%WWWDIR%%/system/database/drivers/mysql/mysql_driver.php
+%%WWWDIR%%/system/database/drivers/mysql/mysql_forge.php
 %%WWWDIR%%/system/database/drivers/mysql/mysql_result.php
 %%WWWDIR%%/system/database/drivers/mysql/mysql_utility.php
 %%WWWDIR%%/system/database/drivers/mysqli/index.html
 %%WWWDIR%%/system/database/drivers/mysqli/mysqli_driver.php
+%%WWWDIR%%/system/database/drivers/mysqli/mysqli_forge.php
 %%WWWDIR%%/system/database/drivers/mysqli/mysqli_result.php
 %%WWWDIR%%/system/database/drivers/mysqli/mysqli_utility.php
 %%WWWDIR%%/system/database/drivers/oci8/index.html
 %%WWWDIR%%/system/database/drivers/oci8/oci8_driver.php
+%%WWWDIR%%/system/database/drivers/oci8/oci8_forge.php
 %%WWWDIR%%/system/database/drivers/oci8/oci8_result.php
 %%WWWDIR%%/system/database/drivers/oci8/oci8_utility.php
 %%WWWDIR%%/system/database/drivers/odbc/index.html
 %%WWWDIR%%/system/database/drivers/odbc/odbc_driver.php
+%%WWWDIR%%/system/database/drivers/odbc/odbc_forge.php
 %%WWWDIR%%/system/database/drivers/odbc/odbc_result.php
 %%WWWDIR%%/system/database/drivers/odbc/odbc_utility.php
 %%WWWDIR%%/system/database/drivers/postgre/index.html
 %%WWWDIR%%/system/database/drivers/postgre/postgre_driver.php
+%%WWWDIR%%/system/database/drivers/postgre/postgre_forge.php
 %%WWWDIR%%/system/database/drivers/postgre/postgre_result.php
 %%WWWDIR%%/system/database/drivers/postgre/postgre_utility.php
 %%WWWDIR%%/system/database/drivers/sqlite/index.html
 %%WWWDIR%%/system/database/drivers/sqlite/sqlite_driver.php
+%%WWWDIR%%/system/database/drivers/sqlite/sqlite_forge.php
 %%WWWDIR%%/system/database/drivers/sqlite/sqlite_result.php
 %%WWWDIR%%/system/database/drivers/sqlite/sqlite_utility.php
 %%WWWDIR%%/system/database/index.html
@@ -193,11 +230,13 @@
 %%WWWDIR%%/system/helpers/date_helper.php
 %%WWWDIR%%/system/helpers/directory_helper.php
 %%WWWDIR%%/system/helpers/download_helper.php
+%%WWWDIR%%/system/helpers/email_helper.php
 %%WWWDIR%%/system/helpers/file_helper.php
 %%WWWDIR%%/system/helpers/form_helper.php
 %%WWWDIR%%/system/helpers/html_helper.php
 %%WWWDIR%%/system/helpers/index.html
 %%WWWDIR%%/system/helpers/inflector_helper.php
+%%WWWDIR%%/system/helpers/path_helper.php
 %%WWWDIR%%/system/helpers/security_helper.php
 %%WWWDIR%%/system/helpers/smiley_helper.php
 %%WWWDIR%%/system/helpers/string_helper.php
@@ -228,6 +267,7 @@
 %%WWWDIR%%/system/libraries/Ftp.php
 %%WWWDIR%%/system/libraries/Hooks.php
 %%WWWDIR%%/system/libraries/Image_lib.php
+%%WWWDIR%%/system/libraries/index.html
 %%WWWDIR%%/system/libraries/Input.php
 %%WWWDIR%%/system/libraries/Language.php
 %%WWWDIR%%/system/libraries/Loader.php
@@ -242,24 +282,23 @@
 %%WWWDIR%%/system/libraries/Sha1.php
 %%WWWDIR%%/system/libraries/Table.php
 %%WWWDIR%%/system/libraries/Trackback.php
-%%WWWDIR%%/system/libraries/URI.php
 %%WWWDIR%%/system/libraries/Unit_test.php
 %%WWWDIR%%/system/libraries/Upload.php
+%%WWWDIR%%/system/libraries/URI.php
 %%WWWDIR%%/system/libraries/User_agent.php
 %%WWWDIR%%/system/libraries/Validation.php
 %%WWWDIR%%/system/libraries/Xmlrpc.php
 %%WWWDIR%%/system/libraries/Xmlrpcs.php
 %%WWWDIR%%/system/libraries/Zip.php
-%%WWWDIR%%/system/libraries/index.html
 %%WWWDIR%%/system/logs/index.html
 %%WWWDIR%%/system/plugins/captcha_pi.php
 %%WWWDIR%%/system/plugins/index.html
 %%WWWDIR%%/system/plugins/js_calendar_pi.php
-%%WWWDIR%%/system/scaffolding/Scaffolding.php
 %%WWWDIR%%/system/scaffolding/images/background.jpg
 %%WWWDIR%%/system/scaffolding/images/index.html
 %%WWWDIR%%/system/scaffolding/images/logo.jpg
 %%WWWDIR%%/system/scaffolding/index.html
+%%WWWDIR%%/system/scaffolding/Scaffolding.php
 %%WWWDIR%%/system/scaffolding/views/add.php
 %%WWWDIR%%/system/scaffolding/views/delete.php
 %%WWWDIR%%/system/scaffolding/views/edit.php
@@ -293,13 +332,16 @@
 @dirrm %%WWWDIR%%/system/application/views
 @dirrm %%WWWDIR%%/system/application/models
 @dirrm %%WWWDIR%%/system/application/libraries
+@dirrm %%WWWDIR%%/system/application/language/english
+@dirrm %%WWWDIR%%/system/application/language
 @dirrm %%WWWDIR%%/system/application/hooks
+@dirrm %%WWWDIR%%/system/application/helpers
 @dirrm %%WWWDIR%%/system/application/errors
 @dirrm %%WWWDIR%%/system/application/controllers
-@dirrm %%WWWDIR%%/system/application/config
-@dirrm %%WWWDIR%%/system/application
-@dirrm %%WWWDIR%%/system
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%/system/application/config
+@dirrmtry %%WWWDIR%%/system/application
+@dirrmtry %%WWWDIR%%/system
+@dirrmtry %%WWWDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/overview
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/nav
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libraries
@@ -307,5 +349,6 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/helpers
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/general
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc_style
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/database
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
