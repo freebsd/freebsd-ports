@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	SVN-Notify-Mirror
-PORTVERSION=	0.03603
+PORTVERSION=	0.037
+PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	Keep a mirrored working copy of a repository path
 
-RUN_DEPENDS=	${LOCALBASE}/bin/svnnotify:${PORTSDIR}/devel/p5-SVN-Notify
+BUILD_DEPENDS=	p5-SVN-Notify>=2.70:${PORTSDIR}/devel/p5-SVN-Notify \
+		p5-YAML>=0.62:${PORTSDIR}/textproc/p5-YAML
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	CONFIG "Enable YAML syntax for post-commit hook" Off \
 		SSH "Enable SSH for remote working copy update" Off \
