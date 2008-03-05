@@ -7,9 +7,11 @@
 
 PORTNAME=	qsstv
 PORTVERSION=	6.0a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://users.telenet.be/on4qz/snapshots/download/
+MASTER_SITES=	http://users.telenet.be/on4qz/snapshots/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	db@FreeBSD.org
@@ -25,6 +27,10 @@ CONFIGURE_ARGS=	--qtdir=${QT_PREFIX}
 MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		DESTDIR="" TARGET="qsstv" DOCSDIR="${DOCSDIR}"
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%DOCSDIR%%|${DOCSDIR}|g' \
+	${WRKSRC}/configdialog.cpp
 
 do-configure:
 	cd ${WRKSRC}; \
