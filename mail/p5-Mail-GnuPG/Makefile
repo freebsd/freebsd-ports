@@ -7,28 +7,20 @@
 
 PORTNAME=	Mail-GnuPG
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	mail security perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Mail
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl5 interface to process and/or create PGP email
 
-BUILD_DEPENDS=	${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Interface \
-		${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-GnuPG-Interface>=0:${PORTSDIR}/security/p5-GnuPG-Interface \
+		p5-MIME-tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Mail::GnuPG.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
