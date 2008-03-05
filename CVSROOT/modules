@@ -16039,6 +16039,7 @@ titlefix	ports/sysutils/titlefix
 tits		ports/comms/tits
 tivodecode	ports/multimedia/tivodecode
 tix		ports/x11-toolkits/tix
+tk-aspell	ports/textproc/tk-aspell
 tk-wrapper	ports/x11-toolkits/tk-wrapper
 tk80		ports/x11-toolkits/tk80
 tk82		ports/x11-toolkits/tk82
