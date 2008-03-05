@@ -991,6 +991,7 @@
     SUBDIR += texi2html
     SUBDIR += textogif
     SUBDIR += tinyxml
+    SUBDIR += tk-aspell
     SUBDIR += tkdiff
     SUBDIR += tkxmlive
     SUBDIR += tl-aspell
