@@ -9,8 +9,8 @@ PORTNAME=	xphotohunter
 PORTVERSION=	1.4
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://micro.ee.nthu.edu.tw/~tomcat/Xphotohunter/ \
-		http://wood.ite.ntnu.edu.tw/~clive/dist/xphotohunter/
+MASTER_SITES=	http://ghs.tongi.org/ \
+		http://micro.ee.nthu.edu.tw/~tomcat/Xphotohunter/
 
 MAINTAINER=	clive@FreeBSD.org
 COMMENT=	A game looking for the difference between two pictures
