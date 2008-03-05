@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ca8e56d5-e856-11dc-b5af-0017319806e7">
+    <topic>ghostscript -- zseticcspace() function buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>ghostscript-gpl</name>
+	<name>ghostscript-gpl-nox11</name>
+	<range><lt>8.61_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chris Evans from the Google Security Team reports:</p>
+	<blockquote cite="http://scary.beasts.org/security/CESA-2008-001.html">
+	  <p>Severity: parsing of evil PostScript file will result in
+	    arbitrary code execution.</p>
+	  <p>A stack-based buffer overflow in the zseticcspace() function
+	    in zicc.c allows remote arbitrary code execution via a
+	    malicious PostScript file (.ps) that contains a long Range
+	    array.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>28017</bid>
+      <cvename>CVE-2008-0411</cvename>
+      <url>http://scary.beasts.org/security/CESA-2008-001.html</url>
+    </references>
+    <dates>
+      <discovery>2008-02-28</discovery>
+      <entry>2008-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ce2f2ade-e7df-11dc-a701-000bcdc1757a">
     <topic>phpmyadmin -- SQL injection vulnerability</topic>
     <affects>
