@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Notify-Config
-PORTVERSION=	0.0907
+PORTVERSION=	0.0908
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	Perl module for config-driven Subversion notification
 
-RUN_DEPENDS=	${LOCALBASE}/bin/svnnotify:${PORTSDIR}/devel/p5-SVN-Notify \
-		${LOCALBASE}/bin/ysh:${PORTSDIR}/textproc/p5-YAML
-BUILD_DEPENDS=	${LOCALBASE}/bin/svnnotify:${PORTSDIR}/devel/p5-SVN-Notify \
-		${LOCALBASE}/bin/ysh:${PORTSDIR}/textproc/p5-YAML
+RUN_DEPENDS=	p5-SVN-Notify>=2.70:${PORTSDIR}/devel/p5-SVN-Notify \
+		p5-YAML>=0.62:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
