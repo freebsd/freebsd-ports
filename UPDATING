@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080306:
+  AFFECTS: users of mail/dovecot
+  AUTHOR: ehaupt@FreeBSD.org
+
+  The update to 1.0.12 will require a manual change to the active configuration
+  file.
+
+  mail_extra_groups setting was commonly used insecurely. This setting is now
+  deprecated. Most users should switch to using mail_privileged_group setting,
+  but if you really need the old functionality use mail_access_groups instead.
+
 20080303:
   AFFECTS: users of security/gnutls and any port that depends on it
   AUTHOR: novel@FreeBSD.org
