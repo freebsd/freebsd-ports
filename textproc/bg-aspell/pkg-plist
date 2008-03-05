@@ -1,3 +1,4 @@
+lib/aspell-%%VER%%/bg_affix.dat
 lib/aspell-%%VER%%/bg_phonet.dat
 lib/aspell-%%VER%%/bulgarian.kbd
 lib/aspell-%%VER%%/bg.dat
