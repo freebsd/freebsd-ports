@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Author:	kamikaze
-# Contact:	LoN_Kamikaze@gmx.de
+# Contact:	kamikaze@bsdforen.de
 #
 # If vpnc_conf is defined, it will be treated as a list of configuration files
 # in vpnc_conf_dir. This managed mode is useful where where vpnc tunnels have
@@ -43,25 +43,24 @@ vpnc_start() {
 		current="$vpnc_conf_dir/$config"
 
 		# Start vpnc.
-		$command --local-port 0 $current $vpnc_flags
-		status=$?
-		if [ $status != 0 ]; then
+		if ! $command --local-port 0 $current $vpnc_flags; then
+			status=$?
 			# VPNC does not print a newline after an error.
 			echo
 			echo "Running 'vpnc $current --local-port 0 $vpnc_flags' failed."
 			return $status
 		fi
 
-		# Move files to allow a clean shutdown
+		# Wait for the system to catch up.
+		/bin/sleep 2
+
+		# Copy files to allow a clean shutdown
 		# of multiple connections.
 
-		/bin/mv "$vpnc_pid_dir/vpnc.pid" "$vpnc_pid_dir/vpnc.$config.pid"
-		/bin/mv "$vpnc_pid_dir/vpnc.defaultroute" "$vpnc_pid_dir/vpnc.$config.defaultroute" 2> /dev/null
-		/bin/mv "$vpnc_pid_dir/vpnc.resolv.conf-backup" "$vpnc_pid_dir/vpnc.$config.resolv.conf-backup" 2> /dev/null
+		/bin/cp "$vpnc_pid_dir/vpnc.pid" "$vpnc_pid_dir/vpnc.$config.pid"
+		/bin/cp "$vpnc_pid_dir/vpnc.defaultroute" "$vpnc_pid_dir/vpnc.$config.defaultroute" 2> /dev/null
+		/bin/cp "$vpnc_pid_dir/vpnc.resolv.conf-backup" "$vpnc_pid_dir/vpnc.$config.resolv.conf-backup" 2> /dev/null
 		echo "$config" >> "$vpnc_record"
-
-		# Wait for the system to catch up.
-		/bin/sleep 1
 	done
 }
 
