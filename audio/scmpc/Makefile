@@ -20,6 +20,7 @@ LIB_DEPENDS=	argtable2.1:${PORTSDIR}/devel/argtable \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

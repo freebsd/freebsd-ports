@@ -5,7 +5,7 @@ Features include:
   * Keeps unsubmitted songs in a queue which is saved to a file at a
     configurable interval
   * Will try to reconnect to MPD and Audioscrobbler if the network
-    connection fail
+    connection fails
   * Works with a password-protected MPD server
   * Can connect to Audioscrobbler through a proxy
   * Works when crossfading is enabled
