@@ -63,15 +63,15 @@ include/ucd-snmp/version.h
 @dirrm include/ucd-snmp
 lib/libsnmp.a
 lib/libsnmp.la
-lib/libsnmp.so
+%%LEGACYLINKS%%lib/libsnmp.so
 lib/libsnmp.so.%%shlib%%
 lib/libucdagent.a
 lib/libucdagent.la
-lib/libucdagent.so
+%%LEGACYLINKS%%lib/libucdagent.so
 lib/libucdagent.so.%%shlib%%
 lib/libucdmibs.a
 lib/libucdmibs.la
-lib/libucdmibs.so
+%%LEGACYLINKS%%lib/libucdmibs.so
 lib/libucdmibs.so.%%shlib%%
 sbin/snmpd
 sbin/snmptrapd

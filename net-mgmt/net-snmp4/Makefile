@@ -7,7 +7,7 @@
 
 PORTNAME=	ucd-snmp
 PORTVERSION=	4.2.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -94,16 +94,19 @@ CONFIGURE_ARGS+=	--with-openssl=/usr
 CFLAGS+=	-DOPENSSL_DES_LIBDES_COMPATIBILITY
 .endif
 
-SHLIB_VERSION=	4
-PLIST_SUB+=	shlib=${SHLIB_VERSION}
-
 OPTIONS=	IPV6	"Enable IPv6 support"	On
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700019
-BROKEN=		Does not compile on FreeBSD >= 7.0
+SHLIB_VERSION=	4.0
+PLIST_SUB+=	LEGACYLINKS="@comment "
+.else
+SHLIB_VERSION=	4
+PLIST_SUB+=	LEGACYLINKS=""
 .endif
+
+PLIST_SUB+=	shlib=${SHLIB_VERSION}
 
 .if ${OSVERSION} >= 600000
 CFLAGS+=	-Dfreebsd5
