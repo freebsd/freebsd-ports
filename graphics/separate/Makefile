@@ -8,7 +8,8 @@
 PORTNAME=	separate
 PORTVERSION=	20070727
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.gahr.ch/FreeBSD/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	gahr
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A CMYK plugin for The GIMP
