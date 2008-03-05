@@ -15,8 +15,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	linimon@FreeBSD.org
 COMMENT=	"meta-port" for administrative tools to maintain ports
 
-# note: portuprade is brought in by pkg_cutleaves
 RUN_DEPENDS=	\
+		${LOCALBASE}/sbin/portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
 		${LOCALBASE}/bin/fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup \
 		${LOCALBASE}/sbin/pkg_cutleaves:${PORTSDIR}/ports-mgmt/pkg_cutleaves \
 		${LOCALBASE}/bin/pkg_tree:${PORTSDIR}/ports-mgmt/pkg_tree \
