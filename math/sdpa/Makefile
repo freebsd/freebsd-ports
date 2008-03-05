@@ -9,15 +9,19 @@ PORTNAME=	sdpa
 PORTVERSION=	7.0.5
 CATEGORIES=	math
 MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
-DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz ${PORTNAME}.${PORTVERSION}.manual.pdf
+DISTFILES=	${SRCFILE} ${MANUALFILE}
 DIST_SUBDIR=	sdpa
-EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.src.tar.gz
+EXTRACT_ONLY=	${SRCFILE}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
 
 .include <bsd.port.pre.mk>
 
+SRCDATE=	20080216
+MANDATE=	20080228
+SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
+MANUALFILE=	${PORTNAME}.${PORTVERSION}.manual.${MANDATE}.pdf
 USE_FORTRAN=	yes
 CONFIGURE_ENV+=	F77="${F77}"
 GNU_CONFIGURE=	yes
@@ -50,15 +54,15 @@ LAPACK=		-lalapack_r
 CONFIGURE_ARGS+=--with-blas="-L${LOCALBASE}/lib ${BLAS}" --with-lapack="-L${LOCALBASE}/lib ${LAPACK}" --with-system-spooles
 CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/spooles" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/spooles" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/spooles" LDFLAGS="-L${LOCALBASE}/lib"
 
+PLIST_SUB+=	MANUALFILE=${MANUALFILE}
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sdpa ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA}    ${WRKSRC}/param.sdpa ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTNAME}.${PORTVERSION}.manual.pdf
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${i} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${MANUALFILE} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
