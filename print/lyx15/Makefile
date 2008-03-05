@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.chg.ru/pub/X11/lyx/stable/ \
 		http://lyx.mirror.fr/stable/
 
-MAINTAINER=	trash.esiac@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG) (stable)
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
