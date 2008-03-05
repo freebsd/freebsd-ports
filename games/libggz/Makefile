@@ -8,11 +8,13 @@
 
 PORTNAME=	libggz
 PORTVERSION=	${GGZ_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	The GGZ Gaming Zone - Base Library
+
+LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget
