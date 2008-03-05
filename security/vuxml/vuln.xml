@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ce2f2ade-e7df-11dc-a701-000bcdc1757a">
+    <topic>phpmyadmin -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><lt>2.11.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A phpMyAdmin security announcement report:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-1">
+	  <p>phpMyAdmin used the $_REQUEST superglobal as a source for
+	    its parameters, instead of $_GET and $_POST. This means that
+	    on most servers, a cookie with the same name as one of
+	    phpMyAdmin's parameters can interfere.</p>
+	  <p>Another application could set a cookie for the root path
+	    "/" with a "sql_query" name, therefore overriding the
+	    user-submitted sql_query because by default, the $_REQUEST
+	    superglobal imports first GET, then POST then COOKIE data.</p>
+	  <h3>Mitigation factor</h3>
+	  <p>An attacker must trick the victim into visiting a page on
+	    the same web server where he has placed code that creates
+	    a malicious cookie.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>28068</bid>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2008-1</url>
+    </references>
+    <dates>
+      <discovery>2008-03-01</discovery>
+      <entry>2008-03-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f9e96930-e6df-11dc-8c6a-00304881ac9a">
     <topic>pcre -- buffer overflow vulnerability</topic>
     <affects>
