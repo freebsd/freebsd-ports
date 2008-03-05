@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sqlobject
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	databases python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/S/SQLObject/ \
+MASTER_SITES=	http://pypi.python.org/packages/source/S/SQLObject/ \
 		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	dryice
