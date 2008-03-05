@@ -12943,7 +12943,6 @@ ports_news	ports/news
 ports_ntp	ports/net/ntp
 ports_ntp-devel	ports/net/ntp-devel
 ports_nut	ports/sysutils/nut
-ports_openssh	ports/security/openssh
 ports_openssl	ports/security/openssl
 ports_palm	ports/palm
 ports_pam_krb5	ports/security/pam_krb5
