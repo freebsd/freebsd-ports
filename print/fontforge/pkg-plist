@@ -436,6 +436,8 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-comment.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-context.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-gasp.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-general.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-layers.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-lookups.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-macfeat.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-macstyle.png
