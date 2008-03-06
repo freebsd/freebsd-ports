@@ -595,6 +595,11 @@ MASTER_SITE_GNU_ALPHA+=	\
 	ftp://ftp.ps.pl/mirrors/alpha.gnu.org/pub/gnu/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_GOOGLE_CODE)
+MASTER_SITE_GOOGLE_CODE+= \
+	http://${PORTNAME}.googlecode.com/files/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_HORDE)
 MASTER_SITE_HORDE+=	\
 	http://ftp.horde.org/pub/%SUBDIR%/ \
