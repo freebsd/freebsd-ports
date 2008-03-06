@@ -34,6 +34,60 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="de4d4110-ebce-11dc-ae14-0016179b2dd5">
+    <topic>mplayer -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-gtk2</name>
+	<name>mplayer-gtk-esound</name>
+	<name>mplayer-gtk2-esound</name>
+	<range><lt>0.99.11_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mplayer Team reports:</p>
+	<blockquote cite="http://www.mplayerhq.hu/design7/news.html">
+	  <p>A buffer overflow was found in the code used to extract album
+	    titles from CDDB server answers. When parsing answers from the
+	    CDDB server, the album title is copied into a fixed-size buffer
+	    with insufficient size checks, which may cause a buffer overflow.
+	    A malicious database entry could trigger a buffer overflow in the
+	    program. That can lead to arbitrary code execution with the UID of
+	    the user running MPlayer.</p>
+	  <p>A buffer overflow was found in the code used to escape URL
+	    strings. The code used to skip over IPv6 addresses can be tricked
+	    into leaving a pointer to a temporary buffer with a non-NULL value;
+	    this causes the unescape code to reuse the buffer, and may lead to
+	    a buffer overflow if the old buffer is smaller than required.
+	    A malicious URL string may be used to trigger a buffer overflow in
+	    the program, that can lead to arbitrary code execution with the UID
+	    of the user running MPlayer.</p>
+	  <p>A buffer overflow was found in the code used to parse MOV file
+	    headers.The code read some values from the file and used them as
+	    indexes into as array allocated on the heap without performing any
+	    boundary check. A malicious file may be used to trigger a buffer
+	    overflow in the program. That can lead to arbitrary code execution
+	    with the UID of the user running MPlayer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-0485</cvename>
+      <cvename>CVE-2008-0486</cvename>
+      <cvename>CVE-2008-0629</cvename>
+      <cvename>CVE-2008-0630</cvename>
+      <url>http://secunia.com/advisories/28779</url>
+    </references>
+    <dates>
+      <discovery>2008-02-05</discovery>
+      <entry>2008-03-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca8e56d5-e856-11dc-b5af-0017319806e7">
     <topic>ghostscript -- zseticcspace() function buffer overflow vulnerability</topic>
     <affects>
