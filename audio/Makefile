@@ -77,6 +77,7 @@
     SUBDIR += cantus_3
     SUBDIR += caps-plugins
     SUBDIR += ccaudio
+    SUBDIR += ccaudio2
     SUBDIR += cd-console
     SUBDIR += cd-discid
     SUBDIR += cd2mp3
