@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	convmv
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.12
 CATEGORIES=	converters perl5
-MASTER_SITES=	http://j3e.de/linux/convmv/
+MASTER_SITES=	http://www.j3e.de/linux/convmv/
 
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Convert filenames from one encoding to another
