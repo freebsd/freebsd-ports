@@ -7,15 +7,13 @@
 
 PORTNAME=	maelstrom
 PORTVERSION=	3.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.devolution.com/~slouken/projects/Maelstrom/src/
 DISTNAME=	Maelstrom-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asteroids-style game for X Window System
-
-BROKEN=		Size mismatch
 
 USE_X_PREFIX=	yes
 USE_SDL=	sdl net
