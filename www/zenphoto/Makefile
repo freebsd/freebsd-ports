@@ -4,11 +4,11 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.zenphoto.org/files/
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A simpler web photo gallery
 
 USE_PHP=	mysql gd session
