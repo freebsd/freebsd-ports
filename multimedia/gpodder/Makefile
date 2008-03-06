@@ -19,7 +19,7 @@ COMMENT=	A GTK2 podcast aggregrator written in Python
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
 		convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
-		wget:${PORTSDIR}/ftp/wgeta \
+		wget:${PORTSDIR}/ftp/wget \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_GMAKE=	yes
