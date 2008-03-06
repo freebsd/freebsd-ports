@@ -10,7 +10,7 @@ PORTVERSION=	0.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://wedgie.org/pub/
 
-MAINTAINER=	bjohnson@wedgie.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Watches the output from a command at specified intervals
 
 MAN1=		cmdwatch.1
