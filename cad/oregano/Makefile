@@ -11,7 +11,7 @@ PORTVERSION=	0.69.0
 CATEGORIES=	cad gnome
 MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/86/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Schematic capture and simulation of electrical circuits
 
 USE_GNOME=	gnomehack gnomeprefix gtksourceview intlhack libglade2 \
@@ -22,10 +22,18 @@ INSTALLS_OMF=	yes
 
 .include <bsd.port.pre.mk>
 
-BROKEN=	does not fetch
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-Wall|${CFLAGS}|g" ${WRKSRC}/SConstruct
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e "/^SConscript ('po\/SConscript')/d" ${WRKSRC}/SConstruct
+.endif
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/oregano
