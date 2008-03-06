@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	perlconsole
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cpan.org/modules/by-module/Test/SUKRIA/
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A light program that lets you evaluate Perl code interactively
 
 RUN_DEPENDS=	${BASEP}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${BASEP}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
 		${BASEP}/Module/Refresh.pm:${PORTSDIR}/devel/p5-Module-Refresh \
-		${BASEP}/Lexical/Persistence.pm:${PORTSDIR}/devel/p5-Lexical-Persistence
+		${BASEP}/Lexical/Persistence.pm:${PORTSDIR}/devel/p5-Lexical-Persistence \
+		${BASEP}/B/Keywords.pm:${PORTSDIR}/devel/p5-B-Keywords
 
 BASEP=		${SITE_PERL}
 
