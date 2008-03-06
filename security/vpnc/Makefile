@@ -27,8 +27,9 @@ ALL_TARGET=	all
 PORTDOCS=	README TODO
 MAN8=		vpnc.8
 
-OPTIONS+=	DECRYPT "cisco-decypt password decrypt utility"     on
-OPTIONS+=	SSL     "OpenSSL certificate support (hybrid only)" off
+OPTIONS+=	DECRYPT       "cisco-decypt password decrypt utility"      on
+OPTIONS+=	SSL           "OpenSSL certificate support (hybrid only)"  off
+OPTIONS+=	CISCOVERSION  "Mask linux presentation string"             off
 
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}" CFLAGS="${CFLAGS}" CC="${CC}" \
 		BINS="${EXTRABUILDS}"
@@ -47,6 +48,10 @@ PLIST_SUB+=	DECRYPT="@comment "
 NO_PACKAGE=	binary linked against OpenSSL must not be redistributed
 CFLAGS+=	-DOPENSSL_GPL_VIOLATION
 LDFLAGS+=	-lcrypto
+.endif
+
+.if defined(WITH_CISCOVERSION)
+CFLAGS+=	-DCISCO_PATCH_VERSION
 .endif
 
 post-patch:

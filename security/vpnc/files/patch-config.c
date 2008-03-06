@@ -1,6 +1,40 @@
---- config.c.orig	2007-09-10 22:39:48.000000000 +0200
-+++ config.c	2008-02-26 11:33:02.000000000 +0100
-@@ -267,12 +267,12 @@
+--- config.c.orig	2008-03-06 17:03:57.000000000 +0100
++++ config.c	2008-03-06 17:14:29.000000000 +0100
+@@ -257,17 +257,36 @@
+ 
+ static const char *config_def_app_version(void)
+ {
+-	struct utsname uts;
+-	char *version;
++        char *version;
++#ifndef CISCO_PATCH_VERSION
++        struct utsname uts;
+ 
+-	uname(&uts);
+-	asprintf(&version, "Cisco Systems VPN Client %s:%s", VERSION, uts.sysname);
+-	return version;
++        uname(&uts);
++#endif
++
++#ifdef CISCO_PATCH_VERSION
++        /*
++         * Raffaele De Lorenzo March 2008
++         * Some Cisco Concentrator refuse connection if the Presentation Version
++         * String is not the same like Official "Cisco VPN Client". This patch
++         * masked the version to "Cisco Systems VPN Client 4.8.00 (0490):Linux",
++         */
++#define CISCO_CONC_PRESENT_VERSION      "Cisco Systems VPN Client 4.8.00 (0490):Linux"
++#endif
++
++        asprintf(&version,
++#ifdef CISCO_PATCH_VERSION
++                CISCO_CONC_PRESENT_VERSION
++#else
++                "Cisco Systems VPN Client %s:%s", VERSION, uts.sysname
++#endif
++                );
++        return version;
+ }
  
  static const char *config_def_script(void)
  {
@@ -9,13 +43,7 @@
  }
  
  static const char *config_def_pid_file(void)
- {
--	return "/var/run/vpnc/pid";
-+	return "/var/run/vpnc.pid";
- }
- 
- static const char *config_def_vendor(void)
-@@ -538,7 +538,7 @@
+@@ -538,7 +557,7 @@
  {
  	char *realname;
  	
@@ -24,7 +52,7 @@
  	return realname;
  }
  
-@@ -757,8 +757,8 @@
+@@ -757,8 +776,8 @@
  	}
  	
  	if (!got_conffile) {
