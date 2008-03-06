@@ -68,7 +68,7 @@ INPUT_OFF=	acecad \
 		tek4957 \
 		vmmouse void
 
-QUIRKS=		keyboard:kbd jamstudio:js_x openchrome:via
+QUIRKS=		keyboard:kbd jamstudio:js_x
 
 .if defined(XORG_COMPLETE)
 . for type in input video
