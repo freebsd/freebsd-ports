@@ -2,3 +2,4 @@ include/matheval.h
 lib/libmatheval.a
 lib/libmatheval.so
 lib/libmatheval.so.1
+libdata/pkgconfig/libmatheval.pc
