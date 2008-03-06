@@ -49,7 +49,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Mplayer Team reports:</p>
+	<p>The Mplayer team reports:</p>
 	<blockquote cite="http://www.mplayerhq.hu/design7/news.html">
 	  <p>A buffer overflow was found in the code used to extract album
 	    titles from CDDB server answers. When parsing answers from the
@@ -67,7 +67,7 @@ Note:  Please add new entries to the beginning of this file.
 	    the program, that can lead to arbitrary code execution with the UID
 	    of the user running MPlayer.</p>
 	  <p>A buffer overflow was found in the code used to parse MOV file
-	    headers.The code read some values from the file and used them as
+	    headers. The code read some values from the file and used them as
 	    indexes into as array allocated on the heap without performing any
 	    boundary check. A malicious file may be used to trigger a buffer
 	    overflow in the program. That can lead to arbitrary code execution
