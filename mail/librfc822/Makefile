@@ -7,28 +7,25 @@
 #
 
 PORTNAME=	librfc822
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	mail devel
-MASTER_SITES=	http://cryp.to/librfc822/
+MASTER_SITES=	http://cryp.to/librfc2822/
 
 MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	A complete parser for RFC822 addresses
 
-USE_GCC=	2.95
+GNU_CONFIGURE=	YES
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-PORTDOCS=	readme.html readme.txt user-manual.html user-manual.pdf
-PLIST_FILES=	include/rfc822.hh lib/librfc822.a
-
-post-patch:
-	@${REINPLACE_CMD} -E -e 's/^(CXX.*)=(.*)/\1\?=\2/' ${WRKSRC}/Makefile
+PORTDOCS=	user-manual.html
+PLIST_FILES=	include/rfc822.hpp lib/librfc822.a
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/rfc822.hh ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/rfc822.hpp ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/librfc822.a ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/documentation && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
