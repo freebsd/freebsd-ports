@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libmatheval
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.1.5
 CATEGORIES=	devel math
 MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes
+USE_GNOME=	gnomehack
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 INFO=		libmatheval
