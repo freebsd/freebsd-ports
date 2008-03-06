@@ -1,20 +1,3 @@
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/META-INF/MANIFEST.MF
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons/build.gif
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons/compile.gif
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons/hierarchy.gif
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons/ovr.gif
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons/pers.gif
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons/simulate.gif
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons/template.gif
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons/vsrc.gif
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/templates/verilog.xml
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/templates/vhdl.xml
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/about.html
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/plugin.xml
-eclipse/plugins/net.sourceforge.veditor_%%VER%%/veditor.jar
-@dirrm eclipse/plugins/net.sourceforge.veditor_%%VER%%/META-INF
-@dirrm eclipse/plugins/net.sourceforge.veditor_%%VER%%/icons
-@dirrm eclipse/plugins/net.sourceforge.veditor_%%VER%%/templates
-@dirrm eclipse/plugins/net.sourceforge.veditor_%%VER%%
+eclipse/plugins/net.sourceforge.veditor_%%VER%%.jar
 @dirrmtry eclipse/plugins
 @dirrmtry eclipse
