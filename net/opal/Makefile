@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opal
-PORTVERSION=	2.2.8
-PORTREVISION=	1
+PORTVERSION=	2.2.11
 CATEGORIES=	net
 MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/sources/ \
 		${MASTER_SITE_LOCAL}
@@ -22,7 +21,8 @@ OPTIONS=	FFMPEG	"Support H263 audio/video codec"	on \
 LIB_DEPENDS=	pt_r:${PORTSDIR}/devel/pwlib
 
 # In opal's Makefile the default make's target is optshared
-ALL_TARGET=	optshared
+#ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu` optshared
+ALL_TARGET=	-j3 optshared
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261
 USE_GNOME=	gnometarget
