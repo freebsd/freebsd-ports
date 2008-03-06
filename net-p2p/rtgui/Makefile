@@ -9,7 +9,7 @@ PORTNAME=	rtgui
 PORTVERSION=	0.2.2
 PORTREVISION=	2
 CATEGORIES=	net-p2p www
-MASTER_SITES=	http://rtgui.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jadawin@tuxaco.net

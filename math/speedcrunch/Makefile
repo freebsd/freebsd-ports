@@ -9,7 +9,7 @@ PORTNAME=	speedcrunch
 DISTVERSION=	0.8
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://speedcrunch.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A desktop calculator for power users

@@ -8,7 +8,7 @@
 PORTNAME=	google-perftools
 PORTVERSION=	0.94
 CATEGORIES=	devel
-MASTER_SITES=	http://google-perftools.googlecode.com/files/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vd/${PORTNAME}
 

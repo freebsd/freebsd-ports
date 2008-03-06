@@ -8,7 +8,7 @@
 PORTNAME=	diamanda
 PORTVERSION=	0.0.${SNAPSHOT:S/.//g}
 CATEGORIES=	www python
-MASTER_SITES=	http://diamanda.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${SNAPSHOT}
 
 MAINTAINER=	oleg@ht-systems.ru

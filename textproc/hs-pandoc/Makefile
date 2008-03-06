@@ -8,7 +8,7 @@
 PORTNAME=	pandoc
 PORTVERSION=	0.46
 CATEGORIES=	textproc haskell
-MASTER_SITES=	http://pandoc.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	jgm@berkeley.edu
 COMMENT=	A general markup converter

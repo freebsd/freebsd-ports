@@ -10,7 +10,7 @@ PORTNAME=	feedparser
 PORTVERSION=	4.1
 PORTREVISION=	2
 CATEGORIES=	textproc python
-MASTER_SITES=	http://feedparser.googlecode.com/files/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

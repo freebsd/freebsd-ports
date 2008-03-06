@@ -8,7 +8,7 @@
 PORTNAME=	stringencoders
 PORTVERSION=	3.7.0
 CATEGORIES=	devel
-MASTER_SITES=	http://stringencoders.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	skreuzer@exit2shell.com

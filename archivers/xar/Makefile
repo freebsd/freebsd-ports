@@ -8,7 +8,7 @@
 PORTNAME=	xar
 PORTVERSION=	1.5.2
 CATEGORIES=	archivers
-MASTER_SITES=	http://xar.googlecode.com/files/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 

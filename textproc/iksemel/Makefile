@@ -9,7 +9,7 @@ PORTNAME=	iksemel
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://iksemel.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	XML parser library mainly designed for Jabber applications

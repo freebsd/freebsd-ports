@@ -8,7 +8,7 @@
 PORTNAME=	cryptstring
 PORTVERSION=	0.2
 CATEGORIES=	security
-MASTER_SITES=	http://cryptstring.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Crypto Strings for PHP

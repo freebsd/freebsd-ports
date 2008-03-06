@@ -8,7 +8,7 @@
 PORTNAME=	nagaina
 PORTVERSION=	0.1.2
 CATEGORIES=	deskutils
-MASTER_SITES=	http://nagaina.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
 MAINTAINER=	ports@FreeBSD.org

@@ -8,7 +8,7 @@
 PORTNAME=	google-sparsehash
 PORTVERSION=	0.8
 CATEGORIES=	devel
-MASTER_SITES=	http://google-sparsehash.googlecode.com/files/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vd/${PORTNAME}
 DISTNAME=	sparsehash-${PORTVERSION}

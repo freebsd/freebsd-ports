@@ -9,7 +9,7 @@
 PORTNAME=	google-ctemplate
 PORTVERSION=	0.9
 CATEGORIES=	textproc
-MASTER_SITES=	http://google-ctemplate.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	ctemplate-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org

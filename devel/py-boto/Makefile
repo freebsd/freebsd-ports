@@ -8,7 +8,7 @@
 PORTNAME=	boto
 PORTVERSION=	1.0a
 CATEGORIES=	devel python
-MASTER_SITES=	http://boto.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	peter.schuller@infidyne.com
