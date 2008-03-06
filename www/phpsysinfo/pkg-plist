@@ -1,0 +1,99 @@
+%%WWWDIR%%/COPYING
+%%WWWDIR%%/ChangeLog
+%%WWWDIR%%/README
+%%WWWDIR%%/config.php.new
+%%WWWDIR%%/config.php
+%%WWWDIR%%/distros.ini
+%%WWWDIR%%/gfx/asc.gif
+%%WWWDIR%%/gfx/bg.gif
+%%WWWDIR%%/gfx/body.gif
+%%WWWDIR%%/gfx/bullet_toggle_minus.png
+%%WWWDIR%%/gfx/bullet_toggle_plus.png
+%%WWWDIR%%/gfx/desc.gif
+%%WWWDIR%%/gfx/html.gif
+%%WWWDIR%%/images/Arch.gif
+%%WWWDIR%%/images/CentOS.png
+%%WWWDIR%%/images/Cobalt.png
+%%WWWDIR%%/images/Darwin.png
+%%WWWDIR%%/images/Debian.png
+%%WWWDIR%%/images/Fedora.png
+%%WWWDIR%%/images/FreeBSD.png
+%%WWWDIR%%/images/Gentoo.png
+%%WWWDIR%%/images/Mandrake.png
+%%WWWDIR%%/images/NetBSD.png
+%%WWWDIR%%/images/OpenBSD.png
+%%WWWDIR%%/images/PLD.gif
+%%WWWDIR%%/images/Redhat.png
+%%WWWDIR%%/images/Rubix.png
+%%WWWDIR%%/images/Slackware.png
+%%WWWDIR%%/images/SunOS.png
+%%WWWDIR%%/images/Suse.png
+%%WWWDIR%%/images/Trustix.gif
+%%WWWDIR%%/images/Ubuntu.gif
+%%WWWDIR%%/images/free-eos.png
+%%WWWDIR%%/images/index.html
+%%WWWDIR%%/images/lfs.png
+%%WWWDIR%%/images/unknown.png
+%%WWWDIR%%/images/xp.gif
+%%WWWDIR%%/includes/class.Error.inc.php
+%%WWWDIR%%/includes/common_functions.php
+%%WWWDIR%%/includes/index.html
+%%WWWDIR%%/includes/mb/class.hddtemp.inc.php
+%%WWWDIR%%/includes/mb/class.healthd.inc.php
+%%WWWDIR%%/includes/mb/class.hwsensors.inc.php
+%%WWWDIR%%/includes/mb/class.lmsensors.inc.php
+%%WWWDIR%%/includes/mb/class.mbm5.inc.php
+%%WWWDIR%%/includes/mb/class.mbmon.inc.php
+%%WWWDIR%%/includes/mb/index.html
+%%WWWDIR%%/includes/os/class.BSD.common.inc.php
+%%WWWDIR%%/includes/os/class.Darwin.inc.php
+%%WWWDIR%%/includes/os/class.FreeBSD.inc.php
+%%WWWDIR%%/includes/os/class.HP-UX.inc.php
+%%WWWDIR%%/includes/os/class.Linux.inc.php
+%%WWWDIR%%/includes/os/class.NetBSD.inc.php
+%%WWWDIR%%/includes/os/class.OpenBSD.inc.php
+%%WWWDIR%%/includes/os/class.SunOS.inc.php
+%%WWWDIR%%/includes/os/class.WINNT.inc.php
+%%WWWDIR%%/includes/os/class.parseProgs.inc.php
+%%WWWDIR%%/includes/os/index.html
+%%WWWDIR%%/includes/ups/class.apcupsd.inc.php
+%%WWWDIR%%/includes/ups/index.html
+%%WWWDIR%%/includes/xml.class.php
+%%WWWDIR%%/index.php
+%%WWWDIR%%/jquery.js
+%%WWWDIR%%/jquery.tablesorter.pack.js
+%%WWWDIR%%/language/cz.xml
+%%WWWDIR%%/language/de.xml
+%%WWWDIR%%/language/en.xml
+%%WWWDIR%%/language/es.xml
+%%WWWDIR%%/language/fr.xml
+%%WWWDIR%%/language/gl.xml
+%%WWWDIR%%/language/hu.xml
+%%WWWDIR%%/language/it.xml
+%%WWWDIR%%/language/language.php
+%%WWWDIR%%/language/no.xml
+%%WWWDIR%%/language/pl.xml
+%%WWWDIR%%/language/ru.xml
+%%WWWDIR%%/language/sk.xml
+%%WWWDIR%%/language/sv.xml
+%%WWWDIR%%/language/uk.xml
+%%WWWDIR%%/phpsysinfo.dtd
+%%WWWDIR%%/phpsysinfo.js
+%%WWWDIR%%/templates/aqua.css
+%%WWWDIR%%/templates/aqua/aq_background.gif
+%%WWWDIR%%/templates/clean.css
+%%WWWDIR%%/templates/index.html
+%%WWWDIR%%/templates/jstyle_blue.css
+%%WWWDIR%%/templates/jstyle_green.css
+%%WWWDIR%%/templates/phpsysinfo.css
+%%WWWDIR%%/xml.php
+@dirrm %%WWWDIR%%/templates/aqua
+@dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/language
+@dirrm %%WWWDIR%%/includes/ups
+@dirrm %%WWWDIR%%/includes/os
+@dirrm %%WWWDIR%%/includes/mb
+@dirrm %%WWWDIR%%/includes
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/gfx
+@dirrmtry %%WWWDIR%%
