@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	angband
-PORTVERSION=	3.0.9
-PORTREVISION=	1
+PORTVERSION=	3.0.9a
 CATEGORIES=	games
 MASTER_SITES=	http://rephial.org/downloads/3.0/ \
 		http://angband.oook.cz/download/
@@ -39,6 +38,7 @@ pre-fetch:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| $$(INCLUDEDIR)||' ${WRKSRC}/mk/objective.mk
+	@${REINPLACE_CMD} -e 's|;$$|; \\|' ${WRKSRC}/src/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
