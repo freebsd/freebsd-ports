@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	phpSysInfo
-DISTVERSION=	3.0-RC3
+DISTVERSION=	3.0-RC4
 CATEGORIES=	www
 MASTER_SITES=	SF
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A php script that displays info about the host being accessed
 
 USE_PHP=	pcre xml
@@ -17,15 +17,13 @@ WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:L}
 NO_BUILD=	yes
-PLIST=		${WRKDIR}/plist
 
-post-patch:
-	${RM} -f ${PLIST}
-	cd ${WRKSRC};\
-	${FIND} . ! -type d | ${SORT} | ${SED} "s|^\.|${WWWDIR_REL}|"\
-		>${PLIST};\
-	${FIND} . -type d | ${SORT} -r | ${SED} "s|^\.|@dirrm ${WWWDIR_REL}|"\
-		>>${PLIST}
+.include <bsd.port.pre.mk>
+
+post-install:
+	@if [ ! -f ${WWWDIR}/config.php ]; then \
+		${CP} -p ${WWWDIR}/config.php ${WWWDIR}/config.php.bak ; \
+	fi
 
 do-install:
 	${MKDIR} ${WWWDIR}
@@ -33,5 +31,6 @@ do-install:
 		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	${CHMOD} -R ${BINMODE} ${WWWDIR}
 	${FIND} ${WWWDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
+	${CP} ${WWWDIR}/config.php.new ${WWWDIR}/config.php
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
