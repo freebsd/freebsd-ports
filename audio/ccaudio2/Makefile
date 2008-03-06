@@ -1,33 +1,32 @@
-# New ports collection makefile for:	ccaudio
-# Date created:				26 July 2000
-# Whom:					David Sugar <dyfet@gnu.org>
+# New ports collection makefile for:	ccaudio2
+# Date created:	13 February 2008
+# Whom:		gahr
 #
 # $FreeBSD$
 #
 
-PORTNAME=	ccaudio
-PORTVERSION=	1.2.0
+PORTNAME=	ccaudio2
+PORTVERSION=	0.9.9
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnutelephony
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files
 
 LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp
 
-BROKEN=		fails to compile
+CONFLICTS=	ccaudio-[0-9]*
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 USE_LDCONFIG=	yes
 
+MAN1=	audiotool.1 tonetool.1
+
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|<stdint\.h>|<stdlib.h>|g' ${WRKSRC}/src/dtmf.cpp
-	@${REINPLACE_CMD} -e \
-		's|@CXXFLAGS@|& $$(g_711_CXXFLAGS)|' ${WRKSRC}/dso/Makefile.in
+	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+	    ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
