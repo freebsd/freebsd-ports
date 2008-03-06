@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.switch.ch/tf-tant/floma/sw/samplicator/
 MAINTAINER=	lyngbol@wheel.dk
 COMMENT=	Receives UDP datagrams and redistributes them to a set of receivers
 
+DEPRECATED=	Project has vanished
+EXPIRATION_DATE=	2008-04-06
+
 GNU_CONFIGURE=	yes
 
 post-install:
