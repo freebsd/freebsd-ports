@@ -380,6 +380,7 @@
     SUBDIR += p5-Tie-DxHash
     SUBDIR += p5-Zen-Koans
     SUBDIR += pantry
+    SUBDIR += pastebinit
     SUBDIR += patanjali
     SUBDIR += patchutils
     SUBDIR += pauker
