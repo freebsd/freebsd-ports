@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	openmcu
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openh323
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src
-EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT=	OpenMCU hosts a conference call for H323 Video Conferencing users
