@@ -8,7 +8,7 @@
 PORTNAME=	bsnmp-ucd
 PORTVERSION=	0.2.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://bsnmp-ucd.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	to.my.trociny@gmail.com
 COMMENT=	A bsnmpd module that implements parts of UCD-SNMP-MIB
