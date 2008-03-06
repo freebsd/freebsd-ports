@@ -7,7 +7,7 @@
 
 PORTNAME=	meta-cvs
 PORTVERSION=	1.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://users.footprints.net/~kaz/
 DISTNAME=	mcvs-${PORTVERSION}
@@ -16,9 +16,17 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A more capable version control system than CVS, built around CVS
 
 BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp \
-		${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv
+		${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv \
+		${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall
+RUN_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall
 
 USE_GETTEXT=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" && ${OSVERSION} >= 700000
+USE_GCC=	3.4
+.endif
 
 post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
@@ -33,4 +41,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/QUICK-GUIDE ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
