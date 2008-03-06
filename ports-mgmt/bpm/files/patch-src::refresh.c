@@ -1,10 +1,14 @@
---- src/refresh.c.orig	Mon Aug 23 19:40:08 2004
-+++ src/refresh.c	Thu Nov 24 15:11:48 2005
-@@ -62,8 +62,14 @@
+--- src/refresh.c.orig	2004-08-23 19:40:08.000000000 -0700
++++ src/refresh.c	2008-03-05 14:30:58.000000000 -0800
+@@ -62,8 +62,18 @@
  __RCSID("$Id: refresh.c,v 1.32 2004/08/24 02:40:08 sethk Exp $");
  
  /* XXX use libinstall/lib.h */
-+#if __FreeBSD_version >= 600000
++#if __FreeBSD_version >= 800000
++#define	INDEX_FN    PORTS_BASE "/INDEX-8"
++#elif __FreeBSD_version >= 700000
++#define	INDEX_FN    PORTS_BASE "/INDEX-7"
++#elif __FreeBSD_version >= 600000
 +#define	INDEX_FN    PORTS_BASE "/INDEX-6"
 +#elif __FreeBSD_version >= 500036
 +#define	INDEX_FN    PORTS_BASE "/INDEX-5"
@@ -16,7 +20,7 @@
  #define DB_DIR	    "/var/db/pkg"
  #define ITER_BYTES  (128 * 1024)
  #define ITER_ENTS   32
-@@ -183,10 +189,12 @@
+@@ -183,10 +193,12 @@
  	if (*sp == '|')
  	    ++i;
  
@@ -31,7 +35,7 @@
  #endif /* DEBUG */
  	return FALSE;
      }
-@@ -195,12 +203,9 @@
+@@ -195,12 +207,9 @@
  
      for (i = 0; i < PFIELD_NFIELD; ++i)
      {
@@ -47,7 +51,7 @@
  
  	switch (i)
  	{
-@@ -320,7 +325,6 @@
+@@ -320,7 +329,6 @@
  
  	if (_refresh_index_parse(ln, portdp, rdp) != TRUE)
  	{
