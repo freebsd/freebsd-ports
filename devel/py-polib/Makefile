@@ -8,7 +8,7 @@
 PORTNAME=	polib
 PORTVERSION=	0.3.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://polib.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=     oleg@ht-systems.ru

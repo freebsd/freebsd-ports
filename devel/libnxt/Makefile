@@ -8,7 +8,7 @@
 PORTNAME=	libnxt
 PORTVERSION=	0.3
 CATEGORIES=	devel
-MASTER_SITES=	http://libnxt.googlecode.com/files/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
