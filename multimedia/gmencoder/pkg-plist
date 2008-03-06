@@ -2,7 +2,7 @@ bin/gmencoder
 share/pixmaps/gmencoder/media-pause.png
 share/pixmaps/gmencoder/media-play.png
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/locale/es/LC_MESSAGES/gmencoder.mo
-share/locale/en/LC_MESSAGES/gmencoder.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gmencoder.mo
+%%NLS%%share/locale/en/LC_MESSAGES/gmencoder.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/pixmaps/gmencoder
