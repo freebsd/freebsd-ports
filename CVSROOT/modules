@@ -1208,6 +1208,7 @@ cbview		ports/graphics/cbview
 cc65		ports/devel/cc65
 ccache		ports/devel/ccache
 ccaudio		ports/audio/ccaudio
+ccaudio2	ports/audio/ccaudio2
 cccc		ports/devel/cccc
 ccd2iso		ports/sysutils/ccd2iso
 ccdoc		ports/devel/ccdoc
