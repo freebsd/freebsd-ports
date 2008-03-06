@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	epstools
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/eps/
 
