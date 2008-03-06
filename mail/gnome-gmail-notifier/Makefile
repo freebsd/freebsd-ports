@@ -9,7 +9,7 @@ PORTNAME=	gnome-gmail-notifier
 PORTVERSION=	0.9.4
 PORTREVISION=	2
 CATEGORIES=	mail deskutils
-MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A Gmail Inbox Monitor for the GNOME2 desktop

@@ -8,7 +8,7 @@
 PORTNAME=	chm2pdf
 PORTVERSION=	0.9
 CATEGORIES=	textproc python
-MASTER_SITES=	http://chm2pdf.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A Python script that converts CHM files into PDF files

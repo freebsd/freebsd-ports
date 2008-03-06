@@ -9,7 +9,7 @@
 PORTNAME=	gcalcli
 PORTVERSION=	1.4
 CATEGORIES=	deskutils
-MASTER_SITES=	http://gcalcli.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lwhsu@FreeBSD.org

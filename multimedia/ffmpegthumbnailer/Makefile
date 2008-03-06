@@ -7,7 +7,7 @@
 PORTNAME=	ffmpegthumbnailer
 PORTVERSION=	1.1.5
 CATEGORIES=	multimedia graphics
-MASTER_SITES=	http://ffmpegthumbnailer.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	dierk@blaxxtarz.de
 COMMENT=	Lightweight video thumbnailer that can be used by file managers

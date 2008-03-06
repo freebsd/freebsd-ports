@@ -8,7 +8,7 @@
 PORTNAME=	pyproj
 PORTVERSION=	1.8.4
 CATEGORIES=	graphics python geography
-MASTER_SITES=	http://pyproj.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fmysh@iijmio-mail.jp

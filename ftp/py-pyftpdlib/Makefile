@@ -8,7 +8,7 @@
 PORTNAME=	pyftpdlib
 PORTVERSION=	0.3.0
 CATEGORIES=	ftp python
-MASTER_SITES=	http://pyftpdlib.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org

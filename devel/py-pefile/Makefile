@@ -8,7 +8,7 @@
 PORTNAME=	pefile
 PORTVERSION=	1.2.8
 CATEGORIES=	devel python
-MASTER_SITES=	http://pefile.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine.brodin@laposte.net

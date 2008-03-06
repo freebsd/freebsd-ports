@@ -7,7 +7,7 @@
 PORTNAME=	postmarkup
 PORTVERSION=	1.0.4
 CATEGORIES=	www python
-MASTER_SITES=	http://postmarkup.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	quakelee@cn.freebsd.org

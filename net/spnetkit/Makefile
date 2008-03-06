@@ -8,7 +8,7 @@
 PORTNAME=	spnetkit
 PORTVERSION=	0.2.0
 CATEGORIES=	net
-MASTER_SITES=	http://spnetkit.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	vanilla@FreeBSD.org

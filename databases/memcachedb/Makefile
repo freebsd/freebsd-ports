@@ -8,7 +8,7 @@
 PORTNAME=	memcachedb
 DISTVERSION=	1.0.1-beta
 CATEGORIES=	databases
-MASTER_SITES=	http://memcachedb.googlecode.com/files/	\
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://freebsd.csie.nctu.edu.tw/~gslin/files/
 
 MAINTAINER=	ports@FreeBSD.org

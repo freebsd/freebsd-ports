@@ -10,7 +10,7 @@ PORTVERSION=	0.8.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://code-bear.com/code/parsedatetime/ \
 		CHEESESHOP \
-		http://parsedatetime.googlecode.com/files/
+		${MASTER_SITE_GOOGLE_CODE} \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org

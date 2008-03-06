@@ -8,7 +8,7 @@
 PORTNAME=	spdict
 PORTVERSION=	0.2
 CATEGORIES=	devel
-MASTER_SITES=	http://spdict.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	vanilla@FreeBSD.org

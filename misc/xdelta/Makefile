@@ -8,7 +8,7 @@
 PORTNAME=	xdelta
 PORTVERSION=	1.1.4
 CATEGORIES=	misc devel
-MASTER_SITES=	http://xdelta.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A diff/patch utility for binary files

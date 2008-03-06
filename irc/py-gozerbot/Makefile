@@ -9,7 +9,8 @@ PORTNAME=	gozerbot
 PORTVERSION=	0.7.1.1
 PORTREVISION=	1
 CATEGORIES=	irc python
-MASTER_SITES=	http://gozerbot.org/media/tarball/ http://gozerbot.googlecode.com/files/
+MASTER_SITES=	http://gozerbot.org/media/tarball/ \
+		${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	gozerbot-${PORTVERSION}
 

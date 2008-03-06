@@ -8,7 +8,7 @@
 PORTNAME=	naim
 PORTVERSION=	0.11.8.3.1
 CATEGORIES=	net-im irc
-MASTER_SITES=	http://naim.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	j@scre.ws
 COMMENT=	Console ncurses-based AIM, ICQ, IRC, and Lily client
