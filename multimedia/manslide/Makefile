@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	manslide
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.2
 CATEGORIES=	multimedia kde
-MASTER_SITES=	http://csgib36.ifrance.com/Manslide/
+MASTER_SITES=	http://www.mandrivalinux-online.eu/manslide/
 
 MAINTAINER=	trebestie@gmail.com
 COMMENT=	Utility to simply create your own slideshow
