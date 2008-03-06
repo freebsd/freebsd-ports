@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	eps
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	mail
-MASTER_SITES=	http://www.inter7.com/eps/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	epsinter7
 
 MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	EPS is a Email Parsing System
