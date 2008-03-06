@@ -15,8 +15,10 @@ MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/%SUBDIR%/ \
 		http://www.mirrorservice.org/sites/rsync.samba.org/
 MASTER_SITE_SUBDIR=	rsync
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A network file distribution/synchronization utility
 
 USE_RC_SUBR=	rsyncd.sh
@@ -35,9 +37,23 @@ MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
 
 OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
-		SSH "Use SSH instead of RSH" on
+		SSH       "Use SSH instead of RSH" on \
+		FLAGS     "File system flags support patch, adds --fileflags" off \
+		ACL       "ACL support patch, adds --acls" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_FLAGS)
+USE_PERL5_BUILD=yes
+PATCH_STRIP=	-p1
+EXTRA_PATCHES+=	${WRKSRC}/patches/fileflags.diff
+.endif
+
+.if defined(WITH_ACL)
+USE_PERL5_BUILD=yes
+PATCH_STRIP=	-p1
+EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
+.endif
 
 .if defined(WITH_POPT_PORT)
 LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
