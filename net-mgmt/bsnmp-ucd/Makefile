@@ -14,7 +14,7 @@ MAINTAINER=	to.my.trociny@gmail.com
 COMMENT=	A bsnmpd module that implements parts of UCD-SNMP-MIB
 
 USE_MAKE=	yes
-USE_AUTOTOOLS=	libtool:15:build
+USE_AUTOTOOLS=	libtool:15:env
 
 MAN8=		bsnmp-ucd.8
 
