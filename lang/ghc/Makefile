@@ -72,7 +72,6 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-rts-Linker.c \
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 GHC_LIBDIR_REL=	lib/ghc-${GHC_VERSION}
 PORTDOCS=	*
-MAN1=		ghc.1
 
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} GHC_LIBDIR_REL=${GHC_LIBDIR_REL} DOCSDIR_REL=${DOCSDIR_REL}
 
@@ -112,6 +111,8 @@ DISTFILES+=	haddock-2.0.0.0.tar.gz:docs \
 		hscolour-1.9.tar.gz:docs
 
 EXTRACT_ONLY=	${_DISTFILES:C/hscolour.*$//g:C/haddock.*$//g}
+
+MAN1=		ghc.1
 
 SUB_FILES=	pkg-message.haddock
 
@@ -187,8 +188,6 @@ post-install:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
-.else
-	@${INSTALL_MAN} ${WRKSRC}/docs/man/ghc.1 ${PREFIX}/man/man1
 .endif
 	@${RM} -f ${PREFIX}/lib/ghc-${PORTVERSION}/package.conf.old
 
