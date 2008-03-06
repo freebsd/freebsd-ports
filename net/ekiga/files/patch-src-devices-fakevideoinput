@@ -1,0 +1,39 @@
+Remove the guts from a function, that no longer compiles with
+PWLib-1.12. Since the whole file is dealing with the situation,
+when there is, in fact, no video -- the user is shown a logo
+instead -- it is unclear, what good was this function providing
+even when it worked.
+
+Better patches are actively solicited...
+
+	-mi
+
+--- src/devices/fakevideoinput.cpp	2007-09-18 05:00:19.000000000 -0400
++++ src/devices/fakevideoinput.cpp	2008-03-06 17:13:47.000000000 -0500
+@@ -334,26 +334,4 @@
+ PVideoInputDevice_Picture::WaitFinishPreviousFrame ()
+ {
+-  if (frameTimeError == 0) {
+-
+-    frameTimeError += msBetweenFrames;
+-    return;
+-  }
+-
+-  PTime now;
+-  PTimeInterval delay = now - previousFrameTime;
+-  frameTimeError += msBetweenFrames;
+-  frameTimeError -= (int) delay.GetMilliSeconds();
+-  frameTimeError += 1000 / frameRate;
+-
+-  previousFrameTime = now;
+-
+-  if (frameTimeError > 0) {
+-    PTRACE(6, "FakeVideo\t Sleep for " << frameTimeError << " milli seconds");
+-#ifdef P_LINUX
+-    usleep(frameTimeError * 1000);
+-#else
+-    PThread::Current()->Sleep(frameTimeError);
+-#endif
+-  }
+ }
+ 
