@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	Rose-DB-Object
-PORTVERSION=	0.7665
+PORTVERSION=	0.7680
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Rose
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Extensible, high performance RDBMS-OO mapper
 
-BUILD_DEPENDS=	p5-Rose-DB>=0.737,1:${PORTSDIR}/databases/p5-Rose-DB \
+BUILD_DEPENDS=	p5-Rose-DB>=0.740,1:${PORTSDIR}/databases/p5-Rose-DB \
 		p5-Rose-Object>=0.840:${PORTSDIR}/devel/p5-Rose-Object \
 		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
 		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
