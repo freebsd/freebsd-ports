@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Gmencoder is Gnome2 front-end to mplayer/mencoder
 
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
@@ -24,12 +24,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
-USE_GETTEXT=	yes
 
 MAN1=		gmencoder.1
 
 DESKTOP_ENTRIES=	"Gmencoder" "Gnome2 front-end to mplayer/mencoder" \
 		"" "gmencoder" "GNOME;Application;AudioVideo;" false
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
@@ -44,11 +45,21 @@ pre-everything::
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
 .endif
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O4||; s|type -path|which|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/src/main.c ${WRKSRC}/src/interface.c
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e '/^ALL_LINGUAS/d' ${WRKSRC}/configure
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -59,4 +70,4 @@ post-install:
 .endif
 	${INSTALL_MAN}	${WRKSRC}/man/gmencoder.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
