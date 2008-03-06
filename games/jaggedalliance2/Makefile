@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ja2
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	games
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/ \
 		http://ja2.dragonriders.de/files/
@@ -27,13 +27,13 @@ NO_PACKAGE=	Language of the datafiles must be hardcoded in the game binary
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS=	DUTCH	"Compile for Dutch version"	Off \
-		ENGLISH	"Compile for English version"	Off \
-		FRENCH	"Compile for French version"	Off \
-		GERMAN	"Compile for German version"	Off \
-		ITALIAN	"Compile for Italian version"	Off \
-		POLISH	"Compile for Polish version"	Off \
-		RUSSIAN	"Compile for Russian version"	Off
+OPTIONS=	DUTCH	"Compile for Dutch version (choose ONE)"	Off \
+		ENGLISH	"Compile for English version (choose ONE)"	Off \
+		FRENCH	"Compile for French version (choose ONE)"	Off \
+		GERMAN	"Compile for German version (choose ONE)"	Off \
+		ITALIAN	"Compile for Italian version (choose ONE)"	Off \
+		POLISH	"Compile for Polish version (choose ONE)"	Off \
+		RUSSIAN	"Compile for Russian version (choose ONE)"	Off
 
 .include <bsd.port.pre.mk>
 
