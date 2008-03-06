@@ -1,0 +1,98 @@
+--- libmpdemux/demux_audio.c.orig	2007-10-08 03:49:33.000000000 +0800
++++ libmpdemux/demux_audio.c	2008-02-02 21:01:44.000000000 +0800
+@@ -229,6 +229,8 @@
+           ptr += 4;
+ 
+           comment = ptr;
++          if (&comment[length] < comments || &comment[length] >= &comments[blk_len])
++            return;
+           c = comment[length];
+           comment[length] = 0;
+ 
+--- libmpdemux/demux_mov.c.orig	2007-10-08 03:49:33.000000000 +0800
++++ libmpdemux/demux_mov.c	2008-02-02 21:01:48.000000000 +0800
+@@ -173,11 +173,12 @@
+     i=trak->chunkmap_size;
+     while(i>0){
+ 	--i;
+-	for(j=trak->chunkmap[i].first;j<last;j++){
++	j=FFMAX(trak->chunkmap[i].first, 0);
++	for(;j<last;j++){
+ 	    trak->chunks[j].desc=trak->chunkmap[i].sdid;
+ 	    trak->chunks[j].size=trak->chunkmap[i].spc;
+ 	}
+-	last=trak->chunkmap[i].first;
++	last=FFMIN(trak->chunkmap[i].first, trak->chunks_size);
+     }
+ 
+ #if 0
+@@ -235,6 +236,8 @@
+     s=0;
+     for(j=0;j<trak->durmap_size;j++){
+ 	for(i=0;i<trak->durmap[j].num;i++){
++	    if (s >= trak->samples_size)
++		break;
+ 	    trak->samples[s].pts=pts;
+ 	    ++s;
+ 	    pts+=trak->durmap[j].dur;
+@@ -246,6 +249,8 @@
+     for(j=0;j<trak->chunks_size;j++){
+ 	off_t pos=trak->chunks[j].pos;
+ 	for(i=0;i<trak->chunks[j].size;i++){
++	    if (s >= trak->samples_size)
++		break;
+ 	    trak->samples[s].pos=pos;
+ 	    mp_msg(MSGT_DEMUX, MSGL_DBG3, "Sample %5d: pts=%8d  off=0x%08X  size=%d\n",s,
+ 		trak->samples[s].pts,
+@@ -1568,8 +1573,7 @@
+ 			if( udta_len>udta_size)
+ 				udta_len=udta_size;
+ 			{
+-			char dump[udta_len-4];
+-			stream_read(demuxer->stream, (char *)&dump, udta_len-4-4);
++			stream_skip(demuxer->stream, udta_len-4-4);
+ 			udta_size -= udta_len;
+ 			}
+ 		    }
+--- stream/url.c.orig	2007-10-08 03:49:26.000000000 +0800
++++ stream/url.c	2008-02-02 21:00:22.000000000 +0800
+@@ -328,6 +328,7 @@
+ 		}
+ 	}
+ 	
++	tmp = NULL;
+ 	while(i < len) {
+ 		// look for the next char that must be kept
+ 		for  (j=i;j<len;j++) {
+--- stream/stream_cddb.c.orig	2007-10-08 03:49:26.000000000 +0800
++++ stream/stream_cddb.c	2008-02-02 21:02:51.000000000 +0800
+@@ -53,6 +53,7 @@
+ #include "version.h"
+ #include "stream.h"
+ #include "network.h"
++#include "libavutil/intreadwrite.h"
+ 
+ #define DEFAULT_FREEDB_SERVER	"freedb.freedb.org"
+ #define DEFAULT_CACHE_DIR	"/.cddb/"
+@@ -453,8 +454,9 @@
+ 		} else {
+ 			len = ptr2-ptr+1;
+ 		}
++		len = FFMIN(sizeof(album_title) - 1, len);
+ 		strncpy(album_title, ptr, len);
+-		album_title[len-2]='\0';
++		album_title[len]='\0';
+ 	}
+ 	mp_msg(MSGT_DEMUX, MSGL_STATUS, MSGTR_MPDEMUX_CDDB_ParseOKFoundAlbumTitle, album_title);
+ 	return 0;
+@@ -490,8 +492,9 @@
+ 				} else {
+ 					len = ptr2-ptr+1;
+ 				}
++				len = FFMIN(sizeof(album_title) - 1, len);
+ 				strncpy(album_title, ptr, len);
+-				album_title[len-2]='\0';
++				album_title[len]='\0';
+ 			}
+ 			mp_msg(MSGT_DEMUX, MSGL_STATUS, MSGTR_MPDEMUX_CDDB_ParseOKFoundAlbumTitle, album_title);
+ 			return cddb_request_titles(cddb_data);
