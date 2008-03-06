@@ -6,16 +6,23 @@
 #
 
 PORTNAME=	veditor
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 CATEGORIES=	java cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}
+EXTRACT_SUFX=	.jar
+EXTRACT_ONLY=
 
-MAINTAINER=	lon_kamikaze@gmx.de
+MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	A Verilog and VHDL editor plugin for eclipse
 
-RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
+#RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
+
+OPTIONS=	VERILOG "Support Verilog with Icarus Verilog" On \
+		VHDL "Support VHDL with FreeHDL" On
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_VERILOG)
 RUN_DEPENDS+=	iverilog:${PORTSDIR}/cad/iverilog
@@ -25,13 +32,9 @@ RUN_DEPENDS+=	iverilog:${PORTSDIR}/cad/iverilog
 RUN_DEPENDS+=	freehdl-v2cc:${PORTSDIR}/cad/freehdl
 .endif
 
-OPTIONS=	VERILOG "Support Verilog with Icarus Verilog" On \
-		VHDL "Support VHDL with FreeHDL" On
-
 PLIST_SUB=	VER=${PORTVERSION}
 
 NO_BUILD=	yes
-USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
 ECLIPSE=	${PREFIX}/eclipse
@@ -39,21 +42,6 @@ PLUGINS=	plugins
 
 do-install:
 	@${MKDIR} ${ECLIPSE}/${PLUGINS}
-	@${CP} -r ${WRKSRC}/${PLUGINS}/* ${ECLIPSE}/${PLUGINS}/
+	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${ECLIPSE}/${PLUGINS}/
 
-plist: build
-	@${ECHO} "===>  Rebuilding PLIST."
-	@${TOUCH} ${PLIST}
-	@${RM} ${PLIST}
-	@${FIND} -d ${WRKSRC}/${PLUGINS}/ -not -type d \
-		| ${SED} "s|${WRKSRC}|eclipse|1" \
-		| ${SED} "s|${PORTVERSION}|%%VER%%|g" \
-		>> ${PLIST}
-	@${FIND} -d ${WRKSRC}/${PLUGINS}/ -mindepth 1 -type d \
-		| ${SED} "s|${WRKSRC}|@dirrm eclipse|1" \
-		| ${SED} "s|${PORTVERSION}|%%VER%%|g" \
-		>> ${PLIST}
-	@${ECHO} "@dirrmtry eclipse/${PLUGINS}" >> ${PLIST}
-	@${ECHO} "@dirrmtry eclipse" >> ${PLIST}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
