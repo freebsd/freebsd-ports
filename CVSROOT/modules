@@ -11933,6 +11933,7 @@ pash		ports/shells/pash
 passepartout	ports/graphics/passepartout
 passivetex	ports/print/passivetex
 passlogd	ports/net/passlogd
+pastebinit	ports/misc/pastebinit
 patanjali	ports/misc/patanjali
 patchutils	ports/misc/patchutils
 pathalias	ports/mail/pathalias
