@@ -6468,7 +6468,6 @@ libXtrans	ports/x11/libXtrans
 libXtst		ports/x11/libXtst
 libXv		ports/x11/libXv
 libXvMC		ports/x11/libXvMC
-libXxf86	ports/x11/libXxf86
 libXxf86dga	ports/x11/libXxf86dga
 libXxf86misc	ports/x11/libXxf86misc
 libXxf86vm	ports/x11/libXxf86vm
@@ -13110,7 +13109,6 @@ primateplunge	ports/games/primateplunge
 primer3		ports/biology/primer3
 print-n-times	ports/textproc/print-n-times
 print_pmw	ports/print/pmw
-printext	ports/x11/printext
 printproto	ports/x11/printproto
 prips		ports/sysutils/prips
 privman		ports/devel/privman
@@ -17316,7 +17314,6 @@ xf86bigfontproto	ports/x11-fonts/xf86bigfontproto
 xf86dga		ports/x11/xf86dga
 xf86dgaproto	ports/x11/xf86dgaproto
 xf86driproto	ports/x11/xf86driproto
-xf86ext		ports/x11/xf86ext
 xf86miscproto	ports/x11/xf86miscproto
 xf86rushproto	ports/x11/xf86rushproto
 xf86vidmodeproto	ports/x11/xf86vidmodeproto
