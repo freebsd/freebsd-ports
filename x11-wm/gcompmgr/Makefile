@@ -31,10 +31,6 @@ DESKTOP_ENTRIES="gcompmgr" \
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE= requires the composite extension, which is unavailable with XFree86
-.endif
-
 post-patch:
 .for file in depcomp install-sh missing
 	@${LN} -sf ${AUTOMAKE_DIR}/${file} ${WRKSRC}

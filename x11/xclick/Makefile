@@ -30,11 +30,4 @@ do-build:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.pre.mk>
-
-# Requires XTEST extension from xorg
-.if !defined(X_WINDOW_SYSTEM) || (defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} != xorg)
-IGNORE=	cannot install: bad X_WINDOW_SYSTEM setting; xorg is required
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

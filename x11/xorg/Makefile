@@ -62,10 +62,4 @@ DEPENDS_TARGET="package"
 RUN_DEPENDS+=	${X11BASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server
 .endif
 
-.if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE= is part of X.Org and you have ${X_WINDOW_SYSTEM} set for X11\
-	distribution. See The X Window System and Virtual Consoles chapter\
-	of FAQ for more information
-.endif
-
 .include <bsd.port.post.mk>

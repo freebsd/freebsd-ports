@@ -27,10 +27,6 @@ PLIST_FILES=	bin/kompmgr
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE=	Requires the composite extension, which is unavailable with XFree86
-.endif
-
 do-build:
 	cd ${WRKSRC}/kwin/kompmgr && \
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${X11BASE}/lib -lX11 -lXdamage\

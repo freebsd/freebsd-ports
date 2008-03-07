@@ -44,15 +44,9 @@ NVVERSION?=	${DISTVERSION:S/.//g}00
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM} == "xorg"
 MODULESDIR=	lib/xorg/modules
 XORG_SUB=	""
 XFREE86_SUB=	"@comment "
-.else
-MODULESDIR=	lib/modules
-XORG_SUB=	"@comment "
-XFREE86_SUB=	""
-.endif
 
 # XXX Should use ${PKG_INFO} XXX
 #
@@ -140,7 +134,7 @@ pre-su-install:
 	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
 # xorg-server-1.4 installs its own ${X11BASE}/lib/xorg/modules/libwfb.so,
 # so back it up so it can be later restored similarly to what NVidia does:
-.if ${NVVERSION} >= 974600 && ${X_WINDOW_SYSTEM} == "xorg"
+.if ${NVVERSION} >= 974600
 	@${MV} -f ${PREFIX}/${MODULESDIR}/libwfb.so \
 		${PREFIX}/${MODULESDIR}/XXX-libwfb.so.%%.${XSERVVERSION}
 .endif

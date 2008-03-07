@@ -42,9 +42,7 @@ PLIST_SUB+=	NOLAME="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} == xorg
 CONFIGURE_ARGS+=	--with-xorg
-.endif
 
 .ifndef (WITH_GSTREAMER)
 CONFIGURE_ARGS+=	--without-gstreamer

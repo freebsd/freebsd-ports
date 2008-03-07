@@ -40,12 +40,8 @@ PLIST_SUB+=	NLS="@comment "
 BROKEN=		Does not compile on alpha
 .endif
 
-.if ${X_WINDOW_SYSTEM:L} == "xfree86-4"
-BUILD_DEPENDS+=	pswrap:${PORTSDIR}/devel/imake-4
-.else
 BUILD_DEPENDS+=	pswrap:${PORTSDIR}/x11/dgs
 LIB_DEPENDS+=	dpstk.0:${PORTSDIR}/x11/dgs
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \

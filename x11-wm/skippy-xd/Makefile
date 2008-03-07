@@ -39,10 +39,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${X_WINDOW_SYSTEM:L} != xorg
-BROKEN=	XFree86 does not support XComposite.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

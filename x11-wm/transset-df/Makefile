@@ -22,10 +22,6 @@ PLIST_FILES=	bin/transset-df
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE=		requires X.Org; install x11/xorg and try again
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/transset-df ${PREFIX}/bin
 

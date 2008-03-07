@@ -75,14 +75,8 @@ OSSFX?=		-6
 
 .if defined(VMWARE_X_PORTS)
 
-.if ${X_WINDOW_SYSTEM:L} == xfree86-4
-PLIST_SUB+=	INSTALLXSERVER4=""
-PLIST_SUB+=	INSTALLXMODULES=""
-VMWARE_XMODDIR=	${X11BASE}/lib/modules
-.else
 PLIST_SUB+=	INSTALLXSERVER4="@comment "
 PLIST_SUB+=	INSTALLXMODULES="@comment "
-.endif
 
 .else
 
@@ -182,22 +176,6 @@ do-install:
 	${LN} -sfh vmware-toolbox-tcl ${X11BASE}/bin/vmware-toolbox
 .if defined(WITH_VMWARE_GTK)
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}${OSSFX}/vmware-toolbox-gtk ${X11BASE}/bin
-.endif
-.if ${X_WINDOW_SYSTEM:L} == xfree86-4
-	if [ ! -d ${VMWARE_XMODDIR}/input ] ; then \
-		${MKDIR} ${VMWARE_XMODDIR}/input ; \
-	fi
-	if [ ! -d ${VMWARE_XMODDIR}/drivers ] ; then \
-		${MKDIR} ${VMWARE_XMODDIR}/drivers ; \
-	fi
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/XF86Config-4 ${X11BASE}/etc/XF86Config-4_VMware
-.if ${BITS} == 32
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.3.x/vmware_drv.o ${VMWARE_XMODDIR}/drivers/vmware_drv.o_VMware
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.2.x/vmmouse_drv.o ${VMWARE_XMODDIR}/input/vmmouse_drv.o_VMware
-.else
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.3.x_64/vmware_drv.o ${VMWARE_XMODDIR}/drivers/vmware_drv.o_VMware
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.3.x_64/vmmouse_drv.o ${VMWARE_XMODDIR}/input/vmmouse_drv.o_VMware
-.endif
 .endif
 	-${WRKSRC}/lib/sbin${BITS}${OSSFX}/vmware-guestd --cmd toolinstall.end 2>&1
 

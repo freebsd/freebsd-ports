@@ -91,10 +91,6 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE=		does not build with XFree86
-.endif
-
 .if defined(WITH_NVIDIA_GL)
 CFLAGS+=	-DWITH_NVIDIA_GL=1
 .endif

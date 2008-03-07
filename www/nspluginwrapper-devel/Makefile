@@ -60,11 +60,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 # XXX switch to USE_XORG once XFree86-4 is removed
-.if ${X_WINDOW_SYSTEM:L} == xorg
 BUILD_DEPENDS+=	${X11BASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
 RUN_DEPENDS+=	${X11BASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
-.else
-LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
-.endif
 
 .include <bsd.port.post.mk>
