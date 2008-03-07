@@ -32,9 +32,7 @@
     SUBDIR += buttonbox
     SUBDIR += chameleon
     SUBDIR += cnslock
-    SUBDIR += compositeext
     SUBDIR += compositeproto
-    SUBDIR += damageext
     SUBDIR += damageproto
     SUBDIR += decurs
     SUBDIR += deskmenu
@@ -83,7 +81,6 @@
     SUBDIR += fbpanel
     SUBDIR += fbsd-icons
     SUBDIR += fireflies
-    SUBDIR += fixesext
     SUBDIR += fixesproto
     SUBDIR += fluxbg
     SUBDIR += fpc-x11
@@ -225,7 +222,6 @@
     SUBDIR += p5-X11-IdleTime
     SUBDIR += p5-X11-Protocol
     SUBDIR += padkey
-    SUBDIR += panoramixext
     SUBDIR += peeper
     SUBDIR += pixman
     SUBDIR += portoseguro
@@ -237,13 +233,10 @@
     SUBDIR += qrash
     SUBDIR += qt4-inputmethods
     SUBDIR += qt4-opengl
-    SUBDIR += randrext
     SUBDIR += randrproto
     SUBDIR += recordproto
     SUBDIR += rendercheck
-    SUBDIR += renderext
     SUBDIR += renderproto
-    SUBDIR += resourceext
     SUBDIR += resourceproto
     SUBDIR += rgb
     SUBDIR += rox-wallpaper
@@ -349,7 +342,6 @@
     SUBDIR += xdtm
     SUBDIR += xedit
     SUBDIR += xev
-    SUBDIR += xextensions
     SUBDIR += xextproto
     SUBDIR += xeyes
     SUBDIR += xf86dga
