@@ -1,6 +1,6 @@
---- makefile.in.orig	Mon Jan  2 13:09:32 2006
-+++ makefile.in	Sun Jun 11 18:21:07 2006
-@@ -772,13 +772,11 @@
+--- makefile.in.orig	2008-03-03 14:13:46.000000000 +0100
++++ makefile.in	2008-03-07 09:31:12.000000000 +0100
+@@ -874,13 +874,11 @@
  install-exec-hook:
  	@if [ "`id -u`" -eq "0" ]; then \
  	   rm -f $(fpp)cron$(EXEEXT) > /dev/null 2>&1; \
