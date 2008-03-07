@@ -18,6 +18,7 @@ bin/marutex
 %%GEM_LIB_DIR%%/lib/maruku/version.rb
 %%GEM_LIB_DIR%%/lib/maruku/ext/math.rb
 %%GEM_LIB_DIR%%/lib/maruku/ext/math/elements.rb
+%%GEM_LIB_DIR%%/lib/maruku/ext/math/latex_fix.rb
 %%GEM_LIB_DIR%%/lib/maruku/ext/math/parsing.rb
 %%GEM_LIB_DIR%%/lib/maruku/ext/math/to_html.rb
 %%GEM_LIB_DIR%%/lib/maruku/ext/math/to_latex.rb
@@ -180,6 +181,10 @@ bin/marutex
 %%GEM_LIB_DIR%%/tests/unittest/notyet/triggering.md
 %%GEM_LIB_DIR%%/tests/unittest/paragraph_rules/dont_merge_ref.md
 %%GEM_LIB_DIR%%/tests/unittest/paragraph_rules/tab_is_blank.md
+%%GEM_LIB_DIR%%/tests/unittest/pending/amps.md
+%%GEM_LIB_DIR%%/tests/unittest/pending/empty_cells.md
+%%GEM_LIB_DIR%%/tests/unittest/pending/link.md
+%%GEM_LIB_DIR%%/tests/unittest/pending/ref.md
 %%GEM_LIB_DIR%%/tests/unittest/recover/recover_links.md
 %%GEM_LIB_DIR%%/tests/unittest/references/long_example.md
 %%GEM_LIB_DIR%%/tests/unittest/references/spaces_and_numbers.md
@@ -196,6 +201,7 @@ bin/marutex
 @dirrm %%GEM_LIB_DIR%%/tests/utf8-files
 @dirrm %%GEM_LIB_DIR%%/tests/unittest/references
 @dirrm %%GEM_LIB_DIR%%/tests/unittest/recover
+@dirrm %%GEM_LIB_DIR%%/tests/unittest/pending
 @dirrm %%GEM_LIB_DIR%%/tests/unittest/paragraph_rules
 @dirrm %%GEM_LIB_DIR%%/tests/unittest/notyet
 @dirrm %%GEM_LIB_DIR%%/tests/unittest/math

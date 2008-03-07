@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	maruku
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	www rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	A Markdown and PHP Markdown extra interpreter for Ruby
