@@ -16,7 +16,7 @@ COMMENT=	A library to make access to GnuPG easier
 
 BUILD_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
-RUN_DEPENDS=	gpg2:${PORTDIR}/security/gnupg
+RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
