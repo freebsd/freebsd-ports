@@ -1,0 +1,13 @@
+bin/gpscorrelate
+bin/gpscorrelate-gui
+share/gpscorrelate/README
+share/gpscorrelate/RELEASES
+share/gpscorrelate/command-line-options.txt
+share/doc/gpscorrelate/html/command.html
+share/doc/gpscorrelate/html/concepts.html
+share/doc/gpscorrelate/html/corr.png
+share/doc/gpscorrelate/html/gui.html
+share/doc/gpscorrelate/html/index.html
+@dirrm share/doc/gpscorrelate/html
+@dirrm share/doc/gpscorrelate
+@dirrm share/gpscorrelate

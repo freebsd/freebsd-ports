@@ -1,0 +1,115 @@
+.\"     Title: GPSCORRELATE
+.\"    Author: Stefano Zacchiroli
+.\" Generator: DocBook XSL Stylesheets v1.70.1 <http://docbook.sf.net/>
+.\"      Date: 08 Sep 2006
+.\"    Manual: 
+.\"    Source: 
+.\"
+.TH "GPSCORRELATE" "1" "08 Sep 2006" "" ""
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+gpscorrelate \- correlates digital photos with GPS data filling EXIF fields
+.SH "SYNOPSIS"
+.HP 13
+\fBgpscorrelate\fR [\fB\-g\ \fR\fB\fIfile.gpx\fR\fR] [\fIoption\fR...]
+.HP 17
+\fBgpscorrelate\-gui\fR
+.SH "DESCRIPTION"
+.PP
+This manual page documents briefly the
+\fBgpscorrelate\fR
+and
+\fBgpscorrelate\-gui\fR
+commands.
+.PP
+This manual page was written for the
+Debian(TM)
+distribution because the original programs do not have a manual page. Instead, they have documentation in HTML format; see below.
+.PP
+\fBgpscorrelate\fR
+is a program that acts on digital photo in JPEG format filling EXIF (Exchangeable Image File Format) fields related to GPS (Global Positioning System) information. Source for the GPS data is a record of GPS information encoded in GPX (GPS Exchange Format) Format. The act of filling those fields is referred to as
+\fIcorrelation\fR.
+.PP
+If GPS data are available at the precise moment the photo was taken (with a 1\-second granularity) the GPS data are stored unmodified in EXIF fields. If they are not linear interpolation of GPS data available at moments before and after the photo was taken can be used.
+.PP
+\fBgpscorrelate\fR
+is a command line tool implementing correlation whereas
+\fBgpscorrelate\-gui\fR
+is the corresponding GTK+ graphical user interface.
+.SH "OPTIONS"
+.PP
+These programs follow the usual
+GNU
+command line syntax, with long options starting with two dashes (`\-'). A summary of options is included below. For a complete description, see the HTML documentation.
+.TP 3n
+\fB\-g\fR, \fB\-\-gps\fR
+required, specifies GPX file with GPS data
+.TP 3n
+\fB\-z\fR, \fB\-\-timeadd\fR \fB+/\-\fR\fIXX\fR[\fB:\fR\fIXX\fR]
+time to add to GPS data to make it match photos. GPS data is in UTC; photos are not likely to be in UTC. Enter the timezone used when taking the photos: eg,
+\fB+8\fR
+for Perth
+.TP 3n
+\fB\-i\fR, \fB\-\-no\-interpolation\fR
+disable interpolation between points. Interpolation is linear, points are rounded if disabled
+.TP 3n
+\fB\-v\fR, \fB\-\-verbose\fR
+show what has been selected
+.TP 3n
+\fB\-d\fR, \fB\-\-datum\fR \fIdatum\fR
+specify measurement datum. If not set, WGS\-84 used
+.TP 3n
+\fB\-n\fR, \fB\-\-no\-write\fR
+do not write the exif data. Useful with
+\fB\-\-show\fR
+.TP 3n
+\fB\-m\fR, \fB\-\-max\-dist\fR \fItime\fR
+max time outside points that photo will be matched. Time is in seconds
+.TP 3n
+\fB\-s\fR, \fB\-\-show\fR
+Just show the GPS data from the given files, if it exists
+.TP 3n
+\fB\-o\fR, \fB\-\-machine\fR
+Just show the GPS data from the given files, machine readable output
+.TP 3n
+\fB\-r\fR, \fB\-\-remove\fR
+Strip GPS tags from the given files, and then quit
+.TP 3n
+\fB\-t\fR, \fB\-\-ignore\-tracksegs\fR
+Interpolate between track segments too
+.TP 3n
+\fB\-M\fR, \fB\-\-no\-mtime\fR
+Do not change mtime of modified files
+.TP 3n
+\fB\-h\fR, \fB\-\-help\fR
+Show summary of options.
+.SH "SEE ALSO"
+.PP
+gpsd (1), gpsbabel (1), gpxlogger (1), cgpxlogger (1).
+.PP
+The documentation of gpscorrelate and gpscorrelate\-gui in HTML format are available on the filesystem at
+\fI/usr/local/share/doc/gpscorrelate/html/\fR.
+.SH "AUTHOR"
+.PP
+This manual page was written by Stefano Zacchiroli
+<zack@debian.org>
+for the
+Debian(TM)
+system (but may be used by others). Permission is granted to copy, distribute and/or modify this document under the terms of the
+GNU
+General Public License, Version 2 any later version published by the Free Software Foundation.
+.PP
+On Debian systems, the complete text of the GNU General Public License can be found in /usr/share/common\-licenses/GPL.
+.SH "AUTHOR"
+.PP
+\fBStefano\fR \fBZacchiroli\fR
+.sp -1n
+.IP "" 3n
+Author.
+.SH "COPYRIGHT"
+Copyright \(co 2006 Stefano Zacchiroli <zack@debian.org>
+.br
+
