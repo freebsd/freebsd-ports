@@ -5,10 +5,11 @@
 
 PORTNAME=	pdfcrack
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A command line, password recovery tool for PDF-files
 
 USE_GMAKE=	yes
