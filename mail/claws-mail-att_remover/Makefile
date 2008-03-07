@@ -7,7 +7,7 @@
 
 PORTNAME=	att_remover
 PORTVERSION=	1.0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -23,7 +23,7 @@ USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:261
 
 PLIST_FILES=	lib/claws-mail/plugins/att_remover.a \
-	lib/claws-mail/plugins/att_remover.la \
-	lib/claws-mail/plugins/att_remover.so
+		lib/claws-mail/plugins/att_remover.la \
+		lib/claws-mail/plugins/att_remover.so
 
 .include <bsd.port.mk>

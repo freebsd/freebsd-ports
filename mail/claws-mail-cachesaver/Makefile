@@ -7,7 +7,7 @@
 
 PORTNAME=	cachesaver
 PORTVERSION=	0.10.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -23,7 +23,7 @@ USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:261
 
 PLIST_FILES=	lib/claws-mail/plugins/cachesaver.a \
-	lib/claws-mail/plugins/cachesaver.la \
-	lib/claws-mail/plugins/cachesaver.so
+		lib/claws-mail/plugins/cachesaver.la \
+		lib/claws-mail/plugins/cachesaver.so
 
 .include <bsd.port.mk>
