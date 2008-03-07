@@ -97,6 +97,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Sybase/MSSQL.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/mysql.pm
 %%SITE_PERL%%/DBIx/Class/Storage/Statistics.pm
+%%SITE_PERL%%/DBIx/Class/Storage/TxnScopeGuard.pm
 %%SITE_PERL%%/DBIx/Class/Test/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/UTF8Columns.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBIx/Class.pm
