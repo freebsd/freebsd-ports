@@ -18,6 +18,9 @@ COMMENT=	Writes yuv4mpeg streams for mpeg2enc from nuppelvideo files
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+DEPRECATED=	Add-on for soon to be removed nuppelvideo port
+EXPIRATION_DATE=2008-04-07
+
 USE_GNOME=	gtk12
 USE_XLIB=	yes
 USE_GMAKE=	yes
