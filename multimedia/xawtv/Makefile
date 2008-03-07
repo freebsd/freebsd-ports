@@ -7,7 +7,7 @@
 
 PORTNAME=	xawtv
 PORTVERSION=	3.95
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.bytesex.org/releases/xawtv/
 
@@ -61,7 +61,7 @@ PLIST_SUB+=	AA=""
 .endif
 
 .if defined(WITH_ZVBI)
-LIB_DEPENDS+=	zvbi.12:${PORTSDIR}/devel/libzvbi
+LIB_DEPENDS+=	zvbi.13:${PORTSDIR}/devel/libzvbi
 CONFIGURE_ARGS+=--enable-zvbi
 PLIST_SUB+=	ZVBI="" ZVBI5=""
 .else
