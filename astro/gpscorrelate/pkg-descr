@@ -1,0 +1,4 @@
+A tool to "stamp" photos taken with digital camera with a location, where they
+were taken.  It uses the GPS coordinates saved in GPX format.
+
+WWW: http://freefoote.dview.net/linux_gpscorr.html

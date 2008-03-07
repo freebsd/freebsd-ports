@@ -20,6 +20,7 @@
     SUBDIR += glunarclock
     SUBDIR += google-earth
     SUBDIR += gpsbabel
+    SUBDIR += gpscorrelate
     SUBDIR += gpsd
     SUBDIR += gpsdrive
     SUBDIR += gpsman
