@@ -39,7 +39,7 @@ MAN5=		rsyncd.conf.5
 OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 		SSH       "Use SSH instead of RSH" on \
 		FLAGS     "File system flags support patch, adds --fileflags" off \
-		ACL       "ACL support patch, adds --acls" off
+		ACL       "Add backward-compatibility for the --acls option" off
 
 .include <bsd.port.pre.mk>
 
