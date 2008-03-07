@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	4.3.0
+PORTVERSION=	5.1.4
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/
 DISTNAME=	spin${PORTVERSION:S/.//g}

@@ -12,6 +12,8 @@ bin/spin
 %%PORTDOCS%%%%DOCSDIR%%/Doc/V1.Updates
 %%PORTDOCS%%%%DOCSDIR%%/Doc/V2.Updates
 %%PORTDOCS%%%%DOCSDIR%%/Doc/V3.Updates
+%%PORTDOCS%%%%DOCSDIR%%/Doc/V4.Updates
+%%PORTDOCS%%%%DOCSDIR%%/Doc/V5.Updates
 %%PORTDOCS%%%%DOCSDIR%%/Examples/ex.1a
 %%PORTDOCS%%%%DOCSDIR%%/Examples/ex.1b
 %%PORTDOCS%%%%DOCSDIR%%/Examples/ex.1c
