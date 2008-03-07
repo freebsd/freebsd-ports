@@ -29,8 +29,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 GUILE_VER=	1.8
 PLIST_SUB=	GUILE_VER=${GUILE_VER}
 
-REINPLACE_FILES=	libguile/gc.c libguile/mallocs.c \
-			libguile/ports.c libguile/smob.c
+REINPLACE_FILES=	libguile/smob.c libguile/filesys.c libguile/gc.c \
+			libguile/mallocs.c libguile/eval.c libguile/gc-malloc.c \
+			libguile/ports.c libguile/gc-mark.c libguile/gc_os_dep.c
 
 INFO=		goops guile-tut guile r5rs
 
@@ -45,6 +46,5 @@ post-patch:
 	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/libguile/load.c
-	@${REINPLACE_CMD} -e 's^sparc-\*-\*^sparc-*-*|sparc64-*-*^' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
