@@ -3400,3 +3400,11 @@ x11-fm/binder||2008-02-28|Has expired: development stalled for years, outdated, 
 x11-toolkits/guile-gnome||2008-03-02|Software is obsolete
 security/openssh||2008-03-02|Has expired: Outdate and has security issues
 www/p5-FastCGI-ProcManager||2008-03-07|Duplicate of www/p5-FCGI-ProcManager
+x11/compositeext|x11/compositeproto|2008-03-07|Port has been outdated since X.org 7.2 merge
+x11/damageext|x11/damageproto|2008-03-07|Port has been outdated since X.org 7.2 merge
+x11/fixesext|x11/fixesproto|2008-03-07|Port has been outdated since X.org 7.2 merge
+x11/panoramixext||2008-03-07|Port has been outdated since X.org 7.2 merge
+x11/randrext|x11/randrproto|2008-03-07|Port has been outdated since X.org 7.2 merge
+x11/renderext|x11/renderproto|2008-03-07|Port has been outdated since X.org 7.2 merge
+x11/resourceext|x11/resourceproto|2008-03-07|Port has been outdated since X.org 7.2 merge
+x11/xextensions||2008-03-07|Port has been outdated since X.org 7.2 merge
