@@ -7,6 +7,7 @@
 
 PORTNAME=	pgpool-II
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1521/
 
@@ -32,9 +33,13 @@ post-patch:
 	${WRKSRC}/configure
 
 pre-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${DATADIR} ${EXAMPLESDIR}
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/sample/dist_def_pgbench.sql ${DATADIR}
+.for f in pgpool_recovery pgpool_recovery_pitr pgpool_remote_start
+	${INSTALL_SCRIPT} ${WRKSRC}/sample/${f} ${EXAMPLESDIR}
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
