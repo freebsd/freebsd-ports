@@ -128,5 +128,6 @@
     SUBDIR += xchat-mircryption
     SUBDIR += xchat1
     SUBDIR += zircon
+    SUBDIR += znc
 
 .include <bsd.port.subdir.mk>

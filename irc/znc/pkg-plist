@@ -1,0 +1,136 @@
+bin/znc
+bin/znc-buildmod
+bin/znc-config
+include/znc/Buffer.h
+include/znc/Chan.h
+include/znc/Client.h
+include/znc/Csocket.h
+include/znc/DCCBounce.h
+include/znc/DCCSock.h
+include/znc/FileUtils.h
+include/znc/HTTPSock.h
+include/znc/IRCSock.h
+include/znc/MD5.h
+include/znc/Modules.h
+include/znc/Nick.h
+include/znc/Server.h
+include/znc/String.h
+include/znc/Template.h
+include/znc/Timers.h
+include/znc/User.h
+include/znc/Utils.h
+include/znc/main.h
+include/znc/znc.h
+libexec/znc/autoattach.so
+libexec/znc/autoop.so
+%%OPENSSL%%libexec/znc/away.so
+libexec/znc/awaynick.so
+libexec/znc/chansaver.so
+%%OPENSSL%%libexec/znc/crypt.so
+libexec/znc/email.so
+libexec/znc/imapauth.so
+libexec/znc/kickrejoin.so
+%%PERL%%libexec/znc/modperl.pm
+%%PERL%%libexec/znc/modperl.so
+libexec/znc/nickserv.so
+libexec/znc/partyline.so
+libexec/znc/perform.so
+libexec/znc/raw.so
+libexec/znc/sample.so
+%%SASL%%libexec/znc/saslauth.so
+%%OPENSSL%%libexec/znc/savebuff.so
+%%OPENSSL%%libexec/znc/schat.so
+libexec/znc/shell.so
+libexec/znc/stickychan.so
+libexec/znc/watch.so
+libexec/znc/webadmin.so
+libexec/znc/webadmin/skins/default.de/Channel.tmpl
+libexec/znc/webadmin/skins/default.de/Error.tmpl
+libexec/znc/webadmin/skins/default.de/Footer.tmpl
+libexec/znc/webadmin/skins/default.de/Header.tmpl
+libexec/znc/webadmin/skins/default.de/ListUsers.tmpl
+libexec/znc/webadmin/skins/default.de/Main.tmpl
+libexec/znc/webadmin/skins/default.de/Settings.tmpl
+libexec/znc/webadmin/skins/default.de/UserPage.tmpl
+libexec/znc/webadmin/skins/default.de/css/main.css
+libexec/znc/webadmin/skins/default.de/img/favicon.ico
+libexec/znc/webadmin/skins/default/Channel.tmpl
+libexec/znc/webadmin/skins/default/Error.tmpl
+libexec/znc/webadmin/skins/default/Footer.tmpl
+libexec/znc/webadmin/skins/default/Header.tmpl
+libexec/znc/webadmin/skins/default/ListUsers.tmpl
+libexec/znc/webadmin/skins/default/Main.tmpl
+libexec/znc/webadmin/skins/default/Settings.tmpl
+libexec/znc/webadmin/skins/default/UserPage.tmpl
+libexec/znc/webadmin/skins/default/css/main.css
+libexec/znc/webadmin/skins/default/img/favicon.ico
+libexec/znc/webadmin/skins/graphiX.de/Channel.tmpl
+libexec/znc/webadmin/skins/graphiX.de/Error.tmpl
+libexec/znc/webadmin/skins/graphiX.de/Footer.tmpl
+libexec/znc/webadmin/skins/graphiX.de/Header.tmpl
+libexec/znc/webadmin/skins/graphiX.de/ListUsers.tmpl
+libexec/znc/webadmin/skins/graphiX.de/Main.tmpl
+libexec/znc/webadmin/skins/graphiX.de/Settings.tmpl
+libexec/znc/webadmin/skins/graphiX.de/UserPage.tmpl
+libexec/znc/webadmin/skins/graphiX.de/css/main.css
+libexec/znc/webadmin/skins/graphiX.de/img/favicon.ico
+libexec/znc/webadmin/skins/graphiX.de/img/graphix_bg.jpg
+libexec/znc/webadmin/skins/graphiX.de/img/graphix_header.jpg
+libexec/znc/webadmin/skins/graphiX/Channel.tmpl
+libexec/znc/webadmin/skins/graphiX/Error.tmpl
+libexec/znc/webadmin/skins/graphiX/Footer.tmpl
+libexec/znc/webadmin/skins/graphiX/Header.tmpl
+libexec/znc/webadmin/skins/graphiX/ListUsers.tmpl
+libexec/znc/webadmin/skins/graphiX/Main.tmpl
+libexec/znc/webadmin/skins/graphiX/Settings.tmpl
+libexec/znc/webadmin/skins/graphiX/UserPage.tmpl
+libexec/znc/webadmin/skins/graphiX/css/main.css
+libexec/znc/webadmin/skins/graphiX/img/favicon.ico
+libexec/znc/webadmin/skins/graphiX/img/graphix_bg.jpg
+libexec/znc/webadmin/skins/graphiX/img/graphix_header.jpg
+libexec/znc/webadmin/skins/ice.de/Channel.tmpl
+libexec/znc/webadmin/skins/ice.de/Error.tmpl
+libexec/znc/webadmin/skins/ice.de/Footer.tmpl
+libexec/znc/webadmin/skins/ice.de/Header.tmpl
+libexec/znc/webadmin/skins/ice.de/ListUsers.tmpl
+libexec/znc/webadmin/skins/ice.de/Main.tmpl
+libexec/znc/webadmin/skins/ice.de/Settings.tmpl
+libexec/znc/webadmin/skins/ice.de/UserPage.tmpl
+libexec/znc/webadmin/skins/ice.de/css/main.css
+libexec/znc/webadmin/skins/ice.de/img/favicon.ico
+libexec/znc/webadmin/skins/ice.de/img/linkbg.jpg
+libexec/znc/webadmin/skins/ice.de/img/pagebg.gif
+libexec/znc/webadmin/skins/ice/Channel.tmpl
+libexec/znc/webadmin/skins/ice/Error.tmpl
+libexec/znc/webadmin/skins/ice/Footer.tmpl
+libexec/znc/webadmin/skins/ice/Header.tmpl
+libexec/znc/webadmin/skins/ice/ListUsers.tmpl
+libexec/znc/webadmin/skins/ice/Main.tmpl
+libexec/znc/webadmin/skins/ice/Settings.tmpl
+libexec/znc/webadmin/skins/ice/UserPage.tmpl
+libexec/znc/webadmin/skins/ice/css/main.css
+libexec/znc/webadmin/skins/ice/img/favicon.ico
+libexec/znc/webadmin/skins/ice/img/linkbg.jpg
+libexec/znc/webadmin/skins/ice/img/pagebg.gif
+@dirrm libexec/znc/webadmin/skins/ice/img
+@dirrm libexec/znc/webadmin/skins/ice/css
+@dirrm libexec/znc/webadmin/skins/ice.de/img
+@dirrm libexec/znc/webadmin/skins/ice.de/css
+@dirrm libexec/znc/webadmin/skins/ice.de
+@dirrm libexec/znc/webadmin/skins/ice
+@dirrm libexec/znc/webadmin/skins/graphiX/img
+@dirrm libexec/znc/webadmin/skins/graphiX/css
+@dirrm libexec/znc/webadmin/skins/graphiX.de/img
+@dirrm libexec/znc/webadmin/skins/graphiX.de/css
+@dirrm libexec/znc/webadmin/skins/graphiX.de
+@dirrm libexec/znc/webadmin/skins/graphiX
+@dirrm libexec/znc/webadmin/skins/default/img
+@dirrm libexec/znc/webadmin/skins/default/css
+@dirrm libexec/znc/webadmin/skins/default.de/img
+@dirrm libexec/znc/webadmin/skins/default.de/css
+@dirrm libexec/znc/webadmin/skins/default.de
+@dirrm libexec/znc/webadmin/skins/default
+@dirrm libexec/znc/webadmin/skins
+@dirrm libexec/znc/webadmin
+@dirrm libexec/znc
+@dirrm include/znc
