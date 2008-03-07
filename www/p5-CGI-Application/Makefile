@@ -7,22 +7,25 @@
 
 PORTNAME=	CGI-Application
 PORTVERSION=	4.06
+PORTREVISION=	1
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	CGI
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module intended to make it easier to create reusable web apps
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		p5-Class-ISA>0:${PORTSDIR}/devel/p5-Class-ISA \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template
 
 PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Application.3 CGI::Application::Mailform.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Class-ISA>=0:${PORTSDIR}/devel/p5-Class-ISA \
+		p5-Net>=0:${PORTSDIR}/net/p5-Net
+.endif
+
+.include <bsd.port.post.mk>
