@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -30,7 +30,7 @@ CONFIGURE_ENV+=	CXX="${CXX}"
 
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	docs
-BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python # XXX: Replace with USE_PYTHON_BUILD
+USE_PYTHON_BUILD=	yes
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 
 .if !defined(WITHOUT_LATEX)
@@ -80,6 +80,7 @@ PLIST_FILES+=	bin/doxywizard
 pre-configure:
 	@cd ${WRKSRC};for pro in src/*.pro.in addon/doxywizard/doxywizard.pro.in;do \
 		${ECHO} "unix:LIBS += -liconv" >> $$pro; done
+	@${CHMOD} +x ${WRKSRC}/configure
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|TMAKE *=.*|TMAKE=${LOCALBASE}/bin/tmake|' \
@@ -119,10 +120,10 @@ pre-install:
 .endif # ! NOPORTDOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxygen ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxytag ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxygen ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxytag ${PREFIX}/bin/
 .ifndef WITHOUT_DOXYWIZARD
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxywizard ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxywizard ${PREFIX}/bin/
 .endif
 .ifndef NOPORTDOCS
 	${MKDIR} ${PREFIX}/share/doc/doxygen
