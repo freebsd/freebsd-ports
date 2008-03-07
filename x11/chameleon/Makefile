@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	x11-
 DISTNAME=	chameleon_${PORTVERSION}.orig
 
 MAINTAINER=	gavin.atkinson@ury.york.ac.uk
-COMMENT=	"Application for putting pictures or colors onto the root window"
+COMMENT=	Application for putting pictures or colors onto the root window
 
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/P/PH/PHISH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hansjoerg.pehofer@uibk.ac.at
-COMMENT=	"Base Class for SAX Filters parsing WellBallanced Chunks."
+COMMENT=	Base Class for SAX Filters parsing WellBallanced Chunks.
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
 		${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX

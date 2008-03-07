@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	scdp
 DISTNAME=	scdp-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	arved@FreeBSD.org
-COMMENT=	"Tool that sends CDP (CISCO Discovery Protocol) Packets"
+COMMENT=	Tool that sends CDP (CISCO Discovery Protocol) Packets
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 

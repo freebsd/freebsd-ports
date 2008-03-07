@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	WWW
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kaoru@kaisei.org
-COMMENT=	"Perl module for scraping of 2ch.net BBS"
+COMMENT=	Perl module for scraping of 2ch.net BBS
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 	${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor

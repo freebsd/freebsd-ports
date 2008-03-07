@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.home.unix-ag.org/simon/gromit/
 
 MAINTAINER=	sergei@FreeBSD.org
-COMMENT=	"GRaphics Over Miscellaneous Objects (Gromit)"
+COMMENT=	GRaphics Over Miscellaneous Objects (Gromit)
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20

@@ -6,7 +6,7 @@
 #
 BUILD_MODE =     shared
 MASTERDIR=       ${.CURDIR}/../../devel/sfslite
-COMMENT=	"sfslite without optimization for debugging"
+COMMENT=	sfslite without optimization for debugging
 
 PKG_INSTALL=     ${MASTERDIR}/pkg-install
 
