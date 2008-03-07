@@ -3,11 +3,6 @@
 
     COMMENT = X11 servers
 
-    SUBDIR += XFree86-4-FontServer
-    SUBDIR += XFree86-4-NestServer
-    SUBDIR += XFree86-4-PrintServer
-    SUBDIR += XFree86-4-Server
-    SUBDIR += XFree86-4-VirtualFramebufferServer
     SUBDIR += Xfstt
     SUBDIR += driglide
     SUBDIR += mga_hal

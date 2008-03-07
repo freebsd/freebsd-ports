@@ -89,8 +89,6 @@ IGNORE="Please get a ROM dump from your AtariST and save it as"\
 "\"${TOSIMG}\" in \"${DISTDIR}\" manually, and then make install again"
 .endif
 
-.if ${X_WINDOW_SYSTEM:L} == xorg
 BUILD_DEPENDS+=		${X11BASE}/lib/X11/fonts/misc/10x20-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/font-misc-misc
-.endif
 
 .include <bsd.port.post.mk>

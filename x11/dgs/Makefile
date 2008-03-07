@@ -42,14 +42,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
 		${WRKSRC}/DPS/ltconfig
 
-.if ${X_WINDOW_SYSTEM:L} == xorg
 INSTALLDIRS+=	DPS/clients/makepsres DPS/clients/pswrap DPS/demos/texteroids \
 		DPS/lib/dpstk DPS/lib/psres DPS/lib/dps DPS/include/DPS
 MANN+=		makepsres.man
 PLIST_SUB+=	WITH_XFREE4=""
-.else
-PLIST_SUB+=	WITH_XFREE4="@comment "
-.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dgs-config ${PREFIX}/bin/

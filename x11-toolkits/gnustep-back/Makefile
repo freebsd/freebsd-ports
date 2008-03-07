@@ -85,12 +85,6 @@ ADDITIONAL_LDFLAGS+=	-L${TARGLIB}
 MAKE_FLAGS+=		messages=yes
 PLIST_SUB+=		BACKVERSION=${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 
-.if defined(WITH_GNUSTEP_XDPS)
-.if ${X_WINDOW_SYSTEM:L} == "xfree86-4"
-BUILD_DEPENDS+=		pswrap:${PORTSDIR}/devel/imake-4
-.endif
-.endif
-
 pre-configure:
 .for file in config.guess config.sub install-sh
 	@${CP} ${PREFIX}/System/Library/Makefiles/${file} ${WRKSRC}

@@ -1318,10 +1318,8 @@ ETCDIR?=		${PREFIX}/etc/${PORTNAME}
 .include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
 .endif
 
-.if ${OSVERSION} >= 502123
-X_WINDOW_SYSTEM ?= xorg
-.else
-X_WINDOW_SYSTEM ?= xfree86-4
+.if defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} != "xorg"
+IGNORE=		cannot be installed: bad X_WINDOW_SYSTEM setting; valid value is 'xorg'
 .endif
 
 .if ${OSVERSION} < 602000
@@ -1334,9 +1332,7 @@ X_WINDOW_SYSTEM ?= xfree86-4
 .endif
 
 .if defined(USE_XORG) || defined(XORG_CAT)
-. if ${X_WINDOW_SYSTEM} == "xorg"
 .include "${PORTSDIR}/Mk/bsd.xorg.mk"
-. endif
 .endif
 
 .if defined(USE_BZIP2)
@@ -1522,8 +1518,6 @@ PERL=		${LOCALBASE}/bin/perl
 	@${FALSE}
 .endif
 .endif
-
-X_WINDOW_SYSTEM ?= xorg
 
 # Location of mounted CDROM(s) to search for files
 CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
@@ -1830,7 +1824,6 @@ LIB_DEPENDS+=		Xm.3:${PORTSDIR}/x11-toolkits/open-motif
 LIB_DEPENDS+=			ttf.4:${PORTSDIR}/print/freetype
 .endif
 
-.if defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} == xorg
 X_IMAKE_PORT=		${PORTSDIR}/devel/imake
 X_LIBRARIES_PORT=	${PORTSDIR}/x11/xorg-libraries
 X_CLIENTS_PORT=		${PORTSDIR}/x11/xorg-apps
@@ -1847,25 +1840,6 @@ X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-cyrillic
 X_FONTS_TTF_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-truetype
 X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-type1
 X_FONTS_ALIAS_PORT=	${PORTSDIR}/x11-fonts/font-alias
-.elif defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} == xfree86-4
-X_IMAKE_PORT=		${PORTSDIR}/devel/imake-4
-X_LIBRARIES_PORT=	${PORTSDIR}/x11/XFree86-4-libraries
-X_CLIENTS_PORT=		${PORTSDIR}/x11/XFree86-4-clients
-X_SERVER_PORT=		${PORTSDIR}/x11-servers/XFree86-4-Server
-X_FONTSERVER_PORT=	${PORTSDIR}/x11-servers/XFree86-4-FontServer
-X_PRINTSERVER_PORT=	${PORTSDIR}/x11-servers/XFree86-4-PrintServer
-X_VFBSERVER_PORT=	${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
-X_NESTSERVER_PORT=	${PORTSDIR}/x11-servers/XFree86-4-NestServer
-X_FONTS_ENCODINGS_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
-X_FONTS_MISC_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
-X_FONTS_100DPI_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-font100dpi
-X_FONTS_75DPI_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-font75dpi
-X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontCyrillic
-X_FONTS_TTF_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontScalable
-X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontScalable
-.else
-IGNORE=		cannot be installed: bad X_WINDOW_SYSTEM setting; valid values are 'xfree86-4' and 'xorg'
-.endif
 
 .if defined(USE_IMAKE)
 BUILD_DEPENDS+=			imake:${X_IMAKE_PORT}
@@ -1877,29 +1851,15 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 	${X11BASE}/lib/X11/fonts/misc/fonts.alias:${X_FONTS_ALIAS_PORT}
 .endif
 
-.if ${X_WINDOW_SYSTEM:L} == xfree86-4
-
-.if defined(USE_XPM)
-USE_XLIB=			yes
-.endif
-
-XAWVER=				7
-PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
-
-.else
-
 .if defined(USE_XPM)
 LIB_DEPENDS+=			Xpm.4:${PORTSDIR}/x11/libXpm
 # XXX - At some point we'll have to fix ports to use USE_XORG to
-# the right value and remove both USE_XPM and USE_XLIB. Hopefully
-# XFree86-4 will be gone in the meantime.
+# the right value and remove both USE_XPM and USE_XLIB.
 USE_XLIB=			yes
 .endif
 
 XAWVER=				8
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
-
-.endif
 
 PLIST_SUB+=			XAWVER=${XAWVER}
 
@@ -1910,22 +1870,18 @@ _GL_glut_LIB_DEPENDS=		glut.4:${PORTSDIR}/graphics/libglut
 _GL_linux_RUN_DEPENDS=		${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
 
 .if defined(USE_GL)
-. if ${X_WINDOW_SYSTEM:L} == xfree86-4
-USE_XLIB=	yes
-. else
-.  if ${USE_GL:L} == "yes"
+. if ${USE_GL:L} == "yes"
 USE_GL=		glu
-.  endif
-.  for _component in ${USE_GL}
-.   if !defined(_GL_${_component}_LIB_DEPENDS) && \
+. endif
+. for _component in ${USE_GL}
+.  if !defined(_GL_${_component}_LIB_DEPENDS) && \
 		!defined(_GL_${_component}_RUN_DEPENDS)
 IGNORE=		uses unknown GL component
-.   else
+.  else
 LIB_DEPENDS+=	${_GL_${_component}_LIB_DEPENDS}
 RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
-.   endif
-.  endfor
-. endif
+.  endif
+. endfor
 .endif
 
 .if defined(USE_BISON)
@@ -1963,9 +1919,7 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .endif
 
 .if defined(USE_XORG) || defined(XORG_CAT)
-. if ${X_WINDOW_SYSTEM} == "xorg"
 .include "${PORTSDIR}/Mk/bsd.xorg.mk"
-. endif
 .endif
 
 .if defined(USE_MYSQL) || defined(WANT_MYSQL_VER) || \
@@ -2051,12 +2005,8 @@ USE_SUBMAKE=	yes
 .	if defined(USE_LINUX)
 RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-xorg-libs
 .	else
-.      if ${X_WINDOW_SYSTEM:L} == xorg
 BUILD_DEPENDS+=	${X11BASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
 RUN_DEPENDS+=	${X11BASE}/libdata/xorg/libraries:${X_LIBRARIES_PORT}
-.      else
-LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
-.      endif
 .	endif
 .endif
 

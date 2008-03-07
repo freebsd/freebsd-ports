@@ -79,13 +79,8 @@ FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif # !exists(/usr/bin/bzip2)
 
-.if ${X_WINDOW_SYSTEM:L} != xorg
-BUILD_DEPENDS+=	mkfontdir:${X_CLIENTS_PORT}
-RUN_DEPENDS+=	iceauth:${X_CLIENTS_PORT}
-.else
 BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 RUN_DEPENDS+=	iceauth:${PORTSDIR}/x11/iceauth
-.endif
 
 pre-configure:
 	${REINPLACE_CMD} "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/kdeprint/cups/kmcupsmanager.cpp

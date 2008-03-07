@@ -20,16 +20,10 @@ PLIST_FILES=	bin/Xwrapper
 USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
-.if ${X_WINDOW_SYSTEM:L} == xorg
+
 XSERVER=	-DXSERVER_PATH=\"${X11BASE}/bin/Xorg\"
 PKGNAMEPREFIX=	xorg-
 COMMENT=	Wrapper for X.org X11 server
-.elif ${X_WINDOW_SYSTEM:L} == xfree86-4
-XSERVER=	-DXSERVER_PATH=\"/usr/X11R6/bin/XFree86\"
-RUN_DEPENDS=	XFree86:${PORTSDIR}/x11-servers/XFree86-4-Server
-PKGNAMEPREFIX=	XFree86-4-
-COMMENT=	Wrapper for XFree86-4 server
-.endif
 
 do-fetch:
 

@@ -54,10 +54,4 @@ do-install:
 
 .include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
 
-.include <bsd.port.pre.mk>
-
-.if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE=	requires libGL from X.Org
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

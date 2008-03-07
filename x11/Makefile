@@ -8,11 +8,6 @@
     SUBDIR += 9menu
     SUBDIR += 9term
     SUBDIR += Terminal
-    SUBDIR += XFree86-4
-    SUBDIR += XFree86-4-clients
-    SUBDIR += XFree86-4-documents
-    SUBDIR += XFree86-4-libraries
-    SUBDIR += XFree86-4-manuals
     SUBDIR += accessx
     SUBDIR += alltray
     SUBDIR += appres
