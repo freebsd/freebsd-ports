@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}ijs-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	"Printer filter for EPSON EPL-5700L etc"
+COMMENT=	Printer filter for EPSON EPL-5700L etc
 
 USE_GHOSTSCRIPT_RUN=	yes
 

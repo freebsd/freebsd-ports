@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Bit
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	"Object-oriented wrapper around Perl's vec()"
+COMMENT=	Object-oriented wrapper around Perl's vec()
 
 PERL_CONFIGURE=	yes
 
