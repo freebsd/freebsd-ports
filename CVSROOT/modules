@@ -18220,6 +18220,7 @@ zisofs-tools	ports/sysutils/zisofs-tools
 zmailer		ports/mail/zmailer
 zmtx-zmrx	ports/comms/zmtx-zmrx
 znavigator	ports/www/znavigator
+znc		ports/irc/znc
 znibbles	ports/games/znibbles
 zniper		ports/net/zniper
 zodb3		ports/databases/zodb3
