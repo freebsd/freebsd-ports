@@ -37,7 +37,8 @@ CXXFLAGS:=	${CXXFLAGS:N-O*:N-f*} -O3
 CFLAGS:=	${CFLAGS:N-O*:N-f*} -O3
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" CXXFLAGSS="${CXXFLAGS}" CFLAGS="${CFLAGS}"
 
-OPTIONS=	X11 "Build Boinc Manager GUI" on
+OPTIONS=	X11 "Build Boinc Manager GUI" on \
+		ALT "Accept Linux science applications" off
 
 .include <bsd.port.pre.mk>
 
@@ -46,20 +47,20 @@ USE_XLIB=	yes
 USE_WX=		2.6+
 WX_CONF_ARGS=	absolute
 CPPFLAGS+=		-I${X11BASE}/include
-.else
-CONFIGURE_ARGS+=	--with-wx-config=false --without-x
-.endif
 
-.if !defined(WITHOUT_X11)
 USE_ICONV=	yes
 LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		glut:${PORTSDIR}/graphics/libglut
-.endif
 
-.if !defined(WITHOUT_X11)
 PLIST_SUB+=	BOINC_GUI=""
 .else
+CONFIGURE_ARGS+=	--with-wx-config=false --without-x
 PLIST_SUB+=	BOINC_GUI="@comment "
+.endif
+
+.if defined(WITH_ALT)
+CONFIGURE_ARGS+=--with-boinc-alt-platform=i686-pc-linux-gnu
+USE_LINUX=	yes
 .endif
 
 post-patch:
