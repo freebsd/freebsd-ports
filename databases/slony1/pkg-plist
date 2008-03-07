@@ -62,6 +62,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/failover.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/firstdb.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/function.add-empty-table-to-replication-integer-integer-text-text-text-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.add-missing-table-field-text-text-text-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.addpartiallogindices.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.altertableforreplication-integer.html
@@ -133,6 +134,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.registry-set-int4-text-integer.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.registry-set-text-text-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.registry-set-timestamp-text-timestamp-without-time-zone.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/function.replicate-partition-integer-text-text-text-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.sequencelastvalue-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.sequencesetvalue-integer-integer-bigint-bigint.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.setaddsequence-int-integer-integer-text-text.html
@@ -179,7 +181,7 @@ share/postgresql/xxid.v81.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.upgradeschema-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/hdrcmds.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/help.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/i11812.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/i11836.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/listenpaths.html
