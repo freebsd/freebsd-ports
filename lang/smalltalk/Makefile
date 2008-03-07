@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	2.3.6
+PORTVERSION=	3.0.2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,15 +14,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	johans@stack.nl
 COMMENT=	GNU Smalltalk
 
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
-OPTIONS=	TCLTK "Enable Tcl/Tk binding" on
+OPTIONS=	TCLTK "Enable Tcl/Tk binding" on \
+		PGSQL "PostgreSQL binding" on
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GCC=	3.4+
 USE_ICONV=	yes
+USE_SQLITE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
@@ -34,7 +37,9 @@ CONFIGURE_ARGS=	--enable-generational-gc=no \
 USE_LDCONFIG=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-MAN1=		gst.1
+MAN1=		gst.1 gst-load.1 gst-package.1 gst-sunit.1 gst-config.1 \
+		gst-convert.1 gst-doc.1
+MLINKS=		gst-load.1 gst-reload.1
 INFO=		gst gst-base gst-libs
 
 CPPFLAGS=	-I${LOCALBASE}/include
@@ -54,6 +59,14 @@ LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 			--with-tk=${LOCALBASE}/lib/tk8.4
 PLIST_SUB+=	TCLTK=""
+.endif
+
+.if defined(WITHOUT_PGSQL)
+PLIST_SUB+=	PGSQL="@comment "
+.else
+USE_PGSQL=	yes
+.include "${PORTSDIR}/Mk/bsd.database.mk"
+PLIST_SUB+=	PGSQL=""
 .endif
 
 post-patch:

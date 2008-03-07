@@ -3,7 +3,4 @@ language.
 GNU Smalltalk is an implementation that closely follows the                  
 Smalltalk-80 language (tm ParcPlace Systems).
 
-WWW: http://www.smalltalk.org/versions/GNUSmalltalk.html
-
-- Gary Palmer <gpalmer@FreeBSD.org>
-- Alexander Langer <alex@big.endian.de>
+WWW: http://smalltalk.gnu.org/
