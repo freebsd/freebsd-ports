@@ -1,0 +1,8 @@
+bin/pirl
+%%SITE_PERL%%/Shell/Perl.pm
+%%SITE_PERL%%/Shell/Perl/Dumper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/Perl/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell/Perl
+@dirrm %%SITE_PERL%%/Shell/Perl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shell
+@dirrmtry %%SITE_PERL%%/Shell
