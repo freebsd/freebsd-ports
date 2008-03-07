@@ -1,0 +1,686 @@
+diff --git ChangeLog ChangeLog
+index cef9b98..f4b726d 100644
+--- ChangeLog
++++ ChangeLog
+@@ -1,3 +1,16 @@
++Tue Jan 23 02:08:24 2007  Tim Janik  <timj@gtk.org>
++
++	* shell/bsescminterp.c: ported to guile-1.8. kept guile-1.6 compat
++	code, removed cruft that was deprecated in 1.6 and removed from 1.8.
++
++	* shell/bsescminterp.h: removed bsescminterp.c implementation details.
++
++	* shell/bsescm.c: changed debugging hooks:
++	BSESCM_SLEEP4GDB>=3: sleep before parsing args;
++	BSESCM_SLEEP4GDB>=2: sleep after parsing args;
++	BSESCM_SLEEP4GDB>=1: sleep after parsing args when not registering;
++	otherwise: don't sleep.
++
+ Sun Jan 21 01:39:15 2007  Tim Janik  <timj@gtk.org>
+ 
+ 	* birnet/: Merged with http://birnet.org/git/birnet.git
+diff --git shell/bsescm.c shell/bsescm.c
+index ee66357..3106d99 100644
+--- shell/bsescm.c
++++ shell/bsescm.c
+@@ -72,7 +72,7 @@ main (int   argc,
+   setlocale (LC_ALL, "");
+ 
+   env_str = g_getenv ("BSESCM_SLEEP4GDB");
+-  if (env_str && atoi (env_str) > 0)
++  if (env_str && atoi (env_str) >= 3)
+     {
+       g_message ("going into sleep mode due to debugging request (pid=%u)", getpid ());
+       g_usleep (2147483647);
+@@ -80,6 +80,13 @@ main (int   argc,
+ 
+   shell_parse_args (&argc, &argv);
+ 
++  if (env_str && (atoi (env_str) >= 2 ||
++                  (atoi (env_str) >= 1 && !bse_scm_enable_register)))
++    {
++      g_message ("going into sleep mode due to debugging request (pid=%u)", getpid ());
++      g_usleep (2147483647);
++    }
++
+   if (bse_scm_pipe[0] >= 0 && bse_scm_pipe[1] >= 0)
+     {
+       bse_scm_port = sfi_com_port_from_pipe (PRG_NAME, bse_scm_pipe[0], bse_scm_pipe[1]);
+diff --git shell/bsescminterp.c shell/bsescminterp.c
+index cad810b..976c597 100644
+--- shell/bsescminterp.c
++++ shell/bsescminterp.c
+@@ -32,10 +32,10 @@
+  * SCM_NIMP()	- is not immediate?
+  *
+  * catching exceptions:
+- * typedef SCM (*scm_catch_body_t) (void *data);
++ * typedef SCM (*scm_t_catch_body) (void *data);
+  * typedef SCM (*scm_catch_handler_t) (void *data,
+  * SCM tag = SCM_BOOL_T; means catch-all
+- * SCM gh_catch(SCM tag, scm_catch_body_t body, void *body_data,
++ * SCM gh_catch(SCM tag, scm_t_catch_body body, void *body_data,
+  *              scm_catch_handler_t handler, void *handler_data);
+  */
+ 
+@@ -43,10 +43,94 @@
+ #define	BSE_SCM_NILP(x)	((x) == SCM_UNSPECIFIED)
+ 
+ 
++/* allow guile version special casing */
++#define GUILE_CHECK_VERSION(major,minor,micro)    \
++    (SCM_MAJOR_VERSION > (major) || \
++     (SCM_MAJOR_VERSION == (major) && SCM_MINOR_VERSION > (minor)) || \
++     (SCM_MAJOR_VERSION == (major) && SCM_MINOR_VERSION == (minor) && \
++      SCM_MICRO_VERSION >= (micro)))
++
++#if GUILE_CHECK_VERSION (1, 8, 0)
++#define BSE_SCM_DEFER_INTS()            do ; while (0)
++#define BSE_SCM_ALLOW_INTS()            do ; while (0)
++#define IS_SCM_INT(s_scm)               SCM_I_INUMP (s_scm)     // scm_is_integer() breaks for non-fractional floats
++#define SFI_NUM_FROM_SCM(s_scm)         ((SfiNum) scm_to_int64 (s_scm))
++#define STRING_CHARS_FROM_SCM(s_scm)    scm_i_string_chars (s_scm)
++#define STRING_LENGTH_FROM_SCM(s_scm)   scm_i_string_length (s_scm)
++#define IS_SCM_STRING(s_scm)            scm_is_string (s_scm)
++#define IS_SCM_SYMBOL(s_scm)            scm_is_symbol (s_scm)
++#define IS_SCM_BOOL(s_scm)              scm_is_bool (s_scm)
++#define IS_SCM_PAIR(s_scm)              scm_is_pair (s_scm)
++#else   /* 1.6.x */
++#define BSE_SCM_DEFER_INTS()            SCM_REDEFER_INTS        // guard around GC-protected code portions; with incremental int-
++#define BSE_SCM_ALLOW_INTS()            SCM_REALLOW_INTS        // blocking. guile recovers from unbalanced defer/allow pairs.
++#define IS_SCM_INT(s_scm)               SCM_INUMP (s_scm)
++#define SFI_NUM_FROM_SCM(s_scm)         ((SfiNum) scm_num2long_long ((s_scm), 1, "num2int64"))
++#define STRING_CHARS_FROM_SCM(s_scm)    SCM_ROCHARS (s_scm)
++#define STRING_LENGTH_FROM_SCM(s_scm)   SCM_LENGTH (s_scm)
++#define IS_SCM_STRING(s_scm)            SCM_STRINGP (s_scm)
++#define IS_SCM_SYMBOL(s_scm)            SCM_SYMBOLP (s_scm)
++#define IS_SCM_BOOL(s_scm)              SCM_BOOLP (s_scm)
++#define IS_SCM_PAIR(s_scm)              SCM_CONSP (s_scm)
++#endif
++#define IS_SCM_BIG(s_scm)               SCM_BIGP (s_scm)
++#define IS_SCM_SFI_NUM(s_scm)           (IS_SCM_INT (s_scm) || IS_SCM_BIG (s_scm))
++
+ /* --- prototypes --- */
+ static SCM	bse_scm_from_value		(const GValue	*value);
+ static GValue*	bse_value_from_scm		(SCM		 sval);
+ 
++/* --- misc utilities --- */
++static inline SfiNum
++num_from_scm (SCM s_num)
++{
++  SfiNum num = 0; /* int64 */
++  if (IS_SCM_SFI_NUM (s_num))
++    num = SFI_NUM_FROM_SCM (s_num);
++  return num;
++}
++
++static inline gchar*
++strdup_from_scm (SCM s_string)
++{
++  if (IS_SCM_STRING (s_string))
++    return g_strndup (STRING_CHARS_FROM_SCM (s_string), STRING_LENGTH_FROM_SCM (s_string));
++  else if (IS_SCM_SYMBOL (s_string))
++    {
++      SCM s_sym_string = scm_symbol_to_string (s_string);
++      return strdup_from_scm (s_sym_string);
++    }
++  else
++    return NULL;
++}
++
++static inline GValue*
++string_value_from_scm (SCM s_string)
++{
++  if (IS_SCM_STRING (s_string))
++    return sfi_value_lstring (STRING_CHARS_FROM_SCM (s_string), STRING_LENGTH_FROM_SCM (s_string));
++  else if (IS_SCM_SYMBOL (s_string))
++    {
++      SCM s_sym_string = scm_symbol_to_string (s_string);
++      return sfi_value_lstring (STRING_CHARS_FROM_SCM (s_sym_string), STRING_LENGTH_FROM_SCM (s_sym_string));
++    }
++  else
++    return sfi_value_string (NULL);
++}
++
++static inline GValue*
++choice_value_from_scm (SCM s_string)
++{
++  if (IS_SCM_STRING (s_string))
++    return sfi_value_lchoice (STRING_CHARS_FROM_SCM (s_string), STRING_LENGTH_FROM_SCM (s_string));
++  else if (IS_SCM_SYMBOL (s_string))
++    {
++      SCM s_sym_string = scm_symbol_to_string (s_string);
++      return sfi_value_lchoice (STRING_CHARS_FROM_SCM (s_sym_string), STRING_LENGTH_FROM_SCM (s_sym_string));
++    }
++  else
++    return sfi_value_choice (NULL);
++}
+ 
+ /* --- SCM GC hooks --- */
+ static gulong tc_glue_gc_cell = 0;
+@@ -61,51 +145,39 @@ typedef struct {
+ static void
+ bse_scm_enter_gc (SCM           *scm_gc_list,
+ 		  gpointer       data,
+-		  BseScmFreeFunc free_func,
++		  BseScmFreeFunc free_func, // GC callbacks may run in any thread
+ 		  gsize          size_hint)
+ {
+   BseScmGCCell *gc_cell;
+   SCM s_cell = 0;
+-
+   g_return_if_fail (scm_gc_list != NULL);
+   g_return_if_fail (free_func != NULL);
+-
+   // g_printerr ("GCCell allocating %u bytes (%p).\n", size_hint, free_func);
+-
+   gc_cell = g_new (BseScmGCCell, 1);
+   gc_cell->data = data;
+   gc_cell->free_func = free_func;
+   gc_cell->size_hint = size_hint + sizeof (BseScmGCCell);
+-
+   SCM_NEWSMOB (s_cell, tc_glue_gc_cell, gc_cell);
+   *scm_gc_list = gh_cons (s_cell, *scm_gc_list);
+-  scm_done_malloc (gc_cell->size_hint);
+ }
+ 
+ static SCM
+-bse_scm_mark_gc_cell (SCM scm_gc_cell)
++bse_scm_mark_gc_cell (SCM scm_gc_cell) /* called from any thread */
+ {
+   // BseScmGCCell *gc_cell = (BseScmGCCell*) SCM_CDR (scm_gc_cell);
+-
+   // g_printerr ("GCCell mark %u bytes (%p).\n", gc_cell->size_hint, gc_cell->free_func);
+-
+   /* scm_gc_mark (gc_cell->something); */
+-
+   return SCM_BOOL_F;
+ }
+ 
+ static scm_sizet
+-bse_scm_free_gc_cell (SCM scm_gc_cell)
++bse_scm_free_gc_cell (SCM scm_gc_cell) /* called from any thread */
+ {
+   BseScmGCCell *gc_cell = SCM_GET_GLUE_GC_CELL (scm_gc_cell);
+-  scm_sizet size = gc_cell->size_hint;
+-
+   // g_printerr ("GCCell freeing %u bytes (%p).\n", size, gc_cell->free_func);
+-
+   gc_cell->free_func (gc_cell->data);
+   g_free (gc_cell);
+-
+-  return size;
++  return 0;
+ }
+ 
+ 
+@@ -124,12 +196,10 @@ bse_scm_make_gc_plateau (guint size_hint)
+ {
+   SCM s_gcplateau = SCM_UNSPECIFIED;
+   GcPlateau *gp = g_new (GcPlateau, 1);
+-
+   scm_glue_gc_plateau_blocker++;
+   gp->size_hint = size_hint;
+   gp->active_plateau = TRUE;
+   SCM_NEWSMOB (s_gcplateau, tc_glue_gc_plateau, gp);
+-  scm_done_malloc (gp->size_hint);
+   return s_gcplateau;
+ }
+ 
+@@ -137,9 +207,7 @@ void
+ bse_scm_destroy_gc_plateau (SCM s_gcplateau)
+ {
+   GcPlateau *gp;
+-
+   g_assert (SCM_IS_GLUE_GC_PLATEAU (s_gcplateau));
+-
+   gp = SCM_GET_GLUE_GC_PLATEAU (s_gcplateau);
+   if (gp->active_plateau)
+     {
+@@ -152,15 +220,12 @@ bse_scm_destroy_gc_plateau (SCM s_gcplateau)
+ }
+ 
+ static scm_sizet
+-bse_scm_gc_plateau_free (SCM s_gcplateau)
++bse_scm_gc_plateau_free (SCM s_gcplateau) /* called from any thread */
+ {
+   GcPlateau *gp = SCM_GET_GLUE_GC_PLATEAU (s_gcplateau);
+-  guint size_hint = gp->size_hint;
+-
+   bse_scm_destroy_gc_plateau (s_gcplateau);
+   g_free (gp);
+-  
+-  return size_hint;
++  return 0;
+ }
+ 
+ 
+@@ -186,17 +251,17 @@ bse_scm_glue_rec_new (SCM sfields)
+   SfiRec *rec;
+   SCM s_rec = 0;
+   if (!SCM_UNBNDP (sfields))
+-    SCM_ASSERT (SCM_CONSP (sfields) || SCM_EQ_P (sfields, SCM_EOL), sfields, SCM_ARG1, "bse-rec-new");
++    SCM_ASSERT (IS_SCM_PAIR (sfields) || SCM_EQ_P (sfields, SCM_EOL), sfields, SCM_ARG1, "bse-rec-new");
+   rec = sfi_rec_new ();
+   s_rec = bse_scm_from_glue_rec (rec);
+   sfi_rec_unref (rec);
+   if (!SCM_UNBNDP (sfields))
+     {
+       SCM node;
+-      for (node = sfields; SCM_CONSP (node); node = SCM_CDR (node))
++      for (node = sfields; IS_SCM_PAIR (node); node = SCM_CDR (node))
+         {
+           SCM scons = SCM_CAR (node);
+-          SCM_ASSERT (SCM_CONSP (scons), sfields, SCM_ARG1, "bse-rec-new");
++          SCM_ASSERT (IS_SCM_PAIR (scons), sfields, SCM_ARG1, "bse-rec-new");
+           bse_scm_glue_rec_set (s_rec, SCM_CAR (scons), SCM_CDR (scons));
+         }
+     }
+@@ -204,10 +269,9 @@ bse_scm_glue_rec_new (SCM sfields)
+ }
+ 
+ static scm_sizet
+-bse_scm_free_glue_rec (SCM scm_rec)
++bse_scm_free_glue_rec (SCM scm_rec) /* called from any thread */
+ {
+   SfiRec *rec = SCM_GET_GLUE_REC (scm_rec);
+-
+   sfi_rec_unref (rec);
+   return 0;
+ }
+@@ -252,10 +316,10 @@ bse_scm_glue_rec_get (SCM scm_rec,
+   SCM s_val;
+ 
+   SCM_ASSERT (SCM_IS_GLUE_REC (scm_rec), scm_rec, SCM_ARG1, "bse-rec-get");
+-  SCM_ASSERT (SCM_SYMBOLP (s_field),  s_field,  SCM_ARG2, "bse-rec-get");
++  SCM_ASSERT (IS_SCM_SYMBOL (s_field),  s_field,  SCM_ARG2, "bse-rec-get");
+ 
+   rec = SCM_GET_GLUE_REC (scm_rec);
+-  name = g_strndup (SCM_ROCHARS (s_field), SCM_LENGTH (s_field));
++  name = strdup_from_scm (s_field);
+   val = sfi_rec_get (rec, name);
+   g_free (name);
+   if (val)
+@@ -278,13 +342,13 @@ bse_scm_glue_rec_set (SCM scm_rec,
+   gchar *name;
+ 
+   SCM_ASSERT (SCM_IS_GLUE_REC (scm_rec), scm_rec, SCM_ARG1, "bse-rec-set");
+-  SCM_ASSERT (SCM_SYMBOLP (s_field),  s_field,  SCM_ARG2, "bse-rec-set");
++  SCM_ASSERT (IS_SCM_SYMBOL (s_field),  s_field,  SCM_ARG2, "bse-rec-set");
+ 
+   rec = SCM_GET_GLUE_REC (scm_rec);
+   val = bse_value_from_scm (s_value);
+   if (!val)
+     SCM_ASSERT (FALSE, s_value, SCM_ARG3, "bse-rec-set");
+-  name = g_strndup (SCM_ROCHARS (s_field), SCM_LENGTH (s_field));
++  name = strdup_from_scm (s_field);
+   sfi_rec_set (rec, name, val);
+   g_free (name);
+   bse_scm_destroy_gc_plateau (gcplateau);
+@@ -324,7 +388,7 @@ bse_scm_proxy_print (SCM              scm_p1,
+ {
+   SfiProxy p1 = SCM_GET_GLUE_PROXY (scm_p1);
+   char buffer[128];
+-  g_snprintf (buffer, sizeof (buffer), "%08lx (ID:%04lx)", (unsigned long) &SCM_SMOB_DATA (scm_p1), (unsigned long) p1);
++  g_snprintf (buffer, sizeof (buffer), "%08lx (ID:%04lx)", (unsigned long) SCM_SMOB_DATA (scm_p1), (unsigned long) p1);
+   scm_puts ("#<SfiProxy ", port);
+   scm_puts (buffer, port);
+   scm_puts (">", port);
+@@ -377,23 +441,23 @@ static GValue*
+ bse_value_from_scm (SCM sval)
+ {
+   GValue *value;
+-  if (SCM_BOOLP (sval))
++  if (IS_SCM_BOOL (sval))
+     value = sfi_value_bool (!SCM_FALSEP (sval));
+-  else if (SCM_INUMP (sval))
+-    value = sfi_value_int (scm_num2long (sval, 1, "bse_value_from_scm"));
++  else if (IS_SCM_INT (sval))
++    value = sfi_value_int (num_from_scm (sval));
++  else if (IS_SCM_BIG (sval))
++    value = sfi_value_num (num_from_scm (sval));
+   else if (SCM_REALP (sval))
+     value = sfi_value_real (scm_num2dbl (sval, "bse_value_from_scm"));
+-  else if (SCM_BIGP (sval))
+-    value = sfi_value_num (scm_num2long_long (sval, 1, "bse_value_from_scm"));
+-  else if (SCM_SYMBOLP (sval))
+-    value = sfi_value_lchoice (SCM_ROCHARS (sval), SCM_LENGTH (sval));
+-  else if (SCM_ROSTRINGP (sval))
+-    value = sfi_value_lstring (SCM_ROCHARS (sval), SCM_LENGTH (sval));
+-  else if (SCM_CONSP (sval))
++  else if (IS_SCM_SYMBOL (sval))
++    value = choice_value_from_scm (sval);
++  else if (IS_SCM_STRING (sval))
++    value = string_value_from_scm (sval);
++  else if (IS_SCM_PAIR (sval))
+     {
+       SfiSeq *seq = sfi_seq_new ();
+       SCM node;
+-      for (node = sval; SCM_CONSP (node); node = SCM_CDR (node))
++      for (node = sval; IS_SCM_PAIR (node); node = SCM_CDR (node))
+ 	{
+ 	  GValue *v = bse_value_from_scm (SCM_CAR (node));
+ 	  sfi_seq_append (seq, v);
+@@ -495,13 +559,13 @@ bse_scm_glue_set_prop (SCM s_proxy,
+   GValue *value;
+ 
+   SCM_ASSERT (SCM_IS_GLUE_PROXY (s_proxy),  s_proxy,  SCM_ARG1, "bse-glue-set-prop");
+-  SCM_ASSERT (SCM_STRINGP (s_prop_name), s_prop_name, SCM_ARG2, "bse-glue-set-prop");
++  SCM_ASSERT (IS_SCM_STRING (s_prop_name), s_prop_name, SCM_ARG2, "bse-glue-set-prop");
+ 
+   BSE_SCM_DEFER_INTS ();
+ 
+   proxy = SCM_GET_GLUE_PROXY (s_proxy);
+-  prop_name = g_strndup (SCM_ROCHARS (s_prop_name), SCM_LENGTH (s_prop_name));
+-  bse_scm_enter_gc (&gclist, prop_name, g_free, SCM_LENGTH (s_prop_name));
++  prop_name = strdup_from_scm (s_prop_name);
++  bse_scm_enter_gc (&gclist, prop_name, g_free, STRING_LENGTH_FROM_SCM (s_prop_name));
+ 
+   value = bse_value_from_scm (s_value);
+   if (value)
+@@ -530,13 +594,13 @@ bse_scm_glue_get_prop (SCM s_proxy,
+   const GValue *value;
+ 
+   SCM_ASSERT (SCM_IS_GLUE_PROXY (s_proxy),  s_proxy,  SCM_ARG1, "bse-glue-get-prop");
+-  SCM_ASSERT (SCM_STRINGP (s_prop_name), s_prop_name, SCM_ARG2, "bse-glue-get-prop");
++  SCM_ASSERT (IS_SCM_STRING (s_prop_name), s_prop_name, SCM_ARG2, "bse-glue-get-prop");
+ 
+   BSE_SCM_DEFER_INTS ();
+ 
+   proxy = SCM_GET_GLUE_PROXY (s_proxy);
+-  prop_name = g_strndup (SCM_ROCHARS (s_prop_name), SCM_LENGTH (s_prop_name));
+-  bse_scm_enter_gc (&gclist, prop_name, g_free, SCM_LENGTH (s_prop_name));
++  prop_name = strdup_from_scm (s_prop_name);
++  bse_scm_enter_gc (&gclist, prop_name, g_free, STRING_LENGTH_FROM_SCM (s_prop_name));
+ 
+   value = sfi_glue_proxy_get_property (proxy, prop_name);
+   if (value)
+@@ -562,17 +626,17 @@ bse_scm_glue_call (SCM s_proc_name,
+   GValue *value;
+   SfiSeq *seq;
+   
+-  SCM_ASSERT (SCM_STRINGP (s_proc_name),  s_proc_name,  SCM_ARG1, "bse-glue-call");
+-  SCM_ASSERT (SCM_CONSP (s_arg_list) || s_arg_list == SCM_EOL,  s_arg_list,  SCM_ARG2, "bse-glue-call");
++  SCM_ASSERT (IS_SCM_STRING (s_proc_name),  s_proc_name,  SCM_ARG1, "bse-glue-call");
++  SCM_ASSERT (IS_SCM_PAIR (s_arg_list) || s_arg_list == SCM_EOL,  s_arg_list,  SCM_ARG2, "bse-glue-call");
+ 
+   BSE_SCM_DEFER_INTS ();
+   
+-  proc_name = g_strndup (SCM_ROCHARS (s_proc_name), SCM_LENGTH (s_proc_name));
+-  bse_scm_enter_gc (&gclist, proc_name, g_free, SCM_LENGTH (s_proc_name));
++  proc_name = strdup_from_scm (s_proc_name);
++  bse_scm_enter_gc (&gclist, proc_name, g_free, STRING_LENGTH_FROM_SCM (s_proc_name));
+ 
+   seq = sfi_seq_new ();
+-  bse_scm_enter_gc (&gclist, seq, sfi_seq_unref, 1024);
+-  for (node = s_arg_list; SCM_CONSP (node); node = SCM_CDR (node))
++  bse_scm_enter_gc (&gclist, seq, sfi_seq_unref, 1024); // FIXME: GC callbacks may run in any thread
++  for (node = s_arg_list; IS_SCM_PAIR (node); node = SCM_CDR (node))
+     {
+       SCM arg = SCM_CAR (node);
+ 
+@@ -648,7 +712,7 @@ signal_closure_marshal (GClosure       *closure,
+   SignalData *sdata = closure->data;
+   sdata->n_args = n_param_values;
+   sdata->args = param_values;
+-  scm_internal_cwdr ((scm_catch_body_t) signal_marshal_sproc, sdata,
++  scm_internal_cwdr ((scm_t_catch_body) signal_marshal_sproc, sdata,
+                      scm_handle_by_message_noexit, "BSE", &stack_item);
+ }
+ 
+@@ -665,7 +729,7 @@ bse_scm_signal_connect (SCM s_proxy,
+   SCM_ASSERT (SCM_IS_GLUE_PROXY (s_proxy), s_proxy,  SCM_ARG1, "bse-signal-connect");
+   proxy = SCM_GET_GLUE_PROXY (s_proxy);
+ 
+-  SCM_ASSERT (SCM_STRINGP (s_signal), s_signal, SCM_ARG2, "bse-signal-connect");
++  SCM_ASSERT (IS_SCM_STRING (s_signal), s_signal, SCM_ARG2, "bse-signal-connect");
+   SCM_ASSERT (gh_procedure_p (s_lambda), s_lambda,  SCM_ARG3, "bse-signal-connect");
+ 
+   scm_gc_protect_object (s_lambda);
+@@ -673,7 +737,7 @@ bse_scm_signal_connect (SCM s_proxy,
+   BSE_SCM_DEFER_INTS ();
+   sdata = g_new0 (SignalData, 1);
+   sdata->proxy = proxy;
+-  sdata->signal = g_strndup (SCM_ROCHARS (s_signal), SCM_LENGTH (s_signal));
++  sdata->signal = strdup_from_scm (s_signal);
+   sdata->s_lambda = s_lambda;
+   closure = g_closure_new_simple (sizeof (GClosure), sdata);
+   g_closure_add_finalize_notifier (closure, sdata, signal_data_free);
+@@ -707,11 +771,11 @@ SCM
+ bse_scm_choice_match (SCM s_ch1,
+                       SCM s_ch2)
+ {
+-  SCM_ASSERT (SCM_SYMBOLP (s_ch1), s_ch1, SCM_ARG1, "bse-choice-match?");
+-  SCM_ASSERT (SCM_SYMBOLP (s_ch2), s_ch2, SCM_ARG2, "bse-choice-match?");
++  SCM_ASSERT (IS_SCM_SYMBOL (s_ch1), s_ch1, SCM_ARG1, "bse-choice-match?");
++  SCM_ASSERT (IS_SCM_SYMBOL (s_ch2), s_ch2, SCM_ARG2, "bse-choice-match?");
+ 
+-  gchar *ch1 = g_strndup (SCM_ROCHARS (s_ch1), SCM_LENGTH (s_ch1));
+-  gchar *ch2 = g_strndup (SCM_ROCHARS (s_ch2), SCM_LENGTH (s_ch2));
++  gchar *ch1 = strdup_from_scm (s_ch1);
++  gchar *ch2 = strdup_from_scm (s_ch2);
+   int res = sfi_choice_match (ch1, ch2);
+   g_free (ch1);
+   g_free (ch2);
+@@ -719,11 +783,10 @@ bse_scm_choice_match (SCM s_ch1,
+ }
+ 
+ static char*
+-text_concat (const char *prefix,
+-             char       *text,
+-             int         len)
++text_concat_scm (const char *prefix,
++                 SCM         s_string)
+ {
+-  char *p2 = g_strndup (text, len);
++  char *p2 = strdup_from_scm (s_string);
+   char *result = g_strconcat (prefix ? prefix : "", prefix && p2 ? "\n" : "", p2, NULL);
+   g_free (p2);
+   return result;
+@@ -755,11 +818,11 @@ bse_scm_script_message (SCM s_type,
+ {
+   SCM gcplateau = bse_scm_make_gc_plateau (4096);
+ 
+-  SCM_ASSERT (SCM_SYMBOLP (s_type),   s_type,   SCM_ARG2, "bse-script-message");
++  SCM_ASSERT (IS_SCM_SYMBOL (s_type),   s_type,   SCM_ARG2, "bse-script-message");
+ 
+   /* figure message level */
+   BSE_SCM_DEFER_INTS();
+-  gchar *strtype = g_strndup (SCM_ROCHARS (s_type), SCM_LENGTH (s_type));
++  gchar *strtype = strdup_from_scm (s_type);
+   guint mtype = sfi_msg_lookup_type (strtype);
+   g_free (strtype);
+   BSE_SCM_ALLOW_INTS();
+@@ -769,7 +832,7 @@ bse_scm_script_message (SCM s_type,
+   /* figure argument list length */
+   guint i = 0;
+   SCM node = s_bits;
+-  while (SCM_CONSP (node))
++  while (IS_SCM_PAIR (node))
+     node = SCM_CDR (node), i++;
+   if (i == 0)
+     scm_misc_error ("bse-script-message", "Wrong number of arguments", SCM_BOOL_F);
+@@ -778,53 +841,53 @@ bse_scm_script_message (SCM s_type,
+   char *title = NULL, *primary = NULL, *secondary = NULL, *detail = NULL, *check = NULL;
+   i = 2;
+   node = s_bits;
+-  while (SCM_CONSP (node))
++  while (IS_SCM_PAIR (node))
+     {
+       /* read first arg, a symbol */
+       SCM arg1 = SCM_CAR (node);
+       node = SCM_CDR (node);
+       i++;
+-      if (!SCM_SYMBOLP (arg1))
++      if (!IS_SCM_SYMBOL (arg1))
+ 	scm_wrong_type_arg ("bse-script-message", i, arg1);
+       /* check symbol contents */
+       BSE_SCM_DEFER_INTS();
+-      gchar *mtag = g_strndup (SCM_ROCHARS (arg1), SCM_LENGTH (arg1));
++      gchar *mtag = strdup_from_scm (arg1);
+       int tag = msg_bit_type_match (mtag);
+       g_free (mtag);
+       BSE_SCM_ALLOW_INTS();
+       if (tag < 0)
+         scm_wrong_type_arg ("bse-script-message", i, arg1);
+       /* list must continue */
+-      if (!SCM_CONSP (node))
++      if (!IS_SCM_PAIR (node))
+         scm_misc_error ("bse-script-message", "Wrong number of arguments", SCM_BOOL_F);
+       /* read second arg, a string */
+       SCM arg2 = SCM_CAR (node);
+       node = SCM_CDR (node);
+       i++;
+-      if (!SCM_STRINGP (arg2))
++      if (!IS_SCM_STRING (arg2))
+         scm_wrong_type_arg ("bse-script-message", i, arg2);
+       /* add message bit from string */
+       BSE_SCM_DEFER_INTS();
+       switch (tag)
+         {
+         case 0:
+-          title = text_concat (title, SCM_ROCHARS (arg2), SCM_LENGTH (arg2));
++          title = text_concat_scm (title, arg2);
+           sfi_glue_gc_add (title, g_free);
+           break;
+         case 1:
+-          primary = text_concat (primary, SCM_ROCHARS (arg2), SCM_LENGTH (arg2));
++          primary = text_concat_scm (primary, arg2);
+           sfi_glue_gc_add (primary, g_free);
+           break;
+         case 2:
+-          secondary = text_concat (secondary, SCM_ROCHARS (arg2), SCM_LENGTH (arg2));
++          secondary = text_concat_scm (secondary, arg2);
+           sfi_glue_gc_add (secondary, g_free);
+           break;
+         case 3:
+-          detail = text_concat (detail, SCM_ROCHARS (arg2), SCM_LENGTH (arg2));
++          detail = text_concat_scm (detail, arg2);
+           sfi_glue_gc_add (detail, g_free);
+           break;
+         case 4:
+-          check = text_concat (check, SCM_ROCHARS (arg2), SCM_LENGTH (arg2));
++          check = text_concat_scm (check, arg2);
+           sfi_glue_gc_add (check, g_free);
+           break;
+         }
+@@ -878,16 +941,16 @@ bse_scm_script_register (SCM s_name,
+   SCM node;
+   guint i;
+ 
+-  SCM_ASSERT (SCM_SYMBOLP (s_name),      s_name,      SCM_ARG1, "bse-script-register");
+-  SCM_ASSERT (SCM_STRINGP (s_options),   s_options,   SCM_ARG2, "bse-script-register");
+-  SCM_ASSERT (SCM_STRINGP (s_category),  s_category,  SCM_ARG3, "bse-script-register");
+-  SCM_ASSERT (SCM_STRINGP (s_blurb),     s_blurb,     SCM_ARG4, "bse-script-register");
+-  SCM_ASSERT (SCM_STRINGP (s_author),    s_author,    SCM_ARG5, "bse-script-register");
+-  SCM_ASSERT (SCM_STRINGP (s_license),   s_license,   SCM_ARG6, "bse-script-register");
+-  for (node = s_params, i = 7; SCM_CONSP (node); node = SCM_CDR (node), i++)
++  SCM_ASSERT (IS_SCM_SYMBOL (s_name),      s_name,      SCM_ARG1, "bse-script-register");
++  SCM_ASSERT (IS_SCM_STRING (s_options),   s_options,   SCM_ARG2, "bse-script-register");
++  SCM_ASSERT (IS_SCM_STRING (s_category),  s_category,  SCM_ARG3, "bse-script-register");
++  SCM_ASSERT (IS_SCM_STRING (s_blurb),     s_blurb,     SCM_ARG4, "bse-script-register");
++  SCM_ASSERT (IS_SCM_STRING (s_author),    s_author,    SCM_ARG5, "bse-script-register");
++  SCM_ASSERT (IS_SCM_STRING (s_license),   s_license,   SCM_ARG6, "bse-script-register");
++  for (node = s_params, i = 7; IS_SCM_PAIR (node); node = SCM_CDR (node), i++)
+     {
+       SCM arg = SCM_CAR (node);
+-      if (!SCM_STRINGP (arg))
++      if (!IS_SCM_STRING (arg))
+ 	scm_wrong_type_arg ("bse-script-register", i, arg);
+     }
+ 
+@@ -913,32 +976,32 @@ bse_scm_script_register (SCM s_name,
+       SfiSeq *seq = sfi_seq_new ();
+       GValue *val, *rval;
+ 
+-      sfi_seq_append (seq, val = sfi_value_lstring (SCM_ROCHARS (s_name), SCM_LENGTH (s_name)));
++      sfi_seq_append (seq, val = string_value_from_scm (s_name));
+       sfi_value_free (val);
+-      sfi_seq_append (seq, val = sfi_value_lstring (SCM_ROCHARS (s_options), SCM_LENGTH (s_options)));
++      sfi_seq_append (seq, val = string_value_from_scm (s_options));
+       sfi_value_free (val);
+-      sfi_seq_append (seq, val = sfi_value_lstring (SCM_ROCHARS (s_category), SCM_LENGTH (s_category)));
++      sfi_seq_append (seq, val = string_value_from_scm (s_category));
+       sfi_value_free (val);
+-      sfi_seq_append (seq, val = sfi_value_lstring (SCM_ROCHARS (s_blurb), SCM_LENGTH (s_blurb)));
++      sfi_seq_append (seq, val = string_value_from_scm (s_blurb));
+       sfi_value_free (val);
+-      if (SCM_STRINGP (s_file))
+-        sfi_seq_append (seq, val = sfi_value_lstring (SCM_ROCHARS (s_file), SCM_LENGTH (s_file)));
++      if (IS_SCM_STRING (s_file))
++        sfi_seq_append (seq, val = string_value_from_scm (s_file));
+       else
+         sfi_seq_append (seq, val = sfi_value_string ("Scheme"));
+       sfi_value_free (val);
+       char buffer[64] = "";
+-      g_snprintf (buffer, 64, "%u", SCM_INUMP (s_line) ? SCM_INUM (s_line) + 1 : 0);
++      g_snprintf (buffer, 64, "%u", (int) (IS_SCM_SFI_NUM (s_line) ? num_from_scm (s_line) + 1 : 0));
+       sfi_seq_append (seq, val = sfi_value_string (buffer));
+       sfi_value_free (val);
+-      sfi_seq_append (seq, val = sfi_value_lstring (SCM_ROCHARS (s_author), SCM_LENGTH (s_author)));
++      sfi_seq_append (seq, val = string_value_from_scm (s_author));
+       sfi_value_free (val);
+-      sfi_seq_append (seq, val = sfi_value_lstring (SCM_ROCHARS (s_license), SCM_LENGTH (s_license)));
++      sfi_seq_append (seq, val = string_value_from_scm (s_license));
+       sfi_value_free (val);
+       
+-      for (node = s_params; SCM_CONSP (node); node = SCM_CDR (node))
++      for (node = s_params; IS_SCM_PAIR (node); node = SCM_CDR (node))
+ 	{
+ 	  SCM arg = SCM_CAR (node);
+-	  sfi_seq_append (seq, val = sfi_value_lstring (SCM_ROCHARS (arg), SCM_LENGTH (arg)));
++	  sfi_seq_append (seq, val = string_value_from_scm (arg));
+ 	  sfi_value_free (val);
+ 	}
+ 
+@@ -947,7 +1010,7 @@ bse_scm_script_register (SCM s_name,
+       sfi_value_free (val);
+       if (SFI_VALUE_HOLDS_STRING (rval))
+ 	{
+-	  gchar *name = g_strndup (SCM_ROCHARS (s_name), SCM_LENGTH (s_name));
++	  gchar *name = strdup_from_scm (s_name);
+ 	  g_message ("while registering \"%s\": %s", name, sfi_value_get_string (rval));
+ 	  g_free (name);
+ 	}
+@@ -962,9 +1025,9 @@ bse_scm_script_register (SCM s_name,
+ SCM
+ bse_scm_gettext (SCM s_string)
+ {
+-  SCM_ASSERT (SCM_STRINGP (s_string), s_string, SCM_ARG1, "bse-gettext");
++  SCM_ASSERT (IS_SCM_STRING (s_string), s_string, SCM_ARG1, "bse-gettext");
+   BSE_SCM_DEFER_INTS ();
+-  gchar *string = g_strndup (SCM_ROCHARS (s_string), SCM_LENGTH (s_string));
++  gchar *string = strdup_from_scm (s_string);
+   const gchar *cstring = bse_gettext (string);
+   SCM s_ret = scm_makfrom0str (cstring);
+   g_free (string);
+@@ -975,9 +1038,9 @@ bse_scm_gettext (SCM s_string)
+ SCM
+ bse_scm_gettext_q (SCM s_string)
+ {
+-  SCM_ASSERT (SCM_STRINGP (s_string), s_string, SCM_ARG1, "bse-gettext-q");
++  SCM_ASSERT (IS_SCM_STRING (s_string), s_string, SCM_ARG1, "bse-gettext-q");
+   BSE_SCM_DEFER_INTS ();
+-  gchar *string = g_strndup (SCM_ROCHARS (s_string), SCM_LENGTH (s_string));
++  gchar *string = strdup_from_scm (s_string);
+   const gchar *cstring = bse_gettext (string);
+   if (string == cstring)
+     {
+diff --git shell/bsescminterp.h shell/bsescminterp.h
+index 73842bb..e8dc017 100644
+--- shell/bsescminterp.h
++++ shell/bsescminterp.h
+@@ -23,13 +23,6 @@
+ 
+ G_BEGIN_DECLS
+ 
+-/* guard around GC-protected code portions,
+- * with incremental int-blocking. guile recovers
+- * from unbalanced defer/allow pairs.
+- */
+-#define	BSE_SCM_DEFER_INTS()	SCM_REDEFER_INTS
+-#define	BSE_SCM_ALLOW_INTS()	SCM_REALLOW_INTS
+-
+ typedef struct _BseSCMWire   BseSCMWire;
+ 
+ 
