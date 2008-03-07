@@ -1,5 +1,0 @@
-%%SITE_PERL%%/FCGI/ProcManager.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/ProcManager/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/ProcManager
-@dirrmtry %%SITE_PERL%%/FCGI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI

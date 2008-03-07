@@ -3399,3 +3399,4 @@ editors/muggy||2008-02-28|Has expired: development stalled for years, unmaintain
 x11-fm/binder||2008-02-28|Has expired: development stalled for years, outdated, unmaintained
 x11-toolkits/guile-gnome||2008-03-02|Software is obsolete
 security/openssh||2008-03-02|Has expired: Outdate and has security issues
+www/p5-FastCGI-ProcManager||2008-03-07|Duplicate of www/p5-FCGI-ProcManager
