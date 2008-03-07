@@ -15,8 +15,11 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Session manager for the Xfce 4 desktop environment
 
+BUILD_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS= yes
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -27,14 +30,4 @@ USE_XLIB=	yes
 
 MAN1=		xfce4-session.1 xfce4-session-logout.1
 
-.include <bsd.port.pre.mk>
-
-.if ${X_WINDOW_SYSTEM:L} != xorg
-BUILD_DEPENDS+=	iceauth:${X_CLIENTS_PORT}
-.else
-BUILD_DEPENDS+=	iceauth:${PORTSDIR}/x11/iceauth
-.endif
-
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
