@@ -1,7 +1,7 @@
 lib/xorg/modules/drivers/ati_drv.la
 lib/xorg/modules/drivers/ati_drv.so
-lib/xorg/modules/drivers/atimisc_drv.la
-lib/xorg/modules/drivers/atimisc_drv.so
+lib/xorg/modules/drivers/mach64_drv.la
+lib/xorg/modules/drivers/mach64_drv.so
 lib/xorg/modules/drivers/r128_drv.la
 lib/xorg/modules/drivers/r128_drv.so
 lib/xorg/modules/drivers/radeon_drv.la
