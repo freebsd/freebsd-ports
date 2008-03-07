@@ -19,6 +19,7 @@
     SUBDIR += mksh
     SUBDIR += nologinmsg
     SUBDIR += osh
+    SUBDIR += p5-Shell-Perl
     SUBDIR += p5-Term-ShellUI
     SUBDIR += pash
     SUBDIR += pdksh
