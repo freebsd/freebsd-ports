@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.8.4
+PORTVERSION=	1.9
 CATEGORIES=	www
-MASTER_SITES=	http://download.moodle.org/stable18/
+MASTER_SITES=	http://download.moodle.org/stable19/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmrueda@diatel.upm.es
 COMMENT=	Course management system based on social constructionism
 
-USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml
+USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc
 WRKSRC=		${WRKDIR}/moodle
 
 OPTIONS=	MYSQL   "Add support for a MySQL database server" Off \
@@ -57,7 +57,7 @@ USE_PHP+=	zlib
 .endif
 
 .if defined(WITH_NETWORK)
-USE_PHP+=	curl openssl
+USE_PHP+=	openssl
 .endif
 
 .if defined(WITH_LDAP)
