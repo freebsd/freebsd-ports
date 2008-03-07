@@ -1,16 +1,28 @@
 --- kfiles.c.orig	Sat Aug  9 17:01:51 2003
-+++ kfiles.c	Fri Aug 11 18:51:05 2006
-@@ -3,9 +3,7 @@
++++ kfiles.c	Fri Feb 29 16:51:58 2008
+@@ -3,9 +3,8 @@
   * or file containing orbital elements.
   */
  
 -#if __BORLANDC__
  #include <stdlib.h>
 -#endif
++#include <stdio.h>
  
  #include "kep.h"
  
-@@ -67,13 +65,33 @@
+@@ -26,8 +25,8 @@
+ 
+ extern char *intfmt, *strfmt;/* see dms.c */
+ 
+-static char starnam[80] = {'s','t','a','r','.','c','a','t','\0'};
+-static char orbnam[80] = {'o','r','b','i','t','.','c','a','t','\0'};
++static char starnam[80];
++static char orbnam[80];
+ static int linenum = 1;
+ 
+ /* Read initialization file aa.ini
+@@ -67,13 +66,36 @@
  int kinit()
  {
  double a, b, fl, co, si, u;
@@ -23,6 +35,9 @@
  printf( "Planetary and lunar positions approximate DE404.\n" );
  
 -f = fopen( "aa.ini", "r" );
++ snprintf(starnam, 80, "%%DATADIR%%/star.cat");
++ snprintf(orbnam, 80, "%%DATADIR%%/orbit.cat"); 
++
 +/* User inifile */
 + if(home){
 +   inifile = strdup(home);

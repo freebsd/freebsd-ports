@@ -7,6 +7,7 @@
 
 PORTNAME=	aa
 PORTVERSION=	56
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://moshier.net/ \
 		http://www.mirrorservice.org/sites/www.moshier.net/
@@ -24,15 +25,22 @@ ALL_TARGET=	aa
 SUB_FILES=	pkg-message
 
 PORTDOCS=	read.me readme.404 Readme.FreeBSD
+PORTDATA=	messier.cat orbit.cat star.cat
 PLIST_FILES=	bin/aa etc/aa.ini.default
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/kfiles.c
+	@${REINPLACE_CMD} \
+		's|%%PREFIX%%|${PREFIX}|g ; s|%%DATADIR%%|${DATADIR}|g' \
+		${WRKSRC}/kfiles.c
 	@${REINPLACE_CMD} 's|CFLAGS=  -O2|CFLAGS+=|' ${WRKSRC}/makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/aa ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/aa.ini ${PREFIX}/etc/aa.ini.default
+	@${MKDIR} ${DATADIR}
+.for i in ${PORTDATA}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DATADIR}
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)
