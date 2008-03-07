@@ -171,7 +171,6 @@
     SUBDIR += libXtst
     SUBDIR += libXv
     SUBDIR += libXvMC
-    SUBDIR += libXxf86
     SUBDIR += libXxf86dga
     SUBDIR += libXxf86misc
     SUBDIR += libXxf86vm
@@ -226,7 +225,6 @@
     SUBDIR += pixman
     SUBDIR += portoseguro
     SUBDIR += powershell
-    SUBDIR += printext
     SUBDIR += printproto
     SUBDIR += props
     SUBDIR += py-qt4-opengl
@@ -347,7 +345,6 @@
     SUBDIR += xf86dga
     SUBDIR += xf86dgaproto
     SUBDIR += xf86driproto
-    SUBDIR += xf86ext
     SUBDIR += xf86miscproto
     SUBDIR += xf86rushproto
     SUBDIR += xf86vidmodeproto
