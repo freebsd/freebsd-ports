@@ -23,7 +23,6 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/ogg/vorbis.so
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-USE_GCC=		3.4
 PYDISTUTILS_PKGNAME=	pyvorbis
 
 do-configure:
