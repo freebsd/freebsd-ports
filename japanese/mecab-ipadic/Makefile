@@ -5,32 +5,31 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mecab-ipadic
-PORTVERSION=	2.7.0
-PORTREVISION=	3
+PORTNAME=	mecab
+DISTVERSION=	2.7.0-20070801
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME:S/-ipadic//}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${DISTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-ipadic
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION}
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Japanese Morphological Dictionary for MeCab
 
 BUILD_DEPENDS=	ja-mecab>=0.94:${PORTSDIR}/japanese/mecab
 
-DISTVERSION=	20070610
-
 USE_PERL5_BUILD=	yes
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--with-dicdir=${PREFIX}/lib/mecab/dic/ipadic
 
-# Set charset (euc-jp/sjis_jis/utf-8)
+# Set charset (euc-jp/shift_jis/utf-8)
 .if defined(WITH_CHARSET)
-CONFIGURE_ARGS=	--with-charset=${WITH_CHARSET}
+CONFIGURE_ARGS+=	--with-charset=${WITH_CHARSET}
 .endif
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITH_CHARSET=charset  sets default charset (euc-jp/sjis_jis/utf-8)"
+	@${ECHO_MSG} "  WITH_CHARSET=charset  sets default charset (euc-jp/shift_jis/utf-8)"
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
