@@ -7,14 +7,15 @@
 
 PORTNAME=	gtkfind
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The program to use to have to remember all the options to find(1)
 
-BUILD_DEPENDS=	appres:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	appres:${PORTSDIR}/x11/appres \
+		xterm:${PORTSDIR}/x11/xterm
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -25,7 +26,7 @@ MAN1=		gtkfind.1
 PLIST_FILES=	bin/gtkfind
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-O2,${CFLAGS}," ${WRKSRC}/configure ${WRKSRC}/Makefile.in	
+	${REINPLACE_CMD} -e "s,-O2,${CFLAGS}," ${WRKSRC}/configure ${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gtkfind ${PREFIX}/bin
