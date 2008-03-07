@@ -7,10 +7,11 @@
 
 PORTNAME=	libdasm
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.klake.org/~jt/misc/
 
-MAINTAINER=	antoine.brodin@laposte.net
+MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	A simple x86 disassembly library
 
 USE_LDCONFIG=	yes
