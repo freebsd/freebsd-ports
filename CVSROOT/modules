@@ -11143,6 +11143,7 @@ p5-Shape	ports/devel/p5-Shape
 p5-Shell-Base	ports/devel/p5-Shell-Base
 p5-Shell-EnvImporter	ports/devel/p5-Shell-EnvImporter
 p5-Shell-Parser	ports/devel/p5-Shell-Parser
+p5-Shell-Perl	ports/shells/p5-Shell-Perl
 p5-Shell-Source	ports/devel/p5-Shell-Source
 p5-ShipIt	ports/devel/p5-ShipIt
 p5-Shout	ports/audio/p5-Shout
