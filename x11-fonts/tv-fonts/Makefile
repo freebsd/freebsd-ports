@@ -14,9 +14,6 @@ MASTER_SITES=	http://dl.bytesex.org/releases/${PORTNAME}/
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A number of fonts which are useful for TV applications
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
@@ -30,6 +27,18 @@ FONTS=		caption.pcf.gz captioni.pcf.gz led-iso10646-1.pcf.gz \
 		teletext2.pcf.gz teletext2i.pcf.gz teletext4.pcf.gz \
 		teletext4i.pcf.gz
 
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} != xorg
+BUILD_DEPENDS+=	bdftopcf:${X_CLIENTS_PORT}
+.else
+BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+.endif
+
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 do-install:
 	@${MKDIR} ${FONTSDIR}
 .for font in ${FONTS}
@@ -39,4 +48,5 @@ do-install:
 post-install:
 	@-${X11BASE}/bin/fc-cache -f -v ${FONTSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
+
