@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	2.4.4
+PORTVERSION=	2.5.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -51,9 +51,9 @@ PLIST_FILES=	etc/mail/dkim-filter.conf.sample include/dkim.h \
 PLIST_DIRS=	etc/mail
 PORTDOCS=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		autorespond.csh \
-		draft-hoffman-dac-vbr-02.txt draft-ietf-dkim-deployment-00.txt \
-		draft-ietf-dkim-overview-07.txt draft-ietf-dkim-ssp-01.txt \
-		draft-kucherawy-sender-auth-header-10.txt \
+		draft-hoffman-dac-vbr-02.txt draft-ietf-dkim-deployment-01.txt \
+		draft-ietf-dkim-overview-09.txt draft-ietf-dkim-ssp-03.txt \
+		draft-kucherawy-sender-auth-header-12.txt \
 		rfc4686.txt rfc4871.txt rfc5016.txt
 .if !defined(NOPORTDOCS)
 LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
@@ -63,6 +63,7 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_body.html \
 		${DOCSDIR_REL}/libdkim/dkim_canon_t.html \
 		${DOCSDIR_REL}/libdkim/dkim_cbstat.html \
+		${DOCSDIR_REL}/libdkim/dkim_chunk.html \
 		${DOCSDIR_REL}/libdkim/dkim_close.html \
 		${DOCSDIR_REL}/libdkim/dkim_eoh.html \
 		${DOCSDIR_REL}/libdkim/dkim_eom.html \
@@ -72,7 +73,6 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_getcachestats.html \
 		${DOCSDIR_REL}/libdkim/dkim_getdomain.html \
 		${DOCSDIR_REL}/libdkim/dkim_geterror.html \
-		${DOCSDIR_REL}/libdkim/dkim_gethandlingstr.html \
 		${DOCSDIR_REL}/libdkim/dkim_getmode.html \
 		${DOCSDIR_REL}/libdkim/dkim_getpolicystr.html \
 		${DOCSDIR_REL}/libdkim/dkim_getpresult.html \
@@ -81,15 +81,16 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_getsighdr.html \
 		${DOCSDIR_REL}/libdkim/dkim_getsiglist.html \
 		${DOCSDIR_REL}/libdkim/dkim_getsignature.html \
-		${DOCSDIR_REL}/libdkim/dkim_handling_t.html \
 		${DOCSDIR_REL}/libdkim/dkim_header.html \
 		${DOCSDIR_REL}/libdkim/dkim_init.html \
+		${DOCSDIR_REL}/libdkim/dkim_key_syntax.html \
 		${DOCSDIR_REL}/libdkim/dkim_lib.html \
 		${DOCSDIR_REL}/libdkim/dkim_minbody.html \
 		${DOCSDIR_REL}/libdkim/dkim_ohdrs.html \
 		${DOCSDIR_REL}/libdkim/dkim_options.html \
 		${DOCSDIR_REL}/libdkim/dkim_param_t.html \
 		${DOCSDIR_REL}/libdkim/dkim_policy.html \
+		${DOCSDIR_REL}/libdkim/dkim_policy_syntax.html \
 		${DOCSDIR_REL}/libdkim/dkim_policy_t.html \
 		${DOCSDIR_REL}/libdkim/dkim_presult.html \
 		${DOCSDIR_REL}/libdkim/dkim_pstate.html \
@@ -118,6 +119,7 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_getsigntime.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_ignore.html \
 		${DOCSDIR_REL}/libdkim/dkim_sig_process.html \
+		${DOCSDIR_REL}/libdkim/dkim_sig_syntax.html \
 		${DOCSDIR_REL}/libdkim/dkim_sigerror.html \
 		${DOCSDIR_REL}/libdkim/dkim_siginfo.html \
 		${DOCSDIR_REL}/libdkim/dkim_sigkey_t.html \
@@ -127,6 +129,7 @@ LIBDOCS=	${DOCSDIR_REL}/libdkim/index.html \
 		${DOCSDIR_REL}/libdkim/dkim_verify.html \
 		${DOCSDIR_REL}/libdkim/rfc2822_mailbox_split.html
 PLIST_FILES+=	${DOCSDIR_REL}/README.dkim-filter \
+		${DOCSDIR_REL}/README.libdkim \
 		${LIBDOCS}
 PLIST_DIRS+=	${DOCSDIR_REL}/libdkim
 .endif
@@ -162,6 +165,7 @@ SITE_SUB+=	-e '\|bld_LIBDKIM_INSTALL|s/^dnl //g'
 .if defined(WITH_LIBDKIM_SHARED)
 PLIST_SUB+=	LIBDKIM="@comment "
 PLIST_SUB+=	LIBDKIMSHARED=""
+USE_LDCONFIG=	yes
 .else
 PLIST_SUB+=	LIBDKIM=""
 PLIST_SUB+=	LIBDKIMSHARED="@comment "
@@ -198,11 +202,12 @@ PLIST_SUB+=	STATS=""
 PLIST_SUB+=	STATS="@comment "
 .endif
 
-.if defined(WITH_POPAUTH) \
+.if (defined(WITH_POPAUTH) \
 	|| defined(WITH_QUERY_CACHE) \
-	|| defined(WITH_STATS)
+	|| defined(WITH_BODYLENGTH_DB) \
+	|| defined(WITH_STATS)) \
+	&& !defined(WITH_BDB_BASE)
 USE_BDB=	41+
-INVALID_BDB_VER=	2 3 40
 SITE_SUB+=	-e 's|%%BDB%%||g' \
 		-e "s|%%BDB_LIB_DIR%%|${BDB_LIB_DIR}|g" \
 		-e "s|%%BDB_INCLUDE_DIR%%|${BDB_INCLUDE_DIR}|g" \
@@ -240,8 +245,9 @@ pre-fetch:
 	@${ECHO_MSG} " WITH_QUERY_CACHE=yes		Cache DNS Query"
 	@${ECHO_MSG} " WITH_VERIFY_DOMAINKEYS=yes	Verify DomainKeys using dk-milter's libdk"
 	@${ECHO_MSG} " WITH_SENDMAIL_BASE=yes		Build to run with base sendmail"
+	@${ECHO_MSG} " WITH_SENDMAIL_PORT=yes		Build to run with ports' sendmail"
 	@${ECHO_MSG} " WITH_POSTFIX=yes		Build to run with postfix port"
-	@${ECHO_MSG} " WITH_LIBDKIM_INSTALL=yes		Install libdkim library"
+	@${ECHO_MSG} " WITH_LIBDKIM_INSTALL=yes	Install libdkim library"
 	@${ECHO_MSG}
 	@sleep 5
 
@@ -284,6 +290,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/dkim-filter/README ${DOCSDIR}/README.dkim-filter
+	${INSTALL_DATA} ${WRKSRC}/libdkim/README ${DOCSDIR}/README.libdkim
 	${MKDIR} ${DOCSDIR}/libdkim
 .for f in ${LIBDOCS}
 	${INSTALL_DATA} ${WRKSRC}/libdkim/docs/`${BASENAME} ${f}` ${DOCSDIR}/libdkim/
