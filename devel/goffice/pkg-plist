@@ -296,6 +296,7 @@ libdata/pkgconfig/libgoffice-0.6.pc
 %%DOCSDIR%%/goffice-GogGuru.html
 %%DOCSDIR%%/goffice-GogPlotEngine.html
 %%DOCSDIR%%/goffice-GogTool.html
+%%DOCSDIR%%/goffice-Ranges.html
 %%DOCSDIR%%/goffice-Units.html
 %%DOCSDIR%%/goffice-go-plugin.html
 %%DOCSDIR%%/goffice.devhelp
@@ -327,6 +328,7 @@ libdata/pkgconfig/libgoffice-0.6.pc
 %%DATADIR%%/%%VERSION%%/glade/gog-style-prefs.glade
 %%DATADIR%%/%%VERSION%%/patterns/svg-patterns.xml
 share/locale/am/LC_MESSAGES/goffice-%%VERSION%%.mo
+share/locale/ar/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/goffice-%%VERSION%%.mo
@@ -348,6 +350,7 @@ share/locale/hu/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/goffice-%%VERSION%%.mo
+share/locale/lt/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/lv/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ml/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/mr/LC_MESSAGES/goffice-%%VERSION%%.mo
