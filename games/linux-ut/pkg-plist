@@ -9,98 +9,99 @@ bin/ut
 %%DATADIR%%/Help/UnrealTournamentSetupLogo.bmp
 %%DATADIR%%/Help/demutators-readme.txt
 %%DATADIR%%/Help/inoxxpack.txt
-%%DATADIR%%/Maps/AS-Frigate.unr
-%%DATADIR%%/Maps/AS-Guardia.unr
-%%DATADIR%%/Maps/AS-HiSpeed.unr
-%%DATADIR%%/Maps/AS-Mazon.unr
-%%DATADIR%%/Maps/AS-OceanFloor.unr
-%%DATADIR%%/Maps/AS-Overlord.unr
-%%DATADIR%%/Maps/AS-Rook.unr
-%%DATADIR%%/Maps/AS-Tutorial.unr
-%%DATADIR%%/Maps/CTF-Beatitude.unr
-%%DATADIR%%/Maps/CTF-Command.unr
-%%DATADIR%%/Maps/CTF-Coret.unr
-%%DATADIR%%/Maps/CTF-Cybrosis][.unr
-%%DATADIR%%/Maps/CTF-Darji16.unr
-%%DATADIR%%/Maps/CTF-Dreary.unr
-%%DATADIR%%/Maps/CTF-EpicBoy.unr
-%%DATADIR%%/Maps/CTF-EternalCave.unr
-%%DATADIR%%/Maps/CTF-Face-SE.unr
-%%DATADIR%%/Maps/CTF-Face.unr
-%%DATADIR%%/Maps/CTF-Face][.unr
-%%DATADIR%%/Maps/CTF-Gauntlet.unr
-%%DATADIR%%/Maps/CTF-HallOfGiants.unr
-%%DATADIR%%/Maps/CTF-High.unr
-%%DATADIR%%/Maps/CTF-Hydro16.unr
-%%DATADIR%%/Maps/CTF-Kosov.unr
-%%DATADIR%%/Maps/CTF-LavaGiant.unr
-%%DATADIR%%/Maps/CTF-Niven.unr
-%%DATADIR%%/Maps/CTF-November.unr
-%%DATADIR%%/Maps/CTF-Noxion16.unr
-%%DATADIR%%/Maps/CTF-Nucleus.unr
-%%DATADIR%%/Maps/CTF-Orbital.unr
-%%DATADIR%%/Maps/CTF-Ratchet.unr
-%%DATADIR%%/Maps/CTF-Tutorial.unr
-%%DATADIR%%/Maps/CityIntro.unr
-%%DATADIR%%/Maps/DM-Agony.unr
-%%DATADIR%%/Maps/DM-ArcaneTemple.unr
-%%DATADIR%%/Maps/DM-Barricade.unr
-%%DATADIR%%/Maps/DM-Bishop.unr
-%%DATADIR%%/Maps/DM-Closer.unr
-%%DATADIR%%/Maps/DM-Codex.unr
-%%DATADIR%%/Maps/DM-Conveyor.unr
-%%DATADIR%%/Maps/DM-Crane.unr
-%%DATADIR%%/Maps/DM-Curse][.unr
-%%DATADIR%%/Maps/DM-Cybrosis][.unr
-%%DATADIR%%/Maps/DM-Deck16][.unr
-%%DATADIR%%/Maps/DM-Fetid.unr
-%%DATADIR%%/Maps/DM-Fractal.unr
-%%DATADIR%%/Maps/DM-Gothic.unr
-%%DATADIR%%/Maps/DM-Grinder.unr
-%%DATADIR%%/Maps/DM-Grit-TOURNEY.unr
-%%DATADIR%%/Maps/DM-HealPod][.unr
-%%DATADIR%%/Maps/DM-HyperBlast.unr
-%%DATADIR%%/Maps/DM-KGalleon.unr
-%%DATADIR%%/Maps/DM-Liandri.unr
-%%DATADIR%%/Maps/DM-Malevolence.unr
-%%DATADIR%%/Maps/DM-Mojo][.unr
-%%DATADIR%%/Maps/DM-Morbias][.unr
-%%DATADIR%%/Maps/DM-Morpheus.unr
-%%DATADIR%%/Maps/DM-Oblivion.unr
-%%DATADIR%%/Maps/DM-Peak.unr
-%%DATADIR%%/Maps/DM-Phobos.unr
-%%DATADIR%%/Maps/DM-Pressure.unr
-%%DATADIR%%/Maps/DM-Pyramid.unr
-%%DATADIR%%/Maps/DM-Shrapnel][.unr
-%%DATADIR%%/Maps/DM-SpaceNoxx.unr
-%%DATADIR%%/Maps/DM-Stalwart.unr
-%%DATADIR%%/Maps/DM-StalwartXL.unr
-%%DATADIR%%/Maps/DM-Tempest.unr
-%%DATADIR%%/Maps/DM-Turbine.unr
-%%DATADIR%%/Maps/DM-Tutorial.unr
-%%DATADIR%%/Maps/DM-Viridian-TOURNEY.unr
-%%DATADIR%%/Maps/DM-Zeto.unr
-%%DATADIR%%/Maps/DOM-Bullet.unr
-%%DATADIR%%/Maps/DOM-Cidom.unr
-%%DATADIR%%/Maps/DOM-Cinder.unr
-%%DATADIR%%/Maps/DOM-Condemned.unr
-%%DATADIR%%/Maps/DOM-Cryptic.unr
-%%DATADIR%%/Maps/DOM-Gearbolt.unr
-%%DATADIR%%/Maps/DOM-Ghardhen.unr
-%%DATADIR%%/Maps/DOM-Lament.unr
-%%DATADIR%%/Maps/DOM-Lament][.unr
-%%DATADIR%%/Maps/DOM-Leadworks.unr
-%%DATADIR%%/Maps/DOM-MetalDream.unr
-%%DATADIR%%/Maps/DOM-Olden.unr
-%%DATADIR%%/Maps/DOM-Sesmar.unr
-%%DATADIR%%/Maps/DOM-Tutorial.unr
-%%DATADIR%%/Maps/DOM-WolfsBay.unr
-%%DATADIR%%/Maps/EOL_Assault.unr
-%%DATADIR%%/Maps/EOL_CTF.unr
-%%DATADIR%%/Maps/EOL_Challenge.unr
-%%DATADIR%%/Maps/EOL_Deathmatch.unr
-%%DATADIR%%/Maps/EOL_Domination.unr
-%%DATADIR%%/Maps/EOL_Statues.unr
+%%ANTHOLOGY%%%%DATADIR%%/Manual/Manual.pdf
+%%MAPS%%%%DATADIR%%/Maps/AS-Frigate.unr
+%%MAPS%%%%DATADIR%%/Maps/AS-Guardia.unr
+%%MAPS%%%%DATADIR%%/Maps/AS-HiSpeed.unr
+%%MAPS%%%%DATADIR%%/Maps/AS-Mazon.unr
+%%MAPS%%%%DATADIR%%/Maps/AS-OceanFloor.unr
+%%MAPS%%%%DATADIR%%/Maps/AS-Overlord.unr
+%%MAPS%%%%DATADIR%%/Maps/AS-Rook.unr
+%%MAPS%%%%DATADIR%%/Maps/AS-Tutorial.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Beatitude.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Command.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Coret.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Cybrosis][.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Darji16.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Dreary.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-EpicBoy.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-EternalCave.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Face-SE.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Face.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Face][.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Gauntlet.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-HallOfGiants.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-High.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Hydro16.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Kosov.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-LavaGiant.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Niven.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-November.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Noxion16.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Nucleus.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Orbital.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Ratchet.unr
+%%MAPS%%%%DATADIR%%/Maps/CTF-Tutorial.unr
+%%MAPS%%%%DATADIR%%/Maps/CityIntro.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Agony.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-ArcaneTemple.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Barricade.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Bishop.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Closer.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Codex.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Conveyor.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Crane.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Curse][.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Cybrosis][.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Deck16][.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Fetid.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Fractal.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Gothic.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Grinder.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Grit-TOURNEY.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-HealPod][.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-HyperBlast.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-KGalleon.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Liandri.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Malevolence.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Mojo][.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Morbias][.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Morpheus.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Oblivion.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Peak.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Phobos.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Pressure.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Pyramid.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Shrapnel][.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-SpaceNoxx.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Stalwart.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-StalwartXL.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Tempest.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Turbine.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Tutorial.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Viridian-TOURNEY.unr
+%%MAPS%%%%DATADIR%%/Maps/DM-Zeto.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Bullet.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Cidom.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Cinder.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Condemned.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Cryptic.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Gearbolt.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Ghardhen.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Lament.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Lament][.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Leadworks.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-MetalDream.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Olden.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Sesmar.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-Tutorial.unr
+%%MAPS%%%%DATADIR%%/Maps/DOM-WolfsBay.unr
+%%MAPS%%%%DATADIR%%/Maps/EOL_Assault.unr
+%%MAPS%%%%DATADIR%%/Maps/EOL_CTF.unr
+%%MAPS%%%%DATADIR%%/Maps/EOL_Challenge.unr
+%%MAPS%%%%DATADIR%%/Maps/EOL_Deathmatch.unr
+%%MAPS%%%%DATADIR%%/Maps/EOL_Domination.unr
+%%MAPS%%%%DATADIR%%/Maps/EOL_Statues.unr
 %%DATADIR%%/Maps/Entry.unr
 %%DATADIR%%/Maps/UT-Logo-Map.unr
 %%DATADIR%%/Maps/UTCredits.unr
@@ -134,107 +135,6 @@ bin/ut
 %%DATADIR%%/Music/Wheels.umx
 %%DATADIR%%/Music/firebr.umx
 %%DATADIR%%/Music/utmenu23.umx
-%%DATADIR%%/NetGamesUSA.com/About_NetGames_USA.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/Backup of default ngStatsUT.cfg
-%%DATADIR%%/NetGamesUSA.com/ngStats/Readme-Help_Using_ngStats.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/data/db.ver
-%%DATADIR%%/NetGamesUSA.com/ngStats/history.txt
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/About_Epic_Games.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/About_NetGames_USA.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/About_ngTCS.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/About_ngWorldStats.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/Help_Using_ngStats.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/Individual_Game_Stats/Highest_Score/index.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/Individual_Game_Stats/Last_Game/index.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/Individual_Game_Stats/Recent_Index.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/Legal_Terms.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/Total_Game_Stats/All_Totals.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/Total_Game_Stats/Bot_Totals.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/Total_Game_Stats/Human_Totals.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/Total_Game_Stats/Player_Index.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/Total_Game_Stats/Rankings.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/Total_Game_Stats/Total_Index.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/Change_ngWorldStats_Password.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/Confirm_Password.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/UT_Logo_Large_Button.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/UT_Logo_Small_Button.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/View_ngStats.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/View_ngWorldStats.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/blue_white.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/flags_279.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g1.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g10.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g11.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g12.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g13.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g14.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g15.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g16.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g17.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g18.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g19.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g2.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g20.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g21.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g22.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g23.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g24.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g25.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g26.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g27.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g28.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g29.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g3.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g30.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g31.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g32.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g4.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g5.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g6.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g7.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g8.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g9.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g_legend.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/g_no.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/graph_back_ngStats.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/graph_back_ngStats_big.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngStats.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngStats_106_Wide.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngStats_Processing.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngTCS_129x114.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngTCS_Lite_129x114.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngTCS_Pro_129x114.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngUSA_Logo.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngUSA_Logo_106_wide.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngWorldStats.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngWorldStats_500x83.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngWorldStats_ENABLED_240x70.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngWorldStats_ENABLED_88x31.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngWorldStats_Enabled_234x46.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/ngWorldStats_Password.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/unreallogo.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics/white.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/ngStats_Main.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/processing.html
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/skins/Default NetGamesUSA Skin/README.txt
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/skins/Default NetGamesUSA Skin/custom_graphics/background.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/skins/Default NetGamesUSA Skin/custom_graphics/sidebar_120x90.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/skins/Default NetGamesUSA Skin/custom_graphics/skin_credit_88x31.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/skins/Default NetGamesUSA Skin/skin.css
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/skins/custom_graphics/background.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/skins/custom_graphics/sidebar_120x90.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/skins/custom_graphics/skin_credit_88x31.gif
-%%DATADIR%%/NetGamesUSA.com/ngStats/html/skins/skin.css
-%%DATADIR%%/NetGamesUSA.com/ngStats/ngStats End User License Agreement (EULA).txt
-%%DATADIR%%/NetGamesUSA.com/ngStats/ngStatsUT
-%%DATADIR%%/NetGamesUSA.com/ngStats/ngStatsUT.cfg
-%%DATADIR%%/NetGamesUSA.com/ngStats/ngusa.jar
-%%DATADIR%%/NetGamesUSA.com/ngStats/processedLogs/_tmp
-%%DATADIR%%/NetGamesUSA.com/ngWorldStats/bin/Help Using ngWorldStats Readme.txt
-%%DATADIR%%/NetGamesUSA.com/ngWorldStats/bin/ngWS.ver
-%%DATADIR%%/NetGamesUSA.com/ngWorldStats/bin/ngWorldStats
-%%DATADIR%%/NetGamesUSA.com/ngWorldStats/bin/ngWorldStats End User License Agreement (EULA).txt
-%%DATADIR%%/NetGamesUSA.com/ngWorldStats/logs/New_Install.log
 %%DATADIR%%/README
 %%DATADIR%%/README.Loki
 %%DATADIR%%/README.bonus.pack.collection
@@ -308,7 +208,7 @@ bin/ut
 %%DATADIR%%/System/MultiMesh.int
 %%DATADIR%%/System/MultiMesh.u
 %%DATADIR%%/System/NullDrv.so
-%%DATADIR%%/System/NullNetDriver.so
+%%451PATCH%%%%DATADIR%%/System/NullNetDriver.so
 %%DATADIR%%/System/NullRender.so
 %%DATADIR%%/System/OpenGLDrv.so
 %%DATADIR%%/System/OpenGlDrv.ini
@@ -349,7 +249,6 @@ bin/ut
 %%DATADIR%%/System/UWeb.u
 %%DATADIR%%/System/UWindow.u
 %%DATADIR%%/System/Unreal.int
-%%DATADIR%%/System/UnrealEd.ini
 %%DATADIR%%/System/UnrealEd.int
 %%DATADIR%%/System/UnrealI.int
 %%DATADIR%%/System/UnrealI.u
@@ -364,45 +263,10 @@ bin/ut
 %%DATADIR%%/System/de-logo.bmp
 %%DATADIR%%/System/de.int
 %%DATADIR%%/System/de.u
-%%DATADIR%%/System/editorres/AddMover.bmp
-%%DATADIR%%/System/editorres/AddSpecial.bmp
-%%DATADIR%%/System/editorres/BBCone.bmp
-%%DATADIR%%/System/editorres/BBCube.bmp
-%%DATADIR%%/System/editorres/BBCurvedStair.bmp
-%%DATADIR%%/System/editorres/BBCylinder.bmp
-%%DATADIR%%/System/editorres/BBGeneric.bmp
-%%DATADIR%%/System/editorres/BBLinearStair.bmp
-%%DATADIR%%/System/editorres/BBSheet.bmp
-%%DATADIR%%/System/editorres/BBSphere.bmp
-%%DATADIR%%/System/editorres/BBSpiralStair.bmp
-%%DATADIR%%/System/editorres/BBTerrain.bmp
-%%DATADIR%%/System/editorres/BBVolumetric.bmp
-%%DATADIR%%/System/editorres/BrushClip.bmp
-%%DATADIR%%/System/editorres/BrushClipDelete.bmp
-%%DATADIR%%/System/editorres/BrushClipFlip.bmp
-%%DATADIR%%/System/editorres/BrushClipSplit.bmp
-%%DATADIR%%/System/editorres/HideSelected.bmp
-%%DATADIR%%/System/editorres/InvertSelections.bmp
-%%DATADIR%%/System/editorres/ModeAdd.bmp
-%%DATADIR%%/System/editorres/ModeBrushClip.bmp
-%%DATADIR%%/System/editorres/ModeCamera.bmp
-%%DATADIR%%/System/editorres/ModeDeintersect.bmp
-%%DATADIR%%/System/editorres/ModeFaceDrag.bmp
-%%DATADIR%%/System/editorres/ModeIntersect.bmp
-%%DATADIR%%/System/editorres/ModeRotate.bmp
-%%DATADIR%%/System/editorres/ModeScale.bmp
-%%DATADIR%%/System/editorres/ModeSubtract.bmp
-%%DATADIR%%/System/editorres/ModeVertex.bmp
-%%DATADIR%%/System/editorres/ShowAll.bmp
-%%DATADIR%%/System/editorres/ShowSelected.bmp
-%%DATADIR%%/System/editorres/TexturePan.bmp
-%%DATADIR%%/System/editorres/TextureRotate.bmp
-%%DATADIR%%/System/editorres/vssver.scc
-%%DATADIR%%/System/edsplash.bmp
 %%DATADIR%%/System/libSDL-1.1.so.0
 %%DATADIR%%/System/libmikmod.so.2
 %%DATADIR%%/System/libopenal-0.0.so
-%%DATADIR%%/System/license.int
+%%ORIGINAL%%%%DATADIR%%/System/license.int
 %%DATADIR%%/System/ucc-bin
 %%DATADIR%%/System/ut-bin
 %%DATADIR%%/Textures/AlfaFX.utx
@@ -558,14 +422,14 @@ bin/ut
 %%DATADIR%%/Web/images/m3-1.gif
 %%DATADIR%%/Web/images/m3-2.gif
 %%DATADIR%%/Web/images/right.gif
-%%DATADIR%%/Web/inc/content_footer_tables.inc
-%%DATADIR%%/Web/inc/content_header_tables.inc
-%%DATADIR%%/Web/inc/footer.inc
-%%DATADIR%%/Web/inc/header.inc
-%%DATADIR%%/Web/inc/menu_footer.inc
-%%DATADIR%%/Web/inc/menu_header.inc
-%%DATADIR%%/Web/inc/top_begin.inc
-%%DATADIR%%/Web/inc/top_end.inc
+%%451PATCH%%%%DATADIR%%/Web/inc/content_footer_tables.inc
+%%451PATCH%%%%DATADIR%%/Web/inc/content_header_tables.inc
+%%451PATCH%%%%DATADIR%%/Web/inc/footer.inc
+%%451PATCH%%%%DATADIR%%/Web/inc/header.inc
+%%451PATCH%%%%DATADIR%%/Web/inc/menu_footer.inc
+%%451PATCH%%%%DATADIR%%/Web/inc/menu_header.inc
+%%451PATCH%%%%DATADIR%%/Web/inc/top_begin.inc
+%%451PATCH%%%%DATADIR%%/Web/inc/top_end.inc
 %%DATADIR%%/Web/menu.uhtm
 %%DATADIR%%/Web/message.uhtm
 %%DATADIR%%/Web/plaintext/current.uhtm
@@ -586,41 +450,24 @@ bin/ut
 %%DATADIR%%/Web/plaintext/defaults_rules.uhtm
 %%DATADIR%%/Web/plaintext/defaults_server.uhtm
 %%DATADIR%%/Web/plaintext/defaults_settings.uhtm
-%%DATADIR%%/Web/plaintext/inc/footer.inc
-%%DATADIR%%/Web/plaintext/inc/header.inc
-%%DATADIR%%/Web/plaintext/inc/whiteheader.inc
+%%451PATCH%%%%DATADIR%%/Web/plaintext/inc/footer.inc
+%%451PATCH%%%%DATADIR%%/Web/plaintext/inc/header.inc
+%%451PATCH%%%%DATADIR%%/Web/plaintext/inc/whiteheader.inc
 %%DATADIR%%/Web/plaintext/menu.uhtm
 %%DATADIR%%/Web/plaintext/message.uhtm
 %%DATADIR%%/Web/plaintext/root.uhtm
 %%DATADIR%%/Web/root.uhtm
 @dirrm %%DATADIR%%/Help
 @dirrm %%DATADIR%%/Logs
+%%ANTHOLOGY%%@dirrm %%DATADIR%%/Manual
 @dirrm %%DATADIR%%/Maps
 @dirrm %%DATADIR%%/Music
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats/data
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats/html/graphics
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats/html/Individual_Game_Stats/Highest_Score
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats/html/Individual_Game_Stats/Last_Game
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats/html/Individual_Game_Stats
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats/html/skins/custom_graphics
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats/html/skins/Default NetGamesUSA Skin/custom_graphics
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats/html/skins/Default NetGamesUSA Skin
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats/html/skins
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats/html/Total_Game_Stats
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats/html
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats/processedLogs
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngStats
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngWorldStats/bin
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngWorldStats/logs
-@dirrm %%DATADIR%%/NetGamesUSA.com/ngWorldStats
-@dirrm %%DATADIR%%/NetGamesUSA.com
 @dirrm %%DATADIR%%/Sounds
-@dirrm %%DATADIR%%/System/editorres
 @dirrm %%DATADIR%%/System
 @dirrm %%DATADIR%%/Textures
 @dirrm %%DATADIR%%/Web/images
-@dirrm %%DATADIR%%/Web/inc
-@dirrm %%DATADIR%%/Web/plaintext/inc
+%%451PATCH%%@dirrm %%DATADIR%%/Web/inc
+%%451PATCH%%@dirrm %%DATADIR%%/Web/plaintext/inc
 @dirrm %%DATADIR%%/Web/plaintext
 @dirrm %%DATADIR%%/Web
 @dirrm %%DATADIR%%

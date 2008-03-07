@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	linux-ut
-PORTVERSION=	451
+PORTVERSION=	${UTVERSION}
+PORTEPOCH=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://liflg.0wnitsch.de/files/final/:p436 \
 		http://www.utpg.org/patches/:p451
@@ -14,7 +15,7 @@ DISTFILES=	${PATCH436FILES} \
 		${PATCH451FILES}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sean-freebsd@farley.org
+MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Unreal Tournament for Linux
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
@@ -26,18 +27,53 @@ NO_BUILD=	yes
 NO_PACKAGE=	Distribution is 340MB; set FORCE_PACKAGE if you really want\
 		to build this package
 RESTRICTED=	Redistribution is limited, see license
-IS_INTERACTIVE=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
+# Patch files.
 PATCH436FILES=	unreal.tournament_436-multilanguage.run:p436 \
 		unreal.tournament.official.bonus.pack.collection.run:p436
+.if defined(WITH_451PATCH)
 PATCH451FILES=	UTPGPatch451.tar.bz2:p451
+UTVERSION=	451
+PLIST_SUB+=	451PATCH=""
+.else
+PATCH451FILES=	# Empty
+UTVERSION=	436
+PLIST_SUB+=	451PATCH="@comment "
+.endif
+
+CDDIRS=		Help Logs Maps Music Sounds System Textures Web
+
+# Anthology install.
+.if exists(${CDROM_MOUNT}/Disk1/data1.cab)
+ANTHOLOGY=	yes
+RELEASE_MSG=	"Unreal Anthology"
+CDDIRS+=	Manual
+BUILD_DEPENDS+=	${LOCALBASE}/bin/unshield:${PORTSDIR}/archivers/unshield
+UNSHIELD=	${LOCALBASE}/bin/unshield
+PLIST_SUB+=	ANTHOLOGY="" ORIGINAL="@comment "
+.else
+RELEASE_MSG=	"original/GOTY"
+PLIST_SUB+=	ANTHOLOGY="@comment " ORIGINAL=""
+.endif
+
+# Maps.
+.if defined(WITHOUT_MAPS)
+PLIST_SUB+=	MAPS="@comment "
+MAPS_EXCLUDE=	--exclude 'AS*' --exclude 'CTF*' --exclude 'DM*'\
+		--exclude 'DOM*' --exclude 'EOL*'
+.else
+PLIST_SUB+=	MAPS=""
+MAPS_EXCLUDE=	# Empty
+.endif
 
 do-extract:
+	@${CAT} ${PKGMESSAGE}
 	@${MKDIR} ${WRKSRC}
 .for file in ${PATCH436FILES:C/:.*//}
 	@cd ${WRKSRC} &&\
-		${SED} -e '1,/exit $$res/d' ${_DISTDIR}/${file} | ${GUNZIP_CMD} -q | ${TAR} xf -
+		${SED} -e '1,/exit $$res/d' ${_DISTDIR}/${file} |\
+			${GUNZIP_CMD} -q | ${TAR} xf -
 .endfor
 	@${MV} ${WRKSRC}/bin/Linux/x86/ucc ${WRKSRC}/bin/.
 
@@ -49,7 +85,8 @@ post-patch:
 
 # Installation steps performed:
 #   - Verify path to CD content.
-#   - Verify CD was correctly mounted.  -b option may be needed to mount it.
+#   - Verify CD was correctly mounted by checking for incorrect NetGamesUSA.com.
+#     -b option may be needed to mount it.
 #   - Copy desired content off of CD to drive.  Windows files left behind.
 #   - Extract files from Linux patch minus various language files (necessary?).
 #   - Extract bonus pack.
@@ -63,48 +100,126 @@ do-install:
 	@${ECHO_CMD} "${PKGNAME} requires CDROM_MOUNT set to mount point of CD"
 	@${FALSE}
 .endif
-.if !exists(${CDROM_MOUNT}/NetGamesUSA.com)
+.if exists(${CDROM_MOUNT}/netgam~1.com)
 	@${ECHO_CMD} \
-		"NetGamesUSA.com not found on CD; try mounting with -b option"
+		"This CD requires mounting with the -b option"
 	@${FALSE}
 .endif
+	@${ECHO_CMD} "Detected ${RELEASE_MSG} release"
 	@${ECHO_CMD} "Installing data from CD"
 	@${MKDIR} ${DATADIR}
-.for dir in Help Logs Maps Music NetGamesUSA.com Sounds System Textures Web
+####################################
+# Anthology release CD
+####################################
+.if defined(ANTHOLOGY)
+	@cd ${DATADIR} && ${MKDIR} ${CDDIRS}
+
+# We need to create a single directory with all the cab files so unshield can
+# find them.
+	@${MKDIR} ${WRKDIR}/cab ${WRKDIR}/unshield
+	@${LN} -sf ${CDROM_MOUNT}/Disk*/data* ${WRKDIR}/cab/
+
+# Extract the files.
+.for group in Maps Manual_English Web Textures Music Sounds_English Sounds_All\
+	System_All System_English Help
+	@${UNSHIELD} -g 3_UnrealTournament_${group} -d ${WRKDIR}/unshield x\
+		${WRKDIR}/cab/data1.cab
+
+	@cd ${WRKDIR}/unshield/3_UnrealTournament_${group} &&\
+		${TAR} c --exclude '*.ICD' --exclude '*.bat' --exclude '*.dll'\
+			--exclude '*.est*' --exclude '*.[Ee][Xx][Ee]'\
+			--exclude '*.frt*' --exclude '*.ico' --exclude '*.itt*'\
+			--exclude '*.mpi' --exclude '*.url' --exclude 'D3D*'\
+			--exclude 'mplay*' --exclude 'Splash*' ${MAPS_EXCLUDE}\
+			--exclude 'edsplash.bmp' --exclude 'UnrealEd.ini'\
+			--exclude 'editorres*' -f - . |\
+		${TAR} x -C ${DATADIR}/`${ECHO_CMD}\
+			3_UnrealTournament_${group} | ${SED} -e\
+			's/3_UnrealTournament_//; s/_All//; s/_English//;'` -f -
+.endfor
+
+	@cd ${DATADIR}/System &&\
+		${MV} -f epiccustommodels.u EpicCustomModels.u &&\
+		${MV} -f multimesh.u MultiMesh.u &&\
+		${MV} -f multimesh.int MultiMesh.int &&\
+		${MV} -f relics.u Relics.u &&\
+		${MV} -f relics.int Relics.int &&\
+		${MV} -f relicsbindings.u RelicsBindings.u &&\
+		${MV} -f relicsbindings.int RelicsBindings.int &&\
+		${MV} -f tcowmeshskins.int TCowMeshSkins.int &&\
+		${MV} -f tnalimeshskins.int TNaliMeshSkins.int &&\
+		${MV} -f tskmskins.int TSkMSkins.int
+	@cd ${DATADIR}/Textures &&\
+		${MV} -f tcowmeshskins.utx TCowMeshSkins.utx &&\
+		${MV} -f tnalimeshskins.utx TNaliMeshSkins.utx &&\
+		${MV} -f tskmskins.utx TSkMSkins.utx
+####################################
+# Original/GOTY release CD
+####################################
+.else
+# Install the files from CD.
+.for dir in ${CDDIRS}
 	@cd ${CDROM_MOUNT} &&\
 		${TAR} c --exclude '*.ICD' --exclude '*.bat' --exclude '*.dll'\
 			--exclude '*.est*' --exclude '*.[Ee][Xx][Ee]'\
 			--exclude '*.frt*' --exclude '*.ico' --exclude '*.itt*'\
 			--exclude '*.mpi' --exclude '*.url' --exclude 'D3D*'\
-			--exclude 'mplay*' -f - ${dir} |\
+			--exclude 'edsplash.bmp' --exclude 'UnrealEd.ini'\
+			--exclude 'editorres*' --exclude 'mplay*'\
+			${MAPS_EXCLUDE} -f - ${dir} |\
 		${TAR} x -C ${DATADIR} -f -
 .endfor
 	@${RM} ${DATADIR}/Logs/delete_me.txt
+.endif
+####################################
+# End of CD release-specific install
+####################################
+
+# Install v436 Linux binaries.
 	@${ECHO_CMD} "Installing v436 patch files"
-.for tarfile in Credits NetGamesUSA.com OpenGL.ini data
+.for tarfile in Credits OpenGL.ini data
 	@${TAR} zox -C ${DATADIR} --exclude '*.exe'\
 		-f ${WRKSRC}/${tarfile}.tar.gz
 .endfor
-	@${ECHO_CMD} "Installing bonus pack"
-.for ndx in 1 2 3 4
-	@${TAR} jx -C ${DATADIR} -f ${WRKSRC}/bp${ndx}.tar.bz2
-.endfor
-	@${SED} -i "" -e 's|\\|/|g'\
-		-e "/^Paths=/{h;s|\(Paths=\)\.\./|\1${DATADIR}/|;x;p;x;}"\
-		${DATADIR}/System/UnrealTournament.ini
+
+# Anthology does not need v436 patch applied.
+.if !defined(ANTHOLOGY)
+# Apply v436 files.
 	@${ECHO_CMD} "Applying v436 patch"
 	@${WRKSRC}/setup.data/bin/FreeBSD/x86/loki_patch\
 		${WRKSRC}/setup.data/patch.dat ${DATADIR}
+.endif
+
+# Adjust paths in configuration.
+	@${SED} -i "" -e 's|\\|/|g'\
+		-e "/^Paths=/{h;s|\(Paths=\)\.\./|\1${DATADIR}/|;x;p;x;}"\
+		${DATADIR}/System/UnrealTournament.ini
 .for script in ucc ut
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${script} ${PREFIX}/bin/
 .endfor
+
+# Install bonus packs
+	@${ECHO_CMD} "Installing bonus packs"
+.for ndx in 1 2 3 4
+.if defined(WITHOUT_MAPS)
+	@${TAR} jx -C ${DATADIR} --exclude '*.unr' -f ${WRKSRC}/bp${ndx}.tar.bz2
+.else
+	@${TAR} jx -C ${DATADIR} -f ${WRKSRC}/bp${ndx}.tar.bz2
+.endif
+.endfor
+
+# Install bonus packs.
 .for datafile in README README.Loki README.bonus.pack.collection
 	@${INSTALL_DATA} ${WRKSRC}/${datafile} ${DATADIR}
 .endfor
-	@${ECHO_CMD} "Installing v${PORTVERSION} patch files"
+
+# Install 451 Patch
+.if defined(WITH_451PATCH)
+	@${ECHO_CMD} "Installing v${UTVERSION} patch files"
 	@${TAR} jx -C ${DATADIR} --exclude 'checkfiles.sh'\
 		--exclude 'patch.md5' --exclude 'd3ddrv.int'\
-		-f ${_DISTDIR}/${PATCH451FILES:C/:.*//}
+		--exclude 'edsplash.bmp' --exclude 'UnrealEd.ini'\
+		--exclude 'editorres*' -f ${_DISTDIR}/${PATCH451FILES:C/:.*//}
 	@cd ${DATADIR}/System &&\
 		${MV} -f glidedrv.int GlideDrv.int &&\
 		${MV} -f softdrv.int SoftDrv.int &&\
@@ -112,6 +227,9 @@ do-install:
 		${MV} -f galaxy.int Galaxy.int &&\
 		${MV} -f editor.int Editor.int &&\
 		${MV} -f windrv.int WinDrv.int
+.endif
+
+# Remove /usr/local from ut-bin lib search path
 	@${ECHO_CMD} "Removing /usr/local from ut-bin's library search path"
 	@UTBIN=${DATADIR}/System/ut-bin &&\
 		FILESIZE=`/usr/bin/stat -f "%z" $${UTBIN}` &&\
@@ -119,6 +237,8 @@ do-install:
 		${SED} -Ee 's|:/usr/local|:/USR-LOCAL|' $${UTBIN}.orig |\
 		${HEAD} -c $${FILESIZE} > $${UTBIN} &&\
 		${RM} $${UTBIN}.orig
+
+# Set file permissions
 	@${ECHO_CMD} "Setting permissions"
 	@${FIND} ${DATADIR} -print0 |\
 		${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
@@ -129,6 +249,8 @@ do-install:
 .for exec in ucc-bin ut-bin
 	@${CHMOD} ${BINMODE} ${DATADIR}/System/${exec}
 .endfor
+
+	@${TOUCH} ${DATADIR}/Help/ReleaseNotes.htm
 	@${ECHO_CMD} "Install complete"
 
 .include <bsd.port.mk>
