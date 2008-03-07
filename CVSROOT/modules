@@ -1535,7 +1535,6 @@ compiz-fusion-plugins-main	ports/x11-wm/compiz-fusion-plugins-main
 compiz-fusion-plugins-unsupported	ports/x11-wm/compiz-fusion-plugins-unsupported
 compizconfig-backend-gconf	ports/x11-wm/compizconfig-backend-gconf
 compizconfig-python	ports/x11-wm/compizconfig-python
-compositeext	ports/x11/compositeext
 compositeproto	ports/x11/compositeproto
 compupic	ports/graphics/compupic
 comserv		ports/comms/comserv
@@ -1811,7 +1810,6 @@ dagrab		ports/audio/dagrab
 dailystrips	ports/deskutils/dailystrips
 daimonin-client	ports/games/daimonin-client
 dalbum		ports/www/dalbum
-damageext	ports/x11/damageext
 damageproto	ports/x11/damageproto
 danamics	ports/net/danamics
 dancer		ports/irc/dancer
@@ -3015,7 +3013,6 @@ fist		ports/textproc/fist
 fistgen		ports/devel/fistgen
 fityk		ports/math/fityk
 fix-mime-charset	ports/converters/fix-mime-charset
-fixesext	ports/x11/fixesext
 fixesproto	ports/x11/fixesproto
 fixrtf		ports/textproc/fixrtf
 fkiss		ports/games/fkiss
@@ -11906,7 +11903,6 @@ pango		ports/x11-toolkits/pango
 pango-reference	ports/x11-toolkits/pango-reference
 pangoxsl	ports/x11-toolkits/pangoxsl
 panoptis	ports/net/panoptis
-panoramixext	ports/x11/panoramixext
 pantera		ports/security/pantera
 pantomime	ports/mail/pantomime
 pantry		ports/misc/pantry
@@ -14118,7 +14114,6 @@ raknet		ports/devel/raknet
 rancid		ports/net-mgmt/rancid
 rancid-devel		ports/net-mgmt/rancid-devel
 rand		ports/textproc/rand
-randrext	ports/x11/randrext
 randrproto	ports/x11/randrproto
 raop_play	ports/audio/raop_play
 rapid		ports/math/rapid
@@ -14220,7 +14215,6 @@ rename		ports/sysutils/rename
 renamedlgplugins	ports/misc/renamedlgplugins
 renattach	ports/mail/renattach
 rendercheck	ports/x11/rendercheck
-renderext	ports/x11/renderext
 renderpark	ports/graphics/renderpark
 renderproto	ports/x11/renderproto
 reoback		ports/sysutils/reoback
@@ -14234,7 +14228,6 @@ reportmagic	ports/www/reportmagic
 resid		ports/audio/resid
 resin2		ports/www/resin2
 resin3		ports/www/resin3
-resourceext	ports/x11/resourceext
 resourceproto	ports/x11/resourceproto
 respond	ports/sysutils/respond
 resume		ports/textproc/resume
@@ -17253,7 +17246,6 @@ xerces-c2	ports/textproc/xerces-c2
 xerces-j	ports/textproc/xerces-j
 xev		ports/x11/xev
 xevil		ports/games/xevil
-xextensions	ports/x11/xextensions
 xextproto	ports/x11/xextproto
 xeyes		ports/x11/xeyes
 xeyesplus	ports/games/xeyesplus
