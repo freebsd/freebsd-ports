@@ -107,6 +107,7 @@ dkfilter:*:325:325:DK Filter Owner:/nonexistent:/usr/sbin/nologin
 _pma:*:336:80:phpMyAdmin Owner:/nonexistent:/sbin/nologin
 wildfire:*:340:340:Wildfire Daemon:/nonexistent:/usr/sbin/nologin
 stunnel:*:341:341:Stunnel Daemon:/nonexistent:/usr/sbin/nologin
+openfire:*:342:342:Openfire IM Daemon:/nonexistent:/usr/sbin/nologin
 _iodined:*:353:353:Iodine Daemon:/nonexistent:/usr/sbin/nologin
 ldap:*:389:389:OpenLDAP Server:/nonexistent:/usr/sbin/nologin
 tiarra:*:398:398:Tiarra IRC Proxy:/nonexistent:/usr/sbin/nologin
