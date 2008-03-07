@@ -9878,7 +9878,6 @@ p5-FFmpeg-Command	ports/multimedia/p5-FFmpeg-Command
 p5-FLV-Info	ports/multimedia/p5-FLV-Info
 p5-FSA-Rules	ports/devel/p5-FSA-Rules
 p5-FastCGI	ports/www/p5-FastCGI
-p5-FastCGI-ProcManager	ports/www/p5-FastCGI-ProcManager
 p5-Fax-Hylafax-Client	ports/comms/p5-Fax-Hylafax-Client
 p5-Feed-Find	ports/www/p5-Feed-Find
 p5-File-Append-TempFile	ports/devel/p5-File-Append-TempFile
