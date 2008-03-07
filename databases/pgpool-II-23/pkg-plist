@@ -19,6 +19,10 @@ lib/libpcp.a
 lib/libpcp.la
 lib/libpcp.so
 lib/libpcp.so.0
+%%DATADIR%%/dist_def_pgbench.sql
 %%DATADIR%%/pgpool.pam
 %%DATADIR%%/system_db.sql
+%%EXAMPLESDIR%%/pgpool_recovery
+%%EXAMPLESDIR%%/pgpool_recovery_pitr
+%%EXAMPLESDIR%%/pgpool_remote_start
 @dirrm %%DATADIR%%
