@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfmpc
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -24,9 +24,5 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libgui libutil panel
 USE_XLIB=	yes
-
-PLIST_FILES=	bin/xfmpc \
-		share/locale/fr/LC_MESSAGES/xfmpc.mo \
-		share/locale/pt_BR/LC_MESSAGES/xfmpc.mo
 
 .include <bsd.port.mk>

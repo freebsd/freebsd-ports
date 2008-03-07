@@ -1,0 +1,6 @@
+bin/xfmpc
+share/applications/xfmpc.desktop
+share/locale/fr/LC_MESSAGES/xfmpc.mo
+share/locale/nl/LC_MESSAGES/xfmpc.mo
+share/locale/pt_BR/LC_MESSAGES/xfmpc.mo
+@dirrmtry share/applications
