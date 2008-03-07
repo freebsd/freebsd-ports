@@ -3408,3 +3408,6 @@ x11/randrext|x11/randrproto|2008-03-07|Port has been outdated since X.org 7.2 me
 x11/renderext|x11/renderproto|2008-03-07|Port has been outdated since X.org 7.2 merge
 x11/resourceext|x11/resourceproto|2008-03-07|Port has been outdated since X.org 7.2 merge
 x11/xextensions||2008-03-07|Port has been outdated since X.org 7.2 merge
+x11/printext|x11/printproto|2008-03-07|Port has been outdated since X.org 7.2 merge
+x11/libXxf86||2008-03-07|Port has been outdated since X.org 7.2 merge
+x11/xf86ext||2008-03-07|Port has been outdated since X.org 7.2 merge
