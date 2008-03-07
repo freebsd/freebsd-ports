@@ -5,7 +5,7 @@
       <configsection name="params">
        <configstring name="path" required="false" desc="Enter the location of
 -      the aspell binary" />
-+      the aspell binary">%%ASPELL%%</confstring>
++      the aspell binary">%%ASPELL%%</configstring>
       </configsection>
      </case>
     </configswitch>
