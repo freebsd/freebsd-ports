@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
-CONFIGURE_ENV= 	LIBS="${WIRESHARK_LIBS}"
+CONFIGURE_ENV=	LIBS="${WIRESHARK_LIBS}"
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--with-ssl=${OPENSSLBASE} \
 			--disable-warnings-as-errors
