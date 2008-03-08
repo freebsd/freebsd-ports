@@ -35,7 +35,8 @@ GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ESD_SERVER="${LOCALBASE}/bin/esd"
 
 MAN1=		gnome-session.1 gnome-wm.1 session-properties.1 \
 		gnome-session-save.1
