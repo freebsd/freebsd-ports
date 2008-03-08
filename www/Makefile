@@ -88,6 +88,7 @@
     SUBDIR += cl-lml
     SUBDIR += cl-lml-clisp
     SUBDIR += cl-lml-sbcl
+    SUBDIR += claroline
     SUBDIR += clearsilver
     SUBDIR += clearsilver-python
     SUBDIR += cocoon
