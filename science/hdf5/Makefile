@@ -11,7 +11,8 @@ PORTVERSION=	1.6.7
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current16/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/prev-releases/ \
-		ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-${PORTVERSION}/src/
+		ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-${PORTVERSION}/src/ \
+		LOCAL/chinsan
 
 MAINTAINER=	koziol@hdfgroup.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
