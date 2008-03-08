@@ -1,6 +1,15 @@
 --- Makefile.in.orig	2008-02-27 14:59:53.000000000 -0500
-+++ Makefile.in	2008-02-28 00:00:04.000000000 -0500
-@@ -161,7 +161,7 @@ am_dumpcap_OBJECTS = $(am__objects_2) ca
++++ Makefile.in	2008-03-08 12:43:09.000000000 -0500
+@@ -125,7 +125,7 @@ am__capinfos_SOURCES_DIST = capinfos.c e
+ @HAVE_PLUGINS_TRUE@	report_err.$(OBJEXT) privileges.$(OBJEXT) \
+ @HAVE_PLUGINS_TRUE@	filesystem.$(OBJEXT)
+ am_capinfos_OBJECTS = capinfos.$(OBJEXT) $(am__objects_1)
+-capinfos_OBJECTS = $(am_capinfos_OBJECTS)
++capinfos_OBJECTS = $(am_capinfos_OBJECTS) @INET_NTOP_O@
+ @HAVE_PLUGINS_TRUE@am__DEPENDENCIES_1 = plugins/agentx/agentx.la \
+ @HAVE_PLUGINS_TRUE@	plugins/artnet/artnet.la \
+ @HAVE_PLUGINS_TRUE@	plugins/asn1/asn1.la \
+@@ -161,14 +161,14 @@ am_dumpcap_OBJECTS = $(am__objects_2) ca
  	sync_pipe_write.$(OBJEXT) tempfile.$(OBJEXT) \
  	version_info.$(OBJEXT) unicode-utils.$(OBJEXT) \
  	privileges.$(OBJEXT)
@@ -9,6 +18,23 @@
  dumpcap_DEPENDENCIES = wiretap/libwiretap.la
  am__editcap_SOURCES_DIST = editcap.c epan/crypt/crypt-md5.c \
  	epan/plugins.c epan/report_err.c epan/privileges.c \
+ 	epan/filesystem.c
+ am_editcap_OBJECTS = editcap.$(OBJEXT) crypt-md5.$(OBJEXT) \
+ 	$(am__objects_1)
+-editcap_OBJECTS = $(am_editcap_OBJECTS)
++editcap_OBJECTS = $(am_editcap_OBJECTS) @INET_NTOP_O@
+ editcap_DEPENDENCIES = wiretap/libwiretap.la epan/libwireshark.la \
+ 	$(am__DEPENDENCIES_1)
+ am_mergecap_OBJECTS = mergecap.$(OBJEXT) merge.$(OBJEXT)
+@@ -185,7 +185,7 @@ am__objects_3 = $(am__objects_2) capture
+ 	timestats.$(OBJEXT) util.$(OBJEXT) tap-rtp-common.$(OBJEXT) \
+ 	version_info.$(OBJEXT)
+ am_rawshark_OBJECTS = $(am__objects_3) rawshark.$(OBJEXT)
+-rawshark_OBJECTS = $(am_rawshark_OBJECTS)
++rawshark_OBJECTS = $(am_rawshark_OBJECTS) @INET_NTOP_O@
+ rawshark_DEPENDENCIES = $(am__DEPENDENCIES_2) wiretap/libwiretap.la \
+ 	epan/libwireshark.la $(am__DEPENDENCIES_1)
+ rawshark_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
 @@ -211,7 +211,7 @@ am_tshark_OBJECTS = $(am__objects_3) $(a
  	capture_opts.$(OBJEXT) capture_sync.$(OBJEXT) \
  	tempfile.$(OBJEXT) tshark-tap-register.$(OBJEXT) \
@@ -34,7 +60,28 @@
  	tempfile.c		\
  	tshark-tap-register.c	\
  	tshark.c
-@@ -1000,6 +1002,7 @@ dumpcap_SOURCES = \
+@@ -953,6 +955,7 @@ tshark_SOURCES = \
+ # rawshark specifics
+ rawshark_SOURCES = \
+ 	$(WIRESHARK_COMMON_SRC)	\
++	@INET_NTOP_C@		\
+ 	rawshark.c
+ 
+ 
+@@ -973,10 +976,12 @@ mergecap_SOURCES = \
+ editcap_SOURCES = \
+ 	editcap.c	\
+ 	epan/crypt/crypt-md5.c \
++	@INET_NTOP_C@		\
+ 	$(WTAP_PLUGIN_SOURCES)
+ 
+ capinfos_SOURCES = \
+ 	capinfos.c \
++	@INET_NTOP_C@ \
+ 	$(WTAP_PLUGIN_SOURCES)
+ 
+ 
+@@ -1000,6 +1005,7 @@ dumpcap_SOURCES = \
  	clopts_common.c	\
  	conditions.c	\
  	dumpcap.c	\
@@ -42,7 +89,7 @@
  	pcapio.c	\
  	ringbuffer.c	\
  	sync_pipe_write.c	\
-@@ -1054,7 +1057,6 @@ wireshark_LDADD = \
+@@ -1054,7 +1060,6 @@ wireshark_LDADD = \
  	codecs/libcodec.a		\
  	wiretap/libwiretap.la		\
  	epan/libwireshark.la		\
@@ -50,8 +97,32 @@
  	@SSL_LIBS@ 			\
  	$(plugin_ldadd)			\
  	@PCRE_LIBS@			\
-@@ -1073,7 +1075,6 @@ tshark_LDADD = \
+@@ -1073,7 +1078,6 @@ tshark_LDADD = \
  	$(wireshark_optional_objects)	\
+ 	wiretap/libwiretap.la		\
+ 	epan/libwireshark.la		\
+-	@INET_PTON_LO@			\
+ 	@SSL_LIBS@			\
+ 	$(plugin_ldadd)			\
+ 	@PCRE_LIBS@			\
+@@ -1093,7 +1097,6 @@ rawshark_LDADD = \
+ 	$(wireshark_optional_objects)	\
+ 	wiretap/libwiretap.la		\
+ 	epan/libwireshark.la		\
+-	@INET_PTON_LO@			\
+ 	@SSL_LIBS@			\
+ 	$(plugin_ldadd)			\
+ 	@PCRE_LIBS@			\
+@@ -1127,7 +1130,6 @@ mergecap_LDADD = \
+ capinfos_LDADD = \
+ 	wiretap/libwiretap.la		\
+ 	epan/libwireshark.la		\
+-	@INET_PTON_LO@			\
+ 	@SSL_LIBS@			\
+ 	$(plugin_ldadd)			\
+ 	@PCRE_LIBS@			\
+@@ -1144,7 +1146,6 @@ capinfos_LDADD = \
+ editcap_LDADD = \
  	wiretap/libwiretap.la		\
  	epan/libwireshark.la		\
 -	@INET_PTON_LO@			\
