@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pefile
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	antoine.brodin@laposte.net
+MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	A python module to read and work with PE files
 
 USE_PYTHON=	yes
