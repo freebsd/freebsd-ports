@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libebml
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	textproc
 MASTER_SITES=	http://dl.matroska.org/downloads/libebml/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/old/
@@ -18,14 +18,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/make/linux
 INSTALL_WRKSRC=	${WRKSRC}/make/linux
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 # Installs dir with proper permissions
 INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
-
-PLIST_FILES+=	\
-		lib/libebml.so \
-		lib/libebml.so.0
 
 do-configure:
 	@${REINPLACE_CMD} -E \
