@@ -16,7 +16,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Session manager for the Xfce 4 desktop environment
 
 BUILD_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
