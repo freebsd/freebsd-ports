@@ -367,6 +367,7 @@ include/wine/windows/powrprof.h
 include/wine/windows/profinfo.h
 include/wine/windows/propidl.h
 include/wine/windows/propidl.idl
+include/wine/windows/propvarutil.h
 include/wine/windows/prsht.h
 include/wine/windows/psapi.h
 include/wine/windows/pshpack1.h
@@ -511,6 +512,7 @@ include/wine/windows/ddk/hidsdi.h
 include/wine/windows/ddk/imm.h
 include/wine/windows/ddk/mountmgr.h
 include/wine/windows/ddk/ntddcdvd.h
+include/wine/windows/ddk/ntddk.h
 include/wine/windows/ddk/ntddser.h
 include/wine/windows/ddk/ntddtape.h
 include/wine/windows/ddk/wdm.h
@@ -643,6 +645,7 @@ lib/wine/kernel32.dll.so
 lib/wine/keyboard.drv16
 lib/wine/krnl386.exe16
 lib/wine/libactiveds.def
+lib/wine/libadsiid.a
 lib/wine/libadvapi32.def
 lib/wine/libadvpack.def
 lib/wine/libatl.def
@@ -667,6 +670,7 @@ lib/wine/libd3d9.def
 lib/wine/libd3dim.def
 lib/wine/libd3drm.def
 lib/wine/libd3dx8.def
+lib/wine/libd3dx9.def
 lib/wine/libd3dxof.def
 lib/wine/libdbghelp.def
 lib/wine/libdciman32.def
@@ -886,6 +890,7 @@ lib/wine/rundll32.exe.so
 lib/wine/sane.ds.so
 lib/wine/sccbase.dll.so
 lib/wine/schannel.dll.so
+lib/wine/secedit.exe.so
 lib/wine/secur32.dll.so
 lib/wine/security.dll.so
 lib/wine/sensapi.dll.so
@@ -980,6 +985,7 @@ lib/wine/wininet.dll.so
 lib/wine/winmm.dll.so
 lib/wine/winnls.dll16
 lib/wine/winnls32.dll.so
+lib/wine/winoldap.mod16
 lib/wine/winscard.dll.so
 lib/wine/winsock.dll16
 lib/wine/winspool.drv.so
