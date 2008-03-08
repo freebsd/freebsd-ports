@@ -6,31 +6,28 @@
 #
 
 PORTNAME=	groovy
-DISTVERSION=	1.0-jsr-06
-PORTREVISION=	1
+DISTVERSION=	1.5.4
 CATEGORIES=	lang java
-MASTER_SITES=	http://dist.codehaus.org/groovy/distributions/
+MASTER_SITES=	http://dist.groovy.codehaus.org/distributions/
+DISTNAME=	groovy-${PORTVERSION}
+DISTFILES=	groovy-binary-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	mjs@Bur.st
 COMMENT=	Agile dynamic language for the JVM
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:U}
 
+USE_ZIP=yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-DATAFILES=	LICENSE.txt conf ${PORTNAME}-${DISTVERSION:U}.jar lib
-SCRIPTFILES=	grok groovy groovyConsole groovyc groovysh startGroovy
+DATAFILES=	ASM-LICENSE.txt LICENSE.txt conf lib
+SCRIPTFILES=	groovy groovyConsole groovyc groovysh java2groovy startGroovy
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	changelog-report.html cvs-usage.html dependencies.html \
-		developer-activity-report.html downloads.html faq.html \
-		file-activity-report.html groovy-jdk.html images index.html \
-		issue-tracking.html jdepend-report.html junit-report.html \
-		license.html mail-lists.html maven-reports.html \
-		pmd-report.html project-info.html style team-list.html xref \
-		xref-test
+DISTFILES+=	groovy-docs-${PORTVERSION}${EXTRACT_SUFX}
+PORTDOCS=	html pdf
 .endif
 PLIST_FILES=	${SCRIPTFILES:S,^,bin/,} %%JAVAJARDIR%%/${PORTNAME}.jar
 SUB_FILES=	set-groovy_home.sed
@@ -53,9 +50,9 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@cd ${WRKSRC}/docs \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@cd ${WRKSRC} \
+	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
