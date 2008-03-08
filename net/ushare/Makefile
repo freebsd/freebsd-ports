@@ -7,7 +7,7 @@
 
 PORTNAME=	ushare
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://ushare.geexbox.org/releases/
 
@@ -29,9 +29,7 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}/lib \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700042
 CFLAGS+=	${PTHREAD_LIBS}
-.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
