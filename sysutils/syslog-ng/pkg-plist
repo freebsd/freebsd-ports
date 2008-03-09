@@ -8,6 +8,7 @@ sbin/syslog-ng
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/PORTS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.spoof
 %%PORTDOCS%%%%DOCSDIR%%/sgml/syslog-ng.xml
 %%PORTDOCS%%%%DOCSDIR%%/sgml/syslog-ng.html.tar.gz
 %%PORTDOCS%%%%DOCSDIR%%/sgml/syslog-ng.txt
