@@ -456,6 +456,15 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/constants/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/constants/example.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/constants/runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/dual/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/dual/dual.cpp
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/dual/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/dual/example2.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed/Makefile
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed/embed.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed/example.c
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed/example.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed/runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/funcptr3/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/funcptr3/example.c
 %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/funcptr3/example.h
@@ -1460,6 +1469,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/file_test.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/fragments.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/friends.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/funcptr.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/function_typedef.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/fvirtual.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/global_ns_arg.i
@@ -1597,9 +1607,12 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/ret_by_value_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/rname_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/sizet_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/special_variables_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_classes_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_default_arg_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_default_class_parms_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_methods_runme.java
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/template_template_parameters_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/typemap_namespace_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/unions_runme.java
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/using_pointers_runme.java
@@ -1665,6 +1678,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/li_std_string_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/li_std_vector_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/member_pointer_runme.lua
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/multi_import_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/newobject1_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/newobject2_runme.lua
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua/operator_overload_runme.lua
@@ -1756,6 +1770,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/Test/Builder.pm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/Test/More.pm
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/apply_strings_runme.pl
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/char_strings_runme.pl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/default_args_runme.pl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/disown_runme.pl
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/perl5/enum_thorough_runme.pl
@@ -1909,6 +1924,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/kwargs_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/langobj_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_attribute_runme.py
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_boost_shared_ptr_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_carrays_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_cmalloc_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_cpointer_runme.py
@@ -1976,6 +1992,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/smart_pointer_overload_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/smart_pointer_rename_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/smart_pointer_simple_runme.py
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/smart_pointer_templatevariables_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/smart_pointer_typedef_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/sneaky1_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/static_const_member_2_runme.py
@@ -2013,6 +2030,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/typemap_namespace_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/typemap_ns_using_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/typename_runme.py
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/types_directive_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/unions_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/using1_runme.py
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/using2_runme.py
@@ -2033,7 +2051,6 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/copy_struct_runme.R
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/double_delete.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/double_delete_runme.R
-%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/funcptr.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/funcptr_runme.R
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/ignore_parameter_runme.R
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/legacy.i
@@ -2259,6 +2276,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/smart_pointer_simple.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/smart_pointer_static.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/smart_pointer_templatemethods.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/smart_pointer_templatevariables.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/smart_pointer_typedef.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/sneaky1.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/special_variables.i
@@ -2305,6 +2323,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default2.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default_arg.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default_class_parms.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default_inherit.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default_pointer.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default_qualify.i
@@ -2342,6 +2361,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_specialization_enum.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_static.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_tbase_template.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_template_parameters.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_type_namespace.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_typedef.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_typedef_cplx.i
@@ -2351,6 +2371,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_typedef_cplx4.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_typedef_cplx5.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_typedef_fnc.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_typedef_funcptr.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_typedef_import.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_typedef_import.list
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_typedef_ns.i
@@ -2387,6 +2408,7 @@ bin/swig%%VER%%
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typemap_variables.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typemap_various.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typename.i
+%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/types_directive.i
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/uffi/Makefile
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/uffi/Makefile.in
 %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/union_scope.i
@@ -2646,6 +2668,7 @@ bin/swig%%VER%%
 %%DATADIR%%/%%PORTVERSION%%/pointer.i
 %%DATADIR%%/%%PORTVERSION%%/python/argcargv.i
 %%DATADIR%%/%%PORTVERSION%%/python/attribute.i
+%%DATADIR%%/%%PORTVERSION%%/python/boost_shared_ptr.i
 %%DATADIR%%/%%PORTVERSION%%/python/carrays.i
 %%DATADIR%%/%%PORTVERSION%%/python/ccomplex.i
 %%DATADIR%%/%%PORTVERSION%%/python/cdata.i
@@ -3123,6 +3146,8 @@ bin/swig%%VER%%
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functor
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/functest
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/funcptr3
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/embed
+@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/dual
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/constants
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua/class
 @dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/lua
