@@ -7,7 +7,7 @@
 
 PORTNAME=	gqmpeg
 PORTVERSION=	0.91.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,7 +30,8 @@ RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif
 
 LATEST_LINK=	gqmpeg-devel
-USE_XLIB=	yes
+USE_XORG=	xext xrender xinerama xi xrandr xcursor xcomposite xdamage x11 \
+		xfixes xproto
 USE_GNOME=	gtk20
 GNU_CONFIGURE=  yes
 
