@@ -7,7 +7,7 @@
 
 PORTNAME=	szip
 PORTVERSION=	1.12b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.compressconsult.com/szip/
 DISTNAME=	sz${PORTVERSION:S/.//}_src
@@ -24,6 +24,7 @@ PORTDOCS=	*.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,more logfile,cat logfile,' \
+			  -e "s,^CFLAGS.*,CFLAGS= ${CFLAGS}," \
 		${WRKSRC}/makefile
 
 do-build:
