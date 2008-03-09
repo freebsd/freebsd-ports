@@ -22,7 +22,7 @@
 ###########################################################################
 
 PORTNAME=	cdrtools
-PORTVERSION=	2.01.01a37
+PORTVERSION=	2.01.01a38
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
