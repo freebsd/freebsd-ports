@@ -7,6 +7,7 @@
 
 PORTNAME=	phpldapadmin
 PORTVERSION=	1.1.0.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -21,17 +22,11 @@ USE_PHP=	gettext ldap openssl pcre session xml
 DEFAULT_PHP_VER=	5
 IGNORE_WITH_PHP=	4
 
-.if defined(WITH_SUPHP)
+.if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
 
 PKGNAMESUFFIX+=	-suphp
 RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
 WANT_PHP_CGI=	yes
-
-PLAUSR?=	pldapadm
-
-SUB_LIST+=	PLAUSR=${PLAUSR} \
-		PLAGRP=${PLAGRP}
-SUB_FILES+=	pkg-install  pkg-deinstall
 
 .else
 
@@ -39,18 +34,42 @@ WANT_PHP_WEB=	yes
 
 .endif
 
-# PLAUSR is only used WITH_SUPHP
-PLADIR?=	www/${PORTNAME}
-PLAGRP?=	${WWWGRP}
+# PLA_USR is only used WITH_SUPHP
+PLA_GRP?=	${WWWGRP}
+PLA_GID?=	${_PLA_GID}
 CFGDIR=		config
 CFGFILE=	config.php
 
-SUB_LIST+=	PKGNAME=${PKGNAME} \
-		PLADIR=${PLADIR}
+PLIST=		${WRKDIR}/plist
+PLIST_SUB+=	PLA_GRP=${PLA_GRP}
+
+.if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
+
+PLA_USR?=	_pla
+PLA_UID?=	636
+PLA_GCOS?=	"phpLDAPAdmin Owner"
+PLA_HOME?=	/nonexistent
+PLA_SHELL?=	/usr/sbin/nologin
+
+SUB_LIST+=	PLA_USR=${PLA_USR}    \
+		PLA_UID=${PLA_UID}    \
+		PLA_GRP=${PLA_GRP}    \
+		PLA_GID=${PLA_GID}    \
+		PLA_GCOS=${PLA_GCOS}  \
+		PLA_HOME=${PLA_HOME}  \
+		PLA_SHELL=${PLA_SHELL}
+SUB_FILES+=	pkg-install pkg-deinstall
+
+.endif
+
+SUB_LIST+=	PKGNAME=${PKGNAME}
 SUB_FILES+=	pkg-message
 
-PLIST=		${WRKDIR}/plist
-PLIST_SUB+=	PLADIR=${PLADIR} PLAGRP=${PLAGRP}
+.include <bsd.port.pre.mk>
+_PLA_GID!=	/usr/sbin/pw group show -n ${PLA_GRP} | ${CUT} -d : -f 3
+.if empty(_PLA_GID)
+_PLA_GID=	80
+.endif
 
 .SILENT:
 
@@ -64,16 +83,25 @@ pre-everything::
 	${ECHO_MSG} "This port is PHP5 specific. If you need PHP4 support,"
 	${ECHO_MSG} "please use the net/phpldapadmin098 port instead."
 	${ECHO_MSG} ""
+.if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
+	@if /usr/sbin/pw show -n pldapadm >/dev/null 2>&1 ; then	      \
+	    ${ECHO_MSG} "===> WARNING ******************************" ;	      \
+	    ${ECHO_MSG} "The default username used by ${PKNAME} has changed"; \
+	    ${ECHO_MSG} "to ${PLA_USR} -- you should delete the old user:" ;  \
+	    ${ECHO_MSG} "  # /usr/sbin/pw user del -n pldapadm" ;	      \
+	    ${ECHO_MSG} "" ;						      \
+	fi
+.endif
 
 post-patch:
-	cd ${WRKSRC} ;                                                      \
+	cd ${WRKSRC} ;							    \
 	${FIND} . ! -type d ! -name ${CFGFILE}.example ! -name .cvsignore | \
-	    ${SORT} | ${SED} -e "s!^\.!%%PLADIR%%!"             >${PLIST} ; \
-	${CAT} ${PKGDIR}/pkg-plist-chunk                       >>${PLIST} ; \
-	${FIND} . -type d | ${SORT} -r | ${SED}                             \
-	    -e 's!^\./${CFGDIR}$$!@dirrmtry %%PLADIR%%/${CFGDIR}!'          \
-	    -e 's!^\.$$!@dirrmtry %%PLADIR%%!'                              \
-	    -e 's!^\.!@dirrm %%PLADIR%%!'                      >>${PLIST}
+	    ${SORT} | ${SED} -e "s!^\.!%%WWWDIR%%!"		>${PLIST} ; \
+	${CAT} ${PKGDIR}/pkg-plist-chunk		       >>${PLIST} ; \
+	${FIND} . -type d | ${SORT} -r | ${SED}				    \
+	    -e 's!^\./${CFGDIR}$$!@dirrmtry %%WWWDIR%%/${CFGDIR}!'	    \
+	    -e 's!^\.$$!@dirrmtry %%WWWDIR%%!'				    \
+	    -e 's!^\.!@dirrm %%WWWDIR%%!'		       >>${PLIST}
 
 pre-install:
 .if defined(WITH_SUPHP)
@@ -85,18 +113,18 @@ do-install: install-app install-conf
 install-app:
 	cd ${WRKSRC} ; \
 	for src in $$( ${FIND} . ! -name .cvsignore  ) ; do \
-	    dst=${PREFIX}/${PLADIR}$${src#.} ; \
+	    dst=${WWWDIR}$${src#.} ; \
 	    if ${TEST} -d $$src ; then \
-	        ${MKDIR} $$dst ; \
+		${MKDIR} $$dst ; \
 	    else \
-	        ${INSTALL_DATA} $$src $$dst ; \
+		${INSTALL_DATA} $$src $$dst ; \
 	    fi \
 	done
 
 install-conf:
-	cd ${PREFIX}/${PLADIR}/${CFGDIR} ; \
+	cd ${WWWDIR}/${CFGDIR} ; \
 	${CHMOD} 0640 ${CFGFILE}.example ; \
-	${CHGRP} ${PLAGRP} ${CFGFILE}.example ; \
+	${CHGRP} ${PLA_GRP} ${CFGFILE}.example ; \
 	if ${TEST} ! -f ${CFGFILE} ; then \
 	    ${CP} -p ${CFGFILE}.example ${CFGFILE} ; \
 	fi
@@ -107,4 +135,4 @@ post-install:
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

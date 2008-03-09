@@ -1,16 +1,16 @@
 
 %%PKGNAME%% has been installed into:
 
-    %%PREFIX%%/%%PLADIR%%
+    %%WWWDIR%%
 
 Please edit config.php to suit your needs.
 
 To make phpLDAPadmin available through your web site, I suggest that
 you add something like the following to httpd.conf:
 
-    Alias /phpldapadmin/ "%%PREFIX%%/%%PLADIR%%/htdocs"
+    Alias /phpldapadmin/ "%%WWWDIR%%/htdocs"
 
-    <Directory "%%PREFIX%%/%%PLADIR%%/htdocs">
+    <Directory "%%WWWDIR%%/htdocs">
         Options none
         AllowOverride none
 
@@ -24,10 +24,10 @@ layout of the %%PKGNAME%% files has been completely reworked. You will
 need to modify your apache configuration and merge the settings from
 your original configuration file:
 
-    %%PREFIX%%/%%PLADIRX%%/config.php
+    %%WWWDIR%%/config.php
 
  to
 
-   %%PREFIX%%/%%PLADIR%%/config/config.php
+    %%WWWDIR%%/config/config.php
 
 

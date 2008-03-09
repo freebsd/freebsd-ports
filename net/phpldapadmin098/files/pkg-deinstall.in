@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/phpldapadmin098/files/Attic/pkg-deinstall.in,v 1.1 2005-12-11 23:51:12 lawrance Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/phpldapadmin098/files/Attic/pkg-deinstall.in,v 1.2 2008-03-09 04:45:39 rafan Exp $
 #
 
 case $2 in
@@ -9,13 +9,13 @@ case $2 in
 The phpldapadmin-suphp port has been deleted.
 If you are not upgrading and don't intend to use
 phpLDAPadmin any more then you may wish to delete
-the %%PLAUSR%% account, which can be done with
+the %%PLA_USR%% account, which can be done with
 the following command:
 
-    # pw userdel %%PLAUSR%%
+    # pw userdel %%PLA_USR%%
 EOMSG
-    if [ -d %%PREFIX%%/%%PLADIR%% ] ; then
-	echo "    # rm -rf %%PREFIX%%/%%PLADIR%%/"
+    if [ -d %%WWWDIR%% ] ; then
+	echo "    # rm -rf %%WWWDIR%%/"
     fi
     echo
     ;;
