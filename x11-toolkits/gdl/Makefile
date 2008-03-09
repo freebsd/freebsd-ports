@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	gdl
-PORTVERSION=	0.7.10
+PORTVERSION=	0.7.11
 CATEGORIES=	x11-toolkits gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Components intended to be shared between GNOME development tools
