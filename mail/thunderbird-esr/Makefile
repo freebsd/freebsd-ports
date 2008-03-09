@@ -8,6 +8,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	2.0.0.12
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${DISTVERSION}/source
@@ -77,7 +78,7 @@ port-pre-install:
 	${RM} -f ${FAKEDIR}/bin/*.bak
 	${MKDIR} ${FAKEDIR}/lib/${PORTNAME}/defaults
 	${CP} -RL ${WRKSRC}/dist/bin/isp \
-		${FAKEDIR}/lib/${PORTNAME}/defaults
+		${FAKEDIR}/lib/${PORTNAME}
 
 pre-install:
 	@${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}
