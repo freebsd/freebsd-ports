@@ -1,70 +1,87 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/phpldapadmin098/files/Attic/pkg-install.in,v 1.1 2005-12-11 23:51:12 lawrance Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/phpldapadmin098/files/Attic/pkg-install.in,v 1.2 2008-03-09 04:45:39 rafan Exp $
 #
 
 PATH=/usr/sbin:/usr/bin:/bin ; export PATH
 
-pladir=%%PREFIX%%/%%PLADIR%%
-plausr=%%PLAUSR%%
-plagrp=%%PLAGRP%%
+pla_dir=%%WWWDIR%%
+pla_usr=%%PLA_USR%%
+pla_uid=%%PLA_UID%%
+pla_grp=%%PLA_GRP%%
+pla_gid=%%PLA_GID%%
 
-plagcos="phpLDAPadmin Owner"
-plahome=/nonexistent
-plashell=/sbin/nologin
+pla_gcos="%%PLA_GCOS%%"
+pla_home=%%PLA_HOME%%
+pla_shell=%%PLA_SHELL%%
 
 create_group() {
-    local user group gcos home shell
+    local user uid group gid gcos home shell
 
     user=$1
-    group=$2
-    gcos=$3
-    home=$4
-    shell=$5
+    uid=$2
+    group=$3
+    gid=$4
+    gcos=$5
+    home=$6
+    shell=$7
 
-    if pw groupadd -n $group ; then
-	echo "===> Group $group created"
+
+    if pw group show -n $group >/dev/null 2>&1 ; then
+	echo "===> Using pre-existing group $group"
     else
-	cat <<-EOERRORMSG
-	*** Failed to create the $group group.
+	if pw groupadd -n $group -g $gid ; then
+	    echo "===> Group $group created"
+	else
+	    cat <<-EOERRORMSG
+ 		*** Failed to create the $group group.
 
-	Please add the $user user and $group group
-	manually with the commands:
+		Please add the $user user and $group group
+		manually with the commands:
 
-	    pw groupadd -n $group
-	    pw useradd -n $user -g $group -c "$gcos" \\
-	        -d $home -s $shell -h -
-	    
-	and retry installing this package.
-	EOERRORMSG
-	exit 1
+		    pw groupadd -n $group -g $gid
+		    pw useradd -n $user -u $uid -g $group -c "$gcos" \\
+		        -d $home -s $shell -h -
+
+		and retry installing this package.
+		EOERRORMSG
+	    exit 1
+	fi
     fi
+
 }
 
 
 create_user() {
-    local user group gcos home shell
+    local user uid group gid gcos home shell
 
     user=$1
-    group=$2
-    gcos=$3
-    home=$4
-    shell=$5
+    uid=$2
+    group=$3
+    gid=$4
+    gcos=$5
+    home=$6
+    shell=$7
 
-    if pw useradd -n $user -g $group -c "$gcos" -d $home -s $shell -h - ; then
-	echo "===> Created $user user"
+    if pw user show -n $user >/dev/null 2>&1 ; then
+	echo "===> Using pre-existing user $user"
     else
-	cat <<-EOERRORMSG
-	*** Failed to create the $user user.
+	if pw useradd -n $user -u $uid -g $group -c "$gcos" \
+	    -d $home -s $shell -h - ; then
+	    echo "===> Created $user user"
+	else
+	    cat <<-EOERRORMSG
+		*** Failed to create the $user user.
 
-	Please add the $user user manually with the command:
+		Please add the $user user manually with the command:
 
-	    pw useradd -n $user -g $group -c "$gcos" \\
-		        -d $home -s $shell -h -
+		    pw useradd -n $user -u $uid -g $group -c "$gcos" \\
+		       -d $home -s $shell -h -
 
-	and retry installing this package.
-	EOERRORMSG
-	exit 1
+		and retry installing this package.
+		EOERRORMSG
+	    exit 1
+	fi
     fi
 }
 
@@ -73,23 +90,18 @@ case $2 in
     PRE-INSTALL)
 
         # Create the pla user and group if they do not already exist
-
-        if pw user show -n $plausr >/dev/null 2>&1 ; then
-	    echo "===> Using pre-existing user $plausr"
-	else
-	    if ! pw group show -n $plagrp >/dev/null 2>&1 ; then
-		create_group $plausr $plagrp "$plagcos" $plahome \
-		    $plashell
-	    fi
-	    create_user $plausr $plagrp "$plagcos" $plahome $plashell
-	fi
+	create_group $pla_usr $pla_uid $pla_grp $pla_gid \
+                     "$pla_gcos" $pla_home $pla_shell
+	create_user  $pla_usr $pla_uid $pla_grp $pla_gid \
+                     "$pla_gcos" $pla_home $pla_shell
 	;;
+
     POST-INSTALL)
 
-    	# Change ownership of the phpLDAPadmin directory
+    	# Change ownership of the phpMyAdm directory
 
-        echo "===> Adjusting file ownership in $pladir"
-        chown -R $plausr:$plagrp $pladir || exit 1
+        echo "===> Adjusting file ownership in $pla_dir"
+        chown -R $pla_usr:$pla_grp $pla_dir || exit 1
 	;;
 esac
 
