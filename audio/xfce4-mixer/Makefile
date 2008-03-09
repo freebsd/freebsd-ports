@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-mixer
 PORTVERSION=	4.4.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -22,7 +22,8 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack libxml2 pkgconfig
 USE_XFCE=	configenv libgui libmcs libutil mcsmanager panel
-USE_XLIB=	yes
+USE_XORG=	xproto x11 xrender xext xinerama xrandr xcursor xcomposite \
+		xdamage xfixes xi xau xdmcp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
