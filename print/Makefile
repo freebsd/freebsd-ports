@@ -128,6 +128,7 @@
     SUBDIR += jadetex
     SUBDIR += kaspaliste
     SUBDIR += kcdlabel
+    SUBDIR += kde_poster
     SUBDIR += kover
     SUBDIR += kpdftool
     SUBDIR += latex
