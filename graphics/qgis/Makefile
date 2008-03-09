@@ -20,6 +20,8 @@ LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		gdal:${PORTSDIR}/graphics/gdal
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+BROKEN=		Does not build with geos 3.x
+
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_FREETYPE=	yes
