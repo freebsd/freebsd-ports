@@ -100,11 +100,11 @@
 %%SITE_PERL%%/IkiWiki/Plugin/httpauth.pm
 %%SITE_PERL%%/IkiWiki/Plugin/img.pm
 %%SITE_PERL%%/IkiWiki/Plugin/inline.pm
+%%SITE_PERL%%/IkiWiki/Plugin/link.pm
 %%SITE_PERL%%/IkiWiki/Plugin/linkmap.pm
 %%SITE_PERL%%/IkiWiki/Plugin/lockedit.pm
 %%SITE_PERL%%/IkiWiki/Plugin/map.pm
 %%SITE_PERL%%/IkiWiki/Plugin/mdwn.pm
-%%SITE_PERL%%/IkiWiki/Plugin/mdwn.pm.bak
 %%SITE_PERL%%/IkiWiki/Plugin/meta.pm
 %%SITE_PERL%%/IkiWiki/Plugin/mirrorlist.pm
 %%SITE_PERL%%/IkiWiki/Plugin/more.pm
@@ -154,6 +154,7 @@
 %%SITE_PERL%%/IkiWiki/Wrapper.pm
 bin/ikiwiki
 bin/ikiwiki-makerepo
+bin/ikiwiki-transition
 bin/ikiwiki-update-wikilist
 lib/ikiwiki/plugins/externaldemo
 lib/ikiwiki/plugins/rst

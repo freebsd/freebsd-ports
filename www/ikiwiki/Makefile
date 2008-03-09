@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	2.32.3
+PORTVERSION=	2.40
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -38,7 +38,7 @@ USE_GETTEXT=	yes
 
 OPTIONS=	W3M "Install w3m CGI wrapper" off
 
-MAN1=		ikiwiki.1 ikiwiki-makerepo.1 ikiwiki-update-wikilist.1
+MAN1=		ikiwiki.1 ikiwiki-makerepo.1 ikiwiki-transition.1 ikiwiki-update-wikilist.1
 MAN8=		ikiwiki-mass-rebuild.8
 PORTDOCS=	CHANGELOG NEWS README
 PORTEXAMPLES=	ikiwiki.setup
@@ -54,6 +54,7 @@ PLIST_SUB=	W3M="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
+	@${RM} ${WRKSRC}/IkiWiki/Plugin/mdwn.pm.orig ${WRKSRC}/IkiWiki/Plugin/mdwn.pm.bak
 	@${REINPLACE_CMD} -e "s|/etc/ikiwiki/wikilist|${LOCALBASE}/etc/ikiwiki/wikilist|" \
 		${WRKSRC}/ikiwiki-mass-rebuild \
 		${WRKSRC}/doc/ikiwiki-mass-rebuild.mdwn \
