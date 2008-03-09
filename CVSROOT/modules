@@ -5967,6 +5967,7 @@ kde3-i18n-ven	ports/misc/kde3-i18n-ven
 kde3-i18n-wa	ports/misc/kde3-i18n-wa
 kde3-i18n-xh	ports/misc/kde3-i18n-xh
 kde3-i18n-zu	ports/misc/kde3-i18n-zu
+kde_poster	ports/print/kde_poster
 kdeaccessibility	ports/accessibility/kdeaccessibility
 kdeaddons3	ports/misc/kdeaddons3
 kdeadmin3	ports/sysutils/kdeadmin3
