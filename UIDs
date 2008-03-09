@@ -126,6 +126,7 @@ distcc:*:561:561:Distcc user:/nonexistent:/usr/sbin/nologin
 polkit:*:562:562:PolicyKit User:/nonexistent:/usr/sbin/nologin
 pulse:*:563:563:PulseAudio System User:/nonexistent:/usr/sbin/nologin
 _xsi:*:600:600:XMLSysInfo User:/nonexistent:/usr/sbin/nologin
+_pla:*:636:80:phpLDAPAdmin Owner:/nonexistent:/usr/sbin/nologin
 bnetd:*:700:700:Bnetd user:/nonexistent:/usr/sbin/nologin
 bopm:*:717:717:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
 openxpki:*:777:777:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
