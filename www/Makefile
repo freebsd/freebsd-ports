@@ -914,6 +914,7 @@
     SUBDIR += p5-Tie-TinyURL
     SUBDIR += p5-URI-Fetch
     SUBDIR += p5-URI-Sequin
+    SUBDIR += p5-URI-ToDisk
     SUBDIR += p5-W3C-LinkChecker
     SUBDIR += p5-W3C-LogValidator
     SUBDIR += p5-WWW-Babelfish
