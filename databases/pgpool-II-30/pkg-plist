@@ -25,4 +25,5 @@ lib/libpcp.so.0
 %%EXAMPLESDIR%%/pgpool_recovery
 %%EXAMPLESDIR%%/pgpool_recovery_pitr
 %%EXAMPLESDIR%%/pgpool_remote_start
+@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
