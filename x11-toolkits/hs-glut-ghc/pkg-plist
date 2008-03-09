@@ -23,6 +23,8 @@
 %%SUBDIR%%/HSGLUT-%%PORTVERSION%%.o
 %%SUBDIR%%/include/HsGLUT.h
 %%SUBDIR%%/%%PORTNAME%%-register.sh
+share/doc/GLUT-%%PORTVERSION%%/LICENSE
+@dirrm share/doc/GLUT-%%PORTVERSION%%
 @dirrm %%SUBDIR%%/Graphics/UI/GLUT/Callbacks
 @dirrm %%SUBDIR%%/Graphics/UI/GLUT
 @dirrmtry %%SUBDIR%%/Graphics/UI
