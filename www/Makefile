@@ -249,6 +249,7 @@
     SUBDIR += httpgrabber
     SUBDIR += httptunnel
     SUBDIR += httrack
+    SUBDIR += hudson
     SUBDIR += hydra
     SUBDIR += hypermail
     SUBDIR += igal
