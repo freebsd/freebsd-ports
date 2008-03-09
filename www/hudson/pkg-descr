@@ -1,0 +1,17 @@
+Hudson monitors executions of repeated jobs, such as building a software
+project or jobs run by cron. Among those things, current Hudson focuses on the
+following two jobs:
+
+  1. Building/testing software projects continuously, just like CruiseControl
+  or DamageControl. In a nutshell, Hudson provides an easy-to-use so-called
+  continuous integration system, making it easier for developers to integrate
+  changes to the project, and making it easier for users to obtain a fresh
+  build. The automated, continuous build increases the productivity.
+
+  2. Monitoring executions of externally-run jobs, such as cron jobs and
+  procmail jobs, even those that are run on a remote machine. For example, with
+  cron, all you receive is regular e-mails that capture the output, and it is
+  up to you to look at them diligently and notice when it broke. Hudson keeps
+  those outputs and makes it easy for you to notice when something is wrong.
+
+WWW:	https://hudson.dev.java.net/
