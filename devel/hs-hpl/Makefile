@@ -18,6 +18,8 @@ COMMENT=	Haskell Ports Library provides ports in Haskell
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=    gmp.7:${PORTSDIR}/math/libgmp4
 
+BROKEN=		Does not build with current ghc
+
 .include <bsd.port.pre.mk>
 
 GHC_VERSION=	6.6.1
