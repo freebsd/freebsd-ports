@@ -27,6 +27,14 @@ HAS_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_GMAKE=	YES
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+PLIST_SUB+=	ARCH=ix86
+.elif ${ARCH} == "amd64"
+PLIST_SUB+=	ARCH=amd64
+.endif
+
 do-install:
 # cheat a bit, otherwise LIBDIR gets clobbered
 	(cd ${WRKSRC} && ./configure --install)
@@ -38,4 +46,4 @@ MAN1=		hmake.1
 
 CONFLICTS=	nhc98-[0-9]*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
