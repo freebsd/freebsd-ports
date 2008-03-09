@@ -838,7 +838,6 @@ share/examples/samba/VFS/block/smb.conf
 share/examples/samba/VFS/Makefile.in
 share/examples/samba/VFS/configure
 share/examples/samba/VFS/configure.in
-share/examples/samba/VFS/configure.lineno
 share/examples/samba/VFS/recycle/README
 share/examples/samba/VFS/recycle/cleanup_recycle.pl
 share/examples/samba/VFS/recycle/recycle.c
