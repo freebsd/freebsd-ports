@@ -3,3 +3,4 @@ lib/snmp_ucd.la
 lib/snmp_ucd.so
 lib/snmp_ucd.so.1
 %%EXAMPLESDIR%%/snmpd.config.sample
+@dirrm %%EXAMPLESDIR%%
