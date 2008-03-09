@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module for interfacing with GnuPG
 
+BUILD_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg \
 		p5-Class-MethodMaker>=0:${PORTSDIR}/devel/p5-Class-MethodMaker
 
