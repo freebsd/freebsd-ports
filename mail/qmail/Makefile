@@ -310,7 +310,7 @@ CFLAGS+=	-DDEBUG
 
 .if defined(SLAVE_LDAP)
 
-. if !defined(WITHOUT_TLS)
+. if defined(WITH_TLS)
 # we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 . endif
@@ -480,7 +480,7 @@ DISTFILES+=	${SMTPEXTFORK_PATCH:S/$/:extfork/} \
 WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT?=	509
 .endif
 
-.if !defined(WITHOUT_RCDLINK) && !defined(SLAVE_LDAP)
+.if defined(WITH_RCDLINK) && !defined(SLAVE_LDAP)
 PLIST_SUB+=	RCDLINK=""
 RCDLINK=
 .else
@@ -496,13 +496,13 @@ SELECTED_OPTIONS+=	relaymailfrom=yes
 SELECTED_OPTIONS+=	relaymailfrom=no
 . endif
 
-. if !defined(WITHOUT_REQBRACKETS)
+. if defined(WITH_REQBRACKETS)
 SELECTED_OPTIONS+=	reqbrackets=yes
 . else
 SELECTED_OPTIONS+=	reqbrackets=no
 . endif
 
-. if !defined(WITHOUT_VERP)
+. if defined(WITH_VERP)
 SELECTED_OPTIONS+=	verp=yes
 . else
 SELECTED_OPTIONS+=	verp=no
@@ -604,6 +604,8 @@ post-patch:
 		${WRKDIR}/TLS.readme
 	@${REINPLACE_CMD} "s|/usr/local/ssl|${OPENSSLBASE}|" \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -E 's!("control/tlsserverciphers")!\1, 0!' \
+		${WRKSRC}/qmail-smtpd.c
 .elif defined(SLAVE_LDAP)
 	@${REINPLACE_CMD} "s|^LDAPLIBS=-L/usr/local/lib|LDAPLIBS=-L${LOCALBASE}/lib|; \
 			   s|^LDAPINCLUDES=-I/usr/local/include|LDAPINCLUDES=-I${LOCALBASE}/include|" \
@@ -617,21 +619,21 @@ post-patch:
 		${WRKSRC}/qmail-smtpd.c
 .  endif
 . endif
-. if !defined(WITHOUT_TLS)
+. if defined(WITH_TLS)
 	@${REINPLACE_CMD} "s|^#TLS=|TLS=|; \
 			   s|^#TLSINCLUDES=-I/usr/local/include|TLSINCLUDES=-I${OPENSSLBASE}/include|; \
 			   s|^#TLSLIBS=-L/usr/local/lib|TLSLIBS=-L${OPENSSLBASE}/lib|; \
 			   s|^#OPENSSLBIN=/usr/local/bin/openssl|OPENSSLBIN=${OPENSSLBASE}/bin/openssl|" \
 		${WRKSRC}/Makefile
 . endif
-. if defined(WITH_DATA_COMPRESS) || defined (WITH_QMQP_COMPRESS)
+. if defined(WITH_DATA_COMPRESS) || defined(WITH_QMQP_COMPRESS)
 	@${REINPLACE_CMD} "s|^#ZLIB=-lz$$|ZLIB=-lz|" \
 		${WRKSRC}/Makefile
 . endif
-. if !defined(WITHOUT_AUTOMAILDIRMAKE)
+. if defined(WITH_AUTOMAILDIRMAKE)
 	@${REINPLACE_CMD} "s|^#MDIRMAKE=|MDIRMAKE=|" ${WRKSRC}/Makefile
 . endif
-. if !defined(WITHOUT_AUTOHOMEDIRMAKE)
+. if defined(WITH_AUTOHOMEDIRMAKE)
 	@${REINPLACE_CMD} "s|^#HDIRMAKE=|HDIRMAKE=|" ${WRKSRC}/Makefile
 . endif
 . if defined(WITH_LDAP_DEBUG)
@@ -653,7 +655,7 @@ post-patch:
 	@${REINPLACE_CMD} '/"man"/d; /man\/man/d; /man\/cat/d; \
 			   /"doc"/d; /"boot","/d' \
 		${WRKSRC}/hier.c
-.if defined (WITH_QEXTRA)
+.if defined(WITH_QEXTRA)
 	@${REINPLACE_CMD} 's!QUEUE_EXTRA ""!QUEUE_EXTRA "Tlog\\0"!g; \
 			   s!QUEUE_EXTRALEN 0!QUEUE_EXTRALEN 5!g' \
 			   ${WRKSRC}/extra.h
