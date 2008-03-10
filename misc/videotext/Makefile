@@ -7,20 +7,21 @@
 
 PORTNAME=	videotext
 PORTVERSION=	0.6.19991029
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://elektra.e-technik.uni-ulm.de/~mbuck/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11/Xview TV Videotext/Teletext page viewer (.vtx files)
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT} \
-		gawk:${PORTSDIR}/lang/gawk
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		gawk:${PORTSDIR}/lang/gawk \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		xview.3:${PORTSDIR}/x11-toolkits/xview
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAN1=		tunerctl.1 videotext.1 vtxget.1
 
