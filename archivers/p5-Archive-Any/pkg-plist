@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Any/.packlist
 %%SITE_PERL%%/Archive/Any.pm
 %%SITE_PERL%%/Archive/Any/Plugin.pm
 %%SITE_PERL%%/Archive/Any/Plugin/Tar.pm
