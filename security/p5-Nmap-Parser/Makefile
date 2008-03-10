@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	Nmap-Parser
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	security perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/A/AP/APERSAUD
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jabra@ccs.neu.edu
 COMMENT=	Parse nmap scan data with perl
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig
+BUILD_DEPENDS=	p5-XML-Twig>=3.16:${PORTSDIR}/textproc/p5-XML-Twig \
+		p5-Storable>=2:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		nmap:${PORTSDIR}/security/nmap
 
