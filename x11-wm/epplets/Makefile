@@ -6,30 +6,39 @@
 #
 
 PORTNAME=	epplets
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTVERSION=	0.10
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	enlightenment
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A collection of Enlightenment dock applications
 
 BUILD_DEPENDS=	e16:${PORTSDIR}/x11-wm/enlightenment
-LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2 \
-		cdaudio.1:${PORTSDIR}/audio/libcdaudio
-RUN_DEPENDS=	import:${PORTSDIR}/graphics/ImageMagick \
-		e16:${PORTSDIR}/x11-wm/enlightenment
+LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
+RUN_DEPENDS=	e16:${PORTSDIR}/x11-wm/enlightenment \
+		import:${PORTSDIR}/graphics/ImageMagick
 
-USE_X_PREFIX=	yes
-USE_GNOME=	esound lthack
-USE_GL=		yes
+USE_XORG=	xext
+USE_GNOME=	esound gnometarget
+USE_GL=		glut
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15 autoconf:261
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--enable-fsstd
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-auto-respawn
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=	Does not compile on 5.x
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<machine/soundcard\.h>|<sys/soundcard.h>|g' \
+		${WRKSRC}/epplets/Emix.c
+	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \
+		${WRKSRC}/epplets/mbox.c
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,180 @@
+--- epplets/Makefile.in.orig	2007-05-04 00:02:50.000000000 +0200
++++ epplets/Makefile.in	2008-03-10 12:39:28.000000000 +0100
+@@ -46,7 +46,6 @@
+ 	E-Magic.epplet$(EXEEXT) E-Toolbox.epplet$(EXEEXT) \
+ 	E-NetFlame.epplet$(EXEEXT) E-Sys.epplet$(EXEEXT) \
+ 	E-ScreenShoot.epplet$(EXEEXT) E-Slides.epplet$(EXEEXT) \
+-	E-Xss.epplet$(EXEEXT) E-Mountbox.epplet$(EXEEXT) \
+ 	E-Exec.epplet$(EXEEXT) E-ScreenSave.epplet$(EXEEXT) \
+ 	E-NetGraph.epplet$(EXEEXT) E-MoonClock.epplet$(EXEEXT) \
+ 	E-UrlWatch.epplet$(EXEEXT) E-LoadMeter.epplet$(EXEEXT) \
+@@ -109,9 +108,6 @@
+ 	CalcEphem.$(OBJEXT) Moon.$(OBJEXT)
+ E_MoonClock_epplet_OBJECTS = $(am_E_MoonClock_epplet_OBJECTS)
+ E_MoonClock_epplet_LDADD = $(LDADD)
+-am_E_Mountbox_epplet_OBJECTS = E-Mountbox.$(OBJEXT)
+-E_Mountbox_epplet_OBJECTS = $(am_E_Mountbox_epplet_OBJECTS)
+-E_Mountbox_epplet_LDADD = $(LDADD)
+ am_E_Net_epplet_OBJECTS = E-Net.$(OBJEXT) net.$(OBJEXT)
+ E_Net_epplet_OBJECTS = $(am_E_Net_epplet_OBJECTS)
+ E_Net_epplet_LDADD = $(LDADD)
+@@ -164,9 +160,6 @@
+ am_E_Wireless_epplet_OBJECTS = E-Wireless.$(OBJEXT)
+ E_Wireless_epplet_OBJECTS = $(am_E_Wireless_epplet_OBJECTS)
+ E_Wireless_epplet_LDADD = $(LDADD)
+-am_E_Xss_epplet_OBJECTS = E-Xss.$(OBJEXT)
+-E_Xss_epplet_OBJECTS = $(am_E_Xss_epplet_OBJECTS)
+-E_Xss_epplet_LDADD = $(LDADD)
+ am_Emix_epplet_OBJECTS = Emix.$(OBJEXT)
+ Emix_epplet_OBJECTS = $(am_Emix_epplet_OBJECTS)
+ Emix_epplet_LDADD = $(LDADD)
+@@ -203,9 +196,8 @@
+ 	$(E_ScreenShoot_epplet_SOURCES) $(E_Slides_epplet_SOURCES) \
+ 	$(E_Sys_epplet_SOURCES) $(E_Time_epplet_SOURCES) \
+ 	$(E_Toolbox_epplet_SOURCES) $(E_UrlWatch_epplet_SOURCES) \
+-	$(E_Wireless_epplet_SOURCES) $(E_Xss_epplet_SOURCES) \
+-	$(Emix_epplet_SOURCES) $(EppletConfigTest_epplet_SOURCES) \
+-	$(EppletTest_epplet_SOURCES)
++	$(E_Wireless_epplet_SOURCES) $(Emix_epplet_SOURCES) \
++	$(EppletConfigTest_epplet_SOURCES) $(EppletTest_epplet_SOURCES)
+ DIST_SOURCES = $(E_Areas_epplet_SOURCES) $(E_Bandwidth_epplet_SOURCES) \
+ 	$(E_Biff_epplet_SOURCES) $(E_Clock_epplet_SOURCES) \
+ 	$(E_Cpu_epplet_SOURCES) $(E_Disk_epplet_SOURCES) \
+@@ -221,9 +213,8 @@
+ 	$(E_ScreenShoot_epplet_SOURCES) $(E_Slides_epplet_SOURCES) \
+ 	$(E_Sys_epplet_SOURCES) $(E_Time_epplet_SOURCES) \
+ 	$(E_Toolbox_epplet_SOURCES) $(E_UrlWatch_epplet_SOURCES) \
+-	$(E_Wireless_epplet_SOURCES) $(E_Xss_epplet_SOURCES) \
+-	$(Emix_epplet_SOURCES) $(EppletConfigTest_epplet_SOURCES) \
+-	$(EppletTest_epplet_SOURCES)
++	$(E_Wireless_epplet_SOURCES) $(Emix_epplet_SOURCES) \
++	$(EppletConfigTest_epplet_SOURCES) $(EppletTest_epplet_SOURCES)
+ ETAGS = etags
+ CTAGS = ctags
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+@@ -445,10 +436,11 @@
+ E_MemWatch_epplet_SOURCES = E-MemWatch.c
+ E_MemWatch_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+ E_MemWatch_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+-E_MemWatch_epplet_LDADD = $(LDADD) $(GTLIBS)
++E_MemWatch_epplet_LDADD = $(LDADD) $(GTLIBS) -lkvm
+ E_Disk_epplet_SOURCES = E-Disk.c
+ E_Disk_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+ E_Disk_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
++E_Disk_epplet_LDADD = $(LDADD) $(GTLIBS) -ldevstat
+ E_Sys_epplet_SOURCES = E-Sys.c
+ E_Sys_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+ E_Sys_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+@@ -456,9 +448,6 @@
+ E_Slides_epplet_SOURCES = E-Slides.c
+ E_Slides_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+ E_Slides_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+-E_Xss_epplet_SOURCES = E-Xss.c
+-E_Xss_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+-E_Xss_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+ E_ScreenShoot_epplet_SOURCES = \
+ E-ScreenShoot.c cloak.c utils.c utils.h cloak.h \
+ E-ScreenShoot_ftp.c E-ScreenShoot_ftp.h
+@@ -476,9 +465,6 @@
+ E_UrlWatch_epplet_SOURCES = E-UrlWatch.c E-UrlWatch.h utils.c utils.h
+ E_UrlWatch_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+ E_UrlWatch_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+-E_Mountbox_epplet_SOURCES = E-Mountbox.c
+-E_Mountbox_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+-E_Mountbox_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+ E_Pinger_epplet_SOURCES = E-Pinger.c
+ E_Pinger_epplet_DEPENDENCIES = $(top_builddir)/api/libepplet.la
+ E_Pinger_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+@@ -496,10 +482,6 @@
+ E-Mixer.ABOUT/E-Mixer-wide.png \
+ E-Mixer.ABOUT/MAIN \
+ E-MoonClock.ABOUT/MAIN \
+-E-Mountbox.ABOUT/dialog.png \
+-E-Mountbox.ABOUT/MAIN \
+-E-Mountbox.ABOUT/shot.png \
+-E-Mountbox.ABOUT/shot_unmounted.png \
+ E-NetFlame.ABOUT/MAIN \
+ E-OpenGL-Demo.ABOUT/MAIN \
+ E-Pants.ABOUT/MAIN \
+@@ -523,10 +505,10 @@
+ ICONS = icons/E-Biff.icon icons/E-Clock.icon icons/E-Cpu.icon \
+ icons/E-Disk.icon icons/E-Exec.icon icons/E-Load.icon \
+ icons/E-MemWatch.icon icons/E-Mixer.icon \
+-icons/E-MoonClock.icon icons/E-Mountbox.icon icons/E-Net.icon \
++icons/E-MoonClock.icon icons/E-Net.icon \
+ icons/E-NetFlame.icon icons/E-Power.icon icons/E-SD.icon \
+ icons/E-ScreenSave.icon icons/E-ScreenShoot.icon icons/E-Slides.icon \
+-icons/E-Sys.icon icons/E-Time.icon icons/E-Xss.icon icons/Emix.icon \
++icons/E-Sys.icon icons/E-Time.icon icons/Emix.icon \
+ icons/E-UrlWatch.icon icons/E-Magic.icon icons/E-PlayCD.icon \
+ icons/E-OpenGL-Demo.icon icons/E-Pinger.icon \
+ icons/E-Pinger.icon.bg icons/E-Pants.icon icons/E-Wireless.icon
+@@ -565,9 +547,6 @@
+ E-MoonClock-data/E-MoonClock-55.png E-MoonClock-data/E-MoonClock-56.png \
+ E-MoonClock-data/E-MoonClock-57.png E-MoonClock-data/E-MoonClock-58.png \
+ E-MoonClock-data/E-MoonClock-59.png E-MoonClock-data/E-MoonClock-60.png \
+-E-Mountbox-data/E-Mountbox-bg.png E-Mountbox-data/E-Mountbox-blockdev.png \
+-E-Mountbox-data/E-Mountbox-cd.png E-Mountbox-data/E-Mountbox-floppy.png \
+-E-Mountbox-data/E-Mountbox-zip.png E-Mountbox-data/E-Mountbox-jazz.png \
+ E-Power-data/E-Power-Bat-0.png E-Power-data/E-Power-Bat-10.png \
+ E-Power-data/E-Power-Bat-100.png E-Power-data/E-Power-Bat-20.png \
+ E-Power-data/E-Power-Bat-30.png E-Power-data/E-Power-Bat-40.png \
+@@ -591,11 +570,11 @@
+ E-Toolbox-data/sample.cfg E-Toolbox-data/popup-sample.cfg \
+ E-Toolbox-data/default.cfg
+ 
+-NEED_FONT = E-Clock E-Mixer E-MoonClock E-Mountbox E-NetFlame E-Power E-SD \
++NEED_FONT = E-Clock E-Mixer E-MoonClock E-NetFlame E-Power E-SD \
+ E-ScreenSave E-ScreenShoot Emix E-UrlWatch E-PlayCD E-OpenGL-Demo \
+ E-Pinger E-Pants E-Cpu E-Wireless
+ 
+-NEED_BG = E-Clock E-Mixer E-MoonClock E-Mountbox E-NetFlame E-Power E-SD \
++NEED_BG = E-Clock E-Mixer E-MoonClock E-NetFlame E-Power E-SD \
+ E-ScreenSave E-ScreenShoot Emix E-UrlWatch E-PlayCD E-OpenGL-Demo \
+ E-Pinger E-Pants E-Cpu E-Wireless
+ 
+@@ -702,9 +681,6 @@
+ E-MoonClock.epplet$(EXEEXT): $(E_MoonClock_epplet_OBJECTS) $(E_MoonClock_epplet_DEPENDENCIES) 
+ 	@rm -f E-MoonClock.epplet$(EXEEXT)
+ 	$(LINK) $(E_MoonClock_epplet_LDFLAGS) $(E_MoonClock_epplet_OBJECTS) $(E_MoonClock_epplet_LDADD) $(LIBS)
+-E-Mountbox.epplet$(EXEEXT): $(E_Mountbox_epplet_OBJECTS) $(E_Mountbox_epplet_DEPENDENCIES) 
+-	@rm -f E-Mountbox.epplet$(EXEEXT)
+-	$(LINK) $(E_Mountbox_epplet_LDFLAGS) $(E_Mountbox_epplet_OBJECTS) $(E_Mountbox_epplet_LDADD) $(LIBS)
+ E-Net.epplet$(EXEEXT): $(E_Net_epplet_OBJECTS) $(E_Net_epplet_DEPENDENCIES) 
+ 	@rm -f E-Net.epplet$(EXEEXT)
+ 	$(LINK) $(E_Net_epplet_LDFLAGS) $(E_Net_epplet_OBJECTS) $(E_Net_epplet_LDADD) $(LIBS)
+@@ -756,9 +732,6 @@
+ E-Wireless.epplet$(EXEEXT): $(E_Wireless_epplet_OBJECTS) $(E_Wireless_epplet_DEPENDENCIES) 
+ 	@rm -f E-Wireless.epplet$(EXEEXT)
+ 	$(LINK) $(E_Wireless_epplet_LDFLAGS) $(E_Wireless_epplet_OBJECTS) $(E_Wireless_epplet_LDADD) $(LIBS)
+-E-Xss.epplet$(EXEEXT): $(E_Xss_epplet_OBJECTS) $(E_Xss_epplet_DEPENDENCIES) 
+-	@rm -f E-Xss.epplet$(EXEEXT)
+-	$(LINK) $(E_Xss_epplet_LDFLAGS) $(E_Xss_epplet_OBJECTS) $(E_Xss_epplet_LDADD) $(LIBS)
+ Emix.epplet$(EXEEXT): $(Emix_epplet_OBJECTS) $(Emix_epplet_DEPENDENCIES) 
+ 	@rm -f Emix.epplet$(EXEEXT)
+ 	$(LINK) $(Emix_epplet_LDFLAGS) $(Emix_epplet_OBJECTS) $(Emix_epplet_LDADD) $(LIBS)
+@@ -790,7 +763,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/E-MemWatch.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/E-Mixer.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/E-MoonClock.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/E-Mountbox.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/E-Net.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/E-NetFlame.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/E-NetGraph.Po@am__quote@
+@@ -809,7 +781,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/E-Toolbox.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/E-UrlWatch.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/E-Wireless.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/E-Xss.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Emix.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Moon.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/TestEpplet.Po@am__quote@
+@@ -900,7 +871,7 @@
+ 	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+ 
+ distdir: $(DISTFILES)
+-	$(mkdir_p) $(distdir)/E-Biff-data $(distdir)/E-Clock-data $(distdir)/E-Clock.ABOUT $(distdir)/E-Cpu.ABOUT $(distdir)/E-Magic-data $(distdir)/E-Mixer.ABOUT $(distdir)/E-MoonClock-data $(distdir)/E-MoonClock.ABOUT $(distdir)/E-Mountbox-data $(distdir)/E-Mountbox.ABOUT $(distdir)/E-NetFlame.ABOUT $(distdir)/E-OpenGL-Demo-data $(distdir)/E-OpenGL-Demo.ABOUT $(distdir)/E-Pants.ABOUT $(distdir)/E-Pinger.ABOUT $(distdir)/E-PlayCD.ABOUT $(distdir)/E-Power-data $(distdir)/E-Power.ABOUT $(distdir)/E-SD-data $(distdir)/E-SD.ABOUT $(distdir)/E-ScreenSave.ABOUT $(distdir)/E-ScreenShoot-data $(distdir)/E-ScreenShoot.ABOUT $(distdir)/E-Toolbox-data $(distdir)/E-UrlWatch-data $(distdir)/E-UrlWatch.ABOUT $(distdir)/E-Wireless.ABOUT $(distdir)/Emix-data $(distdir)/Emix.ABOUT $(distdir)/icons
++	$(mkdir_p) $(distdir)/E-Biff-data $(distdir)/E-Clock-data $(distdir)/E-Clock.ABOUT $(distdir)/E-Cpu.ABOUT $(distdir)/E-Magic-data $(distdir)/E-Mixer.ABOUT $(distdir)/E-MoonClock-data $(distdir)/E-MoonClock.ABOUT $(distdir)/E-NetFlame.ABOUT $(distdir)/E-OpenGL-Demo-data $(distdir)/E-OpenGL-Demo.ABOUT $(distdir)/E-Pants.ABOUT $(distdir)/E-Pinger.ABOUT $(distdir)/E-PlayCD.ABOUT $(distdir)/E-Power-data $(distdir)/E-Power.ABOUT $(distdir)/E-SD-data $(distdir)/E-SD.ABOUT $(distdir)/E-ScreenSave.ABOUT $(distdir)/E-ScreenShoot-data $(distdir)/E-ScreenShoot.ABOUT $(distdir)/E-Toolbox-data $(distdir)/E-UrlWatch-data $(distdir)/E-UrlWatch.ABOUT $(distdir)/E-Wireless.ABOUT $(distdir)/Emix-data $(distdir)/Emix.ABOUT $(distdir)/icons
+ 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
+ 	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's|.|.|g'`; \
+ 	list='$(DISTFILES)'; for file in $$list; do \
