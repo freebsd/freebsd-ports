@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdadminscripts
-PORTVERSION=	4.2
+PORTVERSION=	4.3
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,11 +38,13 @@ BUILDFLAGS_ETC=	buildflags.conf.sample
 .if !defined(WITHOUT_RCSTART)
 PLIST_FILES+=	${RC_SCRIPTS:S,^,sbin/rc,}
 MAN1+=		rcstart.1
+MLINKS+=	${RC_SCRIPTS:Nstart:S,^,rc,:S,$,.1,:S,^,rcstart.1 ,}
 .endif
 
 .if !defined(WITHOUT_PORTCONFIG)
 PLIST_FILES+=	${PORT_SCRIPTS:S,^,sbin/port,}
 MAN1+=		portconfig.1
+MLINKS+=	${PORT_SCRIPTS:Nconfig:S,^,port,:S,$,.1,:S,^,portconfig.1 ,}
 .endif
 
 .if !defined(WITHOUT_BUILDFLAGS)
@@ -106,6 +108,7 @@ do-install:
 .endif
 .if defined(NOPORTDOCS)
 .undef MAN1
+.undef MLINKS
 .else
 	@${ECHO_MSG} "===>  Installing manual pages."
 .for _manpage in ${MAN1}
