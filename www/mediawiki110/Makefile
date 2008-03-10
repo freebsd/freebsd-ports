@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediawiki
-PORTVERSION=	1.10.3
+PORTVERSION=	1.10.4
 CATEGORIES=	www
 MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.10/
 
@@ -16,26 +16,31 @@ COMMENT=	The wiki engine used by Wikipedia
 CONFLICTS=	mediawiki-1.[0-9].* mediawiki-1.1[1-9].*
 
 NO_BUILD=	yes
-USE_MYSQL=	yes
-IGNORE_WITH_MYSQL=	323
 USE_PHP=	iconv mbstring pcre session xml zlib readline
 IGNORE_WITH_PHP=	4
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
 
-OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL (not funtional)" off \
-		LDAP "Use LDAP authentication" off
+OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL" off \
+		LDAP "Use LDAP authentication" off \
+		IMAGICK "Use ImageMagick" off \
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PGSQL)
 USE_PHP+=	pgsql
 .else
+USE_MYSQL=	yes
+IGNORE_WITH_MYSQL=	323
 USE_PHP+=	mysql
 .endif
 
 .if defined(WITH_LDAP)
 USE_PHP+=	ldap
+.endif
+
+.if defined(WITH_IMAGICK)
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:${PORTSDIR}/graphics/pecl-imagick
 .endif
 
 do-install:
