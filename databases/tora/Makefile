@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tora
-PORTVERSION=	1.3.21
-PORTREVISION=	3
+PORTVERSION=	1.3.22
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -46,18 +45,23 @@ CONFIGURE_ARGS+=	--without-kde
 USE_KDELIBS_VER=3
 .endif
 
-PORTDOCS=	AUTHORS BUGS ChangeLog INSTALL NEWS README README.CODESTYLE README.LICENSE TODO
+PORTDOCS=	AUTHORS BUGS ChangeLog INSTALL NEWS README README.CODESTYLE\
+		README.LICENSE TODO
+INFO=		tora
 
-PREFIX2FIX=	help/preferences.html totool.cpp
+PREFIX2FIX=	doc/help/tora/preferences.html doc/help/preferences.texi\
+		src/toconfiguration.h
 
 .include <bsd.port.pre.mk>
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|/etc/torarc|${PREFIX}/etc/torarc|' ${PREFIX2FIX:S|^|${WRKSRC}/|}
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e 's|test doc|test|' ${WRKSRC}/Makefile.in
+.endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/templates/* ${PREFIX}/lib/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
