@@ -16,6 +16,7 @@ share/omf/gnome-subtitles/gnome-subtitles-el.omf
 share/omf/gnome-subtitles/gnome-subtitles-oc.omf
 share/omf/gnome-subtitles/gnome-subtitles-sv.omf
 share/pixmaps/gnome-subtitles.png
+share/locale/ar/LC_MESSAGES/gnome-subtitles.mo
 share/locale/ca/LC_MESSAGES/gnome-subtitles.mo
 share/locale/dz/LC_MESSAGES/gnome-subtitles.mo
 share/locale/el/LC_MESSAGES/gnome-subtitles.mo
