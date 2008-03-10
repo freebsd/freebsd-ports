@@ -7,7 +7,7 @@
 
 PORTNAME=		gnomoradio
 PORTVERSION=		0.15.1
-PORTREVISION=		8
+PORTREVISION=		9
 CATEGORIES=		audio net
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,14 +22,12 @@ LIB_DEPENDS=		sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 			vorbis:${PORTSDIR}/audio/libvorbis \
 			ao:${PORTSDIR}/audio/libao
 
-USE_XLIB=		yes
-USE_GCC=		3.4+
 USE_GNOME=		gnomehack gnomeprefix
 USE_AUTOTOOLS=		libtool:15
 USE_LDCONFIG=		yes
 LIBTOOLFLAGS=		--tag=CXX
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-						LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CCLD = $$(CC)|CCLD = $$(CXX)|; \
