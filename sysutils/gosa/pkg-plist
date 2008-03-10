@@ -940,7 +940,6 @@
 %%EXAMPLESDIR%%/contrib/openldap/goto.schema
 %%EXAMPLESDIR%%/contrib/openldap/kolab2.schema
 %%EXAMPLESDIR%%/contrib/openldap/nagios.schema
-%%EXAMPLESDIR%%/contrib/openldap/openssh-lpk_openldap.schema
 %%EXAMPLESDIR%%/contrib/openldap/openxchange.schema
 %%EXAMPLESDIR%%/contrib/openldap/phpgwaccount.schema
 %%EXAMPLESDIR%%/contrib/openldap/phpscheduleit.schema
@@ -982,8 +981,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.phpscheduleit
 %%PORTDOCS%%%%DOCSDIR%%/README.pptp
 %%PORTDOCS%%%%DOCSDIR%%/README.safemode
-%%PORTDOCS%%%%DOCSDIR%%/README.ssh
-%%PORTDOCS%%%%DOCSDIR%%/README.xls-export
 %%PORTDOCS%%%%DOCSDIR%%/guide.xml
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/addressbook/action.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/addressbook/addressbook.css
@@ -1058,6 +1055,23 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/conference/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/conference/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/conference/select_new_component.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/fax_small.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/list_reload.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/mailto.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/node26.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/penguin.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/select_netatalk.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/select_phone.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/select_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/select_winstation.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/connectivity/smallenv.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/departments/departments.css
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/departments/departments.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/departments/edit.png
@@ -1080,6 +1094,50 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/departments/node9.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/departments/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/departments/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/fax_small.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/list_reload.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/mailto.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/node10.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/node11.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/node12.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/node13.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/node14.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/node15.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/node16.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/penguin.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/select_netatalk.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/select_phone.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/select_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/select_winstation.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/environment/smallenv.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/fax_small.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/list_reload.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/mailto.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/node32.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/node33.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/node34.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/node35.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/node36.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/penguin.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/select_netatalk.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/select_phone.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/select_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/select_winstation.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxaccount/smallenv.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxreports/faxreports.css
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxreports/faxreports.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/faxreports/index.html
@@ -1096,6 +1154,25 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/fonreports/node2.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/fonreports/node3.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/fonreports/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/fax_small.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/list_reload.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/mailto.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/node2.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/node3.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/node4.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/penguin.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/select_netatalk.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/select_phone.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/select_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/select_winstation.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/generic/smallenv.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/groups/groups.css
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/groups/groups.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/groups/index.html
@@ -1167,6 +1244,27 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/macro/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/macro/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/macro/true.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/fax_small.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/list_reload.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/mailto.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/node17.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/node18.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/node19.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/node20.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/node21.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/penguin.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/select_netatalk.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/select_phone.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/select_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/select_winstation.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mail/smallenv.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mailqueue/edittrash.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mailqueue/index.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/mailqueue/labels.pl
@@ -1195,6 +1293,59 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/ogroups/ogroups.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/ogroups/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/ogroups/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/phoneaccount/closedlock.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/phoneaccount/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/phoneaccount/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/phoneaccount/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/phoneaccount/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/phoneaccount/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/phoneaccount/node37.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/phoneaccount/node38.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/phoneaccount/node39.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/phoneaccount/node40.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/phoneaccount/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/phoneaccount/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/fax_small.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/list_reload.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/mailto.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/node5.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/node6.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/node7.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/node8.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/node9.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/penguin.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/select_netatalk.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/select_phone.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/select_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/select_winstation.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/posix/smallenv.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/fax_small.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/list_reload.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/mailto.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/node22.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/node23.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/node24.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/node25.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/penguin.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/select_netatalk.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/select_phone.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/select_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/select_winstation.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/samba/smallenv.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/systems/edit.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/systems/index.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/de/html/systems/labels.pl
@@ -1427,6 +1578,19 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/conference/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/conference/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/conference/select_new_component.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/node26.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/node27.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/node28.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/node29.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/node30.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/node31.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/connectivity/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/departments/departments.css
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/departments/departments.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/departments/index.html
@@ -1443,6 +1607,32 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/departments/node6.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/departments/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/departments/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/node10.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/node11.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/node12.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/node13.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/node14.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/node15.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/node16.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/environment/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxaccount/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxaccount/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxaccount/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxaccount/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxaccount/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxaccount/node32.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxaccount/node33.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxaccount/node34.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxaccount/node35.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxaccount/node36.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxaccount/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxaccount/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxreports/faxreports.css
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxreports/faxreports.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/faxreports/index.html
@@ -1459,6 +1649,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/fonreports/node2.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/fonreports/node3.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/fonreports/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/generic/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/generic/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/generic/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/generic/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/generic/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/generic/node2.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/generic/node3.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/generic/node4.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/generic/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/generic/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/groups/groups.css
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/groups/groups.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/groups/index.html
@@ -1518,6 +1718,18 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/macro/node5.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/macro/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/macro/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/mail/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/mail/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/mail/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/mail/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/mail/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/mail/node17.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/mail/node18.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/mail/node19.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/mail/node20.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/mail/node21.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/mail/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/mail/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/ogroups/index.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/ogroups/labels.pl
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/ogroups/list_back.png
@@ -1532,6 +1744,39 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/ogroups/ogroups.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/ogroups/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/ogroups/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/phoneaccount/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/phoneaccount/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/phoneaccount/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/phoneaccount/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/phoneaccount/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/phoneaccount/node37.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/phoneaccount/node38.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/phoneaccount/node39.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/phoneaccount/node40.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/phoneaccount/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/phoneaccount/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/posix/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/posix/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/posix/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/posix/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/posix/node5.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/posix/node6.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/posix/node7.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/posix/node8.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/posix/node9.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/posix/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/posix/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/samba/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/samba/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/samba/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/samba/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/samba/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/samba/node22.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/samba/node23.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/samba/node24.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/samba/node25.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/samba/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/samba/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/systems/index.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/systems/labels.pl
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/en/html/systems/list_back.png
@@ -1745,6 +1990,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/conference/node6.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/conference/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/conference/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/connectivity/closedlock.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/connectivity/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/connectivity/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/connectivity/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/connectivity/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/connectivity/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/connectivity/node26.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/connectivity/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/connectivity/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/departments/departments.css
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/departments/departments.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/departments/index.html
@@ -1761,6 +2015,21 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/departments/node6.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/departments/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/departments/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/closedlock.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/node10.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/node11.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/node12.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/node13.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/node14.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/node15.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/node16.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/environment/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/fai/cant_editpaste.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/fai/cutpaste.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/fai/edit.png
@@ -1871,6 +2140,19 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/fai/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/fai/save.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/fai/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/closedlock.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/node32.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/node33.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/node34.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/node35.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/node36.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxaccount/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxreports/faxreports.css
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxreports/faxreports.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/faxreports/index.html
@@ -1883,6 +2165,17 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/fonreports/labels.pl
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/fonreports/node1.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/fonreports/node2.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/generic/closedlock.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/generic/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/generic/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/generic/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/generic/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/generic/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/generic/node2.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/generic/node3.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/generic/node4.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/generic/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/generic/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/groups/groups.css
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/groups/groups.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/groups/index.html
@@ -1937,6 +2230,19 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/macro/node5.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/macro/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/macro/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/closedlock.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/node17.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/node18.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/node19.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/node20.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/node21.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/mail/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/ogroups/index.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/ogroups/labels.pl
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/ogroups/list_back.png
@@ -1951,6 +2257,44 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/ogroups/ogroups.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/ogroups/rocket.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/ogroups/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/phoneaccount/closedlock.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/phoneaccount/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/phoneaccount/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/phoneaccount/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/phoneaccount/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/phoneaccount/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/phoneaccount/node37.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/phoneaccount/node38.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/phoneaccount/node39.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/phoneaccount/node40.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/phoneaccount/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/phoneaccount/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/closedlock.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/node10.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/node5.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/node6.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/node7.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/node8.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/node9.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/posix/search.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/samba/closedlock.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/samba/index.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/samba/list_back.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/samba/list_home.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/samba/list_new_user.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/samba/list_root.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/samba/node22.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/samba/node23.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/samba/node24.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/samba/node25.html
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/samba/rocket.png
+%%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/samba/search.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/systems/index.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/systems/labels.pl
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/fr/html/systems/list_back.png
@@ -2220,58 +2564,82 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/nl/html/users/smallenv.png
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/nl/html/users/users.css
 %%PORTDOCS%%%%DOCSDIR%%/guide/user/nl/html/users/users.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/addressbook
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/applications
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/blocklists
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/conference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/departments
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/faxreports
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/fonreports
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/groups
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/ldapmanager
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/logview
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/macro
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/mailqueue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/logview
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/applications
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/posix
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/ogroups
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/systems
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/environment
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/conference
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/samba
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/addressbook
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/connectivity
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/blocklists
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/phoneaccount
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/faxaccount
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/faxreports
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/departments
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/users
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/generic
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/fonreports
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/ldapmanager
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/mail
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/mailqueue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html/systems
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/addressbook
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/applications
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/blocklists
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/conference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/departments
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/faxreports
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/fonreports
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/groups
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/ldapmanager
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/logview
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/macro
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/logview
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/applications
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/posix
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/ogroups
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/systems
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/environment
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/conference
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/samba
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/addressbook
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/connectivity
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/blocklists
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/phoneaccount
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/faxaccount
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/faxreports
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/departments
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/users
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/generic
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/fonreports
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/ldapmanager
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/mail
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html/systems
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/addressbook
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/applications
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/blocklists
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/conference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/departments
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/fai
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/faxreports
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/fonreports
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/groups
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/ldapmanager
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/logview
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/macro
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/logview
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/applications
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/posix
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/ogroups
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/systems
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/environment
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/fai
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/conference
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/samba
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/addressbook
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/connectivity
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/blocklists
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/phoneaccount
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/faxaccount
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/faxreports
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/departments
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/users
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/generic
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/fonreports
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/ldapmanager
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/mail
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html/systems
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/nl/html/departments
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/nl/html/groups
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/nl/html/departments
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/nl/html/users
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/nl/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/guide/user/nl
