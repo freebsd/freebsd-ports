@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	springframework
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 DISTNAME=	spring-framework-${PORTVERSION}-with-dependencies
