@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="b39bdc06-ee42-11dc-8678-00a0cce0781e">
-    <topic>dovecot -- security hole in blocking passdbs </topic>
+    <topic>dovecot -- security hole in blocking passdbs</topic>
     <affects>
       <package>
 	<name>dovecot</name>
@@ -47,16 +47,17 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Dovecot reports:</p>
 	<blockquote cite="http://dovecot.org/list/dovecot-news/2008-March/000065.html">
 	  <p>Security hole in blocking passdbs (MySQL always. PAM, passwd
-            and shadow if blocking=yes) where user could specify extra
-            fields in the password. The main problem here is when specifying
+	    and shadow if blocking=yes) where user could specify extra
+	    fields in the password. The main problem here is when specifying
 	    "skip_password_check" introduced in v1.0.11 for fixing master user
-	    logins, allowing the user to log in as anyone without a valid password.
-          </p>
+	    logins, allowing the user to log in as anyone without a valid
+	    password.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <url>http://dovecot.org/list/dovecot-news/2008-March/000065.html</url>
+      <url>http://secunia.com/advisories/29295/</url>
     </references>
     <dates>
       <discovery>2008-03-09</discovery>
