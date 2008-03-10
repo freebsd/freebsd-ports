@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	DBIx-Class-Validation
-PORTVERSION=	0.02000
+PORTVERSION=	0.02002
 CATEGORIES=	databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	DBIx
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hideo@lastamericanempire.com
@@ -17,9 +16,9 @@ COMMENT=	Validate data before submitting to a database
 
 BUILD_DEPENDS=	${SITE_PERL}/Module/Install.pm:${PORTSDIR}/devel/p5-Module-Install \
 		${SITE_PERL}/Data/FormValidator.pm:${PORTSDIR}/textproc/p5-Data-FormValidator \
-		${SITE_PERL}/FormValidator/Simple.pm:${PORTSDIR}/textproc/p5-FormValidator-Simple \
-		${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
-		${SITE_PERL}/DBIx/Class.pm:${PORTSDIR}/databases/p5-DBIx-Class
+		p5-FormValidator-Simple>=0.17:${PORTSDIR}/textproc/p5-FormValidator-Simple \
+		p5-DBD-SQLite>=1.11:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBIx-Class>=0.07005:${PORTSDIR}/databases/p5-DBIx-Class
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
