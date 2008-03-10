@@ -1,3 +1,4 @@
+bin/editra
 bin/genaxmodule
 bin/helpviewer
 bin/img2png
@@ -87,6 +88,10 @@ include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_pywindows.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_radio.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_region.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_renderer.i
+include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_richtextbuffer.i
+include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_richtextctrl.i
+include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_richtexthtml.i
+include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_richtextxml.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_sashwin.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_scrolbar.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_settings.i
@@ -162,6 +167,12 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/AboutBox.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/AboutBox.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/AboutBox.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveXWrapper_Acrobat.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveXWrapper_Acrobat.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveXWrapper_Acrobat.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveXWrapper_IE.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveXWrapper_IE.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveXWrapper_IE.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveX_FlashWindow.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveX_FlashWindow.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveX_FlashWindow.pyo
@@ -171,6 +182,9 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveX_PDFWindow.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveX_PDFWindow.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/ActiveX_PDFWindow.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/AdjustChannels.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/AdjustChannels.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/AdjustChannels.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/AlphaDrawing.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/AlphaDrawing.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/AlphaDrawing.pyo
@@ -555,6 +569,7 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/PythonEvents.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/PythonEvents.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/PythonEvents.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/README.txt
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RadioBox.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RadioBox.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RadioBox.pyo
@@ -564,6 +579,9 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RawBitmapAccess.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RawBitmapAccess.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RawBitmapAccess.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/RendererNative.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/RendererNative.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/RendererNative.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RichTextCtrl.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RichTextCtrl.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RichTextCtrl.pyo
@@ -645,6 +663,7 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/TablePrint.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/TablePrint.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/TablePrint.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/TestTable.txt
 %%PYTHON_SITELIBDIR%%/wxPython/demo/TextCtrl.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/TextCtrl.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/TextCtrl.pyo
@@ -714,6 +733,7 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/XmlResourceSubclass.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/XmlResourceSubclass.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/XmlResourceSubclass.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/b
 %%PYTHON_SITELIBDIR%%/wxPython/demo/bitmaps/AG00028_.gif
 %%PYTHON_SITELIBDIR%%/wxPython/demo/bitmaps/AG00039_.gif
 %%PYTHON_SITELIBDIR%%/wxPython/demo/bitmaps/AG00178_.gif
@@ -878,6 +898,13 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/echo.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/imagemap.htm
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/imagemap.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale-src/af.po
+%%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale-src/de.po
+%%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale-src/es.po
+%%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale-src/fr.po
+%%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale-src/install
+%%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale-src/it.po
+%%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale-src/wxpydemo.po
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/af/LC_MESSAGES/wxpydemo.mo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/de/LC_MESSAGES/wxpydemo.mo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/es/LC_MESSAGES/wxpydemo.mo
@@ -889,7 +916,6 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/proclamation.txt
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/resource.wdr
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/resource_wdr.xrc
-%%PYTHON_SITELIBDIR%%/wxPython/demo/data/showTips
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/stc.h.html
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/tables.htm
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/test.htm
@@ -901,6 +927,12 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/demo.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/demo.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/demo.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget/Makefile
+%%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget/makefile.vc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget/test_dll.cpp
+%%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget/test_prog.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget/test_prog.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget/test_prog.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/encode_bitmaps.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/encode_bitmaps.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/encode_bitmaps.pyo
@@ -910,9 +942,11 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/infoframe.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/infoframe.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/infoframe.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/paper.xml
 %%PYTHON_SITELIBDIR%%/wxPython/demo/pyTree.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/pyTree.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/pyTree.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/quotes.xml
 %%PYTHON_SITELIBDIR%%/wxPython/demo/run.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/run.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/run.pyo
@@ -931,9 +965,12 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/widgetTest.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/widgetTest.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/widgetTest.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/wxpdemo.ico
 %%PYTHON_SITELIBDIR%%/wxversion.py
 %%PYTHON_SITELIBDIR%%/wxversion.pyc
 %%PYTHON_SITELIBDIR%%/wxversion.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale-src
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/it/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/it
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/fr/LC_MESSAGES

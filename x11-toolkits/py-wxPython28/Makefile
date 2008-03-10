@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wxPython
-PORTVERSION=	2.8.4.0
+PORTVERSION=	2.8.7.1
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -36,7 +36,7 @@ WX_PREMK=	yes
 DEMO_DIR=	${PYTHONPREFIX_SITELIBDIR}/wxPython/demo
 WXPORT=		gtk2
 
-CONFIGURE_ARGS +=	--enable-aui
+CONFIGURE_ARGS+=	--enable-aui
 
 post-extract:
 # only keep the scripts we need
@@ -88,7 +88,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxversion.py:${PORTSDIR}/x11-toolkits/py-wxPy
 PYDISTUTILS_BUILDARGS+=	\
 			NO_HEADERS=1 \
 			NO_SCRIPTS=1 \
-			INSTALL_MULTIVERSION=0
+			INSTALL_MULTIVERSION=1
 
 . if defined(WITH_WXPYTHON_UNICODE)
 WX_UNICODE=	yes
@@ -104,9 +104,8 @@ PYDISTUTILS_BUILDARGS+=	\
 WX_PYTHON_DIR=wx-${WX_VERSION}-${WXPORT}-ansi
 . endif # defined(WITH_WXPYTHON_UNICODE)
 
-# plist substitutions and library dirs
+# plist substitutions
 PLIST_SUB+=	WX_PYTHON_DIR=${WX_PYTHON_DIR}
-USE_LDCONFIG=	%%PREFIX%%/%%PYTHON_SITELIBDIR%%/%%WX_PYTHON_DIR%%/wx/
 
 .endif # !defined(WITH_COMMON_ONLY)
 
@@ -120,25 +119,7 @@ PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS} ${PYDISTUTILS_BUILDARGS}
 do-install:
 # DEMO
 	@${MKDIR} ${DEMO_DIR}
-.for glob in *.py *.pyc *.pyo
-	@${INSTALL_DATA} ${WRKSRC}/demo/${glob} ${DEMO_DIR}
-.endfor
-.for dir in bitmaps bmp_source data
-	@${MKDIR} ${DEMO_DIR}/${dir}
-# Be careful of locale subdirectories here
-. for glob in *.*
-	@${INSTALL_DATA} ${WRKSRC}/demo/${dir}/${glob} ${DEMO_DIR}/${dir}
-. endfor
-.endfor
-# Install this one explicitly as it's the only one without an extension that's not a directory
-	@${INSTALL_DATA} ${WRKSRC}/demo/data/showTips ${DEMO_DIR}/data
-# Install the locale directory structure
-	@${MKDIR} ${DEMO_DIR}/data/locale
-.for dir in af de es fr it
-	@${MKDIR} ${DEMO_DIR}/data/locale/${dir}
-	@${MKDIR} ${DEMO_DIR}/data/locale/${dir}/LC_MESSAGES
-	@${INSTALL_DATA} ${WRKSRC}/demo/data/locale/${dir}/LC_MESSAGES/wxpydemo.mo ${DEMO_DIR}/data/locale/${dir}/LC_MESSAGES
-.endfor
+	@cd ${WRKSRC}/demo && ${COPYTREE_SHARE} . ${DEMO_DIR}
 # header files
 	@${MKDIR} ${PREFIX}/include/wx-${WX_VERSION}/wx/wxPython/i_files
 .for glob in *.i *.py
@@ -161,6 +142,8 @@ post-install:
 # fix installation permissions
 	${CHMOD} -R a+rX \
 		${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/${WX_PYTHON_DIR}
+# Remove unwanted .egg-info
+	${RM} ${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wxPython_common-*.egg-info
 .endif
 ##
 # wxversion wxPython available list

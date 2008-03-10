@@ -1,10 +1,10 @@
---- setup.py.orig	Sat Apr 16 18:41:06 2005
-+++ setup.py	Sat Oct  1 21:43:17 2005
-@@ -764,6 +764,7 @@
-     EXTRA_PATH = None
-        
+--- ./setup.py.orig	Mon Nov 26 19:05:40 2007
++++ ./setup.py	Thu Dec 20 21:05:46 2007
+@@ -776,6 +776,7 @@
+ 
+     wxpExtensions.append(ext)
  
 +EXTRA_PATH = getExtraPath(addOpts=EP_ADD_OPTS)
  
- #----------------------------------------------------------------------
- # Do the Setup/Build/Install/Whatever
+ 
+     
