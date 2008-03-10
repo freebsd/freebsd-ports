@@ -6,15 +6,10 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.7.19
-PORTREVISION=	1
+PORTVERSION=	2.3.3
 CATEGORIES=	security net
-MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
-		ftp://ftp.gnutls.org/pub/gnutls/ \
-		${MASTER_SITE_GNUPG} \
-		http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
-		ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/
-MASTER_SITE_SUBDIR=	alpha/gnutls
+MASTER_SITES=	http://alpha.gnu.org/gnu/gnutls/ \
+		ftp://alpha.gnu.org/gnu/gnutls/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	novel@FreeBSD.org
@@ -27,6 +22,7 @@ CONFLICTS=	gnutls-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
+USE_GMAKE=	yes
 USE_GNOME=	pkgconfig ltverhack
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
@@ -37,8 +33,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-included-lzo
 MANCOMPRESSED=	no
-
-IGNORE=		is obsolete
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.9)

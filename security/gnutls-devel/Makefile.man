@@ -25,11 +25,6 @@ MAN3=	\
 	gnutls_auth_client_get_type.3 \
 	gnutls_auth_get_type.3 \
 	gnutls_auth_server_get_type.3 \
-	gnutls_authz_enable.3 \
-	gnutls_authz_send_saml_assertion.3 \
-	gnutls_authz_send_saml_assertion_url.3 \
-	gnutls_authz_send_x509_attr_cert.3 \
-	gnutls_authz_send_x509_attr_cert_url.3 \
 	gnutls_bye.3 \
 	gnutls_certificate_activation_time_peers.3 \
 	gnutls_certificate_allocate_credentials.3 \
@@ -41,7 +36,12 @@ MAN3=	\
 	gnutls_certificate_free_credentials.3 \
 	gnutls_certificate_free_crls.3 \
 	gnutls_certificate_free_keys.3 \
+	gnutls_certificate_get_openpgp_keyring.3 \
+	gnutls_certificate_set_openpgp_key_mem2.3 \
+	gnutls_certificate_set_openpgp_key_file2.3 \
 	gnutls_certificate_get_ours.3 \
+	gnutls_certificate_get_x509_cas.3 \
+	gnutls_certificate_get_x509_crls.3 \
 	gnutls_certificate_send_x509_rdn_sequence.3 \
 	gnutls_certificate_server_set_request.3 \
 	gnutls_certificate_server_set_retrieve_function.3 \
@@ -51,8 +51,6 @@ MAN3=	\
 	gnutls_certificate_set_openpgp_key_mem.3 \
 	gnutls_certificate_set_openpgp_keyring_file.3 \
 	gnutls_certificate_set_openpgp_keyring_mem.3 \
-	gnutls_certificate_set_openpgp_keyserver.3 \
-	gnutls_certificate_set_openpgp_trustdb.3 \
 	gnutls_certificate_set_params_function.3 \
 	gnutls_certificate_set_rsa_export_params.3 \
 	gnutls_certificate_set_verify_flags.3 \
@@ -68,6 +66,7 @@ MAN3=	\
 	gnutls_certificate_set_x509_trust_file.3 \
 	gnutls_certificate_set_x509_trust_mem.3 \
 	gnutls_certificate_type_get.3 \
+	gnutls_certificate_type_get_id.3 \
 	gnutls_certificate_type_get_name.3 \
 	gnutls_certificate_type_list.3 \
 	gnutls_certificate_type_set_priority.3 \
@@ -75,6 +74,7 @@ MAN3=	\
 	gnutls_certificate_verify_peers2.3 \
 	gnutls_check_version.3 \
 	gnutls_cipher_get.3 \
+	gnutls_cipher_get_id.3 \
 	gnutls_cipher_get_key_size.3 \
 	gnutls_cipher_get_name.3 \
 	gnutls_cipher_list.3 \
@@ -82,6 +82,7 @@ MAN3=	\
 	gnutls_cipher_suite_get_name.3 \
 	gnutls_cipher_suite_info.3 \
 	gnutls_compression_get.3 \
+	gnutls_compression_get_id.3 \
 	gnutls_compression_get_name.3 \
 	gnutls_compression_list.3 \
 	gnutls_compression_set_priority.3 \
@@ -125,7 +126,9 @@ MAN3=	\
 	gnutls_handshake_get_last_in.3 \
 	gnutls_handshake_get_last_out.3 \
 	gnutls_handshake_set_max_packet_length.3 \
+	gnutls_handshake_set_post_client_hello_function.3 \
 	gnutls_handshake_set_private_extensions.3 \
+	gnutls_hex2bin.3 \
 	gnutls_hex_decode.3 \
 	gnutls_hex_encode.3 \
 	gnutls_ia_allocate_client_credentials.3 \
@@ -150,45 +153,81 @@ MAN3=	\
 	gnutls_ia_verify_endphase.3 \
 	gnutls_init.3 \
 	gnutls_kx_get.3 \
+	gnutls_kx_get_id.3 \
 	gnutls_kx_get_name.3 \
 	gnutls_kx_list.3 \
 	gnutls_kx_set_priority.3 \
 	gnutls_mac_get.3 \
+	gnutls_mac_get_id.3 \
+	gnutls_mac_get_key_size.3 \
 	gnutls_mac_get_name.3 \
 	gnutls_mac_list.3 \
 	gnutls_mac_set_priority.3 \
 	gnutls_malloc.3 \
-	gnutls_openpgp_key_check_hostname.3 \
-	gnutls_openpgp_key_deinit.3 \
-	gnutls_openpgp_key_export.3 \
-	gnutls_openpgp_key_get_creation_time.3 \
-	gnutls_openpgp_key_get_expiration_time.3 \
-	gnutls_openpgp_key_get_fingerprint.3 \
-	gnutls_openpgp_key_get_id.3 \
-	gnutls_openpgp_key_get_key_usage.3 \
-	gnutls_openpgp_key_get_name.3 \
-	gnutls_openpgp_key_get_pk_algorithm.3 \
-	gnutls_openpgp_key_get_version.3 \
-	gnutls_openpgp_key_import.3 \
-	gnutls_openpgp_key_init.3 \
-	gnutls_openpgp_key_to_xml.3 \
-	gnutls_openpgp_key_verify_ring.3 \
-	gnutls_openpgp_key_verify_self.3 \
-	gnutls_openpgp_key_verify_trustdb.3 \
-	gnutls_openpgp_keyring_check_id.3 \
-	gnutls_openpgp_keyring_deinit.3 \
-	gnutls_openpgp_keyring_import.3 \
+	gnutls_openpgp_crt_init.3 \
+	gnutls_openpgp_crt_deinit.3 \
+	gnutls_openpgp_crt_import.3 \
+	gnutls_openpgp_crt_export.3 \
+	gnutls_openpgp_crt_get_fingerprint.3 \
+	gnutls_openpgp_crt_get_name.3 \
+	gnutls_openpgp_crt_get_pk_algorithm.3 \
+	gnutls_openpgp_crt_get_version.3 \
+	gnutls_openpgp_crt_get_creation_time.3 \
+	gnutls_openpgp_crt_get_expiration_time.3 \
+	gnutls_openpgp_crt_check_hostname.3 \
+	gnutls_openpgp_crt_get_key_usage.3 \
+	gnutls_openpgp_crt_verify_ring.3 \
+	gnutls_openpgp_crt_verify_self.3 \
+	gnutls_openpgp_crt_get_key_id.3 \
+	gnutls_openpgp_crt_get_revoked_status.3 \
+	gnutls_openpgp_crt_get_subkey_count.3 \
+	gnutls_openpgp_crt_get_subkey_revoked_status.3 \
+	gnutls_openpgp_crt_get_subkey_pk_algorithm.3 \
+	gnutls_openpgp_crt_get_subkey_creation_time.3 \
+	gnutls_openpgp_crt_get_subkey_expiration_time.3 \
+	gnutls_openpgp_crt_get_subkey_id.3 \
+	gnutls_openpgp_crt_get_subkey_idx.3 \
+	gnutls_openpgp_crt_get_subkey_usage.3 \
+	gnutls_openpgp_crt_get_pk_rsa_raw.3 \
+	gnutls_openpgp_crt_get_pk_dsa_raw.3 \
+	gnutls_openpgp_crt_get_subkey_pk_rsa_raw.3 \
+	gnutls_openpgp_crt_get_subkey_pk_dsa_raw.3 \
+	gnutls_openpgp_crt_get_preferred_key_id.3 \
+	gnutls_openpgp_crt_set_preferred_key_id.3 \
+	gnutls_openpgp_crt_get_auth_subkey.3 \
 	gnutls_openpgp_keyring_init.3 \
-	gnutls_openpgp_privkey_deinit.3 \
-	gnutls_openpgp_privkey_get_pk_algorithm.3 \
-	gnutls_openpgp_privkey_import.3 \
+	gnutls_openpgp_keyring_deinit.3 \
+	gnutls_openpgp_keyring_check_id.3 \
+	gnutls_openpgp_keyring_import.3 \
+	gnutls_openpgp_keyring_get_crt_count.3 \
+	gnutls_openpgp_keyring_get_crt.3 \
+	gnutls_openpgp_crt_print.3 \
 	gnutls_openpgp_privkey_init.3 \
+	gnutls_openpgp_privkey_deinit.3 \
+	gnutls_openpgp_privkey_import.3 \
+	gnutls_openpgp_privkey_get_pk_algorithm.3 \
 	gnutls_openpgp_privkey_sign_hash.3 \
-	gnutls_openpgp_send_key.3 \
+	gnutls_openpgp_privkey_export.3 \
+	gnutls_openpgp_privkey_get_revoked_status.3 \
+	gnutls_openpgp_privkey_get_fingerprint.3 \
+	gnutls_openpgp_privkey_get_key_id.3 \
+	gnutls_openpgp_privkey_get_subkey_count.3 \
+	gnutls_openpgp_privkey_get_subkey_idx.3 \
+	gnutls_openpgp_privkey_get_subkey_revoked_status.3 \
+	gnutls_openpgp_privkey_get_subkey_pk_algorithm.3 \
+	gnutls_openpgp_privkey_get_subkey_creation_time.3 \
+	gnutls_openpgp_privkey_get_subkey_expiration_time.3 \
+	gnutls_openpgp_privkey_get_subkey_id.3 \
+	gnutls_openpgp_privkey_export_rsa_raw.3 \
+	gnutls_openpgp_privkey_export_dsa_raw.3 \
+	gnutls_openpgp_privkey_export_subkey_rsa_raw.3 \
+	gnutls_openpgp_privkey_export_subkey_dsa_raw.3 \
+	gnutls_openpgp_privkey_get_preferred_key_id.3 \
+	gnutls_openpgp_privkey_set_preferred_key_id.3 \
+	gnutls_openpgp_send_cert.3 \
 	gnutls_openpgp_set_recv_key_function.3 \
-	gnutls_openpgp_trustdb_deinit.3 \
-	gnutls_openpgp_trustdb_import_file.3 \
-	gnutls_openpgp_trustdb_init.3 \
+	gnutls_oprfi_enable_client.3 \
+	gnutls_oprfi_enable_server.3 \
 	gnutls_pem_base64_decode.3 \
 	gnutls_pem_base64_decode_alloc.3 \
 	gnutls_pem_base64_encode.3 \
@@ -233,6 +272,11 @@ MAN3=	\
 	gnutls_pkcs7_set_crt_raw.3 \
 	gnutls_prf.3 \
 	gnutls_prf_raw.3 \
+	gnutls_priority_deinit.3 \
+	gnutls_priority_init.3 \
+	gnutls_priority_set.3 \
+	gnutls_priority_set_direct.3 \
+	gnutls_protocol_get_id.3 \
 	gnutls_protocol_get_name.3 \
 	gnutls_protocol_get_version.3 \
 	gnutls_protocol_list.3 \
@@ -250,6 +294,7 @@ MAN3=	\
 	gnutls_psk_set_server_dh_params.3 \
 	gnutls_psk_set_server_params_function.3 \
 	gnutls_record_check_pending.3 \
+	gnutls_record_disable_padding.3 \
 	gnutls_record_get_direction.3 \
 	gnutls_record_get_max_size.3 \
 	gnutls_record_recv.3 \
@@ -268,6 +313,7 @@ MAN3=	\
 	gnutls_rsa_params_init.3 \
 	gnutls_server_name_get.3 \
 	gnutls_server_name_set.3 \
+	gnutls_session_enable_compatibility_mode.3 \
 	gnutls_session_get_client_random.3 \
 	gnutls_session_get_data.3 \
 	gnutls_session_get_data2.3 \
@@ -307,6 +353,10 @@ MAN3=	\
 	gnutls_transport_set_ptr2.3 \
 	gnutls_transport_set_pull_function.3 \
 	gnutls_transport_set_push_function.3 \
+	gnutls_x509_dn_deinit.3 \
+	gnutls_x509_dn_export.3 \
+	gnutls_x509_dn_init.3 \
+	gnutls_x509_dn_import.3 \
 	gnutls_x509_crl_check_issuer.3 \
 	gnutls_x509_crl_deinit.3 \
 	gnutls_x509_crl_export.3 \
@@ -384,6 +434,7 @@ MAN3=	\
 	gnutls_x509_crl_get_signature.3 \
 	gnutls_x509_crt_get_signature_algorithm.3 \
 	gnutls_x509_crt_get_subject_alt_name.3 \
+	gnutls_x509_crt_get_subject_alt_name2.3 \
 	gnutls_x509_crt_get_subject_key_id.3 \
 	gnutls_x509_crt_get_version.3 \
 	gnutls_x509_crt_import.3 \
@@ -407,7 +458,6 @@ MAN3=	\
 	gnutls_x509_crt_set_subject_alternative_name.3 \
 	gnutls_x509_crt_set_subject_key_id.3 \
 	gnutls_x509_crt_sign2.3 \
-	gnutls_x509_crt_to_xml.3 \
 	gnutls_x509_crt_verify.3 \
 	gnutls_x509_dn_oid_known.3 \
 	gnutls_x509_privkey_cpy.3 \
