@@ -16,7 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl5 interface to process and/or create PGP email
 
 RUN_DEPENDS=	p5-GnuPG-Interface>=0:${PORTSDIR}/security/p5-GnuPG-Interface \
-		p5-MIME-tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
 		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 
 PERL_CONFIGURE=	yes
