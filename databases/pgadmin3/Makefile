@@ -34,7 +34,7 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 503105 || ${OSVERSION} < 600014
+.if ${OSVERSION} < 503105 || (${OSVERSION} >= 600000 && ${OSVERSION} < 600014)
 IGNORE=		can not be built. Your system has broken vswprintf(3) function
 .endif
 
