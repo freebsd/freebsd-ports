@@ -7,7 +7,7 @@
 
 PORTNAME=	atr3d
 PORTVERSION=	0.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.avoidtheroid.com/pub/${PORTNAME}/
 DISTNAME=	${PORTNAME}_source_${PORTVERSION}
@@ -16,17 +16,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	3D asteroids-like multiplayer game
 
-LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
-		glut.4:${PORTSDIR}/graphics/libglut \
-		alut.1:${PORTSDIR}/audio/freealut
+OPTIONS=	SOUND	"Enable sound"	ON
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GL=		yes
+USE_GL=		glut glu
+USE_XORG=	xmu xi x11
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -37,6 +35,16 @@ USE_AUTOTOOLS=	automake:19 autoconf:261
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
+
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_SOUND)
+LIB_DEPENDS+=	alut.1:${PORTSDIR}/audio/freealut
+CONFIGURE_ARGS+=	--enable-sound
+.else
+CONFIGURE_ARGS+=	--disable-sound
+.endif
 
 pre-patch:
 	@${PERL} -pi.orig -e 's|^aclocal|${ACLOCAL}|; \
@@ -55,4 +63,4 @@ post-configure:
 		's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
