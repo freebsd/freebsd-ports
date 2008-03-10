@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	manslide
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.3
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://www.mandrivalinux-online.eu/manslide/
 
 MAINTAINER=	trebestie@gmail.com
 COMMENT=	Utility to simply create your own slideshow
 
-RUN_DEPENDS=	sox>=13.0:${PORTSDIR}/audio/sox \
+RUN_DEPENDS=	sox>=14.0:${PORTSDIR}/audio/sox \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		mjpegtools>1.8.9:${PORTSDIR}/multimedia/mjpegtools \
