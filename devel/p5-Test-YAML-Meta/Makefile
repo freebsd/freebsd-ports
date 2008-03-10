@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lippemail@gmail.com
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Validation of the META.yml file in a distribution
 
 BUILD_DEPENDS+=	${SITE_PERL}/Test/YAML/Valid.pm:${PORTSDIR}/devel/p5-Test-YAML-Valid \

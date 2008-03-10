@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://0xcc.net/ttyrec/
 
-MAINTAINER=	lippemail@gmail.com
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Tty recorder
 
 PLIST_FILES=	bin/ttyplay \

@@ -11,7 +11,7 @@ CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN/../by-authors/id/K/KW/KWILLIAMS/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lippemail@gmail.com
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Information about the currently running perl
 
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools

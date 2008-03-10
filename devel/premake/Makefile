@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	lippemail@gmail.com
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Writes build scripts
 
 WRKSRC=		${WRKDIR}/Premake-${PORTVERSION}

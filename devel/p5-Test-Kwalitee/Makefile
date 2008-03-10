@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lippemail@gmail.com
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Test the Kwalitee of a distribution before you release it
 
 BUILD_DEPENDS+=	${SITE_PERL}/Module/CPANTS/Analyse.pm:${PORTSDIR}/devel/p5-Module-CPANTS-Analyse \

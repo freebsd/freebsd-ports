@@ -10,7 +10,7 @@ PORTVERSION=	2.3
 CATEGORIES=	devel java python
 MASTER_SITES=	SF/jepp
 
-MAINTAINER=	lippemail@gmail.com
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Java Embedded Python
 
 HAS_CONFIGURE=	yes

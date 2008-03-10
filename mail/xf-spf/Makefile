@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/
 
-MAINTAINER=	lippemail@gmail.com
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	SPF checker for Qmail's SMTPEXTFORK patch
 
 LIB_DEPENDS+=	spf2.2:${PORTSDIR}/mail/libspf2

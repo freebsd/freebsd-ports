@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	lippemail@gmail.com
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Perl implementation that hides a valuable port on your server
 
 NO_WRKSUBDIR=	yes
