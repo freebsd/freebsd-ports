@@ -7,7 +7,7 @@
 
 PORTNAME=	Archive-Any
 PORTVERSION=	0.09.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,10 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Single interface to deal with file archives
 
-BUILD_DEPENDS=	p5-Test-Perl-Critic>=0:${PORTSDIR}/textproc/p5-Test-Perl-Critic \
-		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
-		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 RUN_DEPENDS=	p5-Archive-Zip>=1.07:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-File-MMagic>=1.27:${PORTSDIR}/devel/p5-File-MMagic \
 		p5-MIME-Types>=1.16:${PORTSDIR}/mail/p5-MIME-Types \
