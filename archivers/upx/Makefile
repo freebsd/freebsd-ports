@@ -6,23 +6,30 @@
 #
 
 PORTNAME=	upx
-PORTVERSION=	3.01
+PORTVERSION=	3.02
 CATEGORIES=	archivers
-MASTER_SITES=	http://upx.sourceforge.net/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=	http://upx.sourceforge.net/download/\
+		SFE/sevenzip:lzma
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}\
+		7z${LZMA_VER:S/.//g}${EXTRACT_SUFX}:lzma
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The Ultimate Packer for eXecutables
 
 LIB_DEPENDS=	ucl.1:${PORTSDIR}/archivers/ucl
 
+LZMA_VER=	4.57
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-MAKE_ENV=	UPX_UCLDIR=${LOCALBASE} target=freebsd
+MAKE_ENV=	UPX_UCLDIR=${LOCALBASE}\
+		UPX_LZMADIR=${WRKDIR}\
+		target=freebsd
 NOT_FOR_ARCHS=	sparc64
 
-PORTDOCS=	BUGS COPYING LICENSE NEWS README THANKS
+PORTDOCS=	BUGS COPYING LICENSE NEWS PROJECTS README\
+		README.1ST README.SRC THANKS TODO
 MAN1=		upx.1
 PLIST_FILES=	bin/upx
 
@@ -31,9 +38,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/doc/upx.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@for i in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${DOCSDIR}; \
-	done
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
