@@ -28,14 +28,16 @@ PORTDOCS=	AUTHORS FAQ
 OPTIONS=	MOTIF "Motif support" off \
 		NLS "NLS support" on
 
-.if defined(WITH_MOTIF)
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_MOTIF)
 LIB_DEPENDS+=	plot:${PORTSDIR}/graphics/plotutils \
 		Xbae:${PORTSDIR}/x11-toolkits/xbae \
 		XmHTML:${PORTSDIR}/x11-toolkits/xmhtml
 USE_MOTIF=	yes
 CONFIGURE_ARGS+=	--with-motif
 .else
-USE_XLIB=	yes
+USE_XORG=	xt ice sm
 CONFIGURE_ARGS+=	--without-motif
 .endif
 
@@ -66,4 +68,4 @@ pre-build:
 		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
