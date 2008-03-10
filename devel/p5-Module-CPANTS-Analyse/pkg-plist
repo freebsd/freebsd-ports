@@ -1,17 +1,18 @@
 bin/cpants_lint.pl
-%%SITE_PERL%%/Module/CPANTS/Kwalitee.pm
 %%SITE_PERL%%/Module/CPANTS/Analyse.pm
-%%SITE_PERL%%/Module/CPANTS/Kwalitee/Pod.pm
-%%SITE_PERL%%/Module/CPANTS/Kwalitee/Manifest.pm
-%%SITE_PERL%%/Module/CPANTS/Kwalitee/Files.pm
-%%SITE_PERL%%/Module/CPANTS/Kwalitee/Uses.pm
-%%SITE_PERL%%/Module/CPANTS/Kwalitee/MetaYML.pm
-%%SITE_PERL%%/Module/CPANTS/Kwalitee/License.pm
-%%SITE_PERL%%/Module/CPANTS/Kwalitee/Prereq.pm
-%%SITE_PERL%%/Module/CPANTS/Kwalitee/CpantsErrors.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/BrokenInstaller.pm
-%%SITE_PERL%%/Module/CPANTS/Kwalitee/FindModules.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee/CpantsErrors.pm
 %%SITE_PERL%%/Module/CPANTS/Kwalitee/Distname.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee/Files.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee/FindModules.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee/License.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee/Manifest.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee/MetaYML.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee/NeedsCompiler.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee/Pod.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee/Prereq.pm
+%%SITE_PERL%%/Module/CPANTS/Kwalitee/Uses.pm
 @dirrmtry %%SITE_PERL%%/Module/CPANTS/Kwalitee
 @dirrmtry %%SITE_PERL%%/Module/CPANTS
 @dirrmtry %%SITE_PERL%%/Module
