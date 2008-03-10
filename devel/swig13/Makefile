@@ -30,8 +30,10 @@ PLIST_SUB+=	VER="${VER}"
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's/SKIP_CHICKEN=$$/&"1"/' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|$$RUBY |${RUBY} |' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's/SKIP_CHICKEN=$$/&"1"/; \
+		s|$$RUBY |${RUBY} |; \
+		s|^PHP4CONFIG=.*$$|PHP4CONFIG=php-config|; \
+		' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
 		${WRKSRC}/Lib/lua/luarun.swg
 
