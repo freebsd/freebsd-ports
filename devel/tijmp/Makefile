@@ -1,12 +1,12 @@
-# New ports collection makefile for:	tijmp
-# Date created:				8 October 2007
-# Whom:					Ronald Klop <ronald@echteman.nl>
+# New ports collection makefile for: tijmp
+# Date created:		8 October 2007
+# Whom:			Ronald Klop <ronald@echteman.nl>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	tijmp
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.khelekore.org/jmp/tijmp/ \
 		http://www.klop.ws/~ronald/software-mirrors/
@@ -40,7 +40,7 @@ CFLAGS?=	-O3
 .endif
 
 post-extract::
-	@${SED} -i "" -e 's|share/java|${JAVAJARDIR:S,^${PREFIX}/,,}|' ${WRKSRC}/src/tijmp.c
+	@${SED} -i "" -e 's|/../share/java|${JAVAJARDIR}|' ${WRKSRC}/src/tijmp.c
 
 do-install::
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
