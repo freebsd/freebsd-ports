@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PAR-Packer
-PORTVERSION=	0.97.7
+PORTVERSION=	0.97.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PAR
@@ -19,7 +19,7 @@ COMMENT=	PAR Packager
 BUILD_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Compress-Zlib>=1.30:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-Getopt-ArgvFile>=1.07:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
-		p5-Module-ScanDeps>=0.81:${PORTSDIR}/devel/p5-Module-ScanDeps \
+		p5-Module-ScanDeps>=0.78:${PORTSDIR}/devel/p5-Module-ScanDeps \
 		${SITE_PERL}/Module/Signature.pm:${PORTSDIR}/security/p5-Module-Signature \
 		p5-PAR-Dist>=0.22:${PORTSDIR}/devel/p5-PAR-Dist \
 		p5-PAR>=0.97.7:${PORTSDIR}/devel/p5-PAR \
