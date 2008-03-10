@@ -3,42 +3,8 @@ bin/pdfedit
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.GPL
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/appendix.html
-%%PORTDOCS%%%%DOCSDIR%%/design/design_doc.html
-%%PORTDOCS%%%%DOCSDIR%%/design/images/compositepattern.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/confparser.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/decaratorpattern.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/delinearizator.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/facadepattern.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/factorymethodpattern.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/iterator.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/iteratorpattern.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/kernel.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/layers.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/objectadapter.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/observer_classes.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/observer_cooperation.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/page_tree.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/parser.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/rulesmanager.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/scripting.png
-%%PORTDOCS%%%%DOCSDIR%%/design/images/xpdf_streams.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/boost_streams_pdfedit.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/cannotation.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/ccontentstream_operator.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/cobjectsexample.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/cpdf_facade.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/cxref.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/iproperty.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/modecontroller.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/pdfoperator.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/pdfoperatorexample.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/pdfoperatoriterator.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/pdfoperators.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/progressobserver.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/stateupdater.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/xpdf_streams_simple.png
-%%PORTDOCS%%%%DOCSDIR%%/design/kernel/images/xref_layer_diagram.png
+%%PORTDOCS%%%%DOCSDIR%%/README-Tango
+%%PORTDOCS%%%%DOCSDIR%%/README.cygwin
 %%PORTDOCS%%%%DOCSDIR%%/gui/images/command_options_cmdedit.png
 %%PORTDOCS%%%%DOCSDIR%%/gui/images/options_commandline.png
 %%PORTDOCS%%%%DOCSDIR%%/gui/images/options_editor.png
@@ -103,7 +69,6 @@ bin/pdfedit
 %%PORTDOCS%%%%DOCSDIR%%/images/qsdateed.png
 %%PORTDOCS%%%%DOCSDIR%%/images/qspinbox-w.png
 %%PORTDOCS%%%%DOCSDIR%%/images/qstimeed.png
-%%PORTDOCS%%%%DOCSDIR%%/user_doc.html
 %%DATADIR%%/callback.qs
 %%DATADIR%%/delinearize.qs
 %%DATADIR%%/dialog_lib.qs
@@ -129,6 +94,67 @@ bin/pdfedit
 %%DATADIR%%/help/qsa-inputdialog.html
 %%DATADIR%%/help/qsa-util.html
 %%DATADIR%%/help/scripting.html
+%%DATADIR%%/icon/Tango/about.png
+%%DATADIR%%/icon/Tango/add_text.png
+%%DATADIR%%/icon/Tango/close.png
+%%DATADIR%%/icon/Tango/close_widget.png
+%%DATADIR%%/icon/Tango/delin.png
+%%DATADIR%%/icon/Tango/draw_arrow.png
+%%DATADIR%%/icon/Tango/draw_line.png
+%%DATADIR%%/icon/Tango/draw_rect.png
+%%DATADIR%%/icon/Tango/expand.png
+%%DATADIR%%/icon/Tango/first.png
+%%DATADIR%%/icon/Tango/help.png
+%%DATADIR%%/icon/Tango/hide_cmdline.png
+%%DATADIR%%/icon/Tango/hide_propedit.png
+%%DATADIR%%/icon/Tango/hide_statusbar.png
+%%DATADIR%%/icon/Tango/hide_tree.png
+%%DATADIR%%/icon/Tango/insert_pages.png
+%%DATADIR%%/icon/Tango/item_add.png
+%%DATADIR%%/icon/Tango/item_delete.png
+%%DATADIR%%/icon/Tango/item_edit.png
+%%DATADIR%%/icon/Tango/item_type.png
+%%DATADIR%%/icon/Tango/last.png
+%%DATADIR%%/icon/Tango/load.png
+%%DATADIR%%/icon/Tango/new.png
+%%DATADIR%%/icon/Tango/new_window.png
+%%DATADIR%%/icon/Tango/next.png
+%%DATADIR%%/icon/Tango/operator_dashpattern.png
+%%DATADIR%%/icon/Tango/operator_editfont.png
+%%DATADIR%%/icon/Tango/operator_linewidth.png
+%%DATADIR%%/icon/Tango/operator_setcolor.png
+%%DATADIR%%/icon/Tango/operator_setrelpos.png
+%%DATADIR%%/icon/Tango/operator_setrelposop.png
+%%DATADIR%%/icon/Tango/options.png
+%%DATADIR%%/icon/Tango/page_add_font.png
+%%DATADIR%%/icon/Tango/page_delete.png
+%%DATADIR%%/icon/Tango/page_edit_metrics.png
+%%DATADIR%%/icon/Tango/page_move_down.png
+%%DATADIR%%/icon/Tango/page_move_up.png
+%%DATADIR%%/icon/Tango/page_rotate_-90.png
+%%DATADIR%%/icon/Tango/page_rotate_90.png
+%%DATADIR%%/icon/Tango/page_settm.png
+%%DATADIR%%/icon/Tango/page_text.png
+%%DATADIR%%/icon/Tango/pdftoxml.png
+%%DATADIR%%/icon/Tango/prev.png
+%%DATADIR%%/icon/Tango/reload.png
+%%DATADIR%%/icon/Tango/save.png
+%%DATADIR%%/icon/Tango/save_page_as_image.png
+%%DATADIR%%/icon/Tango/searchText.png
+%%DATADIR%%/icon/Tango/selectmode_all.png
+%%DATADIR%%/icon/Tango/selectmode_all_gfx.png
+%%DATADIR%%/icon/Tango/selectmode_allobjects.png
+%%DATADIR%%/icon/Tango/selectmode_hilite.png
+%%DATADIR%%/icon/Tango/selectmode_strike.png
+%%DATADIR%%/icon/Tango/selectmode_text.png
+%%DATADIR%%/icon/Tango/stream_mode_all.png
+%%DATADIR%%/icon/Tango/stream_mode_font.png
+%%DATADIR%%/icon/Tango/stream_mode_gfx.png
+%%DATADIR%%/icon/Tango/stream_mode_text.png
+%%DATADIR%%/icon/Tango/string_representation.png
+%%DATADIR%%/icon/Tango/tree_childs.png
+%%DATADIR%%/icon/Tango/zoom_in.png
+%%DATADIR%%/icon/Tango/zoom_out.png
 %%DATADIR%%/icon/about.png
 %%DATADIR%%/icon/add_text.png
 %%DATADIR%%/icon/close.png
@@ -279,6 +305,7 @@ bin/pdfedit
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%/icon/hicolor
+@dirrm %%DATADIR%%/icon/Tango
 @dirrm %%DATADIR%%/icon
 @dirrm %%DATADIR%%/help/images
 @dirrm %%DATADIR%%/help/cs
@@ -289,8 +316,4 @@ bin/pdfedit
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/gui/menuAndToolbarsFun
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/gui/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/gui
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/design/kernel/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/design/kernel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/design/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/design
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,14 @@
+--- ./configure.orig	2008-02-24 15:59:23.000000000 -0300
++++ ./configure	2008-03-10 13:27:12.000000000 -0300
+@@ -5141,11 +5141,6 @@
+                   done
+ 
+             fi
+-                        if test "x$link_iostreams" != "xyes"; then
+-                                { { echo "$as_me:$LINENO: error: Could not link against $ax_lib !" >&5
+-echo "$as_me: error: Could not link against $ax_lib !" >&2;}
+-   { (exit 1); exit 1; }; }
+-                        fi
+                 fi
+ 
+                 CPPFLAGS="$CPPFLAGS_SAVED"
