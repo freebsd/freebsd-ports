@@ -7,7 +7,7 @@
 
 PORTNAME=	ayam
 PORTVERSION=	1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
@@ -19,8 +19,8 @@ LIB_DEPENDS=	aqsis.1:${PORTSDIR}/graphics/aqsis \
 		tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_XORG=	xmu xext x11
 USE_GL=		yes
-USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	Makefile.shared
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
