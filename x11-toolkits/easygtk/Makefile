@@ -7,7 +7,7 @@
 
 PORTNAME=	easygtk
 PORTVERSION=	1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sobomax
@@ -21,7 +21,6 @@ EXTRACT_CMD=	${CAT}	# not quite `extract', but who cares? ;)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
 USE_LDCONFIG=	yes
 MAKE_ENV=	MKDIR="${MKDIR}" \
