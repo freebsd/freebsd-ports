@@ -1,0 +1,29 @@
+--- ./src/Makefile.in.orig	Tue Sep 18 15:18:36 2007
++++ ./src/Makefile.in	Wed Sep 26 21:04:51 2007
+@@ -617,7 +617,7 @@
+ KDE_MT_LDFLAGS = @KDE_MT_LDFLAGS@
+ KDE_MT_LIBS = @KDE_MT_LIBS@
+ KDE_XSL_STYLESHEET = @KDE_XSL_STYLESHEET@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = -v @LDFLAGS@
+ LIBCOMPAT = @LIBCOMPAT@
+ LIBCRYPT = @LIBCRYPT@
+ LIBDL = @LIBDL@
+@@ -785,7 +785,7 @@
+ LOKIDIR_SRC = $(top_srcdir)/ext/loki/loki-0.1.6/src
+ AM_CPPFLAGS = -I$(top_srcdir)/ext/otl -I$(LOKIDIR_INC) $(KDE_INCLUDES) \
+ 	$(QT_INCLUDES) $(LTDLINCL) $(PCRE_CFLAGS) \
+-	-DDEFAULT_PLUGIN_DIR=\"$(libdir)\" \
++	-DDEFAULT_PLUGIN_DIR=\"$(docdir)\" \
+ 	-DTOVERSION=\"$(PACKAGE_VERSION)\" $(ORACLE_CXXFLAGS) \
+ 	$(QSCINTILLA_CXXFLAGS)
+ AM_LDFLAGS = $(PCRE_LIBS) \
+@@ -809,7 +809,7 @@
+ 
+ # fix for annoying automake naming problems.
+ tora_CXXFLAGS = $(AM_CXXFLAGS)
+-tora_LDADD = $(ORACLE_LIBS) $(@TORA_LINK_OTHERS@)
++tora_LDADD = $(ORACLE_LIBS) $(@TORA_LINK_OTHERS@) $(LIBCOMPAT)
+ @HAVE_ORACLE_TRUE@EXTRA_ORACLE_MONO_SOURCE = tooracleconnection.cpp \
+ @HAVE_ORACLE_TRUE@	tooracleextract.cpp \
+ @HAVE_ORACLE_TRUE@	tooraclesettingui.cpp tooraclesettingui.h
