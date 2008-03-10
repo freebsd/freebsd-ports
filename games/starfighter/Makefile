@@ -9,12 +9,11 @@ PORTNAME=	starfighter
 DISTVERSION=	1.1-1
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?proj=starfighter&type=zip&file=
+MASTER_SITES=	NETBSD \
+		http://www.amdmi3.ru/distfiles/
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Chris Bainfield is fighting for the freedom of the galaxy
-
-FETCH_BEFORE_ARGS+=	-o ${DISTNAME}${EXTRACT_SUFX}
 
 USE_GMAKE=	yes
 USE_SDL=	image mixer sdl
