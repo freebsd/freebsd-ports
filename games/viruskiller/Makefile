@@ -9,7 +9,9 @@ PORTNAME=	viruskiller
 DISTVERSION=	1.0-1
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?proj=viruskiller&type=zip&file=
+MASTER_SITES=	GENTOO \
+		http://www.amdmi3.ru/distfiles/
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An arcade game that relies on quick reflexes
