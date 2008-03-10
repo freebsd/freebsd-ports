@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lippemail@gmail.com
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Interact with sites that implement Google style AuthSub
 
 RUN_DEPENDS=	p5-Test-Simple>=0.62:${PORTSDIR}/devel/p5-Test-Simple \

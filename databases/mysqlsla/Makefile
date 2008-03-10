@@ -10,7 +10,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://hackmysql.com/scripts/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lippemail@gmail.com
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Mysqlsla analyzes general, slow, and raw MySQL statement logs
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \

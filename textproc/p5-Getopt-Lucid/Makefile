@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lippemail@gmail.com
+MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Getopt::Lucid - Clear, readable syntax for command line processing
 
 BUILD_DEPENDS+=	p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
