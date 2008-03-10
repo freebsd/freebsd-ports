@@ -15,6 +15,6 @@ can easily get access to all things jvmti/jni has to offer.
 TIJmp is distributed under the General Public License, GPL.
 
 Usage:
-java -agentlib:tijmp <your-class>
+java -Dtijmp.jar=%JAVAJARDIR%/tijmp.jar -agentlib:tijmp <your-class>
 
 WWW: http://khelekore.org/jmp/tijmp/
