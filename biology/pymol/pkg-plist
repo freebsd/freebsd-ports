@@ -572,6 +572,137 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/examples/package/redhat/pymol-0.96-1.rh73.py22.spec
 %%PYTHON_SITELIBDIR%%/pymol/pymol_path/LICENSE
 %%PYTHON_SITELIBDIR%%/pymol-1.0.0-py2.5.egg-info
+%%PYTHON_SITELIBDIR%%/chempy/cpv.py
+%%PYTHON_SITELIBDIR%%/chempy/xyz.py
+%%PYTHON_SITELIBDIR%%/chempy/__init__.py
+%%PYTHON_SITELIBDIR%%/chempy/protein_residues.py
+%%PYTHON_SITELIBDIR%%/chempy/gamess1.py
+%%PYTHON_SITELIBDIR%%/chempy/mae.py
+%%PYTHON_SITELIBDIR%%/chempy/mass.py
+%%PYTHON_SITELIBDIR%%/chempy/pdb.py
+%%PYTHON_SITELIBDIR%%/chempy/arc.py
+%%PYTHON_SITELIBDIR%%/chempy/bonds.py
+%%PYTHON_SITELIBDIR%%/chempy/cc1.py
+%%PYTHON_SITELIBDIR%%/chempy/protein.py
+%%PYTHON_SITELIBDIR%%/chempy/io.py
+%%PYTHON_SITELIBDIR%%/chempy/neighbor.py
+%%PYTHON_SITELIBDIR%%/chempy/charge.py
+%%PYTHON_SITELIBDIR%%/chempy/place.py
+%%PYTHON_SITELIBDIR%%/chempy/pkl.py
+%%PYTHON_SITELIBDIR%%/chempy/gms.py
+%%PYTHON_SITELIBDIR%%/chempy/water_residues.py
+%%PYTHON_SITELIBDIR%%/chempy/protein_amber.py
+%%PYTHON_SITELIBDIR%%/chempy/bond_amber.py
+%%PYTHON_SITELIBDIR%%/chempy/water_amber.py
+%%PYTHON_SITELIBDIR%%/chempy/dictdb.py
+%%PYTHON_SITELIBDIR%%/chempy/brick.py
+%%PYTHON_SITELIBDIR%%/chempy/lst.py
+%%PYTHON_SITELIBDIR%%/chempy/protein_amber99.py
+%%PYTHON_SITELIBDIR%%/chempy/protein_mmff.py
+%%PYTHON_SITELIBDIR%%/chempy/solvate.py
+%%PYTHON_SITELIBDIR%%/chempy/sdf.py
+%%PYTHON_SITELIBDIR%%/chempy/mmd.py
+%%PYTHON_SITELIBDIR%%/chempy/map.py
+%%PYTHON_SITELIBDIR%%/chempy/bond_mmff.py
+%%PYTHON_SITELIBDIR%%/chempy/cex.py
+%%PYTHON_SITELIBDIR%%/chempy/hetatm.py
+%%PYTHON_SITELIBDIR%%/chempy/models.py
+%%PYTHON_SITELIBDIR%%/chempy/mol.py
+%%PYTHON_SITELIBDIR%%/chempy/bmin/__init__.py
+%%PYTHON_SITELIBDIR%%/chempy/bmin/util.py
+%%PYTHON_SITELIBDIR%%/chempy/bmin/commands.py
+%%PYTHON_SITELIBDIR%%/chempy/bmin/state.py
+%%PYTHON_SITELIBDIR%%/chempy/bmin/realtime.py
+%%PYTHON_SITELIBDIR%%/chempy/bmin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/chempy/bmin/util.pyc
+%%PYTHON_SITELIBDIR%%/chempy/bmin/commands.pyc
+%%PYTHON_SITELIBDIR%%/chempy/bmin/state.pyc
+%%PYTHON_SITELIBDIR%%/chempy/bmin/realtime.pyc
+%%PYTHON_SITELIBDIR%%/chempy/champ/amber99.py
+%%PYTHON_SITELIBDIR%%/chempy/champ/__init__.py
+%%PYTHON_SITELIBDIR%%/chempy/champ/formal_charges.py
+%%PYTHON_SITELIBDIR%%/chempy/champ/assign.py
+%%PYTHON_SITELIBDIR%%/chempy/champ/_champ.so
+%%PYTHON_SITELIBDIR%%/chempy/champ/amber99.pyc
+%%PYTHON_SITELIBDIR%%/chempy/champ/__init__.pyc
+%%PYTHON_SITELIBDIR%%/chempy/champ/formal_charges.pyc
+%%PYTHON_SITELIBDIR%%/chempy/champ/assign.pyc
+%%PYTHON_SITELIBDIR%%/chempy/fast/__init__.py
+%%PYTHON_SITELIBDIR%%/chempy/fast/__init__.pyc
+%%PYTHON_SITELIBDIR%%/chempy/fragments/__init__.py
+%%PYTHON_SITELIBDIR%%/chempy/fragments/__init__.pyc
+%%PYTHON_SITELIBDIR%%/chempy/tinker/__init__.py
+%%PYTHON_SITELIBDIR%%/chempy/tinker/state.py
+%%PYTHON_SITELIBDIR%%/chempy/tinker/realtime.py
+%%PYTHON_SITELIBDIR%%/chempy/tinker/keyword.py
+%%PYTHON_SITELIBDIR%%/chempy/tinker/amber.py
+%%PYTHON_SITELIBDIR%%/chempy/tinker/__init__.pyc
+%%PYTHON_SITELIBDIR%%/chempy/tinker/state.pyc
+%%PYTHON_SITELIBDIR%%/chempy/tinker/realtime.pyc
+%%PYTHON_SITELIBDIR%%/chempy/tinker/keyword.pyc
+%%PYTHON_SITELIBDIR%%/chempy/tinker/amber.pyc
+%%PYTHON_SITELIBDIR%%/chempy/cpv.pyc
+%%PYTHON_SITELIBDIR%%/chempy/xyz.pyc
+%%PYTHON_SITELIBDIR%%/chempy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/chempy/protein_residues.pyc
+%%PYTHON_SITELIBDIR%%/chempy/gamess1.pyc
+%%PYTHON_SITELIBDIR%%/chempy/mae.pyc
+%%PYTHON_SITELIBDIR%%/chempy/mass.pyc
+%%PYTHON_SITELIBDIR%%/chempy/pdb.pyc
+%%PYTHON_SITELIBDIR%%/chempy/arc.pyc
+%%PYTHON_SITELIBDIR%%/chempy/bonds.pyc
+%%PYTHON_SITELIBDIR%%/chempy/cc1.pyc
+%%PYTHON_SITELIBDIR%%/chempy/protein.pyc
+%%PYTHON_SITELIBDIR%%/chempy/io.pyc
+%%PYTHON_SITELIBDIR%%/chempy/neighbor.pyc
+%%PYTHON_SITELIBDIR%%/chempy/charge.pyc
+%%PYTHON_SITELIBDIR%%/chempy/place.pyc
+%%PYTHON_SITELIBDIR%%/chempy/pkl.pyc
+%%PYTHON_SITELIBDIR%%/chempy/gms.pyc
+%%PYTHON_SITELIBDIR%%/chempy/water_residues.pyc
+%%PYTHON_SITELIBDIR%%/chempy/protein_amber.pyc
+%%PYTHON_SITELIBDIR%%/chempy/bond_amber.pyc
+%%PYTHON_SITELIBDIR%%/chempy/water_amber.pyc
+%%PYTHON_SITELIBDIR%%/chempy/dictdb.pyc
+%%PYTHON_SITELIBDIR%%/chempy/brick.pyc
+%%PYTHON_SITELIBDIR%%/chempy/lst.pyc
+%%PYTHON_SITELIBDIR%%/chempy/protein_amber99.pyc
+%%PYTHON_SITELIBDIR%%/chempy/protein_mmff.pyc
+%%PYTHON_SITELIBDIR%%/chempy/solvate.pyc
+%%PYTHON_SITELIBDIR%%/chempy/sdf.pyc
+%%PYTHON_SITELIBDIR%%/chempy/mmd.pyc
+%%PYTHON_SITELIBDIR%%/chempy/map.pyc
+%%PYTHON_SITELIBDIR%%/chempy/bond_mmff.pyc
+%%PYTHON_SITELIBDIR%%/chempy/cex.pyc
+%%PYTHON_SITELIBDIR%%/chempy/hetatm.pyc
+%%PYTHON_SITELIBDIR%%/chempy/models.pyc
+%%PYTHON_SITELIBDIR%%/chempy/mol.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/Demo.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/Setting.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/__init__.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/ColorEditor.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/SetEditor.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/PMGApp.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/startup/apbs_tools.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/startup/__init__.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/startup/remote_pdb_load.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/startup/apbs_tools.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/startup/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/startup/remote_pdb_load.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/skins/__init__.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/__init__.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/builder.py
+%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal/builder.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/skins/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/Demo.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/Setting.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/ColorEditor.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/SetEditor.pyc
+%%PYTHON_SITELIBDIR%%/pmg_tk/PMGApp.pyc
+%%PYTHON_SITELIBDIR%%/pmg_wx/__init__.py
+%%PYTHON_SITELIBDIR%%/pmg_wx/__init__.pyc
 @dirrm %%PYTHON_SITELIBDIR%%/pymol/wizard
 @dirrm %%PYTHON_SITELIBDIR%%/pymol/pymol_path/test/ref
 @dirrm %%PYTHON_SITELIBDIR%%/pymol/pymol_path/test/inp
@@ -604,3 +735,14 @@ bin/pymol
 @dirrm %%PYTHON_SITELIBDIR%%/pymol/opengl/gl
 @dirrm %%PYTHON_SITELIBDIR%%/pymol/opengl
 @dirrm %%PYTHON_SITELIBDIR%%/pymol
+@dirrm %%PYTHON_SITELIBDIR%%/pmg_wx
+@dirrm %%PYTHON_SITELIBDIR%%/pmg_tk/startup
+@dirrm %%PYTHON_SITELIBDIR%%/pmg_tk/skins/normal
+@dirrm %%PYTHON_SITELIBDIR%%/pmg_tk/skins
+@dirrm %%PYTHON_SITELIBDIR%%/pmg_tk
+@dirrm %%PYTHON_SITELIBDIR%%/chempy/tinker
+@dirrm %%PYTHON_SITELIBDIR%%/chempy/fragments
+@dirrm %%PYTHON_SITELIBDIR%%/chempy/fast
+@dirrm %%PYTHON_SITELIBDIR%%/chempy/champ
+@dirrm %%PYTHON_SITELIBDIR%%/chempy/bmin
+@dirrm %%PYTHON_SITELIBDIR%%/chempy
