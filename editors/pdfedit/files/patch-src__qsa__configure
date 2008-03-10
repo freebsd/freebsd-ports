@@ -1,0 +1,11 @@
+--- ./src/qsa/configure.orig	2008-01-16 10:50:31.000000000 -0300
++++ ./src/qsa/configure	2008-03-10 13:36:40.000000000 -0300
+@@ -15,7 +15,7 @@
+ # invoke 2nd stage
+ echo Building second stage2 configure
+ cd configure2
+-$QMAKE && make > /dev/null
++$QMAKE && $MAKE > /dev/null
+ if [ $? -gt 0 -o ! -x configure2 ]; 
+ then
+ 	echo Failed to build 
