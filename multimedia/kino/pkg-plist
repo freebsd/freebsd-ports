@@ -339,9 +339,11 @@ share/kino/scripts/exports/ffmpeg_vcd.sh
 share/kino/scripts/exports/ffmpeg_xvid.sh
 share/kino/scripts/exports/ffmpeg_xvid_dual.sh
 share/kino/scripts/exports/gstreamer_theora.sh
+share/kino/scripts/exports/gstreamer_utils.sh
 share/kino/scripts/exports/mencoder.sh
 share/kino/scripts/exports/rawplay.sh
 share/kino/scripts/import/audio.sh
+share/kino/scripts/import/duration.sh
 share/kino/scripts/import/media.sh
 share/kino/scripts/publish/bliptv_frame.sh
 share/kino/scripts/publish/bliptv_project.sh
