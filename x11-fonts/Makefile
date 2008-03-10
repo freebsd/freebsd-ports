@@ -14,6 +14,7 @@
     SUBDIR += bdftopcf
     SUBDIR += bitmap-fonts
     SUBDIR += bitstream-vera
+    SUBDIR += c64bdf
     SUBDIR += code2000
     SUBDIR += cyberbit-ttfonts
     SUBDIR += cyr-rfx
