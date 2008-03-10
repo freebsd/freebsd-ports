@@ -43,24 +43,27 @@ PORTEXAMPLES=	STYLE \
 
 # Enable printing of memory debugger statistic at runtime.
 .if defined(WITH_MEMDEBUG)
-CONFIGURE_ARGS+= --enable-memtrace
+CONFIGURE_ARGS+=	--enable-memtrace
 .endif
 
 .if defined(WITH_PORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-CONFIGURE_ARGS+= --enable-full-doc
-PORTDOCS=*
+CONFIGURE_ARGS+=	--enable-full-doc
+PORTDOCS=	*
+.endif
+
+post-build:
+.if !defined(NOPORTDOCS) && defined(WITH_PORTDOCS)
+	@cd ${WRKSRC} && ${MAKE} srcdoc
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-.if defined(WITH_PORTDOCS)
+.if !defined(NOPORTDOCS) && defined(WITH_PORTDOCS)
 	@${ECHO_CMD} Installing documentation...
 	${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${FIND} apidoc -mindepth 1 \! -type d \
 		-exec ${ECHO_CMD} "{} -> ${DOCSDIR}/{}" \; \
 		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DOCSDIR} \;
-.endif
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${ECHO_CMD} Installing examples...
