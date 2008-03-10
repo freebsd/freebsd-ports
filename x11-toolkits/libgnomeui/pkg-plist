@@ -49,6 +49,9 @@ include/libgnomeui-2.0/libgnomeui/gnome-window-icon.h
 include/libgnomeui-2.0/libgnomeui/gnome-window.h
 include/libgnomeui-2.0/libgnomeui/gnometypebuiltins.h
 include/libgnomeui-2.0/libgnomeui/libgnomeui.h
+lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgio.a
+lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgio.la
+lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgio.so
 lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgnome-vfs.a
 lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgnome-vfs.la
 lib/gtk-2.0/%%GTK2_VERSION%%/filesystems/libgnome-vfs.so
@@ -63,6 +66,7 @@ libdata/pkgconfig/libgnomeui-2.0.pc
 share/locale/af/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/am/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/as/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/az/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/be/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/be@latin/LC_MESSAGES/libgnomeui-2.0.mo
@@ -87,6 +91,7 @@ share/locale/eu/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/fa/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/fi/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/fr/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/fur/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ga/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/gl/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/gu/LC_MESSAGES/libgnomeui-2.0.mo
@@ -122,6 +127,7 @@ share/locale/oc/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/or/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/pa/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/pl/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ps/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/pt/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ro/LC_MESSAGES/libgnomeui-2.0.mo
@@ -172,6 +178,8 @@ share/pixmaps/gnome-about-logo.png
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
@@ -186,9 +194,13 @@ share/pixmaps/gnome-about-logo.png
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
