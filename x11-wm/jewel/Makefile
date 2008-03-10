@@ -8,7 +8,7 @@
 
 PORTNAME=	jewel
 PORTVERSION=	0.12.41
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://mjr.towers.org.uk/comp/
 
@@ -18,7 +18,7 @@ COMMENT=	Window manager based on aewm++
 ALL_TARGET=	all
 DOCS=		Changelog Changelog.DLR Changelog.jewel INSTALL LICENSE README
 MAN1=		jewel.1x
-USE_XLIB=	yes
+USE_XORG=	x11 xext xpm
 USE_GMAKE=	yes
 
 post-patch:
