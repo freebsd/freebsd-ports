@@ -7,7 +7,7 @@
 
 PORTNAME=	ucd-snmp
 PORTVERSION=	4.2.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -94,19 +94,12 @@ CONFIGURE_ARGS+=	--with-openssl=/usr
 CFLAGS+=	-DOPENSSL_DES_LIBDES_COMPATIBILITY
 .endif
 
+SHLIB_VERSION=	4
+PLIST_SUB+=	shlib=${SHLIB_VERSION}
+
 OPTIONS=	IPV6	"Enable IPv6 support"	On
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700019
-SHLIB_VERSION=	4.0
-PLIST_SUB+=	LEGACYLINKS="@comment "
-.else
-SHLIB_VERSION=	4
-PLIST_SUB+=	LEGACYLINKS=""
-.endif
-
-PLIST_SUB+=	shlib=${SHLIB_VERSION}
 
 .if ${OSVERSION} >= 600000
 CFLAGS+=	-Dfreebsd5
@@ -128,6 +121,7 @@ post-patch:
 		-e 's|%%LTCONFIG%%|${LTCONFIG}|g' \
 		-e 's|%%LTMAIN%%|${LTMAIN}|g' \
 		${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 post-install:
 	@( cd ${PREFIX}/bin && ${STRIP_CMD} ${BIN} )
