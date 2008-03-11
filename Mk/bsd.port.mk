@@ -475,9 +475,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  RPM ports.
 #				  Implies inclusion of bsd.linux-rpm.mk.
 #
-# USE_XORG			- Set to a list of X.org module dependencies.
-#				  Implies inclusion of bsd.xorg.mk.
-#
 # AUTOMATIC_PLIST
 #				- Set to yes to enable automatic packing list generation.
 #				  Currently has no effect unless USE_LINUX_RPM is set.
@@ -492,6 +489,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- This is a read-only variable, it gets set to a value which is
 #				  usable in *_DEPENDS (e.g. BUILD_DEPENDS=${LINUX_BASE_PORT}).
 #				  It honors USE_LINUX=foo and OVERRIDE_LINUX_BASE_PORT.
+##
+# USE_XORG			- Set to a list of X.org module dependencies.
+#				  Implies inclusion of bsd.xorg.mk.
+##
 # USE_RC_SUBR	- If set, the ports startup/shutdown script uses the common
 #				  routines found in etc/rc.subr and may need to
 #				  depend on the sysutils/rc_subr port.
@@ -962,6 +963,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  used by the ldconfig startup script.
 #				  This mechanism replaces ldconfig scripts installed by some
 #				  ports, often under such names as 000.${UNQUENAME}.sh.
+#				  If USE_LINUX_PREFIX is defined, the Linux version of
+#				  ldconfig will be used instead of the native FreeBSD
+#				  version, and the directory list given will be ignored.
 # USE_LDCONFIG32
 # 				- Same as USE_LDCONFIG but the target file is
 # 				  ${PREFIX}/libdata/ldconfig32/${UNIQUENAME} instead.
@@ -1167,9 +1171,9 @@ OSREL!=	${UNAME} -r | ${SED} -e 's/[-(].*//'
 # Get __FreeBSD_version
 .if !defined(OSVERSION)
 .if exists(/usr/include/sys/param.h)
-OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < /usr/include/sys/param.h
+OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < /usr/include/sys/param.h
 .elif exists(/usr/src/sys/sys/param.h)
-OSVERSION!=	${AWK} '/^\#define __FreeBSD_version/ {print $$3}' < /usr/src/sys/sys/param.h
+OSVERSION!=	${AWK} '/^\#define[[:blank::]]__FreeBSD_version/ {print $$3}' < /usr/src/sys/sys/param.h
 .else
 OSVERSION!=	${SYSCTL} -n kern.osreldate
 .endif
@@ -1771,7 +1775,7 @@ LIB_DEPENDS+=	intl.${USE_GETTEXT}:${PORTSDIR}/devel/gettext
 .	endif
 .endif
 
-.if defined(USE_LINUX_PREFIX) && defined(INSTALLS_SHLIB)
+.if defined(USE_LINUX_PREFIX) && (defined(INSTALLS_SHLIB) || defined(USE_LDCONFIG))
 # we need ${LINUXBASE}/sbin/ldconfig
 USE_LINUX?=	yes
 .endif
@@ -1852,10 +1856,7 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
 .endif
 
 .if defined(USE_XPM)
-LIB_DEPENDS+=			Xpm.4:${PORTSDIR}/x11/libXpm
-# XXX - At some point we'll have to fix ports to use USE_XORG to
-# the right value and remove both USE_XPM and USE_XLIB.
-USE_XLIB=			yes
+USE_XORG+=			xpm
 .endif
 
 XAWVER=				8
@@ -2098,6 +2099,17 @@ MAKE_ENV+=		PREFIX=${PREFIX} \
 			MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS}" MANPREFIX="${MANPREFIX}"
 
+# Add -fno-strict-aliasing to CFLAGS with optimization level -O2 or higher.
+# gcc 4.x enable strict aliasing optimization with -O2 which is known to break
+# a lot of ports.
+.if !defined(WITHOUT_NO_STRICT_ALIASING)
+.if ${CC} != "icc"
+.if !empty(CFLAGS:M-O[23s]) && empty(CFLAGS:M-fno-strict-aliasing)
+CFLAGS+=       -fno-strict-aliasing
+.endif
+.endif
+.endif
+
 PTHREAD_CFLAGS?=
 PTHREAD_LIBS?=		-pthread
 
@@ -2171,9 +2183,9 @@ EXTRACT_AFTER_ARGS?=
 .else
 EXTRACT_BEFORE_ARGS?=	-dc
 .if defined(EXTRACT_PRESERVE_OWNERSHIP)
-EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --no-same-owner
-.else
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
+.else
+EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --no-same-owner
 .endif
 .if defined(USE_BZIP2)
 EXTRACT_CMD?=			${BZIP2_CMD}
@@ -3819,6 +3831,10 @@ install-mtree:
 install-ldconfig-file:
 .if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32) || defined(INSTALLS_SHLIB)
 .if defined(USE_LDCONFIG)
+.if defined(USE_LINUX_PREFIX)
+	@${ECHO_MSG} "===>   Running linux ldconfig"
+	${LDCONFIG_CMD}
+.else
 .if !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Running ldconfig"
 	${LDCONFIG} -m ${USE_LDCONFIG}
@@ -3837,6 +3853,7 @@ install-ldconfig-file:
 	@${ECHO_CMD} ${LDCONFIG_DIR}/${UNIQUENAME} >> ${TMPPLIST}
 .if defined(NO_LDCONFIG_MTREE)
 	@${ECHO_CMD} "@unexec rmdir ${LDCONFIG_DIR} >/dev/null 2>&1 || true" >> ${TMPPLIST}
+.endif
 .endif
 .endif
 .endif
@@ -5361,7 +5378,7 @@ ${.CURDIR}/README.html:
 					$${__softMAKEFLAGS} pretty-print-run-depends-list)"'|' \
 			-e 's|%%TOP%%|'"$$(${ECHO_CMD} ${CATEGORIES} | \
 							   ${SED} -e 's| .*||' -e 's|[^/]*|..|g')"'/..|' \
-		${TEMPLATES}/README.port >> $@
+		${TEMPLATES}/README.port >> ${.TARGET}
 
 # The following two targets require an up-to-date INDEX in ${PORTSDIR}
 
@@ -5463,6 +5480,12 @@ generate-plist:
 	@${ECHO_CMD} "@exec ${LDCONFIG_PLIST_EXEC_CMD} || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LDCONFIG_PLIST_UNEXEC_CMD} || ${TRUE}" >> ${TMPPLIST}
 .endif
+.if defined(USE_LINUX_PREFIX)
+.if defined(USE_LDCONFIG)
+	@${ECHO_CMD} "@exec ${LDCONFIG_CMD}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LDCONFIG_CMD}" >> ${TMPPLIST}
+.endif
+.else
 .if defined(USE_LDCONFIG)
 .if !defined(INSTALL_AS_USER)
 	@${ECHO_CMD} "@exec ${LDCONFIG} -m ${USE_LDCONFIG}" >> ${TMPPLIST}
@@ -5479,6 +5502,7 @@ generate-plist:
 .else
 	@${ECHO_CMD} "@exec ${LDCONFIG} -32 -m ${USE_LDCONFIG32} || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LDCONFIG} -32 -R || ${TRUE}" >> ${TMPPLIST}
+.endif
 .endif
 .endif
 .endif
