@@ -1,4 +1,5 @@
 bin/gish
+%%DATADIR%%/README-SDL.txt
 %%DATADIR%%/README.txt
 %%DATADIR%%/animation/pibatk01.tga
 %%DATADIR%%/animation/pibatk02.tga
@@ -97,7 +98,6 @@ bin/gish
 %%DATADIR%%/sound/fleshhit.wav
 %%DATADIR%%/sound/gishhit.wav
 %%DATADIR%%/sound/gishhurt.wav
-%%DATADIR%%/sound/lava.wav
 %%DATADIR%%/sound/necksnap.wav
 %%DATADIR%%/sound/nibattack.wav
 %%DATADIR%%/sound/points.wav
@@ -110,7 +110,6 @@ bin/gish
 %%DATADIR%%/sound/squish.wav
 %%DATADIR%%/sound/switch.wav
 %%DATADIR%%/sound/tarball.wav
-%%DATADIR%%/sound/visattack.wav
 %%DATADIR%%/texture/0.tga
 %%DATADIR%%/texture/1.tga
 %%DATADIR%%/texture/10.tga
@@ -154,8 +153,6 @@ bin/gish
 %%DATADIR%%/texture/fight.tga
 %%DATADIR%%/texture/font00.tga
 %%DATADIR%%/texture/font01.tga
-%%DATADIR%%/texture/font02.tga
-%%DATADIR%%/texture/font03.tga
 %%DATADIR%%/texture/gameover.tga
 %%DATADIR%%/texture/gface.tga
 %%DATADIR%%/texture/gfaceb1.tga

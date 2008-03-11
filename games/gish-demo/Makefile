@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gish-demo
-PORTVERSION=	1.4
+PORTVERSION=	1.52
 CATEGORIES=	games linux
 MASTER_SITES=	http://s159260531.onlinehome.us/demos/
 DISTNAME=	gishdemo
@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorb
 		${LINUXBASE}/usr/lib/libopenal.so.0:${PORTSDIR}/audio/linux-openal \
 		${LINUXBASE}/usr/lib/libalut.so.0:${PORTSDIR}/audio/linux-freealut
 
+RESTRICTED=	(c) Copyright 2004 Chronic Logic All rights reserved
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	is an i386 Linux binary
 USE_LINUX=	yes
@@ -25,9 +26,6 @@ NO_BUILD=	yes
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 SUB_FILES=	rungish.sh
 SUB_LIST=	LINUXBASE=${LINUXBASE}
-
-pre-patch:
-	${MV} ${WRKDIR}/gish\ demo ${WRKSRC}
 
 do-install:
 	${MKDIR} ${DATADIR}
