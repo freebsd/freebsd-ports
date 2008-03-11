@@ -7,7 +7,7 @@
 
 PORTNAME=	nethack
 PORTVERSION=	1.0.5.19970924
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese games
 MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh322/src/ \
 		ftp://ftp.wtower.com/nethack/sources/
@@ -26,7 +26,7 @@ NO_LATEST_LINK=	yes
 
 .include <bsd.port.pre.mk>
 
-USE_XPM=	yes
+USE_XORG=	xaw xpm
 USE_GMAKE=	yes
 MAN6=		dlb.6 dgn_comp.6 lev_comp.6 nethack.6 recover.6
 
