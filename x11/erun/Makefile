@@ -7,24 +7,24 @@
 
 PORTNAME=	E-Run
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kbyanc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A simple epplet for launching arbitrary programs
 
-LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/epplets
+LIB_DEPENDS=	epplet.2:${PORTSDIR}/x11-wm/epplets \
+		Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 PLIST_FILES=	bin/E-Run.epplet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_X_PREFIX=	yes
-
+USE_GL=	gl
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lepplet -lGL ${PTHREAD_LIBS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lepplet -lImlib2 -lGL ${PTHREAD_LIBS}
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o ${PORTNAME}.epplet \
