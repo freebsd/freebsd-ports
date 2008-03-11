@@ -134,7 +134,6 @@ include/irssi/src/irc/notifylist/notify-setup.h
 include/irssi/src/irc/notifylist/notifylist.h
 include/irssi/src/lib-config/iconfig.h
 include/irssi/src/lib-config/module.h
-%%DOCSDIR%%/botnet.txt
 %%DOCSDIR%%/design.txt
 %%DOCSDIR%%/faq.html
 %%DOCSDIR%%/faq.txt
