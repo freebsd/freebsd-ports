@@ -15,7 +15,6 @@ bin/xml2txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.dtd
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.html
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.rnc
-%%PORTDOCS%%%%DOCSDIR%%/rfc2629.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.xml
 %%PORTDOCS%%%%DOCSDIR%%/rfc2629.xsd
 %%PORTDOCS%%%%DOCSDIR%%/sample.html
