@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontforge
-PORTVERSION=	20080302
+PORTVERSION=	20080309
 CATEGORIES=	print
 MASTER_SITES=	SF
 DISTFILES=	${EXTRACT_ONLY} ${DOCFILES}
@@ -30,7 +30,10 @@ EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
 .endif
 
 .if !defined(NOPORTDOCS)
-DOC_VERSION=	${PORTVERSION}
+#DOC_VERSION=	${PORTVERSION}
+# the main executable was updated because of a build problem with emulators/wine
+# however, the documentation was not updated because it was a minor update
+DOC_VERSION=	20080302
 DOCFILES=	${PORTNAME}_htdocs-${DOC_VERSION}.tar.bz2
 .endif
 
@@ -53,7 +56,8 @@ WITH_FREETYPE_SRC=	--with-freetype-bytecode --with-freetype-src=${WRKDIR}/freety
 WITH_FREETYPE_SRC=	--without-freetype-bytecode --without-freetype-src
 .endif
 
-CONFIGURE_ARGS=	${WITH_MULTILAYER} --enable-devicetables ${WITH_FREETYPE_SRC}
+CONFIGURE_ARGS=	${WITH_MULTILAYER} --enable-devicetables ${WITH_FREETYPE_SRC} \
+		--enable-pasteafter --enable-tilepath
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lutil -lpthread" CFLAGS="${CFLAGS} \
 		-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
