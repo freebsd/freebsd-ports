@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Filter-LZW
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.6
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A POE filter wrapped around Compress::LZW
 
-RUN_DEPENDS=	${SITE_PERL}/Compress/LZW.pm:${PORTSDIR}/archivers/p5-Compress-LZW \
+RUN_DEPENDS=	p5-Compress-LZW>=0:${PORTSDIR}/archivers/p5-Compress-LZW \
 		p5-POE>=0.38:${PORTSDIR}/devel/p5-POE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
