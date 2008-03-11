@@ -4201,6 +4201,7 @@ gracetmpl	ports/math/gracetmpl
 gracula		ports/graphics/gracula
 grads		ports/graphics/grads
 graft		ports/sysutils/graft
+grails		ports/www/grails
 gramofile	ports/audio/gramofile
 gramps		ports/science/gramps
 grande		ports/games/grande
