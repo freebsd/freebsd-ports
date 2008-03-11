@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libopensync
-PORTVERSION=	0.30
-PORTREVISION=	1
+PORTVERSION=	0.31
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opensync.org/attachment/wiki/download/
 DISTNAME=	libopensync-${PORTVERSION}
@@ -27,8 +26,11 @@ USE_SCONS=	yes
 SCONS_ARGS=	prefix=${PREFIX}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$libsuffix/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/SConstruct
-	@${REINPLACE_CMD} -e 's|gthread-2.0|gthread-2.0 pthread|' ${WRKSRC}/opensync/SConscript
+	@${REINPLACE_CMD} -e "s|install_lib, 'pkgconfig'|install_prefix, 'libdata', 'pkgconfig'|" ${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} \
+		-e 's|gthread-2.0|gthread-2.0 pthread|' \
+		-e 's|vnum="%d.%d.%d" % ([^)]*)|vnum="%d" % (config["major"])|' \
+		${WRKSRC}/opensync/SConscript
 
 post-install:
 	@${LN} -sf ${LOCALBASE}/lib/libopensync.so ${LOCALBASE}/lib/libopensync.so.1
