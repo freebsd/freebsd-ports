@@ -6,7 +6,7 @@
  #include <Python.h>
 +#ifdef __FreeBSD__
 +#include <sys/param.h>
-+#if (__FreeBSD_version <= 700032 && (__FreeBSD_version >= 700000) || __FreeBSD_version <= 602106
++#if (__FreeBSD_version <= 700032 && __FreeBSD_version >= 700000) || __FreeBSD_version <= 602106
 +#undef _XOPEN_SOURCE_EXTENDED
 +#endif
 +#endif
