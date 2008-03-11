@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svnkit
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.6
 CATEGORIES=	devel java
 MASTER_SITES=	http://svnkit.com/
 DISTNAME=	org.tmatesoft.svn_${PORTVERSION}.standalone
@@ -21,11 +21,12 @@ USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.3855
 
-DATA_FILES=	COPYING GANYMED-LICENSE JAVAHL-LICENSE SEQUENCE-LICENSE \
+DATA_FILES=	COPYING \
+		JNA-LICENSE JAVAHL-LICENSE SEQUENCE-LICENSE TRILEAD-LICENSE \
 		changelog.txt logging.properties.disabled svnkitsrc.zip \
-		svnkit-cli.jar svnkit-javahl.jar svnkit.jar ganymed.jar \
+		jna.jar svnkit-cli.jar svnkit-javahl.jar svnkit.jar trilead.jar \
 		README.txt
 
 PLIST_FILES=	bin/jsvn bin/jsvnadmin bin/jsvnlook \
