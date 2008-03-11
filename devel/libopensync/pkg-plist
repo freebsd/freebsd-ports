@@ -31,6 +31,7 @@ include/opensync-1.0/opensync/merger/opensync_merger.h
 include/opensync-1.0/opensync/merger/opensync_xmlfield.h
 include/opensync-1.0/opensync/merger/opensync_xmlfieldlist.h
 include/opensync-1.0/opensync/merger/opensync_xmlformat.h
+include/opensync-1.0/opensync/opensync-archive.h
 include/opensync-1.0/opensync/opensync-client.h
 include/opensync-1.0/opensync/opensync-context.h
 include/opensync-1.0/opensync/opensync-data.h
@@ -66,15 +67,16 @@ libdata/pkgconfig/opensync-1.0.pc
 libdata/pkgconfig/osengine-1.0.pc
 share/opensync/capabilities/file-sync.xml
 share/opensync/capabilities/syncml-nokia-7650.xml
-share/opensync/descriptions/descriptions.xsd
 share/opensync/descriptions/miscellaneous.xml
 share/opensync/descriptions/syncml-nokia.xml
-share/opensync/descriptions/xmlformat-calendar.xsd
-share/opensync/descriptions/xmlformat-common.xsd
-share/opensync/descriptions/xmlformat-contact.xsd
-share/opensync/descriptions/xmlformat-event.xsd
-share/opensync/descriptions/xmlformat-note.xsd
-share/opensync/descriptions/xmlformat-todo.xsd
+share/opensync/schemas/descriptions.xsd
+share/opensync/schemas/xmlformat-calendar.xsd
+share/opensync/schemas/xmlformat-common.xsd
+share/opensync/schemas/xmlformat-contact.xsd
+share/opensync/schemas/xmlformat-event.xsd
+share/opensync/schemas/xmlformat-note.xsd
+share/opensync/schemas/xmlformat-todo.xsd
+@dirrm share/opensync/schemas
 @dirrm share/opensync/descriptions
 @dirrm share/opensync/capabilities
 @dirrm share/opensync
