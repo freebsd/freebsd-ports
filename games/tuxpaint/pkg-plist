@@ -458,8 +458,10 @@ lib/tuxpaint/plugins/waves.so
 %%PORTDOCS%%%%DOCSDIR%%/tr/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/wa/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/zh_cn/COPYING.html
+%%PORTDOCS%%%%DOCSDIR%%/zh_cn/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/zh_cn/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/zh_cn/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/zh_cn/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/zh_cn/html/README.html
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/AUTHORS.txt
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/COPYING.txt
@@ -476,6 +478,7 @@ lib/tuxpaint/plugins/waves.so
 %%PORTDOCS%%%%DOCSDIR%%/zh_tw/phone.cin
 share/locale/af/LC_MESSAGES/tuxpaint.mo
 share/locale/ar/LC_MESSAGES/tuxpaint.mo
+share/locale/az/LC_MESSAGES/tuxpaint.mo
 share/locale/be/LC_MESSAGES/tuxpaint.mo
 share/locale/bg/LC_MESSAGES/tuxpaint.mo
 share/locale/bo/LC_MESSAGES/tuxpaint.mo
@@ -486,6 +489,8 @@ share/locale/cy/LC_MESSAGES/tuxpaint.mo
 share/locale/da/LC_MESSAGES/tuxpaint.mo
 share/locale/de/LC_MESSAGES/tuxpaint.mo
 share/locale/el/LC_MESSAGES/tuxpaint.mo
+share/locale/en_AU/LC_MESSAGES/tuxpaint.mo
+share/locale/en_CA/LC_MESSAGES/tuxpaint.mo
 share/locale/en_GB/LC_MESSAGES/tuxpaint.mo
 share/locale/en_ZA/LC_MESSAGES/tuxpaint.mo
 share/locale/eo/LC_MESSAGES/tuxpaint.mo
@@ -510,15 +515,18 @@ share/locale/is/LC_MESSAGES/tuxpaint.mo
 share/locale/it/LC_MESSAGES/tuxpaint.mo
 share/locale/ja/LC_MESSAGES/tuxpaint.mo
 share/locale/ka/LC_MESSAGES/tuxpaint.mo
+share/locale/km/LC_MESSAGES/tuxpaint.mo
 share/locale/ko/LC_MESSAGES/tuxpaint.mo
 share/locale/ku/LC_MESSAGES/tuxpaint.mo
 share/locale/lt/LC_MESSAGES/tuxpaint.mo
 share/locale/lv/LC_MESSAGES/tuxpaint.mo
+share/locale/mk/LC_MESSAGES/tuxpaint.mo
 share/locale/ms/LC_MESSAGES/tuxpaint.mo
 share/locale/nb/LC_MESSAGES/tuxpaint.mo
 share/locale/nl/LC_MESSAGES/tuxpaint.mo
 share/locale/nn/LC_MESSAGES/tuxpaint.mo
 share/locale/nr/LC_MESSAGES/tuxpaint.mo
+share/locale/oc/LC_MESSAGES/tuxpaint.mo
 share/locale/oj/LC_MESSAGES/tuxpaint.mo
 share/locale/pl/LC_MESSAGES/tuxpaint.mo
 share/locale/pt_BR/LC_MESSAGES/tuxpaint.mo
@@ -547,6 +555,7 @@ share/locale/wo/LC_MESSAGES/tuxpaint.mo
 share/locale/xh/LC_MESSAGES/tuxpaint.mo
 share/locale/zh_CN/LC_MESSAGES/tuxpaint.mo
 share/locale/zh_TW/LC_MESSAGES/tuxpaint.mo
+share/locale/zw/LC_MESSAGES/tuxpaint.mo
 share/pixmaps/tuxpaint.png
 %%DATADIR%%/brushes/aa_round_03.png
 %%DATADIR%%/brushes/aa_round_06.png
@@ -731,7 +740,9 @@ share/pixmaps/tuxpaint.png
 %%DATADIR%%/images/shapes/triangle.png
 %%DATADIR%%/images/shapes/triangle_f.png
 %%DATADIR%%/images/title-credits.png
+%%DATADIR%%/images/title-tuxpaint-2x.png
 %%DATADIR%%/images/title-tuxpaint.png
+%%DATADIR%%/images/title-tuxpaint.svg
 %%DATADIR%%/images/title.png
 %%DATADIR%%/images/tools/brush.png
 %%DATADIR%%/images/tools/eraser.png
@@ -944,6 +955,10 @@ share/pixmaps/tuxpaint.png
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/brushes
 @dirrm %%DATADIR%%
+@dirrm share/locale/zw/LC_MESSAGES
+@dirrm share/locale/zw
+@dirrm share/locale/twi/LC_MESSAGES
+@dirrm share/locale/twi
 @dirrm share/locale/tlh/LC_MESSAGES
 @dirrm share/locale/tlh
 @dirrm share/locale/oj/LC_MESSAGES
@@ -1029,6 +1044,8 @@ share/pixmaps/tuxpaint.png
 @dirrmtry share/locale/twi
 @dirrmtry share/locale/sw/LC_MESSAGES
 @dirrmtry share/locale/sw
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/fo/LC_MESSAGES
 @dirrmtry share/locale/fo
 @dirrmtry etc/tuxpaint
