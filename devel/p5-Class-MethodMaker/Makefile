@@ -7,16 +7,13 @@
 
 PORTNAME=		Class-MethodMaker
 PORTVERSION=		2.10
+PORTREVISION=		1
 CATEGORIES=		devel perl5
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Class
+MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Perl module for creating generic methods
-
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-PathTools
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=		yes
 
