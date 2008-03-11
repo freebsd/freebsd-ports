@@ -7,7 +7,7 @@
 
 PORTNAME=	evidence
 PORTVERSION=	0.9.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,13 +16,7 @@ MAINTAINER=	freebsd@troback.com
 COMMENT=	Enlightened file-manager
 
 BUILD_DEPENDS=	pngtopnm:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2 \
-		evas.1:${PORTSDIR}/graphics/evas \
-		edje.5:${PORTSDIR}/graphics/edje \
-		ecore.1:${PORTSDIR}/x11/ecore \
-		embryo.9:${PORTSDIR}/lang/embryo \
-		eet.9:${PORTSDIR}/devel/eet \
-		pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 BROKEN=		Does not compile
 
@@ -31,6 +25,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
+USE_EFL=	imlib2 evas edje ecore embryo eet
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dbus \
 		--disable-dcop \

@@ -59,7 +59,7 @@ lib/imlib2/loaders/zlib.so
 lib/libImlib2.a
 lib/libImlib2.la
 lib/libImlib2.so
-lib/libImlib2.so.4
+lib/libImlib2.so.5
 libdata/pkgconfig/imlib2.pc
 %%DATADIR%%/data/fonts/cinema.ttf
 %%DATADIR%%/data/fonts/grunge.ttf

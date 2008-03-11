@@ -1,17 +1,5 @@
 bin/entice
-%%DATADIR%%/fonts/Vera.ttf
-%%DATADIR%%/fonts/VeraBI.ttf
-%%DATADIR%%/fonts/VeraBd.ttf
-%%DATADIR%%/fonts/VeraIt.ttf
-%%DATADIR%%/fonts/VeraMoBI.ttf
-%%DATADIR%%/fonts/VeraMoBd.ttf
-%%DATADIR%%/fonts/VeraMoIt.ttf
-%%DATADIR%%/fonts/VeraMono.ttf
-%%DATADIR%%/fonts/VeraSe.ttf
-%%DATADIR%%/fonts/VeraSeBd.ttf
-%%DATADIR%%/fonts/nationff.ttf
-%%DATADIR%%/themes/artifakt.eet
-%%DATADIR%%/themes/default.eet
+%%DATADIR%%/themes/artifakt.edj
+%%DATADIR%%/themes/default.edj
 @dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%

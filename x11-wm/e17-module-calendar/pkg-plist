@@ -1,23 +1,15 @@
-lib/enlightenment/modules/calendar/NoImage_icon.png
-lib/enlightenment/modules/calendar/arrow.edj
-lib/enlightenment/modules/calendar/backimage.edj
 lib/enlightenment/modules/calendar/calendar.edj
-lib/enlightenment/modules/calendar/label.edj
-lib/enlightenment/modules/calendar/%%MODULE_ARCH%%/module.a
-lib/enlightenment/modules/calendar/module.eap
-lib/enlightenment/modules/calendar/%%MODULE_ARCH%%/module.la
-lib/enlightenment/modules/calendar/%%MODULE_ARCH%%/module.so
-lib/enlightenment/modules/calendar/module_icon.png
-lib/enlightenment/modules/calendar/today.edj
-lib/enlightenment/modules/calendar/topimage.edj
-lib/enlightenment/modules/calendar/weekday.edj
-lib/enlightenment/modules/calendar/weekend.edj
-%%NLS%%share/locale/bg/LC_MESSAGES/calendar.mo
-%%NLS%%share/locale/eo/LC_MESSAGES/calendar.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/calendar.mo
-%%NLS%%share/locale/it/LC_MESSAGES/calendar.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/calendar.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/calendar.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/calendar.mo
-@dirrm lib/enlightenment/modules/calendar/%%MODULE_ARCH%%
+lib/enlightenment/modules/calendar/e-module-calendar.edj
+lib/enlightenment/modules/calendar/module.desktop
+lib/enlightenment/modules/calendar/%%E17_ARCH%%/module.a
+lib/enlightenment/modules/calendar/%%E17_ARCH%%/module.la
+lib/enlightenment/modules/calendar/%%E17_ARCH%%/module.so
+%%NLS%%lib/enlightenment/modules/calendar/locale/fi/LC_MESSAGES/calendar.mo
+%%NLS%%lib/enlightenment/modules/calendar/locale/it/LC_MESSAGES/calendar.mo
+%%NLS%%@dirrm lib/enlightenment/modules/calendar/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/calendar/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/calendar/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/calendar/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/calendar/locale
+@dirrm lib/enlightenment/modules/calendar/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/calendar

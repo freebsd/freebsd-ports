@@ -7,7 +7,7 @@
 
 PORTNAME=	ipager
 PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://useperl.ru/ipager/src/
 DISTNAME=	ipager-${PORTVERSION}
@@ -15,9 +15,8 @@ DISTNAME=	ipager-${PORTVERSION}
 MAINTAINER=	vlad@vlad.uz.ua
 COMMENT=	X11 pager program
 
-LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
-
 USE_SCONS=	yes
+USE_EFL=	imlib2
 
 PLIST_FILES=	bin/ipager \
 		%%DATADIR%%/themes/atlantis.conf \

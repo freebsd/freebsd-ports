@@ -2,12 +2,24 @@ lib/enlightenment/modules/moon/%%E17_ARCH%%/module.a
 lib/enlightenment/modules/moon/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/moon/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/moon/module.desktop
-lib/enlightenment/modules/moon/module.edj
+lib/enlightenment/modules/moon/e-module-moon.edj
 lib/enlightenment/modules/moon/moon.edj
-%%NLS%%share/locale/eo/LC_MESSAGES/moon.mo
-%%NLS%%share/locale/it/LC_MESSAGES/moon.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/moon.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/moon.mo
+%%NLS%%lib/enlightenment/modules/moon/locale/eo/LC_MESSAGES/moon.mo
+%%NLS%%lib/enlightenment/modules/moon/locale/fi/LC_MESSAGES/moon.mo
+%%NLS%%lib/enlightenment/modules/moon/locale/it/LC_MESSAGES/moon.mo
+%%NLS%%lib/enlightenment/modules/moon/locale/ja/LC_MESSAGES/moon.mo
+%%NLS%%lib/enlightenment/modules/moon/locale/sv/LC_MESSAGES/moon.mo
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/ja
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/moon/locale
 @dirrm lib/enlightenment/modules/moon/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/moon
 @dirrmtry lib/enlightenment/modules

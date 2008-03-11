@@ -7,7 +7,7 @@
 
 PORTNAME=	zphoto
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics www
 MASTER_SITES=	http://namazu.org/~satoru/zphoto/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,6 @@ MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Zooming photo album generator
 
 LIB_DEPENDS=	ming.4:${PORTSDIR}/graphics/ming \
-		Imlib2.4:${PORTSDIR}/graphics/imlib2 \
 		popt.0:${PORTSDIR}/devel/popt
 .if !defined (WITHOUT_AVIPLAY)
 LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile
@@ -29,6 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 	       	CPPFLAGS="-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}"
+USE_EFL=	imlib2
 .if defined (WITH_WXGTK2)
 USE_WX=		2.4
 WX_CONF_ARGS=	absolute

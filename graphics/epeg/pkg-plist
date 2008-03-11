@@ -1,5 +1,4 @@
 bin/epeg
-bin/epeg-config
 include/Epeg.h
 lib/libepeg.a
 lib/libepeg.la

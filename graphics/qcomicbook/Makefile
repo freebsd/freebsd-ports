@@ -7,6 +7,7 @@
 
 PORTNAME=	qcomicbook
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://linux.bydg.org/~yogin/qcomicbook/
 
@@ -20,6 +21,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui moc
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
+USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QtGui_CFLAGS="${QtGui_CFLAGS}"
 

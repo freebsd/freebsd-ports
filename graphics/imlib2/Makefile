@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	imlib2
-PORTVERSION=	20070223
-PORTREVISION=	1
-PORTEPOCH=	1
+PORTVERSION=	1.4.1.000
+PORTREVISION=	0
+PORTEPOCH=	2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
+		http://download.enlightenment.org/snapshots/2008-01-25/
 
 MAINTAINER=	stas@FreeBSD.org
-COMMENT=	The next generation graphic library for enlightenment package
+COMMENT=	The next generation graphics library for Enlightenment
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 

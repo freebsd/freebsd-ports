@@ -7,7 +7,7 @@
 
 PORTNAME=	adesklets
 PORTVERSION=	0.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	An interactive Imlib2 console for the X Window system
 
-LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 RUN_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 GNU_CONFIGURE=	yes
@@ -23,6 +22,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_XLIB=	yes
+USE_EFL=	imlib2
 WANT_PERL=	yes
 
 MAN1=		adesklets.1 \

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	evas
-PORTVERSION=	20061008
-PORTREVISION=	1
+PORTVERSION=	20080302
+PORTREVISION=	0
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-evas-${PORTVERSION}
 

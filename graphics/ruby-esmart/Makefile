@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	esmart
-PORTVERSION=	20061008
-PORTREVISION=	1
+PORTVERSION=	20080302
+PORTREVISION=	0
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-esmart-${PORTVERSION}
 
@@ -22,18 +22,20 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake \
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
-USE_EFL_ESMART=	trans_x11
+USE_EFL_ESMART=	trans_x11 container draggies
+
+CFLAGS+=	-I"${LOCALBASE}/include" -fPIC
 
 RUBY_SA=	${RUBY_SITEARCHLIBDIR}
 
 .include <bsd.port.pre.mk>
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ESMART_PREFIX=${LOCALBASE} \
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ESMART_PREFIX=${LOCALBASE} \
 		${LOCALBASE}/bin/rake)
 
 do-install:
-	@(cd ${WRKSRC}; ${SETENV} ESMART_PREFIX=${LOCALBASE} \
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ESMART_PREFIX=${LOCALBASE} \
 		${LOCALBASE}/bin/rake install)
 
 .include <bsd.port.post.mk>

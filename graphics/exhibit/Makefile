@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	exhibit
-PORTVERSION=	20070223
-PORTREVISION=	1
+PORTVERSION=	20080223
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
@@ -18,7 +18,8 @@ COMMENT=	An ETK-based image viewer
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
-USE_EFL=	evas eet ecore edje etk epsilon
+USE_EFL=	evas eet ecore edje etk epsilon efreet
+USE_EFL_ECORE=	evas file
 WANT_EFL=	yes
 GNU_CONFIGURE=	yes
 

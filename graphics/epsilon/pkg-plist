@@ -1,8 +1,8 @@
 bin/epsilon
-bin/epsilon-config
 bin/epsilon_thumb_test
 bin/epsilon_thumbd
 include/Epsilon.h
+include/Epsilon_Plugin.h
 include/Epsilon_Request.h
 %%XINE%%lib/epsilon/plugins/xine_thumbnailer.a
 %%XINE%%lib/epsilon/plugins/xine_thumbnailer.la
@@ -10,7 +10,7 @@ include/Epsilon_Request.h
 lib/libepsilon.a
 lib/libepsilon.la
 lib/libepsilon.so
-lib/libepsilon.so.0
+lib/libepsilon.so.3
 libdata/pkgconfig/epsilon.pc
 @dirrm lib/epsilon/plugins
 @dirrm lib/epsilon

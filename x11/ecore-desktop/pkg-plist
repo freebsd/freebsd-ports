@@ -1,0 +1,6 @@
+include/Ecore_Desktop.h
+lib/libecore_desktop.a
+lib/libecore_desktop.la
+lib/libecore_desktop.so
+lib/libecore_desktop.so.9
+libdata/pkgconfig/ecore-desktop.pc

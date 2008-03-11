@@ -7,7 +7,7 @@
 
 PORTNAME=	waimea
 PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	waimea
@@ -32,7 +32,7 @@ OPTIONS=	PIXMAP "Build with pixmap textures support" on \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PIXMAP)
-LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
+USE_EFL+=	imlib2
 .endif
 
 .if defined(WITH_DITHER)

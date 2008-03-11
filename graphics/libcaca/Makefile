@@ -37,7 +37,7 @@ USE_XLIB=	yes
 .if defined(WITHOUT_IMLIB2)
 CONFIGURE_ARGS+=--disable-imlib2
 .else
-LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
+USE_EFL+=	imlib2
 .endif
 
 .include <bsd.port.pre.mk>

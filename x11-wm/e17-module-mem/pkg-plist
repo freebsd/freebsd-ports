@@ -2,15 +2,27 @@ lib/enlightenment/modules/mem/%%E17_ARCH%%/module.a
 lib/enlightenment/modules/mem/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/mem/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/mem/mem.edj
+lib/enlightenment/modules/mem/e-module-mem.edj
 lib/enlightenment/modules/mem/module.desktop
-lib/enlightenment/modules/mem/module.edj
-lib/enlightenment/modules/mem/module_icon.png
-%%NLS%%share/locale/eo/LC_MESSAGES/mem.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/mem.mo
-%%NLS%%share/locale/it/LC_MESSAGES/mem.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/mem.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/mem.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/mem.mo
+%%NLS%%lib/enlightenment/modules/mem/locale/eo/LC_MESSAGES/mem.mo
+%%NLS%%lib/enlightenment/modules/mem/locale/fi/LC_MESSAGES/mem.mo
+%%NLS%%lib/enlightenment/modules/mem/locale/it/LC_MESSAGES/mem.mo
+%%NLS%%lib/enlightenment/modules/mem/locale/ja/LC_MESSAGES/mem.mo
+%%NLS%%lib/enlightenment/modules/mem/locale/ru/LC_MESSAGES/mem.mo
+%%NLS%%lib/enlightenment/modules/mem/locale/sv/LC_MESSAGES/mem.mo
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/ja
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/mem/locale
 @dirrm lib/enlightenment/modules/mem/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/mem
 @dirrmtry lib/enlightenment/modules

@@ -1,4 +1,4 @@
-bin/eet-config
+bin/eet
 include/Eet.h
 lib/libeet.a
 lib/libeet.la

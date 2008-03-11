@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	enhance
-PORTVERSION=	20070223
-PORTREVISION=	1
+PORTVERSION=	20080223
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 

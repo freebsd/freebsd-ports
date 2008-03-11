@@ -2,8 +2,7 @@ lib/enlightenment/modules/winselector/%%E17_ARCH%%/module.a
 lib/enlightenment/modules/winselector/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/winselector/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/winselector/module.desktop
-lib/enlightenment/modules/winselector/module.edj
-lib/enlightenment/modules/winselector/module_icon.png
+lib/enlightenment/modules/winselector/e-module-winselector.edj
 lib/enlightenment/modules/winselector/winselector.edj
 @dirrm lib/enlightenment/modules/winselector/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/winselector

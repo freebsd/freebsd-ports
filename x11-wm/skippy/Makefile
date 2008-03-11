@@ -7,19 +7,19 @@
 
 PORTNAME=	skippy
 PORTVERSION=	0.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://thegraveyard.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-screen X11 task-switcher like Apple's Expose
 
-LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2 \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
+USE_EFL=	imlib2
 PLIST_FILES=	bin/skippy \
 		%%DATADIR%%/skippyrc-default
 PLIST_DIRS=	%%DATADIR%%

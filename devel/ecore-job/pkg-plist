@@ -1,0 +1,6 @@
+include/Ecore_Job.h
+lib/libecore_job.a
+lib/libecore_job.la
+lib/libecore_job.so
+lib/libecore_job.so.9
+libdata/pkgconfig/ecore-job.pc

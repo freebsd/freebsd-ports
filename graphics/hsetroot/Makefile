@@ -7,17 +7,16 @@
 
 PORTNAME=	hsetroot
 PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://thegraveyard.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to compose wallpapers for X
 
-LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
-
 PLIST_FILES=	bin/hsetroot
 USE_X_PREFIX=	YES
+USE_EFL=	imlib2
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES

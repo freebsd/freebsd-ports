@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	epsilon
-PORTVERSION=	20070223
-PORTREVISION=	1
-PORTEPOCH=	1
+PORTVERSION=	0.3.0.012
+PORTREVISION=	0
+PORTEPOCH=	2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
+		http://download.enlightenment.org/snapshots/2008-01-25/
 
 MAINTAINER=	stas@FreeBSD.org
-COMMENT=	A small, display independent, and quick thumbnailing library
+COMMENT=	A small, display independent and quick thumbnailing library
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget
-USE_EFL=	edje imlib2
+USE_EFL=	edje imlib2 ecore
+USE_EFL_ECORE=	file ipc
 USE_LDCONFIG=	yes
 
 OPTIONS=	PNG	"Enable PNG thumbnailer" on \

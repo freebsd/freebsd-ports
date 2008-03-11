@@ -7,13 +7,12 @@
 
 PORTNAME=	kompose
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen task manager similar to Expose(tm)
-
-LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 EXTRA_PATCHES=	${PORTSDIR}/x11/kde3/files/extrapatch-old_configure
 
@@ -21,6 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
+USE_EFL=	imlib2
 INSTALLS_ICONS=	yes
 
 DOCSDIR=	share/doc/HTML/en/${PORTNAME}

@@ -161,6 +161,7 @@
     SUBDIR += dvdtape
     SUBDIR += dwatch
     SUBDIR += e2fsprogs
+    SUBDIR += ecore-config
     SUBDIR += eiciel
     SUBDIR += eject
     SUBDIR += empower

@@ -15,11 +15,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Place launch icons and background directly on your desktop
 
-BUILD_DEPENDS=	imlib2-config:${PORTSDIR}/graphics/imlib2
-
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:261
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

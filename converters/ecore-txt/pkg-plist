@@ -1,0 +1,6 @@
+include/Ecore_Txt.h
+lib/libecore_txt.a
+lib/libecore_txt.la
+lib/libecore_txt.so
+lib/libecore_txt.so.9
+libdata/pkgconfig/ecore-txt.pc

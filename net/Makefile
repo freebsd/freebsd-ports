@@ -122,6 +122,7 @@
     SUBDIR += dtcpclient
     SUBDIR += easysoap
     SUBDIR += echoping
+    SUBDIR += ecore-con
     SUBDIR += ekiga
     SUBDIR += empty
     SUBDIR += enet

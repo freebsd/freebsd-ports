@@ -1,0 +1,6 @@
+include/Ecore_Ipc.h
+lib/libecore_ipc.a
+lib/libecore_ipc.la
+lib/libecore_ipc.so
+lib/libecore_ipc.so.9
+libdata/pkgconfig/ecore-ipc.pc

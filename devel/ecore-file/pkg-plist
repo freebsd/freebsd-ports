@@ -1,0 +1,6 @@
+include/Ecore_File.h
+lib/libecore_file.a
+lib/libecore_file.la
+lib/libecore_file.so
+lib/libecore_file.so.9
+libdata/pkgconfig/ecore-file.pc

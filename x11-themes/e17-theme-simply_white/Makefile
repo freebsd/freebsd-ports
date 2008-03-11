@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	simply_white
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.8.5
+PORTREVISION=	0
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/ \
+MASTER_SITES=	${MASTER_SITE_GET_E} \
 		ftp://ftp.springdaemons.com/pub/snapshots/e17/
+MASTER_SITE_SUBDIR=	Themes/E17
 PKGNAMEPREFIX=	e17-theme-
-DISTNAME=	simply-white
+DISTNAME=	simply-white-${PORTVERSION}
 EXTRACT_SUFX=	.edj
 
 MAINTAINER=	stas@FreeBSD.org

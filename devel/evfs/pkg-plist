@@ -1,9 +1,10 @@
 bin/evfs
-bin/evfs-config
 bin/evfscat
 bin/evfscopy
 bin/evfsdemo
+bin/evfsworker
 include/evfs/evfs.h
+include/evfs/evfs_auth.h
 include/evfs/evfs_cleanup.h
 include/evfs/evfs_client.h
 include/evfs/evfs_command.h
@@ -38,9 +39,6 @@ lib/evfs/plugins/file/gzip.so
 lib/evfs/plugins/file/posix.a
 lib/evfs/plugins/file/posix.la
 lib/evfs/plugins/file/posix.so
-lib/evfs/plugins/file/trash.a
-lib/evfs/plugins/file/trash.la
-lib/evfs/plugins/file/trash.so
 %%SAMBA%%lib/evfs/plugins/file/samba.a
 %%SAMBA%%lib/evfs/plugins/file/samba.la
 %%SAMBA%%lib/evfs/plugins/file/samba.so
@@ -50,28 +48,35 @@ lib/evfs/plugins/file/sftp.so
 lib/evfs/plugins/file/tar.a
 lib/evfs/plugins/file/tar.la
 lib/evfs/plugins/file/tar.so
+lib/evfs/plugins/file/trash.a
+lib/evfs/plugins/file/trash.la
+lib/evfs/plugins/file/trash.so
 lib/evfs/plugins/file/vfolder.a
 lib/evfs/plugins/file/vfolder.la
 lib/evfs/plugins/file/vfolder.so
-lib/evfs/plugins/vfolder/group.a
-lib/evfs/plugins/vfolder/group.la
-lib/evfs/plugins/vfolder/group.so
-lib/evfs/plugins/vfolder/trash.a
-lib/evfs/plugins/vfolder/trash.la
-lib/evfs/plugins/vfolder/trash.so
 %%TAGLIB%%lib/evfs/plugins/meta/audio_tagger.a
 %%TAGLIB%%lib/evfs/plugins/meta/audio_tagger.la
 %%TAGLIB%%lib/evfs/plugins/meta/audio_tagger.so
 %%XTRACT%%lib/evfs/plugins/meta/extractor_tagger.a
 %%XTRACT%%lib/evfs/plugins/meta/extractor_tagger.la
 %%XTRACT%%lib/evfs/plugins/meta/extractor_tagger.so
+lib/evfs/plugins/vfolder/efolder.a
+lib/evfs/plugins/vfolder/efolder.la
+lib/evfs/plugins/vfolder/efolder.so
+lib/evfs/plugins/vfolder/group.a
+lib/evfs/plugins/vfolder/group.la
+lib/evfs/plugins/vfolder/group.so
+lib/evfs/plugins/vfolder/trash.a
+lib/evfs/plugins/vfolder/trash.la
+lib/evfs/plugins/vfolder/trash.so
 lib/libevfs.a
 lib/libevfs.la
 lib/libevfs.so
 lib/libevfs.so.0
+libdata/pkgconfig/evfs.pc
+@dirrm lib/evfs/plugins/vfolder
 @dirrm lib/evfs/plugins/meta
 @dirrm lib/evfs/plugins/file
-@dirrm lib/evfs/plugins/vfolder
 @dirrm lib/evfs/plugins
 @dirrm lib/evfs
 @dirrm include/evfs

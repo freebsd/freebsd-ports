@@ -14,6 +14,7 @@
     SUBDIR += convmv
     SUBDIR += dosunix
     SUBDIR += dumpasn1
+    SUBDIR += ecore-txt
     SUBDIR += enca
     SUBDIR += fconv
     SUBDIR += fix-mime-charset

@@ -1,0 +1,11 @@
+--- src/modules/cpufreq/Makefile.in.orig	2008-03-11 02:13:50.000000000 +0300
++++ src/modules/cpufreq/Makefile.in	2008-03-11 02:13:54.000000000 +0300
+@@ -274,7 +274,7 @@
+ freqset_DATA = \
+ freqset$(EXEEXT)
+ 
+-setuid_root_mode = a=rx,u+xs
++setuid_root_mode = a=rx,u+x
+ freqset_SOURCES = freqset.c
+ all: all-am
+ 

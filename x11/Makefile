@@ -57,10 +57,15 @@
     SUBDIR += e17-module-weather
     SUBDIR += e17-module-winselector
     SUBDIR += ebuttons
-    SUBDIR += ecore
+    SUBDIR += ecore-desktop
+    SUBDIR += ecore-imf
+    SUBDIR += ecore-imf_evas
+    SUBDIR += ecore-x11
     SUBDIR += editres
+    SUBDIR += efreet
     SUBDIR += electricsheep
     SUBDIR += elicit
+    SUBDIR += emprint
     SUBDIR += emu
     SUBDIR += enity
     SUBDIR += enterminus

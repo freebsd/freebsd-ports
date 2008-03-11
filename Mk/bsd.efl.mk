@@ -4,7 +4,7 @@
 #
 # bsd.efl.mk - Support for Enlightenment Foundation Libraries (EFL)
 #
-# Author: Stanislav Sedov <ssedov@mbsd.msk.ru>
+# Author: Stanislav Sedov <stas@FreeBSD.org>
 # Inspired by bsd.sdl.mk by Edwin Groothuis <edwin@freebsd.org>
 #
 # You can specify EFL-related library dependency using "USE_EFL=" statement,
@@ -34,13 +34,13 @@
 # Feel free to send any comments and suggestion to maintainer.
 #
 
-EFL_Include_MAINTAINER=	ssedov@mbsd.msk.ru
+EFL_Include_MAINTAINER=	stas@FreeBSD.org
 
 #
 # Define all supported libraries
 #
-_USE_EFL_ALL=	ecore edb edje eet embryo emotion engrave enhance epeg \
-		epsilon etk etox evas evfs ewl exml imlib2
+_USE_EFL_ALL=	ecore edb edje eet efreet embryo emotion engrave enhance epeg \
+		epsilon etk etox evas evfs ewl exml imlib2 edbus
 
 # For each library supported we define the following variables:
 #	_%%LIB%%_CATEGORY	- category the port belongs to
@@ -52,18 +52,28 @@ _USE_EFL_ALL=	ecore edb edje eet embryo emotion engrave enhance epeg \
 #	_%%LIB%%_SLIB		- name of the shared library
 #
 
-_ecore_CATEGORY=	x11
-_ecore_DEPENDS=		evas
+_ecore_CATEGORY=	devel
+_ecore_PORTNAME=	ecore-main
 _ecore_PREFIX=		${LOCALBASE}
-_ecore_VERSION=		1
+_ecore_VERSION=		9
 
 _edb_CATEGORY=		databases
 _edb_PREFIX=		${LOCALBASE}
 _edb_VERSION=		1
 
+_edbus_CATEGORY=	devel
+_edbus_PORTNAME=	e_dbus
+_edbus_PREFIX=		${LOCALBASE}
+_edbus_VERSION=		1
+
 _eet_CATEGORY=		devel
 _eet_PREFIX=		${LOCALBASE}
 _eet_VERSION=		9
+
+_efreet_CATEGORY=	x11
+_efreet_DEPENDS=	ecore
+_efreet_PREFIX=		${LOCALBASE}
+_efreet_VERSION=	0
 
 _edje_CATEGORY=		graphics
 _edje_DEPENDS=		embryo eet imlib2 evas ecore
@@ -77,7 +87,7 @@ _embryo_VERSION=	9
 _emotion_CATEGORY=	multimedia
 _emotion_DEPENDS=	ecore edje eet embryo evas
 _emotion_PREFIX=	${LOCALBASE}
-_emotion_VERSION=	0
+_emotion_VERSION=	1
 
 _engrave_CATEGORY=	devel
 _engrave_DEPENDS=	ecore evas
@@ -96,7 +106,7 @@ _epeg_VERSION=		9
 _epsilon_CATEGORY=	graphics
 _epsilon_DEPENDS=	epeg edje imlib2 ecore
 _epsilon_PREFIX=	${LOCALBASE}
-_epsilon_VERSION=	0
+_epsilon_VERSION=	3
 
 _etk_CATEGORY=		x11-toolkits
 _etk_DEPENDS=		evas ecore edje
@@ -109,9 +119,9 @@ _etox_PREFIX=		${LOCALBASE}
 _etox_VERSION=		0
 
 _evas_CATEGORY=		graphics
-_evas_DEPENDS=		eet edb
+_evas_PORTNAME=		evas-core
 _evas_PREFIX=		${LOCALBASE}
-_evas_VERSION=		1
+_evas_VERSION=		9
 
 _evfs_CATEGORY=		devel
 _evfs_DEPENDS=		eet ecore
@@ -130,7 +140,7 @@ _exml_VERSION=		1
 
 _imlib2_CATEGORY=	graphics
 _imlib2_PREFIX=		${LOCALBASE}
-_imlib2_VERSION=	4
+_imlib2_VERSION=	5
 _imlib2_SLIB=		Imlib2
 
 #
@@ -142,6 +152,9 @@ _${LIB}_DEPENDS=	#empty
 . endif
 . if !defined(_${LIB}_SLIB)
 _${LIB}_SLIB=${LIB}
+. endif
+. if !defined(_${LIB}_PORTNAME)
+_${LIB}_PORTNAME=${LIB}
 . endif
 .endfor
 
@@ -157,7 +170,7 @@ _${LIB}_SLIB=${LIB}
 #
 
 # All components that are currently supported
-_EFL_ESMART_ALL=	container draggies file_dialog text_entry \
+_EFL_ESMART_ALL=	container draggies text_entry \
 			thumb trans_x11
 
 #
@@ -167,7 +180,7 @@ _EFL_ESMART_CATEGORY=	graphics
 _EFL_ESMART_PORTNAME=	esmart
 _EFL_ESMART_DEPENDS=	epsilon evas ecore imlib2 edje
 _EFL_ESMART_PREFIX=	${LOCALBASE}
-_EFL_ESMART_VERSION=	0
+_EFL_ESMART_VERSION=	9
 
 #
 # Assign values for variables which were not defined explicitly
@@ -194,6 +207,110 @@ _esmart_${COMP}_VERSION=	${_EFL_ESMART_VERSION}
 .endfor
 
 #
+# Evas engines and loaders support.
+# Values processed:
+# _evas_engine_COMP_CATEGORY	- Where the port for this object is located
+# _evas_engine_COMP_PORTNAME	- Object's port subdirectory
+# _evas_engine_COMP_DIR		- Evas object's subdir
+#
+
+# All components that are currently supported
+_EFL_EVAS_ENGINES_ALL= buffer opengl sdl x11 xrender
+_EFL_EVAS_LOADERS_ALL= edb eet gif jpeg png svg tiff xpm
+
+#
+# Generic evas engines definitions
+#
+_EFL_EVAS_CATEGORY=	graphics
+_EFL_EVAS_MODDIR=	${LOCALBASE}/lib/evas/modules/
+_EFL_EVAS_ENGINES_MODDIR=	${_EFL_EVAS_MODDIR}/engines/
+_EFL_EVAS_LOADERS_MODDIR=	${_EFL_EVAS_MODDIR}/loaders/
+
+#
+# Evas engine modules definitions
+#
+
+_evas_engine_buffer_DIR=	buffer
+_evas_engine_opengl_DIR=	gl_x11
+_evas_engine_sdl_DIR=		software_sdl
+_evas_engine_x11_DIR=		software_x11
+_evas_engine_xrender_DIR=	xrender_x11
+
+#
+# Assign values for variables which were not defined explicitly
+#
+.for COMP in ${_EFL_EVAS_ENGINES_ALL}
+. if !defined(_evas_engine_${COMP}_CATEGORY)
+_evas_engine_${COMP}_CATEGORY=	${_EFL_EVAS_CATEGORY}
+. endif
+. if !defined(_evas_engine_${COMP}_PORTNAME)
+_evas_engine_${COMP}_PORTNAME=	evas-engine-${COMP}
+. endif
+. if !defined(_evas_engine_${COMP}_DIR)
+_evas_engine_${COMP}_DIR=	${COMP}
+. endif
+.endfor
+
+.for COMP in ${_EFL_EVAS_LOADERS_ALL}
+. if !defined(_evas_loader_${COMP}_CATEGORY)
+_evas_loader_${COMP}_CATEGORY=	${_EFL_EVAS_CATEGORY}
+. endif
+. if !defined(_evas_loader_${COMP}_PORTNAME)
+_evas_loader_${COMP}_PORTNAME=	evas-loader-${COMP}
+. endif
+. if !defined(_evas_loader_${COMP}_DIR)
+_evas_loader_${COMP}_DIR=	${COMP}
+. endif
+.endfor
+
+#
+# Ecore modules support
+# Values processed:
+# _ecore_COMP_CATEGORY	- Where the port for this object is located
+# _ecore_COMP_PORTNAME	- Object's port subdirectory
+# _ecore_COMP_NAME	- Ecore library name
+#
+
+# All components that are currently supported
+_EFL_ECORE_ALL=	con config desktop evas file ipc job sdl txt x11 imf imf_evas
+
+#
+# Generic ecore definitions
+#
+_EFL_ECORE_CATEGORY=	devel
+_EFL_ECORE_MODDIR=	${LOCALBASE}/lib/
+
+#
+# Ecore modules definitions
+#
+
+_ecore_con_CATEGORY=		net
+_ecore_config_CATEGORY=		sysutils
+_ecore_desktop_CATEGORY=	x11
+_ecore_evas_CATEGORY=		graphics
+_ecore_sdl_CATEGORY=		graphics
+_ecore_txt_CATEGORY=		converters
+_ecore_imf_CATEGORY=		x11
+_ecore_imf_evas_CATEGORY=	x11
+_ecore_x11_CATEGORY=		x11
+_ecore_x11_NAME=		ecore_x
+
+#
+# Assign values for variables which were not defined explicitly
+#
+.for COMP in ${_EFL_ECORE_ALL}
+. if !defined(_ecore_${COMP}_CATEGORY)
+_ecore_${COMP}_CATEGORY=	${_EFL_ECORE_CATEGORY}
+. endif
+. if !defined(_ecore_${COMP}_PORTNAME)
+_ecore_${COMP}_PORTNAME=	ecore-${COMP}
+. endif
+. if !defined(_ecore_${COMP}_NAME)
+_ecore_${COMP}_NAME=	ecore_${COMP}
+. endif
+.endfor
+
+#
 # Handle WANT_EFL feature
 #
 .if !defined(AFTERPORTMK)
@@ -203,15 +320,32 @@ EFL_Include_pre=	bsd.efl.mk
 
 HAVE_EFL?=
 HAVE_EFL_ESMART?=
+HAVE_EFL_ECORE?=
 .if defined(WANT_EFL)
+#
+# General EFL components
+#
 . for LIB in ${_USE_EFL_ALL}
 .  if exists(${_${LIB}_PREFIX}/lib/lib${_${LIB}_SLIB}.so.${_${LIB}_VERSION})
 HAVE_EFL+=	${LIB}
 .  endif
 . endfor
+
+#
+# Esmart objects
+#
 . for COMP in ${_EFL_ESMART_ALL}
 .  if exists(${_esmart_${COMP}_PREFIX}/lib/lib${_esmart_${COMP}_SLIB}.so.${_esmart_${COMP}_VERSION})
 HAVE_EFL_ESMART+=	${COMP}
+.  endif
+. endfor
+
+#
+# Ecore components
+#
+. for COMP in ${_EFL_ECORE_ALL}
+.  if exists(${_ecore_PREFIX}/lib/lib${_ecore_${COMP}_NAME}.so.${_ecore_VERSION})
+HAVE_EFL_ECORE+=	${COMP}
 .  endif
 . endfor
 .endif
@@ -220,7 +354,7 @@ HAVE_EFL_ESMART+=	${COMP}
 .endif #AFTERPORTMK
 
 #
-# Handle USE_EFL & USE_ESMART feature
+# Handle USE_EFL, USE_EFL_ESMART, USE_EFL_EVAS_* and USE_EFL_ECORE features
 #
 .if !defined(BEFOREPORTMK)
 .if !defined(EFL_Include_post)
@@ -260,6 +394,89 @@ LIB_DEPENDS+=	${_esmart_${COMP}_SLIB}.${_esmart_${COMP}_VERSION}:${PORTSDIR}/${_
 
 .endif #USE_EFL_ESMART
 
+.if defined(USE_EFL_EVAS_ENGINES)
+
+USE_EFL+=	evas
+
+_USE_EFL_EVAS_ENGINES=	#empty
+. for COMP in ${USE_EFL_EVAS_ENGINES}
+.  if ${_EFL_EVAS_ENGINES_ALL:M${COMP}}==""
+IGNORE=	cannot install: unknown evas engine ${COMP}
+.  else
+_USE_EFL_EVAS_ENGINES+=	${COMP}
+.  endif
+. endfor
+
+# Get rid of duplicates
+_USE_EFL_EVAS_ENGINES_UQ=	#empty
+. for COMP in ${_USE_EFL_EVAS_ENGINES}
+.  if ${_USE_EFL_EVAS_ENGINES_UQ:M${COMP}}==""
+_USE_EFL_EVAS_ENGINES_UQ+=	${COMP}
+.  endif
+. endfor
+
+. for COMP in ${_USE_EFL_EVAS_ENGINES_UQ}
+BUILD_DEPENDS+=	${_EFL_EVAS_ENGINES_MODDIR}/${_evas_engine_${COMP}_DIR}/freebsd${OSREL}-${ARCH}/module.so:${PORTSDIR}/${_evas_engine_${COMP}_CATEGORY}/${_evas_engine_${COMP}_PORTNAME}
+RUN_DEPENDS+=	${_EFL_EVAS_ENGINES_MODDIR}/${_evas_engine_${COMP}_DIR}/freebsd${OSREL}-${ARCH}/module.so:${PORTSDIR}/${_evas_engine_${COMP}_CATEGORY}/${_evas_engine_${COMP}_PORTNAME}
+. endfor
+
+.endif #USE_EFL_EVAS_ENGINES
+
+.if defined(USE_EFL_EVAS_LOADERS)
+
+USE_EFL+=	evas
+
+_USE_EFL_EVAS_LOADERS=	#empty
+. for COMP in ${USE_EFL_EVAS_LOADERS}
+.  if ${_EFL_EVAS_LOADERS_ALL:M${COMP}}==""
+IGNORE=	cannot install: unknown evas loader ${COMP}
+.  else
+_USE_EFL_EVAS_LOADERS+=	${COMP}
+.  endif
+. endfor
+
+# Get rid of duplicates
+_USE_EFL_EVAS_LOADERS_UQ=	#empty
+. for COMP in ${_USE_EFL_EVAS_LOADERS}
+.  if ${_USE_EFL_EVAS_LOADERS_UQ:M${COMP}}==""
+_USE_EFL_EVAS_LOADERS_UQ+=	${COMP}
+.  endif
+. endfor
+
+. for COMP in ${_USE_EFL_EVAS_LOADERS_UQ}
+BUILD_DEPENDS+=	${_EFL_EVAS_LOADERS_MODDIR}/${_evas_loader_${COMP}_DIR}/freebsd${OSREL}-${ARCH}/module.so:${PORTSDIR}/${_evas_loader_${COMP}_CATEGORY}/${_evas_loader_${COMP}_PORTNAME}
+RUN_DEPENDS+=	${_EFL_EVAS_LOADERS_MODDIR}/${_evas_loader_${COMP}_DIR}/freebsd${OSREL}-${ARCH}/module.so:${PORTSDIR}/${_evas_loader_${COMP}_CATEGORY}/${_evas_loader_${COMP}_PORTNAME}
+. endfor
+
+.endif #USE_EFL_EVAS_LOADERS
+
+.if defined(USE_EFL_ECORE)
+
+USE_EFL+=	ecore
+
+_USE_EFL_ECORE=	#empty
+. for COMP in ${USE_EFL_ECORE}
+.  if ${_EFL_ECORE_ALL:M${COMP}}==""
+IGNORE=	cannot install: unknown ecore module ${COMP}
+.  else
+_USE_EFL_ECORE+=	${COMP}
+.  endif
+. endfor
+
+# Get rid of duplicates
+_USE_EFL_ECORE_UQ=	#empty
+. for COMP in ${_USE_EFL_ECORE}
+.  if ${_USE_EFL_ECORE_UQ:M${COMP}}==""
+_USE_EFL_ECORE_UQ+=	${COMP}
+.  endif
+. endfor
+
+. for COMP in ${_USE_EFL_ECORE_UQ}
+LIB_DEPENDS+=	${_ecore_${COMP}_NAME}.${_ecore_VERSION}:${PORTSDIR}/${_ecore_${COMP}_CATEGORY}/${_ecore_${COMP}_PORTNAME}
+. endfor
+
+.endif #USE_EFL_ECORE
+
 .if defined(USE_EFL)
 
 EFL_Include_post=	bsd.efl.mk
@@ -289,7 +506,7 @@ _USE_EFL_UQ+=	${LIB}
 # define dependencies
 #
 .for LIB in ${_USE_EFL_UQ}
-LIB_DEPENDS+=	${_${LIB}_SLIB}.${_${LIB}_VERSION}:${PORTSDIR}/${_${LIB}_CATEGORY}/${LIB}
+LIB_DEPENDS+=	${_${LIB}_SLIB}.${_${LIB}_VERSION}:${PORTSDIR}/${_${LIB}_CATEGORY}/${_${LIB}_PORTNAME}
 .endfor
 
 #

@@ -7,7 +7,7 @@
 
 PORTNAME=	kahakai
 PORTVERSION=	0.6.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +17,7 @@ COMMENT=	Kahakai window manager
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
 	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
-LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2 \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	\
 	${X11BASE}/lib/X11/fonts/artwiz-fonts:${PORTSDIR}/x11-fonts/artwiz-fonts
 
@@ -34,6 +33,7 @@ GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_GCC=	3.4
+USE_EFL=	imlib2
 
 MAN1=		kahakai.1
 

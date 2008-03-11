@@ -73,11 +73,24 @@ lib/enlightenment/modules/language/images/VNM_flag.png
 lib/enlightenment/modules/language/images/ZAR_flag.png
 lib/enlightenment/modules/language/images/unknown_flag.png
 lib/enlightenment/modules/language/language.edj
+lib/enlightenment/modules/language/e-module-language.edj
 lib/enlightenment/modules/language/module.desktop
-lib/enlightenment/modules/language/module.edj
-share/locale/eo/LC_MESSAGES/language.mo
-share/locale/it/LC_MESSAGES/language.mo
-share/locale/sv/LC_MESSAGES/language.mo
+%%NLS%%lib/enlightenment/modules/language/locale/eo/LC_MESSAGES/language.mo
+%%NLS%%lib/enlightenment/modules/language/locale/fi/LC_MESSAGES/language.mo
+%%NLS%%lib/enlightenment/modules/language/locale/fr/LC_MESSAGES/language.mo
+%%NLS%%lib/enlightenment/modules/language/locale/it/LC_MESSAGES/language.mo
+%%NLS%%lib/enlightenment/modules/language/locale/sv/LC_MESSAGES/language.mo
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/language/locale
 @dirrm lib/enlightenment/modules/language/images
 @dirrm lib/enlightenment/modules/language/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/language

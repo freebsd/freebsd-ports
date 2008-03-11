@@ -271,10 +271,16 @@
     SUBDIR += duplo
     SUBDIR += dwarfdump
     SUBDIR += e4graph
+    SUBDIR += e_dbus
     SUBDIR += ebnf2yacc
     SUBDIR += eboxy
     SUBDIR += ecb
     SUBDIR += ecgi
+    SUBDIR += ecore
+    SUBDIR += ecore-file
+    SUBDIR += ecore-ipc
+    SUBDIR += ecore-job
+    SUBDIR += ecore-main
     SUBDIR += ecos-tools
     SUBDIR += eet
     SUBDIR += egypt

@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	edje
-PORTVERSION=	20070223
-PORTREVISION=	2
-PORTEPOCH=	1
+PORTVERSION=	0.5.0.042
+PORTREVISION=	0
+PORTEPOCH=	2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
+		http://download.enlightenment.org/snapshots/2008-01-25/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Edje is a complex graphical design and layout engine
@@ -20,7 +21,11 @@ USE_BZIP2=	yes
 USE_GCC=	3.4+
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	embryo eet evas ecore imlib2
+USE_EFL_ECORE=	evas job
+USE_EVAS_LOADERS=	edb eet jpeg png
 USE_LDCONFIG=	yes
+
+CONFIGURE_ARGS+=	--without-vim
 
 .include <bsd.port.pre.mk>
 

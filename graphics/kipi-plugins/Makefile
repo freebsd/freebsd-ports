@@ -191,7 +191,7 @@ PLIST_SUB+=	SIMPLEVIEWEREXPORT:="@comment "
 .if !defined(WITHOUT_SLIDESHOW)
 PLIST_SUB+=	SLIDESHOW:=""
 SUBDIRS+=	slideshow
-LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
+USE_EFL+=	imlib2
 .else
 PLIST_SUB+=	SLIDESHOW:="@comment "
 .endif

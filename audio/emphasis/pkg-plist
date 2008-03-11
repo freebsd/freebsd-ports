@@ -10,5 +10,15 @@ bin/emphasis
 %%DATADIR%%/images/note.png
 %%DATADIR%%/images/sound_high.png
 %%DATADIR%%/images/sound_low.png
+share/icons/hicolor/48x48/apps/emphasis.png
+share/icons/hicolor/scalable/apps/emphasis.svg
+share/applications/emphasis.desktop
+@dirrmtry share/applications
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
