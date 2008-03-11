@@ -7,6 +7,7 @@
 
 PORTNAME=	mcabber
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 
@@ -57,7 +58,7 @@ CONFIGURE_ARGS+=--disable-aspell
 
 .if defined(WITH_OTR)
 LIB_DEPENDS+=	otr.3:${PORTSDIR}/security/libotr \
-		gcrypt.13:${PORTSDIR}/security/libgcrypt
+		gcrypt.15:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--enable-otr
 .else
 CONFIGURE_ARGS+=--disable-otr
