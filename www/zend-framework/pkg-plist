@@ -140,6 +140,8 @@
 %%DATADIR%%/library/Zend/Db/Adapter/Oracle/Exception.php
 %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Abstract.php
 %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Ibm.php
+%%DATADIR%%/library/Zend/Db/Adapter/Pdo/Ibm/Db2.php
+%%DATADIR%%/library/Zend/Db/Adapter/Pdo/Ibm/Ids.php
 %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Mssql.php
 %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Mysql.php
 %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Oci.php
@@ -244,6 +246,7 @@
 %%DATADIR%%/library/Zend/Gdata/App/HttpException.php
 %%DATADIR%%/library/Zend/Gdata/App/IOException.php
 %%DATADIR%%/library/Zend/Gdata/App/InvalidArgumentException.php
+%%DATADIR%%/library/Zend/Gdata/App/LoggingHttpClientAdapterSocket.php
 %%DATADIR%%/library/Zend/Gdata/App/MediaEntry.php
 %%DATADIR%%/library/Zend/Gdata/App/MediaFileSource.php
 %%DATADIR%%/library/Zend/Gdata/App/MediaSource.php
@@ -431,6 +434,7 @@
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Gender.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Hobbies.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Hometown.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Link.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Location.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/MediaContent.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/MediaGroup.php
@@ -445,6 +449,7 @@
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/School.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Statistics.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Status.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Token.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Username.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/MediaEntry.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/PlaylistListEntry.php
@@ -1385,11 +1390,13 @@
 %%DATADIR%%/tests/Zend/Config/XmlTest.php
 %%DATADIR%%/tests/Zend/Config/_files/allsections.ini
 %%DATADIR%%/tests/Zend/Config/_files/allsections.xml
+%%DATADIR%%/tests/Zend/Config/_files/array.xml
 %%DATADIR%%/tests/Zend/Config/_files/circular.ini
 %%DATADIR%%/tests/Zend/Config/_files/circular.xml
 %%DATADIR%%/tests/Zend/Config/_files/config.ini
 %%DATADIR%%/tests/Zend/Config/_files/config.xml
 %%DATADIR%%/tests/Zend/Config/_files/multipleinheritance.ini
+%%DATADIR%%/tests/Zend/Config/_files/nosections.ini
 %%DATADIR%%/tests/Zend/Config/_files/onetoplevelstring.xml
 %%DATADIR%%/tests/Zend/Config/_files/separator.ini
 %%DATADIR%%/tests/Zend/Config/_files/toplevelstring.xml
@@ -1429,17 +1436,10 @@
 %%DATADIR%%/tests/Zend/Controller/_files/ObController.php
 %%DATADIR%%/tests/Zend/Controller/_files/ViewController.php
 %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/controllers/IndexController.php
-%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/index/test.phtml
-%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/test.phtml
-%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/test/foo.php
 %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/controllers/Admin/IndexController.php
 %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/controllers/IndexController.php
+%%DATADIR%%/tests/Zend/Controller/_files/routes-root.ini
 %%DATADIR%%/tests/Zend/Controller/_files/routes.ini
-%%DATADIR%%/tests/Zend/Controller/views/scripts/custom/renderScript.php
-%%DATADIR%%/tests/Zend/Controller/views/scripts/foo-bar/baz-bat.phtml
-%%DATADIR%%/tests/Zend/Controller/views/scripts/site.phtml
-%%DATADIR%%/tests/Zend/Controller/views/scripts/view/index.phtml
-%%DATADIR%%/tests/Zend/Controller/views/scripts/view/name.phtml
 %%DATADIR%%/tests/Zend/CurrencyTest.php
 %%DATADIR%%/tests/Zend/Date/AllTests.php
 %%DATADIR%%/tests/Zend/Date/DateObjectTest.php
@@ -1645,6 +1645,7 @@
 %%DATADIR%%/tests/Zend/Gdata/AppTest.php
 %%DATADIR%%/tests/Zend/Gdata/AttendeeStatusTest.php
 %%DATADIR%%/tests/Zend/Gdata/AttendeeTypeTest.php
+%%DATADIR%%/tests/Zend/Gdata/AuthSubTest.php
 %%DATADIR%%/tests/Zend/Gdata/Calendar/AccessLevelTest.php
 %%DATADIR%%/tests/Zend/Gdata/Calendar/ColorTest.php
 %%DATADIR%%/tests/Zend/Gdata/Calendar/EventEntryTest.php
@@ -2066,10 +2067,13 @@
 %%DATADIR%%/tests/Zend/Service/Audioscrobbler/AlbumDataTest.php
 %%DATADIR%%/tests/Zend/Service/Audioscrobbler/AllTests.php
 %%DATADIR%%/tests/Zend/Service/Audioscrobbler/ArtistTest.php
+%%DATADIR%%/tests/Zend/Service/Audioscrobbler/AudioscrobblerTest.php
 %%DATADIR%%/tests/Zend/Service/Audioscrobbler/GroupTest.php
 %%DATADIR%%/tests/Zend/Service/Audioscrobbler/ProfileTest.php
 %%DATADIR%%/tests/Zend/Service/Audioscrobbler/TagDataTest.php
 %%DATADIR%%/tests/Zend/Service/Audioscrobbler/TrackDataTest.php
+%%DATADIR%%/tests/Zend/Service/Audioscrobbler/_files/errorNoUserExists
+%%DATADIR%%/tests/Zend/Service/Audioscrobbler/_files/errorResponseStatusError
 %%DATADIR%%/tests/Zend/Service/Delicious/AllTests.php
 %%DATADIR%%/tests/Zend/Service/Delicious/PostTest.php
 %%DATADIR%%/tests/Zend/Service/Delicious/PrivateDataTest.php
@@ -2120,6 +2124,7 @@
 %%DATADIR%%/tests/Zend/Translate/XmlTmTest.php
 %%DATADIR%%/tests/Zend/Translate/_files/XmlTm_test_de.xml
 %%DATADIR%%/tests/Zend/Translate/_files/XmlTm_test_en.xml
+%%DATADIR%%/tests/Zend/Translate/_files/array.php
 %%DATADIR%%/tests/Zend/Translate/_files/failed.tmx
 %%DATADIR%%/tests/Zend/Translate/_files/failed.xliff
 %%DATADIR%%/tests/Zend/Translate/_files/test_fileerror.mo
@@ -2198,18 +2203,6 @@
 %%DATADIR%%/tests/Zend/_files/_testDir1/ClassNonexistent.php
 %%DATADIR%%/tests/Zend/_files/_testDir1/Interface1.php
 %%DATADIR%%/tests/Zend/_files/_testDir2/Class2.php
-@exec mkdir -p %D/%%DATADIR%%/library/Zend/View/Filter
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/filters
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/helpers
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/default/controllers
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/helpers
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/scripts
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/views/filters
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/views/helpers
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Db/Table/_files
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Memory/_files
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Search/Lucene/Storage/_tempFiles
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Search/Lucene/_files/_index
 @dirrm %%DATADIR%%/tests/Zend/_files/_testDir2
 @dirrm %%DATADIR%%/tests/Zend/_files/_testDir1/Class1
 @dirrm %%DATADIR%%/tests/Zend/_files/_testDir1
@@ -2234,6 +2227,7 @@
 @dirrm %%DATADIR%%/tests/Zend/Service/Flickr/_files
 @dirrm %%DATADIR%%/tests/Zend/Service/Flickr
 @dirrm %%DATADIR%%/tests/Zend/Service/Delicious
+@dirrm %%DATADIR%%/tests/Zend/Service/Audioscrobbler/_files
 @dirrm %%DATADIR%%/tests/Zend/Service/Audioscrobbler
 @dirrm %%DATADIR%%/tests/Zend/Service/Amazon
 @dirrm %%DATADIR%%/tests/Zend/Service
@@ -2327,14 +2321,9 @@
 @dirrm %%DATADIR%%/tests/Zend/Db/Adapter
 @dirrm %%DATADIR%%/tests/Zend/Db
 @dirrm %%DATADIR%%/tests/Zend/Date
-@dirrm %%DATADIR%%/tests/Zend/Controller/views/scripts/view
-@dirrm %%DATADIR%%/tests/Zend/Controller/views/scripts/foo-bar
-@dirrm %%DATADIR%%/tests/Zend/Controller/views/scripts/custom
-@dirrm %%DATADIR%%/tests/Zend/Controller/views/scripts
 @dirrm %%DATADIR%%/tests/Zend/Controller/views/helpers
 @dirrm %%DATADIR%%/tests/Zend/Controller/views/filters
 @dirrm %%DATADIR%%/tests/Zend/Controller/views
-@dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/scripts
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/helpers
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/controllers/Admin
@@ -2342,9 +2331,6 @@
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/default/controllers
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/default
-@dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/test
-@dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/index
-@dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/helpers
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/filters
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views
@@ -2516,6 +2502,7 @@
 @dirrm %%DATADIR%%/library/Zend/Db/Statement
 @dirrm %%DATADIR%%/library/Zend/Db/Select
 @dirrm %%DATADIR%%/library/Zend/Db/Profiler
+@dirrm %%DATADIR%%/library/Zend/Db/Adapter/Pdo/Ibm
 @dirrm %%DATADIR%%/library/Zend/Db/Adapter/Pdo
 @dirrm %%DATADIR%%/library/Zend/Db/Adapter/Oracle
 @dirrm %%DATADIR%%/library/Zend/Db/Adapter/Mysqli
@@ -2572,3 +2559,14 @@
 @dirrm %%DATADIR%%/demos/Zend
 @dirrm %%DATADIR%%/demos
 @dirrm %%DATADIR%%
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Search/Lucene/_files/_index
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Search/Lucene/Storage/_tempFiles
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Memory/_files
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Db/Table/_files
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/views/helpers
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/views/filters
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/helpers
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/default/controllers
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/helpers
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/filters
+@exec mkdir -p %D/%%DATADIR%%/library/Zend/View/Filter
