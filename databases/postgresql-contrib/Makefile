@@ -16,7 +16,7 @@ COMMENT=	The contrib utilities from the PostgreSQL distribution
 USE_PGSQL=	yes
 MASTERDIR=	${.CURDIR}/../postgresql${PGSQL_VER}-server
 
-DEFAULT_PGSQL_VER?=81
+DEFAULT_PGSQL_VER?=82
 
 # can't include <bsd.port.pre.mk> in a slave port
 # so set these instead:
