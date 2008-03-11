@@ -8,7 +8,7 @@ INDEX_PRISTINE=1
 INDEX_QUIET=1
 
 # Concurrency of index build
-INDEX_JOBS=6
+export INDEX_JOBS=6
 
 pb=/var/portbuild
 arch=$1
