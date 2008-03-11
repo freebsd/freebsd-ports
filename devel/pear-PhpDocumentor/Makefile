@@ -7,6 +7,7 @@
 
 PORTNAME=	PhpDocumentor
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -1233,12 +1234,33 @@ DUMMYDIRS=	media \
 		tutorials \
 		Documentation
 
+SUBFILES=	phpDocumentor/Converter.inc \
+		phpDocumentor/IntermediateParser.inc \
+		phpDocumentor/Setup.inc.php \
+		phpDocumentor/common.inc.php \
+		docbuilder/actions.php \
+		docbuilder/builder.php \
+		docbuilder/config.php \
+		docbuilder/file_dialog.php \
+		docbuilder/top.php \
+		docbuilder/includes/utilities.php \
+		user/pear-makedocs.ini
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 
 .if defined(WITH_XML_BEAUTIFIER)
 RUN_DEPENDS+=	${PEARDIR}/XML/Beautifier.php:${PORTSDIR}/textproc/pear-XML_Beautifier
 .endif
+
+post-patch:
+.for file in ${SUBFILES}
+	@${REINPLACE_CMD} -e 's|VER|${PORTVERSION}|g ; \
+		 s|@PEAR-DIR@|${PEARDIR}|g ; \
+		 s|@DATA-DIR@|${DATADIR:S,/${PORTNAME}$,,}|g ; \
+		 s|@WEB-DIR@|${DATADIR:S,/${PORTNAME}$,,}|g ; \
+		 s|@DOC-DIR@|${DOCSDIR:S,/${PORTNAME}$,,}|g' ${WRKSRC}/${file}
+.endfor
 
 post-extract:
 .for dir in ${DUMMYDIRS}
