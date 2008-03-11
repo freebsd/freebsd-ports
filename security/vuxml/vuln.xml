@@ -48,18 +48,20 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Ian Jackson reports on the debian-security mailinglist:</p>
 	<blockquote cite="http://lists.debian.org/debian-security/2008/02/msg00064.html">
 	  <p>When a block device read or write request is made by the guest,
-	  nothing checks that the request is within the range supported by the
-	  backend, but the code in the backend typically assumes that the
-	  request is sensible.</p>
+	    nothing checks that the request is within the range supported by
+	    the backend, but the code in the backend typically assumes that
+	    the request is sensible.</p>
 	  <p>Depending on the backend, this can allow the guest to read
-	  and write arbitrary memory locations in qemu, and possibly gain
-	  control over the qemu process, escaping from the
-	  emulation/virtualisation.</p>
+	    and write arbitrary memory locations in qemu, and possibly gain
+	    control over the qemu process, escaping from the
+	    emulation/virtualisation.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <cvename>CVE-2008-0928</cvename>
+      <url>http://secunia.com/advisories/29172</url>
+      <url>http://secunia.com/advisories/29172</url>
       <mlist msgid="18362.62578.44273.779731@mariner.uk.xensource.com">http://lists.debian.org/debian-security/2008/02/msg00064.html</mlist>
     </references>
     <dates>
