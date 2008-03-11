@@ -15602,6 +15602,7 @@ stringencoders	ports/devel/stringencoders
 strobe		ports/security/strobe
 stroq		ports/games/stroq
 stuffit		ports/archivers/stuffit
+stumpwm		ports/x11-wm/stumpwm
 stund		ports/net/stund
 stunnel		ports/security/stunnel
 stvef-paks	ports/games/stvef-paks
