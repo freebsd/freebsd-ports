@@ -294,6 +294,7 @@
     SUBDIR += localize
     SUBDIR += lt-aspell
     SUBDIR += ltxml
+    SUBDIR += lucene
     SUBDIR += lv-aspell
     SUBDIR += makefaq
     SUBDIR += makepatch
