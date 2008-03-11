@@ -2,7 +2,7 @@ bin/cdclcc
 bin/cdclcmap
 bin/cdclclr
 bin/cdclconfig
-bin/cdclconfig53
+bin/cdclconfig%%DCL_VERSION%%
 bin/cdcldate
 bin/cdcldbs
 bin/cdclexec
@@ -16,6 +16,7 @@ bin/cdclpsline
 bin/cdclpsmargin
 bin/cdclpsmerge
 bin/cdclpsnup
+bin/cdclpsrgb2cmyk
 bin/cdclpsrmcm
 bin/cdclpsrot
 bin/cdclpsselect
@@ -27,33 +28,34 @@ bin/cdclver
 bin/crepsl
 include/libtinyf2c.h
 include/cdcl.h
-lib/dcldbase-%%DCL_VERSION%%/bitmap.x11
-lib/dcldbase-%%DCL_VERSION%%/border_world
-lib/dcldbase-%%DCL_VERSION%%/cl2tnmap
-lib/dcldbase-%%DCL_VERSION%%/cmaplist
-lib/dcldbase-%%DCL_VERSION%%/coast_japan
-lib/dcldbase-%%DCL_VERSION%%/coast_world
-lib/dcldbase-%%DCL_VERSION%%/coast_world_1
-lib/dcldbase-%%DCL_VERSION%%/colormap.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_01.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_02.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_03.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_04.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_05.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_06.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_07.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_08.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_09.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_10.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_11.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_12.x11
-lib/dcldbase-%%DCL_VERSION%%/colormap_13.x11
-lib/dcldbase-%%DCL_VERSION%%/font1u
-lib/dcldbase-%%DCL_VERSION%%/font2u
-lib/dcldbase-%%DCL_VERSION%%/plate_world
-lib/dcldbase-%%DCL_VERSION%%/pref_japan
-lib/dcldbase-%%DCL_VERSION%%/state_usa
-lib/libcdcl53.a
+lib/cdcldbase/bitmap.x11
+lib/cdcldbase/border_world
+lib/cdcldbase/cl2tnmap
+lib/cdcldbase/cmaplist
+lib/cdcldbase/coast_japan
+lib/cdcldbase/coast_world
+lib/cdcldbase/coast_world_1
+lib/cdcldbase/colormap.x11
+lib/cdcldbase/colormap_01.x11
+lib/cdcldbase/colormap_02.x11
+lib/cdcldbase/colormap_03.x11
+lib/cdcldbase/colormap_04.x11
+lib/cdcldbase/colormap_05.x11
+lib/cdcldbase/colormap_06.x11
+lib/cdcldbase/colormap_07.x11
+lib/cdcldbase/colormap_08.x11
+lib/cdcldbase/colormap_09.x11
+lib/cdcldbase/colormap_10.x11
+lib/cdcldbase/colormap_11.x11
+lib/cdcldbase/colormap_12.x11
+lib/cdcldbase/colormap_13.x11
+lib/cdcldbase/colormap_14.x11
+lib/cdcldbase/font1u
+lib/cdcldbase/font2u
+lib/cdcldbase/plate_world
+lib/cdcldbase/pref_japan
+lib/cdcldbase/state_usa
+lib/libcdcl.a
 lib/libf2c4dcl.a
 %%PORTDOCS%%share/doc/cdcl/CHECK
 %%PORTDOCS%%share/doc/cdcl/CREDITS
@@ -117,6 +119,7 @@ lib/libf2c4dcl.a
 %%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk09.c
 %%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgpk10.c
 %%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgtclr.c
+%%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgtcls.c
 %%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgtone.c
 %%PORTDOCS%%share/examples/cdcl/grph1/sgpack/sgtonz.c
 %%PORTDOCS%%share/examples/cdcl/grph1/slpack/Makefile
@@ -411,4 +414,4 @@ lib/libf2c4dcl.a
 %%PORTDOCS%%@dirrm share/examples/cdcl/rakuraku/uxyz
 %%PORTDOCS%%@dirrm share/examples/cdcl/rakuraku
 %%PORTDOCS%%@dirrm share/examples/cdcl
-@dirrm lib/dcldbase-%%DCL_VERSION%%
+@dirrm lib/cdcldbase
