@@ -14,6 +14,9 @@ DISTNAME=	dclibc-0.1.1-debug1
 MAINTAINER=	pankov_p@mail.ru
 COMMENT=	A Direct Connect peer-to-peer protocol C library
 
+DEPRECATED=	Abandoned, not used, website disappeared
+EXPIRATION_DATE=	2008-05-15
+
 GNU_CONFIGURE=	yes
 
 USE_GETTEXT=	yes
