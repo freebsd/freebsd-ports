@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: sendfiled
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `sendfiled':
+#
+#sendfiled_enable="YES"
+#
+# See sendfiled(8) for sendfiled_flags
+#
+
+. %%RC_SUBR%%
+
+name="sendfiled"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/sendfiled"
+command_args="-Q"
+required_files="%%PREFIX%%/etc/sendfile.cf"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${sendfiled_enable="NO"}
+: ${sendfiled_flags=""}
+
+run_rc_command "$1"

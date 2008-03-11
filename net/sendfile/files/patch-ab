@@ -1,5 +1,5 @@
---- develop/install.orig	Mon Mar  5 23:27:57 2001
-+++ develop/install	Mon Mar  5 23:34:38 2001
+--- develop/install.orig	1999-12-07 09:40:11.000000000 +0000
++++ develop/install	2008-02-07 11:02:26.000000000 +0000
 @@ -82,7 +82,6 @@
    make_man fetchfile 7 $manmisc
    make_man sendfiled 8 $manadmin
@@ -23,6 +23,29 @@
  
  umask 022
  
+@@ -233,16 +224,16 @@
+     mv $NOSENDFILE $DENY
+   fi
+ fi
+-if [ ! -f $DENY -a ! -f $ALLOW ]; then 
++if [ ! -f ${DENY}.sample -a ! -f $ALLOW ]; then 
+   echo "installing the sendfile deny file as $DENY"
+-  cp etc/sendfile.deny $DENY
+-  chmod 644 $DENY
++  cp etc/sendfile.deny ${DENY}.sample
++  chmod 644 ${DENY}.sample
+ fi
+ 
+-if [ ! -f $CONFIG ]; then 
++if [ ! -f ${CONFIG}.sample ]; then 
+   echo "installing the global sendfile config file as $CONFIG"
+-  cp etc/sendfile.cf $CONFIG
+-  chmod 644 $CONFIG
++  cp etc/sendfile.cf ${CONFIG}.sample
++  chmod 644 ${CONFIG}.sample
+ else 
+   if [ "`diff etc/sendfile.cf $CONFIG`" ]; then
+     echo "Warning: `pwd`/etc/sendfile.cf differs from $CONFIG !"
 @@ -250,6 +241,23 @@
    fi
  fi
@@ -73,7 +96,16 @@
  if [ ! -d "$SPOOL/OUTGOING" ]; then
    echo "creating $SPOOL"
    mkdir_recursive $SPOOL/OUTGOING
-@@ -344,15 +351,12 @@
+@@ -334,7 +341,7 @@
+ fi
+ 
+ free=`$SERVERDIR/sendfiled -f`
+-minfree=`awk '/minfree =/{print $3}' $CONFIG`
++minfree=`awk '/minfree =/{print $3}' ${CONFIG}.sample`
+ if [ "$free" -le "$minfree" ]; then
+   cat <<EOD
+ 		! WARNING ! 
+@@ -344,15 +351,15 @@
  EOD
  fi
  
@@ -83,13 +115,16 @@
 -echo "This will start an outgoing spooling sendfile daemon on boot time"
 -echo "which processes any old files in the outgoing spool."
 -echo
-+echo "[ -x $SERVERDIR/sendfiled ] && $SERVERDIR/sendfiled -Q && echo -n ' sendfiled'">${PREFIX}/etc/rc.d/sendfiled.sh
-+chmod a+x ${PREFIX}/etc/rc.d/sendfiled.sh
++echo "### Please add 'sendfiled_enable=YES' to your /etc/rc.conf"
  
  if [ "$RESTART" = true ]; then
 -  echo
 -  echo "please restart now your inetd ( or simply reboot :-) )"
++  if [ ! -f /var/run/inetd.pid ] ; then
++    echo "# Cant restart inetd. Perhaps it isn't running?"
++  else
 +  kill -HUP `cat /var/run/inetd.pid`
++  fi
    echo
  fi
 +[ -f $SERVERDIR/sendfiled.old ] && rm -f $SERVERDIR/sendfiled.old
