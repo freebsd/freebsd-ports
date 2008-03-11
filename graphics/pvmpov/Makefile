@@ -23,7 +23,7 @@ RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray31 \
 		pvmd:${PORTSDIR}/net/pvm
 
 USE_PERL5_BUILD=yes
-USE_XLIB=	yes
+USE_XORG=	x11
 
 WRKSRC=		${WRKDIR}/pvmpov3_1g_2
 BUILDBASE=	${WRKSRC}/povray31/source/pvm
@@ -35,12 +35,6 @@ PORTDOCS=	*
 
 PLIST_FILES=	bin/x-pvmpov \
 		lib/pvm/bin/FREEBSD/x-pvmpov
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
 
 pre-configure:
 		@ (cd ${WRKDIRPREFIX}${.CURDIR}/../../graphics/povray31/work && \
@@ -63,4 +57,4 @@ do-install:
 		@ ${INSTALL_DATA} ${WRKSRC}/doc/PVMPOV-HOWTO.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
