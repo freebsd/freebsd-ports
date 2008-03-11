@@ -1,15 +1,9 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-# bsd.xorg.mk - Support for USE_XORG variable. (XXX - this comment sucks)
+# bsd.xorg.mk - Support for X.Org ports and dependencies
 #
 # Created by: Florent Thoumie <flz@FreeBSD.org>
-#
-# Complete list of dependencies for xorg ports can be found at :
-# http://people.freebsd.org/~flz/local/xorg/xorg-dep-list
-#
-# RSS feed for X.org individual releases can be found at :
-# http://feed.xbsd.org/xorg/
 #
 # !!! Here be dragons !!! (yeah, here as well...)
 #
