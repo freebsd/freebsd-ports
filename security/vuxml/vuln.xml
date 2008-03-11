@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9cfbca7f-efb7-11dc-be01-0211060005df">
+    <topic>qemu -- unchecked block read/write vulnerability</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>0.9.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ian Jackson reports on the debian-security mailinglist:</p>
+	<blockquote cite="http://lists.debian.org/debian-security/2008/02/msg00064.html">
+	  <p>When a block device read or write request is made by the guest,
+	  nothing checks that the request is within the range supported by the
+	  backend, but the code in the backend typically assumes that the
+	  request is sensible.</p>
+	  <p>Depending on the backend, this can allow the guest to read
+	  and write arbitrary memory locations in qemu, and possibly gain
+	  control over the qemu process, escaping from the
+	  emulation/virtualisation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-0928</cvename>
+      <mlist msgid="18362.62578.44273.779731@mariner.uk.xensource.com">http://lists.debian.org/debian-security/2008/02/msg00064.html</mlist>
+    </references>
+    <dates>
+      <discovery>2008-02-19</discovery>
+      <entry>2008-03-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b39bdc06-ee42-11dc-8678-00a0cce0781e">
     <topic>dovecot -- security hole in blocking passdbs</topic>
     <affects>
