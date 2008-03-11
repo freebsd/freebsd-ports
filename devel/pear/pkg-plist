@@ -81,6 +81,8 @@ etc/pear.conf
 %%DATADIR%%/PEAR/Exception.php
 %%DATADIR%%/PEAR/Frontend/CLI.php
 %%DATADIR%%/PEAR/Frontend.php
+%%DATADIR%%/PEAR/Installer/Role/Cfg.xml
+%%DATADIR%%/PEAR/Installer/Role/Cfg.php
 %%DATADIR%%/PEAR/Installer/Role/Common.php
 %%DATADIR%%/PEAR/Installer/Role/Data.php
 %%DATADIR%%/PEAR/Installer/Role/Data.xml
@@ -96,6 +98,8 @@ etc/pear.conf
 %%DATADIR%%/PEAR/Installer/Role/Src.xml
 %%DATADIR%%/PEAR/Installer/Role/Test.php
 %%DATADIR%%/PEAR/Installer/Role/Test.xml
+%%DATADIR%%/PEAR/Installer/Role/Www.php
+%%DATADIR%%/PEAR/Installer/Role/Www.xml
 %%DATADIR%%/PEAR/Installer/Role.php
 %%DATADIR%%/PEAR/Installer.php
 %%DATADIR%%/PEAR/PackageFile/Generator/v1.php
@@ -111,6 +115,7 @@ etc/pear.conf
 %%DATADIR%%/PEAR/REST/10.php
 %%DATADIR%%/PEAR/REST/11.php
 %%DATADIR%%/PEAR/REST/13.php
+%%DATADIR%%/PEAR/FixPHP5PEARWarnings.php
 %%DATADIR%%/PEAR/REST.php
 %%DATADIR%%/PEAR/Registry.php
 %%DATADIR%%/PEAR/Remote.php
