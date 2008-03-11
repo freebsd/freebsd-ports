@@ -37,10 +37,10 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #				  If no version is given (by the maintainer via the port or
 #				  by the user via defined variable), try to find the
 #				  currently installed version.  Fall back to default if
-#				  necessary (PostgreSQL-8.1 = 81).
+#				  necessary (PostgreSQL-8.2 = 82).
 # DEFAULT_PGSQL_VER
 #				- PostgreSQL default version. Can be overridden within a port.
-#				  Default: 81.
+#				  Default: 82.
 # WANT_PGSQL_VER
 #				- Maintainer can set an arbitrary version of PostgreSQL by
 #				  using it.
@@ -147,7 +147,7 @@ IGNORE=		cannot install: unknown MySQL version: ${MYSQL_VER}
 .endif # USE_MYSQL
 
 .if defined(USE_PGSQL)
-DEFAULT_PGSQL_VER?=	81
+DEFAULT_PGSQL_VER?=	82
 PGSQL73_LIBVER=		3
 PGSQL74_LIBVER=		3
 PGSQL80_LIBVER=		4
@@ -311,7 +311,7 @@ IGNORE=	cannot install: unknown bdb version: ${USE_BDB}
 _CHK_PLUS:=	${VER:S/+//}
 # INVALID_BDB_VER is specified as VER+
 .   if ${_CHK_PLUS}  != "${VER}"
-.    if ${_BDB_VER} == "${_CHK_PLUS}
+.    if ${_BDB_VER} == "${_CHK_PLUS}"
 _BDB_IGNORE=	yes
 .    else
 .     for VER_P in ${_DB_${_CHK_PLUS}P}
