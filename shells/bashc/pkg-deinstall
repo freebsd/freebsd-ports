@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+BASHC="$(echo ${PKG_PREFIX-/usr/local}/bin/bashc | /usr/bin/sed -e 's|//|/|g')"
+SHELLS="${PKG_DESTDIR-}/etc/shells"
+
+case $2 in
+DEINSTALL)
+  if grep -qs "^$BASHC\$" "$SHELLS"; then
+    if [ `id -u` -eq 0 ]; then
+      TMPSHELLS=`mktemp -t shells`
+      grep -v "^$BASHC\$" "$SHELLS" > "$TMPSHELLS"
+      cat "$TMPSHELLS" > "$SHELLS"
+      rm "$TMPSHELLS"
+    else
+      echo "Not root, please remove $BASHC from $SHELLS manually"
+    fi
+  fi
+  ;;
+esac
