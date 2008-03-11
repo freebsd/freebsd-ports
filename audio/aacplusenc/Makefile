@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aacplusenc
-PORTVERSION=	0.15
+PORTVERSION=	0.16.3
 CATEGORIES=	audio
 MASTER_SITES=	http://teknoraver.campuslife.it/software/mp4tools/
 
