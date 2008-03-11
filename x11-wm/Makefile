@@ -105,6 +105,7 @@
     SUBDIR += pwm
     SUBDIR += qlwm
     SUBDIR += qvwm
+    SUBDIR += ratmen
     SUBDIR += ratmenu
     SUBDIR += ratpoison
     SUBDIR += sapphire

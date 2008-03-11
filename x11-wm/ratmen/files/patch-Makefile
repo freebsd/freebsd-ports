@@ -1,0 +1,24 @@
+--- ./Makefile.orig	2007-10-25 10:51:20.000000000 -0300
++++ ./Makefile	2008-02-20 17:07:36.000000000 -0300
+@@ -32,16 +32,16 @@
+ )
+ 
+ 
+-PREFIX=/usr/local
+-MANDIR=$(PREFIX)/man
++PREFIX?=/usr/local
++MANDIR=$(MANPREFIX)/man
+ 
+ OPTIMIZE ?= -Os
+ DEBUG    ?= 
+ WARN     ?= -Wall -ansi -pedantic
+ 
+-CC     = gcc
+-LIBS   = -L/usr/X11R6/lib -lX11
+-CFLAGS = $(OPTIMIZE) $(WARN) $(DEBUG)
++CC     ?= gcc
++LIBS   = -L$(X11BASE)/lib -lX11
++CFLAGS += $(OPTIMIZE) $(WARN) $(DEBUG) -I$(X11BASE)/include
+ 
+ all: doc $(PROG)
+ 
