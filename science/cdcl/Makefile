@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	cdcl
-PORTVERSION=	5.3
-PORTREVISION=	3
+PORTVERSION=	5.3.3
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.gfd-dennou.org/arch/dcl/
-DISTNAME=	dcl-5.3-C
+DISTNAME=	dcl-${PORTVERSION}-C
 
 MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
 COMMENT=	Scientific graphic library for geoscience
@@ -22,20 +21,22 @@ USE_GNOME=	gtk20
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --libdir=${PREFIX}/lb/${PORTNAME}-${PORTVERSION} --with-x
+CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-x
 
 .if defined(WITHOUT_GTK)
 CUNFIGURE_ARGS+=	--disable-gtk --disable-gtk2
 .endif
 
-DCL_VERSION=	${PORTVERSION}-C
-PLIST_SUB=	DCL_VERSION=${DCL_VERSION}
+PLIST_SUB=	DCL_VERSION=${PORTVERSION:S/.//g}
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=        -fPIC
+.endif
 
 BINARIES=	cdclcmap cdclclr cdcldate cdcldbs cdclexec cdclfont \
 		cdclpara cdcltone cdcltrf cdclver
-PSLIBS=		dclps2kdraw dclpscat dclpsfix dclpsfont dclpsline \
-		dclpsmargin dclpsmerge dclpsnup dclpsrmcm dclpsrot \
-		dclpsselect dclpsseparate dclpsunrot
 DOCFILES=	CHECK CREDITS HISTORY README README_clrmap README_gt2dlib \
 		README_itr51 README_pslib README_umfmap
 DEMODIRS=	gokuraku grph1 grph2 math1 math2 misc1 misc2 rakuraku
@@ -49,16 +50,10 @@ DEMOMISC1DIR=	bitlib chglib chklib chnlib clcklib datelib fmtlib hexlib \
 		misclib randlib timelib
 DEMORAKUDIR=	color kihon layout map3d miss quick u2d uspack uxyz
 
-RESTRICTED=	"No commercial use"
+RESTRICTED=	No commercial use
 
-pre-build:
-	@cd ${WRKSRC}
-	@${REINPLACE_CMD} -e 's+dcldbase+dcldbase-${PORTVERSION}-C+' ${WRKSRC}/Mkinclude
-	@${REINPLACE_CMD} -e 's+dclps+cdclps+g' ${WRKSRC}/bin/Makefile
-	@${REINPLACE_CMD} -e 's+dclps+cdclps+g' ${WRKSRC}/src/env2/pslib/Makefile
-.for i in ${PSLIBS}
-	${MV} ${WRKSRC}/src/env2/pslib/${i} ${WRKSRC}/src/env2/pslib/c${i}
-.endfor
+post-configure:
+	@${REINPLACE_CMD} -e 's|$$(DCLLANG)dcl$$(DCLVERNUM)|$$(DCLLANG)dcl|' ${WRKSRC}/Mkinclude
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -104,4 +99,4 @@ post-install:
 .for i in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
 .endfor
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
