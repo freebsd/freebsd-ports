@@ -14127,6 +14127,7 @@ ratbox-respond	ports/irc/ratbox-respond
 ratbox-services	ports/irc/ratbox-services
 rate		ports/net-mgmt/rate
 ratfor		ports/lang/ratfor
+ratmen		ports/x11-wm/ratmen
 ratmenu		ports/x11-wm/ratmenu
 ratpoison	ports/x11-wm/ratpoison
 rats		ports/security/rats
