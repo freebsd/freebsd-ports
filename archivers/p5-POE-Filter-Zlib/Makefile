@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Filter-Zlib
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A POE filter wrapped around Compress::Zlib
 
 RUN_DEPENDS=	p5-Compress-Zlib>=1.34:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		p5-POE>=0.3501:${PORTSDIR}/devel/p5-POE
+		p5-POE>=0.38:${PORTSDIR}/devel/p5-POE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
