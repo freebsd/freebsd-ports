@@ -332,6 +332,7 @@
 %%DATADIR%%/stamps/animals/mammals/aquatic/orca_desc_nl.ogg
 %%DATADIR%%/stamps/animals/mammals/aquatic/otter.dat
 %%DATADIR%%/stamps/animals/mammals/aquatic/otter.ogg
+%%DATADIR%%/stamps/animals/mammals/aquatic/otter.png
 %%DATADIR%%/stamps/animals/mammals/aquatic/otter.txt
 %%DATADIR%%/stamps/animals/mammals/aquatic/otter_desc.ogg
 %%DATADIR%%/stamps/animals/mammals/aquatic/otter_desc_ca.ogg
@@ -760,6 +761,8 @@
 %%DATADIR%%/stamps/food/fruit/apricot.png
 %%DATADIR%%/stamps/food/fruit/apricot.txt
 %%DATADIR%%/stamps/food/fruit/apricot_desc_ca.ogg
+%%DATADIR%%/stamps/food/fruit/avocado.png
+%%DATADIR%%/stamps/food/fruit/avocado.txt
 %%DATADIR%%/stamps/food/fruit/banana.png
 %%DATADIR%%/stamps/food/fruit/banana.txt
 %%DATADIR%%/stamps/food/fruit/banana_desc_ca.ogg
@@ -843,10 +846,14 @@
 %%DATADIR%%/stamps/food/fruit/cartoon/watermelon.svg
 %%DATADIR%%/stamps/food/fruit/cartoon/watermelon.txt
 %%DATADIR%%/stamps/food/fruit/cartoon/watermelon_desc_ca.ogg
+%%DATADIR%%/stamps/food/fruit/cherimoya.png
+%%DATADIR%%/stamps/food/fruit/cherimoya.txt
 %%DATADIR%%/stamps/food/fruit/grapes.dat
 %%DATADIR%%/stamps/food/fruit/grapes.png
 %%DATADIR%%/stamps/food/fruit/grapes.txt
 %%DATADIR%%/stamps/food/fruit/grapes_desc_ca.ogg
+%%DATADIR%%/stamps/food/fruit/kiwi.png
+%%DATADIR%%/stamps/food/fruit/kiwi.txt
 %%DATADIR%%/stamps/food/fruit/lemon.png
 %%DATADIR%%/stamps/food/fruit/lemon.txt
 %%DATADIR%%/stamps/food/fruit/lemon_desc_ca.ogg
@@ -859,6 +866,8 @@
 %%DATADIR%%/stamps/food/fruit/orange.png
 %%DATADIR%%/stamps/food/fruit/orange.txt
 %%DATADIR%%/stamps/food/fruit/orange_desc_ca.ogg
+%%DATADIR%%/stamps/food/fruit/orange_seville.png
+%%DATADIR%%/stamps/food/fruit/orange_seville.txt
 %%DATADIR%%/stamps/food/fruit/pear.png
 %%DATADIR%%/stamps/food/fruit/pear.txt
 %%DATADIR%%/stamps/food/fruit/pear_desc_ca.ogg
@@ -892,6 +901,8 @@
 %%DATADIR%%/stamps/food/nuts/walnut_shelled.png
 %%DATADIR%%/stamps/food/nuts/walnut_shelled.txt
 %%DATADIR%%/stamps/food/nuts/walnut_shelled_desc_ca.ogg
+%%DATADIR%%/stamps/food/spices/ginger.png
+%%DATADIR%%/stamps/food/spices/ginger.txt
 %%DATADIR%%/stamps/food/vegetables/broccoli.png
 %%DATADIR%%/stamps/food/vegetables/broccoli.txt
 %%DATADIR%%/stamps/food/vegetables/broccoli_desc_ca.ogg
@@ -1160,6 +1171,8 @@
 %%DATADIR%%/stamps/people/toys/grannysmith.png
 %%DATADIR%%/stamps/people/toys/grannysmith.txt
 %%DATADIR%%/stamps/people/toys/grannysmith_desc_ca.ogg
+%%DATADIR%%/stamps/plants/flowers/anemone_red.png
+%%DATADIR%%/stamps/plants/flowers/anemone_red.txt
 %%DATADIR%%/stamps/plants/flowers/flower1.png
 %%DATADIR%%/stamps/plants/flowers/flower10.png
 %%DATADIR%%/stamps/plants/flowers/flower2.png
@@ -2839,6 +2852,8 @@
 %%DATADIR%%/stamps/vehicles/flight/planes/cartoon/plane.png
 %%DATADIR%%/stamps/vehicles/flight/planes/cartoon/plane.txt
 %%DATADIR%%/stamps/vehicles/flight/planes/cartoon/plane_desc_ca.ogg
+%%DATADIR%%/stamps/vehicles/flight/planes/f22_raptor.png
+%%DATADIR%%/stamps/vehicles/flight/planes/f22_raptor.txt
 %%DATADIR%%/stamps/vehicles/locomotive/cartoon/boxcar.png
 %%DATADIR%%/stamps/vehicles/locomotive/cartoon/boxcar.txt
 %%DATADIR%%/stamps/vehicles/locomotive/cartoon/boxcar_desc_ca.ogg
@@ -2989,6 +3004,7 @@
 @dirrm %%DATADIR%%/stamps/hobbies/music
 @dirrm %%DATADIR%%/stamps/hobbies
 @dirrm %%DATADIR%%/stamps/food/vegetables
+@dirrm %%DATADIR%%/stamps/food/spices
 @dirrm %%DATADIR%%/stamps/food/nuts
 @dirrm %%DATADIR%%/stamps/food/fruit/cartoon
 @dirrm %%DATADIR%%/stamps/food/fruit
