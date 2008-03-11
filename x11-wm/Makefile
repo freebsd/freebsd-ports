@@ -113,6 +113,7 @@
     SUBDIR += selectwm
     SUBDIR += skippy
     SUBDIR += skippy-xd
+    SUBDIR += stumpwm
     SUBDIR += swm
     SUBDIR += tinywm
     SUBDIR += transset-df

@@ -1,0 +1,19 @@
+Stumpwm is a tiling, keyboard driven X11 Window Manager written entirely in0
+Common Lisp.
+
+If you're tired of flipping through themes like channel-surfing, and going
+from one perfect-except-for-just-one-thing window manager to another
+even-more-broken-in-some-other-way then perhaps Stumpwm can help.
+
+Stumpwm attempts to be customizable yet visually minimal. There are no window
+decorations, no icons, and no buttons. It does have various hooks to attach
+your personal customizations, and variables to tweak.
+
+* Hack the good hack.
+* Debug your good hack.
+* Customize your window manager.
+
+While it's running. That's right. With a 100% Common Lisp window manager
+there's no stopping the hacks. Just re-eval and GO!
+
+WWW:	http://www.nongnu.org/stumpwm/

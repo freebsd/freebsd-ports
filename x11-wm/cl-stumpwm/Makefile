@@ -1,0 +1,37 @@
+# New ports collection makefile for:	stumpwm
+# Date created:				2008-02-20
+# Whom:					alepulver
+#
+# $FreeBSD$
+#
+
+PORTNAME=	stumpwm
+PORTVERSION=	0.9.2
+CATEGORIES=	x11-wm
+MASTER_SITES=	SAVANNAH
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	alepulver@FreeBSD.org
+COMMENT=	A tiling, keyboard driven Window Manager written in Common Lisp
+
+BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-lisp=clisp
+
+PLIST_FILES=	bin/stumpwm
+INFO=		stumpwm
+
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/clisp) || !defined(PACKAGE_BUILDING)
+. if !exists(${LOCALBASE}/lib/clisp/full/clx.o)
+IGNORE=		requires lang/clisp built with CLX_NEW option ON
+. endif
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/stumpwm ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/stumpwm.info ${PREFIX}/${INFO_PATH}
+
+.include <bsd.port.post.mk>
