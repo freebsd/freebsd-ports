@@ -83,6 +83,7 @@ TR?=		LANG=C /usr/bin/tr
 TRUE?=		true				# Shell builtin
 UMOUNT?=	/sbin/umount
 UNAME?=		/usr/bin/uname
+UNMAKESELF_CMD?=	${LOCALBASE}/bin/unmakeself
 UNZIP_CMD?=	${LOCALBASE}/bin/unzip
 WHICH?=		/usr/bin/which
 XARGS?=		/usr/bin/xargs
