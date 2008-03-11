@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ GENTOO/distfiles
 
@@ -16,8 +16,6 @@ COMMENT=	A framework for developing PHP web applications
 NO_BUILD=	yes
 USE_PHP=	pcre spl
 WANT_PHP_WEB=	yes
-IGNORE_WITH_PHP=4
-
 USE_GETTEXT=	yes
 
 SUB_FILES=	pkg-message
@@ -33,6 +31,8 @@ OPTIONS=	MYSQL "Install MySQL PDO support" Off \
 
 .include <bsd.port.pre.mk>
 
+IGNORE_WITH_PHP=4
+
 # Add all of the required and/or optional PHP extension dependencies,
 # if chosen by the user.
 #
@@ -40,15 +40,16 @@ OPTIONS=	MYSQL "Install MySQL PDO support" Off \
 # a table of what PHP extensions are required for what ZF classes.
 
 .if defined(WITH_REQPHP)
-USE_PHP+=	ctype curl dom gd iconv mbstring memcache \
-		session simplexml soap xml zlib
+USE_PHP+=	ctype curl dom gd hash iconv mbstring \
+		memcache pdo session simplexml soap xml zlib
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/apc.so:${PORTSDIR}/www/pecl-APC
 .endif
 .if defined(WITH_OPTPHP)
 USE_PHP+=	bcmath bitset json posix
 .endif
 
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_mysql.so:${PORTSDIR}/databases/php5-pdo_mysql
+USE_PHP+=	pdo_mysql
 .endif
 
 .if defined(WITH_DBLIB)
@@ -72,11 +73,16 @@ USE_PHP+=	pdo_sqlite
 .endif
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/ ${DATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR}
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DATADIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
+		${DATADIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
 	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${ECHO_CMD} '@exec ${FIND} ${DATADIR} -type f -print0 | \
+		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
 	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${ECHO_CMD} '@exec ${FIND} ${DATADIR} -type d -print0 | \
+		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

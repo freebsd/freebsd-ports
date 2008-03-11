@@ -1,7 +1,7 @@
 
 ***************************************************************
 Now you need to adjust PHP's include_path to contain
-	`%%DATADIR%%'
+	`%%DATADIR%%/library'
 
 For example, insert:
         include_path = ".:%%DATADIR%%/library"
@@ -11,4 +11,3 @@ into `%%LOCALBASE%%/etc/php.ini'.
 For more information about the Zend Framework, please visit:
 http://framework.zend.com/
 ***************************************************************
-
