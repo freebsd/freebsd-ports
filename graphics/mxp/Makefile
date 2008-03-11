@@ -7,7 +7,7 @@
 
 PORTNAME=	mxp
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=apps/math/fractals
@@ -16,9 +16,8 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Application for computing/exploring Mandelbrot set
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_XPM=	yes
 ALL_TARGET=
-USE_XORG=	xbitmaps
+USE_XORG=	xaw xbitmaps xpm
 
 post-extract:
 	@${CP} ${WRKSRC}/Makefile.noimake ${WRKSRC}/Makefile
