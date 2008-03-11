@@ -7,24 +7,25 @@
 
 PORTNAME=	E-buttons
 PORTVERSION=	0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
-		http://mirror2.unixfreunde.de/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A simple epplet that contains several buttons used to launch programs
 
-LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/epplets
+LIB_DEPENDS=	epplet.2:${PORTSDIR}/x11-wm/epplets \
+		Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 PLIST_FILES=	bin/E-Buttons.epplet
 
 WRKSRC=		${WRKDIR}/E-buttons
 
-USE_X_PREFIX=	yes
+USE_GL=	gl
+
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lepplet -lGL ${PTHREAD_LIBS}
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lepplet -lGL -lImlib2 ${PTHREAD_LIBS}
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o E-Buttons.epplet \
