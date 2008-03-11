@@ -337,9 +337,15 @@ share/gnome/help/glade/es/legal.xml
 share/gnome/help/glade/fr/figures/main-window.png
 share/gnome/help/glade/fr/glade.xml
 share/gnome/help/glade/fr/legal.xml
+share/gnome/help/glade/it/figures/main-window.png
+share/gnome/help/glade/it/glade.xml
+share/gnome/help/glade/it/legal.xml
 share/gnome/help/glade/oc/figures/main-window.png
 share/gnome/help/glade/oc/glade.xml
 share/gnome/help/glade/oc/legal.xml
+share/gnome/help/glade/pt_BR/figures/main-window.png
+share/gnome/help/glade/pt_BR/glade.xml
+share/gnome/help/glade/pt_BR/legal.xml
 share/gnome/help/glade/sv/figures/main-window.png
 share/gnome/help/glade/sv/glade.xml
 share/gnome/help/glade/sv/legal.xml
@@ -365,6 +371,7 @@ share/locale/et/LC_MESSAGES/glade3.mo
 share/locale/fi/LC_MESSAGES/glade3.mo
 share/locale/fr/LC_MESSAGES/glade3.mo
 share/locale/gl/LC_MESSAGES/glade3.mo
+share/locale/he/LC_MESSAGES/glade3.mo
 share/locale/hu/LC_MESSAGES/glade3.mo
 share/locale/it/LC_MESSAGES/glade3.mo
 share/locale/ja/LC_MESSAGES/glade3.mo
@@ -401,13 +408,19 @@ share/omf/glade/glade-bg.omf
 share/omf/glade/glade-en_GB.omf
 share/omf/glade/glade-es.omf
 share/omf/glade/glade-fr.omf
+share/omf/glade/glade-it.omf
 share/omf/glade/glade-oc.omf
+share/omf/glade/glade-pt_BR.omf
 share/omf/glade/glade-sv.omf
 @dirrm share/omf/glade
 @dirrm share/gnome/help/glade/sv/figures
 @dirrm share/gnome/help/glade/sv
+@dirrm share/gnome/help/glade/pt_BR/figures
+@dirrm share/gnome/help/glade/pt_BR
 @dirrm share/gnome/help/glade/oc/figures
 @dirrm share/gnome/help/glade/oc
+@dirrm share/gnome/help/glade/it/figures
+@dirrm share/gnome/help/glade/it
 @dirrm share/gnome/help/glade/fr/figures
 @dirrm share/gnome/help/glade/fr
 @dirrm share/gnome/help/glade/es/figures
