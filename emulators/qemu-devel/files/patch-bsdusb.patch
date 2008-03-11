@@ -35,16 +35,16 @@ Index: qemu/configure
  
  for target in $target_list; do
  target_dir="$target"
-Index: qemu/Makefile.target
-@@ -408,7 +408,7 @@
- VL_OBJS+= scsi-disk.o cdrom.o lsi53c895a.o
+Index: qemu/Makefile
+@@ -58,7 +58,7 @@
+ OBJS+=ssd0303.o ssd0323.o ads7846.o stellaris_input.o
+ OBJS+=scsi-disk.o cdrom.o
+ OBJS+=scsi-generic.o
+-OBJS+=usb.o usb-hub.o usb-linux.o usb-hid.o usb-msd.o usb-wacom.o usb-serial.o
++OBJS+=usb.o usb-hub.o usb-$(HOST_USB).o usb-hid.o usb-msd.o usb-wacom.o usb-serial.o
+ OBJS+=sd.o ssi-sd.o
  
- # USB layer
--VL_OBJS+= usb.o usb-hub.o usb-linux.o usb-hid.o usb-ohci.o usb-msd.o
-+VL_OBJS+= usb.o usb-hub.o usb-$(HOST_USB).o usb-hid.o usb-ohci.o usb-msd.o
- VL_OBJS+= usb-wacom.o
- 
- # EEPROM emulation
+ ifdef CONFIG_WIN32
 Index: qemu/usb-stub.c
 @@ -0,0 +1,11 @@
 +#include "vl.h"
@@ -59,7 +59,7 @@ Index: qemu/usb-stub.c
 +    return NULL;
 +}
 Index: qemu/usb-bsd.c
-@@ -0,0 +1,600 @@
+@@ -0,0 +1,601 @@
 +/*
 + * BSD host USB redirector
 + *
@@ -86,7 +86,8 @@ Index: qemu/usb-bsd.c
 + * THE SOFTWARE.
 + */
 +
-+#include "vl.h"
++#include "qemu-common.h"
++#include "hw/usb.h"
 +
 +/* usb.h declares these */
 +#undef USB_SPEED_HIGH

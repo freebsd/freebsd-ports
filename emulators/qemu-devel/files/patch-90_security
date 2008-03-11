@@ -35,7 +35,7 @@ Index: qemu-0.8.2/hw/cirrus_vga.c
  
 -    dst = s->vram_ptr + s->cirrus_blt_dstaddr;
 +    dst = s->vram_ptr + (s->cirrus_blt_dstaddr & s->cirrus_addr_mask);
-+    
++ 
 +    if (BLTUNSAFE(s))
 +        return 0;
 +
@@ -163,22 +163,17 @@ Index: qemu-0.8.2/hw/dma.c
  }
  
 Index: qemu-0.8.2/hw/fdc.c
-===================================================================
---- qemu-0.8.2.orig/hw/fdc.c	2006-07-22 20:23:34.000000000 +0300
-+++ qemu-0.8.2/hw/fdc.c	2007-04-20 06:05:59.000000000 +0300
-@@ -1110,8 +1110,13 @@ static uint32_t fdctrl_read_data (fdctrl
+@@ -1247,7 +1247,12 @@
              len = fdctrl->data_len - fdctrl->data_pos;
              if (len > FD_SECTOR_LEN)
                  len = FD_SECTOR_LEN;
--            bdrv_read(cur_drv->bs, fd_sector(cur_drv),
--                      fdctrl->fifo, len);
+-            bdrv_read(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1);
 +            if (cur_drv->bs) {
-+                bdrv_read(cur_drv->bs, fd_sector(cur_drv),
-+                          fdctrl->fifo, len);
++                bdrv_read(cur_drv->bs, fd_sector(cur_drv), fdctrl->fifo, 1);
 +            } else {
 +                FLOPPY_ERROR("can't read data from drive\n");
 +                return 0;
-+            }
++           }
          }
      }
      retval = fdctrl->fifo[pos];
