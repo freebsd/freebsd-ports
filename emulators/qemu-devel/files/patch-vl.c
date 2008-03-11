@@ -18,7 +18,7 @@ Index: qemu/vl.c
      struct termios tty;
      char slave_name[1024];
      int master_fd, slave_fd;
-     
+  
 -#if defined(__linux__)
 +#if defined(__linux__) || defined(__FreeBSD__)
      /* Not satisfying */

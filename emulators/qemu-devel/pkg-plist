@@ -1,6 +1,7 @@
 bin/qemu
 bin/qemu-img
 bin/qemu-system-arm
+bin/qemu-system-cris
 bin/qemu-system-m68k
 bin/qemu-system-mips
 bin/qemu-system-mips64
@@ -9,6 +10,8 @@ bin/qemu-system-mipsel
 bin/qemu-system-ppc
 bin/qemu-system-ppc64
 bin/qemu-system-ppcemb
+bin/qemu-system-sh4
+bin/qemu-system-sh4eb
 bin/qemu-system-sparc
 bin/qemu-system-x86_64
 %%PORTDOCS%%%%DOCSDIR%%/qemu-doc.html

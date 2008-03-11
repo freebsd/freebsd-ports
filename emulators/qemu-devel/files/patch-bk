@@ -97,7 +97,7 @@ Index: qemu/slirp/bootp.c
 -    dprintf("bootp packet op=%d msgtype=%d\n", bp->bp_op, dhcp_msg_type);
 +    dhcp_decode(bp->bp_vend, DHCP_OPT_LEN, &dhcp_msg_type,&reqaddr);
 +    dprintf("bootp packet op=%d msgtype=%d reqaddr=%x\n", bp->bp_op, dhcp_msg_type,ntohl(reqaddr.sin_addr.s_addr));
-     
+  
      if (dhcp_msg_type == 0)
          dhcp_msg_type = DHCPREQUEST; /* Force reply for old BOOTP clients */
 @@ -152,21 +185,18 @@
@@ -122,14 +122,14 @@ Index: qemu/slirp/bootp.c
 +    bc=NULL;
 +    daddr.sin_addr.s_addr=htonl(0L);
 +    if (dhcp_msg_type == DHCPREQUEST) {
-+ 	   if (reqaddr.sin_addr.s_addr != htonl(0L))
-+ 		   bc = find_reqaddr(&daddr.sin_addr, &reqaddr.sin_addr, bp->bp_hwaddr);
-+ 	   else 
-+ 		   bc = find_addr(&daddr.sin_addr, bp->bp_hwaddr);
++            if (reqaddr.sin_addr.s_addr != htonl(0L))
++                    bc = find_reqaddr(&daddr.sin_addr, &reqaddr.sin_addr, bp->bp_hwaddr);
++            else 
++                    bc = find_addr(&daddr.sin_addr, bp->bp_hwaddr);
 +    }
 +    else if (dhcp_msg_type == DHCPDISCOVER) {
-+ 	   bc = find_addr(&daddr.sin_addr, bp->bp_hwaddr);
-+ 	   if (!bc)
++            bc = find_addr(&daddr.sin_addr, bp->bp_hwaddr);
++            if (!bc)
 +	       bc = get_new_addr(&daddr.sin_addr);
      }
      dprintf("offered addr=%08x\n", ntohl(daddr.sin_addr.s_addr));
@@ -165,7 +165,7 @@ Index: qemu/slirp/bootp.c
 -        *q++ = DHCPACK;
 -    }
 +    *q++ = replytype;
-         
+  
 -    if (dhcp_msg_type == DHCPDISCOVER ||
 -        dhcp_msg_type == DHCPREQUEST) {
 +    if ((dhcp_msg_type == DHCPDISCOVER ||
