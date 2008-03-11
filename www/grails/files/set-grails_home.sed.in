@@ -1,0 +1,5 @@
+# $FreeBSD$
+14i\
+: ${GRAILS_HOME="%%DATADIR%%"}
+14i\
+[ -z "${JAVA_HOME}" ] && JAVA_HOME="`env JAVAVM_DRYRUN=yes %%LOCALBASE%%/bin/java | grep '^JAVA_HOME' | cut -c11-`"
