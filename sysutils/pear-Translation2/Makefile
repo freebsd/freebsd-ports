@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Translation2
-DISTVERSION=	2.0.0RC3
+DISTVERSION=	2.0.0RC4
 PORTEPOCH=	1
 CATEGORIES=	sysutils devel pear
 
