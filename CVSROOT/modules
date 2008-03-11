@@ -2443,7 +2443,7 @@ eclipse-viplugin	ports/java/eclipse-viplugin
 eclipse-webtools	ports/java/eclipse-webtools
 eclipseme	ports/java/eclipseme
 ecm		ports/archivers/ecm
-ecore		ports/x11/ecore
+ecore		ports/devel/ecore
 ecos-tools	ports/devel/ecos-tools
 ecromedos	ports/textproc/ecromedos
 ecs		ports/science/ecs
