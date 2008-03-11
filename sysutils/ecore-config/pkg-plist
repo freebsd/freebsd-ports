@@ -1,0 +1,7 @@
+bin/ecore_config
+include/Ecore_Config.h
+lib/libecore_config.a
+lib/libecore_config.la
+lib/libecore_config.so
+lib/libecore_config.so.9
+libdata/pkgconfig/ecore-config.pc

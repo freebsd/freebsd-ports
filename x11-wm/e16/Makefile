@@ -7,6 +7,7 @@
 
 PORTNAME=	enlightenment
 PORTVERSION=	0.16.8.12
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +16,7 @@ DISTNAME=	e16-${PORTVERSION}-0.01
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
-LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2 \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 DATADIR=	${PREFIX}/share/e16
 
@@ -24,6 +24,7 @@ USE_X_PREFIX=	yes
 USE_XORG=	xbitmaps
 USE_ICONV=	yes
 USE_GMAKE=	yes
+USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsstd --disable-esdtest --disable-dependency-tracking \
 		--disable-rpath

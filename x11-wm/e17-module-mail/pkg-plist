@@ -2,10 +2,15 @@ lib/enlightenment/modules/mail/%%E17_ARCH%%/module.a
 lib/enlightenment/modules/mail/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/mail/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/mail/mail.edj
+lib/enlightenment/modules/mail/e-module-mail.edj
 lib/enlightenment/modules/mail/module.desktop
-lib/enlightenment/modules/mail/module.edj
-lib/enlightenment/modules/mail/module_icon.png
-share/locale/it/LC_MESSAGES/mail.mo
+%%NLS%%lib/enlightenment/modules/mail/locale/fi/LC_MESSAGES/mail.mo
+%%NLS%%lib/enlightenment/modules/mail/locale/it/LC_MESSAGES/mail.mo
+%%NLS%%@dirrm lib/enlightenment/modules/mail/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mail/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/mail/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mail/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/mail/locale
 @dirrm lib/enlightenment/modules/mail/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/mail
 @dirrmtry lib/enlightenment/modules

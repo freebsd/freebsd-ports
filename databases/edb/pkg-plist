@@ -1,4 +1,3 @@
-bin/edb-config
 bin/edb_ed
 bin/edb_vt_ed
 include/Edb.h

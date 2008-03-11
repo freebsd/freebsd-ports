@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	language
-PORTVERSION=	20070223
-PORTREVISION=	1
+PORTVERSION=	20080223
+PORTREVISION=	0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	e17-module-
@@ -25,5 +25,14 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_EFL=	edje exml
+USE_XORG=	x11 xkbfile
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>

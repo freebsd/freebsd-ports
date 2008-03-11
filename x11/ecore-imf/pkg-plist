@@ -1,0 +1,6 @@
+include/Ecore_IMF.h
+lib/libecore_imf.a
+lib/libecore_imf.la
+lib/libecore_imf.so
+lib/libecore_imf.so.9
+libdata/pkgconfig/ecore-imf.pc

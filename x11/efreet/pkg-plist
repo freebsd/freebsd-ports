@@ -1,0 +1,37 @@
+bin/efreet_alloc
+bin/efreet_cache_test
+bin/efreet_menu_alloc
+bin/efreet_spec_test
+bin/efreet_test
+include/efreet/Efreet.h
+include/efreet/Efreet_Mime.h
+include/efreet/efreet_base.h
+include/efreet/efreet_desktop.h
+include/efreet/efreet_icon.h
+include/efreet/efreet_ini.h
+include/efreet/efreet_menu.h
+include/efreet/efreet_utils.h
+lib/libefreet.a
+lib/libefreet.la
+lib/libefreet.so
+lib/libefreet.so.0
+lib/libefreet_mime.a
+lib/libefreet_mime.la
+lib/libefreet_mime.so
+lib/libefreet_mime.so.0
+libdata/pkgconfig/efreet-mime.pc
+libdata/pkgconfig/efreet.pc
+%%DATADIR%%/test/entry
+%%DATADIR%%/test/entry.png
+%%DATADIR%%/test/long.ini
+%%DATADIR%%/test/preferences.menu
+%%DATADIR%%/test/sub/test.desktop
+%%DATADIR%%/test/test.desktop
+%%DATADIR%%/test/test.ini
+%%DATADIR%%/test/test.menu
+%%DATADIR%%/test/test_menu_slash_bad.menu
+%%DATADIR%%/test/test_type.desktop
+@dirrm %%DATADIR%%/test/sub
+@dirrm %%DATADIR%%/test
+@dirrm %%DATADIR%%
+@dirrm include/efreet

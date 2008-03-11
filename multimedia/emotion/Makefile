@@ -7,18 +7,21 @@
 #
 
 PORTNAME=	emotion
-PORTVERSION=	20070223
-PORTREVISION=	1
+PORTVERSION=	0.1.0.042
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
+		http://download.enlightenment.org/snapshots/2008-01-25/
 
 MAINTAINER=	stas@FreeBSD.org
-COMMENT=	Video playback wrapper library for e17
+COMMENT=	Video playback wrapper library for Enlightenment
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	ecore edje eet embryo evas
+USE_EFL_EVAS_LOADERS=	png jpeg
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

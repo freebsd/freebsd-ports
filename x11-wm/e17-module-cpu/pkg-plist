@@ -3,7 +3,29 @@ lib/enlightenment/modules/cpu/%%E17_ARCH%%/module.a
 lib/enlightenment/modules/cpu/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/cpu/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/cpu/module.desktop
-lib/enlightenment/modules/cpu/module.edj
+lib/enlightenment/modules/cpu/e-module-cpu.edj
+%%NLS%%lib/enlightenment/modules/cpu/locale/eo/LC_MESSAGES/cpu.mo
+%%NLS%%lib/enlightenment/modules/cpu/locale/bg/LC_MESSAGES/cpu.mo
+%%NLS%%lib/enlightenment/modules/cpu/locale/fi/LC_MESSAGES/cpu.mo
+%%NLS%%lib/enlightenment/modules/cpu/locale/it/LC_MESSAGES/cpu.mo
+%%NLS%%lib/enlightenment/modules/cpu/locale/ja/LC_MESSAGES/cpu.mo
+%%NLS%%lib/enlightenment/modules/cpu/locale/ru/LC_MESSAGES/cpu.mo
+%%NLS%%lib/enlightenment/modules/cpu/locale/sv/LC_MESSAGES/cpu.mo
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/bg/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/bg
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/fi                                     
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/it                                     
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/ja
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/cpu/locale
 @dirrm lib/enlightenment/modules/cpu/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/cpu
 @dirrmtry lib/enlightenment/modules

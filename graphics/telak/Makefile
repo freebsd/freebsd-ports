@@ -18,11 +18,11 @@ COMMENT=	A tool to draw pictures on your root window
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		gcrypt.15:${PORTSDIR}/security/libgcrypt \
-		Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
+USE_EFL=	imlib2
 
 ALL_TARGET=	${PORTNAME}
 MAKE_ENV=	CC="${CC}" LDFLAGS="${LDFLAGS}"

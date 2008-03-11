@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	edje
-PORTVERSION=	20061008
-PORTREVISION=	1
+PORTVERSION=	20080302
+PORTREVISION=	0
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-edje-${PORTVERSION}
 
@@ -26,9 +26,6 @@ USE_EFL=	edje
 RUBY_SA=	${RUBY_SITEARCHLIBDIR}
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} "s#%%X11BASE%%#${X11BASE}#g" ${WRKSRC}/Rakefile
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} EDJE_PREFIX=${LOCALBASE} \

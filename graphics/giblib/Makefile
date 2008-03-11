@@ -7,18 +7,17 @@
 
 PORTNAME=	giblib
 PORTVERSION=	1.2.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility library that includes a wrapper for imlib2
 
-LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
-
 USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

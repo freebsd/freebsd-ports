@@ -2,16 +2,7 @@ lib/enlightenment/modules/screenshot/%%E17_ARCH%%/module.a
 lib/enlightenment/modules/screenshot/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/screenshot/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/screenshot/module.desktop
-lib/enlightenment/modules/screenshot/module.edj
-lib/enlightenment/modules/screenshot/module_icon.png
-lib/enlightenment/modules/screenshot/screenshot.edj
-%%NLS%%share/locale/eo/LC_MESSAGES/screenshot.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/screenshot.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/screenshot.mo
-%%NLS%%share/locale/it/LC_MESSAGES/screenshot.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/screenshot.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/screenshot.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/screenshot.mo
+lib/enlightenment/modules/screenshot/e-module-screenshot.edj
 @dirrm lib/enlightenment/modules/screenshot/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/screenshot
 @dirrmtry lib/enlightenment/modules

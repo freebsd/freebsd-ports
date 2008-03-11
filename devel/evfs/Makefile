@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	evfs
-PORTVERSION=	20070223
-PORTREVISION=	1
+PORTVERSION=	20080223
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
@@ -19,7 +19,8 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget libxml2
-USE_EFL=	ecore eet
+USE_EFL=	ecore eet efreet evas
+USE_EFL_ECORE=	desktop ipc
 USE_LDCONFIG=	yes
 USE_SQLITE=	3
 

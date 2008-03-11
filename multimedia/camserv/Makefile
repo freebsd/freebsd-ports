@@ -17,7 +17,6 @@ MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Camserv is a free program to do streaming video via the web
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		Imlib2.4:${PORTSDIR}/graphics/imlib2 \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		freetype.9:${PORTSDIR}/print/freetype2
 
@@ -25,6 +24,7 @@ ONLY_FOR_ARCHS=	i386 alpha
 
 USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:261 libtool:15 libltdl:15
+USE_EFL=	imlib2
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \

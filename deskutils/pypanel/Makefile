@@ -7,7 +7,7 @@
 
 PORTNAME=	pypanel
 PORTVERSION=	2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	pypanel
@@ -17,14 +17,14 @@ MAINTAINER=	u0@rootofallevil.net
 COMMENT=	Desktop panel written in Python
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft \
-		Imlib2.4:${PORTSDIR}/graphics/imlib2
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Xlib/X.py:${PORTSDIR}/x11-toolkits/py-xlib
 
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_EFL=	imlib2
 PYDISTUTILS_PKGNAME=	PyPanel
 
 PORTDOCS=	*

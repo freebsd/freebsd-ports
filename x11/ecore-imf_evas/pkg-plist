@@ -1,0 +1,6 @@
+include/Ecore_IMF_Evas.h
+lib/libecore_imf_evas.a
+lib/libecore_imf_evas.la
+lib/libecore_imf_evas.so
+lib/libecore_imf_evas.so.9
+libdata/pkgconfig/ecore-imf-evas.pc

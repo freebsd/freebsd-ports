@@ -32,5 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 PLIST_SUB+=	MODULE_ARCH=freebsd${OSREL}-${ARCH}
 
 IGNORE=		doesn't compile with recent e17
+DEPRECATED=	abandoned by developer                                                         
+EXPIRATION_DATE=	2008-03-20
 
 .include <bsd.port.mk>

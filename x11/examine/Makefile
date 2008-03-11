@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	examine
-PORTVERSION=	20070223
-PORTREVISION=	1
+PORTVERSION=	20080223
+PORTREVISION=	0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_EFL=	ecore ewl
+USE_EFL_ECORE=	ipc config
 
 PLIST_FILES=	bin/examine bin/exsh
 

@@ -1,4 +1,3 @@
-bin/embryo-config
 bin/embryo_cc
 include/Embryo.h
 lib/libembryo.a

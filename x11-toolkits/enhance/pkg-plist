@@ -4,3 +4,4 @@ lib/libenhance.a
 lib/libenhance.la
 lib/libenhance.so
 lib/libenhance.so.0
+libdata/pkgconfig/enhance.pc

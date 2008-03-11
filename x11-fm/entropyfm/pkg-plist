@@ -42,6 +42,9 @@ bin/entropy
 %%DATADIR%%/plugins/distrib_thumbnailer.a
 %%DATADIR%%/plugins/distrib_thumbnailer.la
 %%DATADIR%%/plugins/distrib_thumbnailer.so
+%%DATADIR%%/plugins/etk_hover.a
+%%DATADIR%%/plugins/etk_hover.la
+%%DATADIR%%/plugins/etk_hover.so
 %%DATADIR%%/plugins/etk_iconbox.a
 %%DATADIR%%/plugins/etk_iconbox.la
 %%DATADIR%%/plugins/etk_iconbox.so

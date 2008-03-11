@@ -1,0 +1,8 @@
+include/Ecore_X.h
+include/Ecore_X_Atoms.h
+include/Ecore_X_Cursor.h
+lib/libecore_x.a
+lib/libecore_x.la
+lib/libecore_x.so
+lib/libecore_x.so.9
+libdata/pkgconfig/ecore-x.pc

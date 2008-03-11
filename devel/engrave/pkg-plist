@@ -1,8 +1,8 @@
-bin/engrave-config
 bin/engrave_canvas_test
 bin/engrave_test
 include/engrave/Engrave.h
 include/engrave/engrave_canvas.h
+include/engrave/engrave_color_class.h
 include/engrave/engrave_data.h
 include/engrave/engrave_enums.h
 include/engrave/engrave_file.h
@@ -22,4 +22,5 @@ lib/libengrave.a
 lib/libengrave.la
 lib/libengrave.so
 lib/libengrave.so.1
+libdata/pkgconfig/engrave.pc
 @dirrm include/engrave

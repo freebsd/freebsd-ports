@@ -14,12 +14,12 @@ COMMENT=	Ruby ecore mainloop bindings for XMMS2
 
 BUILD_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/xmmsclient_ext.so:${PORTSDIR}/audio/ruby-xmms2
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/xmmsclient_ext.so:${PORTSDIR}/audio/ruby-xmms2
-LIB_DEPENDS+=	ecore.1:${PORTSDIR}/x11/ecore
 
 MASTERDIR=	${.CURDIR}/../xmms2
 
 USE_RUBY=	yes
 USE_GNOME=	glib20
+USE_EFL=	ecore
 USE_LDCONFIG=	yes
 
 PLIST=		${.CURDIR}/pkg-plist

@@ -1,0 +1,4 @@
+bin/emprint
+%%DATADIR%%/images/rect.png
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%

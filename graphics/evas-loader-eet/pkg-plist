@@ -1,0 +1,14 @@
+lib/evas/modules/loaders/eet/%%E17_ARCH%%/module.a
+lib/evas/modules/loaders/eet/%%E17_ARCH%%/module.la
+lib/evas/modules/loaders/eet/%%E17_ARCH%%/module.so
+lib/evas/modules/savers/eet/%%E17_ARCH%%/module.a
+lib/evas/modules/savers/eet/%%E17_ARCH%%/module.la
+lib/evas/modules/savers/eet/%%E17_ARCH%%/module.so
+@dirrm lib/evas/modules/loaders/eet/%%E17_ARCH%%
+@dirrm lib/evas/modules/loaders/eet
+@dirrm lib/evas/modules/savers/eet/%%E17_ARCH%%
+@dirrm lib/evas/modules/savers/eet
+@dirrmtry lib/evas/modules/savers
+@dirrmtry lib/evas/modules/loaders
+@dirrmtry lib/evas/modules
+@dirrmtry lib/evas

@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	eet
-PORTVERSION=	20070223
+PORTVERSION=	0.9.10.042
 PORTREVISION=	0
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
+		http://download.enlightenment.org/snapshots/2008-01-25/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Enlightenment Data Handling Library

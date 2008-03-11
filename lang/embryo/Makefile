@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	embryo
-PORTVERSION=	20070223
-PORTREVISION=	1
-PORTEPOCH=	1
+PORTVERSION=	0.9.1.042
+PORTREVISION=	0
+PORTEPOCH=	2
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
+		http://download.enlightenment.org/snapshots/2008-01-25/
 
 MAINTAINER=	stas@FreeBSD.org
-COMMENT=	A C like scripting language used in parts of the Enlightenment
+COMMENT=	A C like scripting language used in Enlightenment
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

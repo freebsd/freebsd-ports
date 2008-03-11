@@ -7,6 +7,7 @@
 
 PORTNAME=	fbdesk
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://fluxbox.sourceforge.net/download/ \
 		${MASTER_SITE_GENTOO} \
@@ -27,6 +28,7 @@ GNU_CONFIGURE=	yes
 
 PORTDOCS=	ChangeLog INSTALL README
 PLIST_FILES=	bin/fbdesk
+USE_EFL=	imlib2
 
 .include <bsd.port.pre.mk>
 

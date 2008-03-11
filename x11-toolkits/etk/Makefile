@@ -7,10 +7,12 @@
 #
 
 PORTNAME=	etk
-PORTVERSION=	20070223
-PORTREVISION=	1
+PORTVERSION=	0.1.0.042
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
+		http://download.enlightenment.org/snapshots/2008-01-25/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A comprehensive toolkit based on the EFL
@@ -20,7 +22,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	evas ecore edje
+USE_EFL_ECORE=	file x11 imf imf_evas
+USE_EFL_EVAS_LOADERS=	png jpeg
 USE_LDCONFIG=	yes
+
 # NLS is mandatory
 USE_GETTEXT=	yes
 LDFLAGS=	"-lintl"

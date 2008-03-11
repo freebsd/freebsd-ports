@@ -1,0 +1,14 @@
+lib/evas/modules/loaders/edb/%%E17_ARCH%%/module.a
+lib/evas/modules/loaders/edb/%%E17_ARCH%%/module.la
+lib/evas/modules/loaders/edb/%%E17_ARCH%%/module.so
+lib/evas/modules/savers/edb/%%E17_ARCH%%/module.a
+lib/evas/modules/savers/edb/%%E17_ARCH%%/module.la
+lib/evas/modules/savers/edb/%%E17_ARCH%%/module.so
+@dirrm lib/evas/modules/loaders/edb/%%E17_ARCH%%
+@dirrm lib/evas/modules/loaders/edb
+@dirrm lib/evas/modules/savers/edb/%%E17_ARCH%%
+@dirrm lib/evas/modules/savers/edb
+@dirrmtry lib/evas/modules/savers
+@dirrmtry lib/evas/modules/loaders
+@dirrmtry lib/evas/modules
+@dirrmtry lib/evas

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	calendar
-PORTVERSION=	20060926
-PORTREVISION=	1
+PORTVERSION=	20080223
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	e17-module-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -27,8 +27,6 @@ USE_EFL=	ecore evas edje eet
 USE_EFL_ESMART=	trans_x11
 GNU_CONFIGURE=	yes
 
-IGNORE=		doesn't compile with recent e17
-
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
@@ -36,8 +34,5 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e s,`${PRINTF} '\r'`,,g ${WRKSRC}/src/*.[ch]
 
 .include <bsd.port.mk>

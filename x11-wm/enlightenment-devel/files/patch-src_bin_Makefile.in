@@ -1,0 +1,11 @@
+--- src/bin/Makefile.in.orig	2008-03-11 02:13:30.000000000 +0300
++++ src/bin/Makefile.in	2008-03-11 02:13:34.000000000 +0300
+@@ -659,7 +659,7 @@
+ e_xinerama.c
+ 
+ enlightenment_init_LDFLAGS = @e_libs@
+-setuid_root_mode = a=rx,u+xs
++setuid_root_mode = a=rx,u+x
+ installed_headersdir = $(prefix)/include/enlightenment
+ installed_headers_DATA = $(ENLIGHTENMENTHEADERS)
+ all: all-am

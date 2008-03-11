@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	darkness
-PORTVERSION=	0.99.037.3
-PORTREVISION=	1
+PORTVERSION=	0.99.037.4
+PORTREVISION=	0
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/ \
+MASTER_SITES=	${MASTER_SITE_GET_E} \
 		ftp://ftp.springdaemons.com/pub/snapshots/e17/
+MASTER_SITE_SUBDIR=	Themes/E17
 PKGNAMEPREFIX=	e17-theme-
 DISTNAME=	${PORTNAME}_by_saturn_vk
 EXTRACT_SUFX=	.edj

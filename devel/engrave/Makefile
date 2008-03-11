@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	engrave
-PORTVERSION=	20070223
-PORTREVISION=	1
+PORTVERSION=	20080223
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
@@ -18,6 +18,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig gnomehack
 USE_EFL=	ecore evas
+USE_EFL_ECORE=	evas
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

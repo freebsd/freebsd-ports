@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	night_bling
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
+PORTREVISION=	0
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/ \
+MASTER_SITES=	${MASTER_SITE_GET_E} \
 		ftp://ftp.springdaemons.com/pub/snapshots/e17/
+MASTER_SITE_SUBDIR=	Themes/E17
 PKGNAMEPREFIX=	e17-theme-
-DISTNAME=	${PORTNAME}
+DISTNAME=	${PORTNAME}2
 EXTRACT_SUFX=	.edj
 
 MAINTAINER=	stas@FreeBSD.org

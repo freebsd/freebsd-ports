@@ -14,14 +14,13 @@ MASTER_SITES=	http://mirror.israel.net/pub/FreeBSD/distfiles/
 MAINTAINER=	t.kempka@web.de
 COMMENT=	Dockapp that notifies you on ICQ, AIM and IRC events
 
-LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOME=	gtk12
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 
 MAN1=		wmmsg.1

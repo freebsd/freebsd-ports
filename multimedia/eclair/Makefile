@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	eclair
-PORTVERSION=	20070223
-PORTREVISION=	1
+PORTVERSION=	20080223
+PORTREVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
@@ -22,7 +22,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig libxml2
 USE_EFL=	ecore edje evas emotion
-USE_EFL_ESMART=	trans_x11
+USE_EFL_ECORE=	x11 evas file
+USE_EFL_ESMART=	draggies
 USE_SQLITE=	3
 
 .include <bsd.port.mk>

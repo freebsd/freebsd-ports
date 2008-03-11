@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	entropyfm
-PORTVERSION=	20070223
-PORTREVISION=	1
+PORTVERSION=	20080223
+PORTREVISION=	0
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
-DISTNAME=	${PORTNAME:S,fm$,,}-${PORTVERSION}
+DISTNAME=	entropy-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An EFL-based file manager
@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	ecore etk ewl evfs imlib2 epsilon
+USE_EFL_ECORE=	config
 GNU_CONFIGURE=	yes
 
 CFLAGS+=	"-L${LOCALBASE}/lib"

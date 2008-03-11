@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2007-10-04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -188,7 +188,7 @@ LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 PLIST_FILES+=	lib/vhook/drawtext.so
 . endif # freetype2
 . ifdef(WITH_IMLIB2) || exists(${LOCALBASE}/lib/libImlib2.so)
-LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
+USE_EFL+=	imlib2
 
 PLIST_FILES+=	lib/vhook/imlib2.so
 . else

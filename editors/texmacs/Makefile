@@ -43,7 +43,7 @@ MAN1=		texmacs.1 fig2ps.1
 MANCOMPRESSED=	yes
 
 .if !defined(WITHOUT_IMLIB2)
-LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
+USE_EFL=	imlib2
 CONFIGURE_ARGS+=	--with-imlib2
 .endif
 

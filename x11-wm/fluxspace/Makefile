@@ -7,15 +7,14 @@
 
 PORTNAME=	fluxspace
 PORTVERSION=	0.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A window manager and workspace enhancer and integrator
 
-BUILD_DEPENDS=	imlib2-config:${PORTSDIR}/graphics/imlib2 \
-		swig:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 BROKEN=		Checksum mismatch
 
@@ -23,6 +22,7 @@ USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_EFL=	imlib2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes

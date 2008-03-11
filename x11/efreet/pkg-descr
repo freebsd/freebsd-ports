@@ -1,0 +1,10 @@
+Efreet is an implementation of several specifications from freedesktop.org
+intended for use in Enlightenment DR17 (e17) and other applications using
+the Enlightenment Foundation Libraries (EFL). Currently, the following
+specifications are included:
+  o Base Directory
+  o Desktop Entry
+  o Icon Theme
+  o Menu
+
+WWW: http://www.enlightenment.org/

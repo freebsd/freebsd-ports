@@ -2,10 +2,18 @@ lib/enlightenment/modules/mixer/%%E17_ARCH%%/module.a
 lib/enlightenment/modules/mixer/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/mixer/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/mixer/mixer.edj
+lib/enlightenment/modules/mixer/e-module-mixer.edj
 lib/enlightenment/modules/mixer/module.desktop
-lib/enlightenment/modules/mixer/module.edj
-%%NLS%%share/locale/it/LC_MESSAGES/mixer.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/mixer.mo
+%%NLS%%lib/enlightenment/modules/mixer/locale/fi/LC_MESSAGES/mixer.mo
+%%NLS%%lib/enlightenment/modules/mixer/locale/it/LC_MESSAGES/mixer.mo
+%%NLS%%lib/enlightenment/modules/mixer/locale/sv/LC_MESSAGES/mixer.mo
+%%NLS%%@dirrm lib/enlightenment/modules/mixer/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mixer/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/mixer/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mixer/locale/it/
+%%NLS%%@dirrm lib/enlightenment/modules/mixer/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/mixer/locale/sv/
+%%NLS%%@dirrm lib/enlightenment/modules/mixer/locale
 @dirrm lib/enlightenment/modules/mixer/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/mixer
 @dirrmtry lib/enlightenment/modules

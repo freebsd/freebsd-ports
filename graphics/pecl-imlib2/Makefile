@@ -7,7 +7,7 @@
 
 PORTNAME=	imlib2
 PORTVERSION=	0.1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,10 +17,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A PECL extension if imlib2
 
-LIB_DEPENDS=	Imlib2:${PORTSDIR}/graphics/imlib2
-
 USE_PHP=	yes
 USE_PHPEXT=	yes
+USE_EFL=	imlib2
 
 # libImlib2 may or may not depend on X, however,
 # imlib2 extension doesn't need X related functions in libImlib2

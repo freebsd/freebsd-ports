@@ -2,18 +2,31 @@ lib/enlightenment/modules/uptime/%%E17_ARCH%%/module.a
 lib/enlightenment/modules/uptime/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/uptime/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/uptime/module.desktop
-lib/enlightenment/modules/uptime/module.edj
 lib/enlightenment/modules/uptime/uptime.edj
-lib/enlightenment/modules/uptime/uptime.png
-share/locale/bg/LC_MESSAGES/uptime.mo
-share/locale/eo/LC_MESSAGES/uptime.mo
-share/locale/fi/LC_MESSAGES/uptime.mo
-share/locale/it/LC_MESSAGES/uptime.mo
-share/locale/ja/LC_MESSAGES/uptime.mo
-share/locale/sv/LC_MESSAGES/uptime.mo
-share/nls/POSIX
-share/nls/en_US.US-ASCII
-@dirrmtry lib/enlightenment/modules/uptime/%%E17_ARCH%%
-@dirrmtry lib/enlightenment/modules/uptime
+lib/enlightenment/modules/uptime/e-module-uptime.edj
+%%NLS%%lib/enlightenment/modules/uptime/locale/bg/LC_MESSAGES/uptime.mo
+%%NLS%%lib/enlightenment/modules/uptime/locale/eo/LC_MESSAGES/uptime.mo
+%%NLS%%lib/enlightenment/modules/uptime/locale/fi/LC_MESSAGES/uptime.mo
+%%NLS%%lib/enlightenment/modules/uptime/locale/fr/LC_MESSAGES/uptime.mo
+%%NLS%%lib/enlightenment/modules/uptime/locale/it/LC_MESSAGES/uptime.mo
+%%NLS%%lib/enlightenment/modules/uptime/locale/ja/LC_MESSAGES/uptime.mo
+%%NLS%%lib/enlightenment/modules/uptime/locale/sv/LC_MESSAGES/uptime.mo
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/bg/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/bg
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/ja
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/uptime/locale
+@dirrm lib/enlightenment/modules/uptime/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/uptime
 @dirrmtry lib/enlightenment/modules
 @dirrmtry lib/enlightenment

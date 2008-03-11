@@ -1,4 +1,3 @@
-bin/exml-config
 include/EXML.h
 lib/libexml.a
 lib/libexml.la

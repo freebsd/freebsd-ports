@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ecore
-PORTVERSION=	20061008
-PORTREVISION=	1
+PORTVERSION=	20080302
+PORTREVISION=	0
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-ecore-${PORTVERSION}
 
@@ -22,13 +22,11 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake \
 USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_EFL=	ecore
+USE_EFL_ECORE=	x11 con job evas
 
 RUBY_SA=	${RUBY_SITEARCHLIBDIR}
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} "s#%%X11BASE%%#${X11BASE}#g" ${WRKSRC}/Rakefile
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ECORE_PREFIX=${LOCALBASE} \

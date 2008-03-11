@@ -33,4 +33,8 @@ CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+IGNORE=		doesn't compile with recent e17                                                
+DEPRECATED=	abandoned by developer                                                         
+EXPIRATION_DATE=	2008-03-20
+
 .include <bsd.port.mk>

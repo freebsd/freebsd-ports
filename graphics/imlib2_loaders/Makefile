@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	imlib2_loaders
-PORTVERSION=	20070223
-PORTREVISION=	1
-PORTEPOCH=	1
+PORTVERSION=	1.4.1.000
+PORTREVISION=	0
+PORTEPOCH=	2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
+		http://download.enlightenment.org/snapshots/2008-01-25/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Extra image loader plugins for Imlib 2

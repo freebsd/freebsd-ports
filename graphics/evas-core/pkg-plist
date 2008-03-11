@@ -1,0 +1,14 @@
+include/Evas.h
+lib/libevas.a
+lib/libevas.la
+lib/libevas.so
+lib/libevas.so.9
+lib/evas/modules/engines/software_generic/%%E17_ARCH%%/module.a
+lib/evas/modules/engines/software_generic/%%E17_ARCH%%/module.la
+lib/evas/modules/engines/software_generic/%%E17_ARCH%%/module.so
+libdata/pkgconfig/evas.pc
+@dirrm lib/evas/modules/engines/software_generic/%%E17_ARCH%%
+@dirrm lib/evas/modules/engines/software_generic
+@dirrm lib/evas/modules/engines
+@dirrm lib/evas/modules
+@dirrm lib/evas

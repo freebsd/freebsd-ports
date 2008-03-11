@@ -3,8 +3,7 @@ lib/enlightenment/modules/deskshow/%%E17_ARCH%%/module.a
 lib/enlightenment/modules/deskshow/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/deskshow/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/deskshow/module.desktop
-lib/enlightenment/modules/deskshow/module.edj
-lib/enlightenment/modules/deskshow/module_icon.png
+lib/enlightenment/modules/deskshow/e-module-deskshow.edj
 @dirrm lib/enlightenment/modules/deskshow/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/deskshow
 @dirrmtry lib/enlightenment/modules

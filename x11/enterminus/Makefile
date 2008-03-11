@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	enterminus
-PORTVERSION=	20070223
-PORTREVISION=	1
+PORTVERSION=	20080223
+PORTREVISION=	0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
@@ -19,6 +19,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	evas ecore
+USE_EFL_ECORE=	evas job
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
