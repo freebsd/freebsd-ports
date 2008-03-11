@@ -13,6 +13,9 @@
 %%PYTHON_SITELIBDIR%%/gdata/apps/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/auth.py
+%%PYTHON_SITELIBDIR%%/gdata/auth.pyc
+%%PYTHON_SITELIBDIR%%/gdata/auth.pyo
 %%PYTHON_SITELIBDIR%%/gdata/base/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/base/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/base/__init__.pyo
@@ -25,12 +28,33 @@
 %%PYTHON_SITELIBDIR%%/gdata/calendar/service.py
 %%PYTHON_SITELIBDIR%%/gdata/calendar/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/calendar/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/codesearch/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/codesearch/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/codesearch/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/codesearch/service.py
+%%PYTHON_SITELIBDIR%%/gdata/codesearch/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/codesearch/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/docs/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/docs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/docs/__init__.pyo
 %%PYTHON_SITELIBDIR%%/gdata/docs/service.py
 %%PYTHON_SITELIBDIR%%/gdata/docs/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/docs/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/exif/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/exif/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/exif/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/geo/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/geo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/geo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/media/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/media/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/media/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/photos/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/photos/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/photos/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/photos/service.py
+%%PYTHON_SITELIBDIR%%/gdata/photos/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/photos/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/service.py
 %%PYTHON_SITELIBDIR%%/gdata/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/service.pyo
@@ -44,7 +68,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/test_data.pyc
 %%PYTHON_SITELIBDIR%%/gdata/test_data.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/spreadsheet
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/photos
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/media
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/geo
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/exif
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/docs
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/codesearch
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/calendar
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/base
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps
@@ -54,6 +83,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/dryRunInsert.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blogger/BloggerExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar/calendarExample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/docs/docs_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mashups/birthdaySample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spreadsheets/spreadsheetExample.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/spreadsheets
