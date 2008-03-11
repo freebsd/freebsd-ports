@@ -13,9 +13,6 @@ bin/sm
 bin/utf7decode
 bin/utf7encode
 bin/wlock
-etc/rc.d/sendfiled.sh
-etc/sendfile.cf
-etc/sendfile.deny
 sbin/sendfiled
 @exec mkdir -p /var/spool/sendfile/OUTGOING /var/spool/sendfile/LOG
 @exec chmod 755 /var/spool/sendfile
@@ -23,9 +20,16 @@ sbin/sendfiled
 @exec chmod 700 /var/spool/sendfile/LOG
 @exec touch /var/spool/sendfile/LOG/in /var/spool/sendfile/LOG/out
 @exec chmod 600 /var/spool/sendfile/LOG/in /var/spool/sendfile/LOG/out
-@exec echo -e 'saft\tstream\ttcp\tnowait\troot\t/usr/local/sbin/sendfiled sendfiled' >> /etc/inetd.conf
+@exec echo -e 'saft\tstream\ttcp\tnowait\troot\t%D/sbin/sendfiled sendfiled' >> /etc/inetd.conf
 @exec echo -e 'saft\t\t487/tcp\t# simple asynchronous file transfer'>>/etc/services
-@exec kill -HUP `ps auxw|awk '$11 == "inetd" { print $2 } '`
+@exec kill -HUP `ps auxw|awk '$11 == "inetd" { print $2 } '` >/dev/null 2>&1 ||true
 @unexec perl -pi.bak -e '/^saft/ && ($_="")' /etc/inetd.conf
-@unexec kill -HUP `ps auxw|awk '$11 == "inetd" { print $2 } '`
-@unexec rm -R /var/spool/sendfile
+@unexec kill -HUP `ps auxw|awk '$11 == "inetd" { print $2 } '` >/dev/null 2>&1||true
+@unexec rm -R /var/spool/sendfile 2>&1 >/dev/null || true
+
+@unexec if cmp -s %D/etc/sendfile.cf.sample %D/etc/sendfile.cf; then rm -f %D/etc/sendfile.cf; fi
+@exec if [ ! -f %D/etc/sendfile.cf ] ; then cp -p %D/etc/sendfile.cf.sample %D/etc/sendfile.cf; fi
+@unexec if cmp -s %D/etc/sendfile.deny.sample %D/etc/sendfile.deny; then rm -f %D/etc/sendfile.deny; fi
+@exec if [ ! -f %D/etc/sendfile.deny ] ; then cp -p %D/etc/sendfile.deny.sample %D/etc/sendfile.deny; fi
+etc/sendfile.cf.sample
+etc/sendfile.deny.sample
