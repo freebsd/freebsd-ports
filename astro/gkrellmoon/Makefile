@@ -7,10 +7,9 @@
 
 PORTNAME=	gkrellmoon
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gkrellmoon
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A moon clock plugin for Gkrellm
@@ -18,8 +17,8 @@ COMMENT=	A moon clock plugin for Gkrellm
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
+
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 ALL_TARGET=	${PORTNAME}.so
