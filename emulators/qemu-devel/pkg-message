@@ -55,7 +55,11 @@ use qemu -net nic,model=rtl8139 -net user or tap ... enable the emulated
 rtl8139 timer by building the port with RTL8139_TIMER enabled.
 (the rtl8139c+ that model=rtl8139 emulates needs less cpu than qemu's
 default ne2k nic which is driven by ed(4), it has not been made default
-only because it may not work with all guests yet.)
+only because it may not work with all guests yet.  btw qemu now also can
+emulate a few intel eepro100 and e1000 nics which seem to be a tad more
+efficient even, and at least i82557b and e1000 work without tweaks for
+FreeBSD guests - driven by fxp(4) and em(4) repectively - and Linux
+guests too.)
 - if you get repeated `atapi_poll called!' console messages with FreeBSD
 guests or other weird cdrom problems then thats probably because the guest
 has atapicam loaded, which for reasons still to be determined has problems
@@ -69,6 +73,13 @@ you please use tuntap for now.  Scott Robbins posted a tap howto for
 	http://forums.bsdnexus.com/viewtopic.php?id=1563
 and one for 6 and 5(?) is here:
 	http://acidos.bandwidth-junkies.net/index.php?Sect=qemu
+- perhaps it should be noted that if you want to use qemu with -m 512
+or larger on i386 hosts you need to increase the kern.maxdsiz tunable
+in loader.conf(5) since the default is 512 MB, and qemu needs memory for
+itself also.
+- kqemu seems to be broken on amd64 SMP hosts atm (causing the host
+to panic), if this affects you you can either use an UP host kernel as a
+workaround or disable kqemu.
 - qemu now uses aio at least for ide dma, so if you get `Invalid system call'
 crashes that is because aio is not (kld)loaded.
 ====
