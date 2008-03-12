@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	chardet
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.0.1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://chardet.feedparser.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Character encoding auto-detection in Python
 
 USE_PYTHON=	yes
