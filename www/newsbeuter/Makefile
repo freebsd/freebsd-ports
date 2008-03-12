@@ -5,22 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	newsbeuter
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	www
 MASTER_SITES=	http://synflood.at/newsbeuter/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	An RSS feed reader for the text console
 
+BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	stfl.1:${PORTSDIR}/devel/stfl \
-		nxml.18:${PORTSDIR}/textproc/libnxml \
-		mrss.19:${PORTSDIR}/textproc/libmrss
+		curl.4:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
 USE_SQLITE=	yes
+USE_RUBY=	yes
 MAKE_ENV=	CXX="${CXX}"
 
 MAN1=	newsbeuter.1 podbeuter.1
@@ -34,7 +34,8 @@ LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
 post-patch:
 	${REINPLACE_CMD} -e "s,share/man,man,; \
 			/^prefix/s|=.*|=${PREFIX}|; /^CXX=/d; \
-			/^CXXFLAGS/s|=|+=|; s|/usr/local|${LOCALBASE}|" \
+			s|/usr/local|${LOCALBASE}|; s|ruby1.8|ruby18|" \
 				${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s,#include <alloca.h>,," ${WRKSRC}/src/logger.cpp
 
 .include <bsd.port.post.mk>
