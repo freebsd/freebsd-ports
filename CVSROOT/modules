@@ -7337,6 +7337,7 @@ lua50-luasocket	ports/net/lua50-luasocket
 lua50-posix	ports/devel/lua50-posix
 lua50-pty	ports/devel/lua50-pty
 luabind		ports/devel/luabind
+luajava		ports/devel/luajava
 luasocket	ports/net/luasocket
 lucene		ports/textproc/lucene
 lucidlife	ports/games/lucidlife
