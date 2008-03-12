@@ -1,5 +1,13 @@
---- ./Imakefile.org	Mon Jun  6 17:28:45 1994
-+++ ./Imakefile	Sun Dec 22 16:28:05 1996
+--- Imakefile.orig	1994-06-07 02:28:45.000000000 +0200
++++ Imakefile	2008-03-12 03:46:58.000000000 +0100
+@@ -1,6 +1,6 @@
+ XCOMM $XConsortium: Imakefile,v 1.2 94/06/06 20:28:45 gildea Exp $
+ 
+-RGBDBFILE = DefaultRGBDatabase
++RGBDBFILE = $(LIBDIR)/rgb
+ 
+         DEPLIBS = XawClientDepLibs
+ LOCAL_LIBRARIES = XawClientLibs
 @@ -8,12 +8,7 @@
             OBJS = xcolors.o
    SYS_LIBRARIES = -lm
