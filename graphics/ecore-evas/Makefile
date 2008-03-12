@@ -82,6 +82,7 @@ CONFIGURE_ARGS+=	--disable-ecore-evas-buffer
 .if !defined(WITHOUT_SDL)
 CONFIGURE_ARGS+=	--enable-ecore-evas-sdl
 USE_EFL_EVAS_ENGINES+=	sdl
+USE_EFL_ECORE+=	sdl
 .else
 CONFIGURE_ARGS+=	--disable-ecore-evas-sdl
 .endif
