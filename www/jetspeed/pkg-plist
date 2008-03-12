@@ -1,4 +1,5 @@
 apache-tomcat4.1/webapps/jetspeed.war
+%%PORTDOCS%%%%DOCSDIR%%/Activation-License.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
