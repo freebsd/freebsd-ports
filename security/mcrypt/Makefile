@@ -20,7 +20,7 @@ MAINTAINER=	johans@stack.nl
 COMMENT=	Replacement for crypt(1)
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
-		mhash.2:${PORTSDIR}/security/mhash/
+		mhash.2:${PORTSDIR}/security/mhash
 
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
