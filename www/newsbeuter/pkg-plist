@@ -2,13 +2,17 @@ bin/newsbeuter
 bin/podbeuter
 share/locale/de/LC_MESSAGES/newsbeuter.mo
 share/locale/fr/LC_MESSAGES/newsbeuter.mo
+share/locale/hu/LC_MESSAGES/newsbeuter.mo
 share/locale/it/LC_MESSAGES/newsbeuter.mo
 share/locale/nl/LC_MESSAGES/newsbeuter.mo
+share/locale/pl/LC_MESSAGES/newsbeuter.mo
 share/locale/pt_BR/LC_MESSAGES/newsbeuter.mo
 share/locale/ru/LC_MESSAGES/newsbeuter.mo
+share/locale/zh/LC_MESSAGES/newsbeuter.mo
 share/doc/newsbeuter/newsbeuter.html
 share/doc/newsbeuter/examples/config
 share/doc/newsbeuter/contrib/bookmark-delicious.sh
+share/doc/newsbeuter/contrib/fixwesnoth.xsl
 @dirrm share/doc/newsbeuter/examples
 @dirrm share/doc/newsbeuter/contrib
 @dirrm share/doc/newsbeuter
