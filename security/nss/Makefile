@@ -3,7 +3,7 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/security/nss/Makefile,v 1.6 2006/12/17 21:46:42 marcus Exp $
+#    $MCom ports-experimental/security/nss/Makefile,v 1.4 2008/02/23 15:47:28 ahze Exp $
 
 PORTNAME=	nss
 PORTVERSION=	${_MAJOR}.${_MINOR}.${_PATCH}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
 
 _MAJOR=	3
 _MINOR=	11
-_PATCH=	7
+_PATCH=	9
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 
@@ -29,7 +29,7 @@ USE_PERL5_BUILD=yes
 MAKE_ENV=	BSD_LDOPTS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
 		BUILD_OPT=1
 ALL_TARGET=	nss_build_all
-CFLAGS+=	-I${LOCALBASE}/include/nspr
+CFLAGS+=	-I${LOCALBASE}/include/nspr -L${LOCALBASE}/lib
 
 DIST=		${WRKSRC:H:H}/dist
 
