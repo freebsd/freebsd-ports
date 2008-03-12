@@ -17,12 +17,13 @@ DISTFILES=	${NSS_FILE} ${MODSSL_FILE}:mod_ssl
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	The root certificate bundle from the Mozilla Project
 
+OPTIONS=	ETCSYMLINK "Add symlink to /etc/ssl/cert.pem" off
+
 USE_PERL5_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 CERTDIR?=	share/certs
-PLIST_DIRS=	${CERTDIR}
-PLIST_FILES=	${CERTDIR}/ca-root-nss.crt
+PLIST_SUB+=	CERTDIR=${CERTDIR}
 
 VERSION_NSS=	3.11.9
 VERSION_APACHE=	1.3.41
@@ -36,6 +37,15 @@ MODSSL_FILE=	mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
 NSS_FILE=	nss-${VERSION_NSS}${EXTRACT_SUFX}
 CERTDATA_TXT_PATH=	nss-${VERSION_NSS}/mozilla/security/nss/lib/ckfw/builtins/certdata.txt
 CA_BUNDLE_PL_PATH=	mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}/pkg.sslcfg/ca-bundle.pl
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_ETCSYMLINK)
+PLIST_SUB+=	ETCSYMLINK=
+CONFLICTS=	ca-roots-[0-9]*
+.else
+PLIST_SUB+=	ETCSYMLINK="@comment "
+.endif
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
@@ -55,5 +65,8 @@ do-build:
 do-install:
 	${MKDIR} ${PREFIX}/${CERTDIR}
 	${INSTALL_DATA} ${WRKDIR}/ca-root-nss.crt ${PREFIX}/${CERTDIR}
+.if !defined(WITHOUT_ETCSYMLINK)
+	${LN} -s ${PREFIX}/${CERTDIR} /etc/ssl/cert.pem
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
