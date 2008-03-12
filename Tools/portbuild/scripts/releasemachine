@@ -5,6 +5,12 @@ buildroot=/var/portbuild
 i=$1
 m=$2
 
+machonline=$(grep -c ${m} ${buildroot}/${i}/mlist)
+if [ ${machonline} = "0" ]; then
+  rm ${buildroot}/${i}/queue/${m}
+  exit 0
+fi
+
 . ${buildroot}/${i}/portbuild.conf
 if [ -f ${buildroot}/${i}/portbuild.${m} ]; then
   . ${buildroot}/${i}/portbuild.${m}
