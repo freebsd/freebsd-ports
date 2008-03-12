@@ -738,6 +738,7 @@
     SUBDIR += lua50-posix
     SUBDIR += lua50-pty
     SUBDIR += luabind
+    SUBDIR += luajava
     SUBDIR += lwp
     SUBDIR += m17n-db
     SUBDIR += m17n-docs

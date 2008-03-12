@@ -1,0 +1,25 @@
+--- config.orig	2007-12-10 16:42:38.000000000 +0900
++++ config	2007-12-10 16:42:28.000000000 +0900
+@@ -1,9 +1,9 @@
+ #############################################################
+ #Linux/BSD/Mac
+-LUA_DIR= /usr/local/share/lua/5.1.1
+-LUA_LIBDIR= /usr/local/lib
+-LUA_INCLUDES= /usr/local/include
+-JDK= $(JAVA_HOME)
++LUA_DIR= %%LUA_DIR%%
++LUA_LIBDIR= %%LUA_LIBDIR%%
++LUA_INCLUDES= %%LUA_INCDIR%%
++JDK= %%JAVA_HOME%%
+ # For Mac OS, comment the above line and uncomment this one
+ #JDK=/Library/Java/Home
+ 
+@@ -23,7 +23,7 @@
+ #LIB_OPTION= -dynamiclib -all_load
+ 
+ ## On FreeBSD and Mac OS systems, the following line should be commented
+-DLLIB= -ldl
++#DLLIB= -ldl
+ 
+ WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings
+ INCS= -I$(JDK)/include -I$(JDK)/include/linux -I$(LUA_INCLUDES)

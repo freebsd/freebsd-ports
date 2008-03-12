@@ -1,0 +1,44 @@
+%%PORTDOCS%%%%DOCSDIR%%/br/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/br/history.html
+%%PORTDOCS%%%%DOCSDIR%%/br/index.html
+%%PORTDOCS%%%%DOCSDIR%%/br/license.html
+%%PORTDOCS%%%%DOCSDIR%%/br/luajava_128.png
+%%PORTDOCS%%%%DOCSDIR%%/br/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/index.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/org/keplerproject/luajava/Console.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/org/keplerproject/luajava/JavaFunction.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/org/keplerproject/luajava/LuaException.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/org/keplerproject/luajava/LuaInvocationHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/org/keplerproject/luajava/LuaObject.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/org/keplerproject/luajava/LuaState.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/org/keplerproject/luajava/LuaStateFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/org/keplerproject/luajava/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/org/keplerproject/luajava/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/org/keplerproject/luajava/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/package-list
+%%PORTDOCS%%%%DOCSDIR%%/us/API/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/us/API/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/us/API/stylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/us/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/us/history.html
+%%PORTDOCS%%%%DOCSDIR%%/us/index.html
+%%PORTDOCS%%%%DOCSDIR%%/us/license.html
+%%PORTDOCS%%%%DOCSDIR%%/us/luajava_128.png
+%%PORTDOCS%%%%DOCSDIR%%/us/manual.html
+%%JAVAJARDIR%%/luajava-1.1.jar
+%%LUA_MODLIBDIR%%/libluajava-1.1.so
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/br
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/org/keplerproject/luajava
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/org/keplerproject
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API/org
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/us/API
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/us
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
