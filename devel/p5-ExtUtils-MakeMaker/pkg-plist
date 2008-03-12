@@ -11,6 +11,7 @@
 %%SITE_PERL%%/ExtUtils/MM_Any.pm
 %%SITE_PERL%%/ExtUtils/MM_BeOS.pm
 %%SITE_PERL%%/ExtUtils/MM_Cygwin.pm
+%%SITE_PERL%%/ExtUtils/MM_Darwin.pm
 %%SITE_PERL%%/ExtUtils/MM_DOS.pm
 %%SITE_PERL%%/ExtUtils/MM_MacOS.pm
 %%SITE_PERL%%/ExtUtils/MM_NW5.pm
