@@ -7,7 +7,7 @@
 
 PORTNAME=	fluxbox
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +17,9 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A small and fast window manager based on BlackBox
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+RUN_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage
 
-USE_XLIB=	yes
+USE_XORG=	xextproto xft xpm xrandr
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
@@ -69,6 +69,7 @@ CONFIGURE_ARGS+=	--disable-kde
 .endif
 
 .if defined(WITH_XINERAMA) || defined(PACKAGE_BUILDING)
+USE_XORG+=		xinerama
 CONFIGURE_ARGS+=	--enable-xinerama
 .endif
 
@@ -104,6 +105,7 @@ CONFIGURE_ARGS+=	--disable-toolbar
 .endif
 
 .if !defined(WITHOUT_XRENDER)
+USE_XORG+=		xrender
 CONFIGURE_ARGS+=	--enable-xrender
 .else
 CONFIGURE_ARGS+=	--disable-xrender
