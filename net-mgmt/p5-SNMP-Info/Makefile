@@ -11,7 +11,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	snmp-info
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A perl5 module for gathering information from network devices
 
 LIB_DEPENDS=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp

@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	directory/perldap/ancient
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Perl interface to LDAP
 
 LIB_DEPENDS=	mozldap.1:${PORTSDIR}/net/ldapsdk

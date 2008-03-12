@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	discoipd
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	IP discovery and fingerprinting utility
 
 GNU_CONFIGURE=	yes

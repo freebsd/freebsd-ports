@@ -11,7 +11,7 @@ CATEGORIES=		sysutils
 MASTER_SITES=		http://dev.gentoo.org/~lcars/%SUBDIR%/
 MASTER_SITE_SUBDIR=	tenshi
 
-MAINTAINER=		jadawin@tuxaco.net
+MAINTAINER=		jadawin@FreeBSD.org
 COMMENT=		Tenshi is a log monitoring program, designed to watch multiple logs
 
 RUN_DEPENDS=		${LOCALBASE}/bin/gtail:${PORTSDIR}/sysutils/coreutils

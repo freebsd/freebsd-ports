@@ -10,7 +10,7 @@ PORTVERSION=	1.7.8
 CATEGORIES=	security www
 MASTER_SITES=	SF
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A remote management and monitoring interface for Snort based IDS
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB \

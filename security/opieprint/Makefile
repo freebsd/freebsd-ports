@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.inner.net/pub/opie/contrib/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Output postscript with 100 OPIE passwords credit card sized
 
 NO_BUILD=	yes

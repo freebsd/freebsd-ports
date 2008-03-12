@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/ \
 		http://www.cs.uu.nl/people/henkp/mirmon/src/
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Monitor the status of mirrors
 
 NO_BUILD=	yes

@@ -8,7 +8,7 @@ PORTVERSION=	3.3.3.5
 CATEGORIES=	audio www
 MASTER_SITES=	http://ampache.org/downloads/
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A Web-based Audio file manager
 
 USE_PHP=	mysql pcre session iconv

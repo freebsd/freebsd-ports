@@ -12,7 +12,7 @@ CATEGORIES=	net-p2p www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A web based front end for rTorrent
 
 OPTIONS=	APACHE "Use Apache for web interface" On \

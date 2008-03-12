@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SNMP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	The module is a backend for pass_persist feature of net-snmp
 
 PERL_CONFIGURE=	5.8.0+

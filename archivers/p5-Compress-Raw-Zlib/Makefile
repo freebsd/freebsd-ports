@@ -11,7 +11,7 @@ CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Low-Level Interface to zlib compression library
 
 PERL_CONFIGURE=	YES

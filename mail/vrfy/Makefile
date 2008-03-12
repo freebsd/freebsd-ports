@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Verify mail address
 
 WRKSRC=		${WRKDIR}

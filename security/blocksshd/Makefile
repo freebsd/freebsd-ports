@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	security sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Protects computers from SSH brute force attacks
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS/Resolver.pm:${PORTSDIR}/dns/p5-Net-DNS \
