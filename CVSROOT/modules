@@ -11998,6 +11998,7 @@ pdb		ports/net/pdb
 pdbar		ports/palm/pdbar
 pdbc		ports/palm/pdbc
 pdcurses	ports/devel/pdcurses
+pdf2djvu	ports/converters/pdf2djvu
 pdfcrack	ports/security/pdfcrack
 pdfcube		ports/print/pdfcube
 pdfedit		ports/editors/pdfedit
