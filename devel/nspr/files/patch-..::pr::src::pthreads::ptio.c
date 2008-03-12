@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- ../pr/src/pthreads/ptio.c.orig	Mon Feb  2 10:41:43 2004
 +++ ../pr/src/pthreads/ptio.c	Mon Feb  2 10:44:49 2004
 @@ -3470,6 +3470,17 @@

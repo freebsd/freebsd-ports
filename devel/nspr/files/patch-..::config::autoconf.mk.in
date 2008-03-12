@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- ../config/autoconf.mk.in.orig	Wed Oct 17 02:31:02 2001
 +++ ../config/autoconf.mk.in	Thu Aug  8 19:22:44 2002
 @@ -17,7 +17,7 @@
