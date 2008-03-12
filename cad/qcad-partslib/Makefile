@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qcad-partslib
-PORTVERSION=	2.0.1.2.1
+PORTVERSION=	2.1.2.8.1
 PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.ribbonsoft.com/archives/partlibrary/
