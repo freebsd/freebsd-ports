@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	bjk
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Watch a file for changes
 
 GNU_CONFIGURE=	yes

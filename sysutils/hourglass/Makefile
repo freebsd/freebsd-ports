@@ -11,7 +11,7 @@ CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.cs.utah.edu/~regehr/hourglass/
 DISTNAME=	${PORTNAME}-${PORTVERSION}b
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A real-time application useful to learn how CPU scheduling works
 
 RUN_DEPENDS=	jgraph:${PORTSDIR}/graphics/jgraph

@@ -9,7 +9,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	snoopylogger
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	An execve() wrapper and logger
 
 PLIST_FILES=	lib/snoopy.so bin/detect

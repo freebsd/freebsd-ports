@@ -10,7 +10,7 @@ PORTVERSION=	1.02
 CATEGORIES=	misc
 MASTER_SITES=	http://www.redterror.net/code/yaunc/
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Yet another uptimes.net client
 
 ALL_TARGET=	bsd

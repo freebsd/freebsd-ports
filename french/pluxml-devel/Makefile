@@ -10,7 +10,7 @@ MASTER_SITES=	http://pluxml.org/download/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-blog-beta${PORTVERSION}
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Small weblog in php and xml
 
 USE_ZIP=	yes

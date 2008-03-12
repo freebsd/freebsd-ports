@@ -10,7 +10,7 @@ MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/irssi-xmpp-snapshot/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION}
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Irssi-xmpp-snapshot is the irssi-xmmp cvs snapshot
 
 BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi

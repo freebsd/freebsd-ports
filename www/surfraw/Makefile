@@ -9,7 +9,7 @@ PORTVERSION=	2.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://surfraw.alioth.debian.org/dist/
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Command line interface to popular WWW search engines
 
 GNU_CONFIGURE=	yes

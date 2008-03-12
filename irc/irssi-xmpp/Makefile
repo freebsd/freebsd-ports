@@ -8,7 +8,7 @@ PORTVERSION=	0.13
 CATEGORIES=	irc
 MASTER_SITES=	http://cybione.org/src/irssi-xmpp/
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Irssi-xmpp is an irssi plugin to connect to the Jabber network
 
 BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi

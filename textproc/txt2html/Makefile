@@ -10,7 +10,7 @@ PORTVERSION=	2.50
 CATEGORIES=	textproc perl5
 MASTER_SITES=	SF
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Convert raw text to something with a little HTML formatting
 
 BUILD_DEPENDS=	${SITE_PERL}/Getopt/ArgvFile.pm:${PORTSDIR}/devel/p5-Getopt-ArgvFile \

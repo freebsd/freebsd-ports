@@ -9,7 +9,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	wapiti
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Wapiti is a vulnerability scanner for web applications
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/tidy:${PORTSDIR}/www/py-utidy

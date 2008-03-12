@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.roaringpenguin.com/files/download/ \
 		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	${PORTNAME}-03.01.03
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Sophisticated calendar and alarm program
 
 GNU_CONFIGURE=	yes

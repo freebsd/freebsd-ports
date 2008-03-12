@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.megastep.org/makeself/
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A neat script to make self-extracting archives
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

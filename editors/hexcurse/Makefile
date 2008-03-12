@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	DEBIAN
 DISTFILES=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A versatile ncurses-based hex editor
 
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ PORTVERSION=	0.6.7
 CATEGORIES=	deskutils
 MASTER_SITES=	http://gnunet.org/doodle/download/
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Quickly search documents
 
 LIB_DEPENDS=	extractor.2:${PORTSDIR}/textproc/libextractor

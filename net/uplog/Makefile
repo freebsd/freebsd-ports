@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.nerdlabs.org/downloads/${PORTNAME}/
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	UDP-based ping programm
 
 USE_GETOPT_LONG=	yes

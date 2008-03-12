@@ -9,7 +9,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.vanheusden.com/banihstypos/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jadawin@tuxaco.net
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Banihstypos is a simple game to teach you typing, FAST
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
