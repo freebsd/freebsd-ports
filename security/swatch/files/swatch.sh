@@ -23,6 +23,7 @@ name=swatch
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/bin/swatch
+procname=%%PREFIX%%/bin/perl
 
 load_rc_config ${name}
 
