@@ -39,9 +39,9 @@
  ifdef MAPFILE
  	MKSHLIB += -Wl,--version-script,$(MAPFILE)
  endif
-@@ -83,3 +87,5 @@
+@@ -83,4 +87,5 @@
  G++INCLUDES		= -I/usr/include/g++
  
- INCLUDES		+= -I/usr/X11R6/include
+-INCLUDES		+= -I/usr/X11R6/include
 +USE_SYSTEM_ZLIB		= 1
 +ZLIB_LIBS		= -lz
