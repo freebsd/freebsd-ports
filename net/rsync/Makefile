@@ -39,9 +39,17 @@ MAN5=		rsyncd.conf.5
 OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 		SSH       "Use SSH instead of RSH" on \
 		FLAGS     "File system flags support patch, adds --fileflags" off \
-		ACL       "Add backward-compatibility for the --acls option" off
+		ACL       "Add backward-compatibility for the --acls option" off \
+		ICONV     "Add iconv support" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ICONV)
+USE_ICONV=	yes
+CONFIGUREDCFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CONFIGUREDCFLAGS="${CONFIGUREDCFLAGS}"
+.endif
 
 .if defined(WITH_FLAGS)
 USE_PERL5_BUILD=yes
