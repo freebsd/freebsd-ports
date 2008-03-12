@@ -23,9 +23,9 @@ CERTDIR?=	share/certs
 PLIST_DIRS=	${CERTDIR}
 PLIST_FILES=	${CERTDIR}/ca-root-nss.crt
 
-VERSION_NSS=	3.11.7
-VERSION_APACHE=	1.3.37
-VERSION_MODSSL=	2.8.28
+VERSION_NSS=	3.11.9
+VERSION_APACHE=	1.3.41
+VERSION_MODSSL=	2.8.31
 MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
 		ftp://ftp.modssl.org/source/ \
 		ftp://ftp.blatzheim.com/pub/mod_ssl/ \
