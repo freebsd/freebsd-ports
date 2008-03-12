@@ -35,7 +35,7 @@ USE_EFL=	imlib2
 .if defined(WITHOUT_IMLIB2)
 CONFIGURE_ARGS+=	--disable-imlib2
 .else
-LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
+USE_EFL=	imlib2
 .endif
 
 post-install:
