@@ -1180,7 +1180,6 @@
     SUBDIR += sarg
     SUBDIR += sbox-dtc
     SUBDIR += scloader
-    SUBDIR += scout
     SUBDIR += screem
     SUBDIR += script4rss
     SUBDIR += seamonkey
