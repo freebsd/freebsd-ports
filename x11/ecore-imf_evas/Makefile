@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	ecore-
 DISTNAME=	ecore-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
-COMMENT=	Enlightenment core abstraction library (config module)
+COMMENT=	Enlightenment core abstraction library (IMF-Evas module)
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
