@@ -3,6 +3,7 @@ bin/fzsftp
 share/applications/filezilla.desktop
 %%DATADIR%%/docs/fzdefaults.xml.example
 %%DATADIR%%/resources/16x16/cancel.png
+%%DATADIR%%/resources/16x16/compare.png
 %%DATADIR%%/resources/16x16/disconnect.png
 %%DATADIR%%/resources/16x16/download.png
 %%DATADIR%%/resources/16x16/downloadadd.png
@@ -143,6 +144,7 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/cyril/16x16/synchronize.png
 %%DATADIR%%/resources/cyril/16x16/upload.png
 %%DATADIR%%/resources/cyril/16x16/uploadadd.png
+%%DATADIR%%/resources/defaultfilters.xml
 %%DATADIR%%/resources/dialogs.xrc
 %%DATADIR%%/resources/down.png
 %%DATADIR%%/resources/dropdown.png
@@ -156,30 +158,32 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/toolbar.xrc
 %%DATADIR%%/resources/up.png
 share/locale/ar/filezilla.mo
-share/locale/bg/filezilla.mo
-share/locale/ca_ES/filezilla.mo
-share/locale/cs/filezilla.mo
+share/locale/bg_BG/filezilla.mo
+share/locale/ca/filezilla.mo
+share/locale/ca_ES@valencia/filezilla.mo
+share/locale/cs_CZ/filezilla.mo
 share/locale/da_DK/filezilla.mo
 share/locale/de/filezilla.mo
+share/locale/el/filezilla.mo
 share/locale/es/filezilla.mo
 share/locale/et_EE/filezilla.mo
-share/locale/eu/filezilla.mo
-share/locale/fi/filezilla.mo
+share/locale/eu_ES/filezilla.mo
+share/locale/fi_FI/filezilla.mo
+share/locale/fr/filezilla.mo
 share/locale/fr_CA/filezilla.mo
-share/locale/fr_FR/filezilla.mo
-share/locale/gl/filezilla.mo
+share/locale/gl_ES/filezilla.mo
 share/locale/he_IL/filezilla.mo
-share/locale/hu/filezilla.mo
+share/locale/hu_HU/filezilla.mo
 share/locale/id_ID/filezilla.mo
-share/locale/it_IT/filezilla.mo
+share/locale/it/filezilla.mo
 share/locale/ja_JP/filezilla.mo
 share/locale/ka/filezilla.mo
-share/locale/km/filezilla.mo
+share/locale/km_KH/filezilla.mo
 share/locale/ko_KR/filezilla.mo
 share/locale/ku/filezilla.mo
-share/locale/lt/filezilla.mo
-share/locale/lv/filezilla.mo
-share/locale/mk/filezilla.mo
+share/locale/lt_LT/filezilla.mo
+share/locale/lv_LV/filezilla.mo
+share/locale/mk_MK/filezilla.mo
 share/locale/nb_NO/filezilla.mo
 share/locale/ne/filezilla.mo
 share/locale/nl/filezilla.mo
@@ -188,27 +192,14 @@ share/locale/pt_BR/filezilla.mo
 share/locale/pt_PT/filezilla.mo
 share/locale/ro_RO/filezilla.mo
 share/locale/ru/filezilla.mo
-share/locale/sk/filezilla.mo
-share/locale/sl/filezilla.mo
-share/locale/sv_SE/filezilla.mo
+share/locale/sk_SK/filezilla.mo
+share/locale/sl_SI/filezilla.mo
+share/locale/sv/filezilla.mo
+share/locale/th_TH/filezilla.mo
 share/locale/tr/filezilla.mo
 share/locale/zh_CN/filezilla.mo
 share/locale/zh_TW/filezilla.mo
 share/pixmaps/filezilla.png
-@dirrmtry share/locale/sv_SE
-@dirrmtry share/locale/ro_RO
-@dirrmtry share/locale/pl_PL
-@dirrmtry share/locale/nb_NO
-@dirrmtry share/locale/ko_KR
-@dirrmtry share/locale/km
-@dirrmtry share/locale/ja_JP
-@dirrmtry share/locale/it_IT
-@dirrmtry share/locale/id_ID
-@dirrmtry share/locale/he_IL
-@dirrmtry share/locale/fr_CA
-@dirrmtry share/locale/et_EE
-@dirrmtry share/locale/da_DK
-@dirrmtry share/locale/ca_ES
 @dirrm %%DATADIR%%/resources/cyril/16x16
 @dirrm %%DATADIR%%/resources/cyril
 @dirrm %%DATADIR%%/resources/blukis/48x48
@@ -221,4 +212,27 @@ share/pixmaps/filezilla.png
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/bg_BG
+@dirrmtry share/locale/ca_ES@valencia
+@dirrmtry share/locale/cs_CZ
+@dirrmtry share/locale/da_DK
+@dirrmtry share/locale/et_EE
+@dirrmtry share/locale/fi_FI
+@dirrmtry share/locale/fr_CA
+@dirrmtry share/locale/gl_ES
+@dirrmtry share/locale/he_IL
+@dirrmtry share/locale/hu_HU
+@dirrmtry share/locale/id_ID
+@dirrmtry share/locale/ja_JP
+@dirrmtry share/locale/km_KH
+@dirrmtry share/locale/ko_KR
+@dirrmtry share/locale/lt_LT
+@dirrmtry share/locale/lv_LV
+@dirrmtry share/locale/mk_MK
+@dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/ro_RO
+@dirrmtry share/locale/sk_SK
+@dirrmtry share/locale/sl_SI
+@dirrmtry share/locale/th_TH
 @dirrmtry share/applications

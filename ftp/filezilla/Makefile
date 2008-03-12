@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	filezilla
-DISTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.7.1
 CATEGORIES=	ftp
 MASTER_SITES=	SF
-DISTNAME=	FileZilla_${DISTVERSION}_src
+DISTNAME=	FileZilla_${PORTVERSION}_src
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Fast and reliable cross-platform FTP, FTPS and SFTP client
@@ -25,7 +24,10 @@ USE_WX=		2.8
 WX_CONF_ARGS=	relative
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+MAN1=		filezilla.1 fzsftp.1
+MAN5=		fzdefaults.xml.5
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|(dummy) wxrc|\1 ${WXRC_CMD:T}|' \
