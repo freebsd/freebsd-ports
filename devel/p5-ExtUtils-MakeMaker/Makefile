@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ExtUtils-MakeMaker
-PORTVERSION=	6.42
+PORTVERSION=	6.44
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	ExtUtils
 PKGNAMEPREFIX=	p5-
 
@@ -30,7 +30,7 @@ MAN3=	ExtUtils::Installed.3 ExtUtils::MM_OS2.3 ExtUtils::MakeMaker.3 \
 	ExtUtils::Command::MM.3 ExtUtils::MakeMaker::bytes.3 \
 	ExtUtils::MM_NW5.3 ExtUtils::MM_Any.3 ExtUtils::MM_VOS.3 \
 	ExtUtils::MM_QNX.3 ExtUtils::MM_AIX.3 ExtUtils::MakeMaker::Config.3 \
-	ExtUtils::Command.3
+	ExtUtils::Command.3 ExtUtils::MM_Darwin.3
 
 .include <bsd.port.pre.mk>
 
