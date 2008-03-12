@@ -6,7 +6,8 @@
 #
 
 PORTNAME?=	openoffice.org
-PORTVERSION?=	3.0.${SNAPDATE}
+PORTVERSION?=	2.4.${SNAPDATE}
+PORTEPOCH?=	1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://openoffice.lunarshells.com/sources/ \
@@ -24,6 +25,7 @@ EXTRACT_ONLY=	${OOOSRC}
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
+IGNORE=		Now development is moved to openoffice.org-3-devel
 
 .if defined(WITH_CWS)
 PORTNAME:=	openoffice.org-${WITH_CWS}
@@ -71,8 +73,8 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
 CODELINE=		680
-MILESTONE?=		1
-OOOTAG?=		DEV300_m${MILESTONE}
+MILESTONE?=		248
+OOOTAG?=		SRC680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 SNAPDATE=		20080302
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
