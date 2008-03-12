@@ -7,7 +7,7 @@
 
 PORTNAME=	glunarclock
 PORTVERSION=	0.32.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	astro gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +17,7 @@ COMMENT=	GNOME applet that displays the current phase of the Moon
 
 LIB_DEPENDS=	xklavier.11:${PORTSDIR}/x11/libxklavier
 
-USE_XLIB=	yes
-USE_GNOME=	gail gnomehack gnomepanel gnomeprefix gnometarget intlhack
+USE_GNOME=	gnomehack gnomepanel gnomeprefix gnometarget intlhack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
