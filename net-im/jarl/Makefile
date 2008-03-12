@@ -7,13 +7,12 @@
 
 PORTNAME=	jarl
 PORTVERSION=	0.5001
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	Jarl-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Perl/Tk Jabber client
 
 RUN_DEPENDS=	ptksh:${PORTSDIR}/x11-toolkits/p5-Tk \
@@ -25,7 +24,7 @@ USE_PERL5=	yes
 
 makeplist:
 	${ECHO_CMD} bin/jarl > ${PLIST}
-	${FIND} ${PREFIX}/share/jarl -type f -print | ${CUT} -d/ -f4- >> \
+	${FIND} ${PREFIX}/share/jarl ! -name "*.orig" -type f -print | ${CUT} -d/ -f4- >> \
 		${PLIST}
 	${FIND} ${PREFIX}/share/jarl -type d -print | ${CUT} -d/ -f4- | \
 		${SORT} -r | ${SED} 's/^/@dirrm /' >> ${PLIST}
@@ -34,13 +33,11 @@ post-patch:
 	${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/jarl
 
 do-install:
-	${MKDIR} ${PREFIX}/share/jarl
+	${MKDIR} ${DATADIR}
+	${MKDIR} ${DATADIR}/lib
+	${MKDIR} ${DATADIR}/bitmaps
+	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${DATADIR}/lib)
+	(cd ${WRKSRC}/bitmaps && ${COPYTREE_SHARE} \* ${DATADIR}/bitmaps)
 	${INSTALL_SCRIPT} ${WRKSRC}/jarl ${PREFIX}/bin
-	cd ${WRKSRC} && ${FIND} lib bitmaps -type d -print | while read d; do \
-		${MKDIR} ${PREFIX}/share/jarl/$$d; \
-		${FIND} $$d -maxdepth 1 -type f -print | \
-			${XARGS} -t -J% ${INSTALL_DATA} % \
-			${PREFIX}/share/jarl/$$d; \
-	done;
 
 .include <bsd.port.mk>
