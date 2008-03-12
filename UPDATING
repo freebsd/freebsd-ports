@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080312:
+  AFFECTS: users of x11-wm/enlightenment-devel, x11/ecore and grephics/evas
+  AUTHOR: stas@FreeBSD.org
+
+  Evas and ecore ports have been splitted to separate modules to simplify
+  dependency tracking. Thus, portupgrade in many cases won't be able to
+  correctly update these ports.
+
+  The easiest upgrade path would be to remove all EFL ports and install
+  them from scratch. At least, you should reinstall ecore and evas.
+
 20080306:
   AFFECTS: users of mail/dovecot
   AUTHOR: ehaupt@FreeBSD.org
