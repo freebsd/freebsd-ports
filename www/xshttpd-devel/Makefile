@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.6b05
+DISTVERSION=	3.6b08
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=--with-curl=no
 .endif
 
 post-patch:
-.for i in man/httpd.1 man/httpd.conf.5 config/httpd.conf.sample \
+.for i in man/httpd.1.in man/httpd.conf.5 config/httpd.conf.sample \
 	contrib/SSL-Makefile contrib/logrotate.sh
 	@${REINPLACE_CMD} \
 		-e 's|/wwwsys|${WWWDIR}|g' \
