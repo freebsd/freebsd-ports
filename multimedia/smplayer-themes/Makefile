@@ -11,7 +11,7 @@ CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=smplayer
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Themes for smplayer
 
 NO_BUILD=	yes

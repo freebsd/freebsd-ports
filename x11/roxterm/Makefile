@@ -10,7 +10,7 @@ PORTVERSION=	1.10.1
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	GTK+ 2.0 terminal emulator with tabs
 
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
