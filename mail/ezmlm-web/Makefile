@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ezmlm-web
-PORTVERSION=	3.1.4
+PORTVERSION=	3.2
 CATEGORIES=	mail www
-MASTER_SITES=	https://systemausfall.org/toolforge/ezmlm-web/download/
+MASTER_SITES=	https://systemausfall.org/toolforge/ezmlm-web/download/ezmlm-web-3.2/
 
 MAINTAINER=	hans@nordhaug.priv.no
 COMMENT=	Manage ezmlm-idx mailing lists through the web (using CGI)
@@ -17,34 +17,32 @@ RUN_DEPENDS=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx \
 		${SITE_PERL}/Mail/Ezmlm.pm:${PORTSDIR}/mail/p5-Mail-Ezmlm \
 		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools
 
-# Change these to suit your setup. You can do this via the environment
-# CGI_BIN is the location relative to ${PREFIX} of your webservers' cgi-bin
-# EZMLM_DIR is the base relative to ${PREFIX} in which ezmlm was installed
-#
-CGI_BIN?=	www/cgi-bin.default
+EXAMPLES=	apache.conf.dist ezmlmwebrc.dist ezmlmwebrc.minimal-dist \
+		htaccess.dist multidomain.conf.dist webusers.dist
+DOCS=		INSTALL README TODO UPGRADING changelog copyright
 
-USE_PERL5=	YES
-PLIST_SUB=	CGI_BIN=${CGI_BIN}
-
-EXAMPLES=	htaccess.sample webusers.sample index.c
-DOCS=		INSTALL INSTALL.clearsilver README TODO UPGRADING changelog copyright
-
-do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ezmlm-web index.c
+USE_GMAKE=	yes
+USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/etc/ezmlm|${PREFIX}/etc/ezmlm|' \
-		-e 's|/usr/local|${PREFIX}|g' -e 's|prefex|prefix|g' \
-		${WRKSRC}/ezmlm-web.cgi ${WRKSRC}/ezmlmwebrc ${WRKSRC}/index.c
+	${REINPLACE_CMD} -e 's|local/share|share|' \
+		-e 's|$$SHAREDIR/www-data|${WWWDIR}|' \
+		${WRKSRC}/Makefile.PL
+	${REINPLACE_CMD} -e 's|/usr/local/share/ezmlm-web/www-data/|${WWWDIR}/|' \
+		${WRKSRC}/examples/apache.conf.dist
+	${REINPLACE_CMD} -e 's|/etc/ezmlm|${PREFIX}/etc/ezmlm|' -e 's|/usr/local|${PREFIX}|g' \
+		${WRKSRC}/ezmlm-web.cgi ${WRKSRC}/examples/ezmlmwebrc.dist ${WRKSRC}/suid-wrapper/index.h
 
-do-install:
-	${MKDIR} ${PREFIX}/${CGI_BIN} ${PREFIX}/etc/ezmlm
-	${INSTALL_SCRIPT} ${WRKSRC}/ezmlm-web.cgi ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/ezmlmwebrc ${PREFIX}/etc/ezmlm/ezmlmwebrc.sample
-	${INSTALL_PROGRAM} -o alias -g qmail -m 4755 ${WRKSRC}/ezmlm-web ${PREFIX}/${CGI_BIN}
-	${MKDIR} ${EXAMPLESDIR}
+.if defined(PACKAGE_BUILDING)
+CONFIGURE_ENV=	BSD_BATCH_INSTALL=yes
+.endif
+
+post-install:
+	${MKDIR} ${EXAMPLESDIR} ${PREFIX}/etc/ezmlm-web
+	${INSTALL_DATA} ${WRKSRC}/examples/ezmlmwebrc.dist ${PREFIX}/etc/ezmlm-web/ezmlmwebrc.sample
 .for file in ${EXAMPLES}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -52,5 +50,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
+
+MAN1=		ezmlm-web.cgi.1p
 
 .include <bsd.port.mk>
