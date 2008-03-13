@@ -1,11 +1,13 @@
 #!/bin/sh
 
-SCOREDIR="/var/games"
-SCOREFILE="/var/games/tecnoballz.hi"
+SCOREDIR="/var/games/tecnoballs"
+SCOREFILE="/var/games/tecnoballz/tecnoballz.hi"
 
 [ "$2" != "POST-INSTALL" -o -f "$SCOREFILE" ] && exit 0
 
+echo "Creating hiscore directory..."
 mkdir -p $SCOREDIR
 touch $SCOREFILE
-chown root:games $SCOREFILE
-chmod 664 $SCOREFILE
+
+chgrp -R games $SCOREDIR
+chmod g+w $SCOREFILE
