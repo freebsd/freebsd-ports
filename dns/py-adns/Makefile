@@ -8,7 +8,7 @@
 PORTNAME=	adns
 PORTVERSION=	1.2.1
 CATEGORIES=	dns python
-MASTER_SITES=	http://adns-python.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	adns-python-${PORTVERSION}
 
@@ -17,6 +17,7 @@ COMMENT=	A Python Interface to adns, the asynchronous DNS library
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns
 
+PROJECTHOST=	adns-python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	adns-python

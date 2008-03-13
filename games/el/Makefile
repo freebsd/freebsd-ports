@@ -8,7 +8,7 @@
 PORTNAME=	el
 PORTVERSION=	140
 CATEGORIES=	games
-MASTER_SITES=	http://bsdistfiles.googlecode.com/files/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,}
 DIST_SUBDIR=	${PORTNAME}
 
@@ -22,6 +22,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		alut.1:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:${PORTSDIR}/games/el-data
 
+PROJECTHOST=	bsdistfiles
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2

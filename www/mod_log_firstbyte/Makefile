@@ -8,12 +8,13 @@
 PORTNAME=	mod_log_firstbyte
 PORTVERSION=	1.01
 CATEGORIES=	www
-MASTER_SITES=	http://mod-log-firstbyte.googlecode.com/svn/trunk/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME}.c readme.txt
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Log the time between request and the first byte of the response served
 
+PROJECTHOST=	mod-log-firstbyte
 USE_APACHE=	2.0+
 MOD=		mod_log_firstbyte
 PKGMESSAGE=	${WRKSRC}/readme.txt

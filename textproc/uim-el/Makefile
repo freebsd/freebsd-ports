@@ -8,7 +8,7 @@
 PORTNAME=	uim-el
 PORTVERSION=	1.4.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://uim.googlecode.com/files/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://uim.freedesktop.org/releases/uim/stable/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	uim-${PORTVERSION}
@@ -16,6 +16,7 @@ DISTNAME=	uim-${PORTVERSION}
 MAINTAINER=	nobutaka@freebsd.org
 COMMENT?=	Emacs lisp for uim input method library
 
+PROJECTHOST=	uim
 CONFLICTS?=	uim-el-xemacs21-mule-[0-9]* \
 		uim-el-emacs21-[0-9]*
 

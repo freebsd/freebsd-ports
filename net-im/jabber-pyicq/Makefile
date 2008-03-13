@@ -7,7 +7,7 @@
 PORTNAME=	pyicq
 PORTVERSION=	0.8b
 CATEGORIES=	net-im
-MASTER_SITES=	http://pyicqt.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
 DISTNAME=	${PORTNAME}-t-${PORTVERSION}
@@ -19,6 +19,7 @@ COMMENT=	Python ICQ-Transport for Jabber
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
+PROJECTHOST=	pyicqt
 OPTIONS=	JABBER "Use with jabberd14 (net-im/jabber)" off \
 		JABBERD "Use with jabberd 2.x (net-im/jabberd)" off \
 		EJABBERD "Use with ejabberd (net-im/ejabberd)" off \

@@ -9,12 +9,13 @@ PORTNAME=	papi
 PORTVERSION=	3.5.0
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://papi-for-freebsd.googlecode.com/files/:source1
-DISTFILES=	papi-3.5.0-freebsd-rev49.tar.bz2:source1
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+DISTFILES=	papi-3.5.0-freebsd-rev49.tar.bz2
 
 MAINTAINER=	redcrash@gmail.com
 COMMENT=	API to access the performance counter hw in the microprocessor
 
+PROJECTHOST=	papi-for-freebsd
 STRIP=
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
