@@ -2924,6 +2924,7 @@ festdoc		ports/audio/festdoc
 festival	ports/audio/festival
 festival+OGI	ports/audio/festival+OGI
 festlex-cmu	ports/audio/festlex-cmu
+festlex-czech	ports/audio/festlex-czech
 festlex-ifd	ports/audio/festlex-ifd
 festlex-oald	ports/audio/festlex-oald
 festlex-ogi	ports/audio/festlex-ogi
@@ -2932,6 +2933,7 @@ festogi-italian	ports/audio/festogi-italian
 festogi-spanish	ports/audio/festogi-spanish
 festvox-abc	ports/audio/festvox-abc
 festvox-aec	ports/audio/festvox-aec
+festvox-czech	ports/audio/festvox-czech
 festvox-don	ports/audio/festvox-don
 festvox-el11	ports/audio/festvox-el11
 festvox-hvs	ports/audio/festvox-hvs
