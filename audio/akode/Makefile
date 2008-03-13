@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	akode
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 PORTEPOCH=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_GENTOO}
@@ -19,7 +19,8 @@ COMMENT=	Default KDE audio backend
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
-OPTIONS=	JACK "Jack output plugin" off \
+OPTIONS=	FFMPEG "FFMPEG decoder plugin" off \
+		JACK "Jack output plugin" off \
 		MPC "Monkey's Audio decoder plugin" on \
 		MPEG "MPEG Audio (including mp3) plugin" on \
 		OSS "OSS output plugin" on \
@@ -40,6 +41,10 @@ CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-extra-includes=${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_FFMPEG)
+RUN_DEPENDS=	${LOCALBASE}/lib/libakode_ffmpeg_decoder.so:${PORTSDIR}/audio/akode-plugins-ffmpeg
+.endif
 
 .if defined(WITH_JACK)
 RUN_DEPENDS+=	${LOCALBASE}/lib/libakode_jack_sink.so:${PORTSDIR}/audio/akode-plugins-jack
