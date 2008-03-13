@@ -1,0 +1,23 @@
+Patch for Squid bug #2203:
+
+LDFLAGS gets unset when --with-filedescriptors=n is added to
+SQUID_CONFIGURE_ARGS.
+
+--- configure.orig	Fri Dec 14 01:25:27 2007
++++ configure	Thu Jan 24 19:56:32 2008
+@@ -43934,6 +43934,7 @@
+   esac
+   { echo "$as_me:$LINENO: result: $SQUID_MAXFD" >&5
+ echo "${ECHO_T}$SQUID_MAXFD" >&6; }
++  LDFLAGS="$TLDFLAGS"
+ fi
+ 
+ cat >>confdefs.h <<_ACEOF
+@@ -43947,7 +43948,6 @@
+     echo "         on how to increase your filedescriptor limit"
+     sleep 10
+ fi
+-LDFLAGS="$TLDFLAGS"
+ 
+ if test `expr $SQUID_MAXFD % 64` != 0; then
+     echo "WARNING: $SQUID_MAXFD is not an multiple of 64. This may cause issues"
