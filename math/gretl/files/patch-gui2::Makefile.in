@@ -1,6 +1,6 @@
---- gui2/Makefile.in.orig	Thu Jul 27 04:51:05 2006
-+++ gui2/Makefile.in	Sun Oct  8 02:07:29 2006
-@@ -4,6 +4,7 @@
+--- gui2/Makefile.in.orig	2008-02-07 10:22:01.000000000 +0900
++++ gui2/Makefile.in	2008-02-29 03:05:18.000000000 +0900
+@@ -5,6 +5,7 @@
  exec_prefix = @exec_prefix@
  bindir = @bindir@
  libdir = @libdir@
@@ -8,7 +8,7 @@
  CC = @CC@
  CFLAGS = @CFLAGS@
  MAKE = @MAKE@
-@@ -50,7 +51,7 @@
+@@ -49,7 +50,7 @@
  
  ifeq ($(have_gtksourceview),yes)
    langbase := $(shell pkg-config --variable=prefix gtksourceview-1.0)
@@ -17,7 +17,7 @@
    query_install_lang = install-lang
  endif
  
-@@ -59,7 +60,7 @@
+@@ -58,7 +59,7 @@
      GTKSOURCEVIEW_CFLAGS = -I$(topsrc)/gui2
      GTKSOURCEVIEW_LIBS = -L./gtksourceview -lgtksourceview-lite
      MY_SOURCEVIEW_LIB = gtksourceview/libgtksourceview-lite.a
@@ -26,7 +26,7 @@
      query_install_lang = install-lang
    endif
  endif
-@@ -69,14 +70,14 @@
+@@ -68,14 +69,14 @@
  	../lib/libgretl-1.0.la
    GUI_CFLAGS = $(GNOME_CFLAGS) $(GTKSOURCEVIEW_CFLAGS) $(GTK_EXTRA_CFLAGS)
    query_install_gnome = install-gnome
@@ -43,7 +43,7 @@
    NLSDEF = -DLOCALEDIR=\"$(localedir)\"
  endif
  
-@@ -88,7 +89,7 @@
+@@ -87,7 +88,7 @@
  
  # Directories
  bindir	= $(prefix)/bin
@@ -52,7 +52,7 @@
  tooldir = $(topsrc)/tools
  libsrc = $(topsrc)/lib/src
  clisrc = $(topsrc)/cli
-@@ -97,7 +98,7 @@
+@@ -96,7 +97,7 @@
  #### End of system configuration section. ####
  
  SHELL = /bin/sh
@@ -61,22 +61,23 @@
  PROG  = gretl_x11
  
  vpath %.c $(topsrc)/gui2
-@@ -156,23 +157,23 @@
+@@ -155,13 +156,13 @@
  	$(CC) $(CFLAGS) -MM $< > .deps/$*.d 
  
- $(PROG): .deps $(OBJS) $(HACK_OBJ) $(GTKEXTRA_LITE) $(MY_SOURCEVIEW_LIB)
+ $(PROG): .deps $(OBJS) $(HACK_OBJ) $(GTKEXTRA_LITE) $(MY_SOURCEVIEW_LIB) 
 -	$(LIBTOOL) --mode=link $(CC) -o $@ $(OBJS) $(HACK_OBJ) $(LIBS) $(INETLIB) $(CARBONLIB)
 +	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ $(OBJS) $(HACK_OBJ) $(LIBS) $(INETLIB) $(CARBONLIB)
  
  $(HACK_OBJ): $(HACK_SRC) $(HACK_HDR)
  	$(CC) $(CFLAGS) $(GTK_CFLAGS) -c $<
  
- mklang: mklang.c
- 	$(CC) -c -I.. -I$(libsrc) $(XML_CFLAGS) $<
--	$(LIBTOOL) --mode=link $(CC) -o $@ mklang.o ../lib/libgretl-1.0.la $(XML_LIBS)
-+	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ mklang.o ../lib/libgretl-1.0.la $(XML_LIBS)
+ mklang: mklang.o
+-	$(LIBTOOL) --mode=link $(CC) -o $@ $< ../lib/libgretl-1.0.la $(XML_LIBS)
++	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -o $@ $< ../lib/libgretl-1.0.la $(XML_LIBS)
  
- gretl.lang: mklang
+ mklang.o: mklang.c $(topsrc)/lib/src/options.c $(topsrc)/lib/src/genlex.c
+ 	$(CC) -c -I.. -I$(libsrc) $(XML_CFLAGS) $<
+@@ -170,10 +171,10 @@
  	./mklang > $@
  
  $(GTKEXTRA_LITE): 
@@ -89,7 +90,7 @@
  
  .deps:
  	mkdir $@
-@@ -187,7 +188,7 @@
+@@ -188,7 +189,7 @@
  	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s $(PROG) $(bindir)/$(PROG)
  
  install-data: installdirs
