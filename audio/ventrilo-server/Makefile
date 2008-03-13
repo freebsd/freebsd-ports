@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ventrilo
-PORTVERSION=	2.3.1
+PORTVERSION=	3.0.2
 CATEGORIES=	audio net
 MASTER_SITES=	# http://www.ventrilo.com/download.php
 PKGNAMESUFFIX=	-server
@@ -15,31 +15,24 @@ DISTNAME=	ventrilo_srv-${PORTVERSION}-FreeBSD-i386
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Server side of the Ventrilo group voice chat system
 
-FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
-
-BROKEN=		bad checksum
-
-ONLY_FOR_ARCHS=	i386
-NO_BUILD=	yes
-RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
-NO_CDROM=	Redistribution of pre-compiled binaries is not permitted
-INSTALL_DIR=	${PREFIX}/ventrilo-server
-USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}.sh
-VENT_USER=	${PORTNAME}
-FETCH_CMD=	${LOCALBASE}/bin/wget
-SUB_FILES=	pkg-message
+LIB_DEPENDS=	stdc\\+\\+.3:${PORTSDIR}/misc/compat4x \
+		m.2:${PORTSDIR}/misc/compat4x \
+		c.4:${PORTSDIR}/misc/compat4x
 
 .include <bsd.port.pre.mk>
 
-do-fetch:
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-	${FETCH_CMD} --post-data "Download=Download" "http://download1.ventrilo.com/dl.php?server_freebsd_i386&2332415189" -O "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}"
-.endif
+IA32_BINARY_PORT=	yes
+NO_BUILD=	yes
+RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
+INSTALL_DIR=	${PREFIX}/ventrilo-server
+USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}.sh
+VENT_USER=	${PORTNAME}
+WRKSRC=	${WRKDIR}/ventsrv
+SUB_FILES=	pkg-message
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${TAR} -C ${WRKSRC} -zxf ${DISTDIR}/${DISTFILES}
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+IGNORE=	distfile can only be fetched if you accept the license. Go to http://www.ventrilo.com/dlprod.php?id=105 and put ${DISTFILES} into ${DISTDIR}
+.endif
 
 do-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
@@ -66,4 +59,5 @@ post-deinstall:
 		${SH} ${PKGDEINSTALL} ${PORTNAME} POST-DEINSTALL
 
 PKGDEINSTALL=	${PKGINSTALL}
+
 .include <bsd.port.post.mk>
