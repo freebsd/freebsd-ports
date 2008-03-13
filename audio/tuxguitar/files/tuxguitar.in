@@ -1,0 +1,21 @@
+#! /bin/sh
+
+PACKAGE_MAIN=org.herac.tuxguitar.gui.TGMain
+ARGS=%%DATADIR%%/tuxguitar.tg
+
+CLASSPATH=${CLASSPATH}
+CLASSPATH=${CLASSPATH}:%%DATADIR%%
+CLASSPATH=${CLASSPATH}:%%DATADIR%%/tuxguitar.jar
+CLASSPATH=${CLASSPATH}:%%JAVALIBDIR%%/swt.jar
+CLASSPATH=${CLASSPATH}:%%JAVALIBDIR%%/itext.jar
+
+JAVA_FLAGS="-Xms128m -Xmx128m -cp ${CLASSPATH}"
+
+# We need this because FreeBSD's SWT lacks browser support
+SWT_HACK="-Dos.name=linux"
+
+MOZILLA_FIVE_HOME=%%PREFIX%%/lib/%%GECKO%% java ${SWT_HACK} \
+						${JAVA_FLAGS} \
+						-cp ${CLASSPATH} \
+						${PACKAGE_MAIN} \
+						%%DATADIR%%/tuxguitar.tg

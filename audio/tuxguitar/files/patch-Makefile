@@ -1,0 +1,42 @@
+--- Makefile.orig	2008-03-11 22:09:54.000000000 +0100
++++ Makefile	2008-03-12 21:23:14.000000000 +0100
+@@ -8,16 +8,16 @@
+ 
+ PACKAGE?=tuxguitar
+ 
+-JNI_OS?=linux
++JNI_OS?=freebsd
+ JAVA_HOME?=/usr/lib/jvm/java-6-sun/
+ JAVA_VERS?=1.4
+ 
+-ITEXT_JAR?=/usr/share/java/itext.jar
++ITEXT_JAR?=$(JAVALIBDIR)/itext.jar
+ 
+ # debian/3.3
+ #SWT_PATH?=/usr/share/java/swt.jar
+ # ubuntu/3.2
+-SWT_JAR?=/usr/lib/java/swt.jar
++SWT_JAR?=$(JAVALIBDIR)/swt.jar
+ SWT_PATH?=${SWT_JAR}
+ 
+ PACKAGE_JAR?=${CURDIR}/TuxGuitar/${PACKAGE}.jar
+@@ -75,6 +75,10 @@
+  ./TuxGuitar-oss/tuxguitar-oss.jar \
+  #}jars_linux
+ 
++jars_freebsd?=\
++ ./TuxGuitar-oss/tuxguitar-oss.jar \
++ #}jars_freebsd
++
+ jars_windows?=TuxGuitar-winmm/tuxguitar-winmm.jar
+ 
+ jars_macos?=TuxGuitar-CoreAudio/tuxguitar-coreaudio.jar
+@@ -124,6 +128,8 @@
+ 
+ all_linux: ${all_linux}
+ 
++all_freebsd: ${all_freebsd}
++
+ all_sun: ${all_sun}
+ 
+ %.jar:

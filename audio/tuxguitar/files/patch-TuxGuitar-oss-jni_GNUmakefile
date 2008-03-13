@@ -1,0 +1,10 @@
+--- TuxGuitar-oss/jni/GNUmakefile.orig	2008-03-12 21:27:15.000000000 +0100
++++ TuxGuitar-oss/jni/GNUmakefile	2008-03-12 21:27:23.000000000 +0100
+@@ -1,6 +1,6 @@
+ CXX = gcc
+ 
+-INCLUDES = -I $(JAVA_HOME)/include/ -I $(JAVA_HOME)/include/linux/
++INCLUDES = -I $(JAVA_HOME)/include/ -I $(JAVA_HOME)/include/freebsd
+ 
+ LIBRARY = $(LIBRARY_PREFIX)$(LIBRARY_NAME)$(LIBRARY_EXTENSION)
+ 
