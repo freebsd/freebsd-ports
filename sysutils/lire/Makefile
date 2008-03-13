@@ -12,8 +12,7 @@
 #
 
 PORTNAME=	lire
-PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTVERSION=	2.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.logreport.org/pub/
 
@@ -163,6 +162,7 @@ MAN3=		\
 		Lire::FilterExpr.3pm \
 		Lire::FilterSpec.3pm \
 		Lire::Firewall.3pm \
+		Lire::Firewall::FortigateDlfConverter.3pm \
 		Lire::Firewall::IpchainsDlfConverter.3pm \
 		Lire::Firewall::IpfilterDlfConverter.3pm \
 		Lire::Firewall::IptablesDlfConverter.3pm \
