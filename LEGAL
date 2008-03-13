@@ -23,6 +23,10 @@ Such ports are listed below:
 
 Dist			Port			Why
 ------------------------------------------------------------------------------
+ventrilo_srv-*		audio/ventrilo-server	May not be redistributed. 
+						Crypto; export-controlled. 
+						For personal use only. 
+						Must accept license to download.
 112887-04.tar		editors/staroffice60	Must be bought and downloaded
 						directly from Sun via WWW
 						interface
