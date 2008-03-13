@@ -27,6 +27,7 @@ etc/lire/plugins/ct_stack_init
 etc/lire/plugins/ct_vbars_init
 etc/lire/plugins/cups_init
 etc/lire/plugins/email_concat_init
+etc/lire/plugins/fortigate_init
 etc/lire/plugins/iis_ftp_init
 etc/lire/plugins/ipchains_init
 etc/lire/plugins/ipfilter_init
@@ -570,6 +571,7 @@ share/perl5/Lire/Config/DlfStreamSpec.pm
 share/perl5/Lire/Config/DlfStreamsSpec.pm
 share/perl5/Lire/Config/ExecutableSpec.pm
 share/perl5/Lire/Config/FileSpec.pm
+share/perl5/Lire/Firewall/FortigateDlfConverter.pm
 share/perl5/Lire/Config/Index.pm
 share/perl5/Lire/Config/IntegerSpec.pm
 share/perl5/Lire/Config/List.pm
@@ -821,5 +823,11 @@ share/perl5/LocaleData/nl/LC_MESSAGES/lire.mo
 @dirrm etc/lire/converters
 @dirrm etc/lire/config
 @dirrm etc/lire
+@dirrmtry var/lib/lire/data
+@dirrmtry var/lib/lire
+@dirrmtry var/lib
+@dirrmtry var
+@dirrmtry var/spool/lire
+@dirrmtry var/spool
 
 @dirrmtry share/perl5
