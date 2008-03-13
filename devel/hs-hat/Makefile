@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A source-level tracer for Haskell 98
 
+BROKEN=		Does not build with recent ghc
+
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_GNOME=	glib12
