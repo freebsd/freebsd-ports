@@ -194,6 +194,7 @@
     SUBDIR += geomorph
     SUBDIR += geomview
     SUBDIR += geos
+    SUBDIR += geoserver
     SUBDIR += gephex
     SUBDIR += gfont
     SUBDIR += giblib

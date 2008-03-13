@@ -1,0 +1,15 @@
+#!/bin/sh
+# 
+# PROVIDE: geoserver
+# REQUIRE: networking
+
+. %%RC_SUBR%%
+
+name="geoserver"
+rcvar=${name}_enable
+
+start_cmd=%%PREFIX%%/lib/${name}/bin/startup.sh
+stop_cmd=%%PREFIX%%/lib/${name}/bin/shutdown.sh
+
+load_rc_config ${name}
+run_rc_command "$1"
