@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	sdl_image
-PORTVERSION=	1.2.5
-PORTREVISION=	2
+PORTVERSION=	1.2.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 DISTNAME=	SDL_image-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	A simple library to load images of various formats as SDL surfaces
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
