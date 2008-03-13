@@ -79,6 +79,7 @@ lib/erlang/lib/wings-%%VERSION%%/ebin/wings_scale.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_sel.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_sel_cmd.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_sel_conv.beam
+lib/erlang/lib/wings-%%VERSION%%/ebin/wings_shaders.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_shape.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_shapes.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/wings_start.beam
@@ -152,6 +153,7 @@ lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_lwo.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_obj.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_opengl.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_opengl_sl.beam
+lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_pov.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_rwx.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_stl.beam
 lib/erlang/lib/wings-%%VERSION%%/plugins/import_export/wpc_toxic.beam
@@ -232,11 +234,13 @@ lib/erlang/lib/wings-%%VERSION%%/src/wings_proxy.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_pt.lang
 lib/erlang/lib/wings-%%VERSION%%/src/wings_render.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_rotate.erl
+lib/erlang/lib/wings-%%VERSION%%/src/wings_ru.lang
 lib/erlang/lib/wings-%%VERSION%%/src/wings_s.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_scale.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_sel.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_sel_cmd.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_sel_conv.erl
+lib/erlang/lib/wings-%%VERSION%%/src/wings_shaders.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_shape.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_shapes.erl
 lib/erlang/lib/wings-%%VERSION%%/src/wings_start.erl

@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	wings
-PORTVERSION=	0.98.36
-PORTREVISION=	2
+PORTVERSION=	0.99.00b
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	wings
+MASTER_SITES=	SF
 DIST_SUBDIR=	erlang
 
 MAINTAINER=	amdmi3@amdmi3.ru
@@ -36,20 +34,14 @@ BROKEN=		Does not compile on !i386
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(GCC)|${CC} -I${X11BASE}/include -L${X11BASE}/lib|g' \
+	@${REINPLACE_CMD} -e 's|$$(GCC)|${CC} -I${LOCALBASE}/include -L${LOCALBASE}/lib|g' \
 		${WRKSRC}/plugins_src/accel/Makefile
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/${DISTNAME}
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/${DISTNAME}/src
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/${DISTNAME}/ebin
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/${DISTNAME}/fonts
-	@${MKDIR} ${PREFIX}/lib/erlang/lib/${DISTNAME}/plugins
-	@${INSTALL_DATA} ${WRKSRC}/src/* ${PREFIX}/lib/erlang/lib/${DISTNAME}/src
-	@${INSTALL_DATA} ${WRKSRC}/ebin/* ${PREFIX}/lib/erlang/lib/${DISTNAME}/ebin
-	@${INSTALL_DATA} ${WRKSRC}/fonts/* ${PREFIX}/lib/erlang/lib/${DISTNAME}/fonts
-	@${CP} -r ${WRKSRC}/plugins/* ${PREFIX}/lib/erlang/lib/${DISTNAME}/plugins
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/erlang/lib/${DISTNAME}/plugins
+	${MKDIR} ${PREFIX}/lib/erlang/lib/${DISTNAME}
+.for dir in src ebin fonts plugins
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${PREFIX}/lib/erlang/lib/${DISTNAME}
+.endfor
 	@${INSTALL_SCRIPT} ${WRKDIR}/wings.sh ${PREFIX}/bin/wings
 	@${LN} -sf ${DISTNAME} ${PREFIX}/lib/erlang/lib/${PORTNAME}
 
