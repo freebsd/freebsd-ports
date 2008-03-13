@@ -1,0 +1,7 @@
+share/festival/lib/voices/czech/czech_ph/festvox/czech_ph.scm
+share/festival/lib/voices/czech/czech_ph/group/ph.group
+@dirrm share/festival/lib/voices/czech/czech_ph/festvox
+@dirrm share/festival/lib/voices/czech/czech_ph/group
+@dirrm share/festival/lib/voices/czech/czech_ph
+@dirrmtry share/festival/lib/voices/czech
+@dirrmtry share/festival/lib/voices
