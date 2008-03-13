@@ -1,0 +1,5 @@
+The TiMBL software package is a fast, decision-tree-based implementation
+of k-nearest neighbor classification. The package includes the IB1, IB2,
+TRIBL, TRIBL2, and IGTree algorithms, and offers various weighting metrics.
+
+WWW: http://ilk.uvt.nl/timbl/
