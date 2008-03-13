@@ -7,7 +7,7 @@
 PORTNAME=	nagios-certexp-plugin
 PORTVERSION=	1.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://jhweiss.de/pub/users/weiss/nagios/plugins/
+MASTER_SITES=	ftp://ftp.jhweiss.de/pub/users/weiss/nagios/plugins/
 DISTNAME=	check_certexp.pl
 EXTRACT_SUFX=
 
