@@ -5645,6 +5645,7 @@ share/servicetypes/scriptinterface.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/kspeech/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kate/html
+@unexec /bin/rm %D/share/icons/crystalsvg/icon-theme.cache 2>/dev/null || /usr/bin/true
 @dirrm share/services/kresources/kabc
 @dirrm share/services/kresources
 @dirrm share/services/kded

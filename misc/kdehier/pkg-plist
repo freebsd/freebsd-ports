@@ -323,7 +323,7 @@ share/wallpapers/.keep_me
 @dirrm share/icons/crystalsvg/128x128/actions
 @dirrm share/icons/crystalsvg/128x128
 @dirrm share/icons/crystalsvg
-@dirrm share/icons
+@dirrmtry share/icons
 @dirrm share/doc/HTML/zh_TW
 @dirrm share/doc/HTML/zh_CN
 @dirrm share/doc/HTML/xh
