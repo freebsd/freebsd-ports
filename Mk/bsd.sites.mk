@@ -596,8 +596,13 @@ MASTER_SITE_GNU_ALPHA+=	\
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GOOGLE_CODE)
+.if defined(PROJECTHOST)
+MASTER_SITE_GOOGLE_CODE+= \
+	http://${PROJECTHOST}.googlecode.com/files/
+.else
 MASTER_SITE_GOOGLE_CODE+= \
 	http://${PORTNAME}.googlecode.com/files/
+.endif
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_HORDE)
