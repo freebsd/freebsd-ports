@@ -1,0 +1,45 @@
+--- demos/Makefile.in.orig	2008-03-12 17:15:02.000000000 -0700
++++ demos/Makefile.in	2008-03-12 17:22:05.000000000 -0700
+@@ -248,25 +248,25 @@
+ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+ 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+ install-binPROGRAMS: $(bin_PROGRAMS)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(bindir)" || $(MKDIR_P) "$(DESTDIR)$(bindir)"
+-	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+-	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
+-	  if test -f $$p \
+-	  ; then \
+-	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(bindir)/$$f'"; \
+-	   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$f" || exit 1; \
+-	  else :; fi; \
+-	done
++	#@$(NORMAL_INSTALL)
++	#test -z "$(bindir)" || $(MKDIR_P) "$(DESTDIR)$(bindir)"
++	#@list='$(bin_PROGRAMS)'; for p in $$list; do \
++	#  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
++	#  if test -f $$p \
++	#  ; then \
++	#    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
++	#   echo " $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(bindir)/$$f'"; \
++	#   $(INSTALL_PROGRAM_ENV) $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$f" || exit 1; \
++	#  else :; fi; \
++	#done
+ 
+ uninstall-binPROGRAMS:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+-	  f=`echo "$$p" | sed 's,^.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/'`; \
+-	  echo " rm -f '$(DESTDIR)$(bindir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(bindir)/$$f"; \
+-	done
++	#@$(NORMAL_UNINSTALL)
++	#@list='$(bin_PROGRAMS)'; for p in $$list; do \
++	#  f=`echo "$$p" | sed 's,^.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/'`; \
++	#  echo " rm -f '$(DESTDIR)$(bindir)/$$f'"; \
++	#  rm -f "$(DESTDIR)$(bindir)/$$f"; \
++	#done
+ 
+ clean-binPROGRAMS:
+ 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)

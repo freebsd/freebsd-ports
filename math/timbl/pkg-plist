@@ -1,0 +1,39 @@
+bin/Timbl
+bin/TimblClient
+include/timbl/BestArray.h
+include/timbl/CommandLine.h
+include/timbl/Common.h
+include/timbl/GetOptClass.h
+include/timbl/IBtree.h
+include/timbl/Instance.h
+include/timbl/LogBuffer.h
+include/timbl/LogStream.h
+include/timbl/MBLClass.h
+include/timbl/MsgClass.h
+include/timbl/Options.h
+include/timbl/ServerProcs.h
+include/timbl/SocketBasics.h
+include/timbl/Statistics.h
+include/timbl/StringOps.h
+include/timbl/TimblAPI.h
+include/timbl/TimblExperiment.h
+include/timbl/Tree.h
+include/timbl/Trie.h
+include/timbl/Types.h
+include/timbl/neighborSet.h
+lib/libTimbl.a
+libdata/pkgconfig/timbl.pc
+%%DOCSDIR%%/Timbl_6.1_API.pdf
+%%DOCSDIR%%/Timbl_6.1_Manual.pdf
+%%DOCSDIR%%/examples/cross_val.test
+%%DOCSDIR%%/examples/dimin.script
+%%DOCSDIR%%/examples/dimin.test
+%%DOCSDIR%%/examples/dimin.train
+%%DOCSDIR%%/examples/small_1.train
+%%DOCSDIR%%/examples/small_2.train
+%%DOCSDIR%%/examples/small_3.train
+%%DOCSDIR%%/examples/small_4.train
+%%DOCSDIR%%/examples/small_5.train
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
+@dirrm include/timbl

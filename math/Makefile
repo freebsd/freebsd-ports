@@ -372,6 +372,7 @@
     SUBDIR += tablix
     SUBDIR += taucs
     SUBDIR += tetgen
+    SUBDIR += timbl
     SUBDIR += tomsfastmath
     SUBDIR += topaz
     SUBDIR += triangle
