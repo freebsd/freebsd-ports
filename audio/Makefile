@@ -187,6 +187,7 @@
     SUBDIR += funktrackergold
     SUBDIR += gai-album
     SUBDIR += gai-visual-audio
+    SUBDIR += gbemol
     SUBDIR += gbsplay
     SUBDIR += gdam
     SUBDIR += gdrdao

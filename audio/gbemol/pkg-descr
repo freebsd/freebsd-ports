@@ -1,0 +1,4 @@
+gbemol is a graphical frontend for the Music Player Daemon (MPD) it is
+written in C and uses the GTK+ toolkit for it's interface.
+
+WWW: http://gbemol.sourceforge.net/
