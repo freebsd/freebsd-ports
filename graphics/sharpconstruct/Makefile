@@ -24,14 +24,12 @@ USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	uses SSE
+
 MAN1=		sharpconstruct.1
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-	@${REINPLACE_CMD} -e 's|-msse||' ${WRKSRC}/src/Makefile*
-.endif
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/include/Align.hh
 	@${REINPLACE_CMD} -e 's|"/sharpconstruct|"|' ${WRKSRC}/src/MainWindow.cc
 	@${REINPLACE_CMD} -e 's|/usr/share/sharpconstruct|${DATADIR}|' ${WRKSRC}/src/MainWindow.cc
@@ -40,4 +38,4 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e '/^DEFS / s|$$| -DDATADIR=\\"${DATADIR}\\"|'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
