@@ -301,6 +301,7 @@ airrox		ports/games/airrox
 aish		ports/converters/aish
 akamaru		ports/deskutils/akamaru
 akode		ports/audio/akode
+akode-plugins-ffmpeg	ports/audio/akode-plugins-ffmpeg
 akode-plugins-jack	ports/audio/akode-plugins-jack
 akode-plugins-mpc	ports/audio/akode-plugins-mpc
 akode-plugins-mpeg	ports/audio/akode-plugins-mpeg
