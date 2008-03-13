@@ -101,7 +101,7 @@ DRV_CONFLICTS+=	${i}
 .endfor
 
 .if defined(DRV_CONFLICTS)
-IGNORE=		can't be installed because of conflicting drivers (${DRV_CONFLICTS})
+IGNORE=		can't be installed because of conflicting drivers (${DRV_CONFLICTS}). Re-run make config.
 .endif
 
 .for default in on off
