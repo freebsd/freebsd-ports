@@ -7,13 +7,14 @@
 
 PORTNAME=	libXt
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Toolkit library
 
 XORG_CAT=	lib
-USE_XORG=	x11 sm xproto kbproto
+USE_XORG=	x11 sm xproto:both kbproto
 
 MAN1=		makestrs.1
 MAN3=		XtNew.3 \

@@ -7,12 +7,13 @@
 
 PORTNAME=	libXrender
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Render extension library
 
 XORG_CAT=	lib
-USE_XORG=	x11 renderproto:both
+USE_XORG=	x11 renderproto:both xproto:both
 
 .include <bsd.port.mk>
