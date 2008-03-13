@@ -2,7 +2,7 @@
 #
 # Configures to build the Qt library
 #
-# Copyright (C) 1999-2007 Trolltech ASA. All rights reserved.
+# Copyright (C) 1999-2008 Trolltech ASA. All rights reserved.
 #
 # This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 # WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
@@ -40,7 +40,7 @@ QT_CONFIG=
 SUPPORTED=
 QMAKE_VARS_FILE=.qmake.vars
 
-exec 5> "$QMAKE_VARS_FILE"
+:> "$QMAKE_VARS_FILE"
 
 #-------------------------------------------------------------------------------
 # utility functions
@@ -66,7 +66,7 @@ QMakeVar()
 	    ;;
     esac
 
-    echo >&5 "$2" "$eq" "$3"
+    echo "$2" "$eq" "$3" >> "$QMAKE_VARS_FILE"
 }
 
 # relies on $QMAKESPEC being set correctly. parses include statements in
@@ -162,7 +162,7 @@ if [ -f "$relpath"/LICENSE.Qtopia ]; then
     Licensee="Qtopia"
     Edition="Qtopia"
     QT_EDITION="QT_EDITION_DESKTOP"
-elif [ -f "$relpath"/LICENSE.QPL -o -f "$relpath"/LICENSE.GPL ]; then
+elif [ -f "$relpath"/LICENSE.QPL -o -f "$relpath"/LICENSE.GPL2 -o -f "$relpath"/LICENSE.GPL3 ]; then
     # Open Source edition - may only be used under the terms of the QPL or GPL.
     [ "$PLATFORM_MAC" = "maybe" ] && PLATFORM_MAC=yes
     [ "$PLATFORM_QWS" = "maybe" ] && PLATFORM_QWS=yes
@@ -191,7 +191,7 @@ elif [ -f "$relpath"/LICENSE.SNAPSHOT.COMMERCIAL ]; then
     Licensee="Snapshot"
     Edition="Snapshot"
     QT_EDITION="QT_EDITION_DESKTOP"
-elif [ -f "$relpath"/LICENSE.SNAPSHOT.OPENSOURCE ]; then
+elif [ -f "$relpath"/LICENSE.SNAPSHOT.OPENSOURCE.GPL2 -o -f "$relpath"/LICENSE.SNAPSHOT.OPENSOURCE.GPL3 ]; then
     # snapshot - opensource
     [ "$PLATFORM_MAC" = "maybe" ] && PLATFORM_MAC=yes
     [ "$PLATFORM_QWS" = "maybe" ] && PLATFORM_QWS=yes
@@ -420,7 +420,7 @@ else
         ;;
     esac
     if [ '!' -f "$outpath/LICENSE" ]; then
-        echo "The LICENSE, LICENSE.QPL, or LICENSE.GPL file shipped with"
+        echo "The LICENSE, LICENSE.QPL, or LICENSE.GPL2 file shipped with"
         echo "this software has disappeared."
         echo
         echo "Sorry, you are not licensed to use this software."
@@ -609,6 +609,7 @@ QT_INSTALL_TRANSLATIONS=
 QT_INSTALL_SETTINGS=
 QT_INSTALL_EXAMPLES=
 QT_INSTALL_DEMOS=
+QT_HOST_PREFIX=
 
 #flags for SQL drivers
 QT_CFLAGS_PSQL=
@@ -763,6 +764,16 @@ while [ "$#" -gt 0 ]; do
             shift;
             VAL=$1
         fi
+	;;
+    -hostprefix)
+        VAR=`echo $1 | sed "s,^-\(.*\),\1,"`
+        # this option may or may not be followed by an argument
+        if [ -z "$2" ] || echo "$2" | grep '^-' >/dev/null 2>&1; then
+            VAL=$outpath
+        else
+            shift;
+            VAL=$1
+        fi
         ;;
     -iwmmxt)
 	CFG_IWMMXT="yes"
@@ -874,6 +885,9 @@ while [ "$#" -gt 0 ]; do
     prefix)
         QT_INSTALL_PREFIX="$VAL"
         ;;
+    hostprefix)
+	QT_HOST_PREFIX="$VAL"
+	;;
     docdir)
         QT_INSTALL_DOCS="$VAL"
         ;;
@@ -1911,14 +1925,25 @@ if [ -z "$PLATFORM" ]; then
         "
         ;;
      HP-UX:*)
-        #PLATFORM=hpux-g++
-        PLATFORM=hpux-acc
-        #PLATFORM=hpux-acc-64
-        #PLATFORM=hpux-cc
-        #PLATFORM=hpux-acc-o64
-        PLATFORM_NOTES="
-            - Also available for HP-UX: hpux-g++ hpux-acc-64 hpux-acc-o64
-        "
+        case "$UNAME_MACHINE" in
+            ia64)
+                #PLATFORM=hpuxi-acc-32
+                PLATFORM=hpuxi-acc-64
+                PLATFORM_NOTES="
+                    - Also available for HP-UXi: hpuxi-acc-32
+                "
+            ;;
+            *)
+                #PLATFORM=hpux-g++
+                PLATFORM=hpux-acc
+                #PLATFORM=hpux-acc-64
+                #PLATFORM=hpux-cc
+                #PLATFORM=hpux-acc-o64
+                PLATFORM_NOTES="
+                    - Also available for HP-UX: hpux-g++ hpux-acc-64 hpux-acc-o64
+                "
+            ;;
+        esac
         ;;
      OSF1:*)
         #PLATFORM=tru64-g++
@@ -2000,6 +2025,13 @@ if [ -z "$PLATFORM" ]; then
             exit 2
         fi
     esac
+fi
+
+if [ "$PLATFORM_QWS" = "yes" ]; then
+    CFG_SM=no
+    PLATFORMS=`find "$relpath/mkspecs/qws" | sed "s,$relpath/mkspecs/qws/,,"`
+else
+    PLATFORMS=`find "$relpath/mkspecs/" -type f | grep -v qws | sed "s,$relpath/mkspecs/qws/,,"`
 fi
 
 [ -z "$XPLATFORM" ] && XPLATFORM="$PLATFORM"
@@ -2248,7 +2280,7 @@ else
 fi
 
 TEST_COMPILER="$CC"
-[ -z "$TEST_COMPILE" ] && TEST_COMPILER=`getQMakeConf "$XQMAKESPEC" | grep "^QMAKE_CXX[^_A-Z0-9]" | sed "s,.* *= *\(.*\)$,\1,"`
+[ -z "$TEST_COMPILER" ] && TEST_COMPILER=`getQMakeConf "$XQMAKESPEC" | grep "^QMAKE_CXX[^_A-Z0-9]" | sed "s,.* *= *\(.*\)$,\1,"`
 
 # auto-detect precompiled header support
 if [ "$CFG_PRECOMPILE" = "auto" ]; then
@@ -2586,6 +2618,16 @@ Installation options:
 
     -prefix <dir> ...... This will install everything relative to <dir>
                          (default $QT_INSTALL_PREFIX)
+EOF
+if [ "$PLATFORM_QWS" = "yes" ]; then
+cat <<EOF
+
+    -hostprefix [dir] .. Tools and libraries needed when developing
+                         applications are installed in [dir]. If [dir] is
+                         not given, the current build directory will be used.
+EOF
+fi
+cat <<EOF
 
   * -prefix-install .... Force a sandboxed "local" installation of
                          Qt. This will install into
@@ -2856,13 +2898,6 @@ if [ "$PLATFORM_X11" = "yes" ]; then
         IMY="*"
         IMN=" "
     fi
-    if [ "$CFG_GLIB" = "no" ]; then
-        GBY=" "
-        GBN="+"
-    else
-        GBY="+"
-        GBN=" "
-    fi
     cat << EOF
 
 Qt/X11 only:
@@ -2913,9 +2948,6 @@ Qt/X11 only:
 
  $XKN  -no-xkb ............ Do not compile XKB (X KeyBoard extension) support.
  $XKY  -xkb ............... Compile XKB support.
-
- $GBN  -no-glib............ Do not compile Glib support.
- $GBY  -glib............... Compile Glib support.
 
  $SBN  -no-separate-debug-info Do not store debug information in a separate file
  $SBY  -separate-debug-info    Strip debug information into a separate .debug file
@@ -3023,6 +3055,25 @@ Qtopia Core only:
 EOF
 fi
 
+
+if [ "$PLATFORM_QWS" = "yes" -o "$PLATFORM_X11" = "yes" ]; then
+    if [ "$CFG_GLIB" = "no" ]; then
+        GBY=" "
+        GBN="+"
+    elif [ "$CFG_GLIB" = "yes" -o "$PLATFORM_X11" = "yes" ]; then
+        GBY="+"
+        GBN=" "
+    else # auto and qtopia core
+        GBY=" "
+        GBN="+"
+    fi
+    cat << EOF
+ $GBN  -no-glib............ Do not compile Glib support.
+ $GBY  -glib............... Compile Glib support.
+
+EOF
+fi
+
    [ "x$ERROR" = "xyes" ] && exit 1
    exit 0
 fi # Help
@@ -3068,17 +3119,18 @@ elif [ "$Edition" = "OpenSource" ]; then
     while true; do
         if [ "$PLATFORM_QWS" = "yes" ]; then
             echo "You are licensed to use this software under the terms of"
-            echo "the GNU General Public License (GPL)."
+            echo "the GNU General Public License (GPL) versions 2 or 3."
             echo
             affix="the"
         elif [ "$PLATFORM_MAC" = "yes" ]; then
             echo "You are licensed to use this software under the terms of"
-            echo "the GNU General Public License (GPL)."
+            echo "the GNU General Public License (GPL) versions 2 or 3."
             echo
             affix="the"
         elif [ "$PLATFORM_X11" = "yes" ]; then
             echo "You are licensed to use this software under the terms of either"
-            echo "the Q Public License (QPL) or the GNU General Public License (GPL)."
+            echo "the Q Public License (QPL) or the GNU General Public License (GPL)"
+	    echo "versions 2 or 3"
             echo
             [ "$OPT_CONFIRM_LICENSE" = "no" ] && echo "Type 'Q' to view the Q Public License."
             affix="either"
@@ -3087,7 +3139,8 @@ elif [ "$Edition" = "OpenSource" ]; then
 	    echo "You have already accepted the terms of the $LicenseType license."
             acceptance=yes
         else
-            echo "Type 'G' to view the GNU General Public License."
+	    echo "Type '2' to view the GNU General Public License version 2."
+	    echo "Type '3' to view the GNU General Public License version 3."
             echo "Type 'yes' to accept this license offer."
             echo "Type 'no' to decline this license offer."
             echo
@@ -3105,8 +3158,10 @@ elif [ "$Edition" = "OpenSource" ]; then
             echo "You are not licensed to use this software."
             echo
             exit 1
-        elif [ "$acceptance" = "G" -o "$acceptance" = "g" ]; then
-            more "$relpath/LICENSE.GPL"
+        elif [ "$acceptance" = "2" ]; then
+            more "$relpath/LICENSE.GPL2"
+        elif [ "$acceptance" = "3" ]; then
+            more "$relpath/LICENSE.GPL3"
         elif [ "$acceptance" = "Q" -o "$acceptance" = "q" ]; then
             if [ "$PLATFORM_QWS" != "yes" ]; then
                 more "$relpath/LICENSE.QPL"
@@ -3115,12 +3170,20 @@ elif [ "$Edition" = "OpenSource" ]; then
     done
 elif [ "$Edition" = "Preview" ]; then
     while true; do
+        if [ "$QT_EDITION" = "QT_EDITION_OPENSOURCE" ]; then
+            TheLicense=`head -n 1 "$relpath/LICENSE.PREVIEW.OPENSOURCE"`
+        else
+            TheLicense=`head -n 1 "$relpath/LICENSE.PREVIEW.COMMERCIAL"`
+        fi
+
+        TheLicense=`echo $TheLicense | sed -e "s,  *, ,g" -e "s,^  *,," -e "s,  *$,,"`
+
         if [ "$OPT_CONFIRM_LICENSE" = "yes" ]; then
             echo "You have already accepted the terms of the $LicenseType license."
             acceptance=yes
         else
             echo "You are licensed to use this software under the terms of"
-            echo "the Qt PREVIEW VERSION LICENSE AGREEMENT"
+            echo "the $TheLicense"
             echo
             echo "Type '?' to read the Preview License."
             echo "Type 'yes' to accept this license offer."
@@ -3150,14 +3213,24 @@ elif [ "$Edition" = "Preview" ]; then
     done
 elif [ "$Edition" = "Snapshot" ]; then
     while true; do
+        if [ "$QT_EDITION" = "QT_EDITION_OPENSOURCE" ]; then
+            TheLicense=`head -n 1 "$relpath/LICENSE.SNAPSHOT.OPENSOURCE.GPL2"`
+        else
+            TheLicense=`head -n 1 "$relpath/LICENSE.SNAPSHOT.COMMERCIAL"`
+        fi
+
+        TheLicense=`echo $TheLicense | sed -e "s,  *, ,g" -e "s,^  *,," -e "s,  *$,,"`
+
         if [ "$OPT_CONFIRM_LICENSE" = "yes" ]; then
             echo "You have already accepted the terms of the $LicenseType license."
             acceptance=yes
         else
             echo "You are licensed to use this software under the terms of"
-            echo "the Qt SNAPSHOT VERSION LICENSE AGREEMENT"
+            echo "the $TheLicense"
             echo
-            echo "Type '?' to read the Snapshot License."
+            test -f "$relpath/LICENSE.SNAPSHOT.COMMERCIAL" && echo "Type '?' to read the Snapshot License."
+	    test -f "$relpath/LICENSE.SNAPSHOT.OPENSOURCE.GPL2" && echo "Type '2' to view the GNU General Public License version 2."
+	    test -f "$relpath/LICENSE.SNAPSHOT.OPENSOURCE.GPL2" && echo "Type '3' to view the GNU General Public License version 3."
             echo "Type 'yes' to accept this license offer."
             echo "Type 'no' to decline this license offer."
             echo
@@ -3176,11 +3249,11 @@ elif [ "$Edition" = "Snapshot" ]; then
             echo
             exit 0
         elif [ "$acceptance" = "?" ]; then
-            if [ "$QT_EDITION" = "QT_EDITION_OPENSOURCE" ]; then
-                more "$relpath/LICENSE.SNAPSHOT.OPENSOURCE"
-            else
-                more "$relpath/LICENSE.SNAPSHOT.COMMERCIAL"
-            fi
+            more "$relpath/LICENSE.SNAPSHOT.COMMERCIAL"
+        elif [ "$acceptance" = "2" ]; then
+            more "$relpath/LICENSE.SNAPSHOT.OPENSOURCE.GPL2"
+        elif [ "$acceptance" = "3" ]; then
+            more "$relpath/LICENSE.SNAPSHOT.OPENSOURCE.GPL3"
         fi
     done
 elif [ "$Edition" != "Trolltech" ]; then
@@ -3310,6 +3383,41 @@ cat > "$outpath/src/corelib/global/qconfig.cpp.new" <<EOF
 /* License Info */
 static const char qt_configure_licensee_str          [256 + 12] = "$LICENSE_USER_STR";
 static const char qt_configure_licensed_products_str [256 + 12] = "$LICENSE_PRODUCTS_STR";
+EOF
+
+if [ ! -z "$QT_HOST_PREFIX" ]; then
+    HOSTPREFIX_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_prfxpath=$QT_HOST_PREFIX" "\\0"`
+    HOSTDOCUMENTATION_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_docspath=$QT_HOST_PREFIX/doc" "\\0"`
+    HOSTHEADERS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_hdrspath=$QT_HOST_PREFIX/include" "\\0"`
+    HOSTLIBRARIES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_libspath=$QT_HOST_PREFIX/lib" "\\0"`
+    HOSTBINARIES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_binspath=$QT_HOST_PREFIX/bin" "\\0"`
+    HOSTPLUGINS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_plugpath=$QT_HOST_PREFIX/plugins" "\\0"`
+    HOSTDATA_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_datapath=$QT_HOST_PREFIX" "\\0"`
+    HOSTTRANSLATIONS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_trnspath=$QT_HOST_PREFIX/translations" "\\0"`
+    HOSTSETTINGS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_stngpath=$QT_INSTALL_SETTINGS" "\\0"`
+    HOSTEXAMPLES_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_xmplpath=$QT_INSTALL_EXAMPLES" "\\0"`
+    HOSTDEMOS_PATH_STR=`"$relpath/config.tests/unix/padstring" 268 "qt_demopath=$QT_INSTALL_DEMOS" "\\0"`
+
+    cat >> "$outpath/src/corelib/global/qconfig.cpp.new" <<EOF
+
+#if defined(QT_BOOTSTRAPPED) || defined(QT_BUILD_QMAKE)
+/* Installation Info */
+static const char qt_configure_prefix_path_str       [256 + 12] = "$HOSTPREFIX_PATH_STR";
+static const char qt_configure_documentation_path_str[256 + 12] = "$HOSTDOCUMENTATION_PATH_STR";
+static const char qt_configure_headers_path_str      [256 + 12] = "$HOSTHEADERS_PATH_STR";
+static const char qt_configure_libraries_path_str    [256 + 12] = "$HOSTLIBRARIES_PATH_STR";
+static const char qt_configure_binaries_path_str     [256 + 12] = "$HOSTBINARIES_PATH_STR";
+static const char qt_configure_plugins_path_str      [256 + 12] = "$HOSTPLUGINS_PATH_STR";
+static const char qt_configure_data_path_str         [256 + 12] = "$HOSTDATA_PATH_STR";
+static const char qt_configure_translations_path_str [256 + 12] = "$HOSTTRANSLATIONS_PATH_STR";
+static const char qt_configure_settings_path_str     [256 + 12] = "$HOSTSETTINGS_PATH_STR";
+static const char qt_configure_examples_path_str     [256 + 12] = "$HOSTEXAMPLES_PATH_STR";
+static const char qt_configure_demos_path_str        [256 + 12] = "$HOSTDEMOS_PATH_STR";
+#else // QT_BOOTSTRAPPED
+EOF
+fi
+
+cat >> "$outpath/src/corelib/global/qconfig.cpp.new" <<EOF
 /* Installation Info */
 static const char qt_configure_prefix_path_str       [256 + 12] = "$PREFIX_PATH_STR";
 static const char qt_configure_documentation_path_str[256 + 12] = "$DOCUMENTATION_PATH_STR";
@@ -3322,6 +3430,16 @@ static const char qt_configure_translations_path_str [256 + 12] = "$TRANSLATIONS
 static const char qt_configure_settings_path_str     [256 + 12] = "$SETTINGS_PATH_STR";
 static const char qt_configure_examples_path_str     [256 + 12] = "$EXAMPLES_PATH_STR";
 static const char qt_configure_demos_path_str        [256 + 12] = "$DEMOS_PATH_STR";
+EOF
+
+if [ ! -z "$QT_HOST_PREFIX" ]; then
+    cat >> "$outpath/src/corelib/global/qconfig.cpp.new" <<EOF
+#endif // QT_BOOTSTRAPPED
+
+EOF
+fi
+
+cat >> "$outpath/src/corelib/global/qconfig.cpp.new" <<EOF
 /* strlen( "qt_lcnsxxxx" ) == 12 */
 #define QT_CONFIGURE_LICENSEE qt_configure_licensee_str + 12;
 #define QT_CONFIGURE_LICENSED_PRODUCTS qt_configure_licensed_products_str + 12;
@@ -3477,8 +3595,6 @@ if false; then ###[ '!' -f "$outpath/bin/qmake" ];
         if [ $QT_EDITION = "QT_EDITION_OPENSOURCE" ]; then
             EXTRA_CFLAGS="$EXTRA_CFLAGS -DQMAKE_OPENSOURCE_EDITION"
             EXTRA_CXXFLAGS="$EXTRA_CXXFLAGS -DQMAKE_OPENSOURCE_EDITION"
-        else
-            echo "include Makefile.commercial" >>"$mkfile"
         fi
         if [ "$CFG_RELEASE_QMAKE" = "yes" ]; then
             setBootstrapVariable QMAKE_CFLAGS_RELEASE
@@ -3714,7 +3830,7 @@ for _SQLDR in $CFG_SQL_AVAILABLE; do
                     QT_CFLAGS_MYSQL=`$CFG_MYSQL_CONFIG --include 2>/dev/null`
                     QT_LFLAGS_MYSQL_R=`$CFG_MYSQL_CONFIG --libs_r 2>/dev/null`
                     QT_LFLAGS_MYSQL=`$CFG_MYSQL_CONFIG --libs 2>/dev/null`
-		    QT_MYSQL_VERSION=`$CFG_MYSQL_CONFIG --version 2>/dev/null`
+		    QT_MYSQL_VERSION=`$CFG_MYSQL_VERSION --version 2>/dev/null`
                     QT_MYSQL_VERSION_MAJOR=`echo $QT_MYSQL_VERSION | cut -d . -f 1`
                 fi
                 if [ -n "$QT_MYSQL_VERSION" ] && [ "$QT_MYSQL_VERSION_MAJOR" -lt 4 ]; then
@@ -4214,14 +4330,21 @@ if [ "$PLATFORM_X11" = "yes" ]; then
             fi
         fi
     fi
+fi # X11
 
+
+if [ "$PLATFORM_X11" = "yes" -o "$PLATFORM_QWS" = "yes" ]; then
     # auto-detect Glib support
+    if [ "$PLATFORM_QWS" = "yes" -a "$CFG_GLIB" = "auto" ]; then
+	CFG_GLIB="no"
+    fi
+
     if [ "$CFG_GLIB" != "no" ]; then
         if [ "$QT_CROSS_COMPILE" = "no" ] && "$WHICH" pkg-config >/dev/null 2>&1; then
             QT_CFLAGS_GLIB=`pkg-config --cflags glib-2.0 gthread-2.0`
             QT_LIBS_GLIB=`pkg-config --libs glib-2.0 gthread-2.0`
         fi
-        if "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/x11/glib "Glib" $L_FLAGS $I_FLAGS $l_FLAGS $QT_CFLAGS_GLIB $QT_LIBS_GLIB $X11TESTS_FLAGS; then
+        if "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/unix/glib "Glib" $L_FLAGS $I_FLAGS $l_FLAGS $QT_CFLAGS_GLIB $QT_LIBS_GLIB $X11TESTS_FLAGS; then
             CFG_GLIB=yes
 	    QMakeVar set QT_CFLAGS_GLIB "$QT_CFLAGS_GLIB"
 	    QMakeVar set QT_LIBS_GLIB "$QT_LIBS_GLIB"
@@ -4237,7 +4360,7 @@ if [ "$PLATFORM_X11" = "yes" ]; then
             fi
         fi
     fi
-fi # X11
+fi # X11/QWS
 
 # QWS
 if [ "$PLATFORM_QWS" = "yes" ]; then
@@ -4806,7 +4929,8 @@ fi
 
 if [ '!' -z "$I_FLAGS" ]; then
     # add the user define include paths
-    QMakeVar add INCPATH `echo $I_FLAGS | sed s,-I,,g`
+    QMakeVar add QMAKE_CFLAGS "$I_FLAGS"
+    QMakeVar add QMAKE_CXXFLAGS "$I_FLAGS"
 fi
 
 # turn off exceptions for the compilers that support it
@@ -4850,15 +4974,15 @@ case "$COMPILER" in
 g++*)
     # GNU C++
     QMAKE_CONF_COMPILER=`getQMakeConf | grep "^QMAKE_CXX[^_A-Z0-9]" | sed "s,.* *= *\(.*\)$,\1,"`
-    COMPILER_VERSION=`${QMAKE_CONF_COMPILER} --version 2>/dev/null`
+    COMPILER_VERSION=`${QMAKE_CONF_COMPILER} --version 2>/dev/null | sed 's,^[^0-9]*,,g'`
     case "$COMPILER_VERSION" in
-    *2.95.*)
+    2.95.*)
         COMPILER_VERSION="2.95.*"
         ;;
-    *3.*)
+    3.*)
         COMPILER_VERSION="3.*"
         ;;
-    *4.*)
+    4.*)
         COMPILER_VERSION="4"
         ;;
     *)

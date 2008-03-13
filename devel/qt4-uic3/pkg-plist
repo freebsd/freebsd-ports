@@ -1,4 +1,2 @@
 bin/uic3
 %%DEBUG%%bin/uic3.debug
-share/nls/POSIX
-share/nls/en_US.US-ASCII

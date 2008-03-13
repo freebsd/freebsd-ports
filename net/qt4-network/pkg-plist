@@ -30,6 +30,7 @@ include/QtNetwork/QIPv6Address
 include/QtNetwork/QNetworkAddressEntry
 include/QtNetwork/QNetworkInterface
 include/QtNetwork/QNetworkProxy
+include/QtNetwork/QSsl
 include/QtNetwork/QSslCertificate
 include/QtNetwork/QSslCipher
 include/QtNetwork/QSslError
@@ -64,7 +65,7 @@ lib/libQtNetwork.prl
 lib/libQtNetwork.so
 lib/libQtNetwork.so.4
 lib/libQtNetwork.so.4.3
-lib/libQtNetwork.so.4.3.1
-%%DEBUG%%lib/libQtNetwork.so.4.3.1.debug
+lib/libQtNetwork.so.4.3.4
+%%DEBUG%%lib/libQtNetwork.so.4.3.4.debug
 libdata/pkgconfig/QtNetwork.pc
 @dirrm include/QtNetwork

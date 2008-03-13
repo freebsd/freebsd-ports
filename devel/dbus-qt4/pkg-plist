@@ -39,7 +39,7 @@ lib/libQtDBus.prl
 lib/libQtDBus.so
 lib/libQtDBus.so.4
 lib/libQtDBus.so.4.3
-lib/libQtDBus.so.4.3.1
-%%DEBUG%%lib/libQtDBus.so.4.3.1.debug
+lib/libQtDBus.so.4.3.4
+%%DEBUG%%lib/libQtDBus.so.4.3.4.debug
 libdata/pkgconfig/QtDBus.pc
 @dirrm include/QtDBus

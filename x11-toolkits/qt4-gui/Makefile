@@ -55,7 +55,7 @@ OPTIONS=	CUPS "Enable printing support (requires CUPS)" off \
 
 .if !defined(WITHOUT_CUPS) || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	cupsd:${PORTSDIR}/print/cups-base
-CUPS=		-cups -L${LOCALBASE}/lib -I. -I${LOCALBASE}/include
+CUPS=		-cups -L${LOCALBASE}/lib -I. -I../../include/Qt -I${LOCALBASE}/include
 .elif defined(WITHOUT_CUPS)
 CUPS=
 .endif
@@ -85,6 +85,7 @@ post-configure:
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
+			-E -e 's|(.*Cflags:.*)-I${LOCALBASE}/include |\1|g' \
 		${WRKSRC}/../../lib/pkgconfig/*Qt*
 
 .include <bsd.port.post.mk>

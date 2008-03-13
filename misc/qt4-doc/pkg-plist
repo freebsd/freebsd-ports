@@ -426,10 +426,12 @@ share/doc/qt4/html/images/bearings.png
 share/doc/qt4/html/images/blockingfortuneclient-example.png
 share/doc/qt4/html/images/books-demo.png
 share/doc/qt4/html/images/borderlayout-example.png
+share/doc/qt4/html/images/branchindicatorimage.png
 share/doc/qt4/html/images/broadcastreceiver-example.png
 share/doc/qt4/html/images/broadcastsender-example.png
 share/doc/qt4/html/images/brush-outline.png
 share/doc/qt4/html/images/brush-styles.png
+share/doc/qt4/html/images/button.png
 share/doc/qt4/html/images/buttonbox-gnomelayout-horizontal.png
 share/doc/qt4/html/images/buttonbox-gnomelayout-vertical.png
 share/doc/qt4/html/images/buttonbox-kdelayout-horizontal.png
@@ -477,6 +479,8 @@ share/doc/qt4/html/images/cde-treeview.png
 share/doc/qt4/html/images/charactermap-example.png
 share/doc/qt4/html/images/chart-example.png
 share/doc/qt4/html/images/chat-example.png
+share/doc/qt4/html/images/checkbox.png
+share/doc/qt4/html/images/checkboxexample.png
 share/doc/qt4/html/images/chip-demo.png
 share/doc/qt4/html/images/classwizard-flow.png
 share/doc/qt4/html/images/classwizard.png
@@ -511,6 +515,8 @@ share/doc/qt4/html/images/cleanlooks-treeview.png
 share/doc/qt4/html/images/codecs-example.png
 share/doc/qt4/html/images/collidingmice-example.png
 share/doc/qt4/html/images/coloreditorfactoryimage.png
+share/doc/qt4/html/images/combobox.png
+share/doc/qt4/html/images/comboboximage.png
 share/doc/qt4/html/images/completer-example-country.png
 share/doc/qt4/html/images/completer-example-dirmodel.png
 share/doc/qt4/html/images/completer-example-qdirmodel.png
@@ -518,6 +524,7 @@ share/doc/qt4/html/images/completer-example-word.png
 share/doc/qt4/html/images/completer-example.png
 share/doc/qt4/html/images/composition-demo.png
 share/doc/qt4/html/images/concentriccircles-example.png
+share/doc/qt4/html/images/conceptualpushbuttontree.png
 share/doc/qt4/html/images/configdialog-example.png
 share/doc/qt4/html/images/conicalGradient.png
 share/doc/qt4/html/images/containerextension-example.png
@@ -630,6 +637,8 @@ share/doc/qt4/html/images/dialog-examples.png
 share/doc/qt4/html/images/digitalclock-example.png
 share/doc/qt4/html/images/directapproach-calculatorform.png
 share/doc/qt4/html/images/dirview-example.png
+share/doc/qt4/html/images/dockwidget.png
+share/doc/qt4/html/images/dockwidgetimage.png
 share/doc/qt4/html/images/dockwidgets-example.png
 share/doc/qt4/html/images/dombookmarks-example.png
 share/doc/qt4/html/images/draganddrop-examples.png
@@ -675,6 +684,10 @@ share/doc/qt4/html/images/graphicsview-view.png
 share/doc/qt4/html/images/graphicsview-zorder.png
 share/doc/qt4/html/images/gridlayout.png
 share/doc/qt4/html/images/groupbox-example.png
+share/doc/qt4/html/images/groupbox.png
+share/doc/qt4/html/images/groupboximage.png
+share/doc/qt4/html/images/header.png
+share/doc/qt4/html/images/headerimage.png
 share/doc/qt4/html/images/hellogl-example.png
 share/doc/qt4/html/images/http-example.png
 share/doc/qt4/html/images/httpstack.png
@@ -708,6 +721,11 @@ share/doc/qt4/html/images/insertrowinmodelview.png
 share/doc/qt4/html/images/interview-demo.png
 share/doc/qt4/html/images/interview-shareddirmodel.png
 share/doc/qt4/html/images/itemview-examples.png
+share/doc/qt4/html/images/itemviews-editabletreemodel-indexes.png
+share/doc/qt4/html/images/itemviews-editabletreemodel-items.png
+share/doc/qt4/html/images/itemviews-editabletreemodel-model.png
+share/doc/qt4/html/images/itemviews-editabletreemodel-values.png
+share/doc/qt4/html/images/itemviews-editabletreemodel.png
 share/doc/qt4/html/images/itemviewspuzzle-example.png
 share/doc/qt4/html/images/javaiterators1.png
 share/doc/qt4/html/images/javaiterators2.png
@@ -798,6 +816,10 @@ share/doc/qt4/html/images/mandelbrot_zoom2.png
 share/doc/qt4/html/images/mandelbrot_zoom3.png
 share/doc/qt4/html/images/masterdetail-example.png
 share/doc/qt4/html/images/mdi-example.png
+share/doc/qt4/html/images/menu.png
+share/doc/qt4/html/images/menubar.png
+share/doc/qt4/html/images/menubarimage.png
+share/doc/qt4/html/images/menuimage.png
 share/doc/qt4/html/images/menus-example.png
 share/doc/qt4/html/images/modelindex-no-parent.png
 share/doc/qt4/html/images/modelview-begin-append-columns.png
@@ -914,8 +936,11 @@ share/doc/qt4/html/images/portedcanvas-example.png
 share/doc/qt4/html/images/printer-rects.png
 share/doc/qt4/html/images/progressBar-stylesheet.png
 share/doc/qt4/html/images/progressBar2-stylesheet.png
+share/doc/qt4/html/images/progressbar.png
+share/doc/qt4/html/images/progressbarimage.png
 share/doc/qt4/html/images/propagation-custom.png
 share/doc/qt4/html/images/propagation-standard.png
+share/doc/qt4/html/images/pushbutton.png
 share/doc/qt4/html/images/q3painter_rationale.png
 share/doc/qt4/html/images/qactiongroup-align.png
 share/doc/qt4/html/images/qcalendarwidget-grid.png
@@ -929,6 +954,7 @@ share/doc/qt4/html/images/qcolor-hue.png
 share/doc/qt4/html/images/qcolor-rgb.png
 share/doc/qt4/html/images/qcolor-saturation.png
 share/doc/qt4/html/images/qcolor-value.png
+share/doc/qt4/html/images/qcolumnview.png
 share/doc/qt4/html/images/qconicalgradient.png
 share/doc/qt4/html/images/qdatawidgetmapper-simple.png
 share/doc/qt4/html/images/qdesktopwidget.png
@@ -1077,7 +1103,9 @@ share/doc/qt4/html/images/qtopiacore-clientservercommunication.png
 share/doc/qt4/html/images/qtopiacore-drawingonscreen.png
 share/doc/qt4/html/images/qtopiacore-examples.png
 share/doc/qt4/html/images/qtopiacore-fontfeatures.png
-share/doc/qt4/html/images/qtopiacore-opengl.png
+share/doc/qt4/html/images/qtopiacore-opengl1.png
+share/doc/qt4/html/images/qtopiacore-opengl2.png
+share/doc/qt4/html/images/qtopiacore-opengl3.png
 share/doc/qt4/html/images/qtopiacore-pda.png
 share/doc/qt4/html/images/qtopiacore-phone.png
 share/doc/qt4/html/images/qtopiacore-pointerhandlinglayer.png
@@ -1087,7 +1115,6 @@ share/doc/qt4/html/images/qtopiacore-qvfbviewmenu.png
 share/doc/qt4/html/images/qtopiacore-reserveregion.png
 share/doc/qt4/html/images/qtopiacore-runningapplication.png
 share/doc/qt4/html/images/qtopiacore-setwindowattribute.png
-share/doc/qt4/html/images/qtopiacore-vanilla.png
 share/doc/qt4/html/images/qtopiacore-virtualframebuffer.png
 share/doc/qt4/html/images/qtransform-combinedtransformation.png
 share/doc/qt4/html/images/qtransform-combinedtransformation2.png
@@ -1132,12 +1159,16 @@ share/doc/qt4/html/images/richtext-examples.png
 share/doc/qt4/html/images/rintersect.png
 share/doc/qt4/html/images/rsslistingexample.png
 share/doc/qt4/html/images/rsubtract.png
+share/doc/qt4/html/images/rubberband.png
+share/doc/qt4/html/images/rubberbandimage.png
 share/doc/qt4/html/images/runion.png
 share/doc/qt4/html/images/rxor.png
 share/doc/qt4/html/images/samplebuffers-example.png
 share/doc/qt4/html/images/saxbookmarks-example.png
 share/doc/qt4/html/images/screenshot-example.png
 share/doc/qt4/html/images/scribble-example.png
+share/doc/qt4/html/images/scrollbar.png
+share/doc/qt4/html/images/scrollbarimage.png
 share/doc/qt4/html/images/sdi-example.png
 share/doc/qt4/html/images/securesocketclient.png
 share/doc/qt4/html/images/securesocketclient2.png
@@ -1160,9 +1191,15 @@ share/doc/qt4/html/images/simpletextviewer-findfiledialog.png
 share/doc/qt4/html/images/simpletextviewer-mainwindow.png
 share/doc/qt4/html/images/simpletreemodel-example.png
 share/doc/qt4/html/images/simplewidgetmapper-example.png
+share/doc/qt4/html/images/sizegrip.png
+share/doc/qt4/html/images/sizegripimage.png
+share/doc/qt4/html/images/slider.png
+share/doc/qt4/html/images/sliderimage.png
 share/doc/qt4/html/images/sliders-example.png
+share/doc/qt4/html/images/spinbox.png
 share/doc/qt4/html/images/spinboxdelegate-example.png
 share/doc/qt4/html/images/spinboxes-example.png
+share/doc/qt4/html/images/spinboximage.png
 share/doc/qt4/html/images/spreadsheet-demo.png
 share/doc/qt4/html/images/sql-examples.png
 share/doc/qt4/html/images/sqlbrowser-demo.png
@@ -1214,6 +1251,7 @@ share/doc/qt4/html/images/t8.png
 share/doc/qt4/html/images/t9.png
 share/doc/qt4/html/images/t9_1.png
 share/doc/qt4/html/images/t9_2.png
+share/doc/qt4/html/images/tab.png
 share/doc/qt4/html/images/tabWidget-stylesheet1.png
 share/doc/qt4/html/images/tabWidget-stylesheet2.png
 share/doc/qt4/html/images/tabWidget-stylesheet3.png
@@ -1221,6 +1259,7 @@ share/doc/qt4/html/images/tabdialog-example.png
 share/doc/qt4/html/images/tableWidget-stylesheet.png
 share/doc/qt4/html/images/tablemodel-example.png
 share/doc/qt4/html/images/tabletexample.png
+share/doc/qt4/html/images/tabwidget.png
 share/doc/qt4/html/images/taskmenuextension-dialog.png
 share/doc/qt4/html/images/taskmenuextension-example-faded.png
 share/doc/qt4/html/images/taskmenuextension-menu.png
@@ -1230,11 +1269,21 @@ share/doc/qt4/html/images/textedit-demo.png
 share/doc/qt4/html/images/textfinder-example-find.png
 share/doc/qt4/html/images/textfinder-example-find2.png
 share/doc/qt4/html/images/textfinder-example-userinterface.png
+share/doc/qt4/html/images/texttable-merge.png
+share/doc/qt4/html/images/texttable-split.png
 share/doc/qt4/html/images/textures-example.png
 share/doc/qt4/html/images/thread-examples.png
 share/doc/qt4/html/images/threadedfortuneserver-example.png
 share/doc/qt4/html/images/threadsandobjects.png
+share/doc/qt4/html/images/titlebar.png
+share/doc/qt4/html/images/titlebarimage.png
 share/doc/qt4/html/images/tool-examples.png
+share/doc/qt4/html/images/toolbar.png
+share/doc/qt4/html/images/toolbarimage.png
+share/doc/qt4/html/images/toolbox.png
+share/doc/qt4/html/images/toolboximage.png
+share/doc/qt4/html/images/toolbutton.png
+share/doc/qt4/html/images/toolbuttonimage.png
 share/doc/qt4/html/images/tooltips-example.png
 share/doc/qt4/html/images/torrent-example.png
 share/doc/qt4/html/images/transformations-example.png
@@ -1285,6 +1334,7 @@ share/doc/qt4/html/images/windows-timeedit.png
 share/doc/qt4/html/images/windows-toolbox.png
 share/doc/qt4/html/images/windows-toolbutton.png
 share/doc/qt4/html/images/windows-treeview.png
+share/doc/qt4/html/images/windowstabimage.png
 share/doc/qt4/html/images/windowsvista-calendarwidget.png
 share/doc/qt4/html/images/windowsvista-checkbox.png
 share/doc/qt4/html/images/windowsvista-combobox.png
@@ -1382,6 +1432,15 @@ share/doc/qt4/html/itemviews-customsortfiltermodel-window-h.html
 share/doc/qt4/html/itemviews-customsortfiltermodel.html
 share/doc/qt4/html/itemviews-dirview-main-cpp.html
 share/doc/qt4/html/itemviews-dirview.html
+share/doc/qt4/html/itemviews-editabletreemodel-editabletreemodel-qrc.html
+share/doc/qt4/html/itemviews-editabletreemodel-main-cpp.html
+share/doc/qt4/html/itemviews-editabletreemodel-mainwindow-cpp.html
+share/doc/qt4/html/itemviews-editabletreemodel-mainwindow-h.html
+share/doc/qt4/html/itemviews-editabletreemodel-treeitem-cpp.html
+share/doc/qt4/html/itemviews-editabletreemodel-treeitem-h.html
+share/doc/qt4/html/itemviews-editabletreemodel-treemodel-cpp.html
+share/doc/qt4/html/itemviews-editabletreemodel-treemodel-h.html
+share/doc/qt4/html/itemviews-editabletreemodel.html
 share/doc/qt4/html/itemviews-pixelator-imagemodel-cpp.html
 share/doc/qt4/html/itemviews-pixelator-imagemodel-h.html
 share/doc/qt4/html/itemviews-pixelator-images-qrc.html
@@ -1453,7 +1512,9 @@ share/doc/qt4/html/layouts-flowlayout-main-cpp.html
 share/doc/qt4/html/layouts-flowlayout-window-cpp.html
 share/doc/qt4/html/layouts-flowlayout-window-h.html
 share/doc/qt4/html/layouts-flowlayout.html
+share/doc/qt4/html/license-gpl-exceptions.html
 share/doc/qt4/html/licenses-fonts.html
+share/doc/qt4/html/licenses-gpl-exceptions-addendum.html
 share/doc/qt4/html/licenses.html
 share/doc/qt4/html/licensing.html
 share/doc/qt4/html/linguist-arrowpad-arrowpad-cpp.html
@@ -1515,6 +1576,7 @@ share/doc/qt4/html/model-view-convenience.html
 share/doc/qt4/html/model-view-creating-models.html
 share/doc/qt4/html/model-view-delegate.html
 share/doc/qt4/html/model-view-dnd.html
+share/doc/qt4/html/model-view-introduction.html
 share/doc/qt4/html/model-view-model-subclassing.html
 share/doc/qt4/html/model-view-model.html
 share/doc/qt4/html/model-view-programming.html
@@ -1734,6 +1796,7 @@ share/doc/qt4/html/platform-notes-x11.html
 share/doc/qt4/html/platform-notes.html
 share/doc/qt4/html/plugins-howto.html
 share/doc/qt4/html/plugins.html
+share/doc/qt4/html/porting-qsa.html
 share/doc/qt4/html/porting.html
 share/doc/qt4/html/porting4-designer.html
 share/doc/qt4/html/porting4-dnd.html
@@ -3733,6 +3796,7 @@ share/doc/qt4/html/sql-relationaltablemodel-relationaltablemodel-cpp.html
 share/doc/qt4/html/sql-relationaltablemodel.html
 share/doc/qt4/html/sql-tablemodel-tablemodel-cpp.html
 share/doc/qt4/html/sql-tablemodel.html
+share/doc/qt4/html/style-reference.html
 share/doc/qt4/html/stylesheet-customizing.html
 share/doc/qt4/html/stylesheet-designer.html
 share/doc/qt4/html/stylesheet-examples.html
@@ -4075,8 +4139,6 @@ share/doc/qt4/html/xml-streambookmarks.html
 share/doc/qt4/html/xml-tools.html
 share/doc/qt4/html/xml-xmlstreamlint-main-cpp.html
 share/doc/qt4/html/xml-xmlstreamlint.html
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm share/doc/qt4/html/images
 @dirrm share/doc/qt4/html
 @dirrm share/doc/qt4

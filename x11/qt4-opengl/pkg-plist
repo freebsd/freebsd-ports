@@ -7,6 +7,10 @@ include/QtOpenGL/QGLColormap
 include/QtOpenGL/QGLContext
 include/QtOpenGL/QGLFormat
 include/QtOpenGL/QGLFramebufferObject
+include/QtOpenGL/QMacGLCompatTypes
+include/QtOpenGL/QMacCompatGLint
+include/QtOpenGL/QMacCompatGLuint
+include/QtOpenGL/QMacCompatGLenum
 include/QtOpenGL/QGLPixelBuffer
 include/QtOpenGL/QGLWidget
 include/QtOpenGL/QtOpenGL
@@ -19,7 +23,7 @@ lib/libQtOpenGL.prl
 lib/libQtOpenGL.so
 lib/libQtOpenGL.so.4
 lib/libQtOpenGL.so.4.3
-lib/libQtOpenGL.so.4.3.1
-%%DEBUG%%lib/libQtOpenGL.so.4.3.1.debug
+lib/libQtOpenGL.so.4.3.4
+%%DEBUG%%lib/libQtOpenGL.so.4.3.4.debug
 libdata/pkgconfig/QtOpenGL.pc
 @dirrm include/QtOpenGL

@@ -8,7 +8,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -66,6 +66,7 @@ post-configure:
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
+			-E -e 's|(.*Cflags:.*)-I${LOCALBASE}/include |\1|g' \
 		${WRKSRC}/../../lib/pkgconfig/*Qt*
 
 .include <bsd.port.mk>

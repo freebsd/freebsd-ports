@@ -20,7 +20,7 @@ COMMENT=	Qt documentation browser
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build qt3support corelib \
-		gui network sql xml doc
+		gui network sql xml doc dbus
 QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
