@@ -8,7 +8,7 @@
 
 PORTNAME=	cscope
 PORTVERSION=	15.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,8 @@ COMMENT=	An interactive C program browser
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yacc
 
+PLIST_FILES=	bin/cscope \
+		bin/ocs
 MAN1=		cscope.1
 
 .include <bsd.port.mk>
