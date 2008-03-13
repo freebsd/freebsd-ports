@@ -7,17 +7,17 @@
 
 PORTNAME=	saoimage
 PORTVERSION=	1.35.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://tdc-www.harvard.edu/software/saoimage/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smithsonian Astrophysical Observatory image utility for X
 
-USE_XLIB=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	OFLAGS="${CFLAGS}"
 ALL_TARGET=	${OPSYS}
+USE_XORG=	x11
 
 MAN1=		saoimage.1
 
