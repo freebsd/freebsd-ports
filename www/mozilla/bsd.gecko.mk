@@ -133,6 +133,7 @@ BUILD_DEPENDS+=	${${GECKO}_PLIST}:${${GECKO}_DEPENDS}
 RUN_DEPENDS+=	${${GECKO}_PLIST}:${${GECKO}_DEPENDS}
 .else
 IGNORE=	Unable to find a supported gecko, please check USE_GECKO
+GECKO=	#
 .endif
 
 pre-everything:: _gecko-pre-everything
