@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	openuniverse
-PORTVERSION=	1.0.b3
-PORTREVISION=	3
+DISTVERSION=	1.0beta3
+PORTREVISION=	4
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openuniverse
-DISTNAME=	${PORTNAME}-1.0beta3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL Solar System simulator for X Window System
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		glut.4:${PORTSDIR}/graphics/libglut
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_GL=		glut
+
+USE_XORG=	sm ice xmu xi xext x11
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
@@ -29,7 +30,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${X11BASE}/include/GL -I${LOCALB
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm"  \
 		LIBS="-lcompat" PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-
-USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>
