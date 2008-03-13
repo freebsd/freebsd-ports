@@ -7,17 +7,15 @@
 #
 
 PORTNAME=	libntlm
-PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library that implement Microsoft's NTLM authentication
 
-USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget pkgconfig
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
