@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	tecnoballz
-PORTVERSION=	0.91
-PORTREVISION=	1
+PORTVERSION=	0.92
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A brick breaker (Arkanoid-like game)
 
 LIB_DEPENDS=	mikmod:${PORTSDIR}/audio/libmikmod
-
-BROKEN=		Size mismatch
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
