@@ -1,0 +1,147 @@
+From: Daniel Stone <daniel@fooishbar.org>
+Date: Sun, 23 Sep 2007 14:17:03 +0000 (+0300)
+Subject: Input: Generate XKB mapping changes for all core-sending devices (bug #12523)
+X-Git-Url: http://gitweb.freedesktop.org/?p=xorg/xserver.git;a=commitdiff;h=27ad5d74c20f01516a1bff73be283f8982fcf0fe
+
+Input: Generate XKB mapping changes for all core-sending devices (bug #12523)
+
+When we change the mapping on a core device, make sure we propagate this
+through to XKB for all extended devices as well.
+---
+
+--- Xi/exevents.c
++++ Xi/exevents.c
+@@ -73,6 +73,10 @@ SOFTWARE.
+ #include "dixgrabs.h"	/* CreateGrab() */
+ #include "scrnintstr.h"
+ 
++#ifdef XKB
++#include "xkbsrv.h"
++#endif
++
+ #define WID(w) ((w) ? ((w)->drawable.id) : 0)
+ #define AllModifiersMask ( \
+ 	ShiftMask | LockMask | ControlMask | Mod1Mask | Mod2Mask | \
+@@ -942,7 +946,7 @@ SetModifierMapping(ClientPtr client, Dev
+ }
+ 
+ void
+-SendDeviceMappingNotify(CARD8 request,
++SendDeviceMappingNotify(ClientPtr client, CARD8 request,
+ 			KeyCode firstKeyCode, CARD8 count, DeviceIntPtr dev)
+ {
+     xEvent event;
+@@ -957,6 +961,11 @@ SendDeviceMappingNotify(CARD8 request,
+ 	ev->count = count;
+     }
+ 
++#ifdef XKB
++    if (request == MappingKeyboard || request == MappingModifier)
++        XkbApplyMappingChange(dev, request, firstKeyCode, count, client);
++#endif
++
+     SendEventToAllWindows(dev, DeviceMappingNotifyMask, (xEvent *) ev, 1);
+ }
+ 
+@@ -992,7 +1001,7 @@ ChangeKeyMapping(ClientPtr client,
+     keysyms.map = map;
+     if (!SetKeySymsMap(&k->curKeySyms, &keysyms))
+ 	return BadAlloc;
+-    SendDeviceMappingNotify(MappingKeyboard, firstKeyCode, keyCodes, dev);
++    SendDeviceMappingNotify(client, MappingKeyboard, firstKeyCode, keyCodes, dev);
+     return client->noClientException;
+ }
+ 
+--- Xi/setbmap.c
++++ Xi/setbmap.c
+@@ -134,7 +134,7 @@ ProcXSetDeviceButtonMapping(ClientPtr cl
+     }
+ 
+     if (ret != MappingBusy)
+-	SendDeviceMappingNotify(MappingPointer, 0, 0, dev);
++	SendDeviceMappingNotify(client, MappingPointer, 0, 0, dev);
+     return Success;
+ }
+ 
+--- Xi/setmmap.c
++++ Xi/setmmap.c
+@@ -122,7 +122,7 @@ ProcXSetDeviceModifierMapping(ClientPtr 
+     if (ret == MappingSuccess || ret == MappingBusy || ret == MappingFailed) {
+ 	rep.success = ret;
+ 	if (ret == MappingSuccess)
+-	    SendDeviceMappingNotify(MappingModifier, 0, 0, dev);
++	    SendDeviceMappingNotify(client, MappingModifier, 0, 0, dev);
+ 	WriteReplyToClient(client, sizeof(xSetDeviceModifierMappingReply),
+ 			   &rep);
+     } else {
+--- dix/devices.c
++++ dix/devices.c
+@@ -1208,10 +1208,9 @@ SendMappingNotify(unsigned request, unsi
+     }
+ #ifdef XKB
+     if (!noXkbExtension &&
+-	((request == MappingKeyboard) || (request == MappingModifier))) {
+-	XkbApplyMappingChange(inputInfo.keyboard,request,firstKeyCode,count,
+-									client);
+-    }
++	((request == MappingKeyboard) || (request == MappingModifier)))
++        XkbApplyMappingChange(inputInfo.keyboard, request, firstKeyCode, count,
++                              client);
+ #endif
+ 
+    /* 0 is the server client */
+@@ -1359,6 +1358,7 @@ int 
+ ProcSetModifierMapping(ClientPtr client)
+ {
+     xSetModifierMappingReply rep;
++    DeviceIntPtr dev;
+     REQUEST(xSetModifierMappingReq);
+     
+     REQUEST_AT_LEAST_SIZE(xSetModifierMappingReq);
+@@ -1374,8 +1374,10 @@ ProcSetModifierMapping(ClientPtr client)
+     rep.success = DoSetModifierMapping(client, (KeyCode *)&stuff[1],
+                                        stuff->numKeyPerModifier);
+ 
+-    /* FIXME: Send mapping notifies for all the extended devices as well. */
+     SendMappingNotify(MappingModifier, 0, 0, client);
++    for (dev = inputInfo.devices; dev; dev = dev->next)
++        if (dev->key && dev->coreEvents)
++            SendDeviceMappingNotify(client, MappingModifier, 0, 0, dev);
+     WriteReplyToClient(client, sizeof(xSetModifierMappingReply), &rep);
+     return client->noClientException;
+ }
+@@ -1438,16 +1440,19 @@ ProcChangeKeyboardMapping(ClientPtr clie
+     keysyms.maxKeyCode = stuff->firstKeyCode + stuff->keyCodes - 1;
+     keysyms.mapWidth = stuff->keySymsPerKeyCode;
+     keysyms.map = (KeySym *)&stuff[1];
+-    for (pDev = inputInfo.devices; pDev; pDev = pDev->next) {
+-        if ((pDev->coreEvents || pDev == inputInfo.keyboard) && pDev->key) {
++    for (pDev = inputInfo.devices; pDev; pDev = pDev->next)
++        if ((pDev->coreEvents || pDev == inputInfo.keyboard) && pDev->key)
+             if (!SetKeySymsMap(&pDev->key->curKeySyms, &keysyms))
+                 return BadAlloc;
+-        }
+-    }
+ 
+-    /* FIXME: Send mapping notifies for all the extended devices as well. */
+     SendMappingNotify(MappingKeyboard, stuff->firstKeyCode, stuff->keyCodes,
+                       client);
++    for (pDev = inputInfo.devices; pDev; pDev = pDev->next)
++        if (pDev->key && pDev->coreEvents)
++            SendDeviceMappingNotify(client, MappingKeyboard,
++                                    stuff->firstKeyCode, stuff->keyCodes,
++                                    pDev);
++
+     return client->noClientException;
+ }
+ 
+--- include/exevents.h
++++ include/exevents.h
+@@ -129,6 +129,7 @@ extern int SetModifierMapping(
+ 	KeyClassPtr *          /* k */);
+ 
+ extern void SendDeviceMappingNotify(
++        ClientPtr              /* client, */,
+ 	CARD8                  /* request, */,
+ 	KeyCode                /* firstKeyCode */,
+ 	CARD8                  /* count */,
