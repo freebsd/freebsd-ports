@@ -16015,6 +16015,7 @@ tile		ports/x11-toolkits/tile
 tilem		ports/emulators/tilem
 tileworld	ports/games/tileworld
 tilp2		ports/comms/tilp2
+timbl		ports/math/timbl
 timeless	ports/graphics/timeless
 timelimit	ports/sysutils/timelimit
 timemachine	ports/audio/timemachine
