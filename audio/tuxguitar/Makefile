@@ -74,7 +74,7 @@ do-install:
 
 	# MAN page
 .if !defined(WITHOUT_MAN)
-	${INSTALL_DATA} ${WRKSRC}/misc/tuxguitar.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/misc/tuxguitar.1 ${MANPREFIX}/man/man1
 .endif
 
 post-install:
