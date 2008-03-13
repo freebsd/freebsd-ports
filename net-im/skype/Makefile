@@ -6,46 +6,53 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	1.2.0.18
+PORTVERSION=	1.4.0.118
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	NETBSD
-DISTNAME=	skype_staticQT-${PORTVERSION}
+MASTER_SITES=	http://download.skype.com/linux/
+DISTNAME=	skype_static-${DISTVERSION}-oss
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	P2P VoIP software
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
-		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
+		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat \
+		${LINUXBASE}/usr/lib/libsigc-2.0.so.0:${PORTSDIR}/devel/linux-libsigc++20
+
+.ifdef WITH_NVIDIA_GL
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+.else
+USE_GL=	linux
+.endif
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
+ONLY_FOR_ARCHS=	i386
 
 RESTRICTED=	Redistribution prohibited.
 
-OPTIONS=	NVIDIA_GL "Enable Nvidia Support" off
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-oss
+PORTDOCS=	LICENSE README
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_NVIDIA_GL)
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-.else
-RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
-.endif
-
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/skype
 
 do-install:
 	@${INSTALL} -d ${PREFIX}/share/applications
-	@${INSTALL_PROGRAM} ${WRKSRC}/skype ${PREFIX}/bin/skype_bin
-	@${ECHO_CMD} -e "#!/bin/sh\n\nSKYPE_RESOURCES_PATH='${DATADIR}' skype_bin \"\$$@\" 2>&1 | grep -v 'SOUND_MIXER_WRITE_IGAIN failed'" >${PREFIX}/bin/skype
-	@${CHMOD} a+rx ${PREFIX}/bin/skype
 	@${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
-	@${INSTALL_DATA} ${WRKSRC}/icons/skype_48_32.png ${PREFIX}/share/pixmaps/skype.png
-	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "icons sound lang LICENSE" ${DATADIR}/
-	@${ECHO} "There are known problems with some soundcards in 5.x. This is due to a bug in the kernel. It is fixed in 6.x. Additionally there is some further work in the sound subsystem going on which fixes some related problems. This work will not be available in 6.0-RELEASE. If you experience problems update to the most recent RELEASE, if this does not fix your problems ask on multimedia@FreeBSD.org." | fmt
+	@${INSTALL_DATA} ${WRKSRC}/icons/SkypeBlue_48x48.png ${PREFIX}/share/pixmaps/skype.png
+	@${INSTALL_PROGRAM} ${WRKSRC}/skype ${PREFIX}/bin/skype
+	@${CHMOD} a+rx ${PREFIX}/bin/skype
+	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "icons sounds lang" ${DATADIR}/
+
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
