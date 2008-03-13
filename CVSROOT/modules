@@ -3546,6 +3546,7 @@ gawk		ports/lang/gawk
 gazpacho	ports/devel/gazpacho
 gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
+gbemol		ports/audio/gbemol
 gbib		ports/databases/gbib
 gbottler	ports/games/gbottler
 gbsplay		ports/audio/gbsplay
