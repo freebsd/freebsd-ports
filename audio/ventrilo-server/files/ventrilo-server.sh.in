@@ -3,12 +3,8 @@
 # $FreeBSD$
 
 # PROVIDE: ventrilo
-# REQUIRE: NETWORKING
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
-
-[ -z "${ventrilo_enable}" ] && ventrilo_enable="NO"
-[ -z "${ventrilo_port}" ] && ventrilo_port="3784"
-[ -z "${ventrilo_srv}" ] && ventrilo_srv="localhost"
 
 . %%RC_SUBR%%
 
@@ -26,6 +22,10 @@ info_cmd="ventrilo_info"
 rcvar=`set_rcvar`
 
 load_rc_config $name
+
+: ${ventrilo_enable="NO"}
+: ${ventrilo_port="3784"}
+: ${ventrilo_srv="localhost"}
 
 ventrilo_info()
 {
