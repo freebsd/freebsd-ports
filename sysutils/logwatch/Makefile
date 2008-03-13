@@ -1,0 +1,51 @@
+# New ports collection makefile for:   logwatch
+# Date created:	       8 December 2007
+# Whom:		       John D. "Trix" Farrar <trix@basement.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	logwatch
+PORTVERSION=	7.3.6
+CATEGORIES=	sysutils
+MASTER_SITES=	ftp://ftp.kaybee.org/pub/linux/
+
+MAINTAINER=	trix@basement.net
+COMMENT=	A log file analysis program
+
+RUN_DEPENDS=	${SITE_PERL}/mach/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+
+USE_PERL5_RUN=	yes
+
+MAN8=		logwatch.8
+DOCS=		HOWTO-Customize-LogWatch License README
+
+NO_BUILD=	yes
+
+pre-configure:
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+
+post-patch:
+	${REINPLACE_CMD}  -E \
+	-e "s,/usr/share/logwatch,${LOCALBASE}," \
+	-e "s,/etc/logwatch,${ETCDIR}," \
+	-e 's,^eval "use lib.*,,' \
+	-e "s,.BaseDir/lib,${LIBEXECDIR}," \
+	-e 's,BaseDir/dist.conf,ConfigDir/defaults,' \
+	-e 's,BaseDir/default.conf,ConfigDir/defaults,' \
+	-e 's,ConfigDir/conf,ConfigDir,' \
+	-e "s,BaseDir/scripts/([^/]*)/,BaseDir/libexec/${PORTNAME}/defaults/\1/," \
+	-e "s,ConfigDir/scripts/([^/]*)/,BaseDir/libexec/${PORTNAME}/\1/," \
+	${WRKSRC}/scripts/logwatch.pl
+	${REINPLACE_CMD}  -E \
+	-e "s,/var/cache/logwatch,${LOCALBASE}/var/${PORTNAME}," \
+	${WRKSRC}/conf/logwatch.conf
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/HOWTO-Customize-LogWatch ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

@@ -386,6 +386,7 @@
     SUBDIR += logserial
     SUBDIR += logtool
     SUBDIR += logtool-devel
+    SUBDIR += logwatch
     SUBDIR += lookat
     SUBDIR += lookupd
     SUBDIR += lookupd_ldap
