@@ -1,0 +1,11 @@
+--- ogg123/Makefile.in.orig	2008-03-03 06:47:58.000000000 +0100
++++ ogg123/Makefile.in	2008-03-12 19:43:37.000000000 +0100
+@@ -605,7 +605,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-man
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-am
+ 
