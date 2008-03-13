@@ -16,6 +16,7 @@ cleanup() {
     fi
   fi
 
+
   if [ -e ${dir}/.keep ]; then
     cd ${dir}
     objdir=$(make -V WRKDIR)
@@ -111,12 +112,13 @@ FD=$5
 BD=$6
 RD=$7
 
-export PATH=/pkg/libexec/ccache/:$PATH
-export CCACHE_PATH=/usr/bin:/usr/local/bin
+#export PATH=/ccache/libexec/ccache/:$PATH
+#export CCACHE_PATH=/usr/bin:/usr/local/bin
 export MALLOC_OPTIONS=AJ
 
 L=`echo ${LOCALBASE} | sed 's,^/,,'`
 X=`echo ${X11BASE} | sed 's,^/,,'`
+Z=`ident ${dir}/Makefile | grep 'FreeBSD:' | sed 's/^[ \t]*//'`
 
 if [ $phase = 1 ]; then
 
@@ -124,6 +126,7 @@ if [ $phase = 1 ]; then
   echo "building for: $(uname -mr)"
   echo "maintained by: $(make maintainer)"
   echo "port directory: ${dir}"
+  echo "Makefile ident: ${Z}"
   echo "build started at $(date)"
 
   echo "FETCH_DEPENDS=${FD}"
@@ -162,6 +165,7 @@ if [ $phase = 1 ]; then
 EOF
   # Record a "pristine" mtree.
   mtree -X /tmp/mtree.preexclude -xcn -k uid,gid,mode -p / > /tmp/mtree.pristine
+
 
   add_pkg $FD
 
@@ -393,6 +397,7 @@ EOF
     kill $(jobid %1)
   fi
 
+  # XXX Don't keep distfiles if checksum mismatches
   cd ${dir}
   keep_distfiles=$(make -V ALWAYS_KEEP_DISTFILES)
   distdir=$(make -V DISTDIR)
