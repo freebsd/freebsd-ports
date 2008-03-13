@@ -1,11 +1,13 @@
 bin/lyx
 bin/lyxclient
 bin/tex2lyx
+share/applications/lyx.desktop
 share/locale/ca/LC_MESSAGES/lyx.mo
 share/locale/cs/LC_MESSAGES/lyx.mo
 share/locale/de/LC_MESSAGES/lyx.mo
 share/locale/es/LC_MESSAGES/lyx.mo
 share/locale/eu/LC_MESSAGES/lyx.mo
+share/locale/fi/LC_MESSAGES/lyx.mo
 share/locale/fr/LC_MESSAGES/lyx.mo
 share/locale/gl/LC_MESSAGES/lyx.mo
 share/locale/he/LC_MESSAGES/lyx.mo
@@ -16,9 +18,12 @@ share/locale/ko/LC_MESSAGES/lyx.mo
 share/locale/nb/LC_MESSAGES/lyx.mo
 share/locale/nn/LC_MESSAGES/lyx.mo
 share/locale/pl/LC_MESSAGES/lyx.mo
+share/locale/pt/LC_MESSAGES/lyx.mo
 share/locale/ro/LC_MESSAGES/lyx.mo
 share/locale/tr/LC_MESSAGES/lyx.mo
+share/locale/zh_CN/LC_MESSAGES/lyx.mo
 share/locale/zh_TW/LC_MESSAGES/lyx.mo
+share/pixmaps/lyx.xpm
 %%DATADIR%%/CREDITS
 %%DATADIR%%/bind/aqua.bind
 %%DATADIR%%/bind/broadway.bind
@@ -55,19 +60,33 @@ share/locale/zh_TW/LC_MESSAGES/lyx.mo
 %%DATADIR%%/doc/TOC.lyx
 %%DATADIR%%/doc/Tutorial.lyx
 %%DATADIR%%/doc/UserGuide.lyx
+%%DATADIR%%/doc/biblio/LyXDocs.bib
+%%DATADIR%%/doc/biblio/alphadin.bst
+%%DATADIR%%/doc/clipart/Abstract.pdf
 %%DATADIR%%/doc/clipart/BoxInsetDefaultQt4.png
+%%DATADIR%%/doc/clipart/ChangesToolbar.png
 %%DATADIR%%/doc/clipart/ChildDocumentQt4.png
 %%DATADIR%%/doc/clipart/CommentNoteImageQt4.png
+%%DATADIR%%/doc/clipart/ERT.png
 %%DATADIR%%/doc/clipart/ExternalMaterialQt4.png
+%%DATADIR%%/doc/clipart/ExtraToolbar.png
 %%DATADIR%%/doc/clipart/FramedNoteImageQt4.png
 %%DATADIR%%/doc/clipart/GreyedOutNoteImageQt4.png
+%%DATADIR%%/doc/clipart/LaTeX.png
 %%DATADIR%%/doc/clipart/LyXNoteImageQt4.png
 %%DATADIR%%/doc/clipart/ShadedNoteImageQt4.png
+%%DATADIR%%/doc/clipart/SpaceMarker.png
+%%DATADIR%%/doc/clipart/StandardToolbar.png
+%%DATADIR%%/doc/clipart/ToolbarEnvBox.png
+%%DATADIR%%/doc/clipart/ViewToolbar.png
 %%DATADIR%%/doc/clipart/endnotes.pdf
 %%DATADIR%%/doc/clipart/escher-lsd.eps
 %%DATADIR%%/doc/clipart/floatQt4.png
 %%DATADIR%%/doc/clipart/footnoteQt4.png
 %%DATADIR%%/doc/clipart/labelQt4.png
+%%DATADIR%%/doc/clipart/macrobox.png
+%%DATADIR%%/doc/clipart/macrouse.png
+%%DATADIR%%/doc/clipart/mbox.png
 %%DATADIR%%/doc/clipart/mobius.eps
 %%DATADIR%%/doc/clipart/platypus.eps
 %%DATADIR%%/doc/clipart/referenceQt4.png
@@ -88,6 +107,7 @@ share/locale/zh_TW/LC_MESSAGES/lyx.mo
 %%DATADIR%%/doc/de/TOC.lyx
 %%DATADIR%%/doc/de/Tutorial.lyx
 %%DATADIR%%/doc/de/UserGuide.lyx
+%%DATADIR%%/doc/de/clipart/ERT.png
 %%DATADIR%%/doc/de/clipart/ExternesMaterialQt4.png
 %%DATADIR%%/doc/de/clipart/FussnoteQt4.png
 %%DATADIR%%/doc/de/clipart/GerahmteNotizQt4.png
@@ -108,6 +128,9 @@ share/locale/zh_TW/LC_MESSAGES/lyx.mo
 %%DATADIR%%/doc/es/Intro.lyx
 %%DATADIR%%/doc/es/TOC.lyx
 %%DATADIR%%/doc/es/Tutorial.lyx
+%%DATADIR%%/doc/es/UserGuide.lyx
+%%DATADIR%%/doc/es/biblio/LyXDocs.bib
+%%DATADIR%%/doc/es/biblio/alphadin.bst
 %%DATADIR%%/doc/es/clipart/ComentNotaImagenQt4.png
 %%DATADIR%%/doc/es/clipart/CuadroMinipagQt4.png
 %%DATADIR%%/doc/es/clipart/DocumentoHijoQt4.png
@@ -116,6 +139,8 @@ share/locale/zh_TW/LC_MESSAGES/lyx.mo
 %%DATADIR%%/doc/es/clipart/NotaEnmarcadaImg.png
 %%DATADIR%%/doc/es/clipart/NotaLyXImagenQt4.png
 %%DATADIR%%/doc/es/clipart/NotaSombreadaImg.png
+%%DATADIR%%/doc/es/clipart/Resumen.pdf
+%%DATADIR%%/doc/es/clipart/es_ERT.png
 %%DATADIR%%/doc/es/clipart/etiquetaQt4.png
 %%DATADIR%%/doc/es/clipart/flotanteQt4.png
 %%DATADIR%%/doc/es/clipart/notapieQt4.png
@@ -128,12 +153,23 @@ share/locale/zh_TW/LC_MESSAGES/lyx.mo
 %%DATADIR%%/doc/eu/Tutorial.lyx
 %%DATADIR%%/doc/eu/UserGuide.lyx
 %%DATADIR%%/doc/fr/Customization.lyx
+%%DATADIR%%/doc/fr/EmbeddedObjects.lyx
 %%DATADIR%%/doc/fr/Extended.lyx
 %%DATADIR%%/doc/fr/FAQ.lyx
 %%DATADIR%%/doc/fr/Intro.lyx
 %%DATADIR%%/doc/fr/TOC.lyx
 %%DATADIR%%/doc/fr/Tutorial.lyx
 %%DATADIR%%/doc/fr/UserGuide.lyx
+%%DATADIR%%/doc/fr/clipart/BoxInsetDefaultQt4.png
+%%DATADIR%%/doc/fr/clipart/ChildDocumentQt4.png
+%%DATADIR%%/doc/fr/clipart/CommentNoteImageQt4.png
+%%DATADIR%%/doc/fr/clipart/FramedNoteImageQt4.png
+%%DATADIR%%/doc/fr/clipart/GreyedOutNoteImageQt4.png
+%%DATADIR%%/doc/fr/clipart/LyXNoteImageQt4.png
+%%DATADIR%%/doc/fr/clipart/ShadedNoteImageQt4.png
+%%DATADIR%%/doc/fr/clipart/floatQt4.png
+%%DATADIR%%/doc/fr/clipart/footnoteQt4.png
+%%DATADIR%%/doc/fr/clipart/labelQt4.png
 %%DATADIR%%/doc/gl/Intro.lyx
 %%DATADIR%%/doc/gl/TOC.lyx
 %%DATADIR%%/doc/gl/Tutorial.lyx
@@ -204,20 +240,18 @@ share/locale/zh_TW/LC_MESSAGES/lyx.mo
 %%DATADIR%%/examples/chess-article.lyx
 %%DATADIR%%/examples/chessgame.lyx
 %%DATADIR%%/examples/cs/splash.lyx
-%%DATADIR%%/examples/currency.lyx
 %%DATADIR%%/examples/da/splash.lyx
 %%DATADIR%%/examples/de/Dezimal.lyx
 %%DATADIR%%/examples/de/ItemizeBullets.lyx
 %%DATADIR%%/examples/de/Lebenslauf.lyx
 %%DATADIR%%/examples/de/Minipage.lyx
-%%DATADIR%%/examples/de/TabellenBeispiel.lyx
-%%DATADIR%%/examples/de/Waehrungen.lyx
 %%DATADIR%%/examples/de/beispiel_gelyxt.lyx
 %%DATADIR%%/examples/de/beispiel_roh.lyx
 %%DATADIR%%/examples/de/mathed.lyx
 %%DATADIR%%/examples/de/multicol.lyx
 %%DATADIR%%/examples/de/splash.lyx
 %%DATADIR%%/examples/docbook_article.lyx
+%%DATADIR%%/examples/es/ItemizeBullets.lyx
 %%DATADIR%%/examples/es/ejemplo_con_lyx.lyx
 %%DATADIR%%/examples/es/ejemplo_sin_lyx.lyx
 %%DATADIR%%/examples/es/splash.lyx
@@ -229,7 +263,6 @@ share/locale/zh_TW/LC_MESSAGES/lyx.mo
 %%DATADIR%%/examples/example_raw.lyx
 %%DATADIR%%/examples/fa/splash.lyx
 %%DATADIR%%/examples/fr/AlignementDecimal.lyx
-%%DATADIR%%/examples/fr/ExemplesTableaux.lyx
 %%DATADIR%%/examples/fr/Foils.lyx
 %%DATADIR%%/examples/fr/ListesPuces.lyx
 %%DATADIR%%/examples/fr/Minipage.lyx
@@ -283,6 +316,7 @@ share/locale/zh_TW/LC_MESSAGES/lyx.mo
 %%DATADIR%%/fonts/cmmi10.ttf
 %%DATADIR%%/fonts/cmr10.ttf
 %%DATADIR%%/fonts/cmsy10.ttf
+%%DATADIR%%/fonts/esint10.ttf
 %%DATADIR%%/fonts/eufm10.ttf
 %%DATADIR%%/fonts/msam10.ttf
 %%DATADIR%%/fonts/msbm10.ttf
@@ -1239,15 +1273,18 @@ share/locale/zh_TW/LC_MESSAGES/lyx.mo
 @dirrm %%DATADIR%%/doc/hu
 @dirrm %%DATADIR%%/doc/he
 @dirrm %%DATADIR%%/doc/gl
+@dirrm %%DATADIR%%/doc/fr/clipart
 @dirrm %%DATADIR%%/doc/fr
 @dirrm %%DATADIR%%/doc/eu
 @dirrm %%DATADIR%%/doc/es/clipart
+@dirrm %%DATADIR%%/doc/es/biblio
 @dirrm %%DATADIR%%/doc/es
 @dirrm %%DATADIR%%/doc/de/clipart
 @dirrm %%DATADIR%%/doc/de
 @dirrm %%DATADIR%%/doc/da
 @dirrm %%DATADIR%%/doc/cs
 @dirrm %%DATADIR%%/doc/clipart
+@dirrm %%DATADIR%%/doc/biblio
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/bind/sv
 @dirrm %%DATADIR%%/bind/pt
