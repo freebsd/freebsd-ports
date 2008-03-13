@@ -7,7 +7,7 @@
 
 PORTNAME=	formido
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://koti.mbnet.fi/lsoft/formido/ \
 		http://www.amdmi3.ru/distfiles/

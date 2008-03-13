@@ -7,7 +7,7 @@
 
 PORTNAME=	viruskiller
 DISTVERSION=	1.0-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	GENTOO \
 		http://www.amdmi3.ru/distfiles/

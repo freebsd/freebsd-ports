@@ -6,6 +6,7 @@
 #
 
 PORTVERSION=	1.3
+PORTREVISION=	1
 PKGNAMESUFFIX=	-sdlaudio
 
 COMMENT=	JttL's SDL audio plugin for Mupen64

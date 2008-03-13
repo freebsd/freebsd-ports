@@ -7,7 +7,7 @@
 
 PORTNAME=	shootingstar
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.2ndpoint.fi/projektit.xml/shootingstar/files/ \
 		http://www.amdmi3.ru/distfiles/

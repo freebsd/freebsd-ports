@@ -7,7 +7,7 @@
 
 PORTNAME=	jumpnbump
 PORTVERSION=	1.41
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.jumpbump.mine.nu/port/ \
 	http://www.vlaadworld.net/jumpnbump/ \

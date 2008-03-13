@@ -7,7 +7,7 @@
 
 PORTNAME=	ember
 PORTVERSION=	0.5.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://amber.worldforge.org/ember/releases/stable/

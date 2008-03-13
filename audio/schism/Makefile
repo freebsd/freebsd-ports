@@ -7,7 +7,7 @@
 
 PORTNAME=	schism
 DISTVERSION=	0.2a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://rigelseven.com/schism/dl/ \
 		http://critical.ch/distfiles/ \

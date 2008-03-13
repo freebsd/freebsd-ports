@@ -7,7 +7,7 @@
 
 PORTNAME=	sidplayer
 PORTVERSION=	4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://sidplayer.cebix.net/downloads/ \
 		http://critical.ch/distfiles/ \

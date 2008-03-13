@@ -7,7 +7,7 @@
 
 PORTNAME=	blobandconquer
 DISTVERSION=	0.91-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 # original url: http://www.parallelrealities.co.uk/download.php?proj=blobAndConquer&file=${DISTNAME}&type=zip
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \

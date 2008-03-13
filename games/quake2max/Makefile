@@ -7,7 +7,7 @@
 
 PORTNAME=	quake2max
 PORTVERSION=	0.45
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/Quake2MaX/:src \
 		${MASTER_SITE_LOCAL:S/$/:data/}

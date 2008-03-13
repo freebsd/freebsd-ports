@@ -7,7 +7,7 @@
 
 PORTNAME=	burgerspace
 PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 

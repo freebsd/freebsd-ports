@@ -7,7 +7,7 @@
 
 PORTNAME=	kmuddy
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net games
 MASTER_SITES=	http://www.kmuddy.com/files/
 

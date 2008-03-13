@@ -6,7 +6,7 @@
 
 PORTNAME=	crimson
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://crimson.seul.org/files/
 

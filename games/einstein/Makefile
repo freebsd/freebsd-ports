@@ -7,7 +7,7 @@
 
 PORTNAME=	einstein
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://games.flowix.com/files/einstein/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

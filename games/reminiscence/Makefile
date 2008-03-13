@@ -7,7 +7,7 @@
 
 PORTNAME=	REminiscence
 PORTVERSION=	0.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 		http://www.amdmi3.ru/distfiles/

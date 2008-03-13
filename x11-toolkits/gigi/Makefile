@@ -7,6 +7,7 @@
 
 PORTNAME=	gigi
 PORTVERSION=	0.6.0.20071206
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 

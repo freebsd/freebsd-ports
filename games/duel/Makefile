@@ -7,7 +7,7 @@
 
 PORTNAME=	duel
 PORTVERSION=	0.98
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -19,6 +19,7 @@ COMMENT=	An overhead, OpenGL space shooter
 BUILD_DEPENDS=	${X11BASE}/lib/libftgl.a:${PORTSDIR}/graphics/ftgl
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_SDL=	sdl

@@ -7,6 +7,7 @@
 
 PORTNAME=	ofc
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://ofc.dvoudheusden.net/download/
 

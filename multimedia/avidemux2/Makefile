@@ -7,7 +7,7 @@
 
 PORTNAME=	avidemux2
 PORTVERSION=	2.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/ \
 		${MASTER_SITE_BERLIOS}

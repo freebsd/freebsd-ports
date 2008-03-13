@@ -7,7 +7,7 @@
 
 PORTNAME=	gemdropx
 PORTVERSION=	0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/gemdropx/src/
 

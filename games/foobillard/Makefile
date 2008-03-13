@@ -7,7 +7,7 @@
 
 PORTNAME=	foobillard
 PORTVERSION=	2.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://foobillard.sunsite.dk/dnl/
 

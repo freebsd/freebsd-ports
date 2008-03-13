@@ -8,7 +8,7 @@
 
 PORTNAME=	paragui
 PORTVERSION=	1.0.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/

@@ -7,6 +7,7 @@
 
 PORTNAME=	blackshadeselite
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/blackshadeselite/ \
 		http://www.amdmi3.ru/distfiles/

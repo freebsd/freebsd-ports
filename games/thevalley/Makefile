@@ -6,7 +6,7 @@
 
 PORTNAME=	thevalley
 PORTVERSION=	0.98
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.autismuk.freeserve.co.uk/
 DISTNAME=	valley-${PORTVERSION}

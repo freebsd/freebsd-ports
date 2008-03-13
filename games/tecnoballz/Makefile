@@ -7,6 +7,7 @@
 
 PORTNAME=	tecnoballz
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/
 EXTRACT_SUFX=	.tgz

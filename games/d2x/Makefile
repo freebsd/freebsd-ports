@@ -7,7 +7,7 @@
 
 PORTNAME=	d2x
 PORTVERSION=	0.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.icculus.org/d2x/src/
 

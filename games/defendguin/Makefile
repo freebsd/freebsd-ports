@@ -7,7 +7,7 @@
 
 PORTNAME=	defendguin
 PORTVERSION=	0.0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/defendguin/src/
 

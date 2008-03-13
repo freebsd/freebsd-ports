@@ -7,7 +7,7 @@
 
 PORTNAME=	sdb
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://sdb.gamecreation.org/ \
 		http://www.amdmi3.ru/distfiles/

@@ -7,7 +7,7 @@
 
 PORTNAME=	synaesthesia
 PORTVERSION=	2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics audio
 MASTER_SITES=	http://www.logarithmic.net/pfh-files/synaesthesia/ CENKES
 

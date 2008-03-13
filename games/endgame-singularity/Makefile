@@ -8,6 +8,7 @@
 PORTNAME=	singularity
 PORTVERSION=	0.26.0.1
 DISTVERSION=	0.26a
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://emhsoft.com/singularity/ CENKES
 PKGNAMEPREFIX=	endgame-
