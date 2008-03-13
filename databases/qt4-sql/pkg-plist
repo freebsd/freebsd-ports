@@ -74,7 +74,7 @@ lib/libQtSql.prl
 lib/libQtSql.so
 lib/libQtSql.so.4
 lib/libQtSql.so.4.3
-lib/libQtSql.so.4.3.1
-%%DEBUG%%lib/libQtSql.so.4.3.1.debug
+lib/libQtSql.so.4.3.4
+%%DEBUG%%lib/libQtSql.so.4.3.4.debug
 libdata/pkgconfig/QtSql.pc
 @dirrm include/QtSql

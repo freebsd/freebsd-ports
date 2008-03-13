@@ -66,7 +66,7 @@ QTCGFLIBS?=
 
 .endif # !defined(_POSTMKINCLUDED) && !defined(Qt_Pre_Include)
 
-QT4_VERSION?=		4.3.1
+QT4_VERSION?=		4.3.4
 
 _QT_COMPONENTS_ALL=	accessible assistant assistantclient codecs-cn \
 			codecs-jp codecs-kr codecs-tw corelib dbus designer \

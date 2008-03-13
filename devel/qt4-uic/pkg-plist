@@ -1,4 +1,2 @@
 bin/uic-qt4
 %%DEBUG%%bin/uic-qt4.debug
-share/nls/POSIX
-share/nls/en_US.US-ASCII

@@ -739,7 +739,7 @@ lib/libQtGui.prl
 lib/libQtGui.so
 lib/libQtGui.so.4
 lib/libQtGui.so.4.3
-lib/libQtGui.so.4.3.1
-%%DEBUG%%lib/libQtGui.so.4.3.1.debug
+lib/libQtGui.so.4.3.4
+%%DEBUG%%lib/libQtGui.so.4.3.4.debug
 libdata/pkgconfig/QtGui.pc
 @dirrm include/QtGui

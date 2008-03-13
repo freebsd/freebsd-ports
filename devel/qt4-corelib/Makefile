@@ -8,7 +8,7 @@
 
 PORTNAME=	corelib
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -47,6 +47,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src/${PORTNAME}
 CONFIGURE_WRKSRC=${WRKSRC}/../../
 PATCH_WRKSRC=${CONFIGURE_WRKSRC}
 
+.include <bsd.port.pre.mk>
+
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib|g' \
@@ -62,10 +64,17 @@ post-configure:
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
+			-E -e 's|(.*Cflags:.*)-I${LOCALBASE}/include |\1|g' \
 		${WRKSRC}/../../lib/pkgconfig/*Qt*
+	${HEAD} -n 19 ${WRKSRC}/global/qconfig.h > ${WRKDIR}/qconfig.tmp
+	${CHMOD} 644 ${WRKSRC}/global/qconfig.h
+	${CAT} ${WRKDIR}/qconfig.tmp ${FILESDIR}/qconfig.h.in > ${WRKSRC}/global/qconfig.h
+.if ${OSVERSION} >= 700042
+	${ECHO_CMD} "#define QT_VISIBILITY_AVAILABLE" >> ${WRKSRC}/global/qconfig.h
+.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/qt4/plugins
 	${TOUCH} ${PREFIX}/lib/qt4/plugins/.keep_me
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

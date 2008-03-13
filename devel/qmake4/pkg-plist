@@ -118,10 +118,10 @@ share/qt4/mkspecs/hpux-g++-64/qmake.conf
 share/qt4/mkspecs/hpux-g++-64/qplatformdefs.h
 share/qt4/mkspecs/hpux-g++/qmake.conf
 share/qt4/mkspecs/hpux-g++/qplatformdefs.h
+share/qt4/mkspecs/hpuxi-acc-32/qmake.conf
+share/qt4/mkspecs/hpuxi-acc-32/qplatformdefs.h
 share/qt4/mkspecs/hpuxi-acc-64/qmake.conf
 share/qt4/mkspecs/hpuxi-acc-64/qplatformdefs.h
-share/qt4/mkspecs/hpuxi-acc/qmake.conf
-share/qt4/mkspecs/hpuxi-acc/qplatformdefs.h
 share/qt4/mkspecs/hurd-g++/qmake.conf
 share/qt4/mkspecs/hurd-g++/qplatformdefs.h
 share/qt4/mkspecs/irix-cc-64/qmake.conf
@@ -223,9 +223,24 @@ share/qt4/mkspecs/unixware-cc/qmake.conf
 share/qt4/mkspecs/unixware-cc/qplatformdefs.h
 share/qt4/mkspecs/unixware-g++/qmake.conf
 share/qt4/mkspecs/unixware-g++/qplatformdefs.h
+share/qt4/mkspecs/win32-borland/qmake.conf
+share/qt4/mkspecs/win32-borland/qplatformdefs.h
 share/qt4/mkspecs/win32-g++/qmake.conf
 share/qt4/mkspecs/win32-g++/qplatformdefs.h
+share/qt4/mkspecs/win32-msvc/features/incremental.prf
+share/qt4/mkspecs/win32-msvc/features/incremental_off.prf
+share/qt4/mkspecs/win32-msvc/qmake.conf
+share/qt4/mkspecs/win32-msvc/qplatformdefs.h
+share/qt4/mkspecs/win32-msvc2005/qmake.conf
+share/qt4/mkspecs/win32-msvc2005/qplatformdefs.h
+share/qt4/mkspecs/win32-msvc.net/qmake.conf
+share/qt4/mkspecs/win32-msvc.net/qplatformdefs.h
+@dirrm share/qt4/mkspecs/win32-msvc.net
+@dirrm share/qt4/mkspecs/win32-msvc2005
+@dirrm share/qt4/mkspecs/win32-msvc/features
+@dirrm share/qt4/mkspecs/win32-msvc
 @dirrm share/qt4/mkspecs/win32-g++
+@dirrm share/qt4/mkspecs/win32-borland
 @dirrm share/qt4/mkspecs/unixware-g++
 @dirrm share/qt4/mkspecs/unixware-cc
 @dirrm share/qt4/mkspecs/tru64-g++
@@ -275,8 +290,8 @@ share/qt4/mkspecs/win32-g++/qplatformdefs.h
 @dirrm share/qt4/mkspecs/irix-cc-64
 @dirrm share/qt4/mkspecs/irix-cc
 @dirrm share/qt4/mkspecs/hurd-g++
+@dirrm share/qt4/mkspecs/hpuxi-acc-32
 @dirrm share/qt4/mkspecs/hpuxi-acc-64
-@dirrm share/qt4/mkspecs/hpuxi-acc
 @dirrm share/qt4/mkspecs/hpux-g++-64
 @dirrm share/qt4/mkspecs/hpux-g++
 @dirrm share/qt4/mkspecs/hpux-acc-o64

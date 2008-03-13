@@ -1857,7 +1857,6 @@ share/qt4/examples/widgets/movie/movie.pro
 share/qt4/examples/widgets/movie/movie.qrc
 share/qt4/examples/widgets/movie/movieplayer.cpp
 share/qt4/examples/widgets/movie/movieplayer.h
-share/qt4/examples/widgets/movie/movies/fire.mng
 share/qt4/examples/widgets/scribble/main.cpp
 share/qt4/examples/widgets/scribble/mainwindow.cpp
 share/qt4/examples/widgets/scribble/mainwindow.h
@@ -2022,7 +2021,6 @@ share/qt4/examples/xml/xmlstreamlint/xmlstreamlint.pro
 @dirrm share/qt4/examples/widgets/sliders
 @dirrm share/qt4/examples/widgets/shapedclock
 @dirrm share/qt4/examples/widgets/scribble
-@dirrm share/qt4/examples/widgets/movie/movies
 @dirrm share/qt4/examples/widgets/movie/images
 @dirrm share/qt4/examples/widgets/movie
 @dirrm share/qt4/examples/widgets/lineedits
