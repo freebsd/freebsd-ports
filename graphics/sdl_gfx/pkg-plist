@@ -1,4 +1,5 @@
 include/SDL/SDL_framerate.h
+include/SDL/SDL_gfxBlitFunc.h
 include/SDL/SDL_gfxPrimitives.h
 include/SDL/SDL_gfxPrimitives_font.h
 include/SDL/SDL_imageFilter.h
@@ -6,5 +7,5 @@ include/SDL/SDL_rotozoom.h
 lib/libSDL_gfx.a
 lib/libSDL_gfx.la
 lib/libSDL_gfx.so
-lib/libSDL_gfx.so.13
+lib/libSDL_gfx.so.0
 @dirrmtry include/SDL
