@@ -1,17 +1,20 @@
---- main/Makefile.orig	Wed Mar 28 11:08:42 2007
-+++ main/Makefile	Wed Mar 28 11:09:20 2007
-@@ -98,8 +98,8 @@ editline/libedit.a:
- 	cd editline && test -f config.h || CFLAGS="$(PTHREAD_CFLAGS) $(ASTCFLAGS:-Werror=)" LDFLAGS="$(ASTLDFLAGS)" ./configure --build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM) --with-ncurses=$(NCURSES_DIR) --with-curses=$(CURSES_DIR) --with-termcap=$(TERMCAP_DIR) --with-tinfo=$(TINFO_DIR)
+
+$FreeBSD$
+
+--- main/Makefile.orig
++++ main/Makefile
+@@ -102,8 +102,8 @@
+ 	cd editline && test -f config.h || CFLAGS="$(PTHREAD_CFLAGS) $(subst $(ASTTOPDIR),../../,$(ASTCFLAGS:-Werror=))" LDFLAGS="$(ASTLDFLAGS)" ./configure --build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM) --with-ncurses=$(NCURSES_DIR) --with-curses=$(CURSES_DIR) --with-termcap=$(TERMCAP_DIR) --with-tinfo=$(TINFO_DIR)
  	$(MAKE) -C editline libedit.a
  
 -db1-ast/libdb1.a:
--	CFLAGS="$(ASTCFLAGS)" LDFLAGS="$(ASTLDFLAGS)" $(MAKE) -C db1-ast libdb1.a
+-	CFLAGS="$(subst $(ASTTOPDIR),../../,$(ASTCFLAGS))" LDFLAGS="$(ASTLDFLAGS)" $(MAKE) -C db1-ast libdb1.a
 +#db1-ast/libdb1.a:
-+#	CFLAGS="$(ASTCFLAGS)" LDFLAGS="$(ASTLDFLAGS)" $(MAKE) -C db1-ast libdb1.a
++#	CFLAGS="$(subst $(ASTTOPDIR),../../,$(ASTCFLAGS))" LDFLAGS="$(ASTLDFLAGS)" $(MAKE) -C db1-ast libdb1.a
  
  ast_expr2.c ast_expr2.h:
  	bison -o $@ -d --name-prefix=ast_yy ast_expr2.y
-@@ -127,7 +127,7 @@ else
+@@ -133,7 +133,7 @@
    H323LDLIBS=
  endif
  

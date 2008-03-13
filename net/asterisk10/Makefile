@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.17
-PORTREVISION=	1
+PORTVERSION=	1.4.18
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -159,7 +158,7 @@ LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2
 .endif
 
 .if defined(WITH_CODEC_PATCH)
-PATCHFILES=	asterisk-1.4.17-codec-negotiation-20080118.diff.gz
+PATCHFILES=	asterisk-1.4.18-codec-negotiation-20080313.diff.gz
 PATCH_SITES=	http://b2bua.org/chrome/site/
 EXTRA_PATCHES+=	${PATCHDIR}/codecnego-patch-Makefile
 .else
