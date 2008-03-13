@@ -24,10 +24,9 @@ INFO=		stumpwm
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/bin/clisp) || !defined(PACKAGE_BUILDING)
-. if !exists(${LOCALBASE}/lib/clisp/full/clx.o)
+.if !exists(${LOCALBASE}/bin/clisp) || \
+    !exists(${LOCALBASE}/lib/clisp/full/clx.o)
 IGNORE=		requires lang/clisp built with CLX_NEW option ON
-. endif
 .endif
 
 do-install:
