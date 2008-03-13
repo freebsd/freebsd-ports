@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.planetmirror.com/pub/lyx/stable/ \
@@ -51,7 +52,8 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude ${PORTNAME}-${PORTVERSION}/intl/*.[c
 CONFIGURE_ARGS=	--with-frontend=qt4 \
 		--without-included-boost \
 		--without-included-gettext \
-		--with-libiconv-prefix=${LOCALBASE}
+		--with-libiconv-prefix=${LOCALBASE} \
+		--with-extra-prefix=${LOCALBASE}
 
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
@@ -83,6 +85,12 @@ post-configure:
 post-build check test:
 	# Running vendor's self-tests:
 	${GMAKE} -C ${WRKSRC} check
+
+post-install:
+	${LN} -sf ${DATADIR}/images/lyx.xpm ${PREFIX}/share/pixmaps/lyx.xpm
+	${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/lyx.desktop \
+		${PREFIX}/share/applications
 
 .include <bsd.port.pre.mk>
 
