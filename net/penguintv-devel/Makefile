@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	PenguinTV
-PORTVERSION=	3.0
+PORTVERSION=	3.4
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -21,8 +21,6 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/p
 		${PYXML} \
 		${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		leaves egg file behind on deinstall
 
 WRKSRC=		${WRKDIR}/PenguinTV-${PORTVERSION}
 
