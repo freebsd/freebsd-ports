@@ -9,7 +9,7 @@
 PORTNAME=	twitter
 PORTVERSION=	0.3
 CATEGORIES=	net python
-MASTER_SITES=	http://python-twitter.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
@@ -19,6 +19,7 @@ COMMENT=	A python wrapper around the Twitter API
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>0:${PORTSDIR}/devel/py-simplejson
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PROJECTHOST=	python-twitter
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	python_twitter

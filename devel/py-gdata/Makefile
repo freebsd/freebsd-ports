@@ -8,7 +8,7 @@
 PORTNAME=	gdata
 PORTVERSION=	1.0.11
 CATEGORIES=	devel python
-MASTER_SITES=	http://gdata-python-client.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	gdata.py-${PORTVERSION}
 
@@ -17,6 +17,7 @@ COMMENT=	GData Python Client Library
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
 
+PROJECTHOST=	gdata-python-client
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	gdata.py

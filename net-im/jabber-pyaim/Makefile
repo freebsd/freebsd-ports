@@ -8,7 +8,7 @@
 PORTNAME=	pyaim
 PORTVERSION=	0.8a
 CATEGORIES=	net-im
-MASTER_SITES=	http://pyaimt.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	jabber-
 PKGNAMESUFFIX=	-transport
 DISTNAME=	${PORTNAME}-t-${PORTVERSION}
@@ -16,6 +16,8 @@ DIST_SUBDIR=	jabber
 
 MAINTAINER=	takeda@takeda.tk
 COMMENT=	Python AIM-Transport for Jabber
+
+PROJECTHOST=	pyaimt
 
 OPTIONS=	EJABBERD "Use transport with ejabberd" off \
 		TWISTED1 "Use old py-twisted 1.x" off

@@ -8,11 +8,12 @@
 PORTNAME=	endgame-singularity-music
 PORTVERSION=	005
 CATEGORIES=	games
-MASTER_SITES=	http://endgame-singularity.googlecode.com/files/ CENKES
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Music pack for endgame-singularity
 
+PROJECTHOST=	http://endgame-singularity
 NO_BUILD=	yes
 USE_ZIP=	yes
 DATADIR=	${PREFIX}/share/singularity

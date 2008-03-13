@@ -8,7 +8,7 @@
 PORTNAME=	tesseract
 DISTVERSION=	2.01
 CATEGORIES=	graphics
-MASTER_SITES=	http://tesseract-ocr.googlecode.com/files/ CENKES
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} CENKES
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${LANGFILES}
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -17,6 +17,7 @@ COMMENT=	Commercial quality open source OCR engine
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
+PROJECTHOST=	tesseract-ocr
 LANGS=	deu eng fra ita nld spa
 LANGVER=	2.00
 LANGFILES=	${LANGS:S|^|${PORTNAME}-${LANGVER}.|:S|$|${EXTRACT_SUFX}|}

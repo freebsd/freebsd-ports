@@ -8,7 +8,7 @@
 PORTNAME=	rsyncbackup
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://rsync-backup.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	rsyncbackup
 
 MAINTAINER=	ports@danielbond.org
@@ -16,6 +16,7 @@ COMMENT=	Rsync frontend written in Perl
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
+PROJECTHOST=	rsync-backup
 CONFIGSRC=	${WRKSRC}/config
 CONFIGFILES=	backupset.conf config.conf destinations.conf sources.conf
 

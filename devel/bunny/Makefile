@@ -8,7 +8,7 @@
 PORTNAME=	bunny
 PORTVERSION=	0.92
 CATEGORIES=	devel
-MASTER_SITES=	http://bunny-the-fuzzer.googlecode.com/files/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
 EXTRACT_SUFX=	.tgz
@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Closed loop, high-performance, general purpose protocol-blind fuzzer
 
+PROJECTHOST=	bunny-the-fuzzer
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	README

@@ -8,11 +8,12 @@
 PORTNAME=	gflags
 PORTVERSION=	0.6
 CATEGORIES=	devel
-MASTER_SITES=	http://google-gflags.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Commandline flags module for C++
 
+PROJECTHOST=	google-gflags
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

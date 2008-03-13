@@ -8,13 +8,14 @@
 PORTNAME=	dnswall
 PORTVERSION=	0.1.4
 CATEGORIES=	dns security
-MASTER_SITES=	http://google-dnswall.googlecode.com/files/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A daemon that filters out private IP addresses in DNS responses
 
+PROJECTHOST=	google-dnswall
 USE_AUTOTOOLS=	automake:110
 USE_DOS2UNIX=	yes
 

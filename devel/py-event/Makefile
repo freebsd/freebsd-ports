@@ -8,7 +8,7 @@ PORTNAME=	event
 PORTVERSION=	0.3
 PORTREVISION=	3
 CATEGORIES=	devel net python
-MASTER_SITES=	http://pyevent.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
@@ -17,6 +17,7 @@ COMMENT=	Python bindings for libevent
 
 LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
 
+PROJECTHOST=	pyevent
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
