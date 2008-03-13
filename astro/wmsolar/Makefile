@@ -7,7 +7,7 @@
 
 PORTNAME=	wmsolar
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://www.inxsoft.net/wmsolar/
 
@@ -16,8 +16,7 @@ COMMENT=	A dockapp that displays the solar system viewed from top
 
 PLIST_FILES=	bin/wmSolar
 WRKSRC=		${WRKDIR}/wmSolar
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xext xpm
 USE_GMAKE=	yes
 
 pre-patch:

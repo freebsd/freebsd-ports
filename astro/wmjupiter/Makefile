@@ -7,7 +7,7 @@
 
 PORTNAME=	wmjupiter
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://www.inxsoft.net/wmjupiter/
 
@@ -16,8 +16,7 @@ COMMENT=	Dockapp that displays information on jupiter
 
 PLIST_FILES=	bin/wmJupiter
 WRKSRC=		${WRKDIR}/wmJupiter
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xext xpm
 USE_GMAKE=	yes
 
 pre-patch:

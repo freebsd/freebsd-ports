@@ -6,7 +6,7 @@
 
 PORTNAME=	wmspaceweather
 PORTVERSION=	1.04
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://dockapps.org/files/15/22/
 DISTNAME=	wmSpaceWeather-${PORTVERSION}
@@ -20,8 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/wmSpaceWeather
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xext xpm
 ALL_TARGET=	clean all
 
 MAN1=	wmSpaceWeather.1
