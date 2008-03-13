@@ -626,6 +626,7 @@
     SUBDIR += snowlog
     SUBDIR += socket
     SUBDIR += socklog
+    SUBDIR += sortu
     SUBDIR += spassgen
     SUBDIR += spinner
     SUBDIR += srmt
