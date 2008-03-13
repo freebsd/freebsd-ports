@@ -6,34 +6,22 @@
 #
 
 PORTNAME=	gmanedit
-PORTVERSION=	0.3.1
-PORTREVISION=	4
+PORTVERSION=	0.4
 CATEGORIES=	editors gnome
-MASTER_SITES=	http://gmanedit.sourceforge.net/files/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF/gmanedit2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME manpages editor
 
-USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnometarget libgnomeui
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-ALL_TARGET=	clean all
-
-post-extract:
-	@${RM} -rf ${WRKSRC}/config.cache
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${RM} -f
+MAN1=		gmanedit.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|PACKAGE_PIXMAPS_DIR=".*/pixmaps|PACKAGE_PIXMAPS_DIR="${PREFIX}/share/pixmaps|g' \
-		 	${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/<argz\.h>/d' ${WRKSRC}/src/callbacks.c
 
 .include <bsd.port.mk>

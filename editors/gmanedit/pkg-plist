@@ -1,15 +1,9 @@
 bin/gmanedit
+share/applications/gmanedit.desktop
+share/locale/ca/LC_MESSAGES/gmanedit.mo
 share/locale/es/LC_MESSAGES/gmanedit.mo
 share/locale/gl/LC_MESSAGES/gmanedit.mo
 share/locale/ja/LC_MESSAGES/gmanedit.mo
-share/locale/ko/LC_MESSAGES/gmanedit.mo
-share/pixmaps/gmanedit/arrow.xpm
-share/pixmaps/gmanedit/button.xpm
-share/pixmaps/gmanedit/exit.xpm
-share/pixmaps/gmanedit/gmanedit.png
-share/pixmaps/gmanedit/new.xpm
-share/pixmaps/gmanedit/no.xpm
-share/pixmaps/gmanedit/open.xpm
-share/pixmaps/gmanedit/save.xpm
-share/pixmaps/gmanedit/spinbutton.xpm
-@dirrm share/pixmaps/gmanedit
+share/pixmaps/gmanedit.png
+share/pixmaps/gmanedit_icon.png
+@dirrmtry share/applications
