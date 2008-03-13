@@ -7,15 +7,14 @@
 #
 
 PORTNAME=	sdl_gfx
-PORTVERSION=	2.0.13
-PORTREVISION=	3
+PORTVERSION=	2.0.16
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 MASTER_SITE_SUBDIR=	SDL_gfx-${PORTVERSION:R}
 DISTNAME=	SDL_gfx-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
 USE_AUTOTOOLS=	libtool:15
@@ -23,16 +22,20 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include \
-		--disable-mmx
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 USE_LDCONFIG=	yes
 
+OPTIONS=	MMX	"Enable MMX instruction set (i386 only)"	Off
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MMX) && (${ARCH} == "i386")
+CONFIGURE_ARGS+=--enable-mmx
 CFLAGS+=	-DUSE_MMX
+.else
+CONFIGURE_ARGS=--disable-mmx
 .endif
 
 .include <bsd.port.post.mk>
