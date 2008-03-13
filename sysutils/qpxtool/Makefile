@@ -6,34 +6,30 @@
 #
 
 PORTNAME=	qpxtool
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A GUI for testing CD/DVD quality and transfer rate
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_QT_VER=	3
 
-USE_SCONS=	yes
-SCONS_BUILDENV=	QTDIR="${QT_PREFIX}" TMPDIR="${TMPDIR}" ${SCONS_ENV}
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
+MAKE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
+		QTDIR="${QT_PREFIX}"
 
 USE_LDCONFIG=	yes
+MAN8=		pxcontrol.8 pxfw.8
 
-PORTDOCS=	README ChangeLog
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/lib/lib/* ${PREFIX}/lib/
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Wall -g -O2||; s|/usr/local|${PREFIX}|' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^LDLIBS.*+=/ s|$$| -lcam|' \
+		${WRKSRC}/lib/qpxtransport/Makefile
 
 .include <bsd.port.mk>
