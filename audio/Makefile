@@ -149,6 +149,7 @@
     SUBDIR += festival
     SUBDIR += festival+OGI
     SUBDIR += festlex-cmu
+    SUBDIR += festlex-czech
     SUBDIR += festlex-ifd
     SUBDIR += festlex-oald
     SUBDIR += festlex-ogi
@@ -157,6 +158,7 @@
     SUBDIR += festogi-spanish
     SUBDIR += festvox-abc
     SUBDIR += festvox-aec
+    SUBDIR += festvox-czech
     SUBDIR += festvox-don
     SUBDIR += festvox-el11
     SUBDIR += festvox-hvs

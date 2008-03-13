@@ -1,0 +1,14 @@
+--- Makefile.orig	Wed Jun 21 09:32:07 2006
++++ Makefile	Wed Dec 26 16:42:28 2007
+@@ -36,10 +36,9 @@
+ all: czech-lexicon.out
+ 
+ %.out: %.scm
+-	festival --batch '(lex.compile "$<" "$@")'
++	echo '(lex.compile "$<" "$@")' | festival
+ 
+ install: all
+-	$(INSTALL_PROGRAM) -m 644 $(distfiles) $(festival_path)/
+ 
+ install-strip:
+ 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' install

@@ -1,0 +1,11 @@
+--- czech.scm.orig	Wed Jun 21 09:32:07 2006
++++ czech.scm	Sat Apr 28 23:28:07 2007
+@@ -917,7 +917,7 @@
+ (lex.create "czech")
+ (lex.set.phoneset "czech")
+ (lex.select "czech")
+-(let ((dirs '("." "/usr/share/festival"))
++(let ((dirs '("@FESTIVAL_TARGET_DIR@"))
+       (lexfile nil))
+   (while dirs
+     (let ((file (path-append (car dirs) czech-lexicon-file)))
