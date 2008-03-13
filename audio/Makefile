@@ -15,6 +15,7 @@
     SUBDIR += adplay
     SUBDIR += afsp
     SUBDIR += akode
+    SUBDIR += akode-plugins-ffmpeg
     SUBDIR += akode-plugins-jack
     SUBDIR += akode-plugins-mpc
     SUBDIR += akode-plugins-mpeg
