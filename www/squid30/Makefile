@@ -62,7 +62,7 @@
 #     requests.
 
 PORTNAME=	squid
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -81,7 +81,7 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/Versions/v3/3.0/ \
 		http://www2.tw.squid-cache.org/Versions/v3/3.0/
 MASTER_SITE_SUBDIR=	squid-3/STABLE
-DISTNAME=	squid-3.0.STABLE1
+DISTNAME=	squid-3.0.STABLE2
 DIST_SUBDIR=	squid3.0
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -378,7 +378,8 @@ SQUID_LANGUAGES?=	Armenian Azerbaijani Bulgarian Catalan Czech Danish \
 			Hebrew Hungarian Italian Japanese Korean Lithuanian \
 			Polish Portuguese Romanian Russian-1251 Russian-koi8-r \
 			Serbian Simplify_Chinese Slovak Spanish Swedish \
-			Traditional_Chinese Turkish
+			Traditional_Chinese Turkish Ukrainian-1251 \
+			Ukrainian-koi8-u Ukrainian-utf8
 SQUID_DEFAULT_LANG?=	English
 CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 			--enable-default-err-language=${SQUID_DEFAULT_LANG}
@@ -411,6 +412,13 @@ pre-install:
 # Prevent installation of .orig files by deleting them.
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
+# XXX:
+# Remove error pages that were prematurely integrated into 3.0.STABLE2.
+# This is done to keep the package list manageable by installing the same
+# set of error files for every language:
+	@for d in Ukrainian-1251 Ukrainian-koi8-u Ukrainian-utf8; \
+		do ${RM} -f ${WRKSRC}/errors/$${d}/ERR_SECURE_CONNECT_FAIL; \
+	 done
 
 pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
