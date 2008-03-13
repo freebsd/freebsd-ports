@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A notes-taking application based QT4
 
 USE_QT_VER=	4
