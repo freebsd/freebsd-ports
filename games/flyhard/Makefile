@@ -7,7 +7,7 @@
 
 PORTNAME=	flyhard
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.markboyd.me.uk/games/flyhard/ \
 		http://www.amdmi3.ru/distfiles/

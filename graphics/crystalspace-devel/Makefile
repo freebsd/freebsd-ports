@@ -7,7 +7,7 @@
 
 PORTNAME=	crystalspace
 PORTVERSION=	20061105
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://alex.foxybanana.com/freebsd/
 PKGNAMESUFFIX=	-devel

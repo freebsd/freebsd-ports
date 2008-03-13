@@ -7,7 +7,7 @@
 
 PORTNAME=	tileworld
 PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.muppetlabs.com/~breadbox/pub/software/tworld/
 DISTNAME=	tworld-${PORTVERSION}

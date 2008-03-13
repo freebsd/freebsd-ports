@@ -7,7 +7,7 @@
 
 PORTNAME=	freeorion
 PORTVERSION=	0.3.1.20071206
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 

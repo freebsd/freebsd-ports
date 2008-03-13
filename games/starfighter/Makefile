@@ -7,7 +7,7 @@
 
 PORTNAME=	starfighter
 DISTVERSION=	1.1-1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	NETBSD \
 		http://www.amdmi3.ru/distfiles/

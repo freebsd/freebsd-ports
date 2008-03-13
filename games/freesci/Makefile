@@ -7,7 +7,7 @@
 
 PORTNAME=	freesci
 PORTVERSION=	0.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games emulators
 MASTER_SITES=	http://www-plan.cs.colorado.edu/creichen/${PORTNAME}/ \
 		http://teksolv.de/~jameson/

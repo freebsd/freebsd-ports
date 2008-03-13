@@ -7,7 +7,7 @@
 
 PORTNAME=	gaia
 PORTVERSION=	0.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gaia-clean
@@ -17,13 +17,13 @@ COMMENT=	Display geographic maps with optional GPS tracking support
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		SDL.11:${PORTSDIR}/devel/sdl12
+		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_SCONS=	yes
 SCONS_BUILDENV=	${SCONS_ENV}
 SCONS_ARGS+=	prefix=${PREFIX} use_env=1
+USE_SDL=	sdl
 
 OPTIONS=	GPS "Build with GPS support" off
 

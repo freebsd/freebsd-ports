@@ -7,6 +7,7 @@
 
 PORTNAME=	sdlmess
 PORTVERSION=	0.122
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}

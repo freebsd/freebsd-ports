@@ -7,6 +7,7 @@
 
 PORTNAME=	apricots
 PORTVERSION=	0.2.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.fishies.org.uk/ \
 		http://www.amdmi3.ru/distfiles/
@@ -14,6 +15,7 @@ MASTER_SITES=	http://www.fishies.org.uk/ \
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Fly a little plane around and shoot things and drop bombs
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl

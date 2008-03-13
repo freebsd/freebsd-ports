@@ -7,7 +7,7 @@
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games ipv6
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/
 DISTNAME=	quake2-r${PORTVERSION}

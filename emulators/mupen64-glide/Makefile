@@ -6,7 +6,7 @@
 #
 
 PORTVERSION=	0.7
-PORTREVISION=	4
+PORTREVISION=	5
 PKGNAMESUFFIX=	-glide
 
 COMMENT=	Glide64 graphics plugin for Mupen64

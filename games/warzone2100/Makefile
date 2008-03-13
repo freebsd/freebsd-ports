@@ -7,6 +7,7 @@
 
 PORTNAME=	warzone2100
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
 

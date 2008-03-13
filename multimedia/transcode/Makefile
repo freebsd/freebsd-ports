@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://transcode.kabewm.com/ \
 		http://fromani.exit1.org/

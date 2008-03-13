@@ -6,6 +6,7 @@
 #
 
 PORTVERSION=	0.7.8
+PORTREVISION=	1
 PKGNAMESUFFIX=	-tr64
 
 COMMENT=	Tr64 graphics plugin for Mupen64

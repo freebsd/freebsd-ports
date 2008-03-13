@@ -7,6 +7,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2007.610
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.simtel.com/pub/gamezone/31/5/17/
 DISTNAME=	${PORTNAME}2007-20071011-linux

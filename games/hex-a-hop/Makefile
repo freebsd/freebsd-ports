@@ -7,7 +7,7 @@
 
 PORTNAME=	hex-a-hop
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.bishopston.net/freebsd/distfiles/ \
 		ftp://ftp.bishopston.net/freebsd/distfiles/ \

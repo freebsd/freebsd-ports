@@ -7,6 +7,7 @@
 
 PORTNAME=	ceferino
 PORTVERSION=	0.97.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/ceferino/descargas/
 

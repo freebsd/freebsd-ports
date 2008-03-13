@@ -7,7 +7,7 @@
 
 PORTNAME=	xrick
 PORTVERSION=	021212
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.bigorno.net/xrick/
 EXTRACT_SUFX=	.tgz

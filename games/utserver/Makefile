@@ -7,7 +7,7 @@
 
 PORTNAME=	utserver
 PORTVERSION=	451
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games linux
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/:p436 \
 		ftp://ftp.wireplay.co.uk/pub/unrealtournament/server/:p436 \

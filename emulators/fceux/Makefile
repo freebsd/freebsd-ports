@@ -7,7 +7,7 @@
 
 PORTNAME=	fceu
 PORTVERSION=	0.98.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://bsd-unix.org/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-pre.src

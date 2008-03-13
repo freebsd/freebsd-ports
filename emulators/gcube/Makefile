@@ -7,7 +7,7 @@
 
 PORTNAME=	gcube
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.liquidx.org/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

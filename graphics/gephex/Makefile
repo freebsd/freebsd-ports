@@ -7,7 +7,7 @@
 
 PORTNAME=	gephex
 PORTVERSION=	0.4.3b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gephex.org/download/src/
 

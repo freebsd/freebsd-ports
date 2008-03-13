@@ -6,7 +6,7 @@
 
 PORTNAME=	jfduke3d
 PORTVERSION=	20051009
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://users.on.net/~jonof/buildport/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}.zip \

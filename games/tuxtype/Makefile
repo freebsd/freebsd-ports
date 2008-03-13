@@ -7,6 +7,7 @@
 
 PORTNAME=	tuxtype
 PORTVERSION=	1.5.16
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/2209/
 DISTNAME=	${PORTNAME}_w_fonts-${PORTVERSION}

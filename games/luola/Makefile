@@ -7,7 +7,7 @@
 
 PORTNAME=	luola
 PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.luolamies.org/software/luola/ \
 		http://www.amdmi3.ru/distfiles/

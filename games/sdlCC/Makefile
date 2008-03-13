@@ -7,6 +7,7 @@
 
 PORTNAME=	sdlCC
 PORTVERSION=	0.0.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://chinesecheckers.vegard2.no/ \
 		http://jcatki.no-ip.org/files/
@@ -14,6 +15,7 @@ MASTER_SITES=	http://chinesecheckers.vegard2.no/ \
 MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	An extensible chinese checkers game using SDL
 
+USE_AUTOTOOLS=	libtool:15
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
 

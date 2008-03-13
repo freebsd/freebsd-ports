@@ -7,7 +7,7 @@
 
 PORTNAME=	maelstrom
 PORTVERSION=	3.0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.devolution.com/~slouken/projects/Maelstrom/src/
 DISTNAME=	Maelstrom-${PORTVERSION}

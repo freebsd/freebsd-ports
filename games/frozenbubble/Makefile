@@ -7,7 +7,7 @@
 
 PORTNAME=	frozenbubble
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.frozen-bubble.org/data/
 DISTNAME=	frozen-bubble-${PORTVERSION}

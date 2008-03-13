@@ -7,6 +7,7 @@
 
 PORTNAME=	pengupop
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.junoplay.com/files/ \
 		http://www.amdmi3.ru/distfiles/

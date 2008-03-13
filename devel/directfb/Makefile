@@ -7,7 +7,7 @@
 
 PORTNAME=	directfb
 PORTVERSION=	0.9.16
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.directfb.org/downloads/Old/
 DISTNAME=	DirectFB-${PORTVERSION}
