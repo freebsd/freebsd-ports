@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	checkmate
-PORTVERSION=	0.15
+PORTVERSION=	0.18
 CATEGORIES=	audio
 MASTER_SITES=	http://checkmate.linuxonly.nl/ \
 		http://critical.ch/distfiles/ \
