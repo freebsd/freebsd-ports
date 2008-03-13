@@ -9,8 +9,7 @@ PORTNAME=	GD-Graph
 PORTVERSION=	1.44
 PORTREVISION=	1
 CATEGORIES=	graphics perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Test/BWARFIELD
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	GDGraph-${DISTVERSION}
 
@@ -21,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/GD/Text/Align.pm:${PORTSDIR}/graphics/p5-GD-TextUtil
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		GD::Graph.3 \
 		GD::Graph::Data.3 \
@@ -29,8 +28,5 @@ MAN3=		GD::Graph.3 \
 		GD::Graph::FAQ.3 \
 		GD::Graph::colour.3 \
 		GD::Graph::hbars.3
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.orig" -print0 | ${XARGS} -0 ${RM} -f
 
 .include <bsd.port.mk>
