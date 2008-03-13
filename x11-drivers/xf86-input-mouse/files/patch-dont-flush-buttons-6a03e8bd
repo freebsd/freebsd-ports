@@ -1,0 +1,38 @@
+From 6a03e8bd9699a33dabcdd2bbcf51a001ddfd5534 Mon Sep 17 00:00:00 2001
+From: Peter Hutterer <peter@cs.unisa.edu.au>
+Date: Fri, 16  Nov  2007  06:15:45  +0000
+Subject: Bug #13144: Don't flush buttons, release events can cause paste events.
+
+---
+diff --git src/mouse.c src/mouse.c
+index ff52d2b..bd98a80 100644
+--- src/mouse.c
++++ src/mouse.c
+@@ -1853,26 +1853,17 @@ MouseConvert(InputInfoPtr pInfo, int first, int num, int v0, int v1, int v2,
+ 
+ /**********************************************************************
+  *
+- * FlushButtons -- send button up events for sanity.
++ * FlushButtons -- reset button states.
+  *
+  **********************************************************************/
+ 
+ static void
+ FlushButtons(MouseDevPtr pMse)
+ {
+-
+-    /* If no button down is pending xf86PostButtonEvent()
+-     * will discard them. So we are on the safe side. */
+-
+     int i, blocked;
+ 
+     pMse->lastButtons = 0;
+     pMse->lastMappedButtons = 0;
+-
+-    blocked = xf86BlockSIGIO ();
+-    for (i = 1; i <= 5; i++)
+-	xf86PostButtonEvent(pMse->device,0,i,0,0,0);
+-    xf86UnblockSIGIO (blocked);
+ }
+ 
+ /**********************************************************************
