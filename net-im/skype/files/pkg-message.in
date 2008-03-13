@@ -1,0 +1,10 @@
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+skype_devel has been installed in:
+
+%%PREFIX%%/bin/skype 
+
+If you are starting from a terminal, please use the following command:
+	skype --resources=%%DATADIR%%
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

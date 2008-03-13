@@ -1,40 +1,52 @@
 bin/skype
-bin/skype_bin
-%%DATADIR%%/icons/skype_16_32.png
-%%DATADIR%%/icons/skype_32_32.png
-%%DATADIR%%/icons/skype_48_32.png
-@dirrm %%DATADIR%%/icons
-%%DATADIR%%/lang/skype_da.qm
-%%DATADIR%%/lang/skype_de.qm
-%%DATADIR%%/lang/skype_el.qm
-%%DATADIR%%/lang/skype_en.qm
-%%DATADIR%%/lang/skype_es.qm
-%%DATADIR%%/lang/skype_es_AR.qm
-%%DATADIR%%/lang/skype_et.qm
-%%DATADIR%%/lang/skype_fi.qm
-%%DATADIR%%/lang/skype_fr.qm
-%%DATADIR%%/lang/skype_it.qm
-%%DATADIR%%/lang/skype_iw.qm
-%%DATADIR%%/lang/skype_ja.qm
-%%DATADIR%%/lang/skype_ko.qm
-%%DATADIR%%/lang/skype_nl.qm
-%%DATADIR%%/lang/skype_no.qm
-%%DATADIR%%/lang/skype_pl.qm
-%%DATADIR%%/lang/skype_pt_BR.qm
-%%DATADIR%%/lang/skype_ro.qm
-%%DATADIR%%/lang/skype_ru.qm
-%%DATADIR%%/lang/skype_sv.qm
-%%DATADIR%%/lang/skype_zh_CN.qm
-%%DATADIR%%/lang/skype_zh_TW.qm
-@dirrm %%DATADIR%%/lang
-%%DATADIR%%/sound/busy4.wav
-%%DATADIR%%/sound/call_in.wav
-%%DATADIR%%/sound/call_out.wav
-%%DATADIR%%/sound/hangup.wav
-%%DATADIR%%/sound/im.wav
-@dirrm %%DATADIR%%/sound
-%%DATADIR%%/LICENSE
-@dirrm %%DATADIR%%
 share/applications/skype.desktop
 share/pixmaps/skype.png
+%%DATADIR%%/icons/SkypeBlue_16x16.png
+%%DATADIR%%/icons/SkypeBlue_32x32.png
+%%DATADIR%%/icons/SkypeBlue_48x48.png
+%%DATADIR%%/lang/skype_de.qm
+%%DATADIR%%/lang/skype_de.ts
+%%DATADIR%%/lang/skype_et.qm
+%%DATADIR%%/lang/skype_et.ts
+%%DATADIR%%/lang/skype_lv.qm
+%%DATADIR%%/lang/skype_lv.ts
+%%DATADIR%%/lang/skype_pl.qm
+%%DATADIR%%/lang/skype_pl.ts
+%%DATADIR%%/lang/skype_pt_pt.qm
+%%DATADIR%%/lang/skype_pt_pt.ts
+%%DATADIR%%/lang/skype_ro.qm
+%%DATADIR%%/lang/skype_ro.ts
+%%DATADIR%%/lang/skype_ru.qm
+%%DATADIR%%/lang/skype_ru.ts
+%%DATADIR%%/lang/skype_tr.qm
+%%DATADIR%%/lang/skype_tr.ts
+%%DATADIR%%/lang/skype_zh_s.qm
+%%DATADIR%%/lang/skype_zh_s.ts
+%%DATADIR%%/lang/skype_zh_t.qm
+%%DATADIR%%/lang/skype_zh_t.ts
+%%DATADIR%%/sounds/CallBusy.wav
+%%DATADIR%%/sounds/CallConnecting.wav
+%%DATADIR%%/sounds/CallHangup.wav
+%%DATADIR%%/sounds/CallHold.wav
+%%DATADIR%%/sounds/CallRemoteHangup.wav
+%%DATADIR%%/sounds/CallResume.wav
+%%DATADIR%%/sounds/CallRingingIn.wav
+%%DATADIR%%/sounds/CallRingingOut.wav
+%%DATADIR%%/sounds/ChatIncoming.wav
+%%DATADIR%%/sounds/ChatIncomingInitial.wav
+%%DATADIR%%/sounds/ChatOutgoing.wav
+%%DATADIR%%/sounds/ContactAdded.wav
+%%DATADIR%%/sounds/ContactAuthRequest.wav
+%%DATADIR%%/sounds/ContactOffline.wav
+%%DATADIR%%/sounds/ContactOnline.wav
+%%DATADIR%%/sounds/SkypeLogin.wav
+%%DATADIR%%/sounds/SkypeLogout.wav
+%%DATADIR%%/sounds/TransferComplete.wav
+%%DATADIR%%/sounds/TransferFailed.wav
+%%DATADIR%%/sounds/TransferRequest.wav
+%%DATADIR%%/sounds/VoicemailReceived.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
