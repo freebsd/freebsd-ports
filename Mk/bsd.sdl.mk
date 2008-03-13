@@ -48,7 +48,7 @@ _USE_SDL_ALL=	gfx gui image mixer mm net pango sdl sound ttf
 # _REQUIRES_xxx	also needs these SDL libraries
 #
 
-_VERSION_gfx=	13
+_VERSION_gfx=	0
 _SUBDIR_gfx=	graphics
 _REQUIRES_gfx=	sdl
 
@@ -58,30 +58,33 @@ _REQUIRES_gui=	sdl image ttf
 
 _VERSION_image=	1
 _SUBDIR_image=	graphics
+_LIB_image=	SDL_image-1.2
 _REQUIRES_image=sdl
 
 _VERSION_mixer=	2
 _SUBDIR_mixer=	audio
+_LIB_mixer=	SDL_mixer-1.2
 _REQUIRES_mixer=sdl
 
 _VERSION_mm=	8
-_SUBDIR_mm=		devel
-_LIB_mm=		SDLmm
+_SUBDIR_mm=	devel
+_LIB_mm=	SDLmm
 _PORTDIR_mm=	sdlmm
 _REQUIRES_mm=	sdl
 
 _VERSION_net=	0
 _SUBDIR_net=	net
+_LIB_net=	SDL_net-1.2
 _REQUIRES_net=	sdl
 
 _VERSION_pango=	2
 _SUBDIR_pango=	x11-toolkits
-_LIB_pango=		SDL_Pango
+_LIB_pango=	SDL_Pango
 _REQUIRES_pango=sdl
 
 _VERSION_sdl=	11
 _SUBDIR_sdl=	devel
-_LIB_sdl=		SDL
+_LIB_sdl=	SDL-1.2
 _PORTDIR_sdl=	sdl12
 
 _VERSION_sound=	1
@@ -90,6 +93,7 @@ _REQUIRES_sound=sdl
 
 _VERSION_ttf=	6
 _SUBDIR_ttf=	graphics
+_LIB_ttf=	SDL_ttf-2.0
 _REQUIRES_ttf=	sdl
 
 #

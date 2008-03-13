@@ -1,6 +1,6 @@
 --- configure.orig	Wed Jul  5 00:52:15 2006
 +++ configure	Wed Jul  5 01:01:28 2006
-@@ -29772,8 +29772,8 @@
+@@ -30485,8 +30485,8 @@
  #            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
              ;;
          *-*-freebsd*|*-*-dragonfly*)
