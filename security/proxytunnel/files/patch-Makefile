@@ -1,0 +1,11 @@
+--- ./Makefile.orig	2008-03-13 16:10:21.000000000 +0100
++++ ./Makefile	2008-03-13 16:10:39.000000000 +0100
+@@ -5,7 +5,7 @@
+ CC ?= cc
+ CFLAGS ?= -Wall -O2 -ggdb
+ 
+-OPTFLAGS = -DREV=$(shell ./getrev.sh)
++OPTFLAGS = -DREV=0
+ 
+ # Comment on non-gnu systems
+ OPTFLAGS += -DHAVE_GETOPT_LONG
