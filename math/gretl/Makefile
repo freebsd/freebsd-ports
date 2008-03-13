@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.3
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -26,7 +26,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15 autoconf:261
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DGNUPLOT_PNG" \
-		LDFLAGS="-L${LOCALBASE}/lib ${GCCLIBDIR}"
+		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex ${GCCLIBDIR}"
 CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake
 ALL_TARGET=	# empty
 USE_LDCONFIG=	yes
@@ -47,7 +47,6 @@ BROKEN=		math/lapack appears to be broken on alpha
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomeprefix gtksourceview libgnomeui
-GCONF_SCHEMAS=	gretl.schemas
 .else
 CONFIGURE_ARGS+=	--without-gnome --without-gtksourceview
 .endif
@@ -66,6 +65,16 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
 .endif
+
+.if ${OSVERSION} > 502010
+GNU_REGEX_H=	gnu/regex.h
+.else
+GNU_REGEX_H=	gnuregex.h
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<regex.h>|<${GNU_REGEX_H}>|g' \
+		${WRKSRC}/gui2/gtksourceview/gtksourceregex.c
 
 pre-configure:
 	@${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
