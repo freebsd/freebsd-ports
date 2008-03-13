@@ -5,17 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	desktopbsd-tools
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.desktopbsd.net/
+MASTER_SITES=	ftp://ftp.desktopbsd.net/pub/DesktopBSD/Tools/
 
 MAINTAINER=	ph@desktopbsd.net
 COMMENT=	DesktopBSD tools for easy system configuration
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm \
-		bash:${PORTSDIR}/shells/bash \
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup \
 		portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
 		portaudit:${PORTSDIR}/ports-mgmt/portaudit
@@ -35,23 +33,23 @@ DATADIR=	${PREFIX}/share/desktopbsd
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600007
+IGNORE=		requires FreeBSD 6 or newer
+.endif
+
 .if ${OSVERSION} < 601101 || ( ${OSVERSION} >= 700000 && ${OSVERSION} < 700015 )
 RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
 .endif
 
-.if ${OSVERSION} < 504103 || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600033 )
+.if ${OSVERSION} >= 600000 && ${OSVERSION} < 600033
 RUN_DEPENDS+=	portsnap:${PORTSDIR}/ports-mgmt/portsnap
-.endif
-
-.if ${OSVERSION} > 600007
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libdesktopbsd_accesspoint.h ${FILESDIR}/extra-patch-libdesktopbsd_accesspoint.cpp ${FILESDIR}/extra-patch-libdesktopbsd_wirelessinterface.h ${FILESDIR}/extra-patch-libdesktopbsd_wirelessinterface.cpp
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"/Installation/d; /Documentation/d; /InitialConf/d" \
 		${WRKSRC}/desktopbsd.pro
-	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/*/*.pro
+	@${REINPLACE_CMD} -e "s|^PREFIX = .*|PREFIX = ${PREFIX}|g" ${WRKSRC}/desktopbsd.pro.inc
 
 do-configure:
 	@cd ${WRKSRC} \
