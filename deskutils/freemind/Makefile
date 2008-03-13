@@ -12,7 +12,7 @@ CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-bin-max-${PORTVERSION:S/./_/g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wenheping@gmail.com
 COMMENT=	Free mind-mapping software written in Java
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
