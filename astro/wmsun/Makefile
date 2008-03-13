@@ -6,7 +6,7 @@
 
 PORTNAME=	wmsun
 PORTVERSION=	1.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://dockapps.org/files/16/23/
 DISTNAME=	wmSun-1.03
@@ -16,8 +16,7 @@ COMMENT=	A dockapp that displays the rise and set time of the sun
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSun
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xext xpm x11
 ALL_TARGET=	clean all
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		INCDIR="-I${X11BASE}/include" LIBDIR="-L${X11BASE}/lib"
