@@ -9,7 +9,8 @@ PORTNAME=	neverball
 PORTVERSION=	1.4.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/neverball/
+MASTER_SITES=	http://offload1.icculus.org/neverball/ \
+		http://offload2.icculus.org/neverball/
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Tilt the floor to guide a ball through an obstacle course
@@ -19,9 +20,8 @@ BUILD_DEPENDS=	${FREETYPE_CONFIG}:${PORTSDIR}/print/freetype2
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
 USE_GL=		gl
-USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_SDL=	image mixer ttf
+USE_GMAKE=	yes
 
 DOCS=		CHANGES COPYING README
 DIRS=		back bgm map-back map-mym map-paxed map-putt map-rlk mtrl obj \
@@ -30,8 +30,9 @@ DIRS=		back bgm map-back map-mym map-paxed map-putt map-rlk mtrl obj \
 post-patch:
 	@${REINPLACE_CMD} -e 's|./data|${DATADIR}/data|g' \
 		${WRKSRC}/share/config.h
-	@${REINPLACE_CMD} -e 's|%%FREETYPE_CONFIG%%|${FREETYPE_CONFIG}|g' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|freetype-config|${FREETYPE_CONFIG}|g ; \
+		s|sdl-config|${SDL_CONFIG}|g ; s| -O3| ${CFLAGS}|g' \
+			${WRKSRC}/Makefile
 
 do-install:
 .for ii in ${DIRS}
