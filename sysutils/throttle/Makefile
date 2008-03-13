@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	throttle
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://klicman.org/throttle/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pipe bandwidth throttling utility
 
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
+
 MAN1=		throttle.1
 PLIST_FILES=	bin/throttle
 
