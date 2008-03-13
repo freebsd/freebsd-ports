@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	sdl_net
-PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTVERSION=	1.2.7
 CATEGORIES=	net
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_net/release/
 DISTNAME=	SDL_net-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@sysfault.org
 COMMENT=	A small sample cross-platform networking library
 
+USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
