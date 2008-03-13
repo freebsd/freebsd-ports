@@ -1,6 +1,6 @@
---- Makefile.GnuLinux.orig	Tue Jun 27 18:14:31 2006
-+++ Makefile.GnuLinux	Tue Feb  6 21:58:05 2007
-@@ -12,16 +12,16 @@
+--- Makefile.GnuLinux.orig	Mon Apr 23 18:30:54 2007
++++ Makefile.GnuLinux	Tue Aug 14 01:57:08 2007
+@@ -15,16 +15,16 @@
  ##
  
  
@@ -10,7 +10,7 @@
  
  # various GL and X windows  librariesneeded for linux
  # also need portaudio library (which in turn needs pthreads)
--PLATFORM_LINK_FLAGS = -L/usr/X11R6/lib -lGL -lglut -lGLU -lX11 -lXi -lXext -lXmu ${PORT_AUDIO_PATH}/lib/libportaudio.a -lpthread
+-PLATFORM_LINK_FLAGS = -L/usr/X11R6/lib -lGL -lglut -lGLU -lX11 ${PORT_AUDIO_PATH}/lib/libportaudio.a -lpthread
 +PLATFORM_LINK_FLAGS = -L${LOCALBASE}/lib -L${X11BASE}/lib -lGL -lglut -lGLU -lX11 -lXi -lXext -lXmu -pthread -lportaudio
  
  
