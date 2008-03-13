@@ -7,11 +7,11 @@
 
 PORTNAME=	cvsup-mirror
 PORTVERSION=	1.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 DISTFILES=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	A kit for easily setting up a FreeBSD mirror site using CVSup
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/cvsupd:${PORTSDIR}/net/cvsup-without-gui
