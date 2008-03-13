@@ -1,0 +1,17 @@
+Post-install of GeoServer
+=========================
+
+To run geoserver at startup, add
+  geoserver_enable="YES"
+in you /etc/rc.conf .
+
+To operate geoserver manually, you can use the scripts
+  %%PREFIX%%/lib/geoserver/bin/startup.sh
+and
+  %%PREFIX%%/lib/geoserver/bin/shutdown.sh
+
+On your client machine, open the brower with:
+  http://localhost:8080/geoserver
+to configure the GIS server.
+ 
+Enjoy it!
