@@ -14,6 +14,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Simple program for displaying a menu in a window
 
 USE_XLIB=	yes
+USE_PERL5_BUILD=yes
 MAN1=		ratmen.1
 PLIST_FILES=	bin/ratmen
 
