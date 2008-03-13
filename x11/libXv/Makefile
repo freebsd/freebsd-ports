@@ -7,6 +7,7 @@
 
 PORTNAME=	libXv
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -14,7 +15,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Video Extension library
 
 XORG_CAT=	lib
-USE_XORG=	x11 xext xextproto videoproto:both
+USE_XORG=	x11 xext xextproto videoproto:both xproto:both
 
 MAN3=	Xv.3 \
 	XvFreeAdaptorInfo.3 \

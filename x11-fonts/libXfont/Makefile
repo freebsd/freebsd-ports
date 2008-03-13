@@ -7,7 +7,7 @@
 
 PORTNAME=	libXfont
 PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 
@@ -17,6 +17,6 @@ COMMENT=	X font libary
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 XORG_CAT=	lib
-USE_XORG=	fontcacheproto xproto xtrans fontsproto:both fontenc
+USE_XORG=	fontcacheproto xproto:both xtrans fontsproto:both fontenc
 
 .include <bsd.port.mk>

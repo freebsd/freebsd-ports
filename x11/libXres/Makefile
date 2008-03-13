@@ -7,14 +7,14 @@
 
 PORTNAME=	libXres
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Resource usage library
 
 XORG_CAT=	lib
-USE_XORG=	x11 xext xextproto resourceproto
+USE_XORG=	x11 xext xextproto resourceproto xproto:both
 
 MAN3=		XRes.3 \
 		XResQueryClients.3 \

@@ -7,13 +7,14 @@
 
 PORTNAME=	libdmx
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	DMX extension library
 
 XORG_CAT=	lib
-USE_XORG=	x11 xext xextproto dmxproto
+USE_XORG=	x11 xext xextproto dmxproto:both
 
 MAN3=		DMX.3 \
 		DMXAddInput.3 \

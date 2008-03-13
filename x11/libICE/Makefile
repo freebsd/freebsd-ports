@@ -7,6 +7,7 @@
 
 PORTNAME=	libICE
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -14,6 +15,6 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Inter Client Exchange library for X11
 
 XORG_CAT=	lib
-USE_XORG=	xproto xtrans
+USE_XORG=	xproto:both xtrans
 
 .include <bsd.port.mk>
