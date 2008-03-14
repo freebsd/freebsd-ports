@@ -10,8 +10,6 @@ share/dict/edict/aviation
 share/dict/edict/aviation.xjdx
 share/dict/edict/compdic
 share/dict/edict/compdic.xjdx
-share/dict/edict/compverb
-share/dict/edict/compverb.xjdx
 share/dict/edict/concrete
 share/dict/edict/concrete.xjdx
 share/dict/edict/ediclsd3
@@ -49,11 +47,9 @@ share/dict/edict/.xjdicrc
 @dirrm share/dict/edict
 share/doc/xjdic/4jword3_inf.txt
 share/doc/xjdic/aviation.txt
-share/doc/xjdic/compverb.doc
 share/doc/xjdic/concrete.doc
 share/doc/xjdic/ediclsd3.rme
 share/doc/xjdic/edict_doc.html
-share/doc/xjdic/edict_doc.txt
 share/doc/xjdic/edicth.doc
 share/doc/xjdic/enamdict_doc.html
 share/doc/xjdic/enamdict_doc.txt
