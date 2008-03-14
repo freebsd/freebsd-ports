@@ -138,7 +138,7 @@ upgrades.
    AFFECTS: users of www/ziproxy
    AUTHOR: pankov_p@mail.ru
 
-   The configuration file was moved from /usr/local/etc to 
+   The configuration file was moved from /usr/local/etc to
    /usr/local/etc/ziproxy.
 
 20080126:
@@ -178,7 +178,7 @@ upgrades.
    port. WITH_BERKELEYDB knob is deprecated in favor of WITH_BDB and
    WITH_BDB_VER/WITH_BDB_BASE, see documentation for more details.
    ('make show-options').
-    
+
 20080118:
   AFFECTS: users of net/freeradius
   AUTHOR: David Wood <david@wood2.org.uk>
@@ -190,20 +190,20 @@ upgrades.
   too difficult for the 1.x server, as well as many new features.
 
   Before uninstalling 1.x, it is recommended that you backup your
-  configuration, which is typically in /usr/local/etc/raddb, then move 
+  configuration, which is typically in /usr/local/etc/raddb, then move
   it out of the way. It is also worth backing up the default configuration,
   which is typically in /usr/local/share/examples/freeradius/raddb.
 
-  1.x configurations should work with the 2.0 server [2]. However the 
-  port automatically upgrades any unedited files in the configuration when 
-  you install a new version of FreeRADIUS. Installing 2.0 with the residue 
-  of a 1.x configuration in the default location will result in a mixed 1.x and 
+  1.x configurations should work with the 2.0 server [2]. However the
+  port automatically upgrades any unedited files in the configuration when
+  you install a new version of FreeRADIUS. Installing 2.0 with the residue
+  of a 1.x configuration in the default location will result in a mixed 1.x and
   2.0 configuration that may not work.
 
   The recommended approach is to diff your 1.x configuration against the
-  default 1.x configuration, then make corresponding changes to a copy 
-  of the default 2.0 configuration. If you moved your 1.x configuration out of 
-  the way before upgrading, you will have a 2.0 configuration ready to edit in 
+  default 1.x configuration, then make corresponding changes to a copy
+  of the default 2.0 configuration. If you moved your 1.x configuration out of
+  the way before upgrading, you will have a 2.0 configuration ready to edit in
   the default location. It is worth reading man 5 unlang for details of
   the new FreeRADIUS 'un-language' before starting.
 
@@ -213,7 +213,7 @@ upgrades.
 
   radiusd_flags="-d /usr/local/etc/raddb_v1"
 
-  I cannot guarantee that all 1.x configurations will work with the 2.0 
+  I cannot guarantee that all 1.x configurations will work with the 2.0
   server,and I only recommend using a 1.x configuration as an interim measure.
 
      [1] - http://www.freeradius.org/business/roadmap.html
