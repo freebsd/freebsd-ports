@@ -1,0 +1,55 @@
+bin/randomshooter
+%%DATADIR%%/font/blackWolf.ttf
+%%DATADIR%%/gfx/enemy_bullet0001.png
+%%DATADIR%%/gfx/enemy_frame0001.png
+%%DATADIR%%/gfx/enemy_frame0002.png
+%%DATADIR%%/gfx/enemy_frame0003.png
+%%DATADIR%%/gfx/enemy_frame0004.png
+%%DATADIR%%/gfx/enemy_frame0005.png
+%%DATADIR%%/gfx/enemy_frame0006.png
+%%DATADIR%%/gfx/enemy_frame0007.png
+%%DATADIR%%/gfx/enemy_frame0008.png
+%%DATADIR%%/gfx/enemy_frame0009.png
+%%DATADIR%%/gfx/enemy_frame0010.png
+%%DATADIR%%/gfx/enemy_frame0011.png
+%%DATADIR%%/gfx/enemy_frame0012.png
+%%DATADIR%%/gfx/enemy_frame0013.png
+%%DATADIR%%/gfx/enemy_frame0014.png
+%%DATADIR%%/gfx/enemy_frame0015.png
+%%DATADIR%%/gfx/menu_ball0001.png
+%%DATADIR%%/gfx/menu_ball0002.png
+%%DATADIR%%/gfx/menu_ball0003.png
+%%DATADIR%%/gfx/menu_ball0004.png
+%%DATADIR%%/gfx/menu_ball0005.png
+%%DATADIR%%/gfx/menu_ball0006.png
+%%DATADIR%%/gfx/menu_ball0007.png
+%%DATADIR%%/gfx/menu_ball0008.png
+%%DATADIR%%/gfx/menu_ball0009.png
+%%DATADIR%%/gfx/menu_ball0010.png
+%%DATADIR%%/gfx/menu_ball0011.png
+%%DATADIR%%/gfx/menu_ball0012.png
+%%DATADIR%%/gfx/menu_ball0013.png
+%%DATADIR%%/gfx/menu_ball0014.png
+%%DATADIR%%/gfx/menu_ball0015.png
+%%DATADIR%%/gfx/player0001.png
+%%DATADIR%%/gfx/player_bullet0001.png
+%%DATADIR%%/gfx/points_frame0001.png
+%%DATADIR%%/gfx/points_frame0002.png
+%%DATADIR%%/gfx/points_frame0003.png
+%%DATADIR%%/gfx/points_frame0004.png
+%%DATADIR%%/gfx/points_frame0005.png
+%%DATADIR%%/gfx/points_frame0006.png
+%%DATADIR%%/gfx/points_frame0007.png
+%%DATADIR%%/gfx/points_frame0008.png
+%%DATADIR%%/gfx/points_frame0009.png
+%%DATADIR%%/gfx/points_frame0010.png
+%%DATADIR%%/gfx/points_frame0011.png
+%%DATADIR%%/gfx/points_frame0012.png
+%%DATADIR%%/gfx/points_frame0013.png
+%%DATADIR%%/gfx/points_frame0014.png
+%%DATADIR%%/gfx/points_frame0015.png
+%%DATADIR%%/music/17.mod
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%/font
+@dirrm %%DATADIR%%

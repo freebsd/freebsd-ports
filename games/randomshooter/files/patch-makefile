@@ -1,0 +1,33 @@
+--- makefile.orig	2008-02-26 00:44:53.000000000 +0300
++++ makefile	2008-02-27 23:28:42.000000000 +0300
+@@ -1,19 +1,19 @@
+ VERSION = 0.1
+ 
+-CFLAGS = -Wall -pedantic -Werror -DUNIX -DVERSION=$(VERSION)
+-LFLAGS = `sdl-config --libs` -lSDL -lSDL_mixer -lSDL_image -lSDL_ttf -lSDL_net
++CXXFLAGS += -Wall -DUNIX -DVERSION=$(VERSION) `${SDL_CONFIG} --cflags`
++LFLAGS = `${SDL_CONFIG} --libs` -lSDL_mixer -lSDL_image -lSDL_ttf -lSDL_net
+ OBJS   = animation.o audio.o bullets.o collisions.o colors.o draw.o enemies.o entities.o font.o game.o highscores.o
+ OBJS += init.o input.o main.o menu.o movement.o particles.o player.o random.o replay.o score.o screenshot.o
+ OBJS += settings.o stars.o vector.o wave.o weapons.o
+ PROG = randomshooter
+-CXX = gcc
++CXX ?= gcc
+ 
+ # top-level rule to create the program.
+ all: $(PROG)
+ 
+ # compiling other source files.
+ %.o: src/%.c src/%.h src/structs.h src/defs.h
+-	$(CXX) $(CFLAGS) -c -s $<
++	$(CXX) $(CXXFLAGS) -c -s $<
+ 
+ # linking the program.
+ $(PROG): $(OBJS)
+@@ -24,4 +24,4 @@
+ 	rm $(PROG) *.o
+ 
+ install:
+-	echo "make install isn't supported yet..."
+\ No newline at end of file
++	echo "make install isn't supported yet..."

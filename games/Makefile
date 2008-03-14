@@ -667,6 +667,7 @@
     SUBDIR += qwdtools
     SUBDIR += r1q2
     SUBDIR += race
+    SUBDIR += randomshooter
     SUBDIR += reminiscence
     SUBDIR += rfksay
     SUBDIR += ri-li
