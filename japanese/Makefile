@@ -168,6 +168,7 @@
     SUBDIR += kterm
     SUBDIR += kterm16c
     SUBDIR += lambdamoo
+    SUBDIR += latex-japanese
     SUBDIR += latex2html
     SUBDIR += leafrogue
     SUBDIR += less
