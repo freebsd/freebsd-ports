@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_EFL=	imlib2
+USE_ICONV=	yes
 WANT_PERL=	yes
 
 MAN1=		adesklets.1 \
@@ -34,6 +35,7 @@ INFO=		adesklets \
 
 SUB_FILES=	pkg-message
 INSTALLS_EGGINFO=	yes
+LDFLAGS+=	-liconv
 
 .if !defined(WITHOUT_PERL)
 USE_PERL5=	yes
