@@ -18,11 +18,12 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 CFLAGS+=	-fPIC -DPIC
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
+USE_XORG=	xi xext x11
 
 PLIST_FILES=	lib/xmms/Input/libwma.so
+USE_LDCONFIG=	yes
 
 .if defined(WITH_ICONV)
 CFLAGS+=	-DUSE_ICONV
