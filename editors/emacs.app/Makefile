@@ -16,6 +16,8 @@ DISTNAME=	emacs-23.0.0_NS-${PORTVERSION}pre3b
 MAINTAINER=	gurkan@linuks.mine.nu
 COMMENT=	The GNU Emacs editor on GNUstep
 
+BROKEN=		Does not compile
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
