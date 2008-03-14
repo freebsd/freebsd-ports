@@ -22,7 +22,5 @@ lib/libgambc.a
 lib/r4rs#.scm
 lib/r5rs#.scm
 share/emacs/site-lisp/gambit.el
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 syntax-case.scm
 @dirrm doc

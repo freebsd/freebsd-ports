@@ -42,6 +42,4 @@ lib/libFrameUnidraw.so
 lib/libFrameUnidraw.so.1.2.4
 lib/libGraphUnidraw.so
 lib/libGraphUnidraw.so.1.2.4
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm lib/ivtools

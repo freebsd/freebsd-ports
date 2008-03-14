@@ -2483,9 +2483,6 @@ ledger-smb/utils/notify_short/config.pl
 ledger-smb/utils/notify_short/listener.pl
 ledger-smb/winprint.bat
 
-share/nls/POSIX
-share/nls/en_US.US-ASCII
-
 @dirrmtry ledger-smb/users/members
 
 @dirrm ledger-smb/utils/notify_short

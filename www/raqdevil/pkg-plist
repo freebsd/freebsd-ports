@@ -1164,8 +1164,6 @@ share/locale/ja/LC_MESSAGES/base-wizard.mo
 share/locale/ja/LC_MESSAGES/palette.mo
 share/locale/ja/LC_MESSAGES/swatch.mo
 share/locale/ja/LC_MESSAGES/trueBlue.mo
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm raqdevil/ui/web/uifc
 @dirrm raqdevil/ui/web/nav
 @dirrm raqdevil/ui/web/manuals

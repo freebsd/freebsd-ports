@@ -1329,8 +1329,6 @@ bin/forrest
 %%DATADIR%%/tools/xxe/toolBar.xml
 %%DATADIR%%/whiteboard/plugins/build.xml
 %%DATADIR%%/whiteboard/plugins/whiteboard-plugins.xml
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/resources
 @dirrm %%DATADIR%%/build/plugins/org.apache.forrest.plugin.output.pdf/src/documentation/classes

@@ -32,8 +32,6 @@ share/aclocal/check.m4
 %%DOCSDIR%%/example/tests/check_money.6.c
 %%DOCSDIR%%/example/tests/check_money.7.c
 %%DOCSDIR%%/example/tests/check_money.c
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm %%DOCSDIR%%/example/tests
 @dirrm %%DOCSDIR%%/example/src
 @dirrm %%DOCSDIR%%/example

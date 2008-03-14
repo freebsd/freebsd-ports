@@ -467,8 +467,6 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%EXAMPLESDIR%%/UserTask/UserTask.cs
 %%PORTDOCS%%%%EXAMPLESDIR%%/UserTask/default.build
 %%PORTDOCS%%%%EXAMPLESDIR%%/examples.build
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/UserTask
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/StyleTask

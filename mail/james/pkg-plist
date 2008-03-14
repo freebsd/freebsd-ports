@@ -112,8 +112,6 @@
 %%T%%/tools/lib/spice.LICENSE
 %%T%%/tools/lib/xsdlib-20020414.jar
 %%T%%/tools/lib/xsdlib.LICENSE
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm %%T%%/tools/lib
 @dirrm %%T%%/tools
 @dirrm %%T%%/logs
