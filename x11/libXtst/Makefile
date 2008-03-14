@@ -7,13 +7,14 @@
 
 PORTNAME=	libXtst
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Test extension
 
 XORG_CAT=	lib
-USE_XORG=	x11 xext recordproto:both xextproto inputproto
+USE_XORG=	x11 xext recordproto:both xextproto inputproto:both
 USE_AUTOTOOLS=	libtool:15
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
