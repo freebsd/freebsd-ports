@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Text-MeCab
-PORTVERSION=		0.20004
+PORTVERSION=		0.20007
 CATEGORIES=		japanese textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -29,9 +29,6 @@ ENCODING?=	utf-8
 post-patch:
 	@${REINPLACE_CMD} -e "/default_encoding = /s/utf-8/${ENCODING}/" \
 		${WRKSRC}/tools/probe_mecab.pl
-
-	# To prevent CCFLAGS value from being overwritten by the ports system
-	@${REINPLACE_CMD} -e "s|CCFLAGS|INC|g" ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 
