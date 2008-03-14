@@ -7,7 +7,7 @@
 
 PORTNAME=	jarl
 PORTVERSION=	0.5001
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 DISTNAME=	Jarl-${PORTVERSION}
@@ -31,6 +31,7 @@ makeplist:
 
 post-patch:
 	${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/jarl
+	${FIND} ${WRKSRC}/lib -name "*.orig" -delete
 
 do-install:
 	${MKDIR} ${DATADIR}
