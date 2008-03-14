@@ -139,9 +139,6 @@ bin/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/backports.py
-%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/backports.pyc
-%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/backports.pyo
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/csvexport.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/csvexport.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/csvexport.pyo
@@ -157,6 +154,9 @@ bin/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/versioning/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/versioning/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/versioning/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/views.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/views.pyo
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/wsgi_middleware.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/wsgi_middleware.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/wsgi_middleware.pyo
