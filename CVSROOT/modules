@@ -8440,7 +8440,6 @@ nltk		ports/textproc/nltk
 nltk_lite	ports/textproc/nltk_lite
 nmap		ports/security/nmap
 nmap-i18n-man	ports/security/nmap-i18n-man
-nmapfe		ports/security/nmapfe
 nmh		ports/mail/nmh
 nml		ports/lang/nml
 nmzmail		ports/mail/nmzmail
