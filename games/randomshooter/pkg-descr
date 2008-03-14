@@ -1,0 +1,8 @@
+This is the first release of a shoot em up game written in SDL. The
+objective is simple: you have 1 life and 1 hit will kill you. Try
+and destroy as many enemies as possible before this happens.
+
+The game features an online scoring system and the ability to replay
+game sessions.
+
+WWW: http://www.parallelrealities.co.uk/randomShooter.php
