@@ -36,6 +36,4 @@ share/aclocal/check.m4
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm %%PORTDOCS%%%%DOCSDIR%%
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm %%EXAMPLESDIR%%

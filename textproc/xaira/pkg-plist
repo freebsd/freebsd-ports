@@ -18,5 +18,3 @@ sbin/xaira_daemon
 %%DATADIR%%/cql.xsd
 %%DATADIR%%/xgrammar.xsd
 @dirrm %%DATADIR%%
-@dirrmtry share/nls/en_US.US-ASCII
-@dirrmtry share/nls/POSIX

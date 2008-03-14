@@ -212,8 +212,6 @@ lib/libtorrent.la
 lib/libtorrent.so
 lib/libtorrent.so.1
 libdata/pkgconfig/libtorrent.pc
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm include/libtorrent/kademlia
 @dirrm include/libtorrent/extensions
 @dirrm include/libtorrent/aux_

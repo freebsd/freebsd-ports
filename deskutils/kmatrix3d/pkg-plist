@@ -6,8 +6,6 @@ share/apps/kmatrix3d/textures/nuage1.png
 %%DOCSDIR%%/common
 %%DOCSDIR%%/index.cache.bz2
 %%DOCSDIR%%/index.docbook
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm %%DOCSDIR%%
 @dirrmtry share/doc/HTML/en
 @dirrmtry share/doc/HTML

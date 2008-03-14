@@ -14,8 +14,6 @@ share/CUnit/CUnit-Run.dtd
 share/CUnit/CUnit-Run.xsl
 share/CUnit/Memory-Dump.dtd
 share/CUnit/Memory-Dump.xsl
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 %%PORTDOCS%%%%DOCSDIR%%/CUnit_doc.css
 %%PORTDOCS%%%%DOCSDIR%%/error_handling.html
 %%PORTDOCS%%%%DOCSDIR%%/fdl.html

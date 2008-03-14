@@ -66,8 +66,6 @@ share/servicetypes/katapultcatalog.desktop
 share/servicetypes/katapultdisplay.desktop
 @dirrmtry share/servicetypes
 @dirrmtry share/services
-@dirrmtry share/nls/en_US.US-ASCII
-@dirrmtry share/nls/POSIX
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/64x64/apps

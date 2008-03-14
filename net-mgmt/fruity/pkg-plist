@@ -1,5 +1,3 @@
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 etc/fruity.config.inc-sample
 www/fruity/CHANGELOG
 www/fruity/INSTALL
