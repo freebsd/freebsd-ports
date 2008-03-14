@@ -1,16 +1,18 @@
-share/doc/bodr/bibxml/elements_biblio.html
-share/doc/bodr/bibxml/crystalstructures_biblio.html
 share/doc/bodr/AUTHORS
 share/doc/bodr/THANKS
 share/doc/bodr/ChangeLog
 share/doc/bodr/COPYING
 share/doc/bodr/README
+share/doc/bodr/biblio/crystalstructures_biblio.html
+share/doc/bodr/biblio/elements_biblio.html
+share/doc/bodr/biblio/space-groups_biblio.html
 share/bodr/dicts/blueobelisk-dictionary.xml
 share/bodr/crystalstructures.xml
 share/bodr/elements.xml
 share/bodr/isotopes.xml
+share/bodr/space-groups.xml
 libdata/pkgconfig/bodr.pc
 @dirrm share/bodr/dicts
 @dirrm share/bodr
-@dirrm share/doc/bodr/bibxml
+@dirrm share/doc/bodr/biblio
 @dirrm share/doc/bodr
