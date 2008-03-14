@@ -10,7 +10,7 @@ PORTVERSION=	0.0.4
 PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://dragon.roe.ch/bitsnpieces/fiked/ \
-		http://home.tiscalinet.ch/roe/fiked/
+		http://mirror.roe.ch/dist/fiked/
 
 MAINTAINER=	daniel@roe.ch
 COMMENT=	A fake IKE PSK+XAUTH daemon based on VPNC
