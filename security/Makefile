@@ -295,7 +295,6 @@
     SUBDIR += nikto
     SUBDIR += nmap
     SUBDIR += nmap-i18n-man
-    SUBDIR += nmapfe
     SUBDIR += nofgpg
     SUBDIR += nsm-console
     SUBDIR += nss
