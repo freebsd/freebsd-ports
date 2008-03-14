@@ -1,0 +1,11 @@
+--- nbase/configure.orig	Tue Nov 27 20:32:49 2007
++++ nbase/configure	Fri Jan  4 17:10:41 2008
+@@ -3015,7 +3015,7 @@
+ 
+ 
+ 
+-for ac_header in string.h getopt.h strings.h sys/param.h sys/time.h unistd.h errno.h sys/types.h sys/socket.h netinet/in.h arpa/inet.h sys/stat.h net/if.h netdb.h sys/wait.h fcntl.h sys/resource.h
++for ac_header in string.h strings.h sys/param.h sys/time.h unistd.h errno.h sys/types.h sys/socket.h netinet/in.h arpa/inet.h sys/stat.h net/if.h netdb.h sys/wait.h fcntl.h sys/resource.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then

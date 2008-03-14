@@ -4,12 +4,9 @@ scanning techniques, version detection (determine service protocols
 and application versions listening behind ports), and TCP/IP
 fingerprinting (remote host OS or device identification). Nmap also
 offers flexible target and port specification, decoy/stealth scanning,
-sunRPC scanning, and more.
+sunRPC scanning, and much more.
 
 WWW: http://www.insecure.org/nmap/
 
-See the web page and the Phrack Magazine article (Volume 7, Issue 51 
+See the web page and the Phrack Magazine article (Volume 7, Issue 51
 September 01, 1997, article 11 of 17) http://www.insecure.org/nmap/p51-11.txt
-
--- David
-   obrien@cs.ucdavis.edu

@@ -1,6 +1,0 @@
-bin/nmapfe
-bin/xnmap
-@cwd %%X11BASE%%
-share/applications/nmapfe.desktop
-@dirrmtry share/applications
-@cwd %%REALPREFIX%%
