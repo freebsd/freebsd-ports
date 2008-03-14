@@ -1,0 +1,4 @@
+zenmap is the official GUI front end for the nmap port scanning tool.
+Originally based on umit, it has replaced nmapfe as per nmap 4.50.
+
+WWW: http://www.insecure.org/nmap/
