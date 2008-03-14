@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	nmap-i18n-man
-PORTVERSION=	4.01.20060302
+PORTVERSION=	4.53.20080303
 CATEGORIES=	security ipv6
-MASTER_SITES=	http://www.insecure.org/nmap/data/man-xlate/ \
-		http://home.tiscalinet.ch/~roe/distfiles/${DIST_SUBDIR}/
+MASTER_SITES=	http://nmap.org/data/man-xlate/ \
+		http://mirror.roe.ch/dist/${PORTNAME}/${PORTVERSION}/
 DISTFILES=	${LANG_MAP:C/^/nmap-/:C/=[^=]*$/.1/}	# OPTIONS based
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
@@ -29,6 +29,7 @@ NO_WRKSUBDIR=	yes
 OPTIONS=	MAN_ES "Spanish" On \
 		MAN_FR "French" On \
 		MAN_HR "Croatian" On \
+		MAN_IT "Italian" On \
 		MAN_JP "Japanese" On \
 		MAN_PL "Polish" On \
 		MAN_PT_BR "Portuguese (Brazil)" On \
@@ -48,6 +49,9 @@ LANG_MAP+=	fr=fr.ISO8859-1
 .endif
 .if !defined(WITHOUT_MAN_HR)
 LANG_MAP+=	hr=hr.ISO8859-2
+.endif
+.if !defined(WITHOUT_MAN_IT)
+LANG_MAP+=	it=it.ISO8859-1
 .endif
 .if !defined(WITHOUT_MAN_JP)
 LANG_MAP+=	jp=jp.eucJP

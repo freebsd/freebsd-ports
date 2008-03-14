@@ -4,6 +4,8 @@
 @dirrmtry man/fr.ISO8859-1
 @dirrmtry man/hr.ISO8859-2/man1
 @dirrmtry man/hr.ISO8859-2
+@dirrmtry man/it.ISO8859-1/man1
+@dirrmtry man/it.ISO8859-1
 @dirrmtry man/jp.eucJP/man1
 @dirrmtry man/jp.eucJP
 @dirrmtry man/pl.ISO8859-2/man1
