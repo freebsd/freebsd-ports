@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080314:
+  AFFECTS: users of security/nmapfe
+  AUTHOR: miwi@FreeBSD.org
+
+    nmapfe has been renamed to zenmap upstream. The port has also been
+    renamed. If you haven't already installed nmapfe, you need to:
+
+    portupgrade -o security/zenmap nmapfe\*
+
 20080313:
   AFFECTS: users of mail/ezmlm-web
   AUTHOR: hans@nordhaug.priv.no
