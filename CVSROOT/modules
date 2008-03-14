@@ -5348,6 +5348,7 @@ ja-kpcal	ports/japanese/kpcal
 ja-kterm	ports/japanese/kterm
 ja-kterm16c	ports/japanese/kterm16c
 ja-lambdamoo	ports/japanese/lambdamoo
+ja-latex-japanese	ports/japanese/latex-japanese
 ja-latex2html	ports/japanese/latex2html
 ja-leafrogue	ports/japanese/leafrogue
 ja-less		ports/japanese/less
