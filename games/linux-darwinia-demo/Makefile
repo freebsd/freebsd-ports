@@ -8,7 +8,7 @@
 PORTNAME=	darwinia-demo
 PORTVERSION=	1.3.0
 CATEGORIES=	games linux
-MASTER_SITES=	http://www.introversion.co.uk/darwinia/downloads/
+MASTER_SITES=	http://download.introversion.co.uk/mirror/introversion/darwinia/downloads/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}2-${PORTVERSION}
 EXTRACT_SUFX=	.sh
