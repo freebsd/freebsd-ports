@@ -43,4 +43,7 @@ do-install:
 	cd ${WRKSRC} && ${SETUP_CMD} install \
 		     && ${INSTALL_SCRIPT} register.sh ${PREFIX}/${UULIB_LIBDIR_REL}/register.sh
 
+post-install:
+	${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
+
 .include <bsd.port.mk>
