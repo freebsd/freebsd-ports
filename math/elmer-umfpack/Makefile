@@ -7,10 +7,10 @@
 
 PORTNAME=	umfpack
 PORTVERSION=	4.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
+MASTER_SITES=	SF/elmerfem
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	araujo@FreeBSD.org
