@@ -400,6 +400,7 @@ share/locale/nb/LC_MESSAGES/kino.mo
 share/locale/no/LC_MESSAGES/kino.mo
 share/locale/ru/LC_MESSAGES/kino.mo
 share/locale/sv/LC_MESSAGES/kino.mo
+share/locale/uk/LC_MESSAGES/kino.mo
 share/mime/packages/kino.xml
 @dirrm include/kino
 @dirrm lib/kino-gtk2
