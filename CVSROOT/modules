@@ -14146,6 +14146,7 @@ raknet		ports/devel/raknet
 rancid		ports/net-mgmt/rancid
 rancid-devel		ports/net-mgmt/rancid-devel
 rand		ports/textproc/rand
+randomshooter	ports/games/randomshooter
 randrproto	ports/x11/randrproto
 raop_play	ports/audio/raop_play
 rapid		ports/math/rapid
