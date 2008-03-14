@@ -5,5 +5,11 @@
 %%SITE_PERL%%/Catalyst/Helper/View/Email.pm
 %%SITE_PERL%%/Catalyst/Helper/View/Email/Template.pm
 @dirrmtry %%SITE_PERL%%/mach/auto/Catalyst/View/Email
+@dirrmtry %%SITE_PERL%%/mach/auto/Catalyst/View
+@dirrmtry %%SITE_PERL%%/mach/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/View/Email
+@dirrmtry %%SITE_PERL%%/Catalyst/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/Email
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst
