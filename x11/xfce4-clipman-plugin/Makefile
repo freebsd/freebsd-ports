@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-clipman-plugin
-PORTVERSION=	0.8.0
-PORTREVISION=	4
+PORTVERSION=	0.8.1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -21,6 +20,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv panel libgui libutil
-USE_XLIB=	yes
+USE_XORG=	x11 ice sm xpm
 
 .include <bsd.port.mk>

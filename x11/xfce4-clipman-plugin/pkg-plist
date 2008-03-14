@@ -2,12 +2,19 @@ libexec/xfce4/panel-plugins/xfce4-clipman-plugin
 share/locale/ca/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/en_GB/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/eu/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/it/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/lv/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/nb_NO/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/ur/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/pt_PT/LC_MESSAGES/xfce4-clipman-plugin.mo
+share/locale/uk/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/xfce4/panel-plugins/clipman.desktop
 @dirrmtry share/xfce4/panel-plugins
