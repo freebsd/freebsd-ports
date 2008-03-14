@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgeotiff
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/geotiff/libgeotiff/ \
 		http://dl1.maptools.org/dl/geotiff/libgeotiff/
@@ -18,13 +18,15 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		proj.5:${PORTSDIR}/graphics/proj \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_GNOME=	gnometarget
+USE_AUTOTOOLS=	automake:15:env autoconf:261:env
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
 		--with-proj=${LOCALBASE} \
 		--with-libtiff=${LOCALBASE}
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+CFLAGS+=	-L${LOCALBASE}/lib \
+		-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 

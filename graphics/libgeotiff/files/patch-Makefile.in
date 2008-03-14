@@ -1,6 +1,15 @@
---- Makefile.in.orig	Mon Jan 20 18:11:03 2003
-+++ Makefile.in	Fri Dec  9 17:10:37 2005
-@@ -200,20 +200,7 @@
+--- Makefile.in.orig	Wed Aug 17 00:21:20 2005
++++ Makefile.in	Fri Nov  2 21:25:30 2007
+@@ -93,7 +93,7 @@
+ 
+ TARGETS = libgeotiff.a
+ 
+-all:    Makefile ${TARGETS} ${GEOTIFF_SO} Progs
++all:    ${TARGETS} ${GEOTIFF_SO} Progs
+ 
+ libgeotiff.a: ${OBJS}
+ 	${AR} ${AROPTS} libgeotiff.a $?
+@@ -201,20 +201,7 @@
  	$(INSTALL) csv/*.csv $(DESTDIR)$(datadir)
  	$(INSTALL) -d $(DESTDIR)$(bindir)
  	$(INSTALL) bin/listgeo$(EXEEXT) bin/geotifcp$(EXEEXT) $(DESTDIR)$(bindir)
@@ -10,13 +19,13 @@
 -		else \
 -			$(INSTALL) $(GEOTIFF_SO) $(DESTDIR)${libdir}; \
 -			(cd $(DESTDIR)${libdir} ; \
--			rm -f libgeotiff.so.$(VERSION_MAJOR).$(VERSION_MINOR); \
--			${LN} $(GEOTIFF_SO) libgeotiff.so.$(VERSION_MAJOR).$(VERSION_MINOR); \
--			rm -f libgeotiff.so.$(VERSION_MAJOR); \
--			${LN} libgeotiff.so.$(VERSION_MAJOR).$(VERSION_MINOR) \
--			libgeotiff.so.$(VERSION_MAJOR); \
--			rm -f libgeotiff.so; \
--			${LN} libgeotiff.so.$(VERSION_MAJOR) libgeotiff.so; );\
+-			rm -f libgeotiff.$(SO_EXT).$(VERSION_MAJOR).$(VERSION_MINOR); \
+-			${LN} $(GEOTIFF_SO) libgeotiff.$(SO_EXT).$(VERSION_MAJOR).$(VERSION_MINOR); \
+-			rm -f libgeotiff.$(SO_EXT).$(VERSION_MAJOR); \
+-			${LN} libgeotiff.$(SO_EXT).$(VERSION_MAJOR).$(VERSION_MINOR) \
+-			libgeotiff.$(SO_EXT).$(VERSION_MAJOR); \
+-			rm -f libgeotiff.$(SO_EXT); \
+-			${LN} libgeotiff.$(SO_EXT).$(VERSION_MAJOR) libgeotiff.$(SO_EXT); );\
 -		fi;\
 -	fi
 +	$(INSTALL) $(GEOTIFF_SO) $(DESTDIR)$(libdir)/libgeotiff.so.$(VERSION_MAJOR)

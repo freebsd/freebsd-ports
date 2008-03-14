@@ -41,6 +41,7 @@ share/epsg_csv/datum.csv
 share/epsg_csv/deprecation.csv
 share/epsg_csv/ellipsoid.csv
 share/epsg_csv/gcs.csv
+share/epsg_csv/gcs.override.csv
 share/epsg_csv/naming_system.csv
 share/epsg_csv/pcs.csv
 share/epsg_csv/prime_meridian.csv
