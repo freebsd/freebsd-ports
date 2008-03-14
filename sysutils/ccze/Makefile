@@ -9,8 +9,8 @@ PORTNAME=	ccze
 PORTVERSION=	0.2.1
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://bonehunter.rulez.org/pub/ccze/stable/ \
-				http://ipv42.net/distfiles/ccze/
+MASTER_SITES=	http://falafel.200ok.org/distfiles/ccze/ \
+		http://200ok.org/distfiles/ccze/
 
 MAINTAINER=	ecu@ipv42.net
 COMMENT=	Fast log colorizer
