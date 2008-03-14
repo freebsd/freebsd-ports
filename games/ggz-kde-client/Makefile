@@ -7,7 +7,6 @@
 
 PORTNAME=	ggz-kde-client
 PORTVERSION=	${GGZ_VERSION}
-PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
