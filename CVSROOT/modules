@@ -4771,7 +4771,6 @@ hs-opengl-ghc	ports/x11-toolkits/hs-opengl-ghc
 hs-tclhaskell-ghc	ports/devel/hs-tclhaskell-ghc
 hs-uuagc	ports/devel/hs-uuagc
 hs-uulib	ports/devel/hs-uulib
-hs-x11-extras-ghc	ports/x11/hs-x11-extras-ghc
 hs-x11-ghc	ports/x11/hs-x11-ghc
 hsb-aspell	ports/textproc/hsb-aspell
 hsetroot	ports/graphics/hsetroot
