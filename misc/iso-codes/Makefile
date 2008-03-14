@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	iso-codes
-DISTVERSION=	1.9
+DISTVERSION=	2.0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/ \
-		LOCAL
-MASTER_SITE_SUBDIR=	tabthorpe
+MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lists of the country, language and currency iso names
 
 BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
