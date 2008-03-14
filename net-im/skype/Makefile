@@ -29,6 +29,8 @@ USE_BZIP2=	yes
 USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 
+BROKEN=		incorrect distfile
+
 RESTRICTED=	Redistribution prohibited.
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-oss
