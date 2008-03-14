@@ -19,13 +19,13 @@ include/sigcx-0.6/sigcx/timeval.h
 include/sigcx-0.6/sigcx/tunnel.h
 include/sigcx-0.6/sigcx/util.h
 lib/libsigcx-0.6.a
+lib/libsigcx-0.6.la
 lib/libsigcx-0.6.so
-lib/libsigcx-0.6.so.3
+lib/libsigcx-0.6.so.4
 lib/libsigcx-gtk-0.6.a
+lib/libsigcx-gtk-0.6.la
 lib/libsigcx-gtk-0.6.so
 lib/libsigcx-gtk-0.6.so.1
-lib/libsigcx-0.6.la
-lib/libsigcx-gtk-0.6.la
 lib/sigcx-0.6/include/sigcxconfig.h
 libdata/pkgconfig/sigcx-0.6-gtk+.pc
 libdata/pkgconfig/sigcx-0.6.pc

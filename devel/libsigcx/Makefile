@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	libsigcx
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.6.6
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extension of libSigC++
@@ -19,12 +17,11 @@ COMMENT=	An extension of libSigC++
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
-USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack gtk20
+USE_GNOME=	gnomehack gnometarget gtk20
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--enable-static --enable-shared
+USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}" \
+		ac_cv_path_DOXYGEN=""
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
