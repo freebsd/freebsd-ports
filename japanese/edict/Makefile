@@ -7,10 +7,16 @@
 
 PORTNAME=	edict
 PORTVERSION=	19990714
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
+MASTER_SITES=	\
+		http://japanology.arts.kuleuven.ac.be/mirrors/monash/ \
+		http://www.bcit-broadcast.com/monash/ \
+		ftp://ftp.mirrorservice.org/sites/ftp.cc.monash.edu.au/pub/nihongo/ \
+		ftp://ftp.edrdg.org/pub/Nihongo/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/ \
+		ftp://ftp.funet.fi/pub/culture/japan/mirrors/monash/pub/nihongo/ \
+		ftp://ftp.uni-duisburg.de/Mirrors/ftp.monash.edu.au/pub/nihongo/ \
 		ftp://ftp.cc.monash.edu.au/pub/nihongo/
 EXTRACT_SUFX=
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
@@ -27,15 +33,15 @@ DICTFILES=	edict.gz edicth enamdict.gz compdic.gz \
 		kanjidic.gz kanjd212.gz lawgledt.zip \
 		lingdic.zip geodic.gz pandpdic.zip \
 		aviation.zip findic.zip mktdic.zip \
-		compverb.gz 4jword3_edict.zip concrete.zip
+		4jword3_edict.zip concrete.zip
 
 SRCFILES=	xjdic23.tgz
 
-DOCFILES=	edict_doc.txt edict_doc.html edicth.doc \
+DOCFILES=	edict_doc.html edicth.doc \
 		enamdict_doc.txt enamdict_doc.html \
 		j_places.inf kanjidic.doc kanjd212.doc ediclsd3.rme \
 		lawgldoc.new lingdic.txt geodic.doc aviation.txt \
-		findic.doc mktdic.doc compverb.doc 4jword3_inf.txt \
+		findic.doc mktdic.doc 4jword3_inf.txt \
 		concrete.doc
 
 #
@@ -55,7 +61,7 @@ NO_WRKSUBDIR=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not build"
+BROKEN=		Does not build
 .endif
 
 do-extract:
@@ -148,7 +154,6 @@ do-install:
 	@${ECHO_CMD} dicfile aviation >> ${DATADIR}/.xjdicrc
 	# @${ECHO_CMD} dicfile findic >> ${DATADIR}/.xjdicrc
 	# @${ECHO_CMD} dicfile mktdic >> ${DATADIR}/.xjdicrc
-	@${ECHO_CMD} dicfile compverb >> ${DATADIR}/.xjdicrc
 	@${ECHO_CMD} dicfile 4jword3_edict.euc >> ${DATADIR}/.xjdicrc
 	# @${ECHO_CMD} dicfile concrete.doc >> ${DATADIR}/.xjdicrc
 	# @${ECHO_CMD} dicfile lingdic >> ${DATADIR}/.xjdicrc
