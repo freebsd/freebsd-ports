@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wine-doors
-PORTVERSION=	0.1
+PORTVERSION=	0.1.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.wine-doors.org/releases/
 
@@ -29,8 +29,7 @@ NO_BUILD=	yes
 SUB_FILES=	preferences.xml
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} 's|/etc/wine-doors|${PREFIX}/etc/wine-doors|g' \
+	@${REINPLACE_CMD} 's|/etc/${PORTNAME}|${PREFIX}/etc/${PORTNAME}|g' \
 		${WRKSRC}/src/preferences.py
 	@${GREP} -lr '^#!/bin/bash' ${WRKDIR} | ${XARGS} \
 		${REINPLACE_CMD} 's|^#!/bin/bash|#!${LOCALBASE}/bin/bash|'
@@ -38,7 +37,7 @@ post-patch:
 do-install:
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${WRKDIR}/preferences.xml ${PREFIX}/etc/${PORTNAME}
-	${PYTHON_CMD} ${WRKSRC}/setup.py install
+	${PYTHON_CMD} ${WRKSRC}/setup.py install --prefix=${PREFIX}
 
 .include <bsd.port.pre.mk>
 
