@@ -3431,3 +3431,4 @@ x11/XFree86-4-libraries||2008-03-07|XFree86-4 is no longer supported on FreeBSD
 x11/XFree86-4-manuals||2008-03-07|XFree86-4 is no longer supported on FreeBSD
 x11/ecore|devel/ecore|2008-03-12|Change category
 www/scout||2008-03-12|Has expired: Abandonware, website disappeared.
+security/nmapfe|security/zenmap|2008-03-14|Project renamed
