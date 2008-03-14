@@ -384,7 +384,6 @@
     SUBDIR += mod_cvs2
     SUBDIR += mod_dav
     SUBDIR += mod_domaintree
-    SUBDIR += mod_dosevasive20
     SUBDIR += mod_dtcl
     SUBDIR += mod_encoding
     SUBDIR += mod_evasive20
