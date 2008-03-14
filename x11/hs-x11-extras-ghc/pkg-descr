@@ -1,7 +1,0 @@
-Missing bindings to the X11 graphics library.
-
-The binding is a direct translation of the C binding; for documentation
-of these calls, refer to The Xlib Programming Manual, available
-online at http://tronche.com/gui/x/xlib/.
-
-WWW: http://hackage.haskell.org/cgi-bin/hackage-scripts/package/X11-extras-0.3
