@@ -7,6 +7,7 @@
 
 PORTNAME=	paq
 DISTVERSION=	8o9
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cs.fit.edu/~mmahoney/compression/
 DISTNAME=	${PORTNAME}${DISTVERSION}
