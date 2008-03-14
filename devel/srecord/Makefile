@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	srecord
-PORTVERSION=	1.38
+PORTVERSION=	1.39
 CATEGORIES=	devel
-MASTER_SITES=	SF \
-		http://srecord.sourceforge.net/
+MASTER_SITES=	SF
 
 MAINTAINER=	abwang@gmail.com
 COMMENT=	A collection of powerful tools for manipulating EPROM load files
@@ -56,6 +55,11 @@ MAN5=	srec_aomf.5 \
 	srec_ti_txt.5 \
 	srec_vmem.5 \
 	srec_wilson.5
+
+do-install:
+	@${INSTALL_PROGRAM} ${PLIST_FILES:S,^,${WRKSRC}/,} ${PREFIX}/bin/
+	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man/man1/,} ${MAN1PREFIX}/man/man1/
+	@${INSTALL_MAN} ${MAN5:S,^,${WRKSRC}/man/man5/,} ${MAN5PREFIX}/man/man5/
 
 test:
 	@cd ${WRKSRC} && ${MAKE} sure
