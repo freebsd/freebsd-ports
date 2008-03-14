@@ -21,6 +21,8 @@ LIB_DEPENDS=	pt_r.1:${PORTSDIR}/devel/pwlib \
 		h323_r.1:${PORTSDIR}/net/openh323 \
 		pcre\\+\\+.0:${PORTSDIR}/devel/pcre++
 
+BROKEN=		Does not compile
+
 WRKSRC=		${WRKDIR}/versuch
 
 USE_GMAKE=	yes
