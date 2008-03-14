@@ -5,20 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	nmap
-PORTVERSION=	${DISTVERSION:L:C/([a-z])[a-z]+/\1/g:C/[^a-z0-9+]+/./g}
-PORTREVISION=	1
+PORTNAME=	nmap
+PORTVERSION=	4.52
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://download.insecure.org/nmap/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/ \
 		http://www.mirrorservice.org/sites/ftp.wiretapped.net/pub/security/network-mapping/nmap/ \
 		http://mirror.sg.depaul.edu/pub/security/nmap/
-DISTNAME=	nmap-${DISTVERSION}	# needed for security/nmapfe
 
 MAINTAINER=	daniel@roe.ch
-COMMENT?=	Port scanning utility for large networks
-
-DISTVERSION=	4.20
+COMMENT=	Port scanning utility for large networks
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -28,13 +24,18 @@ CONFIGURE_ARGS=	--without-localdirs
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.ifndef BUILD_NMAPFE
-
 MAN1=		nmap.1
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
+		dnet.1:${PORTSDIR}/net/libdnet
+USE_LUA=	5.1
+LUA_COMPS=	lua
 
-CONFIGURE_ARGS+=	--with-libpcre=${LOCALBASE}
+CONFIGURE_ARGS+=	--without-zenmap \
+			--with-libpcre=${LOCALBASE} \
+			--with-libdnet=${LOCALBASE} \
+			--with-liblua=${LOCALBASE}
+CONFIGURE_ENV=	LUA_INCDIR="${LUA_INCDIR}" LUA_LIBDIR="${LUA_LIBDIR}"
 
 .ifndef WITHOUT_SSL
 USE_OPENSSL=	yes
@@ -42,11 +43,6 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS+=	--without-openssl
 .endif
-
-CONFIGURE_ARGS+=	--without-nmapfe
-
-ALL_TARGET=	nmap
-INSTALL_TARGET=	install-nmap
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|" ${WRKSRC}/Makefile
@@ -57,29 +53,6 @@ post-install:
 	@for doc in CHANGELOG HACKING docs/nmap.dtd; do \
 		${INSTALL_DATA} ${WRKSRC}/$${doc} ${DOCSDIR}; \
 	done
-.endif
-
-.else
-
-RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
-
-DESCR=		${PKGDIR}/pkg-descr.fe
-PLIST=		${PKGDIR}/pkg-plist.fe
-PLIST_SUB=	REALPREFIX=${PREFIX}
-
-MAN1=		nmapfe.1
-MLINKS=		nmapfe.1 xnmap.1
-
-USE_GNOME=	gtk20
-USE_GCC=	3.2+
-
-CONFIGURE_ARGS+=--without-openssl
-
-CONFIGURE_ARGS+=--with-nmapfe
-
-ALL_TARGET=	nbase/libnbase.a nmapfe/nmapfe
-INSTALL_TARGET=	install-nmapfe
-
 .endif
 
 .include <bsd.port.mk>

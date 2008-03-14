@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig
-+++ configure
-@@ -1395,7 +1395,7 @@
+--- configure.orig	Thu Nov 29 10:36:33 2007
++++ configure	Sat Jan 12 16:57:04 2008
+@@ -1488,7 +1488,7 @@
  if test -z "$ac_cv_prog_CC"; then
    ac_ct_CC=$CC
    # Extract the first word of "gcc", so it can be a program name with args.
@@ -12,12 +9,16 @@ $FreeBSD$
  echo "$as_me:$LINENO: checking for $ac_word" >&5
  echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
  if test "${ac_cv_prog_ac_ct_CC+set}" = set; then
-@@ -3552,7 +3552,7 @@
+@@ -6781,9 +6781,10 @@
+     no_lua="yes"
+   ;;
+   *)
+-    CXXFLAGS="-I$with_liblua/include $CXXFLAGS"
+-    LDFLAGS="-L$with_liblua/lib $LDFLAGS"
++    CXXFLAGS="-I${LUA_INCDIR} $CXXFLAGS"
++    LDFLAGS="-L${LUA_LIBDIR} $LDFLAGS"
+     have_lua=yes
++    LIBLUA_LIBS="-llua"
+   ;;
+   esac
  
- 
- 
--for ac_header in string.h getopt.h strings.h memory.h sys/param.h sys/sockio.h bstring.h sys/time.h sys/stat.h fcntl.h termios.h pwd.h unistd.h
-+for ac_header in string.h strings.h memory.h sys/param.h sys/sockio.h bstring.h sys/time.h sys/stat.h fcntl.h termios.h pwd.h unistd.h
- do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if eval "test \"\${$as_ac_Header+set}\" = set"; then
