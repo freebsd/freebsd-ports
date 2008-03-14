@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
@@ -26,7 +27,8 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	MIKMOD		"Enable MOD music via libMikMod"	On \
 		SMPEG		"Enable MP3 music via SMPEG"		On \
-		VORBIS		"Enable Ogg Vorbis music"		On
+		VORBIS		"Enable Ogg Vorbis music"		On \
+		TIMIDITYPLUS	"Use Timidity++ instead of Timidity"	Off
 
 .include <bsd.port.pre.mk>
 
@@ -49,6 +51,12 @@ CONFIGURE_ARGS+=--disable-music-ogg
 .else
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-music-ogg
+.endif
+
+post-patch:
+.if defined(WITH_TIMIDITYPLUS)
+	@${REINPLACE_CMD} -e 's|"${LOCALBASE}/lib/timidity"|"${LOCALBASE}/share/timidity"|g' \
+		${WRKSRC}/timidity/config.h
 .endif
 
 .include <bsd.port.post.mk>
