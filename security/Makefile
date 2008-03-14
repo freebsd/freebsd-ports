@@ -789,6 +789,7 @@
     SUBDIR += yapet
     SUBDIR += yersinia
     SUBDIR += zebedee
+    SUBDIR += zenmap
     SUBDIR += zombiezapper
     SUBDIR += zxid
     SUBDIR += zzuf
