@@ -7,7 +7,7 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/X11/screensavers/
 
@@ -58,6 +58,7 @@ OPTIONS=MESAGL			"Enable Mesa 3D (for GL modes)"		off \
 CONFIGURE_ARGS+=	--with-mesa
 MESALIB=${PTHREAD_LIBS}
 USE_GL=	yes
+CFLAGS+=	-I${LOCALBASE}/include/FTGL
 .else
 CONFIGURE_ARGS+=	--without-mesa --without-opengl
 .endif
