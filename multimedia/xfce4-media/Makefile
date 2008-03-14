@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-media
 PORTVERSION=	0.9.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfmedia/
 DISTNAME=	xfmedia-${PORTVERSION}
@@ -25,7 +25,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libexo libgui libutil panel
-USE_XLIB=	yes
+USE_XORG=	x11 sm
 
 OPTIONS=	TAGLIB	"Enable metadata editing"		off \
 		DBUS	"Enable D-BUS support"			on \
