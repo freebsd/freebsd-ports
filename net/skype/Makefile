@@ -7,10 +7,11 @@
 
 PORTNAME=	skype
 PORTVERSION=	1.4.0.118
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://download.skype.com/linux/
-DISTNAME=	skype_static-${DISTVERSION}-oss
+MASTER_SITES=	LOCAL/beech
+DISTNAME=	skype_static_staticQT-${DISTVERSION}-oss-generic
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	P2P VoIP software
@@ -29,11 +30,9 @@ USE_BZIP2=	yes
 USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 
-BROKEN=		incorrect distfile
-
 RESTRICTED=	Redistribution prohibited.
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-oss
+WRKSRC=		${WRKDIR}/skype_static-${DISTVERSION}-oss
 PORTDOCS=	LICENSE README
 SUB_FILES=	pkg-message
 
