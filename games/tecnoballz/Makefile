@@ -7,6 +7,7 @@
 
 PORTNAME=	tecnoballz
 PORTVERSION=	0.92
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/
 EXTRACT_SUFX=	.tgz
@@ -14,46 +15,32 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A brick breaker (Arkanoid-like game)
 
-LIB_DEPENDS=	mikmod:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod \
+		vorbisfile.5:${PORTSDIR}/audio/libvorbis \
+		ogg.5:${PORTSDIR}/audio/libogg \
+		smpeg.1:${PORTSDIR}/multimedia/smpeg
 
-BUILD_WRKSRC=	${WRKSRC}/src
-
-USE_X_PREFIX=	yes
-USE_SDL=	sdl mixer
+USE_AUTOTOOLS=	automake:19 aclocal:19
+USE_SDL=	sdl mixer image
 USE_GMAKE=	yes
-MAKE_ARGS+=	-j`${SYSCTL} -n hw.ncpu`
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN6=		tecnoballz.6
-
-MAKE_ENV+=	LIBMIKMOD_CONFIG=${LOCALBASE}/bin/libmikmod-config
 
 post-patch:
 	@${FIND} ${WRKSRC}/include -name '*.h' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|SDL/||'
-	@${REINPLACE_CMD} -e \
-		's|/var/lib/games|/var/games|; \
-		 s|TecnoballZ/|${DATADIR}/|' \
-		${WRKSRC}/src/ressources.cc
-	@${REINPLACE_CMD} -e 's|escapeMenu::||' \
-		${WRKSRC}/include/escapeMenu.h
-	@${REINPLACE_CMD} -e 's|zexplosion\*|class &|' \
-		${WRKSRC}/include/zeGigaBlit.h
-
-do-install:
-	@${MKDIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/tecnoballz ${PREFIX}/bin
-	${CHGRP} games ${PREFIX}/bin/tecnoballz
-	${CHMOD} g+s ${PREFIX}/bin/tecnoballz
-
-	@${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/src/TecnoballZ/* ${DATADIR}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-	${CHMOD} 0644 ${DATADIR}/textures/*
-
-	@${MKDIR} ${MAN6PREFIX}/man/man6
-	${INSTALL_MAN} ${WRKSRC}/man/tecnoballz.1 ${MAN6PREFIX}/man/man6/tecnoballz.6
+	@${REINPLACE_CMD} -e '/^CXXFLAGS=[^$$]*$$/ s|^|#|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$(prefix)/games|$$(prefix)/bin|' \
+	    ${WRKSRC}/Makefile.am ${WRKSRC}/src/Makefile.am
+	@${REINPLACE_CMD} -e 's|supervisor.c|&c|' ${WRKSRC}/src/Makefile.am
+.for f in tecnoballz.cc tiles_background.cc sprite_ship.cc controller_magnetic_eyes.cc
+	@${REINPLACE_CMD} -e '/rand/ s|(Sint32)|(intptr_t)|' ${WRKSRC}/src/${f}
+.endfor
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@cd ${WRKSRC}/src/TecnoballZ && ${FIND} . -name "Makefile*" -delete
+	@cd ${WRKSRC}/src/TecnoballZ && ${COPYTREE_SHARE} . ${DATADIR}
 
 .include <bsd.port.mk>
