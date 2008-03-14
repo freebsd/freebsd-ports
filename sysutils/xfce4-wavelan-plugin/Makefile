@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-wavelan-plugin
 PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -15,17 +15,12 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Displays various information about a WaveLAN device
 
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv panel
-USE_XLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not work with the new wlan stack on 7.0
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
