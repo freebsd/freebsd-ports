@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wackamole
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	net
 MASTER_SITES=	http://mirrors.omniti.com/wackamole/
 
