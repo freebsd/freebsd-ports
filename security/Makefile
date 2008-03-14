@@ -320,6 +320,7 @@
     SUBDIR += openvpn-admin
     SUBDIR += openvpn-auth-ldap
     SUBDIR += openvpn-devel
+    SUBDIR += ophcrack
     SUBDIR += opieprint
     SUBDIR += osiris
     SUBDIR += ossec-hids-client
