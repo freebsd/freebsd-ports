@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A personnal accounting application
 
-LIB_DEPENDS=	ofx.3:${PORTSDIR}/finance/libofx
+LIB_DEPENDS=	ofx.4:${PORTSDIR}/finance/libofx
 .if !defined(WITHOUT_LATEX)
 RUN_DEPENDS=	${UCS_CLASSDIR}/ucs.sty:${PORTSDIR}/print/latex-ucs
 .endif
