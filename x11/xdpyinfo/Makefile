@@ -7,13 +7,15 @@
 
 PORTNAME=	xdpyinfo
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Display information utility for X
 
 XORG_CAT=	app
-USE_XORG=	xext x11 xtst
+USE_XORG=	xext x11 xtst xxf86vm xxf86misc xxf86dga xi xrender \
+		xinerama dmxproto xp
 
 PLIST_FILES=	bin/xdpyinfo
 
