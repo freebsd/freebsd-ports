@@ -2,7 +2,7 @@
 
 # common settings
 
-GGZ_VERSION=	0.0.14
+GGZ_VERSION=	0.0.14.1
 
 MASTER_SITES=	\
 	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%SUBDIR%/ \

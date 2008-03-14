@@ -8,7 +8,6 @@
 
 PORTNAME=	ggz-gtk-games
 PORTVERSION=	${GGZ_VERSION}
-PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
