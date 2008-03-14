@@ -7,9 +7,9 @@
 
 PORTNAME=	elmerpost
 PORTVERSION=	5.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
+MASTER_SITES=	SF/elmerfem
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Visualization of Numerical Results in the ELMER FEM package

@@ -7,9 +7,9 @@
 
 PORTNAME=	meshgen2d
 PORTVERSION=	5.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
-MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
+MASTER_SITES=	SF/elmerfem
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	araujo@FreeBSD.org

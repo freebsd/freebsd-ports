@@ -7,8 +7,9 @@
 
 PORTNAME=	hutiter
 PORTVERSION=	5.4.0
+PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
+MASTER_SITES=	SF/elmerfem
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	araujo@FreeBSD.org
