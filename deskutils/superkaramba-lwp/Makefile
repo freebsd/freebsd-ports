@@ -8,7 +8,7 @@ PORTNAME=		lwp
 PORTVERSION=		14.8
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.message.co.nz/~matt-sarah/ \
-			http://mirror1.liquidweather.net/ \
+			http://www.uber1337.nl/~liquidweather/ \
 			http://liquidweather.net/ \
 			http://liquidweather.innetrex.net/
 PKGNAMEPREFIX=		superkaramba-
