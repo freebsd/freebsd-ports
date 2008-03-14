@@ -1,44 +1,48 @@
---- setup.py.orig	Fri Jul 13 20:24:48 2007
-+++ setup.py	Fri Jul 13 20:29:51 2007
-@@ -89,24 +89,14 @@
-         if argument.startswith( "-S" ):
-             sysinstall = True
+--- setup.py.orig	Mon Feb 18 18:49:23 2008
++++ setup.py	Mon Feb 18 19:08:38 2008
+@@ -75,24 +75,18 @@
+     if os.getuid() == 0:
+         sysinstall = True
  
 -    if sysinstall:
--        final = prefix
--        prefix = temp + prefix
--        prefix_bin = prefix + "/usr/bin/"
--        prefix_data = prefix + "/usr/share/"
--        prefix_conf = prefix + "/etc/" + wine_doors + "/"
--        winedoors_data = prefix_data + wine_doors + "/"
--
--        final_data = final + "usr/share/wine-doors/"
--        final_conf = prefix_conf
+-        if not install_root:
+-            install_root = "/"
+-        if not prefix:
+-            prefix = install_root + "usr/"
+-        bin_path = prefix + "bin/"
+-        data_path = prefix + "share/"
+-        conf_path = install_root + "etc/" + wine_doors + "/"
+-        winedoors_path = data_path + wine_doors + "/"
+-        real_winedoors_path = "/usr/share/"+wine_doors+"/"
 -    else:
--        prefix_bin = prefix + "bin/"
--        prefix_data = prefix + ".local/share/"
--        prefix_conf = prefix + ".wine/wine-doors/"
--        winedoors_data = prefix_data + wine_doors + "/"
--
--        final_data = winedoors_data
--        final_conf = prefix_conf
-+    prefix = "%%PREFIX%%/"
-+    prefix_bin = prefix + "bin/"
-+    prefix_data = prefix + "share/"
-+    prefix_conf = prefix + "etc/wine-doors/"
-+    winedoors_data = prefix_data + "wine-doors/"
-+    final = prefix
-+    final_data = winedoors_data
-+    final_conf = prefix_conf
-     
+-        install_root = os.path.expanduser( "~/")
+-        prefix = os.path.expanduser( "~/.local" )
+-        bin_path = install_root + "bin/"
+-        data_path = prefix + "share/"
+-        conf_path = os.getenv('WINEPREFIX', install_root + ".wine") + "/wine-doors"
+-        winedoors_path = data_path + wine_doors + "/"
+-        real_winedoors_path = winedoors_path
++    if prefix == None:
++        print "You must provide a --prefix"
++        sys.exit(1)
++
++    if not prefix.endswith("/"):
++        prefix = prefix + "/"
++
++    bin_path = prefix + "bin/"
++    data_path = prefix + "share/"
++    conf_path = prefix + "etc/" + wine_doors + "/"
++    winedoors_path = data_path + wine_doors + "/"
++    real_winedoors_path = winedoors_path
+ 
      if command in ("install", "uninstall"):
          from preferences import preferences
-@@ -198,7 +188,7 @@
+@@ -208,7 +202,7 @@
          # Fix perms
          if sysinstall:
              print "Setting permissions"
--            os.system( "chmod og+r -R "+winedoors_data )
-+            os.system( "chmod -R og+r "+winedoors_data )
+-            os.system( "chmod og+r -R "+winedoors_path )
++            os.system( "chmod -R og+r "+winedoors_path )
          
          # Write preferences.xml
          print "Creating initial preferences"
