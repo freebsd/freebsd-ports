@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	net geography
-MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/ \
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find the country that any IP address or hostname originates from
 
+USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 MAN1=		geoiplookup.1 geoipupdate.1
