@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	17.5.4
+DISTVERSION=	17.6.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tea-editor
@@ -22,7 +22,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	TEA_ONLY	"Build original GTK-only version"	on \
-		ASPELL		"Build with GNU aspell support"		on
+		ASPELL		"Build with GNU aspell support"		on \
+		CURL		"Build with libCURL support"		off
 
 .include <bsd.port.pre.mk>
 
@@ -32,8 +33,12 @@ CONFIGURE_ARGS+=	--enable-legacy
 USE_GNOME+=	gtksourceview
 .endif
 
-.if defined(WITH_ASPELL)
+.if defined(WITH_ASPELL) || exists(${LOCALBASE}/lib/libaspell.so)
 LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+.endif
+
+.if defined(WITH_CURL) || exists(${LOCALBASE}/lib/libcurl.so)
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
 post-patch: .SILENT
