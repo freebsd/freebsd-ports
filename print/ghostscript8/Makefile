@@ -45,8 +45,12 @@ OPTIONS=	A4SIZE	"Set A4 (not Letter) as a default paper size"	off \
 		ICONV	"libiconv support (required by opvp/oprp drivers)" on \
 		JPNFONTS	"Japanese font support"	on \
 		SHLIB	"With shared libraries"	off \
-		SVGALIB	"svgalib support"	off \
-		X11	"X11 support"	on
+		SVGALIB	"svgalib support"	off
+.if defined(WITHOUT_X11)
+OPTIONS+=	X11	"X11 support"	off
+.else
+OPTIONS+=	X11	"X11 support"	on
+.endif
 
 MAN1=		dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 gs-pcl3.1 pcl3opts.1 \
 		pdf2dsc.1 pdf2ps.1 pdfopt.1 pf2afm.1 pfbtopfa.1 printafm.1 \
