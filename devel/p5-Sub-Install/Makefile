@@ -22,8 +22,7 @@ MAN3=	Sub::Install.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500703
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
 
