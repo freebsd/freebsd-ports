@@ -7,7 +7,7 @@
 
 PORTNAME=	dcl
 PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://www.gfd-dennou.org/arch/ruby/products/ruby-dcl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
 .else
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
 		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
-BUILD_DEPENDS+=	${X11BASE}/lib/libcdcl53.a:${PORTSDIR}/science/cdcl
+BUILD_DEPENDS+=	${X11BASE}/lib/libcdcl.a:${PORTSDIR}/science/cdcl
 .endif
 
 USE_RUBY=	yes
