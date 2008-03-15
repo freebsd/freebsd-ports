@@ -101,7 +101,7 @@ PLIST_SUB+=	ZEROCONF="@comment "
 
 .if defined(WITH_AVAHI) && !defined(WITH_HOWL)
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus \
-		avahi-core.5:${PORTSDIR}/net/avahi
+		avahi-core.5:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--with-zeroconf --enable-avahi
 .endif
 
