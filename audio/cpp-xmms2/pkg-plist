@@ -1,8 +1,8 @@
-lib/libxmmsclient++.so
-lib/libxmmsclient++.so.1
-lib/libxmmsclient++.so.1.0.0
 lib/libxmmsclient++-glib.so
 lib/libxmmsclient++-glib.so.1
 lib/libxmmsclient++-glib.so.1.0.0
+lib/libxmmsclient++.so
+lib/libxmmsclient++.so.2
+lib/libxmmsclient++.so.2.0.0
 libdata/pkgconfig/xmms2-client-cpp-glib.pc
 libdata/pkgconfig/xmms2-client-cpp.pc

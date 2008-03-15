@@ -8,8 +8,6 @@ bin/xmms2-launcher
 bin/xmms2d
 include/xmms2/xmms/xmms_bindata.h
 include/xmms2/xmms/xmms_config.h
-include/xmms2/xmms/xmms_effect.h
-include/xmms2/xmms/xmms_effectplugin.h
 include/xmms2/xmms/xmms_error.h
 include/xmms2/xmms/xmms_ipc.h
 include/xmms2/xmms/xmms_log.h
@@ -35,11 +33,13 @@ include/xmms2/xmmsc/xmmsc_stringport.h
 include/xmms2/xmmsc/xmmsc_strlist.h
 include/xmms2/xmmsc/xmmsc_unistd.h
 include/xmms2/xmmsc/xmmsc_util.h
+include/xmms2/xmmsclient/xmmsclient++-glib.h
+include/xmms2/xmmsclient/xmmsclient++.h
 include/xmms2/xmmsclient/xmmsclient++/bindata.h
 include/xmms2/xmmsclient/xmmsclient++/client.h
-include/xmms2/xmmsclient/xmmsclient++/config.h
 include/xmms2/xmmsclient/xmmsclient++/coll.h
 include/xmms2/xmmsclient/xmmsclient++/collection.h
+include/xmms2/xmmsclient/xmmsclient++/config.h
 include/xmms2/xmmsclient/xmmsclient++/dict.h
 include/xmms2/xmmsclient/xmmsclient++/exceptions.h
 include/xmms2/xmmsclient/xmmsclient++/helpers.h
@@ -54,8 +54,6 @@ include/xmms2/xmmsclient/xmmsclient++/signal.h
 include/xmms2/xmmsclient/xmmsclient++/stats.h
 include/xmms2/xmmsclient/xmmsclient++/typedefs.h
 include/xmms2/xmmsclient/xmmsclient++/xform.h
-include/xmms2/xmmsclient/xmmsclient++-glib.h
-include/xmms2/xmmsclient/xmmsclient++.h
 include/xmms2/xmmsclient/xmmsclient-cf.h
 include/xmms2/xmmsclient/xmmsclient-ecore.h
 include/xmms2/xmmsclient/xmmsclient-glib.h
@@ -65,54 +63,69 @@ lib/libxmmsclient-glib.so
 lib/libxmmsclient-glib.so.1
 lib/libxmmsclient-glib.so.1.0.0
 lib/libxmmsclient.so
-lib/libxmmsclient.so.2
-lib/libxmmsclient.so.2.0.0
+lib/libxmmsclient.so.3
+lib/libxmmsclient.so.3.0.0
 %%AO%%lib/xmms2/libxmms_ao.so
+lib/xmms2/libxmms_asf.so
 lib/xmms2/libxmms_asx.so
+%%AVCODEC%%lib/xmms2/libxmms_avcodec.so
+%%AVCODEC%%lib/xmms2/libxmms_avformat.so
 lib/xmms2/libxmms_cue.so
 %%CURL%%lib/xmms2/libxmms_curl.so
+%%DAAP%%lib/xmms2/libxmms_daap.so
 lib/xmms2/libxmms_diskwrite.so
 lib/xmms2/libxmms_equalizer.so
-%%DAAP%%lib/xmms2/libxmms_daap.so
 %%FAAD%%lib/xmms2/libxmms_faad.so
-%%FLAC%%lib/xmms2/libxmms_flac.so
 lib/xmms2/libxmms_file.so
+%%FLAC%%lib/xmms2/libxmms_flac.so
 %%GNOMEVFS%%lib/xmms2/libxmms_gnomevfs.so
 %%ICES%%lib/xmms2/libxmms_ices.so
-%%LASTFM%%lib/xmms2/libxmms_lastfm.so
-%%LASTFM%%lib/xmms2/libxmms_lastfmeta.so
 %%CURL%%lib/xmms2/libxmms_icymetaint.so
 lib/xmms2/libxmms_id3v2.so
 %%JACK%%lib/xmms2/libxmms_jack.so
+%%LASTFM%%lib/xmms2/libxmms_lastfm.so
+%%LASTFM%%lib/xmms2/libxmms_lastfmeta.so
 lib/xmms2/libxmms_m3u.so
-lib/xmms2/libxmms_mad.so
 %%MAC%%lib/xmms2/libxmms_mac.so
+lib/xmms2/libxmms_mad.so
 %%MMS%%lib/xmms2/libxmms_mms.so
 %%MODPLUG%%lib/xmms2/libxmms_modplug.so
 %%FAAD%%lib/xmms2/libxmms_mp4.so
 %%MUSEPACK%%lib/xmms2/libxmms_musepack.so
+lib/xmms2/libxmms_normalize.so
 lib/xmms2/libxmms_null.so
 lib/xmms2/libxmms_nulstripper.so
+lib/xmms2/libxmms_ofa.so
 lib/xmms2/libxmms_oss.so
 lib/xmms2/libxmms_pls.so
 lib/xmms2/libxmms_replaygain.so
+lib/xmms2/libxmms_rss.so
 %%SAMBA%%lib/xmms2/libxmms_samba.so
 %%SID%%lib/xmms2/libxmms_sid.so
 %%VOCODER%%lib/xmms2/libxmms_vocoder.so
 lib/xmms2/libxmms_vorbis.so
 lib/xmms2/libxmms_wave.so
-%%AVCODEC%%lib/xmms2/libxmms_avcodec.so
-%%AVCODEC%%lib/xmms2/libxmms_avformat.so
+lib/xmms2/libxmms_xml.so
+lib/xmms2/libxmms_xspf.so
 libdata/pkgconfig/xmms2-client-glib.pc
 libdata/pkgconfig/xmms2-client.pc
 libdata/pkgconfig/xmms2-plugin.pc
+share/pixmaps/xmms2-128.png
+share/pixmaps/xmms2-16.png
+share/pixmaps/xmms2-32.png
+share/pixmaps/xmms2-48.png
+share/pixmaps/xmms2-black-on-white.svg
+share/pixmaps/xmms2-white-on-black.svg
+share/pixmaps/xmms2.svg
 %%DATADIR%%/mind.in.a.box-lament_snipplet.ogg
 %%DATADIR%%/scripts/startup.d/xmms2-et-launcher.sh
 %%MDNS_AVAHI%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
 %%MDNS_APPLE%%%%DATADIR%%/scripts/startup.d/xmms2-mdns-launcher.sh
-@dirrm %%DATADIR%%/scripts/startup.d
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%
+share/xmms2/scripts/startup.d/xmms2-mlib-updater.sh
+@dirrm share/xmms2/scripts/startup.d
+@dirrm share/xmms2/scripts
+@dirrm share/xmms2
+@dirrm share/pixmaps
 @dirrm lib/xmms2
 @dirrm include/xmms2/xmmsclient/xmmsclient++
 @dirrm include/xmms2/xmmsclient

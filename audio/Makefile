@@ -51,7 +51,6 @@
     SUBDIR += autocd
     SUBDIR += autozen
     SUBDIR += aylet
-    SUBDIR += azrael
     SUBDIR += baudline
     SUBDIR += beast
     SUBDIR += bebocd
@@ -297,7 +296,6 @@
     SUBDIR += jack-keyboard
     SUBDIR += jack-rack
     SUBDIR += jamin
-    SUBDIR += java-xmms2
     SUBDIR += jid3lib
     SUBDIR += jmusic
     SUBDIR += juk
@@ -441,7 +439,6 @@
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += nspmod
-    SUBDIR += nyello
     SUBDIR += ocp
     SUBDIR += ogg2mp3
     SUBDIR += oggsplit

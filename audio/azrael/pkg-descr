@@ -1,6 +1,0 @@
-Azrael is a client for XMMS2. It is written in C and uses GTK. 
-
-Features include:
- * LCD for elapsed time, 
- * Nice display of song information 
- * Interfaces to the playlist and media library

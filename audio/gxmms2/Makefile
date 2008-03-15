@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gxmms2
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	audio
 MASTER_SITES=	http://wejp.k.vu/projects/xmms2/
 
@@ -22,10 +21,8 @@ USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/gxmms2 \
-				%%DATADIR%%/gxmms2_mini.xpm
-PLIST_DIRS=		%%DATADIR%%
-
-BROKEN=	Not updated to DrJekyll clientlib API
+		%%DATADIR%%/gxmms2_mini.xpm
+PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
