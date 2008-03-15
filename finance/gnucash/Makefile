@@ -8,7 +8,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -20,7 +20,7 @@ COMMENT=	Quicken-like money and finance manager
 BUILD_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
     		${LOCALBASE}/share/guile/1.8/slibcat:${PORTSDIR}/lang/slib-guile
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		ofx.3:${PORTSDIR}/finance/libofx \
+		ofx.4:${PORTSDIR}/finance/libofx \
 		gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38 \
 		goffice-0.4:${PORTSDIR}/devel/goffice04
 RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
