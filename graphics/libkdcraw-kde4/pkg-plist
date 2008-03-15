@@ -10,7 +10,7 @@ include/libkdcraw/version.h
 lib/libkdcraw.a
 lib/libkdcraw.la
 lib/libkdcraw.so
-lib/libkdcraw.so.2
+lib/libkdcraw.so.3
 libdata/pkgconfig/libkdcraw.pc
 share/icons/hicolor/128x128/apps/kdcraw.png
 share/icons/hicolor/32x32/apps/kdcraw.png
@@ -25,6 +25,7 @@ share/locale/et/LC_MESSAGES/libkdcraw.mo
 share/locale/is/LC_MESSAGES/libkdcraw.mo
 share/locale/it/LC_MESSAGES/libkdcraw.mo
 share/locale/ja/LC_MESSAGES/libkdcraw.mo
+share/locale/ms/LC_MESSAGES/libkdcraw.mo
 share/locale/nds/LC_MESSAGES/libkdcraw.mo
 share/locale/nl/LC_MESSAGES/libkdcraw.mo
 share/locale/pa/LC_MESSAGES/libkdcraw.mo
