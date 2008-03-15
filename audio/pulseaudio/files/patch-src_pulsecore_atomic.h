@@ -1,6 +1,6 @@
 --- src/pulsecore/atomic.h.orig	2008-01-23 19:44:20.000000000 -0500
-+++ src/pulsecore/atomic.h	2008-03-02 01:02:20.000000000 -0500
-@@ -106,6 +106,108 @@ static inline int pa_atomic_ptr_cmpxchg(
++++ src/pulsecore/atomic.h	2008-03-15 14:48:41.000000000 -0400
+@@ -106,6 +106,113 @@ static inline int pa_atomic_ptr_cmpxchg(
      return __sync_bool_compare_and_swap(&a->value, (long) old_p, (long) new_p);
  }
  
@@ -13,11 +13,14 @@
 +
 +#if __FreeBSD_version < 600000
 +#if defined(__i386__) || defined(__amd64__)
++#if defined(__amd64__)
++#define atomic_load_acq_64	atomic_load_acq_long
++#endif
 +static inline u_int
 +atomic_fetchadd_int(volatile u_int *p, u_int v)
 +{
 +	__asm __volatile(
-+	"	" MPLOCKED "		"
++	"	" __XSTRING(MPLOCKED) "		"
 +	"	xaddl	%0, %1 ;	"
 +	"# atomic_fetchadd_int"
 +	: "+r" (v),
@@ -27,8 +30,10 @@
 +	return (v);
 +}
 +#elif defined(__sparc64__)
++#define atomic_load_acq_64	atomic_load_acq_long
 +#define atomic_fetchadd_int	atomic_add_int
 +#elif defined(__ia64__)
++#define atomic_load_acq_64	atomic_load_acq_long
 +static inline uint32_t
 +atomic_fetchadd_int(volatile uint32_t *p, uint32_t v)
 +{
