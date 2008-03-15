@@ -33,6 +33,10 @@ upgrades.
   The easiest upgrade path would be to remove all EFL ports and install
   them from scratch. At least, you should reinstall ecore and evas.
 
+  Please note, that your old $HOME/.e is not longer compatible with new
+  snapshot version. You will need to remove this directory and let e17
+  to create it automatically on the next startup.
+
 20080306:
   AFFECTS: users of mail/dovecot
   AUTHOR: ehaupt@FreeBSD.org
