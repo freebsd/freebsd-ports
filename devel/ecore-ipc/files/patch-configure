@@ -1,18 +1,9 @@
---- configure.orig	2008-02-23 19:32:59.000000000 +0300
-+++ configure	2008-02-23 19:33:33.000000000 +0300
-@@ -20543,83 +20543,6 @@
- if test "${enable_openssl+set}" = set; then
-   enableval=$enable_openssl;  want_openssl=$enableval
+--- configure.orig	2008-03-15 01:32:14.000000000 +0300
++++ configure	2008-03-15 01:37:43.000000000 +0300
+@@ -20552,70 +20552,9 @@
+ { echo "$as_me:$LINENO: checking for SSL" >&5
+ echo $ECHO_N "checking for SSL... $ECHO_C" >&6; }
  
--fi
--
--
--if test "x$want_openssl" = "xyes"; then
--
--pkg_failed=no
--{ echo "$as_me:$LINENO: checking for SSL" >&5
--echo $ECHO_N "checking for SSL... $ECHO_C" >&6; }
--
 -if test -n "$PKG_CONFIG"; then
 -    if test -n "$SSL_CFLAGS"; then
 -        pkg_cv_SSL_CFLAGS="$SSL_CFLAGS"
@@ -73,22 +64,21 @@
 -
 -elif test $pkg_failed = untried; then
 -	 have_openssl="no"
--
+ 
 -else
 -	SSL_CFLAGS=$pkg_cv_SSL_CFLAGS
 -	SSL_LIBS=$pkg_cv_SSL_LIBS
--        { echo "$as_me:$LINENO: result: yes" >&5
--echo "${ECHO_T}yes" >&6; }
--
--
- cat >>confdefs.h <<\_ACEOF
- #define USE_OPENSSL 1
- _ACEOF
-@@ -20630,7 +20553,6 @@
-        have_openssl="yes"
++	SSL_CFLAGS=""
++	SSL_LIBS="-lssl -lcrypto"
+         { echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6; }
  
- fi
+@@ -20628,8 +20567,6 @@
+        # no need to add it to req_ecore_ipc, since they
+        # depends on ecore_con anyway.
+        have_openssl="yes"
+-
 -fi
+ fi
  
  want_curl="yes"
- have_curl="no"
