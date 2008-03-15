@@ -6,12 +6,10 @@
 #
 
 PORTNAME?=	xmms2
-PORTVERSION=	0.2.d.9
-DISTVERSION=	0.2DrJekyll
-PORTREVISION=	2
+PORTVERSION=	0.4.d.0
+DISTVERSION=	0.4DrKosmos
 CATEGORIES?=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	alexbl@FreeBSD.org
@@ -65,7 +63,9 @@ OPTIONS=	FAAD "Support to playback AAC files" on \
 
 .if defined(XMMS2_SLAVE)
 EXCLUDE+=	--without-xmms2d=1
-EXTRA_PATCHES=	${PATCHDIR}/slaveport-wscript ${PATCHDIR}/slaveport-src_include_wscript
+EXTRA_PATCHES=	${PATCHDIR}/slaveport-wscript\
+		${PATCHDIR}/slaveport-src_include_wscript\
+		${PATCHDIR}/slaveport-src-clients-lib-wscripts
 .endif
 
 .if defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "python"
@@ -253,7 +253,7 @@ PLIST_SUB+=	AO="@comment "
 BROKEN=		You may choose either MDNS_APPLE or MDNS_AVAHI, but not both
 .endif
 EXCLUDE+=	--without-optionals="dns_sd"
-LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	MDNS_AVAHI=""
 MAN1+=	xmms2-mdns-avahi.1
 .else

@@ -22,8 +22,8 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/xmms2-scrobbler \
-				%%DATADIR%%/filters/britney.rb \
-				%%DATADIR%%/filters/musicbrainz.rb
+		%%DATADIR%%/filters/britney.rb \
+		%%DATADIR%%/filters/musicbrainz.rb
 PLIST_DIRS=	%%DATADIR%%/filters %%DATADIR%%
 
 SUB_FILES=	pkg-message

@@ -13,7 +13,7 @@ MASTER_SITES=	http://nooms.de/media/abraca/
 MAINTAINER=	olivier@gid0.org
 COMMENT=	Abraca is a GTK2 client for the XMMS2 music player
 
-LIB_DEPENDS=	xmmsclient.2:${PORTSDIR}/audio/xmms2 \
+LIB_DEPENDS=	xmmsclient.3:${PORTSDIR}/audio/xmms2 \
 		xmmsclient-glib.1:${PORTSDIR}/audio/xmms2
 
 USE_BZIP2=	yes

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Ruby Bindings for XMMS2
 
-LIB_DEPENDS+=	xmmsclient.2:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS+=	xmmsclient.3:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 
