@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	2.4.13
+PORTVERSION=	2.4.14
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
