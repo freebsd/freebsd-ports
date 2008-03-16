@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dmenu
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	x11
 MASTER_SITES=	http://www.suckless.org/download/ \
 		http://schot.a-eskwadraat.nl/files/
@@ -14,9 +14,9 @@ MASTER_SITES=	http://www.suckless.org/download/ \
 MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	X11 menu application (not only) for the dwm window manager
 
-USE_XLIB=	yes
+USE_XORG=	x11
 
 MAN1=		dmenu.1
-PLIST_FILES=	bin/dmenu bin/dmenu_path
+PLIST_FILES=	bin/dmenu bin/dmenu_path bin/dmenu_run
 
 .include <bsd.port.mk>
