@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.62
+PORTVERSION=	0.63
 CATEGORIES=	dns net perl5 ipv6
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	DougB@FreeBSD.org
@@ -52,13 +51,12 @@ RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/p5-Net-DNS
+DOCS=		Changes README TODO
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in Changes README TODO
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
