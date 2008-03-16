@@ -5,16 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=		vlock
-PORTVERSION=		1.3
-CATEGORIES=		security
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/console
+PORTNAME=	vlock
+PORTVERSION=	2.1
+CATEGORIES=	security
+MASTER_SITES=	http://cthulhu.c3d2.de/~toidinamai/vlock/archive/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Locks a terminal
 
-MAN1=			vlock.1
-PLIST_FILES=	bin/vlock
+USE_GMAKE=	yes
+
+MANLANG=	""
+MAN1=		vlock.1
+MAN8=		vlock-current.8 vlock-all.8 vlock-new.8 vlock-nosysrq.8
+PLIST_FILES=	bin/vlock sbin/vlock-current sbin/vlock-all sbin/vlock-nosysrq sbin/vlock-new
 
 .include <bsd.port.mk>
