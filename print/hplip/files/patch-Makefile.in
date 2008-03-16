@@ -1,6 +1,6 @@
---- Makefile.in.orig	2007-12-14 17:31:14.000000000 -0500
-+++ Makefile.in	2008-02-05 22:34:11.946793026 -0500
-@@ -695,7 +695,7 @@
+--- Makefile.in.orig	2008-02-09 10:06:41.000000000 +0800
++++ Makefile.in	2008-03-16 01:24:58.000000000 +0800
+@@ -697,7 +697,7 @@
  dist_faxppdDATA_INSTALL = $(INSTALL_DATA)
  am__dist_hplip_DATA_DIST = scan/sane/hpaio.desc
  dist_hplipDATA_INSTALL = $(INSTALL_DATA)
@@ -9,7 +9,7 @@
  dist_imagesDATA_INSTALL = $(INSTALL_DATA)
  am__dist_ldl_DATA_DIST = data/ldl/cb2pcal.ldl.gz \
  	data/ldl/cb2pcal_done.ldl.gz data/ldl/cbbcal.ldl.gz \
-@@ -1653,7 +1653,7 @@
+@@ -1190,7 +1190,7 @@
  dist_www242DATA_INSTALL = $(INSTALL_DATA)
  am__dist_www243_DATA_DIST = $(wwwsrc)/install/step4/suse/*
  dist_www243DATA_INSTALL = $(INSTALL_DATA)
@@ -18,7 +18,7 @@
  dist_www251DATA_INSTALL = $(INSTALL_DATA)
  am__dist_www252_DATA_DIST = $(wwwsrc)/install/manual/distros/*
  dist_www252DATA_INSTALL = $(INSTALL_DATA)
-@@ -1661,13 +1661,13 @@
+@@ -1198,13 +1198,13 @@
  dist_www261DATA_INSTALL = $(INSTALL_DATA)
  am__dist_www3_DATA_DIST = $(wwwsrc)/styles/*
  dist_www3DATA_INSTALL = $(INSTALL_DATA)
@@ -35,7 +35,7 @@
  dist_www61DATA_INSTALL = $(INSTALL_DATA)
  am__dist_www7_DATA_DIST = $(wwwsrc)/troubleshooting/*
  dist_www7DATA_INSTALL = $(INSTALL_DATA)
-@@ -1883,7 +1883,7 @@
+@@ -1425,7 +1425,7 @@
  @DOC_BUILD_TRUE@www243dir = $(docdir)/install/step4/suse
  @DOC_BUILD_TRUE@dist_www243_DATA = $(wwwsrc)/install/step4/suse/*
  @DOC_BUILD_TRUE@www251dir = $(docdir)/install/manual
@@ -44,7 +44,7 @@
  @DOC_BUILD_TRUE@www252dir = $(docdir)/install/manual/distros
  @DOC_BUILD_TRUE@dist_www252_DATA = $(wwwsrc)/install/manual/distros/*
  @DOC_BUILD_TRUE@www261dir = $(docdir)/install/install
-@@ -1891,13 +1891,13 @@
+@@ -1433,13 +1433,13 @@
  @DOC_BUILD_TRUE@www3dir = $(docdir)/styles
  @DOC_BUILD_TRUE@dist_www3_DATA = $(wwwsrc)/styles/*
  @DOC_BUILD_TRUE@www4dir = $(docdir)/images
@@ -61,7 +61,7 @@
  @DOC_BUILD_TRUE@www7dir = $(docdir)/troubleshooting
  @DOC_BUILD_TRUE@dist_www7_DATA = $(wwwsrc)/troubleshooting/*
  @HPLIP_BUILD_TRUE@dist_hplip_DATA = scan/sane/hpaio.desc
-@@ -1947,7 +1947,7 @@
+@@ -1489,7 +1489,7 @@
  @HPLIP_BUILD_TRUE@localzdir = $(hplipdir)/data/localization
  @HPLIP_BUILD_TRUE@dist_postscript_DATA = data/ps/testpage.ps.gz data/ps/clean_page.pdf.gz
  @HPLIP_BUILD_TRUE@dist_models_DATA = data/models/models.dat
@@ -70,16 +70,16 @@
  @HPLIP_BUILD_TRUE@dist_pcl_DATA = data/pcl/align1_8xx.pcl.gz data/pcl/align1_9xx.pcl.gz data/pcl/align2_8xx.pcl.gz data/pcl/align3_8xx.pcl.gz data/pcl/align4_8xx.pcl.gz \
  @HPLIP_BUILD_TRUE@	data/pcl/align5_8xx.pcl.gz data/pcl/align2_9xx.pcl.gz data/pcl/align3_9xx.pcl.gz data/pcl/align4_450.pcl.gz data/pcl/align6_450.pcl.gz \
  @HPLIP_BUILD_TRUE@	data/pcl/colorcal1_450.pcl.gz data/pcl/colorcal2_450.pcl.gz data/pcl/crbcal.pcl.gz data/pcl/crcaldone.pcl.gz data/pcl/crcbcal.pcl.gz data/pcl/crccal.pcl.gz \
-@@ -3157,7 +3157,7 @@
+@@ -2170,7 +2170,7 @@
  .SUFFIXES: .c .cpp .lo .o .obj
  am--refresh:
  	@:
--$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(srcdir)/foomatic_db.inc $(am__configure_deps)
-+$(srcdir)/Makefile.in:  $(srcdir)/foomatic_db.inc
+-$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(srcdir)/unreleased.inc $(srcdir)/foomatic_drv.inc $(am__configure_deps)
++$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(srcdir)/unreleased.inc $(srcdir)/foomatic_drv.inc
  	@for dep in $?; do \
  	  case '$(am__configure_deps)' in \
  	    *$$dep*) \
-@@ -3184,7 +3184,7 @@
+@@ -2197,7 +2197,7 @@
  $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
  	$(SHELL) ./config.status --recheck
  
@@ -88,3 +88,12 @@
  	cd $(srcdir) && $(AUTOCONF)
  $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
  	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+@@ -6210,7 +6210,7 @@
+ 	install-dist_pcardSCRIPTS install-dist_pclDATA \
+ 	install-dist_pluginsSCRIPTS install-dist_postscriptDATA \
+ 	install-dist_prntSCRIPTS install-dist_ripSCRIPTS \
+-	install-dist_rulesDATA install-dist_scanSCRIPTS \
++	install-dist_scanSCRIPTS \
+ 	install-dist_uiSCRIPTS install-dist_unrelDATA \
+ 	install-dist_www0DATA install-dist_www1DATA \
+ 	install-dist_www21DATA install-dist_www22DATA \
