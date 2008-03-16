@@ -16,7 +16,6 @@ COMMENT=	Fast image processing library
 
 BUILD_DEPENDS=	swig>=1.3.31:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	agg.2:${PORTSDIR}/graphics/agg \
-		evas.9:${PORTSDIR}/graphics/evas \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
@@ -30,6 +29,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_XORG=	x11
+USE_EFL=	evas
+USE_EFL_EVAS_ENGINES=	x11 opengl
 HAS_CONFIGURE=	yes
 INSTALL_WRKSRC=	${WRKSRC}/objdir
 BINS=	econvert edisplay edentify optimize2bw empty-page
