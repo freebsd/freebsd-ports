@@ -1,6 +1,6 @@
---- src/audacious/Makefile.orig	2007-11-19 03:02:02.000000000 +0100
-+++ src/audacious/Makefile	2007-11-26 19:04:28.000000000 +0100
-@@ -157,15 +157,8 @@
+--- src/audacious/Makefile.orig	2008-03-13 23:19:27.000000000 +0100
++++ src/audacious/Makefile	2008-03-15 19:27:56.000000000 +0100
+@@ -146,15 +146,8 @@
  
  include ../../buildsys.mk
  
@@ -17,23 +17,26 @@
 +	    -DHAVE_CONFIG_H		\
  	    ${MOWGLI_CFLAGS}		\
  	    ${GTK_CFLAGS}		\
- 	    ${LIBGLADE_CFLAGS}		\
-@@ -176,10 +169,11 @@
- 	    ${REGEX_CFLAGS}		\
- 	    ${LIBMCS_CFLAGS}		\
+ 	    ${BEEP_DEFINES}		\
+@@ -167,21 +160,29 @@
  	    -D_AUDACIOUS_CORE		\
+ 	    -I../libSAD			\
+ 	    -I../libeggsmclient		\
 -	    -I.. -I../..		\
  	    -I./intl
  
 -LIBS += ${LDADD}		\
-+
-+
-+LIBS = ${LDADD}		\
++LIBS  = ${LDADD}		\
  	${LIBINTL}		\
  	${samplerate_LIBS}	\
  	../libguess/libguess.a	\
-@@ -190,6 +184,14 @@
- 	${LIBGLADE_LIBS}	\
+ 	../libSAD/libSAD.a	\
+ 	../libeggsmclient/libeggsmclient.a ${SM_LIBS} \
+ 	${GTK_LIBS}		\
++	${GLIB_LIBS}		\
+ 	${DBUS_LIBS}		\
+ 	${MOWGLI_LIBS}		\
+ 	${LIBMCS_LIBS}		\
  	${REGEX_LIBS}
  
 +ifdef USE_DBUS
