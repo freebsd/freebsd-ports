@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sq@tvfaq.ru
 COMMENT=	Application and network monitoring solution
 
 LIB_DEPENDS=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp \
