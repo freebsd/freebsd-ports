@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdbg
-PORTVERSION=	2.0.5
-PORTREVISION=	2
+PORTVERSION=	2.1.0
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +17,8 @@ COMMENT=	A graphical user interface around gdb using KDE
 USE_KDELIBS_VER=	3
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
+USE_GMAKE=	yes
+INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--with-kde-version=3
 
 .include <bsd.port.mk>
