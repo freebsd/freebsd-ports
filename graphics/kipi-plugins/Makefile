@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kipi-plugins
-PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTVERSION=	0.1.5
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,7 +17,7 @@ COMMENT=	KDE Image Plugin Interface plugins
 
 LIB_DEPENDS=	kipi.1:${PORTSDIR}/graphics/libkipi \
 		kexiv2.3:${PORTSDIR}/graphics/libkexiv2 \
-		kdcraw.2:${PORTSDIR}/graphics/libkdcraw
+		kdcraw.3:${PORTSDIR}/graphics/libkdcraw
 
 OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		BATCHPROCESSIMAGES "batch processing on images" on \
@@ -34,6 +33,7 @@ OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		KAMERAKLIENT "GPhoto2 interface (import from cameras)" on \
 		METADATAEDIT "edit EXIF and IPTC pictures metadata" on \
 		MPEGENCODER "tool to build a video from images" on \
+		PICASAWEBEXPORT "export images to Picasa web service" on \
 		PRINTWIZARD "a print wizard" on \
 		RAWCONVERTER "convert RAW images from digital cameras" on \
 		SENDIMAGES "send images by email" on \
@@ -48,105 +48,106 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--disable-ipodexport
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ACQUIREIMAGES)
 PLIST_SUB+=	ACQUIREIMAGES:=""
-SUBDIRS+=	acquireimages
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 .else
 PLIST_SUB+=	ACQUIREIMAGES:="@comment "
+CONFIGURE_ARGS+=--disable-acquireimages
 .endif
 
 .if !defined(WITHOUT_BATCHPROCESSIMAGES)
 PLIST_SUB+=	BATCHPROCESSIMAGES:=""
-SUBDIRS+=	batchprocessimages
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .else
 PLIST_SUB+=	BATCHPROCESSIMAGES:="@comment "
+CONFIGURE_ARGS+=--disable-batchprocessimages
 .endif
 
 .if !defined(WITHOUT_CALENDAR)
 PLIST_SUB+=	CALENDAR:=""
-SUBDIRS+=	calendar
 LIB_DEPENDS+=	kcal.2:${PORTSDIR}/deskutils/kdepim3
 .else
 PLIST_SUB+=	CALENDAR:="@comment "
+CONFIGURE_ARGS+=--disable-calendar
 .endif
 
 .if !defined(WITHOUT_CDARCHIVING)
 PLIST_SUB+=	CDARCHIVING:=""
 RUN_DEPENDS+=	k3b:${PORTSDIR}/sysutils/k3b
-SUBDIRS+=	cdarchiving
 .else
 PLIST_SUB+=	CDARCHIVING:="@comment "
+CONFIGURE_ARGS+=--disable-cdarchiving
 .endif
 
 .if !defined(WITHOUT_FINDIMAGES)
 PLIST_SUB+=	FINDIMAGES:=""
-SUBDIRS+=	findimages
 .else
 PLIST_SUB+=	FINDIMAGES:="@comment "
+CONFIGURE_ARGS+=--disable-findimages
 .endif
 
 .if !defined(WITHOUT_FLICKREXPORT)
 PLIST_SUB+=	FLICKREXPORT:=""
-SUBDIRS+=	flickrexport
 .else
 PLIST_SUB+=	FLICKREXPORT:="@comment "
+CONFIGURE_ARGS+=--disable-flickrexport
 .endif
 
 .if !defined(WITHOUT_GALLERYEXPORT)
 PLIST_SUB+=	GALLERYEXPORT:=""
-SUBDIRS+=	galleryexport
 .else
 PLIST_SUB+=	GALLERYEXPORT:="@comment "
+CONFIGURE_ARGS+=--disable-galleryexport
 .endif
 
 .if !defined(WITHOUT_GPSSYNC)
 PLIST_SUB+=	GPSSYNC:=""
-SUBDIRS+=	gpssync
 .else
 PLIST_SUB+=	GPSSYNC:="@comment "
+CONFIGURE_ARGS+=--disable-gpssync
 .endif
 
 .if !defined(WITHOUT_HTMLEXPORT)
 PLIST_SUB+=	HTMLEXPORT:=""
-SUBDIRS+=	htmlexport
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
 PLIST_SUB+=	HTMLEXPORT:="@comment "
+CONFIGURE_ARGS+=--disable-htmlexport
 .endif
 
 .if !defined(WITHOUT_IMAGEVIEWER)
 PLIST_SUB+=	IMAGEVIEWER:=""
-SUBDIRS+=	imageviewer
 .else
 PLIST_SUB+=	IMAGEVIEWER:="@comment "
+CONFIGURE_ARGS+=--disable-imageviewer
 .endif
 
 .if !defined(WITHOUT_JPEGLOSSLESS)
 PLIST_SUB+=	JPEGLOSSLESS:=""
-SUBDIRS+=	jpeglossless
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .else
 PLIST_SUB+=	JPEGLOSSLESS:="@comment "
+CONFIGURE_ARGS+=--disable-jpeglossless
 .endif
 
 .if !defined(WITHOUT_KAMERAKLIENT)
 PLIST_SUB+=	KAMERAKLIENT:=""
-SUBDIRS+=	kameraklient
 LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 .else
 PLIST_SUB+=	KAMERAKLIENT:="@comment "
+CONFIGURE_ARGS+=--disable-kameraklient
 .endif
 
 .if !defined(WITHOUT_METADATAEDIT)
 PLIST_SUB+=	METADATAEDIT:=""
-SUBDIRS+=	metadataedit
 .else
 PLIST_SUB+=	METADATAEDIT:="@comment "
+CONFIGURE_ARGS+=--disable-metadataedit
 .endif
 
 .if !defined(WITHOUT_MPEGENCODER)
@@ -154,69 +155,71 @@ PLIST_SUB+=	MPEGENCODER:=""
 RUN_DEPENDS+=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
 		convert:${PORTSDIR}/graphics/ImageMagick
 MAN1+=		images2mpg.1
-SUBDIRS+=	mpegencoder
 .else
 PLIST_SUB+=	MPEGENCODER:="@comment "
+CONFIGURE_ARGS+=--disable-mpegencoder
+.endif
+
+.if !defined(WITHOUT_PICASAWEBEXPORT)
+PLIST_SUB+=	PICASAWEBEXPORT:=""
+.else
+PLIST_SUB+=	PICASAWEBEXPORT:="@comment "
+CONFIGURE_ARGS+=--disable-picasawebexport
 .endif
 
 .if !defined(WITHOUT_PRINTWIZARD)
 PLIST_SUB+=	PRINTWIZARD:=""
-SUBDIRS+=	printwizard
 .else
 PLIST_SUB+=	PRINTWIZARD:="@comment "
+CONFIGURE_ARGS+=--disable-printwizard
 .endif
 
 .if !defined(WITHOUT_RAWCONVERTER)
 PLIST_SUB+=	RAWCONVERTER:=""
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
-SUBDIRS+=	rawconverter
 .else
 PLIST_SUB+=	RAWCONVERTER:="@comment "
+CONFIGURE_ARGS+=--disable-rawconverter
 .endif
 
 .if !defined(WITHOUT_SENDIMAGES)
 PLIST_SUB+=	SENDIMAGES:=""
-SUBDIRS+=	sendimages
 .else
 PLIST_SUB+=	SENDIMAGES:="@comment "
+CONFIGURE_ARGS+=--disable-sendimages
 .endif
 
 .if !defined(WITHOUT_SIMPLEVIEWEREXPORT)
 PLIST_SUB+=	SIMPLEVIEWEREXPORT:=""
-SUBDIRS+=	simpleviewerexport
 .else
 PLIST_SUB+=	SIMPLEVIEWEREXPORT:="@comment "
+CONFIGURE_ARGS+=--disable-simpleviewerexport
 .endif
 
 .if !defined(WITHOUT_SLIDESHOW)
 PLIST_SUB+=	SLIDESHOW:=""
-SUBDIRS+=	slideshow
-USE_EFL+=	imlib2
 .else
 PLIST_SUB+=	SLIDESHOW:="@comment "
+CONFIGURE_ARGS+=--disable-slideshow
 .endif
 
 .if !defined(WITHOUT_TIMEADJUST)
 PLIST_SUB+=	TIMEADJUST:=""
-SUBDIRS+=	timeadjust
 .else
 PLIST_SUB+=	TIMEADJUST:="@comment "
+CONFIGURE_ARGS+=--disable-timeadjust
 .endif
 
 .if !defined(WITHOUT_WALLPAPER)
 PLIST_SUB+=	WALLPAPER:=""
-SUBDIRS+=	wallpaper
 .else
 PLIST_SUB+=	WALLPAPER:="@comment "
+CONFIGURE_ARGS+=--disable-wallpaper
 .endif
 
 post-patch::
 	@${REINPLACE_CMD} -e 's|-O2||g;s|-fno-schedule-insns -fno-inline||g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's@-lpthread@${PTHREAD_LIBS}@g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's@%%SUBDIRS%%@${SUBDIRS}@g' ${WRKSRC}/kipi-plugins/Makefile.in
-	@${REINPLACE_CMD} -e 's@\/usr\/bin\/k3b@${PREFIX}\/bin\/k3b@g' \
-		${WRKSRC}/kipi-plugins/cdarchiving/cdarchiving.cpp \
-		${WRKSRC}/kipi-plugins/cdarchiving/cdarchivingdialog.cpp
 
 .include <bsd.port.post.mk>
