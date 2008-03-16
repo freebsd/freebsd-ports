@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.2.17
-PORTREVISION=	2
+PORTVERSION=	0.1.2.19
 CATEGORIES=	security net
-MASTER_SITES=	http://tor.eff.org/dist/ \
+MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://mirror.onionland.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
