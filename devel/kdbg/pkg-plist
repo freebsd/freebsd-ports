@@ -41,6 +41,7 @@ share/apps/kdbg/types/qt2.kdbgtt
 share/apps/kdbg/types/qt3.kdbgtt
 share/apps/kdbg/types/qt4core.kdbgtt
 share/apps/kdbg/types/stdc++.kdbgtt
+share/apps/kdbg/types/stdc++6.kdbgtt
 share/doc/HTML/de/kdbg/argspwdenv.html
 share/doc/HTML/de/kdbg/breakptlist.html
 share/doc/HTML/de/kdbg/globaloptions.html
@@ -123,6 +124,7 @@ share/config/kdbgrc
 @dirrm share/doc/HTML/de/kdbg
 @dirrmtry share/doc/HTML/de
 @dirrmtry share/doc/HTML
+@dirrmtry share/config
 @dirrm share/apps/kdbg/types
 @dirrm share/apps/kdbg/pics
 @dirrm share/apps/kdbg/icons/hicolor/22x22/actions
@@ -132,4 +134,3 @@ share/config/kdbgrc
 @dirrm share/apps/kdbg/icons/hicolor
 @dirrm share/apps/kdbg/icons
 @dirrm share/apps/kdbg
-@dirrmtry share/config
