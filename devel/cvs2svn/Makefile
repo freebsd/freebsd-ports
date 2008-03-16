@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	cvs2svn
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/39919/ \
+MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/41596/ \
+		http://cvs2svn.tigris.org/files/documents/1462/39919/ \
 		ftp://ftp.rewt.org.uk/pub/distfiles/ \
 		http://gentoo.nedlinux.nl/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -18,6 +19,7 @@ COMMENT=	CVS to Subversion Repository Converter
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
+		${LOCALBASE}/bin/git:${PORTSDIR}/devel/git \
 		${BUILD_DEPENDS}
 
 DISABLE_SIZE=	yes
