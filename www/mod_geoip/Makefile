@@ -20,6 +20,7 @@ RUN_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
 USE_APACHE=	1.3
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
+AP_EXTRAS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
