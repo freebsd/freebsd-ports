@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	www sysutils
 MASTER_SITES=	http://www.raqdevil.com/
 
-MAINTAINER=	devon.odell@coyotepoint.com
+MAINTAINER=	devon.odell@gmail.com
 COMMENT=	A port of the Sun Cobalt RaQ550 software to FreeBSD
 
 # The explicit dependencies on p5-Net, p5-Digest, p5-Authen-SASL,

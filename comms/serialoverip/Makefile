@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	comms net
 MASTER_SITES=	CSME
 
-MAINTAINER=	devon.odell@coyotepoint.com
+MAINTAINER=	devon.odell@gmail.com
 COMMENT=	Transport of serial interfaces over UDP/IP
 
 PLIST_FILES=	sbin/${PORTNAME}
