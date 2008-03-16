@@ -706,7 +706,6 @@ ayam		ports/graphics/ayam
 aylet		ports/audio/aylet
 ayttm		ports/net-im/ayttm
 az-aspell	ports/textproc/az-aspell
-azrael		ports/audio/azrael
 azureus		ports/net-p2p/azureus
 azureus2	ports/net-p2p/azureus2
 b2bua		ports/net/b2bua
@@ -5677,7 +5676,6 @@ java-gcj-compat	ports/java/java-gcj-compat
 java-getopt	ports/java/java-getopt
 java-tutorial	ports/java/java-tutorial
 java-util-concurrent	ports/devel/java-util-concurrent
-java-xmms2	ports/audio/java-xmms2
 java2html	ports/textproc/java2html
 java3d		ports/java/java3d
 java_jgraph	ports/java/jgraph
@@ -8562,7 +8560,6 @@ nxml-emacs21	ports/editors/nxml-emacs21
 nxserver	ports/net/nxserver
 nxtvepg		ports/multimedia/nxtvepg
 ny-aspell	ports/textproc/ny-aspell
-nyello		ports/audio/nyello
 nyh-hoc		ports/math/nyh-hoc
 nylon		ports/net/nylon
 nzbget		ports/news/nzbget
