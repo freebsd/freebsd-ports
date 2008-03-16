@@ -257,6 +257,9 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/examples/de/beispiel_gelyxt.lyx
 %%DATADIR%%/examples/de/beispiel_roh.lyx
 %%DATADIR%%/examples/de/multicol.lyx
+%%DATADIR%%/examples/de/serienbrief1.lyx
+%%DATADIR%%/examples/de/serienbrief2.lyx
+%%DATADIR%%/examples/de/serienbrief3.lyx
 %%DATADIR%%/examples/de/splash.lyx
 %%DATADIR%%/examples/de/serienbrief1.lyx
 %%DATADIR%%/examples/de/serienbrief2.lyx
@@ -1247,7 +1250,7 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/ui/stdmenus.inc
 %%DATADIR%%/ui/stdtoolbars.inc
 %%DATADIR%%/unicodesymbols
-@dirrmtry share/pixmaps
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/tex
 @dirrm %%DATADIR%%/templates
