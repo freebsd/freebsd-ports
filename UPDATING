@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080316:
+  AFFECTS: users of net/iscsi-target
+  AUTHOR: rafan@FreeBSD.org
+
+  The default configuration location has been changed from /etc to
+  PREFIX/etc. Move your files accordingly.
+
 20080314:
   AFFECTS: users of security/nmapfe
   AUTHOR: miwi@FreeBSD.org
