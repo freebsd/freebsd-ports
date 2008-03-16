@@ -2,16 +2,19 @@
 # Date created:         Jun 21. 2004
 # Whom:                 netchild@FreeBSD.org
 #
+# Maintainers:		Beech Rintoul <beech@FreeBSD.org>
+#			Martin Wilke <miwi@FreeBSD.org>
+#
 # $FreeBSD$
 #
 
 PORTNAME=	skype
 PORTVERSION=	1.4.0.118
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	LOCAL/beech
-DISTNAME=	skype_static_staticQT-${DISTVERSION}-oss-generic
+MASTER_SITES=	http://download.skype.com/linux/
+DISTNAME=	skype_static-${DISTVERSION}-oss
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	P2P VoIP software
@@ -47,7 +50,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/icons/SkypeBlue_48x48.png ${PREFIX}/share/pixmaps/skype.png
 	@${INSTALL_PROGRAM} ${WRKSRC}/skype ${PREFIX}/bin/skype
 	@${CHMOD} a+rx ${PREFIX}/bin/skype
-	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "icons sounds lang" ${DATADIR}/
+	@cd ${WRKSRC}/&&${COPYTREE_SHARE} "avatars icons sounds lang" ${DATADIR}/
 
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
