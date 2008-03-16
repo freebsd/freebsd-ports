@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-agent
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sq@tvfaq.ru
 COMMENT=	Application and network monitoring solution
 
 USE_GMAKE=	yes
