@@ -17,6 +17,8 @@ COMMENT=	Python coroutine implementation
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libcoro.a:${PORTSDIR}/devel/libcoro
 
+BROKEN=		Does not build
+
 USE_PYTHON=		yes
 PLIST_SUB+=		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 MAKE_ENV=		SHORT_PYTHON_VERSION=${PYTHON_VERSION:S/python//} \
