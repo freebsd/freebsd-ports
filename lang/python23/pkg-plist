@@ -6,6 +6,7 @@ bin/pydoc%%PYVER%%
 bin/python%%PYVER%%
 %%IF_DEFAULT%%bin/python-shared
 bin/python-shared%%PYVER%%
+include/%%PYTHON_VERSION%%/Python-ast.h
 include/%%PYTHON_VERSION%%/Python.h
 include/%%PYTHON_VERSION%%/abstract.h
 include/%%PYTHON_VERSION%%/bitset.h
@@ -615,6 +616,7 @@ lib/%%PYTHON_VERSION%%/email/test/data/msg_33.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_34.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_35.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_40.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_41.txt
 lib/%%PYTHON_VERSION%%/email/test/test_email.py
 lib/%%PYTHON_VERSION%%/email/test/test_email.pyc
 lib/%%PYTHON_VERSION%%/email/test/test_email.pyo
