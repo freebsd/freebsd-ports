@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	1.4.6
+PORTVERSION=	1.5.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
@@ -79,12 +79,6 @@ CONFIGURE_ARGS+=--with-xml-prefix=/
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
-# otherwise LIBDIR gets overwritten in tinderbox with /usr/lib from bsd.own.mk
-	@${REINPLACE_CMD} 's|LIBDIR|_LIBDIR|g' \
-		${WRKSRC}/buildsys.mk.in \
-		${WRKSRC}/configure \
-		${WRKSRC}/m4/buildsys.m4 \
-		${WRKSRC}/src/libid3tag/Makefile
 	@${REINPLACE_CMD} 's|+= $${LIB_CPPFLAGS} -I..|= -I.. $${LIB_CPPFLAGS}|' \
 		${WRKSRC}/src/libid3tag/Makefile
 .if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)

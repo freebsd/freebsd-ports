@@ -1,0 +1,11 @@
+--- buildsys.mk.in.orig	2008-03-16 15:37:56.000000000 +0100
++++ buildsys.mk.in	2008-03-16 15:38:43.000000000 +0100
+@@ -100,7 +100,7 @@
+ 		${DEPEND_STATUS}; \
+ 		rm -f .deps; \
+ 		if ${MAKE} ${MFLAGS} ${DEPS}; then \
+-			cat ${DEPS} >.deps; \
++			sed 's|/[^ ]*/include/audacious/dbus.h||g' ${DEPS} >.deps; \
+ 			rm -f ${DEPS}; \
+ 			${DEPEND_OK}; \
+ 		else \

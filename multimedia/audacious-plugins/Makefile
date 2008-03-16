@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	1.4.5
-PORTREVISION=	2
+PORTVERSION=	1.5.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -29,7 +28,7 @@ WANT_GNOME=	yes
 WANT_EFL=	yes
 WANT_SDL=	yes
 
-PORTDOCS=	AUTHORS ChangeLog NEWS
+PORTDOCS=	AUTHORS
 
 # no ports for:
 #		PULSE		"Enable PulseAudio output plugin"	off \

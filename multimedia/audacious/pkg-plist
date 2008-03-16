@@ -33,13 +33,15 @@ include/audacious/util.h
 include/audacious/vfs.h
 include/audacious/vfs_buffer.h
 include/audacious/vfs_buffered_file.h
-include/audacious/xconvert.h
-lib/audacious/libaudid3tag.so.1.0.0
-lib/audacious/libaudid3tag.so.1
-lib/audacious/libaudid3tag.so 
+include/libSAD/libSAD.h
+include/libSAD/common.h
+include/libSAD/dither.h
 %%WITH_DBUS%%lib/libaudclient.so
 %%WITH_DBUS%%lib/libaudclient.so.1
 %%WITH_DBUS%%lib/libaudclient.so.1.0.0
+lib/libaudid3tag.so
+lib/libaudid3tag.so.1
+lib/libaudid3tag.so.1.0.0
 libdata/pkgconfig/audacious.pc
 libdata/pkgconfig/audclient.pc
 share/applications/audacious.desktop
@@ -257,8 +259,6 @@ share/applications/audacious.desktop
 %%DATADIR%%/Skins/TinyPlayer/titlebar.png
 %%DATADIR%%/Skins/TinyPlayer/viscolor.txt
 %%DATADIR%%/Skins/TinyPlayer/volume.png
-%%DATADIR%%/glade/fileinfo.glade
-%%DATADIR%%/glade/prefswin.glade
 %%DATADIR%%/images/about-logo.png
 %%DATADIR%%/images/audacious_eq.xpm
 %%DATADIR%%/images/audacious_playlist.xpm
@@ -266,25 +266,15 @@ share/applications/audacious.desktop
 %%DATADIR%%/images/audacious_player.xpm
 %%DATADIR%%/images/audio.png
 %%DATADIR%%/images/connectivity.png
-%%DATADIR%%/images/eq.png
-%%DATADIR%%/images/info.png
-%%DATADIR%%/images/menu_invert_playlist.png
+%%DATADIR%%/images/menu_playlist.png
+%%DATADIR%%/images/menu_plugin.png
 %%DATADIR%%/images/menu_queue_toggle.png
 %%DATADIR%%/images/menu_randomize_playlist.png
-%%DATADIR%%/images/menu_remove_dups.png
-%%DATADIR%%/images/menu_remove_unavail.png
-%%DATADIR%%/images/menu_select_all.png
-%%DATADIR%%/images/menu_select_invert.png
-%%DATADIR%%/images/menu_select_none.png
-%%DATADIR%%/images/menu_sort_artist.png
-%%DATADIR%%/images/menu_sort_filename.png
-%%DATADIR%%/images/menu_sort_pathfile.png
-%%DATADIR%%/images/menu_sort_title.png
 %%DATADIR%%/images/mouse.png
-%%DATADIR%%/images/pl.png
-%%DATADIR%%/images/play.png
+%%DATADIR%%/images/playback.png
 %%DATADIR%%/images/playlist.png
 %%DATADIR%%/images/plugins.png
+%%DATADIR%%/images/replay_gain.png
 %%DATADIR%%/ui/carbon-menubar.ui
 %%DATADIR%%/ui/equalizer.ui
 %%DATADIR%%/ui/mainwin.ui
@@ -349,10 +339,10 @@ share/pixmaps/audacious.png
 @dirrm %%DATADIR%%/Skins/Refugee
 @dirrm %%DATADIR%%/Skins/TinyPlayer
 @dirrm %%DATADIR%%/Skins
-@dirrm %%DATADIR%%/glade
 @dirrmtry %%DATADIR%%/images
 @dirrm %%DATADIR%%/ui
 @dirrmtry %%DATADIR%%
 @dirrm include/audacious
+@dirrm include/libSAD
 @dirrmtry lib/audacious
 @dirrmtry share/applications

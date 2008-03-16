@@ -1,0 +1,12 @@
+--- configure.orig	2008-03-16 15:32:34.000000000 +0100
++++ configure	2008-03-16 15:32:45.000000000 +0100
+@@ -2049,9 +2049,6 @@
+ 
+ 
+ 
+-if test -d "/usr/X11R6/include"; then
+-	CPPFLAGS="$CPPFLAGS -I/usr/X11R6/include"
+-fi
+ 
+ PACKAGE=audacious
+ 
