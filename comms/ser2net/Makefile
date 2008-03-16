@@ -10,7 +10,7 @@ PORTVERSION=	2.5
 CATEGORIES=	comms net
 MASTER_SITES=	SF
 
-MAINTAINER=	devon.odell@coyotepoint.com
+MAINTAINER=	devon.odell@gmail.com
 COMMENT=	Allows to access serial ports over IP
 
 GNU_CONFIGURE=	yes
