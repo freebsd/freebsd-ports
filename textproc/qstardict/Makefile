@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://qstardict.ylsoftware.com/files/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	A StarDict clone written with using Qt4
 
 USE_BZIP2=	yes
