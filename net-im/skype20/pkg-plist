@@ -1,6 +1,66 @@
 bin/skype
 share/applications/skype.desktop
 share/pixmaps/skype.png
+%%DATADIR%%/avatars/Empire Skype.png
+%%DATADIR%%/avatars/Behind Skype.png
+%%DATADIR%%/avatars/Skype Brrr... .png
+%%DATADIR%%/avatars/Ninja Skype.png
+%%DATADIR%%/avatars/Skype Cola.png
+%%DATADIR%%/avatars/Skype-ahoy.png
+%%DATADIR%%/avatars/Skype Candy.png
+%%DATADIR%%/avatars/Designer Skype.png
+%%DATADIR%%/avatars/Skype Time.png
+%%DATADIR%%/avatars/Travel Skype.png
+%%DATADIR%%/avatars/Make Skype Not War.png
+%%DATADIR%%/avatars/Skype 502.png
+%%DATADIR%%/avatars/Skype in a Bag.png
+%%DATADIR%%/avatars/Architect Skype.png
+%%DATADIR%%/avatars/Skype Safety.png
+%%DATADIR%%/avatars/DJ Skype.png
+%%DATADIR%%/avatars/Fax Skype.png
+%%DATADIR%%/avatars/Devil Skype.png
+%%DATADIR%%/avatars/Hula Skype.png
+%%DATADIR%%/avatars/Sushi Skype.png
+%%DATADIR%%/avatars/Skype Goaaaaal.png
+%%DATADIR%%/avatars/Skype Cool Shades.png
+%%DATADIR%%/avatars/Skypahontas.png
+%%DATADIR%%/avatars/Skype Beauty.png
+%%DATADIR%%/avatars/Rice Skype.png
+%%DATADIR%%/avatars/Skype-in-one.png
+%%DATADIR%%/avatars/Carnaval Skype.png
+%%DATADIR%%/avatars/Skypers of the Caribbean.png
+%%DATADIR%%/avatars/Star Skype.png
+%%DATADIR%%/avatars/Angel Skype.png
+%%DATADIR%%/avatars/Pop Skype.png
+%%DATADIR%%/avatars/Skype Boarder.png
+%%DATADIR%%/avatars/Chic Skype.png
+%%DATADIR%%/avatars/College Skype.png
+%%DATADIR%%/avatars/Call Me.png
+%%DATADIR%%/avatars/Earbud Skype.png
+%%DATADIR%%/avatars/Beach Skype.png
+%%DATADIR%%/avatars/Business Skype.png
+%%DATADIR%%/avatars/DIY Skype.png
+%%DATADIR%%/avatars/Skype Headset.png
+%%DATADIR%%/avatars/Skype Artiste.png
+%%DATADIR%%/avatars/Metal Skype.png
+%%DATADIR%%/avatars/Skype Extreme.png
+%%DATADIR%%/avatars/Skype Jyve.png
+%%DATADIR%%/avatars/Call Me Sweetheart.png
+%%DATADIR%%/avatars/Skype.png
+%%DATADIR%%/avatars/Skype Bling.png
+%%DATADIR%%/avatars/Skype-a-Manger.png
+%%DATADIR%%/avatars/The Skypeness.png
+%%DATADIR%%/avatars/Yin Yang Skype.png
+%%DATADIR%%/avatars/Wetsuit Skype.png
+%%DATADIR%%/avatars/Skype Jah.png
+%%DATADIR%%/avatars/Desert Skype.png
+%%DATADIR%%/avatars/Party Skype.png
+%%DATADIR%%/avatars/Skype San.png
+%%DATADIR%%/avatars/Skype Aid.png
+%%DATADIR%%/avatars/Skype Smiley.png
+%%DATADIR%%/avatars/Geisha Skype.png
+%%DATADIR%%/avatars/Christmas Skype.png
+%%DATADIR%%/avatars/Skype Shorty.png
 %%DATADIR%%/icons/SkypeBlue_16x16.png
 %%DATADIR%%/icons/SkypeBlue_32x32.png
 %%DATADIR%%/icons/SkypeBlue_48x48.png
@@ -38,5 +98,6 @@ share/pixmaps/skype.png
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/avatars
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
