@@ -34,6 +34,19 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/dynamics7.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/dynamics8.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/dynamics9.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs01.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs02.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs03.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs04.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs05.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs06.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs07.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs08.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs09.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs10.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs11.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs12.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/graphs13.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/implicit_plot.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/orthopoly1.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/plotdf1.gif
@@ -159,7 +172,11 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_86.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_87.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_88.html
+%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_89.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_9.html
+%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_90.html
+%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_91.html
+%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_92.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_abt.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_fot.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_ovr.html
@@ -231,7 +248,6 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/algebra/grob1.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/algebra/nusum.mac
 %%DATADIR%%/%%PORTVERSION%%/share/algebra/recur.dem
-%%DATADIR%%/%%PORTVERSION%%/share/algebra/recur.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/algebra/recur.mac
 %%DATADIR%%/%%PORTVERSION%%/share/algebra/recur.transcript
 %%DATADIR%%/%%PORTVERSION%%/share/algebra/solver/linsolve.mac
@@ -301,7 +317,6 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/boolsimp/boolsimp.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/boolsimp/rtest_boolsimp.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/clebsch_gordan.mac
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/defstruct.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/descriptive/biomed.data
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/descriptive/descriptive.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/descriptive/pidigits.data
@@ -358,7 +373,6 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/diffequations/tests/testsuite.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/distrib/distrib.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/distrib/numdistrib.lisp
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/eval_string.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/ezunits.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/rtestezunits.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/f90.lisp
@@ -376,9 +390,27 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/format/format.ps
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/format/pois2.demo
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/format/pois2m.ps
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fourier_elim/fourier_elim.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fourier_elim/rtest_fourier_elim.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/fractals/fractals.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/fractals/fractals.texi
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/fractals/rtest_fractals.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/d78.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/fg.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/filter.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/fresnel.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/fresnel1.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/fresnelCStaylor.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/fresnelFG.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/fresnelFGArrays.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/fresnelFGTable.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/fresnel_linear_values.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/fresnel_linear_values1.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/fresnelstudy.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/ft1.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/randi.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/randil.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel/readme.txt
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/Makefile
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/convmac.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/fdata.lisp
@@ -440,14 +472,25 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/test/type.output
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/vaxinit.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/vaxlsp.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/gf/gf.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/gf/gf_roots.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/gf/gf_roots_test.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ggf.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graph2d.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/cgraphs.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/create_graph.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/demoucron.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/draw_graph.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graph6.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graph_core.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graph_polynomials.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graphio.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graphs.mac
-%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graphs_documentation.pdf
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/graphs.system
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/isomorphism.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/load-graphs.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/matching.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs/spring_embedding.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/impdiff.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/implicit_plot.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/levin/levin.dem
@@ -482,7 +525,9 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/nset/changes_1.0_to_1.2.txt
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/README
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/array.data
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/encode-decode-float.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/numericalio.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/numericalio.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/pipe.data
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/ragged.data
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/numericalio/really-csv.data
@@ -600,6 +645,7 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/simplex/simplex.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/simplex/simplex_algorithm.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/solve_rec/rtest_simplify_sum.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/solve_rec/rtest_solve_rec.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/solve_rec/simplify_sum.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/solve_rec/simplify_sum_test.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/solve_rec/solve_rec.dem
@@ -618,14 +664,17 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/stats/rtest_stats.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/stats/stats.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/stirling.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/stringproc/eval_string.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/stringproc/rteststringproc.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/stringproc/stringproc.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/stringproc/stringproc.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/tex2ooo.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/tocl.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/topoly.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/topoly_solver.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/unit/unit-functions.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/unit/unit.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/unwind_protect.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/vector3d/vector3d.dem
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/vector3d/vector3d.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/vector3d/vector3d.usg
@@ -655,6 +704,7 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/diffequations/pivtr.mac
 %%DATADIR%%/%%PORTVERSION%%/share/diffequations/pmain.mac
 %%DATADIR%%/%%PORTVERSION%%/share/draw/draw.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/draw/implicit3d.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/draw/picture.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/draw/wbd.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/draw/worldmap.mac
@@ -894,6 +944,7 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/matrix/pfaff.mac
 %%DATADIR%%/%%PORTVERSION%%/share/matrix/pfaff.usg
 %%DATADIR%%/%%PORTVERSION%%/share/matrix/rateig.mac
+%%DATADIR%%/%%PORTVERSION%%/share/matrix/rtest_eigen.mac
 %%DATADIR%%/%%PORTVERSION%%/%%DATADIR%%-init.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/misc/arrfun.mac
 %%DATADIR%%/%%PORTVERSION%%/share/misc/declin.dem
@@ -935,6 +986,7 @@ info/maxima-index.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/newton1.mac
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/riemsum.mac
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/romberg.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/numeric/rtest_romberg.mac
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/simpsn.dem
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/simpsn.mac
 %%DATADIR%%/%%PORTVERSION%%/share/numeric/submac.dem
@@ -1553,10 +1605,13 @@ info/maxima-index.lisp
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/lurkmathml
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/levin
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/graphs
+@dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/gf
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/test
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran/man
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/gentran
+@dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/fresnel
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/fractals
+@dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/fourier_elim
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/format
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/distrib
