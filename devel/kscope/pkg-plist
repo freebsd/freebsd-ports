@@ -46,6 +46,7 @@ share/apps/kscope/pics/tab_list.png
 share/apps/kscope/pics/call_graph.png
 share/apps/kscope/pics/called_tree.png
 share/apps/kscope/pics/calling_tree.png
+share/locale/zh_CN/LC_MESSAGES/kscope.mo
 @dirrmtry share/icons/locolor/16x16/apps
 @dirrmtry share/icons/locolor/32x32/apps
 @dirrmtry share/icons/hicolor/16x16/apps
