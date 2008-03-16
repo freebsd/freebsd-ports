@@ -1,0 +1,1094 @@
+Modified: ChangeLog
+===================================================================
+--- ChangeLog	2008-03-06 14:44:26 UTC (rev 26668)
++++ ChangeLog	2008-03-09 18:03:37 UTC (rev 26669)
+@@ -1,3 +1,9 @@
++2008-03-09 19:02  nick
++
++	* Fix bug 3815 and a crash in FreeBSD-amd64. Quite a lot (if not all)
++	  dnd code changed. So give it some testing if you're using the
++	  4.4 branch.
++
+ 2007-11-17 17:47  kelnos
+ 
+ 	* docs/API/libxfce4panel-decl-list.txt,
+
+Modified: NEWS
+===================================================================
+--- NEWS	2008-03-06 14:44:26 UTC (rev 26668)
++++ NEWS	2008-03-09 18:03:37 UTC (rev 26669)
+@@ -1,3 +1,12 @@
++4.4.3
++=====
++- Quite a bit code changed in the dnd code. Mostly to fix a segfault in
++  FreeBSD-amd64, but more problems were discovered and a lot of code
++  was simplified.
++- Don't respond the uri drags, we don't use it and it only causes problems
++  like hiding the panel when a file was dragged over the panel (Bug #3815).
++
++
+ 4.4.2
+ =====
+ - Fix window manager hints reporting width 1 pixel too wide (bug #3402).
+
+Modified: panel/panel-dialogs.c
+===================================================================
+--- panel/panel-dialogs.c	2008-03-06 14:44:26 UTC (rev 26668)
++++ panel/panel-dialogs.c	2008-03-09 18:03:37 UTC (rev 26669)
+@@ -140,50 +140,60 @@
+     return FALSE;
+ }
+ 
++static XfcePanelItemInfo *
++get_selected_tree_item (PanelItemsDialog *pid)
++{
++    GtkTreeSelection  *selection;
++    GtkTreeModel      *model;
++    GtkTreeIter        iter;
++    XfcePanelItemInfo *info = NULL;
++    
++    /* get the tree selection */
++    selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (pid->tree));
++    if (G_LIKELY (selection))
++    {
++        /* get the selected item */
++        if (gtk_tree_selection_get_selected (selection, &model, &iter))
++            gtk_tree_model_get (model, &iter, 0, &info, -1);
++    }
++    
++    return info;
++}
+ 
++
+ static gboolean
+ add_selected_item (PanelItemsDialog *pid)
+ {
+-    GtkTreeSelection *sel;
+-    GtkTreeModel *model;
+-    GtkTreeIter iter;
+     XfcePanelItemInfo *info;
+-    GtkWidget *item = NULL;
++    GtkWidget         *item = NULL;
+ 
+-    sel = gtk_tree_view_get_selection (GTK_TREE_VIEW (pid->tree));
+-    
+-    if (!sel)
+-        return FALSE;
+-
+-    if (!gtk_tree_selection_get_selected (sel, &model, &iter))
+-        return FALSE;
+-
+-    gtk_tree_model_get (model, &iter, 0, &info, -1);
+-
+-    if (!xfce_panel_item_manager_is_available (info->name))
+-        return FALSE;
+-   
+-    if (pid->active)
++    /* get the selected item */
++    info = get_selected_tree_item (pid);
++    if (G_LIKELY (info && xfce_panel_item_manager_is_available (info->name)))
+     {
+-        PanelPrivate *priv = PANEL_GET_PRIVATE (pid->panel);
+-        int n;
++        if (pid->active)
++        {
++            PanelPrivate *priv = PANEL_GET_PRIVATE (pid->panel);
++            gint          n;
+ 
+-        n = xfce_itembar_get_item_index (XFCE_ITEMBAR (priv->itembar),
+-                                         pid->active);
++            n = xfce_itembar_get_item_index (XFCE_ITEMBAR (priv->itembar), pid->active);
+ 
+-        item = panel_insert_item (pid->panel, info->name, n + 1);
+-    }
+-    else
+-    {
+-        item = panel_add_item (pid->panel, info->name);
+-    }
++            item = panel_insert_item (pid->panel, info->name, n + 1);
++         }
++         else
++         {
++            item = panel_add_item (pid->panel, info->name);
++         }
+ 
+-    if (item)
+-        g_idle_add ((GSourceFunc)item_configure_timeout, item);
+-    else
+-        xfce_err (_("Could not open \"%s\" module"), info->name);
++        if (item)
++            g_idle_add ((GSourceFunc)item_configure_timeout, item);
++        else
++            xfce_err (_("Could not open \"%s\" module"), info->name);
+     
+-    return TRUE;
++        return TRUE;
++    }
++    
++    return FALSE;
+ }
+ 
+ static gboolean
+@@ -191,31 +201,12 @@
+                    PanelItemsDialog *pid)
+ {
+     if (evt->button == 1 && evt->type == GDK_2BUTTON_PRESS)
+-    {
+-	return add_selected_item (pid);
+-    }
++        return add_selected_item (pid);
+ 
+     return FALSE;
+ }
+ 
+ static void
+-cursor_changed (GtkTreeView * tv, PanelItemsDialog *pid)
+-{
+-    GtkTreeSelection *sel;
+-    GtkTreeModel *model;
+-    GtkTreeIter iter;
+-    XfcePanelItemInfo *info;
+-
+-    if (!(sel = gtk_tree_view_get_selection (tv)))
+-        return;
+-
+-    if (!gtk_tree_selection_get_selected (sel, &model, &iter))
+-        return;
+-
+-    gtk_tree_model_get (model, &iter, 0, &info, -1);
+-}
+-
+-static void
+ treeview_destroyed (GtkWidget * tv)
+ {
+     GtkTreeModel *store;
+@@ -226,7 +217,7 @@
+ 
+ static void
+ render_icon (GtkTreeViewColumn * col, GtkCellRenderer * cell,
+-	     GtkTreeModel * model, GtkTreeIter * iter, gpointer data)
++       GtkTreeModel * model, GtkTreeIter * iter, gpointer data)
+ {
+     XfcePanelItemInfo *info;
+ 
+@@ -244,7 +235,7 @@
+ 
+ static void
+ render_text (GtkTreeViewColumn * col, GtkCellRenderer * cell,
+-	     GtkTreeModel * model, GtkTreeIter * iter, GtkWidget * treeview)
++       GtkTreeModel * model, GtkTreeIter * iter, GtkWidget * treeview)
+ {
+     XfcePanelItemInfo *info;
+ 
+@@ -279,66 +270,83 @@
+ static void
+ treeview_data_received (GtkWidget *widget, GdkDragContext *context, 
+                         gint x, gint y, GtkSelectionData *data, 
+-                        guint info, guint time, gpointer user_data)
++                        guint info, guint time, PanelItemsDialog *pid)
+ {
+-    gboolean handled = FALSE;
+-
+-    DBG (" + drag data received: %d", info);
++    gboolean   succeeded = FALSE;
++    GtkWidget *item;
+     
+-    if (data->length && info == TARGET_PLUGIN_WIDGET)
+-        handled = TRUE;
+-     
+-    gtk_drag_finish (context, handled, handled, time);
++    /* get the drag source */
++    item = gtk_drag_get_source_widget (context);
++    
++    if (item && XFCE_IS_PANEL_ITEM (item))
++    {
++        /* ask to remove the item */
++        xfce_panel_item_remove (XFCE_PANEL_ITEM (item));
++        
++        succeeded = TRUE;
++    }
++
++    /* finish the drag */
++    gtk_drag_finish (context, succeeded, FALSE, time);
+ }
+ 
+ static gboolean
+ treeview_drag_drop (GtkWidget *widget, GdkDragContext *context, 
+-                    gint x, gint y, guint time, gpointer user_data)
++                    gint x, gint y, guint time, PanelItemsDialog *pid)
+ {
+-    GdkAtom atom = gtk_drag_dest_find_target (widget, context, NULL);
++    GdkAtom target = gtk_drag_dest_find_target (widget, context, NULL);
++    
++    /* we cannot handle the drag data */
++    if (G_UNLIKELY (target == GDK_NONE))
++        return FALSE;
+ 
+-    if (atom != GDK_NONE)
+-    {
+-        gtk_drag_get_data (widget, context, atom, time);
+-        return TRUE;
+-    }
++    /* request the drag data */
++    gtk_drag_get_data (widget, context, target, time);
++  
++    /* we call gtk_drag_finish later */
++    return TRUE;
++}
+ 
+-    return FALSE;
++static void
++treeview_drag_begin (GtkWidget *treeview, GdkDragContext *context, 
++                     PanelItemsDialog *pid)
++{
++    XfcePanelItemInfo *item_info;
++  
++    DBG (" + drag begin");
++    
++    /* set nice drag icon */
++    item_info = get_selected_tree_item (pid);
++    if (G_LIKELY (item_info && item_info->icon))
++        gtk_drag_set_icon_pixbuf (context, item_info->icon, 0, 0);
+ }
+ 
+ static void
+ treeview_data_get (GtkWidget *widget, GdkDragContext *drag_context, 
+                    GtkSelectionData *data, guint info, 
+-                   guint time, gpointer user_data)
++                   guint time, PanelItemsDialog *pid)
+ {
++    XfcePanelItemInfo *item_info;
++    const gchar       *item_name;
++    
+     DBG (" + drag data get: %d", info);
+     
+-    if (info == TARGET_PLUGIN_NAME)
++    if (G_LIKELY (info == TARGET_PLUGIN_NAME))
+     {
+-        GtkTreeSelection *sel;
+-        GtkTreeModel *model;
+-        GtkTreeIter iter;
+-        XfcePanelItemInfo *info;
+-
+-        sel = gtk_tree_view_get_selection (GTK_TREE_VIEW (widget));
+-
+-        if (!sel)
++        /* get the selected item info */
++        item_info = get_selected_tree_item (pid);
++        if (G_LIKELY (item_info))
+         {
+-            DBG ("No selection!");
+-            return;
++            item_name = item_info->name;
++            
++            if (xfce_panel_item_manager_is_available (item_name))
++            {
++                DBG (" + set selection data: %s", item_name);
++                
++                /* set the selection data */
++                gtk_selection_data_set (data, data->target, 8, (guchar *) item_name, strlen (item_name));
++            }
+         }
+-        
+-        if (!gtk_tree_selection_get_selected (sel, &model, &iter))
+-            return;
+-
+-        gtk_tree_model_get (model, &iter, 0, &info, -1);
+-
+-        if (!xfce_panel_item_manager_is_available (info->name))
+-            return;
+-       
+-        DBG (" + set data: %s", info->name);
+-        gtk_selection_data_set (data, data->target, 8, 
+-                                (guchar *)info->name, strlen (info->name));
+     }
+ }
+ 
+@@ -408,10 +416,10 @@
+     scroll = gtk_scrolled_window_new (NULL, NULL);
+     gtk_widget_show (scroll);
+     gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scroll),
+-				    GTK_POLICY_NEVER, 
++            GTK_POLICY_NEVER, 
+                                     GTK_POLICY_NEVER);
+     gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scroll),
+-					 GTK_SHADOW_IN);
++           GTK_SHADOW_IN);
+     gtk_box_pack_start (GTK_BOX (pid->items_box), scroll, TRUE, TRUE, 0);
+     
+     store = gtk_list_store_new (1, G_TYPE_POINTER);
+@@ -433,19 +441,14 @@
+     g_object_unref (G_OBJECT (store));
+ 
+     /* dnd */
+-    panel_dnd_set_name_source (tv);
++    panel_dnd_set_source_name (tv);
++    panel_dnd_set_dest_name_and_widget (tv);
+ 
+-    panel_dnd_set_widget_delete_dest (tv);
+-
+-    g_signal_connect (tv, "drag-data-get", G_CALLBACK (treeview_data_get), 
+-                      pid);
+-
+-    g_signal_connect (tv, "drag-data-received", 
+-                      G_CALLBACK (treeview_data_received), pid);
++    g_signal_connect (tv, "drag-data-get", G_CALLBACK (treeview_data_get), pid);
++    g_signal_connect (tv, "drag-data-received", G_CALLBACK (treeview_data_received), pid);
++    g_signal_connect (tv, "drag-drop", G_CALLBACK (treeview_drag_drop), pid);
++    g_signal_connect (tv, "drag-begin", G_CALLBACK (treeview_drag_begin), pid);
+     
+-    g_signal_connect (tv, "drag-drop", 
+-                      G_CALLBACK (treeview_drag_drop), pid);
+-    
+     /* create the view */
+     col = gtk_tree_view_column_new ();
+     gtk_tree_view_column_set_spacing (col, BORDER);
+@@ -454,14 +457,14 @@
+     cell = gtk_cell_renderer_pixbuf_new ();
+     gtk_tree_view_column_pack_start (col, cell, FALSE);
+     gtk_tree_view_column_set_cell_data_func (col, cell,
+-					     (GtkTreeCellDataFunc)
+-					     render_icon, NULL, NULL);
++               (GtkTreeCellDataFunc)
++               render_icon, NULL, NULL);
+ 
+     cell = gtk_cell_renderer_text_new ();
+     gtk_tree_view_column_pack_start (col, cell, TRUE);
+     gtk_tree_view_column_set_cell_data_func (col, cell,
+-					     (GtkTreeCellDataFunc)
+-					     render_text, tv, NULL);
++               (GtkTreeCellDataFunc)
++               render_text, tv, NULL);
+ 
+     color = &(tv->style->fg[GTK_STATE_INSENSITIVE]);
+     g_object_set (cell, "foreground-gdk", color, NULL);
+@@ -481,17 +484,12 @@
+                                             GTK_POLICY_ALWAYS);
+         }    
+ 
+-	gtk_list_store_append (store, &iter);
+-	gtk_list_store_set (store, &iter, 0, 
+-                            g_ptr_array_index (pid->items, i), -1);
++        gtk_list_store_append (store, &iter);
++        gtk_list_store_set (store, &iter, 0, g_ptr_array_index (pid->items, i), -1);
+     }
+ 
+-    g_signal_connect (tv, "cursor_changed", G_CALLBACK (cursor_changed),
+-		      pid);
++    g_signal_connect (tv, "button-press-event", G_CALLBACK (treeview_dblclick), pid);
+ 
+-    g_signal_connect (tv, "button-press-event",
+-		      G_CALLBACK (treeview_dblclick), pid);
+-
+     path = gtk_tree_path_new_from_string ("0");
+     gtk_tree_view_set_cursor (GTK_TREE_VIEW (tv), path, NULL, FALSE);
+     gtk_tree_path_free (path);
+@@ -505,9 +503,6 @@
+     panel_block_autohide (panel);
+ 
+     xfce_itembar_raise_event_window (XFCE_ITEMBAR (priv->itembar));
+-    
+-    panel_dnd_set_dest (priv->itembar);
+-    panel_dnd_set_widget_source (priv->itembar);
+ 
+     panel_set_items_sensitive (panel, FALSE);
+ 
+@@ -524,9 +519,6 @@
+     xfce_itembar_lower_event_window (XFCE_ITEMBAR (priv->itembar));
+ 
+     panel_set_items_sensitive (panel, TRUE);
+-    
+-    panel_dnd_unset_dest (priv->itembar);
+-    panel_dnd_unset_source (priv->itembar);
+ 
+     priv->edit_mode = FALSE;
+ }
+@@ -537,9 +529,7 @@
+     if (response != GTK_RESPONSE_HELP)
+     {
+         if (response == GTK_RESPONSE_OK)
+-        {
+             add_selected_item (pid);
+-        }
+ 
+         items_dialog_widget = NULL;
+         g_ptr_array_foreach (pid->panels, (GFunc)item_dialog_closed, NULL);
+
+Modified: panel/panel-dnd.c
+===================================================================
+--- panel/panel-dnd.c	2008-03-06 14:44:26 UTC (rev 26668)
++++ panel/panel-dnd.c	2008-03-09 18:03:37 UTC (rev 26669)
+@@ -36,110 +36,72 @@
+ static const GtkTargetEntry dest_target_list[] = 
+ {
+     { "application/x-xfce-panel-plugin-name", 0, TARGET_PLUGIN_NAME },
+-    { "application/x-xfce-panel-plugin-widget", 
+-      GTK_TARGET_SAME_APP, TARGET_PLUGIN_WIDGET },
+-    { "text/plain", 0, TARGET_FILE },
+-    { "text/uri-list", 0, TARGET_FILE },
+-    { "UTF8_STRING", 0, TARGET_FILE }
++    { "application/x-xfce-panel-plugin-widget", GTK_TARGET_SAME_APP, TARGET_PLUGIN_WIDGET }
+ };
+ 
+-static const guint n_dest_targets = G_N_ELEMENTS (dest_target_list);
+-
+ static const GtkTargetEntry name_target_list[] = 
+ {
+     { "application/x-xfce-panel-plugin-name", 0, TARGET_PLUGIN_NAME }
+ };
+ 
+-static const guint n_name_targets = G_N_ELEMENTS (name_target_list);
+-
+ static const GtkTargetEntry widget_target_list[] = 
+ {
+-    { "application/x-xfce-panel-plugin-widget", 0, TARGET_PLUGIN_WIDGET }
++    { "application/x-xfce-panel-plugin-widget", GTK_TARGET_SAME_APP, TARGET_PLUGIN_WIDGET }
+ };
+ 
+-static guint n_widget_targets = G_N_ELEMENTS (widget_target_list);
+-
+ /* public API */
+ 
+ void 
+-panel_dnd_set_dest (GtkWidget *widget)
++panel_dnd_set_dest_name_and_widget (GtkWidget *widget)
+ {
+     gtk_drag_dest_set (widget, 
+                        GTK_DEST_DEFAULT_HIGHLIGHT | GTK_DEST_DEFAULT_MOTION,
+-                       dest_target_list, n_dest_targets, GDK_ACTION_COPY);
++                       dest_target_list, G_N_ELEMENTS (dest_target_list),
++                       GDK_ACTION_MOVE | GDK_ACTION_COPY);
+ }
+ 
+ void 
+-panel_dnd_set_widget_delete_dest (GtkWidget *widget)
++panel_dnd_set_dest_widget (GtkWidget *widget)
+ {
+     gtk_drag_dest_set (widget, 
+                        GTK_DEST_DEFAULT_HIGHLIGHT | GTK_DEST_DEFAULT_MOTION,
+-                       widget_target_list, n_widget_targets, 
+-                       GDK_ACTION_MOVE);
++                       widget_target_list, G_N_ELEMENTS (widget_target_list), GDK_ACTION_MOVE);
+ }
+ 
+ void 
+-panel_dnd_unset_dest (GtkWidget *widget)
++panel_dnd_set_source_name (GtkWidget *widget)
+ {
+-    gtk_drag_dest_unset (widget);
+-}
+-
+-GtkWidget *
+-panel_dnd_get_plugin_from_data (GtkSelectionData *data)
+-{
+-    glong *n;
+-
+-    n = (glong *)data->data;
+-    DBG (" + get pointer: %ld", *n);
+-    
+-    return GTK_WIDGET (GINT_TO_POINTER (*n));
+-}
+-
+-void 
+-panel_dnd_set_name_source (GtkWidget *widget)
+-{
+     gtk_drag_source_set (widget, GDK_BUTTON1_MASK, 
+-                         name_target_list, n_name_targets, 
+-                         GDK_ACTION_COPY);
++                         name_target_list, G_N_ELEMENTS (name_target_list), GDK_ACTION_COPY);
+ }
+ 
+ void 
+-panel_dnd_set_widget_source (GtkWidget *widget)
++panel_dnd_set_source_widget (GtkWidget *widget)
+ {
+     gtk_drag_source_set (widget, GDK_BUTTON1_MASK, 
+-                         widget_target_list, n_widget_targets, 
+-                         GDK_ACTION_COPY|GDK_ACTION_MOVE);
++                         widget_target_list, G_N_ELEMENTS (widget_target_list), GDK_ACTION_COPY);
+ }
+ 
+-void panel_dnd_unset_source (GtkWidget *widget)
+-{
+-    gtk_drag_source_unset (widget);
+-}
+-
+ void
+-panel_dnd_set_widget_data (GtkSelectionData *data, GtkWidget *widget)
+-{
+-    glong n = GPOINTER_TO_INT (widget);
+-    
+-    DBG (" + set pointer: %ld", n);
+-    
+-    gtk_selection_data_set (data, data->target, 32, (guchar *) &n, sizeof (n));
+-}
+-
+-void
+ panel_dnd_begin_drag (GtkWidget *widget)
+ {
+-    static GtkTargetList *list = NULL;
+-    GdkEvent *ev;
++    GtkTargetList *target_list ;
++    GdkEvent      *event;
+     
+-    if (G_UNLIKELY (list == NULL))
++    event = gtk_get_current_event();
++    if (G_LIKELY (event))
+     {
+-        list = gtk_target_list_new (widget_target_list, n_widget_targets);
+-    }
++        /* create a new target list */
++        target_list = gtk_target_list_new (widget_target_list, G_N_ELEMENTS (widget_target_list));
++
++        /* begin the drag */
++        gtk_drag_begin (widget, target_list, GDK_ACTION_MOVE, 1, event);
+     
+-    ev = gtk_get_current_event();
+-    gtk_drag_begin (widget, list, GDK_ACTION_COPY, 1, ev);
++        /* release the target list */
++        gtk_target_list_unref (target_list);
+ 
+-    gdk_event_free (ev);
++        /* free the event */
++        gdk_event_free (event);
++    }
+ }
+ 
+
+Modified: panel/panel-dnd.h
+===================================================================
+--- panel/panel-dnd.h	2008-03-06 14:44:26 UTC (rev 26668)
++++ panel/panel-dnd.h	2008-03-09 18:03:37 UTC (rev 26669)
+@@ -27,27 +27,17 @@
+ enum 
+ {
+     TARGET_PLUGIN_NAME,
+-    TARGET_PLUGIN_WIDGET,
+-    TARGET_FILE
++    TARGET_PLUGIN_WIDGET
+ };
+ 
+-void panel_dnd_set_dest (GtkWidget *widget);
++void panel_dnd_set_dest_name_and_widget (GtkWidget *widget);
+ 
+-void panel_dnd_set_widget_delete_dest (GtkWidget *widget);
++void panel_dnd_set_dest_widget (GtkWidget *widget);
+ 
+-void panel_dnd_unset_dest (GtkWidget *widget);
++void panel_dnd_set_source_name (GtkWidget *widget);
+ 
+-GtkWidget *panel_dnd_get_plugin_from_data (GtkSelectionData *data);
++void panel_dnd_set_source_widget (GtkWidget *widget);
+ 
+-
+-void panel_dnd_set_name_source (GtkWidget *widget);
+-
+-void panel_dnd_set_widget_source (GtkWidget *widget);
+-
+-void panel_dnd_unset_source (GtkWidget *widget);
+-
+-void panel_dnd_set_widget_data (GtkSelectionData *data, GtkWidget *plugin);
+-
+ void panel_dnd_begin_drag (GtkWidget *widget);
+ 
+ #endif /* _PANEL_DND_H */
+
+Modified: panel/panel-private.h
+===================================================================
+--- panel/panel-private.h	2008-03-06 14:44:26 UTC (rev 26668)
++++ panel/panel-private.h	2008-03-09 18:03:37 UTC (rev 26669)
+@@ -55,7 +55,6 @@
+ {
+     GtkWidget *itembar;
+     GtkWidget *menu;
+-    GtkWidget *drag_widget;
+ 
+     int size;
+     int monitor;
+
+Modified: panel/panel-properties.c
+===================================================================
+--- panel/panel-properties.c	2008-03-06 14:44:26 UTC (rev 26668)
++++ panel/panel-properties.c	2008-03-09 18:03:37 UTC (rev 26669)
+@@ -939,7 +939,7 @@
+     
+     g_signal_connect (panel, "move-end", G_CALLBACK (panel_move_end), NULL);
+ 
+-    panel_dnd_set_dest (GTK_WIDGET (panel));
++    panel_dnd_set_dest_name_and_widget (GTK_WIDGET (panel));
+     g_signal_connect (panel, "drag-motion", G_CALLBACK (drag_motion), NULL);
+     g_signal_connect (panel, "drag-leave", G_CALLBACK (drag_leave), NULL);
+ }
+
+Modified: panel/panel.c
+===================================================================
+--- panel/panel.c	2008-03-06 14:44:26 UTC (rev 26668)
++++ panel/panel.c	2008-03-09 18:03:37 UTC (rev 26669)
+@@ -87,6 +87,7 @@
+ static void panel_menu_deactivated (GtkWidget *item);
+ 
+ static void panel_menu_opened (GtkWidget *item);
++static void _item_start_move (GtkWidget *item, Panel     *panel);
+ 
+ /* DND dest */
+ static void _panel_drag_data_received (GtkWidget        *widget, 
+@@ -110,21 +111,6 @@
+                                GdkDragContext *drag_context, 
+                                Panel          *panel);
+ 
+-static void _panel_drag_end (GtkWidget      *widget, 
+-                             GdkDragContext *drag_context, 
+-                             Panel          *panel);
+-
+-static void _panel_drag_data_get (GtkWidget        *widget, 
+-                                  GdkDragContext   *drag_context, 
+-                                  GtkSelectionData *data, 
+-                                  guint             info, 
+-                                  guint             time, 
+-                                  Panel            *panel);
+-
+-static void _panel_drag_data_delete (GtkWidget      *widget, 
+-                                     GdkDragContext *drag_context, 
+-                                     Panel          *panel);
+-
+ /* pass through button press events */
+ static gboolean _panel_itembar_button_pressed (GtkWidget      *widget, 
+                                                GdkEventButton *ev, 
+@@ -255,6 +241,9 @@
+     priv->itembar = xfce_itembar_new (GTK_ORIENTATION_HORIZONTAL);
+     gtk_widget_show (priv->itembar);
+     gtk_container_add (GTK_CONTAINER (panel), priv->itembar);
++    
++    panel_dnd_set_dest_name_and_widget (priv->itembar);
++    panel_dnd_set_source_widget (priv->itembar);
+ 
+     /* don't allow the wm to close the panel window */
+     g_signal_connect (panel, "delete-event", G_CALLBACK (gtk_true), NULL);
+@@ -269,15 +258,6 @@
+     g_signal_connect (priv->itembar, "drag-begin", 
+                       G_CALLBACK (_panel_drag_begin), panel);
+ 
+-    g_signal_connect (priv->itembar, "drag-end", 
+-                      G_CALLBACK (_panel_drag_end), panel);
+-
+-    g_signal_connect (priv->itembar, "drag-data-get", 
+-                      G_CALLBACK (_panel_drag_data_get), panel);
+-
+-    g_signal_connect (priv->itembar, "drag-data-delete", 
+-                      G_CALLBACK (_panel_drag_data_delete), panel);
+-
+     /* mouse click */
+     g_signal_connect (priv->itembar, "button-press-event",
+                       G_CALLBACK (_panel_itembar_button_pressed), panel);
+@@ -441,76 +421,87 @@
+                            guint             time, 
+                            Panel            *panel)
+ {
+-    gboolean handled = FALSE;
++    XfceItembar   *itembar = XFCE_ITEMBAR (widget);
++    PanelPrivate  *priv = panel->priv;
++    XfcePanelItem *item;
++    GtkWidget     *plugin;
++    gint           index;
++    gint           oldindex;
++    gboolean       expand;
++    gboolean       succeed = FALSE;
+ 
+     DBG (" + drag data received: %d", info);
+     
+-    if (data->length > 0)
++    /* get the drop index */
++    index = xfce_itembar_get_drop_index (itembar, x, y);
++    
++    switch (info)
+     {
+-        XfceItembar   *itembar;
+-        PanelPrivate  *priv;
+-        XfcePanelItem *item;
+-        GtkWidget     *plugin;
+-        int            index;
+-        int            oldindex = -1;
+-        gboolean       expand;
+-
+-        itembar = XFCE_ITEMBAR (widget);
+-
+-        switch (info)
+-        {
+-            case TARGET_PLUGIN_NAME:
+-                handled = TRUE;
+-                index = xfce_itembar_get_drop_index (itembar, x, y);
+-                panel_insert_item (panel, (const char *)data->data, index);
++        case TARGET_PLUGIN_NAME:
++            if (data->length > 0)
++            {
++                /* insert the new plugin */
++                panel_insert_item (panel, (const gchar *) data->data, index);
++                
++                /* succeeded */
++                succeed = TRUE;
++            }
++            break;
++           
++        case TARGET_PLUGIN_WIDGET:
++            /* get the plugin from the drag context */
++            plugin = gtk_drag_get_source_widget (context);
++            
++            /* try the drag_widget or leave */
++            if (!plugin || !XFCE_IS_PANEL_ITEM (plugin))
+                 break;
++            
++            if (gtk_widget_get_parent (plugin) != widget)
++            {
++                /* get the plugin and information */
++                item   = XFCE_PANEL_ITEM (plugin);
++                expand = xfce_panel_item_get_expand (item);
+                 
+-            case TARGET_PLUGIN_WIDGET:
+-                plugin = panel_dnd_get_plugin_from_data (data);
+-                if (!plugin || !GTK_IS_WIDGET (plugin))
+-                    break;                
+-
+-                handled = TRUE;
+-                index = xfce_itembar_get_drop_index (itembar, x, y);
+-
+-                if (plugin->parent != widget)
+-                {
+-                    item   = XFCE_PANEL_ITEM (plugin);
+-                    expand = xfce_panel_item_get_expand (item);
+-                    priv   = panel->priv;
+-
+-                    g_object_freeze_notify (G_OBJECT (widget));
++                /* freeze plugin notifications */
++                g_object_freeze_notify (G_OBJECT (widget));
++                
++                /* move the plugin from the old panel to the new one */
++                gtk_widget_reparent (GTK_WIDGET (plugin), widget);
++                
++                /* update the plugin */
++                xfce_panel_item_set_size (item, priv->size);
++                xfce_panel_item_set_screen_position (item, priv->screen_position);
++                
++                /* update the itembar */
++                xfce_itembar_reorder_child (itembar, plugin, index);
++                xfce_itembar_set_child_expand (itembar, plugin, expand);
++                
++                /* thaw update notifications */
++                g_object_thaw_notify (G_OBJECT (widget));
++            }
++            else /* move on same panel */
++            {
++                /* get the old index */
++                oldindex = xfce_itembar_get_item_index (itembar, plugin);
++                
++                if (index > oldindex)
++                    index--;
+                     
+-                    gtk_widget_reparent (GTK_WIDGET (plugin), widget);
+-                    
+-                    xfce_panel_item_set_size (item, priv->size);
+-                    
+-                    xfce_panel_item_set_screen_position (item,
+-                                                         priv->screen_position);
+-                    
++                if (index != oldindex)
+                     xfce_itembar_reorder_child (itembar, plugin, index);
+-
+-                    g_object_thaw_notify (G_OBJECT (widget));
+-
+-                    xfce_itembar_set_child_expand (itembar, plugin, expand);
+-                }
+-                else /* only when moving on the same panel */
+-                {
+-                    oldindex = xfce_itembar_get_item_index (itembar, plugin);
+-
+-                    if (index > oldindex) index--;
+-                    
+-                    if (index != oldindex)
+-                        xfce_itembar_reorder_child (itembar, plugin, index);
+-                }
+-                break;
+-                
+-            default:
+-                break;
+-        }
++            }
++            
++            /* properly handled */
++            succeed = TRUE;
++            
++            break;
++           
++        default:
++            break;
+     }
+-     
+-    gtk_drag_finish (context, handled, FALSE, time);
++    
++    /* finish the drag */
++    gtk_drag_finish (context, succeed, FALSE, time);
+ }
+ 
+ static gboolean
+@@ -521,15 +512,17 @@
+                   guint           time, 
+                   Panel          *panel)
+ {
+-    GdkAtom atom = gtk_drag_dest_find_target (widget, context, NULL);
++    GdkAtom target = gtk_drag_dest_find_target (widget, context, NULL);
++    
++    /* we cannot handle the drag data */
++    if (G_UNLIKELY (target == GDK_NONE))
++        return FALSE;
+ 
+-    if (atom != GDK_NONE)
+-    {
+-        gtk_drag_get_data (widget, context, atom, time);
+-        return TRUE;
+-    }
+-
+-    return FALSE;
++    /* request the drag data */
++    gtk_drag_get_data (widget, context, target, time);
++  
++    /* we call gtk_drag_finish later */
++    return TRUE;
+ }
+ 
+ /* DND source */
+@@ -538,112 +531,29 @@
+                    GdkDragContext *drag_context, 
+                    Panel          *panel)
+ {
+-    int           x, y, rootx, rooty, w, h;
+-    GtkWidget    *plugin;
+-    GdkPixbuf    *pb;
+-    PanelPrivate *priv = panel->priv;
+-
++    gint         x, y, rootx, rooty;
++    GtkWidget   *plugin;
++    
+     DBG (" + drag begin");
+     
+-    if (priv->drag_widget)
+-    {
+-        plugin = priv->drag_widget;
+-
+-        /* allow menu to close, in order to not mess up the snapshot of the
+-         * plugin -- TODO: find a better way to do this */
+-        while (gtk_events_pending ())
+-            gtk_main_iteration ();
+-    }
+-    else
+-    {
+-        x = y = 0;
+-        gdk_display_get_pointer (gtk_widget_get_display (widget), 
+-                                 NULL, &x, &y, NULL);
+-        gdk_window_get_root_origin (widget->window, &rootx, &rooty);
+-        x -= rootx;
+-        y -= rooty;
+-
+-        plugin = xfce_itembar_get_item_at_point (XFCE_ITEMBAR (widget), x, y);
+-    }
+-
+-    if (plugin)
+-    {
+-        GdkDrawable *d = GDK_DRAWABLE (plugin->window);
+-        
+-        gdk_drawable_get_size (d, &w, &h);
+-        pb = gdk_pixbuf_get_from_drawable (NULL, d, NULL, 0, 0, 0, 0, w, h);
+-        gtk_drag_set_icon_pixbuf (drag_context, pb, 0, 0);
+-        g_object_unref (G_OBJECT (pb));
+-
+-        priv->drag_widget = plugin;
+-    }
+-    else
+-        DBG ("No Plugin");
++    /* get the pointer position */
++    gdk_display_get_pointer (gtk_widget_get_display (widget), NULL, &x, &y, NULL);
++    
++    /* get the window root coordinates */
++    gdk_window_get_root_origin (widget->window, &rootx, &rooty);
++    
++    /* calc the position inside the panel */
++    x -= rootx;
++    y -= rooty;
++    
++    /* get the plugin on the itembar at this position */
++    plugin = xfce_itembar_get_item_at_point (XFCE_ITEMBAR (widget), x, y);
++    
++    /* start an item move */
++    if (G_LIKELY (plugin))
++        _item_start_move (plugin, panel);
+ }
+ 
+-static void
+-_panel_drag_end (GtkWidget      *widget, 
+-                 GdkDragContext *drag_context, 
+-                 Panel          *panel)
+-{
+-    PanelPrivate *priv = panel->priv;
+-
+-    priv->drag_widget = NULL;
+-
+-    if (!priv->edit_mode)
+-    {
+-        const GPtrArray *panels = panel_app_get_panel_list ();
+-        int i;
+-        
+-        for (i = 0; i < panels->len; ++i)
+-        {
+-            Panel *p = g_ptr_array_index (panels, i);
+-            
+-            priv = p->priv;
+-
+-            xfce_itembar_lower_event_window (XFCE_ITEMBAR (priv->itembar));
+-            panel_dnd_unset_dest (priv->itembar);
+-            panel_dnd_unset_source (priv->itembar);
+-            panel_set_items_sensitive (p, TRUE);
+-
+-            panel_unblock_autohide (p);
+-        }
+-    }
+-}
+-
+-static void
+-_panel_drag_data_get (GtkWidget        *widget, 
+-                      GdkDragContext   *drag_context, 
+-                      GtkSelectionData *data, 
+-                      guint             info, 
+-                      guint             time, 
+-                      Panel            *panel)
+-{
+-    if (info == TARGET_PLUGIN_WIDGET)
+-    {
+-        PanelPrivate *priv = panel->priv;
+-
+-        if (priv->drag_widget)
+-        {
+-            panel_dnd_set_widget_data (data, priv->drag_widget);
+-        }
+-    }
+-}
+-
+-static void
+-_panel_drag_data_delete (GtkWidget      *widget, 
+-                         GdkDragContext *drag_context, 
+-                         Panel          *panel)
+-{
+-    PanelPrivate *priv = panel->priv;
+-
+-    if (priv->drag_widget)
+-    {
+-        xfce_panel_item_remove (XFCE_PANEL_ITEM (priv->drag_widget));
+-        priv->drag_widget = NULL;
+-    }
+-}
+-
+ /* pass through right-click events when the event window of itembar is raised
+  */
+ static gboolean
+@@ -651,6 +561,8 @@
+                                GdkEventButton *ev, 
+                                Panel          *panel)
+ {
++    GtkWidget *plugin;
++    
+     if (xfce_itembar_event_window_is_raised (XFCE_ITEMBAR (widget)))
+     {
+         guint modifiers;
+@@ -660,8 +572,6 @@
+         if (ev->button == 3 || (ev->button == 1 && 
+             (ev->state & modifiers) == GDK_CONTROL_MASK))
+         {
+-            GtkWidget *plugin;
+-
+             plugin = xfce_itembar_get_item_at_point (XFCE_ITEMBAR (widget),
+                                                      ev->x, ev->y);
+             if (plugin)
+@@ -670,14 +580,6 @@
+                 return TRUE;
+             }
+         }
+-        else if (ev->button == 1)
+-        {
+-            PanelPrivate *priv = panel->priv;
+-            
+-            priv->drag_widget = 
+-                xfce_itembar_get_item_at_point (XFCE_ITEMBAR (widget), 
+-                                                ev->x, ev->y);
+-        }
+     }
+     
+     return FALSE;
+@@ -863,13 +765,44 @@
+ }
+ 
+ static void
++_item_start_move_end (GtkWidget      *item,
++                      GdkDragContext *context,
++                      Panel          *panel)
++{
++    PanelPrivate *priv = panel->priv;
++    Panel        *p;
++    
++    DBG ("+ finish item drag");
++    
++    /* disconnect drag end signal */
++    g_signal_handlers_disconnect_by_func (G_OBJECT (item), G_CALLBACK (_item_start_move_end), panel);
++    
++    if (!priv->edit_mode)
++    {
++        const GPtrArray *panels = panel_app_get_panel_list ();
++        gint i;
++        
++        for (i = 0; i < panels->len; ++i)
++        {
++            p = g_ptr_array_index (panels, i);
++            priv = p->priv;
++
++            xfce_itembar_lower_event_window (XFCE_ITEMBAR (priv->itembar));
++            panel_set_items_sensitive (p, TRUE);
++
++            panel_unblock_autohide (p);
++        }
++    }
++}
++
++static void
+ _item_start_move (GtkWidget *item, 
+                   Panel     *panel)
+ {
+     const GPtrArray *panels = panel_app_get_panel_list ();
+     PanelPrivate    *priv;
+     Panel           *p;
+-    int              i;
++    gint             i;
+     
+     for (i = 0; i < panels->len; ++i)
+     {
+@@ -879,19 +812,16 @@
+         if (!priv->edit_mode)
+         {
+             panel_set_items_sensitive (p, FALSE);
+-
+-            panel_dnd_set_dest (priv->itembar);
+-            panel_dnd_set_widget_source (priv->itembar);
+             xfce_itembar_raise_event_window (XFCE_ITEMBAR (priv->itembar));
+-
+             panel_block_autohide (p);
+         }
+     }
+ 
+-    priv = panel->priv;
+-    priv->drag_widget = item;
+-
+-    panel_dnd_begin_drag (priv->itembar);
++    /* start the drag */
++    panel_dnd_begin_drag (item);
++    
++    /* signal to make panels sensitive after a drop */
++    g_signal_connect (G_OBJECT (item), "drag-end", G_CALLBACK (_item_start_move_end), panel);
+ }
+ 
+ extern void panel_set_hidden (Panel    *panel, 
+
