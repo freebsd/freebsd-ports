@@ -20,6 +20,7 @@ share/locale/nn/LC_MESSAGES/lyx.mo
 share/locale/pl/LC_MESSAGES/lyx.mo
 share/locale/pt/LC_MESSAGES/lyx.mo
 share/locale/ro/LC_MESSAGES/lyx.mo
+share/locale/ru/LC_MESSAGES/lyx.mo
 share/locale/tr/LC_MESSAGES/lyx.mo
 share/locale/zh_CN/LC_MESSAGES/lyx.mo
 share/locale/zh_TW/LC_MESSAGES/lyx.mo
@@ -54,8 +55,10 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/doc/EmbeddedObjects.lyx
 %%DATADIR%%/doc/Extended.lyx
 %%DATADIR%%/doc/FAQ.lyx
+%%DATADIR%%/doc/Formula-numbering.lyx
 %%DATADIR%%/doc/Intro.lyx
 %%DATADIR%%/doc/LaTeXConfig.lyx.in
+%%DATADIR%%/doc/Math.lyx
 %%DATADIR%%/doc/Reference.lyx
 %%DATADIR%%/doc/TOC.lyx
 %%DATADIR%%/doc/Tutorial.lyx
@@ -103,7 +106,9 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/doc/de/EmbeddedObjects.lyx
 %%DATADIR%%/doc/de/Extended.lyx
 %%DATADIR%%/doc/de/FAQ.lyx
+%%DATADIR%%/doc/de/Formelnummerierung.lyx
 %%DATADIR%%/doc/de/Intro.lyx
+%%DATADIR%%/doc/de/Math.lyx
 %%DATADIR%%/doc/de/TOC.lyx
 %%DATADIR%%/doc/de/Tutorial.lyx
 %%DATADIR%%/doc/de/UserGuide.lyx
@@ -125,12 +130,11 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/doc/es/DocumentoTextoPostizo.txt
 %%DATADIR%%/doc/es/EmbeddedObjects.lyx
 %%DATADIR%%/doc/es/Extended.lyx
+%%DATADIR%%/doc/es/FAQ.lyx
 %%DATADIR%%/doc/es/Intro.lyx
 %%DATADIR%%/doc/es/TOC.lyx
 %%DATADIR%%/doc/es/Tutorial.lyx
 %%DATADIR%%/doc/es/UserGuide.lyx
-%%DATADIR%%/doc/es/biblio/LyXDocs.bib
-%%DATADIR%%/doc/es/biblio/alphadin.bst
 %%DATADIR%%/doc/es/clipart/ComentNotaImagenQt4.png
 %%DATADIR%%/doc/es/clipart/CuadroMinipagQt4.png
 %%DATADIR%%/doc/es/clipart/DocumentoHijoQt4.png
@@ -153,10 +157,14 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/doc/eu/Tutorial.lyx
 %%DATADIR%%/doc/eu/UserGuide.lyx
 %%DATADIR%%/doc/fr/Customization.lyx
+%%DATADIR%%/doc/fr/DocumentBidon1.lyx
+%%DATADIR%%/doc/fr/DocumentBidon2.lyx
+%%DATADIR%%/doc/fr/DocumentTexteBidon.txt
 %%DATADIR%%/doc/fr/EmbeddedObjects.lyx
 %%DATADIR%%/doc/fr/Extended.lyx
 %%DATADIR%%/doc/fr/FAQ.lyx
 %%DATADIR%%/doc/fr/Intro.lyx
+%%DATADIR%%/doc/fr/Math.lyx
 %%DATADIR%%/doc/fr/TOC.lyx
 %%DATADIR%%/doc/fr/Tutorial.lyx
 %%DATADIR%%/doc/fr/UserGuide.lyx
@@ -220,6 +228,7 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/examples/Minipage.lyx
 %%DATADIR%%/examples/aa_sample.lyx
 %%DATADIR%%/examples/aas_sample.lyx
+%%DATADIR%%/examples/addressExample.adr
 %%DATADIR%%/examples/amsart-test.lyx
 %%DATADIR%%/examples/amsbook-test.lyx
 %%DATADIR%%/examples/armenian-article.lyx
@@ -247,13 +256,16 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/examples/de/Minipage.lyx
 %%DATADIR%%/examples/de/beispiel_gelyxt.lyx
 %%DATADIR%%/examples/de/beispiel_roh.lyx
-%%DATADIR%%/examples/de/mathed.lyx
 %%DATADIR%%/examples/de/multicol.lyx
 %%DATADIR%%/examples/de/splash.lyx
+%%DATADIR%%/examples/de/serienbrief1.lyx
+%%DATADIR%%/examples/de/serienbrief2.lyx
+%%DATADIR%%/examples/de/serienbrief3.lyx
 %%DATADIR%%/examples/docbook_article.lyx
 %%DATADIR%%/examples/es/ItemizeBullets.lyx
 %%DATADIR%%/examples/es/ejemplo_con_lyx.lyx
 %%DATADIR%%/examples/es/ejemplo_sin_lyx.lyx
+%%DATADIR%%/examples/es/mathed.lyx
 %%DATADIR%%/examples/es/splash.lyx
 %%DATADIR%%/examples/eu/adibide_gordina.lyx
 %%DATADIR%%/examples/eu/adibide_lyx-atua.lyx
@@ -286,10 +298,10 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/examples/iecc12.fen
 %%DATADIR%%/examples/it/ItemizeBullets.lyx
 %%DATADIR%%/examples/it/splash.lyx
+%%DATADIR%%/examples/ja/splash.lyx
 %%DATADIR%%/examples/landslide.lyx
 %%DATADIR%%/examples/listerrors.lyx
 %%DATADIR%%/examples/listings.lyx
-%%DATADIR%%/examples/mathed.lyx
 %%DATADIR%%/examples/modernCV.lyx
 %%DATADIR%%/examples/multicol.lyx
 %%DATADIR%%/examples/nl/multicol.lyx
@@ -304,6 +316,9 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/examples/ro/splash.lyx
 %%DATADIR%%/examples/ru/splash.lyx
 %%DATADIR%%/examples/script_form.lyx
+%%DATADIR%%/examples/serial_letter1.lyx
+%%DATADIR%%/examples/serial_letter2.lyx
+%%DATADIR%%/examples/serial_letter3.lyx
 %%DATADIR%%/examples/simplecv.lyx
 %%DATADIR%%/examples/sl/primer_lyxan.lyx
 %%DATADIR%%/examples/sl/primer_surov.lyx
@@ -327,6 +342,7 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/images/banner.png
 %%DATADIR%%/images/bookmark-goto.xpm
 %%DATADIR%%/images/bookmark-save.xpm
+%%DATADIR%%/images/box-insert.xpm
 %%DATADIR%%/images/break-line.xpm
 %%DATADIR%%/images/buffer-close.xpm
 %%DATADIR%%/images/buffer-export_dvi.xpm
@@ -1231,6 +1247,7 @@ share/pixmaps/lyx.xpm
 %%DATADIR%%/ui/stdmenus.inc
 %%DATADIR%%/ui/stdtoolbars.inc
 %%DATADIR%%/unicodesymbols
+@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/tex
 @dirrm %%DATADIR%%/templates
@@ -1247,6 +1264,7 @@ share/pixmaps/lyx.xpm
 @dirrm %%DATADIR%%/examples/pt
 @dirrm %%DATADIR%%/examples/pl
 @dirrm %%DATADIR%%/examples/nl
+@dirrm %%DATADIR%%/examples/ja
 @dirrm %%DATADIR%%/examples/it
 @dirrm %%DATADIR%%/examples/hu
 @dirrm %%DATADIR%%/examples/he
@@ -1277,7 +1295,6 @@ share/pixmaps/lyx.xpm
 @dirrm %%DATADIR%%/doc/fr
 @dirrm %%DATADIR%%/doc/eu
 @dirrm %%DATADIR%%/doc/es/clipart
-@dirrm %%DATADIR%%/doc/es/biblio
 @dirrm %%DATADIR%%/doc/es
 @dirrm %%DATADIR%%/doc/de/clipart
 @dirrm %%DATADIR%%/doc/de
