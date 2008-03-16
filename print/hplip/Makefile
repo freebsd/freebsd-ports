@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hplip
-PORTVERSION=	2.7.12
+PORTVERSION=	2.8.2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hplip
@@ -30,7 +30,9 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-pp-build \
 		--enable-foomatic-ppd-install \
 		--with-icondir=${LOCALBASE}/share/applications \
-		--with-cupsbackenddir=${LOCALBASE}/libexec/cups/backend
+		--with-cupsbackenddir=${LOCALBASE}/libexec/cups/backend \
+		--with-cupsfilterdir=${LOCALBASE}/libexec/cups/filter \
+		--with-drvdir=${LOCALBASE}/libexec/cups/driver
 
 USE_LDCONFIG=	yes
 USE_GHOSTSCRIPT_RUN=	yes
@@ -101,11 +103,9 @@ post-patch:
 			s|-dld||g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/configure.in \
-		${WRKSRC}/foomatic-db-hpijs/make_configure \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/Makefile.am \
-		${WRKSRC}/aclocal.m4 \
-		${WRKSRC}/foomatic-db-hpijs/configure.ac
+		${WRKSRC}/aclocal.m4
 
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${LOCALBASE}/bin/python|g' \
 		${WRKSRC}/hpssd.py
