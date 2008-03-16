@@ -9,7 +9,6 @@ bin/python-shared%%PYVER%%
 %%IF_DEFAULT%%bin/smtpd.py
 bin/smtpd%%PYVER%%.py
 %%PYTHON_INCLUDEDIR%%/Python.h
-%%PYTHON_INCLUDEDIR%%/Python-ast.h
 %%PYTHON_INCLUDEDIR%%/abstract.h
 %%PYTHON_INCLUDEDIR%%/bitset.h
 %%PYTHON_INCLUDEDIR%%/boolobject.h

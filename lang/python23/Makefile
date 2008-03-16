@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	python23
-PORTVERSION=	2.3.5
-PORTREVISION=	3
+PORTVERSION=	2.3.6
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -32,8 +31,8 @@ PYTHON_VERSION=	python2.3
 PYTHON_NO_DEPENDS=	yes
 LATEST_LINK?=	${PYTHON_VERSION:S/.//}
 
-PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 plat-freebsd7 \
-		plat-freebsd8
+PLATFORMS=	plat-freebsd4 plat-freebsd5 plat-freebsd6 \
+		plat-freebsd7 plat-freebsd8
 SHARED_WRKSRC=	${WRKSRC}/build.shared
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
 DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
