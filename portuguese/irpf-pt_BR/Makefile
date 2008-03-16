@@ -7,6 +7,7 @@
 
 PORTNAME=	irpf
 PORTVERSION=	2008.1.0
+PORTREVISION=	1
 CATEGORIES=	portuguese finance java
 MASTER_SITES=	http://www.receita.fazenda.gov.br/Publico/programas/irpf/2008/PGDIrpf2008/Java/ZIP/
 PKGNAMEPREFIX?=	pt_BR-
