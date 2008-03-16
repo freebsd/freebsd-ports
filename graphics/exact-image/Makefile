@@ -7,7 +7,7 @@
 
 PORTNAME=	exact-image
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/ CENKES
 
@@ -16,7 +16,7 @@ COMMENT=	Fast image processing library
 
 BUILD_DEPENDS=	swig>=1.3.31:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	agg.2:${PORTSDIR}/graphics/agg \
-		evas.1:${PORTSDIR}/graphics/evas \
+		evas.9:${PORTSDIR}/graphics/evas \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
