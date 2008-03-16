@@ -42,7 +42,7 @@ WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libical.so.0)
+.if exists(${LOCALBASE}/lib/libical.so)
 WITH_ICAL=	yes
 .endif
 
@@ -50,8 +50,12 @@ WITH_ICAL=	yes
 WITH_USB=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libpcsclite.so) && !defined(WITHOUT_PCSC)
+WITH_PCSC=	yes
+.endif
+
 .if defined(WITH_ICAL)
-LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
+LIB_DEPENDS+=	ical.27:${PORTSDIR}/devel/libical
 .endif
 
 .if defined(WITH_USB)
@@ -60,6 +64,14 @@ LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 CONFIGURE_ARGS+=	--enable-libusb
 .else
 CONFIGURE_ARGS+=	--disable-libusb
+.endif
+
+.if defined(WITH_PCSC)
+LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+
+CONFIGURE_ARGS+=	--enable-libpcsclite
+.else
+CONFIGURE_ARGS+=	--disable-libpcsclite
 .endif
 
 # If smsd is enabled check if MySQL or PostgreSQL are installed and
@@ -73,14 +85,14 @@ PLIST_SUB+=	MSM='@comment '
 .else
 PLIST_SUB+=	SMSD=''
 MAN8+=		smsd.8
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so)
+.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so) && !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
 PLIST_SUB+=	MSM=''
 WITH_MYSQL=	yes
 .else
 PLIST_SUB+=	MSM='@comment '
 .endif
-.if exists(${LOCALBASE}/bin/psql)
+.if exists(${LOCALBASE}/bin/psql) && !defined(WITHOUT_PGSQL)
 USE_PGSQL=	yes
 PLIST_SUB+=	PGM=''
 WITH_PGSQL=	yes
