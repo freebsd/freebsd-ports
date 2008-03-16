@@ -18,7 +18,6 @@ COMMENT=	Windows password cracker based on rainbow tables
 USE_GNOME=	gtk20
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 SUB_FILES+=	pkg-message
 PORTDOCS=	*
 MAN1=		bkhive.1 samdump2.1
@@ -32,9 +31,8 @@ post-extract:
 	@${REINPLACE_CMD} -e 's/ install-exec-local// ; 605,617d' \
 		${WRKSRC}/Makefile.in
 # Hint the tools about correct endianness
-	@${REINPLACE_CMD} -e '27s,^,#include <machine/endian.h>,' \
-		${WRKDIR}/bkhive-${TOOLS_VER}/bkhive.c
-	@${REINPLACE_CMD} -e '34s,^,#include <machine/endian.h>,' \
+	@${REINPLACE_CMD} -e '27s,^$$,#include <machine/endian.h>,' \
+		${WRKDIR}/bkhive-${TOOLS_VER}/bkhive.c \
 		${WRKDIR}/samdump2-${TOOLS_VER}/samdump2.c
 
 post-build:
