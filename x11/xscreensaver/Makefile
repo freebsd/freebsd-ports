@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.04
+PORTVERSION=	5.05
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -97,7 +97,7 @@ MAN6=	anemone.6 anemotaxis.6 antinspect.6 antmaze.6 antspotlight.6 \
 	wander.6 webcollage.6 whirlwindwarp.6 whirlygig.6 worm.6 wormhole.6 \
 	xanalogtv.6 xflame.6 xjack.6 xlyap.6 xmatrix.6 xrayswarm.6 \
 	xspirograph.6 xsublim.6 zoom.6 cwaves.6 glcells.6 voronoi.6 \
-	abstractile.6 moebiusgears.6 lockward.6 \
+	abstractile.6 moebiusgears.6 lockward.6 cubicgrid.6 hypnowheel.6 \
 	xscreensaver-gl-helper.6
 
 .if ${ARCH} == "amd64"
@@ -139,5 +139,6 @@ post-install:
 		${ECHO} "bin/xscreensaver-hacks/webcollage-helper" | \
 			${CAT} - ${TMPPLIST} > ${TMPPLIST}.cat && \
 			${MV} ${TMPPLIST}.cat ${TMPPLIST}; fi)
+	${RM} ${LOCALBASE}/man/man6/lcdscrub
 
 .include <bsd.port.post.mk>

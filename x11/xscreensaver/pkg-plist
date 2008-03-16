@@ -45,6 +45,7 @@ bin/xscreensaver-hacks/crystal
 bin/xscreensaver-hacks/cube21
 bin/xscreensaver-hacks/cubenetic
 bin/xscreensaver-hacks/cubestorm
+bin/xscreensaver-hacks/cubicgrid
 bin/xscreensaver-hacks/cwaves
 bin/xscreensaver-hacks/cynosure
 bin/xscreensaver-hacks/dangerball
@@ -101,6 +102,7 @@ bin/xscreensaver-hacks/hopalong
 bin/xscreensaver-hacks/hyperball
 bin/xscreensaver-hacks/hypercube
 bin/xscreensaver-hacks/hypertorus
+bin/xscreensaver-hacks/hypnowheel
 bin/xscreensaver-hacks/ifs
 bin/xscreensaver-hacks/imsmap
 bin/xscreensaver-hacks/interaggregate
@@ -117,6 +119,7 @@ bin/xscreensaver-hacks/kumppa
 bin/xscreensaver-hacks/lament
 bin/xscreensaver-hacks/laser
 bin/xscreensaver-hacks/lavalite
+bin/xscreensaver-hacks/lcdscrub
 bin/xscreensaver-hacks/lightning
 bin/xscreensaver-hacks/lisa
 bin/xscreensaver-hacks/lissie
@@ -262,6 +265,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/cube21.xml
 %%DATADIR%%/config/cubenetic.xml
 %%DATADIR%%/config/cubestorm.xml
+%%DATADIR%%/config/cubicgrid.xml
 %%DATADIR%%/config/cwaves.xml
 %%DATADIR%%/config/cynosure.xml
 %%DATADIR%%/config/dangerball.xml
@@ -321,6 +325,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/hyperball.xml
 %%DATADIR%%/config/hypercube.xml
 %%DATADIR%%/config/hypertorus.xml
+%%DATADIR%%/config/hypnowheel.xml
 %%DATADIR%%/config/ifs.xml
 %%DATADIR%%/config/imsmap.xml
 %%DATADIR%%/config/interaggregate.xml
@@ -337,6 +342,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/lament.xml
 %%DATADIR%%/config/laser.xml
 %%DATADIR%%/config/lavalite.xml
+%%DATADIR%%/config/lcdscrub.xml
 %%DATADIR%%/config/lightning.xml
 %%DATADIR%%/config/lisa.xml
 %%DATADIR%%/config/lissie.xml
