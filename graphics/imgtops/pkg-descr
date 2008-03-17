@@ -1,0 +1,5 @@
+Command-line utilities for converting bitmage images (JPEG, PNG, GIF, Targa,
+BMP, etc.) to and from encapsulated postscript. Special care is taken to
+minimize the size of output files without reducing image quality.
+
+WWW: http://imgtops.sourceforge.net

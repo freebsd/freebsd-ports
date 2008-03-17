@@ -295,6 +295,7 @@
     SUBDIR += imageviewer
     SUBDIR += imc
     SUBDIR += imgseek
+    SUBDIR += imgtops
     SUBDIR += imgv
     SUBDIR += imlib
     SUBDIR += imlib2
