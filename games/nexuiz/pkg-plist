@@ -2,7 +2,7 @@
 %%SDL_CLIENT%%bin/nexuiz-sdl
 %%SERVER%%bin/nexuiz-dedicated
 %%DATADIR%%/data/common-spog.pk3
-%%DATADIR%%/data/data20070531.pk3
+%%DATADIR%%/data/data20080229.pk3
 %%MAPPACK%%%%DATADIR%%/data/79drdm5_beta2_nex.pk3
 %%MAPPACK%%%%DATADIR%%/data/79drgc2_nex.pk3
 %%MAPPACK%%%%DATADIR%%/data/CMP1-dm6_nex.pk3
