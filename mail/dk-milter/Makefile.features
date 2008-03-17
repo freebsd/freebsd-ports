@@ -15,10 +15,6 @@ SITE_SUB+=	-e '/-D_FFR_ANTICIPATE_SENDMAIL_MUNGE/s|^dnl ||'
 SITE_SUB+=	-e '/-D_FFR_FLUSH_HEADERS/s|^dnl ||'
 .endif
 
-.if defined(WITH_MULTIPLE_KEYS) && !defined(WITHOUT_MULTIPLE_KEYS)
-SITE_SUB+=	-e '/-D_FFR_MULTIPLE_KEYS/s|^dnl ||'
-.endif
-
 .if defined(WITH_REQUIRED_HEADERS) && !defined(WITHOUT_REQUIRED_HEADERS)
 SITE_SUB+=	-e '/-D_FFR_REQUIRED_HEADERS/s|^dnl ||'
 .endif
