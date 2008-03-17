@@ -1,3 +1,3 @@
-MD5 (rubygem/ruby-postgres-0.7.1.2006.04.06.gem) = 810ccd6684e93c25ed7281d4f96b3839
-SHA256 (rubygem/ruby-postgres-0.7.1.2006.04.06.gem) = 13f27bf37fe8c98c8775bc28225025996e0f72afb5fc574cd3fd8d0f6bf1b887
-SIZE (rubygem/ruby-postgres-0.7.1.2006.04.06.gem) = 46592
+MD5 (rubygem/postgres-0.7.9.2008.01.28.gem) = 467e38d29b1ef95bde2bf7ced504426b
+SHA256 (rubygem/postgres-0.7.9.2008.01.28.gem) = 86da5db7665c95d83203063dd88d4164b0cb65fcf078729e6e5c23879f058763
+SIZE (rubygem/postgres-0.7.9.2008.01.28.gem) = 32768
