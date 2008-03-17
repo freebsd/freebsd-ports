@@ -10,6 +10,7 @@
 %%SITE_PERL%%/Google/Checkout/Command/RefundOrder.pm
 %%SITE_PERL%%/Google/Checkout/Command/SendBuyerMessage.pm
 %%SITE_PERL%%/Google/Checkout/Command/UnarchiveOrder.pm
+%%SITE_PERL%%/Google/Checkout/General/AddressFilters.pm
 %%SITE_PERL%%/Google/Checkout/General/ConfigReader.pm
 %%SITE_PERL%%/Google/Checkout/General/DigitalContent.pm
 %%SITE_PERL%%/Google/Checkout/General/Error.pm
@@ -23,6 +24,7 @@
 %%SITE_PERL%%/Google/Checkout/General/MerchantCalculations.pm
 %%SITE_PERL%%/Google/Checkout/General/MerchantCheckoutFlow.pm
 %%SITE_PERL%%/Google/Checkout/General/MerchantItem.pm
+%%SITE_PERL%%/Google/Checkout/General/ParameterizedUrl.pm
 %%SITE_PERL%%/Google/Checkout/General/ParameterizedUrls.pm
 %%SITE_PERL%%/Google/Checkout/General/Pickup.pm
 %%SITE_PERL%%/Google/Checkout/General/Shipping.pm
@@ -46,10 +48,10 @@
 %%SITE_PERL%%/Google/Checkout/XML/NotificationResponseXmlWriter.pm
 %%SITE_PERL%%/Google/Checkout/XML/Writer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google-Checkout/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google-Checkout
-@dirrm %%SITE_PERL%%/Google/Checkout/XML
-@dirrm %%SITE_PERL%%/Google/Checkout/Notification
-@dirrm %%SITE_PERL%%/Google/Checkout/General
-@dirrm %%SITE_PERL%%/Google/Checkout/Command
-@dirrm %%SITE_PERL%%/Google/Checkout
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google-Checkout
+@dirrmtry %%SITE_PERL%%/Google/Checkout/XML
+@dirrmtry %%SITE_PERL%%/Google/Checkout/Notification
+@dirrmtry %%SITE_PERL%%/Google/Checkout/General
+@dirrmtry %%SITE_PERL%%/Google/Checkout/Command
+@dirrmtry %%SITE_PERL%%/Google/Checkout
 @dirrmtry %%SITE_PERL%%/Google
