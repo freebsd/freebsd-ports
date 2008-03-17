@@ -7,7 +7,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.13
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.lunafish.org/ocp/ \
 		http://critical.ch/distfiles/ \
@@ -63,7 +63,7 @@ RUN_DEPENDS+=	${TIMIDITY_CFG}:${PORTSDIR}/audio/eawpats
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x11
 .else
-USE_XLIB=	yes
+USE_XORG=	xxf86dga xxf86vm
 CONFIGURE_ARGS+=	--with-x11=yes
 .endif
 .if defined(WITH_DEBUG)
