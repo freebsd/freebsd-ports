@@ -7,7 +7,7 @@
 
 PORTNAME=	swissgerman-ding
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	german
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	de-
@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_WRKSUBDIR=	yes
 USE_PERL5=	yes
-USE_X_PREFIX=	yes
 
 DICTFILE=	${PREFIX}/share/ding/de-en.txt
 SWISSDICT=	de_ch-en.txt
