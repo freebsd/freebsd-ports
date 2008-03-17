@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Samba-LDAP
-PORTVERSION=	0.03
+PORTVERSION=	0.05
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Samba
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manage a Samba PDC with an LDAP Backend
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
@@ -32,7 +32,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Samba::LDAP.3 Samba::LDAP::Base.3 Samba::LDAP::Config.3 \
-		Samba::LDAP::Group.3 Samba::LDAP::User.3
+		Samba::LDAP::Group.3 Samba::LDAP::Machine.3 \
+		Samba::LDAP::User.3
 
 post-patch:
 		${PERL} -pi -e '$$_ = "" if m|auto_install|' ${WRKSRC}/Makefile.PL
