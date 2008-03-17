@@ -1,7 +1,25 @@
+%%PORTDOCS%%%%DOCSDIR%%/config1.png
+%%PORTDOCS%%%%DOCSDIR%%/config2.png
+%%PORTDOCS%%%%DOCSDIR%%/config3.png
+%%PORTDOCS%%%%DOCSDIR%%/config4.png
+%%PORTDOCS%%%%DOCSDIR%%/config5.png
+%%PORTDOCS%%%%DOCSDIR%%/config6.png
+%%PORTDOCS%%%%DOCSDIR%%/config7.png
+%%PORTDOCS%%%%DOCSDIR%%/copying.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/font.png
+%%PORTDOCS%%%%DOCSDIR%%/icons.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install1.png
+%%PORTDOCS%%%%DOCSDIR%%/install2.png
+%%PORTDOCS%%%%DOCSDIR%%/install3.png
+%%PORTDOCS%%%%DOCSDIR%%/install4.png
+%%PORTDOCS%%%%DOCSDIR%%/instruc2.html
+%%PORTDOCS%%%%DOCSDIR%%/instructions.html
+%%PORTDOCS%%%%DOCSDIR%%/recompiling.html
+%%PORTDOCS%%%%DOCSDIR%%/technical.html
+%%PORTDOCS%%%%DOCSDIR%%/uninstall.html
 %%DATADIR%%/cdrom.iso
 %%DATADIR%%/disk.dsk
-%%PORTDOCS%%%%DOCSDIR%%/install.txt
-%%PORTDOCS%%%%DOCSDIR%%/keyboard.txt
-%%PORTDOCS%%%%DOCSDIR%%/uninstal.txt
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
