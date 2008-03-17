@@ -17,6 +17,7 @@ COMMENT=	X-based rubik's cube(tm)
 
 WRKSRC=		${WRKDIR}/xrubik
 USE_IMAKE=	yes
+USE_XORG=	xt sm ice xext x11
 MAN1=		xrubik.1
 XFREE86_HTML_MAN=	no
 NO_INSTALL_MANPAGES=	yes
