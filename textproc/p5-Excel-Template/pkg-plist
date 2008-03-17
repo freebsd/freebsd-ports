@@ -23,13 +23,14 @@
 %%SITE_PERL%%/Excel/Template/Element/Formula.pm
 %%SITE_PERL%%/Excel/Template/Element/FreezePanes.pm
 %%SITE_PERL%%/Excel/Template/Element/Image.pm
+%%SITE_PERL%%/Excel/Template/Element/MergeRange.pm
 %%SITE_PERL%%/Excel/Template/Element/Range.pm
 %%SITE_PERL%%/Excel/Template/Element/Var.pm
 %%SITE_PERL%%/Excel/Template/Factory.pm
 %%SITE_PERL%%/Excel/Template/Format.pm
 %%SITE_PERL%%/Excel/Template/Iterator.pm
 %%SITE_PERL%%/Excel/Template/TextObject.pm
-@dirrm %%SITE_PERL%%/Excel/Template/Element
-@dirrm %%SITE_PERL%%/Excel/Template/Container
-@dirrm %%SITE_PERL%%/Excel/Template
+@dirrmtry %%SITE_PERL%%/Excel/Template/Element
+@dirrmtry %%SITE_PERL%%/Excel/Template/Container
+@dirrmtry %%SITE_PERL%%/Excel/Template
 @dirrmtry %%SITE_PERL%%/Excel
