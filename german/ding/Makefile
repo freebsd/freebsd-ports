@@ -7,7 +7,7 @@
 
 PORTNAME=	ding
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	german tk84
 MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		agrep:${PORTSDIR}/textproc/agrep
 
 MAN1=		ding.1
-USE_X_PREFIX=	yes
 
 do-build:
 	${SED} -E -e '1,/^exec/ s!wish!wish8.4!' \
