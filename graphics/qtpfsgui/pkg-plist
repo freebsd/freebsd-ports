@@ -2,19 +2,19 @@ bin/qtpfsgui
 share/applications/qtpfsgui.desktop
 share/pixmaps/qtpfsgui.png
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/html/dcraw.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/html/hints.html
 %%PORTDOCS%%%%DOCSDIR%%/html/images/batch-1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/images/copy_exif.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/html/images/mainwin.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/projectiveTransformationDialog.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/raw_conversion.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/images/resize.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/snap-qt4_3.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/html/images/snap-qt4_4.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/html/images/snap-qt4_5.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/html/images/snap-qt4_6.jpeg
@@ -23,10 +23,12 @@ share/pixmaps/qtpfsgui.png
 %%PORTDOCS%%%%DOCSDIR%%/html/manual.html
 %%NLS%%%%DATADIR%%/i18n/lang_de.qm
 %%NLS%%%%DATADIR%%/i18n/lang_es.qm
-%%NLS%%%%DATADIR%%/i18n/lang_fr.qm
 %%NLS%%%%DATADIR%%/i18n/lang_it.qm
+%%NLS%%%%DATADIR%%/i18n/lang_fr.qm
 %%NLS%%%%DATADIR%%/i18n/lang_pl.qm
 %%NLS%%%%DATADIR%%/i18n/lang_tr.qm
+%%NLS%%%%DATADIR%%/i18n/lang_ru.qm
+%%NLS%%%%DATADIR%%/i18n/lang_cs.qm
 %%NLS%%@dirrm %%DATADIR%%/i18n
 %%NLS%%@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images

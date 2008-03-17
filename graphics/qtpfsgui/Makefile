@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qtpfsgui
-DISTVERSION=	1.8.10
-PORTREVISION=	2
+PORTVERSION=	1.9.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -39,8 +38,12 @@ INSTALL_TARGET+=install_i18n
 PLIST_SUB+=	NLS="@comment "
 .endif
 .if !defined(NOPORTDOCS)
-INSTALL_TARGET+=install_docs
+INSTALL_TARGET+=install_docs install_htmls
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's|PREFIX = /usr/local|PREFIX = ${PREFIX}|g' \
+	    ${WRKSRC}/project.pro
 
 pre-build:
 	@${LRELEASE} ${BUILD_WRKSRC}/project.pro
