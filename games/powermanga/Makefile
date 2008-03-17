@@ -7,7 +7,7 @@
 
 PORTNAME=	powermanga
 PORTVERSION=	0.90
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/Powermanga/download/ \
 		http://www.amdmi3.ru/distfiles/
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	An arcade 2D shoot-em-up
 
-USE_XLIB=	yes
+USE_XORG=	xext xxf86dga
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
