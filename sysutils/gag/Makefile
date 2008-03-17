@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	gag
-PORTVERSION=	4.6
+PORTVERSION=	4.9
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
+MASTER_SITES=	SF
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Graphical Boot Manager
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64 ia64
 USE_ZIP=	yes
 NO_BUILD=	yes
 
@@ -24,18 +23,13 @@ CONFLICTS=	gag-2*
 NO_LATEST_LINK=	yes
 
 do-install:
-# Data
-	@${MKDIR} ${DATADIR}
+	${MKDIR} ${DATADIR}
 .for f in cdrom.iso disk.dsk
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
-
-# Documentation (optional)
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.   for f in install.txt keyboard.txt uninstal.txt
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.   endfor
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
