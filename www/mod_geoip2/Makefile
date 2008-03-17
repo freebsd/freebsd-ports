@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_geoip2
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	www geography
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip2/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,23 +14,20 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	jau@iki.fi
 COMMENT=	An Apache module that provides the country code of the client's IP
 
-BUILD_DEPENDS=	GeoIP>=1.4.3:${PORTSDIR}/net/GeoIP
-RUN_DEPENDS=	GeoIP>=1.4.3:${PORTSDIR}/net/GeoIP
+BUILD_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
+RUN_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
 
 CONFLICTS=	mod_geoip-[0-9]*
 
-USE_APACHE=	yes
-WITH_APACHE2=	yes
+USE_APACHE=	2.0+
+MODULENAME=	mod_geoip
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-SUB_FILES=	pkg-message
+SUB_FILES+=	pkg-message
 PORTDOCS=	Changes INSTALL README README.php
 
-do-build:
-	@cd ${WRKSRC} && \
-	${APXS} -c -L${LOCALBASE}/lib -I${LOCALBASE}/include -lGeoIP mod_geoip.c
-
-do-install:
-	${APXS} -i -A -n geoip ${WRKSRC}/.libs/mod_geoip.so
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
