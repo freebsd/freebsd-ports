@@ -7,7 +7,7 @@
 
 PORTNAME=	mirrormagic
 PORTVERSION=	2.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/ \
 		http://www.amdmi3.ru/distfiles/
@@ -25,11 +25,11 @@ OPTIONS=	SDL	"SDL support"	on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SDL)
+.if !defined(WITHOUT_SDL)
 USE_SDL=	image mixer sdl
 ALL_TARGET=	sdl
 .else
-USE_XLIB=	yes
+USE_XORG=	x11
 ALL_TARGET=	x11
 .endif
 
