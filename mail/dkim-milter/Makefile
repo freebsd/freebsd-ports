@@ -14,6 +14,7 @@
 
 PORTNAME=	dkim-milter
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -136,6 +137,8 @@ PLIST_DIRS+=	${DOCSDIR_REL}/libdkim
 
 .include <bsd.port.pre.mk>
 
+WITHOUT_MILTER_CFLAGS=	yes
+WITHOUT_MILTER_LDFLAGS=	yes
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 SITE+=		${FILESDIR}/site.config.m4
@@ -146,9 +149,9 @@ SITE+=		${WRKSRC}/site.config.m4.dist
 SITE_SUB+=	-e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g"
 .if defined(WITH_SENDMAIL_STATIC_MILTER)
-SITE_SUB+=	-e '\|-static|s|%%STATIC%%||g'
+SITE_SUB+=	-e 's|%%STATIC%%||g'
 .else
-SITE_SUB+=	-e '\|-static|s|%%STATIC%%|dnl |g'
+SITE_SUB+=	-e 's|%%STATIC%%|dnl |g'
 .endif
 
 SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}${RC_SUBR_SUFFIX}"
