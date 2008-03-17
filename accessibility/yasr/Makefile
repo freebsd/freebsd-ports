@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yasr
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.9
 CATEGORIES=	accessibility
 MASTER_SITES=	SF
 
@@ -16,7 +16,8 @@ COMMENT=	A general-purpose console screen reader
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN1=		yasr.1
-PORTDOCS=	AUTHORS BUGS CREDITS ChangeLog NEWS README TODO
+PORTDOCS=	AUTHORS BUGS CREDITS ChangeLog NEWS README TODO \
+		README-br README-de README-es README-fr README-ru
 SUB_FILES=	pkg-message
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -30,7 +31,9 @@ PLIST_SUB+=		NLS="@comment "
 .endif
 
 PLIST_FILES=	bin/yasr \
-		%%DATADIR%%/yasr.conf
+		%%DATADIR%%/yasr.conf \
+		%%NLS%%share/locale/es/LC_MESSAGES/yasr.mo \
+		%%NLS%%share/locale/fr/LC_MESSAGES/yasr.mo
 PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
