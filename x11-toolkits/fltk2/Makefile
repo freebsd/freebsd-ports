@@ -15,11 +15,21 @@ DISTNAME=	fltk-2.0.x-${SNAPSHOT}
 MAINTAINER=	tmseck@web.de
 COMMENT=	Fast Light Toolkit version 2 (development snapshot)
 
+# XXX:
+# FLTK2's configure script tries to find out whether the running X server
+# supports overlay visuals; this is a bit difficult to find out if you
+# are building in an environment where it cannot connect to an X server...
+# If one wants to force a certain setting one needs to set ac_cv_have_overlay
+# to "yes" or "no" in the configure environment. Since I am not sure whether
+# this is desirable, leave this as is for now.
+# If xprop cannot connect to an X server of if xprop cannot be found, X overlay
+# support will be disabled without breaking the build.
+BUILD_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-SNAPSHOT=	r6025
+SNAPSHOT=	r6066
 
 OPTIONS=	FLTK_THREADS "Install with threads support" on \
 		FLTK_CAIRO "Use cairo as graphics backend" off \
