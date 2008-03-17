@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-a52dec
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmms-a52dec
@@ -20,7 +20,6 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 RUN_DEPENDS=	${X11BASE}/lib/xmms/Output/libOSSSurround.so:${PORTSDIR}/audio/xmms-osssurround
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 CFLAGS+=	`xmms-config --cflags` -L${LOCALBASE}/lib
 

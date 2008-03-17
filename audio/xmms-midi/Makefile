@@ -6,7 +6,7 @@
 
 PORTNAME=	xmms-midi
 PORTVERSION=	0.03
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://dl.fkb.wormulon.net/xmms-midi/ \
 		http://dl.kel.wormulon.net/xmms-midi/
@@ -18,7 +18,6 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_GNOME=	gtk12
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 

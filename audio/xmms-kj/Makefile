@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-kj
 PORTVERSION=	0.95
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.csse.monash.edu.au/~timf/
 DISTNAME=	kint_xmms-${PORTVERSION}
@@ -21,7 +21,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 
 .include <bsd.port.pre.mk>

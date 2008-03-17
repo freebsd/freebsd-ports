@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-quix3dn
 PORTVERSION=	4.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alex
@@ -19,7 +19,6 @@ COMMENT=	A 3D-sound effect plugin for XMMS
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	lib/xmms/Effect/libquix3dn.so
