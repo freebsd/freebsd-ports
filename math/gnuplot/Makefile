@@ -7,6 +7,7 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	4.2.2
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,7 +37,7 @@ INFO=		gnuplot
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=		yes
+USE_XORG=		x11
 PLIST_SUB+=		X11=""
 .else
 CONFIGURE_ARGS+=	--without-x
@@ -64,6 +65,7 @@ CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE}
 .if defined(WITHOUT_PLOT)
 CONFIGURE_ARGS+=	--without-plot
 .else
+USE_XORG+=		xaw xmu xt xext
 LIB_DEPENDS+=		plot.4:${PORTSDIR}/graphics/plotutils
 CONFIGURE_ARGS+=	--with-plot=${LOCALBASE}
 .endif
