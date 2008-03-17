@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dk-milter
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dk-milter
@@ -45,6 +44,7 @@ SITE_SUB+=	-e "s|%%PREFIX%%|${PREFIX}|g" \
 
 .include <bsd.port.pre.mk>
 
+WITHOUT_MILTER_CFLAGS=	yes
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
 SITE+=		${WRKSRC}/site.config.m4.dist
@@ -71,12 +71,17 @@ SITE_SUB+=	-e '/-DPOPAUTH/s/^dnl //g'
 .endif
 
 .if defined(WITH_POPAUTH)
+. if defined(WITH_BDB_BASE)
+IGNORE=		does not work with base bdb
+SITE_SUB+=	-e 's|%%BDB%%|dnl |g'
+. else
 USE_BDB=	41+
-INVALID_BDB_VER=	2 3 40
+INVALID_BDB_VER=	2 40
 SITE_SUB+=	-e 's|%%BDB%%||g' \
 		-e "s|%%BDB_LIB_DIR%%|${BDB_LIB_DIR}|g" \
 		-e "s|%%BDB_INCLUDE_DIR%%|${BDB_INCLUDE_DIR}|g" \
 		-e "s|%%BDB_LIB_NAME%%|${BDB_LIB_NAME}|g"
+. endif
 .else
 SITE_SUB+=	-e 's|%%BDB%%|dnl |g'
 .endif
