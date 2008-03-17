@@ -14,7 +14,6 @@ MASTERDIR=	${.CURDIR}/../festalon
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
 USE_GNOME=	glib12
 CONFIGURE_ARGS+=	--enable-interface=interface
 
