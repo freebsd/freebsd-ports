@@ -7,7 +7,7 @@
 
 PORTNAME=	telak
 PORTVERSION=	0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://julien.danjou.info/telak/ \
 		http://critical.ch/distfiles/ \
@@ -20,7 +20,6 @@ LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		gcrypt.15:${PORTSDIR}/security/libgcrypt \
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
 USE_EFL=	imlib2
 

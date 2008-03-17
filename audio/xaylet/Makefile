@@ -13,7 +13,6 @@ ALL_TARGET=	xaylet
 
 MASTERDIR=	${.CURDIR}/../aylet
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 
 DESCR=		${.CURDIR}/pkg-descr
