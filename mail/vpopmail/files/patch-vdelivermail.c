@@ -1,6 +1,6 @@
 diff -urN -x .svn ../../vendor/vpopmail/vdelivermail.c ./vdelivermail.c
 --- ../../vendor/vpopmail/vdelivermail.c	2007-10-07 23:44:14.000000000 +0300
-+++ ./vdelivermail.c	2007-12-25 04:36:55.000000000 +0200
++++ ./vdelivermail.c	2008-03-17 11:28:45.000000000 +0200
 @@ -74,6 +74,7 @@
  int is_spam();
  #endif
@@ -105,7 +105,17 @@ diff -urN -x .svn ../../vendor/vpopmail/vdelivermail.c ./vdelivermail.c
          if ( link( local_file_tmp, local_file_new ) == 0 ) {
              /* file was successfully delivered, remove temp file */
              if ( unlink(local_file_tmp) != 0 ) {
-@@ -1207,19 +1248,22 @@
+@@ -616,6 +657,9 @@
+     /* rewind the message */
+     lseek(0,0L,SEEK_SET);
+ 
++    /* reinitialize for each dot-qmail line */
++    DeleteMail = 0;
++
+     /* This is an command */
+     if ( *address == '|' ) { 
+ 
+@@ -1207,19 +1251,22 @@
   *   * in the email headers for X-Spam-Level: which
   *    * we put in each spam email
   *     *
@@ -132,7 +142,7 @@ diff -urN -x .svn ../../vendor/vpopmail/vdelivermail.c ./vdelivermail.c
  
           /* check for blank line, end of headers */
           for(k=j,found=0;k<i;++k) {
-@@ -1242,13 +1286,19 @@
+@@ -1242,13 +1289,19 @@
           }
           if ( found == 0 ) {
             InHeaders=0;
