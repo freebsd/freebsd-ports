@@ -11,7 +11,6 @@ COMMENT=	GTK Utility to cap/uncap an iPod
 
 MASTERDIR=	${.CURDIR}/../gopod
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
 RESTRICTED=	"Unclear legal status in EU countries"
