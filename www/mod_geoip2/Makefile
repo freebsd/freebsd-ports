@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_geoip2
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	www geography
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip2/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -23,6 +24,8 @@ USE_APACHE=	2.0+
 MODULENAME=	mod_geoip
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
+AP_INC+=	${LOCALBASE}/include
+AP_LIB+=	${LOCALBASE}/lib -lGeoIP
 
 SUB_FILES+=	pkg-message
 PORTDOCS=	Changes INSTALL README README.php
