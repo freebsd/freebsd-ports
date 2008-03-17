@@ -20,7 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	newsp:${PORTSDIR}/print/mp-letter
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xmu xpm xt sm ice xext x11
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f
 .if defined(MAKE_JOBS)
