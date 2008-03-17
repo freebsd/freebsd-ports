@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	Google-Checkout
-PORTVERSION=	1.0.9
+PORTVERSION=	1.1.1
 CATEGORIES=	devel www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Google
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Perl implementation of Google Checkout (GCO)
 
-RUN_DEPENDS=	 \
-		p5-libwww>=5.65:${PORTSDIR}/www/p5-libwww \
+RUN_DEPENDS=	p5-libwww>=5.65:${PORTSDIR}/www/p5-libwww \
 		p5-XML-Simple>=2.09:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-Crypt-SSLeay>=0.45:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-Date-Manip>=5.40:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-Digest-HMAC>=1.01:${PORTSDIR}/security/p5-Digest-HMAC \
-		p5-MIME-Base64>=3.05:${PORTSDIR}/converters/p5-MIME-Base64 \
 		p5-XML-Writer>=0.6:${PORTSDIR}/textproc/p5-XML-Writer
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
@@ -37,6 +34,7 @@ MAN3=	Google::Checkout::Command::AddMerchantOrderNumber.3 \
 		Google::Checkout::Command::RefundOrder.3 \
 		Google::Checkout::Command::SendBuyerMessage.3 \
 		Google::Checkout::Command::UnarchiveOrder.3 \
+		Google::Checkout::General::AddressFilters.3 \
 		Google::Checkout::General::ConfigReader.3 \
 		Google::Checkout::General::DigitalContent.3 \
 		Google::Checkout::General::Error.3 \
@@ -50,6 +48,7 @@ MAN3=	Google::Checkout::Command::AddMerchantOrderNumber.3 \
 		Google::Checkout::General::MerchantCalculations.3 \
 		Google::Checkout::General::MerchantCheckoutFlow.3 \
 		Google::Checkout::General::MerchantItem.3 \
+		Google::Checkout::General::ParameterizedUrl.3 \
 		Google::Checkout::General::ParameterizedUrls.3 \
 		Google::Checkout::General::Pickup.3 \
 		Google::Checkout::General::Shipping.3 \
