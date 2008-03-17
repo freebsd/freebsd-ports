@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	18
+PORTREVISION?=	19
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		http://distfiles.opendarwin.org/
@@ -88,14 +88,15 @@ EXTRA_DICT+=	${SEDISTFILE}:se
 EXTRACT_ONLY+=	${SEDISTFILE}
 .endif
 .if defined(ISPELL_BR)
+BROKEN=		ispell-br unfetchable
 BRDISTFILE=	br.ispell-2.4.tar.gz
 MASTER_SITES+=	ftp://ftp.ime.usp.br/pub/ueda/br.ispell/:br
 EXTRA_DICT+=	${BRDISTFILE}:br
 EXTRACT_ONLY+=	${BRDISTFILE}
 .endif
 .if defined(ISPELL_DENEU)
-DENEUDISTFILE=	igerman98-20001109.tar.bz2
-MASTER_SITES+=	http://j3e.de/ispell/igerman98/dict/:denu
+DENEUDISTFILE=	igerman98-20071211.tar.bz2
+MASTER_SITES+=	http://www.j3e.de/ispell/igerman98/dict/:denu
 EXTRA_DICT+=	${DENEUDISTFILE}:denu
 .endif
 .if defined(ISPELL_DEALT)
@@ -104,6 +105,7 @@ MASTER_SITES+=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/:dealt
 EXTRA_DICT+=	${DEALTDISTFILE}:dealt
 .endif
 .if defined(ISPELL_NO)
+BROKEN=		ispell-no unfetchable
 NODISTFILE=	ispell-norsk-2.0.tar.gz
 MASTER_SITES+=	http://folk.uio.no/runekl/:no
 EXTRA_DICT+=	${NODISTFILE}:no
@@ -119,7 +121,7 @@ EXTRA_DICT+=	${NLDISTFILE}:nl
 EXTRACT_ONLY+=	${NLDISTFILE}
 .endif
 .if defined(ISPELL_DA)
-DADISTFILE=	ispell-da-1.4.49.tar.gz
+DADISTFILE=	ispell-da-1.7.18.tar.gz
 MASTER_SITES+=	http://da.speling.org/filer/:da \
 		${MASTER_SITE_LOCAL:S/$/:da/}
 MASTER_SITE_SUBDIR+=	fenner/:da
