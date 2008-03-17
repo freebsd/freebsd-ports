@@ -20,6 +20,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Play most popular animation formats and show pictures
 
 USE_IMAKE=	yes
+USE_XORG=	xext xt sm ice xext x11
 MAN1=		xanim.1
 MAKE_ARGS+=	-j 2 # safe and helps even the single-CPU machines
 DLLDIR=		${PREFIX}/lib/X11/xanim
