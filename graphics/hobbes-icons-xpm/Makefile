@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Collection of over 3000 icons in XPM3 format
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 # Where it will be installed (change pkg/PLIST if you change this)
