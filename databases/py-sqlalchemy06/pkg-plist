@@ -71,6 +71,9 @@
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/associationproxy.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/associationproxy.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/associationproxy.pyo
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/declarative.py
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/declarative.pyc
+%%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/declarative.pyo
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/orderinglist.py
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/orderinglist.pyc
 %%PYTHON_SITELIBDIR%%/SQLAlchemy-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg/sqlalchemy/ext/orderinglist.pyo
