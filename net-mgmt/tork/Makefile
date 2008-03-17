@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tork
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	SF
 
@@ -44,7 +44,8 @@ OPTIONS=	TOR_DEVEL	"Depend on tor-devel"   On \
 		TOR	"Depend on tor"     Off
 .endif
 
-OPTIONS+=	PRIVOXY	"Install privoxy"	On
+OPTIONS+=	PRIVOXY	"Install privoxy"	On \
+		MIXMINION "Install mixminion"	Off
 
 .include <bsd.port.pre.mk>
 
@@ -59,6 +60,10 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/tor:${PORTSDIR}/security/tor
 
 .if defined(WITH_PRIVOXY)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/privoxy:${PORTSDIR}/www/privoxy
+.endif
+
+.if defined(WITH_MIXMINION)
+RUN_DEPENDS+=	${LOCALBASE}/bin/mixminion:${PORTSDIR}/mail/mixminion
 .endif
 
 .include <bsd.port.post.mk>

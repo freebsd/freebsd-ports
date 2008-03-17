@@ -35,7 +35,6 @@ share/apps/tork/icons/hicolor/22x22/actions/tokr_green.png
 share/apps/tork/icons/hicolor/22x22/actions/tork.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_green.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_green_exit.png
-share/apps/tork/icons/hicolor/22x22/actions/tork_greenserver.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_guard_detached.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_guard_down.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_guard_little.png
@@ -47,22 +46,19 @@ share/apps/tork/icons/hicolor/22x22/actions/tork_konqueror_https.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_konsole_https.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_little.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_little_exit.png
-share/apps/tork/icons/hicolor/22x22/actions/tork_littleserver.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_none.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_orange.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_orange_exit.png
-share/apps/tork/icons/hicolor/22x22/actions/tork_orangeserver.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_play.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_red.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_red_exit.png
-share/apps/tork/icons/hicolor/22x22/actions/tork_redserver.png
+share/apps/tork/icons/hicolor/22x22/actions/tork_server.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_stop.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_tor.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_torsmall.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_uncensor.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_yellow.png
 share/apps/tork/icons/hicolor/22x22/actions/tork_yellow_exit.png
-share/apps/tork/icons/hicolor/22x22/actions/tork_yellowserver.png
 share/apps/tork/icons/hicolor/22x22/apps/tork_19.png
 share/apps/tork/icons/hicolor/22x22/apps/tork_33.png
 share/apps/tork/icons/hicolor/22x22/apps/tork_FAILED.png
@@ -420,7 +416,6 @@ share/services/torioslave.protocol
 @dirrm share/locale/libkickermenu_tork-fr
 @dirrm share/locale/libkickermenu_tork-cs/LC_MESSAGES
 @dirrm share/locale/libkickermenu_tork-cs
-@dirrm share/config.kcfg
 @dirrm share/apps/tork/privoxy/templates
 @dirrm share/apps/tork/privoxy
 @dirrm share/apps/tork/icons/hicolor/48x48/apps
@@ -441,7 +436,6 @@ share/services/torioslave.protocol
 @dirrm lib/tork
 @dirrmtry share/services
 @dirrmtry share/menu
-@dirrmtry lib/kde3
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/32x32/actions
@@ -454,6 +448,7 @@ share/services/torioslave.protocol
 @dirrmtry share/doc/HTML/en/tork
 @dirrmtry share/doc/HTML/en
 @dirrmtry share/doc/HTML
+@dirrmtry share/config.kcfg
 @dirrmtry share/apps/kicker/menuext
 @dirrmtry share/apps/kicker
 @dirrmtry share/apps/konqueror/servicemenus
@@ -463,3 +458,4 @@ share/services/torioslave.protocol
 @dirrmtry share/apps
 @dirrmtry share/applications/kde
 @dirrmtry share/applications
+@dirrmtry lib/kde3
