@@ -18,6 +18,7 @@ COMMENT=	GNUstep GUI backend
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
@@ -32,7 +33,8 @@ USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-USE_XLIB=	yes
+USE_XORG=		xft xrender xmu xext x11
+USE_FREETYPE=		yes
 
 RESTRICTED=	GPL3
 MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${X11BASE}/include"
