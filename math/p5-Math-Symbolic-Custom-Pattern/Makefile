@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	Math-Symbolic-Custom-Pattern
-PORTVERSION=	1.21
+PORTVERSION=	2.00
 CATEGORIES=	math perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Math
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Pattern matching on Math::Symbolic trees
 
-BUILD_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic \
+BUILD_DEPENDS=	p5-Math-Symbolic>=0.510:${PORTSDIR}/math/p5-Math-Symbolic \
+		p5-Test-Pod>=1.0:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=1.0:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
 		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
