@@ -44,8 +44,7 @@ WITH_X11_CHECK=		# empty
 .endif
 
 .if !empty(WITH_X11_CHECK)
-USE_XLIB=	yes
-USE_XPM=	yes
+USE_XORG=	xpm x11
 PKGNAMESUFFIX_XPM=	+xpm
 CONFIGURE_ARGS+=	--with-X11-dir="${X11BASE}" --with-xpm
 .endif
