@@ -1,5 +1,5 @@
---- Makefile.gnu.orig	Sun Mar 11 02:46:54 2007
-+++ Makefile.gnu	Sun Mar 11 02:53:21 2007
+--- Makefile.gnu.orig	2007-08-25 18:44:24.000000000 +0900
++++ Makefile.gnu	2008-03-17 14:49:16.000000000 +0900
 @@ -4,27 +4,27 @@
  include Makefile.srcs
  
@@ -18,7 +18,7 @@
  # Converts cr/lf to just lf
  DOS2UNIX = dos2unix
  
--COMPILERFLAGS = -O3 -fPIC
+-COMPILERFLAGS = -O3 -fPIC -fexceptions -fvisibility=hidden
 +COMPILERFLAGS := ${CFLAGS}
  LIBRARIES = -lstdc++
  
@@ -45,19 +45,19 @@
  	cp Source/FreeImage.h Dist
  
  dos2unix:
-@@ -58,12 +58,11 @@
+@@ -58,12 +58,10 @@
  	$(CC) -s -shared -Wl,-soname,$(VERLIBNAME) -o $@ $(MODULES) $(LIBRARIES)
  
  install:
 -	install -m 644 -o root -g root $(HEADER) $(INCDIR)
 -	install -m 644 -o root -g root $(STATICLIB) $(INSTALLDIR)
 -	install -m 755 -o root -g root $(SHAREDLIB) $(INSTALLDIR)
+-	ln -sf $(SHAREDLIB) $(INSTALLDIR)/$(VERLIBNAME)
+-	ln -sf $(VERLIBNAME) $(INSTALLDIR)/$(LIBNAME)	
+-	ldconfig
 +	install -m 644 -o root -g wheel $(HEADER) $(INCDIR)
 +	install -m 644 -o root -g wheel $(STATICLIB) $(INSTALLDIR)
 +	install -m 755 -o root -g wheel $(SHAREDLIB) $(INSTALLDIR)
- 	ln -sf $(SHAREDLIB) $(INSTALLDIR)/$(VERLIBNAME)
--	ln -sf $(VERLIBNAME) $(INSTALLDIR)/$(LIBNAME)	
--	ldconfig
 +	ln -sf $(VERLIBNAME) $(INSTALLDIR)/$(LIBNAME)
  
  clean:
