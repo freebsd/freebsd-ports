@@ -10342,6 +10342,7 @@ p5-LJ-SpellCheck	ports/textproc/p5-LJ-SpellCheck
 p5-LJ-TextMessage	ports/sysutils/p5-LJ-TextMessage
 p5-LMAP-CID2SPF	ports/mail/p5-LMAP-CID2SPF
 p5-LWP-Authen-Wsse	ports/www/p5-LWP-Authen-Wsse
+p5-LWP-UserAgent-Determined	ports/www/p5-LWP-UserAgent-Determined
 p5-LWP-UserAgent-WithCache	ports/www/p5-LWP-UserAgent-WithCache
 p5-LWPx-ParanoidAgent	ports/www/p5-LWPx-ParanoidAgent
 p5-Lexical-Alias	ports/devel/p5-Lexical-Alias
