@@ -7,7 +7,7 @@
 
 PORTNAME=	aylet
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/apps/sound/players/ \
 		http://critical.ch/distfiles/ \
