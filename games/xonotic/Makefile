@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nexuiz
-PORTVERSION=	2.3
-PORTREVISION=	2
+PORTVERSION=	2.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,12 +16,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
-NO_PACKAGE=	Package will be 368MB, set FORCE_PACKAGE if you really want to build it
+NO_PACKAGE=	Package will be 455MB, set FORCE_PACKAGE if you really want to build it
 
 USE_ZIP=	yes
+USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/Nexuiz/sources/darkplaces
-MAKEFILE=	BSDmakefile
+MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}" OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -funroll-loops"
 ALL_TARGET=	#
 
@@ -72,14 +72,13 @@ PLIST_SUB+=	SERVER="@comment "
 .endif
 
 post-extract:
-	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20070531.zip \
+	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20080229.zip \
 		-d ${WRKDIR}/Nexuiz/sources
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},; 96,$$d' \
-		${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -E 's,(fs_basedir\, )"",\1"${DATADIR}",' ${WRKSRC}/fs.c
 
 do-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 do-install:
