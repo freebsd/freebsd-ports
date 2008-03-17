@@ -7,7 +7,7 @@
 
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		${MASTER_SITES_MODSSL:S/$/:mod_ssl/}
@@ -66,7 +66,7 @@ do-install:
 	${MKDIR} ${PREFIX}/${CERTDIR}
 	${INSTALL_DATA} ${WRKDIR}/ca-root-nss.crt ${PREFIX}/${CERTDIR}
 .if !defined(WITHOUT_ETCSYMLINK)
-	${LN} -s ${PREFIX}/${CERTDIR} /etc/ssl/cert.pem
+	${LN} -s ${PREFIX}/${CERTDIR}/ca-root-nss.crt /etc/ssl/cert.pem
 .endif
 
 .include <bsd.port.post.mk>
