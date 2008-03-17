@@ -7,7 +7,7 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/X11/screensavers/
 
@@ -29,7 +29,6 @@ CFLAGS+=	-I${KRB5_HOME}/include
 KRB5LIB=	-L${KRB5_HOME}/lib
 .endif
 USE_GNOME=	#
-USE_X_PREFIX=	yes
 USE_XPM=	yes
 
 MAN1=		xlock.1
