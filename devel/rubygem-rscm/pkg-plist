@@ -6,18 +6,20 @@
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/abstract_log_parser.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/base.rb
-%%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/better.rb
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/command_line.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/difftool.rb
-%%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/historic_file.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/line_editor.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/mockit.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/parser.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/path_converter.rb
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/platform.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/revision.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/revision_file.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/revision_poller.rb
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/revisions.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/tempdir.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/time_ext.rb
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/version.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/scm/clearcase.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/scm/cvs.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib/rscm/scm/cvs_log_parser.rb
@@ -38,14 +40,11 @@
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/file_after_edit
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/file_ext.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/file_to_edit
-%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/generic_scm_tests.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/line_editor_test.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/mockit_test.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/parser_test.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/path_converter_test.rb
-%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/revision_fixture.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/revision_test.rb
-%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/revisions.yaml
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/cvs-dataforge.log
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/cvs-test.log
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/cvs_log_parser_test.rb
@@ -58,13 +57,38 @@
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/mooky_test.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/p4client_test.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/perforce_test.rb
-%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/star_team.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/subversion_log_parser_test.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/subversion_test.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/svn-cargo.log
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/svn-growl.log
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/svn-growl2.log
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/svn-proxytoys.log
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/command_line_test.rb
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/revision_file_test.rb
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/revision_poller_test.rb
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/revisions_test.rb
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/test_helper.rb
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/config.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/full.rb
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/rscm_engine.rb
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/cvs_metaproject/diff.txt
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/cvs_metaproject/file.txt
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/cvs_metaproject/files_0.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/cvs_metaproject/old.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/cvs_metaproject/revisions.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/cvs_metaproject/scm.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/p4_gfx/files_0.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/p4_gfx/old.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/p4_gfx/revisions.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/p4_gfx/scm.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/subversion_rscm/diff.txt
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/subversion_rscm/file.txt
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/subversion_rscm/files_0.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/subversion_rscm/old.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/subversion_rscm/revisions.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/subversion_rscm/scm.yml
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/subversion_rscm/svn_log_bug_irc.txt
+%%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm/star_team_test.rb
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/testproject/damagecontrolled/build.xml
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/testproject/damagecontrolled/project.xml
 %%GEMS_DIR%%/rscm-%%PORTVERSION%%/testproject/damagecontrolled/src/java/com/thoughtworks/damagecontrolled/Thingy.java
@@ -75,9 +99,7 @@
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm_rb.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/abstract_log_parser_rb.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/base_rb.html
-%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/better_rb.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/difftool_rb.html
-%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/historic_file_rb.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/line_editor_rb.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/mockit_rb.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/parser_rb.html
@@ -87,6 +109,10 @@
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/revision_poller_rb.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/tempdir_rb.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/time_ext_rb.html
+%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/command_line_rb.html
+%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/platform_rb.html
+%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/revisions_rb.html
+%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/version_rb.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/scm/clearcase_rb.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/scm/cvs_rb.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/scm/cvs_log_parser_rb.html
@@ -107,20 +133,15 @@
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/PathConverter.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/LineEditor.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/Difftool.html
-%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/P4Admin.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/Cvs.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/ClearCase.html
-%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/P4Daemon.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/Subversion.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/Parser.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/MonotoneLogParser.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/SubversionLogParser.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/StarTeam.html
-%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/P4Client.html
-%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/P4Client/P4Changelist.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/SubversionLogEntryParser.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/RevisionFile.html
-%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/HistoricFile.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/AbstractLogParser.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/Revisions.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/Base.html
@@ -130,11 +151,15 @@
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/Mooky.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/Darcs.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/Revision.html
-%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/Better.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/Monotone.html
-%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/Kernel.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/MockIt.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/MockIt/Mock.html
+%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/RevisionPoller.html
+%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/VERSION.html
+%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/Platform.html
+%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/CommandLine.html
+%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/CommandLine/OptionError.html
+%%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/CommandLine/ExecutionError.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/fr_file_index.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/fr_class_index.html
 %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/fr_method_index.html
@@ -151,6 +176,10 @@
 @dirrm %%GEMS_DIR%%/rscm-%%PORTVERSION%%/testproject/damagecontrolled/src
 @dirrm %%GEMS_DIR%%/rscm-%%PORTVERSION%%/testproject/damagecontrolled
 @dirrm %%GEMS_DIR%%/rscm-%%PORTVERSION%%/testproject
+@dirrm %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/cvs_metaproject
+@dirrm %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/p4_gfx
+@dirrm %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility/subversion_rscm
+@dirrm %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/compatibility
 @dirrm %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm/scm
 @dirrm %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test/rscm
 @dirrm %%GEMS_DIR%%/rscm-%%PORTVERSION%%/test
@@ -160,7 +189,7 @@
 @dirrm %%GEMS_DIR%%/rscm-%%PORTVERSION%%/lib
 @dirrm %%GEMS_DIR%%/rscm-%%PORTVERSION%%
 @dirrm %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/MockIt
-@dirrm %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/P4Client
+@dirrm %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM/CommandLine
 @dirrm %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes/RSCM
 @dirrm %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/classes
 @dirrm %%DOC_DIR%%/rscm-%%PORTVERSION%%/rdoc/files/lib/rscm/scm
