@@ -54,7 +54,20 @@ bin/iReport
 %%JAVAJARDIR%%/LICENSE.microba.txt
 %%JAVAJARDIR%%/asm-attrs.jar
 %%JAVAJARDIR%%/asm.jar
-%%JAVAJARDIR%%/barbecue-1.1.jar
+%%JAVAJARDIR%%/barbecue-1.5-beta1.jar
+%%JAVAJARDIR%%/batik-anim.jar
+%%JAVAJARDIR%%/batik-awt-util.jar
+%%JAVAJARDIR%%/batik-bridge.jar
+%%JAVAJARDIR%%/batik-css.jar
+%%JAVAJARDIR%%/batik-dom.jar
+%%JAVAJARDIR%%/batik-ext.jar
+%%JAVAJARDIR%%/batik-gvt.jar
+%%JAVAJARDIR%%/batik-parser.jar
+%%JAVAJARDIR%%/batik-script.jar
+%%JAVAJARDIR%%/batik-svg-dom.jar
+%%JAVAJARDIR%%/batik-svggen.jar
+%%JAVAJARDIR%%/batik-util.jar
+%%JAVAJARDIR%%/batik-xml.jar
 %%JAVAJARDIR%%/cglib-2.1.jar
 %%JAVAJARDIR%%/cincom-jr-xmla.jar
 %%JAVAJARDIR%%/commons-javaflow-20060411.jar
@@ -68,9 +81,18 @@ bin/iReport
 %%JAVAJARDIR%%/hibernate3.jar
 %%JAVAJARDIR%%/iReport.jar
 %%JAVAJARDIR%%/jasperreports-extensions-1.3.1.jar
+%%JAVAJARDIR%%/jasperreports-flash-2.0.5.jar
 %%JAVAJARDIR%%/javacup.jar
 %%JAVAJARDIR%%/jdt-compiler-3.1.1.jar
 %%JAVAJARDIR%%/jpa.jar
+%%JAVAJARDIR%%/js_activation-1.1.jar
+%%JAVAJARDIR%%/js_axis-1.4patched.jar
+%%JAVAJARDIR%%/js_commons-discovery-0.2.jar
+%%JAVAJARDIR%%/js_jasperserver-common-ws-2.1.0.jar
+%%JAVAJARDIR%%/js_jasperserver-ireport-plugin-2.1.0.jar
+%%JAVAJARDIR%%/js_jaxrpc.jar
+%%JAVAJARDIR%%/js_mail-1.4.jar
+%%JAVAJARDIR%%/js_wsdl4j-1.5.1.jar
 %%JAVAJARDIR%%/jsmoothgen-ant-0.9.7.jar
 %%JAVAJARDIR%%/jta.jar
 %%JAVAJARDIR%%/jxl-2.6.jar
@@ -87,6 +109,7 @@ bin/iReport
 %%JAVAJARDIR%%/sqleonardo-2007.03.jar
 %%JAVAJARDIR%%/swingx-2007_05_13.jar
 %%JAVAJARDIR%%/toniclf.jar
+%%JAVAJARDIR%%/xml-apis-ext.jar
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/fonts
