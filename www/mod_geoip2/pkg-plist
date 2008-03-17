@@ -1,3 +1,0 @@
-libexec/apache2/mod_geoip.so
-@exec %D/sbin/apxs -e -A -n geoip %D/%F
-@unexec %D/sbin/apxs -e -A -n geoip %D/%F
