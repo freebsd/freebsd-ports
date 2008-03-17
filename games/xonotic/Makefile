@@ -82,8 +82,9 @@ do-build:
 		${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 do-install:
-	${SH} -c '${FIND} ${WRKSRC} -name "darkplaces-*[^vp]" | while read f ; \
-		do ${INSTALL_PROGRAM} $${f} ${PREFIX}/bin/${PORTNAME}-$${f##*-} ; done'
+	${SH} -c '${FIND} ${WRKSRC} -name "darkplaces-*[^vp]" | \
+		while read f ; do ${INSTALL_PROGRAM} $${f} \
+			${PREFIX}/bin/${PORTNAME}-$${f##*-} ; done'
 	@${MKDIR} ${DATADIR}/data
 	${INSTALL_DATA} ${WRKDIR}/Nexuiz/data/*.pk3 ${DATADIR}/data
 .if !defined(WITHOUT_MAPPACK)
