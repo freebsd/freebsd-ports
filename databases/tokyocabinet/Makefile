@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.1.14
+PORTVERSION=	1.2.0
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern implementation of DBM
 
 CONFIGURE_ARGS=	--enable-off64
@@ -18,8 +18,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}
-EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}
 MAN1=		tcamgr.1 tcatest.1 tcbmgr.1 tcbmttest.1 tcbtest.1 \
 		tchmgr.1 tchmttest.1 tchtest.1 tcucodec.1 tcumttest.1 \
 		tcutest.1
@@ -27,8 +25,8 @@ MAN3=		tcadb.3 tcbdb.3 tchdb.3 tcutil.3 tokyocabinet.3
 DOCS=		COPYING ChangeLog README THANKS
 BINS=		tcamgr tcatest tcbmgr tcbmttest tcbtest tchmgr tchmttest \
 		tchtest tcucodec tcumttest tcutest
-LIBS=		libtokyocabinet.a libtokyocabinet.so libtokyocabinet.so.1 \
-		libtokyocabinet.so.1.33.0
+LIBS=		libtokyocabinet.a libtokyocabinet.so libtokyocabinet.so.3 \
+		libtokyocabinet.so.3.1.0
 INCLUDES=	tcbdb.h tchdb.h tcutil.h
 
 OPTIONS=	DEBUG "Debugging support" off \
@@ -75,8 +73,8 @@ CONFIGURE_ARGS+=	--disable-pthread
 CONFIGURE_ARGS+=	--disable-shared
 .endif
 
-# Because gnomehack use "(libdir)" and it doesn't work, we need to patch
-# it manually.
+# Because gnomehack will search "(libdir)" and it doesn't work, we need
+# to patch it manually.
 post-patch:
 	${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
