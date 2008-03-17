@@ -36,6 +36,8 @@ post-patch:
 		-e 's:ipv6_interface sixxs:ipv6_interface gif0:' \
 		${WRKSRC}/doc/aiccu.conf
 
+.include <bsd.port.pre.mk>
+
 do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/unix-console/aiccu ${PREFIX}/sbin/sixxs-aiccu
@@ -45,4 +47,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/aiccu.conf ${PREFIX}/etc/aiccu.conf
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
