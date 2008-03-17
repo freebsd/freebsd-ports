@@ -7,7 +7,7 @@
 
 PORTNAME=	dgs
 PORTVERSION=	0.5.9.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	dgs
@@ -29,8 +29,10 @@ USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.5.9
 
 MAN1=		dgs.1 dpsnx.agent.1
-MANN=		dpsexec.man xepsf.man
-INSTALLDIRS=	gs DPS/demos/dpsexec DPS/demos/xepsf
+MANN=		dpsexec.man makepsres.man xepsf.man
+INSTALLDIRS=	gs DPS/clients/makepsres DPS/clients/pswrap \
+		DPS/demos/dpsexec DPS/demos/texteroids DPS/demos/xepsf \
+		DPS/lib/dpstk DPS/lib/psres DPS/lib/dps DPS/include/DPS
 
 .include <bsd.port.pre.mk>
 
@@ -42,15 +44,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
 		${WRKSRC}/DPS/ltconfig
 
-INSTALLDIRS+=	DPS/clients/makepsres DPS/clients/pswrap DPS/demos/texteroids \
-		DPS/lib/dpstk DPS/lib/psres DPS/lib/dps DPS/include/DPS
-MANN+=		makepsres.man
-PLIST_SUB+=	WITH_XFREE4=""
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dgs-config ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/dpsnx.agent ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/path_dps.m4 ${PREFIX}/share/aclocal/
+#	${INSTALL_DATA} ${WRKSRC}/path_dps.m4 ${PREFIX}/share/aclocal/
 	${INSTALL_MAN} ${WRKSRC}/dpsnx.agent.1 ${PREFIX}/man/man1/
 .for i in ${INSTALLDIRS}
 	@(cd ${INSTALL_WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} \
