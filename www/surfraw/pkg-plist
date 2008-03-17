@@ -37,6 +37,7 @@ lib/surfraw/etym
 lib/surfraw/excite
 lib/surfraw/fast
 lib/surfraw/filesearching
+lib/surfraw/lsm
 lib/surfraw/foldoc
 lib/surfraw/freebsd
 lib/surfraw/freedb
@@ -68,7 +69,7 @@ lib/surfraw/slinuxdoc
 lib/surfraw/sourceforge
 lib/surfraw/stockquote
 lib/surfraw/sundocs
-lib/surfraw/sunsolve
+lib/surfraw/sunonesearch
 lib/surfraw/thesaurus
 lib/surfraw/translate
 lib/surfraw/w3css
@@ -129,6 +130,7 @@ man/man1/happypenguin.1sr.gz
 man/man1/ixquick.1sr.gz
 man/man1/lastfm.1sr.gz
 man/man1/leodict.1sr.gz
+man/man1/lsm.1sr.gz
 man/man1/musicbrainz.1sr.gz
 man/man1/netbsd.1sr.gz
 man/man1/openbsd.1sr.gz
@@ -146,7 +148,7 @@ man/man1/slinuxdoc.1sr.gz
 man/man1/sourceforge.1sr.gz
 man/man1/stockquote.1sr.gz
 man/man1/sundocs.1sr.gz
-man/man1/sunsolve.1sr.gz
+man/man1/sunonesearch.1sr.gz
 man/man1/thesaurus.1sr.gz
 man/man1/translate.1sr.gz
 man/man1/w3css.1sr.gz
