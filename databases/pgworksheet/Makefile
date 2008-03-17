@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pgworksheet
-PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTVERSION=	1.9
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/619/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1695/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple PostreSQL GUI front end
@@ -22,7 +21,7 @@ USE_BZIP2=	yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGVERSION=	1.8
+PYDISTUTILS_PKGVERSION=	1.9
 
 post-patch:
 	${REINPLACE_CMD} -e \
