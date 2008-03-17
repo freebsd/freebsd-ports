@@ -18,7 +18,6 @@ COMMENT=	A Future Composer input plug-in for beep-media-player
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
