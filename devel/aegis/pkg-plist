@@ -4,6 +4,7 @@ bin/ae-repo-ci
 bin/ae-sccs-put
 bin/ae_diff2htm
 bin/aeannotate
+bin/aebisect
 bin/aebuffy
 bin/aecomp
 bin/aecomplete
@@ -25,6 +26,7 @@ bin/aelcf
 bin/aelock
 bin/aelpf
 bin/aels
+bin/aemakegen
 bin/aemeasure
 bin/aepatch
 bin/aepromptcmd
@@ -37,6 +39,7 @@ bin/aesvt
 bin/aetar
 bin/aexml
 bin/aexver
+bin/find_sizes
 bin/tkaeca
 bin/tkaegis
 bin/tkaenc
