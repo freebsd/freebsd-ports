@@ -1,5 +1,5 @@
 %%SITE_PERL%%/LWP/UserAgent/WithCache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/UserAgent/WithCache/.packlist
-@dirrmtry lib/perl5/site_perl/5.8.8/mach/auto/LWP/UserAgent/WithCache
-@dirrmtry lib/perl5/site_perl/5.8.8/mach/auto/LWP/UserAgent
-@dirrmtry lib/perl5/site_perl/5.8.8/LWP/UserAgent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/UserAgent/WithCache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/UserAgent
+@dirrmtry %%SITE_PERL%%/LWP/UserAgent
