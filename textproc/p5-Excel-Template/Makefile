@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Excel-Template
-PORTVERSION=	0.28
+PORTVERSION=	0.31
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Excel
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	espen@tagestad.no
@@ -18,7 +17,8 @@ COMMENT=	Perl module for templating Excel files
 BUILD_DEPENDS=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel
+		${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel \
+		${SITE_PERL}/Test/Deep.pm:${PORTSDIR}/devel/p5-Test-Deep
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
@@ -48,6 +48,7 @@ MAN3=		Excel::Template.3 \
 		Excel::Template::Element::Formula.3 \
 		Excel::Template::Element::FreezePanes.3 \
 		Excel::Template::Element::Image.3 \
+		Excel::Template::Element::MergeRange.3 \
 		Excel::Template::Element::Range.3 \
 		Excel::Template::Element::Var.3 \
 		Excel::Template::Factory.3 \
