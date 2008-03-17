@@ -2245,6 +2245,7 @@
 %%WWWDIR%%/modules/calendar/language/ja.inc
 %%WWWDIR%%/modules/calendar/language/nl.inc
 %%WWWDIR%%/modules/calendar/language/pt-br.inc
+%%WWWDIR%%/modules/calendar/language/pt.inc
 %%WWWDIR%%/modules/calendar/language/ru.inc
 %%WWWDIR%%/modules/calendar/language/si.inc
 %%WWWDIR%%/modules/calendar/language/sl.inc
@@ -2383,6 +2384,7 @@
 %%WWWDIR%%/modules/comics/language/it.inc
 %%WWWDIR%%/modules/comics/language/nl.inc
 %%WWWDIR%%/modules/comics/language/pt-br.inc
+%%WWWDIR%%/modules/comics/language/pt.inc
 %%WWWDIR%%/modules/comics/language/ru.inc
 %%WWWDIR%%/modules/comics/language/si.inc
 %%WWWDIR%%/modules/comics/language/sl.inc
@@ -2536,6 +2538,7 @@
 %%WWWDIR%%/modules/gallery/language/it.inc
 %%WWWDIR%%/modules/gallery/language/nl.inc
 %%WWWDIR%%/modules/gallery/language/pt-br.inc
+%%WWWDIR%%/modules/gallery/language/pt.inc
 %%WWWDIR%%/modules/gallery/language/si.inc
 %%WWWDIR%%/modules/gallery/language/tr.inc
 %%WWWDIR%%/modules/gallery/module.info
@@ -2574,6 +2577,7 @@
 %%WWWDIR%%/modules/logviewer/index.php
 %%WWWDIR%%/modules/logviewer/language/en.inc
 %%WWWDIR%%/modules/logviewer/language/nl.inc
+%%WWWDIR%%/modules/logviewer/language/pt.inc
 %%WWWDIR%%/modules/logviewer/module.info
 %%WWWDIR%%/modules/logviewer/themes/Default/images/logviewer.png
 %%WWWDIR%%/modules/logviewer/themes/Default/images.inc
@@ -2625,6 +2629,7 @@
 %%WWWDIR%%/modules/notes/language/ja.inc
 %%WWWDIR%%/modules/notes/language/nl.inc
 %%WWWDIR%%/modules/notes/language/pt-br.inc
+%%WWWDIR%%/modules/notes/language/pt.inc
 %%WWWDIR%%/modules/notes/language/ru.inc
 %%WWWDIR%%/modules/notes/language/si.inc
 %%WWWDIR%%/modules/notes/language/sl.inc
@@ -2743,6 +2748,7 @@
 %%WWWDIR%%/modules/phpsysinfo/language/ja.inc
 %%WWWDIR%%/modules/phpsysinfo/language/nl.inc
 %%WWWDIR%%/modules/phpsysinfo/language/pt-br.inc
+%%WWWDIR%%/modules/phpsysinfo/language/pt.inc
 %%WWWDIR%%/modules/phpsysinfo/language/si.inc
 %%WWWDIR%%/modules/phpsysinfo/language/tr.inc
 %%WWWDIR%%/modules/phpsysinfo/module.info
@@ -2858,6 +2864,7 @@
 %%WWWDIR%%/modules/summary/language/ja.inc
 %%WWWDIR%%/modules/summary/language/nl.inc
 %%WWWDIR%%/modules/summary/language/pt-br.inc
+%%WWWDIR%%/modules/summary/language/pt.inc
 %%WWWDIR%%/modules/summary/language/ru.inc
 %%WWWDIR%%/modules/summary/language/si.inc
 %%WWWDIR%%/modules/summary/language/sl.inc
@@ -2886,6 +2893,7 @@
 %%WWWDIR%%/modules/todos/language/ja.inc
 %%WWWDIR%%/modules/todos/language/nl.inc
 %%WWWDIR%%/modules/todos/language/pt-br.inc
+%%WWWDIR%%/modules/todos/language/pt.inc
 %%WWWDIR%%/modules/todos/language/si.inc
 %%WWWDIR%%/modules/todos/language/sv.inc
 %%WWWDIR%%/modules/todos/language/th.inc
@@ -2903,6 +2911,7 @@
 %%WWWDIR%%/modules/tools/language/cs.inc
 %%WWWDIR%%/modules/tools/language/de.inc
 %%WWWDIR%%/modules/tools/language/en.inc
+%%WWWDIR%%/modules/tools/language/pt.inc
 %%WWWDIR%%/modules/tools/language/si.inc
 %%WWWDIR%%/modules/tools/module.info
 %%WWWDIR%%/modules/tools/query.php
@@ -2920,6 +2929,7 @@
 %%WWWDIR%%/modules/translate/language/hu.inc
 %%WWWDIR%%/modules/translate/language/it.inc
 %%WWWDIR%%/modules/translate/language/nl.inc
+%%WWWDIR%%/modules/translate/language/pt.inc
 %%WWWDIR%%/modules/translate/language/si.inc
 %%WWWDIR%%/modules/translate/language/tr.inc
 %%WWWDIR%%/modules/translate/module.info
@@ -2929,6 +2939,7 @@
 %%WWWDIR%%/modules/updateclient/language/cs.inc
 %%WWWDIR%%/modules/updateclient/language/de.inc
 %%WWWDIR%%/modules/updateclient/language/en.inc
+%%WWWDIR%%/modules/updateclient/language/pt.inc
 %%WWWDIR%%/modules/updateclient/language/si.inc
 %%WWWDIR%%/modules/updateclient/module.info
 %%WWWDIR%%/modules/updateclient/settings.php
