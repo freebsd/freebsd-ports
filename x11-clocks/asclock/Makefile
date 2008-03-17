@@ -7,7 +7,7 @@
 
 PORTNAME=	asclock
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks afterstep
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -20,7 +20,7 @@ COMMENT=	Afterstep clock with some language extensions
 CONFLICTS=	asclock-gtk-[0-9]* asclock-xlib-[0-9]*
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xext x11
 MAN1=		asclock.1
 PLIST_FILES=	bin/asclock
 
