@@ -7,6 +7,10 @@ lib/libflickcurl.la
 lib/libflickcurl.so
 lib/libflickcurl.so.0
 libdata/pkgconfig/flickcurl.pc
+%%DOCSDIR%%/flickcurl-auth-authenticate.html
+%%DOCSDIR%%/flickcurl-auth-register.html
+%%DOCSDIR%%/flickcurl-auth-use.html
+%%DOCSDIR%%/flickcurl-auth.html
 %%DOCSDIR%%/flickcurl-section-activity.html
 %%DOCSDIR%%/flickcurl-section-auth.html
 %%DOCSDIR%%/flickcurl-section-blogs.html
@@ -25,6 +29,7 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/flickcurl-section-photo.html
 %%DOCSDIR%%/flickcurl-section-photoset.html
 %%DOCSDIR%%/flickcurl-section-place.html
+%%DOCSDIR%%/flickcurl-section-prefs.html
 %%DOCSDIR%%/flickcurl-section-reflection.html
 %%DOCSDIR%%/flickcurl-section-tag.html
 %%DOCSDIR%%/flickcurl-section-test.html
