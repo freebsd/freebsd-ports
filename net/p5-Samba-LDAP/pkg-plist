@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Samba/LDAP/Base.pm
 %%SITE_PERL%%/Samba/LDAP/Config.pm
 %%SITE_PERL%%/Samba/LDAP/Group.pm
+%%SITE_PERL%%/Samba/LDAP/Machine.pm
 %%SITE_PERL%%/Samba/LDAP/User.pm
 @dirrmtry %%SITE_PERL%%/Samba/LDAP
 @dirrmtry %%SITE_PERL%%/Samba
