@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	PasteScript
-PORTVERSION=	1.6.1.1
+PORTVERSION=	1.6.2
 CATEGORIES=	www python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/P/PasteScript/ \
+MASTER_SITES=	http://pypi.python.org/packages/source/P/PasteScript/ \
 		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	dryice
