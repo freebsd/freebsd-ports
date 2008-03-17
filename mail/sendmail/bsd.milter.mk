@@ -67,10 +67,12 @@ MILTERINC=	-I${MILTERBASE}/include
 MILTERRPATH=	${MILTERBASE}/lib
 MILTERLIB=	-L${MILTERBASE}/lib -rpath=${MILTERRPATH}
 
+.if !defined(WITHOUT_MILTER_CFLAGS)
 .if defined(CFLAGS)
 CFLAGS+=${MILTERINC}
 .else
 CFLAGS=${MILTERINC}
+.endif
 .endif
 
 
@@ -90,10 +92,12 @@ MILTERRPATH=	${DESTDIR}/usr/lib:${LOCALBASE}/lib
 MILTERLIB=	-rpath=${MILTERRPATH}
 .endif
 
+.if !defined(WITHOUT_MILTER_LDFLAGS)
 .if defined(LDFLAGS)
 LDFLAGS+=${MILTERLIB}
 .else
 LDFLAGS=${MILTERLIB}
+.endif
 .endif
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
