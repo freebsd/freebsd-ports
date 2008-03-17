@@ -7,6 +7,7 @@
 
 PORTNAME=	notification-daemon
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/notification-daemon-xfce/ \
 		http://critical.ch/distfiles/ \
@@ -27,7 +28,6 @@ INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_XLIB=	yes
 USE_XFCE=	configenv libutil libgui
 
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/xfce4 \
