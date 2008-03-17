@@ -7,18 +7,17 @@
 
 PORTNAME=	LWP-UserAgent-WithCache
 PORTVERSION=	0.06
+PORTREVISION=	1
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	 LWP
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	LWP::UserAgent extension with local cache
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww	\
-		${SITE_PERL}/Cache/FileCache.pm:${PORTSDIR}/devel/p5-Cache-Cache
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww	\
 		${SITE_PERL}/Cache/FileCache.pm:${PORTSDIR}/devel/p5-Cache-Cache
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN3=		LWP::UserAgent::WithCache.3
