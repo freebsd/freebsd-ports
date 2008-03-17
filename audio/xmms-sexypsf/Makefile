@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-sexypsf
 PORTVERSION=	0.4.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/sexypsf/ \
 		http://critical.ch/distfiles/ \
@@ -21,7 +21,6 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 
 CFLAGS+=	-I${WRKSRC} -fPIC

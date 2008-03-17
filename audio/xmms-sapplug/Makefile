@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-sapplug
 DISTVERSION=	0.3f
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/ \
@@ -20,7 +20,6 @@ COMMENT=	XMMS input plugin for playing 8bit Atari(TM) .sap audio files
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib12
 

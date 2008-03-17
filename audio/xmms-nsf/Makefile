@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-nsf
 PORTVERSION=	0.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://optronic.sourceforge.net/files/ \
 		http://critical.ch/distfiles/ \
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_LDCONFIG=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
