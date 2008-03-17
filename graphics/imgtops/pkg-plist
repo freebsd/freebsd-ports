@@ -1,0 +1,22 @@
+bin/imgtops
+bin/epstoimg
+%%PYTHON_SITELIBDIR%%/imgtopslib/__init__.py
+%%PYTHON_SITELIBDIR%%/imgtopslib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/imgtopslib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/imgtopslib/dimensions.py
+%%PYTHON_SITELIBDIR%%/imgtopslib/dimensions.pyc
+%%PYTHON_SITELIBDIR%%/imgtopslib/dimensions.pyo
+%%PYTHON_SITELIBDIR%%/imgtopslib/encoders.py
+%%PYTHON_SITELIBDIR%%/imgtopslib/encoders.pyc
+%%PYTHON_SITELIBDIR%%/imgtopslib/encoders.pyo
+%%PYTHON_SITELIBDIR%%/imgtopslib/encoders.so
+%%PYTHON_SITELIBDIR%%/imgtopslib/epstoimg.py
+%%PYTHON_SITELIBDIR%%/imgtopslib/epstoimg.pyc
+%%PYTHON_SITELIBDIR%%/imgtopslib/epstoimg.pyo
+%%PYTHON_SITELIBDIR%%/imgtopslib/imgtops.py
+%%PYTHON_SITELIBDIR%%/imgtopslib/imgtops.pyc
+%%PYTHON_SITELIBDIR%%/imgtopslib/imgtops.pyo
+%%PYTHON_SITELIBDIR%%/imgtopslib/psimage.py
+%%PYTHON_SITELIBDIR%%/imgtopslib/psimage.pyc
+%%PYTHON_SITELIBDIR%%/imgtopslib/psimage.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/imgtopslib
