@@ -7,7 +7,7 @@
 
 PORTNAME=	lesstif
 PORTVERSION=	0.95.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -21,7 +21,8 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 CONFLICTS?=	open-motif-*
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:261 libtool:15
-USE_X_PREFIX=	yes
+USE_XORG=	sm ice xt xp xext x11
+USE_FREETYPE=	yes
 USE_LDCONFIG=	yes
 LIBTOOLFILES=	aclocal.m4 test/aclocal.m4
 CONFIGURE_ARGS+=	--enable-static --enable-shared --enable-production
