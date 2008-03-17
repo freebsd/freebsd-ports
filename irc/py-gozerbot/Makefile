@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gozerbot
-PORTVERSION=	0.7.1.1
-PORTREVISION=	1
+PORTVERSION=	0.8.0.4
 CATEGORIES=	irc python
 MASTER_SITES=	http://gozerbot.org/media/tarball/ \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -19,13 +18,11 @@ COMMENT=	Gozerbot - A modular Python IRC and Jabber bot
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_EGGINFO=	gozerbot-GOZERBOT.${PORTVERSION}-py${PYTHON_VER}.egg-info
 SUB_FILES=		pkg-message
 
 OPTIONS=	XMPP  "Jabber functions" off \
 		MYSQL "Mysql functions" off
-LATEST_LINK=	${PKGNAMESUFFIX}-${PORTNAME}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 MAN1=		gozerbot.1
 DOCS=BASIC COLLECTIVE FAQ FLEET FLOW JABBER \
@@ -35,9 +32,6 @@ DOCS=BASIC COLLECTIVE FAQ FLEET FLOW JABBER \
 RUN_DEPENDS+=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 
 post-install:
-.if !defined(BATCH)
-	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g'
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .if !defined(NOPORTDOCS)
