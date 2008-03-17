@@ -16,7 +16,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	X11 arcade game
 
 USE_IMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xext x11
 WRKSRC=		${WRKDIR}/xboing
 MAN1=		xboing.1
 

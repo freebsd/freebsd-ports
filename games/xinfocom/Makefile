@@ -22,5 +22,6 @@ PLIST_FILES=	bin/xinfocom
 WRKSRC=		${WRKDIR}/xinfocom
 
 USE_IMAKE=	yes
+USE_XORG=	xt sm ice xext x11
 
 .include <bsd.port.mk>
