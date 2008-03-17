@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	findbugs
-DISTVERSION=	1.3.0.20071108
+DISTVERSION=	1.3.2.20080222
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	edu.umd.cs.findbugs.plugin.eclipse_${DISTVERSION}
 DIST_SUBDIR=	eclipse
@@ -26,11 +25,13 @@ JAVA_VERSION=	1.4+
 JAVA_OS=	native
 
 PLIST_DIRS=	\
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/META-INF \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/plugin \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%
 #
 PLIST_FILES=	\
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/META-INF/MANIFEST.MF \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/FindBugs.png \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/Fortify.png \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/RELEASENOTES \
@@ -55,6 +56,7 @@ PLIST_FILES=	\
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/buggy-tiny.png \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/bugview.gif \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/detailsView.png \
+	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/refresh.gif \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/runFindbugs.png \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/treeView.png \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/icons/warning.png \
@@ -66,7 +68,6 @@ PLIST_FILES=	\
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/plugin_fr.properties \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/plugin_ja.properties \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/smallBuggy.png \
-	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/surelogic.png \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/umdFindbugs.png \
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/welcome.xml
 #
@@ -85,5 +86,5 @@ do-install:
 			${FIND} -s $$(${BASENAME} ${WRKSRC}) -not -type d \
 				-exec ${INSTALL_DATA} "{}" "${PREFIX}/eclipse/plugins/{}" \; \
 		)
-		
+
 .include <bsd.port.mk>
