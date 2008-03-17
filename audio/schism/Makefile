@@ -7,7 +7,7 @@
 
 PORTNAME=	schism
 DISTVERSION=	0.2a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://rigelseven.com/schism/dl/ \
 		http://critical.ch/distfiles/ \
@@ -20,7 +20,6 @@ ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes
 USE_SDL=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4
 
