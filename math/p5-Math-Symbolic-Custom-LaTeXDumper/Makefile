@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	Math-Symbolic-Custom-LaTeXDumper
-PORTVERSION=	0.204
+PORTVERSION=	0.206
 CATEGORIES=	math perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Math
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Math::Symbolic LaTeX output
 
-BUILD_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic
+BUILD_DEPENDS=	p5-Math-Symbolic>=0.201:${PORTSDIR}/math/p5-Math-Symbolic
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Math::Symbolic::Custom::LaTeXDumper.3
