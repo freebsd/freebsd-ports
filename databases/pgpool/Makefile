@@ -14,6 +14,8 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/1254/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A connection pool server for PostgreSQL
 
+BROKEN=		Size mismatch
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
