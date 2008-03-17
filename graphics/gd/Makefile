@@ -42,7 +42,7 @@ OPTIONS=	X11 "X11 support" off \
 .if !defined(WITHOUT_X11)
 
 .if defined(WITH_XPM)
-USE_XPM=	yes
+USE_XORG=	xpm x11
 CPPFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM
 LDFLAGS+=	-L${X11BASE}/lib -lXpm -lX11
 LDFLAGS2+=	-L${X11BASE}/lib
