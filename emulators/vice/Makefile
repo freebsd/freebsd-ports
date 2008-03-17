@@ -6,7 +6,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	1.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.viceteam.org/online/ \
 		http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
@@ -16,7 +16,9 @@ PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 .if !defined(VICE_WITH_GNOME)
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
@@ -24,7 +26,7 @@ LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 RESTRICTED=	"ROMs are copyrighted by Commodore Business Machines"
 
-USE_XPM=	yes
+USE_XORG=	xpm xext xv x11 xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes xv
 USE_GMAKE=	yes
 USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
