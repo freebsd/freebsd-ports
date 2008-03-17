@@ -9,7 +9,7 @@ PORTNAME=	edith
 PORTVERSION=	1.58
 PORTREVISION=	1
 CATEGORIES=	editors linux
-MASTER_SITES=	ftp://ftp.eidetica.com/pub/edith/x11/
+MASTER_SITES=	http://www.groenink.com/pub/edith/
 DISTFILES=	edith1.55.common.tar.gz \
 		edith1.58.linux-glibc.tar.gz
 
@@ -20,7 +20,6 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 
-BROKEN=		unfetchable
 RESTRICTED=	"Redistribution not allowed"
 NO_BUILD=	yes
 
