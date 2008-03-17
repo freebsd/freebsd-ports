@@ -1,5 +1,5 @@
---- config.mk.orig	2007-11-21 21:18:41.000000000 +0100
-+++ config.mk	2007-11-22 16:49:20.000000000 +0100
+--- config.mk.orig	2008-03-13 17:55:43.000000000 +0100
++++ config.mk	2008-03-13 21:43:27.000000000 +0100
 @@ -4,19 +4,19 @@
  # Customize below to fit your system
  
@@ -23,7 +23,7 @@
 -LDFLAGS = -s ${LIBS}
 +CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
 +LDFLAGS+= ${LIBS}
- #CFLAGS = -g -std=c99 -pedantic -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
+ #CFLAGS = -g -std=c99 -pedantic -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\" -DWORK
  #LDFLAGS = -g ${LIBS}
  
 @@ -26,4 +26,4 @@
