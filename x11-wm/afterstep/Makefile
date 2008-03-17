@@ -7,7 +7,7 @@
 
 PORTNAME=	afterstep
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	archives/${PORTVERSION}
@@ -19,7 +19,7 @@ COMMENT=	Window manager originally based on the Bowman NeXTstep clone
 RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 
 NO_LATEST_LINK=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xext x11
 USE_IMAKE=	yes
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
