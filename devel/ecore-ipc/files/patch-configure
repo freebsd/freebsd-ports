@@ -1,5 +1,5 @@
---- configure.orig	2008-03-15 01:32:14.000000000 +0300
-+++ configure	2008-03-15 01:37:43.000000000 +0300
+--- configure.orig	2008-03-17 11:36:38.000000000 +0300
++++ configure	2008-03-17 11:38:49.000000000 +0300
 @@ -20552,70 +20552,9 @@
  { echo "$as_me:$LINENO: checking for SSL" >&5
  echo $ECHO_N "checking for SSL... $ECHO_C" >&6; }
@@ -61,10 +61,10 @@
 -	{ echo "$as_me:$LINENO: result: no" >&5
 -echo "${ECHO_T}no" >&6; }
 -                 have_openssl="no"
--
+ 
 -elif test $pkg_failed = untried; then
 -	 have_openssl="no"
- 
+-
 -else
 -	SSL_CFLAGS=$pkg_cv_SSL_CFLAGS
 -	SSL_LIBS=$pkg_cv_SSL_LIBS
@@ -73,7 +73,12 @@
          { echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6; }
  
-@@ -20628,8 +20567,6 @@
+@@ -20623,13 +20562,9 @@
+ cat >>confdefs.h <<\_ACEOF
+ #define USE_OPENSSL 1
+ _ACEOF
+-
+-       requirements_ecore_con="$requirements_ecore_con openssl"
         # no need to add it to req_ecore_ipc, since they
         # depends on ecore_con anyway.
         have_openssl="yes"
