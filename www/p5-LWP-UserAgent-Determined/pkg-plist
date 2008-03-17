@@ -1,0 +1,5 @@
+%%SITE_PERL%%/LWP/UserAgent/Determined.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/UserAgent/Determined/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/UserAgent/Determined
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/UserAgent
+@dirrmtry %%SITE_PERL%%/LWP/UserAgent

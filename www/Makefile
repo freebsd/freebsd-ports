@@ -840,6 +840,7 @@
     SUBDIR += p5-Jifty
     SUBDIR += p5-Kwiki
     SUBDIR += p5-LWP-Authen-Wsse
+    SUBDIR += p5-LWP-UserAgent-Determined
     SUBDIR += p5-LWP-UserAgent-WithCache
     SUBDIR += p5-LWPx-ParanoidAgent
     SUBDIR += p5-MasonX-Interp-WithCallbacks
