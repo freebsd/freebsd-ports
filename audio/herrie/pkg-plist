@@ -8,6 +8,7 @@ etc/herrie.conf.sample
 %%NLS%%share/locale/ga/LC_MESSAGES/herrie.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/herrie.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/herrie.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/herrie.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/herrie.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/herrie.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/herrie.mo
