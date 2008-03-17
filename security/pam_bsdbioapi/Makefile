@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pam_bsdbioapi
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	security
-MASTER_SITES=	http://shapeshifter.se/pub/pam_bsdbioapi/
+MASTER_SITES=	http://www.shapeshifter.se/pub/pam_bsdbioapi/
 
 MAINTAINER=	fli@shapeshifter.se
 COMMENT=	PAM module for BioAPI
