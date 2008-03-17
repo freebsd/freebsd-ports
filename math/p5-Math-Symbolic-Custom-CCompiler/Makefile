@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	Math-Symbolic-Custom-CCompiler
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	math perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Math
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Compile Math::Symbolic trees to C
 
-BUILD_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic \
-		${SITE_PERL}/Inline/C.pm:${PORTSDIR}/devel/p5-Inline
+BUILD_DEPENDS=	p5-Math-Symbolic>=0.509:${PORTSDIR}/math/p5-Math-Symbolic \
+		p5-Inline>=0.44:${PORTSDIR}/devel/p5-Inline
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Math::Symbolic::Custom::CCompiler.3
