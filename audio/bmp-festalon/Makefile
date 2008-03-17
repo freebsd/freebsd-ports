@@ -13,8 +13,6 @@ MASTERDIR=	${.CURDIR}/../festalon
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 
-USE_X_PREFIX=	yes
-
 CONFIGURE_ARGS+=	--enable-interface=bmp
 
 DESCR=		${.CURDIR}/pkg-descr
