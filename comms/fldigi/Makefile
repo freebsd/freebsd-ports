@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	2.09
+PORTVERSION=	2.10
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.w1hkj.com/fldigi-2.0.distro/ \
+MASTER_SITES=	http://www.w1hkj.com/fldigi-distro/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	db
 
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/por
 LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk-threads \
 		hamlib:${PORTSDIR}/comms/hamlib \
 		sndfile:${PORTSDIR}/audio/libsndfile \
-		boost_wave:${PORTSDIR}/devel/boost
+		boost_wave:${PORTSDIR}/devel/boost \
+		pulse:${PORTSDIR}/audio/pulseaudio
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
