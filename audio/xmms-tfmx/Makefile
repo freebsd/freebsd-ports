@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-tfmx
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,6 @@ COMMENT=	XMMS Input plugin for playing TFMX tunes
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk12 lthack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

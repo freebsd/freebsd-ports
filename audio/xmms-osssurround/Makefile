@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-osssurround
 PORTVERSION=	0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmms-a52dec
@@ -19,7 +19,6 @@ COMMENT=	OSSSuround adds Surround Sound capabilities to XMMS
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 CFLAGS+=	-fPIC `xmms-config --cflags`
 
 BUILD_WRKSRC=	${WRKSRC}/OSSSurround-${PORTVERSION}
