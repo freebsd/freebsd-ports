@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	signing-party
-PORTVERSION=	0.4.13.1
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/s/signing-party
@@ -27,7 +26,8 @@ RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1 \
 		${SITE_PERL}/Mail/Util.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/Convert/Recode.pm:${PORTSDIR}/converters/p5-Convert-Recode \
-		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template
+		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
+		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/:S/.orig//}
 
@@ -37,7 +37,9 @@ USE_PERL5=	yes
 
 SCRIPTS=	caff/caff caff/pgp-clean caff/pgp-fixkey gpglist/gpglist \
 		gpgsigs/gpgsigs gpg-key2ps/gpg-key2ps \
-		gpg-mailkeys/gpg-mailkeys keylookup/keylookup
+		gpg-mailkeys/gpg-mailkeys keylookup/keylookup \
+		sig2dot/sig2dot springgraph/springgraph \
+		gpgparticipants/gpgparticipants
 MANUALS1=	${SCRIPTS:S/$/.1/}
 EXAMPLES=	caff/caffrc.sample gpg-mailkeys/example.gpg-mailkeysrc
 
