@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ffe
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	textproc
 MASTER_SITES=	SFE/ff-extractor
 
@@ -20,11 +20,12 @@ PORTDOCS=	${PORTNAME}.html
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^install-data-am: install-htmlDATA install-info-am install-man/install-data-am: install-man/' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's|setmode|setmode123|g' ${WRKSRC}/configure
 
 post-install:
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/${PORTDOCS} ${DOCSDIR}/
+	@cd ${WRKSRC}/doc/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
