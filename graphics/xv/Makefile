@@ -35,7 +35,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_IMAKE=	yes
-USE_XORG=	xext x11 
+USE_XORG=	xext x11 xt
 USE_PERL5_BUILD=yes
 .if !defined(NOMAN)
 MAN1=		bggen.1 vdcomp.1 xcmap.1 xv.1 xvp2p.1
