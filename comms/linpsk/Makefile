@@ -7,7 +7,7 @@
 
 PORTNAME=	linpsk
 PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,6 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		portaudio:${PORTSDIR}/audio/portaudio
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/fonts.dir:${PORTSDIR}/x11-fonts/bitstream-vera
 
-USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes
 USE_QT_VER=	3
 USE_GMAKE=	yes
