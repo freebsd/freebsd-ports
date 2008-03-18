@@ -7,13 +7,18 @@ bin/gnump3d2
 etc/gnump3d/gnump3d.conf-default
 @exec [ -f %B/gnump3d.conf ] || cp %B/%f %B/gnump3d.conf
 etc/gnump3d/mime.types
+etc/gnump3d/file.types
 %%SITE_PERL%%/gnump3d/IP.pm
 %%SITE_PERL%%/gnump3d/MD5.pm
 %%SITE_PERL%%/gnump3d/WMA.pm
+%%SITE_PERL%%/gnump3d/filetypes.pm
+%%SITE_PERL%%/gnump3d/Request.pm
 %%SITE_PERL%%/gnump3d/base64.pm
 %%SITE_PERL%%/gnump3d/config.pm
 %%SITE_PERL%%/gnump3d/files.pm
+%%SITE_PERL%%/gnump3d/HTML/Template.pm
 %%SITE_PERL%%/gnump3d/lang/de.pm
+%%SITE_PERL%%/gnump3d/lang/ba.pm
 %%SITE_PERL%%/gnump3d/lang/en.pm
 %%SITE_PERL%%/gnump3d/lang/es.pm
 %%SITE_PERL%%/gnump3d/lang/fr.pm
@@ -21,8 +26,6 @@ etc/gnump3d/mime.types
 %%SITE_PERL%%/gnump3d/mp3info.pm
 %%SITE_PERL%%/gnump3d/mp4info.pm
 %%SITE_PERL%%/gnump3d/ogginfo.pm
-%%SITE_PERL%%/gnump3d/oggtagreader.pm
-%%SITE_PERL%%/gnump3d/plugins/bug.pm
 %%SITE_PERL%%/gnump3d/plugins/copying.pm
 %%SITE_PERL%%/gnump3d/plugins/info.pm
 %%SITE_PERL%%/gnump3d/plugins/now.pm
@@ -41,8 +44,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/Avalon/AUTHOR
 %%DATADIR%%/Avalon/COPYING.html
 %%DATADIR%%/Avalon/base.css
-%%DATADIR%%/Avalon/bug.html
-%%DATADIR%%/Avalon/config.ini
 %%DATADIR%%/Avalon/error.html
 %%DATADIR%%/Avalon/gnump3d-logo.jpg
 %%DATADIR%%/Avalon/html_footer.tmpl
@@ -65,8 +66,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/BlueBox/AUTHOR
 %%DATADIR%%/BlueBox/BlueBox.css
 %%DATADIR%%/BlueBox/COPYING.html
-%%DATADIR%%/BlueBox/bug.html
-%%DATADIR%%/BlueBox/config.ini
 %%DATADIR%%/BlueBox/error.html
 %%DATADIR%%/BlueBox/extras.html
 %%DATADIR%%/BlueBox/footer.tmpl
@@ -87,8 +86,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/BlueBox/template.ini
 %%DATADIR%%/Clean/AUTHOR
 %%DATADIR%%/Clean/COPYING.html
-%%DATADIR%%/Clean/bug.html
-%%DATADIR%%/Clean/config.ini
 %%DATADIR%%/Clean/error.html
 %%DATADIR%%/Clean/index.html
 %%DATADIR%%/Clean/info.html
@@ -106,8 +103,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/Clean/tagbrowse.html
 %%DATADIR%%/LaFrere/AUTHOR
 %%DATADIR%%/LaFrere/COPYING.html
-%%DATADIR%%/LaFrere/bug.html
-%%DATADIR%%/LaFrere/config.ini
 %%DATADIR%%/LaFrere/error.html
 %%DATADIR%%/LaFrere/index.html
 %%DATADIR%%/LaFrere/info.html
@@ -125,7 +120,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/Liquid/AUTHOR
 %%DATADIR%%/Liquid/COPYING.html
 %%DATADIR%%/Liquid/bck.gif
-%%DATADIR%%/Liquid/bug.html
 %%DATADIR%%/Liquid/cel-bar-anthrazite-act.gif
 %%DATADIR%%/Liquid/cel-bar-anthrazite.gif
 %%DATADIR%%/Liquid/cel-bar-aqua-act.gif
@@ -142,7 +136,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/Liquid/cel-bar-turqois.gif
 %%DATADIR%%/Liquid/cel-bar-yellow-act.gif
 %%DATADIR%%/Liquid/cel-bar-yellow.gif
-%%DATADIR%%/Liquid/config.ini
 %%DATADIR%%/Liquid/error.html
 %%DATADIR%%/Liquid/footer.tmpl
 %%DATADIR%%/Liquid/gnump3dskin.webprj
@@ -176,8 +169,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/Liquid/tagbrowse.html
 %%DATADIR%%/Musicus/AUTHOR
 %%DATADIR%%/Musicus/COPYING.html
-%%DATADIR%%/Musicus/bug.html
-%%DATADIR%%/Musicus/config.ini
 %%DATADIR%%/Musicus/error.html
 %%DATADIR%%/Musicus/extras.html
 %%DATADIR%%/Musicus/footer.tmpl
@@ -202,8 +193,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/Nomad/Nomad_theme.css
 %%DATADIR%%/Nomad/SmallHome.gif
 %%DATADIR%%/Nomad/bg.gif
-%%DATADIR%%/Nomad/bug.html
-%%DATADIR%%/Nomad/config.ini
 %%DATADIR%%/Nomad/error.html
 %%DATADIR%%/Nomad/gnump3d_themes_footer.tmpl
 %%DATADIR%%/Nomad/gnump3d_themes_header.tmpl
@@ -223,9 +212,7 @@ etc/gnump3d/mime.types
 %%DATADIR%%/README
 %%DATADIR%%/SchwartzNGrau/AUTHOR
 %%DATADIR%%/SchwartzNGrau/COPYING.html
-%%DATADIR%%/SchwartzNGrau/bug.html
 %%DATADIR%%/SchwartzNGrau/clear.gif
-%%DATADIR%%/SchwartzNGrau/config.ini
 %%DATADIR%%/SchwartzNGrau/error.html
 %%DATADIR%%/SchwartzNGrau/index.html
 %%DATADIR%%/SchwartzNGrau/info.html
@@ -242,8 +229,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/SchwartzNGrau/tagbrowse.html
 %%DATADIR%%/Tabular/AUTHOR
 %%DATADIR%%/Tabular/COPYING.html
-%%DATADIR%%/Tabular/bug.html
-%%DATADIR%%/Tabular/config.ini
 %%DATADIR%%/Tabular/error.html
 %%DATADIR%%/Tabular/extras.html
 %%DATADIR%%/Tabular/footer.tmpl
@@ -264,8 +249,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/Tabular/template.ini
 %%DATADIR%%/Thexder/AUTHOR
 %%DATADIR%%/Thexder/COPYING.html
-%%DATADIR%%/Thexder/bug.html
-%%DATADIR%%/Thexder/config.ini
 %%DATADIR%%/Thexder/dig_temp2_01.jpg
 %%DATADIR%%/Thexder/dig_temp2_02.jpg
 %%DATADIR%%/Thexder/dig_temp2_03.gif
@@ -296,8 +279,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/Thexder/stats.html
 %%DATADIR%%/default/AUTHOR
 %%DATADIR%%/default/COPYING.html
-%%DATADIR%%/default/bug.html
-%%DATADIR%%/default/config.ini
 %%DATADIR%%/default/error.html
 %%DATADIR%%/default/footer.tmpl
 %%DATADIR%%/default/header.tmpl
@@ -316,8 +297,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/default/tagbrowse.html
 %%DATADIR%%/dotNET/AUTHOR
 %%DATADIR%%/dotNET/COPYING.html
-%%DATADIR%%/dotNET/bug.html
-%%DATADIR%%/dotNET/config.ini
 %%DATADIR%%/dotNET/content.tmpl
 %%DATADIR%%/dotNET/error.html
 %%DATADIR%%/dotNET/header.tmpl
@@ -344,7 +323,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/dotNET/stats.html
 %%DATADIR%%/dotNET/style.css
 %%DATADIR%%/handheld/AUTHOR
-%%DATADIR%%/handheld/config.ini
 %%DATADIR%%/handheld/error.html
 %%DATADIR%%/handheld/index.html
 %%DATADIR%%/handheld/random.html
@@ -352,8 +330,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/handheld/search.html
 %%DATADIR%%/nausicaa/AUTHOR
 %%DATADIR%%/nausicaa/COPYING.html
-%%DATADIR%%/nausicaa/bug.html
-%%DATADIR%%/nausicaa/config.ini
 %%DATADIR%%/nausicaa/error.html
 %%DATADIR%%/nausicaa/extras.html
 %%DATADIR%%/nausicaa/index.html
@@ -369,7 +345,6 @@ etc/gnump3d/mime.types
 %%DATADIR%%/nausicaa/style.css
 %%DATADIR%%/redgrey/AUTHOR
 %%DATADIR%%/redgrey/COPYING.html
-%%DATADIR%%/redgrey/bug.html
 %%DATADIR%%/redgrey/error.html
 %%DATADIR%%/redgrey/header.tmpl
 %%DATADIR%%/redgrey/index.html
@@ -402,6 +377,7 @@ etc/gnump3d/mime.types
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/gnump3d/plugins
 @dirrm %%SITE_PERL%%/gnump3d/lang
+@dirrm %%SITE_PERL%%/gnump3d/HTML
 @dirrm %%SITE_PERL%%/gnump3d
 @dirrmtry etc/gnump3d
 @unexec rmdir /var/log/gnump3d 2>/dev/null || true

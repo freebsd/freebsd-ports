@@ -8,7 +8,7 @@
 
 gnump3d_enable=${gnump3d_enable-"NO"}
 gnump3d_program=${gnump3d_program:-%%PREFIX%%/bin/gnump3d}
-gnump3d_flags=${gnump3d_flags-"--quiet --background"}
+gnump3d_flags=${gnump3d_flags-"--fast --quiet --background"}
 gnump3d_pidfile=${gnump3d_pidfile:-/var/run/gnump3d.pid}
 
 name="gnump3d"

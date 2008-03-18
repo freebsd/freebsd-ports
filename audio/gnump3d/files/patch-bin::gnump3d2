@@ -1,6 +1,6 @@
---- bin/gnump3d2.orig	Fri Mar 26 03:49:02 2004
-+++ bin/gnump3d2	Fri Mar 26 12:57:38 2004
-@@ -3052,10 +3052,10 @@
+--- bin/gnump3d2.orig	2008-01-03 11:26:53.000000000 +0000
++++ bin/gnump3d2	2008-01-03 11:30:54.000000000 +0000
+@@ -3126,10 +3126,10 @@
        # This is mainly here for Windows users.
        $CONFIG_FILE = "gnump3d.conf";
    }
@@ -13,18 +13,18 @@
    }
  
  
-@@ -3183,8 +3183,8 @@
+@@ -3246,8 +3246,8 @@
    $PORT          = getConfig( "port", 8888 );
    $bind_address  = getConfig( "binding_host", "" );
    $host          = getConfig( "hostname", "localhost" );
 -  $theme_dir     = getConfig( "theme_directory", "/usr/share/gnump3d" );
 -  $plugin_dir    = getConfig( "plugin_directory",  "/usr/lib/perl5/gnump3d/plugins" );
 +  $theme_dir     = getConfig( "theme_directory", "%%PREFIX%%/share/gnump3d" );
-+  $plugin_dir    = getConfig( "plugin_directory",  "%%SITE_PERL%%/gnump3d/plugins" );
++  $plugin_dir    = getConfig( "plugin_directory",  "%%SITE_PERL%%/perl5/gnump3d/plugins" );
    $always_stream = getConfig( "always_stream", 1 );
    $access_log    = getConfig( "logfile", "/var/log/gnump3d/access.log" );
    $error_log     = getConfig( "errorlog", "/var/log/gnump3d/error.log" );
-@@ -3192,11 +3192,11 @@
+@@ -3255,12 +3255,12 @@
    $client_host   = getConfig( "use_client_host", 1 );
    $default_theme = getConfig( "theme", "default" );
    $TIMEOUT       = getConfig( "read_time", 10 );
@@ -35,11 +35,13 @@
    $STATSARGS     = getConfig( "stats_arguments", "" );
    $play_rec      = getConfig( "play_recursively_text",  "Play" );
 -  $mime_file     = getConfig( "mime_file",  "/etc/gnump3d/mime.types" );
+-  $file_types    = getConfig( "file_types",  "/etc/gnump3d/file.types" );
 +  $mime_file     = getConfig( "mime_file",  "%%PREFIX%%/etc/gnump3d/mime.types" );
++  $file_types    = getConfig( "file_types",  "%%PREFIX%%/etc/gnump3d/file.types" );
    $enable_browse = getConfig( "enable_browsing", 1 );
    $sort_order    = getConfig( "sort_order", '$FILENAME' );
  
-@@ -3238,7 +3238,7 @@
+@@ -3316,7 +3316,7 @@
    # Experimental features.
    #
    $jukebox        = getConfig( "jukebox_mode", 0 );
