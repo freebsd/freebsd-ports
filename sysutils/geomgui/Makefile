@@ -7,7 +7,7 @@
 
 PORTNAME=	geomgui
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://geomgui.xride.dk/files/ \
 		${MASTER_SITE_LOCAL}
@@ -18,7 +18,6 @@ COMMENT=	Viewer for kernel geom layer
 
 LIB_DEPENDS=	gvc:${PORTSDIR}/graphics/graphviz
 
-USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk20 librsvg2
 USE_ICONV=	yes
