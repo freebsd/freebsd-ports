@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	libstatgrab
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.uk.i-scream.org/pub/i-scream/%SUBDIR%/ \
+		http://dl.ambiweb.de/mirrors/ftp.i-scream.org/%SUBDIR%/ \
 		ftp://ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://ftp.i-scream.org/pub/i-scream/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
