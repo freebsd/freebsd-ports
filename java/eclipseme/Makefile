@@ -7,6 +7,7 @@
 
 PORTNAME=	eclipseme
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -30,7 +31,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/proguard/lib/proguard.jar:${PORTSDIR}/java/prog
 
 do-install:
 	@${MKDIR} ${PREFIX}/eclipse/plugins
-	@${CP} -r ${WRKSRC}/${PORTNAME}_${PORTVERSION} ${PREFIX}/eclipse/plugins/
+	@${CP} -R ${WRKSRC}/${PORTNAME}_${PORTVERSION} ${PREFIX}/eclipse/plugins/
 
 post-install:
 	@${CAT} ./pkg-message | ${SED} -e 's|%%PREFIX%%|${APP_HOME}|'
