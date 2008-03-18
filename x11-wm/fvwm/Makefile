@@ -17,7 +17,7 @@ COMMENT=	The fvwm window manager
 
 NO_LATEST_LINK=	yes
 USE_IMAKE=	yes
-USE_XORG=	xbitmaps xpm xext x11
+USE_XORG=	xbitmaps xpm xext x11 xmu
 # must overwrite the default from bsd.port.mk
 XMKMF=		xmkmf
 ALL_TARGET=	Makefiles all
