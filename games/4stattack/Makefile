@@ -7,9 +7,9 @@
 
 PORTNAME=	4stattack
 PORTVERSION=	2.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	forcedattack
 DISTNAME=	4stAttack-${PORTVERSION}
 
@@ -19,7 +19,6 @@ COMMENT=	Connect four stones in a straight line
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 PYC=		PYTHON="${PYTHON_CMD}" ${SH} ${SCRIPTDIR}/py-compile
