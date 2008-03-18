@@ -15078,6 +15078,7 @@ sgrep2		ports/textproc/sgrep2
 sguil-client	ports/security/sguil-client
 sguil-sensor	ports/security/sguil-sensor
 sguil-server	ports/security/sguil-server
+sgwi		ports/mail/sgwi
 sh-rtems-binutils	ports/devel/sh-rtems-binutils
 sh-rtems-g77	ports/devel/sh-rtems-g77
 sh-rtems-gcc	ports/devel/sh-rtems-gcc
