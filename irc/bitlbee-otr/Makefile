@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTVERSION=	1.2
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/
-
-PATCH_SITES=	http://get.bitlbee.org/patches/
 
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	An IRC to other chat networks gateway
@@ -30,19 +27,13 @@ USE_RC_SUBR=	bitlbee
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	MSN "Enable MSN protocol support" On \
-		LDAP "Enable LDAP authentication support" Off \
-		RECODE "Enable oscar_recode_charset" Off \
 		DEBUG "Create debuggable binary" Off \
 		OPENSSL "Use openssl rather than gnutls" Off \
 		IPV6 "Compile IPV6 support" On
 
-CONFIGURE_ARGS=	--config=/var/db/bitlbee
+CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_LDAP)
-PATCHFILES+=	${PORTNAME}-1.0-ldap.diff
-.endif
 
 .if !defined(WITHOUT_MSN)
 CONFIGURE_ARGS+=--msn=1
@@ -57,15 +48,6 @@ CONFIGURE_ARGS+=--ssl=gnutls
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
 .endif
 
-.if defined(WITH_LDAP)
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--ldap=${LOCALBASE}
-.endif
-
-.if defined(WITH_RECODE)
-EXTRA_PATCHES+=	${FILESDIR}/oscar-recode-patch
-.endif
-
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--debug=1
 .endif
@@ -75,6 +57,10 @@ CONFIGURE_ARGS+=--ipv6=0
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} \
+		-e "s:^EFLAGS=:EFLAGS=${LDFLAGS}:" \
+		${WRKSRC}/configure
+
 	@${REINPLACE_CMD} \
 		-e "s:/etc/bitlbee/motd.txt:${PREFIX}/etc/bitlbee/motd.txt:" \
 		-e "s:/var/lib/bitlbee:/var/db/bitlbee:" \
