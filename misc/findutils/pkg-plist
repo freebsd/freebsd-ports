@@ -1,4 +1,5 @@
 bin/gfind
+bin/goldfind
 bin/glocate
 bin/gupdatedb
 bin/gxargs
