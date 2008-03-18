@@ -7,14 +7,14 @@
 
 PORTNAME=	3dpong
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/3dpong/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window 3D Pong game for 1 or 2 players with a ball and paddles
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 		XLIB="-L${X11BASE}/lib -lX11"
