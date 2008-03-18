@@ -18,7 +18,7 @@ MAINTAINER=	boumenot@gmail.com
 COMMENT=	PostgreSQL driver for DBI-for-Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${RUBY_DBI_PORTDIR} \
-		rubygem-ruby-postgres>=0:${PORTSDIR}/databases/rubygem-postgres
+		rubygem-postgres>=0:${PORTSDIR}/databases/rubygem-postgres
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
