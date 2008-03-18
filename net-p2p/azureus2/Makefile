@@ -9,9 +9,10 @@ PORTNAME=	azureus2
 PORTVERSION=	2.5.0.4
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	azureus
 DISTNAME=	azureus_${PORTVERSION}_source
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A BitTorrent client written in Java
 
 BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
