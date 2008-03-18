@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	wxmozilla
-PORTVERSION=	0.5.3
-PORTREVISION=	10
+PORTVERSION=	0.5.6
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embedding Mozilla in wxWidgets
@@ -21,7 +19,7 @@ USE_GNOME=	gnomehack gnometarget
 USE_GECKO=	mozilla
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-python
-USE_WX=		2.4
+USE_WX=		2.6+
 WX_COMPS=	wx python
 WX_CONF_ARGS=	absolute
 USE_LDCONFIG=	yes
