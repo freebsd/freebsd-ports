@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap/cnmapwx.wdr
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap/cnmapwx_wdr.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CNMap/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CNMap/CNMap.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CNMap/CNMap.so
+bin/cnmap
+bin/cnmapdir
+bin/cnmapwx
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/CNMap
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode
