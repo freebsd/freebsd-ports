@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.3.0
-PORTREVISION?=	1
+DISTVERSION?=	8.3.1
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -103,25 +103,16 @@ OPTIONS+=	DEBUG "Builds with debugging symbols" off
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
 OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
 
-# See http://gppl.moonbone.ru/ for more info
-#OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
-
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
-
-# .  if (defined(SERVER_ONLY) && defined(WITH_HIER)) || make(makesum)
-# PATCH_SITES+=	http://gppl.moonbone.ru/:hier820055
-# PATCHFILES+=	hier-v0.5.5-Pg8.2.0.diff.gz:hier820055
-# USE_BISON=	yes
-# .  endif
 
 .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
 USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-830-icu-xx-2008-03-06.diff.gz:icu
+PATCHFILES+=	pg-831-icu-xx-2008-03-17.diff.gz:icu
 .  endif
 
 PATCH_DIST_STRIP=-p1
