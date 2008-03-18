@@ -13,9 +13,11 @@ CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}-src
 
+.if !defined(WITHOUT_NCFTP_IPV6) && !defined(WITHOUT_IPV6)
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 PATCHFILES=	ncftp-321-v6-20070822.diff.gz
 PATCH_DIST_STRIP=	-p1
+.endif
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	ftp replacement with advanced user interface
