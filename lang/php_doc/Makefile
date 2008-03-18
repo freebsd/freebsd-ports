@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php_doc
-PORTVERSION=	20070424
+PORTVERSION=	20080318
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
@@ -110,7 +110,5 @@ fetchdist:
 		${MV} php_manual_${l}.tar.gz ${DISTDIR}/php_manual_${l}-${PORTVERSION}.tar.gz; \
 	fi
 .endfor
-
-
 
 .include <bsd.port.mk>
