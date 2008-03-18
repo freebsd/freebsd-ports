@@ -1,0 +1,5 @@
+******************************************************
+You will need to edit %%PREFIX%%/etc/silc/silcd.conf
+and make sure to change permissions to 400 if it
+contains sensitive information.
+******************************************************
