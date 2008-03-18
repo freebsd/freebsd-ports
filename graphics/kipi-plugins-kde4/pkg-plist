@@ -214,7 +214,6 @@
 %%SIMPLEVIEWEREXPORT:%%lib/kde3/kipiplugin_simpleviewer.so
 %%SIMPLEVIEWEREXPORT:%%share/apps/kipiplugin_simpleviewerexport/index.template
 %%SIMPLEVIEWEREXPORT:%%share/apps/kipiplugin_simpleviewerexport/simpleviewer_html/space.png
-%%SIMPLEVIEWEREXPORT:%%share/apps/kipiplugin_simpleviewerexport/simpleviewer_html/upgrade.html
 %%SIMPLEVIEWEREXPORT:%%share/services/kipiplugin_simpleviewer.desktop
 %%SIMPLEVIEWEREXPORT:%%@dirrm share/apps/kipiplugin_simpleviewerexport/simpleviewer_html
 %%SIMPLEVIEWEREXPORT:%%@dirrm share/apps/kipiplugin_simpleviewerexport
