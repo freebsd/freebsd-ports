@@ -1,0 +1,28 @@
+@unexec if cmp -s %D/www/sgwi/.htaccess %D/www/sgwi/.htaccess.dist; then rm -f %D/www/sgwi/.htaccess; fi
+www/sgwi/.htaccess.dist
+@exec [ -f %B/.htaccess ] || cp %B/%f %B/.htaccess
+@unexec if cmp -s %D/www/sgwi/.htpasswd %D/www/sgwi/.htpasswd.dist; then rm -f %D/www/sgwi/.htpasswd; fi
+www/sgwi/.htpasswd.dist
+@exec [ -f %B/.htpasswd ] || cp %B/%f %B/.htpasswd
+www/sgwi/awl.php
+www/sgwi/awl_add.php
+www/sgwi/awl_delete.php
+www/sgwi/awl_delete_undef.php
+@unexec if cmp -s %D/www/sgwi/config.inc.php %D/www/sgwi/config.inc.php.dist; then rm -f %D/www/sgwi/config.inc.php; fi
+www/sgwi/config.inc.php.dist
+@exec [ -f %B/config.inc.php ] || cp %B/%f %B/config.inc.php
+www/sgwi/connect.php
+www/sgwi/connect_delete.php
+www/sgwi/connect_purge.php
+www/sgwi/connect_whitelist.php
+www/sgwi/copyright.inc.php
+www/sgwi/db.inc.php
+www/sgwi/index.php
+www/sgwi/license.txt
+www/sgwi/opt_in_out.php
+www/sgwi/opt_in_out_add.php
+www/sgwi/opt_in_out_delete.php
+www/sgwi/opt_in_out_helpers.inc.php
+www/sgwi/readme.txt
+www/sgwi/tools.inc.php
+@dirrm www/sgwi

@@ -552,6 +552,7 @@
     SUBDIR += sendok
     SUBDIR += sentinel
     SUBDIR += serialmail
+    SUBDIR += sgwi
     SUBDIR += sid-milter
     SUBDIR += sigit
     SUBDIR += sigrot
