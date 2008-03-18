@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	findutils
-PORTVERSION=	4.2.33
+PORTVERSION=	4.4.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	findutils
@@ -34,7 +34,7 @@ PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--program-prefix=g --localstatedir=${LOCALSTATEDIR}
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
-INFO=		find
+INFO=		find find-maint
 MAN1=		gfind.1 gxargs.1 glocate.1 gupdatedb.1
 MAN5=		glocatedb.5
 
