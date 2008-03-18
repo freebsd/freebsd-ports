@@ -454,7 +454,7 @@
     SUBDIR += hachoir-regex
     SUBDIR += happydoc
     SUBDIR += hapy
-    SUBDIR += hc12mem
+    SUBDIR += hcs12mem
     SUBDIR += hgsvn
     SUBDIR += highlighterkit
     SUBDIR += horde-chora
