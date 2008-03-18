@@ -4736,6 +4736,7 @@ hp2xx		ports/print/hp2xx
 hp48cc		ports/devel/hp48cc
 hp48xgcc	ports/devel/hp48xgcc
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
+hpacucli	ports/sysutils/hpacucli
 hpijs		ports/print/hpijs
 hping		ports/net/hping
 hping-devel	ports/net/hping-devel
