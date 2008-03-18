@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	linrad
-PORTVERSION=	2.40
+PORTVERSION=	2.43
 CATEGORIES=	comms
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
 		http://g7rau.demon.co.uk/sm5bsz/linuxdsp/archive/\
 		http://www.sm5bsz.com/linuxdsp/archive/
-DISTNAME=	lir02-40
+DISTNAME=	lir02-43
 EXTRACT_SUFX=	.tbz
 DIST_SUBDIR=	${PORTNAME}
 
@@ -28,9 +28,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 ALL_TARGET=	xlinrad
-USE_XORG= 	x11
+USE_XORG=	x11
 ONLY_FOR_ARCHS=	i386
-X11_PATCHFILES=	Makefile.in help.c xmain.c
+X11_PATCHFILES=	help.c xmain.c
 LINRAD_DOCFILES=	z_APM.txt z_BUFFERS.txt z_CALIBRATE.txt \
 			z_COPYRIGHT.txt z_GIFINFO.txt \
 			z_MOUSE.txt z_NETWORK.txt \
