@@ -4626,7 +4626,7 @@ hawkvoice	ports/audio/hawkvoice
 hayes		ports/multimedia/hayes
 hb		ports/misc/hb
 hbiff		ports/mail/hbiff
-hc12mem		ports/devel/hc12mem
+hcs12mem	ports/devel/hcs12mem
 hcfmdm		ports/comms/hcfmdm
 hcidump		ports/comms/hcidump
 hdf		ports/science/hdf

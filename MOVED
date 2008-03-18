@@ -3435,3 +3435,4 @@ security/nmapfe|security/zenmap|2008-03-14|Project renamed
 x11/hs-x11-extras-ghc||2008-03-14|Has expired: Use x11/hs-x11-ghc instead
 www/mod_dosevasise20||2008-03-14|Has expired: Use www/mod_evasive20 instead
 textproc/p5-Text-ParseWords||2008-03-16|Module included in core perl
+devel/hc12mem|/devel/hcs12mem|2008-03-17|Project renamed
