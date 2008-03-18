@@ -1,0 +1,24 @@
+
+1. Configure sgwi
+-----------------
+Edit the %%PREFIX%%/www/sgwi/config.inc.php file to reflect your
+setup.
+
+The default password for sgwi is admin/admin. It's specified in
+the .htpasswd file in %%PREFIX%%/www/sgwi/ directory. Change it
+with:
+
+htpasswd %%PREFIX%%/www/sgwi/.htpasswd admin
+
+Also make sure that the location of the .htpasswd file specified 
+in .htaccess file matches your path.
+
+2. Configure Apache
+-------------------
+Add a line in your httpd.conf to allow the use of .htaccess file.
+
+<Directory "%%PREFIX%%/www/sgwi">
+        Options Indexes
+        AllowOverride AuthConfig
+</Directory>
+
