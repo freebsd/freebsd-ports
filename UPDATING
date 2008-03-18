@@ -7,6 +7,13 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20080318:
+  AFFECTS: users of audio/gnump3d
+  AUTHOR:  jadawin@FreeBSD.org
+
+  The layout of gnump3d 3.0 is changed, please read the documents and the
+  manual pages of gnump3d.
+
+20080318:
   AFFECTS: users of net/skype net/skype_devel
   AUTHOR: beech@FreeBSD.org
 
