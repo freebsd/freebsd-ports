@@ -24,7 +24,7 @@ MASTER_SITE_SUBDIR=	client/sources
 PKGNAMESUFFIX=	${IRSSI_PLUGIN}-client
 DISTNAME=	${PORTNAME}-client-${PORTVERSION}
 
-MAINTAINER?=	wxs@atarininja.org
+MAINTAINER?=	wxs@FreeBSD.org
 COMMENT=	Secure Internet Live Conferencing (SILC) network client
 
 USE_BZIP2=	yes
