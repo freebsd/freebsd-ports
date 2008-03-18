@@ -1,0 +1,8 @@
+lib/compaq/hpacucli/libcpqimgr.so
+lib/compaq/hpacucli/libemsdm.so
+lib/compaq/hpacucli/libhwmim3.so
+lib/compaq/hpacucli/libqlsdm.so
+sbin/hpacucli
+libexec/.hpacucli
+@dirrm lib/compaq/hpacucli
+@dirrm lib/compaq
