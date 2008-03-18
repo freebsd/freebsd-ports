@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gnump3d
-PORTVERSION=	2.9.8
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Streaming server for MP3, Ogg Vorbis and other streamable audio files
 
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
@@ -60,6 +59,7 @@ do-install:
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	${MKDIR} ${CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/mime.types ${CONFDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/file.types ${CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/gnump3d.conf \
 		${CONFDIR}/gnump3d.conf-default
 .if !exists(${PREFIX}/etc/${PORTNAME}/gnump3d.conf)
