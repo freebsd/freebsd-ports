@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pound
-PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -36,6 +35,8 @@ OPTIONS=	DAEMON		"Running as a daemon" on \
 		PCRE		"Build with libpcre support" off
 
 .include <bsd.port.pre.mk>
+
+PORTDOCS=	README FAQ CHANGELOG
 
 .if defined(WITHOUT_DAEMON)
 CONFIGURE_ARGS+=	--disable-daemon
@@ -68,8 +69,9 @@ CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/FAQ ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
