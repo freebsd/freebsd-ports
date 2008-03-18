@@ -837,6 +837,7 @@
     SUBDIR += skstream
     SUBDIR += skype
     SUBDIR += skype-devel
+    SUBDIR += skype12
     SUBDIR += sl2tps
     SUBDIR += slbd
     SUBDIR += slirp
