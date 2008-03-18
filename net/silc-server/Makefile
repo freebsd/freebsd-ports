@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.1
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -24,25 +24,22 @@ MASTER_SITE_SUBDIR=	server/sources
 PKGNAMESUFFIX=	-server
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Secure Internet Live Conferencing (SILC) network server
 
-BROKEN=		Leaves files behind on deinstall
-
+SUB_FILES=	pkg-message pkg-deinstall
+USE_RC_SUBR=	silcd
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME}/silcd.conf \
-		--with-etcdir=${PREFIX}/etc/${PORTNAME} \
+		--sysconfdir=${PREFIX}/etc/${PORTNAME} \
 		--with-helpdir=share/${PORTNAME}/help \
 		--with-logsdir=/var/log/${PORTNAME} \
 		--with-silcd-pid-file=/var/run/silcd.pid \
-		--enable-ipv6
-
-PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
-PKGDEINSTALL=	${PKGINSTALL}
-
-INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
+		--enable-ipv6 \
+		--enable-debug
 
 MAN5=	silcd.conf.5
 MAN8=	silcd.8
@@ -57,24 +54,10 @@ WITHOUT_OPTIMIZED_ASM=	yes
 CONFIGURE_ARGS+=	--disable-asm
 .endif
 
-.ifndef(WITH_PTHREADS)
-CONFIGURE_ARGS+=	--without-pthreads
-.else
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS}"
-.endif
-
 pre-everything::
 .ifndef(WITHOUT_OPTIMIZED_ASM)
 	@${ECHO_MSG} '===> Define WITHOUT_OPTIMIZED_ASM to disable assembler optimizations'
 .endif
-.ifndef(WITH_PTHREADS)
-	@${ECHO_MSG} '===> Define WITH_PTHREADS to enable pthreads support'
-.endif
-	@${ECHO_MSG}
-
-post-extract:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/silcd.sh \
-	    > ${WRKSRC}/silcd.sh
 
 post-patch:
 .ifdef(NOPORTDOCS)
@@ -86,12 +69,12 @@ post-patch:
 		${WRKSRC}/lib/silccrypt/Makefile.in
 
 post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	${INSTALL_DATA} ${WRKSRC}/silcd.sh ${PREFIX}/etc/rc.d/silcd.sh-dist
-	@if [ ! -f ${PREFIX}/etc/rc.d/silcd.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/silcd.sh startup file."; \
-		${INSTALL_SCRIPT} ${WRKSRC}/silcd.sh ${PREFIX}/etc/rc.d/silcd.sh; \
+	@if [ ! -f ${PREFIX}/etc/silc/silcd.conf ]; then \
+		${CP} -p ${PREFIX}/etc/silc/silcd.conf.sample ${PREFIX}/etc//silc/silcd.conf; \
 	fi
+	@if [ ! -f ${PREFIX}/etc/silc/silcalgs.conf ]; then \
+		${CP} -p ${PREFIX}/etc/silc/silcalgs.conf.sample ${PREFIX}/etc/silc/silcalgs.conf; \
+	fi
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
