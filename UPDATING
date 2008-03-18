@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080318:
+  AFFECTS: users of net/skype net/skype_devel
+  AUTHOR: beech@FreeBSD.org
+
+  It is now recommended (and will be required in future versions) to
+  update to linux_base-fc6. Please do the following:
+
+  1. Make sure there are no running linux applications.
+  2. Unmount linprocfs (umount /compat/linux/proc)
+  3. Uninstall your current linux_base port
+  4. Unload linux kernel module (kldunload linux.ko)
+  5. Set appropriate sysctl (sysctl compat.linux.osrelease=2.6.16)
+  6. Install emulation/linux_base-fc6
+  4  Remount linprocfs (mount /compat/linux/proc)
+  5. Add compat.linux.osrelease=2.6.16 to etc/sysctl.conf
+
 20080316:
   AFFECTS: users of net/iscsi-target
   AUTHOR: rafan@FreeBSD.org
