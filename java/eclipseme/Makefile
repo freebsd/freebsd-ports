@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	eclipseme
-PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTVERSION=	0.4.6
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
@@ -31,11 +29,10 @@ RUN_DEPENDS+=	${LOCALBASE}/share/proguard/lib/proguard.jar:${PORTSDIR}/java/prog
 .endif
 
 do-install:
-		@${CP} -r ${WRKSRC}/${PORTNAME}_${PORTVERSION} ${PREFIX}/eclipse/plugins/
+	@${MKDIR} ${PREFIX}/eclipse/plugins
+	@${CP} -r ${WRKSRC}/${PORTNAME}_${PORTVERSION} ${PREFIX}/eclipse/plugins/
 
 post-install:
-	@${SED} -e 's,%%PREFIX%%,${APP_HOME},' \
-		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
+	@${CAT} ./pkg-message | ${SED} -e 's|%%PREFIX%%|${APP_HOME}|'
 
 .include <bsd.port.mk>
