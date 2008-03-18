@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.2.6
+PORTVERSION?=	8.2.7
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -39,10 +39,14 @@ GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include \
+		--enable-thread-safety \
 		--with-docdir=${DOCSDIR}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
@@ -86,8 +90,6 @@ OPTIONS+=	LDAP "Build with LDAP authentication support" off
 OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
 OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal kerberos support" off
 OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
-OPTIONS+=	LIBC_R "Link w/ libc_r, used by plpython (server)" off
-OPTIONS+=	THREADSAFE "make libpq thread safe" off
 #  to run regression tests:
 OPTIONS+=	TESTS "Allows the use of a \"check\" target (server)" off
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
@@ -95,18 +97,9 @@ OPTIONS+=	DEBUG "Builds with debugging symbols" off
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
 #OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
 
-# See http://gppl.moonbone.ru/ for more info
-OPTIONS+=	HIER  "Builds with query hierarchy (server)" off
-
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
-
-.  if (defined(SERVER_ONLY) && defined(WITH_HIER)) || make(makesum)
-PATCH_SITES+=	http://gppl.moonbone.ru/:hier820055
-PATCHFILES+=	hier-v0.5.5-Pg8.2.0.diff.gz:hier820055
-USE_BISON=	build
-.  endif
 
 # .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
 # USE_AUTOTOOLS=	autoconf:261
@@ -181,14 +174,6 @@ CONFIGURE_ARGS+=--with-krb5
 .    endif
 .  endif
 
-.  if defined(WITH_THREADSAFE)
-CONFIGURE_ARGS+=--enable-thread-safety
-.  endif
-
-.  if defined(SERVER_ONLY) && defined(WITH_LIBC_R)
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-.  endif
 .endif # !SLAVE_ONLY
 
 .if defined(CLIENT_ONLY)
