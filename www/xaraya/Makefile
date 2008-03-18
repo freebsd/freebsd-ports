@@ -8,13 +8,12 @@
 # extension would be used by default.
 
 PORTNAME=	xaraya
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-base
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Framework to create fully dynamic Content Mangement Solutions
 
 .if defined(WITH_PGSQL)
@@ -22,6 +21,7 @@ USE_PHP=	pgsql
 .else
 USE_PHP=	mysql
 .endif
+USE_PHP+=	pcre xml
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -33,15 +33,15 @@ pre-install:
 
 do-install:
 	${MKDIR} ${PREFIX}/${XARAYADIR}
-	${CP} -r ${WRKSRC}/html/* ${PREFIX}/${XARAYADIR}
+	${CP} -R ${WRKSRC}/html/* ${PREFIX}/${XARAYADIR}
 .if !defined(NOTOOLS)
 	${MKDIR} ${EXAMPLESDIR}
-	${CP} -r ${WRKSRC}/tools/* ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/tools/* ${EXAMPLESDIR}
 .endif
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${XARAYADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${CP} -r ${WRKSRC}/docs/* ${DOCSDIR}
+	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
 
 # Create plist
