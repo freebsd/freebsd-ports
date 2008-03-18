@@ -25,7 +25,8 @@ CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE} --enable-security \
 CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		XGETTEXT="${LOCALBASE}/bin/xgettext" \
 		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -fPIC" \
-		LIBS="-L../common -L${LOCALBASE}/lib"
+		LIBS="-L../common -L${LOCALBASE}/lib" \
+		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
 
 MAN1=		gnokii.1 sendsms.1
 MAN8=		gnokiid.8 mgnokiidev.8
