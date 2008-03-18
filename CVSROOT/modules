@@ -18184,6 +18184,7 @@ zh-oto			ports/chinese/oto
 zh-oxford		ports/chinese/oxford
 zh-oxim		ports/chinese/oxim
 zh-p5-Date-Chinese	ports/chinese/p5-Date-Chinese
+zh-p5-Encode-CNMap	ports/chinese/p5-Encode-CNMap
 zh-p5-Encode-HanConvert	ports/chinese/p5-Encode-HanConvert
 zh-p5-Encode-HanExtra	ports/chinese/p5-Encode-HanExtra
 zh-p5-Lingua-Han-PinYin	ports/chinese/p5-Lingua-Han-PinYin
