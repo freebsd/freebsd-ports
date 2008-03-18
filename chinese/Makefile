@@ -85,6 +85,7 @@
     SUBDIR += oxford
     SUBDIR += oxim
     SUBDIR += p5-Date-Chinese
+    SUBDIR += p5-Encode-CNMap
     SUBDIR += p5-Encode-HanConvert
     SUBDIR += p5-Encode-HanExtra
     SUBDIR += p5-Lingua-Han-PinYin
