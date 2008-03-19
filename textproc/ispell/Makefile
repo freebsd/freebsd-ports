@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	19
+PORTREVISION?=	20
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		http://distfiles.opendarwin.org/
@@ -95,6 +95,7 @@ EXTRA_DICT+=	${BRDISTFILE}:br
 EXTRACT_ONLY+=	${BRDISTFILE}
 .endif
 .if defined(ISPELL_DENEU)
+BROKEN=		igerman98-20071211/Makefile must be patched
 DENEUDISTFILE=	igerman98-20071211.tar.bz2
 MASTER_SITES+=	http://www.j3e.de/ispell/igerman98/dict/:denu
 EXTRA_DICT+=	${DENEUDISTFILE}:denu
