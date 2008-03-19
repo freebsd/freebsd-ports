@@ -1,16 +1,16 @@
 --- bzip2.cpp.orig	2007-03-25 04:59:24.000000000 +0600
-+++ bzip2.cpp		2008-03-09 11:19:55.000000000 +0500
++++ bzip2.cpp		2008-03-09 23:37:35.000000000 +0500
 @@ -19,6 +19,7 @@
  #include "system.h"
  #include "tmpstore.h"
  #include "bzip2.h"
 +#include <stdio.h>
-
+ 
  char *bzip2_compressor_name[MAX_BZIP2_COMPRESSORS] = {"0.9.0c", "1.0.2", "1.0.3", "1.0.4"};
  char *bzip2_name[MAX_BZIP2_COMPRESSORS] = {NULL, NULL, NULL, NULL};
 @@ -31,14 +32,12 @@
    system(command.c_str());
-
+ 
    FILE * fp;
 -  char * line = NULL;
 +  char line[2*CHAR_MAX];
