@@ -4083,6 +4083,7 @@ gnotime		ports/deskutils/gnotime
 gnowavcut	ports/audio/gnowavcut
 gnu-radius	ports/net/gnu-radius
 gnu-regexp	ports/java/gnu-regexp
+gnu-unifont	ports/sysutils/gnu-unifont
 gnu-watch	ports/misc/gnu-watch
 gnubg		ports/games/gnubg
 gnubiff		ports/mail/gnubiff
