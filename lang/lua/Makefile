@@ -7,6 +7,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.1.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
@@ -30,6 +31,12 @@ LATEST_LINK=	${LUA_SUBDIR}
 LUA_BIN=	lua luac
 LUA_INC=	lua.h luaconf.h lualib.h lauxlib.h ../etc/lua.hpp
 LUA_MAN=	${LUA_BIN:S/$/.1/}
+LUA_ETC=	Makefile README all.c lua.ico luavs.bat min.c \
+		noparser.c strict.lua
+LUA_TEST=	README bisect.lua cf.lua echo.lua env.lua factorial.lua \
+		fib.lua fibfor.lua globals.lua hello.lua life.lua luac.lua \
+		printf.lua readonly.lua sieve.lua sort.lua table.lua \
+		trace-calls.lua trace-globals.lua xd.lua
 
 post-patch:
 	@${REINPLACE_CMD} -Ee \
@@ -75,15 +82,23 @@ do-install:
 # Documentation.
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/etc
+	${MKDIR} ${DOCSDIR}/test
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html *.gif ${DOCSDIR}
-	${CP} -r ${WRKSRC}/etc ${WRKSRC}/test ${DOCSDIR}
+.for f in ${LUA_ETC}
+	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${DOCSDIR}/etc
+.endfor
+.for f in ${LUA_TEST}
+	${INSTALL_DATA} ${WRKSRC}/test/${f} ${DOCSDIR}/test
+.endfor
 .endif
+# lua.pc
+	${MKDIR} ${LOCALBASE}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/etc/lua.pc ${LOCALBASE}/libdata/pkgconfig/lua-${LUA_VER}.pc
 # Module directories.
 	${MKDIR} ${LUA_MODLIBDIR}
 	${MKDIR} ${LUA_MODSHAREDIR}
-# pkg-config file.
-	${INSTALL_DATA} ${WRKSRC}/etc/lua.pc ${PREFIX}/libdata/pkgconfig
 
 .if ${MACHINE_ARCH:L} == "amd64"
 CFLAGS+=	-fPIC
