@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wml
-PORTVERSION=	2.0.11
+DISTVERSION=	2.1a2
 CATEGORIES=	www lang
 MASTER_SITES=	http://thewml.org/distrib/ \
 		ftp://thewml.org/distrib/
@@ -18,7 +18,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 
 USE_PERL5=	yes
-CONFIGURE_ARGS=	--with-perl=${PERL5}
+CONFIGURE_ARGS=	--with-perl=${PERL5} --with-catdir=man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"	\
 		PERL_ARCH="${PERL_ARCH}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -26,13 +26,13 @@ GNU_CONFIGURE=	yes
 LIBTOOLFILES=	wml_backend/p2_mp4h/configure
 PLIST_SUB+=	ARCH=${PERL_ARCH}
 
-CAT1=	wml_aux_txt2html.1 wml_aux_tidy.1 wml_p4_gm4.1
-
 MAN1=	wmd.1 wmd_missing.1 wmk.1 wml.1 wmb.1 wmu.1 \
 	wml_aux_freetable.1 wml_aux_htmlclean.1 wml_aux_htmlinfo.1 wml_aux_iselect.1 \
 	wml_aux_map2html.1 wml_aux_weblint.1 wml_p1_ipp.1 \
 	wml_p2_mp4h.1 wml_p3_eperl.1 wml_p5_divert.1 wml_p6_asubst.1 \
-	wml_p7_htmlfix.1 wml_p8_htmlstrip.1 wml_p9_slice.1 wml_aux_linklint.1
+	wml_p7_htmlfix.1 wml_p8_htmlstrip.1 wml_p9_slice.1 \
+	wml_aux_txt2html.1 wml_aux_tidy.1 wml_p4_gm4.1 \
+	wml_aux_linklint.1
 
 MAN3=	wml::all.3 wml::des::all.3 wml::des::gfont.3 \
 	wml::des::lowsrc.3 wml::des::imgdot.3 wml::des::imgbg.3 \
@@ -50,29 +50,16 @@ MAN3=	wml::all.3 wml::des::all.3 wml::des::gfont.3 \
 	wml::mod::version.3 wml::sup::path.3 wml::sys::all.3 \
 	wml::sys::bootp3.3 wml::sys::bootp4.3 wml::sys::compat1.3
 
-CAT7=	wml_barebone.7 \
+MAN7=	wml_barebone.7 \
 	wml_std_css1.7 wml_std_css2.7 wml_std_csspos.7 \
 	wml_std_html20.7 wml_std_html32.7 wml_std_html40.7 \
-	wml_std_html401.7 wml_std_wai10.7 wml_std_xhtml10.7
-
-MAN7=	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
+	wml_std_html401.7 wml_std_wai10.7 wml_std_xhtml10.7 \
+	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 BROKEN=		Build fails on amd64 or ia64 (needs to build shared libraries with -fPIC)
-.endif
-
-#   catpages are usually not installed, so they are not compressed.
-#   But they are really needed as docs, so we compress manually...
-.if !defined(NOMANCOMPRESS)
-post-install:
-.for page in ${CAT1}
-	@${GZIP_CMD} ${PREFIX}/man/cat1/${page}
-.endfor
-.for page in ${CAT7}
-	@${GZIP_CMD} ${PREFIX}/man/cat7/${page}
-.endfor
 .endif
 
 post-build:
