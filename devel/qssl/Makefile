@@ -7,12 +7,12 @@
 
 PORTNAME=	qssl
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	psi
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	QSSL is a Qt plugin that helps applications use OpenSSL
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 SHLIB_MAJOR=	1
 
 USE_OPENSSL=	yes
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	QTDIR=${QT_PREFIX}
