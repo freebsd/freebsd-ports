@@ -1,8 +1,15 @@
 bin/FreeMat
+%%DATADIR%%/help/html/acos_eqn1.png
+%%DATADIR%%/help/html/acos_eqn2.png
+%%DATADIR%%/help/html/acosh_eqn1.png
 %%DATADIR%%/help/html/acoshplot.png
 %%DATADIR%%/help/html/acosplot.png
+%%DATADIR%%/help/html/acot_eqn1.png
+%%DATADIR%%/help/html/acoth_eqn1.png
 %%DATADIR%%/help/html/acothplot.png
 %%DATADIR%%/help/html/acotplot.png
+%%DATADIR%%/help/html/acsc_eqn1.png
+%%DATADIR%%/help/html/acsch_eqn1.png
 %%DATADIR%%/help/html/acschplot.png
 %%DATADIR%%/help/html/acscplot.png
 %%DATADIR%%/help/html/all_eqn1.png
@@ -43,20 +50,32 @@ bin/FreeMat
 %%DATADIR%%/help/html/array_shiftdim.html
 %%DATADIR%%/help/html/array_sort.html
 %%DATADIR%%/help/html/array_squeeze.html
+%%DATADIR%%/help/html/array_subsref.html
 %%DATADIR%%/help/html/array_transpose.html
 %%DATADIR%%/help/html/array_unique.html
 %%DATADIR%%/help/html/array_xnrm2.html
 %%DATADIR%%/help/html/array_zeros.html
+%%DATADIR%%/help/html/asec_eqn1.png
+%%DATADIR%%/help/html/asech_eqn1.png
 %%DATADIR%%/help/html/asechplot.png
 %%DATADIR%%/help/html/asecplot.png
+%%DATADIR%%/help/html/asin_eqn1.png
+%%DATADIR%%/help/html/asin_eqn2.png
+%%DATADIR%%/help/html/asinh_eqn1.png
 %%DATADIR%%/help/html/asinhplot.png
 %%DATADIR%%/help/html/asinplot.png
+%%DATADIR%%/help/html/atan2_eqn1.png
+%%DATADIR%%/help/html/atan2_eqn2.png
 %%DATADIR%%/help/html/atan2plot.png
+%%DATADIR%%/help/html/atan_eqn1.png
+%%DATADIR%%/help/html/atan_eqn2.png
+%%DATADIR%%/help/html/atanh_eqn1.png
 %%DATADIR%%/help/html/atanhplot.png
 %%DATADIR%%/help/html/atanplot.png
 %%DATADIR%%/help/html/betapdf.png
 %%DATADIR%%/help/html/binary_bitand.html
 %%DATADIR%%/help/html/binary_bitcmp.html
+%%DATADIR%%/help/html/binary_bitcmp_cpp.html
 %%DATADIR%%/help/html/binary_bitor.html
 %%DATADIR%%/help/html/binary_bitxor.html
 %%DATADIR%%/help/html/chipdf.png
@@ -97,6 +116,11 @@ bin/FreeMat
 %%DATADIR%%/help/html/clim2.png
 %%DATADIR%%/help/html/colon_eqn1.png
 %%DATADIR%%/help/html/colon_eqn2.png
+%%DATADIR%%/help/html/colon_eqn3.png
+%%DATADIR%%/help/html/colon_eqn4.png
+%%DATADIR%%/help/html/colon_eqn5.png
+%%DATADIR%%/help/html/colon_eqn6.png
+%%DATADIR%%/help/html/colon_eqn7.png
 %%DATADIR%%/help/html/colormap1.png
 %%DATADIR%%/help/html/colormap2.png
 %%DATADIR%%/help/html/colormap3.png
@@ -149,8 +173,6 @@ bin/FreeMat
 %%DATADIR%%/help/html/curvefit_polyint.html
 %%DATADIR%%/help/html/curvefit_polyval.html
 %%DATADIR%%/help/html/curvefit_roots.html
-%%DATADIR%%/help/html/dawson1.png
-%%DATADIR%%/help/html/dawson_eqn1.png
 %%DATADIR%%/help/html/debug_dbauto.html
 %%DATADIR%%/help/html/debug_dbdelete.html
 %%DATADIR%%/help/html/debug_dblist.html
@@ -170,8 +192,6 @@ bin/FreeMat
 %%DATADIR%%/help/html/dottimes_eqn1.png
 %%DATADIR%%/help/html/dottimes_eqn2.png
 %%DATADIR%%/help/html/dottimes_eqn3.png
-%%DATADIR%%/help/html/ei1.png
-%%DATADIR%%/help/html/ei_eqn1.png
 %%DATADIR%%/help/html/eig_eqn1.png
 %%DATADIR%%/help/html/eig_eqn2.png
 %%DATADIR%%/help/html/eig_eqn3.png
@@ -205,18 +225,13 @@ bin/FreeMat
 %%DATADIR%%/help/html/elementary_test.html
 %%DATADIR%%/help/html/elementary_var.html
 %%DATADIR%%/help/html/elementary_vec.html
-%%DATADIR%%/help/html/eone1.png
-%%DATADIR%%/help/html/eone_eqn1.png
 %%DATADIR%%/help/html/erf1.png
 %%DATADIR%%/help/html/erf_eqn1.png
 %%DATADIR%%/help/html/erfc1.png
 %%DATADIR%%/help/html/erfc_eqn1.png
-%%DATADIR%%/help/html/erfcx1.png
-%%DATADIR%%/help/html/erfcx_eqn1.png
 %%DATADIR%%/help/html/exp_eqn1.png
 %%DATADIR%%/help/html/exp_eqn2.png
-%%DATADIR%%/help/html/expei1.png
-%%DATADIR%%/help/html/expei_eqn1.png
+%%DATADIR%%/help/html/exp_eqn3.png
 %%DATADIR%%/help/html/expplot1.png
 %%DATADIR%%/help/html/expplot2.png
 %%DATADIR%%/help/html/external_cenum.html
@@ -279,6 +294,7 @@ bin/FreeMat
 %%DATADIR%%/help/html/freemat_pathsep.html
 %%DATADIR%%/help/html/freemat_pathtool.html
 %%DATADIR%%/help/html/freemat_pcode.html
+%%DATADIR%%/help/html/freemat_profiler.html
 %%DATADIR%%/help/html/freemat_quiet.html
 %%DATADIR%%/help/html/freemat_quit.html
 %%DATADIR%%/help/html/freemat_rehash.html
@@ -443,6 +459,7 @@ bin/FreeMat
 %%DATADIR%%/help/html/io_getprintlimit.html
 %%DATADIR%%/help/html/io_htmlread.html
 %%DATADIR%%/help/html/io_imread.html
+%%DATADIR%%/help/html/io_imwrite.html
 %%DATADIR%%/help/html/io_input.html
 %%DATADIR%%/help/html/io_load.html
 %%DATADIR%%/help/html/io_pause.html
@@ -506,15 +523,10 @@ bin/FreeMat
 %%DATADIR%%/help/html/mathfunctions_csc.html
 %%DATADIR%%/help/html/mathfunctions_cscd.html
 %%DATADIR%%/help/html/mathfunctions_csch.html
-%%DATADIR%%/help/html/mathfunctions_dawson.html
 %%DATADIR%%/help/html/mathfunctions_deg2rad.html
-%%DATADIR%%/help/html/mathfunctions_ei.html
-%%DATADIR%%/help/html/mathfunctions_eone.html
 %%DATADIR%%/help/html/mathfunctions_erf.html
 %%DATADIR%%/help/html/mathfunctions_erfc.html
-%%DATADIR%%/help/html/mathfunctions_erfcx.html
 %%DATADIR%%/help/html/mathfunctions_exp.html
-%%DATADIR%%/help/html/mathfunctions_expei.html
 %%DATADIR%%/help/html/mathfunctions_expm1.html
 %%DATADIR%%/help/html/mathfunctions_fix.html
 %%DATADIR%%/help/html/mathfunctions_gamma.html
@@ -525,7 +537,6 @@ bin/FreeMat
 %%DATADIR%%/help/html/mathfunctions_log1p.html
 %%DATADIR%%/help/html/mathfunctions_log2.html
 %%DATADIR%%/help/html/mathfunctions_mod.html
-%%DATADIR%%/help/html/mathfunctions_psi.html
 %%DATADIR%%/help/html/mathfunctions_rad2deg.html
 %%DATADIR%%/help/html/mathfunctions_rem.html
 %%DATADIR%%/help/html/mathfunctions_sec.html
@@ -549,9 +560,8 @@ bin/FreeMat
 %%DATADIR%%/help/html/minus_eqn2.png
 %%DATADIR%%/help/html/minus_eqn3.png
 %%DATADIR%%/help/html/modules.txt
-%%DATADIR%%/help/html/mpi_mpirun.html
-%%DATADIR%%/help/html/mpi_mpiserver.html
 %%DATADIR%%/help/html/ndgrid_eqn1.png
+%%DATADIR%%/help/html/num_ode45.html
 %%DATADIR%%/help/html/operators_colon.html
 %%DATADIR%%/help/html/operators_comparisonops.html
 %%DATADIR%%/help/html/operators_dotleftdivide.html
@@ -581,6 +591,8 @@ bin/FreeMat
 %%DATADIR%%/help/html/os_rmdir.html
 %%DATADIR%%/help/html/os_setpath.html
 %%DATADIR%%/help/html/os_system.html
+%%DATADIR%%/help/html/pinv_eqn1.png
+%%DATADIR%%/help/html/pinv_eqn2.png
 %%DATADIR%%/help/html/plot1.png
 %%DATADIR%%/help/html/plot2.png
 %%DATADIR%%/help/html/plot3.png
@@ -606,8 +618,6 @@ bin/FreeMat
 %%DATADIR%%/help/html/power_eqn4.png
 %%DATADIR%%/help/html/printfig1.png
 %%DATADIR%%/help/html/prod_eqn1.png
-%%DATADIR%%/help/html/psi1.png
-%%DATADIR%%/help/html/psi_eqn1.png
 %%DATADIR%%/help/html/randbeta_eqn1.png
 %%DATADIR%%/help/html/randbin_eqn1.png
 %%DATADIR%%/help/html/randchi_eqn1.png
@@ -618,6 +628,7 @@ bin/FreeMat
 %%DATADIR%%/help/html/randmulti_eqn1.png
 %%DATADIR%%/help/html/randmulti_eqn2.png
 %%DATADIR%%/help/html/randn_eqn1.png
+%%DATADIR%%/help/html/randnbin_eqn1.png
 %%DATADIR%%/help/html/randnf_eqn1.png
 %%DATADIR%%/help/html/random_rand.html
 %%DATADIR%%/help/html/random_randbeta.html
@@ -659,7 +670,7 @@ bin/FreeMat
 %%DATADIR%%/help/html/sec_introduction.html
 %%DATADIR%%/help/html/sec_io.html
 %%DATADIR%%/help/html/sec_mathfunctions.html
-%%DATADIR%%/help/html/sec_mpi.html
+%%DATADIR%%/help/html/sec_num.html
 %%DATADIR%%/help/html/sec_operators.html
 %%DATADIR%%/help/html/sec_os.html
 %%DATADIR%%/help/html/sec_random.html
@@ -776,6 +787,8 @@ bin/FreeMat
 %%DATADIR%%/help/html/typecast_uint32.html
 %%DATADIR%%/help/html/typecast_uint64.html
 %%DATADIR%%/help/html/typecast_uint8.html
+%%DATADIR%%/help/html/var_eqn1.png
+%%DATADIR%%/help/html/var_eqn2.png
 %%DATADIR%%/help/html/variables_cell.html
 %%DATADIR%%/help/html/variables_function.html
 %%DATADIR%%/help/html/variables_global.html
@@ -791,6 +804,7 @@ bin/FreeMat
 %%DATADIR%%/help/html/winlev2.png
 %%DATADIR%%/help/html/winlev_eqn1.png
 %%DATADIR%%/help/html/winlev_eqn2.png
+%%DATADIR%%/help/html/winlev_eqn3.png
 %%DATADIR%%/help/html/xlabel1.png
 %%DATADIR%%/help/html/xlim1.png
 %%DATADIR%%/help/html/xlim2.png
@@ -841,6 +855,7 @@ bin/FreeMat
 %%DATADIR%%/help/text/bin2int.mdc
 %%DATADIR%%/help/text/bitand.mdc
 %%DATADIR%%/help/text/bitcmp.mdc
+%%DATADIR%%/help/text/bitcmp_cpp.mdc
 %%DATADIR%%/help/text/bitor.mdc
 %%DATADIR%%/help/text/bitxor.mdc
 %%DATADIR%%/help/text/break.mdc
@@ -906,7 +921,6 @@ bin/FreeMat
 %%DATADIR%%/help/text/ctypewrite.mdc
 %%DATADIR%%/help/text/cumprod.mdc
 %%DATADIR%%/help/text/cumsum.mdc
-%%DATADIR%%/help/text/dawson.mdc
 %%DATADIR%%/help/text/dbauto.mdc
 %%DATADIR%%/help/text/dbdelete.mdc
 %%DATADIR%%/help/text/dblist.mdc
@@ -937,15 +951,12 @@ bin/FreeMat
 %%DATADIR%%/help/text/e.mdc
 %%DATADIR%%/help/text/edit.mdc
 %%DATADIR%%/help/text/editor.mdc
-%%DATADIR%%/help/text/ei.mdc
 %%DATADIR%%/help/text/eig.mdc
 %%DATADIR%%/help/text/eigs.mdc
-%%DATADIR%%/help/text/eone.mdc
 %%DATADIR%%/help/text/eps.mdc
 %%DATADIR%%/help/text/eq.mdc
 %%DATADIR%%/help/text/erf.mdc
 %%DATADIR%%/help/text/erfc.mdc
-%%DATADIR%%/help/text/erfcx.mdc
 %%DATADIR%%/help/text/error.mdc
 %%DATADIR%%/help/text/errorcount.mdc
 %%DATADIR%%/help/text/etime.mdc
@@ -954,7 +965,6 @@ bin/FreeMat
 %%DATADIR%%/help/text/exist.mdc
 %%DATADIR%%/help/text/exit.mdc
 %%DATADIR%%/help/text/exp.mdc
-%%DATADIR%%/help/text/expei.mdc
 %%DATADIR%%/help/text/expm.mdc
 %%DATADIR%%/help/text/expm1.mdc
 %%DATADIR%%/help/text/eye.mdc
@@ -1035,6 +1045,7 @@ bin/FreeMat
 %%DATADIR%%/help/text/imagesc.mdc
 %%DATADIR%%/help/text/import.mdc
 %%DATADIR%%/help/text/imread.mdc
+%%DATADIR%%/help/text/imwrite.mdc
 %%DATADIR%%/help/text/indexing.mdc
 %%DATADIR%%/help/text/inf.mdc
 %%DATADIR%%/help/text/inline.mdc
@@ -1110,8 +1121,6 @@ bin/FreeMat
 %%DATADIR%%/help/text/mkdir.mdc
 %%DATADIR%%/help/text/mldivide.mdc
 %%DATADIR%%/help/text/mod.mdc
-%%DATADIR%%/help/text/mpirun.mdc
-%%DATADIR%%/help/text/mpiserver.mdc
 %%DATADIR%%/help/text/mpower.mdc
 %%DATADIR%%/help/text/mrdivide.mdc
 %%DATADIR%%/help/text/mtimes.mdc
@@ -1129,6 +1138,7 @@ bin/FreeMat
 %%DATADIR%%/help/text/num2hex.mdc
 %%DATADIR%%/help/text/num2str.mdc
 %%DATADIR%%/help/text/numel.mdc
+%%DATADIR%%/help/text/ode45.mdc
 %%DATADIR%%/help/text/ones.mdc
 %%DATADIR%%/help/text/or.mdc
 %%DATADIR%%/help/text/path.mdc
@@ -1154,7 +1164,7 @@ bin/FreeMat
 %%DATADIR%%/help/text/print.mdc
 %%DATADIR%%/help/text/printf.mdc
 %%DATADIR%%/help/text/prod.mdc
-%%DATADIR%%/help/text/psi.mdc
+%%DATADIR%%/help/text/profiler.mdc
 %%DATADIR%%/help/text/pvalid.mdc
 %%DATADIR%%/help/text/pwd.mdc
 %%DATADIR%%/help/text/qr.mdc
@@ -1329,6 +1339,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/array/fliplr.m
 %%DATADIR%%/toolbox/array/flipud.m
 %%DATADIR%%/toolbox/array/getfield.m
+%%DATADIR%%/toolbox/array/horzcat.m
 %%DATADIR%%/toolbox/array/ipermute.m
 %%DATADIR%%/toolbox/array/isa.m
 %%DATADIR%%/toolbox/array/isalpha.m
@@ -1361,13 +1372,12 @@ bin/FreeMat
 %%DATADIR%%/toolbox/array/shiftdim.m
 %%DATADIR%%/toolbox/array/squeeze.m
 %%DATADIR%%/toolbox/array/sub2ind.m
+%%DATADIR%%/toolbox/array/subsref.m
 %%DATADIR%%/toolbox/array/test.m
 %%DATADIR%%/toolbox/array/vec.m
+%%DATADIR%%/toolbox/array/vertcat.m
 %%DATADIR%%/toolbox/binary/bin2dec.m
-%%DATADIR%%/toolbox/binary/bitand.m
 %%DATADIR%%/toolbox/binary/bitcmp.m
-%%DATADIR%%/toolbox/binary/bitor.m
-%%DATADIR%%/toolbox/binary/bitxor.m
 %%DATADIR%%/toolbox/binary/dec2bin.m
 %%DATADIR%%/toolbox/deprecated/bind.m
 %%DATADIR%%/toolbox/fitting/gausfit.m
@@ -1377,6 +1387,9 @@ bin/FreeMat
 %%DATADIR%%/toolbox/func/@inline/inline.m
 %%DATADIR%%/toolbox/func/@inline/subsref.m
 %%DATADIR%%/toolbox/func/symvar.m
+%%DATADIR%%/toolbox/funfun/deval.m
+%%DATADIR%%/toolbox/funfun/ode45.m
+%%DATADIR%%/toolbox/funfun/odeset.m
 %%DATADIR%%/toolbox/general/install.m
 %%DATADIR%%/toolbox/general/license.m
 %%DATADIR%%/toolbox/geom/cross.m
@@ -1411,6 +1424,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/graph/private/parseit.m
 %%DATADIR%%/toolbox/graph/private/stcmp.m
 %%DATADIR%%/toolbox/graph/private/styleset.m
+%%DATADIR%%/toolbox/graph/quiver.m
 %%DATADIR%%/toolbox/graph/semilogx.m
 %%DATADIR%%/toolbox/graph/semilogy.m
 %%DATADIR%%/toolbox/graph/sizefig.m
@@ -1536,8 +1550,6 @@ bin/FreeMat
 %%DATADIR%%/toolbox/matrix/rank.m
 %%DATADIR%%/toolbox/matrix/rref.m
 %%DATADIR%%/toolbox/matrix/transpose.m
-%%DATADIR%%/toolbox/mpi/mpirun.m
-%%DATADIR%%/toolbox/mpi/mpiserver.m
 %%DATADIR%%/toolbox/numerical/fix.m
 %%DATADIR%%/toolbox/numerical/idiv.m
 %%DATADIR%%/toolbox/numerical/log10.m
@@ -1614,6 +1626,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_bin2int.m
 %%DATADIR%%/toolbox/test/bbtest_bitand.m
 %%DATADIR%%/toolbox/test/bbtest_bitcmp.m
+%%DATADIR%%/toolbox/test/bbtest_bitcmp_cpp.m
 %%DATADIR%%/toolbox/test/bbtest_bitor.m
 %%DATADIR%%/toolbox/test/bbtest_bitxor.m
 %%DATADIR%%/toolbox/test/bbtest_break.m
@@ -1679,7 +1692,6 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_ctypewrite.m
 %%DATADIR%%/toolbox/test/bbtest_cumprod.m
 %%DATADIR%%/toolbox/test/bbtest_cumsum.m
-%%DATADIR%%/toolbox/test/bbtest_dawson.m
 %%DATADIR%%/toolbox/test/bbtest_dbauto.m
 %%DATADIR%%/toolbox/test/bbtest_dbdelete.m
 %%DATADIR%%/toolbox/test/bbtest_dblist.m
@@ -1710,15 +1722,12 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_e.m
 %%DATADIR%%/toolbox/test/bbtest_edit.m
 %%DATADIR%%/toolbox/test/bbtest_editor.m
-%%DATADIR%%/toolbox/test/bbtest_ei.m
 %%DATADIR%%/toolbox/test/bbtest_eig.m
 %%DATADIR%%/toolbox/test/bbtest_eigs.m
-%%DATADIR%%/toolbox/test/bbtest_eone.m
 %%DATADIR%%/toolbox/test/bbtest_eps.m
 %%DATADIR%%/toolbox/test/bbtest_eq.m
 %%DATADIR%%/toolbox/test/bbtest_erf.m
 %%DATADIR%%/toolbox/test/bbtest_erfc.m
-%%DATADIR%%/toolbox/test/bbtest_erfcx.m
 %%DATADIR%%/toolbox/test/bbtest_error.m
 %%DATADIR%%/toolbox/test/bbtest_errorcount.m
 %%DATADIR%%/toolbox/test/bbtest_etime.m
@@ -1727,7 +1736,6 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_exist.m
 %%DATADIR%%/toolbox/test/bbtest_exit.m
 %%DATADIR%%/toolbox/test/bbtest_exp.m
-%%DATADIR%%/toolbox/test/bbtest_expei.m
 %%DATADIR%%/toolbox/test/bbtest_expm.m
 %%DATADIR%%/toolbox/test/bbtest_expm1.m
 %%DATADIR%%/toolbox/test/bbtest_eye.m
@@ -1808,6 +1816,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_imagesc.m
 %%DATADIR%%/toolbox/test/bbtest_import.m
 %%DATADIR%%/toolbox/test/bbtest_imread.m
+%%DATADIR%%/toolbox/test/bbtest_imwrite.m
 %%DATADIR%%/toolbox/test/bbtest_indexing.m
 %%DATADIR%%/toolbox/test/bbtest_inf.m
 %%DATADIR%%/toolbox/test/bbtest_inline.m
@@ -1883,8 +1892,6 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_mkdir.m
 %%DATADIR%%/toolbox/test/bbtest_mldivide.m
 %%DATADIR%%/toolbox/test/bbtest_mod.m
-%%DATADIR%%/toolbox/test/bbtest_mpirun.m
-%%DATADIR%%/toolbox/test/bbtest_mpiserver.m
 %%DATADIR%%/toolbox/test/bbtest_mpower.m
 %%DATADIR%%/toolbox/test/bbtest_mrdivide.m
 %%DATADIR%%/toolbox/test/bbtest_mtimes.m
@@ -1902,6 +1909,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_num2hex.m
 %%DATADIR%%/toolbox/test/bbtest_num2str.m
 %%DATADIR%%/toolbox/test/bbtest_numel.m
+%%DATADIR%%/toolbox/test/bbtest_ode45.m
 %%DATADIR%%/toolbox/test/bbtest_ones.m
 %%DATADIR%%/toolbox/test/bbtest_or.m
 %%DATADIR%%/toolbox/test/bbtest_path.m
@@ -1927,7 +1935,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/bbtest_print.m
 %%DATADIR%%/toolbox/test/bbtest_printf.m
 %%DATADIR%%/toolbox/test/bbtest_prod.m
-%%DATADIR%%/toolbox/test/bbtest_psi.m
+%%DATADIR%%/toolbox/test/bbtest_profiler.m
 %%DATADIR%%/toolbox/test/bbtest_pvalid.m
 %%DATADIR%%/toolbox/test/bbtest_pwd.m
 %%DATADIR%%/toolbox/test/bbtest_qr.m
@@ -2127,6 +2135,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/test_assign13.m
 %%DATADIR%%/toolbox/test/test_assign14.m
 %%DATADIR%%/toolbox/test/test_assign15.m
+%%DATADIR%%/toolbox/test/test_assign16.m
 %%DATADIR%%/toolbox/test/test_assign2.m
 %%DATADIR%%/toolbox/test/test_assign3.m
 %%DATADIR%%/toolbox/test/test_assign4.m
@@ -2163,6 +2172,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/test_exist2.m
 %%DATADIR%%/toolbox/test/test_fcall1.m
 %%DATADIR%%/toolbox/test/test_fcall2.m
+%%DATADIR%%/toolbox/test/test_feval1.m
 %%DATADIR%%/toolbox/test/test_fitfun1.m
 %%DATADIR%%/toolbox/test/test_for1.m
 %%DATADIR%%/toolbox/test/test_for2.m
@@ -2181,10 +2191,12 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/test_matcat5.m
 %%DATADIR%%/toolbox/test/test_matcat6.m
 %%DATADIR%%/toolbox/test/test_matcat7.m
+%%DATADIR%%/toolbox/test/test_matcat8.m
 %%DATADIR%%/toolbox/test/test_permute1.m
 %%DATADIR%%/toolbox/test/test_persistent1.m
 %%DATADIR%%/toolbox/test/test_persistent2.m
 %%DATADIR%%/toolbox/test/test_plot1.m
+%%DATADIR%%/toolbox/test/test_power1.m
 %%DATADIR%%/toolbox/test/test_qr1.m
 %%DATADIR%%/toolbox/test/test_qr10.m
 %%DATADIR%%/toolbox/test/test_qr11.m
@@ -2428,9 +2440,14 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/wbtest_acsch_2.m
 %%DATADIR%%/toolbox/test/wbtest_acsch_3.m
 %%DATADIR%%/toolbox/test/wbtest_acsch_4.m
+%%DATADIR%%/toolbox/test/wbtest_all_1.m
+%%DATADIR%%/toolbox/test/wbtest_all_2.m
+%%DATADIR%%/toolbox/test/wbtest_all_3.m
 %%DATADIR%%/toolbox/test/wbtest_angle_1.m
 %%DATADIR%%/toolbox/test/wbtest_angle_2.m
 %%DATADIR%%/toolbox/test/wbtest_any_1.m
+%%DATADIR%%/toolbox/test/wbtest_any_2.m
+%%DATADIR%%/toolbox/test/wbtest_any_3.m
 %%DATADIR%%/toolbox/test/wbtest_asec_1.m
 %%DATADIR%%/toolbox/test/wbtest_asec_2.m
 %%DATADIR%%/toolbox/test/wbtest_asec_3.m
@@ -2460,9 +2477,6 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/wbtest_atanh_2.m
 %%DATADIR%%/toolbox/test/wbtest_atanh_3.m
 %%DATADIR%%/toolbox/test/wbtest_atanh_4.m
-%%DATADIR%%/toolbox/test/wbtest_bitand_1.m
-%%DATADIR%%/toolbox/test/wbtest_bitcmp_1.m
-%%DATADIR%%/toolbox/test/wbtest_bitcmp_2.m
 %%DATADIR%%/toolbox/test/wbtest_cast_1.m
 %%DATADIR%%/toolbox/test/wbtest_cast_2.m
 %%DATADIR%%/toolbox/test/wbtest_cellstr_1.m
@@ -2531,6 +2545,7 @@ bin/FreeMat
 %%DATADIR%%/toolbox/test/wbtest_lower_3.m
 %%DATADIR%%/toolbox/test/wbtest_norm_1.m
 %%DATADIR%%/toolbox/test/wbtest_norm_2.m
+%%DATADIR%%/toolbox/test/wbtest_norm_3.m
 %%DATADIR%%/toolbox/test/wbtest_num2hex_1.m
 %%DATADIR%%/toolbox/test/wbtest_num2hex_2.m
 %%DATADIR%%/toolbox/test/wbtest_permute_1.m
@@ -2658,7 +2673,6 @@ bin/FreeMat
 @dirrm %%DATADIR%%/toolbox/poly
 @dirrm %%DATADIR%%/toolbox/os
 @dirrm %%DATADIR%%/toolbox/numerical
-@dirrm %%DATADIR%%/toolbox/mpi
 @dirrm %%DATADIR%%/toolbox/matrix
 @dirrm %%DATADIR%%/toolbox/io
 @dirrm %%DATADIR%%/toolbox/help/@textwriter/private
@@ -2675,6 +2689,7 @@ bin/FreeMat
 @dirrm %%DATADIR%%/toolbox/graph
 @dirrm %%DATADIR%%/toolbox/geom
 @dirrm %%DATADIR%%/toolbox/general
+@dirrm %%DATADIR%%/toolbox/funfun
 @dirrm %%DATADIR%%/toolbox/func/@inline
 @dirrm %%DATADIR%%/toolbox/func
 @dirrm %%DATADIR%%/toolbox/fitting
