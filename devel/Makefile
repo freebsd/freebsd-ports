@@ -2348,6 +2348,7 @@
     SUBDIR += thistest
     SUBDIR += thrift
     SUBDIR += tide
+    SUBDIR += tig
     SUBDIR += tigcc
     SUBDIR += tijmp
     SUBDIR += tinylaf
