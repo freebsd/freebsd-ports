@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# PROVIDE: imspector
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# imspector_enable (bool):   Set to NO by default.
+#               Set it to YES to enable imspector.
+# imspector_config (path):   Set to %%PREFIX%%/etc/imspector/imspector.conf
+#               by default.
+#
+
+. %%RC_SUBR%%
+
+name="imspector"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/${name}
+
+load_rc_config $name
+
+: ${imspector_enable="NO"}
+: ${imspector_config="%%PREFIX%%/etc/imspector/imspector.conf"}
+
+command_args="-c $imspector_config"
+
+run_rc_command "$1"

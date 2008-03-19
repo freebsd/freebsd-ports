@@ -1,0 +1,51 @@
+--- Makefile.orig	2008-03-14 00:55:41.000000000 +0800
++++ Makefile	2008-03-17 21:14:55.000000000 +0800
+@@ -1,19 +1,19 @@
+-DESTDIR = /
+-PREFIX = /usr
++DESTDIR ?= /
++PREFIX ?= /usr
+ 
+ ##########
+ # If using FreeBSD or OpenBSD COMMENT the below lines
+-LIBS = -ldl
++#LIBS = -ldl
+ 
+ # For any distro
+ #ADD_PLUGINS = mysqlloggingplugin.so sqliteloggingplugin.so postgresqlloggingplugin.so dbfilterplugin.so
+ ##########
+ 
+-CXX = g++
++CXX ?= g++
+ 
+-CXXFLAGS = -Wall -O2 -fPIC
++CXXFLAGS ?= -Wall -O2 -fPIC
+ 
+-PLUGIN_FLAGS = $(LIBS) -fPIC -shared -Wl,-soname,$@ -o $@
++PLUGIN_FLAGS ?= $(LIBS) -fPIC -shared -Wl,-soname,$@ -o $@
+ 
+ IMSPECTOR_OBJS = main.o protocolplugin.o loggingplugin.o filterplugin.o
+ 
+@@ -117,15 +117,15 @@
+ install: imspector libimspector.so $(PLUGINS)
+ 	-mkdir -p $(DESTDIR)/$(PREFIX)/sbin
+ 	-mkdir -p $(DESTDIR)/$(PREFIX)/lib/imspector
+-	-install imspector $(DESTDIR)/$(PREFIX)/sbin/imspector
+-	-install libimspector.so $(DESTDIR)/$(PREFIX)/lib/libimspector.so
++	-${BSD_INSTALL_PROGRAM} imspector $(DESTDIR)/$(PREFIX)/sbin/imspector
++	-${BSD_INSTALL_PROGRAM} libimspector.so $(DESTDIR)/$(PREFIX)/lib/libimspector.so
+ 	-(for PLUGIN in $(PLUGINS); do \
+-		install $$PLUGIN $(DESTDIR)/$(PREFIX)/lib/imspector/$$PLUGIN; \
++		${BSD_INSTALL_PROGRAM} $$PLUGIN $(DESTDIR)/$(PREFIX)/lib/imspector/$$PLUGIN; \
+ 	done);
+-	-mkdir -p $(DESTDIR)/$(PREFIX)/etc/imspector
+-	-install imspector.conf $(DESTDIR)/$(PREFIX)/etc/imspector/imspector.conf
+-	-install badwords.txt $(DESTDIR)/$(PREFIX)/etc/imspector/badwords.txt
+-	-install acl.txt $(DESTDIR)/$(PREFIX)/etc/imspector/acl.txt
++	-mkdir -p $(DESTDIR)/${ETCDIR}
++	-${BSD_INSTALL_DATA} imspector.conf $(DESTDIR)/${ETCDIR}/imspector.conf.sample
++	-${BSD_INSTALL_DATA} badwords.txt $(DESTDIR)/${ETCDIR}/badwords.txt.sample
++	-${BSD_INSTALL_DATA} acl.txt $(DESTDIR)/${ETCDIR}/acl.txt.sample
+ 	-mkdir -p /var/log/imspector
+ 
+ uninstall:
