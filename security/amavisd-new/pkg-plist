@@ -35,12 +35,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/TODO-SNMP-AGENT
 %%PORTDOCS%%%%DOCSDIR%%/screen.css
 %%PORTDOCS%%%%DOCSDIR%%/images/1.png
-%%PORTDOCS%%%%DOCSDIR%%/images/10.png
-%%PORTDOCS%%%%DOCSDIR%%/images/11.png
-%%PORTDOCS%%%%DOCSDIR%%/images/12.png
-%%PORTDOCS%%%%DOCSDIR%%/images/13.png
-%%PORTDOCS%%%%DOCSDIR%%/images/14.png
-%%PORTDOCS%%%%DOCSDIR%%/images/15.png
 %%PORTDOCS%%%%DOCSDIR%%/images/2.png
 %%PORTDOCS%%%%DOCSDIR%%/images/3.png
 %%PORTDOCS%%%%DOCSDIR%%/images/4.png
@@ -50,6 +44,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/8.png
 %%PORTDOCS%%%%DOCSDIR%%/images/9.png
 %%PORTDOCS%%%%DOCSDIR%%/images/blank.png
+%%PORTDOCS%%%%DOCSDIR%%/images/callouts/10.png
+%%PORTDOCS%%%%DOCSDIR%%/images/callouts/11.png
+%%PORTDOCS%%%%DOCSDIR%%/images/callouts/12.png
+%%PORTDOCS%%%%DOCSDIR%%/images/callouts/13.png
+%%PORTDOCS%%%%DOCSDIR%%/images/callouts/14.png
+%%PORTDOCS%%%%DOCSDIR%%/images/callouts/15.png
 %%PORTDOCS%%%%DOCSDIR%%/images/caution.png
 %%PORTDOCS%%%%DOCSDIR%%/images/draft.png
 %%PORTDOCS%%%%DOCSDIR%%/images/home.png
@@ -63,6 +63,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/images/toc-plus.png
 %%PORTDOCS%%%%DOCSDIR%%/images/up.png
 %%PORTDOCS%%%%DOCSDIR%%/images/warning.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/callouts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/amavisd-custom.conf-dist
