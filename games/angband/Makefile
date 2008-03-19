@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	angband
-PORTVERSION=	3.0.9a
-PORTREVISION=	1
+PORTVERSION=	3.0.9b
 CATEGORIES=	games
 MASTER_SITES=	http://rephial.org/downloads/3.0/ \
 		http://angband.oook.cz/download/
