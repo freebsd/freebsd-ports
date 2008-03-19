@@ -7,9 +7,9 @@
 
 PORTNAME=	mantis
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	databases www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mantisbt
+MASTER_SITES=	SF/mantisbt
 
 MAINTAINER=	dan@langille.org
 COMMENT=	A bug tracking system written in PHP
@@ -17,7 +17,7 @@ COMMENT=	A bug tracking system written in PHP
 NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_APACHE=	1.3+
-USE_PHP=	yes
+USE_PHP=	pcre
 
 SUB_FILES=	pkg-message
 
