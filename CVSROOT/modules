@@ -5000,6 +5000,7 @@ imm		ports/mbone/imm
 imp-interpreter	ports/lang/imp-interpreter
 impact		ports/cad/impact
 impress		ports/editors/impress
+imspector	ports/net-im/imspector
 imwheel		ports/x11/imwheel
 inadyn		ports/dns/inadyn
 indexme		ports/www/indexme
