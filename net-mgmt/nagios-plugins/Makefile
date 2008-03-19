@@ -18,7 +18,6 @@ COMMENT=	Plugins for Nagios
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:261
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I m4 -I gl/m4
@@ -133,6 +132,7 @@ PLIST_SUB+=	SUB_LDAP="@comment "
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
+USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
