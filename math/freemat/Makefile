@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		FreeMat
-PORTVERSION=		3.5
+PORTVERSION=		3.6
 CATEGORIES=		math science
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -31,10 +31,10 @@ FFLAGS+=		-O2
 USE_GL=			yes
 USE_QT_VER=		4
 USE_GMAKE=		yes
-QT_COMPONENTS=		gui network opengl moc rcc uic xml
+QT_COMPONENTS=		gui network opengl moc rcc uic xml svg
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--with-blas="${BLAS}"
+CONFIGURE_ARGS=		--with-blas="${BLAS}" --without-llvm
 CPPFLAGS=		${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${AMDINC}
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"		\
 			FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
