@@ -7,19 +7,18 @@
 #
 
 PORTNAME=	xwpe
-PORTVERSION=	1.5.29a
-PORTREVISION=	2
+PORTVERSION=	1.5.30a
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.identicalsoftware.com/xwpe/ \
 		ftp://ftp.identicalsoftware.com/pub/linux/xwpe/
 MASTER_SITE_SUBDIR=	apps/editors/X
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Borland-like IDE programming environment
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_XORG=	sm ice x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
@@ -35,5 +34,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/${file}
 .endfor
+	${REINPLACE_CMD} -e 's|$$(INSTALL_PROGRAM)|${INSTALL_PROGRAM}|g' \
+	    ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|$$(INSTALL_DATA)|${INSTALL_DATA}|g' \
+	    ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
