@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	instiki
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	www ruby
 MASTER_SITES=	RF
-DISTNAME=	${PORTNAME}-0.12.0
+#DISTNAME=	${PORTNAME}-0.12.0
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beech@FreeBSD.org
@@ -17,7 +17,6 @@ COMMENT=	Easy to set up wiki clone implemented in ruby
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake
-
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	1.8
@@ -46,18 +45,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/${SPEC_DIR}/BlueCloth-1.0.0.gemspec:${PORTSDIR}/www
 EXTRA_PATCHES+=	${FILESDIR}/bluecloth-patch-lib-chunks-engines-rb
 .endif
 
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "				WARNING!"
-	@${ECHO_MSG} "If you are updating from a previous version, Hit ^c now"
-	@${ECHO_MSG} "and read /usr/ports/UPDATING!"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !"
-
-post-extract:	
-	@find -d ${WRKSRC} -type d -name .svn -exec rm -rf {} \;
+post-extract:
+	@${FIND} -d ${WRKSRC} -type d -name .svn -exec ${RM} -rf {} \;
 
 post-patch:
 	${RM} ${WRKSRC}/lib/chunks/engines.rb.orig
@@ -74,6 +63,5 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
 
 .include <bsd.port.post.mk>
