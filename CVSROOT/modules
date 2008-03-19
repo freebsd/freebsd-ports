@@ -3687,6 +3687,7 @@ geronimo	ports/www/geronimo
 gerris		ports/science/gerris
 geta		ports/dns/geta
 getbdf		ports/x11-fonts/getbdf
+getdelta	ports/sysutils/getdelta
 getdp		ports/science/getdp
 getleft		ports/www/getleft
 getmail		ports/mail/getmail
