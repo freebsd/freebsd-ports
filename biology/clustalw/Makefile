@@ -6,17 +6,22 @@
 #
 
 PORTNAME=	clustalw
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.5
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.ebi.ac.uk/pub/software/clustalw2/
+MASTER_SITES=	http://www.clustal.org/download/%SUBDIR%/ \
+		ftp://ftp.ebi.ac.uk/pub/software/clustalw2/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	CLUSTAL W Multiple Sequence Alignment Program
+COMMENT=	A multiple alignment program for DNA or proteins
 
-GNU_CONFIGURE=	yes
+RESTRICTED=	No commercial use.
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_GNOME=	gnometarget
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/clustalw bin/clustalw2
 
