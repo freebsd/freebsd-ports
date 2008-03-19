@@ -7,15 +7,12 @@
 
 PORTNAME=	sourcenav
 PORTVERSION=	5.1.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Source code analysis tool
-
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
-		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 .if defined(PREFIX)
 PREFIX:=	${PREFIX}/${PORTNAME}
@@ -24,9 +21,10 @@ PREFIX?=	${LOCALBASE}/${PORTNAME}
 .endif
 USE_BISON=	build
 USE_GMAKE=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
+USE_TCL=	84
+USE_TK=		84
 
 SUB_FILES=	pkg-message
 
