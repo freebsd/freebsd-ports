@@ -37,11 +37,11 @@ lib/libgutenprintui2.so
 lib/libgutenprintui2.so.1
 libdata/pkgconfig/gutenprint.pc
 libdata/pkgconfig/gutenprintui2.pc
-share/gutenprint/5.1.6/xml/dither-matrix-1x1.xml
-share/gutenprint/5.1.6/xml/dither-matrix-2x1.xml
-share/gutenprint/5.1.6/xml/dither-matrix-4x1.xml
-share/gutenprint/5.1.6/xml/papers.xml
-share/gutenprint/5.1.6/xml/printers.xml
+share/gutenprint/5.1.7/xml/dither-matrix-1x1.xml
+share/gutenprint/5.1.7/xml/dither-matrix-2x1.xml
+share/gutenprint/5.1.7/xml/dither-matrix-4x1.xml
+share/gutenprint/5.1.7/xml/papers.xml
+share/gutenprint/5.1.7/xml/printers.xml
 share/gutenprint/doc/FAQ.html
 share/gutenprint/doc/gutenprint-users-manual.odt
 share/gutenprint/doc/gutenprint-users-manual.pdf
@@ -101,11 +101,11 @@ share/locale/zh_TW/LC_MESSAGES/gutenprint.mo
 @dirrm share/gutenprint/samples
 @dirrm share/gutenprint/doc/reference-html
 @dirrm share/gutenprint/doc
-@dirrm share/gutenprint/5.1.6/xml
-@dirrm share/gutenprint/5.1.6
+@dirrm share/gutenprint/5.1.7/xml
+@dirrm share/gutenprint/5.1.7
 @dirrm share/gutenprint
-@dirrm lib/gutenprint/5.1.6/modules
-@dirrm lib/gutenprint/5.1.6
+@dirrm lib/gutenprint/5.1.7/modules
+@dirrm lib/gutenprint/5.1.7
 @dirrm lib/gutenprint
 @dirrm include/gutenprintui2
 @dirrm include/gutenprint
