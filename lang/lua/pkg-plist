@@ -10,16 +10,14 @@ bin/luac-%%LUA_VER%%
 %%LUA_INCDIR%%/luaconf.h
 %%LUA_INCDIR%%/lualib.h
 %%LUA_LIBDIR%%/liblua.a
-libdata/pkgconfig/lua.pc
+libdata/pkgconfig/lua-%%LUA_VER%%.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/amazon.gif
 %%PORTDOCS%%%%DOCSDIR%%/contents.html
 %%PORTDOCS%%%%DOCSDIR%%/etc/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/etc/README
 %%PORTDOCS%%%%DOCSDIR%%/etc/all.c
-%%PORTDOCS%%%%DOCSDIR%%/etc/lua.hpp
 %%PORTDOCS%%%%DOCSDIR%%/etc/lua.ico
-%%PORTDOCS%%%%DOCSDIR%%/etc/lua.pc
 %%PORTDOCS%%%%DOCSDIR%%/etc/luavs.bat
 %%PORTDOCS%%%%DOCSDIR%%/etc/min.c
 %%PORTDOCS%%%%DOCSDIR%%/etc/noparser.c
