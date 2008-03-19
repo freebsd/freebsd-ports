@@ -7,19 +7,16 @@
 #
 
 PORTNAME=	osalp
-PORTVERSION=	0.7.4
-PORTREVISION=	1
+PORTVERSION=	0.7.5
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Open Source Audio Library Project
 
-BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
-		mpg123:${PORTSDIR}/audio/mpg123
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
+    		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
