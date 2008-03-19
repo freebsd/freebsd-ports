@@ -7,7 +7,7 @@
 
 PORTNAME=	paraview
 PORTVERSION=	2.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v2.4/
 
@@ -22,10 +22,9 @@ LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.6:${PORTSDIR}/textproc/expat2
 
-BROKEN=		fails to compile due to the newer hdf5 API incompatible
-
 USE_GL=		yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-build
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
