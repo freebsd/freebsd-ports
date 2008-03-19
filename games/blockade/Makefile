@@ -7,7 +7,7 @@
 
 PORTNAME=	blockade
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.geocities.com/TimesSquare/Zone/5267/
 DISTFILES=	blockade-1_00-linux.tar.gz
@@ -15,7 +15,7 @@ DISTFILES=	blockade-1_00-linux.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X version of the `blockade' Macintosh game
 
-USE_XLIB=	yes
+USE_XORG=	x11
 
 MAN6=		blockade.6
 PLIST_FILES=	bin/blockade
