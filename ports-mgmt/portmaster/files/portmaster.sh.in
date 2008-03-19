@@ -41,7 +41,7 @@ umask 022
 version () {
 	local rcs cvs
 
-	rcs='$Id: portmaster,v 2.24 2008/01/30 01:40:33 doug Exp $'
+	rcs='$Id: portmaster,v 2.27 2008/03/19 21:32:24 doug Exp $'
 	cvs='$FreeBSD$'
 
 	rcs="${rcs#*,v }" ; rcs="${rcs%% *}"
@@ -161,6 +161,7 @@ safe_exit () {
 	echo "       but first take a moment to review the error messages"
 	echo -n "       above.  Then press Enter when ready to proceed. "
 				read DISCARD
+				echo ''
 			fi
 
 			p='less -e'
@@ -367,7 +368,7 @@ check_regular_file () {
 
 check_dependency_files () {
 	# Global: grep_deps
-	local origin iport ro_opd moved_opd
+	local origin iport ro_opd
 
 	origin=$1 ; iport=$2
 
@@ -376,12 +377,10 @@ check_dependency_files () {
 		origin=`echo $origin | sed 's#\+#\\\\+#g'` ;; esac
 	case "$ro_opd" in *+*)
 		ro_opd=`echo $ro_opd | sed 's#\+#\\\\+#g'` ;; esac
-	case "$moved_opd" in *+*)
-		moved_opd=`echo $moved_opd | sed 's#\+#\\\\+#g'` ;; esac
 
 	# Always rely on the grep'ed dependencies instead of +REQUIRED_BY
 	grep_deps=`pm_mktemp grep-deps-${iport}`
-	egrep -l "DEPORIGIN:($origin|$ro_opd|$moved_opd)$" $pdb/*/+CONTENTS |
+	egrep -l "DEPORIGIN:($origin|$ro_opd)$" $pdb/*/+CONTENTS |
 	    cut -f 5 -d '/' | sort -u > $grep_deps
 
 	if [ ! -s "$grep_deps" ]; then
@@ -491,13 +490,11 @@ IFS='
 }
 
 find_moved_port () {
-	# Global: moved_opd moved_npd
+	# Global: moved_npd
 	local sf iport IFS l
 
 	sf=$1	# Search for
 	iport=$2
-	# Old port directory, do not update if we recurse
-	[ -z "$moved_opd" ] && moved_opd=$1
 
 	# To avoid having each word of the reason treated separately
 	IFS='
@@ -1769,7 +1766,7 @@ else
 	fi
 fi
 
-if [ -n "$upg_port" ]; then
+if [ -n "$upg_port" -a -z "$REPLACE_ORIGIN" ]; then
 	portdir=`origin_from_pdb $upg_port`
 	[ -n "$portdir" ] || fail "No ORIGIN in $pdb/$upg_port/+CONTENTS"
 elif [ -z "$portdir" ]; then
@@ -1779,8 +1776,15 @@ fi
 if [ ! -d "$pd/$portdir" ]; then
 	find_moved_port $portdir $upg_port || no_valid_port
 	[ -n "$moved_npd" ] || no_valid_port
-	portdir=$moved_npd
-	[ -d "$pd/$portdir" ] || no_valid_port
+	[ -d "$pd/$moved_npd" ] || no_valid_port
+
+	if [ "$$" -eq "$PARENT_PID" ]; then
+		echo "===>>> To update this port run:"
+		echo "===>>> ${0##*/} $ARGS -o $moved_npd $upg_port"
+		fail 'Port has moved'
+	else
+		exec $0 $ARGS -o $moved_npd $upg_port
+	fi
 fi
 [ -z "$upg_port" -a -z "$REPLACE_ORIGIN" ] &&
 	upg_port=`iport_from_origin ${portdir}`
@@ -1811,7 +1815,7 @@ if [ -e "$pdb/$upg_port/+IGNOREME" ]; then
 			fi
 			;;
 		esac
-	elif [ -n "$NO_RECURSIVE_CONFIG" ]; then
+	elif [ -n "$NO_RECURSIVE_CONFIG" -o -n "$URB_YES" ]; then
 		echo ''
 		echo "===>>> $upg_port has an +IGNOREME file, ignoring"
 		echo ''
@@ -2172,12 +2176,8 @@ if [ -s "$grep_deps" ]; then
 			grep -ql "DEPORIGIN:$ro_opd$" $dp_cont &&
 			  update_contents $dp_cont $portdir $new_port $ro_opd
 		fi
-		if [ -n "$moved_opd" ]; then
-			grep -ql "DEPORIGIN:$moved_opd$" $dp_cont &&
-			  update_contents $dp_cont $portdir $new_port $moved_opd
-		fi
 		# Do this one last so it can get deleted as a duplicate
-		# if either of the other two were present.
+		# if ro_opd is present.
 		if grep -ql "DEPORIGIN:$portdir$" $dp_cont; then
 			update_contents $dp_cont $portdir $new_port
 		fi
@@ -2230,10 +2230,6 @@ if [ -z "$DONT_SCRUB_DISTFILES" ]; then
 	delete_stale_distfiles $portdir
 	if [ -n "$ro_opd" ]; then
 		delete_all_distfiles $ro_opd
-		delete_dist_list
-	fi
-	if [ -n "$moved_opd" ]; then
-		delete_all_distfiles $moved_opd
 		delete_dist_list
 	fi
 fi
