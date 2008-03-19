@@ -7,7 +7,7 @@
 
 PORTNAME=	battalion
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.evl.uic.edu/aej/BATTALION/
 DISTFILES=	battalionSource1.4.tar.Z battalionSUN4.tar.gz
@@ -18,8 +18,7 @@ COMMENT=	Monsters, explosions, destruction game for X Window System
 WRKSRC=		${WRKDIR}/battalionSource
 
 ALL_TARGET=	# empty
-USE_X_PREFIX=	yes
-USE_GL=		yes
+USE_GL=		glu gl
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
