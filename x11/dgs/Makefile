@@ -20,7 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GHOSTSCRIPT_RUN=	yes
-USE_XORG=	sm ice x11 xt
+USE_XORG=	xt sm ice xext x11
 USE_GMAKE=	yes
 USE_GNOME=	glib12
 USE_LDCONFIG=	yes
