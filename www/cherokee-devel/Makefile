@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cherokee
-DISTVERSION=	0.6.0b863
-PORTREVISION=	2
+DISTVERSION=	0.6.0
+PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/0.6/${PORTVERSION:R}/ \
-		CENKES LOCAL/beech
+MASTER_SITES=	http://www.cherokee-project.com/download/0.6/${DISTVERSION}/ \
+		LOCAL/beech
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	beech@FreeBSD.org
@@ -59,7 +59,6 @@ CONFIGURE_ARGS+=--disable-ipv6
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|@mkdir_p@|${MKDIR} --|g'
-	@${MV} ${WRKSRC}/mods-icons.conf.sample ${WRKSRC}/mods-icons.sample
 	@${REINPLACE_CMD} -e '/cherokee_replace.*%sysconfdir%/d;/^SUBDIRS/s|doc ||;\
 		/^install-data-am/s|install-data-local|install-data-local-config|;\
 		/^SUBDIRS/s|windows||'\
@@ -79,8 +78,6 @@ post-install:
 	@for i in ${DEFCONFS};do\
 		${INSTALL_DATA} ${WRKSRC}/$$i.sample ${PREFIX}/etc/cherokee/$$i.default;done
 	@${INSTALL_DATA} ${WRKSRC}/performance.conf.sample ${PREFIX}/etc/cherokee/cherokee.conf.perf_sample
-	@for i in ${WRKSRC}/mods-*.sample;do\
-		${INSTALL_DATA} $$i ${PREFIX}/etc/cherokee/mods-available/$${i#*mods-};done
 	@:>${PREFIX}/etc/cherokee/mods-enabled/.empty
 	@:>${PREFIX}/etc/cherokee/sites-available/.empty
 	@:>${PREFIX}/etc/cherokee/sites-enabled/.empty
