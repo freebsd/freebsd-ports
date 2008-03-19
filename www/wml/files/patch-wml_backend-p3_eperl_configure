@@ -1,0 +1,23 @@
+--- wml_backend/p3_eperl/configure.orig	2001-03-10 22:47:44.000000000 +0100
++++ wml_backend/p3_eperl/configure	2008-03-19 00:19:28.000000000 +0100
+@@ -577,7 +577,7 @@
+ PATH_PERL=$perlprog
+ echo "$ac_t""$perlprog v$perlvers" 1>&6
+ case $perlvers in
+-    5.003* | 5.004* | 5.005* | 5.006* )
++    5.003* | 5.004* | 5.005* | 5.006* | 5.007* | 5.008* )
+         ;;
+     * ) echo ""
+         echo "Latest Perl found on your system is $perlvers,"
+@@ -590,9 +590,9 @@
+         ;;
+ esac
+ case $perlvers in
+-    5.00[3-6]_[0-9][0-9] ) 
++    5.00[3-8]_[0-9][0-9] ) 
+ 	    perlvnum=`echo $perlvers | sed -e 's/\.//' -e 's/_//'` ;; 
+-    5.00[3-6] ) 
++    5.00[3-8] ) 
+ 	    perlvnum=`echo $perlvers | sed -e 's/\.//' -e 's/$/00/'` ;; 
+ 	* ) 
+ 	    perlvnum=`echo $perlvers | sed -e 's/\.//' -e 's/_//'` ;; 
