@@ -1,0 +1,35 @@
+--- Makefile.in.orig	2007-12-02 16:24:59.000000000 +0800
++++ Makefile.in	2008-02-24 10:08:59.000000000 +0800
+@@ -123,19 +123,19 @@
+ .SUFFIXES:
+ .SUFFIXES: .S .c .o .s
+ $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+-	cd $(top_srcdir) && $(AUTOMAKE) --gnu Makefile
++#	cd $(top_srcdir) && $(AUTOMAKE) --gnu Makefile
+ 
+ Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status $(BUILT_SOURCES)
+ 	cd $(top_builddir) \
+ 	  && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ 
+-$(ACLOCAL_M4):  configure.in 
+-	cd $(srcdir) && $(ACLOCAL)
++#$(ACLOCAL_M4):  configure.in 
++#	cd $(srcdir) && $(ACLOCAL)
+ 
+ config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+ 	$(SHELL) ./config.status --recheck
+ $(srcdir)/configure: $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+-	cd $(srcdir) && $(AUTOCONF)
++#	cd $(srcdir) && $(AUTOCONF)
+ 
+ config.h: stamp-h
+ 	@if test ! -f $@; then \
+@@ -153,7 +153,7 @@
+ 		$(MAKE) $(srcdir)/stamp-h.in; \
+ 	else :; fi
+ $(srcdir)/stamp-h.in: $(top_srcdir)/configure.in $(ACLOCAL_M4) acconfig.h
+-	cd $(top_srcdir) && $(AUTOHEADER)
++#	cd $(top_srcdir) && $(AUTOHEADER)
+ 	@echo timestamp > $(srcdir)/stamp-h.in 2> /dev/null
+ 
+ mostlyclean-hdr:

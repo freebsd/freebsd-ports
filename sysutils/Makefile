@@ -329,6 +329,7 @@
     SUBDIR += jailutils
     SUBDIR += javaservicewrapper
     SUBDIR += jdiskreport
+    SUBDIR += jfbterm
     SUBDIR += jkill
     SUBDIR += jps
     SUBDIR += jtop
