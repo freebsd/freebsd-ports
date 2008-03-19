@@ -1,0 +1,8 @@
+=========================================================================================
+ATTENTION! 
+To use Getdelta for upgrading ports you need to add the following string into /etc/make.conf:
+FETCH_CMD=%%PREFIX%%/bin/getdelta.sh
+
+To do this you can simply run the following command:
+echo "FETCH_CMD=%%PREFIX%%/bin/getdelta.sh" >> /etc/make.conf
+=========================================================================================
