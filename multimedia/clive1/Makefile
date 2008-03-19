@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.7
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	multimedia
@@ -17,25 +17,25 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Video extraction utility for YouTube and Google Video
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/urlgrabber/__init__.py:${PORTSDIR}/www/py-urlgrabber
-
 # deskutils/ljclive (same executable/manpage/distfile name)
 CONFLICTS=	clive-[0-9]*
 
+GNU_CONFIGURE=	yes
+
+USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=	${PORTNAME}.1
-MANCOMPRESSED=	yes
 .else
-MAKE_ENV=	NO_INSTALL_MANPAGES=${NO_INSTALL_MANPAGES}
+CONFIGURE_ARGS=	--with-doc=no
 .endif
 
 OPTIONS=	FFMPEG	"Install ffmpeg for re-encoding" off \
 		MPLAYER	"Install mplayer as video player" off \
+		SQLITE3 "Install sqlite3 for caching visited URLs" off \
 		VLC	"Install vlc as video player" off \
-		XCLIP	"Install xclip (read URLs from clipboard)" on
+		XCLIP	"Install xclip (read URLs from clipboard)" off
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .include <bsd.port.pre.mk>
@@ -46,6 +46,10 @@ RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 
 .if defined(WITH_MPLAYER)
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
+.endif
+
+.if defined(WITH_SQLITE3)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.5.2_1:${PORTSDIR}/databases/py-sqlite3
 .endif
 
 .if defined(WITH_VLC)
