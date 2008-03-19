@@ -22,6 +22,8 @@ LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.6:${PORTSDIR}/textproc/expat2
 
+BROKEN=		fails to compile due to the newer hdf5 API incompatible
+
 USE_GL=		yes
 USE_GMAKE=	yes
 
