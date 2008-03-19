@@ -15654,6 +15654,7 @@ subcommander	ports/devel/subcommander
 subconv		ports/multimedia/subconv
 subtitlecomposer	ports/multimedia/subtitlecomposer
 subtitleeditor	ports/multimedia/subtitleeditor
+subtitleoffsetmodifier	ports/multimedia/subtitleoffsetmodifier
 subtitleripper	ports/multimedia/subtitleripper
 subtools	ports/multimedia/subtools
 subversion	ports/devel/subversion
