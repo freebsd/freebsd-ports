@@ -1,5 +1,5 @@
---- Makefile.orig	2008-03-09 16:13:57.000000000 +0500
-+++ Makefile	2008-03-09 16:16:06.000000000 +0500
+--- Makefile.orig	2005-05-21 06:23:34.000000000 +0600
++++ Makefile		2008-03-10 20:39:02.000000000 +0500
 @@ -1,16 +1,16 @@
  DESTDIR=
 -PREFIX=/usr
@@ -8,15 +8,15 @@
  
  CC = g++
  
- objfiles=bpatch.o bzip2.o file.o system.o tmpstore.o deltup.o 
--libs=-lstdc++ -lz -lbz2 -lssl
-+libs=-lstdc++ -lz -lbz2 -lssl -lcrypt
+-objfiles=bpatch.o bzip2.o file.o system.o tmpstore.o deltup.o 
++objfiles=bpatch.o bzip2.o gzip.o file.o system.o tmpstore.o deltup.o 
+ libs=-lstdc++ -lz -lbz2 -lssl
  
  #edelta: edelta.cpp deltup
  #	gcc edelta.cpp ${CXXFLAGS} -o edelta
  %.o : %.cpp
 -	${CC} -c $< -o $@ -g #-Wall -pedantic #-DFIXED_FRAMERATE
-+	${CC} -c $< -o $@ ${CXXFLAGS} -g #-Wall -pedantic #-DFIXED_FRAMERATE
++	${CC} -c $< -o $@ ${CXXFLAGS} #-g #-Wall -pedantic #-DFIXED_FRAMERATE
  
  all: deltup
  
