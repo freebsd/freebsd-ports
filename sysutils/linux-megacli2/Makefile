@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	megacli
-PORTVERSION=	1.01.09
-PORTREVISION=	2
+PORTVERSION=	1.01.40
 CATEGORIES=	sysutils linux
-MASTER_SITES=	http://lsi.com/files/support/rsa/MR_SAS_1.0/
+MASTER_SITES=	http://www.lsi.com/support/downloads/megaraid/miscellaneous/linux/
 PKGNAMEPREFIX=	linux-
-DISTNAME=		Linux_MegaCli_${PORTVERSION}
+DISTNAME=	${PORTVERSION}_Linux_Cli
 
 MAINTAINER=	ruben@verweg.com
 COMMENT=	LSI MegaRAID SAS controller management utility
@@ -29,23 +28,22 @@ RPM2CPIO?=			${LOCALBASE}/bin/rpm2cpio
 EXTRACT_DEPENDS+=		${RPM2CPIO}:${PORTSDIR}/archivers/rpm
 
 post-extract:
-	@cd ${WRKSRC} && \
-		${UNZIP_CMD} MegaCliLin.zip && \
+	cd ${WRKSRC} && \
 		${RPM2CPIO} MegaCli-${PORTVERSION}-0.i386.rpm | ${CPIO} -id --quiet
 
 do-build:
-	@${BRANDELF} -t Linux ${WRKSRC}/usr/sbin/MegaCli
+	@${BRANDELF} -t Linux ${WRKSRC}/opt/MegaRAID/MegaCli/MegaCli
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/megacli.sh ${PREFIX}/sbin/megacli
 	${MKDIR} ${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKSRC}/407.status-mfi-raid ${PREFIX}/etc/periodic/daily
-	${INSTALL_PROGRAM} ${WRKSRC}/usr/sbin/MegaCli ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/opt/MegaRAID/MegaCli/MegaCli ${PREFIX}/libexec
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/Read-me.txt ${DOCSDIR}/readme.txt
+	${INSTALL_MAN} ${WRKSRC}/${PORTVERSION}_Linux_Cli.txt ${DOCSDIR}/readme.txt
 	${INSTALL_MAN} ${FILESDIR}/README-status-mfi-raid.txt ${DOCSDIR}/README-status-mfi-raid.txt
 .endif
 	@${CAT} ${PKGMESSAGE}
