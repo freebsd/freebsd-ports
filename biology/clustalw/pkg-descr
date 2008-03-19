@@ -1,19 +1,8 @@
-               CLUSTAL W Multiple Sequence Alignment Program
+ClustalW2 is a general purpose multiple sequence alignment program for
+DNA or proteins. It produces biologically meaningful multiple sequence
+alignments of divergent sequences. It calculates the best match for the
+selected sequences, and lines them up so that the identities,
+similarities and differences can be seen. Evolutionary relationships
+can be seen via viewing Cladograms or Phylograms. 
 
-Clustal W is a multiple alignment program for DNA or proteins.
-Clustal W was written by Des Higgins (des@chah.ucc.ie), Julie Thompson
-(julie@IGBMC.u-strasbg.fr), and Toby Gibson (Gibson@EMBL-Heidelberg.DE).
-Version 2.0 has been completely rewritten in C++.
-
-Original Paper:
-    Thompson, J.D., D. G. Higgins and T. J. Gibson. 1994. CLUSTAL W:
-improving the sensitivity of progressive multiple sequence alignment
-through sequence weighting, positions-specific gap penalties and
-weight matrix choice. Nucleic Acids Research 22: 4673-4680.
-    
-Tips:
-    Higgins, D. G., J. D. Thompson, and T. J. Gibson. 1996. Using
-CLUSTAL for multiple sequence alignments. Methods in Enzymology 266:
-383-402.
-
-WWW: http://bips.u-strasbg.fr/fr/Documentation/ClustalX/
+WWW: http://www.clustal.org/
