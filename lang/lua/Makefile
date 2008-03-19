@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lua
-PORTVERSION=	5.1.1
-PORTREVISION=	2
+PORTVERSION=	5.1.3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
@@ -21,7 +20,8 @@ COMMENT=	Small, compilable scripting language providing easy access to C code
 
 USE_LUA=	5.1
 LUA_COMPS=	# only define variables
-ALL_TARGET=	bsd
+ALL_TARGET=	freebsd
+USE_GNOME=	pkgconfig
 
 MAN1=		lua-${LUA_VER}.1 luac-${LUA_VER}.1
 DOCSDIR=	${PREFIX}/share/doc/${LUA_SUBDIR}
@@ -33,10 +33,21 @@ LUA_MAN=	${LUA_BIN:S/$/.1/}
 
 post-patch:
 	@${REINPLACE_CMD} -Ee \
-		 's|^(CC=).*|\1 ${CC}| ; \
+		'/^INSTALL_.*=/s/INSTALL_TOP/prefix/ ; \
+		 s|^(CC=).*|\1 ${CC}| ; \
 		 s|^(CFLAGS=)|\1 ${CFLAGS}| ; \
 		 s|/usr/local|${PREFIX}|' \
 		 ${WRKSRC}/Makefile ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -Ee \
+		's|^(prefix=).*|\1 ${PREFIX}| ; \
+		s|^(libdir=).*|\1 ${LUA_LIBDIR}| ; \
+		s|^(includedir=).*|\1 ${LUA_INCDIR}| ; \
+		s|^(INSTALL_BIN=).*|\1 ${LUA_BINDIR}| ; \
+		s|^(INSTALL_INC=).*|\1 ${LUA_INCDIR}| ; \
+		s|^(INSTALL_LIB=).*|\1 ${LUA_LIBDIR}| ; \
+		s|^(INSTALL_CMOD=).*|\1 ${LUA_MODLIBDIR}| ; \
+		s|^(INSTALL_LMOD=).*|\1 ${LUA_MODSHAREDIR}|' \
+		${WRKSRC}/etc/lua.pc && ${RM} ${WRKSRC}/etc/lua.pc.bak
 
 post-build:
 	@${RM} -f ${WRKSRC}/test/lua ${WRKSRC}/test/luac
@@ -71,6 +82,8 @@ do-install:
 # Module directories.
 	${MKDIR} ${LUA_MODLIBDIR}
 	${MKDIR} ${LUA_MODSHAREDIR}
+# pkg-config file.
+	${INSTALL_DATA} ${WRKSRC}/etc/lua.pc ${PREFIX}/libdata/pkgconfig
 
 .if ${MACHINE_ARCH:L} == "amd64"
 CFLAGS+=	-fPIC
