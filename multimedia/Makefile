@@ -211,6 +211,7 @@
     SUBDIR += subconv
     SUBDIR += subtitlecomposer
     SUBDIR += subtitleeditor
+    SUBDIR += subtitleoffsetmodifier
     SUBDIR += subtitleripper
     SUBDIR += subtools
     SUBDIR += tcmplex-panteltje
