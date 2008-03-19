@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	deltup
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://www.deltup.org/e107_files/downloads/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	novel@FreeBSD.org
@@ -18,6 +18,8 @@ COMMENT=	Source delta update program
 RUN_DEPENDS=	bdelta:${PORTSDIR}/misc/bdelta
 
 USE_OPENSSL=	yes
+USE_GMAKE=	yes
+
 ALL_TARGET=	deltup
 PLIST_FILES=	bin/deltup \
 		bin/bzip2_old
@@ -26,6 +28,9 @@ MAN1=		deltup.1
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog README
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/deltup ${PREFIX}/bin
