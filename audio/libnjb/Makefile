@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	libnjb
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library, API for communicating with Creative and Dell audio players
 
-LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb
+LIB_DEPENDS=	usb-0.1.8:${PORTSDIR}/devel/libusb
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
@@ -22,11 +21,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
-.ifdef WITH_PORTDOCS
+.include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-PLIST_SUB=	DOCS="" PORTVERSION=${PORTVERSION}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 .else
-PLIST_SUB=	DOCS="@comment "
 NODOC=		/^SUBDIRS/s|doc||
 .endif
 
@@ -34,4 +34,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|;\
 		${NODOC}' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
