@@ -7,7 +7,7 @@
 
 PORTNAME=	apoolGL
 PORTVERSION=	0.99.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.planetjahn.de/files/
 DISTNAME=	${PORTNAME}-099-pre22
@@ -15,9 +15,8 @@ DISTNAME=	${PORTNAME}-099-pre22
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another billiard simulator
 
-USE_X_PREFIX=	yes
 USE_SDL=	sdl
-USE_GL=		yes
+USE_GL=		gl
 
 PORTDOCS=	ApoolGL.txt CHANGELOG OpenGL-Features
 
