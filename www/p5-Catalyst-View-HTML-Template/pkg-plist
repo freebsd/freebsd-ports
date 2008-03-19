@@ -5,3 +5,4 @@
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper
 @dirrmtry %%SITE_PERL%%/Catalyst/View/HTML
 @dirrmtry %%SITE_PERL%%/Catalyst/View
+@dirrmtry %%SITE_PERL%%/Catalyst
