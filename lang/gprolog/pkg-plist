@@ -14,8 +14,6 @@ gprolog-%%GPROLOG_VER%%/bin/ma2asm
 %%FD%%gprolog-%%GPROLOG_VER%%/bin/fd2c
 gprolog-%%GPROLOG_VER%%/include/gprolog.h
 gprolog-%%GPROLOG_VER%%/include/fd_to_c.h
-gprolog-%%GPROLOG_VER%%/lib/obj_begin.o
-gprolog-%%GPROLOG_VER%%/lib/obj_end.o
 gprolog-%%GPROLOG_VER%%/lib/top_level.o
 gprolog-%%GPROLOG_VER%%/lib/all_pl_bips.o
 gprolog-%%GPROLOG_VER%%/lib/debugger.o
