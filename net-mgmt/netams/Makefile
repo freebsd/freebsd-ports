@@ -60,6 +60,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|#DEFINE += -DUSE_HASH|DEFINE += -DUSE_HASH|' \
 		${WRKSRC}/configure.sh
 .endif
+	@${REINPLACE_CMD} -e 's|^CC.*|CC=${CXX}|; s|^CPP.*|CPP=${CXX}|' \
+		${WRKSRC}/src/Makefile 
+	@${REINPLACE_CMD} -e 's|^CC.*|CC=${CC}|; s|^CPP.*|CPP=${CXX}|' \
+		${WRKSRC}/lib/Makefile \
+		${WRKSRC}/lib/libipulog/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/netams ${PREFIX}/libexec/netams
