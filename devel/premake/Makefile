@@ -27,6 +27,10 @@ PORTDOCS=	CHANGES.txt LICENSE.txt README.txt
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800000
+BROKEN=		Does not build on FreeBSD 8.x
+.endif
+
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
