@@ -1,0 +1,16 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Please execute the following matters.
+
+Load VESA kernel module
+# kldload vesa
+
+/boot/loader.conf
+vesa_load="YES"
+
+# cat %%LOCALBASE%%/share/jfbterm/termcap.jfbterm >> /usr/share/misc/termcap
+# cap_mkdb /usr/share/misc/termcap
+
+# cp /usr/local/etc/jfbterm.conf.sample /usr/local/etc/jfbterm.conf
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+

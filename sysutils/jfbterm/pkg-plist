@@ -1,0 +1,7 @@
+bin/jfbterm
+etc/jfbterm.conf.sample
+%%DATADIR%%/fonts/vt100-graphics.pcf.gz
+%%DATADIR%%/termcap.jfbterm
+%%DATADIR%%/terminfo.jfbterm
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%
