@@ -61,6 +61,8 @@
 %%DATADIR%%/config/environments/test.rb
 %%DATADIR%%/config/routes.rb
 %%DATADIR%%/config/spam_patterns.txt
+%%DATADIR%%/db/.DS_Store
+%%DATADIR%%/db/development_structure.sql
 %%DATADIR%%/db/migrate/001_beta1_schema.rb
 %%DATADIR%%/db/migrate/002_beta2_changes_bulk.rb
 %%DATADIR%%/db/default.db.sqlite3
@@ -92,7 +94,7 @@
 %%DATADIR%%/lib/url_generator.rb
 %%DATADIR%%/lib/wiki_content.rb
 %%DATADIR%%/lib/wiki_words.rb
-%%DATADIR%%/log/development.log
+%%DATADIR%%/log/.DS_Store
 %%DATADIR%%/log/production.log
 %%DATADIR%%/natives/osx/desktop_launcher/AppDelegate.h
 %%DATADIR%%/natives/osx/desktop_launcher/AppDelegate.mm
@@ -107,7 +109,6 @@
 %%DATADIR%%/natives/osx/desktop_launcher/MakeDMG.sh
 %%DATADIR%%/natives/osx/desktop_launcher/main.mm
 %%DATADIR%%/natives/osx/desktop_launcher/version.plist
-%%DATADIR%%/public/.DS_Store
 %%DATADIR%%/public/.htaccess
 %%DATADIR%%/public/404.html
 %%DATADIR%%/public/500.html
@@ -172,10 +173,8 @@
 %%DATADIR%%/test/unit/wiki_file_test.rb
 %%DATADIR%%/test/unit/wiki_words_test.rb
 %%DATADIR%%/test/watir/e2e.rb
-%%DATADIR%%/tmp/.DS_Store
-%%DATADIR%%/tmp/cache/.DS_Store
-%%DATADIR%%/tmp/sessions/.DS_Store
 %%DATADIR%%/vendor/.DS_Store
+%%DATADIR%%/vendor/plugins/.DS_Store
 %%DATADIR%%/vendor/plugins/dnsbl_check/README
 %%DATADIR%%/vendor/plugins/dnsbl_check/init.rb
 %%DATADIR%%/vendor/plugins/dnsbl_check/lib/dnsbl_check.rb
@@ -227,6 +226,7 @@
 %%DATADIR%%/vendor/plugins/rubyzip-0.9.1/test/zipfilesystemtest.rb
 %%DATADIR%%/vendor/plugins/rubyzip-0.9.1/test/ziprequiretest.rb
 %%DATADIR%%/vendor/plugins/rubyzip-0.9.1/test/ziptest.rb
+%%DATADIR%%/vendor/plugins/sqlite3-ruby/.DS_Store
 %%DATADIR%%/vendor/plugins/sqlite3-ruby/sqlite3.rb
 %%DATADIR%%/vendor/plugins/sqlite3-ruby/sqlite3/constants.rb
 %%DATADIR%%/vendor/plugins/sqlite3-ruby/sqlite3/database.rb
@@ -240,7 +240,6 @@
 %%DATADIR%%/vendor/plugins/sqlite3-ruby/sqlite3/translator.rb
 %%DATADIR%%/vendor/plugins/sqlite3-ruby/sqlite3/value.rb
 %%DATADIR%%/vendor/plugins/sqlite3-ruby/sqlite3/version.rb
-%%DATADIR%%/vendor/rails/.DS_Store
 %%DATADIR%%/vendor/rails/actionmailer/CHANGELOG
 %%DATADIR%%/vendor/rails/actionmailer/MIT-LICENSE
 %%DATADIR%%/vendor/rails/actionmailer/README
@@ -481,6 +480,7 @@
 %%DATADIR%%/vendor/rails/actionpack/test/controller/selector_test.rb
 %%DATADIR%%/vendor/rails/actionpack/test/controller/send_file_test.rb
 %%DATADIR%%/vendor/rails/actionpack/test/controller/session_management_test.rb
+%%DATADIR%%/vendor/rails/actionpack/test/controller/session_fixation_test.rb
 %%DATADIR%%/vendor/rails/actionpack/test/controller/test_test.rb
 %%DATADIR%%/vendor/rails/actionpack/test/controller/url_rewriter_test.rb
 %%DATADIR%%/vendor/rails/actionpack/test/controller/verification_test.rb
@@ -790,6 +790,8 @@
 %%DATADIR%%/vendor/rails/activerecord/test/fixtures/bad_fixtures/missing_value
 %%DATADIR%%/vendor/rails/activerecord/test/fixtures/binaries.yml
 %%DATADIR%%/vendor/rails/activerecord/test/fixtures/binary.rb
+%%DATADIR%%/vendor/rails/activerecord/test/fixtures/book.rb
+%%DATADIR%%/vendor/rails/activerecord/test/fixtures/books.yml
 %%DATADIR%%/vendor/rails/activerecord/test/fixtures/categories.yml
 %%DATADIR%%/vendor/rails/activerecord/test/fixtures/categories/special_categories.yml
 %%DATADIR%%/vendor/rails/activerecord/test/fixtures/categories/subsubdir/arbitrary_filename.yml
@@ -798,6 +800,7 @@
 %%DATADIR%%/vendor/rails/activerecord/test/fixtures/categorization.rb
 %%DATADIR%%/vendor/rails/activerecord/test/fixtures/categorizations.yml
 %%DATADIR%%/vendor/rails/activerecord/test/fixtures/category.rb
+%%DATADIR%%/vendor/rails/activerecord/test/fixtures/citation.rb
 %%DATADIR%%/vendor/rails/activerecord/test/fixtures/column_name.rb
 %%DATADIR%%/vendor/rails/activerecord/test/fixtures/comment.rb
 %%DATADIR%%/vendor/rails/activerecord/test/fixtures/comments.yml
