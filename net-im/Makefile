@@ -43,6 +43,7 @@
     SUBDIR += icqlib
     SUBDIR += icqnd
     SUBDIR += imcom
+    SUBDIR += imspector
     SUBDIR += iserverd
     SUBDIR += jabber
     SUBDIR += jabber-pyaim

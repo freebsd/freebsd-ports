@@ -1,0 +1,23 @@
+@unexec if cmp -s %D/%%ETCDIR%%/acl.txt.sample %D/%%ETCDIR%%/acl.txt; then rm -f %D/%%ETCDIR%%/acl.txt; fi
+%%ETCDIR%%/acl.txt.sample
+@exec if [ ! -f %D/%%ETCDIR%%/acl.txt ] ; then cp -p %D/%F %B/acl.txt; fi
+@unexec if cmp -s %D/%%ETCDIR%%/badwords.txt.sample %D/%%ETCDIR%%/badwords.txt; then rm -f %D/%%ETCDIR%%/badwords.txt; fi
+%%ETCDIR%%/badwords.txt.sample
+@exec if [ ! -f %D/%%ETCDIR%%/badwords.txt ] ; then cp -p %D/%F %B/badwords.txt; fi
+@unexec if cmp -s %D/%%ETCDIR%%/imspector.conf.sample %D/%%ETCDIR%%/imspector.conf; then rm -f %D/%%ETCDIR%%/imspector.conf; fi
+%%ETCDIR%%/imspector.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/imspector.conf ] ; then cp -p %D/%F %B/imspector.conf; fi
+lib/imspector/aclfilterplugin.so
+lib/imspector/badwordsfilterplugin.so
+lib/imspector/debugloggingplugin.so
+lib/imspector/fileloggingplugin.so
+lib/imspector/ggprotocolplugin.so
+lib/imspector/icqprotocolplugin.so
+lib/imspector/ircprotocolplugin.so
+lib/imspector/miscfilterplugin.so
+lib/imspector/msnprotocolplugin.so
+lib/imspector/yahooprotocolplugin.so
+lib/libimspector.so
+sbin/imspector
+@dirrmtry etc/imspector
+@dirrm lib/imspector
