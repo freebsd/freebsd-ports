@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gutenprint
-PORTVERSION=	5.1.6
+PORTVERSION=	5.1.7
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
