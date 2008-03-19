@@ -10,7 +10,7 @@ PORTVERSION=	0.9.29
 CATEGORIES=	devel python
 MASTER_SITES=	http://darcs.arstecnica.it/
 
-MAINTAINER=	sa2c@sa2c.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Migrates changesets between version control systems
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync

@@ -11,7 +11,7 @@ CATEGORIES=	lang lisp
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
 
-MAINTAINER=	sa2c@sa2c.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Common Lisp development system derived from the CMU CL system
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/*

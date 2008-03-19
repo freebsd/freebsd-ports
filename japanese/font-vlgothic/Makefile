@@ -11,7 +11,7 @@ CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://vinelinux.org/~daisuke/vlgothic/
 DISTNAME=	VLGothic-${PORTVERSION}
 
-MAINTAINER=	sa2c@sa2c.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Japanese TrueType fonts named 'VLGothic'
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
