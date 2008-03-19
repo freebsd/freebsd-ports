@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_security2
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
 DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
