@@ -7,7 +7,7 @@
 
 PORTNAME=	glui
 PORTVERSION=	2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.cs.unc.edu/~rademach/glui/src/release/
 DISTNAME=	glui_v2_1_beta
@@ -15,13 +15,11 @@ DISTNAME=	glui_v2_1_beta
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GLUT-based C++ user interface library
 
-LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
-
-USE_GL=		yes
+USE_GL=		glut
 USE_GMAKE=	yes
+USE_XORG=	xmu xext x11 xi
 MAKEFILE=	makefile
 ALL_TARGET=	# empty
-USE_X_PREFIX=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:/unc/walk/lib/sgi_irix:${PREFIX}/lib:g; \
