@@ -5746,6 +5746,7 @@ jetspeed	ports/www/jetspeed
 jetty		ports/www/jetty
 jewel		ports/x11-wm/jewel
 jext		ports/editors/jext
+jfbterm		ports/sysutils/jfbterm
 jfconv		ports/palm/jfconv
 jfduke3d	ports/games/jfduke3d
 jffnms		ports/net-mgmt/jffnms
