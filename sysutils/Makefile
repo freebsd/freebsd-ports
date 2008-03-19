@@ -273,6 +273,7 @@
     SUBDIR += gnome_subr
     SUBDIR += gnomebaker
     SUBDIR += gnomefind
+    SUBDIR += gnu-unifont
     SUBDIR += googlog
     SUBDIR += gosa
     SUBDIR += gpart
