@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsigsegv
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libsigsegv
@@ -14,13 +14,14 @@ MASTER_SITE_SUBDIR=	libsigsegv
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Handling page faults in user mode
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
+USE_LDCONFIG=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+BROKEN=	Does not compile on sparc64
 .endif
 
 post-install:
