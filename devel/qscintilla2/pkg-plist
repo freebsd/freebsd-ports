@@ -1,5 +1,5 @@
 lib/libqscintilla2.so
-lib/libqscintilla2.so.2
+lib/libqscintilla2.so.3
 share/qt4/qsci/api/python/Python-2.5.api
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -83,8 +83,8 @@ share/qt4/qsci/api/python/Python-2.5.api
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciScintilla.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciScintillaBase-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classQsciScintillaBase.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_2a8c2605e4aa7d1a48d8f1a3cb79b19c.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dir_70b9a417937df88b16247a3b9fa4913c.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_944256396c06c0295aa2eca7dcfea282.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dir_d32dfe2bcddd0b2d894b9fb13d6bdd4d.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dirs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
