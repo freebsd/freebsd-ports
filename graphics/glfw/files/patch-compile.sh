@@ -1,5 +1,5 @@
---- compile.sh.orig	Sun Feb 15 01:19:38 2004
-+++ compile.sh	Thu Apr  1 11:12:31 2004
+--- compile.sh.orig	2004-07-25 00:36:46.000000000 +0400
++++ compile.sh	2008-03-20 05:20:39.000000000 +0300
 @@ -72,10 +72,10 @@
  ##########################################################################
  if [ "x$force_gcc" = xyes ]; then
@@ -29,7 +29,7 @@
  # X11R5 in /usr/X11R5/lib ?
  elif [ -r "/usr/X11R5/lib" ]; then
   LFLAGS="$LFLAGS -L/usr/X11R5/lib"
-@@ -140,9 +140,9 @@
+@@ -145,9 +145,9 @@
  rm -f conftest*
  
  echo " Using GNU C: ""$use_gcc" 1>&6
@@ -42,7 +42,7 @@
  echo " " 1>&6
  
  
-@@ -164,6 +164,8 @@
+@@ -169,6 +169,8 @@
  int main() {; return 0;}
  EOF
  
@@ -51,7 +51,18 @@
  if { (eval echo $config_script: \"$compile\") 1>&5; (eval $compile) 2>&5; }; then
    rm -rf conftest*
    has_xf86vm=yes
-@@ -206,7 +208,7 @@
+@@ -200,18 +202,10 @@
+ 
+ # Try -lpthread (most systems)
+ LIBS_OLD="$LIBS"
+-LIBS="$LIBS -lpthread"
+-if { (eval echo $config_script: \"$link\") 1>&5; (eval $link) 2>&5; }; then
+-  rm -rf conftest*
+-  has_pthread=yes
+-else
+-  echo "$config_script: failed program was:" >&5
+-  cat conftest.c >&5
+-fi
  
  # Try -pthread (e.g. FreeBSD)
  if [ "x$has_pthread" = xno ]; then
@@ -60,7 +71,7 @@
    if { (eval echo $config_script: \"$link\") 1>&5; (eval $link) 2>&5; }; then
      rm -rf conftest*
      has_pthread=yes
-@@ -364,24 +366,24 @@
+@@ -369,24 +363,24 @@
  echo "$config_script: Checking for sysconf support" >&5
  has_sysconf=no
  
@@ -96,7 +107,7 @@
  
  echo " sysconf support: ""$has_sysconf" 1>&6
  if [ "x$has_sysconf" = xyes ]; then
-@@ -424,9 +426,9 @@
+@@ -429,9 +423,9 @@
  # Post fixups
  ##########################################################################
  if [ "x$use_gcc" = xyes ]; then
