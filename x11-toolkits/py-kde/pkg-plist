@@ -457,7 +457,6 @@ bin/kdepyuic
 %%DATADIR%%/kparts/factory.sip
 %%DATADIR%%/kparts/genericfactory.sip
 %%DATADIR%%/kparts/historyprovider.sip
-%%DATADIR%%/kparts/konsole_part.sip
 %%DATADIR%%/kparts/kpartsmod.sip
 %%DATADIR%%/kparts/mainwindow.sip
 %%DATADIR%%/kparts/part.sip
