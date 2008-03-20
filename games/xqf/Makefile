@@ -7,17 +7,15 @@
 
 PORTNAME=	xqf
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A server browser for many popular 3D action games
 
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
-USE_XLIB=	yes
 USE_GNOME=	intlhack
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
