@@ -18,7 +18,6 @@ COMMENT=	Linux Infared Remote Control
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_XLIB=	yes
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

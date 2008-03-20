@@ -17,7 +17,6 @@ COMMENT=	Real-time software synthesizer based on the SoundFont 2 specifications
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

@@ -20,7 +20,6 @@ LIB_DEPENDS=	enca.5:${PORTSDIR}/converters/enca
 PORTDOCS=	README.koi8r README
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=	yes
 USE_PERL5_BUILD=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

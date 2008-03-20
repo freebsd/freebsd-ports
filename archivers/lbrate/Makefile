@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	utils/compress
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extract/decompress CP/M LBR archives
 
-USE_GETOPT_LONG=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CPPFLAGS} ${CFLAGS} ${LDFLAGS}"
 
 MAN1=		lbrate.1

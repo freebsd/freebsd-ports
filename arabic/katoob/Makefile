@@ -22,7 +22,6 @@ USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GETOPT_LONG=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>

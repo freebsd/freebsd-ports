@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of writing tools in Chinese
 
 USE_AUTOTOOLS=	libtool:15
-USE_GETOPT_LONG=yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_XLIB=	yes

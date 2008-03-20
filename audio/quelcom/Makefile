@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of command-line utilities for MP3 and wave files
 
 USE_GCC=	3.3
-USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile

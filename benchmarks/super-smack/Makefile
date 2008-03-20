@@ -15,7 +15,6 @@ COMMENT=	A benchmarking, stress testing, and load generation tool for Databases
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-smacks-dir=${DATADIR}
-USE_GETOPT_LONG=	yes
 
 OPTIONS=	MYSQL "Enable MySQL support" on \
 		POSTGRESQL "Enable PostgreSQL support" off

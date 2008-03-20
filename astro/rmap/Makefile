@@ -17,7 +17,6 @@ COMMENT=	Generates images of the Earth centered at a particular location
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 MAN1=		rmap.1
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

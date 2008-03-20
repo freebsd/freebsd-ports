@@ -18,7 +18,6 @@ COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 USE_GNOME=	pkgconfig gnomehack
-USE_GETOPT_LONG=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	autoconf:261 libtool:15

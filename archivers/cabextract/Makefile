@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.cabextract.org.uk/
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	A program to extract Microsoft cabinet (.CAB) files
 
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 
 MANLANG=	"" ja

@@ -13,7 +13,6 @@ MASTER_SITES=	http://download.berlios.de/cuetools/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of utilities for working with cue files and toc files
 
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

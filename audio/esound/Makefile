@@ -24,7 +24,6 @@ USE_GNOME=	gnometarget gnomehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	JW=false
-USE_GETOPT_LONG=yes
 
 CONFLICTS=	py*-ro-[0-9]*
 

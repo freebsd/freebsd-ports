@@ -15,7 +15,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A conversion utility to convert Psion 5(MX) files into other formats
 
 USE_AUTOTOOLS=	libtool:15
-USE_GETOPT_LONG=yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

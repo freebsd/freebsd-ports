@@ -14,7 +14,6 @@ MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	Intelligent Chinese encoding converter
 
 MAKE_ENV=	CFLAG="${CPPFLAGS}" LIBS="${LDFLAGS}"
-USE_GETOPT_LONG=	yes
 USE_LDCONFIG=	yes
 
 post-patch:

@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	advancemame
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recompression utilities for .ZIP, .PNG, .MNG and .GZ files
 
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

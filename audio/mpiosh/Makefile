@@ -19,7 +19,6 @@ LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
 
 USE_AUTOTOOLS=	libtool:15
 USE_ICONV=	yes
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 

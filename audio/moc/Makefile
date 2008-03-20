@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 MAINTAINER=	rzinkov@gmail.com
 COMMENT=	A console audio player designed to be powerful and easy to use
 
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

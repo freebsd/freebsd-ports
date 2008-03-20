@@ -14,7 +14,6 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Fast Audio Playlist Generator
 
 MAKE_ARGS+=	CC=${CC}
-USE_GETOPT_LONG=yes
 
 MAN1=		fapg.1
 

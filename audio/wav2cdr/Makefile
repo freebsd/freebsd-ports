@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	apps/sound/convert
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Converts WAV files into CDR audio file format
 
-USE_GETOPT_LONG=yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SRC=		wav2cdr cmdarg data fileio process
 

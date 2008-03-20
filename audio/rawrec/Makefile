@@ -20,7 +20,6 @@ COMMENT=	A utility to record and playback raw audio data
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CPPFLAGS} ${CFLAGS} ${PTHREAD_CFLAGS}" \

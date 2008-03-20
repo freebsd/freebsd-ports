@@ -18,7 +18,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line player for the .ay audio file format
 
 USE_GMAKE=	yes
-USE_GETOPT_LONG=yes
 
 ALL_TARGET?=	${PORTNAME}
 CFLAGS+=	-DDRIVER_OSS -I${LOCALBASE}/include

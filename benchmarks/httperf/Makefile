@@ -14,7 +14,6 @@ MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	A tool for measuring webserver performance
 
 USE_OPENSSL=	yes
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	LIBUTIL_OBJS=ssl_writev.o \

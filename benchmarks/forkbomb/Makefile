@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	system/benchmark
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System stress testing tool
 
-USE_GETOPT_LONG=yes
-
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 

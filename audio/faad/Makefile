@@ -21,7 +21,6 @@ USE_DOS2UNIX=	yes
 USE_AUTOTOOLS=	automake:15 autoheader:261 libtool:15
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
