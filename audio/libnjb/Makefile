@@ -7,6 +7,7 @@
 
 PORTNAME=	libnjb
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -33,5 +34,6 @@ NODOC=		/^SUBDIRS/s|doc||
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|;\
 		${NODOC}' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^SHOW_DIRECTORIES/d' ${WRKSRC}/doc/Doxyfile.in
 
 .include <bsd.port.post.mk>
