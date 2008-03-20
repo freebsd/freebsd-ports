@@ -17,6 +17,7 @@
 %%SITE_PERL%%/Config/Model/Node.pm
 %%SITE_PERL%%/Config/Model/ObjTreeScanner.pm
 %%SITE_PERL%%/Config/Model/Report.pm
+%%SITE_PERL%%/Config/Model/SimpleUI.pm
 %%SITE_PERL%%/Config/Model/Searcher.pm
 %%SITE_PERL%%/Config/Model/TermUI.pm
 %%SITE_PERL%%/Config/Model/Value.pm

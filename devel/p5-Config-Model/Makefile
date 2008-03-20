@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-DISTVERSION=	0.619
+DISTVERSION=	0.620
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN SF
 PKGNAMEPREFIX=	p5-
@@ -40,6 +40,7 @@ MAN3=		Config::Model.3pm Config::Model::AnyId.3pm \
 		Config::Model::Loader.3pm Config::Model::Node.3pm \
 		Config::Model::ObjTreeScanner.3pm Config::Model::Report.3pm \
 		Config::Model::Searcher.3pm Config::Model::TermUI.3pm \
+		Config::Model::SimpleUI.3pm \
 		Config::Model::Value.3pm Config::Model::ValueComputer.3pm \
 		Config::Model::WarpedNode.3pm Config::Model::WarpedThing.3pm \
 		Config::Model::WizardHelper.3pm Config::Model::DumpAsData.3pm
