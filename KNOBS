@@ -9,12 +9,11 @@
 #  - Knob descriptions must be 45 characters or less
 #
 #  - Naming knobs:
-#     When a port has a lib-prefix (ie: libquicktime, libxine)
-#      the lib-prefix should be stripped from the knob name.
-#      (ie: QUICKTIME, XINE).
+#      When a port has a lib-prefix (e.g.: libquicktime, libxine)
+#      the lib-prefix should be stripped from the knob name
+#     (e.g.: QUICKTIME, XINE).
 #
-#
-# Keep this list sorted in alphabetical order
+# Keep this list sorted in alphabetical order.
 #
 # Knob name:		Knob description:
 #  Length  |		|                   Length                   |
