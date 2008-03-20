@@ -37,7 +37,6 @@ libdata/pkgconfig/libnjb.pc
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/defs_8h-source.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/delfile_8c-example.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/deltr_8c-example.html
-%%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/dirs.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/doxygen.css
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/doxygen.png
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/dumpeax_8c-example.html
@@ -140,7 +139,6 @@ libdata/pkgconfig/libnjb.pc
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/unicode_8h-source.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/usb__io_8c.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/usb__io_8h-source.html
-%%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/dir_d03f56ed3ef2c0e11ac283c787a57d7a.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/globals_func_0x64.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/globals_func_0x65.html
 %%PORTDOCS%%share/doc/libnjb-%%PORTVERSION%%/html/globals_func_0x66.html
