@@ -1252,6 +1252,7 @@ celestia-gtk	ports/astro/celestia-gtk
 cenon		ports/graphics/cenon
 centericq	ports/net-im/centericq
 centerim	ports/net-im/centerim
+centerim-devel	ports/net-im/centerim-devel
 cfengine	ports/sysutils/cfengine
 cfgstoragemk	ports/net-mgmt/cfgstoragemk
 cfitsio		ports/astro/cfitsio
