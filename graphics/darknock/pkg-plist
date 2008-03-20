@@ -1,4 +1,5 @@
 bin/darknock
+%%NLS%%%%DATADIR%%/locale/darknock_fr.qm
 %%NLS%%%%DATADIR%%/locale/darknock_it.qm
 %%NLS%%%%DATADIR%%/locale/darknock_pl.qm
 %%NLS%%%%DATADIR%%/locale/darknock_ro.qm
