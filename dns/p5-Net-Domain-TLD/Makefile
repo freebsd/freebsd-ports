@@ -7,20 +7,24 @@
 
 PORTNAME=	Net-Domain-TLD
 PORTVERSION=	1.67
+PORTREVISION=	1
 CATEGORIES=	dns perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Look up and validate TLDs
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
 MAN3=	Net::Domain::TLD.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Storable>=0:${PORTSDIR}/devel/p5-Storable
+.endif
+
+.include <bsd.port.post.mk>
