@@ -23,6 +23,7 @@ USE_GL=		gl
 USE_LDCONFIG=	yes
 SUB_FILES+=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
+MODULESDIR=	lib/xorg/modules
 PORTDOCS=	*
 
 OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
@@ -44,10 +45,6 @@ NVVERSION?=	${DISTVERSION:S/.//g}00
 
 .include <bsd.port.pre.mk>
 
-MODULESDIR=	lib/xorg/modules
-XORG_SUB=	""
-XFREE86_SUB=	"@comment "
-
 # XXX Should use ${PKG_INFO} XXX
 #
 XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | ${GREP} Server- || /usr/sbin/pkg_info -O x11-servers/xorg-server 2>/dev/null | ${GREP} server- || /usr/sbin/pkg_info -qO x11-servers/xorg-server-snap 2>/dev/null || true
@@ -59,7 +56,7 @@ IGNORE=		needs an X server implementation installed
 
 PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} XLIBVERSION=${XLIBVERSION} \
 		LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
-		MODULESDIR=${MODULESDIR} XORG=${XORG_SUB} XFREE86=${XFREE86_SUB}
+		MODULESDIR=${MODULESDIR}
 
 .if !defined(WITHOUT_LINUX)
 # Add explicit X11 libraries dependency since USE_LINUX causes the port to
