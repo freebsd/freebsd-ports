@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	namazu
-PORTVERSION=	2.0.17
+PORTVERSION=	2.0.18
 CATEGORIES+=	databases www textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 PKGNAMESUFFIX=	2
@@ -19,21 +19,29 @@ RUN_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
 
 PM_BASE=	${SITE_PERL}
 
-USE_AUTOTOOLS=	libtool:15
+USE_GNOME=	gnometarget
+USE_PERL5=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_PERL5=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE}
-
-MAN1=		namazu.1 mknmz.1
 USE_LDCONFIG=	yes
 
+MAN1=		namazu.1 mknmz.1
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.in
+
 post-install:
-.if defined(NOPORTDOCS)
-	${RM} -rf ${PREFIX}/share/namazu/doc
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.css ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/en
+	${INSTALL_DATA} ${WRKSRC}/doc/en/*.html ${DOCSDIR}/en
+	@${MKDIR} ${DOCSDIR}/ja
+	${INSTALL_DATA} ${WRKSRC}/doc/ja/*.html ${DOCSDIR}/ja
 .endif
 
 .include <bsd.port.mk>
