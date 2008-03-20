@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line utility for encrypting and decrypting files and streams
 
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 
 MAN1=	ccrypt.1

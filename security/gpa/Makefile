@@ -25,6 +25,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
-USE_GETOPT_LONG=	yes
 
 .include <bsd.port.mk>

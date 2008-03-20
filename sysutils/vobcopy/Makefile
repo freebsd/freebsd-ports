@@ -16,7 +16,6 @@ COMMENT=	Decrypts and copies DVD .vob files
 LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 
 USE_BZIP2=	yes
-USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
 CONFIGURE_ARGS=	--with-lfs

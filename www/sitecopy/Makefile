@@ -24,7 +24,6 @@ CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-neon --with-libxml2
 USE_GETTEXT=	yes
 USE_GNOME=	libxml2
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 
 .ifndef WITHOUT_SSL

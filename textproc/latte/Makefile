@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple language for marking up text in a very expressive way
 
 USE_BISON=	build
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:213 libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

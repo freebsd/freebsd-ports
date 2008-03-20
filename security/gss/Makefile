@@ -22,7 +22,6 @@ CONFLICTS=	heimdal-*
 
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-kerberos5

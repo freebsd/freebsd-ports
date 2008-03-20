@@ -18,7 +18,6 @@ COMMENT=	An SNMP based command line network printer management tool
 MAN1=		npadmin.1
 PLIST_FILES=	bin/npadmin
 
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 
 pre-patch:

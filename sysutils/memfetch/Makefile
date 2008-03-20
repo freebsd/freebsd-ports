@@ -18,7 +18,6 @@ COMMENT=	Utility to dump process memory
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5_RUN=	yes
 
-USE_GETOPT_LONG=yes
 CFLAGS+=	${CPPFLAGS}
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 

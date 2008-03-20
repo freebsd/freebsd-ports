@@ -16,7 +16,6 @@ COMMENT=	Displays filesystem usage of mountpoints in a nice WindowMaker dockapp
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

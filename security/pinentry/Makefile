@@ -20,7 +20,6 @@ LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
 
 CONFLICTS?=	pinentry-[a-z]*-[0.9]*
 
-USE_GETOPT_LONG=yes
 USE_ICONV=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes

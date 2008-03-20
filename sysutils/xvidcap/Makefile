@@ -32,7 +32,6 @@ CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
 			MAKE="${GMAKE}"
 CONFIGURE_ARGS=		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib	\
 			-with-forced-embedded-ffmpeg	# To be removed after ffmpeg-devel's upgrade
-USE_GETOPT_LONG=	yes
 
 USE_GMAKE=		yes	# To be removed after ffmpeg-devel's upgrade
 USE_GNOME=		glib20 libglade2

@@ -15,7 +15,6 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	An RFC1413 identification server which also supports random replies
 
 USE_BZIP2=	yes
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 MAN8=		ident2.8
 PLIST_FILES=	sbin/ident2

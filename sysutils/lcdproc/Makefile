@@ -20,7 +20,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_AUTOTOOLS=	autoconf:261 automake:19 aclocal:19
 USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
 USE_RC_SUBR=	LCDd lcdproc
 
 CONFIGURE_ARGS=	--enable-drivers="${LCDPROC_DRIVERS}" \

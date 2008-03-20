@@ -18,7 +18,6 @@ COMMENT=	A library and executables to access Microsoft Word files
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 
-USE_GETOPT_LONG=	yes
 USE_GNOME=	gnometarget libgsf
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

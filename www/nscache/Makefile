@@ -19,7 +19,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netscape cache browser
 
 USE_GNOME=	gnomehier gtk12
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

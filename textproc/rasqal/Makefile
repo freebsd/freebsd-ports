@@ -22,7 +22,6 @@ USE_BDB=	yes
 INVALID_BDB_VER=2
 USE_GNOME=	gnomehack gnometarget lthack pkgconfig
 USE_OPENSSL=	yes
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

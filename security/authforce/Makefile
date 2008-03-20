@@ -17,7 +17,6 @@ COMMENT=	HTTP authentication brute forcer
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
-USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

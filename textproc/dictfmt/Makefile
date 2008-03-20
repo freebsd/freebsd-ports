@@ -15,7 +15,6 @@ DISTNAME=	dictd-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Formats a DICT protocol dictionary database
 
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

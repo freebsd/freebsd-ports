@@ -22,7 +22,6 @@ LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
 		ntlm.0:${PORTSDIR}/security/libntlm
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_GETOPT_LONG=	yes
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

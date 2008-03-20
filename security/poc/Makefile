@@ -18,7 +18,6 @@ COMMENT=	Program for managing passwords on smartcards
 LIB_DEPENDS=	towitoko.2:${PORTSDIR}/devel/towitoko
 
 PLIST_FILES=	bin/poc
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

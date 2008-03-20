@@ -16,7 +16,6 @@ MAINTAINER=	vs@FreeBSD.org
 COMMENT=	Quintuple Agent is a program that stores secrets for you
 
 USE_GETTEXT=	yes
-USE_GETOPT_LONG=yes
 USE_GNOME=	glib12
 .ifndef(WITHOUT_X11)
 USE_GNOME+=	gtk12

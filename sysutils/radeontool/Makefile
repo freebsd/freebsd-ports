@@ -13,8 +13,6 @@ MASTER_SITES=	http://fdd.com/software/radeon/
 MAINTAINER=	takawata@jp.freebsd.org
 COMMENT=	ATI Radeon video card contoroling tool useful for laptops
 
-USE_GETOPT_LONG=YES
-
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>

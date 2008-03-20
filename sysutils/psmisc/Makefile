@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-nls
 USE_GMAKE=	yes
-USE_GETOPT_LONG=yes
 
 CONFLICTS=	pstree-2.* \
 		pidof-*

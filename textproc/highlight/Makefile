@@ -18,7 +18,6 @@ COMMENT=	Customizable syntax highlighter
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 USE_GCC=	3.4
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CXX="${CXX}" \
