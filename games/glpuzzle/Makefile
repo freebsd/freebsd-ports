@@ -7,7 +7,7 @@
 
 PORTNAME=	glpuzzle
 PORTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.iua.upf.es/~mdeboer/resorama/glpuzzle/ \
 		http://www.amdmi3.ru/distfiles/
@@ -19,11 +19,9 @@ COMMENT=	An OpenGL jigsaw puzzle game
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_X_PREFIX=	yes
 USE_SDL=	sdl mixer
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 
 MAKE_ENV=	CXX="${CXX}" \
 		CPPFLAGS="`${SDL_CONFIG} --cflags` -I${X11BASE}/include" \

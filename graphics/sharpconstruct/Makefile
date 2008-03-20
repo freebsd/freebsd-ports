@@ -7,7 +7,7 @@
 
 PORTNAME=	sharpconstruct
 PORTVERSION=	0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sharp3d
@@ -19,7 +19,6 @@ LIB_DEPENDS=	gtkglextmm-x11-1.2.0:${PORTSDIR}/x11-toolkits/gtkglextmm \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

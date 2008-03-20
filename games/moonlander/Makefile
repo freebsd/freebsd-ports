@@ -7,7 +7,7 @@
 
 PORTNAME=	moonlander
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=pool/main/m/moon-lander
@@ -17,7 +17,6 @@ MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Land a spacecraft on the moon
 
 USE_SDL=	mixer image sdl
-USE_X_PREFIX=	YES
 
 WRKSRC=		${WRKDIR}/moon-lander
 
