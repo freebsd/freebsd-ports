@@ -7,7 +7,7 @@
 
 PORTNAME=	glpng
 PORTVERSION=	1.45
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.wyatt100.freeserve.co.uk/ \
 		http://www.amdmi3.ru/distfiles/
@@ -20,8 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_GL=		yes
 USE_ZIP=	yes
-USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 AR?=		/usr/bin/ar
 
