@@ -7,7 +7,7 @@
 
 PORTNAME=	agg
 PORTVERSION=	2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.antigrain.com/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -17,7 +17,7 @@ COMMENT=	A High Quality Rendering Engine for C++
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
