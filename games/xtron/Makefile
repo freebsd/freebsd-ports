@@ -7,7 +7,7 @@
 
 PORTNAME=	xtron
 PORTVERSION=	1.1a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade
@@ -16,8 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Avoid running into walls, your own tail, and that of your opponent
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/xtronrc
