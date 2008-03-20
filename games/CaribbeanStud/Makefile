@@ -7,7 +7,7 @@
 
 PORTNAME=		CaribbeanStud
 PORTVERSION=		1.0
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
@@ -18,7 +18,6 @@ COMMENT=	Caribbean Stud gambling game for X Window System
 
 MAKEFILE=		Xmakefile
 USE_MOTIF=		yes
-USE_X_PREFIX=		yes
 CFLAGS+=		-Wno-deprecated
 
 do-install:
