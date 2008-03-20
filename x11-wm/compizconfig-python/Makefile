@@ -11,7 +11,7 @@ PORTVERSION=	0.6.0.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the compizconfig library
 
 BUILD_DEPENDS=	\

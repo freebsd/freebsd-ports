@@ -11,7 +11,7 @@ PORTVERSION=	0.6.0
 CATEGORIES=	devel x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code generator for Compiz Fusion Plugins
 
 # This annoys me...
