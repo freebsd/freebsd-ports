@@ -16,9 +16,9 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A more capable version control system than CVS, built around CVS
 
 BUILD_DEPENDS=	clisp:${PORTSDIR}/lang/clisp \
-		${LOCALBASE}/lib/libsigsegv.a:${PORTSDIR}/devel/libsigsegv \
 		${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall
-RUN_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall
+RUN_DEPENDS=	clisp:${PORTSDIR}/lang/clisp \
+    		${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall
 
 USE_GETTEXT=	yes
 
