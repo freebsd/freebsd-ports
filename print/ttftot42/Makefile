@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.nih.at/ttftot42/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TrueType to Type42 font converter
 
-USE_GETOPT_LONG=	yes
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

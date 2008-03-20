@@ -15,7 +15,6 @@ MAINTAINER=		wxs@FreeBSD.org
 COMMENT=		Console-based AIM client
 
 USE_PERL5=		yes
-USE_GETOPT_LONG=	yes
 USE_OPENSSL=		yes
 
 GNU_CONFIGURE=		yes

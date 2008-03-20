@@ -16,7 +16,6 @@ COMMENT=	Marco d'Itri whois client
 
 USE_ICONV=		yes
 USE_PERL5_BUILD=	yes
-USE_GETOPT_LONG=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

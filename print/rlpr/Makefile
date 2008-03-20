@@ -14,7 +14,6 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Send print jobs to lpd servers anywhere on a network
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
 # rlpr supports gettext/libintl, but does not currently come with ANY
 # translation .po files. When this changes, it would make sense to
 # enable the use of gettext in this port:

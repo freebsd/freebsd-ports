@@ -18,7 +18,6 @@ COMMENT=	A server for the linux network block device (nbd)
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-lfs --enable-syslog
 

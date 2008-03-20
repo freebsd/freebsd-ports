@@ -16,7 +16,6 @@ COMMENT=	Zeroconf/Bonjour(tm) implementation
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS}

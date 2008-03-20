@@ -15,7 +15,6 @@ MAINTAINER=	erik@smluc.org
 COMMENT=	An image viewer for X
 
 USE_SDL=	image
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib

@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.pc-tools.net/files/unix/
 MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Rename or remove certain attachments or kill entire messages
 
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

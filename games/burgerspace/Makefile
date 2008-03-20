@@ -17,7 +17,6 @@ COMMENT=	A BurgerTime clone
 LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng \
 		flatzebra-0.1.2:${PORTSDIR}/devel/flatzebra
 
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
 CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include

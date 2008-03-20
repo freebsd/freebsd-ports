@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.routemeister.net/projects/sipcalc/files/
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Sipcalc is an IP subnet calculator with IPv6 support
 
-USE_GETOPT_LONG=	yes
-
 GNU_CONFIGURE=	yes
 MAN1=		sipcalc.1
 

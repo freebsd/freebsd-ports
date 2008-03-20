@@ -18,7 +18,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I." \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

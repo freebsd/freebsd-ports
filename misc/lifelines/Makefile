@@ -20,7 +20,6 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_BISON=	build
-USE_GETOPT_LONG=yes
 
 MAN1=		btedit.1 dbverify.1 llines.1
 

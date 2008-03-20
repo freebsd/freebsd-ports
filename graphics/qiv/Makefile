@@ -16,7 +16,6 @@ MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Small, fast GDK/Imlib image viewer
 
 OPTIONS=	XINERAMA "use multiple monitors" off
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
 

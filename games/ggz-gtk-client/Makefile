@@ -15,7 +15,6 @@ COMMENT=	The GGZ Gaming Zone - GTK+ Frontend
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget gtk20
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug

@@ -24,7 +24,6 @@ OPTIONS=	SDL	"Use SDL instead of glut"	off \
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

@@ -17,7 +17,6 @@ DISTNAME=	procps-${DISTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	GNU watch command
 
-USE_GETOPT_LONG=yes
 USE_GCC=	3.4+
 
 LDFLAGS+=	-lncurses

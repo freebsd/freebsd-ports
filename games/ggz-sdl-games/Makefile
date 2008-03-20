@@ -13,7 +13,6 @@ CATEGORIES=	games
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	The GGZ Gaming Zone - SDL-based games
 
-USE_GETOPT_LONG=	yes
 USE_GL=		yes
 USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes

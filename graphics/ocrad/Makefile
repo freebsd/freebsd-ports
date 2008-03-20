@@ -18,7 +18,6 @@ COMMENT=	OCR program implemented as filter
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETOPT_LONG=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \

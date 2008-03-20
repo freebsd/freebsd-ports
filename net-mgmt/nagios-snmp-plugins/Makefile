@@ -18,7 +18,6 @@ LIB_DEPENDS=    netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=		yes
 USE_AUTOTOOLS=	automake:14 autoheader:261 autoconf:261
-USE_GETOPT_LONG=	yes
 USE_GMAKE=		yes
 USE_PERL5=		yes
 

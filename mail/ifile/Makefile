@@ -13,7 +13,6 @@ MASTER_SITES=	http://people.csail.mit.edu/jrennie/ifile/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application of machine learning to e-mail filtering
 
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

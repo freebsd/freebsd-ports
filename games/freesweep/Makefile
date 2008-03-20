@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-prefsdir=${DATADIR} \
 		--with-scoresdir=${DATADIR}\
 		--disable-debug-log
-USE_GETOPT_LONG=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

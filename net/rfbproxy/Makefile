@@ -14,7 +14,6 @@ MASTER_SITES=	http://cyberelk.net/tim/data/rfbproxy/stable/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple tool for recording VNC sessions
 
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 

@@ -19,7 +19,6 @@ RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
 USE_XLIB=	yes
 USE_GNOME=	intlhack
-USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

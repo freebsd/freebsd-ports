@@ -17,7 +17,6 @@ MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	Wireless LAN Access Point Controller
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
 CONFIGURE_TARGET=-build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=-sysconfdir=${PREFIX}/etc
 USE_RC_SUBR=	chillispot.sh

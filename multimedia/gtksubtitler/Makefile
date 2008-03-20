@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small GNOME program for editing and converting subtitles
 
 USE_X_PREFIX=	yes
-USE_GETOPT_LONG=	yes
 USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 

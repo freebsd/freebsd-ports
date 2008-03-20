@@ -14,7 +14,6 @@ MASTER_SITES=	http://cs-people.bu.edu/dbera/activities/projects/mget/
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Multithreaded commandline web-download manager
 
-USE_GETOPT_LONG=	yes
 CFLAGS+=	-DHAS_HERROR -DHAVE_GETOPT_LONG -DHAVE_INET_NTOP -DHAVE_IPV6 \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}

@@ -16,7 +16,6 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A media player based on BMP and XMMS
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 USE_LDCONFIG=	yes

@@ -17,7 +17,6 @@ COMMENT=	Suite of tools used to connect and sync your Palm handled
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_GETOPT_LONG=yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}/popt -I${LOCALBASE}/include

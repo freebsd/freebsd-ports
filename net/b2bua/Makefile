@@ -18,7 +18,6 @@ COMMENT=	A back-to-back (B2B) SIP user agent
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_GMAKE=	yes
-USE_GETOPT_LONG=	yes
 ALL_TARGET=	b2bua
 CFLAGS+=	-Wno-deprecated
 MAKE_ENV=	PTHREAD_LDFLAGS="${PTHREAD_LIBS}" \

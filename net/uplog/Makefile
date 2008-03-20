@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.nerdlabs.org/downloads/${PORTNAME}/
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	UDP-based ping programm
 
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

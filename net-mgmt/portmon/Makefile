@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon that monitor network services
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=	yes
 
 MAN8=		portmon.8
 

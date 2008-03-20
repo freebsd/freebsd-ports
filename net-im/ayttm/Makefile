@@ -29,7 +29,6 @@ USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gdkpixbuf gnometarget
 USE_OPENSSL=	yes
-USE_GETOPT_LONG=	yes
 USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

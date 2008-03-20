@@ -16,7 +16,6 @@ COMMENT=	Real-time graphics effect able to increase the size of small bitmaps
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

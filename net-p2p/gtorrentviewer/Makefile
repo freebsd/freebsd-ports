@@ -23,7 +23,6 @@ USE_GNOME=	gtk20 gnomehier intlhack
 USE_XLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-pixmapsdir=${PREFIX}/share/pixmaps \

@@ -22,7 +22,6 @@ LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib \
 ALL_TARGET=	seejpeg
 
 MAN1=		seejpeg.1
-USE_GETOPT_LONG=yes
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/seejpeg
 USE_GMAKE=	yes

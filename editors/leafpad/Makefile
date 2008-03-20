@@ -17,7 +17,6 @@ COMMENT=	GTK+ based simple text editor
 
 USE_GNOME=	gtk20 desktopfileutils intlhack
 USE_GCC=	3.4
-USE_GETOPT_LONG=	yes
 USE_GETTEXT=	YES
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

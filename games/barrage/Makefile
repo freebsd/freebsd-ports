@@ -17,7 +17,6 @@ MAINTAINER=	az@FreeBSD.org
 COMMENT=	Destroy as many targets as possible
 
 USE_GMAKE=	yes
-USE_GETOPT_LONG=yes
 USE_SDL=	sdl mixer
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-profile-path=/var/games

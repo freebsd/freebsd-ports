@@ -17,7 +17,6 @@ COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
 GNU_CONFIGURE=		yes
 USE_PERL5_BUILD=	yes
-USE_GETOPT_LONG=	yes
 CPPFLAGS=		-I${LOCALBASE}/include
 LDFLAGS=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

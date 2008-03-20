@@ -17,7 +17,6 @@ COMMENT=	User-mode virtual ethernet infrastructure
 CONFLICTS=	vde-[0-9]*
 
 USE_GMAKE=	yes
-USE_GETOPT_LONG=yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir=${PREFIX}

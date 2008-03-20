@@ -21,7 +21,6 @@ CONFLICTS=	gimp-print-[0-9]*
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20
 GNU_CONFIGURE=	yes

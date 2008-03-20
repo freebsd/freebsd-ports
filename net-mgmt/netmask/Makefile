@@ -16,7 +16,6 @@ MAINTAINER=	mike@urgle.com
 COMMENT=	Tool for generating terse netmasks in several common formats
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

@@ -27,7 +27,6 @@ USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-USE_GETOPT_LONG=yes
 AVAHI_SLAVE?=	no
 CONFIGURE_ARGS?=--with-distro=freebsd \
 		--with-dbus-system-address=unix:path=/var/run/dbus/system_bus_socket \
