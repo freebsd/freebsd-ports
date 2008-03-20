@@ -5,21 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	dbus
-PORTVERSION=	4.3.1
-PORTREVISION=	# zero
-CATEGORIES=	devel python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/ \
-		http://freebsd.ricin.com/ports/distfiles/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
-DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
+PORTVERSION=	${PYQT4_VERSION}
+PORTREVISION=	1
 
-MAINTAINER=	danny@ricin.com
+CATEGORIES=	devel python
+MASTER_SITES=	${MASTER_SITES_PYQT4}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
+DISTNAME=	${PYQT4_DISTNAME}
+
+MAINTAINER=	${PYQT_MAINTAINER}
 COMMENT=	Python bindings for the Qt4 toolkit, D-BUS module
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/PyQt4/QtCore.so:${PORTSDIR}/devel/py-qt4-core
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.8:${PORTSDIR}/devel/py-dbus \
+		${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core
 
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
@@ -34,8 +34,10 @@ OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 CONFIGURE_ENV+=	PYQT4_COMPONENT="${PORTNAME}"
 ARGS=		-b ${PREFIX}/bin\
 		-d ${PYTHON_SITELIBDIR}\
-		-q ${QT_PREFIX}/bin/qmake-qt4
+		-q ${QT_PREFIX}/bin/qmake-qt4\
+		--confirm-license
 
+.include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)

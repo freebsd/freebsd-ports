@@ -5,16 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	demo
-PORTVERSION=	4.3.1
-PORTREVISION=	# zero
-CATEGORIES=	misc devel python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/ \
-		http://freebsd.ricin.com/ports/distfiles/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
-DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
+PORTVERSION=	${PYQT4_VERSION}
+PORTREVISION=	1
 
-MAINTAINER=	danny@ricin.com
-COMMENT=	Python bindings for the Qt4 toolkit, demo and other examples
+CATEGORIES=	misc devel python
+MASTER_SITES=	${MASTER_SITES_PYQT4}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
+DISTNAME=	${PYQT4_DISTNAME}
+
+MAINTAINER=	${PYQT_MAINTAINER}
+COMMENT=	Python bindings for the Qt4 toolkit, Qt demo and examples
 
 USE_PYTHON=	yes
 
@@ -23,24 +23,25 @@ OPTIONS=	PYQT4	"Install any missing PyQt4 components" on
 OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 EXAMPLESDIR=	${PREFIX}/share/examples/py-qt4
 
+.include "../../devel/py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PYQT4)
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtCore.so:${PORTSDIR}/devel/py-qt4-core \
-		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:${PORTSDIR}/net/py-qt4-network \
-		${PYTHON_SITELIBDIR}/PyQt4/QtXml.so:${PORTSDIR}/textproc/py-qt4-xml \
-		${PYTHON_SITELIBDIR}/PyQt4/QtAssistant.so:${PORTSDIR}/devel/py-qt4-assistant \
-		${PYTHON_SITELIBDIR}/PyQt4/QtOpenGL.so:${PORTSDIR}/x11/py-qt4-opengl \
-		${PYTHON_SITELIBDIR}/PyQt4/QtScript.so:${PORTSDIR}/devel/py-qt4-script \
-		${PYTHON_SITELIBDIR}/PyQt4/QtSql.so:${PORTSDIR}/databases/py-qt4-sql \
-		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:${PORTSDIR}/graphics/py-qt4-svg \
-		${PYTHON_SITELIBDIR}/PyQt4/QtTest.so:${PORTSDIR}/devel/py-qt4-test \
-		${PYTHON_SITELIBDIR}/PyQt4/QtDesigner.so:${PORTSDIR}/devel/py-qt4-designer \
-		${LOCALBASE}/lib/qt4/plugins/designer/libpythonplugin.so:${PORTSDIR}/devel/py-qt4-designerplugin \
-		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbus
+RUN_DEPENDS=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core \
+		${PKGNAMEPREFIX}gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+		${PKGNAMEPREFIX}network>=${PYQT4_VERSION}:${PORTSDIR}/net/py-qt4-network \
+		${PKGNAMEPREFIX}xml>=${PYQT4_VERSION}:${PORTSDIR}/textproc/py-qt4-xml \
+		${PKGNAMEPREFIX}assistant>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-assistant \
+		${PKGNAMEPREFIX}opengl>=${PYQT4_VERSION}:${PORTSDIR}/x11/py-qt4-opengl \
+		${PKGNAMEPREFIX}script>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-script \
+		${PKGNAMEPREFIX}sql>=${PYQT4_VERSION}:${PORTSDIR}/databases/py-qt4-sql \
+		${PKGNAMEPREFIX}svg>=${PYQT4_VERSION}:${PORTSDIR}/graphics/py-qt4-svg \
+		${PKGNAMEPREFIX}test>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-test \
+		${PKGNAMEPREFIX}designer>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designer \
+		${PKGNAMEPREFIX}designerplugin>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designerplugin \
+		${PKGNAMEPREFIX}dbus>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-dbus
 .if !defined(NOPORTDOCS)
-RUN_DEPENDS+=	${LOCALBASE}/share/doc/py-qt4/pyqt4ref.html:${PORTSDIR}/misc/py-qt4-doc
+RUN_DEPENDS+=	${PKGNAMEPREFIX}doc>=${PYQT4_VERSION}:${PORTSDIR}/misc/py-qt4-doc
 .endif
 .endif
 

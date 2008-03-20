@@ -5,19 +5,19 @@
 # $FreeBSD$
 
 PORTNAME=	designerplugin
-PORTVERSION=	4.3.1
-PORTREVISION=	# zero
-CATEGORIES=	devel python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/ \
-		http://freebsd.ricin.com/ports/distfiles/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
-DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
+PORTVERSION=	${PYQT4_VERSION}
+PORTREVISION=	1
 
-MAINTAINER=	danny@ricin.com
+CATEGORIES=	devel python
+MASTER_SITES=	${MASTER_SITES_PYQT4}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
+DISTNAME=	${PYQT4_DISTNAME}
+
+MAINTAINER=	${PYQT_MAINTAINER}
 COMMENT=	Python bindings for the Qt4 toolkit, QtDesigner plugin
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtDesigner.so:${PORTSDIR}/devel/py-qt4-designer
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
+RUN_DEPENDS=	${PKGNAMEPREFIX}designer>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designer
 
 HAS_CONFIGURE=	yes
 USE_PYTHON=	2.5+
@@ -32,8 +32,10 @@ OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 CONFIGURE_ENV+=	PYQT4_COMPONENT="${PORTNAME}"
 ARGS=		-b ${PREFIX}/bin\
 		-d ${PYTHON_SITELIBDIR}\
-		-q ${QT_PREFIX}/bin/qmake-qt4
+		-q ${QT_PREFIX}/bin/qmake-qt4\
+		--confirm-license
 
+.include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)

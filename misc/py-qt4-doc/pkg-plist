@@ -1,5 +1,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/GPL_EXCEPTION.TXT
+%%PORTDOCS%%%%DOCSDIR%%/GPL_EXCEPTION_ADDENDUM.TXT
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/OPENSOURCE-NOTICE.TXT
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/default.css
@@ -143,6 +147,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qcolor-rgb.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qcolor-saturation.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qcolor-value.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/qcolumnview.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qconicalgradient.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qdesktopwidget.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qerrormessage.png
@@ -284,6 +289,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/images/system-tray.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/taskmenuextension-example-faded.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/tcpstream.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/texttable-merge.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/texttable-split.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/threadsandobjects.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/udppackets.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/whatsthis.png
