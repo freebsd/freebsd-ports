@@ -7,23 +7,21 @@
 
 PORTNAME=	Module-Build
 PORTVERSION=	0.28.08
+PORTREVISION=	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Module/KWILLIAMS
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Build and install Perl modules
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/ExtUtils/CBuilder.pm:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
-		${SITE_PERL}/ExtUtils/ParseXS.pm:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
+
+OPTIONS=	YAML "Use YAML.pm to write META.yml files" off \
+		C "Compile/link C & XS code" off
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes INSTALL README
@@ -33,8 +31,6 @@ post-install:
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
-
-.include <bsd.port.pre.mk>
 
 MAN3=		Module::Build.3 \
 		Module::Build::API.3 \
@@ -63,8 +59,14 @@ MAN3=		Module::Build.3 \
 		Module::Build::YAML.3
 MAN1=		config_data.1
 
-.if ${PERL_LEVEL} < 500805
-RUN_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_YAML)
+RUN_DEPENDS+=	p5-YAML>=0.35:${PORTSDIR}/textproc/p5-YAML
+.endif
+
+.if defined(WITH_C)
+RUN_DEPENDS+=	p5-ExtUtils-CBuilder>=0.15:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 .endif
 
 .include <bsd.port.post.mk>
