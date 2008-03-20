@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	centerim
-PORTVERSION=	4.22.2
+DISTVERSION=	4.22.3-7-g21d2
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.centerim.org/download/releases/ \
-		ftp://ftp.centerim.org/releases/
+MASTER_SITES=	http://www.centerim.org/download/mobshots/ \
+		ftp://ftp.centerim.org/mobshots/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	frank@altpeter.de
 COMMENT=	A text mode menu- and window-driven IM interface
@@ -24,8 +25,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
 CONFIGURE_ARGS=	--with-ssl --with-openssl --disable-konst
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-CONFLICTS=	centericq-[0-9]*
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+CONFLICTS=	centericq-[0-9]* centerim-[0-9]*
 
 OPTIONS=	NLS             "Native Language Support" on \
 		MULTIBYTE       "Multibyte Support" off \
