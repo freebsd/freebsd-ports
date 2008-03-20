@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	ucarp
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/ucarp/
-#		http://download.pureftpd.org/pub/ucarp/
+MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/ucarp/ \
+		http://download.pureftpd.org/pub/ucarp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userlevel Common Address Redundancy Protocol
 
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--disable-nls
 USE_BZIP2=	yes
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-nls
 
 USE_RC_SUBR=	ucarp
 
