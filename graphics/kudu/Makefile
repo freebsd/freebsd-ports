@@ -7,10 +7,9 @@
 
 PORTNAME=	kudu
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A 3D skeletal animation tool, powered by GTK+ and OpenGL
@@ -18,11 +17,9 @@ COMMENT=	A 3D skeletal animation tool, powered by GTK+ and OpenGL
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GL=		yes
-USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
 
 CPPFLAGS+=	-I${X11BASE}/include
 LDFLAGS+=	-L${X11BASE}/lib
