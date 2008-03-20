@@ -5,22 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	qscintilla2
-PORTVERSION=	2.1
+PORTVERSION=	${QSCI2_VERSION}
 PORTREVISION=	# zero
 PORTEPOCH=	1
-CATEGORIES=	devel
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/QScintilla2/ \
-		http://freebsd.ricin.com/ports/distfiles/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
-DISTNAME=	QScintilla-1.73-gpl-${PORTVERSION}
 
-MAINTAINER=	danny@ricin.com
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITES_QSCI2}
+
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
+DISTNAME=	${QSCI2_DISTNAME}
+
+MAINTAINER=	${PYQT_MAINTAINER}
 COMMENT=	Python bindings for QScintilla2 (PyQt4), QSci module
 
-LIB_DEPENDS=	qscintilla2.2:${PORTSDIR}/devel/qscintilla2
-BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip \
-		${PYTHON_SITELIBDIR}/PyQt4/QtCore.so:${PORTSDIR}/devel/py-qt4-core \
-		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+LIB_DEPENDS=	qscintilla2.3:${PORTSDIR}/devel/qscintilla2
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip \
+		${PYTHON_PKGNAMEPREFIX}qt4-core>=${PYQT_VERSION}:${PORTSDIR}/devel/py-qt4-core \
+		${PYTHON_PKGNAMEPREFIX}qt4-gui>=${PYQT_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 HAS_CONFIGURE=	yes
@@ -35,9 +36,11 @@ OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 SIPDIR=		${PREFIX}/share/py-sip
 ARGS=		-p 4 -d ${PYTHON_SITELIBDIR}/PyQt4
 WRKSRC=		${WRKDIR}/${DISTNAME}/Python
-PYVER=		`python -c "import sys; print sys.version[:3]"`
 
+.include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
+
+PYVER!=		${PYTHON_CMD} -c "import sys; print sys.version[:3]"
 
 .if defined(WITH_DEBUG)
 ARGS+=		-u
