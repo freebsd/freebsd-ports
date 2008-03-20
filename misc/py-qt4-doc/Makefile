@@ -5,15 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	doc
-PORTVERSION=	4.3.1
-PORTREVISION=	# zero
-CATEGORIES=	misc devel python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/ \
-		http://freebsd.ricin.com/ports/distfiles/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
-DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
+PORTVERSION=	${PYQT4_VERSION}
+PORTREVISION=	1
 
-MAINTAINER=	danny@ricin.com
+CATEGORIES=	misc devel python
+MASTER_SITES=	${MASTER_SITES_PYQT4}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
+DISTNAME=	${PYQT4_DISTNAME}
+
+MAINTAINER=	${PYQT_MAINTAINER}
 COMMENT=	Python bindings for the Qt4 toolkit, documentation
 
 NO_BUILD=	yes
@@ -25,10 +25,14 @@ do-install:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} &&\
 		${MKDIR} ${DOCSDIR} &&\
-		${INSTALL_DATA} ChangeLog NEWS README THANKS ${DOCSDIR} &&\
+		${INSTALL_DATA} ChangeLog GPL_EXCEPTION.TXT\
+				GPL_EXCEPTION_ADDENDUM.TXT LICENSE NEWS\
+				OPENSOURCE-NOTICE.TXT README THANKS\
+			${DOCSDIR} &&\
 		${CP} -R doc/ ${DOCSDIR}
 .else
 	@${ECHO} "NOPORTDOCS is set -- installing nothing."
 .endif
 
+.include "../../devel/py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.mk>

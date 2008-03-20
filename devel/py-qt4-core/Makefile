@@ -5,18 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	core
-PORTVERSION=	4.3.1
-PORTREVISION=	# zero
-CATEGORIES=	devel python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/ \
-		http://freebsd.ricin.com/ports/distfiles/
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
-DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
+PORTVERSION=	${PYQT4_VERSION}
+PORTREVISION=	1
 
-MAINTAINER=	danny@ricin.com
+CATEGORIES=	devel python
+MASTER_SITES=	${MASTER_SITES_PYQT4}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
+DISTNAME=	${PYQT4_DISTNAME}
+
+MAINTAINER=	${PYQT_MAINTAINER}
 COMMENT=	Python bindings for the Qt4 toolkit, QtCore module
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 HAS_CONFIGURE=	yes
@@ -34,8 +34,10 @@ SIPDIR=		${PREFIX}/share/py-sip
 CONFIGURE_ENV+=	PYQT4_COMPONENT="${PORTNAME}"
 ARGS=		-b ${PREFIX}/bin\
 		-d ${PYTHON_SITELIBDIR}\
-		-q ${QT_PREFIX}/bin/qmake-qt4
+		-q ${QT_PREFIX}/bin/qmake-qt4\
+		--confirm-license
 
+.include "../py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
@@ -46,7 +48,7 @@ ARGS+=		--no-qsci-api
 PLIST_SUB+=	API="@comment "
 PLIST_SUB+=	APIFILE="@comment "
 .else
-LIB_DEPENDS+=	qscintilla2.2:${PORTSDIR}/devel/qscintilla2
+LIB_DEPENDS+=	qscintilla2.3:${PORTSDIR}/devel/qscintilla2
 ARGS+=		--qsci-api
 PLIST_SUB+=	API=""
 PLIST_SUB+=	APIFILE="share/qt4/qsci/api/python/QtCore.api"

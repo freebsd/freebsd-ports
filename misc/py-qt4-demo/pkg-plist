@@ -501,7 +501,7 @@
 @dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/draganddrop
 @dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice/images
 @dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/collidingmice
-@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/images
+@dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot/images/
 @dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview/dragdroprobot
 @dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphicsview
 @dirrm %%PORTEXAMPLES%%%%EXAMPLESDIR%%/itemviews/chart
