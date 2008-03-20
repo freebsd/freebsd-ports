@@ -5,34 +5,50 @@
 # $FreeBSD$
 
 PORTNAME=	pdmenu
-PORTVERSION=	1.2.90
+PORTVERSION=	1.2.93
 CATEGORIES=	misc
-MASTER_SITES=	http://www.powertrip.co.za/distfiles/pdmenu/ \
-				http://dev.powertrip.co.za/distfiles/pdmenu/ \
-				${MASTER_SITE_DEBIAN_POOL}
-DISTNAME=	pdmenu_${PORTVERSION}
+MASTER_SITES=	DEBIAN
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple console menu program
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
-BROKEN=		Does not fetch
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnometarget
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/pdmenu
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	SLANG_H_LOC="${LOCALBASE}/include/slang.h" \
+		SLANG_LIB_LOC="${LOCALBASE}/lib" \
+		LIBS="-lcurses -lintl"
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 MAN1=		pdmenu.1
 MAN5=		pdmenurc.5
+PLIST_FILES=	bin/pdmenu \
+		etc/pdmenurc \
+		share/locale/fr/LC_MESSAGES/pdmenu.mo \
+		%%DATADIR%%/editdir.pl \
+		%%DATADIR%%/showdir.pl
+PLIST_DIRS=	%%DATADIR%%
 
-CC+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/pdmenu ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/examples/pdmenurc ${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/doc/pdmenu.man ${MANPREFIX}/man/man1/pdmenu.1
+	${INSTALL_MAN} ${WRKSRC}/doc/pdmenurc.man ${MAN5PREFIX}/man/man5/pdmenurc.5
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.pl ${DATADIR}
+.for lang in fr
+	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
+		${PREFIX}/share/locale/${lang}/LC_MESSAGES/pdmenu.mo
+.endfor
 
-CONFIGURE_ENV=	SLANG_LIB_LOC='${PREFIX}/lib' \
-		SLANG_H_LOC='${PREFIX}/include/slang.h'
-
-pre-install:
-	${MKDIR} ${PREFIX}/lib/pdmenu
-	${MKDIR} ${PREFIX}/share/pdmenu
+post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/pdmenu
 
 .include <bsd.port.mk>
