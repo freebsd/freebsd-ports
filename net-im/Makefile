@@ -11,6 +11,7 @@
     SUBDIR += ccmsn
     SUBDIR += centericq
     SUBDIR += centerim
+    SUBDIR += centerim-devel
     SUBDIR += cicquin
     SUBDIR += cjc
     SUBDIR += cli-msn
