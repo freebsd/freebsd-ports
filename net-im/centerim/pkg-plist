@@ -21,5 +21,6 @@ bin/cimconv
 %%NLS%%share/locale/ru/LC_MESSAGES/centerim.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/centerim.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/centerim.mo
-%%NLS%%share/locale/zh_TW.Big5/LC_MESSAGES/centerim.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/centerim.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/centerim.mo
 @dirrm %%DATADIR%%

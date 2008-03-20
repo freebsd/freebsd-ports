@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centerim
-PORTVERSION=	4.22.2
+PORTVERSION=	4.22.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/releases/ \
 		ftp://ftp.centerim.org/releases/
@@ -25,7 +25,7 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}"
 CONFIGURE_ARGS=	--with-ssl --with-openssl --disable-konst
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-CONFLICTS=	centericq-[0-9]*
+CONFLICTS=	centericq-[0-9]* centerim-devel-[0-9]*
 
 OPTIONS=	NLS             "Native Language Support" on \
 		MULTIBYTE       "Multibyte Support" off \
