@@ -13,7 +13,7 @@ MASTER_SITES=	http://raaf.atspace.org/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
 
-MAINTAINER=	raaf@zen.mooo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Linux pwc webcam driver ported to FreeBSD
 
 MAN4=		pwc.4
