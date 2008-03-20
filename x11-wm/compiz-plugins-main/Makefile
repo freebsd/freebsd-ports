@@ -11,7 +11,7 @@ PORTVERSION=	0.6.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz-fusion.org/${PORTVERSION}/
 
-MAINTAINER=	rnoland@2hip.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for Compiz Composite Window Manager
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
