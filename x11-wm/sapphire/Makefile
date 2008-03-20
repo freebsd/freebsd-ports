@@ -7,15 +7,16 @@
 
 PORTNAME=	sapphire
 PORTVERSION=	0.15.8
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Small window manager
 
+USE_XORG=	x11 xext
 USE_GMAKE=	yes
 REINPLACE_ARGS=	-i '' -e
-USE_X_PREFIX=	yes
 MAKE_ENV=	CC="${CXX}"
 
 post-extract:
