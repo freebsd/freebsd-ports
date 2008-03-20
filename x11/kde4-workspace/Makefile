@@ -28,7 +28,6 @@ CONFLICTS=	kdeartwork-3.[2-3]* kdelibs-3.[0-4]* kdeutils-3.[0-2]*
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
-USE_GETOPT_LONG=yes
 USE_OPENLDAP=	yes
 USE_OPENSSL=	yes
 

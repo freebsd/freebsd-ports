@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	petef
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK frontend for xset(1)
 
-USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_XPM=	yes

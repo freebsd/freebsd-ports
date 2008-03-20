@@ -19,7 +19,6 @@ COMMENT=	A library for writing custom applets for GNOME Control Center
 USE_BZIP2=	yes
 USE_GNOME=	gnomelibs
 USE_LDCONFIG=	yes
-USE_GETOPT_LONG=yes
 MAKE_ENV=	X11BASE="${LOCALBASE}" LOCALBASE="${LOCALBASE}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>

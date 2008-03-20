@@ -19,7 +19,6 @@ COMMENT=	Small clock which uses libxosd to render text to the root window
 
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
 
-USE_GETOPT_LONG=yes
 USE_GCC=	3.4
 USE_X_PREFIX=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \

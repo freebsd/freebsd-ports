@@ -17,7 +17,6 @@ COMMENT=	A GTK application to let you select a window manager when starting X
 MAN1=		selectwm.1
 
 USE_BZIP2=	yes
-USE_GETOPT_LONG=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig/src
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GETOPT_LONG=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" OBJS="Main.o Graphics.o" \
 		INCDIR="-I. -I${X11BASE}/include ${CPPFLAGS}" \
 		LIBDIR="-L${X11BASE}/lib ${LDFLAGS}"
