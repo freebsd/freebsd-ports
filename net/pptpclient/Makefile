@@ -15,8 +15,6 @@ DISTNAME=		pptp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server
 
-USE_GETOPT_LONG=yes
-
 MAN8=	pptp.8
 
 .include <bsd.port.pre.mk>

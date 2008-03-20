@@ -20,7 +20,6 @@ RUN_DEPENDS=	${MKTEXLSR}:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
-USE_GETOPT_LONG=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 ALL_TARGET=	# empty
 # workaround for svgfonts.c not including kpathsea/c-auto.h

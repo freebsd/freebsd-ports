@@ -18,7 +18,6 @@ COMMENT=	X On-Screen-Display Library and XMMS plug-in
 
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 USE_BZIP2=	yes
-USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

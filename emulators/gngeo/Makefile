@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	NeoGeo emulator
 
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_SDL=	image sdl
 USE_GL=		yes

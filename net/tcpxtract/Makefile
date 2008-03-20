@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nobutaka@freebsd.org
 COMMENT=	A tool for extracting files from network traffic
 
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 MAN1=		tcpxtract.1
 

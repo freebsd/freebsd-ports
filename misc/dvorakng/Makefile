@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Dvorak typing tutor
 
 USE_BZIP2=	yes
-USE_GETOPT_LONG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS} ${CPPFLAGS}" \

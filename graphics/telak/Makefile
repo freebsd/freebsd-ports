@@ -20,7 +20,6 @@ LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
 		gcrypt.15:${PORTSDIR}/security/libgcrypt \
 
 USE_GMAKE=	yes
-USE_GETOPT_LONG=yes
 USE_EFL=	imlib2
 
 ALL_TARGET=	${PORTNAME}

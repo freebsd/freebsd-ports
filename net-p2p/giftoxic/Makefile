@@ -18,7 +18,6 @@ COMMENT=	GTK2 client for giFT
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 
 USE_X_PREFIX=	yes
-USE_GETOPT_LONG=	yes
 USE_GNOME=	gtk20 gnomeprefix gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

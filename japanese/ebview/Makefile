@@ -19,7 +19,6 @@ LIB_DEPENDS=	eb.12:${PORTSDIR}/japanese/eb
 
 CONFLICTS=	ja-ebview-gtk2-*
 
-USE_GETOPT_LONG=	yes
 USE_GNOME=	imlib
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261

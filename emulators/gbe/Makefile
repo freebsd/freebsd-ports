@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator with GNU source code
 
 PLIST_FILES=	bin/gbe
-USE_GETOPT_LONG=yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" \

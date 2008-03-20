@@ -18,7 +18,6 @@ COMMENT=	A simple video encoder
 
 LIB_DEPENDS=	fame-0.9.1:${PORTSDIR}/multimedia/libfame
 
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 

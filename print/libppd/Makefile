@@ -18,7 +18,6 @@ COMMENT=	A library providing routines for ppd files
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	Yes
-USE_GETOPT_LONG=Yes
 USE_GNOME=	glib12
 
 MAN1=		ppdfilt.1

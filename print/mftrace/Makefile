@@ -28,7 +28,6 @@ BUILD_DEPENDS+=	autotrace:${PORTSDIR}/graphics/autotrace
 RUN_DEPENDS+=	autotrace:${PORTSDIR}/graphics/autotrace
 .endif
 
-USE_GETOPT_LONG=yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

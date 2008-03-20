@@ -14,7 +14,6 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A simple TCP session re-engineering tool
 
 USE_BZIP2=	yes
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 MAN1=		tcpreen.1
 

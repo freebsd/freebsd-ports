@@ -14,7 +14,6 @@ MASTER_SITES=	http://it.geocities.com/andreamolteni/prog/goldstr/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compute the golden string
 
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		goldstr.1

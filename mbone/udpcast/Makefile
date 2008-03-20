@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-${RELEASE_DATE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file transfer tool using ethernet's multicast
 
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}

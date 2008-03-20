@@ -25,7 +25,6 @@ LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile \
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget libglade2
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

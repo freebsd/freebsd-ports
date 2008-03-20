@@ -21,7 +21,6 @@ LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 
 USE_AUTOTOOLS=	libtool:15
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

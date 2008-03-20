@@ -66,7 +66,6 @@ CONFLICTS=	vlc-devel-[0-9]*
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
 USE_BZIP2=	yes
-USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes

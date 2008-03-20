@@ -18,7 +18,6 @@ COMMENT=	The Advanced Scientific CALculator
 
 WRKSRC=		${WRKDIR}/Rascal-${PORTVERSION}
 
-USE_GETOPT_LONG=	yes
 USE_BISON=	build
 WANT_GNOME=	yes
 USE_GMAKE=	yes

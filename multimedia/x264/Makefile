@@ -18,7 +18,6 @@ COMMENT?=	Multimedia library and tool for encoding H.264/AVC video streams
 WANT_GNOME=	yes
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
-USE_GETOPT_LONG=yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
 ALL_TARGET=	default

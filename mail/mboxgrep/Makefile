@@ -22,7 +22,6 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 USE_OPENSSL=	yes
-USE_GETOPT_LONG=yes
 
 MAN1=		mboxgrep.1
 INFO=		mboxgrep

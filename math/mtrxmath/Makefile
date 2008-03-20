@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.angelfire.com/linux/linuxjeff/mtrxmath/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small tool for matrix mathemetics
 
-USE_GETOPT_LONG=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PORTDOCS=	README

@@ -18,7 +18,6 @@ COMMENT=	A DirectConnect (www.neo-modus.com) text client for file sharing
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
-USE_GETOPT_LONG=	yes
 USE_GNOME=	glib12
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes

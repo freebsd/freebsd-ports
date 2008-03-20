@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:E}.0
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	A C library to evaluate poker hands
 
-USE_GETOPT_LONG=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MD5SUM=${MD5}

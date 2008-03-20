@@ -16,7 +16,6 @@ COMMENT=	ARP traffic monitoring
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 ALL_TARGET=	${PORTNAME}
-USE_GETOPT_LONG=yes
 CFLAGS+=        -fPIC
 
 MAN8=		arpalert.8

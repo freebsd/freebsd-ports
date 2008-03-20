@@ -16,8 +16,6 @@ COMMENT=	Supports both color and B&W parallel-port Connectix QuickCam for PC
 
 ONLY_FOR_ARCHS=	i386
 
-USE_GETOPT_LONG=	yes
-
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -I. -DFreeBSD ${CPPFLAGS} \
 		-o qcread qcread.c cqc.c -lm ${LDFLAGS}

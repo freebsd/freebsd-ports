@@ -24,7 +24,6 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 USE_BZIP2=	yes
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf:261
-USE_GETOPT_LONG=yes
 
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \

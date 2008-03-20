@@ -13,7 +13,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mycroft@virgaria.org
 COMMENT=	Yaph is a proxy scanner
 
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 
 post-extract:

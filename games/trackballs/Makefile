@@ -22,7 +22,6 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_SDL=	image mixer sdl ttf
 USE_GETTEXT=	yes
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

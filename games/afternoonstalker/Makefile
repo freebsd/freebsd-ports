@@ -18,7 +18,6 @@ LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng \
 		flatzebra-0.1.2:${PORTSDIR}/devel/flatzebra
 
 USE_SDL=	mixer sdl
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

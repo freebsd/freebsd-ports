@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sierra AGI games interpreter
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
 

@@ -27,7 +27,6 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image mixer net
 USE_GCC=	3.2+
-USE_GETOPT_LONG=yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"

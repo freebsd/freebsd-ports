@@ -17,7 +17,6 @@ COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GETOPT_LONG=yes
 
 OPTIONS=	MYSQL "Enable MySQL support." Off \
 		PGSQL "Enable PostgreSQL support." Off \

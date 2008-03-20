@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.linalco.com/ragnar/
 MAINTAINER=	llwang@infor.org
 COMMENT=	An ncurses-based Dvorak typing tutor
 
-USE_GETOPT_LONG=yes
-
 .include <bsd.port.pre.mk>
 
 MAKE_ARGS=	PROF="${CPPFLAGS} ${CFLAGS}" LDFLAGS="${LDFLAGS}"

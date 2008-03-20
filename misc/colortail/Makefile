@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A colour-able replacement for tail(1)
 
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 
 post-install:

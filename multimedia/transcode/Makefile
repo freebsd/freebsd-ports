@@ -24,7 +24,6 @@ BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 USE_BZIP2=	yes
 FAKEDIR=	${WRKDIR}/fake
 PLIST=		${WRKDIR}/plist
-USE_GETOPT_LONG=yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

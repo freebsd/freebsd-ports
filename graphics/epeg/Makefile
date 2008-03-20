@@ -21,7 +21,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget
-USE_GETOPT_LONG=yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

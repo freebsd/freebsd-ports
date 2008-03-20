@@ -16,7 +16,6 @@ MAINTAINER=	erik@smluc.org
 COMMENT=	GNU Triangulated Surface Library
 
 USE_GNOME=	glib20 gnometarget pkgconfig
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes

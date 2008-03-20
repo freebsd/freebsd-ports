@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/-//}
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Adaptive Bayesian Junk Mail Filter
 
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=		yes
 
 MAN1=		annoyance-filter.1

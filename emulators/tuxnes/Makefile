@@ -18,7 +18,6 @@ COMMENT=	A Nintendo Entertainment System 8-bit emulator
 ONLY_FOR_ARCHS=	i386
 
 USE_X_PREFIX=	yes
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

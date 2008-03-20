@@ -18,7 +18,6 @@ COMMENT=	Extremely powerful network monitoring system
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
-USE_GETOPT_LONG=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 USE_AUTOTOOLS=	autoconf:261 libltdl:15

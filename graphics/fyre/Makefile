@@ -22,7 +22,6 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GNOME=	libglade2 desktopfileutils
-USE_GETOPT_LONG=yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

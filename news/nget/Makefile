@@ -20,7 +20,6 @@ MANCOMPRESSED=	no
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-USE_GETOPT_LONG=	yes
 
 .include <bsd.port.pre.mk>
 

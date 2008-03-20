@@ -16,7 +16,6 @@ COMMENT=	A small collection of programs that operate on patch files
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

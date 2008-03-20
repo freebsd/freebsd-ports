@@ -19,7 +19,6 @@ LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_BISON=	build
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"

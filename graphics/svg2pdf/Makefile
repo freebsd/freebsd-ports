@@ -18,7 +18,6 @@ COMMENT=	Render an SVG image to a PDF file (using cairo)
 LIB_DEPENDS=	svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
 USE_GNOME=	gnometarget
 
 MAN1=		svg2pdf.1

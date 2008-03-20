@@ -15,7 +15,6 @@ COMMENT=	A getopt(1) replacement that supports GNU-style long options
 
 USE_GETTEXT=		yes
 USE_GMAKE=		yes
-USE_GETOPT_LONG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl

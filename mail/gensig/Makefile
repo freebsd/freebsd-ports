@@ -18,8 +18,6 @@ COMMENT=	A random .signature generator
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-USE_GETOPT_LONG=	yes
-
 MAN1=		gensig.1 cattag.1
 
 .include <bsd.port.mk>

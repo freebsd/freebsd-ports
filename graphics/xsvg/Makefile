@@ -18,7 +18,6 @@ COMMENT=	X11 SVG viewer
 LIB_DEPENDS=	svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
 USE_XLIB=	yes
 
 PLIST_FILES=	bin/xsvg

@@ -23,7 +23,6 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 USE_AUTOTOOLS=	libltdl:15 libtool:15
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 lthack

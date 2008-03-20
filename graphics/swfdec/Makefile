@@ -19,7 +19,6 @@ LIB_DEPENDS=	 oil-0.3.1:${PORTSDIR}/devel/liboil \
 
 USE_XLIB=	yes
 USE_GNOME=	gnomehack gtk20
-USE_GETOPT_LONG=	yes
 USE_AUTOTOOLS=	libtool:15:env automake:19:env autoconf:261
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

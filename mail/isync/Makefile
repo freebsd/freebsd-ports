@@ -15,7 +15,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Maintain local copies of remote IMAP folders w/synchronized flags
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
 USE_OPENSSL=	yes
 USE_BDB=	42+
 

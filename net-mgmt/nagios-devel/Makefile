@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagio
 
 LATEST_LINK=	nagios-devel
 
-USE_GETOPT_LONG=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 USE_AUTOTOOLS=	autoconf:261 libltdl:15

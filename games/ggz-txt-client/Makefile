@@ -14,7 +14,6 @@ MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	The GGZ Gaming Zone - Console (Text) Frontend
 
 USE_GNOME=	gnometarget
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug

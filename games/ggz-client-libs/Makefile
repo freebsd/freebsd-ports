@@ -17,7 +17,6 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnometarget
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug --with-libggz-dir="${LOCALBASE}"

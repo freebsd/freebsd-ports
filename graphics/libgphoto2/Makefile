@@ -19,7 +19,6 @@ LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb \
 
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget pkgconfig ltverhack
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15 libltdl:15
 LIBTOOLFILES=	configure libgphoto2_port/configure

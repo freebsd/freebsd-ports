@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
 COMMENT=	A free (GPL) encoder and decoder for the yEnc Usenet file format
 
-USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

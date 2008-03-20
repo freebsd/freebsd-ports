@@ -29,7 +29,6 @@ EXTRACT_AFTER_ARGS=	| ${SED} 's/[mM][aA][iI][lL][fF][iI][lL][tT][eE][rR]/filterm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GETOPT_LONG=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

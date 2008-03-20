@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modular math parser
 
 USE_AUTOTOOLS=	libtool:15
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A Cyrus-Imap to Maildir++ conversion utility
 
-USE_GETOPT_LONG=yes
-
 ALL_TARGET=	build
 
 PLIST_FILES=	bin/cyrus2courier
