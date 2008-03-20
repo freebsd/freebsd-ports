@@ -7,11 +7,12 @@
 
 PORTNAME=	gkrellflynn
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://horus.comlab.uni-rostock.de/flynn/
+MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
+		http://horus.comlab.uni-rostock.de/flynn/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A tiny system load meter for gkrellm
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
@@ -19,7 +20,6 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellflynn.so
 USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c -fPIC"
 ALL_TARGET=	${PORTNAME}.so
 
