@@ -14218,6 +14218,7 @@ recordproto	ports/x11/recordproto
 recoverdm	ports/sysutils/recoverdm
 recoverjpeg	ports/graphics/recoverjpeg
 recvnet		ports/net/recvnet
+red5		ports/www/red5
 redet		ports/textproc/redet
 redir		ports/net/redir
 redland		ports/textproc/redland
