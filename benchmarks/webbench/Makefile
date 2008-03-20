@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	apps/www/servers
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple forking web benchmark
 
-USE_GETOPT_LONG=yes
-
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 MAKE_ARGS+=	CFLAGS="${CPPFLAGS} ${CFLAGS}"
 

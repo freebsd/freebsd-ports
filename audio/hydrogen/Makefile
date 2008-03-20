@@ -20,7 +20,6 @@ LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
 USE_QT_VER=	3
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib

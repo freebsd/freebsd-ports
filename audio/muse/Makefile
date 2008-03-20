@@ -19,7 +19,6 @@ COMMENT=	Multiple Streaming Engine
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ogg.5:${PORTSDIR}/audio/libogg
 
-USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes

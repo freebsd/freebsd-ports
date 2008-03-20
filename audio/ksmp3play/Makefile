@@ -19,7 +19,6 @@ COMMENT=	An curses-based MP3 player
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 USE_SDL=	sdl
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 

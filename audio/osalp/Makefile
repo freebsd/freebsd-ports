@@ -18,7 +18,6 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
     		vorbis.4:${PORTSDIR}/audio/libvorbis
 
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CFLAGS+=	-fPIC -DPIC

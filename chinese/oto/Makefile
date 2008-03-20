@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show you font info and add new 'name' and 'cmap' tables
 
 USE_ICONV=	yes
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 CPPFLAGS=	-I${LOCALBASE}/include

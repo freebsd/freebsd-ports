@@ -16,7 +16,6 @@ COMMENT=	Command line id3v2 tag editor
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib
 
-USE_GETOPT_LONG=yes
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT=1
 LDFLAGS=	-L${LOCALBASE}/lib
 CFLAGS+=	${CPPFLAGS}

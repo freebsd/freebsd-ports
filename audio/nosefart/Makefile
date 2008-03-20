@@ -16,7 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-mls
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	A player for NES Sound Format (NSF)
 
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 
 MAKE_ENV=	INSTALL="${INSTALL}" COPY="${COPY}" STRIP="${STRIP}"\

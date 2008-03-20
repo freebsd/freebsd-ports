@@ -15,7 +15,6 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A version of JDK's `jar' command written entirely in C
 
 USE_BZIP2=	yes
-USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes

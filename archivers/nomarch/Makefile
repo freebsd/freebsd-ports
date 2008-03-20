@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	utils/compress
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Extracts files from the old `.arc' archive format
 
-USE_GETOPT_LONG=yes
-
 MAN1=	nomarch.1
 PLIST_FILES=	bin/nomarch
 PORTDOCS=	COPYING ChangeLog NEWS README TODO

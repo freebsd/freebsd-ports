@@ -16,7 +16,6 @@ EXTRACT_SUFX=	.src.tgz
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	A CDDA extraction tool (also known as ripper)
 
-USE_GETOPT_LONG=yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

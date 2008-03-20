@@ -21,7 +21,6 @@ CONFLICTS=	speex-devel-[0-9]*
 USE_GNOME=	gnomehack gnometarget ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg-dir=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -19,7 +19,6 @@ COMMENT=	Amateur Radio Station electronic trusted logbook
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_PERL5=	yes
-USE_GETOPT_LONG=	yes
 USE_WX=		2.6
 USE_LDCONFIG=	yes
 MAKE_ENV=	INCDIR="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

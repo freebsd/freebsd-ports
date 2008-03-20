@@ -14,7 +14,6 @@ MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	Extract Makeself archives
 
 LDFLAGS=	-larchive -lbz2 -lz
-USE_GETOPT_LONG=yes
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/unmakeself
