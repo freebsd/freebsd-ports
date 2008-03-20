@@ -20,7 +20,6 @@ COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk12
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 

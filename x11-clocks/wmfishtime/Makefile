@@ -15,7 +15,6 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A time/date applet for WindowMaker with fishes swimming around
 
-USE_GETOPT_LONG=yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 

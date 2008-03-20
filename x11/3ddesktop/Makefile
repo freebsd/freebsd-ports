@@ -18,7 +18,6 @@ COMMENT=	3D Virtual Desktop Switcher
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 USE_GL=		yes
-USE_GETOPT_LONG=	yes
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

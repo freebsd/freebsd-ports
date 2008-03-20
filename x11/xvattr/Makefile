@@ -17,7 +17,6 @@ COMMENT=	Getting and setting Xv attributes
 
 USE_X_PREFIX=		yes
 USE_PERL5_BUILD=	yes
-USE_GETOPT_LONG=	yes
 USE_GNOME=		gtk12
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

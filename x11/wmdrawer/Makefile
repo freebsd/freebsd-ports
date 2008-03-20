@@ -20,7 +20,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp which provides a drawer to launch applications
 
-USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
 USE_GMAKE=	yes

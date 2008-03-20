@@ -20,7 +20,6 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 PLIST_FILES=	bin/ttmkfdir
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 
 MAKE_ENV=	LDFLAGS="${LDFLAGS}" CXXFLAGS="${CFLAGS}" CXX="${CXX}"

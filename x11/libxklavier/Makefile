@@ -23,7 +23,6 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gnomehack libxml2 glib20
 USE_LDCONFIG=	yes
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-doxygen \

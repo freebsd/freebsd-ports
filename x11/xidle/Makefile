@@ -16,7 +16,6 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Run a program on X inactivity
 
 USE_BZIP2=	yes
-USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 CFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include -D__dead=static
 MAKE_ARGS+=	X11LIBDIR="${X11BASE}/lib" \

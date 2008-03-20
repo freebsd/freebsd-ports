@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual indicator of the states of the three "lock" buttons
 
 PLIST_FILES=	bin/cnslock
-USE_GETOPT_LONG=yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 USE_XPM=	yes

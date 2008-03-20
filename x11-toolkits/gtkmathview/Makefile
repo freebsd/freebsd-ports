@@ -21,7 +21,6 @@ LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
 		popt.0:${PORTSDIR}/devel/popt \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 
-USE_GETOPT_LONG=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	glib20 gtk20 gnomehack

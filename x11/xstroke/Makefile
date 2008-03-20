@@ -17,7 +17,6 @@ COMMENT=	Fullscreen gesture recognition
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-USE_GETOPT_LONG=yes
 USE_BISON=	build
 USE_IMAKE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS}
