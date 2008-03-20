@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	vtun
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 
-LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
+LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2
 
 MAN5=		vtund.conf.5
 MAN8=		vtund.8
 MLINKS=		vtund.8 vtun.8
 
+USE_GNOME=	gnometarget
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-ssl-headers=${OPENSSLBASE}/include/openssl \
 		--with-ssl-lib=${OPENSSLBASE}/lib \
-		--with-lzo-headers=${LOCALBASE}/include \
+		--with-lzo-headers=${LOCALBASE}/include/lzo \
 		--with-lzo-lib=${LOCALBASE}/lib
 CONFIGURE_ENV=	YACC=${YACC}
 USE_RC_SUBR=	vtunclient vtund
@@ -40,6 +41,7 @@ EXTRA_PATCHES=	${FILESDIR}/extra-tun_dev.c
 .endif
 
 post-install:
+	@${STRIP_CMD} ${PREFIX}/sbin/vtund
 	@${INSTALL_DATA} ${WRKSRC}/vtund.conf ${PREFIX}/etc/vtund.conf.example
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
