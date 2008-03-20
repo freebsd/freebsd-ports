@@ -7,9 +7,9 @@
 
 PORTNAME=	drgeo
 PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	ofset
 
 MAINTAINER=	amdmi3@amdmi3.ru
@@ -17,7 +17,6 @@ COMMENT=	A GTK interactive geometry sofware
 
 LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 
-USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libglade2
 USE_GMAKE=	yes
