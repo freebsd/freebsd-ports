@@ -7,7 +7,7 @@
 
 PORTNAME=	amphetamine
 PORTVERSION=	0.8.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://n.ethz.ch/student/loehrerl/amph/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -17,8 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 2D - Jump'n'run shooter
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_SDL=	sdl
 USE_GMAKE=	yes
 
