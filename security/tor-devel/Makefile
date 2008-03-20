@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.0.21-rc
+DISTVERSION=	0.2.0.22-rc
 CATEGORIES=	security net
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://mirror.onionland.org/dist/
@@ -20,8 +20,12 @@ LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+= CPPFLAGS="${CPPFLAGS}"
 
-OPTIONS=	CELLPOOL "memory pool allocator for cells" on \
+OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
+		CELLPOOL "memory pool allocator for cells" on \
+		TCMALLOC "use the tcmalloc memory allocation library" off \
 		THREADS "multi-threading support" on \
 		TRANSPARENT "transparent proxy support" on \
 		VIDALIA "Vidalia graphical Tor controller" off
@@ -36,8 +40,11 @@ MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ENV+=	CPPFLAGS+=-I{LOCALBASE}/include \
-		LDFLAGS+=-L{LOCALBASE}/lib
+.if defined(WITH_BUFFREELISTS)
+CONFIGURE_ARGS+=	--enable-buf-freelists
+.else
+CONFIGURE_ARGS+=	--disable-buf-freelists
+.endif
 
 .if defined(WITH_CELLPOOL)
 CONFIGURE_ARGS+=	--enable-cell-pool
@@ -45,9 +52,14 @@ CONFIGURE_ARGS+=	--enable-cell-pool
 CONFIGURE_ARGS+=	--disable-cell-pool
 .endif
 
+.if defined(WITH_TCMALLOC)
+CONFIGURE_ARGS+=	--with-tcmalloc
+LIB_DEPENDS+=		tcmalloc:${PORTSDIR}/devel/google-perftools
+.endif
+
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
-CONFIGURE_ENV+=	LDFLAGS+={PTHREAD_LIBS}
+CFLAGS+=		${PTHREAD_CFLAGS}
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
@@ -67,13 +79,11 @@ post-patch:
 		${WRKSRC}/contrib/tor-tsocks.conf.sample
 	@${REINPLACE_CMD} -e "s|tor-tsocks.conf|tor-tsocks.conf.sample|g" \
 		${WRKSRC}/contrib/Makefile.in
-#fix typos in configure scripts, undesirable compiler flags, wrong location of in6.h
 	@${FIND} ${WRKSRC} -type f | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E \
 		-e 's|-g -O2||g' \
 		-e 's|-O2||g' \
 		-e 's|-g -O||g' \
-		-e 's|netintet|netinet|g' \
 		-e 's|netinet/in6|netinet6/in6|g'
 
 post-configure:
