@@ -6,30 +6,26 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	3.16.0
-PORTREVISION=	4
+PORTVERSION=	${PYKDE3_VERSION}
+PORTREVISION=	# zero
 PORTEPOCH=	1
+
 CATEGORIES=	x11-toolkits python kde
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyKDE3/ \
-		http://freebsd.ricin.com/ports/distfiles/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITES_PYKDE3} ${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lofi
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyKDE-${PORTVERSION}
+DISTNAME=	${PYKDE3_DISTNAME}
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	PyKDE-${PORTVERSION}-sip-4.7.patch
-PATCH_DIST_STRIP=-p1
-
-MAINTAINER=	danny@ricin.com
+MAINTAINER=	${PYQT_MAINTAINER}
 COMMENT=	Python bindings for KDE3
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip \
-		pyuic:${PORTSDIR}/x11-toolkits/py-qt
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip \
+		${PYTHON_PKGNAMEPREFIX}qt>=${PYQT3_VERSION}:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_KDEBASE_VER=3
 USE_PYTHON=	2.5+
+USE_BZIP2=	yes
 
 OPTIONS=	DEBUG "Enable debugging symbols" off \
 		TRACING "Enable tracing in generated code" off
@@ -40,6 +36,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 ARGS=		-i -k ${LOCALBASE} -v ${DATADIR} -d ${PYTHON_SITELIBDIR}
 
+.include "../../devel/py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
