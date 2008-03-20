@@ -14,8 +14,9 @@ bin/nmzmerge
 bin/rfnmz
 bin/vfnmz
 etc/namazu/mknmzrc-sample
+etc/namazu/mknmzrc-sample.win32
 etc/namazu/namazurc-sample
-@dirrm etc/namazu
+etc/namazu/namazurc-sample.win32
 include/namazu/codeconv.h
 include/namazu/field.h
 include/namazu/hlist.h
@@ -23,6 +24,7 @@ include/namazu/i18n.h
 include/namazu/idxname.h
 include/namazu/l10n-ja.h
 include/namazu/libnamazu.h
+include/namazu/list.h
 include/namazu/parser.h
 include/namazu/query.h
 include/namazu/re.h
@@ -32,28 +34,26 @@ include/namazu/search.h
 include/namazu/util.h
 include/namazu/var.h
 include/namazu/wakati.h
-@dirrm include/namazu
 lib/libnmz.a
 lib/libnmz.la
 lib/libnmz.so
-lib/libnmz.so.7
+lib/libnmz.so.8
 libexec/namazu.cgi
+%%PORTDOCS%%%%DOCSDIR%%/en/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/en/nmz.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tips.html
+%%PORTDOCS%%%%DOCSDIR%%/en/tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/nmz.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/tips.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/namazu.css
+share/locale/de/LC_MESSAGES/namazu.mo
 share/locale/es/LC_MESSAGES/namazu.mo
 share/locale/fr/LC_MESSAGES/namazu.mo
 share/locale/ja/LC_MESSAGES/namazu.mo
 share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
-%%PORTDOCS%%%%DATADIR%%/doc/en/manual.html
-%%PORTDOCS%%%%DATADIR%%/doc/en/nmz.html
-%%PORTDOCS%%%%DATADIR%%/doc/en/tips.html
-%%PORTDOCS%%%%DATADIR%%/doc/en/tutorial.html
-%%PORTDOCS%%@dirrm %%DATADIR%%/doc/en
-%%PORTDOCS%%%%DATADIR%%/doc/ja/manual.html
-%%PORTDOCS%%%%DATADIR%%/doc/ja/nmz.html
-%%PORTDOCS%%%%DATADIR%%/doc/ja/tips.html
-%%PORTDOCS%%%%DATADIR%%/doc/ja/tutorial.html
-%%PORTDOCS%%@dirrm %%DATADIR%%/doc/ja
-%%PORTDOCS%%%%DATADIR%%/doc/namazu.css
-%%PORTDOCS%%@dirrm %%DATADIR%%/doc
+share/locale/pl/LC_MESSAGES/namazu.mo
 %%DATADIR%%/etc/AUTHORS
 %%DATADIR%%/etc/COPYING
 %%DATADIR%%/etc/CREDITS
@@ -70,7 +70,6 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
 %%DATADIR%%/etc/THANKS
 %%DATADIR%%/etc/TODO
 %%DATADIR%%/etc/namazu.png
-@dirrm %%DATADIR%%/etc
 %%DATADIR%%/filter/apachecache.pl
 %%DATADIR%%/filter/bzip2.pl
 %%DATADIR%%/filter/compress.pl
@@ -88,8 +87,8 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
 %%DATADIR%%/filter/man.pl
 %%DATADIR%%/filter/mhonarc.pl
 %%DATADIR%%/filter/mp3.pl
-%%DATADIR%%/filter/msword.pl
 %%DATADIR%%/filter/msofficexml.pl
+%%DATADIR%%/filter/msword.pl
 %%DATADIR%%/filter/ooo.pl
 %%DATADIR%%/filter/pdf.pl
 %%DATADIR%%/filter/pipermail.pl
@@ -104,7 +103,6 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
 %%DATADIR%%/filter/tex.pl
 %%DATADIR%%/filter/visio.pl
 %%DATADIR%%/filter/zip.pl
-@dirrm %%DATADIR%%/filter
 %%DATADIR%%/pl/codeconv.pl
 %%DATADIR%%/pl/conf.pl
 %%DATADIR%%/pl/document.pl
@@ -119,7 +117,6 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
 %%DATADIR%%/pl/util.pl
 %%DATADIR%%/pl/var.pl
 %%DATADIR%%/pl/wakati.pl
-@dirrm %%DATADIR%%/pl
 %%DATADIR%%/template/NMZ.body
 %%DATADIR%%/template/NMZ.body.es
 %%DATADIR%%/template/NMZ.body.fr
@@ -154,10 +151,18 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
 %%DATADIR%%/template/NMZ.tips.fr
 %%DATADIR%%/template/NMZ.tips.ja
 %%DATADIR%%/template/NMZ.tips.pl
-@dirrm %%DATADIR%%/template
-@dirrm %%DATADIR%%
-@dirrmtry share/locale/ja_JP.SJIS/LC_MESSAGES
-@dirrmtry share/locale/ja_JP.SJIS
 @dirrmtry var/namazu/index
 @dirrmtry var/namazu
 @dirrmtry var
+@dirrmtry share/locale/ja_JP.SJIS/LC_MESSAGES
+@dirrmtry share/locale/ja_JP.SJIS
+@dirrm %%DATADIR%%/template
+@dirrm %%DATADIR%%/pl
+@dirrm %%DATADIR%%/filter
+@dirrm %%DATADIR%%/etc
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/namazu
+@dirrm etc/namazu
