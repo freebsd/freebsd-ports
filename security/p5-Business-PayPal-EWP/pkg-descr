@@ -1,1 +1,7 @@
-This module offers an interface to Paypal's encryption scheme.
+This module wraps the sample C++/C# code which PayPal provides for working
+with Encrypted Web Payments. It contains a single function, SignAndEncrypt
+which takes the plaintext form code, private key file, public key file, and
+PayPal's public certificate, and will return the signed and encrypted code
+needed by paypal.
+
+WWW: http://search.cpan.org/dist/Business-PayPal-EWP/

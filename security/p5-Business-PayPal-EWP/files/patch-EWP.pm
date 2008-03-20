@@ -1,5 +1,5 @@
---- lib/Business/PayPal/EWP.pm.old	Thu May 12 10:42:19 2005
-+++ lib/Business/PayPal/EWP.pm	Thu May 12 10:42:39 2005
+--- lib/Business/PayPal/EWP.pm.orig	2007-09-05 07:06:20.000000000 -0700
++++ lib/Business/PayPal/EWP.pm	2008-02-28 22:17:15.000000000 -0800
 @@ -65,6 +65,7 @@
  	goto END;
      }
