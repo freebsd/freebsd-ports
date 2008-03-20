@@ -1,9 +1,9 @@
 #
-# KNOBS - A list of popular knobs and descriptions
+# KNOBS - A list of popular knobs and their descriptions
 #
 # $FreeBSD$
 #
-# Rules to adding knobs:
+# Rules for adding knobs:
 #
 #  - Knob names must be 12 characters or less
 #  - Knob descriptions must be 45 characters or less
@@ -59,7 +59,7 @@ GTK2			Adds Gtk+2 support
 IMAGEMAGICK		ImageMagick graphics support
 IMAP			Adds support for IMAP mail protocol
 IODBC			Use IODBC as the ODBC driver
-IPV6			IPv6 internet support
+IPV6			IPv6 internet protocol support
 ISPELL			Use textproc/ispell for spell checking
 JAVA			Adds support for Java
 KDE			Adds KDE support
