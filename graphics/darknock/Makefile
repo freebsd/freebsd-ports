@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	darknock
-DISTVERSION=	0.2.7
+DISTVERSION=	0.3.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A program that can detect edges in images
