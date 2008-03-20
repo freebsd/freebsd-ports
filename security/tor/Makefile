@@ -7,6 +7,7 @@
 
 PORTNAME=	tor
 PORTVERSION=	0.1.2.19
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://mirror.onionland.org/dist/

@@ -39,7 +39,7 @@ required_files=${tor_conf}
 required_dirs=${tor_datadir}
 pidfile=${tor_pidfile}
 command="%%PREFIX%%/bin/${name}"
-command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir} --User ${tor_user} --Group ${tor_group} --Log \"notice file ${tor_logfile}\""
+command_args="-f ${tor_conf} --PidFile ${tor_pidfile} --RunAsDaemon 1 --DataDirectory ${tor_datadir} --User ${tor_user} --Group ${tor_group} --Log notice\ file\ ${tor_logfile}"
 extra_commands="log"
 log_cmd="${name}_log"
 
