@@ -27,12 +27,6 @@ SUB_FILES=	wings.sh
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(GCC)|${CC} -I${LOCALBASE}/include -L${LOCALBASE}/lib|g' \
 		${WRKSRC}/plugins_src/accel/Makefile
@@ -45,4 +39,4 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/wings.sh ${PREFIX}/bin/wings
 	@${LN} -sf ${DISTNAME} ${PREFIX}/lib/erlang/lib/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
