@@ -31,7 +31,6 @@ CONFIGURE_ARGS+=--enable-debug \
 		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
 		--enable-muscledropdir=${PREFIX}/lib/pcsc/services/ \
 		--enable-threadsafe
-USE_GETOPT_LONG=yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN5=		reader.conf.5

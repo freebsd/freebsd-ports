@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_LDCONFIG=	yes
-USE_GETOPT_LONG=yes
 
 CONFIGURE_ARGS=	--disable-ecore-con \
 		--disable-ecore-config \

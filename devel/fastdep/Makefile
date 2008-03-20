@@ -15,7 +15,6 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Fast dependency generator for C/C++ files
 
 USE_GMAKE=	yes
-USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-local-gnugetopt
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

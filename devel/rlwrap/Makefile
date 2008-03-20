@@ -17,7 +17,6 @@ MASTER_SITE_SUBDIR=	dryice
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Readline wrapper
 
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=		ptyttylib_cv_ptys=BSD LDFLAGS=-lutil

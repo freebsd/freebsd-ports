@@ -76,10 +76,6 @@ CONFIGURE_ARGS+=--with-openssl
 .include <bsd.port.pre.mk>
 
 .if !defined(SLAVE_ONLY)
-# gnugetopt will always be used if already installed
-.  if ( ${OSVERSION} < 500041 ) && !exists(${LOCALBASE}/include/getopt.h)
-OPTIONS+=	GNUGETOPT "Use GNU getopt" on
-.  endif
 # Note: server only options are no-ops for the client
 OPTIONS+=	PAM "Build with PAM support (server only)" off
 OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
@@ -101,10 +97,6 @@ USE_BISON=	build
 
 .  if defined(SERVER_ONLY) && defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
-.  endif
-
-. if !defined(WITHOUT_GNUGETOPT) || exists(${LOCALBASE}/include/getopt.h)
-USE_GETOPT_LONG=yes
 .  endif
 
 .  if !(defined(WITHOUT_GETTEXT) || defined(WITHOUT_NLS))

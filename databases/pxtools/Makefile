@@ -14,7 +14,6 @@ MASTER_SITES=	http://jan.kneschke.de/assets/2007/2/16/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools to work with Paradox databases
 
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 CPPFLAGS=	-I${LOCALBASE}/include

@@ -18,7 +18,6 @@ COMMENT=	Unpack data in MS Outlook TNEF format
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
-USE_GETOPT_LONG=yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

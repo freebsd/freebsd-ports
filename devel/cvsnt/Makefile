@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--enable-fork --enable-rcs \
 		--disable-odbc --disable-postgres\
 		--disable-mysql --disable-sqlite
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GETOPT_LONG=yes
 USE_ICONV=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include"\
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"\

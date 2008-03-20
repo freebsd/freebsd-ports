@@ -17,7 +17,6 @@ COMMENT=	A command line client for posting LiveJournal entries
 MAN1=	clive.1
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
 
 CONFLICTS=	py*-clive-[0-9]*
 

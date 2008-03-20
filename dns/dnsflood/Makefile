@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	DNS flood detector
 
-USE_GETOPT_LONG=	yes
-
 WRKSRC=		${WRKDIR}/dns_flood_detector
 
 PLIST_FILES=	sbin/dns_flood_detector
