@@ -17,7 +17,6 @@ COMMENT=	Commandline client for DAV
 
 LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon
 
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

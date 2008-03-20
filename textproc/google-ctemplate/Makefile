@@ -17,7 +17,6 @@ COMMENT=	A simple but powerful template language for C++
 
 GNU_CONFIGURE=	yes
 USE_GCC=	3.2+
-USE_GETOPT_LONG=	yes
 USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)

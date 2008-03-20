@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	dcfldd
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	An enhanced dd tool with MD5 hashing capability
 
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 MAN1=		dcfldd.1
 

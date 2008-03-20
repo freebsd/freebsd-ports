@@ -16,7 +16,6 @@ COMMENT=	PowerMan is a tool for doing remote power control
 
 USE_BISON=	build
 USE_GMAKE=	yes
-USE_GETOPT_LONG=yes
 USE_RC_SUBR=	yes
 
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" \

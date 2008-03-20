@@ -17,7 +17,6 @@ COMMENT=	Quick & easy monitoring of logfiles and devices
 
 USE_GCC=	3.4+
 USE_GNOME=	gtk12 gnometarget
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

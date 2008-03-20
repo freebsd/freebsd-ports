@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.garloff.de/kurt/linux/ddrescue/
 MAINTAINER=	nobutaka@freebsd.org
 COMMENT=	A dd tool suitable for rescuing data from a medium with errors
 
-USE_GETOPT_LONG=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 

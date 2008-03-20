@@ -17,7 +17,6 @@ COMMENT=	Rename multiple files using regular expressions
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GETOPT_LONG=yes
 
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		rename.1

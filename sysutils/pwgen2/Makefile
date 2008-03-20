@@ -16,7 +16,6 @@ MAINTAINER=	andrey@hm.perm.ru
 COMMENT=	A small, powerful, GPL'ed password generator
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
 USE_PERL5_BUILD=yes
 
 CONFLICTS=	pwgen-1*

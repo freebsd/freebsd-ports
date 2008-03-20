@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.pulia.nu/tss/src/
 MAINTAINER=	peter@pean.org
 COMMENT=	Terminal ScreenSaver that allows you to lock you terminal
 
-USE_GETOPT_LONG=yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-patch:

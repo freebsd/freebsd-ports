@@ -24,7 +24,6 @@ LIB_DEPENDS=	gcrypt.15:${PORTSDIR}/security/libgcrypt \
 
 USE_BZIP2=	yes
 USE_OPENLDAP=	yes
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INFO=		dirmngr

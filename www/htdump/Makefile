@@ -16,7 +16,6 @@ COMMENT=	A tool to retrieve WWW data
 
 OPTIONS=	SSL "SSL support" on
 
-USE_GETOPT_LONG=yes
 CFLAGS+=	${CPPFLAGS}
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LFLAGS="-s ${LDFLAGS}"
 

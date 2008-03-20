@@ -18,8 +18,6 @@ COMMENT=	Converts a well formed csv file to a LaTeX document
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-USE_GETOPT_LONG=	yes
-
 PLIST_FILES=	bin/csv2latex
 
 do-build:

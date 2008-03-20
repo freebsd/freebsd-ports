@@ -21,8 +21,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}		\
 		--sysconfdir=${PREFIX}/etc	\
 		--localstatedir=${DATADIR}
 
-USE_GETOPT_LONG=	yes
-
 MAN1=		quickie-config.1 quickie_prime.1 quickie.1 quickie_svt.1 \
 		quickie_license.1 quickie_post_install.1
 

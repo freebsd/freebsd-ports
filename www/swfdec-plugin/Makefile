@@ -16,7 +16,6 @@ COMMENT=	Flash rendering plugin
 
 LIB_DEPENDS=	swfdec-0.5.5:${PORTSDIR}/graphics/swfdec
 
-USE_GETOPT_LONG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-plugin-dir="${PREFIX}/lib/browser_plugins"
 

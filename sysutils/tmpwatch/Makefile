@@ -17,8 +17,6 @@ COMMENT=	A utility for removing files based on when they were last accessed
 
 EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
-USE_GETOPT_LONG=yes
-
 CFLAGS+=	${CPPFLAGS} -DVERSION=\"${PORTVERSION}\"
 MAN8=		tmpwatch.8
 PLIST_FILES=	sbin/tmpwatch

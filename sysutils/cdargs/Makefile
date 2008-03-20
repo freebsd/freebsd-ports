@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.skamphausen.de/software/cdargs/ \
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Navigate the filesystem using a menu interface or a bookmark system
 
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CFLAGS+=	-DHAVE_DECL_GETOPT

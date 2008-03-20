@@ -24,10 +24,4 @@ PLIST_FILES=	bin/ghasher
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ghasher ${PREFIX}/bin
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500040
-USE_GETOPT_LONG=yes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

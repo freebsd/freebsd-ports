@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	huntting@glarp.com
 COMMENT=	A quantum computer simulator
 
-USE_GETOPT_LONG=yes
-
 do-configure:
 	echo 'PREFIX=${PREFIX}' >>${WRKSRC}/Makefile
 	cd ${WRKSRC} && make dep

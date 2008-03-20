@@ -18,7 +18,6 @@ COMMENT=	Parse ASCII logfiles into ANSI, CSV, HTML formats
 CONFLICTS=	logtool-1.2*
 
 USE_GMAKE=	yes
-USE_GETOPT_LONG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"

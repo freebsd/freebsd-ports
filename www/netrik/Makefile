@@ -19,7 +19,6 @@ COMMENT=	A text web browser, very ambitious, in active development
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_GMAKE=	yes
-USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

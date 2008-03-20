@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.tricknology.org/ports/
 MAINTAINER=	oddbjorn@tricknology.org
 COMMENT=	A simple password generator
 
-USE_GETOPT_LONG=yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-1
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"

@@ -15,7 +15,6 @@ MAINTAINER=	hubert@frbsd.org
 COMMENT=	An SMTP software identifier
 
 MAKE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
-USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	2.95

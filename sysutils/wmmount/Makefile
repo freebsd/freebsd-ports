@@ -16,7 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The freespace for Window Maker
 
-USE_GETOPT_LONG=yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
