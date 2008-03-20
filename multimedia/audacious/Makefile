@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
@@ -80,6 +81,7 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|+= $${LIB_CPPFLAGS} -I..|= -I.. $${LIB_CPPFLAGS}|' \
 		${WRKSRC}/src/libid3tag/Makefile
+	@${REINPLACE_CMD} 's|FMT_FIXED32,|FMT_FIXED32|' ${WRKSRC}/src/audacious/plugin.h
 .if defined(WITH_EXECINFO) || exists(${LOCALBASE}/lib/libexecinfo.so)
 	@${REINPLACE_CMD} 's|-laudclient$$|& -L${LOCALBASE}/lib -lexecinfo|' \
 		${WRKSRC}/src/audacious/Makefile
