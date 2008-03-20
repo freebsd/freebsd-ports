@@ -7,17 +7,17 @@
 
 PORTNAME=	cgoban
 PORTVERSION=	1.9.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	cgoban1
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Internet Go Server client and game editor
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_XORG=	x11 ice sm
 
 MAN6=		cgoban.6
 PLIST_FILES=	bin/cgoban
