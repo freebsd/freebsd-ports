@@ -1,7 +1,0 @@
-bin/pdmenu
-etc/pdmenurc
-share/locale/fr/LC_MESSAGES/pdmenu.mo
-%%DATADIR%%/editdir.pl
-%%DATADIR%%/showdir.pl
-@dirrm %%DATADIR%%
-@dirrm lib/pdmenu
