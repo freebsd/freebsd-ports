@@ -7,6 +7,7 @@
 
 PORTNAME=	ratpoison
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ COMMENT=	Simple window manager with no fat library dependencies
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_X_PREFIX=	yes
+USE_XORG=	xext xinerama xtst  
 GNU_CONFIGURE=	yes
 
 OPTIONS=	GDM_SUPPORT "Install session data files for GDM" off
