@@ -26,7 +26,7 @@ upgrades.
   3. Uninstall your current linux_base port
   4. Unload linux kernel module (kldunload linux.ko)
   5. Set appropriate sysctl (sysctl compat.linux.osrelease=2.6.16)
-  6. Install emulation/linux_base-fc6
+  6. Install emulators/linux_base-fc6
   4  Remount linprocfs (mount /compat/linux/proc)
   5. Add compat.linux.osrelease=2.6.16 to etc/sysctl.conf
 
