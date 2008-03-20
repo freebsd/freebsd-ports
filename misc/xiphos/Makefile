@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomesword
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF
 
@@ -18,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORT
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gal2 gtkhtml3 intlhack gnomedocutils
 USE_GMAKE=	yes
