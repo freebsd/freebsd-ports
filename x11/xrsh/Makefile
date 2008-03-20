@@ -13,7 +13,7 @@ MASTER_SITES=	http://jjd.com/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.shar
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Launcher which starts an X program on a remote machine
 
 USE_IMAKE=	yes
