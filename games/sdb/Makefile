@@ -7,7 +7,7 @@
 
 PORTNAME=	sdb
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://sdb.gamecreation.org/ \
 		http://www.amdmi3.ru/distfiles/
@@ -15,11 +15,9 @@ MASTER_SITES=	http://sdb.gamecreation.org/ \
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Futuristic overhead shooter
 
-USE_X_PREFIX=	yes
 USE_SDL=	mixer image sdl
 USE_GL=		yes
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
