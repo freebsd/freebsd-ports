@@ -6,5 +6,3 @@ libdata/tpasm/avr.inc
 libdata/tpasm/p16c505.inc
 libdata/tpasm/picmacros.inc
 @dirrm libdata/tpasm
-%%PORTDOCS%%%%DOCSDIR%%/MANUAL.TXT
-%%PORTDOCS%%@dirrm share/doc/tpasm
