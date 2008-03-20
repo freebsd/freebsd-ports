@@ -6573,6 +6573,7 @@ libdict		ports/devel/libdict
 libdisasm	ports/devel/libdisasm
 libdjbdns	ports/dns/libdjbdns
 libdlmalloc	ports/devel/libdlmalloc
+libdlna		ports/devel/libdlna
 libdmx		ports/x11/libdmx
 libdnd		ports/x11/libdnd
 libdnet		ports/net/libdnet
