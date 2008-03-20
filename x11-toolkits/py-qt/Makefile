@@ -5,22 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	3.17.3
-PORTREVISION=	# zero
-PORTEPOCH=	1
+PORTVERSION=	${PYQT3_VERSION}
+PORTEPOCH=	2
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt3/GPL/ \
-		http://freebsd.ricin.com/ports/distfiles/
+MASTER_SITES=	${MASTER_SITES_PYQT3}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
+DISTNAME=	${PYQT3_DISTNAME}
 
-MAINTAINER=	danny@ricin.com
+MAINTAINER=	${PYQT_MAINTAINER}
 COMMENT=	Python bindings for the Qt toolkit
 
 LIB_DEPENDS=	qscintilla.7:${PORTSDIR}/x11-toolkits/qscintilla
-BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>=${SIP_VERSION}:${PORTSDIR}/devel/py-sip \
 		qmake:${PORTSDIR}/devel/qmake
-RUN_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
 
 USE_QT_VER=	3
 USE_PYTHON=	2.5+
@@ -38,6 +36,7 @@ ARGS=		-b ${PREFIX}/bin -d ${PYTHON_SITELIBDIR}\
 		-o ${LOCALBASE}/lib -v ${DATADIR}
 MODULES=	qt qtcanvas qtnetwork qttable qtxml qtui qtsql qtext
 
+.include "../../devel/py-sip/files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
