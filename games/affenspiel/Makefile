@@ -7,7 +7,7 @@
 
 PORTNAME=	affenspiel
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/affenspiel/
 
@@ -16,7 +16,8 @@ COMMENT=	Little puzzle game with monkey for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xt
+
 MAKE_ARGS=	CC="${CC}" LIBS="-L${X11BASE}/lib -lX11" \
 		DEBUG="${CFLAGS} -I${X11BASE}/include" \
 		FILE_CONFIG=-DSAVED_GAME_NAME='\"affenspiel.saved\"'
