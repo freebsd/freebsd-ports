@@ -26,7 +26,7 @@ USE_XLIB=	yes
 
 # don't package this for amd64 until we come up with 32-bit ioctl wrappers for
 # the drm.
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 MODULELIST=	i810_dri.so \
 		i915_dri.so \
