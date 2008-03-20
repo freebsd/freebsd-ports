@@ -1,0 +1,7 @@
+include/dlna.h
+lib/libdlna.a
+lib/libdlna.so
+lib/libdlna.so.0
+lib/libdlna.so.0.2.3
+libdata/pkgconfig/libdlna.pc
+@dirrmtry libdata/pkgconfig
