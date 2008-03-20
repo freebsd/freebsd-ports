@@ -7,7 +7,7 @@
 
 PORTNAME=	diameter
 PORTVERSION=	0.4.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	gamediameter
@@ -16,7 +16,7 @@ MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Arcade-style game with elements of economy and adventure
 
 BUILD_DEPENDS=	guichan>=0.7.1:${PORTSDIR}/devel/guichan
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
