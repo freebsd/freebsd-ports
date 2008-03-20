@@ -7,15 +7,13 @@
 
 PORTNAME=	Module-Loaded
 PORTVERSION=	0.01
+PORTREVISION=	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Module
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	Mark modules as loaded or unloaded
-
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 MAN3=	Module::Loaded.3
 
