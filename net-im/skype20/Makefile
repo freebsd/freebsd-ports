@@ -10,7 +10,7 @@
 
 PORTNAME=	skype
 PORTVERSION=	1.4.0.118
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
@@ -31,7 +31,6 @@ USE_GL=	linux
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
-ONLY_FOR_ARCHS=	i386
 
 RESTRICTED=	Redistribution prohibited.
 
