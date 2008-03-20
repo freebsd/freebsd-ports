@@ -3,6 +3,7 @@ bin/parrot
 bin/parrot-config
 bin/pbc_info
 bin/pbc_merge
+bin/pbc_to_exe
 bin/pdb
 bin/pdump
 compilers/imcc/imclexer.c
@@ -68,7 +69,6 @@ include/parrot/memory.h
 include/parrot/misc.h
 include/parrot/mmd.h
 include/parrot/nci.h
-include/parrot/objects.h
 include/parrot/oo.h
 include/parrot/oo_private.h
 include/parrot/op.h
@@ -112,8 +112,10 @@ include/src/string_private_cstring.h
 lib/libparrot.a
 lib/libparrot.so
 lib/libparrot.so.%%SHLIB_VER%%
+lib/parrot/dynext/digest_group.so
 lib/parrot/dynext/dynlexpad.so
 lib/parrot/dynext/libnci_test.so
+lib/parrot/dynext/rational.so
 lib/parrot/dynext/subproxy.so
 lib/parrot/include/call_bits.pasm
 lib/parrot/include/cclass.pasm
@@ -245,6 +247,9 @@ lib/parrot/library/Test/Builder/Test.pir
 lib/parrot/library/Test/Builder/TestPlan.pir
 lib/parrot/library/Test/Builder/Tester.pir
 lib/parrot/library/Test/More.pir
+lib/parrot/library/YAML/Dumper/Base.pir
+lib/parrot/library/YAML/Dumper/Default.pir
+lib/parrot/library/YAML/Dumper.pir
 lib/parrot/library/YAML/Parser/Syck.pir
 lib/parrot/library/config.pbc
 lib/parrot/library/config.pir
@@ -265,6 +270,7 @@ lib/parrot/library/postgres.pasm
 lib/parrot/library/postgres.pir
 lib/parrot/library/random_lib.pir
 lib/parrot/library/tcpstream.pir
+lib/parrot/library/yaml_dumper.pir
 libdata/pkgconfig/parrot.pc
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/RESPONSIBLE_PARTIES
@@ -297,11 +303,9 @@ libdata/pkgconfig/parrot.pc
 %%PARROT_DOCS%%/faq.pod
 %%PARROT_DOCS%%/gettingstarted.pod
 %%PARROT_DOCS%%/glossary.pod
-%%PARROT_DOCS%%/imcc/imcc.pod
+%%PARROT_DOCS%%/imcc/README
 %%PARROT_DOCS%%/imcc/imcfaq.pod
-%%PARROT_DOCS%%/imcc/macros.pod
 %%PARROT_DOCS%%/imcc/operation.pod
-%%PARROT_DOCS%%/imcc/parsing.pod
 %%PARROT_DOCS%%/intro.pod
 %%PARROT_DOCS%%/jit.pod
 %%PARROT_DOCS%%/memory_internals.pod
@@ -328,27 +332,31 @@ libdata/pkgconfig/parrot.pc
 %%PARROT_DOCS%%/parrot.pod
 %%PARROT_DOCS%%/parrotbyte.pod
 %%PARROT_DOCS%%/parrothist.pod
+%%PARROT_DOCS%%/pct/gettingstarted.pod
+%%PARROT_DOCS%%/pct/past_building_blocks.pod
+%%PARROT_DOCS%%/pct/pct_optable_guide.pod
 %%PARROT_DOCS%%/pdds/README
 %%PARROT_DOCS%%/pdds/draft/pdd01_overview.pod
 %%PARROT_DOCS%%/pdds/draft/pdd04_datatypes.pod
 %%PARROT_DOCS%%/pdds/draft/pdd05_opfunc.pod
 %%PARROT_DOCS%%/pdds/draft/pdd06_pasm.pod
 %%PARROT_DOCS%%/pdds/draft/pdd08_keys.pod
-%%PARROT_DOCS%%/pdds/draft/pdd09_gc.pod
 %%PARROT_DOCS%%/pdds/draft/pdd10_embedding.pod
 %%PARROT_DOCS%%/pdds/draft/pdd11_extending.pod
 %%PARROT_DOCS%%/pdds/draft/pdd14_bignum.pod
 %%PARROT_DOCS%%/pdds/draft/pdd16_native_call.pod
-%%PARROT_DOCS%%/pdds/draft/pdd18_security.pod
 %%PARROT_DOCS%%/pdds/draft/pdd19_pir.pod
+%%PARROT_DOCS%%/pdds/draft/pdd28_character_sets.pod
 %%PARROT_DOCS%%/pdds/pdd00_pdd.pod
 %%PARROT_DOCS%%/pdds/pdd03_calling_conventions.pod
 %%PARROT_DOCS%%/pdds/pdd07_codingstd.pod
+%%PARROT_DOCS%%/pdds/pdd09_gc.pod
 %%PARROT_DOCS%%/pdds/pdd13_bytecode.pod
 %%PARROT_DOCS%%/pdds/pdd15_object_metamodel.png
 %%PARROT_DOCS%%/pdds/pdd15_object_metamodel.svg
 %%PARROT_DOCS%%/pdds/pdd15_objects.pod
 %%PARROT_DOCS%%/pdds/pdd17_pmc.pod
+%%PARROT_DOCS%%/pdds/pdd18_security.pod
 %%PARROT_DOCS%%/pdds/pdd20_lexical_vars.pod
 %%PARROT_DOCS%%/pdds/pdd21_namespaces.pod
 %%PARROT_DOCS%%/pdds/pdd22_io.pod
@@ -726,6 +734,7 @@ tools/install/smoke.pl
 @dirrm %%PARROT_DOCS%%/pmc
 @dirrm %%PARROT_DOCS%%/pdds/draft
 @dirrm %%PARROT_DOCS%%/pdds
+@dirrm %%PARROT_DOCS%%/pct
 @dirrm %%PARROT_DOCS%%/ops
 @dirrm %%PARROT_DOCS%%/imcc
 @dirrm %%PARROT_DOCS%%/dev
@@ -734,6 +743,7 @@ tools/install/smoke.pl
 @dirrm %%PARROT_DOCS%%
 @dirrm %%DOCSDIR%%
 @dirrm lib/parrot/library/YAML/Parser
+@dirrm lib/parrot/library/YAML/Dumper
 @dirrm lib/parrot/library/YAML
 @dirrm lib/parrot/library/Test/Builder
 @dirrm lib/parrot/library/Test
@@ -761,6 +771,7 @@ tools/install/smoke.pl
 @dirrm languages/tcl/runtime
 @dirrm languages/tcl
 @dirrm languages/pynie
+@dirrm languages/punie
 @dirrm languages/plumhead/src/common
 @dirrm languages/plumhead/src
 @dirrm languages/plumhead
@@ -769,13 +780,17 @@ tools/install/smoke.pl
 @dirrm languages/ook
 @dirrm languages/m4
 @dirrm languages/lua
+@dirrm languages/lolcode
 @dirrm languages/lisp
 @dirrm languages/ecmascript
+@dirrm languages/forth
 @dirrm languages/dotnet
+@dirrm languages/cardinal
 @dirrm languages/bf
 @dirrm languages/befunge
 @dirrm languages/abc
 @dirrm languages/HQ9PLus
+@dirrm languages/PIR
 @dirrm languages/APL
 @dirrm languages
 @dirrm include/src
