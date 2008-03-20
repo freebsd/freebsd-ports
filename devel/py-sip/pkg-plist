@@ -14,4 +14,4 @@ bin/sip
 %%PYTHON_SITELIBDIR%%/sipdistutils.pyo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/%%DATADIR%%
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%

@@ -5,17 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	4.7.1
+PORTVERSION=	${SIP_VERSION}
 PORTEPOCH=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/ \
-		http://freebsd.ricin.com/ports/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	miwi
+MASTER_SITES=	${MASTER_SITES_SIP} ${MASTER_SITE_LOCAL}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${SIP_DISTNAME}
 
-MAINTAINER=	danny@ricin.com
+MAINTAINER=	${PYQT_MAINTAINER}
 COMMENT=	Python to C and C++ bindings generator
 
 USE_PYTHON=	2.5+
@@ -28,6 +25,7 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 ARGS=		-b ${PREFIX}/bin -d ${PYTHON_SITELIBDIR}\
 		-e ${PYTHON_INCLUDEDIR} -v ${DATADIR}
 
+.include "files/bsd.pyqt.mk"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
