@@ -18,7 +18,6 @@ COMMENT=	Post-it notes for the WindowMaker dock or AfterStep Wharf
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 USE_XPM=	yes
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \

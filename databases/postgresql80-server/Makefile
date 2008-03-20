@@ -76,10 +76,6 @@ CONFIGURE_ARGS+=--with-openssl
 .include <bsd.port.pre.mk>
 
 .if !defined(SLAVE_ONLY)
-# gnugetopt will always be used if already installed
-.  if ( ${OSVERSION} < 500041 ) && !exists(${LOCALBASE}/include/getopt.h)
-OPTIONS+=	GNUGETOPT "Use GNU getopt" on
-.  endif
 OPTIONS+=	PAM "Build with PAM support (server only)" off
 OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
 OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal kerberos support" off
@@ -122,10 +118,6 @@ CONFIGURE_ARGS+=--with-pam
 
 .  if defined(WITH_INTDATE)
 CONFIGURE_ARGS+=--enable-integer-datetimes
-.  endif
-
-. if !defined(WITHOUT_GNUGETOPT) || exists(${LOCALBASE}/include/getopt.h)
-USE_GETOPT_LONG=yes
 .  endif
 
 .  if !(defined(WITHOUT_GETTEXT) || defined(WITHOUT_NLS))

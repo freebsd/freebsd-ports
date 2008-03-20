@@ -19,7 +19,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=	yes
 
 PLIST_FILES=	bin/glade-- bin/glademm-embed
 

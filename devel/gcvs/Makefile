@@ -19,7 +19,6 @@ COMMENT=	High-end interface client for CVS
 BUILD_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-USE_GETOPT_LONG=yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

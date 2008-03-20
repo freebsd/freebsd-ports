@@ -17,7 +17,6 @@ COMMENT=	GTK2-based toolbar, like a smaller GNOME panel
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk20
-USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

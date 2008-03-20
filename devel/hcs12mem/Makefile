@@ -15,7 +15,6 @@ COMMENT=	Software to manipulate EEPROM/FLASH memory
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_GETOPT_LONG=	yes
 MANCOMPRESSED=		no
 
 MAN1=		hcs12mem.1

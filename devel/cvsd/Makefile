@@ -17,7 +17,6 @@ COMMENT=	CVS pserver daemon
 EXTRA_PATCHES=	${FILESDIR}/extra-cvsd-buildroot.in
 
 USE_PERL5=	yes
-USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

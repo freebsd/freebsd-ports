@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_LDCONFIG=	yes
-USE_GETOPT_LONG=yes
 USE_EFL=	ecore
 USE_EFL_ECORE=	con
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_ipc

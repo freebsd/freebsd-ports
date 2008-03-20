@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Internationalized Domain Names command line tool
 
-USE_GETOPT_LONG=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes

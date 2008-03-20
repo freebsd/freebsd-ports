@@ -17,7 +17,6 @@ BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_APACHE=	1.3+
-USE_GETOPT_LONG=yes
 USE_MYSQL=	yes
 
 MYSQLARD_DIR?=	${PREFIX}/www/mysqlard
