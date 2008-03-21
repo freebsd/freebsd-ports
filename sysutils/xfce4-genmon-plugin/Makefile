@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-genmon-plugin
-PORTVERSION=	3.1
-PORTREVISION=	3
+PORTVERSION=	3.2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -21,6 +20,5 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv panel
-USE_XLIB=	yes
 
 .include <bsd.port.mk>
