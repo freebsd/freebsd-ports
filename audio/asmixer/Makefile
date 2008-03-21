@@ -7,7 +7,7 @@
 
 PORTNAME=	asmixer
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asmixer/
 
@@ -17,8 +17,7 @@ COMMENT=	A mixer control for X, and specifically the AfterStep Window Manager
 MAN1=		${PORTNAME}.1x
 PLIST_FILES=	bin/asmixer
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \
 		--with-xpm-includes=${X11BASE} \
