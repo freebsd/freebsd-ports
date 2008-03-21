@@ -7,6 +7,7 @@
 
 PORTNAME=	fluxbox-tenr-styles-pack
 PORTVERSION=	20071215
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/fluxthemes/
 DISTNAME=	tenr.de-styles-${PORTVERSION}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 INSTALL_DIR=	${PREFIX}/share/fluxbox/styles/
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/tenr.de-styles-pkg

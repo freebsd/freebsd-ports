@@ -7,6 +7,7 @@
 
 PORTNAME=	thunar-volman
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DIST_SUBDIR=	xfce4
@@ -23,6 +24,5 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libexo thunar
-USE_XLIB=	yes
 
 .include <bsd.port.mk>

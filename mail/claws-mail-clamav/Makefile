@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -20,7 +20,7 @@ RUN_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
 LIB_DEPENDS=	clamav.3:${PORTSDIR}/security/clamav
 
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_AUTOTOOLS=	autoconf:261
 
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \

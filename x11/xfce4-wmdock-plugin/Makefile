@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-wmdock-plugin
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://www.ibh.de/~ellguth/develop/
 
@@ -20,7 +21,6 @@ INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig libwnck
 USE_XFCE=	configenv libgui panel
-USE_XLIB=	yes
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

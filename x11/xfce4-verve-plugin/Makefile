@@ -7,7 +7,7 @@
 
 PORTNAME=	verve-plugin
 PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 PKGNAMEPREFIX=	xfce4-
@@ -22,7 +22,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv panel libexo libutil
-USE_XLIB=	yes
 
 RUN_DEPENDES=	dbus-daemon:${PORTSDIR}/devel/dbus
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
