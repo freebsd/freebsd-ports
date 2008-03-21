@@ -1,7 +1,5 @@
 bin/notecase
 share/applications/notecase.desktop
-%%PORTDOCS%%%%DOCSDIR%%/help.ncd
-%%PORTDOCS%%%%DOCSDIR%%/license.txt
 share/locale/ar/LC_MESSAGES/notecase.mo
 share/locale/ca/LC_MESSAGES/notecase.mo
 share/locale/cs/LC_MESSAGES/notecase.mo
@@ -21,7 +19,6 @@ share/locale/ja/LC_MESSAGES/notecase.mo
 share/locale/ko/LC_MESSAGES/notecase.mo
 share/locale/ms/LC_MESSAGES/notecase.mo
 share/locale/nl/LC_MESSAGES/notecase.mo
-share/locale/nn/LC_MESSAGES/notecase.mo
 share/locale/no/LC_MESSAGES/notecase.mo
 share/locale/pl/LC_MESSAGES/notecase.mo
 share/locale/pt/LC_MESSAGES/notecase.mo
@@ -46,5 +43,4 @@ share/pixmaps/notecase.xpm
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
