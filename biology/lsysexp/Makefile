@@ -7,7 +7,7 @@
 
 PORTNAME=	lsysexp
 PORTVERSION=	0.67
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	biology
 MASTER_SITES=	http://coscorrosa.com/programs/${PORTNAME}/download/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -17,7 +17,6 @@ COMMENT=	A GTK based program for viewing and creating L-system fractals
 
 WRKSRC=		${WRKDIR}/lsysexp-0.67
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
