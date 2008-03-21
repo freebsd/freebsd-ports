@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-xmms-plugin
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -21,7 +21,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pango pkgconfig
 USE_XFCE=	configenv libgui libutil panel
-USE_XLIB=	yes
 
 OPTIONS=	XMMS		"Enable xmms support"			on \
 		BEEP		"Enable beep-media-player support" 	off \

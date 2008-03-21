@@ -7,15 +7,16 @@
 
 PORTNAME=	transset-df
 PORTVERSION=	6
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://forchheimer.se/transset-df/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Make your windows transparent
 
-USE_X_PREFIX=	yes
 ALL_TARGET=	transset-df
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
+USE_XORG=	x11 xfixes xcomposite xrender xdamage
 
 PLIST_FILES=	bin/transset-df
 

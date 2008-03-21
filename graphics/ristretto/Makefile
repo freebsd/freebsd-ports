@@ -7,6 +7,7 @@
 
 PORTNAME=	ristretto
 PORTVERSION=	0.0.17
+PORTREVISION=	1
 CATEGORIES=	graphics xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 
@@ -21,6 +22,5 @@ USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_XFCE=	configenv libutil thunar
-USE_XLIB=	yes
 
 .include <bsd.port.mk>

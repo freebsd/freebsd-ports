@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-places-plugin
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -21,6 +21,5 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv panel thunar
-USE_XLIB=	yes
 
 .include <bsd.port.mk>
