@@ -7,7 +7,7 @@
 
 PORTNAME=	thunar-media-tags-plugin
 PORTVERSION=	0.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -24,7 +24,6 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget gnomehack gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libexo thunar
-USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	gmpc-lastfm
 PORTVERSION=	0.15.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION}/plugins/
 
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPEND=	gmpc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GNOME=	gnomehack
 
 .include <bsd.port.mk>
