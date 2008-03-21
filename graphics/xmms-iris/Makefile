@@ -7,7 +7,7 @@
 
 PORTNAME=	iris
 PORTVERSION=	0.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://cdelfosse.free.fr/xmms-iris/
 PKGNAMEPREFIX=	xmms-
@@ -24,7 +24,6 @@ PLIST_FILES=	lib/xmms/Visualization/libiris.so
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_GL=		yes
-USE_X_PREFIX=	yes
 USE_LDCONFIG=	yes
 
 post-patch:

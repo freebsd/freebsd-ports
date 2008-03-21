@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-jess
 PORTVERSION=	2.9.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://arquier.free.fr/
 DISTNAME=	JESS-${PORTVERSION}
@@ -22,7 +22,6 @@ USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/xmms/Visualization/libjess.so lib/xmms/Visualization/libjess.la
 USE_GNOME=	glib12
-USE_X_PREFIX=	yes
 USE_LDCONFIG=	yes
 
 post-patch:
