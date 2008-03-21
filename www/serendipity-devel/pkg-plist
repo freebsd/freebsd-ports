@@ -501,9 +501,11 @@
 %%SERENDIPITY%%/include/admin/importers/bmachine.inc.php
 %%SERENDIPITY%%/include/admin/importers/geeklog.inc.php
 %%SERENDIPITY%%/include/admin/importers/generic.inc.php
+%%SERENDIPITY%%/include/admin/importers/lifetype.inc.php
 %%SERENDIPITY%%/include/admin/importers/livejournal.inc.php
 %%SERENDIPITY%%/include/admin/importers/movabletype.inc.php
 %%SERENDIPITY%%/include/admin/importers/nucleus.inc.php
+%%SERENDIPITY%%/include/admin/importers/nuke.inc.php
 %%SERENDIPITY%%/include/admin/importers/phpbb.inc.php
 %%SERENDIPITY%%/include/admin/importers/pivot.inc.php
 %%SERENDIPITY%%/include/admin/importers/pmachine.inc.php
@@ -526,6 +528,8 @@
 %%SERENDIPITY%%/include/db/pdo-postgres.inc.php
 %%SERENDIPITY%%/include/db/postgres.inc.php
 %%SERENDIPITY%%/include/db/sqlite.inc.php
+%%SERENDIPITY%%/include/db/sqlite3.inc.php
+%%SERENDIPITY%%/include/db/sqlrelay.inc.php
 %%SERENDIPITY%%/include/functions.inc.php
 %%SERENDIPITY%%/include/functions_calendars.inc.php
 %%SERENDIPITY%%/include/functions_comments.inc.php
@@ -624,6 +628,9 @@
 %%SERENDIPITY%%/lang/serendipity_lang_tw.inc.php
 %%SERENDIPITY%%/lang/serendipity_lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_fr.inc.php
@@ -634,6 +641,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_bbcode/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_es.inc.php
@@ -647,6 +657,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_bbcode/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_bbcode/serendipity_event_bbcode.php
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_fr.inc.php
@@ -657,6 +670,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/lang_es.inc.php
@@ -670,6 +686,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/pngbehavior.htc
 %%SERENDIPITY%%/plugins/serendipity_event_browsercompatibility/serendipity_event_browsercompatibility.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_fr.inc.php
@@ -679,6 +698,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_es.inc.php
@@ -689,7 +711,10 @@
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_contentrewrite/serendipity_event_contentrewrite.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/ChangeLog
 %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_fr.inc.php
@@ -700,6 +725,8 @@
 %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_es.inc.php
@@ -712,6 +739,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_creativecommons/serendipity_event_creativecommons.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_da.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_es.inc.php
@@ -725,6 +755,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_da.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_en.inc.php
@@ -740,6 +773,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_emoticate/serendipity_event_emoticate.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_fr.inc.php
@@ -751,6 +787,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_tr.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_es.inc.php
@@ -763,7 +802,11 @@
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_tr.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/serendipity_event_entryproperties.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/ChangeLog
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_fr.inc.php
@@ -771,9 +814,28 @@
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_ko.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_ru.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8/lang_zh.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/diamonds-yellow-green-lg.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/diamonds-yellow-green-md.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/diamonds-yellow-green-sm.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/stars-def-green-yellow-lg.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/stars-def-green-yellow-md.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/stars-def-green-yellow-sm.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/stars-def-red-yellow-lg.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/stars-def-red-yellow-md.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/stars-def-red-yellow-sm.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/stars-def-yellow-green-lg.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/stars-def-yellow-green-md.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/stars-def-yellow-green-sm.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/stars-def-yellow-red-lg.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/stars-def-yellow-red-md.png
+%%SERENDIPITY%%/plugins/serendipity_event_karma/img/stars-def-yellow-red-sm.png
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_es.inc.php
@@ -783,10 +845,14 @@
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_ko.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_pl.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_pt_PT.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_karma/lang_ru.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_karma/serendipity_event_karma.php
 %%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_fr.inc.php
@@ -798,6 +864,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_livesearch/lang_es.inc.php
@@ -812,6 +881,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_livesearch/serendipity_event_livesearch.js
 %%SERENDIPITY%%/plugins/serendipity_event_livesearch/serendipity_event_livesearch.php
 %%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_fr.inc.php
@@ -822,6 +894,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_mailer/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_es.inc.php
@@ -834,6 +909,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_mailer/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_mailer/serendipity_event_mailer.php
 %%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_fr.inc.php
@@ -844,6 +922,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_nl2br/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_es.inc.php
@@ -856,6 +937,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_nl2br/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_nl2br/serendipity_event_nl2br.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_da.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_es.inc.php
@@ -869,6 +953,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_da.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_en.inc.php
@@ -884,6 +971,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_s9ymarkup/serendipity_event_s9ymarkup.php
 %%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_fr.inc.php
@@ -893,6 +983,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_searchhighlight/lang_es.inc.php
@@ -906,6 +999,8 @@
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/36daysago.ttf
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/36daysago.txt
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_da.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/UTF-8/lang_es.inc.php
@@ -950,6 +1045,8 @@
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/chumbly.ttf
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/chumbly.txt
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_da.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_en.inc.php
@@ -965,6 +1062,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spamblock/serendipity_event_spamblock.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_fr.inc.php
@@ -975,6 +1075,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spartacus/UTF-8/lang_zh.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_spartacus/lang_es.inc.php
@@ -989,10 +1092,13 @@
 %%SERENDIPITY%%/plugins/serendipity_event_spartacus/serendipity_event_spartacus.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/ChangeLog
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_cs.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_hu.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_ja.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_ko.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_nl.inc.php
@@ -1002,11 +1108,14 @@
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/green.png
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_cs.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_fr.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_hu.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_ja.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_ko.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/lang_nl.inc.php
@@ -1019,6 +1128,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/serendipity_plugin_statistics.php
 %%SERENDIPITY%%/plugins/serendipity_event_statistics/yellow.png
 %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_fr.inc.php
@@ -1029,6 +1141,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_es.inc.php
@@ -1041,6 +1156,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_templatechooser/serendipity_event_templatechooser.php
 %%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_fr.inc.php
@@ -1050,7 +1168,11 @@
 %%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textile/UTF-8/lang_zh.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/classTextile.php
 %%SERENDIPITY%%/plugins/serendipity_event_textile/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textile/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textile/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textile/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textile/lang_es.inc.php
@@ -1064,6 +1186,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_textile/serendipity_event_textile.php
 %%SERENDIPITY%%/plugins/serendipity_event_textile/textile.php
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_fr.inc.php
@@ -1074,6 +1199,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_es.inc.php
@@ -1085,6 +1213,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_textwiki/serendipity_event_textwiki.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_fr.inc.php
@@ -1094,6 +1225,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/UTF-8/lang_zh.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_es.inc.php
@@ -1105,6 +1239,10 @@
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_trackexits/serendipity_event_trackexits.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_fr.inc.php
@@ -1114,6 +1252,10 @@
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/UTF-8/lang_zh.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/lang_es.inc.php
@@ -1130,6 +1272,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/servicesdb_ja.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_weblogping/servicesdb_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_fr.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_ja.inc.php
@@ -1139,6 +1284,9 @@
 %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/lang_es.inc.php
@@ -1152,6 +1300,8 @@
 %%SERENDIPITY%%/plugins/serendipity_event_xhtmlcleanup/serendipity_event_xhtmlcleanup.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_bg.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_fr.inc.php
@@ -1165,6 +1315,8 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_comments/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_bg.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_comments/lang_es.inc.php
@@ -1180,6 +1332,8 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_comments/serendipity_plugin_comments.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_bg.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_fr.inc.php
@@ -1191,6 +1345,8 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_bg.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_es.inc.php
@@ -1203,6 +1359,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_creativecommons/serendipity_plugin_creativecommons.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_da.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_es.inc.php
@@ -1215,6 +1374,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_tr.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_da.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_en.inc.php
@@ -1229,6 +1391,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_entrylinks/serendipity_plugin_entrylinks.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_fr.inc.php
@@ -1239,6 +1404,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_es.inc.php
@@ -1251,6 +1419,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_eventwrapper/serendipity_plugin_eventwrapper.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_fr.inc.php
@@ -1261,6 +1432,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_history/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_es.inc.php
@@ -1273,6 +1447,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_history/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_history/serendipity_plugin_history.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_fr.inc.php
@@ -1285,6 +1462,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_tr.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_es.inc.php
@@ -1299,6 +1479,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_tr.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_recententries/serendipity_plugin_recententries.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_fr.inc.php
@@ -1308,6 +1491,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/UTF-8/lang_zh.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_es.inc.php
@@ -1319,6 +1505,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_remoterss/serendipity_plugin_remoterss.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_fr.inc.php
@@ -1328,6 +1517,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_pt_PT.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/UTF-8/lang_zh.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_es.inc.php
@@ -1340,6 +1532,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_shoutbox/serendipity_plugin_shoutbox.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_es.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_fr.inc.php
@@ -1350,6 +1545,9 @@
 %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_tn.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/UTF-8/lang_zh.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_bg.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_cn.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_cs.inc.php
+%%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_cz.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_de.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_en.inc.php
 %%SERENDIPITY%%/plugins/serendipity_plugin_templatedropdown/lang_es.inc.php
@@ -1442,15 +1640,114 @@
 %%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_mysql.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_postgres.sql
 %%SERENDIPITY%%/sql/db_update_1.2-alpha2_1.1-alpha3_sqlite.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_mysql.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_postgres.sql
+%%SERENDIPITY%%/sql/db_update_1.2-alpha3_1.2_alpha4_sqlite.sql
 %%SERENDIPITY%%/templates/HOWTO
 %%SERENDIPITY%%/templates/blue/htmlarea.css
-%%SERENDIPITY%%/templates/blue/img/back.png
-%%SERENDIPITY%%/templates/blue/img/down.png
-%%SERENDIPITY%%/templates/blue/img/forward.png
-%%SERENDIPITY%%/templates/blue/img/up.png
 %%SERENDIPITY%%/templates/blue/info.txt
 %%SERENDIPITY%%/templates/blue/preview.png
+%%SERENDIPITY%%/templates/blue/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/blue/style.css
+%%SERENDIPITY%%/templates/bulletproof/UTF-8/lang_bg.inc.php
+%%SERENDIPITY%%/templates/bulletproof/UTF-8/lang_cs.inc.php
+%%SERENDIPITY%%/templates/bulletproof/UTF-8/lang_cz.inc.php
+%%SERENDIPITY%%/templates/bulletproof/UTF-8/lang_de.inc.php
+%%SERENDIPITY%%/templates/bulletproof/UTF-8/lang_en.inc.php
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_adminframe.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_banner.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_banner_fluid.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_default.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_default_a.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_default_h.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_frontpage.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_frontpage_a.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_frontpage_h.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_logout.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_logout_a.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_logout_h.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_personal.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_personal_a.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_personal_h.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_weblog.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_weblog_a.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_button_weblog_h.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_footer.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_infopane.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_infopane_fluid.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_prettybutton.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_admin.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_appearance.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_body.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_default.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_entries.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_foot.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_further.png
+%%SERENDIPITY%%/templates/bulletproof/admin/img/bp_admin_sidebar_media.png
+%%SERENDIPITY%%/templates/bulletproof/admin/style.css
+%%SERENDIPITY%%/templates/bulletproof/admin/style_fluid.css
+%%SERENDIPITY%%/templates/bulletproof/base.css
+%%SERENDIPITY%%/templates/bulletproof/blank_style.css
+%%SERENDIPITY%%/templates/bulletproof/blue_style.css
+%%SERENDIPITY%%/templates/bulletproof/commentform.tpl
+%%SERENDIPITY%%/templates/bulletproof/commentpopup.tpl
+%%SERENDIPITY%%/templates/bulletproof/comments.tpl
+%%SERENDIPITY%%/templates/bulletproof/config.inc.php
+%%SERENDIPITY%%/templates/bulletproof/content.tpl
+%%SERENDIPITY%%/templates/bulletproof/entries.tpl
+%%SERENDIPITY%%/templates/bulletproof/entries_archives.tpl
+%%SERENDIPITY%%/templates/bulletproof/entries_summary.tpl
+%%SERENDIPITY%%/templates/bulletproof/green_style.css
+%%SERENDIPITY%%/templates/bulletproof/ie5.css
+%%SERENDIPITY%%/templates/bulletproof/ie6.css
+%%SERENDIPITY%%/templates/bulletproof/ie7.css
+%%SERENDIPITY%%/templates/bulletproof/img/back.png
+%%SERENDIPITY%%/templates/bulletproof/img/blank.png
+%%SERENDIPITY%%/templates/bulletproof/img/blue_back.png
+%%SERENDIPITY%%/templates/bulletproof/img/blue_forward.png
+%%SERENDIPITY%%/templates/bulletproof/img/blue_graph_bar.png
+%%SERENDIPITY%%/templates/bulletproof/img/blue_header.jpg
+%%SERENDIPITY%%/templates/bulletproof/img/blue_xml.png
+%%SERENDIPITY%%/templates/bulletproof/img/bulletproof_button.png
+%%SERENDIPITY%%/templates/bulletproof/img/forward.png
+%%SERENDIPITY%%/templates/bulletproof/img/graph_bar_horisontal.png
+%%SERENDIPITY%%/templates/bulletproof/img/green_back.png
+%%SERENDIPITY%%/templates/bulletproof/img/green_closequote.png
+%%SERENDIPITY%%/templates/bulletproof/img/green_forward.png
+%%SERENDIPITY%%/templates/bulletproof/img/green_graph_bar.png
+%%SERENDIPITY%%/templates/bulletproof/img/green_openquote.png
+%%SERENDIPITY%%/templates/bulletproof/img/green_xml.png
+%%SERENDIPITY%%/templates/bulletproof/img/purple_back.png
+%%SERENDIPITY%%/templates/bulletproof/img/purple_body.jpg
+%%SERENDIPITY%%/templates/bulletproof/img/purple_forward.png
+%%SERENDIPITY%%/templates/bulletproof/img/purple_graph_bar.png
+%%SERENDIPITY%%/templates/bulletproof/img/purple_header.jpg
+%%SERENDIPITY%%/templates/bulletproof/img/purple_nav.png
+%%SERENDIPITY%%/templates/bulletproof/img/purple_xml.png
+%%SERENDIPITY%%/templates/bulletproof/img/quicksearch.png
+%%SERENDIPITY%%/templates/bulletproof/img/s9y_banner_small.png
+%%SERENDIPITY%%/templates/bulletproof/img/xml.gif
+%%SERENDIPITY%%/templates/bulletproof/index.tpl
+%%SERENDIPITY%%/templates/bulletproof/info.txt
+%%SERENDIPITY%%/templates/bulletproof/js/p7_eqCols2_10.js
+%%SERENDIPITY%%/templates/bulletproof/lang_bg.inc.php
+%%SERENDIPITY%%/templates/bulletproof/lang_cs.inc.php
+%%SERENDIPITY%%/templates/bulletproof/lang_cz.inc.php
+%%SERENDIPITY%%/templates/bulletproof/lang_de.inc.php
+%%SERENDIPITY%%/templates/bulletproof/lang_en.inc.php
+%%SERENDIPITY%%/templates/bulletproof/plugin_calendar.tpl
+%%SERENDIPITY%%/templates/bulletproof/plugin_contactform.tpl
+%%SERENDIPITY%%/templates/bulletproof/plugin_dynamicform.tpl
+%%SERENDIPITY%%/templates/bulletproof/plugin_staticpage.tpl
+%%SERENDIPITY%%/templates/bulletproof/plugin_staticpage_aboutpage.tpl
+%%SERENDIPITY%%/templates/bulletproof/plugin_staticpage_searchresults.tpl
+%%SERENDIPITY%%/templates/bulletproof/preview.png
+%%SERENDIPITY%%/templates/bulletproof/preview_fullsize.jpg
+%%SERENDIPITY%%/templates/bulletproof/preview_iframe.tpl
+%%SERENDIPITY%%/templates/bulletproof/print.css
+%%SERENDIPITY%%/templates/bulletproof/purple_style.css
+%%SERENDIPITY%%/templates/bulletproof/sidebar.tpl
+%%SERENDIPITY%%/templates/bulletproof/style.css
 %%SERENDIPITY%%/templates/carl_contest/admin/img/background.png
 %%SERENDIPITY%%/templates/carl_contest/admin/img/button_background.png
 %%SERENDIPITY%%/templates/carl_contest/admin/img/infobar_background.png
@@ -1471,6 +1768,7 @@
 %%SERENDIPITY%%/templates/carl_contest/info.txt
 %%SERENDIPITY%%/templates/carl_contest/plugin_calendar.tpl
 %%SERENDIPITY%%/templates/carl_contest/preview.png
+%%SERENDIPITY%%/templates/carl_contest/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/carl_contest/screenshot.png
 %%SERENDIPITY%%/templates/carl_contest/style.css
 %%SERENDIPITY%%/templates/competition/admin/img/background.jpg
@@ -1491,13 +1789,11 @@
 %%SERENDIPITY%%/templates/competition/index.tpl
 %%SERENDIPITY%%/templates/competition/info.txt
 %%SERENDIPITY%%/templates/competition/preview.png
+%%SERENDIPITY%%/templates/competition/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/competition/style.css
 %%SERENDIPITY%%/templates/contest/admin/img/Thumbs.db
 %%SERENDIPITY%%/templates/contest/admin/img/button_background.png
-%%SERENDIPITY%%/templates/contest/admin/img/header_bar.png
-%%SERENDIPITY%%/templates/contest/admin/img/header_logo.png
 %%SERENDIPITY%%/templates/contest/admin/img/menuheader_background.png
-%%SERENDIPITY%%/templates/contest/admin/img/sidebar_left.jpg
 %%SERENDIPITY%%/templates/contest/admin/style.css
 %%SERENDIPITY%%/templates/contest/content.tpl
 %%SERENDIPITY%%/templates/contest/entries.tpl
@@ -1516,6 +1812,7 @@
 %%SERENDIPITY%%/templates/contest/info.txt
 %%SERENDIPITY%%/templates/contest/plugin_calendar.tpl
 %%SERENDIPITY%%/templates/contest/preview.png
+%%SERENDIPITY%%/templates/contest/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/contest/style.css
 %%SERENDIPITY%%/templates/default-php/IMPORTANT-TODO
 %%SERENDIPITY%%/templates/default-php/commentform.tpl
@@ -1556,6 +1853,7 @@
 %%SERENDIPITY%%/templates/default-rtl/info.txt
 %%SERENDIPITY%%/templates/default-rtl/plugin_calendar.tpl
 %%SERENDIPITY%%/templates/default-rtl/preview.png
+%%SERENDIPITY%%/templates/default-rtl/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/default-rtl/style.css
 %%SERENDIPITY%%/templates/default-xml/index.tpl
 %%SERENDIPITY%%/templates/default-xml/info.txt
@@ -1564,7 +1862,12 @@
 %%SERENDIPITY%%/templates/default/YahooUI/treeview/YAHOO.js
 %%SERENDIPITY%%/templates/default/YahooUI/treeview/license.txt
 %%SERENDIPITY%%/templates/default/YahooUI/treeview/treeview.js
+%%SERENDIPITY%%/templates/default/admin/category_selector.js
+%%SERENDIPITY%%/templates/default/admin/entries.tpl
 %%SERENDIPITY%%/templates/default/admin/img/accept.png
+%%SERENDIPITY%%/templates/default/admin/img/admin_msg_error.png
+%%SERENDIPITY%%/templates/default/admin/img/admin_msg_note.png
+%%SERENDIPITY%%/templates/default/admin/img/admin_msg_success.png
 %%SERENDIPITY%%/templates/default/admin/img/background.jpg
 %%SERENDIPITY%%/templates/default/admin/img/banner_background.png
 %%SERENDIPITY%%/templates/default/admin/img/big_delete.png
@@ -1608,6 +1911,7 @@
 %%SERENDIPITY%%/templates/default/admin/img/user_editor.png
 %%SERENDIPITY%%/templates/default/admin/img/zoom.png
 %%SERENDIPITY%%/templates/default/admin/imgedit.css
+%%SERENDIPITY%%/templates/default/admin/index.tpl
 %%SERENDIPITY%%/templates/default/admin/media_choose.tpl
 %%SERENDIPITY%%/templates/default/admin/media_imgedit.tpl
 %%SERENDIPITY%%/templates/default/admin/media_imgedit_done.tpl
@@ -1671,6 +1975,7 @@
 %%SERENDIPITY%%/templates/default/plugin_calendar.tpl
 %%SERENDIPITY%%/templates/default/plugin_categories.tpl
 %%SERENDIPITY%%/templates/default/preview.png
+%%SERENDIPITY%%/templates/default/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/default/preview_iframe.tpl
 %%SERENDIPITY%%/templates/default/sidebar.tpl
 %%SERENDIPITY%%/templates/default/style.css
@@ -1695,6 +2000,7 @@
 %%SERENDIPITY%%/templates/idea/img/quote.gif
 %%SERENDIPITY%%/templates/idea/info.txt
 %%SERENDIPITY%%/templates/idea/preview.png
+%%SERENDIPITY%%/templates/idea/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/idea/style.css
 %%SERENDIPITY%%/templates/kubrick/comments.tpl
 %%SERENDIPITY%%/templates/kubrick/config.inc.php
@@ -1706,16 +2012,13 @@
 %%SERENDIPITY%%/templates/kubrick/images/kubrickheader.jpg
 %%SERENDIPITY%%/templates/kubrick/images/kubricklogo.jpg
 %%SERENDIPITY%%/templates/kubrick/images/kubrickportrait.png
-%%SERENDIPITY%%/templates/kubrick/img/back.png
-%%SERENDIPITY%%/templates/kubrick/img/down.png
-%%SERENDIPITY%%/templates/kubrick/img/forward.png
-%%SERENDIPITY%%/templates/kubrick/img/up.png
 %%SERENDIPITY%%/templates/kubrick/index.tpl
 %%SERENDIPITY%%/templates/kubrick/info.txt
 %%SERENDIPITY%%/templates/kubrick/lang_de.inc.php
 %%SERENDIPITY%%/templates/kubrick/lang_en.inc.php
 %%SERENDIPITY%%/templates/kubrick/lang_ko.inc.php
 %%SERENDIPITY%%/templates/kubrick/preview.png
+%%SERENDIPITY%%/templates/kubrick/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/kubrick/sidebar.tpl
 %%SERENDIPITY%%/templates/kubrick/style.css
 %%SERENDIPITY%%/templates/kubrick/trackbacks.tpl
@@ -1727,29 +2030,27 @@
 %%SERENDIPITY%%/templates/moz-modern/index.tpl
 %%SERENDIPITY%%/templates/moz-modern/info.txt
 %%SERENDIPITY%%/templates/moz-modern/preview.png
+%%SERENDIPITY%%/templates/moz-modern/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/moz-modern/style.css
 %%SERENDIPITY%%/templates/mt-clean/info.txt
 %%SERENDIPITY%%/templates/mt-clean/preview.png
+%%SERENDIPITY%%/templates/mt-clean/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-clean/style.css
 %%SERENDIPITY%%/templates/mt-georgiablue/info.txt
 %%SERENDIPITY%%/templates/mt-georgiablue/preview.png
+%%SERENDIPITY%%/templates/mt-georgiablue/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-georgiablue/style.css
-%%SERENDIPITY%%/templates/mt-gettysburg/img/back.png
-%%SERENDIPITY%%/templates/mt-gettysburg/img/down.png
-%%SERENDIPITY%%/templates/mt-gettysburg/img/forward.png
-%%SERENDIPITY%%/templates/mt-gettysburg/img/up.png
 %%SERENDIPITY%%/templates/mt-gettysburg/info.txt
 %%SERENDIPITY%%/templates/mt-gettysburg/preview.png
+%%SERENDIPITY%%/templates/mt-gettysburg/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-gettysburg/style.css
 %%SERENDIPITY%%/templates/mt-plainjane/info.txt
 %%SERENDIPITY%%/templates/mt-plainjane/preview.png
+%%SERENDIPITY%%/templates/mt-plainjane/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-plainjane/style.css
-%%SERENDIPITY%%/templates/mt-rusty/img/back.png
-%%SERENDIPITY%%/templates/mt-rusty/img/down.png
-%%SERENDIPITY%%/templates/mt-rusty/img/forward.png
-%%SERENDIPITY%%/templates/mt-rusty/img/up.png
 %%SERENDIPITY%%/templates/mt-rusty/info.txt
 %%SERENDIPITY%%/templates/mt-rusty/preview.png
+%%SERENDIPITY%%/templates/mt-rusty/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-rusty/style.css
 %%SERENDIPITY%%/templates/mt-stormy/inactive.txt
 %%SERENDIPITY%%/templates/mt-stormy/info.txt
@@ -1759,22 +2060,23 @@
 %%SERENDIPITY%%/templates/mt-trendy/img/forward.png
 %%SERENDIPITY%%/templates/mt-trendy/info.txt
 %%SERENDIPITY%%/templates/mt-trendy/preview.png
+%%SERENDIPITY%%/templates/mt-trendy/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt-trendy/style.css
-%%SERENDIPITY%%/templates/mt3-chalkboard/img/back.png
-%%SERENDIPITY%%/templates/mt3-chalkboard/img/down.png
-%%SERENDIPITY%%/templates/mt3-chalkboard/img/forward.png
-%%SERENDIPITY%%/templates/mt3-chalkboard/img/up.png
 %%SERENDIPITY%%/templates/mt3-chalkboard/info.txt
 %%SERENDIPITY%%/templates/mt3-chalkboard/preview.png
+%%SERENDIPITY%%/templates/mt3-chalkboard/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt3-chalkboard/style.css
 %%SERENDIPITY%%/templates/mt3-gettysburg/info.txt
 %%SERENDIPITY%%/templates/mt3-gettysburg/preview.png
+%%SERENDIPITY%%/templates/mt3-gettysburg/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt3-gettysburg/style.css
 %%SERENDIPITY%%/templates/mt3-independence/info.txt
 %%SERENDIPITY%%/templates/mt3-independence/preview.png
+%%SERENDIPITY%%/templates/mt3-independence/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt3-independence/style.css
 %%SERENDIPITY%%/templates/mt3-squash/info.txt
 %%SERENDIPITY%%/templates/mt3-squash/preview.png
+%%SERENDIPITY%%/templates/mt3-squash/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/mt3-squash/style.css
 %%SERENDIPITY%%/templates/newspaper/htmlarea.css
 %%SERENDIPITY%%/templates/newspaper/img/shadowb.png
@@ -1785,6 +2087,7 @@
 %%SERENDIPITY%%/templates/newspaper/info.txt
 %%SERENDIPITY%%/templates/newspaper/layout.php
 %%SERENDIPITY%%/templates/newspaper/preview.png
+%%SERENDIPITY%%/templates/newspaper/preview_fullsize.jpg
 %%SERENDIPITY%%/templates/newspaper/style.css
 %%SERENDIPITY%%/templates/wp/atom.css
 %%SERENDIPITY%%/templates/wp/commentform.tpl
@@ -1793,7 +2096,6 @@
 %%SERENDIPITY%%/templates/wp/entries.tpl
 %%SERENDIPITY%%/templates/wp/entries_archives.tpl
 %%SERENDIPITY%%/templates/wp/entries_summary.tpl
-%%SERENDIPITY%%/templates/wp/htmlarea.css
 %%SERENDIPITY%%/templates/wp/index.tpl
 %%SERENDIPITY%%/templates/wp/info.txt
 %%SERENDIPITY%%/templates/wp/plugin_calendar.tpl
@@ -1801,13 +2103,16 @@
 %%SERENDIPITY%%/templates/wp/trackbacks.tpl
 %%SERENDIPITY%%/templates/wp/wp-layout.css
 %%SERENDIPITY%%/templates_c/.empty
-%%SERENDIPITY%%/tests/gui/README
-%%SERENDIPITY%%/tests/gui/SerendipityTestSuite.php
-%%SERENDIPITY%%/tests/gui/TestConfiguration.php.dist
+%%SERENDIPITY%%/tests/FrontendTest.php
+%%SERENDIPITY%%/tests/README
+%%SERENDIPITY%%/tests/config.xml.dist
+%%SERENDIPITY%%/tests/coverage/append.php
+%%SERENDIPITY%%/tests/coverage/phpunit_coverage.php
+%%SERENDIPITY%%/tests/coverage/prepend.php
 %%SERENDIPITY%%/uploads/.empty
 %%SERENDIPITY%%/wfwcomment.php
 @dirrm %%SERENDIPITY%%/uploads
-@dirrm %%SERENDIPITY%%/tests/gui
+@dirrm %%SERENDIPITY%%/tests/coverage
 @dirrm %%SERENDIPITY%%/tests
 @dirrm %%SERENDIPITY%%/templates_c
 @dirrm %%SERENDIPITY%%/templates/wp
@@ -1861,6 +2166,12 @@
 @dirrm %%SERENDIPITY%%/templates/carl_contest/admin/img
 @dirrm %%SERENDIPITY%%/templates/carl_contest/admin
 @dirrm %%SERENDIPITY%%/templates/carl_contest
+@dirrm %%SERENDIPITY%%/templates/bulletproof/js
+@dirrm %%SERENDIPITY%%/templates/bulletproof/img
+@dirrm %%SERENDIPITY%%/templates/bulletproof/admin/img
+@dirrm %%SERENDIPITY%%/templates/bulletproof/admin
+@dirrm %%SERENDIPITY%%/templates/bulletproof/UTF-8
+@dirrm %%SERENDIPITY%%/templates/bulletproof
 @dirrm %%SERENDIPITY%%/templates/blue/img
 @dirrm %%SERENDIPITY%%/templates/blue
 @dirrm %%SERENDIPITY%%/templates
@@ -1911,6 +2222,7 @@
 @dirrm %%SERENDIPITY%%/plugins/serendipity_event_mailer
 @dirrm %%SERENDIPITY%%/plugins/serendipity_event_livesearch/UTF-8
 @dirrm %%SERENDIPITY%%/plugins/serendipity_event_livesearch
+@dirrm %%SERENDIPITY%%/plugins/serendipity_event_karma/img
 @dirrm %%SERENDIPITY%%/plugins/serendipity_event_karma/UTF-8
 @dirrm %%SERENDIPITY%%/plugins/serendipity_event_karma
 @dirrm %%SERENDIPITY%%/plugins/serendipity_event_entryproperties/UTF-8
