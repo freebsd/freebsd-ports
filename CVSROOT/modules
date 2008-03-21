@@ -13059,6 +13059,7 @@ postgresql-libpgeasy	ports/databases/postgresql-libpgeasy
 postgresql-libpq++	ports/databases/postgresql-libpq++
 postgresql-libpqxx	ports/databases/postgresql-libpqxx
 postgresql-odbc	ports/databases/postgresql-odbc
+postgresql-pllua	ports/databases/postgresql-pllua
 postgresql-plproxy	ports/databases/postgresql-plproxy
 postgresql-plpython	ports/databases/postgresql-plpython
 postgresql-plruby	ports/databases/postgresql-plruby
