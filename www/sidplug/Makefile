@@ -7,7 +7,7 @@
 
 PORTNAME=	sidplug
 PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,6 @@ COMMENT=	A Commodore 64 psid audio plugin for Mozilla or Opera
 
 RUN_DEPENDS=	xsidplay:${PORTSDIR}/audio/xsidplay
 
-USE_X_PREFIX=	yes
 MAKE_ARGS=	CC="${CC}" OPTIMIZER="${CFLAGS} -I${X11BASE}/include"
 
 .include <bsd.port.pre.mk>
