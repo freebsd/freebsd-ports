@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-nebulus
 PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://nebulus.tuxfamily.org/
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 PLIST_FILES=	lib/xmms/Visualization/libnebulus.so
 USE_SDL=	sdl
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12
 USE_BZIP2=	yes

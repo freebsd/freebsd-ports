@@ -7,9 +7,9 @@
 
 PORTNAME=	xmms-paranormal
 PORTVERSION=	0.2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	paranormal
 DISTNAME=	paranormal-${PORTVERSION:S/.p/pre/}
 
@@ -28,7 +28,6 @@ USE_SDL=	sdl
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig

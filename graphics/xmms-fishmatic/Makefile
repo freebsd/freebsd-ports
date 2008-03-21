@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-fishmatic
 PORTVERSION=	0.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://stukach.com/hosted/
 DISTNAME=	fishmatic
@@ -20,7 +20,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 PLIST_FILES=	lib/xmms/Visualization/libfishmatic.so
-USE_X_PREFIX=   yes
 USE_GNOME=      gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes

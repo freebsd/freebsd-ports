@@ -7,7 +7,7 @@
 
 PORTNAME=	reallyslick
 PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rss-glx
@@ -18,7 +18,6 @@ COMMENT=	OpenGL screensaver collection
 
 LIB_DEPENDS=	Wand.10:${PORTSDIR}/graphics/ImageMagick
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
