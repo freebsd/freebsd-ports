@@ -7,7 +7,7 @@
 
 PORTNAME=	cursor-dmz-theme
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://jimmac.musichall.cz/zip/
 DISTNAME=	vanilla-dmz-${PORTVERSION}
@@ -17,7 +17,6 @@ COMMENT=	The DMZ style neutral scalable cursor theme
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}
 
