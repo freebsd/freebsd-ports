@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	eyed3
-PORTVERSION=	0.6.14
+PORTVERSION=	0.6.15
 CATEGORIES=	audio python
-MASTER_SITES=	http://eyed3.nicfit.net/releases/
+MASTER_SITES=	http://eyed3.nicfit.net/releases/ \
+		http://depot.fsck.ch/mirror/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	eyeD3-${PORTVERSION}
 
