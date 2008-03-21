@@ -1,30 +1,3 @@
-Index: scp2/source/ooo/file_library_ooo.scp
-===================================================================
-RCS file: /cvs/installation/scp2/source/ooo/file_library_ooo.scp,v
-retrieving revision 1.269
-diff -u -r1.269 file_library_ooo.scp
---- scp2/source/ooo/file_library_ooo.scp	12 Dec 2007 13:29:11 -0000	1.269
-+++ scp2/source/ooo/file_library_ooo.scp	6 Jan 2008 04:19:50 -0000
-@@ -979,7 +979,7 @@
- 
- STD_UNO_LIB_FILE_PATCH( gid_File_Lib_Fwm , fwm)
- 
--#if ! (defined (FREEBSD) || defined (NETBSD) || defined(MACOSX) || defined(SYSTEM_STDLIBS) || defined(WNT))
-+#if ! (defined (NETBSD) || defined(MACOSX) || defined(SYSTEM_STDLIBS) || defined(WNT))
- #if defined( _gcc3 )
- 
- File gid_File_Lib_Gcc
-@@ -993,7 +993,7 @@
- 
- #endif
- 
--#if ! (defined (FREEBSD) || defined (NETBSD) || defined(MACOSX) || defined(SYSTEM_STDLIBS) || defined(WNT))
-+#if ! (defined (NETBSD) || defined(MACOSX) || defined(SYSTEM_STDLIBS) || defined(WNT))
- #if defined( _gcc3 )
- 
- File gid_File_Lib_Stdc
-
-
 -----------------
 Strange behaviour of stock gcc of FreeBSD 7.
 
@@ -67,3 +40,24 @@ diff -u -r1.5 makefile.mk
  .ENDIF 
  .ENDIF 
  
+--- scp2/source/ooo/ure.scp	18 Mar 2008 13:35:26 -0000	1.2
++++ scp2/source/ooo/ure.scp	21 Mar 2008 09:26:48 -0000
+@@ -728,7 +730,7 @@
+ End
+ #endif
+ 
+-#if defined _gcc3 && !(defined FREEBSD || defined NETBSD \
++#if defined _gcc3 && !(defined NETBSD \
+ 	|| defined MACOSX || defined SYSTEM_STDLIBS || defined(WNT))
+ File gid_File_Dl_GccS
+     TXT_FILE_BODY;
+@@ -739,7 +741,7 @@
+ End
+ #endif
+ 
+-#if defined _gcc3 && !(defined FREEBSD || defined NETBSD \
++#if defined _gcc3 && !(defined NETBSD \
+ 	|| defined MACOSX || defined SYSTEM_STDLIBS || defined(WNT))
+ File gid_File_Dl_Stdcpp
+     Dir = SCP2_URE_DL_DIR;
+
