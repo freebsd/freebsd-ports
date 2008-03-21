@@ -33,3 +33,15 @@ Index: qemu/vl.c
      if (strstart(filename, "/dev/", NULL)) {
          return qemu_chr_open_tty(filename);
      } else
+@@ -8423,6 +8423,11 @@
+     nb_nics = 0;
+     /* default mac address of the first network interface */
+ 
++#ifdef __FreeBSD__
++    if (modfind("aio") == -1)
++        fprintf(stderr, "warning: aio not (kld)loaded, may cause `Invalid system call' traps on disk IO\n");
++#endif
++
+     optind = 1;
+     for(;;) {
+         if (optind >= argc)
