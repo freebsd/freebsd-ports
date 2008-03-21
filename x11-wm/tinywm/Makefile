@@ -7,7 +7,7 @@
 
 PORTNAME=	tinywm
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://incise.org/files/dev/
 EXTRACT_SUFX=	.tgz
@@ -15,9 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Ridiculously tiny window manager
 
-USE_X_PREFIX=	yes
-
 PLIST_FILES=	bin/tinywm
+USE_XORG=	x11
 PORTDOCS=	README
 
 post-patch:

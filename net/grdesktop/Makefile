@@ -7,7 +7,7 @@
 
 PORTNAME=	grdesktop
 PORTVERSION=	0.23
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,6 @@ COMMENT=	GNOME frontend for the remote desktop client (rdesktop)
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gnomeprefix gnomehack
