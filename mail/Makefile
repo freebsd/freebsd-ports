@@ -48,7 +48,6 @@
     SUBDIR += claws-mail-clamav
     SUBDIR += claws-mail-fetchinfo
     SUBDIR += claws-mail-gtkhtml2_viewer
-    SUBDIR += claws-mail-maildir
     SUBDIR += claws-mail-mailmbox
     SUBDIR += claws-mail-newmail
     SUBDIR += claws-mail-notification
