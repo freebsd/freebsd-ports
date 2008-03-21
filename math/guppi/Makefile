@@ -7,7 +7,7 @@
 
 PORTNAME=	guppi
 PORTVERSION=	0.40.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/Guppi/0.40
@@ -19,7 +19,6 @@ COMMENT=	A plotting program for GNOME
 LIB_DEPENDS=	guile.18:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs bonobo libglade gal gnometarget
 USE_PYTHON=	yes

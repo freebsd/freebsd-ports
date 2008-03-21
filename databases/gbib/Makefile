@@ -7,7 +7,7 @@
 
 PORTNAME=	gbib
 PORTVERSION=	0.1.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases editors gnome
 MASTER_SITES=	ftp://ftp.seul.org/pub/gbib/src/ \
 		http://www.unixpages.org/distfiles/
@@ -20,7 +20,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Editor/browser for BibTeX bibliographic databases
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomelibs
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

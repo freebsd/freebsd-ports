@@ -7,7 +7,7 @@
 
 PORTNAME=	gfaim
 PORTVERSION=	0.30
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	french
 MASTER_SITES=	http://freeperso.free.fr/ \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
@@ -16,7 +16,6 @@ MASTER_SITES=	http://freeperso.free.fr/ \
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Gfaim est un logiciel de recherche de recettes de cuisine
 
-USE_XLIB=	yes
 USE_GNOME=	gtk12
 
 DATADIR?=	${PREFIX}/lib/gfaim
