@@ -1,0 +1,13 @@
+--- Makefile.orig	2008-02-27 11:29:32.000000000 +0900
++++ Makefile	2008-02-27 11:30:16.000000000 +0900
+@@ -4,8 +4,8 @@
+ # Lua specific
+ 
+ # General
+-LUAINC =
+-LUALIB = -llua
++LUAINC = -I%LUA_INC%
++LUALIB = -L%LUA_LIB% -llua
+ 
+ # Debian/Ubuntu
+ #LUAINC = -I/usr/include/lua5.1
