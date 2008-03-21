@@ -8,7 +8,7 @@
 
 PORTNAME=	gkrellmqst
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net games
 MASTER_SITES=	http://tadpol.org/projects/archives/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -23,7 +23,6 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 
 PLIST_FILES=	libexec/gkrellm/plugins/qst.so
 WRKSRC=		${WRKDIR}/${PORTNAME:S/mq/m_q/}
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"

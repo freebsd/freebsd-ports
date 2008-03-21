@@ -7,6 +7,7 @@
 
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	materm
@@ -16,8 +17,7 @@ MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Development version of mrxvt
 
 CONFLICTS=	mrxvt-0.4.*
-
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
 MAN1=		mrxvt.1

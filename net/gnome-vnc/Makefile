@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-vnc
 PORTVERSION=	0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 
@@ -16,7 +16,6 @@ COMMENT=	A GNOME/gtk viewer for VNC servers
 
 PLIST_FILES=	bin/gnome-vnc-viewer
 USE_GNOME=	gnomelibs
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

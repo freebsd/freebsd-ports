@@ -7,6 +7,7 @@
 
 PORTNAME=	gajim
 PORTVERSION=	20080309
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -22,7 +23,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	2.4+
-USE_XLIB=	yes
 
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I ${X11BASE}/include" \
 		LDFLAGS="-L ${LOCALBASE}/lib" PYTHON=${PYTHON_CMD}

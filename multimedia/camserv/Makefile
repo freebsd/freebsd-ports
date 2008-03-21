@@ -7,7 +7,7 @@
 
 PORTNAME=	camserv
 PORTVERSION=	0.5.1
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -22,7 +22,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 ONLY_FOR_ARCHS=	i386 alpha
 
-USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:261 libtool:15 libltdl:15
 USE_EFL=	imlib2
 

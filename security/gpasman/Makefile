@@ -7,7 +7,7 @@
 
 PORTNAME=	gpasman
 PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://gpasman.sourceforge.net/files/
 
@@ -16,7 +16,6 @@ COMMENT=	A password manager that stores password information encrypted
 
 PLIST_FILES=	bin/gpasman
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}"

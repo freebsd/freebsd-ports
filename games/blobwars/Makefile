@@ -7,7 +7,7 @@
 
 PORTNAME=	blobwars
 DISTVERSION=	1.04-1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=distfiles
@@ -18,7 +18,6 @@ COMMENT=	You are the fearless Blob agent, Bob
 MAKEFILE=	makefile
 MAKE_ENV=	CXX="${CXX}"
 
-USE_X_PREFIX=	yes
 USE_SDL=	sdl image mixer ttf
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/blobwars-1.04

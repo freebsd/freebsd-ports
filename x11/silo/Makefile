@@ -7,7 +7,7 @@
 
 PORTNAME=	silo
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://doublef.nm.ru/silo/sources/
 
@@ -15,9 +15,7 @@ MAINTAINER=	doublef@tele-kom.ru
 COMMENT=	A simple X11 launcher extensible in any programming language
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
-USE_XPM=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	xpm x11
 
 pre-everything::
 .if defined(WITHOUT_IMLIB)

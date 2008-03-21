@@ -7,6 +7,7 @@
 
 PORTNAME=	ftree
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	misc linux
 MASTER_SITES=	http://www.vjet.demon.co.uk/ftree/ \
 		http://www.unknown.nu/ports/
@@ -18,7 +19,6 @@ COMMENT=	An X11 genealogy program
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
 NO_CDROM=	Non-commercial use only
 RESTRICTED=	Non-commercial use only
 

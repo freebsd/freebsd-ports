@@ -7,7 +7,7 @@
 
 PORTNAME=	xpuyopuyo
 PORTVERSION=	0.9.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xpuyopuyo/
 
@@ -15,8 +15,7 @@ MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A puzzle game, somewhat like Tetris
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_AUTOTOOLS=	autoconf:213
 USE_GNOME=	gtk12
 WANT_GNOME=	yes

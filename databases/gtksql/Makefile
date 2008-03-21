@@ -7,7 +7,7 @@
 
 PORTNAME=	gtksql
 PORTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	http://membres.lycos.fr/bbrox/GtkSQL/
 
@@ -18,7 +18,6 @@ COMMENT=	Graphical query tool for PostgreSQL and/or MySQL
 WITH_MYSQL=	yes
 .endif
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 
 .include <bsd.port.pre.mk>
