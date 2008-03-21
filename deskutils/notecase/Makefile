@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	notecase
-PORTVERSION=	1.5.8
+PORTVERSION=	1.8.1
 CATEGORIES=	deskutils textproc
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	A hierarchical text notes manager
 
 USE_GMAKE=	yes
@@ -21,6 +21,7 @@ USE_GETTEXT=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if !defined(NOPORTDOCS)
+PORTDOCS=	help.ncd license.txt
 INSTALL_TARGET=	install docinstall
 .endif
 
@@ -32,6 +33,8 @@ BROKEN=		Does not compile
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|prefix=/usr|prefix=${PREFIX}|' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|docsdir=|docsdir=${DOCSDIR}|' \
 		${WRKSRC}/Makefile
 
 post-install:
