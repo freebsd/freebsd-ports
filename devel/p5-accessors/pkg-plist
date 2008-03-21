@@ -1,0 +1,6 @@
+%%SITE_PERL%%/accessors.pm
+%%SITE_PERL%%/accessors/chained.pm
+%%SITE_PERL%%/accessors/classic.pm
+%%SITE_PERL%%/accessors/ro.pm
+%%SITE_PERL%%/accessors/rw.pm
+@dirrmtry %%SITE_PERL%%/accessors
