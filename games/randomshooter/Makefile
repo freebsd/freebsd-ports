@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	randomshooter
-DISTVERSION=	0.1-1
+DISTVERSION=	0.3-1
 CATEGORIES=	games
 # original url: http://parallelrealities.co.uk/download.php?proj=randomShooter&file=${DISTNAME}&type=zip
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/
-DISTNAME=	RandomShooter-${DISTVERSION}
+DISTNAME=	randomshooter-${DISTVERSION}
 
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A simple shoot'em up with online scoring and replays
@@ -18,16 +18,15 @@ COMMENT=	A simple shoot'em up with online scoring and replays
 USE_GMAKE=	yes
 USE_SDL=	sdl mixer image ttf net
 
-WRKSRC=		${WRKDIR}/RandomShooter
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-1$$//}
 PORTDOCS=	*
 
 MAKEFILE=	makefile
-MAKE_ENV=	CXX="${CXX}"
-CXXFLAGS+=	-DINSTALL_DIR=\\\"${DATADIR}/\\\"
+MAKE_ENV=	CXX="${CXX}" DATADIR=${DATADIR}/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.for dir in font gfx music
+.for dir in font gfx help music
 	${MKDIR} ${DATADIR}/${dir}
 	${INSTALL_DATA} ${WRKSRC}/${dir}/* ${DATADIR}/${dir}
 .endfor
