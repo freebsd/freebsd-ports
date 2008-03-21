@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fityk
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.5
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free peak fitting software
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes
@@ -25,7 +24,6 @@ WX_CONF_ARGS=	absolute
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-3rdparty
 USE_LDCONFIG=	yes
 
 MAN1=		fityk.1
