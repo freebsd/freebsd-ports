@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	bfilter
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SFE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smart filtering HTTP proxy
@@ -17,8 +16,8 @@ COMMENT=	Smart filtering HTTP proxy
 LIB_DEPENDS=	ACE.5:${PORTSDIR}/devel/ace \
 		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -40,6 +39,8 @@ PLIST_SUB+=	GUI="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|"pthreads.*pthread-config"|"${PTHREAD_LIBS}"|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^SUBDIRS|@WITH_GUI_TRUE@SUBDIRS|g' \
+		${WRKSRC}/main/gui/gtk/Makefile.in
 
 post-install:
 .if defined(WITH_GUI)
