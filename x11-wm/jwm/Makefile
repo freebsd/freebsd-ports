@@ -7,8 +7,9 @@
 
 PORTNAME=	jwm
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		http://joewing.net/programs/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -17,11 +18,9 @@ COMMENT=	Joe's Window Manager
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

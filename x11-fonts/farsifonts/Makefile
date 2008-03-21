@@ -7,7 +7,7 @@
 
 PORTNAME=	farsifonts
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.unixified.net/distfiles/ \
 		http://www.farsiweb.info/font/
@@ -17,7 +17,6 @@ COMMENT=	Standard set of Unicode Persian fonts
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
-USE_X_PREFIX=	yes
 USE_ZIP=	yes
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}

@@ -7,7 +7,7 @@
 
 PORTNAME=	cursor-neutral-theme
 DISTVERSION=	1.13a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	28310-neutral-${DISTVERSION}
@@ -16,7 +16,6 @@ MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Extended Jaguar X cursor theme
 
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/neutral
 
