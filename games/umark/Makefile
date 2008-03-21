@@ -16,13 +16,11 @@ DISTNAME=	UMark-for-Linux-v${DISTVERSION:S/.//g}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Unreal Tournament 200x series benchmark utility
 
-USE_GCC=	3.3+
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/UMark/src
 MAKEFILE=	${FILESDIR}/Makefile
 SUB_FILES+=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+PORTDOCS=	*
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
@@ -39,6 +37,8 @@ do-install:
 .endif
 
 post-install:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>

@@ -47,8 +47,3 @@ bin/umark
 @dirrm %%DATADIR%%/data/UT2003
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

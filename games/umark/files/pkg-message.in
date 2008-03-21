@@ -1,4 +1,3 @@
-
 Before running this software, you need to configure it first.  This is
 best to be done with `install_umark_data.sh' script, which is installed
 here:
@@ -19,4 +18,3 @@ If one of the lines says "n/a|n/a", it means that `install_umark_data.sh'
 did not find where the respective version of the game is installed.  In this
 case, you should manually enter the game build number and root installation
 path.
-
