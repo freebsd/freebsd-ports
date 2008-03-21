@@ -1,0 +1,5 @@
+bin/qtm
+share/applications/qtm.desktop
+share/icons/qtm-logo1.png
+@dirrmtry share/icons
+@dirrmtry share/applications
