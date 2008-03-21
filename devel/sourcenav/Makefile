@@ -21,10 +21,11 @@ PREFIX?=	${LOCALBASE}/${PORTNAME}
 .endif
 USE_BISON=	build
 USE_GMAKE=	yes
+USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
-USE_TCL=	84
-USE_TK=		84
+USE_TCL=	83
+USE_TK=		83
 
 SUB_FILES=	pkg-message
 
