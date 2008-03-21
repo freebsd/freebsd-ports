@@ -7,7 +7,7 @@
 
 PORTNAME=	electricsheep
 PORTVERSION=	2.6.8
-PORTREVISION=	3
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://electricsheep.org/
@@ -26,7 +26,6 @@ RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 .endif
 
-USE_X_PREFIX=	yes
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 
