@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-sid
 PORTVERSION=	0.7.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.tnsp.org/xs-files/
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 PLIST_FILES=	lib/xmms/Input/libsid.so
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

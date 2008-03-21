@@ -7,10 +7,9 @@
 
 PORTNAME=	xmms-mad
 PORTVERSION=	0.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	xmms-mad
+MASTER_SITES=	SF
 
 MAINTAINER=	dyeske@gmail.com
 COMMENT=	A XMMS input plugin that uses libmad
@@ -21,7 +20,6 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 PLIST_FILES=	lib/xmms/Input/libxmmsmad.so
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

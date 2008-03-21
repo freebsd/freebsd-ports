@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-pipe
 PORTVERSION=	0.5.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://rooster.stanford.edu/~ben/xmmspipe/files/
 DISTNAME=	xmmspipe-${PORTVERSION}
@@ -19,7 +19,6 @@ COMMENT=	Controls XMMS with a named pipe
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	target
 
