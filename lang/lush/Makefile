@@ -8,14 +8,12 @@ PORTNAME=	lush
 PORTVERSION=	1.2.1
 PORTREVISION=	2
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lush
+MASTER_SITES=	SF
 
 MAINTAINER=	dyeske@gmail.com
 COMMENT=	A high level object-oriented programming language
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_SDL=	sdl image
 GNU_CONFIGURE=	yes
