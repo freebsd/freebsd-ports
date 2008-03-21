@@ -28,7 +28,6 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 # in bsd.port.mk.
 PATCH_ARGS=	-d ${PATCH_WRKSRC} -N -s -E ${PATCH_STRIP} -l
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_ZIP=	yes
 
 ALL_TARGET=	main
@@ -50,13 +49,15 @@ post-extract: .SILENT
 	${REINPLACE_CMD} -e 's/ENABLE_SOUND 1/ENABLE_SOUND 0/' \
 		${WRKSRC}/cake/sound.h
 	${REINPLACE_CMD} -e 's/167/96/' ${WRKSRC}/main.cpp
-	# GCC 4.x fix
+# Fix for GCC 4.x
 	${REINPLACE_CMD} -e 's/Mat3x2:://' ${WRKSRC}/cake/math.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main ${PREFIX}/bin/cake
 
 post-install:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
