@@ -7,15 +7,14 @@
 
 PORTNAME=	asmix
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asmix/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Volume control dock-app for the AfterStep Window Manager
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \
 		--with-xpm-includes=${X11BASE}/include \
