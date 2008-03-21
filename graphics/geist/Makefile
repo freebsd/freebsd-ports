@@ -11,14 +11,13 @@ PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-based image creation/layout application
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_EFL=	imlib2
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
