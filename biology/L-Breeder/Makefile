@@ -8,7 +8,7 @@
 
 PORTNAME=	LBreeder
 PORTVERSION=	1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	biology
 MASTER_SITES=	http://www.simonyi.ox.ac.uk/dawkins/software/yan/L-Breeder/
 DISTNAME=	${PORTNAME}-source
@@ -22,7 +22,6 @@ NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/Unix
 
 USE_ZIP=	yes
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_WX=		2.4
