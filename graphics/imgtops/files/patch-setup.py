@@ -13,7 +13,7 @@
      print '   see http://www.pythonware.com/products/pil/'
      print
 -    if not get_yesno( 'Do you want to continue installing? [Y/n] ', 1 ):
-+    if True:
++    if False:
          print
          print 'Installation cancelled.'
          print
