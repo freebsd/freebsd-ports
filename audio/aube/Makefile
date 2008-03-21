@@ -7,7 +7,7 @@
 
 PORTNAME=	aube
 PORTVERSION=	0.30.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.metadecks.org/software/aube/download/
 
@@ -16,7 +16,6 @@ COMMENT=	System for sound generation and processing
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
