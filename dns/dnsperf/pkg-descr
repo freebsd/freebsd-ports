@@ -15,4 +15,4 @@ needed. ResPerf is designed specifically to simulate Caching Domain
 Name services. To test a caching server, ResPerf systematically
 increases the query rate and monitors the response rate.
 
-WWW: http://www.nominum.com/testing_tools.php
+WWW: http://www.nominum.com/services/measurement_tools.php
