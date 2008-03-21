@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	POE-Component-IRC
-PORTVERSION=	5.68
+PORTVERSION=	5.70
 CATEGORIES=	irc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A fully event-driven IRC client module
 
 RUN_DEPENDS=	p5-POE>=0.3202:${PORTSDIR}/devel/p5-POE \
@@ -50,6 +50,12 @@ MAN3=		POE::Component::IRC.3 \
 		POE::Component::IRC::State.3 \
 		POE::Component::IRC::Test::Harness.3 \
 		POE::Component::IRC::Test::Plugin.3 \
+		POE::Component::IRC::Cookbook::Translator.3 \
+		POE::Component::IRC::Cookbook::Disconnecting.3 \
+		POE::Component::IRC::Cookbook::BasicBot.3 \
+		POE::Component::IRC::Cookbook.3 \
+		POE::Component::IRC::Cookbook::Resolver.3 \
+		POE::Component::IRC::Plugin::BotCommand.3 \
 		POE::Filter::CTCP.3 \
 		POE::Filter::IRC.3 \
 		POE::Filter::IRC::Compat.3
