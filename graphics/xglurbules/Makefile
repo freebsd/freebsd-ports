@@ -7,6 +7,7 @@
 
 PORTNAME=	xglurbules
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://stephenroome.com/xglurbules/
 
@@ -15,8 +16,7 @@ COMMENT=	Burning particle system eye candy program thingy for X11
 
 MAN1=		xglurbules.1
 
-USE_XLIB=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	xt x11 sm ice xpm
 
 MANCOMPRESSED=	yes
 

@@ -8,15 +8,15 @@
 PORTNAME=	wmwifi
 PORTVERSION=	0.4
 DISTVERSIONSUFFIX=-bsd
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://digitalssg.net/debian/
 
 MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Dockapp displaying the signal strength of WiFi connection
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+USE_XORG=	x11 xpm
 USE_GMAKE=	yes
 
 CONFIGURE_ENV+=	"CPPFLAGS=-I${X11BASE}/include"

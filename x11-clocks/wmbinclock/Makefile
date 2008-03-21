@@ -7,7 +7,7 @@
 
 PORTNAME=	wmbinclock
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.inxsoft.net/wmbinclock/
 
@@ -15,9 +15,8 @@ MAINTAINER=	logix@foobar.franken.de
 COMMENT=	A binary clock in a windowmaker applet
 
 PLIST_FILES=	bin/wmBinClock
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#include <values.h>||' ${WRKSRC}/wmBinClock.c

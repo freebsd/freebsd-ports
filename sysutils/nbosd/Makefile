@@ -7,7 +7,7 @@
 
 PORTNAME=	nbosd
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,6 @@ COMMENT=	Displays battery life and CPU frequency with an OSD
 
 BUILD_DEPENDS=	xosd-config:${PORTSDIR}/misc/xosd
 
-USE_X_PREFIX=	yes
 PLIST_FILES=	bin/nbosd
 PORTDOCS=	*
 

@@ -6,7 +6,7 @@
 
 PORTNAME=	wmbday
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://buzzinhornetz.ath.cx/wmbday/files/
 
@@ -16,7 +16,6 @@ COMMENT=	Window Maker dock app that will remind you of birthdays
 BUILD_DEPENDS=	${X11BASE}/bin/xmessage:${X_CLIENTS_PORT}
 
 HAS_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 MAKEFILE=	BSDmakefile
 MAKE_ENV+=	${CONFIGURE_ENV}
 

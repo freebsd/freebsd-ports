@@ -7,7 +7,7 @@
 
 PORTNAME=	freehdl
 PORTVERSION=	0.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.home.hs-karlsruhe.de/~fado0011/ \
 		http://cran.mit.edu/~enaroska/
@@ -18,7 +18,6 @@ COMMENT=	A free VHDL simulator
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
-USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib \
 		--prefix=${PREFIX} \

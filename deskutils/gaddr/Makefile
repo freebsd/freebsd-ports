@@ -7,7 +7,7 @@
 
 PORTNAME=	gaddr
 PORTVERSION=	1.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 
@@ -15,7 +15,6 @@ MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A GTK (and optionally, GNOME) address book
 
 PLIST_FILES=	bin/gaddr
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes

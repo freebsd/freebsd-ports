@@ -22,7 +22,6 @@ LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	glib20 gtk20 gnomehack
 USE_AUTOTOOLS=	libtool:15
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT

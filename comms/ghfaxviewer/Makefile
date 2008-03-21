@@ -7,7 +7,7 @@
 
 PORTNAME=	ghfaxviewer
 PORTVERSION=	0.22.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	halifax
@@ -20,7 +20,6 @@ LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnome-print \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

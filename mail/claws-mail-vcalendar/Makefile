@@ -24,7 +24,6 @@ RUN_DEPENDS=	claws-mail>=3.3.1:${PORTSDIR}/mail/claws-mail
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

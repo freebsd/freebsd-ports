@@ -7,14 +7,13 @@
 
 PORTNAME=	grun
 PORTVERSION=	0.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 
 MAINTAINER=	domi@saargate.de
 COMMENT=	Gtk-launcher similar to the Windows(tm) "Run..." dialog
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-testfile
