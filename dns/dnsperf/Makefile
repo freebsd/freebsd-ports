@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnsperf
-PORTVERSION=	1.0.0.0
+PORTVERSION=	1.0.0.1
 CATEGORIES=	dns benchmarks net
 MASTER_SITES=	ftp://ftp.nominum.com/pub/nominum/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	isc-config.sh:${PORTSDIR}/dns/bind9
 
 HAS_CONFIGURE=	yes
 
-PLIST_FILES=	bin/dnsperf bin/resperf
+PLIST_FILES=	bin/dnsperf bin/resperf bin/resperf-report
 MAN1=		dnsperf.1 resperf.1
 
 .include <bsd.port.mk>
