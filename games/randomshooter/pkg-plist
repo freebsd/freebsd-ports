@@ -48,8 +48,10 @@ bin/randomshooter
 %%DATADIR%%/gfx/points_frame0013.png
 %%DATADIR%%/gfx/points_frame0014.png
 %%DATADIR%%/gfx/points_frame0015.png
+%%DATADIR%%/help/help.txt
 %%DATADIR%%/music/17.mod
 @dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%/font
 @dirrm %%DATADIR%%
