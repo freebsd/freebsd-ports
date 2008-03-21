@@ -1,12 +1,17 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/.packlist
 %%SITE_PERL%%/POE/Component/IRC.pm
 %%SITE_PERL%%/POE/Component/IRC/Common.pm
 %%SITE_PERL%%/POE/Component/IRC/Constants.pm
+%%SITE_PERL%%/POE/Component/IRC/Cookbook.pm
+%%SITE_PERL%%/POE/Component/IRC/Cookbook/BasicBot.pm
+%%SITE_PERL%%/POE/Component/IRC/Cookbook/Disconnecting.pm
+%%SITE_PERL%%/POE/Component/IRC/Cookbook/Resolver.pm
+%%SITE_PERL%%/POE/Component/IRC/Cookbook/Translator.pm
 %%SITE_PERL%%/POE/Component/IRC/Pipeline.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/AutoJoin.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/BotAddressed.pm
+%%SITE_PERL%%/POE/Component/IRC/Plugin/BotCommand.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/BotTraffic.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/CTCP.pm
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Connector.pm
@@ -29,6 +34,7 @@
 %%SITE_PERL%%/POE/Filter/CTCP.pm
 %%SITE_PERL%%/POE/Filter/IRC.pm
 %%SITE_PERL%%/POE/Filter/IRC/Compat.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/.packlist
 %%EXAMPLESDIR%%/aimproxy.pl
 %%EXAMPLESDIR%%/dcctest.pl
 %%EXAMPLESDIR%%/dicebot.pl
@@ -48,6 +54,7 @@
 @dirrmtry %%SITE_PERL%%/POE/Component/IRC/Test
 @dirrmtry %%SITE_PERL%%/POE/Component/IRC/Qnet
 @dirrmtry %%SITE_PERL%%/POE/Component/IRC/Plugin
+@dirrmtry %%SITE_PERL%%/POE/Component/IRC/Cookbook
 @dirrmtry %%SITE_PERL%%/POE/Component/IRC
 @dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE
