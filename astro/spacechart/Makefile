@@ -7,16 +7,14 @@
 
 PORTNAME=	spacechart
 PORTVERSION=	0.9.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	astro
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SpaceChart is a star chart viewer for GNOME
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomelibs
 CONFIGURE_ARGS=	--without-included-gettext --datadir=${PREFIX}/share

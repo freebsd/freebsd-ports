@@ -17,7 +17,7 @@ COMMENT=	Star field demo
 
 PLIST_FILES=	bin/stars
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 do-build:
 	@${CC} -I${PREFIX}/include ${CFLAGS} -c ${WRKSRC}/xwin.c -o ${WRKSRC}/xwin.o

@@ -7,7 +7,7 @@
 
 PORTNAME=	roadmap
 PORTVERSION=	1.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro geography
 MASTER_SITES=	http://roadmap.digitalomaha.net/roadmap/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +26,6 @@ INSTALL_WRKSRC=	${WRKSRC}/src
 
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 
 BINS=		buildmap buildus dumpmap
 GUI_BINS=	gtkroadmap gtkroadgps
