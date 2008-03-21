@@ -8,12 +8,14 @@
 PORTNAME=	Encode-Detect
 PORTVERSION=	1.00
 CATEGORIES=	converters perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Encode
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An Encode::Encoding subclass that detects the encoding of data
+
+BUILD_DEPENDS+=	${SITE_PERL}/ExtUtils/CBuilder.pm:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 
 PERL_MODBUILD=	yes
 
