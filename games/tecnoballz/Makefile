@@ -9,7 +9,8 @@ PORTNAME=	tecnoballz
 PORTVERSION=	0.92
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/
+MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/ \
+		http://www.amdmi3.ru/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@amdmi3.ru
@@ -33,7 +34,7 @@ post-patch:
 		-e 's|SDL/||'
 	@${REINPLACE_CMD} -e '/^CXXFLAGS=[^$$]*$$/ s|^|#|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(prefix)/games|$$(prefix)/bin|' \
-	    ${WRKSRC}/Makefile.am ${WRKSRC}/src/Makefile.am
+		${WRKSRC}/Makefile.am ${WRKSRC}/src/Makefile.am
 	@${REINPLACE_CMD} -e 's|supervisor.c|&c|' ${WRKSRC}/src/Makefile.am
 .for f in tecnoballz.cc tiles_background.cc sprite_ship.cc controller_magnetic_eyes.cc
 	@${REINPLACE_CMD} -e '/rand/ s|(Sint32)|(intptr_t)|' ${WRKSRC}/src/${f}
