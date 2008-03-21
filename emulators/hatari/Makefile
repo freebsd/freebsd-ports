@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hatari
-PORTVERSION=	0.95
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -21,9 +20,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 
 MAN1=		hatari.1
+MANCOMPRESSED=	no
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/hatari.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/hatari.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}

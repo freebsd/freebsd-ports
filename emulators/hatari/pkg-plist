@@ -3,6 +3,7 @@ bin/hatari
 %%PORTDOCS%%%%DOCSDIR%%/authors.txt
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/compatibility.html
+%%PORTDOCS%%%%DOCSDIR%%/emutos.txt
 %%PORTDOCS%%%%DOCSDIR%%/images/devices.png
 %%PORTDOCS%%%%DOCSDIR%%/images/discs.png
 %%PORTDOCS%%%%DOCSDIR%%/images/fileselector.png
