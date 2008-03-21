@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	accessors
-PORTVERSION=	0.02
+PORTVERSION=	1.00
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SP/SPURKIS
@@ -17,10 +17,7 @@ COMMENT=	Create accessor methods in caller's package #'
 
 PERL_MODBUILD=	yes
 
-MAN3=		accessors.3 accessors::chained.3 accessors::classic.3
-
-PLIST_FILES=	${SITE_PERL_REL}/accessors.pm ${SITE_PERL_REL}/accessors/chained.pm \
-		${SITE_PERL_REL}/accessors/classic.pm
-PLIST_DIRS=	${SITE_PERL_REL}/accessors
+MAN3=		accessors.3 accessors::chained.3 accessors::classic.3 \
+		accessors::ro.3 accessors::rw.3
 
 .include <bsd.port.mk>
