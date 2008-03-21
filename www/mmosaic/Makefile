@@ -7,7 +7,7 @@
 
 PORTNAME=	mmosaic
 PORTVERSION=	3.7.2
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.enst.fr/pub/mbone/mMosaic/ \
 		ftp://ftp.uni-koeln.de/net/inet/WWW/mosaic/unix/ \
@@ -23,7 +23,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 RESTRICTED=	"academic, research and internal business purposes only, without a fee"
 PLIST=		${WRKDIR}/pkg-plist
 USE_MOTIF=	yes
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mMosaic-src-${PORTVERSION}
 
 post-patch:
