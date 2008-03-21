@@ -19,7 +19,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=		2.2+
 USE_PYDISTUTILS=	yes
-INSTALLS_EGGINFO=	yes
 
 MAN1=		imgtops.1 epstoimg.1
 
