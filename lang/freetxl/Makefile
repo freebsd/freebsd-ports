@@ -12,7 +12,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.sasknow.com/pub/txl/
 DISTNAME=	txl${PORTVERSION}.linux
 
-MAINTAINER=	ryan@sasknow.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The TXL Programming Language (transformation by example)
 
 USE_LINUX=	yes

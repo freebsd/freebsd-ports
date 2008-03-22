@@ -15,7 +15,7 @@ MASTER_SITES=	http://ry.ca/mirror/mirror/ \
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ftp.pl_wupatch
 
-MAINTAINER=	ryan@sasknow.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mirror packages on remote sites
 
 PLIST_FILES=	bin/mirror \
