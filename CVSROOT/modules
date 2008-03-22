@@ -10712,6 +10712,7 @@ p5-Net-IPv6Addr	ports/net-mgmt/p5-Net-IPv6Addr
 p5-Net-Ident	ports/net/p5-Net-Ident
 p5-Net-Interface	ports/net/p5-Net-Interface
 p5-Net-Jabber	ports/net-im/p5-Net-Jabber
+p5-Net-Jifty	ports/net/p5-Net-Jifty
 p5-Net-LDAP-Express	ports/net/p5-Net-LDAP-Express
 p5-Net-LDAP-LDAPhash	ports/net/p5-Net-LDAP-LDAPhash
 p5-Net-LibIDN	ports/dns/p5-Net-LibIDN
