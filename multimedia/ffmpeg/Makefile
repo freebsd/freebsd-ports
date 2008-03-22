@@ -204,7 +204,7 @@ CONFIGURE_ARGS+=	--enable-libxvid
 
 pre-everything::
 .ifndef(WITHOUT_A52)
-	@${ECHO_MSG} 'You can disable liba52 support by defining WITHOUT_LIBA52'
+	@${ECHO_MSG} 'Define WITHOUT_LIBA52 to disable liba52 support'
 	@${ECHO_MSG}
 .endif
 #.ifndef(WITH_DTS)
@@ -250,7 +250,7 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 .ifndef(WITHOUT_VORBIS)
-	@${ECHO_MSG} 'Define WITHOUT_VORBIS to enable libvorbisenc VORBIS codec'
+	@${ECHO_MSG} 'Define WITHOUT_VORBIS to disable libvorbisenc VORBIS codec'
 	@${ECHO_MSG}
 .endif
 .ifndef(WITHOUT_X264)
