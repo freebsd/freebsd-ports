@@ -17,7 +17,7 @@ COMMENT=	Monitor, analyze or transform the communication of MySQL
 LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent \
 		glib:${PORTSDIR}/devel/glib20
 
-CONFIGURE_ARGS+=	--with-lua --with-mysql
+CONFIGURE_ARGS+=	--with-lua=lua-5.1 --with-mysql
 CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}" \
 		PKG_CONFIG_PATH="${LUA_PREFIX}/share/doc/${LUA_SUBDIR}/etc"
