@@ -1,5 +1,5 @@
---- make_freebsd.mak.orig	Thu Jan 25 12:05:38 2007
-+++ make_freebsd.mak	Sat Mar  3 00:48:48 2007
+--- make_freebsd.mak.orig	2008-02-07 16:42:56.000000000 +0200
++++ make_freebsd.mak	2008-03-22 21:32:28.000000000 +0200
 @@ -9,7 +9,7 @@
  #     IBM Corporation - initial API and implementation
  #*******************************************************************************
@@ -27,7 +27,7 @@
  
  # Uncomment for Native Stats tool
  #NATIVE_STATS = -DNATIVE_STATS
-@@ -97,15 +97,16 @@
+@@ -97,17 +97,18 @@
  		-DFREEBSD -DGTK \
  		-I$(JAVA_HOME)/include \
  		-I$(JAVA_HOME)/include/freebsd \
@@ -47,5 +47,8 @@
 +LIBS := $(LIBS) -s
 +.endif
  
- all: make_swt make_atk make_gnome make_glx
+-all: make_swt make_atk make_gnome make_glx
++all: make_swt make_atk make_glx
  
+ #
+ # SWT libs
