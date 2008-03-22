@@ -7,7 +7,7 @@
 
 PORTNAME=	accessx
 PORTVERSION=	0.951
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 accessibility
 MASTER_SITES=	http://cmos-eng.rehab.uiuc.edu/accessx/software/
 DISTNAME=	accessx${PORTVERSION:S/.//g}
@@ -17,8 +17,8 @@ COMMENT=	Customise accessibility features for X
 
 USE_TK=		yes
 
+USE_XORG=	xext
 WRKSRC=		${WRKDIR}/accessx
-USE_X_PREFIX=	yes
 
 PLIST_FILES=	bin/ax bin/accessx
 

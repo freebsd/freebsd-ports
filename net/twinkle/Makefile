@@ -7,6 +7,7 @@
 
 PORTNAME=	twinkle
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~mfnboer/twinkle/download/
 
@@ -25,10 +26,10 @@ LIB_DEPENDS=	ccgnu2-1.6.0:${PORTSDIR}/devel/commoncpp \
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_BISON=	build
+USE_XORG=	xext
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_PERL5=	yes
-USE_XLIB=	yes
 USE_QT_VER=	3
 
 CONFIGURE_ARGS=	--with-qt-dir=${QT_PREFIX} QTDIR=${LOCALBASE}

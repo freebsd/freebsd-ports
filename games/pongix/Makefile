@@ -7,14 +7,13 @@
 
 PORTNAME=	pongix
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/pongix/descargas/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free pong-like game
 
-USE_X_PREFIX=	yes
 USE_SDL=	sdl image net
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=		3dc
 PORTVERSION=		0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
@@ -19,8 +19,7 @@ COMMENT=	3-Dimensional Chess for X Window System
 LIB_DEPENDS=		Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_PERL5_BUILD=yes
-USE_X_PREFIX=		yes
-USE_XPM=		yes
+USE_XPM=		xpm
 WRKSRC=			${WRKDIR}/3Dc/src
 
 post-patch:

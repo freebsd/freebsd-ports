@@ -7,7 +7,7 @@
 
 PORTNAME=	wmthemeinstall
 PORTVERSION=	0.62
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.jeremias.net/wmthemeinstall/download/
 
@@ -16,7 +16,6 @@ COMMENT=	A neat theme manager for WindowMaker
 
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

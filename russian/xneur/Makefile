@@ -7,6 +7,7 @@
 
 PORTNAME=	xneur
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	russian
 MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ CENKES
 
@@ -17,8 +18,8 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --libdir=${PREFIX}/lib/xneur
-USE_XLIB=	yes
 USE_BZIP2=	yes
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 MAKE_ARGS=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 

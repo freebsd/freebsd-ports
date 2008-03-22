@@ -7,7 +7,7 @@
 
 PORTNAME=	ode
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -20,7 +20,6 @@ COMMENT=	Articulated rigid body dynamics library
 CONFLICTS=	ode-devel-[0-9].*
 
 USE_ZIP=	yes
-USE_XLIB=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

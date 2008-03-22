@@ -7,7 +7,7 @@
 
 PORTNAME=	paragui
 PORTVERSION=	1.1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,6 @@ LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs \
 
 CONFLICTS=	paragui-[0-9]*
 
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl image ttf
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore

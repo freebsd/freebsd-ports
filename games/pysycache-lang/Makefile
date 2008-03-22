@@ -7,7 +7,7 @@
 
 PORTNAME=	lang
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/py4childs/pysycache/v${PORTVERSION}/
 PKGNAMEPREFIX=	pysycache-
@@ -20,7 +20,6 @@ COMMENT=	The pysycache lang support
 RUN_DEPENDS=	pysycache.py:${PORTSDIR}/games/pysycache
 
 USE_ZIP=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/${DIST_SUBDIR}

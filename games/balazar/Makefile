@@ -7,7 +7,7 @@
 
 PORTNAME=	balazar
 PORTVERSION=	0.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/balazar/
 DISTNAME=	Balazar-${PORTVERSION}
@@ -25,7 +25,6 @@ RUN_DEPENDS=	soya_editor:${PORTSDIR}/graphics/py-soya3d \
 		${PYTHON_SITELIBDIR}/tofu/client.py:${PORTSDIR}/net/py-tofu \
 		${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py-cerealizer
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

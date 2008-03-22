@@ -7,7 +7,7 @@
 
 PORTNAME=	amanith
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.amanith.org/download/files/ \
 		http://louhi.kempele.fi/~skyostil/projects/pyamanith/dist/
@@ -22,7 +22,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_QT_VER=	3
-USE_XLIB=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_DOS2UNIX=	yes

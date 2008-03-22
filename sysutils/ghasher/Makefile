@@ -14,7 +14,6 @@ MASTER_SITES=	http://asgaard.homelinux.org/code/ghasher/
 MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	GUI frontend to MD5 sum
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 libglade2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	primateplunge
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.ecs.soton.ac.uk/~njh/primateplunge/
 
@@ -16,7 +16,6 @@ COMMENT=	Primate Plunge is an arcade game
 
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

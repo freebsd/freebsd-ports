@@ -7,6 +7,7 @@
 
 PORTNAME=	pdcurses
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	PDCurses-${PORTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Curses library implementation for Win32, DOS, OS/2 and X11
 
 USE_LDCONFIG=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xext sm ice xt xaw8
 GNU_CONFIGURE=	yes
 
 OPTIONS=	DEBUG "Enable debugging support" off \
