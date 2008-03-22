@@ -497,6 +497,7 @@
     SUBDIR += play
     SUBDIR += playgsf
     SUBDIR += playmidi
+    SUBDIR += pocketsphinx
     SUBDIR += portaudio
     SUBDIR += portaudio2
     SUBDIR += praat
