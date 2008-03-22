@@ -7,7 +7,7 @@
 
 PORTNAME=	Module-Build
 PORTVERSION=	0.28.08
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,12 +16,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Build and install Perl modules
 
+RUN_DEPENDS=	p5-YAML>=0.35:${PORTSDIR}/textproc/p5-YAML \
+		p5-ExtUtils-CBuilder>=0.15:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
+		p5-ExtUtils-ParseXS>=1.02:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
-
-OPTIONS=	YAML "Use YAML.pm to write META.yml files" off \
-		C "Compile/link C & XS code" off
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes INSTALL README
@@ -59,14 +59,4 @@ MAN3=		Module::Build.3 \
 		Module::Build::YAML.3
 MAN1=		config_data.1
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_YAML)
-RUN_DEPENDS+=	p5-YAML>=0.35:${PORTSDIR}/textproc/p5-YAML
-.endif
-
-.if defined(WITH_C)
-RUN_DEPENDS+=	p5-ExtUtils-CBuilder>=0.15:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
