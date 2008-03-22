@@ -7,6 +7,7 @@
 
 PORTNAME=	ezquake
 PORTVERSION=	1.8.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF:ezquake \
@@ -54,7 +55,7 @@ PLIST_SUB+=	GLX="@comment "
 .endif
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	xxf86dga	
 ALL_TARGET+=	x11
 PLIST_SUB+=	X11=""
 .else

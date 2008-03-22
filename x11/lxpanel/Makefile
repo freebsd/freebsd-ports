@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	lxde
 MAINTAINER=	b89605222@ntu.edu.tw
 COMMENT=	LXPanel is a lightweight X11 desktop panel
 
-USE_XLIB=	yes
 USE_GNOME=	gtk20 gnomelibs gnomedesktop
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:19

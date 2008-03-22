@@ -7,15 +7,14 @@
 
 PORTNAME=	padkey
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 games
 MASTER_SITES=	http://www.liquidx.org/padkey/releases/dist/
 
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	Use an authentic SNES controller to play games
 
-USE_XLIB=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xtst
 
 PLIST_FILES=	bin/padkey
 PORTDOCS=	CREDITS README

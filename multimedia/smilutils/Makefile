@@ -36,7 +36,6 @@ USE_GNOME=	gtk20 libxml2 libglade2
 USE_ICONV=	yes
 USE_SDL=	yes
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/lqt -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib/libquicktime -L${LOCALBASE}/lib" \

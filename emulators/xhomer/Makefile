@@ -7,7 +7,7 @@
 
 PORTNAME=	xhomer
 DISTVERSION=	9-16-06
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://xhomer.isani.org/xhomer/
@@ -17,7 +17,7 @@ MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Emulator for the DEC Pro 350 computer
 
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_XORG=	xt sm ice xext x11
 ALL_TARGET=	clean xhomer
 INSTALL_TARGET=
 CFLAGS+=	-Wall -ffloat-store

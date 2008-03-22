@@ -19,7 +19,6 @@ LIB_DEPENDS=	ical.27:${PORTSDIR}/devel/libical
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
-USE_XPM=	yes
 USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC}" \
 		LFLAGS="`pkg-config --libs gtk+-2.0` -L${LOCALBASE}/lib" \

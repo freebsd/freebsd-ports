@@ -7,7 +7,7 @@
 
 PORTNAME=	mangband
 PORTVERSION=	0.7.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://mangband.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -16,8 +16,7 @@ MAINTAINER=	adam-ports@blacktabby.org
 COMMENT=	Multiplayer rogue-like game with color, X11 support
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
-
-USE_XLIB=	yes
+USE_XORG=	x11
 ALL_TARGET=	install
 
 MALIB=		${PREFIX}/lib/mangband

@@ -7,6 +7,7 @@
 
 PORTNAME=	libvisual
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	libvisual
@@ -20,7 +21,7 @@ LIB_DEPENDS=	visual-${MAJORMINOR}:${PORTSDIR}/graphics/libvisual04
 
 USE_GNOME=	pkgconfig
 USE_GL=		yes
-USE_XLIB=	yes
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa \
 		--disable-mplayer \

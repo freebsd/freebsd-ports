@@ -17,7 +17,6 @@ COMMENT=	A virtual note-pad system for your X11 desktop
 
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig gtk20 gnomehier intltool
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

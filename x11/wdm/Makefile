@@ -7,7 +7,7 @@
 
 PORTNAME=	wdm
 PORTVERSION=	1.28
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://voins.program.ru/wdm/:wdm \
 		http://wolfram.schneider.org/bsd/gif/bsd/:pic_large \
@@ -27,7 +27,6 @@ LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 NOT_FOR_ARCHS=	sparc64
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \

@@ -7,7 +7,7 @@
 
 PORTNAME=	ioquake3
 DISTVERSION=	1.34-rc3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://ioquake3.org/files/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -78,7 +78,7 @@ USE_SDL=	sdl
 MAKE_ENV+=	USE_SDL_VIDEO=1
 .   else
 USE_GL=		yes
-USE_XLIB=	yes
+USE_XORG=	xxf86dga
 .   endif
 # Vorbis
 .   if defined(WITH_VORBIS)

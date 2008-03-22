@@ -19,7 +19,6 @@ RUN_DEPENDS=	nec2c:${PORTSDIR}/comms/nec2c
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 

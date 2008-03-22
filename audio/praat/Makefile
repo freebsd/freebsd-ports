@@ -7,6 +7,7 @@
 
 PORTNAME=	praat
 PORTVERSION=	4.6.39
+PORTREVISION=	1
 CATEGORIES=	audio science
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/Praat/4639/ \
 		http://www.fon.hum.uva.nl/praat/
@@ -17,7 +18,6 @@ COMMENT=	Phonetics by Computer
 
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*Makefile
-USE_XLIB=	yes
 USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/sources_4639
 MAKEFILE=	makefile

@@ -7,7 +7,7 @@
 
 PORTNAME=	evq3
 PORTVERSION=	1.0a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://evolution.quakedev.com/dev/evq3/
 DISTNAME=	${PORTNAME}-final-src
@@ -24,7 +24,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GL=		yes
-USE_XLIB=	yes
+USE_XORG=	xxf86dga
 USE_SCONS=	yes
 SCONS_ARGS=	warnings=0
 NO_WRKSUBDIR=	yes

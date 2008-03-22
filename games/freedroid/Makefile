@@ -7,7 +7,7 @@
 
 PORTNAME=	freedroid
 PORTVERSION=	1.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freedroid
@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	freedroid
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Freedroid is a clone of the classic game "Paradroid"
 
-USE_XLIB=	yes
 USE_SDL=	mixer image sdl
 
 GNU_CONFIGURE=	yes

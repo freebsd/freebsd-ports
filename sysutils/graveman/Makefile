@@ -21,7 +21,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_CDRTOOLS=	yes
 USE_GNOME=	libglade2 intlhack gnomehack gnomeprefix
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

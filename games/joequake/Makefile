@@ -7,7 +7,7 @@
 
 PORTNAME=	joequake
 PORTVERSION=	0.15b1329
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://runecentral.com/joequake/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-source
@@ -81,7 +81,7 @@ MAKE_ENV+=	USE_${f}=NO
 .endfor
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	xxf86dga
 ALL_TARGET+=	x11
 PLIST_SUB+=	X11=""
 .else
