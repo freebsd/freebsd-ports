@@ -7,7 +7,7 @@
 
 PORTNAME=	asWedit
 PORTVERSION=	4.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www editors linux
 MASTER_SITES=	ftp://sunsite.icm.edu.pl/pub/www/asWedit/
 DISTNAME=	asWedit-4.0-i386.linux
@@ -19,7 +19,6 @@ RESTRICTED=	Commercial software
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/asWedit-4.0.1
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	opensc
 DISTVERSION=	0.11.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -83,7 +83,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
 PINENTRY?=	${LOCALBASE}/bin/pinentry
 PINENTRY_PORT?=	security/pinentry
 RUN_DEPENDS+=	pinentry:${PORTSDIR}/${PINENTRY_PORT}
-USE_XLIB=	yes
+USE_XORG=	x11
 CONFIGURE_ARGS+=--with-libassuan-prefix=${LOCALBASE} \
 		--with-plugin-dir=${LOCALBASE}/lib/browser_plugins \
 		--with-pin-entry=${PINENTRY}

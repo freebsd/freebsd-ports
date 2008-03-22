@@ -7,7 +7,7 @@
 
 PORTNAME=	pysycache
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/py4childs/${PORTNAME}/v${PORTVERSION}/
 DIST_SUBDIR=	${PORTNAME}
@@ -18,7 +18,6 @@ COMMENT=	Educational software made in python
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
 USE_ZIP=	yes
-USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

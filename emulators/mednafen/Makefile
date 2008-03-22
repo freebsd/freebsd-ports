@@ -7,7 +7,7 @@
 
 PORTNAME=	mednafen
 PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators games
 MASTER_SITES=	SF
 
@@ -22,8 +22,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl net
-USE_GL=		gl
-USE_XLIB=	yes
+USE_XORG=	x11
+USE_GL=		glut
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

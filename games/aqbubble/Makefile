@@ -7,14 +7,13 @@
 
 PORTNAME=	aqbubble
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/aqbubble/descargas/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Game similar to snow bros
 
-USE_X_PREFIX=	yes
 USE_SDL=	sdl mixer image
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

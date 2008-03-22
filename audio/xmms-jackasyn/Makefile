@@ -7,7 +7,7 @@
 
 PORTNAME=	jackasyn
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://gige.xdv.org/libjackasyn/download/
 PKGNAMEPREFIX=	xmms-
@@ -19,7 +19,6 @@ COMMENT=	XMMS plugin for jack using libjackasyn
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		jackasyn.0:${PORTSDIR}/audio/libjackasyn
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

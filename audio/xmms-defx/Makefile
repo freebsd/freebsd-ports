@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-defx
 PORTVERSION=	0.9.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	defx
@@ -17,7 +17,6 @@ COMMENT=	Multi-effects processor plug-in for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 

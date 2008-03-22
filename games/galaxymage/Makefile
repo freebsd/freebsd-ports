@@ -7,7 +7,7 @@
 
 PORTNAME=	galaxymage
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/tactics/
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric 
 		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
-USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_TWISTED=	yes
 USE_GETTEXT=	yes

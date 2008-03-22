@@ -7,7 +7,7 @@
 
 PORTNAME=	bbkeys
 PORTVERSION=	0.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +17,8 @@ COMMENT=	A keygrabber for the Blackbox window manager
 
 BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
-USE_X_PREFIX=	yes
 USE_PERL5=	yes
+USE_XORG=	x11 xext
 USE_GCC=	3.3+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags xft`" \

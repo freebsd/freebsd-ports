@@ -7,7 +7,7 @@
 
 PORTNAME=	inventor
 PORTVERSION=	2.1.5.p10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://oss.sgi.com/projects/inventor/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-/}
@@ -20,8 +20,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		GLU.1:${PORTSDIR}/graphics/libGLU
 
-USE_X_PREFIX=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GL=		glw
 USE_GMAKE=	yes
 USE_ICONV=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	libgltext
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gltext
@@ -19,7 +19,6 @@ COMMENT=	Portable font rendering library for C++
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
 USE_GL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

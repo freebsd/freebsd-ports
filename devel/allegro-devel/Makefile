@@ -7,7 +7,7 @@
 
 PORTNAME=	allegro
 DISTVERSION=	4.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alleg
@@ -18,8 +18,8 @@ COMMENT=	A cross-platform library for games and multimedia programming
 
 USE_AUTOTOOLS=	autoconf:261
 USE_GMAKE=	yes
+USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_LDCONFIG=	yes
-USE_XLIB=	yes
 WANT_GNOME=	yes
 
 OPTIONS=	AL "Enable OpenAL support" off \

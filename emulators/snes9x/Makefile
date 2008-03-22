@@ -7,7 +7,7 @@
 
 PORTNAME=	snes9x
 PORTVERSION=	1.51
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://files.ipherswipsite.com/snes9x/ \
 		http://www.geocities.co.jp/SiliconValley-PaloAlto/2560/release/ \
@@ -18,7 +18,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 sm ice xext
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-extensions

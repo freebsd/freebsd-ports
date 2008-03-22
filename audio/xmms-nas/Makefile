@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-nas
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/willem/
 
@@ -17,7 +17,6 @@ COMMENT=	A Network Audio System (NAS) output plugin for XMMS
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		audio.2:${PORTSDIR}/audio/nas
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

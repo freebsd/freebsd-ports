@@ -7,14 +7,13 @@
 
 PORTNAME=	chanta
 PORTVERSION=	0.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/chanta/descargas/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free 2D jump and run game
 
-USE_X_PREFIX=	yes
 USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

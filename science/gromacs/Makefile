@@ -7,7 +7,7 @@
 
 PORTNAME=	gromacs
 PORTVERSION=	3.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=	--without-x
 .else
 PLIST_SUB+=	WITHOUT_X=
 CONFIGURE_ARGS+=	--with-x
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 
 .ifndef WITH_FLOAT

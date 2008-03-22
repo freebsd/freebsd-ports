@@ -7,7 +7,7 @@
 
 PORTNAME=	NuppelVideo
 PORTVERSION=	0.52.a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
@@ -21,7 +21,7 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 DEPRECATED=	Unmaintained upstream for years.  The nuppelvideo format is now supported by mencoder
 EXPIRATION_DATE=2007-10-03
 
-USE_XLIB=	yes
+USE_XORG=	x11 sm xext
 USE_GMAKE=	yes
 
 PORTDOCS=	README

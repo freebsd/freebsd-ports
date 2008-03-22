@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 

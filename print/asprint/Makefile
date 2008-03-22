@@ -7,7 +7,7 @@
 
 PORTNAME=	asprint
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	apps/asprint
@@ -17,7 +17,7 @@ MAINTAINER=	brett@peloton.runet.edu
 COMMENT=	A simple browser to allow a user to print
 
 PLIST_FILES=	bin/asprint
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 ALL_TARGET=	asprint
 MAKEFILE=	makefile
 

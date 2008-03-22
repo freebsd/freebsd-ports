@@ -7,7 +7,7 @@
 
 PORTNAME=	xkbset
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.math.missouri.edu/~stephen/software/xkbset/
 
@@ -15,7 +15,7 @@ MAINTAINER=	stephen@math.missouri.edu
 COMMENT=	Manage various XKB features of X Window
 
 MAN1=		xkbset.1
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_PERL5_BUILD=	yes
 
 MAKE_ARGS=	X11BASE="${X11BASE}" X11PREFIX="${PREFIX}" \

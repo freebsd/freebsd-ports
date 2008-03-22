@@ -7,7 +7,7 @@
 
 PORTNAME=	wterm
 PORTVERSION=	6.2.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +17,7 @@ COMMENT=	A color vt102 terminal emulator with transparency support
 
 BUILD_DEPENDS=	${X11BASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-transparency --enable-xpm-background \
 		--disable-delete-key --disable-backspace-key \
