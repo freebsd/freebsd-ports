@@ -1,0 +1,22 @@
+--- Makefile.in.orig	2006-12-22 08:58:01.000000000 +1100
++++ Makefile.in	2008-03-23 08:34:53.000000000 +1100
+@@ -6,8 +6,8 @@
+ mandir = @prefix@/man
+ 
+ INSTALL = @INSTALL@
+-INSTALL_PROGRAM = @INSTALL_PROGRAM@ 
+-INSTALL_DATA = @INSTALL_DATA@ 
++#INSTALL_PROGRAM = @INSTALL_PROGRAM@ 
++#INSTALL_DATA = @INSTALL_DATA@ 
+ 
+ 
+ CC = @CC@
+@@ -41,7 +41,7 @@
+ install: all installdirs
+ 	${INSTALL_PROGRAM} dnsperf ${DESTDIR}${bindir}
+ 	${INSTALL_PROGRAM} resperf ${DESTDIR}${bindir}
+-	${INSTALL_PROGRAM} resperf-report ${DESTDIR}${bindir}
++	${INSTALL_SCRIPT} resperf-report ${DESTDIR}${bindir}
+ 	${INSTALL_DATA} dnsperf.1 ${DESTDIR}${mandir}/man1
+ 	${INSTALL_DATA} resperf.1 ${DESTDIR}${mandir}/man1
+ 
