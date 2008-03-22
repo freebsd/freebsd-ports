@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/ \
 		http://www.wa.apana.org.au/~dean/sources/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	dean@odyssey.apana.org.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed Checksum Clearinghouse procmail, sendmail support
 
 HAS_CONFIGURE=	yes
