@@ -1,11 +1,8 @@
---- plugin.h~	Tue May 16 19:22:49 2006
-+++ plugin.h	Tue May 16 19:00:09 2006
-@@ -61,7 +61,7 @@
- #define STATIC_SPACE
- #define STATIC_ICONS
- #define STATIC_DESKNO
+--- plugin.h~	2007-04-21 14:28:25.000000000 +0300
++++ plugin.h	2008-03-19 15:54:10.000000000 +0200
+@@ -54,0 +55 @@
++#define STATIC_TCLOCK
+@@ -63,0 +65 @@
 +#define STATIC_CPU
- #endif
+@@ -66 +67,0 @@
 -
- 
- #endif
