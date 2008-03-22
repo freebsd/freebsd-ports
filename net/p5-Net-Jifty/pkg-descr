@@ -1,0 +1,12 @@
+Jifty is a full-stack web framework. It provides an optional REST interface
+for applications. Using this module, you can interact with that
+REST interface to write client-side utilities.
+
+You can use this module directly, but you'll be better off subclassing it.
+
+This module also provides a number of convenient methods for writing
+short scripts. For example, passing use_config => 1 to new will look at
+the config file for the username and password (or SID) of the user.
+If neither is available, it will prompt the user for them.
+
+WWW:	http://search.cpan.org/dist/Net-Jifty/
