@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Miro
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -45,7 +45,7 @@ MANCOMPRESSED=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:
-.for pyscr in setup.py resources.py
+.for pyscr in setup.py platform/resources.py
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|'		\
 		-e 's|/usr/X11R6|${X11BASE}|g'				\
 		-e 's|/usr/share|${PREFIX}/share|g'			\
@@ -54,8 +54,14 @@ pre-configure:
 		-e 's|${LOCALBASE}/man|${MANPREFIX}/man|'		\
 		${BUILD_WRKSRC}/${pyscr}
 .endfor
+.for pyscr in miro.real timetemplates.py
+	${REINPLACE_CMD} -e 's|python2.4|${PYTHON_VERSION}|'		\
+		-e '/^PREFIX/s|/usr|${PREFIX}|' ${BUILD_WRKSRC}/${pyscr}
+.endfor
 	${REINPLACE_CMD} -e 's|BOOST_LIB_PATH|${LOCALBASE}/lib|'	\
 		${WRKSRC}/portable/setup_portable.py
+	${REINPLACE_CMD} -e 's|return "Linux"|return "${OPSYS}"|'	\
+		${BUILD_WRKSRC}/platform/__init__.py
 
 do-build:
 	(cd ${BUILD_WRKSRC} &&	\
