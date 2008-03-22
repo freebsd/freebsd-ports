@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thebridge
-PORTVERSION=	0.89
+PORTVERSION=	0.96
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cqinet
@@ -25,5 +25,8 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
+	${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/addons/usermgmt.cgi ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/addons/README ${DATADIR}
 
 .include <bsd.port.mk>

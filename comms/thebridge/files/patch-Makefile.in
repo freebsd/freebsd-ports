@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon Jul  2 22:45:44 2007
-+++ Makefile.in	Sat Jul 21 00:33:00 2007
-@@ -192,7 +192,7 @@
+--- Makefile.in.orig	2008-03-06 23:42:41.000000000 +0900
++++ Makefile.in	2008-03-21 11:53:08.000000000 +0900
+@@ -201,7 +201,7 @@
  sharedstatedir = @sharedstatedir@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
--SUBDIRS = common zlib src inc tbdcmd
-+SUBDIRS = common src inc tbdcmd
+-SUBDIRS = common zlib src inc tbdcmd addons
++SUBDIRS = common src inc tbdcmd addons
  EXTRA_DIST = theBridge.dsp tbd.conf.sample README.txt FreeBSD RedHat SCRIPTING.txt
  sysconf_DATA = tbd.conf.sample
  all: config.h
