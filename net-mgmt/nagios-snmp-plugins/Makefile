@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	nagios-snmp-plugins
-PORTVERSION=	1.0
-PORTREVISION=	6
+PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.hometree.net/pub/${PORTNAME}/
+MASTER_SITES=	http://www.softwareforge.de/releases/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional SNMP plugins for Nagios
 
-LIB_DEPENDS=    netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=		yes
 USE_AUTOTOOLS=	automake:14 autoheader:261 autoconf:261
@@ -33,13 +32,9 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/nagios/cgi-bin \
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
 # Workaround configure.in lameness.
-CONFIGURE_ENV+= CPPFLAGS="`net-snmp-config --cflags`"
+CONFIGURE_ENV+=	CPPFLAGS="`net-snmp-config --cflags`"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} \
