@@ -1,0 +1,95 @@
+bin/pocketsphinx_batch
+bin/pocketsphinx_continuous
+bin/pocketsphinx_mdef_convert
+bin/pocketsphinx_ptt
+bin/pocketsphinx_swb
+bin/pocketsphinx_test
+bin/pocketsphinx_tidigits
+include/pocketsphinx/basic_types.h
+include/pocketsphinx/bin_mdef.h
+include/pocketsphinx/blkarray_list.h
+include/pocketsphinx/cache_lm.h
+include/pocketsphinx/cmdln_macro.h
+include/pocketsphinx/dict.h
+include/pocketsphinx/fbs.h
+include/pocketsphinx/fsg_history.h
+include/pocketsphinx/fsg_lextree.h
+include/pocketsphinx/fsg_psubtree.h
+include/pocketsphinx/fsg_search.h
+include/pocketsphinx/hmm.h
+include/pocketsphinx/kb.h
+include/pocketsphinx/kdtree.h
+include/pocketsphinx/lm.h
+include/pocketsphinx/lm_3g.h
+include/pocketsphinx/lmclass.h
+include/pocketsphinx/log.h
+include/pocketsphinx/magic.h
+include/pocketsphinx/mdef.h
+include/pocketsphinx/phone.h
+include/pocketsphinx/posixwin32.h
+include/pocketsphinx/s2_semi_mgau.h
+include/pocketsphinx/s2io.h
+include/pocketsphinx/s2params.h
+include/pocketsphinx/s2types.h
+include/pocketsphinx/search.h
+include/pocketsphinx/search_const.h
+include/pocketsphinx/senscr.h
+include/pocketsphinx/subvq_mgau.h
+include/pocketsphinx/tmat.h
+include/pocketsphinx/vector.h
+include/pocketsphinx/word_fsg.h
+lib/libpocketsphinx.a
+lib/libpocketsphinx.la
+lib/libpocketsphinx.so
+lib/libpocketsphinx.so.0
+libdata/pkgconfig/pocketsphinx.pc
+%%DATADIR%%/model/hmm/an4/mdef
+%%DATADIR%%/model/hmm/an4/mixture_weights
+%%DATADIR%%/model/hmm/an4/subvq
+%%DATADIR%%/model/hmm/an4/transition_matrices
+%%DATADIR%%/model/hmm/tidigits/feat.params
+%%DATADIR%%/model/hmm/tidigits/mdef
+%%DATADIR%%/model/hmm/tidigits/means
+%%DATADIR%%/model/hmm/tidigits/sendump
+%%DATADIR%%/model/hmm/tidigits/transition_matrices
+%%DATADIR%%/model/hmm/tidigits/variances
+%%DATADIR%%/model/hmm/wsj1/feat.params
+%%DATADIR%%/model/hmm/wsj1/kdtrees
+%%DATADIR%%/model/hmm/wsj1/mdef
+%%DATADIR%%/model/hmm/wsj1/means
+%%DATADIR%%/model/hmm/wsj1/noisedict
+%%DATADIR%%/model/hmm/wsj1/sendump
+%%DATADIR%%/model/hmm/wsj1/transition_matrices
+%%DATADIR%%/model/hmm/wsj1/variances
+%%DATADIR%%/model/lm/swb/swb.dic
+%%DATADIR%%/model/lm/swb/swb.lm.DMP
+%%DATADIR%%/model/lm/tidigits/an4.dic
+%%DATADIR%%/model/lm/tidigits/an4.ug.lm
+%%DATADIR%%/model/lm/tidigits/an4.ug.lm.DMP
+%%DATADIR%%/model/lm/tidigits/test.digits.fsg
+%%DATADIR%%/model/lm/tidigits/tidigits.dic
+%%DATADIR%%/model/lm/tidigits/tidigits.lm
+%%DATADIR%%/model/lm/tidigits/tidigits.lm.DMP
+%%DATADIR%%/model/lm/turtle/README
+%%DATADIR%%/model/lm/turtle/goforward.16k
+%%DATADIR%%/model/lm/turtle/turtle.cor
+%%DATADIR%%/model/lm/turtle/turtle.corpus
+%%DATADIR%%/model/lm/turtle/turtle.ctl
+%%DATADIR%%/model/lm/turtle/turtle.dic
+%%DATADIR%%/model/lm/turtle/turtle.handdict
+%%DATADIR%%/model/lm/turtle/turtle.lm
+%%DATADIR%%/model/lm/turtle/turtle.lm.DMP
+%%DATADIR%%/model/lm/turtle/turtle.sent
+%%DATADIR%%/model/lm/turtle/turtle.token
+%%DATADIR%%/model/lm/turtle/turtle.vocab
+@dirrm %%DATADIR%%/model/lm/turtle
+@dirrm %%DATADIR%%/model/lm/tidigits
+@dirrm %%DATADIR%%/model/lm/swb
+@dirrm %%DATADIR%%/model/lm
+@dirrm %%DATADIR%%/model/hmm/wsj1
+@dirrm %%DATADIR%%/model/hmm/tidigits
+@dirrm %%DATADIR%%/model/hmm/an4
+@dirrm %%DATADIR%%/model/hmm
+@dirrm %%DATADIR%%/model
+@dirrm %%DATADIR%%
+@dirrm include/pocketsphinx
