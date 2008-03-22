@@ -607,6 +607,7 @@
     SUBDIR += specimen
     SUBDIR += speex
     SUBDIR += sphinx
+    SUBDIR += sphinxbase
     SUBDIR += spiralloops
     SUBDIR += spiralsynth
     SUBDIR += spiralsynthmodular
