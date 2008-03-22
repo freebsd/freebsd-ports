@@ -1584,6 +1584,7 @@ courierpasswd	ports/security/courierpasswd
 courieruserinfo	ports/security/courieruserinfo
 coverhunter	ports/audio/coverhunter
 cowbell		ports/audio/cowbell
+cowpatty	ports/net-mgmt/cowpatty
 cowsay		ports/games/cowsay
 cp2fwb		ports/security/cp2fwb
 cpan-upload	ports/devel/cpan-upload
