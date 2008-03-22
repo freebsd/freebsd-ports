@@ -47,6 +47,7 @@
     SUBDIR += clog
     SUBDIR += collectd
     SUBDIR += confregdecode
+    SUBDIR += cowpatty
     SUBDIR += cricket
     SUBDIR += darkstat
     SUBDIR += disco
