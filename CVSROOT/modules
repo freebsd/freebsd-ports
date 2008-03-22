@@ -12830,6 +12830,7 @@ pnm2ppa		ports/print/pnm2ppa
 po4a		ports/textproc/po4a
 poc		ports/security/poc
 pocketreader	ports/textproc/pocketreader
+pocketsphinx	ports/audio/pocketsphinx
 poco		ports/devel/poco
 poco-ssl	ports/devel/poco-ssl
 podcastamatic	ports/www/podcastamatic
@@ -15436,6 +15437,8 @@ spellutils	ports/textproc/spellutils
 speyes		ports/games/speyes
 spfval		ports/mail/spfval
 sphinx		ports/audio/sphinx
+sphinx3		ports/audio/sphinx3
+sphinxbase	ports/audio/sphinxbase
 sphinxsearch	ports/textproc/sphinxsearch
 sphinxsearch-devel	ports/textproc/sphinxsearch-devel
 spice		ports/cad/spice
