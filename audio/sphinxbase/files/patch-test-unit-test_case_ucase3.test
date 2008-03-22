@@ -1,0 +1,9 @@
+--- test/unit/test_case/_ucase3.test    (revision 7548)
++++ test/unit/test_case/_ucase3.test    (working copy)
+@@ -1,2 +1,2 @@
+-#!/bin/bash
+-./chgCase ucase
+\ No newline at end of file
++#!/bin/sh
++./chgCase ucase
+

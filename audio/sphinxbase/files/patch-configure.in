@@ -1,0 +1,23 @@
+--- configure.in	(revision 7550)
++++ configure.in	(working copy)
+@@ -105,18 +105,12 @@
+ 
+ if test "x$ad_files" = "x"; then
+         case $host in
+-                *-*-linux*|*-*-uclinux*)
++                *-*-linux*|*-*-uclinux*| \
++                *-*-freebsd*|*-*-netbsd*|*-*-openbsd*)
+                         ad_files="ad_oss.lo"
+                         ad_backend="AD_BACKEND_OSS"
+ 			AC_DEFINE(AD_BACKEND_OSS, [], [Use OSS interface for sound I/O])
+                         ;;
+-                # FIXME: isn't this the same OSS as on Linux?
+-                *-*-freebsd*|*-*-netbsd*|*-*-openbsd*)
+-                        ad_files="ad_oss_bsd.lo mulaw_base.lo"
+-                        ad_libs="-lossaudio"
+-                        ad_backend="AD_BACKEND_OSS_BSD"
+-			AC_DEFINE(AD_BACKEND_OSS_BSD, [], [Use OSS interface for sound I/O])
+-                        ;;
+                 *-*-osf*)
+                         ad_files="ad_osf.lo mulaw_base.lo"
+                         ad_backend="AD_BACKEND_OSF"

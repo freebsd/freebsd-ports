@@ -1,0 +1,10 @@
+Sphinx Base is part of a large-vocabulary, speaker-independent, continuous
+speech recognition engine.
+
+This port is required for PocketSphinx and Sphinx3
+
+Once the system is built, try running the Perl script sphinx-demo.
+The sphinx-test script should run sphinx-batch over an example
+utterance of "go forward ten meters."
+
+WWW:  http://www.speech.cs.cmu.edu/sphinx/
