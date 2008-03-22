@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	linrad
+PORTNAME=	linrad hamradio
 PORTVERSION=	2.43
 CATEGORIES=	comms
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
