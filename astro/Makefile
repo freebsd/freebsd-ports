@@ -26,6 +26,7 @@
     SUBDIR += gpsman
     SUBDIR += gpstk
     SUBDIR += jday
+    SUBDIR += libgal
     SUBDIR += libnova
     SUBDIR += luna
     SUBDIR += match
