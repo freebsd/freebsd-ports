@@ -6623,6 +6623,7 @@ libftdi		ports/devel/libftdi
 libfwbuilder	ports/security/libfwbuilder
 libg++		ports/devel/libg++
 libgail-gnome	ports/x11-toolkits/libgail-gnome
+libgal		ports/astro/libgal
 libgalago	ports/devel/libgalago
 libgconf-java	ports/devel/libgconf-java
 libgcrypt	ports/security/libgcrypt
