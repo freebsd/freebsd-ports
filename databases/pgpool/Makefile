@@ -9,12 +9,10 @@ PORTNAME=	pgpool
 PORTVERSION=	3.4.1
 PORTREVISION=	0
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1254/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/1446/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A connection pool server for PostgreSQL
-
-BROKEN=		Size mismatch
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
