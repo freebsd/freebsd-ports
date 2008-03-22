@@ -18,7 +18,10 @@ BUILD_DEPENDS=	isc-config.sh:${PORTSDIR}/dns/bind9
 
 HAS_CONFIGURE=	yes
 
-PLIST_FILES=	bin/dnsperf bin/resperf bin/resperf-report
+MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+		INSTALL_DATA="${INSTALL_DATA}"
+PLIST_FILES=	bin/dnsperf bin/resperf	bin/resperf-report
 MAN1=		dnsperf.1 resperf.1
 
 .include <bsd.port.mk>
