@@ -8,6 +8,7 @@
 
 PORTNAME=	comix
 PORTVERSION=	3.6.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +20,6 @@ RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 NO_BUILD=	yes
-USE_XLIB=	yes
 USE_GNOME=	desktopfileutils pygtk2
 WANT_GNOME=	yes
 USE_PYTHON=	yes
