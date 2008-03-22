@@ -16,7 +16,6 @@ COMMENT=	OpenGL spinning pocket watch demo and benchmark utility
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CXX}" LN="${CXX}" OPT="${OPT}" \

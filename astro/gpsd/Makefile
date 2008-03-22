@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=--disable-garmin
 
 .if defined(WITH_XGPS)
 CONFIGURE_ARGS+=--with-x
-USE_XLIB=yes
+USE_XORG=	x11
 PLIST_SUB+=	X11=""
 .else
 CONFIGURE_ARGS+=--without-x

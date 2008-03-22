@@ -20,7 +20,6 @@ LIB_DEPENDS=		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
 			pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GETTEXT=		yes
-USE_XLIB=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_GNOME=		gnomehack gnomeprefix gnometarget intltool intlhack

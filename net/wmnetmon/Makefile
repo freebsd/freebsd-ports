@@ -7,15 +7,14 @@
 
 PORTNAME=	wmnetmon
 PORTVERSION=	0.2p5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net windowmaker
 MASTER_SITES=	http://www.linuks.mine.nu/dockapps/
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A host availability monitor intended for the WindowMaker dock
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 
 BINMODE=	4755

@@ -7,7 +7,7 @@
 
 PORTNAME=	dtcyber
 PORTVERSION=	2.0b1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://members.iinet.net.au/~tom-hunter/ \
 		${MASTER_SITE_LOCAL}
@@ -18,9 +18,9 @@ MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Desktop CYBER Emulator
 
 USE_ZIP=	yes
+USE_XORG=	x11
 USE_DOS2UNIX=	yes
 NO_WRKSUBDIR=	yes
-USE_XLIB=	yes
 INSTALL_TARGET=
 MAKEFILE=	Makefile.x11
 SUB_FILES=	pkg-message

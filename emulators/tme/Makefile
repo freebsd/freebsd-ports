@@ -7,6 +7,7 @@
 
 PORTNAME=	tme
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://people.csail.mit.edu/fredette/tme/
 
@@ -18,7 +19,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk12 gnometarget
 CONFIGURE_ARGS+=	--disable-shared
 MAKE_ENV=	LANG=C
-USE_XLIB=	yes
 
 post-patch:
 		${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/libtme/module.c

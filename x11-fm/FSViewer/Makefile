@@ -7,7 +7,7 @@
 
 PORTNAME=	FSViewer.app
 PORTVERSION=	0.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fm windowmaker
 MASTER_SITES=	http://www.bayernline.de/~gscholz/linux/fsviewer/
 
@@ -20,7 +20,6 @@ COMMENT=	X11 file manager using WINGS library. Dockable in WindowMaker
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

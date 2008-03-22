@@ -26,7 +26,6 @@ LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
 
 USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15 aclocal:19:env
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_SDL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \

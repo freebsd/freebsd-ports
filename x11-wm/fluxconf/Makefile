@@ -14,7 +14,6 @@ MASTER_SITES=	http://devaux.fabien.free.fr/flux/
 MAINTAINER=	alfredoj69@gmail.com
 COMMENT=	A configuration program for the fluxbox window manager
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 

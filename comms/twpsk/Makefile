@@ -7,14 +7,14 @@
 
 PORTNAME=	twpsk
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.ibiblio.org/pub/linux/apps/ham/
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A openmotif X psk31 client
 
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_MOTIF=	yes
 
 MAN1=		psk31.1

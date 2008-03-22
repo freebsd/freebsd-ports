@@ -7,7 +7,7 @@
 
 PORTNAME=	wmitime
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://dockapps.org/files/22/29/
 
@@ -17,7 +17,6 @@ COMMENT=	A clock dockapp that shows the date, time, and internet time
 WRKSRC=		${WRKDIR}/wmitime/wmitime
 
 PLIST_FILES=	bin/wmitime
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 .include <bsd.port.mk>

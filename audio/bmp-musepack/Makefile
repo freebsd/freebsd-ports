@@ -6,7 +6,7 @@
 
 PORTNAME=	musepack
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://files.musepack.net/linux/plugins/
 PKGNAMEPREFIX=	bmp-
@@ -19,7 +19,6 @@ LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 		mpcdec:${PORTSDIR}/audio/libmpcdec \
 		tag:${PORTSDIR}/audio/taglib
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
