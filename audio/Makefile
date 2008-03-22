@@ -608,6 +608,7 @@
     SUBDIR += specimen
     SUBDIR += speex
     SUBDIR += sphinx
+    SUBDIR += sphinx3
     SUBDIR += sphinxbase
     SUBDIR += spiralloops
     SUBDIR += spiralsynth
