@@ -10,9 +10,9 @@ lib/libktoblzcheck.so.6
 %%PYTHON_SITELIBDIR%%/ktoblzcheck.pyo
 libdata/pkgconfig/ktoblzcheck.pc
 %%DATADIR%%/bankdata.txt
-%%DATADIR%%/bankdata_20070604.txt
 %%DATADIR%%/bankdata_20070903.txt
 %%DATADIR%%/bankdata_20071203.txt
+%%DATADIR%%/bankdata_20080303.txt
 %%DATADIR%%/bundesbank.pl
 %%DATADIR%%/ibandata.txt
 %%DATADIR%%/online_update.pl
