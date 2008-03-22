@@ -577,6 +577,7 @@
     SUBDIR += spambnc
     SUBDIR += spamcup
     SUBDIR += spamd
+    SUBDIR += spamdyke
     SUBDIR += spamguard
     SUBDIR += spamilter
     SUBDIR += spamoracle
