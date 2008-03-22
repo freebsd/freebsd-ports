@@ -1,0 +1,8 @@
+Sphinx 3 is a frontend to the sphinxbase, a large-vocabulary,
+speaker-independent, continuous speech recognition engine.
+
+Once the system is built, try running the Perl script sphinx3-demo.
+The sphinx3-test script should run sphinx3-batch over an example
+utterance of "go forward ten meters."
+
+WWW:  http://www.speech.cs.cmu.edu/sphinx/
