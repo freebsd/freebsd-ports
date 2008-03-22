@@ -1,6 +1,6 @@
 # New ports collection makefile for:	biew
-# Date created:		04 February 2000
-# Whom:			Michael Vasilenko <acid@stu.cn.ua>
+# Date created:				04 February 2000
+# Whom:					Michael Vasilenko <acid@stu.cn.ua>
 #
 # $FreeBSD$
 #
@@ -8,11 +8,10 @@
 PORTNAME=	biew
 PORTVERSION=	5.6.2
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Binary vIEWer + editor for binary, hexadecimal and dis-asm modes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
@@ -59,7 +58,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/bin_rc/skn/*.skn ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/hlp/biew.hlp ${DATADIR}
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
