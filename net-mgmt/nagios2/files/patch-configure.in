@@ -1,5 +1,5 @@
---- configure.in.orig	2007-10-22 00:09:51.000000000 +0930
-+++ configure.in	2008-01-30 23:25:03.000000000 +1030
+--- configure.in.orig	2008-03-13 00:31:04.000000000 +1030
++++ configure.in	2008-03-19 23:58:49.000000000 +1030
 @@ -6,7 +6,6 @@
  
  AC_INIT(base/nagios.c)
@@ -7,7 +7,7 @@
 -AC_PREFIX_DEFAULT(/usr/local/nagios)
  
  PKG_NAME=nagios
- PKG_VERSION="2.10"
+ PKG_VERSION="2.11"
 @@ -60,7 +59,15 @@
  dnl Test for pthreads support - taken from ICU FreeBSD Port configure script
  THREADLIBS=""
@@ -41,6 +41,15 @@
  AC_SUBST(INSTALL_OPTS)
  
  AC_ARG_WITH(command_user,--with-command-user=<user> sets user name for command access,command_user=$withval,command_user=$nagios_user)
+@@ -170,7 +178,7 @@
+ 	AC_PATH_PROG(MAIL_PROG,mail) 
+ fi 
+ dnl Fix for systems that don't (yet) have mail/mailx installed...
+-if test x$MAIL_PROG=x; then
++if test x$MAIL_PROG = x; then
+ 	MAIL_PROG="/bin/mail"
+ fi
+ AC_SUBST(MAIL_PROG)
 @@ -599,6 +607,9 @@
  
  	AC_DEFINE_UNQUOTED(EMBEDDEDPERL)
