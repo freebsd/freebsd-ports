@@ -73,6 +73,8 @@ include/wine/msvcrt/wchar.h
 include/wine/msvcrt/wctype.h
 include/wine/windows/accctrl.h
 include/wine/windows/aclapi.h
+include/wine/windows/activaut.h
+include/wine/windows/activaut.idl
 include/wine/windows/activscp.h
 include/wine/windows/activscp.idl
 include/wine/windows/adshlp.h
@@ -93,6 +95,8 @@ include/wine/windows/basetyps.h
 include/wine/windows/bcrypt.h
 include/wine/windows/bits.h
 include/wine/windows/bits.idl
+include/wine/windows/bits1_5.h
+include/wine/windows/bits1_5.idl
 include/wine/windows/bitsmsg.h
 include/wine/windows/cderr.h
 include/wine/windows/cfgmgr32.h
@@ -612,6 +616,7 @@ lib/wine/eject.exe.so
 lib/wine/expand.exe.so
 lib/wine/explorer.exe.so
 lib/wine/faultrep.dll.so
+lib/wine/fusion.dll.so
 lib/wine/gdi.exe16
 lib/wine/gdi32.dll.so
 lib/wine/gdiplus.dll.so
@@ -641,6 +646,7 @@ lib/wine/inseng.dll.so
 lib/wine/iphlpapi.dll.so
 lib/wine/itircl.dll.so
 lib/wine/itss.dll.so
+lib/wine/jscript.dll.so
 lib/wine/kernel32.dll.so
 lib/wine/keyboard.drv16
 lib/wine/krnl386.exe16
@@ -877,6 +883,7 @@ lib/wine/quartz.dll.so
 lib/wine/query.dll.so
 lib/wine/rasapi16.dll16
 lib/wine/rasapi32.dll.so
+lib/wine/reg.exe.so
 lib/wine/regedit.exe.so
 lib/wine/regsvr32.exe.so
 lib/wine/resutils.dll.so
