@@ -7,7 +7,7 @@
 
 PORTNAME=		freeglut
 PORTVERSION=		2.4.0
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,11 +15,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An alternative to the OpenGL Utility Toolkit (GLUT) library
 
-USE_AUTOTOOLS=	libtool:15
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-USE_XLIB=		yes
-USE_GL=		glu
+CONFLICTS=		libglut-[0-9]*
+
+USE_AUTOTOOLS=		libtool:15
+GNU_CONFIGURE=		yes
+USE_LDCONFIG=		yes
+USE_XORG=		ice
+USE_GL=			glu
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--x-includes=${X11BASE}/include	\
 			--x-libraries=${X11BASE}/lib \
@@ -27,9 +29,6 @@ CONFIGURE_ARGS=		--x-includes=${X11BASE}/include	\
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-lusbhid"
 
 REINPLACE_ARGS=		-i ""
-
-PKGMESSAGE=		${WRKDIR}/pkg-message
-SUB_FILES=		pkg-message
 
 DOCS=	download.html freeglut.html freeglut_logo.png		\
 	freeglut_user_interface.html index.html ogl_sm.png	\
@@ -63,9 +62,7 @@ post-install:
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE} |	\
-		${SED} -e "s|/usr/local|${PREFIX}|"		\
-			-e "s|/usr/X11R6|${X11BASE}|"
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
