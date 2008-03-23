@@ -34,6 +34,8 @@ PLIST_SUB+=	GUILE_VER="${GUILE_VER}"
 
 MAN1=	greg.1
 
+FIXME=		Library/gg_class.m ScriptKit/Library/GuileInterpreter.m
+
 .if defined(WITHOUT_X11)
 NOX11_SUFFIX?=	-nox11
 USE_GNUSTEP_BASE=	yes
@@ -52,6 +54,12 @@ GUILE_VER!=	(cd ${PORTSDIR}/lang/guile && make -V GUILE_VER)
 post-patch:
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
 		${WRKSRC}/Greg/configure
+.for i in ${FIXME}
+	${REINPLACE_CMD} -e 's|scm_catch_body_t|scm_t_catch_body|' \
+		-e 's|scm_catch_handler_t|scm_t_catch_handler|' \
+		-e 's|scm_intern|scm_c_define|' \
+		${WRKSRC}/${i}
+.endfor
 
 pre-configure:
 	${TOUCH} ${WRKSRC}/Greg/ac_nonexistent.h
