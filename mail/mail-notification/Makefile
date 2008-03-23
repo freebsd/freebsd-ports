@@ -17,7 +17,6 @@ COMMENT=	A mail notification for freedesktop.org-compliant system trays
 LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gnomehack eel2

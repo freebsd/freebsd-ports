@@ -7,16 +7,16 @@
 
 PORTNAME=	xtet42
 PORTVERSION=	2.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/
 
 MAINTAINER=	gmarco@gufi.org
 COMMENT=	A one or two player t*tris game
 
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setgid=games
+USE_XORG=	x11
 
 MAN6=	xtet42.6
 

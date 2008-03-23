@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	xmbmon
-PORTREVISION=	8
+PORTREVISION=	9
 
 COMMENT=	A X motherboard monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
 
 MASTERDIR=	${.CURDIR}/../mbmon
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xt
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 PLIST_FILES=	lib/X11/app-defaults/XMBmon

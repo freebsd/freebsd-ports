@@ -7,7 +7,7 @@
 
 PORTNAME=	XScreenSaver.App
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xscreensaverapp
@@ -18,7 +18,6 @@ COMMENT=	WindowMaker dockapp to control XScreenSaver
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 PLIST_FILES=	bin/XScreenSaver.App
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${X11BASE}/lib" \
 		CPPFLAGS="-I${X11BASE}/include"

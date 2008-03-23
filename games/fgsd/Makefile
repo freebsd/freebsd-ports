@@ -28,7 +28,6 @@ LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
 		png:${PORTSDIR}/graphics/png \
 		glut:${PORTSDIR}/graphics/libglut
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

@@ -7,7 +7,7 @@
 
 PORTNAME=	adamem
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.komkon.org/~dekogel/files/coleco/
 DISTNAME=	${PORTNAME}
@@ -16,8 +16,7 @@ MAINTAINER=	karlj000@unbc.ca
 COMMENT=	ADAMEm is a portable Coleco ADAM and ColecoVision emulator
 
 NO_WRKSUBDIR=	yes
-USE_XLIB=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	sm x11 xau xext xfixes xi xrandr
 ALL_TARGET=	x
 
 PROGDIR=	${PREFIX}/${PORTNAME}

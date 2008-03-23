@@ -7,14 +7,13 @@
 
 PORTNAME=	gtklife
 PORTVERSION=	5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://ironphoenix.org/tril/gtklife/
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A GTK+ implementation of Conway's Game of Life
 
-USE_XLIB=	yes
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes

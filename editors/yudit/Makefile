@@ -7,7 +7,7 @@
 
 PORTNAME=	yudit
 PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
 		${MASTER_SITE_SUNSITE}
@@ -17,8 +17,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	Multi-lingual unicode text editor with TTF support
 
-USE_XLIB=	YES
 USE_GETTEXT=	yes
+USE_XORG=	x11
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib" \
 		LC_ALL=

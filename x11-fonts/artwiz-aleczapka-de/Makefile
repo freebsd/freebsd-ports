@@ -6,7 +6,7 @@
 
 PORTNAME=		artwiz-aleczapka-de
 PORTVERSION=		1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		x11-fonts
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	artwizaleczapka
@@ -16,7 +16,6 @@ COMMENT=	A set of (improved) artwiz fonts
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 FONTS=	anorexia.de aqui.de cure.de drift.de edges.de fkp.de gelly.de \

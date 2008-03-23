@@ -14,7 +14,6 @@ MASTER_SITES=	http://linuxadvocate.org/projects/gruler/downloads/
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A customizable screen ruler for GNOME
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libglade2
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

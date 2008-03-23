@@ -7,7 +7,7 @@
 
 PORTNAME=	metamail
 PORTVERSION=	2.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.funet.fi/pub/unix/mail/metamail/ \
 		ftp://ftp.research.telcordia.com/pub/nsb/
@@ -35,7 +35,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
-USE_XLIB=	yes
+USE_XORG=	x11
 PLIST_SUB+=	X11=""
 .else
 PLIST_SUB+=	X11="@comment "

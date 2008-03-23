@@ -7,6 +7,7 @@
 
 PORTNAME=	recordmydesktop
 DISTVERSION=	0.3.7.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -16,13 +17,13 @@ COMMENT=	Record desktop sessions to an Ogg-Theora-Vorbis file
 LIB_DEPENDS=	theora.0:${PORTSDIR}/multimedia/libtheora \
 		jack.0:${PORTSDIR}/audio/jack
 
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-oss=yes \
 			--enable-jack=yes
 
 MAN1=	recordmydesktop.1
 
+USE_XORG=	ice sm x11 xext xfixes xdamage
 PLIST_FILES=	bin/recordmydesktop
 
 post-patch:

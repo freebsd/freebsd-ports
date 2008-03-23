@@ -7,7 +7,7 @@
 
 PORTNAME=	magiccube4d
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.superliminal.com/cube/
 DISTNAME=	mc4d-src-${PORTVERSION:S/./_/}
@@ -16,8 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	karlj000@unbc.ca
 COMMENT=	MagicCube4D is a four-dimensional analog of Rubik's cube
 
-USE_X_PREFIX=	yes
-
+USE_XORG=	x11 xext xt sm ice xaw
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION:S/./_/}
 DOCS=		ChangeLog Intro.txt MagicCube4D-unix.txt \

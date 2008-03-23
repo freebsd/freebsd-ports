@@ -8,7 +8,7 @@
 
 PORTNAME=	gnuboy
 PORTVERSION=	1.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators games
 MASTER_SITES=	http://gnuboy.unix-fu.org/src/ \
 		http://brightrain.aerifal.cx/~laguna/src/
@@ -19,7 +19,7 @@ COMMENT=	Nintendo GameBoy emulator
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
 USE_SDL=	sdl
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_AUTOTOOLS=	autoconf:261
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"

@@ -7,7 +7,7 @@
 
 PORTNAME=	preps
 PORTVERSION=	2.0.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
 PKGNAMESUFFIX=	-gui
@@ -19,7 +19,6 @@ COMMENT=	Problem reporting system
 
 RUN_DEPENDS=	prepsdb_tool:${PORTSDIR}/devel/prepstools
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 gconf2 libgnomeui
 USE_PGSQL=	yes

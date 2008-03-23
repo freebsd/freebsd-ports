@@ -7,7 +7,7 @@
 
 PORTNAME=	mpd
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.arizona.edu/mpd/download/ \
 		http://crypto.riken.go.jp/pub/NetBSD/packages/distfiles/mpd-language/
@@ -38,7 +38,7 @@ MAN5=		mpdmap.5 mpdtrace.5
 PLIST_SUB+=	X11="@comment "
 .else
 PLIST_SUB+=	X11=""
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 
 post-patch:

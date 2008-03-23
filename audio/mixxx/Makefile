@@ -7,7 +7,7 @@
 
 PORTNAME=	mixxx
 PORTVERSION=	1.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,6 @@ LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		sndfile:${PORTSDIR}/audio/libsndfile
 
-USE_X_PREFIX=	yes
 USE_QT_VER=	3
 HAS_CONFIGURE=	yes
 USE_GL=		yes

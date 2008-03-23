@@ -6,6 +6,7 @@
 
 PORTNAME=	alliance
 PORTVERSION=	5.0.20070718
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www-asim.lip6.fr/pub/alliance/distribution/5.0/ \
 		${MASTER_SITE_LOCAL}
@@ -23,7 +24,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-5.0
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_MOTIF=	yes
-USE_XLIB=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	ALLIANCE_TOP=${ALLIANCE_TOP}

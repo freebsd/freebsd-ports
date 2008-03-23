@@ -7,7 +7,7 @@
 
 PORTNAME=	seahaven
 PORTVERSION=	1.44
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://seahaven.sourceforge.net/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -17,8 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	imp@FreeBSD.org
 COMMENT=	The classic, lightweight version of Seahaven Towers
 
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+USE_XORG=	x11 xext
 MAN6?=		seahaven.6
 PLIST_FILES=	bin/seahaven
 

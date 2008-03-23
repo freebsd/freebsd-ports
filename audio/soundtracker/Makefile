@@ -7,7 +7,7 @@
 
 PORTNAME=	soundtracker
 PORTVERSION=	0.6.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.soundtracker.org/dl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	v${PORTVERSION:R}
@@ -17,7 +17,6 @@ COMMENT=	Mod player/tracking tool which supports XM and MOD formats
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
-USE_X_PREFIX=	yes
 USE_GNOME=	esound gdkpixbuf gnomehack gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

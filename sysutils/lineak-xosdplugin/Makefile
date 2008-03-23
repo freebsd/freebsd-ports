@@ -7,7 +7,7 @@
 
 PORTNAME=	lineak-xosdplugin
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=lineak
@@ -20,7 +20,7 @@ LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd \
 		xosd.4:${PORTSDIR}/misc/xosd
 
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xext xt
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--program-prefix=''

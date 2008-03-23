@@ -7,6 +7,7 @@
 
 PORTNAME=	xvile
 PORTVERSION=	9.6e
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://invisible-island.net/vile/ \
 		ftp://dickey.his.com/vile/ \
@@ -24,9 +25,9 @@ PATCHFILES=	vile-9.6a.patch.gz \
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs, X11 version -- a fully "X aware" vi work-alike
 
-USE_XLIB=	yes
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
+USE_XORG=	x11 xpm xext
 USE_PERL5=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \

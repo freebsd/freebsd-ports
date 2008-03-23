@@ -7,6 +7,7 @@
 
 PORTNAME=	gxemul
 PORTVERSION=	0.4.6.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://gavare.se/gxemul/src/ \
 		${MASTER_SITE_LOCAL}
@@ -32,7 +33,7 @@ OPTIONS=	X11	 "X11 support" on
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--disable-x
 .else
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 
 post-patch:

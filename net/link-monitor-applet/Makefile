@@ -17,7 +17,6 @@ COMMENT=	A GNOME applet displaying the round-trip time to one or more hosts
 
 LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomepanel eel2 librsvg2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

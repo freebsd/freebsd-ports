@@ -7,7 +7,7 @@
 
 PORTNAME=	grads
 PORTVERSION=	1.9b3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics science math
 MASTER_SITES=	ftp://grads.iges.org/grads/1.9/:src \
 		ftp://grads.iges.org/grads/:other
@@ -25,7 +25,6 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
-USE_XLIB=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV+=		SUPPLIBS="${LOCALBASE}"
 CONFIGURE_ARGS+=	--enable-dyn-supplibs \

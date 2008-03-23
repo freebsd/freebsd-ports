@@ -7,6 +7,7 @@
 
 PORTNAME=	drscheme
 PORTVERSION=	370
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -44,7 +45,6 @@ WRKSRC=		${WRKDIR}/plt-${PORTVERSION}/src
 USE_ICONV=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
-USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15:env
 
 MAN1=		drscheme.1 help-desk.1 mred.1 mzscheme.1 tex2page.1

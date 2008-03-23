@@ -6,7 +6,7 @@
 
 PORTNAME=	aterm
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gugod@gugod.org
 COMMENT=	A color vt102 terminal emulator with transparency support
 
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 PATCH_WRKSRC=	${WRKSRC}/..
 CONFIGURE_ARGS=	--enable-fading --enable-xim --enable-big5

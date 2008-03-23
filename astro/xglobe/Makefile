@@ -7,7 +7,7 @@
 
 PORTNAME=	xglobe
 PORTVERSION=	0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=kris
@@ -16,7 +16,6 @@ MAINTAINER=	kris@FreeBSD.org
 COMMENT=	Displays a view of the Earth (like xearth) with a rendered photo map
 
 USE_QT_VER=	3
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 

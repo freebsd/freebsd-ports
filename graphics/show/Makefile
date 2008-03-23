@@ -7,7 +7,7 @@
 
 PORTNAME=	show
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ibiblio.org/propaganda/ \
 		http://www.freebsdbrasil.com.br/~jmelo/
@@ -20,8 +20,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg	\
 		tiff.4:${PORTSDIR}/graphics/tiff	\
 		ungif.5:${PORTSDIR}/graphics/libungif	\
 		Imlib.5:${PORTSDIR}/graphics/imlib
-
-USE_X_PREFIX=	yes
 
 PLIST_FILES=	bin/show
 

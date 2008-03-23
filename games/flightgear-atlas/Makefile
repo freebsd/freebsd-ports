@@ -25,7 +25,6 @@ RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${X11BASE}/include/simgear/version.h:${PORTSDIR}/devel/simgear \
 		${X11BASE}/share/FlightGear/version:${PORTSDIR}/games/fgfs-base
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GL=		yes
 

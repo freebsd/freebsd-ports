@@ -7,7 +7,7 @@
 
 PORTNAME=	flux-art
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.iluxa.kremenchug.net/files/
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 CONFLICTS=	fluxbox-fluxmod-*
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_DIR=	${PREFIX}/share/fluxbox/styles

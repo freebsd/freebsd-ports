@@ -7,7 +7,7 @@
 
 PORTNAME=	lineak-defaultplugin
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lineak
@@ -20,8 +20,8 @@ LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
+USE_XORG=       x11 xext xt xtst xfixes
 USE_GMAKE=	yes
-USE_XLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--program-prefix=''

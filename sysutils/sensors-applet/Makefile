@@ -18,7 +18,6 @@ COMMENT=	A GNOME applet displaying hardware sensor values
 RUN_DEPENDS=	mbmon:${PORTSDIR}/sysutils/mbmon \
 		smartctl:${PORTSDIR}/sysutils/smartmontools
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack gnomepanel
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

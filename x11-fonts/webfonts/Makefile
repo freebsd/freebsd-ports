@@ -7,7 +7,7 @@
 
 PORTNAME=	webfonts
 PORTVERSION=	0.30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_NETBSD:S/%SUBDIR%/ms-ttf/}:group1 \
 	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/corefonts/}:group1 \
@@ -35,8 +35,6 @@ COMMENT=	TrueType core fonts for the Web
 EXTRACT_DEPENDS=cabextract:${PORTSDIR}/archivers/cabextract
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-
-USE_X_PREFIX=	yes
 
 NO_BUILD=	yes
 RESTRICTED=	"Restrictive license - cannot sell for profit or distribute in modified form"
