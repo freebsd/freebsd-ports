@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.10
-PORTREVISION=	2
+PORTVERSION=	1.1.11
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -71,7 +70,7 @@ MAN1=	xine-config.1
 MAN5=	xine.5
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
-PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/${PORTVERSION}"
+PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.20"
 
 .include <bsd.port.pre.mk>
 
