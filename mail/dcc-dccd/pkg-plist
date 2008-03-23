@@ -1,53 +1,29 @@
-@unexec if cmp -s %D/dcc/dcc_conf %D/dcc/dcc_conf.dist; then rm -f %D/dcc/dcc_conf; fi
-dcc/dcc_conf.dist
-@exec [ -f %B/dcc_conf ] || cp %B/%f %B/dcc_conf
-@unexec if cmp -s %D/dcc/flod %D/dcc/flod.dist; then rm -f %D/dcc/flod; fi
-dcc/flod.dist
-@exec [ -f %B/flod ] || cp %B/%f %B/flod
-@unexec if cmp -s %D/dcc/grey_flod %D/dcc/grey_flod.dist; then rm -f %D/dcc/grey_flod; fi
-dcc/grey_flod.dist
-@exec [ -f %B/grey_flod ] || cp %B/%f %B/grey_flod
-@unexec if cmp -s %D/dcc/grey_whitelist %D/dcc/grey_whitelist.dist; then rm -f %D/dcc/grey_whitelist; fi
-dcc/grey_whitelist.dist
-@exec [ -f %B/grey_whitelist ] || cp %B/%f %B/grey_whitelist
-@unexec if cmp -s %D/dcc/ids %D/dcc/ids.dist; then rm -f %D/dcc/ids; fi
-dcc/ids.dist
-@exec [ -f %B/ids ] || cp %B/%f %B/ids
-@unexec if cmp -s %D/dcc/map.txt %D/dcc/map.txt.dist; then rm -f %D/dcc/map.txt; fi
-dcc/map.txt.dist
-@exec [ -f %B/map.txt ] || cp %B/%f %B/map.txt
-@unexec if cmp -s %D/dcc/whiteclnt %D/dcc/whiteclnt.dist; then rm -f %D/dcc/whiteclnt; fi
-dcc/whiteclnt.dist
-@exec [ -f %B/whiteclnt ] || cp %B/%f %B/whiteclnt
-@unexec if cmp -s %D/dcc/whitecommon %D/dcc/whitecommon.dist; then rm -f %D/dcc/whitecommon; fi
-dcc/whitecommon.dist
-@exec [ -f %B/whitecommon ] || cp %B/%f %B/whitecommon
-@unexec if cmp -s %D/dcc/whitelist %D/dcc/whitelist.dist; then rm -f %D/dcc/whitelist; fi
-dcc/whitelist.dist
-@exec [ -f %B/whitelist ] || cp %B/%f %B/whitelist
 bin/cdcc
-bin/dccif-test
+%%WITH_DCCIFD%%bin/dccif-test
 bin/dccproc
 dcc/cgi-bin/README
 dcc/cgi-bin/chgpasswd
 dcc/cgi-bin/common
 dcc/cgi-bin/edit-whiteclnt
+dcc/cgi-bin/footer
+dcc/cgi-bin/header
 dcc/cgi-bin/http2https
 dcc/cgi-bin/list-log
 dcc/cgi-bin/list-msg
 dcc/cgi-bin/webuser-notify
 dcc/libexec/cron-dccd
 %%WITH_DCCIFD%%dcc/libexec/dccifd
-%%WITH_SENDMAIL%%dcc/libexec/dccm
-dcc/libexec/dbclean
-dcc/libexec/dblist
+%%WITH_DCCM%%dcc/libexec/dccm
+%%WITH_DCCD%%dcc/libexec/dbclean
+%%WITH_DCCD%%dcc/libexec/dblist
 dcc/libexec/dcc-stats-collect
 dcc/libexec/dcc-stats-graph
 dcc/libexec/dcc-stats-init
-dcc/libexec/dccd
+%%WITH_DCCD%%dcc/libexec/dccd
 dcc/libexec/dccsight
-dcc/libexec/dns-helper
+%%WITH_IFD_MILT%%dcc/libexec/dns-helper
 dcc/libexec/fetchblack
+dcc/libexec/fetchids
 dcc/libexec/fetch-testmsg-whitelist
 dcc/libexec/hackmc
 dcc/libexec/list-clients
@@ -63,10 +39,43 @@ dcc/libexec/stop-dccd
 dcc/libexec/updatedcc
 dcc/libexec/uninstalldcc
 dcc/libexec/wlist
-dcc/cgi-bin/header
-dcc/cgi-bin/footer
-dcc/map
-@dirrm dcc/log
 @dirrm dcc/libexec
 @dirrm dcc/cgi-bin
+@dirrmtry dcc
+%%WITH_DCCIFD%%@stopdaemon dccifd
+%%WITH_DCCM%%@stopdaemon dccm
+%%WITH_DCCD%%@stopdaemon dccd
+%%WITH_DCCGREY%%@stopdaemon dccgrey
+%%WITH_ALT_HOME%%@cwd /var
+@unexec if cmp -s %D/dcc/dcc_conf %D/dcc/dcc_conf.sample; then rm -f %D/dcc/dcc_conf; fi
+dcc/dcc_conf.sample
+@exec [ -f %B/dcc_conf ] || cp %B/%f %B/dcc_conf
+@unexec if cmp -s %D/dcc/flod %D/dcc/flod.sample; then rm -f %D/dcc/flod; fi
+dcc/flod.sample
+@unexec if cmp -s %D/dcc/grey_flod %D/dcc/grey_flod.sample; then rm -f %D/dcc/grey_flod; fi
+dcc/grey_flod.sample
+@unexec if cmp -s %D/dcc/grey_whitelist %D/dcc/grey_whitelist.sample; then rm -f %D/dcc/grey_whitelist; fi
+dcc/grey_whitelist.sample
+@unexec if cmp -s %D/dcc/ids %D/dcc/ids.sample; then rm -f %D/dcc/ids; fi
+dcc/ids.sample
+@unexec if cmp -s %D/dcc/map.txt %D/dcc/map.txt.sample; then rm -f %D/dcc/map.txt; fi
+dcc/map.txt.sample
+@unexec if cmp -s %D/dcc/map %D/dcc/map.sample; then rm -f %D/dcc/map; fi
+dcc/map.sample
+@unexec if cmp -s %D/dcc/whiteclnt %D/dcc/whiteclnt.sample; then rm -f %D/dcc/whiteclnt; fi
+dcc/whiteclnt.sample
+@unexec if cmp -s %D/dcc/whitecommon %D/dcc/whitecommon.sample; then rm -f %D/dcc/whitecommon; fi
+dcc/whitecommon.sample
+@unexec if cmp -s %D/dcc/whitelist %D/dcc/whitelist.sample; then rm -f %D/dcc/whitelist; fi
+dcc/whitelist.sample
+%%WITH_IFD_MILT%%@unexec [ -e %D/dcc/whiteclnt.dccw ] && rm -f %D/dcc/whiteclnt.dccw || true
+%%WITH_IFD_MILT%%@unexec [ -e %D/dcc/whiteclnt.dccx ] && rm -f %D/dcc/whiteclnt.dccx || true
+%%WITH_DCCD%%@unexec [ -e %D/dcc/dcc_db ] && rm -f %D/dcc/dcc_db || true
+%%WITH_DCCD%%@unexec [ -e %D/dcc/dcc_db.hash ] && rm -f %D/dcc/dcc_db.hash || true
+%%WITH_DCCD%%@unexec [ -e %D/dcc/flod.map ] && rm -f %D/dcc/flod.map || true
+%%WITH_DCCD%%@unexec [ -e %D/dcc/dccd_clients ] && rm -f %D/dcc/dccd_clients || true
+%%WITH_DCCGREY%%@unexec [ -e %D/dcc/grey_db.hash ] && rm -f %D/dcc/grey_db.hash || true
+%%WITH_DCCGREY%%@unexec [ -e %D/dcc/grey_flod.map ] && rm -f %D/dcc/grey_flod.map || true
+%%WITH_DCCGREY%%@unexec [ -e %D/dcc/grey_clients ] && rm -f %D/dcc/grey_clients || true
+@dirrm dcc/log
 @dirrmtry dcc
