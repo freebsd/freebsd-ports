@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.helsinki.fi/pub/Software/Local/Sgrep/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkoshy
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A `grep' for structured text like SGML and HTML
 
 CONFLICTS=	sgrep2-1.*
