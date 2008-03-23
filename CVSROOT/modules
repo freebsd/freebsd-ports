@@ -13367,6 +13367,7 @@ py-cryptkit	ports/security/py-cryptkit
 py-cssutils	ports/www/py-cssutils
 py-csv		ports/textproc/py-csv
 py-ctypes	ports/devel/py-ctypes
+py-cups		ports/print/py-cups
 py-curl		ports/ftp/py-curl
 py-cxx		ports/devel/py-cxx
 py-cyruslib	ports/mail/py-cyruslib
