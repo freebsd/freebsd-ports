@@ -1,0 +1,344 @@
+diff -urN ./src/hdfi/MEDdatasetNumEcrire231.c ./src/hdfi/MEDdatasetNumEcrire231.c
+--- ./src/hdfi/MEDdatasetNumEcrire231.c	2007-05-30 15:07:58.000000000 +0200
++++ ./src/hdfi/MEDdatasetNumEcrire231.c	2008-03-22 15:51:08.000000000 +0100
+@@ -201,10 +201,10 @@
+ 		}
+ 	    }
+ 	     
+-	    if ( (ret = H5Sselect_elements(memspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) 
++	    if ( (ret = H5Sselect_elements(memspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0) 
+ 	      goto Fail; 
+ 	      
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pfldsk ) ) <0) 
+ 	      goto Fail; 
+ 	    
+ 	    break;
+@@ -228,10 +228,10 @@
+ 		}
+ 	    }
+ 	    
+-	    if ( (ret = H5Sselect_elements(memspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) 
++	    if ( (ret = H5Sselect_elements(memspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0) 
+ 	      goto Fail; 
+ 	    
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pfldsk ) ) <0) 
+ 	      goto Fail; 
+ 	     
+ 	    break;
+@@ -303,7 +303,7 @@
+ 		}
+ 	    }
+ 	    
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0) 
+ 	      goto Fail;
+ 	    
+ 	    if ((ret = H5Dwrite(dataset,type_hdf,dataspace,dataspace,H5P_DEFAULT, val)) < 0)
+@@ -337,10 +337,10 @@
+ 		}
+ 	    }
+ 	     
+-	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET,pcount[0], (const hsize_t **) pflmem ) ) <0) 
++	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET,pcount[0], (const hsize_t *) pflmem ) ) <0) 
+ 	      goto Fail; 
+ 	      
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0) 
+ 	      goto Fail;
+ 	   
+ 	    if ((ret = H5Dwrite(dataset,type_hdf,memspace,dataspace,H5P_DEFAULT, val)) < 0)
+diff -urN ./src/hdfi/MEDdatasetNumEcrire232.c ./src/hdfi/MEDdatasetNumEcrire232.c
+--- ./src/hdfi/MEDdatasetNumEcrire232.c	2008-02-04 12:29:45.000000000 +0100
++++ ./src/hdfi/MEDdatasetNumEcrire232.c	2008-03-22 15:51:52.000000000 +0100
+@@ -283,13 +283,13 @@
+ 	  }
+ 	}
+ 
+-	if ( (ret = H5Sselect_elements(memspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) {
++	if ( (ret = H5Sselect_elements(memspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0) {
+ 	  MESSAGE("Impossible d'effectuer une sélection sur le memspace  : ");
+ 	  ISCRUTE(memspace);
+ 	  goto ERROR;
+ 	}
+ 
+-	if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pfldsk ) ) <0) {
++	if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pfldsk ) ) <0) {
+ 	  MESSAGE("Impossible d'effectuer une sélection sur le dataspace  : ");
+ 	  ISCRUTE(dataspace);
+ 	  goto ERROR;
+@@ -324,13 +324,13 @@
+ 	  }
+ 	}
+ 
+-	if ( (ret = H5Sselect_elements(memspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) {
++	if ( (ret = H5Sselect_elements(memspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0) {
+ 	  MESSAGE("Impossible d'effectuer une sélection sur le memspace  : ");
+ 	  ISCRUTE(memspace);
+ 	  goto ERROR;
+ 	}
+ 
+-	if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pfldsk ) ) <0)  {
++	if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pfldsk ) ) <0)  {
+ 	  MESSAGE("Impossible d'effectuer une sélection sur le dataspace  : ");
+ 	  ISCRUTE(dataspace);
+ 	  goto ERROR;
+@@ -441,13 +441,13 @@
+ 	  }
+ 	}
+ 
+-	if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET,pcount[0], (const hsize_t **) pflmem ) ) <0) {
++	if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET,pcount[0], (const hsize_t *) pflmem ) ) <0) {
+ 	  MESSAGE("Impossible d'effectuer une sélection sur le memspace  : ");
+ 	  ISCRUTE(memspace);
+ 	  goto ERROR;
+ 	}
+ 
+-	if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0) {
++	if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0) {
+ 	  MESSAGE("Impossible d'effectuer une sélection sur le dataspace  : ");
+ 	  ISCRUTE(dataspace);
+ 	  goto ERROR;
+@@ -500,13 +500,13 @@
+ 	  }
+ 	}
+ 
+-	if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET,pcount[0], (const hsize_t **) pflmem ) ) <0) {
++	if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET,pcount[0], (const hsize_t *) pflmem ) ) <0) {
+ 	  MESSAGE("Impossible d'effectuer une sélection sur le memspace  : ");
+ 	  ISCRUTE(memspace);
+ 	  goto ERROR;
+ 	}
+ 
+-	if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0) {
++	if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0) {
+ 	  MESSAGE("Impossible d'effectuer une sélection sur le dataspace  : ");
+ 	  ISCRUTE(dataspace);
+ 	  goto ERROR;
+diff -urN ./src/hdfi/MEDdatasetNumLire231.c ./src/hdfi/MEDdatasetNumLire231.c
+--- ./src/hdfi/MEDdatasetNumLire231.c	2007-06-20 11:32:06.000000000 +0200
++++ ./src/hdfi/MEDdatasetNumLire231.c	2008-03-22 15:53:11.000000000 +0100
+@@ -187,10 +187,10 @@
+ 	      }
+ 	  }
+ 	    
+-	  if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) 
++	  if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	    goto Fail;
+ 	    
+-	  if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	  if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	    goto Fail;
+ 	    
+ 	  break;
+@@ -214,10 +214,10 @@
+ 	      }	      
+ 	  }
+ 	    
+-	  if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) 
++	  if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	    goto Fail;
+ 	    
+-	  if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	  if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	    goto Fail;
+ 	    
+ 	  break;
+@@ -289,7 +289,7 @@
+ 		}
+ 	    }
+ 	    
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	      goto Fail;
+ 	    
+ 	    if ((ret = H5Dread(dataset,type_hdf,dataspace,dataspace,H5P_DEFAULT, val)) < 0)
+@@ -324,10 +324,10 @@
+ 		}
+ 	    }
+ 	    
+-	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) 
++	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	      goto Fail;
+ 	    
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	      goto Fail;
+ 	    
+ 	    if ((ret = H5Dread(dataset,type_hdf,memspace,dataspace,H5P_DEFAULT, val)) < 0)
+diff -urN ./src/hdfi/MEDdatasetNumLire232.c ./src/hdfi/MEDdatasetNumLire232.c
+--- ./src/hdfi/MEDdatasetNumLire232.c	2007-06-20 11:32:07.000000000 +0200
++++ ./src/hdfi/MEDdatasetNumLire232.c	2008-03-22 15:54:03.000000000 +0100
+@@ -233,10 +233,10 @@
+ 	            }
+ 	        }
+ 	    
+-	        if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0)
++	        if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	          goto Fail;
+ 	    
+-	        if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pfldsk ) ) <0)
++	        if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	          goto Fail;
+ 
+ 	        break;
+@@ -265,10 +265,10 @@
+ 	            }
+ 	        }
+ 	    
+-	        if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0)
++	        if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	          goto Fail;
+ 	    
+-	        if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pfldsk ) ) <0)
++	        if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	          goto Fail;
+ 
+ 	        break;
+@@ -358,10 +358,10 @@
+ 	        }
+ 	        
+ 	        if ( pflcmp == MED_PFL_COMPACT ) {
+-	          if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0)
++	          if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	            goto Fail;
+ 
+-	          if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0)
++	          if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	            goto Fail;
+ 
+ 	          if ((ret = H5Dread(dataset,type_hdf,memspace,dataspace,H5P_DEFAULT, val)) < 0)
+@@ -371,7 +371,7 @@
+             }
+             else {
+ 
+-	          if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0)
++	          if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	            goto Fail;
+ 
+ 	          if ((ret = H5Dread(dataset,type_hdf,dataspace,dataspace,H5P_DEFAULT, val)) < 0)
+@@ -417,10 +417,10 @@
+ 	        }
+ 	    
+ 	        if ( pflcmp == MED_PFL_NON_COMPACT ) {
+-              if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0)
++              if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	            goto Fail;
+ 
+-	          if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0)
++	          if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	            goto Fail;
+ 
+ 	          if ((ret = H5Dread(dataset,type_hdf,memspace,dataspace,H5P_DEFAULT, val)) < 0)
+@@ -429,7 +429,7 @@
+ 	          free(pflmem);
+ 	        }
+             else {
+-	          if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0)
++	          if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	            goto Fail;
+ 
+ 	          if ((ret = H5Dread(dataset,type_hdf,dataspace,dataspace,H5P_DEFAULT, val)) < 0)
+diff -urN ./tools/medimport/2.1.x/MED21datasetNumLire.c ./tools/medimport/2.1.x/MED21datasetNumLire.c
+--- ./tools/medimport/2.1.x/MED21datasetNumLire.c	2007-12-18 12:34:53.000000000 +0100
++++ ./tools/medimport/2.1.x/MED21datasetNumLire.c	2008-03-22 15:54:53.000000000 +0100
+@@ -150,10 +150,10 @@
+ 		}
+ 	    }
+ 	    
+-	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) 
++	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	      return -1; 
+ 	    
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	      return -1; 
+ 	    
+ 	    break;
+@@ -177,10 +177,10 @@
+ 		}	      
+ 	    }
+ 	    
+-	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) 
++	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	      return -1; 
+ 	    
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	      return -1; 
+ 	    
+ 	    break;
+@@ -251,7 +251,7 @@
+ 		}
+ 	    }
+ 	    
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	      return -1;
+ 	    
+ 	    if ((ret = H5Dread(dataset,type_hdf,dataspace,dataspace,H5P_DEFAULT, val)) < 0)
+@@ -282,10 +282,10 @@
+ 		}
+ 	    }
+ 	    
+-	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) 
++	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	      return -1; 
+ 	    
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	      return -1;	  
+ 	    
+ 	    if ((ret = H5Dread(dataset,type_hdf,memspace,dataspace,H5P_DEFAULT, val)) < 0)
+diff -urN ./tools/medimport/2.1.x/MED21datasetNumLirebuilt.cxx ./tools/medimport/2.1.x/MED21datasetNumLirebuilt.cxx
+--- ./tools/medimport/2.1.x/MED21datasetNumLirebuilt.cxx	2008-02-04 14:27:11.000000000 +0100
++++ ./tools/medimport/2.1.x/MED21datasetNumLirebuilt.cxx	2008-03-22 15:55:57.000000000 +0100
+@@ -150,10 +150,10 @@
+ 		}
+ 	    }
+ 	    
+-	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) 
++	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	      return -1; 
+ 	    
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	      return -1; 
+ 	    
+ 	    break;
+@@ -177,10 +177,10 @@
+ 		}	      
+ 	    }
+ 	    
+-	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) 
++	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	      return -1; 
+ 	    
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET, pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	      return -1; 
+ 	    
+ 	    break;
+@@ -251,7 +251,7 @@
+ 		}
+ 	    }
+ 	    
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	      return -1;
+ 	    
+ 	    if ((ret = H5Dread(dataset,type_hdf,dataspace,dataspace,H5P_DEFAULT, val)) < 0)
+@@ -282,10 +282,10 @@
+ 		}
+ 	    }
+ 	    
+-	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t **) pflmem ) ) <0) 
++	    if ( (ret = H5Sselect_elements(memspace ,H5S_SELECT_SET, pcount[0], (const hsize_t *) pflmem ) ) <0)
+ 	      return -1; 
+ 	    
+-	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t **) pfldsk ) ) <0) 
++	    if ( (ret = H5Sselect_elements(dataspace,H5S_SELECT_SET,pcount[0], (const hsize_t *) pfldsk ) ) <0)
+ 	      return -1;	  
+ 	    
+ 	    if ((ret = H5Dread(dataset,type_hdf,memspace,dataspace,H5P_DEFAULT, val)) < 0)

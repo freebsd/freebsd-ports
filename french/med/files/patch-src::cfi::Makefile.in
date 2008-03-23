@@ -1,7 +1,7 @@
---- src/cfi/Makefile.in.orig	Tue Aug 30 10:20:16 2005
-+++ src/cfi/Makefile.in	Mon Jan  9 21:10:56 2006
-@@ -60,11 +60,13 @@
- DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/include/med
+--- ./src/cfi/Makefile.in.orig	2008-02-08 15:21:48.000000000 +0100
++++ ./src/cfi/Makefile.in	2008-03-22 14:27:04.000000000 +0100
+@@ -57,11 +57,13 @@
+ DEFAULT_INCLUDES = -I. -I$(top_builddir)/include@am__isrc@
  depcomp = $(SHELL) $(top_srcdir)/config/depcomp
  am__depfiles_maybe = depfiles
 +# FreeBSD patch: put AM_CFLAGS before CPPFLAGS to be able to compile
@@ -9,11 +9,10 @@
  COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 -	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 +	$(AM_CFLAGS) $(CPPFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) \
--	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
--	$(AM_CFLAGS) $(CFLAGS)
-+	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(AM_CFLAGS) \
-+	$(CPPFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+-	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++	$(AM_CPPFLAGS) $(AM_CFLAGS) $(CPPFLAGS) $(CFLAGS)
  CCLD = $(CC)
- LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
