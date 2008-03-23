@@ -25,7 +25,7 @@ include/uim/uim.h
 lib/libgcroots.a
 lib/libgcroots.la
 lib/libgcroots.so
-lib/libgcroots.so.0
+lib/libgcroots.so.1
 lib/libuim-custom.a
 lib/libuim-custom.la
 lib/libuim-custom.so
