@@ -7,7 +7,7 @@
 
 PORTNAME=	libgii
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -192,7 +192,7 @@ PLIST_SUB+=	KII="@comment "
 .endif
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 PLIST_SUB+=	WITH_X=""
 .else
 CONFIGURE_ARGS+=	--disable-x --without-x

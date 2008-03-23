@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-eq-skins
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	equ
@@ -19,7 +19,6 @@ COMMENT=	Additional skins for the XMMS EQ plugin
 RUN_DEPENDS=	${X11BASE}/lib/xmms/Effect/libeq.so:${PORTSDIR}/audio/xmms-eq
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/EQskins
 NO_BUILD=	yes
 

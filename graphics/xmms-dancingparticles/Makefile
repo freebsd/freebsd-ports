@@ -7,7 +7,7 @@
 
 PORTNAME=	dancingparticles
 PORTVERSION=	0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://tardyp.free.fr/dancingparticles/
 PKGNAMEPREFIX=	xmms-
@@ -21,7 +21,6 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		glut.4:${PORTSDIR}/graphics/libglut \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12
 USE_SDL=	sdl

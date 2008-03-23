@@ -8,7 +8,7 @@
 
 PORTNAME=	libx3dtk
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://artis.imag.fr/Members/Yannick.Legoc/X3D/libs/
 DISTNAME=	X3DToolKit-${PORTVERSION:R}.${PORTVERSION:E}
@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/X3DToolKit-1.0
 
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
-USE_XLIB=	yes
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 

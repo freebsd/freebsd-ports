@@ -7,7 +7,7 @@
 
 PORTNAME=	gifsicle
 PORTVERSION=	1.48
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
@@ -28,7 +28,7 @@ PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=	--without-x --disable-gifview
 PLIST_SUB=	X11='@comment '
 .else
-USE_XLIB=	yes
+USE_XORG=	x11
 MAN1+=		gifview.1
 PLIST_SUB=	X11=''
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	libggi
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
@@ -125,7 +125,7 @@ CONFIGURE_ARGS+=	--enable-kgi --with-extra-includes=/usr/include/dev
 .endif
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11 xxf86dga
 PLIST_SUB+=	WITH_X=""
 .else
 CONFIGURE_ARGS+=	--disable-x --disable-dga

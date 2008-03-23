@@ -23,7 +23,6 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gnomehack gnomeprefix
-USE_XLIB=	yes
 INSTALLS_OMF=	yes
 
 GCONF_SCHEMAS=	gmfsk.schemas

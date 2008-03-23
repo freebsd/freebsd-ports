@@ -7,7 +7,7 @@
 
 PORTNAME=	agave
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://download.gna.org/colorscheme/releases/
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomedocutils intlhack
 GCONF_SCHEMAS=	agave.schemas
 INSTALLS_ICONS=	yes

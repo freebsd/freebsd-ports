@@ -7,7 +7,7 @@
 
 PORTNAME=	danpei
 PORTVERSION=	2.9.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	danpei
@@ -21,7 +21,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
-USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 GNU_CONFIGURE=	yes

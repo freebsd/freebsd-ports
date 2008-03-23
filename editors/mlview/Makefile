@@ -7,7 +7,7 @@
 
 PORTNAME=	mlview
 PORTVERSION=	0.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
@@ -17,7 +17,6 @@ MAINTAINER=	barner@FreeBSD.org
 COMMENT=	A tree oriented XML editor for Gnome
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_GNOME=	eel2 gnomehack gnomeprefix gtksourceview
 USE_GMAKE=	yes

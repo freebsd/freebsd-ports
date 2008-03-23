@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-vumeter-skins
 PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://vumeterplugin.sourceforge.net/skins/
 DISTFILES=	X-skin.tar.bz2 \
@@ -22,7 +22,6 @@ COMMENT=	Additional skins for the XMMS Analog VUmeter plugin
 RUN_DEPENDS=	${SKINSDIR}/default/skin.cfg:${PORTSDIR}/graphics/xmms-vumeter
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

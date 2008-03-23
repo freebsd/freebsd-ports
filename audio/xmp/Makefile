@@ -7,7 +7,7 @@
 
 PORTNAME=	xmp
 PORTVERSION=	2.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,6 @@ MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A player for many different Amiga and PC module formats
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	esound
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:213

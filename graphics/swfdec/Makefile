@@ -14,10 +14,9 @@ MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.5/
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
-LIB_DEPENDS=	 oil-0.3.1:${PORTSDIR}/devel/liboil \
+LIB_DEPENDS=	oil-0.3.1:${PORTSDIR}/devel/liboil \
 		soup-2.2.8:${PORTSDIR}/devel/libsoup
 
-USE_XLIB=	yes
 USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool:15:env automake:19:env autoconf:261
 GNU_CONFIGURE=	yes

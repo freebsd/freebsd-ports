@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-plazma
 DISTVERSION=	0.0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://membres.lycos.fr/diablolight/
 
@@ -16,7 +16,6 @@ COMMENT=	Plazma is an XMMS visualization plugin
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12
 USE_SDL=	sdl

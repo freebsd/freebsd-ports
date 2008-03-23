@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -64,7 +64,6 @@ CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=		X11="@comment "
 .else
 CONFIGURE_ARGS+=	--with-x
-USE_X_PREFIX=		yes
 USE_MOTIF=		yes
 MAN1+=			xpdf.1
 PLIST_SUB+=		X11=""

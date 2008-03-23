@@ -7,7 +7,7 @@
 
 PORTNAME=	kovpn
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security kde
 MASTER_SITES=	http://home.bawue.de/~lighter/www.enlighter.de/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_pre6
@@ -25,7 +25,7 @@ PREFIX=		${KDE_PREFIX}
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 USE_AUTOTOOLS=	libtool:15
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	axyftp
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/shareware/ \
 		ftp://ftp.netsw.org/net/ip/filetrans/ftp/axyftp/ \
@@ -17,7 +17,6 @@ MASTER_SITES=	ftp://ftp.bitchx.com/pub/shareware/ \
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	X Window System FTP client, with WSftp-like UI
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

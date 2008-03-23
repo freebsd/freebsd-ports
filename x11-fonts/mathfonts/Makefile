@@ -8,7 +8,7 @@
 PORTNAME=	mathfonts
 PORTVERSION=	4.1	# Don't upgrade this port if not supported by MathML-enabled Mozilla
 # 			# Please check http://www.mozilla.org/projects/mathml/fonts/
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://support.wolfram.com/mathematica/systems/windows/general/files/
 DISTNAME=	MathFonts_TrueType_${PORTVERSION:S/.//}
@@ -25,7 +25,6 @@ RUN_DEPENDS=	${FONTSBASE}/texcm-ttf/cmr10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 RESTRICTED=	no distribution of the fonts allowed
 NO_CDROM=	${RESTRICTED}
 
-USE_X_PREFIX=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	worker
 PORTVERSION=	2.16.1
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/worker/downloads/
 
@@ -16,7 +17,7 @@ COMMENT=	X11 File Manager based on Directory Opus
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_BZIP2=	yes
 
 MANLANG=	"" fr it

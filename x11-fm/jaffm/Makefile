@@ -7,7 +7,7 @@
 
 PORTNAME=	jaffm
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://binary.is/download/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -17,7 +17,6 @@ COMMENT=	A lightweight file manager inspired by MacOS Finder
 
 USE_BZIP2=	yes
 USE_WX=		2.4-2.6
-USE_X_PREFIX=	yes
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}

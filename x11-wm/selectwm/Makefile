@@ -18,7 +18,6 @@ MAN1=		selectwm.1
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/selectwm share/locale/fr/LC_MESSAGES/selectwm.mo

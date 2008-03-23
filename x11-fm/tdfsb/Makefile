@@ -7,7 +7,7 @@
 
 PORTNAME=	tdfsb
 PORTVERSION=	0.0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.determinate.net/webdata/data/
 
@@ -19,7 +19,6 @@ LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \
 
 USE_GL=		yes
 USE_SDL=	image sdl
-USE_X_PREFIX=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README

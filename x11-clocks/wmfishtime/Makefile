@@ -7,7 +7,7 @@
 
 PORTNAME=	wmfishtime
 PORTVERSION=	1.24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 		http://atreides.freenix.no/~anders/
@@ -16,7 +16,6 @@ MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A time/date applet for WindowMaker with fishes swimming around
 
 USE_GNOME=	gtk12
-USE_X_PREFIX=	yes
 
 GTK_LIBS?=	`${GTK_CONFIG} --libs`
 GTK_CFLAGS?=	`${GTK_CONFIG} --cflags`

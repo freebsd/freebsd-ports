@@ -7,6 +7,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9pre6
+PORTREVISION=	1
 CATEGORIES=	science lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,7 +35,6 @@ LIB_DEPENDS+=	plplotd.11:${PORTSDIR}/math/plplot	\
 		gsl.10:${PORTSDIR}/math/gsl		\
 		readline.5:${PORTSDIR}/devel/readline
 
-USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include"	\

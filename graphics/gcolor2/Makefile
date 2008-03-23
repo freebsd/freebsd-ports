@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	smyru@heron.pl
 COMMENT=	A simple GTK+ 2.0 color selector
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

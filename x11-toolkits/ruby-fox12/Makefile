@@ -7,7 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	fxruby
@@ -30,8 +30,7 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 NOHARM_ARGS=	--no-harm
-
-USE_XLIB=	yes
+USE_XORG=	xcursor x11
 USE_GL=		yes
 
 install-noharm:

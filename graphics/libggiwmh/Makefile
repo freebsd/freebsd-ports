@@ -7,7 +7,7 @@
 
 PORTNAME=	libggiwmh
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -41,7 +41,7 @@ MLINKS=		ggiWmhIconify.3 ggiWmhMoveIcon.3 \
 		- ggiWmhMaximize.3 - ggiWmhResize.3
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 PLIST_SUB+=	XWMH=""
 .else
 CONFIGURE_ARGS+=--disable-x

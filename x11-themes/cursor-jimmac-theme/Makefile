@@ -7,7 +7,7 @@
 
 PORTNAME=	cursor-jimmac-theme
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	6550-Jimmac
@@ -16,7 +16,6 @@ MAINTAINER=	smyru@heron.pl
 COMMENT=	The beatiful Jimmac X cursor themes
 
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/Jimmac
 

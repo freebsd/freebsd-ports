@@ -7,7 +7,7 @@
 
 PORTNAME=	xdiskusage
 PORTVERSION=	1.48
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/
 EXTRACT_SUFX=	.tgz
@@ -19,7 +19,6 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 MAN1=		xdiskusage.1
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 OPTIONS=	THREADS	"Threads support, necessary with threaded fltk" off
 
 .include <bsd.port.pre.mk>

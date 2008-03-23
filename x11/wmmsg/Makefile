@@ -7,7 +7,7 @@
 
 PORTNAME=	wmmsg
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://mirror.israel.net/pub/FreeBSD/distfiles/
 
@@ -18,8 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOME=	gtk12
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 
