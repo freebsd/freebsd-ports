@@ -1,0 +1,12 @@
+--- tests/f/2.3.1/Makefile.in.orig	2008-02-08 15:21:54.000000000 +0100
++++ tests/f/2.3.1/Makefile.in	2008-03-23 00:30:47.000000000 +0100
+@@ -221,7 +221,8 @@
+ 
+ AM_LDFLAGS = $(FTLDFLAGS)
+ AM_LIBTOOLFLAGS = --tag=F77
+-@WITHF90_TRUE@myTESTS_LEC = ../test5.sh ../test7.sh ../test9.sh \
++# FreeBSD: test9.sh disabled because test8.med seems invalid
++@WITHF90_TRUE@myTESTS_LEC = ../test5.sh ../test7.sh \
+ @WITHF90_TRUE@	test11.sh ../test13.sh ../test15.sh ../test17.sh \
+ @WITHF90_TRUE@	../test30.sh 
+ 

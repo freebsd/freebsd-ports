@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	med
-PORTVERSION=	2.3.1
-PORTREVISION=	3
+PORTVERSION=	2.3.3
 CATEGORIES=	french science
-MASTER_SITES=	http://www.code-aster.org/FICHIERS/
+MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modelisation et Echanges de Donnees
@@ -22,13 +21,13 @@ TK_VER?=	8.4
 SHORT_TK_VER=	${TK_VER:S/.//}
 
 USE_FORTRAN=	yes
-CONFIGURE_ENV+=		FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 FFLAGS+=	-O2
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+=	HDF5HOME=${LOCALBASE} CPPFLAGS="${PTHREAD_CFLAGS}"	\
-		LDFLAGS="${PTHREAD_LIBS}" WISH=${LOCALBASE}/bin/wish${TK_VER} \
-		--with-f90=${FC}
+CONFIGURE_ENV=	HDF5HOME=${LOCALBASE} CPPFLAGS="${PTHREAD_CFLAGS}"	\
+		LDFLAGS="${PTHREAD_LIBS}" WISH=${LOCALBASE}/bin/wish${TK_VER}	\
+		FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
+CONFIGURE_ARGS=	--with-f90=${FC} --docdir=${DOCSDIR}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:261 libtool:15
@@ -37,20 +36,20 @@ USE_LDCONFIG=	yes
 DOC2FIX=	. gif html jpg png tests
 TST2FIX=	c f
 
-.include <bsd.port.pre.mk>
-
 pre-configure:
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|SUBDIRS = src tests tools doc|SUBDIRS = src tests tools|'	\
-		${WRKSRC}/Makefile.in
-.endif
-.for dd in ${DOC2FIX}
-	@${REINPLACE_CMD} -e 's|docdir = $$(datadir)/doc|docdir = $$(datadir)/doc/@PACKAGE@|'	\
-		${WRKSRC}/doc/${dd}/Makefile.in
-.endfor
-.for dd in ${TST2FIX}
-	@${REINPLACE_CMD} -e 's|test${dd}dir = $$(bindir)/test|test${dd}dir = ${EXAMPLESDIR}/test|' \
-		${WRKSRC}/tests/${dd}/Makefile.in
+.for ext in am in
+. if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e 's|SUBDIRS = src tests tools doc|SUBDIRS = src tests tools|'	\
+		${WRKSRC}/Makefile.${ext}
+. endif
+. for dd in ${DOC2FIX}
+	${REINPLACE_CMD} -e 's|docdir = $$(datadir)/doc|docdir = @docdir@|'	\
+		${WRKSRC}/doc/${dd}/Makefile.${ext}
+. endfor
+. for dd in ${TST2FIX}
+	${REINPLACE_CMD} -e 's|test${dd}dir = $$(bindir)/test|test${dd}dir = ${EXAMPLESDIR}/test|' \
+		${WRKSRC}/tests/${dd}/Makefile.${ext}
+. endfor
 .endfor
 
 post-install:
@@ -62,4 +61,4 @@ regression-test:
 	@(cd ${BUILD_WRKSRC};	\
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

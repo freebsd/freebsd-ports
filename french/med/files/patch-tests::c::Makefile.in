@@ -1,16 +1,15 @@
---- tests/c/Makefile.in.orig	Tue Aug 30 10:20:19 2005
-+++ tests/c/Makefile.in	Mon Jan  9 21:22:41 2006
-@@ -151,10 +151,10 @@
+--- ./tests/c/Makefile.in.orig	2008-02-08 15:21:53.000000000 +0100
++++ ./tests/c/Makefile.in	2008-03-22 14:42:15.000000000 +0100
+@@ -197,10 +197,10 @@
  depcomp = $(SHELL) $(top_srcdir)/config/depcomp
  am__depfiles_maybe = depfiles
  COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 -	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 +	$(AM_CFLAGS) $(CPPFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $(DEFS) \
--	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
--	$(AM_CFLAGS) $(CFLAGS)
-+	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(AM_CFLAGS) \
-+	$(CPPFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+-	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++	$(AM_CPPFLAGS) $(AM_CFLAGS) $(CPPFLAGS) $(CFLAGS)
  CCLD = $(CC)
- LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
- 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
