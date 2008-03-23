@@ -1,0 +1,7 @@
+CUPS configuration Gtk+2.0 GUI
+
+Configures a CUPS server. It uses the CUPS API (bound to Python with pycups)
+to do this. The communication with the server is performed using IPP. As a
+result, it is equally able to configure a remote CUPS server as a local one.
+
+WWW: http://cyberelk.net/tim/software/system-config-printer/

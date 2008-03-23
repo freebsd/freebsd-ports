@@ -298,6 +298,7 @@
     SUBDIR += splix
     SUBDIR += sv-acroread
     SUBDIR += sv-acroread8
+    SUBDIR += system-config-printer
     SUBDIR += t1utils
     SUBDIR += teTeX
     SUBDIR += teTeX-base

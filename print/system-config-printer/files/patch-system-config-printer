@@ -1,0 +1,6 @@
+--- system-config-printer.orig	2008-03-20 11:56:46.000000000 -0400
++++ system-config-printer	2008-03-20 11:56:58.000000000 -0400
+@@ -1,2 +1,2 @@
+ #!/bin/sh
+-exec /usr/share/system-config-printer/system-config-printer.py "$@"
++exec %%PREFIX%%/share/system-config-printer/system-config-printer.py "$@"
