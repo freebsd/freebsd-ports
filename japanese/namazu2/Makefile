@@ -17,7 +17,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port of Namazu and Japanese support modules
 
-LIB_DEPENDS=	nmz.7:${PORTSDIR}/databases/namazu2
+LIB_DEPENDS=	nmz.8:${PORTSDIR}/databases/namazu2
 RUN_DEPENDS=	${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf
 
 PM_BASE=	${SITE_PERL}
