@@ -46,6 +46,12 @@ MAN5=	aecattr.5 aecstate.5 aedir.5 aefattr.5 aefstate.5 aegis.5 \
 	aegstate.5 aelock.5 aemetrics.5 aepattr.5 aepconf.5 aepstate.5 \
 	aer.5 aerptidx.5 aesub.5 aetest.5 aeuconf.5 aeustate.5
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libaegis__wide_output__header.h
+.endif
+
 post-patch:
 # Avoid "2>/dev/null" redirect in csh (ends up with empty manpath).
 	@${REINPLACE_CMD} -Ee 's|(MANPATH_PROG) 2>/dev/null|\1|' \
@@ -71,4 +77,4 @@ post-install:
 # Information.
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
