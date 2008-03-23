@@ -17,6 +17,7 @@
 # Default settings - don't change this.
 : ${vpnc_enable="NO"}
 : ${vpnc_pid_dir="/var/run"}
+: ${vpnc_pid_file="vpnc/pid"}
 : ${vpnc_conf_dir="%%PREFIX%%/etc"}
 : ${vpnc_record="$vpnc_pid_dir/vpnc.record"}
 
@@ -52,12 +53,12 @@ vpnc_start() {
 		fi
 
 		# Wait for the system to catch up.
-		/bin/sleep 2
+		/bin/sleep 1
 
 		# Copy files to allow a clean shutdown
 		# of multiple connections.
 
-		/bin/cp "$vpnc_pid_dir/vpnc.pid" "$vpnc_pid_dir/vpnc.$config.pid"
+		/bin/cp "$vpnc_pid_dir/$vpnc_pid_file" "$vpnc_pid_dir/vpnc.$config.pid"
 		/bin/cp "$vpnc_pid_dir/vpnc.defaultroute" "$vpnc_pid_dir/vpnc.$config.defaultroute" 2> /dev/null
 		/bin/cp "$vpnc_pid_dir/vpnc.resolv.conf-backup" "$vpnc_pid_dir/vpnc.$config.resolv.conf-backup" 2> /dev/null
 		echo "$config" >> "$vpnc_record"
@@ -84,7 +85,7 @@ vpnc_stop() {
 
 		# Move the vpnc files back into position.
 
-		/bin/mv "$vpnc_pid_dir/vpnc.$config.pid" "$vpnc_pid_dir/vpnc.pid"
+		/bin/mv "$vpnc_pid_dir/vpnc.$config.pid" "$vpnc_pid_dir/$vpnc_pid_file"
 		/bin/mv "$vpnc_pid_dir/vpnc.$config.defaultroute" "$vpnc_pid_dir/vpnc.defaultroute" 2> /dev/null
 		/bin/mv "$vpnc_pid_dir/vpnc.$config.resolv.conf-backup" "$vpnc_pid_dir/vpnc.resolv.conf-backup" 2> /dev/null
 
