@@ -7,7 +7,7 @@
 
 PORTNAME=	schemetoc
 PORTVERSION=	93.3.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.cs.indiana.edu/pub/scheme-repository/imp/Scheme-to-C/
 DISTNAME=	15mar93
@@ -16,8 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	erik@smluc.org
 COMMENT=	Scheme-to-C, a compiler and interpreter for compiling scheme into C
 
-USE_XLIB=	yes
 USE_GCC=	2.95
+USE_XORG=	x11 xi
 INSTALLS_SHLIB=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		scc.1 sci.1

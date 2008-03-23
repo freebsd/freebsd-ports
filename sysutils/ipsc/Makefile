@@ -7,7 +7,7 @@
 
 PORTNAME=	ipsc
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.alaskaparadise.com/freebsd/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -25,7 +25,6 @@ PLIST_FILES=	bin/ipsc
 MAN8=	ipsc.8
 
 .if defined(HAVE_GNOME)
-USE_X_PREFIX=	yes
 USE_GNOME=	yes
 ALL_TARGET=	all
 PLIST_FILES+=	bin/gipsc

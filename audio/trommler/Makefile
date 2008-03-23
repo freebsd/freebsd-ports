@@ -7,7 +7,7 @@
 
 PORTNAME=	trommler
 PORTVERSION=	3.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://muth.org/Robert/Trommler/
 DISTNAME=	trommler.3.4
@@ -17,7 +17,6 @@ COMMENT=	A GTK based drum machine
 
 WRKSRC=		${WRKDIR}/Trommler
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 

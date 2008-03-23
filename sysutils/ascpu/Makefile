@@ -7,7 +7,7 @@
 
 PORTNAME=	ascpu
 PORTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/ascpu/
 
@@ -16,8 +16,7 @@ COMMENT=	CPU statistics monitor utility for XFree86
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm-includes=${X11BASE}/include --with-xpm-library=${X11BASE}/lib
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"

@@ -7,6 +7,7 @@
 
 PORTNAME=	scintilla
 PORTVERSION=	1.76
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF \
 		http://www.scintilla.org/
@@ -19,7 +20,6 @@ COMMENT=	A full-featured free source code editing component for GTK+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 MAKEFILE=	makefile

@@ -7,7 +7,7 @@
 
 PORTNAME=	wb
 PORTVERSION=	1.59
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mbone
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/wb/
 DISTFILES=	i386-wb-1.59.tar.Z
@@ -17,7 +17,6 @@ COMMENT=	A shared drawing (whiteboard) tool using multicast
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 STRIP=
 
 # ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.

@@ -46,7 +46,7 @@ OPTIONS_MESG=	"non-X11 graphics support disabled, "
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
-USE_XLIB=	yes
+USE_XORG=	x11
 CONFIGURE_ARGS+=	--enable-graphics --with-x
 OPTIONS_MESG+=	"X11 graphics support enabled."
 .else

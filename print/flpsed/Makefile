@@ -7,6 +7,7 @@
 
 PORTNAME=	flpsed
 PORTVERSION=	0.3.9
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.ecademix.com/JohannesHofmann/
 
@@ -16,7 +17,6 @@ COMMENT=	WYSIWYG pseudo Postscript editor
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_GHOSTSCRIPT=yes
 USE_GMAKE=	yes
 

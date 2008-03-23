@@ -7,7 +7,7 @@
 
 PORTNAME=	dataplot
 PORTVERSION=	20061219
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 				http://www.alaskaparadise.com/freebsd/:source \
@@ -28,7 +28,7 @@ LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 USE_FORTRAN=	yes
 FFLAGS+=	-fno-range-check
 MAKE_ENV+=	FFLAGS="${FFLAGS}"
-USE_XLIB=	yes
+USE_XORG=	x11 xi
 NO_WRKSUBDIR=	yes
 MAXOBV?=	20000	# Make bigger if you need more observations/variable
 

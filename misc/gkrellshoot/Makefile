@@ -21,7 +21,6 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 
 PLIST_FILES=	libexec/gkrellm/plugins/gkrellshoot.so
 WRKSRC=		${WRKDIR}/gkrellShoot-${PORTVERSION}
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 
 .include <bsd.port.mk>

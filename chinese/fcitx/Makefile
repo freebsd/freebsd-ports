@@ -7,6 +7,7 @@
 
 PORTNAME=	fcitx
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://www.fcitx.org/download/ \
 		ftp://mirrors.redv.com/pub/fcitx/ \
@@ -21,7 +22,7 @@ COMMENT=	A simple and fast GBK Chinese XIM server
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
+USE_XORG=	xpm x11
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

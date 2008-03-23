@@ -7,7 +7,7 @@
 
 PORTNAME=		dodgindiamond2
 PORTVERSION=		0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		games
 MASTER_SITES=		http://www.usebox.net/jjm/dd2/releases/
 DISTNAME=		dd2-${PORTVERSION}
@@ -15,7 +15,6 @@ DISTNAME=		dd2-${PORTVERSION}
 MAINTAINER=		chinsan@FreeBSD.org
 COMMENT=		An old school shoot'em up game
 
-USE_XLIB=		yes
 USE_SDL=		sdl image mixer
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--localstatedir=/var/games

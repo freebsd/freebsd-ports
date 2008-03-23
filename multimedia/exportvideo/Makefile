@@ -7,7 +7,7 @@
 
 PORTNAME=	exportvideo
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://tigerente.htu.tuwien.ac.at/~aoe/mystuff/mpeg2_movie-avipatch/
 DISTNAME=	${PORTNAME}.7e-pre9
@@ -22,7 +22,6 @@ DEPRECATED=	Add-on for soon to be removed nuppelvideo port
 EXPIRATION_DATE=2008-04-07
 
 USE_GNOME=	gtk12
-USE_XLIB=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--no-avi --prefix=${PREFIX}

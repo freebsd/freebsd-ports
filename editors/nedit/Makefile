@@ -7,7 +7,7 @@
 
 PORTNAME=	nedit
 PORTVERSION=	5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.nedit.org/pub/NEdit/v5_5/ \
 		ftp://ftp.nedit.org/pub/NEdit/contrib/misc/ \
@@ -21,8 +21,7 @@ COMMENT=	An X11/Motif GUI text editor for programs and plain text files
 
 USE_BZIP2=	yes
 USE_MOTIF=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		nclient.1 nedit.1
 ALL_TARGET=	freebsd
 MAKE_ENV+=	BINOWN=${BINOWN} BINGRP=${BINGRP} BINMODE=${BINMODE}

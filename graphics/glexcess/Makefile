@@ -7,7 +7,7 @@
 
 PORTNAME=	glexcess
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.glexcess.com/files/
 DISTNAME=	${PORTNAME}
@@ -17,7 +17,6 @@ COMMENT=	An impressive OpenGL Demo
 
 LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 
 MAKE_ARGS=	'CXXFLAGS=${CXXFLAGS} -I${X11BASE}/include -pipe -s -O2' \

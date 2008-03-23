@@ -7,7 +7,7 @@
 
 PORTNAME=	flamerobin
 PORTVERSION=	0.7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	dindin@FreeBSD.org.ua
 COMMENT=	The GUI administration tool for firebird database
 
-USE_XLIB=	yes
 USE_WX=		2.6+
 WX_COMPS=	wx contrib
 WX_CONF_ARGS=	absolute

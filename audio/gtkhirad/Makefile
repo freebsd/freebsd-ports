@@ -20,7 +20,6 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20 intlhack
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_XLIB=	yes
 USE_LDCONFIG=	yes
 
 MAKE_ARGS=	prefix=${PREFIX}

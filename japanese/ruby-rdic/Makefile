@@ -7,7 +7,7 @@
 
 PORTNAME=	rdic
 PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.yasgursfarm.us/download/
 DIST_SUBDIR=	ruby
@@ -28,8 +28,7 @@ RUBY_SHEBANG_FILES=	rdic \
 RUBY_RD_FILES=	xselection.rd \
 		xselection.rd.jp
 
-USE_XLIB=	yes
-
+USE_XORG=	x11
 INSTALL_TARGET=	site-install
 
 MAKE_ARGS+=	CFLAGS='-I ${X11BASE}/include'

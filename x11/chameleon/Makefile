@@ -7,7 +7,7 @@
 
 PORTNAME=	chameleon
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://ftp.us.debian.org/debian/pool/main/c/chameleon/ \
 		ftp://carroll.aset.psu.edu/pub/linux/distributions/debian/pool/main/c/chameleon/ \
@@ -22,7 +22,6 @@ COMMENT=	Application for putting pictures or colors onto the root window
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 
 USE_GNOME=	gtk12
-USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PIXMAPSDIR=	${PREFIX}/share/pixmaps/

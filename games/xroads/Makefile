@@ -7,7 +7,7 @@
 
 PORTNAME=	xroads
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://math.missouristate.edu/~erik/files/fbsd/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	erik@smluc.org
 COMMENT=	Commodore 64 "Crossroads"-like video game for X Window System
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xpm xext
 
 .include <bsd.port.pre.mk>
 

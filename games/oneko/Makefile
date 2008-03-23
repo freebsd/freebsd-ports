@@ -25,7 +25,7 @@ COMMENT=	A cat chasing a mouse all over the screen
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 GNU_CONFIGURE=	yes
-USE_XORG=	x11 xpm
+USE_XORG=	x11 xpm xmu
 MAN6=		oneko.6
 MANLANG=	"" ja
 WRKSRC=		${WRKDIR}/${PORTNAME}

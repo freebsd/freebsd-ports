@@ -7,7 +7,7 @@
 
 PORTNAME=	xmoontool
 PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.senax.net/xmoontool/
 
@@ -15,7 +15,6 @@ MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	A version of John Walker's classical moontool for X11/Motif
 
 USE_MOTIF=	yes
-USE_X_PREFIX=	yes
 
 MAN1=		xmoontool.1
 PORTDOCS=	NOTES

@@ -7,7 +7,7 @@
 
 PORTNAME=	steak
 PORTVERSION=	1.7.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	german
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.tm.informatik.uni-frankfurt.de/%7Erazi/steak/program/
@@ -20,7 +20,7 @@ COMMENT=	An english <-> german dictionary under the GPL
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 .if defined(WITHOUT_XSTEAK)
-USE_XLIB=	yes
+USE_XORG=	x11
 .else
 USE_GNOME=	gtk12
 MAKE_ARGS=	-D xsteak

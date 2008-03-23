@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.qsl.net/ik5nax/
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Smith chart program for impedance matching
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

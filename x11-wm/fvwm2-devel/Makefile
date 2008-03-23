@@ -7,6 +7,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.5.24
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -26,7 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-png-library=${LOCALBASE}/lib
 USE_GMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 

@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 		${PYTHON_LIBDIR}/site-packages/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 USE_BDB=	42+
-USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

@@ -6,7 +6,7 @@
 
 PORTNAME=	wmweather+
 PORTVERSION=	2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc windowmaker geography
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wmweatherplus
@@ -25,8 +25,7 @@ LIB_DEPENDS=	xmlparse:${PORTSDIR}/www/libwww \
 
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 CONFIGURE_ARGS+=	--with-libwraster=${X11BASE}
 

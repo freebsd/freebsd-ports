@@ -7,7 +7,7 @@
 
 PORTNAME=	circuslinux
 PORTVERSION=	1.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/circus-linux/src/
 
@@ -16,7 +16,6 @@ COMMENT=	"Circus Linux!" is a clone of the Atari 2600 game "Circus Atari"
 
 USE_SDL=	image mixer sdl
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 CONFIGURE_ARGS=	--target=""
 
 .include <bsd.port.mk>

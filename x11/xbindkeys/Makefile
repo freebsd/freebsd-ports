@@ -8,7 +8,7 @@
 
 PORTNAME=	xbindkeys
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
@@ -18,7 +18,7 @@ COMMENT=	Allows you to launch shell commands under X with your keyboard
 OPTIONS=	GUILE "Guile support" off \
 		TCLTK "Tcl/Tk support" off
 
-USE_XLIB=	yes
+USE_XORG=	x11 xi
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

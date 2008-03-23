@@ -6,7 +6,7 @@
 
 PORTNAME=	qscintilla
 PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/QScintilla1/ \
 		http://freebsd.ricin.com/ports/distfiles/
@@ -17,7 +17,6 @@ COMMENT=	QT port of the Scintilla C++ editor class
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
-USE_X_PREFIX=	yes
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 USE_LDCONFIG=	yes

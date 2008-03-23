@@ -7,7 +7,7 @@
 
 PORTNAME=	polar-theme
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	cursor-
@@ -18,7 +18,6 @@ COMMENT=	Polar is a smooth and simple cursor set
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}
 

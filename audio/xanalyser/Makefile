@@ -7,7 +7,7 @@
 
 PORTNAME=	xanalyser
 PORTVERSION=	1.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio hamradio
 MASTER_SITES=	http://arvin.schnell-web.net/xanalyser/ \
 		${MASTER_SITE_LOCAL}
@@ -17,8 +17,6 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	Spectrum analyser
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_XLIB=	yes
 USE_MOTIF=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
