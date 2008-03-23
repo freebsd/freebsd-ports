@@ -9,6 +9,7 @@ PORTNAME=	deltup
 PORTVERSION=	0.4.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://deltup.org/e107_files/downloads/ \
+		LOCAL/rafan \
 		${MASTER_SITE_SOURCEFORGE} \
 		http://www.bzip.org/${BZIP2_102}/:bzip2102src \
 		http://www.bzip.org/${BZIP2_103}/:bzip2103src
