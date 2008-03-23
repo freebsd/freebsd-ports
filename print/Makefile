@@ -278,6 +278,7 @@
     SUBDIR += psutils-a4
     SUBDIR += psutils-letter
     SUBDIR += pup
+    SUBDIR += py-cups
     SUBDIR += py-fonttools
     SUBDIR += py-pdf
     SUBDIR += py-pyscript
