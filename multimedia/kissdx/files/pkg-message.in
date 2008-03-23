@@ -1,0 +1,7 @@
+The following line needs to be added to /etc/rc.conf in order to start the
+deamon at boot time.
+
+      kissdx_enable="YES" (or kissdx="YES" for NetBSD)
+	
+You can also use the %%PREFIX%%/etc/rc.d/kissdx start|stop command to control
+the daemon.
