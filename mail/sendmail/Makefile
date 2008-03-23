@@ -49,6 +49,7 @@ MILTER_SOVER?=	4
 # SENDMAIL_WITHOUT_NIS=yes
 # SENDMAIL_WITHOUT_SHMEM=yes
 # SENDMAIL_WITHOUT_SEM=yes
+# SENDMAIL_WITHOUT_LA=yes
 # SENDMAIL_WITH_TLS=yes
 # SENDMAIL_WITH_SMTPS=yes
 # SENDMAIL_WITH_SASL=yes
@@ -234,6 +235,11 @@ do-configure:
 .if defined(SENDMAIL_WITHOUT_SEM)
 	${ECHO_CMD} \
 	'APPENDDEF(`confENVDEF'\'', `-DSM_CONF_SEM=0'\'')' \
+		>> ${WCONF}/site.config.m4
+.endif
+.if defined(SENDMAIL_WITHOUT_LA)
+	${ECHO_CMD} \
+	'APPENDDEF(`confENVDEF'\'', `-DLA_TYPE=LA_ZERO'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
 
