@@ -17,6 +17,7 @@ COMMENT=	Synchronize bookmarks between multiple browsers
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 
 USE_PERL5_BUILD=yes
+USE_XORG=	x11 ice xext
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
