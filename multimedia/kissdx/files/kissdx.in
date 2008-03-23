@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# This script start and stop the KiSS DX deamon, using the rc.subr functionality
+#
+# Add the following lines to /etc/rc.conf to enable this service at boot time:
+#
+# kissdx_enable="YES" A
+# (kissdx="YES" for NetBSD)
+#
+
+. %%RC_SUBR%%
+
+#Name of program to start
+name="kissdx"
+
+# Full path to program
+command="%%PREFIX%%/sbin/${name}"
+
+# Arguments used to start program
+command_args="-kd"
+
+required_files="%%PREFIX%%/etc/${name}.conf"
+
+# Load variables from rc.conf
+load_rc_config $name
+
+# Invoke the rc.subr
+run_rc_command "$1"
+
