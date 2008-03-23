@@ -7,14 +7,13 @@
 
 PORTNAME=	plib
 PORTVERSION=	1.8.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://plib.sourceforge.net/dist/
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A portable library for joystick/sound/OpenGL GUI/3D math
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

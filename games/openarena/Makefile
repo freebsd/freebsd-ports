@@ -7,7 +7,7 @@
 
 PORTNAME=	openarena
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://openarena.ws/rel/070/:src \
 		http://download.tuxfamily.net/cooker/openarena/rel070/:data \
@@ -82,7 +82,7 @@ USE_SDL=	sdl
 MAKE_ENV+=	USE_SDL_VIDEO=1
 .   else
 USE_GL=		yes
-USE_XLIB=	yes
+USE_XORG=	x11 xxf86dga
 .   endif
 .endif
 

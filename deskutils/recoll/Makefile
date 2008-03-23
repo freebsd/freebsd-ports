@@ -7,6 +7,7 @@
 
 PORTNAME=	recoll
 PORTVERSION=	1.10.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
@@ -24,7 +25,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_XLIB=	yes
 INSTALLS_ICONS=	yes
 
 MAN1=		recoll.1 recollindex.1

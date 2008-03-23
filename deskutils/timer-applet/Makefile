@@ -7,7 +7,7 @@
 
 PORTNAME=	timer-applet
 PORTVERSION=	1.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	timerapplet
@@ -21,7 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/sounds/gtk-events/clicked.wav:${PORTSDIR}/audio/
 USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-USE_XLIB=	yes
 USE_GMAKE=	yes
 GCONF_SCHEMAS=	timer-applet.schemas
 INSTALLS_OMF=	yes

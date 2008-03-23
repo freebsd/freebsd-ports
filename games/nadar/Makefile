@@ -7,15 +7,14 @@
 
 PORTNAME=	nadar
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://download.vector.co.jp/pack/unix/game/action/
 
 MAINTAINER=	hsakai@m8.ffn.ne.jp
 COMMENT=	A network tank battle game
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 MAN1=		nadars.1 nadar.1
 MANCOMPRESSED=	yes

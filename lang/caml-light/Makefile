@@ -7,7 +7,7 @@
 
 PORTNAME=	caml
 PORTVERSION=	0.75
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang elisp
 MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
 	ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/caml-light/ \
@@ -19,7 +19,7 @@ DISTNAME=	cl75unix
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	A strongly typed functional language belonging to the ML family
 
-USE_XLIB=	yes
+USE_XORG=	x11
 WRKSRC=		${WRKDIR}/cl75
 ALL_TARGET=	configure world bootstrap
 MAN1=		camlc.1 camllex.1 camllibr.1 camllight.1 camlmktop.1 \

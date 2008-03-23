@@ -7,7 +7,7 @@
 
 PORTNAME=	wmmenu
 PORTVERSION=	1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.fcoutant.freesurf.fr/download/
 
@@ -17,7 +17,6 @@ COMMENT=	A popup menu of icons that launch programs for the WindowMaker dock
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_X_PREFIX=	yes
 USE_GNOME=	libcapplet gdkpixbuf
 USE_GMAKE=	yes
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	x11
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	x11 haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/X11/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -14,8 +15,6 @@ DISTNAME=	X11-${PORTVERSION}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	X11 bindings for Haskell programs
-
-USE_XLIB=	yes
 
 # include the version verbatim. This will require a revision bump
 # on updates, but the correct quoting of `ghc --numeric-version` in the various
@@ -31,6 +30,8 @@ PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+
+USE_XORG=	x11 xext sm
 
 # 'owned' by lang/ghc:
 CABALDIR=	${PREFIX}/lib/ghc-${GHC_VERSION}/cabal

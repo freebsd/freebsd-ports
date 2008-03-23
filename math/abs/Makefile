@@ -7,7 +7,7 @@
 
 PORTNAME=	abs
 PORTVERSION=	0908
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/
@@ -17,8 +17,7 @@ MAINTAINER=	gmarco@gufi.org
 COMMENT=	A free spreadsheet with graphical user interface
 
 PLIST_FILES=	bin/abs
-USE_XLIB=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm xaw
 WRKSRC=		${WRKDIR}/abs-src-0.908
 
 post-patch:

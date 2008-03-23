@@ -7,7 +7,7 @@
 
 PORTNAME=	sazanami-ttf
 PORTVERSION=	20040629
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	efont/10087
@@ -16,7 +16,8 @@ DISTNAME=	${PORTNAME:S/-ttf$//}-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Free Japanese TrueType fonts named 'Sazanami'
 
-USE_X_PREFIX=	yes
+RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+
 USE_BZIP2=	yes
 NO_BUILD=	yes
 

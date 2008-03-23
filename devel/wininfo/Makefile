@@ -14,7 +14,6 @@ MASTER_SITES=		http://www.freedesktop.org/software/wininfo/
 MAINTAINER=		jylefort@FreeBSD.org
 COMMENT=		A window information utility
 
-USE_X_PREFIX=		yes
 USE_GNOME=		gtk20 gnomeprefix
 GNU_CONFIGURE=		yes
 

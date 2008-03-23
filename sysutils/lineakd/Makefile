@@ -7,7 +7,7 @@
 
 PORTNAME=	lineakd
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=lineak
@@ -17,7 +17,7 @@ MAINTAINER=	kay_lehmann@web.de
 COMMENT=	Lineakd is a daemon which enables special keys on internet keyboards
 
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xext xt
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${X11BASE}/lib ${PTHREAD_LIBS}"

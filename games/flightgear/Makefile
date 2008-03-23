@@ -26,7 +26,6 @@ RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 
 FGVERSION=	0.9.10
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

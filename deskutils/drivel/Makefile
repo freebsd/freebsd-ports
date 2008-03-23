@@ -7,7 +7,7 @@
 
 PORTNAME=	drivel
 PORTVERSION=	2.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,6 @@ COMMENT=	Blog editor for GNOME
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 INSTALLS_ICONS=	yes
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui intlhack gtksourceview
 USE_BZIP2=	yes

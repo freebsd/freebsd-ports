@@ -7,14 +7,13 @@
 
 PORTNAME=	devilspie
 PORTVERSION=	0.20.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.burtonini.com/computing/
 
 MAINTAINER=	jylefort@FreeBSD.org
 COMMENT=	A window manipulation tool
 
-USE_XLIB=	yes
 USE_GNOME=	libwnck
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

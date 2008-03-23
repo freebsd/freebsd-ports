@@ -7,7 +7,7 @@
 
 PORTNAME=	xcalib
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 graphics
 MASTER_SITES=	http://www.etg.e-technik.uni-erlangen.de/web/doe/xcalib/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
@@ -15,10 +15,9 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	hopet@ics.muni.cz
 COMMENT=	A program for display calibration of X11-Servers with ICC profiles
 
-USE_X_PREFIX=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	README README.profilers
+USE_XORG=	x11 xext sm xxf86vm
 
 DEFINES=	-DXCALIB_VERSION=\"${PORTVERSION}\" -DUNIX
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lm -lX11 -lXxf86vm -lXext

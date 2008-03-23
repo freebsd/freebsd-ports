@@ -7,6 +7,7 @@
 
 PORTNAME=	yorick
 PORTVERSION=	2.1.05
+PORTREVISION=	1
 CATEGORIES=	lang math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,7 @@ COMMENT=	Interpreted language and scientific graphics
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-USE_XLIB=	yes
+USE_XORG=	x11
 MAKE_ARGS=	Y_HOME=relocatable Y_DOCDIR=/dev/null
 MAN1=		yorick.1 gist.1
 INFO=		yorick

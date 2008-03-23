@@ -6,7 +6,7 @@
 
 PORTNAME=	epson-ttfonts
 PORTVERSION=	3.0.20050220
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=     japanese x11-fonts
 MASTER_SITES=	# empty
 DISTNAME=	${EPSONFONTS}
@@ -19,7 +19,6 @@ COMMENT=        EPSON TrueTypeFontVer.3.0
 RESTRICTED=	"Redistribution not permitted; only usable with EPSON printer."
 
 EPSONFONTS=	ttf30
-USE_X_PREFIX=	yes
 USE_ZIP=        yes
 NO_BUILD=	yes
 

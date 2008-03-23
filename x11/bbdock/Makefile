@@ -7,7 +7,7 @@
 
 PORTNAME=		bbdock
 PORTVERSION=		0.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		x11
 MASTER_SITES=		http://bbdock.nethence.com/download/
 
@@ -20,7 +20,7 @@ PORTDOCS=		README
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=		yes
-USE_X_PREFIX=		yes
+USE_XORG=		ice sm x11 xau xcursor xdmcp xext xfixes xi
 USE_GCC=		3.3+
 
 PLIST_FILES=		bin/bbdock

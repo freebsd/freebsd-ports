@@ -7,15 +7,16 @@
 
 PORTNAME=	nickleby
 PORTVERSION=	1.51
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Simple window manager
 
-USE_XLIB=	yes
 MAN1=	nickleby.1
 MANCOMPRESSED=	yes
+USE_XORG=	x11
 
 PLIST_FILES=	bin/nickleby
 

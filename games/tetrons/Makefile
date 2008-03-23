@@ -7,6 +7,7 @@
 
 PORTNAME=	tetrons
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -14,8 +15,8 @@ MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Tetris(TM) clone for X11
 
 MAKE_ARGS+=	-DRANDOM
-USE_XLIB=	yes
 
+USE_XORG=	x11 xext xi
 PLIST_FILES=	bin/tetrons
 
 .include <bsd.port.mk>

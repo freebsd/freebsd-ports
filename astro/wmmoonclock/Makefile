@@ -7,7 +7,7 @@
 
 PORTNAME=	wmMoonClock
 PORTVERSION=	1.27
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://dockapps.org/files/14/21/
 
@@ -19,8 +19,7 @@ EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=	
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GMAKE=	yes
 
 MAN1=		wmmoonclock.1

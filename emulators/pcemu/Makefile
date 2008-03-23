@@ -7,7 +7,7 @@
 
 PORTNAME=	pcemu
 PORTVERSION=	1.01b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 #
 # This could in theory become a chicken-and-egg problem.  Anyway,
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-USE_XLIB=	yes
+USE_XORG=	x11 xext
 MAKE_ENV=	FILESDIR=${FILESDIR}
 
 .include <bsd.port.mk>
