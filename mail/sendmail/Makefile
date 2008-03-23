@@ -7,6 +7,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.14.2
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -50,6 +51,7 @@ MILTER_SOVER?=	4
 # SENDMAIL_WITHOUT_SHMEM=yes
 # SENDMAIL_WITHOUT_SEM=yes
 # SENDMAIL_WITHOUT_LA=yes
+# SENDMAIL_WITHOUT_MILTER_POOL
 # SENDMAIL_WITH_TLS=yes
 # SENDMAIL_WITH_SMTPS=yes
 # SENDMAIL_WITH_SASL=yes
@@ -240,6 +242,14 @@ do-configure:
 .if defined(SENDMAIL_WITHOUT_LA)
 	${ECHO_CMD} \
 	'APPENDDEF(`confENVDEF'\'', `-DLA_TYPE=LA_ZERO'\'')' \
+		>> ${WCONF}/site.config.m4
+.endif
+.if !defined(SENDMAIL_WITHOUT_MILTER) && !defined(SENDMAIL_WITHOUT_MILTER_POOL)
+	${ECHO_CMD} \
+	 'APPENDDEF(`conf_libmilter_ENVDEF'\'', `-DSM_CONF_POLL=1'\'')' \
+		>> ${WCONF}/site.config.m4
+	${ECHO_CMD} \
+	 'APPENDDEF(`conf_libmilter_ENVDEF'\'', `-D_FFR_WORKERS_POOL=1'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
 
