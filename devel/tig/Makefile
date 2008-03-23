@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tig
-PORTVERSION=	0.10
+PORTVERSION=	0.10.1
 CATEGORIES=	devel
 MASTER_SITES=	http://jonas.nitro.dk/tig/releases/
 
@@ -32,4 +32,16 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}rc.5 ${MANPREFIX}/man/man5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 602107
+LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/ncurses" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/<curses.h>/<ncurses.h>/' ${WRKSRC}/tig.c
+
+.endif
+
+.include <bsd.port.post.mk>
