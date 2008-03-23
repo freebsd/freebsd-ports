@@ -7,7 +7,7 @@
 
 PORTNAME=	xnview
 PORTVERSION=	1.70
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xnview-download.de/download/
 DISTFILES=	XnView-x86-unknown-FreeBSD5.x-static.tgz
@@ -17,7 +17,6 @@ COMMENT=	An easy graphics viewer / converter
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/XnView-${PORTVERSION}-x86-unknown-FreeBSD5.x-static
 INSTALL_SLIB=	yes
 
