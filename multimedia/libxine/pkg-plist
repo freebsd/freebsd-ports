@@ -149,6 +149,10 @@ lib/libxine.so.1
 %%WITH_WAVPACK%%%%PLUGINSDIR%%/xineplug_wavpack.so
 libdata/pkgconfig/libxine.pc
 share/aclocal/xine.m4
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/CREDITS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
 %%DOCSDIR%%/README.MINGWCROSS
 %%DOCSDIR%%/README.WIN32
@@ -161,6 +165,7 @@ share/aclocal/xine.m4
 %%DOCSDIR%%/README.solaris
 %%DOCSDIR%%/README.syncfb
 %%DOCSDIR%%/README_xxmc.html
+%%DOCSDIR%%/TODO
 %%DOCSDIR%%/faq.html
 %%DOCSDIR%%/faq.txt
 %%DOCSDIR%%/hackersguide/architecture.png
@@ -170,6 +175,7 @@ share/aclocal/xine.m4
 %%DOCSDIR%%/hackersguide/post_frame.png
 share/locale/cs/LC_MESSAGES/libxine1.mo
 share/locale/de/LC_MESSAGES/libxine1.mo
+share/locale/eo/LC_MESSAGES/libxine1.mo
 share/locale/es/LC_MESSAGES/libxine1.mo
 share/locale/eu/LC_MESSAGES/libxine1.mo
 share/locale/fr/LC_MESSAGES/libxine1.mo
