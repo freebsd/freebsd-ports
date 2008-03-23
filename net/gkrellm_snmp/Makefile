@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellm_snmp
 PORTVERSION=	0.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://triq.net/gkrellm/
 
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 PLIST_FILES=	libexec/gkrellm/plugins/gkrellm_snmp.so
-USE_X_PREFIX=   yes
 USE_GNOME=	imlib
 MAKE_ENV=	GKRELLM_INCLUDE="-I${X11BASE}/include/gkrellm/" \
 		PLUGIN_DIR="${X11BASE}/libexec/gkrellm/plugins/"

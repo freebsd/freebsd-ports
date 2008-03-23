@@ -21,7 +21,6 @@ RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_XLIB=	yes
 USE_GNOME=	gnometarget gtk20
 USE_PERL5=	yes
 USE_GETTEXT=	yes

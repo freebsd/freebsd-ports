@@ -10,6 +10,7 @@
 
 PORTNAME=	cursor-crystal-theme
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.notmart.org/files/ \
 		http://pinguin.stttelkom.ac.id/gentoo/distfiles/
@@ -23,7 +24,6 @@ BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|function ||' \

@@ -7,7 +7,7 @@
 
 PORTNAME=	clusterit
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net devel parallel
 MASTER_SITES=	http://www.garbled.net/download/ \
 		ftp://ftp.chg.ru/pub/prog/parallel/clusterit/
@@ -23,7 +23,7 @@ PLIST_SUB+=	X11='@comment '
 .else
 PLIST_SUB+=	X11=''
 MAN1+=		rvt.1 dvt.1
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 USE_PERL5_BUILD=yes
 

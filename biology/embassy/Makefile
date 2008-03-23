@@ -8,7 +8,7 @@
 
 PORTNAME=	embassy
 PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/ \
 		ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
@@ -27,7 +27,6 @@ USE_SUBMAKE=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 USE_MOTIF=	yes
 
 OPTIONS=	DOMAINATRIX	"Protein domain apps" on \

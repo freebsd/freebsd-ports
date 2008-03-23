@@ -7,7 +7,7 @@
 
 PORTNAME=	bsp_upektfmess
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.upek.com/support/download/ \
 		http://shapeshifter.se/pub/bsp_upektfmess/
@@ -27,7 +27,7 @@ USE_GETTEXT=	yes
 USE_ICONV=	yes
 # Maintainer note
 # Both the gui and the non-gui object are linked to libX11
-USE_XLIB=	yes
+USE_XORG=	x11
 
 RESTRICTED=	license prohibits redistribution
 NO_BUILD=	yes

@@ -17,7 +17,6 @@ COMMENT=	Graphical disk map Utility
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_GMAKE=	yes
 USE_PERL5=	yes

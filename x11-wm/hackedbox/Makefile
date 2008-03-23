@@ -8,7 +8,7 @@
 
 PORTNAME=	hackedbox
 PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://scrudgeware.org/downloads/hackedbox/
 
@@ -24,7 +24,7 @@ STYLES=		artwiz bluebox cthulhain deep flux frobozz frobust nyz \
 			steelblue2 the_orange trisb twice
 PLIST=		${WRKDIR}/pkg-plist
 #USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bg-utils
 

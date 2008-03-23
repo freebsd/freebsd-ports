@@ -7,18 +7,18 @@
 
 PORTNAME=	xplot
 PORTVERSION=	0.90.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math graphics net
 MASTER_SITES=	http://www.xplot.org/xplot/
 
 MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	X11 plotting package
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
 #XPLOT_DEMOS=	demo.0 demo.1 demo.2 demo.3 demo.4 demo.5 demo.6 demo.7
 
+USE_XORG=	x11
 MAN1=		tcpdump2xplot.1 xplot.1
 
 post-install:

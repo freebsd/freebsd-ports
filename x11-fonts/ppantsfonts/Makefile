@@ -7,7 +7,7 @@
 
 PORTNAME=	ppantsfonts
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://cus.org.uk/~dom/distfiles/ppants-fonts/
 DISTNAME=	${PORTNAME}-default-${PORTVERSION}
@@ -16,7 +16,6 @@ MAINTAINER=	dominic.marks@btinternet.com
 COMMENT=	A set of small angular fonts
 
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 FONTS=	moosefont terminalpants

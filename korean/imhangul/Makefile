@@ -16,7 +16,6 @@ COMMENT=	GTK+-2.0 hangul input module
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

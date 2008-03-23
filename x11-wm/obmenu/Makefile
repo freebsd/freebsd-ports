@@ -13,7 +13,6 @@ MASTER_SITES=	SF
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Menu manager for Openbox supporting both static and pipe menus
 
-USE_XLIB=		yes
 USE_GNOME=		pygtk2
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

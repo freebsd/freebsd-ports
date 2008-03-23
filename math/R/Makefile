@@ -8,6 +8,7 @@
 
 PORTNAME=	R
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -112,7 +113,7 @@ CONFIGURE_ARGS+=--without-x
 PLIST_SUB+=	X11="@comment "
 .else
 CONFIGURE_ARGS+=--with-x
-USE_XLIB=	yes
+USE_XORG=	x11
 PLIST_SUB+=	X11=""
 .endif
 

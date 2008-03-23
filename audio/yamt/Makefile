@@ -7,7 +7,7 @@
 
 PORTNAME=	yamt
 PORTVERSION=	0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Yet Another Mp3 Tool which helps you to organize your mp3s
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomelibs gnomehack gnomeprefix
 GNU_CONFIGURE=	yes

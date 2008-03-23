@@ -7,7 +7,7 @@
 
 PORTNAME=	fmsx
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.mavetju.org/download/adopted/:code \
 		http://fms.komkon.org/fMSX/:code \
@@ -24,7 +24,7 @@ COMMENT=	The Portable MSX/MSX2/MSX2+ Emulator
 
 REINPLACE_ARGS=	-i ""
 
-USE_XLIB=	yes
+USE_XORG=	xi x11
 RESTRICTED=	Legal status of distributed ROM images unclear
 WRKSRC=		${WRKDIR}/MSX
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	swarp
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.suckless.org/download/ \
 		http://mirror.roe.ch/dist/${PORTNAME}/
@@ -14,13 +15,12 @@ MASTER_SITES=	http://www.suckless.org/download/ \
 MAINTAINER=	daniel@roe.ch
 COMMENT=	X11 generic pointer warping utility
 
-USE_XLIB=	yes
-
 MAKE_ARGS=	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -lX11" \
 		CFLAGS="${CFLAGS} -I${X11BASE}/include \
 			-DVERSION=\\\"${PORTVERSION}\\\"" \
 		LD=${CC}
 
+USE_XORG=	x11
 PLIST_FILES=	bin/swarp
 PORTDOCS=	README
 

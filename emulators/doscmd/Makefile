@@ -20,7 +20,7 @@ ONLY_FOR_ARCHS=	i386
 MAKE_ARGS+=	-DNO_X
 PLIST_SUB+=	X11="@comment "
 .else
-USE_XLIB=	yes
+USE_XORG=	x11
 PLIST_SUB+=	X11=""
 .endif
 MAKE_ARGS+=	MANDIR="${PREFIX}/man/man"

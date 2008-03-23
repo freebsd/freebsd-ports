@@ -7,6 +7,7 @@
 
 PORTNAME=	xsane
 PORTVERSION=	0.995
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/ \
 		http://gd.tuwien.ac.at/hci/sane/xsane/ \
@@ -21,7 +22,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		sane.1:${PORTSDIR}/graphics/sane-backends
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -16,7 +16,6 @@ DISTFILES=	kb_src-${PORTVERSION}.tar.gz kb_inst-${PORTVERSION}.tar.gz
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio contest logger
 
-USE_XLIB=	yes
 USE_GNOME=	libgnome gtk20 libbonobo
 NO_WRKSUBDIR=	yes
 PKGMESSAGE=	${FILESDIR}/pkg_message

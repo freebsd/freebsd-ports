@@ -28,7 +28,6 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes

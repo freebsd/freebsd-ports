@@ -8,7 +8,7 @@
 PKGNAMEPREFIX=	xmms-
 PORTNAME=	arts_output
 PORTVERSION=	0.7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://havardk.xmms.org/plugins/arts_output/
 
@@ -18,7 +18,6 @@ COMMENT=	aRts output plugin for XMMS.
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		artsc.0:${PORTSDIR}/audio/arts
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes

@@ -17,7 +17,6 @@ COMMENT=	A launcher frontend for FlightGear
 
 RUN_DEPENDS=	fgfs:${PORTSDIR}/games/flightgear
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	m2000
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	\
 		http://www.komkon.org/~dekogel/files/p2000/:code \
@@ -46,7 +46,7 @@ M2000TAPES=	3DDoolhof2.cas		\
 
 WRKSRC=		${WRKDIR}/P2000
 ALL_TARGET=	x
-USE_XLIB=	yes
+USE_XORG=	x11 xi
 
 SUB_FILES=	m2000.sh
 PORTDOCS=	M2000.txt

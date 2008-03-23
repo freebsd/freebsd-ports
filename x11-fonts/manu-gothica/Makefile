@@ -7,7 +7,7 @@
 
 PORTNAME=	manu-gothica
 DISTVERSION=	0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.bryld.info/downloads/
 DISTNAME=	manugot19
@@ -24,7 +24,6 @@ RESTRICTED=	The font is free for personal use
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKSRC}
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 NO_WRKSUBDIR=	yes

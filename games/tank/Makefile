@@ -7,7 +7,7 @@
 
 PORTNAME=	tank
 PORTVERSION=	0.4a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://step.polymtl.ca/~coyote/tank/
 EXTRACT_SUFX=	-src.tar.gz
@@ -17,7 +17,6 @@ COMMENT=	A 3-D network tank game that uses OpenGL/Mesa
 
 BUILD_DEPENDS=	${X11BASE}/lib/libaux.a:${PORTSDIR}/graphics/libaux
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=	linux-mesa-elf

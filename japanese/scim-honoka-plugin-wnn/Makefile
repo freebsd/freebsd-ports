@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-honoka-plugin-wnn
 PORTVERSION=	0.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	http://nop.net-p.org/files/honoka/
 DISTNAME=	honoka-plugin-wnn-${PORTVERSION}
@@ -24,7 +24,6 @@ RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
 
 USE_GETTEXT=	yes
 USE_GNOME=	lthack gnomehack
-USE_XLIB=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

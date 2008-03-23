@@ -7,7 +7,7 @@
 
 PORTNAME=	emboss
 PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/ \
 		ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
@@ -34,7 +34,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
-USE_XLIB=	yes
 USE_MOTIF=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PREFIX=${PREFIX} DATADIR=${DATADIR}

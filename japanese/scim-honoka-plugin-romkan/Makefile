@@ -21,7 +21,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GETTEXT=	yes
 USE_GNOME=	lthack gnomehack
-USE_XLIB=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

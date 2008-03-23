@@ -8,7 +8,7 @@
 
 PORTNAME=	grabc
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://muquit.com/muquit/software/grabc/ \
 		http://www.carpetsmoker.net/distfiles/ \
@@ -19,7 +19,7 @@ MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Grab a color from screen
 
 PLIST_FILES=	bin/grabc
-USE_XLIB=	yes
+USE_XORG=	x11
 CFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11
 

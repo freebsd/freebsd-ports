@@ -19,7 +19,6 @@ COMMENT=		A CD/DVD recording GUI for Gnome
 OPTIONS=		DVD "Enable DVD support" off \
 			CJK "Use cdrtools-cjk instead of cdrtools" off
 
-USE_XLIB=		yes
 USE_GNOME=		gnomeprefix gnomehack libgnomeui desktopfileutils
 USE_CDRTOOLS=		yes
 GNU_CONFIGURE=		yes

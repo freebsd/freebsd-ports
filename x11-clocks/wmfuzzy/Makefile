@@ -7,7 +7,7 @@
 
 PORTNAME=	wmfuzzy
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.manicai.net/comp/wmfuzzy/
 EXTRACT_SUFX=	.tgz
@@ -17,8 +17,7 @@ COMMENT=	A fuzzy clock WindowMaker dockapp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 PORTDOCS=	README
 PLIST_FILES=	bin/wmfuzzy

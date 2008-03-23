@@ -20,7 +20,6 @@ USE_GCC=	3.3+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 USE_LDCONFIG=	yes
 GZIP_CMD?=	/usr/bin/gzip
 MAN1=		cairo-clock.1

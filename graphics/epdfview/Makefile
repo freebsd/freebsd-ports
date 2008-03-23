@@ -22,7 +22,6 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_ICONV=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 intlhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

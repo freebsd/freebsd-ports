@@ -7,7 +7,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.4.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -34,7 +34,7 @@ LATEST_LINK=	${PORTNAME}2
 PKGNAMESUFFIX=	-imlib
 .endif
 USE_GMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_BZIP2=	yes
 WANT_GNOME=	yes
 

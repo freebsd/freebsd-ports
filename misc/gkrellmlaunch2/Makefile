@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrell
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmlaunch.so
-USE_X_PREFIX=	yes
 ALL_TARGET=	${PORTNAME}.so
 
 do-install:

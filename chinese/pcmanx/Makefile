@@ -21,7 +21,6 @@ USE_GCC=	3.3+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_NLS)

@@ -8,7 +8,7 @@
 
 PORTNAME=	seaview
 PORTVERSION=	2006.02.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -20,7 +20,6 @@ COMMENT=	Multiple DNA/protein sequence alignment editor
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		pdf.8:${PORTSDIR}/print/pdflib
 
-USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=	#

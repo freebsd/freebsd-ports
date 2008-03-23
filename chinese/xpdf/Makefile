@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	20040727
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN} \
@@ -24,7 +24,6 @@ RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf\
 		${LOCALBASE}/share/arphicttf/logo.gif:${PORTSDIR}/chinese/arphicttf
 
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 SUB_FILES=	dot.xpdfrc
 SUB_LIST=	ADOBECMAPDIR=${ADOBECMAPDIR}

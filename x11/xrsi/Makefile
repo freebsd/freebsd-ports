@@ -7,7 +7,7 @@
 
 PORTNAME=	xrsi
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xrsi
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	xrsi
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	A minimalist break enforcer for linux/unix for the prevention of RSI
 
-USE_XLIB=	yes
+USE_XORG=	x11
 PLIST_FILES=	bin/xrsi
 PORTDOCS=	Readme Licence
 

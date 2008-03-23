@@ -7,7 +7,7 @@
 
 PORTNAME=	qca-tls
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://delta.affinix.com/download/qca/ \
 		http://psi.affinix.com/beta/
@@ -18,7 +18,6 @@ COMMENT=	SSL/TLS plugin for Qt
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 HAS_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_QT_VER=	3

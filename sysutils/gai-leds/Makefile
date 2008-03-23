@@ -7,7 +7,7 @@
 
 PORTNAME=	gai-leds
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gai
@@ -18,7 +18,6 @@ COMMENT=	A GAI applet that displays the keyboard status leds
 LIB_DEPENDS=	gai:${PORTSDIR}/x11-toolkits/gai
 
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
 
