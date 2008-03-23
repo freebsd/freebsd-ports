@@ -10,7 +10,7 @@ PORTVERSION=	1.3.0
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/richard/
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A validating XML parser written in C
 
 MAN1=	rxp.1

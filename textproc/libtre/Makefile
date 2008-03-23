@@ -14,7 +14,7 @@ MASTER_SITES=	http://laurikari.net/tre/ \
 MASTER_SITE_SUBDIR=	jkoshy
 DISTNAME=	tre-${PORTVERSION}
 
-MAINTAINER=	jkoshy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight fully POSIX compliant regexp matching library
 
 CONFLICTS=	glimpse-4*	# agrep(1)
