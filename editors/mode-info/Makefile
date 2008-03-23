@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mode-info
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://namazu.org/~tsuchiya/elisp/
 
@@ -44,8 +44,9 @@ PLIST_SUB+=	MI_WITH_MAKE="@comment "
 .endif
 
 USE_EMACS=	yes
-EMACS_PORT_NAME?=	emacs21
-EMACS_NO_RUN_DEPENDS=	yes
+
+.include <bsd.port.pre.mk>
+
 LISPDIR?=	${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
@@ -72,4 +73,5 @@ post-install:
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
-.include <bsd.port.mk>
+
+.include <bsd.port.post.mk>
