@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.150 2007/12/15 17:46:44 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.154 2008/03/23 00:24:48 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -46,7 +46,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 9;
-my $micro = 7;
+my $micro = 8;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -236,18 +236,11 @@ open(MK, $sites_mk) || die "$sites_mk: $!";
 my @site_groups = grep($_ = /^MASTER_SITE_(\w+)/ && $1, <MK>);
 close(MK);
 
-$cmd = join(' -V MASTER_SITE_', "make $makeenv -f - all", @site_groups);
+$cmd = join(' -V MASTER_SITE_', "make $makeenv ", @site_groups);
 
 $i = 0;
 
 open2(\*IN, \*OUT, $cmd);
-
-print OUT <<EOF;
-all:
-	# do nothing
-
-.include "$sites_mk"
-EOF
 
 close(OUT);
 
@@ -1356,6 +1349,16 @@ sub checkmakefile {
 	}
 
 	#
+	# whole file: USE_GETOPT_LONG
+	#
+	print "OK: checking for USE_GETOPT_LONG.\n" if ($verbose);
+	if ($whole =~ /\nUSE_GETOPT_LONG.?=/) {
+		my $lineno = &linenumber($`);
+		&perror("WARN", $file, $lineno, "USE_GETOPT_LONG is now obsolete. ".
+			"You can safely remove this macro from your Makefile.");
+	}
+
+	#
 	# whole file: EXPIRATION_DATE
 	#
 	print "OK: checking for valid EXPIRATION_DATE.\n" if ($verbose);
@@ -2333,6 +2336,11 @@ FETCH_DEPENDS DEPENDS_TARGET
 
 				print "OK: checking dependency value for $j.\n"
 					if ($verbose);
+				if ($k =~ /\${((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)*DEPENDS)}/) {
+					&perror("WARN", $file, -1, "do not set $j to $k. ".
+						"Instead, explicity list out required $j dependencies.");
+				}
+
 				if (($j ne 'DEPENDS'
 				  && scalar(@l) != 2 && scalar(@l) != 3)) {
 					&perror("WARN", $file, -1, "wrong dependency value ".
@@ -2382,13 +2390,6 @@ FETCH_DEPENDS DEPENDS_TARGET
 					&perror("WARN", $file, -1, "dependency to $1 ".
 						"listed in $j. consider using ".
 						"USE_QT.");
-				}
-
-				# check USE_GETOPT_LONG
-				if ($m{'dep'} =~ /^(gnugetopt\.\d)+$/) {
-					&perror("WARN", $file, -1, "dependency to $1 ".
-							"listed in $j.  consider using ".
-							"USE_GETOPT_LONG.");
 				}
 
 				# check LIBLTDL
