@@ -194,8 +194,10 @@ share/locale/en/LC_MESSAGES/aegis.mo
 share/locale/es/LC_MESSAGES/aegis.mo
 share/locale/fr/LC_MESSAGES/aegis.mo
 share/locale/nl/LC_MESSAGES/aegis.mo
+share/locale/pt_BR/LC_MESSAGES/aegis.mo
 share/locale/ro/LC_MESSAGES/aegis.mo
 share/locale/ru/LC_MESSAGES/aegis.mo
+share/locale/vi/LC_MESSAGES/aegis.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/de
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
