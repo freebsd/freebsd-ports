@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES?=	textproc
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		http://uim.freedesktop.org/releases/uim/stable/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
 .endif
