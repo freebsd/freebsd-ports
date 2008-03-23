@@ -22,6 +22,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 CONFLICTS=	mrxvt-0.5.*
 
 GNU_CONFIGURE=	yes
+USE_XORG=	x11
 
 .if defined(WITH_JAPANESE)
 CONFIGURE_ARGS+=	--enable-xim --enable-cjk --with-encoding=eucj
@@ -32,8 +33,8 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 CONFIGURE_ARGS+=	--enable-xft
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
-		LIBS="${LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LIBS="${LIBS} -L${LOCALBASE}/lib"
 
 MAN1=		mrxvt.1
 
