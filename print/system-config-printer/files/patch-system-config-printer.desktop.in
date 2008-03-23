@@ -1,0 +1,11 @@
+--- system-config-printer.desktop.in.orig	2008-03-20 11:58:12.000000000 -0400
++++ system-config-printer.desktop.in	2008-03-20 11:58:25.000000000 -0400
+@@ -2,7 +2,7 @@
+ Encoding=UTF-8
+ _Name=Printing
+ _Comment=Configure printers
+-Exec=/usr/bin/system-config-printer
++Exec=%%PREFIX%%/sbin/system-config-printer
+ Terminal=false
+ Type=Application
+ Icon=printer

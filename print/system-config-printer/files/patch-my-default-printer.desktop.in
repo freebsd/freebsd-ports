@@ -1,0 +1,11 @@
+--- my-default-printer.desktop.in.orig	2008-03-20 11:53:43.000000000 -0400
++++ my-default-printer.desktop.in	2008-03-20 11:53:59.000000000 -0400
+@@ -2,7 +2,7 @@
+ Encoding=UTF-8
+ _Name=Default Printer
+ _Comment=Select default printer
+-Exec=/usr/bin/my-default-printer
++Exec=%%PREFIX%%/bin/my-default-printer
+ Terminal=false
+ Type=Application
+ Icon=printer
