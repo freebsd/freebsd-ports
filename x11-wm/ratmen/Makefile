@@ -7,13 +7,14 @@
 
 PORTNAME=	ratmen
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.update.uu.se/~zrajm/programs/ratmen/
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Simple program for displaying a menu in a window
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_PERL5_BUILD=yes
 MAN1=		ratmen.1
 PLIST_FILES=	bin/ratmen

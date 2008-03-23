@@ -18,7 +18,6 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

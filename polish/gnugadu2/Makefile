@@ -20,7 +20,6 @@ LIB_DEPENDS=	gadu.3:${PORTSDIR}/polish/libgadu \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

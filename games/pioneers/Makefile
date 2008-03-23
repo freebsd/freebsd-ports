@@ -17,7 +17,6 @@ COMMENT=	An Internet playable version of the Settlers of Catan for GNOME/GTK+
 
 RUN_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 libgnome

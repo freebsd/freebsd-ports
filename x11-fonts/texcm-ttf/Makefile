@@ -7,7 +7,7 @@
 
 PORTNAME=	texcm-ttf
 PORTVERSION=	20010117
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.mozilla.org/projects/mathml/fonts/bakoma/
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX} license.txt
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 
 NO_CDROM=	cannot be sold or distributed with any commercial product
 
-USE_X_PREFIX=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

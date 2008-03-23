@@ -7,7 +7,7 @@
 
 PORTNAME=	xrmftp
 PORTVERSION=	1.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	http://www-users.mat.uni.torun.pl/~rafmet/xrmftp/
 EXTRACT_SUFX=	.src.tgz
@@ -19,7 +19,6 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.src
 
-USE_X_PREFIX=	yes
 ALL_TARGET=	xrmftp
 CFLAGS+=	-I${X11BASE}/include -I${X11BASE}/include/X11
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \

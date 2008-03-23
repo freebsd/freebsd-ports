@@ -7,7 +7,7 @@
 
 PORTNAME=	oneko
 PORTVERSION=	2.0b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.3bit.co.jp/~sasaki/oneko/ \
 		http://www.net24.ne.jp/~ryo2/archives/:ryo2 \
@@ -25,7 +25,7 @@ COMMENT=	A cat chasing a mouse all over the screen
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xpm
 MAN6=		oneko.6
 MANLANG=	"" ja
 WRKSRC=		${WRKDIR}/${PORTNAME}

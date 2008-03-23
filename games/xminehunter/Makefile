@@ -7,7 +7,7 @@
 
 PORTNAME=	xminehunter
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	games
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	A Motif minesweeper game
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 WRKSRC=		${WRKDIR}/xminehunter
 USE_MOTIF=	yes
 ALL_TARGET=	xminehunter

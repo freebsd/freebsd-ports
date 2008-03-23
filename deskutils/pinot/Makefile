@@ -7,6 +7,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	0.83
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -44,7 +45,6 @@ CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" MKDIR_P="${MKDIR}"
 
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 #USE_SQLITE=	3	# Replaced by sqlite3-threads
 USE_PYTHON=	yes
 USE_OPENSSL=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	1.2.34
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
@@ -53,7 +54,7 @@ PLIST_SUB+=	GNOMEDESKTOP="@comment "
 USE_GNOME+=	imlib
 CONFIGURE_ARGS+=--with-imlib
 .else
-USE_XPM=	yes
+USE_XORG=	xpm
 CONFIGURE_ARGS+=--without-imlib
 .endif
 

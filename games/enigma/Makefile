@@ -7,7 +7,7 @@
 
 PORTNAME=	enigma
 PORTVERSION=	0.92
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	enigma
@@ -24,7 +24,6 @@ USE_GETTEXT=	yes
 USE_LUA=	4.0
 LUA_COMPS=	lua tolua
 USE_SDL=	gfx image mixer sdl ttf
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target="" \
 		--with-libintl-prefix="${LOCALBASE}"

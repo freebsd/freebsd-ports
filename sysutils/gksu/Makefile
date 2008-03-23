@@ -18,7 +18,6 @@ LIB_DEPENDS=	gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
 		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui \
 		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 pkgconfig gnomeprefix gnomehack gconf2 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

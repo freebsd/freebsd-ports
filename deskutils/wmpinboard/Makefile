@@ -7,7 +7,7 @@
 
 PORTNAME=	wmpinboard
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils afterstep windowmaker
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -17,7 +17,7 @@ COMMENT=	Post-it notes for the WindowMaker dock or AfterStep Wharf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \

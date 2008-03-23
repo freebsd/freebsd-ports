@@ -17,7 +17,7 @@ MAINTAINER=	brett@peloton.runet.edu
 COMMENT=	A simple browser to allow a user to print
 
 PLIST_FILES=	bin/asprint
-USE_XORG=	x11
+USE_XORG=	xmu xpm xt xaw x11
 ALL_TARGET=	asprint
 MAKEFILE=	makefile
 

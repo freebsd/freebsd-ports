@@ -6,7 +6,7 @@
 
 PORTNAME=	hamfax
 PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms audio hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hamfax
@@ -18,7 +18,6 @@ COMMENT=	QT application for sending and receiving facsimiles over radio
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 USE_QT_VER=	3
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-Qt-dir=${X11BASE} CXX="${CXX} ${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}" CPPFLAGS="-I${LOCALBASE}/include" \

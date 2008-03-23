@@ -19,7 +19,6 @@ CONFLICTS=	uae-[0-9]*
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 USE_GNOME=	gtk20
 USE_SDL=	sdl
 CONFIGURE_ARGS=	--with-sdl --with-sdl-gfx

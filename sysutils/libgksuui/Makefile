@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}1.0-${PORTVERSION}
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	A graphical fronted to su library
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

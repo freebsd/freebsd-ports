@@ -7,7 +7,8 @@
 
 PORTNAME=	mpich2
 DISTVERSION=	1.0.6p1
-PORTEPOCH=	3
+PORTREVISION=	1
+PORTEPOCH=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/	\
 		http://www-unix.mcs.anl.gov/mpi/mpich/downloads/
@@ -54,7 +55,7 @@ CONFIGURE_ARGS+=	--disable-graphics
 WITHOUT_JAVA=	yes
 PLIST_SUB+=	X11="@comment "
 .else
-USE_XLIB=	yes
+USE_X11=	x11
 PLIST_SUB+=	X11=""
 .endif
 .if defined(WITHOUT_JAVA)

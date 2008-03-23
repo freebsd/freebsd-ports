@@ -7,7 +7,7 @@
 
 PORTNAME=	jyuroku
 PORTVERSION=	1.32
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	http://homepage3.nifty.com/seto-yoneji/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -17,7 +17,6 @@ MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Japanese address book
 
 ALL_TARGET=
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 
 post-patch:

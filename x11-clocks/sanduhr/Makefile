@@ -14,7 +14,6 @@ MASTER_SITES=	http://seehuhn.de/media/programs/
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	An alarm clock for GNOME desktop designed as a sand-glass
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnometarget gnomeprefix libgnomeui oaf
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes

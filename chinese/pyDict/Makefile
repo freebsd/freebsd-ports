@@ -7,7 +7,7 @@
 
 PORTNAME=	pyDict
 PORTVERSION=	0.2.6.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/chinsan/pyDict/ \
 		http://www.525183.com/freebsd/pyDict/ \
@@ -19,8 +19,6 @@ COMMENT=	A Chinese <-> English dictionary, under both console and X11
 
 RUN_DEPENDS=	${LOCALBASE}/include/pygtk/pygtk.h:${PORTSDIR}/x11-toolkits/py-gtk \
 		${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
-
-USE_XLIB=	yes
 
 WRKSRC=		${WRKDIR}/dict
 NO_BUILD=	yes

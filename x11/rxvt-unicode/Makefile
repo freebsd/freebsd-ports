@@ -7,6 +7,7 @@
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	9.02
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -21,8 +22,7 @@ PATCH_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Encode/HanExtra.pm:${PORTSDIR}/chinese/
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
-USE_X_PREFIX=		yes
-USE_XPM=		yes
+USE_XORG=		xpm
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
 CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt		\

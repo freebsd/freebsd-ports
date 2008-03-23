@@ -17,7 +17,6 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	An enhanced execution box with regex pattern matching
 
 USE_GNOME=	gtk20
-USE_XLIB=	yes
 
 ALL_TARGET=	yalias
 MAKE_ARGS=	prefix=${PREFIX} YALIASDIR=${DATADIR}

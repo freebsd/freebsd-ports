@@ -18,7 +18,6 @@ COMMENT=	A simple Jabber client using the GTK+ 2.0 toolkit
 
 LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth
 
-USE_X_PREFIX=	yes
 USE_GNOME=	libglade2
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.44
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang lisp
 MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION} \
 		ftp://sunsite.unc.edu/pub/Linux/devel/lang/lisp/
@@ -87,7 +87,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib/db${BDB_VER}
 IGNORE=		selected different implementations of the same X11 module
 .endif
 .if defined(WITH_CLX_MIT) || defined(WITH_CLX_NEW)
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 .if defined(WITH_CLX_MIT)
 CONFIGURE_ARGS+=--with-module=clx/mit-clx

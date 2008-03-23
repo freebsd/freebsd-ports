@@ -7,7 +7,7 @@
 
 PORTNAME=	x11amp
 PORTVERSION=	0.9.b1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/misc/x11amp/0.9/ \
 		ftp://ftp.x11amp.bz.nu/x11amp/0.9/ \
@@ -17,7 +17,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	X11-based MP3 player with nice graphical interface
 
-USE_XLIB=	yes
 USE_GNOME=	gtk12 esound
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

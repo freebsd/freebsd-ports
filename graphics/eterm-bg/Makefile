@@ -7,7 +7,7 @@
 
 PORTNAME=	eterm-bg
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.eterm.org/download/
 DISTNAME=	Eterm-bg-${PORTVERSION}
@@ -17,7 +17,6 @@ COMMENT=	Image files for background of Eterm
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/share/Eterm

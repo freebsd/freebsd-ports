@@ -7,7 +7,7 @@
 
 PORTNAME=	dflowers
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -19,7 +19,6 @@ COMMENT=	Dual Flowers visualization plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 
 post-patch:

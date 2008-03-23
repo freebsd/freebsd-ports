@@ -7,6 +7,7 @@
 
 PORTNAME=	aee
 PORTVERSION=	2.2.15b
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://mahon.cwx.net/sources/
 
@@ -21,7 +22,7 @@ OPTIONS=	XAE "Build X11 version 'xae'" off
 ALL_TARGET=	main
 PLIST_SUB=	XAE="@comment "
 .else
-USE_XLIB=	yes
+USE_XORG=	x11
 ALL_TARGET=	both
 PLIST_SUB=	XAE=""
 .endif

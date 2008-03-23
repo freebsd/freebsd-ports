@@ -7,14 +7,13 @@
 
 PORTNAME=	gnowavcut
 PORTVERSION=	0.0.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://gnowavcut.good-day.net/src/
 
 MAINTAINER=	spcoltri@omcl.org
 COMMENT=	A GNOME/GTK+ based RIFF PCM Wave file splitter
 
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomelibs
 

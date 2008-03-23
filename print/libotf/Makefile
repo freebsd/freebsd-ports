@@ -7,6 +7,7 @@
 
 PORTNAME=	libotf
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	print devel
 MASTER_SITES=	http://www.m17n.org/libotf/
 
@@ -16,7 +17,6 @@ COMMENT=	Library for handling OpenType fonts
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GNOME=	pkgconfig
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
