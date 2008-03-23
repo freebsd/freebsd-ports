@@ -17,7 +17,8 @@ COMMENT=	A Commodore 64 psid audio plugin for Mozilla or Opera
 
 RUN_DEPENDS=	xsidplay:${PORTSDIR}/audio/xsidplay
 
-MAKE_ARGS=	CC="${CC}" OPTIMIZER="${CFLAGS} -I${X11BASE}/include"
+MAKE_ARGS=	CC="${CC}" OPTIMIZER="${CFLAGS} -I${LOCALBASE}/include"
+USE_XORG=	x11
 
 .include <bsd.port.pre.mk>
 
