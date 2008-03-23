@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jkoshy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple plain-text to HTML converter
 
 PERL_CONFIGURE=	yes
