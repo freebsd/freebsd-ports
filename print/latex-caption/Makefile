@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	latex-caption
-PORTVERSION=	3.1.20071213
+PORTVERSION=	3.1.20080320
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}
