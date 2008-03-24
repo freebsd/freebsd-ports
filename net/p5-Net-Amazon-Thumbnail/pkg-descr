@@ -1,0 +1,9 @@
+The Alexa Site Thumbnail web service provides developers with
+programmatic access to thumbnail images for the home pages of web
+sites. It offers access to Alexa's large and growing collection of
+images, gathered from its comprehensive web crawl. This web service
+enables developers to enhance web sites, search results, web
+directories, blog entries, and other web real estate with Alexa
+thumbnail images.
+
+WWW:    http://search.cpan.org/dist/Net-Amazon-Thumbnail/

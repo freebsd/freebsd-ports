@@ -1,0 +1,16 @@
+
+You need to do some things before you can use the Amazon Alexa Site
+Thumbnail service:
+
+1) Visit http://aws.amazon.com/ to create an Amazon AWS account.
+
+2) Obtain your AWS public key and secret key to use with the thumbnail
+   service.
+
+3) Visit http://aws.amazon.com/ast/ for more information and
+   resources.
+
+   DISCLAIMER: No one but you is responsible for paying Amazon to
+	       use the Thumbnail service. The service does not have
+	       a free sandbox area, so be aware how much money you
+	       are spending to use the service.
