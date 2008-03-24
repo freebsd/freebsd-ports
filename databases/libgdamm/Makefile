@@ -3,31 +3,29 @@
 # Whom:                 Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/libgdamm/Makefile,v 1.5 2006/07/25 18:12:02 mezz Exp $
+#   $MCom: ports/databases/libgdamm/Makefile,v 1.9 2008/03/17 19:53:24 kwm Exp $
 #
 
 PORTNAME=	libgdamm
-PORTVERSION=	1.3.7
-PORTREVISION=	2
+PORTVERSION=	3.0.0
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.3
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	bland@FreeBSD.org
-COMMENT=	C++ wrapper for libgda2 library
+COMMENT=	C++ wrapper for libgda3 library
 
 LIB_DEPENDS=	glibmm-2.4:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GCC=	3.4+
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack libgda2
+USE_GNOME=	gnomehack libgda3
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
 
 post-patch:
