@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	telepathy-salut
-PORTVERSION=	0.1.3
+PORTVERSION=	0.3.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -24,11 +24,11 @@ RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+MAN8=		telepathy-salut.8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|make -C|${GMAKE} -C|g' \
