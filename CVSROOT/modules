@@ -2572,7 +2572,7 @@ emma		ports/databases/emma
 emms		ports/audio/emms
 emotion		ports/multimedia/emotion
 emovix		ports/multimedia/emovix
-empathy		ports/databases/empathy
+empathy		ports/net-im/empathy
 emphasis	ports/audio/emphasis
 empire		ports/games/empire
 empower		ports/sysutils/empower
