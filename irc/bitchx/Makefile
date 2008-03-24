@@ -8,10 +8,8 @@
 PORTNAME=	BitchX
 PORTVERSION=	1.1.0.1
 PORTREVISION=	1
-
 CATEGORIES+=	irc
-MASTER_SITES=	http://www.bitchx.com/ \
-		CENKES
+MASTER_SITES=	SF
 DISTNAME=	ircii-pana-1.1-final
 
 MAINTAINER?=	beech@FreeBSD.org
@@ -125,7 +123,6 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/bin/BitchX-1.1-final
 	${STRIP_CMD} ${PREFIX}/bin/scr-bx
 .endif
-
-	@cd ${FILESDIR} && ${CP} .placeholder ${PREFIX}/share/bx/plugins/
+	${TOUCH} ${PREFIX}/share/bx/plugins/.placeholder
 
 .include <bsd.port.post.mk>
