@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-games-extra-data
-PORTVERSION=	2.21.91
+PORTVERSION=	2.22.0
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-games-extra-data/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
