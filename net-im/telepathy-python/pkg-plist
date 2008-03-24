@@ -4,6 +4,12 @@
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel.pyo
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Handler.py
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Handler.pyc
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Handler.pyo
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Call_Merging.py
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Call_Merging.pyc
+%%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Call_Merging.pyo
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Chat_State.py
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Chat_State.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/_generated/Channel_Interface_Chat_State.pyo
@@ -130,6 +136,9 @@
 %%PYTHON_SITELIBDIR%%/telepathy/server/channel.py
 %%PYTHON_SITELIBDIR%%/telepathy/server/channel.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/server/channel.pyo
+%%PYTHON_SITELIBDIR%%/telepathy/server/channelhandler.py
+%%PYTHON_SITELIBDIR%%/telepathy/server/channelhandler.pyc
+%%PYTHON_SITELIBDIR%%/telepathy/server/channelhandler.pyo
 %%PYTHON_SITELIBDIR%%/telepathy/server/conn.py
 %%PYTHON_SITELIBDIR%%/telepathy/server/conn.pyc
 %%PYTHON_SITELIBDIR%%/telepathy/server/conn.pyo
