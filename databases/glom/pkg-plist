@@ -7,30 +7,62 @@ lib/libglom.so.0
 %%PYTHON_SITELIBDIR%%/glom.la
 %%PYTHON_SITELIBDIR%%/glom.so
 share/applications/glom.desktop
-share/glom/doc/examples/example_smallbusiness.glom
-share/glom/glade/glom.glade
-share/glom/glom_document.dtd
-share/glom/xslt/print_details_to_html.xsl
-share/glom/xslt/print_report_to_html.xsl
+%%DATADIR%%/doc/examples/example_film_manager.glom
+%%DATADIR%%/doc/examples/example_music_collection.glom
+%%DATADIR%%/doc/examples/example_project_manager.glom
+%%DATADIR%%/doc/examples/example_smallbusiness.glom
+%%DATADIR%%/glade/glom.glade
+%%DATADIR%%/glom_document.dtd
+%%DATADIR%%/xslt/print_details_to_html.xsl
+%%DATADIR%%/xslt/print_report_to_html.xsl
+share/gnome/help/glom/C/figures/glom_design_fields.png
+share/gnome/help/glom/C/figures/glom_design_fields_dialog_calculated.png
 share/gnome/help/glom/C/figures/start.png
 share/gnome/help/glom/C/glom.xml
 share/gnome/help/glom/C/legal.xml
+share/gnome/help/glom/de/figures/glom_design_fields.png
+share/gnome/help/glom/de/figures/glom_design_fields_dialog_calculated.png
 share/gnome/help/glom/de/figures/start.png
 share/gnome/help/glom/de/glom.xml
+share/gnome/help/glom/de/legal.xml
+share/gnome/help/glom/en_GB/figures/glom_design_fields.png
+share/gnome/help/glom/en_GB/figures/glom_design_fields_dialog_calculated.png
+share/gnome/help/glom/en_GB/figures/start.png
+share/gnome/help/glom/en_GB/glom.xml
+share/gnome/help/glom/en_GB/legal.xml
+share/gnome/help/glom/es/figures/glom_design_fields.png
+share/gnome/help/glom/es/figures/glom_design_fields_dialog_calculated.png
+share/gnome/help/glom/es/figures/start.png
+share/gnome/help/glom/es/glom.xml
+share/gnome/help/glom/es/legal.xml
+share/gnome/help/glom/sv/figures/glom_design_fields.png
+share/gnome/help/glom/sv/figures/glom_design_fields_dialog_calculated.png
+share/gnome/help/glom/sv/figures/start.png
+share/gnome/help/glom/sv/glom.xml
+share/gnome/help/glom/sv/legal.xml
 share/mime-info/glom.keys
 share/mime-info/glom.mime
+share/icons/hicolor/16x16/apps/glom.png
+share/icons/hicolor/22x22/apps/glom.png
+share/icons/hicolor/24x24/apps/glom.png
+share/icons/hicolor/32x32/apps/glom.png
 share/icons/hicolor/48x48/apps/glom.png
 share/icons/hicolor/scalable/apps/glom.svg
+share/locale/ar/LC_MESSAGES/glom.mo
 share/locale/ca/LC_MESSAGES/glom.mo
 share/locale/cs/LC_MESSAGES/glom.mo
 share/locale/de/LC_MESSAGES/glom.mo
+share/locale/dz/LC_MESSAGES/glom.mo
 share/locale/en_CA/LC_MESSAGES/glom.mo
 share/locale/en_GB/LC_MESSAGES/glom.mo
 share/locale/es/LC_MESSAGES/glom.mo
 share/locale/fi/LC_MESSAGES/glom.mo
 share/locale/fr/LC_MESSAGES/glom.mo
+share/locale/gl/LC_MESSAGES/glom.mo
 share/locale/gu/LC_MESSAGES/glom.mo
+share/locale/hu/LC_MESSAGES/glom.mo
 share/locale/it/LC_MESSAGES/glom.mo
+share/locale/nb/LC_MESSAGES/glom.mo
 share/locale/ne/LC_MESSAGES/glom.mo
 share/locale/nl/LC_MESSAGES/glom.mo
 share/locale/pa/LC_MESSAGES/glom.mo
@@ -43,18 +75,32 @@ share/locale/tr/LC_MESSAGES/glom.mo
 share/locale/vi/LC_MESSAGES/glom.mo
 share/locale/zh_CN/LC_MESSAGES/glom.mo
 share/mime/packages/glom.xml
+share/omf/glom/glom-C.omf
+share/omf/glom/glom-de.omf
+share/omf/glom/glom-en_GB.omf
+share/omf/glom/glom-es.omf
+share/omf/glom/glom-sv.omf
+@dirrm share/omf/glom
+@dirrm share/gnome/help/glom/sv/figures
+@dirrm share/gnome/help/glom/sv
+@dirrm share/gnome/help/glom/es/figures
+@dirrm share/gnome/help/glom/es
+@dirrm share/gnome/help/glom/en_GB/figures
+@dirrm share/gnome/help/glom/en_GB
 @dirrm share/gnome/help/glom/de/figures
 @dirrm share/gnome/help/glom/de
 @dirrm share/gnome/help/glom/C/figures
 @dirrm share/gnome/help/glom/C
 @dirrm share/gnome/help/glom
-@dirrm share/glom/xslt
-@dirrm share/glom/glade
-@dirrm share/glom/doc/examples
-@dirrm share/glom/doc
-@dirrm share/glom
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
+@dirrm %%DATADIR%%/xslt
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/doc/examples
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @dirrmtry share/applications
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
