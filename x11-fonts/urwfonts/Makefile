@@ -7,7 +7,7 @@
 
 PORTNAME=	urwfonts
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 DISTNAME=	urw-fonts
@@ -15,8 +15,9 @@ DISTNAME=	urw-fonts
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Another font package for X
 
+RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 post-extract:

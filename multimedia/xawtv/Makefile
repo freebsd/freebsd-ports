@@ -32,8 +32,7 @@ USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_XPM=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 		CFLAGS="-I${WRKSRC}/common"
 MAKE_ENV=	verbose=yes

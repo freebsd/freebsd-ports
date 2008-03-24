@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-uim
 PORTVERSION=	0.1.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~suzhe/sources/
@@ -22,7 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	lthack
-USE_XLIB=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	urwfonts-ttf
 PORTVERSION=	1.0.7b18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gnome.ru/fonts/urw/release/
 DISTNAME=	urw-fonts-${PORTVERSION:S/b/pre/}-ttf
@@ -20,7 +20,6 @@ NO_WRKSUBDIR=	yes
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/X11/fonts/urwfonts-ttf

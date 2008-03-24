@@ -17,7 +17,7 @@ MAINTAINER=	sergio@softshark.org
 COMMENT=	Data Display Debugger -- a common graphical front-end for GDB/DBX/XDB
 
 USE_GMAKE=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 

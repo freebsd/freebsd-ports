@@ -34,7 +34,7 @@ DIST_SUBDIR=	povray31
 #   no UNIX source files for POV-Ray 3.1.
 #
 
-USE_XLIB=	yes
+USE_XORG=	x11
 MAN1=		povray.1
 
 POVLIB=		${PREFIX}/lib/povray31

@@ -17,8 +17,7 @@ COMMENT=	Dockapp to run shell scripts and display the output
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(LIBS)$$|& $$(OBJS)|g' \

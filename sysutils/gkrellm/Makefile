@@ -21,7 +21,6 @@ CONFLICTS=	gkrellm-2.*
 NO_LATEST_LINK=	yes
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

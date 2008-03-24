@@ -7,7 +7,7 @@
 
 PORTNAME=		ae_fonts1_ttf
 PORTVERSION=		1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		arabic x11-fonts
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	arabeyes
@@ -18,7 +18,6 @@ COMMENT=	A collection of truetype Arabic fonts created by Arabeyes.org
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ae_fonts1-${PORTVERSION}
 

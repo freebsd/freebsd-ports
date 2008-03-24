@@ -7,7 +7,7 @@
 
 PORTNAME=	ishido
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	obrien
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	obrien
 MAINTAINER=	samorodi@NUXI.com
 COMMENT=	Tile placement game
 
-USE_XLIB=	yes
+USE_XORG=	x11
 MAN6=		ishido.6
 
 do-install:

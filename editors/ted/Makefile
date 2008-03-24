@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 based RTF editor
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
@@ -21,7 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print
 
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 
-USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes

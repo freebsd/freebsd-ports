@@ -19,7 +19,6 @@ COMMENT=	Easy to use FTP client for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 ALL_TARGET=	# empty
 MAKE_ARGS=	CC=${CC} C_FLAGS="${CFLAGS}" DESTDIR=${PREFIX}

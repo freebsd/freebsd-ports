@@ -14,7 +14,6 @@ MASTER_SITES=	http://clay.ll.pl/download/
 MAINTAINER=	shanali@yahoo.com
 COMMENT=	A simple hiragana/katakana drill tool
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

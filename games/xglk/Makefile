@@ -20,8 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg png.5:${PORTSDIR}/graphics/png
 
-USE_XLIB=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 MAKE_ENV+=	AR=${AR} RANLIB=${RANLIB} ECHO=${ECHO} RM=${RM}
 

@@ -21,7 +21,6 @@ LATEST_LINK=	math-ump
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
-USE_XLIB=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xzgv
 PORTVERSION=	0.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
 MAINTAINER=	nosuzuki@postcard.st
 COMMENT=	An image viewer with thumbnail-based file selector for X
 
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 USE_GMAKE=	yes
 

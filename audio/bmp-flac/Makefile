@@ -7,7 +7,7 @@
 
 PORTNAME=	flac
 PORTVERSION=	20040316
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://ccm.sherry.jp/tmp/
 PKGNAMEPREFIX=	bmp-
@@ -22,7 +22,6 @@ LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 PLIST_FILES=	lib/bmp/Input/libbmp-flac.so
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}" \

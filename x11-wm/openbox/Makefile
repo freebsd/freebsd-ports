@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 libxml2 ltverhack
 USE_AUTOTOOLS=	libtool:15
-USE_XLIB=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

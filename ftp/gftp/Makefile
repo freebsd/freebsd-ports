@@ -29,7 +29,7 @@ OPTIONS=	X11 "Build with X11 frontend" on \
 		NLS "Native Language Support via gettext utilities" on
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 
 .include <bsd.port.pre.mk>

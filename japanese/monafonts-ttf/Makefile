@@ -7,7 +7,7 @@
 
 PORTNAME=	monafonts-ttf
 PORTVERSION=	2.90
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	monafont
@@ -16,7 +16,6 @@ DISTNAME=	monafont-ttf-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	X11 TrueType kanji fonts
 
-USE_X_PREFIX=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	osdclock
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://leftorium.net/software/ \
 		${MASTER_SITE_LOCAL}
@@ -20,7 +20,6 @@ COMMENT=	Small clock which uses libxosd to render text to the root window
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
 
 USE_GCC=	3.4
-USE_X_PREFIX=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib ${PTHREAD_LIBS}" \
 		PREFIX="${PREFIX}"

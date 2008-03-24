@@ -22,8 +22,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 RUN_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2-devel
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

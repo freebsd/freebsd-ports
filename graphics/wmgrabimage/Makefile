@@ -7,7 +7,7 @@
 
 PORTNAME=	wmGrabImage
 PORTVERSION=	0.72
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics windowmaker
 MASTER_SITES=	http://dockapps.org/files/12/19/
 EXTRACT_SUFX=	.tgz
@@ -19,8 +19,7 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmGrabImage
 
-USE_X_PREFIX=	YES
-USE_XPM=	YES
+USE_XORG=	xpm
 
 MAN1=		wmGrabImage.1
 

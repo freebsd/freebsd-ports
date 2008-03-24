@@ -7,6 +7,7 @@
 
 PORTNAME=	qdvdauthor
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -46,7 +47,6 @@ DESKTOP_ENTRIES="QDVDAuthor" \
 		"false"
 
 HAS_CONFIGURE=	yes
-USE_XLIB=	yes
 USE_QT_VER=	3
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++

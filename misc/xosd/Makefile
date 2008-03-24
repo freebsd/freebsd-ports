@@ -7,7 +7,7 @@
 
 PORTNAME=	xosd
 PORTVERSION=	2.2.12
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ignavus.net/ \
 		${MASTER_SITE_LOCAL}
@@ -18,7 +18,6 @@ COMMENT=	X On-Screen-Display Library and XMMS plug-in
 
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes

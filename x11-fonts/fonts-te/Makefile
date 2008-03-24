@@ -6,7 +6,7 @@
 
 PORTNAME=	fonts-te
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://itachi.prudhvi.org/te_fonts/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -20,7 +20,6 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 PORTDOCS=	MANUAL.PDF
 PKGMESSAGE=	${PKGDIR}/pkg-message
-USE_X_PREFIX=	yes
 FONTSDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 PLIST_SUB=	FONTSDIR=${FONTSDIR:S|^${PREFIX}/||}
 

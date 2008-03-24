@@ -30,7 +30,6 @@ PLIST_FILES=	libexec/gkrellm2/plugins/volume.so \
 		share/locale/pl/LC_MESSAGES/gkrellm-volume.mo \
 		share/locale/ru/LC_MESSAGES/gkrellm-volume.mo
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
 MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins \

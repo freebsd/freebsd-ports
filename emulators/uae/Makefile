@@ -21,7 +21,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga
-USE_XLIB=	yes
 USE_GNOME=	gtk20
 USE_GCC=	3.4
 

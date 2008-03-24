@@ -25,9 +25,8 @@ RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_PERL5=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

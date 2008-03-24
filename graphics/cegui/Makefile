@@ -7,7 +7,7 @@
 
 PORTNAME=	cegui
 PORTVERSION=	0.5.0b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=crayzedsgui
@@ -17,7 +17,8 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library providing windowing and widgets for graphics APIs
 
 LIB_DEPENDS=	IL.1:${PORTSDIR}/graphics/devil \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.0:${PORTSDIR}/devel/pcre \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/0b/0/}
 CONFIGURE_ARGS=	--enable-toluacegui --disable-irrlicht-renderer \
@@ -32,7 +33,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_LUA=	5.0
-USE_XLIB=	yes
 USE_GNOME=	gnomehack
 
 .if !defined(NOPORTDOCS)
