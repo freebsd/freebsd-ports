@@ -129,6 +129,7 @@
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-gabble
     SUBDIR += telepathy-glib
+    SUBDIR += telepathy-haze
     SUBDIR += telepathy-idle
     SUBDIR += telepathy-python
     SUBDIR += telepathy-qt
