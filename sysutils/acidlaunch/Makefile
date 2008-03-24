@@ -11,13 +11,11 @@ PORTREVISION=	3
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://linuxgamers.net/download/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application launcher with simple XML-based configuration syntax
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12 gdkpixbuf libxml2
-USE_X_PREFIX=	yes
-USE_XPM=	yes
 
 MAN1=		${PORTNAME}.1
 
@@ -26,11 +24,11 @@ post-extract:
 		${WRKSRC}/src/launcherwindow.cc
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}
 .for file in config.xml default.png
 	${INSTALL_DATA} ${WRKSRC}/prefs/${file} ${PREFIX}/share/${PORTNAME}
 .endfor
-	@${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
