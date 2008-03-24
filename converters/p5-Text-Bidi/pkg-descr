@@ -1,0 +1,5 @@
+Perl interface to the libfribidi library that implements the Unicode bidi
+algorithm. The bidi algorithm is a specification for displaying text that
+consists of both left-to-right and right-to-left written languages.
+
+WWW: http://search.cpan.org/~kamensky/Text-Bidi/
