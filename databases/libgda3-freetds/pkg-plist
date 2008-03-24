@@ -1,0 +1,10 @@
+lib/libgda-%%VERSION%%/providers/libgda-firebird.a
+lib/libgda-%%VERSION%%/providers/libgda-firebird.la
+lib/libgda-%%VERSION%%/providers/libgda-firebird.so
+lib/libgda-%%VERSION%%/providers/libgda-freetds.a
+lib/libgda-%%VERSION%%/providers/libgda-freetds.la
+lib/libgda-%%VERSION%%/providers/libgda-freetds.so
+libdata/pkgconfig/libgda-firebird-%%VERSION%%.pc
+libdata/pkgconfig/libgda-freetds-%%VERSION%%.pc
+share/libgda-%%VERSION%%/firebird_specs_dsn.xml
+share/libgda-%%VERSION%%/freetds_specs_dsn.xml
