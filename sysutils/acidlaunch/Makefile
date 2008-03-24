@@ -17,6 +17,8 @@ COMMENT=	An application launcher with simple XML-based configuration syntax
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12 gdkpixbuf libxml2
 
+PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/config.xml %%DATADIR%%/default.png
+PLIST_DIRS=	%%DATADIR%%
 MAN1=		${PORTNAME}.1
 
 post-extract:
@@ -25,10 +27,9 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/${PORTNAME}
-.for file in config.xml default.png
-	${INSTALL_DATA} ${WRKSRC}/prefs/${file} ${PREFIX}/share/${PORTNAME}
-.endfor
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/prefs/config.xml \
+		${WRKSRC}/prefs/default.png ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
