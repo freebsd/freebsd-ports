@@ -7,6 +7,7 @@
 
 PORTNAME=	fonts-indic
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://gentoo.osuosl.org/distfiles/
 
@@ -16,7 +17,6 @@ COMMENT=	The Lohit family of Indic fonts
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_GZIP=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 NO_WRKSUBDIR=	yes

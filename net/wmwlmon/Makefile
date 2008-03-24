@@ -7,7 +7,7 @@
 
 PORTNAME=	wmwlmon
 PORTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net windowmaker
 MASTER_SITES=	http://www.nazgul.ch/dev/ \
 		http://dougbarton.us/Downloads/
@@ -16,8 +16,7 @@ DISTNAME=	wmwlmon-${PORTVERSION}
 MAINTAINER=	marcus@nazgul.ch
 COMMENT=	DockApp showing the state of a wireless network device
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 
 MAN1=		wmwlmon.1
 PLIST_FILES=	bin/wmwlmon

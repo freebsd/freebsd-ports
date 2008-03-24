@@ -24,7 +24,6 @@ MAN1=		easytag.1
 CONFLICTS=	easytag-devel-[0-9]*
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 desktopfileutils
 GNU_CONFIGURE=	yes

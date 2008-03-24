@@ -7,7 +7,7 @@
 
 PORTNAME=	gle-graphics
 PORTVERSION=	4.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	glx
@@ -56,7 +56,7 @@ RUN_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
 
 .if !defined(WITHOUT_X_WINDOWS)
 CONFIGURE_ARGS+=	--with-x
-USE_XLIB=	yes
+USE_XORG=	x11
 .endif
 
 .include <bsd.port.post.mk>

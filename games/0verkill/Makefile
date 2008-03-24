@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 .if defined(WITHOUT_X11)
 PLIST_SUB=	X11="@comment "
 .else
-USE_XPM=	yes
+USE_XORG=	xpm
 CONFIGURE_ARGS+=	--with-x
 PLIST_SUB=	X11=""
 .endif

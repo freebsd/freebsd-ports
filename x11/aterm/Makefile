@@ -7,6 +7,7 @@
 
 PORTNAME=	aterm
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES+=	x11	# `+=' is for slave ports
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A color vt102 terminal emulator with transparency support
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 # `+=' is for slave ports
 CONFIGURE_ARGS+=	--enable-transparency \

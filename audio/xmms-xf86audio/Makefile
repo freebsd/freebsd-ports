@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-xf86audio
 PORTVERSION=	0.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.devin.com/xmms-xf86audio/download/
 
@@ -16,7 +16,6 @@ COMMENT=	XF86Audio multimedia-key support for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
 MAKE_ARGS=	CC="${CC}" OPT="${CFLAGS}" DEBUG=""
 
 do-install:

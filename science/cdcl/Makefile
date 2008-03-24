@@ -19,7 +19,6 @@ COMMENT=	Scientific graphic library for geoscience
 USE_GNOME=	gtk20
 .endif
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-x
 

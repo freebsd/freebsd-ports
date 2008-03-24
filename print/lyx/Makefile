@@ -90,7 +90,7 @@ RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-font
 .else
 LIB_DEPENDS+=	forms:${PORTSDIR}/x11-toolkits/xforms
 CONFIGURE_ARGS+=--with-frontend=xforms
-USE_XPM=	yes
+USE_XORG=	x11
 .endif
 
 .if defined(WITH_ASPELL)

@@ -20,7 +20,6 @@ COMMENT=	GKrellM2 plugin that allows the setting of countdowns
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellm_timers.so

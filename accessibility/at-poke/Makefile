@@ -16,7 +16,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	mva@sysfault.org
 COMMENT=	Accessibility testing and poking tool
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix libglade2 libgailgnome
 GNU_CONFIGURE=	yes

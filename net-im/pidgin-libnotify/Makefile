@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin \
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
 		purple.4:${PORTSDIR}/net-im/libpurple
 
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig gtk20

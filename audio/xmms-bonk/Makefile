@@ -6,7 +6,7 @@
 
 PORTNAME=	xmms-bonk
 PORTVERSION=	0.12
-PORTREVISION=	3
+PORTREVISION=	
 CATEGORIES=	audio
 MASTER_SITES=	http://www.proustmedia.de/bonk-xmms/
 DISTNAME=	bonk-xmms-${PORTVERSION}
@@ -16,7 +16,6 @@ COMMENT=	XMMS input plugin to play bonk files
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
 ALL_TARGET=
 
 do-install:

@@ -17,7 +17,6 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Small utility which displays the system activity in a very special way
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 MAKE_ARGS+=	PREFIX="${PREFIX}" CC="${CC}"
 USE_GNOME=	gtk20
 

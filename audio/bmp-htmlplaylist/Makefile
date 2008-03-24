@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-htmlplaylist
 PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.berlios.de/bmp-plugins/ \
 		${MASTER_SITE_LOCAL}
@@ -23,7 +23,6 @@ MAKE_ARGS=	CC=${CC} LD=${CC}
 USE_GNOME=	pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 
 PLIST_FILES=	bin/bmp-htmlplaylist
 
