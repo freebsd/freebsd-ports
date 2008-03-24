@@ -21,7 +21,6 @@ OPTIONS=	AVAHI	"Support Avahi for service discovery on LAN" on \
 LIB_DEPENDS=	opal_r:${PORTSDIR}/net/opal
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
 INSTALLS_OMF=	yes

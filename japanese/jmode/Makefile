@@ -7,7 +7,7 @@
 
 PORTNAME=	jmode
 PORTVERSION=	0.6.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese
 MASTER_SITES=	http://downloads.sourceforge.jp/anthy/5467/
 
@@ -16,7 +16,6 @@ COMMENT?=	XIM server for Anthy input method
 
 LIB_DEPENDS?=	anthy.1:${PORTSDIR}/japanese/anthy
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

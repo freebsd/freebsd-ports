@@ -7,7 +7,7 @@
 
 PORTNAME=	xfmail
 PORTVERSION=	1.5.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	ftp://xfmail.cfreeze.com/pub/xfmail/release/%SUBDIR%/	\
 		ftp://ftp.welcomes-you.com/pub/xfmail/release/%SUBDIR%/	\
@@ -25,8 +25,7 @@ USE_BZIP2=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>

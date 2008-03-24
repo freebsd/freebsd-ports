@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-shn
 PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/xmms-shn/dist/src/
 
@@ -17,7 +17,6 @@ COMMENT=	XMMS plugin to allow playing shorten-compressed audio
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

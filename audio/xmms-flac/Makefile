@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-flac
 PORTVERSION=	1.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sf/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -22,7 +22,6 @@ COMMENT=	XMMS input plugin for playing FLAC files
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		FLAC.7:${PORTSDIR}/audio/flac
 
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}" \

@@ -20,7 +20,6 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		gnet-2.0:${PORTSDIR}/net/gnet2
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 USE_GNOME=	libglade2 desktopfileutils
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes

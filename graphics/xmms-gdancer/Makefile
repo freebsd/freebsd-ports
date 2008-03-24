@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-gdancer
 PORTVERSION=	0.4.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.figz.com/gdancer/files/
 DISTNAME=	gdancer-$(PORTVERSION)
@@ -18,7 +18,6 @@ COMMENT=	XMMS Visualization plugin, displays dancing figures
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 PLIST_FILES=	lib/xmms/Visualization/gdancer.so
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

@@ -21,7 +21,6 @@ MAN1=		logjam.1
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk20 libxml2 intlhack
 CONFIGURE_ARGS=	--program-transform-name="s/$$//"

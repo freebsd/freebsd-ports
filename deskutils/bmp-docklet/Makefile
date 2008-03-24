@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-docklet
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils audio
 MASTER_SITES=	http://mark.xnull.de/bmp-docklet/ \
 		${MASTER_SITE_LOCAL}
@@ -21,7 +21,6 @@ RUN_DEPENDS=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack

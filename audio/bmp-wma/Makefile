@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-wma
 PORTVERSION=	0.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.nixp.ru/pub/files/
 
@@ -21,7 +21,6 @@ PLIST_FILES=	lib/bmp/Input/libwma.so \
 		lib/bmp/Input/libwma.a
 
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.pre.mk>

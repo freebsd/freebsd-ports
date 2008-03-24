@@ -21,7 +21,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2 pygtk2 pygnomeextras
 GNU_CONFIGURE=	yes
 USE_PYTHON=	2.2+
-USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

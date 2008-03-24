@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuplot371+
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math japanese graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.yama-ga.com/gnuplot/:patch \
@@ -24,7 +24,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		VFlib2.24:${PORTSDIR}/japanese/vflib
 
 USE_FREETYPE=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:213
 GNU_CONFIGURE=	yes

@@ -18,7 +18,6 @@ COMMENT=	An IRC client for GNOME 2 (development version)
 LIB_DEPENDS=	sexy:${PORTSDIR}/x11-toolkits/libsexy \
 		notify:${PORTSDIR}/devel/libnotify
 
-USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

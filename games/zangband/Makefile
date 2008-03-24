@@ -7,7 +7,7 @@
 
 PORTNAME=	zangband
 PORTVERSION=	2.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	games
 MASTER_SITES=	ftp://clockwork.dementia.org/angband/Variant/ZAngband/ \
 		ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/
@@ -16,7 +16,6 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	makoto@pinpott.spnet.ne.jp
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:261
 USE_PERL5_BUILD=yes

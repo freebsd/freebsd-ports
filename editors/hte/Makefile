@@ -8,6 +8,7 @@
 
 PORTNAME=	hte
 PORTVERSION=	2.0.12
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SF
 DISTNAME=	ht-${PORTVERSION}
@@ -31,7 +32,7 @@ BROKEN=	Does not build on ia64
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS=--disable-x11-textmode
 .else
-USE_XLIB=	yes
+USE_XORG=	x11
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" LDFLAGS="-L${X11BASE}/lib"
 .endif
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	wmix
 PORTVERSION=	3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 
@@ -16,8 +16,7 @@ COMMENT=	An audio mixer for the WindowMaker dock with TV-like OSD
 
 PLIST_FILES=	bin/wmix
 ALL_TARGET=	${PORTNAME}
-USE_XPM=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	xpm
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 

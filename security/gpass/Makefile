@@ -7,7 +7,7 @@
 
 PORTNAME=	gpass
 PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security gnome
 MASTER_SITES=	http://projects.netlab.jp/gpass/release/
 
@@ -17,7 +17,6 @@ COMMENT=	A password manager for GNOME2
 LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/mcrypt \
 		mhash:${PORTSDIR}/security/mhash
 
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
 USE_GMAKE=	yes

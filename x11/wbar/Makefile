@@ -7,7 +7,7 @@
 
 PORTNAME=	wbar
 PORTVERSION=	1.3.3
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.tecapli.com.ar/rodolfo/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -22,7 +22,7 @@ SUB_FILES=	pkg-message
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Makefile

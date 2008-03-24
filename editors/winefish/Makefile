@@ -32,7 +32,6 @@ GNU_CONFIGURE=	yes
 USE_GCC=	3.3+
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeui desktopfileutils gnomehier
-USE_XLIB=	yes
 
 OPTIONS=	CONTEXT	"Enable ConTexT support (Experimental)"	off \
 		VNTEX	"Vietnamese TeX user"	off \

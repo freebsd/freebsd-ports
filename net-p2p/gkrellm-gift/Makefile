@@ -23,7 +23,6 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrell
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 PLIST_FILES=	libexec/gkrellm2/plugins/gift.la \
 		libexec/gkrellm2/plugins/gift.so
 

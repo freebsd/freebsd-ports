@@ -7,6 +7,7 @@
 
 PORTNAME=	morla
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -20,7 +21,6 @@ LIB_DEPENDS=	nxml.18:${PORTSDIR}/textproc/libnxml \
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I/${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETTEXT=	yes

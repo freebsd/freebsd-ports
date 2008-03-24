@@ -7,7 +7,7 @@
 
 PORTNAME=	zangband
 PORTVERSION=	2.4.0${JA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese games
 MASTER_SITES=	ftp://clockwork.dementia.org/angband/Variant/ZAngband/ \
 		ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/
@@ -21,7 +21,7 @@ COMMENT=	Zangband (Zelazny Angband) with japanese, color, X11 support
 
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qa
-USE_XLIB=	yes
+USE_XORG=	x11
 
 NO_CDROM=	Possible copyright infringement
 
