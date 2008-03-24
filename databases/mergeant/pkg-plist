@@ -1,0 +1,120 @@
+bin/mergeant
+libdata/bonobo/servers/GNOME_Mergeant.server
+share/applications/mergeant.desktop
+share/gnome/help/mergeant/C/topic.dat
+share/icons/hicolor/48x48/mimetypes/application-x-mergeant.png
+share/locale/am/LC_MESSAGES/mergeant.mo
+share/locale/ar/LC_MESSAGES/mergeant.mo
+share/locale/az/LC_MESSAGES/mergeant.mo
+share/locale/ca/LC_MESSAGES/mergeant.mo
+share/locale/cs/LC_MESSAGES/mergeant.mo
+share/locale/da/LC_MESSAGES/mergeant.mo
+share/locale/de/LC_MESSAGES/mergeant.mo
+share/locale/dz/LC_MESSAGES/mergeant.mo
+share/locale/el/LC_MESSAGES/mergeant.mo
+share/locale/en_CA/LC_MESSAGES/mergeant.mo
+share/locale/en_GB/LC_MESSAGES/mergeant.mo
+share/locale/es/LC_MESSAGES/mergeant.mo
+share/locale/eu/LC_MESSAGES/mergeant.mo
+share/locale/fa/LC_MESSAGES/mergeant.mo
+share/locale/fi/LC_MESSAGES/mergeant.mo
+share/locale/fr/LC_MESSAGES/mergeant.mo
+share/locale/gl/LC_MESSAGES/mergeant.mo
+share/locale/hr/LC_MESSAGES/mergeant.mo
+share/locale/it/LC_MESSAGES/mergeant.mo
+share/locale/ja/LC_MESSAGES/mergeant.mo
+share/locale/lt/LC_MESSAGES/mergeant.mo
+share/locale/lv/LC_MESSAGES/mergeant.mo
+share/locale/ml/LC_MESSAGES/mergeant.mo
+share/locale/ms/LC_MESSAGES/mergeant.mo
+share/locale/nb/LC_MESSAGES/mergeant.mo
+share/locale/ne/LC_MESSAGES/mergeant.mo
+share/locale/nl/LC_MESSAGES/mergeant.mo
+share/locale/oc/LC_MESSAGES/mergeant.mo
+share/locale/pl/LC_MESSAGES/mergeant.mo
+share/locale/pt/LC_MESSAGES/mergeant.mo
+share/locale/pt_BR/LC_MESSAGES/mergeant.mo
+share/locale/ru/LC_MESSAGES/mergeant.mo
+share/locale/rw/LC_MESSAGES/mergeant.mo
+share/locale/sk/LC_MESSAGES/mergeant.mo
+share/locale/sl/LC_MESSAGES/mergeant.mo
+share/locale/sq/LC_MESSAGES/mergeant.mo
+share/locale/sr/LC_MESSAGES/mergeant.mo
+share/locale/sr@Latn/LC_MESSAGES/mergeant.mo
+share/locale/sv/LC_MESSAGES/mergeant.mo
+share/locale/tr/LC_MESSAGES/mergeant.mo
+share/locale/uk/LC_MESSAGES/mergeant.mo
+share/locale/vi/LC_MESSAGES/mergeant.mo
+share/locale/zh_CN/LC_MESSAGES/mergeant.mo
+share/locale/zh_HK/LC_MESSAGES/mergeant.mo
+share/locale/zh_TW/LC_MESSAGES/mergeant.mo
+share/mime/application/x-mergeant.xml
+share/mime/packages/mergeant.xml
+share/omf/mergeant/mergeant-C.omf
+share/pixmaps/mergeant.png
+share/pixmaps/mergeant/mergeant_connect.png
+share/pixmaps/mergeant/mergeant_connect_small.png
+share/pixmaps/mergeant/mergeant_disconnect.png
+share/pixmaps/mergeant/mergeant_disconnect_small.png
+share/pixmaps/mergeant/mergeant_foot.png
+share/pixmaps/mergeant/mergeant_forms.png
+share/pixmaps/mergeant/mergeant_queries.png
+share/pixmaps/mergeant/mergeant_rels.png
+share/pixmaps/mergeant/mergeant_rels_small.png
+share/pixmaps/mergeant/mergeant_sequences.png
+share/pixmaps/mergeant/mergeant_tables.png
+share/pixmaps/mergeant/mg-extra-form.png
+share/pixmaps/mergeant/mg-extra-grid.png
+share/pixmaps/mergeant/query-view-query_16x16.png
+share/pixmaps/mergeant/query-view-table_16x16.png
+share/pixmaps/mergeant/query-view-view_16x16.png
+@dirrm share/pixmaps/mergeant
+@dirrm share/omf/mergeant
+@dirrmtry share/local/zh_TW/LC_MESSAGES
+@dirrmtry share/local/zh_TW
+@dirrmtry share/local/zh_HK/LC_MESSAGES
+@dirrmtry share/local/zh_HK
+@dirrmtry share/local/zh_CN/LC_MESSAGES
+@dirrmtry share/local/zh_CN
+@dirrmtry share/local/uk/LC_MESSAGES
+@dirrmtry share/local/uk
+@dirrmtry share/local/sr/LC_MESSAGES
+@dirrmtry share/local/sr
+@dirrmtry share/local/sl/LC_MESSAGES
+@dirrmtry share/local/sl
+@dirrmtry share/local/sk/LC_MESSAGES
+@dirrmtry share/local/sk
+@dirrmtry share/local/rw/LC_MESSAGES
+@dirrmtry share/local/rw
+@dirrmtry share/local/pt/LC_MESSAGES
+@dirrmtry share/local/pt
+@dirrmtry share/local/pl/LC_MESSAGES
+@dirrmtry share/local/pl
+@dirrmtry share/local/oc/LC_MESSAGES
+@dirrmtry share/local/oc
+@dirrmtry share/local/ne/LC_MESSAGES
+@dirrmtry share/local/ne
+@dirrmtry share/local/gl/LC_MESSAGES
+@dirrmtry share/local/gl
+@dirrmtry share/local/fi/LC_MESSAGES
+@dirrmtry share/local/fi
+@dirrmtry share/local/el/LC_MESSAGES
+@dirrmtry share/local/el
+@dirrmtry share/local/dz/LC_MESSAGES
+@dirrmtry share/local/dz
+@dirrmtry share/local/cs/LC_MESSAGES
+@dirrmtry share/local/cs
+@dirrmtry share/local/ca/LC_MESSAGES
+@dirrmtry share/local/ca
+@dirrm share/gnome/help/mergeant/C/stylesheet-images
+@dirrm share/gnome/help/mergeant/C/images
+@dirrm share/gnome/help/mergeant/C
+@dirrm share/gnome/help/mergeant
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
