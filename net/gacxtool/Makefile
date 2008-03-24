@@ -21,6 +21,5 @@ RUN_DEPENDS=	/boot/kernel/if_acx.ko:${PORTSDIR}/net/acx100
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

@@ -7,13 +7,14 @@
 
 PORTNAME=	evilwm
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.6809.org.uk/evilwm/
 
 MAINTAINER=	lasg@lasg.dk
 COMMENT=	Minimalist window manager based on 9wm
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xpm xext xrender
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		evilwm.1

@@ -7,7 +7,7 @@
 
 PORTNAME=	tgif-resource
 PORTVERSION=	4.1.45
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese graphics
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -20,7 +20,7 @@ RUN_DEPENDS=	tgif:${PORTSDIR}/graphics/tgif \
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 PLIST_SUB=	XAPPLRESDIR=${XAPPLRESDIR}
 
 XAPPLRESDIR=	lib/X11/ja_JP.eucJP/app-defaults

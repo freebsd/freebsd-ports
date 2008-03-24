@@ -18,7 +18,6 @@ BUILD_DEPENDS=	gnome-doc-prepare:${PORTSDIR}/textproc/gnome-doc-utils
 LIB_DEPENDS=	gcu.8:${PORTSDIR}/science/gchemutils
 
 USE_BZIP2=	yes
-USE_XLIB=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes

@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libgui libmcs libutil mcsmanager
-USE_XLIB=	yes
 
 MAN1=		xfce4-session.1 xfce4-session-logout.1
 

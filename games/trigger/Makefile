@@ -7,7 +7,7 @@
 
 PORTNAME=	trigger
 PORTVERSION=	0.5.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}-rally
@@ -22,7 +22,6 @@ LIB_DEPENDS=	openal:${PORTSDIR}/audio/openal \
 		physfs:${PORTSDIR}/devel/physfs \
 		alut.1:${PORTSDIR}/audio/freealut
 
-USE_XLIB=	yes
 USE_SDL=	sdl image
 USE_GL=		yes
 USE_BZIP2=	yes

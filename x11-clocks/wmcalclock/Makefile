@@ -7,7 +7,7 @@
 
 PORTNAME=	wmCalClock
 PORTVERSION=	1.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=kris
@@ -17,8 +17,7 @@ COMMENT=	Another Window Maker calendar/clock dockapp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 ALL_TARGET=	clean all
 
 MAN1=		wmCalClock.1

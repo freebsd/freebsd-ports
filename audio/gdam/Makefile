@@ -21,7 +21,6 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 MAN1=		gdamcli.1 gdamladspapluginscanner.1 gdam123.1 gdam-launcher.1 gdam-server.1
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	libglade
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

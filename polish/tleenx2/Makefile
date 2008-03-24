@@ -19,7 +19,6 @@ COMMENT=	Client for polish IM service called Tlen.pl
 LIB_DEPENDS=	tlen.1:${PORTSDIR}/polish/libtlen
 
 USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 WRKSRC=		${WRKDIR}/TleenX2-${PORTVERSION}

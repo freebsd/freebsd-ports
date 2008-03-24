@@ -30,7 +30,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2 libxml2
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/lqt		\
 			-I${LOCALBASE}/include -I${X11BASE}/include"	\
 		LDFLAGS="-L${LOCALBASE}/lib/libquicktime	\

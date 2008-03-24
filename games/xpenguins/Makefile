@@ -7,7 +7,7 @@
 
 PORTNAME=	xpenguins
 PORTVERSION=	2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://xpenguins.seul.org/:xp \
 		http://www.chrisburkert.de/download/unix/:ch
@@ -18,8 +18,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	lyngbol@wheel.dk
 COMMENT=	Cute little penguins that walk along the tops of your windows
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 
 MAN1=		xpenguins.1

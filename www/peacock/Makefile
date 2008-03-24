@@ -18,7 +18,6 @@ COMMENT=	A GUI-based HTML Editor for GTK+/GNOME
 LIB_DEPENDS=	gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui gtksourceview
 GNU_CONFIGURE=	yes
 

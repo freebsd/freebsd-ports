@@ -7,6 +7,7 @@
 
 PORTNAME=	splashsetter
 PORTVERSION=	0.6.5.3
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 
@@ -14,7 +15,6 @@ MAINTAINER=	klammer@webonaut.com
 COMMENT=	Splash screen changer for GNOME
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygnome2 gnomeprefix
 

@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	libutil
-USE_XLIB=	yes
 
 OPTIONS=	GTKDOC	"install the library documentation"	off
 

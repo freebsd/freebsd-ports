@@ -7,7 +7,7 @@
 
 PORTNAME=	xwrits
 PORTVERSION=	2.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lcdf.org/xwrits/
 
@@ -16,7 +16,7 @@ COMMENT=	Reminds you to take wrist breaks
 
 GNU_CONFIGURE=	yes
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext
 
 MAN1=		xwrits.1
 PLIST_FILES=	bin/xwrits

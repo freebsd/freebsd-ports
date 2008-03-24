@@ -7,7 +7,7 @@
 
 PORTNAME=	gai-visual-audio
 PORTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gai
@@ -19,7 +19,6 @@ LIB_DEPENDS=	gai:${PORTSDIR}/x11-toolkits/gai \
 		xmms:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
 

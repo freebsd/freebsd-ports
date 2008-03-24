@@ -7,7 +7,7 @@
 
 PORTNAME=	garlic
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	http://garlic.mefos.hr/sources/garlic-${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -19,8 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Molecular viewer, editor and visualization program
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_XORG=	x11
 ALL_TARGET=	# empty
 
 .if defined(WITH_OPTIMIZED_FLAGS)

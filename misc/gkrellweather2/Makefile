@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrell
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 ALL_TARGET=	gkrellweather.so
 
 MAKE_ENV=	enable_nls=1 PTHREAD_LIBS=${PTHREAD_LIBS} CC=${CC}

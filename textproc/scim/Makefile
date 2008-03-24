@@ -18,7 +18,6 @@ COMMENT=	Smart Common Input Method platform
 USE_GNOME=	gnomehack gnomehier gtk20 intlhack
 
 USE_AUTOTOOLS=	libtool:15
-USE_XLIB=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

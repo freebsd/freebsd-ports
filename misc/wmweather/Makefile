@@ -22,8 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 MAN1=		wmweather.1
 

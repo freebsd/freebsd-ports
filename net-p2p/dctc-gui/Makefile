@@ -7,7 +7,7 @@
 
 PORTNAME=	dctc
 PORTVERSION=	0.66
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-p2p gnome
 MASTER_SITES=	http://unixpages.org/distfiles/
 PKGNAMESUFFIX=	-gui
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	dctc:${PORTSDIR}/net-p2p/dctc
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

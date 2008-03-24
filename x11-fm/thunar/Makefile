@@ -28,7 +28,6 @@ USE_GMAKE=	yes
 USE_GNOME=	desktopfileutils glib20 gnomehack gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libexo libutil
-USE_XLIB=	yes
 
 OPTIONS=	DBUS		"Enable D-BUS support"				on  \
 		JPEG		"Enable JPEG support"				on  \

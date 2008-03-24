@@ -7,7 +7,7 @@
 
 PORTNAME=	xwelltris
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.xnc.dubna.su/xwelltris/src/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -27,6 +27,6 @@ PLIST_FILES=	bin/xwelltris \
 		share/xwelltris/welltris.scores
 PLIST_DIRS=	share/xwelltris
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
+USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xi xrandr
 
 .include <bsd.port.mk>

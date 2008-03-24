@@ -17,7 +17,6 @@ COMMENT=	3D filesystem visualizer
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
-USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12

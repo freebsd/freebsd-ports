@@ -26,8 +26,6 @@ USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libmcs libutil libgui mcsmanager panel
 
-USE_XLIB=	yes
-
 OPTIONS=	COMPOSITE	"Support the experimental X11 Composite extension"	on \
 		STARTUP 	"Enable startup notification support"			on \
 		REVMOUSE	"Reverse mouse workspace changing direction"		off

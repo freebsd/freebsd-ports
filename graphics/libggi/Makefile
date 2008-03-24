@@ -125,7 +125,7 @@ CONFIGURE_ARGS+=	--enable-kgi --with-extra-includes=/usr/include/dev
 .endif
 
 .if !defined(WITHOUT_X11)
-USE_XORG=	x11 xxf86dga
+USE_XORG=	x11 xxf86dga ice sm xau xsxt xext
 PLIST_SUB+=	WITH_X=""
 .else
 CONFIGURE_ARGS+=	--disable-x --disable-dga
