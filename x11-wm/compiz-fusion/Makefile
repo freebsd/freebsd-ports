@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rnoland@2hip.net
 COMMENT=	Metaport of compiz-fusion
 
 LIB_DEPENDS=	compizconfig:${PORTSDIR}/x11-wm/libcompizconfig
