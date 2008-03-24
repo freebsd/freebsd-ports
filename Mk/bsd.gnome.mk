@@ -713,6 +713,9 @@ EXTRACT_DEPENDS+=${${component}_EXTRACT_DEPENDS}
 BUILD_DEPENDS+=	${${component}_BUILD_DEPENDS}
 #######################################################
 
+LIB_DEPENDS+=	${${component}_LIB_DEPENDS}
+RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
+
 .if !defined(WITHOUT_HACK)
 .if defined(${component}_PREFIX)
 .if ${.MAKEFLAGS:MPREFIX=*}==""
