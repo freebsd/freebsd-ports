@@ -544,6 +544,7 @@
     SUBDIR += rexima
     SUBDIR += rezound
     SUBDIR += rhythmbox
+    SUBDIR += rhythmbox-devel
     SUBDIR += rio
     SUBDIR += rio500
     SUBDIR += rioutil
