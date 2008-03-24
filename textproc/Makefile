@@ -177,7 +177,6 @@
     SUBDIR += gpp
     SUBDIR += grap
     SUBDIR += gsed
-    SUBDIR += gstreamer-plugins-annodex
     SUBDIR += gtk-doc
     SUBDIR += gtkdiff
     SUBDIR += gtkspell
