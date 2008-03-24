@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	telepathy-idle
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -25,9 +25,8 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack pkgconfig glib20
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
