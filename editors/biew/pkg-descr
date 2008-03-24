@@ -1,6 +1,8 @@
-Biew is Binary vIEWer with built-in editor for binary, hexadecimal and
-disassembler modes.  The program also has text viewer with different Russian
-codepages support (Windows-1251, MSDOS-866, etc.).  Run the program with -?
-or without arguments for help on program switches.
+BIEW is multiplatform portable viewer of binary files with built-in editor
+in binary, hexadecimal and disassembler modes.  It uses native Intel syntax
+for disassemble.  Highlight AVR/Java/Athlon64/Pentium 4/K7-Athlon
+disassembler, Russian codepages converter, full preview of formats -- MZ, NE,
+PE, NLM, COFF32, ELF partial -- a.out, LE, LX, PharLap; code navigator and
+more over.
 
 WWW: http://biew.sourceforge.net/
