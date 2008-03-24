@@ -15442,6 +15442,7 @@ spambnc		ports/mail/spambnc
 spamcalc	ports/misc/spamcalc
 spamcup		ports/mail/spamcup
 spamd		ports/mail/spamd
+spamdyke	ports/mail/spamdyke
 spamguard	ports/mail/spamguard
 spamilter	ports/mail/spamilter
 spamoracle	ports/mail/spamoracle
