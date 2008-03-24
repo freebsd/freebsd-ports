@@ -1,8 +1,6 @@
 %%DATADIR%%/INSTALL.txt
 %%DATADIR%%/LICENSE.txt
-%%DATADIR%%/NEWS.txt
 %%DATADIR%%/README.txt
-%%DATADIR%%/VERSION.txt
 %%DATADIR%%/demos/Zend/Feeds/consume-feed.php
 %%DATADIR%%/demos/Zend/Gdata/Blogger.php
 %%DATADIR%%/demos/Zend/Gdata/Calendar.php
@@ -19,6 +17,26 @@
 %%DATADIR%%/demos/Zend/Mail/maildir/maildir.tar
 %%DATADIR%%/demos/Zend/Mail/mbox/INBOX
 %%DATADIR%%/demos/Zend/Mail/mbox/subfolder/test
+%%DATADIR%%/demos/Zend/OpenId/login-bg.gif
+%%DATADIR%%/demos/Zend/OpenId/mvc_auth/application/controllers/ErrorController.php
+%%DATADIR%%/demos/Zend/OpenId/mvc_auth/application/controllers/IndexController.php
+%%DATADIR%%/demos/Zend/OpenId/mvc_auth/application/views/scripts/error/404.phtml
+%%DATADIR%%/demos/Zend/OpenId/mvc_auth/application/views/scripts/error/500.phtml
+%%DATADIR%%/demos/Zend/OpenId/mvc_auth/application/views/scripts/index/login.phtml
+%%DATADIR%%/demos/Zend/OpenId/mvc_auth/application/views/scripts/index/welcome.phtml
+%%DATADIR%%/demos/Zend/OpenId/mvc_auth/html/.htaccess
+%%DATADIR%%/demos/Zend/OpenId/mvc_auth/html/config.ini
+%%DATADIR%%/demos/Zend/OpenId/mvc_auth/html/index.php
+%%DATADIR%%/demos/Zend/OpenId/templates/identity.phtml
+%%DATADIR%%/demos/Zend/OpenId/templates/identity2.phtml
+%%DATADIR%%/demos/Zend/OpenId/templates/login.phtml
+%%DATADIR%%/demos/Zend/OpenId/templates/profile.phtml
+%%DATADIR%%/demos/Zend/OpenId/templates/register.phtml
+%%DATADIR%%/demos/Zend/OpenId/templates/registration_complete.phtml
+%%DATADIR%%/demos/Zend/OpenId/templates/trust.phtml
+%%DATADIR%%/demos/Zend/OpenId/test_auth.php
+%%DATADIR%%/demos/Zend/OpenId/test_consumer.php
+%%DATADIR%%/demos/Zend/OpenId/test_server.php
 %%DATADIR%%/demos/Zend/Pdf/demo.php
 %%DATADIR%%/demos/Zend/Pdf/stamp.jpg
 %%DATADIR%%/demos/Zend/Pdf/test.pdf
@@ -57,7 +75,10 @@
 %%DATADIR%%/library/Zend/Auth/Adapter/Http/Resolver/Exception.php
 %%DATADIR%%/library/Zend/Auth/Adapter/Http/Resolver/File.php
 %%DATADIR%%/library/Zend/Auth/Adapter/Http/Resolver/Interface.php
+%%DATADIR%%/library/Zend/Auth/Adapter/InfoCard.php
 %%DATADIR%%/library/Zend/Auth/Adapter/Interface.php
+%%DATADIR%%/library/Zend/Auth/Adapter/Ldap.php
+%%DATADIR%%/library/Zend/Auth/Adapter/OpenId.php
 %%DATADIR%%/library/Zend/Auth/Exception.php
 %%DATADIR%%/library/Zend/Auth/Result.php
 %%DATADIR%%/library/Zend/Auth/Storage/Exception.php
@@ -74,14 +95,12 @@
 %%DATADIR%%/library/Zend/Cache/Backend/Test.php
 %%DATADIR%%/library/Zend/Cache/Backend/ZendPlatform.php
 %%DATADIR%%/library/Zend/Cache/Core.php
-%%DATADIR%%/library/Zend/Cache/EXAMPLES.txt
 %%DATADIR%%/library/Zend/Cache/Exception.php
 %%DATADIR%%/library/Zend/Cache/Frontend/Class.php
 %%DATADIR%%/library/Zend/Cache/Frontend/File.php
 %%DATADIR%%/library/Zend/Cache/Frontend/Function.php
 %%DATADIR%%/library/Zend/Cache/Frontend/Output.php
 %%DATADIR%%/library/Zend/Cache/Frontend/Page.php
-%%DATADIR%%/library/Zend/Cache/TODO.txt
 %%DATADIR%%/library/Zend/Config.php
 %%DATADIR%%/library/Zend/Config/Exception.php
 %%DATADIR%%/library/Zend/Config/Ini.php
@@ -91,7 +110,14 @@
 %%DATADIR%%/library/Zend/Controller/Action.php
 %%DATADIR%%/library/Zend/Controller/Action/Exception.php
 %%DATADIR%%/library/Zend/Controller/Action/Helper/Abstract.php
+%%DATADIR%%/library/Zend/Controller/Action/Helper/ActionStack.php
+%%DATADIR%%/library/Zend/Controller/Action/Helper/AjaxContext.php
+%%DATADIR%%/library/Zend/Controller/Action/Helper/AutoComplete/Abstract.php
+%%DATADIR%%/library/Zend/Controller/Action/Helper/AutoCompleteDojo.php
+%%DATADIR%%/library/Zend/Controller/Action/Helper/AutoCompleteScriptaculous.php
+%%DATADIR%%/library/Zend/Controller/Action/Helper/ContextSwitch.php
 %%DATADIR%%/library/Zend/Controller/Action/Helper/FlashMessenger.php
+%%DATADIR%%/library/Zend/Controller/Action/Helper/Json.php
 %%DATADIR%%/library/Zend/Controller/Action/Helper/Redirector.php
 %%DATADIR%%/library/Zend/Controller/Action/Helper/Url.php
 %%DATADIR%%/library/Zend/Controller/Action/Helper/ViewRenderer.php
@@ -103,12 +129,14 @@
 %%DATADIR%%/library/Zend/Controller/Exception.php
 %%DATADIR%%/library/Zend/Controller/Front.php
 %%DATADIR%%/library/Zend/Controller/Plugin/Abstract.php
+%%DATADIR%%/library/Zend/Controller/Plugin/ActionStack.php
 %%DATADIR%%/library/Zend/Controller/Plugin/Broker.php
 %%DATADIR%%/library/Zend/Controller/Plugin/ErrorHandler.php
 %%DATADIR%%/library/Zend/Controller/Request/Abstract.php
 %%DATADIR%%/library/Zend/Controller/Request/Apache404.php
 %%DATADIR%%/library/Zend/Controller/Request/Exception.php
 %%DATADIR%%/library/Zend/Controller/Request/Http.php
+%%DATADIR%%/library/Zend/Controller/Request/Simple.php
 %%DATADIR%%/library/Zend/Controller/Response/Abstract.php
 %%DATADIR%%/library/Zend/Controller/Response/Cli.php
 %%DATADIR%%/library/Zend/Controller/Response/Exception.php
@@ -122,7 +150,6 @@
 %%DATADIR%%/library/Zend/Controller/Router/Route/Module.php
 %%DATADIR%%/library/Zend/Controller/Router/Route/Regex.php
 %%DATADIR%%/library/Zend/Controller/Router/Route/Static.php
-%%DATADIR%%/library/Zend/Controller/TODO.txt
 %%DATADIR%%/library/Zend/Currency.php
 %%DATADIR%%/library/Zend/Currency/Exception.php
 %%DATADIR%%/library/Zend/Date.php
@@ -173,6 +200,9 @@
 %%DATADIR%%/library/Zend/Db/Table/Row/Exception.php
 %%DATADIR%%/library/Zend/Db/Table/Rowset.php
 %%DATADIR%%/library/Zend/Db/Table/Rowset/Abstract.php
+%%DATADIR%%/library/Zend/Db/Table/Rowset/Exception.php
+%%DATADIR%%/library/Zend/Db/Table/Select.php
+%%DATADIR%%/library/Zend/Db/Table/Select/Exception.php
 %%DATADIR%%/library/Zend/Debug.php
 %%DATADIR%%/library/Zend/Exception.php
 %%DATADIR%%/library/Zend/Feed.php
@@ -198,14 +228,66 @@
 %%DATADIR%%/library/Zend/Filter/Dir.php
 %%DATADIR%%/library/Zend/Filter/Exception.php
 %%DATADIR%%/library/Zend/Filter/HtmlEntities.php
+%%DATADIR%%/library/Zend/Filter/Inflector.php
 %%DATADIR%%/library/Zend/Filter/Input.php
 %%DATADIR%%/library/Zend/Filter/Int.php
 %%DATADIR%%/library/Zend/Filter/Interface.php
+%%DATADIR%%/library/Zend/Filter/PregReplace.php
 %%DATADIR%%/library/Zend/Filter/RealPath.php
 %%DATADIR%%/library/Zend/Filter/StringToLower.php
 %%DATADIR%%/library/Zend/Filter/StringToUpper.php
 %%DATADIR%%/library/Zend/Filter/StringTrim.php
 %%DATADIR%%/library/Zend/Filter/StripTags.php
+%%DATADIR%%/library/Zend/Filter/Word/CamelCaseToDash.php
+%%DATADIR%%/library/Zend/Filter/Word/CamelCaseToSeparator.php
+%%DATADIR%%/library/Zend/Filter/Word/CamelCaseToUnderscore.php
+%%DATADIR%%/library/Zend/Filter/Word/DashToCamelCase.php
+%%DATADIR%%/library/Zend/Filter/Word/DashToSeparator.php
+%%DATADIR%%/library/Zend/Filter/Word/DashToUnderscore.php
+%%DATADIR%%/library/Zend/Filter/Word/Separator/Abstract.php
+%%DATADIR%%/library/Zend/Filter/Word/SeparatorToCamelCase.php
+%%DATADIR%%/library/Zend/Filter/Word/SeparatorToDash.php
+%%DATADIR%%/library/Zend/Filter/Word/SeparatorToSeparator.php
+%%DATADIR%%/library/Zend/Filter/Word/UnderscoreToCamelCase.php
+%%DATADIR%%/library/Zend/Filter/Word/UnderscoreToDash.php
+%%DATADIR%%/library/Zend/Filter/Word/UnderscoreToSeparator.php
+%%DATADIR%%/library/Zend/Form.php
+%%DATADIR%%/library/Zend/Form/Decorator/Abstract.php
+%%DATADIR%%/library/Zend/Form/Decorator/Callback.php
+%%DATADIR%%/library/Zend/Form/Decorator/Description.php
+%%DATADIR%%/library/Zend/Form/Decorator/DtDdWrapper.php
+%%DATADIR%%/library/Zend/Form/Decorator/Errors.php
+%%DATADIR%%/library/Zend/Form/Decorator/Exception.php
+%%DATADIR%%/library/Zend/Form/Decorator/Fieldset.php
+%%DATADIR%%/library/Zend/Form/Decorator/Form.php
+%%DATADIR%%/library/Zend/Form/Decorator/FormElements.php
+%%DATADIR%%/library/Zend/Form/Decorator/HtmlTag.php
+%%DATADIR%%/library/Zend/Form/Decorator/Image.php
+%%DATADIR%%/library/Zend/Form/Decorator/Interface.php
+%%DATADIR%%/library/Zend/Form/Decorator/Label.php
+%%DATADIR%%/library/Zend/Form/Decorator/ViewHelper.php
+%%DATADIR%%/library/Zend/Form/Decorator/ViewScript.php
+%%DATADIR%%/library/Zend/Form/DisplayGroup.php
+%%DATADIR%%/library/Zend/Form/Element.php
+%%DATADIR%%/library/Zend/Form/Element/Button.php
+%%DATADIR%%/library/Zend/Form/Element/Checkbox.php
+%%DATADIR%%/library/Zend/Form/Element/Exception.php
+%%DATADIR%%/library/Zend/Form/Element/Hash.php
+%%DATADIR%%/library/Zend/Form/Element/Hidden.php
+%%DATADIR%%/library/Zend/Form/Element/Image.php
+%%DATADIR%%/library/Zend/Form/Element/Multi.php
+%%DATADIR%%/library/Zend/Form/Element/MultiCheckbox.php
+%%DATADIR%%/library/Zend/Form/Element/Multiselect.php
+%%DATADIR%%/library/Zend/Form/Element/Password.php
+%%DATADIR%%/library/Zend/Form/Element/Radio.php
+%%DATADIR%%/library/Zend/Form/Element/Reset.php
+%%DATADIR%%/library/Zend/Form/Element/Select.php
+%%DATADIR%%/library/Zend/Form/Element/Submit.php
+%%DATADIR%%/library/Zend/Form/Element/Text.php
+%%DATADIR%%/library/Zend/Form/Element/Textarea.php
+%%DATADIR%%/library/Zend/Form/Element/Xhtml.php
+%%DATADIR%%/library/Zend/Form/Exception.php
+%%DATADIR%%/library/Zend/Form/SubForm.php
 %%DATADIR%%/library/Zend/Gdata.php
 %%DATADIR%%/library/Zend/Gdata/App.php
 %%DATADIR%%/library/Zend/Gdata/App/AuthException.php
@@ -429,6 +511,7 @@
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Age.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Books.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Company.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Control.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Description.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Duration.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Gender.php
@@ -447,6 +530,7 @@
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Relationship.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/ReleaseDate.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/School.php
+%%DATADIR%%/library/Zend/Gdata/YouTube/Extension/State.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Statistics.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Status.php
 %%DATADIR%%/library/Zend/Gdata/YouTube/Extension/Token.php
@@ -473,12 +557,62 @@
 %%DATADIR%%/library/Zend/Http/CookieJar.php
 %%DATADIR%%/library/Zend/Http/Exception.php
 %%DATADIR%%/library/Zend/Http/Response.php
+%%DATADIR%%/library/Zend/InfoCard.php
+%%DATADIR%%/library/Zend/InfoCard/Adapter/Default.php
+%%DATADIR%%/library/Zend/InfoCard/Adapter/Exception.php
+%%DATADIR%%/library/Zend/InfoCard/Adapter/Interface.php
+%%DATADIR%%/library/Zend/InfoCard/Cipher.php
+%%DATADIR%%/library/Zend/InfoCard/Cipher/Exception.php
+%%DATADIR%%/library/Zend/InfoCard/Cipher/Pki/Adapter/Abstract.php
+%%DATADIR%%/library/Zend/InfoCard/Cipher/Pki/Adapter/Rsa.php
+%%DATADIR%%/library/Zend/InfoCard/Cipher/Pki/Interface.php
+%%DATADIR%%/library/Zend/InfoCard/Cipher/Pki/Rsa/Interface.php
+%%DATADIR%%/library/Zend/InfoCard/Cipher/Symmetric/Adapter/Abstract.php
+%%DATADIR%%/library/Zend/InfoCard/Cipher/Symmetric/Adapter/Aes128cbc.php
+%%DATADIR%%/library/Zend/InfoCard/Cipher/Symmetric/Adapter/Aes256cbc.php
+%%DATADIR%%/library/Zend/InfoCard/Cipher/Symmetric/Aes128cbc/Interface.php
+%%DATADIR%%/library/Zend/InfoCard/Cipher/Symmetric/Aes256cbc/Interface.php
+%%DATADIR%%/library/Zend/InfoCard/Cipher/Symmetric/Interface.php
+%%DATADIR%%/library/Zend/InfoCard/Claims.php
+%%DATADIR%%/library/Zend/InfoCard/Exception.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Assertion.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Assertion/Interface.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Assertion/Saml.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Element.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Element/Interface.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/EncryptedData.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/EncryptedData/Abstract.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/EncryptedData/XmlEnc.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/EncryptedKey.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Exception.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/KeyInfo.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/KeyInfo/Abstract.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/KeyInfo/Default.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/KeyInfo/Interface.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/KeyInfo/XmlDSig.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Security.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Security/Exception.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Security/Transform.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Security/Transform/EnvelopedSignature.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Security/Transform/Exception.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Security/Transform/Interface.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/Security/Transform/XmlExcC14N.php
+%%DATADIR%%/library/Zend/InfoCard/Xml/SecurityTokenReference.php
 %%DATADIR%%/library/Zend/Json.php
 %%DATADIR%%/library/Zend/Json/Decoder.php
 %%DATADIR%%/library/Zend/Json/Encoder.php
 %%DATADIR%%/library/Zend/Json/Exception.php
-%%DATADIR%%/library/Zend/Json/TODO.txt
+%%DATADIR%%/library/Zend/Layout.php
+%%DATADIR%%/library/Zend/Layout/Controller/Action/Helper/Layout.php
+%%DATADIR%%/library/Zend/Layout/Controller/Plugin/Layout.php
+%%DATADIR%%/library/Zend/Layout/Exception.php
+%%DATADIR%%/library/Zend/Ldap.php
+%%DATADIR%%/library/Zend/Ldap/Exception.php
 %%DATADIR%%/library/Zend/Loader.php
+%%DATADIR%%/library/Zend/Loader/Exception.php
+%%DATADIR%%/library/Zend/Loader/PluginLoader.php
+%%DATADIR%%/library/Zend/Loader/PluginLoader/Exception.php
+%%DATADIR%%/library/Zend/Loader/PluginLoader/Interface.php
 %%DATADIR%%/library/Zend/Locale.php
 %%DATADIR%%/library/Zend/Locale/Data.php
 %%DATADIR%%/library/Zend/Locale/Data/Translation.php
@@ -966,7 +1100,6 @@
 %%DATADIR%%/library/Zend/Mail/Storage/Pop3.php
 %%DATADIR%%/library/Zend/Mail/Storage/Writable/Interface.php
 %%DATADIR%%/library/Zend/Mail/Storage/Writable/Maildir.php
-%%DATADIR%%/library/Zend/Mail/TODO.txt
 %%DATADIR%%/library/Zend/Mail/Transport/Abstract.php
 %%DATADIR%%/library/Zend/Mail/Transport/Exception.php
 %%DATADIR%%/library/Zend/Mail/Transport/Sendmail.php
@@ -1015,6 +1148,18 @@
 %%DATADIR%%/library/Zend/Mime/Exception.php
 %%DATADIR%%/library/Zend/Mime/Message.php
 %%DATADIR%%/library/Zend/Mime/Part.php
+%%DATADIR%%/library/Zend/OpenId.php
+%%DATADIR%%/library/Zend/OpenId/Consumer.php
+%%DATADIR%%/library/Zend/OpenId/Consumer/Storage.php
+%%DATADIR%%/library/Zend/OpenId/Consumer/Storage/File.php
+%%DATADIR%%/library/Zend/OpenId/Exception.php
+%%DATADIR%%/library/Zend/OpenId/Extension.php
+%%DATADIR%%/library/Zend/OpenId/Extension/Sreg.php
+%%DATADIR%%/library/Zend/OpenId/Provider.php
+%%DATADIR%%/library/Zend/OpenId/Provider/Storage.php
+%%DATADIR%%/library/Zend/OpenId/Provider/Storage/File.php
+%%DATADIR%%/library/Zend/OpenId/Provider/User.php
+%%DATADIR%%/library/Zend/OpenId/Provider/User/Session.php
 %%DATADIR%%/library/Zend/Pdf.php
 %%DATADIR%%/library/Zend/Pdf/Cmap.php
 %%DATADIR%%/library/Zend/Pdf/Cmap/ByteEncoding.php
@@ -1069,23 +1214,29 @@
 %%DATADIR%%/library/Zend/Pdf/PhpArray.php
 %%DATADIR%%/library/Zend/Pdf/Resource.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Font.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/OpenType.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/OpenType/TrueType.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/Courier.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/CourierBold.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/CourierBoldOblique.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/CourierOblique.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/Helvetica.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/HelveticaBold.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/HelveticaBoldOblique.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/HelveticaOblique.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/Symbol.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/TimesBold.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/TimesBoldItalic.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/TimesItalic.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/TimesRoman.php
-%%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard/ZapfDingbats.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/CidFont.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/CidFont/TrueType.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Extracted.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/FontDescriptor.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Parsed.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Parsed/TrueType.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/Courier.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/CourierBold.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/CourierBoldOblique.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/CourierOblique.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/Helvetica.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/HelveticaBold.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/HelveticaBoldOblique.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/HelveticaOblique.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/Symbol.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesBold.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesBoldItalic.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesItalic.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/TimesRoman.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard/ZapfDingbats.php
+%%DATADIR%%/library/Zend/Pdf/Resource/Font/Type0.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Image.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Image/Jpeg.php
 %%DATADIR%%/library/Zend/Pdf/Resource/Image/Png.php
@@ -1114,10 +1265,13 @@
 %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/TextNum.php
 %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/TextNum/CaseInsensitive.php
 %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8.php
+%%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8/CaseInsensitive.php
 %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8Num.php
+%%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8Num/CaseInsensitive.php
 %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Token.php
 %%DATADIR%%/library/Zend/Search/Lucene/Analysis/TokenFilter.php
 %%DATADIR%%/library/Zend/Search/Lucene/Analysis/TokenFilter/LowerCase.php
+%%DATADIR%%/library/Zend/Search/Lucene/Analysis/TokenFilter/LowerCaseUtf8.php
 %%DATADIR%%/library/Zend/Search/Lucene/Analysis/TokenFilter/ShortWords.php
 %%DATADIR%%/library/Zend/Search/Lucene/Analysis/TokenFilter/StopWords.php
 %%DATADIR%%/library/Zend/Search/Lucene/Document.php
@@ -1138,16 +1292,20 @@
 %%DATADIR%%/library/Zend/Search/Lucene/Index/TermInfo.php
 %%DATADIR%%/library/Zend/Search/Lucene/Index/Writer.php
 %%DATADIR%%/library/Zend/Search/Lucene/Interface.php
+%%DATADIR%%/library/Zend/Search/Lucene/LockManager.php
 %%DATADIR%%/library/Zend/Search/Lucene/PriorityQueue.php
 %%DATADIR%%/library/Zend/Search/Lucene/Proxy.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/BooleanExpressionRecognizer.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Boolean.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Empty.php
+%%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Fuzzy.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Insignificant.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/MultiTerm.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Phrase.php
+%%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Range.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Term.php
+%%DATADIR%%/library/Zend/Search/Lucene/Search/Query/Wildcard.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/QueryEntry.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/QueryEntry/Phrase.php
 %%DATADIR%%/library/Zend/Search/Lucene/Search/QueryEntry/Subquery.php
@@ -1171,7 +1329,6 @@
 %%DATADIR%%/library/Zend/Search/Lucene/Storage/File.php
 %%DATADIR%%/library/Zend/Search/Lucene/Storage/File/Filesystem.php
 %%DATADIR%%/library/Zend/Search/Lucene/Storage/File/Memory.php
-%%DATADIR%%/library/Zend/Search/TODO.txt
 %%DATADIR%%/library/Zend/Server/Abstract.php
 %%DATADIR%%/library/Zend/Server/Exception.php
 %%DATADIR%%/library/Zend/Server/Interface.php
@@ -1210,6 +1367,11 @@
 %%DATADIR%%/library/Zend/Service/Flickr/Image.php
 %%DATADIR%%/library/Zend/Service/Flickr/Result.php
 %%DATADIR%%/library/Zend/Service/Flickr/ResultSet.php
+%%DATADIR%%/library/Zend/Service/Nirvanix.php
+%%DATADIR%%/library/Zend/Service/Nirvanix/Exception.php
+%%DATADIR%%/library/Zend/Service/Nirvanix/Namespace/Base.php
+%%DATADIR%%/library/Zend/Service/Nirvanix/Namespace/Imfs.php
+%%DATADIR%%/library/Zend/Service/Nirvanix/Response.php
 %%DATADIR%%/library/Zend/Service/Simpy.php
 %%DATADIR%%/library/Zend/Service/Simpy/Link.php
 %%DATADIR%%/library/Zend/Service/Simpy/LinkQuery.php
@@ -1222,6 +1384,9 @@
 %%DATADIR%%/library/Zend/Service/Simpy/WatchlistFilter.php
 %%DATADIR%%/library/Zend/Service/Simpy/WatchlistFilterSet.php
 %%DATADIR%%/library/Zend/Service/Simpy/WatchlistSet.php
+%%DATADIR%%/library/Zend/Service/SlideShare.php
+%%DATADIR%%/library/Zend/Service/SlideShare/Exception.php
+%%DATADIR%%/library/Zend/Service/SlideShare/SlideShow.php
 %%DATADIR%%/library/Zend/Service/StrikeIron.php
 %%DATADIR%%/library/Zend/Service/StrikeIron/Base.php
 %%DATADIR%%/library/Zend/Service/StrikeIron/Decorator.php
@@ -1229,16 +1394,42 @@
 %%DATADIR%%/library/Zend/Service/StrikeIron/SalesUseTaxBasic.php
 %%DATADIR%%/library/Zend/Service/StrikeIron/USAddressVerification.php
 %%DATADIR%%/library/Zend/Service/StrikeIron/ZipCodeInfo.php
+%%DATADIR%%/library/Zend/Service/Technorati.php
+%%DATADIR%%/library/Zend/Service/Technorati/Author.php
+%%DATADIR%%/library/Zend/Service/Technorati/BlogInfoResult.php
+%%DATADIR%%/library/Zend/Service/Technorati/CosmosResult.php
+%%DATADIR%%/library/Zend/Service/Technorati/CosmosResultSet.php
+%%DATADIR%%/library/Zend/Service/Technorati/DailyCountsResult.php
+%%DATADIR%%/library/Zend/Service/Technorati/DailyCountsResultSet.php
+%%DATADIR%%/library/Zend/Service/Technorati/Exception.php
+%%DATADIR%%/library/Zend/Service/Technorati/GetInfoResult.php
+%%DATADIR%%/library/Zend/Service/Technorati/KeyInfoResult.php
+%%DATADIR%%/library/Zend/Service/Technorati/Result.php
+%%DATADIR%%/library/Zend/Service/Technorati/ResultSet.php
+%%DATADIR%%/library/Zend/Service/Technorati/SearchResult.php
+%%DATADIR%%/library/Zend/Service/Technorati/SearchResultSet.php
+%%DATADIR%%/library/Zend/Service/Technorati/TagResult.php
+%%DATADIR%%/library/Zend/Service/Technorati/TagResultSet.php
+%%DATADIR%%/library/Zend/Service/Technorati/TagsResult.php
+%%DATADIR%%/library/Zend/Service/Technorati/TagsResultSet.php
+%%DATADIR%%/library/Zend/Service/Technorati/Utils.php
+%%DATADIR%%/library/Zend/Service/Technorati/Weblog.php
 %%DATADIR%%/library/Zend/Service/Yahoo.php
 %%DATADIR%%/library/Zend/Service/Yahoo/Image.php
 %%DATADIR%%/library/Zend/Service/Yahoo/ImageResult.php
 %%DATADIR%%/library/Zend/Service/Yahoo/ImageResultSet.php
+%%DATADIR%%/library/Zend/Service/Yahoo/InlinkDataResult.php
+%%DATADIR%%/library/Zend/Service/Yahoo/InlinkDataResultSet.php
 %%DATADIR%%/library/Zend/Service/Yahoo/LocalResult.php
 %%DATADIR%%/library/Zend/Service/Yahoo/LocalResultSet.php
 %%DATADIR%%/library/Zend/Service/Yahoo/NewsResult.php
 %%DATADIR%%/library/Zend/Service/Yahoo/NewsResultSet.php
+%%DATADIR%%/library/Zend/Service/Yahoo/PageDataResult.php
+%%DATADIR%%/library/Zend/Service/Yahoo/PageDataResultSet.php
 %%DATADIR%%/library/Zend/Service/Yahoo/Result.php
 %%DATADIR%%/library/Zend/Service/Yahoo/ResultSet.php
+%%DATADIR%%/library/Zend/Service/Yahoo/VideoResult.php
+%%DATADIR%%/library/Zend/Service/Yahoo/VideoResultSet.php
 %%DATADIR%%/library/Zend/Service/Yahoo/WebResult.php
 %%DATADIR%%/library/Zend/Service/Yahoo/WebResultSet.php
 %%DATADIR%%/library/Zend/Session.php
@@ -1249,6 +1440,11 @@
 %%DATADIR%%/library/Zend/Session/Validator/Abstract.php
 %%DATADIR%%/library/Zend/Session/Validator/HttpUserAgent.php
 %%DATADIR%%/library/Zend/Session/Validator/Interface.php
+%%DATADIR%%/library/Zend/TimeSync.php
+%%DATADIR%%/library/Zend/TimeSync/Exception.php
+%%DATADIR%%/library/Zend/TimeSync/Ntp.php
+%%DATADIR%%/library/Zend/TimeSync/Protocol.php
+%%DATADIR%%/library/Zend/TimeSync/Sntp.php
 %%DATADIR%%/library/Zend/Translate.php
 %%DATADIR%%/library/Zend/Translate/Adapter.php
 %%DATADIR%%/library/Zend/Translate/Adapter/Array.php
@@ -1267,6 +1463,9 @@
 %%DATADIR%%/library/Zend/Validate/Abstract.php
 %%DATADIR%%/library/Zend/Validate/Alnum.php
 %%DATADIR%%/library/Zend/Validate/Alpha.php
+%%DATADIR%%/library/Zend/Validate/Barcode.php
+%%DATADIR%%/library/Zend/Validate/Barcode/Ean13.php
+%%DATADIR%%/library/Zend/Validate/Barcode/UpcA.php
 %%DATADIR%%/library/Zend/Validate/Between.php
 %%DATADIR%%/library/Zend/Validate/Ccnum.php
 %%DATADIR%%/library/Zend/Validate/Date.php
@@ -1286,6 +1485,7 @@
 %%DATADIR%%/library/Zend/Validate/Hostname/Li.php
 %%DATADIR%%/library/Zend/Validate/Hostname/No.php
 %%DATADIR%%/library/Zend/Validate/Hostname/Se.php
+%%DATADIR%%/library/Zend/Validate/Identical.php
 %%DATADIR%%/library/Zend/Validate/InArray.php
 %%DATADIR%%/library/Zend/Validate/Int.php
 %%DATADIR%%/library/Zend/Validate/Interface.php
@@ -1298,14 +1498,20 @@
 %%DATADIR%%/library/Zend/View.php
 %%DATADIR%%/library/Zend/View/Abstract.php
 %%DATADIR%%/library/Zend/View/Exception.php
+%%DATADIR%%/library/Zend/View/Helper/Action.php
 %%DATADIR%%/library/Zend/View/Helper/DeclareVars.php
+%%DATADIR%%/library/Zend/View/Helper/Doctype.php
+%%DATADIR%%/library/Zend/View/Helper/Fieldset.php
+%%DATADIR%%/library/Zend/View/Helper/Form.php
 %%DATADIR%%/library/Zend/View/Helper/FormButton.php
 %%DATADIR%%/library/Zend/View/Helper/FormCheckbox.php
 %%DATADIR%%/library/Zend/View/Helper/FormElement.php
+%%DATADIR%%/library/Zend/View/Helper/FormErrors.php
 %%DATADIR%%/library/Zend/View/Helper/FormFile.php
 %%DATADIR%%/library/Zend/View/Helper/FormHidden.php
 %%DATADIR%%/library/Zend/View/Helper/FormImage.php
 %%DATADIR%%/library/Zend/View/Helper/FormLabel.php
+%%DATADIR%%/library/Zend/View/Helper/FormMultiCheckbox.php
 %%DATADIR%%/library/Zend/View/Helper/FormNote.php
 %%DATADIR%%/library/Zend/View/Helper/FormPassword.php
 %%DATADIR%%/library/Zend/View/Helper/FormRadio.php
@@ -1314,8 +1520,26 @@
 %%DATADIR%%/library/Zend/View/Helper/FormSubmit.php
 %%DATADIR%%/library/Zend/View/Helper/FormText.php
 %%DATADIR%%/library/Zend/View/Helper/FormTextarea.php
+%%DATADIR%%/library/Zend/View/Helper/HeadLink.php
+%%DATADIR%%/library/Zend/View/Helper/HeadMeta.php
+%%DATADIR%%/library/Zend/View/Helper/HeadScript.php
+%%DATADIR%%/library/Zend/View/Helper/HeadStyle.php
+%%DATADIR%%/library/Zend/View/Helper/HeadTitle.php
 %%DATADIR%%/library/Zend/View/Helper/HtmlList.php
-%%DATADIR%%/library/Zend/View/Helper/TODO.txt
+%%DATADIR%%/library/Zend/View/Helper/InlineScript.php
+%%DATADIR%%/library/Zend/View/Helper/Json.php
+%%DATADIR%%/library/Zend/View/Helper/Layout.php
+%%DATADIR%%/library/Zend/View/Helper/Partial.php
+%%DATADIR%%/library/Zend/View/Helper/Partial/Exception.php
+%%DATADIR%%/library/Zend/View/Helper/PartialLoop.php
+%%DATADIR%%/library/Zend/View/Helper/Placeholder.php
+%%DATADIR%%/library/Zend/View/Helper/Placeholder/Container.php
+%%DATADIR%%/library/Zend/View/Helper/Placeholder/Container/Abstract.php
+%%DATADIR%%/library/Zend/View/Helper/Placeholder/Container/Exception.php
+%%DATADIR%%/library/Zend/View/Helper/Placeholder/Container/Standalone.php
+%%DATADIR%%/library/Zend/View/Helper/Placeholder/Registry.php
+%%DATADIR%%/library/Zend/View/Helper/Placeholder/Registry/Exception.php
+%%DATADIR%%/library/Zend/View/Helper/Translate.php
 %%DATADIR%%/library/Zend/View/Helper/Url.php
 %%DATADIR%%/library/Zend/View/Interface.php
 %%DATADIR%%/library/Zend/XmlRpc/Client.php
@@ -1367,6 +1591,12 @@
 %%DATADIR%%/tests/Zend/Auth/Adapter/Http/Resolver/FileTest.php
 %%DATADIR%%/tests/Zend/Auth/Adapter/Http/_files/htbasic.1
 %%DATADIR%%/tests/Zend/Auth/Adapter/Http/_files/htdigest.3
+%%DATADIR%%/tests/Zend/Auth/Adapter/Ldap/AllTests.php
+%%DATADIR%%/tests/Zend/Auth/Adapter/Ldap/OfflineTest.php
+%%DATADIR%%/tests/Zend/Auth/Adapter/Ldap/OnlineTest.php
+%%DATADIR%%/tests/Zend/Auth/Adapter/OpenId/AllTests.php
+%%DATADIR%%/tests/Zend/Auth/Adapter/OpenId/OpenIdTest.php
+%%DATADIR%%/tests/Zend/Auth/Adapter/OpenId/ResponseHelper.php
 %%DATADIR%%/tests/Zend/Auth/AllTests.php
 %%DATADIR%%/tests/Zend/AuthTest.php
 %%DATADIR%%/tests/Zend/Cache/AllTests.php
@@ -1402,7 +1632,13 @@
 %%DATADIR%%/tests/Zend/Config/_files/toplevelstring.xml
 %%DATADIR%%/tests/Zend/ConfigTest.php
 %%DATADIR%%/tests/Zend/Console/GetoptTest.php
+%%DATADIR%%/tests/Zend/Controller/Action/Helper/ActionStackTest.php
+%%DATADIR%%/tests/Zend/Controller/Action/Helper/AjaxContextTest.php
+%%DATADIR%%/tests/Zend/Controller/Action/Helper/AllTests.php
+%%DATADIR%%/tests/Zend/Controller/Action/Helper/AutoCompleteTest.php
+%%DATADIR%%/tests/Zend/Controller/Action/Helper/ContextSwitchTest.php
 %%DATADIR%%/tests/Zend/Controller/Action/Helper/FlashMessengerTest.php
+%%DATADIR%%/tests/Zend/Controller/Action/Helper/JsonTest.php
 %%DATADIR%%/tests/Zend/Controller/Action/Helper/RedirectorTest.php
 %%DATADIR%%/tests/Zend/Controller/Action/Helper/UrlTest.php
 %%DATADIR%%/tests/Zend/Controller/Action/Helper/ViewRendererTest.php
@@ -1411,10 +1647,12 @@
 %%DATADIR%%/tests/Zend/Controller/AllTests.php
 %%DATADIR%%/tests/Zend/Controller/Dispatcher/StandardTest.php
 %%DATADIR%%/tests/Zend/Controller/FrontTest.php
+%%DATADIR%%/tests/Zend/Controller/Plugin/ActionStackTest.php
 %%DATADIR%%/tests/Zend/Controller/Plugin/BrokerTest.php
 %%DATADIR%%/tests/Zend/Controller/Plugin/ErrorHandlerTest.php
 %%DATADIR%%/tests/Zend/Controller/Request/Apache404Test.php
 %%DATADIR%%/tests/Zend/Controller/Request/HttpTest.php
+%%DATADIR%%/tests/Zend/Controller/Request/SimpleTest.php
 %%DATADIR%%/tests/Zend/Controller/Response/HttpTest.php
 %%DATADIR%%/tests/Zend/Controller/Router/RewriteTest.php
 %%DATADIR%%/tests/Zend/Controller/Router/Route/ModuleTest.php
@@ -1436,10 +1674,19 @@
 %%DATADIR%%/tests/Zend/Controller/_files/ObController.php
 %%DATADIR%%/tests/Zend/Controller/_files/ViewController.php
 %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/controllers/IndexController.php
+%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/index/test.phtml
+%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/test.phtml
+%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/test/foo.php
 %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/controllers/Admin/IndexController.php
 %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/controllers/IndexController.php
 %%DATADIR%%/tests/Zend/Controller/_files/routes-root.ini
 %%DATADIR%%/tests/Zend/Controller/_files/routes.ini
+%%DATADIR%%/tests/Zend/Controller/views/scripts/custom/renderScript.php
+%%DATADIR%%/tests/Zend/Controller/views/scripts/foo-bar/baz-bat.phtml
+%%DATADIR%%/tests/Zend/Controller/views/scripts/ob.phtml
+%%DATADIR%%/tests/Zend/Controller/views/scripts/site.phtml
+%%DATADIR%%/tests/Zend/Controller/views/scripts/view/index.phtml
+%%DATADIR%%/tests/Zend/Controller/views/scripts/view/name.phtml
 %%DATADIR%%/tests/Zend/CurrencyTest.php
 %%DATADIR%%/tests/Zend/Date/AllTests.php
 %%DATADIR%%/tests/Zend/Date/DateObjectTest.php
@@ -1458,7 +1705,7 @@
 %%DATADIR%%/tests/Zend/Db/Adapter/Static.php
 %%DATADIR%%/tests/Zend/Db/Adapter/StaticTest.php
 %%DATADIR%%/tests/Zend/Db/Adapter/TestCommon.php
-%%DATADIR%%/tests/Zend/Db/Adapter/_files/TestNamespace/Static.php
+%%DATADIR%%/tests/Zend/Db/Adapter/_files/Testnamespace/Static.php
 %%DATADIR%%/tests/Zend/Db/AllTests.php
 %%DATADIR%%/tests/Zend/Db/Profiler/Db2Test.php
 %%DATADIR%%/tests/Zend/Db/Profiler/MysqliTest.php
@@ -1535,6 +1782,7 @@
 %%DATADIR%%/tests/Zend/Db/Table/Row/TestCommon.php
 %%DATADIR%%/tests/Zend/Db/Table/Row/TestMockRow.php
 %%DATADIR%%/tests/Zend/Db/Table/Row/TestMyRow.php
+%%DATADIR%%/tests/Zend/Db/Table/Row/TestTableRow.php
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/Db2Test.php
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/MysqliTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/OdbcTest.php
@@ -1548,6 +1796,18 @@
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/StaticTest.php
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/TestCommon.php
 %%DATADIR%%/tests/Zend/Db/Table/Rowset/TestMyRowset.php
+%%DATADIR%%/tests/Zend/Db/Table/Select/Db2Test.php
+%%DATADIR%%/tests/Zend/Db/Table/Select/MysqliTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Select/OdbcTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Select/OracleTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Select/Pdo/IbmTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Select/Pdo/MssqlTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Select/Pdo/MysqlTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Select/Pdo/OciTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Select/Pdo/PgsqlTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Select/Pdo/SqliteTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Select/StaticTest.php
+%%DATADIR%%/tests/Zend/Db/Table/Select/TestCommon.php
 %%DATADIR%%/tests/Zend/Db/Table/StaticTest.php
 %%DATADIR%%/tests/Zend/Db/Table/TableAccounts.php
 %%DATADIR%%/tests/Zend/Db/Table/TableAccountsCustom.php
@@ -1580,6 +1840,7 @@
 %%DATADIR%%/tests/Zend/Feed/AtomPublishingTest.php
 %%DATADIR%%/tests/Zend/Feed/CountTest.php
 %%DATADIR%%/tests/Zend/Feed/ElementTest.php
+%%DATADIR%%/tests/Zend/Feed/Entry/RssTest.php
 %%DATADIR%%/tests/Zend/Feed/ImportTest.php
 %%DATADIR%%/tests/Zend/Feed/IteratorTest.php
 %%DATADIR%%/tests/Zend/Feed/_files/AtomPublishingTest-before-update.xml
@@ -1606,6 +1867,7 @@
 %%DATADIR%%/tests/Zend/Feed/_files/TestAtomFeed.xml
 %%DATADIR%%/tests/Zend/Feed/_files/TestAtomFeedEntryOnly.xml
 %%DATADIR%%/tests/Zend/Feed/_files/TestAtomFeedNamespaced.xml
+%%DATADIR%%/tests/Zend/Feed/_files/TestFeedEntryRssContentEncoded.xml
 %%DATADIR%%/tests/Zend/Filter/AllTests.php
 %%DATADIR%%/tests/Zend/Filter/AlnumTest.php
 %%DATADIR%%/tests/Zend/Filter/AlphaTest.php
@@ -1613,17 +1875,70 @@
 %%DATADIR%%/tests/Zend/Filter/DigitsTest.php
 %%DATADIR%%/tests/Zend/Filter/DirTest.php
 %%DATADIR%%/tests/Zend/Filter/HtmlEntitiesTest.php
+%%DATADIR%%/tests/Zend/Filter/InflectorTest.php
 %%DATADIR%%/tests/Zend/Filter/InputTest.php
 %%DATADIR%%/tests/Zend/Filter/IntTest.php
+%%DATADIR%%/tests/Zend/Filter/PregReplaceTest.php
 %%DATADIR%%/tests/Zend/Filter/RealPathTest.php
 %%DATADIR%%/tests/Zend/Filter/StringToLowerTest.php
 %%DATADIR%%/tests/Zend/Filter/StringToUpperTest.php
 %%DATADIR%%/tests/Zend/Filter/StringTrimTest.php
 %%DATADIR%%/tests/Zend/Filter/StripTagsTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/CamelCaseToDashTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/CamelCaseToSeparatorTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/CamelCaseToUnderscoreTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/DashToCamelCaseTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/DashToSeparatorTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/DashToUnderscoreTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/SeparatorToCamelCaseTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/SeparatorToDashTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/SeparatorToSeparatorTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/UnderscoreToCamelCaseTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/UnderscoreToDashTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/UnderscoreToPathSeparatorTest.php
+%%DATADIR%%/tests/Zend/Filter/Word/UnderscoreToSeparatorTest.php
 %%DATADIR%%/tests/Zend/Filter/_files/TestNamespace/MyDigits.php
 %%DATADIR%%/tests/Zend/Filter/_files/TestNamespace/StringEquals.php
 %%DATADIR%%/tests/Zend/Filter/_files/file.1
 %%DATADIR%%/tests/Zend/FilterTest.php
+%%DATADIR%%/tests/Zend/Form/AllTests.php
+%%DATADIR%%/tests/Zend/Form/Decorator/AbstractTest.php
+%%DATADIR%%/tests/Zend/Form/Decorator/AllTests.php
+%%DATADIR%%/tests/Zend/Form/Decorator/CallbackTest.php
+%%DATADIR%%/tests/Zend/Form/Decorator/DescriptionTest.php
+%%DATADIR%%/tests/Zend/Form/Decorator/ErrorsTest.php
+%%DATADIR%%/tests/Zend/Form/Decorator/FieldsetTest.php
+%%DATADIR%%/tests/Zend/Form/Decorator/FormTest.php
+%%DATADIR%%/tests/Zend/Form/Decorator/HtmlTagTest.php
+%%DATADIR%%/tests/Zend/Form/Decorator/ImageTest.php
+%%DATADIR%%/tests/Zend/Form/Decorator/LabelTest.php
+%%DATADIR%%/tests/Zend/Form/Decorator/ViewHelperTest.php
+%%DATADIR%%/tests/Zend/Form/Decorator/ViewScriptTest.php
+%%DATADIR%%/tests/Zend/Form/DisplayGroupTest.php
+%%DATADIR%%/tests/Zend/Form/Element/AllTests.php
+%%DATADIR%%/tests/Zend/Form/Element/ButtonTest.php
+%%DATADIR%%/tests/Zend/Form/Element/CheckboxTest.php
+%%DATADIR%%/tests/Zend/Form/Element/HashTest.php
+%%DATADIR%%/tests/Zend/Form/Element/HiddenTest.php
+%%DATADIR%%/tests/Zend/Form/Element/ImageTest.php
+%%DATADIR%%/tests/Zend/Form/Element/MultiCheckboxTest.php
+%%DATADIR%%/tests/Zend/Form/Element/MultiselectTest.php
+%%DATADIR%%/tests/Zend/Form/Element/PasswordTest.php
+%%DATADIR%%/tests/Zend/Form/Element/RadioTest.php
+%%DATADIR%%/tests/Zend/Form/Element/ResetTest.php
+%%DATADIR%%/tests/Zend/Form/Element/SelectTest.php
+%%DATADIR%%/tests/Zend/Form/Element/SubmitTest.php
+%%DATADIR%%/tests/Zend/Form/Element/TextTest.php
+%%DATADIR%%/tests/Zend/Form/Element/TextareaTest.php
+%%DATADIR%%/tests/Zend/Form/ElementTest.php
+%%DATADIR%%/tests/Zend/Form/FormTest.php
+%%DATADIR%%/tests/Zend/Form/SubFormTest.php
+%%DATADIR%%/tests/Zend/Form/_files/decorators/Label.php
+%%DATADIR%%/tests/Zend/Form/_files/locale/array.php
+%%DATADIR%%/tests/Zend/Form/_files/views/contentWrappingDecorator.phtml
+%%DATADIR%%/tests/Zend/Form/_files/views/decorator.phtml
+%%DATADIR%%/tests/Zend/Form/_files/views/decoratorCausesReplacement.phtml
+%%DATADIR%%/tests/Zend/Form/_files/views/replacingDecorator.phtml
 %%DATADIR%%/tests/Zend/Gdata/AllTests.php
 %%DATADIR%%/tests/Zend/Gdata/App/AuthorTest.php
 %%DATADIR%%/tests/Zend/Gdata/App/CaptchaRequiredExceptionTest.php
@@ -1807,6 +2122,7 @@
 %%DATADIR%%/tests/Zend/Gdata/YouTube/_files/CommentFeedDataSample1.xml
 %%DATADIR%%/tests/Zend/Gdata/YouTube/_files/ContactEntryDataSample1.xml
 %%DATADIR%%/tests/Zend/Gdata/YouTube/_files/ContactFeedDataSample1.xml
+%%DATADIR%%/tests/Zend/Gdata/YouTube/_files/FormUploadTokenResponseSample.xml
 %%DATADIR%%/tests/Zend/Gdata/YouTube/_files/PlaylistListEntryDataSample1.xml
 %%DATADIR%%/tests/Zend/Gdata/YouTube/_files/PlaylistListFeedDataSample1.xml
 %%DATADIR%%/tests/Zend/Gdata/YouTube/_files/PlaylistVideoEntryDataSample1.xml
@@ -1878,10 +2194,43 @@
 %%DATADIR%%/tests/Zend/Http/_files/response_unknown
 %%DATADIR%%/tests/Zend/Http/_files/response_with_cookies
 %%DATADIR%%/tests/Zend/Http/_files/response_with_single_cookie
+%%DATADIR%%/tests/Zend/InfoCard/AllTests.php
+%%DATADIR%%/tests/Zend/InfoCard/AssertionTest.php
+%%DATADIR%%/tests/Zend/InfoCard/CipherTest.php
+%%DATADIR%%/tests/Zend/InfoCard/ProcessTest.php
+%%DATADIR%%/tests/Zend/InfoCard/XmlParsingTest.php
+%%DATADIR%%/tests/Zend/InfoCard/_files/encryptedkey.xml
+%%DATADIR%%/tests/Zend/InfoCard/_files/encryptedkey_bad_block.xml
+%%DATADIR%%/tests/Zend/InfoCard/_files/encryptedkey_missing_enc_algo.xml
+%%DATADIR%%/tests/Zend/InfoCard/_files/encryptedkey_missing_encryptionmethod.xml
+%%DATADIR%%/tests/Zend/InfoCard/_files/encryptedtoken.xml
+%%DATADIR%%/tests/Zend/InfoCard/_files/encryptedtoken_bad_type.xml
+%%DATADIR%%/tests/Zend/InfoCard/_files/security_token_bad_keyref.xml
+%%DATADIR%%/tests/Zend/InfoCard/_files/signedToken.xml
+%%DATADIR%%/tests/Zend/InfoCard/_files/signedToken_bad_type.xml
+%%DATADIR%%/tests/Zend/InfoCard/_files/ssl_private.cert
+%%DATADIR%%/tests/Zend/InfoCard/_files/ssl_pub.cert
+%%DATADIR%%/tests/Zend/Json/JsonXMLTest.php
 %%DATADIR%%/tests/Zend/JsonTest.php
+%%DATADIR%%/tests/Zend/Layout/AllTests.php
+%%DATADIR%%/tests/Zend/Layout/HelperTest.php
+%%DATADIR%%/tests/Zend/Layout/LayoutTest.php
+%%DATADIR%%/tests/Zend/Layout/PluginTest.php
+%%DATADIR%%/tests/Zend/Layout/_files/layouts/layout.phtml
+%%DATADIR%%/tests/Zend/Layout/_files/layouts/plugin.phtml
+%%DATADIR%%/tests/Zend/Layout/_files/layouts/test/layout.php
+%%DATADIR%%/tests/Zend/Ldap/AllTests.php
+%%DATADIR%%/tests/Zend/Ldap/BindTest.php
+%%DATADIR%%/tests/Zend/Ldap/CanonTest.php
+%%DATADIR%%/tests/Zend/Ldap/ConnectTest.php
+%%DATADIR%%/tests/Zend/Ldap/OfflineTest.php
+%%DATADIR%%/tests/Zend/Loader/AutoloadDoesNotHideParseError.php
 %%DATADIR%%/tests/Zend/Loader/AutoloadableClass.php
 %%DATADIR%%/tests/Zend/Loader/MyLoader.php
 %%DATADIR%%/tests/Zend/Loader/MyOverloader.php
+%%DATADIR%%/tests/Zend/Loader/PluginLoaderTest.php
+%%DATADIR%%/tests/Zend/Loader/_files/ParseError.php
+%%DATADIR%%/tests/Zend/Loader/_files/ZfTest/FormSubmit.php
 %%DATADIR%%/tests/Zend/LoaderTest.php
 %%DATADIR%%/tests/Zend/Locale/AllTests.php
 %%DATADIR%%/tests/Zend/Locale/DataTest.php
@@ -1956,6 +2305,16 @@
 %%DATADIR%%/tests/Zend/Mime/MessageTest.php
 %%DATADIR%%/tests/Zend/Mime/PartTest.php
 %%DATADIR%%/tests/Zend/MimeTest.php
+%%DATADIR%%/tests/Zend/OpenId/AllTests.php
+%%DATADIR%%/tests/Zend/OpenId/Consumer/Storage/FileTest.php
+%%DATADIR%%/tests/Zend/OpenId/ConsumerTest.php
+%%DATADIR%%/tests/Zend/OpenId/Extension/SregTest.php
+%%DATADIR%%/tests/Zend/OpenId/ExtensionTest.php
+%%DATADIR%%/tests/Zend/OpenId/Provider/Storage/FileTest.php
+%%DATADIR%%/tests/Zend/OpenId/Provider/User/SessionTest.php
+%%DATADIR%%/tests/Zend/OpenId/ProviderTest.php
+%%DATADIR%%/tests/Zend/OpenId/ResponseHelper.php
+%%DATADIR%%/tests/Zend/OpenIdTest.php
 %%DATADIR%%/tests/Zend/Pdf/AllTests.php
 %%DATADIR%%/tests/Zend/Pdf/DrawingTest.php
 %%DATADIR%%/tests/Zend/Pdf/Element/AllTests.php
@@ -2016,40 +2375,40 @@
 %%DATADIR%%/tests/Zend/Search/Lucene/Index/SegmentMergerTest.php
 %%DATADIR%%/tests/Zend/Search/Lucene/Index/TermInfoTest.php
 %%DATADIR%%/tests/Zend/Search/Lucene/Index/TermTest.php
-%%DATADIR%%/tests/Zend/Search/Lucene/Index/_files/_source/_0.cfs
-%%DATADIR%%/tests/Zend/Search/Lucene/Index/_files/_source/_1.cfs
-%%DATADIR%%/tests/Zend/Search/Lucene/Index/_files/_source/_1.sti
-%%DATADIR%%/tests/Zend/Search/Lucene/Index/_files/_source/_2.cfs
-%%DATADIR%%/tests/Zend/Search/Lucene/Index/_files/_source/_3.cfs
-%%DATADIR%%/tests/Zend/Search/Lucene/Index/_files/_source/_3.del
-%%DATADIR%%/tests/Zend/Search/Lucene/Index/_files/_source/_4.cfs
-%%DATADIR%%/tests/Zend/Search/Lucene/Index/_files/_source/deletable
-%%DATADIR%%/tests/Zend/Search/Lucene/Index/_files/_source/segments
 %%DATADIR%%/tests/Zend/Search/Lucene/Index/_files/mergedSegment.cfs.sample
+%%DATADIR%%/tests/Zend/Search/Lucene/Index/_source/_files/_0.cfs
+%%DATADIR%%/tests/Zend/Search/Lucene/Index/_source/_files/_1.cfs
+%%DATADIR%%/tests/Zend/Search/Lucene/Index/_source/_files/_1.sti
+%%DATADIR%%/tests/Zend/Search/Lucene/Index/_source/_files/_2.cfs
+%%DATADIR%%/tests/Zend/Search/Lucene/Index/_source/_files/_3.cfs
+%%DATADIR%%/tests/Zend/Search/Lucene/Index/_source/_files/_3.del
+%%DATADIR%%/tests/Zend/Search/Lucene/Index/_source/_files/_4.cfs
+%%DATADIR%%/tests/Zend/Search/Lucene/Index/_source/_files/deletable
+%%DATADIR%%/tests/Zend/Search/Lucene/Index/_source/_files/segments
 %%DATADIR%%/tests/Zend/Search/Lucene/LuceneTest.php
 %%DATADIR%%/tests/Zend/Search/Lucene/PriorityQueueTest.php
 %%DATADIR%%/tests/Zend/Search/Lucene/SearchTest.php
 %%DATADIR%%/tests/Zend/Search/Lucene/Storage/DirectoryTest.php
 %%DATADIR%%/tests/Zend/Search/Lucene/Storage/FileTest.php
 %%DATADIR%%/tests/Zend/Search/Lucene/Storage/_files/sample_data
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSample/_0.cfs
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSample/_1.cfs
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSample/_2.cfs
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSample/_3.cfs
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSample/_3.del
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSample/_4.cfs
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSample/deletable
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSample/segments
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSource/about-pear.html
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSource/authors.html
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSource/contributing.bugs.html
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSource/contributing.documentation.html
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSource/contributing.html
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSource/contributing.newpackage.html
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSource/contributing.patches.html
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSource/contributing.wishlist.html
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSource/copyright.html
-%%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSource/core.html
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSample/_files/_0.cfs
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSample/_files/_1.cfs
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSample/_files/_2.cfs
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSample/_files/_3.cfs
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSample/_files/_3.del
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSample/_files/_4.cfs
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSample/_files/deletable
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSample/_files/segments
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSource/_files/about-pear.html
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSource/_files/authors.html
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSource/_files/contributing.bugs.html
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSource/_files/contributing.documentation.html
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSource/_files/contributing.html
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSource/_files/contributing.newpackage.html
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSource/_files/contributing.patches.html
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSource/_files/contributing.wishlist.html
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSource/_files/copyright.html
+%%DATADIR%%/tests/Zend/Search/Lucene/_indexSource/_files/core.html
 %%DATADIR%%/tests/Zend/Server/AllTests.php
 %%DATADIR%%/tests/Zend/Server/Reflection/ClassTest.php
 %%DATADIR%%/tests/Zend/Server/Reflection/FunctionTest.php
@@ -2096,7 +2455,16 @@
 %%DATADIR%%/tests/Zend/Service/Flickr/_files/testTagSearchBasic.response
 %%DATADIR%%/tests/Zend/Service/Flickr/_files/testUserSearchExceptionEmailInvalid.response
 %%DATADIR%%/tests/Zend/Service/Flickr/_files/testUserSearchExceptionUsernameInvalid.response
+%%DATADIR%%/tests/Zend/Service/Nirvanix/AllTests.php
+%%DATADIR%%/tests/Zend/Service/Nirvanix/ExceptionTest.php
+%%DATADIR%%/tests/Zend/Service/Nirvanix/FunctionalTestCase.php
+%%DATADIR%%/tests/Zend/Service/Nirvanix/Namespace/BaseTest.php
+%%DATADIR%%/tests/Zend/Service/Nirvanix/Namespace/ImfsTest.php
+%%DATADIR%%/tests/Zend/Service/Nirvanix/NirvanixTest.php
+%%DATADIR%%/tests/Zend/Service/Nirvanix/ResponseTest.php
 %%DATADIR%%/tests/Zend/Service/SimpyTest.php
+%%DATADIR%%/tests/Zend/Service/SlideShare/_files/demo.ppt
+%%DATADIR%%/tests/Zend/Service/SlideShareTest.php
 %%DATADIR%%/tests/Zend/Service/StrikeIron/AllTests.php
 %%DATADIR%%/tests/Zend/Service/StrikeIron/BaseTest.php
 %%DATADIR%%/tests/Zend/Service/StrikeIron/DecoratorTest.php
@@ -2106,6 +2474,70 @@
 %%DATADIR%%/tests/Zend/Service/StrikeIron/StrikeIronTest.php
 %%DATADIR%%/tests/Zend/Service/StrikeIron/USAddressVerificationTest.php
 %%DATADIR%%/tests/Zend/Service/StrikeIron/ZipCodeInfoTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/AllTests.php
+%%DATADIR%%/tests/Zend/Service/Technorati/AuthorTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/BlogInfoResultTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/CosmosResultSetTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/CosmosResultTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/DailyCountsResultSetTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/DailyCountsResultTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/GetInfoResultTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/KeyInfoResultTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/ResultSetTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/ResultTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/SearchResultSetTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/SearchResultTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/TagResultSetTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/TagResultTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/TagsResultSetTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/TagsResultTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/TechnoratiTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/TestCase.php
+%%DATADIR%%/tests/Zend/Service/Technorati/UtilsTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/WeblogTest.php
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/MISSING
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestAuthor.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestAuthorNullFields.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestBlogInfoError.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestBlogInfoErrorUrlNotWeblog.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestBlogInfoResult.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestBlogInfoResultUrlWithInvalidSchema.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestBlogInfoSuccess.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestBlogPostTagsError.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestBlogPostTagsErrorUrlNotWeblog.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestBlogPostTagsSuccess.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestCosmosError.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSet.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetBlogLink.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetBlogLinkClaim.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetBlogWeblog.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetBlogWeblogClaim.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetBlogWeblogClaim2.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetSiteLink.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetSiteUrlWithInvalidSchema.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetSiteWeblog.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestCosmosResultSetSiteWeblogWithMissingInboundblogs.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestCosmosSuccess.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestDailyCountsError.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestDailyCountsResultSet.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestDailyCountsSuccess.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestError.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestGetInfoError.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestGetInfoResult.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestGetInfoSuccess.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestKeyInfoError.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestKeyInfoResult.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestKeyInfoSuccess.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestSearchResultSet.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestSearchSuccess.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestTagError.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestTagResultSet.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestTagSuccess.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestTagsResultSet.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestTopTagsError.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestTopTagsSuccess.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestWeblog.xml
+%%DATADIR%%/tests/Zend/Service/Technorati/_files/TestWeblogTwoAuthors.xml
 %%DATADIR%%/tests/Zend/Service/Yahoo/AllTests.php
 %%DATADIR%%/tests/Zend/Service/Yahoo/OfflineTest.php
 %%DATADIR%%/tests/Zend/Service/Yahoo/OnlineTest.php
@@ -2113,6 +2545,7 @@
 %%DATADIR%%/tests/Zend/Session/README.txt
 %%DATADIR%%/tests/Zend/Session/SessionTest.php
 %%DATADIR%%/tests/Zend/Session/SessionTestHelper.php
+%%DATADIR%%/tests/Zend/TimeSyncTest.php
 %%DATADIR%%/tests/Zend/Translate/AllTests.php
 %%DATADIR%%/tests/Zend/Translate/ArrayTest.php
 %%DATADIR%%/tests/Zend/Translate/CsvTest.php
@@ -2146,9 +2579,11 @@
 %%DATADIR%%/tests/Zend/Uri/AllTests.php
 %%DATADIR%%/tests/Zend/Uri/HttpTest.php
 %%DATADIR%%/tests/Zend/UriTest.php
+%%DATADIR%%/tests/Zend/Validate/AbstractTest.php
 %%DATADIR%%/tests/Zend/Validate/AllTests.php
 %%DATADIR%%/tests/Zend/Validate/AlnumTest.php
 %%DATADIR%%/tests/Zend/Validate/AlphaTest.php
+%%DATADIR%%/tests/Zend/Validate/BarcodeTest.php
 %%DATADIR%%/tests/Zend/Validate/BetweenTest.php
 %%DATADIR%%/tests/Zend/Validate/CcnumTest.php
 %%DATADIR%%/tests/Zend/Validate/DateTest.php
@@ -2158,6 +2593,7 @@
 %%DATADIR%%/tests/Zend/Validate/GreaterThanTest.php
 %%DATADIR%%/tests/Zend/Validate/HexTest.php
 %%DATADIR%%/tests/Zend/Validate/HostnameTest.php
+%%DATADIR%%/tests/Zend/Validate/IdenticalTest.php
 %%DATADIR%%/tests/Zend/Validate/InArrayTest.php
 %%DATADIR%%/tests/Zend/Validate/IntTest.php
 %%DATADIR%%/tests/Zend/Validate/IpTest.php
@@ -2169,15 +2605,62 @@
 %%DATADIR%%/tests/Zend/ValidateTest.php
 %%DATADIR%%/tests/Zend/VersionTest.php
 %%DATADIR%%/tests/Zend/View/AllTests.php
+%%DATADIR%%/tests/Zend/View/Helper/ActionTest.php
+%%DATADIR%%/tests/Zend/View/Helper/AllTests.php
 %%DATADIR%%/tests/Zend/View/Helper/DeclareVarsTest.php
+%%DATADIR%%/tests/Zend/View/Helper/DoctypeTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FieldsetTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FormButtonTest.php
 %%DATADIR%%/tests/Zend/View/Helper/FormCheckboxTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FormErrorsTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FormFileTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FormImageTest.php
 %%DATADIR%%/tests/Zend/View/Helper/FormLabelTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FormMultiCheckboxTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FormPasswordTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FormRadioTest.php
 %%DATADIR%%/tests/Zend/View/Helper/FormSelectTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FormSubmitTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FormTest.php
 %%DATADIR%%/tests/Zend/View/Helper/FormTextTest.php
+%%DATADIR%%/tests/Zend/View/Helper/FormTextareaTest.php
+%%DATADIR%%/tests/Zend/View/Helper/HeadLinkTest.php
+%%DATADIR%%/tests/Zend/View/Helper/HeadMetaTest.php
+%%DATADIR%%/tests/Zend/View/Helper/HeadScriptTest.php
+%%DATADIR%%/tests/Zend/View/Helper/HeadStyleTest.php
+%%DATADIR%%/tests/Zend/View/Helper/HeadTitleTest.php
 %%DATADIR%%/tests/Zend/View/Helper/HtmlListTest.php
+%%DATADIR%%/tests/Zend/View/Helper/InlineScriptTest.php
+%%DATADIR%%/tests/Zend/View/Helper/JsonTest.php
+%%DATADIR%%/tests/Zend/View/Helper/LayoutTest.php
+%%DATADIR%%/tests/Zend/View/Helper/PartialLoopTest.php
+%%DATADIR%%/tests/Zend/View/Helper/PartialTest.php
+%%DATADIR%%/tests/Zend/View/Helper/Placeholder/ContainerTest.php
+%%DATADIR%%/tests/Zend/View/Helper/Placeholder/RegistryTest.php
+%%DATADIR%%/tests/Zend/View/Helper/Placeholder/StandaloneContainerTest.php
+%%DATADIR%%/tests/Zend/View/Helper/PlaceholderTest.php
+%%DATADIR%%/tests/Zend/View/Helper/TranslateTest.php
 %%DATADIR%%/tests/Zend/View/Helper/UrlTest.php
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/controllers/BarController.php
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/controllers/FooController.php
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/bar/baz.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/foo/bar.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/foo/baz.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/partialActionCall.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/partialLoop.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/partialObj.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/partialOne.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/partialThree.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/partialVars.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/foo/controllers/FooController.php
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/foo/views/scripts/foo/bar.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/foo/views/scripts/foo/nest.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/foo/views/scripts/foo/nested.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/foo/views/scripts/partialLoop.phtml
+%%DATADIR%%/tests/Zend/View/Helper/_files/modules/foo/views/scripts/partialTwo.phtml
 %%DATADIR%%/tests/Zend/View/_stubs/FilterDir1/Foo.php
 %%DATADIR%%/tests/Zend/View/_stubs/HelperDir1/StubEmpty.php
+%%DATADIR%%/tests/Zend/View/_stubs/HelperDir2/Datetime.php
 %%DATADIR%%/tests/Zend/View/_stubs/HelperDir2/Stub1.php
 %%DATADIR%%/tests/Zend/View/_stubs/HelperDir2/Stub2.php
 %%DATADIR%%/tests/Zend/View/_templates/test.phtml
@@ -2215,6 +2698,20 @@
 @dirrm %%DATADIR%%/tests/Zend/View/_stubs/HelperDir1
 @dirrm %%DATADIR%%/tests/Zend/View/_stubs/FilterDir1
 @dirrm %%DATADIR%%/tests/Zend/View/_stubs
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files/modules/foo/views/scripts/foo
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files/modules/foo/views/scripts
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files/modules/foo/views
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files/modules/foo/controllers
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files/modules/foo
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/foo
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts/bar
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views/scripts
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/views
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files/modules/default/controllers
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files/modules/default
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files/modules
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/_files
+@dirrm %%DATADIR%%/tests/Zend/View/Helper/Placeholder
 @dirrm %%DATADIR%%/tests/Zend/View/Helper
 @dirrm %%DATADIR%%/tests/Zend/View
 @dirrm %%DATADIR%%/tests/Zend/Validate
@@ -2223,7 +2720,13 @@
 @dirrm %%DATADIR%%/tests/Zend/Translate
 @dirrm %%DATADIR%%/tests/Zend/Session
 @dirrm %%DATADIR%%/tests/Zend/Service/Yahoo
+@dirrm %%DATADIR%%/tests/Zend/Service/Technorati/_files
+@dirrm %%DATADIR%%/tests/Zend/Service/Technorati
 @dirrm %%DATADIR%%/tests/Zend/Service/StrikeIron
+@dirrm %%DATADIR%%/tests/Zend/Service/SlideShare/_files
+@dirrm %%DATADIR%%/tests/Zend/Service/SlideShare
+@dirrm %%DATADIR%%/tests/Zend/Service/Nirvanix/Namespace
+@dirrm %%DATADIR%%/tests/Zend/Service/Nirvanix
 @dirrm %%DATADIR%%/tests/Zend/Service/Flickr/_files
 @dirrm %%DATADIR%%/tests/Zend/Service/Flickr
 @dirrm %%DATADIR%%/tests/Zend/Service/Delicious
@@ -2233,14 +2736,19 @@
 @dirrm %%DATADIR%%/tests/Zend/Service
 @dirrm %%DATADIR%%/tests/Zend/Server/Reflection
 @dirrm %%DATADIR%%/tests/Zend/Server
-@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSource
-@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/_files/_indexSample
-@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/_files/_index
+@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/_indexSource/_files
+@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/_indexSource
+@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/_indexSample/_files
+@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/_indexSample
+@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/_index/_files
+@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/_index
 @dirrm %%DATADIR%%/tests/Zend/Search/Lucene/_files
+@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/Storage/_tempFiles/_files
 @dirrm %%DATADIR%%/tests/Zend/Search/Lucene/Storage/_tempFiles
 @dirrm %%DATADIR%%/tests/Zend/Search/Lucene/Storage/_files
 @dirrm %%DATADIR%%/tests/Zend/Search/Lucene/Storage
-@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/Index/_files/_source
+@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/Index/_source/_files
+@dirrm %%DATADIR%%/tests/Zend/Search/Lucene/Index/_source
 @dirrm %%DATADIR%%/tests/Zend/Search/Lucene/Index/_files
 @dirrm %%DATADIR%%/tests/Zend/Search/Lucene/Index
 @dirrm %%DATADIR%%/tests/Zend/Search/Lucene
@@ -2253,6 +2761,16 @@
 @dirrm %%DATADIR%%/tests/Zend/Pdf/Element/Object
 @dirrm %%DATADIR%%/tests/Zend/Pdf/Element
 @dirrm %%DATADIR%%/tests/Zend/Pdf
+@dirrm %%DATADIR%%/tests/Zend/OpenId/_files
+@dirrm %%DATADIR%%/tests/Zend/OpenId/Provider/User
+@dirrm %%DATADIR%%/tests/Zend/OpenId/Provider/Storage/_files
+@dirrm %%DATADIR%%/tests/Zend/OpenId/Provider/Storage
+@dirrm %%DATADIR%%/tests/Zend/OpenId/Provider
+@dirrm %%DATADIR%%/tests/Zend/OpenId/Extension
+@dirrm %%DATADIR%%/tests/Zend/OpenId/Consumer/Storage/_files
+@dirrm %%DATADIR%%/tests/Zend/OpenId/Consumer/Storage
+@dirrm %%DATADIR%%/tests/Zend/OpenId/Consumer
+@dirrm %%DATADIR%%/tests/Zend/OpenId
 @dirrm %%DATADIR%%/tests/Zend/Mime
 @dirrm %%DATADIR%%/tests/Zend/Memory/_files
 @dirrm %%DATADIR%%/tests/Zend/Memory
@@ -2270,7 +2788,17 @@
 @dirrm %%DATADIR%%/tests/Zend/Log/Filter
 @dirrm %%DATADIR%%/tests/Zend/Log
 @dirrm %%DATADIR%%/tests/Zend/Locale
+@dirrm %%DATADIR%%/tests/Zend/Loader/_files/ZfTest
+@dirrm %%DATADIR%%/tests/Zend/Loader/_files
 @dirrm %%DATADIR%%/tests/Zend/Loader
+@dirrm %%DATADIR%%/tests/Zend/Ldap
+@dirrm %%DATADIR%%/tests/Zend/Layout/_files/layouts/test
+@dirrm %%DATADIR%%/tests/Zend/Layout/_files/layouts
+@dirrm %%DATADIR%%/tests/Zend/Layout/_files
+@dirrm %%DATADIR%%/tests/Zend/Layout
+@dirrm %%DATADIR%%/tests/Zend/Json
+@dirrm %%DATADIR%%/tests/Zend/InfoCard/_files
+@dirrm %%DATADIR%%/tests/Zend/InfoCard
 @dirrm %%DATADIR%%/tests/Zend/Http/_files
 @dirrm %%DATADIR%%/tests/Zend/Http/Client/_files
 @dirrm %%DATADIR%%/tests/Zend/Http/Client
@@ -2293,14 +2821,25 @@
 @dirrm %%DATADIR%%/tests/Zend/Gdata/App/_files
 @dirrm %%DATADIR%%/tests/Zend/Gdata/App
 @dirrm %%DATADIR%%/tests/Zend/Gdata
+@dirrm %%DATADIR%%/tests/Zend/Form/_files/views
+@dirrm %%DATADIR%%/tests/Zend/Form/_files/locale
+@dirrm %%DATADIR%%/tests/Zend/Form/_files/decorators
+@dirrm %%DATADIR%%/tests/Zend/Form/_files
+@dirrm %%DATADIR%%/tests/Zend/Form/Element
+@dirrm %%DATADIR%%/tests/Zend/Form/Decorator
+@dirrm %%DATADIR%%/tests/Zend/Form
 @dirrm %%DATADIR%%/tests/Zend/Filter/_files/TestNamespace
 @dirrm %%DATADIR%%/tests/Zend/Filter/_files
+@dirrm %%DATADIR%%/tests/Zend/Filter/Word
 @dirrm %%DATADIR%%/tests/Zend/Filter
 @dirrm %%DATADIR%%/tests/Zend/Feed/_files
+@dirrm %%DATADIR%%/tests/Zend/Feed/Entry
 @dirrm %%DATADIR%%/tests/Zend/Feed
 @dirrm %%DATADIR%%/tests/Zend/Db/TestUtil/Pdo
 @dirrm %%DATADIR%%/tests/Zend/Db/TestUtil
 @dirrm %%DATADIR%%/tests/Zend/Db/Table/_files
+@dirrm %%DATADIR%%/tests/Zend/Db/Table/Select/Pdo
+@dirrm %%DATADIR%%/tests/Zend/Db/Table/Select
 @dirrm %%DATADIR%%/tests/Zend/Db/Table/Rowset/Pdo
 @dirrm %%DATADIR%%/tests/Zend/Db/Table/Rowset
 @dirrm %%DATADIR%%/tests/Zend/Db/Table/Row/Pdo
@@ -2315,15 +2854,20 @@
 @dirrm %%DATADIR%%/tests/Zend/Db/Select
 @dirrm %%DATADIR%%/tests/Zend/Db/Profiler/Pdo
 @dirrm %%DATADIR%%/tests/Zend/Db/Profiler
-@dirrm %%DATADIR%%/tests/Zend/Db/Adapter/_files/TestNamespace
+@dirrm %%DATADIR%%/tests/Zend/Db/Adapter/_files/Testnamespace
 @dirrm %%DATADIR%%/tests/Zend/Db/Adapter/_files
 @dirrm %%DATADIR%%/tests/Zend/Db/Adapter/Pdo
 @dirrm %%DATADIR%%/tests/Zend/Db/Adapter
 @dirrm %%DATADIR%%/tests/Zend/Db
 @dirrm %%DATADIR%%/tests/Zend/Date
+@dirrm %%DATADIR%%/tests/Zend/Controller/views/scripts/view
+@dirrm %%DATADIR%%/tests/Zend/Controller/views/scripts/foo-bar
+@dirrm %%DATADIR%%/tests/Zend/Controller/views/scripts/custom
+@dirrm %%DATADIR%%/tests/Zend/Controller/views/scripts
 @dirrm %%DATADIR%%/tests/Zend/Controller/views/helpers
 @dirrm %%DATADIR%%/tests/Zend/Controller/views/filters
 @dirrm %%DATADIR%%/tests/Zend/Controller/views
+@dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/scripts
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/helpers
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo/controllers/Admin
@@ -2331,6 +2875,9 @@
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/foo
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/default/controllers
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/default
+@dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/test
+@dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts/index
+@dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/scripts
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/helpers
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/filters
 @dirrm %%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views
@@ -2353,6 +2900,9 @@
 @dirrm %%DATADIR%%/tests/Zend/Config/_files
 @dirrm %%DATADIR%%/tests/Zend/Config
 @dirrm %%DATADIR%%/tests/Zend/Cache
+@dirrm %%DATADIR%%/tests/Zend/Auth/Adapter/OpenId/_files
+@dirrm %%DATADIR%%/tests/Zend/Auth/Adapter/OpenId
+@dirrm %%DATADIR%%/tests/Zend/Auth/Adapter/Ldap
 @dirrm %%DATADIR%%/tests/Zend/Auth/Adapter/Http/_files
 @dirrm %%DATADIR%%/tests/Zend/Auth/Adapter/Http/Resolver
 @dirrm %%DATADIR%%/tests/Zend/Auth/Adapter/Http
@@ -2370,20 +2920,29 @@
 @dirrm %%DATADIR%%/library/Zend/XmlRpc/Request
 @dirrm %%DATADIR%%/library/Zend/XmlRpc/Client
 @dirrm %%DATADIR%%/library/Zend/XmlRpc
+@dirrm %%DATADIR%%/library/Zend/View/Helper/Placeholder/Registry
+@dirrm %%DATADIR%%/library/Zend/View/Helper/Placeholder/Container
+@dirrm %%DATADIR%%/library/Zend/View/Helper/Placeholder
+@dirrm %%DATADIR%%/library/Zend/View/Helper/Partial
 @dirrm %%DATADIR%%/library/Zend/View/Helper
-@dirrm %%DATADIR%%/library/Zend/View/Filter
 @dirrm %%DATADIR%%/library/Zend/View
 @dirrm %%DATADIR%%/library/Zend/Validate/Hostname
+@dirrm %%DATADIR%%/library/Zend/Validate/Barcode
 @dirrm %%DATADIR%%/library/Zend/Validate
 @dirrm %%DATADIR%%/library/Zend/Uri
 @dirrm %%DATADIR%%/library/Zend/Translate/Adapter
 @dirrm %%DATADIR%%/library/Zend/Translate
+@dirrm %%DATADIR%%/library/Zend/TimeSync
 @dirrm %%DATADIR%%/library/Zend/Session/Validator
 @dirrm %%DATADIR%%/library/Zend/Session/SaveHandler
 @dirrm %%DATADIR%%/library/Zend/Session
 @dirrm %%DATADIR%%/library/Zend/Service/Yahoo
+@dirrm %%DATADIR%%/library/Zend/Service/Technorati
 @dirrm %%DATADIR%%/library/Zend/Service/StrikeIron
+@dirrm %%DATADIR%%/library/Zend/Service/SlideShare
 @dirrm %%DATADIR%%/library/Zend/Service/Simpy
+@dirrm %%DATADIR%%/library/Zend/Service/Nirvanix/Namespace
+@dirrm %%DATADIR%%/library/Zend/Service/Nirvanix
 @dirrm %%DATADIR%%/library/Zend/Service/Flickr
 @dirrm %%DATADIR%%/library/Zend/Service/Delicious
 @dirrm %%DATADIR%%/library/Zend/Service/Amazon
@@ -2403,6 +2962,8 @@
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Index
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Document
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Analysis/TokenFilter
+@dirrm %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8Num
+@dirrm %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/Utf8
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/TextNum
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common/Text
 @dirrm %%DATADIR%%/library/Zend/Search/Lucene/Analysis/Analyzer/Common
@@ -2416,8 +2977,10 @@
 @dirrm %%DATADIR%%/library/Zend/Request
 @dirrm %%DATADIR%%/library/Zend/Pdf/Trailer
 @dirrm %%DATADIR%%/library/Zend/Pdf/Resource/Image
-@dirrm %%DATADIR%%/library/Zend/Pdf/Resource/Font/Standard
-@dirrm %%DATADIR%%/library/Zend/Pdf/Resource/Font/OpenType
+@dirrm %%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Standard
+@dirrm %%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple/Parsed
+@dirrm %%DATADIR%%/library/Zend/Pdf/Resource/Font/Simple
+@dirrm %%DATADIR%%/library/Zend/Pdf/Resource/Font/CidFont
 @dirrm %%DATADIR%%/library/Zend/Pdf/Resource/Font
 @dirrm %%DATADIR%%/library/Zend/Pdf/Resource
 @dirrm %%DATADIR%%/library/Zend/Pdf/Parser
@@ -2437,6 +3000,13 @@
 @dirrm %%DATADIR%%/library/Zend/Pdf/Cmap/ByteEncoding
 @dirrm %%DATADIR%%/library/Zend/Pdf/Cmap
 @dirrm %%DATADIR%%/library/Zend/Pdf
+@dirrm %%DATADIR%%/library/Zend/OpenId/Provider/User
+@dirrm %%DATADIR%%/library/Zend/OpenId/Provider/Storage
+@dirrm %%DATADIR%%/library/Zend/OpenId/Provider
+@dirrm %%DATADIR%%/library/Zend/OpenId/Extension
+@dirrm %%DATADIR%%/library/Zend/OpenId/Consumer/Storage
+@dirrm %%DATADIR%%/library/Zend/OpenId/Consumer
+@dirrm %%DATADIR%%/library/Zend/OpenId
 @dirrm %%DATADIR%%/library/Zend/Mime
 @dirrm %%DATADIR%%/library/Zend/Memory/Container
 @dirrm %%DATADIR%%/library/Zend/Memory
@@ -2459,7 +3029,32 @@
 @dirrm %%DATADIR%%/library/Zend/Locale/Math
 @dirrm %%DATADIR%%/library/Zend/Locale/Data
 @dirrm %%DATADIR%%/library/Zend/Locale
+@dirrm %%DATADIR%%/library/Zend/Loader/PluginLoader
+@dirrm %%DATADIR%%/library/Zend/Loader
+@dirrm %%DATADIR%%/library/Zend/Ldap
+@dirrm %%DATADIR%%/library/Zend/Layout/Controller/Plugin
+@dirrm %%DATADIR%%/library/Zend/Layout/Controller/Action/Helper
+@dirrm %%DATADIR%%/library/Zend/Layout/Controller/Action
+@dirrm %%DATADIR%%/library/Zend/Layout/Controller
+@dirrm %%DATADIR%%/library/Zend/Layout
 @dirrm %%DATADIR%%/library/Zend/Json
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Xml/Security/Transform
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Xml/Security
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Xml/KeyInfo
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Xml/EncryptedData
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Xml/Element
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Xml/Assertion
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Xml
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Cipher/Symmetric/Aes256cbc
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Cipher/Symmetric/Aes128cbc
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Cipher/Symmetric/Adapter
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Cipher/Symmetric
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Cipher/Pki/Rsa
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Cipher/Pki/Adapter
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Cipher/Pki
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Cipher
+@dirrm %%DATADIR%%/library/Zend/InfoCard/Adapter
+@dirrm %%DATADIR%%/library/Zend/InfoCard
 @dirrm %%DATADIR%%/library/Zend/Http/Client/Adapter
 @dirrm %%DATADIR%%/library/Zend/Http/Client
 @dirrm %%DATADIR%%/library/Zend/Http
@@ -2487,11 +3082,17 @@
 @dirrm %%DATADIR%%/library/Zend/Gdata/App/Extension
 @dirrm %%DATADIR%%/library/Zend/Gdata/App
 @dirrm %%DATADIR%%/library/Zend/Gdata
+@dirrm %%DATADIR%%/library/Zend/Form/Element
+@dirrm %%DATADIR%%/library/Zend/Form/Decorator
+@dirrm %%DATADIR%%/library/Zend/Form
+@dirrm %%DATADIR%%/library/Zend/Filter/Word/Separator
+@dirrm %%DATADIR%%/library/Zend/Filter/Word
 @dirrm %%DATADIR%%/library/Zend/Filter
 @dirrm %%DATADIR%%/library/Zend/Feed/Entry
 @dirrm %%DATADIR%%/library/Zend/Feed/Builder/Header
 @dirrm %%DATADIR%%/library/Zend/Feed/Builder
 @dirrm %%DATADIR%%/library/Zend/Feed
+@dirrm %%DATADIR%%/library/Zend/Db/Table/Select
 @dirrm %%DATADIR%%/library/Zend/Db/Table/Rowset
 @dirrm %%DATADIR%%/library/Zend/Db/Table/Row
 @dirrm %%DATADIR%%/library/Zend/Db/Table
@@ -2517,6 +3118,7 @@
 @dirrm %%DATADIR%%/library/Zend/Controller/Request
 @dirrm %%DATADIR%%/library/Zend/Controller/Plugin
 @dirrm %%DATADIR%%/library/Zend/Controller/Dispatcher
+@dirrm %%DATADIR%%/library/Zend/Controller/Action/Helper/AutoComplete
 @dirrm %%DATADIR%%/library/Zend/Controller/Action/Helper
 @dirrm %%DATADIR%%/library/Zend/Controller/Action
 @dirrm %%DATADIR%%/library/Zend/Controller
@@ -2549,6 +3151,16 @@
 @dirrm %%DATADIR%%/demos/Zend/Search/Lucene
 @dirrm %%DATADIR%%/demos/Zend/Search
 @dirrm %%DATADIR%%/demos/Zend/Pdf
+@dirrm %%DATADIR%%/demos/Zend/OpenId/templates
+@dirrm %%DATADIR%%/demos/Zend/OpenId/mvc_auth/html
+@dirrm %%DATADIR%%/demos/Zend/OpenId/mvc_auth/application/views/scripts/index
+@dirrm %%DATADIR%%/demos/Zend/OpenId/mvc_auth/application/views/scripts/error
+@dirrm %%DATADIR%%/demos/Zend/OpenId/mvc_auth/application/views/scripts
+@dirrm %%DATADIR%%/demos/Zend/OpenId/mvc_auth/application/views
+@dirrm %%DATADIR%%/demos/Zend/OpenId/mvc_auth/application/controllers
+@dirrm %%DATADIR%%/demos/Zend/OpenId/mvc_auth/application
+@dirrm %%DATADIR%%/demos/Zend/OpenId/mvc_auth
+@dirrm %%DATADIR%%/demos/Zend/OpenId
 @dirrm %%DATADIR%%/demos/Zend/Mail/mbox/subfolder
 @dirrm %%DATADIR%%/demos/Zend/Mail/mbox
 @dirrm %%DATADIR%%/demos/Zend/Mail/maildir
@@ -2559,14 +3171,19 @@
 @dirrm %%DATADIR%%/demos/Zend
 @dirrm %%DATADIR%%/demos
 @dirrm %%DATADIR%%
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Search/Lucene/_files/_index
-@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Search/Lucene/Storage/_tempFiles
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Search/Lucene/_index/_files
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Search/Lucene/_files
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Search/Lucene/Storage/_tempFiles/_files
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/OpenId/_files
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/OpenId/Provider/Storage/_files
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/OpenId/Consumer/Storage/_files
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Memory/_files
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Db/Table/_files
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/views/helpers
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/views/filters
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/scripts
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/foo/views/helpers
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/default/controllers
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/helpers
 @exec mkdir -p %D/%%DATADIR%%/tests/Zend/Controller/_files/modules/bar/views/filters
-@exec mkdir -p %D/%%DATADIR%%/library/Zend/View/Filter
+@exec mkdir -p %D/%%DATADIR%%/tests/Zend/Auth/Adapter/OpenId/_files
