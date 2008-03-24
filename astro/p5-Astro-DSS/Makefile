@@ -9,12 +9,11 @@
 PORTNAME=	Astro-DSS
 PORTVERSION=	1.6.1
 CATEGORIES=	astro perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		http://www.estar.org.uk/software/
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Astro
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	An OO interface to the 1st and 2nd Digital Sky Surveys
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
