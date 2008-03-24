@@ -8,7 +8,7 @@
 
 PORTNAME=	policykit
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 DISTNAME=	PolicyKit-${PORTVERSION}
@@ -16,8 +16,7 @@ DISTNAME=	PolicyKit-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Framework for controlling access to system-wide components
 
-BUILD_DEPENDS=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
-    		${LOCALBASE}/share/sgml/docbook/4.1/catalog:${PORTSDIR}/textproc/docbook-410 \
+BUILD_DEPENDS=	${LOCALBASE}/share/sgml/docbook/4.1/catalog:${PORTSDIR}/textproc/docbook-410 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
