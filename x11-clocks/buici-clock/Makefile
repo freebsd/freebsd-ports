@@ -7,7 +7,7 @@
 
 PORTNAME=	buici-clock
 PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.buici.com/pub/buici-clock/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,9 +18,9 @@ COMMENT=	Xlib implementation of an attractive, configurable clock
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BISON=	build
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_XORG=	x11 xau xdmcp xext ice
 
 MAN1=	buici-clock.1
 PLIST_FILES=	bin/buici-clock

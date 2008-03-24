@@ -7,7 +7,7 @@
 
 PORTNAME=	mlclock
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www2u.biglobe.ne.jp/~y-miyata/mlvwm/
 
@@ -15,8 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clock for mlvwm window manager
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xau xdmcp
 
 PLIST_FILES=	bin/mlclock %%DATADIR%%/mlclockrc %%DATADIR%%/mlclockrc-kanji
 PLIST_DIRS=	%%DATADIR%%

@@ -7,7 +7,7 @@
 
 PORTNAME=	pclock
 PORTVERSION=	0.13.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -17,8 +17,7 @@ COMMENT=	Simple analog clock program for the Window Maker dock
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig/src
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xau xdmcp xext xpm
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" OBJS="Main.o Graphics.o" \
 		INCDIR="-I. -I${X11BASE}/include ${CPPFLAGS}" \
 		LIBDIR="-L${X11BASE}/lib ${LDFLAGS}"
