@@ -1,0 +1,5 @@
+libexec/telepathy-haze
+share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.haze.service
+share/telepathy/managers/haze.manager
+@dirrmtry share/telepathy/managers
+@dirrmtry share/telepathy
