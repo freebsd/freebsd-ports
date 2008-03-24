@@ -2213,6 +2213,7 @@
     SUBDIR += ruby-rudl
     SUBDIR += ruby-sdl
     SUBDIR += ruby-setup.rb
+    SUBDIR += ruby-sexp
     SUBDIR += ruby-slang
     SUBDIR += ruby-strongtyping
     SUBDIR += ruby-sysvipc
