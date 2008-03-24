@@ -9,9 +9,9 @@ PORTNAME=	cpige
 DISTVERSION=	1.4-2
 CATEGORIES=	audio
 MASTER_SITES=	http://ed.zehome.com/cpige/ \
-		http://sce-tindy.tecnik93.com/FreeBSD/ports/cpige/
+		http://sce-tindy.tecnik93.com/FreeBSD/ports/sources/cpige/
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Icecast/Shoutcast stream ripper
 
 USE_GMAKE=	yes
