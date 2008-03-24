@@ -131,6 +131,7 @@
     SUBDIR += telepathy-glib
     SUBDIR += telepathy-haze
     SUBDIR += telepathy-idle
+    SUBDIR += telepathy-mission-control
     SUBDIR += telepathy-python
     SUBDIR += telepathy-qt
     SUBDIR += telepathy-salut
