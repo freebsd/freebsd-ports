@@ -7,7 +7,8 @@
 
 PORTNAME=	gcombust
 PORTVERSION=	0.1.55
-PORTREVISION=	3
+PORTREVISION=	4
+
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 
@@ -17,7 +18,6 @@ COMMENT=	A GTK+ frontend for mkisofs and cdrecord
 RUN_DEPENDS=	cdlabelgen:${PORTSDIR}/print/cdlabelgen
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk12 gnomehier
 USE_CDRTOOLS=	yes

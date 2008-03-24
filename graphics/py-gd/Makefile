@@ -18,7 +18,7 @@ COMMENT=	Python interface to the GD library
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 .if !defined(WITHOUT_X11)
-USE_XPM=	yes
+USE_XORG=	xpm
 .endif
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

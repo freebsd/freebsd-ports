@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrell
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gamma.so
-USE_X_PREFIX=	yes
 MAKE_ENV=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins
 ALL_TARGET=	gamma.so
 

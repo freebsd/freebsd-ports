@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_XLIB=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 

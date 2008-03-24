@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 
 pre-everything::

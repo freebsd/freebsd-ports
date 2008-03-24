@@ -23,7 +23,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libgui libmcs libutil mcsmanager panel
-USE_XLIB=	yes
 
 OPTIONS=	DBUS	"Enable D-BUS support"			on
 

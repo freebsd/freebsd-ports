@@ -7,6 +7,7 @@
 
 PORTNAME=	gtstarter
 PORTVERSION=	0.4.6.3
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://webonaut.com/distfiles/${PORTNAME}/
 
@@ -14,7 +15,6 @@ MAINTAINER=	klammer@webonaut.com
 COMMENT=	Start gnome-terminal from a list of configured profiles (incl. Applet)
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygnome2 pygnomeextras gnomeprefix
 

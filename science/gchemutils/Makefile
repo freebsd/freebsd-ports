@@ -24,7 +24,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack intlhack libglade2 libgnomeprintui libgnomeui gnomedocutils
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

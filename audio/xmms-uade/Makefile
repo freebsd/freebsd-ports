@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-uade
 PORTVERSION=	2.05
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
 		http://critical.ch/distfiles/
@@ -21,7 +22,6 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 HAS_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

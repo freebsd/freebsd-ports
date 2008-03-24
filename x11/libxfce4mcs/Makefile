@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack gnometarget pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil
-USE_XLIB=	yes
 
 OPTIONS=	GTKDOC	"install the library documentation"	off \
 		STARTUP "Enable startup notification support"	on

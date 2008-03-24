@@ -7,7 +7,7 @@
 
 PORTNAME=	megapov
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://megapov.inetart.net/packages/unix/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -22,7 +22,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_XLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# empty

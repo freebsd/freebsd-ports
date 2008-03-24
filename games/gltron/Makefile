@@ -7,7 +7,7 @@
 
 PORTNAME=	gltron
 PORTVERSION=	0.70
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,6 @@ COMMENT=	A 3D worm game for two players for X Window System
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_SDL=	sdl sound
 USE_GMAKE=	yes

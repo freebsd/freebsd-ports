@@ -7,7 +7,7 @@
 
 PORTNAME=	vgba
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/VGBA/
 PKGNAMESUFFIX=	-bin
@@ -18,7 +18,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Virtual GameBoy Advance is an emulator of Nintendo GameBoy Advance(TM)
 
 ONLY_FOR_ARCHS=	i386
-USE_X_PREFIX=	yes
 NO_BUILD=	no
 NO_WRKSUBDIR=	no
 

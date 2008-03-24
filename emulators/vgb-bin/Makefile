@@ -7,7 +7,7 @@
 
 PORTNAME=	vgb
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/VGB/
@@ -19,7 +19,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator (closed binary version of vgb)
 
 IA32_BINARY_PORT=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	no
 NO_WRKSUBDIR=	no
 

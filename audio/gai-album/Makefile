@@ -7,7 +7,7 @@
 
 PORTNAME=	gai-album
 PORTVERSION=	0.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gai
@@ -19,7 +19,6 @@ LIB_DEPENDS=	gai:${PORTSDIR}/x11-toolkits/gai \
 		xmms:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
 

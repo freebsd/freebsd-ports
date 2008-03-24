@@ -7,7 +7,7 @@
 
 PORTNAME=	astime
 PORTVERSION=	2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/apps/astime/ \
 		http://www.tigr.net/afterstep/download/astime/
@@ -15,8 +15,7 @@ MASTER_SITES=	ftp://ftp.afterstep.org/apps/astime/ \
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	Time/Date applet for WindowMaker
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-xpm-library="${X11BASE}/lib" --with-xpm-includes="${X11BASE}/include/X11"
 INSTALL_TARGET=	install install.man

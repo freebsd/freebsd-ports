@@ -18,7 +18,6 @@ COMMENT=	An XFCE engine for GTK 2.0
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gtk20 pkgconfig
-USE_XLIB=	yes
 USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
 
 .include <bsd.port.mk>

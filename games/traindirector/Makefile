@@ -7,7 +7,7 @@
 
 PORTNAME=	traindirector
 PORTVERSION=	1.19c
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://xtsl.free.fr/119c/
 DISTNAME=	traindir-${PORTVERSION}-src
@@ -18,7 +18,6 @@ COMMENT=	Train controller simulation
 WRKSRC=		${WRKDIR}/traindir-${PORTVERSION}
 
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_BZIP2=	yes
 

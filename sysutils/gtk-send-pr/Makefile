@@ -17,7 +17,6 @@ COMMENT=	GTK2 send-pr tool
 LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
 
 USE_GNOME=	gtk20
-USE_X_PREFIX=	yes
 
 MAN1=		gtk-send-pr.1
 PLIST_FILES=	bin/gtk-send-pr share/pixmaps/ladybird64.xpm

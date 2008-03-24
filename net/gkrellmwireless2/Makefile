@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellmwireless
 PORTVERSION=	2.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	http://gkrellm.luon.net/files/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 WRKSRC=		${WRKDIR}/gkrellmwireless
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

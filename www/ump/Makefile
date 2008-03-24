@@ -7,7 +7,7 @@
 
 PORTNAME=	ump
 PORTVERSION=	1.10
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:timidity/} \
 		http://www.geocities.com/SiliconValley/Lab/2826/1-10/:ump \
@@ -40,8 +40,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ump --with-default-path=${LOCALBASE}/share/timidity
 CONFIGURE_ENV=	LDFLAGS=-export-dynamic
 USE_GMAKE=	yes
-USE_XLIB=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xmu
 WANT_GNOME=	yes
 # CONFIGURE_ARGS+=	--enable-motif
 EXTRA_PATCHES=	${PORTSDIR}/audio/timidity++/files/*

@@ -7,7 +7,7 @@
 
 PORTNAME=	metaocaml
 PORTVERSION=	3.09.a30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.metaocaml.org/dist/old/
 DISTNAME=	MetaOCaml_309_alpha_030
@@ -75,7 +75,7 @@ PLISTDIR=	${PREFIX}/lib/metaocaml \
 MANPREFIX=	${PREFIX}/share/metaocaml
 
 .if defined(WITH_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 CONFIGURE_ARGS+=-x11include ${X11BASE}/include -x11lib ${X11BASE}/lib
 PLIST_SUB+=	X11=""
 .else

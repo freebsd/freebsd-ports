@@ -26,7 +26,6 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20 gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libgui libmcs libutil mcsmanager panel
-USE_XLIB=	yes
 
 OPTIONS=	FAM	"Enable FAM support"		on \
 		THUNAR	"Enable thunar support"		on

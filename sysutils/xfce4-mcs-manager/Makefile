@@ -23,6 +23,5 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libgui libmcs
-USE_XLIB=	yes
 
 .include <bsd.port.mk>

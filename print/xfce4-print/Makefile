@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libgui libmcs libutil mcsmanager
-USE_XLIB=	yes
 
 OPTIONS=	LPR	"Use lpr as printing system"		on \
 		CUPS	"Use cups as printing system"		off \

@@ -6,7 +6,7 @@
 
 PORTNAME=	cyberbit-ttfonts
 PORTVERSION=	2.0.20050220
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/
 DISTFILES=	Cyberbit.ZIP
@@ -22,7 +22,6 @@ COMMENT=	Bitstream Cyberbit is a TrueType font covers Unicode 2.0
 
 RESTRICTED=	"Redistribution not permitted; single user license only."
 
-USE_X_PREFIX=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
 

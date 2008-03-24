@@ -7,7 +7,7 @@
 
 PORTNAME=	ecamegapedal
 PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libecasound.a:${PORTSDIR}/audio/ecasound
 
 JACKDIR=	${LOCALBASE}/include/jack
 USE_QT_VER=	3
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

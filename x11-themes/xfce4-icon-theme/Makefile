@@ -22,7 +22,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget intltool intlhack
 USE_XFCE=	configenv
-USE_XLIB=	yes
 WANT_GNOME=	yes
 
 .include <bsd.port.mk>

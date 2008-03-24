@@ -7,7 +7,7 @@
 
 PORTNAME=	xclick
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://members.shaw.ca/gehrehmee/ \
 		http://bg.rifetech.com/
@@ -17,8 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Generates X11 mouse button click events
 
-USE_X_PREFIX=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 xtst xext xfixes xi
 
 PLIST_FILES=	bin/${PORTNAME}
 
