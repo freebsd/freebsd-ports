@@ -62,6 +62,7 @@ share/zoneinfo/America/Argentina/La_Rioja
 share/zoneinfo/America/Argentina/Mendoza
 share/zoneinfo/America/Argentina/Rio_Gallegos
 share/zoneinfo/America/Argentina/San_Juan
+share/zoneinfo/America/Argentina/San_Luis
 share/zoneinfo/America/Argentina/Tucuman
 share/zoneinfo/America/Argentina/Ushuaia
 share/zoneinfo/America/Aruba
@@ -209,7 +210,6 @@ share/zoneinfo/Asia/Bangkok
 share/zoneinfo/Asia/Beirut
 share/zoneinfo/Asia/Bishkek
 share/zoneinfo/Asia/Brunei
-share/zoneinfo/Asia/Calcutta
 share/zoneinfo/Asia/Choibalsan
 share/zoneinfo/Asia/Chongqing
 share/zoneinfo/Asia/Colombo
@@ -220,6 +220,7 @@ share/zoneinfo/Asia/Dubai
 share/zoneinfo/Asia/Dushanbe
 share/zoneinfo/Asia/Gaza
 share/zoneinfo/Asia/Harbin
+share/zoneinfo/Asia/Ho_Chi_Minh
 share/zoneinfo/Asia/Hong_Kong
 share/zoneinfo/Asia/Hovd
 share/zoneinfo/Asia/Irkutsk
@@ -232,6 +233,7 @@ share/zoneinfo/Asia/Kamchatka
 share/zoneinfo/Asia/Karachi
 share/zoneinfo/Asia/Kashgar
 share/zoneinfo/Asia/Katmandu
+share/zoneinfo/Asia/Kolkata
 share/zoneinfo/Asia/Krasnoyarsk
 share/zoneinfo/Asia/Kuala_Lumpur
 share/zoneinfo/Asia/Kuching
@@ -252,7 +254,6 @@ share/zoneinfo/Asia/Qatar
 share/zoneinfo/Asia/Qyzylorda
 share/zoneinfo/Asia/Rangoon
 share/zoneinfo/Asia/Riyadh
-share/zoneinfo/Asia/Saigon
 share/zoneinfo/Asia/Sakhalin
 share/zoneinfo/Asia/Samarkand
 share/zoneinfo/Asia/Seoul
@@ -276,7 +277,6 @@ share/zoneinfo/Atlantic/Bermuda
 share/zoneinfo/Atlantic/Canary
 share/zoneinfo/Atlantic/Cape_Verde
 share/zoneinfo/Atlantic/Faroe
-share/zoneinfo/Atlantic/Jan_Mayen
 share/zoneinfo/Atlantic/Madeira
 share/zoneinfo/Atlantic/Reykjavik
 share/zoneinfo/Atlantic/South_Georgia
