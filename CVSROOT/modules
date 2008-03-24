@@ -1299,6 +1299,7 @@ checkpassword-pam	ports/security/checkpassword-pam
 checkrdf	ports/deskutils/checkrdf
 checkservice	ports/sysutils/checkservice
 cheech		ports/games/cheech
+cheese		ports/multimedia/cheese
 cheesetracker	ports/audio/cheesetracker
 cheetah		ports/www/cheetah
 chef		ports/misc/chef
@@ -2629,6 +2630,7 @@ epic4		ports/irc/epic4
 epic5		ports/irc/epic5
 epiphany	ports/www/epiphany
 epiphany-extensions	ports/www/epiphany-extensions
+epiphany-webkit	ports/www/epiphany-webkit
 epiwm		ports/x11-wm/epiwm
 epix		ports/graphics/epix
 epkg		ports/archivers/epkg
@@ -2783,6 +2785,7 @@ excido		ports/games/excido
 exctags		ports/devel/ctags
 execline	ports/lang/execline
 execwrap	ports/security/execwrap
+exempi		ports/textproc/exempi
 exhaust		ports/games/exhaust
 exhaust-doc	ports/games/exhaust-doc
 exhaust-ma	ports/games/exhaust-ma
@@ -3767,6 +3770,7 @@ gimpshop	ports/graphics/gimpshop
 gindent		ports/devel/gindent
 gini		ports/net/gini
 ginsu		ports/net-im/ginsu
+gio-fam-backend	ports/devel/gio-fam-backend
 giram		ports/graphics/giram
 gish-demo	ports/games/gish-demo
 git		ports/misc/git
@@ -3971,6 +3975,7 @@ gnome-db	ports/databases/gnome-db
 gnome-desktop	ports/x11/gnome-desktop
 gnome-desktop-reference	ports/x11/gnome-desktop-reference
 gnome-devel-docs	ports/misc/gnome-devel-docs
+gnome-device-manager	ports/sysutils/gnome-device-manager
 gnome-doc-utils	ports/textproc/gnome-doc-utils
 gnome-font-sampler	ports/x11-fonts/gnome-font-sampler
 gnome-games	ports/games/gnome-games
@@ -3997,7 +4002,6 @@ gnome-icons-ximian-south	ports/x11-themes/gnome-icons-ximian-south
 gnome-industrial-theme	ports/x11-themes/gnome-industrial-theme
 gnome-jabber	ports/net-im/gnome-jabber
 gnome-keyring	ports/security/gnome-keyring
-gnome-keyring-manager	ports/security/gnome-keyring-manager
 gnome-launch-box	ports/x11/gnome-launch-box
 gnome-libs	ports/x11/gnome-libs
 gnome-look	ports/x11-themes/gnome-look
@@ -4023,6 +4027,7 @@ gnome-print	ports/print/gnome-print
 gnome-schedule	ports/sysutils/gnome-schedule
 gnome-screensaver	ports/x11/gnome-screensaver
 gnome-session	ports/x11/gnome-session
+gnome-settings-daemon	ports/sysutils/gnome-settings-daemon
 gnome-sharp20	ports/x11-toolkits/gnome-sharp20
 gnome-speech	ports/accessibility/gnome-speech
 gnome-spell	ports/textproc/gnome-spell
@@ -4346,6 +4351,8 @@ gstreamer-plugins-flac		ports/audio/gstreamer-plugins-flac
 gstreamer-plugins-fluendo-mp3	ports/audio/gstreamer-plugins-fluendo-mp3
 gstreamer-plugins-fluendo-mpegdemux	ports/multimedia/gstreamer-plugins-fluendo-mpegdemux
 gstreamer-plugins-gconf		ports/devel/gstreamer-plugins-gconf
+gstreamer-plugins-gdkpixbuf	ports/graphics/gstreamer-plugins-gdkpixbuf
+gstreamer-plugins-gio		ports/devel/gstreamer-plugins-gio
 gstreamer-plugins-gnomevfs	ports/devel/gstreamer-plugins-gnomevfs
 gstreamer-plugins-gnonlin 	ports/multimedia/gstreamer-plugins-gnonlin
 gstreamer-plugins-good	ports/multimedia/gstreamer-plugins-good
@@ -4376,15 +4383,19 @@ gstreamer-plugins-sdl		ports/devel/gstreamer-plugins-sdl
 gstreamer-plugins-shout2	ports/audio/gstreamer-plugins-shout2
 gstreamer-plugins-sidplay	ports/audio/gstreamer-plugins-sidplay
 gstreamer-plugins-sndfile	ports/audio/gstreamer-plugins-sndfile
+gstreamer-plugins-soundtouch	ports/audio/gstreamer-plugins-soundtouch
+gstreamer-plugins-soup		ports/devel/gstreamer-plugins-soup
 gstreamer-plugins-spc	ports/audio/gstreamer-plugins-spc
 gstreamer-plugins-speex		ports/audio/gstreamer-plugins-speex
 gstreamer-plugins-swfdec	ports/graphics/gstreamer-plugins-swfdec
+gstreamer-plugins-taglib	ports/audio/gstreamer-plugins-taglib
 gstreamer-plugins-theora	ports/multimedia/gstreamer-plugins-theora
 gstreamer-plugins-ugly	ports/multimedia/gstreamer-plugins-ugly
 gstreamer-plugins-vorbis	ports/audio/gstreamer-plugins-vorbis
 gstreamer-plugins-wavpack	ports/audio/gstreamer-plugins-wavpack
 gstreamer-plugins-x264	ports/multimedia/gstreamer-plugins-x264
 gstreamer-plugins-xvid		ports/multimedia/gstreamer-plugins-xvid
+gstreamermm			ports/multimedia/gstreamermm
 gsubedit	ports/multimedia/gsubedit
 gsynaptics	ports/x11/gsynaptics
 gsystem		ports/science/gsystem
@@ -4557,6 +4568,7 @@ gutenprint-foomatic	ports/print/gutenprint-foomatic
 gutenprint-ijs	ports/print/gutenprint-ijs
 gv		ports/print/gv
 gv-aspell	ports/textproc/gv-aspell
+gvfs		ports/devel/gvfs
 gview		ports/graphics/gview
 gwave		ports/cad/gwave
 gwee		ports/security/gwee
@@ -4600,7 +4612,7 @@ hackedbox	ports/x11-wm/hackedbox
 hafiye		ports/security/hafiye
 hagelslag	ports/net-p2p/hagelslag
 hal		ports/sysutils/hal
-hal-device-manager	ports/sysutils/hal-device-manager
+hal-info	ports/sysutils/hal-info
 hamachi		ports/security/hamachi
 hamfax		ports/comms/hamfax
 hamlib		ports/comms/hamlib
@@ -6700,6 +6712,7 @@ libgtkhtml	ports/www/libgtkhtml
 libgtksourceviewmm	ports/x11-toolkits/libgtksourceviewmm
 libgtop		ports/devel/libgtop
 libgutenfetch	ports/devel/libgutenfetch
+libgweather	ports/net/libgweather
 libharu		ports/print/libharu
 libhash		ports/devel/libhash
 libhid		ports/devel/libhid
@@ -6892,6 +6905,7 @@ libsocket++	ports/net/libsocket++
 libsocketcpp	ports/net/libsocketcpp
 libsoup		ports/devel/libsoup
 libsoup-reference	ports/devel/libsoup-reference
+libspectre	ports/print/libspectre
 libspectrum	ports/emulators/libspectrum
 libspf		ports/mail/libspf
 libspf-alt	ports/mail/libspf-alt
@@ -7648,6 +7662,7 @@ micro_proxy	ports/net/micro_proxy
 microdc2	ports/net-p2p/microdc2
 middleman	ports/www/middleman
 midimountain	ports/audio/midimountain
+midori		ports/www/midori
 mifluz		ports/textproc/mifluz
 migrate		ports/biology/migrate
 mikmod		ports/audio/mikmod
@@ -7949,6 +7964,7 @@ mount.app	ports/sysutils/mount.app
 mountsmb2	ports/sysutils/mountsmb2
 mouseclock	ports/x11-clocks/mouseclock
 mousepad	ports/editors/mousepad
+mousetweaks	ports/accessibility/mousetweaks
 movemail	ports/mail/movemail
 movingmotif	ports/x11-toolkits/movingmotif
 mowitz		ports/x11-toolkits/mowitz
@@ -8273,6 +8289,8 @@ nctop		ports/sysutils/nctop
 ncurses		ports/devel/ncurses
 ncurses-devel	ports/devel/ncurses-devel
 nd		ports/www/nd
+ndesk-dbus	ports/devel/ndesk-dbus
+ndesk-dbus-glib	ports/devel/ndesk-dbus-glib
 ndiff		ports/math/ndiff
 ndir		ports/sysutils/ndir
 ndisc6		ports/net/ndisc6
@@ -12843,6 +12861,7 @@ poker-engine	ports/games/poker-engine
 poker-eval	ports/games/poker-eval
 pokerth		ports/games/pokerth
 policykit	ports/sysutils/policykit
+policykit-gnome	ports/sysutils/policykit-gnome
 polipo		ports/www/polipo
 poly1305aes	ports/security/poly1305aes
 polygraph	ports/benchmarks/polygraph
@@ -15733,6 +15752,7 @@ swarp		ports/x11/swarp
 swatch		ports/security/swatch
 sweep		ports/audio/sweep
 swfdec		ports/graphics/swfdec
+swfdec-gnome	ports/multimedia/swfdec-gnome
 swfdec-plugin	ports/www/swfdec-plugin
 swfmill		ports/graphics/swfmill
 swftools	ports/graphics/swftools
@@ -16196,6 +16216,7 @@ toshctl		ports/sysutils/toshctl
 tosvcd		ports/multimedia/tosvcd
 totd		ports/dns/totd
 totem		ports/multimedia/totem
+totem-pl-parser	ports/multimedia/totem-pl-parser
 totem-xine	ports/multimedia/totem-xine
 tovid		ports/multimedia/tovid
 towitoko	ports/devel/towitoko
@@ -16846,6 +16867,7 @@ webfwlog	ports/security/webfwlog
 webglimpse	ports/www/webglimpse
 webinject	ports/www/webinject
 webjob		ports/sysutils/webjob
+webkit-gtk2	ports/www/webkit-gtk2
 weblint		ports/www/weblint
 weblint++	ports/www/weblint++
 webmin		ports/sysutils/webmin
