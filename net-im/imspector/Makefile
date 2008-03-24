@@ -21,6 +21,10 @@ USE_RC_SUBR=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+BROKEN=		does not compile, needs to fix /usr/include/net/pfvar.h
+.endif
+
 MAKE_ENV+=	ETCDIR=${ETCDIR}
 
 post-patch:
