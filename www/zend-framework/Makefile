@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	1.0.4
+PORTVERSION=	1.5.0
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/${DISTNAME}/ GENTOO/distfiles
 
@@ -16,7 +16,6 @@ COMMENT=	A framework for developing PHP web applications
 NO_BUILD=	yes
 USE_PHP=	pcre spl
 WANT_PHP_WEB=	yes
-USE_GETTEXT=	yes
 
 SUB_FILES=	pkg-message
 
