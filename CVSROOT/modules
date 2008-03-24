@@ -802,6 +802,7 @@ bebocd		ports/audio/bebocd
 bed		ports/editors/bed
 bedic-data	ports/textproc/bedic-data
 beecrypt	ports/security/beecrypt
+beediff		ports/textproc/beediff
 beep		ports/audio/beep
 beep-media-player	ports/multimedia/beep-media-player
 beforelight	ports/x11/beforelight
