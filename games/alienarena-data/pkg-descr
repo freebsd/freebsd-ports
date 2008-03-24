@@ -1,16 +1,12 @@
-AA2K7 is the latest version of a freeware online deathmatch game that was
-first introduced to the public in October, 2004. Since that initial release,
-nearly every aspect of the game has been revamped, in fact, much of the
-content and code from the November 2005 release of Alien Arena 2006 has been
-redone as well.  It's like an entirely new game, and it may shock people just
-how much it has improved in less than a year's time. With 35 levels, five
-modes of play, loads of mutators, built-in bots, 11 player characters, 8
-weapons(with alt-fire modes), the game has an endless supply of replayability.
-With so many new features, AA2K7 is nearly an entirely new game when held in
-comparison to it's predecessor. With the trials and tribulations of software
-development, endless hours of playing, gathering feedback, COR Entertainment
-has been able to not only fine tune and perfect it's flagship game, but add
-completely new dimensions to it.
+Alien Arena 2008 is a free standalone deathmatch game based on source code
+released by id Software. Begun by COR Entertainment in 2004, the game combines
+a 1950s-era sci-fi atmosphere with gameplay similar to the Quake, Doom, and
+Unreal Tournament series. Alien Arena focuses mainly on online multiplayer
+action, although it does contain single player campaigns against bots.
+
+Alien Arena has been released for Microsoft Windows, Linux and FreeBSD. Alien
+Arena has been free-to-play since its inception, and there are currently no
+plans to change it to pay-to-play.
 
 Note: this port only contains the data needed to run Alien Arena, shared by
 the Linux and native ports of the game engine. To play Alien Arena you have to

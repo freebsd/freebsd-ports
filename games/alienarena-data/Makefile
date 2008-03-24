@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007.610
+PORTVERSION=	2008
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.simtel.com/pub/gamezone/31/5/17/
+MASTER_SITES=	http://offload1.icculus.org/alienarena/Files/
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}2007-20071011-linux
+DISTNAME=	${PORTNAME}2008-linux20080227
 
 MAINTAINER=	alepulver@FreeBSD.org
-COMMENT=	Alien Arena 2006 (data)
+COMMENT=	Alien Arena 2008 (data)
 
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Package will be 185MB, set FORCE_PACKAGE if you want it
-WRKSRC=		${WRKDIR}/${PORTNAME}2007
+WRKSRC=		${WRKDIR}/${PORTNAME}2008
 
 .include <bsd.port.pre.mk>
 
