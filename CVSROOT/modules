@@ -2571,6 +2571,7 @@ emma		ports/databases/emma
 emms		ports/audio/emms
 emotion		ports/multimedia/emotion
 emovix		ports/multimedia/emovix
+empathy		ports/databases/empathy
 emphasis	ports/audio/emphasis
 empire		ports/games/empire
 empower		ports/sysutils/empower
@@ -6644,6 +6645,12 @@ libgda		ports/databases/libgda
 libgda2		ports/databases/libgda2
 libgda2-reference	ports/databases/libgda2-reference
 libgda3		ports/databases/libgda3
+libgda3-firebird	ports/databases/libgda3-firebird
+libgda3-freetds		ports/databases/libgda3-freetds
+libgda3-ldap		ports/databases/libgda3-mdb
+libgda3-mysql		ports/databases/libgda3-mysql
+libgda3-odbc		ports/databases/libgda3-odbc
+libgda3-postgresql	ports/databases/libgda3-postgresql
 libgda3-reference	ports/databases/libgda3-reference
 libgdamm	ports/databases/libgdamm
 libgdgeda	ports/graphics/libgdgeda
@@ -6905,6 +6912,7 @@ libsocket++	ports/net/libsocket++
 libsocketcpp	ports/net/libsocketcpp
 libsoup		ports/devel/libsoup
 libsoup-reference	ports/devel/libsoup-reference
+libsoup22	ports/devel/libsoup22
 libspectre	ports/print/libspectre
 libspectrum	ports/emulators/libspectrum
 libspf		ports/mail/libspf
@@ -7590,6 +7598,7 @@ meqcc		ports/games/meqcc
 mercator	ports/devel/mercator
 mercurial	ports/devel/mercurial
 mercury		ports/net-im/mercury
+mergeant	ports/databases/mergeant
 mergelog	ports/www/mergelog
 merlin		ports/games/merlin
 merlinmon	ports/net/merlinmon
@@ -14313,6 +14322,7 @@ rgbpaint	ports/graphics/rgbpaint
 rhino		ports/lang/rhino
 rhtvision	ports/devel/rhtvision
 rhythmbox	ports/audio/rhythmbox
+rhythmbox-devel	ports/audio/rhythmbox-devel
 ri-li		ports/games/ri-li
 richtext	ports/editors/richtext
 ricochet	ports/mail/ricochet
@@ -15959,7 +15969,9 @@ telak		ports/graphics/telak
 telbook		ports/misc/telbook
 telepathy-gabble	ports/net-im/telepathy-gabble
 telepathy-glib	ports/net-im/telepathy-glib
+telepathy-haze	ports/net-im/telepathy-haze
 telepathy-idle	ports/net-im/telepathy-idle
+telepathy-mission-control	ports/net-im/telepathy-mission-control
 telepathy-qt	ports/net-im/telepathy-qt
 telepathy-salut	ports/net-im/telepathy-salut
 tellico		ports/misc/tellico
