@@ -11,7 +11,7 @@ CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
 DISTNAME=	Azureus_${PORTVERSION}_source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rnoland@2hip.net
 COMMENT=	A BitTorrent client written in Java
 
 BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \

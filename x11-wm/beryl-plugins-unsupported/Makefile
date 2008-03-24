@@ -10,7 +10,7 @@ PORTVERSION=	0.2.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.beryl-project.org/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rnoland@2hip.net
 COMMENT=	Additional Plugins for Beryl Composite/Window Manager
 
 # XXX - Might depends on graphics/libsvg-cairo instead.
