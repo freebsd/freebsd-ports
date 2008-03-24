@@ -1,5 +1,9 @@
-include/telepathy-1.0/libtelepathy/_gen-tp-constants.h
-include/telepathy-1.0/libtelepathy/_gen-tp-interfaces.h
+include/telepathy-1.0/libtelepathy/_gen-tp-constants-deprecated-aliases.h
+include/telepathy-1.0/libtelepathy/_gen-tp-constants-deprecated.h
+include/telepathy-1.0/libtelepathy/_gen-tp-constants-whitelist-aliases.h
+include/telepathy-1.0/libtelepathy/_gen-tp-interfaces-deprecated-aliases.h
+include/telepathy-1.0/libtelepathy/_gen-tp-interfaces-deprecated.h
+include/telepathy-1.0/libtelepathy/_gen-tp-interfaces-whitelist-aliases.h
 include/telepathy-1.0/libtelepathy/tp-ch-gen.h
 include/telepathy-1.0/libtelepathy/tp-chan-gen.h
 include/telepathy-1.0/libtelepathy/tp-chan-iface-chat-state-gen.h
@@ -15,6 +19,7 @@ include/telepathy-1.0/libtelepathy/tp-chan-type-contact-list-gen.h
 include/telepathy-1.0/libtelepathy/tp-chan-type-room-list-gen.h
 include/telepathy-1.0/libtelepathy/tp-chan-type-streamed-media-gen.h
 include/telepathy-1.0/libtelepathy/tp-chan-type-text-gen.h
+include/telepathy-1.0/libtelepathy/tp-chan-type-tubes-gen.h
 include/telepathy-1.0/libtelepathy/tp-chan.h
 include/telepathy-1.0/libtelepathy/tp-conn-gen.h
 include/telepathy-1.0/libtelepathy/tp-conn-iface-aliasing-gen.h
@@ -42,7 +47,7 @@ include/telepathy-1.0/libtelepathy/tp-props-iface.h
 lib/libtelepathy.a
 lib/libtelepathy.la
 lib/libtelepathy.so
-lib/libtelepathy.so.5
+lib/libtelepathy.so.2
 libdata/pkgconfig/libtelepathy.pc
-@dirrmtry include/telepathy-1.0/libtelepathy
-@dirrmtry include/telepathy-1.0
+@dirrm include/telepathy-1.0/libtelepathy
+@dirrm include/telepathy-1.0
