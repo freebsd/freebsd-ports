@@ -7,7 +7,7 @@
 
 PORTNAME=	hgl
 PORTVERSION=	2.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics haskell
 MASTER_SITES=	http://haskell.org/graphics/downloads/
 PKGNAMEPREFIX=	hs-
@@ -20,7 +20,7 @@ RUN_DEPENDS=	hugs:${PORTSDIR}/lang/hugs
 
 WRKSRC=		${WRKDIR}/graphics-${PORTVERSION}
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 
 HGL_LIBS=	${PREFIX}/lib/hugs/x11
 HGL_DOCS=	${PREFIX}/share/doc/hs-hgl

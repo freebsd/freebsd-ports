@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-rootvis
 PORTVERSION=	0.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	bmp-plugins
@@ -23,7 +23,6 @@ PLIST_FILES=	lib/bmp/Visualization/librootvis.so \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.mk>

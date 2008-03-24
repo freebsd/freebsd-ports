@@ -7,6 +7,7 @@
 
 PORTNAME=	gkrellfire
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.freenet.de/thomas-steinke/ \
 		${MASTER_SITE_LOCAL}
@@ -20,7 +21,6 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrell
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 PLIST_FILES=	libexec/gkrellm2/plugins/${PORTNAME}.so
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}"
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	sharefonts
 PORTVERSION=	0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 
@@ -17,8 +17,6 @@ COMMENT=	A collection of shareware ATM fonts from the CICA archives
 RESTRICTED=	"Shareware.  Cannot be distributed w/o prior authorization."
 
 NO_BUILD=	yes
-
-USE_X_PREFIX=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/X11/fonts/sharefont

@@ -16,7 +16,6 @@ COMMENT=	GNOME version of Kisekae Set System
 
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

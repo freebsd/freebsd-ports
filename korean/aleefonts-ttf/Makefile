@@ -6,7 +6,7 @@
 
 PORTNAME=	aleefonts
 PORTVERSION=	11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/t/ttf-alee
@@ -16,7 +16,6 @@ DISTNAME=	ttf-alee_${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	A-Lee's Hangul truetype fonts #'
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 FONTDIR=	${PREFIX}/lib/X11/fonts/TrueType

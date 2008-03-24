@@ -7,14 +7,14 @@
 
 PORTNAME=	fbpager
 PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.fluxbox.org/download/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Desktop pager for the Fluxbox window manager
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

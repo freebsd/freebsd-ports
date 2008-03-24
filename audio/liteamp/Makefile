@@ -17,7 +17,6 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		mad.2:${PORTSDIR}/audio/mad \
 		vorbisfile.5:${PORTSDIR}/audio/libvorbis
 
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgnomeui gnomeprefix
 .ifndef WITHOUT_NLS

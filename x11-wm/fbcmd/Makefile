@@ -7,7 +7,7 @@
 
 PORTNAME=	fbcmd
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://darkshed.feuersenger.net/files/c_cpp/fbcmd/
 
@@ -19,9 +19,9 @@ RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	first
-USE_X_PREFIX=	yes
 MAKE_ARGS=	CXX="${CXX}" CFLAGS="${CFLAGS}"
 
+USE_XORG=	x11 xmu
 PLIST_FILES=	bin/fbcmd
 
 post-extract:

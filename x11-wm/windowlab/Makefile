@@ -7,7 +7,7 @@
 
 PORTNAME=	windowlab
 PORTVERSION=	1.33
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.nickgravgaard.com/windowlab/
 EXTRACT_SUFX=	.tar
@@ -17,7 +17,7 @@ COMMENT=	A small window manager for X11
 
 MAN1=		windowlab.1x
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xext
 USE_GMAKE=	yes
 
 MAKE_ARGS=	MENURC=${PREFIX}/etc/windowlab/menurc CC="${CC}"

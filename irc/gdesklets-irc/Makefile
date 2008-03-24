@@ -19,7 +19,6 @@ RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted
 
 USE_PYTHON=	yes
-USE_XLIB=	yes
 
 NAME=		irc
 DATADIR=	${PREFIX}/share/gdesklets

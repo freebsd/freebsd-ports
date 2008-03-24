@@ -18,7 +18,7 @@ CONFLICTS=	ion-2-*
 
 MAN1=		ion.1x
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

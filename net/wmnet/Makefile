@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	novel
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A network bandwidth monitor intended for the WindowMaker dock
 
-USE_XPM=	yes
+USE_XORG=	xpm
 MAN1=		wmnet.1
 PLIST_FILES=	bin/wmnet
 

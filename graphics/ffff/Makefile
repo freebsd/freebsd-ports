@@ -21,7 +21,6 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 USE_DOS2UNIX=	yes
 USE_GCC=	3.2+
 USE_GL=		yes
-USE_XLIB=	yes
 USE_ZIP=	yes
 
 SOURCE=		FFFF3 FragmentProgram FragmentProgramARB10 GPUProgram \

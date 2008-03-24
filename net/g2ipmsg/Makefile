@@ -24,7 +24,6 @@ USE_GNOME=	gnomeprefix gnomehack intlhack intltool pkgconfig \
 		libgnomeui libbonobo desktopfileutils gnomepanel
 USE_GSTREAMER=	vorbis
 USE_ICONV=	yes
-USE_XLIB=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"

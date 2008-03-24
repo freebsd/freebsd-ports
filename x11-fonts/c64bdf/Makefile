@@ -7,6 +7,7 @@
 
 PORTNAME=	c64bdf
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://beej.us/c64bdf/
 DISTNAME=	${PORTNAME}
@@ -16,7 +17,6 @@ MAINTAINER=	saper@SYSTEM.PL
 COMMENT=	Commodore 64 X11 fonts
 
 NO_BUILD=	yes
-USE_X_PREFIX=	yes
 
 FONTS=	c64 c64d
 FONTDIR=	lib/X11/fonts/${PORTNAME}

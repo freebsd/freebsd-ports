@@ -7,7 +7,7 @@
 
 PORTNAME=	tolkien-ttf
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.northernstorm.org/distfiles/
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RESTRICTED=	"Shareware. Unlicensed commercial usage/redistribution prohibited."
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 NO_WRKSUBDIR=	yes

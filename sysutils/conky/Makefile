@@ -7,6 +7,7 @@
 
 PORTNAME=	conky
 PORTVERSION=	1.4.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,8 +17,9 @@ COMMENT=	An advanced, highly configurable system monitor for X
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_XORG=	x11 xext xdamage
+USE_GNOME=	pkgconfig
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-proc-uptime \
 			--disable-hddtemp

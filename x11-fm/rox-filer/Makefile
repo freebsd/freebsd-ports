@@ -22,7 +22,6 @@ USE_AUTOTOOLS=	autoconf:213
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig glib20 gtk20 libxml2 gnomevfs2 pango libglade2
-USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 
 MAN1=		rox.1

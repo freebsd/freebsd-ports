@@ -16,7 +16,7 @@ COMMENT=	ANSI/Turbo Pascal to C/C++ converter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_BISON=	build
 
 EXAMPLES=	arr.pas bgidemo.pas ccall.pas coord.txt dos.h dos.pas \

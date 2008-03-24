@@ -18,8 +18,6 @@ COMMENT=	Displays the GNOME tasklist and floats above the other windows
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
-USE_XLIB=	yes
-
 NAME=		tasklist
 DATADIR=	${PREFIX}/share
 PKGMESSAGE=	${WRKDIR}/pkg-message

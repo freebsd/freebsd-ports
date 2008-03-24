@@ -8,7 +8,7 @@
 
 PORTNAME=	asr-utils
 PORTVERSION=	3.04
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.adaptec.com/raid/u160raid/unix/ \
 		ftp://ftp.adaptec.com/raid/u160raid/unix/
@@ -25,7 +25,7 @@ ONLY_FOR_ARCHS=	i386
 NO_WRKSUBDIR=	yes
 BINS=		raidutil dpteng dptcom dptsig
 .ifndef (WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11
 BINS+=		dptscom dptmgr
 .endif
 MAN8=		raidutil.8

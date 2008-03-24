@@ -7,18 +7,18 @@
 
 PORTNAME=	xsoldier
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.interq.or.jp/libra/oohara/xsoldier/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Space-based shoot-em up game for X11
 
-USE_XLIB=	Yes
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--localstatedir=/var
 MAKE_ARGS=	CC_OPTIMIZE="${CFLAGS}"
 
+USE_XORG=	x11 ice xpm
 MAN6=		xsoldier.6
 
 SCOREFILE=	/var/games/xsoldier.scores

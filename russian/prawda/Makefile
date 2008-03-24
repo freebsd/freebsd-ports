@@ -7,7 +7,7 @@
 
 PORTNAME=	prawda
 PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	russian
 MASTER_SITES=	http://www.prawda.newmail.ru/
 
@@ -16,7 +16,7 @@ COMMENT=	English-Russian translator
 
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xaw xmu xt sm
 CXXFLAGS+=	-I${X11BASE}/include -L${X11BASE}/lib
 
 post-patch:

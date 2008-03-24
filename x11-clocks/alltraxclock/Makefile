@@ -7,7 +7,7 @@
 
 PORTNAME=	alltraxclock
 PORTVERSION=	2.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://perso.wanadoo.fr/alltrax/ \
 		${MASTER_SITE_LOCAL}
@@ -19,8 +19,6 @@ COMMENT=	An analog clock plugin for gkrellm2
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
-
-USE_X_PREFIX=	yes
 
 ALL_TARGET=	alltraxclock.so
 PLIST_FILES=	libexec/gkrellm2/plugins/alltraxclock.so

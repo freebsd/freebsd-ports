@@ -27,7 +27,6 @@ OPTIONS=	GTK2 "Enable GTK2 input method module" On \
 		SETUP "Enable GUI Setup Tool" On
 
 USE_ICONV=	yes
-USE_XLIB=	yes
 WANT_GNOME=	yes
 
 GNU_CONFIGURE=	yes

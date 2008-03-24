@@ -7,7 +7,7 @@
 
 PORTNAME=	mbasecalc
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.muquit.com/muquit/software/mbasecalc/
 DISTNAME=	${PORTNAME}
@@ -17,7 +17,6 @@ COMMENT=	Simple calculator program inspired by basecalc
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-USE_X_PREFIX=	yes
 MAKE_ARGS=	INCLUDES="-I${X11BASE}/include -I." \
 		LIBS="-L${X11BASE}/lib -lfltk -lX11"
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	artwiz-ru
 PORTVERSION=	20041031
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	russian x11-fonts
 MASTER_SITES=	http://dev.gentoo.org/~sergey/ \
 		${MASTER_SITE_LOCAL}
@@ -21,7 +21,6 @@ BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/fonts
 PKGMESSAGE=	${WRKDIR}/pkg-message

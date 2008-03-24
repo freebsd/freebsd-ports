@@ -7,7 +7,7 @@
 
 PORTNAME=	xchadance
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -19,8 +19,8 @@ COMMENT=	Display a dancing girl "ChaCha."
 
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 
+USE_XORG=	x11
 MAKEFILE=	makefile
-USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 
 EXTRACT_CMD=	lha

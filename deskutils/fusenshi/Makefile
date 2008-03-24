@@ -7,7 +7,7 @@
 
 PORTNAME=	fusenshi
 PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.ongs.co.jp/projects/fusenshi/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -20,7 +20,6 @@ LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gtksourceview-1.0:${PORTSDIR}/x11-toolkits/gtksourceview
 
 USE_GNOME=	libxml2
-USE_XLIB=	yes
 
 .ifdef WITHOUT_SSL
 MAKE_ARGS+=	WITHOUT_SSL=yes

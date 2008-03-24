@@ -17,7 +17,7 @@ COMMENT=	Multilingual X11 terminal emulator
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-USE_X_PREFIX=	yes
+USE_XORG=	sm
 USE_GNOME=	gtk20 lthack
 USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure kiklib/configure mkf/configure

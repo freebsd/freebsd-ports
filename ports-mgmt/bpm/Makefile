@@ -18,7 +18,6 @@ COMMENT=	A graphical BSD ports collection manager
 RUN_DEPENDS=	portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
 		gdialog:${PORTSDIR}/x11/zenity
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 desktopfileutils
 
 MAKE_ENV+=	OSTYPE="${OPSYS}"

@@ -7,7 +7,7 @@
 
 PORTNAME=	xidle
 PORTVERSION=	24102005
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	novel
@@ -16,11 +16,11 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Run a program on X inactivity
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 CFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include -D__dead=static
 MAKE_ARGS+=	X11LIBDIR="${X11BASE}/lib" \
 		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
+USE_XORG=	x11 xscrnsaver
 PLIST_FILES=	bin/xidle
 MAN1=		xidle.1
 

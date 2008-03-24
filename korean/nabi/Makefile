@@ -15,7 +15,6 @@ COMMENT=	Hangul X Input Method for Everywhere
 
 LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 GNU_CONFIGURE=	yes

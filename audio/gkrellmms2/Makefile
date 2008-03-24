@@ -27,7 +27,6 @@ PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmms.so \
 		share/locale/nl/LC_MESSAGES/gkrellmms.mo \
 		share/locale/ru/LC_MESSAGES/gkrellmms.mo
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
 MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins \

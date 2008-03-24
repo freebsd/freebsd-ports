@@ -7,7 +7,7 @@
 
 PORTNAME=	mit-scheme
 PORTVERSION=	7.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	mit-scheme/stable.pkg/${PORTVERSION}
@@ -21,7 +21,6 @@ COMMENT=	MIT Scheme: includes runtime, compiler, and edwin binaries
 ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/scheme-${PORTVERSION}/src/microcode
 ALL_TARGET=	default-target
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	motoya-ttfonts
 PORTVERSION=	0.20060201
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	#
 #		You must accept following MOTOYA freefont LICENSE[1], and regist
@@ -25,7 +25,7 @@ EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 
 RESTRICTED=	Personal, non-profit, and evaluation purpose only.  Redistribution not permitted in any form
 
-USE_X_PREFIX=	yes
+USE_XORG=	xpm
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

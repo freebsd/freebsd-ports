@@ -7,7 +7,7 @@
 
 PORTNAME=	weewm
 PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://weewm.flashtux.org/download/
@@ -16,7 +16,7 @@ MAINTAINER=	ppl@nbnet.nb.ca
 COMMENT=	Fast and ultra light windowmanager with total keyboard control
 
 PLIST_FILES=	bin/weewm
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CC=,CC?=,' -e 's,/usr/X11R6,${X11BASE},g' \
