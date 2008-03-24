@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.50
+PORTVERSION=	0.5.51
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
@@ -37,7 +37,10 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Unicode/UTF8simple.pm:${PORTSDIR}/converters/p5-Unicode-UTF8simple \
 	${SITE_PERL}/Lingua/EN/Numbers/Ordinate.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Numbers-Ordinate \
 	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-	${SITE_PERL}/HTTP/Cache/Transparent.pm:${PORTSDIR}/www/p5-HTTP-Cache-Transparent
+	${SITE_PERL}/HTTP/Cache/Transparent.pm:${PORTSDIR}/www/p5-HTTP-Cache-Transparent \
+	${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
+	${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
+	${SITE_PERL}/${PERL_ARCH}/Text/Bidi.pm:${PORTSDIR}/converters/p5-Text-Bidi
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
@@ -72,10 +75,10 @@ MAN1=	tv_cat.1 tv_check.1 tv_extractinfo_en.1 tv_find_grabbers.1 \
 	tv_grab_ar.1 tv_grab_be.1 tv_grab_br_net.1 \
 	tv_grab_ch_search.1 tv_grab_combiner.1 tv_grab_dk.1 \
 	tv_grab_dtv_la.1 tv_grab_ee.1 tv_grab_es.1 tv_grab_es_laguiatv.1 \
-	tv_grab_fi.1 tv_grab_fr.1 tv_grab_hr.1 tv_grab_huro.1 \
+	tv_grab_es_miguiatv.1 tv_grab_fi.1 tv_grab_fr.1 tv_grab_hr.1 tv_grab_huro.1 \
 	tv_grab_il.1 tv_grab_it.1 tv_grab_jp.1 \
-	tv_grab_na_dd.1 tv_grab_na_icons.1 tv_grab_nc.1 tv_grab_nl.1 \
-	tv_grab_nl_wolf.1 tv_grab_no.1 tv_grab_no_gfeed.1 tv_grab_pt.1 \
+	tv_grab_na_dd.1 tv_grab_na_icons.1 \
+	tv_grab_nl_wolf.1 tv_grab_no_gfeed.1 tv_grab_pt.1 \
 	tv_grab_re.1 tv_grab_se_swedb.1 tv_grab_uk_bleb.1 \
 	tv_grab_uk_rt.1 tv_grab_za.1 tv_grep.1 tv_imdb.1 \
 	tv_remove_some_overlapping.1 tv_sort.1 tv_split.1 tv_to_latex.1 \
