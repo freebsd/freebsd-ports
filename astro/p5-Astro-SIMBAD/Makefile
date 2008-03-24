@@ -9,12 +9,11 @@
 PORTNAME=	Astro-SIMBAD
 PORTVERSION=	2.0.0
 CATEGORIES=	astro perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		http://www.estar.org.uk/software/
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Astro
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	An OO Perl interface to the SIMBAD astronomical database
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww

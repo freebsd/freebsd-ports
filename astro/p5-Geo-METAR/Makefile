@@ -8,11 +8,11 @@
 PORTNAME=	Geo-METAR
 PORTVERSION=	1.15
 CATEGORIES=	astro geography
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Geo
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	A perl module that processes METAR information from NOAA sources
 
 PERL_CONFIGURE=	yes
