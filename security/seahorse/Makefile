@@ -3,14 +3,14 @@
 # Whom:			Dave McKay <dave@mu.org>
 #
 # $FreeBSD$
-#   $MCom: ports/security/seahorse/Makefile,v 1.47 2007/10/15 17:59:07 mezz Exp $
+#   $MCom: ports/security/seahorse/Makefile,v 1.61 2008/03/14 14:13:03 mezz Exp $
 #
 
 PORTNAME=	seahorse
-PORTVERSION=	2.20.3
+PORTVERSION=	2.22.0
+PORTREVISION=	1
 CATEGORIES=	security gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -38,15 +38,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 GCONF_SCHEMAS=	seahorse.schemas
 MAN1=		seahorse-agent.1 seahorse-daemon.1 seahorse-tool.1
 
-OPTIONS=	NAUTILUS "Enable the Nautilus component" on \
-		LDAP "Enable LDAP support" on \
+OPTIONS=	LDAP "Enable LDAP support" on \
 		HKP "Enable HKP keyserver interface" on \
-		EPIPHANY "Enable Epiphany plug-in support" on \
 		NOTIFY "Enable libnotify support" on \
 		APPLET "Enable clipboard encryption applet" on \
 		KEYRING "Enable GNOME Keyring support" on \
 		MDNS "Enable mDNS key sharing" on \
-		GEDIT "Enable GEdit plug-in support" on
+		GEDIT "Enable GEdit plug-in support" on \
+		NAUTILUS "Enable the Nautilus component" on \
+		EPIPHANY "Enable Epiphany plug-in support" on
 
 .include <bsd.port.pre.mk>
 
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=--disable-ldap
 .endif
 
 .if !defined(WITHOUT_HKP)
-LIB_DEPENDS+=	soup-2.2.8:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=	soup-2.4.1:${PORTSDIR}/devel/libsoup
 .else
 CONFIGURE_ARGS+=--disable-hkp
 .endif
@@ -92,7 +92,7 @@ CONFIGURE_ARGS+=--disable-libnotify
 .if !defined(WITHOUT_EPIPHANY)
 BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
-PLIST_SUB+=	EPHY="" EPHY_VERSION="2.20"
+PLIST_SUB+=	EPHY="" EPHY_VERSION="2.22"
 .else
 CONFIGURE_ARGS+=--disable-epiphany
 PLIST_SUB+=	EPHY="@comment "

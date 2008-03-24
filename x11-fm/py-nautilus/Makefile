@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-fm/py-nautilus/Makefile,v 1.4 2005/10/02 23:53:38 marcus Exp $
+#   $MCom: ports/x11-fm/py-nautilus/Makefile,v 1.6 2008/01/13 19:48:00 marcus Exp $
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/nautilus-python/${PORTVERSION:R}

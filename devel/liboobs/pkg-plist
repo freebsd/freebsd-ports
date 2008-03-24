@@ -3,9 +3,8 @@ include/liboobs-1.0/oobs/oobs-groupsconfig.h
 include/liboobs-1.0/oobs/oobs-hostsconfig.h
 include/liboobs-1.0/oobs/oobs-iface-ethernet.h
 include/liboobs-1.0/oobs/oobs-iface-irlan.h
-include/liboobs-1.0/oobs/oobs-iface-isdn.h
-include/liboobs-1.0/oobs/oobs-iface-modem.h
 include/liboobs-1.0/oobs/oobs-iface-plip.h
+include/liboobs-1.0/oobs/oobs-iface-ppp.h
 include/liboobs-1.0/oobs/oobs-iface-wireless.h
 include/liboobs-1.0/oobs/oobs-iface.h
 include/liboobs-1.0/oobs/oobs-ifacesconfig.h
@@ -15,6 +14,7 @@ include/liboobs-1.0/oobs/oobs-ntpconfig.h
 include/liboobs-1.0/oobs/oobs-ntpserver.h
 include/liboobs-1.0/oobs/oobs-object.h
 include/liboobs-1.0/oobs/oobs-result.h
+include/liboobs-1.0/oobs/oobs-selfconfig.h
 include/liboobs-1.0/oobs/oobs-service.h
 include/liboobs-1.0/oobs/oobs-servicesconfig.h
 include/liboobs-1.0/oobs/oobs-session.h
@@ -30,15 +30,13 @@ include/liboobs-1.0/oobs/oobs.h
 lib/liboobs-1.a
 lib/liboobs-1.la
 lib/liboobs-1.so
-lib/liboobs-1.so.3
+lib/liboobs-1.so.4
 libdata/pkgconfig/liboobs-1.pc
 %%DOCSDIR%%/OobsGroup.html
 %%DOCSDIR%%/OobsGroupsConfig.html
 %%DOCSDIR%%/OobsIface.html
 %%DOCSDIR%%/OobsIfaceEthernet.html
 %%DOCSDIR%%/OobsIfaceIRLan.html
-%%DOCSDIR%%/OobsIfaceISDN.html
-%%DOCSDIR%%/OobsIfaceModem.html
 %%DOCSDIR%%/OobsIfacePlip.html
 %%DOCSDIR%%/OobsIfaceWireless.html
 %%DOCSDIR%%/OobsIfacesConfig.html
@@ -70,6 +68,8 @@ libdata/pkgconfig/liboobs-1.pc
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/liboobs-OobsHostsConfig.html
+%%DOCSDIR%%/liboobs-OobsIfaceISDN.html
+%%DOCSDIR%%/liboobs-OobsIfaceModem.html
 %%DOCSDIR%%/liboobs-OobsNTPServer.html
 %%DOCSDIR%%/liboobs.devhelp
 %%DOCSDIR%%/liboobs.devhelp2

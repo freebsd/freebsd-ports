@@ -1,0 +1,27 @@
+--- gio/fam/Makefile.in.orig	2008-01-07 19:40:38.000000000 -0500
++++ gio/fam/Makefile.in	2008-01-07 19:41:53.000000000 -0500
+@@ -59,9 +59,8 @@ am__installdirs = "$(DESTDIR)$(giomodule
+ giomoduleLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(giomodule_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+-libgiofam_la_DEPENDENCIES = $(top_builddir)/gio/libgio-2.0.la \
+-	$(top_builddir)/gobject/libgobject-2.0.la \
+-	$(top_builddir)/glib/libglib-2.0.la $(am__DEPENDENCIES_1) \
++libgiofam_la_DEPENDENCIES =  \
++	$(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ am__objects_1 =
+ am_libgiofam_la_OBJECTS = libgiofam_la-fam-helper.lo \
+@@ -321,9 +320,9 @@ libgiofam_la_CFLAGS = \
+ 
+ libgiofam_la_LDFLAGS = $(module_flags)
+ libgiofam_la_LIBADD = \
+-		$(top_builddir)/gio/libgio-2.0.la \
+-		$(top_builddir)/gobject/libgobject-2.0.la \
+-		$(top_builddir)/glib/libglib-2.0.la \
++		-lgio-2.0 \
++		-lgobject-2.0 \
++		-lglib-2.0 \
+ 		$(GLIB_LIBS) \
+ 		$(FAM_LIBS) \
+ 		$(NULL)

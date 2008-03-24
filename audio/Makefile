@@ -262,8 +262,10 @@
     SUBDIR += gstreamer-plugins-shout2
     SUBDIR += gstreamer-plugins-sidplay
     SUBDIR += gstreamer-plugins-sndfile
+    SUBDIR += gstreamer-plugins-soundtouch
     SUBDIR += gstreamer-plugins-spc
     SUBDIR += gstreamer-plugins-speex
+    SUBDIR += gstreamer-plugins-taglib
     SUBDIR += gstreamer-plugins-vorbis
     SUBDIR += gstreamer-plugins-wavpack
     SUBDIR += gtick

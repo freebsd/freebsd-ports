@@ -3,12 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/avahi-app/Makefile,v 1.6 2007/08/26 06:10:14 marcus Exp $
+#   $MCom: ports/net/avahi-app/Makefile,v 1.9 2008/03/20 16:07:21 mezz Exp $
 #
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.22
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app
@@ -113,6 +113,9 @@ avahi-post-patch:
 	    	s|%%GNOME_SUBR%%|${GNOME_SUBR}|' \
 		${WRKSRC}/initscript/freebsd/avahi-dnsconfd.sh.in \
 		${WRKSRC}/initscript/freebsd/avahi-daemon.sh.in
+	@${REINPLACE_CMD} -e 's|dbus_connection_disconnect|dbus_connection_close|g' \
+	    	${WRKSRC}/avahi-client/client.c \
+		${WRKSRC}/avahi-daemon/dbus-protocol.c
 
 post-build: avahi-post-build
 

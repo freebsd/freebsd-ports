@@ -3,37 +3,61 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/deskutils/conduit/Makefile,v 1.3 2006/10/11 20:26:26 ahze Exp $
+#    $MCom: ports/deskutils/conduit/Makefile,v 1.7 2008/03/18 14:53:42 ahze Exp $
 
 PORTNAME=	conduit
-PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTVERSION=	0.3.9
 CATEGORIES=	deskutils
-MASTER_SITES=	http://files.conduit-project.org/releases/
+MASTER_SITES=	GNOME
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Synchronization application for GNOME
 
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
+		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
+		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23 \
+		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
+		${PYTHON_SITELIBDIR}/vobject/__init__.py:${PORTSDIR}/deskutils/py-vobject \
+		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus
+LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
 		${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23 \
-		xmlproc_parse:${PORTSDIR}/textproc/py-xml
+		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
+		${PYTHON_SITELIBDIR}/vobject/__init__.py:${PORTSDIR}/deskutils/py-vobject \
+		firefox:${PORTSDIR}/www/firefox \
+		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus
 
-NO_WRKSUBDIR=	yes
 USE_PYTHON=	2.4+
-MAKE_ENV=	DESTDIR=""
-USE_GNOME=	pygnome2
-DESKTOP_ENTRIES=	"Conduit" "${COMMENT}" "conduit-icon.png" \
-			"${PORTNAME}" "GNOME;Application;Office;" true
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
+INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+USE_GNOME=	pygnome2 gnomeprefix
+OPTIONS=	NAUTILUS "Enable Nautilus Plugin" On \
+		EOG "Enable Eye-Of-Gnome Plugin" On
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|; \
-		s|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR:S/${LOCALBASE}/${PREFIX}/}|' \
-		${WRKSRC}/Makefile
+.if defined(WITH_NAUTILUS)
+USE_GNOME+=	nautilus2
+CONFIGURE_ARGS+=	--enable-nautilus-extension
+.endif
 
-pre-install:
-	${MKDIR} ${PREFIX}/share/applications
+.if defined(WITH_EOG)
+BUILD_DEPENDS+=	eog:${PORTSDIR}/graphics/eog
+RUN_DEPENDS+=	eog:${PORTSDIR}/graphics/eog
+CONFIGURE_ARGS+=	--enable-eog-plugin
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/data/Makefile.in
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
+		-e 's|/usr/bin/python|${LOCALBASE}/bin/python|' \
+		-e 's|/usr/lib/firefox*|${LOCALBASE}/lib/firefox|'
 
 .include <bsd.port.post.mk>

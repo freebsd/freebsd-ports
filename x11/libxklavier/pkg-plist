@@ -7,7 +7,7 @@ include/libxklavier/xklavier.h
 lib/libxklavier.a
 lib/libxklavier.la
 lib/libxklavier.so
-lib/libxklavier.so.11
+lib/libxklavier.so.12
 libdata/pkgconfig/libxklavier.pc
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
@@ -25,7 +25,5 @@ libdata/pkgconfig/libxklavier.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
-%%DATADIR%%/xfree86.xml
-@dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
 @dirrm include/libxklavier

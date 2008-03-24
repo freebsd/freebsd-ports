@@ -3,21 +3,19 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/databases/evolution-data-server/Makefile,v 1.3 2007/11/30 20:10:35 marcus Exp $
+#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.142 2008/03/10 20:33:29 mezz Exp $
 #
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	1.12.3
-PORTREVISION=	1
+PORTVERSION=	2.22.0
 CATEGORIES=	databases gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The data backends for the Evolution integrated mail/PIM suite
 
-LIB_DEPENDS=	soup-2.2.8:${PORTSDIR}/devel/libsoup \
+LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		nss3.1:${PORTSDIR}/security/nss \
 		tasn1.3:${PORTSDIR}/security/libtasn1
 
@@ -39,7 +37,7 @@ CONFIGURE_ARGS=	--enable-static \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-PLIST_SUB=	VERSION="1.12" EVO_VERSION="1.2"
+PLIST_SUB=	VERSION="2.22" EVO_VERSION="1.2"
 
 OPTIONS=	IMAP4	"Enable experimental IMAP4 backend" off
 

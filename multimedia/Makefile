@@ -15,6 +15,7 @@
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
     SUBDIR += castpodder
+    SUBDIR += cheese
     SUBDIR += clive
     SUBDIR += devede
     SUBDIR += dirac
@@ -78,6 +79,7 @@
     SUBDIR += gstreamer-plugins-ugly
     SUBDIR += gstreamer-plugins-x264
     SUBDIR += gstreamer-plugins-xvid
+    SUBDIR += gstreamermm
     SUBDIR += gsubedit
     SUBDIR += gtksubtitler
     SUBDIR += gxanim
@@ -215,11 +217,13 @@
     SUBDIR += subtitleoffsetmodifier
     SUBDIR += subtitleripper
     SUBDIR += subtools
+    SUBDIR += swfdec-gnome
     SUBDIR += tcmplex-panteltje
     SUBDIR += tivodecode
     SUBDIR += tkxanim
     SUBDIR += tosvcd
     SUBDIR += totem
+    SUBDIR += totem-pl-parser
     SUBDIR += totem-xine
     SUBDIR += tovid
     SUBDIR += toxine

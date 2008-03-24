@@ -51,6 +51,7 @@ share/locale/eu/LC_MESSAGES/libgnome-2.0.mo
 share/locale/fa/LC_MESSAGES/libgnome-2.0.mo
 share/locale/fi/LC_MESSAGES/libgnome-2.0.mo
 share/locale/fr/LC_MESSAGES/libgnome-2.0.mo
+share/locale/fur/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ga/LC_MESSAGES/libgnome-2.0.mo
 share/locale/gl/LC_MESSAGES/libgnome-2.0.mo
 share/locale/gu/LC_MESSAGES/libgnome-2.0.mo
@@ -71,6 +72,7 @@ share/locale/mg/LC_MESSAGES/libgnome-2.0.mo
 share/locale/mk/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ml/LC_MESSAGES/libgnome-2.0.mo
 share/locale/mn/LC_MESSAGES/libgnome-2.0.mo
+share/locale/mr/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ms/LC_MESSAGES/libgnome-2.0.mo
 share/locale/nb/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ne/LC_MESSAGES/libgnome-2.0.mo
@@ -85,6 +87,7 @@ share/locale/pt_BR/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ro/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ru/LC_MESSAGES/libgnome-2.0.mo
 share/locale/rw/LC_MESSAGES/libgnome-2.0.mo
+share/locale/si/LC_MESSAGES/libgnome-2.0.mo
 share/locale/sk/LC_MESSAGES/libgnome-2.0.mo
 share/locale/sl/LC_MESSAGES/libgnome-2.0.mo
 share/locale/sq/LC_MESSAGES/libgnome-2.0.mo
@@ -105,8 +108,8 @@ share/locale/zh_CN/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
 share/pixmaps/backgrounds/gnome/background-default.jpg
-@dirrm share/pixmaps/backgrounds/gnome
-@dirrm share/pixmaps/backgrounds
+@dirrmtry share/pixmaps/backgrounds/gnome
+@dirrmtry share/pixmaps/backgrounds
 @dirrmtry share/gnome-background-properties
 @dirrm include/libgnome-2.0/libgnome
 @dirrm include/libgnome-2.0
@@ -120,14 +123,20 @@ share/pixmaps/backgrounds/gnome/background-default.jpg
 @dirrmtry share/locale/tt
 @dirrmtry share/locale/sr@ije/LC_MESSAGES
 @dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

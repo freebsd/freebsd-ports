@@ -3,12 +3,12 @@
 # Whom:				Jean-Yves Lefort <jylefort@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-volume-manager/Makefile,v 1.19 2007/10/17 04:15:23 marcus Exp $
+#   $MCom: ports/sysutils/gnome-volume-manager/Makefile,v 1.24 2008/03/15 16:48:05 marcus Exp $
 #
 
 PORTNAME=	gnome-volume-manager
-PORTVERSION=	2.17.0
-PORTREVISION=	8
+PORTVERSION=	2.22.1
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}

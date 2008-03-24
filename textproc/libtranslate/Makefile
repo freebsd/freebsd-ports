@@ -37,7 +37,7 @@ PLIST_SUB+=		GENERIC="@comment "
 .else
 PLIST_SUB+=		GENERIC=""
 USE_GNOME+=		libxml2
-LIB_DEPENDS+=		soup-2.2:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=		soup-2.2:${PORTSDIR}/devel/libsoup22
 MAN5+=			services.xml.5
 .endif
 

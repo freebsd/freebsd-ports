@@ -31,6 +31,9 @@ lib/gstreamer-%%VERSION%%/libgstdebug.so
 lib/gstreamer-%%VERSION%%/libgsteffectv.a
 lib/gstreamer-%%VERSION%%/libgsteffectv.la
 lib/gstreamer-%%VERSION%%/libgsteffectv.so
+lib/gstreamer-%%VERSION%%/libgstequalizer.a
+lib/gstreamer-%%VERSION%%/libgstequalizer.la
+lib/gstreamer-%%VERSION%%/libgstequalizer.so
 lib/gstreamer-%%VERSION%%/libgstflxdec.a
 lib/gstreamer-%%VERSION%%/libgstflxdec.la
 lib/gstreamer-%%VERSION%%/libgstflxdec.so
@@ -55,6 +58,9 @@ lib/gstreamer-%%VERSION%%/libgstmatroska.so
 lib/gstreamer-%%VERSION%%/libgstmulaw.a
 lib/gstreamer-%%VERSION%%/libgstmulaw.la
 lib/gstreamer-%%VERSION%%/libgstmulaw.so
+lib/gstreamer-%%VERSION%%/libgstmultifile.a
+lib/gstreamer-%%VERSION%%/libgstmultifile.la
+lib/gstreamer-%%VERSION%%/libgstmultifile.so
 lib/gstreamer-%%VERSION%%/libgstmultipart.a
 lib/gstreamer-%%VERSION%%/libgstmultipart.la
 lib/gstreamer-%%VERSION%%/libgstmultipart.so
@@ -76,6 +82,9 @@ lib/gstreamer-%%VERSION%%/libgstrtsp.so
 lib/gstreamer-%%VERSION%%/libgstsmpte.a
 lib/gstreamer-%%VERSION%%/libgstsmpte.la
 lib/gstreamer-%%VERSION%%/libgstsmpte.so
+lib/gstreamer-%%VERSION%%/libgstspectrum.a
+lib/gstreamer-%%VERSION%%/libgstspectrum.la
+lib/gstreamer-%%VERSION%%/libgstspectrum.so
 lib/gstreamer-%%VERSION%%/libgstudp.a
 lib/gstreamer-%%VERSION%%/libgstudp.la
 lib/gstreamer-%%VERSION%%/libgstudp.so
@@ -105,16 +114,28 @@ lib/gstreamer-%%VERSION%%/libgstximagesrc.la
 lib/gstreamer-%%VERSION%%/libgstximagesrc.so
 share/locale/af/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/bg/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/da/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/es/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/eu/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/fi/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/or/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/pl/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/sk/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/zh_CN/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/zh_HK/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/zh_TW/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK

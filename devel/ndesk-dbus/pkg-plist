@@ -1,0 +1,11 @@
+lib/mono/gac/NDesk.DBus/1.0.0.0__f6716e4f9b2ed099/NDesk.DBus.dll
+lib/mono/gac/NDesk.DBus/1.0.0.0__f6716e4f9b2ed099/NDesk.DBus.dll.mdb
+lib/mono/ndesk-dbus-1.0/NDesk.DBus.dll
+libdata/pkgconfig/ndesk-dbus-1.0.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/mono/ndesk-dbus-1.0
+@dirrm lib/mono/gac/NDesk.DBus/1.0.0.0__f6716e4f9b2ed099
+@dirrm lib/mono/gac/NDesk.DBus

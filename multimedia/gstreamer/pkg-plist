@@ -16,8 +16,11 @@ include/gstreamer-%%VERSION%%/gst/base/gstbasesrc.h
 include/gstreamer-%%VERSION%%/gst/base/gstbasetransform.h
 include/gstreamer-%%VERSION%%/gst/base/gstcollectpads.h
 include/gstreamer-%%VERSION%%/gst/base/gstdataqueue.h
+include/gstreamer-%%VERSION%%/gst/gstpoll.h
 include/gstreamer-%%VERSION%%/gst/base/gstpushsrc.h
 include/gstreamer-%%VERSION%%/gst/base/gsttypefindhelper.h
+%%CHECK%%include/gstreamer-%%VERSION%%/gst/check/gstbufferstraw.h
+%%CHECK%%include/gstreamer-%%VERSION%%/gst/check/gstcheck.h
 include/gstreamer-%%VERSION%%/gst/controller/gstcontroller.h
 include/gstreamer-%%VERSION%%/gst/controller/gstcontrolsource.h
 include/gstreamer-%%VERSION%%/gst/controller/gstinterpolationcontrolsource.h
@@ -89,6 +92,10 @@ lib/libgstbase-%%VERSION%%.a
 lib/libgstbase-%%VERSION%%.la
 lib/libgstbase-%%VERSION%%.so
 lib/libgstbase-%%VERSION%%.so.0
+%%CHECK%%lib/libgstcheck-%%VERSION%%.a
+%%CHECK%%lib/libgstcheck-%%VERSION%%.la
+%%CHECK%%lib/libgstcheck-%%VERSION%%.so
+%%CHECK%%lib/libgstcheck-%%VERSION%%.so.0
 lib/libgstcontroller-%%VERSION%%.a
 lib/libgstcontroller-%%VERSION%%.la
 lib/libgstcontroller-%%VERSION%%.so
@@ -107,6 +114,7 @@ lib/libgstreamer-%%VERSION%%.so
 lib/libgstreamer-%%VERSION%%.so.0
 libdata/pkgconfig/gstreamer-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-base-%%VERSION%%.pc
+%%CHECK%%libdata/pkgconfig/gstreamer-check-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-controller-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-dataprotocol-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-net-%%VERSION%%.pc
@@ -139,12 +147,13 @@ share/locale/uk/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gstreamer-%%VERSION%%.mo
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
 @dirrm lib/gstreamer-%%VERSION%%
 @dirrm include/gstreamer-%%VERSION%%/gst/net
 @dirrm include/gstreamer-%%VERSION%%/gst/dataprotocol
 @dirrm include/gstreamer-%%VERSION%%/gst/controller
+%%CHECK%%@dirrm include/gstreamer-%%VERSION%%/gst/check
 @dirrm include/gstreamer-%%VERSION%%/gst/base
 @dirrm include/gstreamer-%%VERSION%%/gst
 @dirrm include/gstreamer-%%VERSION%%
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw

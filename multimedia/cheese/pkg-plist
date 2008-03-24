@@ -1,0 +1,134 @@
+bin/cheese
+libexec/cheese/cheese-bugreport.sh
+share/applications/cheese.desktop
+%%DATADIR%%/cheese-ui.xml
+%%DATADIR%%/cheese.ui
+%%DATADIR%%/effects/Hulk.png
+%%DATADIR%%/effects/Mauve.png
+%%DATADIR%%/effects/NoirBlanc.png
+%%DATADIR%%/effects/Saturation.png
+%%DATADIR%%/effects/dicetv.png
+%%DATADIR%%/effects/edgetv.png
+%%DATADIR%%/effects/identity.png
+%%DATADIR%%/effects/shagadelictv.png
+%%DATADIR%%/effects/vertigotv.png
+%%DATADIR%%/effects/videoflip_h.png
+%%DATADIR%%/effects/videoflip_v.png
+%%DATADIR%%/effects/warptv.png
+%%DATADIR%%/pixmaps/camera-icon.svg
+%%DATADIR%%/pixmaps/thumbnail-frame.png
+%%DATADIR%%/sounds/shutter0.ogg
+%%DATADIR%%/sounds/shutter1.ogg
+%%DATADIR%%/sounds/shutter2.ogg
+%%DATADIR%%/sounds/shutter3.ogg
+%%DATADIR%%/sounds/shutter4.ogg
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/gnome/help/cheese/C/cheese.xml
+share/gnome/help/cheese/C/figures/cheese-effects-screenshot.jpg
+share/gnome/help/cheese/C/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/C/legal.xml
+share/gnome/help/cheese/es/cheese.xml
+share/gnome/help/cheese/es/figures/cheese-effects-screenshot.jpg
+share/gnome/help/cheese/es/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/fr/cheese.xml
+share/gnome/help/cheese/fr/figures/cheese-effects-screenshot.jpg
+share/gnome/help/cheese/fr/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/oc/cheese.xml
+share/gnome/help/cheese/oc/figures/cheese-effects-screenshot.jpg
+share/gnome/help/cheese/oc/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/ru/cheese.xml
+share/gnome/help/cheese/ru/figures/cheese-effects-screenshot.jpg
+share/gnome/help/cheese/ru/figures/cheese-screenshot.jpg
+share/gnome/help/cheese/sv/cheese.xml
+share/gnome/help/cheese/sv/figures/cheese-effects-screenshot.jpg
+share/gnome/help/cheese/sv/figures/cheese-screenshot.jpg
+share/icons/hicolor/16x16/apps/cheese.png
+share/icons/hicolor/22x22/apps/cheese.png
+share/icons/hicolor/24x24/apps/cheese.png
+share/icons/hicolor/32x32/apps/cheese.png
+share/icons/hicolor/48x48/apps/cheese.png
+share/icons/hicolor/scalable/apps/cheese.svg
+share/locale/ar/LC_MESSAGES/cheese.mo
+share/locale/be@latin/LC_MESSAGES/cheese.mo
+share/locale/bn_IN/LC_MESSAGES/cheese.mo
+share/locale/ca/LC_MESSAGES/cheese.mo
+share/locale/cs/LC_MESSAGES/cheese.mo
+share/locale/da/LC_MESSAGES/cheese.mo
+share/locale/de/LC_MESSAGES/cheese.mo
+share/locale/el/LC_MESSAGES/cheese.mo
+share/locale/en_GB/LC_MESSAGES/cheese.mo
+share/locale/es/LC_MESSAGES/cheese.mo
+share/locale/et/LC_MESSAGES/cheese.mo
+share/locale/eu/LC_MESSAGES/cheese.mo
+share/locale/fi/LC_MESSAGES/cheese.mo
+share/locale/fr/LC_MESSAGES/cheese.mo
+share/locale/ga/LC_MESSAGES/cheese.mo
+share/locale/gl/LC_MESSAGES/cheese.mo
+share/locale/gu/LC_MESSAGES/cheese.mo
+share/locale/he/LC_MESSAGES/cheese.mo
+share/locale/hu/LC_MESSAGES/cheese.mo
+share/locale/it/LC_MESSAGES/cheese.mo
+share/locale/ja/LC_MESSAGES/cheese.mo
+share/locale/ko/LC_MESSAGES/cheese.mo
+share/locale/lt/LC_MESSAGES/cheese.mo
+share/locale/mk/LC_MESSAGES/cheese.mo
+share/locale/ml/LC_MESSAGES/cheese.mo
+share/locale/mr/LC_MESSAGES/cheese.mo
+share/locale/nb/LC_MESSAGES/cheese.mo
+share/locale/nl/LC_MESSAGES/cheese.mo
+share/locale/oc/LC_MESSAGES/cheese.mo
+share/locale/pa/LC_MESSAGES/cheese.mo
+share/locale/pl/LC_MESSAGES/cheese.mo
+share/locale/pt/LC_MESSAGES/cheese.mo
+share/locale/pt_BR/LC_MESSAGES/cheese.mo
+share/locale/ro/LC_MESSAGES/cheese.mo
+share/locale/ru/LC_MESSAGES/cheese.mo
+share/locale/sl/LC_MESSAGES/cheese.mo
+share/locale/sv/LC_MESSAGES/cheese.mo
+share/locale/th/LC_MESSAGES/cheese.mo
+share/locale/tr/LC_MESSAGES/cheese.mo
+share/locale/uk/LC_MESSAGES/cheese.mo
+share/locale/zh_CN/LC_MESSAGES/cheese.mo
+share/locale/zh_HK/LC_MESSAGES/cheese.mo
+share/locale/zh_TW/LC_MESSAGES/cheese.mo
+share/omf/cheese/cheese-C.omf
+share/omf/cheese/cheese-es.omf
+share/omf/cheese/cheese-fr.omf
+share/omf/cheese/cheese-oc.omf
+share/omf/cheese/cheese-ru.omf
+share/omf/cheese/cheese-sv.omf
+@dirrm share/omf/cheese
+@dirrm share/gnome/help/cheese/sv/figures
+@dirrm share/gnome/help/cheese/sv
+@dirrm share/gnome/help/cheese/ru/figures
+@dirrm share/gnome/help/cheese/ru
+@dirrm share/gnome/help/cheese/oc/figures
+@dirrm share/gnome/help/cheese/oc
+@dirrm share/gnome/help/cheese/fr/figures
+@dirrm share/gnome/help/cheese/fr
+@dirrm share/gnome/help/cheese/es/figures
+@dirrm share/gnome/help/cheese/es
+@dirrm share/gnome/help/cheese/C/figures
+@dirrm share/gnome/help/cheese/C
+@dirrm share/gnome/help/cheese
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/effects
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrm libexec/cheese
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin

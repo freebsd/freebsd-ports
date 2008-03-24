@@ -1,0 +1,77 @@
+--- tools/Makefile.in.orig	2008-01-31 16:09:08.000000000 -0500
++++ tools/Makefile.in	2008-01-31 16:10:21.000000000 -0500
+@@ -39,8 +39,7 @@ bin_PROGRAMS = ck-list-sessions$(EXEEXT)
+ 	$(am__EXEEXT_1)
+ sbin_PROGRAMS = ck-log-system-start$(EXEEXT) $(am__EXEEXT_1)
+ libexec_PROGRAMS = ck-collect-session-info$(EXEEXT) \
+-	ck-get-x11-server-pid$(EXEEXT) \
+-	ck-get-x11-display-device$(EXEEXT) $(am__EXEEXT_1)
++	$(am__EXEEXT_1)
+ subdir = tools
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -66,17 +65,6 @@ ck_collect_session_info_OBJECTS =  \
+ am__DEPENDENCIES_1 =
+ ck_collect_session_info_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/src/libck.la $(am__DEPENDENCIES_1)
+-am_ck_get_x11_display_device_OBJECTS =  \
+-	ck-get-x11-display-device.$(OBJEXT) $(am__objects_1)
+-ck_get_x11_display_device_OBJECTS =  \
+-	$(am_ck_get_x11_display_device_OBJECTS)
+-ck_get_x11_display_device_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-	$(top_builddir)/src/libck.la $(am__DEPENDENCIES_1)
+-am_ck_get_x11_server_pid_OBJECTS = ck-get-x11-server-pid.$(OBJEXT) \
+-	$(am__objects_1)
+-ck_get_x11_server_pid_OBJECTS = $(am_ck_get_x11_server_pid_OBJECTS)
+-ck_get_x11_server_pid_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-	$(top_builddir)/src/libck.la $(am__DEPENDENCIES_1)
+ am_ck_history_OBJECTS = ck-history.$(OBJEXT) $(am__objects_1)
+ ck_history_OBJECTS = $(am_ck_history_OBJECTS)
+ ck_history_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+@@ -335,24 +323,6 @@ ck_collect_session_info_LDADD = \
+ 	$(top_builddir)/src/libck.la	\
+ 	$(NULL)
+ 
+-ck_get_x11_server_pid_SOURCES = \
+-	ck-get-x11-server-pid.c		\
+-	$(NULL)
+-
+-ck_get_x11_server_pid_LDADD = \
+-	$(TOOLS_LIBS)			\
+-	$(top_builddir)/src/libck.la	\
+-	$(NULL)
+-
+-ck_get_x11_display_device_SOURCES = \
+-	ck-get-x11-display-device.c	\
+-	$(NULL)
+-
+-ck_get_x11_display_device_LDADD = \
+-	$(TOOLS_LIBS)			\
+-	$(top_builddir)/src/libck.la	\
+-	$(NULL)
+-
+ EXTRA_DIST = \
+ 	$(NULL)
+ 
+@@ -480,12 +450,6 @@ clean-sbinPROGRAMS:
+ ck-collect-session-info$(EXEEXT): $(ck_collect_session_info_OBJECTS) $(ck_collect_session_info_DEPENDENCIES) 
+ 	@rm -f ck-collect-session-info$(EXEEXT)
+ 	$(LINK) $(ck_collect_session_info_OBJECTS) $(ck_collect_session_info_LDADD) $(LIBS)
+-ck-get-x11-display-device$(EXEEXT): $(ck_get_x11_display_device_OBJECTS) $(ck_get_x11_display_device_DEPENDENCIES) 
+-	@rm -f ck-get-x11-display-device$(EXEEXT)
+-	$(LINK) $(ck_get_x11_display_device_OBJECTS) $(ck_get_x11_display_device_LDADD) $(LIBS)
+-ck-get-x11-server-pid$(EXEEXT): $(ck_get_x11_server_pid_OBJECTS) $(ck_get_x11_server_pid_DEPENDENCIES) 
+-	@rm -f ck-get-x11-server-pid$(EXEEXT)
+-	$(LINK) $(ck_get_x11_server_pid_OBJECTS) $(ck_get_x11_server_pid_LDADD) $(LIBS)
+ ck-history$(EXEEXT): $(ck_history_OBJECTS) $(ck_history_DEPENDENCIES) 
+ 	@rm -f ck-history$(EXEEXT)
+ 	$(LINK) $(ck_history_OBJECTS) $(ck_history_LDADD) $(LIBS)
+@@ -503,8 +467,6 @@ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ck-collect-session-info.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ck-get-x11-display-device.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ck-get-x11-server-pid.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ck-history.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ck-log-system-start.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/list-sessions.Po@am__quote@

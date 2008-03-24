@@ -279,6 +279,7 @@
     SUBDIR += libevnet
     SUBDIR += libexosip2
     SUBDIR += libgnetwork
+    SUBDIR += libgweather
     SUBDIR += libmms
     SUBDIR += libmxp
     SUBDIR += libnet

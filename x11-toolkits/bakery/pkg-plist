@@ -17,8 +17,8 @@ include/bakery-%%API_VERSION%%/bakery/View/View.h
 include/bakery-%%API_VERSION%%/bakery/View/ViewBase.h
 include/bakery-%%API_VERSION%%/bakery/View/View_Composite.h
 include/bakery-%%API_VERSION%%/bakery/bakery.h
-include/bakery-%%API_VERSION%%/bakery/bakeryconfig.h
 include/bakery-%%API_VERSION%%/bakery/init.h
+include/bakery-%%API_VERSION%%/bakeryconfig.h
 lib/libbakery-%%VERSION%%.a
 lib/libbakery-%%VERSION%%.la
 lib/libbakery-%%VERSION%%.so

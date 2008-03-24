@@ -3,7 +3,7 @@
 # Whom:				Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/www/gstreamer-plugins-neon/Makefile,v 1.1 2006/07/06 19:32:35 ahze Exp $
+#    $MCom: ports/www/gstreamer-plugins-neon/Makefile,v 1.5 2008/03/19 14:05:38 ahze Exp $
 #
 
 PORTREVISION=	2

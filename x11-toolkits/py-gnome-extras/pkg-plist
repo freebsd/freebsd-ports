@@ -1,3 +1,4 @@
+include/pygda-3.0/pygdavalue_conversions.h
 %%PYTHON_SITELIBDIR%%/gtk-2.0/egg/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/egg/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/egg/__init__.pyo
@@ -5,6 +6,8 @@
 %%PYTHON_SITELIBDIR%%/gtk-2.0/egg/recent.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/egg/trayicon.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/egg/trayicon.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gda.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gda.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gdl.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gdl.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/__init__.py
@@ -21,6 +24,7 @@
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkspell.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkspell.so
 libdata/pkgconfig/gnome-python-extras-2.0.pc
+libdata/pkgconfig/pygda-3.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/pygtkmozembed/class-gtkmozembed.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtkmozembed/gtkmozembed-class-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtkmozembed/index.html
@@ -43,6 +47,10 @@ libdata/pkgconfig/gnome-python-extras-2.0.pc
 %%PORTDOCS%%share/examples/py-gnome/gtkhtml2/simple-browser.py
 %%PORTDOCS%%share/examples/py-gnome/gtkspell/gtkspell.py
 %%PORTDOCS%%share/examples/py-gnome/gtkspell/test.py
+share/pygtk/2.0/argtypes/gda-arg-types.py
+share/pygtk/2.0/argtypes/gda-arg-types.pyc
+share/pygtk/2.0/argtypes/gda-arg-types.pyo
+share/pygtk/2.0/defs/gda.defs
 share/pygtk/2.0/defs/gtkhtml2.defs
 share/pygtk/2.0/defs/gtkmozembed.defs
 share/pygtk/2.0/defs/trayicon.defs

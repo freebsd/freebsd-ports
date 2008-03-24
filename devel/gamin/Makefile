@@ -3,11 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/devel/gamin/Makefile,v 1.2 2007/02/02 18:57:01 mezz Exp $
+#    $MCom: ports/devel/gamin/Makefile,v 1.4 2008/01/09 19:55:24 marcus Exp $
 #
 
 PORTNAME=	gamin
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
 
@@ -16,7 +17,7 @@ COMMENT?=	A file and directory monitoring system
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-USE_GNOME?=	gnomehack glib20
+USE_GNOME?=	gnomehack _glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python

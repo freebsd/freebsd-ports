@@ -1,9 +1,16 @@
 %%RUBY_SITELIBDIR%%/cairo.rb
+%%RUBY_SITELIBDIR%%/cairo/color.rb
+%%RUBY_SITELIBDIR%%/cairo/colors.rb
+%%RUBY_SITELIBDIR%%/cairo/constants.rb
 %%RUBY_SITELIBDIR%%/cairo/context.rb
+%%RUBY_SITELIBDIR%%/cairo/context/blur.rb
 %%RUBY_SITELIBDIR%%/cairo/context/circle.rb
+%%RUBY_SITELIBDIR%%/cairo/context/color.rb
 %%RUBY_SITELIBDIR%%/cairo/context/path.rb
-%%RUBY_SITELIBDIR%%/cairo/context/quad.rb
 %%RUBY_SITELIBDIR%%/cairo/context/rectangle.rb
+%%RUBY_SITELIBDIR%%/cairo/context/triangle.rb
+%%RUBY_SITELIBDIR%%/cairo/path.rb
+%%RUBY_SITELIBDIR%%/cairo/point.rb
 %%RUBY_SITEARCHLIBDIR%%/cairo.so
 %%RUBY_SITEARCHLIBDIR%%/rb_cairo.h
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
@@ -12,12 +19,15 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/GPL
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/agg/aa_test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/blur.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pac.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pac2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/png.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/scalable.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/text-on-path.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/text2.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/agg
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%@dirrm %%RUBY_SITELIBDIR%%/cairo/context

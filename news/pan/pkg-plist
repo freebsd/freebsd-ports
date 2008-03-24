@@ -45,6 +45,6 @@ share/locale/vi/LC_MESSAGES/pan.mo
 share/locale/zh_CN/LC_MESSAGES/pan.mo
 share/locale/zh_TW/LC_MESSAGES/pan.mo
 share/pixmaps/pan.png
+@dirrmtry share/applications
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
-@dirrmtry share/applications

@@ -168,6 +168,7 @@
     SUBDIR += entrans
     SUBDIR += epiphany
     SUBDIR += epiphany-extensions
+    SUBDIR += epiphany-webkit
     SUBDIR += erwn
     SUBDIR += etoile-bookmarkkit
     SUBDIR += etoile-mollusk
@@ -330,6 +331,7 @@
     SUBDIR += mhonarc
     SUBDIR += micro_httpd
     SUBDIR += middleman
+    SUBDIR += midori
     SUBDIR += mimetex
     SUBDIR += mini_httpd
     SUBDIR += mkapachepw
@@ -1319,6 +1321,7 @@
     SUBDIR += webfs
     SUBDIR += webglimpse
     SUBDIR += webinject
+    SUBDIR += webkit-gtk2
     SUBDIR += weblint
     SUBDIR += weblint++
     SUBDIR += webredirect

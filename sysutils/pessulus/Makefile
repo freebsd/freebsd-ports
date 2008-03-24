@@ -3,11 +3,11 @@
 # Whom:					FreeBSD GNOME Team
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/pessulus/Makefile,v 1.14 2007/09/17 20:08:42 ahze Exp $
+#   $MCom: ports/sysutils/pessulus/Makefile,v 1.16 2008/03/10 23:41:35 ahze Exp $
 #
 
 PORTNAME=	pessulus
-PORTVERSION=	2.16.3
+PORTVERSION=	2.16.4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	 sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

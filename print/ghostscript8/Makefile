@@ -35,7 +35,8 @@ USE_GMAKE=	yes
 WANT_GNOME=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}" XLDFLAGS="${XLDFLAGS}" \
-		EXTRALIBS="${EXTRALIBS}"
+		EXTRALIBS="${EXTRALIBS}" \
+		SOC_LOADER="dxmainc.c"
 PLIST_SUB=	GS_VERSION="${GS_VERSION}" \
 		CIDFONTDIR="${CIDFONTDIR}"
 
@@ -44,7 +45,6 @@ OPTIONS=	A4SIZE	"Set A4 (not Letter) as a default paper size"	off \
 		FT_BRIDGE	"FreeType bridge"	off \
 		ICONV	"libiconv support (required by opvp/oprp drivers)" on \
 		JPNFONTS	"Japanese font support"	on \
-		SHLIB	"With shared libraries"	off \
 		SVGALIB	"svgalib support"	off
 .if defined(WITHOUT_X11)
 OPTIONS+=	X11	"X11 support"	off
@@ -107,22 +107,10 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libfreetype.a:${PORTSDIR}/print/freetype2
 MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".a"
 .endif
 
-.if defined(WITH_SHLIB)
-.if defined(WITHOUT_X11)
-MAKE_ENV+=	SOC_LOADER="dxmainc.c"
-.else
-USE_GNOME+=	gtk20
-MAKE_ENV+=	SOC_LOADER="dxmain.c" \
-		SOC_CFLAGS="`pkg-config --cflags gtk+-2.0`" \
-		SOC_LIBS="`pkg-config --libs gtk+-2.0`"
-.endif
 ALL_TARGET=	so
 INSTALL_TARGET=	soinstall
 USE_LDCONFIG=	yes
-PLIST_SUB+=	SHLIB="" SHLIB_VER="${GS_VERSION:R}"
-.else
-PLIST_SUB+=	SHLIB="@comment "
-.endif
+PLIST_SUB+=	SHLIB_VER="${GS_VERSION:R}"
 
 GS_SRCS=	${DISTNAME}${EXTRACT_SUFX}
 IJS_SRCS=	ijs-0.35${EXTRACT_SUFX}
@@ -240,12 +228,8 @@ post-install:
 	${ECHO_MSG} ">>> in post-install ..."
 	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont ${CIDFONTDIR}/CIDFont
 	${ECHO_MSG} ">>>   stripping gs ..."
-.if defined(WITH_SHLIB)
 	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx
 	${LN} -sf gsc ${PREFIX}/bin/gs
-.else
-	${STRIP_CMD} ${PREFIX}/bin/gs
-.endif
 # for PCL3 driver
 	${ECHO_MSG} ">>>   installing PCL3 utility in bindir ..."
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pcl3opts ${PREFIX}/bin

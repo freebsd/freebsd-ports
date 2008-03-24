@@ -2,6 +2,7 @@ share/gnome-background-properties/gnome-branded.xml
 share/gnome-background-properties/gnome-nature.xml
 share/gnome-background-properties/gnome-tiles.xml
 share/gnome-background-properties/gnome-translucent.xml
+share/locale/af/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ar/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/as/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/be/LC_MESSAGES/gnome-backgrounds.mo
@@ -24,6 +25,8 @@ share/locale/eu/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/fa/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/fi/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/fr/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/fur/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ga/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/gl/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/gu/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/he/LC_MESSAGES/gnome-backgrounds.mo
@@ -70,6 +73,8 @@ share/locale/te/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/th/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/tr/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/uk/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/uz/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/uz@cyrillic/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/vi/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-backgrounds.mo
@@ -87,11 +92,13 @@ share/pixmaps/backgrounds/gnome/translucent/tentacles.svg
 @dirrm share/pixmaps/backgrounds/gnome/tiles
 @dirrm share/pixmaps/backgrounds/gnome/nature
 @dirrm share/pixmaps/backgrounds/gnome/branded
-@dirrm share/pixmaps/backgrounds/gnome
-@dirrm share/pixmaps/backgrounds
+@dirrmtry share/pixmaps/backgrounds/gnome
+@dirrmtry share/pixmaps/backgrounds
 @dirrmtry share/gnome-background-properties
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/si/LC_MESSAGES
@@ -112,6 +119,8 @@ share/pixmaps/backgrounds/gnome/translucent/tentacles.svg
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

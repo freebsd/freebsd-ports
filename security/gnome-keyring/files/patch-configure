@@ -1,0 +1,20 @@
+--- configure.orig	2008-02-11 21:29:42.000000000 -0500
++++ configure	2008-02-11 21:29:51.000000000 -0500
+@@ -23793,7 +23793,7 @@ else
+   tests_status="no"
+ fi
+ 
+- if test "$enable_tests" == "yes"; then
++ if test "$enable_tests" = "yes"; then
+   WITH_TESTS_TRUE=
+   WITH_TESTS_FALSE='#'
+ else
+@@ -25228,7 +25228,7 @@ fi
+ 
+ 	dbus_status=$DBUS_VERSION
+ fi
+- if test "$enable_dbus" == "yes"; then
++ if test "$enable_dbus" = "yes"; then
+   WITH_DBUS_TRUE=
+   WITH_DBUS_FALSE='#'
+ else

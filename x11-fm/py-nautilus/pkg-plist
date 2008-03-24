@@ -1,7 +1,7 @@
 lib/nautilus-python/nautilus.la
 lib/nautilus-python/nautilus.so
-lib/nautilus/extensions-1.0/libnautilus-python.la
-lib/nautilus/extensions-1.0/libnautilus-python.so
+lib/nautilus/extensions-2.0/libnautilus-python.la
+lib/nautilus/extensions-2.0/libnautilus-python.so
 libdata/pkgconfig/nautilus-python.pc
 %%DOCSDIR%%/README
 %%DOCSDIR%%/documentation.py
@@ -9,6 +9,7 @@ libdata/pkgconfig/nautilus-python.pc
 %%DOCSDIR%%/examples/block-size-column.py
 %%DOCSDIR%%/examples/md5sum-property-page.py
 %%DOCSDIR%%/examples/open-terminal.py
+%%DOCSDIR%%/examples/submenu.py
 @dirrm %%DOCSDIR%%/examples
 @dirrm %%DOCSDIR%%
 @dirrm lib/nautilus-python

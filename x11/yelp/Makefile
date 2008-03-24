@@ -3,14 +3,13 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/yelp/Makefile,v 1.117 2007/09/18 16:50:09 marcus Exp $
+#   $MCom: ports/x11/yelp/Makefile,v 1.122 2008/03/09 21:51:58 mezz Exp $
 #
 
 PORTNAME=	yelp
-PORTVERSION=	2.20.0
+PORTVERSION=	2.22.0
 CATEGORIES=	x11 gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,18 +18,17 @@ COMMENT=	A help browser for the GNOME 2 desktop
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
     		rarian.0:${PORTSDIR}/textproc/rarian
 
-USE_GECKO=	firefox xulrunner firefox-devel<->firefox
+USE_GECKO=	firefox xulrunner seamonkey
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_XLIB=	yes
+USE_XORG=	ice
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui gnomedocutils \
-		libgnomeprintui
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-mozilla=${GECKO}
+CONFIGURE_ARGS=	--with-gecko=${GECKO}
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 GCONF_SCHEMAS=	yelp.schemas

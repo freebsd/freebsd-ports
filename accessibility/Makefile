@@ -20,6 +20,7 @@
     SUBDIR += java-access-bridge
     SUBDIR += kdeaccessibility
     SUBDIR += linux-atk
+    SUBDIR += mousetweaks
     SUBDIR += orca
     SUBDIR += py-papi
     SUBDIR += qt4-accessible

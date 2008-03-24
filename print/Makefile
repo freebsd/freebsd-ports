@@ -169,6 +169,7 @@
     SUBDIR += libotf
     SUBDIR += libpaper
     SUBDIR += libppd
+    SUBDIR += libspectre
     SUBDIR += lilypond
     SUBDIR += lout
     SUBDIR += lpr-wrapper

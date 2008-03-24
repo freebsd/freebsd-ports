@@ -1,19 +1,28 @@
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libclearlooks.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libclearlooks.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libclearlooks.so
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libcrux-engine.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libcrux-engine.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libcrux-engine.so
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libglide.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libglide.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libglide.so
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libhcengine.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libhcengine.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libhcengine.so
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libindustrial.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libindustrial.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libindustrial.so
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libmist.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libmist.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libmist.so
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libredmond95.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libredmond95.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libredmond95.so
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsmooth.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsmooth.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsmooth.so
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libthinice.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libthinice.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libthinice.so
 libdata/pkgconfig/gtk-engines-2.pc
@@ -31,6 +40,7 @@ share/locale/be@latin/LC_MESSAGES/gtk-engines.mo
 share/locale/bg/LC_MESSAGES/gtk-engines.mo
 share/locale/bn_IN/LC_MESSAGES/gtk-engines.mo
 share/locale/ca/LC_MESSAGES/gtk-engines.mo
+share/locale/cs/LC_MESSAGES/gtk-engines.mo
 share/locale/da/LC_MESSAGES/gtk-engines.mo
 share/locale/de/LC_MESSAGES/gtk-engines.mo
 share/locale/dz/LC_MESSAGES/gtk-engines.mo
@@ -38,18 +48,24 @@ share/locale/el/LC_MESSAGES/gtk-engines.mo
 share/locale/en_GB/LC_MESSAGES/gtk-engines.mo
 share/locale/es/LC_MESSAGES/gtk-engines.mo
 share/locale/et/LC_MESSAGES/gtk-engines.mo
+share/locale/eu/LC_MESSAGES/gtk-engines.mo
 share/locale/fi/LC_MESSAGES/gtk-engines.mo
 share/locale/fr/LC_MESSAGES/gtk-engines.mo
 share/locale/gl/LC_MESSAGES/gtk-engines.mo
 share/locale/gu/LC_MESSAGES/gtk-engines.mo
+share/locale/he/LC_MESSAGES/gtk-engines.mo
+share/locale/hi/LC_MESSAGES/gtk-engines.mo
 share/locale/hu/LC_MESSAGES/gtk-engines.mo
 share/locale/it/LC_MESSAGES/gtk-engines.mo
 share/locale/ja/LC_MESSAGES/gtk-engines.mo
 share/locale/ko/LC_MESSAGES/gtk-engines.mo
 share/locale/lt/LC_MESSAGES/gtk-engines.mo
 share/locale/mk/LC_MESSAGES/gtk-engines.mo
+share/locale/ml/LC_MESSAGES/gtk-engines.mo
+share/locale/mr/LC_MESSAGES/gtk-engines.mo
 share/locale/nb/LC_MESSAGES/gtk-engines.mo
 share/locale/nl/LC_MESSAGES/gtk-engines.mo
+share/locale/nn/LC_MESSAGES/gtk-engines.mo
 share/locale/oc/LC_MESSAGES/gtk-engines.mo
 share/locale/or/LC_MESSAGES/gtk-engines.mo
 share/locale/pa/LC_MESSAGES/gtk-engines.mo
@@ -58,14 +74,19 @@ share/locale/pt/LC_MESSAGES/gtk-engines.mo
 share/locale/pt_BR/LC_MESSAGES/gtk-engines.mo
 share/locale/ru/LC_MESSAGES/gtk-engines.mo
 share/locale/si/LC_MESSAGES/gtk-engines.mo
+share/locale/sl/LC_MESSAGES/gtk-engines.mo
 share/locale/sq/LC_MESSAGES/gtk-engines.mo
 share/locale/sr/LC_MESSAGES/gtk-engines.mo
+share/locale/sr@Latn/LC_MESSAGES/gtk-engines.mo
 share/locale/sv/LC_MESSAGES/gtk-engines.mo
 share/locale/ta/LC_MESSAGES/gtk-engines.mo
 share/locale/th/LC_MESSAGES/gtk-engines.mo
+share/locale/tr/LC_MESSAGES/gtk-engines.mo
 share/locale/uk/LC_MESSAGES/gtk-engines.mo
 share/locale/vi/LC_MESSAGES/gtk-engines.mo
 share/locale/zh_CN/LC_MESSAGES/gtk-engines.mo
+share/locale/zh_HK/LC_MESSAGES/gtk-engines.mo
+share/locale/zh_TW/LC_MESSAGES/gtk-engines.mo
 share/themes/Clearlooks/gtk-2.0/gtkrc
 share/themes/Crux/gtk-2.0/gtkrc
 share/themes/Industrial/gtk-2.0/gtkrc
@@ -86,10 +107,14 @@ share/themes/ThinIce/gtk-2.0/gtkrc
 @dirrmtry share/themes/Clearlooks
 @dirrmtry share/themes
 @dirrm share/gtk-engines
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

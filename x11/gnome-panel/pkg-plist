@@ -1,6 +1,7 @@
 bin/gnome-desktop-item-edit
 bin/gnome-panel
 bin/panel-test-applets
+etc/dbus-1/system.d/org.gnome.ClockApplet.Mechanism.conf
 @unexec gconftool-2 --direct --config-source=xml::%D/etc/gconf/gconf.xml.defaults --unload %D/etc/gconf/schemas/panel-default-setup.entries /apps/panel > /dev/null || /usr/bin/true
 @unexec gconftool-2 --direct --config-source=xml::%D/etc/gconf/gconf.xml.defaults --unload %D/etc/gconf/schemas/panel-default-setup.entries > /dev/null || /usr/bin/true
 etc/gconf/schemas/panel-default-setup.entries
@@ -22,9 +23,12 @@ libdata/bonobo/servers/GNOME_Wncklet_Factory.server
 libdata/pkgconfig/libpanelapplet-2.0.pc
 libexec/clock-applet
 libexec/fish-applet-2
+libexec/gnome-clock-applet-mechanism
 libexec/notification-area-applet
 libexec/wnck-applet
+share/PolicyKit/policy/gnome-clock-applet-mechanism.policy
 share/applications/gnome-panel.desktop
+share/dbus-1/system-services/org.gnome.ClockApplet.Mechanism.service
 share/gnome-2.0/ui/GNOME_ClockApplet.xml
 share/gnome-2.0/ui/GNOME_FishApplet.xml
 share/gnome-2.0/ui/GNOME_NotificationAreaApplet.xml
@@ -33,6 +37,7 @@ share/gnome-2.0/ui/GNOME_ShowDesktopApplet.xml
 share/gnome-2.0/ui/GNOME_WindowListApplet.xml
 share/gnome-2.0/ui/GNOME_WindowMenuApplet.xml
 share/gnome-2.0/ui/GNOME_WorkspaceSwitcherApplet.xml
+%%DATADIR%%/glade/clock.glade
 %%DATADIR%%/glade/fish.glade
 %%DATADIR%%/glade/panel-properties-dialog.glade
 %%DATADIR%%/glade/panel-run-dialog.glade
@@ -40,6 +45,18 @@ share/gnome-2.0/ui/GNOME_WorkspaceSwitcherApplet.xml
 %%DATADIR%%/glade/timezone.glade
 %%DATADIR%%/glade/window-list.glade
 %%DATADIR%%/glade/workspace-switcher.glade
+%%DATADIR%%/iso3166.tab
+%%DATADIR%%/pixmaps/clock-calendar-icon.png
+%%DATADIR%%/pixmaps/clock-face-large.svg
+%%DATADIR%%/pixmaps/clock-face-small-day.svg
+%%DATADIR%%/pixmaps/clock-face-small-evening.svg
+%%DATADIR%%/pixmaps/clock-face-small-morning.svg
+%%DATADIR%%/pixmaps/clock-face-small-night.svg
+%%DATADIR%%/pixmaps/clock-face-small.svg
+%%DATADIR%%/pixmaps/clock-map-location-current.png
+%%DATADIR%%/pixmaps/clock-map-location-hilight.png
+%%DATADIR%%/pixmaps/clock-map-location-marker.png
+%%DATADIR%%/pixmaps/clock-map.png
 %%DATADIR%%/pixmaps/fishanim.png
 %%DATADIR%%/pixmaps/footguy.png
 %%DATADIR%%/pixmaps/gnome-gegl2-2.png
@@ -153,6 +170,7 @@ share/gnome/help/fish/uk/fish.xml
 share/gnome/help/fish/uk/legal.xml
 share/gnome/help/window-list/C/window-list.xml
 share/gnome/help/window-list/ca/window-list.xml
+share/gnome/help/window-list/da/window-list.xml
 share/gnome/help/window-list/de/figures/window_list_applet.png
 share/gnome/help/window-list/de/figures/window_list_group.png
 share/gnome/help/window-list/de/figures/window_list_group_applet.png
@@ -180,6 +198,7 @@ share/gnome/help/window-list/zh_TW/legal.xml
 share/gnome/help/window-list/zh_TW/window-list.xml
 share/gnome/help/workspace-switcher/C/workspace-switcher.xml
 share/gnome/help/workspace-switcher/ca/workspace-switcher.xml
+share/gnome/help/workspace-switcher/da/workspace-switcher.xml
 share/gnome/help/workspace-switcher/de/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/de/figures/workspacelist_applet.png
 share/gnome/help/workspace-switcher/de/legal.xml
@@ -251,6 +270,7 @@ share/icons/hicolor/32x32/apps/gnome-panel-window-list.png
 share/icons/hicolor/32x32/apps/gnome-panel-window-menu.png
 share/icons/hicolor/32x32/apps/gnome-panel-workspace-switcher.png
 share/icons/hicolor/32x32/apps/gnome-panel.png
+share/icons/hicolor/48x48/apps/gnome-panel.png
 share/icons/hicolor/scalable/apps/gnome-panel-clock.svg
 share/icons/hicolor/scalable/apps/gnome-panel-drawer.svg
 share/icons/hicolor/scalable/apps/gnome-panel-fish.svg
@@ -266,6 +286,7 @@ share/idl/gnome-panel-2.0/GNOME_Panel.idl
 share/locale/af/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/as/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/be@latin/LC_MESSAGES/gnome-panel-2.0.mo
@@ -325,6 +346,7 @@ share/locale/oc/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/or/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pl/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ps/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pt/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ro/LC_MESSAGES/gnome-panel-2.0.mo
@@ -395,6 +417,7 @@ share/omf/gnome-panel/workspace-switcher-zh_CN.omf
 share/omf/gnome-panel/workspace-switcher-zh_TW.omf
 share/omf/window-list/window-list-C.omf
 share/omf/window-list/window-list-ca.omf
+share/omf/window-list/window-list-da.omf
 share/omf/window-list/window-list-de.omf
 share/omf/window-list/window-list-el.omf
 share/omf/window-list/window-list-es.omf
@@ -409,6 +432,7 @@ share/omf/window-list/window-list-uk.omf
 share/omf/window-list/window-list-zh_CN.omf
 share/omf/workspace-switcher/workspace-switcher-C.omf
 share/omf/workspace-switcher/workspace-switcher-ca.omf
+share/omf/workspace-switcher/workspace-switcher-da.omf
 share/omf/workspace-switcher/workspace-switcher-de.omf
 share/omf/workspace-switcher/workspace-switcher-el.omf
 share/omf/workspace-switcher/workspace-switcher-es.omf
@@ -448,6 +472,7 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrm share/gnome/help/workspace-switcher/el
 @dirrm share/gnome/help/workspace-switcher/de/figures
 @dirrm share/gnome/help/workspace-switcher/de
+@dirrm share/gnome/help/workspace-switcher/da
 @dirrm share/gnome/help/workspace-switcher/ca
 @dirrm share/gnome/help/workspace-switcher/C
 @dirrm share/gnome/help/workspace-switcher
@@ -468,6 +493,7 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrm share/gnome/help/window-list/el
 @dirrm share/gnome/help/window-list/de/figures
 @dirrm share/gnome/help/window-list/de
+@dirrm share/gnome/help/window-list/da
 @dirrm share/gnome/help/window-list/ca
 @dirrm share/gnome/help/window-list/C
 @dirrm share/gnome/help/window-list
@@ -543,6 +569,7 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm include/panel-2.0
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
@@ -562,6 +589,8 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/ps/LC_MESSAGES
+@dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
@@ -584,4 +613,5 @@ share/omf/workspace-switcher/workspace-switcher-vi.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

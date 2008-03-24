@@ -1,9 +1,18 @@
---- data/Makefile.in.orig	Sun Jan 28 20:39:50 2007
-+++ data/Makefile.in	Sun Jan 28 20:41:03 2007
-@@ -271,7 +271,7 @@ EXTRA_DIST = \
- 	session-properties.desktop.in
+--- data/Makefile.in.orig	2008-03-01 02:09:17.000000000 -0500
++++ data/Makefile.in	2008-03-01 02:10:21.000000000 -0500
+@@ -258,7 +258,7 @@ default_in_files = default.session.in
+ default_DATA = $(default_in_files:.session.in=.session)
+ xsessiondir = $(datadir)/xsessions
+ xsession_in_files = gnome.desktop.in
+-xsession_DATA = $(xsession_in_files:.desktop.in=.desktop)
++xsession_DATA = # $(xsession_in_files:.desktop.in=.desktop)
+ settingsdir = $(datadir)/applications
+ @SESSION_TRUE@settings_in_files = session-properties.desktop.in
+ @SESSION_TRUE@settings_DATA = $(settings_in_files:.desktop.in=.desktop)
+@@ -280,7 +280,7 @@ CLEANFILES = \
+ 	gnome.desktop			\
+ 	session-properties.desktop
  
- CLEANFILES = default.session gnome-session.schemas session-properties.desktop
 -all: all-recursive
 +all: all-recursive default.session
  

@@ -239,7 +239,7 @@ share/mime/packages/brasero.xml
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/locale/sr@Latn/LC_MESSAGES
-@dirrmtry share/locale/sr@Latn
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz

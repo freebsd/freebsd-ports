@@ -3,38 +3,41 @@
 # Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11/gdm/Makefile,v 1.6 2007/12/02 01:41:20 marcus Exp $
+#   $MCom: ports/x11/gdm/Makefile,v 1.117 2008/03/22 04:21:52 mezz Exp $
 #
 
 PORTNAME=	gdm
-PORTVERSION=	2.20.3
+PORTVERSION=	2.20.4
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 version of xdm display manager
 
 BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
-RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+		ck-connector.0:${PORTSDIR}/sysutils/consolekit
+RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
+		xrdb:${PORTSDIR}/x11/xrdb
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_XLIB=	yes
 USE_XORG=	dmx dmxproto
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomehier libgnomeui librsvg2 gnomedocutils \
+USE_GNOME=	gnomehack intlhack gnomehier librsvg2 gnomedocutils \
 		gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTKDOC="false"
+CONFIGURE_ARGS=--with-console-kit=yes
 
 GDMDIR?=	${PREFIX}/etc/gdm
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -44,8 +47,7 @@ GNOME_LOCALSTATEDIR=	/var
 MAN1=		gdm.1
 
 OPTIONS=	IPV6 "Enable IPv6 support" on \
-		LOG_LIMIT "Limit ~/.xsession-errors size" on \
-		CONSOLEKIT "Enable ConsoleKit support" off
+		LOG_LIMIT "Limit ~/.xsession-errors size" on
 
 .include <bsd.port.pre.mk>
 
@@ -63,13 +65,6 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if defined(WITHOUT_LOG_LIMIT)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-daemon_slave.c
-.endif
-
-.if defined(WITH_CONSOLEKIT)
-CONFIGURE_ARGS+=--with-console-kit=yes
-LIB_DEPENDS+=	ck-connector.0:${PORTSDIR}/sysutils/consolekit
-.else
-CONFIGURE_ARGS+=--with-console-kit=no
 .endif
 
 post-patch:

@@ -88,6 +88,7 @@ share/locale/mr/LC_MESSAGES/pessulus.mo
 share/locale/nb/LC_MESSAGES/pessulus.mo
 share/locale/ne/LC_MESSAGES/pessulus.mo
 share/locale/nl/LC_MESSAGES/pessulus.mo
+share/locale/nn/LC_MESSAGES/pessulus.mo
 share/locale/oc/LC_MESSAGES/pessulus.mo
 share/locale/or/LC_MESSAGES/pessulus.mo
 share/locale/pa/LC_MESSAGES/pessulus.mo
@@ -115,6 +116,7 @@ share/locale/zh_TW/LC_MESSAGES/pessulus.mo
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/Pessulus
+@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -133,4 +135,3 @@ share/locale/zh_TW/LC_MESSAGES/pessulus.mo
 @dirrmtry share/locale/be@latin
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/applications

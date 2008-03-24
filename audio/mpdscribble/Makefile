@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.frob.nl/projects/scribble/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mpd last.fm client
 
-LIB_DEPENDS=	soup:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	soup:${PORTSDIR}/devel/libsoup22
 
 GNU_CONFIGURE=	yes
 

@@ -21,9 +21,9 @@ lib/libcryptui.a
 lib/libcryptui.la
 lib/libcryptui.so
 lib/libcryptui.so.0
-%%NAUTILUS%%lib/nautilus/extensions-1.0/libnautilus-seahorse.a
-%%NAUTILUS%%lib/nautilus/extensions-1.0/libnautilus-seahorse.la
-%%NAUTILUS%%lib/nautilus/extensions-1.0/libnautilus-seahorse.so
+%%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-seahorse.a
+%%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-seahorse.la
+%%NAUTILUS%%lib/nautilus/extensions-2.0/libnautilus-seahorse.so
 %%APPLET%%lib/seahorse/seahorse-applet
 lib/seahorse/seahorse-ssh-askpass
 lib/seahorse/xloadimage
@@ -176,6 +176,7 @@ share/locale/et/LC_MESSAGES/seahorse.mo
 share/locale/eu/LC_MESSAGES/seahorse.mo
 share/locale/fi/LC_MESSAGES/seahorse.mo
 share/locale/fr/LC_MESSAGES/seahorse.mo
+share/locale/ga/LC_MESSAGES/seahorse.mo
 share/locale/gl/LC_MESSAGES/seahorse.mo
 share/locale/gu/LC_MESSAGES/seahorse.mo
 share/locale/he/LC_MESSAGES/seahorse.mo
@@ -184,11 +185,13 @@ share/locale/hr/LC_MESSAGES/seahorse.mo
 share/locale/hu/LC_MESSAGES/seahorse.mo
 share/locale/it/LC_MESSAGES/seahorse.mo
 share/locale/ja/LC_MESSAGES/seahorse.mo
+share/locale/kn/LC_MESSAGES/seahorse.mo
 share/locale/ko/LC_MESSAGES/seahorse.mo
 share/locale/lt/LC_MESSAGES/seahorse.mo
 share/locale/lv/LC_MESSAGES/seahorse.mo
 share/locale/mk/LC_MESSAGES/seahorse.mo
 share/locale/ml/LC_MESSAGES/seahorse.mo
+share/locale/mr/LC_MESSAGES/seahorse.mo
 share/locale/ms/LC_MESSAGES/seahorse.mo
 share/locale/nb/LC_MESSAGES/seahorse.mo
 share/locale/ne/LC_MESSAGES/seahorse.mo
@@ -285,6 +288,7 @@ share/pixmaps/seahorse/scalable/seahorse-sign-ok.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-unknown.svg
 share/pixmaps/seahorse/scalable/seahorse-sign.svg
 share/pixmaps/seahorse/scalable/seahorse.svg
+%%DATADIR%%/glade/seahorse-add-keyring.glade
 %%DATADIR%%/glade/seahorse-add-keyserver.glade
 %%DATADIR%%/glade/seahorse-add-subkey.glade
 %%DATADIR%%/glade/seahorse-add-uid.glade
@@ -355,6 +359,7 @@ share/pixmaps/seahorse/scalable/seahorse.svg
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -365,10 +370,11 @@ share/pixmaps/seahorse/scalable/seahorse.svg
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications

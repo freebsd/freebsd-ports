@@ -399,10 +399,6 @@ share/locale/vi/LC_MESSAGES/inkscape.mo
 share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 share/locale/zh_TW/LC_MESSAGES/inkscape.mo
 share/pixmaps/inkscape.png
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/en_US@piglatin/LC_MESSAGES
-@dirrmtry share/locale/en_US@piglatin
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/tutorials
 @dirrm %%DATADIR%%/templates
@@ -420,3 +416,11 @@ share/pixmaps/inkscape.png
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/locale/en_US@piglatin/LC_MESSAGES
+@dirrmtry share/locale/en_US@piglatin
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz

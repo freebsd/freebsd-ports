@@ -1,4 +1,5 @@
 bin/gtkdoc-check
+bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
 bin/gtkdoc-mkdb
 bin/gtkdoc-mkhtml

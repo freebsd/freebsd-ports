@@ -158,7 +158,6 @@ share/icons/gnome/16x16/actions/gtk-undo-ltr.png
 share/icons/gnome/16x16/actions/gtk-unindent-ltr.png
 share/icons/gnome/16x16/actions/gtk-unindent-rtl.png
 share/icons/gnome/16x16/actions/gtk-zoom-100.png
-share/icons/gnome/16x16/actions/gtk-zoom-fit.png
 share/icons/gnome/16x16/actions/gtk-zoom-in.png
 share/icons/gnome/16x16/actions/gtk-zoom-out.png
 share/icons/gnome/16x16/actions/help-about.png
@@ -296,7 +295,6 @@ share/icons/gnome/16x16/actions/stock_up.png
 share/icons/gnome/16x16/actions/stock_zoom-1.png
 share/icons/gnome/16x16/actions/stock_zoom-in.png
 share/icons/gnome/16x16/actions/stock_zoom-out.png
-share/icons/gnome/16x16/actions/stock_zoom-page.png
 share/icons/gnome/16x16/actions/stop.png
 share/icons/gnome/16x16/actions/system-lock-screen.png
 share/icons/gnome/16x16/actions/system-log-out.png
@@ -320,7 +318,6 @@ share/icons/gnome/16x16/actions/view-sort-descending.png
 share/icons/gnome/16x16/actions/viewmag+.png
 share/icons/gnome/16x16/actions/viewmag-.png
 share/icons/gnome/16x16/actions/viewmag1.png
-share/icons/gnome/16x16/actions/viewmagfit.png
 share/icons/gnome/16x16/actions/window-close.png
 share/icons/gnome/16x16/actions/window-new.png
 share/icons/gnome/16x16/actions/window_fullscreen.png
@@ -328,7 +325,7 @@ share/icons/gnome/16x16/actions/window_new.png
 share/icons/gnome/16x16/actions/window_nofullscreen.png
 share/icons/gnome/16x16/actions/xfce-system-exit.png
 share/icons/gnome/16x16/actions/xfce-system-lock.png
-share/icons/gnome/16x16/actions/zoom-best-fit.png
+share/icons/gnome/16x16/actions/zoom-fit-best.png
 share/icons/gnome/16x16/actions/zoom-in.png
 share/icons/gnome/16x16/actions/zoom-original.png
 share/icons/gnome/16x16/actions/zoom-out.png
@@ -616,20 +613,26 @@ share/icons/gnome/16x16/emblems/emblem-urgent.png
 share/icons/gnome/16x16/emblems/emblem-web.png
 share/icons/gnome/16x16/emblems/stock_mail-priority-high.png
 share/icons/gnome/16x16/emotes/face-angel.png
+share/icons/gnome/16x16/emotes/face-angry.png
 share/icons/gnome/16x16/emotes/face-cool.png
 share/icons/gnome/16x16/emotes/face-crying.png
 share/icons/gnome/16x16/emotes/face-devilish.png
 share/icons/gnome/16x16/emotes/face-embarrassed.png
 share/icons/gnome/16x16/emotes/face-kiss.png
+share/icons/gnome/16x16/emotes/face-laugh.png
 share/icons/gnome/16x16/emotes/face-monkey.png
 share/icons/gnome/16x16/emotes/face-plain.png
 share/icons/gnome/16x16/emotes/face-raspberry.png
 share/icons/gnome/16x16/emotes/face-sad.png
+share/icons/gnome/16x16/emotes/face-sick.png
 share/icons/gnome/16x16/emotes/face-smile-big.png
 share/icons/gnome/16x16/emotes/face-smile.png
 share/icons/gnome/16x16/emotes/face-smirk.png
 share/icons/gnome/16x16/emotes/face-surprise.png
+share/icons/gnome/16x16/emotes/face-tired.png
+share/icons/gnome/16x16/emotes/face-uncertain.png
 share/icons/gnome/16x16/emotes/face-wink.png
+share/icons/gnome/16x16/emotes/face-worried.png
 share/icons/gnome/16x16/emotes/stock_smiley-1.png
 share/icons/gnome/16x16/emotes/stock_smiley-10.png
 share/icons/gnome/16x16/emotes/stock_smiley-11.png
@@ -886,6 +889,8 @@ share/icons/gnome/16x16/status/info.png
 share/icons/gnome/16x16/status/mail-attachment.png
 share/icons/gnome/16x16/status/mail-read.png
 share/icons/gnome/16x16/status/mail-replied.png
+share/icons/gnome/16x16/status/mail-signed-verified.png
+share/icons/gnome/16x16/status/mail-signed.png
 share/icons/gnome/16x16/status/mail-unread.png
 share/icons/gnome/16x16/status/media-playlist-repeat.png
 share/icons/gnome/16x16/status/media-playlist-shuffle.png
@@ -1885,7 +1890,6 @@ share/icons/gnome/22x22/actions/gtk-undo-ltr.png
 share/icons/gnome/22x22/actions/gtk-unindent-ltr.png
 share/icons/gnome/22x22/actions/gtk-unindent-rtl.png
 share/icons/gnome/22x22/actions/gtk-zoom-100.png
-share/icons/gnome/22x22/actions/gtk-zoom-fit.png
 share/icons/gnome/22x22/actions/gtk-zoom-in.png
 share/icons/gnome/22x22/actions/gtk-zoom-out.png
 share/icons/gnome/22x22/actions/help-about.png
@@ -2023,7 +2027,6 @@ share/icons/gnome/22x22/actions/stock_up.png
 share/icons/gnome/22x22/actions/stock_zoom-1.png
 share/icons/gnome/22x22/actions/stock_zoom-in.png
 share/icons/gnome/22x22/actions/stock_zoom-out.png
-share/icons/gnome/22x22/actions/stock_zoom-page.png
 share/icons/gnome/22x22/actions/stop.png
 share/icons/gnome/22x22/actions/system-lock-screen.png
 share/icons/gnome/22x22/actions/system-log-out.png
@@ -2047,7 +2050,6 @@ share/icons/gnome/22x22/actions/view-sort-descending.png
 share/icons/gnome/22x22/actions/viewmag+.png
 share/icons/gnome/22x22/actions/viewmag-.png
 share/icons/gnome/22x22/actions/viewmag1.png
-share/icons/gnome/22x22/actions/viewmagfit.png
 share/icons/gnome/22x22/actions/window-close.png
 share/icons/gnome/22x22/actions/window-new.png
 share/icons/gnome/22x22/actions/window_fullscreen.png
@@ -2055,7 +2057,7 @@ share/icons/gnome/22x22/actions/window_new.png
 share/icons/gnome/22x22/actions/window_nofullscreen.png
 share/icons/gnome/22x22/actions/xfce-system-exit.png
 share/icons/gnome/22x22/actions/xfce-system-lock.png
-share/icons/gnome/22x22/actions/zoom-best-fit.png
+share/icons/gnome/22x22/actions/zoom-fit-best.png
 share/icons/gnome/22x22/actions/zoom-in.png
 share/icons/gnome/22x22/actions/zoom-original.png
 share/icons/gnome/22x22/actions/zoom-out.png
@@ -2342,20 +2344,26 @@ share/icons/gnome/22x22/emblems/emblem-urgent.png
 share/icons/gnome/22x22/emblems/emblem-web.png
 share/icons/gnome/22x22/emblems/stock_mail-priority-high.png
 share/icons/gnome/22x22/emotes/face-angel.png
+share/icons/gnome/22x22/emotes/face-angry.png
 share/icons/gnome/22x22/emotes/face-cool.png
 share/icons/gnome/22x22/emotes/face-crying.png
 share/icons/gnome/22x22/emotes/face-devilish.png
 share/icons/gnome/22x22/emotes/face-embarrassed.png
 share/icons/gnome/22x22/emotes/face-kiss.png
+share/icons/gnome/22x22/emotes/face-laugh.png
 share/icons/gnome/22x22/emotes/face-monkey.png
 share/icons/gnome/22x22/emotes/face-plain.png
 share/icons/gnome/22x22/emotes/face-raspberry.png
 share/icons/gnome/22x22/emotes/face-sad.png
+share/icons/gnome/22x22/emotes/face-sick.png
 share/icons/gnome/22x22/emotes/face-smile-big.png
 share/icons/gnome/22x22/emotes/face-smile.png
 share/icons/gnome/22x22/emotes/face-smirk.png
 share/icons/gnome/22x22/emotes/face-surprise.png
+share/icons/gnome/22x22/emotes/face-tired.png
+share/icons/gnome/22x22/emotes/face-uncertain.png
 share/icons/gnome/22x22/emotes/face-wink.png
+share/icons/gnome/22x22/emotes/face-worried.png
 share/icons/gnome/22x22/emotes/stock_smiley-1.png
 share/icons/gnome/22x22/emotes/stock_smiley-10.png
 share/icons/gnome/22x22/emotes/stock_smiley-11.png
@@ -2610,6 +2618,8 @@ share/icons/gnome/22x22/status/info.png
 share/icons/gnome/22x22/status/mail-attachment.png
 share/icons/gnome/22x22/status/mail-read.png
 share/icons/gnome/22x22/status/mail-replied.png
+share/icons/gnome/22x22/status/mail-signed-verified.png
+share/icons/gnome/22x22/status/mail-signed.png
 share/icons/gnome/22x22/status/mail-unread.png
 share/icons/gnome/22x22/status/media-playlist-repeat.png
 share/icons/gnome/22x22/status/media-playlist-shuffle.png
@@ -2843,7 +2853,6 @@ share/icons/gnome/24x24/actions/gtk-undo-ltr.png
 share/icons/gnome/24x24/actions/gtk-unindent-ltr.png
 share/icons/gnome/24x24/actions/gtk-unindent-rtl.png
 share/icons/gnome/24x24/actions/gtk-zoom-100.png
-share/icons/gnome/24x24/actions/gtk-zoom-fit.png
 share/icons/gnome/24x24/actions/gtk-zoom-in.png
 share/icons/gnome/24x24/actions/gtk-zoom-out.png
 share/icons/gnome/24x24/actions/help-about.png
@@ -2981,7 +2990,6 @@ share/icons/gnome/24x24/actions/stock_up.png
 share/icons/gnome/24x24/actions/stock_zoom-1.png
 share/icons/gnome/24x24/actions/stock_zoom-in.png
 share/icons/gnome/24x24/actions/stock_zoom-out.png
-share/icons/gnome/24x24/actions/stock_zoom-page.png
 share/icons/gnome/24x24/actions/stop.png
 share/icons/gnome/24x24/actions/system-lock-screen.png
 share/icons/gnome/24x24/actions/system-log-out.png
@@ -3005,7 +3013,6 @@ share/icons/gnome/24x24/actions/view-sort-descending.png
 share/icons/gnome/24x24/actions/viewmag+.png
 share/icons/gnome/24x24/actions/viewmag-.png
 share/icons/gnome/24x24/actions/viewmag1.png
-share/icons/gnome/24x24/actions/viewmagfit.png
 share/icons/gnome/24x24/actions/window-close.png
 share/icons/gnome/24x24/actions/window-new.png
 share/icons/gnome/24x24/actions/window_fullscreen.png
@@ -3013,7 +3020,7 @@ share/icons/gnome/24x24/actions/window_new.png
 share/icons/gnome/24x24/actions/window_nofullscreen.png
 share/icons/gnome/24x24/actions/xfce-system-exit.png
 share/icons/gnome/24x24/actions/xfce-system-lock.png
-share/icons/gnome/24x24/actions/zoom-best-fit.png
+share/icons/gnome/24x24/actions/zoom-fit-best.png
 share/icons/gnome/24x24/actions/zoom-in.png
 share/icons/gnome/24x24/actions/zoom-original.png
 share/icons/gnome/24x24/actions/zoom-out.png
@@ -3333,20 +3340,26 @@ share/icons/gnome/24x24/emblems/emblem-urgent.png
 share/icons/gnome/24x24/emblems/emblem-web.png
 share/icons/gnome/24x24/emblems/stock_mail-priority-high.png
 share/icons/gnome/24x24/emotes/face-angel.png
+share/icons/gnome/24x24/emotes/face-angry.png
 share/icons/gnome/24x24/emotes/face-cool.png
 share/icons/gnome/24x24/emotes/face-crying.png
 share/icons/gnome/24x24/emotes/face-devilish.png
 share/icons/gnome/24x24/emotes/face-embarrassed.png
 share/icons/gnome/24x24/emotes/face-kiss.png
+share/icons/gnome/24x24/emotes/face-laugh.png
 share/icons/gnome/24x24/emotes/face-monkey.png
 share/icons/gnome/24x24/emotes/face-plain.png
 share/icons/gnome/24x24/emotes/face-raspberry.png
 share/icons/gnome/24x24/emotes/face-sad.png
+share/icons/gnome/24x24/emotes/face-sick.png
 share/icons/gnome/24x24/emotes/face-smile-big.png
 share/icons/gnome/24x24/emotes/face-smile.png
 share/icons/gnome/24x24/emotes/face-smirk.png
 share/icons/gnome/24x24/emotes/face-surprise.png
+share/icons/gnome/24x24/emotes/face-tired.png
+share/icons/gnome/24x24/emotes/face-uncertain.png
 share/icons/gnome/24x24/emotes/face-wink.png
+share/icons/gnome/24x24/emotes/face-worried.png
 share/icons/gnome/24x24/emotes/stock_smiley-1.png
 share/icons/gnome/24x24/emotes/stock_smiley-10.png
 share/icons/gnome/24x24/emotes/stock_smiley-11.png
@@ -3607,6 +3620,8 @@ share/icons/gnome/24x24/status/info.png
 share/icons/gnome/24x24/status/mail-attachment.png
 share/icons/gnome/24x24/status/mail-read.png
 share/icons/gnome/24x24/status/mail-replied.png
+share/icons/gnome/24x24/status/mail-signed-verified.png
+share/icons/gnome/24x24/status/mail-signed.png
 share/icons/gnome/24x24/status/mail-unread.png
 share/icons/gnome/24x24/status/media-playlist-repeat.png
 share/icons/gnome/24x24/status/media-playlist-shuffle.png
@@ -4456,7 +4471,6 @@ share/icons/gnome/32x32/actions/gtk-undo-ltr.png
 share/icons/gnome/32x32/actions/gtk-unindent-ltr.png
 share/icons/gnome/32x32/actions/gtk-unindent-rtl.png
 share/icons/gnome/32x32/actions/gtk-zoom-100.png
-share/icons/gnome/32x32/actions/gtk-zoom-fit.png
 share/icons/gnome/32x32/actions/gtk-zoom-in.png
 share/icons/gnome/32x32/actions/gtk-zoom-out.png
 share/icons/gnome/32x32/actions/help-about.png
@@ -4589,7 +4603,6 @@ share/icons/gnome/32x32/actions/stock_up.png
 share/icons/gnome/32x32/actions/stock_zoom-1.png
 share/icons/gnome/32x32/actions/stock_zoom-in.png
 share/icons/gnome/32x32/actions/stock_zoom-out.png
-share/icons/gnome/32x32/actions/stock_zoom-page.png
 share/icons/gnome/32x32/actions/stop.png
 share/icons/gnome/32x32/actions/system-lock-screen.png
 share/icons/gnome/32x32/actions/system-log-out.png
@@ -4611,7 +4624,6 @@ share/icons/gnome/32x32/actions/view-sort-descending.png
 share/icons/gnome/32x32/actions/viewmag+.png
 share/icons/gnome/32x32/actions/viewmag-.png
 share/icons/gnome/32x32/actions/viewmag1.png
-share/icons/gnome/32x32/actions/viewmagfit.png
 share/icons/gnome/32x32/actions/window-close.png
 share/icons/gnome/32x32/actions/window-new.png
 share/icons/gnome/32x32/actions/window_fullscreen.png
@@ -4619,7 +4631,7 @@ share/icons/gnome/32x32/actions/window_new.png
 share/icons/gnome/32x32/actions/window_nofullscreen.png
 share/icons/gnome/32x32/actions/xfce-system-exit.png
 share/icons/gnome/32x32/actions/xfce-system-lock.png
-share/icons/gnome/32x32/actions/zoom-best-fit.png
+share/icons/gnome/32x32/actions/zoom-fit-best.png
 share/icons/gnome/32x32/actions/zoom-in.png
 share/icons/gnome/32x32/actions/zoom-original.png
 share/icons/gnome/32x32/actions/zoom-out.png
@@ -4896,20 +4908,26 @@ share/icons/gnome/32x32/emblems/emblem-urgent.png
 share/icons/gnome/32x32/emblems/emblem-web.png
 share/icons/gnome/32x32/emblems/stock_mail-priority-high.png
 share/icons/gnome/32x32/emotes/face-angel.png
+share/icons/gnome/32x32/emotes/face-angry.png
 share/icons/gnome/32x32/emotes/face-cool.png
 share/icons/gnome/32x32/emotes/face-crying.png
 share/icons/gnome/32x32/emotes/face-devilish.png
 share/icons/gnome/32x32/emotes/face-embarrassed.png
 share/icons/gnome/32x32/emotes/face-kiss.png
+share/icons/gnome/32x32/emotes/face-laugh.png
 share/icons/gnome/32x32/emotes/face-monkey.png
 share/icons/gnome/32x32/emotes/face-plain.png
 share/icons/gnome/32x32/emotes/face-raspberry.png
 share/icons/gnome/32x32/emotes/face-sad.png
+share/icons/gnome/32x32/emotes/face-sick.png
 share/icons/gnome/32x32/emotes/face-smile-big.png
 share/icons/gnome/32x32/emotes/face-smile.png
 share/icons/gnome/32x32/emotes/face-smirk.png
 share/icons/gnome/32x32/emotes/face-surprise.png
+share/icons/gnome/32x32/emotes/face-tired.png
+share/icons/gnome/32x32/emotes/face-uncertain.png
 share/icons/gnome/32x32/emotes/face-wink.png
+share/icons/gnome/32x32/emotes/face-worried.png
 share/icons/gnome/32x32/emotes/stock_smiley-1.png
 share/icons/gnome/32x32/emotes/stock_smiley-10.png
 share/icons/gnome/32x32/emotes/stock_smiley-11.png
@@ -5585,7 +5603,6 @@ share/icons/gnome/scalable/actions/gtk-undo-ltr.svg
 share/icons/gnome/scalable/actions/gtk-unindent-ltr.svg
 share/icons/gnome/scalable/actions/gtk-unindent-rtl.svg
 share/icons/gnome/scalable/actions/gtk-zoom-100.svg
-share/icons/gnome/scalable/actions/gtk-zoom-fit.svg
 share/icons/gnome/scalable/actions/gtk-zoom-in.svg
 share/icons/gnome/scalable/actions/gtk-zoom-out.svg
 share/icons/gnome/scalable/actions/help-about.svg
@@ -5718,7 +5735,6 @@ share/icons/gnome/scalable/actions/stock_up.svg
 share/icons/gnome/scalable/actions/stock_zoom-1.svg
 share/icons/gnome/scalable/actions/stock_zoom-in.svg
 share/icons/gnome/scalable/actions/stock_zoom-out.svg
-share/icons/gnome/scalable/actions/stock_zoom-page.svg
 share/icons/gnome/scalable/actions/stop.svg
 share/icons/gnome/scalable/actions/system-lock-screen.svg
 share/icons/gnome/scalable/actions/system-log-out.svg
@@ -5740,7 +5756,6 @@ share/icons/gnome/scalable/actions/view-sort-descending.svg
 share/icons/gnome/scalable/actions/viewmag+.svg
 share/icons/gnome/scalable/actions/viewmag-.svg
 share/icons/gnome/scalable/actions/viewmag1.svg
-share/icons/gnome/scalable/actions/viewmagfit.svg
 share/icons/gnome/scalable/actions/window-close.svg
 share/icons/gnome/scalable/actions/window-new.svg
 share/icons/gnome/scalable/actions/window_fullscreen.svg
@@ -5748,7 +5763,7 @@ share/icons/gnome/scalable/actions/window_new.svg
 share/icons/gnome/scalable/actions/window_nofullscreen.svg
 share/icons/gnome/scalable/actions/xfce-system-exit.svg
 share/icons/gnome/scalable/actions/xfce-system-lock.svg
-share/icons/gnome/scalable/actions/zoom-best-fit.svg
+share/icons/gnome/scalable/actions/zoom-fit-best.svg
 share/icons/gnome/scalable/actions/zoom-in.svg
 share/icons/gnome/scalable/actions/zoom-original.svg
 share/icons/gnome/scalable/actions/zoom-out.svg
@@ -6045,20 +6060,26 @@ share/icons/gnome/scalable/emblems/emblem-web.svg
 share/icons/gnome/scalable/emblems/stock_mail-priority-high.icon
 share/icons/gnome/scalable/emblems/stock_mail-priority-high.svg
 share/icons/gnome/scalable/emotes/face-angel.svg
+share/icons/gnome/scalable/emotes/face-angry.svg
 share/icons/gnome/scalable/emotes/face-cool.svg
 share/icons/gnome/scalable/emotes/face-crying.svg
 share/icons/gnome/scalable/emotes/face-devilish.svg
 share/icons/gnome/scalable/emotes/face-embarrassed.svg
 share/icons/gnome/scalable/emotes/face-kiss.svg
+share/icons/gnome/scalable/emotes/face-laugh.svg
 share/icons/gnome/scalable/emotes/face-monkey.svg
 share/icons/gnome/scalable/emotes/face-plain.svg
 share/icons/gnome/scalable/emotes/face-raspberry.svg
 share/icons/gnome/scalable/emotes/face-sad.svg
+share/icons/gnome/scalable/emotes/face-sick.svg
 share/icons/gnome/scalable/emotes/face-smile-big.svg
 share/icons/gnome/scalable/emotes/face-smile.svg
 share/icons/gnome/scalable/emotes/face-smirk.svg
 share/icons/gnome/scalable/emotes/face-surprise.svg
+share/icons/gnome/scalable/emotes/face-tired.svg
+share/icons/gnome/scalable/emotes/face-uncertain.svg
 share/icons/gnome/scalable/emotes/face-wink.svg
+share/icons/gnome/scalable/emotes/face-worried.svg
 share/icons/gnome/scalable/emotes/stock_smiley-1.svg
 share/icons/gnome/scalable/emotes/stock_smiley-10.svg
 share/icons/gnome/scalable/emotes/stock_smiley-11.svg
@@ -6420,6 +6441,8 @@ share/icons/gnome/scalable/stock/generic/stock_person.svg
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

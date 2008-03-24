@@ -1,6 +1,11 @@
 %%PYTHON_SITELIBDIR%%/gtk-2.0/bugbuddy.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/bugbuddy.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/bugbuddy.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/evolution/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/evolution/ebook.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/evolution/ebook.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/evolution/ecal.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/evolution/ecal.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/applet.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/applet.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/applet.pyo
@@ -71,7 +76,7 @@ libdata/pkgconfig/gnome-python-desktop-2.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourcetagstyle.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourcetagtable.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/class-gtksourceview.html
-%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/gtksourcesview-class-reference.html
+%%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/gtksourceview-class-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/index.html
 %%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/index.sgml
 %%PORTDOCS%%%%DOCSDIR%%/pygtksourceview/pygtksourceview.devhelp
@@ -104,6 +109,7 @@ libdata/pkgconfig/gnome-python-desktop-2.0.pc
 share/pygtk/2.0/defs/_gnomedesktop.defs
 share/pygtk/2.0/defs/applet.defs
 share/pygtk/2.0/defs/art.defs
+share/pygtk/2.0/defs/ebook.defs
 share/pygtk/2.0/defs/gnomekeyring.defs
 share/pygtk/2.0/defs/gtksourceview.defs
 share/pygtk/2.0/defs/mediaprofiles.defs
@@ -126,3 +132,4 @@ share/pygtk/2.0/defs/wnck.defs
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/totem
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomedesktop
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/evolution

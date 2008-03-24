@@ -3,9 +3,10 @@ bin/vino-session
 libdata/bonobo/servers/GNOME_RemoteDesktop.server
 libexec/vino-server
 share/applications/vino-preferences.desktop
-share/icons/hicolor/48x48/apps/gnome-remote-desktop.png
 share/locale/ar/LC_MESSAGES/vino.mo
+share/locale/as/LC_MESSAGES/vino.mo
 share/locale/az/LC_MESSAGES/vino.mo
+share/locale/be@latin/LC_MESSAGES/vino.mo
 share/locale/bg/LC_MESSAGES/vino.mo
 share/locale/bn/LC_MESSAGES/vino.mo
 share/locale/bn_IN/LC_MESSAGES/vino.mo
@@ -34,6 +35,7 @@ share/locale/id/LC_MESSAGES/vino.mo
 share/locale/it/LC_MESSAGES/vino.mo
 share/locale/ja/LC_MESSAGES/vino.mo
 share/locale/ka/LC_MESSAGES/vino.mo
+share/locale/kn/LC_MESSAGES/vino.mo
 share/locale/ko/LC_MESSAGES/vino.mo
 share/locale/ku/LC_MESSAGES/vino.mo
 share/locale/lt/LC_MESSAGES/vino.mo
@@ -41,6 +43,7 @@ share/locale/lv/LC_MESSAGES/vino.mo
 share/locale/mk/LC_MESSAGES/vino.mo
 share/locale/ml/LC_MESSAGES/vino.mo
 share/locale/mn/LC_MESSAGES/vino.mo
+share/locale/mr/LC_MESSAGES/vino.mo
 share/locale/ms/LC_MESSAGES/vino.mo
 share/locale/nb/LC_MESSAGES/vino.mo
 share/locale/ne/LC_MESSAGES/vino.mo
@@ -63,6 +66,7 @@ share/locale/sr/LC_MESSAGES/vino.mo
 share/locale/sr@Latn/LC_MESSAGES/vino.mo
 share/locale/sv/LC_MESSAGES/vino.mo
 share/locale/ta/LC_MESSAGES/vino.mo
+share/locale/te/LC_MESSAGES/vino.mo
 share/locale/th/LC_MESSAGES/vino.mo
 share/locale/tr/LC_MESSAGES/vino.mo
 share/locale/ug/LC_MESSAGES/vino.mo
@@ -76,22 +80,30 @@ share/locale/zh_TW/LC_MESSAGES/vino.mo
 %%DATADIR%%/vino-preferences.glade
 %%DATADIR%%/vino-prompt.glade
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
-@dirrmtry share/applications
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

@@ -26,6 +26,7 @@ bin/scrollkeeper-rebuilddb
 bin/scrollkeeper-uninstall
 bin/scrollkeeper-update
 include/rarian/rarian-info.h
+include/rarian/rarian-main.h
 include/rarian/rarian-man.h
 include/rarian/rarian-reg-utils.h
 include/rarian/rarian.h
@@ -34,7 +35,7 @@ lib/librarian.la
 lib/librarian.so
 lib/librarian.so.0
 libdata/pkgconfig/rarian.pc
-share/doc/rarian/rarian.document
+%%DOCSDIR%%/rarian.document
 share/librarian/Templates/C/scrollkeeper_cl.xml
 share/librarian/manual/help-spec-0.2.xml
 share/librarian/manual/index.xhtml
@@ -46,7 +47,7 @@ share/librarian/rarian-sk-cl.xml
 @dirrm share/librarian/Templates/C
 @dirrm share/librarian/Templates
 @dirrm share/librarian
-@dirrm share/doc/rarian
+@dirrm %%DOCSDIR%%
 @dirrm include/rarian
 @unexec rm -rf /var/db/scrollkeeper 2>/dev/null || true
 @exec mkdir -p /var/db/rarian

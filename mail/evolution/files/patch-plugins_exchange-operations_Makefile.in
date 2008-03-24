@@ -1,0 +1,10 @@
+--- plugins/exchange-operations/Makefile.in.orig	2008-03-11 17:54:08.000000000 -0400
++++ plugins/exchange-operations/Makefile.in	2008-03-11 17:54:38.000000000 -0400
+@@ -461,6 +461,7 @@ liborg_gnome_exchange_operations_la_LIBA
+ 	$(top_builddir)/calendar/gui/libevolution-calendar.la 	\
+ 	$(top_builddir)/mail/libevolution-mail.la 		\
+ 	$(top_builddir)/addressbook/gui/component/libevolution-addressbook.la \
++	-Wl,--no-as-needed,$(top_builddir)/addressbook/gui/component/.libs/libevolution-addressbook.so \
+ 	$(CAMEL_EXCHANGE_LIBS)
+ 
+ liborg_gnome_exchange_operations_la_LDFLAGS = -module -avoid-version $(NO_UNDEFINED)

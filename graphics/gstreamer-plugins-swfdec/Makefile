@@ -3,10 +3,10 @@
 # Whom:				Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/graphics/gstreamer-plugins-swfdec80/Makefile,v 1.2 2006/02/24 18:50:34 marcus Exp $
+#    $MCom: ports/graphics/gstreamer-plugins-swfdec/Makefile,v 1.5 2008/03/19 14:05:35 ahze Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	Gstreamer flash redering plugin

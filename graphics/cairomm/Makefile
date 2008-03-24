@@ -3,11 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/cairomm/Makefile,v 1.4 2006/09/06 22:06:40 marcus Exp $
+#   $MCom: ports/graphics/cairomm/Makefile,v 1.7 2008/03/21 21:48:49 kwm Exp $
 #
 
 PORTNAME=	cairomm
-PORTVERSION=	1.2.4
+PORTVERSION=	1.4.8
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -18,10 +18,10 @@ COMMENT=	C++ interface to cairo
 LIB_DEPENDS=	xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26 \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack gnometarget ltverhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		AUTOMAKE="${TRUE}" AUTOCONF="${TRUE}" DOXYGEN="${TRUE}"

@@ -1,0 +1,15 @@
+--- configure.orig	2008-01-13 14:41:48.000000000 -0500
++++ configure	2008-01-13 14:42:01.000000000 -0500
+@@ -19597,10 +19597,10 @@ CPPFLAGS="$save_CPPFLAGS"
+ { echo "$as_me:$LINENO: checking for libraries required to embed python" >&5
+ echo $ECHO_N "checking for libraries required to embed python... $ECHO_C" >&6; }
+ py_exec_prefix=`$PYTHON -c "import sys; print sys.exec_prefix"`
+-if test "x$PYTHON_LIBS" == x; then
++if test "x$PYTHON_LIBS" = x; then
+ 	PYTHON_LIBS="-L${py_prefix}/lib -lpython${PYTHON_VERSION}"
+ fi
+-if test "x$PYTHON_LIB_LOC" == x; then
++if test "x$PYTHON_LIB_LOC" = x; then
+ 	PYTHON_LIB_LOC="${py_prefix}/lib"
+ fi
+ 

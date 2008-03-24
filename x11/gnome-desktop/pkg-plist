@@ -1,5 +1,6 @@
 bin/gnome-about
 include/gnome-desktop-2.0/libgnome/gnome-desktop-item.h
+include/gnome-desktop-2.0/libgnomeui/gnome-bg.h
 include/gnome-desktop-2.0/libgnomeui/gnome-ditem-edit.h
 include/gnome-desktop-2.0/libgnomeui/gnome-hint.h
 lib/libgnome-desktop-2.a
@@ -83,6 +84,7 @@ share/locale/et/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/eu/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/fa/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/fur/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -298,6 +300,7 @@ share/pixmaps/vnterm.xpm
 @dirrm include/gnome-desktop-2.0/libgnomeui
 @dirrm include/gnome-desktop-2.0/libgnome
 @dirrm include/gnome-desktop-2.0
+@dirrmtry share/applications
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -336,10 +339,11 @@ share/pixmaps/vnterm.xpm
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications

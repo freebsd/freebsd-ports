@@ -3,17 +3,15 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/graphics/cairo/Makefile,v 1.1 2007/11/30 07:07:52 marcus Exp $
+#   $MCom: ports/graphics/cairo/Makefile,v 1.69 2008/03/21 04:04:14 ahze Exp $
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.4.14
+PORTVERSION=	1.5.14
 PORTREVISION?=	0
 CATEGORIES=	graphics
-MASTER_SITES=	http://cairographics.org/releases/ \
-    		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	marcus
-#MASTER_SITES=	http://cairographics.org/snapshots/
+#MASTER_SITES=	http://cairographics.org/releases/
+MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
@@ -22,7 +20,8 @@ COMMENT=	Vector graphics library with cross-device output support
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png.5:${PORTSDIR}/graphics/png \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		pixman-1.9:${PORTSDIR}/x11/pixman
 
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--enable-pdf \

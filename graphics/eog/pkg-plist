@@ -22,9 +22,11 @@ include/eog-2.20/eog/eog-transform.h
 include/eog-2.20/eog/eog-window.h
 libdata/pkgconfig/eog.pc
 share/applications/eog.desktop
+%%DATADIR%%/eog-image-properties-dialog.glade
+%%DATADIR%%/eog-multiple-save-as-dialog.glade
+%%DATADIR%%/eog-preferences-dialog.glade
 %%DATADIR%%/eog-toolbar.xml
 %%DATADIR%%/eog-ui.xml
-%%DATADIR%%/eog.glade
 %%DATADIR%%/gtkrc
 %%DATADIR%%/icons/hicolor/16x16/actions/eog-image-collection.png
 %%DATADIR%%/icons/hicolor/16x16/actions/eog-plugin.png
@@ -39,55 +41,76 @@ share/applications/eog.desktop
 share/gnome/help/eog/C/eog.xml
 share/gnome/help/eog/C/figures/eog_save_as_window.png
 share/gnome/help/eog/C/figures/eog_start_window.png
+share/gnome/help/eog/C/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/C/legal.xml
+share/gnome/help/eog/da/eog.xml
+share/gnome/help/eog/da/figures/eog_save_as_window.png
+share/gnome/help/eog/da/figures/eog_start_window.png
+share/gnome/help/eog/da/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/de/eog.xml
 share/gnome/help/eog/de/figures/eog_save_as_window.png
 share/gnome/help/eog/de/figures/eog_start_window.png
+share/gnome/help/eog/de/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/en_GB/eog.xml
 share/gnome/help/eog/en_GB/figures/eog_save_as_window.png
 share/gnome/help/eog/en_GB/figures/eog_start_window.png
+share/gnome/help/eog/en_GB/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/es/eog.xml
 share/gnome/help/eog/es/figures/eog_save_as_window.png
 share/gnome/help/eog/es/figures/eog_start_window.png
+share/gnome/help/eog/es/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/eu/eog.xml
+share/gnome/help/eog/eu/figures/eog_save_as_window.png
 share/gnome/help/eog/eu/figures/eog_start_window.png
-share/gnome/help/eog/eu/legal.xml
+share/gnome/help/eog/eu/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/fr/eog.xml
 share/gnome/help/eog/fr/figures/eog_save_as_window.png
 share/gnome/help/eog/fr/figures/eog_start_window.png
+share/gnome/help/eog/fr/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/it/eog.xml
 share/gnome/help/eog/it/figures/eog_save_as_window.png
 share/gnome/help/eog/it/figures/eog_start_window.png
+share/gnome/help/eog/it/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/ja/eog.xml
+share/gnome/help/eog/ja/figures/eog_save_as_window.png
 share/gnome/help/eog/ja/figures/eog_start_window.png
-share/gnome/help/eog/ja/legal.xml
+share/gnome/help/eog/ja/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/ko/eog.xml
 share/gnome/help/eog/ko/figures/eog_save_as_window.png
 share/gnome/help/eog/ko/figures/eog_start_window.png
+share/gnome/help/eog/ko/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/oc/eog.xml
 share/gnome/help/eog/oc/figures/eog_save_as_window.png
 share/gnome/help/eog/oc/figures/eog_start_window.png
+share/gnome/help/eog/oc/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/pa/eog.xml
 share/gnome/help/eog/pa/figures/eog_save_as_window.png
 share/gnome/help/eog/pa/figures/eog_start_window.png
+share/gnome/help/eog/pa/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/pt_BR/eog.xml
 share/gnome/help/eog/pt_BR/figures/eog_save_as_window.png
 share/gnome/help/eog/pt_BR/figures/eog_start_window.png
+share/gnome/help/eog/pt_BR/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/ru/eog.xml
 share/gnome/help/eog/ru/figures/eog_save_as_window.png
 share/gnome/help/eog/ru/figures/eog_start_window.png
+share/gnome/help/eog/ru/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/sv/eog.xml
 share/gnome/help/eog/sv/figures/eog_save_as_window.png
 share/gnome/help/eog/sv/figures/eog_start_window.png
+share/gnome/help/eog/sv/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/uk/eog.xml
 share/gnome/help/eog/uk/figures/eog_save_as_window.png
 share/gnome/help/eog/uk/figures/eog_start_window.png
+share/gnome/help/eog/uk/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/zh_CN/eog.xml
+share/gnome/help/eog/zh_CN/figures/eog_save_as_window.png
 share/gnome/help/eog/zh_CN/figures/eog_start_window.png
-share/gnome/help/eog/zh_CN/legal.xml
+share/gnome/help/eog/zh_CN/figures/eog_toolbar_editor_window.png
 share/gnome/help/eog/zh_TW/eog.xml
+share/gnome/help/eog/zh_TW/figures/eog_save_as_window.png
 share/gnome/help/eog/zh_TW/figures/eog_start_window.png
-share/gnome/help/eog/zh_TW/legal.xml
+share/gnome/help/eog/zh_TW/figures/eog_toolbar_editor_window.png
 share/icons/hicolor/16x16/apps/eog.png
 share/icons/hicolor/22x22/apps/eog.png
 share/icons/hicolor/24x24/apps/eog.png
@@ -96,6 +119,7 @@ share/icons/hicolor/scalable/apps/eog.svg
 share/locale/af/LC_MESSAGES/eog.mo
 share/locale/am/LC_MESSAGES/eog.mo
 share/locale/ar/LC_MESSAGES/eog.mo
+share/locale/as/LC_MESSAGES/eog.mo
 share/locale/az/LC_MESSAGES/eog.mo
 share/locale/be/LC_MESSAGES/eog.mo
 share/locale/be@latin/LC_MESSAGES/eog.mo
@@ -139,6 +163,7 @@ share/locale/mg/LC_MESSAGES/eog.mo
 share/locale/mk/LC_MESSAGES/eog.mo
 share/locale/ml/LC_MESSAGES/eog.mo
 share/locale/mn/LC_MESSAGES/eog.mo
+share/locale/mr/LC_MESSAGES/eog.mo
 share/locale/ms/LC_MESSAGES/eog.mo
 share/locale/nb/LC_MESSAGES/eog.mo
 share/locale/ne/LC_MESSAGES/eog.mo
@@ -168,8 +193,6 @@ share/locale/tk/LC_MESSAGES/eog.mo
 share/locale/tr/LC_MESSAGES/eog.mo
 share/locale/ug/LC_MESSAGES/eog.mo
 share/locale/uk/LC_MESSAGES/eog.mo
-share/locale/uz/LC_MESSAGES/eog.mo
-share/locale/uz@cyrillic/LC_MESSAGES/eog.mo
 share/locale/vi/LC_MESSAGES/eog.mo
 share/locale/wa/LC_MESSAGES/eog.mo
 share/locale/xh/LC_MESSAGES/eog.mo
@@ -178,6 +201,7 @@ share/locale/zh_HK/LC_MESSAGES/eog.mo
 share/locale/zh_TW/LC_MESSAGES/eog.mo
 share/locale/zu/LC_MESSAGES/eog.mo
 share/omf/eog/eog-C.omf
+share/omf/eog/eog-da.omf
 share/omf/eog/eog-de.omf
 share/omf/eog/eog-en_GB.omf
 share/omf/eog/eog-es.omf
@@ -227,6 +251,8 @@ share/omf/eog/eog-zh_TW.omf
 @dirrm share/gnome/help/eog/en_GB
 @dirrm share/gnome/help/eog/de/figures
 @dirrm share/gnome/help/eog/de
+@dirrm share/gnome/help/eog/da/figures
+@dirrm share/gnome/help/eog/da
 @dirrm share/gnome/help/eog/C/figures
 @dirrm share/gnome/help/eog/C
 @dirrm share/gnome/help/eog
@@ -244,6 +270,7 @@ share/omf/eog/eog-zh_TW.omf
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm include/eog-2.20/eog
 @dirrm include/eog-2.20
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
@@ -254,8 +281,6 @@ share/omf/eog/eog-zh_TW.omf
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -268,6 +293,8 @@ share/omf/eog/eog-zh_TW.omf
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES
@@ -278,4 +305,5 @@ share/omf/eog/eog-zh_TW.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

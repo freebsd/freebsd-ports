@@ -3,10 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11-themes/nimbus/Makefile,v 1.5 2007/10/23 12:51:24 ahze Exp $
+#    $MCom: ports/x11-themes/nimbus/Makefile,v 1.7 2008/03/18 19:01:43 ahze Exp $
 
 PORTNAME=	nimbus
-PORTVERSION=	0.0.11
+PORTVERSION=	0.0.12
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://dlc.sun.com/osol/jds/downloads/extras/
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	gnome-themes>0:${PORTSDIR}/x11-themes/gnome-themes \
 RUN_DEPENDS=	gnome-themes>0:${PORTSDIR}/x11-themes/gnome-themes
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	intltool

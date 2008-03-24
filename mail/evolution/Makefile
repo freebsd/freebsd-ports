@@ -3,11 +3,12 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/mail/evolution/Makefile,v 1.1 2007/11/30 21:33:37 marcus Exp $
+#   $MCom: ports/mail/evolution/Makefile,v 1.168 2008/03/14 05:32:17 marcus Exp $
 #
 
 PORTNAME=	evolution
-PORTVERSION=	2.12.3
+PORTVERSION=	2.22.0
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -24,9 +25,9 @@ USE_GMAKE=	yes
 USE_BISON=	build
 USE_GETTEXT=	yes
 USE_XLIB=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver \
-		gtkhtml3 desktopfileutils gnomedocutils libgnomeprintui
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver gtkhtml3 \
+		desktopfileutils gnomedocutils ltasneededhack
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
@@ -37,16 +38,16 @@ CONFIGURE_ARGS=	--enable-nss=yes \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-GCONF_SCHEMAS=	apps-evolution-mail-notification.schemas \
-		apps-evolution-mail-prompts-checkdefault.schemas \
-		apps_evolution_addressbook.schemas \
-		apps_evolution_calendar.schemas \
-		apps_evolution_shell.schemas \
+GCONF_SCHEMAS=	apps_evolution_addressbook.schemas \
 		apps-evolution-attachment-reminder.schemas \
+		apps_evolution_calendar.schemas \
+		apps-evolution-mail-notification.schemas \
+		apps-evolution-mail-prompts-checkdefault.schemas \
+		apps_evolution_shell.schemas \
 		bogo-junk-plugin.schemas \
 		evolution-mail.schemas
 
-EVO_VERSION=	2.12
+EVO_VERSION=	2.22
 PLIST_SUB=	VERSION=${EVO_VERSION} \
 		PORTVERSION=2.12
 
@@ -58,14 +59,6 @@ OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 
 USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
 .include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
-
-.if defined(PACKAGE_BUILDING)
-WITH_DBUS=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libdbus-glib-1.so)
-WITH_DBUS=	yes
-.endif
 
 .if defined(WITH_PILOT)
 LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnome-pilot
@@ -85,13 +78,6 @@ CONFIGURE_ARGS+=--with-openldap=no
 
 .if defined(WITH_SPAMASSASSIN)
 RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
-.endif
-
-.if defined(WITH_DBUS)
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
-PLIST_SUB+=	DBUS=""
-.else
-PLIST_SUB+=	DBUS="@comment "
 .endif
 
 .if !defined(NO_KERBEROS) && exists(/usr/lib/libkrb5.so)

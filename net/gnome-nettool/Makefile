@@ -3,22 +3,19 @@
 # Whom:				Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/gnome-nettool/Makefile,v 1.40 2007/09/18 14:09:24 ahze Exp $
+#   $MCom: ports/net/gnome-nettool/Makefile,v 1.42 2008/03/10 21:33:09 mezz Exp $
 #
 
 PORTNAME=	gnome-nettool
-PORTVERSION=	2.20.0
+PORTVERSION=	2.22.0
 PORTEPOCH=	1
 CATEGORIES=	net gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-nettool/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-DISTNAME=	gnome-nettool-${PORTVERSION}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME utility that provides network information statistics
 
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libglade2 gconf2 gnomedocutils
 USE_GMAKE=	yes

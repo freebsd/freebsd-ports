@@ -1,4 +1,3 @@
-bin/gnome-menu-spec-test
 etc/xdg/menus/gnome-applications.menu
 etc/xdg/menus/preferences.menu
 etc/xdg/menus/settings.menu
@@ -59,6 +58,7 @@ share/locale/eu/LC_MESSAGES/gnome-menus.mo
 share/locale/fa/LC_MESSAGES/gnome-menus.mo
 share/locale/fi/LC_MESSAGES/gnome-menus.mo
 share/locale/fr/LC_MESSAGES/gnome-menus.mo
+share/locale/fur/LC_MESSAGES/gnome-menus.mo
 share/locale/ga/LC_MESSAGES/gnome-menus.mo
 share/locale/gl/LC_MESSAGES/gnome-menus.mo
 share/locale/gn/LC_MESSAGES/gnome-menus.mo
@@ -68,6 +68,7 @@ share/locale/hi/LC_MESSAGES/gnome-menus.mo
 share/locale/hu/LC_MESSAGES/gnome-menus.mo
 share/locale/hy/LC_MESSAGES/gnome-menus.mo
 share/locale/id/LC_MESSAGES/gnome-menus.mo
+share/locale/io/LC_MESSAGES/gnome-menus.mo
 share/locale/it/LC_MESSAGES/gnome-menus.mo
 share/locale/ja/LC_MESSAGES/gnome-menus.mo
 share/locale/ka/LC_MESSAGES/gnome-menus.mo
@@ -77,6 +78,7 @@ share/locale/ku/LC_MESSAGES/gnome-menus.mo
 share/locale/ky/LC_MESSAGES/gnome-menus.mo
 share/locale/lt/LC_MESSAGES/gnome-menus.mo
 share/locale/lv/LC_MESSAGES/gnome-menus.mo
+share/locale/mai/LC_MESSAGES/gnome-menus.mo
 share/locale/mg/LC_MESSAGES/gnome-menus.mo
 share/locale/mk/LC_MESSAGES/gnome-menus.mo
 share/locale/ml/LC_MESSAGES/gnome-menus.mo
@@ -139,14 +141,20 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/io/LC_MESSAGES
+@dirrmtry share/locale/io
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/gn/LC_MESSAGES
 @dirrmtry share/locale/gn
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

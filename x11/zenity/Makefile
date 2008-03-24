@@ -3,11 +3,11 @@
 # Whom:					Franz Klammer <klammer@webonaut.com>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11/zenity/Makefile,v 1.1 2007/12/01 19:10:42 marcus Exp $
+#   $MCom: ports/x11/zenity/Makefile,v 1.90 2008/03/10 13:46:16 ahze Exp $
 #
 
 PORTNAME=	zenity
-PORTVERSION=	2.20.1
+PORTVERSION=	2.22.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

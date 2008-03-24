@@ -3,19 +3,18 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/graphics/goocanvas/Makefile,v 1.1 2006/09/21 00:08:36 ahze Exp $
+#    $MCom: ports/graphics/goocanvas/Makefile,v 1.3 2008/02/27 16:19:11 ahze Exp $
 
 PORTNAME=	goocanvas
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	graphics
 MASTER_SITES=	SOURCEFORGE
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Canvas widget for GTK+
 
-USE_GNOME=	gtk20 gnomehack
-GNU_CONFIGURE=	yes
+USE_GNOME=	gtk20 gnomehack ltverhack
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
 post-patch:

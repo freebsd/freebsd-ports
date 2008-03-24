@@ -15,7 +15,7 @@ MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A Gmail Inbox Monitor for the GNOME2 desktop
 
 LIB_PC_DEPENDS=	libnotify:devel/libnotify	\
-		libsoup-2.2:devel/libsoup	\
+		libsoup-2.2:devel/libsoup22	\
 		gnome-keyring-1:security/gnome-keyring
 
 BUILD_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|:C|:|.pc:${PORTSDIR}/|}

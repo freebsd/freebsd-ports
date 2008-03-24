@@ -3440,3 +3440,5 @@ mail/claws-mail-maildir||2008-03-21|Has expired: no longer supported by develope
 x11/e17-module-devian||2008-03-21|Has expired: abandoned by developer
 x11/e17-module-engage||2008-03-21|Has expired: abandoned by developer
 x11/e17-module-eveil||2008-03-21|Has expired: abandoned by developer
+sysutils/hal-device-manager|sysutils/gnome-device-manager|2008-03-23|hal-device-manager has been retired
+security/gnome-keyring-manager|security/seahorse|2008-03-23|functionality has been rolled into seahorse

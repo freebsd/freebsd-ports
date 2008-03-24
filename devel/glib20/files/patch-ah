@@ -1,11 +1,11 @@
---- docs/reference/Makefile.in.orig	Fri Oct 24 18:05:32 2003
-+++ docs/reference/Makefile.in	Fri Oct 24 18:06:00 2003
-@@ -226,7 +226,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
--SUBDIRS = glib gobject
-+SUBDIRS = #glib gobject
- subdir = docs/reference
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = $(top_builddir)/config.h
+--- docs/reference/Makefile.in.orig	2007-12-21 16:54:10.000000000 -0500
++++ docs/reference/Makefile.in	2007-12-21 16:54:40.000000000 -0500
+@@ -268,7 +268,7 @@ GTESTER_REPORT = $(top_builddir)/glib/gt
+ # initialize variables for unconditional += appending
+ EXTRA_DIST = 
+ TEST_PROGS = 
+-SUBDIRS = glib gobject gio
++SUBDIRS = #glib gobject gio
+ all: all-recursive
+ 
+ .SUFFIXES:

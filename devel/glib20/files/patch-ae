@@ -1,6 +1,28 @@
---- configure.orig	Sun Jan 29 13:06:22 2006
-+++ configure	Sun Jan 29 13:06:48 2006
-@@ -34462,6 +34461,8 @@
+--- configure.orig	2008-03-17 23:32:05.000000000 -0400
++++ configure	2008-03-18 17:55:42.000000000 -0400
+@@ -32748,6 +32748,12 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#ifdef HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
++#ifdef HAVE_SYS_MOUNT_H
++#include <sys/mount.h>
++#endif
+ int
+ main ()
+ {
+@@ -34051,7 +34057,7 @@ done
+ 
+ 
+ 
+-for ac_func in chown lchown fchmod fchown link statvfs statfs utimes getgrgid getpwuid
++for ac_func in chown lchown fchmod fchown link statvfs statfs utimes getgrgid getpwuid sysctlbyname
+ do
+ as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
+ { echo "$as_me:$LINENO: checking for $ac_func" >&5
+@@ -39139,6 +39145,8 @@ fi
           ;;
      esac
    fi

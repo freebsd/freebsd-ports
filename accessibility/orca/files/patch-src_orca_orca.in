@@ -1,5 +1,5 @@
---- src/orca/orca.in.orig	Sun Mar 25 00:58:52 2007
-+++ src/orca/orca.in	Sun Mar 25 01:02:09 2007
+--- src/orca/orca.in.orig	2007-11-08 11:02:26.000000000 -0500
++++ src/orca/orca.in	2007-11-15 15:43:24.000000000 -0500
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/local/bin/bash
@@ -10,12 +10,12 @@
  
  # Set the user's $PATH for this script.
  #
--export PATH="/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/X11R6/bin"
-+export PATH="/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/local/bin:/usr/X11R6/bin"
+-export PATH="${PATH}:/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/X11R6/bin"
++export PATH="${PATH}:/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/local/bin:/usr/X11R6/bin"
  
  # If you set RUNONCE to "true", then this will just run Orca once and quit.
  #
-@@ -125,7 +125,7 @@ watchdog()
+@@ -145,7 +145,7 @@ watchdog()
          do
              sleep 5
              USERID=`id | cut -f2 -d= | cut -f1 -d\(`

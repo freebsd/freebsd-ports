@@ -3,12 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11/gnome2/Makefile,v 1.5 2007/12/04 17:28:14 mezz Exp $
+#   $MCom: ports/x11/gnome2/Makefile,v 1.236 2008/03/15 18:40:17 marcus Exp $
 #
 
 PORTNAME=	gnome2
-PORTVERSION=	2.20.3
-PORTREVISION?=	0
+PORTVERSION=	2.22.0
+PORTREVISION?=	1
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -48,25 +48,29 @@ RUN_DEPENDS?=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-apple
 		network-admin:${PORTSDIR}/sysutils/gnome-system-tools \
 		gnome-nettool:${PORTSDIR}/net/gnome-nettool \
 		vino-session:${PORTSDIR}/net/vino \
-		exchange-connector-setup-2.12:${PORTSDIR}/mail/evolution-exchange \
+		exchange-connector-setup-2.22:${PORTSDIR}/mail/evolution-exchange \
 		${LOCALBASE}/lib/gstreamer-0.10/.gstreamer-plugins-core.keep:${PORTSDIR}/multimedia/gstreamer-plugins-core \
 		${LOCALBASE}/lib/gstreamer-0.10/libgstgconfelements.so:${PORTSDIR}/devel/gstreamer-plugins-gconf \
 		totem:${PORTSDIR}/multimedia/totem \
 		gnome-control-center:${PORTSDIR}/sysutils/gnome-control-center \
 		${LOCALBASE}/share/gnome-background-properties/gnome-branded.xml:${PORTSDIR}/x11-themes/gnome-backgrounds \
 		sound-juicer:${PORTSDIR}/audio/sound-juicer \
-		gnome-keyring-manager:${PORTSDIR}/security/gnome-keyring-manager \
 		${LOCALBASE}/libdata/pkgconfig/libgtkhtml-2.0.pc:${PORTSDIR}/www/libgtkhtml \
 		evince:${PORTSDIR}/graphics/evince \
 		${LOCALBASE}/libexec/fast-user-switch-applet:${PORTSDIR}/x11/fast-user-switch-applet \
 		${LOCALBASE}/lib/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet \
 		alacarte:${PORTSDIR}/deskutils/alacarte \
 		gnome-power-manager:${PORTSDIR}/sysutils/gnome-power-manager \
-		gnome-volume-manager:${PORTSDIR}/sysutils/gnome-volume-manager \
+		${LOCALBASE}/libexec/gnome-volume-manager:${PORTSDIR}/sysutils/gnome-volume-manager \
 		orca:${PORTSDIR}/accessibility/orca \
 		gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
 		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon \
-		seahorse:${PORTSDIR}/security/seahorse
+		seahorse:${PORTSDIR}/security/seahorse \
+		swfdec-player:${PORTSDIR}/multimedia/swfdec-gnome \
+		mousetweaks:${PORTSDIR}/accessibility/mousetweaks \
+		vinagre:${PORTSDIR}/net/vinagre \
+		cheese:${PORTSDIR}/multimedia/cheese \
+		${LOCALBASE}/share/hal/fdi/information/10freedesktop/10-camera-ptp.fdi:${PORTSDIR}/sysutils/hal-info
 
 NO_BUILD=	yes
 

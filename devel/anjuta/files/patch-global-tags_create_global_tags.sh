@@ -1,5 +1,5 @@
---- global-tags/create_global_tags.sh.orig	Sun Jul  8 03:39:26 2007
-+++ global-tags/create_global_tags.sh	Sun Jul  8 03:41:12 2007
+--- global-tags/create_global_tags.sh.in.orig	Sun Jul  8 03:39:26 2007
++++ global-tags/create_global_tags.sh.in	Sun Jul  8 03:41:12 2007
 @@ -68,9 +68,9 @@ if ( [ ! -z $PKG_CONFIG ] && [ -x $PKG_C
  	## the packages, which we don't like. We only want cflags relevent
  	## to the packages alone.

@@ -1,0 +1,11 @@
+--- src/polkit-grant/Makefile.in.orig	2007-12-23 01:40:49.000000000 -0500
++++ src/polkit-grant/Makefile.in	2007-12-23 01:41:16.000000000 -0500
+@@ -351,7 +351,7 @@ libpolkit_grant_la_LDFLAGS = -version-in
+ @POLKIT_AUTHDB_DEFAULT_TRUE@polkit_grant_helper_SOURCES = polkit-grant-helper.c
+ @POLKIT_AUTHDB_DEFAULT_TRUE@polkit_grant_helper_LDADD = @GLIB_LIBS@ @DBUS_LIBS@ $(top_builddir)/src/polkit/libpolkit.la $(top_builddir)/src/polkit-dbus/libpolkit-dbus.la libpolkit-grant.la
+ @POLKIT_AUTHDB_DEFAULT_TRUE@polkit_grant_helper_pam_SOURCES = polkit-grant-helper-pam.c
+-@POLKIT_AUTHDB_DEFAULT_TRUE@polkit_grant_helper_pam_LDADD = @AUTH_LIBS@
++@POLKIT_AUTHDB_DEFAULT_TRUE@polkit_grant_helper_pam_LDADD = @AUTH_LIBS@ $(top_builddir)/src/polkit/libpolkit.la
+ @POLKIT_AUTHDB_DEFAULT_TRUE@polkit_explicit_grant_helper_SOURCES = polkit-explicit-grant-helper.c
+ @POLKIT_AUTHDB_DEFAULT_TRUE@polkit_explicit_grant_helper_CFLAGS = @DBUS_CFLAGS@
+ @POLKIT_AUTHDB_DEFAULT_TRUE@polkit_explicit_grant_helper_LDADD = $(top_builddir)/src/polkit/libpolkit.la $(top_builddir)/src/polkit-dbus/libpolkit-dbus.la libpolkit-grant.la

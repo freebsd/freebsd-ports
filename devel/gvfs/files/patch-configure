@@ -1,0 +1,84 @@
+--- configure.orig	2008-02-25 16:48:49.000000000 -0500
++++ configure	2008-02-25 16:51:17.000000000 -0500
+@@ -24589,7 +24589,7 @@ if test "x$enable_http" != "xno"; then
+   msg_http=yes
+ fi
+ 
+-  if test "x$msg_http" == "xyes"; then
++  if test "x$msg_http" = "xyes"; then
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for HTTP" >&5
+@@ -24857,7 +24857,7 @@ if test "x$enable_cdda" != "xno"; then
+   msg_cdda=yes
+ fi
+ 
+-  if test "x$msg_cdda" == "xyes"; then
++  if test "x$msg_cdda" = "xyes"; then
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for CDDA" >&5
+@@ -25008,7 +25008,7 @@ if test "x$enable_fuse" != "xno"; then
+   msg_fuse=yes
+ fi
+ 
+-  if test "x$msg_fuse" == "xyes"; then
++  if test "x$msg_fuse" = "xyes"; then
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for FUSE" >&5
+@@ -25159,7 +25159,7 @@ if test "x$enable_gconf" != "xno"; then
+   msg_gconf=yes
+ fi
+ 
+-  if test "x$msg_gconf" == "xyes"; then
++  if test "x$msg_gconf" = "xyes"; then
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for GCONF" >&5
+@@ -25312,7 +25312,7 @@ if test "x$enable_hal" != "xno"; then
+   msg_hal=yes
+ fi
+ 
+-  if test "x$msg_hal" == "xyes"; then
++  if test "x$msg_hal" = "xyes"; then
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for HAL" >&5
+@@ -25494,7 +25494,7 @@ if test $ac_cv_lib_hal_libhal_get_all_de
+   have_hal_fast_init=yes
+ fi
+ 
+-    if test "x$have_hal_fast_init" == "xyes"; then
++    if test "x$have_hal_fast_init" = "xyes"; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_HAL_FAST_INIT 1
+@@ -25540,13 +25540,16 @@ fi
+     *-linux*)
+       use_gphoto2=yes
+       ;;
++    *-freebsd*)
++      use_gphoto2=yes
++      ;;
+     *)
+       use_gphoto2=no
+       ;;
+   esac
+ 
+-  if test "x$msg_gphoto2" == "xyes"; then
+-    if test "x$use_gphoto2" == "xyes"; then
++  if test "x$msg_gphoto2" = "xyes"; then
++    if test "x$use_gphoto2" = "xyes"; then
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for GPHOTO2" >&5
+@@ -25702,7 +25705,7 @@ if test "x$enable_keyring" != "xno"; the
+   msg_keyring=yes
+ fi
+ 
+-  if test "x$msg_keyring" == "xyes"; then
++  if test "x$msg_keyring" = "xyes"; then
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for KEYRING" >&5

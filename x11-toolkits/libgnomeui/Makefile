@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11-toolkits/libgnomeui/Makefile,v 1.108 2007/10/17 22:37:05 mezz Exp $
+#   $MCom: ports/x11-toolkits/libgnomeui/Makefile,v 1.116 2008/03/10 15:46:28 ahze Exp $
 #
 
 PORTNAME=	libgnomeui
-PORTVERSION=	2.20.1.1
+PORTVERSION=	2.22.01
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -26,11 +26,10 @@ LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring \
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_GETTEXT=	yes
-USE_XLIB=	yes
-USE_XPM=	yes
+USE_XORG=	sm
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier libbonoboui ltverhack \
-		referencehack
+		referencehack gvfs
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_BISON=	build

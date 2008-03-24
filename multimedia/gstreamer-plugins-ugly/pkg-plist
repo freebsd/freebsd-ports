@@ -21,16 +21,35 @@ lib/gstreamer-%%VERSION%%/libgstrmdemux.la
 lib/gstreamer-%%VERSION%%/libgstrmdemux.so
 share/locale/af/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
+share/locale/bg/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
+share/locale/es/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
+share/locale/fi/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/or/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
+share/locale/pl/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
+share/locale/pt_BR/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
+share/locale/sk/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
+share/locale/zh_CN/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
+@dirrmtry share/local/zh_CN/LC_MESSAGES
+@dirrmtry share/local/zh_CN
+@dirrmtry share/local/uk/LC_MESSAGES
+@dirrmtry share/local/uk
+@dirrmtry share/local/sr/LC_MESSAGES
+@dirrmtry share/local/sr
+@dirrmtry share/local/pl/LC_MESSAGES
+@dirrmtry share/local/pl
+@dirrmtry share/local/fi/LC_MESSAGES
+@dirrmtry share/local/fi
+@dirrmtry share/local/cs/LC_MESSAGES
+@dirrmtry share/local/cs

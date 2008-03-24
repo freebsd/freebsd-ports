@@ -1,0 +1,11 @@
+--- src/polkit-grant/Makefile.am.orig	2007-12-23 01:40:02.000000000 -0500
++++ src/polkit-grant/Makefile.am	2007-12-23 01:40:27.000000000 -0500
+@@ -47,7 +47,7 @@ polkit_grant_helper_SOURCES = polkit-gra
+ polkit_grant_helper_LDADD = @GLIB_LIBS@ @DBUS_LIBS@ $(top_builddir)/src/polkit/libpolkit.la $(top_builddir)/src/polkit-dbus/libpolkit-dbus.la libpolkit-grant.la
+ 
+ polkit_grant_helper_pam_SOURCES = polkit-grant-helper-pam.c
+-polkit_grant_helper_pam_LDADD = @AUTH_LIBS@
++polkit_grant_helper_pam_LDADD = @AUTH_LIBS@ $(top_builddir)/src/polkit/libpolkit.la
+ 
+ polkit_explicit_grant_helper_SOURCES = polkit-explicit-grant-helper.c
+ polkit_explicit_grant_helper_CFLAGS = @DBUS_CFLAGS@

@@ -3,4 +3,4 @@ sessions, and seats.  The primary motivations for this framework are to
 facilitate fast-user-switching and multi-seat capabilities, and to
 enable more sophisticated policy decisions for desktop sessions.
 
-WWW: http://www.freedesktop.org/Software/hal
+WWW: http://www.freedesktop.org/wiki/Software/ConsoleKit

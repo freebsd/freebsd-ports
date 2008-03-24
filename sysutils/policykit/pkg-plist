@@ -1,19 +1,71 @@
-bin/polkit-grant-privilege
-bin/polkit-is-privileged
-bin/polkit-list-privileges
-bin/polkit-revoke-privilege
-etc/PolicyKit/privilege.d/desktop-console.privilege
-etc/dbus-1/system.d/PolicyKit.conf
-etc/pam.d/policy-kit
-include/libpolkit/libpolkit.h
+bin/polkit-action
+bin/polkit-auth
+bin/polkit-config-file-validate
+bin/polkit-policy-file-validate
+@unexec if cmp -s %D/etc/PolicyKit/PolicyKit.conf %D/etc/PolicyKit/PolicyKit.conf.dist; then rm -f %D/etc/PolicyKit/PolicyKit.conf
+etc/PolicyKit/PolicyKit.conf.dist
+@exec [ -f %B/PolicyKit.conf ] || cp %B/%f %B/PolicyKit.conf
+etc/PolicyKit/PolicyKit.conf
+etc/dbus-1/system.d/org.freedesktop.PolicyKit.conf
+etc/pam.d/polkit
+etc/profile.d/polkit-bash-completion.sh
+include/PolicyKit/polkit-dbus/polkit-dbus.h
+include/PolicyKit/polkit-dbus/polkit-simple.h
+include/PolicyKit/polkit-grant/polkit-grant.h
+include/PolicyKit/polkit/polkit-action.h
+include/PolicyKit/polkit/polkit-authorization-constraint.h
+include/PolicyKit/polkit/polkit-authorization-db.h
+include/PolicyKit/polkit/polkit-authorization.h
+include/PolicyKit/polkit/polkit-caller.h
+include/PolicyKit/polkit/polkit-config.h
+include/PolicyKit/polkit/polkit-context.h
+include/PolicyKit/polkit/polkit-error.h
+include/PolicyKit/polkit/polkit-policy-cache.h
+include/PolicyKit/polkit/polkit-policy-default.h
+include/PolicyKit/polkit/polkit-policy-file-entry.h
+include/PolicyKit/polkit/polkit-policy-file.h
+include/PolicyKit/polkit/polkit-result.h
+include/PolicyKit/polkit/polkit-seat.h
+include/PolicyKit/polkit/polkit-session.h
+include/PolicyKit/polkit/polkit-sysdeps.h
+include/PolicyKit/polkit/polkit-types.h
+include/PolicyKit/polkit/polkit.h
+lib/libpolkit-dbus.a
+lib/libpolkit-dbus.la
+lib/libpolkit-dbus.so
+lib/libpolkit-dbus.so.2
+lib/libpolkit-grant.a
+lib/libpolkit-grant.la
+lib/libpolkit-grant.so
+lib/libpolkit-grant.so.2
 lib/libpolkit.a
 lib/libpolkit.la
 lib/libpolkit.so
-lib/libpolkit.so.0
+lib/libpolkit.so.2
+libdata/pkgconfig/polkit-dbus.pc
+libdata/pkgconfig/polkit-grant.pc
 libdata/pkgconfig/polkit.pc
-sbin/polkitd
-@dirrm include/libpolkit
-@dirrm etc/PolicyKit/privilege.d
+libexec/polkit-explicit-grant-helper
+libexec/polkit-grant-helper
+libexec/polkit-grant-helper-pam
+libexec/polkit-read-auth-helper
+libexec/polkit-revoke-helper
+libexec/polkit-set-default-helper
+libexec/polkitd
+share/PolicyKit/config.dtd
+share/PolicyKit/policy/org.freedesktop.policykit.policy
+share/dbus-1/interfaces/org.freedesktop.PolicyKit.AuthenticationAgent.xml
+share/dbus-1/system-services/org.freedesktop.PolicyKit.service
+@dirrmtry share/PolicyKit/policy
+@dirrmtry share/PolicyKit
+@dirrm include/PolicyKit/polkit
+@dirrm include/PolicyKit/polkit-grant
+@dirrm include/PolicyKit/polkit-dbus
+@dirrm include/PolicyKit
+@dirrmtry etc/profile.d
 @dirrm etc/PolicyKit
-@unexec rm -f /var/run/polkitd/polkitd.pid 2>/dev/null || true
-@unexec rmdir /var/run/polkitd 2>/dev/null || true
+@unexec rm -rf /var/run/PolicyKit 2>/dev/null || true
+@unexec rmdir /var/lib/PolicyKit 2>/dev/null || true
+@unexec rmdir /var/lib/PolicyKit-public 2>/dev/null || true
+@unexec rm -f /var/lib/misc/PolicyKit.reload 2>/dev/null || true
+@unexec rmdir /var/lib/misc 2>/dev/null || true

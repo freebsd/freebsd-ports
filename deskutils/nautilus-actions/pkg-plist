@@ -1,20 +1,24 @@
 bin/nautilus-actions-config
 bin/nautilus-actions-convert
 bin/nautilus-actions-new-config
-lib/nautilus/extensions-1.0/libnautilus-actions.la
-lib/nautilus/extensions-1.0/libnautilus-actions.so
+lib/nautilus/extensions-2.0/libnautilus-actions.la
+lib/nautilus/extensions-2.0/libnautilus-actions.so
 share/applications/nact.desktop
 share/icons/hicolor/16x16/apps/nautilus-actions.png
 share/icons/hicolor/22x22/apps/nautilus-actions.png
+share/icons/hicolor/32x32/apps/nautilus-actions.png
 share/icons/hicolor/48x48/apps/nautilus-actions.png
 share/icons/hicolor/scalable/apps/nautilus-actions.svg
+share/locale/ar/LC_MESSAGES/nautilus-actions.mo
 share/locale/bg/LC_MESSAGES/nautilus-actions.mo
 share/locale/bn/LC_MESSAGES/nautilus-actions.mo
 share/locale/ca/LC_MESSAGES/nautilus-actions.mo
 share/locale/cs/LC_MESSAGES/nautilus-actions.mo
 share/locale/da/LC_MESSAGES/nautilus-actions.mo
 share/locale/de/LC_MESSAGES/nautilus-actions.mo
+share/locale/dz/LC_MESSAGES/nautilus-actions.mo
 share/locale/en_CA/LC_MESSAGES/nautilus-actions.mo
+share/locale/en_GB/LC_MESSAGES/nautilus-actions.mo
 share/locale/es/LC_MESSAGES/nautilus-actions.mo
 share/locale/fi/LC_MESSAGES/nautilus-actions.mo
 share/locale/fr/LC_MESSAGES/nautilus-actions.mo
@@ -39,3 +43,5 @@ share/nautilus-actions/nact/nautilus-actions-config.glade
 @dirrm share/nautilus-actions
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz

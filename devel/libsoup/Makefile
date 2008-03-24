@@ -3,15 +3,14 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/devel/libsoup/Makefile,v 1.7 2007/12/01 19:19:55 marcus Exp $
+#   $MCom: ports/devel/libsoup/Makefile,v 1.42 2008/03/10 21:18:42 mezz Exp $
 #
 
 PORTNAME=	libsoup
-PORTVERSION=	2.2.105
-PORTREVISION?=	1
+PORTVERSION=	2.4.0
+PORTREVISION?=	0
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -32,7 +31,7 @@ CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_SUB=	VERSION="2.2"
+PLIST_SUB=	VERSION="2.4"
 
 .if !defined(WITHOUT_SSL)
 LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls

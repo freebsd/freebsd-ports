@@ -3,7 +3,7 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
-#   $MCom: ports/math/gnumeric/Makefile,v 1.39 2007/09/16 21:42:03 marcus Exp $
+#   $MCom: ports/math/gnumeric/Makefile,v 1.42 2008/03/11 12:45:31 ahze Exp $
 #
 
 PORTNAME=	gnumeric
@@ -60,6 +60,9 @@ post-extract:
 
 post-patch:
 	@${RM} -f ${WRKSRC}/GNOME_Gnumeric.server.in
+	@${REINPLACE_CMD} -e 's|gda-3.0 >= 3.1.1|gda-3.0 >= 3.0.1|g' \
+		-e 's|gnomedb-3.0 >= 3.0.1|gnomedb-3.0 >= 3.0.0|g' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gnumeric.desktop ${PREFIX}/share/applications

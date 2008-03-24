@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu May  4 15:35:41 2006
-+++ Makefile.in	Thu May  4 15:36:40 2006
-@@ -377,14 +377,14 @@ distclean-libtool:
+--- Makefile.in.orig	2008-01-03 21:28:32.000000000 -0500
++++ Makefile.in	2008-01-03 21:29:15.000000000 -0500
+@@ -311,14 +311,14 @@ clean-libtool:
+ distclean-libtool:
  	-rm -f libtool
- uninstall-info-am:
  install-dist_dbusDATA: $(dist_dbus_DATA)
 -	@$(NORMAL_INSTALL)
--	test -z "$(dbusdir)" || $(mkdir_p) "$(DESTDIR)$(dbusdir)"
+-	test -z "$(dbusdir)" || $(MKDIR_P) "$(DESTDIR)$(dbusdir)"
 -	@list='$(dist_dbus_DATA)'; for p in $$list; do \
 -	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 -	  f=$(am__strip_dir) \
@@ -13,7 +13,7 @@
 -	  $(dist_dbusDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(dbusdir)/$$f"; \
 -	done
 +#	@$(NORMAL_INSTALL)
-+#	test -z "$(dbusdir)" || $(mkdir_p) "$(DESTDIR)$(dbusdir)"
++#	test -z "$(dbusdir)" || $(MKDIR_P) "$(DESTDIR)$(dbusdir)"
 +#	@list='$(dist_dbus_DATA)'; for p in $$list; do \
 +#	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 +#	  f=$(am__strip_dir) \

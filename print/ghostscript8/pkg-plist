@@ -8,13 +8,13 @@ bin/fixmswrd.pl
 bin/font2c
 bin/gs
 bin/gsbj
-%%SHLIB%%bin/gsc
+bin/gsc
 bin/gsdj
 bin/gsdj500
 bin/gslj
 bin/gslp
 bin/gsnd
-%%SHLIB%%bin/gsx
+bin/gsx
 bin/lprsetup.sh
 bin/pcl3opts
 bin/pdf2dsc
@@ -35,11 +35,11 @@ bin/ps2ps2
 bin/pv.sh
 bin/unix-lpr.sh
 bin/wftopfa
-%%SHLIB%%include/ghostscript/iapi.h
-%%SHLIB%%include/ghostscript/ierrors.h
-%%SHLIB%%lib/libgs.so
-%%SHLIB%%lib/libgs.so.%%SHLIB_VER%%
-%%SHLIB%%lib/libgs.so.%%GS_VERSION%%
+include/ghostscript/iapi.h
+include/ghostscript/ierrors.h
+lib/libgs.so
+lib/libgs.so.%%SHLIB_VER%%
+lib/libgs.so.%%GS_VERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/chp2200/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/chp2200/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/ChangeLog
@@ -829,7 +829,7 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/pcl3/margins-LetterRotated.ps
 @exec ln -s -f %D/share/fonts/CIDFont %%CIDFONTDIR%%/CIDFont
 @unexec rm -f %%CIDFONTDIR%%/CIDFont
-%%SHLIB%%@dirrm include/ghostscript
+@dirrm include/ghostscript
 @dirrm %%DATADIR%%/%%GS_VERSION%%/pcl3
 @dirrm %%DATADIR%%/%%GS_VERSION%%/lib
 @dirrm %%DATADIR%%/%%GS_VERSION%%/examples

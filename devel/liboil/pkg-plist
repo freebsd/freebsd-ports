@@ -4,6 +4,7 @@ include/liboil-0.3/liboil/liboil.h
 include/liboil-0.3/liboil/liboilclasses.h
 include/liboil-0.3/liboil/liboilcpu.h
 include/liboil-0.3/liboil/liboildebug.h
+include/liboil-0.3/liboil/liboilfault.h
 include/liboil-0.3/liboil/liboilfuncs.h
 include/liboil-0.3/liboil/liboilfunction.h
 include/liboil-0.3/liboil/liboilgcc.h
@@ -14,10 +15,11 @@ include/liboil-0.3/liboil/liboilprototype.h
 include/liboil-0.3/liboil/liboilrandom.h
 include/liboil-0.3/liboil/liboiltest.h
 include/liboil-0.3/liboil/liboiltypes.h
+include/liboil-0.3/liboil/liboilutils.h
 lib/liboil-0.3.a
 lib/liboil-0.3.la
 lib/liboil-0.3.so
-lib/liboil-0.3.so.1
+lib/liboil-0.3.so.0
 libdata/pkgconfig/liboil-0.3.pc
 share/gtk-doc/html/liboil/ch01.html
 share/gtk-doc/html/liboil/ch02.html

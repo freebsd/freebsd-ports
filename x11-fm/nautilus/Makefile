@@ -3,14 +3,14 @@
 # Whom:                 		ade, archie
 #
 # $FreeBSD$
-#   $MCom: ports/x11-fm/nautilus/Makefile,v 1.142 2007/09/18 14:48:10 ahze Exp $
+#   $MCom: ports/x11-fm/nautilus/Makefile,v 1.154 2008/03/15 19:29:34 ahze Exp $
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	2.20.0
+PORTVERSION=	2.22.0
+PORTREVISION=	2
 CATEGORIES=	x11-fm gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop eel2 \
-		librsvg2 desktopfileutils ltverhack
+		librsvg2 desktopfileutils ltverhack gvfs ltasneededhack
 GNOME_DESKTOP_VERSION=2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=--disable-tracker
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/lib/nautilus/extensions-1.0
+	@${MKDIR} ${PREFIX}/lib/nautilus/extensions-2.0
 	@-update-desktop-database
 
 .include <bsd.port.post.mk>
