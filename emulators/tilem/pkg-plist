@@ -1,3 +1,5 @@
+bin/neosign
+bin/tcc
 bin/tilem
 %%DATADIR%%/data/x2syms
 %%DATADIR%%/data/x3keys
