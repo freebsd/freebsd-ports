@@ -16,11 +16,10 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Yet another port of Hexen, popular game from Raven Software
 
 USE_SDL=	mixer sdl
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
-OPTIONS=	WAD "Install demo-version WAD file" on \
-		MUSIC "Enable support for in-game music" on
+OPTIONS=	WAD	"Install demo-version WAD file"		on \
+		MUSIC	"Enable support for in-game music"	on
 
 .include <bsd.port.pre.mk>
 
@@ -33,18 +32,18 @@ PLIST_SUB=	WAD=""
 PLIST_SUB=	WAD="@comment "
 .endif
 
-.if defined(WITH_MUSIC)
+.if !defined(WITHOUT_MUSIC)
 RUN_DEPENDS+=	${LOCALBASE}/lib/timidity/goemon.cfg:${PORTSDIR}/audio/timidity
 .endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/uhexen %%DATADIR%%/.keep_me %%WAD%%%%DATADIR%%/hexen.wad
 PLIST_DIRS=	%%DATADIR%%
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 post-extract:
 .if !defined(WITHOUT_WAD)
-	@${LOCALBASE}/bin/unzip -qo ${_DISTDIR}/hexen.zip \
+	@${LOCALBASE}/bin/unzip -qo ${DISTDIR}/hexen.zip \
 		-d ${WRKSRC}
 .endif
 
