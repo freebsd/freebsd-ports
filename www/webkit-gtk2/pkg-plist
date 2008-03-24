@@ -1,0 +1,26 @@
+include/WebKit/JavaScriptCore/JSBase.h
+include/WebKit/JavaScriptCore/JSContextRef.h
+include/WebKit/JavaScriptCore/JSObjectRef.h
+include/WebKit/JavaScriptCore/JSStringRef.h
+include/WebKit/JavaScriptCore/JSStringRefBSTR.h
+include/WebKit/JavaScriptCore/JSStringRefCF.h
+include/WebKit/JavaScriptCore/JSValueRef.h
+include/WebKit/JavaScriptCore/JavaScript.h
+include/WebKit/JavaScriptCore/JavaScriptCore.h
+include/WebKit/webkit/webkit.h
+include/WebKit/webkit/webkitdefines.h
+include/WebKit/webkit/webkitnetworkrequest.h
+include/WebKit/webkit/webkitwebbackforwardlist.h
+include/WebKit/webkit/webkitwebframe.h
+include/WebKit/webkit/webkitwebhistoryitem.h
+include/WebKit/webkit/webkitwebsettings.h
+include/WebKit/webkit/webkitwebview.h
+lib/libWebKitGtk.a
+lib/libWebKitGtk.la
+lib/libWebKitGtk.so
+lib/libWebKitGtk.so.1
+libdata/pkgconfig/WebKitGtk.pc
+libdata/pkgconfig/webkit-1.0.pc
+@dirrm include/WebKit/webkit
+@dirrm include/WebKit/JavaScriptCore
+@dirrm include/WebKit

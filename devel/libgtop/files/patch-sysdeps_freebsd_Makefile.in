@@ -1,0 +1,28 @@
+--- sysdeps/freebsd/Makefile.in.orig	2007-11-02 23:55:07.000000000 -0400
++++ sysdeps/freebsd/Makefile.in	2007-11-02 23:58:08.000000000 -0400
+@@ -54,7 +54,7 @@ libgtop_sysdeps_2_0_la_LIBADD =
+ am_libgtop_sysdeps_2_0_la_OBJECTS = nosuid.lo siglist.lo sysinfo.lo \
+ 	shm_limits.lo cpu.lo msg_limits.lo sem_limits.lo loadavg.lo \
+ 	uptime.lo netlist.lo fsusage.lo mem.lo procopenfiles.lo \
+-	procwd.lo glibtop_private.lo
++	procwd.lo glibtop_private.lo mountlist.lo
+ libgtop_sysdeps_2_0_la_OBJECTS = $(am_libgtop_sysdeps_2_0_la_OBJECTS)
+ am__DEPENDENCIES_1 =
+ libgtop_sysdeps_suid_2_0_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+@@ -303,7 +303,7 @@ libgtop_sysdeps_2_0_la_SOURCES = nosuid.
+ 				  cpu.c msg_limits.c sem_limits.c loadavg.c \
+ 				  uptime.c netlist.c fsusage.c mem.c \
+ 				  procopenfiles.c procwd.c \
+-				  glibtop_private.c
++				  glibtop_private.c mountlist.c
+ 
+ libgtop_sysdeps_2_0_la_LDFLAGS = $(LT_VERSION_INFO)
+ libgtop_sysdeps_suid_2_0_la_LIBADD = $(KVM_LIBS) $(EXTRA_SYSDEPS_LIBS)
+@@ -374,6 +374,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/close.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpu.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fsusage.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mountlist.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/glibtop_private.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/loadavg.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mem.Plo@am__quote@

@@ -3,20 +3,22 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/www/epiphany/Makefile,v 1.8 2007/12/01 19:54:36 marcus Exp $
+#   $MCom: ports/www/epiphany/Makefile,v 1.168 2008/03/17 05:00:09 marcus Exp $
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	2.20.3
+PORTVERSION=	2.22.0
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An extremely lightweight and simple web browser for GNOME 2
+COMMENT?=	An extremely lightweight and simple web browser for GNOME 2
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		notify.1:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
     		${LOCALBASE}/share/themes/LowContrast/index.theme:${PORTSDIR}/x11-themes/gnome-themes
 
@@ -27,21 +29,18 @@ USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_PYTHON=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GECKO=	firefox seamonkey firefox15<->firefox xulrunner
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
-CONFIGURE_ARGS=	--with-gecko=${GECKO}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} ${EXTRA_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} ${EXTRA_LIBS}"
 
 GCONF_SCHEMAS=	epiphany-lockdown.schemas epiphany.schemas \
 		epiphany-fonts.schemas epiphany-pango.schemas
 
-PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/\.[0-9]+$//}" \
-		EPHY_PREFIX="${PREFIX}"
+PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/\.[0-9]+$//}"
 
 MAN1=		epiphany.1
 
@@ -53,8 +52,20 @@ WITH_GNOME=	yes
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if defined(EPHY_SLAVE) && ${EPHY_SLAVE}=="webkit"
+LIB_DEPENDS+=	WebKitGtk.1:${PORTSDIR}/www/webkit-gtk2
+CONFIGURE_ARGS+=	--with-engine=webkit
+EXTRA_CFLAGS+=	`pkg-config --cflags WebKitGtk` -I${LOCALBASE}/include/WebKit/webkit
+EXTRA_LIBS+=	`pkg-config --libs WebKitGtk`
+CONFLICTS=	epiphany-[1-9]*
+.else
+USE_GECKO+=	firefox seamonkey firefox15<->firefox xulrunner
+CONFIGURE_ARGS+=	--with-gecko=${GECKO} \
+			--with-engine=mozilla
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
-#.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+CONFLICTS=	epiphany-webkit-[1-9]*
+.endif
 
 NO_WERROR=	yes
 # allow build with more warnings enabled
@@ -79,6 +90,7 @@ CONFIGURE_ARGS+=--enable-spell-checker
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|WebKitGdk|WebKitGtk|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		 's|-lpthread|${PTHREAD_LIBS}|g'
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \

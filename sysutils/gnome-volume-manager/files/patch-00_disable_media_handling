@@ -1,0 +1,1460 @@
+# Description: Disable media handling and the respective UI tabs, since nautilus does that now.
+# Upstream: http://bugzilla.gnome.org/show_bug.cgi?id=509823
+--- gnome-volume-manager-2.22.1/gnome-volume-manager.schemas.in	2007-12-07 18:55:47.000000000 +0100
++++ gnome-volume-manager.schemas.in	2008-02-29 16:30:08.000000000 +0100
+@@ -16,7 +16,7 @@
+         <key>/schemas/desktop/gnome/volume_manager/automount_drives</key>
+         <applyto>/desktop/gnome/volume_manager/automount_drives</applyto>
+         <type>bool</type>
+-        <default>true</default>
++        <default>false</default>
+         <locale name="C">
+           <short>Automount removable drives</short>
+           <long>Whether gnome-volume-manager should automatically mount
+@@ -28,7 +28,7 @@
+         <key>/schemas/desktop/gnome/volume_manager/automount_media</key>
+         <applyto>/desktop/gnome/volume_manager/automount_media</applyto>
+         <type>bool</type>
+-        <default>true</default>
++        <default>false</default>
+         <locale name="C">
+           <short>Automount removable media</short>
+           <long>Whether gnome-volume-manager should automatically mount
+@@ -40,7 +40,7 @@
+         <key>/schemas/desktop/gnome/volume_manager/autobrowse</key>
+         <applyto>/desktop/gnome/volume_manager/autobrowse</applyto>
+         <type>bool</type>
+-        <default>true</default>
++        <default>false</default>
+         <locale name="C">
+           <short>Autorun nautilus</short>
+           <long>Open nautilus on removeable media insert.</long>
+@@ -97,7 +97,7 @@
+         <key>/schemas/desktop/gnome/volume_manager/autoplay_cda</key>
+ 	<applyto>/desktop/gnome/volume_manager/autoplay_cda</applyto>
+ 	<type>bool</type>
+-	<default>true</default>
++	<default>false</default>
+ 	<locale name="C">
+ 	  <short>Play inserted audio CD's</short>
+ 	  <long>Whether, when an audio CD is inserted, gnome-volume-manager
+@@ -154,7 +154,7 @@
+         <key>/schemas/desktop/gnome/volume_manager/autoplay_dvd</key>
+ 	<applyto>/desktop/gnome/volume_manager/autoplay_dvd</applyto>
+ 	<type>bool</type>
+-	<default>true</default>
++	<default>false</default>
+ 	<locale name="C">
+ 	  <short>Play inserted video DVDs</short>
+ 	  <long>Whether, when a video DVD is inserted,
+@@ -177,7 +177,7 @@
+         <key>/schemas/desktop/gnome/volume_manager/autoplay_vcd</key>
+ 	<applyto>/desktop/gnome/volume_manager/autoplay_vcd</applyto>
+ 	<type>bool</type>
+-	<default>true</default>
++	<default>false</default>
+ 	<locale name="C">
+ 	  <short>Play inserted video VCDs</short>
+ 	  <long>Whether, when a video VCD is inserted,
+@@ -248,7 +248,7 @@
+         <key>/schemas/desktop/gnome/volume_manager/autoprinter</key>
+ 	<applyto>/desktop/gnome/volume_manager/autoprinter</applyto>
+ 	<type>bool</type>
+-	<default>true</default>
++	<default>false</default>
+ 	<locale name="C">
+ 	  <short>Run printer program</short>
+ 	  <long>Whether, when a printer is connected, gnome-volume-manager should run
+diff -Nur -x '*.orig' -x '*~' gnome-volume-manager-2.22.1/gnome-volume-properties.glade gnome-volume-manager-2.22.1.new/gnome-volume-properties.glade
+--- gnome-volume-manager-2.22.1/gnome-volume-properties.glade	2007-12-07 18:55:47.000000000 +0100
++++ gnome-volume-properties.glade	2008-02-29 16:30:08.000000000 +0100
+@@ -68,1197 +68,6 @@
+ 	  <property name="enable_popup">False</property>
+ 
+ 	  <child>
+-	    <widget class="GtkVBox" id="storage_vbox">
+-	      <property name="border_width">12</property>
+-	      <property name="visible">True</property>
+-	      <property name="homogeneous">False</property>
+-	      <property name="spacing">18</property>
+-
+-	      <child>
+-		<widget class="GtkVBox" id="removable_drives_vbox">
+-		  <property name="visible">True</property>
+-		  <property name="homogeneous">False</property>
+-		  <property name="spacing">6</property>
+-
+-		  <child>
+-		    <widget class="GtkLabel" id="removable_drives_label">
+-		      <property name="visible">True</property>
+-		      <property name="label" translatable="yes">&lt;b&gt;Removable Storage&lt;/b&gt;</property>
+-		      <property name="use_underline">False</property>
+-		      <property name="use_markup">True</property>
+-		      <property name="justify">GTK_JUSTIFY_LEFT</property>
+-		      <property name="wrap">False</property>
+-		      <property name="selectable">False</property>
+-		      <property name="xalign">0</property>
+-		      <property name="yalign">0.5</property>
+-		      <property name="xpad">0</property>
+-		      <property name="ypad">0</property>
+-		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-		      <property name="width_chars">-1</property>
+-		      <property name="single_line_mode">False</property>
+-		      <property name="angle">0</property>
+-		    </widget>
+-		    <packing>
+-		      <property name="padding">0</property>
+-		      <property name="expand">False</property>
+-		      <property name="fill">False</property>
+-		    </packing>
+-		  </child>
+-
+-		  <child>
+-		    <widget class="GtkHBox" id="removable_drives_hbox">
+-		      <property name="visible">True</property>
+-		      <property name="homogeneous">False</property>
+-		      <property name="spacing">12</property>
+-
+-		      <child>
+-			<widget class="GtkImage" id="removable_drives_image">
+-			  <property name="visible">True</property>
+-			  <property name="xalign">0.5</property>
+-			  <property name="yalign">0</property>
+-			  <property name="xpad">0</property>
+-			  <property name="ypad">0</property>
+-			</widget>
+-			<packing>
+-			  <property name="padding">0</property>
+-			  <property name="expand">False</property>
+-			  <property name="fill">False</property>
+-			</packing>
+-		      </child>
+-
+-		      <child>
+-			<widget class="GtkVBox" id="removable_drives_options_vbox">
+-			  <property name="visible">True</property>
+-			  <property name="homogeneous">False</property>
+-			  <property name="spacing">6</property>
+-
+-			  <child>
+-			    <widget class="GtkCheckButton" id="automount_drives">
+-			      <property name="visible">True</property>
+-			      <property name="can_focus">True</property>
+-			      <property name="label" translatable="yes">_Mount removable drives when hot-plugged</property>
+-			      <property name="use_underline">True</property>
+-			      <property name="relief">GTK_RELIEF_NORMAL</property>
+-			      <property name="focus_on_click">True</property>
+-			      <property name="active">False</property>
+-			      <property name="inconsistent">False</property>
+-			      <property name="draw_indicator">True</property>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">False</property>
+-			      <property name="fill">False</property>
+-			    </packing>
+-			  </child>
+-
+-			  <child>
+-			    <widget class="GtkCheckButton" id="automount_media">
+-			      <property name="visible">True</property>
+-			      <property name="can_focus">True</property>
+-			      <property name="label" translatable="yes">Mount removable media when _inserted</property>
+-			      <property name="use_underline">True</property>
+-			      <property name="relief">GTK_RELIEF_NORMAL</property>
+-			      <property name="focus_on_click">True</property>
+-			      <property name="active">False</property>
+-			      <property name="inconsistent">False</property>
+-			      <property name="draw_indicator">True</property>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">False</property>
+-			      <property name="fill">False</property>
+-			    </packing>
+-			  </child>
+-
+-			  <child>
+-			    <widget class="GtkCheckButton" id="autobrowse">
+-			      <property name="visible">True</property>
+-			      <property name="can_focus">True</property>
+-			      <property name="label" translatable="yes">Browse _removable media when inserted</property>
+-			      <property name="use_underline">True</property>
+-			      <property name="relief">GTK_RELIEF_NORMAL</property>
+-			      <property name="focus_on_click">True</property>
+-			      <property name="active">False</property>
+-			      <property name="inconsistent">False</property>
+-			      <property name="draw_indicator">True</property>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">False</property>
+-			      <property name="fill">False</property>
+-			    </packing>
+-			  </child>
+-
+-			  <child>
+-			    <widget class="GtkCheckButton" id="autorun">
+-			      <property name="visible">True</property>
+-			      <property name="can_focus">True</property>
+-			      <property name="label" translatable="yes">_Auto-run programs on new drives and media</property>
+-			      <property name="use_underline">True</property>
+-			      <property name="relief">GTK_RELIEF_NORMAL</property>
+-			      <property name="focus_on_click">True</property>
+-			      <property name="active">False</property>
+-			      <property name="inconsistent">False</property>
+-			      <property name="draw_indicator">True</property>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">False</property>
+-			      <property name="fill">False</property>
+-			    </packing>
+-			  </child>
+-
+-			  <child>
+-			    <widget class="GtkCheckButton" id="autoopen">
+-			      <property name="visible">True</property>
+-			      <property name="can_focus">True</property>
+-			      <property name="label" translatable="yes">Auto-_open files on new drives and media</property>
+-			      <property name="use_underline">True</property>
+-			      <property name="relief">GTK_RELIEF_NORMAL</property>
+-			      <property name="focus_on_click">True</property>
+-			      <property name="active">False</property>
+-			      <property name="inconsistent">False</property>
+-			      <property name="draw_indicator">True</property>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">False</property>
+-			      <property name="fill">False</property>
+-			    </packing>
+-			  </child>
+-			</widget>
+-			<packing>
+-			  <property name="padding">0</property>
+-			  <property name="expand">True</property>
+-			  <property name="fill">True</property>
+-			</packing>
+-		      </child>
+-		    </widget>
+-		    <packing>
+-		      <property name="padding">0</property>
+-		      <property name="expand">True</property>
+-		      <property name="fill">True</property>
+-		    </packing>
+-		  </child>
+-		</widget>
+-		<packing>
+-		  <property name="padding">0</property>
+-		  <property name="expand">False</property>
+-		  <property name="fill">True</property>
+-		</packing>
+-	      </child>
+-
+-	      <child>
+-		<widget class="GtkVBox" id="blank_cd_vbox">
+-		  <property name="visible">True</property>
+-		  <property name="homogeneous">False</property>
+-		  <property name="spacing">6</property>
+-
+-		  <child>
+-		    <widget class="GtkLabel" id="blank_cd_label">
+-		      <property name="visible">True</property>
+-		      <property name="label" translatable="yes">&lt;b&gt;Blank CD and DVD Discs&lt;/b&gt;</property>
+-		      <property name="use_underline">False</property>
+-		      <property name="use_markup">True</property>
+-		      <property name="justify">GTK_JUSTIFY_LEFT</property>
+-		      <property name="wrap">False</property>
+-		      <property name="selectable">False</property>
+-		      <property name="xalign">0</property>
+-		      <property name="yalign">0.5</property>
+-		      <property name="xpad">0</property>
+-		      <property name="ypad">0</property>
+-		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-		      <property name="width_chars">-1</property>
+-		      <property name="single_line_mode">False</property>
+-		      <property name="angle">0</property>
+-		    </widget>
+-		    <packing>
+-		      <property name="padding">0</property>
+-		      <property name="expand">False</property>
+-		      <property name="fill">False</property>
+-		    </packing>
+-		  </child>
+-
+-		  <child>
+-		    <widget class="GtkHBox" id="blank_cd_hbox">
+-		      <property name="visible">True</property>
+-		      <property name="homogeneous">False</property>
+-		      <property name="spacing">12</property>
+-
+-		      <child>
+-			<widget class="GtkImage" id="blank_cd_image">
+-			  <property name="visible">True</property>
+-			  <property name="xalign">0.5</property>
+-			  <property name="yalign">0</property>
+-			  <property name="xpad">0</property>
+-			  <property name="ypad">0</property>
+-			</widget>
+-			<packing>
+-			  <property name="padding">0</property>
+-			  <property name="expand">False</property>
+-			  <property name="fill">False</property>
+-			</packing>
+-		      </child>
+-
+-		      <child>
+-			<widget class="GtkVBox" id="blank_cd_options_vbox">
+-			  <property name="visible">True</property>
+-			  <property name="homogeneous">False</property>
+-			  <property name="spacing">6</property>
+-
+-			  <child>
+-			    <widget class="GtkCheckButton" id="autoburn">
+-			      <property name="visible">True</property>
+-			      <property name="can_focus">True</property>
+-			      <property name="label" translatable="yes">_Burn a CD or DVD when a blank disc is inserted</property>
+-			      <property name="use_underline">True</property>
+-			      <property name="relief">GTK_RELIEF_NORMAL</property>
+-			      <property name="focus_on_click">True</property>
+-			      <property name="active">False</property>
+-			      <property name="inconsistent">False</property>
+-			      <property name="draw_indicator">True</property>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">False</property>
+-			      <property name="fill">False</property>
+-			    </packing>
+-			  </child>
+-
+-			  <child>
+-			    <widget class="GtkVBox" id="autoburn_hbox">
+-			      <property name="visible">True</property>
+-			      <property name="homogeneous">False</property>
+-			      <property name="spacing">12</property>
+-
+-			      <child>
+-				<widget class="GtkHBox" id="hbox73">
+-				  <property name="visible">True</property>
+-				  <property name="homogeneous">False</property>
+-				  <property name="spacing">0</property>
+-
+-				  <child>
+-				    <widget class="GtkLabel" id="label32">
+-				      <property name="visible">True</property>
+-				      <property name="label" translatable="yes">    </property>
+-				      <property name="use_underline">False</property>
+-				      <property name="use_markup">False</property>
+-				      <property name="justify">GTK_JUSTIFY_LEFT</property>
+-				      <property name="wrap">False</property>
+-				      <property name="selectable">False</property>
+-				      <property name="xalign">0.5</property>
+-				      <property name="yalign">0.5</property>
+-				      <property name="xpad">0</property>
+-				      <property name="ypad">0</property>
+-				      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-				      <property name="width_chars">-1</property>
+-				      <property name="single_line_mode">False</property>
+-				      <property name="angle">0</property>
+-				    </widget>
+-				    <packing>
+-				      <property name="padding">0</property>
+-				      <property name="expand">False</property>
+-				      <property name="fill">False</property>
+-				    </packing>
+-				  </child>
+-
+-				  <child>
+-				    <widget class="GtkHBox" id="autoburn_audio_cd_hbox">
+-				      <property name="visible">True</property>
+-				      <property name="homogeneous">False</property>
+-				      <property name="spacing">12</property>
+-
+-				      <child>
+-					<widget class="GtkLabel" id="label35">
+-					  <property name="visible">True</property>
+-					  <property name="label" translatable="yes">Command for A_udio CDs:</property>
+-					  <property name="use_underline">True</property>
+-					  <property name="use_markup">False</property>
+-					  <property name="justify">GTK_JUSTIFY_LEFT</property>
+-					  <property name="wrap">False</property>
+-					  <property name="selectable">False</property>
+-					  <property name="xalign">0.5</property>
+-					  <property name="yalign">0.5</property>
+-					  <property name="xpad">0</property>
+-					  <property name="ypad">0</property>
+-					  <property name="mnemonic_widget">autoburn_audio_cd_command</property>
+-					  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-					  <property name="width_chars">-1</property>
+-					  <property name="single_line_mode">False</property>
+-					  <property name="angle">0</property>
+-					</widget>
+-					<packing>
+-					  <property name="padding">0</property>
+-					  <property name="expand">False</property>
+-					  <property name="fill">False</property>
+-					</packing>
+-				      </child>
+-
+-				      <child>
+-					<widget class="GnomeFileEntry" id="autoburn_audio_cd_command_fileentry">
+-					  <property name="visible">True</property>
+-					  <property name="max_saved">10</property>
+-					  <property name="browse_dialog_title" translatable="yes">Select program to burn audio CDs</property>
+-					  <property name="directory_entry">False</property>
+-					  <property name="modal">False</property>
+-					  <property name="use_filechooser">True</property>
+-					  <property name="filechooser_action">GTK_FILE_CHOOSER_ACTION_OPEN</property>
+-
+-					  <child internal-child="entry">
+-					    <widget class="GtkEntry" id="autoburn_audio_cd_command">
+-					      <property name="visible">True</property>
+-					      <property name="can_focus">True</property>
+-					      <property name="editable">True</property>
+-					      <property name="visibility">True</property>
+-					      <property name="max_length">0</property>
+-					      <property name="text" translatable="yes"></property>
+-					      <property name="has_frame">True</property>
+-					      <property name="invisible_char">*</property>
+-					      <property name="activates_default">False</property>
+-					    </widget>
+-					  </child>
+-					</widget>
+-					<packing>
+-					  <property name="padding">0</property>
+-					  <property name="expand">True</property>
+-					  <property name="fill">True</property>
+-					</packing>
+-				      </child>
+-				    </widget>
+-				    <packing>
+-				      <property name="padding">0</property>
+-				      <property name="expand">True</property>
+-				      <property name="fill">True</property>
+-				    </packing>
+-				  </child>
+-				</widget>
+-				<packing>
+-				  <property name="padding">0</property>
+-				  <property name="expand">True</property>
+-				  <property name="fill">True</property>
+-				</packing>
+-			      </child>
+-
+-			      <child>
+-				<widget class="GtkHBox" id="hbox74">
+-				  <property name="visible">True</property>
+-				  <property name="homogeneous">False</property>
+-				  <property name="spacing">0</property>
+-
+-				  <child>
+-				    <widget class="GtkLabel" id="label33">
+-				      <property name="visible">True</property>
+-				      <property name="label" translatable="yes">    </property>
+-				      <property name="use_underline">False</property>
+-				      <property name="use_markup">False</property>
+-				      <property name="justify">GTK_JUSTIFY_LEFT</property>
+-				      <property name="wrap">False</property>
+-				      <property name="selectable">False</property>
+-				      <property name="xalign">0.5</property>
+-				      <property name="yalign">0.5</property>
+-				      <property name="xpad">0</property>
+-				      <property name="ypad">0</property>
+-				      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-				      <property name="width_chars">-1</property>
+-				      <property name="single_line_mode">False</property>
+-				      <property name="angle">0</property>
+-				    </widget>
+-				    <packing>
+-				      <property name="padding">0</property>
+-				      <property name="expand">False</property>
+-				      <property name="fill">False</property>
+-				    </packing>
+-				  </child>
+-
+-				  <child>
+-				    <widget class="GtkHBox" id="autoburn_data_cd_hbox">
+-				      <property name="visible">True</property>
+-				      <property name="homogeneous">False</property>
+-				      <property name="spacing">12</property>
+-
+-				      <child>
+-					<widget class="GtkLabel" id="label37">
+-					  <property name="visible">True</property>
+-					  <property name="label" translatable="yes">Command for _Data CDs: </property>
+-					  <property name="use_underline">True</property>
+-					  <property name="use_markup">False</property>
+-					  <property name="justify">GTK_JUSTIFY_LEFT</property>
+-					  <property name="wrap">False</property>
+-					  <property name="selectable">False</property>
+-					  <property name="xalign">0.5</property>
+-					  <property name="yalign">0.5</property>
+-					  <property name="xpad">0</property>
+-					  <property name="ypad">0</property>
+-					  <property name="mnemonic_widget">autoburn_data_cd_command</property>
+-					  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-					  <property name="width_chars">-1</property>
+-					  <property name="single_line_mode">False</property>
+-					  <property name="angle">0</property>
+-					</widget>
+-					<packing>
+-					  <property name="padding">0</property>
+-					  <property name="expand">False</property>
+-					  <property name="fill">False</property>
+-					</packing>
+-				      </child>
+-
+-				      <child>
+-					<widget class="GnomeFileEntry" id="autoburn_data_cd_command_fileentry">
+-					  <property name="visible">True</property>
+-					  <property name="max_saved">10</property>
+-					  <property name="browse_dialog_title" translatable="yes">Select program to burn data CDs</property>
+-					  <property name="directory_entry">False</property>
+-					  <property name="modal">False</property>
+-					  <property name="use_filechooser">True</property>
+-					  <property name="filechooser_action">GTK_FILE_CHOOSER_ACTION_OPEN</property>
+-
+-					  <child internal-child="entry">
+-					    <widget class="GtkEntry" id="autoburn_data_cd_command">
+-					      <property name="visible">True</property>
+-					      <property name="can_focus">True</property>
+-					      <property name="editable">True</property>
+-					      <property name="visibility">True</property>
+-					      <property name="max_length">0</property>
+-					      <property name="text" translatable="yes"></property>
+-					      <property name="has_frame">True</property>
+-					      <property name="invisible_char">*</property>
+-					      <property name="activates_default">False</property>
+-					    </widget>
+-					  </child>
+-					</widget>
+-					<packing>
+-					  <property name="padding">0</property>
+-					  <property name="expand">True</property>
+-					  <property name="fill">True</property>
+-					</packing>
+-				      </child>
+-				    </widget>
+-				    <packing>
+-				      <property name="padding">0</property>
+-				      <property name="expand">True</property>
+-				      <property name="fill">True</property>
+-				    </packing>
+-				  </child>
+-				</widget>
+-				<packing>
+-				  <property name="padding">0</property>
+-				  <property name="expand">True</property>
+-				  <property name="fill">True</property>
+-				</packing>
+-			      </child>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">True</property>
+-			      <property name="fill">False</property>
+-			    </packing>
+-			  </child>
+-			</widget>
+-			<packing>
+-			  <property name="padding">0</property>
+-			  <property name="expand">True</property>
+-			  <property name="fill">True</property>
+-			</packing>
+-		      </child>
+-		    </widget>
+-		    <packing>
+-		      <property name="padding">0</property>
+-		      <property name="expand">True</property>
+-		      <property name="fill">True</property>
+-		    </packing>
+-		  </child>
+-		</widget>
+-		<packing>
+-		  <property name="padding">0</property>
+-		  <property name="expand">False</property>
+-		  <property name="fill">True</property>
+-		</packing>
+-	      </child>
+-	    </widget>
+-	    <packing>
+-	      <property name="tab_expand">False</property>
+-	      <property name="tab_fill">True</property>
+-	    </packing>
+-	  </child>
+-
+-	  <child>
+-	    <widget class="GtkLabel" id="storage_tab_label">
+-	      <property name="visible">True</property>
+-	      <property name="label" translatable="yes">Storage</property>
+-	      <property name="use_underline">False</property>
+-	      <property name="use_markup">False</property>
+-	      <property name="justify">GTK_JUSTIFY_LEFT</property>
+-	      <property name="wrap">False</property>
+-	      <property name="selectable">False</property>
+-	      <property name="xalign">0.5</property>
+-	      <property name="yalign">0.5</property>
+-	      <property name="xpad">0</property>
+-	      <property name="ypad">0</property>
+-	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-	      <property name="width_chars">-1</property>
+-	      <property name="single_line_mode">False</property>
+-	      <property name="angle">0</property>
+-	    </widget>
+-	    <packing>
+-	      <property name="type">tab</property>
+-	    </packing>
+-	  </child>
+-
+-	  <child>
+-	    <widget class="GtkVBox" id="multimedia_vbox">
+-	      <property name="border_width">12</property>
+-	      <property name="visible">True</property>
+-	      <property name="homogeneous">False</property>
+-	      <property name="spacing">18</property>
+-
+-	      <child>
+-		<widget class="GtkVBox" id="audio_cd_vbox">
+-		  <property name="visible">True</property>
+-		  <property name="homogeneous">False</property>
+-		  <property name="spacing">6</property>
+-
+-		  <child>
+-		    <widget class="GtkLabel" id="audio_cd_label">
+-		      <property name="visible">True</property>
+-		      <property name="label" translatable="yes">&lt;b&gt;Audio CD Discs&lt;/b&gt;</property>
+-		      <property name="use_underline">False</property>
+-		      <property name="use_markup">True</property>
+-		      <property name="justify">GTK_JUSTIFY_LEFT</property>
+-		      <property name="wrap">False</property>
+-		      <property name="selectable">False</property>
+-		      <property name="xalign">0</property>
+-		      <property name="yalign">0.5</property>
+-		      <property name="xpad">0</property>
+-		      <property name="ypad">0</property>
+-		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-		      <property name="width_chars">-1</property>
+-		      <property name="single_line_mode">False</property>
+-		      <property name="angle">0</property>
+-		    </widget>
+-		    <packing>
+-		      <property name="padding">0</property>
+-		      <property name="expand">False</property>
+-		      <property name="fill">False</property>
+-		    </packing>
+-		  </child>
+-
+-		  <child>
+-		    <widget class="GtkHBox" id="audio_cd_hbox">
+-		      <property name="visible">True</property>
+-		      <property name="homogeneous">False</property>
+-		      <property name="spacing">12</property>
+-
+-		      <child>
+-			<widget class="GtkImage" id="audio_cd_image">
+-			  <property name="visible">True</property>
+-			  <property name="xalign">0.5</property>
+-			  <property name="yalign">0</property>
+-			  <property name="xpad">0</property>
+-			  <property name="ypad">0</property>
+-			</widget>
+-			<packing>
+-			  <property name="padding">0</property>
+-			  <property name="expand">False</property>
+-			  <property name="fill">False</property>
+-			</packing>
+-		      </child>
+-
+-		      <child>
+-			<widget class="GtkVBox" id="audio_cd_options_vbox">
+-			  <property name="visible">True</property>
+-			  <property name="homogeneous">False</property>
+-			  <property name="spacing">6</property>
+-
+-			  <child>
+-			    <widget class="GtkCheckButton" id="autoplay_cda">
+-			      <property name="visible">True</property>
+-			      <property name="can_focus">True</property>
+-			      <property name="label" translatable="yes">Play _audio CD discs when inserted</property>
+-			      <property name="use_underline">True</property>
+-			      <property name="relief">GTK_RELIEF_NORMAL</property>
+-			      <property name="focus_on_click">True</property>
+-			      <property name="active">False</property>
+-			      <property name="inconsistent">False</property>
+-			      <property name="draw_indicator">True</property>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">False</property>
+-			      <property name="fill">False</property>
+-			    </packing>
+-			  </child>
+-
+-			  <child>
+-			    <widget class="GtkHBox" id="hbox20">
+-			      <property name="visible">True</property>
+-			      <property name="homogeneous">False</property>
+-			      <property name="spacing">0</property>
+-
+-			      <child>
+-				<widget class="GtkLabel" id="label23">
+-				  <property name="visible">True</property>
+-				  <property name="label" translatable="yes">    </property>
+-				  <property name="use_underline">False</property>
+-				  <property name="use_markup">False</property>
+-				  <property name="justify">GTK_JUSTIFY_LEFT</property>
+-				  <property name="wrap">False</property>
+-				  <property name="selectable">False</property>
+-				  <property name="xalign">0.5</property>
+-				  <property name="yalign">0.5</property>
+-				  <property name="xpad">0</property>
+-				  <property name="ypad">0</property>
+-				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-				  <property name="width_chars">-1</property>
+-				  <property name="single_line_mode">False</property>
+-				  <property name="angle">0</property>
+-				</widget>
+-				<packing>
+-				  <property name="padding">0</property>
+-				  <property name="expand">False</property>
+-				  <property name="fill">False</property>
+-				</packing>
+-			      </child>
+-
+-			      <child>
+-				<widget class="GtkHBox" id="autoplay_cda_hbox">
+-				  <property name="visible">True</property>
+-				  <property name="homogeneous">False</property>
+-				  <property name="spacing">12</property>
+-
+-				  <child>
+-				    <widget class="GtkLabel" id="autoplay_cda_command_label">
+-				      <property name="visible">True</property>
+-				      <property name="label" translatable="yes">C_ommand:</property>
+-				      <property name="use_underline">True</property>
+-				      <property name="use_markup">False</property>
+-				      <property name="justify">GTK_JUSTIFY_RIGHT</property>
+-				      <property name="wrap">False</property>
+-				      <property name="selectable">False</property>
+-				      <property name="xalign">0.5</property>
+-				      <property name="yalign">0.5</property>
+-				      <property name="xpad">0</property>
+-				      <property name="ypad">0</property>
+-				      <property name="mnemonic_widget">autoplay_cda_command</property>
+-				      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-				      <property name="width_chars">-1</property>
+-				      <property name="single_line_mode">False</property>
+-				      <property name="angle">0</property>
+-				    </widget>
+-				    <packing>
+-				      <property name="padding">0</property>
+-				      <property name="expand">False</property>
+-				      <property name="fill">False</property>
+-				    </packing>
+-				  </child>
+-
+-				  <child>
+-				    <widget class="GnomeFileEntry" id="autoplay_cda_command_fileentry">
+-				      <property name="visible">True</property>
+-				      <property name="max_saved">10</property>
+-				      <property name="browse_dialog_title" translatable="yes">Select program to play audio CDs</property>
+-				      <property name="directory_entry">False</property>
+-				      <property name="modal">False</property>
+-				      <property name="use_filechooser">True</property>
+-				      <property name="filechooser_action">GTK_FILE_CHOOSER_ACTION_OPEN</property>
+-
+-				      <child internal-child="entry">
+-					<widget class="GtkEntry" id="autoplay_cda_command">
+-					  <property name="visible">True</property>
+-					  <property name="can_focus">True</property>
+-					  <property name="editable">True</property>
+-					  <property name="visibility">True</property>
+-					  <property name="max_length">0</property>
+-					  <property name="text" translatable="yes"></property>
+-					  <property name="has_frame">True</property>
+-					  <property name="invisible_char">*</property>
+-					  <property name="activates_default">False</property>
+-					</widget>
+-				      </child>
+-				    </widget>
+-				    <packing>
+-				      <property name="padding">0</property>
+-				      <property name="expand">True</property>
+-				      <property name="fill">True</property>
+-				    </packing>
+-				  </child>
+-				</widget>
+-				<packing>
+-				  <property name="padding">0</property>
+-				  <property name="expand">True</property>
+-				  <property name="fill">True</property>
+-				</packing>
+-			      </child>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">True</property>
+-			      <property name="fill">False</property>
+-			    </packing>
+-			  </child>
+-			</widget>
+-			<packing>
+-			  <property name="padding">0</property>
+-			  <property name="expand">True</property>
+-			  <property name="fill">True</property>
+-			</packing>
+-		      </child>
+-		    </widget>
+-		    <packing>
+-		      <property name="padding">0</property>
+-		      <property name="expand">True</property>
+-		      <property name="fill">True</property>
+-		    </packing>
+-		  </child>
+-		</widget>
+-		<packing>
+-		  <property name="padding">0</property>
+-		  <property name="expand">False</property>
+-		  <property name="fill">True</property>
+-		</packing>
+-	      </child>
+-
+-	      <child>
+-		<widget class="GtkVBox" id="dvd_video_vbox">
+-		  <property name="visible">True</property>
+-		  <property name="homogeneous">False</property>
+-		  <property name="spacing">6</property>
+-
+-		  <child>
+-		    <widget class="GtkLabel" id="dvd_video_label">
+-		      <property name="visible">True</property>
+-		      <property name="label" translatable="yes">&lt;b&gt;Video DVD Discs&lt;/b&gt;</property>
+-		      <property name="use_underline">False</property>
+-		      <property name="use_markup">True</property>
+-		      <property name="justify">GTK_JUSTIFY_LEFT</property>
+-		      <property name="wrap">False</property>
+-		      <property name="selectable">False</property>
+-		      <property name="xalign">0</property>
+-		      <property name="yalign">0.5</property>
+-		      <property name="xpad">0</property>
+-		      <property name="ypad">0</property>
+-		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-		      <property name="width_chars">-1</property>
+-		      <property name="single_line_mode">False</property>
+-		      <property name="angle">0</property>
+-		    </widget>
+-		    <packing>
+-		      <property name="padding">0</property>
+-		      <property name="expand">False</property>
+-		      <property name="fill">False</property>
+-		    </packing>
+-		  </child>
+-
+-		  <child>
+-		    <widget class="GtkHBox" id="dvd_video_hbox">
+-		      <property name="visible">True</property>
+-		      <property name="homogeneous">False</property>
+-		      <property name="spacing">12</property>
+-
+-		      <child>
+-			<widget class="GtkImage" id="dvd_video_image">
+-			  <property name="visible">True</property>
+-			  <property name="xalign">0.5</property>
+-			  <property name="yalign">0</property>
+-			  <property name="xpad">0</property>
+-			  <property name="ypad">0</property>
+-			</widget>
+-			<packing>
+-			  <property name="padding">0</property>
+-			  <property name="expand">False</property>
+-			  <property name="fill">False</property>
+-			</packing>
+-		      </child>
+-
+-		      <child>
+-			<widget class="GtkVBox" id="dvd_video_options_vbox">
+-			  <property name="visible">True</property>
+-			  <property name="homogeneous">False</property>
+-			  <property name="spacing">6</property>
+-
+-			  <child>
+-			    <widget class="GtkCheckButton" id="autoplay_dvd">
+-			      <property name="visible">True</property>
+-			      <property name="can_focus">True</property>
+-			      <property name="label" translatable="yes">Play _video DVD discs when inserted</property>
+-			      <property name="use_underline">True</property>
+-			      <property name="relief">GTK_RELIEF_NORMAL</property>
+-			      <property name="focus_on_click">True</property>
+-			      <property name="active">False</property>
+-			      <property name="inconsistent">False</property>
+-			      <property name="draw_indicator">True</property>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">False</property>
+-			      <property name="fill">False</property>
+-			    </packing>
+-			  </child>
+-
+-			  <child>
+-			    <widget class="GtkHBox" id="hbox21">
+-			      <property name="visible">True</property>
+-			      <property name="homogeneous">False</property>
+-			      <property name="spacing">0</property>
+-
+-			      <child>
+-				<widget class="GtkLabel" id="label24">
+-				  <property name="visible">True</property>
+-				  <property name="label" translatable="yes">    </property>
+-				  <property name="use_underline">False</property>
+-				  <property name="use_markup">False</property>
+-				  <property name="justify">GTK_JUSTIFY_LEFT</property>
+-				  <property name="wrap">False</property>
+-				  <property name="selectable">False</property>
+-				  <property name="xalign">0.5</property>
+-				  <property name="yalign">0.5</property>
+-				  <property name="xpad">0</property>
+-				  <property name="ypad">0</property>
+-				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-				  <property name="width_chars">-1</property>
+-				  <property name="single_line_mode">False</property>
+-				  <property name="angle">0</property>
+-				</widget>
+-				<packing>
+-				  <property name="padding">0</property>
+-				  <property name="expand">False</property>
+-				  <property name="fill">False</property>
+-				</packing>
+-			      </child>
+-
+-			      <child>
+-				<widget class="GtkHBox" id="autoplay_dvd_hbox">
+-				  <property name="visible">True</property>
+-				  <property name="homogeneous">False</property>
+-				  <property name="spacing">12</property>
+-
+-				  <child>
+-				    <widget class="GtkLabel" id="autoplay_dvd_command_label">
+-				      <property name="visible">True</property>
+-				      <property name="label" translatable="yes">Comma_nd:</property>
+-				      <property name="use_underline">True</property>
+-				      <property name="use_markup">False</property>
+-				      <property name="justify">GTK_JUSTIFY_RIGHT</property>
+-				      <property name="wrap">False</property>
+-				      <property name="selectable">False</property>
+-				      <property name="xalign">0.5</property>
+-				      <property name="yalign">0.5</property>
+-				      <property name="xpad">0</property>
+-				      <property name="ypad">0</property>
+-				      <property name="mnemonic_widget">autoplay_dvd_command</property>
+-				      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-				      <property name="width_chars">-1</property>
+-				      <property name="single_line_mode">False</property>
+-				      <property name="angle">0</property>
+-				    </widget>
+-				    <packing>
+-				      <property name="padding">0</property>
+-				      <property name="expand">False</property>
+-				      <property name="fill">False</property>
+-				    </packing>
+-				  </child>
+-
+-				  <child>
+-				    <widget class="GnomeFileEntry" id="autoplay_dvd_command_fileentry">
+-				      <property name="visible">True</property>
+-				      <property name="max_saved">10</property>
+-				      <property name="browse_dialog_title" translatable="yes">Select program to play DVDs</property>
+-				      <property name="directory_entry">False</property>
+-				      <property name="modal">False</property>
+-				      <property name="use_filechooser">True</property>
+-				      <property name="filechooser_action">GTK_FILE_CHOOSER_ACTION_OPEN</property>
+-
+-				      <child internal-child="entry">
+-					<widget class="GtkEntry" id="autoplay_dvd_command">
+-					  <property name="visible">True</property>
+-					  <property name="can_focus">True</property>
+-					  <property name="editable">True</property>
+-					  <property name="visibility">True</property>
+-					  <property name="max_length">0</property>
+-					  <property name="text" translatable="yes"></property>
+-					  <property name="has_frame">True</property>
+-					  <property name="invisible_char">*</property>
+-					  <property name="activates_default">False</property>
+-					</widget>
+-				      </child>
+-				    </widget>
+-				    <packing>
+-				      <property name="padding">0</property>
+-				      <property name="expand">True</property>
+-				      <property name="fill">True</property>
+-				    </packing>
+-				  </child>
+-				</widget>
+-				<packing>
+-				  <property name="padding">0</property>
+-				  <property name="expand">True</property>
+-				  <property name="fill">True</property>
+-				</packing>
+-			      </child>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">True</property>
+-			      <property name="fill">False</property>
+-			    </packing>
+-			  </child>
+-			</widget>
+-			<packing>
+-			  <property name="padding">0</property>
+-			  <property name="expand">True</property>
+-			  <property name="fill">True</property>
+-			</packing>
+-		      </child>
+-		    </widget>
+-		    <packing>
+-		      <property name="padding">0</property>
+-		      <property name="expand">True</property>
+-		      <property name="fill">True</property>
+-		    </packing>
+-		  </child>
+-		</widget>
+-		<packing>
+-		  <property name="padding">0</property>
+-		  <property name="expand">False</property>
+-		  <property name="fill">True</property>
+-		</packing>
+-	      </child>
+-
+-	      <child>
+-		<widget class="GtkVBox" id="ipod_vbox">
+-		  <property name="visible">True</property>
+-		  <property name="homogeneous">False</property>
+-		  <property name="spacing">6</property>
+-
+-		  <child>
+-		    <widget class="GtkLabel" id="ipod_label">
+-		      <property name="visible">True</property>
+-		      <property name="label" translatable="yes">&lt;b&gt;Portable Music Players&lt;/b&gt;</property>
+-		      <property name="use_underline">False</property>
+-		      <property name="use_markup">True</property>
+-		      <property name="justify">GTK_JUSTIFY_LEFT</property>
+-		      <property name="wrap">False</property>
+-		      <property name="selectable">False</property>
+-		      <property name="xalign">0</property>
+-		      <property name="yalign">0.5</property>
+-		      <property name="xpad">0</property>
+-		      <property name="ypad">0</property>
+-		      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-		      <property name="width_chars">-1</property>
+-		      <property name="single_line_mode">False</property>
+-		      <property name="angle">0</property>
+-		    </widget>
+-		    <packing>
+-		      <property name="padding">0</property>
+-		      <property name="expand">False</property>
+-		      <property name="fill">False</property>
+-		    </packing>
+-		  </child>
+-
+-		  <child>
+-		    <widget class="GtkHBox" id="ipod_hbox">
+-		      <property name="visible">True</property>
+-		      <property name="homogeneous">False</property>
+-		      <property name="spacing">12</property>
+-
+-		      <child>
+-			<widget class="GtkImage" id="ipod_image">
+-			  <property name="visible">True</property>
+-			  <property name="xalign">0.5</property>
+-			  <property name="yalign">0</property>
+-			  <property name="xpad">0</property>
+-			  <property name="ypad">0</property>
+-			</widget>
+-			<packing>
+-			  <property name="padding">0</property>
+-			  <property name="expand">False</property>
+-			  <property name="fill">False</property>
+-			</packing>
+-		      </child>
+-
+-		      <child>
+-			<widget class="GtkVBox" id="ipod_options_vbox">
+-			  <property name="visible">True</property>
+-			  <property name="homogeneous">False</property>
+-			  <property name="spacing">6</property>
+-
+-			  <child>
+-			    <widget class="GtkCheckButton" id="autoipod">
+-			      <property name="visible">True</property>
+-			      <property name="can_focus">True</property>
+-			      <property name="label" translatable="yes">Play _music files when connected</property>
+-			      <property name="use_underline">True</property>
+-			      <property name="relief">GTK_RELIEF_NORMAL</property>
+-			      <property name="focus_on_click">True</property>
+-			      <property name="active">False</property>
+-			      <property name="inconsistent">False</property>
+-			      <property name="draw_indicator">True</property>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">False</property>
+-			      <property name="fill">False</property>
+-			    </packing>
+-			  </child>
+-
+-			  <child>
+-			    <widget class="GtkHBox" id="hbox72">
+-			      <property name="visible">True</property>
+-			      <property name="homogeneous">False</property>
+-			      <property name="spacing">0</property>
+-
+-			      <child>
+-				<widget class="GtkLabel" id="label30">
+-				  <property name="visible">True</property>
+-				  <property name="label" translatable="yes">    </property>
+-				  <property name="use_underline">False</property>
+-				  <property name="use_markup">False</property>
+-				  <property name="justify">GTK_JUSTIFY_LEFT</property>
+-				  <property name="wrap">False</property>
+-				  <property name="selectable">False</property>
+-				  <property name="xalign">0.5</property>
+-				  <property name="yalign">0.5</property>
+-				  <property name="xpad">0</property>
+-				  <property name="ypad">0</property>
+-				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-				  <property name="width_chars">-1</property>
+-				  <property name="single_line_mode">False</property>
+-				  <property name="angle">0</property>
+-				</widget>
+-				<packing>
+-				  <property name="padding">0</property>
+-				  <property name="expand">False</property>
+-				  <property name="fill">False</property>
+-				</packing>
+-			      </child>
+-
+-			      <child>
+-				<widget class="GtkHBox" id="autoipod_hbox">
+-				  <property name="visible">True</property>
+-				  <property name="homogeneous">False</property>
+-				  <property name="spacing">12</property>
+-
+-				  <child>
+-				    <widget class="GtkLabel" id="autoipod_command_label">
+-				      <property name="visible">True</property>
+-				      <property name="label" translatable="yes">Comman_d:</property>
+-				      <property name="use_underline">True</property>
+-				      <property name="use_markup">False</property>
+-				      <property name="justify">GTK_JUSTIFY_RIGHT</property>
+-				      <property name="wrap">False</property>
+-				      <property name="selectable">False</property>
+-				      <property name="xalign">0.5</property>
+-				      <property name="yalign">0.5</property>
+-				      <property name="xpad">0</property>
+-				      <property name="ypad">0</property>
+-				      <property name="mnemonic_widget">autoipod_command</property>
+-				      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-				      <property name="width_chars">-1</property>
+-				      <property name="single_line_mode">False</property>
+-				      <property name="angle">0</property>
+-				    </widget>
+-				    <packing>
+-				      <property name="padding">0</property>
+-				      <property name="expand">False</property>
+-				      <property name="fill">False</property>
+-				    </packing>
+-				  </child>
+-
+-				  <child>
+-				    <widget class="GnomeFileEntry" id="autoipod_command_fileentry">
+-				      <property name="visible">True</property>
+-				      <property name="max_saved">10</property>
+-				      <property name="browse_dialog_title" translatable="yes">Select program to play music files</property>
+-				      <property name="directory_entry">False</property>
+-				      <property name="modal">False</property>
+-				      <property name="use_filechooser">True</property>
+-				      <property name="filechooser_action">GTK_FILE_CHOOSER_ACTION_OPEN</property>
+-
+-				      <child internal-child="entry">
+-					<widget class="GtkEntry" id="autoipod_command">
+-					  <property name="visible">True</property>
+-					  <property name="can_focus">True</property>
+-					  <property name="editable">True</property>
+-					  <property name="visibility">True</property>
+-					  <property name="max_length">0</property>
+-					  <property name="text" translatable="yes"></property>
+-					  <property name="has_frame">True</property>
+-					  <property name="invisible_char">*</property>
+-					  <property name="activates_default">False</property>
+-					</widget>
+-				      </child>
+-				    </widget>
+-				    <packing>
+-				      <property name="padding">0</property>
+-				      <property name="expand">True</property>
+-				      <property name="fill">True</property>
+-				    </packing>
+-				  </child>
+-				</widget>
+-				<packing>
+-				  <property name="padding">0</property>
+-				  <property name="expand">True</property>
+-				  <property name="fill">True</property>
+-				</packing>
+-			      </child>
+-			    </widget>
+-			    <packing>
+-			      <property name="padding">0</property>
+-			      <property name="expand">True</property>
+-			      <property name="fill">True</property>
+-			    </packing>
+-			  </child>
+-			</widget>
+-			<packing>
+-			  <property name="padding">0</property>
+-			  <property name="expand">True</property>
+-			  <property name="fill">True</property>
+-			</packing>
+-		      </child>
+-		    </widget>
+-		    <packing>
+-		      <property name="padding">0</property>
+-		      <property name="expand">True</property>
+-		      <property name="fill">True</property>
+-		    </packing>
+-		  </child>
+-		</widget>
+-		<packing>
+-		  <property name="padding">0</property>
+-		  <property name="expand">False</property>
+-		  <property name="fill">True</property>
+-		</packing>
+-	      </child>
+-	    </widget>
+-	    <packing>
+-	      <property name="tab_expand">False</property>
+-	      <property name="tab_fill">True</property>
+-	    </packing>
+-	  </child>
+-
+-	  <child>
+-	    <widget class="GtkLabel" id="multimedia_tab_label">
+-	      <property name="visible">True</property>
+-	      <property name="label" translatable="yes">Multimedia</property>
+-	      <property name="use_underline">False</property>
+-	      <property name="use_markup">False</property>
+-	      <property name="justify">GTK_JUSTIFY_LEFT</property>
+-	      <property name="wrap">False</property>
+-	      <property name="selectable">False</property>
+-	      <property name="xalign">0.5</property>
+-	      <property name="yalign">0.5</property>
+-	      <property name="xpad">0</property>
+-	      <property name="ypad">0</property>
+-	      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+-	      <property name="width_chars">-1</property>
+-	      <property name="single_line_mode">False</property>
+-	      <property name="angle">0</property>
+-	    </widget>
+-	    <packing>
+-	      <property name="type">tab</property>
+-	    </packing>
+-	  </child>
+-
+-	  <child>
+ 	    <widget class="GtkVBox" id="cameras_vbox">
+ 	      <property name="border_width">12</property>
+ 	      <property name="visible">True</property>
+diff -Nur -x '*.orig' -x '*~' gnome-volume-manager-2.22.1/src/manager.c gnome-volume-manager-2.22.1.new/src/manager.c
+--- gnome-volume-manager-2.22.1/src/manager.c	2008-01-18 17:30:22.000000000 +0100
++++ src/manager.c	2008-02-29 16:30:12.000000000 +0100
+@@ -625,6 +625,27 @@
+ 	}
+ }
+ 
++static gboolean
++filter_out_media_handling (gint key, gboolean value)
++{
++       switch (key) {
++       case AUTOBROWSE:
++       case AUTOBURN:
++       case AUTOIPOD:
++       case AUTOMOUNT_DRIVES:
++       case AUTOMOUNT_MEDIA:
++       case AUTOOPEN:
++       case AUTOPLAY_CDA:
++       case AUTOPLAY_DVD:
++       case AUTOPLAY_VCD:
++       case AUTORUN:
++               return FALSE;
++       default:
++               return value;
++       }
++}
++
++
+ /*
+  * gvm_load_config - synchronize gconf => config structure
+  */
+@@ -644,7 +665,7 @@
+ 			     *((char **) gvm_settings[i].var) ? *((char **) gvm_settings[i].var): "NULL");
+ 		} else if (gvm_settings[i].type == TYPE_BOOL) {
+ 			*((int *) gvm_settings[i].var) =
+-				gconf_client_get_bool (config.client, gvm_settings[i].key, NULL);
++				filter_out_media_handling (i, gconf_client_get_bool (config.client, gvm_settings[i].key, NULL));
+ 			dbg ("setting[%d]: bool: %s = %d\n", i, strrchr (gvm_settings[i].key, '/') + 1,
+ 			     *((int *) gvm_settings[i].var));
+ 		} else if (gvm_settings[i].type == TYPE_FLOAT) {
+@@ -693,7 +714,7 @@
+ 		dbg ("setting changed: string: %s = %s\n", strrchr (gvm_settings[which].key, '/') + 1,
+ 		     *((char **) gvm_settings[which].var));
+ 	} else if (gvm_settings[which].type == TYPE_BOOL) {
+-		*((int *) gvm_settings[which].var) = gconf_value_get_bool (value);
++		*((int *) gvm_settings[which].var) = filter_out_media_handling (which, gconf_value_get_bool (value));
+ 		dbg ("setting changed: bool: %s = %d\n", strrchr (gvm_settings[which].key, '/') + 1,
+ 		     *((int *) gvm_settings[which].var));
+ 	} else if (gvm_settings[which].type == TYPE_FLOAT) {
+diff -Nur -x '*.orig' -x '*~' gnome-volume-manager-2.22.1/src/properties.c gnome-volume-manager-2.22.1.new/src/properties.c
+--- gnome-volume-manager-2.22.1/src/properties.c	2007-12-07 18:55:46.000000000 +0100
++++ src/properties.c	2008-02-29 16:30:08.000000000 +0100
+@@ -36,77 +36,24 @@
+ 	TYPE_STRING,
+ } type_t;
+ 
+-enum {
+-	AUTOBROWSE,
+-	AUTOBURN,
+-	AUTOBURN_AUDIO_CD_COMMAND,
+-	AUTOBURN_DATA_CD_COMMAND,
+-	AUTOIPOD,
+-	AUTOIPOD_COMMAND,
+-	AUTOKEYBOARD,
+-	AUTOKEYBOARD_COMMAND,
+-	AUTOMOUNT_DRIVES,
+-	AUTOMOUNT_MEDIA,
+-	AUTOMOUSE,
+-	AUTOMOUSE_COMMAND,
+-	AUTOOPEN,
+-	AUTOPHOTO,
+-	AUTOPHOTO_COMMAND,
+-	AUTOPILOT,
+-	AUTOPILOT_COMMAND,
+-	AUTOPLAY_CDA,
+-	AUTOPLAY_CDA_COMMAND,
+-	AUTOPLAY_DVD,
+-	AUTOPLAY_DVD_COMMAND,
+-	AUTOPOCKETPC,
+-	AUTOPOCKETPC_COMMAND,
+-	AUTOPRINTER,
+-	AUTOPRINTER_COMMAND,
+-	AUTORUN,
+-	AUTOSCANNER,
+-	AUTOSCANNER_COMMAND,
+-	AUTOTABLET,
+-	AUTOTABLET_COMMAND,
+-	AUTOVIDEOCAM,
+-	AUTOVIDEOCAM_COMMAND,
+-	AUTOWEBCAM,
+-	AUTOWEBCAM_COMMAND,
+-	AUTORUN_PATH,
+-	AUTOOPEN_PATH,
+-};
+-
+ static struct {
+ 	char *key;
+ 	type_t type;
+ 	GtkWidget *widget;
+ 	gboolean need_daemon;
+ } gvm_settings[] = {
+-	{ GCONF_ROOT "autobrowse",                TYPE_BOOL,   NULL, TRUE  },
+-	{ GCONF_ROOT "autoburn",                  TYPE_BOOL,   NULL, FALSE },
+-	{ GCONF_ROOT "autoburn_audio_cd_command", TYPE_STRING, NULL, FALSE },
+-	{ GCONF_ROOT "autoburn_data_cd_command",  TYPE_STRING, NULL, FALSE },
+-	{ GCONF_ROOT "autoipod",                  TYPE_BOOL,   NULL, TRUE  },
+-	{ GCONF_ROOT "autoipod_command",          TYPE_STRING, NULL, FALSE },
+ 	{ GCONF_ROOT "autokeyboard",              TYPE_BOOL,   NULL, TRUE  },
+ 	{ GCONF_ROOT "autokeyboard_command",      TYPE_STRING, NULL, FALSE },
+-	{ GCONF_ROOT "automount_drives",          TYPE_BOOL,   NULL, TRUE  },
+-	{ GCONF_ROOT "automount_media",           TYPE_BOOL,   NULL, TRUE  },
+ 	{ GCONF_ROOT "automouse",                 TYPE_BOOL,   NULL, TRUE  },
+ 	{ GCONF_ROOT "automouse_command",         TYPE_STRING, NULL, FALSE },
+-	{ GCONF_ROOT "autoopen",                  TYPE_BOOL,   NULL, TRUE  },
+ 	{ GCONF_ROOT "autophoto",                 TYPE_BOOL,   NULL, TRUE  },
+ 	{ GCONF_ROOT "autophoto_command",         TYPE_STRING, NULL, FALSE },
+ 	{ GCONF_ROOT "autopalmsync",              TYPE_BOOL,   NULL, TRUE  },
+ 	{ GCONF_ROOT "autopalmsync_command",      TYPE_STRING, NULL, FALSE },
+-	{ GCONF_ROOT "autoplay_cda",              TYPE_BOOL,   NULL, TRUE  },
+-	{ GCONF_ROOT "autoplay_cda_command",      TYPE_STRING, NULL, FALSE },
+-	{ GCONF_ROOT "autoplay_dvd",              TYPE_BOOL,   NULL, TRUE  },
+-	{ GCONF_ROOT "autoplay_dvd_command",      TYPE_STRING, NULL, FALSE },
+ 	{ GCONF_ROOT "autopocketpc",              TYPE_BOOL,   NULL, TRUE  },
+ 	{ GCONF_ROOT "autopocketpc_command",      TYPE_STRING, NULL, FALSE },
+ 	{ GCONF_ROOT "autoprinter",               TYPE_BOOL,   NULL, TRUE  },
+ 	{ GCONF_ROOT "autoprinter_command",       TYPE_STRING, NULL, FALSE },
+-	{ GCONF_ROOT "autorun",                   TYPE_BOOL,   NULL, TRUE  },
+ 	{ GCONF_ROOT "autoscanner",               TYPE_BOOL,   NULL, TRUE  },
+ 	{ GCONF_ROOT "autoscanner_command",       TYPE_STRING, NULL, FALSE },
+ 	{ GCONF_ROOT "autotablet",                TYPE_BOOL,   NULL, TRUE  },
+@@ -115,9 +62,6 @@
+ 	{ GCONF_ROOT "autovideocam_command",      TYPE_STRING, NULL, FALSE },
+ 	{ GCONF_ROOT "autowebcam",                TYPE_BOOL,   NULL, TRUE  },
+ 	{ GCONF_ROOT "autowebcam_command",        TYPE_STRING, NULL, FALSE },
+-	/* The following entries do not (yet) have a UI */
+-	/*{ GCONF_ROOT "autorun_path",         TYPE_STRING, NULL, FALSE },*/
+-	/*{ GCONF_ROOT "autoopen_path",        TYPE_STRING, NULL, FALSE },*/
+ };
+ 
+ static GHashTable *gvm_settings_hash = NULL;
+@@ -151,17 +95,10 @@
+ 		gconf_client_set_bool (gconf, key, bool, NULL);
+ 	
+ 	name = strrchr (key, '/') + 1;
+-	if (!strncmp (name, "automount_", 10)) {
+-		bool = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (gvm_settings[AUTOMOUNT_MEDIA].widget)) ||
+-			gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (gvm_settings[AUTOMOUNT_DRIVES].widget));
+-		gtk_widget_set_sensitive (gvm_settings[AUTOOPEN].widget, bool);
+-		gtk_widget_set_sensitive (gvm_settings[AUTORUN].widget, bool);
+-	} else {
+-		name = g_strdup_printf ("%s_hbox", name);
+-		if ((hbox = glade_xml_get_widget (xml, name)))
+-			gtk_widget_set_sensitive (hbox, bool);
+-		g_free (name);
+-	}
++	name = g_strdup_printf ("%s_hbox", name);
++	if ((hbox = glade_xml_get_widget (xml, name)))
++		gtk_widget_set_sensitive (hbox, bool);
++	g_free (name);
+ }
+ 
+ static void
+@@ -205,11 +142,6 @@
+ 	gboolean bool;
+ 	size_t i;
+ 	
+-	/* this is the only strange one */
+-	bool = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (gvm_settings[AUTOMOUNT_MEDIA].widget)) ||
+-		gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (gvm_settings[AUTOMOUNT_DRIVES].widget));
+-	gtk_widget_set_sensitive (gvm_settings[AUTORUN].widget, bool);
+-	
+ 	/* checkboxes can enable/disable the ability to change other settings */
+ 	for (i = 0; i < G_N_ELEMENTS (gvm_settings); i++) {
+ 		if (gvm_settings[i].type == TYPE_BOOL) {
+@@ -277,17 +209,12 @@
+ 	const char *icon;
+ 	const char *fallback;
+ } icons[] = {
+-	{ "audio_cd_image",         "gnome-dev-cdrom-audio", "media-optical"  },
+-	{ "blank_cd_image",         "gnome-dev-disc-cdr",    "media-optical"  },
+ 	{ "digital_camera_image",   "camera-photo",          NULL             },
+-	{ "dvd_video_image",        "gnome-dev-dvd",         "media-optical"  },
+-	{ "ipod_image",             "multimedia-player",     "gnome-dev-ipod" },
+ 	{ "keyboard_image",         "input-keyboard",        NULL             },
+ 	{ "mouse_image",            "input-mouse",           NULL             },
+ 	{ "palm_image",             "pda-palm",              "palm-pilot"     },
+ 	{ "pocketpc_image",         "pda-pocketpc",          "palm-pilot"     },
+ 	{ "printer_image",          "printer",               NULL             },
+-	{ "removable_drives_image", "drive-removable-media", NULL             },
+ 	{ "scanner_image",          "scanner",               NULL             },
+ 	{ "tablet_image",           "input-tablet",          NULL             },
+ 	{ "videocam_image",         "camera-video",          NULL             },

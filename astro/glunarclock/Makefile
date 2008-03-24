@@ -3,11 +3,11 @@
 # Whom:			Vincent Tantardini <vinc@freebsd-fr.org>
 #
 # $FreeBSD$
-#    $MCom: ports/astro/glunarclock/Makefile,v 1.5 2007/05/19 21:35:54 marcus Exp $
+#    $MCom: ports/astro/glunarclock/Makefile,v 1.8 2008/03/20 18:57:15 mezz Exp $
 
 PORTNAME=	glunarclock
 PORTVERSION=	0.32.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	astro gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME applet that displays the current phase of the Moon
 
-LIB_DEPENDS=	xklavier.11:${PORTSDIR}/x11/libxklavier
+LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
 
-USE_GNOME=	gnomehack gnomepanel gnomeprefix gnometarget intlhack
+USE_GNOME=	gail gnomehack gnomepanel gnomeprefix gnometarget intlhack
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

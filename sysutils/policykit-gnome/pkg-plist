@@ -1,0 +1,21 @@
+bin/polkit-gnome-authorization
+bin/polkit-gnome-example
+include/PolicyKit/polkit-gnome/polkit-gnome-action.h
+include/PolicyKit/polkit-gnome/polkit-gnome-auth.h
+include/PolicyKit/polkit-gnome/polkit-gnome-context.h
+include/PolicyKit/polkit-gnome/polkit-gnome-toggle-action.h
+include/PolicyKit/polkit-gnome/polkit-gnome.h
+lib/libpolkit-gnome.a
+lib/libpolkit-gnome.la
+lib/libpolkit-gnome.so
+lib/libpolkit-gnome.so.0
+libdata/pkgconfig/polkit-gnome.pc
+libexec/polkit-gnome-manager
+share/PolicyKit/policy/polkit-gnome-example.policy
+share/applications/polkit-gnome-authorization.desktop
+share/dbus-1/services/gnome-org.freedesktop.PolicyKit.AuthenticationAgent.service
+share/dbus-1/services/org.gnome.PolicyKit.AuthorizationManager.service
+share/dbus-1/services/org.gnome.PolicyKit.service
+share/locale/da/LC_MESSAGES/PolicyKit-gnome.mo
+@dirrmtry share/applications
+@dirrm include/PolicyKit/polkit-gnome

@@ -238,7 +238,6 @@ share/xsessions/gnome.desktop
 @dirrm etc/gdm
 @dirrmtry etc/dm/Sessions
 @dirrmtry etc/dm
-@dirrmtry sbin
 @dirrmtry share/log/gdm
 @dirrmtry share/log
 @unexec /bin/rm -rf /var/gdm 2>/dev/null || /usr/bin/true

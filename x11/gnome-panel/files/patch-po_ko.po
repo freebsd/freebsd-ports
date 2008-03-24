@@ -1,38 +1,29 @@
---- po/ko.po.orig	Sun Jul  8 18:23:19 2007
-+++ po/ko.po	Sun Jul  8 18:26:46 2007
-@@ -88,7 +88,7 @@
+--- po/ko.po.orig	2008-02-26 18:15:58.000000000 +0100
++++ po/ko.po	2008-02-26 18:16:31.000000000 +0100
+@@ -95,7 +95,7 @@ msgstr "%H:%M"
  #. * possible.
- #: ../applets/clock/calendar-window.c:233
+ #: ../applets/clock/calendar-window.c:250
  msgid "%b %d"
 -msgstr "%b %e일"
 +msgstr "%B %e일"
  
- #: ../applets/clock/calendar-window.c:741
- msgid "_Tasks"
-@@ -129,7 +129,7 @@
+ #: ../applets/clock/calendar-window.c:765
+ msgid "Tasks"
+@@ -146,7 +146,7 @@ msgstr "%H:%M:%S"
  #.
- #: ../applets/clock/clock.c:367
+ #: ../applets/clock/clock.c:443
  msgid "%a %b %e"
 -msgstr "%b %e일 (%a)"
 +msgstr "%B %e일 (%a)"
  
  #. translators: reverse the order of these arguments
  #. *              if the time should come before the
-@@ -156,7 +156,7 @@
- #. Show date in tooltip
- #: ../applets/clock/clock.c:520
- msgid "%A %B %d"
--msgstr "%b %e일 %A"
-+msgstr "%B %e일 %A"
+@@ -207,7 +207,7 @@ msgstr "%p %I:%M"
  
- #: ../applets/clock/clock.c:534
- msgid "Click to hide your appointments and tasks"
-@@ -188,7 +188,7 @@
- 
- #: ../applets/clock/clock.c:1073
+ #: ../applets/clock/clock.c:1590
  msgid "%A, %B %d %Y"
 -msgstr "%Y년 %b %e일 %A"
 +msgstr "%Y년 %B %e일 %A"
  
- #: ../applets/clock/clock.c:1148
+ #: ../applets/clock/clock.c:1665
  #, c-format

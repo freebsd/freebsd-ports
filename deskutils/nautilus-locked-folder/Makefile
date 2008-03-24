@@ -3,12 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/deskutils/nautilus-locked-folder/Makefile,v 1.4 2006/07/18 12:22:24 ahze Exp $
+#   $MCom: ports/deskutils/nautilus-locked-folder/Makefile,v 1.7 2008/03/18 15:20:20 ahze Exp $
 #
 
 PORTNAME=	nautilus-locked-folder
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils security
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
@@ -23,9 +23,9 @@ PKGCONFIGS=	gtk+-2.0 libglade-2.0 libnautilus-extension libgnomeui-2.0
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include `pkg-config --cflags ${PKGCONFIGS}`" \
 		LDFLASG="-L${LOCALBASE}/lib -L${X11BASE}/lib `pkg-config --libs ${PKGCONFIGS}`" \
 		LIBS="-lssl"
-PLIST_FILES=	lib/nautilus/extensions-1.0/libnautilus-locked-folder.a \
-		lib/nautilus/extensions-1.0/libnautilus-locked-folder.la \
-		lib/nautilus/extensions-1.0/libnautilus-locked-folder.so
+PLIST_FILES=	lib/nautilus/extensions-2.0/libnautilus-locked-folder.a \
+		lib/nautilus/extensions-2.0/libnautilus-locked-folder.la \
+		lib/nautilus/extensions-2.0/libnautilus-locked-folder.so
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/icons/hicolor/32x32/stock/data/|${LOCALBASE}/share/icons/hicolor/32x32/stock/data/|' \

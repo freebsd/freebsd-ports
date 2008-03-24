@@ -1,0 +1,17 @@
+#!/bin/sh
+
+SED="/usr/bin/sed"
+CAT="/bin/cat"
+
+dispnum=0
+if [ ! -z "${DISPLAY}" ]; then
+    dispnum=$(echo ${DISPLAY} | ${SED} -E -e 's|:([0-9]+).*|\1|')
+fi
+
+if [ ! -f "/tmp/.X${dispnum}-lock" ]; then
+    echo "ERROR: Failed to find X lock file for display ${dispnum}"
+    exit 1
+fi
+pid=$(${CAT} "/tmp/.X${dispnum}-lock")
+
+echo ${pid}

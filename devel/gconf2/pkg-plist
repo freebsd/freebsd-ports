@@ -31,6 +31,7 @@ libexec/gconfd-2
 share/aclocal/gconf-2.m4
 share/locale/am/LC_MESSAGES/GConf2.mo
 share/locale/ar/LC_MESSAGES/GConf2.mo
+share/locale/as/LC_MESSAGES/GConf2.mo
 share/locale/az/LC_MESSAGES/GConf2.mo
 share/locale/be/LC_MESSAGES/GConf2.mo
 share/locale/bg/LC_MESSAGES/GConf2.mo
@@ -72,6 +73,7 @@ share/locale/mg/LC_MESSAGES/GConf2.mo
 share/locale/mk/LC_MESSAGES/GConf2.mo
 share/locale/ml/LC_MESSAGES/GConf2.mo
 share/locale/mn/LC_MESSAGES/GConf2.mo
+share/locale/mr/LC_MESSAGES/GConf2.mo
 share/locale/ms/LC_MESSAGES/GConf2.mo
 share/locale/nb/LC_MESSAGES/GConf2.mo
 share/locale/ne/LC_MESSAGES/GConf2.mo
@@ -86,6 +88,7 @@ share/locale/pt_BR/LC_MESSAGES/GConf2.mo
 share/locale/ro/LC_MESSAGES/GConf2.mo
 share/locale/ru/LC_MESSAGES/GConf2.mo
 share/locale/rw/LC_MESSAGES/GConf2.mo
+share/locale/si/LC_MESSAGES/GConf2.mo
 share/locale/sk/LC_MESSAGES/GConf2.mo
 share/locale/sl/LC_MESSAGES/GConf2.mo
 share/locale/sq/LC_MESSAGES/GConf2.mo
@@ -119,10 +122,14 @@ share/sgml/gconf/gconf-1.0.dtd
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES
@@ -131,3 +138,5 @@ share/sgml/gconf/gconf-1.0.dtd
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

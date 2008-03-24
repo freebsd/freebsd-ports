@@ -3,19 +3,19 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-screensaver/Makefile,v 1.80 2007/09/18 16:46:42 marcus Exp $
+#   $MCom: ports/x11/gnome-screensaver/Makefile,v 1.83 2008/03/11 03:13:07 mezz Exp $
 #
 
 PORTNAME=	gnome-screensaver
-PORTVERSION=	2.20.0
+PORTVERSION=	2.22.0
 CATEGORIES=	x11 gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME screen saver and locker
 
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	xscreensaver-gl-helper:${PORTSDIR}/x11/xscreensaver-gnome-hacks
 
 USE_BZIP2=	yes
@@ -23,14 +23,17 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui gnomemenus \
-		libgnomekbd
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomemenus libgnomekbd
 CONFIGURE_ARGS=	--with-gdm-config=${LOCALBASE}/etc/gdm/custom.conf \
 		--with-xscreensaverdir=${XSCREENSAVER_DIR} \
 		--with-xscreensaverhackdir=${LOCALBASE}/bin/xscreensaver-hacks
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
 GCONF_SCHEMAS=	gnome-screensaver.schemas
+MAN1=		gnome-screensaver-command.1 gnome-screensaver-preferences.1 \
+		gnome-screensaver.1
+
 
 PLIST=	${WRKDIR}/pkg-plist
 

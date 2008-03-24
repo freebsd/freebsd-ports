@@ -34,6 +34,8 @@ if [ -z "${PACKAGE_BUILDING}" ]; then
 	fi
 
 	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/run/hald
+	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/cache/hald
+	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/lib/hal
 fi
 
 for pair in %%RC_FILES%%; do

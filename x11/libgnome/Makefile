@@ -3,12 +3,12 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/libgnome/Makefile,v 1.110 2007/10/17 21:36:13 mezz Exp $
+#   $MCom: ports/x11/libgnome/Makefile,v 1.115 2008/03/10 15:39:00 ahze Exp $
 #
 
 PORTNAME=	libgnome
-PORTVERSION=	2.20.1.1
-PORTREVISION?=	1
+PORTVERSION=	2.22.0
+PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,7 +17,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Libraries for GNOME, a GNU desktop environment
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
@@ -25,12 +25,11 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_GETTEXT=	yes
-USE_XPM=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack esound \
-		gnomevfs2 libxslt ltverhack referencehack
+USE_GNOME=	gnomeprefix gnomehack intlhack esound libbonobo \
+		gnomevfs2 ltverhack referencehack
 USE_BISON=	build
-USE_XLIB=	yes
+USE_XORG=	xpm
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -42,19 +41,21 @@ MAN7=		gnome-options.7
 
 GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 		desktop_gnome_accessibility_startup.schemas \
+		desktop_gnome_applications_at_mobility.schemas \
+		desktop_gnome_applications_at_visual.schemas \
 		desktop_gnome_applications_browser.schemas \
-		desktop_gnome_applications_help_viewer.schemas \
+		desktop_gnome_applications_office.schemas \
 		desktop_gnome_applications_terminal.schemas \
 		desktop_gnome_applications_window_manager.schemas \
 		desktop_gnome_background.schemas \
 		desktop_gnome_file_views.schemas \
-		desktop_gnome_interface.schemas desktop_gnome_lockdown.schemas \
+		desktop_gnome_interface.schemas \
+		desktop_gnome_lockdown.schemas \
 		desktop_gnome_peripherals_keyboard.schemas \
 		desktop_gnome_peripherals_mouse.schemas \
-		desktop_gnome_sound.schemas desktop_gnome_thumbnailers.schemas \
-		desktop_gnome_typing_break.schemas \
-		desktop_gnome_applications_at_mobility.schemas \
-		desktop_gnome_applications_at_visual.schemas
+		desktop_gnome_sound.schemas \
+		desktop_gnome_thumbnailers.schemas \
+		desktop_gnome_typing_break.schemas
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \

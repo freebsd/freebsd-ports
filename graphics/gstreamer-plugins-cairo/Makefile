@@ -3,7 +3,7 @@
 # Whom:				Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/gstreamer-plugins-cairo/Makefile,v 1.2 2005/10/14 20:39:57 adamw Exp $
+#   $MCom: ports/graphics/gstreamer-plugins-cairo/Makefile,v 1.6 2008/03/19 14:05:34 ahze Exp $
 #
 
 PORTREVISION=	2

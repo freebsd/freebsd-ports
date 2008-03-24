@@ -264,10 +264,12 @@
     SUBDIR += glload
     SUBDIR += gnome-control-center
     SUBDIR += gnome-control-center1
+    SUBDIR += gnome-device-manager
     SUBDIR += gnome-mount
     SUBDIR += gnome-pkgview
     SUBDIR += gnome-power-manager
     SUBDIR += gnome-schedule
+    SUBDIR += gnome-settings-daemon
     SUBDIR += gnome-system-monitor
     SUBDIR += gnome-system-tools
     SUBDIR += gnome-volume-manager
@@ -297,7 +299,7 @@
     SUBDIR += hachoir-urwid
     SUBDIR += hachoir-wx
     SUBDIR += hal
-    SUBDIR += hal-device-manager
+    SUBDIR += hal-info
     SUBDIR += hammerhead
     SUBDIR += hdup
     SUBDIR += healthd
@@ -536,6 +538,7 @@
     SUBDIR += plod
     SUBDIR += pmap
     SUBDIR += policykit
+    SUBDIR += policykit-gnome
     SUBDIR += powerman
     SUBDIR += prips
     SUBDIR += procmap

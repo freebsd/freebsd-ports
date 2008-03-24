@@ -28,21 +28,24 @@ lib/libdbus-1.la
 lib/libdbus-1.so
 lib/libdbus-1.so.3
 libdata/pkgconfig/dbus-1.pc
+libexec/dbus-daemon-launch-helper
+@exec mkdir -p %D/libexec/dbus-1
 @exec mkdir -p %D/etc/dbus-1/system.d
-@exec mkdir -p %%X11BASE%%/etc/dbus-1/system.d
+@exec mkdir -p %D/share/dbus-1/interfaces
 @exec mkdir -p %D/share/dbus-1/services
-@exec mkdir -p %%X11BASE%%/share/dbus-1/services
+@exec mkdir -p %D/share/dbus-1/system-services
+@exec mkdir -p %D/etc/dbus-1/session.d
+@dirrmtry share/dbus-1/system-services
 @dirrmtry share/dbus-1/services
+@dirrmtry share/dbus-1/interfaces
 @dirrmtry share/dbus-1
-@unexec rmdir %%X11BASE%%/share/dbus-1/services 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/dbus-1 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/etc/dbus-1/system.d 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/etc/dbus-1 2>/dev/null || true
+@dirrmtry libexec/dbus-1
 @dirrm include/dbus-%%VERSION%%/include/dbus
 @dirrm include/dbus-%%VERSION%%/include
 @dirrm include/dbus-%%VERSION%%/dbus
 @dirrm include/dbus-%%VERSION%%
 @dirrm etc/dbus-1/system.d
+@dirrm etc/dbus-1/session.d
 @dirrm etc/dbus-1
 @unexec rm -f /var/run/dbus/dbus.pid
 @unexec rm -f /var/run/dbus/dbus.pipe

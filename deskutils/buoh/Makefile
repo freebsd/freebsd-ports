@@ -3,19 +3,19 @@
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/deskutils/buoh/Makefile,v 1.1 2006/10/23 21:43:08 mezz Exp $
+#   $MCom: ports/deskutils/buoh/Makefile,v 1.5 2008/03/22 00:42:46 mezz Exp $
 #
 
 PORTNAME=	buoh
 PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils www gnome
 MASTER_SITES=	http://buoh.steve-o.org/downloads/
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A reader for online strips comics
 
-LIB_DEPENDS=	soup-2.2.8:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	soup-2.2.8:${PORTSDIR}/devel/libsoup22
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

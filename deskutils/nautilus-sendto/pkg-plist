@@ -7,12 +7,13 @@ lib/nautilus-sendto/plugins/libnstevolution.so
 %%PIDGIN%%lib/nautilus-sendto/plugins/libnstpidgin.so
 lib/nautilus-sendto/plugins/libnstsylpheed.la
 lib/nautilus-sendto/plugins/libnstsylpheed.so
-lib/nautilus/extensions-1.0/libnautilus-sendto.la
-lib/nautilus/extensions-1.0/libnautilus-sendto.so
+lib/nautilus/extensions-2.0/libnautilus-sendto.la
+lib/nautilus/extensions-2.0/libnautilus-sendto.so
 %%PIDGIN%%lib/pidgin/nautilus.la
 %%PIDGIN%%lib/pidgin/nautilus.so
 share/nautilus-sendto/glade/nautilus-sendto.glade
 share/locale/ar/LC_MESSAGES/nautilus-sendto.mo
+share/locale/be@latin/LC_MESSAGES/nautilus-sendto.mo
 share/locale/be/LC_MESSAGES/nautilus-sendto.mo
 share/locale/bg/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ca/LC_MESSAGES/nautilus-sendto.mo
@@ -46,6 +47,7 @@ share/locale/pa/LC_MESSAGES/nautilus-sendto.mo
 share/locale/pl/LC_MESSAGES/nautilus-sendto.mo
 share/locale/pt/LC_MESSAGES/nautilus-sendto.mo
 share/locale/pt_BR/LC_MESSAGES/nautilus-sendto.mo
+share/locale/ro/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ru/LC_MESSAGES/nautilus-sendto.mo
 share/locale/rw/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sk/LC_MESSAGES/nautilus-sendto.mo
@@ -67,3 +69,5 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-sendto.mo
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin

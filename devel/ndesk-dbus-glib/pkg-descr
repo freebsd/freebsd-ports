@@ -1,0 +1,3 @@
+This code provides GLib main loop integration for Managed D-Bus.
+
+WWW: http://www.ndesk.org/DBusSharp

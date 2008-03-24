@@ -4,10 +4,24 @@ share/applications/vinagre.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/gnome/help/vinagre/C/figures/vinagre-screenshot.png
+share/gnome/help/vinagre/C/legal.xml
+share/gnome/help/vinagre/C/vinagre.xml
+share/gnome/help/vinagre/es/figures/vinagre-screenshot.png
+share/gnome/help/vinagre/es/vinagre.xml
+share/gnome/help/vinagre/fr/figures/vinagre-screenshot.png
+share/gnome/help/vinagre/fr/vinagre.xml
+share/gnome/help/vinagre/it/figures/vinagre-screenshot.png
+share/gnome/help/vinagre/it/vinagre.xml
+share/gnome/help/vinagre/oc/figures/vinagre-screenshot.png
+share/gnome/help/vinagre/oc/vinagre.xml
+share/gnome/help/vinagre/pt/figures/vinagre-screenshot.png
+share/gnome/help/vinagre/pt/vinagre.xml
+share/gnome/help/vinagre/sv/figures/vinagre-screenshot.png
+share/gnome/help/vinagre/sv/vinagre.xml
 share/icons/hicolor/16x16/apps/vinagre.png
 share/icons/hicolor/16x16/mimetypes/application-x-remote-connection.png
 share/icons/hicolor/16x16/mimetypes/application-x-vnc.png
@@ -27,33 +41,92 @@ share/icons/hicolor/scalable/apps/vinagre.svg
 share/icons/hicolor/scalable/mimetypes/application-x-remote-connection.svg
 share/icons/hicolor/scalable/mimetypes/application-x-vnc.svg
 share/locale/ar/LC_MESSAGES/vinagre.mo
+share/locale/be@latin/LC_MESSAGES/vinagre.mo
 share/locale/bg/LC_MESSAGES/vinagre.mo
+share/locale/bn_IN/LC_MESSAGES/vinagre.mo
 share/locale/ca/LC_MESSAGES/vinagre.mo
+share/locale/cs/LC_MESSAGES/vinagre.mo
+share/locale/da/LC_MESSAGES/vinagre.mo
 share/locale/de/LC_MESSAGES/vinagre.mo
+share/locale/el/LC_MESSAGES/vinagre.mo
+share/locale/en_GB/LC_MESSAGES/vinagre.mo
 share/locale/es/LC_MESSAGES/vinagre.mo
+share/locale/et/LC_MESSAGES/vinagre.mo
+share/locale/eu/LC_MESSAGES/vinagre.mo
 share/locale/fi/LC_MESSAGES/vinagre.mo
 share/locale/fr/LC_MESSAGES/vinagre.mo
 share/locale/gl/LC_MESSAGES/vinagre.mo
+share/locale/he/LC_MESSAGES/vinagre.mo
+share/locale/hi/LC_MESSAGES/vinagre.mo
 share/locale/hu/LC_MESSAGES/vinagre.mo
 share/locale/it/LC_MESSAGES/vinagre.mo
+share/locale/ja/LC_MESSAGES/vinagre.mo
+share/locale/ko/LC_MESSAGES/vinagre.mo
+share/locale/lt/LC_MESSAGES/vinagre.mo
+share/locale/mk/LC_MESSAGES/vinagre.mo
+share/locale/ml/LC_MESSAGES/vinagre.mo
+share/locale/mr/LC_MESSAGES/vinagre.mo
 share/locale/nb/LC_MESSAGES/vinagre.mo
 share/locale/nl/LC_MESSAGES/vinagre.mo
 share/locale/oc/LC_MESSAGES/vinagre.mo
+share/locale/pl/LC_MESSAGES/vinagre.mo
+share/locale/pt/LC_MESSAGES/vinagre.mo
 share/locale/pt_BR/LC_MESSAGES/vinagre.mo
+share/locale/ru/LC_MESSAGES/vinagre.mo
 share/locale/si/LC_MESSAGES/vinagre.mo
 share/locale/sl/LC_MESSAGES/vinagre.mo
 share/locale/sv/LC_MESSAGES/vinagre.mo
+share/locale/ta/LC_MESSAGES/vinagre.mo
+share/locale/th/LC_MESSAGES/vinagre.mo
+share/locale/tr/LC_MESSAGES/vinagre.mo
+share/locale/uk/LC_MESSAGES/vinagre.mo
+share/locale/zh_CN/LC_MESSAGES/vinagre.mo
+share/locale/zh_HK/LC_MESSAGES/vinagre.mo
+share/locale/zh_TW/LC_MESSAGES/vinagre.mo
+share/mime/application/x-remote-connection.xml
+share/mime/application/x-vnc.xml
 share/mime/packages/vinagre-mime.xml
-share/vinagre/vinagre-ui.xml
-share/vinagre/vinagre.glade
-@dirrm share/vinagre
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/omf/vinagre/vinagre-C.omf
+share/omf/vinagre/vinagre-es.omf
+share/omf/vinagre/vinagre-fr.omf
+share/omf/vinagre/vinagre-it.omf
+share/omf/vinagre/vinagre-oc.omf
+share/omf/vinagre/vinagre-pt.omf
+share/omf/vinagre/vinagre-sv.omf
+%%DATADIR%%/vinagre-ui.xml
+%%DATADIR%%/vinagre.glade
+@dirrm %%DATADIR%%
+@dirrm share/omf/vinagre
+@dirrm share/gnome/help/vinagre/sv/figures
+@dirrm share/gnome/help/vinagre/sv
+@dirrm share/gnome/help/vinagre/pt/figures
+@dirrm share/gnome/help/vinagre/pt
+@dirrm share/gnome/help/vinagre/oc/figures
+@dirrm share/gnome/help/vinagre/oc
+@dirrm share/gnome/help/vinagre/it/figures
+@dirrm share/gnome/help/vinagre/it
+@dirrm share/gnome/help/vinagre/fr/figures
+@dirrm share/gnome/help/vinagre/fr
+@dirrm share/gnome/help/vinagre/es/figures
+@dirrm share/gnome/help/vinagre/es
+@dirrm share/gnome/help/vinagre/C/figures
+@dirrm share/gnome/help/vinagre/C
+@dirrm share/gnome/help/vinagre
+@dirrm %%PORTDOCS%%%%DOCSDIR%%
+@dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/applications
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin

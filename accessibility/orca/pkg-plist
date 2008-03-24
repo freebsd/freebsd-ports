@@ -14,9 +14,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/app_gui_prefs.py
 %%PYTHON_SITELIBDIR%%/orca/app_gui_prefs.pyc
 %%PYTHON_SITELIBDIR%%/orca/app_gui_prefs.pyo
-%%PYTHON_SITELIBDIR%%/orca/atspi.py
-%%PYTHON_SITELIBDIR%%/orca/atspi.pyc
-%%PYTHON_SITELIBDIR%%/orca/atspi.pyo
+%%PYTHON_SITELIBDIR%%/orca/app_prefs.py
+%%PYTHON_SITELIBDIR%%/orca/app_prefs.pyc
+%%PYTHON_SITELIBDIR%%/orca/app_prefs.pyo
 %%PYTHON_SITELIBDIR%%/orca/bookmarks.py
 %%PYTHON_SITELIBDIR%%/orca/bookmarks.pyc
 %%PYTHON_SITELIBDIR%%/orca/bookmarks.pyo
@@ -73,6 +73,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/keynames.py
 %%PYTHON_SITELIBDIR%%/orca/keynames.pyc
 %%PYTHON_SITELIBDIR%%/orca/keynames.pyo
+%%PYTHON_SITELIBDIR%%/orca/liveregions.py
+%%PYTHON_SITELIBDIR%%/orca/liveregions.pyc
+%%PYTHON_SITELIBDIR%%/orca/liveregions.pyo
 %%PYTHON_SITELIBDIR%%/orca/mag.py
 %%PYTHON_SITELIBDIR%%/orca/mag.pyc
 %%PYTHON_SITELIBDIR%%/orca/mag.pyo
@@ -199,6 +202,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/planner.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/planner.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/planner.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/rhythmbox.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/rhythmbox.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/rhythmbox.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/self_voicing.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/self_voicing.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/self_voicing.pyo
@@ -251,6 +257,7 @@ share/locale/hi/LC_MESSAGES/orca.mo
 share/locale/hu/LC_MESSAGES/orca.mo
 share/locale/it/LC_MESSAGES/orca.mo
 share/locale/ja/LC_MESSAGES/orca.mo
+share/locale/kn/LC_MESSAGES/orca.mo
 share/locale/ko/LC_MESSAGES/orca.mo
 share/locale/lt/LC_MESSAGES/orca.mo
 share/locale/lv/LC_MESSAGES/orca.mo
@@ -288,6 +295,7 @@ share/locale/zh_TW/LC_MESSAGES/orca.mo
 %%DATADIR%%/glade/orca-setup.glade
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/orca
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -304,4 +312,3 @@ share/locale/zh_TW/LC_MESSAGES/orca.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
-@dirrmtry share/applications

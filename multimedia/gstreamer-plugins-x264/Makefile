@@ -3,10 +3,11 @@
 # Whom:				Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/multimedia/gstreamer-plugins-x264/Makefile,v 1.3 2008/03/19 14:05:37 ahze Exp $
 #
 
 CATEGORIES=	multimedia
-PORTREVISION=	0
+PORTREVISION=	2
 
 COMMENT=	Gstreamer x264 plugin
 

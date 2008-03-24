@@ -1,0 +1,57 @@
+--- configure.in.orig	2007-11-25 15:43:40.000000000 -0500
++++ configure.in	2007-12-23 00:34:37.000000000 -0500
+@@ -169,7 +169,7 @@ PKG_CHECK_MODULES(DBUS_GLIB, [dbus-glib-
+ AC_SUBST(DBUS_GLIB_CFLAGS)
+ AC_SUBST(DBUS_GLIB_LIBS)
+ 
+-AC_CHECK_FUNCS(getgrouplist)
++AC_CHECK_FUNCS(getgrouplist clearenv strndup getline readdir64)
+ 
+ EXPAT_LIB=""
+ AC_ARG_WITH(expat, [  --with-expat=<dir>      Use expat from here],
+@@ -406,6 +406,7 @@ AM_CONDITIONAL(OS_TYPE_RED_HAT, test x$w
+ AM_CONDITIONAL(OS_TYPE_SUSE, test x$with_os_type = xsuse, [Running on SUSE OS'es])
+ AM_CONDITIONAL(OS_TYPE_GENTOO, test x$with_os_type = xgentoo, [Running on Gentoo OS'es])
+ AM_CONDITIONAL(OS_TYPE_PARDUS, test x$with_os_type = xpardus, [Running on Pardus OS'es])
++AM_CONDITIONAL(OS_TYPE_FREEBSD, test x$with_os_type = xfreebsd, [Running on FreeBSD OS'es])
+ 
+ AC_ARG_WITH(pam-include, [  --with-pam-include=<file>  pam file to include])
+ 
+@@ -425,6 +426,11 @@ elif test x$with_os_type = xsuse ; then
+    PAM_FILE_INCLUDE_ACCOUNT=common-account
+    PAM_FILE_INCLUDE_PASSWORD=common-password
+    PAM_FILE_INCLUDE_SESSION=common-session
++elif test x$with_os_type = xfreebsd ; then
++    PAM_FILE_INCLUDE_AUTH=system
++    PAM_FILE_INCLUDE_ACCOUNT=system
++    PAM_FILE_INCLUDE_PASSWORD=system
++    PAM_FILE_INCLUDE_SESSION=system
+ else
+    PAM_FILE_INCLUDE_AUTH=system-auth
+    PAM_FILE_INCLUDE_ACCOUNT=system-auth
+@@ -441,6 +447,25 @@ AC_DEFINE_UNQUOTED(PAM_FILE_INCLUDE_ACCO
+ AC_DEFINE_UNQUOTED(PAM_FILE_INCLUDE_PASSWORD, "$PAM_FILE_INCLUDE_PASSWORD", [pam file password])
+ AC_DEFINE_UNQUOTED(PAM_FILE_INCLUDE_SESSION, "$PAM_FILE_INCLUDE_SESSION", [pam file session])
+ 
++have_inotify=no
++AC_CHECK_HEADERS([linux/inotify.h], [have_inotify=yes])
++AC_CHECK_HEADERS([sys/inotify.h], [have_inotify=yes])
++
++AM_CONDITIONAL(HAVE_INOTIFY, test "x$have_inotify" = "xyes")
++
++if test "x$have_inotify" = "xyes" ; then
++    AC_DEFINE([HAVE_INOTIFY], 1, [Enable Linux inotify() usage])
++fi
++
++have_kqueue=yes
++AC_CHECK_FUNCS([kqueue],,have_kqueue=no)
++
++AM_CONDITIONAL(HAVE_KQUEUE, test "x$have_kqueue" = "xyes")
++
++if test "x$have_kqueue" = "xyes" ; then
++    AC_DEFINE([HAVE_KQUEUE], 1, [Enable BSD kqueue() usage])
++fi
++
+ # ********************
+ # Internationalisation
+ # ********************

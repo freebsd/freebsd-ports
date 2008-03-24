@@ -3,12 +3,12 @@
 # Whom:                 Hendrik Scholz <hendrik@scholz.net>
 #
 # $FreeBSD$
-#   $MCom: ports/multimedia/totem/Makefile,v 1.89 2007/10/17 17:22:32 mezz Exp $
+#   $MCom: ports/multimedia/totem/Makefile,v 1.102 2008/03/16 06:11:13 mezz Exp $
 #
 
 PORTNAME=	totem
-PORTVERSION=	2.20.3
-PORTREVISION?=	0
+PORTVERSION=	2.22.0
+PORTREVISION?=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,14 +18,15 @@ COMMENT?=	A gstreamer-based video player for the GNOME 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
-		hal.1:${PORTSDIR}/sysutils/hal
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+		totem-plparser.10:${PORTSDIR}/multimedia/totem-pl-parser
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gnomedesktop desktopfileutils \
-		nautiluscdburner ltverhack gnomecontrolcenter2
+USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui desktopfileutils \
+		nautiluscdburner ltverhack pygtk2
 GNOME_DESKTOP_VERSION=2
 WANT_GSTREAMER=	yes
 INSTALLS_ICONS=	yes
@@ -44,7 +45,8 @@ GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 CONFLICTS?=	totem-gstreamer-[0-9]* totem-xine-[0-9]*
 
 OPTIONS=	LIRC "Enable lirc support" off \
-		GALAGO "Enable Galago support" off
+		GALAGO "Enable Galago support" off \
+		GECKO_PLUGINS "Enable install plugins for gecko browser" on
 
 TOTEM_PLUGINS=	screensaver ontop gromit media-player-keys properties sidebar-test skipto
 
@@ -66,15 +68,15 @@ TOTEM_PLUGINS:=	${TOTEM_PLUGINS} galago
 PLIST_SUB+=	GALAGO="@comment "
 .endif
 
-.if defined(WITH_MOZILLA_PLUGIN) && ${SLAVE_PORT:L}=="yes"
+.if !defined(WITHOUT_GECKO_PLUGINS)
 USE_GECKO=	firefox mozilla seamonkey xulrunner<->firefox firefox-devel<->firefox
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 CONFIGURE_ARGS+=--with-mozilla=${GECKO} \
+		--enable-browser-plugins \
 		--enable-gmp-plugin \
 		--enable-complex-plugin \
 		--enable-narrowspace-plugin
-BUILD_WRKSRC=	${WRKSRC}/browser-plugin
-INSTALL_WRKSRC=	${WRKSRC}/browser-plugin
+PLIST_SUB+=	GECKO_PLUGINS=""
 .else
 CONFIGURE_ARGS+=--without-mozilla \
 		--disable-browser-plugins \
@@ -83,6 +85,7 @@ CONFIGURE_ARGS+=--without-mozilla \
 		--disable-gmp-plugin \
 		--disable-complex-plugin \
 		--disable-narrowspace-plugin
+PLIST_SUB+=	GECKO_PLUGINS="@comment "
 .endif
 
 .if !defined(WITH_TOTEM_XINE) || ${SLAVE_PORT}=="no"
@@ -125,7 +128,7 @@ post-patch:
 post-install:
 	@-update-desktop-database
 	${MKDIR} ${PREFIX}/share/vala/vapi
-	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.vala ${PREFIX}/share/vala/vapi
+	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.vapi ${PREFIX}/share/vala/vapi
 	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.deps ${PREFIX}/share/vala/vapi
 
 .include <bsd.port.post.mk>

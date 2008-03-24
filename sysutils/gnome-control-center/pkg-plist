@@ -1,5 +1,4 @@
 %%ABOUTME%%bin/gnome-about-me
-bin/gnome-accessibility-keyboard-properties
 bin/gnome-appearance-properties
 bin/gnome-at-mobility
 bin/gnome-at-properties
@@ -20,8 +19,8 @@ bin/gnome-window-properties
 bin/themus-theme-applier
 etc/gnome-vfs-2.0/modules/font-method.conf
 etc/gnome-vfs-2.0/modules/theme-method.conf
+etc/xdg/autostart/gnome-at-session.desktop
 etc/xdg/menus/gnomecc.menu
-include/gnome-settings-daemon-2.0/gnome-settings-daemon/gnome-settings-client.h
 include/gnome-window-settings-2.0/gnome-window-manager.h
 include/gnome-window-settings-2.0/gnome-wm-manager.h
 lib/gnome-vfs-2.0/modules/libfont-method.a
@@ -34,20 +33,17 @@ lib/libgnome-window-settings.a
 lib/libgnome-window-settings.la
 lib/libgnome-window-settings.so
 lib/libgnome-window-settings.so.1
-lib/nautilus/extensions-1.0/libnautilus-fontilus.a
-lib/nautilus/extensions-1.0/libnautilus-fontilus.la
-lib/nautilus/extensions-1.0/libnautilus-fontilus.so
-lib/nautilus/extensions-1.0/libnautilus-themus.a
-lib/nautilus/extensions-1.0/libnautilus-themus.la
-lib/nautilus/extensions-1.0/libnautilus-themus.so
+lib/nautilus/extensions-2.0/libnautilus-fontilus.a
+lib/nautilus/extensions-2.0/libnautilus-fontilus.la
+lib/nautilus/extensions-2.0/libnautilus-fontilus.so
+lib/nautilus/extensions-2.0/libnautilus-themus.a
+lib/nautilus/extensions-2.0/libnautilus-themus.la
+lib/nautilus/extensions-2.0/libnautilus-themus.so
 lib/window-manager-settings/libmetacity.a
 lib/window-manager-settings/libmetacity.la
 lib/window-manager-settings/libmetacity.so
 libdata/pkgconfig/gnome-keybindings.pc
-libdata/pkgconfig/gnome-settings-daemon.pc
 libdata/pkgconfig/gnome-window-settings-2.0.pc
-libexec/gnome-settings-daemon
-share/applications/accessibility-keyboard.desktop
 share/applications/at-properties.desktop
 share/applications/default-applications.desktop
 share/applications/display-properties.desktop
@@ -63,33 +59,23 @@ share/applications/keybinding.desktop
 share/applications/keyboard.desktop
 share/applications/themus-theme-applier.desktop
 share/applications/window-properties.desktop
-share/dbus-1/services/org.gnome.SettingsDaemon.service
 share/desktop-directories/font-method.directory
 share/desktop-directories/gnomecc.directory
 share/desktop-directories/theme-method.directory
-%%DATADIR%%/glade/acme.glade
 %%DATADIR%%/glade/appearance.glade
 %%DATADIR%%/glade/apply-font.glade
 %%DATADIR%%/glade/at-enable-dialog.glade
 %%ABOUTME%%%%DATADIR%%/glade/gnome-about-me.glade
-%%DATADIR%%/glade/gnome-accessibility-keyboard-properties.glade
 %%DATADIR%%/glade/gnome-default-applications-properties.glade
 %%DATADIR%%/glade/gnome-keybinding-properties.glade
 %%DATADIR%%/glade/gnome-keyboard-properties.glade
 %%DATADIR%%/glade/gnome-mouse-properties.glade
 %%DATADIR%%/glade/gnome-network-preferences.glade
 %%DATADIR%%/glade/gnome-window-properties.glade
-%%DATADIR%%/glade/modmap-dialog.glade
 %%DATADIR%%/glade/sound-properties.glade
 %%DATADIR%%/gnome-default-applications.xml
 %%DATADIR%%/keybindings/00-multimedia-key.xml
 %%DATADIR%%/keybindings/01-desktop-key.xml
-%%DATADIR%%/pixmaps/accessibility-keyboard-bouncekey.png
-%%DATADIR%%/pixmaps/accessibility-keyboard-mousekey.png
-%%DATADIR%%/pixmaps/accessibility-keyboard-slowkey.png
-%%DATADIR%%/pixmaps/accessibility-keyboard-stickykey.png
-%%DATADIR%%/pixmaps/accessibility-keyboard-togglekey.png
-%%DATADIR%%/pixmaps/acme-eject.png
 %%DATADIR%%/pixmaps/at-startup.png
 %%DATADIR%%/pixmaps/at-support.png
 %%DATADIR%%/pixmaps/bar-disabled.png
@@ -103,16 +89,10 @@ share/desktop-directories/theme-method.directory
 %%ABOUTME%%%%DATADIR%%/pixmaps/gnome-about-me-lock.png
 %%DATADIR%%/pixmaps/gtk-theme-thumbnailing.png
 %%DATADIR%%/pixmaps/icon-theme-thumbnailing.png
-%%DATADIR%%/pixmaps/keyboard-bell.png
-%%DATADIR%%/pixmaps/keyboard-cursor.png
-%%DATADIR%%/pixmaps/keyboard-repeat.png
-%%DATADIR%%/pixmaps/keyboard-volume.png
 %%DATADIR%%/pixmaps/mouse-cursor-normal-large.png
 %%DATADIR%%/pixmaps/mouse-cursor-normal.png
 %%DATADIR%%/pixmaps/mouse-cursor-white-large.png
 %%DATADIR%%/pixmaps/mouse-cursor-white.png
-%%DATADIR%%/pixmaps/mouse-left.png
-%%DATADIR%%/pixmaps/mouse-right.png
 %%DATADIR%%/pixmaps/ocean-stripes.png
 %%DATADIR%%/pixmaps/stop.png
 %%DATADIR%%/pixmaps/subpixel-bgr.png
@@ -122,13 +102,6 @@ share/desktop-directories/theme-method.directory
 %%DATADIR%%/pixmaps/theme-thumbnailing.png
 %%DATADIR%%/pixmaps/visual-bell.png
 %%DATADIR%%/pixmaps/window-theme-thumbnailing.png
-%%DATADIR%%/xrdb/Editres.ad
-%%DATADIR%%/xrdb/Emacs.ad
-%%DATADIR%%/xrdb/General.ad
-%%DATADIR%%/xrdb/Motif.ad
-%%DATADIR%%/xrdb/Tk.ad
-%%DATADIR%%/xrdb/Xaw.ad
-share/gnome/autostart/gnome-at-session.desktop
 share/gnome/cursor-fonts/cursor-large-white.pcf
 share/gnome/cursor-fonts/cursor-large.pcf
 share/gnome/cursor-fonts/cursor-white.pcf
@@ -151,9 +124,11 @@ share/gnome/help/control-center/ca/control-center.xml
 share/gnome/help/control-center/en_GB/control-center.xml
 share/gnome/help/control-center/es/control-center.xml
 share/gnome/help/control-center/fr/control-center.xml
+share/gnome/help/control-center/it/control-center.xml
 share/gnome/help/control-center/ja/control-center.xml
 share/gnome/help/control-center/oc/control-center.xml
 share/gnome/help/control-center/pa/control-center.xml
+share/gnome/help/control-center/pl/control-center.xml
 share/gnome/help/control-center/pt/control-center.xml
 share/gnome/help/control-center/pt_BR/control-center.xml
 share/gnome/help/control-center/ru/control-center.xml
@@ -173,6 +148,8 @@ share/icons/hicolor/24x24/apps/gnome-sound-properties.png
 share/icons/hicolor/32x32/apps/gnome-display-properties.png
 share/icons/hicolor/32x32/apps/gnome-network-preferences.png
 share/icons/hicolor/32x32/apps/gnome-sound-properties.png
+share/icons/hicolor/48x48/apps/gnome-network-preferences.png
+share/icons/hicolor/48x48/apps/gnome-sound-properties.png
 share/icons/hicolor/48x48/apps/typing-monitor.png
 share/icons/hicolor/scalable/apps/gnome-display-properties.svg
 share/icons/hicolor/scalable/apps/gnome-network-preferences.svg
@@ -181,6 +158,7 @@ share/icons/hicolor/scalable/apps/typing-monitor.svg
 share/locale/af/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/as/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/be@latin/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -216,6 +194,7 @@ share/locale/is/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ka/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/kn/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -252,8 +231,6 @@ share/locale/te/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/uz/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/uz@cyrillic/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/xh/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -268,9 +245,11 @@ share/omf/control-center/control-center-ca.omf
 share/omf/control-center/control-center-en_GB.omf
 share/omf/control-center/control-center-es.omf
 share/omf/control-center/control-center-fr.omf
+share/omf/control-center/control-center-it.omf
 share/omf/control-center/control-center-ja.omf
 share/omf/control-center/control-center-oc.omf
 share/omf/control-center/control-center-pa.omf
+share/omf/control-center/control-center-pl.omf
 share/omf/control-center/control-center-pt.omf
 share/omf/control-center/control-center-pt_BR.omf
 share/omf/control-center/control-center-ru.omf
@@ -286,9 +265,11 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrm share/gnome/help/control-center/ru
 @dirrm share/gnome/help/control-center/pt_BR
 @dirrm share/gnome/help/control-center/pt
+@dirrm share/gnome/help/control-center/pl
 @dirrm share/gnome/help/control-center/pa
 @dirrm share/gnome/help/control-center/oc
 @dirrm share/gnome/help/control-center/ja
+@dirrm share/gnome/help/control-center/it
 @dirrm share/gnome/help/control-center/fr
 @dirrm share/gnome/help/control-center/es
 @dirrm share/gnome/help/control-center/en_GB
@@ -296,14 +277,13 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrm share/gnome/help/control-center/C
 @dirrm share/gnome/help/control-center
 @dirrm share/gnome/cursor-fonts
-@dirrm %%DATADIR%%/xrdb
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrmtry share/desktop-directories
+@dirrmtry share/applications
 @dirrm lib/window-manager-settings
 @dirrm include/gnome-window-settings-2.0
-@dirrm include/gnome-settings-daemon-2.0/gnome-settings-daemon
-@dirrm include/gnome-settings-daemon-2.0
+@dirrmtry etc/xdg/autostart
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
@@ -314,8 +294,6 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/si/LC_MESSAGES
@@ -338,4 +316,5 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

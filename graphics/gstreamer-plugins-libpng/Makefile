@@ -3,7 +3,7 @@
 # Whom:				Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#   $MCom: ports/graphics/gstreamer-plugins-libpng/Makefile,v 1.5 2008/03/19 14:05:34 ahze Exp $
 
 PORTREVISION=	2
 CATEGORIES=	graphics

@@ -397,6 +397,7 @@
     SUBDIR += getxml
     SUBDIR += gflags
     SUBDIR += gindent
+    SUBDIR += gio-fam-backend
     SUBDIR += git
     SUBDIR += glade2
     SUBDIR += glade3
@@ -437,8 +438,10 @@
     SUBDIR += gputils
     SUBDIR += gsoap
     SUBDIR += gstreamer-plugins-gconf
+    SUBDIR += gstreamer-plugins-gio
     SUBDIR += gstreamer-plugins-gnomevfs
     SUBDIR += gstreamer-plugins-sdl
+    SUBDIR += gstreamer-plugins-soup
     SUBDIR += gtgt
     SUBDIR += gtkmozedit
     SUBDIR += gtranslator
@@ -447,6 +450,7 @@
     SUBDIR += guile-lib
     SUBDIR += guiloader
     SUBDIR += guiloader-c++
+    SUBDIR += gvfs
     SUBDIR += gwenhywfar
     SUBDIR += gzstream
     SUBDIR += hachoir-core
@@ -672,6 +676,7 @@
     SUBDIR += libslang2
     SUBDIR += libsoup
     SUBDIR += libsoup-reference
+    SUBDIR += libsoup22
     SUBDIR += libstatgrab
     SUBDIR += libstrfunc
     SUBDIR += libstroke
@@ -805,6 +810,8 @@
     SUBDIR += ncnf
     SUBDIR += ncurses
     SUBDIR += ncurses-devel
+    SUBDIR += ndesk-dbus
+    SUBDIR += ndesk-dbus-glib
     SUBDIR += netscape-java40
     SUBDIR += newfile
     SUBDIR += newt

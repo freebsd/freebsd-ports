@@ -50,6 +50,7 @@ share/gnome-2.0/ui/bonobo-browser.xml
 share/locale/af/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/am/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ar/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/as/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/az/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/be/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/bg/LC_MESSAGES/libbonoboui-2.0.mo
@@ -109,6 +110,7 @@ share/locale/pt_BR/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ro/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/ru/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/rw/LC_MESSAGES/libbonoboui-2.0.mo
+share/locale/si/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/sk/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/sl/LC_MESSAGES/libbonoboui-2.0.mo
 share/locale/sq/LC_MESSAGES/libbonoboui-2.0.mo
@@ -132,6 +134,7 @@ share/locale/zu/LC_MESSAGES/libbonoboui-2.0.mo
 @dirrm lib/bonobo-2.0
 @dirrm include/libbonoboui-2.0/bonobo
 @dirrm include/libbonoboui-2.0
+@dirrmtry share/applications
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -142,6 +145,8 @@ share/locale/zu/LC_MESSAGES/libbonoboui-2.0.mo
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/sr@ije/LC_MESSAGES
 @dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
@@ -158,4 +163,5 @@ share/locale/zu/LC_MESSAGES/libbonoboui-2.0.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
-@dirrmtry share/applications
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

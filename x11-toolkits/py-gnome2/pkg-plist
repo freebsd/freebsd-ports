@@ -57,6 +57,19 @@ libdata/pkgconfig/gnome-python-2.0.pc
 %%PORTDOCS%%share/examples/py-gnome/vfs/pygvfsmethod/pyfs.py
 %%PORTDOCS%%share/examples/py-gnome/vfs/shell.py
 %%PORTDOCS%%share/examples/py-gnome/vfs/sync-xfer.py
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-context.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-directoryhandle.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-drive.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-fileinfo.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-handle.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-uri.html
+share/gtk-doc/html/pygnomevfs/class-gnomevfs-volume.html
+share/gtk-doc/html/pygnomevfs/gnomevfs-class-reference.html
+share/gtk-doc/html/pygnomevfs/gnomevfs-constants.html
+share/gtk-doc/html/pygnomevfs/gnomevfs-functions.html
+share/gtk-doc/html/pygnomevfs/index.html
+share/gtk-doc/html/pygnomevfs/index.sgml
+share/gtk-doc/html/pygnomevfs/pygnomevfs.devhelp
 share/pygtk/2.0/argtypes/bonobo-arg-types.py
 share/pygtk/2.0/argtypes/bonobo-arg-types.pyc
 share/pygtk/2.0/argtypes/bonobo-arg-types.pyo
@@ -73,6 +86,9 @@ share/pygtk/2.0/defs/gnome-types.defs
 share/pygtk/2.0/defs/gnome.defs
 share/pygtk/2.0/defs/ui.defs
 @dirrmtry share/pygtk/2.0/argtypes
+@dirrm share/gtk-doc/html/pygnomevfs
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 %%PORTDOCS%%@dirrm share/examples/py-gnome/vfs/pygvfsmethod
 %%PORTDOCS%%@dirrm share/examples/py-gnome/vfs
 %%PORTDOCS%%@dirrm share/examples/py-gnome/popt

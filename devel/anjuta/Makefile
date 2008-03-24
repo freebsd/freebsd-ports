@@ -3,11 +3,11 @@
 # Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/anjuta/Makefile,v 1.13 2007/09/07 05:03:33 marcus Exp $
+#   $MCom: ports/devel/anjuta/Makefile,v 1.22 2008/03/11 03:52:48 marcus Exp $
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	2.2.3
+PORTVERSION=	2.4.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gbf-1.1:${PORTSDIR}/devel/gnome-build \
 		gladeui-1.7:${PORTSDIR}/devel/glade3 \
+		neon.26:${PORTSDIR}/www/neon \
 		devhelp-1.0:${PORTSDIR}/devel/devhelp
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
@@ -40,7 +41,16 @@ USE_GNOME=	gnomeprefix gnomehack libgnomeprintui libgnomeui vte \
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-plugin-symbol-db
 USE_LDCONFIG=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
+GCONF_SCHEMAS=	anjuta-build-basic-autotools-plugin.schemas \
+		anjuta-cvs-plugin.schemas anjuta-document-manager.schemas \
+		anjuta-editor-scintilla.schemas anjuta-language-cpp-java.schemas \
+		anjuta-message-manager-plugin.schemas \
+		anjuta-editor-sourceview.schemas \
+		anjuta-symbol-browser-plugin.schemas \
+		anjuta-terminal-plugin.schemas anjuta.schemas
 
 MAN1=		anjuta.1 anjuta_launcher.1
 
@@ -67,9 +77,11 @@ PLIST_SUB+=	SVN="@comment "
 post-configure:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash| ; \
 	    	s|/usr/local|${PREFIX}|' \
-	    	${WRKSRC}/global-tags/create_global_tags.sh
+	    	${WRKSRC}/global-tags/create_global_tags.sh.in
 	@${REINPLACE_CMD} -e 's|PKG_PATH|PKG_CONFIG_PATH|g' \
 	    	${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|make|gmake|g' \
+		${WRKSRC}/plugins/build-basic-autotools/build-basic-autotools.c
 
 post-install:
 .if !defined(NOPORTDOCS)

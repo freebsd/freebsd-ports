@@ -3,11 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/graphics/py-goocanvas/Makefile,v 1.2 2006/10/13 05:28:57 ahze Exp $
+#    $MCom: ports/graphics/py-goocanvas/Makefile,v 1.4 2008/02/27 16:19:50 ahze Exp $
 
 PORTNAME=	goocanvas
-PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTVERSION=	0.9.0
 CATEGORIES=	graphics
 MASTER_SITES=	BERLIOS
 MASTER_SITE_SUBDIR=	py${PORTNAME}
@@ -17,7 +16,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	GooCanvas python bindings
 
-LIB_DEPENDS=	goocanvas.0:${PORTSDIR}/graphics/goocanvas
+LIB_DEPENDS=	goocanvas.3:${PORTSDIR}/graphics/goocanvas
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/goocanvasmodule.la \
 		%%PYTHON_SITELIBDIR%%/goocanvasmodule.so

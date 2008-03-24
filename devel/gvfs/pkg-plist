@@ -1,0 +1,112 @@
+bin/gvfs-cat
+bin/gvfs-copy
+bin/gvfs-info
+bin/gvfs-less
+bin/gvfs-ls
+bin/gvfs-mkdir
+bin/gvfs-monitor-dir
+bin/gvfs-monitor-file
+bin/gvfs-mount
+bin/gvfs-move
+bin/gvfs-open
+bin/gvfs-rename
+bin/gvfs-rm
+bin/gvfs-save
+bin/gvfs-trash
+bin/gvfs-tree
+etc/profile.d/gvfs-bash-completion.sh
+include/gvfs-client/gvfs/gvfsurimapper.h
+include/gvfs-client/gvfs/gvfsuriutils.h
+lib/gio/modules/libgiogconf.la
+lib/gio/modules/libgiogconf.so
+lib/gio/modules/libgiohal-volume-monitor.la
+lib/gio/modules/libgiohal-volume-monitor.so
+lib/gio/modules/libgvfsdbus.la
+lib/gio/modules/libgvfsdbus.so
+lib/libgvfscommon.la
+lib/libgvfscommon.so
+lib/libgvfscommon.so.0
+%%FUSE%%libexec/gvfs-fuse-daemon
+libexec/gvfsd
+libexec/gvfsd-archive
+libexec/gvfsd-burn
+libexec/gvfsd-computer
+libexec/gvfsd-dav
+libexec/gvfsd-dnssd
+libexec/gvfsd-ftp
+%%GPHOTO2%%libexec/gvfsd-gphoto2
+libexec/gvfsd-http
+libexec/gvfsd-localtest
+libexec/gvfsd-network
+libexec/gvfsd-sftp
+%%SMB%%libexec/gvfsd-smb
+%%SMB%%libexec/gvfsd-smb-browse
+libexec/gvfsd-trash
+share/dbus-1/services/gvfs-daemon.service
+share/gvfs/mounts/archive.mount
+share/gvfs/mounts/burn.mount
+share/gvfs/mounts/computer.mount
+share/gvfs/mounts/dav.mount
+share/gvfs/mounts/dns-sd.mount
+share/gvfs/mounts/ftp.mount
+%%GPHOTO2%%share/gvfs/mounts/gphoto2.mount
+share/gvfs/mounts/http.mount
+share/gvfs/mounts/localtest.mount
+share/gvfs/mounts/network.mount
+share/gvfs/mounts/sftp.mount
+%%SMB%%share/gvfs/mounts/smb-browse.mount
+%%SMB%%share/gvfs/mounts/smb.mount
+share/gvfs/mounts/trash.mount
+share/locale/ar/LC_MESSAGES/gvfs.mo
+share/locale/be@latin/LC_MESSAGES/gvfs.mo
+share/locale/bn_IN/LC_MESSAGES/gvfs.mo
+share/locale/ca/LC_MESSAGES/gvfs.mo
+share/locale/cs/LC_MESSAGES/gvfs.mo
+share/locale/da/LC_MESSAGES/gvfs.mo
+share/locale/de/LC_MESSAGES/gvfs.mo
+share/locale/el/LC_MESSAGES/gvfs.mo
+share/locale/en_GB/LC_MESSAGES/gvfs.mo
+share/locale/es/LC_MESSAGES/gvfs.mo
+share/locale/eu/LC_MESSAGES/gvfs.mo
+share/locale/fi/LC_MESSAGES/gvfs.mo
+share/locale/fr/LC_MESSAGES/gvfs.mo
+share/locale/gl/LC_MESSAGES/gvfs.mo
+share/locale/he/LC_MESSAGES/gvfs.mo
+share/locale/hi/LC_MESSAGES/gvfs.mo
+share/locale/hu/LC_MESSAGES/gvfs.mo
+share/locale/it/LC_MESSAGES/gvfs.mo
+share/locale/ja/LC_MESSAGES/gvfs.mo
+share/locale/ko/LC_MESSAGES/gvfs.mo
+share/locale/lt/LC_MESSAGES/gvfs.mo
+share/locale/mk/LC_MESSAGES/gvfs.mo
+share/locale/ml/LC_MESSAGES/gvfs.mo
+share/locale/mr/LC_MESSAGES/gvfs.mo
+share/locale/nb/LC_MESSAGES/gvfs.mo
+share/locale/nl/LC_MESSAGES/gvfs.mo
+share/locale/pa/LC_MESSAGES/gvfs.mo
+share/locale/pl/LC_MESSAGES/gvfs.mo
+share/locale/pt/LC_MESSAGES/gvfs.mo
+share/locale/pt_BR/LC_MESSAGES/gvfs.mo
+share/locale/ru/LC_MESSAGES/gvfs.mo
+share/locale/sk/LC_MESSAGES/gvfs.mo
+share/locale/sl/LC_MESSAGES/gvfs.mo
+share/locale/sv/LC_MESSAGES/gvfs.mo
+share/locale/ta/LC_MESSAGES/gvfs.mo
+share/locale/th/LC_MESSAGES/gvfs.mo
+share/locale/tr/LC_MESSAGES/gvfs.mo
+share/locale/uk/LC_MESSAGES/gvfs.mo
+share/locale/zh_CN/LC_MESSAGES/gvfs.mo
+share/locale/zh_HK/LC_MESSAGES/gvfs.mo
+share/locale/zh_TW/LC_MESSAGES/gvfs.mo
+@dirrm %%DATADIR%%/mounts
+@dirrm %%DATADIR%%
+@dirrm include/gvfs-client/gvfs
+@dirrm include/gvfs-client
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin

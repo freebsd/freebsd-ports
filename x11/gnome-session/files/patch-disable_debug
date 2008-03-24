@@ -1,0 +1,13 @@
+--- gnome-session/main.c.orig	2008-01-16 16:48:55.000000000 -0600
++++ gnome-session/main.c	2008-01-16 16:50:01.000000000 -0600
+@@ -626,8 +626,8 @@
+       major = atoi (versions [1]);
+       if ((major % 2) != 0)
+ 	{
+-          g_setenv ("G_DEBUG", "fatal_criticals", FALSE);
+-	  g_log_set_always_fatal (G_LOG_LEVEL_CRITICAL);
++          /* g_setenv ("G_DEBUG", "fatal_criticals", FALSE);
++	     g_log_set_always_fatal (G_LOG_LEVEL_CRITICAL); */
+ 	}
+     }
+   g_strfreev (versions);

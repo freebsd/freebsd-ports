@@ -1,7 +1,7 @@
 bin/file-roller
-lib/nautilus/extensions-1.0/libnautilus-fileroller.a
-lib/nautilus/extensions-1.0/libnautilus-fileroller.la
-lib/nautilus/extensions-1.0/libnautilus-fileroller.so
+lib/nautilus/extensions-2.0/libnautilus-fileroller.a
+lib/nautilus/extensions-2.0/libnautilus-fileroller.la
+lib/nautilus/extensions-2.0/libnautilus-fileroller.so
 libexec/file-roller/isoinfo.sh
 share/applications/file-roller.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -15,6 +15,7 @@ share/applications/file-roller.desktop
 %%DATADIR%%/glade/open-with.glade
 %%DATADIR%%/glade/password.glade
 %%DATADIR%%/glade/properties.glade
+%%DATADIR%%/glade/update.glade
 %%DATADIR%%/icons/hicolor/16x16/actions/add-files-to-archive.png
 %%DATADIR%%/icons/hicolor/16x16/actions/add-folder-to-archive.png
 %%DATADIR%%/icons/hicolor/16x16/actions/extract-archive.png
@@ -95,6 +96,7 @@ share/icons/hicolor/32x32/apps/file-roller.png
 share/icons/hicolor/scalable/apps/file-roller.svg
 share/locale/am/LC_MESSAGES/file-roller.mo
 share/locale/ar/LC_MESSAGES/file-roller.mo
+share/locale/as/LC_MESSAGES/file-roller.mo
 share/locale/az/LC_MESSAGES/file-roller.mo
 share/locale/be/LC_MESSAGES/file-roller.mo
 share/locale/be@latin/LC_MESSAGES/file-roller.mo
@@ -169,6 +171,8 @@ share/locale/th/LC_MESSAGES/file-roller.mo
 share/locale/tk/LC_MESSAGES/file-roller.mo
 share/locale/tr/LC_MESSAGES/file-roller.mo
 share/locale/uk/LC_MESSAGES/file-roller.mo
+share/locale/ur/LC_MESSAGES/file-roller.mo
+share/locale/ur_PK/LC_MESSAGES/file-roller.mo
 share/locale/vi/LC_MESSAGES/file-roller.mo
 share/locale/xh/LC_MESSAGES/file-roller.mo
 share/locale/zh_CN/LC_MESSAGES/file-roller.mo
@@ -218,6 +222,7 @@ share/omf/file-roller/file-roller-uk.omf
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
 @dirrm libexec/file-roller
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
@@ -225,6 +230,10 @@ share/omf/file-roller/file-roller-uk.omf
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@ije/LC_MESSAGES
@@ -249,4 +258,5 @@ share/omf/file-roller/file-roller-uk.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

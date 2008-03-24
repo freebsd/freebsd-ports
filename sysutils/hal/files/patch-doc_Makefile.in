@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	Tue May  2 01:04:31 2006
-+++ doc/Makefile.in	Tue May  2 01:04:42 2006
-@@ -269,7 +269,7 @@ sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- doc/Makefile.in.orig	2008-01-03 21:41:19.000000000 -0500
++++ doc/Makefile.in	2008-01-03 21:41:31.000000000 -0500
+@@ -203,7 +203,7 @@ target_alias = @target_alias@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  EXTRA_DIST = TODO
--SUBDIRS = api spec conf
-+SUBDIRS = spec conf
- all: all-recursive
- 
- .SUFFIXES:
+-SUBDIRS = api spec man
++SUBDIRS = spec man
+ MAINTAINERCLEANFILES = \
+ 	*~			\
+ 	Makefile.in

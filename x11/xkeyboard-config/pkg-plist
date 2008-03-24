@@ -13,6 +13,7 @@ share/X11/xkb/compat/level5
 share/X11/xkb/compat/misc
 share/X11/xkb/compat/mousekeys
 share/X11/xkb/compat/norepeat
+share/X11/xkb/compat/olpc
 share/X11/xkb/compat/pc
 share/X11/xkb/compat/pc98
 share/X11/xkb/compat/xfree86
@@ -133,6 +134,7 @@ share/X11/xkb/symbols/digital_vndr/vt
 share/X11/xkb/symbols/fujitsu_vndr/jp
 share/X11/xkb/symbols/fujitsu_vndr/us
 share/X11/xkb/symbols/hp_vndr/us
+share/X11/xkb/symbols/kpdl
 share/X11/xkb/symbols/macintosh_vndr/apple
 share/X11/xkb/symbols/macintosh_vndr/ch
 share/X11/xkb/symbols/macintosh_vndr/de
@@ -150,7 +152,9 @@ share/X11/xkb/symbols/macintosh_vndr/pt
 share/X11/xkb/symbols/macintosh_vndr/se
 share/X11/xkb/symbols/macintosh_vndr/us
 share/X11/xkb/symbols/nec_vndr/jp
+share/X11/xkb/symbols/olpc
 share/X11/xkb/symbols/sgi_vndr/jp
+share/X11/xkb/symbols/shift
 share/X11/xkb/symbols/sony_vndr/us
 share/X11/xkb/symbols/sun_vndr/cs
 share/X11/xkb/symbols/sun_vndr/cz
@@ -198,7 +202,7 @@ share/X11/xkb/symbols/by
 share/X11/xkb/symbols/ca
 share/X11/xkb/symbols/cd
 share/X11/xkb/symbols/ch
-share/X11/xkb/symbols/cs
+share/X11/xkb/symbols/cn
 share/X11/xkb/symbols/cz
 share/X11/xkb/symbols/de
 share/X11/xkb/symbols/dk
@@ -212,6 +216,7 @@ share/X11/xkb/symbols/fr
 share/X11/xkb/symbols/gb
 share/X11/xkb/symbols/ge
 share/X11/xkb/symbols/gh
+share/X11/xkb/symbols/gn
 share/X11/xkb/symbols/gr
 share/X11/xkb/symbols/hr
 share/X11/xkb/symbols/hu
@@ -235,6 +240,7 @@ share/X11/xkb/symbols/lt
 share/X11/xkb/symbols/lv
 share/X11/xkb/symbols/ma
 share/X11/xkb/symbols/mao
+share/X11/xkb/symbols/me
 share/X11/xkb/symbols/mk
 share/X11/xkb/symbols/mm
 share/X11/xkb/symbols/mn
@@ -250,6 +256,7 @@ share/X11/xkb/symbols/pk
 share/X11/xkb/symbols/pl
 share/X11/xkb/symbols/pt
 share/X11/xkb/symbols/ro
+share/X11/xkb/symbols/rs
 share/X11/xkb/symbols/ru
 share/X11/xkb/symbols/se
 share/X11/xkb/symbols/si
@@ -289,6 +296,34 @@ share/X11/xkb/types/numpad
 share/X11/xkb/types/pc
 share/X11/xkb/types/README
 share/X11/xkb/xkbcomp
+share/locale/af/LC_MESSAGES/xkeyboard-config.mo
+share/locale/az/LC_MESSAGES/xkeyboard-config.mo
+share/locale/bg/LC_MESSAGES/xkeyboard-config.mo
+share/locale/cs/LC_MESSAGES/xkeyboard-config.mo
+share/locale/da/LC_MESSAGES/xkeyboard-config.mo
+share/locale/el/LC_MESSAGES/xkeyboard-config.mo
+share/locale/en_GB/LC_MESSAGES/xkeyboard-config.mo
+share/locale/es/LC_MESSAGES/xkeyboard-config.mo
+share/locale/fi/LC_MESSAGES/xkeyboard-config.mo
+share/locale/fr/LC_MESSAGES/xkeyboard-config.mo
+share/locale/hu/LC_MESSAGES/xkeyboard-config.mo
+share/locale/it/LC_MESSAGES/xkeyboard-config.mo
+share/locale/ka/LC_MESSAGES/xkeyboard-config.mo
+share/locale/ko/LC_MESSAGES/xkeyboard-config.mo
+share/locale/nl/LC_MESSAGES/xkeyboard-config.mo
+share/locale/ru/LC_MESSAGES/xkeyboard-config.mo
+share/locale/rw/LC_MESSAGES/xkeyboard-config.mo
+share/locale/sk/LC_MESSAGES/xkeyboard-config.mo
+share/locale/sl/LC_MESSAGES/xkeyboard-config.mo
+share/locale/sq/LC_MESSAGES/xkeyboard-config.mo
+share/locale/sr/LC_MESSAGES/xkeyboard-config.mo
+share/locale/sr@Latn/LC_MESSAGES/xkeyboard-config.mo
+share/locale/sv/LC_MESSAGES/xkeyboard-config.mo
+share/locale/tr/LC_MESSAGES/xkeyboard-config.mo
+share/locale/uk/LC_MESSAGES/xkeyboard-config.mo
+share/locale/vi/LC_MESSAGES/xkeyboard-config.mo
+share/locale/zh_CN/LC_MESSAGES/xkeyboard-config.mo
+share/locale/zh_TW/LC_MESSAGES/xkeyboard-config.mo
 @exec mkdir -p /var/lib/xkb
 @dirrm share/X11/xkb/compat
 @dirrm share/X11/xkb/geometry/digital_vndr
@@ -317,3 +352,5 @@ share/X11/xkb/xkbcomp
 @dirrm share/X11/xkb
 @dirrmtry share/X11
 @dirrmtry /var/lib/xkb
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw

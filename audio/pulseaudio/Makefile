@@ -3,11 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/pulseaudio/Makefile,v 1.7 2007/09/10 05:10:38 mezz Exp $
+#   $MCom: ports/audio/pulseaudio/Makefile,v 1.10 2008/03/20 16:07:21 mezz Exp $
 #
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -15,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound server for UNIX
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		oil-0.3.1:${PORTSDIR}/devel/liboil
+		oil-0.3.0:${PORTSDIR}/devel/liboil
 
 CONFLICTS=	polypaudio-[1-9]*
 

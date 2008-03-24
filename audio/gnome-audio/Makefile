@@ -3,15 +3,13 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/gnome-audio/Makefile,v 1.6 2007/06/29 22:55:02 mezz Exp $
+#   $MCom: ports/audio/gnome-audio/Makefile,v 1.8 2008/03/21 12:32:12 ahze Exp $
 #
 
 PORTNAME=	gnome-audio
-PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTVERSION=	2.22.0
 CATEGORIES=	audio gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-audio/2.0
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound files for use with GNOME 2
@@ -20,7 +18,10 @@ USE_BZIP2=	yes
 USE_XLIB=	yes
 NO_BUILD=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier
-WRKSRC=		${WRKDIR}/${DISTNAME}/sounds
 MAKE_ENV=	prefix=${PREFIX}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
+		${WRKSRC}/sounds/Makefile
 
 .include <bsd.port.mk>

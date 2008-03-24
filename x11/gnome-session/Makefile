@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11/gnome-session/Makefile,v 1.1 2007/12/01 20:11:32 marcus Exp $
+#   $MCom: ports/x11/gnome-session/Makefile,v 1.141 2008/03/10 23:48:33 ahze Exp $
 #
 
 PORTNAME=	gnome-session
-PORTVERSION=	2.20.3
+PORTVERSION=	2.22.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://www.marcuscom.com/downloads/:local
@@ -20,23 +20,23 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Session component for the GNOME 2 desktop
 
-BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-control-center
+BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
-RUN_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-control-center \
+		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring \
+		notify.1:${PORTSDIR}/devel/libnotify
+RUN_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		${LOCALBASE}/bin/xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_XLIB=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop
+USE_XORG=	xau xrandr
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		ESD_SERVER="${LOCALBASE}/bin/esd"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gnome-session.1 gnome-wm.1 session-properties.1 \
 		gnome-session-save.1

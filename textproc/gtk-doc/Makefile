@@ -3,10 +3,10 @@
 # Whom:					fenner
 #
 # $FreeBSD$
-#
+#    $MCom: ports/textproc/gtk-doc/Makefile,v 1.6 2008/03/19 21:35:45 ahze Exp $
 
 PORTNAME=	gtk-doc
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

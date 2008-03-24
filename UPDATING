@@ -6,6 +6,39 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080323:
+  AFFECTS: Gstreamer users
+  AUTHOR: multimedia@FreeBSD.org
+
+  Gstreamer is updated. Due to the move of some plugins between ports. You will
+  have to rebuild the gstreamer-plugins-good port after upgrading.
+
+  Portupgrade users:
+    # portupgrade -a
+    # portupgrade -f gstreamer-plugins-good
+
+  Portmaster users:
+    # portmaster -a
+    # portmaster gstreamer-plugins-good
+
+20080323:
+  AFFECTS: All GNOME users and ports depend on gnomehier
+  AUTHOR: gnome@FreeBSD.org
+
+  GNOME has been updated to 2.22.0.  You have to deinstall a few ports first
+  before using portupgrade or portmaster in order to successfully upgrade
+  your GNOME installation.
+
+  Portupgrade users:
+    # pkgdb -Ff
+    # pkg_deinstall -fO gnome-applets\* totem\* gnome-control-center\*
+    # portupgrade -aOW
+
+  Portmaster users:
+    # pkg_delete -f gnome-applets\* totem\* gnome-control-center\* \
+       gnome-keyring-manager\*
+    # portmaster -a
+
 20080318:
   AFFECTS: users of audio/gnump3d
   AUTHOR:  jadawin@FreeBSD.org

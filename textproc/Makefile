@@ -138,6 +138,7 @@
     SUBDIR += et-aspell
     SUBDIR += etoile-lucenekit
     SUBDIR += etoile-ogrekit
+    SUBDIR += exempi
     SUBDIR += exml
     SUBDIR += expat2
     SUBDIR += exslt
@@ -176,6 +177,7 @@
     SUBDIR += gpp
     SUBDIR += grap
     SUBDIR += gsed
+    SUBDIR += gstreamer-plugins-annodex
     SUBDIR += gtk-doc
     SUBDIR += gtkdiff
     SUBDIR += gtkspell

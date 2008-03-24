@@ -3,11 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/deskutils/nautilus-actions/Makefile,v 1.4 2006/10/01 02:12:23 ahze Exp $
+#   $MCom: ports/deskutils/nautilus-actions/Makefile,v 1.7 2008/03/18 14:45:27 ahze Exp $
+#
 
 PORTNAME=	nautilus-actions
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.4.1
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp2.grumz.net/grumz/
 
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-nautilus-extdir=${LOCALBASE}/lib/nautilus/extensions-1.0
+CONFIGURE_ARGS=	--with-nautilus-extdir=${LOCALBASE}/lib/nautilus/extensions-2.0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure

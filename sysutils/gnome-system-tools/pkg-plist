@@ -3,24 +3,22 @@ bin/services-admin
 bin/shares-admin
 bin/time-admin
 bin/users-admin
-lib/nautilus/extensions-1.0/libnautilus-gst-shares.a
-lib/nautilus/extensions-1.0/libnautilus-gst-shares.la
-lib/nautilus/extensions-1.0/libnautilus-gst-shares.so
+lib/nautilus/extensions-2.0/libnautilus-gst-shares.a
+lib/nautilus/extensions-2.0/libnautilus-gst-shares.la
+lib/nautilus/extensions-2.0/libnautilus-gst-shares.so
 libdata/pkgconfig/gnome-system-tools.pc
 share/applications/network.desktop
 share/applications/services.desktop
 share/applications/shares.desktop
 share/applications/time.desktop
 share/applications/users.desktop
-%%DATADIR%%/interfaces/boot.glade
-%%DATADIR%%/interfaces/common.glade
-%%DATADIR%%/interfaces/disks.glade
-%%DATADIR%%/interfaces/network.glade
-%%DATADIR%%/interfaces/services.glade
-%%DATADIR%%/interfaces/shares.glade
-%%DATADIR%%/interfaces/time.glade
-%%DATADIR%%/interfaces/users.glade
 %%DATADIR%%/pixmaps/world_map-960.png
+%%DATADIR%%/ui/common.ui
+%%DATADIR%%/ui/network.ui
+%%DATADIR%%/ui/services.ui
+%%DATADIR%%/ui/shares.ui
+%%DATADIR%%/ui/time.ui
+%%DATADIR%%/ui/users.ui
 share/gnome/help/network-admin/C/figures/network-tool.png
 share/gnome/help/network-admin/C/legal.xml
 share/gnome/help/network-admin/C/network-admin.xml
@@ -39,6 +37,8 @@ share/gnome/help/services-admin/C/legal.xml
 share/gnome/help/services-admin/C/services-admin.xml
 share/gnome/help/services-admin/ca/figures/services-tool.png
 share/gnome/help/services-admin/ca/services-admin.xml
+share/gnome/help/services-admin/el/figures/services-tool.png
+share/gnome/help/services-admin/el/services-admin.xml
 share/gnome/help/services-admin/es/figures/services-tool.png
 share/gnome/help/services-admin/es/services-admin.xml
 share/gnome/help/services-admin/fr/figures/services-tool.png
@@ -87,7 +87,7 @@ share/gnome/help/time-admin/fr/figures/time-tool-manual.png
 share/gnome/help/time-admin/fr/time-admin.xml
 share/gnome/help/time-admin/nl/figures/time-map.png
 share/gnome/help/time-admin/nl/figures/time-servers.png
-share/gnome/help/time-admin/nl/figures/time-tool.png
+share/gnome/help/time-admin/nl/figures/time-tool-manual.png
 share/gnome/help/time-admin/nl/legal.xml
 share/gnome/help/time-admin/nl/time-admin.xml
 share/gnome/help/time-admin/oc/figures/time-map.png
@@ -110,6 +110,8 @@ share/gnome/help/users-admin/C/legal.xml
 share/gnome/help/users-admin/C/users-admin.xml
 share/gnome/help/users-admin/ca/figures/users-tool.png
 share/gnome/help/users-admin/ca/users-admin.xml
+share/gnome/help/users-admin/el/figures/users-tool.png
+share/gnome/help/users-admin/el/users-admin.xml
 share/gnome/help/users-admin/es/figures/users-tool.png
 share/gnome/help/users-admin/es/users-admin.xml
 share/gnome/help/users-admin/fr/figures/users-tool.png
@@ -120,8 +122,14 @@ share/gnome/help/users-admin/ru/figures/users-tool.png
 share/gnome/help/users-admin/ru/users-admin.xml
 share/gnome/help/users-admin/sv/figures/users-tool.png
 share/gnome/help/users-admin/sv/users-admin.xml
+share/icons/hicolor/16x16/apps/time-admin.png
+share/icons/hicolor/22x22/apps/time-admin.png
+share/icons/hicolor/24x24/apps/time-admin.png
+share/icons/hicolor/32x32/apps/time-admin.png
+share/icons/hicolor/48x48/apps/time-admin.png
 share/icons/hicolor/48x48/devices/irda.png
 share/icons/hicolor/48x48/devices/plip.png
+share/icons/hicolor/scalable/apps/time-admin.svg
 share/locale/am/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ar/LC_MESSAGES/gnome-system-tools.mo
 share/locale/az/LC_MESSAGES/gnome-system-tools.mo
@@ -164,6 +172,7 @@ share/locale/mg/LC_MESSAGES/gnome-system-tools.mo
 share/locale/mk/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ml/LC_MESSAGES/gnome-system-tools.mo
 share/locale/mn/LC_MESSAGES/gnome-system-tools.mo
+share/locale/mr/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ms/LC_MESSAGES/gnome-system-tools.mo
 share/locale/nb/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ne/LC_MESSAGES/gnome-system-tools.mo
@@ -180,6 +189,7 @@ share/locale/ru/LC_MESSAGES/gnome-system-tools.mo
 share/locale/rw/LC_MESSAGES/gnome-system-tools.mo
 share/locale/si/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sk/LC_MESSAGES/gnome-system-tools.mo
+share/locale/sl/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sq/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sr/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-system-tools.mo
@@ -204,6 +214,7 @@ share/omf/network-admin/network-admin-oc.omf
 share/omf/network-admin/network-admin-sv.omf
 share/omf/services-admin/services-admin-C.omf
 share/omf/services-admin/services-admin-ca.omf
+share/omf/services-admin/services-admin-el.omf
 share/omf/services-admin/services-admin-es.omf
 share/omf/services-admin/services-admin-fr.omf
 share/omf/services-admin/services-admin-oc.omf
@@ -223,6 +234,7 @@ share/omf/time-admin/time-admin-ru.omf
 share/omf/time-admin/time-admin-sv.omf
 share/omf/users-admin/users-admin-C.omf
 share/omf/users-admin/users-admin-ca.omf
+share/omf/users-admin/users-admin-el.omf
 share/omf/users-admin/users-admin-es.omf
 share/omf/users-admin/users-admin-fr.omf
 share/omf/users-admin/users-admin-oc.omf
@@ -244,6 +256,8 @@ share/omf/users-admin/users-admin-sv.omf
 @dirrm share/gnome/help/users-admin/fr
 @dirrm share/gnome/help/users-admin/es/figures
 @dirrm share/gnome/help/users-admin/es
+@dirrm share/gnome/help/users-admin/el/figures
+@dirrm share/gnome/help/users-admin/el
 @dirrm share/gnome/help/users-admin/ca/figures
 @dirrm share/gnome/help/users-admin/ca
 @dirrm share/gnome/help/users-admin/C/figures
@@ -289,6 +303,8 @@ share/omf/users-admin/users-admin-sv.omf
 @dirrm share/gnome/help/services-admin/fr
 @dirrm share/gnome/help/services-admin/es/figures
 @dirrm share/gnome/help/services-admin/es
+@dirrm share/gnome/help/services-admin/el/figures
+@dirrm share/gnome/help/services-admin/el
 @dirrm share/gnome/help/services-admin/ca/figures
 @dirrm share/gnome/help/services-admin/ca
 @dirrm share/gnome/help/services-admin/C/figures
@@ -307,9 +323,10 @@ share/omf/users-admin/users-admin-sv.omf
 @dirrm share/gnome/help/network-admin/C/figures
 @dirrm share/gnome/help/network-admin/C
 @dirrm share/gnome/help/network-admin
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/interfaces
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -320,6 +337,8 @@ share/omf/users-admin/users-admin-sv.omf
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES
@@ -330,4 +349,3 @@ share/omf/users-admin/users-admin-sv.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications

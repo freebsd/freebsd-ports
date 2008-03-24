@@ -3,11 +3,11 @@
 # Whom:                 Alexander Nedotsukov <bland@mail.ru>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/libgnomecanvasmm26/Makefile,v 1.16 2007/09/17 16:42:56 marcus Exp $
+#   $MCom: ports/graphics/libgnomecanvasmm26/Makefile,v 1.18 2008/03/08 16:48:36 marcus Exp $
 #
 
 PORTNAME=	libgnomecanvasmm
-PORTVERSION=	2.20.0
+PORTVERSION=	2.22.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

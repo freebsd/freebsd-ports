@@ -3,20 +3,22 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.157 2007/10/15 17:48:45 mezz Exp $
+#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.172 2008/03/10 21:50:24 mezz Exp $
 #
 
 PORTNAME=	gnome-control-center
-PORTVERSION=	2.20.3
+PORTVERSION=	2.22.0
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for GNOME 2 project
 
-LIB_DEPENDS=	xklavier.11:${PORTSDIR}/x11/libxklavier
+LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
+BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
+RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
+		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -35,11 +37,7 @@ CONFIGURE_ARGS=	--enable-gstreamer=0.10
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-GCONF_SCHEMAS=	apps_gnome_settings_daemon_default_editor.schemas \
-		apps_gnome_settings_daemon_keybindings.schemas \
-		apps_gnome_settings_daemon_screensaver.schemas \
-		control-center.schemas \
-		desktop_gnome_font_rendering.schemas \
+GCONF_SCHEMAS=	control-center.schemas \
 		fontilus.schemas themus.schemas
 
 .if defined(PACKAGE_BUILDING)

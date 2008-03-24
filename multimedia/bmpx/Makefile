@@ -7,7 +7,7 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.40.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.backtrace.info/releases/0.40/
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sexymm.2:${PORTSDIR}/x11-toolkits/libsexymm \
 		ofa.0:${PORTSDIR}/audio/libofa \
-		soup-2.2.8:${PORTSDIR}/devel/libsoup
+		soup-2.2.8:${PORTSDIR}/devel/libsoup22
 
 CONFLICTS=	bmpx-devel-[0-9]*
 

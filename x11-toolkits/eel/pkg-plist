@@ -1,5 +1,6 @@
 include/eel-2/eel/eel-accessibility.h
 include/eel-2/eel/eel-alert-dialog.h
+include/eel-2/eel/eel-app-launch-context.h
 include/eel-2/eel/eel-art-extensions.h
 include/eel-2/eel/eel-art-gtk-extensions.h
 include/eel-2/eel/eel-background-box.h
@@ -7,7 +8,6 @@ include/eel-2/eel/eel-background.h
 include/eel-2/eel/eel-canvas-rect-ellipse.h
 include/eel-2/eel/eel-canvas-util.h
 include/eel-2/eel/eel-canvas.h
-include/eel-2/eel/eel-dateedit-extensions.h
 include/eel-2/eel/eel-debug-drawing.h
 include/eel-2/eel/eel-debug.h
 include/eel-2/eel/eel-editable-label.h
@@ -26,15 +26,12 @@ include/eel-2/eel/eel-i18n.h
 include/eel-2/eel/eel-image-table.h
 include/eel-2/eel/eel-labeled-image.h
 include/eel-2/eel/eel-marshal.h
-include/eel-2/eel/eel-mime-application-chooser.h
-include/eel-2/eel/eel-mime-extensions.h
-include/eel-2/eel/eel-open-with-dialog.h
+include/eel-2/eel/eel-mount-operation.h
 include/eel-2/eel/eel-pango-extensions.h
 include/eel-2/eel/eel-preferences-glade.h
 include/eel-2/eel/eel-preferences.h
 include/eel-2/eel/eel-self-checks.h
 include/eel-2/eel/eel-stock-dialogs.h
-include/eel-2/eel/eel-string-list.h
 include/eel-2/eel/eel-string.h
 include/eel-2/eel/eel-type-builtins.h
 include/eel-2/eel/eel-types.h
@@ -50,6 +47,7 @@ libdata/pkgconfig/eel-2.0.pc
 share/locale/am/LC_MESSAGES/eel-2.0.mo
 share/locale/ang/LC_MESSAGES/eel-2.0.mo
 share/locale/ar/LC_MESSAGES/eel-2.0.mo
+share/locale/as/LC_MESSAGES/eel-2.0.mo
 share/locale/az/LC_MESSAGES/eel-2.0.mo
 share/locale/be/LC_MESSAGES/eel-2.0.mo
 share/locale/bg/LC_MESSAGES/eel-2.0.mo
@@ -151,5 +149,7 @@ share/locale/zh_TW/LC_MESSAGES/eel-2.0.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
 @dirrmtry share/locale/ang/LC_MESSAGES
 @dirrmtry share/locale/ang

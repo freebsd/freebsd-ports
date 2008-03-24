@@ -7,15 +7,16 @@
 #
 
 PORTNAME=	swfdec
-PORTVERSION=	0.5.5
+PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.5/
+MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.6/
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
-LIB_DEPENDS=	oil-0.3.1:${PORTSDIR}/devel/liboil \
-		soup-2.2.8:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	oil-0.3.0:${PORTSDIR}/devel/liboil \
+		soup-2.4.1:${PORTSDIR}/devel/libsoup
 
 USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool:15:env automake:19:env autoconf:261

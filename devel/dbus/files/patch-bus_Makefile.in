@@ -1,0 +1,20 @@
+--- bus/Makefile.in.orig	2008-01-22 14:45:58.000000000 -0500
++++ bus/Makefile.in	2008-01-22 15:24:26.000000000 -0500
+@@ -412,7 +412,7 @@ target_vendor = @target_vendor@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ configdir = $(sysconfdir)/dbus-1
+-INCLUDES = -I$(top_srcdir) $(DBUS_BUS_CFLAGS) @PIE_CFLAGS@		\
++INCLUDES = -I$(top_srcdir) $(DBUS_BUS_CFLAGS)				\
+ 	-DDBUS_SYSTEM_CONFIG_FILE=\""$(configdir)/system.conf"\"	\
+ 	-DDAEMON_NAME=\"dbus-daemon\"  -DDBUS_COMPILATION
+ 
+@@ -476,7 +476,7 @@ dbus_daemon_LDADD = \
+ 	$(DBUS_BUS_LIBS)				\
+ 	$(top_builddir)/dbus/libdbus-convenience.la
+ 
+-dbus_daemon_LDFLAGS = @R_DYNAMIC_LDFLAG@ @SECTION_LDFLAGS@ @PIE_LDFLAGS@
++dbus_daemon_LDFLAGS = @R_DYNAMIC_LDFLAG@ @SECTION_LDFLAGS@
+ LAUNCH_HELPER_SOURCES = \
+ 	$(XML_SOURCES)				\
+ 	config-parser-common.c			\

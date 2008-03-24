@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2008-03-18 11:10:04.000000000 -0400
++++ src/Makefile.in	2008-03-18 11:10:10.000000000 -0400
+@@ -229,7 +229,7 @@
+ 
+ 
+ # FIXME: get this from the .pc file
+-nautilus_extensiondir = $(libdir)/nautilus/extensions-1.0
++nautilus_extensiondir = $(libdir)/nautilus/extensions-2.0
+ nautilus_extension_LTLIBRARIES = libnautilus-locked-folder.la
+ libnautilus_locked_folder_la_SOURCES = \
+ 	encrypt.c decrypt.c lockedfolder-extension.c lockedfolder.h

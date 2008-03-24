@@ -1,12 +1,14 @@
 bin/epiphany
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-adblock-manager.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-adblock.h
+include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-base-embed.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-bookmarks-type-builtins.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-bookmarks.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-command-manager.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-cookie-manager.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-dbus.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-dialog.h
+include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-container.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-event.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-factory.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-persist.h
@@ -14,9 +16,11 @@ include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-prefs.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-shell.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-single.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-type-builtins.h
+include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed-utils.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-embed.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-extension.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-extensions-manager.h
+include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-history-item.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-history.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-lib-type-builtins.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-link.h
@@ -30,8 +34,8 @@ include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-session.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-shell.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-state.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-statusbar.h
-include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-tab.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-type-builtins.h
+include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-version.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-window.h
 lib/epiphany/%%EPHY_VERSION%%/plugins/libdesktopfileplugin.la
 lib/epiphany/%%EPHY_VERSION%%/plugins/libdesktopfileplugin.so
@@ -43,7 +47,6 @@ share/dbus-1/services/org.gnome.Epiphany.service
 %%DOCSDIR%%/EphyCommandManager.html
 %%DOCSDIR%%/EphyEmbed.html
 %%DOCSDIR%%/EphyNodeDb.html
-%%DOCSDIR%%/EphyTab.html
 %%DOCSDIR%%/EphyWindow.html
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
@@ -220,6 +223,7 @@ share/icons/hicolor/48x48/apps/epiphany-bookmarks.png
 share/icons/hicolor/scalable/apps/gnome-web-browser.svg
 share/locale/am/LC_MESSAGES/epiphany.mo
 share/locale/ar/LC_MESSAGES/epiphany.mo
+share/locale/as/LC_MESSAGES/epiphany.mo
 share/locale/az/LC_MESSAGES/epiphany.mo
 share/locale/be/LC_MESSAGES/epiphany.mo
 share/locale/be@latin/LC_MESSAGES/epiphany.mo
@@ -254,6 +258,7 @@ share/locale/is/LC_MESSAGES/epiphany.mo
 share/locale/it/LC_MESSAGES/epiphany.mo
 share/locale/ja/LC_MESSAGES/epiphany.mo
 share/locale/ka/LC_MESSAGES/epiphany.mo
+share/locale/kn/LC_MESSAGES/epiphany.mo
 share/locale/ko/LC_MESSAGES/epiphany.mo
 share/locale/ku/LC_MESSAGES/epiphany.mo
 share/locale/li/LC_MESSAGES/epiphany.mo
@@ -292,8 +297,6 @@ share/locale/th/LC_MESSAGES/epiphany.mo
 share/locale/tk/LC_MESSAGES/epiphany.mo
 share/locale/tr/LC_MESSAGES/epiphany.mo
 share/locale/uk/LC_MESSAGES/epiphany.mo
-share/locale/uz/LC_MESSAGES/epiphany.mo
-share/locale/uz@cyrillic/LC_MESSAGES/epiphany.mo
 share/locale/vi/LC_MESSAGES/epiphany.mo
 share/locale/wa/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
@@ -318,6 +321,9 @@ share/omf/epiphany/epiphany-sv.omf
 share/omf/epiphany/epiphany-uk.omf
 share/pygtk/2.0/defs/epiphany.defs
 @dirrm share/omf/epiphany
+@dirrmtry share/icons/LowContrastLargePrint/48x48/apps
+@dirrmtry share/icons/LowContrastLargePrint/48x48
+@dirrmtry share/icons/LowContrastLargePrint
 @dirrm share/gnome/help/epiphany/uk/figures
 @dirrm share/gnome/help/epiphany/uk
 @dirrm share/gnome/help/epiphany/sv/figures
@@ -353,38 +359,39 @@ share/pygtk/2.0/defs/epiphany.defs
 @dirrm share/gnome/help/epiphany/C/figures
 @dirrm share/gnome/help/epiphany/C
 @dirrm share/gnome/help/epiphany
-@dirrm %%DATADIR%%/icons/hicolor/scalable/status
-@dirrm %%DATADIR%%/icons/hicolor/scalable/actions
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/48x48/status
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor/32x32/status
-@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
-@dirrm %%DATADIR%%/icons/hicolor/32x32
-@dirrm %%DATADIR%%/icons/hicolor/24x24/status
-@dirrm %%DATADIR%%/icons/hicolor/24x24/places
-@dirrm %%DATADIR%%/icons/hicolor/24x24/actions
-@dirrm %%DATADIR%%/icons/hicolor/24x24
-@dirrm %%DATADIR%%/icons/hicolor/22x22/status
-@dirrm %%DATADIR%%/icons/hicolor/22x22/places
-@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
-@dirrm %%DATADIR%%/icons/hicolor/22x22
-@dirrm %%DATADIR%%/icons/hicolor/16x16/status
-@dirrm %%DATADIR%%/icons/hicolor/16x16/places
-@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%/icons/hicolor/scalable/status
+@dirrmtry %%DATADIR%%/icons/hicolor/scalable/actions
+@dirrmtry %%DATADIR%%/icons/hicolor/scalable
+@dirrmtry %%DATADIR%%/icons/hicolor/48x48/status
+@dirrmtry %%DATADIR%%/icons/hicolor/48x48
+@dirrmtry %%DATADIR%%/icons/hicolor/32x32/status
+@dirrmtry %%DATADIR%%/icons/hicolor/32x32/actions
+@dirrmtry %%DATADIR%%/icons/hicolor/32x32
+@dirrmtry %%DATADIR%%/icons/hicolor/24x24/status
+@dirrmtry %%DATADIR%%/icons/hicolor/24x24/places
+@dirrmtry %%DATADIR%%/icons/hicolor/24x24/actions
+@dirrmtry %%DATADIR%%/icons/hicolor/24x24
+@dirrmtry %%DATADIR%%/icons/hicolor/22x22/status
+@dirrmtry %%DATADIR%%/icons/hicolor/22x22/places
+@dirrmtry %%DATADIR%%/icons/hicolor/22x22/actions
+@dirrmtry %%DATADIR%%/icons/hicolor/22x22
+@dirrmtry %%DATADIR%%/icons/hicolor/16x16/status
+@dirrmtry %%DATADIR%%/icons/hicolor/16x16/places
+@dirrmtry %%DATADIR%%/icons/hicolor/16x16/actions
+@dirrmtry %%DATADIR%%/icons/hicolor/16x16
+@dirrmtry %%DATADIR%%/icons/hicolor
+@dirrmtry %%DATADIR%%/icons
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/chrome/global
 @dirrm %%DATADIR%%/chrome/branding
 @dirrm %%DATADIR%%/chrome
 @dirrm %%DATADIR%%/art
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@dirrm lib/epiphany/%%EPHY_VERSION%%/plugins
-@dirrm lib/epiphany/%%EPHY_VERSION%%
-@dirrm lib/epiphany
+@dirrmtry share/applications
+@dirrmtry lib/epiphany/%%EPHY_VERSION%%/plugins
+@dirrmtry lib/epiphany/%%EPHY_VERSION%%
+@dirrmtry lib/epiphany
 @dirrm include/epiphany/%%EPHY_VERSION%%/epiphany
 @dirrm include/epiphany/%%EPHY_VERSION%%
 @dirrm include/epiphany
@@ -392,8 +399,6 @@ share/pygtk/2.0/defs/epiphany.defs
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/si/LC_MESSAGES
@@ -416,4 +421,5 @@ share/pygtk/2.0/defs/epiphany.defs
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

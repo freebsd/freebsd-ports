@@ -2,6 +2,52 @@ bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
 bin/gobject-query
+bin/gtester
+bin/gtester-report
+include/gio-unix-2.0/gio/gdesktopappinfo.h
+include/gio-unix-2.0/gio/gunixinputstream.h
+include/gio-unix-2.0/gio/gunixmounts.h
+include/gio-unix-2.0/gio/gunixoutputstream.h
+include/glib-2.0/gio/gappinfo.h
+include/glib-2.0/gio/gasyncresult.h
+include/glib-2.0/gio/gbufferedinputstream.h
+include/glib-2.0/gio/gbufferedoutputstream.h
+include/glib-2.0/gio/gcancellable.h
+include/glib-2.0/gio/gcontenttype.h
+include/glib-2.0/gio/gdatainputstream.h
+include/glib-2.0/gio/gdataoutputstream.h
+include/glib-2.0/gio/gdrive.h
+include/glib-2.0/gio/gfile.h
+include/glib-2.0/gio/gfileattribute.h
+include/glib-2.0/gio/gfileenumerator.h
+include/glib-2.0/gio/gfileicon.h
+include/glib-2.0/gio/gfileinfo.h
+include/glib-2.0/gio/gfileinputstream.h
+include/glib-2.0/gio/gfilemonitor.h
+include/glib-2.0/gio/gfilenamecompleter.h
+include/glib-2.0/gio/gfileoutputstream.h
+include/glib-2.0/gio/gfilterinputstream.h
+include/glib-2.0/gio/gfilteroutputstream.h
+include/glib-2.0/gio/gicon.h
+include/glib-2.0/gio/ginputstream.h
+include/glib-2.0/gio/gio.h
+include/glib-2.0/gio/gioenumtypes.h
+include/glib-2.0/gio/gioerror.h
+include/glib-2.0/gio/giomodule.h
+include/glib-2.0/gio/gioscheduler.h
+include/glib-2.0/gio/gloadableicon.h
+include/glib-2.0/gio/gmemoryinputstream.h
+include/glib-2.0/gio/gmemoryoutputstream.h
+include/glib-2.0/gio/gmount.h
+include/glib-2.0/gio/gmountoperation.h
+include/glib-2.0/gio/gnativevolumemonitor.h
+include/glib-2.0/gio/goutputstream.h
+include/glib-2.0/gio/gseekable.h
+include/glib-2.0/gio/gsimpleasyncresult.h
+include/glib-2.0/gio/gthemedicon.h
+include/glib-2.0/gio/gvfs.h
+include/glib-2.0/gio/gvolume.h
+include/glib-2.0/gio/gvolumemonitor.h
 include/glib-2.0/glib-object.h
 include/glib-2.0/glib.h
 include/glib-2.0/glib/galloca.h
@@ -12,6 +58,7 @@ include/glib-2.0/glib/gbacktrace.h
 include/glib-2.0/glib/gbase64.h
 include/glib-2.0/glib/gbookmarkfile.h
 include/glib-2.0/glib/gcache.h
+include/glib-2.0/glib/gchecksum.h
 include/glib-2.0/glib/gcompletion.h
 include/glib-2.0/glib/gconvert.h
 include/glib-2.0/glib/gdataset.h
@@ -52,12 +99,14 @@ include/glib-2.0/glib/gspawn.h
 include/glib-2.0/glib/gstdio.h
 include/glib-2.0/glib/gstrfuncs.h
 include/glib-2.0/glib/gstring.h
+include/glib-2.0/glib/gtestutils.h
 include/glib-2.0/glib/gthread.h
 include/glib-2.0/glib/gthreadpool.h
 include/glib-2.0/glib/gtimer.h
 include/glib-2.0/glib/gtree.h
 include/glib-2.0/glib/gtypes.h
 include/glib-2.0/glib/gunicode.h
+include/glib-2.0/glib/gurifuncs.h
 include/glib-2.0/glib/gutils.h
 include/glib-2.0/glib/gwin32.h
 include/glib-2.0/glibconfig.h
@@ -79,6 +128,10 @@ include/glib-2.0/gobject/gvalue.h
 include/glib-2.0/gobject/gvaluearray.h
 include/glib-2.0/gobject/gvaluecollector.h
 include/glib-2.0/gobject/gvaluetypes.h
+lib/libgio-2.0.a
+lib/libgio-2.0.la
+lib/libgio-2.0.so
+lib/libgio-2.0.so.0
 lib/libglib-2.0.a
 lib/libglib-2.0.la
 lib/libglib-2.0.so
@@ -95,6 +148,8 @@ lib/libgthread-2.0.a
 lib/libgthread-2.0.la
 lib/libgthread-2.0.so
 lib/libgthread-2.0.so.0
+libdata/pkgconfig/gio-2.0.pc
+libdata/pkgconfig/gio-unix-2.0.pc
 libdata/pkgconfig/glib-2.0.pc
 libdata/pkgconfig/gmodule-2.0.pc
 libdata/pkgconfig/gmodule-export-2.0.pc
@@ -153,6 +208,7 @@ share/locale/mg/LC_MESSAGES/glib20.mo
 share/locale/mk/LC_MESSAGES/glib20.mo
 share/locale/ml/LC_MESSAGES/glib20.mo
 share/locale/mn/LC_MESSAGES/glib20.mo
+share/locale/mr/LC_MESSAGES/glib20.mo
 share/locale/ms/LC_MESSAGES/glib20.mo
 share/locale/nb/LC_MESSAGES/glib20.mo
 share/locale/ne/LC_MESSAGES/glib20.mo
@@ -167,6 +223,7 @@ share/locale/pt_BR/LC_MESSAGES/glib20.mo
 share/locale/ro/LC_MESSAGES/glib20.mo
 share/locale/ru/LC_MESSAGES/glib20.mo
 share/locale/rw/LC_MESSAGES/glib20.mo
+share/locale/si/LC_MESSAGES/glib20.mo
 share/locale/sk/LC_MESSAGES/glib20.mo
 share/locale/sl/LC_MESSAGES/glib20.mo
 share/locale/sq/LC_MESSAGES/glib20.mo
@@ -193,7 +250,10 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @dirrm share/glib-2.0
 @dirrm include/glib-2.0/gobject
 @dirrm include/glib-2.0/glib
+@dirrm include/glib-2.0/gio
 @dirrm include/glib-2.0
+@dirrm include/gio-unix-2.0/gio
+@dirrm include/gio-unix-2.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yi/LC_MESSAGES
@@ -208,10 +268,14 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@ije/LC_MESSAGES
 @dirrmtry share/locale/sr@ije
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES

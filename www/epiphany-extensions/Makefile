@@ -3,14 +3,13 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/epiphany-extensions/Makefile,v 1.101 2007/10/15 22:00:17 mezz Exp $
+#   $MCom: ports/www/epiphany-extensions/Makefile,v 1.105 2008/03/11 17:19:08 mezz Exp $
 #
 
 PORTNAME=	epiphany-extensions
-PORTVERSION=	2.20.3
+PORTVERSION=	2.22.0
 CATEGORIES=	www gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -35,9 +34,9 @@ CONFIGURE_ARGS=	--with-mozilla=${GECKO}
 GCONF_SCHEMAS=	smart-bookmarks.schemas
 
 EPHY_EXTENSIONS=all,rss
-EPHY_VERSION=	2.20
+EPHY_VERSION=	2.22
 
-PLIST_SUB=	VERSION="2.20" EPHY_VERSION=${EPHY_VERSION}
+PLIST_SUB=	VERSION="2.22" EPHY_VERSION=${EPHY_VERSION}
 
 OPTIONS=	OPENSP "Enable OpenSP SGML support" off
 

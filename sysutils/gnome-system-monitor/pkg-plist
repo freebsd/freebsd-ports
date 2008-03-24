@@ -117,6 +117,7 @@ share/locale/am/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ar/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/az/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/be/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/be@latin/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/bg/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/bn/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-system-monitor.mo
@@ -147,6 +148,7 @@ share/locale/id/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/it/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ja/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ka/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/kn/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ko/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ku/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/li/LC_MESSAGES/gnome-system-monitor.mo
@@ -196,7 +198,9 @@ share/omf/gnome-system-monitor/gnome-system-monitor-fr.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-oc.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-pa.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-sv.omf
+share/pixmaps/gnome-system-monitor/download.svg
 share/pixmaps/gnome-system-monitor/side.png
+share/pixmaps/gnome-system-monitor/upload.svg
 @dirrm share/pixmaps/gnome-system-monitor
 @dirrm share/omf/gnome-system-monitor
 @dirrm share/gnome/help/gnome-system-monitor/sv/figures
@@ -216,6 +220,7 @@ share/pixmaps/gnome-system-monitor/side.png
 @dirrm share/gnome/help/gnome-system-monitor/C/figures
 @dirrm share/gnome/help/gnome-system-monitor/C
 @dirrm share/gnome/help/gnome-system-monitor
+@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ug/LC_MESSAGES
@@ -238,4 +243,5 @@ share/pixmaps/gnome-system-monitor/side.png
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
-@dirrmtry share/applications
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin

@@ -1,0 +1,8 @@
+This is a C# implementation of D-Bus. It's often referred to as "managed
+D-Bus" to avoid confusion with existing bindings (which wrap libdbus).
+
+D-Bus is an inter-process communication framework that lets applications
+interface with the system event bus as well as allowing them to talk to
+one another in a peer-to-peer configuration.
+
+WWW: http://www.ndesk.org/DBusSharp

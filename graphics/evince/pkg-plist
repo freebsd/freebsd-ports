@@ -1,8 +1,59 @@
 bin/evince
 bin/evince-thumbnailer
-%%NAUTILUS%%lib/nautilus/extensions-1.0/libevince-properties-page.a
-%%NAUTILUS%%lib/nautilus/extensions-1.0/libevince-properties-page.la
-%%NAUTILUS%%lib/nautilus/extensions-1.0/libevince-properties-page.so
+include/evince-2.20/evince/ev-async-renderer.h
+include/evince-2.20/evince/ev-attachment.h
+include/evince-2.20/evince/ev-document-find.h
+include/evince-2.20/evince/ev-document-fonts.h
+include/evince-2.20/evince/ev-document-forms.h
+include/evince-2.20/evince/ev-document-images.h
+include/evince-2.20/evince/ev-document-info.h
+include/evince-2.20/evince/ev-document-links.h
+include/evince-2.20/evince/ev-document-misc.h
+include/evince-2.20/evince/ev-document-security.h
+include/evince-2.20/evince/ev-document-thumbnails.h
+include/evince-2.20/evince/ev-document-transition.h
+include/evince-2.20/evince/ev-document.h
+include/evince-2.20/evince/ev-file-exporter.h
+include/evince-2.20/evince/ev-file-helpers.h
+include/evince-2.20/evince/ev-form-field.h
+include/evince-2.20/evince/ev-image.h
+include/evince-2.20/evince/ev-link-action.h
+include/evince-2.20/evince/ev-link-dest.h
+include/evince-2.20/evince/ev-link.h
+include/evince-2.20/evince/ev-render-context.h
+include/evince-2.20/evince/ev-selection.h
+include/evince-2.20/evince/ev-transition-effect.h
+%%COMICS%%lib/evince/backends/comicsdocument.evince-backend
+%%DJVU%%lib/evince/backends/djvudocument.evince-backend
+%%DVI%%lib/evince/backends/dvidocument.evince-backend
+%%COMICS%%lib/evince/backends/libcomicsdocument.a
+%%COMICS%%lib/evince/backends/libcomicsdocument.la
+%%COMICS%%lib/evince/backends/libcomicsdocument.so
+%%DJVU%%lib/evince/backends/libdjvudocument.a
+%%DJVU%%lib/evince/backends/libdjvudocument.la
+%%DJVU%%lib/evince/backends/libdjvudocument.so
+%%DVI%%lib/evince/backends/libdvidocument.a
+%%DVI%%lib/evince/backends/libdvidocument.la
+%%DVI%%lib/evince/backends/libdvidocument.so
+lib/evince/backends/libpdfdocument.a
+lib/evince/backends/libpdfdocument.la
+lib/evince/backends/libpdfdocument.so
+lib/evince/backends/libpsdocument.a
+lib/evince/backends/libpsdocument.la
+lib/evince/backends/libpsdocument.so
+lib/evince/backends/libtiffdocument.a
+lib/evince/backends/libtiffdocument.la
+lib/evince/backends/libtiffdocument.so
+lib/evince/backends/pdfdocument.evince-backend
+lib/evince/backends/psdocument.evince-backend
+lib/evince/backends/tiffdocument.evince-backend
+%%NAUTILUS%%lib/nautilus/extensions-2.0/libevince-properties-page.a
+%%NAUTILUS%%lib/nautilus/extensions-2.0/libevince-properties-page.la
+%%NAUTILUS%%lib/nautilus/extensions-2.0/libevince-properties-page.so
+lib/libevbackend.a
+lib/libevbackend.la
+lib/libevbackend.so
+lib/libevbackend.so.0
 share/applications/evince.desktop
 %%DOCSDIR%%/EvAttachment.html
 %%DOCSDIR%%/EvJobPrint.html
@@ -42,7 +93,6 @@ share/applications/evince.desktop
 %%DOCSDIR%%/evince-ev-metadata-manager.html
 %%DOCSDIR%%/evince-ev-page-cache.html
 %%DOCSDIR%%/evince-ev-pixbuf-cache.html
-%%DOCSDIR%%/evince-ev-print-job.html
 %%DOCSDIR%%/evince-ev-properties-dialog.html
 %%DOCSDIR%%/evince-ev-properties-fonts.html
 %%DOCSDIR%%/evince-ev-selection.html
@@ -125,12 +175,15 @@ share/gnome/help/evince/sv/evince.xml
 share/gnome/help/evince/sv/figures/evince_start_window.png
 share/gnome/help/evince/uk/evince.xml
 share/gnome/help/evince/uk/figures/evince_start_window.png
+share/gnome/help/evince/zh_CN/evince.xml
+share/gnome/help/evince/zh_CN/figures/evince_start_window.png
 share/icons/hicolor/16x16/apps/evince.png
 share/icons/hicolor/22x22/apps/evince.png
 share/icons/hicolor/24x24/apps/evince.png
 share/icons/hicolor/48x48/apps/evince.png
 share/icons/hicolor/scalable/apps/evince.svg
 share/locale/ar/LC_MESSAGES/evince.mo
+share/locale/as/LC_MESSAGES/evince.mo
 share/locale/be/LC_MESSAGES/evince.mo
 share/locale/be@latin/LC_MESSAGES/evince.mo
 share/locale/bg/LC_MESSAGES/evince.mo
@@ -152,6 +205,7 @@ share/locale/eu/LC_MESSAGES/evince.mo
 share/locale/fa/LC_MESSAGES/evince.mo
 share/locale/fi/LC_MESSAGES/evince.mo
 share/locale/fr/LC_MESSAGES/evince.mo
+share/locale/ga/LC_MESSAGES/evince.mo
 share/locale/gl/LC_MESSAGES/evince.mo
 share/locale/gu/LC_MESSAGES/evince.mo
 share/locale/he/LC_MESSAGES/evince.mo
@@ -162,6 +216,7 @@ share/locale/it/LC_MESSAGES/evince.mo
 share/locale/ja/LC_MESSAGES/evince.mo
 share/locale/ka/LC_MESSAGES/evince.mo
 share/locale/ko/LC_MESSAGES/evince.mo
+share/locale/kn/LC_MESSAGES/evince.mo
 share/locale/ku/LC_MESSAGES/evince.mo
 share/locale/lt/LC_MESSAGES/evince.mo
 share/locale/lv/LC_MESSAGES/evince.mo
@@ -184,6 +239,7 @@ share/locale/ru/LC_MESSAGES/evince.mo
 share/locale/rw/LC_MESSAGES/evince.mo
 share/locale/sk/LC_MESSAGES/evince.mo
 share/locale/sl/LC_MESSAGES/evince.mo
+share/locale/si/LC_MESSAGES/evince.mo
 share/locale/sq/LC_MESSAGES/evince.mo
 share/locale/sr/LC_MESSAGES/evince.mo
 share/locale/sr@Latn/LC_MESSAGES/evince.mo
@@ -215,7 +271,10 @@ share/omf/evince/evince-ru.omf
 share/omf/evince/evince-sr.omf
 share/omf/evince/evince-sv.omf
 share/omf/evince/evince-uk.omf
+share/omf/evince/evince-zh_CN.omf
 @dirrm share/omf/evince
+@dirrm share/gnome/help/evince/zh_CN/figures
+@dirrm share/gnome/help/evince/zh_CN
 @dirrm share/gnome/help/evince/uk/figures
 @dirrm share/gnome/help/evince/uk
 @dirrm share/gnome/help/evince/sv/figures
@@ -267,10 +326,17 @@ share/omf/evince/evince-uk.omf
 @dirrm %%DOCSDIR%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/applications
+@dirrm lib/evince/backends
+@dirrm lib/evince
+@dirrm include/evince-2.20/evince
+@dirrm include/evince-2.20
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
@@ -287,4 +353,5 @@ share/omf/evince/evince-uk.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

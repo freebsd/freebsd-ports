@@ -3,29 +3,31 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/nautilus-cd-burner/Makefile,v 1.134 2007/09/18 00:44:04 marcus Exp $
+#   $MCom: ports/sysutils/nautilus-cd-burner/Makefile,v 1.141 2008/03/15 19:36:22 ahze Exp $
 #
 
 PORTNAME=	nautilus-cd-burner
-PORTVERSION=	2.20.0
+PORTVERSION=	2.22.0
 PORTREVISION=	1
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CD burner view for Nautilus
 
-RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
+BUILD_DEPENDS=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount
+RUN_DEPENDS=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
+		cdrdao:${PORTSDIR}/sysutils/cdrdao
 
+CONFIGURE_ARGS=	--enable-gnome-mount
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2 ltverhack \
-		desktopfileutils
+		desktopfileutils ltasneededhack
 USE_CDRTOOLS=	yes
 INSTALLS_ICONS=	yes
 USE_AUTOTOOLS=	libtool:15
@@ -36,8 +38,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 GCONF_SCHEMAS=	nautilus-cd-burner.schemas
 
 OPTIONS=	DVD "Enable DVD support" on \
-		CJK "Use cdrtools-cjk instead of cdrtools" off \
-		GNOMEMOUNT "Enable sysutils/gnome-mount support" off
+		CJK "Use cdrtools-cjk instead of cdrtools" off
 
 .include <bsd.port.pre.mk>
 
@@ -47,14 +48,6 @@ WITHOUT_DVD=	yes
 
 .if !defined(WITHOUT_DVD)
 RUN_DEPENDS+=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
-.endif
-
-.if defined(WITH_GNOMEMOUNT)
-BUILD_DEPENDS+=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount
-RUN_DEPENDS+=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount
-CONFIGURE_ARGS+=	--enable-gnome-mount
-.else
-CONFIGURE_ARGS+=	--disable-gnome-mount
 .endif
 
 post-install:

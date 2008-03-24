@@ -3,7 +3,7 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/multimedia/gstreamer-plugins/Makefile,v 1.1 2007/12/02 17:08:48 ahze Exp $
+#   $MCom: ports/multimedia/gstreamer-plugins/Makefile,v 1.111 2008/03/21 04:01:30 ahze Exp $
 #
 
 PORTNAME=	gstreamer
@@ -27,20 +27,20 @@ COMMENT?=	GStreamer written collection of plugins handling several media types
 BUILD_DEPENDS+=	v4l_compat>=1.0.20060801:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
 		popt.0:${PORTSDIR}/devel/popt \
-		oil-0.3.1:${PORTSDIR}/devel/liboil
+		oil-0.3.0:${PORTSDIR}/devel/liboil
 
 CFLAGS:=	${CFLAGS} -O2
 
-BASE_PORTVERSION=	0.10.15
+BASE_PORTVERSION=	0.10.18
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
-BAD_PORTVERSION=	0.10.5
+BAD_PORTVERSION=	0.10.6
 BAD_DISTNAME=		gst-plugins-bad-${BAD_PORTVERSION}
 BAD_DISTFILE=		${BAD_DISTNAME}${EXTRACT_SUFX}
-GOOD_PORTVERSION=	0.10.6
+GOOD_PORTVERSION=	0.10.7
 GOOD_DISTNAME=		gst-plugins-good-${GOOD_PORTVERSION}
 GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
-UGLY_PORTVERSION=	0.10.6
+UGLY_PORTVERSION=	0.10.7
 UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		good
@@ -51,7 +51,7 @@ VERSION=	${GST_VERSION}
 WANT_GSTREAMER=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME+=	gnomehack gnometarget pkgconfig ltverhack
+USE_GNOME+=	gnomehack gnometarget pkgconfig ltverhack ltasneededhack
 USE_AUTOTOOLS=	libtool:15
 GST_PLUGIN?=	base
 

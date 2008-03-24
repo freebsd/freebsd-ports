@@ -15,6 +15,8 @@ COMMENT=	A GNOME-based ACL editor, with integration into Nautilus
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
+BROKEN=		Need to be update with new Nautilus 2.22
+
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack nautilus2
 USE_GETTEXT=	yes

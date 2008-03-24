@@ -15,6 +15,7 @@ share/applications/bug-buddy.desktop
 %%DATADIR%%/bugzilla/ximian/products
 %%DATADIR%%/gdb-cmd
 share/icons/hicolor/48x48/apps/bug-buddy.png
+share/locale/af/LC_MESSAGES/bug-buddy.mo
 share/locale/am/LC_MESSAGES/bug-buddy.mo
 share/locale/ar/LC_MESSAGES/bug-buddy.mo
 share/locale/as/LC_MESSAGES/bug-buddy.mo
@@ -100,6 +101,7 @@ share/locale/zh_TW/LC_MESSAGES/bug-buddy.mo
 @dirrm %%DATADIR%%/bugzilla/gnome
 @dirrm %%DATADIR%%/bugzilla
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -132,4 +134,3 @@ share/locale/zh_TW/LC_MESSAGES/bug-buddy.mo
 @dirrmtry share/locale/be@latin
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/applications

@@ -3,11 +3,12 @@
 # Whom:                olgeni@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/misc/shared-mime-info/Makefile,v 1.11 2007/08/09 19:33:41 marcus Exp $
+#   $MCom: ports/misc/shared-mime-info/Makefile,v 1.13 2008/02/01 04:17:52 mezz Exp $
 #
 
 PORTNAME=	shared-mime-info
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://people.freedesktop.org/~hadess/
 
@@ -29,7 +30,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 MIMEDIRS=	${LOCALBASE}/share/mime \
 		${PREFIX}/share/mime
 MIMESUBDIRS=	application audio image inode message model multipart \
-		packages text video
+		packages text video x-epoc x-content
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%MIMEDIRS%%|${MIMEDIRS}|g' \
@@ -41,5 +42,6 @@ post-install:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
 		s|%%MIMEDIRS%%|${MIMEDIRS}|' \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	@${MKDIR} ${PREFIX}/share/mime/x-content
 
 .include <bsd.port.mk>

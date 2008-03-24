@@ -111,7 +111,9 @@ share/gnome/help/zenity/uk/figures/zenity-warning-screenshot.png
 share/gnome/help/zenity/uk/zenity.xml
 share/locale/am/LC_MESSAGES/zenity.mo
 share/locale/ar/LC_MESSAGES/zenity.mo
+share/locale/as/LC_MESSAGES/zenity.mo
 share/locale/az/LC_MESSAGES/zenity.mo
+share/locale/be@latin/LC_MESSAGES/zenity.mo
 share/locale/be/LC_MESSAGES/zenity.mo
 share/locale/bg/LC_MESSAGES/zenity.mo
 share/locale/bn/LC_MESSAGES/zenity.mo
@@ -154,6 +156,7 @@ share/locale/mi/LC_MESSAGES/zenity.mo
 share/locale/mk/LC_MESSAGES/zenity.mo
 share/locale/ml/LC_MESSAGES/zenity.mo
 share/locale/mn/LC_MESSAGES/zenity.mo
+share/locale/mr/LC_MESSAGES/zenity.mo
 share/locale/ms/LC_MESSAGES/zenity.mo
 share/locale/nb/LC_MESSAGES/zenity.mo
 share/locale/ne/LC_MESSAGES/zenity.mo
@@ -243,6 +246,8 @@ share/omf/zenity/zenity-uk.omf
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
 @dirrmtry share/locale/mi
 @dirrmtry share/locale/mg/LC_MESSAGES
@@ -253,3 +258,7 @@ share/omf/zenity/zenity-uk.omf
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

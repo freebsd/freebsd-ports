@@ -1,0 +1,11 @@
+--- agent/Makefile.in.orig	2008-03-07 00:35:27.000000000 -0500
++++ agent/Makefile.in	2008-03-07 00:35:44.000000000 -0500
+@@ -686,7 +686,7 @@ uninstall-man: uninstall-man1
+ # Don't make the agent setuid
+ # Make the agent setuid
+ @HAVE_USER_MLOCK_FALSE@install-exec-hook:
+-@HAVE_USER_MLOCK_FALSE@	chmod u+s $(DESTDIR)$(bindir)/seahorse-agent
++#@HAVE_USER_MLOCK_FALSE@	chmod u+s $(DESTDIR)$(bindir)/seahorse-agent
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

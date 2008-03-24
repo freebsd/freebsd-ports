@@ -1,5 +1,5 @@
---- src/nautilus-burn-drive.c.orig	Fri Sep 29 12:55:36 2006
-+++ src/nautilus-burn-drive.c	Sun Nov 19 13:27:31 2006
+--- src/nautilus-burn-drive.c.orig        Fri Sep 29 12:55:36 2006
++++ src/nautilus-burn-drive.c        Sun Nov 19 13:27:31 2006
 @@ -266,6 +266,25 @@ nautilus_burn_drive_get_device (Nautilus
  }
  
@@ -17,41 +17,28 @@
 +const char *
 +nautilus_burn_drive_get_cdrecord_device (NautilusBurnDrive *drive)
 +{
-+	g_return_val_if_fail (drive != NULL, NULL);
++        g_return_val_if_fail (drive != NULL, NULL);
 +
-+	return drive->priv->cdrecord_device;
++        return drive->priv->cdrecord_device;
 +}
 +
 +/**
   * nautilus_burn_drive_get_drive_type:
   * @drive: #NautilusBurnDrive
   *
-@@ -808,8 +827,12 @@ nautilus_burn_drive_eject (NautilusBurnD
- #ifdef USE_GNOME_MOUNT
- 	cmd = g_strdup_printf ("gnome-mount --eject --no-ui --device=%s", drive->priv->device);
- #else
-+#ifdef __FreeBSD_
-+	cmd = g_strdup_printf ("cdcontrol -f %s eject", drive->priv->device);
-+#else
- 	cmd = g_strdup_printf ("eject %s", drive->priv->device);
- #endif
-+#endif
- 
- 	res = g_spawn_command_line_sync (cmd, NULL, NULL, NULL, NULL);
- 	g_free (cmd);
 @@ -1021,6 +1044,7 @@ nautilus_burn_drive_finalize (GObject *o
- 	g_free (drive->priv->write_speeds);
- 	g_free (drive->priv->display_name);
- 	g_free (drive->priv->device);
-+	g_free (drive->priv->cdrecord_device);
+         g_free (drive->priv->write_speeds);
+         g_free (drive->priv->display_name);
+         g_free (drive->priv->device);
++        g_free (drive->priv->cdrecord_device);
  
- 	if (G_OBJECT_CLASS (nautilus_burn_drive_parent_class)->finalize != NULL) {
- 		(* G_OBJECT_CLASS (nautilus_burn_drive_parent_class)->finalize) (object);
+         if (G_OBJECT_CLASS (nautilus_burn_drive_parent_class)->finalize != NULL) {
+                 (* G_OBJECT_CLASS (nautilus_burn_drive_parent_class)->finalize) (object);
 @@ -1038,6 +1062,7 @@ nautilus_burn_drive_init (NautilusBurnDr
- 	drive->priv->max_speed_read  = 0;
- 	drive->priv->write_speeds    = NULL;
- 	drive->priv->device          = NULL;
-+	drive->priv->cdrecord_device = NULL;
+         drive->priv->max_speed_read  = 0;
+         drive->priv->write_speeds    = NULL;
+         drive->priv->device          = NULL;
++        drive->priv->cdrecord_device = NULL;
  }
  
  /**

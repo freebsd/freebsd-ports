@@ -7,6 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.45.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -57,6 +58,10 @@ post-patch:
 		${WRKSRC}/src/display/bezier-utils.cpp
 	@${REINPLACE_CMD} -e 's|libpng >= 1.2|libpng12 >= 1.2|g' \
 	    	${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "*.h" -o -name "*.cpp" | ${XARGS} \
+		${REINPLACE_CMD} -e 's|glib/gmessages.h|glib/gtestutils.h|g'
+	@${REINPLACE_CMD} -e 's|SigC::Connection|sigc::connection|g' \
+	    	${WRKSRC}/src/seltrans.h
 
 post-install:
 	@-update-desktop-database

@@ -1,6 +1,6 @@
---- config/locale.alias.orig	Sat Jun 11 02:01:45 2005
-+++ config/locale.alias	Sat Jun 11 03:34:22 2005
-@@ -14,132 +14,57 @@
+--- config/locale.alias.orig	2008-03-10 21:53:02.000000000 -0500
++++ config/locale.alias	2008-03-10 21:53:37.000000000 -0500
+@@ -14,133 +14,57 @@
  #
  #		- George
  
@@ -16,6 +16,7 @@
 -Azerbaijani(Iran)	az_IR.UTF-8,az_IR
 -Basque			eu_ES.UTF-8,eu_ES
 -Belarusian		be_BY.UTF-8,be_BY
+-Belarusian(Latin)	be_BY.UTF-8@latin,be_BY@latin
 -Bengali			bn_BD.UTF-8,bn_BD
 -Bengali(India)		bn_IN.UTF-8,bn_IN
 -Bosnian			bs_BA.UTF-8,bs_BA

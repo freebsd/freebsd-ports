@@ -3,7 +3,7 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/news/pan/Makefile,v 1.1 2006/10/19 16:50:55 mezz Exp $
+#   $MCom: ports/news/pan/Makefile,v 1.7 2008/01/19 22:45:42 mezz Exp $
 #
 
 PORTNAME=	pan
@@ -41,5 +41,7 @@ CONFIGURE_ARGS+=	--with-gtkspell
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in"| ${XARGS} ${REINPLACE_CMD} -e \
 		's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
+	@${REINPLACE_CMD} -e 's|glib/gmessages.h|glib/gtestutils.h|g' \
+		${WRKSRC}/pan/data-impl/my-tree.cc
 
 .include <bsd.port.post.mk>

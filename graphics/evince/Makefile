@@ -3,12 +3,12 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/graphics/evince/Makefile,v 1.1 2007/12/01 19:16:37 marcus Exp $
+#   $MCom: ports/graphics/evince/Makefile,v 1.97 2008/03/15 20:08:24 ahze Exp $
 #
 
 PORTNAME=	evince
-PORTVERSION=	2.20.2
-PORTREVISION=	1
+PORTVERSION=	2.22.0
+PORTREVISION=	3
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,21 +16,22 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 multi-format document viewer
 
-LIB_DEPENDS=	poppler-glib.2:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS=	poppler-glib.2:${PORTSDIR}/graphics/poppler-gtk \
+		spectre.1:${PORTSDIR}/print/libspectre
 
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GHOSTSCRIPT=yes
 INSTALLS_OMF=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui libgnomeprintui \
-		desktopfileutils gnomedocutils
+USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui desktopfileutils \
+		gnomedocutils ltasneededhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-print=gtk
 
 GCONF_SCHEMAS=	evince.schemas evince-thumbnailer.schemas \
 		evince-thumbnailer-ps.schemas
@@ -41,7 +42,7 @@ OPTIONS=	DVI		"Enable DVI viewer support"		off \
 		T1LIB		"Enable T1LIB for TYPE1 fonts to DVI (Enables DVI)"	off \
 		NAUTILUS	"Enable Nautilus plugin"		on  \
 		DBUS		"Enable D-BUS support"			on \
-		COMICS		"Enable comic book archives support"	off \
+		COMICS		"Enable comic book archives support"	on \
 		IMPRESS		"Enable Impress presentations support"	off \
 		DJVU		"Enable DJVU support"			off
 
@@ -51,17 +52,20 @@ OPTIONS=	DVI		"Enable DVI viewer support"		off \
 WITH_DBUS=	yes
 .endif
 
-.if defined(WITH_DVI) || defined(WITH_T1LIB)
+.if defined(WITH_DVI) || defined(WITH_T1LIB) || exists(${LOCALBASE}/lib/libkpathsea.a)
 BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS+=	tex:${PORTSDIR}/print/teTeX-base
 
 CONFIGURE_ARGS+=	--enable-dvi
 GCONF_SCHEMAS+=	evince-thumbnailer-dvi.schemas
+PLIST_SUB+=		DVI=""
 . if defined(WITH_T1LIB)
 LIB_DEPENDS+=	t1.5:${PORTSDIR}/devel/t1lib
 
 CONFIGURE_ARGS+=	--enable-t1lib
 . endif
+.else
+PLIST_SUB+=		DVI="@comment "
 .endif
 
 .if !defined(WITHOUT_NAUTILUS)
@@ -89,20 +93,24 @@ DJVU_DIR?=	-nox11
 LIB_DEPENDS+=		djvulibre.20:${PORTSDIR}/graphics/djvulibre${DJVU_DIR}
 CONFIGURE_ARGS+=	--enable-djvu
 GCONF_SCHEMAS+=		evince-thumbnailer-djvu.schemas
+PLIST_SUB+=		DJVU=""
 .else
 CONFIGURE_ARGS+=	--disable-djvu
+PLIST_SUB+=		DJVU="@comment "
 .endif
 
 .if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
-.if defined(WITH_COMICS)
+.if !defined(WITHOUT_COMICS)
+RUN_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 CONFIGURE_ARGS+=	--enable-comics
-GCONF_SCHEMAS+=	evince-thumbnailer-comics.schemas
-
-RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar \
-		unzip:${PORTSDIR}/archivers/unzip
+GCONF_SCHEMAS+=		evince-thumbnailer-comics.schemas
+PLIST_SUB+=		COMICS=""
+.else
+CONFIGURE_ARGS+=	--disable-comics
+PLIST_SUB+=		COMICS="@comment "
 .endif
 
 post-patch:

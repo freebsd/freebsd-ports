@@ -3,14 +3,13 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/gnome-media/Makefile,v 1.112 2007/09/19 12:22:57 ahze Exp $
+#   $MCom: ports/audio/gnome-media/Makefile,v 1.114 2008/03/11 02:39:19 mezz Exp $
 #
 
 PORTNAME=	gnome-media
-PORTVERSION=	2.20.1
+PORTVERSION=	2.22.0
 CATEGORIES=	audio gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-media/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -18,6 +17,7 @@ COMMENT=	Multimedia applications for the GNOME 2 desktop
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
+INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -3,11 +3,12 @@
 # Whom:			Koop Mast <kwm@rainbow-runner.nl>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/py-gstreamer/Makefile,v 1.13 2006/10/05 19:34:49 mezz Exp $
+#    $MCom: ports/multimedia/py-gstreamer/Makefile,v 1.17 2008/03/21 04:06:13 ahze Exp $
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.8
+PORTVERSION=	0.10.11
+PORTREVISION=	0
 CATEGORIES=	multimedia python gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,11 +26,16 @@ USE_GMAKE=	yes
 USE_GNOME=	pygtk2 gnomehack pkgconfig
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
+PLIST_SUB=	VERSION="${GST_VERSION}"
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DLFCN|dl|g' ${WRKSRC}/gst/__init__.py
+.for d in audio-controller.py decodebin.py pipeline-tester mixer.py vumeter.py
+	@${REINPLACE_CMD} -e 's|alsasink|osssink|g' -e 's|alsasrc|osssink|g' \
+		${WRKSRC}/examples/${d}
+.endfor
 
 post-install:
 	@cd ${PYTHONPREFIX_SITELIBDIR} && ${PYTHON_CMD} -OOOO -c 'import pygst' && \

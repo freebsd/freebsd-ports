@@ -21,7 +21,6 @@ include/gedit-%%VERSION%%/gedit/gedit-tab.h
 include/gedit-%%VERSION%%/gedit/gedit-utils.h
 include/gedit-%%VERSION%%/gedit/gedit-view.h
 include/gedit-%%VERSION%%/gedit/gedit-window.h
-lib/gedit-2/gedit-bugreport.sh
 lib/gedit-2/plugins/changecase.gedit-plugin
 lib/gedit-2/plugins/docinfo.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/externaltools.gedit-plugin
@@ -49,24 +48,34 @@ lib/gedit-2/plugins/docinfo.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/externaltools/tools.glade
 lib/gedit-2/plugins/filebrowser.gedit-plugin
 lib/gedit-2/plugins/indent.gedit-plugin
+lib/gedit-2/plugins/libchangecase.a
 lib/gedit-2/plugins/libchangecase.la
 lib/gedit-2/plugins/libchangecase.so
+lib/gedit-2/plugins/libdocinfo.a
 lib/gedit-2/plugins/libdocinfo.la
 lib/gedit-2/plugins/libdocinfo.so
+lib/gedit-2/plugins/libfilebrowser.a
 lib/gedit-2/plugins/libfilebrowser.la
 lib/gedit-2/plugins/libfilebrowser.so
+lib/gedit-2/plugins/libindent.a
 lib/gedit-2/plugins/libindent.la
 lib/gedit-2/plugins/libindent.so
+lib/gedit-2/plugins/libmodelines.a
 lib/gedit-2/plugins/libmodelines.la
 lib/gedit-2/plugins/libmodelines.so
+lib/gedit-2/plugins/libsample.a
 lib/gedit-2/plugins/libsample.la
 lib/gedit-2/plugins/libsample.so
+lib/gedit-2/plugins/libsort.a
 lib/gedit-2/plugins/libsort.la
 lib/gedit-2/plugins/libsort.so
+lib/gedit-2/plugins/libspell.a
 lib/gedit-2/plugins/libspell.la
 lib/gedit-2/plugins/libspell.so
+lib/gedit-2/plugins/libtaglist.a
 lib/gedit-2/plugins/libtaglist.la
 lib/gedit-2/plugins/libtaglist.so
+lib/gedit-2/plugins/libtime.a
 lib/gedit-2/plugins/libtime.la
 lib/gedit-2/plugins/libtime.so
 lib/gedit-2/plugins/modelines.gedit-plugin
@@ -127,6 +136,7 @@ lib/gedit-2/plugins/spell.gedit-plugin
 lib/gedit-2/plugins/taglist.gedit-plugin
 lib/gedit-2/plugins/time.gedit-plugin
 libdata/pkgconfig/gedit-%%VERSION%%.pc
+libexec/gedit-2/gedit-bugreport.sh
 share/applications/gedit.desktop
 %%DOCSDIR%%/GeditApp.html
 %%DOCSDIR%%/GeditDocument.html
@@ -136,14 +146,14 @@ share/applications/gedit.desktop
 %%DOCSDIR%%/GeditNotebook.html
 %%DOCSDIR%%/GeditPanel.html
 %%DOCSDIR%%/GeditPlugin.html
-%%DOCSDIR%%/GeditPrintJob.html
-%%DOCSDIR%%/GeditPrintJobPreview.html
 %%DOCSDIR%%/GeditProgressMessageArea.html
 %%DOCSDIR%%/GeditStatusbar.html
 %%DOCSDIR%%/GeditTab.html
 %%DOCSDIR%%/GeditView.html
 %%DOCSDIR%%/GeditWindow.html
 %%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/gedit-GeditPrintJob.html
+%%DOCSDIR%%/gedit-GeditPrintJobPreview.html
 %%DOCSDIR%%/gedit-gedit-convert.html
 %%DOCSDIR%%/gedit-gedit-debug.html
 %%DOCSDIR%%/gedit-gedit-encodings.html
@@ -164,8 +174,8 @@ share/applications/gedit.desktop
 share/gedit-2/glade/docinfo.glade2
 share/gedit-2/glade/gedit-encodings-dialog.glade
 share/gedit-2/glade/gedit-open-location-dialog.glade
-share/gedit-2/glade/gedit-page-setup-dialog.glade
 share/gedit-2/glade/gedit-preferences-dialog.glade
+share/gedit-2/glade/gedit-print-preferences.glade
 share/gedit-2/glade/gedit-search-dialog.glade
 share/gedit-2/glade/languages-dialog.glade2
 share/gedit-2/glade/sort.glade2
@@ -287,6 +297,14 @@ share/gnome/help/gedit/oc/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/oc/figures/gedit_window.png
 share/gnome/help/gedit/oc/gedit.xml
 share/gnome/help/gedit/oc/legal.xml
+share/gnome/help/gedit/pt_BR/figures/gedit_format_bold.png
+share/gnome/help/gedit/pt_BR/figures/gedit_format_italic.png
+share/gnome/help/gedit/pt_BR/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/pt_BR/figures/gedit_format_underline.png
+share/gnome/help/gedit/pt_BR/figures/gedit_recent_files_menu_icon.png
+share/gnome/help/gedit/pt_BR/figures/gedit_window.png
+share/gnome/help/gedit/pt_BR/gedit.xml
+share/gnome/help/gedit/pt_BR/legal.xml
 share/gnome/help/gedit/ro/figures/gedit_window.png
 share/gnome/help/gedit/ro/gedit.xml
 share/gnome/help/gedit/ro/legal.xml
@@ -341,6 +359,7 @@ share/gnome/help/gedit/zh_TW/legal.xml
 share/locale/af/LC_MESSAGES/gedit.mo
 share/locale/am/LC_MESSAGES/gedit.mo
 share/locale/ar/LC_MESSAGES/gedit.mo
+share/locale/as/LC_MESSAGES/gedit.mo
 share/locale/az/LC_MESSAGES/gedit.mo
 share/locale/be/LC_MESSAGES/gedit.mo
 share/locale/be@latin/LC_MESSAGES/gedit.mo
@@ -432,6 +451,7 @@ share/omf/gedit/gedit-it.omf
 share/omf/gedit/gedit-ja.omf
 share/omf/gedit/gedit-ko.omf
 share/omf/gedit/gedit-oc.omf
+share/omf/gedit/gedit-pt_BR.omf
 share/omf/gedit/gedit-ro.omf
 share/omf/gedit/gedit-ru.omf
 share/omf/gedit/gedit-sv.omf
@@ -454,6 +474,8 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrm share/gnome/help/gedit/ru
 @dirrm share/gnome/help/gedit/ro/figures
 @dirrm share/gnome/help/gedit/ro
+@dirrm share/gnome/help/gedit/pt_BR/figures
+@dirrm share/gnome/help/gedit/pt_BR
 @dirrm share/gnome/help/gedit/oc/figures
 @dirrm share/gnome/help/gedit/oc
 @dirrm share/gnome/help/gedit/ko/figures
@@ -489,6 +511,7 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrm share/gedit-2/glade
 @dirrm share/gedit-2
 @dirrm %%DOCSDIR%%
+@dirrmtry libexec/gedit-2
 %%PYTHON%%@dirrm lib/gedit-2/plugins/snippets
 %%PYTHON%%@dirrm lib/gedit-2/plugins/pythonconsole
 %%PYTHON%%@dirrm lib/gedit-2/plugins/externaltools
@@ -498,6 +521,7 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrm include/gedit-%%VERSION%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -526,4 +550,5 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

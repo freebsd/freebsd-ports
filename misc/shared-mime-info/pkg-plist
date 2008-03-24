@@ -562,6 +562,8 @@ share/mime/video/x-ogm+ogg.xml
 share/mime/video/x-sgi-movie.xml
 share/mime/video/x-theora+ogg.xml
 share/mime/x-epoc/x-sisx-app.xml
+@exec /bin/mkdir -p %D/share/mime/x-content
+@dirrmtry share/mime/x-content
 @dirrmtry share/mime/x-epoc
 @dirrmtry share/mime/video
 @dirrmtry share/mime/text

@@ -3,12 +3,11 @@
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/ruby-cairo/Makefile,v 1.4 2006/09/09 20:07:18 mezz Exp $
+#   $MCom: ports/graphics/ruby-cairo/Makefile,v 1.6 2008/02/28 21:28:18 mezz Exp $
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://cairographics.org/releases/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -28,8 +27,9 @@ DOCS=		AUTHORS COPYING ChangeLog GPL NEWS README
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/samples/* ${RUBY_MODEXAMPLESDIR}/
+	@${MKDIR} ${RUBY_MODEXAMPLESDIR}/agg
+	@${INSTALL_DATA} ${WRKSRC}/samples/*.rb ${RUBY_MODEXAMPLESDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/samples/agg/*.rb ${RUBY_MODEXAMPLESDIR}/agg/
 	@${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/

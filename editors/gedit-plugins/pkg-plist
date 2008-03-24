@@ -23,8 +23,10 @@ lib/gedit-2/plugins/gpdefs.pyo
 %%PYTHON%%lib/gedit-2/plugins/joinlines.py
 %%PYTHON%%lib/gedit-2/plugins/joinlines.pyc
 %%PYTHON%%lib/gedit-2/plugins/joinlines.pyo
+lib/gedit-2/plugins/libcharmap.a
 lib/gedit-2/plugins/libcharmap.la
 lib/gedit-2/plugins/libcharmap.so
+lib/gedit-2/plugins/libshowtabbar.a
 lib/gedit-2/plugins/libshowtabbar.la
 lib/gedit-2/plugins/libshowtabbar.so
 %%PYTHON%%lib/gedit-2/plugins/sessionsaver.gedit-plugin
@@ -50,6 +52,7 @@ lib/gedit-2/plugins/showtabbar.gedit-plugin
 share/locale/ar/LC_MESSAGES/gedit-plugins.mo
 share/locale/az/LC_MESSAGES/gedit-plugins.mo
 share/locale/be/LC_MESSAGES/gedit-plugins.mo
+share/locale/be@latin/LC_MESSAGES/gedit-plugins.mo
 share/locale/bg/LC_MESSAGES/gedit-plugins.mo
 share/locale/ca/LC_MESSAGES/gedit-plugins.mo
 share/locale/cs/LC_MESSAGES/gedit-plugins.mo
@@ -119,3 +122,5 @@ share/locale/zh_TW/LC_MESSAGES/gedit-plugins.mo
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin

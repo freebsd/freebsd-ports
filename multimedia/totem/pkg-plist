@@ -1,17 +1,34 @@
 bin/totem
+bin/totem-audio-preview
 bin/totem-video-indexer
 bin/totem-video-thumbnailer
-include/totem/1/plparser/totem-disc.h
-include/totem/1/plparser/totem-pl-parser-builtins.h
-include/totem/1/plparser/totem-pl-parser-features.h
-include/totem/1/plparser/totem-pl-parser.h
-lib/libtotem-plparser.a
-lib/libtotem-plparser.la
-lib/libtotem-plparser.so
-lib/libtotem-plparser.so.7
-lib/nautilus/extensions-1.0/libtotem-properties-page.a
-lib/nautilus/extensions-1.0/libtotem-properties-page.la
-lib/nautilus/extensions-1.0/libtotem-properties-page.so
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-basic-plugin.a
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-basic-plugin.la
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-basic-plugin.so
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-basic-plugin.xpt
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-complex-plugin.a
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-complex-plugin.la
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-complex-plugin.so
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-complex-plugin.xpt
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-cone-plugin.a
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-cone-plugin.la
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-cone-plugin.so
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-cone-plugin.xpt
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-gmp-plugin.a
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-gmp-plugin.la
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-gmp-plugin.so
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-gmp-plugin.xpt
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-mully-plugin.a
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-mully-plugin.la
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-mully-plugin.so
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-mully-plugin.xpt
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-narrowspace-plugin.a
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-narrowspace-plugin.la
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-narrowspace-plugin.so
+%%GECKO_PLUGINS%%lib/browser_plugins/libtotem-narrowspace-plugin.xpt
+lib/nautilus/extensions-2.0/libtotem-properties-page.a
+lib/nautilus/extensions-2.0/libtotem-properties-page.la
+lib/nautilus/extensions-2.0/libtotem-properties-page.so
 %%GALAGO%%lib/totem/plugins/galago/galago.totem-plugin
 %%GALAGO%%lib/totem/plugins/galago/libtgp.a
 %%GALAGO%%lib/totem/plugins/galago/libtgp.la
@@ -45,7 +62,11 @@ lib/totem/plugins/skipto/libskipto.la
 lib/totem/plugins/skipto/libskipto.so
 lib/totem/plugins/skipto/skipto.totem-plugin
 lib/totem/plugins/skipto/skipto.ui
-libdata/pkgconfig/totem-plparser.pc
+lib/totem/plugins/totem/__init__.py
+lib/totem/plugins/totem/__init__.pyc
+lib/totem/plugins/totem/__init__.pyo
+%%GECKO_PLUGINS%%libexec/totem-plugin-viewer
+libexec/totem/totem-bugreport.py
 share/applications/totem.desktop
 share/gnome/help/totem/C/figures/totem_next_button.png
 share/gnome/help/totem/C/figures/totem_pause_button.png
@@ -105,6 +126,15 @@ share/gnome/help/totem/fr/figures/totem_start_window.png
 share/gnome/help/totem/fr/figures/totem_volume_maximum_button.png
 share/gnome/help/totem/fr/figures/totem_volume_mute_button.png
 share/gnome/help/totem/fr/totem.xml
+share/gnome/help/totem/it/figures/totem_next_button.png
+share/gnome/help/totem/it/figures/totem_pause_button.png
+share/gnome/help/totem/it/figures/totem_play_button.png
+share/gnome/help/totem/it/figures/totem_previous_button.png
+share/gnome/help/totem/it/figures/totem_show_playlist_button.png
+share/gnome/help/totem/it/figures/totem_start_window.png
+share/gnome/help/totem/it/figures/totem_volume_maximum_button.png
+share/gnome/help/totem/it/figures/totem_volume_mute_button.png
+share/gnome/help/totem/it/totem.xml
 share/gnome/help/totem/oc/figures/totem_next_button.png
 share/gnome/help/totem/oc/figures/totem_pause_button.png
 share/gnome/help/totem/oc/figures/totem_play_button.png
@@ -163,9 +193,11 @@ share/icons/hicolor/16x16/apps/totem.png
 share/icons/hicolor/22x22/apps/totem.png
 share/icons/hicolor/24x24/apps/totem.png
 share/icons/hicolor/32x32/apps/totem.png
+share/icons/hicolor/48x48/apps/totem.png
 share/icons/hicolor/scalable/apps/totem.svg
 share/locale/am/LC_MESSAGES/totem.mo
 share/locale/ar/LC_MESSAGES/totem.mo
+share/locale/as/LC_MESSAGES/totem.mo
 share/locale/az/LC_MESSAGES/totem.mo
 share/locale/be/LC_MESSAGES/totem.mo
 share/locale/be@latin/LC_MESSAGES/totem.mo
@@ -200,6 +232,7 @@ share/locale/is/LC_MESSAGES/totem.mo
 share/locale/it/LC_MESSAGES/totem.mo
 share/locale/ja/LC_MESSAGES/totem.mo
 share/locale/ka/LC_MESSAGES/totem.mo
+share/locale/kn/LC_MESSAGES/totem.mo
 share/locale/ko/LC_MESSAGES/totem.mo
 share/locale/ku/LC_MESSAGES/totem.mo
 share/locale/lt/LC_MESSAGES/totem.mo
@@ -222,6 +255,7 @@ share/locale/pt_BR/LC_MESSAGES/totem.mo
 share/locale/ro/LC_MESSAGES/totem.mo
 share/locale/ru/LC_MESSAGES/totem.mo
 share/locale/rw/LC_MESSAGES/totem.mo
+share/locale/si/LC_MESSAGES/totem.mo
 share/locale/sk/LC_MESSAGES/totem.mo
 share/locale/sl/LC_MESSAGES/totem.mo
 share/locale/sq/LC_MESSAGES/totem.mo
@@ -247,6 +281,7 @@ share/omf/totem/totem-de.omf
 share/omf/totem/totem-en_GB.omf
 share/omf/totem/totem-es.omf
 share/omf/totem/totem-fr.omf
+share/omf/totem/totem-it.omf
 share/omf/totem/totem-oc.omf
 share/omf/totem/totem-pa.omf
 share/omf/totem/totem-pt_BR.omf
@@ -258,16 +293,15 @@ share/omf/totem/totem-uk.omf
 %%DATADIR%%/filmholes.png
 %%DATADIR%%/fullscreen.ui
 %%DATADIR%%/mozilla-viewer.ui
-%%DATADIR%%/playlist-ui.xml
 %%DATADIR%%/playlist.ui
 %%DATADIR%%/plugins.ui
 %%DATADIR%%/properties.ui
-%%DATADIR%%/totem-ui.xml
 %%DATADIR%%/totem.ui
 %%DATADIR%%/totem_logo.png
 %%DATADIR%%/uri.ui
+%%DATADIR%%/video-list.ui
 share/vala/vapi/totem.deps
-share/vala/vapi/totem.vala
+share/vala/vapi/totem.vapi
 @dirrm %%DATADIR%%
 @dirrm share/omf/totem
 @dirrm share/gnome/help/totem/uk/figures
@@ -282,6 +316,8 @@ share/vala/vapi/totem.vala
 @dirrm share/gnome/help/totem/pa
 @dirrm share/gnome/help/totem/oc/figures
 @dirrm share/gnome/help/totem/oc
+@dirrm share/gnome/help/totem/it/figures
+@dirrm share/gnome/help/totem/it
 @dirrm share/gnome/help/totem/fr/figures
 @dirrm share/gnome/help/totem/fr
 @dirrm share/gnome/help/totem/es/figures
@@ -297,6 +333,8 @@ share/vala/vapi/totem.vala
 @dirrm share/gnome/help/totem/C/figures
 @dirrm share/gnome/help/totem/C
 @dirrm share/gnome/help/totem
+@dirrm libexec/totem
+@dirrm lib/totem/plugins/totem
 @dirrm lib/totem/plugins/skipto
 @dirrm lib/totem/plugins/screensaver
 @dirrm lib/totem/plugins/properties
@@ -307,12 +345,10 @@ share/vala/vapi/totem.vala
 %%GALAGO%%@dirrm lib/totem/plugins/galago
 @dirrm lib/totem/plugins
 @dirrm lib/totem
-@dirrmtry lib/browser_plugins
-@dirrm include/totem/1/plparser
-@dirrm include/totem/1
-@dirrm include/totem
+%%GECKO_PLUGINS%%@dirrmtry lib/browser_plugins
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -321,6 +357,8 @@ share/vala/vapi/totem.vala
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
@@ -337,4 +375,5 @@ share/vala/vapi/totem.vala
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

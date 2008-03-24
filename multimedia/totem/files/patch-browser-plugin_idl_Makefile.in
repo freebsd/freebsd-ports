@@ -1,0 +1,11 @@
+--- browser-plugin/idl/Makefile.in.orig	2008-03-15 20:31:26.000000000 -0500
++++ browser-plugin/idl/Makefile.in	2008-03-15 20:31:34.000000000 -0500
+@@ -532,7 +532,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-xptDATA
++install-data-am: install-xptDATA
+ 
+ install-dvi: install-dvi-am
+ 

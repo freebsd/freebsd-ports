@@ -3,7 +3,7 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2-power-tools/Makefile,v 1.79 2007/10/18 23:45:20 marcus Exp $
+#   $MCom: ports/x11/gnome2-power-tools/Makefile,v 1.82 2008/03/12 21:19:04 marcus Exp $
 #
 
 PORTREVISION=	0
@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-power-tools
 
 COMMENT=	The 'Geektoys' for the GNOME 2 power user
 
-RUN_DEPENDS=	${LOCALBASE}/lib/epiphany/2.20/extensions/libgesturesextension.so:${PORTSDIR}/www/epiphany-extensions \
+RUN_DEPENDS=	${LOCALBASE}/lib/epiphany/2.22/extensions/libgesturesextension.so:${PORTSDIR}/www/epiphany-extensions \
 		gnome-pkgview:${PORTSDIR}/sysutils/gnome-pkgview \
 		${LOCALBASE}/libexec/netspeed_applet2:${PORTSDIR}/net/netspeed_applet \
 		${LOCALBASE}/sbin/gkrellmd:${PORTSDIR}/sysutils/gkrellm2 \
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/epiphany/2.20/extensions/libgesturesextension.so:$
 		gnome-file-share-properties:${PORTSDIR}/www/gnome-user-share \
 		serpentine:${PORTSDIR}/sysutils/serpentine \
 		devilspie:${PORTSDIR}/x11-wm/devilspie \
-		${LOCALBASE}/lib/nautilus/extensions-1.0/libnautilus-open-terminal.so:${PORTSDIR}/deskutils/nautilus-open-terminal \
+		${LOCALBASE}/lib/nautilus/extensions-2.0/libnautilus-open-terminal.so:${PORTSDIR}/deskutils/nautilus-open-terminal \
 		gtweakui-menus:${PORTSDIR}/deskutils/gtweakui \
 		gnome-art:${PORTSDIR}/x11-themes/gnome-art \
 		brightside:${PORTSDIR}/x11/brightside \

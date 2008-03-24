@@ -1,5 +1,5 @@
---- calendar/libical/src/libical/icaltz-util.c.orig	2007-11-25 21:29:25.000000000 -0500
-+++ calendar/libical/src/libical/icaltz-util.c	2008-01-07 20:24:12.000000000 -0500
+--- calendar/libical/src/libical/icaltz-util.c.orig	2007-08-24 02:48:28.000000000 -0400
++++ calendar/libical/src/libical/icaltz-util.c	2007-08-27 16:23:59.000000000 -0400
 @@ -23,6 +23,15 @@
  #include <string.h>
  #if defined(sun) && defined(__SVR4)
@@ -16,27 +16,3 @@
  #else
  #include <byteswap.h>
  #include <endian.h>
-@@ -328,7 +337,10 @@ icaltzutil_fetch_timezone (const char *l
- 		icalprop = icalproperty_new_tzname (types [zidx].zname);
- 		icalcomponent_add_property (std_comp, icalprop);
- 
--		trans = transitions [stdidx] + types [zidx].gmtoff;
-+		if (num_trans)
-+			trans = transitions [stdidx] + types [zidx].gmtoff;
-+		else
-+			trans = types [zidx].gmtoff;
- 		icaltime = icaltime_from_timet (trans, 0);
- 		dtstart = icaltime;
- 		dtstart.year = 1970;
-@@ -369,7 +381,10 @@ icaltzutil_fetch_timezone (const char *l
- 		icalprop = icalproperty_new_tzname (types [zidx].zname);
- 		icalcomponent_add_property (dst_comp, icalprop);
- 
--		trans = transitions [dstidx] + types [zidx].gmtoff;
-+		if (num_trans)
-+			trans = transitions [dstidx] + types [zidx].gmtoff;
-+		else
-+			trans = types [zidx].gmtoff;
- 		icaltime = icaltime_from_timet (trans, 0);
- 		dtstart = icaltime;
- 		dtstart.year = 1970;

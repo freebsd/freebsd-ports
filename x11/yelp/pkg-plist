@@ -1,37 +1,11 @@
 bin/gnome-help
 bin/yelp
 share/applications/yelp.desktop
-share/yelp/default.css
-share/yelp/icons/yelp-icon-caution.png
-share/yelp/icons/yelp-icon-important.png
-share/yelp/icons/yelp-icon-note.png
-share/yelp/icons/yelp-icon-tip.png
-share/yelp/icons/yelp-icon-warning.png
-share/yelp/icons/yelp-watermark-blockquote-00AB.png
-share/yelp/icons/yelp-watermark-blockquote-00BB.png
-share/yelp/icons/yelp-watermark-blockquote-201C.png
-share/yelp/icons/yelp-watermark-blockquote-201D.png
-share/yelp/icons/yelp-watermark-blockquote-201E.png
-share/yelp/important_docs.xml
-share/yelp/info.xml
-share/yelp/man.xml
-share/yelp/scrollkeeper.xml
-share/yelp/toc.xml
-share/yelp/ui/yelp-search-ui.xml
-share/yelp/ui/yelp-ui.xml
-share/yelp/ui/yelp.glade
-share/yelp/xslt/db-title.xsl
-share/yelp/xslt/db2html.xsl
-share/yelp/xslt/info2html.xsl
-share/yelp/xslt/man2html.xsl
-share/yelp/xslt/search2html.xsl
-share/yelp/xslt/toc2html.xsl
-share/yelp/xslt/yelp-common.xsl
-share/yelp/yelp.js
 share/icons/hicolor/192x192/apps/yelp-icon-big.png
 share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
 share/locale/ar/LC_MESSAGES/yelp.mo
+share/locale/as/LC_MESSAGES/yelp.mo
 share/locale/az/LC_MESSAGES/yelp.mo
 share/locale/be/LC_MESSAGES/yelp.mo
 share/locale/be@latin/LC_MESSAGES/yelp.mo
@@ -117,10 +91,38 @@ share/locale/zh_CN/LC_MESSAGES/yelp.mo
 share/locale/zh_HK/LC_MESSAGES/yelp.mo
 share/locale/zh_TW/LC_MESSAGES/yelp.mo
 share/locale/zu/LC_MESSAGES/yelp.mo
-@dirrm share/yelp/xslt
-@dirrm share/yelp/ui
-@dirrm share/yelp/icons
-@dirrm share/yelp
+%%DATADIR%%/default.css
+%%DATADIR%%/icons/yelp-icon-caution.png
+%%DATADIR%%/icons/yelp-icon-important.png
+%%DATADIR%%/icons/yelp-icon-note.png
+%%DATADIR%%/icons/yelp-icon-tip.png
+%%DATADIR%%/icons/yelp-icon-warning.png
+%%DATADIR%%/icons/yelp-watermark-blockquote-00AB.png
+%%DATADIR%%/icons/yelp-watermark-blockquote-00BB.png
+%%DATADIR%%/icons/yelp-watermark-blockquote-201C.png
+%%DATADIR%%/icons/yelp-watermark-blockquote-201D.png
+%%DATADIR%%/icons/yelp-watermark-blockquote-201E.png
+%%DATADIR%%/important_docs.xml
+%%DATADIR%%/info.xml
+%%DATADIR%%/man.xml
+%%DATADIR%%/scrollkeeper.xml
+%%DATADIR%%/toc.xml
+%%DATADIR%%/ui/yelp-search-ui.xml
+%%DATADIR%%/ui/yelp-ui.xml
+%%DATADIR%%/ui/yelp.glade
+%%DATADIR%%/xslt/db-title.xsl
+%%DATADIR%%/xslt/db2html.xsl
+%%DATADIR%%/xslt/info2html.xsl
+%%DATADIR%%/xslt/man2html.xsl
+%%DATADIR%%/xslt/search2html.xsl
+%%DATADIR%%/xslt/toc2html.xsl
+%%DATADIR%%/xslt/yelp-common.xsl
+%%DATADIR%%/yelp.js
+@dirrm %%DATADIR%%/xslt
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -155,4 +157,5 @@ share/locale/zu/LC_MESSAGES/yelp.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

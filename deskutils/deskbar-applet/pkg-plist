@@ -35,6 +35,12 @@ lib/deskbar-applet/modules-2.20-compatible/programs.pyo
 lib/deskbar-applet/modules-2.20-compatible/recent.py
 lib/deskbar-applet/modules-2.20-compatible/recent.pyc
 lib/deskbar-applet/modules-2.20-compatible/recent.pyo
+lib/deskbar-applet/modules-2.20-compatible/templates.py
+lib/deskbar-applet/modules-2.20-compatible/templates.pyc
+lib/deskbar-applet/modules-2.20-compatible/templates.pyo
+lib/deskbar-applet/modules-2.20-compatible/tomboy.py
+lib/deskbar-applet/modules-2.20-compatible/tomboy.pyc
+lib/deskbar-applet/modules-2.20-compatible/tomboy.pyo
 lib/deskbar-applet/modules-2.20-compatible/web_address.py
 lib/deskbar-applet/modules-2.20-compatible/web_address.pyc
 lib/deskbar-applet/modules-2.20-compatible/web_address.pyo
@@ -86,6 +92,11 @@ lib/deskbar-applet/modules-2.20-compatible/yahoo.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/core/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/core/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/core/_userdirs/__init__.py
+%%PYTHON_SITELIBDIR%%/deskbar/core/_userdirs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deskbar/core/_userdirs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/core/_userdirs/__userdirs.la
+%%PYTHON_SITELIBDIR%%/deskbar/core/_userdirs/__userdirs.so
 %%PYTHON_SITELIBDIR%%/deskbar/core/gnomedesktop/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/core/gnomedesktop/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/core/gnomedesktop/__init__.pyo
@@ -183,21 +194,27 @@ lib/deskbar-applet/modules-2.20-compatible/yahoo.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/ui/About.py
 %%PYTHON_SITELIBDIR%%/deskbar/ui/About.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/ui/About.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/ui/CuemiacAlignedView.py
+%%PYTHON_SITELIBDIR%%/deskbar/ui/CuemiacAlignedView.pyc
+%%PYTHON_SITELIBDIR%%/deskbar/ui/CuemiacAlignedView.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/ui/CuemiacWindowController.py
 %%PYTHON_SITELIBDIR%%/deskbar/ui/CuemiacWindowController.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/ui/CuemiacWindowController.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/ui/CuemiacWindowView.py
 %%PYTHON_SITELIBDIR%%/deskbar/ui/CuemiacWindowView.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/ui/CuemiacWindowView.pyo
-%%PYTHON_SITELIBDIR%%/deskbar/ui/DeskbarApplet.py
-%%PYTHON_SITELIBDIR%%/deskbar/ui/DeskbarApplet.pyc
-%%PYTHON_SITELIBDIR%%/deskbar/ui/DeskbarApplet.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/ui/DeskbarTray.py
+%%PYTHON_SITELIBDIR%%/deskbar/ui/DeskbarTray.pyc
+%%PYTHON_SITELIBDIR%%/deskbar/ui/DeskbarTray.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/ui/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/ui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/ui/__init__.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/CuemiacActionsTreeView.py
 %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/CuemiacActionsTreeView.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/CuemiacActionsTreeView.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/CuemiacAlignedWindow.py
+%%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/CuemiacAlignedWindow.pyc
+%%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/CuemiacAlignedWindow.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/CuemiacEntry.py
 %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/CuemiacEntry.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/CuemiacEntry.pyo
@@ -216,6 +233,9 @@ lib/deskbar-applet/modules-2.20-compatible/yahoo.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/CuemiacTreeView.py
 %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/CuemiacTreeView.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/CuemiacTreeView.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/LingeringSelectionWindow.py
+%%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/LingeringSelectionWindow.pyc
+%%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/LingeringSelectionWindow.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac/__init__.pyo
@@ -254,6 +274,8 @@ libdata/pkgconfig/deskbar-applet.pc
 %%DATADIR%%/art/generic.png
 %%DATADIR%%/art/gpm-suspend-to-disk.png
 %%DATADIR%%/art/gpm-suspend-to-ram.png
+%%DATADIR%%/art/note-new.png
+%%DATADIR%%/art/note.png
 %%DATADIR%%/art/web-search.png
 %%DATADIR%%/art/yahoo.png
 %%DATADIR%%/mozilla-search.glade
@@ -265,6 +287,9 @@ share/gnome/help/deskbar/C/legal.xml
 share/gnome/help/deskbar/ca/deskbar.xml
 share/gnome/help/deskbar/ca/figures/deskbar-applet.png
 share/gnome/help/deskbar/ca/legal.xml
+share/gnome/help/deskbar/el/deskbar.xml
+share/gnome/help/deskbar/el/figures/deskbar-applet.png
+share/gnome/help/deskbar/el/legal.xml
 share/gnome/help/deskbar/en_GB/deskbar.xml
 share/gnome/help/deskbar/en_GB/figures/deskbar-applet.png
 share/gnome/help/deskbar/en_GB/legal.xml
@@ -289,6 +314,7 @@ share/icons/hicolor/32x32/apps/deskbar-applet.png
 share/icons/hicolor/48x48/apps/deskbar-applet.png
 share/icons/hicolor/scalable/apps/deskbar-applet.svg
 share/locale/ar/LC_MESSAGES/deskbar-applet.mo
+share/locale/as/LC_MESSAGES/deskbar-applet.mo
 share/locale/be/LC_MESSAGES/deskbar-applet.mo
 share/locale/be@latin/LC_MESSAGES/deskbar-applet.mo
 share/locale/bg/LC_MESSAGES/deskbar-applet.mo
@@ -318,6 +344,7 @@ share/locale/id/LC_MESSAGES/deskbar-applet.mo
 share/locale/it/LC_MESSAGES/deskbar-applet.mo
 share/locale/ja/LC_MESSAGES/deskbar-applet.mo
 share/locale/ka/LC_MESSAGES/deskbar-applet.mo
+share/locale/kn/LC_MESSAGES/deskbar-applet.mo
 share/locale/ko/LC_MESSAGES/deskbar-applet.mo
 share/locale/ku/LC_MESSAGES/deskbar-applet.mo
 share/locale/lt/LC_MESSAGES/deskbar-applet.mo
@@ -330,6 +357,7 @@ share/locale/mr/LC_MESSAGES/deskbar-applet.mo
 share/locale/nb/LC_MESSAGES/deskbar-applet.mo
 share/locale/ne/LC_MESSAGES/deskbar-applet.mo
 share/locale/nl/LC_MESSAGES/deskbar-applet.mo
+share/locale/nn/LC_MESSAGES/deskbar-applet.mo
 share/locale/oc/LC_MESSAGES/deskbar-applet.mo
 share/locale/or/LC_MESSAGES/deskbar-applet.mo
 share/locale/pa/LC_MESSAGES/deskbar-applet.mo
@@ -349,14 +377,13 @@ share/locale/ta/LC_MESSAGES/deskbar-applet.mo
 share/locale/th/LC_MESSAGES/deskbar-applet.mo
 share/locale/tr/LC_MESSAGES/deskbar-applet.mo
 share/locale/uk/LC_MESSAGES/deskbar-applet.mo
-share/locale/uz/LC_MESSAGES/deskbar-applet.mo
-share/locale/uz@cyrillic/LC_MESSAGES/deskbar-applet.mo
 share/locale/vi/LC_MESSAGES/deskbar-applet.mo
 share/locale/zh_CN/LC_MESSAGES/deskbar-applet.mo
 share/locale/zh_HK/LC_MESSAGES/deskbar-applet.mo
 share/locale/zh_TW/LC_MESSAGES/deskbar-applet.mo
 share/omf/deskbar/deskbar-C.omf
 share/omf/deskbar/deskbar-ca.omf
+share/omf/deskbar/deskbar-el.omf
 share/omf/deskbar/deskbar-en_GB.omf
 share/omf/deskbar/deskbar-es.omf
 share/omf/deskbar/deskbar-fr.omf
@@ -376,6 +403,8 @@ share/omf/deskbar/deskbar-uk.omf
 @dirrm share/gnome/help/deskbar/es
 @dirrm share/gnome/help/deskbar/en_GB/figures
 @dirrm share/gnome/help/deskbar/en_GB
+@dirrm share/gnome/help/deskbar/el/figures
+@dirrm share/gnome/help/deskbar/el
 @dirrm share/gnome/help/deskbar/ca/figures
 @dirrm share/gnome/help/deskbar/ca
 @dirrm share/gnome/help/deskbar/C/figures
@@ -396,14 +425,13 @@ share/omf/deskbar/deskbar-uk.omf
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/core/updater
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/core/keybinder
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/core/gnomedesktop
+@dirrm %%PYTHON_SITELIBDIR%%/deskbar/core/_userdirs
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/core
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar
 @dirrm lib/deskbar-applet/modules-2.20-compatible
 @dirrm lib/deskbar-applet
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
-@dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrmtry share/locale/oc/LC_MESSAGES
@@ -420,3 +448,5 @@ share/omf/deskbar/deskbar-uk.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

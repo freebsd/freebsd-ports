@@ -2,6 +2,8 @@ include/gtksourceview-2.0/gtksourceview/gtksourcebuffer.h
 include/gtksourceview-2.0/gtksourceview/gtksourceiter.h
 include/gtksourceview-2.0/gtksourceview/gtksourcelanguage.h
 include/gtksourceview-2.0/gtksourceview/gtksourcelanguagemanager.h
+include/gtksourceview-2.0/gtksourceview/gtksourcemark.h
+include/gtksourceview-2.0/gtksourceview/gtksourceprintcompositor.h
 include/gtksourceview-2.0/gtksourceview/gtksourcestyle.h
 include/gtksourceview-2.0/gtksourceview/gtksourcestylescheme.h
 include/gtksourceview-2.0/gtksourceview/gtksourcestyleschememanager.h
@@ -31,7 +33,9 @@ share/gtksourceview-2.0/language-specs/diff.lang
 share/gtksourceview-2.0/language-specs/docbook.lang
 share/gtksourceview-2.0/language-specs/dpatch.lang
 share/gtksourceview-2.0/language-specs/dtd.lang
+share/gtksourceview-2.0/language-specs/eiffel.lang
 share/gtksourceview-2.0/language-specs/erlang.lang
+share/gtksourceview-2.0/language-specs/forth.lang
 share/gtksourceview-2.0/language-specs/fortran.lang
 share/gtksourceview-2.0/language-specs/gap.lang
 share/gtksourceview-2.0/language-specs/gtk-doc.lang

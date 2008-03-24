@@ -1,4 +1,5 @@
 bin/nautilus
+bin/nautilus-autorun-software
 bin/nautilus-connect-server
 bin/nautilus-file-management-properties
 include/nautilus/libnautilus-extension/nautilus-column-provider.h
@@ -18,6 +19,7 @@ lib/libnautilus-extension.so
 lib/libnautilus-extension.so.1
 libdata/bonobo/servers/Nautilus_shell.server
 libdata/pkgconfig/libnautilus-extension.pc
+share/applications/nautilus-autorun-software.desktop
 share/applications/nautilus-computer.desktop
 share/applications/nautilus-file-management-properties.desktop
 share/applications/nautilus-folder-handler.desktop
@@ -82,6 +84,7 @@ share/locale/mi/LC_MESSAGES/nautilus.mo
 share/locale/mk/LC_MESSAGES/nautilus.mo
 share/locale/ml/LC_MESSAGES/nautilus.mo
 share/locale/mn/LC_MESSAGES/nautilus.mo
+share/locale/mr/LC_MESSAGES/nautilus.mo
 share/locale/ms/LC_MESSAGES/nautilus.mo
 share/locale/nb/LC_MESSAGES/nautilus.mo
 share/locale/ne/LC_MESSAGES/nautilus.mo
@@ -121,6 +124,21 @@ share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
 share/mime/application/x-gnome-saved-search.xml
 share/mime/packages/nautilus.xml
+share/mime/x-content/audio-cdda.xml
+share/mime/x-content/audio-dvd.xml
+share/mime/x-content/audio-player.xml
+share/mime/x-content/blank-bd.xml
+share/mime/x-content/blank-cd.xml
+share/mime/x-content/blank-dvd.xml
+share/mime/x-content/blank-hddvd.xml
+share/mime/x-content/image-dcf.xml
+share/mime/x-content/image-picturecd.xml
+share/mime/x-content/software.xml
+share/mime/x-content/video-bluray.xml
+share/mime/x-content/video-dvd.xml
+share/mime/x-content/video-hddvd.xml
+share/mime/x-content/video-svcd.xml
+share/mime/x-content/video-vcd.xml
 %%DATADIR%%/browser.xml
 %%DATADIR%%/glade/nautilus-bookmarks-window.glade
 %%DATADIR%%/glade/nautilus-file-management-properties.glade
@@ -178,8 +196,9 @@ share/pixmaps/nautilus/thumbnail_frame.png
 @dirrm %%DATADIR%%/patterns
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
-@exec /bin/mkdir -p %D/lib/nautilus/extensions-1.0
-@dirrmtry lib/nautilus/extensions-1.0
+@dirrmtry share/applications
+@exec /bin/mkdir -p %D/lib/nautilus/extensions-2.0
+@dirrmtry lib/nautilus/extensions-2.0
 @dirrmtry lib/nautilus
 @dirrm include/nautilus/libnautilus-extension
 @dirrm include/nautilus
@@ -207,6 +226,8 @@ share/pixmaps/nautilus/thumbnail_frame.png
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
 @dirrmtry share/locale/mi
 @dirrmtry share/locale/mg/LC_MESSAGES
@@ -225,4 +246,3 @@ share/pixmaps/nautilus/thumbnail_frame.png
 @dirrmtry share/locale/be@latin
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/applications

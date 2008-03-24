@@ -1,6 +1,6 @@
---- widgets/e-timezone-dialog/e-timezone-dialog.c.orig	Mon Jul 10 21:50:12 2006
-+++ widgets/e-timezone-dialog/e-timezone-dialog.c	Mon Jul 10 22:11:54 2006
-@@ -80,7 +80,9 @@ struct _ETimezoneDialogPrivate {
+--- widgets/e-timezone-dialog/e-timezone-dialog.c.orig	2007-11-30 05:24:05.000000000 +0100
++++ widgets/e-timezone-dialog/e-timezone-dialog.c	2007-12-21 16:24:39.000000000 +0100
+@@ -82,7 +82,9 @@
  
  #ifndef G_OS_WIN32 /* Declared properly in time.h already */
  extern char *tzname[2];
@@ -10,8 +10,8 @@
  extern int daylight;
  #endif
  
-@@ -317,9 +319,20 @@ static const icaltimezone*
- get_local_timezone()
+@@ -326,9 +328,20 @@
+ get_local_timezone(void)
  {
  	icaltimezone *zone;
 +	long offset;
@@ -19,7 +19,7 @@
 +	time_t tt;
 +	struct tm tm;
 +#endif
- 	
+ 
  	tzset();
 -	zone =  icaltimezone_get_builtin_timezone_from_offset (-timezone, tzname[0]);
 +#ifdef __BSD_VISIBLE

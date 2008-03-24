@@ -3,11 +3,12 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11-toolkits/bakery/Makefile,v 1.5 2007/12/02 07:02:19 marcus Exp $
+#   $MCom: ports/x11-toolkits/bakery/Makefile,v 1.11 2008/03/23 06:57:57 marcus Exp $
 #
 
 PORTNAME=	bakery
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.4

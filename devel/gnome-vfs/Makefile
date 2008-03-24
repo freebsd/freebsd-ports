@@ -3,11 +3,11 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/devel/gnome-vfs/Makefile,v 1.1 2007/12/02 00:27:45 mezz Exp $
+#   $MCom: ports/devel/gnome-vfs/Makefile,v 1.182 2008/03/10 23:08:21 ahze Exp $
 #
 
 PORTNAME=	gnome-vfs
-PORTVERSION=	2.20.1
+PORTVERSION=	2.22.0
 PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -28,7 +28,7 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomemimedata gconf2 \
-		libbonobo ltverhack referencehack
+		ltverhack referencehack
 USE_AUTOTOOLS=	libtool:15
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes

@@ -1,0 +1,10 @@
+include/exempi-2.0/exempi/xmp.h
+include/exempi-2.0/exempi/xmpconsts.h
+include/exempi-2.0/exempi/xmperrors.h
+lib/libexempi.a
+lib/libexempi.la
+lib/libexempi.so
+lib/libexempi.so.3
+libdata/pkgconfig/exempi-2.0.pc
+@dirrm include/exempi-2.0/exempi
+@dirrm include/exempi-2.0

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2008-01-20 20:11:12.000000000 -0500
++++ Makefile.in	2008-01-20 20:11:21.000000000 -0500
+@@ -251,7 +251,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ 
+ # Need to build docs after examples because the docs include generated files 
+-SUBDIRS = data src polkit-gnome tools $(am__append_1) doc po
++SUBDIRS = data src polkit-gnome tools $(am__append_1) po
+ EXTRA_DIST = \
+ 	autogen.sh		\
+ 	intltool-extract.in	\

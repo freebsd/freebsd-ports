@@ -1,9 +1,13 @@
 @unexec %D/etc/rc.d/hald stop > /dev/null 2>&1 || true
 %%MEDIA%%@exec mkdir -p /media
 bin/hal-device
+bin/hal-disable-polling
 bin/hal-find-by-capability
 bin/hal-find-by-property
 bin/hal-get-property
+bin/hal-is-caller-locked-out
+bin/hal-is-caller-privileged
+bin/hal-lock
 bin/hal-set-property
 bin/lshal
 @exec mkdir -p %D/etc/hal/fdi/preprobe
@@ -25,32 +29,40 @@ lib/libhald_freebsd_probe.so
 lib/libhald_freebsd_probe.so.0
 libdata/pkgconfig/hal-storage.pc
 libdata/pkgconfig/hal.pc
+libexec/hal-storage-cleanup-all-mountpoints
+libexec/hal-storage-cleanup-mountpoint
+libexec/hal-storage-closetray
+libexec/hal-storage-eject
 libexec/hal-storage-mount
-libexec/hal-system-power-pmu
+libexec/hal-storage-unmount
+libexec/hal-system-power-pm-is-supported
+libexec/hal-system-setserial
+libexec/hal/scripts/freebsd/hal-system-lcd-get-brightness-freebsd
+libexec/hal/scripts/freebsd/hal-system-lcd-set-brightness-freebsd
+libexec/hal/scripts/freebsd/hal-system-power-reboot-freebsd
+libexec/hal/scripts/freebsd/hal-system-power-set-power-save-freebsd
+libexec/hal/scripts/freebsd/hal-system-power-shutdown-freebsd
+libexec/hal/scripts/freebsd/hal-system-power-suspend-freebsd
+libexec/hal/scripts/hal-dockstation-undock
+libexec/hal/scripts/hal-functions
 libexec/hal/scripts/hal-luks-remove
 libexec/hal/scripts/hal-luks-setup
 libexec/hal/scripts/hal-luks-teardown
+libexec/hal/scripts/hal-system-killswitch-get-power
+libexec/hal/scripts/hal-system-killswitch-set-power
 libexec/hal/scripts/hal-system-lcd-get-brightness
-libexec/hal/scripts/hal-system-lcd-get-brightness-freebsd
 libexec/hal/scripts/hal-system-lcd-set-brightness
-libexec/hal/scripts/hal-system-lcd-set-brightness-freebsd
 libexec/hal/scripts/hal-system-power-hibernate
 libexec/hal/scripts/hal-system-power-reboot
-libexec/hal/scripts/hal-system-power-reboot-freebsd
 libexec/hal/scripts/hal-system-power-set-power-save
-libexec/hal/scripts/hal-system-power-set-power-save-freebsd
 libexec/hal/scripts/hal-system-power-shutdown
-libexec/hal/scripts/hal-system-power-shutdown-freebsd
 libexec/hal/scripts/hal-system-power-suspend
-libexec/hal/scripts/hal-system-power-suspend-freebsd
-libexec/hal/scripts/hal-system-storage-cleanup-mountpoint
-libexec/hal/scripts/hal-system-storage-cleanup-mountpoints
-libexec/hal/scripts/hal-system-storage-cleanup-mountpoints-freebsd
-libexec/hal/scripts/hal-system-storage-eject
-libexec/hal/scripts/hal-system-storage-eject-freebsd
-libexec/hal/scripts/hal-system-storage-unmount
-libexec/hal/scripts/hal-system-storage-unmount-freebsd
+libexec/hal/scripts/hal-system-power-suspend-hybrid
+libexec/hal/scripts/hal-system-wol-enable
+libexec/hal/scripts/hal-system-wol-enabled
+libexec/hal/scripts/hal-system-wol-supported
 libexec/hald-addon-storage
+libexec/hald-generate-fdi-cache
 libexec/hald-probe-hiddev
 libexec/hald-probe-scsi
 libexec/hald-probe-smbios
@@ -59,57 +71,28 @@ libexec/hald-probe-volume
 libexec/hald-runner
 sbin/hald
 %%PORTDOCS%%%%DOCSDIR%%/README.freebsd
-%%DOCSDIR%%/conf/match-USB-camera.fdi
-%%DOCSDIR%%/conf/match-USB-mp3-player.fdi
-%%DOCSDIR%%/conf/match-cardreader.fdi
-%%DOCSDIR%%/conf/storage-non-fixed.fdi
-%%DOCSDIR%%/conf/storage-policy-examples.fdi
-%%DOCSDIR%%/conf/storage-skip-all.fdi
 %%DATADIR%%/dist/hal.conf
 %%DATADIR%%/fdi/fdi.dtd
-%%DATADIR%%/fdi/fdi.rng
-%%DATADIR%%/fdi/information/10freedesktop/10-camera-ptp.fdi
-%%DATADIR%%/fdi/information/10freedesktop/10-cd-dvd-burner.fdi
-%%DATADIR%%/fdi/information/10freedesktop/10-usb-card-readers.fdi
-%%DATADIR%%/fdi/information/10freedesktop/10-usb-music-players.fdi
-%%DATADIR%%/fdi/information/10freedesktop/10-usb-pda.fdi
-%%DATADIR%%/fdi/information/10freedesktop/10-usb-zip-drives.fdi
-%%DATADIR%%/fdi/information/10freedesktop/10-wireless-mice.fdi
+%%DATADIR%%/fdi/information/10freedesktop/01-deprecated-keys.fdi
 @exec mkdir -p %D/%%DATADIR%%/fdi/information/20thirdparty
-%%DATADIR%%/fdi/policy/10osvendor/10-keyboard-policy.fdi
+%%DATADIR%%/fdi/policy/10osvendor/10-dockstation.fdi
+%%DATADIR%%/fdi/policy/10osvendor/10-input-policy.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-laptop-panel-mgmt-policy.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-power-mgmt-policy.fdi
-%%DATADIR%%/fdi/policy/10osvendor/10-toshiba-buttons.fdi
+%%DATADIR%%/fdi/policy/10osvendor/10-rfkill-switch.fdi
+%%DATADIR%%/fdi/policy/10osvendor/10-tabletPCs.fdi
+%%DATADIR%%/fdi/policy/10osvendor/10-x11-input.fdi
 %%DATADIR%%/fdi/policy/10osvendor/15-storage-luks.fdi
 %%DATADIR%%/fdi/policy/10osvendor/20-storage-methods.fdi
+%%DATADIR%%/fdi/policy/10osvendor/30-wol.fdi
+share/PolicyKit/policy/org.freedesktop.hal.dockstation.policy
+share/PolicyKit/policy/org.freedesktop.hal.killswitch.policy
+share/PolicyKit/policy/org.freedesktop.hal.policy
+share/PolicyKit/policy/org.freedesktop.hal.power-management.policy
+share/PolicyKit/policy/org.freedesktop.hal.storage.policy
+share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 @exec mkdir -p %D/%%DATADIR%%/fdi/policy/20thirdparty
-%%DATADIR%%/fdi/preprobe/10osvendor/10-ide-drives.fdi
 @exec mkdir -p %D/%%DATADIR%%/fdi/preprobe/20thirdparty
-share/locale/cs/LC_MESSAGES/hal.mo
-share/locale/da/LC_MESSAGES/hal.mo
-share/locale/de/LC_MESSAGES/hal.mo
-share/locale/el/LC_MESSAGES/hal.mo
-share/locale/es/LC_MESSAGES/hal.mo
-share/locale/eu/LC_MESSAGES/hal.mo
-share/locale/fi/LC_MESSAGES/hal.mo
-share/locale/fr/LC_MESSAGES/hal.mo
-share/locale/hu/LC_MESSAGES/hal.mo
-share/locale/it/LC_MESSAGES/hal.mo
-share/locale/ja/LC_MESSAGES/hal.mo
-share/locale/km/LC_MESSAGES/hal.mo
-share/locale/ko/LC_MESSAGES/hal.mo
-share/locale/lt/LC_MESSAGES/hal.mo
-share/locale/nb/LC_MESSAGES/hal.mo
-share/locale/nl/LC_MESSAGES/hal.mo
-share/locale/pa/LC_MESSAGES/hal.mo
-share/locale/pl/LC_MESSAGES/hal.mo
-share/locale/pt/LC_MESSAGES/hal.mo
-share/locale/pt_BR/LC_MESSAGES/hal.mo
-share/locale/ru/LC_MESSAGES/hal.mo
-share/locale/sl_SI/LC_MESSAGES/hal.mo
-share/locale/uk/LC_MESSAGES/hal.mo
-share/locale/zh_CN/LC_MESSAGES/hal.mo
-share/locale/zh_TW/LC_MESSAGES/hal.mo
 @dirrm %%DATADIR%%/fdi/preprobe/20thirdparty
 @dirrm %%DATADIR%%/fdi/preprobe/10osvendor
 @dirrm %%DATADIR%%/fdi/preprobe
@@ -122,8 +105,8 @@ share/locale/zh_TW/LC_MESSAGES/hal.mo
 @dirrm %%DATADIR%%/fdi
 @dirrm %%DATADIR%%/dist
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/conf
 @dirrm %%DOCSDIR%%
+@dirrm libexec/hal/scripts/freebsd
 @dirrm libexec/hal/scripts
 @dirrm libexec/hal
 @dirrm include/hal
@@ -136,8 +119,8 @@ share/locale/zh_TW/LC_MESSAGES/hal.mo
 @unexec rm -rf /var/run/hald/hald-local 2>/dev/null || true
 @unexec rm -rf /var/run/hald/hald-runner 2>/dev/null || true
 @unexec rmdir /var/run/hald 2>/dev/null || true
-@dirrmtry share/locale/sl_SI/LC_MESSAGES
-@dirrmtry share/locale/sl_SI
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
+@unexec rmdir /var/cache/hald 2>/dev/null || true
+@unexec rmdir /var/cache 2>/dev/null || true
+@unexec /var/lib/hal 2>/dev/null || true
+@unexec /var/lib 2>/dev/null || true
 %%MEDIA%%@unexec rmdir /media 2>/dev/null || true

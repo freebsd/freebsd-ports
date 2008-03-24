@@ -32,7 +32,16 @@ POST-INSTALL)
 		fi
 	fi
 
-	/usr/bin/install -d -o ${USER} -g ${GROUP} /var/run/polkitd
+	/usr/bin/install -d -o root -m 0770 -g ${GROUP} /var/run/PolicyKit
+	/usr/bin/install -d -o root -m 0770 -g ${GROUP} /var/lib/PolicyKit
+	/usr/bin/install -d -o root -m 0775 -g ${GROUP} /var/lib/PolicyKit-public
+	/bin/mkdir -p /var/lib/misc
+	/usr/bin/touch -f /var/lib/misc/PolicyKit.reload
+	/usr/bin/chgrp ${GROUP} /var/lib/misc/PolicyKit.reload
+	/bin/chmod 0775 /var/lib/misc/PolicyKit.reload
+	for i in ${PKG_PREFIX}/libexec/polkit-read-auth-helper ${PKG_PREFIX}/libexec/polkit-set-default-helper ${PKG_PREFIX}/libexec/polkit-grant-helper ${PKG_PREFIX}/libexec/polkit-grant-helper-pam ${PKG_PREFIX}/libexec/polkit-explicit-grant-helper ${PKG_PREFIX}/libexec/polkit-revoke-helper /var/lib/misc/PolicyKit.reload; do
+	    /usr/bin/chgrp ${GROUP} ${i}
+	done
 	exit 0
 	;;
 esac
