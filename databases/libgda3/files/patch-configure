@@ -1,11 +1,12 @@
---- configure.orig	Tue Apr  6 14:10:07 2004
-+++ configure	Tue Apr  6 14:10:19 2004
-@@ -23012,7 +23012,7 @@
- _ACEOF
- 
- 		FIREBIRD_CFLAGS="-I${firebirddir}/include"
--		FIREBIRD_LIBS="-L${firebirddir}/lib -lgds -ldl -lcrypt"
-+		FIREBIRD_LIBS="-L${firebirddir}/lib -lgds -lcrypt"
- 	fi
- fi
-
+--- configure.orig	2008-01-31 22:16:42.000000000 +0100
++++ configure	2008-01-31 22:19:04.000000000 +0100
+@@ -24065,6 +24065,9 @@ echo "$as_me: WARNING: Postgres backend 
+                 elif test -f ${postgresdir}/include/postgresql/7.4/libpq-fe.h
+ 		then
+ 			POSTGRES_CFLAGS=-I${postgresdir}/include/7.4/postgresql
++		elif test -f ${postgresdir}/include/postgresql/server/server/c.h
++		then
++			POSTGRES_CFLAGS=-I${postgresdir}/include/postgresql
+ 		else
+ 			{ echo "$as_me:$LINENO: WARNING: Postgres include files not found" >&5
+ echo "$as_me: WARNING: Postgres include files not found" >&2;}

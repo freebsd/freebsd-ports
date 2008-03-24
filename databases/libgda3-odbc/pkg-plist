@@ -1,0 +1,5 @@
+lib/libgda-%%VERSION%%/providers/libgda-odbc.a
+lib/libgda-%%VERSION%%/providers/libgda-odbc.la
+lib/libgda-%%VERSION%%/providers/libgda-odbc.so
+libdata/pkgconfig/libgda-odbc-%%VERSION%%.pc
+share/libgda-%%VERSION%%/odbc_specs_dsn.xml

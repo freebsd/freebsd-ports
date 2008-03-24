@@ -1,0 +1,5 @@
+lib/libgda-%%VERSION%%/providers/libgda-ldap.a
+lib/libgda-%%VERSION%%/providers/libgda-ldap.la
+lib/libgda-%%VERSION%%/providers/libgda-ldap.so
+libdata/pkgconfig/libgda-ldap-%%VERSION%%.pc
+share/libgda-%%VERSION%%/ldap_specs_dsn.xml

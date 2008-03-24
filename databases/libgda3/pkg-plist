@@ -1,9 +1,13 @@
-bin/gda-config-tool
-bin/gda-report-test
-bin/gda-run
-bin/gda-test-delimiter
-etc/libgda/config
-etc/libgda/sales_test.db
+bin/gda-author-dict-file-%%VERSION%%
+bin/gda-config-tool-%%VERSION%%
+bin/gda-diagnose-%%VERSION%%
+bin/gda-inspect-dict-file-%%VERSION%%
+bin/gda-list-config-%%VERSION%%
+bin/gda-report-test-%%VERSION%%
+bin/gda-run-%%VERSION%%
+bin/gda-test-connection-%%VERSION%%
+etc/libgda-%%VERSION%%/config
+etc/libgda-%%VERSION%%/sales_test.db
 include/libgda-%%VERSION%%/libgda-report/gda-report-document.h
 include/libgda-%%VERSION%%/libgda-report/gda-report-item-detail.h
 include/libgda-%%VERSION%%/libgda-report/gda-report-item-label.h
@@ -19,13 +23,14 @@ include/libgda-%%VERSION%%/libgda-report/gda-report-result.h
 include/libgda-%%VERSION%%/libgda-report/gda-report-types.h
 include/libgda-%%VERSION%%/libgda-report/gda-report-valid.h
 include/libgda-%%VERSION%%/libgda-report/gda-report.h
-include/libgda-%%VERSION%%/libgda/gda-blob.h
+include/libgda-%%VERSION%%/libgda/gda-blob-op.h
 include/libgda-%%VERSION%%/libgda/gda-client.h
 include/libgda-%%VERSION%%/libgda/gda-column-index.h
 include/libgda-%%VERSION%%/libgda/gda-column.h
 include/libgda-%%VERSION%%/libgda/gda-command.h
 include/libgda-%%VERSION%%/libgda/gda-config.h
 include/libgda-%%VERSION%%/libgda/gda-connection-event.h
+include/libgda-%%VERSION%%/libgda/gda-connection-private.h
 include/libgda-%%VERSION%%/libgda/gda-connection.h
 include/libgda-%%VERSION%%/libgda/gda-data-access-wrapper.h
 include/libgda-%%VERSION%%/libgda/gda-data-handler.h
@@ -47,6 +52,11 @@ include/libgda-%%VERSION%%/libgda/gda-dict-constraint.h
 include/libgda-%%VERSION%%/libgda/gda-dict-database.h
 include/libgda-%%VERSION%%/libgda/gda-dict-field.h
 include/libgda-%%VERSION%%/libgda/gda-dict-function.h
+include/libgda-%%VERSION%%/libgda/gda-dict-private.h
+include/libgda-%%VERSION%%/libgda/gda-dict-reg-aggregates.h
+include/libgda-%%VERSION%%/libgda/gda-dict-reg-functions.h
+include/libgda-%%VERSION%%/libgda/gda-dict-reg-queries.h
+include/libgda-%%VERSION%%/libgda/gda-dict-reg-types.h
 include/libgda-%%VERSION%%/libgda/gda-dict-table.h
 include/libgda-%%VERSION%%/libgda/gda-dict-type.h
 include/libgda-%%VERSION%%/libgda/gda-dict.h
@@ -60,6 +70,7 @@ include/libgda-%%VERSION%%/libgda/gda-marshal.h
 include/libgda-%%VERSION%%/libgda/gda-object-ref.h
 include/libgda-%%VERSION%%/libgda/gda-object.h
 include/libgda-%%VERSION%%/libgda/gda-parameter-list.h
+include/libgda-%%VERSION%%/libgda/gda-parameter-util.h
 include/libgda-%%VERSION%%/libgda/gda-parameter.h
 include/libgda-%%VERSION%%/libgda/gda-quark-list.h
 include/libgda-%%VERSION%%/libgda/gda-query-condition.h
@@ -78,14 +89,17 @@ include/libgda-%%VERSION%%/libgda/gda-query.h
 include/libgda-%%VERSION%%/libgda/gda-referer.h
 include/libgda-%%VERSION%%/libgda/gda-renderer.h
 include/libgda-%%VERSION%%/libgda/gda-row.h
+include/libgda-%%VERSION%%/libgda/gda-server-operation.h
 include/libgda-%%VERSION%%/libgda/gda-server-provider-extra.h
 include/libgda-%%VERSION%%/libgda/gda-server-provider-private.h
 include/libgda-%%VERSION%%/libgda/gda-server-provider.h
 include/libgda-%%VERSION%%/libgda/gda-threader.h
-include/libgda-%%VERSION%%/libgda/gda-transaction.h
+include/libgda-%%VERSION%%/libgda/gda-transaction-status-private.h
+include/libgda-%%VERSION%%/libgda/gda-transaction-status.h
 include/libgda-%%VERSION%%/libgda/gda-util.h
 include/libgda-%%VERSION%%/libgda/gda-value.h
 include/libgda-%%VERSION%%/libgda/gda-xml-storage.h
+include/libgda-%%VERSION%%/libgda/graph/gda-dict-reg-graphs.h
 include/libgda-%%VERSION%%/libgda/graph/gda-graph-item.h
 include/libgda-%%VERSION%%/libgda/graph/gda-graph-query.h
 include/libgda-%%VERSION%%/libgda/graph/gda-graph.h
@@ -98,128 +112,101 @@ include/libgda-%%VERSION%%/libgda/handlers/gda-handler-type.h
 include/libgda-%%VERSION%%/libgda/libgda.h
 include/libgda-%%VERSION%%/libsql/sql_parser.h
 include/libgda-%%VERSION%%/sql-delimiter/gda-sql-delimiter.h
-lib/libgda-3.a
-lib/libgda-3.la
-lib/libgda-3.so
-lib/libgda-3.so.3
-lib/libgda-report-3.a
-lib/libgda-report-3.la
-lib/libgda-report-3.so
-lib/libgda-report-3.so.3
-lib/libgda_graph-3.a
-lib/libgda_graph-3.la
-lib/libgda_graph-3.so
-lib/libgda_graph-3.so.3
-lib/libgda_handlers-3.a
-lib/libgda_handlers-3.la
-lib/libgda_handlers-3.so
-lib/libgda_handlers-3.so.3
-lib/libgda_sql_delimiter-3.a
-lib/libgda_sql_delimiter-3.la
-lib/libgda_sql_delimiter-3.so
-lib/libgda_sql_delimiter-3.so.3
-lib/libgdasql.a
-lib/libgdasql.la
-lib/libgdasql.so
-lib/libgdasql.so.3
-%%FIREBIRD:%%lib/libgda-%%VERSION%%/providers/libgda-firebird.a
-%%FIREBIRD:%%lib/libgda-%%VERSION%%/providers/libgda-firebird.la
-%%FIREBIRD:%%lib/libgda-%%VERSION%%/providers/libgda-firebird.so
-%%FREETDS:%%lib/libgda-%%VERSION%%/providers/libgda-freetds.a
-%%FREETDS:%%lib/libgda-%%VERSION%%/providers/libgda-freetds.la
-%%FREETDS:%%lib/libgda-%%VERSION%%/providers/libgda-freetds.so
-%%LDAP:%%lib/libgda-%%VERSION%%/providers/libgda-ldap.a
-%%LDAP:%%lib/libgda-%%VERSION%%/providers/libgda-ldap.la
-%%LDAP:%%lib/libgda-%%VERSION%%/providers/libgda-ldap.so
-%%MDB:%%lib/libgda-%%VERSION%%/providers/libgda-mdb.a
-%%MDB:%%lib/libgda-%%VERSION%%/providers/libgda-mdb.la
-%%MDB:%%lib/libgda-%%VERSION%%/providers/libgda-mdb.so
-%%MYSQL:%%lib/libgda-%%VERSION%%/providers/libgda-mysql.a
-%%MYSQL:%%lib/libgda-%%VERSION%%/providers/libgda-mysql.la
-%%MYSQL:%%lib/libgda-%%VERSION%%/providers/libgda-mysql.so
-%%ODBC:%%lib/libgda-%%VERSION%%/providers/libgda-odbc.a
-%%ODBC:%%lib/libgda-%%VERSION%%/providers/libgda-odbc.la
-%%ODBC:%%lib/libgda-%%VERSION%%/providers/libgda-odbc.so
-%%POSTGRES:%%lib/libgda-%%VERSION%%/providers/libgda-postgres.a
-%%POSTGRES:%%lib/libgda-%%VERSION%%/providers/libgda-postgres.la
-%%POSTGRES:%%lib/libgda-%%VERSION%%/providers/libgda-postgres.so
-%%SYBASE:%%lib/libgda-%%VERSION%%/providers/libgda-sybase.a
-%%SYBASE:%%lib/libgda-%%VERSION%%/providers/libgda-sybase.la
-%%SYBASE:%%lib/libgda-%%VERSION%%/providers/libgda-sybase.so
+lib/libgda-%%VERSION%%.a
+lib/libgda-%%VERSION%%.la
+lib/libgda-%%VERSION%%.so
+lib/libgda-%%VERSION%%.so.3
 lib/libgda-%%VERSION%%/providers/libgda-sqlite.a
 lib/libgda-%%VERSION%%/providers/libgda-sqlite.la
 lib/libgda-%%VERSION%%/providers/libgda-sqlite.so
-libdata/pkgconfig/libgda-2.0.pc
-share/libgda/dtd/libgda-array.dtd
-share/libgda/dtd/libgda-dict.dtd
-%%MYSQL:%%share/libgda/mysql_specs_create_db.xml
-%%MYSQL:%%share/libgda/mysql_specs_dsn.xml
-%%POSTGRES:%%share/libgda/postgres_specs_create_db.xml
-%%POSTGRES:%%share/libgda/postgres_specs_dsn.xml
-share/libgda/sqlite_specs_create_db.xml
-share/libgda/sqlite_specs_dsn.xml
-share/libgda/xml/gda-report.dtd
-share/libgda/xml/gda-report-result.dtd
-share/libgda/xml/gda-xml-query.dtd
-share/libgda/xml/gda-xml-query.xsl
-share/locale/az/LC_MESSAGES/libgda-3.mo
-share/locale/ca/LC_MESSAGES/libgda-3.mo
-share/locale/cs/LC_MESSAGES/libgda-3.mo
-share/locale/da/LC_MESSAGES/libgda-3.mo
-share/locale/de/LC_MESSAGES/libgda-3.mo
-share/locale/el/LC_MESSAGES/libgda-3.mo
-share/locale/en_CA/LC_MESSAGES/libgda-3.mo
-share/locale/en_GB/LC_MESSAGES/libgda-3.mo
-share/locale/es/LC_MESSAGES/libgda-3.mo
-share/locale/eu/LC_MESSAGES/libgda-3.mo
-share/locale/fa/LC_MESSAGES/libgda-3.mo
-share/locale/fi/LC_MESSAGES/libgda-3.mo
-share/locale/fr/LC_MESSAGES/libgda-3.mo
-share/locale/ga/LC_MESSAGES/libgda-3.mo
-share/locale/gl/LC_MESSAGES/libgda-3.mo
-share/locale/hr/LC_MESSAGES/libgda-3.mo
-share/locale/hu/LC_MESSAGES/libgda-3.mo
-share/locale/it/LC_MESSAGES/libgda-3.mo
-share/locale/ja/LC_MESSAGES/libgda-3.mo
-share/locale/ko/LC_MESSAGES/libgda-3.mo
-share/locale/ml/LC_MESSAGES/libgda-3.mo
-share/locale/ms/LC_MESSAGES/libgda-3.mo
-share/locale/nb/LC_MESSAGES/libgda-3.mo
-share/locale/ne/LC_MESSAGES/libgda-3.mo
-share/locale/nl/LC_MESSAGES/libgda-3.mo
-share/locale/no/LC_MESSAGES/libgda-3.mo
-share/locale/pl/LC_MESSAGES/libgda-3.mo
-share/locale/pt/LC_MESSAGES/libgda-3.mo
-share/locale/pt_BR/LC_MESSAGES/libgda-3.mo
-share/locale/ru/LC_MESSAGES/libgda-3.mo
-share/locale/rw/LC_MESSAGES/libgda-3.mo
-share/locale/sk/LC_MESSAGES/libgda-3.mo
-share/locale/sl/LC_MESSAGES/libgda-3.mo
-share/locale/sq/LC_MESSAGES/libgda-3.mo
-share/locale/sr/LC_MESSAGES/libgda-3.mo
-share/locale/sr@Latn/LC_MESSAGES/libgda-3.mo
-share/locale/sv/LC_MESSAGES/libgda-3.mo
-share/locale/tr/LC_MESSAGES/libgda-3.mo
-share/locale/uk/LC_MESSAGES/libgda-3.mo
-share/locale/vi/LC_MESSAGES/libgda-3.mo
-share/locale/zh_CN/LC_MESSAGES/libgda-3.mo
-share/locale/zh_HK/LC_MESSAGES/libgda-3.mo
-share/locale/zh_TW/LC_MESSAGES/libgda-3.mo
-@dirrm share/libgda/xml
-@dirrm share/libgda/dtd
-@dirrm share/libgda
+lib/libgda-report-%%VERSION%%.a
+lib/libgda-report-%%VERSION%%.la
+lib/libgda-report-%%VERSION%%.so
+lib/libgda-report-%%VERSION%%.so.3
+lib/libgdasql-%%VERSION%%.a
+lib/libgdasql-%%VERSION%%.la
+lib/libgdasql-%%VERSION%%.so
+lib/libgdasql-%%VERSION%%.so.3
+libdata/pkgconfig/libgda-%%VERSION%%.pc
+libdata/pkgconfig/libgda-sqlite-%%VERSION%%.pc
+share/libgda-%%VERSION%%/dtd/libgda-array.dtd
+share/libgda-%%VERSION%%/dtd/libgda-dict.dtd
+share/libgda-%%VERSION%%/dtd/libgda-paramlist.dtd
+share/libgda-%%VERSION%%/dtd/libgda-server-operation.dtd
+share/libgda-%%VERSION%%/sqlite_specs_add_column.xml
+share/libgda-%%VERSION%%/sqlite_specs_create_db.xml
+share/libgda-%%VERSION%%/sqlite_specs_create_index.xml
+share/libgda-%%VERSION%%/sqlite_specs_create_table.xml
+share/libgda-%%VERSION%%/sqlite_specs_drop_db.xml
+share/libgda-%%VERSION%%/sqlite_specs_drop_index.xml
+share/libgda-%%VERSION%%/sqlite_specs_drop_table.xml
+share/libgda-%%VERSION%%/sqlite_specs_dsn.xml
+share/libgda-%%VERSION%%/sqlite_specs_rename_table.xml
+share/libgda-%%VERSION%%/xml/gda-report-result.dtd
+share/libgda-%%VERSION%%/xml/gda-report.dtd
+share/libgda-%%VERSION%%/xml/gda-xml-query.dtd
+share/libgda-%%VERSION%%/xml/gda-xml-query.xsl
+share/locale/ar/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/az/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ca/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/cs/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/da/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/de/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/dz/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/el/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/en_CA/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/en_GB/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/es/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/eu/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/fa/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/fi/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/fr/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ga/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/gl/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/hr/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/hu/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/it/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ja/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ko/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/lt/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ml/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ms/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/nb/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ne/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/nl/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/pl/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/pt/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/pt_BR/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/ru/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/rw/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/sk/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/sl/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/sq/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/sr/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/sr@Latn/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/sv/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/tr/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/uk/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/vi/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/zh_CN/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/zh_HK/LC_MESSAGES/libgda-%%VERSION%%.mo
+share/locale/zh_TW/LC_MESSAGES/libgda-%%VERSION%%.mo
+@dirrm share/libgda-%%VERSION%%/xml
+@dirrm share/libgda-%%VERSION%%/dtd
+@dirrm share/libgda-%%VERSION%%/
 @dirrm lib/libgda-%%VERSION%%/providers
 @dirrm lib/libgda-%%VERSION%%
-@dirrm lib/libgda
 @dirrm include/libgda-%%VERSION%%/sql-delimiter
 @dirrm include/libgda-%%VERSION%%/libsql
-@dirrm include/libgda-%%VERSION%%/libgda-report
 @dirrm include/libgda-%%VERSION%%/libgda/handlers
 @dirrm include/libgda-%%VERSION%%/libgda/graph
 @dirrm include/libgda-%%VERSION%%/libgda
+@dirrm include/libgda-%%VERSION%%/libgda-report
 @dirrm include/libgda-%%VERSION%%
-@dirrm etc/libgda
+@comment lib/libgda-%%VERSION%%/providers/
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz

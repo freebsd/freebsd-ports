@@ -105,6 +105,13 @@
     SUBDIR += libgda2
     SUBDIR += libgda2-reference
     SUBDIR += libgda3
+    SUBDIR += libgda3-firebird
+    SUBDIR += libgda3-freetds
+    SUBDIR += libgda3-ldap
+    SUBDIR += libgda3-mdb
+    SUBDIR += libgda3-mysql
+    SUBDIR += libgda3-odbc
+    SUBDIR += libgda3-postgresql
     SUBDIR += libgda3-reference
     SUBDIR += libgdamm
     SUBDIR += libgnomedb
