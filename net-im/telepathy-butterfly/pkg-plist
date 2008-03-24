@@ -1,21 +1,50 @@
-bin/telepathy-butterfly
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/__init__.py
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/__init__.pyc
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/__init__.pyo
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/connection.py
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/connection.pyc
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/connection.pyo
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/connmgr.py
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/connmgr.pyc
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/connmgr.pyo
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/contacts.py
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/contacts.pyc
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/contacts.pyo
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/conversation.py
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/conversation.pyc
-%%PYTHON_SITELIBDIR%%/TelepathyButterfly/conversation.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/__init__.py
+%%PYTHON_SITELIBDIR%%/butterfly/__init__.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/__init__.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/aliasing.py
+%%PYTHON_SITELIBDIR%%/butterfly/aliasing.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/aliasing.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/avatars.py
+%%PYTHON_SITELIBDIR%%/butterfly/avatars.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/avatars.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/channel/__init__.py
+%%PYTHON_SITELIBDIR%%/butterfly/channel/__init__.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/channel/__init__.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/channel/contact_list.py
+%%PYTHON_SITELIBDIR%%/butterfly/channel/contact_list.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/channel/contact_list.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/channel/group.py
+%%PYTHON_SITELIBDIR%%/butterfly/channel/group.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/channel/group.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/channel/text.py
+%%PYTHON_SITELIBDIR%%/butterfly/channel/text.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/channel/text.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/channel_manager.py
+%%PYTHON_SITELIBDIR%%/butterfly/channel_manager.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/channel_manager.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/connection.py
+%%PYTHON_SITELIBDIR%%/butterfly/connection.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/connection.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/connection_manager.py
+%%PYTHON_SITELIBDIR%%/butterfly/connection_manager.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/connection_manager.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/handle.py
+%%PYTHON_SITELIBDIR%%/butterfly/handle.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/handle.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/presence.py
+%%PYTHON_SITELIBDIR%%/butterfly/presence.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/presence.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/util/__init__.py
+%%PYTHON_SITELIBDIR%%/butterfly/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/util/decorator.py
+%%PYTHON_SITELIBDIR%%/butterfly/util/decorator.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/util/decorator.pyo
+libexec/telepathy-butterfly
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.butterfly.service
 share/telepathy/managers/butterfly.manager
-@dirrm %%PYTHON_SITELIBDIR%%/TelepathyButterfly
+@dirrm %%PYTHON_SITELIBDIR%%/butterfly/util
+@dirrm %%PYTHON_SITELIBDIR%%/butterfly/channel
+@dirrm %%PYTHON_SITELIBDIR%%/butterfly
 @dirrmtry share/telepathy/managers
 @dirrmtry share/telepathy
