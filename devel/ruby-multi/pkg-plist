@@ -1,0 +1,4 @@
+%%RUBY_SITELIBDIR%%/multi.rb
+%%RUBY_SITELIBDIR%%/smulti.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multi_example.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
