@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	gcc4
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	llvm-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}.0-${PORTVERSION}.source
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}.2-${PORTVERSION}.source
 
 MAINTAINER=	emil@cs.rmit.edu.au
-COMMENT=	gcc4 frontend for LLVM
+COMMENT=	A gcc4 frontend for LLVM
+
+BUILD_DEPENDS=	llc:${PORTSDIR}/devel/llvm
 
 GNU_CONFIGURE=	yes
 USE_BISON=	build
@@ -23,9 +24,7 @@ USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 ONLY_FOR_ARCHS=	i386 amd64
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/llc:${PORTSDIR}/devel/llvm
-
-GCC_VER=	4.0.1
+GCC_VER=	4.2.1
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 TARGLIB=	${PREFIX}/lib/gcc-llvm-${PORTVERSION}
 CONFIGURE_SCRIPT=	../configure
@@ -63,8 +62,6 @@ post-patch:
 post-install:
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
 	         ${PREFIX}/man/man7/gfdl.7 ${PREFIX}/man/man7/gpl.7
-	${MV} -f ${PREFIX}/include/mf-runtime.h \
-	         ${TARGLIB}/gcc/${CONFIGURE_TARGET}/4.0.1/include
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///}

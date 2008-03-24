@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 
