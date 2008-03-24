@@ -1,0 +1,62 @@
+include/libepc-1.0/libepc/consumer.h
+include/libepc-1.0/libepc/contents.h
+include/libepc-1.0/libepc/dispatcher.h
+include/libepc-1.0/libepc/enums.h
+include/libepc-1.0/libepc/marshal.h
+include/libepc-1.0/libepc/protocol.h
+include/libepc-1.0/libepc/publisher.h
+include/libepc-1.0/libepc/service-info.h
+include/libepc-1.0/libepc/service-monitor.h
+include/libepc-1.0/libepc/service-type.h
+include/libepc-1.0/libepc/shell.h
+include/libepc-1.0/libepc/tls.h
+include/libepc-ui-1.0/libepc-ui/password-dialog.h
+include/libepc-ui-1.0/libepc-ui/progress-window.h
+lib/libepc-1.0.a
+lib/libepc-1.0.la
+lib/libepc-1.0.so
+lib/libepc-1.0.so.1
+lib/libepc-ui-1.0.a
+lib/libepc-ui-1.0.la
+lib/libepc-ui-1.0.so
+lib/libepc-ui-1.0.so.1
+libdata/pkgconfig/libepc-1.0.pc
+libdata/pkgconfig/libepc-ui-1.0.pc
+%%DOCSDIR%%/EpcConsumer.html
+%%DOCSDIR%%/EpcDispatcher.html
+%%DOCSDIR%%/EpcPasswordDialog.html
+%%DOCSDIR%%/EpcProgressWindow.html
+%%DOCSDIR%%/EpcPublisher.html
+%%DOCSDIR%%/EpcServiceMonitor.html
+%%DOCSDIR%%/consuming.html
+%%DOCSDIR%%/dns-sd-support.html
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/internal-api.html
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/libepc-1.0.devhelp
+%%DOCSDIR%%/libepc-1.0.devhelp2
+%%DOCSDIR%%/libepc-10-EpcAuthContext.html
+%%DOCSDIR%%/libepc-10-EpcContents.html
+%%DOCSDIR%%/libepc-10-EpcProtocol.html
+%%DOCSDIR%%/libepc-10-EpcServiceInfo.html
+%%DOCSDIR%%/libepc-10-EpcServiceType.html
+%%DOCSDIR%%/libepc-10-EpcShell.html
+%%DOCSDIR%%/libepc-10-EpcTls.html
+%%DOCSDIR%%/publishing.html
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
+%%DOCSDIR%%/widgets.html
+share/locale/ca/LC_MESSAGES/libepc.mo
+share/locale/de/LC_MESSAGES/libepc.mo
+share/locale/es/LC_MESSAGES/libepc.mo
+share/locale/sv/LC_MESSAGES/libepc.mo
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrm %%DOCSDIR%%
+@dirrm include/libepc-ui-1.0/libepc-ui
+@dirrm include/libepc-ui-1.0
+@dirrm include/libepc-1.0/libepc
+@dirrm include/libepc-1.0

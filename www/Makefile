@@ -282,6 +282,7 @@
     SUBDIR += kompozer
     SUBDIR += larbin
     SUBDIR += libapreq2
+    SUBDIR += libepc
     SUBDIR += libghttp
     SUBDIR += libgtkhtml
     SUBDIR += libmicrohttpd
