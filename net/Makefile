@@ -465,6 +465,7 @@
     SUBDIR += p5-Net-Amazon-EC2
     SUBDIR += p5-Net-Amazon-MechanicalTurk
     SUBDIR += p5-Net-Amazon-S3
+    SUBDIR += p5-Net-Amazon-Signature
     SUBDIR += p5-Net-Analysis
     SUBDIR += p5-Net-BGP
     SUBDIR += p5-Net-Blogger
