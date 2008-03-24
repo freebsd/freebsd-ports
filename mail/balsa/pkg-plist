@@ -3,6 +3,8 @@ bin/balsa-ab
 etc/sound/events/balsa.soundlist
 libdata/bonobo/servers/GNOME_Balsa.server
 share/applications/balsa.desktop
+share/balsa/gtksourceview-2.0/balsa-mail-style.xml
+share/balsa/gtksourceview-2.0/balsa-mail.lang
 share/balsa/hicolor/16x16/apps/balsa-drop-down.png
 share/balsa/hicolor/16x16/apps/balsa-encrypted.png
 share/balsa/hicolor/16x16/apps/balsa-mark-all.png
@@ -151,6 +153,7 @@ share/locale/zh_TW/LC_MESSAGES/balsa.mo
 @dirrm share/balsa/hicolor/16x16/apps
 @dirrm share/balsa/hicolor/16x16
 @dirrm share/balsa/hicolor
+@dirrm share/balsa/gtksourceview-2.0
 @dirrm share/balsa
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
