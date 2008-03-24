@@ -6610,6 +6610,7 @@ libebml		ports/textproc/libebml
 libecc		ports/security/libecc
 libelf		ports/devel/libelf
 libemf		ports/graphics/libemf
+libepc		ports/www/libepc
 libepp-nicbr	ports/devel/libepp-nicbr
 liberation-fonts-ttf	ports/x11-fonts/liberation-fonts-ttf
 liberator	ports/net-p2p/liberator
