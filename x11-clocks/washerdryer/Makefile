@@ -7,7 +7,7 @@
 
 PORTNAME=	washerdryer
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://lucille.dhs.org/
 DISTNAME=	washerDryer-${PORTVERSION}
@@ -16,11 +16,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that keeps track of the loads in your washer and dryer
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/washerDryer
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
-USE_XPM=	yes
+USE_XORG=	x11 xau xdmcp xext xi xpm
 
 MANCOMPRESSED=	yes
 MAN1=		washerDryer.1

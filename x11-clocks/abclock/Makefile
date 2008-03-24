@@ -7,7 +7,7 @@
 
 PORTNAME=	abclock
 PORTVERSION=	1.0d
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://odur.let.rug.nl/~kleiweg/abclock/
 
@@ -16,8 +16,9 @@ COMMENT=	Clock for X that displays hours and minutes in an analog fashion
 
 PLIST_FILES=	bin/abclock bin/abc_img
 
-USE_X_PREFIX=	yes
 MAKE_ARGS=	CC="${CC}" OPT="${CFLAGS}"
+
+USE_XORG=	x11 xau xdmcp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abclock ${PREFIX}/bin

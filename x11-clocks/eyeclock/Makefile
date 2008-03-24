@@ -7,7 +7,7 @@
 
 PORTNAME=	eyeclock
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://download.vector.co.jp/pack/unix/personal/tokei/
 DISTNAME=	eyeclk20
@@ -17,9 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clock with eyes following the mouse pointer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xau xdmcp xpm xt ice
 
 MAN1=		eyeclock.1
 

@@ -11,7 +11,7 @@
 
 PORTNAME=	rclock
 PORTVERSION=	2.7.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
 		ftp://mason.primenet.com.au/pub/rxvt/%SUBDIR%/ \
@@ -24,7 +24,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analog clock for X w/appointment reminder and mail notification
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xau xdmcp ice
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-DMAIL_SPOOL='\"/var/mail/\"'"
 ALL_TARGET=	clock

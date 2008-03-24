@@ -7,7 +7,7 @@
 
 PORTNAME=	wmblueclock
 PORTVERSION=	0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/xutils
@@ -16,8 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple dockable clock application
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xau xdmcp xext xpm
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/wmblueclock

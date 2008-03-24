@@ -7,7 +7,7 @@
 
 PORTNAME=	bdesktopclock
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.bucote.com/opensource/bdesktopclock/
 
@@ -18,10 +18,11 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 WRKSRC=		${WRKDIR}/BDesktopClock
 
-USE_X_PREFIX=	yes
 USE_QT_VER=	3
 MAKE_ENV+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+USE_XORG=	x11 xau xcursor xdmcp xext xfixes xft xi xinerama \
+		xrandr xrender xt
 
 PLIST_FILES=	bin/BDesktopClock
 
