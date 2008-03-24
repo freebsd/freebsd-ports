@@ -2894,7 +2894,6 @@ audio/x4x||2007-04-10|Has expired: Does not build
 audio/marlin||2007-04-10|Has expired: does not build with new nautilus-cd-burner
 chinese/tatter-tools||2007-04-10|Has expired: Incorrect pkg-plist
 chinese/vim-scdoc||2007-04-10|Has expired: Does not build
-databases/mergeant||2007-04-10|Has expired: does not build with new libgnomedb
 databases/pecl-paradox||2007-04-10|Has expired: Does not compile
 deskutils/yank||2007-04-10|Has expired: Incomplete pkg-plist
 emulators/kmamerun||2007-04-10|Has expired: Project was abandoned 4 years ago and expects an old version of XMAME, please use other frontends instead (like gxmame)
