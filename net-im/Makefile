@@ -22,6 +22,7 @@
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += emesene
+    SUBDIR += empathy
     SUBDIR += eva
     SUBDIR += finch
     SUBDIR += firetalk
