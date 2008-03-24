@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-alarm
 PORTVERSION=	0.3.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.snika.uklinux.net/xmms-alarm/
 
@@ -17,9 +17,10 @@ COMMENT=	Alarm timer plugin for the X Multimedia System
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget gtk12
 GNU_CONFIGURE=	yes
+USE_XORG=	x11 xaw xmu xpm
 
 PLIST_FILES=	lib/xmms/General/libalarm.so
 
