@@ -10675,6 +10675,7 @@ p5-Net-Amazon-EC2	ports/net/p5-Net-Amazon-EC2
 p5-Net-Amazon-MechanicalTurk	ports/net/p5-Net-Amazon-MechanicalTurk
 p5-Net-Amazon-S3	ports/net/p5-Net-Amazon-S3
 p5-Net-Amazon-Signature	ports/net/p5-Net-Amazon-Signature
+p5-Net-Amazon-Thumbnail	ports/net/p5-Net-Amazon-Thumbnail
 p5-Net-Analysis	ports/net/p5-Net-Analysis
 p5-Net-BGP	ports/net/p5-Net-BGP
 p5-Net-BitTorrent-File	ports/net-p2p/p5-Net-BitTorrent-File
