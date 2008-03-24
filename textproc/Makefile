@@ -27,6 +27,7 @@
     SUBDIR += bbe
     SUBDIR += be-aspell
     SUBDIR += bedic-data
+    SUBDIR += beediff
     SUBDIR += bg-aspell
     SUBDIR += bib2html
     SUBDIR += bibtex2html
