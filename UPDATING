@@ -39,6 +39,10 @@ upgrades.
        gnome-keyring-manager\*
     # portmaster -a
 
+  Be sure to read in our known issues and solutions:
+
+    http://www.freebsd.org/gnome/docs/faq222.html#q4
+
 20080318:
   AFFECTS: users of audio/gnump3d
   AUTHOR:  jadawin@FreeBSD.org
