@@ -2,10 +2,9 @@ bin/polkit-action
 bin/polkit-auth
 bin/polkit-config-file-validate
 bin/polkit-policy-file-validate
-@unexec if cmp -s %D/etc/PolicyKit/PolicyKit.conf %D/etc/PolicyKit/PolicyKit.conf.dist; then rm -f %D/etc/PolicyKit/PolicyKit.conf
+@unexec if cmp -s %D/etc/PolicyKit/PolicyKit.conf %D/etc/PolicyKit/PolicyKit.conf.dist; then rm -f %D/etc/PolicyKit/PolicyKit.conf ; fi
 etc/PolicyKit/PolicyKit.conf.dist
 @exec [ -f %B/PolicyKit.conf ] || cp %B/%f %B/PolicyKit.conf
-etc/PolicyKit/PolicyKit.conf
 etc/dbus-1/system.d/org.freedesktop.PolicyKit.conf
 etc/pam.d/polkit
 etc/profile.d/polkit-bash-completion.sh
