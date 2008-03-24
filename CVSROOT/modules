@@ -11442,6 +11442,7 @@ p5-Text-Autoformat	ports/textproc/p5-Text-Autoformat
 p5-Text-Balanced	ports/textproc/p5-Text-Balanced
 p5-Text-Bastardize	ports/textproc/p5-Text-Bastardize
 p5-Text-BibTeX	ports/textproc/p5-Text-BibTeX
+p5-Text-Bidi	ports/converters/p5-Text-Bidi
 p5-Text-Bind	ports/textproc/p5-Text-Bind
 p5-Text-CSV	ports/textproc/p5-Text-CSV
 p5-Text-CSV-Simple	ports/textproc/p5-Text-CSV-Simple
