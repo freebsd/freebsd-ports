@@ -1,5 +1,0 @@
-#!/bin/sh
-
-cd %%LIBDIR%% || exit 1
-
-exec ./crx +set game arena "$@"
