@@ -7,24 +7,19 @@
 
 PORTNAME=	wmqstat
 PORTVERSION=	0.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games windowmaker
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A dockapp for monitoring of various Internet game servers
 
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 PLIST_FILES=	bin/${PORTNAME}
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	README
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
