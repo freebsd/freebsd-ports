@@ -14643,6 +14643,7 @@ ruby-mp3info	ports/audio/ruby-mp3info
 ruby-mp3tag	ports/audio/ruby-mp3tag
 ruby-mpi	ports/net/ruby-mpi
 ruby-msql	ports/databases/ruby-msql
+ruby-multi	ports/devel/ruby-multi
 ruby-musicbrainz	ports/audio/ruby-musicbrainz
 ruby-musicextras	ports/audio/ruby-musicextras
 ruby-mwdom	ports/textproc/ruby-mwdom
