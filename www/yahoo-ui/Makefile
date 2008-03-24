@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yahoo
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	yui
@@ -68,6 +68,8 @@ post-install:
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 	@${CP} ${WRKSRC}/README ${DOCSDIR}
 .endif
+.if !defined(NOPORTEXAMPLES)
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.post.mk>
