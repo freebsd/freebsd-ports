@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	WebCalendar
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2.b1
 CATEGORIES=	www
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	webcalendar
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME:S/-devel//g}-${PORTVERSION}
 
@@ -22,19 +22,16 @@ NO_BUILD=	yes
 CONFLICTS=	WebCalendar-[0-9]*
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
+WWWDIR=		${PREFIX}/www/${PORTNAME:L}
 
-WCURL?=		${MASTER_SITE_SUBDIR}
-WCDIR?=		www/${WCURL}
-PLIST=		${WRKDIR}/pkg-plist
-
-SUB_FILES=	pkg-message
-SUB_LIST=	WCURL=${WCURL} WCDIR=${WCDIR}
-
-DOCSDIR?=	${PREFIX}/share/doc/${MASTER_SITE_SUBDIR}
+.if !defined(NOPORTDOCS)
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:L}
 PORTDOCS=	WebCalendar-SysAdmin.html \
 		newwin.gif
+.endif
 
-OPTIONS=	MYSQL "Use MySQL database backend (default)" On \
+OPTIONS=	APACHE "Configure for Apache-2.x" off \
+		MYSQL "Use MySQL database backend (default)" On \
 		PGSQL "Use PostgreSQL database backend" Off \
 		MSSQL "Use MSSQL database backend" Off \
 		DBASE "Use DBase database backend" Off \
@@ -42,9 +39,33 @@ OPTIONS=	MYSQL "Use MySQL database backend (default)" On \
 		ORACLE "Use Oracle database backend" Off \
 		LDAP "Use LDAP user authentication" Off \
 		GRADIENTBG "Add gradient background image support" Off \
-		REMINDERS "Add email reminder support" On
+		REMINDERS "Add email reminder support" On \
+		PALM "Add Palm export support" Off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_APACHE)
+USE_APACHE=	2.0+
+
+PLIST_SUB+=	NOAPACHE="" CONFDIR=${CONFDIR_REL}
+CONFDIR=	${PREFIX}/${CONFDIR_REL}
+CONFDIR_REL=	${APACHEETCDIR}/Includes
+SUB_FILES=	pkg-message
+.else
+PLIST_SUB+=	NOAPACHE="@comment "
+.endif
+
+WITH_PHP_CGI?=	/cgi-bin/php
+
+.if ${PHP_SAPI:Mcgi} == "cgi" && ${PHP_SAPI:Mmod} == ""
+CGI_EXT=	-cgi
+.else
+CGI_EXT=
+.endif
+
+DEFAULT_PHP_VER=5
+
+SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
 DB_DEFINED=	no
 
@@ -94,27 +115,59 @@ USE_PHP+=	gd
 WANT_PHP_CLI=	yes
 .endif
 
-pre-install:
-	cd ${WRKSRC} && ${FIND} -s * -type f | \
-		${SED} -e 's|^|${WCDIR}/|' > ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${WCDIR}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${WCDIR} >> ${PLIST}
-	@${ECHO_CMD} @dirrmtry www/data-dist >> ${PLIST}
-	@${ECHO_CMD} @dirrmtry www/data >> ${PLIST}
+.if defined(WITH_PALM)
+RUN_DEPENDS+=	${LOCALBASE}/bin/pilot-xfer:${PORTSDIR}/palm/pilot-link
+.endif
+
+.if defined(NOPORTDOCS)
+SUB_LIST+=	HASHMARK=\#
+.else
+SUB_LIST+=	HASHMARK=
+.endif
+
+CONF=		webcalendar${CGI_EXT}.conf
+SUB_FILES+=	${CONF}
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${WCDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${WCDIR}
-	@${FIND} ${PREFIX}/${WCDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${WCDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
+		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
+	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
+		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
+	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
+		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 
 post-install:
+.if defined(WITH_APACHE)
+	@if [ -d "${CONFDIR}" ]; then \
+	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/webcalendar.conf; \
+	else \
+	  ${ECHO_MSG} "" ; \
+	  ${ECHO_MSG} "Please check your Apache 2.x installation -" ; \
+	  ${ECHO_MSG} "${CONFDIR} doesn't exist," ; \
+	  ${ECHO_MSG} "so I cannot install webcalendar.conf there!" ; \
+	  ${ECHO_MSG} "" ; \
+	  ${FALSE} ; \
+	fi
+	@${CAT} ${PKGMESSAGE}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
+.if ${CGI_EXT} == "-cgi"
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"Your WebCalendar installation was configured to use the PHP CGI binary."
+	@${ECHO_MSG}	"The PHP CGI binary is expected to be referenced by the URL:"
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"       ${WITH_PHP_CGI}"
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"If this is incorrect, reinstall the port with the WITH_ PHP_CGI knob"
+	@${ECHO_MSG}	"set to the correct URL."
+	@${ECHO_MSG}	"*********************************************************************"
+.endif
 
 .include <bsd.port.post.mk>
