@@ -3,15 +3,14 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/rhythmbox/Makefile,v 1.88 2008/01/29 01:37:44 marcus Exp $
+#   $MCom: ports/audio/rhythmbox-devel/Makefile,v 1.90 2008/03/17 04:31:25 marcus Exp $
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.10.1
-PORTREVISION=	7
+PORTVERSION=	0.11.5
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.11
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	marcus@FreeBSD.org
@@ -22,8 +21,10 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		totem-plparser.10:${PORTSDIR}/multimedia/totem-pl-parser \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
-		soup-2.2.8:${PORTSDIR}/devel/libsoup22 \
+		soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media
+
+NO_LATEST_LINK=	yes
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
@@ -34,7 +35,8 @@ USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautiluscdburner
 WANT_GNOME=	yes
 USE_GSTREAMER=	flac mp3 gnomevfs gconf jpeg
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--enable-nautilus-menu --with-playback=gstreamer-0-10
+CONFIGURE_ARGS=	--enable-nautilus-menu --with-playback=gstreamer-0-10 \
+		--disable-vala
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-lm" \
@@ -48,7 +50,8 @@ OPTIONS=	DAAP "Enable iTunes music sharing" off \
 		FAAD "Enable FAAD decoder support" off \
 		NOTIFY "Enable libnotify support" on \
 		VORBIS "Enable Ogg/Vorbis support" on \
-		LIRC "Enable Infrared syncing support" off
+		LIRC "Enable Infrared syncing support" off \
+		GECKO_PLUGIN "Enable iTunes browser plugin" on
 #		GDA "Enable GDA database storage" off
 
 .include <bsd.port.pre.mk>
@@ -99,10 +102,10 @@ RUN_DEPENDS+=		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/no
 CONFIGURE_ARGS+=	--disable-libnotify
 .endif
 
-.if ${HAVE_GNOME:Mpygtk2}!=""
+.if exists(${LOCALBASE}/libdata/pkgconfig/gst-python-0.10.pc)
 USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
-USE_GNOME+=	pygtk2
+USE_GSTREAMER+=	python
 CONFIGURE_ARGS+=--enable-python
 PLIST_SUB+=	PYTHON=""
 .else
@@ -117,6 +120,18 @@ PLIST_SUB+=	IPOD=""
 .else
 CONFIGURE_ARGS+=--without-ipod
 PLIST_SUB+=	IPOD="@comment "
+.endif
+
+.if !defined(WITHOUT_GECKO_PLUGIN)
+USE_GECKO=	firefox mozilla seamonkey xulrunner<->firefox firefox-devel<->firefox
+.include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
+CONFIGURE_ARGS+=--enable-browser-plugin \
+		--with-gecko=${GECKO}
+CONFIGURE_ENV+=	MOZILLA_PLUGINDIR=${BROWSER_PLUGINS_DIR}
+PLIST_SUB+=	GECKO_PLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-browser-plugin
+PLIST_SUB+=	GECKO_PLUGIN="@comment "
 .endif
 
 .include <bsd.port.post.mk>

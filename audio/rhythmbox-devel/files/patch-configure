@@ -1,0 +1,29 @@
+--- configure.orig	2008-03-17 00:11:17.000000000 -0400
++++ configure	2008-03-17 00:26:52.000000000 -0400
+@@ -14152,7 +14152,7 @@ else
+ echo "${ECHO_T}yes" >&6; }
+ 	have_gio=yes
+ fi
+-if test x$have_gio == "xyes"; then
++if test x$have_gio = "xyes"; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_GIO 1
+@@ -14244,7 +14244,7 @@ echo "$as_me: error: HAL support explici
+    { (exit 1); exit 1; }; }
+   fi
+ 
+-  if test "x$enable_hal" == "xyes"; then
++  if test "x$enable_hal" = "xyes"; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_HAL 1
+@@ -21807,7 +21807,7 @@ echo "${ECHO_T}yes" >&6; }
+ 	:
+ fi
+ fi
+-MOZILLA_PLUGINDIR="${MOZILLA_PLUGINDIR:="\${libdir}/mozilla/plugins"}"
++MOZILLA_PLUGINDIR="${MOZILLA_PLUGINDIR}"
+ 
+ 
+  if test x$enable_browser_plugin = xyes; then
