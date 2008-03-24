@@ -1,14 +1,13 @@
-*************************************************
-Post-installation instructions:
 
-First, add the following line to your httpd.conf:
+*********************************************************************
+You have just installed the WebCalendar application.
 
-Alias /%%WCURL%%/ "%%PREFIX%%/%%WCDIR%%/"
+Note that you should restart your Apache web server to ensure that
+the WebCalendar configuration file is loaded.
 
-Make sure to restart your web server after changing
-httpd.conf.
+Next, to configure WebCalendar, please visit:
 
-Next, to configure WebCalendar, please visit
-http://localhost/%%WCURL%%/ and you will
-be guided through the installation process.
-*************************************************
+	http://localhost/webcalendar/
+
+and you will be guided through the installation process.
+*********************************************************************
