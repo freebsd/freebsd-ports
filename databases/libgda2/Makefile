@@ -3,7 +3,7 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/libgda2/Makefile,v 1.41 2007/10/21 03:13:52 mezz Exp $
+#   $MCom: ports/databases/libgda2/Makefile,v 1.44 2008/03/11 04:21:46 mezz Exp $
 #
 
 PORTNAME=	libgda2
@@ -43,8 +43,6 @@ MAN1=		gda-config-tool.1
 MAN5=		gda-config.5
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
-
-CONFLICTS=	libgda3-[0-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/testing//" \
