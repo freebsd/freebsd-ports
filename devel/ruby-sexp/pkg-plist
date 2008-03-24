@@ -1,0 +1,3 @@
+%%RUBY_SITELIBDIR%%/sexp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sexp_example.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
