@@ -1,0 +1,4 @@
+The JAI libraries are not installed in JRE, so you have to add
+  %%TARGET_DIR%%/jai_codec.jar
+  %%TARGET_DIR%%/jai_core.jar
+to the CLASSPATH environment variable.
