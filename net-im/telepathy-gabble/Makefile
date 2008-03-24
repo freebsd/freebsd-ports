@@ -3,10 +3,10 @@
 # Whom:					Florent Thoumie <flz@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/net-im/telepathy-gabble/Makefile,v 1.2 2008/02/27 14:17:54 ahze Exp $
 
 PORTNAME=	telepathy-gabble
-PORTVERSION=	0.5.12
+PORTVERSION=	0.7.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -25,11 +25,11 @@ RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack pkgconfig glib20
 USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
 
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+MAN8=		telepathy-gabble.8
 
 .include <bsd.port.pre.mk>
 
