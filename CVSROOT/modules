@@ -6648,7 +6648,8 @@ libgda2-reference	ports/databases/libgda2-reference
 libgda3		ports/databases/libgda3
 libgda3-firebird	ports/databases/libgda3-firebird
 libgda3-freetds		ports/databases/libgda3-freetds
-libgda3-ldap		ports/databases/libgda3-mdb
+libgda3-ldap		ports/databases/libgda3-ldap
+libgda3-mdp		ports/databases/libgda3-mdb
 libgda3-mysql		ports/databases/libgda3-mysql
 libgda3-odbc		ports/databases/libgda3-odbc
 libgda3-postgresql	ports/databases/libgda3-postgresql
