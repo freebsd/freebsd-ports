@@ -7,7 +7,7 @@
 
 PORTNAME=	wmtimer
 PORTVERSION=	2.92
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.darkops.net/wmtimer/
 
@@ -15,9 +15,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-Function timer dockapp for WindowMaker
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmtimer
+PORTDOCS=	README
+PLIST_FILES=	bin/wmtimer
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xau xcomposite xcursor xdamage xdmcp xext xfixes xi \
+		xinerama xpm xrandr xrender
 USE_GNOME=	gtk20
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -25,9 +27,8 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmtimer ${PREFIX}/bin
 .ifndef(NOPORTDOCS)
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
-		${DOCSDIR}
+	@${INSTALL} -d ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
-.endif # !NOPORTDOCS
+.endif
 
 .include <bsd.port.mk>
