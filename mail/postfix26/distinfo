@@ -1,3 +1,6 @@
 MD5 (postfix/postfix-2.5.1.tar.gz) = 95a559c509081fdd07d78eafd4f4c3b4
 SHA256 (postfix/postfix-2.5.1.tar.gz) = bad7ed98d1bbc8fd27d4b4d6d65a8dfe21794c109bc923e5fe45abea5b484037
 SIZE (postfix/postfix-2.5.1.tar.gz) = 3153629
+MD5 (postfix/postfix-2.5.1-vda-ng.patch.gz) = bba9426f8ae9d8603861ce782f117760
+SHA256 (postfix/postfix-2.5.1-vda-ng.patch.gz) = aae719707cea7257081cff915730a596a22e1415c625c574417018700760f423
+SIZE (postfix/postfix-2.5.1-vda-ng.patch.gz) = 12348
