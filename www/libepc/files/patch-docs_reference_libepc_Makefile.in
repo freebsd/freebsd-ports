@@ -1,0 +1,11 @@
+--- docs/reference/libepc/Makefile.in.orig	2008-03-24 11:01:18.000000000 +0100
++++ docs/reference/libepc/Makefile.in	2008-03-24 11:01:41.000000000 +0100
+@@ -224,7 +224,7 @@ AUTOMAKE_OPTIONS = 1.6
+ # of using the various options.
+ 
+ # The name of the module, e.g. 'glib'.
+-DOC_MODULE = libepc-1.0
++DOC_MODULE = libepc
+ 
+ # The top-level SGML file. You can change this if you want to.
+ DOC_MAIN_SGML_FILE = $(DOC_MODULE)-docs.xml
