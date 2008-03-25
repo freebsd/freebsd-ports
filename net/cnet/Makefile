@@ -13,10 +13,10 @@ PORTREVISION=	2
 CATEGORIES=	net tcl84 tk84
 MASTER_SITES=	http://www.csse.uwa.edu.au/cnet/ \
 		ftp://ftp.giga.net.tw/OS/FreeBSD/distfiles/ \
-		http://people.tecnik93.com/~itetcu/ports/${PORTNAME}/sources/
+		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	A networking simulator
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
