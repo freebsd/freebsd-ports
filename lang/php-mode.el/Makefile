@@ -6,27 +6,33 @@
 #
 
 PORTNAME=	php-mode.el
-PORTVERSION=	1.2.0
+PORTVERSION=	1.4.0
 CATEGORIES=	lang elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=php-mode
 DISTNAME=	${PORTNAME:S/.el$//}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Emacs lisp module for the PHP language
 
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+INFO=		php-mode
 
 EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
+
+do-build:
+.if !defined(NOPORTDOCS)
+	cd ${BUILD_WRKSRC} && makeinfo --no-split php-mode.texi
+.endif
 
 do-install:
 	${MKDIR} ${EMACSLISPDIR}
 	${MKDIR} ${XEMACSLISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/php-mode.el ${EMACSLISPDIR}/php-mode.el
 	${LN} -sf ${EMACSLISPDIR}/php-mode.el ${XEMACSLISPDIR}
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/php-mode.info ${PREFIX}/${INFO_PATH}/
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
