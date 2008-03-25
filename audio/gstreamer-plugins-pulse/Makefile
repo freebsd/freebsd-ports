@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gstreamer-plugins
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.7
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/gst-pulse/
 PKGNAMESUFFIX=	-pulse
@@ -26,9 +26,7 @@ CONFIGURE_ARGS=	--disable-lynx
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_FILES=	lib/gstreamer-0.10/libgstpulse.a \
-		lib/gstreamer-0.10/libgstpulse.la \
-		lib/gstreamer-0.10/libgstpulse.so \
-		lib/gstreamer-0.10/libgstpulse.so.0
+PLIST_FILES=	lib/gstreamer-0.10/libgstpulse.la \
+		lib/gstreamer-0.10/libgstpulse.so
 
 .include <bsd.port.mk>
