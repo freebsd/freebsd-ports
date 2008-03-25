@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IRC/.packlist
 %%SITE_PERL%%/POE/Component/IRC.pm
 %%SITE_PERL%%/POE/Component/IRC/Common.pm
 %%SITE_PERL%%/POE/Component/IRC/Constants.pm
