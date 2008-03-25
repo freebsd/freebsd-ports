@@ -2884,6 +2884,7 @@ fastdb		ports/databases/fastdb
 fastdep		ports/devel/fastdep
 fastdnaml	ports/biology/fastdnaml
 fastest_cvsup	ports/sysutils/fastest_cvsup
+fastest_sites	ports/ports-mgmt/fastest_sites
 fasthenry	ports/science/fasthenry
 fastjar		ports/archivers/fastjar
 fastresolve	ports/dns/fastresolve
