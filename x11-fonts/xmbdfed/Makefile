@@ -7,7 +7,7 @@
 
 PORTNAME=	xmbdfed
 PORTVERSION=	4.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://crl.nmsu.edu/~mleisher/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -21,7 +21,6 @@ COMMENT=	A Motif tool for editing X11 bitmap fonts
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 
 MAN1=		xmbdfed.1

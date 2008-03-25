@@ -26,7 +26,7 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15:env
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}

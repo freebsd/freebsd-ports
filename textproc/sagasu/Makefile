@@ -14,7 +14,6 @@ MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME tool to find strings in a set of files
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

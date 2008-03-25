@@ -6,15 +6,14 @@
 
 PORTNAME=	wmbsdbatt
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://homepage.univie.ac.at/l.ertl/wmbsdbatt/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp for battery & temperature monitoring through ACPI
 
-USE_XLIB=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 
 PLIST_FILES=	bin/wmbsdbatt
 

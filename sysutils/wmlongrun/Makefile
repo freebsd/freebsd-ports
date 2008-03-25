@@ -7,15 +7,14 @@
 
 PORTNAME=	wmlongrun
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://seiichisato.jp/dockapps/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp to monitor the LongRun(tm) status on Crusoe
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 

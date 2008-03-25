@@ -7,7 +7,7 @@
 
 PORTNAME=	xg
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://messners.com/code/ \
 		http://www.messners.com/code/
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows(tm) controls - like widget set for Motif(tm)
 
 WRKSRC=		${WRKDIR}/Xg-${PORTVERSION}
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_MOTIF=	yes
 MAKEFILE=	makefile
 

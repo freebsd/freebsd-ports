@@ -7,7 +7,7 @@
 
 PORTNAME=	9term
 PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 plan9
 MASTER_SITES=	ftp://ftp.cs.usyd.edu.au/matty/unicode/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -19,7 +19,7 @@ COMMENT=	An X11 program which emulates a plan9 window
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/editors/sam:build
 
 NO_WRKSUBDIR=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 MAKE_ENV=	SAMDIR=${WRKDIRPREFIX}${.CURDIR}/../../editors/sam/work
 MAN1=		9term.1
 PLIST_FILES=	bin/9term

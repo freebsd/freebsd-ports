@@ -18,7 +18,6 @@ COMMENT=	IIIMF gnome input method switcher
 
 ONLY_FOR_ARCHS=	i386
 
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

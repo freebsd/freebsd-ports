@@ -7,7 +7,7 @@
 
 PORTNAME=	wmnetload
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net windowmaker afterstep
 MASTER_SITES=	ftp://truffula.com/pub/ \
 				http://dl.fkb.wormulon.net/wmnetload/ \
@@ -19,7 +19,7 @@ COMMENT=	Network load monitor dockapp
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 USE_BZIP2=	yes
-USE_XPM=	yes
+USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 
 post-install:

@@ -7,7 +7,7 @@
 
 PORTNAME=	wmzazof
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://members.chello.be/cr49940/wmzazof/
 
@@ -16,8 +16,7 @@ COMMENT=	A simple dockapp that displays the uptime, free and used memory
 
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmzazof ${PREFIX}/bin

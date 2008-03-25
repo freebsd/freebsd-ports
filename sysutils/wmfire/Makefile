@@ -16,7 +16,6 @@ COMMENT=	Window Maker dock app showing load average as a flame
 
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

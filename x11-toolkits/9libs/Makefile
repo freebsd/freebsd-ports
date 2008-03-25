@@ -7,14 +7,14 @@
 
 PORTNAME=	9libs
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits plan9
 MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plan9 compatibility libraries
 
-USE_XLIB=	yes
+USE_XORG=	x11 xt ice
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include/9libs
 

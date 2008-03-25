@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellshoot
 PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,13 +16,12 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A screen locking and screen capture plugin for GKrellM 2
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2 \
 		import:${PORTSDIR}/graphics/ImageMagick
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellshoot.so
 WRKSRC=		${WRKDIR}/gkrellShoot-${PORTVERSION}
-USE_X_PREFIX=	yes
 
 ALL_TARGET=	${PORTNAME}.so
 

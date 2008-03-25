@@ -7,7 +7,7 @@
 
 PORTNAME=	wminet
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
@@ -17,8 +17,7 @@ COMMENT=	Window Maker dockable inetd monitor
 
 WRKSRC=		${WRKDIR}/wminet.app/wminet
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 
 post-install:
 .if !defined(NOPORTDOCS)

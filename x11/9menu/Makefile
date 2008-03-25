@@ -7,7 +7,7 @@
 
 PORTNAME=	9menu
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 plan9
 MASTER_SITES=	ftp://freefriends.org/arnold/Source/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/ \
@@ -17,8 +17,8 @@ EXTRACT_SUFX=	.shar.gz
 MAINTAINER=	serge.gagnon.1@ulaval.ca
 COMMENT=	A simple menu patterened after plan9
 
+USE_XORG=	x11
 PLIST_FILES=		bin/9menu
-USE_XLIB=		yes
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh

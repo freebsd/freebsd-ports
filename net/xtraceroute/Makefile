@@ -7,7 +7,7 @@
 
 PORTNAME=	xtraceroute
 PORTVERSION=	0.9.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/dl/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/dns/host
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GNOME=	gdkpixbuf
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

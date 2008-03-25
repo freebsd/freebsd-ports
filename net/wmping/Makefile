@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	serg@cad.kiev.ua
 COMMENT=	Windowmaker dock app to display network hosts status
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

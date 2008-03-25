@@ -19,7 +19,6 @@ COMMENT=	A source code editor widget for GTK+
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
 
 USE_AUTOTOOLS=	automake:15:env autoconf:261:env libtool:15
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes

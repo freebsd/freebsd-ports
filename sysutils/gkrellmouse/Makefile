@@ -22,7 +22,6 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 PLIST_FILES=	libexec/gkrellm/plugins/gkmouse.so
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 USE_GMAKE=	yes
 

@@ -19,7 +19,6 @@ COMMENT=	An Inti binding for GConf, the GNOME Configuration System
 LIB_DEPENDS=	inti-1.0.9:${PORTSDIR}/x11-toolkits/inti
 
 USE_GNOME=	gconf2 gnomehack gnomeprefix
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 

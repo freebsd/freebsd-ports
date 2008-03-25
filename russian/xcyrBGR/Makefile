@@ -7,7 +7,7 @@
 
 PORTNAME=	xcyrBGR
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	russian
 MASTER_SITES=	ftp://ftp.slavof.net/pub/FreeBSD/X11/cyrillic/ \
 		ftp://mail.partners-bg.org/pub/FreeBSD/X11/cyrillic/ \
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The bulgarian cyrillic keyboard layout manager for X11
 
 PLIST_FILES=	bin/xcyrBGR
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 NO_INSTALL_MANPAGES=	yes
 MAKE_ENV=	COPT="${CXXFLAGS} -fpermissive"
 

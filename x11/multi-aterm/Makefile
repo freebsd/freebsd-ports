@@ -7,14 +7,14 @@
 
 PORTNAME=	multi-aterm
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.nongnu.org/materm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi terminal based on aterm
 
-USE_X_PREFIX=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-xpm=${X11BASE}

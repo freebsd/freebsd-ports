@@ -7,7 +7,7 @@
 
 PORTNAME=	dxpc
 PORTVERSION=	3.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.vigor.nu/dxpc/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	Compressing X protocol proxy designed to support X11 over slow links
 
 LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

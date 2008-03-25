@@ -17,8 +17,7 @@ COMMENT=	Window Maker dock application to shutdown or reboot
 
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 do-install:
 	@${ECHO} "wmShutdown -- Rafael V. Aroca <rafael@linuxqos.cjb.net>"

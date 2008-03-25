@@ -7,7 +7,7 @@
 
 PORTNAME=	asapm
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/
 
@@ -16,8 +16,7 @@ COMMENT=	Laptop battery status display for X11
 
 ONLY_FOR_ARCHS=	i386
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install install.man
 

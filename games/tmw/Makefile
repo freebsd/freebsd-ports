@@ -23,13 +23,12 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 BUILD_DEPENDS=	guichan>=0.7.1:${PORTSDIR}/devel/guichan
 RUN_DEPENDS=	guichan>=0.7.1:${PORTSDIR}/devel/guichan
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image mixer net
 USE_GCC=	3.2+
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN6=		tmw.6
 

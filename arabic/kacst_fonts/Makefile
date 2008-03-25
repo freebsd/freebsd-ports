@@ -7,7 +7,7 @@
 
 PORTNAME=		kacst_fonts
 PORTVERSION=		1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		arabic
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	arabeyes
@@ -18,7 +18,6 @@ COMMENT=	Truetype Arabic fonts created by KACST
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 WRKSRC=	${WRKDIR}/KacstArabicFonts-${PORTVERSION}
 

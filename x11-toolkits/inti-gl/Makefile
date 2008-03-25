@@ -20,7 +20,6 @@ LIB_DEPENDS=	inti-1.0.9:${PORTSDIR}/x11-toolkits/inti \
 		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GNOME=	gnomehack gnomeprefix
 GNU_CONFIGURE=	yes

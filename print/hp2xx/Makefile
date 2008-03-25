@@ -33,7 +33,7 @@ LDFLAGS=	-lm -L${LOCALBASE}/lib -ltiff -lpng -lz
 PKGNAMESUFFIX=	-nox11
 PREVIEWER=	no_prev
 .else
-USE_XLIB=	yes
+USE_XORG=	x11
 CPPFLAGS+=	-DHAS_UNIX_X11 -I${X11BASE}/include
 LDFLAGS+=	-L${X11BASE}/lib -lX11
 PREVIEWER=	to_x11

@@ -16,8 +16,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	wmcube-gdk is a modified version of the dockapp wmCube
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GNOME=	gtk12
 MAKEFILE=	Makefile.FREEBSD
 

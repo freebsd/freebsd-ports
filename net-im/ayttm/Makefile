@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_BZIP2=	yes
 USE_GCC=	3.4
-USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gdkpixbuf gnometarget
 USE_OPENSSL=	yes

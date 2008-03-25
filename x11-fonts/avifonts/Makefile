@@ -7,7 +7,7 @@
 
 PORTNAME=	avifonts
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://graphis.hellug.gr/packages/
 DISTNAME=	avifonts
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 FONTSDIR=	${PREFIX}/lib/X11/fonts/${PORTNAME}

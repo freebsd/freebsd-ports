@@ -17,8 +17,7 @@ COMMENT=	A kaleidoscope on X
 
 ALL_TARGET=	xmangekyou
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm xaw
 
 MAN1=		xmangekyou.1
 MANCOMPRESSED=	yes

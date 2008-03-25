@@ -7,14 +7,14 @@
 
 PORTNAME=	gtubeclock
 PORTVERSION=	0.9.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.bonnyswan.com/gtubeclock/downloads/
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	A nixie tube clock for GNOME
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20 libgnomeui
 

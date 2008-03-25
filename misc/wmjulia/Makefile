@@ -7,7 +7,7 @@
 
 PORTNAME=	wmjulia
 PORTVERSION=	0.40
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://web.novalis.org/programs/
 
@@ -17,8 +17,7 @@ COMMENT=	A dockapp that creates an animated Julia set
 PLIST_FILES=	bin/wmjulia
 WRKSRC=	${WRKDIR}/${PORTNAME}.app/${PORTNAME}
 USE_GMAKE=	yes
-USE_XPM=	yes
-USE_X_PREFIX=	yes
+USE_XPM=	xpm xext
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

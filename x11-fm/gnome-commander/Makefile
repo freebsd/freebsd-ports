@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--without-fam
 
 CONFLICTS=	gnome-commander2-*
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget gnomevfs gnomelibs gdkpixbuf

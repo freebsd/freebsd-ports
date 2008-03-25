@@ -7,7 +7,7 @@
 
 PORTNAME=	wmx10
 PORTVERSION=	0.03
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://www.cs.uml.edu/~jhawkins/wmx10/
 
@@ -16,8 +16,7 @@ COMMENT=	Remote control for X10 devices
 
 WRKSRC=		${WRKDIR}/wmx10.app/wmx10
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XPM=	xpm x11 ice
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/wmx10

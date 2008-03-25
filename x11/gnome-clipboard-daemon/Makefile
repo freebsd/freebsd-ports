@@ -16,7 +16,6 @@ COMMENT=	A program that keeps the content of your X clipboard in memory
 
 PLIST_FILES=	bin/gnome-clipboard-daemon
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
 do-install:

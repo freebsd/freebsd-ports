@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	apps/asmon
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A swallowable applet monitors the CPU usage, memory and swap, etc
 
-USE_XPM=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	xpm x11
 
 BUILD_WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/asmon
 CFLAGS+=	-I${X11BASE}/include

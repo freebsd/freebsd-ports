@@ -7,7 +7,7 @@
 
 PORTNAME=	ssh
 PORTVERSION=	1.2.33
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 		ftp://ftp.nsysu.edu.tw/Unix/Security/ssh/ \
@@ -122,7 +122,7 @@ CONFIGURE_ARGS+=	--with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
 # Include extra files if X11 is installed
 .if defined(WITH_X11) || (exists(${X11BASE}/lib/libX11.a) \
 	&& !defined(WITHOUT_X11))
-USE_XLIB=	yes
+USE_XORG=	x11
 PLIST:=		${WRKDIR}/PLIST
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist.x11 ${PKGDIR}/pkg-plist > ${PLIST}

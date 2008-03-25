@@ -24,7 +24,7 @@ ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11 ice xt
 USE_AUTOTOOLS=	automake:19:env autoconf:261:env libtool:15:env
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}

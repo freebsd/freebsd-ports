@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL extension to GTK
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 USE_GL=		yes
 USE_GMAKE=	yes

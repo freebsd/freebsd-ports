@@ -23,6 +23,6 @@ BROKEN=	Checksum mismatch
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 .include <bsd.port.mk>

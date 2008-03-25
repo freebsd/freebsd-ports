@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellmwireless
 PORTVERSION=	0.2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://gkrellm.luon.net/files/
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 NO_LATEST_LINK=	yes
 
-USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 
 PLIST_FILES=	libexec/gkrellm/plugins/wireless.so

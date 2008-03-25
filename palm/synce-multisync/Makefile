@@ -21,7 +21,6 @@ RUN_DEPENDS=	multisync:${PORTSDIR}/deskutils/multisync
 
 USE_GNOME=	gnomeprefix gnometarget gnomevfs2
 USE_GMAKE=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-librapi=${LOCALBASE} \
 			--with-libsynce=${LOCALBASE} \

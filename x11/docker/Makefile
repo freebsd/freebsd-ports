@@ -7,7 +7,7 @@
 
 PORTNAME=	docker
 PORTVERSION=	1.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/ \
 		http://icculus.org/openbox/2/docker/
@@ -17,7 +17,7 @@ COMMENT=	A dockapp with support for GNOME2 and KDE3 tray icons
 
 PLIST_FILES=	bin/docker
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GNOME=	glib20
 
 do-install:

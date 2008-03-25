@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/gtoaster
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnometarget gtk12
 USE_GMAKE=	yes

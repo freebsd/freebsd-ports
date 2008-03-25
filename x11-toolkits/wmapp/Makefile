@@ -8,15 +8,14 @@
 
 PORTNAME=	wmapp
 PORTVERSION=	0.0.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits windowmaker
 MASTER_SITES=	http://www.princeton.edu/~kmccarty/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DockApp Graphics Library
 
-USE_XLIB=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xpm
 USE_GMAKE=	yes
 CFLAGS+=	-I${X11BASE}/include
 ALL_TARGET=	# empty

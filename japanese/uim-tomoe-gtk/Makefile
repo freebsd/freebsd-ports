@@ -20,7 +20,6 @@ LIB_DEPENDS=	tomoe.1:${PORTSDIR}/japanese/tomoe \
 		uim.5:${PORTSDIR}/textproc/uim
 
 USE_GNOME=	lthack gtk20
-USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

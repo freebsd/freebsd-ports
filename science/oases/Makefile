@@ -8,7 +8,7 @@
 
 PORTNAME=	oases
 PORTVERSION=	2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	ftp://keel.mit.edu/pub/Oases/
 DISTNAME=	oases_Mar-28-2002
@@ -18,7 +18,7 @@ COMMENT=	Ocean Acoustics and Seismic Exploration Synthesis
 
 WRKSRC=		${WRKDIR}/Oases_export
 
-USE_XLIB=	yes
+USE_XORG=	x11
 MAKE_ENV+=	OASES_ROOT="${WRKSRC}" HOSTTYPE=FreeBSD OSTYPE=FreeBSD
 
 USE_FORTRAN=	yes

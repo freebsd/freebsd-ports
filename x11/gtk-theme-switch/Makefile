@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.muhri.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line tool for switching GTK+ themes
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 

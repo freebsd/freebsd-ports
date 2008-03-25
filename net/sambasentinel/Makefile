@@ -21,7 +21,6 @@ RUN_DEPENDS=	jags:${PORTSDIR}/net/jags
 PLIST_FILES=	bin/SambaSentinel
 WRKSRC=		${WRKDIR}/SambaSentinel
 USE_GMAKE=	yes
-USE_XPM=	yes
 USE_GNOME=	gtk12
 ALL_TARGET=	SambaSentinel
 

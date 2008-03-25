@@ -17,7 +17,6 @@ COMMENT=	A lightweight, configurable sticky notes utility
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
-USE_X_PREFIX=	yes
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++

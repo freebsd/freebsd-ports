@@ -7,7 +7,7 @@
 
 PORTNAME=	ticker.app
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://seiichisato.jp/dockapps/src/
 
@@ -15,8 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ticker dockapp for Window Maker
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 

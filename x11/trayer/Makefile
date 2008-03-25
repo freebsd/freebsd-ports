@@ -18,7 +18,6 @@ COMMENT=	Lightweight GTK2-based systray for UNIX desktop
 
 USE_GNOME=	gtk20 glib20 pango atk
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
 
 USE_GMAKE=	yes
 MAKE_ARGS=	"PREFIX=${X11BASE}"

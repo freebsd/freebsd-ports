@@ -7,15 +7,14 @@
 
 PORTNAME=	wmfsm
 PORTVERSION=	0.34
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.cs.ubc.ca/~cmg/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays filesystem usage of mountpoints in a nice WindowMaker dockapp
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

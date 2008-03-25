@@ -7,15 +7,14 @@
 
 PORTNAME=	wmbutton
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://greek0.net/~greek0/wmbutton/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that displays 9 buttons to run apps of your choice
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 SUB_FILES=	pkg-message
 

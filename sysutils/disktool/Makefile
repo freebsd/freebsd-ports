@@ -7,7 +7,7 @@
 
 PORTNAME=	disktool
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.auxio.org/pub/mirrors/step.polymtl.ca/pub/Xview/apps/disktool/
 DISTNAME=	disktool-2.0c
@@ -16,8 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XView sysadmin tool for monitoring diskfull situations
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
-
-USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

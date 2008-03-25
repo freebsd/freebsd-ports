@@ -17,7 +17,6 @@ COMMENT=	Background changer for fluxbox/blackbox
 
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget
 

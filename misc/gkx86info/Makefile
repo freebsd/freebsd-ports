@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 ONLY_FOR_ARCHS=	i386
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 imlib
 
 PLIST_FILES=	libexec/gkrellm/plugins/gkx86info.so

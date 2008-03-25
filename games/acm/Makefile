@@ -7,14 +7,14 @@
 
 PORTNAME=	acm
 PORTVERSION=	5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.websimulations.com/download/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	A flight simulator for X11
 
-USE_XLIB=	yes
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 

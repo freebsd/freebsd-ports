@@ -7,7 +7,7 @@
 
 PORTNAME=	wmcyrx
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	russian windowmaker
 MASTER_SITES=	http://ozz.pp.ru/distfiles/ \
 		ftp://ftp.vistdon.ru/pub/unix/X/wmanagers/windowmaker/
@@ -16,7 +16,7 @@ DISTNAME=	cyrx-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The cyrillic keyboard layout manager for Window Maker
 
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/wmcyrx2
 MAKE_ENV+=	COPT="${CXXFLAGS} -fpermissive"

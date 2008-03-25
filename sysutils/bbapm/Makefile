@@ -21,7 +21,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APM monitor for the Blackbox slit
 
 ONLY_FOR_ARCHS=	i386
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

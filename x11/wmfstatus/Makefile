@@ -7,7 +7,7 @@
 
 PORTNAME=	wmfstatus
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.finik.net/files/
 
@@ -15,8 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose LCD display for the WindowMaker dock
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 PLIST_FILES=	bin/wmfstatus
 

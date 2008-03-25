@@ -7,7 +7,7 @@
 
 PORTNAME=	gnometelnet
 PORTVERSION=	2.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.cyest.org/downloads/
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
@@ -19,7 +19,6 @@ BROKEN=		Size mismatch
 
 USE_AUTOTOOLS=	automake:15:env libtool:15
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

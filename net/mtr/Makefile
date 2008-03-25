@@ -7,7 +7,7 @@
 
 PORTNAME=	mtr
 PORTVERSION=	0.72
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/mtr/ \
@@ -31,7 +31,7 @@ PKGNAMESUFFIX=	-gtk1
 USE_GNOME=	gtk20
 CONFIGURE_ARGS=--enable-gtk2
 .endif
-USE_XLIB=	yes
+USE_XORG=	x11
 CONFIGURE_ARGS+=--with-gtk-prefix=${X11BASE}
 .else
 PKGNAMESUFFIX=	-nox11

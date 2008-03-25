@@ -39,7 +39,7 @@ USE_PHP=	yes
 USE_TCL_RUN=	yes
 USE_TK_RUN=	yes
 
-USE_XLIB=	yes
+USE_XORG=	x11 xpm
 USE_PERL5=	yes
 
 USE_ICONV=	yes
@@ -51,7 +51,6 @@ USE_GHOSTSCRIPT=yes
 USE_BISON=	build
 USE_FREETYPE=	yes
 USE_GL=		yes
-USE_XPM=	yes
 USE_OPENLDAP=	yes
 USE_FAM=	yes
 USE_PYTHON=	yes

@@ -8,7 +8,7 @@
 
 PORTNAME=	wmdrawer
 PORTVERSION=	0.10.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://people.easter-eggs.org/~valos/wmdrawer/:tarball \
 		http://wikitest.freebsd.org/wiki/common/:pixmap
@@ -20,7 +20,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp which provides a drawer to launch applications
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	DOCSDIR=${DOCSDIR}

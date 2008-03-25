@@ -7,7 +7,7 @@
 
 PORTNAME=	xtermcontrol
 PORTVERSION=	2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.thrysoee.dk/xtermcontrol/
 
@@ -16,7 +16,6 @@ COMMENT=	Tool for dynamic control of xterm properties
 
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
-USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

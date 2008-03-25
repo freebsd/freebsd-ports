@@ -17,7 +17,6 @@ COMMENT=	Display large amounts of numerical data fast and easy
 
 CONFLICTS=	gtkdatabox2-*
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

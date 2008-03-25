@@ -19,8 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Maker dockapp that displays cpu load and a realtime 3d object
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAKEFILE=	Makefile.FREEBSD
 
 do-install:

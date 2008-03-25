@@ -14,8 +14,7 @@ MASTER_SITES=	http://www.sra.co.jp/people/m-kasahr/wmpccard/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PCcard monitor for FreeBSD + PAO
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 MAN1=		wmpccard.1.gz
 NOMANCOMPRESS=	yes
 PLIST_FILES=	bin/wmpccard
