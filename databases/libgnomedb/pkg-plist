@@ -200,6 +200,7 @@ share/pixmaps/libgnomedb-%%VERSION%%/gnome-db-types_24x24.png
 share/pixmaps/libgnomedb-%%VERSION%%/gnome-db-views_16x16.png
 share/pixmaps/libgnomedb-%%VERSION%%/gnome-db-within-transaction_24x24.png
 @dirrm share/pixmaps/libgnomedb-%%VERSION%%
+@dirrm share/omf/libgnomedb
 @dirrm share/gnome-db/demo
 @dirrm share/gnome-db
 @dirrm lib/libgnomedb/plugins
