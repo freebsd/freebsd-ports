@@ -10,14 +10,14 @@ PORTVERSION=	0.30
 PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_NETBSD:S/%SUBDIR%/ms-ttf/}:group1 \
-	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/corefonts/}:group1 \
-	ftp://ftp.uni-koeln.de/pc/win32/msoft/:group1 \
-	ftp://ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
-	ftp://ftp.sinn.ru/pub/win95/fonts/:group1 \
-	ftp://ftp.botik.ru/rented/znamensk/distributions/ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
-	http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/EN-US/:group2 \
-	http://www.zeuscat.com/andrew/software/corefonts/:group2 \
-	ftp://ftp.isu.edu.tw/pub/MsDownload/ie6sp1/en/:group2
+		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/corefonts/}:group1 \
+		ftp://ftp.uni-koeln.de/pc/win32/msoft/:group1 \
+		ftp://ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
+		ftp://ftp.sinn.ru/pub/win95/fonts/:group1 \
+		ftp://ftp.botik.ru/rented/znamensk/distributions/ftp.vsu.ru/pub/tex/font-packs/mscore/:group1 \
+		http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/EN-US/:group2 \
+		http://www.zeuscat.com/andrew/software/corefonts/:group2 \
+		ftp://ftp.isu.edu.tw/pub/MsDownload/ie6sp1/en/:group2
 DISTFILES=	andale32.exe:group1  arial32.exe:group1 arialb32.exe:group1 \
 		comic32.exe:group1 courie32.exe:group1 georgi32.exe:group1 \
 		impact32.exe:group1  times32.exe:group1 trebuc32.exe:group1 \
