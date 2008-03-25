@@ -15237,6 +15237,7 @@ sipxvxml	ports/net/sipxvxml
 sirc		ports/irc/sirc
 sisc		ports/lang/sisc
 sisctrl		ports/x11/sisctrl
+siteatschool	ports/www/siteatschool
 sitebar		ports/www/sitebar
 sitecopy	ports/www/sitecopy
 siteframe	ports/www/siteframe
