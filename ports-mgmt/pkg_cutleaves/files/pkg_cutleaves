@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+# $Id$
 #
 # Copyright (c) 2003 Stefan Walter <sw@gegenunendlich.de>
 #
@@ -27,7 +28,7 @@
 
 # Interactive script for deinstalling "leaf" packages
 #
-# Syntax: pkg_cutleaves [-cFgLlRx]
+# Syntax: pkg_cutleaves [-cFgLlRVx]
 # Options:
 #   -c: Show comments, too; only works with '-l' (ignored otherwise)
 #   -F: Fix package db after each deinstallation run (via 'pkgdb -F')
@@ -35,8 +36,10 @@
 #   -L: Interpret exclude file as list of packages that *should* be installed
 #   -l: List leaf packages only, don't ask if they should be deinstalled
 #   -R: Autoprune new leaves 
+#   -V: Visual mode, invoke $EDITOR
 #   -x: Honor exclude list in $excludefile
 
+use File::Temp qw/ tempfile /;
 use Getopt::Std;
 use strict;
 
@@ -48,7 +51,7 @@ my $exclpattern;
 my %leavestokeep;
 my %opt;
 
-getopts('cFgLlRx', \%opt);
+getopts('cFgLlRVx', \%opt);
 set_excl_pattern();
 
 # LIST MODE
@@ -124,31 +127,89 @@ else {
     # Initialize counter for progress status
     $i = 1;
 
-    LEAVESLOOP: foreach my $leaf (sort keys %leaves) {
-      print "Package $i of $nleaves:\n";
-      print "$leaf - $leaves{$leaf}\n";
-      print "$leaf - [keep]/(d)elete/(f)lush marked pkgs/(a)bort? ";
-      # Get first character of input, without leading whitespace
-      my ($answer) = (lc(<STDIN>) =~ m/(\S)/);
-      if ($answer eq 'd') {
-        print "** Marking $leaf for removal.\n\n";
-        $leavestocut{$leaf} = 1;
+    if ($opt{V}) {
+      # Write list, including descriptions out to temp file
+      my ($fh, $filename) = tempfile() or die "Can't create file: $!";
+      print $fh "# Delete the lines whose packages you want removed.\n";
+      print $fh "# Simply save and quit, when you are done.\n";
+      print $fh "# There are $nleaves (new) leaf packages:\n";
+      foreach my $leaf (sort keys %leaves) {
+	# XXX Calculate maximum length first instead of 40?
+	printf $fh "%-40s - %s\n", $leaf, $leaves{$leaf};
       }
-      elsif ($answer eq 'f') {
-        print "\n";
-        last LEAVESLOOP;
+      close($fh);
+
+      # Invoke $EDITOR, vi if no EDITOR set
+      my $editor = ($ENV{'EDITOR'} eq "") ? "vi" : $ENV{'EDITOR'};
+      system "$editor $filename";
+      if ($? == -1) {
+	print "failed to execute: $!\n";
+	unlink($filename);
+	exit 1;
       }
-      elsif ($answer eq 'a') {
-        print "\n";
-        $opt{aborted} = 1;
-        last ROUND;
+
+      # Read back and parse list, the diff to the original list will be removed
+      open($fh, $filename) or die "Can't reopen file: $!";
+      while(<$fh>) {
+	next if $_ =~ m/\s*#/;
+	next if $_ =~ m/^\s*$/;
+	my ($leaf, $desc) = split(/\s/, $_, 2);
+
+	if (defined $leaves{$leaf}) {
+	  delete $leaves{$leaf};
+	  $leavestokeep{$leaf} = 1;
+	} else {
+	  print "Package \"$leaf\" not known, skipping\n";
+	}
       }
-      else {
-        print "** Keeping $leaf.\n\n";
-        $leavestokeep{$leaf} = 1;
+      close($fh);
+      unlink($filename);
+
+      exit 0 if (keys %leaves == 0);
+      # print the lists of packages which will be removed, due to
+      # typos in the editor, the user might have 'removed' a package
+      # he is still interested in. This batch mode, really should get a last
+      # confirmation from the user.
+      print "The following packages will be removed:\n";
+      # XXX Use map here?
+      # XXX check empty hash FIXME
+      foreach my $leaf (sort keys %leaves) {
+	$leavestocut{$leaf} = 1;
+	print "   $leaf\n";
       }
-      $i++;
-    } # LEAVESLOOP
+      print "Are you sure? [yes]: ";
+      my ($answer) = (lc(<STDIN>) =~ /(\S)/o);
+      print "\n";
+      exit 0 if $answer =~ /n/;
+
+      # Fallthrough to actual package removal
+    } else {
+      LEAVESLOOP: foreach my $leaf (sort keys %leaves) {
+	print "Package $i of $nleaves:\n";
+	print "$leaf - $leaves{$leaf}\n";
+	print "$leaf - [keep]/(d)elete/(f)lush marked pkgs/(a)bort? ";
+	# Get first character of input, without leading whitespace
+	my ($answer) = (lc(<STDIN>) =~ m/(\S)/);
+	if ($answer eq 'd') {
+	  print "** Marking $leaf for removal.\n\n";
+	  $leavestocut{$leaf} = 1;
+	}
+	elsif ($answer eq 'f') {
+	  print "\n";
+	  last LEAVESLOOP;
+	}
+	elsif ($answer eq 'a') {
+	  print "\n";
+	  $opt{aborted} = 1;
+	  last ROUND;
+	}
+	else {
+	  print "** Keeping $leaf.\n\n";
+	  $leavestokeep{$leaf} = 1;
+	}
+	$i++;
+      } # LEAVESLOOP
+    }
 
     AUTOPRUNE: # The -R switch jump
     # Initialize 'progress meter'

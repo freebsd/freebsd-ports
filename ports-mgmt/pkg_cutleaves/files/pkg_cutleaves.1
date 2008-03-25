@@ -1,6 +1,6 @@
 .\" PKG_CUTLEAVES 1 "Jul 2003" FreeBSD
 .\"
-.Dd July 27, 2003
+.Dd March 20, 2008
 .Dt PKG_CUTLEAVES 1
 .Os FreeBSD
 .Sh NAME
@@ -8,7 +8,7 @@
 .Nd deinstall 'leaf' packages
 .Sh SYNOPSIS
 .Nm
-.Op Fl cFglRx
+.Op Fl cFglRVx
 .Sh DESCRIPTION
 .Nm pkg_cutleaves
 finds installed 
@@ -66,6 +66,11 @@ leaf packages.
 .It Fl l
 List leaf packages only, one per line, and don't ask for anything to be
 deinstalled.
+.Pp
+.It Fl V
+Visual mode. Will compile a list of leaf packages and invoke the user's
+.Ev EDITOR .
+Lines or package names that are deleted in the editor will then be removed.
 .Pp
 .It Fl R
 Autoprune mode. Automatically deinstall non-required packages on which 
@@ -131,6 +136,15 @@ will exclude all packages with names starting with
 ). The list can be auto-generated with the
 .Fl g
 option. 
+.El
+.Sh ENVIRONMENT
+The following environment variables will be used in visual mode:
+.Bl -tag -width EDITOR
+.It Ev EDITOR
+The editor specified by the variable
+.Ev EDITOR
+will be invoked instead of the default editor
+.Xr vi 1 .
 .El
 .Sh SEE ALSO
 .Xr pkg_deinstall 1 ,
