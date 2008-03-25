@@ -10,9 +10,9 @@ PORTVERSION=	1.1.2
 PORTREVISION=	4
 CATEGORIES=	graphics java geography
 MASTER_SITES=	http://www.jump-project.org/downloads/jump/:main \
-		http://people.tecnik93.com/~sam/ports/:extra
+		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/:main,extra
 DISTFILES=	jump-${PORTVERSION}.zip:main \
-		jump.png:extra jump.desktop:extra
+		jump.png:extra jump.desktop:main,extra
 EXTRACT_ONLY=	jump-${PORTVERSION}.zip
 
 MAINTAINER=	ports@FreeBSD.org
