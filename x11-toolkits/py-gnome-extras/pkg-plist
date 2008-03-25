@@ -65,3 +65,4 @@ share/pygtk/2.0/defs/trayicon.defs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/egg
+@dirrm include/pygda-3.0
