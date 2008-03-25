@@ -25,7 +25,7 @@ PORTVER_MAJ=	3.6.8
 MIN_OPTIONS_VER=	${PORTNAME}-3.6.8_1
 
 .ifdef(SNAP_DATE)
-MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
+MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 WRKSRC=		${WRKDIR}/dspam-${SNAP_DATE}
 .else
 MASTER_SITES=	http://dspam.irontec.com/sources/ \
