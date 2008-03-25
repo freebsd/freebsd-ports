@@ -6,4 +6,4 @@ SHA256 (postgresql/hier-Pg8.0.3-0.5.5.diff.gz) = f3a1849f2d527759ef721502cb445a4
 SIZE (postgresql/hier-Pg8.0.3-0.5.5.diff.gz) = 30555
 MD5 (postgresql/pg-8015-icu-xx-2008-01-08.diff.gz) = 8f01943557fdaff5c4d472a458d4bef8
 SHA256 (postgresql/pg-8015-icu-xx-2008-01-08.diff.gz) = 3540ffdeae085d764668894839e8c15750275fc7bd2765975e31fda8bcfa0d2a
-SIZE (postgresql/pg-8015-icu-xx-2008-01-07.diff.gz) = 4553
+SIZE (postgresql/pg-8015-icu-xx-2008-01-08.diff.gz) = 4553
