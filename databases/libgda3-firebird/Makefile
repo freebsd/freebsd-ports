@@ -14,7 +14,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provides firebird backend for the libgda3 library
 
 MASTERDIR=	${.CURDIR}/../libgda3
-BUILD_WRKSRC=	${WRKSRC}/providers/postgres/
+BUILD_WRKSRC=	${WRKSRC}/providers/firebird/
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 PLIST=		${.CURDIR}/pkg-plist
 

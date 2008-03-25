@@ -14,7 +14,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provides mysql backend for the libgda3 library
 
 MASTERDIR=	${.CURDIR}/../libgda3
-BUILD_WRKSRC=	${WRKSRC}/providers/postgres/
+BUILD_WRKSRC=	${WRKSRC}/providers/mysql/
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 PLIST=		${.CURDIR}/pkg-plist
 
