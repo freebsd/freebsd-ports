@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A NNTP client for Gnome
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix

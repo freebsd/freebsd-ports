@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GNOME=	gtk20 gnomehier
-USE_XLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<endian.h>|<sys/endian.h>|' \

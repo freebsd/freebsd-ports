@@ -17,8 +17,7 @@ COMMENT=	Window Maker dockapp that displays info about your battery
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib \
 		--x-includes=${X11BASE}/include

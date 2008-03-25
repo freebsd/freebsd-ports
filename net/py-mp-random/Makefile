@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=mp-random
+PORTNAME=	mp-random
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	net python
@@ -17,7 +17,6 @@ MAINTAINER=	randomimage-widget@mirrorproject.com
 COMMENT=	Display random Mirror Project images on your desktop
 
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
 USE_WX=		2.4
 WX_COMPS=	python
 NO_BUILD=	yes

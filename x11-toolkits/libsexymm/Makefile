@@ -22,6 +22,5 @@ USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

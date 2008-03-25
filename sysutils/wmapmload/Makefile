@@ -7,7 +7,7 @@
 
 PORTNAME=	wmapmload
 PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
@@ -15,8 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APM battery status monitor dockapp with a similar look to wmcpuload
 
 ONLY_FOR_ARCHS=	i386
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=""
 

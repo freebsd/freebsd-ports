@@ -7,7 +7,7 @@
 
 PORTNAME=	wmapm
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://dockapps.org/files/18/25/
 
@@ -18,8 +18,7 @@ ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmapm
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 MAN1=		wmapm.1
 PLIST_FILES=	bin/wmapm

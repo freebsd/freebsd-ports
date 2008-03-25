@@ -14,7 +14,6 @@ MASTER_SITES=	http://c64.org/~nr/xwhois/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK-based frontend to the whois service (RFC954)
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

@@ -14,8 +14,7 @@ DISTNAME=	asfsm-1.0pre15
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File-system monitor for the AfterStep window manager
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm x11 sm ice xext xaw xt
 GNU_CONFIGURE=	yes
 
 MAN1=		asfsm.1

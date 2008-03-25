@@ -7,7 +7,7 @@
 
 PORTNAME=	temperature.app
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.fukt.bth.se/~per/temperature/
 DISTNAME=	Temperature.app-${PORTVERSION}
@@ -17,8 +17,7 @@ COMMENT=	A dockable WindowMaker applet which displays the local temperature
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
-USE_XPM=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xpm
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/Temperature.app ${PREFIX}/bin

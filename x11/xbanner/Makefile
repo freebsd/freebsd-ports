@@ -16,9 +16,7 @@ DISTNAME=	XBanner${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make your XDM login screen look beautiful
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
-#USE_IMAKE=	yes
+USE_XORG=	xpm x11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \

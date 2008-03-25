@@ -7,7 +7,7 @@
 
 PORTNAME=	mgv
 PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.netsw.org/graphic/postscript/interpreter/mgv/ \
 		http://mirror2.unixfreunde.de/ \
@@ -16,8 +16,7 @@ MASTER_SITES=	http://www.netsw.org/graphic/postscript/interpreter/mgv/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PostScript and PDF previewer
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE}

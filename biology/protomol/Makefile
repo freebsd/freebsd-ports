@@ -6,7 +6,7 @@
 
 PORTNAME=	protomol
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,6 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 USE_GCC=	3.4+
 
 # Hack to cure a misbehavior of the configure script

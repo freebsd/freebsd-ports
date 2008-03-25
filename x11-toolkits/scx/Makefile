@@ -7,7 +7,7 @@
 
 PORTNAME=	scx
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits scheme
 MASTER_SITES=	ftp://ftp.scsh.net/pub/scsh/packages/scx/
 
@@ -16,8 +16,8 @@ COMMENT=	A GUI library for scsh and Scheme 48
 
 RUN_DEPENDS=	${LOCALBASE}/lib/scsh/scsh-install-pkg:${PORTSDIR}/devel/scsh-install-lib
 
+USE_XORG=	x11 xmu
 NO_BUILD=	yes
-USE_XLIB=	yes
 USE_LDCONFIG=	${PREFIX}/lib/scsh/0.6/scx-0.2/lib/${MACHINE_ARCH}-portbld-freebsd${OSREL}/
 
 DEPRECATED=		Version branch long since retired

@@ -7,7 +7,7 @@
 
 PORTNAME=	terminus-font
 PORTVERSION=	4.20
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.is-vn.bg/hamster/
 
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 USE_PERL5=	yes
-USE_X_PREFIX=	yes
 ALL_TARGET=	pcf
 SHAREMODE=	644
 FONTDIR=	lib/X11/fonts/${PORTNAME}

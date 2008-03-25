@@ -29,7 +29,7 @@ CFLAGS+=	-I${KRB5_HOME}/include
 KRB5LIB=	-L${KRB5_HOME}/lib
 .endif
 USE_GNOME=	#
-USE_XPM=	yes
+USE_XORG=	x11
 
 MAN1=		xlock.1
 PLIST_FILES=	bin/xlock lib/X11/app-defaults/XLock

@@ -17,7 +17,6 @@ COMMENT=	Simple GTK+-2 HTML editor
 
 LIB_DEPENDS=	gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

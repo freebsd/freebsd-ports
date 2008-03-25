@@ -7,7 +7,7 @@
 
 PORTNAME=	artwiz-fonts
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.xs4all.nl/~hanb/software/fluxbox/ \
 		http://www.cus.org.uk/~dom/distfiles/artwiz-fonts/
@@ -18,7 +18,6 @@ COMMENT=	A set of free fonts for X11 desktops
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/fluxbox-${PORTNAME}
 

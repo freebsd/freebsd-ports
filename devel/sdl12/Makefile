@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.13
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
@@ -139,7 +140,7 @@ DISPLAY_MSG=	${CAT} ${PKGMESSAGE}
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=--disable-video-x11
 .else
-USE_XLIB=	yes
+USE_XORG=	x11 xrender xrandr xextproto
 .endif
 
 post-install:

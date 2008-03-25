@@ -20,7 +20,6 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_GL=		glu
 
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/src/glut/glx
 
 pre-patch:

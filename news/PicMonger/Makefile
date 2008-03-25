@@ -7,7 +7,7 @@
 
 PORTNAME=	PicMonger
 PORTVERSION=	0.9.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	news graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=picmonger
@@ -18,7 +18,7 @@ COMMENT=	An automated USENET (NNTP) picture decoding client
 LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtkmm12
 RUN_DEPENDS=	mpack:${PORTSDIR}/converters/mpack
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 USE_GMAKE=	yes
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes

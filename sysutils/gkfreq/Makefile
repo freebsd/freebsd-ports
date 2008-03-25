@@ -8,7 +8,6 @@
 PORTNAME=	gkfreq
 PORTVERSION=	1.0
 PORTREVISION=	1
-#PORTREVISION=	0
 CATEGORIES=	sysutils
 DISTNAME=	gkrellm-gkfreq-${PORTVERSION}
 MASTER_SITES=	http://www.peakunix.net/downloads/
@@ -20,7 +19,5 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrell
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 PLIST_FILES=	libexec/gkrellm2/plugins/gkfreq.so
-
-USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>

@@ -14,8 +14,7 @@ MASTER_SITES=	http://linux.nawebu.cz/wmcliphist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clipboard history management dockapp for Window Maker
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_GNOME=	gtk12
 
 do-install:

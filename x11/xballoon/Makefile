@@ -7,15 +7,14 @@
 
 PORTNAME=	xballoon
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.saturn.dti.ne.jp/~hsakai/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Balloons move on root window
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm xmu xaw
 ALL_TARGET=	xballoon
 
 MAN1=		xballoon.1

@@ -20,7 +20,6 @@ BUILD_WRKSRC=	${WRKSRC}/contrib
 ALL_TARGET=	gnome-ssh-askpass2
 
 PLIST_FILES=	bin/gnome-ssh-askpass2
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
 .include <bsd.port.pre.mk>

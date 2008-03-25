@@ -15,7 +15,6 @@ MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Getting and setting Xv attributes
 
-USE_X_PREFIX=		yes
 USE_PERL5_BUILD=	yes
 USE_GNOME=		gtk12
 GNU_CONFIGURE=		yes

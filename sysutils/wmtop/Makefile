@@ -6,7 +6,7 @@
 
 PORTNAME=	wmtop
 PORTVERSION=	0.84
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://ftp1.sourceforge.net/wmtop/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windowmaker dock app to display top 3 CPU consuming processes
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm x11
 ALL_TARGET=	freebsd
 
 MAN1=		wmtop.1

@@ -8,7 +8,7 @@
 
 PORTNAME=	paragui
 PORTVERSION=	1.0.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -22,7 +22,6 @@ LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs \
 
 CONFLICTS=	paragui-devel-[0-9]*
 
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_SDL=	sdl image ttf
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

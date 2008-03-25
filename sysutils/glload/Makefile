@@ -18,7 +18,6 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 MAKEFILE=	Makefile.FreeBSD
 MAKE_ARGS=	CC="${CC}" \

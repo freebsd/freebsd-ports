@@ -18,7 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A useful widget set complementary to GTK+
 
 USE_AUTOTOOLS=	libtool:15
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes

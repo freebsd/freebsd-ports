@@ -21,7 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack lthack gtk20 libxml2
 USE_LDCONFIG=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

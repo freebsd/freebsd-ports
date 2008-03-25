@@ -8,7 +8,7 @@
 
 PORTNAME=	xsysstats
 PORTVERSION=	1.51
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
@@ -19,7 +19,7 @@ COMMENT=	A system information display tool
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 MAN1=		xsysstats.1
 
 ALL_TARGET=	xsysstats

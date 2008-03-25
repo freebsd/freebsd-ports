@@ -7,7 +7,7 @@
 
 PORTNAME=	wmlpq
 PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print windowmaker
 MASTER_SITES=	http://www.ur.uklinux.net/wmlpq/dl/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,8 +18,7 @@ COMMENT=	Print queue monitoring dockapp for Window Maker
 LIB_DEPENDS=	dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 MAN1=		${PORTNAME}.1x
 

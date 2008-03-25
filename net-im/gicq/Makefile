@@ -19,7 +19,6 @@ COMMENT=	GTK based ICQ program
 LIB_DEPENDS=	icq.0:${PORTSDIR}/net-im/libicq
 
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12 gnomehack gnomeprefix
 WANT_GNOME=	yes

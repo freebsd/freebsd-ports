@@ -17,7 +17,6 @@ COMMENT=	LAN chat client compatible with quickChat and Vypress Chat (TM)
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

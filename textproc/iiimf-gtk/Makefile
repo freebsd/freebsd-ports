@@ -21,7 +21,6 @@ LIB_DEPENDS=	iiimp.1:${PORTSDIR}/textproc/iiimf-protocol-lib \
 
 ONLY_FOR_ARCHS=	i386
 
-USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes

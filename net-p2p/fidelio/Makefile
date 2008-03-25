@@ -16,7 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME client for Hotline
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

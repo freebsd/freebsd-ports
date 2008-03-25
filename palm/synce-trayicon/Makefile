@@ -22,7 +22,6 @@ USE_GMAKE=	yes
 USE_GNOME=	libgnomeui gnometarget
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lsynce
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE} \

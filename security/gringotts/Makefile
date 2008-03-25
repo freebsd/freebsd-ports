@@ -19,7 +19,6 @@ LIB_DEPENDS=	gringotts.2:${PORTSDIR}/security/libgringotts \
 		popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 WANT_GNOME=	yes

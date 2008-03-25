@@ -28,7 +28,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec
 .endif # defined(PYVERSION) && ${PYVERSION:S/.//} < 24
 
 USE_PYTHON=	yes
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

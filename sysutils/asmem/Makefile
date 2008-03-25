@@ -14,8 +14,7 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/asmem/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An AfterStep look-n-feel memory utilization monitor
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \
 		--with-xpm-includes=${X11BASE}/include \

@@ -21,7 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		kasumi:${PORTSDIR}/japanese/kasumi
 
 USE_GNOME=	lthack
-USE_XLIB=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

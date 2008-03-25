@@ -19,7 +19,6 @@ COMMENT=	ICQ2000 protocol implementation
 LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtkmm12 \
 		icq2000.5:${PORTSDIR}/net-im/libicq2000
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_ICONV=	yes

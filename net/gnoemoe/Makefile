@@ -18,7 +18,6 @@ USE_RUBY=	yes
 USE_RUBY_FEATURES=	ruby18
 
 USE_GNOME=	gnomeprefix gtksourceview libglade2 libgnomeui vte
-USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 GNU_CONFIGURE=	yes

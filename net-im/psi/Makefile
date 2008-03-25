@@ -20,7 +20,6 @@ LIB_DEPENDS=	qca.1:${PORTSDIR}/devel/qca
 RUN_DEPENDS=	${X11BASE}/lib/plugins/crypto/libqca-tls.so:${PORTSDIR}/security/qca-tls
 
 HAS_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	3
 

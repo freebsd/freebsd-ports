@@ -17,8 +17,7 @@ COMMENT=	A visual indicator of the states of the three "lock" buttons
 
 PLIST_FILES=	bin/cnslock
 USE_GNOME=	gtk12
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 

@@ -16,8 +16,7 @@ COMMENT=	WM dock app to display info from MB power management controllers
 
 ONLY_FOR_ARCHS=	i386
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm-includes=${X11BASE}/include \

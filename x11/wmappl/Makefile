@@ -22,8 +22,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application launcher dockapp similar to wmbutton
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 MAKE_ENV=	DATADIR="${DATADIR}" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"

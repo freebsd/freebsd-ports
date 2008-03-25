@@ -16,12 +16,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin to GKrellM that displays current sports scores
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
+BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 		wget:${PORTSDIR}/ftp/wget
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
-USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	imlib
 USE_GMAKE=	yes

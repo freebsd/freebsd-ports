@@ -7,7 +7,7 @@
 
 PORTNAME=	XawPlus
 PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://people.freenet.de/kra/XawPlus/
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
@@ -16,9 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A replacement for Xaw with a nicer 3-D look and some extensions
 
+USE_XORG=	x11 xaw
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_X_PREFIX=	yes
 MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS} -fPIC -DHAS_WCHAR_H" \
 		INC_PATH="-I. -I${X11BASE}/include" LIB_PATH="-L${X11BASE}/lib"
 ALL_TARGET=	lib

@@ -20,7 +20,6 @@ LIB_DEPENDS=	inti-1.0.9:${PORTSDIR}/x11-toolkits/inti
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtksourceview gnomehack gnomeprefix
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

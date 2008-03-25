@@ -17,8 +17,8 @@ COMMENT=	A 2D graphics library
 
 USE_GCC=	3.4
 USE_GMAKE=	yes
+USE_XORG=	x11
 USE_LDCONFIG=	yes
-USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-fontpath=${DATADIR}/fonts \
 		--with-x11-base=${X11BASE}

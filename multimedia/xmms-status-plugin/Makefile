@@ -6,7 +6,6 @@
 
 PORTNAME=	xmms-status-plugin
 PORTVERSION=	1.0
-PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.hellion.org.uk/source/
 
@@ -15,8 +14,9 @@ COMMENT=	XMMS control applet for GNOME 2 panel / KDE tray
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xpm
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

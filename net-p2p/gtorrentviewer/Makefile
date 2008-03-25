@@ -20,7 +20,6 @@ COMMENT=	GTK+2 viewer and editor for BitTorrent meta files
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gtk20 gnomehier intlhack
-USE_XLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -7,7 +7,7 @@
 
 PORTNAME=	wrapper
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 DISTNAME=	# intentionally left blank
 EXTRACT_SUFX=	# intentionally left blank
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 CONFLICTS=	XFree86-3.3.6*
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/Xwrapper
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 
 .include <bsd.port.pre.mk>
 

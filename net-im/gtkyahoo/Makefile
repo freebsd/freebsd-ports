@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	gtkyahoo
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yahoo Messenger Client using GTK
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_BISON=	build
 GNU_CONFIGURE=	yes

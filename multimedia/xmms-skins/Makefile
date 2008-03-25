@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-skins
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xmms.org/files/Skins/
 DISTFILES=	AbsoluteE_Xmms.zip \
@@ -99,7 +99,7 @@ COMMENT=	Skins for X Multimedia System (XMMS)
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 
-USE_X_PREFIX=	yes
+USE_XORG=	x11
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

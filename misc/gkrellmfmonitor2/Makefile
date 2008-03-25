@@ -22,7 +22,6 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 LATEST_LINK=	gkrellmfmonitor2
 
-USE_X_PREFIX=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -fPIC"
 ALL_TARGET=	fmonitor.so
 

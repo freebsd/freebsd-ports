@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	pangopdf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implements Pango library with a PDF backend for PDF output
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pango
 USE_LDCONFIG=	yes

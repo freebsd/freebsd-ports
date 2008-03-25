@@ -17,9 +17,8 @@ DISTNAME=	gtk-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and easy to use TCP only port scanner (GTK+ version)
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_XPM=	yes
+USE_XORG=	x11 xpm
 USE_GNOME=	gtk12
 
 MAN1=		gtk-knocker.1

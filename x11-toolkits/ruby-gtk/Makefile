@@ -20,7 +20,7 @@ COMMENT=	Ruby binding for GTK+
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 USE_GNOME=	gtk12
 
 RUBY_GNOME_VERSION=		0.34

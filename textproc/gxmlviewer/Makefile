@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xmlviewer with a netscape plugin, and now a bonobo control as well
 
-USE_XLIB=	yes
 USE_GNOME=	bonobo gnomehack gnomelibs gnomeprefix libxml2
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

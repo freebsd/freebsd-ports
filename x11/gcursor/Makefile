@@ -17,7 +17,6 @@ COMMENT=	A mouse cursor theme selector for GNOME
 RUN_DEPENDS=	file-roller:${PORTSDIR}/archivers/file-roller
 
 USE_GMAKE=	yes
-USE_XLIB=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

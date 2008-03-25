@@ -7,7 +7,7 @@
 
 PORTNAME=	wmflame
 PORTVERSION=	0.60
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://web.novalis.org/programs/
 
@@ -17,8 +17,7 @@ COMMENT=	A dockapp that shows the load average as a flame
 PLIST_FILES=	bin/wmflame
 WRKSRC=	${WRKDIR}/wmflame.app/${PORTNAME}
 USE_GMAKE=	yes
-USE_XPM=	yes
-USE_X_PREFIX=	yes
+USE_XORG=	x11 xpm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmflame ${PREFIX}/bin

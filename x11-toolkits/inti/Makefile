@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of C++ classes for developing GNOME and GTK+ applications
 
 USE_GNOME=	glib20 gtk20 atk pango gnomehack gnomeprefix
-USE_X_PREFIX=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"

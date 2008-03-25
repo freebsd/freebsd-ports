@@ -14,8 +14,7 @@ MASTER_SITES=	http://dockapps.org/files/155/541/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Showing moving blobs
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

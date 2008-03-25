@@ -17,7 +17,7 @@ COMMENT=	Memory and swap monitoring dockapp
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_XPM=	yes
+USE_XORG=	xpm
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/wmmemfree

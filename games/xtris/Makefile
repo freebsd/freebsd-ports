@@ -7,7 +7,7 @@
 
 PORTNAME=	xtris
 PORTVERSION=	1.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games ipv6
 MASTER_SITES=	http://www.iagora.com/~espel/xtris/ \
 		ftp://quatramaran.ens.fr/pub/orabidoo/
@@ -21,8 +21,8 @@ COMMENT=	A multi-player version of a popular game for the X Window system
 
 RESTRICTED=	"Possible trademark infringement"
 WRKSRC=		${WRKDIR}/xtris
+USE_XORG=	x11 xext
 
-USE_X_PREFIX=	yes
 MAN6=		xtris.6 xtserv.6 xtbot.6
 
 MAKE_ENV=	IPV6_CFLAGS="-DINET6"

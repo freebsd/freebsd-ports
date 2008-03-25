@@ -21,7 +21,6 @@ COMMENT=	File manager and launcher
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
-USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/glib12 \
 		-I${LOCALBASE}/include/gtk12" \
 		LIBS="-L${LOCALBASE}/lib"

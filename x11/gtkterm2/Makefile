@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	gtkterm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple GTK-2 terminal with tabs
 
-USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget vte
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15

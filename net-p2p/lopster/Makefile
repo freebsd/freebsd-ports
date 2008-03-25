@@ -19,7 +19,6 @@ COMMENT=	GTK+ client for Napster
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_X_PREFIX=	yes
 CONFIGURE_ARGS=	--with-pthread=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	dsniff
 PORTVERSION=	2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://naughty.monkey.org/~dugsong/dsniff/
 
@@ -42,7 +42,7 @@ USE_GNOME+=	glib20
 .endif
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+USE_XORG=	x11 xmu
 PLIST_SUB+=	X11=''
 MAN8+=		webspy.8
 .else
