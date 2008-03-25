@@ -39,7 +39,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_SERVER=	1
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
@@ -56,23 +56,23 @@ OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
 		BDB "With BerkeleyDB support" on \
 		ACCESSLOG "With In-Directory Access Logging overlay" off \
 		AUDITLOG "With Audit Logging overlay" off \
+		CONSTRAINT "With Attribute Constraint overlay" off \
 		DDS "Dynamic Directory Services overlay" off \
 		DENYOP "With Deny Operation overlay" off \
 		DYNGROUP "With Dynamic Group overlay" off \
 		DYNLIST "With Dynamic List overlay" off \
 		LASTMOD "With Last Modification overlay" off \
+		MEMBEROF "With Reverse Group Membership overlay" off \
 		PPOLICY "With Password Policy overlay" off \
 		PROXYCACHE "With Proxy Cache overlay" off \
 		REFINT "With Referential Integrity overlay" off \
 		RETCODE "With Return Code testing overlay" off \
 		RWM "With Rewrite/Remap overlay" off \
-		SEQMOD "Sequential Modify overlay" off \
-		SYNCPROV "With Syncrepl Provider overlay" off \
+		SEQMOD "Sequential Modify overlay" on \
+		SYNCPROV "With Syncrepl Provider overlay" on \
 		TRANSLUCENT "With Translucent Proxy overlay" off \
 		UNIQUE "With attribute Uniqueness overlay" off \
 		VALSORT "With Value Sorting overlay" off \
-		ACI "With per-object ACIs (experimental)" off \
-		DYNACL "With run-time loadable ACLs (experimental)" off \
 		DYNAMIC_BACKENDS "Build dynamic backends" on
 .endif
 
@@ -210,6 +210,10 @@ CONFIGURE_ARGS+=	--enable-accesslog
 CONFIGURE_ARGS+=	--enable-auditlog
 .endif
 
+.if defined(WITH_CONSTRAINT)
+CONFIGURE_ARGS+=	--enable-constraint
+.endif
+
 .if defined(WITH_DDS)
 CONFIGURE_ARGS+=	--enable-dds
 .endif
@@ -228,6 +232,10 @@ CONFIGURE_ARGS+=	--enable-dynlist
 
 .if defined(WITH_LASTMOD)
 CONFIGURE_ARGS+=	--enable-lastmod
+.endif
+
+.if defined(WITH_MEMBEROF)
+CONFIGURE_ARGS+=	--enable-memberof
 .endif
 
 .if defined(WITH_PPOLICY)
@@ -250,14 +258,16 @@ CONFIGURE_ARGS+=	--enable-retcode
 CONFIGURE_ARGS+=	--enable-rwm
 .endif
 
-.if defined(WITH_SEQMOD)
+.if defined(WITHOUT_SEQMOD)
+CONFIGURE_ARGS+=	--disable-seqmod
+.else
 CONFIGURE_ARGS+=	--enable-seqmod
 .endif
 
-.if defined(WITH_SYNCPROV)
-CONFIGURE_ARGS+=	--enable-syncprov
-.else
+.if defined(WITHOUT_SYNCPROV)
 CONFIGURE_ARGS+=	--disable-syncprov
+.else
+CONFIGURE_ARGS+=	--enable-syncprov
 .endif
 
 .if defined(WITH_TRANSLUCENT)
