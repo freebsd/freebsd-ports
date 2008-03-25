@@ -42,6 +42,7 @@ lib/webmin/virtual-server/disable_domain.cgi
 lib/webmin/virtual-server/domain-template
 lib/webmin/virtual-server/domain_form.cgi
 lib/webmin/virtual-server/domain_setup.cgi
+lib/webmin/virtual-server/download_cert.cgi
 lib/webmin/virtual-server/dynip-lib.pl
 lib/webmin/virtual-server/dynip.pl
 lib/webmin/virtual-server/edit_admin.cgi
@@ -269,13 +270,17 @@ lib/webmin/virtual-server/migration-ensim.pl
 lib/webmin/virtual-server/migration-plesk.pl
 lib/webmin/virtual-server/modify-domain.pl
 lib/webmin/virtual-server/module.info
+lib/webmin/virtual-server/newchain.cgi
 lib/webmin/virtual-server/newfeatures-all/3.52/1-restore
 lib/webmin/virtual-server/newfeatures-all/3.52/3-active-ip
 lib/webmin/virtual-server/newfeatures-all/3.52/5-mailout
 lib/webmin/virtual-server/newfeatures-all/3.53/1-cancel
 lib/webmin/virtual-server/newfeatures-all/3.53/2-sslshared
 lib/webmin/virtual-server/newfeatures-all/3.53/4-disabledns
+lib/webmin/virtual-server/newfeatures-all/3.54/1-plesk
+lib/webmin/virtual-server/newfeatures-all/3.54/5-restoreips
 lib/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
+lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
 lib/webmin/virtual-server/postinstall.pl
@@ -340,9 +345,13 @@ lib/webmin/virtual-server/virtual_feature_api.pl
 lib/webmin/virtual-server/vui-lib.pl
 lib/webmin/virtual-server/warnbw-template
 lib/webmin/virtual-server/writelogs.pl
+@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.55
+@dirrm lib/webmin/virtual-server/newfeatures-gpl/3.54
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.53
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm lib/webmin/virtual-server/newfeatures-gpl
+@dirrm lib/webmin/virtual-server/newfeatures-all/3.55
+@dirrm lib/webmin/virtual-server/newfeatures-all/3.54
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.53
 @dirrm lib/webmin/virtual-server/newfeatures-all/3.52
 @dirrm lib/webmin/virtual-server/newfeatures-all
