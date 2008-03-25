@@ -6,7 +6,7 @@
 
 PORTNAME=	xfce4-mcs-plugins
 PORTVERSION=	4.4.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	xfce-mcs-plugins-${PORTVERSION}
@@ -22,5 +22,6 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libgui mcsmanager
+USE_XORG=	x11 xext
 
 .include <bsd.port.mk>
