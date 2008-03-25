@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Pluggable
-PORTVERSION=	3.6
+PORTVERSION=	3.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ COMMENT=	Automatically give your module the ability to have plugins
 RUN_DEPENDS=	p5-PathTools>=3.0:${PORTSDIR}/devel/p5-PathTools
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Devel::InnerPackage.3 \
 		Module::Pluggable.3 \
