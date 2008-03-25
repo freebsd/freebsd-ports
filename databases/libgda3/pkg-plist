@@ -203,6 +203,7 @@ share/locale/zh_TW/LC_MESSAGES/libgda-%%VERSION%%.mo
 @dirrm include/libgda-%%VERSION%%/libgda
 @dirrm include/libgda-%%VERSION%%/libgda-report
 @dirrm include/libgda-%%VERSION%%
+@dirrmtry etc/libgda-%%VERSION%%
 @comment lib/libgda-%%VERSION%%/providers/
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
