@@ -7,7 +7,7 @@
 
 PORTNAME=	mtools
 PORTVERSION=	3.9.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/  \
 		http://mtools.linux.lu/
@@ -21,7 +21,7 @@ COMMENT=	A collection of tools for manipulating MSDOS files
 
 GNU_CONFIGURE=	yes
 .if !defined(WITHOUT_X11)
-USE_XORG=	x11
+USE_XORG=	x11 sm ice xau
 CONFIGURE_ARGS=	--enable-xdf --enable-floppyd
 PLIST_SUB=	WITH_X11=""
 .else
