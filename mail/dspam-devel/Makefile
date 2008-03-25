@@ -28,16 +28,14 @@ MIN_OPTIONS_VER=	${PORTNAME}-3.6.8.20061010.1118_1
 
 .ifdef(SNAP_DATE)
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
-		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 MASTER_SITE_SUBDIR=	itetcu
 .else
 MASTER_SITES=	http://dspam.irontec.com/sources/ \
 	http://dspam.nuclearelephant.com/sources/ \
 	http://dspam.systemadministrator.org/sources/ \
 	http://dspam.sourceforge.net/sources/ \
-	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
-	http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 DISTFILES=	dspam-${PORTVER_MAJ}.tar.gz
 WRKSRC=		${WRKDIR}/dspam-${PORTVER_MAJ}
 .endif
