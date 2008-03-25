@@ -121,9 +121,9 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-util.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib.devhelp
 share/gtk-doc/html/telepathy-glib/telepathy-glib.devhelp2
 share/gtk-doc/html/telepathy-glib/up.png
+@dirrm share/gtk-doc/html/telepathy-glib
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
-@dirrm share/gtk-doc/html/telepathy-glib
 @dirrm include/telepathy-1.0/telepathy-glib/_gen
 @dirrm include/telepathy-1.0/telepathy-glib
 @dirrmtry include/telepathy-1.0
