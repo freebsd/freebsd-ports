@@ -9,7 +9,7 @@ PORTNAME=	uppc
 PORTVERSION=	0.8
 PORTREVISION=	3
 CATEGORIES=	palm kld
-MASTER_SITES=	http://www.people.tecnik93.com/~sam/ports/
+MASTER_SITES=	http://T32.tecnik93.com/FreeBSD/others_ports/uppc-kmod/sources/
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=	ports@FreeBSD.org
