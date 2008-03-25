@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool made for Blackbox that displays the date in a decorated window
 
 GNU_CONFIGURE=	yes
-USE_XORG=	x11 xau xdmcp ice
+USE_XORG=	x11 xau xdmcp xext xfixes xi xrandr ice sm
 
 PLIST_FILES=	bin/bbdate share/bbtools/README.bbdate \
 		share/bbtools/bbdate.conf share/bbtools/bbdate.nobb \
