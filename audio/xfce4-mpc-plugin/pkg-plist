@@ -2,6 +2,14 @@ libexec/xfce4/panel-plugins/xfce4-mpc-plugin
 share/locale/cs/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/en_GB/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/eu/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/hu/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/lv/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/pt_BR/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/pt_PT/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/sq/LC_MESSAGES/xfce4-mpc-plugin.mo
+share/locale/ur/LC_MESSAGES/xfce4-mpc-plugin.mo
 share/xfce4/panel-plugins/xfce4-mpc-plugin.desktop
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
