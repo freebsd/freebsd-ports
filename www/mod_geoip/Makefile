@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	mod_geoip
-PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTVERSION=	1.3.1
 CATEGORIES=	www geography
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yarodin@gmail.com
 COMMENT=	An Apache module that provides the country code of the client's IP
 
 BUILD_DEPENDS=	GeoIP>=1.4.4:${PORTSDIR}/net/GeoIP
