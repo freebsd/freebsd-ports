@@ -19,7 +19,7 @@ INSTALL_WRKSRC=	${WRKSRC}/gsf-gnome
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_GNOME=	gnomehack libgsf gnomevfs2 ltverhack intlhack
+USE_GNOME=	gnomehack libgsf gnomevfs2 libbonobo ltverhack intlhack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc/gsf \
 		--with-bz2 --with-gnome --without-gvfs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
