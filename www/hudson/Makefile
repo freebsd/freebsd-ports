@@ -16,7 +16,7 @@ EXTRACT_ONLY=
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	An extensible continuous integration engine
 
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/tomcat6:${PORTSDIR}/www/tomcat6
+RUN_DEPENDS=	${LOCALBASE}/apache-tomcat6.0/bin/catalina.sh:${PORTSDIR}/www/tomcat6
 
 NO_BUILD=	yes
 
