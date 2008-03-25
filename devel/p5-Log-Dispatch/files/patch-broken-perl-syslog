@@ -1,19 +1,17 @@
-$FreeBSD$
-
---- lib/Log/Dispatch/Syslog.pm.orig	Sat Jun 22 01:10:31 2002
-+++ lib/Log/Dispatch/Syslog.pm	Mon Jul  1 06:23:54 2002
-@@ -46,7 +46,7 @@
- 			    facility => { type => SCALAR,
- 					  default => 'user' },
- 			    socket   => { type => SCALAR,
--					  default => 'unix' },
-+					  default => undef },
- 			  } );
+--- lib/Log/Dispatch/Syslog.pm.orig	2008-02-07 00:18:42.000000000 +0100
++++ lib/Log/Dispatch/Syslog.pm	2008-03-20 11:23:50.000000000 +0100
+@@ -40,7 +40,7 @@
+                             facility => { type => SCALAR,
+                                           default => 'user' },
+                             socket   => { type => SCALAR,
+-                                          default => 'unix' },
++                                          default => undef },
+                           } );
  
      $self->{ident}    = $p{ident};
-@@ -63,7 +63,7 @@
- 			    'ALERT',
- 			    'EMERG' ];
+@@ -57,7 +57,7 @@
+                             'ALERT',
+                             'EMERG' ];
  
 -    Sys::Syslog::setlogsock $self->{socket};
 +    Sys::Syslog::setlogsock $self->{socket} if defined $self->{socket};
