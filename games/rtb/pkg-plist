@@ -65,6 +65,7 @@ lib/RealTimeBattle/Robots/perl/perl.robot.in
 lib/RealTimeBattle/Robots/perl-Skeleton/perl-Skeleton.robot.in
 lib/RealTimeBattle/Robots/perl-Skeleton.robot
 lib/RealTimeBattle/Robots/perl.robot
+lib/RealTimeBattle/Robots/raziel.py.robot
 lib/RealTimeBattle/Robots/raziel/raziel.py.robot.in
 lib/RealTimeBattle/Robots/rotate_and_fire/Makefile.am
 lib/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire.cc
