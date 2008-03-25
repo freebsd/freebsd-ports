@@ -20,7 +20,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_XORG=	x11 xau xdmcp xext ice
+USE_XORG=	x11 xau xdmcp xext ice sm
 
 MAN1=	buici-clock.1
 PLIST_FILES=	bin/buici-clock
