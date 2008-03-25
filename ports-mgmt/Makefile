@@ -6,6 +6,7 @@
    SUBDIR += barry
    SUBDIR += bpkg
    SUBDIR += bpm
+   SUBDIR += fastest_sites
    SUBDIR += genplist
    SUBDIR += instant-tinderbox
    SUBDIR += jailaudit
