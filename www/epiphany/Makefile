@@ -59,12 +59,14 @@ CONFIGURE_ARGS+=	--with-engine=webkit
 EXTRA_CFLAGS+=	`pkg-config --cflags WebKitGtk` -I${LOCALBASE}/include/WebKit/webkit
 EXTRA_LIBS+=	`pkg-config --libs WebKitGtk`
 CONFLICTS=	epiphany-[1-9]*
+PLIST_SUB+=	GECKO="@comment "
 .else
 USE_GECKO+=	firefox seamonkey firefox15<->firefox xulrunner
 CONFIGURE_ARGS+=	--with-gecko=${GECKO} \
 			--with-engine=mozilla
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 CONFLICTS=	epiphany-webkit-[1-9]*
+PLIST_SUB+=	GECKO=""
 .endif
 
 NO_WERROR=	yes

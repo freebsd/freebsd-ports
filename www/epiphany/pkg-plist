@@ -37,8 +37,8 @@ include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-statusbar.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-type-builtins.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-version.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-window.h
-lib/epiphany/%%EPHY_VERSION%%/plugins/libdesktopfileplugin.la
-lib/epiphany/%%EPHY_VERSION%%/plugins/libdesktopfileplugin.so
+%%GECKO%%lib/epiphany/%%EPHY_VERSION%%/plugins/libdesktopfileplugin.la
+%%GECKO%%lib/epiphany/%%EPHY_VERSION%%/plugins/libdesktopfileplugin.so
 libdata/pkgconfig/epiphany-%%EPHY_VERSION%%.pc
 share/aclocal/epiphany.m4
 share/applications/bme.desktop
