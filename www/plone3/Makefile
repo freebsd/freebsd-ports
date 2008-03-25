@@ -67,6 +67,12 @@ pre-everything::
 	@${ECHO_MSG} "backup your site before proceeding."
 	@${ECHO_MSG} "If you haven't done so, please press CTRL-C now."
 	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Also, if you are fetching tarball from behind a proxy"
+	@${ECHO_MSG} "server, you may fail even if environment variables"
+	@${ECHO_MSG} "http_proxy and https_proxy are set correctly."
+	@${ECHO_MSG} "If this happens, fetch tarball manually with wget (ftp/wget)"
+	@${ECHO_MSG} "or curl (ftp/curl)."
+	@${ECHO_MSG} ""
 .endif
 
 do-build:
