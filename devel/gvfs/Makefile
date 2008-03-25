@@ -70,4 +70,11 @@ CONFIGURE_ARGS+=	--disable-gphoto2
 PLIST_SUB+=	GPHOTO2="@comment "
 .endif
 
+.if ${OSVERSION} < 602112
+CONFIGURE_ARGS+=	--disable-archive
+PLIST_SUB+=	ARCHIVE="@comment "
+.else
+PLIST_SUB+=	ARCHIVE=""
+.endif
+
 .include <bsd.port.post.mk>
