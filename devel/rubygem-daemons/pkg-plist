@@ -17,16 +17,13 @@
 %%GEM_LIB_DIR%%/lib/daemons/pidfile.rb
 %%GEM_LIB_DIR%%/lib/daemons/pidmem.rb
 %%GEM_LIB_DIR%%/lib/daemons.rb
-%%GEM_LIB_DIR%%/test/call_as_daemon.rb
-%%GEM_LIB_DIR%%/test/tc_main.rb
-%%GEM_LIB_DIR%%/test/test1.rb
-%%GEM_LIB_DIR%%/test/testapp.rb
 %%GEM_LIB_DIR%%/examples/call/call.rb
 %%GEM_LIB_DIR%%/examples/call/call_monitor.rb
 %%GEM_LIB_DIR%%/examples/daemonize/daemonize.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_crash.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_exec.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_exit.rb
+%%GEM_LIB_DIR%%/examples/run/ctrl_keep_pid_files.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_monitor.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_multiple.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_normal.rb
@@ -34,6 +31,8 @@
 %%GEM_LIB_DIR%%/examples/run/ctrl_optionparser.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_proc.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_proc.rb.output
+%%GEM_LIB_DIR%%/examples/run/ctrl_proc_multiple.rb
+%%GEM_LIB_DIR%%/examples/run/ctrl_proc_multiple.rb.output
 %%GEM_LIB_DIR%%/examples/run/ctrl_proc_simple.rb
 %%GEM_LIB_DIR%%/examples/run/myserver.rb
 %%GEM_LIB_DIR%%/examples/run/myserver_crashing.rb
@@ -143,7 +142,6 @@
 @dirrm %%GEM_LIB_DIR%%/examples/daemonize
 @dirrm %%GEM_LIB_DIR%%/examples/call
 @dirrm %%GEM_LIB_DIR%%/examples
-@dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%/lib/daemons
 @dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%
