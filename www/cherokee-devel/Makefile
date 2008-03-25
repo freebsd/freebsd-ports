@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	cherokee
-DISTVERSION=	0.6.0
-PORTREVISION=	3
+DISTVERSION=	0.7.0b1330
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/0.6/${DISTVERSION}/ \
-		LOCAL/beech
+MASTER_SITES=	http://www.cherokee-project.com/download/trunk/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	beech@FreeBSD.org
@@ -33,7 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
 		--enable-readdir_r \
 		--disable-static
-DEFCONFS=	cherokee.conf mime.compression.types mime.types
+DEFCONFS=	cherokee.conf
 CONFSUBDIRS=	ssl mods-available mods-enabled sites-available sites-enabled
 MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee_logrotate.1
 

@@ -7,8 +7,6 @@ bin/cherokee_tweak
 @unexec for i in `find %D/etc/cherokee -name \*.sample`;do if cmp -s $i ${i%%.sample};then rm -f ${i%%.sample};fi;done
 etc/cherokee/cherokee.conf.default
 etc/cherokee/cherokee.conf.perf_sample
-etc/cherokee/mime.compression.types.default
-etc/cherokee/mime.types.default
 etc/cherokee/mods-enabled/.empty
 etc/cherokee/sites-available/.empty
 etc/cherokee/sites-enabled/.empty
@@ -80,10 +78,14 @@ lib/cherokee/libplugin_ncsa.la
 lib/cherokee/libplugin_ncsa.so
 lib/cherokee/libplugin_nn.la
 lib/cherokee/libplugin_nn.so
+lib/cherokee/libplugin_pam.so
+lib/cherokee/libplugin_pam.la
 lib/cherokee/libplugin_phpcgi.la
 lib/cherokee/libplugin_phpcgi.so
 lib/cherokee/libplugin_plain.la
 lib/cherokee/libplugin_plain.so
+lib/cherokee/libplugin_proxy.so
+lib/cherokee/libplugin_proxy.la
 lib/cherokee/libplugin_redir.la
 lib/cherokee/libplugin_redir.so
 lib/cherokee/libplugin_round_robin.la
@@ -174,6 +176,7 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/admin/static/css/cherokee.css
 %%DATADIR%%/admin/static/css/reset-min.css
 %%DATADIR%%/admin/static/images/background.png
+%%DATADIR%%/admin/static/images/bin.png
 %%DATADIR%%/admin/static/images/button-left.png
 %%DATADIR%%/admin/static/images/button-right.png
 %%DATADIR%%/admin/static/images/cherokee-logo-bar.png
@@ -230,7 +233,7 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/icons/ruby.png
 %%DATADIR%%/icons/script.png
 %%DATADIR%%/mime_types.txt
-%%DATADIR%%/themes/default/cherokee-logo.png
+%%DATADIR%%/themes/default/logo.png
 %%DATADIR%%/themes/default/entry.html
 %%DATADIR%%/themes/default/footer.html
 %%DATADIR%%/themes/default/header.html
