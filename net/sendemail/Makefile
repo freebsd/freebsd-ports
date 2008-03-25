@@ -10,7 +10,7 @@ PORTNAME=	sendEmail
 PORTVERSION=	1.55
 CATEGORIES=	net
 MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendEmail/ \
-		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	itetcu@FreeBSD.org

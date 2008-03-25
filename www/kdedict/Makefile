@@ -11,7 +11,7 @@ PORTVERSION=	20030925
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.i18n.kde.org/tools/${PORTNAME}/ \
-		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Web based db to administer standard translations of a translation team
