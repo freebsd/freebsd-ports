@@ -92,6 +92,7 @@ share/PolicyKit/policy/org.freedesktop.hal.power-management.policy
 share/PolicyKit/policy/org.freedesktop.hal.storage.policy
 share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 @exec mkdir -p %D/%%DATADIR%%/fdi/policy/20thirdparty
+@exec mkdir -p %D/%%DATADIR%%/fdi/preprobe/10osvendor
 @exec mkdir -p %D/%%DATADIR%%/fdi/preprobe/20thirdparty
 @dirrm %%DATADIR%%/fdi/preprobe/20thirdparty
 @dirrm %%DATADIR%%/fdi/preprobe/10osvendor
