@@ -10,7 +10,7 @@ PORTVERSION=	2.0.3
 PORTREVISION=	1
 CATEGORIES=	devel mail
 MASTER_SITES=	http://dspam.nuclearelephant.com/sources/extras/ \
-		http://people.tecnik93.com/~itetcu/FreeBSD/ports/libbnr/sources/
+		http://T32.TecNik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	GPL implementation of the Bayesian Noise Reduction algorithm

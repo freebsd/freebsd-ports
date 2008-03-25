@@ -25,15 +25,14 @@ PORTVER_MAJ=	3.6.8
 MIN_OPTIONS_VER=	${PORTNAME}-3.6.8_1
 
 .ifdef(SNAP_DATE)
-MASTER_SITES=	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
-		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
 WRKSRC=		${WRKDIR}/dspam-${SNAP_DATE}
 .else
 MASTER_SITES=	http://dspam.irontec.com/sources/ \
 	http://dspam.nuclearelephant.com/sources/ \
 	http://dspam.systemadministrator.org/sources/ \
 	http://dspam.sourceforge.net/sources/ \
-	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/
+	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 .endif
 
 ## debug / log / admin options
