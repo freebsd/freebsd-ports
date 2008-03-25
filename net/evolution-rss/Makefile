@@ -6,10 +6,9 @@
 #    $MCom: ports/net/evolution-rss/Makefile,v 1.2 2007/10/11 12:35:05 ahze Exp $
 
 PORTNAME=	evolution-rss
-PORTVERSION=	0.0.5
-PORTREVISION=	2
+PORTVERSION=	0.0.8
 CATEGORIES=	net gnome
-MASTER_SITES=	http://mips.edu.ms/
+MASTER_SITES=	http://gnome.eu.org/
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	RSS Feeds support for evolution mail
@@ -21,6 +20,7 @@ USE_GECKO=	firefox
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+GCONF_SCHEMAS=	evolution-rss.schemas
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETTEXT=	yes
 
