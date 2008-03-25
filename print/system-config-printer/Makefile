@@ -18,7 +18,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-cups \
 		${LOCALBASE}/libdata/pkgconfig/notify-python.pc:${PORTSDIR}/devel/py-notify \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
-		xmlto:${PORTSDIR}/textproc/xmlto
+		xmlto:${PORTSDIR}/textproc/xmlto \
+		desktop-file-install:${PORTSDIR}/devel/desktop-file-utils
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-cups \
 		${LOCALBASE}/libdata/pkgconfig/notify-python.pc:${PORTSDIR}/devel/py-notify \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
