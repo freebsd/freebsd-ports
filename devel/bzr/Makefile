@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/ \
-		https://launchpad.net/bzr/1.2/${PORTVERSION}/+download/
+		https://launchpad.net/bzr/1.3/${PORTVERSION}/+download/
 DISTNAME=	bzr-${PORTVERSION}
 
 MAINTAINER=	fullermd@over-yonder.net
@@ -20,7 +20,6 @@ OPTIONS=	SFTP "Enable Paramiko for SFTP support" on
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr
-PYDISTUTILS_PKGVERSION=	${PORTVERSION}.0
 
 MAN1=		bzr.1
 
