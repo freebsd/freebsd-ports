@@ -81,6 +81,8 @@ PLIST_SUB+=	GCONF="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share/PolicyKit/policy/|${PREFIX}/share/PolicyKit/policy/|' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/daemon/default.pa.in
 .if ${OSVERSION} < 700042
