@@ -7,7 +7,7 @@
 -export PREFIX; PREFIX=/usr/local
 -export X11BASE; X11BASE=/usr/X11R6
 +export PREFIX; PREFIX=%%PREFIX%%
-+export X11BASE; X11BASE=%%X11BASE%%
++export X11BASE; X11BASE=%%LOCALBASE%%
  export PATH; PATH=/bin:/sbin:/usr/bin:/usr/sbin:$PREFIX/bin:$PREFIX/sbin:$X11BASE/bin
  export TEMPFILE; TEMPFILE="`mktemp /tmp/ttfm.tmpXXX`"
  export DefaultFontPath; DefaultFontPath=$PREFIX/share/fonts/TrueType
