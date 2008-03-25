@@ -64,6 +64,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Mendoza.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Rio_Gallegos.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/San_Juan.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/San_Luis.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Tucuman.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Ushuaia.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Aruba.pm
@@ -206,7 +207,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Beirut.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Bishkek.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Brunei.pm
-%%SITE_PERL%%/DateTime/TimeZone/Asia/Calcutta.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Choibalsan.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Chongqing.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Colombo.pm
@@ -217,6 +217,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Dushanbe.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Gaza.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Harbin.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Ho_Chi_Minh.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Hong_Kong.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Hovd.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Irkutsk.pm
@@ -228,6 +229,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Karachi.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kashgar.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Katmandu.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Kolkata.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Krasnoyarsk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kuala_Lumpur.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Kuching.pm
@@ -248,7 +250,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Qyzylorda.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Rangoon.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Riyadh.pm
-%%SITE_PERL%%/DateTime/TimeZone/Asia/Saigon.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Sakhalin.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Samarkand.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Seoul.pm
