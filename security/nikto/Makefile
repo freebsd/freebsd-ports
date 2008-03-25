@@ -12,8 +12,7 @@ PORTVERSION=	2.02
 CATEGORIES=	security www
 MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
 		http://www.mirrors.wiretapped.net/security/vulnerability-assessment/${PORTNAME}/ \
-		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
-		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Web and CGI vulnerability scanner with SSL support

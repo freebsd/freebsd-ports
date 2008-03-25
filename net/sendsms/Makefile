@@ -9,7 +9,7 @@ PORTNAME=	sendsms
 PORTVERSION=	0.2.4
 CATEGORIES=	net perl5
 MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendSMS/ \
-		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/
+		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 DISTNAME=	sendSMS.pl
 EXTRACT_SUFX=	.gz
 

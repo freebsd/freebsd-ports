@@ -9,7 +9,7 @@ PORTNAME=	popcheck
 PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ludd.luth.se/~staham/linux/programs/ \
-		http://people.tecnik93.com/~radim/tarballs/
+		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/
 DISTNAME=	popcheck
 
 MAINTAINER=	ports@FreeBSD.org

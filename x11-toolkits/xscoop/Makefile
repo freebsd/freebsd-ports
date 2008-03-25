@@ -9,7 +9,7 @@ PORTNAME=	xscoop
 PORTVERSION=	1.0.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fourcalorieservers.com/ports/x11-toolkits/xscoop/ \
-		http://people.tecnik93.com/~itetcu/FreeBSD/others_ports/${PORTNAME}/sources/
+		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/
 
 MAINTAINER=	rscheckelhoff@fourcalorieservers.com
 COMMENT=	An X library detective

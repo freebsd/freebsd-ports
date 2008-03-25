@@ -11,8 +11,7 @@ PORTNAME=	chord2html
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
-		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
+MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Convert CHORD input files to HTML
