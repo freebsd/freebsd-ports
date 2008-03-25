@@ -5,13 +5,12 @@
 # $FreeBSD$
 #    $MCom: ports/www/epiphany-webkit/Makefile,v 1.2 2008/02/24 22:10:56 ahze Exp $
 
-PORTVERSION=	1
+PORTVERSION=	3
 PKGNAMESUFFIX=	-webkit
 
 COMMENT=	 An extremely lightweight GNOME browser using the WebKit engine
 
 EPHY_SLAVE=	webkit
 MASTERDIR=	${.CURDIR}/../../www/epiphany
-PLIST=	${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"
