@@ -1195,6 +1195,7 @@
     SUBDIR += shttpd
     SUBDIR += sidplug
     SUBDIR += simplog
+    SUBDIR += siteatschool
     SUBDIR += sitebar
     SUBDIR += sitecopy
     SUBDIR += siteframe
