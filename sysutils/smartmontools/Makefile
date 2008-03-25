@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smartmontools
-PORTVERSION=	5.37
-PORTREVISION=	2
+PORTVERSION=	5.38
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,6 +35,8 @@ IGNORE=		built WITH_CISS requires /sys/dev/ciss/cissio.h
 .	endif
 CFLAGS+=	-I/sys/dev/ciss -I${FILESDIR}
 EXTRA_PATCHES=	${FILESDIR}/ciss-patch
+
+BROKEN=		does not work with 5.38
 .endif
 
 post-patch:
