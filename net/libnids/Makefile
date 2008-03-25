@@ -7,7 +7,7 @@
 
 PORTNAME=	libnids
 PORTVERSION=	1.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ OPTIONS=	LIBNET "Include code requiring libnet" ON \
 		LIBNET10 "Use the old libnet-1.0.x version" ON \
 		GLIB2 "Use GLIB2 for multiprocessing support" ON
 
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -43,7 +44,7 @@ CONFIGURE_ARGS+=	--disable-libnet
 .endif
 
 .if !defined(WITHOUT_GLIB2)
-LIB_DEPENDS+=	glib-2.0:${PORTSDIR}/devel/glib20
+USE_GNOME+=	glib20
 .else
 CONFIGURE_ARGS+=	--disable-libglib
 .endif
