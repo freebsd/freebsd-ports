@@ -17,7 +17,7 @@ USE_PERL5_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/web/${DISTNAME}
 
-NO_SIZE=	yes
+NO_SIZE=	yes	# mastersite doesn't report size
 MAN1=		ftpcopy.1 ftpcp.1 ftpls.1
 
 pre-build:
