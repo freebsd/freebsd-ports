@@ -3,7 +3,7 @@
 #    $MCom: ports/x11/gdm/files/gdm.in,v 1.28 2008/03/11 04:21:47 mezz Exp $
 
 # PROVIDE: gdm
-# REQUIRE: LOGIN cleanvar moused
+# REQUIRE: LOGIN cleanvar moused syscons dbus
 #
 # Add the following to /etc/rc.conf to start GDM at boot time:
 #
@@ -15,11 +15,32 @@
 
 gdm_enable=${gdm_enable-${gnome_enable}}
 
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
+
 name=gdm
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/sbin/gdm-binary"
+start_cmd="gdm_start"
+
+gdm_start()
+{
+    if ! checkyesno gdm_enable ; then
+	return 0
+    fi
+    echo "Starting ${name}."
+
+    ( iter=0
+    while ! ps -axoargs | grep "^/usr/libexec/getty " | grep -qv grep >/dev/null 2>&1; do
+	if [ ${iter} -eq 60 ]; then
+	    break
+	fi
+	sleep 1
+	iter=$(expr ${iter} + 1)
+    done
+    ${command} ) &
+}
 
 load_rc_config ${name}
 run_rc_command "$1"
