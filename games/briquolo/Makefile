@@ -7,7 +7,7 @@
 
 PORTNAME=	briquolo
 PORTVERSION=	0.5.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://briquolo.free.fr/download/
 
@@ -18,11 +18,11 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	mixer sdl ttf
 USE_GCC=	3.4+
 USE_GMAKE=	yes
-USE_XLIB=	yes
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
