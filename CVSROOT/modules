@@ -7240,6 +7240,7 @@ linux-xmovie		ports/multimedia/linux-xmovie
 linux-xorg-libs	ports/x11/linux-xorg-libs
 linux-ymessenger	ports/net-im/linux-ymessenger
 linux_base-f7	ports/emulators/linux_base-f7
+linux_base-f8	ports/emulators/linux_base-f8
 linux_base-fc4	ports/emulators/linux_base-fc4
 linux_base-fc6	ports/emulators/linux_base-fc6
 linux_base-gentoo-stage1	ports/emulators/linux_base-gentoo-stage1
