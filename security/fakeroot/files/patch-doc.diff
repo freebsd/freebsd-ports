@@ -1,0 +1,107 @@
+diff -aur doc.orig/es/faked.1 doc/es/faked.1
+--- doc.orig/es/faked.1	2008-03-18 11:35:33.029414914 +0100
++++ doc/es/faked.1	2008-03-18 11:35:38.848400009 +0100
+@@ -86,5 +86,4 @@
+ la mayor parte de J.H.M. Dassen <jdassen@debian.org> con muchas
+ modificaciones y añadiduras de joost y Clint.
+ .SH "VÉASE ADEMÁS"
+-\fBfakeroot\fP(1), \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1) 
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
++\fBfakeroot\fP(1)
+diff -aur doc.orig/es/fakeroot.1 doc/es/fakeroot.1
+--- doc.orig/es/fakeroot.1	2008-03-18 11:35:33.029414914 +0100
++++ doc/es/fakeroot.1	2008-03-18 11:35:38.849399857 +0100
+@@ -236,6 +236,4 @@
+ la mayor parte de J.H.M. Dassen <jdassen@debian.org> con muchas
+ modificaciones y añadiduras de joost y Clint.
+ .SH "VÉASE ADEMÁS"
+-\fBfaked\fP(1)  \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1) 
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
+-
++\fBfaked\fP(1)
+diff -aur doc.orig/faked.1 doc/faked.1
+--- doc.orig/faked.1	2008-03-18 11:35:33.030415042 +0100
++++ doc/faked.1	2008-03-18 11:36:10.811317084 +0100
+@@ -91,7 +91,4 @@
+ .RI <jdassen@debian.org> 
+ mods/additions by joost and Clint.
+ .SH "SEE ALSO"
+-.BR fakeroot (1),
+-.BR dpkg-buildpackage (1),
+-.BR debuild (1)
+-.BR /usr/share/doc/fakeroot/DEBUG
++.BR fakeroot (1)
+diff -aur doc.orig/fakeroot.1 doc/fakeroot.1
+--- doc.orig/fakeroot.1	2008-03-18 11:35:33.030415042 +0100
++++ doc/fakeroot.1	2008-03-18 11:35:38.850399704 +0100
+@@ -297,7 +297,3 @@
+ Rather a lot mods/additions by joost and Clint.
+ .SH "SEE ALSO"
+ .BR faked (1)
+-.BR dpkg\-buildpackage (1),
+-.BR debuild (1)
+-.BR /usr/share/doc/fakeroot/DEBUG
+-
+diff -aur doc.orig/fr/faked.1 doc/fr/faked.1
+--- doc.orig/fr/faked.1	2008-03-18 11:35:33.026414813 +0100
++++ doc/fr/faked.1	2008-03-18 11:35:38.850399704 +0100
+@@ -90,5 +90,4 @@
+ En majeure partie écrite par J.H.M. Dassen <jdassen@debian.org>. La
+ plupart des ajouts et des modifications par Joost et Clint.
+ .SH "VOIR AUSSI"
+-\fBfakeroot\fP(1)  \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1) 
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
++\fBfakeroot\fP(1)
+diff -aur doc.orig/fr/fakeroot.1 doc/fr/fakeroot.1
+--- doc.orig/fr/fakeroot.1	2008-03-18 11:35:33.026414813 +0100
++++ doc/fr/fakeroot.1	2008-03-18 11:35:38.851402625 +0100
+@@ -243,6 +243,4 @@
+ En majeure partie écrite par J.H.M. Dassen <jdassen@debian.org>: La
+ plupart des ajouts et des modifications par Joost et Clint.
+ .SH "VOIR AUSSI"
+-\fBfaked\fP(1)  \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1) 
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
+-
++\fBfaked\fP(1)
+diff -aur doc.orig/nl/faked.1 doc/nl/faked.1
+--- doc.orig/nl/faked.1	2008-03-18 11:35:33.026414813 +0100
++++ doc/nl/faked.1	2008-03-18 11:35:38.852399958 +0100
+@@ -90,5 +90,4 @@
+ Vooral door J.H.M. Dassen <\fIjdassen@debian.org\fP>. Wijzigingen en
+ aanvullingen door joost en Clint.
+ .SH "ZIE OOK"
+-\fBfakeroot\fP(1), \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1),
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
++\fBfakeroot\fP(1)
+diff -aur doc.orig/nl/fakeroot.1 doc/nl/fakeroot.1
+--- doc.orig/nl/fakeroot.1	2008-03-18 11:35:33.025414965 +0100
++++ doc/nl/fakeroot.1	2008-03-18 11:35:38.852399958 +0100
+@@ -249,6 +249,4 @@
+ Vooral door J.H.M. Dassen <\fIjdassen@debian.org\fP>. Nogal wat
+ wijzigingen en aanvullingen door joost en Clint.
+ .SH "ZIE OOK"
+-\fBfaked\fP(1),  \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1), 
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
+-
++\fBfaked\fP(1)
+diff -aur doc.orig/sv/faked.1 doc/sv/faked.1
+--- doc.orig/sv/faked.1	2008-03-18 11:35:33.029414914 +0100
++++ doc/sv/faked.1	2008-03-18 11:35:38.853399806 +0100
+@@ -87,5 +87,4 @@
+ mostly by J.H.M. Dassen <jdassen@debian.org> mods/additions by joost
+ and Clint.
+ .SH "SE ÄVEN"
+-\fBfakeroot\fP(1), \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1) 
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
++\fBfakeroot\fP(1)
+diff -aur doc.orig/sv/fakeroot.1 doc/sv/fakeroot.1
+--- doc.orig/sv/fakeroot.1	2008-03-18 11:35:33.029414914 +0100
++++ doc/sv/fakeroot.1	2008-03-18 11:35:38.853399806 +0100
+@@ -228,6 +228,4 @@
+ mostly by J.H.M. Dassen <jdassen@debian.org> Rather a lot
+ mods/additions by joost and Clint.
+ .SH "SE ÄVEN"
+-\fBfaked\fP(1)  \fBdpkg\-buildpackage\fP(1), \fBdebuild\fP(1) 
+-\fB/usr/share/doc/fakeroot/DEBUG\fP
+-
++\fBfaked\fP(1)

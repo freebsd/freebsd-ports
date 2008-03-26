@@ -6,23 +6,32 @@
 #
 
 PORTNAME=	fakeroot
-PORTVERSION=	1.5.8
+PORTVERSION=	1.9.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/f/fakeroot
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Simulate the root user behaviour
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/po4a:${PORTSDIR}/textproc/po4a
-
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=		--with-ipc=tcp
+USE_AUTOTOOLS=		libtool:15
+USE_LDCONFIG=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MANLANG=	"" es sv fr
+MANLANG=	"" es sv fr nl
 MAN1=		faked.1 fakeroot.1
+
+pre-configure:
+	 @${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
+	 	${WRKSRC}/${CONFIGURE_SCRIPT}
+
+post-install:
+	@${MV} ${PREFIX}/lib/libfakeroot-0.so ${PREFIX}/lib/libfakeroot.so.0
+	@${LN} -sf ${PREFIX}/lib/libfakeroot.so.0 ${PREFIX}/lib/libfakeroot-0.so
 
 .include <bsd.port.mk>
