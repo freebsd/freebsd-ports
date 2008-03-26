@@ -1,0 +1,25 @@
+bin/afcat
+bin/afcompare
+bin/afconvert
+bin/afcopy
+bin/afcrypto
+bin/affix
+bin/affuse
+bin/afinfo
+bin/afrecover
+bin/afsegment
+bin/afsign
+bin/afstats
+bin/aftest
+bin/afverify
+bin/afxml
+bin/aimage
+bin/s3
+include/afflib/afflib.h
+include/afflib/afflib_i.h
+include/afflib/afflib_sha256.h
+lib/libafflib.a
+lib/libafflib.la
+lib/libafflib.so
+lib/libafflib.so.0
+@dirrm include/afflib

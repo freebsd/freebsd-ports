@@ -14,6 +14,7 @@
     SUBDIR += acidlaunch
     SUBDIR += adtool
     SUBDIR += afbinit
+    SUBDIR += afflib
     SUBDIR += afio
     SUBDIR += agef
     SUBDIR += ah-tty
