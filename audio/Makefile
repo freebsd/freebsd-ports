@@ -324,6 +324,7 @@
     SUBDIR += libcddb
     SUBDIR += libcddb-doc
     SUBDIR += libconvolve
+    SUBDIR += libdiscid
     SUBDIR += libdssialsacompat
     SUBDIR += libgpod
     SUBDIR += libid3tag
