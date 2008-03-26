@@ -298,9 +298,8 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/formatter/text_xml.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/Makefile
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/MoinMoin.pot
-%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/POTFILES
-%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/POTFILES.in
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/README
+%%PYTHON_SITELIBDIR%%/MoinMoin/i18n/mk.MoinMoin.po
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/i18n/__init__.pyo
@@ -673,6 +672,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060100.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060100.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060100.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060200.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060200.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1060200.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
@@ -1052,6 +1054,7 @@ share/moin/data/dict/dummy_dict
 share/moin/data/edit-log
 share/moin/data/intermap.txt
 share/moin/data/meta
+share/moin/data/event-log
 share/moin/data/pages/BadContent/current
 share/moin/data/pages/BadContent/revisions/00000001
 share/moin/data/plugin/__init__.py
