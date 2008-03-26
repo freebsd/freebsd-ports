@@ -6587,6 +6587,7 @@ libdca		ports/multimedia/libdca
 libdfui		ports/devel/libdfui
 libdict		ports/devel/libdict
 libdisasm	ports/devel/libdisasm
+libdiscid	ports/audio/libdiscid
 libdjbdns	ports/dns/libdjbdns
 libdlmalloc	ports/devel/libdlmalloc
 libdlna		ports/devel/libdlna
