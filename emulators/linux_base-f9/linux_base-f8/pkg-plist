@@ -75,11 +75,13 @@ etc/profile.d/glib2.csh
 etc/profile.d/glib2.sh
 etc/redhat-release
 etc/rpc
+etc/rpm/macros.dist
 etc/securetty
 etc/shells
 etc/skel/.bash_logout
 etc/skel/.bash_profile
 etc/skel/.bashrc
+etc/system-release
 etc/termcap
 @unexec if cmp -s %D/etc/yp.conf.sample %D/etc/yp.conf; then rm -f %D/etc/yp.conf; fi
 etc/yp.conf.sample
@@ -87,65 +89,73 @@ etc/yum.repos.d/fedora-development.repo
 etc/yum.repos.d/fedora-updates-testing.repo
 etc/yum.repos.d/fedora-updates.repo
 etc/yum.repos.d/fedora.repo
-lib/ld-2.6.so
+lib/ld-2.7.so
 lib/ld-linux.so.2
-lib/libBrokenLocale-2.6.so
+lib/libBrokenLocale-2.7.so
 lib/libBrokenLocale.so.1
 lib/libSegFault.so
 lib/libacl.so.1
 lib/libacl.so.1.1.0
-lib/libanl-2.6.so
+lib/libanl-2.7.so
 lib/libanl.so.1
 lib/libattr.so.1
 lib/libattr.so.1.1.0
-lib/libc-2.6.so
+lib/libbz2.so.1
+lib/libbz2.so.1.0.4
+lib/libc-2.7.so
 lib/libc.so.6
-lib/libcidn-2.6.so
+lib/libcidn-2.7.so
 lib/libcidn.so.1
-lib/libcrypt-2.6.so
+lib/libcrypt-2.7.so
 lib/libcrypt.so.1
 lib/libdb-4.2.so
 lib/libdb-4.3.so
 lib/libdb-4.5.so
+lib/libdb-4.6.so
 lib/libdb_cxx-4.2.so
 lib/libdb_cxx-4.3.so
-lib/libdl-2.6.so
+lib/libdb_cxx-4.5.so
+lib/libdl-2.7.so
 lib/libdl.so.2
-lib/libgcc_s-4.1.2-20070503.so.1
+lib/libgcc_s-4.1.2-20070925.so.1
 lib/libgcc_s.so.1
 lib/libglib-2.0.so.0
-lib/libglib-2.0.so.0.1200.11
+lib/libglib-2.0.so.0.1400.6
 lib/libgmodule-2.0.so.0
-lib/libgmodule-2.0.so.0.1200.11
+lib/libgmodule-2.0.so.0.1400.6
 lib/libgobject-2.0.so.0
-lib/libgobject-2.0.so.0.1200.11
+lib/libgobject-2.0.so.0.1400.6
 lib/libgthread-2.0.so.0
-lib/libgthread-2.0.so.0.1200.11
-lib/libm-2.6.so
+lib/libgthread-2.0.so.0.1400.6
+lib/libm-2.7.so
 lib/libm.so.6
 lib/libncurses.so.5
 lib/libncurses.so.5.6
-lib/libnsl-2.6.so
+lib/libnsl-2.7.so
 lib/libnsl.so.1
-lib/libnss_compat-2.6.so
+lib/libnss_compat-2.7.so
 lib/libnss_compat.so.2
-lib/libnss_dns-2.6.so
+lib/libnss_dns-2.7.so
 lib/libnss_dns.so.2
-lib/libnss_files-2.6.so
+lib/libnss_files-2.7.so
 lib/libnss_files.so.2
-lib/libnss_hesiod-2.6.so
+lib/libnss_hesiod-2.7.so
 lib/libnss_hesiod.so.2
-lib/libnss_nis-2.6.so
+lib/libnss_nis-2.7.so
 lib/libnss_nis.so.2
-lib/libnss_nisplus-2.6.so
+lib/libnss_nisplus-2.7.so
 lib/libnss_nisplus.so.2
 lib/libpcre.so.0
 lib/libpcre.so.0.0.1
-lib/libpthread-2.6.so
+lib/libpopt.so.0
+lib/libpopt.so.0.0.0
+lib/libpthread-2.7.so
 lib/libpthread.so.0
-lib/libresolv-2.6.so
+lib/libreadline.so.5
+lib/libreadline.so.5.2
+lib/libresolv-2.7.so
 lib/libresolv.so.2
-lib/librt-2.6.so
+lib/librt-2.7.so
 lib/librt.so.1
 lib/libselinux.so.1
 lib/libsepol.so.1
@@ -155,12 +165,12 @@ lib/libthread_db-1.0.so
 lib/libthread_db.so.1
 lib/libtinfo.so.5
 lib/libtinfo.so.5.6
-lib/libutil-2.6.so
+lib/libutil-2.7.so
 lib/libutil.so.1
 lib/libz.so.1
 lib/libz.so.1.2.3
 lib/rtkaio/librt.so.1
-lib/rtkaio/librtkaio-2.6.so
+lib/rtkaio/librtkaio-2.7.so
 lib/terminfo/a/ansi
 lib/terminfo/d/dumb
 lib/terminfo/l/linux
@@ -196,6 +206,7 @@ usr/bin/base64
 usr/bin/bashbug-32
 usr/bin/berkeley_db42_svc
 usr/bin/berkeley_db43_svc
+usr/bin/berkeley_db45_svc
 usr/bin/bunzip2
 usr/bin/bzcat
 usr/bin/bzcmp
@@ -234,6 +245,17 @@ usr/bin/db43_recover
 usr/bin/db43_stat
 usr/bin/db43_upgrade
 usr/bin/db43_verify
+usr/bin/db45_archive
+usr/bin/db45_checkpoint
+usr/bin/db45_deadlock
+usr/bin/db45_dump
+usr/bin/db45_hotbackup
+usr/bin/db45_load
+usr/bin/db45_printlog
+usr/bin/db45_recover
+usr/bin/db45_stat
+usr/bin/db45_upgrade
+usr/bin/db45_verify
 usr/bin/dir
 usr/bin/dircolors
 usr/bin/dirname
@@ -244,12 +266,14 @@ usr/bin/eu-ar
 usr/bin/eu-elfcmp
 usr/bin/eu-elflint
 usr/bin/eu-findtextrel
+usr/bin/eu-make-debug-archive
 usr/bin/eu-nm
 usr/bin/eu-ranlib
 usr/bin/eu-readelf
 usr/bin/eu-size
 usr/bin/eu-strings
 usr/bin/eu-strip
+usr/bin/eu-unstrip
 usr/bin/expand
 usr/bin/expr
 usr/bin/factor
@@ -332,7 +356,9 @@ usr/include/db4.2.52/db_cxx.h
 usr/include/db4.3.29/db.h
 usr/include/db4.3.29/db_185.h
 usr/include/db4.3.29/db_cxx.h
-usr/include/popt.h
+usr/include/db4.5.20/db.h
+usr/include/db4.5.20/db_185.h
+usr/include/db4.5.20/db_cxx.h
 usr/kerberos/man/man1/kerberos.1.gz
 usr/kerberos/man/man1/tmac.doc.gz
 usr/kerberos/man/man5/.k5login.5.gz
@@ -538,6 +564,7 @@ usr/lib/gconv/ISO8859-6.so
 usr/lib/gconv/ISO8859-7.so
 usr/lib/gconv/ISO8859-8.so
 usr/lib/gconv/ISO8859-9.so
+usr/lib/gconv/ISO8859-9E.so
 usr/lib/gconv/ISO_10367-BOX.so
 usr/lib/gconv/ISO_11548-1.so
 usr/lib/gconv/ISO_2033.so
@@ -549,10 +576,12 @@ usr/lib/gconv/ISO_6937.so
 usr/lib/gconv/JOHAB.so
 usr/lib/gconv/KOI-8.so
 usr/lib/gconv/KOI8-R.so
+usr/lib/gconv/KOI8-RU.so
 usr/lib/gconv/KOI8-T.so
 usr/lib/gconv/KOI8-U.so
 usr/lib/gconv/LATIN-GREEK-1.so
 usr/lib/gconv/LATIN-GREEK.so
+usr/lib/gconv/MAC-CENTRALEUROPE.so
 usr/lib/gconv/MAC-IS.so
 usr/lib/gconv/MAC-SAMI.so
 usr/lib/gconv/MAC-UK.so
@@ -583,10 +612,8 @@ usr/lib/gconv/libISOIR165.so
 usr/lib/gconv/libJIS.so
 usr/lib/gconv/libJISX0213.so
 usr/lib/gconv/libKSC.so
-usr/lib/libbz2.so.1
-usr/lib/libbz2.so.1.0.4
-usr/lib/libdb-4.5.so
-usr/lib/libdb_cxx-4.5.so
+usr/lib/krb5/plugins/kdb/db2.so
+usr/lib/libdb-4.6.so
 usr/lib/libdes425.so.3
 usr/lib/libdes425.so.3.0
 usr/lib/libform.so.5
@@ -594,7 +621,7 @@ usr/lib/libform.so.5.6
 usr/lib/libformw.so.5
 usr/lib/libformw.so.5.6
 usr/lib/libfreetype.so.6
-usr/lib/libfreetype.so.6.3.15
+usr/lib/libfreetype.so.6.3.16
 usr/lib/libgdbm.so.2
 usr/lib/libgdbm.so.2.0.0
 usr/lib/libgssapi_krb5.so.2
@@ -631,15 +658,8 @@ usr/lib/libpcrecpp.so.0
 usr/lib/libpcrecpp.so.0.0.0
 usr/lib/libpcreposix.so.0
 usr/lib/libpcreposix.so.0.0.0
-usr/lib/libpopt.a
-usr/lib/libpopt.so
-usr/lib/libpopt.so.0
-usr/lib/libpopt.so.0.0.0
-usr/lib/libreadline.so.5
-usr/lib/libreadline.so.5.2
-usr/lib/libselinux.so
 usr/lib/libslang.so.2
-usr/lib/libslang.so.2.0.7
+usr/lib/libslang.so.2.1.2
 usr/lib/libstdc++-3-libc6.2-2-2.10.0.so
 usr/lib/libstdc++-libc6.2-2.so.3
 usr/lib/libstdc++.so.5
@@ -753,44 +773,6 @@ usr/share/doc/bash-3.2/functions/whence
 usr/share/doc/bash-3.2/functions/which
 usr/share/doc/bash-3.2/functions/xalias.bash
 usr/share/doc/bash-3.2/functions/xfind.bash
-usr/share/doc/bash-3.2/loadables/Makefile
-usr/share/doc/bash-3.2/loadables/Makefile.in
-usr/share/doc/bash-3.2/loadables/README
-usr/share/doc/bash-3.2/loadables/basename.c
-usr/share/doc/bash-3.2/loadables/cat.c
-usr/share/doc/bash-3.2/loadables/cut.c
-usr/share/doc/bash-3.2/loadables/dirname.c
-usr/share/doc/bash-3.2/loadables/finfo.c
-usr/share/doc/bash-3.2/loadables/getconf.c
-usr/share/doc/bash-3.2/loadables/getconf.h
-usr/share/doc/bash-3.2/loadables/head.c
-usr/share/doc/bash-3.2/loadables/hello.c
-usr/share/doc/bash-3.2/loadables/id.c
-usr/share/doc/bash-3.2/loadables/ln.c
-usr/share/doc/bash-3.2/loadables/logname.c
-usr/share/doc/bash-3.2/loadables/mkdir.c
-usr/share/doc/bash-3.2/loadables/necho.c
-usr/share/doc/bash-3.2/loadables/pathchk.c
-usr/share/doc/bash-3.2/loadables/perl/Makefile
-usr/share/doc/bash-3.2/loadables/perl/Makefile.in
-usr/share/doc/bash-3.2/loadables/perl/README
-usr/share/doc/bash-3.2/loadables/perl/bperl.c
-usr/share/doc/bash-3.2/loadables/perl/iperl.c
-usr/share/doc/bash-3.2/loadables/print.c
-usr/share/doc/bash-3.2/loadables/printenv.c
-usr/share/doc/bash-3.2/loadables/push.c
-usr/share/doc/bash-3.2/loadables/realpath.c
-usr/share/doc/bash-3.2/loadables/rmdir.c
-usr/share/doc/bash-3.2/loadables/sleep.c
-usr/share/doc/bash-3.2/loadables/strftime.c
-usr/share/doc/bash-3.2/loadables/sync.c
-usr/share/doc/bash-3.2/loadables/tee.c
-usr/share/doc/bash-3.2/loadables/template.c
-usr/share/doc/bash-3.2/loadables/truefalse.c
-usr/share/doc/bash-3.2/loadables/tty.c
-usr/share/doc/bash-3.2/loadables/uname.c
-usr/share/doc/bash-3.2/loadables/unlink.c
-usr/share/doc/bash-3.2/loadables/whoami.c
 usr/share/doc/bash-3.2/misc/aliasconv.bash
 usr/share/doc/bash-3.2/misc/aliasconv.sh
 usr/share/doc/bash-3.2/misc/cshtobash
@@ -882,10 +864,12 @@ usr/share/doc/bash-3.2/startup-files/bashrc
 usr/share/doc/bzip2-1.0.4/CHANGES
 usr/share/doc/bzip2-1.0.4/LICENSE
 usr/share/doc/bzip2-1.0.4/README
-usr/share/doc/compat-db-4.3.29/db-4.2.52/LICENSE
-usr/share/doc/compat-db-4.3.29/db-4.2.52/README
-usr/share/doc/compat-db-4.3.29/db-4.3.29/LICENSE
-usr/share/doc/compat-db-4.3.29/db-4.3.29/README
+usr/share/doc/compat-db-4.5.20/db-4.2.52/LICENSE
+usr/share/doc/compat-db-4.5.20/db-4.2.52/README
+usr/share/doc/compat-db-4.5.20/db-4.3.29/LICENSE
+usr/share/doc/compat-db-4.5.20/db-4.3.29/README
+usr/share/doc/compat-db-4.5.20/db-4.5.20/LICENSE
+usr/share/doc/compat-db-4.5.20/db-4.5.20/README
 usr/share/doc/coreutils-6.9/ABOUT-NLS
 usr/share/doc/coreutils-6.9/COPYING
 usr/share/doc/coreutils-6.9/ChangeLog.bz2
@@ -901,42 +885,41 @@ usr/share/doc/coreutils-6.9/sh-utils/ChangeLog.bz2
 usr/share/doc/coreutils-6.9/sh-utils/NEWS
 usr/share/doc/coreutils-6.9/textutils/ChangeLog.bz2
 usr/share/doc/coreutils-6.9/textutils/NEWS
-usr/share/doc/db4-4.5.20/LICENSE
-usr/share/doc/db4-4.5.20/README
-usr/share/doc/e2fsprogs-1.39/README
-usr/share/doc/e2fsprogs-1.39/RELEASE-NOTES
-usr/share/doc/elfutils-0.127/README
-usr/share/doc/elfutils-0.127/TODO
-usr/share/doc/fedora-release-7/GPL
-usr/share/doc/freetype-2.3.4/ChangeLog
-usr/share/doc/freetype-2.3.4/README
+usr/share/doc/db4-4.6.21/LICENSE
+usr/share/doc/db4-4.6.21/README
+usr/share/doc/e2fsprogs-1.40.4/README
+usr/share/doc/e2fsprogs-1.40.4/RELEASE-NOTES
+usr/share/doc/elfutils-0.131/README
+usr/share/doc/elfutils-0.131/TODO
+usr/share/doc/fedora-release-8/GPL
+usr/share/doc/freetype-2.3.5/ChangeLog
+usr/share/doc/freetype-2.3.5/README
 usr/share/doc/gdbm-1.8.0/COPYING
 usr/share/doc/gdbm-1.8.0/NEWS
 usr/share/doc/gdbm-1.8.0/README
-usr/share/doc/glib2-2.12.11/AUTHORS
-usr/share/doc/glib2-2.12.11/COPYING
-usr/share/doc/glib2-2.12.11/ChangeLog
-usr/share/doc/glib2-2.12.11/NEWS
-usr/share/doc/glib2-2.12.11/README
-usr/share/doc/glibc-2.6/BUGS
-usr/share/doc/glibc-2.6/CONFORMANCE
-usr/share/doc/glibc-2.6/COPYING
-usr/share/doc/glibc-2.6/COPYING.LIB
-usr/share/doc/glibc-2.6/FAQ
-usr/share/doc/glibc-2.6/INSTALL
-usr/share/doc/glibc-2.6/LICENSES
-usr/share/doc/glibc-2.6/NEWS
-usr/share/doc/glibc-2.6/NOTES
-usr/share/doc/glibc-2.6/PROJECTS
-usr/share/doc/glibc-2.6/README
-usr/share/doc/glibc-2.6/README.hesiod
-usr/share/doc/glibc-2.6/README.libm
-usr/share/doc/glibc-common-2.6/ChangeLog.15.bz2
-usr/share/doc/glibc-common-2.6/ChangeLog.16.bz2
-usr/share/doc/glibc-common-2.6/ChangeLog.bz2
-usr/share/doc/glibc-common-2.6/README.timezone
-usr/share/doc/glibc-common-2.6/README.ufc-crypt
-usr/share/doc/glibc-common-2.6/gai.conf
+usr/share/doc/glib2-2.14.6/AUTHORS
+usr/share/doc/glib2-2.14.6/COPYING
+usr/share/doc/glib2-2.14.6/NEWS
+usr/share/doc/glib2-2.14.6/README
+usr/share/doc/glibc-2.7/BUGS
+usr/share/doc/glibc-2.7/CONFORMANCE
+usr/share/doc/glibc-2.7/COPYING
+usr/share/doc/glibc-2.7/COPYING.LIB
+usr/share/doc/glibc-2.7/FAQ
+usr/share/doc/glibc-2.7/INSTALL
+usr/share/doc/glibc-2.7/LICENSES
+usr/share/doc/glibc-2.7/NEWS
+usr/share/doc/glibc-2.7/NOTES
+usr/share/doc/glibc-2.7/PROJECTS
+usr/share/doc/glibc-2.7/README
+usr/share/doc/glibc-2.7/README.hesiod
+usr/share/doc/glibc-2.7/README.libm
+usr/share/doc/glibc-common-2.7/ChangeLog.15.bz2
+usr/share/doc/glibc-common-2.7/ChangeLog.16.bz2
+usr/share/doc/glibc-common-2.7/ChangeLog.bz2
+usr/share/doc/glibc-common-2.7/README.timezone
+usr/share/doc/glibc-common-2.7/README.ufc-crypt
+usr/share/doc/glibc-common-2.7/gai.conf
 usr/share/doc/grep-2.5.1/ABOUT-NLS
 usr/share/doc/grep-2.5.1/AUTHORS
 usr/share/doc/grep-2.5.1/ChangeLog
@@ -944,14 +927,16 @@ usr/share/doc/grep-2.5.1/NEWS
 usr/share/doc/grep-2.5.1/README
 usr/share/doc/grep-2.5.1/THANKS
 usr/share/doc/grep-2.5.1/TODO
-usr/share/doc/info-4.8/COPYING
+usr/share/doc/info-4.11/COPYING
 usr/share/doc/libgcc-4.1.2/COPYING.LIB
 usr/share/doc/ncurses-5.6/ANNOUNCE
 usr/share/doc/ncurses-5.6/AUTHORS
 usr/share/doc/ncurses-5.6/README
 usr/share/doc/ncurses-5.6/TO-DO
-usr/share/doc/pcre-7.0/AUTHORS
-usr/share/doc/pcre-7.0/LICENCE
+usr/share/doc/pcre/AUTHORS
+usr/share/doc/pcre/LICENCE
+usr/share/doc/popt-1.13/CHANGES
+usr/share/doc/popt-1.13/COPYING
 usr/share/doc/readline-5.2/CHANGES
 usr/share/doc/readline-5.2/COPYING
 usr/share/doc/readline-5.2/NEWS
@@ -959,12 +944,22 @@ usr/share/doc/readline-5.2/README
 usr/share/doc/readline-5.2/USAGE
 usr/share/doc/setserial-2.17/README
 usr/share/doc/setserial-2.17/rc.serial
-usr/share/doc/setup-2.6.4/uidgid
-usr/share/doc/slang-2.0.7/COPYING
-usr/share/doc/slang-2.0.7/changes.txt
+usr/share/doc/setup-2.6.10/uidgid
+usr/share/doc/slang-2.1.2/COPYING
+usr/share/doc/slang-2.1.2/README
+usr/share/doc/slang-2.1.2/changes.txt
+usr/share/doc/slang-2.1.2/grammar.txt
+usr/share/doc/slang-2.1.2/slang.txt
+usr/share/doc/slang-2.1.2/slangfun.txt
 usr/share/doc/zlib-1.2.3/ChangeLog
 usr/share/doc/zlib-1.2.3/FAQ
 usr/share/doc/zlib-1.2.3/README
+usr/share/fedora-release/README
+usr/share/fedora-release/f8-fedora.ks
+usr/share/fedora-release/livecd-fedora-base-desktop.ks
+usr/share/fedora-release/livecd-fedora-desktop.ks
+usr/share/fedora-release/livecd-fedora-kde.ks
+usr/share/fedora-release/livedvd-fedora-kde.ks
 usr/share/i18n/charmaps/ANSI_X3.110-1983.gz
 usr/share/i18n/charmaps/ANSI_X3.4-1968.gz
 usr/share/i18n/charmaps/ARMSCII-8.gz
@@ -1110,6 +1105,7 @@ usr/share/i18n/charmaps/ISO-8859-6.gz
 usr/share/i18n/charmaps/ISO-8859-7.gz
 usr/share/i18n/charmaps/ISO-8859-8.gz
 usr/share/i18n/charmaps/ISO-8859-9.gz
+usr/share/i18n/charmaps/ISO-8859-9E.gz
 usr/share/i18n/charmaps/ISO-IR-197.gz
 usr/share/i18n/charmaps/ISO-IR-209.gz
 usr/share/i18n/charmaps/ISO-IR-90.gz
@@ -1143,11 +1139,13 @@ usr/share/i18n/charmaps/JUS_I.B1.003-MAC.gz
 usr/share/i18n/charmaps/JUS_I.B1.003-SERB.gz
 usr/share/i18n/charmaps/KOI-8.gz
 usr/share/i18n/charmaps/KOI8-R.gz
+usr/share/i18n/charmaps/KOI8-RU.gz
 usr/share/i18n/charmaps/KOI8-T.gz
 usr/share/i18n/charmaps/KOI8-U.gz
 usr/share/i18n/charmaps/KSC5636.gz
 usr/share/i18n/charmaps/LATIN-GREEK-1.gz
 usr/share/i18n/charmaps/LATIN-GREEK.gz
+usr/share/i18n/charmaps/MAC-CENTRALEUROPE.gz
 usr/share/i18n/charmaps/MAC-CYRILLIC.gz
 usr/share/i18n/charmaps/MAC-IS.gz
 usr/share/i18n/charmaps/MAC-SAMI.gz
@@ -1216,6 +1214,8 @@ usr/share/i18n/locales/ast_ES
 usr/share/i18n/locales/az_AZ
 usr/share/i18n/locales/be_BY
 usr/share/i18n/locales/be_BY@latin
+usr/share/i18n/locales/ber_DZ
+usr/share/i18n/locales/ber_MA
 usr/share/i18n/locales/bg_BG
 usr/share/i18n/locales/bn_BD
 usr/share/i18n/locales/bn_IN
@@ -1255,6 +1255,7 @@ usr/share/i18n/locales/en_HK
 usr/share/i18n/locales/en_IE
 usr/share/i18n/locales/en_IE@euro
 usr/share/i18n/locales/en_IN
+usr/share/i18n/locales/en_NG
 usr/share/i18n/locales/en_NZ
 usr/share/i18n/locales/en_PH
 usr/share/i18n/locales/en_SG
@@ -1288,6 +1289,7 @@ usr/share/i18n/locales/eu_ES@euro
 usr/share/i18n/locales/fa_IR
 usr/share/i18n/locales/fi_FI
 usr/share/i18n/locales/fi_FI@euro
+usr/share/i18n/locales/fil_PH
 usr/share/i18n/locales/fo_FO
 usr/share/i18n/locales/fr_BE
 usr/share/i18n/locales/fr_BE@euro
@@ -1297,6 +1299,8 @@ usr/share/i18n/locales/fr_FR
 usr/share/i18n/locales/fr_FR@euro
 usr/share/i18n/locales/fr_LU
 usr/share/i18n/locales/fr_LU@euro
+usr/share/i18n/locales/fur_IT
+usr/share/i18n/locales/fy_DE
 usr/share/i18n/locales/fy_NL
 usr/share/i18n/locales/ga_IE
 usr/share/i18n/locales/ga_IE@euro
@@ -1309,6 +1313,7 @@ usr/share/i18n/locales/gl_ES
 usr/share/i18n/locales/gl_ES@euro
 usr/share/i18n/locales/gu_IN
 usr/share/i18n/locales/gv_GB
+usr/share/i18n/locales/ha_NG
 usr/share/i18n/locales/he_IL
 usr/share/i18n/locales/hi_IN
 usr/share/i18n/locales/hr_HR
@@ -1317,6 +1322,8 @@ usr/share/i18n/locales/hu_HU
 usr/share/i18n/locales/hy_AM
 usr/share/i18n/locales/i18n
 usr/share/i18n/locales/id_ID
+usr/share/i18n/locales/ig_NG
+usr/share/i18n/locales/ik_CA
 usr/share/i18n/locales/is_IS
 usr/share/i18n/locales/iso14651_t1
 usr/share/i18n/locales/iso14651_t1_common
@@ -1324,6 +1331,7 @@ usr/share/i18n/locales/iso14651_t1_pinyin
 usr/share/i18n/locales/it_CH
 usr/share/i18n/locales/it_IT
 usr/share/i18n/locales/it_IT@euro
+usr/share/i18n/locales/iu_CA
 usr/share/i18n/locales/iw_IL
 usr/share/i18n/locales/ja_JP
 usr/share/i18n/locales/ka_GE
@@ -1336,6 +1344,8 @@ usr/share/i18n/locales/ku_TR
 usr/share/i18n/locales/kw_GB
 usr/share/i18n/locales/ky_KG
 usr/share/i18n/locales/lg_UG
+usr/share/i18n/locales/li_BE
+usr/share/i18n/locales/li_NL
 usr/share/i18n/locales/lo_LA
 usr/share/i18n/locales/lt_LT
 usr/share/i18n/locales/lv_LV
@@ -1349,6 +1359,8 @@ usr/share/i18n/locales/mr_IN
 usr/share/i18n/locales/ms_MY
 usr/share/i18n/locales/mt_MT
 usr/share/i18n/locales/nb_NO
+usr/share/i18n/locales/nds_DE
+usr/share/i18n/locales/nds_NL
 usr/share/i18n/locales/ne_NP
 usr/share/i18n/locales/nl_BE
 usr/share/i18n/locales/nl_BE@euro
@@ -1364,6 +1376,7 @@ usr/share/i18n/locales/om_KE
 usr/share/i18n/locales/or_IN
 usr/share/i18n/locales/pa_IN
 usr/share/i18n/locales/pa_PK
+usr/share/i18n/locales/pap_AN
 usr/share/i18n/locales/pl_PL
 usr/share/i18n/locales/pt_BR
 usr/share/i18n/locales/pt_PT
@@ -1372,6 +1385,8 @@ usr/share/i18n/locales/ro_RO
 usr/share/i18n/locales/ru_RU
 usr/share/i18n/locales/ru_UA
 usr/share/i18n/locales/rw_RW
+usr/share/i18n/locales/sa_IN
+usr/share/i18n/locales/sc_IT
 usr/share/i18n/locales/se_NO
 usr/share/i18n/locales/si_LK
 usr/share/i18n/locales/sid_ET
@@ -1382,7 +1397,6 @@ usr/share/i18n/locales/so_ET
 usr/share/i18n/locales/so_KE
 usr/share/i18n/locales/so_SO
 usr/share/i18n/locales/sq_AL
-usr/share/i18n/locales/sr_CS
 usr/share/i18n/locales/sr_ME
 usr/share/i18n/locales/sr_RS
 usr/share/i18n/locales/sr_RS@latin
@@ -1398,6 +1412,7 @@ usr/share/i18n/locales/th_TH
 usr/share/i18n/locales/ti_ER
 usr/share/i18n/locales/ti_ET
 usr/share/i18n/locales/tig_ER
+usr/share/i18n/locales/tk_TM
 usr/share/i18n/locales/tl_PH
 usr/share/i18n/locales/tn_ZA
 usr/share/i18n/locales/tr_CY
@@ -1417,6 +1432,7 @@ usr/share/i18n/locales/translit_wide
 usr/share/i18n/locales/ts_ZA
 usr/share/i18n/locales/tt_RU
 usr/share/i18n/locales/tt_RU@iqtelif
+usr/share/i18n/locales/ug_CN
 usr/share/i18n/locales/uk_UA
 usr/share/i18n/locales/ur_PK
 usr/share/i18n/locales/uz_UZ
@@ -1426,8 +1442,10 @@ usr/share/i18n/locales/vi_VN
 usr/share/i18n/locales/wa_BE
 usr/share/i18n/locales/wa_BE@euro
 usr/share/i18n/locales/wal_ET
+usr/share/i18n/locales/wo_SN
 usr/share/i18n/locales/xh_ZA
 usr/share/i18n/locales/yi_US
+usr/share/i18n/locales/yo_NG
 usr/share/i18n/locales/zh_CN
 usr/share/i18n/locales/zh_HK
 usr/share/i18n/locales/zh_SG
@@ -1445,6 +1463,7 @@ usr/share/locale/af/LC_MESSAGES/coreutils.mo
 usr/share/locale/af/LC_TIME/coreutils.mo
 usr/share/locale/am/LC_MESSAGES/glib20.mo
 usr/share/locale/ar/LC_MESSAGES/glib20.mo
+usr/share/locale/as/LC_MESSAGES/glib20.mo
 usr/share/locale/az/LC_MESSAGES/glib20.mo
 usr/share/locale/be/LC_MESSAGES/coreutils.mo
 usr/share/locale/be/LC_MESSAGES/glib20.mo
@@ -1453,11 +1472,13 @@ usr/share/locale/be/LC_TIME/coreutils.mo
 usr/share/locale/be@latin/LC_MESSAGES/glib20.mo
 usr/share/locale/bg/LC_MESSAGES/coreutils.mo
 usr/share/locale/bg/LC_MESSAGES/glib20.mo
+usr/share/locale/bg/LC_MESSAGES/libc.mo
 usr/share/locale/bg/LC_TIME/coreutils.mo
 usr/share/locale/bn/LC_MESSAGES/glib20.mo
 usr/share/locale/bn_IN/LC_MESSAGES/glib20.mo
 usr/share/locale/bs/LC_MESSAGES/glib20.mo
 usr/share/locale/ca/LC_MESSAGES/coreutils.mo
+usr/share/locale/ca/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/ca/LC_MESSAGES/glib20.mo
 usr/share/locale/ca/LC_MESSAGES/libc.mo
 usr/share/locale/ca/LC_TIME/coreutils.mo
@@ -1508,12 +1529,10 @@ usr/share/locale/et/LC_TIME/coreutils.mo
 usr/share/locale/eu/LC_MESSAGES/coreutils.mo
 usr/share/locale/eu/LC_MESSAGES/glib20.mo
 usr/share/locale/eu/LC_TIME/coreutils.mo
-usr/share/locale/eu_ES/LC_MESSAGES/popt.mo
 usr/share/locale/fa/LC_MESSAGES/glib20.mo
 usr/share/locale/fi/LC_MESSAGES/coreutils.mo
 usr/share/locale/fi/LC_MESSAGES/glib20.mo
 usr/share/locale/fi/LC_MESSAGES/libc.mo
-usr/share/locale/fi/LC_MESSAGES/popt.mo
 usr/share/locale/fi/LC_TIME/coreutils.mo
 usr/share/locale/fr/LC_MESSAGES/coreutils.mo
 usr/share/locale/fr/LC_MESSAGES/e2fsprogs.mo
@@ -1524,6 +1543,7 @@ usr/share/locale/fr/LC_MESSAGES/popt.mo
 usr/share/locale/fr/LC_TIME/coreutils.mo
 usr/share/locale/ga/LC_MESSAGES/coreutils.mo
 usr/share/locale/ga/LC_MESSAGES/glib20.mo
+usr/share/locale/ga/LC_MESSAGES/popt.mo
 usr/share/locale/ga/LC_TIME/coreutils.mo
 usr/share/locale/gl/LC_MESSAGES/coreutils.mo
 usr/share/locale/gl/LC_MESSAGES/glib20.mo
@@ -1545,7 +1565,6 @@ usr/share/locale/hu/LC_TIME/coreutils.mo
 usr/share/locale/hy/LC_MESSAGES/glib20.mo
 usr/share/locale/id/LC_MESSAGES/glib20.mo
 usr/share/locale/id/LC_MESSAGES/grep.mo
-usr/share/locale/id/LC_MESSAGES/popt.mo
 usr/share/locale/is/LC_MESSAGES/glib20.mo
 usr/share/locale/is/LC_MESSAGES/popt.mo
 usr/share/locale/it/LC_MESSAGES/coreutils.mo
@@ -1562,6 +1581,7 @@ usr/share/locale/ja/LC_MESSAGES/libc.mo
 usr/share/locale/ja/LC_MESSAGES/popt.mo
 usr/share/locale/ja/LC_TIME/coreutils.mo
 usr/share/locale/ka/LC_MESSAGES/glib20.mo
+usr/share/locale/kn/LC_MESSAGES/glib20.mo
 usr/share/locale/ko/LC_MESSAGES/coreutils.mo
 usr/share/locale/ko/LC_MESSAGES/glib20.mo
 usr/share/locale/ko/LC_MESSAGES/grep.mo
@@ -1572,6 +1592,7 @@ usr/share/locale/ku/LC_MESSAGES/glib20.mo
 usr/share/locale/locale.alias
 usr/share/locale/lt/LC_MESSAGES/glib20.mo
 usr/share/locale/lv/LC_MESSAGES/glib20.mo
+usr/share/locale/mg/LC_MESSAGES/glib20.mo
 usr/share/locale/mk/LC_MESSAGES/glib20.mo
 usr/share/locale/ml/LC_MESSAGES/glib20.mo
 usr/share/locale/mn/LC_MESSAGES/glib20.mo
@@ -1581,6 +1602,7 @@ usr/share/locale/ms/LC_TIME/coreutils.mo
 usr/share/locale/nb/LC_MESSAGES/coreutils.mo
 usr/share/locale/nb/LC_MESSAGES/glib20.mo
 usr/share/locale/nb/LC_MESSAGES/libc.mo
+usr/share/locale/nb/LC_MESSAGES/popt.mo
 usr/share/locale/nb/LC_TIME/coreutils.mo
 usr/share/locale/ne/LC_MESSAGES/glib20.mo
 usr/share/locale/nl/LC_MESSAGES/coreutils.mo
@@ -1588,12 +1610,13 @@ usr/share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/nl/LC_MESSAGES/glib20.mo
 usr/share/locale/nl/LC_MESSAGES/grep.mo
 usr/share/locale/nl/LC_MESSAGES/libc.mo
+usr/share/locale/nl/LC_MESSAGES/popt.mo
 usr/share/locale/nl/LC_TIME/coreutils.mo
 usr/share/locale/nn/LC_MESSAGES/glib20.mo
 usr/share/locale/no/LC_MESSAGES/coreutils.mo
 usr/share/locale/no/LC_MESSAGES/grep.mo
-usr/share/locale/no/LC_MESSAGES/popt.mo
 usr/share/locale/no/LC_TIME/coreutils.mo
+usr/share/locale/oc/LC_MESSAGES/glib20.mo
 usr/share/locale/or/LC_MESSAGES/glib20.mo
 usr/share/locale/pa/LC_MESSAGES/glib20.mo
 usr/share/locale/pl/LC_MESSAGES/coreutils.mo
@@ -1611,7 +1634,6 @@ usr/share/locale/pt_BR/LC_MESSAGES/coreutils.mo
 usr/share/locale/pt_BR/LC_MESSAGES/glib20.mo
 usr/share/locale/pt_BR/LC_MESSAGES/grep.mo
 usr/share/locale/pt_BR/LC_MESSAGES/libc.mo
-usr/share/locale/pt_BR/LC_MESSAGES/popt.mo
 usr/share/locale/pt_BR/LC_TIME/coreutils.mo
 usr/share/locale/ro/LC_MESSAGES/glib20.mo
 usr/share/locale/ro/LC_MESSAGES/popt.mo
@@ -1623,7 +1645,6 @@ usr/share/locale/ru/LC_MESSAGES/libc.mo
 usr/share/locale/ru/LC_MESSAGES/popt.mo
 usr/share/locale/ru/LC_TIME/coreutils.mo
 usr/share/locale/rw/LC_MESSAGES/coreutils.mo
-usr/share/locale/rw/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/rw/LC_MESSAGES/glib20.mo
 usr/share/locale/rw/LC_MESSAGES/libc.mo
 usr/share/locale/rw/LC_TIME/coreutils.mo
@@ -1639,7 +1660,6 @@ usr/share/locale/sl/LC_MESSAGES/popt.mo
 usr/share/locale/sl/LC_TIME/coreutils.mo
 usr/share/locale/sq/LC_MESSAGES/glib20.mo
 usr/share/locale/sr/LC_MESSAGES/glib20.mo
-usr/share/locale/sr/LC_MESSAGES/popt.mo
 usr/share/locale/sr@Latn/LC_MESSAGES/glib20.mo
 usr/share/locale/sr@ije/LC_MESSAGES/glib20.mo
 usr/share/locale/sv/LC_MESSAGES/coreutils.mo
@@ -1662,12 +1682,13 @@ usr/share/locale/tr/LC_TIME/coreutils.mo
 usr/share/locale/tt/LC_MESSAGES/glib20.mo
 usr/share/locale/uk/LC_MESSAGES/glib20.mo
 usr/share/locale/uk/LC_MESSAGES/popt.mo
+usr/share/locale/vi/LC_MESSAGES/e2fsprogs.mo
 usr/share/locale/vi/LC_MESSAGES/glib20.mo
+usr/share/locale/vi/LC_MESSAGES/popt.mo
 usr/share/locale/wa/LC_MESSAGES/glib20.mo
 usr/share/locale/wa/LC_MESSAGES/popt.mo
 usr/share/locale/xh/LC_MESSAGES/glib20.mo
 usr/share/locale/yi/LC_MESSAGES/glib20.mo
-usr/share/locale/zh/LC_MESSAGES/popt.mo
 usr/share/locale/zh_CN/LC_MESSAGES/coreutils.mo
 usr/share/locale/zh_CN/LC_MESSAGES/glib20.mo
 usr/share/locale/zh_CN/LC_MESSAGES/libc.mo
@@ -1677,7 +1698,6 @@ usr/share/locale/zh_HK/LC_MESSAGES/glib20.mo
 usr/share/locale/zh_TW/LC_MESSAGES/coreutils.mo
 usr/share/locale/zh_TW/LC_MESSAGES/glib20.mo
 usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
-usr/share/locale/zh_TW/LC_MESSAGES/popt.mo
 usr/share/locale/zh_TW/LC_TIME/coreutils.mo
 usr/share/man/man1/..1.gz
 usr/share/man/man1/:.1.gz
@@ -1783,6 +1803,7 @@ usr/share/man/man1/nohup.1.gz
 usr/share/man/man1/od.1.gz
 usr/share/man/man1/paste.1.gz
 usr/share/man/man1/pathchk.1.gz
+usr/share/man/man1/pcre-config.1.gz
 usr/share/man/man1/pcregrep.1.gz
 usr/share/man/man1/pcretest.1.gz
 usr/share/man/man1/pinky.1.gz
@@ -1857,10 +1878,12 @@ usr/share/man/man1/wc.1.gz
 usr/share/man/man1/who.1.gz
 usr/share/man/man1/whoami.1.gz
 usr/share/man/man1/yes.1.gz
-usr/share/man/man3/popt.3.gz
 usr/share/man/man5/e2fsck.conf.5.gz
 usr/share/man/man5/info.5.gz
 usr/share/man/man5/mke2fs.conf.5.gz
+usr/share/man/man5/selabel_file.5.gz
+usr/share/man/man5/selabel_media.5.gz
+usr/share/man/man5/selabel_x.5.gz
 usr/share/man/man5/term.5.gz
 usr/share/man/man5/terminfo.5.gz
 usr/share/man/man7/term.7.gz
@@ -3075,6 +3098,7 @@ usr/share/terminfo/k/kon
 usr/share/terminfo/k/kon2
 usr/share/terminfo/k/konsole
 usr/share/terminfo/k/konsole-16color
+usr/share/terminfo/k/konsole-256color
 usr/share/terminfo/k/konsole-base
 usr/share/terminfo/k/konsole-linux
 usr/share/terminfo/k/konsole-solaris
@@ -4441,6 +4465,7 @@ usr/share/terminfo/z/ztx-1-a
 usr/share/terminfo/z/ztx11
 usr/tmp
 var/mail
+var/cache/ldconfig/aux-cache
 @comment empty directory listing
 @exec /bin/mkdir -p %D/var/yp
 @exec /bin/mkdir -p %D/var/spool/mail
@@ -4455,9 +4480,9 @@ var/mail
 @exec /bin/mkdir -p %D/var/games
 @exec /bin/mkdir -p %D/var/empty
 @exec /bin/mkdir -p %D/var/db
-@exec /bin/mkdir -p %D/var/cache
 @exec /bin/mkdir -p %D/usr/src
 @exec /bin/mkdir -p %D/usr/share/xsessions
+@exec /bin/mkdir -p %D/usr/share/themes
 @exec /bin/mkdir -p %D/usr/share/pixmaps
 @exec /bin/mkdir -p %D/usr/share/omf
 @exec /bin/mkdir -p %D/usr/share/misc
@@ -4473,6 +4498,7 @@ var/mail
 @exec /bin/mkdir -p %D/usr/share/man/man4x
 @exec /bin/mkdir -p %D/usr/share/man/man4
 @exec /bin/mkdir -p %D/usr/share/man/man3x
+@exec /bin/mkdir -p %D/usr/share/man/man3
 @exec /bin/mkdir -p %D/usr/share/man/man2x
 @exec /bin/mkdir -p %D/usr/share/man/man2
 @exec /bin/mkdir -p %D/usr/share/man/man1x
@@ -4480,6 +4506,7 @@ var/mail
 @exec /bin/mkdir -p %D/usr/share/locale/zun/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/zu/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/znd/LC_MESSAGES
+@exec /bin/mkdir -p %D/usr/share/locale/zh/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/zen/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/zap/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/za/LC_MESSAGES
@@ -4534,6 +4561,7 @@ var/mail
 @exec /bin/mkdir -p %D/usr/share/locale/tem/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/tai/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/syr/LC_MESSAGES
+@exec /bin/mkdir -p %D/usr/share/locale/syc/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/sw/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/sv_SE/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/sux/LC_MESSAGES
@@ -4805,6 +4833,7 @@ var/mail
 @exec /bin/mkdir -p %D/usr/share/locale/fa_IR/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/ewo/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/et_EE/LC_MESSAGES
+@exec /bin/mkdir -p %D/usr/share/locale/eu_ES/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/es_VE/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/es_UY/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/es_SV/LC_MESSAGES
@@ -4943,7 +4972,7 @@ var/mail
 @exec /bin/mkdir -p %D/usr/share/locale/ab/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/locale/aa/LC_MESSAGES
 @exec /bin/mkdir -p %D/usr/share/icons
-@exec /bin/mkdir -p %D/usr/share/gtk-doc
+@exec /bin/mkdir -p %D/usr/share/gnome
 @exec /bin/mkdir -p %D/usr/share/games
 @exec /bin/mkdir -p %D/usr/share/empty
 @exec /bin/mkdir -p %D/usr/share/dict
@@ -4973,15 +5002,15 @@ var/mail
 @exec /bin/mkdir -p %D/lib/tls
 @exec /bin/mkdir -p %D/lib/modules
 @exec /bin/mkdir -p %D/etc/xinetd.d
-@exec /bin/mkdir -p %D/etc/xdg/menus
 @exec /bin/mkdir -p %D/etc/xdg/autostart
 @exec /bin/mkdir -p %D/etc/terminfo
 @exec /bin/mkdir -p %D/etc/sysconfig
+@exec /bin/mkdir -p %D/etc/popt.d
 @exec /bin/mkdir -p %D/etc/opt
+@exec /bin/mkdir -p %D/etc/fonts/conf.d
 @exec /bin/mkdir -p %D/etc/ld.so.conf.d
 @exec /bin/mkdir -p %D/etc/blkid
-@exec /bin/mkdir -p %D/etc/X11/sysconfig
-@exec /bin/mkdir -p %D/etc/X11/serverconfig
+@exec /bin/mkdir -p %D/etc/X11/fontpath.d
 @exec /bin/mkdir -p %D/etc/X11/applnk
 @dirrm var/yp
 @dirrm var/spool/mail
@@ -4996,6 +5025,7 @@ var/mail
 @dirrm var/games
 @dirrm var/empty
 @dirrm var/db
+@dirrm var/cache/ldconfig
 @dirrm var/cache
 @dirrm usr/src
 @dirrm usr/share/xsessions
@@ -5484,7 +5514,6 @@ var/mail
 @dirrm usr/share/locale/ab/LC_MESSAGES
 @dirrm usr/share/locale/aa/LC_MESSAGES
 @dirrm usr/share/icons
-@dirrm usr/share/gtk-doc
 @dirrm usr/share/games
 @dirrm usr/share/empty
 @dirrm usr/share/dict
@@ -5509,21 +5538,19 @@ var/mail
 @dirrm lib/tls
 @dirrm lib/modules
 @dirrm etc/xinetd.d
-@dirrm etc/xdg/menus
 @dirrm etc/xdg/autostart
 @dirrm etc/terminfo
 @dirrm etc/sysconfig
 @dirrm etc/opt
 @dirrm etc/ld.so.conf.d
 @dirrm etc/blkid
-@dirrm etc/X11/sysconfig
-@dirrm etc/X11/serverconfig
 @dirrm etc/X11/applnk
 @comment non-empty directory listing in revers order
 @dirrm var/spool
 @dirrm var/lock
 @dirrm var/lib
 @dirrm var
+@dirrm usr/share/themes
 @dirrm usr/share/terminfo/z
 @dirrm usr/share/terminfo/x
 @dirrm usr/share/terminfo/w
@@ -5665,6 +5692,8 @@ var/mail
 @dirrm usr/share/locale/ta/LC_MESSAGES
 @dirrm usr/share/locale/ta
 @dirrm usr/share/locale/syr
+@dirrm usr/share/locale/syc/LC_MESSAGES
+@dirrm usr/share/locale/syc
 @dirrm usr/share/locale/sw
 @dirrm usr/share/locale/sv_SE
 @dirrm usr/share/locale/sv/LC_TIME
@@ -6245,36 +6274,40 @@ var/mail
 @dirrm usr/share/locale/ab
 @dirrm usr/share/locale/aa
 @dirrm usr/share/locale
+@dirrm usr/share/gnome
+@dirrm usr/share/fedora-release
 @dirrm usr/share/info
 @dirrm usr/share/i18n/locales
 @dirrm usr/share/i18n/charmaps
 @dirrm usr/share/i18n
 @dirrm usr/share/doc/zlib-1.2.3
-@dirrm usr/share/doc/slang-2.0.7
-@dirrm usr/share/doc/setup-2.6.4
+@dirrm usr/share/doc/slang-2.1.2
+@dirrm usr/share/doc/setup-2.6.10
 @dirrm usr/share/doc/setserial-2.17
 @dirrm usr/share/doc/readline-5.2
-@dirrm usr/share/doc/pcre-7.0
+@dirrm usr/share/doc/popt-1.13
+@dirrm usr/share/doc/pcre
 @dirrm usr/share/doc/ncurses-5.6
 @dirrm usr/share/doc/libgcc-4.1.2
-@dirrm usr/share/doc/info-4.8
+@dirrm usr/share/doc/info-4.11
 @dirrm usr/share/doc/grep-2.5.1
-@dirrm usr/share/doc/glibc-common-2.6
-@dirrm usr/share/doc/glibc-2.6
-@dirrm usr/share/doc/glib2-2.12.11
+@dirrm usr/share/doc/glibc-common-2.7
+@dirrm usr/share/doc/glibc-2.7
+@dirrm usr/share/doc/glib2-2.14.6
 @dirrm usr/share/doc/gdbm-1.8.0
-@dirrm usr/share/doc/freetype-2.3.4
-@dirrm usr/share/doc/fedora-release-7
-@dirrm usr/share/doc/elfutils-0.127
-@dirrm usr/share/doc/e2fsprogs-1.39
-@dirrm usr/share/doc/db4-4.5.20
+@dirrm usr/share/doc/freetype-2.3.5
+@dirrm usr/share/doc/fedora-release-8
+@dirrm usr/share/doc/elfutils-0.131
+@dirrm usr/share/doc/e2fsprogs-1.40.4
+@dirrm usr/share/doc/db4-4.6.21
 @dirrm usr/share/doc/coreutils-6.9/textutils
 @dirrm usr/share/doc/coreutils-6.9/sh-utils
 @dirrm usr/share/doc/coreutils-6.9/fileutils
 @dirrm usr/share/doc/coreutils-6.9
-@dirrm usr/share/doc/compat-db-4.3.29/db-4.3.29
-@dirrm usr/share/doc/compat-db-4.3.29/db-4.2.52
-@dirrm usr/share/doc/compat-db-4.3.29
+@dirrm usr/share/doc/compat-db-4.5.20/db-4.5.20
+@dirrm usr/share/doc/compat-db-4.5.20/db-4.3.29
+@dirrm usr/share/doc/compat-db-4.5.20/db-4.2.52
+@dirrm usr/share/doc/compat-db-4.5.20
 @dirrm usr/share/doc/bzip2-1.0.4
 @dirrm usr/share/doc/bash-3.2/startup-files/apple
 @dirrm usr/share/doc/bash-3.2/startup-files
@@ -6282,8 +6315,6 @@ var/mail
 @dirrm usr/share/doc/bash-3.2/scripts.noah
 @dirrm usr/share/doc/bash-3.2/scripts
 @dirrm usr/share/doc/bash-3.2/misc
-@dirrm usr/share/doc/bash-3.2/loadables/perl
-@dirrm usr/share/doc/bash-3.2/loadables
 @dirrm usr/share/doc/bash-3.2/functions
 @dirrm usr/share/doc/bash-3.2/complete
 @dirrm usr/share/doc/bash-3.2/bashdb
@@ -6306,6 +6337,7 @@ var/mail
 @dirrm usr/kerberos/man/man1
 @dirrm usr/kerberos/man
 @dirrm usr/kerberos
+@dirrm usr/include/db4.5.20
 @dirrm usr/include/db4.3.29
 @dirrm usr/include/db4.2.52
 @dirrm usr/include
@@ -6330,11 +6362,16 @@ var/mail
 @dirrm etc/yum.repos.d
 @dirrm etc/xdg
 @dirrm etc/skel
+@dirrm etc/rpm
 @dirrm etc/profile.d
 @dirrm etc/pki/rpm-gpg
 @dirrm etc/pki
+@dirrm etc/popt.d
 @dirrm etc/pam.d
+@dirrm etc/fonts/conf.d
+@dirrm etc/fonts
 @dirrm etc/default
+@dirrm etc/X11/fontpath.d
 @dirrm etc/X11
 @dirrm etc
 @dirrm bin
