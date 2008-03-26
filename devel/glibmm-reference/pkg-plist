@@ -1,0 +1,7 @@
+lib/glibmm-%%API_VERSION%%/proc/doxygen_to_devhelp.xsl
+share/devhelp/books/glibmm-%%API_VERSION%%/glibmm-%%API_VERSION%%.devhelp
+@dirrmtry share/devhelp/books/glibmm-%%API_VERSION%%
+@dirrmtry share/devhelp/books
+@dirrmtry share/devhelp
+@dirrmtry lib/glibmm-%%API_VERSION%%/proc
+@dirrmtry lib/glibmm-%%API_VERSION%%
