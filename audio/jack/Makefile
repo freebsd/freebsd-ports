@@ -7,6 +7,7 @@
 
 PORTNAME=	jackit
 PORTVERSION=	0.103.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
@@ -15,8 +16,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A low-latency audio server
 
 LIB_DEPENDS=	portaudio.0:${PORTSDIR}/audio/portaudio \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		FLAC.7:${PORTSDIR}/audio/flac
+		sndfile.1:${PORTSDIR}/audio/libsndfile
 
 OPTIONS=	DOCS "Build HTML documentation. Requires doxygen/TeX." off
 
