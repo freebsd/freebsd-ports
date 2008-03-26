@@ -1,0 +1,12 @@
+mez_xml is a templte engine. It generates a Python template module for a
+XML or XHTML file.
+
+Mercurial Repository:
+
+    http://hg.assembla.com/mez_xml/
+
+Latest Versions:
+
+    http://www.assembla.com/spaces/files/mez_xml
+
+WWW: http://trac-hg.assembla.com/mez_xml
