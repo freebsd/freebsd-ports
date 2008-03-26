@@ -17,7 +17,8 @@ LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
 		dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib \
 		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib
 
-BUILD_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
+BUILD_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g} \
+    		xsltproc:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
