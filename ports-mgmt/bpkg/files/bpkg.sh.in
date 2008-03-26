@@ -701,9 +701,8 @@ pkg_backup() {
 
 	pkg_install=`pkg_info -xoQ $pkg | cut -d: -f1 | awk '{ORS=" " ; print}'`
 	echo "Creating backup package(s) "$pkg_install"in /usr/obj/"
-	for e in `pkg_info -xoq $pkg`; do
-		cd /usr/obj/ && pkg_create -xb $e
-	done
+	e=`pkg_info -xoQ $pkg | cut -d: -f1`
+	cd /usr/obj/ && pkg_create -xb $e 1>/dev/null 2>&1
 	echo "Done."
 	exit 0
 }	
