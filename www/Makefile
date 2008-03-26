@@ -963,6 +963,7 @@
     SUBDIR += p5-WWW-Shorten-0rz
     SUBDIR += p5-WWW-Shorten-KUSO
     SUBDIR += p5-WWW-SourceForge
+    SUBDIR += p5-WWW-Spinn3r
     SUBDIR += p5-WWW-TV
     SUBDIR += p5-WWW-TWSMS
     SUBDIR += p5-WWW-VenusEnvy

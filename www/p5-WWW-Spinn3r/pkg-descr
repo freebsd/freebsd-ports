@@ -1,0 +1,8 @@
+WWW::Spinn3r is an iterative interface to the Spinn3r API. The Spinn3r
+API is implemented over REST and XML and documented at
+http://spinn3r.com/documentation.
+
+Spinn3r service is available through a vendor key, which you can get
+from the good folks at Tailrank, http://spinn3r.com/contact.
+
+WWW:	http://search.cpan.org/dist/WWW-Spinn3r/
