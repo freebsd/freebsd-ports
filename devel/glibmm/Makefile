@@ -20,6 +20,8 @@ COMMENT=	C++ interfaces for glib2
 
 USE_BZIP2=	yes
 
+PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
+
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
@@ -32,8 +34,6 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
-
-PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 
 post-patch:
 .for d in docs examples tests
