@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -43,7 +43,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces
 
-USE_XORG=	xpm
+USE_XORG=	x11 xpm
 CONFIGURE_ARGS=	--with-xpm
 .endif
 
@@ -109,7 +109,7 @@ CONFIGURE_ARGS+=--disable-kkcc --disable-mc-alloc --disable-newgc
 .endif
 
 .if defined(WITH_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+USE_XORG=	x11 xft xpm
 CONFIGURE_ARGS+=--with-xft=all
 .elif defined(WITH_GTK)
 CONFIGURE_ARGS+=--with-gtk
