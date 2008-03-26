@@ -7,7 +7,7 @@
 
 PORTNAME=	wop
 PORTVERSION=	0.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://wormsofprey.org/download/ \
 		http://www.amdmi3.ru/distfiles/
@@ -17,12 +17,11 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX} \
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Free real-time Worms game
 
-BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
+BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 USE_BZIP2=	yes
 USE_SDL=	sdl net mixer ttf image
 USE_GMAKE=	yes
-USE_GCC=	3.4+
 
 MAKE_ENV=	"CXX=${CXX}"
 
