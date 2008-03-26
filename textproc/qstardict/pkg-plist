@@ -1,4 +1,20 @@
 bin/qstardict
+lib/qstardict/plugins/libstardict.so
+lib/qstardict/plugins/libweb.so
 share/applications/qstardict.desktop
 share/pixmaps/qstardict.png
+%%NLS%%share/qstardict/translations/qstardict-bg_BG.qm
+%%NLS%%share/qstardict/translations/qstardict-cs_CZ.qm
+%%NLS%%share/qstardict/translations/qstardict-de_DE.qm
+%%NLS%%share/qstardict/translations/qstardict-it_IT.qm
+%%NLS%%share/qstardict/translations/qstardict-pl_PL.qm
+%%NLS%%share/qstardict/translations/qstardict-pt_BR.qm
+%%NLS%%share/qstardict/translations/qstardict-ru_RU.qm
+%%NLS%%share/qstardict/translations/qstardict-ua_UA.qm
+%%NLS%%share/qstardict/translations/qstardict-zh_CN.qm
+%%NLS%%share/qstardict/translations/qstardict-zh_TW.qm
+%%NLS%%@dirrm share/qstardict/translations
+@dirrm share/qstardict
 @dirrmtry share/applications
+@dirrm lib/qstardict/plugins
+@dirrm lib/qstardict
