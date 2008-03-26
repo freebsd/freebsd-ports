@@ -25,15 +25,10 @@ MANCOMPRESSED=	no
 MAN5=		ipcad.conf.5
 MAN8=		ipcad.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700015
-BROKEN=		Does not compile on FreeBSD >= 7.0
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
-		s|/usr/local|${PREFIX}|g' ${WRKSRC}/configure
+		s|/usr/local|${PREFIX}|g; s|pthread_detach|pthread_create|g'\
+		${WRKSRC}/configure
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/ipcad
@@ -41,4 +36,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/ipcad.conf.5 ${MANPREFIX}/man/man5
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
