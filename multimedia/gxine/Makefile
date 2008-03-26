@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gxine
-PORTVERSION=	0.5.11
-PORTREVISION=	2
+PORTVERSION=	0.5.901
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	xine
 
 MAINTAINER=	makc@issp.ac.ru
@@ -21,14 +20,15 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gtk20 gnomehier
 USE_GMAKE=	yes
+MAKE_ARGS+=	LDFLAGS=-shared-libgcc
+USE_GCC=	4.2
+CNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -I${X11BASE}/lib"
-CONFIGURE_ARGS+=--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
-CFLAGS=		-O2 -fno-strict-aliasing -pipe
+CONFIGURE_ARGS+=	--without-hal
 INSTALLS_ICONS=	yes
 
-MANLANG=	"" de
+MANLANG=	"" de es
 MAN1=		gxine.1 gxine_client.1
 MANCOMPRESSED=	no
 
@@ -75,9 +75,9 @@ PLIST_SUB+=	MOZILLA_PLUGIN=""
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e "/^mkdir_p/s:@mkdir_p@:/bin/sh @install_sh@ -d:" \
+	@${REINPLACE_CMD} -e "/^mkdir_p/s:@mkdir_p@:${MKDIR}:" \
 		${WRKSRC}/po/Makefile.in.in
-	@${REINPLACE_CMD} -e "/^mkdir_p/s:@mkdir_p@:/bin/sh @install_sh@ -d:" \
+	@${REINPLACE_CMD} -e "/^mkdir_p/s:@mkdir_p@:${MKDIR}:" \
 		${WRKSRC}/misc/po/Makefile.in.in
 
 post-install:
