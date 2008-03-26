@@ -1,11 +1,22 @@
---- configure.orig	2007-10-28 11:47:59.000000000 +0100
-+++ configure	2007-10-28 11:48:08.000000000 +0100
-@@ -19076,7 +19076,7 @@
+--- configure.orig	2008-03-10 17:19:28.000000000 +0100
++++ configure	2008-03-18 08:11:50.000000000 +0100
+@@ -20765,8 +20765,8 @@
+     else
+       echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+-      echo "$as_me:$LINENO: checking CFLAGS for gcc -W -Wall -Wno-unused-parameter -Wno-long-long -pedantic -Werror" >&5
+-echo $ECHO_N "checking CFLAGS for gcc -W -Wall -Wno-unused-parameter -Wno-long-long -pedantic -Werror... $ECHO_C" >&6
++      echo "$as_me:$LINENO: checking CFLAGS for gcc -W -Wall -Wno-unused-parameter -Wno-long-long -pedantic" >&5
++echo $ECHO_N "checking CFLAGS for gcc -W -Wall -Wno-unused-parameter -Wno-long-long -pedantic... $ECHO_C" >&6
+ if test "${ac_cv_cflags_gcc_option__W__Wall__Wno_unused_parameter__Wno_long_long__pedantic__Werror+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+@@ -20780,7 +20780,7 @@
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
- 
- 
--gcc_warning_flags="-W -Wall -Wno-unused-parameter -Wno-long-long -pedantic -Werror"
-+gcc_warning_flags="-W -Wall -Wno-unused-parameter -Wno-long-long -pedantic"
- # Check whether --enable-gcc_warnings or --disable-gcc_warnings was given.
- if test "${enable_gcc_warnings+set}" = set; then
-   enableval="$enable_gcc_warnings"
+  ac_save_CFLAGS="$CFLAGS"
+-for ac_arg in "-pedantic -Werror % -W -Wall -Wno-unused-parameter -Wno-long-long -pedantic -Werror"     "-pedantic % -W -Wall -Wno-unused-parameter -Wno-long-long -pedantic -Werror %% no, obsolete"     #
++for ac_arg in "-pedantic % -W -Wall -Wno-unused-parameter -Wno-long-long -pedantic"     "-pedantic % -W -Wall -Wno-unused-parameter -Wno-long-long -pedantic %% no, obsolete"     #
+ do CFLAGS="$ac_save_CFLAGS "`echo $ac_arg | sed -e 's,%%.*,,' -e 's,%,,'`
+    cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */

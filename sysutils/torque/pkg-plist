@@ -46,6 +46,7 @@ bin/qnodes
 sbin/qserverd
 sbin/qschedd
 sbin/qnoded
+bin/printserverdb
 %%EXAMPLESDIR%%/torque.setup
 %%EXAMPLESDIR%%/var/spool/torque/pbs_environment
 %%EXAMPLESDIR%%/var/spool/torque/server_name
