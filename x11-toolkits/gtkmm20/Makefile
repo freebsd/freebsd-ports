@@ -35,6 +35,10 @@ CONFIGURE_ARGS=	--enable-static=yes \
 		--with-sigc-prefix=${LOCALBASE}
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|glib/gmessages.h|glib/gtestutils.h|g' \
+		${WRKSRC}/glib/src/*.ccg ${WRKSRC}/glib/glibmm/*.* \
+		${WRKSRC}/gtk/src/*.* ${WRKSRC}/gtk/gtkmm/*.* \
+		${WRKSRC}/demos/gtk-demo/*.cc
 .for d in docs examples tests
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/${d}//' ${WRKSRC}/Makefile.in
 .endfor
