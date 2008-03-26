@@ -375,6 +375,7 @@
     SUBDIR += p5-Games-Dissociate
     SUBDIR += p5-Getopt-Lucid
     SUBDIR += p5-Google-Data-JSON
+    SUBDIR += p5-HTML-CTPP2
     SUBDIR += p5-HTML-Copy
     SUBDIR += p5-HTML-Entities-ImodePictogram
     SUBDIR += p5-HTML-Entities-Numbered
