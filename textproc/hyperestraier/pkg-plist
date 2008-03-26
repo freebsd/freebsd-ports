@@ -13,7 +13,7 @@ include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
 lib/libestraier.so.8
-lib/libestraier.so.8.37.0
+lib/libestraier.so.8.38.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estfraud.cgi
 libexec/estproxy.cgi
@@ -50,7 +50,9 @@ libexec/estsupt.cgi
 %%DATADIR%%/doc/javanativeapi/overview-summary.html
 %%DATADIR%%/doc/javanativeapi/overview-tree.html
 %%DATADIR%%/doc/javanativeapi/package-list
+%%DATADIR%%/doc/javanativeapi/packages.html
 %%DATADIR%%/doc/javanativeapi/resources/inherit.gif
+%%DATADIR%%/doc/javanativeapi/serialized-form.html
 %%DATADIR%%/doc/javanativeapi/stylesheet.css
 %%DATADIR%%/doc/javapureapi/allclasses-frame.html
 %%DATADIR%%/doc/javapureapi/allclasses-noframe.html
@@ -69,6 +71,7 @@ libexec/estsupt.cgi
 %%DATADIR%%/doc/javapureapi/overview-summary.html
 %%DATADIR%%/doc/javapureapi/overview-tree.html
 %%DATADIR%%/doc/javapureapi/package-list
+%%DATADIR%%/doc/javapureapi/packages.html
 %%DATADIR%%/doc/javapureapi/resources/inherit.gif
 %%DATADIR%%/doc/javapureapi/stylesheet.css
 %%DATADIR%%/doc/logo.png
