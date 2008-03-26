@@ -1064,6 +1064,7 @@
     SUBDIR += pumperweb
     SUBDIR += punbb
     SUBDIR += pwebstats
+    SUBDIR += py-GinGin
     SUBDIR += py-HTMLgen
     SUBDIR += py-Lightbox
     SUBDIR += py-albatross

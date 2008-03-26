@@ -1,0 +1,9 @@
+GinGin is a hybrid of WIKI and BLOG. Users of GinGin can setup tags for
+their documents. The documents will be hyper-linked, automatically, when
+tags are in the content of them. In another word, GinGin will create
+cross-reference for documents by the tags specified by users.
+
+GinGin also has capability to tag URLs. URLs are associated with tags and
+cross-referenced for documents.
+
+WWW:	http://trac-hg.assembla.com/GinGin
