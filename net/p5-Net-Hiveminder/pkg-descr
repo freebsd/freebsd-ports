@@ -1,0 +1,9 @@
+Hiveminder is a collaborate todo list organizer, built with Jifty.
+
+This module uses Hiveminder's REST API to let you manage your tasks
+any way you want to.
+
+This module is built on top of Net::Jifty. Consult that module's
+documentation for the lower-level interface.
+
+WWW:	http://search.cpan.org/dist/Net-Hiveminder/
