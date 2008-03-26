@@ -7,7 +7,7 @@
 
 PORTNAME=	haze
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-haze/
 PKGNAMEPREFIX=	telepathy-
@@ -24,5 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 WRKSRC=	${WRKDIR}/telepathy-${PORTNAME}-${DISTVERSION}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+
+MAN8=		telepathy-haze.8
 
 .include <bsd.port.mk>
