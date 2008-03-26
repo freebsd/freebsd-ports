@@ -7,7 +7,7 @@
 
 PORTNAME=	search-namazu
 PORTVERSION=	0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://ftp.tietew.jp/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby library which wraps libnmz of Namazu
 
-LIB_DEPENDS=	nmz.7:${PORTSDIR}/japanese/namazu2
+LIB_DEPENDS=	nmz.8:${PORTSDIR}/japanese/namazu2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
