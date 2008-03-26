@@ -1,0 +1,10 @@
+GLSFcave is a port of SunFlat's SFcave for UNIX/OpenGL. SFcave is
+a game where the player controls a ribbon to avoid hitting walls.
+
+You have only one control: when you hold the mouse button, the
+ribbon goes up. Otherwise the ribbon goes down.
+
+The game uses OpenGL for drawing two-dimensional frames. This is
+for portability(for MacOS X) and to offload CPU.
+
+WWW: http://user.ecc.u-tokyo.ac.jp/~g650192/glsfcave/

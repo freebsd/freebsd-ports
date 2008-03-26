@@ -285,6 +285,7 @@
     SUBDIR += glmaze
     SUBDIR += glob2
     SUBDIR += glpuzzle
+    SUBDIR += glsfcave
     SUBDIR += gltron
     SUBDIR += gma
     SUBDIR += gmastermind
