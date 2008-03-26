@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ff304c35-fb5b-11dc-91c1-00e0815b8da8">
+    <topic>silc -- pkcs_decode buffer overflow</topic>
+    <affects>
+      <package>
+	<name>silc-irssi-client</name>
+	<name>silc-client</name>
+	<range><lt>1.1.4</lt></range>
+      </package>
+      <package>
+	<name>silc-server</name>
+	<range><lt>1.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Core Security Technologies reports:</p>
+	<blockquote cite="http://www.coresecurity.com/?action=item&amp;id=2206">
+	  <p>A remote buffer overflow vulnerability found in a library
+	    used by both the SILC server and client to process 
+	    packets containing cryptographic material may allow an
+	    un-authenticated client to executearbitrary code on the
+	    server with the privileges of the user account running the
+	    server, or a malicious SILC server to compromise client
+	    systems and execute arbitrary code with the privileges of
+	    the user account running the SILC client program.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>28373</bid>
+      <url>http://www.coresecurity.com/?action=item&amp;id=2206</url>
+    </references>
+    <dates>
+      <discovery>2008-03-25</discovery>
+      <entry>2008-03-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="063399fc-f6d6-11dc-bcee-001c2514716c">
     <topic>bzip2 -- crash with certain malformed archive files</topic>
     <affects>
