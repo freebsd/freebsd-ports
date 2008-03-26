@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap2
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.3
 CATEGORIES=	net python
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	python-ldap
@@ -16,9 +16,10 @@ MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	An LDAP module for python, for OpenLDAP2
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 USE_OPENLDAP=	yes
 PYDISTUTILS_PKGNAME=	python-ldap
+PYEASYINSTALL_ARCHDEP=	yes
 
 REPLACE_ARGS=	-e 's,/usr/local/openldap-2.3/lib,${LOCALBASE}/lib,' \
 		-e 's,/usr/local/openldap-2.3/include,${LOCALBASE}/include,'
