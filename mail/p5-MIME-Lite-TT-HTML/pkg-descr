@@ -1,0 +1,4 @@
+This module provide easy interface to make MIME::Lite object with html
+    formatted mail.
+
+WWW: http://search.cpan.org/~chunzi/MIME-Lite-TT-HTML-0.04/

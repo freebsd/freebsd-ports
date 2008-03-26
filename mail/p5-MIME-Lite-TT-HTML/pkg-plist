@@ -1,0 +1,4 @@
+%%SITE_PERL%%/MIME/Lite/TT/HTML.pm
+@dirrmtry %%SITE_PERL%%/MIME/Lite/TT
+@dirrmtry %%SITE_PERL%%/MIME/Lite
+@dirrmtry %%SITE_PERL%%/MIME
