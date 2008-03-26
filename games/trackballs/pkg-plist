@@ -1,8 +1,18 @@
 bin/trackballs
+man/man6/trackballs.6.gz
+share/applications/trackballs.desktop
+share/icons/hicolor/32x32/apps/trackballs.png
+share/icons/hicolor/48x48/apps/trackballs.png
+share/icons/hicolor/64x64/apps/trackballs.png
 share/locale/de/LC_MESSAGES/trackballs.mo
 share/locale/fr/LC_MESSAGES/trackballs.mo
+share/locale/hu/LC_MESSAGES/trackballs.mo
 share/locale/it/LC_MESSAGES/trackballs.mo
+share/locale/sk/LC_MESSAGES/trackballs.mo
 share/locale/sv/LC_MESSAGES/trackballs.mo
+%%DATADIR%%/api.html
+%%DATADIR%%/customizing.html
+%%DATADIR%%/examples.html
 %%DATADIR%%/fonts/menuFont.ttf
 %%DATADIR%%/highScores
 %%DATADIR%%/images/acid.png
@@ -54,8 +64,15 @@ share/locale/sv/LC_MESSAGES/trackballs.mo
 %%DATADIR%%/images/trackballs32x32.png
 %%DATADIR%%/images/trackballs48x48.png
 %%DATADIR%%/images/wings.png
+%%DATADIR%%/index.html
+%%DATADIR%%/levels/Shop1.map
+%%DATADIR%%/levels/Shop1.scm
+%%DATADIR%%/levels/Shop2.map
+%%DATADIR%%/levels/Shop2.scm
 %%DATADIR%%/levels/bonus.map
 %%DATADIR%%/levels/bonus.scm
+%%DATADIR%%/levels/bonusb.map
+%%DATADIR%%/levels/bonusb.scm
 %%DATADIR%%/levels/boot.scm
 %%DATADIR%%/levels/bx.jpg
 %%DATADIR%%/levels/bx.set
@@ -130,6 +147,30 @@ share/locale/sv/LC_MESSAGES/trackballs.mo
 %%DATADIR%%/levels/fourSeasons_3.scm
 %%DATADIR%%/levels/fourSeasons_4.map
 %%DATADIR%%/levels/fourSeasons_4.scm
+%%DATADIR%%/levels/frg.jpg
+%%DATADIR%%/levels/frg.set
+%%DATADIR%%/levels/frg1.map
+%%DATADIR%%/levels/frg1.scm
+%%DATADIR%%/levels/frg10.map
+%%DATADIR%%/levels/frg10.scm
+%%DATADIR%%/levels/frg2.map
+%%DATADIR%%/levels/frg2.scm
+%%DATADIR%%/levels/frg3.map
+%%DATADIR%%/levels/frg3.scm
+%%DATADIR%%/levels/frg4.map
+%%DATADIR%%/levels/frg4.scm
+%%DATADIR%%/levels/frg5.map
+%%DATADIR%%/levels/frg5.scm
+%%DATADIR%%/levels/frg6.map
+%%DATADIR%%/levels/frg6.scm
+%%DATADIR%%/levels/frg7.map
+%%DATADIR%%/levels/frg7.scm
+%%DATADIR%%/levels/frg8.map
+%%DATADIR%%/levels/frg8.scm
+%%DATADIR%%/levels/frg9.map
+%%DATADIR%%/levels/frg9.scm
+%%DATADIR%%/levels/frgb.map
+%%DATADIR%%/levels/frgb.scm
 %%DATADIR%%/levels/hxtst.map
 %%DATADIR%%/levels/hxtst.scm
 %%DATADIR%%/levels/jump.jpg
@@ -191,6 +232,8 @@ share/locale/sv/LC_MESSAGES/trackballs.mo
 %%DATADIR%%/levels/test1.map
 %%DATADIR%%/levels/tmp.map
 %%DATADIR%%/levels/tmp.scm
+%%DATADIR%%/mapeditor.html
+%%DATADIR%%/scriptingLanguage.html
 %%DATADIR%%/sfx/badpill.wav
 %%DATADIR%%/sfx/ball_sinks.wav
 %%DATADIR%%/sfx/ball_sinks2.wav
@@ -222,3 +265,12 @@ share/locale/sv/LC_MESSAGES/trackballs.mo
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
