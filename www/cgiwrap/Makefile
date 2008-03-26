@@ -12,7 +12,7 @@ CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	freebsd@jdc.parodius.com
+MAINTAINER=	koitsu@FreeBSD.org
 COMMENT=	Securely execute Web CGI scripts
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

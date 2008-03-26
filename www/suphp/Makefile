@@ -9,9 +9,9 @@ PORTNAME=	suphp
 PORTVERSION=	0.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/ \
-		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/koitsu/
+		${MASTER_SITE_LOCAL:S/%SUBDIR%|koitsu|}
 
-MAINTAINER=	freebsd@jdc.parodius.com
+MAINTAINER=	koitsu@FreeBSD.org
 COMMENT=	Securely execute PHP scripts under Apache
 
 GNU_CONFIGURE=	yes
