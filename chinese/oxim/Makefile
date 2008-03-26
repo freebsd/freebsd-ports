@@ -7,6 +7,7 @@
 
 PORTNAME=	oxim
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
 		ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \
@@ -18,7 +19,6 @@ MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Open X Input Method server
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/TrueType/fireflysung.ttf:${PORTSDIR}/chinese/fireflyttf
 
 OPTIONS=	GTK2 "Enable GTK2 input method module" On \
@@ -27,6 +27,7 @@ OPTIONS=	GTK2 "Enable GTK2 input method module" On \
 		SETUP "Enable GUI Setup Tool" On
 
 USE_ICONV=	yes
+USE_XORG=	x11 xft xpm
 WANT_GNOME=	yes
 
 GNU_CONFIGURE=	yes
