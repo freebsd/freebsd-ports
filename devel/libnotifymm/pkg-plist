@@ -1,0 +1,21 @@
+include/libnotifymm-1.0/libnotifymm.h
+include/libnotifymm-1.0/libnotifymm/init.h
+include/libnotifymm-1.0/libnotifymm/notification.h
+include/libnotifymm-1.0/libnotifymm/notify.h
+include/libnotifymm-1.0/libnotifymm/private/notification_p.h
+include/libnotifymm-1.0/libnotifymm/wrap_init.h
+lib/libnotifymm-1.0.a
+lib/libnotifymm-1.0.la
+lib/libnotifymm-1.0.so
+lib/libnotifymm-1.0.so.7
+lib/libnotifymm-1.0/include/libnotifymmconfig.h
+lib/libnotifymm-1.0/proc/m4/convert.m4
+lib/libnotifymm-1.0/proc/m4/convert_libnotifymm.m4
+libdata/pkgconfig/libnotifymm-1.0.pc
+@dirrm lib/libnotifymm-1.0/proc/m4
+@dirrm lib/libnotifymm-1.0/proc
+@dirrm lib/libnotifymm-1.0/include
+@dirrm lib/libnotifymm-1.0
+@dirrm include/libnotifymm-1.0/libnotifymm/private
+@dirrm include/libnotifymm-1.0/libnotifymm
+@dirrm include/libnotifymm-1.0

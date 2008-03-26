@@ -640,6 +640,7 @@
     SUBDIR += libmtrie
     SUBDIR += libnaji
     SUBDIR += libnotify
+    SUBDIR += libnotifymm
     SUBDIR += libnxt
     SUBDIR += liboil
     SUBDIR += libol
