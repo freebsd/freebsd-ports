@@ -36,4 +36,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 PLIST_SUB=	VERSION="3.8"
 
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e \
+	    	's|-DG_DISABLE_DEPRECATED[^[:space:]]+||g'
+
 .include <bsd.port.mk>
