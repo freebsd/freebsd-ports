@@ -3885,6 +3885,7 @@ glpng		ports/graphics/glpng
 glproto		ports/x11/glproto
 glpuzzle	ports/games/glpuzzle
 glrparser	ports/devel/glrparser
+glsfcave	ports/games/glsfcave
 gltk		ports/graphics/gltk
 gltron		ports/games/gltron
 gltt		ports/graphics/gltt
