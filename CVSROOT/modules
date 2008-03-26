@@ -13331,6 +13331,7 @@ py-4suite-xml	ports/textproc/py-4suite-xml
 py-Breve	ports/devel/py-Breve
 py-Elixir	ports/databases/py-Elixir
 py-GeoIP	ports/net/py-GeoIP
+py-GinGin	ports/www/py-GinGin
 py-HTMLgen	ports/www/py-HTMLgen
 py-HyperText	ports/textproc/py-HyperText
 py-Jinja	ports/devel/py-Jinja
