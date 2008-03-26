@@ -37,12 +37,13 @@ include/ctpp2/VMStackException.hpp
 include/ctpp2/VMSyscall.hpp
 lib/libctpp2.so
 lib/libctpp2.so.2
-lib/libctpp2.so.2.0.4
+lib/libctpp2.so.2.1.1
 lib/libctpp2-st.a
 bin/ctpp2vm
 bin/ctpp2c
 bin/ctpp2i
 bin/ctpp2json
+bin/ctpp2-config
 share/locale/ru_RU.KOI8-R/LC_MESSAGES/ctpp2.mo
 share/locale/ru_RU.CP1251/LC_MESSAGES/ctpp2.mo
 @dirrmtry share/locale/ru_RU.KOI8-R/LC_MESSAGES
