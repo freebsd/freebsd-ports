@@ -16,7 +16,6 @@ MASTER_SITES=	http://rsync.samba.org/ftp/%SUBDIR%/ \
 		http://www.mirrorservice.org/sites/rsync.samba.org/
 MASTER_SITE_SUBDIR=	rsync
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A network file distribution/synchronization utility
@@ -43,6 +42,10 @@ OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 		ICONV     "Add iconv support" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ICONV) || defined(WITH_FLAGS) || defined(WITH_ACL) || make(makesum)
+DISTFILES+=	${PORTNAME}-patches-${PORTVERSION}${EXTRACT_SUFX}
+.endif
 
 .if defined(WITH_ICONV)
 USE_ICONV=	yes
