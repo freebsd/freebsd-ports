@@ -1,38 +1,11 @@
---- gr-atsc/Makefile.in.orig	2008-01-05 19:15:30.000000000 -0500
-+++ gr-atsc/Makefile.in	2008-01-05 19:17:54.000000000 -0500
-@@ -79,7 +79,7 @@
- DIST_COMMON = README $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
- 	$(top_srcdir)/Makefile.common ChangeLog
- subdir = gr-atsc
--ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-+ACLOCAL=true
- am__aclocal_m4_deps = $(top_srcdir)/config/acx_pthread.m4 \
- 	$(top_srcdir)/config/cppunit.m4 \
- 	$(top_srcdir)/config/gr_boost.m4 \
-@@ -159,7 +159,7 @@
- ETAGS = etags
- CTAGS = ctags
- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
--ACLOCAL = @ACLOCAL@
-+ACLOCAL=true
- ALLOCA = @ALLOCA@
- ALSA_CFLAGS = @ALSA_CFLAGS@
- ALSA_INCLUDEDIR = @ALSA_INCLUDEDIR@
-@@ -167,9 +167,9 @@
- AMTAR = @AMTAR@
- AR = @AR@
- AS = @AS@
--AUTOCONF = @AUTOCONF@
--AUTOHEADER = @AUTOHEADER@
--AUTOMAKE = @AUTOMAKE@
-+AUTOCONF=true
-+AUTOHEADER=true
-+AUTOMAKE=true
- AWK = @AWK@
- BOOST_CFLAGS = @BOOST_CFLAGS@
- CC = @CC@
-@@ -422,7 +422,7 @@
- exampledir = $(datadir)/gnuradio/examples
+--- gr-atsc/Makefile.in.orig	2008-03-24 12:50:01.000000000 -0400
++++ gr-atsc/Makefile.in	2008-03-25 00:04:02.000000000 -0400
+@@ -541,10 +541,10 @@
+ RM = $(RM_PROG) -f
+ 
+ # Base directory for example applications
+-exampledir = $(datadir)/gnuradio/examples
++exampledir = $(datadir)/examples/gnuradio
  SUBDIRS = src
  DIST_SUBDIRS = src doc
 -pkgconfigdir = $(libdir)/pkgconfig

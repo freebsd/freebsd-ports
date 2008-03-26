@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnuradio
-PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTVERSION=	3.1.2
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnuradio
@@ -19,7 +18,8 @@ COMMENT=	Amateur Radio Software defined radio
 BUILD_DEPENDS=	sdcc:${PORTSDIR}/lang/sdcc \
 		sdl-config:${PORTSDIR}/devel/sdl12 \
 		swig:${PORTSDIR}/devel/swig13 \
-		cppunit-config:${PORTSDIR}/devel/cppunit
+		cppunit-config:${PORTSDIR}/devel/cppunit \
+		guile:${PORTSDIR}/lang/guile
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
 		usb:${PORTSDIR}/devel/libusb \

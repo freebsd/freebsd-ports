@@ -1,6 +1,6 @@
---- gnuradio-core/Makefile.in.orig	2007-11-05 20:04:06.000000000 -0500
-+++ gnuradio-core/Makefile.in	2008-01-03 13:07:03.000000000 -0500
-@@ -424,14 +424,13 @@
+--- gnuradio-core/Makefile.in.orig	2008-03-24 12:49:57.000000000 -0400
++++ gnuradio-core/Makefile.in	2008-03-24 16:13:56.000000000 -0400
+@@ -546,14 +546,13 @@
  # Base directory for example applications
  exampledir = $(datadir)/gnuradio/examples
  EXTRA_DIST = \
@@ -18,15 +18,3 @@
  all: all-recursive
  
  .SUFFIXES:
-@@ -444,9 +443,9 @@
- 	      exit 1;; \
- 	  esac; \
- 	done; \
--	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  gnuradio-core/Makefile'; \
-+	echo ' cd $(top_srcdir) && /usr/bin/true --gnu  gnuradio-core/Makefile'; \
- 	cd $(top_srcdir) && \
--	  $(AUTOMAKE) --gnu  gnuradio-core/Makefile
-+	  /usr/bin/true --gnu  gnuradio-core/Makefile
- .PRECIOUS: Makefile
- Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
- 	@case '$?' in \
