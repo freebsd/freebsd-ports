@@ -13563,6 +13563,7 @@ py-medusa	ports/net/py-medusa
 py-meld		ports/www/py-meld
 py-memcached	ports/databases/py-memcached
 py-metar	ports/astro/py-metar
+py-mez_xml	ports/devel/py-mez_xml
 py-mhash	ports/security/py-mhash
 py-migrate	ports/databases/py-migrate
 py-milter	ports/mail/py-milter
