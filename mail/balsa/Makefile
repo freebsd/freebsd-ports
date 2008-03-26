@@ -8,6 +8,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.3.23
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -68,8 +69,8 @@ CONFIGURE_ARGS+=--with-gtkspell
 .endif
 
 .if !defined(WITHOUT_GTKSV)
-USE_GNOME+=	gtksourceview
-CONFIGURE_ARGS+=--with-gtksourceview
+USE_GNOME+=	gtksourceview2
+CONFIGURE_ARGS+=--with-gtksourceview=2
 .endif
 
 .if !defined(WITHOUT_NOTIFY)
