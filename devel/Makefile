@@ -2022,6 +2022,7 @@
     SUBDIR += py-logilab-common
     SUBDIR += py-lxml
     SUBDIR += py-magic
+    SUBDIR += py-mez_xml
     SUBDIR += py-mx-experimental
     SUBDIR += py-myghtyutils
     SUBDIR += py-ncurses
