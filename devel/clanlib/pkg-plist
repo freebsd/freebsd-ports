@@ -45,6 +45,7 @@ include/ClanLib-0.8/ClanLib/Core/System/call_stack.h
 include/ClanLib-0.8/ClanLib/Core/System/cl_assert.h
 include/ClanLib-0.8/ClanLib/Core/System/cl_library.h
 include/ClanLib-0.8/ClanLib/Core/System/clanstring.h
+include/ClanLib-0.8/ClanLib/Core/System/clipboard.h
 include/ClanLib-0.8/ClanLib/Core/System/clonable.h
 include/ClanLib-0.8/ClanLib/Core/System/command_line.h
 include/ClanLib-0.8/ClanLib/Core/System/console_window.h
@@ -99,6 +100,7 @@ include/ClanLib-0.8/ClanLib/Display/Collision/outline_provider.h
 include/ClanLib-0.8/ClanLib/Display/Collision/outline_provider_bitmap.h
 include/ClanLib-0.8/ClanLib/Display/Collision/outline_provider_file.h
 include/ClanLib-0.8/ClanLib/Display/Providers/dc_buffer.h
+include/ClanLib-0.8/ClanLib/Display/Providers/bmp_provider.h
 include/ClanLib-0.8/ClanLib/Display/Providers/jpeg_provider.h
 include/ClanLib-0.8/ClanLib/Display/Providers/pcx_provider.h
 include/ClanLib-0.8/ClanLib/Display/Providers/png_provider.h
@@ -141,21 +143,21 @@ include/ClanLib-0.8/ClanLib/Display/sprite_packer.h
 include/ClanLib-0.8/ClanLib/Display/stencil_func.h
 include/ClanLib-0.8/ClanLib/Display/surface.h
 include/ClanLib-0.8/ClanLib/Display/text_styler.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/light_source.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/opengl.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/opengl_state.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/opengl_state_data.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/opengl_surface.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/opengl_window.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/opengl_window_description.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/opengl_wrap.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/program_attribute.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/program_object.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/program_uniform.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/setupgl.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/shader_object.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/texture.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/GL/viewpoint.h
+include/ClanLib-0.8/ClanLib/GL/light_source.h
+include/ClanLib-0.8/ClanLib/GL/opengl.h
+include/ClanLib-0.8/ClanLib/GL/opengl_state.h
+include/ClanLib-0.8/ClanLib/GL/opengl_state_data.h
+include/ClanLib-0.8/ClanLib/GL/opengl_surface.h
+include/ClanLib-0.8/ClanLib/GL/opengl_window.h
+include/ClanLib-0.8/ClanLib/GL/opengl_window_description.h
+include/ClanLib-0.8/ClanLib/GL/opengl_wrap.h
+include/ClanLib-0.8/ClanLib/GL/program_attribute.h
+include/ClanLib-0.8/ClanLib/GL/program_object.h
+include/ClanLib-0.8/ClanLib/GL/program_uniform.h
+include/ClanLib-0.8/ClanLib/GL/setupgl.h
+include/ClanLib-0.8/ClanLib/GL/shader_object.h
+include/ClanLib-0.8/ClanLib/GL/texture.h
+include/ClanLib-0.8/ClanLib/GL/viewpoint.h
 include/ClanLib-0.8/ClanLib/GUI/button.h
 include/ClanLib-0.8/ClanLib/GUI/checkbox.h
 include/ClanLib-0.8/ClanLib/GUI/component.h
@@ -170,6 +172,7 @@ include/ClanLib-0.8/ClanLib/GUI/frame.h
 include/ClanLib-0.8/ClanLib/GUI/gui_manager.h
 include/ClanLib-0.8/ClanLib/GUI/image.h
 include/ClanLib-0.8/ClanLib/GUI/inputbox.h
+include/ClanLib-0.8/ClanLib/GUI/inputbox_stylebase.h
 include/ClanLib-0.8/ClanLib/GUI/inputdialog.h
 include/ClanLib-0.8/ClanLib/GUI/label.h
 include/ClanLib-0.8/ClanLib/GUI/layout.h
@@ -182,6 +185,8 @@ include/ClanLib-0.8/ClanLib/GUI/messagebox.h
 include/ClanLib-0.8/ClanLib/GUI/progressbar.h
 include/ClanLib-0.8/ClanLib/GUI/radiobutton.h
 include/ClanLib-0.8/ClanLib/GUI/radiogroup.h
+include/ClanLib-0.8/ClanLib/GUI/richedit.h
+include/ClanLib-0.8/ClanLib/GUI/richedit_paragraph.h
 include/ClanLib-0.8/ClanLib/GUI/scrollbar.h
 include/ClanLib-0.8/ClanLib/GUI/setupgui.h
 include/ClanLib-0.8/ClanLib/GUI/stylemanager.h
@@ -201,13 +206,14 @@ include/ClanLib-0.8/ClanLib/GUIStyleSilver/menu_node_silver.h
 include/ClanLib-0.8/ClanLib/GUIStyleSilver/menu_silver.h
 include/ClanLib-0.8/ClanLib/GUIStyleSilver/progressbar_silver.h
 include/ClanLib-0.8/ClanLib/GUIStyleSilver/radiobutton_silver.h
+include/ClanLib-0.8/ClanLib/GUIStyleSilver/richedit_silver.h
 include/ClanLib-0.8/ClanLib/GUIStyleSilver/scrollbar_silver.h
 include/ClanLib-0.8/ClanLib/GUIStyleSilver/stylemanager_silver.h
 include/ClanLib-0.8/ClanLib/GUIStyleSilver/treeitem_silver.h
 include/ClanLib-0.8/ClanLib/GUIStyleSilver/treeview_silver.h
 include/ClanLib-0.8/ClanLib/GUIStyleSilver/window_silver.h
-%%LIBMIKMOD%%include/ClanLib-0.8/ClanLib/MikMod/setupmikmod.h
-%%LIBMIKMOD%%include/ClanLib-0.8/ClanLib/MikMod/soundprovider_mikmod.h
+include/ClanLib-0.8/ClanLib/MikMod/setupmikmod.h
+include/ClanLib-0.8/ClanLib/MikMod/soundprovider_mikmod.h
 include/ClanLib-0.8/ClanLib/Network/IRC/dcc_download.h
 include/ClanLib-0.8/ClanLib/Network/IRC/irc_connection.h
 include/ClanLib-0.8/ClanLib/Network/IRC/irc_numerics.h
@@ -229,7 +235,7 @@ include/ClanLib-0.8/ClanLib/Network/Socket/ip_address.h
 include/ClanLib-0.8/ClanLib/Network/Socket/outputsource_socket.h
 include/ClanLib-0.8/ClanLib/Network/Socket/socket.h
 include/ClanLib-0.8/ClanLib/Network/setupnetwork.h
-%%SDL%%include/ClanLib-0.8/ClanLib/SDL/setupsdl.h
+include/ClanLib-0.8/ClanLib/SDL/setupsdl.h
 include/ClanLib-0.8/ClanLib/Signals/signal.h
 include/ClanLib-0.8/ClanLib/Signals/signal_v0.h
 include/ClanLib-0.8/ClanLib/Signals/signal_v1.h
@@ -268,20 +274,20 @@ include/ClanLib-0.8/ClanLib/Sound/soundoutput.h
 include/ClanLib-0.8/ClanLib/Sound/soundoutput_description.h
 include/ClanLib-0.8/ClanLib/Sound/soundprovider.h
 include/ClanLib-0.8/ClanLib/Sound/soundprovider_session.h
-%%LIBVORBIS%%include/ClanLib-0.8/ClanLib/Vorbis/setupvorbis.h
-%%LIBVORBIS%%include/ClanLib-0.8/ClanLib/Vorbis/soundprovider_vorbis.h
+include/ClanLib-0.8/ClanLib/Vorbis/setupvorbis.h
+include/ClanLib-0.8/ClanLib/Vorbis/soundprovider_vorbis.h
 include/ClanLib-0.8/ClanLib/application.h
 include/ClanLib-0.8/ClanLib/core.h
 include/ClanLib-0.8/ClanLib/display.h
-%%OPENGL%%include/ClanLib-0.8/ClanLib/gl.h
+include/ClanLib-0.8/ClanLib/gl.h
 include/ClanLib-0.8/ClanLib/gui.h
 include/ClanLib-0.8/ClanLib/guistylesilver.h
-%%LIBMIKMOD%%include/ClanLib-0.8/ClanLib/mikmod.h
+include/ClanLib-0.8/ClanLib/mikmod.h
 include/ClanLib-0.8/ClanLib/network.h
-%%SDL%%include/ClanLib-0.8/ClanLib/sdl.h
+include/ClanLib-0.8/ClanLib/sdl.h
 include/ClanLib-0.8/ClanLib/signals.h
 include/ClanLib-0.8/ClanLib/sound.h
-%%LIBVORBIS%%include/ClanLib-0.8/ClanLib/vorbis.h
+include/ClanLib-0.8/ClanLib/vorbis.h
 lib/libclanApp-0.8.so
 lib/libclanApp-0.8.so.1
 lib/libclanApp.a
@@ -297,11 +303,11 @@ lib/libclanDisplay-0.8.so.1
 lib/libclanDisplay.a
 lib/libclanDisplay.la
 lib/libclanDisplay.so
-%%OPENGL%%lib/libclanGL-0.8.so
-%%OPENGL%%lib/libclanGL-0.8.so.1
-%%OPENGL%%lib/libclanGL.a
-%%OPENGL%%lib/libclanGL.la
-%%OPENGL%%lib/libclanGL.so
+lib/libclanGL-0.8.so
+lib/libclanGL-0.8.so.1
+lib/libclanGL.a
+lib/libclanGL.la
+lib/libclanGL.so
 lib/libclanGUI-0.8.so
 lib/libclanGUI-0.8.so.1
 lib/libclanGUI.a
@@ -312,21 +318,21 @@ lib/libclanGUIStyleSilver-0.8.so.1
 lib/libclanGUIStyleSilver.a
 lib/libclanGUIStyleSilver.la
 lib/libclanGUIStyleSilver.so
-%%LIBMIKMOD%%lib/libclanMikMod-0.8.so
-%%LIBMIKMOD%%lib/libclanMikMod-0.8.so.1
-%%LIBMIKMOD%%lib/libclanMikMod.a
-%%LIBMIKMOD%%lib/libclanMikMod.la
-%%LIBMIKMOD%%lib/libclanMikMod.so
+lib/libclanMikMod-0.8.so
+lib/libclanMikMod-0.8.so.1
+lib/libclanMikMod.a
+lib/libclanMikMod.la
+lib/libclanMikMod.so
 lib/libclanNetwork-0.8.so
 lib/libclanNetwork-0.8.so.1
 lib/libclanNetwork.a
 lib/libclanNetwork.la
 lib/libclanNetwork.so
-%%SDL%%lib/libclanSDL-0.8.so
-%%SDL%%lib/libclanSDL-0.8.so.1
-%%SDL%%lib/libclanSDL.a
-%%SDL%%lib/libclanSDL.la
-%%SDL%%lib/libclanSDL.so
+lib/libclanSDL-0.8.so
+lib/libclanSDL-0.8.so.1
+lib/libclanSDL.a
+lib/libclanSDL.la
+lib/libclanSDL.so
 lib/libclanSignals-0.8.so
 lib/libclanSignals-0.8.so.1
 lib/libclanSignals.a
@@ -337,23 +343,23 @@ lib/libclanSound-0.8.so.1
 lib/libclanSound.a
 lib/libclanSound.la
 lib/libclanSound.so
-%%LIBVORBIS%%lib/libclanVorbis-0.8.so
-%%LIBVORBIS%%lib/libclanVorbis-0.8.so.1
-%%LIBVORBIS%%lib/libclanVorbis.a
-%%LIBVORBIS%%lib/libclanVorbis.la
-%%LIBVORBIS%%lib/libclanVorbis.so
+lib/libclanVorbis-0.8.so
+lib/libclanVorbis-0.8.so.1
+lib/libclanVorbis.a
+lib/libclanVorbis.la
+lib/libclanVorbis.so
 libdata/pkgconfig/clanApp-0.8.pc
 libdata/pkgconfig/clanCore-0.8.pc
 libdata/pkgconfig/clanDisplay-0.8.pc
-%%OPENGL%%libdata/pkgconfig/clanGL-0.8.pc
+libdata/pkgconfig/clanGL-0.8.pc
 libdata/pkgconfig/clanGUI-0.8.pc
 libdata/pkgconfig/clanGUIStyleSilver-0.8.pc
-%%LIBMIKMOD%%libdata/pkgconfig/clanMikMod-0.8.pc
+libdata/pkgconfig/clanMikMod-0.8.pc
 libdata/pkgconfig/clanNetwork-0.8.pc
-%%SDL%%libdata/pkgconfig/clanSDL-0.8.pc
+libdata/pkgconfig/clanSDL-0.8.pc
 libdata/pkgconfig/clanSignals-0.8.pc
 libdata/pkgconfig/clanSound-0.8.pc
-%%LIBVORBIS%%libdata/pkgconfig/clanVorbis-0.8.pc
+libdata/pkgconfig/clanVorbis-0.8.pc
 @dirrm include/ClanLib-0.8/ClanLib/Application
 @dirrm include/ClanLib-0.8/ClanLib/Core/IOData
 @dirrm include/ClanLib-0.8/ClanLib/Core/Math
@@ -364,21 +370,21 @@ libdata/pkgconfig/clanSound-0.8.pc
 @dirrm include/ClanLib-0.8/ClanLib/Display/Collision
 @dirrm include/ClanLib-0.8/ClanLib/Display/Providers
 @dirrm include/ClanLib-0.8/ClanLib/Display
-%%OPENGL%%@dirrm include/ClanLib-0.8/ClanLib/GL
+@dirrm include/ClanLib-0.8/ClanLib/GL
 @dirrm include/ClanLib-0.8/ClanLib/GUI
 @dirrm include/ClanLib-0.8/ClanLib/GUIStyleSilver
-%%LIBMIKMOD%%@dirrm include/ClanLib-0.8/ClanLib/MikMod
+@dirrm include/ClanLib-0.8/ClanLib/MikMod
 @dirrm include/ClanLib-0.8/ClanLib/Network/IRC
 @dirrm include/ClanLib-0.8/ClanLib/Network/NetObjects
 @dirrm include/ClanLib-0.8/ClanLib/Network/NetSession
 @dirrm include/ClanLib-0.8/ClanLib/Network/NetVariables
 @dirrm include/ClanLib-0.8/ClanLib/Network/Socket
 @dirrm include/ClanLib-0.8/ClanLib/Network
-%%SDL%%@dirrm include/ClanLib-0.8/ClanLib/SDL
+@dirrm include/ClanLib-0.8/ClanLib/SDL
 @dirrm include/ClanLib-0.8/ClanLib/Signals
 @dirrm include/ClanLib-0.8/ClanLib/Sound/SoundFilters
 @dirrm include/ClanLib-0.8/ClanLib/Sound/SoundProviders
 @dirrm include/ClanLib-0.8/ClanLib/Sound
-%%LIBVORBIS%%@dirrm include/ClanLib-0.8/ClanLib/Vorbis
+@dirrm include/ClanLib-0.8/ClanLib/Vorbis
 @dirrm include/ClanLib-0.8/ClanLib
 @dirrm include/ClanLib-0.8
