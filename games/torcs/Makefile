@@ -7,7 +7,7 @@
 
 PORTNAME=	torcs
 DISTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +21,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png	\
 		alut.1:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+USE_XORG=	xrender xmu ice xext x11 xxf86vm
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
