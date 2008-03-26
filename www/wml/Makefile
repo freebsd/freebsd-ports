@@ -7,6 +7,7 @@
 
 PORTNAME=	wml
 DISTVERSION=	2.1a2
+PORTREVISION=	1
 CATEGORIES=	www lang
 MASTER_SITES=	http://thewml.org/distrib/ \
 		ftp://thewml.org/distrib/
@@ -18,7 +19,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 
 USE_PERL5=	yes
-CONFIGURE_ARGS=	--with-perl=${PERL5} --with-catdir=man
+CONFIGURE_ARGS=	--with-perl=${PERL5} --with-catdir=man \
+		--prefix=${PREFIX}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"	\
 		PERL_ARCH="${PERL_ARCH}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

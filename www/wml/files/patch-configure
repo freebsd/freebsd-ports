@@ -1,6 +1,14 @@
---- configure.orig	Fri Oct 18 23:44:21 2002
-+++ configure	Thu Aug  5 23:40:57 2004
-@@ -2740,7 +2740,7 @@
+--- configure.orig	2001-06-18 00:44:29.000000000 +0200
++++ configure	2008-03-26 11:21:24.000000000 +0100
+@@ -601,7 +601,6 @@
+ test "x$prefix" = xNONE && prefix=$ac_default_prefix
+ eval "dir=$prefix"
+ case $dir in
+-    *wml* ) libsubdir= ;;
+         * ) libsubdir="/wml" ;;
+ esac
+ 
+@@ -1265,7 +1264,7 @@
  
  dummy:
  	@echo INSTALLPRIVLIB=`echo $(INSTALLPRIVLIB) | $(abs2prefix)`
