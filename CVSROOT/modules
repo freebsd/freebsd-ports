@@ -265,6 +265,7 @@ afay		ports/devel/afay
 afbinit		ports/sysutils/afbinit
 affenspiel	ports/games/affenspiel
 affiche		ports/deskutils/affiche
+afflib		ports/sysutils/afflib
 afio		ports/sysutils/afio
 afm		ports/print/afm
 afni		ports/science/afni
