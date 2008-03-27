@@ -398,6 +398,8 @@ share/locale/ru/LC_MESSAGES/conduit.mo
 share/locale/sv/LC_MESSAGES/conduit.mo
 share/omf/conduit/conduit-C.omf
 @dirrm share/omf/conduit
+@dirrmtry share/icons/hicolor/26x26
+@dirrmtry share/icons/hicolor/26x26/apps
 @dirrm share/gnome/help/conduit/C/figures
 @dirrm share/gnome/help/conduit/C
 @dirrm share/gnome/help/conduit
