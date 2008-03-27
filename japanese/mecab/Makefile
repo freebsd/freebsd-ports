@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	mecab
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 CATEGORIES=	japanese textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
@@ -42,6 +40,9 @@ post-patch:
 
 post-configure:
 	${CP} ${WRKSRC}/mecabrc ${WRKSRC}/mecabrc.dist
+
+pre-install:
+	${CHMOD} a+x ${WRKSRC}/install-sh
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/mecabrc ]; then \
