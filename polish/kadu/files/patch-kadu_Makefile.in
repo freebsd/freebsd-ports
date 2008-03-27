@@ -1,5 +1,5 @@
---- kadu/Makefile.in.orig	Fri Nov 10 20:16:44 2006
-+++ kadu/Makefile.in	Fri Feb  9 19:59:29 2007
+--- kadu-core/Makefile.in.orig	Fri Nov 10 20:16:44 2006
++++ kadu-core/Makefile.in	Fri Feb  9 19:59:29 2007
 @@ -880,7 +880,8 @@
  install-data-local:
  #	$(mkinstalldirs) "$(DESTDIR)/$(includedir)/kadu/"

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=		kadu
-PORTVERSION=		0.5.0
-PORTREVISION=	1
+PORTVERSION=		0.6.0
 PORTEPOCH=		1
 CATEGORIES=		polish net-im
 MASTER_SITES=		http://www.kadu.net/download/stable/:kadu \
 			http://www.kadu.net/download/additions/:additions \
+			http://www.kadu.net/download/modules_extra/spellchecker/:aspell \
 			http://www.kadu.net/download/modules_mirror/:modules \
-			http://scripts.one.pl/spellchecker/stable/${PORTVERSION}/:aspell
+			http://kadu.net/~arvenil/tabs/download/${PORTVERSION}/:modtab
 DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:kadu
 DIST_SUBDIR=		kadu
 EXTRACT_ONLY=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -24,12 +24,13 @@ COMMENT=		QT Gadu-Gadu client
 LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/libgadu\
 			sndfile.1:${PORTSDIR}/audio/libsndfile
 
-TABS_MOD_DISTFILE=	tabs-20061223.tar.bz2
-ASPELL_MOD_DISTFILE=	spellchecker-0.20.tar.gz
+TABS_MOD_DISTFILE=	kadu-tabs-1.1.5.tar.bz2
+ASPELL_MOD_DISTFILE=	spellchecker-20071230.tar.bz2
 
 GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
 GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
+USE_AUTOTOOLS=		autoconf:261
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_OPENSSL=		yes
@@ -37,7 +38,8 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-existing-libgadu="${LOCALBASE}" \
 			--with-includes="${LOCALBASE}/include ${X11BASE}/include" \
 			--with-libs="${LOCALBASE}/lib ${X11BASE}/lib" \
-			--program-transform-name=''
+			--program-transform-name='' \
+			--disable-autodownload
 CONFIGURE_ENV=		QTDIR="${QT_PREFIX}"
 
 USE_QT_VER=		3
@@ -57,7 +59,7 @@ OPTIONS=	ASPELL	"Build spell checking module"	off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ASPELL)
-LIB_DEPENDS+=	pspell.16:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 PLIST_SUB+=	ASPELL_MOD=""
 DISTFILES+=	${ASPELL_MOD_DISTFILE}:aspell
 KADU_SHARED_MODULES+=	spellchecker
@@ -96,21 +98,26 @@ USE_GCC=		3.4+
 
 .if defined(WITH_TABS)
 PLIST_SUB+=	TABS_MOD=""
-DISTFILES+=	${TABS_MOD_DISTFILE}:modules
+DISTFILES+=	${TABS_MOD_DISTFILE}:modtab
 KADU_SHARED_MODULES+=	tabs
 .else
 PLIST_SUB+=	TABS_MOD="@comment "
 .endif
 
+KADU_DISABLED_MODULES=	alsa_sound
+
 post-patch:
-	@${ECHO} "#!/usr/bin/true" > ${WRKSRC}/varia/scripts/autodownload
+
+.for module in ${KADU_DISABLED_MODULES}
+	@${REINPLACE_CMD} -e 's|module_${module}=.|module_${module}=n|g' ${WRKSRC}/.config
+.endfor
 
 .for module in ${KADU_SHARED_MODULES}
-	@${REINPLACE_CMD} -e 's|module_${module}=n|module_${module}=m|g' ${WRKSRC}/.config
+	@${REINPLACE_CMD} -e 's|module_${module}=.|module_${module}=m|g' ${WRKSRC}/.config
 .endfor
 
 .for module in ${KADU_STATIC_MODULES}
-	@${REINPLACE_CMD} -e 's|module_${module}=n|module_${module}=y|g' ${WRKSRC}/.config
+	@${REINPLACE_CMD} -e 's|module_${module}=.|module_${module}=y|g' ${WRKSRC}/.config
 .endfor
 
 .if defined(WITH_ASPELL)
@@ -131,6 +138,6 @@ post-patch:
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/kadu/kadu.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/kadu-core/kadu.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.post.mk>
