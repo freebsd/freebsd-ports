@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dcl
-PORTVERSION=	1.5.2
-PORTREVISION=	2
+PORTVERSION=	1.5.3
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://www.gfd-dennou.org/arch/ruby/products/ruby-dcl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,14 +15,14 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
 COMMENT=	A Ruby interface to the scientific graphic library DCL
 
-BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
+BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
+		${X11BASE}/lib/libcdcl.a:${PORTSDIR}/science/cdcl
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
 
 .if defined(WITHOUT_GTK)
 .else
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
 		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
-BUILD_DEPENDS+=	${X11BASE}/lib/libcdcl.a:${PORTSDIR}/science/cdcl
 .endif
 
 USE_RUBY=	yes
@@ -44,7 +43,7 @@ DEMODAT=	grph1/scpack/t810630.dat grph1/scpack/t811231.dat \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if ${ARCH} == "ia64"
 BROKEN=	Does not build on ${ARCH} (Needs to link against shared libraries)
 .endif
 
