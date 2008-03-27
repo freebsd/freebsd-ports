@@ -7,7 +7,7 @@
 
 PORTNAME=	tenebrae
 PORTVERSION=	1.04
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://tenebrae.sourceforge.net/downloads/
 DISTFILES=	${PORTNAME}_src${EXTRACT_SUFX} \
@@ -21,7 +21,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
-USE_GL=		yes
+USE_XORG=	xxf86dga
+USE_GL=		gl
 USE_SDL=	yes
 
 OPTIONS=	X86_ASM "Enable use of x86 assembly code" on

@@ -7,6 +7,7 @@
 
 PORTNAME=	f90gl
 PORTVERSION=	1.2.13
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://math.nist.gov/f90gl/ \
 		http://math.nist.gov/~WMitchell/papers/:doc
@@ -22,6 +23,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Official Fortran 90 bindings for OpenGL
 
 USE_GL=		glut glu
+USE_XORG=	xaw
 USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
 FNAME=		UNDERSCORE

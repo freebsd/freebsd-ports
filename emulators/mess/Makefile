@@ -7,7 +7,7 @@
 
 PORTNAME=	sdlmess
 PORTVERSION=	0.122
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.alepulver.com.ar/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -16,7 +16,8 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SDL port of MESS (Multiple Emulator Super System)
 
 USE_ZIP=	yes
-USE_GL=		yes
+USE_GL=		gl
+USE_XORG=	xext xrender xinerama xi
 USE_GMAKE=	yes
 USE_SDL=	sdl
 MAKEFILE=	makefile.sdl

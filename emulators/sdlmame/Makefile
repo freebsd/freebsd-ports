@@ -16,7 +16,8 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SDL port of the popular MAME (Multi Arcade Machine Emulator)
 
 USE_ZIP=	yes
-USE_GL=		yes
+USE_XORG=	xext xrender xinerama xi
+USE_GL=		gl
 USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_SDL=	sdl

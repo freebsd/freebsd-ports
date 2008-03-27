@@ -7,7 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.12
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://warsow.aditsystems.com/ \
 		http://ftp.club-internet.fr/pub/games/nofrag/warsow/ \
@@ -23,6 +23,7 @@ RUN_DEPENDS=	${DATADIR}/data0.pk3:${PORTSDIR}/games/warsow-data
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GMAKE=	yes
 USE_GCC=	3.4+
+USE_XORG=	xxf86dga
 USE_ZIP=	yes
 USE_DOS2UNIX=	linux/in_x11.c linux/sys_linux.c
 

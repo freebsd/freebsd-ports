@@ -7,7 +7,7 @@
 
 PORTNAME=	q2p
 PORTVERSION=	0.2.20061231
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/Q2P/
 DISTNAME=	Q2P-0.2-2006-12-31
@@ -17,6 +17,7 @@ COMMENT=	Ehnaced OpenGL only Quake II engine
 
 USE_BZIP2=	yes
 USE_GCC=	3.4+
+USE_XORG=	xxf86dga xext xxf86vm x11
 USE_GMAKE=	yes
 ALL_TARGET=	release
 
@@ -39,7 +40,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GLX) || !defined(WITHOUT_SDLGL)
-USE_GL=		yes
+USE_GL=		glu
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 .endif

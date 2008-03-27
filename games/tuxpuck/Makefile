@@ -8,7 +8,7 @@
 
 PORTNAME=	tuxpuck
 PORTVERSION=	0.8.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://users.student.lth.se/d00jkr/tuxpuck/
 
@@ -17,7 +17,8 @@ COMMENT=	Shufflepuck Cafe Clone
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+		vorbis.4:${PORTSDIR}/audio/libvorbis \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=	sdl
 USE_GMAKE=	yes
