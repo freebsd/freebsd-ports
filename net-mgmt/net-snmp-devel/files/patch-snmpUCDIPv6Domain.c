@@ -1,13 +1,11 @@
-Index: snmplib/snmpUDPIPv6Domain.c
-diff -u -p snmplib/snmpUDPIPv6Domain.c.orig snmplib/snmpUDPIPv6Domain.c
---- snmplib/snmpUDPIPv6Domain.c.orig	Mon Aug 20 17:06:42 2007
-+++ snmplib/snmpUDPIPv6Domain.c	Fri Jan 11 13:39:36 2008
-@@ -103,13 +103,24 @@ netsnmp_udp6_fmtaddr(netsnmp_transport *
+--- snmplib/snmpUDPIPv6Domain.c.orig	2007-06-11 07:22:55.000000000 +0900
++++ snmplib/snmpUDPIPv6Domain.c	2008-03-26 07:47:55.942743517 +0900
+@@ -109,13 +109,24 @@
      if (to == NULL) {
          return strdup("UDP/IPv6: unknown");
      } else {
 -        char addr[INET6_ADDRSTRLEN];
--        char tmp[INET6_ADDRSTRLEN + 18];
+-        char tmp[INET6_ADDRSTRLEN + 8];
 +	char addr[NI_MAXHOST], tmp[NI_MAXHOST + NI_MAXSERV + 12];
  
 -        sprintf(tmp, "UDP/IPv6: [%s]:%hu",
