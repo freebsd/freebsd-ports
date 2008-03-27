@@ -18,6 +18,9 @@ COMMENT=	The Apache SOAP implementation in Java
 
 RUN_DEPENDS=	${JAVALIBDIR}/mail.jar:${PORTSDIR}/java/javamail
 
+DEPRECATED=	Development has been ceased, superseded by www/axis.
+EXPIRATION_DATE=	2008-06-01
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 
