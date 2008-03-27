@@ -6,6 +6,6 @@ airmon-ng. airodump-ng sets monitor mode automatically.
 To return from monitor mode use:
 ifconfig ${INTERFACE} -mediaopt monitor
 
-For aireplay-ng you need FreeBSD 7-Current. 
+For aireplay-ng you need FreeBSD >= 7.0
 
 ===============================================================================
