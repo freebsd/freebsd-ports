@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	deluge
-PORTVERSION=	0.5.8.5
+PORTVERSION=	0.5.8.7
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://ftp.osuosl.org/pub/deluge/source/${PORTVERSION}/
 
