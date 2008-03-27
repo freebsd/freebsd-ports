@@ -9,8 +9,7 @@ PORTNAME=	mp-player
 PORTVERSION=	0.6
 CATEGORIES=	audio
 MASTER_SITES=	http://mp.waw.cx/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 DISTNAME=	mp-current
 EXTRACT_SUFX=	.tgz
 
@@ -20,7 +19,7 @@ COMMENT=	A curses based module tracker using libmikmod
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lmikmod -pthread -lncurses -lpanel
+LDFLAGS+=	-L${LOCALBASE}/lib -lmikmod ${PTHREAD_LIBS} -lncurses -lpanel
 DEFINES=	-D_REENTRANT
 
 WRKSRC=		${WRKDIR}/mp-beta-06

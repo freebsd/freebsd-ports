@@ -10,8 +10,7 @@ PORTVERSION=	0.1.13
 PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.lunafish.org/ocp/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	The legendary Open Cubic Player

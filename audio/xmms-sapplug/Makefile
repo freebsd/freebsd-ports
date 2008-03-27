@@ -9,9 +9,8 @@ PORTNAME=	xmms-sapplug
 DISTVERSION=	0.3f
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/ \
-		ftp://ftp.atari.art.pl/stuff/audio/8bit-music-archive/sap/plugins/xmms/
+MASTER_SITES=	ftp://ftp.atari.art.pl/stuff/audio/8bit-music-archive/sap/plugins/xmms/ \
+		CRITICAL
 DISTNAME=	sapplug-xmms-${DISTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -22,6 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
 USE_GNOME=	glib12
+USE_LDCONFIG=	yes
 
 CXXFLAGS+=	--no-exceptions
 WRKSRC=		${WRKDIR}/sapplug-${DISTVERSION}

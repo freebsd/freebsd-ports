@@ -9,8 +9,7 @@ PORTNAME=	openspc
 PORTVERSION=	0.0.3
 PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 PKGNAMEPREFIX=	xmms-
 DISTNAME=	xmms-OpenSPC-${PORTVERSION}
 

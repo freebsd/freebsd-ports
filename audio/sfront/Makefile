@@ -9,8 +9,7 @@ PORTNAME=	sfront
 PORTVERSION=	0.91
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A translator that converts MP4-SA files into efficient C programs

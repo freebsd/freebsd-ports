@@ -8,8 +8,7 @@
 PORTNAME=	unlzx
 PORTVERSION=	1.1
 CATEGORIES=	archivers
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 DISTNAME=	${PORTNAME}.c
 EXTRACT_SUFX=	.gz
 

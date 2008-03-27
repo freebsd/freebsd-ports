@@ -10,8 +10,7 @@ PORTVERSION=	0.4.8
 PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/sexypsf/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 DISTNAME=	sexypsf-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -22,6 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
+USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${WRKSRC} -fPIC
 DEFINES=	-DSPSFVERSION=\""${PORTVERSION}\"" -DPSS_STYLE=1

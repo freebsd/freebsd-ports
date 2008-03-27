@@ -10,10 +10,7 @@ PORTVERSION=	4.4
 PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://sidplayer.cebix.net/downloads/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ehaupt
+		CRITICAL
 DISTNAME=	SIDPlayer-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

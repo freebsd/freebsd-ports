@@ -9,8 +9,7 @@ PORTNAME=	unmass
 PORTVERSION=	0.9
 CATEGORIES=	archivers
 MASTER_SITES=	http://mirex.mypage.sk/FILES/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Extract game archives such as wad, dar, mea exe's and many more
