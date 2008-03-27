@@ -1,18 +1,18 @@
 # New ports collection makefile for:	dansguardian
 # Date created:				April 02, 2002
-# Whom:					Freddie Cash <fcash@bigfoot.com>
+# Whom:					Freddie Cash <fjwcash@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.9.8.2
+PORTVERSION=	2.9.9.3
 #PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	fcash@sd73.bc.ca
+MAINTAINER=	fjwcash@gmail.com
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 USE_GCC=	3.4+
 USE_ICONV=	yes
 
-USE_RC_SUBR=	dansguardian.sh
+USE_RC_SUBR=	dansguardian
 
 CONFLICTS=	dansguardian-2.[678]*
 LATEST_LINK=	dansguardian-devel
@@ -50,6 +50,8 @@ CONFDIR=	${PREFIX}/etc/dansguardian
 
 RESTRICTED=	Redistribution and commercial download is restricted. Check ${DG_URL} for more info
 
+PORTDOCS=	AuthPlugins ContentScanners DownloadManagers FAQ FAQ.html Plugins
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_DG_APACHE)
@@ -57,7 +59,7 @@ USE_APACHE=	1.3+
 .endif
 
 .if !defined(WITHOUT_DG_PCRE)
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
 .if !defined(WITHOUT_DG_TRICKLE)
@@ -65,16 +67,15 @@ CONFIGURE_ARGS+=	--enable-trickledm
 .endif
 
 .if defined(WITH_DG_CLISCAN)
-CONFIGURE_ARGS+=	--enable-commandline=yes
+CONFIGURE_ARGS+=	--enable-commandline
 PLIST_SUB+=		CLISCANCONF=""
 .else
 PLIST_SUB+=		CLISCANCONF="@comment "
 .endif
 
 .if defined(WITH_DG_CLAMAV)
-#IGNORE=		please use the clamd plugin support.  It's much more flexible, usable, tested, and just generally better
 CONFIGURE_ARGS+=	--enable-clamav
-LIB_DEPENDS+=		clamav.1:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=		clamav.3:${PORTSDIR}/security/clamav
 PLIST_SUB+=		CLAMAVCONF=""
 .else
 PLIST_SUB+=		CLAMAVCONF="@comment "
@@ -89,7 +90,6 @@ PLIST_SUB+=		CLAMDCONF="@comment "
 .endif
 
 .if defined(WITH_DG_ICAP)
-#IGNORE=		I don't have access to ICAP AV, so I can't test this.  If you have access to it, drop me an e-mail.  Thanks
 CONFIGURE_ARGS+=	--enable-icap
 PLIST_SUB+=		ICAPCONF=""
 .else
@@ -97,7 +97,6 @@ PLIST_SUB+=		ICAPCONF="@comment "
 .endif
 
 .if defined(WITH_DG_KASP)
-#IGNORE=		I don't have access to Kaspersky AV, so I can't test this.  If you have access to it, drop me an e-mail.  Thanks
 CONFIGURE_ARGS+=	--enable-kavd
 PLIST_SUB+=		KAVDCONF=""
 .else

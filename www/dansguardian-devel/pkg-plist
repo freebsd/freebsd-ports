@@ -32,8 +32,20 @@
 @exec mkdir -p etc/dansguardian/lists/phraselists/warezhacking
 @exec mkdir -p etc/dansguardian/lists/phraselists/weapons
 @exec mkdir -p etc/dansguardian/lists/phraselists/webmail
+@exec mkdir -p etc/dansguardian/lists/phraselists/conspiracy
+@exec mkdir -p etc/dansguardian/lists/phraselists/domainsforsale
+@exec mkdir -p etc/dansguardian/lists/phraselists/forums
+@exec mkdir -p etc/dansguardian/lists/phraselists/idtheft
+@exec mkdir -p etc/dansguardian/lists/phraselists/music
+@exec mkdir -p etc/dansguardian/lists/phraselists/rta
+@exec mkdir -p etc/dansguardian/lists/phraselists/safelabel
+@exec mkdir -p etc/dansguardian/lists/phraselists/secretsocieties
+@exec mkdir -p etc/dansguardian/lists/phraselists/translation
+@exec mkdir -p etc/dansguardian/lists/phraselists/travel
+@exec mkdir -p etc/dansguardian/lists/phraselists/upstreamfilter
 @exec mkdir -p %%DATADIR%%
 @exec mkdir -p %%DATADIR%%/languages
+@exec mkdir -p %%DATADIR%%/languages/arspanish
 @exec mkdir -p %%DATADIR%%/languages/bulgarian
 @exec mkdir -p %%DATADIR%%/languages/chinesebig5
 @exec mkdir -p %%DATADIR%%/languages/chinesegb2312
@@ -46,7 +58,10 @@
 @exec mkdir -p %%DATADIR%%/languages/hungarian
 @exec mkdir -p %%DATADIR%%/languages/indonesian
 @exec mkdir -p %%DATADIR%%/languages/italian
+@exec mkdir -p %%DATADIR%%/languages/japanese
 @exec mkdir -p %%DATADIR%%/languages/lithuanian
+@exec mkdir -p %%DATADIR%%/languages/malay
+@exec mkdir -p %%DATADIR%%/languages/mxspanish
 @exec mkdir -p %%DATADIR%%/languages/polish
 @exec mkdir -p %%DATADIR%%/languages/portuguese
 @exec mkdir -p %%DATADIR%%/languages/ptbrazilian
@@ -59,9 +74,21 @@
 @exec mkdir -p %%DATADIR%%/languages/ukenglish
 @exec mkdir -p %%DATADIR%%/scripts
 sbin/dansguardian
+%%DATADIR%%/languages/arspanish/messages
+%%DATADIR%%/languages/arspanish/fancydmtemplate.html
+%%DATADIR%%/languages/arspanish/template.html
 %%DATADIR%%/languages/spanish/messages
 %%DATADIR%%/languages/spanish/fancydmtemplate.html
 %%DATADIR%%/languages/spanish/template.html
+%%DATADIR%%/languages/mxspanish/messages
+%%DATADIR%%/languages/mxspanish/fancydmtemplate.html
+%%DATADIR%%/languages/mxspanish/template.html
+%%DATADIR%%/languages/japanese/messages
+%%DATADIR%%/languages/japanese/fancydmtemplate.html
+%%DATADIR%%/languages/japanese/template.html
+%%DATADIR%%/languages/malay/messages
+%%DATADIR%%/languages/malay/fancydmtemplate.html
+%%DATADIR%%/languages/malay/template.html
 %%DATADIR%%/languages/czech/messages
 %%DATADIR%%/languages/czech/fancydmtemplate.html
 %%DATADIR%%/languages/czech/template.html
@@ -138,11 +165,18 @@ sbin/dansguardian
 etc/dansguardian/authplugins/ident.conf
 etc/dansguardian/authplugins/ip.conf
 etc/dansguardian/authplugins/proxy-basic.conf
+etc/dansguardian/authplugins/proxy-digest.conf
 %%NTLMCONF%%etc/dansguardian/authplugins/proxy-ntlm.conf
 etc/dansguardian/lists/authplugins/ipgroups
 etc/dansguardian/lists/exceptionextensionlist
 etc/dansguardian/lists/exceptionfilesitelist
 etc/dansguardian/lists/exceptionmimetypelist
+etc/dansguardian/lists/bannedregexpheaderlist
+etc/dansguardian/lists/exceptionfileurllist
+etc/dansguardian/lists/headerregexplist
+etc/dansguardian/lists/logregexpurllist
+etc/dansguardian/lists/logsitelist
+etc/dansguardian/lists/logurllist
 etc/dansguardian/lists/blacklists/ads/domains
 etc/dansguardian/lists/blacklists/ads/urls
 etc/dansguardian/lists/downloadmanagers/managedextensionlist
@@ -195,7 +229,7 @@ etc/dansguardian/lists/phraselists/pornography/weighted_german
 etc/dansguardian/lists/phraselists/pornography/weighted_italian
 etc/dansguardian/lists/phraselists/pornography/weighted_japanese
 etc/dansguardian/lists/phraselists/pornography/weighted_malay
-etc/dansguardian/lists/phraselists/pornography/weighted_norgwegian
+etc/dansguardian/lists/phraselists/pornography/weighted_norwegian
 etc/dansguardian/lists/phraselists/pornography/weighted_portuguese
 etc/dansguardian/lists/phraselists/pornography/weighted_russian
 etc/dansguardian/lists/phraselists/pornography/weighted_spanish
@@ -207,6 +241,17 @@ etc/dansguardian/lists/phraselists/warezhacking/weighted
 etc/dansguardian/lists/phraselists/weapons/weighted
 etc/dansguardian/lists/phraselists/weapons/weighted_portuguese
 etc/dansguardian/lists/phraselists/webmail/weighted
+etc/dansguardian/lists/phraselists/conspiracy/weighted
+etc/dansguardian/lists/phraselists/domainsforsale/weighted
+etc/dansguardian/lists/phraselists/forums/weighted
+etc/dansguardian/lists/phraselists/idtheft/weighted
+etc/dansguardian/lists/phraselists/music/weighted
+etc/dansguardian/lists/phraselists/rta/banned
+etc/dansguardian/lists/phraselists/safelabel/banned
+etc/dansguardian/lists/phraselists/secretsocieties/weighted
+etc/dansguardian/lists/phraselists/translation/weighted
+etc/dansguardian/lists/phraselists/travel/weighted
+etc/dansguardian/lists/phraselists/upstreamfilter/weighted
 etc/dansguardian/lists/bannedextensionlist
 etc/dansguardian/lists/bannediplist
 etc/dansguardian/lists/bannedmimetypelist
@@ -241,6 +286,7 @@ etc/dansguardian/downloadmanagers/trickle.conf
 etc/dansguardian/dansguardian.conf
 etc/dansguardian/dansguardianf1.conf
 @dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/languages/arspanish
 @dirrm %%DATADIR%%/languages/bulgarian
 @dirrm %%DATADIR%%/languages/chinesebig5
 @dirrm %%DATADIR%%/languages/chinesegb2312
@@ -253,7 +299,10 @@ etc/dansguardian/dansguardianf1.conf
 @dirrm %%DATADIR%%/languages/hungarian
 @dirrm %%DATADIR%%/languages/indonesian
 @dirrm %%DATADIR%%/languages/italian
+@dirrm %%DATADIR%%/languages/japanese
 @dirrm %%DATADIR%%/languages/lithuanian
+@dirrm %%DATADIR%%/languages/malay
+@dirrm %%DATADIR%%/languages/mxspanish
 @dirrm %%DATADIR%%/languages/polish
 @dirrm %%DATADIR%%/languages/portuguese
 @dirrm %%DATADIR%%/languages/ptbrazilian
@@ -289,6 +338,17 @@ etc/dansguardian/dansguardianf1.conf
 @dirrm etc/dansguardian/lists/phraselists/warezhacking
 @dirrm etc/dansguardian/lists/phraselists/weapons
 @dirrm etc/dansguardian/lists/phraselists/webmail
+@dirrm etc/dansguardian/lists/phraselists/conspiracy
+@dirrm etc/dansguardian/lists/phraselists/domainsforsale
+@dirrm etc/dansguardian/lists/phraselists/forums
+@dirrm etc/dansguardian/lists/phraselists/idtheft
+@dirrm etc/dansguardian/lists/phraselists/music
+@dirrm etc/dansguardian/lists/phraselists/rta
+@dirrm etc/dansguardian/lists/phraselists/safelabel
+@dirrm etc/dansguardian/lists/phraselists/secretsocieties
+@dirrm etc/dansguardian/lists/phraselists/translation
+@dirrm etc/dansguardian/lists/phraselists/travel
+@dirrm etc/dansguardian/lists/phraselists/upstreamfilter
 @dirrm etc/dansguardian/lists/phraselists
 @dirrm etc/dansguardian/lists/downloadmanagers
 %%SCANNERS%%@dirrm etc/dansguardian/lists/contentscanners
