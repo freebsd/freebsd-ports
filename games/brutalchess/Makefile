@@ -7,16 +7,19 @@
 
 PORTNAME=		brutalchess
 PORTVERSION=		0.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}-alpha-${PORTVERSION}-src
 
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+
 MAINTAINER=		gustau.perez@gmail.com
 COMMENT=		Nice looking OpenGL chess game
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_XORG=	x11
 
 CONFIGURE_TARGET=	--target=${ARCH}-portbld-freebsd${OSREL}
 

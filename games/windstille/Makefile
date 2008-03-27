@@ -7,7 +7,7 @@
 
 PORTNAME=	windstille
 PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS CENKES
 
@@ -20,12 +20,13 @@ LIB_DEPENDS=	openal.0:${PORTSDIR}/audio/openal \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		png.5:${PORTSDIR}/graphics/png \
 		GLEW.1:${PORTSDIR}/graphics/glew \
-		squirrel.0:${PORTSDIR}/lang/squirrel
+		squirrel.0:${PORTSDIR}/lang/squirrel \
+		freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 
 USE_BZIP2=	yes
 USE_SCONS=	yes
-USE_GL=		yes
+USE_GL=		gl
 USE_SDL=	sdl image
 USE_BISON=	build
 
