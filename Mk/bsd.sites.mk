@@ -137,6 +137,13 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://ftp.uu.net/usenet/comp.sources.%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_CRITICAL)
+MASTER_SITE_CRITICAL+=	\
+	http://critical.ch/distfiles/%SUBDIR%/ \
+	http://energy.critical.ch/distfiles/%SUBDIR%/ \
+	http://sauerkraut.critical.ch/distfiles/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_CSME)
 MASTER_SITE_CSME+=	${MASTER_SITE_CENKES}
 .endif
