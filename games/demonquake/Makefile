@@ -22,7 +22,8 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_GMAKE=	yes
 USE_DOS2UNIX=	yes
-USE_GL=		yes
+USE_GL=		gl
+USE_XORG=	xpm xxf86dga
 USE_BZIP2=	yes
 
 OPTIONS=	GLX "Build OpenGL client" on \

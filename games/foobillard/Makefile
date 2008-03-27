@@ -7,7 +7,7 @@
 
 PORTNAME=	foobillard
 PORTVERSION=	2.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://foobillard.sunsite.dk/dnl/
 
@@ -26,6 +26,7 @@ FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_XORG=	xaw ice
 
 CPPFLAGS=	-I${X11BASE}/include
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
