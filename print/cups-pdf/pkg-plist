@@ -1,5 +1,5 @@
 libexec/cups/backend/cups-pdf
-share/cups/model/PostscriptColor.ppd
+share/cups/model/CUPS-PDF.ppd
 @unexec if cmp -s %D/etc/cups/cups-pdf.conf.sample %D/etc/cups/cups-pdf.conf; then rm -f %D/etc/cups/cups-pdf.conf; fi
 etc/cups/cups-pdf.conf.sample
 @exec if [ ! -f %D/etc/cups/cups-pdf.conf ] ; then cp -p %D/%F %B/cups-pdf.conf; fi
