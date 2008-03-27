@@ -7,6 +7,7 @@
 
 PORTNAME=	slimserver
 PORTVERSION=	6.5.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
 DISTNAME=	SlimServer_v${PORTVERSION}.no-cpan-arch
@@ -37,16 +38,14 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder 
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/${PERL_ARCH}/YAML/Syck.pm:${PORTSDIR}/textproc/p5-YAML-Syck
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 USE_PERL5=	yes
 USE_MYSQL=	yes
 IGNORE_WITH_MYSQL=	323 40
-
-SLIMCPANPKGS=	YAML-Syck-0.64.tar.gz
-ALLFILES=	${DISTFILES} ${SLIMCPANPKGS}
 
 .include <bsd.port.pre.mk>
 
@@ -79,12 +78,12 @@ RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 USE_RC_SUBR=	slimserver.sh
 TMP_SLIMDIR=	${WRKDIR}/slimserver
 TMP_DOCSDIR=	${WRKDIR}/doc
-CPANWRKDIR=	${WRKDIR}/cpantemp
 DOCFILES=	Changelog.html Installation.txt License.txt
 CONFFILES=	convert.conf types.conf
 EXCEPTFILES=	${DOCFILES} ${CONFFILES} MySQL/errmsg.txt MySQL/errmsg.sys
 EXCEPTDIRS=	Bin \
-		CPAN/arch
+		CPAN/arch \
+		CPAN/YAML
 
 CPIOARGS=	--quiet -pdum -R
 PLIST=		${WRKDIR}/pkg-plist
@@ -111,21 +110,13 @@ SLIMDBDIR?=	/var/db/slimserver
 SLIMUSER?=	slimserv
 SLIMGROUP?=	${SLIMUSER}
 
-post-fetch:
-.for _PKG in ${SLIMCPANPKGS}
-	@cd ${_DISTDIR}; test -e ${_PKG} || \
-	    ${FETCH_CMD} -o ${_PKG} http://svn.slimdevices.com/vendor/src/${_PKG}?view=auto
-.endfor
-
 post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's|/usr/bin/perl|${PERL}|' \
 	    -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|' \
-	    -e 's|%%CPANWRKDIR%%|${CPANWRKDIR}|' \
 	    -e 's|%%DISTDIR%%|${_DISTDIR}|' \
 	    -e 's|%%SLIMDBDIR%%|${SLIMDBDIR}|' \
-		${WRKSRC}/Bin/build-perl-modules.pl \
 		${WRKSRC}/Bin/dbish \
 		${WRKSRC}/Slim/Utils/Prefs.pm \
 		${WRKSRC}/scanner.pl \
@@ -147,8 +138,6 @@ do-build:
 	@${MKDIR} ${TMP_DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${TMP_DOCSDIR}
 .endif
-	${MKDIR} ${CPANWRKDIR}
-	${WRKSRC}/Bin/build-perl-modules.pl
 
 post-build:
 	@${RM} -f ${PLIST}
