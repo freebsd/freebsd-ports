@@ -39,6 +39,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||;s|-lrt||' ${WRKSRC}/source/cantus/Makefile.in
 	@${REINPLACE_CMD} -e 's|PACKAGE_LIB_DIR "cantus-3.glade"|PACKAGE_DATA_DIR "/cantus/glade/cantus.glade"|'\
 		${WRKSRC}/source/cantus/gui_controller.cc
+	@${FIND} ${WRKSRC} -name "*.h" -o -name "*.cc" | ${XARGS} \
+		${REINPLACE_CMD} -e 's|SigC::Slot3|sigc::slot3|g ; \
+			s|SigC::Signal|sigc::signal|g ; \
+			s|SigC::Object|sigc::trackable|g'
 
 .include <bsd.port.pre.mk>
 
