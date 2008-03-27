@@ -9,7 +9,7 @@ PORTNAME=	qcad-partslib
 PORTVERSION=	2.1.2.8.1
 PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://www.ribbonsoft.com/archives/partlibrary/
+MASTER_SITES=	ftp://www.ribbonsoft.com/archives/partlibrary/
 DISTNAME=	partlibrary-${PORTVERSION:S/.1$/-1/}
 
 MAINTAINER=	mr@FreeBSD.org
