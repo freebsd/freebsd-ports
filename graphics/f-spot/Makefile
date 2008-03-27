@@ -42,6 +42,8 @@ post-patch:
 	    	${WRKSRC}/libgphoto2-sharp/libgphoto2-sharp.dll.config
 	@${REINPLACE_CMD} 's|#!/bin/bash|#!/bin/sh|g' \
 		${WRKSRC}/tools/f-spot-import
+	@${REINPLACE_CMD} 's|G_GNUC_FUNCTION|G_STRLOC|g' \
+		${WRKSRC}/libfspot/f-jpeg-utils.c
 
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
