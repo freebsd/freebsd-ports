@@ -7,15 +7,14 @@
 #
 
 PORTNAME=	sawfish
-PORTVERSION=	1.3
-PORTREVISION=	16
+PORTVERSION=	1.3.3
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	sawmill
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	anray@FreeBSD.org
 COMMENT=	Lisp configurable window manager
 
 LIB_DEPENDS=	rep.13:${PORTSDIR}/lang/librep
@@ -28,11 +27,13 @@ PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier gnomehack esound
+USE_AUTOTOOLS=	autoconf:261:env automake:19:env libtool:15:env
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-readline \
-		--localstatedir=${PREFIX}/share \
+
+CONFIGURE_SCRIPT=	autogen.sh
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share \
 		--enable-capplet \
 		--disable-themer \
@@ -44,8 +45,6 @@ CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 INFO=		sawfish
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|[$$][(]top_builddir[)]/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|prog_name|program_name|g' \
 	    	${WRKSRC}/src/main.c
 

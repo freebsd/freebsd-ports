@@ -1,3 +1,20 @@
-Lisp configurable window manager
+Sawfish is an extensible window manager using a Lisp-based scripting
+language. Its policy is very minimal compared to most window managers.
+Its aim is simply to manage windows in the most flexible and attractive
+manner possible. All high-level WM functions are implemented in Lisp
+for future extensibility or redefinition.
 
-WWW: http://sawmill.sourceforge.net/
+These are some of the features that set Sawfish apart from other window
+managers:
+
+* Powerful key-binding: Virtually every functionality provided by Sawfish
+  can be bound to keys (or mouse buttons).
+* Event hooking: For many events (moving windows etc.) you can customize
+  the way Sawfish will respond.
+* Window matching: When windows are created you can match them to a set
+  of rules and automatically perform actions on them.
+* Flexible theming: Sawfish allows for very different themes to be created
+  and a variety of third-party themes is readily available
+		
+
+WWW: http://sawfish.wikia.com/
