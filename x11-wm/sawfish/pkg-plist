@@ -47,6 +47,7 @@ share/pixmaps/sawfish-tooltips.png
 share/pixmaps/sawfish-workspaces.png
 share/gnome/wm-properties/Sawfish.desktop
 share/locale/am/LC_MESSAGES/sawfish.mo
+share/locale/ar/LC_MESSAGES/sawfish.mo
 share/locale/az/LC_MESSAGES/sawfish.mo
 share/locale/be/LC_MESSAGES/sawfish.mo
 share/locale/bg/LC_MESSAGES/sawfish.mo
@@ -55,7 +56,9 @@ share/locale/ca/LC_MESSAGES/sawfish.mo
 share/locale/cs/LC_MESSAGES/sawfish.mo
 share/locale/da/LC_MESSAGES/sawfish.mo
 share/locale/de/LC_MESSAGES/sawfish.mo
+share/locale/dz/LC_MESSAGES/sawfish.mo
 share/locale/el/LC_MESSAGES/sawfish.mo
+share/locale/en_CA/LC_MESSAGES/sawfish.mo
 share/locale/en_GB/LC_MESSAGES/sawfish.mo
 share/locale/es/LC_MESSAGES/sawfish.mo
 share/locale/et/LC_MESSAGES/sawfish.mo
@@ -69,17 +72,25 @@ share/locale/it/LC_MESSAGES/sawfish.mo
 share/locale/ja/LC_MESSAGES/sawfish.mo
 share/locale/ko/LC_MESSAGES/sawfish.mo
 share/locale/lv/LC_MESSAGES/sawfish.mo
+share/locale/mk/LC_MESSAGES/sawfish.mo
 share/locale/ms/LC_MESSAGES/sawfish.mo
+share/locale/nb/LC_MESSAGES/sawfish.mo
+share/locale/ne/LC_MESSAGES/sawfish.mo
 share/locale/nl/LC_MESSAGES/sawfish.mo
 share/locale/nn/LC_MESSAGES/sawfish.mo
 share/locale/no/LC_MESSAGES/sawfish.mo
+share/locale/oc/LC_MESSAGES/sawfish.mo
+share/locale/pa/LC_MESSAGES/sawfish.mo
 share/locale/pl/LC_MESSAGES/sawfish.mo
 share/locale/pt/LC_MESSAGES/sawfish.mo
 share/locale/pt_BR/LC_MESSAGES/sawfish.mo
 share/locale/ro/LC_MESSAGES/sawfish.mo
 share/locale/ru/LC_MESSAGES/sawfish.mo
+share/locale/rw/LC_MESSAGES/sawfish.mo
 share/locale/sk/LC_MESSAGES/sawfish.mo
 share/locale/sl/LC_MESSAGES/sawfish.mo
+share/locale/sr/LC_MESSAGES/sawfish.mo
+share/locale/sr@Latn/LC_MESSAGES/sawfish.mo
 share/locale/sv/LC_MESSAGES/sawfish.mo
 share/locale/tr/LC_MESSAGES/sawfish.mo
 share/locale/uk/LC_MESSAGES/sawfish.mo
@@ -641,8 +652,8 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 %%DATADIR%%/%%VERSION%%/themes/smaker/theme.jl
 @exec mkdir -p %D/%%DATADIR%%/sounds
 @exec mkdir -p %D/%%DATADIR%%/themes
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%/sounds
+@dirrmtry %%DATADIR%%/themes
+@dirrmtry %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/%%VERSION%%/themes/smaker
 @dirrm %%DATADIR%%/%%VERSION%%/themes/simple
 @dirrm %%DATADIR%%/%%VERSION%%/themes/mono
@@ -652,7 +663,7 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 @dirrm %%DATADIR%%/%%VERSION%%/themes/brushed-metal
 @dirrm %%DATADIR%%/%%VERSION%%/themes/absolute-e
 @dirrm %%DATADIR%%/%%VERSION%%/themes/Crux
-@dirrm %%DATADIR%%/%%VERSION%%/themes
+@dirrmtry %%DATADIR%%/%%VERSION%%/themes
 @dirrm %%DATADIR%%/%%VERSION%%/sounds
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/util
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/wm/theming
@@ -671,8 +682,8 @@ share/locale/zh_TW/LC_MESSAGES/sawfish.mo
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish/gtk
 @dirrm %%DATADIR%%/%%VERSION%%/lisp/sawfish
 @dirrm %%DATADIR%%/%%VERSION%%/lisp
-@dirrm %%DATADIR%%/%%VERSION%%
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/%%VERSION%%
+@dirrmtry %%DATADIR%%
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm/util
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish
