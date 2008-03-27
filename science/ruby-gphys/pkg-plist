@@ -35,6 +35,7 @@ bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_io.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_io_common.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_netcdf_io.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/gphys_nusdas_io.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/grads_gridded.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/grib.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/grib_params.rb
@@ -47,6 +48,7 @@ bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/gphys/varraygrads.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/varraygrib.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/varraynetcdf.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/varraynusdas.rb
 @dirrm %%RUBY_SITELIBDIR%%/numru/gphys
 @dirrmtry %%RUBY_SITELIBDIR%%/numru
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/cira86_to_nc.rb
