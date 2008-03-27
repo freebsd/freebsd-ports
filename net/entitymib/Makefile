@@ -7,7 +7,7 @@
 
 PORTNAME=	entitymib
 PORTVERSION=	20040109
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.mibexplorer.com/export/ietf/:mibs

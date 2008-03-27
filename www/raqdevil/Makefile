@@ -7,7 +7,7 @@
 
 PORTNAME=	raqdevil
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www sysutils
 MASTER_SITES=	http://www.raqdevil.com/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	hplip
@@ -18,7 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		sane.1:${PORTSDIR}/graphics/sane-backends \
 		cups.2:${PORTSDIR}/print/cups-base \
 		usb:${PORTSDIR}/devel/libusb \
-		netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
+		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2 \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters

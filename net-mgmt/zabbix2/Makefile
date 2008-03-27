@@ -7,7 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -15,7 +15,7 @@ MASTER_SITES=	SF
 MAINTAINER=	sq@tvfaq.ru
 COMMENT=	Application and network monitoring solution
 
-LIB_DEPENDS=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp \
+LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp \
 		iksemel.4:${PORTSDIR}/textproc/iksemel \
 		curl.4:${PORTSDIR}/ftp/curl
 
