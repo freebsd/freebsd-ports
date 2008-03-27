@@ -1,3 +1,8 @@
+Version 4.67.6
+==============
+- Upgrade to 4.67.6
+- Now works with p5-Mail-Tools Version 2.x again
+
 Version 4.64.3
 ==============
 - Upgrade to 4.64.3
