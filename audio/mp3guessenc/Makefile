@@ -9,8 +9,7 @@ PORTNAME=	mp3guessenc
 PORTVERSION=	0.21
 CATEGORIES=	audio
 MASTER_SITES=	http://shibatch.sourceforge.net/download/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for guessing which encoder was used to encode an mp3 file

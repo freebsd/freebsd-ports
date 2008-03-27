@@ -9,8 +9,7 @@ PORTNAME=	playgsf
 PORTVERSION=	0.7.1
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/playgsf/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line player for gsf audio files

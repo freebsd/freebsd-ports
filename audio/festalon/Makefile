@@ -10,8 +10,7 @@ PORTVERSION=	0.5.5
 PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/festalon/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 PKGNAMEPREFIX?=
 
 MAINTAINER=	ehaupt@FreeBSD.org

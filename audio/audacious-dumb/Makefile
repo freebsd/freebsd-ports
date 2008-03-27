@@ -9,8 +9,7 @@ PORTNAME=	audacious-dumb
 PORTVERSION=	0.57
 CATEGORIES=	audio
 MASTER_SITES=	http://www.netswarm.net/misc/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Audacious plugin that support the IT, XM, S3M or MOD formats

@@ -9,8 +9,7 @@ PORTNAME=	gzrecover
 PORTVERSION=	0.5
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.urbanophile.com/arenn/hacking/gzrt/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 DISTNAME=	gzrt-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

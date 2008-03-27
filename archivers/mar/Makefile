@@ -8,8 +8,7 @@
 PORTNAME=	mar
 DISTVERSION=	0.5
 CATEGORIES=	archivers
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ehaupt@FreeBSD.org

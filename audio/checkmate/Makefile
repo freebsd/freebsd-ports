@@ -9,8 +9,7 @@ PORTNAME=	checkmate
 PORTVERSION=	0.18
 CATEGORIES=	audio
 MASTER_SITES=	http://checkmate.linuxonly.nl/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line utility for checking mp3 files for errors

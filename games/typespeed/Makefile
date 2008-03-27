@@ -9,8 +9,7 @@ PORTNAME=	typespeed
 PORTVERSION=	0.6.4
 CATEGORIES=	games
 MASTER_SITES=	http://tobias.eyedacor.org/typespeed/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test your typing speed, and get your fingers\' CPS

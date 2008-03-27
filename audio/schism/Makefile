@@ -10,8 +10,7 @@ DISTVERSION=	0.2a
 PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://rigelseven.com/schism/dl/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A module tracker editor/player resembling impulse tracker

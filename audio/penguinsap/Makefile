@@ -8,8 +8,7 @@
 PORTNAME=	penguinsap
 PORTVERSION=	0.1
 CATEGORIES=	audio
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line Atari(TM) .sap player
