@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flashgot
-PORTVERSION=	0.8.8
+PORTVERSION=	0.9
 #DISTVERSIONSUFFIX=	-fx+mz+tb+ns+sm+fl
 CATEGORIES=	www
 MASTER_SITES=	http://software.informaction.com/data/releases/ CENKES
