@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.40.7
+PORTVERSION=	1.40.8
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -51,12 +51,6 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
-# We need to make sure that anything that is outside the root file
-# system is statically linked, else we're in trouble if e2fsck is needed
-# for boot:
-MAKE_ARGS+=	STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
-		../lib/libblkid.a  ../lib/libuuid.a" \
-		LIBINTL="${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
 PLIST_SUB=	NLS=""
 .endif
 
@@ -69,7 +63,16 @@ post-patch::
 
 .if ${MASTERDIR} == ${.CURDIR}
 post-build:
-# Avoid a regression from 1.40.5,
+# Relink e2fsck statically - We need to make sure that tools for the root file
+# system are statically linked against anything that is outside the root fs,
+# else we're in trouble if e2fsck is needed for boot:
+# (we don't use e2fsck.static, since we can link libc.so dynamically)
+	cd ${WRKSRC}/e2fsck && ${RM} -f e2fsck \
+		&& ${MAKE} e2fsck \
+		STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a \
+		../lib/libblkid.a  ../lib/libuuid.a" \
+		LIBINTL="${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
+# Regression check: avoid a port (not upstream!) regression from 1.40.5,
 # check that e2fsck isn't dynalinked against anything but libc.so:
 	@${ECHO_CMD} -n "===>  checking that e2fsck depends on no shared objects beyond libc.so: "
 	@a="$$(ldd ${WRKSRC}/e2fsck/e2fsck 2>/dev/null \
