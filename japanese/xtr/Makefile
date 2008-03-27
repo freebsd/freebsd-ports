@@ -23,12 +23,6 @@ GNU_CONFIGURE=	yes
 
 NO_CDROM=	Need to obtain permission for commercial redistribution.
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
 post-extract:
 	@${ECHO_MSG} "===>  Converting Kanji code for ${DISTNAME}"
 	@(cd ${WRKSRC} && $(SH) EUCsetup )
@@ -45,4 +39,4 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/sample/*.xtr ${PREFIX}/share/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
