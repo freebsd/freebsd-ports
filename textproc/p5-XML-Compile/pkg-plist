@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/xml2yaml
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/.packlist
 %%SITE_PERL%%/XML/Compile.pm
 %%SITE_PERL%%/XML/Compile.pod
