@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.64.3
+PORTVERSION=	4.67.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -107,6 +107,7 @@ ETC_FILES=	MailScanner.conf filename.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \
 		spam.lists.conf virus.scanners.conf \
 		phishing.safe.sites.conf \
+		phishing.bad.sites.conf \
 		country.domains.conf
 MCP_FILES=	mcp.spam.assassin.prefs.conf \
 		10_example.cf
@@ -157,9 +158,18 @@ do-build:
 		${WRKSRC}/bin/update_phishing_sites
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
+		${WRKSRC}/bin/update_bad_phishing_sites
+	${PERL} -pi -e \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
 		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
 		s,%%RC_SUBR%%,${RC_SUBR},g;' \
 		${WRKSRC}/bin/cron/update_phishing_sites.cron
+	${PERL} -pi -e \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
+		s,%%RC_SUBR%%,${RC_SUBR},g;' \
+		${WRKSRC}/bin/cron/update_bad_phishing_sites.cron
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
 		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
@@ -222,8 +232,12 @@ do-install:
 		${PREFIX}/libexec/MailScanner/clean.quarantine
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_phishing_sites \
 		${PREFIX}/libexec/MailScanner/update_phishing_sites
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_bad_phishing_sites \
+		${PREFIX}/libexec/MailScanner/update_bad_phishing_sites
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_phishing_sites.cron \
 		${PREFIX}/libexec/MailScanner/update_phishing_sites.cron
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_bad_phishing_sites.cron \
+		${PREFIX}/libexec/MailScanner/update_bad_phishing_sites.cron
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_virus_scanners \
 		${PREFIX}/libexec/MailScanner/update_virus_scanners
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_virus_scanners.cron \
