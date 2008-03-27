@@ -67,6 +67,7 @@ LDAP			Adds LDAP support
 LINUX			Adds support for Linux
 LIVEMEDIA		LiveMedia rstp/rtp/sdp support
 LZO			LZO data compression support
+LUA			Lua scripting support
 MAD			Mad MP3 audio decoder support
 MATROSKA		Matroska multimedia container support
 MMX			Adds support for x86 MMX optimizations
