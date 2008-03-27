@@ -7,7 +7,7 @@
 
 PORTNAME=	kmquake2
 PORTVERSION=	0.19
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/KMQuake2/:src \
 		http://qexpo2005.quakedev.com/uploaded/54/:data \
@@ -27,6 +27,7 @@ COMMENT=	Enhanced Quake2 OpenGL only engine with Lazarus support
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 USE_BZIP2=	yes
+USE_XORG=	xxf86dga 
 USE_GCC=	3.2+
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/KMQuake2_${PORTVERSION:S/.//}_src_unix

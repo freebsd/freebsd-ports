@@ -7,7 +7,7 @@
 
 PORTNAME=	nimuh
 PORTVERSION=	1.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} ${PORTNAME}-data-${PORTVERSION}${EXTRACT_SUFX}
@@ -15,10 +15,12 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} ${PORTNAME}-data-${PORTVERS
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	Puzzle game destined to improve the knowledge of Andalusia
 
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl image mixer
-USE_GL=		yes
+USE_GL=		gl
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

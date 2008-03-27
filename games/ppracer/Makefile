@@ -7,7 +7,7 @@
 
 PORTNAME=	ppracer
 DISTVERSION=	0.5alpha
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D downhill racing game... kind of like TuxRacer Improved
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_SDL=	mixer sdl

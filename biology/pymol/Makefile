@@ -6,6 +6,7 @@
 
 PORTNAME=	pymol
 PORTVERSION=	1.0r2
+PORTREVISION=	1
 CATEGORIES=	biology python
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/pymol|}
 
@@ -16,7 +17,8 @@ BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
-		png.5:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/pymol-${PORTVERSION}
 USE_GMAKE=	yes
