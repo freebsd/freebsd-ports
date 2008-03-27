@@ -39,7 +39,7 @@ DVD			Enables General DVD support
 DVDNAV			Enables DVD Menu support
 DVDREAD			Enables DVD support
 ESOUND			Adds support for Esound
-EXAMPLES		Installs optional example code, graphics, etc
+EXAMPLES		Installs optional example code, graphics, etc.
 EXIF			Support for EXIF headers in JPEG or TIFF files
 FAAC			FAAC AAC and MP4 audio encoder support
 FAAD			FAAD AAC and MP4 audio decoder support
@@ -66,8 +66,8 @@ LAME			LAME MP3 audio encoder support
 LDAP			Adds LDAP support
 LINUX			Adds support for Linux
 LIVEMEDIA		LiveMedia rstp/rtp/sdp support
-LZO			LZO data compression support
 LUA			Lua scripting support
+LZO			LZO data compression support
 MAD			Mad MP3 audio decoder support
 MATROSKA		Matroska multimedia container support
 MMX			Adds support for x86 MMX optimizations
