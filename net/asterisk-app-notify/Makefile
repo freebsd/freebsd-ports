@@ -7,6 +7,7 @@
 
 PORTNAME=	app_notify
 DISTVERSION=	2.0rc1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.mezzo.net/asterisk/ \
 		http://static.oyam.ca/freebsd/ports/

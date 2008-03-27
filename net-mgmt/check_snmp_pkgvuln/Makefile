@@ -7,6 +7,7 @@
 
 PORTNAME=	check_snmp_pkgvuln
 PORTVERSION=	0.01
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cultdeadsheep.org/~clement/FreeBSD/nagios/
 PKGNAMEPREFIX=	nagios-

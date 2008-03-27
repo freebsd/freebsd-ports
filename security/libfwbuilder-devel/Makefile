@@ -6,6 +6,7 @@
 
 PORTNAME=	libfwbuilder
 PORTVERSION=	2.1.16
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fwbuilder
@@ -15,7 +16,7 @@ COMMENT=	Firewall Builder API
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
-		netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
+		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 
 BUILD_VERSION=	21
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}

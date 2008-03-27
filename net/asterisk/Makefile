@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.4.18.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -136,7 +137,7 @@ CONFIGURE_ARGS+= --without-netsnmp
 .else
 PLIST_SUB+=	WITH_SNMP=""
 CONFIGURE_ARGS+= --with-netsnmp
-LIB_DEPENDS+=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
 .if defined(WITHOUT_JABBER)

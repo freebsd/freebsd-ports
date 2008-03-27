@@ -7,6 +7,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.1.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/ \
 		http://matt.peterson.org/FreeBSD/ports/
@@ -130,7 +131,7 @@ PLIST_SUB+=		RRD="@comment "
 .endif
 
 .if defined(WITH_SNMP)
-LIB_DEPENDS+=		netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-snmp
 PLIST_SUB+=		SNMP=""
 .else

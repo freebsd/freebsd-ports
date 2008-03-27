@@ -7,7 +7,7 @@
 
 PORTNAME=	astmanproxy
 PORTVERSION=	1.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.popvox.com/
 DISTFILES=	astmanproxy-latest.tgz

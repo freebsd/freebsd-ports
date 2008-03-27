@@ -7,7 +7,7 @@
 
 PORTNAME=	nut
 PORTVERSION=	2.2.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
@@ -96,7 +96,7 @@ PLIST_SUB+=	NUT_USB="@comment "
 .endif
 
 .if !defined(WITHOUT_SNMP)
-LIB_DEPENDS+=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-snmp
 MAN8+=		snmp-ups.8
 PLIST_SUB+=	NUT_SNMP=""
