@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snmp
-PORTVERSION=	5.3.2
-PORTREVISION=	1
+PORTVERSION=	5.4.1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -81,7 +80,7 @@ PLIST_SUB+=	WITH_IPV6=""
 PLIST_SUB+=	WITH_IPV6="@comment "
 .endif
 
-SHLIB_VERSION=	10
+SHLIB_VERSION=	16
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
 SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
 
@@ -118,22 +117,53 @@ MAN1=		encode_keychange.1 fixproc.1 mib2c.1 mib2c-update.1 \
 		snmpnetstat.1 snmpset.1 snmpstatus.1 snmptable.1 snmptest.1 \
 		snmptranslate.1 snmptrap.1 snmpusm.1 snmpvacm.1 snmpwalk.1 \
 		tkmib.1 traptoemail.1
-MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
+MAN3=		add_mibdir.3 add_module_replacement.3 \
+		config_perror.3 config_pwarn.3 \
+		default_store.3 fprint_description.3 \
+		fprint_objid.3 fprint_value.3 fprint_variable.3 \
 		get_module_node.3 init_mib.3 init_mib_internals.3 mib_api.3 \
-		netsnmp_agent.3 netsnmp_bulk_to_next.3 netsnmp_debug.3 \
+		netsnmp_Container_iterator.3 \
+		netsnmp_agent.3 \
+		netsnmp_baby_steps.3 \
+		netsnmp_bulk_to_next.3 \
+		netsnmp_cache_handler.3 netsnmp_container.3 \
+		netsnmp_debug.3 \
+		netsnmp_ds_get_boolean.3 netsnmp_ds_get_int.3 \
+		netsnmp_ds_get_string.3 \
+		netsnmp_ds_register_config.3 netsnmp_ds_register_premib.3 \
+		netsnmp_ds_set_boolean.3 netsnmp_ds_set_int.3 \
+		netsnmp_ds_set_string.3 netsnmp_ds_shutdown.3 \
 		netsnmp_example_scalar_int.3 netsnmp_handler.3 \
-		netsnmp_instance.3 netsnmp_library.3 \
+		netsnmp_instance.3 \
+		netsnmp_iterator_info_s.3 \
+		netsnmp_leaf.3 netsnmp_library.3 \
 		netsnmp_mib_handler_methods.3 netsnmp_mib_utilities.3 \
 		netsnmp_mode_end_call.3 netsnmp_multiplexer.3 \
-		netsnmp_old_api.3 netsnmp_read_only.3 netsnmp_scalar.3 \
-		netsnmp_serialize.3 netsnmp_table.3 netsnmp_table_array.3 \
+		netsnmp_old_api.3 netsnmp_read_only.3 \
+		netsnmp_row_merge.3 \
+		netsnmp_scalar.3 \
+		netsnmp_scalar_group_group.3 \
+		netsnmp_serialize.3 \
+		netsnmp_stash_cache.3 \
+		netsnmp_table.3 netsnmp_table_array.3 \
 		netsnmp_table_data.3 netsnmp_table_dataset.3 \
-		netsnmp_table_iterator.3 netsnmp_watcher.3 \
+		netsnmp_table_iterator.3 \
+		netsnmp_utilities.3 \
+		netsnmp_watcher.3 \
 		print_description.3 print_mib.3 print_objid.3 print_value.3 \
-		print_variable.3 read_all_mibs.3 read_config.3 read_mib.3 \
-		read_module.3 read_module_node.3 read_objid.3 shutdown_mib.3 \
-		snmp_agent_api.3 snmp_alarm.3 snmp_api.3 \
-		snmp_api_errstring.3 snmp_close.3 \
+		print_variable.3 read_all_mibs.3 \
+		read_config.3 read_configs.3 read_config_print_usage.3 \
+		read_mib.3 read_module.3 read_module_node.3 read_objid.3 \
+		read_premib_configs.3 \
+		register_app_config_handler.3 register_app_premib_handler.3 \
+		register_config_handler.3 register_mib_handlers.3 \
+		register_premib_handler.3 \
+		send_easy_trap.3 send_trap_vars.3 send_v2trap.3 \
+		shutdown_mib.3 \
+		snmp_agent_api.3 \
+		snmp_alarm.3 snmp_alarm_register.3 \
+		snmp_alarm_register_hr.3 snmp_alarm_unregister.3 \
+		snmp_api.3 snmp_api_errstring.3 snmp_close.3 \
 		snmp_error.3 snmp_free_pdu.3 snmp_open.3 snmp_perror.3 \
 		snmp_read.3 snmp_select_info.3 \
 		snmp_send.3 snmp_sess_api.3 snmp_sess_async_send.3 \
@@ -143,13 +173,10 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		snmp_sess_send.3 snmp_sess_session.3 snmp_sess_timeout.3 \
 		snmp_set_mib_warnings.3 snmp_set_save_descriptions.3 \
 		snmp_timeout.3 snmp_trap_api.3 \
-		netsnmp_Container_iterator.3 \
-		netsnmp_baby_steps.3 \
-		netsnmp_cache_handler.3 netsnmp_container.3 \
-		netsnmp_iterator_info_s.3 \
-		netsnmp_leaf.3 \
-		netsnmp_row_merge.3 netsnmp_scalar_group_group.3 \
-		netsnmp_stash_cache.3 netsnmp_utilities.3
+		snprint_objid.3 snprint_value.3 snprint_variable.3 \
+		sprint_realloc_objid.3 sprint_realloc_value.3 \
+		sprint_realloc_variable.3 \
+		unregister_app_config_handler.3 \unregister_config_handler.3
 
 .if !defined(WITHOUT_PERL)
 MAN3PERL=	NetSNMP::ASN.3 NetSNMP::OID.3 NetSNMP::agent.3 \
@@ -180,7 +207,7 @@ DOC_FILES=	AGENT.txt COPYING FAQ NEWS README \
 		agent/mibgroup/README.smux
 
 PS_CMD?=	/bin/ps
-CONFLICTS=	net-snmp-4.*
+CONFLICTS=	net-snmp-4.* net-snmp-5.3.*
 
 pre-everything::
 	@${ECHO_MSG}
@@ -211,6 +238,8 @@ pre-everything::
 post-patch: patch-autoconf patch-script-files
 
 patch-autoconf:
+
+x-patch-autoconf:
 	@${AWK} '/@synopsis/,/taken from libtool.m4/' ${WRKSRC}/aclocal.m4 > ${WRKSRC}/aclocal.m4.tmp
 	@${CAT} ${LIBTOOL_M4} >> ${WRKSRC}/aclocal.m4.tmp
 	@${CP} ${LTMAIN} ${WRKSRC}
