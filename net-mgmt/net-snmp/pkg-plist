@@ -116,6 +116,7 @@ include/net-snmp/library/snmp_impl.h
 include/net-snmp/library/snmp_logging.h
 include/net-snmp/library/snmp_parse_args.h
 include/net-snmp/library/snmp_secmod.h
+include/net-snmp/library/snmp_service.h
 include/net-snmp/library/snmp_transport.h
 include/net-snmp/library/snmpusm.h
 include/net-snmp/library/snmpv3-security-includes.h
@@ -145,6 +146,8 @@ include/net-snmp/system/cygwin.h
 include/net-snmp/system/darwin.h
 include/net-snmp/system/darwin7.h
 include/net-snmp/system/darwin8.h
+include/net-snmp/system/darwin9.h
+include/net-snmp/system/dragonfly.h
 include/net-snmp/system/dynix.h
 include/net-snmp/system/freebsd.h
 include/net-snmp/system/freebsd2.h
@@ -164,11 +167,10 @@ include/net-snmp/system/netbsd.h
 include/net-snmp/system/openbsd.h
 include/net-snmp/system/osf5.h
 include/net-snmp/system/solaris.h
+include/net-snmp/system/solaris2.3.h
+include/net-snmp/system/solaris2.4.h
+include/net-snmp/system/solaris2.5.h
 include/net-snmp/system/solaris2.6.h
-include/net-snmp/system/solaris2.7.h
-include/net-snmp/system/solaris2.8.h
-include/net-snmp/system/solaris2.9.h
-include/net-snmp/system/solaris2.10.h
 include/net-snmp/system/sunos.h
 include/net-snmp/system/svr5.h
 include/net-snmp/system/sysv.h
@@ -207,6 +209,7 @@ lib/libnetsnmptrapd.so.%%SHLIB_VERSION%%
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/OID.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/TrapReceiver.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent/Support.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent/default_store.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent/netsnmp_request_infoPtr.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/default_store.pm
@@ -360,6 +363,7 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/NET-SNMP-EXTEND-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-TC.txt
+%%DATADIR%%/mibs/NET-SNMP-VACM-MIB.txt
 %%WITH_MTA_SENDMAIL%%%%DATADIR%%/mibs/NETWORK-SERVICES-MIB.txt
 %%DATADIR%%/mibs/NOTIFICATION-LOG-MIB.txt
 %%DATADIR%%/mibs/RFC-1215.txt

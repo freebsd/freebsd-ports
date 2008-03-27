@@ -30,6 +30,7 @@ USE_AUTOTOOLS=	autoconf:261 libtool:15
 USE_RC_SUBR=	snmpd.sh snmptrapd.sh
 USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
+NO_LATEST_LINK=	yes
 .if !defined(WITHOUT_PERL)
 USE_PERL5=	yes
 .endif
@@ -180,7 +181,7 @@ DOC_FILES=	AGENT.txt COPYING FAQ NEWS README \
 		agent/mibgroup/README.smux
 
 PS_CMD?=	/bin/ps
-CONFLICTS=	net-snmp-4.*
+CONFLICTS=	net-snmp-4.* net-snmp-5.4.*
 
 pre-everything::
 	@${ECHO_MSG}
