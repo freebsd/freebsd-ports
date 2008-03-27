@@ -1,0 +1,51 @@
+bin/xarchiver
+libexec/thunar-archive-plugin/xarchiver.tap
+share/applications/xarchiver.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/html/ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch01s02.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch01s03.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch01s04.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch02.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch02s02.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch02s03.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s02.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s03.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s04.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s05.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s06.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s07.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s08.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch03s09.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch04.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch04s02.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch04s03.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch04s04.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch04s05.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ch04s06.html
+%%PORTDOCS%%%%DOCSDIR%%/html/images/add_dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/archive_properties.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/extract_dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/iso_properties.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/new_dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/xarchiver.css
+share/icons/hicolor/48x48/apps/xarchiver.png
+share/pixmaps/xarchiver/xarchiver-add.png
+share/pixmaps/xarchiver/xarchiver-add_button.png
+share/pixmaps/xarchiver/xarchiver-close.png
+share/pixmaps/xarchiver/xarchiver-extract.png
+share/pixmaps/xarchiver/xarchiver-extract_button.png
+@dirrm share/pixmaps/xarchiver
+@dirrmtry share/pixmaps/hicolor/48x48/apps
+@dirrmtry libexec/thunar-archive-plugin
+@dirrmtry share/applications
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

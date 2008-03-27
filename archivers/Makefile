@@ -154,6 +154,7 @@
     SUBDIR += wzip
     SUBDIR += xar
     SUBDIR += xarchive
+    SUBDIR += xarchiver
     SUBDIR += xdms
     SUBDIR += xmill
     SUBDIR += xpk
