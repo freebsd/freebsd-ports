@@ -20,13 +20,12 @@ COMMENT=	Python nautilus bindings
 LIB_DEPENDS=	nautilus-extension:${PORTSDIR}/x11-fm/nautilus
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack pygnome2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 DOCSDIR=	${PREFIX}/share/doc/nautilus-python
 
