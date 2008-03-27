@@ -1,0 +1,476 @@
+diff -r -u -P modules/mod_codeconv.c modules/mod_codeconv.c
+--- modules/mod_codeconv.c	1970-01-01 03:00:00.000000000 +0300
++++ modules/mod_codeconv.c	2008-03-24 02:55:39.000000000 +0300
+@@ -0,0 +1,231 @@
++/*
++ * ProFTPD: mod_codeconv -- local <-> remote charset conversion
++ *
++ * Copyright (c) 2004 by TSUJIKAWA Tohru <tsujikawa@tsg.ne.jp> / All rights reserved.
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, write to the Free Software
++ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307, USA.
++ *
++ */
++
++
++#include	"conf.h"
++#include	<iconv.h>
++
++
++//
++// directive
++//
++#define	DIRECTIVE_CHARSETLOCAL		"CharsetLocal"
++#define	DIRECTIVE_CHARSETREMOTE		"CharsetRemote"
++
++
++//
++// initialization
++//
++static int codeconv_init(void)
++{
++	return 0;
++}
++
++static int codeconv_sess_init(void)
++{
++	return 0;
++}
++
++
++char* remote2local(struct pool* pool, char* remote)
++{
++	iconv_t	ic;
++	char*	local;
++	char*	in_ptr;
++	char*	out_ptr;
++	size_t	inbytesleft, outbytesleft;
++
++	config_rec*	conf_l = NULL;
++	config_rec*	conf_r = NULL;
++
++	conf_l = find_config(main_server->conf, CONF_PARAM, DIRECTIVE_CHARSETLOCAL, FALSE);
++	conf_r = find_config(main_server->conf, CONF_PARAM, DIRECTIVE_CHARSETREMOTE, FALSE);
++	if (!conf_l || !conf_r) return NULL;
++
++	ic = iconv_open(conf_l->argv[0], conf_r->argv[0]);
++	if (ic == (iconv_t)(-1)) return NULL;
++
++	iconv(ic, NULL, NULL, NULL, NULL);
++
++	inbytesleft = remote != NULL ? strlen(remote) : 0;
++	outbytesleft = inbytesleft*3;
++	local = palloc(pool, outbytesleft+1);
++
++	in_ptr = remote; 
++	out_ptr = local;
++	while (inbytesleft) {
++		if (iconv(ic, &in_ptr, &inbytesleft, &out_ptr, &outbytesleft) == -1) {
++			*out_ptr = '?'; out_ptr++; outbytesleft--;
++			in_ptr++; inbytesleft--;
++			break;
++		}
++	}
++	*out_ptr = 0;
++
++	iconv_close(ic);
++
++	return local;
++}
++
++
++char* local2remote(char* local)
++{
++	iconv_t	ic;
++	char*	remote;
++	char*	in_ptr;
++	char*	out_ptr;
++	size_t	inbytesleft, outbytesleft;
++
++	config_rec*	conf_l = NULL;
++	config_rec*	conf_r = NULL;
++
++	conf_l = find_config(main_server->conf, CONF_PARAM, DIRECTIVE_CHARSETLOCAL, FALSE);
++	conf_r = find_config(main_server->conf, CONF_PARAM, DIRECTIVE_CHARSETREMOTE, FALSE);
++	if (!conf_l || !conf_r) return NULL;
++
++	ic = iconv_open(conf_r->argv[0], conf_l->argv[0]);
++	if (ic == (iconv_t)(-1)) return NULL;
++
++	iconv(ic, NULL, NULL, NULL, NULL);
++
++	inbytesleft = local != NULL ? strlen(local) : 0;
++	outbytesleft = inbytesleft*3;
++	remote = malloc(outbytesleft+1);
++
++	in_ptr = local; 
++	out_ptr = remote;
++	while (inbytesleft) {
++		if (iconv(ic, &in_ptr, &inbytesleft, &out_ptr, &outbytesleft) == -1) {
++			*out_ptr = '?'; out_ptr++; outbytesleft--;
++			in_ptr++; inbytesleft--;
++			break;
++		}
++	}
++	*out_ptr = 0;
++
++	iconv_close(ic);
++
++	return remote;
++}
++
++
++//
++// module handler
++//
++MODRET codeconv_pre_any(cmd_rec* cmd)
++{
++	char*	p;
++	int		i;
++
++	p = remote2local(cmd->pool, cmd->arg);
++	if (p) cmd->arg = p;
++
++	for (i = 0; i < cmd->argc; i++) {
++		p = remote2local(cmd->pool, cmd->argv[i]);
++		if (p) cmd->argv[i] = p;
++	}
++
++	return DECLINED(cmd);
++}
++
++
++//
++// local charset directive "CharsetLocal"
++//
++MODRET set_charsetlocal(cmd_rec *cmd) {
++  config_rec *c = NULL;
++
++  /* Syntax: CharsetLocal iconv-charset-name */
++
++  CHECK_ARGS(cmd, 1);
++  CHECK_CONF(cmd, CONF_ROOT|CONF_VIRTUAL|CONF_GLOBAL);
++
++  c = add_config_param_str(DIRECTIVE_CHARSETLOCAL, 1, cmd->argv[1]);
++
++  return HANDLED(cmd);
++}
++
++//
++// remote charset directive "CharsetRemote"
++//
++MODRET set_charsetremote(cmd_rec *cmd) {
++  config_rec *c = NULL;
++
++  /* Syntax: CharsetRemote iconv-charset-name */
++
++  CHECK_ARGS(cmd, 1);
++  CHECK_CONF(cmd, CONF_ROOT|CONF_VIRTUAL|CONF_GLOBAL);
++
++  c = add_config_param_str(DIRECTIVE_CHARSETREMOTE, 1, cmd->argv[1]);
++
++  return HANDLED(cmd);
++}
++
++
++//
++// module ÍÑ directive
++//
++static conftable codeconv_conftab[] = {
++	{ DIRECTIVE_CHARSETLOCAL,		set_charsetlocal,		NULL },
++	{ DIRECTIVE_CHARSETREMOTE,		set_charsetremote,		NULL },
++	{ NULL, NULL, NULL }
++};
++
++
++//
++// trap ¤¹¤ë¥³¥Þ¥ó¥É°ìÍ÷
++//
++static cmdtable codeconv_cmdtab[] = {
++	{ PRE_CMD,		C_ANY,	G_NONE, codeconv_pre_any,	FALSE, FALSE },
++	{ 0,			NULL }
++};
++
++
++//
++// module ¾ðÊó
++//
++module codeconv_module = {
++
++	/* Always NULL */
++	NULL, NULL,
++
++	/* Module API version (2.0) */
++	0x20,
++
++	/* Module name */
++	"codeconv",
++
++	/* Module configuration directive handlers */
++	codeconv_conftab,
++
++	/* Module command handlers */
++	codeconv_cmdtab,
++
++	/* Module authentication handlers (none in this case) */
++	NULL,
++
++	/* Module initialization */
++	codeconv_init,
++
++	/* Session initialization */
++	codeconv_sess_init
++
++};
+diff -r -u -P modules/mod_df.c modules/mod_df.c
+--- modules/mod_df.c	1970-01-01 03:00:00.000000000 +0300
++++ modules/mod_df.c	2008-03-24 02:55:39.000000000 +0300
+@@ -0,0 +1,127 @@
++/*
++ * ProFTPD: mod_df -- ¥Ç¥£¥¹¥¯¶õ¤­ÍÆÎÌÄÌÃÎ¥â¥¸¥å¡¼¥ë
++ *
++ * Copyright (c) 2002 by TSUJIKAWA Tohru <tsujikawa@tsg.ne.jp>
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, write to the Free Software
++ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307, USA.
++ *
++ */
++
++ /*
++   **** for Linux only ****
++
++   CWD/CDUP ¥³¥Þ¥ó¥É¤Î¥ê¥¶¥ë¥È¤ÇÅö³º¥Ç¥£¥ì¥¯¥È¥ê¤Ç¤Î¥Ç¥£¥¹¥¯¶õ¤­ÍÆÎÌ¤òÄÌÃÎ¤¹¤ë¥â¥¸¥å¡¼¥ë¤Ç¤¹¡£
++
++   statfs() ¤Î»ÅÍÍ¾å¡¤64bit ÍÑ¤Ë¥³¥ó¥Ñ¥¤¥ë¤·¤Ê¤¤¾ì¹ç¤Ï 2TB °Ê¾å¤Î¥Ç¥£¥¹¥¯¤Î»þ¤Ë
++   Àµ¾ï¤ÊÃÍ¤òÊÖ¤µ¤Ê¤¤¤³¤È¤¬´üÂÔ¤µ¤ì¤Þ¤¹¡£
++
++ */
++
++
++#include	"conf.h"
++#include	<sys/vfs.h>
++
++
++//
++// ½é´ü²½
++//
++static int df_init(void)
++{
++	return 0;
++}
++
++static int df_sess_init(void)
++{
++	return 0;
++}
++
++
++//
++// module handler
++//
++MODRET df_post_cwd(cmd_rec* cmd)
++{
++	char	buf[PATH_MAX+1];
++	struct statfs	sfs;
++
++	if (getcwd(buf, sizeof(buf)) && statfs(buf, &sfs) == 0) {
++		long long	f = (long long)sfs.f_bavail * (long long)sfs.f_bsize;
++		if (f >= ((long long)1 << 10)*1000000000L) {
++			sprintf(buf, "Disk free space at this directory is %lld,%03lld,%03lld MB.",
++					(f >> 20)/1000000, (f >> 20)/1000%1000, (f >> 20)%1000);
++		} else if (f >= ((long long)1 << 10)*1000000) {
++			sprintf(buf, "Disk free space at this directory is %lld,%03lld,%03lld KB.",
++					(f >> 10)/1000000, (f >> 10)/1000%1000, (f >> 10)%1000);
++		} else if (f >= ((long long)1 << 10)*1000) {
++			sprintf(buf, "DISK FREE SPACE AT THIS DIRECTORY IS ONLY %lld,%03lld KB.", (f >> 10)/1000, (f >> 10)%1000);
++		} else if (f >= 1000) {
++			sprintf(buf, "DISK FREE SPACE AT THIS DIRECTORY IS ONLY %lld,%03lld Bytes.", f/1000, f%1000);
++		} else {
++			sprintf(buf, "DISK FREE SPACE AT THIS DIRECTORY IS ONLY %lld Bytes.", f);
++		}
++		pr_response_send_raw("250-%s", buf);
++	}
++	return HANDLED(cmd);
++}
++
++
++//
++// module ÍÑ directive
++//
++static conftable df_conftab[] = {
++	{ NULL }						// directive ¤Ï¥µ¥Ý¡¼¥È¤·¤Ê¤¤
++};
++
++
++//
++// trap ¤¹¤ë¥³¥Þ¥ó¥É°ìÍ÷
++//
++static cmdtable df_cmdtab[] = {
++	{ POST_CMD,		C_CWD,	G_NONE, df_post_cwd,	FALSE, FALSE },
++	{ POST_CMD,		C_CDUP,	G_NONE, df_post_cwd,	FALSE, FALSE },
++	{ 0,			NULL }
++};
++
++
++//
++// module ¾ðÊó
++//
++module df_module = {
++
++	/* Always NULL */
++	NULL, NULL,
++
++	/* Module API version (2.0) */
++	0x20,
++
++	/* Module name */
++	"df",
++
++	/* Module configuration directive handlers */
++	df_conftab,
++
++	/* Module command handlers */
++	df_cmdtab,
++
++	/* Module authentication handlers (none in this case) */
++	NULL,
++
++	/* Module initialization */
++	df_init,
++
++	/* Session initialization */
++	df_sess_init
++
++};
+diff -r -u -P modules/mod_ls.c modules/mod_ls.c
+--- modules/mod_ls.c	2007-09-28 04:53:59.000000000 +0400
++++ modules/mod_ls.c	2008-03-24 02:55:39.000000000 +0300
+@@ -244,12 +244,15 @@
+   return res;
+ }
+ 
++extern char* local2remote(char*);
++
+ /* sendline() now has an internal buffer, to help speed up LIST output. */
+ static int sendline(int flags, char *fmt, ...) {
+   static char listbuf[PR_TUNABLE_BUFFER_SIZE] = {'\0'};
+   va_list msg;
+   char buf[PR_TUNABLE_BUFFER_SIZE+1] = {'\0'};
+   int res = 0;
++  char* buf2;
+ 
+   if (flags & LS_SENDLINE_FL_FLUSH) {
+     size_t listbuflen = strlen(listbuf);
+@@ -274,6 +277,13 @@
+ 
+   buf[sizeof(buf)-1] = '\0';
+ 
++  if (buf[0]) {
++    buf2 = local2remote(buf);
++    if (buf2) {
++      strcpy(buf, buf2); free(buf2);
++    }
++  }
++
+   /* If buf won't fit completely into listbuf, flush listbuf */
+   if (strlen(buf) >= (sizeof(listbuf) - strlen(listbuf))) {
+     res = pr_data_xfer(listbuf, strlen(listbuf));
+diff -r -u -P src/netio.c src/netio.c
+--- src/netio.c	2007-08-22 18:50:23.000000000 +0400
++++ src/netio.c	2008-03-24 02:55:39.000000000 +0300
+@@ -547,9 +547,12 @@
+   return -1;
+ }
+ 
++extern char* local2remote(char* local);
++
+ int pr_netio_printf(pr_netio_stream_t *nstrm, const char *fmt, ...) {
+   va_list msg;
+   char buf[PR_RESPONSE_BUFFER_SIZE] = {'\0'};
++  char* p;
+ 
+   if (!nstrm) {
+     errno = EINVAL;
+@@ -561,6 +564,13 @@
+   va_end(msg);
+   buf[sizeof(buf)-1] = '\0';
+ 
++  if (buf[0]) {
++    p = local2remote(buf);
++    if (p) {
++      strcpy(buf, p); free(p);
++    }
++  }
++
+   return pr_netio_write(nstrm, buf, strlen(buf));
+ }
+ 
+@@ -954,46 +964,6 @@
+       cp = *pbuf->current++;
+       pbuf->remaining++;
+ 
+-      switch (mode) {
+-        case IAC:
+-          switch (cp) {
+-            case WILL:
+-            case WONT:
+-            case DO:
+-            case DONT:
+-              mode = cp;
+-              continue;
+-
+-            case IAC:
+-              mode = 0;
+-              break;
+-
+-            default:
+-              /* Ignore */
+-              mode = 0;
+-              continue;
+-          }
+-          break;
+-
+-        case WILL:
+-        case WONT:
+-          pr_netio_printf(out_nstrm, "%c%c%c", IAC, DONT, cp);
+-          mode = 0;
+-          continue;
+-
+-        case DO:
+-        case DONT:
+-          pr_netio_printf(out_nstrm, "%c%c%c", IAC, WONT, cp);
+-          mode = 0;
+-          continue;
+-
+-        default:
+-          if (cp == IAC) {
+-            mode = cp;
+-            continue;
+-          }
+-          break;
+-      }
+ 
+       *bp++ = cp;
+       buflen--;

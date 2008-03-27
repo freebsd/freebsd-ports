@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -85,7 +85,8 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		CYRFIX "Patch to fix cyrillic encoding" off \
 		CLAMAV "Include mod_clamav" off \
 		DIGEST "Include mod_digest" off \
-		COMB "Include mod_comb (multistream upload)" off
+		COMB "Include mod_comb (multistream upload)" off \
+		CODECONV "Use charset conversion (mod_codeconv)" off
 
 MODULES?=
 LIBDIRS?=
@@ -256,6 +257,15 @@ PLIST_FILES+=	include/proftpd/mod_sql.h
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds
+.endif
+
+.if defined(WITH_CODECONV)
+USE_ICONV=	YES
+MODULES:=${MODULES}:mod_codeconv
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+CONFIGURE_ARGS+=	--disable-sendfile
+PROFTPD_LIBS+=	-liconv -L${LOCALBASE}/lib
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mod-codeconv
 .endif
 
 # mod_ifsession should be the last item in the modules list
