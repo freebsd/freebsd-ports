@@ -10,8 +10,7 @@ PORTNAME=	shc
 PORTVERSION=	3.8.6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.datsi.fi.upm.es/~frosal/sources/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org

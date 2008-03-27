@@ -11,8 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/most/ \
 		http://gd.tuwien.ac.at/editors/davis/most/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A pager (like less) which has support for windows and binary files

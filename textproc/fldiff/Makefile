@@ -9,9 +9,8 @@ PORTNAME=	fldiff
 PORTVERSION=	1.1
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/ \
-		http://www.easysw.com/~mike/fldiff/
+MASTER_SITES=	http://www.easysw.com/~mike/fldiff/ \
+		CRITICAL
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	ehaupt@FreeBSD.org

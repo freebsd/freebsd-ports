@@ -9,8 +9,7 @@ PORTNAME=	nslint
 PORTVERSION=	2.1.a6
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	ehaupt@FreeBSD.org

@@ -9,8 +9,7 @@ PORTNAME=	weedit
 PORTVERSION=	2.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://adm1n.cjb.net/cw/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org

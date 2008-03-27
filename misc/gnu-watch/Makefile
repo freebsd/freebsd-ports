@@ -9,8 +9,7 @@ PORTNAME=	watch
 DISTVERSION=	3.2.7
 CATEGORIES=	misc
 MASTER_SITES=	http://procps.sourceforge.net/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 PKGNAMEPREFIX=	gnu-
 DISTNAME=	procps-${DISTVERSION}
 

@@ -9,8 +9,7 @@ PORTNAME=	brag
 PORTVERSION=	1.4.1
 CATEGORIES=	news tcl84
 MASTER_SITES=	http://brag.sourceforge.net/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Download and assemble multipart binaries from newsgroups

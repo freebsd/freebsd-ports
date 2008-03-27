@@ -9,8 +9,7 @@ PORTNAME=	cyrus2courier
 DISTVERSION=	1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.madness.at/~mad/projects/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org

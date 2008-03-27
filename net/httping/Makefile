@@ -9,8 +9,7 @@ PORTNAME=	httping
 PORTVERSION=	1.2.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org

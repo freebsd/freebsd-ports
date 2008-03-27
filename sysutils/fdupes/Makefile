@@ -9,8 +9,7 @@ PORTNAME=	fdupes
 DISTVERSION=	1.50-PR2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://netdial.caribe.net/~adrian2/programs/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fdupes is a program for identifying or deleting duplicate files

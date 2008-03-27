@@ -9,8 +9,8 @@ PORTNAME=	irssi-themes
 PORTVERSION=	20071213
 CATEGORIES=	x11-themes irc
 MASTER_SITES=	http://www.irssi.org/themefiles/ \
-		http://critical.ch/distfiles/${PORTNAME}/ \
-		http://energy.critical.ch/distfiles/${PORTNAME}/
+		CRITICAL
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ehaupt@FreeBSD.org

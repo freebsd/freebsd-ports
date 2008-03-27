@@ -9,8 +9,7 @@ PORTNAME=	bannerfilter
 PORTVERSION=	1.31
 CATEGORIES=	www
 MASTER_SITES=	http://phroggy.com/files/unix/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A squid redirect script for filtering web banners

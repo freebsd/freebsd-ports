@@ -8,9 +8,7 @@
 PORTNAME=	bunny
 PORTVERSION=	0.92
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	GOOGLE_CODE CRITICAL
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org

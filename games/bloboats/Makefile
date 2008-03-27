@@ -12,8 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://mirror.kapsi.fi/bloboats.dy.fi/ \
 		http://koti.mbnet.fi/makegho/c/blobtrox/ \
 		http://shoebox.ath.cx/~make/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A boat racing game in the spirit of Elasto Mania or X-Moto

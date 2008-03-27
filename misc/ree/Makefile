@@ -8,9 +8,7 @@
 PORTNAME=	ree
 PORTVERSION=	1.3
 CATEGORIES=	misc
-MASTER_SITES=	http://www.linuks.mine.nu/ree/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to dump your ROM extensions

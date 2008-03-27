@@ -9,8 +9,7 @@ PORTNAME=	bcrypt
 PORTVERSION=	1.1
 CATEGORIES=	security
 MASTER_SITES=	http://bcrypt.sourceforge.net/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A cross-plattform blowfish encryption utility

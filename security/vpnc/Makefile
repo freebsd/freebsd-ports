@@ -10,8 +10,7 @@ PORTVERSION=	0.5.1
 PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Client for Cisco 3000 VPN Concentrator

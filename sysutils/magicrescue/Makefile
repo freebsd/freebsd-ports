@@ -9,8 +9,7 @@ PORTNAME=	magicrescue
 PORTVERSION=	1.1.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://jbj.rapanden.dk/magicrescue/release/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A file recovery tool which recovers deleted files from a block device

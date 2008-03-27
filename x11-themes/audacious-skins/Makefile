@@ -8,8 +8,7 @@
 PORTNAME=	audacious-skins
 PORTVERSION=	0.1
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A collection of audacious skins

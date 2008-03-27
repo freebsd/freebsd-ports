@@ -8,8 +8,7 @@
 PORTNAME=	vizone
 PORTVERSION=	0.1
 CATEGORIES=	dns
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Updates the serialnumber in one or more zonefiles

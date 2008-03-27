@@ -8,8 +8,7 @@
 PORTNAME=	zeroer
 PORTVERSION=	0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line utility for wiping unallocated space on a filesystem

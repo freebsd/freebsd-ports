@@ -9,8 +9,7 @@ PORTNAME=	zonenotify
 PORTVERSION=	0.1
 CATEGORIES=	dns
 MASTER_SITES=	http://morettoni.net/bsd/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A dns notify sender written in C

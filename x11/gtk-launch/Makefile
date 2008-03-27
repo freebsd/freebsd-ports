@@ -10,8 +10,7 @@ DISTVERSION=	1.1b
 PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://pierric.descamps.free.fr/pierric/downloads/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A fast GTK+ program launcher

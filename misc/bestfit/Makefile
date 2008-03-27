@@ -8,8 +8,7 @@
 PORTNAME=	bestfit
 PORTVERSION=	0.2.0
 CATEGORIES=	misc
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Optimally choose files to be put on a CD (or other media)
