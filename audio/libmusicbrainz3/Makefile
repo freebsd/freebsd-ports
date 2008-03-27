@@ -7,6 +7,7 @@
 
 PORTNAME=	libmusicbrainz3
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
     		http://uk.musicbrainz.org/pub/musicbrainz/
@@ -16,7 +17,8 @@ MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	MusicBrainz client library for audio metadata lookup
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon
+LIB_DEPENDS=	discid:${PORTSDIR}/audio/libdiscid \
+		neon.26:${PORTSDIR}/www/neon
 
 CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DCMAKE_C_COMPILER:STRING='${CC}' \
