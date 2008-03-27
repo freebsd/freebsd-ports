@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmicrohttpd
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	www
 MASTER_SITES=	http://gnunet.org/libmicrohttpd/download/
 
