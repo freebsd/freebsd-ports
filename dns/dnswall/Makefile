@@ -8,9 +8,7 @@
 PORTNAME=	dnswall
 PORTVERSION=	0.1.4
 CATEGORIES=	dns security
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	GOOGLE_CODE CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A daemon that filters out private IP addresses in DNS responses

@@ -10,8 +10,7 @@ PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://gopod.free-go.net/gopod/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 PKGNAMEPREFIX?=
 DISTNAME=	goPod-${PORTVERSION}_linux_bsd
 

@@ -9,8 +9,7 @@ PORTNAME=	bmp2html
 PORTVERSION=	0.1
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ehaupt@FreeBSD.org

@@ -9,8 +9,7 @@ PORTNAME=	pecomato
 PORTVERSION=	0.0.15
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mollux.org/projects/pecomato/download/sources/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command-line picture metadata processor

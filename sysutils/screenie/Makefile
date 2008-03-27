@@ -9,8 +9,7 @@ PORTNAME=	screenie
 PORTVERSION=	1.30.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://pubwww.fhzh.ch/~mgloor/data/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A small and lightweight screen(1) wrapper

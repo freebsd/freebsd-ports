@@ -9,8 +9,7 @@ PORTNAME=	micro_proxy
 PORTVERSION=	20021030
 CATEGORIES=	net
 MASTER_SITES=	http://www.acme.com/software/micro_proxy/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 DISTNAME=	${PORTNAME}_30oct2002
 
 MAINTAINER=	ehaupt@FreeBSD.org

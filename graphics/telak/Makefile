@@ -10,14 +10,13 @@ PORTVERSION=	0.5
 PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://julien.danjou.info/telak/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to draw pictures on your root window
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl \
-		gcrypt.15:${PORTSDIR}/security/libgcrypt \
+		gcrypt.15:${PORTSDIR}/security/libgcrypt
 
 USE_GMAKE=	yes
 USE_EFL=	imlib2

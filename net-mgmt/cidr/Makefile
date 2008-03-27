@@ -8,8 +8,7 @@ PORTNAME=	cidr
 PORTVERSION=	2.3.2
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	RFC 1878 subnet calculator / helper

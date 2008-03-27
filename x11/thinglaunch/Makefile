@@ -9,8 +9,7 @@ PORTNAME=	thinglaunch
 PORTVERSION=	1.03
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A very fast launcher program for X

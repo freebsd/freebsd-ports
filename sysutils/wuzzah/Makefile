@@ -8,8 +8,7 @@
 PORTNAME=	wuzzah
 PORTVERSION=	0.53
 CATEGORIES=	sysutils
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line utility for stalking users

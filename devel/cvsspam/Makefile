@@ -9,8 +9,7 @@ PORTNAME=	cvsspam
 PORTVERSION=	0.2.12
 CATEGORIES=	devel
 MASTER_SITES=	http://www.badgers-in-foil.co.uk/projects/cvsspam/releases/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Sends diffs when a change is committed to your CVS repository

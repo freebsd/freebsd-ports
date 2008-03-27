@@ -9,8 +9,7 @@ PORTNAME=	ddate
 PORTVERSION=	2.12r
 CATEGORIES=	misc
 MASTER_SITES=	http://www.kernel.org/pub/linux/utils/util-linux/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 DISTNAME=	util-linux-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org

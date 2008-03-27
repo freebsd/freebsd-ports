@@ -8,17 +8,14 @@
 PORTNAME=	rtf2html
 DISTVERSION=	1.1b
 CATEGORIES=	textproc
-MASTER_SITES=	http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ehaupt
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A simple rtf2html converter
 
-CFLAGS+=	-Wall -Werror
 PLIST_FILES=	bin/rtf2html
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}

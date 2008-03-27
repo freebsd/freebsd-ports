@@ -9,8 +9,7 @@ PORTNAME=	recvnet
 PORTVERSION=	0.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/Linux/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org

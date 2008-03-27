@@ -9,8 +9,7 @@ PORTNAME=	sshfp
 PORTVERSION=	1.1.3
 CATEGORIES=	dns security
 MASTER_SITES=	ftp://ftp.xelerance.com/sshfp/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/distfiles/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Generate SSHFP DNS records from knownhosts files or ssh-keyscan

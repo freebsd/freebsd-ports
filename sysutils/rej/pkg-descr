@@ -15,7 +15,5 @@ There are four basic rejects fixable via rej.
 rej also allows you to tag hunks in a reject with special processing
 hints.
 
-WWW: http://ftp.suse.com/pub/people/mason/rej/
-
 - ehaupt
 ehaupt@critical.ch

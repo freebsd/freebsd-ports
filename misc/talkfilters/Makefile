@@ -9,8 +9,7 @@ PORTNAME=	talkfilters
 PORTVERSION=	2.3.8
 CATEGORIES=	misc
 MASTER_SITES=	http://www.hyperrealm.com/talkfilters/ \
-		http://critical.ch/distfiles/ \
-		http://energy.critical.ch/
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Set of filters to convert English text to various stereotyped dialects
