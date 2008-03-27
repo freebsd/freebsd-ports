@@ -4,5 +4,5 @@ will be able to choose "CUPS-PDF (Virtual PDF Printer)" when setting up a new
 printer in CUPS. Once you print to the new device all converted PDF files will
 be placed in the specified directory.
 
-Author:	Volker C. Behr <vrbehr@cip.physik.uni-wuerzburg.de>
-WWW:	http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/
+Author:	Volker C. Behr <behr@physik.uni-wuerzburg.de>
+WWW:	http://www.cups-pdf.de/

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	cups-pdf
-PORTVERSION=	2.4.6
+PORTVERSION=	2.4.7
 CATEGORIES=	print
-MASTER_SITES=	http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/ \
-		http://olofsson.de/distfiles/
+MASTER_SITES=	http://www.cups-pdf.de/src/ \
+		http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	simon@olofsson.de
@@ -18,8 +18,6 @@ COMMENT=	A virtual printer for CUPS to produce PDF files
 RUN_DEPENDS=	${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-.include <bsd.port.pre.mk>
 
 USE_GHOSTSCRIPT_RUN=	yes
 
@@ -84,8 +82,8 @@ do-build:
 
 do-install:
 	${INSTALL} -o root -g wheel -m 0700 ${WRKSRC}/src/cups-pdf ${PREFIX}/libexec/cups/backend
-	${INSTALL_DATA} ${WRKSRC}/extra/PostscriptColor.ppd \
-	${PREFIX}/share/cups/model/PostscriptColor.ppd
+	${INSTALL_DATA} ${WRKSRC}/extra/CUPS-PDF.ppd \
+	${PREFIX}/share/cups/model/CUPS-PDF.ppd
 	${INSTALL_DATA} ${WRKSRC}/extra/cups-pdf.conf \
 	${PREFIX}/etc/cups/cups-pdf.conf.sample
 .if !defined(NOPORTDOCS)
@@ -99,4 +97,4 @@ post-install:
 	${PREFIX}/etc/cups/cups-pdf.conf ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
