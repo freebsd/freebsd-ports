@@ -10,7 +10,7 @@ PORTVERSION=	2.0.5.0.1
 PORTREVISION=	1
 #PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
+MASTER_SITES=	ftp://www.ribbonsoft.com/archives/qcad/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1$/-1/}-community.src
 
 MAINTAINER=	mr@FreeBSD.org
