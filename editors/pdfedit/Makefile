@@ -19,6 +19,7 @@ LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
