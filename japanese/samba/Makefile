@@ -19,6 +19,9 @@ DISTNAME=	${PORTNAME}-${SAMBA_VERSION}-ja-${SAMBA_JA_VERSION}
 MAINTAINER=	nakaji@jp.FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
+DEPRECATED=	please use japanese/samba3, samba-2.2.x is obsolete
+EXPIRATION_DATE=	2008-04-26
+
 CONFLICTS=	samba-2.2.* samba-3.0.* sharity-light-1.*
 
 SAMBA_VERSION=		2.2.12
@@ -81,6 +84,10 @@ OPTIONS+=	SYSLOG		"With Syslog support" on \
 		SMBSH		"With Smbsh and smbwrapper" on
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile
+.endif
 
 USE_RC_SUBR=	yes
 
