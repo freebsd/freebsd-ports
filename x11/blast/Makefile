@@ -7,7 +7,7 @@
 
 PORTNAME=	blast
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/b/blast
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blast blows holes through windows
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.1.orig
-USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xi xrandr
+USE_XORG=	ice sm x11 xau xcursor xdmcp xext xfixes xt xrandr
 MAN1=		blast.1
 PLIST_FILES=	bin/blast
 
