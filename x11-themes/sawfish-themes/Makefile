@@ -7,6 +7,7 @@
 
 PORTNAME=	sawfish-themes
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/s/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -28,12 +29,12 @@ DATA_DIRS=	2YearsToNever Anonymous Aquiline BWM Big Blackwindow Bubbles_Exact \
 		bluefoo gorilla gorillaz mxflat typo
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/sawfish/1.3/themes
+	@${MKDIR} ${PREFIX}/share/sawfish/themes
 .for d in ${DATA_DIRS}
-	@${MKDIR} ${PREFIX}/share/sawfish/1.3/themes/${d}
+	@${MKDIR} ${PREFIX}/share/sawfish/themes/${d}
 	@cd ${WRKSRC}/${d} && ${FIND} . | \
 		${CPIO} --quiet -pdm -L -R ${LIBOWN}:${LIBGRP} \
-		${PREFIX}/share/sawfish/1.3/themes/${d}
+		${PREFIX}/share/sawfish/themes/${d}
 .endfor
 
 .include <bsd.port.mk>
