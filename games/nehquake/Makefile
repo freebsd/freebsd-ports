@@ -7,7 +7,7 @@
 
 PORTNAME=	nehquake
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
@@ -19,7 +19,8 @@ COMMENT=	Quake engine designed for playing Nehahra
 USE_BZIP2=	yes
 USE_DOS2UNIX=	yes
 USE_GCC=	3.2+
-USE_GL=		yes
+USE_GL=		gl
+USE_XORG=	xxf86dga
 USE_GMAKE=	yes
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
