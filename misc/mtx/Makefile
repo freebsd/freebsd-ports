@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mtx
-PORTVERSION=	1.2.17rel
-PORTREVISION=	1
+PORTVERSION=	1.3.11
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mtx
@@ -17,6 +16,6 @@ COMMENT=	Control SCSI media changer devices
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAN1=		loaderinfo.1 mtx.1 tapeinfo.1 scsitape.1
+MAN1=		loaderinfo.1 mtx.1 tapeinfo.1 scsitape.1 scsieject.1
 
 .include <bsd.port.mk>

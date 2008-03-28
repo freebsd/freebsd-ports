@@ -2,3 +2,5 @@ sbin/mtx
 sbin/tapeinfo
 sbin/loaderinfo
 sbin/scsitape
+sbin/scsieject
+sbin/nsmhack
