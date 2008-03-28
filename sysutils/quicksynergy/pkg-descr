@@ -1,0 +1,9 @@
+QuickSynergy is a graphical interface (GUI) for easily configuring
+Synergy2, an application that allows the user to share his mouse and
+keyboard between two or more computers.
+
+Without the need for any external hardware, Synergy2 uses the TCP-IP
+protocol to share the resources, even between machines with diferent
+operating systems, such as Mac OS, Linux and Windows.
+
+WWW:	http://quicksynergy.sourceforge.net/

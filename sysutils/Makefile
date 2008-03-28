@@ -562,6 +562,7 @@
     SUBDIR += pyrenamer
     SUBDIR += qlogtools
     SUBDIR += qpxtool
+    SUBDIR += quicksynergy
     SUBDIR += radeontool
     SUBDIR += radmind
     SUBDIR += raincoat
