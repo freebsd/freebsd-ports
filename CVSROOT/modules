@@ -8742,6 +8742,7 @@ open		ports/sysutils/open
 open-beagle	ports/devel/open-beagle
 open-cobol	ports/lang/open-cobol
 open-motif	ports/x11-toolkits/open-motif
+open-vm-tools	ports/emulators/open-vm-tools
 openacs		ports/www/openacs
 openacs-dotlrn	ports/www/openacs-dotlrn
 openal		ports/audio/openal
