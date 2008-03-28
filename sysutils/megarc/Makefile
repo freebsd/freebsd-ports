@@ -8,7 +8,7 @@
 PORTNAME=	megarc
 PORTVERSION=	1.51
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.lsilogic.com/files/support/rsa/beta/drivers/
+MASTER_SITES=	http://www.lsi.com/files/support/rsa/beta/drivers/
 DISTNAME=	dr_freebsd_${PORTVERSION}
 
 MAINTAINER=	gerrit.beine@gmx.de
