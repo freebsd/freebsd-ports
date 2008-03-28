@@ -38,6 +38,7 @@ share/locale/pt/LC_MESSAGES/pinot.mo
 share/locale/pt_BR/LC_MESSAGES/pinot.mo
 share/locale/ru/LC_MESSAGES/pinot.mo
 share/locale/sv/LC_MESSAGES/pinot.mo
+share/locale/zh_CN/LC_MESSAGES/pinot.mo
 share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/AmazonAPI.src
 %%DATADIR%%/engines/A9.src
@@ -55,10 +56,9 @@ share/locale/zh_TW/LC_MESSAGES/pinot.mo
 %%DATADIR%%/engines/OmegaDescription.xml
 %%DATADIR%%/engines/RollYOTopNews.src
 %%DATADIR%%/engines/Topix.src
+%%DATADIR%%/engines/UNData.src
 %%DATADIR%%/engines/Wikipedia.src
 %%DATADIR%%/engines/Yahoo.src
-%%DATADIR%%/engines/eric01.src
-%%DATADIR%%/engines/eric02.src
 %%DATADIR%%/metase-gtk2.glade
 %%DATADIR%%/metase-gtk2.gladep
 %%DATADIR%%/pinot-dbus-daemon.xml

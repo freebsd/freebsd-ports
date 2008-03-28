@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pinot
-PORTVERSION=	0.83
-PORTREVISION=	1
+PORTVERSION=	0.84
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
@@ -44,6 +43,7 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" MKDIR_P="${MKDIR}"
 
+USE_XORG=	pixman
 USE_GETTEXT=	yes
 #USE_SQLITE=	3	# Replaced by sqlite3-threads
 USE_PYTHON=	yes
