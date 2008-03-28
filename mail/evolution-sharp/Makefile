@@ -3,12 +3,12 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-sharp/Makefile,v 1.4 2008/02/12 15:16:27 kwm Exp $
 #   $Id: Makefile,v 1.29 2007/01/26 03:11:38 tmclau02 Exp $
 #
 
 PORTNAME=	evolution-sharp
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 

@@ -1,0 +1,9 @@
+--- trunk/evolution-sharp.pc.in	2008/02/23 03:46:27	160
++++ evolution-sharp.pc.in	2008/03/27 08:42:33	168
+@@ -1,5 +1,5 @@
+ prefix=@prefix@
+-libdir=@libdir@
++libdir=${prefix}/lib
+ 
+ Name: Evolution#
+ Description: Evolution# - Evolution .NET Binding
