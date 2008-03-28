@@ -7,7 +7,7 @@
 
 PORTNAME=	darkplaces
 PORTVERSION=	20071120
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	Quake engine modification
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
-USE_XORG=	xxf86dga
+USE_XORG=	xxf86dga xpm
 MAKE_ENV=	DP_FS_BASEDIR="${Q1DIR}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
