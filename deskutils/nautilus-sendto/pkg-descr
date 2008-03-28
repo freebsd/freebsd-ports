@@ -1,6 +1,6 @@
-Integration between nautilus, evolution, and gaim.
+Integration between nautilus, evolution, and pidgin.
 
-Nautilus context menu component ("Send To: Gaim Buddy/Evolution Addressbook")
+Nautilus context menu component ("Send To: Pidgin Buddy/Evolution Addressbook")
 with a dialog for insert the email account or IM account which you want to 
 send the file/files. Contact with evolution-data-server and get the email
 accounts from your Evolution Addressbook.

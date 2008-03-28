@@ -7,6 +7,8 @@ lib/nautilus-sendto/plugins/libnstevolution.so
 %%PIDGIN%%lib/nautilus-sendto/plugins/libnstpidgin.so
 lib/nautilus-sendto/plugins/libnstsylpheed.la
 lib/nautilus-sendto/plugins/libnstsylpheed.so
+lib/nautilus-sendto/plugins/libnstthunderbird.la
+lib/nautilus-sendto/plugins/libnstthunderbird.so
 lib/nautilus/extensions-2.0/libnautilus-sendto.la
 lib/nautilus/extensions-2.0/libnautilus-sendto.so
 %%PIDGIN%%lib/pidgin/nautilus.la
