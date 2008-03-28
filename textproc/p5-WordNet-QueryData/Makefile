@@ -7,6 +7,7 @@
 
 PORTNAME=	WordNet-QueryData
 PORTVERSION=	1.47
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,7 +26,7 @@ MAN3=		WordNet::QueryData.3
 
 post-patch:
 	@${REINPLACE_CMD} -e  \
-		'/wnHomeUnix/s|/usr/local/WordNet-2.1|${WNHOME}|; \
+		'/wnHomeUnix/s|/usr/local/WordNet-3.0|${WNHOME}|; \
 		 /wnPrefixUnix/s|/dict||' ${WRKSRC}/QueryData.pm
 
 .include <bsd.port.mk>
