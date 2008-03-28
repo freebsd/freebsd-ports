@@ -1,5 +1,6 @@
 bin/pwhois
 %%SITE_PERL%%/Net/Whois/Raw.pm
+%%SITE_PERL%%/Net/Whois/Raw/Common.pm
 %%SITE_PERL%%/Net/Whois/Raw/Data.pm
 @dirrm %%SITE_PERL%%/Net/Whois/Raw
 @dirrmtry %%SITE_PERL%%/Net/Whois
