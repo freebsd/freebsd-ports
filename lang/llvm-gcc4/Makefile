@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc4
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	llvm-
@@ -44,7 +45,8 @@ INFO=		llvm-gcc/cpp \
 		llvm-gcc/cppinternals \
 		llvm-gcc/gcc \
 		llvm-gcc/gccinstall \
-		llvm-gcc/gccint
+		llvm-gcc/gccint \
+		llvm-gcc/libgomp
 MAN1=		llvm-cpp.1 llvm-g++.1 llvm-gcc.1 llvm-gcov.1
 
 post-extract:
