@@ -8,6 +8,7 @@
 
 PORTNAME=	gvfs
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -39,6 +40,7 @@ OPTIONS=	FUSE "Enable fuse" on \
 
 .if defined(WITH_FUSE) && ${OSVERSION} >= 600000
 LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
+RUN_DEPENDS+=	mount_fusefs:${PORTSDIR}/sysutils/fusefs-kmod
 PLIST_SUB+=	FUSE=""
 .else
 CONFIGURE_ARGS+=	--disable-fuse
