@@ -1,9 +1,14 @@
---- Makefile.in.orig	Mon May  1 00:45:18 2006
-+++ Makefile.in	Fri Apr 13 17:28:19 2007
-@@ -288,5 +288,3 @@
+--- Makefile.in	2008-03-27 20:00:12.000000000 -0500
++++ Makefile.in	2008-03-27 20:00:38.000000000 -0500
+@@ -286,10 +286,7 @@
+ 	scroll_dn.bmp		\
+ 	scroll_up.bmp
  
 -libGUI_la_LDFLAGS = \
--        -release $(LT_RELEASE)	\
+-	-no-undefined		\
+-	-release $(LT_RELEASE)	\
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
 +libGUI_la_LDFLAGS = # empty
  
+ genimage_SOURCES = genimage.c
+ hello_SOURCES = hello.cpp
