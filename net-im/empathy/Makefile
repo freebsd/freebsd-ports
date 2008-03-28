@@ -7,6 +7,7 @@
 
 PORTNAME=	empathy
 PORTVERSION=	0.22.0
+PORTREVISION=	1
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -15,7 +16,8 @@ COMMENT=	GNOME IM client based around telepathy
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	missioncontrol-server.1:${PORTSDIR}/net-im/telepathy-mission-control \
-    		aspell.16:${PORTSDIR}/textproc/aspell
+    		aspell.16:${PORTSDIR}/textproc/aspell \
+		telepathy.2:${PORTSDIR}/net-im/libtelepathy
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 USE_GMAKE=	yes
