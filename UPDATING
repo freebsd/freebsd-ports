@@ -68,11 +68,14 @@ upgrades.
   1. Make sure there are no running linux applications.
   2. Unmount linprocfs (umount /compat/linux/proc)
   3. Uninstall your current linux_base port
-  4. Unload linux kernel module (kldunload linux.ko)
-  5. Set appropriate sysctl (sysctl compat.linux.osrelease=2.6.16)
-  6. Install emulators/linux_base-fc6
-  4  Remount linprocfs (mount /compat/linux/proc)
-  5. Add compat.linux.osrelease=2.6.16 to etc/sysctl.conf
+  4. Set appropriate sysctl (sysctl compat.linux.osrelease=2.6.16)
+  5. Install emulators/linux_base-fc6
+  6  Remount linprocfs (mount /compat/linux/proc)
+  7. Add compat.linux.osrelease=2.6.16 to etc/sysctl.conf
+  8. Add OVERRIDE_LINUX_BASE_PORT=f6 to /etc/make.conf
+
+  Note: These instructions also apply to linux_base-f8, please use the same
+  osrelease.
 
   For FreeBSD versions 5.x and 6.x:
   Please use the legacy version net/skype12
