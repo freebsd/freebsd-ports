@@ -8,7 +8,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.12.9
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/,} \
 		ftp://ftp.gtk.org/pub/gtk/%SUBDIR%/ \
@@ -64,10 +64,13 @@ CONFIGURE_ARGS+=	--enable-debug=yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CUPS) || exists(${LOCALBASE}/lib/libcups.so)
+.if (defined(WITH_CUPS) || exists(${LOCALBASE}/lib/libcups.so)) && \
+	!defined(WITHOUT_CUPS)
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+CONFIGURE_ARGS+=--enable-cups=auto
 PLIST_SUB+=	CUPS:=""
 .else
+CONFIGURE_ARGS+=--disable-cups
 PLIST_SUB+=	CUPS:="@comment "
 .endif
 
