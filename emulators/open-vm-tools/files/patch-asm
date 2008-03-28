@@ -1,0 +1,55 @@
+--- modules/freebsd/vmhgfs/vm_basic_asm_x86.h.orig	2008-03-19 08:49:45.000000000 +0100
++++ modules/freebsd/vmhgfs/vm_basic_asm_x86.h	2008-03-27 17:40:38.000000000 +0100
+@@ -100,14 +100,14 @@
+ static INLINE void 
+ FXSAVE_ES1(uint8 *save)
+ {
+-   asm ("fxsave %0       \n"
++   __asm ("fxsave %0       \n"
+         : "=m" (*save));
+ }
+ 
+ static INLINE void 
+ FXRSTOR_ES1(const uint8 *load)
+ {
+-   asm ("fxrstor %0      \n"
++   __asm ("fxrstor %0      \n"
+         :
+         : "m" (*load));
+ }
+@@ -117,7 +117,7 @@
+ {
+    uint64 dummy = 0;
+       
+-   asm ("fnstsw  %%ax    \n"     // Grab x87 ES bit
++   __asm ("fnstsw  %%ax    \n"     // Grab x87 ES bit
+         "bt      $7,%%ax \n"     // Test ES bit
+         "jnc     1f      \n"     // Jump if ES=0
+         "fnclex          \n"     // ES=1. Clear it so fild doesn't trap
+@@ -306,7 +306,7 @@
+     * smart enough, at least in the version we are currently using.
+     */
+    if (shift < 32) {
+-      asm("mov   %%eax, %2     \n\t" // Save lo(multiplicand) in tmp2
++      __asm("mov   %%eax, %2     \n\t" // Save lo(multiplicand) in tmp2
+           "mov   %%edx, %%eax  \n\t" // Get hi(multiplicand)
+           "mull  %4            \n\t" // p2 = hi(multiplicand) * multiplier
+           "xchg  %%eax, %2     \n\t" // Save lo(p2) in tmp2, get lo(multiplicand)
+@@ -325,7 +325,7 @@
+           : "cc"
+       );
+    } else {
+-      asm("mov   %%edx, %2     \n\t" // Save hi(multiplicand) in tmp2
++      __asm("mov   %%edx, %2     \n\t" // Save hi(multiplicand) in tmp2
+           "mull  %4            \n\t" // p1 = lo(multiplicand) * multiplier
+           "mov   %%edx, %1     \n\t" // Save hi(p1) in tmp1
+           "mov   %2, %%eax     \n\t" // Discard lo(p1), get hi(multiplicand)
+@@ -421,7 +421,7 @@
+   
+    /* Written and tested by mann, checked by dbudko and hpreg */
+    /* XXX hpreg suggested some improvements that we haven't converged on yet */
+-   asm("mov   %%eax, %2\n\t"      // Save lo(multiplicand)
++   __asm("mov   %%eax, %2\n\t"      // Save lo(multiplicand)
+        "mov   %%edx, %%eax\n\t"   // Get hi(multiplicand)
+        "test  %%eax, %%eax\n\t"   // Check sign of multiplicand
+        "jl    0f\n\t"             // Go if negative
