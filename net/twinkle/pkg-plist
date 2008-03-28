@@ -3,6 +3,7 @@ bin/twinkle
 %%DATADIR%%/lang/twinkle_de.qm
 %%DATADIR%%/lang/twinkle_fr.qm
 %%DATADIR%%/lang/twinkle_nl.qm
+%%DATADIR%%/lang/twinkle_ru.qm
 %%DATADIR%%/providers.csv
 %%DATADIR%%/ringback.wav
 %%DATADIR%%/ringtone.wav
