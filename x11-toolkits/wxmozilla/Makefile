@@ -24,6 +24,8 @@ WX_COMPS=	wx python
 WX_CONF_ARGS=	absolute
 USE_LDCONFIG=	yes
 
+CONFIGURE_ARGS=	--with-wx-config==${WX_CONFIG}
+
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
