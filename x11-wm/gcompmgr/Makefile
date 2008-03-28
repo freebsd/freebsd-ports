@@ -28,11 +28,13 @@ DESKTOP_ENTRIES="gcompmgr" \
 		"Application;Settings;" \
 		true
 
-.include <bsd.port.pre.mk>
 
 post-patch:
 .for file in depcomp install-sh missing
 	@${LN} -sf ${AUTOMAKE_DIR}/${file} ${WRKSRC}
 .endfor
+	@${REINPLACE_CMD} -e 's|connect(SigC::slot|connect(sigc::mem_fun|g ; \
+		s|#include <sigc++\/compatibility\.h>||g' \
+			${WRKSRC}/src/*.cc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

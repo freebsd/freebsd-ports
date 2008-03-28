@@ -50,4 +50,15 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|#include <sigc++\/compatibility\.h>||g ; \
+		s|SigC::Signal|sigc::signal|g ; \
+		s|SigC::slot_class|sigc::mem_fun|g ; \
+		s|SigC::Connection|sigc::connection|g ; \
+		s|SigC::Slot|sigc::slot|g ; \
+		s|SigC::Object|sigc::trackable|g ; \
+		s|SigC::slot|sigc::mem_fun|g' \
+			${WRKSRC}/frontend/gtkmm/src/*.* \
+			${WRKSRC}/frontend/plugin/*/gtkmm/src/*.*
+
 .include <bsd.port.post.mk>

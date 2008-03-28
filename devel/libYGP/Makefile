@@ -43,6 +43,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^#include/s|malloc.h|stdlib.h|' ${WRKSRC}/XGP/GTKViewer.c
 	@${REINPLACE_CMD} -e '/^typedef int socklen_t;/d' ${WRKSRC}/YGP/Socket.cpp
 	@${REINPLACE_CMD} -e '/^#.*define sleep/d' ${WRKSRC}/YGP/Tests/Thread.cpp
+	@${REINPLACE_CMD} -e 's|SigC::Connection|sigc::connection|g' \
+		${WRKSRC}/XGP/MessageDlg.h
 .if ${PORTNAME:M*XGP}
 	@${FIND} ${WRKSRC} -type f -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/ygp-cfg/xgp-cfg/g'

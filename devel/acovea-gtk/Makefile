@@ -24,9 +24,12 @@ USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CPPFLAGS=-I${PREFIX}/include/ LDFLAGS=-L${PREFIX}/lib/
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|connect(SigC::slot|connect(sigc::mem_fun|g ; \
+		s|#include <sigc++\/compatibility\.h>||g' \
+			${WRKSRC}/src/*.cc
 
 pre-install:
 	${CHMOD} 755 ${WRKSRC}/install-sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

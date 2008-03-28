@@ -30,6 +30,11 @@ PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 post-patch:
 	@${REINPLACE_CMD} 's|TARGET_MNG="no"|TARGET_MNG="yes"|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|#include <sigc++\/compatibility\.h>||g ; \
+		s|SigC::Connection|sigc::connection|g ; \
+		s|SigC::slot|sigc::ptr_fun|g ; \
+		s|namespace SigC|namespace sigc|g' \
+			${WRKSRC}/src/gtkmm/*.*
 
 post-install:
 .if !defined(NOPORTDOCS)
