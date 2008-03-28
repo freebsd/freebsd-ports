@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellmwireless
 PORTVERSION=	0.2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://gkrellm.luon.net/files/
 
@@ -23,10 +23,4 @@ USE_GNOME=	imlib
 
 PLIST_FILES=	libexec/gkrellm/plugins/wireless.so
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
