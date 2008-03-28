@@ -50,7 +50,8 @@ OPTIONS=	GNUTLS		"Build with GNUTLS library" on \
 		LIBPAPER	"Build with libpaper support" off \
 		DNSSD		"Build with DNS_SD (avahi) support" off \
 		PAM		"Build with PAM support" off \
-		LDAP		"Build with LDAP support" off
+		LDAP		"Build with LDAP support" off \
+		DBUS		"Build with DBUS support" off
 
 CUPS_ETCDIR=	${PREFIX}/etc/cups
 CUPS_SPOOLDIR=	/var/spool/cups
@@ -121,6 +122,13 @@ USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
+.endif
+
+.if defined(WITH_DBUS)
+LIB_DEPENDS+=		dbus-1.3:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=	--enable-dbus
+.else
+CONFIGURE_ARGS+=	--disable-dbus
 .endif
 
 MAN1EXT=	1
