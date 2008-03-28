@@ -17,7 +17,7 @@ COMMENT=	LDAP extenstions for Trac
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		${PYTHON_SITELIBDIR}/_ldap.so:${PORTSDIR}/net/py-ldap2
+		${PYTHON_PKGNAMEPREFIX}ldap2>=2.3.1:${PORTSDIR}/net/py-ldap2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 NO_BUILD=	yes

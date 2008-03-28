@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	A graphical tool for accessing and managing LDAP servers
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldap.so:${PORTSDIR}/net/py-ldap2 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>=2.3.1:${PORTSDIR}/net/py-ldap2 \
 		${PYTHON_SITELIBDIR}/smbpasswd.so:${PORTSDIR}/net/py-smbpasswd \
 		pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
