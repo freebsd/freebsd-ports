@@ -7,6 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.16.1
+PORTREVISION=	1
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -26,8 +27,8 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl:15 libtool:15
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
-CPPFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
@@ -65,16 +66,16 @@ PDOCS_HTML=	doc/*.html doc/info/*.html doc/info/*.gif
 
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-OPTIONS=	TK "Build with TK support" on \
+OPTIONS=	ICONV "Build with ICONV support" on \
 		XPM "Build with XPM support" on \
-		ICONV "Build with ICONV support" on \
+		DIGCOLA "DIGCOLA features in neato layout engine" on \
+		IPSEPCOLA "IPSEPCOLA features in neato layout engine" on \
 		NLS "Build with gettext support" on \
+		TK "Build with TK support" off \
 		PANGOCAIRO "build with pangocairo support" off \
 		GTK "build with gtk plugin" off \
 		GDK_PIXBUF  "build with gdk pixbuf support" off \
 		GNOMEUI  "build with libgnomeui support" off \
-		DIGCOLA "DIGCOLA features in neato layout engine" off \
-		IPSEPCOLA "IPSEPCOLA features in neato layout engine" off \
 		MING "Build with ming plugin" off \
 		PERL "Perl bindings (swig)" off \
 		PHP "PHP bindings (swig)" off \
@@ -104,21 +105,23 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		MISSING=${TRUE}
 
-.if !defined(WITHOUT_TK)
-USE_TK_BUILD=	84
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
-CONFIGURE_ARGS+=	--with-tclsh=${TCLSH} \
-		--with-wish=${WISH}
-CONFIGURE_ENV+=	TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh" \
-		TKCONFIG="${TK_LIBDIR}/tkConfig.sh"
-MANN=		gdtclft.n tcldot.n tkspline.n
+.if defined(WITH_TK)
+CPPFLAGS+=		-I${TK_INCLUDEDIR}
+USE_TK_BUILD=		84
+CONFIGURE_ARGS+=	--with-wish=${WISH}
+CONFIGURE_ENV+=		TKCONFIG="${TK_LIBDIR}/tkConfig.sh"
+MANN+=			tkspline.n
+PLIST_SUB+=		WITH_TK=""
 .else
-.if defined(WITH_TCL)
-USE_TCL_BUILD=	84
+PLIST_SUB+=		WITH_TK="@comment "
+.endif
+.if defined(WITH_TCL) || defined(WITH_TK)
+CPPFLAGS+=		-I${TCL_INCLUDEDIR}
+USE_TCL_BUILD=		84
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=	--with-tclsh=${TCLSH}
-CONFIGURE_ENV+=	TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
-.endif
+CONFIGURE_ENV+=		TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
+MANN+=			gdtclft.n tcldot.n
 .endif
 
 .if defined(WITHOUT_ICONV)
@@ -333,7 +336,7 @@ pre-patch:
 	@${REINPLACE_CMD} -e "s|/usr/include/php|${LOCALBASE}/include/php|g" \
 		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" ${WRKSRC}/configure
 
-.if !defined(WITHOUT_TK)
+.if defined(WITH_TK)
 post-install-script:
 	${INSTALL_MAN} \
 		${WRKSRC}/tclpkg/gdtclft/gdtclft.n \

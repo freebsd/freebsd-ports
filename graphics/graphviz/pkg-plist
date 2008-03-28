@@ -157,10 +157,10 @@ lib/graphviz/tcl/gv.so
 %%WITH_TCL%%lib/graphviz/tcl/libtclplan.la
 %%WITH_TCL%%lib/graphviz/tcl/libtclplan.so
 %%WITH_TCL%%lib/graphviz/tcl/libtclplan.so.0
-%%WITH_TCL%%lib/graphviz/tcl/libtkspline.a
-%%WITH_TCL%%lib/graphviz/tcl/libtkspline.la
-%%WITH_TCL%%lib/graphviz/tcl/libtkspline.so
-%%WITH_TCL%%lib/graphviz/tcl/libtkspline.so.0
+%%WITH_TK%%lib/graphviz/tcl/libtkspline.a
+%%WITH_TK%%lib/graphviz/tcl/libtkspline.la
+%%WITH_TK%%lib/graphviz/tcl/libtkspline.so
+%%WITH_TK%%lib/graphviz/tcl/libtkspline.so.0
 lib/graphviz/lua/gv.so
 %%WITH_LUA%%lib/graphviz/lua/libgv_lua.a
 %%WITH_LUA%%lib/graphviz/lua/libgv_lua.la
