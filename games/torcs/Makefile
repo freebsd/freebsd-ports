@@ -7,27 +7,26 @@
 
 PORTNAME=	torcs
 DISTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Open Racing Car Simulator
 
-BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
+BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png	\
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_XORG=	xrender xmu ice xext x11 xxf86vm
+USE_XORG=	xrender xmu ice xext x11 xxf86vm xrandr
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 REINPLACE_ARGS=	-i ""
-CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
+CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include --x-libraries=${LOCALBASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	default
 INSTALL_TARGET=	install datainstall
@@ -51,9 +50,9 @@ BASH2FIX=	src/linux/torcs.in src/tools/accc/accc.in \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500041
-CPPFLAGS+=	-I${X11BASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 .else
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -DHAVE_DECL_GETOPT" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include -DHAVE_DECL_GETOPT" \
 		LIBS="${PTHREAD_LIBS}" LDFLAGS="${LDFLAGS}"
 .endif
 
