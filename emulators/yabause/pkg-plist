@@ -1,6 +1,4 @@
 bin/yabause
-%%DATADIR%%/c68k_ini.inc
 share/applications/yabause.desktop
 share/pixmaps/yabause.png
-@dirrm %%DATADIR%%
 @dirrmtry share/applications
