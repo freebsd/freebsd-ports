@@ -110,6 +110,7 @@
     SUBDIR += o2em
     SUBDIR += ods2reader
     SUBDIR += openmsx
+    SUBDIR += open-vm-tools
     SUBDIR += osmose
     SUBDIR += p-interp
     SUBDIR += pcemu
