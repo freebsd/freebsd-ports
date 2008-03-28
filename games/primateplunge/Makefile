@@ -9,7 +9,7 @@ PORTNAME=	primateplunge
 PORTVERSION=	1.1
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://www.ecs.soton.ac.uk/~njh/primateplunge/
+MASTER_SITES=	http://www.aelius.com/primateplunge/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Primate Plunge is an arcade game
