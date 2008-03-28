@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	2.01
+PORTVERSION=	2.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,8 +22,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 WNHOME?=	${LOCALBASE}/share/WordNet
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ENV=	WNHOME=${WNHOME}
-CONFIGURE_ARGS=	</dev/null
+CONFIGURE_ARGS=	WNHOME=${WNHOME}
 
 MAN1=		rawtextFreq.pl.1 \
 		BNCFreq.pl.1 \
@@ -50,11 +49,11 @@ MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 		vectorFile.3 stem.3 get_wn_info.3
 
 post-patch:
-	@${REINPLACE_CMD} -e  \
-		'/wnUnixPath/s|/usr/local/WordNet-2.1|${WNHOME}|; \
-		 /wnUnixPath/s|."/dict"||' ${WRKSRC}/Makefile.PL
+	@${FIND} ${WRKSRC}/build -type f| ${XARGS} ${REINPLACE_CMD} -e \
+		 "/wndictpath/s|'dict'|''|"
 	@${FIND} ${WRKSRC}/utils -type f| ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/local/bin/perl|${PERL}|; \
+		 /wnUnixPath/s|/usr/local/WordNet-3.0|${WNHOME}|; \
 		 /wnUnixPath/s|/dict||'
 
 .include <bsd.port.pre.mk>
