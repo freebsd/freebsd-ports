@@ -7,7 +7,7 @@
 
 PORTNAME=	pgpool
 PORTVERSION=	3.4.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1446/
 
