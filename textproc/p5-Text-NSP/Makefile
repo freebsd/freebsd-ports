@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Text-NSP
-PORTVERSION=	1.03
+PORTVERSION=	1.07
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Text
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
@@ -52,9 +51,9 @@ MAN3=	Text::NSP.3 \
 	Text::NSP::Measures::3D::MI::ps.3 \
 	Text::NSP::Measures::3D::MI::tmi.3
 
-DOCS=	CHANGES README Docs/FAQ.pod Docs/NSP-Class-diagram.pdf \
-	Docs/NSP-Class-diagram.png Docs/README.pod Docs/Todo.pod \
-	Docs/Usage.pod Docs/cicling2003.pdf Docs/cicling2003.ps
+DOCS=	CHANGES README doc/FAQ.pod doc/NSP-Class-diagram.pdf \
+	doc/NSP-Class-diagram.png doc/README.pod doc/TODO.pod \
+	doc/USAGE.pod doc/cicling2003.pdf doc/cicling2003.ps \
 
 .ifndef (NOPORTDOCS)
 post-install:

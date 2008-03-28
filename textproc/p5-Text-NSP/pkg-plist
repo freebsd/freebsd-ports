@@ -47,8 +47,8 @@ bin/statistic.pl
 %%PORTDOCS%%%%DOCSDIR%%/NSP-Class-diagram.png
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.pod
-%%PORTDOCS%%%%DOCSDIR%%/Todo.pod
-%%PORTDOCS%%%%DOCSDIR%%/Usage.pod
+%%PORTDOCS%%%%DOCSDIR%%/TODO.pod
+%%PORTDOCS%%%%DOCSDIR%%/USAGE.pod
 %%PORTDOCS%%%%DOCSDIR%%/cicling2003.pdf
 %%PORTDOCS%%%%DOCSDIR%%/cicling2003.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
