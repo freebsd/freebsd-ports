@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.web2ldap.de/download/ \
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Python-based WWW gateway to LDAP servers
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldap.so:${PORTSDIR}/net/py-ldap2 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>=2.3.1:${PORTSDIR}/net/py-ldap2 \
 		${PYTHON_SITELIBDIR}/pyweblib/__init__.py:${PORTSDIR}/www/pyweblib \
 		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
