@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/API.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/const_hash.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/constants.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/func_hash.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_auto.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_behavior.pm

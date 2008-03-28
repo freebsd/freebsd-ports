@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Memcached-libmemcached
-PORTVERSION=	0.14.04
+PORTVERSION=	0.17.01
 CATEGORIES=	databases devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/T/TI/TIMB
@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 
 MAN3=		Memcached::libmemcached.3 \
 		Memcached::libmemcached::API.3 \
+		Memcached::libmemcached::constants.3 \
 		Memcached::libmemcached::memcached_auto.3 \
 		Memcached::libmemcached::memcached_behavior.3 \
 		Memcached::libmemcached::memcached_callback.3 \
