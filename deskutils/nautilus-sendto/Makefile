@@ -6,12 +6,12 @@
 #    $MCom: ports/deskutils/nautilus-sendto/Makefile,v 1.16 2008/02/10 19:57:54 marcus Exp $
 
 PORTNAME=	nautilus-sendto
-PORTVERSION=	0.13.2
+PORTVERSION=	0.14.0
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Integration between nautilus, evolution, and gaim
+COMMENT=	Integration between nautilus, evolution, and pidgin
 
 BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
