@@ -105,6 +105,8 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|(icon-filename=).+(gcdmaster-doc.png)|\1${LOCALBASE}\/share\/pixmaps\/document-icons\/\2|g' \
 		${WRKSRC}/xdao/gcdmaster.keys
+	@${REINPLACE_CMD} -e 's|connect(SigC::slot|connect(sigc::ptr_fun|g' \
+		${WRKSRC}/xdao/xcdrdao.cc
 .else
 .for i in cdrdao.man main.cc
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/dao/${i}

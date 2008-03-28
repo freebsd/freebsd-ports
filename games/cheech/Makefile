@@ -36,6 +36,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|doc/cheech|share/doc/cheech|g" \
 		-e "s|: install-cheechdocDATA|:|g" \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|connect(SigC::slot|connect(sigc::mem_fun|g ; \
+		s|#include <sigc++\/compatibility\.h>||g' \
+			${WRKSRC}/src/*.cc
 
 pre-configure:
 	@${LN} -sf ${AUTOMAKE_DIR}/install-sh ${WRKSRC}
