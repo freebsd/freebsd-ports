@@ -2,3 +2,5 @@
 bin/pgpool
 etc/pgpool.conf.sample
 etc/pool_hba.conf.sample
+share/pgpool/pgpool.pam
+@dirrm share/pgpool
