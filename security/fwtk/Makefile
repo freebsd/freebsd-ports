@@ -51,6 +51,7 @@ USE_XLIB=	yes
 PLIST_SUB+=	X11=""
 .else
 PLIST_SUB+=	X11="@comment "
+.MAKEFLAGS+=	-DWITHOUT_X11
 .endif
 
 .if defined(WITH_JUMBO_PATCH)
