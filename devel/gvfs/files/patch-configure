@@ -1,6 +1,6 @@
---- configure.orig	2008-02-25 16:48:49.000000000 -0500
-+++ configure	2008-02-25 16:51:17.000000000 -0500
-@@ -24589,7 +24589,7 @@ if test "x$enable_http" != "xno"; then
+--- configure.orig	2008-03-28 17:23:44.000000000 -0400
++++ configure	2008-03-28 17:24:02.000000000 -0400
+@@ -24617,7 +24617,7 @@ if test "x$enable_http" != "xno"; then
    msg_http=yes
  fi
  
@@ -9,16 +9,7 @@
  
  pkg_failed=no
  { echo "$as_me:$LINENO: checking for HTTP" >&5
-@@ -24857,7 +24857,7 @@ if test "x$enable_cdda" != "xno"; then
-   msg_cdda=yes
- fi
- 
--  if test "x$msg_cdda" == "xyes"; then
-+  if test "x$msg_cdda" = "xyes"; then
- 
- pkg_failed=no
- { echo "$as_me:$LINENO: checking for CDDA" >&5
-@@ -25008,7 +25008,7 @@ if test "x$enable_fuse" != "xno"; then
+@@ -24885,7 +24885,7 @@ if test "x$enable_fuse" != "xno"; then
    msg_fuse=yes
  fi
  
@@ -27,7 +18,7 @@
  
  pkg_failed=no
  { echo "$as_me:$LINENO: checking for FUSE" >&5
-@@ -25159,7 +25159,7 @@ if test "x$enable_gconf" != "xno"; then
+@@ -25036,7 +25036,7 @@ if test "x$enable_gconf" != "xno"; then
    msg_gconf=yes
  fi
  
@@ -36,7 +27,7 @@
  
  pkg_failed=no
  { echo "$as_me:$LINENO: checking for GCONF" >&5
-@@ -25312,7 +25312,7 @@ if test "x$enable_hal" != "xno"; then
+@@ -25189,7 +25189,7 @@ if test "x$enable_hal" != "xno"; then
    msg_hal=yes
  fi
  
@@ -45,7 +36,7 @@
  
  pkg_failed=no
  { echo "$as_me:$LINENO: checking for HAL" >&5
-@@ -25494,7 +25494,7 @@ if test $ac_cv_lib_hal_libhal_get_all_de
+@@ -25371,7 +25371,7 @@ if test $ac_cv_lib_hal_libhal_get_all_de
    have_hal_fast_init=yes
  fi
  
@@ -54,7 +45,25 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_HAL_FAST_INIT 1
-@@ -25540,13 +25540,16 @@ fi
+@@ -25412,7 +25412,7 @@ if test "x$enable_cdda" != "xno"; then
+   msg_cdda=yes
+ fi
+ 
+-  if test "x$msg_cdda" == "xyes"; then
++  if test "x$msg_cdda" = "xyes"; then
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for CDDA" >&5
+@@ -25772,7 +25772,7 @@ else
+ fi
+ 
+ 
+-  if test "x$msg_obexftp" == "xyes" -a "x$have_expat" == "xtrue"; then
++  if test "x$msg_obexftp" = "xyes" -a "x$have_expat" = "xtrue"; then
+ 
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for OBEXFTP" >&5
+@@ -25936,13 +25936,16 @@ fi
      *-linux*)
        use_gphoto2=yes
        ;;
@@ -73,7 +82,7 @@
  
  pkg_failed=no
  { echo "$as_me:$LINENO: checking for GPHOTO2" >&5
-@@ -25702,7 +25705,7 @@ if test "x$enable_keyring" != "xno"; the
+@@ -26098,7 +26101,7 @@ if test "x$enable_keyring" != "xno"; the
    msg_keyring=yes
  fi
  
