@@ -881,11 +881,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar/scal01f5.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar/scal01f8.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar/scal01f9.al
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/MethodMaker/hash
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/MethodMaker/array
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/MethodMaker/Engine
-@dirrmtry lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/MethodMaker
-@dirrmtry lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class
-@dirrmtry lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Class/MethodMaker
-@dirrmtry lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Class
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/hash
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/scalar
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/array
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker/Engine
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/MethodMaker
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MethodMaker
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class
