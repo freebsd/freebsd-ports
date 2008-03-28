@@ -1,5 +1,5 @@
 --- src/polkit/polkit-sysdeps.c.orig	2007-11-28 16:26:14.000000000 -0500
-+++ src/polkit/polkit-sysdeps.c	2008-01-02 00:42:47.000000000 -0500
++++ src/polkit/polkit-sysdeps.c	2008-03-28 14:36:50.000000000 -0400
 @@ -39,7 +39,6 @@
  #include <grp.h>
  #include <unistd.h>
@@ -20,7 +20,7 @@
          if (filename == NULL) {
                  errno = ENOMEM;
                  goto out;
-@@ -93,6 +96,35 @@ polkit_sysdeps_get_start_time_for_pid (p
+@@ -93,6 +96,36 @@ polkit_sysdeps_get_start_time_for_pid (p
                  goto out;
          }
  
@@ -37,6 +37,7 @@
 +        kit_strfreev (tokens);
 +
 +        tokens = kit_strsplit (p, ',', &num_tokens);
++        kit_free (p);
 +        if (tokens == NULL)
 +                goto out;
 +        if (num_tokens >= 1) {
@@ -56,7 +57,7 @@
          /* start time is the 19th token after the '(process name)' entry */
  
          p = strchr (contents, ')');
-@@ -118,6 +150,7 @@ polkit_sysdeps_get_start_time_for_pid (p
+@@ -118,6 +151,7 @@ polkit_sysdeps_get_start_time_for_pid (p
          }
  
          kit_strfreev (tokens);
@@ -64,7 +65,7 @@
  
  out:
          kit_free (filename);
-@@ -153,7 +186,11 @@ polkit_sysdeps_get_exe_for_pid (pid_t pi
+@@ -153,7 +187,11 @@ polkit_sysdeps_get_exe_for_pid (pid_t pi
  
          ret = 0;
  
@@ -76,7 +77,7 @@
          ret = readlink (proc_name, out_buf, buf_size - 1);
          if (ret == -1) {
                  strncpy (out_buf, "(unknown)", buf_size);
-@@ -166,6 +203,108 @@ out:
+@@ -166,6 +204,108 @@ out:
          return ret;
  }
  
