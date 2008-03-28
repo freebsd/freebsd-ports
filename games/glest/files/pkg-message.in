@@ -3,8 +3,14 @@
 The glest game was installed
 
 1) You can see the glest configuration files into your ~/.glest directory
-2) If you have problems to run glest, please you should remove your ~/glest 
+
+2) If you choose install glest map editor, you can run it using :
+
+   # glest_editor
+
+3) If you have problems to run glest, please you should remove your ~/glest 
    directory and try again
-3) Enjoy it ;)
+
+4) Enjoy it ;)
 
 ###############################################################################

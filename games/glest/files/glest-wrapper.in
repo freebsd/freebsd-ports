@@ -16,8 +16,10 @@ else
 	mkdir -p ~/.glest/shaders/standard
 	touch ~/.glest/glest.log
 	rm ~/.glest/glest.ini ~/.glest/configuration.xml ~/.glest/glest
+	rm ~/.glest/servers.ini
 	cp -f %%DATADIR%%/configuration.xml ~/.glest/
 	cp -f %%DATADIR%%/glest.ini ~/.glest/
+	cp -f %%DATADIR%%/servers.ini ~/.glest/
 fi
 
 cd ~/.glest || exit 1
