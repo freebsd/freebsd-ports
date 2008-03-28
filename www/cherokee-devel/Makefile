@@ -8,7 +8,9 @@
 PORTNAME=	cherokee
 DISTVERSION=	0.7.0b1330
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/trunk/
+MASTER_SITES=	http://www.cherokee-project.com/download/trunk/ \
+		LOCAL/beech \
+		http://www.alaskaparadise.com/freebsd/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	beech@FreeBSD.org
