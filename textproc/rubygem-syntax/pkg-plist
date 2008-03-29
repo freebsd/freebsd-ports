@@ -1,131 +1,131 @@
-%%CACHE_DIR%%/syntax-%%PORTVERSION%%.gem
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax.src/M000001.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax.src/M000002.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Convertors.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Convertors/Abstract.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Convertors/Abstract.src/M000004.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Convertors/Abstract.src/M000005.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Convertors/HTML.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Convertors/HTML.src/M000003.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Default.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Default.src/M000010.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Ruby.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Ruby.src/M000008.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Ruby.src/M000009.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Token.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Token.src/M000020.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000011.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000012.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000013.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000014.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000015.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000016.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000017.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000018.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Version.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/XML.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/XML.src/M000006.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/XML.src/M000007.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/YAML.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/YAML.src/M000019.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/created.rid
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files/lib/syntax/common_rb.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files/lib/syntax/convertors/abstract_rb.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files/lib/syntax/convertors/html_rb.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files/lib/syntax/lang/ruby_rb.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files/lib/syntax/lang/xml_rb.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files/lib/syntax/lang/yaml_rb.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files/lib/syntax/version_rb.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files/lib/syntax_rb.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/fr_class_index.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/fr_file_index.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/fr_method_index.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/index.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/rdoc-style.css
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Convertors/Abstract/cdesc-Abstract.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Convertors/Abstract/for_syntax-c.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Convertors/Abstract/new-c.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Convertors/HTML/cdesc-HTML.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Convertors/HTML/convert-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Convertors/cdesc-Convertors.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Default/cdesc-Default.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Default/tokenize-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Ruby/cdesc-Ruby.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Ruby/setup-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Ruby/step-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Token/cdesc-Token.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Token/new-c.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Tokenizer/cdesc-Tokenizer.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Tokenizer/finish-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Tokenizer/option-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Tokenizer/set-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Tokenizer/setup-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Tokenizer/start-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Tokenizer/step-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Tokenizer/teardown-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Tokenizer/tokenize-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Version/cdesc-Version.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/XML/cdesc-XML.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/XML/setup-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/XML/step-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/YAML/cdesc-YAML.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/YAML/step-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/all-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/cdesc-Syntax.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/load-i.yaml
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/created.rid
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/lib/syntax.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/lib/syntax/common.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/lib/syntax/convertors/abstract.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/lib/syntax/convertors/html.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/lib/syntax/lang/ruby.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/lib/syntax/lang/xml.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/lib/syntax/lang/yaml.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/lib/syntax/version.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/test/ALL-TESTS.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/test/syntax/tc_ruby.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/test/syntax/tc_xml.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/test/syntax/tc_yaml.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/test/syntax/tokenizer_testcase.rb
-%%GEMS_DIR%%/syntax-%%PORTVERSION%%/test/tc_syntax.rb
-%%SPEC_DIR%%/syntax-%%PORTVERSION%%.gemspec
-@dirrm %%GEMS_DIR%%/syntax-%%PORTVERSION%%/test/syntax
-@dirrm %%GEMS_DIR%%/syntax-%%PORTVERSION%%/test
-@dirrm %%GEMS_DIR%%/syntax-%%PORTVERSION%%/lib/syntax/lang
-@dirrm %%GEMS_DIR%%/syntax-%%PORTVERSION%%/lib/syntax/convertors
-@dirrm %%GEMS_DIR%%/syntax-%%PORTVERSION%%/lib/syntax
-@dirrm %%GEMS_DIR%%/syntax-%%PORTVERSION%%/lib
-@dirrm %%GEMS_DIR%%/syntax-%%PORTVERSION%%
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/YAML
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/XML
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Version
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Tokenizer
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Token
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Ruby
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Default
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Convertors/HTML
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Convertors/Abstract
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax/Convertors
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/ri/Syntax
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/ri
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files/lib/syntax/lang
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files/lib/syntax/convertors
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files/lib/syntax
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files/lib
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/files
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/YAML.src
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/XML.src
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Token.src
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Ruby.src
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Default.src
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Convertors/HTML.src
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Convertors/Abstract.src
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Convertors
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax.src
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc
-@dirrm %%DOC_DIR%%/syntax-%%PORTVERSION%%
+%%GEM_CACHE%%
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Convertors.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Convertors/Abstract.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Convertors/Abstract.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Convertors/Abstract.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Convertors/HTML.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Convertors/HTML.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Default.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Default.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Ruby.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Ruby.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Ruby.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Token.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Token.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/Version.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/XML.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/XML.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/XML.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/YAML.html
+%%GEM_DOC_DIR%%/rdoc/classes/Syntax/YAML.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/lib/syntax/common_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/syntax/convertors/abstract_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/syntax/convertors/html_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/syntax/lang/ruby_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/syntax/lang/xml_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/syntax/lang/yaml_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/syntax/version_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/syntax_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/ri/Syntax/Convertors/Abstract/cdesc-Abstract.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Convertors/Abstract/for_syntax-c.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Convertors/Abstract/new-c.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Convertors/HTML/cdesc-HTML.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Convertors/HTML/convert-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Convertors/cdesc-Convertors.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Default/cdesc-Default.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Default/tokenize-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Ruby/cdesc-Ruby.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Ruby/setup-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Ruby/step-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Token/cdesc-Token.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Token/new-c.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/cdesc-Tokenizer.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/finish-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/option-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/set-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/setup-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/start-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/step-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/teardown-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Tokenizer/tokenize-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/Version/cdesc-Version.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/XML/cdesc-XML.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/XML/setup-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/XML/step-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/YAML/cdesc-YAML.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/YAML/step-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/all-i.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/cdesc-Syntax.yaml
+%%GEM_DOC_DIR%%/ri/Syntax/load-i.yaml
+%%GEM_DOC_DIR%%/ri/created.rid
+%%GEM_LIB_DIR%%/lib/syntax.rb
+%%GEM_LIB_DIR%%/lib/syntax/common.rb
+%%GEM_LIB_DIR%%/lib/syntax/convertors/abstract.rb
+%%GEM_LIB_DIR%%/lib/syntax/convertors/html.rb
+%%GEM_LIB_DIR%%/lib/syntax/lang/ruby.rb
+%%GEM_LIB_DIR%%/lib/syntax/lang/xml.rb
+%%GEM_LIB_DIR%%/lib/syntax/lang/yaml.rb
+%%GEM_LIB_DIR%%/lib/syntax/version.rb
+%%GEM_LIB_DIR%%/test/ALL-TESTS.rb
+%%GEM_LIB_DIR%%/test/syntax/tc_ruby.rb
+%%GEM_LIB_DIR%%/test/syntax/tc_xml.rb
+%%GEM_LIB_DIR%%/test/syntax/tc_yaml.rb
+%%GEM_LIB_DIR%%/test/syntax/tokenizer_testcase.rb
+%%GEM_LIB_DIR%%/test/tc_syntax.rb
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/test/syntax
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/lib/syntax/lang
+@dirrm %%GEM_LIB_DIR%%/lib/syntax/convertors
+@dirrm %%GEM_LIB_DIR%%/lib/syntax
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/ri/Syntax/YAML
+@dirrm %%GEM_DOC_DIR%%/ri/Syntax/XML
+@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Version
+@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Tokenizer
+@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Token
+@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Ruby
+@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Default
+@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Convertors/HTML
+@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Convertors/Abstract
+@dirrm %%GEM_DOC_DIR%%/ri/Syntax/Convertors
+@dirrm %%GEM_DOC_DIR%%/ri/Syntax
+@dirrm %%GEM_DOC_DIR%%/ri
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/syntax/lang
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/syntax/convertors
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/syntax
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Syntax/YAML.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Syntax/XML.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Tokenizer.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Token.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Ruby.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Default.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Convertors/HTML.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Convertors/Abstract.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Syntax/Convertors
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Syntax.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Syntax
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
