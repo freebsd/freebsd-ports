@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	squidGuard
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.teledanmark.no/pub/www/proxy/squidGuard/ \
-		ftp://ftp.teledanmark.no/pub/www/proxy/squidGuard/ \
-		http://web01.ux.tyfon.net/ports/distfiles/
+MASTER_SITES=	http://www.squidguard.org/Downloads/
 
 MAINTAINER=	ports@tyfon.net
 COMMENT=	A fast redirector for squid
