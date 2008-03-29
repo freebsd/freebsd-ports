@@ -298,6 +298,7 @@ usr/bin/lddlibc4
 usr/bin/locale
 usr/bin/localedef
 usr/bin/logname
+usr/bin/lp
 usr/bin/lsattr
 usr/bin/md5sum
 usr/bin/mkfifo
