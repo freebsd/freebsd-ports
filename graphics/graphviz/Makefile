@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.16.1
-PORTREVISION=	1
+PORTVERSION=	2.18
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -29,6 +28,7 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
@@ -56,8 +56,8 @@ FIX_INCLUDE=	ast_common.h \
 		lib/common/globals.h \
 		lib/gvc/gvcint.h
 
-PATCH_TCL_SCRIPTS=	tclpkg/gv/Makefile.in tclpkg/tcldot/demo/doted \
-			tclpkg/tclpathplan/demo/pathplan tclpkg/tkspline/demo/spline
+PATCH_TCL_SCRIPTS=	tclpkg/gv/Makefile.in tclpkg/tcldot/demo/doted.tcl \
+			tclpkg/tclpathplan/demo/pathplan.tcl tclpkg/tkspline/demo/spline.tcl
 PATCH_TK_SCRIPTS=	${PATCH_TCL_SCRIPTS}
 
 PDOCS_TXT=	AUTHORS NEWS ChangeLog cpl1.0.txt doc/Dot.ref doc/latex_suggestions.txt
@@ -95,8 +95,8 @@ CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--enable-dependency-tracking \
 		--enable-r=no \
 		--with-libgd \
-		--with-fontconfigincludedir=${X11BASE}/include \
-		--with-fontconfiglibdir=${X11BASE}/lib \
+		--with-fontconfigincludedir=${LOCABASE}/include \
+		--with-fontconfiglibdir=${LOCABASE}/lib \
 		--disable-io --disable-ocaml --disable-java \
 		--disable-sharp
 
@@ -122,6 +122,7 @@ USE_TCL_BUILD=		84
 CONFIGURE_ARGS+=	--with-tclsh=${TCLSH}
 CONFIGURE_ENV+=		TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
 MANN+=			gdtclft.n tcldot.n
+PLIST_SUB+=		TCL_VER="${TCL_VER}"
 .endif
 
 .if defined(WITHOUT_ICONV)
@@ -132,7 +133,7 @@ CONFIGURE_ARGS+=	--with-iconvlibdir=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-iconvincludedir=${LOCALBASE}/include
 .endif
 
-.if !defined(WITHOUT_XPM) || exists(${X11BASE}/lib/libXpm.so)
+.if !defined(WITHOUT_XPM) || exists(${LOCABASE}/lib/libXpm.so)
 USE_XORG+=		xaw8 xpm xmu xt sm ice xext x11 xau xdmcp xp
 MAN1+=			lefty.1
 PLIST_SUB+=		WITH_XPM=""
@@ -365,18 +366,18 @@ post-install: install-ldconfig-file
 	@${ECHO_MSG} "Installing demo data..."
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} \
-		${WRKSRC}/tclpkg/gdtclft/demo/entities \
-		${WRKSRC}/tclpkg/tcldot/demo/doted \
-		${WRKSRC}/tclpkg/tcldot/demo/gcat \
-		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan \
-		${WRKSRC}/tclpkg/tkspline/demo/spline \
+		${WRKSRC}/tclpkg/gdtclft/demo/entities.tcl \
+		${WRKSRC}/tclpkg/tcldot/demo/doted.tcl \
+		${WRKSRC}/tclpkg/tcldot/demo/gcat.tcl \
+		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan.tcl \
+		${WRKSRC}/tclpkg/tkspline/demo/spline.tcl \
 		${EXAMPLESDIR}/
 	${INSTALL_DATA} \
-		${WRKSRC}/tclpkg/gdtclft/demo/entities.README \
-		${WRKSRC}/tclpkg/tcldot/demo/doted.README \
-		${WRKSRC}/tclpkg/tcldot/demo/gcat.README \
-		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan.README \
-		${WRKSRC}/tclpkg/tkspline/demo/spline.README \
+		${WRKSRC}/tclpkg/gdtclft/demo/entities.tcl.README \
+		${WRKSRC}/tclpkg/tcldot/demo/doted.tcl.README \
+		${WRKSRC}/tclpkg/tcldot/demo/gcat.tcl.README \
+		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan.tcl.README \
+		${WRKSRC}/tclpkg/tkspline/demo/spline.tcl.README \
 		${EXAMPLESDIR}/
 	@${MKDIR} ${EXAMPLESDIR}/pathplan_data
 	${INSTALL_DATA} \
