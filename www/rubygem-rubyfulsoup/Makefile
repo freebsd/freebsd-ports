@@ -14,7 +14,7 @@ DISTNAME=	${GEM_NAME}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ruby port of the HTML/XML parser Beautiful Soup
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/htmltools-1.10.gemspec:${PORTSDIR}/textproc/rubygem-htmltools
+BUILD_DEPENDS=	rubygem-htmltools>=1.10:${PORTSDIR}/textproc/rubygem-htmltools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
