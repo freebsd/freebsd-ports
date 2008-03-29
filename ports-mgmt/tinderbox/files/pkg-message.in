@@ -1,3 +1,5 @@
+
+===============================================================================
 ports-mgmt/tinderbox is now installed, but it requires some additional setup.
 
 ****************************************************
@@ -130,4 +132,5 @@ tinderbox and should be executed in %%PREFIX%%/tinderbox/scripts.
 
 - At a certain moment, when you refresh the page, you see that it
   has changed.
+=============================================================================
 

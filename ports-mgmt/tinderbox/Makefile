@@ -6,8 +6,10 @@
 
 PORTNAME=	tinderbox
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://tinderbox.marcuscom.com/
+MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
+DIST_SUBDIR=	tinderbox
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Port build tinderbox system
@@ -39,9 +41,8 @@ IGNORE=	is useless without a database. Please (re)run 'make config' and choose o
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 WANT_PHP_WEB=	yes
 USE_PHP=	session
-MASTER_SITES+=	http://miwibox.org/:FAVICON
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		favicon.ico:FAVICON
+		favicon.ico tb242_template_paefchen_v2.tbz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
@@ -96,32 +97,28 @@ pre-everything::
 	@${FALSE}
 .endif
 
+post-extract:
+.if !defined(WITH_WEB)
+	@${RM} -R ${WRKSRC}/www
+.else
+	@${CP} ${_DISTDIR}/favicon.ico ${WRKSRC}/www
+.endif
+.if defined(WITHOUT_WEB_EXP)
+	@${RM} -R ${WRKSRC}/www-exp
+.else
+	@${CP} ${_DISTDIR}/favicon.ico ${WRKSRC}/www-exp
+	@${TAR} -C ${WRKSRC}/www-exp/templates -xf ${_DISTDIR}/tb242_template_paefchen_v2.tbz
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}/www-exp/templates/paefchen
+	@${REINPLACE_CMD} 's|/templates/default|/templates/paefchen|' ${WRKSRC}/www-exp/inc_tinderbox.php.dist
+	@${RM} ${WRKSRC}/www-exp/inc_tinderbox.php.dist.bak
+.endif
+
 post-patch:
 .if defined(WITH_MYSQL)
 	@${REINPLACE_CMD} \
 		-e 's,DB_MAN_PREREQS=.*,DB_MAN_PREREQS="databases/p5-DBD-mysql${MYSQL_VER} databases/mysql${MYSQL_VER}-client",' \
 		${WRKSRC}/lib/setup-mysql.sh
 	@${RM} ${WRKSRC}/lib/setup-mysql.sh.bak
-.endif
-.if ! (${OSVERSION} > 700014 || ( ${OSVERSION} >= 601101 && ${OSVERSION} < 700000 ))
-	${REINPLACE_CMD} -E -e 's!/usr/bin/csup!${PREFIX}/bin/csup!' \
-		${WRKSRC}/create
-	${REINPLACE_CMD} -E -e 's!/usr/bin/csup!${PREFIX}/bin/csup!' \
-		${WRKSRC}/tc
-	@${RM} ${WRKSRC}/create.bak
-	@${RM} ${WRKSRC}/tc.bak
-.endif
-
-pre-install:
-.if !defined(WITH_WEB)
-	${RM} -R ${WRKSRC}/www
-.else
-	${CP} ${DISTDIR}/favicon.ico ${WRKSRC}/www
-.endif
-.if defined(WITHOUT_WEB_EXP)
-	${RM} -R ${WRKSRC}/www-exp
-.else
-	${CP} ${DISTDIR}/favicon.ico ${WRKSRC}/www-exp
 .endif
 
 do-install:
