@@ -5,6 +5,7 @@ sbin/vmware-guestd
 %%VMWARE_VMXNET%%lib/vmware-tools/modules/vmxnet.ko
 %%VMWARE_KMODDIR%%@dirrmtry lib/vmware-tools/modules
 %%VMWARE_KMODDIR%%@dirrmtry lib/vmware-tools
+share/vmware-tools/open_source_licenses.txt
 share/vmware-tools/poweroff-vm-default
 share/vmware-tools/poweron-vm-default
 share/vmware-tools/resume-vm-default
