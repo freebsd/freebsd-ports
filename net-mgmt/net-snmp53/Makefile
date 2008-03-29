@@ -7,7 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -181,7 +181,7 @@ DOC_FILES=	AGENT.txt COPYING FAQ NEWS README \
 		agent/mibgroup/README.smux
 
 PS_CMD?=	/bin/ps
-CONFLICTS=	net-snmp-4.* net-snmp-5.4.*
+CONFLICTS=	ucd-snmp-4.* net-snmp-5.4.*
 
 pre-everything::
 	@${ECHO_MSG}
