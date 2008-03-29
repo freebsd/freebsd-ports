@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://0xcc.net/quickml/
 
-MAINTAINER=	yaizawa@mdbl.sfc.keio.ac.jp
+MAINTAINER=	yaizawa@2004.jukuin.keio.ac.jp
 COMMENT=	An easy-to-use mailing list system
 
 OPTIONS+=	ANALOG "Enable quickml-analog" on \
