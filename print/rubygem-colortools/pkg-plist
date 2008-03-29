@@ -1,161 +1,161 @@
-%%CACHE_DIR%%/color-tools-%%PORTVERSION%%%%EXTRACT_SUFX%%
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/Changelog
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/Install
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/metaconfig
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/pre-setup.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/Rakefile
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/README
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/setup.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/cmyk.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/css.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/grayscale.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/hsl.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/palette.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/rgb-colors.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/rgb.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/yiq.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/palette/gimp.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/palette/monocontrast.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/rgb/metallic.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/tests/testall.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/tests/test_cmyk.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/tests/test_css.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/tests/test_gimp.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/tests/test_grayscale.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/tests/test_hsl.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/tests/test_monocontrast.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/tests/test_rgb.rb
-%%GEMS_DIR%%/color-tools-%%PORTVERSION%%/tests/test_yiq.rb
-%%SPEC_DIR%%//color-tools-%%PORTVERSION%%%%EXTRACT_SUFX%%spec
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/created.rid
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/rdoc-style.css
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color_rb.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/cmyk_rb.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/css_rb.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/grayscale_rb.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/hsl_rb.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/palette_rb.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/rgb-colors_rb.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/rgb_rb.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/yiq_rb.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/palette/gimp_rb.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/palette/monocontrast_rb.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/rgb/metallic_rb.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/README.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/Install.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/Changelog.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CSS.src/M000001.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/Gimp.src/M000002.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/Gimp.src/M000003.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/Gimp.src/M000004.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/Gimp.src/M000005.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/Gimp.src/M000006.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/Gimp.src/M000007.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/Gimp.src/M000008.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/MonoContrast.src/M000009.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/MonoContrast.src/M000010.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/MonoContrast.src/M000011.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/MonoContrast.src/M000012.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/MonoContrast.src/M000013.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/MonoContrast.src/M000014.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/Gimp.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/MonoContrast.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000015.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000016.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000017.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000018.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000019.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000020.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000021.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000022.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000023.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000025.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000026.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000027.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000028.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src/M000029.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/HSL.src/M000030.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/HSL.src/M000031.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/HSL.src/M000032.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/HSL.src/M000033.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/HSL.src/M000034.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/HSL.src/M000035.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/HSL.src/M000036.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/HSL.src/M000037.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/HSL.src/M000038.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/YIQ.src/M000040.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/YIQ.src/M000041.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/YIQ.src/M000042.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/YIQ.src/M000043.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/YIQ.src/M000044.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/YIQ.src/M000045.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000047.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000048.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000049.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000050.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000051.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000052.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000053.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000054.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000055.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000056.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000057.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000058.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000059.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000060.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000061.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000062.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000063.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000065.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000066.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src/M000067.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.src/M000068.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.src/M000069.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.src/M000070.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.src/M000071.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.src/M000072.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.src/M000073.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.src/M000074.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.src/M000075.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.src/M000077.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.src/M000078.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.src/M000079.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CSS.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/HSL.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/YIQ.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB/Metallic.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/fr_file_index.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/fr_class_index.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/fr_method_index.html
-%%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/index.html
-@dirrm %%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/palette
-@dirrm %%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color/rgb
-@dirrm %%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib/color
-@dirrm %%GEMS_DIR%%/color-tools-%%PORTVERSION%%/lib
-@dirrm %%GEMS_DIR%%/color-tools-%%PORTVERSION%%/tests
-@dirrm %%GEMS_DIR%%/color-tools-%%PORTVERSION%%
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/palette
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color/rgb
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib/color
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files/lib
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/files
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CSS.src
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/Gimp.src
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette/MonoContrast.src
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/Palette
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/GrayScale.src
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/HSL.src
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/YIQ.src
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB.src
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/CMYK.src
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color/RGB
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes/Color
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc/classes
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%/rdoc
-@dirrm %%DOC_DIR%%/color-tools-%%PORTVERSION%%
+%%GEM_CACHE%%
+%%GEM_DOC_DIR%%/rdoc/classes/Color.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CSS.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CSS.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB/Metallic.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/Changelog.html
+%%GEM_DOC_DIR%%/rdoc/files/Install.html
+%%GEM_DOC_DIR%%/rdoc/files/README.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/cmyk_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/css_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/grayscale_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/hsl_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/palette/gimp_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/palette/monocontrast_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/palette_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/rgb-colors_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/rgb/metallic_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/rgb_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/yiq_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_LIB_DIR%%/Changelog
+%%GEM_LIB_DIR%%/Install
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/lib/color.rb
+%%GEM_LIB_DIR%%/lib/color/cmyk.rb
+%%GEM_LIB_DIR%%/lib/color/css.rb
+%%GEM_LIB_DIR%%/lib/color/grayscale.rb
+%%GEM_LIB_DIR%%/lib/color/hsl.rb
+%%GEM_LIB_DIR%%/lib/color/palette.rb
+%%GEM_LIB_DIR%%/lib/color/palette/gimp.rb
+%%GEM_LIB_DIR%%/lib/color/palette/monocontrast.rb
+%%GEM_LIB_DIR%%/lib/color/rgb-colors.rb
+%%GEM_LIB_DIR%%/lib/color/rgb.rb
+%%GEM_LIB_DIR%%/lib/color/rgb/metallic.rb
+%%GEM_LIB_DIR%%/lib/color/yiq.rb
+%%GEM_LIB_DIR%%/metaconfig
+%%GEM_LIB_DIR%%/pre-setup.rb
+%%GEM_LIB_DIR%%/setup.rb
+%%GEM_LIB_DIR%%/tests/test_cmyk.rb
+%%GEM_LIB_DIR%%/tests/test_css.rb
+%%GEM_LIB_DIR%%/tests/test_gimp.rb
+%%GEM_LIB_DIR%%/tests/test_grayscale.rb
+%%GEM_LIB_DIR%%/tests/test_hsl.rb
+%%GEM_LIB_DIR%%/tests/test_monocontrast.rb
+%%GEM_LIB_DIR%%/tests/test_rgb.rb
+%%GEM_LIB_DIR%%/tests/test_yiq.rb
+%%GEM_LIB_DIR%%/tests/testall.rb
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/tests
+@dirrm %%GEM_LIB_DIR%%/lib/color/rgb
+@dirrm %%GEM_LIB_DIR%%/lib/color/palette
+@dirrm %%GEM_LIB_DIR%%/lib/color
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/color/rgb
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/color/palette
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/color
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/RGB
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/Palette
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/CSS.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
