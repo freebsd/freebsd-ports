@@ -6,14 +6,13 @@
 #    $MCom: ports/irc/xchat-fish/Makefile,v 1.1 2006/10/04 22:30:07 ahze Exp $
 
 PORTNAME=	fish
-DISTVERSION=	0.97a
-PORTREVISION=	2
+DISTVERSION=	0.98
 CATEGORIES=	irc security
 MASTER_SITES=	http://fish.sekure.us/xchat/
 PKGNAMEPREFIX=	xchat-
-DISTNAME=	FiSH-xchat.v${DISTVERSION}-source
+DISTNAME=	FiSH-XChat.v${DISTVERSION}-source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An encryption plugin for XChat
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmiracl.a:${PORTSDIR}/math/miracl
@@ -21,34 +20,24 @@ RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
-
-#
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+CCFLAGS+=	-Wall -O2 -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV+=	CCFLAGS="${CCFLAGS}"
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
-PLIST_FILES=	\
-		lib/xchat/plugins/xfish.so
-
-PORTDOCS=	\
-		FiSH-xchat.txt \
+PLIST_FILES=	lib/xchat/plugins/xfish.so
+PORTDOCS=	FiSH-xchat.txt \
 		FiSH-xchat_History.txt
 
 post-patch:
+	@${CP} -pf ${FILESDIR}/Makefile ${WRKSRC}/
+	@${RM} -f ${WRKSRC}/mir*
 # \r\n -> \n
 	@${FIND} ${WRKSRC} -type f -exec \
 		${REINPLACE_CMD} -E \
 		-e 's|||' \
 		{} \;
-# CC safeness
-# CFLAGS safeness
-	@${REINPLACE_CMD} -E \
-		-e 's|gcc|${CC}|' \
-		-e 's|-O2|${CFLAGS}|' \
-		-e 's|-shared|-shared -fPIC -DPIC|' \
-		-e 's|miracl.a|${LOCALBASE}/lib/libmiracl.a|' \
-		${WRKSRC}/make*
-
-do-build:
-	@cd ${WRKSRC} && ${SH} ./make_all
 
 do-install:
 # docs
@@ -56,12 +45,12 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} \
-		${DOCSDIR}
+		${DOCSDIR}/
 .endfor
 .endif
 # plugin
 	@${MKDIR} ${PREFIX}/lib/xchat/plugins
 	@${INSTALL_PROGRAM} ${WRKSRC}/xfish.so \
-		${PREFIX}/lib/xchat/plugins
+		${PREFIX}/lib/xchat/plugins/
 
 .include <bsd.port.mk>
