@@ -133,11 +133,10 @@ lib/graphviz/libgvplugin_neato_layout.a
 %%WITH_GUILE%%lib/graphviz/guile/libgv_guile.la
 %%WITH_GUILE%%lib/graphviz/guile/libgv_guile.so
 %%WITH_PHP%%lib/graphviz/php/gv.php
+%%WITH_PHP%%lib/graphviz/php/gv.so
 %%WITH_PHP%%lib/graphviz/php/libgv_php.a
 %%WITH_PHP%%lib/graphviz/php/libgv_php.la
 %%WITH_PHP%%lib/graphviz/php/libgv_php.so
-%%WITH_PHP%%lib/graphviz/php/php_gv.h
-lib/graphviz/tcl/gv.so
 %%WITH_TCL%%lib/graphviz/tcl/libgdtclft.a
 %%WITH_TCL%%lib/graphviz/tcl/libgdtclft.la
 %%WITH_TCL%%lib/graphviz/tcl/libgdtclft.so
@@ -157,33 +156,33 @@ lib/graphviz/tcl/gv.so
 %%WITH_TCL%%lib/graphviz/tcl/libtclplan.la
 %%WITH_TCL%%lib/graphviz/tcl/libtclplan.so
 %%WITH_TCL%%lib/graphviz/tcl/libtclplan.so.0
+%%WITH_TCL%%lib/graphviz/tcl/pkgIndex.tcl
+%%WITH_TCL%%lib/tcl%%TCL_VER%%/graphviz-%%PORTVERSION%%
 %%WITH_TK%%lib/graphviz/tcl/libtkspline.a
 %%WITH_TK%%lib/graphviz/tcl/libtkspline.la
 %%WITH_TK%%lib/graphviz/tcl/libtkspline.so
 %%WITH_TK%%lib/graphviz/tcl/libtkspline.so.0
-lib/graphviz/lua/gv.so
+%%WITH_LUA%%lib/graphviz/lua/gv.so
 %%WITH_LUA%%lib/graphviz/lua/libgv_lua.a
 %%WITH_LUA%%lib/graphviz/lua/libgv_lua.la
 %%WITH_LUA%%lib/graphviz/lua/libgv_lua.so
-lib/graphviz/perl/gv.so
+%%WITH_PERL%%lib/graphviz/perl/gv.so
 %%WITH_PERL%%lib/graphviz/perl/gv.pm
 %%WITH_PERL%%lib/graphviz/perl/libgv_perl.a
 %%WITH_PERL%%lib/graphviz/perl/libgv_perl.la
 %%WITH_PERL%%lib/graphviz/perl/libgv_perl.so
-lib/graphviz/python/_gv.so
-lib/graphviz/python23/_gv.so
-lib/graphviz/python24/_gv.so
-lib/graphviz/python25/_gv.so
+%%WITH_PYTHON%%lib/graphviz/python/_gv.so
 %%WITH_PYTHON%%lib/graphviz/python/gv.py
 %%WITH_PYTHON%%lib/graphviz/python/libgv_python.a
 %%WITH_PYTHON%%lib/graphviz/python/libgv_python.la
 %%WITH_PYTHON%%lib/graphviz/python/libgv_python.so
-lib/graphviz/r/gv.so
-lib/graphviz/ruby/gv.so
+%%WITH_PYTHON%%%%PYTHON_LIBDIR%%/site-packages/_gv.so
+%%WITH_PYTHON%%%%PYTHON_LIBDIR%%/site-packages/gv.py
+%%WITH_RUBY%%lib/graphviz/ruby/gv.so
 %%WITH_RUBY%%lib/graphviz/ruby/libgv_ruby.a
 %%WITH_RUBY%%lib/graphviz/ruby/libgv_ruby.la
 %%WITH_RUBY%%lib/graphviz/ruby/libgv_ruby.so
-lib/graphviz/pkgIndex.tcl
+%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/gv.so
 libdata/pkgconfig/libcdt.pc
 libdata/pkgconfig/libgraph.pc
 libdata/pkgconfig/libagraph.pc
@@ -214,6 +213,7 @@ libdata/pkgconfig/libgvc_builtins.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/a_forward.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/a_halfopen.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/box.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/box3d.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/a_inv.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/a_invdot.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/a_invempty.gif
@@ -266,6 +266,8 @@ libdata/pkgconfig/libgvc_builtins.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/back.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/both.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/circle.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/colorlist.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/component.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/constraint.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/diamond.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/doublecircle.gif
@@ -273,6 +275,7 @@ libdata/pkgconfig/libgvc_builtins.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/egg.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/ellipse.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/fill.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/folder.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/forward.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/hexagon.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/house.gif
@@ -284,8 +287,9 @@ libdata/pkgconfig/libgvc_builtins.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/invtrapezium.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/invtriangle.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/mrecord.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/none.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/nohead.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/none.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/note.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/octagon.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/parallelogram.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pentagon.gif
@@ -297,6 +301,7 @@ libdata/pkgconfig/libgvc_builtins.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/rectangle.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/round.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/septagon.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/tab.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/trapezium.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/triangle.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tripleoctagon.gif
@@ -342,12 +347,12 @@ libdata/pkgconfig/libgvc_builtins.pc
 %%PORTDOCS%%%%DOCSDIR%%/cpl1.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/Dot.ref
 %%PORTDOCS%%%%DOCSDIR%%/latex_suggestions.txt
-%%EXAMPLESDIR%%/entities
-%%EXAMPLESDIR%%/entities.README
-%%EXAMPLESDIR%%/doted
-%%EXAMPLESDIR%%/doted.README
-%%EXAMPLESDIR%%/gcat
-%%EXAMPLESDIR%%/gcat.README
+%%EXAMPLESDIR%%/entities.tcl
+%%EXAMPLESDIR%%/entities.tcl.README
+%%EXAMPLESDIR%%/doted.tcl
+%%EXAMPLESDIR%%/doted.tcl.README
+%%EXAMPLESDIR%%/gcat.tcl
+%%EXAMPLESDIR%%/gcat.tcl.README
 %%EXAMPLESDIR%%/pathplan_data/boxes.dat
 %%EXAMPLESDIR%%/pathplan_data/dpd.dat
 %%EXAMPLESDIR%%/pathplan_data/funny.dat
@@ -360,10 +365,16 @@ libdata/pkgconfig/libgvc_builtins.pc
 %%EXAMPLESDIR%%/pathplan_data/rotor.dat
 %%EXAMPLESDIR%%/pathplan_data/u.dat
 %%EXAMPLESDIR%%/pathplan_data/unknown.dat
-%%EXAMPLESDIR%%/pathplan
-%%EXAMPLESDIR%%/pathplan.README
-%%EXAMPLESDIR%%/spline
-%%EXAMPLESDIR%%/spline.README
+%%EXAMPLESDIR%%/pathplan.tcl
+%%EXAMPLESDIR%%/pathplan.tcl.README
+%%EXAMPLESDIR%%/spline.tcl
+%%EXAMPLESDIR%%/spline.tcl.README
+%%WITH_LUA%%%%DATADIR%%/demo/modgraph.lua
+%%WITH_PERL%%%%DATADIR%%/demo/modgraph.pl
+%%WITH_PHP%%%%DATADIR%%/demo/modgraph.php
+%%WITH_PYTHON%%%%DATADIR%%/demo/modgraph.py
+%%WITH_RUBY%%%%DATADIR%%/demo/modgraph.rb
+%%WITH_TCL%%%%DATADIR%%/demo/modgraph.tcl
 %%DATADIR%%/lefty/box.lefty
 %%DATADIR%%/lefty/def.lefty
 %%DATADIR%%/lefty/fractal.lefty
@@ -432,22 +443,28 @@ libdata/pkgconfig/libgvc_builtins.pc
 %%DATADIR%%/graphs/undirected/process.dot
 %%DATADIR%%/graphs/undirected/Heawood.dot
 %%DATADIR%%/graphs/undirected/Petersen.dot
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%/pathplan_data
-@dirrm %%EXAMPLESDIR%%
+@exec mkdir -p %D/lib/graphviz/R
 @exec mkdir -p %D/lib/graphviz/guile
+@exec mkdir -p %D/lib/graphviz/io
+@exec mkdir -p %D/lib/graphviz/lua
 @exec mkdir -p %D/lib/graphviz/java
 @exec mkdir -p %D/lib/graphviz/ocaml
+@exec mkdir -p %D/lib/graphviz/perl
 @exec mkdir -p %D/lib/graphviz/php
+@exec mkdir -p %D/lib/graphviz/python25
+@exec mkdir -p %D/lib/graphviz/python24
+@exec mkdir -p %D/lib/graphviz/python23
+@exec mkdir -p %D/lib/graphviz/python
+@exec mkdir -p %D/lib/graphviz/ruby
 @exec mkdir -p %D/lib/graphviz/sharp
-@dirrm %%DATADIR%%/graphs/directed
-@dirrm %%DATADIR%%/graphs/undirected
-@dirrm %%DATADIR%%/graphs
-@dirrm %%DATADIR%%/lefty
-@dirrm %%DATADIR%%
+@exec mkdir -p %D/lib/graphviz/tcl
+@exec mkdir -p %D/%%DATADIR%%/demo
+@exec mkdir -p %D/%%DATADIR%%/examples
+@exec mkdir -p %D/%%DATADIR%%/gui
+@exec mkdir -p %D/%%DATADIR%%/icons
+@dirrm lib/graphviz/R
 @dirrm lib/graphviz/guile
+@dirrm lib/graphviz/io
 @dirrm lib/graphviz/java
 @dirrm lib/graphviz/lua
 @dirrm lib/graphviz/ocaml
@@ -457,10 +474,22 @@ libdata/pkgconfig/libgvc_builtins.pc
 @dirrm lib/graphviz/python24
 @dirrm lib/graphviz/python23
 @dirrm lib/graphviz/python
-@dirrm lib/graphviz/r
 @dirrm lib/graphviz/ruby
 @dirrm lib/graphviz/sharp
 @dirrm lib/graphviz/tcl
-@dirrm lib/graphviz/io
 @dirrm lib/graphviz
 @dirrm include/graphviz
+@dirrm %%DATADIR%%/demo
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/gui
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/graphs/directed
+@dirrm %%DATADIR%%/graphs/undirected
+@dirrm %%DATADIR%%/graphs
+@dirrm %%DATADIR%%/lefty
+@dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%/pathplan_data
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
