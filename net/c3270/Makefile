@@ -37,18 +37,18 @@ PORTDOCS=	*
 # c3270's ./configure script supports these.
 # Within it all options except DBCS are enabled by default.
 
-OPTIONS=OPENSSL		'Build with OpenSSL support'		on	\
-	READLINE	'Use system Readline library'		on	\
-	PR3287		'Build pr3287 component'		on	\
-	ANSI		'Include NVT (ANSI) support'		on	\
-	APL		'Include APL support'			on	\
-	DBCS		'Include EBCDIC DBCS support'		off	\
-	FT		'Include IND\$$FILE support'		on	\
-	LOCAL_PROCESS	'Include Local Process support'		on	\
-	PRINTER		'Include printer session support'	on	\
-	SCRIPT		'Include scripting support'		on	\
-	TN3270E		'Include TN3270-Extended support'	on	\
-	TRACE		'Include trace support'			on
+OPTIONS=OPENSSL		"Build with OpenSSL support"		on	\
+	READLINE	"Use system Readline library"		on	\
+	PR3287		"Build pr3287 component"		on	\
+	ANSI		"Include NVT (ANSI) support"		on	\
+	APL		"Include APL support"			on	\
+	DBCS		"Include EBCDIC DBCS support"		off	\
+	FT		"Include IND\$$FILE support"		on	\
+	LOCAL_PROCESS	"Include Local Process support"		on	\
+	PRINTER		"Include printer session support"	on	\
+	SCRIPT		"Include scripting support"		on	\
+	TN3270E		"Include TN3270-Extended support"	on	\
+	TRACE		"Include trace support"			on
 
 .include <bsd.port.pre.mk>
 
