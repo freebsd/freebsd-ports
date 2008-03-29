@@ -65,9 +65,9 @@ CFLAGS+=	-O0
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
-		 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/pm_config.in.h
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		 -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		 ${WRKSRC}/pm_config.in.h
 	@${REINPLACE_CMD} -e 's|<shhopt.h>|<pm_shhopt.h>|g' ${WRKSRC}/lib/pm.h
 	@${REINPLACE_CMD} -e 's| jpeg2000||g' \
 		${WRKSRC}/converter/other/Makefile
