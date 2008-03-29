@@ -504,6 +504,7 @@
     SUBDIR += openacs
     SUBDIR += openacs-dotlrn
     SUBDIR += openvrml
+    SUBDIR += openx
     SUBDIR += openxmldir
     SUBDIR += opera
     SUBDIR += opera-linuxplugins
