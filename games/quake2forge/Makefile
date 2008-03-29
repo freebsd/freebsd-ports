@@ -36,6 +36,10 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_GL) || defined(WITH_X11)
+USE_XORG=	xxf86dga
+.endif
+
 .if defined(WITH_AO)
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=--with-ao=${LOCALBASE}
@@ -93,7 +97,6 @@ PLIST_SUB+=	SVGA="@comment "
 .endif
 
 .if defined(WITH_X11)
-USE_XLIB=	yes
 CONFIGURE_ARGS+=--with-x
 PLIST_SUB+=	X11=""
 .else

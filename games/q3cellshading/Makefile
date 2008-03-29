@@ -59,7 +59,7 @@ MAKE_ENV+=	DLL_ONLY=true
 
 .if !defined(WITHOUT_CLIENT) || !defined(WITHOUT_SMP)
 USE_GL=		yes
-USE_XLIB=	yes
+USE_XORG=	xxf86dga
 .endif
 
 .if !defined(WITHOUT_CLIENT)

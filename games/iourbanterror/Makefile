@@ -94,7 +94,7 @@ USE_SDL=	sdl
 MAKE_ENV+=	USE_SDL_VIDEO=1
 .   else
 USE_GL=		yes
-USE_XLIB=	yes
+USE_XORG=	xxf86dga
 .   endif
 # Vorbis
 .   if defined(WITH_VORBIS)
