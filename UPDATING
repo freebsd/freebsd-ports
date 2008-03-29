@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080329:
+  AFFECTS: users of www/phpadsnew
+  AUTHOR: beech@FreeBSD.org
+
+  Phpadsnew has been replaced with www/openx. 
+  To upgrade please do the following:
+
+  1. Install www/openx
+  2. Copy the configuration file from phpadsnew to the var directory
+     of www/openx.
+  3. Copy your banner images from phpadsnew/www/images to openx/www/images
+  4. Access openx on your browser and follow the instructions for upgrading.
+  5. When you are satisfied everthing is working properly remove www/phpadsnew
+
 20080326:
   AFFECTS: users of emulators/linux_base-f8
   AUTHOR: bsam@FreeBSD.org
