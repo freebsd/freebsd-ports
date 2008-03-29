@@ -7,6 +7,7 @@
 
 PORTNAME=		f8
 PORTVERSION=		8
+PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../releases/${PORTVERSION}/Everything/${LINUX_RPM_ARCH}/os/Packages \
@@ -96,7 +97,7 @@ SRC_DISTFILES+=	acl-2.2.39-13.fc8.src.rpm \
 ALWAYS_KEEP_DISTFILES=	yes
 .endif
 
-CONFLICTS=		linux_base-gentoo* linux_base-fc4 linux_base-fc6
+CONFLICTS=		linux_base-gentoo* linux_base-fc4 linux_base-fc6 linux_base-f7
 ONLY_FOR_ARCHS=		i386 amd64
 LINUX_RPM_ARCH=		i386
 USE_LINUX_PREFIX=	yes
@@ -204,6 +205,10 @@ do-install:
 	@${LN} -sf /var/tmp ${PREFIX}/usr/tmp
 	@${CHOWN} root:wheel ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
 	@${CHMOD} 755 ${PREFIX}/var/lock ${PREFIX}/var/spool/mail
+#
+# Let some linux applications (e.g. print/acroread7) print with default settings
+#
+	@${INSTALL_SCRIPT} ${FILESDIR}/lp ${PREFIX}/usr/bin
 
 post-install:
 #
