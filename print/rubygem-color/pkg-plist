@@ -1,0 +1,274 @@
+%%GEM_CACHE%%
+%%GEM_DOC_DIR%%/rdoc/classes/Color.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000156.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000157.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000158.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000159.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000160.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000161.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000162.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000163.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000164.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000165.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000166.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000167.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000168.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000170.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000171.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000172.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000173.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000174.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000175.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000176.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000177.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000178.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000179.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000180.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000181.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000182.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000183.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000184.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000185.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000186.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000187.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000188.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src/M000189.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CSS.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/CSS.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000087.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000091.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000092.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src/M000093.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/AdobeColor.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/AdobeColor.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/AdobeColor.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/AdobeColor.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/AdobeColor.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/AdobeColor.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/AdobeColor.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/AdobeColor.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/AdobeColor.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000108.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000109.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000110.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000111.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000112.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000113.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000114.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000115.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000116.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000117.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000118.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000119.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000120.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000121.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000122.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000123.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000124.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000125.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000126.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000127.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000128.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000130.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000131.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000132.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000133.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000134.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000135.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000136.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000137.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000138.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000139.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000140.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000141.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000142.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000143.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000144.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000145.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000146.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000147.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000148.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000149.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000150.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000151.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000152.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000153.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src/M000155.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/RGB/Metallic.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000095.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000096.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000097.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000101.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000102.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000103.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000104.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000105.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000106.html
+%%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src/M000107.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/History_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/Install_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/Licence_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/Readme_txt.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/cmyk_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/css_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/grayscale_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/hsl_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/palette/adobecolor_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/palette/gimp_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/palette/monocontrast_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/palette_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/rgb-colors_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/rgb/metallic_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/rgb_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color/yiq_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/color_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_LIB_DIR%%/History.txt
+%%GEM_LIB_DIR%%/Install.txt
+%%GEM_LIB_DIR%%/Licence.txt
+%%GEM_LIB_DIR%%/Manifest.txt
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/Readme.txt
+%%GEM_LIB_DIR%%/lib/color.rb
+%%GEM_LIB_DIR%%/lib/color/cmyk.rb
+%%GEM_LIB_DIR%%/lib/color/css.rb
+%%GEM_LIB_DIR%%/lib/color/grayscale.rb
+%%GEM_LIB_DIR%%/lib/color/hsl.rb
+%%GEM_LIB_DIR%%/lib/color/palette.rb
+%%GEM_LIB_DIR%%/lib/color/palette/adobecolor.rb
+%%GEM_LIB_DIR%%/lib/color/palette/gimp.rb
+%%GEM_LIB_DIR%%/lib/color/palette/monocontrast.rb
+%%GEM_LIB_DIR%%/lib/color/rgb-colors.rb
+%%GEM_LIB_DIR%%/lib/color/rgb.rb
+%%GEM_LIB_DIR%%/lib/color/rgb/metallic.rb
+%%GEM_LIB_DIR%%/lib/color/yiq.rb
+%%GEM_LIB_DIR%%/setup.rb
+%%GEM_LIB_DIR%%/test/test_adobecolor.rb
+%%GEM_LIB_DIR%%/test/test_all.rb
+%%GEM_LIB_DIR%%/test/test_cmyk.rb
+%%GEM_LIB_DIR%%/test/test_color.rb
+%%GEM_LIB_DIR%%/test/test_css.rb
+%%GEM_LIB_DIR%%/test/test_gimp.rb
+%%GEM_LIB_DIR%%/test/test_grayscale.rb
+%%GEM_LIB_DIR%%/test/test_hsl.rb
+%%GEM_LIB_DIR%%/test/test_monocontrast.rb
+%%GEM_LIB_DIR%%/test/test_rgb.rb
+%%GEM_LIB_DIR%%/test/test_yiq.rb
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/lib/color/rgb
+@dirrm %%GEM_LIB_DIR%%/lib/color/palette
+@dirrm %%GEM_LIB_DIR%%/lib/color
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/color/rgb
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/color/palette
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/color
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/YIQ.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/RGB.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/RGB
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/MonoContrast.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/Gimp.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/Palette/AdobeColor.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/Palette
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/HSL.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/GrayScale.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/CSS.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color/CMYK.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Color
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%

@@ -1,0 +1,9 @@
+The capabilities of the Color library are limited to pure mathematical
+manipulation of the colours based on colour theory without reference to colour
+profiles (such as sRGB or Adobe RGB). For most purposes, when working with the
+RGB and HSL colours, this won't matter. However, some colour models (like CIE
+L*a*b*) are not supported because Color does not yet support colour profiles,
+giving no meaningful way to convert colours in absolute colour spaces (like
+L*a*b*, XYZ) to non-absolute colour spaces (like RGB).
+
+WWW: http://rubyforge.org/projects/color/
