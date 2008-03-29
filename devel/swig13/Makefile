@@ -19,19 +19,29 @@ USE_AUTOTOOLS=	autoconf:261:env libtool:15
 VER=		${PORTVERSION:R}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-# Supported languages: guile perl php4 python ruby tcl ocaml pike java csharp
-#                      allegrocl modula3 chicken
+# Supported languages: allegrocl c# clisp chicken guile java lua ocaml perl
+#                      php pike python R ruby tcl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC -DPIC"
 ALL_TARGET=	swig
 PLIST_SUB+=	VER="${VER}"
 
+WANT_LUA=	yes
+WANT_LUA_VER=	5.0+
+
 .include <bsd.port.pre.mk>
 
+.if ${HAVE_LUA:Mlua-5.*} != ""
+USE_LUA=	yes
+LUA_COMPS=	lua:build
+CONFIGURE_ARGS+=--with-lua=${LUA_BINDIR}/lua \
+		--with-luaincl=${LUA_INCDIR} \
+		--with-lualib=${LUA_LIBDIR}
+.endif
+
 post-patch:
-	${REINPLACE_CMD} -e 's/SKIP_CHICKEN=$$/&"1"/; \
-		s|$$RUBY |${RUBY} |; \
+	${REINPLACE_CMD} -e 's|$$RUBY |${RUBY} |; \
 		s|^PHP4CONFIG=.*$$|PHP4CONFIG=php-config|; \
 		' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
