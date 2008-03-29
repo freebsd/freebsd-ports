@@ -1,0 +1,50 @@
+Temporary patch for Squid bug 2206 ("no proxy Authenticate header in 407
+response") as fetched from Squid bugzilla 2008-03-26.
+
+See <http://www.squid-cache.org/bugs/show_bug_cgi?id=2206> for further
+information.
+=== modified file 'src/HttpHeader.cc'
+--- src/HttpHeader.cc	2008-02-27 12:59:29 +0000
++++ src/HttpHeader.cc	2008-03-12 20:53:15 +0000
+@@ -1806,5 +1806,7 @@
+         }
+         if (headers_deleted)
+             refreshMask();
++
++        delById(HDR_CONNECTION);
+     }
+ }
+
+=== modified file 'src/HttpHeader.h'
+--- src/HttpHeader.h	2008-02-27 12:59:29 +0000
++++ src/HttpHeader.h	2008-03-12 20:53:56 +0000
+@@ -247,15 +247,13 @@
+     int hasListMember(http_hdr_type id, const char *member, const char separator) const;
+     int hasByNameListMember(const char *name, const char *member, const char separator) const;
+     void removeHopByHopEntries();
++    void removeConnectionHeaderEntries();
+     /* protected, do not use these, use interface functions instead */
+     Vector<HttpHeaderEntry *> entries;		/* parsed fields in raw format */
+     HttpHeaderMask mask;	/* bit set <=> entry present */
+     http_hdr_owner_type owner;	/* request or reply */
+     int len;			/* length when packed, not counting terminating '\0' */
+ 
+-protected:
+-    void removeConnectionHeaderEntries();
+-    
+ private:
+     HttpHeaderEntry *findLastEntry(http_hdr_type id) const;
+     // Make it non-copyable. Our destructor is a bit nasty...
+
+=== modified file 'src/client_side_reply.cc'
+--- src/client_side_reply.cc	2008-02-27 12:59:29 +0000
++++ src/client_side_reply.cc	2008-03-12 20:54:37 +0000
+@@ -1214,7 +1214,7 @@
+     if (is_hit)
+         hdr->delById(HDR_SET_COOKIE);
+ 
+-    reply->header.removeHopByHopEntries();
++    reply->header.removeConnectionHeaderEntries();
+ 
+     //    if (request->range)
+     //      clientBuildRangeHeader(http, reply);

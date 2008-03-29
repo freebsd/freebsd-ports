@@ -3,21 +3,19 @@ Patch for Squid bug #2203:
 LDFLAGS gets unset when --with-filedescriptors=n is added to
 SQUID_CONFIGURE_ARGS.
 
---- configure.orig	Fri Dec 14 01:25:27 2007
-+++ configure	Thu Jan 24 19:56:32 2008
-@@ -43934,6 +43934,7 @@
-   esac
-   { echo "$as_me:$LINENO: result: $SQUID_MAXFD" >&5
- echo "${ECHO_T}$SQUID_MAXFD" >&6; }
-+  LDFLAGS="$TLDFLAGS"
- fi
+--- configure.orig	2008-03-26 21:16:54.000000000 +0100
++++ configure	2008-03-26 21:18:40.000000000 +0100
+@@ -43819,12 +43819,12 @@
  
- cat >>confdefs.h <<_ACEOF
-@@ -43947,7 +43948,6 @@
-     echo "         on how to increase your filedescriptor limit"
-     sleep 10
- fi
--LDFLAGS="$TLDFLAGS"
- 
- if test `expr $SQUID_MAXFD % 64` != 0; then
-     echo "WARNING: $SQUID_MAXFD is not an multiple of 64. This may cause issues"
+ { echo "$as_me:$LINENO: checking Maximum number of filedescriptors we can open" >&5
+ echo $ECHO_N "checking Maximum number of filedescriptors we can open... $ECHO_C" >&6; }
++TLDFLAGS="$LDFLAGS"
+ if test -n "$squid_filedescriptors_num" ; then
+   SQUID_MAXFD=$squid_filedescriptors_num
+   { echo "$as_me:$LINENO: result: $SQUID_MAXFD (user-forced)" >&5
+ echo "${ECHO_T}$SQUID_MAXFD (user-forced)" >&6; }
+ else
+-  TLDFLAGS="$LDFLAGS"
+   case $host in
+   i386-unknown-freebsd*)
+       if echo "$LDFLAGS" | grep -q pthread; then
