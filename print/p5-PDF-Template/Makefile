@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PDF
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	yaizawa@mdbl.sfc.keio.ac.jp
+MAINTAINER=	yaizawa@2004.jukuin.keio.ac.jp
 COMMENT=	PDF layout system that uses the same data structures as HTML::Template
 
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/pdflib_pl.pm:${PORTSDIR}/print/pdflib-perl \

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	yaizawa@mdbl.sfc.keio.ac.jp
+MAINTAINER=	yaizawa@2004.jukuin.keio.ac.jp
 COMMENT=	vCard and iCalendar support for ruby
 
 USE_RUBY=	yes
