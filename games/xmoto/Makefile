@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://www.amdmi3.ru/distfiles/
@@ -32,7 +31,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include -I${LUA_INCDIR}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${LUA_LIBDIR}
-MANCOMPRESSED=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
