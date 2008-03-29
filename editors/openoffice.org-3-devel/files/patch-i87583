@@ -1,5 +1,5 @@
---- work/DEV300_m4/desktop/scripts/soffice.sh	2008-03-18 22:44:45.000000000 +0900
-+++ /usr/local/openoffice.org-DEV300_m4/openoffice.org3.0/program/soffice	2008-03-29 19:17:49.000000000 +0900
+--- desktop/scripts/soffice.sh	2008-03-18 22:44:45.000000000 +0900
++++ desktop/scripts/soffice.sh	2008-03-29 19:17:49.000000000 +0900
 @@ -68,6 +68,23 @@
  
  sd_binary=`basename "$0"`.bin
