@@ -1,0 +1,178 @@
+bin/minitar
+%%GEM_CACHE%%
+%%GEM_DOC_DIR%%/rdoc/classes/Archive.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/BlockRequired.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/ClosedStream.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandCreate.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandCreate.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandCreate.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandCreate.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandCreate.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandExtract.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandExtract.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandExtract.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandExtract.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandExtract.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandHelp.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandHelp.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandHelp.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandHelp.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandList.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandList.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandList.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandList.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandList.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandList.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern/AbstractCommandError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern/CommandAlreadyExists.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern/UnknownCommandError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/ProgressBar.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/ProgressBar.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/ProgressBar.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/ProgressBar.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/ProgressBar.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/ProgressBar.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/ProgressBar.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/ProgressBar.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/ProgressBar.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/ProgressBar.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/FileNameTooLong.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Input.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Input.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Input.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Input.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Input.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Input.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Input.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/NonSeekableStream.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Output.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Output.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Output.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Output.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Output.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/InvalidEntryStream.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/InvalidEntryStream.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/InvalidEntryStream.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/InvalidEntryStream.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/UnexpectedEOF.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer/BoundedStream.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer/BoundedStream.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer/BoundedStream.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer/BoundedStream/FileOverflow.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer/RestrictedStream.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer/RestrictedStream.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer/RestrictedStream.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/PosixHeader.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/PosixHeader.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/PosixHeader.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/PosixHeader.src/M000087.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/PosixHeader.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/PosixHeader.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/ChangeLog.html
+%%GEM_DOC_DIR%%/rdoc/files/Install.html
+%%GEM_DOC_DIR%%/rdoc/files/README.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/archive/tar/minitar/command_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/archive/tar/minitar_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_LIB_DIR%%/ChangeLog
+%%GEM_LIB_DIR%%/Install
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/bin/minitar
+%%GEM_LIB_DIR%%/lib/archive/tar/minitar.rb
+%%GEM_LIB_DIR%%/lib/archive/tar/minitar/command.rb
+%%GEM_LIB_DIR%%/tests/tc_tar.rb
+%%GEM_LIB_DIR%%/tests/testall.rb
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/tests
+@dirrm %%GEM_LIB_DIR%%/lib/archive/tar/minitar
+@dirrm %%GEM_LIB_DIR%%/lib/archive/tar
+@dirrm %%GEM_LIB_DIR%%/lib/archive
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/bin
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/archive/tar/minitar
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/archive/tar
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/archive
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/PosixHeader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer/RestrictedStream.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer/BoundedStream.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer/BoundedStream
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Writer
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/InvalidEntryStream.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader/EntryStream.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Reader
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Output.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Input.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/ProgressBar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandPattern
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandList.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandHelp.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandExtract.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command/CommandCreate.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar/Command
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar/Minitar
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive/Tar
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Archive
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
