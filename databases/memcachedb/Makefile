@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcachedb
-DISTVERSION=	1.0.1-beta
+PORTVERSION=	1.0.3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://freebsd.csie.nctu.edu.tw/~gslin/files/
