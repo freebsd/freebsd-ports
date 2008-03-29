@@ -20,6 +20,5 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 GEM_NAME=	${DISTNAME}
 
 .include <bsd.port.pre.mk>
-HOE_VERSION!=    (cd ${PORTSDIR}/devel/rubygem-hoe && make -V PORTVERSION)
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
 .include <bsd.port.post.mk>
