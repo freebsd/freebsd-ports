@@ -22,7 +22,7 @@ COMMENT=	Unreal Tournament Dedicated Server for Linux
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 
-OPTIONS=	BONUSPACKS	'install the official bonus packs collection' on
+OPTIONS=	BONUSPACKS	"install the official bonus packs collection" on
 
 USE_LINUX=	yes
 NO_CDROM=	Size; the data set is much too big
