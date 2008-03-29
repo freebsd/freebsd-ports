@@ -18,10 +18,12 @@ bin/xmoto
 %%NLS%%share/locale/sk_SK/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/xmoto.mo
 %%DATADIR%%/Textures/Fonts/DejaVuSans.ttf
+%%DATADIR%%/Textures/Musics/MadeiraStew.ogg
 %%DATADIR%%/Textures/Musics/batcave.ogg
 %%DATADIR%%/Textures/Musics/legolodio.ogg
 %%DATADIR%%/Textures/Musics/menu.ogg
 %%DATADIR%%/Textures/Musics/ridealong.ogg
+%%DATADIR%%/Textures/Musics/speeditup.ogg
 %%DATADIR%%/xmoto.bin
 %%DATADIR%%/xmoto_icone_x.ico
 @dirrm %%DATADIR%%/Textures/Musics
