@@ -1142,8 +1142,6 @@ lib/libAfterStep.a
 %%DATADIR%%/doc/html/Animate.html
 %%DATADIR%%/doc/html/AnimateTypes.html
 %%DATADIR%%/doc/html/Arrange.html
-%%DATADIR%%/doc/html/Audio.html
-%%DATADIR%%/doc/html/AudioEvents.html
 %%DATADIR%%/doc/html/AutoExec.html
 %%DATADIR%%/doc/html/BalloonContents.html
 %%DATADIR%%/doc/html/Base.html
@@ -1161,6 +1159,8 @@ lib/libAfterStep.a
 %%DATADIR%%/doc/html/Pager.html
 %%DATADIR%%/doc/html/PagerDecorations.html
 %%DATADIR%%/doc/html/Placement.html
+%%DATADIR%%/doc/html/Sound.html
+%%DATADIR%%/doc/html/SoundEvents.html
 %%DATADIR%%/doc/html/SupportedHints.html
 %%DATADIR%%/doc/html/TbarLayout.html
 %%DATADIR%%/doc/html/Wharf.html
@@ -1263,6 +1263,7 @@ lib/libAfterStep.a
 %%DATADIR%%/scripts/ScreenDump
 %%DATADIR%%/scripts/ScreenSetup
 %%DATADIR%%/scripts/ScreenSetup2
+%%DATADIR%%/sound
 %%DATADIR%%/standard_categories
 %%DATADIR%%/start/.include
 %%DATADIR%%/start/0_Applications/.include
@@ -1364,9 +1365,10 @@ lib/libAfterStep.a
 %%DATADIR%%/wharf
 %%DATADIR%%/winlist
 %%DATADIR%%/wintabs
-share/gnome/wm-properties/AfterStep.desktop
+%%GNOME:%%share/gnome/wm-properties/AfterStep.desktop
 share/xsessions/AfterStep.desktop
-@dirrm share/xsessions
+@dirrmtry share/xsessions
+%%GNOME:%%@dirrmtry share/gnome/wm-properties
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/start/7_About_AfterStep
 @dirrm %%DATADIR%%/start/5_Quit

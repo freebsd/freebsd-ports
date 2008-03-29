@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	afterstep
-PORTVERSION=	2.2.7
-PORTREVISION=	1
+PORTVERSION=	2.2.8
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -43,20 +42,16 @@ CONFIGURE_ARGS+=--disable-ascp \
 		--with-png-includes="${LOCALBASE}/include" \
 		--with-png-libs="${LOCALBASE}/lib" \
 		--with-ungif
-MAKE_ENV=	INCS_PRIVATE="${CPPFLAGS}" LIBS_PRIVATE="${LDFLAGS}"
 
 MAN1=		ASDatabase.1x ASDatabaseEntry.1x AfterStep.1x Align.1x \
-		Animate.1x AnimateTypes.1x Arrange.1x Audio.1x AudioEvents.1x \
-		AutoExec.1x BalloonContents.1x Base.1x Bevel.1x ColorScheme.1x \
+		Animate.1x AnimateTypes.1x Arrange.1x AutoExec.1x \
+		BalloonContents.1x Base.1x Bevel.1x ColorScheme.1x \
 		Feel.1x FeelWindowBox.1x Functions.1x Gravity.1x Look.1x \
 		MyBackground.1x MyFrame.1x MyStyle.1x Pager.1x \
-		PagerDecorations.1x Placement.1x SupportedHints.1x \
-		TbarLayout.1x Wharf.1x WharfFolders.1x WharfSounds.1x \
-		WinCommand.1x WinList.1x WinTabs.1x afterstep_faq.1x \
-		asimagexml.1x
-
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+		PagerDecorations.1x Placement.1x Sound.1x SoundEvents.1x \
+		SupportedHints.1x TbarLayout.1x Wharf.1x WharfFolders.1x \
+		WharfSounds.1x WinCommand.1x WinList.1x WinTabs.1x \
+		afterstep_faq.1x asimagexml.1x
 
 .if defined(WITH_DIFFERENT_LOOKNFEELS)
 CONFIGURE_ARGS+=	--enable-different-looknfeels
@@ -66,14 +61,13 @@ CONFIGURE_ARGS+=	--enable-different-looknfeels
 CONFIGURE_ARGS+=	--disable-savewindows
 .endif
 
-.include <bsd.port.pre.mk>
+.if exists(${PREFIX}/share/gnome/wm-properties)
+PLIST_SUB+=	GNOME:=""
+.else
+PLIST_SUB+=	GNOME:="@comment "
+.endif
 
-.if ${OSVERSION} >= 700000
-BROKEN=		Does not build on FreeBSD 7.x and higher
-.endif
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not build on sparc64
-.endif
+.include <bsd.port.pre.mk>
 
 post-extract:
 	${CP} ${FILESDIR}/monitor_bsd.xpm \
@@ -100,15 +94,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}/${file}
 .endfor
-
-post-build:
-	${MV} "${WRKSRC}/src/ASDocGen/man/Balloon Contents.man" \
-		"${WRKSRC}/src/ASDocGen/man/BalloonContents.man"
-	${MV} "${WRKSRC}/src/ASDocGen/html/Balloon Contents.html" \
-		"${WRKSRC}/src/ASDocGen/html/BalloonContents.html"
-	${MV} "${WRKSRC}/src/ASDocGen/man/Wharf Folders.man" \
-		"${WRKSRC}/src/ASDocGen/man/WharfFolders.man"
-	${MV} "${WRKSRC}/src/ASDocGen/html/Wharf Folders.html" \
-		"${WRKSRC}/src/ASDocGen/html/WharfFolders.html"
 
 .include <bsd.port.post.mk>

@@ -1,33 +1,20 @@
 $FreeBSD$
 
---- src/ASDocGen/Makefile.in.orig	Tue Dec 13 14:48:33 2005
-+++ src/ASDocGen/Makefile.in	Mon Jun 26 08:53:46 2006
-@@ -50,19 +50,19 @@
- 
- install.man:	$(PROG)
- 		@cd man; echo "Installing application man pages using command - " ; \
--		echo "    \"$(INSTALL_DATA) <name>.man $(AFTER_MAN_DIR)/html/<name>.1x\""; \
-+		echo "    \"$(INSTALL_DATA) <name>.man $(AFTER_MAN_DIR)/<name>.1x\""; \
+--- src/ASDocGen/Makefile.in.orig	2008-03-24 23:58:23.000000000 -0700
++++ src/ASDocGen/Makefile.in	2008-03-25 00:01:05.000000000 -0700
+@@ -55,14 +55,7 @@
  		for f in `ls *.man`; do \
  			page_name=`echo $$f| awk -F . '{print $$1}'`; \
  	  		echo -n "$$f "; \
 -	  		$(INSTALL_DATA) $$page_name.man $(AFTER_MAN_DIR)/$$page_name.1x; \
 -		done; echo "Done"; \
 -		cd API; echo "Installing API man pages using command - " ; \
--		echo "    \"$(INSTALL_DATA) <name>.man $(AFTER_MAN_API_DIR)/html/<name>.3x\""; \
+-		echo "    \"$(INSTALL_DATA) <name>.man $(AFTER_MAN_API_DIR)/<name>.3x\""; \
 -		for f in `ls *.man`; do \
 -			page_name=`echo $$f| awk -F . '{print $$1}'`; \
 -	  		echo -n "$$f "; \
 -	  		$(INSTALL_DATA) $$page_name.man $(AFTER_MAN_API_DIR)/$$page_name.3x; \
 +	  		$(INSTALL_DATA) "$$page_name.man" $(AFTER_MAN_DIR)/$$page_name.1x; \
  		done; echo "Done"; \
-+#		cd API; echo "Installing API man pages using command - " ; \
-+#		echo "    \"$(INSTALL_DATA) <name>.man $(AFTER_MAN_API_DIR)/html/<name>.3x\""; \
-+#		for f in `ls *.man`; do \
-+#			page_name=`echo $$f| awk -F . '{print $$1}'`; \
-+#	  		echo -n "$$f "; \
-+#	  		$(INSTALL_DATA) $$page_name.man $(AFTER_MAN_API_DIR)/$$page_name.3x; \
-+#		done; echo "Done"; \
  		cd ../..
  
- install.data_html:  do_compile
