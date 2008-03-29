@@ -14,6 +14,8 @@ bin/gpodder
 %%PYTHON_SITELIBDIR%%/gpodder/download.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/draw.py
 %%PYTHON_SITELIBDIR%%/gpodder/draw.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/dumbshelve.py
+%%PYTHON_SITELIBDIR%%/gpodder/dumbshelve.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gui.py
 %%PYTHON_SITELIBDIR%%/gpodder/gui.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/libconverter.py
