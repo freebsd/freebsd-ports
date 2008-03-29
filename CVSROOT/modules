@@ -14784,6 +14784,7 @@ rubygem-bluecloth	ports/www/rubygem-bluecloth
 rubygem-builder	ports/devel/rubygem-builder
 rubygem-capistrano	ports/sysutils/rubygem-capistrano
 rubygem-captcha	ports/graphics/rubygem-captcha
+rubygem-color	ports/print/rubygem-color
 rubygem-colortools	ports/print/rubygem-colortools
 rubygem-daemons	ports/devel/rubygem-daemons
 rubygem-eventmachine	ports/devel/rubygem-eventmachine
