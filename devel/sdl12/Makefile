@@ -120,7 +120,7 @@ CONFIGURE_ARGS+=--enable-pulseaudio
 CONFIGURE_ARGS+=--disable-pulseaudio
 .endif
 
-.if defined(WITHOUT_SVGALIB)
+.if (defined(WITHOUT_SVGALIB) || ${ARCH} != "i386")
 CONFIGURE_ARGS+=--disable-video-svga
 .else
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
