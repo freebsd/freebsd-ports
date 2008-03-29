@@ -20,6 +20,9 @@ USE_PHP=	mysql pcre zlib
 SUB_LIST+=	"MYADSDIR=${MYADSDIR}" \
 		"PKGNAME=${PKGNAME}"
 
+DEPRECATED=	replaced by www/openx
+EXPIRATION_DATE=	2008-04-30
+
 # Unfortunately can't make WITH_SUPHP part of the OPTIONS selection,
 # since it has to be processed before just about anything else.
 
