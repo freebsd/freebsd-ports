@@ -7,6 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.4.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -41,7 +42,7 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-sys-location="${NET_SNMP_SYS_LOCATION}" \
 		--with-logfile="${NET_SNMP_LOGFILE}" \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
-		--with-gnu-ld --with-libwrap --with-libs="-lkvm -ldevstat"
+		--with-gnu-ld --with-libwrap --with-libs="-lm -lkvm -ldevstat"
 
 .if defined(BATCH)
 CONFIGURE_ARGS+=--with-defaults
@@ -207,7 +208,7 @@ DOC_FILES=	AGENT.txt COPYING FAQ NEWS README \
 		agent/mibgroup/README.smux
 
 PS_CMD?=	/bin/ps
-CONFLICTS=	net-snmp-4.* net-snmp-5.3.*
+CONFLICTS=	ucd-snmp-4.* net-snmp-5.3.*
 
 pre-everything::
 	@${ECHO_MSG}
@@ -235,15 +236,7 @@ pre-everything::
 	@${ECHO_MSG} "				agent"
 	@${ECHO_MSG}
 
-post-patch: patch-autoconf patch-script-files
-
-patch-autoconf:
-
-x-patch-autoconf:
-	@${AWK} '/@synopsis/,/taken from libtool.m4/' ${WRKSRC}/aclocal.m4 > ${WRKSRC}/aclocal.m4.tmp
-	@${CAT} ${LIBTOOL_M4} >> ${WRKSRC}/aclocal.m4.tmp
-	@${CP} ${LTMAIN} ${WRKSRC}
-	@${MV} ${WRKSRC}/aclocal.m4.tmp ${WRKSRC}/aclocal.m4
+post-patch: patch-script-files
 
 patch-script-files:
 .for filename in ${SCRIPT_FILES}
