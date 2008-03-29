@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grails
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	www java
 MASTER_SITES=	http://dist.codehaus.org/grails/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
