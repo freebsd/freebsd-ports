@@ -2,12 +2,18 @@ bin/gmpc
 include/gmpc/TreeSearchWidget.h
 include/gmpc/config1.h
 include/gmpc/gmpc-clicklabel.h
+include/gmpc/gmpc-connection.h
+include/gmpc/gmpc-meta-watcher.h
 include/gmpc/gmpc-metaimage.h
+include/gmpc/gmpc-mpddata-model-sort.h
 include/gmpc/gmpc-mpddata-model.h
 include/gmpc/gmpc-mpddata-treeview.h
 include/gmpc/gmpc-profiles.h
+include/gmpc/gmpc-signals.h
 include/gmpc/gmpc_easy_download.h
 include/gmpc/metadata.h
+include/gmpc/misc.h
+include/gmpc/playlist3-messages.h
 include/gmpc/plugin.h
 libdata/pkgconfig/gmpc.pc
 share/applications/gmpc.desktop
@@ -26,6 +32,10 @@ share/applications/gmpc.desktop
 %%DATADIR%%/hicolor/16x16/actions/playlist-browser.png
 %%DATADIR%%/hicolor/16x16/actions/playlist-search-browser.png
 %%DATADIR%%/hicolor/16x16/actions/tag-browser.png
+%%DATADIR%%/hicolor/22x22/actions/gmpc-tray-disconnected.png
+%%DATADIR%%/hicolor/22x22/actions/gmpc-tray-pause.png
+%%DATADIR%%/hicolor/22x22/actions/gmpc-tray-play.png
+%%DATADIR%%/hicolor/22x22/actions/gmpc-tray.png
 %%DATADIR%%/hicolor/22x22/actions/media-playlist.png
 %%DATADIR%%/hicolor/32x32/actions/media-playlist.png
 %%DATADIR%%/hicolor/32x32/actions/media-tag.png
@@ -35,6 +45,10 @@ share/applications/gmpc.desktop
 %%DATADIR%%/hicolor/48x48/actions/media-playlist.png
 %%DATADIR%%/hicolor/48x48/actions/media-tag.png
 %%DATADIR%%/hicolor/48x48/actions/tag-browser.png
+%%DATADIR%%/hicolor/scalable/actions/gmpc-tray-disconnected.svg
+%%DATADIR%%/hicolor/scalable/actions/gmpc-tray-pause.svg
+%%DATADIR%%/hicolor/scalable/actions/gmpc-tray-play.svg
+%%DATADIR%%/hicolor/scalable/actions/gmpc-tray.svg
 %%DATADIR%%/media-album.png
 %%DATADIR%%/media-artist.png
 %%DATADIR%%/media-audiofile.png
@@ -44,10 +58,16 @@ share/applications/gmpc.desktop
 share/locale/de/LC_MESSAGES/gmpc.mo
 share/locale/fr/LC_MESSAGES/gmpc.mo
 share/locale/gl/LC_MESSAGES/gmpc.mo
+share/locale/it/LC_MESSAGES/gmpc.mo
+share/locale/nb_NO/LC_MESSAGES/gmpc.mo
 share/locale/nl/LC_MESSAGES/gmpc.mo
 share/locale/pl/LC_MESSAGES/gmpc.mo
 share/locale/ru/LC_MESSAGES/gmpc.mo
 share/pixmaps/gmpc.png
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
+@dirrmtry %%DATADIR%%/hicolor/scalable/actions
+@dirrmtry %%DATADIR%%/hicolor/scalable
 @dirrmtry %%DATADIR%%/hicolor/48x48/actions
 @dirrmtry %%DATADIR%%/hicolor/48x48
 @dirrmtry %%DATADIR%%/hicolor/32x32/actions
@@ -57,6 +77,6 @@ share/pixmaps/gmpc.png
 @dirrmtry %%DATADIR%%/hicolor/16x16/actions
 @dirrmtry %%DATADIR%%/hicolor/16x16
 @dirrmtry %%DATADIR%%/hicolor
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 @dirrmtry share/applications
 @dirrm include/gmpc
