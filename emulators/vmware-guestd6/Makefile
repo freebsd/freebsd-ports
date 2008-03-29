@@ -52,8 +52,8 @@ USE_RC_SUBR=	vmware-guestd.sh
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
-VMWARE_VER=	6.0.2
-BUILD_VER=	59824
+VMWARE_VER=	6.0.3
+BUILD_VER=	80004
 
 .include <bsd.port.pre.mk>
 
@@ -217,6 +217,7 @@ do-install:
 .endif
 	-${WRKSRC}/lib/sbin${BITS}${OSSFX}/vmware-guestd --cmd toolinstall.end 2>&1
 	${MKDIR} ${PREFIX}/share/vmware-tools
+	${INSTALL_DATA} ${WRKSRC}/doc/open_source_licenses.txt ${PREFIX}/share/vmware-tools
 	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/poweroff-vm-default
 	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/poweron-vm-default
 	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/resume-vm-default
