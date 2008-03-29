@@ -14779,6 +14779,7 @@ rubygem-activerecord	ports/databases/rubygem-activerecord
 rubygem-activesupport	ports/devel/rubygem-activesupport
 rubygem-amazon-ecs	ports/www/rubygem-amazon-ecs
 rubygem-analogger	ports/devel/rubygem-analogger
+rubygem-archive-tar-minitar	ports/archivers/rubygem-archive-tar-minitar
 rubygem-bluecloth	ports/www/rubygem-bluecloth
 rubygem-builder	ports/devel/rubygem-builder
 rubygem-capistrano	ports/sysutils/rubygem-capistrano
