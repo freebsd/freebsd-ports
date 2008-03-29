@@ -20,8 +20,8 @@ PORTDOCS=	README README.profilers
 USE_XORG=	x11 xext sm xxf86vm
 
 DEFINES=	-DXCALIB_VERSION=\"${PORTVERSION}\" -DUNIX
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lm -lX11 -lXxf86vm -lXext
-CFLAGS+=	-I./icclib -I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib -lm -lX11 -lXxf86vm -lXext
+CFLAGS+=	-I./icclib -I${LOCALBASE}/include -I${LOCALBASE}/include
 
 do-build:
 	${CC} ${CFLAGS} ${DEFINES} -c ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}.o
