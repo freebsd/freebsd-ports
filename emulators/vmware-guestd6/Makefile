@@ -31,6 +31,12 @@ IS_INTERACTIVE=	yes
 .if defined(VMWARE_X_PORTS)
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
+.if ${ARCH} == amd64
+WITH_VMWARE_GTK= yes
+PLIST_SUB+=	INSTALLXTCLTOOL="@comment "
+.else
+PLIST_SUB+=	INSTALLXTCLTOOL=""
+.endif
 .if defined(WITH_VMWARE_GTK)
 PLIST_SUB+=	INSTALLXGTKTOOL=""
 USE_ICONV=	yes
@@ -172,10 +178,14 @@ post-extract:
 .if defined(VMWARE_X_PORTS)
 
 do-install:
+.if ${ARCH} == i386
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}${OSSFX}/vmware-toolbox-tcl ${X11BASE}/bin
-	${LN} -sfh vmware-toolbox-tcl ${X11BASE}/bin/vmware-toolbox
+.endif
 .if defined(WITH_VMWARE_GTK)
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}${OSSFX}/vmware-toolbox-gtk ${X11BASE}/bin
+	${LN} -sfh vmware-toolbox-gtk ${X11BASE}/bin/vmware-toolbox
+.else
+	${LN} -sfh vmware-toolbox-tcl ${X11BASE}/bin/vmware-toolbox
 .endif
 	-${WRKSRC}/lib/sbin${BITS}${OSSFX}/vmware-guestd --cmd toolinstall.end 2>&1
 

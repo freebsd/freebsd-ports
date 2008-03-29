@@ -1,5 +1,5 @@
 bin/vmware-toolbox
-bin/vmware-toolbox-tcl
+%%INSTALLXTCLTOOL%%bin/vmware-toolbox-tcl
 %%INSTALLXGTKTOOL%%bin/vmware-toolbox-gtk
 %%INSTALLXSERVER4%%etc/XF86Config-4_VMware
 %%INSTALLXMODULES%%lib/modules/drivers/vmware_drv.o_VMware
