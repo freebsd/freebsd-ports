@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xautomation
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	x11
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
