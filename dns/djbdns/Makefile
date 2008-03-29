@@ -14,13 +14,13 @@ MASTER_SITES=	http://cr.yp.to/djbdns/ \
 DISTNAME=	djbdns-${DJBDNS_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-OPTIONS=	DUMPCACHE	'persistent cache for dnscache' off \
-		IPV6		'IPv6 support by Felix von Leitner' off \
-		IGNOREIP	'ignoreip2 patch by Russell Nelson' off \
-		JUMBO		'jumbo patch by Claudiu Costin' off \
-		MAN		'manual pages by Gerritt Pape' on \
-		PERSISTENT_MMAP	'persistent mmap patch by Lennert Buytenhek' off \
-		SRV		'SRV record patch by Michael Handler' off
+OPTIONS=	DUMPCACHE	"persistent cache for dnscache" off \
+		IPV6		"IPv6 support by Felix von Leitner" off \
+		IGNOREIP	"ignoreip2 patch by Russell Nelson" off \
+		JUMBO		"jumbo patch by Claudiu Costin" off \
+		MAN		"manual pages by Gerritt Pape" on \
+		PERSISTENT_MMAP	"persistent mmap patch by Lennert Buytenhek" off \
+		SRV		"SRV record patch by Michael Handler" off
 
 .include <bsd.port.pre.mk>
 
