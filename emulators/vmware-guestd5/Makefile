@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-PORTREVISION?=	3
+#PORTREVISION?=	0
 CATEGORIES=	emulators kld
 MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-guestd
@@ -37,7 +37,11 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_GNOME=	glib12 gtk12
+.if (${OSVERSION} >= 600000)
+LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
+.else
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
+.endif
 .else
 PLIST_SUB+=	INSTALLXGTKTOOL:="@comment "
 .endif
@@ -48,8 +52,8 @@ USE_RC_SUBR=	vmware-guestd.sh
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
-VMWARE_VER=	5.5.1
-BUILD_VER=	19175
+VMWARE_VER=	5.5.5
+BUILD_VER=	56455
 
 .include <bsd.port.pre.mk>
 
@@ -59,9 +63,17 @@ MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
 
 .if ${ARCH} == i386
+.if (${OSVERSION} >= 600000)
+BITS?=		32-6
+.else
 BITS?=		32
+.endif
 .else # ${ARCH} == amd64
+.if (${OSVERSION} >= 600000)
+BITS?=		64-6
+.else
 BITS?=		64
+.endif
 .endif
 
 .if defined(VMWARE_X_PORTS)
@@ -75,7 +87,7 @@ VMWARE_KMODDIR=	${PREFIX}/lib/vmware-tools/modules
 .if !defined(WITHOUT_VMWARE_VMMEMCTL) && exists(/usr/src/sys/Makefile)
 WITH_VMWARE_VMMEMCTL=YES
 .endif
-.if !defined(WITHOUT_VMWARE_VMXNET) && (${BITS} == 32)
+.if !defined(WITHOUT_VMWARE_VMXNET) && (${ARCH} == i386)
 WITH_VMWARE_VMXNET=YES
 .endif
 
@@ -94,9 +106,12 @@ VMWARE_VMXNET_PATH=	5.3-i386/vmxnet.ko
 VMWARE_VMXNET_PATH=	5.3-amd64/vmxnet.ko
 .endif
 .else
-# VMware doesn't provide vmxnet.ko for other versions
-.undef WITH_VMWARE_VMXNET
-PLIST_SUB+=	VMWARE_VMXNET:="@comment "
+PLIST_SUB+=	VMWARE_VMXNET:=""
+.if ${BITS} == 32-6
+VMWARE_VMXNET_PATH=	6.0-i386/vmxnet.ko
+.else
+VMWARE_VMXNET_PATH=	6.0-amd64/vmxnet.ko
+.endif
 .endif
 .else
 PLIST_SUB+=	VMWARE_VMXNET:="@comment "
@@ -155,7 +170,7 @@ do-install:
 	if [ ! -d ${X11BASE}/lib/modules/input ] ; then \
 		${MKDIR} ${X11BASE}/lib/modules/input ; \
 	fi
-.if ${BITS} == 32
+.if ${ARCH} == i386
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XOrg/6.8.x/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware
 .else
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XOrg/6.8.x_64/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware
