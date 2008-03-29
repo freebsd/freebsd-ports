@@ -73,6 +73,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 MILESTONE?=		4
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
+OOODIR=			openoffice.org3.0
 SNAPDATE=		20080321
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
@@ -229,7 +230,7 @@ do-install:
 		cd ${WRKDIR}/tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd-*/$$i ; \
 	done
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
-	@cd ${WRKDIR}/tmp/opt/openoffice* ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
+	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 .endif
 
 post-install:
@@ -237,6 +238,7 @@ post-install:
 	@${CP} ${FILESDIR}/openoffice.org-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%OOOTAG%%#${OOOTAG}#g' \
+			-e 's#%%OOODIR%%#${OOODIR}#g' \
 			-e 's#%%OOOVERSION%%#${OOOVERSION}#g' \
 			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice.org-wrapper
@@ -256,13 +258,13 @@ post-install:
 	@cd ${PREFIX} ; ${FIND} ${INSTALLATION_BASEDIR} -type d | ${SORT} -r | \
 		${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
 	@${REINPLACE_CMD} -e '/^Exec/s/printeradmin/spadmin/' \
-			${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop
+			${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/*.desktop
 	@for app in base calc draw impress math printeradmin writer; do \
 		${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -$${app} %U/" \
 			-e "s/^Icon.*/Icon=${EXECBASE}-$${app}.png/" \
-		${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/$${app}.desktop ; \
+		${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/$${app}.desktop ; \
 	done
-	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg/*.desktop.bak
+	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/*.desktop.bak
 	@${RM} -f ${DESKTOPDIR}/${EXECBASE}
 	@${MKDIR} ${DESKTOPDIR}
 	@${LN} -sf ${PREFIX}/${INSTALLATION_BASEDIR}/share/xdg \
