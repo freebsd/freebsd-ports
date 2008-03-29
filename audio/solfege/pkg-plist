@@ -767,6 +767,7 @@ share/pixmaps/solfege.png
 %%DATADIR%%/lesson-files/besifring
 %%DATADIR%%/lesson-files/bin/csound-play-harmonic-interval.sh
 %%DATADIR%%/lesson-files/bpm
+%%DATADIR%%/lesson-files/cadense-1
 %%DATADIR%%/lesson-files/chord-7b9-maj79
 %%DATADIR%%/lesson-files/chord-dim-aug
 %%DATADIR%%/lesson-files/chord-dim-aug-min-major
