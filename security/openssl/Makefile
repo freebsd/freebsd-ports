@@ -6,10 +6,6 @@
 #
 
 PORTNAME=	openssl
-.if defined(WITH_OPENSSL_SNAPSHOT)
-PORTVERSION=	0.9.8
-PORTREVISION!=	date -v-1d +%Y%m%d
-.else
 .if !defined(WITH_OPENSSL_BETA) && ( defined(WITH_OPENSSL_097) || defined(WITH_OPENSSL_STABLE) )
 PORTVERSION=	0.9.7m
 PORTREVISION?=	0
@@ -17,15 +13,14 @@ PORTREVISION?=	0
 PORTVERSION=	0.9.8g
 PORTREVISION?=	0
 .endif
-.endif
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/openssl/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR2}
+MASTER_SITE_SUBDIR=	source
 PKGNAMESUFFIX?=	${BETA_SUFFIX}${BASE_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${DISTNAME2}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
@@ -34,16 +29,7 @@ COMMENT=	SSL and crypto library
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-.if defined(WITH_OPENSSL_SNAPSHOT)
-MASTER_SITE_SUBDIR2=	snapshot
-DISTNAME2=	${PORTNAME}-${PORTVERSION}-stable-SNAP-${PORTREVISION}
-NO_CHECKSUM=	yes
-.else
-MASTER_SITE_SUBDIR2=	source
-DISTNAME2=	${PORTNAME}-${PORTVERSION}
-.endif
-
-.if defined(WITH_OPENSSL_BETA) || defined(WITH_OPENSSL_SNAPSHOT)
+.if defined(WITH_OPENSSL_BETA)
 BETA_SUFFIX=		-beta
 CONFLICTS?=		openssl-0.* openssl-stable-0.*
 NO_LATEST_LINK=		yes
