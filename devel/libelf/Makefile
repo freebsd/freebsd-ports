@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	libs
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A public ELF file access library similar to libelf(3) in Solaris
 
-OPTIONS=	EXTENDED	'ELF format extensions' on \
-		NLS		'Native Language Support' on
+OPTIONS=	EXTENDED	"ELF format extensions" on \
+		NLS		"Native Language Support" on
 
 .include <bsd.port.pre.mk>
 
