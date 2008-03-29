@@ -1,90 +1,90 @@
-%%CACHE_DIR%%/rubyful_soup-%%PORTVERSION%%%%EXTRACT_SUFX%%
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulSOAP.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulSOAP.src/M000027.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulSoup.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M0000%%RUBY_SHLIBVER%%.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000001.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000002.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000003.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000004.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000005.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000006.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000007.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000008.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000009.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000010.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000011.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000012.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000013.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000014.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000015.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000016.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000017.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000019.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000020.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000021.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000022.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000023.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000024.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000025.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src/M000026.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/HTML.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/HTML/SGMLParser.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/NavigableString.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/PageElement.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/PageElement.src/M000028.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/PageElement.src/M000029.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/PageElement.src/M000030.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/RobustHTMLParser.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/RobustXMLParser.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/SimplifyingSOAPParser.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/Tag.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000031.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000032.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000033.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000034.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000035.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000036.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000037.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000038.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000039.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000041.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000042.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000043.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000044.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000045.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000046.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000047.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000048.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000049.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000050.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000051.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000052.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src/M000053.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/created.rid
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/files/CHANGELOG.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/files/lib/rubyful_soup_rb.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/fr_class_index.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/fr_file_index.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/fr_method_index.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/index.html
-%%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/rdoc-style.css
-%%GEMS_DIR%%/rubyful_soup-%%PORTVERSION%%/CHANGELOG
-%%GEMS_DIR%%/rubyful_soup-%%PORTVERSION%%/lib/rubyful_soup.rb
-%%GEMS_DIR%%/rubyful_soup-%%PORTVERSION%%/tests/rubyful_soup_tests.rb
-%%SPEC_DIR%%/rubyful_soup-%%PORTVERSION%%%%EXTRACT_SUFX%%spec
-@dirrm %%GEMS_DIR%%/rubyful_soup-%%PORTVERSION%%/lib
-@dirrm %%GEMS_DIR%%/rubyful_soup-%%PORTVERSION%%/tests
-@dirrm %%GEMS_DIR%%/rubyful_soup-%%PORTVERSION%%
-@dirrm %%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/files/lib
-@dirrm %%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/files
-@dirrm %%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/TagModule.src
-@dirrm %%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/PageElement.src
-@dirrm %%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/HTML
-@dirrm %%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulStoneSoup.src
-@dirrm %%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes/BeautifulSOAP.src
-@dirrm %%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc/classes
-@dirrm %%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%/rdoc
-@dirrm %%DOC_DIR%%/rubyful_soup-%%PORTVERSION%%
+%%GEM_CACHE%%
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulSOAP.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulSOAP.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulSoup.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML.html
+%%GEM_DOC_DIR%%/rdoc/classes/HTML/SGMLParser.html
+%%GEM_DOC_DIR%%/rdoc/classes/NavigableString.html
+%%GEM_DOC_DIR%%/rdoc/classes/PageElement.html
+%%GEM_DOC_DIR%%/rdoc/classes/PageElement.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/PageElement.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/PageElement.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/RobustHTMLParser.html
+%%GEM_DOC_DIR%%/rdoc/classes/RobustXMLParser.html
+%%GEM_DOC_DIR%%/rdoc/classes/SimplifyingSOAPParser.html
+%%GEM_DOC_DIR%%/rdoc/classes/Tag.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/TagModule.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/CHANGELOG.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/rubyful_soup_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/lib/rubyful_soup.rb
+%%GEM_LIB_DIR%%/tests/rubyful_soup_tests.rb
+%%GEM_SPEC%%
+@dirrm %%GEM_LIB_DIR%%/tests
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TagModule.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/PageElement.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/HTML
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/BeautifulStoneSoup.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/BeautifulSOAP.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
