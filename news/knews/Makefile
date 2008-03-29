@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	news
 MASTER_SITES=	http://www.matematik.su.se/~kjj/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A threaded nntp newsreader for X
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
