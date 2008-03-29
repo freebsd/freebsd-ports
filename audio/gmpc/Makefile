@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gmpc
-PORTVERSION=	0.15.1
+PORTVERSION=	0.15.5.0
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION}/ \
+MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION:C/\.0$//}/ \
 		http://download.gna.org/kanicule/freebsd/distfiles/
 
 MAINTAINER=	mathias@monnerville.com
