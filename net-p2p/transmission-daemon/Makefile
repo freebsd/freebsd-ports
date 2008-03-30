@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-daemon
 
 COMMENT=	A free BitTorrent daemon written from scratch in C
@@ -14,7 +14,11 @@ DESCR=		${.CURDIR}/pkg-descr
 MASTERDIR=	${.CURDIR}/../transmission
 PLIST=		${.CURDIR}/pkg-plist
 
-CUSTOM_SUBDIRS=	third-party libtransmission daemon
+CONFIGURE_ARGS=${GCONFIGURE} \
+		--disable-cli \
+		--enable-daemon \
+		--disable-gtk
+
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 MAN1=		transmission-daemon.1 transmission-proxy.1 \
 		transmission-remote.1
