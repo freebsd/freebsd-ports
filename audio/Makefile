@@ -214,6 +214,7 @@
     SUBDIR += gmpc-mdcover
     SUBDIR += gmpc-osd
     SUBDIR += gmpc-qosd
+    SUBDIR += gmpc-random-playlist
     SUBDIR += gmpc-serverstats
     SUBDIR += gmpc-stopbutton
     SUBDIR += gmpccaa
