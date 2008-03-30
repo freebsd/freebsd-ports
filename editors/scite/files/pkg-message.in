@@ -1,0 +1,9 @@
+
+===============================================================================
+Note: As of version 1.76 of this port, SciTE's documentation has been moved
+      from %%DATADIR%% to %%DOCSDIR%%.
+      This will cause the "SciTE Help" option in the help menu to point to the
+      wrong location.  You will need to manually edit your
+      SciTEGlobal.properties file if you still wish to utilize that option.
+===============================================================================
+

@@ -1,26 +1,27 @@
 bin/SciTE
 share/applications/SciTE.desktop
 share/pixmaps/Sci48M.png
-%%DATADIR%%/CommandValues.html
+%%PORTDOCS%%%%DOCSDIR%%/CommandValues.html
+%%PORTDOCS%%%%DOCSDIR%%/PrintHi.png
+%%PORTDOCS%%%%DOCSDIR%%/SciBreak2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/SciTE.html
+%%PORTDOCS%%%%DOCSDIR%%/SciTEDirector.html
+%%PORTDOCS%%%%DOCSDIR%%/SciTEDoc.html
+%%PORTDOCS%%%%DOCSDIR%%/SciTEDownload.html
+%%PORTDOCS%%%%DOCSDIR%%/SciTEExtension.html
+%%PORTDOCS%%%%DOCSDIR%%/SciTEExternalLexer.html
+%%PORTDOCS%%%%DOCSDIR%%/SciTEExtras.html
+%%PORTDOCS%%%%DOCSDIR%%/SciTEFAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/SciTEIco.png
+%%PORTDOCS%%%%DOCSDIR%%/SciTEImage.html
+%%PORTDOCS%%%%DOCSDIR%%/SciTELexer.html
+%%PORTDOCS%%%%DOCSDIR%%/SciTELua.html
+%%PORTDOCS%%%%DOCSDIR%%/SciTERegEx.html
+%%PORTDOCS%%%%DOCSDIR%%/SciTEWord.jpg
+%%PORTDOCS%%%%DOCSDIR%%/demo.png
 %%DATADIR%%/Embedded.properties
-%%DATADIR%%/PrintHi.png
-%%DATADIR%%/SciBreak2.jpg
-%%DATADIR%%/SciTE.html
 %%DATADIR%%/SciTE.properties
-%%DATADIR%%/SciTEDirector.html
-%%DATADIR%%/SciTEDoc.html
-%%DATADIR%%/SciTEDownload.html
-%%DATADIR%%/SciTEExtension.html
-%%DATADIR%%/SciTEExternalLexer.html
-%%DATADIR%%/SciTEExtras.html
-%%DATADIR%%/SciTEFAQ.html
 %%DATADIR%%/SciTEGlobal.properties
-%%DATADIR%%/SciTEIco.png
-%%DATADIR%%/SciTEImage.html
-%%DATADIR%%/SciTELexer.html
-%%DATADIR%%/SciTELua.html
-%%DATADIR%%/SciTERegEx.html
-%%DATADIR%%/SciTEWord.jpg
 %%DATADIR%%/abaqus.properties
 %%DATADIR%%/abbrev.properties
 %%DATADIR%%/ada.properties
@@ -38,7 +39,6 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/csound.properties
 %%DATADIR%%/css.properties
 %%DATADIR%%/d.properties
-%%DATADIR%%/demo.png
 %%DATADIR%%/eiffel.properties
 %%DATADIR%%/erlang.properties
 %%DATADIR%%/escript.properties
@@ -65,6 +65,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/pascal.properties
 %%DATADIR%%/perl.properties
 %%DATADIR%%/pov.properties
+%%DATADIR%%/powershell.properties
 %%DATADIR%%/ps.properties
 %%DATADIR%%/purebasic.properties
 %%DATADIR%%/python.properties
@@ -83,4 +84,5 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/vhdl.properties
 %%DATADIR%%/yaml.properties
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
