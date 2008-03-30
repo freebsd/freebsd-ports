@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080330:
+  AFFECTS: users of www/mediawiki
+  AUTHOR: miwi@FreeBSD.org
+
+  www/mediawiki version is 1.12 now. 1.11 version was preserved on
+  www/mediawiki111 port.
+
 20080329:
   AFFECTS: users of www/phpadsnew
   AUTHOR: beech@FreeBSD.org
