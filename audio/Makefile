@@ -208,6 +208,7 @@
     SUBDIR += gmpc
     SUBDIR += gmpc-autoplaylist
     SUBDIR += gmpc-lastfm
+    SUBDIR += gmpc-libnotify
     SUBDIR += gmpc-lyrics
     SUBDIR += gmpc-magnatune
     SUBDIR += gmpc-mdcover
