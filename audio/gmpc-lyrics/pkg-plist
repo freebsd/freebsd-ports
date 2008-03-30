@@ -1,3 +1,4 @@
 share/gmpc/plugins/lyricsplugin.so
+share/gmpc/plugins/lyricsplugin.la
 @dirrm share/gmpc/plugins
 @dirrm share/gmpc

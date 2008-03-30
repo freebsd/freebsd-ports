@@ -1,3 +1,4 @@
 share/gmpc/plugins/osdplugin.so
+share/gmpc/plugins/osdplugin.la
 @dirrmtry share/gmpc/plugins
 @dirrmtry share/gmpc
