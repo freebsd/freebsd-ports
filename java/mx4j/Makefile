@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	mx4j
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	simon@olofsson.de
 COMMENT=	Open Source implementation of the Java Management Extensions (JMX)
 
 USE_JAVA=	yes
@@ -22,6 +20,10 @@ JAVA_VERSION=	1.3+
 PORTDOCS=	*
 .endif
 
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
+.endif
+
 JARFILES=	mx4j-examples.jar mx4j-impl.jar mx4j-jmx.jar \
 		mx4j-remote.jar mx4j-rimpl.jar mx4j-rjmx.jar \
 		mx4j-soap.war mx4j-tools.jar mx4j.jar
@@ -29,13 +31,10 @@ JARFILES=	mx4j-examples.jar mx4j-impl.jar mx4j-jmx.jar \
 PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 NO_BUILD=	yes
 
-post-extract:
-	@${FIND} -s -d ${WRKSRC}/examples -type d -exec ${RMDIR} {} \; >/dev/null 2>&1 || true
-
 do-install: do-install-jar do-install-javadoc
 
 do-install-jar:
-	@${ECHO_MSG} -n  ">> Installing .jar files..."
+	@${ECHO_MSG} -n ">> Installing .jar files in ${JAVAJARDIR} ..."
 	@for jarfile in ${JARFILES}; do					\
 		${INSTALL_DATA} ${WRKSRC}/lib/$$jarfile ${JAVAJARDIR} ;	\
 	done
@@ -43,20 +42,18 @@ do-install-jar:
 
 do-install-javadoc:
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR} ..."
 	@cd ${WRKSRC}/docs \
 	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [DONE]"
-	@${ECHO_MSG} -n ">> Installing examples in ${EXAMPLESDIR}..."
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${ECHO_MSG} -n ">> Installing examples in ${EXAMPLESDIR} ..."
 	@cd ${WRKSRC}/examples \
 	  && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 	@${ECHO_MSG} " [DONE]"
-	@${FIND} -s ${WRKSRC}/examples -not -type d \
-	  | ${SED} -ne 's,^${WRKSRC}/examples,${EXAMPLESDIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
-	@${FIND} -s -d ${WRKSRC}/examples -type d \
-	  | ${SED} -ne 's,^${WRKSRC}/examples,@dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
