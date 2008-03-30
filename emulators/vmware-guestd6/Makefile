@@ -28,6 +28,15 @@ ONLY_FOR_ARCHS=	i386 amd64
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
 .endif
+
+RESTRICTED=	"Not sure if we can redistribute this."
+NO_PACKAGE=	${RESTRICTED}
+
+VMWARE_VER=	6.0.3
+BUILD_VER=	80004
+
+.include <bsd.port.pre.mk>
+
 .if defined(VMWARE_X_PORTS)
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
@@ -48,15 +57,6 @@ PLIST_SUB+=	INSTALLXGTKTOOL="@comment "
 .else
 USE_RC_SUBR=	vmware-guestd.sh
 .endif
-
-RESTRICTED=	"Not sure if we can redistribute this."
-NO_PACKAGE=	${RESTRICTED}
-
-VMWARE_VER=	6.0.3
-BUILD_VER=	80004
-
-.include <bsd.port.pre.mk>
-
 .if ${OSVERSION} >= 700000
 LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
 .endif
