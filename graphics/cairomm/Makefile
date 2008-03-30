@@ -8,7 +8,7 @@
 
 PORTNAME=	cairomm
 PORTVERSION=	1.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 

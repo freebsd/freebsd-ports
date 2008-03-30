@@ -7,11 +7,12 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.5.14
+PORTVERSION=	1.4.14
 PORTREVISION?=	0
+PORTEPOCH?=	1
 CATEGORIES=	graphics
-#MASTER_SITES=	http://cairographics.org/releases/
-MASTER_SITES=	http://cairographics.org/snapshots/
+MASTER_SITES=	http://cairographics.org/releases/
+#MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
