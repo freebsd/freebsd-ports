@@ -14543,6 +14543,7 @@ ruby-aspectr	ports/devel/ruby-aspectr
 ruby-atk	ports/accessibility/ruby-atk
 ruby-audiofile	ports/audio/ruby-audiofile
 ruby-avl	ports/devel/ruby-avl
+ruby-aws	ports/www/ruby-aws
 ruby-bdb	ports/databases/ruby-bdb
 ruby-bdb1	ports/databases/ruby-bdb1
 ruby-bio	ports/biology/ruby-bio
