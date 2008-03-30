@@ -1,0 +1,4 @@
+share/gmpc/plugins/shoutplugin.la
+share/gmpc/plugins/shoutplugin.so
+@dirrmtry share/gmpc/plugins
+@dirrmtry share/gmpc
