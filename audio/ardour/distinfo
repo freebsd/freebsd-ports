@@ -1,3 +1,6 @@
 MD5 (ardour-2.3.1.tar.bz2) = 54abb231ae0c1fa3b3f2c2177c644c22
 SHA256 (ardour-2.3.1.tar.bz2) = bb93e70ec608143e5a94cbee809ae5a7fcbb5f89a2c18fe03ac9c2ad00aa6651
 SIZE (ardour-2.3.1.tar.bz2) = 4348658
+MD5 (vst_sdk2_3.zip) = c91d3be58ad4e9c695d0a90b2198be0d
+SHA256 (vst_sdk2_3.zip) = 5400e0bbfeef0ab8a67b48899a9e8067db47552f43b30d8d15323ab999523226
+SIZE (vst_sdk2_3.zip) = 4147357
