@@ -3930,6 +3930,7 @@ gmpc-random-playlist	ports/audio/gmpc-random-playlist
 gmpc-serverstats	ports/audio/gmpc-serverstats
 gmpc-shout	ports/audio/gmpc-shout
 gmpc-stopbutton	ports/audio/gmpc-stopbutton
+gmpc-wikipedia	ports/audio/gmpc-wikipedia
 gmpccaa		ports/audio/gmpccaa
 gmrun		ports/x11/gmrun
 gmsh		ports/cad/gmsh
