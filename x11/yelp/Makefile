@@ -18,7 +18,7 @@ COMMENT=	A help browser for the GNOME 2 desktop
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
     		rarian.0:${PORTSDIR}/textproc/rarian
 
-USE_GECKO=	firefox xulrunner seamonkey
+USE_GECKO=	firefox xulrunner
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_XORG=	ice
