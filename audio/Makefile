@@ -207,6 +207,7 @@
     SUBDIR += gmixer
     SUBDIR += gmpc
     SUBDIR += gmpc-autoplaylist
+    SUBDIR += gmpc-extraplaylist
     SUBDIR += gmpc-lastfm
     SUBDIR += gmpc-libnotify
     SUBDIR += gmpc-lyrics
