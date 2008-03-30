@@ -271,6 +271,7 @@
     SUBDIR += jetspeed
     SUBDIR += jetty
     SUBDIR += joomla
+    SUBDIR += joomla15
     SUBDIR += jtoolkit
     SUBDIR += junkbuster
     SUBDIR += kannel
