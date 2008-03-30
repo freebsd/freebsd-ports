@@ -3921,6 +3921,7 @@ gmpc-libnotify	ports/audio/gmpc-libnotify
 gmpc-lyrics	ports/audio/gmpc-lyrics
 gmpc-magnatune	ports/audio/gmpc-magnatune
 gmpc-mdcover	ports/audio/gmpc-mdcover
+gmpc-mserver	ports/audio/gmpc-mserver
 gmpc-osd	ports/audio/gmpc-osd
 gmpc-qosd	ports/audio/gmpc-qosd
 gmpc-random-playlist	ports/audio/gmpc-random-playlist
