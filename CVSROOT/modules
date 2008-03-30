@@ -3923,6 +3923,7 @@ gmpc-magnatune	ports/audio/gmpc-magnatune
 gmpc-mdcover	ports/audio/gmpc-mdcover
 gmpc-osd	ports/audio/gmpc-osd
 gmpc-qosd	ports/audio/gmpc-qosd
+gmpc-random-playlist	ports/audio/gmpc-random-playlist
 gmpc-serverstats	ports/audio/gmpc-serverstats
 gmpc-stopbutton	ports/audio/gmpc-stopbutton
 gmpccaa		ports/audio/gmpccaa
