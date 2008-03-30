@@ -3917,6 +3917,7 @@ gmp-ecm		ports/math/gmp-ecm
 gmpc		ports/audio/gmpc
 gmpc-autoplaylist	ports/audio/gmpc-autoplaylist
 gmpc-extraplaylist	ports/audio/gmpc-extraplaylist
+gmpc-favorites	ports/audio/gmpc-favorites
 gmpc-lastfm	ports/audio/gmpc-lastfm
 gmpc-libnotify	ports/audio/gmpc-libnotify
 gmpc-lyrics	ports/audio/gmpc-lyrics
