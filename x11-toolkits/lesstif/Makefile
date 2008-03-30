@@ -27,7 +27,7 @@ USE_LDCONFIG=	yes
 LIBTOOLFILES=	aclocal.m4 test/aclocal.m4
 CONFIGURE_ARGS+=	--enable-static --enable-shared --enable-production
 CONFIGURE_ARGS+=	--disable-maintainer-mode
-CFLAGS+=	-I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
 
 MAN1 =	lesstif.1 ltversion.1 mwm.1 uil.1 xmbind.1
 

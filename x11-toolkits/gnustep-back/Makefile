@@ -37,7 +37,7 @@ USE_XORG=		xft xrender xmu xext x11
 USE_FREETYPE=		yes
 
 RESTRICTED=	GPL3
-MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${X11BASE}/include"
+MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${LOCALBASE}/include"
 BACKVERSION=		${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 BREAKS_IF_PEDANTIC=	yes
 
@@ -51,8 +51,8 @@ PLIST_SUB+=		BACK=xdps-${BACKVERSION}
 PLIST_SUB+=		USE_XLIB="@comment "
 BACK_SUFFIX?=		-xdps
 CONFLICTS?=		gunstep-back-0.* gunstep-back-art-0.* gunstep-back-cairo-0.*
-ADDITIONAL_INCLUDE_DIRS+=	-I${X11BASE}/include
-ADDITIONAL_LDFLAGS+=	-L${X11BASE}/lib
+ADDITIONAL_INCLUDE_DIRS+=	-I${LOCALBASE}/include
+ADDITIONAL_LDFLAGS+=	-L${LOCALBASE}/lib
 .elif defined(WITH_GNUSTEP_LIBART)
 LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art

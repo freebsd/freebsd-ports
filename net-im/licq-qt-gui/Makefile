@@ -48,7 +48,7 @@ post-patch:
 
 post-install:
 #	${RM} -rf ${PREFIX}/share/licq/qt-gui/locale
-.if exists(${X11BASE}/bin/XFree86)
+.if exists(${LOCALBASE}/bin/XFree86)
 	@${CAT} ${PKGMESSAGE}
 .endif
 
