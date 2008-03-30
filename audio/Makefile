@@ -212,6 +212,7 @@
     SUBDIR += gmpc-lyrics
     SUBDIR += gmpc-magnatune
     SUBDIR += gmpc-mdcover
+    SUBDIR += gmpc-mserver
     SUBDIR += gmpc-osd
     SUBDIR += gmpc-qosd
     SUBDIR += gmpc-random-playlist
