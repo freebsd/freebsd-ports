@@ -1,0 +1,4 @@
+share/gmpc/plugins/libnotifyplugin.la
+share/gmpc/plugins/libnotifyplugin.so
+@dirrmtry share/gmpc/plugins
+@dirrmtry share/gmpc
