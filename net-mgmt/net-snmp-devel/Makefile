@@ -7,7 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -24,13 +24,14 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
 .if defined(WITH_TKMIB)
 RUN_DEPEND=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 .endif
-PATCH_DEPENDS=	${LIBTOOL_DEPENDS}
 
-USE_AUTOTOOLS=	autoconf:261 libtool:15
+GNU_CONFIGURE=	yes
 USE_RC_SUBR=	snmpd.sh snmptrapd.sh
 USE_OPENSSL=	yes
-INSTALLS_SHLIB=	yes
-.if !defined(WITHOUT_PERL)
+USE_LDCONFIG=	yes
+.if defined(WITHOUT_PERL)
+USE_PERL5_BUILD=yes
+.else
 USE_PERL5=	yes
 .endif
 
@@ -214,7 +215,6 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "WITH_INETADDRESS_HACK=yes	builds with the inetaddress hack"
 	@${ECHO_MSG} "WITH_TKMIB=yes		Install a graphical Perl/Tk/SNMP based mib browser"
 	@${ECHO_MSG} "WITHOUT_DUMMY_VALUES=yes	Provide 'placeholder' dummy values where"
 	@${ECHO_MSG} "				the necessary information is not available."
@@ -236,9 +236,7 @@ pre-everything::
 	@${ECHO_MSG} "				agent"
 	@${ECHO_MSG}
 
-post-patch: patch-script-files
-
-patch-script-files:
+post-patch:
 .for filename in ${SCRIPT_FILES}
 	@${REINPLACE_CMD} ${SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/local/${filename}
