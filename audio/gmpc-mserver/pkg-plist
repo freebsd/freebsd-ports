@@ -1,0 +1,4 @@
+share/gmpc/plugins/gmpcmserverplugin.la
+share/gmpc/plugins/gmpcmserverplugin.so
+@dirrmtry share/gmpc/plugins
+@dirrmtry share/gmpc
