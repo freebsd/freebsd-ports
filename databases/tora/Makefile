@@ -54,6 +54,11 @@ PREFIX2FIX=	doc/help/tora/preferences.html doc/help/preferences.texi\
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600029
+BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+CONFIGURE_ENV+=	MAKEINFO=${LOCALBASE}/bin/makeinfo
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|/etc/torarc|${PREFIX}/etc/torarc|' ${PREFIX2FIX:S|^|${WRKSRC}/|}
