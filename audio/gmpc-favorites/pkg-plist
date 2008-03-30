@@ -1,0 +1,4 @@
+share/gmpc/plugins/gmpcfavorites.la
+share/gmpc/plugins/gmpcfavorites.so
+@dirrmtry share/gmpc/plugins
+@dirrmtry share/gmpc
