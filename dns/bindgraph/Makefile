@@ -7,6 +7,7 @@
 
 PORTNAME=	bindgraph
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.linux.it/~md/software/
 EXTRACT_SUFX=	.tgz
@@ -49,13 +50,13 @@ post-patch:
 do-install:
 	${MKDIR} ${CGIDIR}
 	${MKDIR} ${DATADIR}
-	@${CHOWN} -R ${BINDGRAPH_USER}:${BINDGRAPH_GROUP} ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/bindgraph.pl ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/bindgraph.cgi ${CGIDIR}
+	@${CHOWN} -R ${BINDGRAPH_USER}:${BINDGRAPH_GROUP} ${DATADIR}/
+	@${INSTALL_SCRIPT} ${WRKSRC}/bindgraph.pl ${PREFIX}/sbin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/bindgraph.cgi ${CGIDIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	for f in ${DOCS}; do \
-	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
+	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}/; \
 	done
 .endif
 
