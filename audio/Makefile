@@ -221,6 +221,7 @@
     SUBDIR += gmpc-serverstats
     SUBDIR += gmpc-shout
     SUBDIR += gmpc-stopbutton
+    SUBDIR += gmpc-wikipedia
     SUBDIR += gmpccaa
     SUBDIR += gnapster
     SUBDIR += gnomad2

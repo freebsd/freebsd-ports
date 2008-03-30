@@ -1,0 +1,4 @@
+share/gmpc/plugins/wikiplugin.la
+share/gmpc/plugins/wikiplugin.so
+@dirrmtry share/gmpc/plugins
+@dirrmtry share/gmpc
