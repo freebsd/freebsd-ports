@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=--disable-nls
 .endif
 
 .ifdef WITH_NAS
- CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${X11BASE}/bin/auplay
+ CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${LOCALBASE}/bin/auplay
  RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
 .elifdef WITH_SOX
  CONFIGURE_ARGS+=	--enable-audio --with-audio-cmd=${LOCALBASE}/bin/play
@@ -103,7 +103,7 @@ do-install:
 .if !defined(WITHOUT_X11)
 	${INSTALL_PROGRAM} ${WRKSRC}/faces/faces ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/faces/faces.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/faces/Faces.ad ${X11BASE}/lib/X11/app-defaults/Faces
+	${INSTALL_DATA} ${WRKSRC}/faces/Faces.ad ${LOCALBASE}/lib/X11/app-defaults/Faces
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

@@ -27,8 +27,8 @@ CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-x
-CONFIGURE_ARGS+=	--with-x-include=${X11BASE}/include
-CONFIGURE_ARGS+=	--with-x-include=${X11BASE}/lib
+CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/include
+CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/lib
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_CONFIGURE=	yes

@@ -58,7 +58,7 @@ WITH_LIBMNG=	yes
 WITH_LIBWMF=	yes
 .endif
 
-.if exists(${X11BASE}/lib/librsvg.so.1)
+.if exists(${LOCALBASE}/lib/librsvg.so.1)
 WITH_LIBRSVG=	yes
 .endif
 

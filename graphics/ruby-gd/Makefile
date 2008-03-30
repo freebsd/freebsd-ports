@@ -46,7 +46,7 @@ WITH_X11_CHECK=		# empty
 .if !empty(WITH_X11_CHECK)
 USE_XORG=	xpm x11
 PKGNAMESUFFIX_XPM=	+xpm
-CONFIGURE_ARGS+=	--with-X11-dir="${X11BASE}" --with-xpm
+CONFIGURE_ARGS+=	--with-X11-dir="${LOCALBASE}" --with-xpm
 .endif
 
 EXAMPLES_EN=	example.rb	\
@@ -63,7 +63,7 @@ DOCS_JA=	readme.ja	\
 		doc/INSTALL.ja
 
 post-patch:
-	${RUBY} -i -pe 'sub %r:/win98/windows/FONTS:, "${X11BASE}/lib/X11/fonts/TrueType"' ${WRKSRC}/sample/gdtestttf.rb
+	${RUBY} -i -pe 'sub %r:/win98/windows/FONTS:, "${LOCALBASE}/lib/X11/fonts/TrueType"' ${WRKSRC}/sample/gdtestttf.rb
 .if defined(WITH_GD1)
 	${RUBY} -i -pe 'sub %r:%%GD%%:, "gd1"' ${WRKSRC}/extconf.rb
 .else

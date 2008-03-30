@@ -23,8 +23,8 @@ USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
-		--with-dps-libraries=${X11BASE}/lib
+CONFIGURE_ARGS=	--with-dps-includes=${LOCALBASE}/include \
+		--with-dps-libraries=${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
