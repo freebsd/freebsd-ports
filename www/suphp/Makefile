@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	suphp
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|koitsu|}
