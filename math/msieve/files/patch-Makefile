@@ -1,78 +1,27 @@
---- Makefile.orig	Sun May 27 07:36:20 2007
-+++ Makefile	Wed May 30 21:57:37 2007
-@@ -24,19 +24,19 @@
+--- Makefile.orig	2008-03-23 05:32:08.000000000 +0100
++++ Makefile	2008-03-28 13:15:14.000000000 +0100
+@@ -26,12 +26,12 @@
  
  # gcc with basic optimization (-march flag could
  # get overridden by architecture-specific builds)
 -CC = gcc
 +#CC = gcc
  WARN_FLAGS = -Wall -W -Wconversion
--OPT_FLAGS = -O3 -fomit-frame-pointer -DNDEBUG -march=athlon
-+#OPT_FLAGS = -O3 -fomit-frame-pointer -DNDEBUG -march=athlon
- # OPT_FLAGS = -O3 -fomit-frame-pointer -DNDEBUG -march=k8
+-OPT_FLAGS = -O3 -fomit-frame-pointer -march=athlon -D_FILE_OFFSET_BITS=64
++#OPT_FLAGS = -O3 -fomit-frame-pointer -march=athlon -D_FILE_OFFSET_BITS=64
+ #OPT_FLAGS = -O3 -fomit-frame-pointer -march=k8
  
- # note that if GSL was built as a shared library you may need
- # to append -lgslcblas to LIB_GSL, or even build a static version
- # Note to MinGW users: comment out LIB_THREAD, you don't need it
+-CFLAGS = $(OPT_FLAGS) $(MACHINE_FLAGS) $(WARN_FLAGS) -Iinclude -Ignfs/poly
++CFLAGS += $(WARN_FLAGS) -Iinclude -Ignfs/poly $(CPPFLAGS)
  
--LIB_THREAD = -lpthread
--LIB_GSL = -lgsl
-+LIB_THREAD = $(PTHREAD_LIBS)
-+LIB_GSL = -lgsl -lgslcblas
+ LIBS = -lm
  
--CFLAGS = $(OPT_FLAGS) $(MACHINE_FLAGS) $(WARN_FLAGS) -Iinclude
-+CFLAGS += $(WARN_FLAGS) -Iinclude $(CPPFLAGS)
+@@ -50,7 +50,7 @@
+ endif
+ 
+ # Note to MinGW users: comment out the next line, you don't need it
+-LIBS += -lpthread
++LIBS += $(PTHREAD_LIBS)
  
  #---------------------------------- Generic file lists -------------------
  
-@@ -160,7 +160,7 @@
- 	ar r libmsieve.a $(COMMON_OBJS_NO_NFS) $(QS_OBJS) \
- 			$(QS_CORE_OBJS) $(QS_CORE_OBJS_X86)
- 	ranlib libmsieve.a
--	$(CC) $(CFLAGS) demo.c -o msieve -lm libmsieve.a $(LIB_THREAD)
-+	$(CC) $(CFLAGS) $(LDFLAGS) demo.c -o msieve -lm libmsieve.a $(LIB_THREAD)
- 
- x86_64: $(COMMON_OBJS_NO_NFS) $(QS_OBJS) \
- 		$(QS_CORE_OBJS) $(QS_CORE_OBJS_X86_64)
-@@ -168,13 +168,13 @@
- 	ar r libmsieve.a $(COMMON_OBJS_NO_NFS) $(QS_OBJS) \
- 			$(QS_CORE_OBJS) $(QS_CORE_OBJS_X86_64)
- 	ranlib libmsieve.a
--	$(CC) $(CFLAGS) demo.c -o msieve -lm libmsieve.a $(LIB_THREAD)
-+	$(CC) $(CFLAGS) $(LDFLAGS) demo.c -o msieve -lm libmsieve.a $(LIB_THREAD)
- 
- generic: $(COMMON_OBJS_NO_NFS) $(QS_OBJS) $(QS_CORE_OBJS)
- 	rm -f libmsieve.a
- 	ar r libmsieve.a $(COMMON_OBJS_NO_NFS) $(QS_OBJS) $(QS_CORE_OBJS)
- 	ranlib libmsieve.a
--	$(CC) $(CFLAGS) demo.c -o msieve -lm libmsieve.a $(LIB_THREAD)
-+	$(CC) $(CFLAGS) $(LDFLAGS) demo.c -o msieve -lm libmsieve.a $(LIB_THREAD)
- 
- x86_nfs: $(COMMON_OBJS) $(QS_OBJS) $(NFS_OBJS) \
- 		$(QS_CORE_OBJS) $(QS_CORE_OBJS_X86)
-@@ -182,7 +182,7 @@
- 	ar r libmsieve.a $(COMMON_OBJS) $(QS_OBJS) $(NFS_OBJS) \
- 			$(QS_CORE_OBJS) $(QS_CORE_OBJS_X86)
- 	ranlib libmsieve.a
--	$(CC) $(CFLAGS) demo.c -o msieve -lm libmsieve.a \
-+	$(CC) $(CFLAGS) $(LDFLAGS) demo.c -o msieve -lm libmsieve.a \
- 			$(LIB_THREAD) $(LIB_GSL)
- 
- x86_64_nfs: $(COMMON_OBJS) $(QS_OBJS) $(NFS_OBJS) \
-@@ -191,14 +191,14 @@
- 	ar r libmsieve.a $(COMMON_OBJS) $(QS_OBJS) $(NFS_OBJS) \
- 			$(QS_CORE_OBJS) $(QS_CORE_OBJS_X86_64)
- 	ranlib libmsieve.a
--	$(CC) $(CFLAGS) demo.c -o msieve -lm libmsieve.a \
-+	$(CC) $(CFLAGS) $(LDFLAGS) demo.c -o msieve -lm libmsieve.a \
- 			$(LIB_THREAD) $(LIB_GSL)
- 
- generic_nfs: $(COMMON_OBJS) $(QS_OBJS) $(QS_CORE_OBJS) $(NFS_OBJS)
- 	rm -f libmsieve.a
- 	ar r libmsieve.a $(COMMON_OBJS) $(QS_OBJS) $(NFS_OBJS) $(QS_CORE_OBJS)
- 	ranlib libmsieve.a
--	$(CC) $(CFLAGS) demo.c -o msieve -lm libmsieve.a \
-+	$(CC) $(CFLAGS) $(LDFLAGS) demo.c -o msieve -lm libmsieve.a \
- 			$(LIB_THREAD) $(LIB_GSL)
- 
- clean:

@@ -1,11 +1,11 @@
 Msieve is a library and utility for factoring large integers using the most
 powerful modern algorithms.  It features a stable and very fast implementation
-of a self-initializing multiple polynomial quadratic sieve (MPQS), plus highly
-experimental and unfinished general number field sieve (GNFS) code.
+of a self-initializing multiple polynomial quadratic sieve (MPQS), plus a
+somewhat experimental general number field sieve (GNFS) code.
 
 Primary design goals are speed, portability and ease of use.  Msieve claims to
 be the fastest implementation for factoring general inputs between 40 and 100
-decimal digits.
+decimal digits, but can handle larger input as well.
 
 Author: Jason Papadopoulos <jasonp@boo.net>
 WWW: http://www.boo.net/~jasonp/qs.html

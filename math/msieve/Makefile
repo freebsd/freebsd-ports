@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	msieve
-PORTVERSION=	1.23
-PORTREVISION=	1
+PORTVERSION=	1.34
 CATEGORIES=	math
 MASTER_SITES=	http://www.boo.net/~jasonp/ \
 		http://mirror.roe.ch/dist/msieve/
@@ -16,49 +15,44 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	daniel@roe.ch
 COMMENT=	Fast factorization of big integers using MPQS and GNFS
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libecm.a:${PORTSDIR}/math/gmp-ecm
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		ECM=1
 
 PLIST_FILES=	bin/msieve lib/libmsieve.a include/msieve/msieve.h \
 		include/msieve/mp.h include/msieve/util.h
 PLIST_DIRS=	include/msieve
 PORTDOCS=	Changes Readme Readme.nfs Readme.qs
 
-OPTIONS=	OCFLAGS "Enable optimized CFLAGS" On \
-		GNFS "General Number Field Sieve support" On
+OPTIONS=	OCFLAGS "Enable optimized CFLAGS" On
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_OCFLAGS)
+CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer -D_FILE_OFFSET_BITS=64
+.else
+CFLAGS+=	-D_FILE_OFFSET_BITS=64
+.endif
 
 # Does not build with GCC 4.2
 .if ${OSVERSION} >= 700042
 USE_GCC=	3.4
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64-7
+.endif
 .endif
 
-.if !defined(WITHOUT_OCFLAGS)
-CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
-.endif
-
-.if !defined(WITHOUT_GNFS)
-LIB_DEPENDS+=	gsl.10:${PORTSDIR}/math/gsl
-ALLTGT_SUFX=	_nfs
-.endif
-
-ALLTGT=		generic
+ALL_TARGET=	generic
 .if ${ARCH} == "i386"
-ALLTGT=		x86
+ALL_TARGET=	x86
 .endif
 .if ${ARCH} == "amd64"
-ALLTGT=		x86_64
-.endif
-ALL_TARGET=	${ALLTGT}${ALLTGT_SUFX}
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
+ALL_TARGET=	x86_64
 .endif
 
 do-install:
