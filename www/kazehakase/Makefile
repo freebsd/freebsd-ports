@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	kazehakase
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.4
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	${PORTNAME}/29143
+MASTER_SITE_SUBDIR=	${PORTNAME}/30219
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
@@ -29,6 +29,7 @@ CONFIGURE_ARGS=	--with-gecko_engine=${GECKO}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 MAN1=		kazehakase.1
+OPTIONS=	WEBKIT "Webkit Backend (along with Gecko)" On
 
 .if defined(WITH_MIGEMO)
 USE_RUBY=	yes
@@ -39,13 +40,11 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
-# !!! gtk-webcore higly experimental right now and not very stable !!!
-# See https://mail.gna.org/public/kazehakase-devel/2004-10/msg00001.html
-# on how to use gtk-webcore with kazehakase. and yes you still have to
-# have mozilla even if you don't use it in kazehakase.
-.if defined(WITH_GTKWEBCORE) || exists(${LOCALBASE}/libnrcit.a)
-LIB_DEPENDS+=	nrcit.0:${PORTSDIR}/www/osb-nrcit
-CONFIGURE_ARGS+=--enable-gtk-webcore
+.if defined(WITH_WEBKIT)
+LIB_DEPENDS+=	WebKitGtk.1:${PORTSDIR}/www/webkit-gtk2
+PLIST_SUB+=	WEBKIT=""
+.else
+PLIST_SUB+=	WEBKIT="@comment "
 .endif
 
 .if defined(WITH_THUMBNAIL) || exists(${LOCALBASE}/bin/gs)

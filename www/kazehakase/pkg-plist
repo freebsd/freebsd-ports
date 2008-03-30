@@ -14,6 +14,8 @@ lib/kazehakase/libkazehakase.so
 lib/kazehakase/libkazehakase.so.1
 lib/kazehakase/embed/gecko.la
 lib/kazehakase/embed/gecko.so
+%%WEBKIT%%lib/kazehakase/embed/webkit_gtk.la
+%%WEBKIT%%lib/kazehakase/embed/webkit_gtk.so
 lib/kazehakase/search/hyper-estraier.la
 lib/kazehakase/search/hyper-estraier.so
 share/applications/kazehakase.desktop
@@ -61,8 +63,10 @@ share/kazehakase/icons/kz-view-source.png
 share/kazehakase/icons/kz-yellow.png
 share/kazehakase/kz-no-thumbnail.png
 share/kazehakase/search-result.css
+share/kazehakase/search-result.js
 share/pixmaps/kazehakase-icon.png
 share/locale/cs/LC_MESSAGES/kazehakase.mo
+share/locale/de/LC_MESSAGES/kazehakase.mo
 share/locale/fr/LC_MESSAGES/kazehakase.mo
 share/locale/ja/LC_MESSAGES/kazehakase.mo
 share/locale/ru/LC_MESSAGES/kazehakase.mo
