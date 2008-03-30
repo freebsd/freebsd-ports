@@ -208,6 +208,7 @@
     SUBDIR += gmpc
     SUBDIR += gmpc-autoplaylist
     SUBDIR += gmpc-extraplaylist
+    SUBDIR += gmpc-favorites
     SUBDIR += gmpc-lastfm
     SUBDIR += gmpc-libnotify
     SUBDIR += gmpc-lyrics
