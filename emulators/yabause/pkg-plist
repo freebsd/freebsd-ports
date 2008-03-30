@@ -1,4 +1,6 @@
 bin/yabause
+share/gen68k/c68k_ini.inc
 share/applications/yabause.desktop
 share/pixmaps/yabause.png
+@dirrm share/gen68k
 @dirrmtry share/applications
