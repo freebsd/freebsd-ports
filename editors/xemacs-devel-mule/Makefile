@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -109,6 +109,7 @@ CONFIGURE_ARGS+=--disable-kkcc --disable-mc-alloc --disable-newgc
 .endif
 
 .if defined(WITH_XFT)
+BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 USE_XORG=	x11 xft xpm
 CONFIGURE_ARGS+=--with-xft=all
 .elif defined(WITH_GTK)
