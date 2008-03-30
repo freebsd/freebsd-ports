@@ -1,13 +1,15 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS/Distance/.packlist
 %%SITE_PERL%%/GIS/Distance.pm
-%%SITE_PERL%%/GIS/Distance/Cosine.pm
-%%SITE_PERL%%/GIS/Distance/GeoEllipsoid.pm
-%%SITE_PERL%%/GIS/Distance/GreatCircle.pm
-%%SITE_PERL%%/GIS/Distance/Haversine.pm
-%%SITE_PERL%%/GIS/Distance/MathTrig.pm
-%%SITE_PERL%%/GIS/Distance/Polar.pm
-%%SITE_PERL%%/GIS/Distance/Vincenty.pm
+%%SITE_PERL%%/GIS/Distance/Formula.pm
+%%SITE_PERL%%/GIS/Distance/Formula/Cosine.pm
+%%SITE_PERL%%/GIS/Distance/Formula/GeoEllipsoid.pm
+%%SITE_PERL%%/GIS/Distance/Formula/GreatCircle.pm
+%%SITE_PERL%%/GIS/Distance/Formula/Haversine.pm
+%%SITE_PERL%%/GIS/Distance/Formula/MathTrig.pm
+%%SITE_PERL%%/GIS/Distance/Formula/Polar.pm
+%%SITE_PERL%%/GIS/Distance/Formula/Vincenty.pm
+@dirrmtry %%SITE_PERL%%/GIS/Distance/Formula
 @dirrmtry %%SITE_PERL%%/GIS/Distance
 @dirrmtry %%SITE_PERL%%/GIS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS/Distance
