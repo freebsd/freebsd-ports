@@ -1,3 +1,4 @@
 share/gmpc/plugins/lastfmplugin.so
+share/gmpc/plugins/lastfmplugin.la
 @dirrmtry share/gmpc/plugins
 @dirrmtry share/gmpc

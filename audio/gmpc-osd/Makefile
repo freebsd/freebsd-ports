@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gmpc-osd
-PORTVERSION=	0.15.0
-PORTREVISION=	1
+PORTVERSION=	0.15.5.0
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION}/plugins/
+MASTER_SITES=	http://download.sarine.nl/gmpc-${PORTVERSION:C/\.0$//}/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Xosd plugin for gmpc
@@ -23,5 +22,6 @@ RUN_DEPEND=	gmpc:${PORTSDIR}/audio/gmpc
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
 USE_GNOME=	gnomehack
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
