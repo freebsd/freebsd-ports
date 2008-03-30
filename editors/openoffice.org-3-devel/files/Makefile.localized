@@ -72,6 +72,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 COMMENT=	Office-Suite mit Textverarbeitung, Tabellenkalkulation, Datenbank und Praesentationsprogramm
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "dz"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "el"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
@@ -161,13 +165,16 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 RUN_DEPENDS+=   ${X11BASE}/lib/X11/fonts/TrueType/ipam.ttf:${PORTSDIR}/japanese/ipa-ttfonts
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "ka"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "km"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "kn-IN"
+.if ${LOCALIZED_LANG} == "kn"
 LANG_PKGNAME=	kn
-LANG_SUFFIX=	IN
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ko"
@@ -233,6 +240,10 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "oc"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "or-IN"
 LANG_PKGNAME=	or
 LANG_SUFFIX=	IN
@@ -279,14 +290,12 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "sh-YU"
+.if ${LOCALIZED_LANG} == "sh"
 LANG_PKGNAME=	sh
-LANG_SUFFIX=	YU
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "sr-CS"
+.if ${LOCALIZED_LANG} == "sr"
 LANG_PKGNAME=	sr
-LANG_SUFFIX=	CS
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ss"
@@ -310,18 +319,14 @@ LANG_PKGNAME=	sw
 LANG_SUFFIX=	TZ
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "sx"
-LANG_PKGNAME=	${LOCALIZED_LANG}
-.endif
-################################################################
 .if ${LOCALIZED_LANG} == "ta-IN"
 LANG_PKGNAME=	ta
 LANG_SUFFIX=	IN
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "te-IN"
+.if ${LOCALIZED_LANG} == "te-ER"
 LANG_PKGNAME=	te
-LANG_SUFFIX=	IN
+LANG_SUFFIX=	ER
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ti-IN"
@@ -355,6 +360,10 @@ LANG_SUFFIX=	IN
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "uk"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "uz"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
