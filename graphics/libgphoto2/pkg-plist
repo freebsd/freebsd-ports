@@ -224,7 +224,6 @@ share/doc/libgphoto2/camlibs/README.agfa-cl20
 share/doc/libgphoto2/camlibs/README.aox
 share/doc/libgphoto2/camlibs/README.canon
 share/doc/libgphoto2/camlibs/README.clicksmart310
-share/doc/libgphoto2/camlibs/README.digigr8
 share/doc/libgphoto2/camlibs/README.enigma13
 share/doc/libgphoto2/camlibs/README.gsmart300
 share/doc/libgphoto2/camlibs/README.iclick
@@ -248,7 +247,10 @@ share/doc/libgphoto2/camlibs/README.soundvision
 share/doc/libgphoto2/camlibs/README.spca50x
 share/doc/libgphoto2/camlibs/README.sq905
 share/doc/libgphoto2/camlibs/README.toshiba-pdrm11
+share/doc/libgphoto2/camlibs/README.905C
+share/doc/libgphoto2/camlibs/README.9050
 share/doc/libgphoto2/camlibs/README.913C
+share/doc/libgphoto2/camlibs/README.913D
 share/doc/libgphoto2_port/AUTHORS
 share/doc/libgphoto2_port/NEWS
 share/doc/libgphoto2_port/README
@@ -289,6 +291,7 @@ share/libgphoto2/%%VERSION%%/konica/spanish
 %%NLS%%share/locale/sv/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/libgphoto2_port-0.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libgphoto2_port-0.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libgphoto2-2.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libgphoto2_port-0.mo
