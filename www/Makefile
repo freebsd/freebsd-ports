@@ -1152,6 +1152,7 @@
     SUBDIR += ruboard
     SUBDIR += ruby-amazon
     SUBDIR += ruby-asp
+    SUBDIR += ruby-aws
     SUBDIR += ruby-borges
     SUBDIR += ruby-cruisecontrolrb
     SUBDIR += ruby-div
