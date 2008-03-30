@@ -7586,6 +7586,7 @@ mediaproxy	ports/net/mediaproxy
 mediatomb	ports/net/mediatomb
 mediawiki	ports/www/mediawiki
 mediawiki110	ports/www/mediawiki110
+mediawiki111	ports/www/mediawiki111
 mediawiki16	ports/www/mediawiki16
 mediawiki17	ports/www/mediawiki17
 mediawiki18	ports/www/mediawiki18
