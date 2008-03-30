@@ -219,6 +219,7 @@
     SUBDIR += gmpc-qosd
     SUBDIR += gmpc-random-playlist
     SUBDIR += gmpc-serverstats
+    SUBDIR += gmpc-shout
     SUBDIR += gmpc-stopbutton
     SUBDIR += gmpccaa
     SUBDIR += gnapster
