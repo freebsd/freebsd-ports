@@ -7,6 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.18
+PORTREVISION=	1
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -70,13 +71,16 @@ OPTIONS=	ICONV "Build with ICONV support" on \
 		XPM "Build with XPM support" on \
 		DIGCOLA "DIGCOLA features in neato layout engine" on \
 		IPSEPCOLA "IPSEPCOLA features in neato layout engine" on \
+		SMYRNA "SMYRNA large graph viewer" off \
 		NLS "Build with gettext support" on \
 		TK "Build with TK support" off \
 		PANGOCAIRO "build with pangocairo support" off \
+		RSVG "build with rsvg library" off \
 		GTK "build with gtk plugin" off \
 		GDK_PIXBUF  "build with gdk pixbuf support" off \
 		GNOMEUI  "build with libgnomeui support" off \
 		MING "Build with ming plugin" off \
+		DEVIL "Build with devil plugin" off \
 		PERL "Perl bindings (swig)" off \
 		PHP "PHP bindings (swig)" off \
 		PYTHON "Python bindings (swig)" off \
@@ -94,9 +98,10 @@ BROKEN=		Does not run on FreeBSD >= 7.0, libtool will exclude all modules
 CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--enable-dependency-tracking \
 		--enable-r=no \
+		--with-freetype2=yes \
 		--with-libgd \
-		--with-fontconfigincludedir=${LOCABASE}/include \
-		--with-fontconfiglibdir=${LOCABASE}/lib \
+		--with-fontconfigincludedir=${LOCALBASE}/include \
+		--with-fontconfiglibdir=${LOCALBASE}/lib \
 		--disable-io --disable-ocaml --disable-java \
 		--disable-sharp
 
@@ -107,7 +112,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 
 .if defined(WITH_TK)
 CPPFLAGS+=		-I${TK_INCLUDEDIR}
-USE_TK_BUILD=		84
+USE_TK_BUILD=		84+
 CONFIGURE_ARGS+=	--with-wish=${WISH}
 CONFIGURE_ENV+=		TKCONFIG="${TK_LIBDIR}/tkConfig.sh"
 MANN+=			tkspline.n
@@ -117,7 +122,7 @@ PLIST_SUB+=		WITH_TK="@comment "
 .endif
 .if defined(WITH_TCL) || defined(WITH_TK)
 CPPFLAGS+=		-I${TCL_INCLUDEDIR}
-USE_TCL_BUILD=		84
+USE_TCL_BUILD=		84+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=	--with-tclsh=${TCLSH}
 CONFIGURE_ENV+=		TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
@@ -133,7 +138,7 @@ CONFIGURE_ARGS+=	--with-iconvlibdir=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-iconvincludedir=${LOCALBASE}/include
 .endif
 
-.if !defined(WITHOUT_XPM) || exists(${LOCABASE}/lib/libXpm.so)
+.if !defined(WITHOUT_XPM) || exists(${LOCALBASE}/lib/libXpm.so)
 USE_XORG+=		xaw8 xpm xmu xt sm ice xext x11 xau xdmcp xp
 MAN1+=			lefty.1
 PLIST_SUB+=		WITH_XPM=""
@@ -155,6 +160,19 @@ USE_XORG+=		xrender x11 xau xdmcp
 .else
 CONFIGURE_ARGS+=	--without-pangocairo
 PLIST_SUB+=		WITH_PANGOCAIRO="@comment "
+.endif
+
+.if defined(WITH_RSVG)
+CONFIGURE_ARGS+=	--with-rsvg=yes
+PLIST_SUB+=		WITH_RSVG=""
+USE_GNOME+=		librsvg2
+USE_GL+=		gl glu
+.if !defined(WITH_PANGOCAIRO)
+IGNORE=			option WITH_PANGOCAIRO is required for option WITH_RSVG
+.endif
+.else
+CONFIGURE_ARGS+=	--without-rsvg
+PLIST_SUB+=		WITH_RSVG="@comment "
 .endif
 
 .if defined(WITH_GTK)
@@ -192,6 +210,13 @@ IGNORE=			option WITH_GTK is required for option WITH_GNOMEUI
 CONFIGURE_ARGS+=	--without-gnomeui
 .endif
 
+.if defined(WITH_SMYRNA)
+CONFIGURE_ARGS+=	--with-glade=yes
+USE_GNOME+=		gnomelibs libglade2
+.else
+CONFIGURE_ARGS+=	--without-glade
+.endif
+
 .if defined(USE_GNOME)
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
 .endif
@@ -199,19 +224,41 @@ CONFIGURE_ARGS+=	--without-gnomeui
 .include "${PORTSDIR}/Mk/bsd.xorg.mk"
 .endif
 
-.if defined(WITH_DIGCOLA)
+.if defined(WITH_SMYRNA)
+CONFIGURE_ARGS+=	 --with-gtkgl=yes
+LIB_DEPENDS+=		gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
+.else
+CONFIGURE_ARGS+=	--without-gtkgl
+.endif
+
+.if defined(WITH_SMYRNA)
+CONFIGURE_ARGS+=	 --with-gtkglext=yes
+LIB_DEPENDS+=		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
+.else
+CONFIGURE_ARGS+=	--without-gtkglext
+.endif
+
+.if !defined(WITHOUT_DIGCOLA)
 CONFIGURE_ARGS+=	--with-digcola
 .else
 CONFIGURE_ARGS+=	--without-digcola
 .endif
 
-.if defined(WITH_IPSEPCOLA)
+.if !defined(WITHOUT_IPSEPCOLA)
 CONFIGURE_ARGS+=	--with-ipsepcola
-.if !defined(WITH_DIGCOLA)
+.if defined(WITHOUT_DIGCOLA)
 IGNORE=			option WITH_DIGCOLA is required for option WITH_IPSEPCOLA
 .endif
 .else
 CONFIGURE_ARGS+=	--without-ipsepcola
+.endif
+
+.if defined(WITH_SMYRNA)
+CONFIGURE_ARGS+=	--with-smyrna=yes
+PLIST_SUB+=		WITH_SMYRNA=""
+.else
+PLIST_SUB+=		WITH_SMYRNA="@comment "
+CONFIGURE_ARGS+=	--without-smyrna
 .endif
 
 .if defined(WITH_MING)
@@ -221,6 +268,15 @@ LIB_DEPENDS+=		ming.4:${PORTSDIR}/graphics/ming
 .else
 CONFIGURE_ARGS+=	--without-ming
 PLIST_SUB+=		WITH_MING="@comment "
+.endif
+
+.if defined(WITH_DEVIL)
+CONFIGURE_ARGS+=	--with-devil
+PLIST_SUB+=		WITH_DEVIL=""
+LIB_DEPENDS+=		IL.1:${PORTSDIR}/graphics/devil
+.else
+CONFIGURE_ARGS+=	--without-devil
+PLIST_SUB+=		WITH_DEVIL="@comment "
 .endif
 
 .if defined(WITH_PERL) || defined(WITH_PHP) || defined(WITH_PYTHON) || \
@@ -336,6 +392,10 @@ pre-patch:
 		-e 's|libdir=@libdir@|libdir=@libdir@/@PACKAGE@|';
 	@${REINPLACE_CMD} -e "s|/usr/include/php|${LOCALBASE}/include/php|g" \
 		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
+		${WRKSRC}/cmd/smyrna/tvnodes.h
+	@${REINPLACE_CMD} -e 's|#include "regex_win32.h"|#include <regex.h>|' \
+		${WRKSRC}/cmd/smyrna/btree.c
 
 .if defined(WITH_TK)
 post-install-script:
