@@ -5807,6 +5807,7 @@ john		ports/security/john
 jomp		ports/java/jomp
 jools		ports/games/jools
 joomla		ports/www/joomla
+joomla15	ports/www/joomla15
 jove		ports/editors/jove
 jp2a		ports/graphics/jp2a
 jpatch		ports/graphics/jpatch
