@@ -17,7 +17,7 @@ upgrades.
   AFFECTS: users of www/phpadsnew
   AUTHOR: beech@FreeBSD.org
 
-  Phpadsnew has been replaced with www/openx. 
+  Phpadsnew has been replaced with www/openx.
   To upgrade please do the following:
 
   1. Install www/openx
