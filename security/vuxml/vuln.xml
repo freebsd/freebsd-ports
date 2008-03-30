@@ -34,6 +34,74 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="12b336c6-fe36-11dc-b09c-001c2514716c">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>2.0.0.13,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>2.0.0.13</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<name>linux-seamonkey</name>
+	<range><lt>1.1.9</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey-devel</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<name>linux-thunderbird</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Foundation reports of multiple security issues
+	  in Firefox, Seamonkey, and Thunderbird.  Several of these
+	  issues can probably be used to run arbitrary code with the
+	  privilege of the user running the program.</p>
+	<blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
+	  <ul>
+	    <li><a href="/security/announce/2008/mfsa2008-19.html">MFSA 2008-19</a>
+	      XUL popup spoofing variant (cross-tab popups)</li>
+ 	    <li><a href="/security/announce/2008/mfsa2008-18.html">MFSA 2008-18</a>
+	      Java socket connection to any local port via LiveConnect</li>
+ 	    <li><a href="/security/announce/2008/mfsa2008-17.html">MFSA 2008-17</a>
+	      Privacy issue with SSL Client Authentication</li>
+ 	    <li><a href="/security/announce/2008/mfsa2008-16.html">MFSA 2008-16</a>
+	      HTTP Referrer spoofing with malformed URLs</li>
+ 	    <li><a href="/security/announce/2008/mfsa2008-15.html">MFSA 2008-15</a>
+	      Crashes with evidence of memory corruption (rv:1.8.1.13)</li>
+ 	    <li><a href="/security/announce/2008/mfsa2008-14.html">MFSA 2008-14</a>
+	      JavaScript privilege escalation and arbitrary code execution</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>28448</bid>
+      <cvename>CVE-2008-1241</cvename>
+      <cvename>CVE-2008-1240</cvename>
+      <cvename>CVE-2007-4879</cvename>
+      <cvename>CVE-2008-1238</cvename>
+      <cvename>CVE-2008-1236</cvename>
+      <cvename>CVE-2008-1237</cvename>
+      <cvename>CVE-2008-1233</cvename>
+      <cvename>CVE-2008-1234</cvename>
+      <cvename>CVE-2008-1235</cvename>
+    </references>
+    <dates>
+      <discovery>2008-03-26</discovery>
+      <entry>2008-03-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ff304c35-fb5b-11dc-91c1-00e0815b8da8">
     <topic>silc -- pkcs_decode buffer overflow</topic>
     <affects>
