@@ -1,0 +1,4 @@
+share/gmpc/plugins/libextraplaylist.la
+share/gmpc/plugins/libextraplaylist.so
+@dirrmtry share/gmpc/plugins
+@dirrmtry share/gmpc
