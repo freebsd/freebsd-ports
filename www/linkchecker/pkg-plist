@@ -51,6 +51,9 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/__init__.py
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/__init__.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/__init__.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/const.py
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/const.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/checker/const.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/fileurl.py
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/fileurl.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/checker/fileurl.pyo
@@ -114,6 +117,9 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/director/checker.py
 %%PYTHON_SITELIBDIR%%/linkcheck/director/checker.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/director/checker.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/director/cleanup.py
+%%PYTHON_SITELIBDIR%%/linkcheck/director/cleanup.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/director/cleanup.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/director/console.py
 %%PYTHON_SITELIBDIR%%/linkcheck/director/console.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/director/console.pyo
