@@ -1,57 +1,59 @@
---- src/Makefile	Sat Apr 21 19:05:23 2007
-+++ src/Makefile.port	Mon Apr 23 15:50:29 2007
-@@ -1,7 +1,7 @@
--BINDIR=/usr/bin
--INCDIR=/usr/include/espeak
--LIBDIR=/usr/lib
--DATADIR=/usr/share/espeak-data
+--- src/Makefile.orig	2008-03-09 12:22:06.000000000 -0700
++++ src/Makefile	2008-03-17 16:12:11.322174163 -0700
+@@ -1,10 +1,9 @@
+ # remove -fno-exceptions  if it causes problems with stdio library on some platforms (ARM)
+ 
+-PREFIX=/
+-BINDIR=$(PREFIX)/usr/bin
+-INCDIR=$(PREFIX)/usr/include/espeak
+-LIBDIR=$(PREFIX)/usr/lib
+-DATADIR=$(PREFIX)/usr/share/espeak-data
 +BINDIR=%%PREFIX%%/bin
 +INCDIR=%%PREFIX%%/include/espeak
 +LIBDIR=%%PREFIX%%/lib
 +DATADIR=%%DATADIR%%/espeak-data
  
- RELEASE = 1.23
+ RELEASE = 1.36
  BIN_NAME = speak
-@@ -29,24 +29,24 @@
+@@ -53,24 +52,23 @@
  
  SRCS1=$(speak_SOURCES)
  OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
--LIBS1=-lstdc++ -lportaudio -lpthread
-+LIBS1=-lstdc++ -L%%LOCALBASE%%/lib -lportaudio $(PTHREAD_LIBS)
+-LIBS1=-lstdc++ $(LIB_AUDIO) -lpthread $(EXTRA_LIBS)
++LIBS1=-lstdc++ -L%%LOCALBASE%%/lib $(LIB_AUDIO) $(PTHREAD_LIBS) $(EXTRA_LIBS)
  
  SRCS2=$(libespeak_SOURCES)
  OBJS2=$(patsubst %.cpp,x_%.o,$(SRCS2))
--LIBS2=-lstdc++ -lportaudio -lpthread
-+LIBS2=-lstdc++ -L%%LOCALBASE%%/lib -lportaudio $(PTHREAD_LIBS)
+-LIBS2=-lstdc++ $(LIB_AUDIO) -lpthread
++LIBS2=-lstdc++ -L%%LOCALBASE%%/lib $(LIB_AUDIO) $(PTHREAD_LIBS)
  
  SRCS3 = espeak.cpp
  OBJS3=$(patsubst %.cpp,%.o,$(SRCS3))
--LIBS3=-lstdc++ ./libespeak.so
-+LIBS3=-lstdc++ ./libespeak.so $(PTHREAD_LIBS)
+-LIBS3=-lstdc++ -L . -lespeak
  
 -CXXFLAGS=-O2
-+#CXXFLAGS=-O2
++LIBS3=-lstdc++ -L . -lespeak $(PTHREAD_LIBS)
  
  
  all: $(BIN_NAME) $(LIB_NAME) $(STATIC_LIB_NAME) $(BIN2_NAME)
  	mv $(LIB_NAME) $(LIB_NAME).$(LIBTAG)
  
  .cpp.o:
--	$(CXX) $(CXXFLAGS) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions $<
-+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions $<
+-	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions  $<
++	$(CXX) $(CXXFLAGS) $(PTHREAD_CFLAGS) $(USE_AUDIO) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions  $<
  
  $(BIN_NAME): $(OBJS1)
  	$(CXX) -o $@ $(OBJS1) $(LIBS1)
-@@ -57,7 +57,7 @@
+@@ -81,7 +79,7 @@
  
  
  x_%.o: %.cpp
--	$(CXX) $(CXXFLAGS) -Wall -fpic -fvisibility=hidden -pedantic \
-+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -Wall -fPIC -pedantic \
- 	-I. -D LIBRARY -c -fno-exceptions $<  -o x_$*.o
+-	$(CXX) $(CXXFLAGS) $(USE_AUDIO) -Wall -fpic -pedantic \
++	$(CXX) $(CXXFLAGS) $(PTHREAD_CFLAGS) $(USE_AUDIO) -Wall -fpic -pedantic \
+ 	-I. -D LIBRARY -c -fno-exceptions  $<  -o x_$*.o
  
  $(LIB_NAME): $(OBJS2)
-@@ -76,7 +76,7 @@
+@@ -100,7 +98,7 @@
  
  install: all
  	# Create directories
@@ -60,7 +62,7 @@
  	$(MKDIR) $(DESTDIR)$(BINDIR)
  	$(MKDIR) $(DESTDIR)$(LIBDIR)
  	$(MKDIR) $(DESTDIR)$(INCDIR)
-@@ -92,5 +92,5 @@
+@@ -116,5 +114,5 @@
  	# Install development headers
  	$(INSTALL) -pm 644 speak_lib.h $(DESTDIR)$(INCDIR)
  	# Install data files
