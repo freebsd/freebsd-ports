@@ -1,5 +1,5 @@
---- Makefile.orig	2008-02-27 10:24:44.000000000 +0100
-+++ Makefile	2008-03-20 17:06:20.445074259 +0100
+--- Makefile.orig	2008-03-25 07:15:46.000000000 +0100
++++ Makefile	2008-03-29 09:39:23.279570569 +0100
 @@ -13,6 +13,7 @@
  prefix=/usr
  bindir=$(prefix)/bin
@@ -8,7 +8,7 @@
  
  # define top of RPM build area
  topdir=/usr/src/redhat
-@@ -129,12 +130,18 @@
+@@ -134,12 +135,18 @@
  ifdef OSX_BUILD
   INSTALL=install -c
  endif 
@@ -27,7 +27,7 @@
  
  MD5SUM=md5sum
  ifneq ($(OSX_BUILD),)
-@@ -164,7 +171,7 @@
+@@ -170,7 +177,7 @@
  ifdef WINDIR
   LD=$(QL) $(CXX) $(DEBUG) $(PROFILE) $(LDFLAGS) -L$(OBJ) -lz 
  else
@@ -36,7 +36,7 @@
  endif
  
  ifndef OSX_BUILD 
-@@ -520,7 +527,7 @@
+@@ -526,7 +533,7 @@
  		rm -f po/messages.mo; \
  		msgfmt $$i -o po/messages.mo; \
  		echo "Installing: $(DESTDIR)$(datadir)/locale/$$loc/LC_MESSAGES/notecase.mo";\
@@ -45,7 +45,7 @@
  			mkdir -p $(DESTDIR)$(datadir)/locale/$$loc/LC_MESSAGES/; \
  		fi; \
  		$(INSTALL) -m 644 po/messages.mo "$(DESTDIR)$(datadir)/locale/$$loc/LC_MESSAGES/notecase.mo"; \
-@@ -531,12 +538,17 @@
+@@ -537,12 +544,17 @@
  pouninstall:
  	@rm -vf $(DESTDIR)$(datadir)/locale/*/LC_MESSAGES/notecase.mo
  	@echo done uninstalling translations
@@ -65,7 +65,7 @@
  		mkdir -p $(DESTDIR)$(bindir); \
  		mkdir -p $(DESTDIR)$(datadir)/doc/notecase/; \
  		mkdir -p $(DESTDIR)$(datadir)/applications/; \
-@@ -544,7 +556,6 @@
+@@ -550,7 +562,6 @@
  		mkdir -p $(DESTDIR)$(datadir)/pixmaps/; \
  	fi;
  	$(INSTALL) -m 755 $(BIN)/notecase$(EXE) "$(DESTDIR)$(bindir)/notecase$(EXE)"
@@ -73,3 +73,12 @@
  	$(INSTALL) -m 644 docs/notecase.xml "$(DESTDIR)$(datadir)/mime/packages/notecase.xml"
  	$(Q)if [ -n "$(NOKIA_MAEMO_BUILD)" ]; then \
  		$(INSTALL) -m 644 docs/notecase.desktop "$(DESTDIR)$(datadir)/applications/hildon/notecase.desktop"; \
+@@ -742,7 +753,7 @@
+ #
+ # Note: first "make" command forces generating correct help file path in "config.h"
+ #
+-DEBSIZE:=$(shell du -ks ./notecase/ | cut -f 1)
++#DEBSIZE:=$(shell du -ks ./notecase/ | cut -f 1)
+ 
+ deb: clean
+ 	$(Q)mkdir ./notecase
