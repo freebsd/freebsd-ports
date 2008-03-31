@@ -7,6 +7,7 @@
 
 PORTNAME=	mrouted
 PORTVERSION=	3.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.research.att.com/pub/fenner/mrouted/ \
 		http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/
