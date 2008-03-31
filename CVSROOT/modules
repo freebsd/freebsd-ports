@@ -12298,6 +12298,7 @@ pear-XML_Feed_Parser	ports/textproc/pear-XML_Feed_Parser
 pear-XML_HTMLSax	ports/textproc/pear-XML_HTMLSax
 pear-XML_NITF	ports/devel/pear-XML_NITF
 pear-XML_Parser	ports/devel/pear-XML_Parser
+pear-XML_Query2XML	ports/databases/pear-XML_Query2XML
 pear-XML_RPC	ports/net/pear-XML_RPC
 pear-XML_RSS	ports/devel/pear-XML_RSS
 pear-XML_SVG	ports/devel/pear-XML_SVG
