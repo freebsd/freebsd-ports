@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.14.2
-PORTREVISION=	1
+PORTVERSION=	3.14.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src_sf/g} \
-		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
+		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
 		http://apcupsd.sourceforge.net/manual/:doc_sf \
-		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/:doc_bk
+		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:doc_bk
 MASTER_SITE_SUBDIR=	${PORTNAME}/:src_sf
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src_sf,src_bk \
 		${PORTNAME}.pdf:doc_sf,doc_bk
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-IGNOREFILES=	${PORTNAME}.pdf
+#IGNOREFILES=	${PORTNAME}.pdf
 
 MAINTAINER=	itetcu@FreeBSD.org
-COMMENT=	A daemon for controlling APC UPS
+COMMENT=	Set of programs for controlling APC UPS
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
@@ -40,20 +39,42 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 
 MAN8=		apcupsd.8
 
-OPTIONS=	CLIENT_ONLY "Build NIS client only (no network server)" off \
+OPTIONS=	APCSMART_DRV "Compile APC SmartUPS serial driver" on \
+		APCDUMB_DRV "Compile dumb UPS driver" on \
+		CLIENT_ONLY "Only NIS client (no network server or drivers)" off \
 		CGI "Compile with CGI programms to show status" off \
-		USB "Compile with USB Support (READ MANUAL!)" on \
-		SNMP "Compile with SNMP Support (READ MANUAL!)" on
+		NLS "Enable Native Language Support" off \
+		PCNET_DRV "Compile PowerChute Network Shutdown driver" on \
+		POWERFLUTE "Compile powerflute program" on \
+		USB "Compile with USB Support driver" on \
+		SNMP_DRV "Compile with SNMP driver" on \
+		TCP_WRAPPERS "Compile with TCP_WRAPPERS support" on\
+		TEST_DRV "Compile TEST driver" off \
+#		GAPCMON "Build GTK GUI front-end" off
 
 PORTDOCS=	${PORTNAME}.pdf
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CLIENT_ONLY)
-CONFIGURE_ARGS+=	--enable-net
+.ifdef(WITH_APCSMART_DRV)
+CONFIGURE_ARGS+=	--enable-apcsmart
+.else
+CONFIGURE_ARGS+=	--disable-apcsmart
 .endif
 
-.if defined(WITH_CGI)
+.ifdef(WITH_APCDUMB_DRV)
+CONFIGURE_ARGS+=	--enable-dumb
+.else
+CONFIGURE_ARGS+=	--disable-dumb
+.endif
+
+.ifdef(WITH_CLIENT_ONLY)
+CONFIGURE_ARGS+=	--enable-net \
+			--disable-apcsmart --disable-dumb --disable-usb \
+			--disable-snmp --disable-test --disable-pcnet
+.endif
+
+.ifdef(WITH_CGI)
 CONFIGURE_ARGS+=	--enable-cgi --with-cgi-bin=${ETCDIR}/cgi
 LIB_DEPENDS+=		gd.4:${PORTSDIR}/graphics/gd
 PLIST_SUB+=		CGI=""
@@ -61,18 +82,65 @@ PLIST_SUB+=		CGI=""
 PLIST_SUB+=		CGI="@comment "
 .endif
 
-.if !defined(WITHOUT_USB)
+#.ifdef(WITH_GAPCMON)
+#CONFIGURE_ARGS+=	--enable-gapcmon
+#.endif
+
+.ifndef(WITHOUT_NLS)
+USE_GETTEXT=		yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=		NLS=""
+.else
+PLIST_SUB+=		NLS="@comment "
+.endif
+
+.ifdef(WITH_PCNET_DRV)
+CONFIGURE_ARGS+=	--enable-pcnet
+.else
+CONFIGURE_ARGS+=	--disable-pcnet
+.endif
+
+.ifdef(WITH_POWERFLUTE)
+CONFIGURE_ARGS+=	--enable-powerflute
+CONFIGURE_ENV+=		LIBS+="-lcurses -lmenu"
+PLIST_SUB+=		POWERFL=""
+.else
+PLIST_SUB+=		POWERFL="@comment "
+.endif
+
+.ifdef(WITH_USB)
 CONFIGURE_ARGS+=	--enable-usb
 .endif
 
-.if !defined(WITHOUT_SNMP)
+.ifdef(WITH_SNMP_DRV)
 LIB_DEPENDS+=		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-snmp
+.else
+CONFIGURE_ARGS+=	--disable-snmp
 .endif
 
-CONFIGURE_ARGS+=	--enable-powerflute --with-libwrap=yes
-CONFIGURE_ENV+=		LIBS="-lcurses -lmenu"
-PLIST_SUB+=		POWERFL=""
+.ifdef(WITH_TCP_WRAPPERS)
+CONFIGURE_ARGS+=	--with-libwrap=yes
+.endif
+
+.ifdef(WITH_TEST_DRV)
+CONFIGURE_ARGS+=	--enable-test
+.endif
+
+#CONFIGURE_ARGS+=	--with-libwrap=yes
+#CONFIGURE_ENV+=		LIBS="-lcurses -lmenu"
+#PLIST_SUB+=		POWERFL=""
+
+pre-configure:
+.if defined(WITH_CLIENT_ONLY) && ( defined(WITH_APCSMART_DRV) || \
+	defined(WITH_APCDUMB_DRV) || defined(WITH_PCNET_DRV) || \
+	defined(WITH_POWERFLUTE) || defined(WITH_USB) || \
+	definedWITH_SNMP_DRV) || defined(WITH_TEST_DRV) )
+	@${ECHO_CMD} "It doesn't make sense to build drivers if all you want is"
+	@${ECHO_CMD} "the client; please do make config and select either"
+	@${ECHO_CMD} "CLIENT_ONLY or the *_DRV you need"
+	@${FALSE}
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|%PREFIX%|${PREFIX}|g" ${WRKSRC}/doc/apcupsd.man
