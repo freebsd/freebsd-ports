@@ -1143,6 +1143,7 @@ MASTER_SITE_REDHAT_LINUX+= \
 #
 .if !defined(IGNORE_MASTER_SITE_RINGSERVER)
 MASTER_SITE_RINGSERVER+=	\
+	http://ring.nict.go.jp/archives/%SUBDIR%/ \
 	http://ring.sakura.ad.jp/archives/%SUBDIR%/ \
 	http://ring.riken.jp/archives/%SUBDIR%/
 .endif
