@@ -1,0 +1,11 @@
+================================================================================
+
+Edit your Apache configuration file to enable mod_proxy_html.
+
+Documentation available:
+
+  Configuration guide: http://apache.webthing.com/mod_proxy_html/config.html
+
+  Reverse Proxy Tutorial: http://www.apacheweek.com/features/reverseproxies
+
+================================================================================

@@ -6,32 +6,28 @@
 #
 
 PORTNAME=	mod_proxy_html
-PORTVERSION=	2.5.1
+PORTVERSION=	3.0.0
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/${PORTNAME}/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.c
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dsl@bitwizards.com.au
 COMMENT=	Apache module for rewriting HTML links in proxied content
 
+SUB_FILES=	pkg-message
 USE_GNOME=	libxml2
-USE_APACHE=	yes
-WITH_APACHE2=	yes
+USE_APACHE?=2.2
 NO_WRKSUBDIR=	yes
 
 XML2_INC=	${LOCALBASE}/include/libxml2
 XML2_LIB=	${LOCALBASE}/lib
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} -p ${DISTDIR}/${DISTFILES} ${WRKDIR}/${PORTNAME}.c
-
 do-build:
-	@(cd ${WRKSRC} && ${APXS} -c -I ${XML2_INC} -L ${XML2_LIB} -lxml2 ${PORTNAME}.c)
+	@(cd ${WRKDIR}/${PORTNAME} && ${APXS} -c -I ${XML2_INC} -L ${XML2_LIB} -lxml2 ${PORTNAME}.c)
 
 do-install:
-	@(cd ${WRKSRC} && ${APXS} -A -i ${PORTNAME}.la)
+	@(cd ${WRKDIR}/${PORTNAME} && ${APXS} -A -i ${PORTNAME}.la)
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
