@@ -1,0 +1,10 @@
+--- Makefile.org	Tue Jan  6 17:08:35 2008
++++ Makefile	Tue Jan  6 17:09:21 2008
+@@ -14,6 +14,6 @@
+ MAN	= usbrh.1
+ 
+ BINDIR ?= ${PREFIX}/bin
+-MANDIR ?= ${PREFIX}/man
++MANDIR ?= ${PREFIX}/man/man
+ 
+ .include <bsd.prog.mk>
