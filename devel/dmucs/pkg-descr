@@ -1,0 +1,14 @@
+DMUCS is a system that allows a group of users to share a compilation farm.
+Each compilation request from each user will be sent to the fastest available
+machine, every time. The system has these fine qualities:
+* Supports multiple users compiling simultaneously, and scales well to handle
+the new loads.
+* Supports multiple operating systems in the compilation farm.
+* Uses all processors of a multi-processor compilation host.
+* Makes best use of compilation hosts with widely differing CPU speeds.
+* Guarantees that a compilation host will not be overloaded by compilations.
+* Takes into account the load on a host caused by non-compilation tasks.
+* Supports the dynamic addition and removal of hosts to the compilation farm.
+* Works with distcc, which need not be altered in any way.
+
+WWW:	http://dmucs.sourceforge.net/
