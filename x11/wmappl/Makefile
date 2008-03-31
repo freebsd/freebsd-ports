@@ -6,61 +6,40 @@
 #
 
 PORTNAME=	wmappl
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.71
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:main/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:main/} \
+		http://www.upl.cs.wisc.edu/~charkins/wmappl/:icons
 MASTER_SITE_SUBDIR=${PORTNAME}/:main
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
-
-.ifndef(NOICONS)
-PATCH_SITES=	http://www.upl.cs.wisc.edu/~charkins/wmappl/
-PATCHFILES=	16x16xpms.tar.gz icons_16x16.tar.gz smallicons.tar.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-.endif
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main \
+		16x16xpms.tar.gz:icons icons_16x16.tar.gz:icons smallicons.tar.gz:icons
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An application launcher dockapp similar to wmbutton
 
-USE_XORG=	xpm
+GNU_CONFIGURE=	yes
+USE_XORG=	xpm x11 xext sm ice
 MAKE_ENV=	DATADIR="${DATADIR}" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
-.ifndef(NOICONS)
-PLIST_SUB=	ICONS=""
-.else
-PLIST_SUB=	ICONS="@comment "
-.endif
+MAN1=	wmappl.1
+MAN5=	wmapplrc.5
 
-.ifndef(NOICONS)
 post-extract:
-	@${ECHO_MSG} "===>   Extracting icons ..."
-.for icons in ${PATCHFILES}
-	@${ECHO_MSG} "===>   ${icons} ..."
-	@${TAR} -C ${WRKSRC}/icons -xzf ${DISTDIR}/${icons}
-.endfor
-	@${MV} ${WRKSRC}/icons/smallicons/* ${WRKSRC}/icons
-.endif
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmappl ${PREFIX}/bin
+	@${RM} -rf ${WRKSRC}/icons/CVS
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/sample.wmapplrc ${EXAMPLESDIR}
-.ifndef(NOICONS)
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "===>   Installing icons to ${DATADIR} directory"
 	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}/icons; ${INSTALL_DATA} *.xpm ${DATADIR})
-.endif
+	@cd ${WRKDIR} && ${INSTALL_DATA} *.xpm ${DATADIR}
+	@cd ${WRKDIR}/smallicons && ${INSTALL_DATA} *.xpm ${DATADIR}
 .ifndef(NOPORTDOCS)
 	@${ECHO_CMD} "===>   Installing README as ${DOCSDIR}/README"
 	@${ECHO_CMD} "===>   Please read for configuration information"
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-	@${SED} -E 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
