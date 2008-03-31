@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	perl-ldap
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	net perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Net
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	Net/GBARR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -31,6 +31,7 @@ MAN3=		Bundle::Net::LDAP.3 \
 		Net::LDAP::Control::EntryChange.3 \
 		Net::LDAP::Control::ManageDsaIT.3 \
 		Net::LDAP::Control::Paged.3 \
+		Net::LDAP::Control::PasswordPolicy.3 \
 		Net::LDAP::Control::PersistentSearch.3 \
 		Net::LDAP::Control::ProxyAuth.3 \
 		Net::LDAP::Control::Sort.3 \
