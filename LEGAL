@@ -739,3 +739,4 @@ send-*			net-mgmt/send		Not redistributable, license
 rapid-*			math/rapid		No commercial use
 dtiquery-*		science/dtiquery	License agreement is required
 clustalw-*		biology/clustalw	No commercial use
+nttcp-*			benchmark/nttcp		No commercial use
