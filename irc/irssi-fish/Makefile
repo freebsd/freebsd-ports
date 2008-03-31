@@ -26,6 +26,12 @@ PORTDOCS=	FiSH-irssi.txt FiSH-irssi_History.txt
 
 IRSSI_WRKSRC!=	cd ${.CURDIR}/../irssi && ${MAKE} -V WRKSRC
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+ALL_TARGET=	amd64
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -E -e 's|||' {} \;
 	@${REINPLACE_CMD} -E \
@@ -48,4 +54,4 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/irssi/modules
 	${INSTALL_PROGRAM} ${WRKSRC}/libfish.so ${PREFIX}/lib/irssi/modules
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
