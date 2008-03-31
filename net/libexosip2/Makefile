@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libeXosip2
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	exosip
@@ -21,5 +21,8 @@ CONFIGURE_ARGS+=	--disable-tools --disable-debug --disable-trace
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e '/HAVE_OPENSSL/d' ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>
