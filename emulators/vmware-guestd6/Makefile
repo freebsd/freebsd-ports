@@ -35,6 +35,8 @@ NO_PACKAGE=	${RESTRICTED}
 VMWARE_VER=	6.0.3
 BUILD_VER=	80004
 
+WANT_GNOME=	yes
+
 .include <bsd.port.pre.mk>
 
 .if defined(VMWARE_X_PORTS)
@@ -50,7 +52,7 @@ PLIST_SUB+=	INSTALLXTCLTOOL=""
 PLIST_SUB+=	INSTALLXGTKTOOL=""
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	glib12 gtk12
+USE_GNOME+=	glib12 gtk12
 .else
 PLIST_SUB+=	INSTALLXGTKTOOL="@comment "
 .endif
