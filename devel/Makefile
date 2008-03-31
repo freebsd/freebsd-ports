@@ -260,6 +260,7 @@
     SUBDIR += djgpp-gcc
     SUBDIR += dmake
     SUBDIR += dmalloc
+    SUBDIR += dmucs
     SUBDIR += doctorj
     SUBDIR += dotconf
     SUBDIR += dotconf++
