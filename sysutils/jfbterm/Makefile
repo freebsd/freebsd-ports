@@ -15,7 +15,7 @@ MAINTAINER=	bsdports@gmail.com
 COMMENT=	Multilanguage can be displayed on the console
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	gnu-unifont:${PORTSDIR}/sysutils/gnu-unifont
+RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/unifont.pcf.gz:${PORTSDIR}/sysutils/gnu-unifont
 
 ONLY_FOR_ARCHS=	i386
 USE_ICONV=	yes
