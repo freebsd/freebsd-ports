@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/Bundle/Net/LDAP.pm
 %%SITE_PERL%%/LWP/Protocol/ldap.pm
 %%SITE_PERL%%/Net/LDAP.pm
@@ -9,6 +10,7 @@
 %%SITE_PERL%%/Net/LDAP/Control/EntryChange.pm
 %%SITE_PERL%%/Net/LDAP/Control/ManageDsaIT.pm
 %%SITE_PERL%%/Net/LDAP/Control/Paged.pm
+%%SITE_PERL%%/Net/LDAP/Control/PasswordPolicy.pm
 %%SITE_PERL%%/Net/LDAP/Control/PersistentSearch.pm
 %%SITE_PERL%%/Net/LDAP/Control/ProxyAuth.pm
 %%SITE_PERL%%/Net/LDAP/Control/Sort.pm
