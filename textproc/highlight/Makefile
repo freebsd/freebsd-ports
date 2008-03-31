@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.4.8
-PORTREVISION=	1
+PORTVERSION=	2.6.7
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
@@ -15,15 +14,11 @@ MASTER_SITES=	http://www.andre-simon.de/zip/
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	Customizable syntax highlighter
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
-
-USE_GCC=	3.4
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CXX="${CXX}" \
 		CFLAGS="${CXXFLAGS} ${CPPFLAGS} -DHAVE_DECL_GETOPT" \
 		LDFLAGS="${LDFLAGS}"
-ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/highlight
 
@@ -38,35 +33,33 @@ PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|/etc/highlight|${DATADIR}|g' ${WRKSRC}/datadir.cpp
-	@${REINPLACE_CMD} -e \
-		's|/usr/share/highlight|${DATADIR}|' ${WRKSRC}/datadir.cpp
+		's|^PREFIX =|PREFIX ?=|' ${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/../man/${MAN1}.gz ${MANPREFIX}/man/man1
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/../filetypes.conf ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/${MAN1}.gz ${MANPREFIX}/man/man1
+	@${MKDIR} ${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/filetypes.conf ${ETCDIR}
 	@${MKDIR} ${DATADIR}/helpmsg
-	${INSTALL_DATA} ${WRKSRC}/../helpmsg/* ${DATADIR}/helpmsg
+	${INSTALL_DATA} ${WRKSRC}/helpmsg/* ${DATADIR}/helpmsg
 	@${MKDIR} ${DATADIR}/langDefs
-	${INSTALL_DATA} ${WRKSRC}/../langDefs/*.lang ${DATADIR}/langDefs
+	${INSTALL_DATA} ${WRKSRC}/langDefs/*.lang ${DATADIR}/langDefs
 	@${MKDIR} ${DATADIR}/themes
-	${INSTALL_DATA} ${WRKSRC}/../themes/* ${DATADIR}/themes
+	${INSTALL_DATA} ${WRKSRC}/themes/* ${DATADIR}/themes
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in AUTHORS ChangeLog INSTALL README README_DE README_ES README_INDENT \
 	README_REGEX TODO
-	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
-	${TAR} -C ${WRKSRC}/../examples -cf - . | \
+	${TAR} -C ${WRKSRC}/examples -cf - . | \
 		${TAR} -C  ${EXAMPLESDIR} --unlink -xf -
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
 post-install:
-.for dir in ${PREFIX}/share/${PORTNAME} ${PREFIX}/share/examples/${PORTNAME}
+.for dir in ${ETCDIR} ${DATADIR} ${EXAMPLESDIR}
 	@${FIND} ${dir} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${dir} -type d | ${SORT} -r | \
