@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	db46
-PORTVERSION=	4.6.21.0
+PORTVERSION=	4.6.21.1
 CATEGORIES=	databases
 MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
 		http://download-east.oracle.com/berkeley-db/ \
@@ -14,6 +14,13 @@ MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
 PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
+
+PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/xml/update/${PORTVERSION:R}/
+PATCHFILES=	patch.4.6.21.1
+PATCH_DIST_STRIP=	-d ..
+# * patch.4.6.21.1: -----------------------------------------------------------
+# Fixes a race condition between checkpoint and DB->close which can result in
+# the checkpoint thread self-deadlocking. [#15692]
 
 # I allow matthias.andree@gmx.de and all freebsd committer to do changes
 # to this package.

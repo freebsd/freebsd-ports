@@ -1,3 +1,6 @@
 MD5 (bdb/db-4.6.21.tar.gz) = 718082e7e35fc48478a2334b0bc4cd11
 SHA256 (bdb/db-4.6.21.tar.gz) = 53ea9c9f03746a0aa415e6706e9c6da18ca18148f20ad1465b182411a7985e21
 SIZE (bdb/db-4.6.21.tar.gz) = 11881885
+MD5 (bdb/patch.4.6.21.1) = 4878872edfc53c6ecb871b1062a4bdaf
+SHA256 (bdb/patch.4.6.21.1) = d28c0723c465a2cf3ff2ddc5ed3c643b40c955c4e64d56580961f2fd799cbb53
+SIZE (bdb/patch.4.6.21.1) = 2475
