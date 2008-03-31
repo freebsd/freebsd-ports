@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	game
-PORTVERSION=	1.7.1
-PORTREVISION=	4
+PORTVERSION=	1.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://pygame.seul.org/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,16 +15,17 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}release
 MAINTAINER=	mva@sysfault.org
 COMMENT=	A module designed to write games in Python
 
-BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
-RUN_DEPENDS=	${PYNUMERIC}
 
 USE_SDL=	ttf image mixer sdl
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 PYDISTUTILS_PKGNAME=	pygame
-PYDISTUTILS_PKGVERSION=	1.7.1release
+PYDISTUTILS_PKGVERSION=	1.8.0release
+
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config.py
