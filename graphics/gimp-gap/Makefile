@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gimp-gap
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
@@ -21,17 +20,21 @@ MASTER_SITE_SUBDIR=	gimp/plug-ins/v${PORTVERSION:R}/gap
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	GIMP Animation Package
 
-BUILD_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay
+BUILD_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay \
+		${LOCALBASE}/lib/libmpeg3.a:${PORTSDIR}/multimedia/libmpeg3
 LIB_DEPENDS=	xvidcore.4:${PORTSDIR}/multimedia/xvid \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app
-RUN_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay
+RUN_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay \
+		gimp>0:${PORTSDIR}/graphics/gimp \
+		mpeg2encode:${PORTSDIR}/multimedia/mpeg2codec \
+		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode
 
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool
-CONFIGURE_ARGS=	--disable-libmpeg3
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
