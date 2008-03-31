@@ -1,6 +1,6 @@
---- configure.orig	Tue Apr 24 13:11:35 2007
-+++ configure	Tue Apr 24 13:14:01 2007
-@@ -23874,7 +23874,7 @@
+--- configure.orig	Fri Nov 30 20:36:38 2007
++++ configure	Sun Dec  2 14:43:57 2007
+@@ -24138,7 +24138,7 @@
  echo "GTK interface compilation is disabled."
  fi
  
@@ -9,31 +9,3 @@
  
  pkg_failed=no
  { echo "$as_me:$LINENO: checking for GNOME_APPLETS" >&5
-@@ -24072,27 +24072,6 @@
- if test "x${prefix}" = "xNONE"; then
- 	prefix=${ac_default_prefix}
- fi
--
--DATADIRNAME=share
--
--cat >>confdefs.h <<_ACEOF
--#define PACKAGE_LOCALE_DIR "${prefix}/${DATADIRNAME}/locale"
--_ACEOF
--
--
--
--cat >>confdefs.h <<_ACEOF
--#define PACKAGE_DATA_DIR "${prefix}/${DATADIRNAME}"
--_ACEOF
--
--
--
--cat >>confdefs.h <<_ACEOF
--#define PACKAGE_SOUND_DIR "${prefix}/${DATADIRNAME}/sounds/linphone"
--_ACEOF
--
--
--
- 
- for ac_func in getifaddrs
- do

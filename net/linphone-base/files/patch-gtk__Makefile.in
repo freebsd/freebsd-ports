@@ -1,13 +1,15 @@
---- gtk/Makefile.in.orig	Tue Apr 10 05:06:20 2007
-+++ gtk/Makefile.in	Fri Apr 13 03:49:05 2007
-@@ -73,7 +73,6 @@
+--- gtk/Makefile.in.orig	Wed Nov 21 19:04:35 2007
++++ gtk/Makefile.in	Wed Nov 21 19:06:10 2007
+@@ -73,8 +73,7 @@
+ linphone_OBJECTS = $(am_linphone_OBJECTS)
  am__DEPENDENCIES_1 =
  @BUILD_GTK_TRUE@linphone_DEPENDENCIES = $(am__DEPENDENCIES_1) \
- @BUILD_GTK_TRUE@	$(am__DEPENDENCIES_1) \
--@BUILD_GTK_TRUE@	$(top_builddir)/coreapi/liblinphone.la \
- @BUILD_GTK_TRUE@	$(am__DEPENDENCIES_1)
+-@BUILD_GTK_TRUE@	$(am__DEPENDENCIES_1) \
+-@BUILD_GTK_TRUE@	$(top_builddir)/coreapi/liblinphone.la
++@BUILD_GTK_TRUE@	$(am__DEPENDENCIES_1)
  am__linphone_applet_SOURCES_DIST = linphone.c linphone.h gui_utils.c \
  	gui_utils.h support.c support.h interface.c interface.h \
+ 	callbacks.c callbacks.h presence.c presence.h propertybox.c \
 @@ -95,7 +94,6 @@
  linphone_applet_OBJECTS = $(am_linphone_applet_OBJECTS)
  @BUILD_GNOME_APPLET_TRUE@linphone_applet_DEPENDENCIES =  \
@@ -20,12 +22,12 @@
  @BUILD_GTK_TRUE@	$(linphone_common_sources)
  
  @BUILD_GTK_TRUE@linphone_LDADD = $(LIBGTK_LIBS) $(INTLLIBS) \
--@BUILD_GTK_TRUE@				$(top_builddir)/coreapi/liblinphone.la \
-+@BUILD_GTK_TRUE@				-llinphone \
- @BUILD_GTK_TRUE@				$(OSIP_LIBS)
+-@BUILD_GTK_TRUE@				$(top_builddir)/coreapi/liblinphone.la
++@BUILD_GTK_TRUE@				-llinphone
  
- AM_CFLAGS = $(STRICT_OPTIONS) $(LIBGTK_CFLAGS) $(IPV6_CFLAGS)	
-@@ -347,7 +345,7 @@
+ AM_CFLAGS = $(STRICT_OPTIONS) $(LIBGTK_CFLAGS) $(IPV6_CFLAGS) \
+ 		$(ORTP_CFLAGS) $(OSIP_CFLAGS)
+@@ -348,7 +346,7 @@
  @BUILD_GNOME_APPLET_TRUE@linphone_applet_CFLAGS = $(AM_CFLAGS) $(GNOME_APPLETS_CFLAGS) -DLINPHONE_APPLET
  @BUILD_GNOME_APPLET_TRUE@linphone_applet_LDADD = \
  @BUILD_GNOME_APPLET_TRUE@				$(GNOME_APPLETS_LIBS) \
