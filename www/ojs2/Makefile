@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ojs2
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	www
 MASTER_SITES=	http://pkp.sfu.ca/ojs/download/
-DISTNAME=	ojs-2.1.1
+DISTNAME=	ojs-2.2
 
 MAINTAINER=	filiperocha@gmail.com
 COMMENT=	Open Journal Systems
@@ -23,7 +23,15 @@ WANT_PHP_WEB=	yes
 OJSDIR?=	www/ojs2
 
 OPTIONS=	MYSQL "Use a MYSQL Database" on \
-		PGSQL "Use a PostgreSQL Database" off
+		PGSQL "Use a PostgreSQL Database" off \
+		LDAP  "Use LDAP Authentication" off
+
+pre-everything::
+	@${ECHO_MSG} "=============================================================================================="
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you are upgrading please refer to docs/UPGRADE or browse to http://pkp.sfu.ca/ojs/UPGRADE"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "=============================================================================================="
 
 .include <bsd.port.pre.mk>
 
@@ -37,6 +45,10 @@ USE_PHP+=	mysql
 
 .ifdef(WITH_PGSQL)
 USE_PHP+=	pgsql
+.endif
+
+.ifdef(WITH_LDAP)
+USE_PHP+=	ldap
 .endif
 
 do-install:

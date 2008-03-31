@@ -1,6 +1,32 @@
-===================================================
-Please read docs/README for more instalation 
-information
+==================================================================================
+* Please read docs/README (http://pkp.sfu.ca/ojs/README) or browse to 
+     http://pkp.sfu.ca/ojs_documentation
+  on HOW-TO get OJS fully functional
+
+* See lib/libraries.txt for a list of third-party
+ libraries used by OJS.
+
+Recommended Configuration
+-------------------------
+
+A secure deployment can be best achieved by using the following policies:
+
+	* Dedicate a database to OJS; use unique credentials to access it.
+	  Configure this database to perform automated backups on a regular
+	  basis. Perform a manual backup when upgrading or performing
+	  maintenance.
+
+	* Configure OJS (config.inc.php) to use SHA1 hashing rather than MD5.
+
+	* Configure OJS (config.inc.php) to use force_ssl_login so that
+	  authenticated users communicate with the server via HTTPS.
+
+	* Install OJS so that the files directory is NOT a subdirectory of
+	  the OJS installation and cannot be accessed directly via the web
+	  server. Restrict file permissions as much as possible. Automated
+	  backups of this directory should be roughly synchronized with
+	  database backups.
 
 Forum: <http://pkp.sfu.ca/support/forum/>
-===================================================
+
+=================================================================================
