@@ -72,7 +72,9 @@ elif [ "$2" = "POST-INSTALL" ]; then
 
 	%%RCDLINK%%ln -s ${PREFIX}/rc %%LOCALBASE%%/etc/rc.d/qmail.sh
 
-	if ! touch ${PREFIX}/alias/.qmail-{postmaster,root,mailer-daemon}; then
+	if ! touch ${PREFIX}/alias/.qmail-postmaster \
+		   ${PREFIX}/alias/.qmail-root \
+		   ${PREFIX}/alias/.qmail-mailer-daemon; then
 		echo "Failed to create files :"
 		echo "  ${PREFIX}/alias/.qmail-postmaster"
 		echo "  ${PREFIX}/alias/.qmail-root"
