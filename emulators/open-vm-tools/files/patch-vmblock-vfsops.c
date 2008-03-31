@@ -5,7 +5,7 @@
     MNT_ILOCK(mp);
     mp->mnt_flag |= lowerrootvp->v_mount->mnt_flag & MNT_LOCAL;
 -#if BSD_VERSION >= 60
-+#if __FreeBSD_version >= 60
++#if __FreeBSD_version >= 600000
     mp->mnt_kern_flag |= lowerrootvp->v_mount->mnt_kern_flag & MNTK_MPSAFE;
  #endif
     MNT_IUNLOCK(mp);
