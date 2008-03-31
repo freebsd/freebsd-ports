@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	DBD-Pg
-PORTVERSION=	1.49
+PORTVERSION=	2.5.0
 CATEGORIES=	databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	DBD
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides access to PostgreSQL databases through the DBI
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	p5-DBI>=1.52:${PORTSDIR}/databases/p5-DBI \
+    		p5-version>=0:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PGSQL=	yes
@@ -33,10 +33,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-PG_CONFIG=	${LOCALBASE}/bin/pg_config
-CONFIGURE_ENV+=	POSTGRES_INCLUDE=`${PG_CONFIG} --includedir` \
-		POSTGRES_LIB=`${PG_CONFIG} --libdir`
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
