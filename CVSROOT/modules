@@ -6756,6 +6756,7 @@ libimg-tkstep80	ports/graphics/libimg-tkstep80
 libint		ports/science/libint
 libiodbc	ports/databases/libiodbc
 libiptcdata	ports/graphics/libiptcdata
+libiqxmlrpc	ports/devel/libiqxmlrpc
 libirman	ports/comms/libirman
 libixp		ports/devel/libixp
 libjackasyn	ports/audio/libjackasyn
