@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pulseaudio
-PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTVERSION=	0.9.10
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -23,7 +22,8 @@ CONFLICTS=	polypaudio-[1-9]*
 USE_GNOME=	gnometarget gnomehack glib20 ltverhack
 USE_XLIB=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:15 libltdl:15
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
