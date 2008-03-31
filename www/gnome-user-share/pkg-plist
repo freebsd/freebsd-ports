@@ -1,12 +1,12 @@
 bin/gnome-file-share-properties
+etc/xdg/autostart/gnome-user-share.desktop
 libexec/gnome-user-share
 share/applications/gnome-user-share-properties.desktop
 share/gnome-user-share/dav_groupfile
 share/gnome-user-share/dav_user.conf
 share/gnome-user-share/dav_user_2.0.conf
 share/gnome-user-share/dav_user_2.2.conf
-share/gnome-user-share/file-share-properties.glade
-share/gnome/autostart/gnome-user-share.desktop
+share/gnome-user-share/file-share-properties.ui
 share/icons/hicolor/16x16/apps/gnome-obex-server.png
 share/icons/hicolor/22x22/apps/gnome-obex-server.png
 share/icons/hicolor/32x32/apps/gnome-obex-server.png
@@ -21,6 +21,7 @@ share/locale/dz/LC_MESSAGES/gnome-user-share.mo
 share/locale/el/LC_MESSAGES/gnome-user-share.mo
 share/locale/en_CA/LC_MESSAGES/gnome-user-share.mo
 share/locale/en_GB/LC_MESSAGES/gnome-user-share.mo
+share/locale/eu/LC_MESSAGES/gnome-user-share.mo
 share/locale/es/LC_MESSAGES/gnome-user-share.mo
 share/locale/fi/LC_MESSAGES/gnome-user-share.mo
 share/locale/fr/LC_MESSAGES/gnome-user-share.mo
@@ -59,3 +60,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-user-share.mo
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
