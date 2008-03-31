@@ -8,14 +8,11 @@
 PORTNAME=	mpeg_encode
 PORTVERSION=	1.5b
 CATEGORIES=	multimedia
-MASTER_SITES=	http://bmrc.berkeley.edu/ftp/pub/multimedia/mpeg/encode/ \
-		ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/encode/
+MASTER_SITES=	LOCAL/ahze
 DISTNAME=	${PKGNAME}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	UCB's MPEG-I video stream encoder
-
-BROKEN=		Checksum mismatch
 
 MAN1=		mpeg_encode.1
 
