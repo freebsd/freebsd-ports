@@ -30,6 +30,9 @@ WITHOUT_LAME=	yes	# MP3 License , no package
 WITHOUT_SWFDEC=	yes	# Broken
 WITHOUT_MPEG2ENC=	yes	# Broken
 .endif
+.if ${ARCH}!="i386"
+WITHOUT_SPC=	yes	# i386 only
+.endif
 
 # Remove core, yes
 PLUGS=	${_USE_GSTREAMER10_ALL}
