@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pavucontrol
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
