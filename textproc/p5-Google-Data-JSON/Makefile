@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Google-Data-JSON
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML/TAKERU
@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	General XML-JSON converter based on Google Data APIs
 
-BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+BUILD_DEPENDS=	p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Perl6-Export-Attrs>=0:${PORTSDIR}/devel/p5-Perl6-Export-Attrs \
 		p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
