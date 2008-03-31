@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flite
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speech.cs.cmu.edu/flite/packed/${PORTNAME}-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
@@ -15,11 +14,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-release
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A small run-time speech synthesis engine
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared=yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 

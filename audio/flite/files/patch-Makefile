@@ -1,0 +1,24 @@
+--- Makefile.orig	2005-11-01 14:40:45.000000000 +0100
++++ Makefile	2008-03-31 15:19:26.000000000 +0200
+@@ -48,6 +48,7 @@
+ FILES = Makefile README ACKNOWLEDGEMENTS COPYING $(CONFIG)
+ DIST_CLEAN = config.cache config.log config.status \
+ 		config/config config/system.mak FileList
++DOCDIR=	$(PREFIX)/share/doc/flite
+ 
+ HOST_ONLY_DIRS = tools main
+ ALL = $(BUILD_DIRS)
+@@ -108,10 +109,12 @@
+ 	mkdir -p $(INSTALLBINDIR)
+ 	mkdir -p $(INSTALLLIBDIR)
+ 	mkdir -p $(INSTALLINCDIR)
++	mkdir -p $(DOCDIR)
+ 	$(INSTALL) -m 644 include/*.h $(INSTALLINCDIR)
+-	@ $(MAKE) -C lib --no-print-directory install
++	$(INSTALL) -m 644 $(LIBDIR)/libflite* $(INSTALLLIBDIR)
+ 	$(INSTALL) -m 755 bin/flite $(INSTALLBINDIR)
+ 	$(INSTALL) -m 755 bin/flite_time $(INSTALLBINDIR)
++	$(INSTALL) -m 644 README $(DOCDIR) 
+ 
+ time-stamp :
+ 	@ echo $(PROJECT_NAME) >.time-stamp
