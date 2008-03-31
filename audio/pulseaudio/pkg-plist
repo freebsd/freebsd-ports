@@ -136,7 +136,7 @@ libdata/pkgconfig/libpulse-mainloop-glib.pc
 libdata/pkgconfig/libpulse-simple.pc
 libdata/pkgconfig/libpulse.pc
 %%GCONF%%libexec/pulse/gconf-helper
-%%HAL%%share/PolicyKit/policy/PulseAudio.policy
+%%HAL%%share/PolicyKit/policy/org.pulseaudio.policy
 %%GCONF%%@dirrm libexec/pulse
 @dirrm lib/pulse-%%PULSE_VERSION%%/modules
 @dirrm lib/pulse-%%PULSE_VERSION%%
