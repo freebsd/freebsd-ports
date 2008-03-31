@@ -55,6 +55,7 @@ PLIST_SUB+=	PORTVERSION=${RELEASE} \
 		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${PREFIX}/,,}
 
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
 DOCS=	ANNOUNCE INSTALL NEWS README TO-DO doc/html/announce.html \
 	doc/hackguide.doc doc/html/hackguide.html \
@@ -120,7 +121,8 @@ post-patch:
 
 post-configure:
 .if !defined(WITHOUT_WIDEC)
-	${MAKE} ${.MAKEFLAGS} CONFIGURE_WRKSRC=${WIDEC_WRKSRC} \
+	cd ${.CURDIR} && \
+	    ${MAKE} ${.MAKEFLAGS} CONFIGURE_WRKSRC=${WIDEC_WRKSRC} \
 	    CONFIGURE_ARGS="${CONFIGURE_ARGS} --enable-widec" \
 	    do-configure
 .endif
@@ -133,24 +135,28 @@ post-configure:
 
 post-build:
 .if !defined(WITHOUT_WIDEC)
-	${MAKE} ${.MAKEFLAGS} BUILD_WRKSRC=${WIDEC_WRKSRC} do-build
+	cd ${.CURDIR} && \
+	    ${MAKE} ${.MAKEFLAGS} BUILD_WRKSRC=${WIDEC_WRKSRC} do-build
 .endif
 
 post-install:
 .if !defined(WITHOUT_WIDEC)
-	${MAKE} ${.MAKEFLAGS} INSTALL_WRKSRC=${WIDEC_WRKSRC} do-install
+	cd ${.CURDIR} && \
+	    ${MAKE} ${.MAKEFLAGS} INSTALL_WRKSRC=${WIDEC_WRKSRC} do-install
 .endif
 
-.for i in ${EXAMPLES_TARGETS}
+.if !defined(NOPORTEXAMPLES)
+. for i in ${EXAMPLES_TARGETS}
 	${MKDIR} ${${i}_EXAMPLESDIR}/c++
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${${i}_WRKSRC}/test/${f} ${${i}_EXAMPLESDIR}
-.endfor
-	${INSTALL_SCRIPT} ${${i}_WRKSRC}/test/tracemunch ${${i}_EXAMPLESDIR}
-.for f in ${EXAMPLES_CPP}
-	${INSTALL_DATA} ${${i}_WRKSRC}/c++/${f} ${${i}_EXAMPLESDIR}/c++
-.endfor
-.endfor
+.  for f in ${EXAMPLES}
+	${INSTALL_DATA} ${${i}_WRKSRC}/test/${f} ${${i}_EXAMPLESDIR}/
+.  endfor
+	${INSTALL_SCRIPT} ${${i}_WRKSRC}/test/tracemunch ${${i}_EXAMPLESDIR}/
+.  for f in ${EXAMPLES_CPP}
+	${INSTALL_DATA} ${${i}_WRKSRC}/c++/${f} ${${i}_EXAMPLESDIR}/c++/
+.  endfor
+. endfor
+.endif
 
 .if !defined(WITHOUT_TERMINFO)
 	${FIND} ${PREFIX}/share/misc -name "*.terminfo" -print0	|	\
@@ -160,7 +166,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 . for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 . endfor
 .endif
 
