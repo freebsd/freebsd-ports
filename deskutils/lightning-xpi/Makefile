@@ -60,7 +60,6 @@ OS_VER=	5
 OS_VER=	6
 . elif ${OSVERSION} > 700000
 OS_VER=	7
-ARCH_PORTVERSION=	0.5
 . endif
 .else
 IGNORE=	${_IGNORE_MSG}
