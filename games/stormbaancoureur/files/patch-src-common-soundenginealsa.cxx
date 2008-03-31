@@ -1,5 +1,5 @@
---- src-common/soundenginealsa.cxx.orig	2008-01-06 23:27:11.000000000 +0300
-+++ src-common/soundenginealsa.cxx	2008-02-09 00:54:41.000000000 +0300
+--- src-common/soundenginealsa.cxx.orig	2008-03-22 21:45:22.000000000 +0300
++++ src-common/soundenginealsa.cxx	2008-03-30 17:58:09.000000000 +0400
 @@ -38,219 +38,46 @@
    complexfeed(0),
    enginefeed(0),
@@ -186,9 +186,9 @@
 -
 -  float fractiondone = activefeed->FractionDone(delay);
 -
--  if (delay < framelag)
+-  if (delay < (int) buffersz)
 -  {
--    int todo = framelag - delay;
+-    int todo = buffersz - delay;
 -#if 0
 -    int cnt  = (todo + periodsz-1) / periodsz; // Use this with pulse audio (fedora)
 -#else
