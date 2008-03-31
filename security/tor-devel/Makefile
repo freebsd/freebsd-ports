@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.0.22-rc
-PORTREVISION=	1
+DISTVERSION=	0.2.0.23-rc
 CATEGORIES=	security net
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://mirror.onionland.org/dist/
@@ -22,7 +21,7 @@ LIB_DEPENDS=	event-1.3e:${PORTSDIR}/devel/libevent
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+= CPPFLAGS="${CPPFLAGS}"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 
 OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
 		CELLPOOL "memory pool allocator for cells" on \
