@@ -1,5 +1,4 @@
 bin/hg
-bin/hgmerge
 %%PYTHON_SITELIBDIR%%/hgext/__init__.py
 %%PYTHON_SITELIBDIR%%/hgext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hgext/__init__.pyo
@@ -15,12 +14,21 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/hgext/children.py
 %%PYTHON_SITELIBDIR%%/hgext/children.pyc
 %%PYTHON_SITELIBDIR%%/hgext/children.pyo
+%%PYTHON_SITELIBDIR%%/hgext/churn.py
+%%PYTHON_SITELIBDIR%%/hgext/churn.pyc
+%%PYTHON_SITELIBDIR%%/hgext/churn.pyo
+%%PYTHON_SITELIBDIR%%/hgext/color.py
+%%PYTHON_SITELIBDIR%%/hgext/color.pyc
+%%PYTHON_SITELIBDIR%%/hgext/color.pyo
 %%PYTHON_SITELIBDIR%%/hgext/convert/__init__.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/__init__.pyo
 %%PYTHON_SITELIBDIR%%/hgext/convert/common.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/common.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/common.pyo
+%%PYTHON_SITELIBDIR%%/hgext/convert/convcmd.py
+%%PYTHON_SITELIBDIR%%/hgext/convert/convcmd.pyc
+%%PYTHON_SITELIBDIR%%/hgext/convert/convcmd.pyo
 %%PYTHON_SITELIBDIR%%/hgext/convert/cvs.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/cvs.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/cvs.pyo
@@ -33,9 +41,15 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/hgext/convert/git.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/git.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/git.pyo
+%%PYTHON_SITELIBDIR%%/hgext/convert/gnuarch.py
+%%PYTHON_SITELIBDIR%%/hgext/convert/gnuarch.pyc
+%%PYTHON_SITELIBDIR%%/hgext/convert/gnuarch.pyo
 %%PYTHON_SITELIBDIR%%/hgext/convert/hg.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/hg.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/hg.pyo
+%%PYTHON_SITELIBDIR%%/hgext/convert/monotone.py
+%%PYTHON_SITELIBDIR%%/hgext/convert/monotone.pyc
+%%PYTHON_SITELIBDIR%%/hgext/convert/monotone.pyo
 %%PYTHON_SITELIBDIR%%/hgext/convert/subversion.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/subversion.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/subversion.pyo
@@ -54,24 +68,30 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/hgext/graphlog.py
 %%PYTHON_SITELIBDIR%%/hgext/graphlog.pyc
 %%PYTHON_SITELIBDIR%%/hgext/graphlog.pyo
-%%PYTHON_SITELIBDIR%%/hgext/hbisect.py
-%%PYTHON_SITELIBDIR%%/hgext/hbisect.pyc
-%%PYTHON_SITELIBDIR%%/hgext/hbisect.pyo
 %%PYTHON_SITELIBDIR%%/hgext/hgk.py
 %%PYTHON_SITELIBDIR%%/hgext/hgk.pyc
 %%PYTHON_SITELIBDIR%%/hgext/hgk.pyo
+%%PYTHON_SITELIBDIR%%/hgext/highlight.py
+%%PYTHON_SITELIBDIR%%/hgext/highlight.pyc
+%%PYTHON_SITELIBDIR%%/hgext/highlight.pyo
 %%PYTHON_SITELIBDIR%%/hgext/imerge.py
 %%PYTHON_SITELIBDIR%%/hgext/imerge.pyc
 %%PYTHON_SITELIBDIR%%/hgext/imerge.pyo
 %%PYTHON_SITELIBDIR%%/hgext/interhg.py
 %%PYTHON_SITELIBDIR%%/hgext/interhg.pyc
 %%PYTHON_SITELIBDIR%%/hgext/interhg.pyo
+%%PYTHON_SITELIBDIR%%/hgext/keyword.py
+%%PYTHON_SITELIBDIR%%/hgext/keyword.pyc
+%%PYTHON_SITELIBDIR%%/hgext/keyword.pyo
 %%PYTHON_SITELIBDIR%%/hgext/mq.py
 %%PYTHON_SITELIBDIR%%/hgext/mq.pyc
 %%PYTHON_SITELIBDIR%%/hgext/mq.pyo
 %%PYTHON_SITELIBDIR%%/hgext/notify.py
 %%PYTHON_SITELIBDIR%%/hgext/notify.pyc
 %%PYTHON_SITELIBDIR%%/hgext/notify.pyo
+%%PYTHON_SITELIBDIR%%/hgext/pager.py
+%%PYTHON_SITELIBDIR%%/hgext/pager.pyc
+%%PYTHON_SITELIBDIR%%/hgext/pager.pyo
 %%PYTHON_SITELIBDIR%%/hgext/parentrevspec.py
 %%PYTHON_SITELIBDIR%%/hgext/parentrevspec.pyc
 %%PYTHON_SITELIBDIR%%/hgext/parentrevspec.pyo
@@ -87,6 +107,9 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/hgext/transplant.py
 %%PYTHON_SITELIBDIR%%/hgext/transplant.pyc
 %%PYTHON_SITELIBDIR%%/hgext/transplant.pyo
+%%PYTHON_SITELIBDIR%%/hgext/win32mbcs.py
+%%PYTHON_SITELIBDIR%%/hgext/win32mbcs.pyc
+%%PYTHON_SITELIBDIR%%/hgext/win32mbcs.pyo
 %%PYTHON_SITELIBDIR%%/hgext/win32text.py
 %%PYTHON_SITELIBDIR%%/hgext/win32text.pyc
 %%PYTHON_SITELIBDIR%%/hgext/win32text.pyo
@@ -125,6 +148,9 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/context.py
 %%PYTHON_SITELIBDIR%%/mercurial/context.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/context.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/copies.py
+%%PYTHON_SITELIBDIR%%/mercurial/copies.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/copies.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.py
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyo
@@ -144,6 +170,12 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/filelog.py
 %%PYTHON_SITELIBDIR%%/mercurial/filelog.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/filelog.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/filemerge.py
+%%PYTHON_SITELIBDIR%%/mercurial/filemerge.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/filemerge.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/hbisect.py
+%%PYTHON_SITELIBDIR%%/mercurial/hbisect.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/hbisect.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/help.py
 %%PYTHON_SITELIBDIR%%/mercurial/help.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/help.pyo
@@ -162,12 +194,18 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/hgweb/hgwebdir_mod.py
 %%PYTHON_SITELIBDIR%%/mercurial/hgweb/hgwebdir_mod.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/hgweb/hgwebdir_mod.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/hgweb/protocol.py
+%%PYTHON_SITELIBDIR%%/mercurial/hgweb/protocol.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/hgweb/protocol.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/hgweb/request.py
 %%PYTHON_SITELIBDIR%%/mercurial/hgweb/request.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/hgweb/request.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/hgweb/server.py
 %%PYTHON_SITELIBDIR%%/mercurial/hgweb/server.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/hgweb/server.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/hgweb/webcommands.py
+%%PYTHON_SITELIBDIR%%/mercurial/hgweb/webcommands.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/hgweb/webcommands.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/hgweb/wsgicgi.py
 %%PYTHON_SITELIBDIR%%/mercurial/hgweb/wsgicgi.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/hgweb/wsgicgi.pyo
@@ -221,9 +259,6 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/patch.py
 %%PYTHON_SITELIBDIR%%/mercurial/patch.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/patch.pyo
-%%PYTHON_SITELIBDIR%%/mercurial/remoterepo.py
-%%PYTHON_SITELIBDIR%%/mercurial/remoterepo.pyc
-%%PYTHON_SITELIBDIR%%/mercurial/remoterepo.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/repair.py
 %%PYTHON_SITELIBDIR%%/mercurial/repair.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/repair.pyo
@@ -233,6 +268,9 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/revlog.py
 %%PYTHON_SITELIBDIR%%/mercurial/revlog.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/revlog.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/simplemerge.py
+%%PYTHON_SITELIBDIR%%/mercurial/simplemerge.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/simplemerge.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/sshrepo.py
 %%PYTHON_SITELIBDIR%%/mercurial/sshrepo.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/sshrepo.pyo
@@ -248,6 +286,9 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/strutil.py
 %%PYTHON_SITELIBDIR%%/mercurial/strutil.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/strutil.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/templatefilters.py
+%%PYTHON_SITELIBDIR%%/mercurial/templatefilters.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/templatefilters.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/templater.py
 %%PYTHON_SITELIBDIR%%/mercurial/templater.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/templater.pyo
@@ -294,29 +335,14 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.compact
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.default
 %%PYTHON_SITELIBDIR%%/mercurial/templates/notfound.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/changelog.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/changelogentry.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/changeset.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/fileannotate.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/filediff.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/filelog.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/filelogentry.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/filerevision.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/footer.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/header.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/manifest.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/map
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/search.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/shortlog.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/shortlogentry.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/old/tags.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/changeset.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/raw/error.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/fileannotate.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/filediff.tmpl
-%%PYTHON_SITELIBDIR%%/mercurial/templates/raw/header.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/index.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/manifest.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/raw/map
+%%PYTHON_SITELIBDIR%%/mercurial/templates/raw/notfound.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/rss/changelog.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/rss/changelogentry.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/rss/filelog.tmpl
@@ -329,6 +355,8 @@ bin/hgmerge
 %%PYTHON_SITELIBDIR%%/mercurial/templates/shortlog.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/shortlogentry.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/hgicon.png
+%%PYTHON_SITELIBDIR%%/mercurial/templates/static/hglogo.png
+%%PYTHON_SITELIBDIR%%/mercurial/templates/static/highlight.css
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/style-gitweb.css
 %%PYTHON_SITELIBDIR%%/mercurial/templates/static/style.css
 %%PYTHON_SITELIBDIR%%/mercurial/templates/tags.tmpl
@@ -359,14 +387,11 @@ bin/hgmerge
 %%PORTDOCS%%%%DOCSDIR%%/hg.1.txt
 %%PORTDOCS%%%%DOCSDIR%%/hgignore.5.html
 %%PORTDOCS%%%%DOCSDIR%%/hgignore.5.txt
-%%PORTDOCS%%%%DOCSDIR%%/hgmerge.1.html
-%%PORTDOCS%%%%DOCSDIR%%/hgmerge.1.txt
 %%PORTDOCS%%%%DOCSDIR%%/hgrc.5.html
 %%PORTDOCS%%%%DOCSDIR%%/hgrc.5.txt
 %%DATADIR%%/contrib/bash_completion
 %%DATADIR%%/contrib/convert-repo
 %%DATADIR%%/contrib/darcs2hg.py
-%%DATADIR%%/contrib/favicon.ico
 %%DATADIR%%/contrib/git-viz/git-cat-file
 %%DATADIR%%/contrib/git-viz/git-diff-tree
 %%DATADIR%%/contrib/git-viz/git-rev-list
@@ -398,7 +423,6 @@ bin/hgmerge
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/static
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/rss
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/raw
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/old
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/atom
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates

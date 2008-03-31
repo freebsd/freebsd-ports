@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	0.9.5
+PORTVERSION=	1.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.selenic.com/mercurial/release/
 
@@ -19,7 +19,6 @@ USE_PYDISTUTILS=yes
 CONTRIB_FILES=	bash_completion \
 		convert-repo \
 		darcs2hg.py \
-		favicon.ico \
 		hg-ssh \
 		hgdiff \
 		hgk \
@@ -42,7 +41,7 @@ CONTRIB_FILES=	bash_completion \
 
 DOCS=	CONTRIBUTORS COPYING README doc/*.txt doc/*.html
 
-MAN1=	hg.1 hgmerge.1
+MAN1=	hg.1
 MAN5=	hgignore.5 hgrc.5
 
 PKGMESSAGE=	${WRKDIR}/MESSAGE
