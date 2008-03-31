@@ -41,6 +41,7 @@ include/gnucash/combocell.h
 include/gnucash/datecell.h
 include/gnucash/deprecated.h
 include/gnucash/dialog-account.h
+include/gnucash/dialog-book-close.h
 include/gnucash/dialog-column-view.h
 include/gnucash/dialog-commodity.h
 include/gnucash/dialog-options.h
@@ -355,6 +356,21 @@ share/gnucash/accounts/es_ES/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/es_ES/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/es_ES/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/es_ES/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_brokerage.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_carloan.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_childcare.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_common.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_currency.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_eduloan.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_fixedassets.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_otherloan.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_renter.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_retiremt.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_spouseinc.gnucash-xea
+share/gnucash/accounts/es_MX/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/fr_CA/acctchrt_actifsfixes.gnucash-xea
 share/gnucash/accounts/fr_CA/acctchrt_automobile.gnucash-xea
 share/gnucash/accounts/fr_CA/acctchrt_basecommune.gnucash-xea
@@ -492,6 +508,10 @@ share/gnucash/accounts/pt_PT/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/pt_PT/acctchrt_retiremt.gnucash-xea
 share/gnucash/accounts/pt_PT/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/pt_PT/acctchrt_spouseretire.gnucash-xea
+share/gnucash/accounts/ru/acctchrt_common.gnucash-xea
+share/gnucash/accounts/ru/acctchrt_homeloan.gnucash-xea
+share/gnucash/accounts/ru/acctchrt_homeown.gnucash-xea
+share/gnucash/accounts/ru/acctchrt_renter.gnucash-xea
 share/gnucash/accounts/sk/acctchrt_brokerage.gnucash-xea
 share/gnucash/accounts/sk/acctchrt_carloan.gnucash-xea
 share/gnucash/accounts/sk/acctchrt_cdmoneymkt.gnucash-xea
@@ -593,6 +613,7 @@ share/gnucash/glade/commodities.glade
 share/gnucash/glade/commodity.glade
 share/gnucash/glade/customer.glade
 share/gnucash/glade/date-close.glade
+share/gnucash/glade/dialog-book-close.glade
 share/gnucash/glade/dialog-query-list.glade
 share/gnucash/glade/dialog-reset-warnings.glade
 share/gnucash/glade/druid-gconf-setup.glade
@@ -801,12 +822,6 @@ share/gnucash/xml/qsf/pilot-qsf-GnuCashInvoice.xml
 share/gnucash/xml/qsf/pilot-qsf-gncCustomer.xml
 share/gnucash/xml/qsf/qsf-map.xsd.xml
 share/gnucash/xml/qsf/qsf-object.xsd.xml
-share/xml/gnucash/xsl/README
-share/xml/gnucash/xsl/date-time.xsl
-share/xml/gnucash/xsl/gnucash-gnccustomer-vcard2.xsl
-share/xml/gnucash/xsl/gnucash-std.xsl
-share/xml/gnucash/xsl/string.xsl
-share/xml/gnucash/xsl/vcard-gnccustomer.pl
 share/icons/hicolor/16x16/apps/gnucash-icon.png
 share/icons/hicolor/32x32/apps/gnucash-icon.png
 share/icons/hicolor/48x48/apps/gnucash-icon.png
@@ -815,6 +830,7 @@ share/locale/ca/LC_MESSAGES/gnucash.mo
 share/locale/cs/LC_MESSAGES/gnucash.mo
 share/locale/da/LC_MESSAGES/gnucash.mo
 share/locale/de/LC_MESSAGES/gnucash.mo
+share/locale/de_CH/LC_MESSAGES/gnucash.mo
 share/locale/el/LC_MESSAGES/gnucash.mo
 share/locale/en_GB/LC_MESSAGES/gnucash.mo
 share/locale/es/LC_MESSAGES/gnucash.mo
@@ -841,10 +857,18 @@ share/locale/uk/LC_MESSAGES/gnucash.mo
 share/locale/vi/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
+share/xml/gnucash/xsl/README
+share/xml/gnucash/xsl/date-time.xsl
+share/xml/gnucash/xsl/gnucash-gnccustomer-vcard2.xsl
+share/xml/gnucash/xsl/gnucash-std.xsl
+share/xml/gnucash/xsl/string.xsl
+share/xml/gnucash/xsl/vcard-gnccustomer.pl
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/es_NI/LC_MESSAGES
 @dirrmtry share/locale/es_NI
+@dirrmtry share/locale/de_CH/LC_MESSAGES
+@dirrmtry share/locale/de_CH
 @dirrm share/xml/gnucash/xsl
 @dirrm share/xml/gnucash
 @dirrmtry share/xml
@@ -870,6 +894,7 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnucash/accounts/zh_CN
 @dirrm share/gnucash/accounts/tr_TR
 @dirrm share/gnucash/accounts/sk
+@dirrm share/gnucash/accounts/ru
 @dirrm share/gnucash/accounts/pt_PT
 @dirrm share/gnucash/accounts/pt_BR
 @dirrm share/gnucash/accounts/nb
@@ -879,6 +904,7 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnucash/accounts/fr_FR
 @dirrm share/gnucash/accounts/fr_CH
 @dirrm share/gnucash/accounts/fr_CA
+@dirrm share/gnucash/accounts/es_MX
 @dirrm share/gnucash/accounts/es_ES
 @dirrm share/gnucash/accounts/en_GB
 @dirrm share/gnucash/accounts/el_GR
