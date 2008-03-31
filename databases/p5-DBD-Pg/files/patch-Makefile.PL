@@ -1,14 +1,5 @@
 --- Makefile.PL.orig	Thu Apr 20 19:25:49 2006
 +++ Makefile.PL	Thu Apr 20 19:26:54 2006
-@@ -96,7 +96,7 @@
-   }
- }
- 
--my $comp_opts = $Config{q{ccflags}} . " -DPGLIBVERSION=$serverversion -DPGDEFPORT=$defaultport";
-+my $comp_opts = " -DPGLIBVERSION=$serverversion -DPGDEFPORT=$defaultport";
- 
- if ($ENV{DBDPG_GCCDEBUG}) {
- 	warn "Enabling many compiler options\n";
 @@ -120,7 +120,7 @@
  	(
  	 NAME           => 'DBD::Pg',
