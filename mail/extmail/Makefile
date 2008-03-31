@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	extmail
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	mail
-MASTER_SITES=	http://www.chifeng.name/dist/extmail/%SUBDIR%/ \
-		http://chifeng.cosoft.org.cn/extmail/%SUBDIR%/
+MASTER_SITES=	http://www.chifeng.name/dist/extmail/ \
+		http://mirror3.extmail.net/dist/
 
 MAINTAINER?=	chifeng@gmail.com
 COMMENT=	A high performance webmail system
