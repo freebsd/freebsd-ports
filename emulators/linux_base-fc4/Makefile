@@ -115,8 +115,6 @@ EXTRACT_CMD?=		${RPM2CPIO}
 EXTRACT_BEFORE_ARGS?=
 EXTRACT_AFTER_ARGS?=	| ${CPIO} -id --quiet
 
-PLIST=			pkg-plist
-
 .include <bsd.port.pre.mk>
 
 REMOVE_DIRS=		boot dev home initrd root tmp var/log var/run var/tmp \

@@ -115,8 +115,6 @@ EXTRACT_CMD?=		${RPM2CPIO}
 EXTRACT_BEFORE_ARGS?=
 EXTRACT_AFTER_ARGS?=	| ${CPIO} -id --quiet
 
-PLIST=			pkg-plist
-
 .include <bsd.port.pre.mk>
 
 LINUX_OSRELEASE!=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
