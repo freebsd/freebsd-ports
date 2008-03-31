@@ -7,7 +7,7 @@
 
 PORTNAME=	mtpfs
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.adebenham.com/mtpfs/
 
