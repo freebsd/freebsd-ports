@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdpa
-PORTVERSION=	7.0.5
+PORTVERSION=	7.1.0
 CATEGORIES=	math
 MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTFILES=	${SRCFILE} ${MANUALFILE}
@@ -18,8 +18,8 @@ COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
 
 .include <bsd.port.pre.mk>
 
-SRCDATE=	20080216
-MANDATE=	20080228
+SRCDATE=	20080329
+MANDATE=	20080329
 SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
 MANUALFILE=	${PORTNAME}.${PORTVERSION}.manual.${MANDATE}.pdf
 USE_FORTRAN=	yes
