@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	gapcmon
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SFE
 
 MAINTAINER=	bsdkaffee@gmail.com
-COMMENT=	Montior apcupsd with GTK+2 GUI
+COMMENT=	Monitor apcupsd with GTK+2 GUI
 
+SUB_FILES=	pkg-message
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gconf2
@@ -28,8 +28,6 @@ IGNORE=		needs gethostbyname_r(3)
 .endif
 
 post-extract:
-	@${REINPLACE_CMD} "s|/usr/share/pixmaps/|${PREFIX}/share/pixmaps/|" \
-		${WRKSRC}/src/gapcmon.c
 	@${REINPLACE_CMD} 's|install-gapcmondocDATA \\|\\|' \
 		${WRKSRC}/Makefile.in
 
@@ -41,4 +39,3 @@ post-install:
 	@${CAT} pkg-message
 
 .include <bsd.port.post.mk>
-
