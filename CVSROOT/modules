@@ -2099,6 +2099,7 @@ dmenu		ports/x11/dmenu
 dmidecode	ports/sysutils/dmidecode
 dmitry		ports/security/dmitry
 dmjava		ports/games/dmjava
+dmucs		ports/devel/dmucs
 dmxproto	ports/x11/dmxproto
 dna-qc		ports/biology/dna-qc
 dnetc		ports/misc/dnetc
