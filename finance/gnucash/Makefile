@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	2.2.3
-PORTREVISION=	3
+PORTVERSION=	2.2.4
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -40,6 +39,7 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
+INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix libgsf_gnome libglade2 \
 		libgnomeprint libgnomeprintui
 GNU_CONFIGURE=	yes
