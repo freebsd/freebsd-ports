@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	miracl
-PORTVERSION=	5.3
+PORTVERSION=	5.3.2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.computing.dcu.ie/pub/crypto/ \
 		${MASTER_SITE_LOCAL}
@@ -27,8 +27,12 @@ PLIST_FILES=	lib/libmiracl.a \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not build on !i386
+.if ${ARCH} == "i386"
+BUILDCMD=	linux
+.elif ${ARCH} == "amd64"
+BUILDCMD=	linux64
+.else
+IGNORE=		Builds on x86 and amd64 only
 .endif
 
 post-patch:
@@ -37,11 +41,11 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|gcc|${CC}|' \
 		-e 's|g\+\+|${CXX}|' \
-		-e 's|-O2|${CFLAGS}|' \
-		${WRKSRC}/linux
+		-e 's|-O2|${CFLAGS} -fPIC|' \
+		${WRKSRC}/${BUILDCMD}
 
 do-build:
-	@cd ${WRKSRC} && ${SH} ./linux
+	@cd ${WRKSRC} && ${SH} ./${BUILDCMD}
 
 do-install:
 # lib
