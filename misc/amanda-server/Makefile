@@ -116,7 +116,8 @@ MAN8=		amadmin.8 amaespipe.8 amcheck.8 \
 OPTIONS+=	PLOT "enable ploting, requires X11 libraries" off\
 		SAMBA "enable the use of smbclient" off \
 		MTX "enable the use of mtx changer scripts" off \
-		AESPIPE "enable encryption. Needed by amcrypt" off
+		AESPIPE "enable encryption. Needed by amcrypt" off \
+		SSH "enable ssh-auth" off
 
 .if defined (WITH_PLOT)
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
@@ -140,6 +141,10 @@ RUN_DEPENDS+=	mtx:${PORTSDIR}/misc/mtx
 
 .if defined (WITH_AESPIPE)
 RUN_DEPENDS+=	aespipe:${PORTSDIR}/security/aespipe
+.endif
+
+.if defined (WITH_SSL)
+CONFIGURE_ARGS+=	--with-ssh-security
 .endif
 
 .if defined (AMANDA_TAPE)
