@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geography-NationalGrid-TW
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	misc perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
