@@ -1,4 +1,20 @@
 @comment $FreeBSD$
+%%EXAMPLESDIR%%/app/app1/INSTALL
+%%EXAMPLESDIR%%/app/app1/app1.pl
+%%EXAMPLESDIR%%/app/app1/app1.yaml
+%%EXAMPLESDIR%%/app/app1/js.pl
+%%EXAMPLESDIR%%/app/app1/lib/App1.pm
+%%EXAMPLESDIR%%/app/app1/lib/App1/CustInfo.pm
+%%EXAMPLESDIR%%/app/app1/lib/App1/DoBill.pm
+%%EXAMPLESDIR%%/app/app1/lib/App1/PickDomain.pm
+%%EXAMPLESDIR%%/app/app1/lib/App1/PickDomainAlternate.pm
+%%EXAMPLESDIR%%/app/app1/lib/App1/Thankyou.pm
+%%EXAMPLESDIR%%/app/app1/tt/cust_info.html
+%%EXAMPLESDIR%%/app/app1/tt/footer.tt
+%%EXAMPLESDIR%%/app/app1/tt/header.tt
+%%EXAMPLESDIR%%/app/app1/tt/pick_domain.html
+%%EXAMPLESDIR%%/app/app1/tt/pick_domain_alternate.html
+%%EXAMPLESDIR%%/app/app1/tt/thankyou.html
 %%EXAMPLESDIR%%/app/cgi_ex_1.cgi
 %%EXAMPLESDIR%%/app/cgi_ex_2.cgi
 %%EXAMPLESDIR%%/benchmark/bench_auth.pl
@@ -37,6 +53,10 @@
 %%SITE_PERL%%/CGI/Ex/sha1.js
 %%SITE_PERL%%/CGI/Ex/validate.js
 %%SITE_PERL%%/CGI/Ex/yaml_load.js
+@dirrm %%EXAMPLESDIR%%/app/app1/tt
+@dirrm %%EXAMPLESDIR%%/app/app1/lib/App1
+@dirrm %%EXAMPLESDIR%%/app/app1/lib
+@dirrm %%EXAMPLESDIR%%/app/app1
 @dirrm %%EXAMPLESDIR%%/app
 @dirrm %%EXAMPLESDIR%%/benchmark
 @dirrm %%EXAMPLESDIR%%/devel
