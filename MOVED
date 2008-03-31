@@ -3441,3 +3441,4 @@ x11/e17-module-engage||2008-03-21|Has expired: abandoned by developer
 x11/e17-module-eveil||2008-03-21|Has expired: abandoned by developer
 sysutils/hal-device-manager|sysutils/gnome-device-manager|2008-03-23|hal-device-manager has been retired
 security/gnome-keyring-manager|security/seahorse|2008-03-23|functionality has been rolled into seahorse
+ports-mgmt/pkg_install-devel|ports-mgmt/pkg_install|2008-03-31|Port has been unmaintained for a few years
