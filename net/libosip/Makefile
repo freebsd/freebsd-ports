@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	libosip
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		http://www.antisip.com/download/
-MASTER_SITE_SUBDIR=	osip
+MASTER_SITES=	GNU/osip
 DISTNAME=	${PORTNAME}2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,12 +17,9 @@ COMMENT=	A low layer of SIP implementation
 
 CONFLICTS=	libosip2-2*
 
-WRKSRC=	${WRKDIR}/${PORTNAME}2-${PORTVERSION}
-
 USE_GNOME=	gnomehack gnometarget pkgconfig
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-debug --disable-trace
 USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS=	--disable-debug --disable-trace
 USE_LDCONFIG=	yes
 
 post-patch:
