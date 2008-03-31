@@ -31,7 +31,7 @@ PATCHES=	20061223 20061230 20070106 20070113 20070120 20070127 20070128 \
 		20070818 20070825 20070901 20070908 20070915 20070929 20071006 \
 		20071013 20071020 20071103 20071117 20071124 20071201 20071215 \
 		20071222 20080105 20080112 20080119 20080203 20080209 20080223 \
-		20080301 20080308 20080322
+		20080301 20080308 20080322 20080329
 
 RELEASE=	5.6
 
@@ -144,36 +144,39 @@ post-patch:
 
 post-configure:
 .if !defined(WITHOUT_WIDEC)
-	${MAKE} ${.MAKEFLAGS} CONFIGURE_WRKSRC=${WIDEC_WRKSRC} \
+	cd ${.CURDIR} && \
+	    ${MAKE} ${.MAKEFLAGS} CONFIGURE_WRKSRC=${WIDEC_WRKSRC} \
 	    CONFIGURE_ARGS="${CONFIGURE_ARGS} --enable-widec" \
 	    do-configure
 .endif
 .for d in test c++
-. if !defined(WITHOUT_WIDEC)
+.if !defined(WITHOUT_WIDEC)
 	${CP} ${WRKSRC}/${d}/* ${WIDEC_WRKSRC}/${d}/
-. endif
+.endif
 	${CP} ${WRKSRC}/${d}/* ${NOWIDEC_WRKSRC}/${d}/
 .endfor
 
 post-build:
 .if !defined(WITHOUT_WIDEC)
-	${MAKE} ${.MAKEFLAGS} BUILD_WRKSRC=${WIDEC_WRKSRC} do-build
+	cd ${.CURDIR} && \
+	    ${MAKE} ${.MAKEFLAGS} BUILD_WRKSRC=${WIDEC_WRKSRC} do-build
 .endif
 
 post-install:
 .if !defined(WITHOUT_WIDEC)
-	${MAKE} ${.MAKEFLAGS} INSTALL_WRKSRC=${WIDEC_WRKSRC} do-install
+	cd ${.CURDIR} && \
+	    ${MAKE} ${.MAKEFLAGS} INSTALL_WRKSRC=${WIDEC_WRKSRC} do-install
 .endif
 
 .if !defined(NOPORTEXAMPLES)
 . for i in ${EXAMPLES_TARGETS}
 	${MKDIR} ${${i}_EXAMPLESDIR}/c++
 .  for f in ${EXAMPLES}
-	${INSTALL_DATA} ${${i}_WRKSRC}/test/${f} ${${i}_EXAMPLESDIR}
+	${INSTALL_DATA} ${${i}_WRKSRC}/test/${f} ${${i}_EXAMPLESDIR}/
 .  endfor
-	${INSTALL_SCRIPT} ${${i}_WRKSRC}/test/tracemunch ${${i}_EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${${i}_WRKSRC}/test/tracemunch ${${i}_EXAMPLESDIR}/
 .  for f in ${EXAMPLES_CPP}
-	${INSTALL_DATA} ${${i}_WRKSRC}/c++/${f} ${${i}_EXAMPLESDIR}/c++
+	${INSTALL_DATA} ${${i}_WRKSRC}/c++/${f} ${${i}_EXAMPLESDIR}/c++/
 .  endfor
 . endfor
 .endif
@@ -186,7 +189,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 . for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 . endfor
 .endif
 
