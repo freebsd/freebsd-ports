@@ -901,16 +901,16 @@ share/mime/packages/miro.xml
 share/pixmaps/miro-128x128.png
 share/pixmaps/miro-24x24.png
 share/pixmaps/miro-72x72.png
-@dirrm share/locale/nds/LC_MESSAGES
-@dirrm share/locale/nds
-@dirrm share/locale/fy/LC_MESSAGES
-@dirrm share/locale/fy
-@dirrm share/locale/fo/LC_MESSAGES
-@dirrm share/locale/fo
-@dirrm share/locale/fil/LC_MESSAGES
-@dirrm share/locale/fil
-@dirrm share/locale/csb/LC_MESSAGES
-@dirrm share/locale/csb
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/fy/LC_MESSAGES
+@dirrmtry share/locale/fy
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
+@dirrmtry share/locale/fil/LC_MESSAGES
+@dirrmtry share/locale/fil
+@dirrmtry share/locale/csb/LC_MESSAGES
+@dirrmtry share/locale/csb
 @dirrmtry %%DESKTOPDIR%%
 @dirrm %%DATADIR%%/resources/testdata
 @dirrm %%DATADIR%%/resources/templates/unittest
