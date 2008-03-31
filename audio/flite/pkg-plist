@@ -15,6 +15,7 @@ include/flite/cst_item.h
 include/flite/cst_lexicon.h
 include/flite/cst_lts.h
 include/flite/cst_lts_rewrites.h
+include/flite/cst_math.h
 include/flite/cst_phoneset.h
 include/flite/cst_regex.h
 include/flite/cst_relation.h
@@ -38,21 +39,17 @@ include/flite/cst_wave.h
 include/flite/flite.h
 include/flite/flite_version.h
 lib/libflite.a
-lib/libflite.so
-lib/libflite.so.1
+lib/libflite.shared.a
 lib/libflite_cmu_time_awb.a
-lib/libflite_cmu_time_awb.so
-lib/libflite_cmu_time_awb.so.1
+lib/libflite_cmu_time_awb.shared.a
 lib/libflite_cmu_us_kal.a
-lib/libflite_cmu_us_kal.so
-lib/libflite_cmu_us_kal.so.1
+lib/libflite_cmu_us_kal.shared.a
 lib/libflite_cmu_us_kal16.a
-lib/libflite_cmu_us_kal16.so
-lib/libflite_cmu_us_kal16.so.1
+lib/libflite_cmu_us_kal16.shared.a
 lib/libflite_cmulex.a
-lib/libflite_cmulex.so
-lib/libflite_cmulex.so.1
+lib/libflite_cmulex.shared.a
 lib/libflite_usenglish.a
-lib/libflite_usenglish.so
-lib/libflite_usenglish.so.1
+lib/libflite_usenglish.shared.a
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/flite

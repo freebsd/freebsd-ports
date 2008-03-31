@@ -1,0 +1,59 @@
+
+$FreeBSD$
+
+--- tools/huff_table.orig
++++ tools/huff_table
+@@ -62,7 +62,7 @@ export LANG
+ ## 0 is reserved, 1 is reserved too
+ ALPHABET_SIZE=254
+ 
+-if [ $1 == "entries" ]
++if [ $1 = "entries" ]
+ then 
+    infile=$2
+    outfile=$3
+@@ -74,7 +74,7 @@ then 
+          printf("\n");}' >huff.tmp.corpus
+ fi
+ 
+-if [ $1 == "phones" ]
++if [ $1 = "phones" ]
+ then 
+    infile=$2
+    outfile=$3
+@@ -83,7 +83,7 @@ then 
+    sed 's/\\/ /g' >huff.tmp.corpus
+ fi
+ 
+-if [ $1 == "residual" ]
++if [ $1 = "residual" ]
+ then 
+    # This really doesn't work: just some tests to see what's worthwhile
+    infile=$2
+@@ -110,7 +110,7 @@ then 
+    sed 's/,//g;s/};//' >huff.tmp.corpus
+ fi
+ 
+-if [ $1 == "other" ]
++if [ $1 = "other" ]
+ then
+    infile=$2
+    outfile=$3
+@@ -242,7 +242,7 @@ awk 'BEGIN {'"$maptable"'}
+         printf("\n");
+      }' > huff.tmp.corpus.uncompressed
+ 
+-if [ $1 == "phones" ]
++if [ $1 = "phones" ]
+ then
+    cat huff.tmp.corpus.best |
+    sed 's/+/\\/g' |
+@@ -259,7 +259,7 @@ then
+    mv huff.tmp.corpus.compressed huff.phones.compressed
+ fi
+ 
+-if [ $1 == "entries" ]
++if [ $1 = "entries" ]
+ then
+    cat huff.tmp.corpus.best |
+    sed 's/+//g' |
