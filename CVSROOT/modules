@@ -16603,6 +16603,7 @@ urwfonts	ports/x11-fonts/urwfonts
 urwfonts-ttf	ports/x11-fonts/urwfonts-ttf
 us-zipcodes	ports/misc/us-zipcodes
 usbhotkey	ports/sysutils/usbhotkey
+usbrh		ports/misc/usbrh
 usbutil		ports/sysutils/usbutil
 usbutils	ports/sysutils/usbutils
 uschedule	ports/sysutils/uschedule
