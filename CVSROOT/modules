@@ -13042,7 +13042,6 @@ ports_palm	ports/palm
 ports_pam_krb5	ports/security/pam_krb5
 ports_patch	ports/devel/patch
 ports_pkg_install	ports/ports-mgmt/pkg_install
-ports_pkg_install-devel	ports/ports-mgmt/pkg_install-devel
 ports_pkill	ports/sysutils/pkill
 ports_polish	ports/polish
 ports_ports-mgmt	ports/ports-mgmt
