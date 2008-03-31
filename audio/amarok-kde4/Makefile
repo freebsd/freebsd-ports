@@ -6,7 +6,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	1.4.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -68,7 +68,7 @@ PLIST_SUB+=	NJB=""
 .if !defined(WITH_MTP)
 PLIST_SUB+=	MTP="@comment "
 .else
-LIB_DEPENDS+=	mtp.7:${PORTSDIR}/audio/libmtp
+LIB_DEPENDS+=	mtp.8:${PORTSDIR}/audio/libmtp
 CONFIGURE_ARGS+=--with-libmtp
 PLIST_SUB+=	MTP=""
 .endif
