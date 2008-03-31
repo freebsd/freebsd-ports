@@ -624,6 +624,7 @@
     SUBDIR += libhid
     SUBDIR += libhoard
     SUBDIR += libical
+    SUBDIR += libiqxmlrpc
     SUBDIR += libisc
     SUBDIR += libixp
     SUBDIR += libleaftag
