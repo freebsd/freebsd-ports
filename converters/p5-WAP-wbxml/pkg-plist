@@ -1,9 +1,12 @@
-bin/wbxmlc.pl
+bin/wbxmlc
 %%SITE_PERL%%/WAP/wbxml.pm
-%%SITE_PERL%%/WAP/wap.wbrules.xml
-%%SITE_PERL%%/WAP/syncml.wbrules.xml
-%%SITE_PERL%%/WAP/wv.wbrules.xml
+%%SITE_PERL%%/WAP/wbxml/wap.wbrules.xml
+%%SITE_PERL%%/WAP/wbxml/syncml.wbrules.xml
+%%SITE_PERL%%/WAP/wbxml/wv.wbrules.xml
+%%SITE_PERL%%/WAP/wbxml/wap.wbrules.pl
+%%SITE_PERL%%/WAP/wbxml/WbRules.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WAP/wbxml/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WAP/wbxml
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WAP
+@dirrm %%SITE_PERL%%/WAP/wbxml
 @dirrmtry %%SITE_PERL%%/WAP
