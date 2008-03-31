@@ -36,6 +36,12 @@ CONFIGURE_ARGS=	--with-webkit-target=x11 \
 		--enable-video
 MAKEFILE=	GNUmakefile
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=	Does not build
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|autoconf|${AUTOCONF}|g ; \
 		s|automake|${AUTOMAKE}|g ; s|aclocal|${ACLOCAL}|g ; \
@@ -54,4 +60,4 @@ post-install:
 	${CP} ${PREFIX}/libdata/pkgconfig/webkit-1.0.pc \
 		${PREFIX}/libdata/pkgconfig/WebKitGtk.pc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
