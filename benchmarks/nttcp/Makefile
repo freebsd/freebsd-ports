@@ -9,14 +9,13 @@ PORTNAME=	nttcp
 PORTVERSION=	1.47
 PORTREVISION=	1
 CATEGORIES=	benchmarks net
-MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/privat2/ \
-		http://freeware.sgi.com/source/nttcp/ \
+MASTER_SITES=	http://freeware.sgi.com/source/nttcp/ \
 		http://reality.sgiweb.org/freeware/source/nttcp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	A client/server program for testing network performance
 
-BROKEN=		Checksum mismatch
+RESTRICTED=	No commercial use
 
 ALL_TARGET=	nttcp
 MAN1=		nttcp.1
