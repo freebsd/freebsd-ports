@@ -1,5 +1,8 @@
 %%JAVAJARDIR%%/bcmail.jar
 %%JAVAJARDIR%%/bcpg.jar
 %%JAVAJARDIR%%/bcprov.jar
-%%JAVAJARDIR%%/bctest.jar
 %%JAVAJARDIR%%/bctsp.jar
+%%DATADIR%%/bcmail-src.zip
+%%DATADIR%%/bcpg-src.zip
+%%DATADIR%%/bcprov-src.zip
+%%DATADIR%%/bctsp-src.zip
