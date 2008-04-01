@@ -1,0 +1,18 @@
+--- fdi/policy/10osvendor/10-x11-input.fdi.orig	2008-03-27 13:42:31.000000000 -0400
++++ fdi/policy/10osvendor/10-x11-input.fdi	2008-03-27 13:48:06.000000000 -0400
+@@ -1,15 +1,6 @@
+ <?xml version="1.0" encoding="ISO-8859-1"?>
+ <deviceinfo version="0.2">
+   <device>
+-    <!-- FIXME: Support tablets too. -->
+-    <match key="info.capabilities" contains="input.mouse">
+-      <merge key="input.x11_driver" type="string">mouse</merge>
+-      <match key="/org/freedesktop/Hal/devices/computer:system.kernel.name"
+-             string="Linux">
+-        <merge key="input.x11_driver" type="string">evdev</merge>
+-      </match>
+-    </match>
+-
+     <match key="info.capabilities" contains="input.keys">
+       <!-- If we're using Linux, we use evdev by default (falling back to
+            keyboard otherwise). -->

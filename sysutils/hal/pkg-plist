@@ -61,6 +61,7 @@ libexec/hal/scripts/hal-system-power-suspend-hybrid
 libexec/hal/scripts/hal-system-wol-enable
 libexec/hal/scripts/hal-system-wol-enabled
 libexec/hal/scripts/hal-system-wol-supported
+libexec/hald-addon-mouse-sysmouse
 libexec/hald-addon-storage
 libexec/hald-generate-fdi-cache
 libexec/hald-probe-hiddev
@@ -78,6 +79,7 @@ sbin/hald
 %%DATADIR%%/fdi/policy/10osvendor/10-dockstation.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-input-policy.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-laptop-panel-mgmt-policy.fdi
+%%DATADIR%%/fdi/policy/10osvendor/10-mouse-sysmouse.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-power-mgmt-policy.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-rfkill-switch.fdi
 %%DATADIR%%/fdi/policy/10osvendor/10-tabletPCs.fdi

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deviceinfo version="0.2">
+  <device>
+    <match key="info.capabilities" contains="input.mouse">
+      <append key="info.addons" type="strlist">hald-addon-mouse-sysmouse</append>
+    </match>
+  </device>
+</deviceinfo>
