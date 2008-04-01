@@ -9,7 +9,12 @@ PORTNAME?=	wireshark
 PORTVERSION=	1.0.0
 PORTREVISION?=	0
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.wireshark.org/download/src/
+MASTER_SITES=	http://www.wireshark.org/download/src/ \
+    		http://wireshark.osmirror.nl/download/src/ \
+		http://ftp.uni-kl.de/pub/wireshark/src/ \
+		http://wireshark.askapache.com/download/src/ \
+		http://wireshark.dsmirror.nl/download/src/ \
+		ftp://ftp.uni-kl.de/pub/wireshark/src/
 DISTNAME=	${DATADIR_NAME}-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
