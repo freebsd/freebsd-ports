@@ -5,16 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	farbot
-PORTVERSION=	1.0.b1
+PORTVERSION=	1.0.b2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dpw.threerings.net/projects/farbot/
-DISTNAME=	farbot-1.0-beta1
+DISTNAME=	farbot-1.0-beta2
 
 MAINTAINER=	snb@threerings.net
 COMMENT=	FreeBSD Automated Release Bot
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ZConfig:${PORTSDIR}/devel/py-zconfig \
-		${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ZConfig:${PORTSDIR}/devel/py-zconfig
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
