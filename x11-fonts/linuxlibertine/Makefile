@@ -1,0 +1,49 @@
+# New ports collection makefile for:	linuxlibertine
+# Date created:				17 February 2008
+# Whom:	      				Björn König <bkoenig@alpha-tierchen.de>
+# $FreeBSD$
+#
+
+PORTNAME=		linuxlibertine
+PORTVERSION=		2.7
+CATEGORIES=		x11-fonts
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=		LinLibertineFont-${PORTVERSION}
+EXTRACT_SUFX=		.tgz
+
+MAINTAINER=		bkoenig@alpha-tierchen.de
+COMMENT=		Linux Libertine Open Fonts
+
+BUILD_DEPENDS=		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+
+WRKSRC=			${WRKDIR}/${DISTNAME:C/-.*//}
+PREFIX?=		${X11BASE}
+FONTSDIR?=		${PREFIX}/lib/X11/fonts/${PORTNAME}
+PLIST_SUB=		FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
+NO_BUILD=		yes
+
+.SILENT:
+
+do-install: install-fonts install-docs
+
+install-fonts:
+	${MKDIR} ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.otf ${FONTSDIR}
+
+install-docs:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Bugs ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENCE.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/OFL.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Readme ${DOCSDIR}
+.endif
+
+post-install:
+	${ECHO_MSG} "===> Running fc-cache"
+	-${X11BASE}/bin/fc-cache -f -v ${FONTSDIR}
+
+.include <bsd.port.mk>

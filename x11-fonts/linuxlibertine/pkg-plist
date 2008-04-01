@@ -1,0 +1,20 @@
+%%FONTSDIR%%/LinLibertine_Bd-2.7.8.otf
+%%FONTSDIR%%/LinLibertine_BI-2.7.2.ttf
+%%FONTSDIR%%/LinLibertine_Bd-2.7.8.ttf
+%%FONTSDIR%%/LinLibertineC_Re-2.7.3.otf
+%%FONTSDIR%%/LinLibertine_It-2.7.8.ttf
+%%FONTSDIR%%/LinLibertine_Re-2.7.9.10.ttf
+%%FONTSDIR%%/LinLibertineU_Re-2.2.7.ttf
+%%FONTSDIR%%/LinLibertine_It-2.7.8.otf
+%%FONTSDIR%%/LinLibertine_BI-2.7.2.otf
+%%FONTSDIR%%/LinLibertineC_Re-2.7.3.ttf
+%%FONTSDIR%%/LinLibertine_Re-2.7.9.9.otf
+%%PORTDOCS%%%%DOCSDIR%%/Bugs
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE.txt
+%%PORTDOCS%%%%DOCSDIR%%/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/Readme
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTSDIR%%
+@exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
