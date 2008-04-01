@@ -76,6 +76,7 @@ include/xqilla/events/ContentSequenceFilter.hpp
 include/xqilla/events/EventHandler.hpp
 include/xqilla/events/EventSerializer.hpp
 include/xqilla/events/NSFixupFilter.hpp
+include/xqilla/events/QueryPathTreeFilter.hpp
 include/xqilla/events/SequenceBuilder.hpp
 include/xqilla/exceptions/ASTException.hpp
 include/xqilla/exceptions/ContextException.hpp
@@ -201,6 +202,7 @@ include/xqilla/functions/FunctionNormalizeUnicode.hpp
 include/xqilla/functions/FunctionNot.hpp
 include/xqilla/functions/FunctionNumber.hpp
 include/xqilla/functions/FunctionOneOrMore.hpp
+include/xqilla/functions/FunctionParseXML.hpp
 include/xqilla/functions/FunctionPosition.hpp
 include/xqilla/functions/FunctionPrefixFromQName.hpp
 include/xqilla/functions/FunctionQName.hpp
@@ -239,6 +241,7 @@ include/xqilla/functions/FunctionYearFromDate.hpp
 include/xqilla/functions/FunctionYearFromDateTime.hpp
 include/xqilla/functions/FunctionYearsFromDuration.hpp
 include/xqilla/functions/FunctionZeroOrOne.hpp
+include/xqilla/functions/XQillaFunction.hpp
 include/xqilla/functions/XQUserFunction.hpp
 include/xqilla/items/ATAnySimpleType.hpp
 include/xqilla/items/ATAnyURIOrDerived.hpp
@@ -312,6 +315,10 @@ include/xqilla/operators/Plus.hpp
 include/xqilla/operators/Range.hpp
 include/xqilla/operators/UnaryMinus.hpp
 include/xqilla/operators/Union.hpp
+include/xqilla/optimizer/ASTVisitor.hpp
+include/xqilla/optimizer/Optimizer.hpp
+include/xqilla/optimizer/QueryPathNode.hpp
+include/xqilla/optimizer/QueryPathTreeGenerator.hpp
 include/xqilla/parser/QName.hpp
 include/xqilla/runtime/ClosureResult.hpp
 include/xqilla/runtime/EmptyResult.hpp
@@ -364,7 +371,7 @@ include/xqilla/xqts/TestSuiteRunner.hpp
 lib/libxqilla.a
 lib/libxqilla.la
 lib/libxqilla.so
-lib/libxqilla.so.2
+lib/libxqilla.so.3
 @dirrm include/xqilla/xqts
 @dirrm include/xqilla/xerces
 @dirrm include/xqilla/utils
@@ -373,6 +380,7 @@ lib/libxqilla.so.2
 @dirrm include/xqilla/schema
 @dirrm include/xqilla/runtime
 @dirrm include/xqilla/parser
+@dirrm include/xqilla/optimizer
 @dirrm include/xqilla/operators
 @dirrm include/xqilla/mapm
 @dirrm include/xqilla/items/impl
