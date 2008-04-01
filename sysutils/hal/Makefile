@@ -8,7 +8,7 @@
 
 PORTNAME=	hal
 DISTVERSION=	0.5.11rc2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -52,8 +52,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 USE_RC_SUBR=	hald
 USE_GNOME_SUBR=	yes
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${HALVERSION}
-PLIST_SUB=	VERSION=${HALVERSION}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 RC_FILES=	hal.conf:${PREFIX}/etc/dbus-1/system.d
 PLIST_FILES=	${PRIV_FILES:S|^|%%DATADIR%%/dist/|}
@@ -102,6 +102,9 @@ post-patch:
 post-install:
 	${MKDIR} ${DATADIR}/dist
 	${INSTALL_DATA} ${WRKSRC}/hal.conf ${DATADIR}/dist
+	${MKDIR} ${PREFIX}/share/hal/fdi/policy/10osvendor
+	${INSTALL_DATA} ${FILESDIR}/10-mouse-sysmouse.fdi \
+	    	${PREFIX}/share/hal/fdi/policy/10osvendor
 	@${SETENV} PKG_PREFIX=${PREFIX} PACKAGE_BUILDING=${PACKAGE_BUILDING} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(PACKAGE_BUILDING) && defined(NEEDS_MEDIA)
