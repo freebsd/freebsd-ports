@@ -10,6 +10,8 @@
 %%SITE_PERL%%/XML/Compile/SOAP/Server.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Tester.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Tester.pod
+%%SITE_PERL%%/XML/Compile/SOAP/Trace.pm
+%%SITE_PERL%%/XML/Compile/SOAP/Trace.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Util.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Util.pod
 %%SITE_PERL%%/XML/Compile/SOAP11.pm
