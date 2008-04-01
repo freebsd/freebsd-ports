@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	2.40
+PORTVERSION=	2.41
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -26,7 +26,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${SITE_PERL}/File/MimeInfo.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
 		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
 		${SITE_PERL}/RPC/XML.pm:${PORTSDIR}/net/p5-RPC-XML \
-		${SITE_PERL}/Time/Duration.pm:${PORTSDIR}/devel/p5-Time-Duration \
 		${SITE_PERL}/XML/Feed.pm:${PORTSDIR}/textproc/p5-XML-Feed \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 
@@ -54,7 +53,7 @@ PLIST_SUB=	W3M="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
-	@${RM} ${WRKSRC}/IkiWiki/Plugin/mdwn.pm.orig ${WRKSRC}/IkiWiki/Plugin/mdwn.pm.bak
+	@${RM} ${WRKSRC}/IkiWiki/Plugin/mdwn.pm.bak
 	@${REINPLACE_CMD} -e "s|/etc/ikiwiki/wikilist|${LOCALBASE}/etc/ikiwiki/wikilist|" \
 		${WRKSRC}/ikiwiki-mass-rebuild \
 		${WRKSRC}/doc/ikiwiki-mass-rebuild.mdwn \

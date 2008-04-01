@@ -122,6 +122,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/prettydate.pm
 %%SITE_PERL%%/IkiWiki/Plugin/rawhtml.pm
 %%SITE_PERL%%/IkiWiki/Plugin/recentchanges.pm
+%%SITE_PERL%%/IkiWiki/Plugin/recentchangesdiff.pm
 %%SITE_PERL%%/IkiWiki/Plugin/search.pm
 %%SITE_PERL%%/IkiWiki/Plugin/shortcut.pm
 %%SITE_PERL%%/IkiWiki/Plugin/sidebar.pm
@@ -157,6 +158,8 @@ bin/ikiwiki-makerepo
 bin/ikiwiki-transition
 bin/ikiwiki-update-wikilist
 lib/ikiwiki/plugins/externaldemo
+lib/ikiwiki/plugins/proxy.py
+lib/ikiwiki/plugins/pythondemo
 lib/ikiwiki/plugins/rst
 %%W3M%%libexec/w3m/cgi-bin/ikiwiki-w3m.cgi
 sbin/ikiwiki-mass-rebuild
