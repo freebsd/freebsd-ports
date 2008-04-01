@@ -20,6 +20,12 @@ USE_GMAKE=	yes
 USE_ZIP=	yes
 # convert CRLF to LF for gcc-2.95
 EXTRACT_BEFORE_ARGS=	-qoa
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>
