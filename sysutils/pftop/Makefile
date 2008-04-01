@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pftop
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -45,6 +45,10 @@ PLIST_FILES=	sbin/pftop
 post-patch:
 	@${REINPLACE_CMD} -e 's|<sys/queue.h>|"${FILESDIR}/queue.h"|g' \
 	    ${WRKSRC}/engine.c
+	@${REINPLACE_CMD} -e 's|__dead|__dead2|g' ${WRKSRC}/sf-gencode.h
+	@${REINPLACE_CMD} -e 's|__dead|__dead2|g' ${WRKSRC}/sf-gencode.c
+	@${REINPLACE_CMD} -e 's|#include <net/if_pflog.h>||g' \
+	    ${WRKSRC}/sf-gencode.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pftop ${PREFIX}/sbin
