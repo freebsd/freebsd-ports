@@ -4,14 +4,19 @@ bin/thin
 %%GEM_LIB_DIR%%/COPYING
 %%GEM_LIB_DIR%%/README
 %%GEM_LIB_DIR%%/Rakefile
-%%GEM_LIB_DIR%%/benchmark/previous.rb
-%%GEM_LIB_DIR%%/benchmark/simple.rb
-%%GEM_LIB_DIR%%/benchmark/utils.rb
+%%GEM_LIB_DIR%%/benchmark/abc
+%%GEM_LIB_DIR%%/benchmark/benchmarker.rb
+%%GEM_LIB_DIR%%/benchmark/runner
 %%GEM_LIB_DIR%%/bin/thin
 %%GEM_LIB_DIR%%/doc/benchmarks.txt
+%%GEM_LIB_DIR%%/example
 %%GEM_LIB_DIR%%/example/adapter.rb
 %%GEM_LIB_DIR%%/example/config.ru
+%%GEM_LIB_DIR%%/example/monit_sockets
+%%GEM_LIB_DIR%%/example/monit_unixsock
+%%GEM_LIB_DIR%%/example/ramaze.ru
 %%GEM_LIB_DIR%%/example/thin.god
+%%GEM_LIB_DIR%%/example/vlad.rake
 %%GEM_LIB_DIR%%/ext/thin_parser/Makefile
 %%GEM_LIB_DIR%%/ext/thin_parser/common.rl
 %%GEM_LIB_DIR%%/ext/thin_parser/ext_help.h
@@ -27,22 +32,41 @@ bin/thin
 %%GEM_LIB_DIR%%/lib/rack/adapter/rails.rb
 %%GEM_LIB_DIR%%/lib/rack/handler/thin.rb
 %%GEM_LIB_DIR%%/lib/thin.rb
-%%GEM_LIB_DIR%%/lib/thin/cluster.rb
+%%GEM_LIB_DIR%%/lib/thin/command.rb
 %%GEM_LIB_DIR%%/lib/thin/connection.rb
+%%GEM_LIB_DIR%%/lib/thin/connectors/connector.rb
+%%GEM_LIB_DIR%%/lib/thin/connectors/swiftiply_client.rb
+%%GEM_LIB_DIR%%/lib/thin/connectors/tcp_server.rb
+%%GEM_LIB_DIR%%/lib/thin/connectors/unix_server.rb
+%%GEM_LIB_DIR%%/lib/thin/controllers/cluster.rb
+%%GEM_LIB_DIR%%/lib/thin/controllers/controller.rb
+%%GEM_LIB_DIR%%/lib/thin/controllers/service.rb
+%%GEM_LIB_DIR%%/lib/thin/controllers/service.sh.erb
 %%GEM_LIB_DIR%%/lib/thin/daemonizing.rb
 %%GEM_LIB_DIR%%/lib/thin/headers.rb
 %%GEM_LIB_DIR%%/lib/thin/logging.rb
 %%GEM_LIB_DIR%%/lib/thin/request.rb
 %%GEM_LIB_DIR%%/lib/thin/response.rb
+%%GEM_LIB_DIR%%/lib/thin/runner.rb
 %%GEM_LIB_DIR%%/lib/thin/server.rb
+%%GEM_LIB_DIR%%/lib/thin/stats.html.erb
 %%GEM_LIB_DIR%%/lib/thin/stats.rb
 %%GEM_LIB_DIR%%/lib/thin/statuses.rb
 %%GEM_LIB_DIR%%/lib/thin/version.rb
-%%GEM_LIB_DIR%%/lib/thin_parser.bundle
 %%GEM_LIB_DIR%%/lib/thin_parser.so
-%%GEM_LIB_DIR%%/spec/cluster_spec.rb
+%%GEM_LIB_DIR%%/spec/command_spec.rb
+%%GEM_LIB_DIR%%/spec/configs/cluster.yml
+%%GEM_LIB_DIR%%/spec/configs/single.yml
+%%GEM_LIB_DIR%%/spec/connection_spec.rb
+%%GEM_LIB_DIR%%/spec/connectors/swiftiply_client_spec.rb
+%%GEM_LIB_DIR%%/spec/connectors/tcp_server_spec.rb
+%%GEM_LIB_DIR%%/spec/connectors/unix_server_spec.rb
+%%GEM_LIB_DIR%%/spec/controllers/cluster_spec.rb
+%%GEM_LIB_DIR%%/spec/controllers/controller_spec.rb
+%%GEM_LIB_DIR%%/spec/controllers/service_spec.rb
 %%GEM_LIB_DIR%%/spec/daemonizing_spec.rb
 %%GEM_LIB_DIR%%/spec/headers_spec.rb
+%%GEM_LIB_DIR%%/spec/logging_spec.rb
 %%GEM_LIB_DIR%%/spec/rack_rails_spec.rb
 %%GEM_LIB_DIR%%/spec/rails_app/app/controllers/application.rb
 %%GEM_LIB_DIR%%/spec/rails_app/app/controllers/simple_controller.rb
@@ -84,8 +108,20 @@ bin/thin
 %%GEM_LIB_DIR%%/spec/rails_app/script/process/spawner
 %%GEM_LIB_DIR%%/spec/rails_app/script/runner
 %%GEM_LIB_DIR%%/spec/rails_app/script/server
-%%GEM_LIB_DIR%%/spec/request_spec.rb
+%%GEM_LIB_DIR%%/spec/request/mongrel_spec.rb
+%%GEM_LIB_DIR%%/spec/request/parser_spec.rb
+%%GEM_LIB_DIR%%/spec/request/perf_spec.rb
+%%GEM_LIB_DIR%%/spec/request/persistent_spec.rb
+%%GEM_LIB_DIR%%/spec/request/processing_spec.rb
 %%GEM_LIB_DIR%%/spec/response_spec.rb
+%%GEM_LIB_DIR%%/spec/runner_spec.rb
+%%GEM_LIB_DIR%%/spec/server/builder_spec.rb
+%%GEM_LIB_DIR%%/spec/server/pipelining_spec.rb
+%%GEM_LIB_DIR%%/spec/server/stopping_spec.rb
+%%GEM_LIB_DIR%%/spec/server/swiftiply.yml
+%%GEM_LIB_DIR%%/spec/server/swiftiply_spec.rb
+%%GEM_LIB_DIR%%/spec/server/tcp_spec.rb
+%%GEM_LIB_DIR%%/spec/server/unix_socket_spec.rb
 %%GEM_LIB_DIR%%/spec/server_spec.rb
 %%GEM_LIB_DIR%%/spec/spec_helper.rb
 %%GEM_LIB_DIR%%/tasks/announce.rake
@@ -99,6 +135,8 @@ bin/thin
 %%GEM_LIB_DIR%%/tasks/stats.rake
 %%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/tasks
+@dirrm %%GEM_LIB_DIR%%/spec/server
+@dirrm %%GEM_LIB_DIR%%/spec/request
 @dirrm %%GEM_LIB_DIR%%/spec/rails_app/script/process
 @dirrm %%GEM_LIB_DIR%%/spec/rails_app/script/performance
 @dirrm %%GEM_LIB_DIR%%/spec/rails_app/script
@@ -114,7 +152,12 @@ bin/thin
 @dirrm %%GEM_LIB_DIR%%/spec/rails_app/app/controllers
 @dirrm %%GEM_LIB_DIR%%/spec/rails_app/app
 @dirrm %%GEM_LIB_DIR%%/spec/rails_app
+@dirrm %%GEM_LIB_DIR%%/spec/controllers
+@dirrm %%GEM_LIB_DIR%%/spec/connectors
+@dirrm %%GEM_LIB_DIR%%/spec/configs
 @dirrm %%GEM_LIB_DIR%%/spec
+@dirrm %%GEM_LIB_DIR%%/lib/thin/controllers
+@dirrm %%GEM_LIB_DIR%%/lib/thin/connectors
 @dirrm %%GEM_LIB_DIR%%/lib/thin
 @dirrm %%GEM_LIB_DIR%%/lib/rack/handler
 @dirrm %%GEM_LIB_DIR%%/lib/rack/adapter
