@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A graphical interface for easily configuring Synergy2
 
-BUILD_DEPENDS=	bin/synergys:${PORTSDIR}/sysutils/synergy
+BUILD_DEPENDS=	synergys:${PORTSDIR}/sysutils/synergy
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 libglade
