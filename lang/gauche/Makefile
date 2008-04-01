@@ -7,6 +7,7 @@
 
 PORTNAME=	gauche
 PORTVERSION=	0.8.13	# Keep databases/gauche-gdbm in sync with this
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -64,7 +65,7 @@ post-install:
 	${TOUCH} ${EXAMPLESDIR}/.keepme
 .if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1/
-	${INSTALL_DATA} ${WRKSRC}/doc/*.info ${WRKSRC}/doc/*.info-[1-6] ${PREFIX}/info/
+	${INSTALL_DATA} ${WRKSRC}/doc/*.info ${WRKSRC}/doc/*.info-[1-7] ${PREFIX}/info/
 .endif
 
 .include <bsd.port.post.mk>
