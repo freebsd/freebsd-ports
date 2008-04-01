@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Data-ObjectDriver
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
@@ -27,6 +26,7 @@ PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Data::ObjectDriver.3 Data::ObjectDriver::BaseObject.3 \
 		Data::ObjectDriver::Driver::BaseCache.3 \
+		Data::ObjectDriver::Driver::Cache::Apache.3 \
 		Data::ObjectDriver::Driver::Cache::Memcached.3 \
 		Data::ObjectDriver::Driver::DBD.3 \
 		Data::ObjectDriver::Driver::DBD::SQLite.3 \
@@ -35,6 +35,7 @@ MAN3=		Data::ObjectDriver.3 Data::ObjectDriver::BaseObject.3 \
 		Data::ObjectDriver::Driver::Partition.3 \
 		Data::ObjectDriver::Driver::SimplePartition.3 \
 		Data::ObjectDriver::Errors.3 Data::ObjectDriver::Profiler.3 \
+		Data::ObjectDriver::ResultSet.3 \
 		Data::ObjectDriver::SQL.3
 
 .include <bsd.port.mk>
