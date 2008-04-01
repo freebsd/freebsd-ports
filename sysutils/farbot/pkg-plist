@@ -3,6 +3,7 @@ etc/farbot.conf.sample
 %%PYTHON_SITELIBDIR%%/farb/__init__.py
 %%PYTHON_SITELIBDIR%%/farb/builder.py
 %%PYTHON_SITELIBDIR%%/farb/config.py
+%%PYTHON_SITELIBDIR%%/farb/runner.py
 %%PYTHON_SITELIBDIR%%/farb/sysinstall.py
 %%PYTHON_SITELIBDIR%%/farb/utils.py
 %%PYTHON_SITELIBDIR%%/farb/data/boot.conf.tmpl
@@ -14,11 +15,13 @@ etc/farbot.conf.sample
 %%PYTHON_SITELIBDIR%%/farb/__init__.pyc
 %%PYTHON_SITELIBDIR%%/farb/builder.pyc
 %%PYTHON_SITELIBDIR%%/farb/config.pyc
+%%PYTHON_SITELIBDIR%%/farb/runner.pyc
 %%PYTHON_SITELIBDIR%%/farb/sysinstall.pyc
 %%PYTHON_SITELIBDIR%%/farb/utils.pyc
 %%PYTHON_SITELIBDIR%%/farb/__init__.pyo
 %%PYTHON_SITELIBDIR%%/farb/builder.pyo
 %%PYTHON_SITELIBDIR%%/farb/config.pyo
+%%PYTHON_SITELIBDIR%%/farb/runner.pyo
 %%PYTHON_SITELIBDIR%%/farb/sysinstall.pyo
 %%PYTHON_SITELIBDIR%%/farb/utils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/farb/data
