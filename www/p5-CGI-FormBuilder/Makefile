@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	CGI-FormBuilder
-PORTVERSION=	3.0401
+PORTVERSION=	3.0501
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/N/NW/NWIGER
@@ -24,6 +24,7 @@ OPTIONS=	TT		"Template Toolkit support" on \
 
 MAN3=	CGI::FormBuilder.3 \
 	CGI::FormBuilder::Template::Builtin.3 \
+	CGI::FormBuilder::Template::Div.3 \
 	CGI::FormBuilder::Template::HTML.3 \
 	CGI::FormBuilder::Source::File.3 \
 	CGI::FormBuilder::Template.3 \
@@ -36,6 +37,9 @@ MAN3=	CGI::FormBuilder.3 \
 	CGI::FormBuilder::Field.3 \
 	CGI::FormBuilder::Template::Fast.3 \
 	CGI::FormBuilder::Messages.3
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 .include <bsd.port.pre.mk>
 
