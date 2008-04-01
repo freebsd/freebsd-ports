@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	JSON-Any
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/P/PE/PERIGRIN
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl Wrapper Class for the various JSON classes
+
+RUN_DEPENDS=	p5-JSON>=2.02:${PORTSDIR}/converters/p5-JSON
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN3=		JSON::Any.3
