@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	tora
-PORTVERSION=	1.3.22
+DISTVERSION=	1-3-end-of-life
+PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for Oracle
 
 BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntsh.a:${PORTSDIR}/databases/oracle8-client
-LIB_DEPENDS=	qscintilla.7:${PORTSDIR}/x11-toolkits/qscintilla
+LIB_DEPENDS=	qscintilla.7:${PORTSDIR}/x11-toolkits/qscintilla	\
+		cppunit-1.10.2:${PORTSDIR}/devel/cppunit		\
+		pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	${ORACLE_HOME}/network/admin/tnsnames.ora:${PORTSDIR}/databases/oracle8-client
 
 .if !defined(WITHOUT_MYSQL)
@@ -31,9 +34,9 @@ RUN_DEPENDS+=	${X11BASE}/lib/plugins/sqldrivers/libqsqlpsql.so:${PORTSDIR}/datab
 ORACLE_HOME?=	${LOCALBASE}/oracle8-client
 ORACLE_VER=	8i	# Client version
 
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:261 autoheader:261 libtool:15
 USE_QT_VER=	3
 USE_PERL5_BUILD=yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-oracle=${ORACLE_HOME} --with-oci-version=${ORACLE_VER:U}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -49,8 +52,7 @@ PORTDOCS=	AUTHORS BUGS ChangeLog INSTALL NEWS README README.CODESTYLE\
 		README.LICENSE TODO
 INFO=		tora
 
-PREFIX2FIX=	doc/help/tora/preferences.html doc/help/preferences.texi\
-		src/toconfiguration.h
+PREFIX2FIX=	doc/help/preferences.texi src/toconfiguration.h
 
 .include <bsd.port.pre.mk>
 
@@ -59,9 +61,14 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 CONFIGURE_ENV+=	MAKEINFO=${LOCALBASE}/bin/makeinfo
 .endif
 
+run-autotools:
+	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ./autogen.sh)
+
 pre-configure:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|/etc/torarc|${PREFIX}/etc/torarc|' ${PREFIX2FIX:S|^|${WRKSRC}/|}
+	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'	\
+		${WRKSRC}/config/m4/qtkde.m4
+	${REINPLACE_CMD} -e 's|/etc/torarc|${PREFIX}/etc/torarc|'	\
+		${PREFIX2FIX:S|^|${WRKSRC}/|}
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|test doc|test|' ${WRKSRC}/Makefile.in
 .endif

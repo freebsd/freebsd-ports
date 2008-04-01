@@ -390,7 +390,6 @@ lib/tora_toad.qm
 %%PORTDOCS%%%%DOCSDIR%%/help/newconnection.html
 %%PORTDOCS%%%%DOCSDIR%%/help/output.html
 %%PORTDOCS%%%%DOCSDIR%%/help/preferences.html
-%%PORTDOCS%%%%DOCSDIR%%/help/preferences.html.bak
 %%PORTDOCS%%%%DOCSDIR%%/help/rollback.html
 %%PORTDOCS%%%%DOCSDIR%%/help/script.html
 %%PORTDOCS%%%%DOCSDIR%%/help/searchreplace.html
