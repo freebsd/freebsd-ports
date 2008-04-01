@@ -14,7 +14,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Free, object-oriented XML-RPC implementation written in C++
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost\
-		xml++-2.6.2:${PORTSDIR}/textproc/libxml++26
+		xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
