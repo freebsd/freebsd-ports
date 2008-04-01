@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-Cluster
-PORTVERSION=	1.37
+PORTVERSION=	1.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,9 +17,5 @@ COMMENT=	A perl interface to C clustering library
 PERL_CONFIGURE=	yes
 
 MAN3=		Algorithm::Cluster.3
-
-post-patch:
-		@${REINPLACE_CMD} -e  \
-		"s|${PORTNAME}|Algorithm::Cluster|" ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
