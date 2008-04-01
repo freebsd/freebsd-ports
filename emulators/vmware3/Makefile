@@ -105,6 +105,10 @@ post-patch:
 	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/fbsd6-1.patch
 	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/fbsd6-2.patch
 .endif
+.if ${OSVERSION} > 700000
+	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/fbsd7-1.patch
+	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/fbsd7-2.patch
+.endif
 
 pre-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man1/vmware.1 ${MANPREFIX}/man/man1

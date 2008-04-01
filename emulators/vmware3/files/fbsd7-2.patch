@@ -1,0 +1,18 @@
+--- vmmon-only/include/vm_asm.h.orig	2003-07-24 01:43:38.000000000 +0400
++++ vmmon-only/include/vm_asm.h	2008-03-04 09:29:45.000000000 +0300
+@@ -1020,6 +1020,7 @@
+  *-----------------------------------------------------------------------------
+  */
+ 
++#if 0
+ static INLINE void
+ Div643264(uint64 dividend,
+           uint32 divisor,
+@@ -1047,6 +1048,7 @@
+    *quotient = (uint64)hQuotient << 32 | lQuotient;
+ }
+ #endif
++#endif
+ 
+ 
+ #endif /* VM_ASM_H */
