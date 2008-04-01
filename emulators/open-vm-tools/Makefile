@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=		open-vm-tools-FreeBSD${OSREL}-${ARCH}-Build
+PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
 CATEGORIES=		emulators
 DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
@@ -40,6 +40,12 @@ BUILD_DEPENDS=		${LOCALBASE}/lib/libdnet.so:${PORTSDIR}/net/libdnet
 USE_RC_SUBR=		vmware-guestd.sh
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+PLIST_SUB+=	FIVEONLY="@comment "
+.else
+PLIST_SUB+=	FIVEONLY=""
+.endif
 
 post-build:
 	cd ${WRKSRC}/modules && make
