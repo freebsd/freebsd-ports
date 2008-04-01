@@ -1,0 +1,45 @@
+--- vmmon-only/freebsd/driver.c.orig	2008-03-04 10:05:14.000000000 +0300
++++ vmmon-only/freebsd/driver.c	2008-03-04 10:09:23.000000000 +0300
+@@ -397,12 +397,12 @@
+ 	if ((error = falloc(td, &fp, &fd)) != 0)
+ 		return error;
+ 
+-	FILEDESC_LOCK(p->p_fd);
++	FILEDESC_XLOCK(p->p_fd);
+ 	fp->f_data = data;
+ 	fp->f_flag = flags & FMASK;
+ 	fp->f_ops = &vmmon_fileops;
+ 	fp->f_type = DTYPE_SOCKET;
+-	FILEDESC_UNLOCK(p->p_fd);
++	FILEDESC_XUNLOCK(p->p_fd);
+ 
+ #if __FreeBSD_version >= 501111
+ 	/* falloc now returns TWO references to the file, not one. */
+@@ -1309,6 +1309,19 @@
+ 	return FALSE;
+ }
+ 
++static vm_paddr_t
++get_avail_end(void)
++{
++	vm_paddr_t avail_end;
++	int i;
++	avail_end = phys_avail[1];
++	for (i = 0; phys_avail[i + 1]; i += 2) {
++		if (phys_avail[i + 1] > avail_end)
++			avail_end = phys_avail[i + 1];
++	}
++	return avail_end;
++}
++
+ /*
+  * Allocate and lock numPages of memory physically continguous addresses
+  * below 4GB.
+@@ -1341,6 +1354,7 @@
+ 		VMDEBUG("vmmon_alloc_low_pages: malloc MemRange failed\n");
+ 		return ENOMEM;
+ 	}
++	vm_paddr_t avail_end = get_avail_end();
+ 	if (avail_end > ISA_DMA_BOUNCE_THRESHOLD)
+ 		high = trunc_page(ISA_DMA_BOUNCE_THRESHOLD);
+ 	else
