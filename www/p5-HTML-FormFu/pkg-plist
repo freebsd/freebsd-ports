@@ -6,6 +6,7 @@ bin/html_formfu_deploy.pl
 %%SITE_PERL%%/HTML/FormFu/Constraint/Number.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/Length.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/Email.pm
+%%SITE_PERL%%/HTML/FormFu/Constraint/File.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/CallbackOnce.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/MinMaxFields.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/MaxLength.pm
@@ -23,6 +24,8 @@ bin/html_formfu_deploy.pl
 %%SITE_PERL%%/HTML/FormFu/Constraint/Callback.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/_others.pm
 %%SITE_PERL%%/HTML/FormFu/Constraint/Set.pm
+%%SITE_PERL%%/HTML/FormFu/Constraint/File/Size.pm
+%%SITE_PERL%%/HTML/FormFu/Constraint/File/MIME.pm
 %%SITE_PERL%%/HTML/FormFu/Deflator/Strftime.pm
 %%SITE_PERL%%/HTML/FormFu/Element/Radio.pm
 %%SITE_PERL%%/HTML/FormFu/Element/SimpleTable.pm
@@ -72,6 +75,7 @@ bin/html_formfu_deploy.pl
 %%SITE_PERL%%/HTML/FormFu/I18N/pt_pt.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/de.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/en.pm
+%%SITE_PERL%%/HTML/FormFu/I18N/es.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/ja.pm
 %%SITE_PERL%%/HTML/FormFu/Inflator/DateTime.pm
 %%SITE_PERL%%/HTML/FormFu/Manual/Cookbook.pod
@@ -146,6 +150,7 @@ bin/html_formfu_deploy.pl
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Exception
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Element
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Deflator
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint/File
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint
 @dirrmtry %%SITE_PERL%%/HTML/FormFu
 @dirrmtry %%SITE_PERL%%/HTML

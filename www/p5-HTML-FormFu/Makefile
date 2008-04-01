@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.02003
+PORTVERSION=	0.02004
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/C/CF/CFRANKS
@@ -45,6 +45,13 @@ MAN3=	HTML::FormFu::Inflator.3 \
 	HTML::FormFu::Processor.3 \
 	HTML::FormFu::Constraint::Integer.3 \
 	HTML::FormFu::Constraint::AutoSet.3 \
+	HTML::FormFu::Constraint::File.3 \
+	HTML::FormFu::QueryType::CGI.3 \
+	HTML::FormFu::Constraint::File::Size.3 \
+	HTML::FormFu::Upload.3 \
+	HTML::FormFu::QueryType::CGI::Simple.3 \
+	HTML::FormFu::QueryType::Catalyst.3 \
+	HTML::FormFu::Constraint::File::MIME.3 \
 	HTML::FormFu::Manual::Cookbook.3 \
 	HTML::FormFu::Filter::UpperCase.3 \
 	HTML::FormFu::Element::Radio.3 \
