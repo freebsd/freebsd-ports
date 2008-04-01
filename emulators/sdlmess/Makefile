@@ -24,6 +24,12 @@ MAKEFILE=	makefile.sdl
 
 SUB_FILES=	${PORTNAME} pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000 && ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/libexec/sdlmess
@@ -47,4 +53,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
