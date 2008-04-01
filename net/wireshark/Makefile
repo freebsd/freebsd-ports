@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	wireshark
-PORTVERSION=	0.99.8
-PORTREVISION?=	2
+PORTVERSION=	1.0.0
+PORTREVISION?=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/
 DISTNAME=	${DATADIR_NAME}-${PORTVERSION}

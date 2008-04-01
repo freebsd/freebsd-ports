@@ -29,6 +29,8 @@ lib/wireshark/plugins/%%PORTVERSION%%/ethercat.la
 lib/wireshark/plugins/%%PORTVERSION%%/ethercat.so
 lib/wireshark/plugins/%%PORTVERSION%%/gryphon.la
 lib/wireshark/plugins/%%PORTVERSION%%/gryphon.so
+lib/wireshark/plugins/%%PORTVERSION%%/infiniband.la
+lib/wireshark/plugins/%%PORTVERSION%%/infiniband.so
 lib/wireshark/plugins/%%PORTVERSION%%/irda.la
 lib/wireshark/plugins/%%PORTVERSION%%/irda.so
 lib/wireshark/plugins/%%PORTVERSION%%/lwres.la
