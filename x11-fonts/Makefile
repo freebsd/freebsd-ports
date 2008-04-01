@@ -88,6 +88,7 @@
     SUBDIR += liberation-fonts-ttf
     SUBDIR += libfontenc
     SUBDIR += linux-fontconfig
+    SUBDIR += linuxlibertine
     SUBDIR += manu-gothica
     SUBDIR += mathfonts
     SUBDIR += mgopen
