@@ -7270,6 +7270,7 @@ linuxdcpp	ports/net-p2p/linuxdcpp
 linuxdoc	ports/textproc/linuxdoc
 linuxfdisk	ports/sysutils/linuxfdisk
 linuxigd	ports/net/linuxigd
+linuxlibertine	ports/x11-fonts/linuxlibertine
 linuxpluginwrapper	ports/www/linuxpluginwrapper
 linuxthreads	ports/devel/linuxthreads
 linxt		ports/devel/linxt
