@@ -39,7 +39,7 @@ do-configure:
 
 .if ${ARCH} == "alpha"
 BROKEN=		Build fails on alpha
-.elif ${OSVERSION} >= 700000
+.elif ${OSVERSION} >= 700042
 # GCC-XML has some constructs that GCC 4.2 does not like. Namely,
 # the use of casted-pointer-dereferences as an lvalue to post-increment
 # operations.
@@ -50,6 +50,18 @@ CONFIGURE_ENV+=	CC=${LOCALBASE}/bin/gcc34 \
 MAKE_ENV+=	CC=${LOCALBASE}/bin/gcc34 \
 		CPP="${CC} -E" \
 		CXX=${LOCALBASE}/bin/g++34
+.endif
+
+.if ${OSVERSION} >= 700000
+OSMAJOR=${OSREL:C|^([0-9]+)\..*|\1|}
+GCC_CONFIG=${PATCH_WRKSRC}/GCC/gcc/config
+
+post-patch:
+	${SED} -e "s,MAJOR 6,MAJOR ${OSMAJOR}," \
+		${GCC_CONFIG}/freebsd6.h > ${GCC_CONFIG}/freebsd${OSMAJOR}.h
+	${REINPLACE_CMD} -e "s,FBSD_MAJOR == 6,FBSD_MAJOR == ${OSMAJOR},g" \
+			 -e "s,__FreeBSD__=6,__FreeBSD__=${OSMAJOR},g" \
+		${GCC_CONFIG}/freebsd-spec.h
 .endif
 
 .include <bsd.port.post.mk>
