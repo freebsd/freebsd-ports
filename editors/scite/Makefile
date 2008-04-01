@@ -30,9 +30,9 @@ SUB_FILES=	pkg-message
 
 MAN1=		scite.1
 
-#.if defined(PACKAGE_BUILDING)
-#IGNORE=		x11-toolkits/scintilla does not build with GTK+2 support by default
-#.endif
+.if defined(PACKAGE_BUILDING)
+IGNORE=		x11-toolkits/scintilla does not build with GTK+2 support by default
+.endif
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -E 'scintilla-[0-9]*' 2> /dev/null`" ]; then \
