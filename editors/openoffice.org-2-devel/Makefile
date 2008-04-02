@@ -72,7 +72,6 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-CODELINE=		680
 MILESTONE?=		248
 OOOTAG?=		SRC680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
@@ -147,7 +146,7 @@ MAXMODULES?=	1
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--enable-crashdump=yes				\
-			--enable-symbols=SMALL
+			--with-system-zlib
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
 LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost

@@ -7,6 +7,7 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
+PORTREVISION?=	1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://openoffice.lunarshells.com/sources/ \
@@ -140,7 +141,7 @@ NUMOFPROCESSES?=	1
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--enable-crashdump=yes				\
-			--enable-symbols=SMALL
+			--with-system-zlib
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
 LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
