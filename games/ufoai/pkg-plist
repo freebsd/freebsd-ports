@@ -1,7 +1,6 @@
 bin/ufo
 %%UFOSERVER%%bin/ufoded
 %%UFO2MAP%%bin/ufo2map
-%%UFOMASTER%%bin/ufomaster
 lib/ufoai/base/game.so
 lib/ufoai/base/i18n/cs/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/da/LC_MESSAGES/ufoai.mo
@@ -12,27 +11,22 @@ lib/ufoai/base/i18n/es_ES/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/est/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/fi/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/fr/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/ja/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/it/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/pl/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/pt_BR/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/ru/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/slo/LC_MESSAGES/ufoai.mo
 lib/ufoai/base/i18n/sv/LC_MESSAGES/ufoai.mo
+lib/ufoai/base/i18n/th/LC_MESSAGES/ufoai.mo
 lib/ufoai/ufo
 %%UFOSERVER%%lib/ufoai/ufoded
 %%UFO2MAP%%lib/ufoai/ufo2map
-%%UFOMASTER%%lib/ufoai/ufo2map
-lib/ufoai/ref_glx.so
-lib/ufoai/ref_sdl.so
-%%ARTS%%lib/ufoai/snd_arts.so
-lib/ufoai/snd_sdl.so
-lib/ufoai/snd_oss.so
 lib/ufoai/base/autoexec.cfg
 lib/ufoai/base/dedicated.cfg
 lib/ufoai/base/default.cfg
 lib/ufoai/base/keys.cfg
 lib/ufoai/base/maps
-lib/ufoai/base/mapshots.cfg
 lib/ufoai/base/media
 lib/ufoai/base/models
 lib/ufoai/base/music
@@ -41,6 +35,8 @@ lib/ufoai/base/shaders
 lib/ufoai/base/sound
 lib/ufoai/base/textures
 lib/ufoai/base/ufos
+@dirrm lib/ufoai/base/i18n/th/LC_MESSAGES/
+@dirrm lib/ufoai/base/i18n/th/
 @dirrm lib/ufoai/base/i18n/sv/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/sv
 @dirrm lib/ufoai/base/i18n/slo/LC_MESSAGES
@@ -51,6 +47,8 @@ lib/ufoai/base/ufos
 @dirrm lib/ufoai/base/i18n/pt_BR
 @dirrm lib/ufoai/base/i18n/pl/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/pl
+@dirrm lib/ufoai/base/i18n/ja/LC_MESSAGES/
+@dirrm lib/ufoai/base/i18n/ja
 @dirrm lib/ufoai/base/i18n/it/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/it
 @dirrm lib/ufoai/base/i18n/fi/LC_MESSAGES
@@ -72,5 +70,5 @@ lib/ufoai/base/ufos
 @dirrm lib/ufoai/base/i18n/cs/LC_MESSAGES
 @dirrm lib/ufoai/base/i18n/cs
 @dirrm lib/ufoai/base/i18n
-@dirrm lib/ufoai/base
-@dirrm lib/ufoai
+@dirrmtry lib/ufoai/base
+@dirrmtry lib/ufoai
