@@ -71,6 +71,7 @@
     SUBDIR += bastet
     SUBDIR += battalion
     SUBDIR += battleball
+    SUBDIR += battletanks
     SUBDIR += belooted
     SUBDIR += bfm
     SUBDIR += biloba
