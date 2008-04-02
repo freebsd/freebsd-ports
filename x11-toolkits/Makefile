@@ -220,8 +220,8 @@
     SUBDIR += qt33
     SUBDIR += qt4-gui
     SUBDIR += qtpixmap
-    SUBDIR += qwt
-    SUBDIR += qwt-devel
+    SUBDIR += qwt4
+    SUBDIR += qwt5
     SUBDIR += renaissance
     SUBDIR += rep-gtk
     SUBDIR += rep-gtk2
