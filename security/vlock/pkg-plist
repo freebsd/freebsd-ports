@@ -1,0 +1,20 @@
+bin/vlock
+sbin/vlock-main
+lib/vlock/modules/all.so
+lib/vlock/modules/new.so
+%%PL_CACASAVER%%lib/vlock/modules/caca.so
+@dirrm lib/vlock/modules
+%%PL_VLOCKSCRIPTS%%lib/vlock/scripts/amarok
+%%PL_VLOCKSCRIPTS%%lib/vlock/scripts/example_script
+%%PL_VLOCKSCRIPTS%%lib/vlock/scripts/mplayer
+%%PL_VLOCKSCRIPTS%%@dirrm lib/vlock/scripts
+@dirrm lib/vlock
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/PLUGINS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.X11
+%%PORTDOCS%%%%DOCSDIR%%/SECURITY
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec if ! pw groupshow vlock 2>/dev/null; then pw groupadd vlock -g 129; fi

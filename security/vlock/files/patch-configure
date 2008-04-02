@@ -1,0 +1,12 @@
+--- configure.orig	2008-03-26 17:49:33.000000000 +0800
++++ configure	2008-03-30 13:32:41.000000000 +0800
+@@ -255,6 +255,9 @@
+       DL_LIB=''
+       CRYPT_LIB=''
+       MODULES="all.so new.so"
++      CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
++      LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
++      ROOT_GROUP="wheel"
+     ;;
+   esac
+ }
