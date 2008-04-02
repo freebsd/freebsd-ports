@@ -1,0 +1,102 @@
+%%BENGALI%%%%CONFAVAILDIR%%/61-ttf-bengali-fonts.conf
+%%DEVANAGARI%%%%CONFAVAILDIR%%/61-ttf-devanagari-fonts.conf
+%%GUJARATI%%%%CONFAVAILDIR%%/61-ttf-gujarati-fonts.conf
+%%KANNADA%%%%CONFAVAILDIR%%/61-ttf-kannada-fonts.conf
+%%MALAYALAM%%%%CONFAVAILDIR%%/61-ttf-malayalam-fonts.conf
+%%ORIYA%%%%CONFAVAILDIR%%/61-ttf-oriya-fonts.conf
+%%PUNJABI%%%%CONFAVAILDIR%%/61-ttf-punjabi-fonts.conf
+%%TAMIL%%%%CONFAVAILDIR%%/61-ttf-tamil-fonts.conf
+%%TELUGU%%%%CONFAVAILDIR%%/61-ttf-telugu-fonts.conf
+%%BENGALI%%%%FONTSDIR%%/bengali/JamrulNormal.ttf
+%%BENGALI%%%%FONTSDIR%%/bengali/LikhanNormal.ttf
+%%BENGALI%%%%FONTSDIR%%/bengali/MuktiNarrow.ttf
+%%BENGALI%%%%FONTSDIR%%/bengali/MuktiNarrowBold.ttf
+%%BENGALI%%%%FONTSDIR%%/bengali/ani.ttf
+%%BENGALI%%%%FONTSDIR%%/bengali/fonts.dir
+%%BENGALI%%%%FONTSDIR%%/bengali/fonts.scale
+%%BENGALI%%%%FONTSDIR%%/bengali/lohit_bn.ttf
+%%BENGALI%%%%FONTSDIR%%/bengali/mitra.ttf
+%%BENGALI%%%%FONTSDIR%%/bengali/ttf-bengali-fonts.copyright
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/AksharYogini.ttf
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/Samyak-Devanagari.ttf
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/Sarai_07.ttf
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/chandas1-2.ttf
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/fonts.dir
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/fonts.scale
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/gargi.ttf
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/kalimati.ttf
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/lohit_hi.ttf
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/nakula.ttf
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/sahadeva.ttf
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/samanata.ttf
+%%DEVANAGARI%%%%FONTSDIR%%/devanagari/ttf-devanagari-fonts.copyright
+%%GUJARATI%%%%FONTSDIR%%/gujarati/Rekha.ttf
+%%GUJARATI%%%%FONTSDIR%%/gujarati/Samyak-Gujarati.ttf
+%%GUJARATI%%%%FONTSDIR%%/gujarati/aakar-medium.ttf
+%%GUJARATI%%%%FONTSDIR%%/gujarati/fonts.dir
+%%GUJARATI%%%%FONTSDIR%%/gujarati/fonts.scale
+%%GUJARATI%%%%FONTSDIR%%/gujarati/lohit_gu.ttf
+%%GUJARATI%%%%FONTSDIR%%/gujarati/padmaa-Bold.1.1.ttf
+%%GUJARATI%%%%FONTSDIR%%/gujarati/padmaa-Medium-0.5.ttf
+%%GUJARATI%%%%FONTSDIR%%/gujarati/padmaa.ttf
+%%GUJARATI%%%%FONTSDIR%%/gujarati/ttf-gujarati-fonts.copyright
+%%KANNADA%%%%FONTSDIR%%/kannada/Kedage-b.ttf
+%%KANNADA%%%%FONTSDIR%%/kannada/Kedage-i.ttf
+%%KANNADA%%%%FONTSDIR%%/kannada/Kedage-n.ttf
+%%KANNADA%%%%FONTSDIR%%/kannada/Kedage-t.ttf
+%%KANNADA%%%%FONTSDIR%%/kannada/Malige-b.ttf
+%%KANNADA%%%%FONTSDIR%%/kannada/Malige-i.ttf
+%%KANNADA%%%%FONTSDIR%%/kannada/Malige-n.ttf
+%%KANNADA%%%%FONTSDIR%%/kannada/Malige-t.ttf
+%%KANNADA%%%%FONTSDIR%%/kannada/fonts.dir
+%%KANNADA%%%%FONTSDIR%%/kannada/fonts.scale
+%%KANNADA%%%%FONTSDIR%%/kannada/lohit_kn.ttf
+%%KANNADA%%%%FONTSDIR%%/kannada/ttf-kannada-fonts.copyright
+%%MALAYALAM%%%%FONTSDIR%%/malayalam/AnjaliOldLipi-0.730.ttf
+%%MALAYALAM%%%%FONTSDIR%%/malayalam/MalOtf.ttf
+%%MALAYALAM%%%%FONTSDIR%%/malayalam/Rachana_w01.ttf
+%%MALAYALAM%%%%FONTSDIR%%/malayalam/fonts.dir
+%%MALAYALAM%%%%FONTSDIR%%/malayalam/fonts.scale
+%%MALAYALAM%%%%FONTSDIR%%/malayalam/ttf-malayalam-fonts.copyright
+%%ORIYA%%%%FONTSDIR%%/oriya/Samyak-Oriya.ttf
+%%ORIYA%%%%FONTSDIR%%/oriya/fonts.dir
+%%ORIYA%%%%FONTSDIR%%/oriya/fonts.scale
+%%ORIYA%%%%FONTSDIR%%/oriya/lohit_or.ttf
+%%ORIYA%%%%FONTSDIR%%/oriya/ttf-oriya-fonts.copyright
+%%ORIYA%%%%FONTSDIR%%/oriya/utkal.ttf
+%%PUNJABI%%%%FONTSDIR%%/punjabi/Saab.ttf
+%%PUNJABI%%%%FONTSDIR%%/punjabi/fonts.dir
+%%PUNJABI%%%%FONTSDIR%%/punjabi/fonts.scale
+%%PUNJABI%%%%FONTSDIR%%/punjabi/lohit_pa.ttf
+%%PUNJABI%%%%FONTSDIR%%/punjabi/ttf-punjabi-fonts.copyright
+%%TAMIL%%%%FONTSDIR%%/tamil/TAMu_Kadampari.ttf
+%%TAMIL%%%%FONTSDIR%%/tamil/TAMu_Kalyani.ttf
+%%TAMIL%%%%FONTSDIR%%/tamil/TAMu_Maduram.ttf
+%%TAMIL%%%%FONTSDIR%%/tamil/TSCu_Comic.ttf
+%%TAMIL%%%%FONTSDIR%%/tamil/TSCu_Paranar.ttf
+%%TAMIL%%%%FONTSDIR%%/tamil/TSCu_Times.ttf
+%%TAMIL%%%%FONTSDIR%%/tamil/TSCu_paranarb.ttf
+%%TAMIL%%%%FONTSDIR%%/tamil/TSCu_paranari.ttf
+%%TAMIL%%%%FONTSDIR%%/tamil/fonts.dir
+%%TAMIL%%%%FONTSDIR%%/tamil/fonts.scale
+%%TAMIL%%%%FONTSDIR%%/tamil/lohit_ta.ttf
+%%TAMIL%%%%FONTSDIR%%/tamil/ttf-tamil-fonts.copyright
+%%TELUGU%%%%FONTSDIR%%/telugu/Pothana2000.ttf
+%%TELUGU%%%%FONTSDIR%%/telugu/Vemana.ttf
+%%TELUGU%%%%FONTSDIR%%/telugu/fonts.dir
+%%TELUGU%%%%FONTSDIR%%/telugu/fonts.scale
+%%TELUGU%%%%FONTSDIR%%/telugu/lohit_te.ttf
+%%TELUGU%%%%FONTSDIR%%/telugu/ttf-telugu-fonts.copyright
+%%TELUGU%%@dirrm %%FONTSDIR%%/telugu
+%%TAMIL%%@dirrm %%FONTSDIR%%/tamil
+%%PUNJABI%%@dirrm %%FONTSDIR%%/punjabi
+%%ORIYA%%@dirrm %%FONTSDIR%%/oriya
+%%MALAYALAM%%@dirrm %%FONTSDIR%%/malayalam
+%%KANNADA%%@dirrm %%FONTSDIR%%/kannada
+%%GUJARATI%%@dirrm %%FONTSDIR%%/gujarati
+%%DEVANAGARI%%@dirrm %%FONTSDIR%%/devanagari
+%%BENGALI%%@dirrm %%FONTSDIR%%/bengali
+@exec %%FCCACHE%% %D/%%FONTSDIR%% 2>/dev/null || true
+@unexec rm %D/%%FONTSDIR%%/fonts.cache-2 2>/dev/null || true
+@dirrm %%FONTSDIR%%
+@unexec %%FCCACHE%% %D/%%FONTSDIR%% 2>/dev/null || true
