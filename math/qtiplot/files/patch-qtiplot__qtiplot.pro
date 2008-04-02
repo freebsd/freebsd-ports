@@ -1,6 +1,6 @@
---- ./qtiplot/qtiplot.pro.orig	2007-11-14 20:19:55.000000000 +0300
-+++ ./qtiplot/qtiplot.pro	2007-11-14 20:19:55.000000000 +0300
-@@ -34,12 +34,8 @@
+--- ./qtiplot/qtiplot.pro.orig	2008-03-29 10:43:50.000000000 +0300
++++ ./qtiplot/qtiplot.pro	2008-03-29 10:46:00.000000000 +0300
+@@ -45,12 +45,8 @@
  #!!! Warning: You must modify these paths according to your computer settings
  #############################################################################
  
@@ -15,7 +15,7 @@
  
  ##################### 3rd PARTY LIBRARIES SECTION ###########################
  #!!! Warning: You must modify these paths according to your computer settings
-@@ -48,17 +44,13 @@
+@@ -59,17 +55,13 @@
  ##################### Linux (Mac OS X) ######################################
  
  # statically link against libraries in 3rdparty
@@ -36,7 +36,18 @@
  
  ##################### Windows ###############################################
  
-@@ -400,6 +392,7 @@
+@@ -124,8 +116,8 @@
+                   translations/qtiplot_ja.ts \
+                   translations/qtiplot_sv.ts
+ 
+-system(lupdate -verbose qtiplot.pro)
+-system(lrelease -verbose qtiplot.pro)
++#system(lupdate -verbose qtiplot.pro)
++#system(lrelease -verbose qtiplot.pro)
+ 
+ translations.files += translations/qtiplot_de.qm \
+                   translations/qtiplot_es.qm \
+@@ -435,6 +427,7 @@
  ##################### Default: muParser v1.28 #################
  
  contains(SCRIPTING_LANGS, muParser) {
@@ -44,15 +55,15 @@
    DEFINES += SCRIPTING_MUPARSER
  
    HEADERS += src/muParserScript.h \
-@@ -417,11 +410,11 @@
+@@ -461,11 +454,12 @@
    SOURCES += src/PythonScript.cpp src/PythonScripting.cpp
  
    unix {
 -    INCLUDEPATH += $$system(python python-includepath.py)
 -    LIBS        += $$system(python -c "\"from distutils import sysconfig; print '-lpython'+sysconfig.get_config_var('VERSION')\"")
--    LIBS        += -lm
 +    INCLUDEPATH += $$(PYTHON_INCLUDEDIR)
-+    LIBS +=	-lm -l$$(PYTHON_VERSION)
++    LIBS        += -l$$(PYTHON_VERSION)
+     LIBS        += -lm
      system(mkdir -p $${SIP_DIR})
 -    system($$system(python python-sipcmd.py) -c $${SIP_DIR} src/qti.sip)
 +    SIPCMD = $$(PYTHON_VERSION) python-sipcmd.py
