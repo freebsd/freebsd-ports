@@ -755,6 +755,7 @@ batmon		ports/sysutils/batmon
 battalion	ports/games/battalion
 battfink	ports/sysutils/battfink
 battleball	ports/games/battleball
+battletanks	ports/games/battletanks
 battmond	ports/sysutils/battmond
 baudline	ports/audio/baudline
 bayespam	ports/mail/bayespam
