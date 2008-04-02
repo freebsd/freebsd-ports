@@ -7,6 +7,7 @@
 
 PORTNAME=	sleuthkit
 PORTVERSION=	2.51
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
@@ -38,6 +39,9 @@ post-extract:
 	@${REINPLACE_CMD} -e 's,[[:graph:]]*Date[[:graph:]]*,,g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} '/use lib/d' ${WRKSRC}/tools/timeline/Makefile.in
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
