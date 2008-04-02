@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	Crypt-Rijndael
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	security perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@exit2shell.com
 COMMENT=	Perl module that implements the Rijndael cipher
+
+BUILD_DEPENDS=	p5-Test-Manifest>1.14:${PORTSDIR}/devel/p5-Test-Manifest
 
 PERL_CONFIGURE=	yes
 
