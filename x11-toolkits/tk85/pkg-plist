@@ -82,6 +82,7 @@ lib/tk%%TK_VER%%/console.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/images/teapot.ppm
 %%DEMOS%%lib/tk%%TK_VER%%/demos/items.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/ixset
+%%DEMOS%%lib/tk%%TK_VER%%/demos/knightstour.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/label.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/labelframe.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/license.terms

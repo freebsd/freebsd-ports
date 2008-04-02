@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcl
-PORTVERSION=	8.5.1
+PORTVERSION=	8.5.2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -711,8 +711,8 @@ post-patch:
 		-e 's/-ltclstub`echo $${TCL_VERSION} | tr -d .`/-ltclstub`echo $${TCL_VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|libtcl$${SHORT_TCL_VER}|libtcl$${SHORT_TCL_VER}${THREADS_SUFFIX}|g' \
-		-e 's|$$(BIN_INSTALL_DIR)/tclsh$$(VERSION)|$$(BIN_INSTALL_DIR)/tclsh$$(VERSION)${THREADS_SUFFIX}|g' \
-		-e 's|$$(SCRIPT_INSTALL_DIR)/tclConfig.sh|$$(SCRIPT_INSTALL_DIR)/tclConfig${THREADS_SUFFIX}.sh|g' \
+		-e 's|/tclsh$$(VERSION)|/tclsh$$(VERSION)${THREADS_SUFFIX}|g' \
+		-e 's|/tclConfig.sh|/tclConfig${THREADS_SUFFIX}.sh|g' \
 		${WRKSRC}/Makefile.in
 .endif
 
