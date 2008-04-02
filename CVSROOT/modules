@@ -15566,6 +15566,7 @@ sqstat		ports/www/sqstat
 squall		ports/net-p2p/squall
 squash		ports/audio/squash
 squeak		ports/lang/squeak
+squeezecenter	ports/audio/squeezecenter
 squid		ports/www/squid
 squid30		ports/www/squid30
 squid_radius_auth	ports/www/squid_radius_auth
