@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeradius
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -40,7 +40,8 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 PLIST_SUB=	PORTVERSION=${DISTVERSION}
 
-OPTIONS=	KERBEROS	"With Kerberos support" off \
+OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
+		KERBEROS	"With Kerberos support" off \
 		HEIMDAL		"With Heimdal Kerberos support" off \
 		LDAP		"With LDAP database support" off \
 		MYSQL		"With MySQL database support" off \
@@ -53,6 +54,10 @@ OPTIONS=	KERBEROS	"With Kerberos support" off \
 
 # Default requirements for rc script
 _REQUIRE=	NETWORKING SERVERS
+
+# User and group to use if USER is set
+USER=	freeradius
+GROUP=	freeradius
 
 CONFIGURE_ARGS=	--quiet \
 		--prefix=${PREFIX} \
@@ -80,12 +85,48 @@ CONFIGURE_ARGS+=--with-rlm-python-lib-dir=${PYTHON_LIBDIR} \
 		--without-rlm_sql_db2 \
 		--without-rlm_sql_iodbc \
 		--without-rlm_sql_oracle \
+		--without-rlm_sql_sqlite \
 		--without-rlm_sql_sybase \
 		--without-rlm_sql_unixodbc \
 		--with-vmps
 
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=	--with-pic
+.endif
+
+# Credentials for WITH_USER are RADIUS_USER, RADIUS_UID, RADIUS_GECOS,
+# RADIUS_HOME, RADIUS_SHELL, RADIUS_GROUP and RADIUS_GID.
+
+# Parse ${PORTSDIR}/UIDs and GIDs for the defaults
+USER!=	${GREP} -E '^${USER}:' ${PORTSDIR}/UIDs | \
+		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*):([^:]*):([^:]*)$$/USER="\1" UID="\3" GECOS="\5" HOME="\6" SHELL="\7"/'
+GROUP!=	${GREP} -E '^${GROUP}:' ${PORTSDIR}/GIDs | \
+		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):$$/GROUP="\1" GID="\3"/'
+
+# Apply the defaults where necessary
+RADIUS_USER?=	${USER:MUSER*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+RADIUS_UID?=	${USER:MUID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+RADIUS_GECOS?=	${USER:MGECOS*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+RADIUS_HOME?=	${USER:MHOME*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+RADIUS_SHELL?=	${USER:MSHELL*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+RADIUS_GROUP?=	${GROUP:MGROUP*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+RADIUS_GID?=	${GROUP:MGID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+
+SUB_LIST+=	USER="${RADIUS_USER}" \
+		UID="${RADIUS_UID}" \
+		GECOS="${RADIUS_GECOS}" \
+		HOME="${RADIUS_HOME}" \
+		SHELL="${RADIUS_SHELL}" \
+		GROUP="${RADIUS_GROUP}" \
+		GID="${RADIUS_GID}" \
+		RADDB_WORK="${WRKSRC}/raddb" \
+		RADDB="${PREFIX}/etc/raddb" \
+		LOGDIR="${LOGDIR}"
+SUB_FILES+=	pkg-install pkg-deinstall
+.ifdef(WITH_USER)
+SUB_LIST+=	RUN_AS_USER="yes"
+.else
+SUB_LIST+=	RUN_AS_USER="no"
 .endif
 
 .if defined(WITH_HEIMDAL) && !defined(WITH_KERBEROS)
@@ -226,6 +267,11 @@ pre-configure:
 		&& ${AUTOCONF} -I ${WRKSRC}
 	@cd ${WRKSRC}/src/modules/rlm_python && ${AUTOCONF} -I ${WRKSRC}
 
+pre-install:
+# Run pkg-install PRE-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
+		PRE-INSTALL
+
 post-install:
 # Create (if necessary) ${PREFIX}/etc/raddb and subdirectories using
 # ${EXAMPLESDIR}/raddb as the model layout
@@ -247,5 +293,8 @@ post-install:
 # Set ${PREFIX}/etc/raddb and all the files and folders in it to g-w,o-rwx
 # (FreeRADIUS will probably complain if this is not done)
 	@${CHMOD} -R g-w,o-rwx ${PREFIX}/etc/raddb
+# Run pkg-install POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
+		POST-INSTALL
 
 .include <bsd.port.post.mk>

@@ -108,9 +108,9 @@
      fi
  
      if test "x$mysql_with_threads" = "xyes"; then
---- src/modules/rlm_python/configure.in	Thu May 15 15:52:02 2003
-+++ src/modules/rlm_python/configure.in	Thu Aug  2 12:43:47 2007
-@@ -84,6 +84,44 @@
+--- src/modules/rlm_python/configure.in	Mon May 14 23:27:21 2007
++++ src/modules/rlm_python/configure.in	Tue Mar 18 13:52:32 2008
+@@ -85,6 +85,34 @@
  		FR_SMART_CHECK_LIB(python${PY_VERSION}, Py_Initialize)
  		LIBS=$old_LIBS
  
@@ -118,10 +118,7 @@
 +dnl # in case libpython is threaded
 +
 +		if test "x$smart_lib" = "x"; then
-+		    AC_MSG_NOTICE([Checking to see if libpython may be threaded.])
-+		    dnl pthread stuff is usually in -lpthread
-+		    dnl or in -lc_r, on *BSD
-+		    dnl FreeBSD uses -pthread
++		    AC_MSG_NOTICE([Checking to see if libpython needs -pthread.])
 +		    libpython_with_threads="yes"
 +		    case "$host" in
 +		    *-freebsd*)
@@ -133,13 +130,6 @@
 +		        fi
 +		    ;;
 +		    *)
-+		        AC_CHECK_LIB(pthread, pthread_create,
-+				     [ LIBS="-lpthread $LIBS" ],
-+				     AC_CHECK_LIB(c_r, pthread_create,
-+					          [ LIBS="-lc_r $LIBS" ],
-+					          [ libpython_with_threads="no" ]
-+					          )
-+				     )
 +		    ;;
 +		    esac
 +
