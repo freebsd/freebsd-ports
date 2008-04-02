@@ -7,6 +7,7 @@
 
 PORTNAME=	eggdrop
 PORTVERSION=	1.6.18
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/ \
 		LOCAL/beech
@@ -19,13 +20,12 @@ PATCH_SITES=	http://www.egghelp.org/files/patches/ \
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
 
-LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
+USE_TCL=	80+
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl84.so \
-		--with-tclinc=${LOCALBASE}/include/tcl8.4/tcl.h
+CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
+		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
 
 OPTIONS=	SSL "Use SSL" off
 
