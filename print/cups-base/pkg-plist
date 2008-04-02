@@ -53,7 +53,6 @@ include/cups/cups.h
 include/cups/dir.h
 include/cups/file.h
 include/cups/http.h
-include/cups/i18n.h
 include/cups/image.h
 include/cups/ipp.h
 include/cups/language.h
