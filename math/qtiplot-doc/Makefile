@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	qtiplot-doc
-PORTVERSION=	0.9
+PORTVERSION=	0.9.4
 CATEGORIES=	math
-MASTER_SITES=	http://soft.proindependent.com/doc/
-DISTNAME=	manual-en
+MASTER_SITES=	BERLIOS
+MASTER_SITE_SUBDIR=	qtiplot
+DISTNAME=	qtiplot-manual-en
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	The QtiPlot Handbook
