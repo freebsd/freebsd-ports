@@ -627,6 +627,7 @@
     SUBDIR += splay
     SUBDIR += splaytk
     SUBDIR += squash
+    SUBDIR += squeezecenter
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
     SUBDIR += streamtuner

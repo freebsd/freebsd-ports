@@ -1,24 +1,25 @@
-# Ports collection makefile for:	slimserver
-# Date created:				Wed Apr 14, 2004
-# Whom:					Brooks Davis <brooks@freebsd.org>
+# Ports collection makefile for:		squeezecenter
+# Date created:					Wed Apr 14, 2004
+# Whom:						Brooks Davis <brooks@freebsd.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	slimserver
-PORTVERSION=	6.5.4
-PORTREVISION=	1
+PORTNAME=	squeezecenter
+PORTVERSION=	7.0.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
-DISTNAME=	SlimServer_v${PORTVERSION}.no-cpan-arch
-DIST_SUBDIR=	slimserver
+MASTER_SITES=	http://www.slimdevices.com/downloads/SqueezeCenter_v${PORTVERSION}/
+DISTNAME=	${PORTNAME}-7.0-noCPAN
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Slim Devices audio streaming server
 
 # Defaults support playback of relativly unrestricted formats on SB2 or
 # SB3 devices and wired SB1 devices.
-OPTIONS=	APE "Support Monkey's Audio Codec input" on \
+OPTIONS=	CLASSIC "Default to the Classic skin" off \
+		APE "Support Monkey's Audio Codec input" on \
 		FAAD "Support AAC input via FAAD" on \
 		FLAC "Support FLAC output (and input on SliMP3 and SB1)" on \
 		LAME "Support MP3 output via LAME" off \
@@ -28,13 +29,16 @@ OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
-WRKSRC=	${WRKDIR}/SlimServer_v${PORTVERSION}
+WRKSRC=	${WRKDIR}/squeezecenter-7.0-17793-noCPAN
 
 BUILD_DEPENDS+=	${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which
 RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder \
 		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
+		${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
+		${SITE_PERL}/${PERL_ARCH}/JSON/XS.pm:${PORTSDIR}/converters/p5-JSON-XS \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
@@ -49,7 +53,7 @@ IGNORE_WITH_MYSQL=	323 40
 
 .include <bsd.port.pre.mk>
 
-# We need a dependency on the server because slimserver runs the binary
+# We need a dependency on the server because squeezecenter runs the binary
 # directly with a non-standard config.
 RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 
@@ -75,20 +79,31 @@ RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten
 RUN_DEPENDS+=	oggdec:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-USE_RC_SUBR=	slimserver.sh
-TMP_SLIMDIR=	${WRKDIR}/slimserver
+.if defined(WITH_CLASSIC)
+DEFAULT_SKIN=	Classic
+.else
+DEFAULT_SKIN?=	Default
+.endif
+
+USE_RC_SUBR=	squeezecenter.sh
+TMP_SLIMDIR=	${WRKDIR}/_squeezecenter
 TMP_DOCSDIR=	${WRKDIR}/doc
 DOCFILES=	Changelog.html Installation.txt License.txt
 CONFFILES=	convert.conf types.conf
-EXCEPTFILES=	${DOCFILES} ${CONFFILES} MySQL/errmsg.txt MySQL/errmsg.sys
+EXCEPTFILES=	${DOCFILES} \
+		${CONFFILES} \
+		CPAN/Template.pm \
+		CPAN/XML/Parser.pm \
+		MySQL/errmsg.txt \
+		MySQL/errmsg.sys
 EXCEPTDIRS=	Bin \
 		CPAN/arch \
+		CPAN/Template \
+		CPAN/XML/Parser \
 		CPAN/YAML
 
 CPIOARGS=	--quiet -pdum -R
-PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB=	SLIMDIR=${SLIMDIR}
-PLIST_FILES=	bin/softsqueeze
 
 SUB_FILES=	softsqueeze.sh pkg-install
 SUB_LIST=	PERL=${PERL} \
@@ -98,37 +113,57 @@ SUB_LIST=	PERL=${PERL} \
 		SLIMGROUP=${SLIMGROUP} \
 		CONFFILES="${CONFFILES}"
 
+JSON_FIXUP_FILES=	Slim/Control/Queries.pm \
+			Slim/Networking/SqueezeNetwork.pm \
+			Slim/Networking/SqueezeNetwork/Stats.pm \
+			Slim/Networking/SqueezeNetwork/PrefSync.pm \
+			Slim/Networking/SqueezeNetwork/Players.pm \
+			Slim/Plugin/AudioScrobbler/Plugin.pm \
+			Slim/Plugin/Live365/ProtocolHandler.pm \
+			Slim/Plugin/Pandora/ProtocolHandler.pm \
+			Slim/Plugin/RPC/Plugin.pm \
+			Slim/Plugin/RhapsodyDirect/ProtocolHandler.pm \
+			Slim/Plugin/Slacker/ProtocolHandler.pm \
+			Slim/Web/Cometd.pm \
+			Slim/Web/JSONRPC.pm \
+
 pre-fetch:
 .if !defined(SLIMDIR)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define SLIMDIR to override default of 'slimserver'."
+	@${ECHO_MSG} "Define SLIMDIR to override default of 'squeezecenter'."
 	@${ECHO_MSG} ""
 .endif
 
-SLIMDIR?=	slimserver
-SLIMDBDIR?=	/var/db/slimserver
+SLIMDIR?=	squeezecenter
+SLIMDBDIR?=	/var/db/squeezecenter
 SLIMUSER?=	slimserv
 SLIMGROUP?=	${SLIMUSER}
 
 post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's|/usr/bin/perl|${PERL}|' \
-	    -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|' \
 	    -e 's|%%DISTDIR%%|${_DISTDIR}|' \
+	    -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	    -e 's|%%PREFIX%%|${PREFIX}|' \
+	    -e 's|%%SITE_PERL%%|${SITE_PERL}|' \
 	    -e 's|%%SLIMDBDIR%%|${SLIMDBDIR}|' \
-		${WRKSRC}/Bin/dbish \
+	    -e 's|%%TMP_SLIMDIR%%|${TMP_SLIMDIR}|' \
+	    -e 's|%%DEFAULT_SKIN%%|${DEFAULT_SKIN}|' \
+		${WRKSRC}/Slim/Utils/OSDetect.pm \
 		${WRKSRC}/Slim/Utils/Prefs.pm \
+		${WRKSRC}/Slim/Web/HTTP.pm \
 		${WRKSRC}/scanner.pl \
 		${WRKSRC}/slimserver.pl
-	@${RM} ${WRKSRC}/scanner.pl.bak ${WRKSRC}/slimserver.pl.bak \
-	    ${WRKSRC}/Slim/Utils/Prefs.pm.bak \
-	    ${WRKSRC}/Bin/dbish.bak
+	cd ${WRKSRC} && ${REINPLACE_CMD} \
+	    -e 's/to_json/encode_json/' \
+	    -e 's/from_json/decode_json/' \
+	    ${JSON_FIXUP_FILES}
 
 do-build:
 	@${MKDIR} -m 0755 ${TMP_SLIMDIR}
 	@cd ${WRKSRC} && \
-	    ${FIND} . -name \*.orig ${EXCEPTFILES:S|^|-o -path ./|} \
+	    ${FIND} . -name \*.orig -o -name \*.bak \
+	    ${EXCEPTFILES:S|^|-o -path ./|} \
 	    ${EXCEPTDIRS:S/$/\*/:S/^/-o -path .\//} -o -print | \
 	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${TMP_SLIMDIR}
 .for _CONF in ${CONFFILES}
@@ -139,8 +174,35 @@ do-build:
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${TMP_DOCSDIR}
 .endif
 
-post-build:
-	@${RM} -f ${PLIST}
+pre-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+do-install:
+	@${MKDIR} -m 0755 ${PREFIX}/${SLIMDIR}
+	@${LN} -s ${SLIMDBDIR}/cache ${PREFIX}/${SLIMDIR}/Cache
+	@cd ${TMP_SLIMDIR} && \
+	    ${FIND} . | \
+	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${PREFIX}/${SLIMDIR}
+	@${LN} -s ${LOCALBASE}/share/mysql/errmsg.txt \
+	    ${PREFIX}/${SLIMDIR}/MySQL/
+	@${LN} -s ${LOCALBASE}/share/mysql/english/errmsg.sys \
+	    ${PREFIX}/${SLIMDIR}/MySQL/
+	@${INSTALL_SCRIPT} ${WRKDIR}/softsqueeze.sh ${PREFIX}/bin/softsqueeze
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@cd ${TMP_DOCSDIR} && \
+	    ${FIND} . | \
+	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${DOCSDIR}
+.endif
+
+post-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${ECHO}
+	@${CAT} ${PKGMESSAGE}
+
+build-plist:
+	@${CAT} /dev/null > ${PLIST}
+	echo bin/softsqueeze >> ${PLIST}
 .for _CONF in ${CONFFILES}
 	@${ECHO} '@unexec if cmp -s %D/%%SLIMDIR%%/${_CONF} %D/%%SLIMDIR%%/${_CONF}.sample; then rm -f %D/%%SLIMDIR%%/${_CONF}; fi' >> ${PLIST}
 .endfor
@@ -170,31 +232,5 @@ post-build:
 	@${ECHO} '@dirrmtry ${SLIMDBDIR}/playlists' >> ${PLIST}
 	@${ECHO} '@dirrmtry ${SLIMDBDIR}' >> ${PLIST}
 	@${ECHO} '@unexec test -d ${SLIMDBDIR} && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove ${SLIMDBDIR} and its contents manually.")' >> ${PLIST}
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-do-install:
-	@${MKDIR} -m 0755 ${PREFIX}/${SLIMDIR}
-	@${LN} -s ${SLIMDBDIR}/cache ${PREFIX}/${SLIMDIR}/Cache
-	@cd ${TMP_SLIMDIR} && \
-	    ${FIND} . | \
-	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${PREFIX}/${SLIMDIR}
-	@${LN} -s ${LOCALBASE}/share/mysql/errmsg.txt \
-	    ${PREFIX}/${SLIMDIR}/MySQL/
-	@${LN} -s ${LOCALBASE}/share/mysql/english/errmsg.sys \
-	    ${PREFIX}/${SLIMDIR}/MySQL/
-	@${INSTALL_SCRIPT} ${WRKDIR}/softsqueeze.sh ${PREFIX}/bin/softsqueeze
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@cd ${TMP_DOCSDIR} && \
-	    ${FIND} . | \
-	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${DOCSDIR}
-.endif
-
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
