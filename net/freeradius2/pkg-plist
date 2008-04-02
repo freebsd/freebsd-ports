@@ -48,9 +48,15 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/proxy.conf
 %%EXAMPLESDIR%%/raddb/radiusd.conf
 %%EXAMPLESDIR%%/raddb/sites-available/README
+%%EXAMPLESDIR%%/raddb/sites-available/buffered-sql
+%%EXAMPLESDIR%%/raddb/sites-available/copy-acct-to-home-server
 %%EXAMPLESDIR%%/raddb/sites-available/default
 %%EXAMPLESDIR%%/raddb/sites-available/example
+%%EXAMPLESDIR%%/raddb/sites-available/inner-tunnel
+%%EXAMPLESDIR%%/raddb/sites-available/proxy-inner-tunnel
+%%EXAMPLESDIR%%/raddb/sites-available/vmps
 %%EXAMPLESDIR%%/raddb/sites-enabled/default
+%%EXAMPLESDIR%%/raddb/sites-enabled/inner-tunnel
 %%EXAMPLESDIR%%/raddb/snmp.conf
 %%EXAMPLESDIR%%/raddb/sql.conf
 %%EXAMPLESDIR%%/raddb/sql/mssql/dialup.conf
@@ -485,6 +491,7 @@ include/freeradius/vqp.h
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4818.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc4849.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5080.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5176.txt
 %%PORTDOCS%%%%DOCSDIR%%/rlm_dbm
 %%PORTDOCS%%%%DOCSDIR%%/rlm_eap
 %%PORTDOCS%%%%DOCSDIR%%/rlm_expiration
@@ -596,6 +603,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.rfc4679
 %%DATADIR%%/dictionary.rfc4818
 %%DATADIR%%/dictionary.rfc4849
+%%DATADIR%%/dictionary.rfc5176
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
 %%DATADIR%%/dictionary.shasta
@@ -622,7 +630,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.xylan
 %%DATADIR%%/dictionary.zyxel
 @dirrm %%DATADIR%%
-@exec mkdir -p /var/log/raddb
-@exec chmod -R og= /var/log/raddb
+@exec if [ ! -d /var/log/radacct ]; then mkdir -p /var/log/radacct; chmod -R go= /var/log/radacct; fi
+@exec for i in /var/log/radius.log /var/log/radutmp /var/log/radwtmp; do if [ ! -f ${i} ]; then touch ${i}; chmod go= ${i}; fi; done
 @exec mkdir -p /var/run/radiusd
 @unexec rm -fr /var/run/radiusd

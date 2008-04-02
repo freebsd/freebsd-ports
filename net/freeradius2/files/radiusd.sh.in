@@ -1,9 +1,10 @@
 #!/bin/sh
-
+#
+# $FreeBSD$
+#
 # PROVIDE: radiusd
 # REQUIRE: %%REQUIRE%%
 # KEYWORD: shutdown
-
 #
 # Add the following lines to /etc/rc.conf to enable radiusd:
 #

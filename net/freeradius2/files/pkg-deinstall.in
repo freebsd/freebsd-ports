@@ -1,0 +1,32 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ %%RUN_AS_USER%% != "yes" ]; then exit 0; fi
+
+case $2 in
+    POST-DEINSTALL)
+	cat <<EOMSG
+
+If you are not upgrading and don't intend to use
+FreeRADIUS any more then you may wish to delete
+the %%GROUP%% group, which can be done with the
+following command:
+
+    # pw groupdel %%GROUP%%
+
+You may also wish to delete the %%USER%% user,
+which can be done with the following command:
+
+    # pw userdel %%USER%%
+EOMSG
+        ;;
+esac
+
+
+# Emacs variables
+
+# Local Variables:
+# mode: sh
+# sh-basic-offset: 4
+# sh-indent-comment: nil
+# End:
