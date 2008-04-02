@@ -5030,6 +5030,7 @@ imspector	ports/net-im/imspector
 imwheel		ports/x11/imwheel
 inadyn		ports/dns/inadyn
 indexme		ports/www/indexme
+indic-ttf	ports/x11-fonts/indic-ttf
 ines		ports/emulators/ines
 info2html	ports/textproc/info2html
 info2man	ports/textproc/info2man
