@@ -1,0 +1,23 @@
+--- SConscript.orig	2007-12-21 15:36:00.000000000 +0600
++++ SConscript	2008-03-27 06:26:45.000000000 +0600
+@@ -68,17 +68,17 @@
+ 
+ if sys.platform != 'win32' and env['enable_lua']:
+ 	got_lua = False
+-	for lua in ['lua5.1', 'lua5.0', 'lua']: 
++	for lua in ['lua-5.1', 'lua-5.0', 'lua']: 
+ 		try: 
+ 			env.ParseConfig("pkg-config --cflags --libs %s 2>/dev/null" %lua);
+ 			got_lua = True
+ 			env.Append(CPPDEFINES=['ENABLE_LUA'])
+-			bt_libs.append(lua)
++			bt_libs.append('lua')
+ 			break
+ 		except: 
+ 			continue
+ 	if not got_lua: 
+-		raise Exception("Cannot find lua5.1/lua5.0 or lua pkg-config information")
++		raise Exception("Cannot find lua-5.1/lua-5.0 or lua pkg-config information")
+ 
+ if env['enable_lua']: 
+ 	env.Append(CPPDEFINES=['ENABLE_LUA'])

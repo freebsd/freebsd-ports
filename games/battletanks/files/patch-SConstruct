@@ -1,0 +1,21 @@
+--- SConstruct.orig	2007-12-21 19:45:15.000000000 +0600
++++ SConstruct	2008-03-27 04:41:37.000000000 +0600
+@@ -53,6 +53,8 @@
+ 	env['CXXFLAGS'] += SCons.Util.CLVar(os.environ['CXXFLAGS'])
+ if os.environ.has_key('LDFLAGS'):
+ 	env['LINKFLAGS'] += SCons.Util.CLVar(os.environ['LDFLAGS'])
++if os.environ.has_key('CPPPATH'):
++	env['CPPPATH'] = os.environ['CPPPATH'].split()
+ 
+ if (env['gcc_visibility']): 
+ 	env.Append(CCFLAGS=' -fvisibility-inlines-hidden -fvisibility=hidden -DGCC_HASCLASSVISIBILITY ')
+@@ -97,9 +99,6 @@
+ 	if debug:
+ 		env.Append(CCFLAGS='-ggdb ')
+ 		env.Append(CPPFLAGS='-ggdb ')
+-	else: 
+-		env.Append(CCFLAGS='-O3 ')
+-		env.Append(CPPFLAGS='-O3 ')
+ 		
+ 	al_lib = 'openal'
+ 	env.Append(CPPFLAGS=' -Wall -pedantic -Wno-long-long -pipe -pthread ')
