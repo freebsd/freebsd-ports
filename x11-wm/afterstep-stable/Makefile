@@ -7,6 +7,7 @@
 
 PORTNAME=	afterstep
 PORTVERSION=	2.2.8
+PORTREVISION=	1
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -59,12 +60,6 @@ CONFIGURE_ARGS+=	--enable-different-looknfeels
 
 .if !defined(WITH_SAVEWINDOWS)
 CONFIGURE_ARGS+=	--disable-savewindows
-.endif
-
-.if exists(${PREFIX}/share/gnome/wm-properties)
-PLIST_SUB+=	GNOME:=""
-.else
-PLIST_SUB+=	GNOME:="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
