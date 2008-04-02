@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnxml
-PORTVERSION=	0.18.1
+PORTVERSION=	0.18.2
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.autistici.org/bakunin/libnxml/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
