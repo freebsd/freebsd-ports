@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.4
 CATEGORIES=	math science
 MASTER_SITES=	http://soft.proindependent.com/src/
 
@@ -16,7 +16,7 @@ COMMENT=	An Origin clone for data analysis and scientific plotting
 LIB_DEPENDS=	gsl.10:${PORTSDIR}/math/gsl \
 		muparser.0:${PORTSDIR}/math/muparser \
 		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4 \
-		qwt.5:${PORTSDIR}/x11-toolkits/qwt-devel
+		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -62,10 +62,6 @@ PLIST_SUB+=	NLS=""
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-QPRO_DIRS=	fitPlugins/fitRational0 \
-		fitPlugins/fitRational1 \
-		qtiplot
-
 post-patch:
 .if defined(WITH_PYTHON)
 	@${REINPLACE_CMD} -e \
@@ -83,8 +79,7 @@ post-patch:
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
 .endif
 	@${REINPLACE_CMD} -e \
-		's|/usr/share/doc/qtiplot/manual-%1|${DATADIR}/manual|; \
-		 s|/usr/lib/qtiplot/plugins|${DATADIR}/fitPlugins|' \
+		's|/usr/lib/qtiplot/plugins|${DATADIR}/fitPlugins|' \
 		${WRKSRC}/qtiplot/src/ApplicationWindow.cpp
 .if defined(WITH_DEBUG)
 	@${REINPLACE_CMD} -e \
@@ -99,13 +94,8 @@ do-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} -recursive)
 
 post-configure:
-.for d in ${QPRO_DIRS}
-	@${REINPLACE_CMD} -e \
-		's|^CC .*|CC=${CC}|; \
-		 s|^CXX .*|CXX=${CXX}|; \
-		 s|^LINK .*|LINK=${CXX}|' \
-		${WRKSRC}/${d}/Makefile
-.endfor
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|; s|^LINK .*|LINK=${CXX}|'
 	@${REINPLACE_CMD} -e 's|^\(INCPATH.*=\)|\1-I../3rdparty/liborigin|' ${WRKSRC}/qtiplot/Makefile
 
 do-install:
