@@ -48,9 +48,11 @@ CONFIGURE_ARGS+=	--without-kde
 USE_KDELIBS_VER=3
 .endif
 
+.if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS BUGS ChangeLog INSTALL NEWS README README.CODESTYLE\
 		README.LICENSE TODO
 INFO=		tora
+.endif
 
 PREFIX2FIX=	doc/help/preferences.texi src/toconfiguration.h
 
@@ -70,7 +72,7 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/etc/torarc|${PREFIX}/etc/torarc|'	\
 		${PREFIX2FIX:S|^|${WRKSRC}/|}
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|test doc|test|' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|test doc|test|' ${WRKSRC}/Makefile.am
 .endif
 
 post-install:
