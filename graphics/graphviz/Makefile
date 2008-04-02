@@ -91,8 +91,8 @@ OPTIONS=	ICONV "Build with ICONV support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
-BROKEN=		Does not run on FreeBSD >= 7.0, libtool will exclude all modules
+.if ${OSVERSION} <= 630000
+IGNORE=		configure needs a newer sh
 .endif
 
 CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
