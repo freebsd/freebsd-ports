@@ -7,7 +7,7 @@
 
 PORTNAME=	empathy
 PORTVERSION=	0.22.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -23,7 +23,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	evolutiondataserver gnomehack gnomeprefix pygtk2 ltverhack
+USE_GNOME=	evolutiondataserver gnomehack gnomeprefix pygtk2 ltverhack \
+		gnomepanel
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_ICONS=	yes
 USE_PYTHON=	yes
