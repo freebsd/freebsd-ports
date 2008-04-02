@@ -34,9 +34,11 @@ MAN1=		gcin.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_BOSHIAMY)
-MASTER_SITES+=	http://edt1023.sayya.org/gcin/:boshiamy
+MASTER_SITES+=	http://cle.linux.org.tw/~edt1023/gcin/:boshiamy \
+		LOCAL/chinsan/gcin:boshiamy \
+		http://edt1023.sayya.org/gcin/:boshiamy
 DISTFILES+=	${BOSHIAMY_FILE}:boshiamy
-BOSHIAMY_FILE=	noseeing-8.tar.gz
+BOSHIAMY_FILE=	noseeing-9.tar.gz
 post-extract:
 	@${TAR} -C ${WRKSRC}/data/ -zxf ${DISTDIR}/${BOSHIAMY_FILE} \
 		noseeing.cin
