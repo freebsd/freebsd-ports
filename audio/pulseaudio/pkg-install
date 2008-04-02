@@ -57,7 +57,7 @@ POST-INSTALL)
 		exit 1
 	    fi
 	fi
-
+	echo ""
 	exit 0
 	;;
 esac
