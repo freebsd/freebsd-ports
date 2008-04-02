@@ -391,6 +391,7 @@ pre-patch:
 		${XARGS} ${REINPLACE_CMD} \
 		-e 's|libdir=@libdir@|libdir=@libdir@/@PACKAGE@|';
 	@${REINPLACE_CMD} -e "s|/usr/include/php|${LOCALBASE}/include/php|g" \
+		-e "s|vendorarch|installsitearch|g" \
 		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
 		${WRKSRC}/cmd/smyrna/tvnodes.h
