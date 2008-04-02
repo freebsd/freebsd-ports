@@ -36,6 +36,6 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
