@@ -14186,8 +14186,8 @@ quranref	ports/misc/quranref
 qvplay		ports/graphics/qvplay
 qvwm		ports/x11-wm/qvwm
 qwdtools	ports/games/qwdtools
-qwt		ports/x11-toolkits/qwt
-qwt-devel	ports/x11-toolkits/qwt-devel
+qwt4		ports/x11-toolkits/qwt4
+qwt5		ports/x11-toolkits/qwt5
 qwtplot3d	ports/math/qwtplot3d
 qwtplot3d-qt4	ports/math/qwtplot3d-qt4
 r1q2		ports/games/r1q2
