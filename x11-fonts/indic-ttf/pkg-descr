@@ -1,0 +1,17 @@
+This ttf-indic-fonts is a set of TrueType and
+OpenType fonts. It include:
+
+- Bengali
+- Devanagari
+- Gujarati
+- Kannada
+- Malayalam
+- Oriya
+- Punjabi
+- Tamil
+- Telugu
+
+By the Debian source ttf-indic-fonts.
+
+WWW:	http://debian-in.org
+URL:	http://packages.debian.org/unstable/x11/ttf-indic-fonts
