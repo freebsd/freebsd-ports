@@ -10,7 +10,7 @@ PKGNAMESUFFIX=  -bat
 
 COMMENT=	The network backup solution (GUI)
 
-LIB_DEPENDS+=	qwt.5:${PORTSDIR}/x11-toolkits/qwt-devel
+LIB_DEPENDS+=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake uic moc rcc
