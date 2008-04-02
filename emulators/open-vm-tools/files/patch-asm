@@ -53,3 +53,66 @@
         "mov   %%edx, %%eax\n\t"   // Get hi(multiplicand)
         "test  %%eax, %%eax\n\t"   // Check sign of multiplicand
         "jl    0f\n\t"             // Go if negative
+--- modules/freebsd/vmhgfs/vm_basic_asm_x86_64.h.orig	2008-04-02 18:13:33.000000000 +0200
++++ modules/freebsd/vmhgfs/vm_basic_asm_x86_64.h	2008-04-02 18:14:21.000000000 +0200
+@@ -84,21 +84,21 @@
+ static INLINE void 
+ FXSAVE_ES1(uint8 *save)
+ {
+-   asm ("fxsaveq %0  \n"
++   __asm ("fxsaveq %0  \n"
+         : "=m" (*save));
+ }
+ 
+ static INLINE void 
+ FXSAVE_COMPAT_ES1(uint8 *save)
+ {
+-   asm ("fxsave %0  \n"
++   __asm ("fxsave %0  \n"
+         : "=m" (*save));
+ }
+ 
+ static INLINE void 
+ FXRSTOR_ES1(const uint8 *load)
+ {
+-   asm ("fxrstorq %0 \n"
++   __asm ("fxrstorq %0 \n"
+         :
+         : "m" (*load));
+ }
+@@ -106,7 +106,7 @@
+ static INLINE void 
+ FXRSTOR_COMPAT_ES1(const uint8 *load)
+ {
+-   asm ("fxrstor %0 \n"
++   __asm ("fxrstor %0 \n"
+         :
+         : "m" (*load));
+ }
+@@ -116,7 +116,7 @@
+ {
+    uint64 dummy = 0;
+       
+-   asm ("fnstsw  %%ax    \n"     // Grab x87 ES bit
++   __asm ("fnstsw  %%ax    \n"     // Grab x87 ES bit
+         "bt      $7,%%ax \n"     // Test ES bit
+         "jnc     1f      \n"     // Jump if ES=0
+         "fnclex          \n"     // ES=1. Clear it so fild doesn't trap
+@@ -167,7 +167,7 @@
+    uint64 result, dummy;
+    const uint64 multiplier64 = multiplier;
+ 
+-   asm("mulq    %3      \n\t"
++   __asm("mulq    %3      \n\t"
+        "shrdq   %1, %0  \n\t"
+        : "=a" (result),
+          "=d" (dummy)
+@@ -226,7 +226,7 @@
+    int64 result, dummy;
+    const int64 multiplier64 = multiplier;
+ 
+-   asm("imulq   %3      \n\t"
++   __asm("imulq   %3      \n\t"
+        "shrdq   %1, %0  \n\t"
+        : "=a" (result),
+          "=d" (dummy)
