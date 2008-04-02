@@ -39,7 +39,6 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/Class/Singleton.pm
 %%SLIMDIR%%/CPAN/Class/Virtual.pm
 %%SLIMDIR%%/CPAN/Class/Virtually/Abstract.pm
-%%SLIMDIR%%/CPAN/Compress/Zlib.pm
 %%SLIMDIR%%/CPAN/DBD/Sponge.pm
 %%SLIMDIR%%/CPAN/DBD/mysql.pm
 %%SLIMDIR%%/CPAN/DBD/mysql/GetInfo.pm
@@ -199,8 +198,6 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/Imager.pm
 %%SLIMDIR%%/CPAN/Imager/Color.pm
 %%SLIMDIR%%/CPAN/Imager/Font.pm
-%%SLIMDIR%%/CPAN/JSON/XS.pm
-%%SLIMDIR%%/CPAN/JSON/XS/Boolean.pm
 %%SLIMDIR%%/CPAN/LWP.pm
 %%SLIMDIR%%/CPAN/LWP/Authen/Basic.pm
 %%SLIMDIR%%/CPAN/LWP/Authen/Digest.pm
@@ -2487,8 +2484,6 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/CPAN/LWP/Protocol
 @dirrm %%SLIMDIR%%/CPAN/LWP/Authen
 @dirrm %%SLIMDIR%%/CPAN/LWP
-@dirrm %%SLIMDIR%%/CPAN/JSON/XS
-@dirrm %%SLIMDIR%%/CPAN/JSON
 @dirrm %%SLIMDIR%%/CPAN/Imager
 @dirrm %%SLIMDIR%%/CPAN/IO
 @dirrm %%SLIMDIR%%/CPAN/I18N/LangTags
@@ -2538,7 +2533,6 @@ squeezecenter/MySQL/errmsg.sys
 @dirrm %%SLIMDIR%%/CPAN/DBI
 @dirrm %%SLIMDIR%%/CPAN/DBD/mysql
 @dirrm %%SLIMDIR%%/CPAN/DBD
-@dirrm %%SLIMDIR%%/CPAN/Compress
 @dirrm %%SLIMDIR%%/CPAN/Class/Virtually
 @dirrm %%SLIMDIR%%/CPAN/Class/Data
 @dirrm %%SLIMDIR%%/CPAN/Class/Accessor/Chained

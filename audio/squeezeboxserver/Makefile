@@ -7,6 +7,7 @@
 
 PORTNAME=	squeezecenter
 PORTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SqueezeCenter_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-7.0-noCPAN
@@ -98,6 +99,8 @@ EXCEPTFILES=	${DOCFILES} \
 		MySQL/errmsg.sys
 EXCEPTDIRS=	Bin \
 		CPAN/arch \
+		CPAN/Compress \
+		CPAN/JSON \
 		CPAN/Template \
 		CPAN/XML/Parser \
 		CPAN/YAML
