@@ -7,15 +7,12 @@
 
 PORTNAME=	qwt
 PORTVERSION=	5.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
-PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	Qt Widgets for Technical Applications
-
-CONFLICTS=	qwt-4.*
 
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc_build qmake_build
@@ -65,8 +62,8 @@ do-build:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqwt.so.5.0.2 ${PREFIX}/lib/libqwt.so.5
-	${LN} -fs ${PREFIX}/lib/libqwt.so.5 ${PREFIX}/lib/libqwt.so
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqwt.so.${PORTVERSION} ${PREFIX}/lib/libqwt.so.${PORTVERSION:R:R}
+	${LN} -fs ${PREFIX}/lib/libqwt.so.${PORTVERSION:R:R} ${PREFIX}/lib/libqwt.so
 	(cd ${WRKSRC}/src/ && ${COPYTREE_SHARE} '*.h' ${PREFIX}/include/${PORTNAME})
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/Qwt* ${PREFIX}/man/man3
 .if !defined(WITHOUT_DESIGNER_PLUGIN)

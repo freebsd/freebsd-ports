@@ -7,105 +7,50 @@
 
 PORTNAME=	qwt
 PORTVERSION=	4.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=qwt
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Qwt widget library for technical purposes
+MAINTAINER=	makc@issp.ac.ru
+COMMENT=	Qwt widget library for technical purposes (old version)
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
-CONFLICTS=	qwt-devel-5.*
-
 USE_QT_VER=	3
 USE_BZIP2=	yes
-MAKE_ENV=	CXXFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		INCPATH="-I${X11BASE}/include/qt2" \
-		LIBS="-L${X11BASE}/lib" \
-		QTDIR="${X11BASE}"	\
-		MOC=${MOC}
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}"
+MAKE_ENV+=	MOC="${MOC}" QTDIR="${QT_PREFIX}"
 USE_LDCONFIG=	yes
 
+QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+QMAKE=		${LOCALBASE}/bin/qmake
+
 PORTSCOUT=	limit:^4\.
+LATEST_LINK=	qwt4
 
-MAN3=		QwtAnalogClock.3	\
-		QwtArrayData.3		\
-		QwtArrowButton.3	\
-		QwtAutoScale.3		\
-		QwtCPointerData.3	\
-		QwtCompass.3		\
-		QwtCompassMagnetNeedle.3	\
-		QwtCompassWindArrow.3	\
-		QwtCounter.3		\
-		QwtCurve.3		\
-		QwtData.3		\
-		QwtDblRange.3		\
-		QwtDiMap.3		\
-		QwtDial.3		\
-		QwtDialNeedle.3		\
-		QwtDialScaleDraw.3	\
-		QwtDialSimpleNeedle.3	\
-		QwtDoublePoint.3	\
-		QwtDoublePointData.3	\
-		QwtDoubleRect.3		\
-		QwtDoubleSize.3		\
-		QwtDynGridLayout.3	\
-		QwtEventPattern.3	\
-		QwtGrid.3		\
-		QwtKnob.3		\
-		QwtLegend.3		\
-		QwtLegendButton.3	\
-		QwtLegendItem.3		\
-		QwtLegendLabel.3	\
-		QwtMarker.3		\
-		QwtPaintBuffer.3	\
-		QwtPainter.3		\
-		QwtPicker.3		\
-		QwtPickerClickPointMachine.3	\
-		QwtPickerClickRectMachine.3	\
-		QwtPickerDragPointMachine.3	\
-		QwtPickerDragRectMachine.3	\
-		QwtPickerMachine.3		\
-		QwtPickerPolygonMachine.3	\
-		QwtPlainText.3		\
-		QwtPlot.3		\
-		QwtPlotCanvas.3		\
-		QwtPlotCurve.3		\
-		QwtPlotGrid.3		\
-		QwtPlotItem.3		\
-		QwtPlotLayout.3		\
-		QwtPlotMappedItem.3	\
-		QwtPlotMarker.3		\
-		QwtPlotPicker.3		\
-		QwtPlotPrintFilter.3	\
-		QwtPlotZoomer.3		\
-		QwtPushButton.3		\
-		QwtRect.3		\
-		QwtRichText.3		\
-		QwtScale.3		\
-		QwtScaleDiv.3		\
-		QwtScaleDraw.3		\
-		QwtScaleIf.3		\
-		QwtSlider.3		\
-		QwtSliderBase.3		\
-		QwtSpline.3		\
-		QwtSymbol.3		\
-		QwtText.3		\
-		QwtThermo.3		\
-		QwtWheel.3		\
-		qwt_math.h.3
+.include <bsd.port.pre.mk>
+.include <${FILESDIR}/Makefile.man>
 
-pre-build:
-	cd ${WRKSRC}; qmake -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ qwt.pro -o Makefile
+do-configure:
+	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} -unix)
+
+post-configure:
+	@(cd ${WRKSRC} && \
+	${REINPLACE_CMD} -e \
+		's|^CC .*|CC=${CC}|; \
+		 s|^CXX .*|CXX=${CXX}|; \
+		 s|^LINK .*|LINK=${CXX}|' \
+		${WRKSRC}/Makefile)
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/libqwt.so.${PORTVERSION} ${PREFIX}/lib/libqwt.so.${PORTVERSION:R:R}
-	${LN} -fs libqwt.so.${PORTVERSION:R:R} ${PREFIX}/lib/libqwt.so
-	${MKDIR} ${PREFIX}/include/qwt
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qwt
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/Qwt* ${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/qwt_math.h.3 ${PREFIX}/man/man3
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqwt4.so.${PORTVERSION} ${PREFIX}/lib/libqwt4.so.${PORTVERSION:R:R}
+	${LN} -fs ${PREFIX}/lib/libqwt4.so.${PORTVERSION:R:R} ${PREFIX}/lib/libqwt4.so
+	${MKDIR} ${PREFIX}/include/qwt4
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qwt4
+.for f in ${MAN3}
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/${f:S/Qwt4/Qwt/} ${PREFIX}/man/man3/${f}
+.endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
