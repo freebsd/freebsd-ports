@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.5.1
+PORTVERSION=	8.5.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -419,8 +419,8 @@ post-patch:
 		-e 's/-ltkstub`echo $${TK_VERSION} | tr -d .`/-ltkstub`echo $${TK_VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|libtk$${SHORT_TK_VER}|libtk$${SHORT_TK_VER}${THREADS_SUFFIX}|g' \
-		-e 's|$$(BIN_INSTALL_DIR)/wish$$(VERSION)|$$(BIN_INSTALL_DIR)/wish$$(VERSION)${THREADS_SUFFIX}|g' \
-		-e 's|tk$$(VERSION)/tkConfig.sh|tk$$(VERSION)/tkConfig${THREADS_SUFFIX}.sh|g' \
+		-e 's|/wish$$(VERSION)|/wish$$(VERSION)${THREADS_SUFFIX}|g' \
+		-e 's|/tkConfig.sh|/tkConfig${THREADS_SUFFIX}.sh|g' \
 		-e 's|$$(LIB_INSTALL_DIR)$$(TK_PKG_DIR)|${WRKDIR}|g' \
 		-e 's|$$(MINOR_VERSION)$$(TCLPATCHL)|$$(MINOR_VERSION)$$(TCLPATCHL)${THREADS_SUFFIX}|g' \
 		${WRKSRC}/Makefile.in
