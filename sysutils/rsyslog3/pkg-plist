@@ -12,6 +12,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/man_rsyslogd.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
 %%PORTDOCS%%%%DOCSDIR%%/modules.html
+%%PORTDOCS%%%%DOCSDIR%%/professional_support.html
 %%PORTDOCS%%%%DOCSDIR%%/property_replacer.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_actionexeconlywhenpreviousissuspended.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_actionresumeinterval.html

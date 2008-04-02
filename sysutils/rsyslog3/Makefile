@@ -7,6 +7,7 @@
 
 PORTNAME=	rsyslog
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	CENKES http://download.rsyslog.com/rsyslog/
 
