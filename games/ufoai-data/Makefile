@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX:S/-//}
@@ -20,7 +20,7 @@ COMMENT=	UFO alien invasion data files
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-NO_PACKAGE=	Package will be 250MB, set FORCE_PACKAGE if you really want it
+NO_PACKAGE=	Package will be 400MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
