@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -82,7 +82,6 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		QUOTATAB_RADIUS "include mod_quotatab_radius" off \
 		BAN "Include mod_ban (Requires CTRLS)" off \
 		NLS "Use nls (builds mod_lang)" off \
-		CYRFIX "Patch to fix cyrillic encoding" off \
 		CLAMAV "Include mod_clamav" off \
 		DIGEST "Include mod_digest" off \
 		COMB "Include mod_comb (multistream upload)" off \
@@ -159,10 +158,6 @@ LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--enable-nls
 USE_GETTEXT=yes
 PROFTPD_LIBS+=	-lintl -L${LOCALBASE}/lib
-.endif
-
-.if defined (WITH_CYRFIX)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-cyrillic-fix-netio.c
 .endif
 
 #allow user to override
