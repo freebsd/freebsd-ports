@@ -1,0 +1,2560 @@
+bin/softsqueeze
+@unexec if cmp -s %D/%%SLIMDIR%%/convert.conf %D/%%SLIMDIR%%/convert.conf.sample; then rm -f %D/%%SLIMDIR%%/convert.conf; fi
+@unexec if cmp -s %D/%%SLIMDIR%%/types.conf %D/%%SLIMDIR%%/types.conf.sample; then rm -f %D/%%SLIMDIR%%/types.conf; fi
+%%DOCSDIR%%/Changelog.html
+%%DOCSDIR%%/Installation.txt
+%%DOCSDIR%%/License.txt
+%%SLIMDIR%%/CPAN/Algorithm/C3.pm
+%%SLIMDIR%%/CPAN/Archive/Zip.pm
+%%SLIMDIR%%/CPAN/Archive/Zip/Archive.pm
+%%SLIMDIR%%/CPAN/Archive/Zip/BufferedFileHandle.pm
+%%SLIMDIR%%/CPAN/Archive/Zip/DirectoryMember.pm
+%%SLIMDIR%%/CPAN/Archive/Zip/FAQ.pod
+%%SLIMDIR%%/CPAN/Archive/Zip/FileMember.pm
+%%SLIMDIR%%/CPAN/Archive/Zip/Member.pm
+%%SLIMDIR%%/CPAN/Archive/Zip/MemberRead.pm
+%%SLIMDIR%%/CPAN/Archive/Zip/MockFileHandle.pm
+%%SLIMDIR%%/CPAN/Archive/Zip/NewFileMember.pm
+%%SLIMDIR%%/CPAN/Archive/Zip/StringMember.pm
+%%SLIMDIR%%/CPAN/Archive/Zip/Tree.pm
+%%SLIMDIR%%/CPAN/Archive/Zip/ZipFileMember.pm
+%%SLIMDIR%%/CPAN/CGI/Cookie.pm
+%%SLIMDIR%%/CPAN/Cache/BaseCache.pm
+%%SLIMDIR%%/CPAN/Cache/Cache.pm
+%%SLIMDIR%%/CPAN/Cache/CacheUtils.pm
+%%SLIMDIR%%/CPAN/Cache/FileCache.pm
+%%SLIMDIR%%/CPAN/Cache/Object.pm
+%%SLIMDIR%%/CPAN/Carp/Assert.pm
+%%SLIMDIR%%/CPAN/Carp/Clan.pm
+%%SLIMDIR%%/CPAN/Class/Accessor.pm
+%%SLIMDIR%%/CPAN/Class/Accessor/Chained.pm
+%%SLIMDIR%%/CPAN/Class/Accessor/Chained/Fast.pm
+%%SLIMDIR%%/CPAN/Class/Accessor/Fast.pm
+%%SLIMDIR%%/CPAN/Class/Accessor/Faster.pm
+%%SLIMDIR%%/CPAN/Class/C3.pm
+%%SLIMDIR%%/CPAN/Class/Data/Accessor.pm
+%%SLIMDIR%%/CPAN/Class/Data/Inheritable.pm
+%%SLIMDIR%%/CPAN/Class/ISA.pm
+%%SLIMDIR%%/CPAN/Class/Inspector.pm
+%%SLIMDIR%%/CPAN/Class/Singleton.pm
+%%SLIMDIR%%/CPAN/Class/Virtual.pm
+%%SLIMDIR%%/CPAN/Class/Virtually/Abstract.pm
+%%SLIMDIR%%/CPAN/Compress/Zlib.pm
+%%SLIMDIR%%/CPAN/DBD/Sponge.pm
+%%SLIMDIR%%/CPAN/DBD/mysql.pm
+%%SLIMDIR%%/CPAN/DBD/mysql/GetInfo.pm
+%%SLIMDIR%%/CPAN/DBI.pm
+%%SLIMDIR%%/CPAN/DBI/Const/GetInfo/ANSI.pm
+%%SLIMDIR%%/CPAN/DBI/Const/GetInfo/ODBC.pm
+%%SLIMDIR%%/CPAN/DBI/Const/GetInfoReturn.pm
+%%SLIMDIR%%/CPAN/DBI/Const/GetInfoType.pm
+%%SLIMDIR%%/CPAN/DBI/DBD.pm
+%%SLIMDIR%%/CPAN/DBI/DBD/Metadata.pm
+%%SLIMDIR%%/CPAN/DBI/Format.pm
+%%SLIMDIR%%/CPAN/DBI/Format/SQLMinus.pm
+%%SLIMDIR%%/CPAN/DBI/Profile.pm
+%%SLIMDIR%%/CPAN/DBI/ProfileData.pm
+%%SLIMDIR%%/CPAN/DBI/ProfileDumper.pm
+%%SLIMDIR%%/CPAN/DBI/ProfileDumper/Apache.pm
+%%SLIMDIR%%/CPAN/DBI/Shell.pm
+%%SLIMDIR%%/CPAN/DBI/Shell/Completion.pm
+%%SLIMDIR%%/CPAN/DBI/Shell/FindSqlFile.pm
+%%SLIMDIR%%/CPAN/DBI/Shell/SQLMinus.pm
+%%SLIMDIR%%/CPAN/DBI/Shell/Spool.pm
+%%SLIMDIR%%/CPAN/DBI/Shell/Timing.pm
+%%SLIMDIR%%/CPAN/DBIx/Class.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/AccessorGroup.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/ClassResolver/PassThrough.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Componentised.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Core.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Cursor.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/DB.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/InflateColumn.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/InflateColumn/DateTime.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Manual.pod
+%%SLIMDIR%%/CPAN/DBIx/Class/Manual/Component.pod
+%%SLIMDIR%%/CPAN/DBIx/Class/Manual/Cookbook.pod
+%%SLIMDIR%%/CPAN/DBIx/Class/Manual/DocMap.pod
+%%SLIMDIR%%/CPAN/DBIx/Class/Manual/Example.pod
+%%SLIMDIR%%/CPAN/DBIx/Class/Manual/FAQ.pod
+%%SLIMDIR%%/CPAN/DBIx/Class/Manual/Glossary.pod
+%%SLIMDIR%%/CPAN/DBIx/Class/Manual/Intro.pod
+%%SLIMDIR%%/CPAN/DBIx/Class/Manual/Troubleshooting.pod
+%%SLIMDIR%%/CPAN/DBIx/Class/Ordered.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/PK.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/PK/Auto.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/PK/Auto/DB2.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/PK/Auto/MSSQL.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/PK/Auto/MySQL.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/PK/Auto/Oracle.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/PK/Auto/Pg.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/PK/Auto/SQLite.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Relationship.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Relationship/Accessor.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Relationship/Base.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Relationship/BelongsTo.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Relationship/CascadeActions.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Relationship/HasMany.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Relationship/HasOne.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Relationship/Helpers.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Relationship/ManyToMany.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Relationship/ProxyMethods.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/ResultSet.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/ResultSetColumn.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/ResultSetManager.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/ResultSetProxy.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/ResultSource.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/ResultSource/Table.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/ResultSourceProxy.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/ResultSourceProxy/Table.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Row.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Schema.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Serialize/Storable.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/Cursor.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/DB2.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/MSSQL.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/MultiDistinctEmulation.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/NoBindVars.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/ODBC.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/ODBC/DB2_400_SQL.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/Oracle.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/Pg.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/SQLite.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/Sybase.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/Sybase/MSSQL.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/mysql.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Storage/Statistics.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/UTF8Columns.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/UUIDColumns.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/UUIDMaker.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/UUIDMaker/APR/UUID.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/UUIDMaker/Data/UUID.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/UUIDMaker/Data/Uniqid.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/UUIDMaker/UUID.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/UUIDMaker/Win32/Guidgen.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/UUIDMaker/Win32API/GUID.pm
+%%SLIMDIR%%/CPAN/DBIx/Class/Validation.pm
+%%SLIMDIR%%/CPAN/DBIx/Migration.pm
+%%SLIMDIR%%/CPAN/Data/Dump.pm
+%%SLIMDIR%%/CPAN/Data/Page.pm
+%%SLIMDIR%%/CPAN/Data/URIEncode.pm
+%%SLIMDIR%%/CPAN/Date/Parse.pm
+%%SLIMDIR%%/CPAN/Devel/InnerPackage.pm
+%%SLIMDIR%%/CPAN/Digest/SHA1.pm
+%%SLIMDIR%%/CPAN/Digest/base.pm
+%%SLIMDIR%%/CPAN/Encode/Detect/Detector.pm
+%%SLIMDIR%%/CPAN/Error.pm
+%%SLIMDIR%%/CPAN/Exporter/Lite.pm
+%%SLIMDIR%%/CPAN/File/BOM.pm
+%%SLIMDIR%%/CPAN/File/Find/Rule.pm
+%%SLIMDIR%%/CPAN/File/Listing.pm
+%%SLIMDIR%%/CPAN/File/Next.pm
+%%SLIMDIR%%/CPAN/File/Slurp.pm
+%%SLIMDIR%%/CPAN/File/Spec.pm
+%%SLIMDIR%%/CPAN/File/Spec/Cygwin.pm
+%%SLIMDIR%%/CPAN/File/Spec/Epoc.pm
+%%SLIMDIR%%/CPAN/File/Spec/Functions.pm
+%%SLIMDIR%%/CPAN/File/Spec/Mac.pm
+%%SLIMDIR%%/CPAN/File/Spec/OS2.pm
+%%SLIMDIR%%/CPAN/File/Spec/Unix.pm
+%%SLIMDIR%%/CPAN/File/Spec/VMS.pm
+%%SLIMDIR%%/CPAN/File/Spec/Win32.pm
+%%SLIMDIR%%/CPAN/File/Tail.pm
+%%SLIMDIR%%/CPAN/File/Temp.pm
+%%SLIMDIR%%/CPAN/File/Which.pm
+%%SLIMDIR%%/CPAN/GD.pm
+%%SLIMDIR%%/CPAN/GD/Image.pm
+%%SLIMDIR%%/CPAN/GD/Polygon.pm
+%%SLIMDIR%%/CPAN/GD/Polyline.pm
+%%SLIMDIR%%/CPAN/GD/Simple.pm
+%%SLIMDIR%%/CPAN/HTML/Entities.pm
+%%SLIMDIR%%/CPAN/HTML/Filter.pm
+%%SLIMDIR%%/CPAN/HTML/Form.pm
+%%SLIMDIR%%/CPAN/HTML/HeadParser.pm
+%%SLIMDIR%%/CPAN/HTML/LinkExtor.pm
+%%SLIMDIR%%/CPAN/HTML/Parser.pm
+%%SLIMDIR%%/CPAN/HTML/PullParser.pm
+%%SLIMDIR%%/CPAN/HTML/TokeParser.pm
+%%SLIMDIR%%/CPAN/HTTP/Cookies.pm
+%%SLIMDIR%%/CPAN/HTTP/Cookies/Microsoft.pm
+%%SLIMDIR%%/CPAN/HTTP/Cookies/Netscape.pm
+%%SLIMDIR%%/CPAN/HTTP/Daemon.pm
+%%SLIMDIR%%/CPAN/HTTP/Date.pm
+%%SLIMDIR%%/CPAN/HTTP/Headers.pm
+%%SLIMDIR%%/CPAN/HTTP/Headers/Auth.pm
+%%SLIMDIR%%/CPAN/HTTP/Headers/ETag.pm
+%%SLIMDIR%%/CPAN/HTTP/Headers/Util.pm
+%%SLIMDIR%%/CPAN/HTTP/Message.pm
+%%SLIMDIR%%/CPAN/HTTP/Negotiate.pm
+%%SLIMDIR%%/CPAN/HTTP/Request.pm
+%%SLIMDIR%%/CPAN/HTTP/Request/Common.pm
+%%SLIMDIR%%/CPAN/HTTP/Response.pm
+%%SLIMDIR%%/CPAN/HTTP/Status.pm
+%%SLIMDIR%%/CPAN/I18N/LangTags.pm
+%%SLIMDIR%%/CPAN/I18N/LangTags/Detect.pm
+%%SLIMDIR%%/CPAN/I18N/LangTags/List.pm
+%%SLIMDIR%%/CPAN/IO/String.pm
+%%SLIMDIR%%/CPAN/Imager.pm
+%%SLIMDIR%%/CPAN/Imager/Color.pm
+%%SLIMDIR%%/CPAN/Imager/Font.pm
+%%SLIMDIR%%/CPAN/JSON/XS.pm
+%%SLIMDIR%%/CPAN/JSON/XS/Boolean.pm
+%%SLIMDIR%%/CPAN/LWP.pm
+%%SLIMDIR%%/CPAN/LWP/Authen/Basic.pm
+%%SLIMDIR%%/CPAN/LWP/Authen/Digest.pm
+%%SLIMDIR%%/CPAN/LWP/Authen/Ntlm.pm
+%%SLIMDIR%%/CPAN/LWP/ConnCache.pm
+%%SLIMDIR%%/CPAN/LWP/Debug.pm
+%%SLIMDIR%%/CPAN/LWP/DebugFile.pm
+%%SLIMDIR%%/CPAN/LWP/MediaTypes.pm
+%%SLIMDIR%%/CPAN/LWP/MemberMixin.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/GHTTP.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/cpan.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/data.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/file.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/ftp.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/gopher.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/http.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/http10.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/https.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/https10.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/loopback.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/mailto.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/nntp.pm
+%%SLIMDIR%%/CPAN/LWP/Protocol/nogo.pm
+%%SLIMDIR%%/CPAN/LWP/RobotUA.pm
+%%SLIMDIR%%/CPAN/LWP/Simple.pm
+%%SLIMDIR%%/CPAN/LWP/UserAgent.pm
+%%SLIMDIR%%/CPAN/LWP/media.types
+%%SLIMDIR%%/CPAN/Locale/Hebrew.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/Buffer.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/DBI.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/File.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/Limit.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/RRDs.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/Screen.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/ScreenColoredLevels.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/Socket.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/String.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/Synchronized.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/TestArrayBuffer.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/TestBuffer.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Appender/TestFileCreeper.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Config.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Config/BaseConfigurator.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Config/DOMConfigurator.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Config/PropertyConfigurator.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Config/Watch.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/DateFormat.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/FAQ.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Filter.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Filter/Boolean.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Filter/LevelMatch.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Filter/LevelRange.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Filter/StringMatch.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/JavaMap.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/JavaMap/ConsoleAppender.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/JavaMap/FileAppender.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/JavaMap/JDBCAppender.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/JavaMap/NTEventLogAppender.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/JavaMap/RollingFileAppender.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/JavaMap/SyslogAppender.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/JavaMap/TestBuffer.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Layout.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Layout/NoopLayout.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Layout/PatternLayout.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Layout/SimpleLayout.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Level.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Logger.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/MDC.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/NDC.pm
+%%SLIMDIR%%/CPAN/Log/Log4perl/Util.pm
+%%SLIMDIR%%/CPAN/Math/VecStat.pm
+%%SLIMDIR%%/CPAN/Net/DNS.pm
+%%SLIMDIR%%/CPAN/Net/DNS/FAQ.pod
+%%SLIMDIR%%/CPAN/Net/DNS/Header.pm
+%%SLIMDIR%%/CPAN/Net/DNS/Nameserver.pm
+%%SLIMDIR%%/CPAN/Net/DNS/Packet.pm
+%%SLIMDIR%%/CPAN/Net/DNS/Question.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/A.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/AAAA.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/AFSDB.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/CERT.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/CNAME.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/DNAME.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/EID.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/HINFO.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/ISDN.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/LOC.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/MB.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/MG.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/MINFO.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/MR.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/MX.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/NAPTR.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/NIMLOC.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/NS.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/NSAP.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/NULL.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/OPT.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/PTR.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/PX.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/RP.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/RT.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/SOA.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/SPF.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/SRV.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/SSHFP.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/TKEY.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/TSIG.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/TXT.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/Unknown.pm
+%%SLIMDIR%%/CPAN/Net/DNS/RR/X25.pm
+%%SLIMDIR%%/CPAN/Net/DNS/Resolver.pm
+%%SLIMDIR%%/CPAN/Net/DNS/Resolver/Base.pm
+%%SLIMDIR%%/CPAN/Net/DNS/Resolver/Cygwin.pm
+%%SLIMDIR%%/CPAN/Net/DNS/Resolver/Recurse.pm
+%%SLIMDIR%%/CPAN/Net/DNS/Resolver/UNIX.pm
+%%SLIMDIR%%/CPAN/Net/DNS/Resolver/Win32.pm
+%%SLIMDIR%%/CPAN/Net/DNS/Select.pm
+%%SLIMDIR%%/CPAN/Net/DNS/Update.pm
+%%SLIMDIR%%/CPAN/Net/HTTP.pm
+%%SLIMDIR%%/CPAN/Net/HTTP/Methods.pm
+%%SLIMDIR%%/CPAN/Net/HTTP/NB.pm
+%%SLIMDIR%%/CPAN/Net/HTTPS.pm
+%%SLIMDIR%%/CPAN/Net/IP.pm
+%%SLIMDIR%%/CPAN/Net/UPnP.pm
+%%SLIMDIR%%/CPAN/Net/UPnP/ActionResponse.pm
+%%SLIMDIR%%/CPAN/Net/UPnP/Device.pm
+%%SLIMDIR%%/CPAN/Net/UPnP/HTTP.pm
+%%SLIMDIR%%/CPAN/Net/UPnP/HTTPResponse.pm
+%%SLIMDIR%%/CPAN/Net/UPnP/QueryResponse.pm
+%%SLIMDIR%%/CPAN/Number/Compare.pm
+%%SLIMDIR%%/CPAN/PAR.pm
+%%SLIMDIR%%/CPAN/PAR/Dist.pm
+%%SLIMDIR%%/CPAN/PAR/Heavy.pm
+%%SLIMDIR%%/CPAN/POE/Queue.pm
+%%SLIMDIR%%/CPAN/POE/Queue/Array.pm
+%%SLIMDIR%%/CPAN/POE/XS/Queue/Array.pm
+%%SLIMDIR%%/CPAN/Path/Class.pm
+%%SLIMDIR%%/CPAN/Path/Class/Dir.pm
+%%SLIMDIR%%/CPAN/Path/Class/Entity.pm
+%%SLIMDIR%%/CPAN/Path/Class/File.pm
+%%SLIMDIR%%/CPAN/Proc/Background.pm
+%%SLIMDIR%%/CPAN/Proc/Background/Unix.pm
+%%SLIMDIR%%/CPAN/Proc/Background/Win32.pm
+%%SLIMDIR%%/CPAN/RPC/XML.pm
+%%SLIMDIR%%/CPAN/RPC/XML/Client.pm
+%%SLIMDIR%%/CPAN/RPC/XML/Function.pm
+%%SLIMDIR%%/CPAN/RPC/XML/Method.pm
+%%SLIMDIR%%/CPAN/RPC/XML/Parser.pm
+%%SLIMDIR%%/CPAN/RPC/XML/Procedure.pm
+%%SLIMDIR%%/CPAN/RPC/XML/Server.pm
+%%SLIMDIR%%/CPAN/Readonly.pm
+%%SLIMDIR%%/CPAN/SQL/Abstract.pm
+%%SLIMDIR%%/CPAN/SQL/Abstract/Limit.pm
+%%SLIMDIR%%/CPAN/Test/Builder.pm
+%%SLIMDIR%%/CPAN/Test/Builder/Module.pm
+%%SLIMDIR%%/CPAN/Test/Builder/Tester.pm
+%%SLIMDIR%%/CPAN/Test/Builder/Tester/Color.pm
+%%SLIMDIR%%/CPAN/Test/More.pm
+%%SLIMDIR%%/CPAN/Test/Simple.pm
+%%SLIMDIR%%/CPAN/Text/Glob.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x00.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x01.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x02.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x03.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x04.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x05.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x06.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x07.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x09.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x0a.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x0b.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x0c.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x0d.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x0e.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x0f.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x10.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x11.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x12.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x13.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x14.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x15.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x16.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x17.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x18.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x1e.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x1f.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x20.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x21.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x22.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x23.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x24.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x25.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x26.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x27.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x28.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x2e.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x2f.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x30.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x31.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x32.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x33.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x4d.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x4e.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x4f.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x50.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x51.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x52.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x53.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x54.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x55.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x56.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x57.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x58.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x59.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x5a.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x5b.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x5c.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x5d.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x5e.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x5f.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x60.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x61.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x62.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x63.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x64.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x65.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x66.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x67.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x68.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x69.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x6a.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x6b.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x6c.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x6d.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x6e.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x6f.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x70.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x71.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x72.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x73.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x74.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x75.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x76.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x77.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x78.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x79.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x7a.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x7b.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x7c.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x7d.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x7e.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x7f.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x80.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x81.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x82.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x83.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x84.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x85.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x86.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x87.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x88.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x89.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x8a.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x8b.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x8c.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x8d.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x8e.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x8f.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x90.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x91.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x92.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x93.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x94.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x95.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x96.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x97.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x98.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x99.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x9a.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x9b.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x9c.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x9d.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x9e.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/x9f.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xa0.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xa1.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xa2.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xa3.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xa4.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xac.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xad.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xae.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xaf.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xb0.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xb1.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xb2.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xb3.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xb4.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xb5.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xb6.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xb7.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xb8.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xb9.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xba.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xbb.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xbc.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xbd.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xbe.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xbf.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xc0.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xc1.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xc2.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xc3.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xc4.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xc5.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xc6.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xc7.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xc8.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xc9.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xca.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xcb.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xcc.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xcd.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xce.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xcf.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xd0.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xd1.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xd2.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xd3.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xd4.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xd5.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xd6.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xd7.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xf9.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xfa.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xfb.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xfc.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xfd.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xfe.pm
+%%SLIMDIR%%/CPAN/Text/Unidecode/xff.pm
+%%SLIMDIR%%/CPAN/Tie/Cache/LRU.pm
+%%SLIMDIR%%/CPAN/Tie/Cache/LRU/Array.pm
+%%SLIMDIR%%/CPAN/Tie/Cache/LRU/Expires.pm
+%%SLIMDIR%%/CPAN/Tie/Cache/LRU/LinkedList.pm
+%%SLIMDIR%%/CPAN/Tie/Cache/LRU/Virtual.pm
+%%SLIMDIR%%/CPAN/Tie/IxHash.pm
+%%SLIMDIR%%/CPAN/Tie/LLHash.pm
+%%SLIMDIR%%/CPAN/Tie/RegexpHash.pm
+%%SLIMDIR%%/CPAN/Tie/Watch.pm
+%%SLIMDIR%%/CPAN/Time/HiRes.pm
+%%SLIMDIR%%/CPAN/Time/Zone.pm
+%%SLIMDIR%%/CPAN/Time/localtime.pm
+%%SLIMDIR%%/CPAN/Time/tm.pm
+%%SLIMDIR%%/CPAN/URI.pm
+%%SLIMDIR%%/CPAN/URI/Escape.pm
+%%SLIMDIR%%/CPAN/URI/Find.pm
+%%SLIMDIR%%/CPAN/URI/Heuristic.pm
+%%SLIMDIR%%/CPAN/URI/QueryParam.pm
+%%SLIMDIR%%/CPAN/URI/Split.pm
+%%SLIMDIR%%/CPAN/URI/URL.pm
+%%SLIMDIR%%/CPAN/URI/WithBase.pm
+%%SLIMDIR%%/CPAN/URI/_foreign.pm
+%%SLIMDIR%%/CPAN/URI/_generic.pm
+%%SLIMDIR%%/CPAN/URI/_ldap.pm
+%%SLIMDIR%%/CPAN/URI/_login.pm
+%%SLIMDIR%%/CPAN/URI/_query.pm
+%%SLIMDIR%%/CPAN/URI/_segment.pm
+%%SLIMDIR%%/CPAN/URI/_server.pm
+%%SLIMDIR%%/CPAN/URI/_userpass.pm
+%%SLIMDIR%%/CPAN/URI/data.pm
+%%SLIMDIR%%/CPAN/URI/file.pm
+%%SLIMDIR%%/CPAN/URI/file/Base.pm
+%%SLIMDIR%%/CPAN/URI/file/FAT.pm
+%%SLIMDIR%%/CPAN/URI/file/Mac.pm
+%%SLIMDIR%%/CPAN/URI/file/OS2.pm
+%%SLIMDIR%%/CPAN/URI/file/QNX.pm
+%%SLIMDIR%%/CPAN/URI/file/Unix.pm
+%%SLIMDIR%%/CPAN/URI/file/Win32.pm
+%%SLIMDIR%%/CPAN/URI/ftp.pm
+%%SLIMDIR%%/CPAN/URI/gopher.pm
+%%SLIMDIR%%/CPAN/URI/http.pm
+%%SLIMDIR%%/CPAN/URI/https.pm
+%%SLIMDIR%%/CPAN/URI/ldap.pm
+%%SLIMDIR%%/CPAN/URI/ldapi.pm
+%%SLIMDIR%%/CPAN/URI/ldaps.pm
+%%SLIMDIR%%/CPAN/URI/mailto.pm
+%%SLIMDIR%%/CPAN/URI/mms.pm
+%%SLIMDIR%%/CPAN/URI/news.pm
+%%SLIMDIR%%/CPAN/URI/nntp.pm
+%%SLIMDIR%%/CPAN/URI/pop.pm
+%%SLIMDIR%%/CPAN/URI/rlogin.pm
+%%SLIMDIR%%/CPAN/URI/rsync.pm
+%%SLIMDIR%%/CPAN/URI/rtsp.pm
+%%SLIMDIR%%/CPAN/URI/rtspu.pm
+%%SLIMDIR%%/CPAN/URI/sip.pm
+%%SLIMDIR%%/CPAN/URI/sips.pm
+%%SLIMDIR%%/CPAN/URI/snews.pm
+%%SLIMDIR%%/CPAN/URI/ssh.pm
+%%SLIMDIR%%/CPAN/URI/telnet.pm
+%%SLIMDIR%%/CPAN/URI/tn3270.pm
+%%SLIMDIR%%/CPAN/URI/urn.pm
+%%SLIMDIR%%/CPAN/URI/urn/isbn.pm
+%%SLIMDIR%%/CPAN/URI/urn/oid.pm
+%%SLIMDIR%%/CPAN/WWW/RobotRules.pm
+%%SLIMDIR%%/CPAN/WWW/RobotRules/AnyDBM_File.pm
+%%SLIMDIR%%/CPAN/XML/NamespaceSupport.pm
+%%SLIMDIR%%/CPAN/XML/SAX.pm
+%%SLIMDIR%%/CPAN/XML/SAX/Base.pm
+%%SLIMDIR%%/CPAN/XML/SAX/DocumentLocator.pm
+%%SLIMDIR%%/CPAN/XML/SAX/Exception.pm
+%%SLIMDIR%%/CPAN/XML/SAX/Intro.pod
+%%SLIMDIR%%/CPAN/XML/SAX/ParserDetails.ini
+%%SLIMDIR%%/CPAN/XML/SAX/ParserFactory.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/DTDDecls.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/DebugHandler.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/DocType.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/EncodingDetect.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/Exception.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/NoUnicodeExt.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/Productions.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/Reader.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/Reader/NoUnicodeExt.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/Reader/Stream.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/Reader/String.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/Reader/URI.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/Reader/UnicodeExt.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/UnicodeExt.pm
+%%SLIMDIR%%/CPAN/XML/SAX/PurePerl/XMLDecl.pm
+%%SLIMDIR%%/CPAN/XML/SAX/placeholder.pl
+%%SLIMDIR%%/CPAN/XML/Simple.pm
+%%SLIMDIR%%/CPAN/XML/Writer.pm
+%%SLIMDIR%%/CPAN/XML/XSPF.pm
+%%SLIMDIR%%/CPAN/XML/XSPF/Base.pm
+%%SLIMDIR%%/CPAN/XML/XSPF/Track.pm
+%%SLIMDIR%%/CPAN/enum.pm
+%%SLIMDIR%%/Changelog1.html
+%%SLIMDIR%%/Changelog2.html
+%%SLIMDIR%%/Changelog3.html
+%%SLIMDIR%%/Changelog4.html
+%%SLIMDIR%%/Changelog5.html
+%%SLIMDIR%%/Changelog6.html
+%%SLIMDIR%%/Changelog7.html
+%%SLIMDIR%%/Firmware/receiver.version
+%%SLIMDIR%%/Firmware/receiver_22.bin
+%%SLIMDIR%%/Firmware/squeezebox.version
+%%SLIMDIR%%/Firmware/squeezebox2.version
+%%SLIMDIR%%/Firmware/squeezebox2_86.bin
+%%SLIMDIR%%/Firmware/squeezebox_10.bin
+%%SLIMDIR%%/Firmware/squeezebox_40.bin
+%%SLIMDIR%%/Firmware/transporter.version
+%%SLIMDIR%%/Firmware/transporter_36.bin
+%%SLIMDIR%%/Graphics/CODE2000.HTM
+%%SLIMDIR%%/Graphics/CODE2000.TTF
+%%SLIMDIR%%/Graphics/FreeSans.ttf
+%%SLIMDIR%%/Graphics/blockanimateSB2.1.font.bmp
+%%SLIMDIR%%/Graphics/blockanimateSBG.1.font.bmp
+%%SLIMDIR%%/Graphics/full.2.font.bmp
+%%SLIMDIR%%/Graphics/high.2.font.bmp
+%%SLIMDIR%%/Graphics/huge.2.font.bmp
+%%SLIMDIR%%/Graphics/large.2.font.bmp
+%%SLIMDIR%%/Graphics/light.1.font.bmp
+%%SLIMDIR%%/Graphics/light.2.font.bmp
+%%SLIMDIR%%/Graphics/logo.font.bmp
+%%SLIMDIR%%/Graphics/medium.1.font.bmp
+%%SLIMDIR%%/Graphics/medium.2.font.bmp
+%%SLIMDIR%%/Graphics/small.1.font.bmp
+%%SLIMDIR%%/Graphics/small.2.font.bmp
+%%SLIMDIR%%/Graphics/standard.1.font.bmp
+%%SLIMDIR%%/Graphics/standard.2.font.bmp
+%%SLIMDIR%%/Graphics/threeline.1.font.bmp
+%%SLIMDIR%%/Graphics/threeline.2.font.bmp
+%%SLIMDIR%%/Graphics/threeline.3.font.bmp
+%%SLIMDIR%%/HTML/Classic/cmdwrappers_Classic
+%%SLIMDIR%%/HTML/Classic/helpfooter.html
+%%SLIMDIR%%/HTML/Classic/helpheader.html
+%%SLIMDIR%%/HTML/Classic/html/images/alpha_spacer.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_add.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_delete.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_delete_white.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_down.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_edit.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_favorite.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_favorite_remove.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_first.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_last.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_mix.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_mmmix.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_next.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_play.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_prev.gif
+%%SLIMDIR%%/HTML/Classic/html/images/b_up.gif
+%%SLIMDIR%%/HTML/Classic/html/images/topbar.gif
+%%SLIMDIR%%/HTML/Classic/index.html
+%%SLIMDIR%%/HTML/Classic/pagefooter.html
+%%SLIMDIR%%/HTML/Classic/pageheader.html
+%%SLIMDIR%%/HTML/Classic/playlist.html
+%%SLIMDIR%%/HTML/Classic/skinconfig.yml
+%%SLIMDIR%%/HTML/Classic/slimserver.css
+%%SLIMDIR%%/HTML/Classic/status_header.html
+%%SLIMDIR%%/HTML/Classic/status_list.html
+%%SLIMDIR%%/HTML/Classic/status_needs_upgrade.html
+%%SLIMDIR%%/HTML/Classic/status_noclients.html
+%%SLIMDIR%%/HTML/Classic/upnpinfo.html
+%%SLIMDIR%%/HTML/Default/ajaxProgress.txt
+%%SLIMDIR%%/HTML/Default/browsedb.html
+%%SLIMDIR%%/HTML/Default/cmdwrappers_Default
+%%SLIMDIR%%/HTML/Default/helpfooter.html
+%%SLIMDIR%%/HTML/Default/helpheader.html
+%%SLIMDIR%%/HTML/Default/home.html
+%%SLIMDIR%%/HTML/Default/html/browse.js
+%%SLIMDIR%%/HTML/Default/html/docs/help.html
+%%SLIMDIR%%/HTML/Default/html/help.js
+%%SLIMDIR%%/HTML/Default/html/home.js
+%%SLIMDIR%%/HTML/Default/html/images/albumlist0.gif
+%%SLIMDIR%%/HTML/Default/html/images/albumlist0_on.gif
+%%SLIMDIR%%/HTML/Default/html/images/albumlist1.gif
+%%SLIMDIR%%/HTML/Default/html/images/albumlist1_on.gif
+%%SLIMDIR%%/HTML/Default/html/images/albumlist2.gif
+%%SLIMDIR%%/HTML/Default/html/images/albumlist2_on.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_add.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_delete.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_down.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_edit.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_favorite.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_favorite_remove.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_first.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_last.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_mmmix.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_next.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_play.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_previous.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_queue.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_search.gif
+%%SLIMDIR%%/HTML/Default/html/images/b_up.gif
+%%SLIMDIR%%/HTML/Default/html/images/background.png
+%%SLIMDIR%%/HTML/Default/html/images/blank.png
+%%SLIMDIR%%/HTML/Default/html/images/btn_help.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_info.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_next.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_pause.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_play.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_player_toggle_col.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_player_toggle_exp.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_playlist_clear.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_playlist_save.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_power.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_power_on.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_previous.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_repeat_off.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_repeat_playlist.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_repeat_song.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_settings.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_shuffle_album.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_shuffle_off.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_shuffle_song.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_undock.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_volume_decrease.gif
+%%SLIMDIR%%/HTML/Default/html/images/btn_volume_increase.gif
+%%SLIMDIR%%/HTML/Default/html/images/cover.png
+%%SLIMDIR%%/HTML/Default/html/images/details.gif
+%%SLIMDIR%%/HTML/Default/html/images/disclosure_home.gif
+%%SLIMDIR%%/HTML/Default/html/images/footer_left.gif
+%%SLIMDIR%%/HTML/Default/html/images/footer_right.gif
+%%SLIMDIR%%/HTML/Default/html/images/header_left.gif
+%%SLIMDIR%%/HTML/Default/html/images/header_right.gif
+%%SLIMDIR%%/HTML/Default/html/images/icon_now_playing_normal.gif
+%%SLIMDIR%%/HTML/Default/html/images/icon_now_playing_selected.gif
+%%SLIMDIR%%/HTML/Default/html/images/icon_nowplaying.gif
+%%SLIMDIR%%/HTML/Default/html/images/icon_nowplaying_collapsed.gif
+%%SLIMDIR%%/HTML/Default/html/images/inner_edges.gif
+%%SLIMDIR%%/HTML/Default/html/images/logitech.gif
+%%SLIMDIR%%/HTML/Default/html/images/playlist.png
+%%SLIMDIR%%/HTML/Default/html/images/pointer.gif
+%%SLIMDIR%%/HTML/Default/html/images/progress.gif
+%%SLIMDIR%%/HTML/Default/html/images/questionmark.gif
+%%SLIMDIR%%/HTML/Default/html/images/radio.png
+%%SLIMDIR%%/HTML/Default/html/images/selector_bottom_left.gif
+%%SLIMDIR%%/HTML/Default/html/images/selector_bottom_right.gif
+%%SLIMDIR%%/HTML/Default/html/images/selector_top_left.gif
+%%SLIMDIR%%/HTML/Default/html/images/selector_top_right.gif
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/btn-arrow.gif
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/btn-generic-ie6.png
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/btn-generic.png
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/btn-small.gif
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/dlg-bg.gif
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/group-checked.gif
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/hd-sprite.gif
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/menu.gif
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/se-handle.gif
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/tab-sprite.gif
+%%SLIMDIR%%/HTML/Default/html/images/slim-ext/tip-sprite.gif
+%%SLIMDIR%%/HTML/Default/html/images/squeezecenter.gif
+%%SLIMDIR%%/HTML/Default/html/images/track_info.gif
+%%SLIMDIR%%/HTML/Default/html/images/volume_levels.gif
+%%SLIMDIR%%/HTML/Default/html/main.js
+%%SLIMDIR%%/HTML/Default/html/settings.js
+%%SLIMDIR%%/HTML/Default/html/utils.js
+%%SLIMDIR%%/HTML/Default/ie.css
+%%SLIMDIR%%/HTML/Default/ie7.css
+%%SLIMDIR%%/HTML/Default/index.html
+%%SLIMDIR%%/HTML/Default/pagefooter.html
+%%SLIMDIR%%/HTML/Default/pageheader.html
+%%SLIMDIR%%/HTML/Default/playlist.html
+%%SLIMDIR%%/HTML/Default/search.html
+%%SLIMDIR%%/HTML/Default/settings/footer.html
+%%SLIMDIR%%/HTML/Default/settings/header.html
+%%SLIMDIR%%/HTML/Default/settings/index.html
+%%SLIMDIR%%/HTML/Default/skinconfig.yml
+%%SLIMDIR%%/HTML/Default/slim-ext.css
+%%SLIMDIR%%/HTML/Default/slimserver.css
+%%SLIMDIR%%/HTML/Default/status_header.html
+%%SLIMDIR%%/HTML/Default/status_list.html
+%%SLIMDIR%%/HTML/Default/xmlbrowser.html
+%%SLIMDIR%%/HTML/EN/advanced_search.html
+%%SLIMDIR%%/HTML/EN/ajaxHome.txt
+%%SLIMDIR%%/HTML/EN/ajaxProgress.txt
+%%SLIMDIR%%/HTML/EN/ajaxRequest.txt
+%%SLIMDIR%%/HTML/EN/artistsAsHTML.html
+%%SLIMDIR%%/HTML/EN/artistsAsText.html
+%%SLIMDIR%%/HTML/EN/browse_playlist.html
+%%SLIMDIR%%/HTML/EN/browsedb.html
+%%SLIMDIR%%/HTML/EN/browsedbitems_list.html
+%%SLIMDIR%%/HTML/EN/cmdwrappers
+%%SLIMDIR%%/HTML/EN/firmware.html
+%%SLIMDIR%%/HTML/EN/galleryselect.html
+%%SLIMDIR%%/HTML/EN/helpfooter.html
+%%SLIMDIR%%/HTML/EN/helpheader.html
+%%SLIMDIR%%/HTML/EN/hitlist.html
+%%SLIMDIR%%/HTML/EN/hitlist_bar.html
+%%SLIMDIR%%/HTML/EN/hitlist_list.html
+%%SLIMDIR%%/HTML/EN/home.html
+%%SLIMDIR%%/HTML/EN/homeplayer_list.html
+%%SLIMDIR%%/HTML/EN/hreftemplate
+%%SLIMDIR%%/HTML/EN/html/common.js
+%%SLIMDIR%%/HTML/EN/html/docs/artwork.html
+%%SLIMDIR%%/HTML/EN/html/docs/buttons.html
+%%SLIMDIR%%/HTML/EN/html/docs/cli-api.html
+%%SLIMDIR%%/HTML/EN/html/docs/display.html
+%%SLIMDIR%%/HTML/EN/html/docs/fonts.html
+%%SLIMDIR%%/HTML/EN/html/docs/http.html
+%%SLIMDIR%%/HTML/EN/html/docs/index.html
+%%SLIMDIR%%/HTML/EN/html/docs/input.html
+%%SLIMDIR%%/HTML/EN/html/docs/plugins.html
+%%SLIMDIR%%/HTML/EN/html/docs/protocol.html
+%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html
+%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.da
+%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.de
+%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.es
+%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.fr
+%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.he
+%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.it
+%%SLIMDIR%%/HTML/EN/html/docs/quickstart.html.nl
+%%SLIMDIR%%/HTML/EN/html/docs/remote.html
+%%SLIMDIR%%/HTML/EN/html/docs/remote.html.da
+%%SLIMDIR%%/HTML/EN/html/docs/remote.html.de
+%%SLIMDIR%%/HTML/EN/html/docs/remote.html.es
+%%SLIMDIR%%/HTML/EN/html/docs/remote.html.fr
+%%SLIMDIR%%/HTML/EN/html/docs/remote.html.he
+%%SLIMDIR%%/HTML/EN/html/docs/remote.html.it
+%%SLIMDIR%%/HTML/EN/html/docs/remote.html.nl
+%%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html
+%%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.da
+%%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.de
+%%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.es
+%%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.fr
+%%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.he
+%%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.it
+%%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.nl
+%%SLIMDIR%%/HTML/EN/html/docs/skins.html
+%%SLIMDIR%%/HTML/EN/html/docs/slimproto.html
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/adding.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/artists1.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/artists2.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/choose_auto.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/double.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/home.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/info1.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/info2.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/info3.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/led1.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/led2.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/led3.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/led4.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/musiclib1.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/musiclib2.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/playlist.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/rock.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/search1.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/search2.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/search3.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/setup.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/setup_done.gif
+%%SLIMDIR%%/HTML/EN/html/docs/vfdshots/setup_myip.gif
+%%SLIMDIR%%/HTML/EN/html/docs/xml_skin.html
+%%SLIMDIR%%/HTML/EN/html/docs/xpl.html
+%%SLIMDIR%%/HTML/EN/html/errors/400.html
+%%SLIMDIR%%/HTML/EN/html/errors/401.html
+%%SLIMDIR%%/HTML/EN/html/errors/403.html
+%%SLIMDIR%%/HTML/EN/html/errors/404.html
+%%SLIMDIR%%/HTML/EN/html/errors/405.html
+%%SLIMDIR%%/HTML/EN/html/ext/adapter/ext/ext-base.js
+%%SLIMDIR%%/HTML/EN/html/ext/ext-all-debug.js
+%%SLIMDIR%%/HTML/EN/html/ext/ext-all.js
+%%SLIMDIR%%/HTML/EN/html/ext/license.txt
+%%SLIMDIR%%/HTML/EN/html/ext/resources/css/ext-all.css
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog/btn-arrow.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog/btn-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog/close.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog/collapse.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog/e-handle.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog/expand.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog/hd-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog/progress.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog/progress2.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog/s-handle.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog/se-handle.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box/corners-blue.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box/corners.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box/l-blue.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box/l.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box/r-blue.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box/r.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box/tb-blue.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box/tb.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/dd/drop-add.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/dd/drop-no.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/dd/drop-yes.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/editor/tb-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/clear-trigger.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/clear-trigger.psd
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/date-trigger.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/date-trigger.psd
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/error-tip-corners.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/exclamation.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/search-trigger.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/search-trigger.psd
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/text-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/trigger-tpl.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/trigger.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form/trigger.psd
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/gradient-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/Thumbs.db
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/arrow-left-white.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/arrow-right-white.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/col-move-bottom.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/col-move-top.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/dirty.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/done.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/drop-no.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/drop-yes.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/footer-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid-blue-hd.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid-blue-split.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid-hrow.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid-loading.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid-split.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid-vista-hd.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid3-hd-btn.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid3-hrow-over.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid3-hrow.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid3-special-col-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/grid3-special-col-sel-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/hd-pop.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/hmenu-asc.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/hmenu-desc.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/hmenu-lock.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/hmenu-lock.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/hmenu-unlock.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/hmenu-unlock.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/invalid_line.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/loading.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/mso-hd.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/nowait.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/page-first-disabled.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/page-first.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/page-last-disabled.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/page-last.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/page-next-disabled.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/page-next.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/page-prev-disabled.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/page-prev.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/pick-button.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/refresh.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/row-check-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/row-expand-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/row-over.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/row-sel.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/sort_asc.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/sort_desc.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid/wait.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/collapse.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/expand.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/gradient-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/ns-collapse.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/ns-expand.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/panel-close.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/panel-title-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/panel-title-light-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/stick.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/stuck.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/tab-close-on.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout/tab-close.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu/checked.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu/group-checked.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu/menu-parent.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu/menu.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu/unchecked.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel/tool-sprites.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/qtip/bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/qtip/close.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/qtip/tip-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/s.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shadow-c.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shadow-lr.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shadow.png
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/calendar.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/glass-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/left-btn.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/right-btn.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared/warning.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/e-handle-dark.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/e-handle.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/ne-handle-dark.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/ne-handle.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/nw-handle-dark.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/nw-handle.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/s-handle-dark.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/s-handle.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/se-handle-dark.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/se-handle.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/square.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/sw-handle-dark.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer/sw-handle.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-btm-inactive-left-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-btm-inactive-right-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-btm-left-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-btm-right-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs/tab-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/btn-arrow-light.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/btn-arrow.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/btn-over-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/gray-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/tb-bg.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar/tb-btn-sprite.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/drop-add.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/drop-between.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/drop-no.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/drop-over.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/drop-under.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/drop-yes.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/elbow-end-minus-nl.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/elbow-end-minus.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/elbow-end-plus-nl.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/elbow-end-plus.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/elbow-end.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/elbow-line.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/elbow-minus-nl.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/elbow-minus.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/elbow-plus-nl.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/elbow-plus.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/elbow.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/folder-open.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/folder.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/leaf.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/loading.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree/s.gif
+%%SLIMDIR%%/HTML/EN/html/ext/resources/license.txt
+%%SLIMDIR%%/HTML/EN/html/fileselector.js
+%%SLIMDIR%%/HTML/EN/html/global.js
+%%SLIMDIR%%/HTML/EN/html/home.js
+%%SLIMDIR%%/HTML/EN/html/images/ServiceProviders/squeezecenter.png
+%%SLIMDIR%%/HTML/EN/html/images/ServiceProviders/squeezenetwork.png
+%%SLIMDIR%%/HTML/EN/html/images/ServiceProviders/tuneinurl.png
+%%SLIMDIR%%/HTML/EN/html/images/albums.png
+%%SLIMDIR%%/HTML/EN/html/images/artists.png
+%%SLIMDIR%%/HTML/EN/html/images/b_ascend.gif
+%%SLIMDIR%%/HTML/EN/html/images/b_descend.gif
+%%SLIMDIR%%/HTML/EN/html/images/b_favorite.gif
+%%SLIMDIR%%/HTML/EN/html/images/b_favorite_remove.gif
+%%SLIMDIR%%/HTML/EN/html/images/b_wait.gif
+%%SLIMDIR%%/HTML/EN/html/images/bar_small_empty.gif
+%%SLIMDIR%%/HTML/EN/html/images/bar_small_first.gif
+%%SLIMDIR%%/HTML/EN/html/images/bar_small_full.gif
+%%SLIMDIR%%/HTML/EN/html/images/cdspin3.gif
+%%SLIMDIR%%/HTML/EN/html/images/cover.png
+%%SLIMDIR%%/HTML/EN/html/images/extensionItem.png
+%%SLIMDIR%%/HTML/EN/html/images/gallery.png
+%%SLIMDIR%%/HTML/EN/html/images/genres.png
+%%SLIMDIR%%/HTML/EN/html/images/list.png
+%%SLIMDIR%%/HTML/EN/html/images/loading.gif
+%%SLIMDIR%%/HTML/EN/html/images/musicfolder.png
+%%SLIMDIR%%/HTML/EN/html/images/newmusic.png
+%%SLIMDIR%%/HTML/EN/html/images/playall.png
+%%SLIMDIR%%/HTML/EN/html/images/playlists.png
+%%SLIMDIR%%/HTML/EN/html/images/plugin.png
+%%SLIMDIR%%/HTML/EN/html/images/radio.png
+%%SLIMDIR%%/HTML/EN/html/images/remote.gif
+%%SLIMDIR%%/HTML/EN/html/images/search.png
+%%SLIMDIR%%/HTML/EN/html/images/slimdevices_logo.gif
+%%SLIMDIR%%/HTML/EN/html/images/slimp3.gif
+%%SLIMDIR%%/HTML/EN/html/images/slimp3_logo.gif
+%%SLIMDIR%%/HTML/EN/html/images/slimp3_logo.small.gif
+%%SLIMDIR%%/HTML/EN/html/images/softsqueeze.png
+%%SLIMDIR%%/HTML/EN/html/images/spacer.gif
+%%SLIMDIR%%/HTML/EN/html/images/squeezebox.jpg
+%%SLIMDIR%%/HTML/EN/html/images/squeezebox_logo.gif
+%%SLIMDIR%%/HTML/EN/html/images/squeezebox_logo.small.gif
+%%SLIMDIR%%/HTML/EN/html/images/squeezebox_logo.small_bk.gif
+%%SLIMDIR%%/HTML/EN/html/images/transporter_logo.gif
+%%SLIMDIR%%/HTML/EN/html/images/transporter_logo.small.gif
+%%SLIMDIR%%/HTML/EN/html/images/transporter_logo.small_bk.gif
+%%SLIMDIR%%/HTML/EN/html/images/transporter_logo.small_grey.gif
+%%SLIMDIR%%/HTML/EN/html/images/wait.gif
+%%SLIMDIR%%/HTML/EN/html/images/years.png
+%%SLIMDIR%%/HTML/EN/html/lbrsilence.mp3
+%%SLIMDIR%%/HTML/EN/html/mypage.ico
+%%SLIMDIR%%/HTML/EN/html/ping.html
+%%SLIMDIR%%/HTML/EN/html/progress.js
+%%SLIMDIR%%/HTML/EN/html/prototype.js
+%%SLIMDIR%%/HTML/EN/html/scriptaculous/builder.js
+%%SLIMDIR%%/HTML/EN/html/scriptaculous/controls.js
+%%SLIMDIR%%/HTML/EN/html/scriptaculous/dragdrop.js
+%%SLIMDIR%%/HTML/EN/html/scriptaculous/effects.js
+%%SLIMDIR%%/HTML/EN/html/scriptaculous/scriptaculous.js
+%%SLIMDIR%%/HTML/EN/html/scriptaculous/slider.js
+%%SLIMDIR%%/HTML/EN/html/scriptaculous/sound.js
+%%SLIMDIR%%/HTML/EN/html/scriptaculous/unittest.js
+%%SLIMDIR%%/HTML/EN/html/settings.js
+%%SLIMDIR%%/HTML/EN/html/setup.html
+%%SLIMDIR%%/HTML/EN/html/silence.mp3
+%%SLIMDIR%%/HTML/EN/html/silentpacket.mp3
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/LICENSE.txt
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/SoftSqueeze.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/applet.html
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/checked.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/fwd.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/icon256.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/icon32.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/icon64.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/screenshot.png
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/splash.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/unchecked.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/index.html
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/dtd-xercesImpl.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/jflac-1.2.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/jl1.0.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/jnlp.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/jogg-0.0.7.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/jorbis-0.0.15.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/jsch-20040429.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/log4j-1.2.8.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/mp3spi1.9.2.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/nativeskin.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/nativeskinlib.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/tritonus_share.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/vorbisspi1.0.2.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/xml-apis.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/softsqueeze.jnlp
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/webstart.html
+%%SLIMDIR%%/HTML/EN/html/test.html
+%%SLIMDIR%%/HTML/EN/html/vars.js
+%%SLIMDIR%%/HTML/EN/html/wizard.js
+%%SLIMDIR%%/HTML/EN/include.html
+%%SLIMDIR%%/HTML/EN/index.html
+%%SLIMDIR%%/HTML/EN/listparams.html
+%%SLIMDIR%%/HTML/EN/pagebarheader.html
+%%SLIMDIR%%/HTML/EN/pagefooter.html
+%%SLIMDIR%%/HTML/EN/pageheader.html
+%%SLIMDIR%%/HTML/EN/playlist.html
+%%SLIMDIR%%/HTML/EN/playlist_needs_upgrade.html
+%%SLIMDIR%%/HTML/EN/progress.html
+%%SLIMDIR%%/HTML/EN/reloadStatusFrame.html
+%%SLIMDIR%%/HTML/EN/robots.txt
+%%SLIMDIR%%/HTML/EN/rtl.css
+%%SLIMDIR%%/HTML/EN/search-observer.html
+%%SLIMDIR%%/HTML/EN/search.html
+%%SLIMDIR%%/HTML/EN/select_option.html
+%%SLIMDIR%%/HTML/EN/setting_chooser.html
+%%SLIMDIR%%/HTML/EN/setting_tablist.html
+%%SLIMDIR%%/HTML/EN/settings/ajaxSettings.txt
+%%SLIMDIR%%/HTML/EN/settings/footer.html
+%%SLIMDIR%%/HTML/EN/settings/header.html
+%%SLIMDIR%%/HTML/EN/settings/index.html
+%%SLIMDIR%%/HTML/EN/settings/player/alarm.html
+%%SLIMDIR%%/HTML/EN/settings/player/audio.html
+%%SLIMDIR%%/HTML/EN/settings/player/basic.html
+%%SLIMDIR%%/HTML/EN/settings/player/display.html
+%%SLIMDIR%%/HTML/EN/settings/player/menu.html
+%%SLIMDIR%%/HTML/EN/settings/player/remote.html
+%%SLIMDIR%%/HTML/EN/settings/server/basic.html
+%%SLIMDIR%%/HTML/EN/settings/server/behavior.html
+%%SLIMDIR%%/HTML/EN/settings/server/debugging.html
+%%SLIMDIR%%/HTML/EN/settings/server/fileselector.html
+%%SLIMDIR%%/HTML/EN/settings/server/fileselector_autocomplete.html
+%%SLIMDIR%%/HTML/EN/settings/server/filetypes.html
+%%SLIMDIR%%/HTML/EN/settings/server/formatting.html
+%%SLIMDIR%%/HTML/EN/settings/server/interface.html
+%%SLIMDIR%%/HTML/EN/settings/server/networking.html
+%%SLIMDIR%%/HTML/EN/settings/server/performance.html
+%%SLIMDIR%%/HTML/EN/settings/server/plugins.html
+%%SLIMDIR%%/HTML/EN/settings/server/security.html
+%%SLIMDIR%%/HTML/EN/settings/server/software.html
+%%SLIMDIR%%/HTML/EN/settings/server/squeezenetwork.html
+%%SLIMDIR%%/HTML/EN/settings/server/status.html
+%%SLIMDIR%%/HTML/EN/settings/server/wizard.html
+%%SLIMDIR%%/HTML/EN/skin.css
+%%SLIMDIR%%/HTML/EN/slimserver.css
+%%SLIMDIR%%/HTML/EN/songinfo.html
+%%SLIMDIR%%/HTML/EN/songinfo_details.html
+%%SLIMDIR%%/HTML/EN/squeezenetwork.html
+%%SLIMDIR%%/HTML/EN/standardheader.html
+%%SLIMDIR%%/HTML/EN/statecontrol.html
+%%SLIMDIR%%/HTML/EN/status.html
+%%SLIMDIR%%/HTML/EN/status_list.html
+%%SLIMDIR%%/HTML/EN/status_needs_upgrade.html
+%%SLIMDIR%%/HTML/EN/status_noclients.html
+%%SLIMDIR%%/HTML/EN/tunein.html
+%%SLIMDIR%%/HTML/EN/update_firmware.html
+%%SLIMDIR%%/HTML/EN/upnpinfo.html
+%%SLIMDIR%%/HTML/EN/volumecontrol.html
+%%SLIMDIR%%/HTML/EN/xmlbrowser.html
+%%SLIMDIR%%/HTML/EN/xmlbrowser_details.html
+%%SLIMDIR%%/HTML/EN/xmlbrowser_redirect.html
+%%SLIMDIR%%/HTML/Fishbone/FBajaxRequest.txt
+%%SLIMDIR%%/HTML/Fishbone/cmdwrappers_Fishbone
+%%SLIMDIR%%/HTML/Fishbone/customheader.html
+%%SLIMDIR%%/HTML/Fishbone/gray.css
+%%SLIMDIR%%/HTML/Fishbone/helpfooter.html
+%%SLIMDIR%%/HTML/Fishbone/helpheader.html
+%%SLIMDIR%%/HTML/Fishbone/hitlist.html
+%%SLIMDIR%%/HTML/Fishbone/hitlist_bar.html
+%%SLIMDIR%%/HTML/Fishbone/hitlist_list.html
+%%SLIMDIR%%/HTML/Fishbone/home.html
+%%SLIMDIR%%/HTML/Fishbone/html/ajax.js
+%%SLIMDIR%%/HTML/Fishbone/html/black.html
+%%SLIMDIR%%/HTML/Fishbone/html/docs/help.html
+%%SLIMDIR%%/HTML/Fishbone/html/docs/readme.html
+%%SLIMDIR%%/HTML/Fishbone/html/images/Fishbone_Gray.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/Fishbone_Tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/add.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_add.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_ascend.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_delete.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_descend.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_down.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_edit.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_favorite.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_favorite_remove.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_first.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_last.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_mix.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_mmmix.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_next.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_play.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_prev.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_queue.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_up.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/b_wait.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/back.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/back_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/blank.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/edit.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/ffwd.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/ffwd_m.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/ffwd_m_s.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/ffwd_m_s_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/ffwd_m_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/ffwd_s.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/ffwd_s_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/ffwd_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/forward.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/forward_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/go.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/info.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/mlmix.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/mmmix.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/move.down.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/move.up.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/mute.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/mute_s.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/mute_s_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/mute_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/next.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/pause.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/pause_s.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/pause_s_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/pause_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/pixel.green.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/pixel.green_s.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/pixel.grey.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/pixel.middle.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/pixel.middle_s.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/play.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/play.this.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/play_s.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/play_s_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/play_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/queue.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/remove.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/rew.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/rew_m.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/rew_m_s.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/rew_m_s_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/rew_m_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/rew_s.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/rew_s_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/rew_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/slimp3_logo.small_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/squeezebox_logo.small_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/stop.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/stop_s.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/stop_s_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/stop_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/subtract.gif
+%%SLIMDIR%%/HTML/Fishbone/html/images/transporter_logo.small_tan.gif
+%%SLIMDIR%%/HTML/Fishbone/html/scripts.js
+%%SLIMDIR%%/HTML/Fishbone/html/songprogress.js
+%%SLIMDIR%%/HTML/Fishbone/html/styleswitcher.js
+%%SLIMDIR%%/HTML/Fishbone/index.html
+%%SLIMDIR%%/HTML/Fishbone/pagefooter.html
+%%SLIMDIR%%/HTML/Fishbone/pageheader.html
+%%SLIMDIR%%/HTML/Fishbone/playlist.html
+%%SLIMDIR%%/HTML/Fishbone/skin.css
+%%SLIMDIR%%/HTML/Fishbone/skinconfig.yml
+%%SLIMDIR%%/HTML/Fishbone/status.html
+%%SLIMDIR%%/HTML/Fishbone/status_header.html
+%%SLIMDIR%%/HTML/Fishbone/status_list.html
+%%SLIMDIR%%/HTML/Fishbone/status_noclients.html
+%%SLIMDIR%%/HTML/Fishbone/tan.css
+%%SLIMDIR%%/HTML/Handheld/browsedb.html
+%%SLIMDIR%%/HTML/Handheld/cmdwrappers_Handheld
+%%SLIMDIR%%/HTML/Handheld/helpfooter.html
+%%SLIMDIR%%/HTML/Handheld/helpheader.html
+%%SLIMDIR%%/HTML/Handheld/home.html
+%%SLIMDIR%%/HTML/Handheld/html/about.html
+%%SLIMDIR%%/HTML/Handheld/html/help.html
+%%SLIMDIR%%/HTML/Handheld/html/images/gallery.png
+%%SLIMDIR%%/HTML/Handheld/html/images/list.png
+%%SLIMDIR%%/HTML/Handheld/index.html
+%%SLIMDIR%%/HTML/Handheld/pagefooter.html
+%%SLIMDIR%%/HTML/Handheld/pageheader.html
+%%SLIMDIR%%/HTML/Handheld/playlist.html
+%%SLIMDIR%%/HTML/Handheld/progress.html
+%%SLIMDIR%%/HTML/Handheld/reloadStatusFrame.html
+%%SLIMDIR%%/HTML/Handheld/skinconfig.yml
+%%SLIMDIR%%/HTML/Handheld/slimserver.css
+%%SLIMDIR%%/HTML/Handheld/status.html
+%%SLIMDIR%%/HTML/Handheld/status_header.html
+%%SLIMDIR%%/HTML/Handheld/status_list.html
+%%SLIMDIR%%/HTML/Handheld/status_noclients.html
+%%SLIMDIR%%/HTML/Nokia770/ajaxStatus.txt
+%%SLIMDIR%%/HTML/Nokia770/artwork.js
+%%SLIMDIR%%/HTML/Nokia770/browse.js
+%%SLIMDIR%%/HTML/Nokia770/browsedb.html
+%%SLIMDIR%%/HTML/Nokia770/browsedb_artwork.html
+%%SLIMDIR%%/HTML/Nokia770/browsedb_list.html
+%%SLIMDIR%%/HTML/Nokia770/browsedbitems_list.html
+%%SLIMDIR%%/HTML/Nokia770/cmdwrappers_Nokia770
+%%SLIMDIR%%/HTML/Nokia770/galleryselect.html
+%%SLIMDIR%%/HTML/Nokia770/hitlist.html
+%%SLIMDIR%%/HTML/Nokia770/hitlist_bar.html
+%%SLIMDIR%%/HTML/Nokia770/hitlist_list.html
+%%SLIMDIR%%/HTML/Nokia770/home.html
+%%SLIMDIR%%/HTML/Nokia770/homeplayer_list.html
+%%SLIMDIR%%/HTML/Nokia770/html/about.html
+%%SLIMDIR%%/HTML/Nokia770/html/help.html
+%%SLIMDIR%%/HTML/Nokia770/html/images/1.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/10.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/10_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/1_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/2.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/2_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/3.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/3_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/4.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/4_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/5.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/5_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/6.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/6_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/7.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/7_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/8.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/8_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/9.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/9_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/Sleep00.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/Sleep00_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/Sleep15.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/Sleep15_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/Sleep30.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/Sleep30_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/Sleep45.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/Sleep45_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/Sleep60.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/Sleep60_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/Textfield.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/add.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/album.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/album_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/album_symbol.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/album_symbol_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/artist.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/artist_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/artwork.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/artwork_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/b_add.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/b_delete.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/b_down.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/b_edit.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/b_mix.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/b_mmmix.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/b_next.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/b_play.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/b_up.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/back.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bar.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bar_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bass_symbol.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt1.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt10.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt10_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt1_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt2.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt2_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt3.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt3_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt4.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt4_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt5.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt5_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt6.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt6_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt7.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt7_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt8.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt8_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt9.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/bt9_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/button.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/buttonKB.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/buttonSpace.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/button_gray.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/cancel.jpg
+%%SLIMDIR%%/HTML/Nokia770/html/images/close.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/deviceoff.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/deviceoff_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/deviceon.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/deviceon_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/favorites.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/favorites_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/ffw.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/ffw_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/folder.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/folder_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/genre.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/genre_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/inactive.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/larger/next.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/larger/next_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/larger/pause.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/larger/pause_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/larger/play.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/larger/play_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/larger/prev.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/larger/prev_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/larger/stop.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/larger/stop_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/leftcorner.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/lefttopcorner.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_back.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_home.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_home_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_playlist.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_playlist_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_radio.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_radio_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_search.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_search_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_statistics.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_statistics_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_status.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/menu_status_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/moonwalker.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/new_music.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/new_music_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/next.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/next_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/nocoverart.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/nokia770.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/off_symbol.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/off_symbol_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/off_symbol_gray.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/pause.current.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/pause.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/pause_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/play.current.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/play.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/play.this.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/play_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/playlist.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/playlist_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/playlist_symbol.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/playlist_symbol_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/playnext.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/power.png
+%%SLIMDIR%%/HTML/Nokia770/html/images/power_symbol.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/prev.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/prev_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/progress.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/progress_color.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/queue.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/radio.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/radio.png
+%%SLIMDIR%%/HTML/Nokia770/html/images/radio_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/random.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/random_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/remove.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/repeat_symbol.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/rew.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/rew_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/rightcorner.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/righttopcorner.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/search.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/search_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/shrink2.pl
+%%SLIMDIR%%/HTML/Nokia770/html/images/shrink_icons.pl
+%%SLIMDIR%%/HTML/Nokia770/html/images/shuffle_symbol.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/album.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/album_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/artist.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/artist_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/artwork.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/artwork_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/favorites.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/favorites_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/ffw.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/ffw_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/folder.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/folder_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/genre.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/genre_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/new_music.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/new_music_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/next.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/next_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/pause.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/pause_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/pause_transparent.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/play.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/play_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/play_transparent.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/playlist.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/playlist_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/prev.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/prev_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/radio.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/radio_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/random.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/random_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/rew.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/rew_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/search.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/search_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/statistics.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/statistics_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/stop.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/smaller/stop_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/song_info.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/song_symbol.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/song_symbol_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/spinner.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/stat.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/stat_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/statistics.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/statistics_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/stop.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/stop_active.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/trans.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/treble_symbol.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/vol_symbol.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/vol_symbol2.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/volume_down.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/volume_up.gif
+%%SLIMDIR%%/HTML/Nokia770/html/images/zzz_symbol.gif
+%%SLIMDIR%%/HTML/Nokia770/index.html
+%%SLIMDIR%%/HTML/Nokia770/menu.html
+%%SLIMDIR%%/HTML/Nokia770/pagebarheader.html
+%%SLIMDIR%%/HTML/Nokia770/pagefooter.html
+%%SLIMDIR%%/HTML/Nokia770/pageheader.html
+%%SLIMDIR%%/HTML/Nokia770/playlist.html
+%%SLIMDIR%%/HTML/Nokia770/playlist.js
+%%SLIMDIR%%/HTML/Nokia770/search.html
+%%SLIMDIR%%/HTML/Nokia770/search.js
+%%SLIMDIR%%/HTML/Nokia770/searchinput.html
+%%SLIMDIR%%/HTML/Nokia770/skin_global.js
+%%SLIMDIR%%/HTML/Nokia770/skinconfig.yml
+%%SLIMDIR%%/HTML/Nokia770/slimserver.css
+%%SLIMDIR%%/HTML/Nokia770/songinfo.html
+%%SLIMDIR%%/HTML/Nokia770/status.html
+%%SLIMDIR%%/HTML/Nokia770/status.js
+%%SLIMDIR%%/HTML/Nokia770/status_header.html
+%%SLIMDIR%%/HTML/Nokia770/status_list.html
+%%SLIMDIR%%/HTML/Nokia770/status_noclients.html
+%%SLIMDIR%%/HTML/README.txt
+%%SLIMDIR%%/HTML/Touch/browsedb_artwork.html
+%%SLIMDIR%%/HTML/Touch/html/about.html
+%%SLIMDIR%%/HTML/Touch/searchinput.html
+%%SLIMDIR%%/HTML/Touch/skinconfig.yml
+%%SLIMDIR%%/HTML/Touch/slimserver.css
+%%SLIMDIR%%/HTML/xml/_xml_song.html
+%%SLIMDIR%%/HTML/xml/browse_list_empty.html
+%%SLIMDIR%%/HTML/xml/browsedb.html
+%%SLIMDIR%%/HTML/xml/browsedb_artwork.html
+%%SLIMDIR%%/HTML/xml/browsedb_list.html
+%%SLIMDIR%%/HTML/xml/browsedb_pwdlist.html
+%%SLIMDIR%%/HTML/xml/hitlist.html
+%%SLIMDIR%%/HTML/xml/hitlist_list.html
+%%SLIMDIR%%/HTML/xml/html/slimserver_xml.dtd
+%%SLIMDIR%%/HTML/xml/include.html
+%%SLIMDIR%%/HTML/xml/playlist.html
+%%SLIMDIR%%/HTML/xml/playlist_list.html
+%%SLIMDIR%%/HTML/xml/search.html
+%%SLIMDIR%%/HTML/xml/select_option.html
+%%SLIMDIR%%/HTML/xml/songinfo.html
+%%SLIMDIR%%/HTML/xml/status.html
+%%SLIMDIR%%/HTML/xml/status_header.html
+%%SLIMDIR%%/HTML/xml/status_list.html
+%%SLIMDIR%%/HTML/xml/status_noclients.html
+%%SLIMDIR%%/HTML/xmlTelCanto/_xml_song.html
+%%SLIMDIR%%/HTML/xmlTelCanto/_xml_song_full.html
+%%SLIMDIR%%/HTML/xmlTelCanto/browse_list_empty.html
+%%SLIMDIR%%/HTML/xmlTelCanto/browse_playlist.html
+%%SLIMDIR%%/HTML/xmlTelCanto/browsedb.html
+%%SLIMDIR%%/HTML/xmlTelCanto/browsedb_list.html
+%%SLIMDIR%%/HTML/xmlTelCanto/browsedb_pwdlist.html
+%%SLIMDIR%%/HTML/xmlTelCanto/browsetree.html
+%%SLIMDIR%%/HTML/xmlTelCanto/browsetree_list.html
+%%SLIMDIR%%/HTML/xmlTelCanto/browsetree_pwdlist.html
+%%SLIMDIR%%/HTML/xmlTelCanto/hitlist.html
+%%SLIMDIR%%/HTML/xmlTelCanto/hitlist_list.html
+%%SLIMDIR%%/HTML/xmlTelCanto/html/slimserver_xml.dtd
+%%SLIMDIR%%/HTML/xmlTelCanto/include.html
+%%SLIMDIR%%/HTML/xmlTelCanto/pagebarheader.html
+%%SLIMDIR%%/HTML/xmlTelCanto/playlist.html
+%%SLIMDIR%%/HTML/xmlTelCanto/search.html
+%%SLIMDIR%%/HTML/xmlTelCanto/select_option.html
+%%SLIMDIR%%/HTML/xmlTelCanto/songinfo.html
+%%SLIMDIR%%/HTML/xmlTelCanto/status.html
+%%SLIMDIR%%/HTML/xmlTelCanto/status_header.html
+%%SLIMDIR%%/HTML/xmlTelCanto/status_list.html
+%%SLIMDIR%%/HTML/xmlTelCanto/status_noclients.html
+%%SLIMDIR%%/HTML/xmlTelCanto/vssver.scc
+%%SLIMDIR%%/IR/Default.map
+%%SLIMDIR%%/IR/Front_Panel.ir
+%%SLIMDIR%%/IR/Slim_Devices_Remote.ir
+%%SLIMDIR%%/IR/jvc_dvd.ir
+%%SLIMDIR%%/License.de.txt
+%%SLIMDIR%%/License.es.txt
+%%SLIMDIR%%/License.fr.txt
+%%SLIMDIR%%/License.he.txt
+%%SLIMDIR%%/License.it.txt
+%%SLIMDIR%%/License.nl.txt
+%%SLIMDIR%%/MySQL/COPYING
+%%SLIMDIR%%/MySQL/README
+%%SLIMDIR%%/MySQL/my.tt
+%%SLIMDIR%%/MySQL/system.sql
+%%SLIMDIR%%/SQL/mysql/schema_1_down.sql
+%%SLIMDIR%%/SQL/mysql/schema_1_up.sql
+%%SLIMDIR%%/SQL/mysql/schema_2_down.sql
+%%SLIMDIR%%/SQL/mysql/schema_2_up.sql
+%%SLIMDIR%%/SQL/mysql/schema_3_down.sql
+%%SLIMDIR%%/SQL/mysql/schema_3_up.sql
+%%SLIMDIR%%/SQL/mysql/schema_4_down.sql
+%%SLIMDIR%%/SQL/mysql/schema_4_up.sql
+%%SLIMDIR%%/SQL/mysql/schema_5_down.sql
+%%SLIMDIR%%/SQL/mysql/schema_5_up.sql
+%%SLIMDIR%%/SQL/mysql/schema_clear.sql
+%%SLIMDIR%%/SQL/mysql/schema_optimize.sql
+%%SLIMDIR%%/Slim/Buttons/AlarmClock.pm
+%%SLIMDIR%%/Slim/Buttons/Block.pm
+%%SLIMDIR%%/Slim/Buttons/BrowseDB.pm
+%%SLIMDIR%%/Slim/Buttons/BrowseTree.pm
+%%SLIMDIR%%/Slim/Buttons/BrowseUPnPMediaServer.pm
+%%SLIMDIR%%/Slim/Buttons/Common.pm
+%%SLIMDIR%%/Slim/Buttons/Home.pm
+%%SLIMDIR%%/Slim/Buttons/Information.pm
+%%SLIMDIR%%/Slim/Buttons/Input/Bar.pm
+%%SLIMDIR%%/Slim/Buttons/Input/Choice.pm
+%%SLIMDIR%%/Slim/Buttons/Input/List.pm
+%%SLIMDIR%%/Slim/Buttons/Input/Text.pm
+%%SLIMDIR%%/Slim/Buttons/Input/Time.pm
+%%SLIMDIR%%/Slim/Buttons/Playlist.pm
+%%SLIMDIR%%/Slim/Buttons/Power.pm
+%%SLIMDIR%%/Slim/Buttons/RemoteTrackInfo.pm
+%%SLIMDIR%%/Slim/Buttons/ScreenSaver.pm
+%%SLIMDIR%%/Slim/Buttons/Search.pm
+%%SLIMDIR%%/Slim/Buttons/Settings.pm
+%%SLIMDIR%%/Slim/Buttons/SqueezeNetwork.pm
+%%SLIMDIR%%/Slim/Buttons/Synchronize.pm
+%%SLIMDIR%%/Slim/Buttons/TrackInfo.pm
+%%SLIMDIR%%/Slim/Buttons/Volume.pm
+%%SLIMDIR%%/Slim/Buttons/XMLBrowser.pm
+%%SLIMDIR%%/Slim/Control/Commands.pm
+%%SLIMDIR%%/Slim/Control/Jive.pm
+%%SLIMDIR%%/Slim/Control/Queries.pm
+%%SLIMDIR%%/Slim/Control/Request.pm
+%%SLIMDIR%%/Slim/Control/Stdio.pm
+%%SLIMDIR%%/Slim/Display/Display.pm
+%%SLIMDIR%%/Slim/Display/EmulatedSqueezebox2.pm
+%%SLIMDIR%%/Slim/Display/Graphics.pm
+%%SLIMDIR%%/Slim/Display/Lib/Fonts.pm
+%%SLIMDIR%%/Slim/Display/Lib/TextVFD.pm
+%%SLIMDIR%%/Slim/Display/NoDisplay.pm
+%%SLIMDIR%%/Slim/Display/Squeezebox2.pm
+%%SLIMDIR%%/Slim/Display/SqueezeboxG.pm
+%%SLIMDIR%%/Slim/Display/Text.pm
+%%SLIMDIR%%/Slim/Display/Transporter.pm
+%%SLIMDIR%%/Slim/Formats.pm
+%%SLIMDIR%%/Slim/Formats/AIFF.pm
+%%SLIMDIR%%/Slim/Formats/APE.pm
+%%SLIMDIR%%/Slim/Formats/FLAC.pm
+%%SLIMDIR%%/Slim/Formats/HTTP.pm
+%%SLIMDIR%%/Slim/Formats/MMS.pm
+%%SLIMDIR%%/Slim/Formats/MP3.pm
+%%SLIMDIR%%/Slim/Formats/Movie.pm
+%%SLIMDIR%%/Slim/Formats/Musepack.pm
+%%SLIMDIR%%/Slim/Formats/Ogg.pm
+%%SLIMDIR%%/Slim/Formats/Playlists.pm
+%%SLIMDIR%%/Slim/Formats/Playlists/ASX.pm
+%%SLIMDIR%%/Slim/Formats/Playlists/Base.pm
+%%SLIMDIR%%/Slim/Formats/Playlists/CUE.pm
+%%SLIMDIR%%/Slim/Formats/Playlists/M3U.pm
+%%SLIMDIR%%/Slim/Formats/Playlists/PLS.pm
+%%SLIMDIR%%/Slim/Formats/Playlists/WPL.pm
+%%SLIMDIR%%/Slim/Formats/Playlists/XML.pm
+%%SLIMDIR%%/Slim/Formats/Playlists/XSPF.pm
+%%SLIMDIR%%/Slim/Formats/RemoteStream.pm
+%%SLIMDIR%%/Slim/Formats/WMA.pm
+%%SLIMDIR%%/Slim/Formats/Wav.pm
+%%SLIMDIR%%/Slim/Formats/WavPack.pm
+%%SLIMDIR%%/Slim/Formats/XML.pm
+%%SLIMDIR%%/Slim/Hardware/IR.pm
+%%SLIMDIR%%/Slim/Hardware/TriLED.pm
+%%SLIMDIR%%/Slim/Hardware/mas3507d.pm
+%%SLIMDIR%%/Slim/Hardware/mas35x9.pm
+%%SLIMDIR%%/Slim/Music/Artwork.pm
+%%SLIMDIR%%/Slim/Music/Import.pm
+%%SLIMDIR%%/Slim/Music/Info.pm
+%%SLIMDIR%%/Slim/Music/MusicFolderScan.pm
+%%SLIMDIR%%/Slim/Music/PlaylistFolderScan.pm
+%%SLIMDIR%%/Slim/Music/TitleFormatter.pm
+%%SLIMDIR%%/Slim/Networking/Async.pm
+%%SLIMDIR%%/Slim/Networking/Async/DNS.pm
+%%SLIMDIR%%/Slim/Networking/Async/HTTP.pm
+%%SLIMDIR%%/Slim/Networking/Async/Socket.pm
+%%SLIMDIR%%/Slim/Networking/Async/Socket/HTTP.pm
+%%SLIMDIR%%/Slim/Networking/Async/Socket/HTTPS.pm
+%%SLIMDIR%%/Slim/Networking/Async/Socket/UDP.pm
+%%SLIMDIR%%/Slim/Networking/Discovery.pm
+%%SLIMDIR%%/Slim/Networking/Select.pm
+%%SLIMDIR%%/Slim/Networking/SimpleAsyncHTTP.pm
+%%SLIMDIR%%/Slim/Networking/SliMP3/Protocol.pm
+%%SLIMDIR%%/Slim/Networking/SliMP3/Stream.pm
+%%SLIMDIR%%/Slim/Networking/Slimproto.pm
+%%SLIMDIR%%/Slim/Networking/SqueezeNetwork.pm
+%%SLIMDIR%%/Slim/Networking/SqueezeNetwork/Players.pm
+%%SLIMDIR%%/Slim/Networking/SqueezeNetwork/PrefSync.pm
+%%SLIMDIR%%/Slim/Networking/SqueezeNetwork/Stats.pm
+%%SLIMDIR%%/Slim/Networking/UDP.pm
+%%SLIMDIR%%/Slim/Networking/UPnP/ControlPoint.pm
+%%SLIMDIR%%/Slim/Networking/mDNS.pm
+%%SLIMDIR%%/Slim/Player/Client.pm
+%%SLIMDIR%%/Slim/Player/HTTP.pm
+%%SLIMDIR%%/Slim/Player/Pipeline.pm
+%%SLIMDIR%%/Slim/Player/Player.pm
+%%SLIMDIR%%/Slim/Player/Playlist.pm
+%%SLIMDIR%%/Slim/Player/ProtocolHandlers.pm
+%%SLIMDIR%%/Slim/Player/Protocols/HTTP.pm
+%%SLIMDIR%%/Slim/Player/Protocols/MMS.pm
+%%SLIMDIR%%/Slim/Player/Receiver.pm
+%%SLIMDIR%%/Slim/Player/ReplayGain.pm
+%%SLIMDIR%%/Slim/Player/SLIMP3.pm
+%%SLIMDIR%%/Slim/Player/SoftSqueeze.pm
+%%SLIMDIR%%/Slim/Player/Source.pm
+%%SLIMDIR%%/Slim/Player/SqueezeSlave.pm
+%%SLIMDIR%%/Slim/Player/Squeezebox.pm
+%%SLIMDIR%%/Slim/Player/Squeezebox2.pm
+%%SLIMDIR%%/Slim/Player/Sync.pm
+%%SLIMDIR%%/Slim/Player/TranscodingHelper.pm
+%%SLIMDIR%%/Slim/Player/Transporter.pm
+%%SLIMDIR%%/Slim/Plugin/AudioScrobbler/HTML/EN/plugins/AudioScrobbler/settings/basic.html
+%%SLIMDIR%%/Slim/Plugin/AudioScrobbler/HTML/EN/plugins/AudioScrobbler/settings/player.html
+%%SLIMDIR%%/Slim/Plugin/AudioScrobbler/PlayerSettings.pm
+%%SLIMDIR%%/Slim/Plugin/AudioScrobbler/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/AudioScrobbler/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/AudioScrobbler/install.xml
+%%SLIMDIR%%/Slim/Plugin/AudioScrobbler/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Base.pm
+%%SLIMDIR%%/Slim/Plugin/CLI/HTML/EN/plugins/CLI/settings/basic.html
+%%SLIMDIR%%/Slim/Plugin/CLI/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/CLI/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/CLI/install.xml
+%%SLIMDIR%%/Slim/Plugin/CLI/strings.txt
+%%SLIMDIR%%/Slim/Plugin/DateTime/HTML/EN/plugins/DateTime/settings/basic.html
+%%SLIMDIR%%/Slim/Plugin/DateTime/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/DateTime/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/DateTime/install.xml
+%%SLIMDIR%%/Slim/Plugin/DateTime/strings.txt
+%%SLIMDIR%%/Slim/Plugin/DigitalInput/HTML/EN/plugins/DigitalInput/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/DigitalInput/HTML/EN/plugins/DigitalInput/list.html
+%%SLIMDIR%%/Slim/Plugin/DigitalInput/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/DigitalInput/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/DigitalInput/install.xml
+%%SLIMDIR%%/Slim/Plugin/DigitalInput/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Favorites/HTML/Default/plugins/Favorites/html/favorites.js
+%%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/html/images/favorites.png
+%%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/html/images/favorites_remove.png
+%%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/plugins/Favorites/favcontrol.html
+%%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/plugins/Favorites/html/favorites.js
+%%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/plugins/Favorites/index.html
+%%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/plugins/Favorites/settings/basic.html
+%%SLIMDIR%%/Slim/Plugin/Favorites/Opml.pm
+%%SLIMDIR%%/Slim/Plugin/Favorites/OpmlFavorites.pm
+%%SLIMDIR%%/Slim/Plugin/Favorites/Playlist.pm
+%%SLIMDIR%%/Slim/Plugin/Favorites/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Favorites/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/Favorites/install.xml
+%%SLIMDIR%%/Slim/Plugin/Favorites/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Health/HTML/EN/plugins/Health/graphs.html
+%%SLIMDIR%%/Slim/Plugin/Health/HTML/EN/plugins/Health/index.html
+%%SLIMDIR%%/Slim/Plugin/Health/NetTest.pm
+%%SLIMDIR%%/Slim/Plugin/Health/PerfMon.pm
+%%SLIMDIR%%/Slim/Plugin/Health/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Health/install.xml
+%%SLIMDIR%%/Slim/Plugin/Health/strings.txt
+%%SLIMDIR%%/Slim/Plugin/InfoBrowser/Default/default.opml
+%%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN/plugins/InfoBrowser/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN/plugins/InfoBrowser/settings/basic.html
+%%SLIMDIR%%/Slim/Plugin/InfoBrowser/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/InfoBrowser/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/InfoBrowser/install.xml
+%%SLIMDIR%%/Slim/Plugin/InfoBrowser/strings.txt
+%%SLIMDIR%%/Slim/Plugin/LMA/HTML/EN/plugins/LMA/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/LMA/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/LMA/install.xml
+%%SLIMDIR%%/Slim/Plugin/LMA/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Live365/HTML/EN/plugins/Live365/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/Live365/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Live365/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/Live365/install.xml
+%%SLIMDIR%%/Slim/Plugin/Live365/strings.txt
+%%SLIMDIR%%/Slim/Plugin/MP3tunes/HTML/EN/plugins/MP3tunes/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/MP3tunes/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/MP3tunes/install.xml
+%%SLIMDIR%%/Slim/Plugin/MP3tunes/strings.txt
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/ClientSettings.pm
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/Common.pm
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/mixerlink.html
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/musicmagic_mix.html
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/musicmagic_moods.html
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/musicmagic_pwdlist.html
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/settings/mipclient.html
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/settings/musicmagic.html
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/Importer.pm
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/PlayerSettings.pm
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/install.xml
+%%SLIMDIR%%/Slim/Plugin/MusicMagic/strings.txt
+%%SLIMDIR%%/Slim/Plugin/OPMLBased.pm
+%%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default/html/images/btn_thumbs_down.gif
+%%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default/html/images/btn_thumbs_up.gif
+%%SLIMDIR%%/Slim/Plugin/Pandora/HTML/EN/plugins/Pandora/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/Pandora/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Pandora/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/Pandora/install.xml
+%%SLIMDIR%%/Slim/Plugin/Pandora/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Picks/HTML/EN/plugins/Picks/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/Picks/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Picks/install.xml
+%%SLIMDIR%%/Slim/Plugin/Picks/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/settings/basic.html
+%%SLIMDIR%%/Slim/Plugin/Podcast/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Podcast/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/Podcast/install.xml
+%%SLIMDIR%%/Slim/Plugin/Podcast/strings.txt
+%%SLIMDIR%%/Slim/Plugin/PreventStandby/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/PreventStandby/install.xml
+%%SLIMDIR%%/Slim/Plugin/PreventStandby/strings.txt
+%%SLIMDIR%%/Slim/Plugin/RPC/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/RPC/install.xml
+%%SLIMDIR%%/Slim/Plugin/RPC/strings.txt
+%%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN/plugins/RS232/settings/basic.html
+%%SLIMDIR%%/Slim/Plugin/RS232/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/RS232/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/RS232/install.xml
+%%SLIMDIR%%/Slim/Plugin/RS232/strings.txt
+%%SLIMDIR%%/Slim/Plugin/RSSNews/HTML/EN/plugins/RSSNews/settings/basic.html
+%%SLIMDIR%%/Slim/Plugin/RSSNews/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/RSSNews/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/RSSNews/install.xml
+%%SLIMDIR%%/Slim/Plugin/RSSNews/strings.txt
+%%SLIMDIR%%/Slim/Plugin/RadioIO/HTML/EN/plugins/RadioIO/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/RadioIO/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/RadioIO/install.xml
+%%SLIMDIR%%/Slim/Plugin/RadioIO/strings.txt
+%%SLIMDIR%%/Slim/Plugin/RadioTime/HTML/EN/plugins/RadioTime/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/RadioTime/HTML/EN/plugins/RadioTime/settings/basic.html
+%%SLIMDIR%%/Slim/Plugin/RadioTime/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/RadioTime/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/RadioTime/install.xml
+%%SLIMDIR%%/Slim/Plugin/RadioTime/strings.txt
+%%SLIMDIR%%/Slim/Plugin/RandomPlay/HTML/EN/plugins/RandomPlay/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/RandomPlay/HTML/EN/plugins/RandomPlay/list.html
+%%SLIMDIR%%/Slim/Plugin/RandomPlay/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/RandomPlay/install.xml
+%%SLIMDIR%%/Slim/Plugin/RandomPlay/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Rescan/HTML/EN/plugins/Rescan/settings/basic.html
+%%SLIMDIR%%/Slim/Plugin/Rescan/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Rescan/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/Rescan/install.xml
+%%SLIMDIR%%/Slim/Plugin/Rescan/strings.txt
+%%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/HTML/EN/plugins/RhapsodyDirect/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/RPDS.pm
+%%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/install.xml
+%%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/strings.txt
+%%SLIMDIR%%/Slim/Plugin/SavePlaylist/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/SavePlaylist/install.xml
+%%SLIMDIR%%/Slim/Plugin/SavePlaylist/strings.txt
+%%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/HTML/EN/plugins/ShoutcastBrowser/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/install.xml
+%%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Slacker/HTML/Default/html/images/btn_slacker_ban.gif
+%%SLIMDIR%%/Slim/Plugin/Slacker/HTML/Default/html/images/btn_slacker_fav.gif
+%%SLIMDIR%%/Slim/Plugin/Slacker/HTML/Default/html/images/btn_slacker_fav_on.gif
+%%SLIMDIR%%/Slim/Plugin/Slacker/HTML/EN/plugins/Slacker/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/Slacker/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Slacker/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/Slacker/install.xml
+%%SLIMDIR%%/Slim/Plugin/Slacker/strings.txt
+%%SLIMDIR%%/Slim/Plugin/SlimTris/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/SlimTris/install.xml
+%%SLIMDIR%%/Slim/Plugin/SlimTris/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Snow/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Snow/install.xml
+%%SLIMDIR%%/Slim/Plugin/Snow/strings.txt
+%%SLIMDIR%%/Slim/Plugin/Sounds/HTML/EN/plugins/Sounds/html/images/icon.png
+%%SLIMDIR%%/Slim/Plugin/Sounds/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Sounds/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/Sounds/install.xml
+%%SLIMDIR%%/Slim/Plugin/Sounds/strings.txt
+%%SLIMDIR%%/Slim/Plugin/TT/Clients.pm
+%%SLIMDIR%%/Slim/Plugin/TT/Prefs.pm
+%%SLIMDIR%%/Slim/Plugin/TT/README
+%%SLIMDIR%%/Slim/Plugin/Visualizer/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/Visualizer/install.xml
+%%SLIMDIR%%/Slim/Plugin/Visualizer/strings.txt
+%%SLIMDIR%%/Slim/Plugin/iTunes/Common.pm
+%%SLIMDIR%%/Slim/Plugin/iTunes/HTML/EN/plugins/iTunes/settings/itunes.html
+%%SLIMDIR%%/Slim/Plugin/iTunes/Importer.pm
+%%SLIMDIR%%/Slim/Plugin/iTunes/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/iTunes/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/iTunes/install.xml
+%%SLIMDIR%%/Slim/Plugin/iTunes/strings.txt
+%%SLIMDIR%%/Slim/Plugin/xPL/HTML/EN/plugins/xPL/settings/basic.html
+%%SLIMDIR%%/Slim/Plugin/xPL/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/xPL/Settings.pm
+%%SLIMDIR%%/Slim/Plugin/xPL/install.xml
+%%SLIMDIR%%/Slim/Plugin/xPL/strings.txt
+%%SLIMDIR%%/Slim/Schema.pm
+%%SLIMDIR%%/Slim/Schema/Age.pm
+%%SLIMDIR%%/Slim/Schema/Album.pm
+%%SLIMDIR%%/Slim/Schema/Comment.pm
+%%SLIMDIR%%/Slim/Schema/Contributor.pm
+%%SLIMDIR%%/Slim/Schema/ContributorAlbum.pm
+%%SLIMDIR%%/Slim/Schema/ContributorTrack.pm
+%%SLIMDIR%%/Slim/Schema/DBI.pm
+%%SLIMDIR%%/Slim/Schema/Debug.pm
+%%SLIMDIR%%/Slim/Schema/Genre.pm
+%%SLIMDIR%%/Slim/Schema/GenreTrack.pm
+%%SLIMDIR%%/Slim/Schema/MetaInformation.pm
+%%SLIMDIR%%/Slim/Schema/PageBar.pm
+%%SLIMDIR%%/Slim/Schema/Playlist.pm
+%%SLIMDIR%%/Slim/Schema/PlaylistTrack.pm
+%%SLIMDIR%%/Slim/Schema/Progress.pm
+%%SLIMDIR%%/Slim/Schema/Rescan.pm
+%%SLIMDIR%%/Slim/Schema/ResultSet/Age.pm
+%%SLIMDIR%%/Slim/Schema/ResultSet/Album.pm
+%%SLIMDIR%%/Slim/Schema/ResultSet/Base.pm
+%%SLIMDIR%%/Slim/Schema/ResultSet/Contributor.pm
+%%SLIMDIR%%/Slim/Schema/ResultSet/Genre.pm
+%%SLIMDIR%%/Slim/Schema/ResultSet/Playlist.pm
+%%SLIMDIR%%/Slim/Schema/ResultSet/PlaylistTrack.pm
+%%SLIMDIR%%/Slim/Schema/ResultSet/Track.pm
+%%SLIMDIR%%/Slim/Schema/ResultSet/Year.pm
+%%SLIMDIR%%/Slim/Schema/Storage.pm
+%%SLIMDIR%%/Slim/Schema/Track.pm
+%%SLIMDIR%%/Slim/Schema/Year.pm
+%%SLIMDIR%%/Slim/Utils/Alarms.pm
+%%SLIMDIR%%/Slim/Utils/Cache.pm
+%%SLIMDIR%%/Slim/Utils/ChangeNotify.pm
+%%SLIMDIR%%/Slim/Utils/ChangeNotify/Linux.pm
+%%SLIMDIR%%/Slim/Utils/ChangeNotify/Win32.pm
+%%SLIMDIR%%/Slim/Utils/DateTime.pm
+%%SLIMDIR%%/Slim/Utils/Errno.pm
+%%SLIMDIR%%/Slim/Utils/Favorites.pm
+%%SLIMDIR%%/Slim/Utils/Firmware.pm
+%%SLIMDIR%%/Slim/Utils/IPDetect.pm
+%%SLIMDIR%%/Slim/Utils/Log.pm
+%%SLIMDIR%%/Slim/Utils/MemoryUsage.pm
+%%SLIMDIR%%/Slim/Utils/Misc.pm
+%%SLIMDIR%%/Slim/Utils/MySQLHelper.pm
+%%SLIMDIR%%/Slim/Utils/Network.pm
+%%SLIMDIR%%/Slim/Utils/OSDetect.pm
+%%SLIMDIR%%/Slim/Utils/PerfMon.pm
+%%SLIMDIR%%/Slim/Utils/PerlRunTime.pm
+%%SLIMDIR%%/Slim/Utils/PluginManager.pm
+%%SLIMDIR%%/Slim/Utils/Prefs.pm
+%%SLIMDIR%%/Slim/Utils/Prefs/Base.pm
+%%SLIMDIR%%/Slim/Utils/Prefs/Client.pm
+%%SLIMDIR%%/Slim/Utils/Prefs/Namespace.pm
+%%SLIMDIR%%/Slim/Utils/Prefs/OldPrefs.pm
+%%SLIMDIR%%/Slim/Utils/Progress.pm
+%%SLIMDIR%%/Slim/Utils/SQLHelper.pm
+%%SLIMDIR%%/Slim/Utils/Scanner.pm
+%%SLIMDIR%%/Slim/Utils/Scheduler.pm
+%%SLIMDIR%%/Slim/Utils/SoundCheck.pm
+%%SLIMDIR%%/Slim/Utils/Strings.pm
+%%SLIMDIR%%/Slim/Utils/Text.pm
+%%SLIMDIR%%/Slim/Utils/Timers.pm
+%%SLIMDIR%%/Slim/Utils/UPnPMediaServer.pm
+%%SLIMDIR%%/Slim/Utils/Unicode.pm
+%%SLIMDIR%%/Slim/Utils/Validate.pm
+%%SLIMDIR%%/Slim/Utils/Versions.pm
+%%SLIMDIR%%/Slim/Web/Cometd.pm
+%%SLIMDIR%%/Slim/Web/Cometd/Manager.pm
+%%SLIMDIR%%/Slim/Web/Graphics.pm
+%%SLIMDIR%%/Slim/Web/HTTP.pm
+%%SLIMDIR%%/Slim/Web/HTTP/ClientConn.pm
+%%SLIMDIR%%/Slim/Web/JSONRPC.pm
+%%SLIMDIR%%/Slim/Web/Pages.pm
+%%SLIMDIR%%/Slim/Web/Pages/BrowseDB.pm
+%%SLIMDIR%%/Slim/Web/Pages/BrowseTree.pm
+%%SLIMDIR%%/Slim/Web/Pages/EditPlaylist.pm
+%%SLIMDIR%%/Slim/Web/Pages/History.pm
+%%SLIMDIR%%/Slim/Web/Pages/Home.pm
+%%SLIMDIR%%/Slim/Web/Pages/LiveSearch.pm
+%%SLIMDIR%%/Slim/Web/Pages/Playlist.pm
+%%SLIMDIR%%/Slim/Web/Pages/Progress.pm
+%%SLIMDIR%%/Slim/Web/Pages/Search.pm
+%%SLIMDIR%%/Slim/Web/Pages/Status.pm
+%%SLIMDIR%%/Slim/Web/Settings.pm
+%%SLIMDIR%%/Slim/Web/Settings/Player/Alarm.pm
+%%SLIMDIR%%/Slim/Web/Settings/Player/Audio.pm
+%%SLIMDIR%%/Slim/Web/Settings/Player/Basic.pm
+%%SLIMDIR%%/Slim/Web/Settings/Player/Display.pm
+%%SLIMDIR%%/Slim/Web/Settings/Player/Menu.pm
+%%SLIMDIR%%/Slim/Web/Settings/Player/Remote.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/Basic.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/Behavior.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/Debugging.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/FileSelector.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/FileTypes.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/Index.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/Network.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/Performance.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/Plugins.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/Security.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/Software.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/SqueezeNetwork.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/Status.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/TextFormatting.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/UserInterface.pm
+%%SLIMDIR%%/Slim/Web/Settings/Server/Wizard.pm
+%%SLIMDIR%%/Slim/Web/Setup.pm
+%%SLIMDIR%%/Slim/Web/Template/Context.pm
+%%SLIMDIR%%/Slim/Web/UPnPMediaServer.pm
+%%SLIMDIR%%/Slim/Web/XMLBrowser.pm
+%%SLIMDIR%%/Slim/bootstrap.pm
+%%SLIMDIR%%/convert.conf.sample
+%%SLIMDIR%%/lib/Audio/APE.pm
+%%SLIMDIR%%/lib/Audio/APETags.pm
+%%SLIMDIR%%/lib/Audio/FLAC/Header.pm
+%%SLIMDIR%%/lib/Audio/Musepack.pm
+%%SLIMDIR%%/lib/Audio/WMA.pm
+%%SLIMDIR%%/lib/Audio/Wav.pm
+%%SLIMDIR%%/lib/Audio/Wav/Read.pm
+%%SLIMDIR%%/lib/Audio/Wav/Tools.pm
+%%SLIMDIR%%/lib/Audio/Wav/Write.pm
+%%SLIMDIR%%/lib/Audio/Wav/Write/Header.pm
+%%SLIMDIR%%/lib/Cache/FileBackend.pm
+%%SLIMDIR%%/lib/MP3/Info.pm
+%%SLIMDIR%%/lib/MP4/Info.pm
+%%SLIMDIR%%/lib/MPEG/Audio/Frame.pm
+%%SLIMDIR%%/lib/Net/UPnP/Service.pm
+%%SLIMDIR%%/lib/Ogg/Vorbis/Header/PurePerl.pm
+%%SLIMDIR%%/lib/README
+%%SLIMDIR%%/modules.conf
+%%SLIMDIR%%/revision.txt
+%%SLIMDIR%%/scanner.pl
+%%SLIMDIR%%/slimserver.pl
+%%SLIMDIR%%/strings.txt
+%%SLIMDIR%%/types.conf.sample
+squeezecenter/Cache
+squeezecenter/MySQL/errmsg.txt
+squeezecenter/MySQL/errmsg.sys
+@dirrm %%SLIMDIR%%/lib/Ogg/Vorbis/Header
+@dirrm %%SLIMDIR%%/lib/Ogg/Vorbis
+@dirrm %%SLIMDIR%%/lib/Ogg
+@dirrm %%SLIMDIR%%/lib/Net/UPnP
+@dirrm %%SLIMDIR%%/lib/Net
+@dirrm %%SLIMDIR%%/lib/MPEG/Audio
+@dirrm %%SLIMDIR%%/lib/MPEG
+@dirrm %%SLIMDIR%%/lib/MP4
+@dirrm %%SLIMDIR%%/lib/MP3
+@dirrm %%SLIMDIR%%/lib/Cache
+@dirrm %%SLIMDIR%%/lib/Audio/Wav/Write
+@dirrm %%SLIMDIR%%/lib/Audio/Wav
+@dirrm %%SLIMDIR%%/lib/Audio/FLAC
+@dirrm %%SLIMDIR%%/lib/Audio
+@dirrm %%SLIMDIR%%/lib
+@dirrm %%SLIMDIR%%/Slim/Web/Template
+@dirrm %%SLIMDIR%%/Slim/Web/Settings/Server
+@dirrm %%SLIMDIR%%/Slim/Web/Settings/Player
+@dirrm %%SLIMDIR%%/Slim/Web/Settings
+@dirrm %%SLIMDIR%%/Slim/Web/Pages
+@dirrm %%SLIMDIR%%/Slim/Web/HTTP
+@dirrm %%SLIMDIR%%/Slim/Web/Cometd
+@dirrm %%SLIMDIR%%/Slim/Web
+@dirrm %%SLIMDIR%%/Slim/Utils/Prefs
+@dirrm %%SLIMDIR%%/Slim/Utils/ChangeNotify
+@dirrm %%SLIMDIR%%/Slim/Utils
+@dirrm %%SLIMDIR%%/Slim/Schema/ResultSet
+@dirrm %%SLIMDIR%%/Slim/Schema
+@dirrm %%SLIMDIR%%/Slim/Plugin/xPL/HTML/EN/plugins/xPL/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/xPL/HTML/EN/plugins/xPL
+@dirrm %%SLIMDIR%%/Slim/Plugin/xPL/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/xPL/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/xPL/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/xPL
+@dirrm %%SLIMDIR%%/Slim/Plugin/iTunes/HTML/EN/plugins/iTunes/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/iTunes/HTML/EN/plugins/iTunes
+@dirrm %%SLIMDIR%%/Slim/Plugin/iTunes/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/iTunes/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/iTunes/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/iTunes
+@dirrm %%SLIMDIR%%/Slim/Plugin/Visualizer
+@dirrm %%SLIMDIR%%/Slim/Plugin/TT
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sounds/HTML/EN/plugins/Sounds/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sounds/HTML/EN/plugins/Sounds/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sounds/HTML/EN/plugins/Sounds
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sounds/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sounds/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sounds/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Sounds
+@dirrm %%SLIMDIR%%/Slim/Plugin/Snow
+@dirrm %%SLIMDIR%%/Slim/Plugin/SlimTris
+@dirrm %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/EN/plugins/Slacker/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/EN/plugins/Slacker/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/EN/plugins/Slacker
+@dirrm %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/Default/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/Default/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Slacker/HTML/Default
+@dirrm %%SLIMDIR%%/Slim/Plugin/Slacker/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Slacker
+@dirrm %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/HTML/EN/plugins/ShoutcastBrowser/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/HTML/EN/plugins/ShoutcastBrowser/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/HTML/EN/plugins/ShoutcastBrowser
+@dirrm %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/ShoutcastBrowser
+@dirrm %%SLIMDIR%%/Slim/Plugin/SavePlaylist
+@dirrm %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/HTML/EN/plugins/RhapsodyDirect/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/HTML/EN/plugins/RhapsodyDirect/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/HTML/EN/plugins/RhapsodyDirect
+@dirrm %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect
+@dirrm %%SLIMDIR%%/Slim/Plugin/Rescan/HTML/EN/plugins/Rescan/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/Rescan/HTML/EN/plugins/Rescan
+@dirrm %%SLIMDIR%%/Slim/Plugin/Rescan/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Rescan/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Rescan/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Rescan
+@dirrm %%SLIMDIR%%/Slim/Plugin/RandomPlay/HTML/EN/plugins/RandomPlay/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/RandomPlay/HTML/EN/plugins/RandomPlay/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/RandomPlay/HTML/EN/plugins/RandomPlay
+@dirrm %%SLIMDIR%%/Slim/Plugin/RandomPlay/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/RandomPlay/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/RandomPlay/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/RandomPlay
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioTime/HTML/EN/plugins/RadioTime/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioTime/HTML/EN/plugins/RadioTime/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioTime/HTML/EN/plugins/RadioTime/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioTime/HTML/EN/plugins/RadioTime
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioTime/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioTime/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioTime/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioTime
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioIO/HTML/EN/plugins/RadioIO/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioIO/HTML/EN/plugins/RadioIO/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioIO/HTML/EN/plugins/RadioIO
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioIO/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioIO/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioIO/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/RadioIO
+@dirrm %%SLIMDIR%%/Slim/Plugin/RSSNews/HTML/EN/plugins/RSSNews/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/RSSNews/HTML/EN/plugins/RSSNews
+@dirrm %%SLIMDIR%%/Slim/Plugin/RSSNews/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/RSSNews/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/RSSNews/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/RSSNews
+@dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN/plugins/RS232/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN/plugins/RS232
+@dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/RS232/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/RS232
+@dirrm %%SLIMDIR%%/Slim/Plugin/RPC
+@dirrm %%SLIMDIR%%/Slim/Plugin/PreventStandby
+@dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins/Podcast
+@dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Podcast/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Podcast
+@dirrm %%SLIMDIR%%/Slim/Plugin/Picks/HTML/EN/plugins/Picks/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Picks/HTML/EN/plugins/Picks/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Picks/HTML/EN/plugins/Picks
+@dirrm %%SLIMDIR%%/Slim/Plugin/Picks/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Picks/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Picks/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Picks
+@dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/EN/plugins/Pandora/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/EN/plugins/Pandora/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/EN/plugins/Pandora
+@dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default
+@dirrm %%SLIMDIR%%/Slim/Plugin/Pandora/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Pandora
+@dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic
+@dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/MusicMagic
+@dirrm %%SLIMDIR%%/Slim/Plugin/MP3tunes/HTML/EN/plugins/MP3tunes/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/MP3tunes/HTML/EN/plugins/MP3tunes/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/MP3tunes/HTML/EN/plugins/MP3tunes
+@dirrm %%SLIMDIR%%/Slim/Plugin/MP3tunes/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/MP3tunes/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/MP3tunes/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/MP3tunes
+@dirrm %%SLIMDIR%%/Slim/Plugin/Live365/HTML/EN/plugins/Live365/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Live365/HTML/EN/plugins/Live365/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Live365/HTML/EN/plugins/Live365
+@dirrm %%SLIMDIR%%/Slim/Plugin/Live365/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Live365/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Live365/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Live365
+@dirrm %%SLIMDIR%%/Slim/Plugin/LMA/HTML/EN/plugins/LMA/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/LMA/HTML/EN/plugins/LMA/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/LMA/HTML/EN/plugins/LMA
+@dirrm %%SLIMDIR%%/Slim/Plugin/LMA/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/LMA/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/LMA/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/LMA
+@dirrm %%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN/plugins/InfoBrowser/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN/plugins/InfoBrowser/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN/plugins/InfoBrowser/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN/plugins/InfoBrowser
+@dirrm %%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/InfoBrowser/Default
+@dirrm %%SLIMDIR%%/Slim/Plugin/InfoBrowser
+@dirrm %%SLIMDIR%%/Slim/Plugin/Health/HTML/EN/plugins/Health
+@dirrm %%SLIMDIR%%/Slim/Plugin/Health/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Health/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Health/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Health
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/plugins/Favorites/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/plugins/Favorites/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/plugins/Favorites
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/Default/plugins/Favorites/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/Default/plugins/Favorites
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/Default/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites/HTML/Default
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/Favorites
+@dirrm %%SLIMDIR%%/Slim/Plugin/DigitalInput/HTML/EN/plugins/DigitalInput/html/images
+@dirrm %%SLIMDIR%%/Slim/Plugin/DigitalInput/HTML/EN/plugins/DigitalInput/html
+@dirrm %%SLIMDIR%%/Slim/Plugin/DigitalInput/HTML/EN/plugins/DigitalInput
+@dirrm %%SLIMDIR%%/Slim/Plugin/DigitalInput/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/DigitalInput/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/DigitalInput/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/DigitalInput
+@dirrm %%SLIMDIR%%/Slim/Plugin/DateTime/HTML/EN/plugins/DateTime/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/DateTime/HTML/EN/plugins/DateTime
+@dirrm %%SLIMDIR%%/Slim/Plugin/DateTime/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/DateTime/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/DateTime/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/DateTime
+@dirrm %%SLIMDIR%%/Slim/Plugin/CLI/HTML/EN/plugins/CLI/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/CLI/HTML/EN/plugins/CLI
+@dirrm %%SLIMDIR%%/Slim/Plugin/CLI/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/CLI/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/CLI/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/CLI
+@dirrm %%SLIMDIR%%/Slim/Plugin/AudioScrobbler/HTML/EN/plugins/AudioScrobbler/settings
+@dirrm %%SLIMDIR%%/Slim/Plugin/AudioScrobbler/HTML/EN/plugins/AudioScrobbler
+@dirrm %%SLIMDIR%%/Slim/Plugin/AudioScrobbler/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Slim/Plugin/AudioScrobbler/HTML/EN
+@dirrm %%SLIMDIR%%/Slim/Plugin/AudioScrobbler/HTML
+@dirrm %%SLIMDIR%%/Slim/Plugin/AudioScrobbler
+@dirrm %%SLIMDIR%%/Slim/Plugin
+@dirrm %%SLIMDIR%%/Slim/Player/Protocols
+@dirrm %%SLIMDIR%%/Slim/Player
+@dirrm %%SLIMDIR%%/Slim/Networking/UPnP
+@dirrm %%SLIMDIR%%/Slim/Networking/SqueezeNetwork
+@dirrm %%SLIMDIR%%/Slim/Networking/SliMP3
+@dirrm %%SLIMDIR%%/Slim/Networking/Async/Socket
+@dirrm %%SLIMDIR%%/Slim/Networking/Async
+@dirrm %%SLIMDIR%%/Slim/Networking
+@dirrm %%SLIMDIR%%/Slim/Music
+@dirrm %%SLIMDIR%%/Slim/Hardware
+@dirrm %%SLIMDIR%%/Slim/Formats/Playlists
+@dirrm %%SLIMDIR%%/Slim/Formats
+@dirrm %%SLIMDIR%%/Slim/Display/Lib
+@dirrm %%SLIMDIR%%/Slim/Display
+@dirrm %%SLIMDIR%%/Slim/Control
+@dirrm %%SLIMDIR%%/Slim/Buttons/Input
+@dirrm %%SLIMDIR%%/Slim/Buttons
+@dirrm %%SLIMDIR%%/Slim
+@dirrm %%SLIMDIR%%/SQL/mysql
+@dirrm %%SLIMDIR%%/SQL
+@dirrm %%SLIMDIR%%/MySQL
+@dirrm %%SLIMDIR%%/IR
+@dirrm %%SLIMDIR%%/HTML/xmlTelCanto/html
+@dirrm %%SLIMDIR%%/HTML/xmlTelCanto
+@dirrm %%SLIMDIR%%/HTML/xml/html
+@dirrm %%SLIMDIR%%/HTML/xml
+@dirrm %%SLIMDIR%%/HTML/Touch/html
+@dirrm %%SLIMDIR%%/HTML/Touch
+@dirrm %%SLIMDIR%%/HTML/Nokia770/html/images/smaller
+@dirrm %%SLIMDIR%%/HTML/Nokia770/html/images/larger
+@dirrm %%SLIMDIR%%/HTML/Nokia770/html/images
+@dirrm %%SLIMDIR%%/HTML/Nokia770/html
+@dirrm %%SLIMDIR%%/HTML/Nokia770
+@dirrm %%SLIMDIR%%/HTML/Handheld/html/images
+@dirrm %%SLIMDIR%%/HTML/Handheld/html
+@dirrm %%SLIMDIR%%/HTML/Handheld
+@dirrm %%SLIMDIR%%/HTML/Fishbone/html/images
+@dirrm %%SLIMDIR%%/HTML/Fishbone/html/docs
+@dirrm %%SLIMDIR%%/HTML/Fishbone/html
+@dirrm %%SLIMDIR%%/HTML/Fishbone
+@dirrm %%SLIMDIR%%/HTML/EN/settings/server
+@dirrm %%SLIMDIR%%/HTML/EN/settings/player
+@dirrm %%SLIMDIR%%/HTML/EN/settings
+@dirrm %%SLIMDIR%%/HTML/EN/html/softsqueeze/lib
+@dirrm %%SLIMDIR%%/HTML/EN/html/softsqueeze/icons
+@dirrm %%SLIMDIR%%/HTML/EN/html/softsqueeze
+@dirrm %%SLIMDIR%%/HTML/EN/html/scriptaculous
+@dirrm %%SLIMDIR%%/HTML/EN/html/images/ServiceProviders
+@dirrm %%SLIMDIR%%/HTML/EN/html/images
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tree
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/toolbar
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/tabs
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/sizer
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/shared
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/qtip
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/panel
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/menu
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/layout
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/grid
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/form
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/editor
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/dd
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/box
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default/basic-dialog
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images/default
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/images
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources/css
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/resources
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/adapter/ext
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext/adapter
+@dirrm %%SLIMDIR%%/HTML/EN/html/ext
+@dirrm %%SLIMDIR%%/HTML/EN/html/errors
+@dirrm %%SLIMDIR%%/HTML/EN/html/docs/vfdshots
+@dirrm %%SLIMDIR%%/HTML/EN/html/docs
+@dirrm %%SLIMDIR%%/HTML/EN/html
+@dirrm %%SLIMDIR%%/HTML/EN
+@dirrm %%SLIMDIR%%/HTML/Default/settings
+@dirrm %%SLIMDIR%%/HTML/Default/html/images/slim-ext
+@dirrm %%SLIMDIR%%/HTML/Default/html/images
+@dirrm %%SLIMDIR%%/HTML/Default/html/docs
+@dirrm %%SLIMDIR%%/HTML/Default/html
+@dirrm %%SLIMDIR%%/HTML/Default
+@dirrm %%SLIMDIR%%/HTML/Classic/html/images
+@dirrm %%SLIMDIR%%/HTML/Classic/html
+@dirrm %%SLIMDIR%%/HTML/Classic
+@dirrm %%SLIMDIR%%/HTML
+@dirrm %%SLIMDIR%%/Graphics
+@dirrm %%SLIMDIR%%/Firmware
+@dirrm %%SLIMDIR%%/CPAN/XML/XSPF
+@dirrm %%SLIMDIR%%/CPAN/XML/SAX/PurePerl/Reader
+@dirrm %%SLIMDIR%%/CPAN/XML/SAX/PurePerl
+@dirrm %%SLIMDIR%%/CPAN/XML/SAX
+@dirrm %%SLIMDIR%%/CPAN/XML
+@dirrm %%SLIMDIR%%/CPAN/WWW/RobotRules
+@dirrm %%SLIMDIR%%/CPAN/WWW
+@dirrm %%SLIMDIR%%/CPAN/URI/urn
+@dirrm %%SLIMDIR%%/CPAN/URI/file
+@dirrm %%SLIMDIR%%/CPAN/URI
+@dirrm %%SLIMDIR%%/CPAN/Time
+@dirrm %%SLIMDIR%%/CPAN/Tie/Cache/LRU
+@dirrm %%SLIMDIR%%/CPAN/Tie/Cache
+@dirrm %%SLIMDIR%%/CPAN/Tie
+@dirrm %%SLIMDIR%%/CPAN/Text/Unidecode
+@dirrm %%SLIMDIR%%/CPAN/Text
+@dirrm %%SLIMDIR%%/CPAN/Test/Builder/Tester
+@dirrm %%SLIMDIR%%/CPAN/Test/Builder
+@dirrm %%SLIMDIR%%/CPAN/Test
+@dirrm %%SLIMDIR%%/CPAN/SQL/Abstract
+@dirrm %%SLIMDIR%%/CPAN/SQL
+@dirrm %%SLIMDIR%%/CPAN/RPC/XML
+@dirrm %%SLIMDIR%%/CPAN/RPC
+@dirrm %%SLIMDIR%%/CPAN/Proc/Background
+@dirrm %%SLIMDIR%%/CPAN/Proc
+@dirrm %%SLIMDIR%%/CPAN/Path/Class
+@dirrm %%SLIMDIR%%/CPAN/Path
+@dirrm %%SLIMDIR%%/CPAN/POE/XS/Queue
+@dirrm %%SLIMDIR%%/CPAN/POE/XS
+@dirrm %%SLIMDIR%%/CPAN/POE/Queue
+@dirrm %%SLIMDIR%%/CPAN/POE
+@dirrm %%SLIMDIR%%/CPAN/PAR
+@dirrm %%SLIMDIR%%/CPAN/Number
+@dirrm %%SLIMDIR%%/CPAN/Net/UPnP
+@dirrm %%SLIMDIR%%/CPAN/Net/HTTP
+@dirrm %%SLIMDIR%%/CPAN/Net/DNS/Resolver
+@dirrm %%SLIMDIR%%/CPAN/Net/DNS/RR
+@dirrm %%SLIMDIR%%/CPAN/Net/DNS
+@dirrm %%SLIMDIR%%/CPAN/Net
+@dirrm %%SLIMDIR%%/CPAN/Math
+@dirrm %%SLIMDIR%%/CPAN/MPEG/Audio
+@dirrm %%SLIMDIR%%/CPAN/MPEG
+@dirrm %%SLIMDIR%%/CPAN/Log/Log4perl/Layout
+@dirrm %%SLIMDIR%%/CPAN/Log/Log4perl/JavaMap
+@dirrm %%SLIMDIR%%/CPAN/Log/Log4perl/Filter
+@dirrm %%SLIMDIR%%/CPAN/Log/Log4perl/Config
+@dirrm %%SLIMDIR%%/CPAN/Log/Log4perl/Appender
+@dirrm %%SLIMDIR%%/CPAN/Log/Log4perl
+@dirrm %%SLIMDIR%%/CPAN/Log
+@dirrm %%SLIMDIR%%/CPAN/Locale
+@dirrm %%SLIMDIR%%/CPAN/LWP/Protocol
+@dirrm %%SLIMDIR%%/CPAN/LWP/Authen
+@dirrm %%SLIMDIR%%/CPAN/LWP
+@dirrm %%SLIMDIR%%/CPAN/JSON/XS
+@dirrm %%SLIMDIR%%/CPAN/JSON
+@dirrm %%SLIMDIR%%/CPAN/Imager
+@dirrm %%SLIMDIR%%/CPAN/IO
+@dirrm %%SLIMDIR%%/CPAN/I18N/LangTags
+@dirrm %%SLIMDIR%%/CPAN/I18N
+@dirrm %%SLIMDIR%%/CPAN/HTTP/Request
+@dirrm %%SLIMDIR%%/CPAN/HTTP/Headers
+@dirrm %%SLIMDIR%%/CPAN/HTTP/Cookies
+@dirrm %%SLIMDIR%%/CPAN/HTTP
+@dirrm %%SLIMDIR%%/CPAN/HTML
+@dirrm %%SLIMDIR%%/CPAN/GD
+@dirrm %%SLIMDIR%%/CPAN/File/Spec
+@dirrm %%SLIMDIR%%/CPAN/File/Find
+@dirrm %%SLIMDIR%%/CPAN/File
+@dirrm %%SLIMDIR%%/CPAN/Exporter
+@dirrm %%SLIMDIR%%/CPAN/Encode/Detect
+@dirrm %%SLIMDIR%%/CPAN/Encode
+@dirrm %%SLIMDIR%%/CPAN/Digest
+@dirrm %%SLIMDIR%%/CPAN/Devel
+@dirrm %%SLIMDIR%%/CPAN/Date
+@dirrm %%SLIMDIR%%/CPAN/Data
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/UUIDMaker/Win32API
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/UUIDMaker/Win32
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/UUIDMaker/Data
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/UUIDMaker/APR
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/UUIDMaker
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/Sybase
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI/ODBC
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/Storage/DBI
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/Storage
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/Serialize
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/ResultSourceProxy
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/ResultSource
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/Relationship
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/PK/Auto
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/PK
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/Manual
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/InflateColumn
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class/ClassResolver
+@dirrm %%SLIMDIR%%/CPAN/DBIx/Class
+@dirrm %%SLIMDIR%%/CPAN/DBIx
+@dirrm %%SLIMDIR%%/CPAN/DBI/Shell
+@dirrm %%SLIMDIR%%/CPAN/DBI/ProfileDumper
+@dirrm %%SLIMDIR%%/CPAN/DBI/Format
+@dirrm %%SLIMDIR%%/CPAN/DBI/DBD
+@dirrm %%SLIMDIR%%/CPAN/DBI/Const/GetInfo
+@dirrm %%SLIMDIR%%/CPAN/DBI/Const
+@dirrm %%SLIMDIR%%/CPAN/DBI
+@dirrm %%SLIMDIR%%/CPAN/DBD/mysql
+@dirrm %%SLIMDIR%%/CPAN/DBD
+@dirrm %%SLIMDIR%%/CPAN/Compress
+@dirrm %%SLIMDIR%%/CPAN/Class/Virtually
+@dirrm %%SLIMDIR%%/CPAN/Class/Data
+@dirrm %%SLIMDIR%%/CPAN/Class/Accessor/Chained
+@dirrm %%SLIMDIR%%/CPAN/Class/Accessor
+@dirrm %%SLIMDIR%%/CPAN/Class
+@dirrm %%SLIMDIR%%/CPAN/Carp
+@dirrm %%SLIMDIR%%/CPAN/Cache
+@dirrm %%SLIMDIR%%/CPAN/CGI
+@dirrm %%SLIMDIR%%/CPAN/Archive/Zip
+@dirrm %%SLIMDIR%%/CPAN/Archive
+@dirrm %%SLIMDIR%%/CPAN/Algorithm
+@dirrm %%SLIMDIR%%/CPAN
+@dirrmtry %%SLIMDIR%%/Plugins
+@dirrmtry %%SLIMDIR%%
+@dirrm %%DOCSDIR%%
+@unexec rm -rf /var/db/squeezecenter/cache > /dev/null 2>&1 || true
+@dirrmtry /var/db/squeezecenter/playlists
+@dirrmtry /var/db/squeezecenter
+@unexec test -d /var/db/squeezecenter && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove /var/db/squeezecenter and its contents manually.")
