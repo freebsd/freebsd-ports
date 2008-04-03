@@ -1,14 +1,32 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
 
-ETCSHELLS="${ETCSHELLS:-/etc/shells}"
-ETCPASSWD="${ETCPASSWD:-/etc/passwd}"
+# PROVIDE: scponlyc
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
 
-# script to create devfs filesystems at boot time for scponlyc
-# chroot'ed users. We will read ${ETCSHELLS} to determine
-# where scponlyc is installed. Then we'll iterate through
-# each user in ${ETCPASSWD} to find users whose shell is set to
-# scponlyc. For each such user found, we will create a
-# minimal devfs under ~/dev.
+# Add the following lines to /etc/rc.conf to enable scponly:
+# spconlyc_enable (bool):		Set to "NO" by default.
+#					Set it to "YES" to enable scponly
+# scponlyc_shells (str):		Set to "/etc/shells" by default.
+# scponlyc_passwd (str):		Set to "/etc/passwd" by default.
+
+. %%RC_SUBR%%
+
+scponlyc_shells="${scponlyc_shells:-/etc/shells}"
+scponlyc_passwd="${scponlyc_passwd:-/etc/passwd}"
+
+name="scponlyc"
+rcvar=`set_rcvar`
+
+start_cmd="scponlyc_startcmd"
+stop_cmd="scponlyc_stopcmd"
+
+required_files="$scponlyc_shells $scponlyc_passwd"
+
+scponlyc=%%PREFIX%%/sbin/scponlyc
 
 make_devfs() {
 	# $1 is the user name whose home directory needs a minimal
@@ -16,41 +34,46 @@ make_devfs() {
 
 	eval DEV="~$1/dev"
 	while /sbin/umount "${DEV}" 2>/dev/null; do :; done
-	rm -rf "${DEV}"
-	mkdir -p "${DEV}"
-	if /sbin/mount_devfs devfs "${DEV}"; then
+	/bin/rm -rf "${DEV}"
+	/bin/mkdir -p "${DEV}"
+	if /sbin/mount -t devfs dev "${DEV}"; then
 		/sbin/devfs -m "${DEV}" rule -s 1 applyset && \
 		/sbin/devfs -m "${DEV}" rule -s 2 applyset || \
 		/sbin/umount "${DEV}" 2>/dev/null
 	fi
 }
 
+users_configured() {
 
-scponlyc_startup() {
-	# $1 is the path to the /etc/passwd file
+	if [ `/usr/bin/grep -c "/scponlyc$" ${scponlyc_shells} 2>/dev/null` -ne 1 ]; then
+		exit 1
+	fi
+}
 
-	grep "^[^#]*:.*:.*:.*:.*:.*:${SCPONLYC}$" < "$1" |
+scponlyc_startcmd() {
+
+	users_configured
+
+	/usr/bin/grep "^[^#]*:.*:.*:.*:.*:.*:${scponlyc}$" ${scponlyc_passwd} |
 		/usr/bin/awk -F: {'print $1'} |
 		while read USER; do
+			/bin/echo "${USER}/dev"
 			make_devfs "${USER}"
 		done
 }
 
-SCPONLYC=`/usr/bin/grep "/scponlyc$" ${ETCSHELLS} 2>/dev/null | /usr/bin/tail -1`
+scponlyc_stopcmd() {
 
-if [ "x${SCPONLYC}" = "x" ]; then
-	echo scponlyc is not defined in ${ETCSHELLS} >&2
-	exit 1
-fi
+	users_configured
 
-case "$1" in
-start)
-	scponlyc_startup "${ETCPASSWD}"
-	echo -n ' scponlyc'
-	;;
-*)
-	echo "Usage: `basename $0` start" >&2
-	;;
-esac
+	/usr/bin/grep "^[^#]*:.*:.*:.*:.*:.*:${scponlyc}$" ${scponlyc_passwd} |
+		/usr/bin/awk -F: {'print $1'} |
+		while read USER; do
+			/bin/echo "${USER}/dev"
+			eval DEV="~${USER}/dev"
+			/sbin/umount ${DEV} 2>/dev/null
+		done
+}
 
-exit 0
+load_rc_config $name
+run_rc_command "$1"

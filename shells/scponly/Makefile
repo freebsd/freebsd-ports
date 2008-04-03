@@ -70,11 +70,10 @@
 # to be installed.
 
 PORTNAME=	scponly
-PORTVERSION=	4.6
-PORTREVISION=	3
-CATEGORIES=	shells
+PORTVERSION=	4.8
+CATEGORIES=	shells security
 MASTER_SITES=	http://www.sublimation.org/scponly/ \
-		${MASTER_SITE_SOURCEFORGE}
+		SF
 MASTER_SITE_SUBDIR=	scponly
 EXTRACT_SUFX=	.tgz
 
@@ -83,9 +82,9 @@ COMMENT=	A tiny shell that only permits scp and sftp
 
 MAN8=		scponly.8
 
-GNU_CONFIGURE=	yes
+USE_RC_SUR=	scponlyc
 
-PATCH_STRIP=	-p1
+GNU_CONFIGURE=	yes
 
 OPTIONS=	SCPONLY_WILDCARDS "wildcards processing" on \
 		SCPONLY_GFTP "gftp compatibility" on \
