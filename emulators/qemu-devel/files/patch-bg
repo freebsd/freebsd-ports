@@ -4,15 +4,17 @@ Index: qemu/Makefile.target
  #########################################################
  
 -CPPFLAGS+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
-+CPPFLAGS+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DSMBD_COMMAND=\"${LOCALBASE}/sbin/smbd\" -I${LOCALBASE}/include
++CPPFLAGS+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DSMBD_COMMAND=\"${LOCALBASE}/sbin/smbd\" -I${LOCALBASE}/include -DPREFIX=\"${PREFIX}\"
  LIBS+=-lm
  ifndef CONFIG_USER_ONLY
  LIBS+=-lz
 Index: qemu/vl.c
 @@ -133,10 +133,12 @@
  
- #define DEFAULT_NETWORK_SCRIPT "/etc/qemu-ifup"
- #define DEFAULT_NETWORK_DOWN_SCRIPT "/etc/qemu-ifdown"
+-#define DEFAULT_NETWORK_SCRIPT "/etc/qemu-ifup"
+-#define DEFAULT_NETWORK_DOWN_SCRIPT "/etc/qemu-ifdown"
++#define DEFAULT_NETWORK_SCRIPT PREFIX "/etc/qemu-ifup"
++#define DEFAULT_NETWORK_DOWN_SCRIPT PREFIX "/etc/qemu-ifdown"
 +#ifndef SMBD_COMMAND 
  #ifdef __sun__
  #define SMBD_COMMAND "/usr/sfw/sbin/smbd"
