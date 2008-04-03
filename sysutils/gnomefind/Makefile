@@ -23,8 +23,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		gnome-find.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800023
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${GREP} -lR "<regex\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<regex\.h>|<gnuregex.h>|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
