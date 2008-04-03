@@ -7,6 +7,7 @@
 
 PORTNAME=	nzbget
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF
 
@@ -25,7 +26,13 @@ USE_GMAKE=	yes
 
 PLIST_FILES=	bin/nzbget etc/nzbget.conf.example
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile on 5.x
+.endif
+
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/nzbget.conf.example ${PREFIX}/etc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
