@@ -13,6 +13,13 @@ CONFIGURE_ARGS+=	--with-vba-package-format="builtin"
 CONFIGURE_ARGS+=	--enable-kde QTDIR="${QT_PREFIX}"
 .endif
 
+.if defined(WITHOUT_CUPS)
+CONFIGURE_ARGS+=	--enable-cups=no
+.else
+LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
+CONFIGURE_ARGS+=	--enable-cups=yes
+.endif
+
 .if defined(WITHOUT_MOZILLA)
 CONFIGURE_ARGS+=	--disable-mozilla
 .else
@@ -93,6 +100,11 @@ pre-fetch:
 	@${ECHO} "make -DWITH_TTF_BYTECODE_ENABLED"
 	@${ECHO} "See http://www.freetype.org/patents.html for details"
 .endif
+.endif
+.if !defined(WITHOUT_CUPS)
+	@${ECHO}
+	@${ECHO} "You can compile OOo without CUPS support with"
+	@${ECHO} "make -DWITHOUT_CUPS"
 .endif
 .if !defined(WITH_KDE)
 	@${ECHO}
