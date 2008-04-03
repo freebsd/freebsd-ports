@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	qsheff-II
-PORTVERSION=	2.1.r2
-PORTREVISION=	2
+PORTVERSION=	2.1.r3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/qsheff/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		SF/qsheff
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-r/}
 
 MAINTAINER=	ozkan@enderunix.org
@@ -19,28 +17,32 @@ COMMENT=	A qmail-queue replacement to filter mail traffic
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ripmime:${PORTSDIR}/mail/ripmime
 RUN_DEPENDS=	${BUILD_DEPENDS}
-USE_QMAIL=	yes
 
 GNU_CONFIGURE=	YES
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-PORTDOCS=	README COPYING AUTHORS ChangeLog \
-		INSTALL UPGRADE THANKS TODO
+USE_QMAIL=	yes
 
-OPTIONS=	CLAMAV "Integrate with Clam AntiVirus" on \
-			SPAMTAG "Enable Spam Tagging" off \
-			VIRUSTAG "Enable Virus Tagging" off \
-			DISABLELOCAL "Disable Filters For Local Users" off \
-			SYSLOG "Enable Syslog Logging" off \
-			BACKUP "Enable Logging Incoming/Outgoing Mail" off \
-			CUSTOMERROR "Enable Custom Error Patch" off \
-			DEBUG "Enable Debug Messages" off \
+DOCS=		README COPYING AUTHORS ChangeLog INSTALL THANKS TODO
+EXAMPLES=	sample-OK.msg sample-SPAM.msg sample-VIRUS.msg
+CONTRIB=	README qq-custom-error-patch.diff qq-patch.diff \
+		qsheff-patch.diff
+FILES=		handbook.en.txt handbook.tr.txt spamass-qsheff.en.html
 
 CONFIGURE_ARGS+=	--with-qmaildir=${QMAIL_PREFIX}
 
+OPTIONS=	CLAMAV "Integrate with Clam AntiVirus" on \
+		SPAMTAG "Enable Spam Tagging" off \
+		VIRUSTAG "Enable Virus Tagging" off \
+		DISABLELOCAL "Disable Filters For Local Users" off \
+		SYSLOG "Enable Syslog Logging" off \
+		BACKUP "Enable Logging Incoming/Outgoing Mail" off \
+		CUSTOMERROR "Enable Custom Error Patch" off \
+		DEBUG "Enable Debug Messages" off
+
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_CLAMAV)
+.if defined(WITH_CLAMAV)
 RUN_DEPENDS+=	${LOCALBASE}/bin/clamdscan:${PORTSDIR}/security/clamav
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clamdscan:${PORTSDIR}/security/clamav
 CONFIGURE_ARGS+=	--with-clamav
@@ -89,14 +91,17 @@ post-build:
 		${WRKSRC}/etc/qsheff.conf-default
 .endif
 
-post-install:
-	@${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/THANKS ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	@touch ${DOCSDIR}/UPGRADE
+do-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/doc
+	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${INSTALL_DATA} ${FILES:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/doc/
+	@${MKDIR} ${EXAMPLESDIR}/contrib
+	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/samples/,} ${EXAMPLESDIR}/
+	@${INSTALL_DATA} ${CONTRIB:S,^,${WRKSRC}/contrib/,} ${EXAMPLESDIR}/contrib
+.endif
+	@${MKDIR} ${ETCDIR}
+	@${INSTALL_DATA} ${ETCFILES:S,^,${WRKSRC}/etc/,} ${ETCDIR}/
+	@${INSTALL_SCRIPT} ${WRKSRC}/src/qsheff ${PREFIX}/bin/qsheff
 
 .include <bsd.port.post.mk>
