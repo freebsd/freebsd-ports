@@ -22,7 +22,8 @@ OPTIONS=	MYSQL   "Add support for a MySQL database server" Off \
 		MSSQL   "Add support for a MS SQL Server" Off \
 		ZLIB    "Add zip/unzip functionality" On \
 		NETWORK "Add Moodle Network functionality" Off \
-		LDAP    "Add LDAP authentication functionality" Off
+		LDAP    "Add LDAP authentication functionality" Off \
+		MIMETEX "Add mimeTeX filter functionality" On
 
 .include <bsd.port.pre.mk>
 
@@ -64,6 +65,10 @@ USE_PHP+=	openssl
 USE_PHP+=	ldap
 .endif
 
+.if !defined(WITHOUT_MIMETEX)
+RUN_DEPENDS+=	${PREFIX}/www/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
+.endif
+
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
@@ -92,6 +97,9 @@ do-install:
 		>> ${TMPPLIST}
 	${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}
 	@${ECHO_CMD} '@exec ${CHMOD} 755 ${PREFIX}/${MOODLEDATADIR}' >> ${TMPPLIST}
+.if !defined(WITHOUT_MIMETEX)
+	${LN} -sf ${PREFIX}/www/cgi-bin/mimetex.cgi ${PREFIX}/${MOODLEDIR}/filter/tex/mimetex.freebsd
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
