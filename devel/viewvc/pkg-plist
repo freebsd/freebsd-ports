@@ -122,8 +122,74 @@
 %%INSTDIR%%/templates/revision.ezt
 %%INSTDIR%%/templates/roots.ezt
 %%INSTDIR%%/templates/rss.ezt
+%%INSTDIR%%/templates-contrib/README
+%%INSTDIR%%/templates-contrib/viewsvn/INSTALL
+%%INSTDIR%%/templates-contrib/viewsvn/README
+%%INSTDIR%%/templates-contrib/viewsvn/extras/fix-blame-output.diff
+%%INSTDIR%%/templates-contrib/viewsvn/extras/svnindex.css
+%%INSTDIR%%/templates-contrib/viewsvn/extras/svnindex.xsl
+%%INSTDIR%%/templates-contrib/viewsvn/screenshots/diff.png
+%%INSTDIR%%/templates-contrib/viewsvn/screenshots/dir.png
+%%INSTDIR%%/templates-contrib/viewsvn/screenshots/log.png
+%%INSTDIR%%/templates-contrib/viewsvn/screenshots/markup.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/annotate.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/diff.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/directory.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/broken.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/dir.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/down.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/download.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/favicon-svn.ico
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/feed-icon-16x16.jpg
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/logo-svn.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/logo-viewvc.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/svn.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/text.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/back.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/back_small.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/blame.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/checkout.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/diff.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/forward.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/license.txt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/log.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/patch.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/repos.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn/tsvn.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/up.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/viewvc.png
+%%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/styles.css
+%%INSTDIR%%/templates-contrib/viewsvn/templates/error.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/graph.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/include/diff_form.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/include/dir_footer.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/include/dir_header.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/include/file_header.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/include/footer.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/include/header.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/include/log_footer.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/include/log_header.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/include/paging.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/include/pathrev_form.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/log.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/markup.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/query.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/query_form.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/query_results.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/revision.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/roots.ezt
+%%INSTDIR%%/templates-contrib/viewsvn/templates/rss.ezt
 %%INSTDIR%%/viewvc.conf.dist
 @exec [ -f %B/viewvc.conf ] || cp %B/%f %B/viewvc.conf
+@dirrm %%INSTDIR%%/templates-contrib/viewsvn/extras
+@dirrm %%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images/tortoisesvn
+@dirrm %%INSTDIR%%/templates-contrib/viewsvn/templates/docroot/images
+@dirrm %%INSTDIR%%/templates-contrib/viewsvn/templates/docroot
+@dirrm %%INSTDIR%%/templates-contrib/viewsvn/templates/include
+@dirrm %%INSTDIR%%/templates-contrib/viewsvn/templates
+@dirrm %%INSTDIR%%/templates-contrib/viewsvn/screenshots
+@dirrm %%INSTDIR%%/templates-contrib/viewsvn
+@dirrm %%INSTDIR%%/templates-contrib
 @dirrm %%INSTDIR%%/templates/include
 @dirrm %%INSTDIR%%/templates/docroot/images
 @dirrm %%INSTDIR%%/templates/docroot

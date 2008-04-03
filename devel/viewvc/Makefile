@@ -6,16 +6,23 @@
 #
 
 PORTNAME=	viewvc
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	devel python
-MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/37319/
+MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/41694/
 
-MAINTAINER=	jbq@caraldi.com
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Web-based Version Control Repository Browsing
 
-RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/svn/__init__.py:${PORTSDIR}/devel/subversion-python
+RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/svn/__init__.py:${PORTSDIR}/devel/subversion-python \
+		${PYTHON_LIBDIR}/site-packages/_mysql.so:${PORTSDIR}/databases/py-MySQLdb
 
 USE_PYTHON=	yes
+.if defined (WITH_APACHE)
+USE_APACHE=	2.0+
+.endif
+.if defined(WITH_MODPYTHON3)
+RUN_DEPENDS+=	${APACHEMODDIR}/mod_python.so:${PORTSDIR}/www/mod_python3
+.endif
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
@@ -25,7 +32,7 @@ INSTDIR?=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR}
 
 do-install:
-	(cd ${WRKSRC} && ${PYTHON_CMD} viewvc-install --prefix=${PREFIX}/${INSTDIR} --destdir="" --clean-mode=false)
+	@(cd ${WRKSRC} && ${PYTHON_CMD} viewvc-install --prefix=${PREFIX}/${INSTDIR} --destdir="" --clean-mode=false)
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
