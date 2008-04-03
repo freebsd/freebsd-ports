@@ -14,6 +14,12 @@ bin/qemu-system-sh4
 bin/qemu-system-sh4eb
 bin/qemu-system-sparc
 bin/qemu-system-x86_64
+@unexec if cmp -s %D/etc/qemu-ifup.sample %D/etc/qemu-ifup; then rm -f %D/etc/qemu-ifup; fi
+etc/qemu-ifup.sample
+@exec if [ ! -f %D/etc/qemu-ifup ] ; then cp -p %D/%F %B/qemu-ifup; fi
+@unexec if cmp -s %D/etc/qemu-ifdown.sample %D/etc/qemu-ifdown; then rm -f %D/etc/qemu-ifdown; fi
+etc/qemu-ifdown.sample
+@exec if [ ! -f %D/etc/qemu-ifdown ] ; then cp -p %D/%F %B/qemu-ifdown; fi
 %%PORTDOCS%%%%DOCSDIR%%/qemu-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/qemu-tech.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

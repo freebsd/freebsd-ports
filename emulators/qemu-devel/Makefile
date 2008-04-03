@@ -7,7 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.9.1s.20080302
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	http://qemu.org/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
@@ -117,6 +117,14 @@ post-patch:
 		${WRKSRC}/Makefile
 
 post-install:
+	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${PREFIX}/etc
+	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${PREFIX}/etc
+	@if [ ! -f ${PREFIX}/etc/qemu-ifup ]; then \
+	    ${CP} -p ${PREFIX}/etc/qemu-ifup.sample ${PREFIX}/etc/qemu-ifup ; \
+	fi
+	@if [ ! -f ${PREFIX}/etc/qemu-ifdown ]; then \
+	    ${CP} -p ${PREFIX}/etc/qemu-ifdown.sample ${PREFIX}/etc/qemu-ifdown ; \
+	fi
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

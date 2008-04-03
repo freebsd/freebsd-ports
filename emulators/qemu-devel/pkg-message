@@ -82,4 +82,7 @@ to panic), if this affects you you can either use an UP host kernel as a
 workaround or disable kqemu.
 - qemu now uses aio at least for ide dma, so if you get `Invalid system call'
 crashes that is because aio is not (kld)loaded.
+- The default configuration location (qemu-ifup script etc.) has been
+changed from /etc to PREFIX/etc (usually /usr/local/etc).  Move your
+files accordingly.
 ====
