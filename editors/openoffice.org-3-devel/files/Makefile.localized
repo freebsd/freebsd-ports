@@ -28,14 +28,6 @@ LANG_SUFFIX=	BY
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "br"
-LANG_PKGNAME=	${LOCALIZED_LANG}
-.endif
-################################################################
-.if ${LOCALIZED_LANG} == "bn"
-LANG_PKGNAME=	${LOCALIZED_LANG}
-.endif
-################################################################
 .if ${LOCALIZED_LANG} == "bn-BD"
 LANG_PKGNAME=	be
 LANG_SUFFIX=	BD
@@ -44,6 +36,14 @@ LANG_SUFFIX=	BD
 .if ${LOCALIZED_LANG} == "bn-IN"
 LANG_PKGNAME=	bn
 LANG_SUFFIX=	IN
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "bn"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "br"
+LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "bs"
@@ -202,10 +202,6 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "ms"
-LANG_PKGNAME=	${LOCALIZED_LANG}
-.endif
-################################################################
 .if ${LOCALIZED_LANG} == "ml-IN"
 LANG_PKGNAME=	ml
 LANG_SUFFIX=	IN
@@ -216,11 +212,15 @@ LANG_PKGNAME=	mr
 LANG_SUFFIX=	IN
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "ne"
+.if ${LOCALIZED_LANG} == "ms"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "nb"
+LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ne"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -282,16 +282,16 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
+.if ${LOCALIZED_LANG} == "sh"
+LANG_PKGNAME=	sh
+.endif
+################################################################
 .if ${LOCALIZED_LANG} == "sk"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "sl"
 LANG_PKGNAME=	${LOCALIZED_LANG}
-.endif
-################################################################
-.if ${LOCALIZED_LANG} == "sh"
-LANG_PKGNAME=	sh
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "sr"
@@ -310,13 +310,13 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "sw"
-LANG_PKGNAME=	${LOCALIZED_LANG}
-.endif
-################################################################
 .if ${LOCALIZED_LANG} == "sw-TZ"
 LANG_PKGNAME=	sw
 LANG_SUFFIX=	TZ
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "sw"
+LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ta-IN"
@@ -324,18 +324,22 @@ LANG_PKGNAME=	ta
 LANG_SUFFIX=	IN
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "te-ER"
+.if ${LOCALIZED_LANG} == "te-IN"
 LANG_PKGNAME=	te
-LANG_SUFFIX=	ER
+LANG_SUFFIX=	IN
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "ti-IN"
-LANG_PKGNAME=	ti
-LANG_SUFFIX=	IN
+.if ${LOCALIZED_LANG} == "tg"
+LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "th"
 LANG_PKGNAME=	${LOCALIZED_LANG}
+.endif
+################################################################
+.if ${LOCALIZED_LANG} == "ti-ER"
+LANG_PKGNAME=	ti
+LANG_SUFFIX=	ER
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "tn"
@@ -350,17 +354,13 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
-.if ${LOCALIZED_LANG} == "tg"
+.if ${LOCALIZED_LANG} == "uk"
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ur-IN"
 LANG_PKGNAME=	ur
 LANG_SUFFIX=	IN
-.endif
-################################################################
-.if ${LOCALIZED_LANG} == "uk"
-LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "uz"
@@ -403,3 +403,4 @@ PKGNAMESUFFIX=	-alllangs
 .endif
 ################################################################
 .endif
+	
