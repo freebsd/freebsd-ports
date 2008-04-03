@@ -6,13 +6,15 @@
 #
 
 PORTNAME?=	openacs
-DISTVERSION?=	5-3-2
+DISTVERSION?=	5.4.1b1
 CATEGORIES=	www
 MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
-EXTRACT_SUFX?=	.tgz?revision_id=1098887
+EXTRACT_SUFX=	.tgz?revision_id=${DIST_REV_ID}
 
 MAINTAINER?=	mm@FreeBSD.org
 COMMENT?=	A modular web application platform for communities
+
+DIST_REV_ID?=	1474805
 
 AOLSERVERBASE?=	${LOCALBASE}/aolserver
 RUN_DEPENDS+=	${AOLSERVERBASE}/bin/nscache.so:${PORTSDIR}/www/aolserver-nscache \
@@ -27,9 +29,9 @@ USE_RC_SUBR?=	${PORTNAME}
 NO_BUILD=	yes
 
 OPENACS_USER?=	${PORTNAME}
-OPENACS_DB?=	${PORTNAME}
-OPENACS_GROUP?=	www
+OPENACS_GROUP?=	${PORTNAME}
 PGUSER?=	pgsql
+OPENACS_DB?=	${PORTNAME}
 OPENACSBASE?=	${PREFIX}/openacs
 OPENACSNAME?=	OpenACS
 SU?=		/usr/bin/su
@@ -53,7 +55,27 @@ OPTIONS=	EXAMPLES "Install various example files" on \
 
 .include <bsd.port.pre.mk>
 
-SUB_LIST+=	OPENACS_USER=${OPENACS_USER} OPENACS_GROUP=${OPENACS_GROUP} \
+# Parse ${PORTSDIR}/UIDs and GIDs for the defaults
+USER!=	${GREP} -E '^${OPENACS_USER}:' ${PORTSDIR}/UIDs | \
+		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):([^:]*):([^:]*):([^:]*):([^:]*)$$/USER="\1" UID="\3" GECOS="\5" HOME="\6" SHELL="\7"/'
+GROUP!=	${GREP} -E '^${OPENACS_GROUP}:' ${PORTSDIR}/GIDs | \
+		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):$$/GROUP="\1" GID="\3"/'
+
+# Apply the defaults where necessary
+OPENACS_USER?=	${USER:MUSER*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+OPENACS_UID?=	${USER:MUID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+OPENACS_GECOS?=	${USER:MGECOS*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+OPENACS_HOME?=	${USER:MHOME*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+OPENACS_SHELL?=	${USER:MSHELL*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+OPENACS_GROUP?=	${GROUP:MGROUP*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+OPENACS_GID?=	${GROUP:MGID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
+
+SUB_LIST+=	OPENACS_USER=${OPENACS_USER} OPENACS_UID=${OPENACS_UID} \
+		OPENACS_GECOS="${OPENACS_GECOS}" \
+		OPENACS_HOME="${OPENACS_HOME}" \
+		OPENACS_SHELL="${OPENACS_SHELL}" \
+		OPENACS_GROUP=${OPENACS_GROUP} \
+		OPENACS_GID=${OPENACS_GID} \
 		OPENACSBASE=${OPENACSBASE} OPENACS_DB=${OPENACS_DB} \
 		PGUSER=${PGUSER} AOLSERVERBASE=${AOLSERVERBASE} \
 		PORTNAME=${PORTNAME} OPENACSNAME=${OPENACSNAME} \
@@ -71,17 +93,19 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/tclwebtest:${PORTSDIR}/www/tclwebtest
 
 post-patch:
 	@${SED} -e 's|service0|${OPENACS_USER}|' \
-		-e 's|/var/lib/aolserver/$${server}|${OPENACSBASE}|' \
-		-e 's|/usr/local/aolserver|${AOLSERVERBASE}|' \
-		${WRKSRC}/etc/config.tcl > ${WRKDIR}/openacs-config.tcl
+		-e 's|/var/www/$${server}|${OPENACSBASE}|' \
+		-e 's|/usr/lib/aolserver4|${AOLSERVERBASE}|' \
+		-e 's|127.0.0.1|0.0.0.0|' \
+		${WRKSRC}/etc/config.tcl > ${WRKDIR}/${PORTNAME}-config.tcl
 pre-install:
 	@ ${ECHO} "Generating plist"
 	@ ${FIND} ${WRKSRC} ! -type d ! -path '${WRKSRC}/etc*' \
 		! -path '${WRKSRC}/readme.txt' ! -path '${WRKSRC}/license.txt' \
 		! -path '${WRKSRC}/ChangeLog' | \
 		${SED} 's|${WRKSRC}|${OPENACSBASE:S/${PREFIX}\///}|' > ${PLIST}
-	@ ${ECHO} ${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl >> ${PLIST}
-	@ ${ECHO} @dirrm ${OPENACSBASE:S/${PREFIX}\///}/etc >> ${PLIST}
+	@ ${ECHO} @exec if ! [ -f ${OPENACSBASE:S/%D\///}/etc/${PORTNAME}-config.tcl ] \; then ${CP} %D/%%EXAMPLESDIR%%/config.tcl %D/${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl \; fi >> ${PLIST}
+	@ ${ECHO} @unexec if cmp -hsz %D/%%EXAMPLESDIR%%/config.tcl %D/${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl \; then ${RM} %D/${OPENACSBASE:S/${PREFIX}\///}/etc/${PORTNAME}-config.tcl \; fi >> ${PLIST}
+	@ ${ECHO} @dirrmtry ${OPENACSBASE:S/${PREFIX}\///}/etc >> ${PLIST}
 	@ ${FIND} ${WRKSRC} -type d ! -path '${WRKSRC}/etc*' | \
 		${SORT} -r | \
 		${SED} 's|${WRKSRC}|@dirrmtry ${OPENACSBASE:S/${PREFIX}\///}|' >> ${PLIST}
@@ -104,7 +128,10 @@ do-install:
 	@ ${TAR} -c -C ${WRKSRC}/etc -f - . | ${TAR} -x -C ${EXAMPLESDIR} -f -
 .endif
 	@ ${ECHO} "Installing sample configuration file"
-	@ ${INSTALL_DATA} ${WRKDIR}/openacs-config.tcl ${OPENACSBASE}/etc/${PORTNAME}-config.tcl
+	@ ${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-config.tcl ${EXAMPLESDIR}/config.tcl
+	@ if ! [ -f ${OPENACSBASE}/etc/${PORTNAME}-config.tcl ]; then \
+		${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-config.tcl ${OPENACSBASE}/etc/${PORTNAME}-config.tcl ; \
+	  fi
 .if !defined(NOPORTDOCS)
 	@ ${ECHO} "Installing docs"
 	@ ${MKDIR} ${DOCSDIR}
