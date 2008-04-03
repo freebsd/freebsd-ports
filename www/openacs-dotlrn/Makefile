@@ -7,15 +7,17 @@
 
 PORTNAME=	dotlrn
 DISTVERSION=	2.3.1
+PORTREVISION=	1
 MASTER_SITES=	http://openacs.org/projects/dotlrn/download/download/
-EXTRACT_SUFX=	.tgz?revision_id=1169831
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenACS-based e-learning platform
 
-OPENACS_USER?=  dotlrn
+DIST_REV_ID=	1169831
+
+OPENACS_USER?=	dotlrn
+OPENACS_GROUP?=	dotlrn
 OPENACS_DB?=	dotlrn
-OPENACS_GROUP?= www
 
 OPENACSBASE=	${PREFIX}/dotlrn
 OPENACSNAME=	.LRN
