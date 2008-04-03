@@ -1,13 +1,13 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DNS/.packlist
 %%SITE_PERL%%/Tie/DNS.pm
-%%PORTDOCS%%share/examples/p5-Tie-DNS/example1.pl
-%%PORTDOCS%%share/examples/p5-Tie-DNS/example2.pl
-%%PORTDOCS%%share/examples/p5-Tie-DNS/example3.pl
-%%PORTDOCS%%share/examples/p5-Tie-DNS/example4.pl
-%%PORTDOCS%%share/examples/p5-Tie-DNS/example5.pl
-%%PORTDOCS%%share/examples/p5-Tie-DNS/example6.pl
-%%PORTDOCS%%share/examples/p5-Tie-DNS/example7.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/example1.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/example2.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/example3.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/example4.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/example5.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/example6.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/example7.pl
 @dirrmtry %%SITE_PERL%%/Tie
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DNS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
-%%PORTDOCS%%@dirrmtry share/examples/p5-Tie-DNS
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
