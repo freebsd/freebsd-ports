@@ -142,6 +142,9 @@ bin/v_sim
 %%PORTDOCS%%%%EXAMPLESDIR%%/test_isosurfaces.ascii
 %%PORTDOCS%%%%EXAMPLESDIR%%/test_isosurfaces.surf
 %%NLS%%share/locale/fr/LC_MESSAGES/v_sim.mo
+share/pixmaps/v_sim.16.png
+share/pixmaps/v_sim.32.png
+share/pixmaps/v_sim.48.png
 share/pixmaps/v_sim.xpm
 %%DATADIR%%/pixmaps/icone-about.png
 %%DATADIR%%/pixmaps/icone-dialog.png

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	v_sim
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 CATEGORIES=	science
 MASTER_SITES=	http://www-drfmc.cea.fr/sp2m/L_Sim/V_Sim/download/
 
@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include"	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+MAN1=		v_sim.1
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
