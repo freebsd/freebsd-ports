@@ -7,7 +7,7 @@
 
 PORTNAME=	unzip
 PORTVERSION=	5.52
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	archivers
 MASTER_SITES=	ftp://ftp.info-zip.org/pub/infozip/src/ ${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	tools/zip/info-zip/src
@@ -18,18 +18,20 @@ COMMENT?=	List, test and extract compressed files in a ZIP archive
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	unix/Makefile
-MAKE_ENV=	LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK"
 PLIST_FILES=	bin/unzip bin/funzip bin/unzipsfx bin/zipgrep bin/zipinfo
 PORTDOCS=	README WHERE
 MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
+
 CFLAGS+=	-D_FILE_OFFSET_BITS=64
+LOCAL_UNZIP=	${CFLAGS} -DACORN_FTYPE_NFS -DWILD_STOP_AT_DIR
 
 .if defined(WITH_UNZIP_UNREDUCE)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unreduce_full.zip
 EXTRACT_ONLY=	${PORTNAME}552.tar.gz
-MAKE_ENV=	LOCAL_UNZIP="${CFLAGS} \
-	-DUSE_SMITH_CODE -DACORN_FTYPE_NFS -DWILD_STOP_AT_DIR"
+LOCAL_UNZIP+=	-DUSE_SMITH_CODE
 .endif
+
+MAKE_ENV=	CC="${CC}" LOCAL_UNZIP="${LOCAL_UNZIP}"
 
 .ifdef USE_UNZIP
 .error You have `USE_UNZIP' variable defined either in environment or in make(1) arguments. Please undefine and try again.
