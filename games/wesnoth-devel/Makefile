@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.2.8
-PORTREVISION=	2
+PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
 MASTER_SITE_SUBDIR=	wesnoth
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
-USE_GCC=	3.4+
 USE_SDL=	image mixer net
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
@@ -36,7 +35,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN6=		wesnoth.6
-MANLANG=	"" cs de en_GB fr it ja nl pt_BR ru sk sv
+MANLANG=	"" cs de fr it ja nl sk sv zh_CN
 
 .if defined(WITH_CAMPAIGN) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-campaign-server
@@ -78,20 +77,6 @@ PLIST_SUB+=		TOOLS:="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomehier}!=""
-CONFIGURE_ARGS+=	--with-gnome
-PLIST_SUB+=		GNOME:=""
-.else
-PLIST_SUB+=		GNOME:="@comment "
-.endif
-
-.if exists(${LOCALBASE}/bin/kde-config)
-CONFIGURE_ARGS+=	--with-kde
-PLIST_SUB+=		KDE:=""
-.else
-PLIST_SUB+=		KDE:="@comment "
-.endif
 
 pre-everything::
 .if !defined(WITH_CAMPAIGN) || !defined(WITH_DEBUG) || !defined(WITH_EDITOR) || !defined(WITH_SERVER) || !defined(WITH_TOOLS)
