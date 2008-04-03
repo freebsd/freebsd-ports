@@ -1097,6 +1097,7 @@ buildbot	ports/devel/buildbot
 buildtool	ports/devel/buildtool
 buildtool-doc	ports/devel/buildtool-doc
 bulk_mailer	ports/mail/bulk_mailer
+bullet		ports/devel/bullet
 bumprace	ports/games/bumprace
 bunny		ports/devel/bunny
 buoh		ports/deskutils/buoh
