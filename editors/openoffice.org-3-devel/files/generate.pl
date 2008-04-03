@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 # generate full build shell script for OpenOffice.org
 # Whom:         Maho Nakata <maho@FreeBSD.org>
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-3-devel/files/Attic/generate.pl,v 1.10 2008-04-03 07:36:17 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-3-devel/files/Attic/generate.pl,v 1.11 2008-04-03 08:02:08 maho Exp $
 
 print "#!/bin/csh\n";
 print "make deinstall clean\n";
@@ -25,5 +25,5 @@ if ( $tmp[0] eq ".if" && $tmp[1] eq "\${LOCALIZED_LANG}" ) { $LANG=$tmp2[1];
 }
 close FILE;
 print "md5 OOo* > MD5SUMS.log\n";
-#print "ssh mkdir -p build.good-day.net:/home/ftp/pub/OpenOffice.org/FreeBSD/tmp/\n";
-#print "scp OOo* MD5SUMS.log build.good-day.net:/home/ftp/pub/OpenOffice.org/FreeBSD/tmp/\n";
+print "sudo -u `who am i | awk '{print \$1}'` ssh build.good-day.net mkdir -p /home/ftp/pub/OpenOffice.org/FreeBSD/`make -V OOOTAG`/`uname -r`/`uname -m`\n";
+print "sudo -u `who am i | awk '{print \$1}'` scp OOo* MD5SUMS.log build.good-day.net:/home/ftp/pub/OpenOffice.org/FreeBSD/`make -V OOOTAG`/`uname -r`/`uname -m`\n";
