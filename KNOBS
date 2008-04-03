@@ -72,6 +72,7 @@ MAD			Mad MP3 audio decoder support
 MATROSKA		Matroska multimedia container support
 MMX			Adds support for x86 MMX optimizations
 MODPERL2		Use www/mod_perl2 port
+MODPYTHON3             Use www/mod_python3 port
 MPEG4IP			MPEG4 multimedia support
 MUSEPACK		Musepack (MPC, musicpd, libmpcdec) support
 MYSQL			MySQL database support
