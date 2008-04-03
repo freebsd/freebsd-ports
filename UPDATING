@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20080403:
+  AFFECTS: users of emulators/qemu and emulators/qemu-devel
+  AUTHOR: nox@FreeBSD.org
+
+  The default configuration location (qemu-ifup script etc.) has been
+  changed from /etc to ${PREFIX}/etc (usually /usr/local/etc).  Move your
+  files accordingly.
+
 20080330:
   AFFECTS: users of www/mediawiki
   AUTHOR: miwi@FreeBSD.org
