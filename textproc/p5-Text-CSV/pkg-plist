@@ -1,19 +1,7 @@
-%%SITE_PERL%%/auto/Text/CSV/version.al
-%%SITE_PERL%%/auto/Text/CSV/new.al
-%%SITE_PERL%%/auto/Text/CSV/status.al
-%%SITE_PERL%%/auto/Text/CSV/error_input.al
-%%SITE_PERL%%/auto/Text/CSV/string.al
-%%SITE_PERL%%/auto/Text/CSV/fields.al
-%%SITE_PERL%%/auto/Text/CSV/combine.al
-%%SITE_PERL%%/auto/Text/CSV/parse.al
-%%SITE_PERL%%/auto/Text/CSV/_bite.al
-%%SITE_PERL%%/auto/Text/CSV/getDelimiter.al
-%%SITE_PERL%%/auto/Text/CSV/setDelimiter.al
-%%SITE_PERL%%/auto/Text/CSV/autosplit.ix
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV/.packlist
 %%SITE_PERL%%/Text/CSV.pm
-@dirrm %%SITE_PERL%%/auto/Text/CSV
-@dirrmtry %%SITE_PERL%%/auto/Text
+%%SITE_PERL%%/Text/CSV_PP.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text
