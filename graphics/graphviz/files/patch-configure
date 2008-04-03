@@ -1,0 +1,11 @@
+--- configure.orig	2008-03-10 20:32:12.000000000 +0100
++++ configure	2008-04-03 17:38:34.000000000 +0200
+@@ -34060,7 +34060,7 @@
+ 
+ # Check whether --with-platformsdkincludedir was given.
+ if test "${with_platformsdkincludedir+set}" = set; then
+-  withval=$with_platformsdkincludedir; PLATFORMSDKINCLUDE=$withval; PLATFORMSDKINCLUDE_ESCAPED=${PLATFORMSDKINCLUDE//'\\'/\\\\}; PLATFORMSDKINCLUDE_ESCAPED=${PLATFORMSDKINCLUDE_ESCAPED// /\\ }
++  withval=$with_platformsdkincludedir; PLATFORMSDKINCLUDE=$withval; PLATFORMSDKINCLUDE_ESCAPED=${PLATFORMSDKINCLUDE}; PLATFORMSDKINCLUDE_ESCAPED=${PLATFORMSDKINCLUDE_ESCAPED}
+ fi
+ 
+ 
