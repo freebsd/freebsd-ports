@@ -7,10 +7,12 @@
 
 PORTNAME=	fpkg
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://voodoo.bawue.com/download/ \
 		http://www.shimazu.org/fpkg/
-EXTRACT_SUFX=
+DISTFILES=	${PORTNAME}-${PORTVERSION}
+EXTRACT_ONLY=
 
 MAINTAINER=	y.shimazu@nifty.com
 COMMENT=	Package Tool Wrapper for FreeBSD
@@ -18,17 +20,9 @@ COMMENT=	Package Tool Wrapper for FreeBSD
 USE_PERL5=	YES
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
-
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	.
-PLIST_SUB=	INSTALL_BASE=${INSTALL_BASE}
-
-INSTALL_BASE=	bin
-INSTALL_DIR=	${PREFIX}/${INSTALL_BASE}
+PLIST_FILES=	bin/fpkg
 
 do-install:
-	${MKDIR} ${INSTALL_DIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${INSTALL_DIR}/${PORTNAME}
+	@${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
