@@ -12,12 +12,18 @@ OPENACSBASE=%%OPENACSBASE%%
 PW=%%PW%%
 
 if ${PW} usershow "${OPENACS_USER}" 2>/dev/null 1>&2; then
-	echo "To delete ${OPENACS_USER} user permanently, use '${PW} userdel \"${OPENACS_USER}\"'"
+	echo ""
+	echo "To delete ${OPENACS_USER} user permanently, use the following command:"
+	echo "${PW} userdel \"${OPENACS_USER}\""
 fi
 if ${PW} usershow "${OPENACS_GROUP}" 2>/dev/null 1>&2; then
-	echo "To delete ${OPENACS_GROUP} group permanently, use '${PW} groupdel \"${OPENACS_GROUP}\"'"
+	echo ""
+	echo "To delete ${OPENACS_GROUP} group permanently, use the following command:"
+	echo "${PW} groupdel \"${OPENACS_GROUP}\""
 fi
 if test -d "${OPENACSBASE}"; then
-	echo "You may need to remove ${OPENACSBASE} manually."
+	echo ""
+	echo "Directory ${OPENACSBASE} is not empty, you may want to check its contents" 
+	echo "and remove it manually."
 fi
 exit 0
