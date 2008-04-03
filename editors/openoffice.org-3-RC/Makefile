@@ -126,6 +126,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		bash:${PORTSDIR}/shells/bash \
 		imake:${X_IMAKE_PORT}
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 .if !defined(WITH_GPC)
 LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 .endif
@@ -141,6 +142,7 @@ NUMOFPROCESSES?=	1
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--enable-crashdump=yes				\
+			--enable-cups=yes				\
 			--with-system-zlib
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
