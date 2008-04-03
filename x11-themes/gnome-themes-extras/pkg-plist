@@ -56,18 +56,31 @@ share/icons/Foxtrot/16x16/actions/top.png
 share/icons/Foxtrot/16x16/actions/up.png
 share/icons/Foxtrot/16x16/actions/view-refresh.png
 share/icons/Foxtrot/16x16/places/desktop.png
+share/icons/Foxtrot/16x16/places/emptytrash.png
 share/icons/Foxtrot/16x16/places/folder_home.png
 share/icons/Foxtrot/16x16/places/gnome-fs-desktop.png
 share/icons/Foxtrot/16x16/places/gnome-fs-directory-accept.png
 share/icons/Foxtrot/16x16/places/gnome-fs-home.png
+share/icons/Foxtrot/16x16/places/gnome-fs-trash-empty.png
+share/icons/Foxtrot/16x16/places/gnome-stock-trash.png
 share/icons/Foxtrot/16x16/places/stock_open.png
+share/icons/Foxtrot/16x16/places/trashcan_empty.png
 share/icons/Foxtrot/16x16/places/user-desktop.png
 share/icons/Foxtrot/16x16/places/user-home-folder.png
 share/icons/Foxtrot/16x16/places/user-home.png
+share/icons/Foxtrot/16x16/places/user-trash.png
 share/icons/Foxtrot/16x16/places/x-directory-normal-home.png
 share/icons/Foxtrot/16x16/places/x-directory-normal-open.png
 share/icons/Foxtrot/16x16/places/x-directory-normal.png
 share/icons/Foxtrot/16x16/places/x-directory-remote.png
+share/icons/Foxtrot/16x16/places/xfce-trash_empty.png
+share/icons/Foxtrot/16x16/status/edittrash.png
+share/icons/Foxtrot/16x16/status/gnome-fs-trash-full.png
+share/icons/Foxtrot/16x16/status/gnome-stock-trash-full.png
+share/icons/Foxtrot/16x16/status/stock_trash_full.png
+share/icons/Foxtrot/16x16/status/trashcan_full.png
+share/icons/Foxtrot/16x16/status/user-trash-full.png
+share/icons/Foxtrot/16x16/status/xfce-trash_full.png
 share/icons/Foxtrot/22x22/actions/add.png
 share/icons/Foxtrot/22x22/actions/back.png
 share/icons/Foxtrot/22x22/actions/bottom.png
@@ -133,6 +146,7 @@ share/icons/Foxtrot/22x22/actions/up.png
 share/icons/Foxtrot/22x22/actions/view-refresh.png
 share/icons/Foxtrot/22x22/actions/x-directory-normal.png
 share/icons/Foxtrot/22x22/places/desktop.png
+share/icons/Foxtrot/22x22/places/emptytrash.png
 share/icons/Foxtrot/22x22/places/folder-remote.png
 share/icons/Foxtrot/22x22/places/folder_home.png
 share/icons/Foxtrot/22x22/places/gnome-fs-desktop.png
@@ -142,19 +156,31 @@ share/icons/Foxtrot/22x22/places/gnome-fs-nfs.png
 share/icons/Foxtrot/22x22/places/gnome-fs-share.png
 share/icons/Foxtrot/22x22/places/gnome-fs-smb.png
 share/icons/Foxtrot/22x22/places/gnome-fs-ssh.png
+share/icons/Foxtrot/22x22/places/gnome-fs-trash-empty.png
 share/icons/Foxtrot/22x22/places/gnome-mime-x-directory-smb-share.png
+share/icons/Foxtrot/22x22/places/gnome-stock-trash.png
 share/icons/Foxtrot/22x22/places/network.png
+share/icons/Foxtrot/22x22/places/trashcan_empty.png
 share/icons/Foxtrot/22x22/places/user-desktop.png
 share/icons/Foxtrot/22x22/places/user-home.png
+share/icons/Foxtrot/22x22/places/user-trash.png
 share/icons/Foxtrot/22x22/places/user_home-folder.png
 share/icons/Foxtrot/22x22/places/x-directory-normal.png
 share/icons/Foxtrot/22x22/places/x-directory-remote.png
+share/icons/Foxtrot/22x22/places/xfce-trash_empty.png
+share/icons/Foxtrot/22x22/status/edittrash.png
 share/icons/Foxtrot/22x22/status/folder-drag-accept.png
 share/icons/Foxtrot/22x22/status/folder-open.png
 share/icons/Foxtrot/22x22/status/folder_open.png
 share/icons/Foxtrot/22x22/status/gnome-fs-directory-accept.png
+share/icons/Foxtrot/22x22/status/gnome-fs-trash-full.png
+share/icons/Foxtrot/22x22/status/gnome-stock-trash-full.png
 share/icons/Foxtrot/22x22/status/stock_open.png
+share/icons/Foxtrot/22x22/status/stock_trash_full.png
+share/icons/Foxtrot/22x22/status/trashcan_full.png
+share/icons/Foxtrot/22x22/status/user-trash-full.png
 share/icons/Foxtrot/22x22/status/x-directory-normal-accept.png
+share/icons/Foxtrot/22x22/status/xfce-trash_full.png
 share/icons/Foxtrot/24x24/actions/add.png
 share/icons/Foxtrot/24x24/actions/back.png
 share/icons/Foxtrot/24x24/actions/bottom.png
@@ -232,6 +258,13 @@ share/icons/Foxtrot/24x24/places/x-directory-normal-accept.png
 share/icons/Foxtrot/24x24/places/x-directory-normal-open.png
 share/icons/Foxtrot/24x24/places/x-directory-normal.png
 share/icons/Foxtrot/24x24/places/x-directory-remote.png
+share/icons/Foxtrot/24x24/status/edittrash.png
+share/icons/Foxtrot/24x24/status/gnome-fs-trash-full.png
+share/icons/Foxtrot/24x24/status/gnome-stock-trash-full.png
+share/icons/Foxtrot/24x24/status/stock_trash_full.png
+share/icons/Foxtrot/24x24/status/trashcan_full.png
+share/icons/Foxtrot/24x24/status/user-trash-full.png
+share/icons/Foxtrot/24x24/status/xfce-trash_full.png
 share/icons/Foxtrot/index.theme
 share/icons/Foxtrot/scalable/actions/add.svg
 share/icons/Foxtrot/scalable/actions/back.svg
@@ -5283,11 +5316,212 @@ share/icons/Neu/scalable/status/stock_volume.svg
 share/icons/Neu/scalable/status/trashcan_full.svg
 share/icons/Neu/scalable/status/user-trash-full.svg
 share/icons/Neu/scalable/status/xfce-trash_full.svg
+share/icons/gnome-alternative/16x16/actions/document-open.png
+share/icons/gnome-alternative/16x16/actions/fileopen.png
+share/icons/gnome-alternative/16x16/actions/folder-new.png
+share/icons/gnome-alternative/16x16/actions/folder_new.png
+share/icons/gnome-alternative/16x16/actions/gtk-open.png
+share/icons/gnome-alternative/16x16/actions/stock_new-dir.png
+share/icons/gnome-alternative/16x16/places/application-x-gnome-saved-search.png
+share/icons/gnome-alternative/16x16/places/folder-remote-ftp.png
+share/icons/gnome-alternative/16x16/places/folder-remote-smb.png
+share/icons/gnome-alternative/16x16/places/folder-remote-ssh.png
+share/icons/gnome-alternative/16x16/places/folder-remote.png
+share/icons/gnome-alternative/16x16/places/folder-saved-search.png
+share/icons/gnome-alternative/16x16/places/folder.png
+share/icons/gnome-alternative/16x16/places/folder_home.png
+share/icons/gnome-alternative/16x16/places/gnome-fs-dav.png
+share/icons/gnome-alternative/16x16/places/gnome-fs-directory.png
+share/icons/gnome-alternative/16x16/places/gnome-fs-ftp.png
+share/icons/gnome-alternative/16x16/places/gnome-fs-home.png
+share/icons/gnome-alternative/16x16/places/gnome-fs-nfs.png
+share/icons/gnome-alternative/16x16/places/gnome-fs-share.png
+share/icons/gnome-alternative/16x16/places/gnome-fs-smb.png
+share/icons/gnome-alternative/16x16/places/gnome-fs-ssh.png
+share/icons/gnome-alternative/16x16/places/gnome-mime-x-directory-smb-share.png
+share/icons/gnome-alternative/16x16/places/gtk-directory.png
+share/icons/gnome-alternative/16x16/places/network.png
+share/icons/gnome-alternative/16x16/places/stock_folder.png
+share/icons/gnome-alternative/16x16/places/user-home.png
+share/icons/gnome-alternative/16x16/status/folder-drag-accept.png
+share/icons/gnome-alternative/16x16/status/folder-open.png
+share/icons/gnome-alternative/16x16/status/folder-visiting.png
+share/icons/gnome-alternative/16x16/status/folder_open.png
+share/icons/gnome-alternative/16x16/status/gnome-fs-directory-accept.png
+share/icons/gnome-alternative/16x16/status/gnome-fs-directory-visiting.png
+share/icons/gnome-alternative/16x16/status/stock_open.png
+share/icons/gnome-alternative/22x22/actions/document-open.png
+share/icons/gnome-alternative/22x22/actions/fileopen.png
+share/icons/gnome-alternative/22x22/actions/folder-new.png
+share/icons/gnome-alternative/22x22/actions/folder_new.png
+share/icons/gnome-alternative/22x22/actions/gtk-open.png
+share/icons/gnome-alternative/22x22/actions/stock_new-dir.png
+share/icons/gnome-alternative/22x22/places/application-x-gnome-saved-search.png
+share/icons/gnome-alternative/22x22/places/folder-remote-ftp.png
+share/icons/gnome-alternative/22x22/places/folder-remote-smb.png
+share/icons/gnome-alternative/22x22/places/folder-remote-ssh.png
+share/icons/gnome-alternative/22x22/places/folder-remote.png
+share/icons/gnome-alternative/22x22/places/folder-saved-search.png
+share/icons/gnome-alternative/22x22/places/folder.png
+share/icons/gnome-alternative/22x22/places/folder_home.png
+share/icons/gnome-alternative/22x22/places/gnome-fs-dav.png
+share/icons/gnome-alternative/22x22/places/gnome-fs-directory.png
+share/icons/gnome-alternative/22x22/places/gnome-fs-ftp.png
+share/icons/gnome-alternative/22x22/places/gnome-fs-home.png
+share/icons/gnome-alternative/22x22/places/gnome-fs-nfs.png
+share/icons/gnome-alternative/22x22/places/gnome-fs-share.png
+share/icons/gnome-alternative/22x22/places/gnome-fs-smb.png
+share/icons/gnome-alternative/22x22/places/gnome-fs-ssh.png
+share/icons/gnome-alternative/22x22/places/gnome-mime-x-directory-smb-share.png
+share/icons/gnome-alternative/22x22/places/gtk-directory.png
+share/icons/gnome-alternative/22x22/places/network.png
+share/icons/gnome-alternative/22x22/places/stock_folder.png
+share/icons/gnome-alternative/22x22/places/user-home.png
+share/icons/gnome-alternative/22x22/status/folder-drag-accept.png
+share/icons/gnome-alternative/22x22/status/folder-open.png
+share/icons/gnome-alternative/22x22/status/folder-visiting.png
+share/icons/gnome-alternative/22x22/status/folder_open.png
+share/icons/gnome-alternative/22x22/status/gnome-fs-directory-accept.png
+share/icons/gnome-alternative/22x22/status/gnome-fs-directory-visiting.png
+share/icons/gnome-alternative/22x22/status/stock_open.png
+share/icons/gnome-alternative/24x24/actions/document-open.png
+share/icons/gnome-alternative/24x24/actions/fileopen.png
+share/icons/gnome-alternative/24x24/actions/folder-new.png
+share/icons/gnome-alternative/24x24/actions/folder_new.png
+share/icons/gnome-alternative/24x24/actions/gtk-open.png
+share/icons/gnome-alternative/24x24/actions/stock_new-dir.png
+share/icons/gnome-alternative/24x24/places/application-x-gnome-saved-search.png
+share/icons/gnome-alternative/24x24/places/folder-remote-ftp.png
+share/icons/gnome-alternative/24x24/places/folder-remote-smb.png
+share/icons/gnome-alternative/24x24/places/folder-remote-ssh.png
+share/icons/gnome-alternative/24x24/places/folder-remote.png
+share/icons/gnome-alternative/24x24/places/folder-saved-search.png
+share/icons/gnome-alternative/24x24/places/folder.png
+share/icons/gnome-alternative/24x24/places/folder_home.png
+share/icons/gnome-alternative/24x24/places/gnome-fs-dav.png
+share/icons/gnome-alternative/24x24/places/gnome-fs-directory.png
+share/icons/gnome-alternative/24x24/places/gnome-fs-ftp.png
+share/icons/gnome-alternative/24x24/places/gnome-fs-home.png
+share/icons/gnome-alternative/24x24/places/gnome-fs-nfs.png
+share/icons/gnome-alternative/24x24/places/gnome-fs-share.png
+share/icons/gnome-alternative/24x24/places/gnome-fs-smb.png
+share/icons/gnome-alternative/24x24/places/gnome-fs-ssh.png
+share/icons/gnome-alternative/24x24/places/gnome-mime-x-directory-smb-share.png
+share/icons/gnome-alternative/24x24/places/gtk-directory.png
+share/icons/gnome-alternative/24x24/places/network.png
+share/icons/gnome-alternative/24x24/places/stock_folder.png
+share/icons/gnome-alternative/24x24/places/user-home.png
+share/icons/gnome-alternative/24x24/status/folder-drag-accept.png
+share/icons/gnome-alternative/24x24/status/folder-open.png
+share/icons/gnome-alternative/24x24/status/folder-visiting.png
+share/icons/gnome-alternative/24x24/status/folder_open.png
+share/icons/gnome-alternative/24x24/status/gnome-fs-directory-accept.png
+share/icons/gnome-alternative/24x24/status/gnome-fs-directory-visiting.png
+share/icons/gnome-alternative/24x24/status/stock_open.png
+share/icons/gnome-alternative/32x32/actions/document-open.png
+share/icons/gnome-alternative/32x32/actions/fileopen.png
+share/icons/gnome-alternative/32x32/actions/folder-new.png
+share/icons/gnome-alternative/32x32/actions/folder_new.png
+share/icons/gnome-alternative/32x32/actions/gtk-open.png
+share/icons/gnome-alternative/32x32/actions/stock_new-dir.png
+share/icons/gnome-alternative/32x32/places/application-x-gnome-saved-search.png
+share/icons/gnome-alternative/32x32/places/folder-remote-ftp.png
+share/icons/gnome-alternative/32x32/places/folder-remote-smb.png
+share/icons/gnome-alternative/32x32/places/folder-remote-ssh.png
+share/icons/gnome-alternative/32x32/places/folder-remote.png
+share/icons/gnome-alternative/32x32/places/folder-saved-search.png
+share/icons/gnome-alternative/32x32/places/folder.png
+share/icons/gnome-alternative/32x32/places/folder_home.png
+share/icons/gnome-alternative/32x32/places/gnome-fs-directory.png
+share/icons/gnome-alternative/32x32/places/gnome-fs-ftp.png
+share/icons/gnome-alternative/32x32/places/gnome-fs-home.png
+share/icons/gnome-alternative/32x32/places/gnome-fs-nfs.png
+share/icons/gnome-alternative/32x32/places/gnome-fs-share.png
+share/icons/gnome-alternative/32x32/places/gnome-fs-smb.png
+share/icons/gnome-alternative/32x32/places/gnome-fs-ssh.png
+share/icons/gnome-alternative/32x32/places/gnome-mime-x-directory-smb-share.png
+share/icons/gnome-alternative/32x32/places/gtk-directory.png
+share/icons/gnome-alternative/32x32/places/network.png
+share/icons/gnome-alternative/32x32/places/stock_folder.png
+share/icons/gnome-alternative/32x32/places/user-home.png
+share/icons/gnome-alternative/32x32/status/folder-drag-accept.png
+share/icons/gnome-alternative/32x32/status/folder-open.png
+share/icons/gnome-alternative/32x32/status/folder-visiting.png
+share/icons/gnome-alternative/32x32/status/folder_open.png
+share/icons/gnome-alternative/32x32/status/gnome-fs-directory-accept.png
+share/icons/gnome-alternative/32x32/status/gnome-fs-directory-visiting.png
+share/icons/gnome-alternative/32x32/status/stock_open.png
+share/icons/gnome-alternative/index.theme
+share/icons/gnome-alternative/scalable/actions/document-open.svg
+share/icons/gnome-alternative/scalable/actions/fileopen.svg
+share/icons/gnome-alternative/scalable/actions/folder-new.svg
+share/icons/gnome-alternative/scalable/actions/folder_new.svg
+share/icons/gnome-alternative/scalable/actions/gtk-open.svg
+share/icons/gnome-alternative/scalable/actions/stock_new-dir.svg
+share/icons/gnome-alternative/scalable/places/application-x-gnome-saved-search.svg
+share/icons/gnome-alternative/scalable/places/folder-remote-ftp.svg
+share/icons/gnome-alternative/scalable/places/folder-remote-smb.svg
+share/icons/gnome-alternative/scalable/places/folder-remote-ssh.svg
+share/icons/gnome-alternative/scalable/places/folder-remote.svg
+share/icons/gnome-alternative/scalable/places/folder-saved-search.svg
+share/icons/gnome-alternative/scalable/places/folder.svg
+share/icons/gnome-alternative/scalable/places/folder_home.svg
+share/icons/gnome-alternative/scalable/places/gnome-fs-directory.svg
+share/icons/gnome-alternative/scalable/places/gnome-fs-ftp.svg
+share/icons/gnome-alternative/scalable/places/gnome-fs-home.svg
+share/icons/gnome-alternative/scalable/places/gnome-fs-nfs.svg
+share/icons/gnome-alternative/scalable/places/gnome-fs-share.svg
+share/icons/gnome-alternative/scalable/places/gnome-fs-smb.svg
+share/icons/gnome-alternative/scalable/places/gnome-fs-ssh.svg
+share/icons/gnome-alternative/scalable/places/gnome-mime-x-directory-smb-share.svg
+share/icons/gnome-alternative/scalable/places/gtk-directory.svg
+share/icons/gnome-alternative/scalable/places/network.svg
+share/icons/gnome-alternative/scalable/places/stock_folder.svg
+share/icons/gnome-alternative/scalable/places/user-home.svg
+share/icons/gnome-alternative/scalable/status/document-open.svg
+share/icons/gnome-alternative/scalable/status/folder-drag-accept.svg
+share/icons/gnome-alternative/scalable/status/folder-open.svg
+share/icons/gnome-alternative/scalable/status/folder-visiting.svg
+share/icons/gnome-alternative/scalable/status/folder_open.svg
+share/icons/gnome-alternative/scalable/status/gnome-fs-directory-accept.svg
+share/icons/gnome-alternative/scalable/status/gnome-fs-directory-visiting.svg
+share/icons/gnome-alternative/scalable/status/stock_open.svg
+share/locale/ca/LC_MESSAGES/gnome-themes-extras.mo
+share/locale/en_GB/LC_MESSAGES/gnome-themes-extras.mo
+share/locale/eu/LC_MESSAGES/gnome-themes-extras.mo
+share/locale/sv/LC_MESSAGES/gnome-themes-extras.mo
 share/themes/Darklooks/gtk-2.0/gtkrc
 share/themes/Darklooks/index.theme
+share/themes/Unity/gtk-2.0/gtkrc
+share/themes/Unity/index.theme
+share/themes/Unity/metacity-1/metacity-theme-1.xml
+@dirrm share/themes/Unity/metacity-1
+@dirrm share/themes/Unity/gtk-2.0
+@dirrm share/themes/Unity
 @dirrm share/themes/Darklooks/gtk-2.0
 @dirrm share/themes/Darklooks
 @dirrmtry share/themes
+@dirrm share/icons/gnome-alternative/scalable/status
+@dirrm share/icons/gnome-alternative/scalable/places
+@dirrm share/icons/gnome-alternative/scalable/actions
+@dirrm share/icons/gnome-alternative/scalable
+@dirrm share/icons/gnome-alternative/32x32/status
+@dirrm share/icons/gnome-alternative/32x32/places
+@dirrm share/icons/gnome-alternative/32x32/actions
+@dirrm share/icons/gnome-alternative/32x32
+@dirrm share/icons/gnome-alternative/24x24/status
+@dirrm share/icons/gnome-alternative/24x24/places
+@dirrm share/icons/gnome-alternative/24x24/actions
+@dirrm share/icons/gnome-alternative/24x24
+@dirrm share/icons/gnome-alternative/22x22/status
+@dirrm share/icons/gnome-alternative/22x22/places
+@dirrm share/icons/gnome-alternative/22x22/actions
+@dirrm share/icons/gnome-alternative/22x22
+@dirrm share/icons/gnome-alternative/16x16/status
+@dirrm share/icons/gnome-alternative/16x16/places
+@dirrm share/icons/gnome-alternative/16x16/actions
+@dirrm share/icons/gnome-alternative/16x16
+@dirrm share/icons/gnome-alternative
 @dirrm share/icons/Neu/scalable/status
 @dirrm share/icons/Neu/scalable/places
 @dirrm share/icons/Neu/scalable/mimetypes
@@ -5384,6 +5618,7 @@ share/themes/Darklooks/index.theme
 @dirrm share/icons/Foxtrot/scalable/categories
 @dirrm share/icons/Foxtrot/scalable/actions
 @dirrm share/icons/Foxtrot/scalable
+@dirrm share/icons/Foxtrot/24x24/status
 @dirrm share/icons/Foxtrot/24x24/places
 @dirrm share/icons/Foxtrot/24x24/actions
 @dirrm share/icons/Foxtrot/24x24
@@ -5391,6 +5626,7 @@ share/themes/Darklooks/index.theme
 @dirrm share/icons/Foxtrot/22x22/places
 @dirrm share/icons/Foxtrot/22x22/actions
 @dirrm share/icons/Foxtrot/22x22
+@dirrm share/icons/Foxtrot/16x16/status
 @dirrm share/icons/Foxtrot/16x16/places
 @dirrm share/icons/Foxtrot/16x16/actions
 @dirrm share/icons/Foxtrot/16x16
