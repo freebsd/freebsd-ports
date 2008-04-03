@@ -16,7 +16,7 @@ if ${PW} usershow "${OPENACS_USER}" 2>/dev/null 1>&2; then
 	echo "To delete ${OPENACS_USER} user permanently, use the following command:"
 	echo "${PW} userdel \"${OPENACS_USER}\""
 fi
-if ${PW} usershow "${OPENACS_GROUP}" 2>/dev/null 1>&2; then
+if ${PW} groupshow "${OPENACS_GROUP}" 2>/dev/null 1>&2; then
 	echo ""
 	echo "To delete ${OPENACS_GROUP} group permanently, use the following command:"
 	echo "${PW} groupdel \"${OPENACS_GROUP}\""
