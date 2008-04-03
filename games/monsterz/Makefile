@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	monsterz
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	games
 MASTER_SITES=	http://sam.zoy.org/monsterz/
 
