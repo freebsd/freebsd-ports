@@ -42,7 +42,7 @@ $FreeBSD$
  ######## Copy the html docs
  
 -print "Copying HTML documentation to", dest
-+if not os.getenv('NOPORTDOCS'):
++if not os.environ.has_key('NOPORTDOCS'):
 +    docsdir = '%%DOCSDIR%%'
 +    print "Copying HTML documentation to", docsdir
 +    shutil.copytree( "docs", docsdir)

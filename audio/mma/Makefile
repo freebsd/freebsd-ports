@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mma
-PORTVERSION=	1.2
+DISTVERSION=	1.3a
 #PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
-DISTFILES=	${PORTNAME}-bin-${PORTVERSION}.tar.gz
+DISTFILES=	${PORTNAME}-bin-${DISTVERSION}.tar.gz
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Musical MIDI Accompaniment generator
@@ -20,18 +20,18 @@ NO_BUILD=	yes
 
 USE_PYTHON=	2.4+
 
-OPTIONS=	TIMIDITY	"Install timidity++ as MIDI player" On \
+OPTIONS=	TIMIDITY	"Install timidity++ as MIDI player" Off \
 		PLAYMIDI	"Install playmidi as MIDI player" Off
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-bin-${PORTVERSION}
-WRKDOC=	${WRKDIR}/${PORTNAME}-pdf-${PORTVERSION}
+WRKSRC=	${WRKDIR}/${PORTNAME}-bin-${DISTVERSION}
+WRKDOC=	${WRKDIR}/${PORTNAME}-pdf-${DISTVERSION:S,a,,}
 
 CP_INSTALL_MMA=	${WRKSRC}/cp-install
 FIND_FILES=	${WRKSRC} -type f -and \( -name "*.py" -or -name 'cp-install' -or -name 'mkall' \) -print0
 FIND_FILES_BAK=	${WRKSRC} -type f -and \( -name "*.orig" -or -name "*.bak" \)
 
 .if !defined (NOPORTDOCS)
-DISTFILES+=	${PORTNAME}-pdf-${PORTVERSION}.tar.gz
+DISTFILES+=	${PORTNAME}-pdf-${DISTVERSION:S,a,,}.tar.gz
 .endif
 
 .include <bsd.port.pre.mk>

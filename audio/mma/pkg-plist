@@ -149,6 +149,8 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/node29.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/node3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/node30.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ref/node31.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ref/node32.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/node4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/node5.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/node6.html
@@ -253,6 +255,8 @@ bin/mma
 %%DATADIR%%/MMA/file.pyc
 %%DATADIR%%/MMA/gbl.py
 %%DATADIR%%/MMA/gbl.pyc
+%%DATADIR%%/MMA/grooves.py
+%%DATADIR%%/MMA/grooves.pyc
 %%DATADIR%%/MMA/harmony.py
 %%DATADIR%%/MMA/harmony.pyc
 %%DATADIR%%/MMA/lyric.py
@@ -297,12 +301,19 @@ bin/mma
 %%DATADIR%%/MMA/patSolo.pyc
 %%DATADIR%%/MMA/patWalk.py
 %%DATADIR%%/MMA/patWalk.pyc
+%%DATADIR%%/MMA/patch.py
+%%DATADIR%%/MMA/patch.pyc
+%%DATADIR%%/MMA/seqrnd.py
+%%DATADIR%%/MMA/seqrnd.pyc
 %%DATADIR%%/MMA/translate.py
 %%DATADIR%%/MMA/translate.pyc
 %%DATADIR%%/MMA/volume.py
 %%DATADIR%%/MMA/volume.pyc
 %%DATADIR%%/includes/README
 %%DATADIR%%/includes/aria/.keepme
+%%DATADIR%%/includes/casio-wk3000.mma
+%%DATADIR%%/includes/casiowk3000.mma
+%%DATADIR%%/includes/init-long.mma
 %%DATADIR%%/includes/init.mma
 %%DATADIR%%/includes/reset.mma
 %%DATADIR%%/includes/stdpats.mma
@@ -313,7 +324,6 @@ bin/mma
 %%DATADIR%%/lib/kara/K50s_rock.mma
 %%DATADIR%%/lib/kara/README
 %%DATADIR%%/lib/kara/twi.mma
-%%DATADIR%%/lib/stdlib/#waltz.mma#
 %%DATADIR%%/lib/stdlib/.mmaDB
 %%DATADIR%%/lib/stdlib/50srock.mma
 %%DATADIR%%/lib/stdlib/60srock.mma
@@ -388,33 +398,33 @@ bin/mma
 %%DATADIR%%/lib/yamaha/quando-g.s280.mma
 %%DATADIR%%/lib/yamaha/w-rock.mma
 %%DATADIR%%/lib/yamaha/western.mma
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib/kara
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib/stdlib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib/yamaha
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ref/mupex
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ref
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/tut/mup
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/tut
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ref/mupex
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ref
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib/yamaha
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib/stdlib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib/kara
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/lib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/aria
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/harmony
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/lyrics
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/midi-inc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/riffs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rndset
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scales
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scales
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rndset
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/riffs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/midi-inc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/lyrics
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/harmony
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/aria
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%/MMA
+@dirrm %%DATADIR%%/lib/yamaha
+@dirrm %%DATADIR%%/lib/stdlib
+@dirrm %%DATADIR%%/lib/kara
+@dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/includes/aria
 @dirrm %%DATADIR%%/includes
-@dirrm %%DATADIR%%/lib/kara
-@dirrm %%DATADIR%%/lib/stdlib
-@dirrm %%DATADIR%%/lib/yamaha
-@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/MMA
 @dirrm %%DATADIR%%
