@@ -5,6 +5,9 @@ include/cdialog/dlg_colors.h
 include/cdialog/dlg_config.h
 include/cdialog/dlg_keys.h
 lib/libcdialog.a
+lib/libcdialog.la
+lib/libcdialog.so
+lib/libcdialog.so.6
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/calendar
 %%EXAMPLESDIR%%/calendar-stdout

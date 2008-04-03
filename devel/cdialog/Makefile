@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdialog
-PORTVERSION=	1.1.20071028
+PORTVERSION=	1.1.20080316
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/dialog/ \
@@ -19,8 +19,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	An enhanced version of 'dialog' to work with ncurses
 
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}
+USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME} --with-libtool
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKEFILE=	makefile
 
