@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polyml
-PORTVERSION=	5.0
+PORTVERSION=	5.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +17,8 @@ MAINTAINER=	timbob@bigpond.com
 COMMENT=	Fast open-source implementation of Standard ML
 
 USE_GCC=	3.2+
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --without-x
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-x
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
 
@@ -29,7 +29,7 @@ PLIST_FILES=	bin/poly		\
 		lib/libpolyml.a		\
 		lib/libpolyml.la	\
 		lib/libpolyml.so	\
-		lib/libpolyml.so.0
+		lib/libpolyml.so.1
 
 MAN1=		poly.1 polyimport.1
 MANCOMPRESSED=	no
