@@ -1,24 +1,24 @@
-bin/pfsabsolute
-bin/pfscat
-bin/pfsclamp
-bin/pfscut
-bin/pfsextractchannels
-bin/pfsflip
-bin/pfsgamma
-bin/pfsin
-bin/pfsindcraw
-bin/pfsinmulti
-bin/pfsinpfm
 bin/pfsinrgbe
+bin/pfsoutrgbe
+bin/pfsinpfm
+bin/pfsoutpfm
+bin/pfsin
 bin/pfsout
 bin/pfsoutffmpeg
-bin/pfsoutpfm
-bin/pfsoutrgbe
-bin/pfspad
+bin/pfsinmulti
+bin/pfsindcraw
+bin/pfsclamp
+bin/pfsgamma
+bin/pfstag
+bin/pfssize
+bin/pfsextractchannels
 bin/pfspanoramic
 bin/pfsrotate
-bin/pfssize
-bin/pfstag
+bin/pfsflip
+bin/pfscut
+bin/pfspad
+bin/pfscat
+bin/pfsabsolute
 %%PPM%%bin/pfsinppm
 %%PPM%%bin/pfsoutppm
 %%EXR%%bin/pfsinexr
@@ -27,19 +27,20 @@ bin/pfstag
 %%TIFF%%bin/pfsouttiff
 %%IM%%bin/pfsinimgmagick
 %%IM%%bin/pfsoutimgmagick
-%%QT%%bin/pfsv
 %%QT%%bin/pfsview
-%%GL%%bin/pfsglview
+%%QT%%bin/pfsv
 %%OCTAVE%%bin/pfsoctavelum
 %%OCTAVE%%bin/pfsoctavergb
 %%OCTAVE%%bin/pfsstat
-include/pfs-1.2/array2d.h
+%%GL%%bin/pfsglview
 include/pfs-1.2/pfs.h
+include/pfs-1.2/array2d.h
 lib/libpfs-1.2.a
 lib/libpfs-1.2.la
 lib/libpfs-1.2.so
 lib/libpfs-1.2.so.0
 libdata/pkgconfig/pfs.pc
+%%OCTAVE%%@cwd %%OCTAVE_BASE%%
 %%OCTAVE%%libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%/pfstools/pfsclose.oct
 %%OCTAVE%%libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%/pfstools/pfsget.oct
 %%OCTAVE%%libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%/pfstools/pfsopen.oct
@@ -57,12 +58,18 @@ libdata/pkgconfig/pfs.pc
 %%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfsview.m
 %%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfsview_list.m
 %%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/pfstools/pfsview_rgb.m
-@dirrmtry include/pfs-1.2
+%%OCTAVE%%@cwd %%PFS_BASE%%
+@dirrm include/pfs-1.2
+%%OCTAVE%%@cwd %%OCTAVE_BASE%%
+%%OCTAVE%%@dirrm share/octave/%%OCTAVE_VERSION%%/site/m/pfstools
+%%OCTAVE%%@dirrmtry share/octave/%%OCTAVE_VERSION%%/site/m
+%%OCTAVE%%@dirrmtry share/octave/%%OCTAVE_VERSION%%/site
+%%OCTAVE%%@dirrmtry share/octave/%%OCTAVE_VERSION%%
+%%OCTAVE%%@dirrmtry share/octave
 %%OCTAVE%%@dirrm libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%/pfstools
 %%OCTAVE%%@dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%BUILD%%
 %%OCTAVE%%@dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site/oct
 %%OCTAVE%%@dirrmtry libexec/octave/%%OCTAVE_VERSION%%/site
 %%OCTAVE%%@dirrmtry libexec/octave/%%OCTAVE_VERSION%%
 %%OCTAVE%%@dirrmtry libexec/octave
-%%OCTAVE%%@dirrm share/octave/%%OCTAVE_VERSION%%/site/m/pfstools
-%%OCTAVE%%@dirrmtry share/octave/%%OCTAVE_VERSION%%/site/m
+%%OCTAVE%%@cwd %%PFS_BASE%%
