@@ -2,6 +2,7 @@ bin/emelfm2
 lib/emelfm2/plugins/e2p_clone.so
 lib/emelfm2/plugins/e2p_config.so
 lib/emelfm2/plugins/e2p_cpbar.so
+lib/emelfm2/plugins/e2p_crypt.so
 lib/emelfm2/plugins/e2p_dircmp.so
 lib/emelfm2/plugins/e2p_du.so
 lib/emelfm2/plugins/e2p_find.so
@@ -10,7 +11,7 @@ lib/emelfm2/plugins/e2p_glob.so
 lib/emelfm2/plugins/e2p_mvbar.so
 lib/emelfm2/plugins/e2p_names_clip.so
 lib/emelfm2/plugins/e2p_pack.so
-lib/emelfm2/plugins/e2p_rename_ext.so
+lib/emelfm2/plugins/e2p_rename.so
 lib/emelfm2/plugins/e2p_sort_by_ext.so
 lib/emelfm2/plugins/e2p_times.so
 %%TRACKER%%lib/emelfm2/plugins/e2p_track.so
@@ -67,6 +68,7 @@ share/pixmaps/emelfm2/plugin_clip_48.png
 share/pixmaps/emelfm2/plugin_clone_48.png
 share/pixmaps/emelfm2/plugin_config_48.png
 share/pixmaps/emelfm2/plugin_copy_48.png
+share/pixmaps/emelfm2/plugin_crypt_48.png
 share/pixmaps/emelfm2/plugin_dircmp_48.png
 share/pixmaps/emelfm2/plugin_du_48.png
 share/pixmaps/emelfm2/plugin_extsort_48.png

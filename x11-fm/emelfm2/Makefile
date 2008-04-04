@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	emelfm2
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://emelfm2.net/rel/
 
@@ -29,6 +28,7 @@ OPTIONS=	DEBUG	"Enable debugging messages" off \
 		FAM	"Enable FAM for file monitoring" off \
 		THUMB	"Enable the thumbnail plugin" off \
 		TRACKER	"Enable the tracker plugin" off \
+		HAL	"Enable HAL support" off \
 		NLS	"Enable gettext support" on
 
 .include <bsd.port.pre.mk>
@@ -74,6 +74,11 @@ INSTALL_TARGET+=install_i18n
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if defined (WITH_HAL)
+MAKE_ENV+=	WITH_HAL=1
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 .endif
 
 .if ${OSVERSION} < 600000
