@@ -21,4 +21,12 @@ USE_GNOME=	gnomehack gnomeprefix ltverhack
 USE_GHOSTSCRIPT=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
+pre-configure:
+	@if [ -n "`${PKG_INFO} -xI '^ghostscript-gnu-[0-9]*'`" ]; then \
+		${ECHO_CMD} "${PKGNAME}: ghostscript-gnu installed, please deinstall ghostscript-gnu"; \
+		${ECHO_CMD} "and use ghostscript-gpl. Make sure you don't have WITH_GHOSTSCRIPT_GNU"; \
+		${ECHO_CMD} "or GHOSTSCRIPT_PORT defined."; \
+		${FALSE}; \
+	fi
+
 .include <bsd.port.mk>
