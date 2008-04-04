@@ -3,14 +3,17 @@ bin/gjar
 bin/gjarsigner
 bin/gkeytool
 bin/gnative2ascii
+bin/gorbd
+bin/grmid
+bin/grmiregistry
 bin/gserialver
+bin/gtnameserv
 include/jawt.h
 include/jawt_md.h
-include/jni.h
-include/jni_md.h
-lib/classpath/libgconfpeer.la
-lib/classpath/libgconfpeer.so
-lib/classpath/libgconfpeer.so.0
+%%GCONF%%lib/classpath/libgconfpeer.la
+%%GCONF%%lib/classpath/libgconfpeer.so
+%%GTK2%%lib/classpath/libgtkpeer.so
+%%GTK2%%lib/classpath/libgtkpeer.la
 lib/classpath/libjavaio.la
 lib/classpath/libjavaio.so
 lib/classpath/libjavaio.so.0
@@ -29,11 +32,14 @@ lib/classpath/libjavanio.so.0
 lib/classpath/libjavautil.la
 lib/classpath/libjavautil.so
 lib/classpath/libjavautil.so.0
+%%GTK2%%lib/classpath/libjawt.so
+%%GTK2%%lib/classpath/libjawt.la
+%%QT4%%lib/classpath/libqtpeer.so
+%%QT4%%lib/classpath/libqtpeer.la
 lib/logging.properties
 lib/security/classpath.security
 @dirrm lib/classpath
 @dirrm lib/security
-%%DATADIR%%/README
 %%DATADIR%%/examples/Makefile.java2d
 %%DATADIR%%/examples/Makefile.jawt
 %%DATADIR%%/examples/README
@@ -81,10 +87,12 @@ lib/security/classpath.security
 %%DATADIR%%/examples/gnu/classpath/examples/awt/Demo.java
 %%DATADIR%%/examples/gnu/classpath/examples/datatransfer/Demo.java
 %%DATADIR%%/examples/gnu/classpath/examples/html/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/icons/back.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/badge.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/big-fullscreen.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/big-home.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/big-warning.png
+%%DATADIR%%/examples/gnu/classpath/examples/icons/reload.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/stock-copy.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/stock-cut.png
 %%DATADIR%%/examples/gnu/classpath/examples/icons/stock-go-back.png
@@ -117,6 +125,7 @@ lib/security/classpath.security
 %%DATADIR%%/examples/gnu/classpath/examples/management/TestThread.java
 %%DATADIR%%/examples/gnu/classpath/examples/midi/Demo.java
 %%DATADIR%%/examples/gnu/classpath/examples/print/Demo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/BrowserEditorKit.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/ButtonDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/ComboBoxDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/Demo.java
@@ -138,6 +147,15 @@ lib/security/classpath.security
 %%DATADIR%%/examples/gnu/classpath/examples/swing/TextAreaDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/TextFieldDemo.java
 %%DATADIR%%/examples/gnu/classpath/examples/swing/TreeDemo.java
+%%DATADIR%%/examples/gnu/classpath/examples/swing/forms.html
+%%DATADIR%%/examples/gnu/classpath/examples/swing/frame1.html
+%%DATADIR%%/examples/gnu/classpath/examples/swing/frame2.html
+%%DATADIR%%/examples/gnu/classpath/examples/swing/frame3.html
+%%DATADIR%%/examples/gnu/classpath/examples/swing/frame4.html
+%%DATADIR%%/examples/gnu/classpath/examples/swing/frames.html
+%%DATADIR%%/examples/gnu/classpath/examples/swing/tables.html
+%%DATADIR%%/examples/gnu/classpath/examples/swing/textstyles.html
+%%DATADIR%%/examples/gnu/classpath/examples/swing/welcome.html
 %%DATADIR%%/glibj.zip
 %%DATADIR%%/tools.zip
 @dirrm %%DATADIR%%/examples/gnu/classpath/examples/swing
