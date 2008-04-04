@@ -6,31 +6,25 @@
 #
 
 PORTNAME=	crow
-PORTVERSION=	2.11.0
+PORTVERSION=	2.11.2
 CATEGORIES=	devel gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	crow-designer
+MASTER_SITES=	SF/crow-designer
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern GUI builder for the GTK+ toolkit
 
-LIB_PC_DEPENDS=	guiloader-c++.pc:${PORTSDIR}/devel/guiloader-c++
-
-LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
-BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
-RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g} \
+BUILD_DEPENDS=	guiloader-c++>=2.10.1:${PORTSDIR}/devel/guiloader-c++
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+RUN_DEPENDS=	guiloader-c++>=2.10.1:${PORTSDIR}/devel/guiloader-c++ \
 		xdg-desktop-menu:${PORTSDIR}/devel/xdg-utils
 
 USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnometarget gtk20
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
-USE_GNOME=	atk glib20 gtk20 pango
 USE_GMAKE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/${PORTNAME}/Makefile.in
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
