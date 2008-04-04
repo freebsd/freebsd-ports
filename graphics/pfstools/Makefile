@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	pfstools
-PORTVERSION=	1.6.2
-PORTREVISION=	3
+PORTVERSION=	1.6.4
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	darius@dons.net.au
 COMMENT=	Tools for manipulating HDR images and video frames
@@ -19,26 +17,27 @@ RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
 PFS_CPPFLAGS=	-I${LOCALBASE}/include
 PFS_LDFLAGS=	-L${LOCALBASE}/lib
+PFS_BUILD=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
+PLIST_SUB+=	PFS_BASE=${PREFIX}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}
-CONFIGURE_ARGS=	--disable-jpeghdr --disable-matlab
+CONFIGURE_TARGET=	--build=${PFS_BUILD}
+CONFIGURE_ARGS=	--disable-jpeghdr --disable-matlab \
+		--with-bash=${LOCALBASE}/bin/bash
 CONFIGURE_ENV=	CPPFLAGS="${PFS_CPPFLAGS}" \
 		LDFLAGS="${PFS_LDFLAGS}" \
 		PKG_CONFIG_PATH="${LOCALBASE}/libdata/pkgconfig"
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-USE_GL=		glut
-
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
 
-OPTIONS=	+PPM "Compile programs that use PPM (NetPBM)" off \
+OPTIONS=	PPM "Compile programs that use PPM (NetPBM)" off \
 		EXR "Compile programs that use OpenEXR library" off \
 		TIFF "Compile programs that use TIFF library" on \
 		QT "Compile programs that use QT library" off \
 		IM "Compile programs that use ImageMagick library" off \
-		OCTAVE "Compile octave interface functioffs" off \
+		OCTAVE "Compile octave interface functions" off \
 		GL "Compile opengl code (pfsglview)" off
 
 MAN1=		pfsin.1 \
@@ -70,7 +69,6 @@ MAN1=		pfsin.1 \
 		pfspad.1 \
 		pfscat.1 \
 		pfsabsolute.1
-
 MLINKS=		pfsoutppm.1 \
 		pfsouttiff.1 \
 		pfsoutppm.1 \
@@ -110,7 +108,7 @@ PLIST_SUB+=	TIFF="@comment "
 .if defined(WITH_QT)
 CONFIGURE_ARGS+=--enable-qt
 USE_QT_VER=	3
-LIB_DEPENDS+=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt33
+.include "${PORTSDIR}/Mk/bsd.kde.mk"
 PLIST_SUB+=	QT=""
 MAN1+=		pfsview.1 \
 		pfsv.1
@@ -131,11 +129,21 @@ PLIST_SUB+=	IM="@comment "
 .if defined(WITH_OCTAVE)
 CONFIGURE_ARGS+=--enable-octave
 USE_FORTRAN=	yes
+
+# need to determine which octave installed which patching
+PATCH_DEPENDS+=	mkoctfile:${PORTSDIR}/math/octave
 BUILD_DEPENDS+=	mkoctfile:${PORTSDIR}/math/octave
 RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave
+
+OCTAVE_BASE?=	${LOCALBASE}
+OCTAVE_VERSION!=${OCTAVE_BASE}/bin/octave-config -v 2>&1 || ${ECHO} "0"
 PLIST_SUB+=	OCTAVE="" \
-		OCTAVE_VERSION="`${LOCALBASE}/bin/octave-config -v`" \
-		BUILD=${CONFIGURE_TARGET:S/--build//}
+		OCTAVE_VERSION=${OCTAVE_VERSION} \
+		OCTAVE_BASE=${OCTAVE_BASE} \
+		BUILD=${PFS_BUILD}
+.if (!empty(OCTAVE_VERSION:M[3-9].*))
+EXTRA_PATCHES+=	${PATCHDIR}/epatch-src-octave-pfsopen.cpp
+.endif
 MAN1+=		pfsoctavelum.1 \
 		pfsoctavergb.1 \
 		pfsstat.1
@@ -145,24 +153,16 @@ PLIST_SUB+=	OCTAVE="@comment "
 .endif
 
 .if defined(WITH_GL)
-PFS_CPPFLAGS+=	-I${X11BASE}/include
-PFS_LDFLAGS+=	-L${X11BASE}/lib
 CONFIGURE_ARGS+=--enable-opengl
-LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut
+USE_GL=		glut
 PLIST_SUB+=	GL=""
 .else
 CONFIGURE_ARGS+=--disable-opengl
 PLIST_SUB+=	GL="@comment "
 .endif
 
+.if defined(WITH_OCTAVE)
 pre-configure:
-	@${REINPLACE_CMD} -e "s,#!/bin/bash,#!${LOCALBASE}/bin/bash," \
-		${WRKSRC}/src/fileformat/pfsin \
-		${WRKSRC}/src/fileformat/pfsout \
-		${WRKSRC}/src/fileformat/pfsinmulti \
-		${WRKSRC}/src/fileformat/pfsindcraw \
-		${WRKSRC}/src/pfsview/pfsv
-.if defined(WITH_OCT)
 	@${REINPLACE_CMD} \
 		-e 's|/usr/bin/octave|${LOCALBASE}/bin/octave|' \
 		${WRKSRC}/src/octave/*

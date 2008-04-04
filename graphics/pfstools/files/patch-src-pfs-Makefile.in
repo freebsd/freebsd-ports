@@ -1,11 +1,11 @@
---- src/pfs/Makefile.in.orig	2007-09-30 11:07:52.000000000 +0930
-+++ src/pfs/Makefile.in	2007-09-30 11:10:14.000000000 +0930
-@@ -183,7 +183,7 @@
+--- src/pfs/Makefile.in.orig	2008-01-01 14:27:14.000000000 +0000
++++ src/pfs/Makefile.in	2008-02-12 10:59:44.000000000 +0000
+@@ -243,7 +243,7 @@
  library_includedir = $(includedir)/pfs-1.2
  library_include_HEADERS = pfs.h array2d.h
  #INCLUDES = 
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = pfs.pc
- subdir = src/pfs
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ all: all-am
+ 
