@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	reply-o-matic
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	A highly configureble, secure, auto reply software
