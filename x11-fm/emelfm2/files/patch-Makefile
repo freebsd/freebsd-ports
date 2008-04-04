@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jul 28 10:40:12 2007
-+++ Makefile	Sat Jul 28 10:42:14 2007
+--- Makefile.orig	2008-02-09 23:22:11.000000000 +0100
++++ Makefile	2008-04-04 21:47:47.000000000 +0200
 @@ -56,7 +56,7 @@
  
  #these are only used here for installation purposes
@@ -9,7 +9,7 @@
  #as well as usage here, all in-code uses of these is assumed localised
  ifeq ($(DOCS_VERSION), 1)
  DOC_DIR = $(PREFIX)/share/doc/$(TARGET)-$(VERSION)
-@@ -203,7 +203,7 @@
+@@ -217,7 +217,7 @@
  
  lLDFLAGS = $(LDFLAGS)
  # -lrt needed for clock_gettime()
@@ -18,7 +18,15 @@
  ifeq ($(USE_FAM),1)
  lLIBS += -lfam
  endif
-@@ -221,10 +221,10 @@
+@@ -234,6 +234,7 @@
+ lLIBS += -lacl
+ endif
+ ifeq ($(WITH_HAL),1)
++lCFLAGS += $(shell pkg-config --cflags dbus-1 dbus-glib-1 hal hal-storage)
+ lLIBS += $(shell pkg-config --libs dbus-1 dbus-glib-1 hal hal-storage)
+ endif
+ # for vfs & gvfs development
+@@ -246,10 +247,10 @@
  endif
  # should not need translation
  OPSYS := $(shell uname)
@@ -31,13 +39,5 @@
 +#lLIBS += $(shell if test $(OSREL) -lt 500041 ; then echo "-lgnugetopt"; fi)
 +#endif
  
- #for gvfs development
- ifeq ($(WITH_GVFS),1)
-@@ -254,7 +254,6 @@
- 	done
- 	@install -d $(MAN_DIR)
- 	@install -m 644 docs/$(TARGET).1 $(MAN_DIR);
--	@bzip2 -f $(MAN_DIR)/$(TARGET).1;
- 
- ifeq ($(XDG_INTEGRATION), 1)
- 		@install -d $(XDG_DESKTOP_DIR)
+ .PHONY: all plugins install install_plugins uninstall uninstall_plugins doc \
+         clean deps marshals gettext i18n install_i18n uninstall_i18n \
