@@ -1,0 +1,17 @@
+--- lib/Tools/codegen.orig	Sat Jan 12 17:19:17 2008
++++ lib/Tools/codegen	Sat Jan 12 17:19:37 2008
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # $Id: codegen,v 1.5 2007/11/21 13:18:23 haftmann Exp $
+ # Author: Florian Haftmann, TUM
+@@ -10,7 +10,7 @@
+ 
+ PRG="$(basename "$0")"
+ 
+-function usage()
++usage()
+ {
+   echo
+   echo "Usage: $PRG IMAGE THY SERI"

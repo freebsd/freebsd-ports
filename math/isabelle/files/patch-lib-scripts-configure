@@ -1,0 +1,15 @@
+--- lib/scripts/configure.orig	Fri Sep 14 18:00:10 2007
++++ lib/scripts/configure	Fri Sep 14 18:00:21 2007
+@@ -8,11 +8,5 @@
+ ## patch scripts
+ 
+ cd "`dirname "$0"`"
++exec sh lib/scripts/patch-scripts.bash
+ 
+-if bash -c :
+-then
+-  bash lib/scripts/patch-scripts.bash
+-else
+-  echo "FATAL ERROR: bash not found!"
+-  exit 2
+-fi

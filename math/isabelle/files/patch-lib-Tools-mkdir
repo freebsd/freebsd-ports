@@ -1,10 +1,10 @@
---- ./lib/Tools/mkdir.orig	Sun Sep  2 15:11:55 2007
-+++ ./lib/Tools/mkdir	Sun Sep  2 15:49:15 2007
+--- lib/Tools/mkdir.orig	Sat Jan 12 16:57:23 2008
++++ lib/Tools/mkdir	Sat Jan 12 17:02:14 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  #
- # $Id: mkdir,v 1.42 2005/06/20 20:13:55 wenzelm Exp $
+ # $Id: mkdir,v 1.45 2007/11/12 10:18:51 wenzelm Exp $
  # Author: Markus Wenzel, TU Muenchen
 @@ -10,7 +10,7 @@
  

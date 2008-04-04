@@ -1,10 +1,10 @@
---- src/Pure/mk.orig	Sun Jun 12 07:19:36 2005
-+++ src/Pure/mk	Sun Sep  2 19:22:39 2007
+--- src/Pure/mk.orig	Sat Jan 12 17:35:00 2008
++++ src/Pure/mk	Sat Jan 12 17:36:05 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  #
- # $Id: mk,v 1.27 2005/06/11 21:19:36 wenzelm Exp $
+ # $Id: mk,v 1.32 2007/01/04 20:58:46 wenzelm Exp $
  # Author: Markus Wenzel, TU Muenchen
 @@ -10,7 +10,7 @@
  
@@ -24,12 +24,3 @@
  {
    echo "$1" >&2
    exit 2
-@@ -81,7 +81,7 @@
- 
- # run isabelle
- 
--SECONDS=0
-+SECONDS=$(( `date +'%j * 86400 + %H * 3600 + %M * 60 + %S'` ))
- 
- if [ -z "$RAW" ]; then
-   ITEM="Pure"

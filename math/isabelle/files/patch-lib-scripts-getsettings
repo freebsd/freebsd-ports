@@ -1,15 +1,6 @@
---- ./lib/scripts/getsettings.orig	Sun Sep  2 15:59:52 2007
-+++ ./lib/scripts/getsettings	Sun Sep  2 16:03:07 2007
-@@ -2,7 +2,7 @@
- # $Id: getsettings,v 1.24 2005/06/06 07:28:28 kleing Exp $
- # Author: Markus Wenzel, TU Muenchen
- #
--# getsettings - bash source script to augment current env.
-+# getsettings - sh source script to augment current env.
- 
- if [ -z "$ISABELLE_SETTINGS_PRESENT" ]
- then
-@@ -24,10 +24,9 @@
+--- lib/scripts/getsettings.orig	Sat Jan 12 17:08:58 2008
++++ lib/scripts/getsettings	Sat Jan 12 17:10:17 2008
+@@ -27,10 +27,9 @@
  
  #users tend to put strange things in here ...
  unset ENV
@@ -21,7 +12,7 @@
  {
    local RESULT=""
    local FILE=""
-@@ -42,13 +41,13 @@
+@@ -45,13 +44,13 @@
  }
  
  #get actual settings
@@ -35,5 +26,5 @@
 -  { source "$ISABELLE_HOME_USER/etc/settings" || exit 2; }
 +  { . "$ISABELLE_HOME_USER/etc/settings" || exit 2; }
  
- #append ML system identifier to paths
+ #ML system identifier
  if [ -z "$ML_PLATFORM" ]; then

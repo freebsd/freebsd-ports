@@ -1,10 +1,10 @@
---- ./lib/Tools/browser.orig	Sun Sep  2 15:11:55 2007
-+++ ./lib/Tools/browser	Sun Sep  2 15:47:49 2007
+--- lib/Tools/browser.orig	Sat Jan 12 16:56:56 2008
++++ lib/Tools/browser	Sat Jan 12 16:58:42 2008
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  #
- # $Id: browser,v 1.16 2004/06/21 08:25:57 kleing Exp $
+ # $Id: browser,v 1.17 2006/09/18 17:12:41 wenzelm Exp $
  # Author: Markus Wenzel, TU Muenchen
 @@ -8,7 +8,7 @@
  
