@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libffi
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://sourceware.org/pub/libffi/
 
@@ -15,18 +15,11 @@ COMMENT=	Foreign Function Interface
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake:110 autoconf:261
+USE_GNOME=	gnomehack gnometarget
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 INFO=		libffi
 
 MAN3=		ffi.3 ffi_call.3 ffi_prep_cif.3
-
-pre-configure:
-		@${REINPLACE_CMD} -e 's,^\(includesdir = \).*,\1$$(includedir),' \
-			${WRKSRC}/include/Makefile.am
-
-post-configure:
-		@${REINPLACE_CMD} -e 's,^\(transform = \).*,\1,' \
-			${WRKSRC}/man/Makefile
 
 .include <bsd.port.mk>
