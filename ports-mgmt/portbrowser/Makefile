@@ -6,6 +6,7 @@
 
 PORTNAME=	portbrowser
 PORTVERSION=	0.5.20050618
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs
@@ -24,5 +25,9 @@ CFLAGS+= 	-DINDEXFILE=\\\"${PORTSDIR}/${INDEXFILE}\\\" \
 PLIST_FILES=	bin/pbrowser
 
 MAN1=		pbrowser.1
+
+post-patch:
+	@${REINPLACE_CMD} 's|gram-obsd.y|gram-fbsd.y|' \
+		${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>
