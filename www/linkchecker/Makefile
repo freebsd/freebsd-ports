@@ -8,14 +8,15 @@
 
 PORTNAME=	linkchecker
 PORTVERSION=	4.8
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beat@chruetertee.ch
 COMMENT=	Check HTML documents for broken links
 
-USE_PYTHON=		2.4
+USE_PYTHON=		2.4+
 USE_PYDISTUTILS=	yes
 
 MAN1=	linkchecker.1
