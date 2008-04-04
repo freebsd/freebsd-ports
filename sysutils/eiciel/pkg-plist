@@ -1,7 +1,7 @@
 bin/eiciel
-lib/nautilus/extensions-1.0/libeiciel-nautilus.a
-lib/nautilus/extensions-1.0/libeiciel-nautilus.la
-lib/nautilus/extensions-1.0/libeiciel-nautilus.so
+lib/nautilus/extensions-2.0/libeiciel-nautilus.a
+lib/nautilus/extensions-2.0/libeiciel-nautilus.la
+lib/nautilus/extensions-2.0/libeiciel-nautilus.so
 share/applications/eiciel.desktop
 %%DATADIR%%/img/altres-default.png
 %%DATADIR%%/img/altres.png
