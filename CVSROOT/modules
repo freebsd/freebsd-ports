@@ -12062,6 +12062,7 @@ pciids		ports/misc/pciids
 pciutils	ports/sysutils/pciutils
 pclock		ports/x11-clocks/pclock
 pclprint	ports/print/pclprint
+pcmanfm		ports/x11-fm/pcmanfm
 pcnfsd		ports/net/pcnfsd
 pcp		ports/science/pcp
 pcre		ports/devel/pcre
