@@ -1,12 +1,12 @@
-# New ports collection makefile for:   	LDAP-Account-Manager
+# New ports collection makefile for:   	ldap-account-manager
 # Date created:				August, 2nd 2003
 # Whom:                			Clement Laforet <sheepkiller@cultdeadsheep.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	LDAP-Account-Manager
-PORTVERSION=	2.1.0
+PORTNAME=	ldap-account-manager
+PORTVERSION=	2.2.0
 CATEGORIES=	sysutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lam
@@ -40,7 +40,7 @@ PLIST_SUB+=	NLS=""
 FLAG_NLS=	true
 .endif
 
-MYPORTDOCS =	COPYING HISTORY INSTALL README TODO copyright \
+MYPORTDOCS=	COPYING HISTORY INSTALL README TODO copyright \
 	docs/README.Kolab.txt docs/README.fpdf.htm \
 	docs/README.hosts.txt docs/README.lamdaemon.txt \
 	docs/README.openldap.txt docs/README.schema.txt \
