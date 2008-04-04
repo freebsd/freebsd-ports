@@ -1,0 +1,1274 @@
+%%WWWDIR%%/admin/config.php
+%%WWWDIR%%/admin/controller/backup.php
+%%WWWDIR%%/admin/controller/calculate_coupon.php
+%%WWWDIR%%/admin/controller/calculate_shipping.php
+%%WWWDIR%%/admin/controller/calculate_subtotal.php
+%%WWWDIR%%/admin/controller/calculate_tax.php
+%%WWWDIR%%/admin/controller/calculate_total.php
+%%WWWDIR%%/admin/controller/category.php
+%%WWWDIR%%/admin/controller/country.php
+%%WWWDIR%%/admin/controller/coupon.php
+%%WWWDIR%%/admin/controller/currency.php
+%%WWWDIR%%/admin/controller/customer.php
+%%WWWDIR%%/admin/controller/download.php
+%%WWWDIR%%/admin/controller/error.php
+%%WWWDIR%%/admin/controller/extension.php
+%%WWWDIR%%/admin/controller/geo_zone.php
+%%WWWDIR%%/admin/controller/home.php
+%%WWWDIR%%/admin/controller/image.php
+%%WWWDIR%%/admin/controller/information.php
+%%WWWDIR%%/admin/controller/language.php
+%%WWWDIR%%/admin/controller/login.php
+%%WWWDIR%%/admin/controller/logout.php
+%%WWWDIR%%/admin/controller/mail.php
+%%WWWDIR%%/admin/controller/manufacturer.php
+%%WWWDIR%%/admin/controller/module_admin_footer.php
+%%WWWDIR%%/admin/controller/module_admin_header.php
+%%WWWDIR%%/admin/controller/module_admin_menu.php
+%%WWWDIR%%/admin/controller/module_catalog_cart.php
+%%WWWDIR%%/admin/controller/module_catalog_category.php
+%%WWWDIR%%/admin/controller/module_catalog_currency.php
+%%WWWDIR%%/admin/controller/module_catalog_footer.php
+%%WWWDIR%%/admin/controller/module_catalog_header.php
+%%WWWDIR%%/admin/controller/module_catalog_information.php
+%%WWWDIR%%/admin/controller/module_catalog_language.php
+%%WWWDIR%%/admin/controller/module_catalog_review.php
+%%WWWDIR%%/admin/controller/module_catalog_search.php
+%%WWWDIR%%/admin/controller/newsletter.php
+%%WWWDIR%%/admin/controller/option.php
+%%WWWDIR%%/admin/controller/option_value.php
+%%WWWDIR%%/admin/controller/order.php
+%%WWWDIR%%/admin/controller/order_status.php
+%%WWWDIR%%/admin/controller/payment_cod.php
+%%WWWDIR%%/admin/controller/payment_paypal.php
+%%WWWDIR%%/admin/controller/permission.php
+%%WWWDIR%%/admin/controller/product.php
+%%WWWDIR%%/admin/controller/product_option.php
+%%WWWDIR%%/admin/controller/report_online.php
+%%WWWDIR%%/admin/controller/report_purchased.php
+%%WWWDIR%%/admin/controller/report_sale.php
+%%WWWDIR%%/admin/controller/report_viewed.php
+%%WWWDIR%%/admin/controller/review.php
+%%WWWDIR%%/admin/controller/server_info.php
+%%WWWDIR%%/admin/controller/setting.php
+%%WWWDIR%%/admin/controller/shipping_flat.php
+%%WWWDIR%%/admin/controller/shipping_item.php
+%%WWWDIR%%/admin/controller/shipping_zone.php
+%%WWWDIR%%/admin/controller/tax_class.php
+%%WWWDIR%%/admin/controller/tax_rate.php
+%%WWWDIR%%/admin/controller/url_alias.php
+%%WWWDIR%%/admin/controller/user.php
+%%WWWDIR%%/admin/controller/user_group.php
+%%WWWDIR%%/admin/controller/weight_class.php
+%%WWWDIR%%/admin/controller/zone.php
+%%WWWDIR%%/admin/controller/zone_to_geo_zone.php
+%%WWWDIR%%/admin/extension/module/footer.php
+%%WWWDIR%%/admin/extension/module/header.php
+%%WWWDIR%%/admin/extension/module/menu.php
+%%WWWDIR%%/admin/index.php
+%%WWWDIR%%/admin/javascript/JSCookMenu/JSCookMenu.js
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/arrow.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/backup.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/blank.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/calculate.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/category.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/configuration.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/country.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/coupon.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/currency.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/customer.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/download.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/geo_zone.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/home.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/image.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/information.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/language.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/localisation.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/logout.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/mail.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/manufacturer.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/module.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/newsletter.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/option.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/order.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/order_status.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/payment.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/product.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/report.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/review.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/server_info.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/setting.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/shipping.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/shop.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/spacer.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/tax_class.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/theme.css
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/theme.js
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/url_alias.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/user.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/user_group.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/users.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/weight_class.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/default/zone.png
+%%WWWDIR%%/admin/javascript/JSCookMenu/effect.js
+%%WWWDIR%%/admin/javascript/ajax/jquery.js
+%%WWWDIR%%/admin/javascript/fckeditor/_documentation.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins/findreplace/fckplugin.js
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins/findreplace/find.gif
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins/findreplace/find.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins/findreplace/lang/en.js
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins/findreplace/lang/fr.js
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins/findreplace/lang/it.js
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins/findreplace/replace.gif
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins/findreplace/replace.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins/samples/fckplugin.js
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/afp/fck.afpa
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/afp/fck.afpa.code
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/afp/sample01.afp
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/afp/sample02.afp
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/afp/sample03.afp
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/afp/sample04.afp
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/afp/sampleposteddata.afp
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/asp/sample01.asp
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/asp/sample02.asp
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/asp/sample03.asp
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/asp/sample04.asp
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/asp/sampleposteddata.asp
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/cfm/sample01.cfm
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/cfm/sample02_mx.cfm
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/default.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample01.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample02.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample03.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample04.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample05.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample06.config.js
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample06.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample07.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample08.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample09.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample10.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample11.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample11_frame.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample12.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sample13.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sampleposteddata.asp
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/html/sampleposteddata.html
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/lasso/sample01.lasso
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/lasso/sample02.lasso
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/lasso/sample03.lasso
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/lasso/sample04.lasso
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/lasso/sampleposteddata.lasso
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/perl/sample01.cgi
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/perl/sample02.cgi
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/perl/sample03.cgi
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/perl/sample04.cgi
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/perl/sampleposteddata.cgi
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/php/sample01.php
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/php/sample02.php
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/php/sample03.php
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/php/sample04.php
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/php/sampleposteddata.php
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/py/sample01.py
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/py/sampleposteddata.py
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/sample.css
+%%WWWDIR%%/admin/javascript/fckeditor/_samples/sampleslist.html
+%%WWWDIR%%/admin/javascript/fckeditor/_upgrade.html
+%%WWWDIR%%/admin/javascript/fckeditor/_whatsnew.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckcontextmenu.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckdocumentfragment_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckdocumentfragment_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckdomrange.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckdomrange_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckdomrange_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckeditingarea.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckelementpath.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckenterkey.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckevents.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckicon.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckiecleanup.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckimagepreloader.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckkeystrokehandler.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckmenublock.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckmenublockpanel.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckmenuitem.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckpanel.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckplugin.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckspecialcombo.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckstyledef.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckstyledef_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckstyledef_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckstylesloader.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fcktoolbar.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fcktoolbarbreak_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fcktoolbarbreak_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fcktoolbarbutton.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fcktoolbarbuttonui.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fcktoolbarfontformatcombo.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fcktoolbarfontscombo.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fcktoolbarfontsizecombo.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fcktoolbarpanelbutton.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fcktoolbarspecialcombo.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fcktoolbarstylecombo.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckw3crange.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckxml_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes/fckxml_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/commandclasses/fck_othercommands.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/commandclasses/fckfitwindow.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/commandclasses/fcknamedcommand.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/commandclasses/fckpasteplaintextcommand.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/commandclasses/fckpastewordcommand.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/commandclasses/fckspellcheckcommand_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/commandclasses/fckspellcheckcommand_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/commandclasses/fckstylecommand.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/commandclasses/fcktablecommand.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/commandclasses/fcktextcolorcommand.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/fckconstants.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/fckeditorapi.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/fckjscoreextensions.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/fckscriptloader.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fck.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fck_contextmenu.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fck_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fck_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckbrowserinfo.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckcodeformatter.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckcommands.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckconfig.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckdebug.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckdialog.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckdialog_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckdialog_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckdocumentprocessor.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckdomtools.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fcklanguagemanager.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fcklisthandler.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fcklistslib.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckplugins.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckregexlib.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckselection.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckselection_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckselection_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fcktablehandler.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fcktablehandler_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fcktablehandler_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fcktoolbaritems.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fcktoolbarset.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fcktools.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fcktools_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fcktools_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckundo_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckundo_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckurlparams.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckxhtml.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckxhtml_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckxhtml_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals/fckxhtmlentities.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/css/behaviors/disablehandles.htc
+%%WWWDIR%%/admin/javascript/fckeditor/editor/css/behaviors/showtableborders.htc
+%%WWWDIR%%/admin/javascript/fckeditor/editor/css/fck_editorarea.css
+%%WWWDIR%%/admin/javascript/fckeditor/editor/css/fck_internal.css
+%%WWWDIR%%/admin/javascript/fckeditor/editor/css/fck_showtableborders_gecko.css
+%%WWWDIR%%/admin/javascript/fckeditor/editor/css/images/fck_anchor.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/css/images/fck_flashlogo.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/css/images/fck_hiddenfield.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/css/images/fck_pagebreak.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/common/fck_dialog_common.css
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/common/fck_dialog_common.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/common/fcknumericfield.htc
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/common/images/locked.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/common/images/reset.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/common/images/unlocked.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/common/moz-bindings.xml
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_about.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_about/logo_fckeditor.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_about/logo_fredck.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_anchor.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_button.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_checkbox.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_colorselector.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_docprops.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_docprops/fck_document_preview.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_find.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_flash.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_flash/fck_flash.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_flash/fck_flash_preview.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_form.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_hiddenfield.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_image.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_image/fck_image.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_image/fck_image_preview.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_link.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_link/fck_link.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_listprop.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_paste.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_radiobutton.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_replace.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_select.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_select/fck_select.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_smiley.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_source.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_specialchar.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/blank.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/controlWindow.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/controls.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.cfm
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.php
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts/spellchecker.pl
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/spellChecker.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/spellchecker.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/spellerStyle.css
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/wordWindow.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_table.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_tablecell.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_template.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_template/images/template1.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_template/images/template2.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_template/images/template3.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_textarea.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_textfield.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/fckdebug.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/fckdialog.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/fckeditor.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/fckeditor.original.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/browser.css
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/browser.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/asp/basexml.asp
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/asp/class_upload.asp
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/asp/commands.asp
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/asp/config.asp
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/asp/connector.asp
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/asp/io.asp
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/asp/util.asp
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/aspx/connector.aspx
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/cfm/config.cfm
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/cfm/connector.cfm
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/lasso/config.lasso
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/lasso/connector.lasso
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/perl/basexml.pl
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/perl/commands.pl
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/perl/connector.cgi
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/perl/io.pl
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/perl/upload_fck.pl
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/perl/util.pl
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/php/basexml.php
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/php/commands.php
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/php/config.php
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/php/connector.php
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/php/io.php
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/php/util.php
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/py/connector.py
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/test.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/frmactualfolder.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/frmcreatefolder.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/frmfolders.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/frmresourceslist.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/frmresourcetype.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/frmupload.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/ButtonArrow.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/Folder.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/Folder32.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/FolderOpened.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/FolderOpened32.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/FolderUp.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/ai.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/avi.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/bmp.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/cs.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/default.icon.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/dll.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/doc.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/exe.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/fla.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/gif.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/htm.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/html.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/jpg.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/js.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/mdb.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/mp3.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/pdf.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/png.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/ppt.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/rdp.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/swf.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/swt.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/txt.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/vsd.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/xls.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/xml.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32/zip.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/ai.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/avi.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/bmp.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/cs.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/default.icon.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/dll.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/doc.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/exe.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/fla.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/gif.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/htm.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/html.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/jpg.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/js.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/mdb.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/mp3.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/pdf.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/png.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/ppt.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/rdp.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/swf.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/swt.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/txt.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/vsd.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/xls.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/xml.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/zip.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/spacer.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/js/common.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/js/fckxml.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/asp/class_upload.asp
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/asp/config.asp
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/asp/io.asp
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/asp/upload.asp
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/aspx/upload.aspx
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/cfm/config.cfm
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/cfm/upload.cfm
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/lasso/config.lasso
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/lasso/upload.lasso
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/php/config.php
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/php/upload.php
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/php/util.php
+%%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/test.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/anchor.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/arrow_ltr.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/arrow_rtl.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/angel_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/angry_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/broken_heart.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/cake.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/confused_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/cry_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/devil_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/embaressed_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/envelope.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/heart.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/kiss.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/lightbulb.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/omg_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/regular_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/sad_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/shades_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/teeth_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/thumbs_down.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/thumbs_up.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/tounge_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/whatchutalkingabout_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn/wink_smile.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/images/spacer.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/js/fckeditorcode_gecko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/js/fckeditorcode_ie.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/_getfontformat.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/_translationstatus.txt
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/af.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/ar.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/bg.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/bn.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/bs.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/ca.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/cs.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/da.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/de.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/el.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/en-au.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/en-ca.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/en-uk.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/en.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/eo.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/es.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/et.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/eu.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/fa.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/fi.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/fo.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/fr.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/gl.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/he.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/hi.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/hr.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/hu.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/it.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/ja.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/km.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/ko.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/lt.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/lv.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/mn.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/ms.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/nb.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/nl.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/no.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/pl.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/pt-br.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/pt.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/ro.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/ru.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/sk.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/sl.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/sr-latn.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/sr.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/sv.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/th.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/tr.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/uk.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/vi.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/zh-cn.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/lang/zh.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/autogrow/fckplugin.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/placeholder/fck_placeholder.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/placeholder/fckplugin.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/placeholder/lang/de.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/placeholder/lang/en.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/placeholder/lang/fr.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/placeholder/lang/it.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/placeholder/lang/pl.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/placeholder/placeholder.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/simplecommands/fckplugin.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/tablecommands/fckplugin.js
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/_fckviewstrips.html
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/default/fck_dialog.css
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/default/fck_editor.css
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/default/fck_strip.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/default/images/toolbar.arrowright.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/default/images/toolbar.buttonarrow.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/default/images/toolbar.collapse.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/default/images/toolbar.end.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/default/images/toolbar.expand.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/default/images/toolbar.separator.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/default/images/toolbar.start.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003/fck_dialog.css
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003/fck_editor.css
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003/fck_strip.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003/images/toolbar.arrowright.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003/images/toolbar.bg.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003/images/toolbar.buttonarrow.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003/images/toolbar.collapse.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003/images/toolbar.end.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003/images/toolbar.expand.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003/images/toolbar.separator.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003/images/toolbar.start.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/fck_dialog.css
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/fck_editor.css
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/fck_strip.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/images/Thumbs.db
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/images/toolbar.arrowright.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/images/toolbar.buttonarrow.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/images/toolbar.buttonbg.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/images/toolbar.collapse.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/images/toolbar.end.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/images/toolbar.expand.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/images/toolbar.separator.gif
+%%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/images/toolbar.start.gif
+%%WWWDIR%%/admin/javascript/fckeditor/fckconfig.js
+%%WWWDIR%%/admin/javascript/fckeditor/fckeditor.afp
+%%WWWDIR%%/admin/javascript/fckeditor/fckeditor.asp
+%%WWWDIR%%/admin/javascript/fckeditor/fckeditor.cfc
+%%WWWDIR%%/admin/javascript/fckeditor/fckeditor.cfm
+%%WWWDIR%%/admin/javascript/fckeditor/fckeditor.js
+%%WWWDIR%%/admin/javascript/fckeditor/fckeditor.lasso
+%%WWWDIR%%/admin/javascript/fckeditor/fckeditor.php
+%%WWWDIR%%/admin/javascript/fckeditor/fckeditor.pl
+%%WWWDIR%%/admin/javascript/fckeditor/fckeditor.py
+%%WWWDIR%%/admin/javascript/fckeditor/fckeditor_php4.php
+%%WWWDIR%%/admin/javascript/fckeditor/fckeditor_php5.php
+%%WWWDIR%%/admin/javascript/fckeditor/fckpackager.xml
+%%WWWDIR%%/admin/javascript/fckeditor/fckstyles.xml
+%%WWWDIR%%/admin/javascript/fckeditor/fcktemplates.xml
+%%WWWDIR%%/admin/javascript/fckeditor/htaccess.txt
+%%WWWDIR%%/admin/javascript/fckeditor/license.txt
+%%WWWDIR%%/admin/javascript/png/blank.gif
+%%WWWDIR%%/admin/javascript/png/iepngfix.htc
+%%WWWDIR%%/admin/javascript/tab/tab.css
+%%WWWDIR%%/admin/javascript/tab/tab.js
+%%WWWDIR%%/admin/javascript/tab/tab.png
+%%WWWDIR%%/admin/javascript/tab/tab_active.png
+%%WWWDIR%%/admin/javascript/tab/tab_hover.png
+%%WWWDIR%%/admin/javascript/table/addrow.js
+%%WWWDIR%%/admin/language/english/controller/backup.php
+%%WWWDIR%%/admin/language/english/controller/calculate_coupon.php
+%%WWWDIR%%/admin/language/english/controller/calculate_shipping.php
+%%WWWDIR%%/admin/language/english/controller/calculate_subtotal.php
+%%WWWDIR%%/admin/language/english/controller/calculate_tax.php
+%%WWWDIR%%/admin/language/english/controller/calculate_total.php
+%%WWWDIR%%/admin/language/english/controller/category.php
+%%WWWDIR%%/admin/language/english/controller/country.php
+%%WWWDIR%%/admin/language/english/controller/coupon.php
+%%WWWDIR%%/admin/language/english/controller/currency.php
+%%WWWDIR%%/admin/language/english/controller/customer.php
+%%WWWDIR%%/admin/language/english/controller/download.php
+%%WWWDIR%%/admin/language/english/controller/error.php
+%%WWWDIR%%/admin/language/english/controller/extension.php
+%%WWWDIR%%/admin/language/english/controller/geo_zone.php
+%%WWWDIR%%/admin/language/english/controller/home.php
+%%WWWDIR%%/admin/language/english/controller/image.php
+%%WWWDIR%%/admin/language/english/controller/information.php
+%%WWWDIR%%/admin/language/english/controller/language.php
+%%WWWDIR%%/admin/language/english/controller/login.php
+%%WWWDIR%%/admin/language/english/controller/mail.php
+%%WWWDIR%%/admin/language/english/controller/manufacturer.php
+%%WWWDIR%%/admin/language/english/controller/module_admin_footer.php
+%%WWWDIR%%/admin/language/english/controller/module_admin_header.php
+%%WWWDIR%%/admin/language/english/controller/module_admin_menu.php
+%%WWWDIR%%/admin/language/english/controller/module_catalog_cart.php
+%%WWWDIR%%/admin/language/english/controller/module_catalog_category.php
+%%WWWDIR%%/admin/language/english/controller/module_catalog_currency.php
+%%WWWDIR%%/admin/language/english/controller/module_catalog_footer.php
+%%WWWDIR%%/admin/language/english/controller/module_catalog_header.php
+%%WWWDIR%%/admin/language/english/controller/module_catalog_information.php
+%%WWWDIR%%/admin/language/english/controller/module_catalog_language.php
+%%WWWDIR%%/admin/language/english/controller/module_catalog_review.php
+%%WWWDIR%%/admin/language/english/controller/module_catalog_search.php
+%%WWWDIR%%/admin/language/english/controller/newsletter.php
+%%WWWDIR%%/admin/language/english/controller/option.php
+%%WWWDIR%%/admin/language/english/controller/option_value.php
+%%WWWDIR%%/admin/language/english/controller/order.php
+%%WWWDIR%%/admin/language/english/controller/order_status.php
+%%WWWDIR%%/admin/language/english/controller/payment_cod.php
+%%WWWDIR%%/admin/language/english/controller/payment_paypal.php
+%%WWWDIR%%/admin/language/english/controller/permission.php
+%%WWWDIR%%/admin/language/english/controller/product.php
+%%WWWDIR%%/admin/language/english/controller/product_option.php
+%%WWWDIR%%/admin/language/english/controller/report_online.php
+%%WWWDIR%%/admin/language/english/controller/report_purchased.php
+%%WWWDIR%%/admin/language/english/controller/report_sale.php
+%%WWWDIR%%/admin/language/english/controller/report_viewed.php
+%%WWWDIR%%/admin/language/english/controller/review.php
+%%WWWDIR%%/admin/language/english/controller/server_info.php
+%%WWWDIR%%/admin/language/english/controller/setting.php
+%%WWWDIR%%/admin/language/english/controller/shipping_flat.php
+%%WWWDIR%%/admin/language/english/controller/shipping_item.php
+%%WWWDIR%%/admin/language/english/controller/shipping_zone.php
+%%WWWDIR%%/admin/language/english/controller/tax_class.php
+%%WWWDIR%%/admin/language/english/controller/tax_rate.php
+%%WWWDIR%%/admin/language/english/controller/url_alias.php
+%%WWWDIR%%/admin/language/english/controller/user.php
+%%WWWDIR%%/admin/language/english/controller/user_group.php
+%%WWWDIR%%/admin/language/english/controller/weight_class.php
+%%WWWDIR%%/admin/language/english/controller/zone.php
+%%WWWDIR%%/admin/language/english/controller/zone_to_geo_zone.php
+%%WWWDIR%%/admin/language/english/english.php
+%%WWWDIR%%/admin/language/english/extension/module/footer.php
+%%WWWDIR%%/admin/language/english/extension/module/header.php
+%%WWWDIR%%/admin/language/english/extension/module/menu.php
+%%WWWDIR%%/admin/language/german/controller/backup.php
+%%WWWDIR%%/admin/language/german/controller/calculate_shipping.php
+%%WWWDIR%%/admin/language/german/controller/calculate_subtotal.php
+%%WWWDIR%%/admin/language/german/controller/calculate_tax.php
+%%WWWDIR%%/admin/language/german/controller/calculate_total.php
+%%WWWDIR%%/admin/language/german/controller/category.php
+%%WWWDIR%%/admin/language/german/controller/country.php
+%%WWWDIR%%/admin/language/german/controller/currency.php
+%%WWWDIR%%/admin/language/german/controller/customer.php
+%%WWWDIR%%/admin/language/german/controller/download.php
+%%WWWDIR%%/admin/language/german/controller/error_not_found.php
+%%WWWDIR%%/admin/language/german/controller/error_permission.php
+%%WWWDIR%%/admin/language/german/controller/extension.php
+%%WWWDIR%%/admin/language/german/controller/geo_zone.php
+%%WWWDIR%%/admin/language/german/controller/home.php
+%%WWWDIR%%/admin/language/german/controller/image.php
+%%WWWDIR%%/admin/language/german/controller/information.php
+%%WWWDIR%%/admin/language/german/controller/language.php
+%%WWWDIR%%/admin/language/german/controller/login.php
+%%WWWDIR%%/admin/language/german/controller/mail.php
+%%WWWDIR%%/admin/language/german/controller/manufacturer.php
+%%WWWDIR%%/admin/language/german/controller/module_admin_footer.php
+%%WWWDIR%%/admin/language/german/controller/module_admin_header.php
+%%WWWDIR%%/admin/language/german/controller/module_admin_menu.php
+%%WWWDIR%%/admin/language/german/controller/module_cart.php
+%%WWWDIR%%/admin/language/german/controller/module_catalog_cart.php
+%%WWWDIR%%/admin/language/german/controller/module_catalog_category.php
+%%WWWDIR%%/admin/language/german/controller/module_catalog_currency.php
+%%WWWDIR%%/admin/language/german/controller/module_catalog_footer.php
+%%WWWDIR%%/admin/language/german/controller/module_catalog_header.php
+%%WWWDIR%%/admin/language/german/controller/module_catalog_information.php
+%%WWWDIR%%/admin/language/german/controller/module_catalog_language.php
+%%WWWDIR%%/admin/language/german/controller/module_catalog_review.php
+%%WWWDIR%%/admin/language/german/controller/module_catalog_search.php
+%%WWWDIR%%/admin/language/german/controller/module_category.php
+%%WWWDIR%%/admin/language/german/controller/module_footer.php
+%%WWWDIR%%/admin/language/german/controller/module_header.php
+%%WWWDIR%%/admin/language/german/controller/module_information.php
+%%WWWDIR%%/admin/language/german/controller/module_review.php
+%%WWWDIR%%/admin/language/german/controller/newsletter.php
+%%WWWDIR%%/admin/language/german/controller/option.php
+%%WWWDIR%%/admin/language/german/controller/option_value.php
+%%WWWDIR%%/admin/language/german/controller/order.php
+%%WWWDIR%%/admin/language/german/controller/order_status.php
+%%WWWDIR%%/admin/language/german/controller/payment_paypal.php
+%%WWWDIR%%/admin/language/german/controller/product.php
+%%WWWDIR%%/admin/language/german/controller/product_option.php
+%%WWWDIR%%/admin/language/german/controller/report_online.php
+%%WWWDIR%%/admin/language/german/controller/report_purchased.php
+%%WWWDIR%%/admin/language/german/controller/report_sale.php
+%%WWWDIR%%/admin/language/german/controller/report_viewed.php
+%%WWWDIR%%/admin/language/german/controller/review.php
+%%WWWDIR%%/admin/language/german/controller/server_info.php
+%%WWWDIR%%/admin/language/german/controller/setting.php
+%%WWWDIR%%/admin/language/german/controller/shipping_flat.php
+%%WWWDIR%%/admin/language/german/controller/tax_class.php
+%%WWWDIR%%/admin/language/german/controller/tax_rate.php
+%%WWWDIR%%/admin/language/german/controller/url_alias.php
+%%WWWDIR%%/admin/language/german/controller/user.php
+%%WWWDIR%%/admin/language/german/controller/user_group.php
+%%WWWDIR%%/admin/language/german/controller/weight_class.php
+%%WWWDIR%%/admin/language/german/controller/zone.php
+%%WWWDIR%%/admin/language/german/controller/zone_to_geo_zone.php
+%%WWWDIR%%/admin/language/german/extension/module/footer.php
+%%WWWDIR%%/admin/language/german/extension/module/header.php
+%%WWWDIR%%/admin/language/german/extension/module/menu.php
+%%WWWDIR%%/admin/language/german/german.php
+%%WWWDIR%%/admin/template/default/content/backup.tpl
+%%WWWDIR%%/admin/template/default/content/calculate_coupon.tpl
+%%WWWDIR%%/admin/template/default/content/calculate_shipping.tpl
+%%WWWDIR%%/admin/template/default/content/calculate_subtotal.tpl
+%%WWWDIR%%/admin/template/default/content/calculate_tax.tpl
+%%WWWDIR%%/admin/template/default/content/calculate_total.tpl
+%%WWWDIR%%/admin/template/default/content/category.tpl
+%%WWWDIR%%/admin/template/default/content/country.tpl
+%%WWWDIR%%/admin/template/default/content/coupon.tpl
+%%WWWDIR%%/admin/template/default/content/currency.tpl
+%%WWWDIR%%/admin/template/default/content/customer.tpl
+%%WWWDIR%%/admin/template/default/content/download.tpl
+%%WWWDIR%%/admin/template/default/content/error.tpl
+%%WWWDIR%%/admin/template/default/content/extension.tpl
+%%WWWDIR%%/admin/template/default/content/geo_zone.tpl
+%%WWWDIR%%/admin/template/default/content/home.tpl
+%%WWWDIR%%/admin/template/default/content/image.tpl
+%%WWWDIR%%/admin/template/default/content/information.tpl
+%%WWWDIR%%/admin/template/default/content/language.tpl
+%%WWWDIR%%/admin/template/default/content/list.tpl
+%%WWWDIR%%/admin/template/default/content/login.tpl
+%%WWWDIR%%/admin/template/default/content/mail.tpl
+%%WWWDIR%%/admin/template/default/content/manufacturer.tpl
+%%WWWDIR%%/admin/template/default/content/module_admin_footer.tpl
+%%WWWDIR%%/admin/template/default/content/module_admin_header.tpl
+%%WWWDIR%%/admin/template/default/content/module_admin_menu.tpl
+%%WWWDIR%%/admin/template/default/content/module_catalog_cart.tpl
+%%WWWDIR%%/admin/template/default/content/module_catalog_category.tpl
+%%WWWDIR%%/admin/template/default/content/module_catalog_currency.tpl
+%%WWWDIR%%/admin/template/default/content/module_catalog_footer.tpl
+%%WWWDIR%%/admin/template/default/content/module_catalog_header.tpl
+%%WWWDIR%%/admin/template/default/content/module_catalog_information.tpl
+%%WWWDIR%%/admin/template/default/content/module_catalog_language.tpl
+%%WWWDIR%%/admin/template/default/content/module_catalog_review.tpl
+%%WWWDIR%%/admin/template/default/content/module_catalog_search.tpl
+%%WWWDIR%%/admin/template/default/content/newsletter.tpl
+%%WWWDIR%%/admin/template/default/content/option.tpl
+%%WWWDIR%%/admin/template/default/content/option_value.tpl
+%%WWWDIR%%/admin/template/default/content/order.tpl
+%%WWWDIR%%/admin/template/default/content/order_status.tpl
+%%WWWDIR%%/admin/template/default/content/payment_cod.tpl
+%%WWWDIR%%/admin/template/default/content/payment_paypal.tpl
+%%WWWDIR%%/admin/template/default/content/product.tpl
+%%WWWDIR%%/admin/template/default/content/product_discount.tpl
+%%WWWDIR%%/admin/template/default/content/product_option.tpl
+%%WWWDIR%%/admin/template/default/content/report_online.tpl
+%%WWWDIR%%/admin/template/default/content/report_purchased.tpl
+%%WWWDIR%%/admin/template/default/content/report_sale.tpl
+%%WWWDIR%%/admin/template/default/content/report_viewed.tpl
+%%WWWDIR%%/admin/template/default/content/review.tpl
+%%WWWDIR%%/admin/template/default/content/server_info.tpl
+%%WWWDIR%%/admin/template/default/content/setting.tpl
+%%WWWDIR%%/admin/template/default/content/shipping_flat.tpl
+%%WWWDIR%%/admin/template/default/content/shipping_item.tpl
+%%WWWDIR%%/admin/template/default/content/shipping_zone.tpl
+%%WWWDIR%%/admin/template/default/content/tax_class.tpl
+%%WWWDIR%%/admin/template/default/content/tax_rate.tpl
+%%WWWDIR%%/admin/template/default/content/url_alias.tpl
+%%WWWDIR%%/admin/template/default/content/user.tpl
+%%WWWDIR%%/admin/template/default/content/user_group.tpl
+%%WWWDIR%%/admin/template/default/content/weight_class.tpl
+%%WWWDIR%%/admin/template/default/content/zone.tpl
+%%WWWDIR%%/admin/template/default/content/zone_to_geo_zone.tpl
+%%WWWDIR%%/admin/template/default/css/default.css
+%%WWWDIR%%/admin/template/default/css/order.css
+%%WWWDIR%%/admin/template/default/image/asc.png
+%%WWWDIR%%/admin/template/default/image/cancel_disabled.png
+%%WWWDIR%%/admin/template/default/image/cancel_enabled.png
+%%WWWDIR%%/admin/template/default/image/catalog.png
+%%WWWDIR%%/admin/template/default/image/configure.png
+%%WWWDIR%%/admin/template/default/image/country.png
+%%WWWDIR%%/admin/template/default/image/currency.png
+%%WWWDIR%%/admin/template/default/image/customer.png
+%%WWWDIR%%/admin/template/default/image/delete.png
+%%WWWDIR%%/admin/template/default/image/delete_disabled.png
+%%WWWDIR%%/admin/template/default/image/delete_enabled.png
+%%WWWDIR%%/admin/template/default/image/desc.png
+%%WWWDIR%%/admin/template/default/image/disabled.png
+%%WWWDIR%%/admin/template/default/image/edit.png
+%%WWWDIR%%/admin/template/default/image/enabled.png
+%%WWWDIR%%/admin/template/default/image/folder.png
+%%WWWDIR%%/admin/template/default/image/image.png
+%%WWWDIR%%/admin/template/default/image/insert_disabled.png
+%%WWWDIR%%/admin/template/default/image/insert_enabled.png
+%%WWWDIR%%/admin/template/default/image/install.png
+%%WWWDIR%%/admin/template/default/image/language.png
+%%WWWDIR%%/admin/template/default/image/list_disabled.png
+%%WWWDIR%%/admin/template/default/image/list_enabled.png
+%%WWWDIR%%/admin/template/default/image/login.png
+%%WWWDIR%%/admin/template/default/image/online.png
+%%WWWDIR%%/admin/template/default/image/order.png
+%%WWWDIR%%/admin/template/default/image/previous.png
+%%WWWDIR%%/admin/template/default/image/product.png
+%%WWWDIR%%/admin/template/default/image/review.png
+%%WWWDIR%%/admin/template/default/image/save_disabled.png
+%%WWWDIR%%/admin/template/default/image/save_enabled.png
+%%WWWDIR%%/admin/template/default/image/uninstall.png
+%%WWWDIR%%/admin/template/default/image/update.png
+%%WWWDIR%%/admin/template/default/image/update_disabled.png
+%%WWWDIR%%/admin/template/default/image/update_enabled.png
+%%WWWDIR%%/admin/template/default/layout.tpl
+%%WWWDIR%%/admin/template/default/module/footer.tpl
+%%WWWDIR%%/admin/template/default/module/header.tpl
+%%WWWDIR%%/admin/template/default/module/menu.tpl
+%%WWWDIR%%/catalog/controller/account.php
+%%WWWDIR%%/catalog/controller/account_address.php
+%%WWWDIR%%/catalog/controller/account_create.php
+%%WWWDIR%%/catalog/controller/account_download.php
+%%WWWDIR%%/catalog/controller/account_edit.php
+%%WWWDIR%%/catalog/controller/account_forgotten.php
+%%WWWDIR%%/catalog/controller/account_history.php
+%%WWWDIR%%/catalog/controller/account_invoice.php
+%%WWWDIR%%/catalog/controller/account_login.php
+%%WWWDIR%%/catalog/controller/account_logout.php
+%%WWWDIR%%/catalog/controller/account_newsletter.php
+%%WWWDIR%%/catalog/controller/account_password.php
+%%WWWDIR%%/catalog/controller/account_success.php
+%%WWWDIR%%/catalog/controller/cart.php
+%%WWWDIR%%/catalog/controller/category.php
+%%WWWDIR%%/catalog/controller/checkout_address.php
+%%WWWDIR%%/catalog/controller/checkout_confirm.php
+%%WWWDIR%%/catalog/controller/checkout_failure.php
+%%WWWDIR%%/catalog/controller/checkout_payment.php
+%%WWWDIR%%/catalog/controller/checkout_process.php
+%%WWWDIR%%/catalog/controller/checkout_shipping.php
+%%WWWDIR%%/catalog/controller/checkout_success.php
+%%WWWDIR%%/catalog/controller/contact.php
+%%WWWDIR%%/catalog/controller/error.php
+%%WWWDIR%%/catalog/controller/home.php
+%%WWWDIR%%/catalog/controller/information.php
+%%WWWDIR%%/catalog/controller/product.php
+%%WWWDIR%%/catalog/controller/review.php
+%%WWWDIR%%/catalog/controller/review_info.php
+%%WWWDIR%%/catalog/controller/review_success.php
+%%WWWDIR%%/catalog/controller/review_write.php
+%%WWWDIR%%/catalog/controller/search.php
+%%WWWDIR%%/catalog/controller/sitemap.php
+%%WWWDIR%%/catalog/extension/calculate/coupon.php
+%%WWWDIR%%/catalog/extension/calculate/shipping.php
+%%WWWDIR%%/catalog/extension/calculate/subtotal.php
+%%WWWDIR%%/catalog/extension/calculate/tax.php
+%%WWWDIR%%/catalog/extension/calculate/total.php
+%%WWWDIR%%/catalog/extension/module/cart.php
+%%WWWDIR%%/catalog/extension/module/category.php
+%%WWWDIR%%/catalog/extension/module/currency.php
+%%WWWDIR%%/catalog/extension/module/footer.php
+%%WWWDIR%%/catalog/extension/module/header.php
+%%WWWDIR%%/catalog/extension/module/information.php
+%%WWWDIR%%/catalog/extension/module/language.php
+%%WWWDIR%%/catalog/extension/module/review.php
+%%WWWDIR%%/catalog/extension/module/search.php
+%%WWWDIR%%/catalog/extension/payment/cod.php
+%%WWWDIR%%/catalog/extension/payment/paypal.php
+%%WWWDIR%%/catalog/extension/shipping/flat.php
+%%WWWDIR%%/catalog/extension/shipping/item.php
+%%WWWDIR%%/catalog/extension/shipping/zone.php
+%%WWWDIR%%/catalog/javascript/ajax/jquery.js
+%%WWWDIR%%/catalog/javascript/png/blank.gif
+%%WWWDIR%%/catalog/javascript/png/iepngfix.htc
+%%WWWDIR%%/catalog/javascript/thickbox/loadingAnimation.gif
+%%WWWDIR%%/catalog/javascript/thickbox/thickbox-compressed.js
+%%WWWDIR%%/catalog/javascript/thickbox/thickbox.css
+%%WWWDIR%%/catalog/language/english/controller/account.php
+%%WWWDIR%%/catalog/language/english/controller/account_address.php
+%%WWWDIR%%/catalog/language/english/controller/account_create.php
+%%WWWDIR%%/catalog/language/english/controller/account_download.php
+%%WWWDIR%%/catalog/language/english/controller/account_edit.php
+%%WWWDIR%%/catalog/language/english/controller/account_forgotten.php
+%%WWWDIR%%/catalog/language/english/controller/account_history.php
+%%WWWDIR%%/catalog/language/english/controller/account_invoice.php
+%%WWWDIR%%/catalog/language/english/controller/account_login.php
+%%WWWDIR%%/catalog/language/english/controller/account_logout.php
+%%WWWDIR%%/catalog/language/english/controller/account_newsletter.php
+%%WWWDIR%%/catalog/language/english/controller/account_password.php
+%%WWWDIR%%/catalog/language/english/controller/account_success.php
+%%WWWDIR%%/catalog/language/english/controller/cart.php
+%%WWWDIR%%/catalog/language/english/controller/category.php
+%%WWWDIR%%/catalog/language/english/controller/checkout_address.php
+%%WWWDIR%%/catalog/language/english/controller/checkout_confirm.php
+%%WWWDIR%%/catalog/language/english/controller/checkout_failure.php
+%%WWWDIR%%/catalog/language/english/controller/checkout_payment.php
+%%WWWDIR%%/catalog/language/english/controller/checkout_shipping.php
+%%WWWDIR%%/catalog/language/english/controller/checkout_success.php
+%%WWWDIR%%/catalog/language/english/controller/contact.php
+%%WWWDIR%%/catalog/language/english/controller/error.php
+%%WWWDIR%%/catalog/language/english/controller/home.php
+%%WWWDIR%%/catalog/language/english/controller/information.php
+%%WWWDIR%%/catalog/language/english/controller/product.php
+%%WWWDIR%%/catalog/language/english/controller/review.php
+%%WWWDIR%%/catalog/language/english/controller/review_info.php
+%%WWWDIR%%/catalog/language/english/controller/review_success.php
+%%WWWDIR%%/catalog/language/english/controller/review_write.php
+%%WWWDIR%%/catalog/language/english/controller/search.php
+%%WWWDIR%%/catalog/language/english/controller/sitemap.php
+%%WWWDIR%%/catalog/language/english/english.php
+%%WWWDIR%%/catalog/language/english/extension/calculate/coupon.php
+%%WWWDIR%%/catalog/language/english/extension/calculate/shipping.php
+%%WWWDIR%%/catalog/language/english/extension/calculate/subtotal.php
+%%WWWDIR%%/catalog/language/english/extension/calculate/tax.php
+%%WWWDIR%%/catalog/language/english/extension/calculate/total.php
+%%WWWDIR%%/catalog/language/english/extension/module/cart.php
+%%WWWDIR%%/catalog/language/english/extension/module/category.php
+%%WWWDIR%%/catalog/language/english/extension/module/currency.php
+%%WWWDIR%%/catalog/language/english/extension/module/footer.php
+%%WWWDIR%%/catalog/language/english/extension/module/header.php
+%%WWWDIR%%/catalog/language/english/extension/module/information.php
+%%WWWDIR%%/catalog/language/english/extension/module/language.php
+%%WWWDIR%%/catalog/language/english/extension/module/review.php
+%%WWWDIR%%/catalog/language/english/extension/module/search.php
+%%WWWDIR%%/catalog/language/english/extension/payment/cod.php
+%%WWWDIR%%/catalog/language/english/extension/payment/paypal.php
+%%WWWDIR%%/catalog/language/english/extension/shipping/flat.php
+%%WWWDIR%%/catalog/language/english/extension/shipping/item.php
+%%WWWDIR%%/catalog/language/english/extension/shipping/zone.php
+%%WWWDIR%%/catalog/language/german/controller/account.php
+%%WWWDIR%%/catalog/language/german/controller/account_address.php
+%%WWWDIR%%/catalog/language/german/controller/account_create.php
+%%WWWDIR%%/catalog/language/german/controller/account_download.php
+%%WWWDIR%%/catalog/language/german/controller/account_edit.php
+%%WWWDIR%%/catalog/language/german/controller/account_forgotten.php
+%%WWWDIR%%/catalog/language/german/controller/account_history.php
+%%WWWDIR%%/catalog/language/german/controller/account_invoice.php
+%%WWWDIR%%/catalog/language/german/controller/account_login.php
+%%WWWDIR%%/catalog/language/german/controller/account_logout.php
+%%WWWDIR%%/catalog/language/german/controller/account_newsletter.php
+%%WWWDIR%%/catalog/language/german/controller/account_password.php
+%%WWWDIR%%/catalog/language/german/controller/account_success.php
+%%WWWDIR%%/catalog/language/german/controller/cart.php
+%%WWWDIR%%/catalog/language/german/controller/category.php
+%%WWWDIR%%/catalog/language/german/controller/checkout_address.php
+%%WWWDIR%%/catalog/language/german/controller/checkout_confirm.php
+%%WWWDIR%%/catalog/language/german/controller/checkout_failure.php
+%%WWWDIR%%/catalog/language/german/controller/checkout_payment.php
+%%WWWDIR%%/catalog/language/german/controller/checkout_shipping.php
+%%WWWDIR%%/catalog/language/german/controller/checkout_success.php
+%%WWWDIR%%/catalog/language/german/controller/contact.php
+%%WWWDIR%%/catalog/language/german/controller/error.php
+%%WWWDIR%%/catalog/language/german/controller/home.php
+%%WWWDIR%%/catalog/language/german/controller/information.php
+%%WWWDIR%%/catalog/language/german/controller/product.php
+%%WWWDIR%%/catalog/language/german/controller/review.php
+%%WWWDIR%%/catalog/language/german/controller/review_info.php
+%%WWWDIR%%/catalog/language/german/controller/review_success.php
+%%WWWDIR%%/catalog/language/german/controller/review_write.php
+%%WWWDIR%%/catalog/language/german/controller/search.php
+%%WWWDIR%%/catalog/language/german/controller/sitemap.php
+%%WWWDIR%%/catalog/language/german/extension/calculate/shipping.php
+%%WWWDIR%%/catalog/language/german/extension/calculate/subtotal.php
+%%WWWDIR%%/catalog/language/german/extension/calculate/tax.php
+%%WWWDIR%%/catalog/language/german/extension/calculate/total.php
+%%WWWDIR%%/catalog/language/german/extension/module/cart.php
+%%WWWDIR%%/catalog/language/german/extension/module/category.php
+%%WWWDIR%%/catalog/language/german/extension/module/currency.php
+%%WWWDIR%%/catalog/language/german/extension/module/footer.php
+%%WWWDIR%%/catalog/language/german/extension/module/header.php
+%%WWWDIR%%/catalog/language/german/extension/module/information.php
+%%WWWDIR%%/catalog/language/german/extension/module/language.php
+%%WWWDIR%%/catalog/language/german/extension/module/review.php
+%%WWWDIR%%/catalog/language/german/extension/module/search.php
+%%WWWDIR%%/catalog/language/german/extension/payment/paypal.php
+%%WWWDIR%%/catalog/language/german/extension/shipping/flat.php
+%%WWWDIR%%/catalog/language/german/german.php
+%%WWWDIR%%/catalog/template/default/content/account.tpl
+%%WWWDIR%%/catalog/template/default/content/account_address.tpl
+%%WWWDIR%%/catalog/template/default/content/account_addresses.tpl
+%%WWWDIR%%/catalog/template/default/content/account_create.tpl
+%%WWWDIR%%/catalog/template/default/content/account_download.tpl
+%%WWWDIR%%/catalog/template/default/content/account_edit.tpl
+%%WWWDIR%%/catalog/template/default/content/account_forgotten.tpl
+%%WWWDIR%%/catalog/template/default/content/account_history.tpl
+%%WWWDIR%%/catalog/template/default/content/account_invoice.tpl
+%%WWWDIR%%/catalog/template/default/content/account_login.tpl
+%%WWWDIR%%/catalog/template/default/content/account_newsletter.tpl
+%%WWWDIR%%/catalog/template/default/content/account_password.tpl
+%%WWWDIR%%/catalog/template/default/content/cart.tpl
+%%WWWDIR%%/catalog/template/default/content/category.tpl
+%%WWWDIR%%/catalog/template/default/content/checkout_address.tpl
+%%WWWDIR%%/catalog/template/default/content/checkout_confirm.tpl
+%%WWWDIR%%/catalog/template/default/content/checkout_email.tpl
+%%WWWDIR%%/catalog/template/default/content/checkout_payment.tpl
+%%WWWDIR%%/catalog/template/default/content/checkout_shipping.tpl
+%%WWWDIR%%/catalog/template/default/content/contact.tpl
+%%WWWDIR%%/catalog/template/default/content/error.tpl
+%%WWWDIR%%/catalog/template/default/content/failure.tpl
+%%WWWDIR%%/catalog/template/default/content/home.tpl
+%%WWWDIR%%/catalog/template/default/content/information.tpl
+%%WWWDIR%%/catalog/template/default/content/product.tpl
+%%WWWDIR%%/catalog/template/default/content/review.tpl
+%%WWWDIR%%/catalog/template/default/content/review_info.tpl
+%%WWWDIR%%/catalog/template/default/content/review_write.tpl
+%%WWWDIR%%/catalog/template/default/content/search.tpl
+%%WWWDIR%%/catalog/template/default/content/sitemap.tpl
+%%WWWDIR%%/catalog/template/default/content/success.tpl
+%%WWWDIR%%/catalog/template/default/css/account.css
+%%WWWDIR%%/catalog/template/default/css/account_address.css
+%%WWWDIR%%/catalog/template/default/css/account_create.css
+%%WWWDIR%%/catalog/template/default/css/account_download.css
+%%WWWDIR%%/catalog/template/default/css/account_edit.css
+%%WWWDIR%%/catalog/template/default/css/account_forgotten.css
+%%WWWDIR%%/catalog/template/default/css/account_history.css
+%%WWWDIR%%/catalog/template/default/css/account_invoice.css
+%%WWWDIR%%/catalog/template/default/css/account_login.css
+%%WWWDIR%%/catalog/template/default/css/account_newsletter.css
+%%WWWDIR%%/catalog/template/default/css/account_password.css
+%%WWWDIR%%/catalog/template/default/css/cart.css
+%%WWWDIR%%/catalog/template/default/css/checkout_address.css
+%%WWWDIR%%/catalog/template/default/css/checkout_confirm.css
+%%WWWDIR%%/catalog/template/default/css/checkout_payment.css
+%%WWWDIR%%/catalog/template/default/css/checkout_shipping.css
+%%WWWDIR%%/catalog/template/default/css/contact.css
+%%WWWDIR%%/catalog/template/default/css/default.css
+%%WWWDIR%%/catalog/template/default/css/product.css
+%%WWWDIR%%/catalog/template/default/css/review.css
+%%WWWDIR%%/catalog/template/default/css/search.css
+%%WWWDIR%%/catalog/template/default/css/sitemap.css
+%%WWWDIR%%/catalog/template/default/image/background.png
+%%WWWDIR%%/catalog/template/default/image/basket.png
+%%WWWDIR%%/catalog/template/default/image/bullet_1.png
+%%WWWDIR%%/catalog/template/default/image/bullet_2.png
+%%WWWDIR%%/catalog/template/default/image/de.png
+%%WWWDIR%%/catalog/template/default/image/download.png
+%%WWWDIR%%/catalog/template/default/image/en.png
+%%WWWDIR%%/catalog/template/default/image/es.png
+%%WWWDIR%%/catalog/template/default/image/failure.png
+%%WWWDIR%%/catalog/template/default/image/logo.png
+%%WWWDIR%%/catalog/template/default/image/master.png
+%%WWWDIR%%/catalog/template/default/image/paypal.png
+%%WWWDIR%%/catalog/template/default/image/stars_1.png
+%%WWWDIR%%/catalog/template/default/image/stars_2.png
+%%WWWDIR%%/catalog/template/default/image/stars_3.png
+%%WWWDIR%%/catalog/template/default/image/stars_4.png
+%%WWWDIR%%/catalog/template/default/image/stars_5.png
+%%WWWDIR%%/catalog/template/default/image/success.png
+%%WWWDIR%%/catalog/template/default/image/tab.png
+%%WWWDIR%%/catalog/template/default/image/visa.png
+%%WWWDIR%%/catalog/template/default/image/write.png
+%%WWWDIR%%/catalog/template/default/layout.tpl
+%%WWWDIR%%/catalog/template/default/module/cart.tpl
+%%WWWDIR%%/catalog/template/default/module/category.tpl
+%%WWWDIR%%/catalog/template/default/module/currency.tpl
+%%WWWDIR%%/catalog/template/default/module/footer.tpl
+%%WWWDIR%%/catalog/template/default/module/header.tpl
+%%WWWDIR%%/catalog/template/default/module/information.tpl
+%%WWWDIR%%/catalog/template/default/module/language.tpl
+%%WWWDIR%%/catalog/template/default/module/review.tpl
+%%WWWDIR%%/catalog/template/default/module/search.tpl
+%%WWWDIR%%/config.php
+%%WWWDIR%%/download/index.html
+%%WWWDIR%%/htaccess.txt
+%%WWWDIR%%/image/Thumbs.db
+%%WWWDIR%%/image/cache/Thumbs.db
+%%WWWDIR%%/image/image_1.jpg
+%%WWWDIR%%/image/image_2.jpg
+%%WWWDIR%%/image/image_3.jpg
+%%WWWDIR%%/image/image_4.jpg
+%%WWWDIR%%/index.php
+%%WWWDIR%%/install/index.php
+%%WWWDIR%%/install/opencart.sql
+%%WWWDIR%%/install/stylesheet.css
+%%WWWDIR%%/library/application/config.php
+%%WWWDIR%%/library/application/controller.php
+%%WWWDIR%%/library/application/model.php
+%%WWWDIR%%/library/application/router.php
+%%WWWDIR%%/library/cache/cache.php
+%%WWWDIR%%/library/cart/address.php
+%%WWWDIR%%/library/cart/calculate.php
+%%WWWDIR%%/library/cart/cart.php
+%%WWWDIR%%/library/cart/coupon.php
+%%WWWDIR%%/library/cart/currency.php
+%%WWWDIR%%/library/cart/customer.php
+%%WWWDIR%%/library/cart/module.php
+%%WWWDIR%%/library/cart/order.php
+%%WWWDIR%%/library/cart/payment.php
+%%WWWDIR%%/library/cart/shipping.php
+%%WWWDIR%%/library/cart/tax.php
+%%WWWDIR%%/library/cart/weight.php
+%%WWWDIR%%/library/database/database.php
+%%WWWDIR%%/library/environment/request.php
+%%WWWDIR%%/library/environment/response.php
+%%WWWDIR%%/library/environment/url.php
+%%WWWDIR%%/library/filesystem/download.php
+%%WWWDIR%%/library/filesystem/upload.php
+%%WWWDIR%%/library/image/image.php
+%%WWWDIR%%/library/language/language.php
+%%WWWDIR%%/library/locator.php
+%%WWWDIR%%/library/mail/mail.php
+%%WWWDIR%%/library/session/session.php
+%%WWWDIR%%/library/template/template.php
+%%WWWDIR%%/library/user/user.php
+@dirrm %%WWWDIR%%/library/user
+@dirrm %%WWWDIR%%/library/template
+@dirrm %%WWWDIR%%/library/session
+@dirrm %%WWWDIR%%/library/mail
+@dirrm %%WWWDIR%%/library/language
+@dirrm %%WWWDIR%%/library/image
+@dirrm %%WWWDIR%%/library/filesystem
+@dirrm %%WWWDIR%%/library/environment
+@dirrm %%WWWDIR%%/library/database
+@dirrm %%WWWDIR%%/library/cart
+@dirrm %%WWWDIR%%/library/cache
+@dirrm %%WWWDIR%%/library/application
+@dirrm %%WWWDIR%%/library
+@dirrm %%WWWDIR%%/install
+@dirrm %%WWWDIR%%/image/cache
+@dirrm %%WWWDIR%%/image
+@dirrm %%WWWDIR%%/download
+@dirrm %%WWWDIR%%/catalog/template/default/module
+@dirrm %%WWWDIR%%/catalog/template/default/image
+@dirrm %%WWWDIR%%/catalog/template/default/css
+@dirrm %%WWWDIR%%/catalog/template/default/content
+@dirrm %%WWWDIR%%/catalog/template/default
+@dirrm %%WWWDIR%%/catalog/template
+@dirrm %%WWWDIR%%/catalog/model
+@dirrm %%WWWDIR%%/catalog/language/german/extension/shipping
+@dirrm %%WWWDIR%%/catalog/language/german/extension/payment
+@dirrm %%WWWDIR%%/catalog/language/german/extension/module
+@dirrm %%WWWDIR%%/catalog/language/german/extension/calculate
+@dirrm %%WWWDIR%%/catalog/language/german/extension
+@dirrm %%WWWDIR%%/catalog/language/german/controller
+@dirrm %%WWWDIR%%/catalog/language/german
+@dirrm %%WWWDIR%%/catalog/language/english/extension/shipping
+@dirrm %%WWWDIR%%/catalog/language/english/extension/payment
+@dirrm %%WWWDIR%%/catalog/language/english/extension/module
+@dirrm %%WWWDIR%%/catalog/language/english/extension/calculate
+@dirrm %%WWWDIR%%/catalog/language/english/extension
+@dirrm %%WWWDIR%%/catalog/language/english/controller
+@dirrm %%WWWDIR%%/catalog/language/english
+@dirrm %%WWWDIR%%/catalog/language
+@dirrm %%WWWDIR%%/catalog/javascript/thickbox
+@dirrm %%WWWDIR%%/catalog/javascript/png
+@dirrm %%WWWDIR%%/catalog/javascript/ajax
+@dirrm %%WWWDIR%%/catalog/javascript
+@dirrm %%WWWDIR%%/catalog/extension/shipping
+@dirrm %%WWWDIR%%/catalog/extension/payment
+@dirrm %%WWWDIR%%/catalog/extension/module
+@dirrm %%WWWDIR%%/catalog/extension/calculate
+@dirrm %%WWWDIR%%/catalog/extension
+@dirrm %%WWWDIR%%/catalog/controller
+@dirrm %%WWWDIR%%/catalog
+@dirrm %%WWWDIR%%/cache
+@dirrm %%WWWDIR%%/admin/template/default/module
+@dirrm %%WWWDIR%%/admin/template/default/image
+@dirrm %%WWWDIR%%/admin/template/default/css
+@dirrm %%WWWDIR%%/admin/template/default/content
+@dirrm %%WWWDIR%%/admin/template/default
+@dirrm %%WWWDIR%%/admin/template
+@dirrm %%WWWDIR%%/admin/model
+@dirrm %%WWWDIR%%/admin/language/german/extension/module
+@dirrm %%WWWDIR%%/admin/language/german/extension
+@dirrm %%WWWDIR%%/admin/language/german/controller
+@dirrm %%WWWDIR%%/admin/language/german
+@dirrm %%WWWDIR%%/admin/language/english/extension/module
+@dirrm %%WWWDIR%%/admin/language/english/extension
+@dirrm %%WWWDIR%%/admin/language/english/controller
+@dirrm %%WWWDIR%%/admin/language/english
+@dirrm %%WWWDIR%%/admin/language
+@dirrm %%WWWDIR%%/admin/javascript/table
+@dirrm %%WWWDIR%%/admin/javascript/tab
+@dirrm %%WWWDIR%%/admin/javascript/png
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver/images
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/skins/silver
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003/images
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/skins/office2003
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/skins/default/images
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/skins/default
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/skins
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/tablecommands
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/simplecommands
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/placeholder/lang
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/placeholder
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/plugins/autogrow
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/plugins
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/lang
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/js
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley/msn
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/images/smiley
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/images
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/php
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/lasso
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/cfm
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/aspx
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload/asp
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/upload
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/js
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images/icons
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/images
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/py
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/php
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/perl
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/lasso
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/cfm
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/aspx
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors/asp
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default/connectors
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser/default
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager/browser
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/filemanager
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_template/images
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_template
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_spellerpages
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_select
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_link
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_image
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_flash
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_docprops
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/fck_about
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/common/images
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog/common
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/dialog
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/css/images
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/css/behaviors
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/css
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/_source/internals
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/_source/commandclasses
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/_source/classes
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor/_source
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/editor
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples/py
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples/php
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples/perl
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples/lasso
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples/html
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples/cfm
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples/asp
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples/afp
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins/samples
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins/findreplace/lang
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins/findreplace
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples/_plugins
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor/_samples
+@dirrm %%WWWDIR%%/admin/javascript/fckeditor
+@dirrm %%WWWDIR%%/admin/javascript/ajax
+@dirrm %%WWWDIR%%/admin/javascript/JSCookMenu/default
+@dirrm %%WWWDIR%%/admin/javascript/JSCookMenu
+@dirrm %%WWWDIR%%/admin/javascript
+@dirrm %%WWWDIR%%/admin/extension/module
+@dirrm %%WWWDIR%%/admin/extension
+@dirrm %%WWWDIR%%/admin/controller
+@dirrm %%WWWDIR%%/admin
+@dirrm %%WWWDIR%%
