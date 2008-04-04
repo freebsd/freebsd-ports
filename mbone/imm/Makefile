@@ -7,8 +7,8 @@
 
 PORTNAME=	imm
 PORTVERSION=	3.5a1
-PORTREVISION=	1
-CATEGORIES=	mbone tk82
+PORTREVISION=	2
+CATEGORIES=	mbone tk84
 MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 DISTNAME=	imm.source
 EXTRACT_SUFX=	.tar.Z
@@ -16,10 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	Internet Image(or other data) Multicaster (and receiver)
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
-
+USE_TK=		yes
 WRKSRC=		${WRKDIR}/mnm
-USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 

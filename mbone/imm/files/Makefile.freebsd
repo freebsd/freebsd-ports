@@ -1,17 +1,17 @@
 # Some versions of make, like SGI's, use the following variable to
 # determine which shell to use for executing commands:
 SHELL = /bin/sh
-INCLUDE_DIR	= -I${PREFIX}/include -I${LOCALBASE}/include/tcl8.2 -I${LOCALBASE}/include/tk8.2
+INCLUDE_DIR	= -I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 -I${X11BASE}/include
 # Libraries to use when linking: 
 LIBS = -lm
 
-TKLIBS= -L$(PREFIX)/lib -L${LOCALBASE}/lib -ltk82 -ltcl82 -lX11
+TKLIBS= -L${X11BASE}/lib -L$(PREFIX)/lib -L${LOCALBASE}/lib -ltk84 -ltcl84 -lX11
 
 TARGET		= ../freebsd
 
 CFLAGS		=  -g -DSIG_T=void -DMULTICAST -I. -DERROR_TEST
 
-CC =		gcc
+CC ?=		gcc
 CC_SWITCHES =	${CFLAGS} 
 
 ROBJS = protocol.o utils.o
