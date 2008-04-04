@@ -1,5 +1,5 @@
-bin/gem
-bin/grass62
+bin/grass%%VER%%
+bin/grass%%VER%%-gem
 %%GRASS_INST_DIR%%/bin/bmif_to_cell
 %%GRASS_INST_DIR%%/bin/d.ask
 %%GRASS_INST_DIR%%/bin/d.barscale
@@ -466,7 +466,11 @@ bin/grass62
 %%GRASS_INST_DIR%%/docs/html/g.version.html
 %%GRASS_INST_DIR%%/docs/html/gis.m.html
 %%GRASS_INST_DIR%%/docs/html/grass-dbf.html
-%%GRASS_INST_DIR%%/docs/html/grass-pg.html
+%%MYSQL%%%%GRASS_INST_DIR%%/docs/html/grass-mesql.html
+%%MYSQL%%%%GRASS_INST_DIR%%/docs/html/grass-mysql.html
+%%ODBC%%%%GRASS_INST_DIR%%/docs/html/grass-odbc.html
+%%PGSQL%%%%GRASS_INST_DIR%%/docs/html/grass-pg.html
+%%SQLITE%%%%GRASS_INST_DIR%%/docs/html/grass-sqlite.html
 %%GRASS_INST_DIR%%/docs/html/grass6.html
 %%GRASS_INST_DIR%%/docs/html/grass_logo.txt
 %%GRASS_INST_DIR%%/docs/html/helptext.html
@@ -962,8 +966,10 @@ bin/grass62
 %%GRASS_INST_DIR%%/driver/XDRIVER
 %%GRASS_INST_DIR%%/driver/db/dbf
 %%MYSQL%%%%GRASS_INST_DIR%%/driver/db/mysql
+%%ODBC%%%%GRASS_INST_DIR%%/driver/db/odbc
 %%GRASS_INST_DIR%%/driver/db/ogr
 %%PGSQL%%%%GRASS_INST_DIR%%/driver/db/pg
+%%SQLITE%%%%GRASS_INST_DIR%%/driver/db/sqlite
 %%GRASS_INST_DIR%%/etc/BUILD
 %%GRASS_INST_DIR%%/etc/FIPS.code
 %%GRASS_INST_DIR%%/etc/Init.sh
@@ -1799,7 +1805,11 @@ bin/grass62
 %%GRASS_INST_DIR%%/man/man1/g.version.1
 %%GRASS_INST_DIR%%/man/man1/gis.m.1
 %%GRASS_INST_DIR%%/man/man1/grass-dbf.1
-%%GRASS_INST_DIR%%/man/man1/grass-pg.1
+%%MYSQL%%%%GRASS_INST_DIR%%/man/man1/grass-mesql.1
+%%MYSQL%%%%GRASS_INST_DIR%%/man/man1/grass-mysql.1
+%%ODBC%%%%GRASS_INST_DIR%%/man/man1/grass-odbc.1
+%%PGSQL%%%%GRASS_INST_DIR%%/man/man1/grass-pg.1
+%%SQLITE%%%%GRASS_INST_DIR%%/man/man1/grass-sqlite.1
 %%GRASS_INST_DIR%%/man/man1/grass6.1
 %%GRASS_INST_DIR%%/man/man1/helptext.1
 %%GRASS_INST_DIR%%/man/man1/i.ask.1
