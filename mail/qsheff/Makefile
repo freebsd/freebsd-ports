@@ -7,6 +7,7 @@
 
 PORTNAME=	qsheff-II
 PORTVERSION=	2.1.r3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/qsheff/ \
 		SF/qsheff
@@ -28,6 +29,8 @@ EXAMPLES=	sample-OK.msg sample-SPAM.msg sample-VIRUS.msg
 CONTRIB=	README qq-custom-error-patch.diff qq-patch.diff \
 		qsheff-patch.diff
 FILES=		handbook.en.txt handbook.tr.txt spamass-qsheff.en.html
+ETCFILES=	install-wrapper.sh uninstall-wrapper.sh qsheff.attach-default \
+		qsheff.conf-default qsheff.ignore-default qsheff.rules-default
 
 CONFIGURE_ARGS+=	--with-qmaildir=${QMAIL_PREFIX}
 

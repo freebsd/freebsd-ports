@@ -35,5 +35,5 @@ bin/qsheff
 %%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
 @dirrmtry %%ETCDIR%%
 @unexec echo ""
-@unexec echo "Type '%%ETCDIR%%/uninstall-wrapper.sh' to uninstall qSheff completely."
+@unexec echo "Type '%%PREFIX%%/etc/uninstall-wrapper.sh' to uninstall qSheff completely."
 @unexec echo ""
