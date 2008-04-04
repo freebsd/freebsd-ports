@@ -1,17 +1,17 @@
---- doc/Makefile.doc.orig	Thu Dec  8 07:39:33 2005
-+++ doc/Makefile.doc	Thu Dec  8 07:39:46 2005
-@@ -153,10 +153,10 @@
- ## texi: update magic comments in texi from docstrings in code.
+--- doc/Makefile.doc.orig	2008-02-23 15:11:19.000000000 +1100
++++ doc/Makefile.doc	2008-02-23 15:10:59.000000000 +1100
+@@ -155,10 +155,10 @@
  ##	  (developer use only!)
  ##
--$(DOCNAME).texi: ../*/*.el 
+ ## remove this for now: no magic during dist ../*/*.el 
+-$(DOCNAME).texi: 
 -	$(MAKE) magic
 -magic:
--	$(EMACS) $(EMACSFLAGS) -l docstring-magic.el $(DOCNAME).texi -f texi-docstring-magic -f save-buffer
-+#$(DOCNAME).texi: ../*/*.el 
+-	$(EMACS) $(EMACSFLAGS) -batch -l ./docstring-magic.el $(DOCNAME).texi -f texi-docstring-magic -f save-buffer
++#$(DOCNAME).texi: 
 +#	$(MAKE) magic
 +#magic:
-+#	$(EMACS) $(EMACSFLAGS) -l docstring-magic.el $(DOCNAME).texi -f texi-docstring-magic -f save-buffer
++#	$(EMACS) $(EMACSFLAGS) -batch -l ./docstring-magic.el $(DOCNAME).texi -f texi-docstring-magic -f save-buffer
  
- 
- 
+ debugmagic:
+ 	$(EMACS) $(EMACFLAGS)  -eval '(setq debug-on-error t)' -l ./docstring-magic.el $(DOCNAME).texi -f texi-docstring-magic -f save-buffer

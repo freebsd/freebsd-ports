@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	proofgeneral
-PORTVERSION=	3.6
-PORTREVISION=	8
+PORTVERSION=	3.7
 CATEGORIES=	math elisp
 MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
-DISTNAME=	ProofGeneral-3.6pre061107
+DISTNAME=	ProofGeneral-3.7
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	A generic interface for proof assistants
