@@ -7,6 +7,7 @@
 
 PORTNAME=	epic4
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 		http://tehran.lain.pl/epic-mirror/EPIC4-PRODUCTION/ \
@@ -28,6 +29,7 @@ USE_OPENSSL=	yes
 SUB_FILES=	pkg-message
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 USE_BZIP2=	yes
+CFLAGS:=	${CFLAGS:C/-O2/-g -O/g}
 
 OPTIONS=	IPV6	"IPv6 support"		on \
 		TCL	"TCL support"		on \
