@@ -7,8 +7,8 @@ libdata/pkgconfig/crow.pc
 share/applications/crow.desktop
 share/mime/packages/crow.xml
 share/pixmaps/crow.png
-@dirrm share/mime/packages
-@dirrm share/mime
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
 @dirrmtry share/applications
 @dirrm include/crow
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
