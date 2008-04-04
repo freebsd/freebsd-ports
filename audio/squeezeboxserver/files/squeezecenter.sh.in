@@ -17,12 +17,13 @@
 
 name=squeezecenter
 start_precmd="squeezecenter_start_precmd"
+stop_postcmd="squeezecenter_stop_postcmd"
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/%%SLIMDIR%%/slimserver.pl
 command_interpreter=%%PERL%%
-pidfile=/var/run/${name}.pid
-logfile=/var/log/squeezecenter.log
+pidfile=/var/run/${name}/${name}.pid
+logdir=/var/log/squeezecenter
 statedir=%%SLIMDBDIR%%
 cachedir=${statedir}/cache
 prefsdir=${statedir}/prefs
@@ -30,33 +31,41 @@ playlistdir=${statedir}/playlists
 conffile=${statedir}/squeezecenter.conf
 u=%%SLIMUSER%%
 g=%%SLIMGROUP%%
-command_args="--daemon --prefsfile=${conffile} --logfile=${logfile} --user=${u} --group=${g} --pidfile=${pidfile}"
+command_args="--daemon --prefsfile=${conffile} --pidfile=${pidfile}"
+squeezecenter_user=${u}
+squeezecenter_group=${g}
 
 squeezecenter_start_precmd()
 {
-	if [ ! -d ${statedir} ]; then
-		mkdir -p ${statedir}
-		chown -R ${u}:${g} ${statedir}
-	fi
-	if [ ! -d ${cachedir} ]; then
-		mkdir -p ${cachedir}
-		chown -R ${u}:${g} ${cachedir}
-	fi
-	if [ ! -d ${prefsdir} ]; then
-		mkdir -p ${prefsdir}
-		chown -R ${u}:${g} ${prefsdir}
-	fi
-	if [ ! -d ${playlistdir} ]; then
-		mkdir -p ${playlistdir}
-		chown -R ${u}:${g} ${playlistdir}
-	fi
-	if [ ! -f ${conffile} ]; then
-		touch ${conffile}
-		chown ${u}:${g} ${conffile}
-	fi
+	mkdir -p /var/run/${name}
+	chown -R ${u}:${g} /var/run/${name}
+
+	mkdir -p ${logdir}
+	chown -R ${u}:${g} ${logdir}
+
+	mkdir -p ${statedir}
+	mkdir -p ${cachedir}
+	mkdir -p ${prefsdir}
+	mkdir -p ${playlistdir}
+	touch ${conffile}
+	chown -R ${u}:${g} ${statedir}
+
 	if [ ! -f ${logfile} ]; then
 		touch ${logfile}
 		chown ${u}:${g} ${logfile}
+	fi	
+}
+
+squeezecenter_stop_postcmd()
+{
+	pids=`pgrep -u $u`
+	if [ -n "${pids}" ]; then
+		sleep 1
+		kill $pids > /dev/null 2>&1
+	fi
+	pids=`pgrep -u $u`
+	if [ -n "${pids}" ]; then
+		wait_for_pids $pids
 	fi
 }
 
