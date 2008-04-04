@@ -3445,3 +3445,4 @@ ports-mgmt/pkg_install-devel|ports-mgmt/pkg_install|2008-03-31|Port has been unm
 x11-toolkits/qwt|x11-toolkits/qwt4|2008-04-02|Renamed for better naming
 x11-toolkits/qwt-devel|x11-toolkits/qwt5|2008-04-02|Renamed for better naming
 audio/csound-manual||2008-04-04|Merged with main port
+security/acid||2008-04-04|Has expired: development has ceased, use security/base

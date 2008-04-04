@@ -186,7 +186,6 @@ ace+tao		ports/devel/ace+tao
 ace+tao-doc	ports/devel/ace+tao-doc
 acfax		ports/comms/acfax
 achievo		ports/misc/achievo
-acid		ports/security/acid
 acidlaunch	ports/sysutils/acidlaunch
 acidrip		ports/multimedia/acidrip
 acidwarp	ports/graphics/acidwarp

@@ -7,7 +7,6 @@
     SUBDIR += ADMsnmp
     SUBDIR += IMHear
     SUBDIR += aafid2
-    SUBDIR += acid
     SUBDIR += aescrypt
     SUBDIR += aespipe
     SUBDIR += afterglow
